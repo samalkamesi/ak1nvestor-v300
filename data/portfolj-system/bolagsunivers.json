@@ -10268,5 +10268,435 @@
       "fcf": []
     },
     "notering": "serier i CHF; prognosTillvaxt härledd ur trailing/forward-P/E (27,39/17,04 ⇒ +60,7 % implicit EPS-förändring — TTM-vinsten 7,4 mdr är deprimerad av nedskrivningar, framåtblickande estimat normaliserar; ej underliggande volymtillväxt, källans 3-årsprognos är +4,89 %); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 3,62); payout 107 % av TTM-vinsten — utdelningen 3,10 CHF/aktie täcks av FCF (12,5 mdr) men ej av vinsten; CAGR endpoint över 4 räkenskapsår (2022–2025); räntetäckning 8,51 (fältet systematiskt osatt i universumet, värdet dokumenteras här); omsättningstillväxten negativ fyra år i rad i rapporterade tal — prismakt delvis kompenseras av valutor/avyttringar"
+  },
+  {
+    "ticker": "BAS.DE",
+    "namn": "BASF SE",
+    "bransch": "material",
+    "land": "Tyskland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/etr/BAS/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 51.84,
+    "marknadsKapitalMdr": 45.1,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.1193,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.01,
+      "prognosTillvaxt": 0.2073
+    },
+    "lonksamhet": {
+      "roe": 0.0612,
+      "roic": 0.0376,
+      "bruttoMarginal": 0.2355,
+      "ebitMarginal": 0.0489,
+      "nettoMarginal": 0.0942,
+      "fcfMarginal": 0.017
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.71,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.2384,
+      "bruttoMarginalSpread5ar": 0.0064,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 22.13,
+      "pb": 1.21,
+      "evEbit": 14.37,
+      "peg": 1.07,
+      "fcfYield": 0.0232,
+      "egenKapitalMultipl": 1.21
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        87327000000,
+        68902000000,
+        61444000000,
+        59657000000
+      ],
+      "resultat": [
+        -627000000,
+        225000000,
+        1298000000,
+        1619000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        3334000000,
+        2716000000,
+        748000000,
+        1343000000
+      ]
+    },
+    "notering": "serier i EUR; P/E 22,13 är källans värde på normaliserat TTM-resultat — rå TTM-EPS 6,57 € inkluderar engångsvinst från avyttringen av coatings-divisionen (Carlyle) som ger P/E 7,8 på rapporterat resultat, källans P/E värderar bort engångsposten (detsamma gäller nettomarginalen 9,4 % TTM); prognosTillvaxt härledd ur trailing/forward-P/E (22,13/18,33 ⇒ +20,7 % implicit EPS-förändring, ej underliggande volymtillväxt — källans 3-årsprognos är +3,58 %); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent; omsattningCAGR endpoint över 4 räkenskapsår (2022–2025, −11,9 %: energi-/gaskrisen 2022 blåste upp toppen, därefter tre fallande år); resultatCAGR osatt: negativt startvärde 2022 (−627 M€) gör endpoint-metoden meningslös; räntetäckning 3,18 (fältet systematiskt osatt i universumet, värdet dokumenteras här); utdelning 2,25 €/aktie (4,2 % direktavkastning, payout 35 % av TTM-resultatet) — utdelningsfält null enligt plattformskonventionen; bruttomarginalhistorik 4 år: medel 23,8 % spread 0,7 pp (moat-fälten bygger på källans bruttovinstserie 2022–2025); bruttomarginalen 23,55 % i lonksamhet är källans TTM-tal; FCF-serien ur källans OCF−capex: botten 2024 (748 M€ vid topp-capex 6,2 mdr) medan 2025-normaliseringen ger 1,3 mdr; 52-vägers spann 41,48–55,05 €; nästa rapport 2026-10-28"
+  },
+  {
+    "ticker": "TSM",
+    "namn": "Taiwan Semiconductor Manufacturing (TSMC)",
+    "bransch": "teknik",
+    "land": "Taiwan",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/tsm/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 413.75,
+    "marknadsKapitalMdr": 1940,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1894,
+      "resultatCAGR5ar": 0.1957,
+      "omsattningTillvaxtTTM": 0.306,
+      "prognosTillvaxt": 0.4548
+    },
+    "lonksamhet": {
+      "roe": 0.3997,
+      "roic": 0.5396,
+      "bruttoMarginal": 0.6423,
+      "ebitMarginal": 0.5608,
+      "nettoMarginal": 0.4992,
+      "fcfMarginal": 0.2575
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.17,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 27.83,
+      "pb": 9.53,
+      "evEbit": 23.81,
+      "peg": 0.61,
+      "fcfYield": 0.019,
+      "egenKapitalMultipl": 9.53
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        2263891000000,
+        2161736000000,
+        2894308000000,
+        3809054000000
+      ],
+      "resultat": [
+        992923000000,
+        851740000000,
+        1158380000000,
+        1697604000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "ADR-notering NYSE i USD; serier i TWD (bolagets rapportvaluta — CAGR opåverkad av valuta, nivåer ej i USD); världens största halvledarfoundry (tillverkningsuppdrag åt branschens chippdesigner — affärsmodellen utan egen produktportfölj); kassastark: nettokassa ~77 mdr USD (kassa 110,6 minus skuld 33,6) gör skuld/EK 0,17 och lyfter ROIC 54,0 %; prognosTillvaxt härledd ur trailing/forward-P/E (27,83/19,13 ⇒ +45,5 % implicit EPS-tillväxt +1 år — AI-efterfrågan på avancerade noder); peg = P/E/prognostillväxt i procent enligt universumets konvention = 0,61; endpoint-CAGR 2022→2025: omsättning +18,9 %/år (dipp −4,5 % 2023 vid halvledarcykelns botten, därefter +33,9/+31,6 %), resultat +19,6 %/år; fcfYield = fritt kassaflöde 35,90 mdr USD/börsvärde; utdelning 3,22 USD/ADR (0,78 % direktavkastning) noted här då aterkop-fälten är null enligt plattformskonventionen; bruttomarginal 64,2 % och EBIT-marginal 56,1 % är foundry-nivåer — process­kunskapens prissättning, jämförs bäst inom teknik-branschens chippbolag"
+  },
+  {
+    "ticker": "BHP",
+    "namn": "BHP Group",
+    "bransch": "material",
+    "land": "Australien",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/bhp/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 84.77,
+    "marknadsKapitalMdr": 214.78,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0297,
+      "resultatCAGR5ar": -0.087,
+      "omsattningTillvaxtTTM": 0.146,
+      "prognosTillvaxt": 0.3062
+    },
+    "lonksamhet": {
+      "roe": 0.24,
+      "roic": 0.2172,
+      "bruttoMarginal": 0.8592,
+      "ebitMarginal": 0.421,
+      "nettoMarginal": 0.1673,
+      "fcfMarginal": 0.1961
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.5,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 21.84,
+      "pb": 3.81,
+      "evEbit": 9.32,
+      "peg": 0.71,
+      "fcfYield": 0.054,
+      "egenKapitalMultipl": 3.81
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        53817000000,
+        55658000000,
+        51262000000,
+        58760000000
+      ],
+      "resultat": [
+        12921000000,
+        7897000000,
+        9019000000,
+        9833000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "bokföringsår juli–juni: serierna bär de fyra senaste AVSLUTADE räkenskapsåren FY2023–FY2026 (FY2026 slutade 30 juni 2026, rapporterat augusti 2026) — års-etiketterna är räkenskapsårets slutår, övriga universumsrader kalenderår; ADR-notering NYSE i USD med rapportvaluta USD (koncernredovisningen sedan 2019; primärnotering ASX i AUD); världens största gruvbolag (järnmalm, koppar, stenkol) — resultatets endpoint-CAGR −8,7 %/år mäts FRÅN cykeltoppen FY2023 (12,9 mdr) och speglar råvarucykeln, inte försvagad verksamhet (FY2026 9,8 mdr med +9 % tillväxt); bruttomarginal 85,9 % är gruvbranschens redovisningskonvention (depletion/utvinningskostnader ligger utanför kostnaden för sålda varor) — jämförs endast inom material-branschen; prognosTillvaxt härledd ur trailing/forward-P/E (21,84/16,72 ⇒ +30,6 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent = 0,71; endpoint-CAGR FY2023→FY2026: omsättning +3,0 %/år; fcfYield = fritt kassaflöde 11,52 mdr USD/börsvärde; utdelning 3,41 USD/ADR (4,02 % direktavkastning, payout 89,9 % av vinsten — gruvbolagets cykelutdelning) noted här då aterkop-fälten är null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "MELI",
+    "namn": "MercadoLibre",
+    "bransch": "tillvaxt",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/meli/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 1828.94,
+    "marknadsKapitalMdr": 92.72,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.3891,
+      "resultatCAGR5ar": 0.6061,
+      "omsattningTillvaxtTTM": 0.46,
+      "prognosTillvaxt": 0.1462
+    },
+    "lonksamhet": {
+      "roe": 0.275,
+      "roic": 0.142,
+      "bruttoMarginal": 0.4775,
+      "ebitMarginal": 0.0826,
+      "nettoMarginal": 0.053,
+      "fcfMarginal": 0.3527
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.69,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 49.77,
+      "pb": 11.84,
+      "evEbit": 34.46,
+      "peg": 3.4,
+      "fcfYield": 0.134,
+      "egenKapitalMultipl": 11.84
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        10780000000,
+        15107000000,
+        20777000000,
+        28893000000
+      ],
+      "resultat": [
+        482000000,
+        987000000,
+        1911000000,
+        1997000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Delaware-bolag med hela verksamheten i Latinamerika (e-handel + logistik + betalningar Mercado Pago + kredit Mercado Crédito) — land-fältet följer registreringsland enligt universumets konvention; latinamerikansk motsvarighet till Amazon+ PayPal i ett bolag; skuld/EK 1,69 inkluderar utlåningsboken i Mercado Crédito (finansiell verksamhet bredvid e-handeln — balansräkningsvolym, inte ren operativ hävstång); marginalgapet (netto 5,3 % men FCF 35,3 %) hänger ihop med fintech-grenen: kreditbokens rörelser och provisionering träffar resultat och kassaflöde olika — marginalerna läses ihop, inte var för sig; prognosTillvaxt härledd ur trailing/forward-P/E (49,77/43,42 ⇒ +14,6 % implicit EPS-tillväxt +1 år — kort horisont; källans 3-årsprognos på intäktssidan är +32 %/år); peg = P/E/prognostillväxt i procent = 3,40 — högt pga att vinstprognosen (vinst-multipeln normaliseras) växer långsammare än intäkterna; endpoint-CAGR 2022→2025: omsättning +38,9 %/år (fyra raka år ~+37–52 %), resultat +60,6 %/år från låga basen 2022 (marginaluppbyggnad); fcfYield = fritt kassaflöde 12,41 mdr USD/börsvärde; ingen utdelning — kvarhållet kapital för kreditbok och expansion (tillväxtbranschens mönster); TTM-vinden 2026 bär intäkt +46 % men resultat −9 % (kreditförlustnivåer stiger med boktillväxten)"
+  },
+  {
+    "ticker": "AMZN",
+    "namn": "Amazon.com, Inc.",
+    "bransch": "teknik",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/amzn/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-16, kurs close 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 248.42,
+    "marknadsKapitalMdr": 2680,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1173,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.158,
+      "prognosTillvaxt": -0.255
+    },
+    "lonksamhet": {
+      "roe": 0.3056,
+      "roic": 0.1194,
+      "bruttoMarginal": 0.5077,
+      "ebitMarginal": 0.1208,
+      "nettoMarginal": 0.1744,
+      "fcfMarginal": -0.015
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.46,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 20.39,
+      "pb": 4.96,
+      "evEbit": 29.97,
+      "peg": null,
+      "fcfYield": -0.0043,
+      "egenKapitalMultipl": 4.96
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        513983000000,
+        574785000000,
+        637959000000,
+        716924000000
+      ],
+      "resultat": [
+        -2722000000,
+        30425000000,
+        59248000000,
+        77670000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "rapportvaluta USD (NASDAQ); prognosTillvaxt härledd ur trailing/forward-P/E (20,39/27,37 ⇒ −25,5 % implicit EPS-förändring — TTM-vinsten 135,3 mdr USD (+91,6 %) bär tillfälliga poster medan framåtblickande estimat normaliserar; ej underliggande volymtillväxt, källans 3-årsprognos är +8,7 %); peg osatt — negativ implicit EPS-förändring gör spårkonventionens P/E ÷ prognos-mått meningslöst (källans egen PEG 1,32); resultatCAGR osatt: negativt startvärde 2022 (−2 722 MUSD, Rivian-nedskrivningar) gör endpoint-metoden meningslös; omsättningCAGR endpoint 2022–2025 (4 räkenskapsår); FCF negativt TTM (−11,6 mdr USD: OCF 161,4 − capex 173,0 — AI-infrastrukturprogrammet) ⇒ fcfMarginal/fcfYield negativa; räntetäckning 28,13 (fältet systematiskt osatt i universumet, värdet dokumenteras här); ingen utdelning — aterkop null enligt plattformskonventionen"
   }
 ]

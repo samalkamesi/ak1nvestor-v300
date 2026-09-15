@@ -10098,5 +10098,175 @@
       "fcf": []
     },
     "notering": "allt i SEK (rapportvaluta = noteringsvaluta); dagligvaruhandel — tunna marginaler (brutto 14,8 %, EBIT 4,1 %, netto 2,7 %) och högt P/B (7,5) är branschnormala (stor omsättningsvolym per krona eget kapital, blandat med ICA-butikernas struktur); skuld/EK 2,24 inkluderar leaseingåenden enligt IFRS 16 — balansräkningsbilden för butiksbestånd, inte nettoskuld i traditionell mening; ROE 36,3 % bärs upp av den små egna kapitalbasen; prognosTillvaxt härledd ur trailing/forward-P/E (21,93/20,24 ⇒ +8,4 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent = 2,63 ( defensiv lågtillväxtaktie ger högt PEG — pedagogisk kontrast i konsument-medianen); endpoint-CAGR 2022→2025: omsättning +6,7 %/år, resultat −0,3 %/år; fcfYield = fritt kassaflöde 4,37 mdr/börsvärde; utdelning 9,00 SEK/aktie (direktavkastning 3,70 %) noted här då aterkop-fälten är null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "ROG.SW",
+    "namn": "Roche Holding AG",
+    "bransch": "halso",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/swx/ROG/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 360.6,
+    "marknadsKapitalMdr": 288.7,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0126,
+      "resultatCAGR5ar": 0.0122,
+      "omsattningTillvaxtTTM": -0.008,
+      "prognosTillvaxt": 0.3841
+    },
+    "lonksamhet": {
+      "roe": 0.3811,
+      "roic": 0.281,
+      "bruttoMarginal": 0.7417,
+      "ebitMarginal": 0.3312,
+      "nettoMarginal": 0.196,
+      "fcfMarginal": 0.2501
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.91,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 23.57,
+      "pb": 7.86,
+      "evEbit": 15.19,
+      "peg": 0.61,
+      "fcfYield": 0.0546,
+      "egenKapitalMultipl": 7.86
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        65814000000,
+        60441000000,
+        62395000000,
+        63356000000
+      ],
+      "resultat": [
+        12421000000,
+        11498000000,
+        8277000000,
+        12880000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i CHF; prognosTillvaxt härledd ur trailing/forward-P/E (23,57/17,03 ⇒ +38,4 % implicit EPS-förändring — speglar att TTM-vinsten är återhållsam medan framåtblickande estimat är högre, ej underliggande volymtillväxt); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 2,31 bygger på 3-årsprognos EPS +6,61 %); CAGR endpoint över 4 räkenskapsår (2022–2025): 2024-resultatet 8,3 mdr deponerat (IAS-omräkningar/pengar hem från USA efter skatteövergång), 2025: +55,6 % — ej ren driftstrend; räntetäckning 18,24 (fältet systematiskt osatt i universumet, värdet dokumenteras här); utdelning 9,80 CHF/aktie med 28 räkenskapsår av ökningar (yield 2,78 %) — aterkop-fält null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "NESN.SW",
+    "namn": "Nestlé S.A.",
+    "bransch": "konsument",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/swx/NESN/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 77.89,
+    "marknadsKapitalMdr": 203.72,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0175,
+      "resultatCAGR5ar": -0.0086,
+      "omsattningTillvaxtTTM": -0.023,
+      "prognosTillvaxt": 0.6074
+    },
+    "lonksamhet": {
+      "roe": 0.2624,
+      "roic": 0.123,
+      "bruttoMarginal": 0.457,
+      "ebitMarginal": 0.1548,
+      "nettoMarginal": 0.0838,
+      "fcfMarginal": 0.141
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.13,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 27.39,
+      "pb": 6.9,
+      "evEbit": 17.74,
+      "peg": 0.45,
+      "fcfYield": 0.0614,
+      "egenKapitalMultipl": 6.9
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        94780000000,
+        93351000000,
+        91720000000,
+        89885000000
+      ],
+      "resultat": [
+        9270000000,
+        11209000000,
+        10884000000,
+        9033000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i CHF; prognosTillvaxt härledd ur trailing/forward-P/E (27,39/17,04 ⇒ +60,7 % implicit EPS-förändring — TTM-vinsten 7,4 mdr är deprimerad av nedskrivningar, framåtblickande estimat normaliserar; ej underliggande volymtillväxt, källans 3-årsprognos är +4,89 %); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 3,62); payout 107 % av TTM-vinsten — utdelningen 3,10 CHF/aktie täcks av FCF (12,5 mdr) men ej av vinsten; CAGR endpoint över 4 räkenskapsår (2022–2025); räntetäckning 8,51 (fältet systematiskt osatt i universumet, värdet dokumenteras här); omsättningstillväxten negativ fyra år i rad i rapporterade tal — prismakt delvis kompenseras av valutor/avyttringar"
   }
 ]

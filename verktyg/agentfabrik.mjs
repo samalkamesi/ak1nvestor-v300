@@ -49,6 +49,20 @@
  *       daemonen ropar fabriken var 10:e minut (":x5") — det är den
  *       reservkedja som återupptar avbrutna manifest UTAN att omköra klara
  *       uppgifter (idempotens via statusfilens klara-lista).
+ *   (d) MEKANISK KVALITETSGRIND (mega g7 — styrelsens beslut punkt 8,
+ *       2026-09-15): en uppgift bokförs KLAR endast om (a) kvitto-raden
+ *       "LEVERANS:" finns i barnets utdata, (b) en commit med rätt prefix
+ *       (default "studio:", manifest.commitPrefix kan överstyra) gjordes
+ *       under körningsfönstret (git log <före>..HEAD), och (c) kod-
+ *       valideringen ger 0 NYA fel — preferens verktyg/validera-kod.mjs
+ *       (om den finns), annars tsc-baslinjen `npx tsc --noEmit` i
+ *       AK1-trädet; baslinjen är mekaniskt 0 (pre-commit-hook sedan våg
+ *       138) ⇒ varje fel är ett NYTT fel. Tung tsc körs ENDAST om
+ *       uppgiften rörde src/ — manifestets filer avgör (rorSrc).
+ *       Underkänns uppgiften: status "underkänd" + OMSTART EXAKT EN
+ *       gång; andra underkänningen är slutgiltig (hoppas över vid
+ *       återupptagning). Tunga kontroller körs SERIELLT (in-process
+ *       kedja) — aldrig 3 parallella tsc på 8 GB-servern.
  *
  *   --torr = TORRKÖRNING: skriver ut allt som SKULLE göras (auto-manifest,
  *   valideringsvarningar, omgångsplan, kedjebeslut) men föder inga barn,
@@ -92,6 +106,12 @@ const AUTO_TAK_MS = 30 * 60_000; // (a) max ett auto-manifest per 30 min
 const AUTO_UPPGIFTER = 3; // (a) ett auto-manifest = en omgång
 const TIMEOUT_MS = 25 * 60_000; // 25 min per uppgift
 const LOGG_TAK = 256 * 1024; // utdata-logg kapas här (disk-takt)
+
+// (d) Mekanisk kvalitetsgrind (mega g7 — styrelsens beslut punkt 8, 2026-09-15)
+const GRIND_PREFIX = "studio:"; // rätt commit-prefix (manifest.commitPrefix överstyrbar)
+const VALIDERARE = path.join(ROT, "verktyg", "validera-kod.mjs"); // preferens OM den finns
+const VALIDERING_TIMEOUT_MS = 5 * 60_000; // tsc på AK1-trädet ~1-2 min — marginal
+const GRIND_OMSTARTER = 1; // exakt EN omstart vid underkänning (styrelsens beslut)
 
 const ROLLER = ["byggare", "granskare", "vakt"];
 const ROLLRADER = {
@@ -151,6 +171,152 @@ function gitTopp() {
   } catch {
     return "?";
   }
+}
+
+// ── FABRIK 2.0 (d): mekanisk kvalitetsgrind (mega g7) ─────────────────────────
+
+/** Full HEAD-hash — grindens commit-fönster före/efter barnkörningen. */
+function gitHash() {
+  try {
+    return execSync("git rev-parse HEAD", { cwd: ROT, timeout: 10_000 }).toString().trim();
+  } catch {
+    return "?";
+  }
+}
+
+/**
+ * Rörde uppgiften src/? Manifestets FILER avgör (primärt); saknas filer
+ * fångar prompt-fallback konkreta src/-sökvägar. Prefixradens regeltext
+ * "src/ ENDAST via Write/Edit" matchar AVSIKTLIGT inte (mellanslag efter
+ * "src/"), så en prompt som bara citerar reglerna triggar inte tung tsc.
+ */
+function rorSrc(uppgift) {
+  const filer = Array.isArray(uppgift.filer) ? uppgift.filer.map(String) : [];
+  if (filer.some((f) => f.replace(/^\.\//, "").startsWith("src/"))) return true;
+  return (
+    filer.length === 0 && /(?:^|[\s`"'(])src\/[A-Za-z0-9_*.-]/.test(String(uppgift.prompt ?? ""))
+  );
+}
+
+/**
+ * Tung kodvalidering — ALLTID seriellt via in-process kedja: tre parallella
+ * tsc på 8 GB-servern är RAM-döden i ny tappning (våg 146). Preferens
+ * verktyg/validera-kod.mjs (dess exit-kod äger tolkningen "0 NYA fel");
+ * annars tsc-baslinjen — baslinjen är mekaniskt 0 (pre-commit-hook sedan
+ * våg 138 blockerar varje commit med tsc-fel) ⇒ varje fel är ett NYTT fel.
+ */
+let valideringsKedja = Promise.resolve();
+function korValideringSeriellt() {
+  const jobb = valideringsKedja.then(() => korValidering());
+  valideringsKedja = jobb.catch(() => null); // kedjan får aldrig brytas av ett fel
+  return jobb;
+}
+function korValidering() {
+  // TYPESCRIPT-BINÄREN DIREKT (node …/bin/tsc) är robustare än npx: mitt i
+  // en pågående npm ci kan node_modules/.bin sakna länkar och npx löser då
+  // "tsc" till dummy-paketet (bevisat 2026-09-15 04:57 — deployfönster).
+  const tscBin = path.join(ROT, "node_modules", "typescript", "bin", "tsc");
+  const kommando = existsSync(VALIDERARE)
+    ? `node "${VALIDERARE}"`
+    : existsSync(tscBin)
+      ? `node "${tscBin}" --noEmit`
+      : "npx tsc --noEmit";
+  try {
+    execSync(kommando, { cwd: ROT, timeout: VALIDERING_TIMEOUT_MS, maxBuffer: 8 * 1024 * 1024 });
+    return { godkand: true, kommando };
+  } catch (e) {
+    const ut = `${e.stdout?.toString() ?? ""}${e.stderr?.toString() ?? ""}`;
+    // "error TSxxxx" = tsc KORDE och hittade typfel; annat (dummy-npx,
+    // ENOENT, OOM, avbruten npm ci) = valideringen kunde inte köras —
+    // miljöfel, inte barnets kod. Omstarten (en gång) är retryn.
+    const typfel = /error TS\d+/.test(ut);
+    return {
+      godkand: false,
+      kommando,
+      orsak: e.killed
+        ? `validering TIMEOUT efter ${VALIDERING_TIMEOUT_MS / 60000} min`
+        : typfel
+          ? "validering: typfel finns (kravet är 0 nya fel)"
+          : "validering OTILLGÄNGLIG — kunde inte köras (miljö-/deploy-fönster?), ej barnets kod",
+      detalj: ut.split("\n").filter(Boolean).slice(0, 6).join(" | ").slice(0, 400),
+    };
+  }
+}
+
+/**
+ * Själva grindsutvärderingen — en uppgift bokförs klar ENDAST om:
+ *   (a) kvitto-raden "LEVERANS:" finns i barnets utdata,
+ *   (b) en commit med rätt prefix gjordes under körningsfönstret
+ *       (git log <före>..HEAD; prefixmatchning på ämnesraden),
+ *   (c) kodvalideringen ger 0 nya fel — tung kontroll ENDAST om
+ *       uppgiften rörde src/ (manifestets filer avgör, se rorSrc).
+ * Annars: underkänd + omstart en gång (se korUppgiftMedGrind).
+ *
+ * Känd gräns (dokumenterad, accepterad): parallella barn i samma omgång
+ * delar commit-fönster — barn B kan formellt bevisas av barn A:s commit.
+ * Grinden är mekanisk miniminivå (prefix + fönster), inte attribuering
+ * per fil; filägarskapet sköts av manifest-valideringen (2.0b).
+ */
+async function utvarderaGrind(manifest, uppgift, fore, leveransRad) {
+  const orsaker = [];
+  const prefix =
+    typeof manifest.commitPrefix === "string" && manifest.commitPrefix.trim()
+      ? manifest.commitPrefix.trim()
+      : GRIND_PREFIX;
+  if (!leveransRad) orsaker.push("(a) kvitto-raden 'LEVERANS:' saknas i utdata");
+  let commitBevis = false;
+  if (fore === "?") {
+    orsaker.push("(b) git-basen före körningen kunde inte läsas — commit kan inte bevisas");
+  } else {
+    try {
+      const nu = gitHash();
+      if (nu === fore) {
+        orsaker.push(`(b) ingen ny commit under körningen (HEAD oförändrad ${fore.slice(0, 8)})`);
+      } else {
+        const amnen = execSync(`git log ${fore}..${nu} --format=%s`, { cwd: ROT, timeout: 10_000 })
+          .toString()
+          .split("\n")
+          .filter(Boolean);
+        commitBevis = amnen.some((amne) => amne.startsWith(prefix));
+        if (!commitBevis) {
+          orsaker.push(
+            `(b) ingen commit med prefix "${prefix}" i ${fore.slice(0, 8)}..${nu.slice(0, 8)} (ämnen: ${
+              amnen.slice(0, 3).join(" | ").slice(0, 140) || "ingen"
+            })`,
+          );
+        }
+      }
+    } catch (e) {
+      orsaker.push(`(b) git log kunde inte läsas: ${String(e).slice(0, 100)}`);
+    }
+  }
+  let validering = {
+    godkand: true,
+    kommando: null,
+    notering: "tung validering hoppades över — uppgiften rörde ej src/",
+  };
+  const berorSrc = rorSrc(uppgift);
+  if (berorSrc) {
+    validering = await korValideringSeriellt();
+    if (!validering.godkand) {
+      orsaker.push(`(c) ${validering.orsak}${validering.detalj ? ` — ${validering.detalj}` : ""}`);
+    }
+  }
+  return {
+    godkand: orsaker.length === 0,
+    kontroller: {
+      kvitto: Boolean(leveransRad),
+      commit: commitBevis,
+      prefix,
+      rorSrc: berorSrc,
+      validering: {
+        godkand: validering.godkand,
+        kommando: validering.kommando ?? null,
+        notering: validering.notering ?? null,
+      },
+    },
+    orsaker,
+  };
 }
 
 // ── FABRIK 2.0 (a): evighetskatalogen → auto-manifest ─────────────────────────
@@ -407,6 +573,54 @@ function korUppgift(manifestId, uppgift, vidKlar) {
   });
 }
 
+/**
+ * (d) korUppgift + MEKANISK KVALITETSGRIND: bokförd klar ENDAST vid
+ * godkänd grind (a+b+c, se utvarderaGrind). Underkänns uppgiften:
+ * status "underkänd" + OMSTART EXAKT EN gång (GRIND_OMSTARTER); andra
+ * underkänningen är SLUTGILTIG och hoppas över vid återupptagning
+ * (se slutgiltigtUnderkända i huvud()).
+ *
+ * ROND 25 bevaras: klar-bokföringen sker fortfarande i korUppgifts
+ * close-handlere (per uppgift, överlever omgångsdöd); underkänningen
+ * plockar UR klara och skriver statusfilen direkt efter grinds-
+ * utvärderingen — dog fabriken under den tunga valideringen står
+ * underkänningen kvar i statusfilen, inget falskt "klar" lever kvar.
+ */
+async function korUppgiftMedGrind(manifest, uppgift, boka) {
+  // Fabriksdöd efter en underkänning men före omstarten: omstart-raden
+  // (omstart: true) i statusfilen betyder att försök 1 redan förbrukats —
+  // återupptagningen kör EXAKT det sista försöket, aldrig ett tredje.
+  const omstartForbrukad = boka.lasUnderkanda().some((u) => u.id === uppgift.id && u.omstart);
+  const startForsok = omstartForbrukad ? 2 : 1;
+  const maxForsok = omstartForbrukad ? 2 : 1 + GRIND_OMSTARTER;
+  let resultat = null;
+  for (let forsok = startForsok; forsok <= maxForsok; forsok++) {
+    const fore = gitHash();
+    resultat = await korUppgift(manifest.id, uppgift, (r) => boka.klar({ ...r, forsok }));
+    const grind = await utvarderaGrind(manifest, uppgift, fore, resultat.leverans);
+    logga(
+      `grind ${manifest.id}/${uppgift.id} (försök ${forsok}/${maxForsok}): ${
+        grind.godkand ? "GODKÄND" : `UNDERKÄND — ${grind.orsaker.join("; ").slice(0, 200)}`
+      }`,
+    );
+    loggrad({
+      händelse: "grind",
+      manifest: manifest.id,
+      uppgift: uppgift.id,
+      forsok,
+      maxForsok,
+      godkand: grind.godkand,
+      orsaker: grind.orsaker,
+    });
+    if (grind.godkand) {
+      boka.rmUnderkand(uppgift.id); // godkänd omstart ⇒ underkänd-raden städas
+      return { ...resultat, forsok, grind: "godkänd" };
+    }
+    boka.underkand(uppgift.id, forsok, grind.orsaker, forsok < maxForsok);
+  }
+  return { ...resultat, underkänd: true, grind: "underkänd" };
+}
+
 /** Statusfilen — agentens fönster in i fabriken. */
 function skrivStatus(manifest, status) {
   mkdirSync(STATUS, { recursive: true });
@@ -537,7 +751,15 @@ async function huvud() {
   const redanKlara = new Set(
     Array.isArray(sparadStatus?.klara) ? sparadStatus.klara.map((r) => r.id) : [],
   );
-  const köade = manifest.uppgifter.filter((u) => !redanKlara.has(u.id));
+  // (d) slutgiltigt underkända (omstarten förbrukad) hoppas också över —
+  // omstart sker EXAKT en gång, aldrig en tredje körning vid återupptagning.
+  const underkandaSparade = Array.isArray(sparadStatus?.underkända) ? sparadStatus.underkända : [];
+  const slutgiltigtUnderkända = new Set(
+    underkandaSparade.filter((u) => u && typeof u.id === "string" && !u.omstart).map((u) => u.id),
+  );
+  const köade = manifest.uppgifter.filter(
+    (u) => !redanKlara.has(u.id) && !slutgiltigtUnderkända.has(u.id),
+  );
 
   // ── torrkörning: skriv planen, rör inget ──
   if (TORR) {
@@ -545,6 +767,9 @@ async function huvud() {
       `SKULLE bearbeta ${manifest.id} — ${manifest.uppgifter.length} uppgifter (${redanKlara.size} redan klara hoppas över, ${köade.length} köade)`,
     );
     torrLogga(`validering: ${varningar.length} varningar (se ovan; roller normaliserade till ${ROLLER.join("|")})`);
+    torrLogga(
+      `grind (d): varje uppgift kräver LEVERANS-kvititto + "${manifest.commitPrefix?.trim() || GRIND_PREFIX}"-commit i körningsfönstret + kodvalidering 0 nya fel (tung tsc ENDAST om uppgiften rörde src/); underkänning ⇒ omstart exakt ${GRIND_OMSTARTER} gång${GRIND_OMSTARTER === 1 ? "" : "er"}`,
+    );
     torrLogga(`RAM just nu: ${ramTillgangligtMB() ?? "?"} MB (vägra-gräns ${RAM_TAK_MB}, kedje-gräns ${RAM_KEDJA_MB})`);
     const plan = [...köade];
     let n = 1;
@@ -570,11 +795,34 @@ async function huvud() {
     status: "pågår",
     totalt: manifest.uppgifter.length,
     klara: sparadStatus?.klara ?? [],
+    underkända: underkandaSparade, // (d) grindens fallerade försök (omstart=true ⇒ ej slutgiltig)
     // 2.0b: synliggör roller + deklarerat filägarskap i agentens statusfönster
     uppgiftsinfo: manifest.uppgifter.map((u) => ({ id: u.id, roll: u.roll, filer: u.filer.length })),
     uppgiftLoggar: manifest.uppgifter.map((u) => `utdata/${manifest.id}-${u.id}.log`),
   };
   skrivStatus(manifest, status);
+
+  // (d) bokförings-gränssnittet mot korUppgiftMedGrind — per uppgift +
+  // direkt statusskrivning (ROND 25: bokföringen överlever omgångsdöd).
+  const boka = {
+    klar(r) {
+      status.klara.push(r);
+      skrivStatus(manifest, status);
+    },
+    underkand(id, forsok, orsaker, omstart) {
+      status.klara = status.klara.filter((r) => r.id !== id);
+      status.underkända = status.underkända.filter((u) => u.id !== id);
+      status.underkända.push({ id, forsok, orsaker, omstart, ts: stämpel() });
+      skrivStatus(manifest, status);
+    },
+    rmUnderkand(id) {
+      status.underkända = status.underkända.filter((u) => u.id !== id);
+      skrivStatus(manifest, status);
+    },
+    lasUnderkanda() {
+      return status.underkända;
+    },
+  };
 
   // Omgångar om PARALLELL_TAK — RAM-vakt före VARJE omgång (aldrig blint).
   const gitFore = gitTopp();
@@ -590,19 +838,21 @@ async function huvud() {
     }
     const omgång = köade.splice(0, PARALLELL_TAK);
     logga(`omgång: ${omgång.map((u) => u.id).join(", ")} (ram ${ram ?? "?"} MB)`);
-    // ROND 25: vidKlar bokför varje avslutad uppgift direkt i statusfilen —
-    // dog fabriken mitt i omgången plockar återupptagningen upp alla klara.
-    const resultat = await Promise.all(
-      omgång.map((u) =>
-        korUppgift(manifest.id, u, (r) => {
-          status.klara.push(r);
-          skrivStatus(manifest, status);
-        }),
-      ),
-    );
+    // ROND 25 + (d): varje uppgift genom MEKANISK KVALITETSGRIND — klar
+    // bokförs ENDAST vid godkänd grind; underkänning ⇒ omstart en gång.
+    const resultat = await Promise.all(omgång.map((u) => korUppgiftMedGrind(manifest, u, boka)));
     skrivStatus(manifest, status); // säkerhetsnät om en vidKlar svalt ett fel
     for (const r of resultat) {
-      loggrad({ händelse: "uppgift-klar", manifest: manifest.id, ...r });
+      loggrad({
+        händelse: r.underkänd ? "uppgift-underkänd" : "uppgift-klar",
+        manifest: manifest.id,
+        id: r.id,
+        kod: r.kod,
+        sekunder: r.sekunder,
+        leverans: r.leverans,
+        forsok: r.forsok,
+        grind: r.grind ?? "godkänd",
+      });
     }
 
     // ── FABRIK 2.0 (c): auto-kedjning — nästa omgång DIREKT om RAM tillåter.
@@ -624,19 +874,25 @@ async function huvud() {
     }
   }
 
-  status.status = "klar";
+  status.status = "klar"; // (d) kontraktet med läsaren består ("klar" = manifestet är avslutat); underkända uppgifter syns i fältet underkända
   status.slutad = stämpel();
   status.gitFore = gitFore;
   status.gitEfter = gitTopp();
   skrivStatus(manifest, status);
   renameSync(manifestSökväg, path.join(KLARA, `${manifest.id}.json`));
+  const underkändaAntal = status.underkända.filter((u) => !u.omstart).length;
   loggrad({
     händelse: "manifest-klar",
     manifest: manifest.id,
     uppgifter: status.totalt,
     levererade: status.klara.filter((r) => r.leverans).length,
+    underkända: underkändaAntal,
   });
-  logga(`manifest ${manifest.id} KLART — ${status.klara.length}/${status.totalt} uppgifter`);
+  logga(
+    `manifest ${manifest.id} KLART — ${status.klara.length}/${status.totalt} uppgifter${
+      underkändaAntal > 0 ? ` (${underkändaAntal} slutgiltigt underkända — se underkända i statusfilen)` : ""
+    }`,
+  );
 }
 
 if (!taLås()) {

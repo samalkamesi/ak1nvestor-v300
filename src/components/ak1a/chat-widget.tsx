@@ -30,6 +30,10 @@ import { svaraLokaltExtra } from "@/lib/ai-mentor-extra-fragor";
 // Spår 6 omgång 2 (s6-u1): +2 makroförhandsfrågor (ränta, inflation) —
 // makro-mönstren prövas först; kärnorden disjunkta mot båda underliggande lager
 import { svaraLokaltMakro } from "@/lib/ai-mentor-makro-fragor";
+// Spår 6 omgång 3 (s6-u3 nästa): +3 förhandsfrågor (värdering/DCF,
+// investmentbolag/NAV, options) — prövas SIST och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkta ur kursregistret
+import { svaraLokaltNasta } from "@/lib/ai-mentor-nasta-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -733,7 +737,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

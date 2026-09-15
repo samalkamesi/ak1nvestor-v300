@@ -145,28 +145,28 @@ export function CookieConsent() {
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <button
                 onClick={() => valdOchStang(true, true)}
-                className="btn-marin px-3 py-2 text-xs"
+                className="btn-marin px-3 py-2 text-xs max-md:min-h-[52px]!"
               >
                 Godkänn alla
               </button>
               {oppnaInstallningar ? (
                 <button
                   onClick={() => valdOchStang(analys, preferenser)}
-                  className="rounded-lg border border-gold/50 px-3 py-2 text-xs font-semibold text-[#E8C766] hover:bg-gold/10"
+                  className="rounded-lg border border-gold/50 px-3 py-2 text-xs font-semibold text-[#E8C766] hover:bg-gold/10 max-md:min-h-[52px]!"
                 >
                   Spara mitt val
                 </button>
               ) : (
                 <button
                   onClick={() => setOppnaInstallningar(true)}
-                  className="rounded-lg border border-gold/50 px-3 py-2 text-xs font-semibold text-[#E8C766] hover:bg-gold/10"
+                  className="rounded-lg border border-gold/50 px-3 py-2 text-xs font-semibold text-[#E8C766] hover:bg-gold/10 max-md:min-h-[52px]!"
                 >
                   Inställningar
                 </button>
               )}
               <button
                 onClick={() => valdOchStang(false, false)}
-                className="rounded-lg px-3 py-2 text-xs font-semibold text-[#EDE6D6]/75 underline hover:text-[#EDE6D6]"
+                className="rounded-lg px-3 py-2 text-xs font-semibold text-[#EDE6D6]/75 underline hover:text-[#EDE6D6] max-md:min-h-[52px]!"
               >
                 Endast nödvändiga
               </button>

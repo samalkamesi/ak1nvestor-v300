@@ -9758,5 +9758,515 @@
       "fcf": []
     },
     "notering": "serier i EUR; prognosTillvaxt härledd ur trailing/forward-P/E (16,20/12,04 ⇒ +34,6 % implicit EPS-tillväxt); peg = P/E/prognostillväxt i procent enligt TTE-konventionen (källans egen PEG 0,85 bygger på 3-årsprognos +11,5 %); resultatCAGR endpoint över 4 räkenskapsår (2022–2025): 2023 förstärkt av engångsposter — ej driftstrend; fcfYield 20,85 % inkluderar T-Mobile USA-konsolidering (källans tal); ROE/ROIC/marginaler ur källans statistics-sida; CAGR över 4 räkenskapsår (3 perioder)"
+  },
+  {
+    "ticker": "VNA.DE",
+    "namn": "Vonovia SE",
+    "bransch": "fastighet",
+    "land": "Tyskland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/etr/VNA/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 17.98,
+    "marknadsKapitalMdr": 15.25,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0691,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": -0.2264,
+      "prognosTillvaxt": -0.5678
+    },
+    "lonksamhet": {
+      "roe": 0.1456,
+      "roic": 0.0307,
+      "bruttoMarginal": 0.6085,
+      "ebitMarginal": 0.3841,
+      "nettoMarginal": 0.6484,
+      "fcfMarginal": 0.0097
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.35,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 4.21,
+      "pb": 0.48,
+      "evEbit": 26.7,
+      "peg": null,
+      "fcfYield": 0.0038,
+      "egenKapitalMultipl": 0.48
+    },
+    "golv": {
+      "typ": "tillgangstung",
+      "vardePerAktie": 32.12,
+      "marginal": 0.4402
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        8289000000,
+        6021000000,
+        7027000000,
+        6686000000
+      ],
+      "resultat": [
+        -643800000,
+        -6285000000,
+        -896000000,
+        3723000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i EUR; prognosTillvaxt härledd ur trailing/forward-P/E (4,21/9,74 ⇒ −56,8 % implicit EPS-förändring — 2025-resultatet bär stora engångsvinster från fastighetsvärderingar, vilket forward-P/E värderar bort); peg osatt vid negativ implicit tillväxt (ORSTED-konventionen — källans egen 3-årsprognos är +0,41 % EPS); resultatCAGR5ar osatt: negativt startvärde 2022 (−643,8 mdr EUR) gör endpoint-metoden meningslös — 2022–2024 negativa resultat på nedskrivningar/räntor, 2025 vändning till +3 723 mdr; brutto-/EBIT-/nettomarginal samt ROE/ROIC ur källans statistics-sida (nettomarginalen 64,8 % är TTM och speglar engångsvinster — ej driftsnivå); fcfMarginal 0,97 % (källans FCF 57,9 mdr EUR — underhåll och utbyggnad äter kassaflödet); skuld/EK 1,35 och Debt/EBITDA 17,3 speglar fastighetsbolagets högbelånade balansräkning; golv = källans Book Value Per Share 32,12 (marginal 44 % under bokfört — notera att källans egen P/B 0,48 bygger på annat ekvitetsmått); CAGR över 4 räkenskapsår (3 perioder)"
+  },
+  {
+    "ticker": "VOLV-B.ST",
+    "namn": "AB Volvo (publ)",
+    "bransch": "industri",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/sto/VOLV.B/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 330.2,
+    "marknadsKapitalMdr": 671.71,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.004,
+      "resultatCAGR5ar": 0.0174,
+      "omsattningTillvaxtTTM": -0.0571,
+      "prognosTillvaxt": 0.4069
+    },
+    "lonksamhet": {
+      "roe": 0.2088,
+      "roic": 0.0935,
+      "bruttoMarginal": 0.2436,
+      "ebitMarginal": 0.1038,
+      "nettoMarginal": 0.076,
+      "fcfMarginal": 0.069
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.47,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 18.74,
+      "pb": 3.8,
+      "evEbit": 18.53,
+      "peg": 0.46,
+      "fcfYield": 0.0485,
+      "egenKapitalMultipl": 3.8
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        473479000000,
+        552252000000,
+        526816000000,
+        479183000000
+      ],
+      "resultat": [
+        32722000000,
+        49825000000,
+        50389000000,
+        34456000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "allt i SEK (rapportvaluta = noteringsvaluta); lastbils-/maskinkoncern — skuld/EK 1,47 inkluderar kundfinansieringsverksamheten (Volvo Financial Services) med tillhörande balansräkningsvolym, inte ren industriell hävstång; prognosTillvaxt härledd ur trailing/forward-P/E (18,74/13,32 ⇒ +40,7 % implicit EPS-tillväxt +1 år — speglar vinstnormalisering efter det försvagade räkenskapsåret 2025, inte organisk volymtillväxt); endpoint-CAGR 2022→2025: omsättning +0,4 %/år (toppen 2023), resultat +1,7 %/år; peg = P/E/prognostillväxt i procent; fcfYield = fritt kassaflöde 32,55 mdr/börsvärde; utdelning 13,00 SEK/aktie (direktavkastning 3,84 %) noted här då aterkop-fälten är null enligt plattformskonventionen; universumets andra Volvo-rad (VOLCAR-B.ST, konsument) är bil­tillverkaren Volvo Car — separat bolag, ingen dubletträkningsrisk i medianerna (olika branscher)"
+  },
+  {
+    "ticker": "EQT.ST",
+    "namn": "EQT AB (publ)",
+    "bransch": "finans",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/sto/eqt/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 302.6,
+    "marknadsKapitalMdr": 360.15,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.2069,
+      "resultatCAGR5ar": 0.6041,
+      "omsattningTillvaxtTTM": 0.128,
+      "prognosTillvaxt": 0.6854
+    },
+    "lonksamhet": {
+      "roe": 0.139,
+      "roic": 0.3,
+      "bruttoMarginal": 0.6913,
+      "ebitMarginal": 0.4511,
+      "nettoMarginal": 0.3519,
+      "fcfMarginal": 0.4093
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.34,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 31.23,
+      "pb": 4.21,
+      "evEbit": 21.41,
+      "peg": 0.46,
+      "fcfYield": 0.038,
+      "egenKapitalMultipl": 4.21
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1497000000,
+        2122000000,
+        2653000000,
+        2632000000
+      ],
+      "resultat": [
+        176300000,
+        167900000,
+        776300000,
+        727800000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i EUR (bolagets rapportvaluta — Nasdaq Stockholm-notering i SEK; CAGR opåverkad av valuta, nivåer ej i SEK); kapitalförvaltningsbolag: nettoresultatet inkluderar orealiserade realisationsvinster på portföljbolag — marginalerna (netto 35,2 %) speglar utfallsstyrda resultat, inte återkommande kassaflöde, och jämförs bäst inom branschens förvaltningsbolag (LATO/INVE); prognosTillvaxt härledd ur trailing/forward-P/E (31,23/18,53 ⇒ +68,5 % implicit EPS-tillväxt +1 år — exit-timing gör vinstserien svängig, forward speglar normalisering); peg = P/E/prognostillväxt i procent enligt universumets konvention = 0,46 — källans egen PEG 0,77 bygger på 3-årsprognos (EPS +20,9 %/år) och redovisas här som not; endpoint-CAGR 2022→2025: omsättning +20,7 %/år, resultat +60,4 %/år från bottenåret 2022; fcfYield = fritt kassaflöde 13,70 mdr SEK/börsvärde"
+  },
+  {
+    "ticker": "AXFO.ST",
+    "namn": "Axfood AB (publ)",
+    "bransch": "konsument",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/sto/AXFO/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 249.9,
+    "marknadsKapitalMdr": 53.13,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0666,
+      "resultatCAGR5ar": -0.003,
+      "omsattningTillvaxtTTM": 0.0359,
+      "prognosTillvaxt": 0.0835
+    },
+    "lonksamhet": {
+      "roe": 0.3626,
+      "roic": 0.1302,
+      "bruttoMarginal": 0.1475,
+      "ebitMarginal": 0.0413,
+      "nettoMarginal": 0.027,
+      "fcfMarginal": 0.0486
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.24,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 21.93,
+      "pb": 7.51,
+      "evEbit": 18.75,
+      "peg": 2.63,
+      "fcfYield": 0.0822,
+      "egenKapitalMultipl": 7.51
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        73474000000,
+        81111000000,
+        84057000000,
+        89152000000
+      ],
+      "resultat": [
+        2360000000,
+        2357000000,
+        2192000000,
+        2339000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "allt i SEK (rapportvaluta = noteringsvaluta); dagligvaruhandel — tunna marginaler (brutto 14,8 %, EBIT 4,1 %, netto 2,7 %) och högt P/B (7,5) är branschnormala (stor omsättningsvolym per krona eget kapital, blandat med ICA-butikernas struktur); skuld/EK 2,24 inkluderar leaseingåenden enligt IFRS 16 — balansräkningsbilden för butiksbestånd, inte nettoskuld i traditionell mening; ROE 36,3 % bärs upp av den små egna kapitalbasen; prognosTillvaxt härledd ur trailing/forward-P/E (21,93/20,24 ⇒ +8,4 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent = 2,63 ( defensiv lågtillväxtaktie ger högt PEG — pedagogisk kontrast i konsument-medianen); endpoint-CAGR 2022→2025: omsättning +6,7 %/år, resultat −0,3 %/år; fcfYield = fritt kassaflöde 4,37 mdr/börsvärde; utdelning 9,00 SEK/aktie (direktavkastning 3,70 %) noted här då aterkop-fälten är null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "ROG.SW",
+    "namn": "Roche Holding AG",
+    "bransch": "halso",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/swx/ROG/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 360.6,
+    "marknadsKapitalMdr": 288.7,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0126,
+      "resultatCAGR5ar": 0.0122,
+      "omsattningTillvaxtTTM": -0.008,
+      "prognosTillvaxt": 0.3841
+    },
+    "lonksamhet": {
+      "roe": 0.3811,
+      "roic": 0.281,
+      "bruttoMarginal": 0.7417,
+      "ebitMarginal": 0.3312,
+      "nettoMarginal": 0.196,
+      "fcfMarginal": 0.2501
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.91,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 23.57,
+      "pb": 7.86,
+      "evEbit": 15.19,
+      "peg": 0.61,
+      "fcfYield": 0.0546,
+      "egenKapitalMultipl": 7.86
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        65814000000,
+        60441000000,
+        62395000000,
+        63356000000
+      ],
+      "resultat": [
+        12421000000,
+        11498000000,
+        8277000000,
+        12880000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i CHF; prognosTillvaxt härledd ur trailing/forward-P/E (23,57/17,03 ⇒ +38,4 % implicit EPS-förändring — speglar att TTM-vinsten är återhållsam medan framåtblickande estimat är högre, ej underliggande volymtillväxt); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 2,31 bygger på 3-årsprognos EPS +6,61 %); CAGR endpoint över 4 räkenskapsår (2022–2025): 2024-resultatet 8,3 mdr deponerat (IAS-omräkningar/pengar hem från USA efter skatteövergång), 2025: +55,6 % — ej ren driftstrend; räntetäckning 18,24 (fältet systematiskt osatt i universumet, värdet dokumenteras här); utdelning 9,80 CHF/aktie med 28 räkenskapsår av ökningar (yield 2,78 %) — aterkop-fält null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "NESN.SW",
+    "namn": "Nestlé S.A.",
+    "bransch": "konsument",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/swx/NESN/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 77.89,
+    "marknadsKapitalMdr": 203.72,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0175,
+      "resultatCAGR5ar": -0.0086,
+      "omsattningTillvaxtTTM": -0.023,
+      "prognosTillvaxt": 0.6074
+    },
+    "lonksamhet": {
+      "roe": 0.2624,
+      "roic": 0.123,
+      "bruttoMarginal": 0.457,
+      "ebitMarginal": 0.1548,
+      "nettoMarginal": 0.0838,
+      "fcfMarginal": 0.141
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.13,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 27.39,
+      "pb": 6.9,
+      "evEbit": 17.74,
+      "peg": 0.45,
+      "fcfYield": 0.0614,
+      "egenKapitalMultipl": 6.9
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        94780000000,
+        93351000000,
+        91720000000,
+        89885000000
+      ],
+      "resultat": [
+        9270000000,
+        11209000000,
+        10884000000,
+        9033000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i CHF; prognosTillvaxt härledd ur trailing/forward-P/E (27,39/17,04 ⇒ +60,7 % implicit EPS-förändring — TTM-vinsten 7,4 mdr är deprimerad av nedskrivningar, framåtblickande estimat normaliserar; ej underliggande volymtillväxt, källans 3-årsprognos är +4,89 %); peg enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 3,62); payout 107 % av TTM-vinsten — utdelningen 3,10 CHF/aktie täcks av FCF (12,5 mdr) men ej av vinsten; CAGR endpoint över 4 räkenskapsår (2022–2025); räntetäckning 8,51 (fältet systematiskt osatt i universumet, värdet dokumenteras här); omsättningstillväxten negativ fyra år i rad i rapporterade tal — prismakt delvis kompenseras av valutor/avyttringar"
   }
 ]

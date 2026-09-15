@@ -420,13 +420,13 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/"
-            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             Öppna AK1A Research Lab
           </Link>
           <Link
             href="/medlemskap"
-            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10"
+            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             Se medlemskap
           </Link>
@@ -441,7 +441,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                 <li key={s.slug}>
                   <Link
                     href={`/kurser/${s.slug}`}
-                    className="inline-block rounded-full border border-gold/30 px-3 py-1 text-xs hover:bg-gold/10"
+                    className="inline-block rounded-full border border-gold/30 px-3 py-1 text-xs hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center max-md:py-0"
                   >
                     {s.title}
                   </Link>

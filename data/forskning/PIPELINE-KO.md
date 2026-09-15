@@ -178,19 +178,41 @@ Agent-anrop, 4+ via fabriksmanifest.
   /dataset/energi/* mättes direkt efter basen. Senaste vaktrapport (06:00)
   0 fynd. Aspekttäckningen ackumulerar vidare per rop (~21 platser/körning).
   Vakt-cron hel (17 1,7,13,19 — läkt rond 28, verifierad rond 30: 06:00-rapporten levererad).
-- ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
-  (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
-  API-kostnad; regressionstest mot befintliga svar. R2-säker.
-- ▶ VÅG 165 (bokad rond 30 [Φ], evolutionärt): gap 10 Mermaid-rendering —
-  rendera mermaid-block i chatt-svar med sanering (syskonmönster till
-  stängda 23 LaTeX, `45f1a9d4`); KVD: tsc 0 + bygg + prod 200. Därefter
-  gap 13 scenariotest-suite (E2E-flöden i studion) — registrets sista öppna.
+- ✓ VÅG 158 LEVERERAT+STÄNGT (2026-09-15, rond 37 [Φ] på maskinbevis): förhandsfrågor
+  15 → 30 via fabriksomgångar (u2 2 · extra u3 3 · makro 2 · nästa 3 — DCF/inre
+  värde, investmentbolag/NAV, options) med källmärkning + kurslänkar per svar,
+  ALLT deterministiskt utan API-kostnad. Regressionstester 83 PASS · 0 FAIL
+  (bas 26 · nästa 21 · extra 19 · makro 17) inkl. antistöld G01, kedja H01,
+  juridikgrind I/F01, registeräkthet E01 (343 kurser). R2-säker — stängd.
+- ✓ VÅG 165 LEVERERAT+STÄNGT (2026-09-15, rond 38 [Φ] på live-bevis): gap 10
+  Mermaid levererades redan av våg 168 (`48e14864`: mermaid-visning.tsx 509
+  rader + renderingsgren i studio-chat.tsx) — och gap 24 usage-observabilitet
+  av våg 169 (`a77bb1a3`: lasV4Anvandning() + /api/studio/tjanster/usage-v4)
+  på våg 85 F3:s stats-ground (lasUsage). Live-bevis rond 38: båda rutterna
+  401-härdade på localhost (ej 404), prodbygget 17:29 EFTER committen,
+  UI-konsumenter studio-forbrukning-panel + utveckling-panel + studio-chat.
+  Gap-registret reparerat samma rond (korrumperade tabellrader 23/24/27).
+- ▶ VÅG 172 (bokad rond 38 [Φ], evolutionärt — registrets högsta öppna V9/A3):
+  gap 25 v4/conversation/resync — gap-återhämtning (initialWires + commit)
+  när revision tappas efter gateway-omstart/missade frames; idag faller
+  lasFilandringarV4() då på Write/Edit-motorn. Filägarskap:
+  src/lib/studio/studio-transport.ts (HUVUDAGENTEN DIREKT — het fil,
+  ALDRIG fabriksbarn). KVD: tsc 0 (projektbinär) + resync-grens mock-test +
+  bygg under flock + prod 200. Stängs endast med live-bevis (regel 2).
+- ▶ VÅG 173 (bokad rond 38 [Φ]): gap 26 sessions-index/<filter>-topic —
+  live-index över sessioner via befintlig subscribe-mekanism (samma
+  connectionId/clientMode); tränger undan sessionList-poll. SEKVENSERAD
+  EFTER våg 172 (samma fil — studio-transport.ts).
+- ▶ VÅG 174 (bokad rond 38 [Φ]): gap 13 scenariotest-suite — E2E-flöden i
+  studion (401-härdning, chatt-SSE, komprimerings-knapp, bilduppladdning)
+  i NYA filer under verktyg/scenariotest/ — fabriks-dugligt (exklusivt
+  filägarskap, inget src-rörande).
 - · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
 - · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)
 - ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt. ROND 30 (Φ): manifestet 5/5 klart (r2a 17 · r2b 21 · r2c 22 `8288eda0` · r2d 23 `45f1a9d4` · r2e 11) — SAMTLIGA sju registerposter STÄNGDA på live-bevis (signaturer i prod-träd + bygg 10:40 + prod 200 + /studio 200). Registret: endast 10 (Mermaid) + 13 (scenariotest) öppna.
-- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200).
+- ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200). — STÄNGDA enligt fullmaktssamträdets punkt 2 med KVD-bevis (STUDIO-10X-PROGRAM.md §52); raden bockad rond 37 [Φ] (bokföringshygien, våg 137-b-lärdomen).
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Sessionen: /dataset-prioritering i vakturvalet, stäng v157 på journalbevis.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | R2-påminnelse: 11 FLYTTKLAR väntar kundens knapp i godkännandeytan — verkställs aldrig av organen.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Bokför per rond: worklog + beslutsminne + commit [organ:T] + push prod.

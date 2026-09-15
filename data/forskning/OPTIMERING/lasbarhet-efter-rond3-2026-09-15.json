@@ -1,0 +1,641 @@
+{
+  "verktyg": "verktyg/mobil-lasbarhet.mjs",
+  "datum": "2026-09-15T16:04:58.819Z",
+  "mal": "https://lab.ak1nvestor.com",
+  "visport": "390×844, DSF 2, iPhone-UA",
+  "target": "52 px tryckyta (husstandard våg 93 C3); input ≥16 px mot iOS-zoom",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "antalInteraktiva": 61,
+      "prosaLankarUndantagna": 4,
+      "tryckmalUnder52": 2,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "To the top",
+          "w": 99,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    },
+    {
+      "sokvag": "/kurser",
+      "antalInteraktiva": 7,
+      "prosaLankarUndantagna": 3,
+      "tryckmalUnder52": 4,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Godkänn alla",
+          "w": 101,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Inställningar",
+          "w": 97,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Endast nödvändiga",
+          "w": 135,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "block",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    },
+    {
+      "sokvag": "/blogg",
+      "antalInteraktiva": 146,
+      "prosaLankarUndantagna": 6,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    },
+    {
+      "sokvag": "/portfolj-forskning",
+      "antalInteraktiva": 69,
+      "prosaLankarUndantagna": 8,
+      "tryckmalUnder52": 18,
+      "varsta": [
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "Till korstabellen →",
+          "w": 136,
+          "h": 34,
+          "font": 12,
+          "typ": null,
+          "visning": "block",
+          "min": 34
+        },
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "1AB Industrivärden (publ)INDU-C.ST · industri · ",
+          "w": 312,
+          "h": 44,
+          "font": 16,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "2Newmont CorporationNEM · material · AKM1 55,1 a",
+          "w": 312,
+          "h": 44,
+          "font": 16,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "3Investor AB (publ)INVE-B.ST · finans · AKM1 54 ",
+          "w": 312,
+          "h": 44,
+          "font": 16,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Forska fram portfölj →",
+          "w": 171,
+          "h": 44,
+          "font": 12,
+          "typ": "button",
+          "visning": "block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "AKM1",
+          "w": 80,
+          "h": 44,
+          "font": 14,
+          "typ": "button",
+          "visning": "block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "AKM2🔒",
+          "w": 96,
+          "h": 44,
+          "font": 14,
+          "typ": "button",
+          "visning": "block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Teknik10 bolag · snitt AKM1 42,9 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Industri10 bolag · snitt AKM1 42,2 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Hälsa10 bolag · snitt AKM1 43,4 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Konsument10 bolag · snitt AKM1 39,3 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Fastighet10 bolag · snitt AKM1 42,5 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Finans10 bolag · snitt AKM1 32 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Material10 bolag · snitt AKM1 38,7 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Energi10 bolag · snitt AKM1 39,2 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Tillväxt10 bolag · snitt AKM1 34,1 · visa",
+          "w": 328,
+          "h": 44,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "▸Kommunikation10 bolag · snitt AKM1 42 · visa",
+          "w": 328,
+          "h": 47,
+          "font": 16,
+          "typ": "button",
+          "visning": "flex",
+          "min": 47
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    },
+    {
+      "sokvag": "/forskningsbiblioteket",
+      "antalInteraktiva": 65,
+      "prosaLankarUndantagna": 12,
+      "tryckmalUnder52": 2,
+      "varsta": [
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "Forskning Plus låser AKM2-poängbasen",
+          "w": 310,
+          "h": 44,
+          "font": 14,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    },
+    {
+      "sokvag": "/kurser/the-intelligent-investor",
+      "antalInteraktiva": 104,
+      "prosaLankarUndantagna": 7,
+      "tryckmalUnder52": 32,
+      "varsta": [
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "Se alla källor →",
+          "w": 89,
+          "h": 16,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 16
+        },
+        {
+          "tag": "a",
+          "rol": null,
+          "text": "Courses",
+          "w": 52,
+          "h": 20,
+          "font": 14,
+          "typ": null,
+          "visning": "block",
+          "min": 20
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Mark the course as completed (+50 XP, +1 ★)",
+          "w": 328,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) Trend, momentum, stop-loss",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Hävstång, diversifiering, tajming",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Chart, RSI, nyhetsflöde",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) Investering",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Indexstrategi",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Hedging",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) Den defensiva",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "B) Den aktiva",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Den halvhjärtade som tror sig investera",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Indexfondsspararen",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) Ja, alltid",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Bara banker",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Bara guldaktier",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) Mer aktier",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "B) Marginal of safety i priset",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Korta obligationer",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Krypto",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "A) +50%",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "B) Föll",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "C) Oförändrade",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "D) Föll 90%",
+          "w": 258,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "inline-block",
+          "min": 44
+        },
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Unlock (member)",
+          "w": 162,
+          "h": 44,
+          "font": 14,
+          "typ": "button",
+          "visning": "inline-block",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    }
+  ]
+}

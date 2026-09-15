@@ -411,18 +411,18 @@ export function HomeSection() {
               <Link
                 key={v.href}
                 href={v.href}
-                className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
+                className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold text-gold transition-colors hover:bg-gold/15 max-md:inline-flex max-md:min-h-[52px] max-md:items-center max-md:py-0"
               >
                 {t(v.nyckel)}
               </Link>
             ))}
             <span className="ml-auto text-xs text-muted-foreground">
               {t("home.fas2Etikett")}{" "}
-              <Link href="/fas2-ansok" className="font-semibold text-gold hover:underline">
+              <Link href="/fas2-ansok" className="font-semibold text-gold hover:underline max-md:inline-flex max-md:min-h-[52px] max-md:items-center">
                 {t("home.bliCertifierad")}
               </Link>{" "}
               ·{" "}
-              <Link href="/medlemskap" className="font-semibold text-gold hover:underline">
+              <Link href="/medlemskap" className="font-semibold text-gold hover:underline max-md:inline-flex max-md:min-h-[52px] max-md:items-center">
                 {t("home.seMedlemskapen")}
               </Link>
             </span>

@@ -8,6 +8,9 @@ import { SIFFROR } from "@/lib/siffror";
 import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
+// Prissida (PRISER SSR:as i produktöversikten) — revalidate=300 som
+// produktfamiljen /fas2-ansok, /fas3, /medlemskap, /prenumeration.
+export const revalidate = 300;
 
 export const metadata: Metadata = pageMetadata({
   path: "/manifest",

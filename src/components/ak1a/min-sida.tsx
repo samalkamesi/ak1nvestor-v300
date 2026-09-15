@@ -286,13 +286,13 @@ export function MinSida({
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/logga-in"
-              className="rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02]"
+              className="rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02] max-md:inline-flex max-md:min-h-[52px]! max-md:items-center"
             >
               Logga in gratis
             </Link>
             <Link
               href="/kurser"
-              className="rounded-lg border border-gold/40 px-6 py-3 text-sm font-semibold text-gold hover:bg-gold/10"
+              className="rounded-lg border border-gold/40 px-6 py-3 text-sm font-semibold text-gold hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px]! max-md:items-center"
             >
               Utforska kurserna
             </Link>

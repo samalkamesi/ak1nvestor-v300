@@ -1,0 +1,156 @@
+{
+  "slug": "am-01-likviditet-och-spread",
+  "category": "AKTIEMARKNADEN I PRAKTIKEN",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Likviditet och spread — handelns dolda kostnader",
+  "summary": "Nästa steg efter orderboken: spreadens två halvor som dold transaktionskostnad, likviditetens mått, auktionernas rytm och den tålmodiga portföljens aritmetik.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "Orderboken visar vad som finns att köpa och sälja — men inte vad handeln kostar. Kostnaden sitter i spridningen mellan bud och fråg, i orderdjupets tunnhet och i tidpunkten då affären görs: kostnader som aldrig syns på ett kvitto ändå äter avkastning år efter år. Kursen tar grunderna från orderbokskursen (km-069) ett steg upp: spridningen som pris, likviditeten som egenskap, auktionerna som dygnets rytm — och räkneläran som gör det osynliga synligt. För den som bygger en långsiktig portfölj är detta kunskapen som sänker kostnaden per beslut utan att ändra ett enda av dem.",
+  "learn": "Förstå spreaden som dold transaktionskostnad — bud, fråg och avståndet mellan dem · Räkna spreadkostnaden i kronor och procent för en given order · Läsa orderdjupets form: tunn handel, klungor och tomrum · Känna dygnets rytm: öppnings- och stängningsauktion mot kontinuerlig handel · Förstå likviditetsriskens skillnad mot volatilitet (rs-01) · Räkna på tålmodighetens aritmetik: handelsfrekvens gånger spreadkostnad över en portföljlevnad.",
+  "history": {
+    "origin": "Spridningen mellan bud och fråg är äldre än elektroniken: på börsens golv stod jobbare och specialister och garanterade motparter — mot sitt avtryck i spreaden. Deras funktion var att alltid stå där, och deras ersättning var avståndet mellan köp- och säljsida. Marknadsmaklartraditionen gjorde spreaden till ett levande pris på risktagandet i att alltid stå som motpart.",
+    "evolution": "Elektroniseringen från 1980-talet och framåt skilde pris från plats: orderböcker samlades på skärmar, spridningar smalnade i de stora aktierna och konkurrensen mellan handelsplatser pressade kostnaderna. EU:s MiFID-regelverk (2007, skärpt 2018 MiFID II) öppnade handeln över flera platser och ställde transparenskrav — orderdjupet blev information som rättigheter kunde läsas av vem som helst, inte bara golvets medlemmar. Samtidigt flyttade likviditeten att samlas i börsernas öppnings- och stängningsauktioner, en rytm som indexförvaltningens tillväxt förstärkt.",
+    "modern": "I dag levererar Nasdaq Stockholm den svenska bilden: kontinuerlig handel mellan 09.00 och 17.30, inramad av en öppningsauktion som samlar order till ett gemensamt pris och en stängningsauktion som blivit dagens tyngsta handelsögonblick — indexfonder och derivat kopplas till stängningspriset, så dit reser volymen. I de små och medelstora listorna lever spreaden kvar som påtaglig kostnad: en aktie med en procent i spridning tar en procent i avgift vid köpet och ytterligare en vid utförsäljningen — ingen faktura, bara avstånd. Kursen om orderboken (km-069) ger grunderna; här bygger vi ovanpå dem."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — spreadens två halvor",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Likviditetens mått — volym, omsättning, orderdjup",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — att läsa djupets form",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Auktioner och dygnets rytm",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — tålmodighetens aritmetik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — spreadens två halvor",
+      "intro": "Varje handlingsbar aktie har två priser i samma ögonblick — och avståndet mellan dem är en kostnad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Orderbokens bästa köpsida kallas budet (bid): det högsta pris någon just nu erbjuder att betala. Bästa säljsida kallas fråget (ask): det lägsta pris någon just nu kräver för att sälja. Spreaden är avståndet mellan dem. Konsekvensen är mekanisk och undanröjbar: den som handlar till marknadspris betalar fråget vid köp och får budet vid sälj — aldrig mittensiffran som skärmen visar som senaste kurs. Spridningen är därmed en avgift som tas två gånger per tur och retur, utan kvitto och utan rad i någon kostnadsrapport.\n\nEtt räkneexempel i ren aritmetik: bud 84,00 kronor, fråg 84,20 kronor. Spreaden är 20 öre — 0,24 procent av priset. En order om 10 000 aktier som korsar spreaden kostar 10 000 gånger 0,20, alltså 2 000 kronor, jämfört med om affären gjorts i mitten. En hel rundresa — köp och senare sälj — bär dubbla beloppet: 4 000 kronor i det tysta. I en storbolagsaktie med en öre-spread är samma belöp närmast försumbart; i en småbolagsaktie med två procents spridning blir det en fast utgift per beslut. Skillnaden mellan bolagen ligger inte i mekaniken utan i storleken — och storleken är mätbar."
+        },
+        {
+          "type": "definition",
+          "content": "Bud (bid): Det högsta pris en köpare just nu erbjuder. Fråg (ask): Det lägsta pris en säljare just nu kräver. Spread: Avståndet mellan bud och fråg — handelns omedelbara kostnad för den som korsar den, ofta angiven i procent av priset."
+        },
+        {
+          "type": "insight",
+          "content": "Senaste kurs är historik; bud och fråg är verkligheten. Affären sker alltid i verklighetens två priser, aldrig i historikens ett."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Likviditetens mått — volym, omsättning, orderdjup",
+      "intro": "Likviditet är aktiens förmåga att ta emot en affär utan att flytta sitt eget pris — och den mäts i tre plan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det första planet är volymen: hur många aktier som byter ägare per dag. Den säger något om intresse men inget om prisnivå — en aktie till 50 öre kan omsätta miljoner aktier utan att dagens värde blir stort. Det andra planet är omsättningsvärdet: volym gånger pris, alltså antal kronor per dag. Det är likviditetens ärligare mått, för det väger samman intresse och prisnivå. Regelverk och institutioner talar ofta om handelbarhet i just dessa termer: en omsättning under några miljoner kronor per dag är en tunn aktie oavsett hur volymsiffran ser ut.\n\nDet tredje planet är orderdjupet — den levande bilden av vad som faktiskt står emot en affär just nu. Djupet visar hur många aktier som ligger inom en given avstånd från mittpriset: finns 50 000 aktier inom en procent är en medelstor order billig att verkställa; finns 5 000 är samma order tvungen att äta sig ned genom prisnivåer. Spreaden är djupets yttersta list — summan av alla tre planen ger likviditetsprofilen: hur stor affär bolagets aktie tål, till vilken kostnad, just nu. Kursen om orderboken (km-069) bygger denna läsningens ABC; här tas den till portföljens konkretion."
+        },
+        {
+          "type": "insight",
+          "content": "Volym räknar aktier, omsättning räknar kronor, djupet räknar motstånd — likviditeten är de tre tillsammans."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — att läsa djupets form",
+      "intro": "Orderdjupet läses som en form, inte en siffra — klungor, tunnhet och tomrum betyder olika saker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett djupt, jämnt orderdjup — många nivåer med jämn volym nära mittpriset — är tecknet på en välservad aktie: marknadsmaklare och andra motparter står redo, spreaden smalnar, kostnaden hålls låg. En klunga långt från priset med tomrum emellan är motsatsen: en order som söker sig genom tomrummet äter prisnivåer hela vägen. Skillnaden mellan att sälja 20 000 aktier i en tjock bok och en gles en är inte subtil — i den förra kostar affären spridningen, i den senare kostar den glidningen hela vägen ned till där köparna faktiskt står.\n\nGlidningen — slippage — är den andra dolda kostnaden, spridningens store syskon: kostnaden för den del av ordern som inte verkställs till bästa nivå. Räkneläran är rak: en order om 50 000 aktier mot ett djup som bara bär 10 000 på bästa nivå tvingas pruta på resten — hur mycket beror på djupets form under ytan. Därför läses djupet i form före storlek: var finns klungorna, hur gapar nivåerna, hur förändras bilden mellan förmiddag och eftermiddag? I praktiken växer övningen till en vana: den som följer en aktie lär sig dess bästa handelsfönster — timmar då djupet är tjockast — och planerar större affärer dit. Inget av detta är marknadstiming i meningen kursprognos; det är kostnadstiming, och det är en helt annan och mycket mer mätbar disciplin."
+        },
+        {
+          "type": "insight",
+          "content": "Spreaden är entréavgiften, glidningen är trappan — den stora ordern betalar båda, och djupets form avgör hur brant trappan är."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Auktioner och dygnets rytm",
+      "intro": "Handelsdagen har en egen arkitektur: två auktioner inramar den kontinuerliga handeln.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Innan den kontinuerliga handeln startar samlas order i en öppningsauktion: köpare och säljare lägger in sina order utan att någon affär sker, och när auktionen matchas möts allt i ett gemensamt öppningspris — den punkt där mest volym kan korsas. Samma mekanik avslutar dagen i stängningsauktionen, som på Nasdaq Stockholm har vuxit till dagens tyngsta enskilda handelsögonblick. Anledningen är kopplingarnas arkitektur: indexfonder som följer index handlar vid stängningspriset, derivat länkar sig till samma referens — och dit reser volymen. Konsekvensen för den som läser marknaden: dagens sista pris är inte bara ett pris utan ett evenemang, format av dem som måste handla då — inte av dem som väljer att handla då.\n\nMellan auktionerna lever den kontinuerliga handeln med sin egen rytm: djupet är ofta tunnast strax efter öppning och under lunch, tjockast under förmiddagens och eftermiddagens mitt. Auktionerna fyller alltså en dubbel funktion: de koncentrerar likviditet till gemensamma ögonblick — bra för den stora ordern — och de sätter referenspriser som hela ekosystemet länkar sig till. För portföljbyggaren är dygnets rytm praktisk kunskap: den som vet var volymen samlas kan välja sina fönster, och den som läser kurser vet att öppnings- och stängningspriser är auktionens produkt — inte samma djurslag som ett pris satt i tunn kontinuerlig handel."
+        },
+        {
+          "type": "insight",
+          "content": "Öppnings- och stängningspriser är auktionsverk — satta av samlad volym, inte av enskilda panikaffärer. Att veta vilket pris som är vilket är en läsningens grundhygien."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Likviditetstänkandet har tre klassiska missförstånd — var och en värd att skilja från sin granne.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det första: att förväxla volatilitet med likviditet. En aktie kan svänga vilt och ändå vara djupt handelsbar — rörelsen sitter i prisbildningen, inte i orderboken. Omvänt kan en stillsam aktie vara omöjlig att lämna utan glidning. Volatilitet är svängningars storhet (rs-01), likviditet är motparters närvaro — två axlar, fyra kvadranter, och analysen ser olika ut i varje en. Det andra missförståndet: att läsa spreaden i kronor i stället för i procent. En späd aktie till 5 kronor med 5 öres spread bär en procent kostnad; en aktie till 500 kronor med 25 öres spread bär en halv. Öret ljugar, procenten talar sanning.\n\nDet tredje: att tro att synlig volym är hela likviditeten. En del av motparterna visar sig inte i orderboken förrän priset når dem — dolda order och icebergposter står under ytan. Den som läser djupet läser det synliga; marknadens hela motstånd kan vara större. Och en varningensnotis i marknadsandans egen anda: den som lockas av tunna aktiers stora rörelser bör räkna baklänges — i en aktie med två procents spridning måste bolagets utfall överträffa en fastavgift på fyra procent per tur och retur innan affären ens nått noll. Spreaden är alltid med i spelet, även när ingen räknar på den."
+        },
+        {
+          "type": "insight",
+          "content": "Öret ljugar, procenten talar: spread mäts alltid mot prisnivån — annars jämförs mynt med sedlar."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — tålmodighetens aritmetik",
+      "intro": "Den sista nöten är portföljens livstidsräkning: handelsfrekvens gånger spreadkostnad — inget mer, inget mindre.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett räkneexempel som visar mekanismens storlek. En portfölj på 500 000 kronor byggs och sköts med två fulla omsättningsvarv per år — köp och sälj som tillsammans rör dubbla portföljvärdet. Med en genomsnittlig spreadkostnad på 0,25 procent per sida blir den årliga tysta avgiften 1 000 000 kronor omsättning gånger 0,25 procent — 2 500 kronor om året, drygt 60 000 kronor på ett kvartssekel, före en enda kronas avgift eller skatt. Samma portfölj med tio omsättningsvarv per år bär fem gånger så mycket. Mekanismen är linjär och obönhörlig: frekvensen bestämmer notan, och notan betalas alltid — den enda frågan är hur stor den får bli.\n\nHär möts likviditetsläran och det långsiktiga sparandets klassiska dygd: tålmodighet. Färre, större, mer övervägda affärer i tjocka aktier och tjocka fönster är inte en filosofisk hållning utan en aritmetisk strategi — den sänker kostnadssidan utan ett enda krav på prognosförmåga. Kursen knyter an till kategorins grunder: km-069 orderboken och prissättning (nybörjare) och km-070 nätmaklare i Sverige; till riskfamiljens rs-01 för likviditetsrisken som egen riskkälla; och till beteendefinansens bf-serien för frekvensens frestelser. I AKM1:s ram väger likviditet tyngst i de korta tidshorisonterna — där affärens kostnad är störst relativt dess varaktighet — och kunskapen om den är därför en del av hantverket, inte en bifogad detalj."
+        },
+        {
+          "type": "insight",
+          "content": "Spreadkostnaden är den enda avgift som sänks av att göra mindre — tålmodighetens aritmetik är portföljens billigaste förbättring."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch argumenterade i One Up on Wall Street emot överaktivt handlande — hans formulering att den som inte kan hålla en aktie i tio år inte bör äga den i tio dagar var, i spreadens språk, en kostnadsräkning i förklädnad: varje onödigt varv bär sin tysta avgift. Lynch-tänkandet om att låta bolagens värde arbeta i stället för att handla deras kurs möter här sin aritmetiska grund — frekvensens pris är mätbart, och det betalas av dem som ignorerar det.",
+  "grahamSection": "Benjamin Grahams defensiva investerare kännetecknades av fåtaliga, välordnade transaktioner — och i Security Analysis-tidens marknader, med breda spreads och tunga mäklarprovisioner, var tålmodighetens aritmetik påtagligare än idag. Graham visade att kostnadssidan äter långsiktig avkastning även när varje enskilt beslut är riktigt — en läxa som elektronikens smalare spreads inte upphävt utan bara gjort tystare. Den moderna likviditetsläran är hans räkning i ny förpackning.",
+  "ak1Section": "I AK1A:s metodik bygger denna kurs vidare på kategorins nybörjarkurser km-069 orderboken och km-070 nätmaklarna — trappan in i AKM1:s korta tidshorisonter, där transaktionskostnad och likviditet väger tyngst. Riskfamiljens rs-01 skiljer likviditetsrisken från volatiliteten, och beteendefinansens bf-serien förklarar frekvensens frestelser — tillsammans bildar de läsningen av marknadens mekanik som AKM2-modellen väger per horisont."
+}

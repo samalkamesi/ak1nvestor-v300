@@ -27,7 +27,10 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
 import { execSync } from "node:child_process";
-import puppeteer from "puppeteer-core";
+// OBS: puppeteer-core importeras MEDELTIDS (dynamiskt, se huvudloopen) — en
+// statisk toppimport kraschar vid node-start om ett deploy-fönster (npm ci)
+// pågår, FÖRE verktygets egen deployvänt-logik hinner köra (bevisat
+// 2026-09-15T13:17: ERR_MODULE_NOT_FOUND → falskt VAKTKRASCH-larm).
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -421,6 +424,21 @@ if (!friskFranStart) {
   console.log(`GRÄNSSNITTSVAKTEN: UPPSKJUTEN — deploy pågår efter 12 min väntan, inga fynd bokförda (nästa cron-körning mäter).`);
   console.log(`Rapport: ${fil}`);
   process.exit(0);
+}
+
+// Importen sker FÖRST här — efter deployvänt-logiken — så ett npm ci-fönster
+// väntas ut i stället för att döda vakten på modulsökningsstadiet. Misslyckas
+// importen på en FRISK bas = äkta verktygsfel (exit 2, cronens KRASCHAD-gren).
+let puppeteer;
+try {
+  puppeteer = (await import("puppeteer-core")).default;
+} catch (e) {
+  console.error(
+    "GRÄNSSNITTSVAKTEN: VAKTFEL — puppeteer-core kan inte importeras på en frisk bas (deploy-lås ledigt, basen svarar).",
+    "Trolig rot: korrupt node_modules efter avbruten deploy. Reparation enligt deployprotokollet (npm ci + build + pm2 restart under flock /tmp/ak1a-deploy.lock)."
+  );
+  console.error(String(e && e.message ? e.message : e));
+  process.exit(2);
 }
 
 const browser = await puppeteer.launch({

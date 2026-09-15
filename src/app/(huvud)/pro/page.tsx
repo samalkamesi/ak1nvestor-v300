@@ -6,6 +6,9 @@ import { PRISER, kr } from "@/lib/variabler";
 import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-static";
+// Prissida (PRISER.b2bAnalytiker SSR:as) — revalidate=300 som produktfamiljen
+// /fas2-ansok, /fas3, /medlemskap, /prenumeration; årslåset (o10 §2) dör även här.
+export const revalidate = 300;
 
 // V86 B2B-residual 2+3: ingen egen robots — layoutens b2bAktiv()-grind gäller
 // hela trädet. Metadata (titel + pris copy i description) sätts ENDAST när

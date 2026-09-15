@@ -29,8 +29,8 @@
  *        lösenord/nycklar/token med värde ≥ 12 tecken)
  *
  *   2. TSC 0 (endast när kod är staged — rena dataleveranser
- *      hoppas över för snabbhet): npx tsc --noEmit mot baslinjen
- *      NOLL fel (våg 133). Fel ⇒ commit avslås.
+ *      hoppas över för snabbhet): projektets egna tsc-binär
+ *      --noEmit mot baslinjen NOLL fel (våg 133). Fel ⇒ commit avslås.
  *
  * Installeras av verktyg/installa-kvalitetsgrind.mjs i .git/hooks/pre-commit
  * (arbetsyta OCH prod-repot /home/ak1a/AK1). --no-verify är FÖRBJUDET —
@@ -41,7 +41,8 @@
  * syftet är att fånga oaktsatshemligheter, inte motståndare.
  */
 import { execFileSync } from "node:child_process";
-import { readFileSync, statSync } from "node:fs";
+import { readFileSync, statSync, existsSync } from "node:fs";
+import path from "node:path";
 import process from "node:process";
 
 const ROTE = process.cwd();
@@ -151,9 +152,18 @@ const kodFiler = staged.filter(
   (f) => /\.(ts|tsx|js|jsx|mjs|cjs)$/.test(f) && !f.startsWith("data/"),
 );
 if (kodFiler.length > 0) {
-  console.log("Kvalitetsgrinden: npx tsc --noEmit (baslinje 0, våg 133) …");
+  // s8-determinism (2026-09-15): projektets EGEN tsc-binär, ALDRIG npx —
+  // mitt i deploy (npm ci river .bin) kan npx lösa "tsc" till cachens
+  // dummy-paket tsc@2.0.4. Saknad binär ⇒ fail closed med tydligt fel.
+  const tscBin = path.join(ROTE, "node_modules", "typescript", "bin", "tsc");
+  if (!existsSync(tscBin)) {
+    console.error("\n=== KVALITETSGRINDEN: AVSLÅR COMMIT (node_modules/typescript saknas — deploy pågår?) ===");
+    console.error("Vänta ut deployfönstret och committa igen. --no-verify är FÖRBJUDET (AGENTS.md).\n");
+    process.exit(1);
+  }
+  console.log("Kvalitetsgrinden: node node_modules/typescript/bin/tsc --noEmit (baslinje 0, våg 133) …");
   try {
-    execFileSync("npx", ["tsc", "--noEmit"], { stdio: "inherit", cwd: ROTE, timeout: 300_000 });
+    execFileSync(process.execPath, [tscBin, "--noEmit"], { stdio: "inherit", cwd: ROTE, timeout: 300_000 });
   } catch {
     console.error("\n=== KVALITETSGRINDEN: AVSLÅR COMMIT (tsc != 0) ===");
     console.error("Typfelen ovan måste rättas innan commit. --no-verify är FÖRBJUDET (AGENTS.md).\n");

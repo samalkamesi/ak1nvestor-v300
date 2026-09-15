@@ -56,6 +56,25 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // VÅG s7 (prestanda spår 7, o8 §4 GUL): /deep-courses.json är 17,5 MB och
+  // hämtas på klientens väg ENBART som fallback när /sok-index.json (76 kB)
+  // misslyckas (käll-loopen i sokindex.ts). Default för public/-filer är
+  // "public, max-age=0" — dvs. om fallet inträffar omvalideras hela 17,5 MB
+  // vid VARJE hämtning. 1 h fönster + swr-dag = samma stabil-hybrid som
+  // sok-index.json (max-age=3600); innehållet byts först vid kurs-deploy.
+  async headers() {
+    return [
+      {
+        source: "/deep-courses.json",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       { source: "/mina-analyser", destination: "/min-sida", permanent: true },

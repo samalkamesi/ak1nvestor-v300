@@ -540,7 +540,7 @@ export function NyhetsChips() {
           </div>
           <Link
             href="/nyheter"
-            className="inline-flex items-center gap-2 rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-gold transition-colors hover:bg-gold/10"
+            className="inline-flex items-center gap-2 rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-gold transition-colors hover:bg-gold/10 max-md:min-h-[52px]"
           >
             Alla nyheter →
           </Link>
@@ -571,7 +571,7 @@ export function NyhetsChips() {
                 key={`${i}-${rubrik.slice(0, 40)}`}
                 href="/nyheter"
                 title={rubrik}
-                className="w-full truncate rounded-full border border-gold/30 bg-card px-3.5 py-1.5 text-center text-xs font-semibold text-foreground transition-colors hover:border-gold/60 hover:bg-gold/5 hover:text-gold"
+                className="w-full truncate rounded-full border border-gold/30 bg-card px-3.5 py-1.5 text-center text-xs font-semibold text-foreground transition-colors hover:border-gold/60 hover:bg-gold/5 hover:text-gold max-md:min-h-[52px] max-md:py-[17px]!"
               >
                 {rubrik.length > 90 ? `${rubrik.slice(0, 90)}…` : rubrik}
               </Link>
@@ -579,7 +579,7 @@ export function NyhetsChips() {
           )}
           <Link
             href="/kurser"
-            className="truncate rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-center text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
+            className="truncate rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-center text-xs font-semibold text-gold transition-colors hover:bg-gold/15 max-md:min-h-[52px] max-md:py-[17px]!"
           >
             + nya kurser i biblioteket
           </Link>

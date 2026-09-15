@@ -74,13 +74,13 @@ export function Footer() {
               href="https://AK1nvestor.com"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 flex items-center gap-1.5 text-sm text-gold hover:underline"
+              className="mt-2 flex items-center gap-1.5 text-sm text-gold hover:underline max-md:min-h-[52px]"
             >
               <Globe className="h-3.5 w-3.5" /> https://AK1nvestor.com
             </a>
             <a
               href="mailto:info@ak1nvestor.com"
-              className="mt-1 flex items-center gap-1.5 text-sm text-gold hover:underline"
+              className="mt-1 flex items-center gap-1.5 text-sm text-gold hover:underline max-md:min-h-[52px]"
             >
               <Mail className="h-3.5 w-3.5" /> info@ak1nvestor.com
             </a>
@@ -99,7 +99,7 @@ export function Footer() {
                       rel="noreferrer"
                       aria-label={SOCIALA_ETIKETTER[nyckel]}
                       title={SOCIALA_ETIKETTER[nyckel]}
-                      className="text-gold hover:opacity-80 transition-opacity"
+                      className="text-gold hover:opacity-80 transition-opacity max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-center max-md:justify-center"
                     >
                       <Ikon className="h-4.5 w-4.5" />
                     </a>
@@ -117,7 +117,7 @@ export function Footer() {
               <Link
                 key={punkt.lank}
                 href={punkt.lank}
-                className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+                className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
               >
                 {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
               </Link>
@@ -131,55 +131,55 @@ export function Footer() {
             </h4>
             <Link
               href="/villkor"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.anvandarvillkor")}
             </Link>
             <Link
               href="/privacy-policy"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.integritetspolicy")}
             </Link>
             <Link
               href="/transparens"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("nav.transparens")}
             </Link>
             <Link
               href="/cookiepolicy"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.cookiepolicy")}
             </Link>
             <Link
               href="/ansvar"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.ansvarFriskrivning")}
             </Link>
             <Link
               href="/upphovsratt"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.upphovsratt")}
             </Link>
             <Link
               href="/kallor"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.allaKallor")}
             </Link>
             <Link
               href="/finansiell-policy"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.finansiellPolicy")}
             </Link>
             <Link
               href="/?cookies=1"
-              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.cookieInstallningar")}
             </Link>
@@ -253,7 +253,7 @@ export function Footer() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-xs text-muted-foreground"
+            className="text-xs text-muted-foreground max-md:min-h-[52px]!"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("footer.tillToppen")} <ArrowUp className="ml-1 h-3 w-3" />

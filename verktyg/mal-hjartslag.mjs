@@ -249,7 +249,11 @@ async function main() {
     const aktuella = feljaktSvans.filter((r) => {
       try {
         const j = JSON.parse(r);
-        return j.allvar === "HÖG" || j.allvar === "KRITISK";
+        if (j.allvar !== "HÖG" && j.allvar !== "KRITISK") return false;
+        // VÅG 171 (rond 35): omleveransskydd — bara fynd <35 min gamla får
+        // kicka (kurerade fynd re-alarmas aldrig; kvarvarande fel loggas om
+        // av feljägaren med färsk ts och alarmeras då igen)
+        return typeof j.ts === "string" && Date.parse(j.ts) > nu - 35 * 60_000;
       } catch { return false; }
     });
     const senasteFeljaktKick = state.senasteFeljaktKick || 0;

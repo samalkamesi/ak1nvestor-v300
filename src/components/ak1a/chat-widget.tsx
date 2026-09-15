@@ -30,6 +30,15 @@ import { svaraLokaltExtra } from "@/lib/ai-mentor-extra-fragor";
 // Spår 6 omgång 2 (s6-u1): +2 makroförhandsfrågor (ränta, inflation) —
 // makro-mönstren prövas först; kärnorden disjunkta mot båda underliggande lager
 import { svaraLokaltMakro } from "@/lib/ai-mentor-makro-fragor";
+// Spår 6 omgång 3 (s6-u3 nästa): +3 förhandsfrågor (värdering/DCF,
+// investmentbolag/NAV, options) — prövas SIST och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkta ur kursregistret
+import { svaraLokaltNasta } from "@/lib/ai-mentor-nasta-fragor";
+// Spår 6 omgång 4 (s6-u2): +2 förhandsfrågor (emission/utspädning,
+// goodwill/immateriella) — kapitalmekanik-lagret prövas SIST och kan
+// därför aldrig stjäla en fråga från tidigare lager; källmärkt ur
+// kursregistret med flerkällsrad (rk-02/v19/ks-01, km-022/bk-01/bokmaster)
+import { svaraLokaltKapitalmekanik } from "@/lib/ai-mentor-kapitalmekanik-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -733,7 +742,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(
@@ -1253,7 +1262,7 @@ export function ChatWidget() {
       {!widgetPathname.startsWith("/studio") && (
         <button
           onClick={() => setOppnad(!oppnad)}
-          className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl"
+          className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 max-md:h-[52px] max-md:w-[52px] sm:h-14 sm:w-14 sm:text-2xl"
           aria-label="AI-Mentor"
           title="AI-Mentor — din personliga guide"
         >

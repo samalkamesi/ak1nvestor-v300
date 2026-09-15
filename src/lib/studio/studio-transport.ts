@@ -1666,6 +1666,23 @@ export interface StudioTransport {
     requestCount?: number;
     rått?: unknown;
   }>;
+  /**
+   * GAP-REGISTER POST 25 (V9/A3 — VÅG 172): v4/conversation/resync —
+   * gap-ÅTERHÄMTNING när revision/logEpoch tappats (gateway-omstart,
+   * missade ramar). Returnerar initialWires via response-outbox + commit;
+   * ramar uppdaterar v4Revision internt (state.updated). Mappning: wires ←
+   * initialWires, commit, atSeq, logEpoch; rått bär protokollets opaka
+   * svar. Fel-tolerant: {utford:false} vid fel (ALDRIG kast — resync är
+   * en utväg, inte ett krav).
+   */
+  lasV4Resync(): Promise<{
+    utford: boolean;
+    wires?: number;
+    commit?: boolean;
+    atSeq?: number;
+    logEpoch?: string;
+    rått?: unknown;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -3797,6 +3814,20 @@ class AppServerTransport implements StudioTransport {
     this.omstartAvbryt();
     const sid = this.sid;
     if (sid && this.klient?.lever) {
+      // GAP 25-hygien (V4-LAGRET §8: studion skickade ALDRIG unsubscribe
+      // vid nedstängning — läckagerisk serverside om prenumerationen inte
+      // städas): bäst-effort FÖRE session/close, tyst vid fel.
+      if (this.v4Ansluten && this.v4ConnectionId) {
+        try {
+          await this.klient.protokollFraga(
+            "v4/conversation/unsubscribe",
+            { connectionId: this.v4ConnectionId },
+            5_000,
+          );
+        } catch {
+          // best-effort — barnet dödas nedan ändå
+        }
+      }
       try {
         await this.klient.protokollFraga("session/close", { sessionId: sid }, 8_000);
       } catch {
@@ -5481,6 +5512,74 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  // ── GAP-REGISTER POST 25 (V9/A3 — VÅG 172): v4/conversation/resync ─────
+
+  /**
+   * v4/conversation/resync (V4-LAGRET §2 #6): gap-ÅTERHÄMTNING — returnerar
+   * initialWires som postas via response-outbox + commit. Anropas när
+   * revision/logEpoch tappats (gateway-omstart, missade ramar): ramar i
+   * svaret uppdaterar v4Revision via påNotis (state.updated-delta) och
+   * v4LogEpoch via ack-form om svaret bär det. Fel-tolerant: {utford:false}
+   * vid fel — ALDRIG kast (resync är en utväg, inte ett krav).
+   */
+  async lasV4Resync(): Promise<{
+    utford: boolean;
+    wires?: number;
+    commit?: boolean;
+    atSeq?: number;
+    logEpoch?: string;
+    rått?: unknown;
+  }> {
+    if (!this.sid) return { utford: false }; // ingen session ⇒ inget gap att läka
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga(
+        "v4/conversation/resync",
+        {
+          topic: `conversation/${this.sid}`,
+          connectionId: this.v4ConnectionId,
+          clientMode: "web-remote-replayable",
+          ...(this.v4LogEpoch ? { baseLogEpoch: this.v4LogEpoch } : {}),
+        },
+        20_000,
+      )) as {
+        initialWires?: unknown;
+        commit?: unknown;
+        atSeq?: unknown;
+        logEpoch?: unknown;
+        ack?: { logEpoch?: unknown };
+      } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) return { utford: false };
+      // initialWires postas via response-outbox: VÄNTA in ramar som uppdaterar
+      // v4Revision (påNotis state.updated) innan anroparen läser tillståndet.
+      await new Promise((r) => setTimeout(r, 1_200));
+      const num = (v: unknown): number | undefined =>
+        typeof v === "number" && Number.isFinite(v) ? v : undefined;
+      const wires = Array.isArray(svar.initialWires)
+        ? svar.initialWires.length
+        : num(svar.initialWires);
+      const commit = svar.commit === true;
+      const atSeq = num(svar.atSeq);
+      const epoch =
+        typeof svar.logEpoch === "string" && svar.logEpoch
+          ? svar.logEpoch
+          : typeof svar.ack?.logEpoch === "string" && svar.ack.logEpoch
+            ? svar.ack.logEpoch
+            : undefined;
+      if (epoch) this.v4LogEpoch = epoch;
+      return {
+        utford: true,
+        ...(wires !== undefined ? { wires } : {}),
+        ...(commit ? { commit } : {}),
+        ...(atSeq !== undefined ? { atSeq } : {}),
+        ...(epoch ? { logEpoch: epoch } : {}),
+        rått: svar,
+      };
+    } catch {
+      return { utford: false }; // fel-tolerant — ALDRIG kast
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -5537,74 +5636,110 @@ class AppServerTransport implements StudioTransport {
       if (!target) return null; // inga samtalsrader ⇒ v4 har ingen diff att ge
       // baseRevision: den LIVE-spårade revisionen (state.updated-ramar).
       // Stale (revisionen hunnit gå vidare) ⇒ EN retry med atSeq som
-      // kandidat — annars null (motorn tar över).
+      // kandidat — annars resync (GAP 25) → null (motorn tar över).
       const baser = [this.v4Revision];
       if (typeof rr?.atSeq === "number") baser.push(rr.atSeq);
       for (const basRevision of baser) {
         try {
-          const fc = (await this.klient.protokollFraga(
-            "v4/conversation/fileChanges",
-            {
-              sessionId: this.sid,
-              target,
-              baseRevision: basRevision,
-              baseLogEpoch: logEpoch,
-            },
-            15_000,
-          )) as {
-            items?: {
-              path?: unknown;
-              additions?: unknown;
-              deletions?: unknown;
-              patches?: { oldStart?: unknown; oldLines?: unknown; newStart?: unknown; newLines?: unknown; lines?: unknown }[];
-            }[];
-          } | null;
-          const items = Array.isArray(fc?.items) ? fc!.items! : [];
-          const ut: StudioFilandring[] = [];
-          for (const item of items.slice(0, MAX_FILER)) {
-            const sokvag = typeof item.path === "string" && item.path ? item.path : null;
-            if (!sokvag) continue;
-            const raderUt: StudioRadandring[] = [];
-            const punkter: { oldStart: number; oldLines: number; newStart: number; newLines: number; rader: string[] }[] = [];
-            for (const p of Array.isArray(item.patches) ? item.patches : []) {
-              const oldStart = typeof p.oldStart === "number" ? p.oldStart : 0;
-              const oldLines = typeof p.oldLines === "number" ? p.oldLines : 0;
-              const newStart = typeof p.newStart === "number" ? p.newStart : 0;
-              const newLines = typeof p.newLines === "number" ? p.newLines : 0;
-              const lines: string[] = [];
-              for (const linje of Array.isArray(p.lines) ? p.lines : []) {
-                if (typeof linje !== "string") continue;
-                lines.push(linje.length > MAX_RADLANGD ? `${linje.slice(0, MAX_RADLANGD)}…` : linje);
-                // Unified form: "+x" = tillagd, "−x" = borttagen, " x" =
-                // kontext (ej med i ±-panelen).
-                if (linje.startsWith("+")) {
-                  raderUt.push({ typ: "+", text: linje.slice(1).slice(0, MAX_RADLANGD) });
-                } else if (linje.startsWith("-")) {
-                  raderUt.push({ typ: "-", text: linje.slice(1).slice(0, MAX_RADLANGD) });
-                }
-              }
-              if (lines.length > 0) {
-                punkter.push({ oldStart, oldLines, newStart, newLines, rader: lines.slice(0, 120) });
-              }
-            }
-            ut.push({
-              sokvag,
-              plus: typeof item.additions === "number" ? item.additions : raderUt.filter((r) => r.typ === "+").length,
-              minus: typeof item.deletions === "number" ? item.deletions : raderUt.filter((r) => r.typ === "-").length,
-              rader: raderUt.slice(0, MAX_RADER_PER_FIL),
-              ...(punkter.length > 0 ? { punkter: punkter.slice(0, 40) } : {}),
-            });
-          }
-          return ut; // ÄRLIGT v4-svar (tom lista = inga ändringar)
-        } catch (fel) {
-          const text = fel instanceof Error ? fel.message : String(fel);
-          if (!text.includes("stale")) throw fel; // ej ett stale-fel → ge upp v4
-          // stale → pröva nästa base-kandidat (sista varvet = ge upp → null)
+          const ut = await this.hamtaFilandringarV4EttFörsök(target, basRevision, logEpoch);
+          if (ut !== null) return ut; // ÄRLIGT v4-svar (tom lista = inga ändringar)
+        } catch {
+          return null; // ej-stale fel → ge upp v4-grenen (Write/Edit-motorn)
+        }
+      }
+      // ── GAP-REGISTER POST 25 (V9/A3 — VÅG 172): SAMTLIGA bas-kandidater
+      // stale ⇒ v4/conversation/resync som SISTA utväg FÖRE Write/Edit-
+      // motorn. Resync returnerar initialWires (postas via response-outbox
+      // + commit) — state.updated-ramar i svaret uppdaterar v4Revision via
+      // påNotis; en ÖKAD revision ⇒ ett sista fileChanges-försök.
+      const forrRevision = this.v4Revision;
+      const rs = await this.lasV4Resync();
+      if (rs.utford && this.v4Revision > forrRevision) {
+        try {
+          const ut = await this.hamtaFilandringarV4EttFörsök(target, this.v4Revision, logEpoch);
+          if (ut !== null) return ut;
+        } catch {
+          // resync-räddningen misslyckades — motorn tar över (null nedan)
         }
       }
       return null;
     } catch {
       return null; // v4 otillgängligt/timeout — Write/Edit-motorn tar över
+    }
+  }
+
+  /**
+   * VÅG 85 F4 → VÅG 172 (GAP 25): ETT fileChanges-försök med given bas.
+   * null = STALE (anroparen prövar nästa kandidat / resync), array =
+   * framgång (tom = ärligt "inga ändringar"), kast = annat fel (anroparen
+   * ger upp v4-grenen — Write/Edit-motorn tar över).
+   */
+  private async hamtaFilandringarV4EttFörsök(
+    target: { rowId: number; entityId: string },
+    basRevision: number,
+    logEpoch: string,
+  ): Promise<StudioFilandring[] | null> {
+    const klient = this.klient;
+    if (!klient?.lever || !this.sid) return null;
+    try {
+      const fc = (await klient.protokollFraga(
+        "v4/conversation/fileChanges",
+        {
+          sessionId: this.sid,
+          target,
+          baseRevision: basRevision,
+          baseLogEpoch: logEpoch,
+        },
+        15_000,
+      )) as {
+        items?: {
+          path?: unknown;
+          additions?: unknown;
+          deletions?: unknown;
+          patches?: { oldStart?: unknown; oldLines?: unknown; newStart?: unknown; newLines?: unknown; lines?: unknown }[];
+        }[];
+      } | null;
+      const items = Array.isArray(fc?.items) ? fc!.items! : [];
+      const ut: StudioFilandring[] = [];
+      for (const item of items.slice(0, MAX_FILER)) {
+        const sokvag = typeof item.path === "string" && item.path ? item.path : null;
+        if (!sokvag) continue;
+        const raderUt: StudioRadandring[] = [];
+        const punkter: { oldStart: number; oldLines: number; newStart: number; newLines: number; rader: string[] }[] = [];
+        for (const p of Array.isArray(item.patches) ? item.patches : []) {
+          const oldStart = typeof p.oldStart === "number" ? p.oldStart : 0;
+          const oldLines = typeof p.oldLines === "number" ? p.oldLines : 0;
+          const newStart = typeof p.newStart === "number" ? p.newStart : 0;
+          const newLines = typeof p.newLines === "number" ? p.newLines : 0;
+          const lines: string[] = [];
+          for (const linje of Array.isArray(p.lines) ? p.lines : []) {
+            if (typeof linje !== "string") continue;
+            lines.push(linje.length > MAX_RADLANGD ? `${linje.slice(0, MAX_RADLANGD)}…` : linje);
+            // Unified form: "+x" = tillagd, "−x" = borttagen, " x" =
+            // kontext (ej med i ±-panelen).
+            if (linje.startsWith("+")) {
+              raderUt.push({ typ: "+", text: linje.slice(1).slice(0, MAX_RADLANGD) });
+            } else if (linje.startsWith("-")) {
+              raderUt.push({ typ: "-", text: linje.slice(1).slice(0, MAX_RADLANGD) });
+            }
+          }
+          if (lines.length > 0) {
+            punkter.push({ oldStart, oldLines, newStart, newLines, rader: lines.slice(0, 120) });
+          }
+        }
+        ut.push({
+          sokvag,
+          plus: typeof item.additions === "number" ? item.additions : raderUt.filter((r) => r.typ === "+").length,
+          minus: typeof item.deletions === "number" ? item.deletions : raderUt.filter((r) => r.typ === "-").length,
+          rader: raderUt.slice(0, MAX_RADER_PER_FIL),
+          ...(punkter.length > 0 ? { punkter: punkter.slice(0, 40) } : {}),
+        });
+      }
+      return ut; // ÄRLIGT v4-svar (tom lista = inga ändringar)
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      if (text.includes("stale")) return null; // stale → nästa kandidat/resync
+      throw fel; // övrigt fel → anroparen ger upp v4-grenen
     }
   }
 
@@ -8033,6 +8168,25 @@ class MockTransport implements StudioTransport {
         modelRequestCount: 42,
         source: "mock",
       },
+    };
+  }
+
+  // ── GAP 25 (V9/A3 — VÅG 172) (mock): v4/conversation/resync — ────────────
+  // deterministisk. Mocken har ingen v4-gateway att återhämta: ärligt
+  // {utford:false} (protokollets svarform i rått för dev-E2E-panelen).
+
+  async lasV4Resync(): Promise<{
+    utford: boolean;
+    wires?: number;
+    commit?: boolean;
+    atSeq?: number;
+    logEpoch?: string;
+    rått?: unknown;
+  }> {
+    await this.ensure();
+    return {
+      utford: false,
+      rått: { sessionId: this.sessionId(), initialWires: [], commit: false, source: "mock" },
     };
   }
 

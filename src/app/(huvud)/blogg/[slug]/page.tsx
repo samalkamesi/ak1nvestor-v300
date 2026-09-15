@@ -9,6 +9,9 @@ import { DelRad } from "@/components/ak1a/del-rad";
 import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
+// force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /kurser sedan våg 82.
+export const revalidate = 3600;
 
 /**
  * VÅG 81: dynamicParams=false = ÄKTA 404 på okända slug:ar. Default (true)

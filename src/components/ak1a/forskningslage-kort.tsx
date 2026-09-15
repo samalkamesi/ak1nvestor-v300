@@ -310,7 +310,7 @@ export function ForskningslageKort() {
           </div>
           <Link
             href="/portfolj-forskning"
-            className="rounded-lg border border-gold/40 px-4 py-2 text-xs font-semibold text-gold-soft transition-colors hover:bg-gold/10"
+            className="rounded-lg border border-gold/40 px-4 py-2 text-xs font-semibold text-gold-soft transition-colors hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             Till korstabellen →
           </Link>
@@ -351,7 +351,7 @@ export function ForskningslageKort() {
                     <li key={b.ticker} className="py-2">
                       <Link
                         href={`/forskningsbiblioteket/${encodeURIComponent(b.ticker)}`}
-                        className="group flex items-baseline gap-2.5"
+                        className="group flex items-baseline gap-2.5 max-md:min-h-[52px]"
                       >
                         <span className="font-serif text-sm font-black text-gold">{i + 1}</span>
                         <span className="min-w-0 flex-1">

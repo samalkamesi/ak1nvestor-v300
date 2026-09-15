@@ -481,7 +481,7 @@ export function NotisCenter() {
           onClick={vexla}
           aria-label={olasta > 0 ? `${t("notis.notiser")} — ${olasta} ${t("notis.olasta")}` : t("notis.notiser")}
           aria-expanded={oppen}
-          className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-gold shadow-xl transition-transform hover:scale-105 sm:h-12 sm:w-12"
+          className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-gold shadow-xl transition-transform hover:scale-105 max-md:h-[52px] max-md:w-[52px] sm:h-12 sm:w-12"
         >
           <Bell className="h-4 w-4 sm:h-5 sm:w-5" />
           {olasta > 0 && (

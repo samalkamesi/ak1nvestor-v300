@@ -1,0 +1,108 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-volvo-car-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-15, omgång 2)",
+  "rapport": "kvartal-2026-q3-volvo-car.md",
+  "bedomning": "EFTER RÄTTNING — A1–A4 blockerande (kvartalsdatum mot källa, trasig ordstam i källraden, felaktig resultatterm i övning A, stavfel), B1–B3 enklare byten, C1–C4 förslag som kräver beslut",
+  "anvandning": "Verkställ A- och B-poster exakt (sök/ersätt i angivet fält — samtliga strängar verifierade UNIKA i filen). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "A1",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body",
+      "gammalt": "Q4 kommer 4 februari 2027",
+      "nytt": "Q4 kommer 5 februari 2027",
+      "orsak": "Källan (data/analyses/VOLCAR-B.json keyEvents) anger 2027-02-05 · Q4-rapport 2026; ingen källa stödjer 4 februari. Sannolik avskrivning av 05→4"
+    },
+    {
+      "id": "A2",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (Källor)",
+      "gammalt": "rappFÖNSTER och tider",
+      "nytt": "Rappdatum och tider",
+      "orsak": "Trasig ordstam (avklippt 'rapportfönster') i källradens första post — redigerarfel synligt i textens trovärdighetsbärare"
+    },
+    {
+      "id": "A3",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (Övning A)",
+      "gammalt": "i årlig ränta- och avskrivningsresultat",
+      "nytt": "i årligt EBITDA-resultat",
+      "orsak": "Skillnaden mellan två EBITDA-marginaler (0,12−0,10)×350 = 7 mdr är skillnad i EBITDA — inte i 'ränta- och avskrivningsresultat' (ingen rapportrad). Aritmetiken var korrekt, termen fel"
+    },
+    {
+      "id": "A4",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body",
+      "gammalt": "är väga att titta på",
+      "nytt": "är värda att titta på",
+      "orsak": "Stavfel: 'väga' → 'värda'"
+    },
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (Övning B)",
+      "gammalt": "råvarueexponering",
+      "nytt": "råvaruexponering",
+      "orsak": "Dubbelt e"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (vidareläsning)",
+      "gammalt": "från rapsiffror till slutsats",
+      "nytt": "från rapportsiffror till slutsats",
+      "orsak": "Avklippt ordstam"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 6,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts: ORD_PER_MINUT=600, Math.max(1, Math.round(ord/600))): 1 445 ord (titel 13 + ingress 46 + body 1 386) → 2. Exportvägen räknar om automatiskt — rättas enklast nu. Samma kur som fastighetsgranskningens C2"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (nyckeltal 5)",
+      "gammalt": "spannet mellan dem är själva rapportens uppgift att träda över",
+      "nytt": "spannet mellan dem är det som rapporten kommer att pröva",
+      "orsak": "'Träda över' är ingen etablerad svensk konstruktion; syftningen oklar. Förslag på tidsneutral omformulering"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (vidareläsning)",
+      "gammalt": "Två guider till — en generell i att läsa kvartalsrapporter och en om P/E-talet — ligger färdigskrivna i plattformens granskningskö och publiceras när kunden beslutar.",
+      "nytt": "Plattformen har även en generell guide i att läsa kvartalsrapporter och en om P/E-talet.",
+      "orsak": "Internt processpråk ('granskningskö', 'publiceras när kunden beslutar') i kundriktad text — olämpligt i publicerad form och inaktuellt dagen guiderna publiceras. Påståendet är sant idag (båda granskade 2026-09-14) men texten ska kunna publiceras tidlöst"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (Varför just den här rapporten)",
+      "gammalt": "Q1 rapporterades 29 april, Q2 den 17 juli",
+      "nytt": "Q2 redovisades den 17 juli",
+      "orsak": "Q1-datumet 29 april saknar källbelägg i utkastets referenser (analysens kalender börjar 2026-07-17). REKOMMENDERAT: stryk det obelagda datumet och behåll det två gånger belagda Q2-datumet. ALTERNATIV: verifiera 29 april mot Volvo Cars finansiella kalender före publicering och behåll"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "falt": "body (nyckeltalsinledningen)",
+      "gammalt": "volume-drivet",
+      "nytt": "volymdrivet",
+      "orsak": "Anglicism; resten av texten och serien använder svenska sammansättningar"
+    }
+  ]
+}

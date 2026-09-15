@@ -48,14 +48,14 @@ export function Sidfooter() {
                     {punkt.guldknapp ? (
                       <Link
                         href={punkt.lank}
-                        className="inline-block rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90"
+                        className="inline-block rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90 max-md:min-h-[52px]"
                       >
                         {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
                       </Link>
                     ) : (
                       <Link
                         href={punkt.lank}
-                        className="text-sm text-muted-foreground hover:text-foreground"
+                        className="text-sm text-muted-foreground hover:text-foreground max-md:flex max-md:min-h-[52px] max-md:items-center"
                       >
                         {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
                       </Link>

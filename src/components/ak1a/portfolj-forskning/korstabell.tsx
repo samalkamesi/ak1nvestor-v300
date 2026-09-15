@@ -723,7 +723,7 @@ function BranschRubrikMob({
       onClick={onVaxla}
       aria-expanded={oppen}
       title={oppen ? "Fäll ihop branschens bolagskort" : "Veckla ut branschens bolagskort"}
-      className="flex w-full flex-wrap items-baseline gap-x-2 border-b border-gold/20 pb-1 pt-2 text-left"
+      className="flex w-full flex-wrap items-baseline gap-x-2 border-b border-gold/20 pb-1 pt-2 text-left max-md:min-h-[52px]!"
     >
       <span aria-hidden className="text-[10px] font-bold text-gold">
         {oppen ? "▾" : "▸"}

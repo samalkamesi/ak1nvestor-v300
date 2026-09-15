@@ -103,8 +103,9 @@ export function byggKursregister(kurser: RegisterKalla[]): RegisterRad[] {
 }
 
 /**
- * KURSREGISTER — maskinbakat ur public/deep-courses.json (2026-09-11, 333
- * kurser). Äktheten verifieras av verktyg/testa-ai-mentor.mjs på varje körning.
+ * KURSREGISTER — maskinbakat ur public/deep-courses.json (2026-09-15, 349
+ * kurser; rebake s6-u3 omgång 4: spår 5:s sex nya — kt-01, am-01, vr-01,
+ * ks-03, ib-01, pe-01). Äktheten verifieras av verktyg/testa-ai-mentor.mjs.
  */
 export const KURSREGISTER: RegisterRad[] = [
   { slug: "100-baggers", titel: "100 Baggers — Mayer: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
@@ -113,6 +114,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "ak1ts-vaglarans-hierarki", titel: "AK1TS — Våglärans Hierarki: SUPERDJUP", kategori: "EKOSYSTEM", variabel: undefined, kapitel: 20, quiz: 60, minuter: 220, niva: "Alla" },
   { slug: "akm1-den-kontroversiella-modellen", titel: "AKM1 — Den Kontroversiella Modellen: SUPERDJUP", kategori: "EKOSYSTEM", variabel: undefined, kapitel: 20, quiz: 60, minuter: 240, niva: "Alla" },
   { slug: "all-about-asset-allocation", titel: "All About Asset Allocation — Ferri: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 15, quiz: 45, minuter: 150, niva: "Alla" },
+  { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "analysis-for-financial-management", titel: "Analysis for Financial Management — Robert C. Higgins: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 51, minuter: 214, niva: "Alla" },
   { slug: "bf-01-tillganglighetsfalla", titel: "Tillgänglighetsfälla", kategori: "BETEENDEFINANS", variabel: undefined, kapitel: 6, quiz: 14, minuter: 16, niva: "Intermediär" },
   { slug: "bf-02-sunk-cost", titel: "Sunk cost", kategori: "BETEENDEFINANS", variabel: undefined, kapitel: 6, quiz: 12, minuter: 15, niva: "Nybörjare" },
@@ -152,6 +154,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "foretagsvardering-med-fundamental-analys", titel: "Företagsvärdering: med fundamental analys — Hjelström, Isaksson & Nilsson: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 15, quiz: 45, minuter: 190, niva: "Alla" },
   { slug: "good-to-great", titel: "Good to Great — Jim Collins: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 15, quiz: 45, minuter: 180, niva: "Alla" },
   { slug: "how-to-make-money-in-stocks", titel: "How to Make Money in Stocks — O'Neil: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 16, quiz: 48, minuter: 176, niva: "Alla" },
+  { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
   { slug: "intermarket-analysis", titel: "Intermarket Analysis — Murphy: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 16, quiz: 48, minuter: 180, niva: "Alla" },
   { slug: "interpretation-of-financial-statements", titel: "The Interpretation of Financial Statements — Graham: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
   { slug: "investment-valuation", titel: "Investment Valuation — Damodaran: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 18, quiz: 54, minuter: 198, niva: "Alla" },
@@ -228,6 +231,10 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "km-069-orderbok-och-prissattning", titel: "Orderbok och prissättning", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 10, minuter: 18, niva: "Nybörjare" },
   { slug: "km-070-natmaklare-i-sverige", titel: "Nätmäklare i Sverige", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 18, minuter: 16, niva: "Nybörjare" },
   { slug: "konfluens-varde-moter-vagor", titel: "Konfluens — Där Värde Möter Vågor: DEN SAMMANSATTA METODEN", kategori: "EKOSYSTEM", variabel: undefined, kapitel: 13, quiz: 39, minuter: 169, niva: "Alla" },
+  { slug: "ks-01-kapitalstruktur-grunder", titel: "Kapitalstruktur — hur bolaget är finansierat", kategori: "KAPITALSTRUKTUR", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
+  { slug: "ks-02-kapitalallokering", titel: "Kapitalallokering — styrelsens fem vägar", kategori: "KAPITALSTRUKTUR", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "ks-03-skuldens-anatomi", titel: "Skuldens anatomi — löptider, bindning och covenants", kategori: "KAPITALSTRUKTUR", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
+  { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
   { slug: "liars-poker", titel: "Liar's Poker — Lewis: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "made-in-america", titel: "Made in America — Sam Walton: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 168, niva: "Alla" },
@@ -249,6 +256,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "mk-09-deflation-vs-inflation", titel: "Deflation vs inflation", kategori: "MAKROEKONOMI", variabel: undefined, kapitel: 6, quiz: 14, minuter: 20, niva: "Intermediär" },
   { slug: "mk-10-oljepris", titel: "Oljepris — makro-drivrutin", kategori: "MAKROEKONOMI", variabel: undefined, kapitel: 6, quiz: 15, minuter: 22, niva: "Intermediär" },
   { slug: "mk-11-kinaekonomin", titel: "Kina-ekonomin", kategori: "MAKROEKONOMI", variabel: undefined, kapitel: 6, quiz: 15, minuter: 26, niva: "Avancerad" },
+  { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
   { slug: "of-permanent-value", titel: "Of Permanent Value — Andrew Kilpatrick: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 43, minuter: 187, niva: "Alla" },
   { slug: "one-up-on-wall-street", titel: "One Up on Wall Street — Peter Lynch: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 188, niva: "Alla" },
   { slug: "origins-of-the-crash", titel: "Origins of the Crash — Lowenstein: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 168, niva: "Alla" },
@@ -272,6 +280,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "pc-18-case-oresund", titel: "Case: Öresund — investmentbolag", kategori: "PRAKTISKA CASE", variabel: undefined, kapitel: 6, quiz: 12, minuter: 22, niva: "Intermediär" },
   { slug: "pc-19-case-hoganas", titel: "Case: Höganäs — järnpulver-monopol", kategori: "PRAKTISKA CASE", variabel: undefined, kapitel: 6, quiz: 12, minuter: 26, niva: "Avancerad" },
   { slug: "pc-20-case-essity", titel: "Case: Essity — hygienvaror", kategori: "PRAKTISKA CASE", variabel: undefined, kapitel: 6, quiz: 12, minuter: 25, niva: "Intermediär" },
+  { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "pf-01-portfoljbyggande", titel: "Portfölj-byggande", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 20, niva: "Nybörjare" },
   { slug: "pf-02-position-sizing", titel: "Position sizing", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 18, niva: "Nybörjare" },
   { slug: "pf-03-diversifiering", titel: "Diversifiering", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 22, niva: "Intermediär" },
@@ -307,6 +316,8 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "rk-13-gdpr-och-datarisk", titel: "GDPR och data-risk", kategori: "RISKHANTERING", variabel: undefined, kapitel: 6, quiz: 17, minuter: 20, niva: "Intermediär" },
   { slug: "rk-14-esgrisk", titel: "ESG-risk — miljö och sociala", kategori: "RISKHANTERING", variabel: undefined, kapitel: 6, quiz: 15, minuter: 22, niva: "Intermediär" },
   { slug: "rk-15-cykelrisk", titel: "Cykel-risk — konjunkturkänslighet", kategori: "RISKHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 24, niva: "Intermediär" },
+  { slug: "rs-01-volatilitet-och-risk", titel: "Volatilitet och risk — skilj svängningar från förlust", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
+  { slug: "rs-02-kundkoncentration", titel: "Kundkoncentration — när få kunder bär intäkterna", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
   { slug: "se-01-saassektorn", titel: "SaaS-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 14, minuter: 28, niva: "Avancerad" },
   { slug: "se-02-halvledarsektorn", titel: "Halvledar-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 11, minuter: 30, niva: "Avancerad" },
   { slug: "se-03-forsvarssektorn", titel: "Försvars-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 13, minuter: 24, niva: "Intermediär" },
@@ -394,6 +405,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "ts-23-volume-spread-analysis-vsa", titel: "Volume Spread Analysis (VSA)", kategori: "AK1TS FÖRDJUPNING", variabel: undefined, kapitel: 6, quiz: 12, minuter: 26, niva: "Avancerad" },
   { slug: "ts-24-order-flow", titel: "Order Flow — marknadsdjup", kategori: "AK1TS FÖRDJUPNING", variabel: undefined, kapitel: 6, quiz: 12, minuter: 30, niva: "Avancerad" },
   { slug: "ts-25-market-profile", titel: "Market Profile", kategori: "AK1TS FÖRDJUPNING", variabel: undefined, kapitel: 6, quiz: 12, minuter: 28, niva: "Avancerad" },
+  { slug: "tx-01-organisk-mot-forvarvad-tillvaxt", titel: "Organisk vs förvärvad tillväxt — spåra källan", kategori: "TILLVÄXT", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "ud-01-payout-ratio", titel: "Payout ratio", kategori: "UTDELNINGSSTRATEGI", variabel: undefined, kapitel: 6, quiz: 12, minuter: 18, niva: "Intermediär" },
   { slug: "ud-02-aterinvestering", titel: "Återinvestering — utdelningens kraft", kategori: "UTDELNINGSSTRATEGI", variabel: undefined, kapitel: 6, quiz: 18, minuter: 18, niva: "Nybörjare" },
   { slug: "ud-03-dividend-aristocrats", titel: "Dividend Aristocrats", kategori: "UTDELNINGSSTRATEGI", variabel: undefined, kapitel: 6, quiz: 18, minuter: 22, niva: "Intermediär" },
@@ -437,6 +449,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "vm-09-pricetocashflow", titel: "Price-to-Cash-Flow", kategori: "VÄRDERINGSMETODER", variabel: undefined, kapitel: 6, quiz: 18, minuter: 20, niva: "Intermediär" },
   { slug: "vm-10-assetbased-valuation", titel: "Asset-based valuation", kategori: "VÄRDERINGSMETODER", variabel: undefined, kapitel: 6, quiz: 12, minuter: 24, niva: "Avancerad" },
   { slug: "vm-11-waccfallor", titel: "WACC-fällor", kategori: "VÄRDERINGSMETODER", variabel: undefined, kapitel: 6, quiz: 12, minuter: 22, niva: "Avancerad" },
+  { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "way-of-the-turtle", titel: "Way of the Turtle — Faith: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 168, niva: "Alla" },
   { slug: "what-works-on-wall-street", titel: "What Works on Wall Street — O'Shaughnessy: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
   { slug: "when-genius-failed", titel: "When Genius Failed — Lowenstein: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 140, niva: "Alla" },

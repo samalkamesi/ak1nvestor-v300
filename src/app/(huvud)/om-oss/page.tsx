@@ -3,6 +3,10 @@ import Link from "next/link";
 import { getCourseList } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
+// Statisk per default ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /kurser sedan våg 82.
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Om oss — AK1A Research Lab | Ak1 Apex Nexus",
   description:

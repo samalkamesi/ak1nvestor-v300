@@ -5,6 +5,9 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Rapportbyggare } from "@/components/ak1a/rapportbyggare";
 
 export const dynamic = "force-static";
+// force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /kurser sedan våg 82.
+export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
   path: "/rapporter",

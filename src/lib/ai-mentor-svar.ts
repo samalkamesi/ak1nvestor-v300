@@ -179,7 +179,10 @@ export type FragMonster = {
   bygga: (register: RegisterRad[]) => LokaltSvar;
 };
 
-const MONSTER: FragMonster[] = [
+// Exporterad sedan s6-u3 omgång 3: regressionstesternas fall K läser
+// kärnorden LIVE ur modulen (verktyg/testa-ai-mentor-nasta.mjs) så att
+// kärnordsdisjunktionen bevisas mot basen också — inte bara mot syskonlagren.
+export const MONSTER: FragMonster[] = [
   {
     id: "akm1",
     karnord: ["akm1", "akm 1", "20 variabler", "tjugo variabler", "fundamental modell", "kontroversiella modellen"],
@@ -700,6 +703,222 @@ const MONSTER: FragMonster[] = [
         ],
         motfraga: { text: "Vad är direktavkastning?", kategori: "skatt" },
         fordjupa: { text: k.titel, lank: "/kurser/km-052-isk" },
+      };
+    },
+  },
+  // ── Spår 6, omgång 2, byggare u2 (fabrik auto-s6): kapitalstruktur + tillväxt
+  // Ämnesval EFTER kollisionskontroll mot basens 20 + extra-lagrets 3 + makro-
+  // lagrets 2 mönster (u1 cb1dc540, körs FÖRE basen): kärnordsfamiljerna
+  // "skuld/kapitalstruktur/soliditet/hävstång" och "tillväxt/organisk/förvärv"
+  // är verifierat fria — de förekommer bara i andra monsters SVARSTEXTER,
+  // aldrig som kärnord. Backas av spår 5:s sex nya kurser som rebakades in
+  // i registret i samma leverans (337 → 343, bastestets E01 grönt igen).
+  // Sist i MONSTER + strikt poängregel ⇒ kan aldrig stjäla en fråga från
+  // tidigare deklarerade mönster (rad/kostnad/risk förblir säkrade).
+  // Regressionstest: verktyg/testa-ai-mentor-s6u2-omg2.mjs
+  {
+    id: "kapitalstruktur",
+    karnord: [
+      "kapitalstruktur", "kapitalstrukturen", "skuld", "skulder", "skuldsättning",
+      "skuldsatt", "soliditet", "hävstång", "belåning", "eget kapital",
+      "kapitalallokering",
+    ],
+    starkord: ["bolag", "balansräkning", "låna", "finansiera", "källa"],
+    bygga: (reg) => {
+      const grunder = reg.find((r) => r.slug === "ks-01-kapitalstruktur-grunder");
+      const allokering = reg.find((r) => r.slug === "ks-02-kapitalallokering");
+      const balans = reg.find((r) => r.slug === "bk-01-balansrakningen");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "ks-01-kapitalstruktur-grunder", "Läroplanen — kapitalstruktur, grunderna (nybörjarnivå)"),
+        kursKalla(reg, "ks-02-kapitalallokering", "Läroplanen — kapitalstruktur, styrelsens fem vägar"),
+        kursKalla(reg, "rk-03-skuldfalla", "Läroplanen — riskhantering, när skulden blir en fälla"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Kapitalstruktur är svaret på frågan varifrån bolagets pengar kommer — och det finns bara två källor: EGET KAPITAL (ägarna har skjutit till eller låtit vinsten stanna kvar) och SKULD (lånade pengar med ränta och återbetalningskrav). Nyckeltalet SOLIDITET visar hur stor del av balansräkningen som bärs av eget kapital.\n\nPedagogiken i balansgången: skuld är inte dum i sig — den är en HÄVSTÅNG. Går verksamheten bra förstärker den avkastningen på det egna kapitalet; går den sämre gör samma räntekostnad fallet brantare. Därför läses kapitalstruktur som en riskfråga: klarar bolaget en dålig cykel utan att tvingas låna mer eller emittera? (Det är risken V19 kapitalförbränning mäter.)\n\nOch pengarna som TJÄNAS har också en struktur: KAPITALALLOKERINGEN — styrelsens fem vägar för det fria kassaflödet (reinvestera i verksamheten, förvärva, dela ut, köpa tillbaka aktier, amortera) är en egen kurs.\n\nSom alltid: detta är utbildning i att LÄSA en balansräkning — aldrig ett omdöme om enskilda bolag.` +
+          kallradFler(kallor),
+        amne: "kapitalstruktur",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Kapitalstruktur — grunder${grunder ? ` — ${grunder.minuter} min` : ""}`, lank: "/kurser/ks-01-kapitalstruktur-grunder", ikon: "🏗️", beskrivning: `${fa(grunder)} · nivå ${(grunder?.niva || "nybörjare").toLowerCase()}` },
+          { text: `Kursen: Kapitalallokering — fem vägar${allokering ? ` — ${allokering.minuter} min` : ""}`, lank: "/kurser/ks-02-kapitalallokering", ikon: "🧭", beskrivning: fa(allokering) },
+          { text: "Kursen: Skuldfällan", lank: "/kurser/rk-03-skuldfalla", ikon: "⚠️", beskrivning: "När skulden blir en fälla — riskhantering" },
+          ...(balans
+            ? [{ text: "Kursen: Balansräkningen — bolagets karta", lank: `/kurser/${balans.slug}`, ikon: "🗺️", beskrivning: `${fa(balans)} · nybörjarnivå` }]
+            : []),
+          { text: "Vad är V19?", lank: "fragor:" + encodeURIComponent("vad är V19?"), ikon: "🔥", beskrivning: "Kapitalförbränning — kopplingsvariabeln" },
+        ],
+        motfraga: { text: "Vad är V19?", kategori: "risk" },
+        fordjupa: { text: k.titel, lank: "/kurser/ks-01-kapitalstruktur-grunder" },
+      };
+    },
+  },
+  {
+    id: "tillvaxt",
+    karnord: [
+      "tillväxt", "tillväxten", "tillväxtaktie", "tillväxtaktier", "tillväxtbolag",
+      "tillväxtbolagen", "organisk tillväxt", "förvärvad tillväxt", "organisk",
+      "organiskt", "förvärv", "förvärvad", "förvärvat", "förvärvstillväxt",
+    ],
+    starkord: ["bolag", "aktier", "försäljning", "intäkter", "källa"],
+    bygga: (reg) => {
+      const tx = reg.find((r) => r.slug === "tx-01-organisk-mot-forvarvad-tillvaxt");
+      const v01 = reg.find((r) => r.slug === "v01-forsaljningstillvaxt");
+      const v03 = reg.find((r) => r.slug === "v03-intaktsdiversifiering");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "tx-01-organisk-mot-forvarvad-tillvaxt", "Läroplanen — tillväxt, kursen om källan (intermediär)"),
+        kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — AKM1, V01 försäljningstillväxt (nybörjarnivå)"),
+        kursKalla(reg, "v03-intaktsdiversifiering", "Läroplanen — AKM1, V03 intäktsdiversifiering"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Tillväxt är den första dimensionen i AKM1 (V01–V03) — men den nybörjarlektion som oftast glöms bort är KÄLLAN: tillväxten är antingen ORGANISK (fler kunder, mer försäljning, högre priser — växer inifrån) eller FÖRVÄRVAD (bolaget köper en annan verksamhet — växer utifrån).\n\nVarför källan spelar pedagogisk roll:\n1️⃣ ORGANISK tillväxt är billigare och mer hållbar — men långsammare.\n2️⃣ FÖRVÄRVAD tillväxt är snabb — men kostar kapital, integrationsarbete och ofta goodwill som kan behöva skrivas ned.\n3️⃣ FÄLLAN: en stigande intäktskurva kan dölja en kärna som står stilla — då finns tillväxten bara i senaste förvärvet. I rapporten spårar du källan i noterna och segmentuppgifterna (ÅRL 1995:1554 kräver att intäkterna delas upp där det behövs för förståelsen).\n\nOch kopplingen framåt: tillväxt UTAN moat äts så småningom upp av konkurrensen — därför står V01–V03 aldrig ensamma i en analys.\n\nSom alltid: detta är utbildning i att läsa KÄLLAN bakom siffrorna — inte en uppfattning om vilka bolag som växer bäst.` +
+          kallradFler(kallor),
+        amne: "tillväxt",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Organisk vs förvärvad tillväxt${tx ? ` — ${tx.minuter} min` : ""}`, lank: "/kurser/tx-01-organisk-mot-forvarvad-tillvaxt", ikon: "🌱", beskrivning: `${fa(tx)} · nivå ${(tx?.niva || "intermediär").toLowerCase()}` },
+          { text: `Kursen V01: Försäljningstillväxt${v01 ? ` — ${v01.minuter} min` : ""}`, lank: "/kurser/v01-forsaljningstillvaxt", ikon: "📈", beskrivning: `${fa(v01)} · nybörjarnivå` },
+          { text: `Kursen V03: Intäktsdiversifiering${v03 ? ` — ${v03.minuter} min` : ""}`, lank: "/kurser/v03-intaktsdiversifiering", ikon: "🧺", beskrivning: fa(v03) },
+          { text: "Vad är en moat?", lank: "fragor:" + encodeURIComponent("vad är en moat?"), ikon: "🛡️", beskrivning: "Varför tillväxt behöver ett försvar" },
+        ],
+        motfraga: { text: "Vad är ARR-tillväxt?", kategori: "tillväxt" },
+        fordjupa: { text: k.titel, lank: "/kurser/tx-01-organisk-mot-forvarvad-tillvaxt" },
+      };
+    },
+  },
+  // ── Spår 6, omgång 4, byggare u3 (fabrik auto-s6): katalysator + börsen +
+  // private equity — nivån 30 → 33. Ämnesval EFTER kollisionskontroll mot
+  // SAMTLIGA 30 tidigare mönster (basens 22 + extra-lagrets 3 + makro-lagrets
+  // 2 + nästa-lagrets 3 i ai-mentor-nasta-fragor.ts, som tog DCF/inre värde,
+  // investmentbolag/NAV och options): kärnordsfamiljerna "katalysator*",
+  // "börs*/aktiemarknad*/orderbok/likviditet/spread" och "private equity/
+  // riskkapital*/onoterat*" är verifierat fria — verifieras MEKANISKT av
+  // testa-ai-mentor-s6u3-omg4.mjs fall K (kärnord läses LIVE ur modulerna).
+  // Primärkällorna är spår 5:s sex nya kurser (kt-01, am-01, pe-01 — rebakade
+  // in i KURSREGISTER 343 → 349 i samma leverans, E01 grönt igen) och
+  // registerfakta (kapitel/minuter) läses VID SVARSTID — inga hårdkodade tal
+  // som kan bli lögn(er) när registret växer. Sist i MONSTER + strikt
+  // poängregel ⇒ kan aldrig stjäla en fråga från tidigare mönster.
+  {
+    id: "katalysator",
+    karnord: [
+      "katalysator", "katalysatorer", "katalysatorn", "katalysatorkalendern",
+      "katalysatorjakten", "kursdrivare", "kursdrivarna", "kursdrivande",
+    ],
+    starkord: ["aktie", "aktier", "kurs", "rapport", "händelse", "flytta", "vänta"],
+    bygga: (reg) => {
+      const grund = reg.find((r) => r.slug === "kt-01-vad-ar-en-katalysator");
+      const lansering = reg.find((r) => r.slug === "v16-produktlanseringar");
+      const regulatorisk = reg.find((r) => r.slug === "v18-regulatoriska");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "kt-01-vad-ar-en-katalysator", "Läroplanen — katalysator, kurs 1 (nybörjarnivå)"),
+        kursKalla(reg, "v16-produktlanseringar", "Läroplanen — AKM1, V16 katalysator-dimensionen"),
+        kursKalla(reg, "v18-regulatoriska", "Läroplanen — AKM1, V18 katalysator-dimensionen"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `En katalysator är den händelse som kan flytta en aktiekurs — en rapport, en produktlansering, ett avtal, ett myndighetsbeslut. Men den viktigaste nybörjarlektionen är VAD SOM AVGÖR REAKTIONEN: kursen svarar på överraskningens TECKEN mot redan prissatt förväntan, inte på nyhetens storlek. En bra kvartalssiffra kan fälla kursen om marknaden räknade med bättre — och tvärtom.\n\nKatalysatorkartan att känna igen (AKM1:s dimension, V16–V18):\n1️⃣ RAPPORTER — resultaträkningen som återkommande mätpunkt (läs den i tre steg: intäkt, marginal, kassaflöde).\n2️⃣ LANSERINGAR & AVTAL — V16 och V17: nya produkter och partnerskap, svårast att prissätta i förväg.\n3️⃣ REGULATORISKT — V18: myndighetsbeslut, godkännanden, regelverk — ofta binära utfall som rör sig mycket.\n\nStudieverktyget som gör teorin till träning: KATALYSATORKALENDERN — skriv din förväntan FÖRE händelsen, utvärdera EFTER. Då blir varje rapport en kalibreringslektion i att skilja nyhet från överraskning.\n\nOch fällan som gett dimensionen sitt dåliga rykte: katalysatorJAKT — att samla kommande händelser i hopp om snabba kursskutt är spekulation, inte analys. Kurserna lär ut läsningen — aldrig jakten.\n\nGrundkursen (${fa(grund)}) tar hela mekanismen från grunden; V16 och V18 fördjupar två av familjerna.` +
+          kallradFler(kallor),
+        amne: "katalysator",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Vad är en katalysator?${grund ? ` — ${grund.minuter} min` : ""}`, lank: "/kurser/kt-01-vad-ar-en-katalysator", ikon: "⚡", beskrivning: `${fa(grund)} · nivå ${(grund?.niva || "nybörjare").toLowerCase()}` },
+          { text: `Kursen V16: Produktlanseringar${lansering ? ` — ${lansering.minuter} min` : ""}`, lank: "/kurser/v16-produktlanseringar", ikon: "🚀", beskrivning: "Katalysatorfamiljen lanseringar" },
+          { text: `Kursen V18: Regulatoriska katalysatorer${regulatorisk ? ` — ${regulatorisk.minuter} min` : ""}`, lank: "/kurser/v18-regulatoriska", ikon: "⚖️", beskrivning: "Myndighetsbesluten som kursrörare" },
+          { text: "Hur läser jag en kvartalsrapport?", lank: "fragor:" + encodeURIComponent("hur läser jag en kvartalsrapport?"), ikon: "📰", beskrivning: "Den vanligaste katalysatorn på djupet" },
+        ],
+        motfraga: { text: "Hur läser jag en kvartalsrapport?", kategori: "katalysator" },
+        fordjupa: { text: k.titel, lank: "/kurser/kt-01-vad-ar-en-katalysator" },
+      };
+    },
+  },
+  {
+    id: "aktiemarknad",
+    karnord: [
+      "börsen", "börs", "aktiemarknaden", "aktiemarknad", "borshandel",
+      "orderbok", "orderboken", "orderdjup", "orderdjupet", "likviditet",
+      "likviditeten", "spread", "spreaden", "slippage", "nätmäklare",
+      "mäklare",
+    ],
+    starkord: ["handla", "handel", "fungerar", "funktionera", "kostnad", "prissättning", "auktion"],
+    bygga: (reg) => {
+      const spreadkurs = reg.find((r) => r.slug === "am-01-likviditet-och-spread");
+      const orderbok = reg.find((r) => r.slug === "km-069-orderbok-och-prissattning");
+      const maklare = reg.find((r) => r.slug === "km-070-natmaklare-i-sverige");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "am-01-likviditet-och-spread", "Läroplanen — aktiemarknaden i praktiken, handelns dolda kostnader"),
+        kursKalla(reg, "km-069-orderbok-och-prissattning", "Läroplanen — aktiemarknaden i praktiken, kurs 1 (nybörjarnivå)"),
+        kursKalla(reg, "km-070-natmaklare-i-sverige", "Läroplanen — aktiemarknaden i praktiken, vägen in till handeln"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Börsen är en matchningmaskin: säljare som lägger asker och köpare som lägger bider, och mitt emellan uppstår priset. Tre mekanismer gör att den fungerar — och kostar:\n\n1️⃣ ORDERBOKEN — listan med högsta bud och lägsta budgivare. Skillnaden mellan dem är SPREADEN, och där sitter handelns dolda transaktionskostnad: handlas en aktie 84,00 / 84,20 är spreaden 20 öre ≈ 0,24 % — som på 10 000 aktier är 2 000 kronor, betalda för att få handla NU. (Aritmetiken är pedagogik från kursen — ingen uppmaning.)\n2️⃣ LIKVIDITETEN — hur mycket som kan handlas utan att röra priset. En tunn aktie med bred spread straffar tålmodiga beslut mindre än stressade: den som måste ut UR positionen direkt betalar spreaden, den som kan vänta på sina villkor slipper slippage.\n3️⃣ AUKTIONERNA — öppnings- och stängningsauktionen samlar order till EN kurs i taget i stället för löpande matchning; dit söker sig stora institutionella order, vilket är varför index och derivat knyts till just stängningskursen.\n\nKategorin aktiemarknaden i praktiken (${fa(orderbok)} nybörjarkurs om orderboken, ${fa(spreadkurs)} om spread och likviditet, ${fa(maklare)} om nätmäklare) tar hela maskineriet från grunden — som utbildning i hur marknaden fungerar, aldrig som handelsråd.` +
+          kallradFler(kallor),
+        amne: "aktiemarknaden",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Orderbok och prissättning${orderbok ? ` — ${orderbok.minuter} min` : ""}`, lank: "/kurser/km-069-orderbok-och-prissattning", ikon: "📖", beskrivning: `${fa(orderbok)} · nivå ${(orderbok?.niva || "nybörjare").toLowerCase()}` },
+          { text: `Kursen: Likviditet och spread${spreadkurs ? ` — ${spreadkurs.minuter} min` : ""}`, lank: "/kurser/am-01-likviditet-och-spread", ikon: "💧", beskrivning: `${fa(spreadkurs)} · handelns dolda kostnader` },
+          { text: `Kursen: Nätmäklare i Sverige${maklare ? ` — ${maklare.minuter} min` : ""}`, lank: "/kurser/km-070-natmaklare-i-sverige", ikon: "🖥️", beskrivning: "Vägen in till handeln" },
+          { text: "Vad kostar AK1A?", lank: "fragor:" + encodeURIComponent("vad kostar det?"), ikon: "💛", beskrivning: "Utbildningen — inte handeln" },
+        ],
+        motfraga: { text: "Vad kostar det?", kategori: "orientering" },
+        fordjupa: { text: k.titel, lank: "/kurser/am-01-likviditet-och-spread" },
+      };
+    },
+  },
+  {
+    id: "private-equity",
+    karnord: [
+      "private equity", "riskkapital", "riskkapitalbolag", "riskkapitalbolagen",
+      "riskkapitalfond", "riskkapitalfonder", "onoterat", "onoterade",
+      "pe-fond", "pe-fonder",
+    ],
+    starkord: ["fonder", "kapital", "bolag", "onoterat", "äga", "strukturen"],
+    bygga: (reg) => {
+      const fonder = reg.find((r) => r.slug === "pe-01-private-equity-fonder");
+      const investmentbolag = reg.find((r) => r.slug === "ib-01-vad-ar-ett-investmentbolag");
+      const nav = reg.find((r) => r.slug === "km-067-investmentbolag");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "pe-01-private-equity-fonder", "Läroplanen — private equity & investmentbolag, fondmekanismen"),
+        kursKalla(reg, "ib-01-vad-ar-ett-investmentbolag", "Läroplanen — private equity & investmentbolag, börsens släkting (nybörjarnivå)"),
+        kursKalla(reg, "km-067-investmentbolag", "Läroplanen — private equity & investmentbolag, NAV-rabatten"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Private equity betyder kapital som arbetar ONOTERAT — i bolag som inte handlas på börsen. Mekanismen är en fond med två roller:\n\n1️⃣ LP OCH GP — limited partners (institutioner, pensionskassor) äger kapitalet; general partnern förvaltar det. Strukturen är designad som incitamentsarkitektur, med branschens klassiska avgiftsmodell 2+20 (fast förvaltningsavgift + andel av vinsten över tröskel) — kapitalismens kanske tydligaste lektion i hur incitament styr beteende.\n2️⃣ LIVSCYKELN — fonden samlar in kapital, investerar i portföljbolag, utvecklar dem under några år (ofta med fokus på kassaflöde och kapitalstruktur) och fasar ut genom försäljning eller börsnotering — och hela cykeln börjar om med nästa fond. Afkastningen mäts med IRR (internräntan, tidsviktad) eller multipel (fler-tal på insatt kapital) — två mått som kan berätta olika historier om samma fond.\n3️⃣ J-KURVAN — tidiga år visar bokförda kostnader innan värden realiseras: kurvan dippar innan den svänger upp. Den som inte känner mekanismen läser dippen som misslyckande.\n\nSkillnaden mot börsens investmentbolag (som Investor och Wallenberg-sfären i hundra år): investmentbolaget äger DU direkt, andel för andel på börsen — private equity-fonden äger du via fondavtalet, med låsning och cykel. Kurserna tar båda vägarna (${fa(fonder)} om fondmekanismen, ${fa(investmentbolag)} om börsens variant) — som mekanisk förståelse, aldrig som val mellan plaster.\n\nSamma juridik som alltid hos oss: utbildning i hur kapitalstrukturen fungerar — inga placeringstips.` +
+          kallradFler(kallor),
+        amne: "private equity",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Private equity-fonder${fonder ? ` — ${fonder.minuter} min` : ""}`, lank: "/kurser/pe-01-private-equity-fonder", ikon: "🔐", beskrivning: `${fa(fonder)} · nivå ${(fonder?.niva || "intermediär").toLowerCase()}` },
+          { text: `Kursen: Vad är ett investmentbolag?${investmentbolag ? ` — ${investmentbolag.minuter} min` : ""}`, lank: "/kurser/ib-01-vad-ar-ett-investmentbolag", ikon: "🧺", beskrivning: `${fa(investmentbolag)} · börsens släkting` },
+          { text: `Kursen: Investmentbolag — NAV-rabatt${nav ? ` — ${nav.minuter} min` : ""}`, lank: "/kurser/km-067-investmentbolag", ikon: "🏛️", beskrivning: "Värderingen av ägarbolag" },
+          { text: "Vad är kapitalstruktur?", lank: "fragor:" + encodeURIComponent("vad är kapitalstruktur?"), ikon: "🏗️", beskrivning: "Skuld och eget kapital — fondens andra sida" },
+        ],
+        motfraga: { text: "Vad är kapitalstruktur?", kategori: "private equity" },
+        fordjupa: { text: k.titel, lank: "/kurser/pe-01-private-equity-fonder" },
       };
     },
   },

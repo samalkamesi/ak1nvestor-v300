@@ -1,0 +1,156 @@
+{
+  "slug": "ks-03-skuldens-anatomi",
+  "category": "KAPITALSTRUKTUR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Skuldens anatomi — löptider, bindning och covenants",
+  "summary": "Kapitalstrukturfamiljens avancerade steg: skuldens inre byggnad — löptidsstege, räntebindning, amorteringsplan och låneavtalens spelregler — och hur den läses i årsredovisningen.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Läsa skuldens tre tidsaxlar: löptid, räntebindning och amortering · Bygga och tolka en återbetalningstrappa — refinansieringsfönstret som riskklocka · Räkna på räntebindningens skydd: fast mot rörlig ränta vid ränteförändringar · Känna låneavtalens covenant-typer och vad de faktiskt skyddar · Känna fällorna: nettoskuld mot bruttoskuld, IFRS 16-leasing och valutasmatchning · Förstå kapitalstrukturens andning över konjunkturcykeln — och ABL:s yttre ramar.",
+  "why": "Grundkursen lär ut skillnaden mellan eget kapital och skuld; allokeringskursen visar vart det fria kassaflödet tar vägen. Detta tredje steg öppnar själva skulden och läser dess inre byggnad — för skuld är inte en siffra utan en struktur: när den förfaller, till vilken ränta, med vilka villkor. Två bolag med identisk skuldsättning i kronor kan bäga helt olika risk beroende på om skulden förfaller nästa år eller om åtta, om räntan är bunden eller rörlig, om låneavtalet ger utrymme eller snöper det. Den som kan läsa skuldens anatomi flyttar soliditets analysen från nivå till struktur — och struktur är där refinansieringskriserna föds.",
+  "history": {
+    "origin": "Skuldens struktur som analysobjekt är äldre än moderna finansrapporter: redan järnvägsbolagens obligationer på 1800-talet skilde på första- och andrapant, löptider och kupongens villkor — och låntagarens förmåga att rulla dem blev skillnaden mellan expansion och konkurs. Hantverket att läsa villkoren, inte bara beloppet, följde med i den finansiella analysens grundgrammatik.",
+    "evolution": "Efter 1970-talets räntechocker blev ränterisken en egen disciplin: bolagen lärde sig binda räntor, bankerna lärde sig prissätta löptid, och swappar och optioner gjorde räntebindning till en handelsbar storhet. Kreditgivarnas låneavtal utvecklades parallellt — från enkla pantförbehåll till dagens covenant-system: finansiella test som ska hållas löpande eller vid ny låneuttags. I Sverige formades samtidigt de yttre ramarna: aktiebolagslagen (2005:551) satte kontrollbalansräkningen som varningsmekanism när eget kapital eroderar, och emissionsreglerna gjorde kapitalstrukturens förändringar till stämmofrågor.",
+    "modern": "I dag redovisar noterade bolag sin skuldstruktur i noter med löptidsfördelning, räntebindningsprofil och vilande covenants — information nog att bygga återbetalningstrappan för hand. Samtidigt har balansräkningens skuldväxande breddats: IFRS 16 flyttade leasingavtal in i skuldraderna och gör att två likadana verksamheter kan visa olika skuld bara genom avtalsform. Den avancerade läsarens uppgift är att montera bilden: trappan, bindningen, villkoren och avtalsformen — och läsa dem som en helhet mot bolagets kassaflöde. Kursen krönar kapitalstrukturfamiljen vars grunder (ks-01) och allokering (ks-02) finns på lägre nivåer."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — skuldens tre tidsaxlar",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Återbetalningstrappan — refinansieringsfönstret",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — skuldnoten i årsredovisningen",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Låneavtalens spelregler — covenants",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — kapitalstrukturens andning",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — skuldens tre tidsaxlar",
+      "intro": "En skuld beskrivs av tre klockor — när den förfaller, hur länge räntan är bunden och hur den amorteras.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första axeln är löptiden: tiden till skulden ska betalas tillbaka eller förhandlas om på nytt. En bunden obligation på åtta år och en bankkredit som ska förnyas nästa år är olika djur trots samma valör — den senare exponerar bolaget för marknadens villkor här och nu. Den andra axeln är räntebindningen: hur stor andel av skulden som bär fast ränta under en period mot rörlig som följer styrräntan och marknadsräntorna direkt. Bindningsprofilen avgör hur snabbt en ränteförändring slår igenom i resultaträkningen — en helt rörlig skuld känner en räntehöjning inom kvartal, en femårsbunden märker den först vid refinansiering.\n\nDen tredje axeln är amorteringen: om skulden betalas av löpande (amorterande), vid förfall (slutbetalning — den s.k. bullet) eller via ett sparkonto som byggs upp (annuitet är hushållens variant, obligationslån har ofta kupong plus bullet). De tre axlarna tillsammans ger skuldens riskprofil: en lång, bunden, amorteringsfri skuld är förutsägbar men dyr i uppbyggnad; en kort, rörlig, rullande kredit är billig i lågräntelägen men utsatt i vändningar. Ingen kombination är gratis — valet är vilket risk som bärs öppet och vilket som gömmer sig i tiden."
+        },
+        {
+          "type": "definition",
+          "content": "Löptid: Tid till skuldens förfallodag — när kapitalet ska återbetalas eller refinansieras. Räntebindning: Andel av skulden vars ränta är fast under en period; resten bär rörlig ränta som följer marknaden. Bullet: Lån som amorteras vid förfall i ett enda belopp, mot amorterande lån som betalas av successivt."
+        },
+        {
+          "type": "insight",
+          "content": "Skuldens risk sitter inte i beloppet utan i kalendern — tre klockor, inte en våg."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Återbetalningstrappan — refinansieringsfönstret",
+      "intro": "När skulden förfaller per år blir den en trappa — och trappans kliv avslöjar när bolaget är sårbart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En återbetalningstrappa bygger direkt ur notens löptidsfördelning: x miljoner förfaller inom ett år, y inom ett till tre, z inom tre till fem, resten senare. Ett räkneexempel i ren aritmetik: ett bolag med 600 miljoner i räntebärande skuld, fördelat 300 inom ett år, 200 inom ett-tre år och 100 senare, går in i en räntevändning med hälften av skulden exponerad inom tolv månader. Stiger marknadsräntan från 2 till 6 procent på det refinansierade beloppet kostar det 300 gånger skillnaden — 12 miljoner mer i ränta per år — innan något annat händer. Med st-01:s räntetäckningsmått kan effekten testas direkt: är rörelseresultatet 60 miljoner och räntekostnaden före höjningen 18 blir täckningen 3,3; efter höjningen 60 delat med 30 — 2,0 — ett helt annat lån, av samma skäl.\n\nTrappan ger också en tidsmässig diagnos. En jämn trappa utan murar i något enskilt år sprider refinansieringsrisken — bolaget förhandlar alltid om en mindre andel. En trappa med en vägg — allt förfaller samma år — koncentrerar förhandlingsläget till ett enda fönster: går marknaden emot just då tvingas bolaget ta de villkor som erbjuds, eller vända sig till ägarna. Att läsa trappan är därför att läsa bolagets kalendermässiga sårbarhet: inte om skulden är stor, utan när den blir aktuell."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga inte hur mycket skuld bolaget har — fråga hur mycket av den som ska förhandlas om innan nästa rapportår är slut."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — skuldnoten i årsredovisningen",
+      "intro": "Skuldens byggnad står inte på balansraden utan i noten — fyra tabeller att veta igen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första tabellen är skuldens art: obligationer, banklån, checkkrediter och övriga räntebärande skulder, var för sig med ränta och valör. Den andra är löptidsfördelningen — råmaterialet till återbetalningstrappan. Den tredje är räntebindningsprofilen: andel bunden respektive rörlig ränta per period, ofta med genomsnittlig bindningstid angiven. Den fjärde är villkors- och covenant-delen: vilka finansiella test som gäller, hur mycket utrymme som återstår, och eventuella säkerheter. Tillsammans ger de fyra tabellerna skuldens fulla anatomi — balansradens enda tal är bara deras summa.\n\nÖvningen i praktiken: hämta tre årsredovisningar i samma bransch och bygga varje bolags trappa och bindningsprofil på ett papper. Skillnaderna framträder omedelbart — det ena bolaget har tre års genomsnittlig bindning och jämn trappa, det andra ett år och en vägg år tre. Kursen om noter (km-004) ger not-läsningens allmänna hantverk; kursen om balansräkningen (bk-01) dess ram — här preciseras det för skuldens del. Den som gör övningen en gång får en bestående reflex: en skuldsiffra utan kalender och bindning är inte läst, bara sedd."
+        },
+        {
+          "type": "insight",
+          "content": "Balansraden visar summan, noten visar strukturen — och analysen bor i strukturen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Låneavtalens spelregler — covenants",
+      "intro": "Covenant är låneavtalets inbyggda varningssystem — och ibland dess fälla.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett covenant är ett villkor i låneavtalet: ett finansiellt test som bolaget ska klara — en maximal skuldsättningsgrad, en lägsta räntetäckning, ett minsta eget kapital. Två huvudtyper skiljer sig åt. Underhållscovenant (maintenance) ska hållas löpande, mätperiod efter mätperiod — de fungerar som ett varningssystem som trappas: när bolaget närmar sig gränsen börjar samtal med banken före bryt. Utlåsningscovenant (incurrence) testas bara vid nya händelser — när ny lån tas ut eller utdelning beslutas — och ger därför svagare löpande skydd men större frihet mellan händelserna.\n\nDet som gör covenants analytiskt intressant är konsekvenserna vid bryt: formellt är banken berättigad att säga upp lånet — i praktiken förhandlas villkor, till en prislapp. Bolag som bryter covenants har historiskt fått acceptera högre marginaler, säkerheter och begränsningar i utdelning — kapitalstrukturens friheter blir pant. För läsaren är den viktiga frågan inte bara om covenants finns utan hur mycket luft som återstår: ett bolag som klarar sitt räntetäckningskrav med god marginal bär en helt annan struktur än ett som ligger en tiondel från gränsen. Notens uppgift om huvudtal för vilande covenants är därmed en av skuldnotens mest läsvärda rader — varningssystemets egen positionsangivelse."
+        },
+        {
+          "type": "insight",
+          "content": "Ett covenant är ett avtalat mått på hur nära avtalets gräns bolaget går — distansen till gränsen är information, inte bara compliance."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Skuldstrukturens läsning har fyra klassiska missvisningar — alla kurerbara med en fråga till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första: netto eller brutto. Nettoskuld — skuld minus fri kassa — är ofta det ärligare måttet på betalningsförmåga, men kassan har sin egen struktur: är den bunden, belånad eller placerad utom räckhåll kan den inte rakt av räknas emot skulden. Frågan: vad får räknas mot vad, och när? Den andra: IFRS 16. Leasingavtal bokförs som skuld — två bolag med samma maskinpark men olika avtalsform (ägda mot leasade) visar olika skuldnivåer. Frågan: hur stor del av skulden är leasing, och vad händer om jämförelsen görs med den posten isolerad? Kursen om leasing (km-023) tar detta i full längd.\n\nDen tredje: valutan. En skuld i dollar mot intäkter i kronor bär en dold valutapositiion som kan svälja räntebesparingen — den klassiska kombinationen av låg ränta och fel valuta har kostat bolag förmögenheter i valutasvängningar. Frågan: matchar skuldens valuta bolagets kassaflödesvalutor? Den fjärde: att läsa räntan som kostnad men inte som signal. En bolagsränta över liknande bolags bär information om kreditgivarnas sammanvägda omdöme om risken — marknaden för skuld är också en prisättare, och den som jämför bolagens upplåningskostnader läser en analys som redan är gjord. Gemensam kur för alla fyra: ställ frågan till noten — den bär nästan alltid svaret."
+        },
+        {
+          "type": "insight",
+          "content": "Skuldens fyra klassiska missvisningar delar en kur: noten innehåller alltid motfrågan — läs den före slutsatsen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — kapitalstrukturens andning",
+      "intro": "Det mogna slutsteget läser kapitalstrukturen över cykeln: den andas — och lagen sätter dess yttre väggar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kapitalstrukturer andas med konjunkturen. I goda tider expanderar de — skuld är billig, bankerna villiga, och hävstången förstärker avkastningen på eget kapital. I vändningar kontraherar de: refinansieringsfönster öppnas sämre, covenants närmar sig, och bolag som byggt väggar i trappan möter dem med hela beloppet samtidigt. Historiens stora kapitalstrukturkriser — från järnvägsepokens betalningsstoppar till 2008-talets refinansieringsträngsel — följer mönstret: inte för mycket skuld i genomsnitt, utan fel struktur i fel tidpunkt. Därför är den avancerade läsningen alltid dubbel: nivån idag (soliditet, skuldsättningsgrad) och strukturens reaktionstid (trappa, bindning, covenants) — ett motståndskraftigt bolag är inte det utan skuld, utan det vars skuld kan vänta.\n\nDe yttre väggarna står i lagen. Aktiebolagslagen (2005:551) kräver kontrollbalansräkning när det egna kapitalet sjunker under hälften av det registrerade aktiekapitalet (7 kap 3 §) — kapitalstrukturerosion har en lagstadgad varningspunkt. Och kapitalstrukturens stora förändringar är stämmofrågor: nyemission och förändringar av aktiekapitalet beslutas av bolagsstämman (4 kap), med de rättigheter för minoriteter som följer — kursen om bolagsstämma och rösträtt (sj-03) binder samman det juridiska lagret. Här krönar kursen familjen: ks-01 grunderna, ks-02 allokeringen av det fria kassaflödet, ks-03 skuldens inre byggnad — i AKM1:s ram en trappa i tre steg genom kapitalstrukturens hela fält."
+        },
+        {
+          "type": "insight",
+          "content": "Ett motståndskraftigt bolag är inte det utan skuld — det vars skuld kan vänta ut dåliga år utan att tvinga beslutet."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch beskrev i One Up on Wall Street hur han föredrog bolag med balansräkningar utan överraskningar — skuld som gick att se och förstå framför struktur som dolde sig. Hans varning för bolag som lånade i dollar mot intäkter i hemvalutan, och hans vana att läsa noternas villkor före prosans löften, är skuldens-anatomi-tänkande i praktik: strukturen först, storyn sedan.",
+  "grahamSection": "Benjamin Graham lärde ut att balansräkningens styrka är försäkringen mot framtida misstag — och att dess detaljer, inte dess summor, bär beskedet. I Security Analysis ägnades obligationer och deras villkor noggrannhet som få senare matchat: löptid, säkerhet och täckning lästes som en helhet. Grahams margin of safety tillämpad på skulden blir just kursens budskap: avståndet till gränsen — i tid, täckning och villkor — är det som avgör om en nedgång är en överlevbar svängning.",
+  "ak1Section": "I AK1A:s metodik kröner denna kurs kapitalstrukturfamiljen: ks-01 grunderna (nybörjare), ks-02 kapitalallokeringen (intermediär) och här skuldens inre byggnad (avancerad) — komplett nivåtrappa. AKM1:s kapitalstrukturmodul väger trappan, bindningen och covenants i stabilitets- och riskdimensionen; st-01 bär räntetäckningens grunder, km-023 leasingdjupet, km-004 notläsningens hantverk och sj-03 det juridiska lagret kring stämma och emission."
+}

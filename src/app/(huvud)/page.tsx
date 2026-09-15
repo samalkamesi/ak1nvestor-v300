@@ -53,6 +53,13 @@ const SIDA = sidaMetadata({
 
 export const metadata: Metadata = SIDA.metadata;
 
+// VÅG s7 (prestanda spår 7, o8 §4 GUL): ISR som /kurser — utan revalidate
+// svarar startsidans HTML "s-maxage=31536000" utan stale-while-revalidate,
+// vilket låser sidan årslånt i en eventuell framtida CDN. 3600 s + swr ger
+// samma hybrid som /kurser; statiskt innehåll, ingen synbar förändring i
+// dagens kedja (nginx = ren proxy utan delad cache ännu).
+export const revalidate = 3600;
+
 export default function Page() {
   return (
     <>

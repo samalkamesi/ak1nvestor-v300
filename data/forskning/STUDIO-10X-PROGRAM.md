@@ -33,11 +33,12 @@ ai styrelse organen som ska forska själv tillsammans parallellt med varandra."
 | 6 | Parallellism | agenter/day via fabriken | ✅ fabrik 2.0 levererad: auto-manifest ur evighetskatalogen, rollfält; 33 samtidiga processer bevisade; doktrin 3+3; kvalitetsgrundsdel g7 pågår |
 | 7 | Autonomi | minuter stilla/dygn (evighetsmotorn) | ✅ v156 uppdragsmotor: order→mål, klart-markör, FORTSÄTT vid tidsgräns; kundens order LÅST som mål — levande 02:31 |
 | 8 | Felrättningshastighet | tid fynd→kur i prod | ✅ prod-krasch 01:23 självläkt av kraschvakten 01:24–01:29 (första fullt autonoma räddningen); npm-roten kurerad — policy 63/63 |
-| 9 | Tillväxt | commits/vecka som studion self-hostar | 🔄 granskningskön 11–14 FLYTTKLAR + godkännandeytan LEVER (g1) med kundens publiceringsknapp; 100-bolagssvågen köad |
-| 10 | Kundupplevelse | kundrapporterade "försvinner"-fel/dygn | ✅ 0-direction: maskinpulsen v164 (panelen synliggör ALL bakgrundsaktivitet), komprimering 3-tier v160, refresh hänger aldrig v154 |
+| 9 | Tillväxt | commits/vecka som studion self-hostar | ✅ 285 commits/2 dygn (63+156+66 ≈ 142/dygn, git log i prod) — self-hosting bevisat; 100-bolagssvågen LEVERERAD 100/100 (KVD: /bolag 200, juridik GRÖN, våg 149 + rond 28); audit-logg 104 rader; Mentor 2.1 vilar på kundens knapp (R2) |
+| 10 | Kundupplevelse | kundrapporterade "försvinner"-fel/dygn | ✅ 0 fel/dygn sedan v150: audit-loggen (104 rader) 0 träffar, DRIFTSBOKEN endast de 6 historiska rapporter som rot-orsak (kurerade v148–150); scenariotest GRÖNT 5/5 (2026-09-15 02:44: tråd 58→58, puls 14 ms) som vaktsystem — kedjan v148 143/143 → v150 utkast → v154 varm-GET → v160 3-tier → v164 maskinpuls |
 
-**Pelarsumma 2026-09-15: 8 av 10 ✅** — kvar: pelare 5 (Paritet, 5 öppna gap-poster) och
-pelare 9 (Tillväxt, 100-bolagssvågen ännu ej körd + Mentor 2.1 ej publicerad).
+**Pelarsumma 2026-09-15 (efter fullmaktssamträdet): 9 av 10 ✅** — kvar: pelare 5
+(Paritet; 5 öppna gap-poster + register-2:s poster 17/21/22/23 i fabrikens kö).
+Pelare 9 + 10 stängda enligt fullmaktssamträdets punkt 2 med KVD-bevis (se tabellen).
 
 ## FASER
 
@@ -48,24 +49,35 @@ pelare 9 (Tillväxt, 100-bolagssvågen ännu ej körd + Mentor 2.1 ej publicerad
   (9, 10, 11, 13, 14) — varje saknad tjänst får fix-skiss + prioritet.
 - **FAS 2: 10x-BAKGNKONOMIN** — fabriksmanifest i kontinuerlig drift (10-tals agenter),
   styrelseorganen äger varsin forskningsgren, PIPELINE-KO alltid ≥ 3 bokade vågor.
+  Fullmaktssamträdet 2026-09-15 punkt 2: pelare 9 + 10 STÄNGDA med KVD-bevis;
+  REGISTER-2 (poster 17/21/22/23 + 11) KÖAT i fabrikens manifestkö 04:10; 
+  KONFIGINTEGRITETSVAKTEN BYGGS — rot-orsak: vakt-cron-raden var raderad ur crontab
+  (sista rop 01:17, återinstallerad + verifierad i rond 28); vakten skall larma vid
+  obokförd konfigändring (crontab/pm2-env), append-only journal i integritetsvaktens
+  mönster (a1114594).
 - **FAS 3: ERSÄTT DATORN** — datorns Z-code-session blir sekundär; allt arbete i studion;
   hemskärmsgenväg + push-notis-liknande borta-banner = primära kanaler.
 
-## NÄSTA FAS (Fas 2-förslag — styrelsens nästa tre ronder, rankat 2026-09-15)
+## NÄSTA FAS (Fas 2 — fullmaktssamträdets kö + nästa tre ronder, justerat 2026-09-15)
 
 Rangordning enligt registrets regel 1 (högst V/A-kvot först) + kundens tillväxtdirektiv.
 Underlag: 5 öppna gap-poster (9 Diff V4/A2 · 14 historiksök V3/A1 · 11 agent-träd V4/A3 ·
-10 Mermaid V2/A3 · 13 scenariotest V2/A3) + 100-bolagssvågen + Mentor 2.1-publicering.
+10 Mermaid V2/A3 · 13 scenariotest — sviten levererad våg 163, väntar kontroll-dom) +
+REGISTER-2 (poster 17/21/22/23) + konfigintegritetsvakten. 100-bolagssvågen är
+LEVERERAD (rond 28) och utgår ur kön.
 
-1. **Rond 1 — Paritetssnurran (snabbast värde/timme):** färdigställ post 9 Diff
-   (3 delgap redan under verkställande: radnummer-gutter, ordnivå-diff, /diff-bläddrare)
-   + post 14 prompt-historik-sökning (V3/A1 — högst kvot i registret, 3,0).
-2. **Rond 2 — Tillväxtvågen (kundens knapp):** kör 100-bolagssvågen (granskningskön 11–14
-   FLYTTKLAR) och hämta kundens tryck på publiceringsknappen för Mentor 2.1 (R2: kunden
-   bestämmer — ytan LEVER via g1).
-3. **Rond 3 — Djup-paritet:** post 11 agent-träd förälder/barn med resume (V4/A3);
-   därefter post 10 Mermaid + post 13 scenariotest som fabrikens u-uppgifter (lägst
-   V/A-kvot — vänta i kön tills Rond 1–2 är bevisade).
+1. **Rond 1 — Paritetssnurran (register-2 + diff):** kör REGISTER-2 ur fabrikens kö
+   (r2a @-fil-autocomplete post 17 · r2b toast-stack post 21 · r2c genvägsmanager
+   post 22 · r2d LaTeX post 23 · r2e agentträd-per-iteration post 11) + färdigställ
+   post 9 Diff (3 delgap under verkställande: radnummer-gutter, ordnivå-diff,
+   /diff-bläddrare) + post 14 prompt-historik-sökning (V3/A1 — högst kvot, 3,0).
+2. **Rond 2 — Konfigintegritetsvakten (förtroendeorgan):** färdigställ och ta i drift —
+   övervaka crontab/pm2-env mot bokförd baslinje med append-only larmjournal (bygg vid
+   på integritetsvakten a1114594); en raderad vakt-cron-rad skall aldrig kunna passera
+   tyst igen (rot-orsak rond 28).
+3. **Rond 3 — Tillväxttakten (bevara pelare 9):** håll self-hosting-takten (≈142
+   commits/dygn bevisat) med fabrikens auto-manifest ur evighetskatalogen; Mentor 2.1
+   publiceras när kunden trycker på publiceringsknappen (R2 — ytan LEVER via g1).
 
 ## REGLER (oföränderliga)
 

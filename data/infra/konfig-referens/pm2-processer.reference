@@ -1,0 +1,20 @@
+# ============================================================================
+# PM2-PROCESSREFERENS — ak1a@contabo
+# (fullmaktssammanträdet 2026-09-15 — styrelsens beslut punkt 6)
+# ============================================================================
+# De pm2-processer som SKA finnas ONLINE på servern. Verktyg/
+# konfigintegritet-vakt.mjs kontrollerar varje namn mot `pm2 jlist` var
+# 10:e minut: processen saknas ELLER har status != "online" ⇒
+# [KONFIG-DRIFT]-larm till data/vakten/konfig-larm.jsonl.
+#
+# Format: ett processnamn per rad (första token); resten av raden är
+# fri kommentar och jämförs aldrig.
+#
+# ÄNDRINGSPROTOKOLL: läggs till/tas bort en pm2-process ⇒ uppdatera denna
+# fil I SAMMA ändring, committa, verifiera med:
+#   node verktyg/konfigintegritet-vakt.mjs
+#
+ak1a          prod-webben (Next.js) — lab.ak1nvestor.com
+ak1a-test     test-miljön
+ak1a-pumpor   pumpor-daemonen — schemaläggaren (verktyg/pumpor-daemon.mjs)
+pulsvakt      pulsvakten — mätetal till sessionen (verktyg/pulsvakt.mjs)

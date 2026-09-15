@@ -294,7 +294,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): GRÖN samma dag, RTO 52–58 s / 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): GRÖN samma dag, RTO 52–58 s / 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT samma kväll av annan agent (femte RTO-punkten 23,9 s, radbild identisk; härdat: ram-/diskgrind exit 75, städningskontrakt slutet, RÖD väg protokollförs) | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -446,6 +446,35 @@ EnvironmentFile med chmod 600).
   + `node verktyg/aterstall-system-events.mjs --fil <senaste> --db ak1a_dr_json`
   (kedja 2; skrap-schema enligt protokollet). Fullständigt protokoll:
   data/forskning/DR-PROV-2026-09-15-JSON-KEDJAN.md.
+
+## SPÅR 10 — DR-VERKTYGETS GODKÄNNANDEPROV + HÄRDNING (2026-09-15, GODKÄNT)
+
+- **Oberoende godkännandeprov av `verktyg/dr-ovning.mjs`** (u4:s leverans
+  55dc2ee2) av annan agent än författaren — granskning + härdning + egen
+  fullkörning. Dom: GODKÄNT.
+- **Härdning levererad i samma fil:** (H1) städningskontraktet slutet —
+  `skapaSkrapDb()` in i det inre try-scopet, ett createdb-fel kan inte längre
+  lämna PG17 uppe; (H2) ram-/diskgrind FÖRE allt tungt (MemAvailable ≥ 1 000 MB,
+  ≥ 5 GB ledigt; under gräns = exit 75, kör igen — 16:42-incidentens läxa);
+  (H3) RÖD dump skriver nu protokoll + verklig GRÖN/RÖD-dom i stegtabellen;
+  (H4) avbrottsfallet renderar "nåddes ej"/"rördes ej" — aldrig NaN/nollvärden
+  som ser ut som mätetal; (H5) DUMPEN-typo + §4-referens.
+- **Bevis:** låsvägran i VERKLIG trafik (exit 3 medan kedja-2-agenten höll
+  flock-fönstret 19:28 — PG orört av den nekade parten) · RÖD trunkerad dump →
+  protokoll UNDERKÄNT med PG17 orörd (DR-PROV-2026-09-15-AUTO-2.md) · GRÖN
+  fullkörning **23,9 s** = FEMTE oberoende RTO-punkten (20,0 · 17,7 · 14,7 ·
+  20,0 · 23,9 s — lastberoende spridning), radbild identisk för femte gången
+  (public 60/1 246 728 · public+storage 68/1 246 864 · alla 95/1 247 119 ·
+  fel 780/780 kända 0 okända), städning verifierad (DR-PROV-2026-09-15-AUTO-3.md).
+- **Flock-notisen:** bekräftar S10-U3:2:s kö till huvudagenten (flock-stöd i
+  dr-ovning.mjs); tills dess rekommendation: `flock -w 900 /tmp/ak1a-dr-prov.lock
+  -- node verktyg/dr-ovning.mjs` när väntan önskas. Flock lämnar en tom
+  låsfil efter sig — oskyldigt (kärnan släpper vid processdöd); städas fri.
+- **Fabrikskollision bevis nr 2** (identiska "välj själv"-uppdragstexter gav
+  två agenter samma objekt; noll förlorat arbete — Write-läshindret + kollisions-
+  kontroll hejdade): u3:s kur nr 1 (manifest-unika objekt) är fortfarande ej
+  mekaniserad hos huvudagenten.
+- Fullständigt protokoll: data/forskning/DR-VERKTYG-GODKANNANDE-2026-09-15.md.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

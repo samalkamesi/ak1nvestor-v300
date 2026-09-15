@@ -109,5 +109,10 @@ innehållet verifierat i committen (3 rader: 2 kommentars- + 1 exportrad),
 tsc 0 körd av denna våg. EFTER-curl bokförs nedan när 04303dd8-bygget
 landat (prod-synk poll :x7).
 
-**EFTER §5:** (bokas när bygget landat)
+**EFTER §5 — LIVE BEVISAD** (deploy 1f5b165a 18:00:38, prod 200,
+curl 18:02): `/portfolj-forskning` svarar nu `s-maxage=3600,
+stale-while-revalidate=31532400` — identiskt med / och /kurser på
+BÅDA kanalerna (prod + localhost). Årslåset dött; spårets sista
+cache-GUL-post STÄNGD. FÖRE→EFTER: `s-maxage=31536000` →
+`s-maxage=3600, stale-while-revalidate=31532400`.
 

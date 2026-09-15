@@ -59,8 +59,9 @@ function jagaKod() {
   const tscMarkor = path.join(VAKT, ".feljakt-tsc-stamp");
   const senaste = fs.existsSync(tscMarkor) ? fs.readFileSync(tscMarkor, "utf8").trim() : "";
   let srcAndrad = false;
+  let gitTopp = "";
   try {
-    const gitTopp = execSync("git log -1 --format=%H -- src/", { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
+    gitTopp = execSync("git log -1 --format=%H -- src/", { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
     srcAndrad = gitTopp !== senaste;
   } catch { srcAndrad = true; }
   if (!srcAndrad) { gron("F1-kod", "src/ oändrad sedan senaste tsc — hoppar"); return; }
@@ -209,7 +210,7 @@ function jagaSecurity() {
         `grep -r "${pass.slice(0, 12)}" data/vakten/*.log data/vakten/*.jsonl 2>/dev/null | head -3 || echo REN`,
         { cwd: ROT, timeout: 15_000, encoding: "utf8" },
       ).trim();
-      if (grepResult !== "REN") {
+      if (grepResult && grepResult !== "REN") {
         bokfor("F7-security", "KRITISK", "admin-nyckel i vakt-loggar!", grepResult.slice(0, 80));
       } else gron("F7-security", "nyckel ej i vakt-loggar");
     }

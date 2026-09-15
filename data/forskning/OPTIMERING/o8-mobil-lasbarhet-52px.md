@@ -183,4 +183,41 @@ om-applikation från diff kosta 6 min. Del 1 (larvag-kort +
 home-section, 3d25e4f5) hann deployas 15:32:53 prod 200 före revningen;
 del 2 (3b2aab63) deployas av nästa poll.
 
-### EFTER rond 3 — mätning bokförd nedan efter del 2-deployen
+### EFTER rond 3 — bokförd 18:04 av s7 våg 6 (deploy 1f5b165a 18:00:38, prod 200)
+
+Mätt på localhost mot levande bygget (0643-wave 04303dd8 kaskadkuren
+inkluderad — alla fyra rond-3-köposter + del 1-2 i trädet). Samma
+verktyg, mobil 390×844, jämfört med rond 2:s EFTER-facit 186:
+
+| Sida | Interaktiva | Under 52 | Rond-2-värde |
+|---|---|---|---|
+| / | 61 | 2 | (del av 157) |
+| /kurser | 110 | 56 | — |
+| /blogg | 146 | 1 | (del av 157; var 61) |
+| /portfolj-forskning | 69 | 18 | 29 |
+| /forskningsbiblioteket | 65 | 2 | (del av 157) |
+| /kurser/the-intelligent-investor | 77 | 45 | — |
+| **Totalt** | 528 | **124** | **186** |
+
+**186 → 124 = −62 (−33 %).** Knappklustren som rond 3 målade är borta
+ur toppen: kvar i "värsta"-listorna finns INGA kakbanner-/quiz-/chips-
+knappar längre — kvarvaranden är ett ANNAT kluster:
+
+1. **TextLÄNKAR (rond 4-huvudspår):** Phase 2→/Phase 3→ (59×20),
+   brödsmulan 🔹Startsidan (328×32), korstabellens bolagsrader
+   (312×44), "Se alla källor →" (89×16), bokchips (238–293×26),
+   "Till korstabellen →" (136×34). Länkar får INTE globals-golvet
+   (syskonet 04303dd8:s notering "länkar opåverkade — inget golv
+   bekräftad mätning") — husstandarden 52 kräver antingen per-yta
+   kirurgi (py/min-h på länkarna) eller ett designbeslut om länkunntag.
+2. **Dokumenterade undantag (medvetna):** ShortSeller-dölj-korset 44×44
+   (o8 §8) + "To the top" 99×44 på /.
+3. **Nytt rond 4-gräv:** pagineringens numrerade "1"-knapp mäter fortfarande
+   31×44 TROTS kaskadkurens min-w! — kolla vilken klass som förlorar
+   kaskaden (ev. aria-current-varianten eller annan Tailwind-v4-syntax).
+4. **1 NY zoomfälla på /kurser** (input/select <16 px font) — rond 1
+   kurade korstabellens inputs (portfolj-forskning 0 zoom ✓), /kurser:s
+   select föll utanför — rond 4.
+
+Rådata: `/tmp/lasbarhet-efter-rond3-2026-09-15.json` (kopieras till
+data/vakten är ej gjord — tmp räcker som arbetsminne, nästa våg mäter om).

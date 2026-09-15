@@ -4267,11 +4267,35 @@ class AppServerTransport implements StudioTransport {
       const p = r?.projection;
       const m = r?.session?.model;
       const modell = m?.providerId && m?.modelId ? `${m.providerId}/${m.modelId}` : undefined;
+      let contextUsed = typeof p?.contextUsed === "number" ? p.contextUsed : undefined;
+      let totalTokenCount = typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined;
+      // VÅG 170 — V4-FALLBACK FÖR KONTEXT (kundens "data på tokens visar 0"):
+      // session/read-projektionen returnerar contextUsed=0 efter rotation,
+      // medan v4/conversation/usage visar de FAKTISKA tokens (bevisat:
+      // 58 131 tokens medan read sa 0). Kur: läs v4 som fallback vid 0.
+      if (!contextUsed || contextUsed === 0 || !totalTokenCount || totalTokenCount === 0) {
+        try {
+          const v4 = await this.lasV4Anvandning();
+          if (v4 && typeof v4 === "object") {
+            const rå = v4.rått as { totalTokens?: number } | undefined;
+            if (typeof contextUsed !== "number" || contextUsed === 0) {
+              const inTal = (v4 as { totalTokensIn?: number }).totalTokensIn;
+              if (typeof inTal === "number" && inTal > 0) contextUsed = inTal;
+            }
+            if (typeof totalTokenCount !== "number" || totalTokenCount === 0) {
+              const totalTal = rå?.totalTokens;
+              if (typeof totalTal === "number" && totalTal > 0) totalTokenCount = totalTal;
+            }
+          }
+        } catch {
+          /* v4 är fallback — session/read är primär */
+        }
+      }
       return {
         modell,
-        contextUsed: typeof p?.contextUsed === "number" ? p.contextUsed : undefined,
+        contextUsed,
         contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : undefined,
-        totalTokenCount: typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined,
+        totalTokenCount,
         turnCount: typeof p?.turnCount === "number" ? p.turnCount : undefined,
         // V83 B2: läge ur projektionen, tanke-nivå ur snapshot-settings —
         // lägesväxlarens/tankekortets sanning efter varje ändring.

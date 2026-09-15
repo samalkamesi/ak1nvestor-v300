@@ -15,7 +15,7 @@ export function TemaVaxlare() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Växla mellan ljust och mörkt läge"
       title="Mörkt/ljust läge"
-      className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/40 text-sm transition-colors hover:bg-gold/10 max-md:h-[52px] max-md:w-[52px]"
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-sm transition-colors hover:bg-gold/10 max-md:h-[52px] max-md:w-[52px]"
     >
       <span className="dark:hidden">🌙</span>
       <span className="hidden dark:inline">☀️</span>

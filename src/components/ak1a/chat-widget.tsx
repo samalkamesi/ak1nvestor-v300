@@ -1257,7 +1257,7 @@ export function ChatWidget() {
       {!widgetPathname.startsWith("/studio") && (
         <button
           onClick={() => setOppnad(!oppnad)}
-          className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl"
+          className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 max-md:h-[52px] max-md:w-[52px] sm:h-14 sm:w-14 sm:text-2xl"
           aria-label="AI-Mentor"
           title="AI-Mentor — din personliga guide"
         >

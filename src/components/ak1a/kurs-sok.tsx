@@ -362,7 +362,7 @@ export function KursSok({
             {t("ksok.rensaFilter")}
           </button>
         )}
-        <label className="ml-auto flex items-center gap-2 text-[11px] font-semibold text-muted-foreground">
+        <label className="ml-auto flex items-center gap-2 text-xs font-semibold text-muted-foreground">
           {t("ksok.sortera")}
           <select
             value={sortering}
@@ -370,7 +370,7 @@ export function KursSok({
               setSortering(e.target.value as Sortering);
               setSida(1);
             }}
-            className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-[11px] font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30 max-md:min-h-[52px] max-md:text-base"
+            className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-xs font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30 max-md:min-h-[52px] max-md:text-base"
             aria-label={t("ksok.sorteraAria")}
           >
             <option value="rekommenderad">{t("ksok.sortRekommenderad")}</option>

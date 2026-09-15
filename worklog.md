@@ -10813,3 +10813,21 @@ Register 338→341 med mina tre via lagg-till-kurs (serierna rs-/ks-/mt- nya; u2
 FRONT B bevisat 3/3 ur GENERERADE kartan med regelns exakta filter (raknaLarvag kan inte importas av node direkt — tilläggslösa TS-importer, dokumenterat i bygg-larvag-karta.ts:s header; kartan är fristående och dess data är motorns underlag): medlem med v19 klar → kategori-fortsättningsregeln nominerar rs-01 (nivå 1, fas 0), v20 klar → ks-01, v13-v15 klara → mt-01. RISK och KAPITALSTRUKTUR kunde ALDRIG nominera en fortsättning tidigare (ensamma kurser i kategorin sedan våg 88 — regeln vilade); MOAT får sin första nivå 1-kurs vilket öppnar nivå-stegs-trappan för nybörjarläsare.
 Juridikgrind: 0 rådsformuleringar (köp/sälj-träffar kontextgranskade — samtliga utbildningsmekanik som "svårt att köpa eller sälja" och "sälja i panik" som beteendefälla, aldrig uppmaningar); 2007:528 2 kap 5 §-doktrinen hållen — allt format som "så fungerar metoden".
 Kollisionsnöt (min sida): mina prefix rs-/ks- treffade u2:s samtidiga risk-01/ks-01 i samma kategorier; u2 löste genom omnumrering till rs-02/ks-02 (deras post dokumenterar förloppet) — registrets serieordning rs-01→rs-02 och ks-01→ks-02 ren, 0 dublettslug. tsc 0.
+
+## SPÅR 7 s7-u1 (omgång 2) — 2026-09-15: mobil läsbarhet 52px ROND 2 — footer+widgetknappar+CTA-rader + EFTER rond 1 bokförd [fabrik]
+Val mot kollisionsyta: rundans fyra ytor var tagna (bild/koddelning/cache GRÖNA;
+52px rond 1 = s7-u2:förra manifestet, DÖDAT av fabrikstimeout EFTER commit) —
+hålet timeout-barnet lämnade = rond 2 + EFTER-mätning. Leverans 1 (mätning):
+EFTER rond 1 mot localhost (=prodbygge 50095d0e): 255→186 tryckmål under 52
+(/blogg 61→9 bevisar deployen); rådata lasbarhet-efter-rond1-2026-09-15.json.
+ROTORSAK: globals.css olagrade .text-[11px]{font-size:12px}-override slår alla
+Tailwind-lager ⇒ rond 1:s max-md:text-base på selecten kunde aldrig vinna
+(zoomfällan överlevde); kur = basklass text-xs. Leverans 2 (kod, 10 filer,
+max-md-skyddade): footer (kontakt+sociala+21 kolumnlänkar+till-toppen),
+AI-Mentor-trigger, notisklocka, sidfooter-badge+länkar, tema (shrink-0 —
+flex-shrink kramade 52→50, rotorska), hamburger (35→52², shrink-0),
+kurs-sok (rotorsaksfixen), CTA-rader bygg-portfolj-kort/kurser-slug/
+portfolj-forskning (Se medlemskap m.fl. 44→52). Medvetet undantag:
+ShortSeller-dölj-kryss 44² (52 skulle täcka 60px-bäraren; HIG 44 ✓).
+Kö rond 3 bokad i o8: /kurser-filter+paginering, quiz-knappar, kakbanner,
+hero-länk. tsc 0. EFTER rond 2 mäts när prod-synken byggt commitn.

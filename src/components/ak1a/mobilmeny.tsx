@@ -115,7 +115,7 @@ export function Mobilmeny() {
         }}
         aria-label={t("ui.oppnaMenyn")}
         aria-expanded={oppad}
-        className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold lg:hidden"
+        className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold max-md:h-[52px] max-md:w-[52px] lg:hidden"
       >
         <span
           className={`h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${

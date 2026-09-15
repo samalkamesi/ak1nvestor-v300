@@ -278,19 +278,19 @@ export default function PortfoljForskningPage() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/kalkylator"
-            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             AKM1-kalkylatorn
           </Link>
           <Link
             href="/portfoljbyggare"
-            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10"
+            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             Portföljbyggaren
           </Link>
           <Link
             href="/medlemskap"
-            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10"
+            className="rounded-md border border-gold/50 px-4 py-2 text-sm font-semibold hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
           >
             Se medlemskap
           </Link>

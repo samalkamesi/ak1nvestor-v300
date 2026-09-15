@@ -288,7 +288,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20 s / 60 tabeller / 1,19 M rader (våg 98 F3) | data/forskning/DR-PROV-2026-09-13.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 17,7 s / 68 tabeller / 1,25 M rader (2026-09-15, kvartalsövning — autonomsudo via agentfabriken) | data/forskning/DR-PROV-2026-09-15.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -311,6 +311,26 @@ EnvironmentFile med chmod 600).
 - F1 ISR-uppvärmare: cron 10 3 * * * bash data/infra/contabo/ak1a-varm.sh
   (versionerad i repot; logg /tmp/ak1a-varm.log; testkörning 12/44 —
   sökvägslistan finslipas).
+
+## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
+
+- Full återställning av natt-dumpen (30,8 MB gz) i lokal PG17-skrap-DB:
+  **17,7 sekunder · 68 publika tabeller · 1 246 728 rader**. Verifierat:
+  medlemmar 3/3, kurser 10, moduler 122, snapshots 1 157 484.
+- 780 "fel" = samma kända kategori som v98 F3 (saknade Supabase-roller/
+  extensions i vanilla-PG) — ofarliga.
+- **Sudo-lösningen**: agentfabrikens barn HAR sudo (studio-skalet har det
+  inte). DR-övningar körs hädanefter autonomt via agentfabriken — inget
+  kundfönster behövs.
+- **System_events-fyndet slutgiltigt utrett i återställd DB**: ingen tabell
+  eller vy i SQL-dumpen bär händelseloggen (tabellen tom, fel kolumnnamn,
+  kolumnen `type` finns bara i notifications/payouts/storage). Beständig
+  regel: komplett DR = SQL-nattdump (allt utom loggen) + moln-JSON-backup
+  (loggen, integritetsbevisad 2026-09-13).
+- Städning enligt mönster: skrap-DB raderad, PG17 stoppad (redo), 78 GB
+  ledigt. Retention: 5 dumpar (11–15 sep) — 30-dagarsregeln tom ännu.
+- Nästa övning per kvartal: **senast 2026-12-15**.
+- Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15.md.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

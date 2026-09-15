@@ -67,7 +67,7 @@ export function SprakVaxlare() {
         aria-expanded={oppad}
         aria-label={t("ui.sprakVaxla")}
         title={t("ui.sprakVaxla")}
-        className="flex h-8 items-center justify-center gap-1 rounded-full border border-gold/40 px-2 text-[10px] font-bold tracking-wider text-foreground transition-colors hover:bg-gold/10 max-md:h-[52px] max-md:min-w-[52px]"
+        className="flex h-8 items-center justify-center gap-1 rounded-full border border-gold/40 px-2 text-[10px] font-bold tracking-wider text-foreground transition-colors hover:bg-gold/10 max-md:h-[52px] max-md:min-w-[52px]!"
       >
         <Globe className="h-3.5 w-3.5 text-gold" aria-hidden />
         <span>{SPRAK[sprak].kod}</span>

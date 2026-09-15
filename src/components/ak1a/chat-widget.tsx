@@ -24,6 +24,9 @@ import {
 // AI-MENTORN 2.0 (våg 106 H2): regel+datamotor — svarar lokalt före nätanrop
 import { KURSREGISTER } from "@/lib/ai-mentor-register";
 import { svaraLokalt, fallbackSvar } from "@/lib/ai-mentor-svar";
+// Spår 6 (s6-u3): +3 förhandsfrågor (kassaflöde, utdelning, kvartalsrapport) —
+// extra-mönstren prövas FÖRE basen, samma matchning och källmärkning
+import { svaraLokaltExtra } from "@/lib/ai-mentor-extra-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -727,7 +730,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokalt(q, KURSREGISTER);
+    const lokalt = svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

@@ -29,7 +29,7 @@ export function Brodkrumma({
       {breadcrumb.map((b, i) => (
         <span key={b.name} className="flex items-center gap-3">
           {b.href ? (
-            <Link href={b.href} className="text-muted-foreground hover:text-foreground">
+            <Link href={b.href} className="text-muted-foreground hover:text-foreground max-md:min-h-[52px]">
               {tText(b.name)}
             </Link>
           ) : (

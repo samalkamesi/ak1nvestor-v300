@@ -226,13 +226,13 @@ export function SocialProof({ className = "" }: { className?: string }) {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/logga-in"
-              className="btn-guld-signatur inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm"
+              className="btn-guld-signatur inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
             >
               Gå med gratis — det tar 30 sekunder
             </Link>
             <Link
               href="/kurser"
-              className="btn-marin inline-flex min-h-[44px] items-center px-6 py-3 text-sm"
+              className="btn-marin inline-flex min-h-[44px] items-center px-6 py-3 text-sm max-md:min-h-[52px]"
             >
               Utforska kurserna
             </Link>

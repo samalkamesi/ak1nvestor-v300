@@ -298,3 +298,48 @@ rester av syskonets ytor som mäter <52 trots vanlig klass. tsc 0
 (projektbinär). EFTER-mätning: `node verktyg/mobil-lasbarhet.mjs
 http://localhost:3000 <utfil>` när prod-synken byggt BÅDA halvorna —
 jmför mot lasbarhet-fore-rond4 (samma sidordning).
+
+## 11. Rond 4 LÄNKHALVAN (s7-u2, 2026-09-15 ~23:1x) — 6 ytor + AKM1/AK2-hemvisten + worklog-konfliktlagen reparerad
+
+**Leverans 1 — länkhalvan** (a-element ⇒ vanlig `max-md:min-h-[52px]`,
+inget globals-golv för a — §10:s klassregel bekräftad; inline-block/block
+-länkar fick även `inline-flex items-center` för centrering). Sex ytor:
+
+| Fil | Yta | FÖRE (prod-mätning) |
+|---|---|---|
+| `brodkrumma.tsx` | brödsmulornas Link — täcker /kurser sv (🔹Startsidan 328×32) OCH /en/kurser ("Courses" 52×20) | 32/20 px |
+| `kurs-sok.tsx` | faslänkarna "Fas 2 →/Fas 3 →" (ksok.fas2/3Lank) | 59×20 |
+| `social-proof.tsx` | "Utforska kurserna" 170×46 + "Gå med gratis" (förebyggande, samma par) | 46 px |
+| `kallkort.tsx` | "Se alla källor →" inline-block | 89×16 |
+| `forskningslage-kort.tsx` | "Till korstabellen →" 136×34 + topp-3-bolagsraderna (Link → /forskningsbiblioteket/[ticker]) 312×44 | 34/44 px |
+| `forskningsbiblioteket/page.tsx` | lås-raden "Forskning Plus låser AKM2-poängbasen" 310×44 — **levererarad via syskonet s7-u3:s b77699ba** (delad fil: deras revalidate-rad + min klass i samma diff, ärligt bokfört) | 44 px |
+
+**Leverans 2 — AKM1/AK2-hemvisten BELAGEN** (§10:s öppna gravning):
+poängbas-tabbar = `bygg-portfolj-kort.tsx:174` (("akm1","akm2")-map,
+`min-h-[44px]`) — kurerad med `max-md:min-h-[52px]!` (button ⇒ important
+enligt kaskadstandarden). Rundans sista kända knapp-par.
+
+**Leverans 3 — worklog-konfliktlagen reparerad** (bokföringshygien):
+worklog.md bar en COMMITTAD, trasig merge-konflikt (nästlade
+`<<<<<<<`/`=======` 10861/10873/10874/10937, tre dubblettblock, ingen
+avslutande markör — rond 36:s "worklog-merge löst" läkte innehållet men
+lämnade markörerna). Reparerad med 3 kirurgiska Edits: 0 markörer,
+varje avsnitt exakt en gång, kronologin rond 34 → våg 6 → rond 35 →
+s7-u3 → rond 36 → s8-u1 → s8-u3 → rond 37 → s8-u2 → s9-u3 → ROND 38
+intakt. Verifierat: grep 0 träffar, dubblettcount 1/1/1.
+
+**FÖRE-korsvalidering (prod, oberoende av §10:s localhost-tal):**
+mobil-lasbarhet.mjs mot https://lab.ak1nvestor.com 23:05 = **34
+tryckmål** (2/6/1/18/2/5 — per sida IDENTISKT med §10:s localhost-tabell;
+/kurser/the-intelligent-investor 32→5 bekräftad = quiz-pre-restart-
+artefakt-teorin håller). Rådata: `lasbarhet-fore-rond4-prod-2026-09-15.json`
+(denna mapp). Språkresolvens-not: mätningen ser EN-etiketter
+("Phase 2 →", "Courses") i sv-vy — känt CLS-spår (syskonvåg, o5 §EFTER2),
+ytorna är desamma.
+
+**Rättelse till §10:** "samtidigt syskon tog … ~29 sidfiler" är en
+feltolkning — länkhalvan är 5 komponentfiler + 1 sidfil (lås-raden, via
+b77699ba). Ingen massändring av sidfiler skedde i rond 4.
+
+tsc 0 (projektbinär). EFTER-mätning enligt §10:s bokning — när prod-
+synken byggt BÅDA halvorna + denna våg; jämför mot 34.

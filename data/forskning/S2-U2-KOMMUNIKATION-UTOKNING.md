@@ -171,3 +171,13 @@ träffar i 1 412 utdatafiler · prod 200 · tsc tillgängligt igen (node_modules
 helt efter 11:51-deployn — omgång 2:s symlink-kur behövs ej) · llms
 regenererad via projektets EGEN `lasBranschMedianer` i färsk tsx-process
 (samma kodväg som /api/llms-txt — ingen algoritmreplikering).
+
+**MALLFÄLLAN (tredje dokumenterade fallet — varning till nästa våg):** en
+mall-regeneration av Dataset-blocket (enbart seo.tsx-mallen) raderar
+tyst ALLA manuellt tillagda aspektrader — u1:s TTM-rader (omgång 2,
+dokumenterat) och u1:s `/dataset/finans/resultat-cagr-5ar`-rad (min
+commit ea7ad8bd, upptäckt i efterhand) föll båda för detta. Återställt i
+63e230cc med omräknat universumtal (median resultat-CAGR 1,4 %, n=78 av
+109 — var 2,2 %/76). KUR för nästa: efter varje block-regeneration,
+diffa aspektraderna (`grep "dataset/" public/llms.txt` före/efter) mot
+föregående version och klistra tillbaka födda aspektrader med 109-tal.

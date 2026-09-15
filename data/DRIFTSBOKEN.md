@@ -332,6 +332,28 @@ EnvironmentFile med chmod 600).
 - Nästa övning per kvartal: **senast 2026-12-15**.
 - Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15.md.
 
+## S10-U3 — DR-REPLIK + FABRIKKOLLISIONSFYND (2026-09-15)
+
+- **Oberoende andra restore av samma natt-dump: 14,7 s** (u3) + u2:s 17,7 s =
+  RTO replikerbar, båda under v98 F3:s 20 s. Radtal identiskt: public
+  1 246 728; totalt **1 247 119 rader / 95 tabeller** (auth 135, realtime 82,
+  storage 136, migrations 38). Fel 780 = samma kategori (u3 bekräftar
+  oberoende). Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15-REPLIK.md.
+- **Instrumentdiff förklarad:** "68 publika tabeller" (ovan) = public 60 +
+  storage 8; public-schemat är exakt **60 = v98 F3:s 60** (oförändrat).
+  Nästa protokoll redovisar public / public+storage / alla scheman var för sig.
+- **FABRIKKOLLISION (rotorsak + kur):** manifestet gav 3 identiska
+  uppgiftstexter → två agenter körde DR-flödet samtidigt; journal-bevis:
+  syskonets mätfrågor mot samma skrap-DB 12:08:56, "fast shutdown" 12:09:14
+  (avbröt u3:s verifiering), skrap-DB droppad under pågående fönster. Noll
+  förlorad data. KUR: (1) fabriksmanifest ger ALDRIG två id samma
+  objekt-räckvidd; (2) **PG17 DR-fönstret ägs av EN agent i taget**
+  (låsfil /tmp/ak1a-dr-prov.lock, flock-mönstret) — till huvudagenten att
+  mekanisera; (3) DR-fönstret stängs alltid med dropdb + stop, oavsett vem
+  som öppnade.
+- Städning oberoende verifierad av u3: ak1a_dr_test borta, PG17 down, disk
+  78 GB ledigt. Nästa kvartalsövning oförändrat: **senast 2026-12-15**.
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

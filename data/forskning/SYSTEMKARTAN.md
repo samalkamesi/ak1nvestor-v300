@@ -213,6 +213,49 @@ Snittscore **7,5** (284 → 285 poäng / 38 system; A3 +1 vid denna dokvåg).
 
 ---
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u3 omgång 3 — E34 + E33 + E28 diffade mot verkligheten)
+
+Objektval mot duplikat EFTER kollisionskontroll: A3 var förstavalet men
+s9-u1:4 diffade det under pågående mätning (commit abac0e0f — filens rader
+skiftade mitt i läsningen; s10-u3:s kur om unika objekt tillämpad). Tre
+FRIA system med dagens största verklighetsglapp valdes: E34 (spår 10:s tre
+DR-leveranser samma dag saknas helt i kartan), E33 (DR-fyndet om
+system_events + index-mätningen), E28 (protokollen lever vidare — kartans
+fynd refererar 2026-09-10). Varje rad MÄTT i arbetsytan 2026-09-15
+(markörvakt-körning, zcat-grep på dumpen, crontab-läsning, node-läsning av
+JSON, ls, git log) — inte läst ur worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| DR-prov (E34) | "godkänt (20 s, 60 tabeller, 1 187 291 rader)" (v98) | **KVARTALSÖVNING 2026-09-15, tvåoperatörsreplikerbar**: 17,7 s (s10-u2) + oberoende 14 658 ms (s10-u3) i isolerad PG17-skrap-DB; 1 246 728 public-rader (60 public-tabeller = v98 F3:s 60; 95 tabeller / 1 247 119 rader alla scheman); medlemmar 3/3, kurser 10/moduler 122; 780 felrader samtliga kända Supabase-roller (ofarliga, oberoende bekräftade); städning verifierad ×2 |
+| Dumpkompletthet (E34) | "nattlig backup-cron verifierad (våg 97)" | **mekaniskt bevisbar**: verktyg/kolla-dump-markorer.mjs (s10-u1 — pg_dump 17:s markörkontrakt + gzip-integritet, 3 sabotagefall gripna) — EGEN körning nu: db-2026-09-15.sql.gz **GRÖN 29,4 MB / 1 267 803 rader / CREATE TABLE 95 / COPY 97 / 6,7 s / exit 0**; baslinje 5/5 på db-2026-09-{11..15} |
+| Retention (E34) | backup till dator-valvet (10 per-typ-snapshots) | **30-dagar MEKANISERAD i server-cron-raden** (crontab mätt: find -mtime +30 -delete på data/backups/supabase) — 5 dumpar på disk (11–15 sep) |
+| system_events i SQL-dumpen (E33) | "senaste-vinner-mönstret, INGEN DDL krävs" | **COPY 0 rader i dumpen** (s10-u2 utrett i återställd DB: ingen tabell/vy bär händelseloggen; konfirmerat av s10-u1) — händelseloggens DR-väg är MOLN-JSON-backupen; SQL-dumpen ensam återställer den inte (komplett DR = båda kedjorna, dokumenterat i DRIFTSBOKEN) |
+| Composite-index (E33 gap 3) | "installerat? — oklart" | **MÄTT EJ INSTALLERAT**: zcat-grep på dumpen 2026-09-15 ger 0 CREATE INDEX på public.system_events — enda träffen är RLS-policy p18 (FOR INSERT WITH CHECK true); ALTER-system_events-composite.sql ligger kvar okört i data/sql/ |
+| Inventory (E33) | data/supabase-inventory.json som nyckelfil | **23 dagar gammal** (generatedAt 2026-08-23T03:21; totalTables 362, totalRows 17 711 048) — manuell avtappning, ingen auto-refresh |
+| Översättningskö (E33 gap 1) | "fallback-kön 320 poster säger nej" | **fortfarande 320** (240 vantar-motor / 71 publicerad / 9 maskinutkast-behovar-granskning) — kön ACKUMULERAR: publicerade rensas ej ur filen |
+| Styrelseprotokoll (E28) | "senaste protokollen (2026-09-10) … 'Åtgärder: (inga)'" | **filen lever till 2026-09-15 07:55 med FYRA nya möten**: 09-13 10:48 + 20:19, 09-14 22:57 (MEGA-SYSTEMBESLUT, kundens direkta direktiv), 09-15 05:17 (FULL DELEGATION) — Åtgärderna bär INNEHÅLL i alla fyra ("(inga)" bara i 09-10-mötena): "R2-verkställningen får inget att verkställa" är motbevisat för 09-13→09-15 |
+| JSON-syntesen (E28 gap 1) | "Automatisk syntes … kunde ej tolkas som JSON" | **fortfarande levande i SENASTE mötet** (09-15 05:17 bär fallback-raden, 3 organ den gången) — kärnfelet ej botat; läget bättre än kartan men FLAGGAN kvarstår |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E34 | LEVER 8 → **LEVER 9** | DR-kedjan kvartalsövad OCH replikerbar (två operatörer: 17,7 s + 14,7 s), dumpkompletthet mekaniskt grön (markörkontrakt, sabotagebevis, egen mätning), retention mekaniserad i cron-raden, fabriksbarnets sudo gör DR-övningar autonoma (inget kundfönster); nästa övning senast 2026-12-15. Kvar: cron-koppling av markörvakten + pgpass-kuren (båda väntar huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
+| E33 | LEVER 8 → **LEVER 8** | Fynden preciserar snarare än stänger: system_events DR-väg = moln-JSON (SQL ensam räcker ej — dokumenterat), composite-indexet mätt EJ installerat (gap 3: "oklart" → bekräftat öppet), inventory åldras manuellt, kön 320 ackumulerande. Ingen score-rörelse — kunskap tillförd, inga gap stängda |
+| E28 | FLAGGA 6 → **FLAGGA 6** | Lägesrättning med egna mätbevis: protokollen lever (4 möten sedan kartans mätning, åtgärder med innehåll, kundens mega-beslut + fulla delegation protokollförda och verkställda i vågorna 146–158) — men ordförande-JSON-fallbacken lever i senaste mötet: gap 1 kvarstår, FLAGGAN kvarstår |
+
+Snittscore **7,5** (285 → 286 poäng / 38 system; E34 +1 vid denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) s10-u1:s crontab-radbyten (markörvakts-
+append `&& node verktyg/kolla-dump-markorer.mjs --natt` + pgpass-kuren —
+crontab mätt: raden slutar fortfarande efter find-delete och bär
+db-lösenordet i klartext, värdet återges aldrig här); (2) composite-indexet
+nu mätt obehandlat — kör ALTER-system_events-composite.sql vid nästa
+DR-fönster (prestanda vid växande event-tabell); (3) E28 gap 1 (JSON-reparatur
+eller strukturell prompt) lever — styrelsens syntes faller fortfarande till
+fallback (senast 09-15 05:17).
+
+---
+
 
 ## ÖVERSIKT — 38 system
 
@@ -246,21 +289,22 @@ Snittscore **7,5** (284 → 285 poäng / 38 system; A3 +1 vid denna dokvåg).
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester; pass.namn-API-texter svenska; gäst-flödet enklare |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Spegling Supabase→fil manuell (synka-*); session-cookie framför lösenord = steg 5 |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
-| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Ordförandesvar ej JSON-tolkbart → tomma beslut (åtgärder "(inga)") |
+| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Protokoll lever till 09-15 med åtgärder i innehåll (4 möten mätta — "tomma beslut" motbevisat); JSON-syntes-fallbacken lever i senaste mötet: gap 1 kvarstår |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (25 klara manifest, pumpor i ps); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Portalens sista trespråksgap stängt (våg 113); MÖS-kvalitetsaudit kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
-| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system (progress/bevakning/portfölj); `oversattningar` kräver kund-SQL |
-| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | Datorns hybrid-sync overifierad; main efter develop (reserv-slack) |
+| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
+| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Kvartals-DR bevisad 2× (17,7 s + 14,7 s replik, 09-15); dump-markörvakt GRÖN (egen mätning); retention mekaniserad i cron; kvar: cron-koppling + pgpass (huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Grind blockerar varje commit (bevisad s8-u1); +3 vakter (beroende/döda länkar/konfig); kvar: motorregister 2026-09-03, testaggregator, deploy-blockad vid RÖD |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3 +1 vid
+Snittscore: **7,5/10** (286 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15; C15+C16 reviderade utan scoreändring; u3 omgång 2
-diffade C17/C18/E32 med egna mätbevis utan poängrörelser). Sämst:
-betalning (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
+diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
+poängrörelser). Sämst: betalning (5). Bäst: AKM2, Studio, Dataset, SEO,
+Mediebibliotek, Drift/DR (9).
 
 ---
 
@@ -909,7 +953,17 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
   teknisk kur (återkommer tills app-servern fixar det underliggande).
 
-## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10
+## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3 omgång 3): lägesrättning på egna mätningar —
+STYRELSE-BESLUT.md lever till 2026-09-15 07:55 (inte stoppad 09-10 som
+originalfyndet anger): FYRA möten tillkommit (09-13 10:48 + 20:19, 09-14
+22:57 MEGA-SYSTEMBESLUT, 09-15 05:17 FULL DELEGATION) och Åtgärder-raderna
+bär INNEHÅLL i alla fyra ("(inga)" finns bara i 09-10-mötena) —
+"R2-verkställningen får inget att verkställa" är motbevisat för 09-13→
+09-15 (vågorna 146–158 är spåren). MEN ordförande-JSON-fallbacken lever i
+senaste mötet (09-15 05:17 bär "kunde ej tolkas som JSON", 3 organ):
+gap 1 kvarstår, FLAGGA och score oförändrade.*
 
 - **Vad:** R1-R4-governance: 5 rollagenter (ordförande/teknik/säkerhet/
   juridik/tillväxt) i vågor inom barnprocess-taket, ordförandesyntes →
@@ -1068,7 +1122,20 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
   (3) priser.json saknar schema-validering vid inläsning (ogiltig JSON =
   tasgren).
 
-## E33. Supabase-persistenslagret — LEVER — 8/10
+## E33. Supabase-persistenslagret — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3 omgång 3): tre preciserande mätningar.
+(1) DR-FYND (s10-u2, konfirmerat s10-u1): system_events-tabellen bär COPY
+0 rader i SQL-dumpen — händelseloggens DR-väg är MOLN-JSON-backupen
+(backup-fran-molnet-kedjan); SQL-dumpen ensam återställer den inte, komplett
+DR = båda kedjorna (dokumenterat i DRIFTSBOKEN). (2) Composite-indexet
+MÄTT EJ INSTALLERAT: dumpen 2026-09-15 bär 0 CREATE INDEX på
+public.system_events (enda träffen = RLS-policy p18) — gap 3 går från
+"oklart" till bekräftat öppet; kör ALTER-system_events-composite.sql vid
+nästa DR-fönster. (3) supabase-inventory.json 23 dagar gammal (generatedAt
+2026-08-23; 362 tabeller / 17,7 M rader) + översättningskön 320 poster
+(240 vantar-motor / 71 publicerad / 9 granskning) — kön ackumulerar,
+publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.*
 
 - **Vad:** Arkitekturens ryggrad: supabase-rest (SSRF-vaktad https*.supabase.
   co-klient), system_events-mönstret (senaste-vinner per nyckel, INGEN DDL
@@ -1086,7 +1153,25 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
   status oklar); (3) composite-indexet (ALTER-system_events-composite.sql)
   installerat? — prestanda vid växande event-tabell.
 
-## E34. Drift, backup & DR (Contabo) — LEVER — 8/10
+## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3 omgång 3): DR-kedjan KVARTALSÖVAD OCH
+REPLIKERBAR samma dag (spår 10): natt-dumpen db-2026-09-15.sql.gz
+återställd i isolerad PG17-skrap-DB på 17,7 s (s10-u2) + oberoende replik
+14 658 ms (s10-u3) — RTO replikerbar av två operatörer; 1 246 728
+public-rader (60 public-tabeller = v98 F3:s 60), medlemmar 3/3, kurser
+10/moduler 122, 780 felrader samtliga kända Supabase-roller. Dump-
+komplettheten är MEKANISKT bevisbar: verktyg/kolla-dump-markorer.mjs
+(s10-u1 — pg_dump 17:s markörkontrakt, 3 sabotagefall gripna, baslinje
+5/5 GRÖN på db-2026-09-{11..15}); egen mätning nu: GRÖN 29,4 MB /
+1 267 803 rader / CREATE TABLE 95 / COPY 97 / 6,7 s / exit 0. Retention
+30 dagar MEKANISERAD i cron-raden (crontab mätt: find -mtime +30 -delete),
+5 dumpar på disk. Fabriksbarnet HAR sudo — DR-övningar körs nu autonomt
+via agentfabriken, inget kundfönster. Nästa övning senast 2026-12-15.
+Score 8→9: replikerbarhet + mekanisk dumpsäkring + autonom exekveringsväg.
+Kvar som gap: s10-u1:s crontab-radbyten (markörvakts-append + pgpass —
+cron-raden bär fortfarande db-lösenordet i klartext, värdet återges aldrig),
+hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
 
 - **Vad:** Contabo = hela driften: pm2 'ak1a' + zcode-app-cli-barnprocesser +
   nginx + certbot, ak1a-halsa */5 (sjävläkande: pm2→nginx→loggning, aldrig

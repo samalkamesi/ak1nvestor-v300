@@ -221,3 +221,38 @@ knappar längre — kvarvaranden är ett ANNAT kluster:
 
 Rådata: `/tmp/lasbarhet-efter-rond3-2026-09-15.json` (kopieras till
 data/vakten är ej gjord — tmp räcker som arbetsminne, nästa våg mäter om).
+
+## 9. DEFINITIV EFTER rond 3 (s7 våg 5 = s7-u3, 2026-09-15 18:05–18:12, PROD — rättar våg 6:s localhost-tal)
+
+Våg 6:s EFTER (18:04) mätte mot localhost medan 1f5b165a-bygget (med
+kaskadkuren 04303dd8) pågick — deras knapprester (paginering 31×44, ny
+zoomfälla) är PRE-BANG-artefakter. Denna mätning körde mot
+https://lab.ak1nvestor.com EFTER deploy 18:00:38 (prod 200):
+
+| Sida | FÖRE | rond 1 | DEFINITIVT | Kvar (klassificering) |
+|---|---|---|---|---|
+| / | 41 | 38 | **2** | dölj-badget (undantag §7) + till-toppen 44² |
+| /kurser | 59 | 55 | **5**¹ | 2×faslänkar "Phase 2→/3→" 20 px, brödsmula (inline-undantag), dölj, "Utforska kurserna" 46 px |
+| /blogg | 61 | 9 | **1** | dölj-badget |
+| /portfolj-forskning | 33 | 29 | **18** | korstabell-cellytor (rond 4) · zoom 0 ✓ |
+| /forskningsbiblioteket | 13 | 10 | **2** | dölj + lås-rad 310×44 |
+| /kurser/the-intelligent-investor | 48 | 45 | **32** | kurskroppens bokrader/källor (rond 4) |
+| **Totalt** | **255** | **186** | **60**² | **−76 %** · **zoomfällor 2 → 0** (våg 6:s \"/kurser-select zoom\" var pre-bang: full om-mätning = 0) |
+
+¹ Helkörningens /kurser-pass dog (7 interaktiva = partial render, verktygets
+kända svaghet) — ärligom-mätning enskild sida: **136 interaktiva, 5 under
+52, 0 zoom**; chips, paginering (även aria-current-varianten — våg 6:s
+oro var ogrundad), numrerade knappar och select ALLA ≥52. ² Verktygets
+hel-total 59 bygger på partial-passet; 60 är den korrigerade räkningen.
+
+Beviskedja: bang-cure 04303dd8 → deploy 1f5b165a 18:00:38 (prodbygge
+nyare än commit) → prod 200 → mätning ovan. Rådata:
+`lasbarhet-efter-rond3-2026-09-15.json` (denna mapp, committad) +
+`data/vakten/lasbarhet-efter-rond3.json` + `/tmp/kurser-om.json`.
+
+**Kvarvarande röror för rond 4** (våg 6:s lista kompletterad):
+våg 6:s punkt 1-2 (textlänkar: faslänkar, bokrader, brödsmulan,
+källor-länk, korstabellrader) + till-toppen !-lyft + Utforska-kurserna
+46→52 + lås-raden på /forskningsbiblioteket. Inga knappkluster kvar
+förutom dokumenterade undantag — knapparnas 52-standard är UPPNÅDD på
+kärnytorna; delspåret går vidare på länkytor (rond 4).

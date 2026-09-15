@@ -355,7 +355,7 @@ export function KursSok({
               setKat("alla");
               setSida(1);
             }}
-            className="rounded-full border border-gold/30 px-2.5 py-1 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 max-md:min-h-[52px]"
+            className="rounded-full border border-gold/30 px-2.5 py-1 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 max-md:min-h-[52px]!"
           >
             {kat !== "alla" ? `${kat} · ` : ""}
             {sok.trim() ? `"${sok.trim()}" · ` : ""}
@@ -370,7 +370,7 @@ export function KursSok({
               setSortering(e.target.value as Sortering);
               setSida(1);
             }}
-            className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-xs font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30 max-md:min-h-[52px] max-md:text-base"
+            className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-xs font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30 max-md:min-h-[52px]! max-md:text-base"
             aria-label={t("ksok.sorteraAria")}
           >
             <option value="rekommenderad">{t("ksok.sortRekommenderad")}</option>
@@ -430,7 +430,7 @@ export function KursSok({
           <button
             onClick={() => setSida(Math.max(1, aktuellSida - 1))}
             disabled={aktuellSida === 1}
-            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40 max-md:min-h-[52px]"
+            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40 max-md:min-h-[52px]!"
           >
             {t("ksok.foregaendeKnapp")}
           </button>
@@ -444,7 +444,7 @@ export function KursSok({
                 key={p}
                 onClick={() => setSida(p)}
                 aria-current={p === aktuellSida ? "page" : undefined}
-                className={`min-w-9 rounded-lg px-2.5 py-1.5 text-[11px] font-bold tabular-nums transition-colors max-md:min-h-[52px] max-md:min-w-[52px] ${
+                className={`min-w-9 rounded-lg px-2.5 py-1.5 text-[11px] font-bold tabular-nums transition-colors max-md:min-h-[52px]! max-md:min-w-[52px]! ${
                   p === aktuellSida
                     ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
                     : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
@@ -457,7 +457,7 @@ export function KursSok({
           <button
             onClick={() => setSida(Math.min(antalSidor, aktuellSida + 1))}
             disabled={aktuellSida === antalSidor}
-            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40 max-md:min-h-[52px]"
+            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40 max-md:min-h-[52px]!"
           >
             {t("ksok.nastaKnapp")}
           </button>
@@ -493,7 +493,7 @@ export function KursSok({
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             <button
               onClick={() => valjKategori("alla")}
-              className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors max-md:min-h-[52px] ${
+              className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors max-md:min-h-[52px]! ${
                 kat === "alla"
                   ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
                   : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
@@ -505,7 +505,7 @@ export function KursSok({
               <button
                 key={k}
                 onClick={() => valjKategori(kat === k ? "alla" : k)}
-                className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors max-md:min-h-[52px] ${
+                className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors max-md:min-h-[52px]! ${
                   kat === k
                     ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
                     : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
@@ -548,7 +548,7 @@ export function KursSok({
             <button
               key={k}
               onClick={() => valjKategori(k)}
-              className={`rounded-full px-3 py-1.5 text-[11px] font-bold tabular-nums transition-colors max-md:min-h-[52px] ${
+              className={`rounded-full px-3 py-1.5 text-[11px] font-bold tabular-nums transition-colors max-md:min-h-[52px]! ${
                 kat === k
                   ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
                   : "border border-gold/30 text-muted-foreground hover:bg-gold/10"

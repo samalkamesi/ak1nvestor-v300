@@ -97,7 +97,7 @@ export function KursQuiz({
                       key={j}
                       onClick={() => svara(i, j)}
                       disabled={klarad}
-                      className={`w-full rounded-md border px-3 py-2 text-left text-xs transition-colors max-md:min-h-[52px] ${styl} ${klarad ? "cursor-default" : "cursor-pointer"}`}
+                      className={`w-full rounded-md border px-3 py-2 text-left text-xs transition-colors max-md:min-h-[52px]! ${styl} ${klarad ? "cursor-default" : "cursor-pointer"}`}
                     >
                       {String.fromCharCode(65 + j)}) {alt}
                       {klarad && arRatt && " ✓"}

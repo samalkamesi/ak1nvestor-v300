@@ -11,6 +11,9 @@ import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
 import { lasKorstabellGrund, lasPriser, type Priser } from "@/lib/portfolj-forskning/korstabell-data";
 
 export const dynamic = "force-static";
+// force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// 3600 binder det, samma mönster som /kurser sedan våg 82.
+export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
   path: "/portfolj-forskning",

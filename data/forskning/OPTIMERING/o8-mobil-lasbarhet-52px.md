@@ -97,3 +97,60 @@ Förväntat: headerns 6 kontroller + ~30 blogglänkar + 2 zoomfällor försvinne
 ur listan (≈ −50 fynd/sida på tunga sidor, −41 på startsidan); footer +
 widgetknappar kvarstår till rond 2. Jämför mot
 `lasbarhet-fore-2026-09-15.json` (samma sidordning).
+
+## 6. EFTER rond 1 (s7 våg 4, 2026-09-15) — ROND 1 BEVISAT LIVE
+
+Mätt mot localhost:3000 (= prod-bygget, deploy 50095d0e 11:29:58 byggde
+44f977d1). Rådata: `lasbarhet-efter-rond1-2026-09-15.json`.
+
+| Sida | FÖRE under 52 | EFTER rond 1 | Delta |
+|---|---|---|---|
+| / | 41 | 38 | −3 (headerns kontroller borta; footer kvar dominerar) |
+| /kurser | 59 | 55 | −4 + zoomfella select KVAR (se rotorsaken) |
+| /blogg | 61 | **9** | −52 — blogglänkarna + headern bevisar deployen |
+| /portfolj-forskning | 33 | 29 | −4, zoomfella input BORTA ✓ |
+| /forskningsbiblioteket | 13 | 10 | −3 |
+| /kurser/the-intelligent-investor | 48 | 45 | −3 |
+| **Totalt** | **255** | **186** | **−69** |
+
+**Rotorsaksfynd (varför zoomfällan på /kurser överlevde rond 1):**
+`globals.css` bär OLAGRADE override-regler `.text-\[11px\] { font-size: 12px }`
+(ovenför 9/10/11 px — kundens +1px-läsbarhetspump). Olagrad CSS slår ALLA
+Tailwind-lager i kaskaden ⇒ rond 1:s `max-md:text-base` på selecten kunde
+ALDRIG vinna mot `text-[11px]` på samma element (computed 12 px trots
+min-h-52 som verkade). **Kur: byt basklass till `text-xs`** (lagenlig
+utility, 12 px desktop) — då vinner `max-md:text-base` (16 px mobil).
+Lärdom för spåret: aldrig lägga `max-md:text-*` bredvid `text-[9-11px]`.
+
+## 7. Rond 2 (s7 våg 4, 2026-09-15) — footer + widgetknappar + CTA-rader
+
+CDP-sond gav facit på de kvarvarande klustrena; fixarna (alla `max-md:`,
+datorvy orörd):
+
+| Fil | Vad |
+|---|---|
+| `footer.tsx` | kontakt-länkar ×2 + sociala ikoner ×4 + kolumnlänkar ×21 (flex + min-h 52) + till-toppen-knappen |
+| `chat-widget.tsx` | AI-Mentor-trigger 44→52² |
+| `notis-center.tsx` | klock-knappen 44→52² |
+| `tema-vaxlare.tsx` | `shrink-0` — flex-shrink kramade knappen 52→50 px (rotorska, inte storleksklass) |
+| `mobilmeny.tsx` | hamburgerknappen 35→52² + shrink-0 (samma shrink-rot) |
+| `sidfooter.tsx` | guldknapps-badge (28 px, "Phase 2 Application" på alla sidor) + kolumnlänkar → min-h 52 |
+| `kurs-sok.tsx` | rotorsaksfixen: `text-[11px]`→`text-xs` (label + select) — zoomfällan dör |
+| `bygg-portfolj-kort.tsx` | Logga in gratis + Se medlemskap 44→52 |
+| `kurser/[slug]/page.tsx` | Öppna AK1A + Se medlemskap → inline-flex min-h 52 |
+| `portfolj-forskning/page.tsx` | AKM1-kalkylatorn + Portföljbyggaren + Se medlemskap → min-h 52 |
+
+**Medvetna undantag (dokumenterade, inte glömda):**
+- ShortSeller-dölj-kryss (44², overlay-badge på 60 px-bärarknappen): 52 px
+  skulle täcka bärarknappen helt; 44 px uppfyller Apple HIG 44 pt + WCAG
+  2.5.8 med god marginal. Lämnad medvetet.
+- Kakbannerns tre knappar (44 px) + kurssidans quiz-svarsknappar (44 px) +
+  /kurser filter/pagineringsknappar (40–44 px) + LarvagKort-chips (26–42 px)
+  + hero-länken "see the memberships" (30 px) = **rond 3-kö** nedan.
+
+### Kö rond 3 (nästa våg i delspåret)
+1. /kurser: filterknappar + paginering (kurs-sok.tsx) — 44→52.
+2. Kurssidor: quiz-svarsknappar (kurs-renderare) + relaterade-chips —
+   stor yta (343 kurser), mät först.
+3. Kakbanner-knapparna 44→52 (kakvakt-komponenten).
+4. Hero-länken "see the memberships" (spa-hem) 30 px.

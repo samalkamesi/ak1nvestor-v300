@@ -263,13 +263,13 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href="/logga-in"
-              className="inline-flex min-h-[44px] items-center rounded-lg bg-gold px-6 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02]"
+              className="inline-flex min-h-[44px] items-center rounded-lg bg-gold px-6 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02] max-md:min-h-[52px]"
             >
               Logga in gratis
             </Link>
             <Link
               href="/medlemskap"
-              className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/50 px-5 text-sm font-semibold hover:bg-gold/10"
+              className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/50 px-5 text-sm font-semibold hover:bg-gold/10 max-md:min-h-[52px]"
             >
               Se medlemskap
             </Link>

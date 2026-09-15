@@ -10818,3 +10818,20 @@ Kollisionsnöt (min sida): mina prefix rs-/ks- treffade u2:s samtidiga risk-01/k
 F6-larmet (feljägaren 16:42:45, fetch failed) var ÄKTE men självläkt: verkligt osvarar-fönster ~5 min när fabrikens auto-s6-barn (s6-u3 ensam 58 min ≈ 0,8 GB) sammanföll med pm2-omstartar och bygg på 8 GB-servern med 1,5 GB swap redan använd; dessförinnan hade ett bygg dödats TYST ("Killed", rond32-deploy.log 13:31). Tidslinjen bunden med bevis: feljakt-fynd.jsonl + pm2-loggar (omstart 16:40:20, stack 16:47:21, ISR-varm 16:59) + fabrikens statusfiler + /tmp-byggloggar (synk-build.log klar 17:01:47 = .next mtime, bygg EFTER commit = JA, prod 200).
 VACCIN mot klassen "tyst OOM-död vid sammanfallande tunga körningar": verktyg/ram-grind.mjs + prebuild i package.json — ALLA npm run build väntar till MemAvailable ≥ 1600 MB (tak 15 min, sedan PÅSKRIVET avbrott med loggrad i data/vakten/ram-grind.logg); vaktwrappern (granssnittsvakt-cron.sh) fick egen grind 1100 MB/5 min (SKIPPAD exit 75 vid tomt minne) + v168-härdningen (skiljer vaktkrasch från sidfel) landad som committad fil. Grinden aktiverar endast på Contabo (path-markör) — arbetsstation/CI opåverkad. Båda grindgrenarna testade live: öppnad exit 0, stängd loggad + exit 1.
 DRIFTSBOKEN: incidentnotis med rot→kur→vaccin enligt Lag 6. Nästa rond: verifiera grindens första produktionspass (ram-grind.logg i prod vid nästa bygg) + F5-fyndens falskpositiv i feljägarens loggregex som observandum.
+## SPÅR 7 s7-u1 (omgång 2) — 2026-09-15: mobil läsbarhet 52px ROND 2 — footer+widgetknappar+CTA-rader + EFTER rond 1 bokförd [fabrik]
+Val mot kollisionsyta: rundans fyra ytor var tagna (bild/koddelning/cache GRÖNA;
+52px rond 1 = s7-u2:förra manifestet, DÖDAT av fabrikstimeout EFTER commit) —
+hålet timeout-barnet lämnade = rond 2 + EFTER-mätning. Leverans 1 (mätning):
+EFTER rond 1 mot localhost (=prodbygge 50095d0e): 255→186 tryckmål under 52
+(/blogg 61→9 bevisar deployen); rådata lasbarhet-efter-rond1-2026-09-15.json.
+ROTORSAK: globals.css olagrade .text-[11px]{font-size:12px}-override slår alla
+Tailwind-lager ⇒ rond 1:s max-md:text-base på selecten kunde aldrig vinna
+(zoomfällan överlevde); kur = basklass text-xs. Leverans 2 (kod, 10 filer,
+max-md-skyddade): footer (kontakt+sociala+21 kolumnlänkar+till-toppen),
+AI-Mentor-trigger, notisklocka, sidfooter-badge+länkar, tema (shrink-0 —
+flex-shrink kramade 52→50, rotorska), hamburger (35→52², shrink-0),
+kurs-sok (rotorsaksfixen), CTA-rader bygg-portfolj-kort/kurser-slug/
+portfolj-forskning (Se medlemskap m.fl. 44→52). Medvetet undantag:
+ShortSeller-dölj-kryss 44² (52 skulle täcka 60px-bäraren; HIG 44 ✓).
+Kö rond 3 bokad i o8: /kurser-filter+paginering, quiz-knappar, kakbanner,
+hero-länk. tsc 0. EFTER rond 2 mäts när prod-synken byggt commitn.

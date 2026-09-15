@@ -1,0 +1,114 @@
+{
+  "bransch": "finans",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "metod": "Underlag för när bolagen brukar/planerar publicera sin Q3-rapport 2026. Endast rappfönster och kalenderfakta — inga rapportsiffror, ingen analys, inga råd. Datum som bolaget ännu inte självt bekräftat (USA-estimat och vissa kalenderkällor) markeras explicit.",
+  "bolag": [
+    {
+      "ticker": "BRK-B",
+      "namn": "Berkshire Hathaway Inc.",
+      "land": "USA",
+      "rapportfenster": "Tidigt november 2026 (estimat-spann ca 2026-10-30 – 2026-11-06; ej officiellt bekräftat)",
+      "notera": "Kvartalsvis (10-Q). Publicerar historiskt på en lördagsmorgon i tidiga november — Q3 2025 kom lördagen 2025-11-01 — och utan telefonkonferens. Bekräftat datum publiceras på bolagets nyhetssida; olika kalenderkällor anger för närvarande 2026-11-01 till 2026-11-06 med spann 2026-10-30–11-04.",
+      "kallor": [
+        { "namn": "Berkshire Hathaway — 2026 news releases (officiell, närmaste källa)", "url": "https://www.berkshirehathaway.com/news/2026news.html", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "GS",
+      "namn": "The Goldman Sachs Group, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10-13 (tisdag), pressrelease ca 07:30 ET med konferenssamtal 09:30 ET",
+      "notera": "Kvartalsvis. Datumet är officiellt — bolaget har lyft ut samtliga 2026 rappdatum i pressrummet. Q1 2026 redovisades 2026-04-13 och Q2 2026 den 2026-07-14; Q4 2026 kommer tisdagen 2027-01-19.",
+      "kallor": [
+        { "namn": "Goldman Sachs pressroom — conference call dates 2026 (officiell)", "url": "https://www.goldmansachs.com/pressroom/press-releases/2025/conference-call-dates-to-announce-4q25-and-2026-earnings-results", "hamtdatum": "2026-09-15" },
+        { "namn": "Goldman Sachs — quarterly earnings releases (officiell)", "url": "https://www.goldmansachs.com/investor-relations/financials/quarterly-earnings-releases", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "INVE-B.ST",
+      "namn": "Investor AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-16 (enligt Inderes finansiella kalender — bolagets egen eventkalender listar ännu inget Q3-datum)",
+      "notera": "Investeringsbolag med kvartalsvis NAV-redovisning. Q2 2026 (januari–juni) publicerades 2026-07-16; historiskt kommer Q3-rapporten en fredag i mitten/slutet av oktober. Bolaget håller även Capital Markets Update 2026 (registrering öppen) — skilj på den och kvartalsrapporten.",
+      "kallor": [
+        { "namn": "Inderes — finansiell kalender Investor AB", "url": "https://www.inderes.fi/en/companies/Investor", "hamtdatum": "2026-09-15" },
+        { "namn": "Investor AB — events calendar (officiell, utan Q3-datum vid hämttillfället)", "url": "https://www.investorab.com/investors-media/events-calendar", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "namn": "JPMorgan Chase & Co.",
+      "land": "USA",
+      "rapportfenster": "2026-10-13 (tisdag), resultat före börsöppning och konferenssamtal 08:30 ET",
+      "notera": "Kvartalsvis. Datumet är officiellt — bolaget tillkännagav samtliga 2026 rappdatum i förväg. Q2 2026 redovisades 2026-07-14; Q4 2026 kommer torsdagen 2027-01-14.",
+      "kallor": [
+        { "namn": "JPMorganChase — announces conference calls for 2026 earnings (officiell)", "url": "https://www.jpmorganchase.com/ir/news/2025/jpmc-announces-conference-calls-to-review-first-quarter-second-quarter-third-quarter-and-fourth-quarter-2026-earnings", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "LATO-B.ST",
+      "namn": "Investment AB Latour (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-11-03 (enligt finansiella kalendrar — kontrollera mot bolagets IR-sida)",
+      "notera": "Investeringsbolag med kvartalsvis redovisning. Q1 2026 publicerades 2026-04-29 och Q2 2026 den 2026-08-19 kl 08:30 CEST med VD-presentatation; årsrapport 2026 väntas 2027-02-09 enligt samma kalendrar.",
+      "kallor": [
+        { "namn": "Latour — investor relations (officiell)", "url": "https://www.latour.se/en/investor-relations", "hamtdatum": "2026-09-15" },
+        { "namn": "MarketScreener — Investment AB Latour kalender", "url": "https://www.marketscreener.com/quote/stock/INVESTMENT-AB-LATOUR-6491386/calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "NDA-SE.ST",
+      "namn": "Nordea Bank Abp",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-15",
+      "notera": "Finskt bankbolag med svenska depåbevis, kvartalsvis rytm. Datumet är officiellt — ingick i bolagets finansiella kalender för 2026 (börsmeddelande 2025-10-01). Årsredovisning 2026 senast vecka 8 2027.",
+      "kallor": [
+        { "namn": "Nordea — Nordea Bank Abp's financial reporting in 2026 (officiellt börsmeddelande)", "url": "https://www.nordea.com/en/press/2025-10-01/nordea-bank-abps-financial-reporting-in-2026", "hamtdatum": "2026-09-15" },
+        { "namn": "Nordea — financial calendar (officiell)", "url": "https://www.nordea.com/en/investors/financial-calendar", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "ORES.ST",
+      "namn": "Investment AB Öresund (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-09 kl 08:00 (preliminär tid enligt MFN-kalendern)",
+      "notera": "Investeringsbolag med kvartalsrapport och månatliga substansvärderapporter. Q3-rapporten brukar komma i tidiga oktober — Q3 2025 publicerades 2025-10-09. Q2 2026 kom 2026-07-10; MFN markerar Q3-tiden som estimerad tills bolaget bekräftar.",
+      "kallor": [
+        { "namn": "MFN.se — Öresunds kalender/presslista (Kvartalsrapport 2026-Q3)", "url": "https://mfn.se/all/a/oresund", "hamtdatum": "2026-09-15" },
+        { "namn": "Öresund delårsrapport jan–sep 2025 (Cision-PDF, visar oktoberrytmen)", "url": "https://mb.cision.com/Main/1772/4247470/3712433.pdf", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "SEB-A.ST",
+      "namn": "Skandinaviska Enskilda Banken AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-22",
+      "notera": "Kvartalsvis. Datumet står i bolagets officiella finansiella kalender; tyst period 2026-10-01 – 2026-10-21 (ingen finansiell kommunikation med media, investerare eller analyser under perioden).",
+      "kallor": [
+        { "namn": "SEB — financial calendar (officiell)", "url": "https://sebgroup.com/investor-relations/reports-and-presentations/financial-calendar", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "SHB-A.ST",
+      "namn": "Svenska Handelsbanken AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-21 (onsdag), vanligen kl 07:00 CET",
+      "notera": "Kvartalsvis. Datumet har bolaget självt slagit fast — i Q2-rapporten (2026-07-15) anges att delårsrapporten januari–september 2026 publiceras 2026-10-21. Pre-close call för Q3 hölls per kalender 2026-09-30.",
+      "kallor": [
+        { "namn": "Handelsbanken — investor relations (officiell)", "url": "https://www.handelsbanken.com/en/investor-relations", "hamtdatum": "2026-09-15" },
+        { "namn": "MarketScreener — Svenska Handelsbanken kalender", "url": "https://www.marketscreener.com/quote/stock/SVENSKA-HANDELSBANKEN-AB-6491123/calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "SWED-A.ST",
+      "namn": "Swedbank AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-22 (torsdag), vanligen kl 07:00 CEST",
+      "notera": "Kvartalsvis. Datumet står i bolagets officiella finansiella kalender; tyst period fram till och med 2026-10-21. Q2 2026 (januari–juni) publicerades fredagen 2026-07-17; helårsrapport 2026 kommer 2027-01-27.",
+      "kallor": [
+        { "namn": "Swedbank — financial calendar (officiell)", "url": "https://www.swedbank.com/investor-relations/financial-calendar.html", "hamtdatum": "2026-09-15" }
+      ]
+    }
+  ]
+}

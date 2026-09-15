@@ -1,0 +1,150 @@
+{
+  "bransch": "konsument",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "beskrivning": "Kalenderunderlag (våg 152 fas 2): NÄR bolagen brukar/planerar publicera sina rappfönster under Q3-/Q4-rapportsäsongen 2026. Endast kalenderfakta — inga siffror, inga råd. Utbildningsunderlag: så läser du när ett bolag rapporterar. USA-bolagens ej officiellt bekräftade datum är flaggade som estimat.",
+  "bolag": [
+    {
+      "ticker": "CARL-B.CO",
+      "namn": "Carlsberg A/S",
+      "land": "Danmark",
+      "rapportfenster": "2026-10-29",
+      "notera": "Q3 2026 Trading Statement. Carlsberg publicerar trading statements för Q1 och Q3, fullständiga rapporter för Q2/H1 och Q4/helår. Kalenderår = räkenskapsår.",
+      "kallor": [
+        {
+          "namn": "Carlsberg Group — Investor Relations Calendar (hämtad 2026-09-15)",
+          "url": "https://www.carlsberggroup.com/investor-relations/investor-home/calendar/"
+        }
+      ]
+    },
+    {
+      "ticker": "ELUX-B.ST",
+      "namn": "AB Electrolux (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-23",
+      "notera": "Interimsrapport Q3 2026 (januari–september). Kvartalsrytm: Q1 2026 rapporterades 24 april, Q2 2026 den 29 juli; årsredovisningsslut för 2026 beräknas 29 januari 2027.",
+      "kallor": [
+        {
+          "namn": "Electrolux Group — Q2 2026 Interim Report (PDF) med finansiell kalender, publicerad 2026-07-29 (hämtad 2026-09-15)",
+          "url": "https://www.electroluxgroup.com/wp-content/uploads/sites/2/2026/07/electrolux-Interim-report-ENG-Q2-2026-260729.pdf"
+        },
+        {
+          "namn": "MarketScreener — Electrol AB, kalender (hämtad 2026-09-15)",
+          "url": "https://www.marketscreener.com/quote/stock/ELECTROLUX-AB-127471987/calendar/"
+        }
+      ]
+    },
+    {
+      "ticker": "ESSITY-B.ST",
+      "namn": "Essity AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-22",
+      "notera": "Interimsrapport januari–september 2026, publiceras ca 07:00 CET. Kvartalsrytm: Q1 2026 den 23 april, Q2 2026 den 16 juli. Kalenderår = räkenskapsår.",
+      "kallor": [
+        {
+          "namn": "Essity — Investor Relations Calendar (hämtad 2026-09-15)",
+          "url": "https://www.essity.com/investors/calendar/"
+        }
+      ]
+    },
+    {
+      "ticker": "HM-B.ST",
+      "namn": "H & M Hennes & Mauritz AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-09-24",
+      "notera": "Niomånadersrapport (Q3) för perioden 1 dec 2025–31 aug 2026, ca 08:00 CEST, med telefoni-/presskonferens samma dag. Brutet räkenskapsår 1 dec–30 nov: Q3 = jun–aug. Därefter helårsrapport 28 jan 2027.",
+      "kallor": [
+        {
+          "namn": "H&M Group — Financial calendar (hämtad 2026-09-15)",
+          "url": "https://hmgroup.com/investors/financial-calendar/"
+        }
+      ]
+    },
+    {
+      "ticker": "ITX.MC",
+      "namn": "Industria de Diseño Textil, S.A. (Inditex)",
+      "land": "Spanien",
+      "rapportfenster": "2026-12-02",
+      "notera": "Interim nine months (Q3 FY2026, 1 feb–31 okt 2026). Brutet räkenskapsår 1 feb–31 jan: Q3-redovisningen publiceras i början av december (ej november). H1 FY2026 rapporterades 9 sep 2026; helåret FY2026 väntas i mars 2027.",
+      "kallor": [
+        {
+          "namn": "Inditex — Investor Relations, Finance/Results & Presentations (hämtad 2026-09-15)",
+          "url": "https://www.inditex.com/itxcomweb/et/en/investors/finance"
+        }
+      ]
+    },
+    {
+      "ticker": "MC.PA",
+      "namn": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+      "land": "Frankrike",
+      "rapportfenster": "2026-10 (månadsfönster — exakt dag ej offentliggjord; föregående års Q3-omsättning kom 13 okt 2025)",
+      "notera": "Q3 2026 Revenue. För Q3 publicerar LVMH omsättning per affärsgrupp (ej fullständigt resultat — det kommer med helåret). Officiell kalender anger oktober 2026; tidigare mönster ligger runt mitten av månaden.",
+      "kallor": [
+        {
+          "namn": "LVMH — The calendar of financial events (hämtad 2026-09-15)",
+          "url": "https://www.lvmh.com/en/financial-calendar"
+        },
+        {
+          "namn": "LVMH — Letter to Shareholders juli 2026 (bekräftar Q3-release i oktober 2026, hämtad 2026-09-15)",
+          "url": "https://www.lvmh.com/static/letter-to-shareholders-july-2026/"
+        }
+      ]
+    },
+    {
+      "ticker": "MCD",
+      "namn": "McDonald's Corporation",
+      "land": "USA",
+      "rapportfenster": "Ej officiellt bekräftat av bolaget — tredjepartsestimat 2026-11-04 (fönster slutet av oktober till början av november 2026)",
+      "notera": "Q3 2026 (kalenderkvartal jul–sep). USA-estimat: datum är ej bolagsbekräftat; Public.com/MarketBeat/Zacks pekar på 4 nov 2026 baserat på historik (Q1 2026: 7 maj, Q2 2026: 4 aug). Följ bolagets IR-sida för bekräftelse.",
+      "kallor": [
+        {
+          "namn": "McDonald's — Events & Presentations, investor relations (hämtad 2026-09-15)",
+          "url": "https://corporate.mcdonalds.com/corpmcd/investors/events-and-presentations.html"
+        },
+        {
+          "namn": "Public.com — McDonald's (MCD) earnings, estimerat datum 2026-11-04 (hämtad 2026-09-15)",
+          "url": "https://public.com/stocks/mcd/earnings"
+        }
+      ]
+    },
+    {
+      "ticker": "NKE",
+      "namn": "NIKE, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10-01",
+      "notera": "Q1 FY2027 (juni–aug 2026), release ca 13:15 PT med konferenssamtal ca 14:00 PT — officiellt annonserat av bolaget 28 aug 2026. Brutet räkenskapsår 1 jun–31 maj: kalenderkvartal Q3 är Nikes Q1.",
+      "kallor": [
+        {
+          "namn": "NIKE, Inc. Investor Relations — officiellt datummeddelande Q1 FY2027 (hämtad 2026-09-15)",
+          "url": "https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2026/NIKE-Inc--Announces-First-Quarter-Fiscal-2027-Earnings-and-Conference-Call/default.aspx"
+        }
+      ]
+    },
+    {
+      "ticker": "PG",
+      "namn": "The Procter & Gamble Company",
+      "land": "USA",
+      "rapportfenster": "2026-10-22 (bolaget anger 'anticipated' — preliminärt)",
+      "notera": "Q1 FY2027 (jul–sep 2026). Brutet räkenskapsår 1 jul–30 jun: oktoberrapporten motsvarar kalenderkvartal Q3 men är P&G:s första räkenskapskvartal. USA-flagga: datumet är bolagets eget preliminära ange på IR-sidan.",
+      "kallor": [
+        {
+          "namn": "P&G Investor Relations — overview/events (hämtad 2026-09-15)",
+          "url": "https://www.pginvestor.com/overview/default.aspx"
+        }
+      ]
+    },
+    {
+      "ticker": "VOLCAR-B.ST",
+      "namn": "Volvo Car AB (publ.)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-23",
+      "notera": "Q3 2026-rapport, publiceras 07:00 CET. Kvartalsrytm 2026: Q1 den 29 april, Q2 den 17 juli; Q4 2026 rapporteras 4 feb 2027. Kalenderår = räkenskapsår.",
+      "kallor": [
+        {
+          "namn": "Volvo Cars — Financial calendar, Investor Relations (hämtad 2026-09-15)",
+          "url": "https://investors.volvocars.com/en/news-and-events/calendar/financial-calendar"
+        }
+      ]
+    }
+  ]
+}

@@ -308,7 +308,7 @@ export function RiskvalPanel({
             onClick={() => {
               if (profil) onVald(profil);
             }}
-            className="btn-marin min-h-[44px] px-5 py-2.5 text-xs disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn-marin min-h-[44px] px-5 py-2.5 text-xs disabled:cursor-not-allowed disabled:opacity-50 max-md:min-h-[52px]!"
           >
             Forska fram portfölj →
           </button>

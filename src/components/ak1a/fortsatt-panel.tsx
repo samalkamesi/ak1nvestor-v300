@@ -61,7 +61,7 @@ export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?:
           <li key={p.path}>
             <Link
               href={p.path}
-              className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-gold/10"
+              className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-gold/10 max-md:min-h-[52px]"
             >
               <span>{ikonFranPath(p.path)}</span>
               <span className="min-w-0 flex-1 truncate">{titelFranSida(p.path)}</span>

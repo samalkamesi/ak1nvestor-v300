@@ -253,7 +253,7 @@ export function Footer() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-xs text-muted-foreground max-md:min-h-[52px]"
+            className="text-xs text-muted-foreground max-md:min-h-[52px]!"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("footer.tillToppen")} <ArrowUp className="ml-1 h-3 w-3" />

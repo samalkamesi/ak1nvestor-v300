@@ -703,6 +703,95 @@ const MONSTER: FragMonster[] = [
       };
     },
   },
+  // ── Spår 6, omgång 2, byggare u2 (fabrik auto-s6): kapitalstruktur + tillväxt
+  // Ämnesval EFTER kollisionskontroll mot basens 20 + extra-lagrets 3 + makro-
+  // lagrets 2 mönster (u1 cb1dc540, körs FÖRE basen): kärnordsfamiljerna
+  // "skuld/kapitalstruktur/soliditet/hävstång" och "tillväxt/organisk/förvärv"
+  // är verifierat fria — de förekommer bara i andra monsters SVARSTEXTER,
+  // aldrig som kärnord. Backas av spår 5:s sex nya kurser som rebakades in
+  // i registret i samma leverans (337 → 343, bastestets E01 grönt igen).
+  // Sist i MONSTER + strikt poängregel ⇒ kan aldrig stjäla en fråga från
+  // tidigare deklarerade mönster (rad/kostnad/risk förblir säkrade).
+  // Regressionstest: verktyg/testa-ai-mentor-s6u2-omg2.mjs
+  {
+    id: "kapitalstruktur",
+    karnord: [
+      "kapitalstruktur", "kapitalstrukturen", "skuld", "skulder", "skuldsättning",
+      "skuldsatt", "soliditet", "hävstång", "belåning", "eget kapital",
+      "kapitalallokering",
+    ],
+    starkord: ["bolag", "balansräkning", "låna", "finansiera", "källa"],
+    bygga: (reg) => {
+      const grunder = reg.find((r) => r.slug === "ks-01-kapitalstruktur-grunder");
+      const allokering = reg.find((r) => r.slug === "ks-02-kapitalallokering");
+      const balans = reg.find((r) => r.slug === "bk-01-balansrakningen");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "ks-01-kapitalstruktur-grunder", "Läroplanen — kapitalstruktur, grunderna (nybörjarnivå)"),
+        kursKalla(reg, "ks-02-kapitalallokering", "Läroplanen — kapitalstruktur, styrelsens fem vägar"),
+        kursKalla(reg, "rk-03-skuldfalla", "Läroplanen — riskhantering, när skulden blir en fälla"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Kapitalstruktur är svaret på frågan varifrån bolagets pengar kommer — och det finns bara två källor: EGET KAPITAL (ägarna har skjutit till eller låtit vinsten stanna kvar) och SKULD (lånade pengar med ränta och återbetalningskrav). Nyckeltalet SOLIDITET visar hur stor del av balansräkningen som bärs av eget kapital.\n\nPedagogiken i balansgången: skuld är inte dum i sig — den är en HÄVSTÅNG. Går verksamheten bra förstärker den avkastningen på det egna kapitalet; går den sämre gör samma räntekostnad fallet brantare. Därför läses kapitalstruktur som en riskfråga: klarar bolaget en dålig cykel utan att tvingas låna mer eller emittera? (Det är risken V19 kapitalförbränning mäter.)\n\nOch pengarna som TJÄNAS har också en struktur: KAPITALALLOKERINGEN — styrelsens fem vägar för det fria kassaflödet (reinvestera i verksamheten, förvärva, dela ut, köpa tillbaka aktier, amortera) är en egen kurs.\n\nSom alltid: detta är utbildning i att LÄSA en balansräkning — aldrig ett omdöme om enskilda bolag.` +
+          kallradFler(kallor),
+        amne: "kapitalstruktur",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Kapitalstruktur — grunder${grunder ? ` — ${grunder.minuter} min` : ""}`, lank: "/kurser/ks-01-kapitalstruktur-grunder", ikon: "🏗️", beskrivning: `${fa(grunder)} · nivå ${(grunder?.niva || "nybörjare").toLowerCase()}` },
+          { text: `Kursen: Kapitalallokering — fem vägar${allokering ? ` — ${allokering.minuter} min` : ""}`, lank: "/kurser/ks-02-kapitalallokering", ikon: "🧭", beskrivning: fa(allokering) },
+          { text: "Kursen: Skuldfällan", lank: "/kurser/rk-03-skuldfalla", ikon: "⚠️", beskrivning: "När skulden blir en fälla — riskhantering" },
+          ...(balans
+            ? [{ text: "Kursen: Balansräkningen — bolagets karta", lank: `/kurser/${balans.slug}`, ikon: "🗺️", beskrivning: `${fa(balans)} · nybörjarnivå` }]
+            : []),
+          { text: "Vad är V19?", lank: "fragor:" + encodeURIComponent("vad är V19?"), ikon: "🔥", beskrivning: "Kapitalförbränning — kopplingsvariabeln" },
+        ],
+        motfraga: { text: "Vad är V19?", kategori: "risk" },
+        fordjupa: { text: k.titel, lank: "/kurser/ks-01-kapitalstruktur-grunder" },
+      };
+    },
+  },
+  {
+    id: "tillvaxt",
+    karnord: [
+      "tillväxt", "tillväxten", "tillväxtaktie", "tillväxtaktier", "tillväxtbolag",
+      "tillväxtbolagen", "organisk tillväxt", "förvärvad tillväxt", "organisk",
+      "organiskt", "förvärv", "förvärvad", "förvärvat", "förvärvstillväxt",
+    ],
+    starkord: ["bolag", "aktier", "försäljning", "intäkter", "källa"],
+    bygga: (reg) => {
+      const tx = reg.find((r) => r.slug === "tx-01-organisk-mot-forvarvad-tillvaxt");
+      const v01 = reg.find((r) => r.slug === "v01-forsaljningstillvaxt");
+      const v03 = reg.find((r) => r.slug === "v03-intaktsdiversifiering");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.minuter} min${r.quiz ? ` · ${r.quiz} quizfrågor` : ""}` : "kursregistret";
+      const kallor = [
+        kursKalla(reg, "tx-01-organisk-mot-forvarvad-tillvaxt", "Läroplanen — tillväxt, kursen om källan (intermediär)"),
+        kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — AKM1, V01 försäljningstillväxt (nybörjarnivå)"),
+        kursKalla(reg, "v03-intaktsdiversifiering", "Läroplanen — AKM1, V03 intäktsdiversifiering"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Tillväxt är den första dimensionen i AKM1 (V01–V03) — men den nybörjarlektion som oftast glöms bort är KÄLLAN: tillväxten är antingen ORGANISK (fler kunder, mer försäljning, högre priser — växer inifrån) eller FÖRVÄRVAD (bolaget köper en annan verksamhet — växer utifrån).\n\nVarför källan spelar pedagogisk roll:\n1️⃣ ORGANISK tillväxt är billigare och mer hållbar — men långsammare.\n2️⃣ FÖRVÄRVAD tillväxt är snabb — men kostar kapital, integrationsarbete och ofta goodwill som kan behöva skrivas ned.\n3️⃣ FÄLLAN: en stigande intäktskurva kan dölja en kärna som står stilla — då finns tillväxten bara i senaste förvärvet. I rapporten spårar du källan i noterna och segmentuppgifterna (ÅRL 1995:1554 kräver att intäkterna delas upp där det behövs för förståelsen).\n\nOch kopplingen framåt: tillväxt UTAN moat äts så småningom upp av konkurrensen — därför står V01–V03 aldrig ensamma i en analys.\n\nSom alltid: detta är utbildning i att läsa KÄLLAN bakom siffrorna — inte en uppfattning om vilka bolag som växer bäst.` +
+          kallradFler(kallor),
+        amne: "tillväxt",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: `Kursen: Organisk vs förvärvad tillväxt${tx ? ` — ${tx.minuter} min` : ""}`, lank: "/kurser/tx-01-organisk-mot-forvarvad-tillvaxt", ikon: "🌱", beskrivning: `${fa(tx)} · nivå ${(tx?.niva || "intermediär").toLowerCase()}` },
+          { text: `Kursen V01: Försäljningstillväxt${v01 ? ` — ${v01.minuter} min` : ""}`, lank: "/kurser/v01-forsaljningstillvaxt", ikon: "📈", beskrivning: `${fa(v01)} · nybörjarnivå` },
+          { text: `Kursen V03: Intäktsdiversifiering${v03 ? ` — ${v03.minuter} min` : ""}`, lank: "/kurser/v03-intaktsdiversifiering", ikon: "🧺", beskrivning: fa(v03) },
+          { text: "Vad är en moat?", lank: "fragor:" + encodeURIComponent("vad är en moat?"), ikon: "🛡️", beskrivning: "Varför tillväxt behöver ett försvar" },
+        ],
+        motfraga: { text: "Vad är ARR-tillväxt?", kategori: "tillväxt" },
+        fordjupa: { text: k.titel, lank: "/kurser/tx-01-organisk-mot-forvarvad-tillvaxt" },
+      };
+    },
+  },
 ];
 
 // OBS (våg 106 H2): AKM1-variablerna (V01–V20) har inget mönster här — de

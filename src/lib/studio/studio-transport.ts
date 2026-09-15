@@ -4269,10 +4269,14 @@ class AppServerTransport implements StudioTransport {
       const modell = m?.providerId && m?.modelId ? `${m.providerId}/${m.modelId}` : undefined;
       let contextUsed = typeof p?.contextUsed === "number" ? p.contextUsed : undefined;
       let totalTokenCount = typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined;
-      // VÅG 170 — V4-FALLBACK FÖR KONTEXT (kundens "data på tokens visar 0"):
-      // session/read-projektionen returnerar contextUsed=0 efter rotation,
-      // medan v4/conversation/usage visar de FAKTISKA tokens (bevisat:
-      // 58 131 tokens medan read sa 0). Kur: läs v4 som fallback vid 0.
+      // VÅG 170 — TRE FALLBACK-LAGER FÖR KONTEXTENS SANNING:
+      // Lager 1: session/read (primär — fungerar när sessionen mognat)
+      // Lager 2: v4/conversation/usage (sessionens FAKTISKA tokens — hjälper
+      //          när read-projektionen eftersläpar efter rotation)
+      // Lager 3: TRÅDENS KUMULATIVA KONTEXT (läser v4-usage från den
+      //          FÖREGÅENDE sessionen i huvudtrådens bok — ny session börjar
+      //          på 0 men tråden har historia; kundens "visar 0 efter
+      //          uppdatering" = sessionen roterade och räknaren började om)
       if (!contextUsed || contextUsed === 0 || !totalTokenCount || totalTokenCount === 0) {
         try {
           const v4 = await this.lasV4Anvandning();
@@ -4291,10 +4295,37 @@ class AppServerTransport implements StudioTransport {
           /* v4 är fallback — session/read är primär */
         }
       }
+      // Lager 3: TRÅDENS KUMULATIVA — ny session med 0 kontext ⇒ läs
+      // föregående sessions v4-usage och LÄGG TILL som trådbar-last.
+      // Detta gör att kontextraden ALLTID visar trådens verkliga storlek
+      // och auto-komprimeringen har verkliga tal att trigga på.
+      if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
+        try {
+          const bok = lasHuvudtradSessioner();
+          const föregående = bok.find((s) => s.startsWith("sess_") && s !== this.sid);
+          if (föregående) {
+            const v4Förra = await this.klient!.protokollFraga(
+              "v4/conversation/usage",
+              { sessionId: föregående },
+              15_000,
+            ) as { inputTokens?: number; totalTokens?: number } | null;
+            if (v4Förra) {
+              const förraIn = typeof v4Förra.inputTokens === "number" ? v4Förra.inputTokens : 0;
+              const förraTotal = typeof v4Förra.totalTokens === "number" ? v4Förra.totalTokens : 0;
+              if (förraIn > 0) {
+                contextUsed = förraIn;
+                totalTokenCount = förraTotal || förraIn;
+              }
+            }
+          }
+        } catch {
+          /* trådens bar-last är stöd — ALDRIG fatal */
+        }
+      }
       return {
         modell,
         contextUsed,
-        contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : undefined,
+        contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : 1_000_000,
         totalTokenCount,
         turnCount: typeof p?.turnCount === "number" ? p.turnCount : undefined,
         // V83 B2: läge ur projektionen, tanke-nivå ur snapshot-settings —

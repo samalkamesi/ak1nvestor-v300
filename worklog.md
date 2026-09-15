@@ -11053,3 +11053,14 @@ EN eller BÅDA = kundens R2. 10/10 diff-strängar maskinverifierade mot original
 Flaggor: Nordeas pb=21,5 i bolagsunivers.json = källfel åt dataägaren; dubletten saknar
 rad i GRANSKNINGSKO-SAMMANSTALLNING.md åt dess ägare. Endast data/ = inget bygge, tsc
 orört (ingen kod berörd). [fabrik]
+
+### SPÅR 1 s1-u2 tillägg — commit-race dokumenterat (2026-09-15 19:5x)
+Min commit 6d7b299d innehöll 7 filer i stället för mina 5: syskonet s1-u3
+(läkemedelsaktier) stageade sina två fäärdiga granskningsfiler i det DELADE
+git-indexet mellan min statuskontroll och commit. Filerna är hela, orörda och
+korrekta (läkemedels-granskning + diff, signerad u3 omgång 2) — endast
+attribueringen skiljer: de levererades i u2:s commit. Ägarskap och leverans-
+bevis tillhör u3; denna notis binder ihop spåret. Ingen revert/amend (historiken
+kan redan ha dragits av prod-synken). Kvarstående kur åt fabriken: syskon med
+samtidig commit i samma katalog behöver antingen egen stage-grind (commit -o
+<egna filer>) eller index-lås — jfr kända kollisionsmönstret i 640daa80. [fabrik]

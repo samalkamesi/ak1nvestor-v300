@@ -4005,7 +4005,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [diskSessioner, setDiskSessioner] = React.useState<DiskSessionPost[]>([]);
   const diskSoktRef = React.useRef(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
-  const [toast, setToast] = React.useState<{ text: string; ton: "gron" | "fel" } | null>(null);
+  // REGISTER #21 (P6): staplande toast-stack — varje toast bär eget id så
+  // 5 s-timern och klickstängningen riktar sig mot rätt rad i stacken.
+  const [toastStack, setToastStack] = React.useState<{ id: number; text: string; ton: "gron" | "fel" }[]>([]);
+  const toastIdRef = React.useRef(0);
   const [rewindJobbar, setRewindJobbar] = React.useState(false);
 
   // ── Sessions- och workspace-hantering (våg 83 B3) ──────────────────────────
@@ -4547,10 +4550,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
     huvudTabbIdRef.current = tabbar.find((t) => t.huvud)?.id ?? "tabb-huvud";
   }, [aktivTabbId, tabbar]);
 
-  /** Bekräftelse-toast — försvinner av sig själv efter 4,5 s. */
+  /** Bekräftelse-toast — REGISTER #21 (P6): staplande stack, max 3 synliga,
+   *  försvinner av sig själva efter 5 s, klick stänger. API:t är oförändrat
+   *  mot den gamla singel-toasten — befintliga anrop fungerar som förut. */
   const visaToast = React.useCallback((text: string, ton: "gron" | "fel" = "gron") => {
-    setToast({ text, ton });
-    window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
+    const id = ++toastIdRef.current;
+    setToastStack((stack) => [...stack.slice(-2), { id, text, ton }]);
+    window.setTimeout(() => {
+      setToastStack((stack) => stack.filter((t) => t.id !== id));
+    }, 5_000);
+  }, []);
+
+  /** Stäng en toast i förtid (klick på raden). */
+  const stangToast = React.useCallback((id: number) => {
+    setToastStack((stack) => stack.filter((t) => t.id !== id));
   }, []);
 
   /** EVOLUTION E1 (gap 1): växla helskärm — tillståndet synkas av
@@ -8963,21 +8976,35 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (filer.length > 0) void laddaUpp(filer);
       }}
     >
-      {/* Bekräftelse-toast (grön/röd accent på mörk bottn) */}
-      {toast && (
-        <div
-          role="status"
-          className={cn(
-            "fixed left-1/2 top-3 z-[90] -translate-x-1/2 rounded-md border px-4 py-2 text-xs font-medium shadow-lg",
-            toast.ton === "fel"
-              ? "border-[#DA3633]/50 bg-[#161B22] text-[#F85149]"
-              : "border-[#238636]/50 bg-[#161B22] text-[#E6EDF3]",
-          )}
-        >
-          <span className={cn("mr-1.5", toast.ton === "fel" ? "text-[#F85149]" : "text-[#3FB950]")}>●</span>
-          {toast.text}
-        </div>
-      )}
+      {/* Bekräftelse-toast-stack — REGISTER #21 (P6): max 3 synliga, 5 s
+          självförsvinnande, klick stänger. Höger nere ovanför skrivfältet
+          på mobil (safe-area medräknad), övre högra hörnet på dator.
+          Behållaren är alltid monterad som live-region — skärmläsare
+          hinner förbereda sig på raderna som kommer och går. */}
+      <div
+        role="status"
+        className="pointer-events-none fixed right-3 bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-[90] flex flex-col items-end gap-2 md:bottom-auto md:top-3"
+      >
+        {toastStack.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => stangToast(t.id)}
+            title="Stäng meddelandet"
+            className={cn(
+              "pointer-events-auto max-w-[min(20rem,85vw)] cursor-pointer rounded-md border px-4 py-2 text-left text-xs font-medium shadow-lg",
+              t.ton === "fel"
+                ? "border-[#DA3633]/50 bg-[#161B22] text-[#F85149]"
+                : "border-[#238636]/50 bg-[#161B22] text-[#E6EDF3]",
+            )}
+          >
+            <span className={cn("mr-1.5", t.ton === "fel" ? "text-[#F85149]" : "text-[#3FB950]")} aria-hidden>
+              ●
+            </span>
+            {t.text}
+          </button>
+        ))}
+      </div>
 
       {/* ══ VÅG 90 K3: SIDEBAR (vänster, 260px, #010409) — desktop-kolumn ══ */}
       <aside

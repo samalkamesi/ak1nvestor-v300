@@ -20,7 +20,7 @@
 | 3 | Ctrl+C rensar utkast (3.10.2-19) | Esc rensar fältet | 3 | 1 | STÄNGD (732c870e) | Esc/Ctrl+C rensar inmatningsfältet (utkastet är ändå persistat) |
 | 4 | Notiser vid tur-avslut (notifications unfocused) | Web Notification API vid klart + aktiveringsknapp | 4 | 2 | STÄNGD (evolution V1, e2) | Web Notification API vid klart när fliken ej fokuserad |
 | 5 | Bakgrundssynk modellkatalog (3.11.2-22) | 8 s efter init, ej blockande + auditrad | 3 | 2 | STÄNGD (d81bacfe) | Bakgrundsuppdatering av /api/studio/modeller vid uppstart |
-| 6 | Serialiserade permission-dialoger (3.11.2-24) | Kö finns (v7); granskning mot källan | 3 | 1 | KONTROLL | Verifiera köordning mot källans permission-request-queue |
+| 6 | Serialiserade permission-dialoger (3.11.2-24) | KONTROLL-DOM: STÄMD — starkare än källan (30 s-timeout + fulla avvisningsvägar; serverside FIFO) | 3 | 1 | STÄNGD (KONTROLL-6-PERMISSION.md) | Kantnotering: klient-multi-pending — fix-skiss i domen |
 | 7 | Isolerade subagent-events (3.11.2-21) | Subagentvy finns; händelseisolering? | 3 | 2 | KONTROLL | Barn-events får inte läcka in i huvudtrådens flöde |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
 | 9 | Diff-bläddring /diff med radnummer+CJK | KONTROLL-DOM (2026-09-15): CJK ✓ budget ✓ — GAP: radnummer-gutter, ordnivå-diff, /diff-bläddrare (skissa i KONTROLL-9-DIFF.md) | 4 | 2 | ÖPPEN (3 delgap) | Verkställ KONTROLL-9:s fix-skiss (AndringsPanel ~2838, DiffForhandsvisning ~2885 + nytt /diff-kommando) |

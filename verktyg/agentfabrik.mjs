@@ -115,6 +115,13 @@ function prefix(titel) {
     "Regler: src/ ENDAST via Write/Edit; data/ får bash; commit med `git commit -F <meddelandefil>`;",
     "ALDRIG `--no-verify`; ALDRIG röra priser/tier/publicering (kundens veto);",
     "ALDRIG publicera i data/blogg/ (live-mappen) — utkast till data/blogg-utkast/.",
+    // VÅG 162 (incidentrot 2026-09-15 01:23): ett barns npm-kommando raderade
+    // node_modules mitt i en deploy-omstart → prod nere 5 min (kraschvakten
+    // räddade). Barn FÅR ALDRIG röra installationen — byggen ägs av
+    // prod-synk/kraschvakt under deploylåset.
+    "ALDRIG `npm ci`/`npm install`/`rm -rf node_modules`/`npm run build` —",
+    "installation och byggen ägs ENDAV prod-synken/kraschvakten under",
+    "/tmp/ak1a-deploy.lock; typkoll = `npx tsc --noEmit` (läser, installerar ej).",
     "När du är klar: commit:a DINA filer (git add <dina filer>) och avsluta svaret",
     "med en rad 'LEVERANS: <fil1>, <fil2>, …' — fabriken läser den som kvitto.",
   ].join("\n");

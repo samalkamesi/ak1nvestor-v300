@@ -24,4 +24,5 @@
 | Slug | Fil | Status | Datakälla | Not |
 |---|---|---|---|---|
 | ravarubolag-materialbranschens-cykel | [ravarubolag-materialbranschens-cykel.json](./ravarubolag-materialbranschens-cykel.json) | UTKAST v1 (2026-09-15) | Bolagsuniversum 2026-09-03 (Yahoo Finance, MarketStack) | Materialbranschens 10 bolag: fyra familjer, cykelns mekanik, medianer mot universumet, P/E-fällan; 1 211 ord; publicering = kundens beslut (R2) |
+| sa-analyserar-du-bankaktier | [sa-analyserar-du-bankaktier.json](./sa-analyserar-du-bankaktier.json) | UTKAST v1 (2026-09-15) | Bolagsuniversum 2026-09-03 (Yahoo Finance, MarketStack), verifierad 2026-09-15 | Finansbranschens guide (bankaktier, 4:e branschen): spegelvända balansräkningen, P/B + ROE med identiteten P/E = P/B ÷ ROE (bevisad på Swedbank 2,07 ÷ 0,150 ≈ 13,8), räntecykeln 2021–2025 med fallande nettomarginaler hos 3 av 4 storbanker, kreditförlustcykeln + 90-talskrisen, kapitaltäckning, checklista i 5 steg; 4 källor (Riksbanken, Finansinspektionen, BIS, Nasdaq); publicering = kundens beslut (R2) |
 

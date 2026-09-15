@@ -1,0 +1,160 @@
+{
+  "slug": "tx-01-organisk-mot-forvarvad-tillvaxt",
+  "category": "TILLVÄXT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Organisk vs förvärvad tillväxt — spåra källan",
+  "summary": "Samma tillväxtsiffra kan vara född i verksamheten eller köpt via förvärv — och skillnaden avgör hur mycket siffran är värd. Här lär du dig skilja dem åt i årsredovisningen.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Skilja organisk och förvärvad tillväxt i en årsredovisning · Räkna fram organisk tillväxt ur segmentnoten · Läsa goodwill som priset på köpt tillväxt · Känna igen rollup-mekaniken och dess risker · Läsa tillväxtens kvalitet i AKM1:s V-familj",
+  "why": "Tillväxtfamiljen V01–V03 mäter hur snabbt ett bolag växer — men intäktsraden avslöjar aldrig var tillväxten kommer ifrån. Växer bolaget för att kunderna blir fler och priserna bär, eller för att det köpt upp halva branschen och konsoliderar andras intäkter? Organisk tillväxt är ränta på ränta inifrån; förvärvad tillväxt är köpt kontant eller på kredit, med goodwill som vittne. För den som lagt grunden i tillväxtfamiljen är detta nästa naturliga steg: från att läsa en procentsats till att döma dess kvalitet.",
+  "history": {
+    "origin": "Skillnaden mellan organisk och förvärvad tillväxt blev en analysfråga i fullt dagsljus först under 1960-talets amerikanska konglomeratboom. Bolag som ITT och Ling-Temco-Vought växte genom att köpa bolag i bransch efter bransch — rapporterad tillväxt imponerade, medan tillväxten inifrån den egna verksamheten ofta var blygsam. När konglomeratvärderingarna föll samman i slutet av decenniet stod det klart att köpt tillväxt och egen tillväxt inte var samma valuta.",
+    "evolution": "Under 1980-talet kom motreaktionen: uppbrytningar av konglomerat och ett växande fokus på kärnverksamhet. Redovisningsstandarderna följde efter — IFRS 3 slog fast att goodwill inte längre skrivs av enligt plan utan testas för nedskrivning varje år, och segmentrapporteringen gjorde det möjligt att bryta ner tillväxten per verksamhetsgren. För den som läste noter noggrant blev den organiska tillväxten möjlig att skilja ut från den förvärvade.",
+    "modern": "I dag skiljer seriösa bolag själva redovisningen mellan organisk tillväxt och förvärvsbidrag i rapporter och presentationer — särskilt inom mjukvarusektorn, där återkommande intäkter gör skillnaden extra viktig. Samtidigt lever rollup-strategin kvar: serieförvärvare som köper många småbolag och bygger volym. Konsten att läsa vilken del av tillväxten som är köpt har inte blivit mindre aktuell — tvärtom."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — två vägar till samma siffra",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Organisk tillväxt — den inre motorn",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Förvärvad tillväxt — köpta intäkter och goodwill",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Räkna isär tillväxten — praktisk metod",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — rollups, pro forma och nedskrivningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s V-familj",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — två vägar till samma siffra",
+      "intro": "Två bolag, identisk tillväxt — men bakom siffrorna råder två helt olika verkligheter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tänk dig två bolag som båda redovisar tolv procents intäktstillväxt. Det första har vunnit nya kunder, höjt priserna i takt med värdet och släppt en produkt som marknaden väntat på — tillväxten är född inuti verksamheten. Det andra köpte en konkurrent i januari; från köpedatumet räknas målbolagets intäkter in i koncernen, och konsolideringen driver upp tillväxtsiffran utan att en enda ny kund vunnits. Resultaträkningen visar i båda fallen samma sak: tolv procent.\n\nDet är detta kurshäftet handlar om: skillnaden mellan organisk tillväxt — växt som verksamheten skapat själv — och förvärvad tillväxt — växt som köpts och konsoliderats. Skillnaden avgör hur hållbar tillväxten är, hur mycket kapital som krävdes för den, och vilket pris som är rimligt att betala för den. En procentsats är bara en växelkurs; källan bakom den är själva valutan."
+        },
+        {
+          "type": "insight",
+          "content": "Intäktsraden talar om hur mycket bolaget växte — aldrig varifrån tillväxten kom. Frågan varifrån avgör hur länge den håller."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Organisk tillväxt — den inre motorn",
+      "intro": "Tillväxt inifrån är ränta på ränta: vinster som återinvesteras i det bolaget redan behärskar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Organisk tillväxt har tre motorer: volym (fler kunder, mer sålt per kund), pris (högre priser som markningen bär) och nytänkande (nya produkter eller marknader som växer fram ur den befintliga verksamheten). Gemensamt för alla tre är att de finansieras av bolagets egna kassaflöde och bygger på det bolaget redan kan — kompetens, varumärke, maskiner, kundrelationer.\n\nI årsredovisningen känns organisk tillväxt igen på ett par sätt. Segmenten växer utan att noten om förvärv tillför nya bolag. Investeringarna syns som ökade materiella tillgångar, utvecklingskostnader eller lager — inte som en svällande goodwillpost på balansräkningen. Inom återkommande intäkter, som V02-kursen behandlar, blir organisk tillväxt dessutom extra tydlig: befintliga kunder som stannar och utökar är den renaste formen av inre tillväxt som finns."
+        },
+        {
+          "type": "definition",
+          "content": "Organisk tillväxt: intäktstillväxt som skapas av verksamheten själv — genom priser, volymer, nya produkter eller marknader — utan konsolideringseffekter från förvärv."
+        },
+        {
+          "type": "insight",
+          "content": "Organisk tillväxt i större skala är en bristvara — och just därför den mest värdefulla formen: den kräver ingen ny kapitalrisk, bara att verksamheten gör sitt jobb bättre i år än förra året."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Förvärvad tillväxt — köpta intäkter och goodwill",
+      "intro": "Att köpa tillväxt är inte fusk — men priset syns på balansräkningen, i posten goodwill.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När ett bolag förvärvar ett annat betalar det sällan exakt bokvärdet. Skillnaden mellan köpeskillingen och det redovisade nettovärdet av tillgångar och skulder hamnar som goodwill — det osynliga överskottet: varumärke, kundrelationer, samlad kompetens, förväntade synergier. Från förvärvsdagen konsolideras målbolagets intäkter i koncernen, och resultaträkningen växer i ett steg. Det är mekaniken bakom förvärvad tillväxt: man köper en tillväxttakt och betalar den kontant eller med lånade pengar.\n\nRedovisningsreglerna gör spåren läsbara. Enligt IFRS 3 skrivs goodwill inte av enligt fast plan utan testas istället för nedskrivning varje år — en post som kan ligga orörd i åratal och plötsligt minska. Noten om förvärv anger köpeskilling, vad som köptes och när konsolideringen började. För den som vill förstå hur mycket av tillväxten som är köpt är dessa noter källmaterial av första klassen — tillsammans med goodwillposten, som kursen km-022 om immateriella tillgångar behandlar djupare."
+        },
+        {
+          "type": "definition",
+          "content": "Goodwill: skillnaden mellan köpeskillingen vid ett förvärv och det redovisade nettovärdet av förvärvade tillgångar och skulder — balansräkningens pris på köpt tillväxt och förväntade synergier."
+        },
+        {
+          "type": "insight",
+          "content": "Varje förvärv köper en tillväxttakt — frågan är bara till vilket pris. Goodwill är siffran som vittnar om vad bolaget trodde att tillväxten var värd."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Räkna isär tillväxten — praktisk metod",
+      "intro": "En tillväxtbrygga är tre rader matematik — förutsatt att du hittar noten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden kallas tillväxtbrygga och bygger på segmentnoten och noten om förvärv. Ett räkneexempel: ett bolag omsatte 100 förra året och 112 i år — rapporterad tillväxt tolv procent. Noten om förvärv visar att ett i mars förvärvat bolag bidragit med 6 i intäkter sedan köpedatumet. Den organiska tillväxten blir då (112 − 6) − 100 = 6 procent. Hälften av tillväxten var alltså köpt — information som pressreleasen gärna utelämnar men som noten måste bära.\n\nTvå förbehåll gör övningen ärlig. För det första jämförelseperioden: när ett helt år av det förvärvade bolaget konsolideras jämförs ett år med tolv månader mot föregående års noll — upprepa bryggan tills båda åren bär full förvärvseffekt, annars överdrivs den organiska tillväxten. För det andra pro forma-siffror, där förvärv räknas bakåt i tiden som om de skett tidigare: de kan vara rimliga jämförelseunderlag, men de är antaganden — inte redovisning. Noten är källan; presentationen är tolkning."
+        },
+        {
+          "type": "insight",
+          "content": "Tre rader matte skiljer värd från illusion: rapporterad tillväxt, förvärvsbidrag, organisk tillväxt. Noten, inte rubriken, är din källa."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — rollups, pro forma och nedskrivningar",
+      "intro": "Köpt tillväxt kan fungera i årtionden — och den kan slå bakut. Här är de klassiska fallgroparna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den mest kända fällan är rollup-strategin: att systematiskt köpa många småbolag i en fragmenterad bransch och bygga volym. Logiken kan vara sund — stordriftsfördelar, gemensam administration, bättre inköp — men mekaniken bär tre inbyggda risker. Integration är svårare än affärsplanen lovar. Skuldsättningen växer med varje köp, vilket kursen om soliditet och räntetäckning behandlar. Och multipel-arbitraget — köpa litet billigt, värdera stort dyrt — försvinner när börsen börjar prisa rollups som det de är: hopköpta delar, inte en helhet.\n\nDen andra fällan är pro formaträsket: prognosiserade synergier och justerade nyckeltal som gör förvärvet skinande på pappret. Den tredje är nedskrivningen av goodwill — redovisningens sätt att erkänna att den köpta tillväxten var dyrare än den visade sig vara värd. En stor engångsnedskrivning är därför inte bara en bokföringspost: den är ett bakåtblickande omdöme om alla de tillväxtsiffror som tidigare redovisats som köpta. Följ andelen förvärvad tillväxt över flera år — stiger den stadigt är frågan inte om bolaget växer, utan om det slutat kunna växa själv."
+        },
+        {
+          "type": "insight",
+          "content": "En goodwillnedskrivning är historiens slutklämma: beviset på att köpt tillväxt en gång prissattes högre än den var värd."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s V-familj",
+      "intro": "I AKM1 blir den här kursen tillväxtfamiliens kvalitetsglasögon — färgen på V01:s siffra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V01 mäter försäljningstillväxtens nivå — den här kursen mäter dess kvalitet. V02 fördjupar frågan: återkommande intäkter gör organisk tillväxt synlig och mätbar, kund för kund. V03 kompletterar med spridningen: växer hela verksamheten eller en enda lyckad gren? Tillsammans ger de tre en bild av inte bara hur snabbt bolaget växer, utan hur växten är beskaffad.\n\nKorsa sedan läsningarna med resten av modellen. Du Pont-analysen (ln-01) visar hur förvärvad tillväxt sväller balansräkningen och skuldsättningen medan marginalerna späds ut tills synergier hunnit landa. Goodwill-kursen (km-022) visar hur den immateriella posten byggs och prövas. Avsluta med helhetsövningen: välj ett bolag, bygg en tillväxtbrygga för de senaste fem åren, och skriv en mening per år om andelen organisk tillväxt. Fem meningar — och du vet mer om bolagets tillväxtkvalitet än de flesta som citerar dess tillväxtsiffra."
+        },
+        {
+          "type": "insight",
+          "content": "Tillväxtkvalitet betyder i slutänden hållbarhet: organisk tillväxt förnyar sig själv, medan köpt tillväxt måste köpas om — om och om igen — för att bestå."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch myntade ordet diworsification för bolag som växer in i det de inte behärskar. Hans bästfunktionerande bolag växte organiskt, inom sin egen kompetenscirkel, finansierade av sina egna kassaflöden — expansion genom stora förvärv i främmande branscher var tvärtom en varningsflagga. Lynch skulle ha använt tillväxtbryggan exakt så: för att skilja bolag som växer på kraft från bolag som växer på köpeskillingar.",
+  "grahamSection": "Benjamin Graham var djupt skeptisk till tillväxt som köpargument i sig — han ville betala för prövad intjäningskraft, inte för en trendlinjes förlängning. Redan i Security Analysis-varningen om pyramiddrivna expansioner och skuldfinansierade imperier ligger kursens budskap: tillväxt som är byggd på inre styrka och återinvesterade vinster är en annan och säkrare tillgång än tillväxt som är hopköpt på kredit. Källan bakom siffran var för Graham alltid en del av värdet.",
+  "ak1Section": "I AK1A:s metodik är den här kursen tillväxtfamiliens (V01–V03) kvalitetsdimension: samma procentsats får olika bärvikt beroende på hur stor del som är organisk. V02:s återkommande intäkter och V03:s intäktsdiversifiering läses starkare tillsammans med en tillväxtbrygga, och korsningen mot ln-01:s Du Pont-analys och km-022:s goodwill-lära visar vad köpt tillväxt kostar i marginaler och balansräkning. En V01-tal vägt med sin organiska andel ger en ärligare tillväxtbild — och det är just sådana kvalitetsgraderingar AKM1:s viktning bygger vidare på."
+}

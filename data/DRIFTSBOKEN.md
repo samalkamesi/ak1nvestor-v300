@@ -114,7 +114,11 @@ Rollback:
 
 Datorn = valv. Innehåll i data/backups/ (gitignorat, bara på datorn):
 - KOD: git-speglar (origin + contabo) + server-repo-<datum>.tar.gz
-  (~250 MB, hela /home/ak1a/AK1 UTAN node_modules/.next, vakt 500 MB).
+  (arbetsytan UTAN node_modules/.next/.git/tool-results/data-cache/
+  data-backups, ~130 MB, vakt 500 MB) + server-git-<datum>.bundle (hela
+  historiken ~140 MB, `git bundle verify`-bar). gzip-integritetskoll i
+  verktyget sedan 2026-09-16 (DR-PROV-2026-09-16-KEDJA3.md: 09-09-tarballen
+  var KORRUPT i 7 dygn oupptäckt; 09-08 frisk).
 - DATA (Supabase via backup-fran-molnet.mjs): 10 per-typ-snapshots
   (variabler, variabel-andringar, kurs-metadata + andringar,
   termbank-tillagg, blogg-utkast, blogg-publicerade, media-filer,

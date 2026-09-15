@@ -121,6 +121,29 @@ läst ur worklog:
 
 Snittscore **7,5** (282 → 284 poäng / 38 system; E30 +1, E37 +1).
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u2:2 — C15 diffad mot verkligheten + C16-sidofix)
+
+C15-revisionen som u3 bokförde som kö ("C15-revision bokförs som kö till
+nästa dokvåg"). E30+E37 levererades av den parallella s9-u2-omgången ovan —
+mina oberoende mätningar av samma tre sviter (33/0 · 26/0 · 16/1 med G1-rött
+ur den tomma berikningscachen) bekräftar den sektionen; E30 lämnas åt den,
+inget duplikat här. Varje rad nedan MÄTT i arbetsytan 2026-09-15:
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| Läge B (C15 gap 1) | "obeslutat" | **BESLUTAT 2026-09-07** — ordförandebeslut i STYRELSE-BLOGG-LAGE-B.md: Läge A består som publiceringsväg; full hot-path AVSLAGEN med mätdata (61–76 ms varm statisk mot 240–630 ms/request utan cache; OG-generering + sitemap bygger på filerna på disk; Vercel prod-fs read-only gör B dödfött i ren form) |
+| B2-hybriden | nämns ej i kartan (endast API-rutten i nyckelfilerna) | **BYGGD (våg 82 del C)** — hela §D-kontraktet i kod: publiceraMedPaket (src/lib/blogg-utkast.ts:603 — 0-FEL-grinden + blogg_publicerad-event), src/app/api/admin/blogg/publicera/route.ts, knappen "Publicera (skickar till agent)" i blogg-panel.tsx:335 (syns ENBART på granskade utkast) |
+| Bloggutkast | "8 utkast" | **Strukturerad köträd**: 11 publiceringsklara JSON i roten + m9-ko/ (3 M9-original) + kvartal/2026-q3/ (13: 10 branschkalendrar + 3 bolagspaket H&M/Ericsson/Volvo Car från s4-vågen) + granskning/ (17 MD + kalender-/diff-JSON) + GRANSKNINGSKO-SAMMANSTALLNING.md = kundens kö-vy (2026-09-14); 55 publicerade i data/blogg/ oförändrade |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| C15 | LEVER 8 → **LEVER 8** | Läge B STÄNGT (beslut 2026-09-07 med mätdata — kartan speglade det inte) och B2-knappen lever i kod; men inga nya tester/E2E-bevis tillkom sedan 09-13 och gap (1) ersätts av B2-E2E + ködjupet. Score oförändrad 8; snittet opåverkat (284 kvar) |
+| C16 | LEVER 8 → **LEVER 8** (sidofix) | Detaljblockets påstående "publiceringsknapp i admin saknas (Läge B skulle lösa)" är MOTBEVISAT av B2-knappen (våg 82); utkastantalet "8 filer i kön" rättat till 11 + m9-ko/ 3. Inga scoreändringar |
+
+Sidofynd (förs till nästa dokvåg/dispatch): C18/E32-fullrevisioner kvarstår
+som kö från u3 (talen redan rättade där); demoklient-G1 + tmp_*-städning i
+PRO-sviterna bokförda av den parallella u2-sektionen.
+
 ---
 
 
@@ -142,8 +165,8 @@ Snittscore **7,5** (282 → 284 poäng / 38 system; E30 +1, E37 +1).
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Månads-cron fast; peer-jämförelse ytlig |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | Inga tester; externa beroenden (MarketStack/Yahoo) utan fallback-test |
-| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B (live-läsning Supabase) obeslutat; OG default tills deploy |
-| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | Kön manuell att publicera (export-paket → main-agent) |
+| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
+| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 13 kvartalspaket); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Kvartalsrapport H3: kontrakt klart, src EJ PÅBÖRJAD |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
@@ -168,8 +191,8 @@ Snittscore **7,5** (282 → 284 poäng / 38 system; E30 +1, E37 +1).
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
 Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37 +1 vid
-dokvågarna 2026-09-15). Sämst: betalning (5). Bäst: AKM2, Studio,
-Dataset, SEO, Mediebibliotek (9).
+dokvågarna 2026-09-15; C15+C16 reviderade utan scoreändring). Sämst:
+betalning (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 
 ---
 
@@ -439,24 +462,38 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
 
 # C. INNEHÅLL & TILLVÄXT
 
-## C15. Bloggen + publiceringsflödet — LEVER — 8/10
+## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (dokvåg s9-u2:2): LÄGE B ÄR BESLUTAT —
+ordförandebeslut 2026-09-07 (STYRELSE-BLOGG-LAGE-B.md): Läge A består som
+publiceringsväg, full hot-path AVSLAGEN med mätdata (61–76 ms varm statisk
+mot 240–630 ms/request utan cache; OG-generering + sitemap bygger på filerna
+på disk som prod-fs ändå kräver). B2-HYBRIDEN ÄR BYGGD (våg 82 del C):
+publiceraMedPaket (0-FEL-grinden + blogg_publicerad-event) +
+/api/admin/blogg/publicera + knappen "Publicera (skickar till agent)" i
+panelen — publicera-UX utan hot-path-beroende. Kön är nu en strukturerad
+trädstruktur (11 publiceringsklara JSON + m9-ko/ 3 + kvartal/2026-q3/ 13 +
+granskning/ + GRANSKNINGSKO-SAMMANSTALLNING.md som kundens kö-vy). Score
+kvarstår 8: beslutet var dokumenterat sedan 09-07 — nyheten är att kartan
+nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
 
 - **Vad:** 55 publicerade poster (data/blogg/*.json) + speglar en/ar,
   granskningskö med draft→granskad→publicerad-statusmaskin, kontrolleraText-
   grind (0 FEL krav) vid varje statusbyte, export-paket till main-agent
-  (Läge A), SEO-metadata + OG automatiskt vid drop.
+  (Läge A, ordförandebeslut 2026-09-07) alternativt B2-knappen (agent-
+  påminnelse med paket), SEO-metadata + OG automatiskt vid drop.
 - **Nyckelfiler:** src/lib/blogg-{utkast,speglar}.ts, src/app/(huvud)/blogg/
   **, src/app/{en|ar}/blogg/**, src/app/api/admin/blogg{,/publicera},
   src/components/ak1a/admin/blogg-panel.tsx, data/blogg/ (55) +
-  data/blogg-utkast/ (8), src/lib/varumarke.ts (kontrolleraText).
+  data/blogg-utkast/ (11 JSON + m9-ko/ 3 + kvartal/2026-q3/ 13 + granskning/),
+  src/lib/varumarke.ts (kontrolleraText).
 - **Observation:** Hård grindslogik dokumenterad + protokollförd (våg 80b);
   vakten bekräftar 55 poster i prod oförändrade efter utkast-separeringen
   (våg 95). Statusmaskin + senaste-vinner-persistens via system_events.
-- **GAP:** (1) Läge B (hot-path live-läsning ur Supabase) obeslutat —
-  prestandarisken på 51+ inlägg kräver benchmark (beslut dokumenterat);
-  (2) nya poster får default-OG tills deploy (AC4: force-static-DNA);
-  (3) kommentarer/diskussion saknas avsiktligt men återkopplingsyta
-  (läsarmätning per post) finns ej.
+- **GAP:** (1) B2-flödet E2E-bevisas (knapp → blogg_publicerad-event →
+  agent-drop → prod 200) + "Väntar på agent"-vyn förkovras; (2) nya poster
+  får default-OG tills deploy (AC4: force-static-DNA); (3) återkopplingsyta
+  (läsarmätning per post) finns ej — kommentarer avsiktligt borta.
 
 ## C16. M9-innehållsfabriken — LEVER — 8/10
 
@@ -465,14 +502,16 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
   Supabase-granskningskö med kontrolleraText 0 FEL, md5-kvitton och
   57/57 oberoende kontroller; + 8 SEO-guider.
 - **Nyckelfiler:** verktyg/m9-fabrik.mjs, data/forskning/M9-GRANSKNING-
-  2026-09.md, data/blogg-utkast/*.json (8 filer i kön), data/forskning/
-  SEO-GUIDER-2026-09.md.
+  2026-09.md, data/blogg-utkast/*.json (11 i roten + m9-ko/ 3, mätt
+  2026-09-15), data/forskning/SEO-GUIDER-2026-09.md.
 - **Observation:** Determinism bevisad (samma indata ⇒ md5-identiskt
   utkast), nyckeltal omräknade mot källfiler, hård ALDRIG-investeringsråd-
   grind. Fabriksbootstrap (--tvinga) + kortNamn-buggfix dokumenterade.
-- **GAP:** (1) kön är manuell att tömma (export → main commit) —
-  publiceringsknapp i admin som skriver klara paket saknas (Läge B skulle
-  lösa); (2) fabrikens serier styrs av hårdkodad serie-lista — ny serie
+- **GAP:** (1) sidofix 2026-09-15: påståendet "publiceringsknapp i admin
+  saknas" är MOTBEVISAT — B2-knappen (våg 82, se C15) skickar klara paket
+  till agenten; kvar: M9-fabrikens utkast kopplas till knappflödet och kön
+  växer snabbare än granskningen (11 JSON + 13 kvartalspaket väntar);
+  (2) fabrikens serier styrs av hårdkodad serie-lista — ny serie
   kräver kod; (3) ingen schemalagd re-run (kvartalsvis serie-enligt-H3).
 
 ## C17. Dataset-citeringsmagneterna — LEVER — 9/10

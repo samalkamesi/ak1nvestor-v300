@@ -10875,3 +10875,31 @@ DRIFT: prod-synkens trädsynk rev 4 ostagade filer under vågen (s2-u2-mönstret
 
 ## SPÅR 8 s8-u1 (omgång 2) — 2026-09-15: typkontrollens determinism — npx→projektbinär i 4 väktare + agent-status baslinje 34→0 [fabrik]
 OBJEKT (spårets "tsc-baslinjens överlevnad" — ej levererat förra omgången, som tog grindens blockeringsbevis/beroendevakt/döda länkar): typKONTROLLEN var icke-deterministisk — npx-cachen bär dummy-paketet tsc@2.0.4 (2016, ≠ projektets TS 5.9.3) och mitt i deploy (npm ci river .bin, senast 18:08) kan `npx tsc` träffa den; live-sett av s7 våg 6 ("npx tsc träffar fel binär"), fabriken härdade sin EGEN kedja 04:57 men lämnade övriga väktare. KUR (samma commit): verktyg/hooks/pre-commit (AKTIV), verktyg/kvalitetsgrind.mjs (fail-closed + "deploy pågår?"-diagnos), verktyg/agent-status.mjs och agentfabrikens promptregler kör `node node_modules/typescript/bin/tsc --noEmit` — deterministisk, tydligt fail-safe vid saknad binär. ROTORSAKSBUGG nr 2: agent-status TSC_BASLINJE=34 (pre-133, commit 436ad6f7) maskerade via `nya: max(0,n−34)` upp till 34 VERKLIGA fel som "nya: 0" — rättad till 0 (våg 133:s sanning). BEVIS: tsc exit 0 via nya kanalen; node --check ×3 + bash -n OK; commiten passerar sin egen härdade grind; dummy-paketet dokumenterat på disk. SIDOFYND bokfört: next 16.3.2 fortfarande INSTALLERAT (CRITICAL lever ~9 h) — installation ägs av prod-synken, larmnotis i data/rapporter/beroende-halsa-SENASTE.md: nästa deploy bör ta patchen 16.3.5. Protokoll: KVALITETS-GRINDEN-BEVIS-2026-09-15.md (tilläggssektion).
+
+## SPÅR 8 s8-u3 (omgång 2) — 2026-09-15: feljägarens F5-rotorsaksfix — återleverans död, granskningsbara bevis, obevakad logg funnen [fabrik]
+OBJEKT: ROND 33:s bokade observandum "F5-fyndens falskpositiv i feljägarens
+loggregex" — ROND 34 fick förlora en sonder på omlevererat larm; ingen duplikat
+(u1 omg 2 = tsc-determinism, u2 = beroendevakt, u3 omg 1 = döda länkar).
+ROTORSAKER (3+1, alla bevisade i data/vakten/feljakt-fynd.jsonl + levande loggar):
+(1) ÅTERLEVERANS — sista 5 raderna om-skannades var 15:e minut utan minne; 19
+historiska F5-poster, kraschvaktens KRASCHLOOP-rad 14:24 återlevererades tre
+kvart i rad medans loggen sa svarar=true. (2) BLINT BEVIS — svans.slice(-80)
+visade svansens slut, ej matchande raden (14:57-beviset visade FRISK text).
+(3) SKIFTLÄGES-FP — /FEL[: ]/i matchade "tsc 0 fel (" och "ej kodfel:";
+äkta markörer i loggarna är VERSALA (FEL:, FEL 502, STATUS-FEL, KRASCHLOOP).
+(4) DOLT FYND — F5 bevakade "evighetsmotor-logg" som ALDRIG existerat (verktyget
+skriver evighetsmotor.log) — en av fem loggar var spöke sedan våg 167.
+KUR (verktyg/feljagaren.mjs): positionsminne per fil (.feljakt-logg-positioner.json,
+atomär tmp+rename) — varje rad skannas exakt en gång, förstarundan/truncering =
+sista 5 en gång som förr; bevis = mönster → MATCHANDE raden (120 tkn); versalt
+/FEL[: ]/ + nytt /misslyckades/i (prod-synkens AGENTARBETSYTA-SYNK MISSLYCKADES —
+live-bevisad standing issue gamla mönster var blinda för); rätt filnamn; testkrok
+--f5-test <katalog> (pumpornas argumentlösa anrop oberörda, daemon:82 verifierad).
+BONUS: F1:s tsc → projektbinär (syskonet u1-omg2 fixade 4 väktare; feljägaren
+var den 5:e — npx-dummyskat tsc@2.0.4 = falsk F1-grön i deployfönster).
+BEVIS: scenariotest 16/16 (återleverans dör, nytt fel larmar en gång med rätt
+bevisrad, FP-former tiger, versalform passerar, MISSLYCKADES fångas, truncering
+utan krasch, 12-radersväxt med fel på plats 3 fångas — tail-5:s falska negativ);
+LIVE: fynd = exakt 1 ÄKTA (smutsigt träd i agentarbetsytan, nu synlig), körning 2
+= 0 nya rader 0 fynd, alla 5 loggar i positionsminnet. Protokoll: o11-feljakt-f5-
+rotorsaksfix.md. tsc 0 (projektbinär), ingen bygge (verktyg+data), R2 orörd.

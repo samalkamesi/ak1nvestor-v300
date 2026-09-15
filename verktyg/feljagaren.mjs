@@ -66,7 +66,12 @@ function jagaKod() {
   } catch { srcAndrad = true; }
   if (!srcAndrad) { gron("F1-kod", "src/ oändrad sedan senaste tsc — hoppar"); return; }
   try {
-    const tsc = execSync("npx tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" });
+    // s8-determinism (2026-09-15, syskonmönstret ur pre-commit): projektets
+    // EGEN tsc-binär, ALDRIG npx — mitt i ett deployfönster (npm ci river
+    // node_modules) kan npx lösa "tsc" till cachens dummy tsc@2.0.4 som
+    // alltid svarar grönt (falsk F1-grön). Saknad binär ⇒ "Cannot find
+    // module" blir F1-fynd i stället för tystnad.
+    const tsc = execSync("node node_modules/typescript/bin/tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" });
     const fel = tsc.trim();
     if (fel && !fel.includes("0")) {
       bokfor("F1-kod", "HÖG", `tsc: ${fel.split("\n").length} fel`, fel.slice(0, 200));
@@ -151,23 +156,70 @@ function jagaData() {
 }
 
 // ── F5: LOGGAR ───────────────────────────────────────────────────────────────
-function jagaLoggar() {
-  const monster = [/FEL[: ]/i, /KRASCH/, /tidsgräns.*nåddes/i, /Cannot access.*before initialization/i, /ENOENT.*route/i];
-  const loggFiler = ["hjartslag.log", "kraschvakt.log", "evighetsmotor-logg", "prod-synk.log", "agentfabrik/logg.jsonl"];
-  let fynd = 0;
-  for (const lf of loggFiler) {
+// ROTORSAKSFIX (spår 8 2026-09-15, bevis i data/forskning/OPTIMERING/
+// o11-feljakt-f5-rotorsaksfix.md). Tre felklasser i gamla F5:
+//   (1) ÅTERLEVERANS: sista 5 raderna om-skannades var 15:e minut utan
+//       minne — samma gamla felrad bokfördes som nytt fynd tills 5 nya
+//       rader trängde undan den (kraschvaktens KRASCHLOOP-rad 14:24
+//       återlevererades 14:27+14:42+14:57; ROND 34:s manuell sondering).
+//   (2) BLINT BEVIS: svans.slice(-80) visade svansens SLUT oavsett vilken
+//       rad som matchat — beviset kunde visa frisk text ("svarar=true").
+//   (3) SKIFTLÄGES-FP: /FEL[: ]/i matchade information ("tsc 0 fel (",
+//       "ej kodfel:") — äkta felmarkörer i dessa loggar är VERSALA
+//       (FEL:, FEL 502, STATUS-FEL, KRASCHLOOP).
+// Dessutom dödades ett falskt negativ: tail-5 missade fel i loggar som
+// växer >5 rader per intervall (agentfabrik/logg.jsonl växer på sekunder).
+const LOGG_MONSTER = [
+  /FEL[: ]/,        // versal felmarkör — skiftlägeskänslig mot "0 fel (", "kodfel:"
+  /KRASCH/,         // kraschvaktens KRASCHLOOP-MISSTANKE-rader
+  /tidsgräns.*nåddes/i,
+  /Cannot access.*before initialization/i,
+  /ENOENT.*route/i,
+  /misslyckades/i,  // prod-synkens "…-SYNK MISSLYCKADES (smutsigt träd?…)" — live-bevisad 2026-09-15
+];
+// "evighetsmotor.log" — inte "evighetsmotor-logg": verktyget skriver till
+// .log (evighetsmotor.mjs:27); gamla F5 bevakade ett namn som aldrig funnits
+// ⇒ evighetsmotorns logg var tyst obevakad sedan våg 167.
+const LOGG_FILER = ["hjartslag.log", "kraschvakt.log", "evighetsmotor.log", "prod-synk.log", "agentfabrik/logg.jsonl"];
+const LOGG_STAMP = path.join(VAKT, ".feljakt-logg-positioner.json");
+
+function jagaLoggar(vaktDir, rapportera, gronRapport) {
+  const dir = vaktDir || VAKT;
+  const stampSokvag = vaktDir ? path.join(dir, ".feljakt-logg-positioner.json") : LOGG_STAMP;
+  const bokf = rapportera || bokfor;
+  const gronF = gronRapport || gron;
+  let pos = {};
+  try { pos = JSON.parse(fs.readFileSync(stampSokvag, "utf8")); } catch { /* första körningen */ }
+  let fynd = 0, skanadeRader = 0;
+  for (const lf of LOGG_FILER) {
     try {
-      const svans = fs.readFileSync(path.join(VAKT, lf), "utf8").trim().split("\n").slice(-5).join("\n");
-      for (const m of monster) {
-        if (m.test(svans)) {
-          fynd++;
-          bokfor("F5-logg", "MEDEL", `${lf}: felmönster i svansen`, `${m} → ${svans.slice(-80)}`);
-          break;
+      const rader = fs.readFileSync(path.join(dir, lf), "utf8").split("\n");
+      if (rader.length && rader[rader.length - 1].trim() === "") rader.pop();
+      const senast = typeof pos[lf] === "number" ? pos[lf] : -1;
+      // Ingen position (första körningen) eller truncering/rotation (färre
+      // rader än minnet): sista 5 raderna EN gång — gamla F5:s enda pass,
+      // därefter skannas enbart nya rader och varje rad exakt en gång.
+      let start = senast;
+      if (senast < 0 || senast > rader.length) start = Math.max(0, rader.length - 5);
+      for (const rad of rader.slice(start)) {
+        skanadeRader++;
+        for (const m of LOGG_MONSTER) {
+          if (m.test(rad)) {
+            fynd++;
+            bokf("F5-logg", "MEDEL", `${lf}: felmönster på ny rad`, `${m} → ${rad.slice(0, 120)}`);
+            break;
+          }
         }
       }
-    } catch { /* loggen får saknas/växa */}
+      pos[lf] = rader.length;
+    } catch { /* loggen får saknas */ }
   }
-  if (fynd === 0) gron("F5-logg", `${loggFiler.length} loggar rena i svansen`);
+  try {
+    const tmp = stampSokvag + ".tmp";
+    fs.writeFileSync(tmp, JSON.stringify(pos));
+    fs.renameSync(tmp, stampSokvag);
+  } catch { /* positionsminnet är en optimering, ej ett krav */ }
+  if (fynd === 0) gronF("F5-logg", `${LOGG_FILER.length} loggar — ${skanadeRader} nya rader skannade, 0 fynd`);
 }
 
 // ── F6: DRIFT ────────────────────────────────────────────────────────────────
@@ -218,6 +270,20 @@ function jagaSecurity() {
 }
 
 async function main() {
+  // Isolerat testläge: `node verktyg/feljagaren.mjs --f5-test <katalog>` kör
+  // ENDAST F5-spåret mot katalogen (fynd till stdout, positionsminne i
+  // katalogen) — pumpornas anrop har inga argument och berörs ej.
+  if (process.argv[2] === "--f5-test") {
+    const dir = path.resolve(process.argv[3] || ".");
+    let antal = 0;
+    jagaLoggar(
+      dir,
+      (sp, allvar, f, b) => { antal++; console.log(`[TEST-FYND ${allvar}] ${f} — ${b}`); },
+      (sp, not) => console.log(`[TEST-GRÖN] ${not}`),
+    );
+    console.log(`[TEST KLAR] fynd=${antal}`);
+    return;
+  }
   const pass = lasPass();
   if (!pass) { console.log("[FELJÄGAREN] PASS SAKNAS — sover"); return; }
   console.log(`[FELJÄGAREN] startar ${new Date().toISOString().slice(11, 19)} — 7 spår`);

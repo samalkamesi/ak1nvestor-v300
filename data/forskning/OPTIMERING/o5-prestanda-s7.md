@@ -119,5 +119,38 @@ användarsynligt beteende, lämnas ej till barnagent.
 
 Rådata: `lighthouse/efter-sammanfattning.json` (runda 2), `lighthouse/start-efter-svlocale.json` (isolation). Runda 1 (P42/P47/P50, CLS 0,1246) bevarad i commit 7eb6f8ff.
 
+## EFTER runda 3 — koddelningen live (deploy 50095d0e 11:29:58, prod 200)
+
+SearchModal-idle-dynamic (commit 18701fcd) deployad av prod-synken
+(4 commits, RAM-vaktens kö rapporterad ärligt: två VÄNTAR-RAM-poller
+innan minnet frigjordes). Prod + localhost = 200.
+
+Mätning (larmad server — samma last-brus som syskonets kurskontroller):
+
+| Sida | Poäng | LCP | TBT | CLS |
+|---|---|---|---|---|
+| / | 43 | 5 359 ms | 4 573 ms* | 0,110 (språkresolvens, identiskt — deterministiskt) |
+| /kurser | 44 | 6 245 ms | 2 256 ms* | 0 |
+| /blogg | 54 | 6 229 ms | 740 ms | 0 |
+
+\* TBT oreproducerbar vid last (load ~4 under mätningen; intervall-
+bokföring som EFTER2:s kurskontroll).
+
+**Strukturtalet (last-oberoende) på /, FÖRE 09:59-bygget → EFTER3:**
+JS-filer 27 → 30 (+3 chunks = split), totalt 455 → 463 kB (+8 kB
+chunk-overhead), **unused-JS 72 → 51 kB (−21 kB)** — overlays-modulen
+(radix-dialog + registret) ligger nu i egen chunk som hämtas först vid
+idle/interaktion, ut ur startsidans kritiska hydratisering.
+
+**Funktionsbevis (CDP-sond, / efter 8 s):** 0 konsolfel/undantag,
+SearchModal-chunken hämtad, hero renderad. Sök via store
+(DeepConsultationPanel) opåverkat — modalen monteras av LasyGlobal:s
+interaktions-accelerator vid behov.
+
+Slutsats spåret: koddelningsposten är slutbehandlad (se slutrapporten
+ovan) — kvar i spårets kö: brotli (huvudagent/infra) +
+språkresolvens-CLS (produktbeslut). Rådata: `lighthouse/efter3-*.json`
++ `efter3-sammanfattning.json`.
+
 Rådata: `o5-fore-localhost.json`, `o5-fore-prod.json` (samma mapp).
 Prod 200 verifierad under mätningen (10 träffar) + curl 200.

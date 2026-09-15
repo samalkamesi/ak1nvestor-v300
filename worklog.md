@@ -10768,3 +10768,4 @@ normalisering (publik domän vs localhost) + fel exkludering av /logga-in.
 Ingen src ändrad = inget bygge; tsc 0 intakt via grinden. Kö: cronifiering
 (huvudagent/infra — crontab berörs ej autonomt), externa länkar som egen våg.
 Bevisfil: data/vakten/doda-lankar-2026-09-15.json (otrackad, på disk).
+TILLÄGG s7 våg 3 (11:35): deploy BEVISAD — prod-synken byggde 18701fcd (deploy 50095d0e 11:29:58, prod 200; två VÄNTAR-RAM-poller före, RAM-vaktenWorksAsDesigned). EFTER runda 3 bokförd i o5-prestanda-s7.md: strukturtal / (last-oberoende): unused-JS 72→51 kB (−21), 27→30 chunks; P43/P44/P54 (larmad server, TBT-intervall som EFTER2); CLS 0,110 identisk = språkresolvens (deterministisk). Funktionsbevis CDP: 0 konsolfel, SearchModal-chunk hämtad vid idle, hero renderad. Koddelningsposten SLUTBEHANDLAD; kö: brotli (huvudagent) + språkresolvens-CLS (produktbeslut a/b/c).

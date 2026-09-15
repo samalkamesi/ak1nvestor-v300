@@ -30,11 +30,11 @@
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
 | 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
-| 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Ctrl+Shift+F öppnar sökpanel: `sokOppen/sokFras/sokIndex`, träffräkning, nästa/förra | 4 | 2 | STÄNGD (n1, 695f2703; bygg 10:40 + prod 200) | — |
+| 16 | Transkriptsökning (Ctrl+Shift+F) — navigationsrond n1 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
 | 17 | @-fil-autocomplete — fuzzy + piltangenter | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
-| 18 | Turmarkörer + hopp mellan turer (P3) | `turPos`-state + hoppaTur + Alt+↑/↓ piltangenter | 3 | 1 | STÄNGD (n1, 695f2703) | — |
-| 19 | Hopp-till-slut-indikator (P4) | "↓ Hopp till slutet"-etikett (pi-tui 0.85.0-paritet) + räknarbadge, `hoppaNerChatt`, 44 px mobiltryckyta | 3 | 1 | STÄNGD (n2, df882dbf) | — |
-| 20 | Stora paste-markörer (P5) | `PASTE_RADER_GRANS` + `räknaRader` — kollapsar >N rader till expanderbar markör (×5 i prod-träd) | 3 | 1 | STÄNGD (n2, df882dbf) | — |
+| 18 | Turmarkörer + hopp — navigationsrond n1 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
+| 19 | Hopp-till-slut — navigationsrond n2 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
+| 20 | Paste-markörer — navigationsrond n2 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
 | 21 | Toast-stack — staplande, självförsvinnande | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 22 | Genvägsmanager — remappbara + Inställningspanel | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 23 | LaTeX — Unicode-approximation i svar | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | 8 | 2 | ÖPPEN | Gratis kostnadsobservabilitet |

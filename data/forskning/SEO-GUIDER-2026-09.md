@@ -31,6 +31,7 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 |---|------|----------------|-----|--------|-----|
 | B1 | fastighetsaktier-sa-analyserar-du-fastighetsbolag | fastighetsaktier | 1190 | UTKAST v1 (2026-09-15, s3-u2) | data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag.json |
 | B2 | sa-analyserar-du-bankaktier | bankaktier | 1304 | UTKAST v1 (2026-09-15, s3-u1) | data/blogg-utkast/sa-analyserar-du-bankaktier.json |
+| B3 | lakemedelsaktier-sa-analyserar-du-lakemedelsbolag | läkemedelsaktier | 1197 | UTKAST v1 (2026-09-15, s3-u3) | data/blogg-utkast/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json |
 
 Levererade branschguider utan B-rad (föregående omgång): energi (`sa-analyserar-du-energiaktier.json`) och material (`ravarubolag-materialbranschens-cykel.json`).
 

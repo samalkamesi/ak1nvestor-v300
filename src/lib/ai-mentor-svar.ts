@@ -7,6 +7,11 @@
  * matchar den svarar vi lokalt (0 kr), annars faller vi tillbaka på
  * /api/chatbot precis som förr.
  *
+ * Spår 6 (våg 158, fabrik auto-s6): u2 lade rapportläsning + nyckeltal/P-E
+ * (b63bf978) och u1 la utdelning, lärväg, beteende och skatt sist i MONSTER —
+ * alla svar kan bära FLERA källor (LokaltSvar.kallor + numrerad Källor-rad
+ * via kallradFler). u3:s extra-lager (ec7331f4) prövas FÖRE motorn i widgeten.
+ *
  * ── JURIDIKGRINDEN (lagen 2007:528) ─────────────────────────────────────────
  * All formulering är PEDAGOGISK utbildning. Motorn innehåller aldrig och kan
  * aldrig producera investeringsråd ("köp", "sälj", "detta är värt att äga") —
@@ -147,6 +152,20 @@ export function kursKalla(register: RegisterRad[], slug: string, lagrow: string)
   return r
     ? { slug: r.slug, titel: r.titel, lagrow }
     : { titel: "Läroplanen", lagrow };
+}
+
+/**
+ * Flerkällskällmärke (spår 6, våg 158): en källa ⇒ kallrad-format, flera ⇒
+ * numrerad Källor-lista. Skrivs in i svarets text — widgeten behöver ingen
+ * ändring för att visa den.
+ */
+function kallradFler(kallor: LokalKalla[]): string {
+  if (kallor.length === 0) return "";
+  if (kallor.length === 1) return kallrad(kallor[0]);
+  const rader = kallor
+    .map((k, i) => `${i + 1}. ${k.titel}${k.slug ? ` (${k.slug})` : ""} — ${k.lagrow}`)
+    .join("\n");
+  return `\n\n📖 Källor (${kallor.length}):\n${rader}`;
 }
 
 // ── De 15 förhandsfrågorna ──────────────────────────────────────────────────
@@ -538,6 +557,149 @@ const MONSTER: FragMonster[] = [
         ],
         motfraga: { text: "Hur läser jag en kvartalsrapport?", kategori: "rapport" },
         fordjupa: { text: k.titel, lank: "/kurser/km-009-pe" },
+      };
+    },
+  },
+  // ── Spår 6, byggare u1 (våg 158, fabrik auto-s6): fyra mönster till ──────
+  // Ämnena koordinerade mot syskonen i samma omgång (u2 b63bf978: rapport +
+  // nyckeltal; u3 ec7331f4: kassaflöde + fundamental + moat) — inga duplikat.
+  // Alla svar bär FLERA källor (kallor + numrerad Källor-rad) och ≥3
+  // kurslänkar. Striktpoängregeln + sist-position ⇒ kan aldrig stjäla en
+  // fråga från tidigare mönster (regressionssäkert, se testa-ai-mentor-spar6).
+  {
+    id: "utdelning",
+    karnord: [
+      "utdelning", "utdelningar", "utdelningsaktie", "utdelningsaktier",
+      "aktieutdelning", "utdelningsstrategi", "utdelningsvägen",
+      "direktavkastning", "dividend", "dividender", "payout ratio",
+      "återinvestering",
+    ],
+    starkord: ["aktier", "portfölj", "passiv inkomst", "väg", "uthållig"],
+    bygga: (reg) => {
+      const antal = reg.filter((r) => r.kategori === "UTDELNINGSSTRATEGI").length;
+      const kallor = [
+        kursKalla(reg, "km-063-direktavkastning", "Läroplanen — utdelningsstrategi, kurs 1 (nybörjarnivå)"),
+        kursKalla(reg, "pf-05-utdelningsstrategi", "Läroplanen — portföljhantering, utdelning i en hel portfölj"),
+        kursKalla(reg, "ud-04-utdelningsfallor", "Läroplanen — utdelningsstrategi, fällorna att känna igen"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Utdelning är när ett bolag delar med sig av sin vinst till aktieägarna — en summa per aktie, oftast en eller fyra gånger per år. Nyckelbegreppet är DIREKTAVKASTNING: utdelningen i förhållande till aktiepriset. Det är ett jämförelsemått att lära sig, inte ett köpkriterium vi ger dig.\n\nTre grundläggande lärdomar ur utdelningsstrategins ${antal} kurser:\n\n1. PAYOUT RATIO — hur stor del av vinsten som delas ut. En rimlig andel lämnar utrymme att både dela och växa.\n2. ÅTERINVESTERING — utdelningens verkliga kraft uppstår när den återinvesteras och får växa vidare (ränta-på-ränta; kursen om DRIP förklarar mekaniken).\n3. FÄLLOR — en extra hög direktavkastning kan vara en varningssignal (prisfall på grund av problem) snarare än en gåva.\n\nSom alltid hos oss: detta är utbildning i hur metoden fungerar — aldrig råd om vilka aktier du ska äga.` +
+          kallradFler(kallor),
+        amne: "utdelning",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: "Kursen: Direktavkastning", lank: "/kurser/km-063-direktavkastning", ikon: "💰", beskrivning: "Kurs 1 — nybörjarnivå, 16 min" },
+          { text: "Kursen: Payout ratio", lank: "/kurser/ud-01-payout-ratio", ikon: "🥧", beskrivning: "Hur mycket av vinsten delas ut?" },
+          { text: "Kursen: Utdelnings-fällor", lank: "/kurser/ud-04-utdelningsfallor", ikon: "⚠️", beskrivning: "När hög avkastning är en varning" },
+          { text: "Utdelning i en portfölj", lank: "/kurser/pf-05-utdelningsstrategi", ikon: "🏗️", beskrivning: "Portföljhantering-perspektivet" },
+        ],
+        motfraga: { text: "Hur fungerar skatt på utdelningar?", kategori: "utdelning" },
+        fordjupa: { text: k.titel, lank: "/kurser/km-063-direktavkastning" },
+      };
+    },
+  },
+  {
+    id: "lärväg",
+    karnord: [
+      "lärväg", "lärvägar", "lärvägen", "inlärningsväg", "utbildningsspår",
+      "kunskapsspår", "vilken ordning", "läroplan", "läroplanen",
+    ],
+    starkord: ["kurser", "profil", "följa", "struktur", "333"],
+    bygga: (reg) => {
+      const kallor = [
+        kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — Fas 1, starten på det guidade spåret"),
+        kursKalla(reg, "ak1ts-vaglarans-hierarki", "Läroplanen — ekosystemet, målet spåret mynnar ut i"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Du behöver inte välja bland ${reg.length} kurser på egen hand — det finns tre vägar in:\n\n1. LÄROPLANEN — det guidade spåret i fem nivåer: variabelkurserna V01–V20 först, sedan fördjupning, till sist ekosystemet (AKM1 × AK1TS). Börja här om du är osäker.\n2. DIN PROFIL — gör profiltestet på tre minuter: din profil matchas mot kurerade lärvägar (fundamentet, utdelningsvägen, vägvisaren), och "Din nästa kurs" visas sedan på Min sida.\n3. BOKKANONEN — om du lär dig bäst genom böcker: klassikerna som kurser, kapitel för kapitel, med quiz.\n\nAlla tre vägar leder till samma mål: att du kan analysera självständigt. Välj den som får dig att vilja fortsätta imorgon också.` +
+          kallradFler(kallor),
+        amne: "lärväg",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: "Testa din profil (3 min)", lank: "/profil", ikon: "🧠", beskrivning: "Matchas mot kurerade lärvägar" },
+          { text: "Se hela läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Fem nivåer till självständighet" },
+          { text: "Börja med V01 (gratis)", lank: "/kurser/v01-forsaljningstillvaxt", ikon: "🌱", beskrivning: "Första steget på spåret" },
+          { text: "Målet: våglärans hierarki", lank: "/kurser/ak1ts-vaglarans-hierarki", ikon: "🌊", beskrivning: "Ekosystemet spåret mynnar ut i" },
+          { text: "Bokkanon-exempel: Housel", lank: "/kurser/the-psychology-of-money", ikon: "📚", beskrivning: "Klassikern som kurs — kapitel för kapitel" },
+        ],
+        motfraga: { text: "Hur börjar jag lära mig aktieanalys?", kategori: "orientering" },
+        fordjupa: { text: "Läroplanen — fem nivåer", lank: "/laroplan" },
+      };
+    },
+  },
+  {
+    id: "beteende",
+    karnord: [
+      "psykologi", "beteende", "beteendefinans", "bias", "kognitiv bias",
+      "känslor", "känsla", "panik", "rädsla", "girighet", "flockbeteende",
+      "hjärnan", "dunning", "halo-effekt", "sunk cost", "tänka snabbt",
+      "psykologin", "beteendevetenskap",
+    ],
+    starkord: ["misstag", "fel", "disciplin", "hjärta", "kontroll"],
+    bygga: (reg) => {
+      const antal = reg.filter((r) => r.kategori === "BETEENDEFINANS").length;
+      const kallor = [
+        kursKalla(reg, "km-035-flockbeteende", "Läroplanen — beteendefinans, varför flocken drar med dig"),
+        kursKalla(reg, "bf-02-sunk-cost", "Läroplanen — beteendefinans, nybörjarkurs om sunk cost"),
+        kursKalla(reg, "the-psychology-of-money", "Läroplanen — BOKMASTER, Housels klassiker kapitel för kapitel"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Beteendefinans är läran om varför smarta människor gör dumma pengabeslut — och den kan vara den viktigaste utbildningen du går, för din största risk är ofta du själv. Tre klassiska fynd att känna igen hos sig själv:\n\n1. FLOCKBETEENDE — vi gör som alla andra, särskilt när marknaden stressar. Det är motorn bakom bubblor och paniker.\n2. SUNK COST — vi håller kvar i en felbedömning för att vi redan lagt tid och pengar på den. Priset du betalat är borta; frågan är bara vad som är rätt FRAMÅT.\n3. HALO-EFFEKTEN — en produkt vi gillar får oss att också tro på siffrorna. Därför mäter AKM1 tjugo variabler i stället för att fråga magkänslan.\n\nI biblioteket finns ${antal} beteendekurser och två kompletta bokmaster: Tänka snabbt och långsamt (Kahneman) samt The Psychology of Money (Housel).\n\nMentorns tumregel: känslan är DATA — men aldrig beslutsunderlag.` +
+          kallradFler(kallor),
+        amne: "beteende",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: "Kursen: Flockbeteende", lank: "/kurser/km-035-flockbeteende", ikon: "🐑", beskrivning: "Varför flocken drar med dig" },
+          { text: "Kursen: Sunk cost", lank: "/kurser/bf-02-sunk-cost", ikon: "🕳️", beskrivning: "Nybörjarnivå — den vanligaste fällan" },
+          { text: "Housel: The Psychology of Money", lank: "/kurser/the-psychology-of-money", ikon: "💰", beskrivning: "BOKMASTER — 14 kapitel + quiz" },
+          { text: "Kahneman: Tänka snabbt och långsamt", lank: "/kurser/tanka-snabbt-och-langsamt", ikon: "🧠", beskrivning: "BOKMASTER — system 1 och 2" },
+        ],
+        motfraga: { text: "Hur hanterar jag risk?", kategori: "beteende" },
+        fordjupa: { text: k.titel, lank: "/kurser/km-035-flockbeteende" },
+      };
+    },
+  },
+  {
+    id: "skatt",
+    karnord: [
+      "skatt", "skatten", "skatter", "beskattning", "beskattas", "isk",
+      "kapitalvinstskatt", "investeringssparkonto", "schablonskatt",
+      "schablonintäkt", "utdelningsskatt", "källskatt", "kallskatt",
+      "3:12-reglerna", "skattefritt",
+    ],
+    starkord: ["aktier", "fonder", "konto", "spara", "utdelning"],
+    bygga: (reg) => {
+      const antal = reg.filter((r) => r.kategori.includes("SKATT")).length;
+      const kallor = [
+        kursKalla(reg, "km-052-isk", "Läroplanen — svensk bolagsskatt & juridik, ISK och schablonbeskattning"),
+        kursKalla(reg, "km-051-kapitalvinstskatt", "Läroplanen — svensk bolagsskatt & juridik, vinst vid försäljning"),
+        kursKalla(reg, "sj-05-kapitalforsakring-vs-isk", "Läroplanen — skatt & juridik, kontotyperna jämförda som utbildning"),
+      ];
+      const k = kallor[0];
+      return {
+        text:
+          `Skatt på sparande är ett eget kunskapsområde — och eftersom regler och satser förändras lär kurserna PRINCIPERNA, medan aktuella tal alltid verifieras hos Skatteverket. Tre grundbegrepp för svenska sparare:\n\n1. KAPITALVINSTSKATT — vinsten beskattas när du säljer med vinst (kursen km-051 går igenom räknelogan).\n2. ISK — investeringssparkonto beskattas med en schablonintäkt på kontots värde i stället för på varje enskild affär. Hur modellen passar olika sparande är en lärofråga vi visar beräkningar kring — aldrig ett råd om ditt val.\n3. UTDELNINGSSKATT — utdelningar beskattas som inkomst av kapital; för utländska aktier tillkommer källskatt (kursen sj-01).\n\nI spåret finns ${antal} skatte- och juridikkurser. Vi lämnar aldrig individuella skatteråd — Skatteverket och en rådgivare är rätt instanser för din situation.` +
+          kallradFler(kallor),
+        amne: "skatt",
+        kalla: k,
+        kallor,
+        handlings: [
+          { text: "Kursen: ISK — schablonskatt", lank: "/kurser/km-052-isk", ikon: "🏦", beskrivning: "Hur schablonmodellen fungerar" },
+          { text: "Kursen: Kapitalvinstskatt", lank: "/kurser/km-051-kapitalvinstskatt", ikon: "📈", beskrivning: "Vinst vid försäljning" },
+          { text: "Kursen: Utdelningsskatt", lank: "/kurser/km-050-utdelningsskatt-30", ikon: "💰", beskrivning: "Utdelningars beskattning" },
+          { text: "Kapitalförsäkring vs ISK", lank: "/kurser/sj-05-kapitalforsakring-vs-isk", ikon: "⚖️", beskrivning: "Kontotyperna jämförda" },
+        ],
+        motfraga: { text: "Vad är direktavkastning?", kategori: "skatt" },
+        fordjupa: { text: k.titel, lank: "/kurser/km-052-isk" },
       };
     },
   },

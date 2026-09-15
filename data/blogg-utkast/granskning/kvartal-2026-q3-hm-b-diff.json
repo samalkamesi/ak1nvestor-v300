@@ -1,0 +1,68 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-hm-b-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-15)",
+  "rapport": "kvartal-2026-q3-hm-b.md",
+  "anvandning": "Verkställ 'byt'-poster exakt (söksträngen 'gammalt' är verifierad UNIK i filens body — ett entydigt textbyte per post). A1–A3 är blockerande för flytt; B1 och C2 rättas i samma pass men blockerar inte. Ingen annan ändring krävs.",
+  "poster": [
+    {
+      "id": "A1",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": true,
+      "gammalt": "| **Omsättning +3 % (58,7 mdr)** | 4,5 | 5,1 | 6,4 |",
+      "nytt": "| **Omsättning +3 % (58,7 mdr)** | 4,5 | 5,1 | 5,6 |",
+      "orsak": "Aritmetikfel i scenariotabellen: 58,7 × 9,6 % = 5,6 mdr, inte 6,4. Övriga åtta celler korrekta (omräknade). Sektionen lovar 'ren aritmetik' — varje cell måste stämma"
+    },
+    {
+      "id": "A2",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": true,
+      "gammalt": "I rutnätet flyttar en procentenhet marginal resultatet ungefär lika mycket som tre procent omsättning.",
+      "nytt": "I rutnätet flyttar en procentenhet marginal resultatet ungefär fyra gånger så mycket som tre procent omsättning.",
+      "orsak": "1 procentenhet marginal = 0,57 mdr; 3 % omsättning flyttar resultatet 0,13–0,15 mdr vid marginalerna 7,6–9,6 % — förhållandet är ca 4×, inte 'lika mycket'. Rättningen förstärker punktens egen rubriken 'Marginalen slår omsättningen'"
+    },
+    {
+      "id": "A3a",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": true,
+      "gammalt": "bland dem ABB, Atlas Copco, Astra Zeneca, Ericsson, H&M, Indutrade, Sandvik, SKF och Volvo Cars",
+      "nytt": "bland dem ABB, Atlas Copco, Astra Zeneca, Ericsson, H&M, Industrivärden, Sandvik, SKF och Volvo Cars",
+      "orsak": "Bolagsnamnsfel: INDU-C.ST = AB Industrivärden (publ) enligt data/analyses/INDU-C.ST.json och kalender-industri.json — inte Indutrade (trolig tickerförväxling INDU-C)"
+    },
+    {
+      "id": "A3b",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": true,
+      "gammalt": "Därefter drar resten av biblioteket igång från 7 oktober (Indutrade)",
+      "nytt": "Därefter drar resten av biblioteket igång från 7 oktober (Industrivärden)",
+      "orsak": "Samma namnfel som A3a; datumet 2026-10-07 är RÄTT och tillhör Industrivärden (källa: Industrivärdens årsredovisning 2025, MFN-PDF, hämtad 2026-09-15)"
+    },
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": false,
+      "gammalt": "AK1A:s bolagsuniversum (100 bolag, tio per bransch, nyckeltal hämtade 2026-09-03 från Yahoo Finance och MarketStack) ger referensramen.",
+      "nytt": "AK1A:s bolagsuniversum (103 bolag — tio per bransch utom energi, som har tretton — nyckeltal hämtade 2026-09-03 från Yahoo Finance och MarketStack) ger referensramen.",
+      "orsak": "bolagsunivers.json (2026-09-03) har 103 poster (energi 13, övriga 10). Medianerna i tabellen är beräknade på 103-filen och är korrekta — endast antalspåståendet avviker. Not: v152-kalendrarna tog 10/bransch; om energis 3 extra poster gallras i universumet ska talet ändras tillbaka"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": false,
+      "gammalt": "Så räknas [bruttomarginalen](/dataset/konsument/brutto-marginal) och [rörelsemarginalen](/dataset/konsument/netto-marginal) — aspektsidorna visar spridningen i branschen.",
+      "nytt": "Så räknas [bruttomarginalen](/dataset/konsument/brutto-marginal) och [nettomarginalen](/dataset/konsument/netto-marginal) — aspektsidorna visar spridningen i branschen.",
+      "orsak": "Länktexten 'rörelsemarginalen' pekar på netto-marginal-aspekten (sidan finns och ger 200 — inget ebit-marginal-aspekt existerar i systemet). Semantiskt korrekt länktext är 'nettomarginalen' — tabellen ovanför har en nettomarginalrad så länken förblir relevant"
+    }
+  ]
+}

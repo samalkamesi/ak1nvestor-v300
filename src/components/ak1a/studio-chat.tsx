@@ -96,6 +96,7 @@ import {
 } from "@/components/ak1a/studio-forbrukning-panel";
 import { StudioGodkannandePanel } from "@/components/ak1a/studio-godkannande-panel";
 import { StudioMaskinPanel } from "@/components/ak1a/studio-maskin-panel";
+import { MermaidVisning } from "@/components/ak1a/mermaid-visning";
 import { cn } from "@/lib/utils";
 
 /**
@@ -2028,6 +2029,11 @@ function StudioMarkdown({
         const första = rader[0]?.trim() ?? "";
         const sprak = /^[a-zA-Z0-9+-]{0,20}$/.test(första) && första !== "" ? första : "";
         const kropp = (sprak ? rader.slice(1) : rader).join("\n").replace(/\n$/, "");
+        // Post 10: ```mermaid-block → förenklad diagram-visning i stället för kodblock.
+        if (sprak.toLowerCase() === "mermaid") {
+          delar.push(<MermaidVisning key={`mermaid-${i}`} kalla={kropp} />);
+          return;
+        }
         delar.push(
           <pre
             key={`kod-${i}`}

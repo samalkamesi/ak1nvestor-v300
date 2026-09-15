@@ -552,14 +552,17 @@ export function NyhetsChips() {
           labbet. Senaste rubrikerna just nu:
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        {/* Grid med FAST radantal per brytpunkt (1/2/4 kol) + truncate per
+            cell: höjden är oberoende av rubriklängd — nyhetsbytet efter
+            hämtning kan aldrig skjuta sektionerna nedan (CLS, spår 7). */}
+        <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {!hamtat && (
             <span className="sr-only" aria-live="polite">
               Hämtar senaste nyheterna…
             </span>
           )}
           {chips.length === 0 ? (
-            <span className="rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-xs font-semibold text-gold">
+            <span className="truncate rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-xs font-semibold text-gold">
               Nyhetscentralen — öppna ditt nyhetsrum
             </span>
           ) : (
@@ -568,7 +571,7 @@ export function NyhetsChips() {
                 key={`${i}-${rubrik.slice(0, 40)}`}
                 href="/nyheter"
                 title={rubrik}
-                className="max-w-full truncate rounded-full border border-gold/30 bg-card px-3.5 py-1.5 text-xs font-semibold text-foreground transition-colors hover:border-gold/60 hover:bg-gold/5 hover:text-gold"
+                className="w-full truncate rounded-full border border-gold/30 bg-card px-3.5 py-1.5 text-center text-xs font-semibold text-foreground transition-colors hover:border-gold/60 hover:bg-gold/5 hover:text-gold"
               >
                 {rubrik.length > 90 ? `${rubrik.slice(0, 90)}…` : rubrik}
               </Link>
@@ -576,7 +579,7 @@ export function NyhetsChips() {
           )}
           <Link
             href="/kurser"
-            className="rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
+            className="truncate rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1.5 text-center text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
           >
             + nya kurser i biblioteket
           </Link>

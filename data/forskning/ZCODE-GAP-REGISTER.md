@@ -30,6 +30,14 @@
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
 | 14 | Prompt-historik-sökning (↑ + sök) | ↑ finns; sök i historiken saknas | 3 | 1 | ÖPPEN | Sök i promptbiblioteket/historiken |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
+| 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Saknas | 4 | 2 | ÖPPEN | Sökpanel i konversationen med nästa/förra + resultaträkning |
+| 17 | Input-autocomplete @-filer (P2) | Slash finns; @-filuppslag saknas | 4 | 3 | ÖPPEN | Fuzzy @-filreferenser i inmatningen |
+| 18 | Turmarkörer + hopp mellan turer (P3) | Saknas | 3 | 1 | ÖPPEN | Knapp/genväg föregående/nästa tur — para med #16 |
+| 19 | Hopp-till-slut-indikator (P4) | Saknas | 3 | 1 | ÖPPEN | Klickbar etikett vid uppscrollning |
+| 20 | Stora paste-markörer (P5) | Rå dump | 3 | 1 | ÖPPEN | Kollapsa >N rader till expanderbar markör |
+| 21 | In-app toast-stack (P6) | Enstaka statusrader | 3 | 1 | ÖPPEN | Staplade självförsvinnande notiser |
+| 22 | Keybinding-manager (P7) | Hårdkodade genvägar | 3 | 2 | ÖPPEN | Remappbara genvägar med listning |
+| 23 | LaTeX-formler i svar (P8) | Saknas | 2 | 2 | ÖPPEN | Syskon till #10 — samma renderarrör |
 
 ## Redan stängda denna evolution (bevisade i prod)
 Trådspermanens (v148) · modellsminne (v150) · målpermanens (v152) · fyra lägen (v153)

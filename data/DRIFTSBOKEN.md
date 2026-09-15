@@ -567,3 +567,14 @@ får ALDRIG krascha sattMal/rensaMal.
 - VACCIN (klassen): en larmkanal utan tidsstämpelkoll re-alarmar kurade fel i all
   evighet — alla fyndkickar måste kräva färsk ts. Persistens hos verkligt fel ger
   NYA rader med färsk ts ⇒ alarmeras korrekt kvar.
+
+## 2026-09-15 rond 36 — F6-omleverans #4: KURAD KOD ≠ KURAD DRIFT (våg 171 fullföljd)
+- SYMPTOM: fjärde "prod osvarar". Fyndloggen: fortfarande sista F6 14:42:45Z; prod 200/200.
+- ROT: våg 171:s tidsfilter (244166e8) landade i arbetsytan men pushen bröts mitt i
+  (merge-konflikt UU worklog.md) — prods mal-hjartslag.mjs saknade filtret; daemonen
+  spawnar skriptet som barnprocess per rop ⇒ gamla filtretlösa koden kördes vid varje slag.
+- KUR: merge löst + pushad ccbadca7..539d0fff; filtret fysiskt i prods fil (rad 256);
+  filtertest mot loggvans: gamla filtret 1 (exakt 14:42:45-raden) → nya 0.
+- VACCIN (Lag 6): kur är leverad först när koden FINNS I PROD med beteendebevis —
+  rundens verify-kedja slutar ALDRIG vid "commit i arbetsyta" (rond 26:lärdomen
+  generaliserad från bygg till larmväg).

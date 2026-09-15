@@ -10872,3 +10872,14 @@ OBJEKT: o8:s bokade rond 3-kö (4 poster) + LarvagKort-undantaget — /kurser fi
 KASKADFYND (vågens kärna): första EFTER visade knapparna kvar 44 px trots deploy — CDP-sons bevisade varför: Tailwind-utilities lever i @layer utilities, globals.css:44px-golv är OLAGERAT, och olagerade regler slår ALLTID lager (CSS Cascade Layers) — vanlig min-h-klass på knapp kan ALDRIG vinna; länkar opåverkade (golvet riktar bara button). Syskonet u2 (ce9087be) hittade mekanismen oberoende. KUR: viktigt-suffix max-md:min-h-[52px]! (04303dd8) — deployad 1f5b165a 18:00:38, prod 200.
 DEFINITIV EFTER (prod, 18:05): 255 FÖRE → 186 rond 1 → 60 tryckmål (−76 %), zoomfällor 2→0; / 38→2, /kurser 55→5 (full om-mätning 136 interaktiva — helkörningens partial-pass dokumenterad), /blogg 9→1. Rättar våg 6:s localhost-tal (pre-bang-artefakter: paginering+select var redan botade). Knapparnas 52-standard UPPNÅDD på kärnytorna; rond 4-kö (textlänkytor: faslänkar, bokrader, korstabellrader, brödsmula) bokad i o8 §9.
 DRIFT: prod-synkens trädsynk rev 4 ostagade filer under vågen (s2-u2-mönstret) — om-aplicerade + commit per filgrupp; en av syskonets rader (portfolj-forskning revalidate) svepte med i 04303dd8 (add-kollision, ärligt bokförd, deras o10 dokumenterar). Bevis: o8 §8-9 + lasbarhet-efter-rond3-2026-09-15.json + commits 3d25e4f5/3b2aab63/04303dd8, deploys 15:32:53/15:40:51/16:00:38 alla prod 200.
+
+### 2026-09-15 rond 36 [organ:Φ] — omleverans #4: kuren nådde aldrig prod; våg 171 fullföljd
+F6 #4: fyndloggen oförändrad (sista F6 14:42:45Z), prod 200/200 ⇒ omleverans. ROT
+(Lag 2): rond 35:s tidsfilter (244166e8) pushades ALDRIG till prod — landningen bröts
+mitt i push-retryns merge-steg (UU worklog.md kvar); prods mal-hjartslag.mjs var
+filtretlös. KUR: worklog-merge löst (båda parter), merge 348dd042+539d0fff pushade
+(ccbadca7..539d0fff); filter bevisat i prods fil (rad 256: ts > nu − 35 min);
+filtertest mot loggvans: gamla 1 → nya 0. Daemonen kör mal-hjartslag som
+barnprocess per rop (min%10==1) — nästa slag laddar ny kod, ingen omstart krävs.
+Lärdom (Lag 6): leveransbeviset slutar i PROD-fil + beteendebevis — "commit i
+arbetsyta" är inte kur.

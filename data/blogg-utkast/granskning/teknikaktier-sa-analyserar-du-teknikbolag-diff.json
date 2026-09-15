@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/teknikaktier-sa-analyserar-du-teknikbolag.json",
+  "granskadAv": "agentfabrik auto-s1-u2 (2026-09-16)",
+  "rapport": "teknikaktier-sa-analyserar-du-teknikbolag.md",
+  "bedomning": "FLYTTKLAR EFTER EN RÄTTNING (C1 readingMinutes) — 14/14 sifferkontroller gröna (universumstal exakta mot korstabell-grund 2026-09-04), juridik ren (2007:528), 18/18 länkar 200, 911 = 0; D1 rekommenderas starkt (termkonsekvens med publicerad branschmedianer-guide), D2-D3 beslutsfrågor",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts, ORD_PER_MINUT=600): 1 223 ord (titel+body) / 600 = 2,0 avrundat = 2. Fjärde konstaterade instansen av samma systematika (lakemedels, ravarubolag, bankaktier-varianten). Exportvägen räknar om automatiskt — kosmetiskt men rättas enklast nu"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag.json",
+      "falt": "body",
+      "gammalt": "I AK1A:s 100-bolagsuniversum är tekniken branschen med högst AKM2-median (61 poäng av 100)",
+      "nytt": "I korstabellens 100-bolagsuniversum (AKM2-berikat 2026-09-04) är tekniken branschen med högst AKM2-median (61 poäng av 100)",
+      "orsak": "Talen är exakta mot korstabell-grund.json (teknik = exakt 10 bolag, median 61, spann 37-78) men kanoniska bolagsunivers.json är nu 115 bolag och syskonmaterial redovisar 109/115 — 'AK1A:s' utan bestämning kan läsas som den aktuella filen. Publicerade branschmedianer-guiden använder 'korstabellens 100-bolagsuniversum' som normerad term. Dateringen gör dessutom 'högst'-påståendet ärligt tidsbundet: marginalen till konsument är bara 0,5 poäng (61 mot 60,5)"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag.json",
+      "falt": "body",
+      "gammalt": "Universumets teknikgrupp spänner från molnkommunikationsbolaget Sinch till konsumentelektronikens Logitech, och grannbranschen tillför bolag som Truecaller: samma digitala affärslogik under annan etikett.",
+      "nytt": "Universumets teknikgrupp spänner från molnkommunikationsbolaget Sinch till konsumentelektronikens Logitech, och grannbranschen tillför bolag som Truecaller: samma digitala affärslogik under annan etikett. Sinch visar också bandets gränsfall: i molnkommunikation äter trafikkostnaderna brutomarginalen, väl under mjukvarubandet.",
+      "orsak": "Universumets egna brutomarginaler avviker från bandet 70-85: Sinch 18,4 % (CPaaS-trafikkostnader), Kambi 98,9 %, Microsoft 67,9 %. Texten namnger Sinch i mjukvaruvärlden direkt efter bandmeningen — utan notis kan läsaren tillämpa bandet på det namngivna exemplet. 'Typiskt'-formuleringen i sig är branschkorrekt och behålls"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

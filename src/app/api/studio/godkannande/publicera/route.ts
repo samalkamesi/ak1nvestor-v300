@@ -124,6 +124,25 @@ export async function POST(req: NextRequest) {
       detalj = "m9-utkast konverterat till BlogPost (kvitto-avsnitt och (utkast)-suffix strukna)";
     } else if (typeof j.title === "string" && typeof j.body === "string") {
       // BlogPost-form — grinden + byte-identisk kopia (drop-in enligt spec).
+      // VÅG 168 (integration-audit p4): den mekaniska juridikgrindens
+      // larmfil läses som SISTA kontroll — pub nekas om grindens senaste
+      // dom ej är GRÖN (oavsett våg 66-textgrinden nedan).
+      try {
+        const larmFil = JSON.parse(
+          readFileSync(path.join(process.cwd(), "data", "vakten", "juridik-larm.json"), "utf8"),
+        ) as { senasteKorning?: { status?: string; ts?: string } };
+        const grindStatus = larmFil?.senasteKorning?.status;
+        if (grindStatus && grindStatus !== "GRÖN") {
+          return jsonSvar(
+            {
+              fel: `Publicering nekas — juridikgrindens senaste dom är ${grindStatus} (körd ${(larmFil.senasteKorning?.ts || "?").slice(0, 16)}). Grinden kör varje timme :37 — försök igen efter nästa gröna dom.`,
+            },
+            400,
+          );
+        }
+      } catch {
+        /* larmfilen får saknas = ingen dom ännu = pub-rutten förlitar sig på våg 66-grinden */
+      }
       const rapport = kontrolleratextRad(
         j.title,
         typeof j.description === "string" ? j.description : "",

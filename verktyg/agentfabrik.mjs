@@ -28,6 +28,33 @@
  *   3. Agenten läser data/vakten/agentfabrik/status/<id>.json (progress)
  *      och utdata/<manifest>-<uppgift>.log (fullständiga svar).
  *
+ * FABRIK 2.0 (mega g4 — styrelsens beslut punkt 4, 2026-09-15):
+ *   (a) MALLAR — är ko/ tom genererar fabriken SJÄLV nästa manifest ur
+ *       data/infra/evighetskatalog.md: spår-rotering via spar.json (aldrig
+ *       samma spår två auto-manifest i rad), EN omgång = 3 uppgifter med
+ *       prompts ur katalogens postmallar (platshållare fylls med "nästa i
+ *       spåret — välj själv", barnet verifierar mot arbetsytan). Skydd:
+ *       max ett auto-manifest per 30 min (AUTO_TAK_MS) och flaggfil
+ *       data/vakten/agentfabrik/AUTO-PAUS stänger av (kundens paus är
+ *       heligt — huvudagenten skapar/raderar filen vid paus/start).
+ *   (b) ROLLER — uppgift.roll = 'byggare'|'granskare'|'vakt' (default
+ *       byggare, bakåtkompatibelt) ger barnet rollrad i uppdragsprefixet;
+ *       uppgift.filer = [] deklarerar EXKLUSIVT ägarskap (våg 104) —
+ *       fabriken VARNAR vid filöverlapp inom manifestet och mot andra
+ *       manifest i kön. Varning stoppar aldrig körningen (manifestet kan
+ *       vara korrekt ändå — läsaren bedömer).
+ *   (c) AUTO-KEDJNING — två lager: (1) IOM KÖRNINGEN: efter varje avslutad
+ *       omgång startar nästa DIREKT om MemAvailable > RAM_KEDJA_MB
+ *       (2 200 MB), annars status "vantar-ram" + avslut; (2) PUMPOR-
+ *       daemonen ropar fabriken var 10:e minut (":x5") — det är den
+ *       reservkedja som återupptar avbrutna manifest UTAN att omköra klara
+ *       uppgifter (idempotens via statusfilens klara-lista).
+ *
+ *   --torr = TORRKÖRNING: skriver ut allt som SKULLE göras (auto-manifest,
+ *   valideringsvarningar, omgångsplan, kedjebeslut) men föder inga barn,
+ *   flyttar inga manifest och uppdaterar inget state (utom fabrikslåset,
+ *   som tas för att skydda läsningen mot en samtidig fabrik).
+ *
  * Regel för modellen (står även i AGENTS.md): storskalig parallellism =
  * manifest. Agent-tool direkt FÅR bara användas ≤3 parallella anrop.
  */
@@ -54,11 +81,31 @@ const STATUS = path.join(ROTT, "status");
 const UTDATA = path.join(ROTT, "utdata");
 const LOCK = path.join(ROTT, "LOCK");
 const LOGG = path.join(ROTT, "logg.jsonl");
+const KATALOG = path.join(ROT, "data", "infra", "evighetskatalog.md");
+const SPAR_STATE = path.join(ROTT, "spar.json");
+const AUTO_PAUS = path.join(ROTT, "AUTO-PAUS");
 
 const PARALLELL_TAK = 3; // 12 = RAM-döden (bevisat); 3 = bevisat säkert
 const RAM_TAK_MB = 1500; // vägra ny omgång under detta MemAvailable
+const RAM_KEDJA_MB = 2200; // (c) auto-kedjning: nästa omgång direkt ÖVER detta
+const AUTO_TAK_MS = 30 * 60_000; // (a) max ett auto-manifest per 30 min
+const AUTO_UPPGIFTER = 3; // (a) ett auto-manifest = en omgång
 const TIMEOUT_MS = 25 * 60_000; // 25 min per uppgift
 const LOGG_TAK = 256 * 1024; // utdata-logg kapas här (disk-takt)
+
+const ROLLER = ["byggare", "granskare", "vakt"];
+const ROLLRADER = {
+  byggare:
+    "Roll: BYGGARE — du bygger/färdigställer nya leveranser (data, innehåll, kod) enligt uppdraget och committar DINA filer.",
+  granskare:
+    "Roll: GRANSKARE — du granskar befintligt material mot källor, juridik (2007:528) och kvalitet; leverera granskningsrapport + diff-förslag som NYA filer, skriv INTE om andras filer.",
+  vakt:
+    "Roll: VAKT — du bevakar maskinens hälsa: mät, verifiera och fixa rotorsaker med bevis (tsc 0, vakten grön, prod 200); protokollför varje fynd.",
+};
+// Spår med fast roll ur evighetskatalogen; övriga → byggare.
+const SPAR_ROLL = { 1: "granskare", 8: "vakt", 10: "vakt" };
+
+const TORR = process.argv.includes("--torr");
 
 const ZCODE =
   process.env.STUDIO_ZCODE_BIN ||
@@ -73,6 +120,9 @@ function stämpel() {
 }
 function logga(rad) {
   console.log(`${stämpel().slice(11, 19)} ${rad}`);
+}
+function torrLogga(rad) {
+  logga(`[TORR] ${rad}`);
 }
 function loggrad(objekt) {
   try {
@@ -103,18 +153,194 @@ function gitTopp() {
   }
 }
 
+// ── FABRIK 2.0 (a): evighetskatalogen → auto-manifest ─────────────────────────
+
+/**
+ * Läs evighetskatalogens spår: [{ nr, namn, beskrivning, postmall }].
+ * Postmallar är citerade strängar som FÅR spänna rader (spår 1 gör det)
+ * — allt normaliseras till enkla mellanslag. Spår utan postmall hoppas.
+ */
+function lasKatalog() {
+  try {
+    const text = readFileSync(KATALOG, "utf8");
+    const spår = [];
+    for (const sek of text.split(/^## Spår /m).slice(1)) {
+      const rubrik = sek.match(/^(\d+) — (.+)$/m);
+      if (!rubrik) continue;
+      // kropp = sektionen UTAN sin rubrikrad ("N — NAMN"), fram till Postmall
+      const kropp = sek.split(/\n─\n|\n## /)[0];
+      const postmall = kropp.match(/Postmall:\s*"([\s\S]*?)"/)?.[1]?.replace(/\s+/g, " ").trim() ?? null;
+      if (!postmall) continue;
+      const beskrivning =
+        kropp
+          .slice(0, kropp.indexOf("Postmall:"))
+          .split("\n")
+          .slice(1) // rubrikraden ("N — NAMN") står redan i spårets namn
+          .join(" ")
+          .replace(/\s+/g, " ")
+          .trim() || "";
+      spår.push({ nr: Number(rubrik[1]), namn: rubrik[2].trim(), beskrivning, postmall });
+    }
+    return spår;
+  } catch {
+    return []; // oläslig katalog ⇒ ingen auto-generering (fabriken som förut)
+  }
+}
+
+function lasSparState() {
+  try {
+    return JSON.parse(readFileSync(SPAR_STATE, "utf8"));
+  } catch {
+    return {}; // första auto-manifestet — rotation börjar på spår 1
+  }
+}
+
+/** Rotation: nästa spår efter senaste (cirkulärt, aldrig samma i rad). */
+function valjSpar(spår, state) {
+  const sorterade = [...spår].sort((a, b) => a.nr - b.nr);
+  if (sorterade.length === 0) return null;
+  const senaste = typeof state.senasteSpar === "number" ? state.senasteSpar : null;
+  if (senaste === null) return sorterade[0];
+  const index = sorterade.findIndex((s) => s.nr === senaste);
+  return sorterade[(index + 1) % sorterade.length] ?? sorterade[0];
+}
+
+/**
+ * Platshållare i katalogens postmallar. `<n>` = uppgiftens löpnummer;
+ * domänplatshållare (ämne/bolag/kvartal/…) → "nästa i spåret (välj själv)"
+ * — barnet FÅR inte köra på ett antaget objekt utan verifierar mot
+ * arbetsytan vilket som är nästa ej levererade.
+ */
+function fyllPlatshallare(mall, lopnr) {
+  return mall
+    .replace(/<n>/g, String(lopnr))
+    .replace(/<(?:ämne|amne|bransch\/språk|bransch\/sprak|bransch|bolag|kvartal|yta|objekt|område|omrade|system)>/gi, "nästa i spåret (välj själv)");
+}
+
+function genereraAutoManifest(spår) {
+  const nu = Date.now();
+  const roll = SPAR_ROLL[spår.nr] ?? "byggare";
+  const uppgifter = [];
+  for (let i = 1; i <= AUTO_UPPGIFTER; i++) {
+    const kropp = fyllPlatshallare(spår.postmall, i);
+    uppgifter.push({
+      id: `s${spår.nr}-u${i}`,
+      titel: `Spår ${spår.nr} (${roll}) ${i}/${AUTO_UPPGIFTER}: ${kropp.slice(0, 70)}`,
+      roll,
+      filer: [],
+      prompt: [
+        kropp,
+        "",
+        `Spår ${spår.nr} — ${spår.namn}. Kontext: ${spår.beskrivning}`,
+        "Välj själv nästa INTE redan levererade objekt i spåret (kontrollera data/ och worklog.md",
+        "före start) — duplikat är förlorat arbete. R2 gäller: ALDRIG priser/tier/publicering;",
+        "utkast till data/blogg-utkast/, ALDRIG data/blogg/.",
+        "Leveranskriterier: konkreta filer, `npx tsc --noEmit` = 0 om kod berörs (ALDRIG bygge),",
+        `commit "studio: auto s${spår.nr}-u${i} <vad>", avsluta med LEVERANS:-rad.`,
+      ].join("\n"),
+    });
+  }
+  return {
+    id: `auto-s${spår.nr}-${nu}`,
+    titel: `Auto: Spår ${spår.nr} — ${spår.namn} (${AUTO_UPPGIFTER} uppgifter ur evighetskatalogen)`,
+    skapad: nu,
+    auto: true,
+    spar: spår.nr,
+    uppgifter,
+  };
+}
+
+// ── FABRIK 2.0 (b): roll- och filer-validering ────────────────────────────────
+
+/**
+ * Normalisera + validera uppgifternas roll/filer och VARNA vid
+ * filöverlapp. Överlapp inom manifestet är allvarligast (två uppgifter
+ * kan hamna i SAMMA parallella omgång — omgångsindelningen skiftar vid
+ * återupptagning, därför varnas alltid), överlapp mot andra kö-manifest
+ * ("pågående" i pipelinen) varnas också. Varning ändrar aldrig körningen.
+ */
+function valideraManifest(manifest, ovrigaKoManifest) {
+  const varningar = [];
+  for (const u of manifest.uppgifter) {
+    if (u.roll === undefined) {
+      u.roll = "byggare";
+      varningar.push(`${manifest.id}/${u.id}: roll saknas → default "byggare"`);
+    } else if (!ROLLER.includes(u.roll)) {
+      varningar.push(
+        `${manifest.id}/${u.id}: okänd roll "${String(u.roll).slice(0, 30)}" (tillåtna: ${ROLLER.join("|")}) → behandlas som "byggare"`,
+      );
+      u.roll = "byggare";
+    }
+    if (u.filer === undefined) {
+      u.filer = [];
+    } else if (!Array.isArray(u.filer)) {
+      varningar.push(`${manifest.id}/${u.id}: filer är inte en lista → ignoreras`);
+      u.filer = [];
+    } else {
+      u.filer = u.filer.map(String);
+    }
+    if (u.titel === undefined) u.titel = u.id;
+  }
+  const agare = new Map(); // fil → uppgifts-id (exklusivt ägarskap)
+  for (const u of manifest.uppgifter) {
+    for (const f of u.filer) {
+      const nyckel = f.replace(/\/+$/, "");
+      if (agare.has(nyckel)) {
+        varningar.push(`FILER-OVERLAPP: ${manifest.id}/${u.id} och ${manifest.id}/${agare.get(nyckel)} claimar båda ${nyckel} — exklusivt ägarskap (våg 104) bryts`);
+      } else {
+        agare.set(nyckel, u.id);
+      }
+    }
+  }
+  for (const annan of ovrigaKoManifest) {
+    for (const u of annan.uppgifter ?? []) {
+      for (const f of Array.isArray(u.filer) ? u.filer.map(String) : []) {
+        const nyckel = f.replace(/\/+$/, "");
+        if (agare.has(nyckel)) {
+          varningar.push(`FILER-OVERLAPP: ${manifest.id}/${agare.get(nyckel)} claimar ${nyckel} som även står i kö-manifestet ${annan.id}/${u.id}`);
+        }
+      }
+    }
+  }
+  return varningar;
+}
+
+/** Övriga manifest i ko/ (för överlapp-varning) — ogiltiga filer hoppas tyst. */
+function lasOvrigaKoManifest(filer) {
+  const manifest = [];
+  for (const f of filer) {
+    try {
+      const m = JSON.parse(readFileSync(path.join(KO, f), "utf8"));
+      if (Array.isArray(m.uppgifter)) manifest.push(m);
+    } catch {
+      /* felhanteras när filen blir först i kön */
+    }
+  }
+  return manifest;
+}
+
 /**
  * Arbetsgången varje fabriksagent får INNAN sin egen prompt — samma
  * doktrin som AGENTS.md men komprimerad (barnet läser AGENTS.md självt:
- * zcode laddar den ur arbetsytan automatiskt).
+ * zcode laddar den ur arbetsytan automatiskt). Rollraden (2.0b) ger
+ * barnet sin plats i divisionen: byggare levererar, granskare bedömer,
+ * vakt bevakar.
  */
-function prefix(titel) {
+function prefix(titel, roll = "byggare") {
   return [
     `Du är en fabriksagent i AK1A Agentfabrik — uppdrag: ${titel}.`,
+    ROLLRADER[roll] ?? ROLLRADER.byggare,
     "Arbetsyta: /home/ak1a/AK1 (doktrinen i AGENTS.md gäller fullt ut).",
     "Regler: src/ ENDAST via Write/Edit; data/ får bash; commit med `git commit -F <meddelandefil>`;",
     "ALDRIG `--no-verify`; ALDRIG röra priser/tier/publicering (kundens veto);",
     "ALDRIG publicera i data/blogg/ (live-mappen) — utkast till data/blogg-utkast/.",
+    // VÅG 162 (incidentrot 2026-09-15 01:23): ett barns npm-kommando raderade
+    // node_modules mitt i en deploy-omstart → prod nere 5 min (kraschvakten
+    // räddade). Barn FÅR ALDRIG röra installationen — byggen ägs av
+    // prod-synk/kraschvakt under deploylåset.
+    "ALDRIG `npm ci`/`npm install`/`rm -rf node_modules`/`npm run build` —",
+    "installation och byggen ägs ENDAV prod-synken/kraschvakten under",
+    "/tmp/ak1a-deploy.lock; typkoll = `npx tsc --noEmit` (läser, installerar ej).",
     "När du är klar: commit:a DINA filer (git add <dina filer>) och avsluta svaret",
     "med en rad 'LEVERANS: <fil1>, <fil2>, …' — fabriken läser den som kvitto.",
   ].join("\n");
@@ -131,13 +357,13 @@ function korUppgift(manifestId, uppgift, vidKlar) {
     mkdirSync(UTDATA, { recursive: true });
     let buffer = "";
     const start = Date.now();
-    logga(`▶ ${manifestId}/${uppgift.id} "${uppgift.titel.slice(0, 60)}"`);
+    logga(`▶ ${manifestId}/${uppgift.id} [${uppgift.roll ?? "byggare"}] "${uppgift.titel.slice(0, 60)}"`);
     // MEGA G3 — audit: varje fabriksuppgift är en autonom skrivning.
     skrivAudit(`fabriken:${manifestId}:${uppgift.id}`, "uppgift_start", uppgift.titel, `manifest: ${manifestId}`);
 
     const barn = spawn(
       ZCODE,
-      ["-p", `${prefix(uppgift.titel)}\n\nUPPGIFT:\n${uppgift.prompt}`],
+      ["-p", `${prefix(uppgift.titel, uppgift.roll)}\n\nUPPGIFT:\n${uppgift.prompt}`],
       { cwd: ROT, env: { ...process.env, HOME: process.env.HOME }, stdio: ["ignore", "pipe", "pipe"] },
     );
     const timeout = setTimeout(() => {
@@ -187,7 +413,7 @@ function skrivStatus(manifest, status) {
   writeFileSync(path.join(STATUS, `${manifest.id}.json`), JSON.stringify(status, null, 2), "utf8");
 }
 
-/** Atomärt mkdir-lås; städar föregångare äldre än 35 min (kraschad fabrik). */
+/** Atomiskt mkdir-lås; städar föregångare äldre än 35 min (kraschad fabrik). */
 function taLås() {
   try {
     if (existsSync(LOCK)) {
@@ -213,20 +439,61 @@ function släppLås() {
 
 // ── huvud ────────────────────────────────────────────────────────────────────
 
-if (!taLås()) {
-  logga("annan fabrik håller låset — avslutar (idempotent)");
-  process.exit(0);
-}
-try {
+async function huvud() {
   for (const mapp of [KO, KLARA, STATUS, UTDATA]) mkdirSync(mapp, { recursive: true });
-  const manifestFiler = readdirSync(KO)
+  let manifestFiler = readdirSync(KO)
     .filter((f) => f.endsWith(".json"))
     .sort();
+
+  // ── FABRIK 2.0 (a): tom kön → auto-manifest ur evighetskatalogen ──
   if (manifestFiler.length === 0) {
-    logga("kön tom");
-    släppLås(); // töm inte kön-svaret på låset: annars blockerar varje tom rop fabriken 35 min
-    process.exit(0);
+    const state = lasSparState();
+    const takKvar =
+      typeof state.senasteAutoTs === "number" && Date.now() - state.senasteAutoTs < AUTO_TAK_MS;
+    if (existsSync(AUTO_PAUS)) {
+      logga("kön tom — AUTO-PAUS aktiv: ingen auto-generering (kundens paus är heligt)");
+    } else if (takKvar) {
+      logga(
+        `kön tom — auto-tak: ${Math.round((Date.now() - state.senasteAutoTs) / 60000)} min sedan senaste auto-manifest (< ${AUTO_TAK_MS / 60000}) — avslutar`,
+      );
+    } else {
+      const spår = valjSpar(lasKatalog(), state);
+      if (!spår) {
+        logga("kön tom — evighetskatalogen oläsbar/saknar postmallar — avslutar (som före 2.0)");
+      } else {
+        const manifest = genereraAutoManifest(spår);
+        if (TORR) {
+          torrLogga(
+            `kön tom — SKULLE generera auto-manifest ur Spår ${spår.nr} (rotation: senaste=${state.senasteSpar ?? "ingen"}) och skriva ko/${manifest.id}.json + uppdatera spar.json. Manifest som SKULLE skrivas:`,
+          );
+          console.log(JSON.stringify(manifest, null, 2));
+          return;
+        }
+        writeFileSync(path.join(KO, `${manifest.id}.json`), JSON.stringify(manifest, null, 2), "utf8");
+        writeFileSync(
+          SPAR_STATE,
+          JSON.stringify(
+            { senasteSpar: spår.nr, senasteAutoTs: Date.now(), senasteAutoId: manifest.id },
+            null,
+            2,
+          ),
+          "utf8",
+        );
+        manifestFiler = [`${manifest.id}.json`];
+        logga(
+          `kön tom — AUTO-MANIFEST genererat: ${manifest.id} (Spår ${spår.nr} — ${spår.namn}, roll ${SPAR_ROLL[spår.nr] ?? "byggare"})`,
+        );
+        loggrad({
+          händelse: "auto-manifest",
+          manifest: manifest.id,
+          spår: spår.nr,
+          roll: SPAR_ROLL[spår.nr] ?? "byggare",
+        });
+      }
+    }
+    if (manifestFiler.length === 0) return; // kön förblev tom — låset släpps i finally
   }
+
   const fil = manifestFiler[0]; // ETT manifest per omgång — resten väntar
   const manifestSökväg = path.join(KO, fil);
   let manifest;
@@ -234,12 +501,26 @@ try {
     manifest = JSON.parse(readFileSync(manifestSökväg, "utf8"));
     if (!Array.isArray(manifest.uppgifter) || manifest.uppgifter.length === 0) throw new Error("inga uppgifter");
     if (typeof manifest.id !== "string" || !manifest.id) throw new Error("id saknas");
+    for (const u of manifest.uppgifter) {
+      if (!u || typeof u.id !== "string" || !u.id) throw new Error(`uppgift utan id: ${JSON.stringify(u).slice(0, 60)}`);
+      if (typeof u.prompt !== "string" || !u.prompt) throw new Error(`uppgift ${u.id}: prompt saknas`);
+    }
   } catch (e) {
     logga(`ogiltigt manifest ${fil}: ${String(e).slice(0, 120)} — flyttas till klara/ som FEL`);
     loggrad({ händelse: "manifest-fel", fil, fel: String(e).slice(0, 200) });
+    if (TORR) {
+      torrLogga(`SKULLE flytta ${fil} → klara/FEL-<ts>-${fil}`);
+      return;
+    }
     renameSync(manifestSökväg, path.join(KLARA, `FEL-${Date.now()}-${fil}`));
-    släppLås(); // samma låsläcka som kön tom-grenen
-    process.exit(0);
+    return; // låset släpps i finally
+  }
+
+  // ── FABRIK 2.0 (b): roller + exklusivt filägarskap — varna, avbryt aldrig ──
+  const varningar = valideraManifest(manifest, lasOvrigaKoManifest(manifestFiler.slice(1)));
+  for (const v of varningar) logga(`VARNING: ${v}`);
+  if (varningar.length > 0) {
+    loggrad({ händelse: "manifest-varningar", manifest: manifest.id, antal: varningar.length });
   }
 
   logga(`manifest ${manifest.id}: ${manifest.uppgifter.length} uppgifter, tak ${PARALLELL_TAK}`);
@@ -256,6 +537,32 @@ try {
   const redanKlara = new Set(
     Array.isArray(sparadStatus?.klara) ? sparadStatus.klara.map((r) => r.id) : [],
   );
+  const köade = manifest.uppgifter.filter((u) => !redanKlara.has(u.id));
+
+  // ── torrkörning: skriv planen, rör inget ──
+  if (TORR) {
+    torrLogga(
+      `SKULLE bearbeta ${manifest.id} — ${manifest.uppgifter.length} uppgifter (${redanKlara.size} redan klara hoppas över, ${köade.length} köade)`,
+    );
+    torrLogga(`validering: ${varningar.length} varningar (se ovan; roller normaliserade till ${ROLLER.join("|")})`);
+    torrLogga(`RAM just nu: ${ramTillgangligtMB() ?? "?"} MB (vägra-gräns ${RAM_TAK_MB}, kedje-gräns ${RAM_KEDJA_MB})`);
+    const plan = [...köade];
+    let n = 1;
+    while (plan.length > 0) {
+      const omgång = plan.splice(0, PARALLELL_TAK);
+      torrLogga(
+        `omgång ${n++}: ${omgång.map((u) => `${u.id} [${u.roll ?? "byggare"}]`).join(", ")} — SKULLE föda ${omgång.length} zcode-barn parallellt`,
+      );
+      if (plan.length > 0) {
+        torrLogga(
+          `  efter omgången: auto-kedjning DIREKT om MemAvailable > ${RAM_KEDJA_MB} MB, annars status "vantar-ram" + avslut (pumpor :x5 återupptar inom 10 min)`,
+        );
+      }
+    }
+    torrLogga(`avslut: status → "klar", ko/${fil} → klara/${manifest.id}.json`);
+    return;
+  }
+
   const status = {
     id: manifest.id,
     titel: manifest.titel ?? manifest.id,
@@ -263,12 +570,13 @@ try {
     status: "pågår",
     totalt: manifest.uppgifter.length,
     klara: sparadStatus?.klara ?? [],
+    // 2.0b: synliggör roller + deklarerat filägarskap i agentens statusfönster
+    uppgiftsinfo: manifest.uppgifter.map((u) => ({ id: u.id, roll: u.roll, filer: u.filer.length })),
     uppgiftLoggar: manifest.uppgifter.map((u) => `utdata/${manifest.id}-${u.id}.log`),
   };
   skrivStatus(manifest, status);
 
   // Omgångar om PARALLELL_TAK — RAM-vakt före VARJE omgång (aldrig blint).
-  const köade = manifest.uppgifter.filter((u) => !redanKlara.has(u.id));
   const gitFore = gitTopp();
   while (köade.length > 0) {
     const ram = ramTillgangligtMB();
@@ -278,8 +586,7 @@ try {
       status.kvar = köade.map((u) => u.id);
       skrivStatus(manifest, status);
       loggrad({ händelse: "ram-vakt", manifest: manifest.id, ram, kvar: köade.length });
-      släppLås();
-      process.exit(0); // nästa fabriksrop återupptar; klara uppgifter hoppas över
+      process.exit(0); // finally släpper låset; nästa fabriksrop återupptar
     }
     const omgång = köade.splice(0, PARALLELL_TAK);
     logga(`omgång: ${omgång.map((u) => u.id).join(", ")} (ram ${ram ?? "?"} MB)`);
@@ -297,6 +604,24 @@ try {
     for (const r of resultat) {
       loggrad({ händelse: "uppgift-klar", manifest: manifest.id, ...r });
     }
+
+    // ── FABRIK 2.0 (c): auto-kedjning — nästa omgång DIREKT om RAM tillåter.
+    // Lager 2 är pumpor-daemonens :x5-rop (var 10:e minut) som återupptar
+    // här efter paus — klara uppgifter hoppas över, inget körs om.
+    if (köade.length > 0) {
+      const ramEfter = ramTillgangligtMB();
+      if (ramEfter !== null && ramEfter <= RAM_KEDJA_MB) {
+        logga(
+          `auto-kedjning: ${ramEfter} MB ≤ ${RAM_KEDJA_MB} MB — pausar kedjan, :x5-ropet återupptar (kvar: ${köade.length})`,
+        );
+        status.status = "vantar-ram";
+        status.kvar = köade.map((u) => u.id);
+        skrivStatus(manifest, status);
+        loggrad({ händelse: "kedje-paus", manifest: manifest.id, ram: ramEfter, kvar: köade.length });
+        process.exit(0); // finally släpper låset
+      }
+      logga(`auto-kedjning: ${ramEfter ?? "?"} MB > ${RAM_KEDJA_MB} MB — nästa omgång startar DIREKT`);
+    }
   }
 
   status.status = "klar";
@@ -312,6 +637,14 @@ try {
     levererade: status.klara.filter((r) => r.leverans).length,
   });
   logga(`manifest ${manifest.id} KLART — ${status.klara.length}/${status.totalt} uppgifter`);
+}
+
+if (!taLås()) {
+  logga(TORR ? "annan fabrik håller låset — torrkörning avslutar (idempotent)" : "annan fabrik håller låset — avslutar (idempotent)");
+  process.exit(0);
+}
+try {
+  await huvud();
 } catch (e) {
   logga(`FABRIKSFEL: ${String(e).slice(0, 300)}`);
   loggrad({ händelse: "fabriksfel", fel: String(e).slice(0, 500) });

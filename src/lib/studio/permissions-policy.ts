@@ -70,8 +70,17 @@ const CURL_VARDNAMN = new Set(["localhost", "127.0.0.1", "[::1]", "lab.ak1nvesto
 /** git-subkommandon som är tillåtna (läs + normala flöden; push UTAN force). */
 const GIT_SUB = new Set(["status", "add", "commit", "push", "pull", "diff", "log", "show", "checkout", "revert"]);
 
-/** npm-subkommandon som är tillåtna. */
-const NPM_SUB = new Set(["ci", "install", "run", "test"]);
+/**
+ * npm-subkommandon som är tillåtna.
+ *
+ * VÅG 162 (incidentrot 2026-09-15 01:23): `npm ci|install` raderar node_modules
+ * och `npm run build` bygger utan deploylås — ett agentbarn som råkade köra dem
+ * mitt i en deploy-omstart tog ner prod i 5 minuter (kraschvakten räddade).
+ * Installation och byggen ägs ENDAV prod-synken/kraschvakten under
+ * /tmp/ak1a-deploy.lock; agenten når dem via `node verktyg/prod-synk.mjs`.
+ * Kvar: `npm test` (och npm-executan via npx).
+ */
+const NPM_SUB = new Set(["test"]);
 
 /** Bash-grundkommandon som alltid är säkra (args vaktas separat mot känsliga filer). */
 const GRUND_KOMMANDON = new Set(["node", "ls", "cat", "pwd", "date", "mkdir", "wc", "head", "tail", "grep", "python3", "pytest"]);

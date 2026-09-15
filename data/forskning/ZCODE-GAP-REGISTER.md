@@ -15,18 +15,18 @@
 
 | # | Gap (z code har) | Studio idag | V | A | Status | Evolutionärt steg |
 |---|---|---|---|---|---|---|
-| 1 | Helskärmsläge (3.10.1 "robust fullscreen") | Webb-fullscreen saknar dedikerat läge | 3 | 2 | ÖPPEN | Studio: helskärmsknapp (Fullscreen API) + dolda paneler + en-tangent |
-| 2 | Nummertangs-snabbval i val-dialoger (3.11.2-23) | Dialoger klickbara endast | 3 | 2 | ÖPPEN | Interaktionsdialoger: siffertangenter 1-9 = alternativ |
-| 3 | Ctrl+C rensar utkast (3.10.2-19) | Esc-fälla saknas | 3 | 1 | ÖPPEN | Esc/Ctrl+C rensar inmatningsfältet (utkastet är ändå persistat) |
-| 4 | Notiser vid tur-avslut (config: notifications unfocused) | Borta-banner finns; notis saknas | 4 | 2 | ÖPPEN | Web Notification API vid klart när fliken ej fokuserad |
-| 5 | Bakgrundssynk modellkatalog (3.11.2-22, ej blockande) | Modellkatalog hämtas på begäran | 3 | 2 | ÖPPEN | Bakgrundsuppdatering av /api/studio/modeller vid uppstart |
+| 1 | Helskärmsläge (3.10.1) | Fullscreen API + panel-döljning | 3 | 2 | STÄNGD (732c870e, deploy 02:02) | Studio: helskärmsknapp (Fullscreen API) + dolda paneler + en-tangent |
+| 2 | Nummertangs-snabbval i dialoger (3.11.2-23) | Siffertangentar 1-9 | 3 | 2 | STÄNGD (732c870e) | Interaktionsdialoger: siffertangenter 1-9 = alternativ |
+| 3 | Ctrl+C rensar utkast (3.10.2-19) | Esc rensar fältet | 3 | 1 | STÄNGD (732c870e) | Esc/Ctrl+C rensar inmatningsfältet (utkastet är ändå persistat) |
+| 4 | Notiser vid tur-avslut (notifications unfocused) | Web Notification API vid klart + aktiveringsknapp | 4 | 2 | STÄNGD (evolution V1, e2) | Web Notification API vid klart när fliken ej fokuserad |
+| 5 | Bakgrundssynk modellkatalog (3.11.2-22) | 8 s efter init, ej blockande + auditrad | 3 | 2 | STÄNGD (d81bacfe) | Bakgrundsuppdatering av /api/studio/modeller vid uppstart |
 | 6 | Serialiserade permission-dialoger (3.11.2-24) | Kö finns (v7); granskning mot källan | 3 | 1 | KONTROLL | Verifiera köordning mot källans permission-request-queue |
 | 7 | Isolerade subagent-events (3.11.2-21) | Subagentvy finns; händelseisolering? | 3 | 2 | KONTROLL | Barn-events får inte läcka in i huvudtrådens flöde |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
-| 9 | Diff-bläddring /diff med radnummer+CJK | Diff-panel per turn finns | 4 | 2 | KONTROLL | Jämför mot turn-diff-store.ts; ev. radnummer-förbättring |
+| 9 | Diff-bläddring /diff med radnummer+CJK | KONTROLL-DOM (2026-09-15): CJK ✓ budget ✓ — GAP: radnummer-gutter, ordnivå-diff, /diff-bläddrare (skissa i KONTROLL-9-DIFF.md) | 4 | 2 | ÖPPEN (3 delgap) | Verkställ KONTROLL-9:s fix-skiss (AndringsPanel ~2838, DiffForhandsvisning ~2885 + nytt /diff-kommando) |
 | 10 | Mermaid-förhandsvisning | Saknas | 2 | 3 | ÖPPEN | Rendera mermaid-block i chatt-svar (klientbibliotek) |
 | 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | ÖPPEN | Trädvy per iteration (barn klickbara → öppna session) |
-| 12 | session/fork äkta (M5) | Rewind-knappar — äkta eller emulerade? | 4 | 2 | KONTROLL | Verifiera att rewind använder session/fork (M5-kapitlet) |
+| 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
 | 14 | Prompt-historik-sökning (↑ + sök) | ↑ finns; sök i historiken saknas | 3 | 1 | ÖPPEN | Sök i promptbiblioteket/historiken |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |

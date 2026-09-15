@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronRight,
+  ChevronUp,
   CircleStop,
   Clock,
   Command,
@@ -589,6 +590,20 @@ const PROMPT_LAGRING = "ak1a-studio-prompter";
 const PROMPT_HISTORIK_LAGRING = "ak1a-studio-prompthistorik";
 const MAX_PROMPTER = 50;
 const MAX_PROMPT_HISTORIK = 50;
+
+// ── REGISTER #20 (P5): stora paste-markörer i skrivfältet ────────────────────
+// Inklistrad text över gränsen dumpas inte rått i fältet utan kollapsas till
+// en expanderbar markör — skyddar layouten och håller kompositorn läsbar.
+
+/** Text-paste över så många rader kollapsas (pi-tui 0.58.0-paritet). */
+const PASTE_RADER_GRANS = 15;
+
+/** Radräkning för paste-markören: CRLF/CR normaliseras, avslutande tomma
+ *  rader räknas inte (en 16-raders logg med slutfil är 16 rader). */
+const räknaRader = (text: string): number => {
+  const normal = text.replace(/\r\n?/g, "\n").replace(/\n+$/, "");
+  return normal ? normal.split("\n").length : 0;
+};
 
 interface SparadPrompt {
   text: string;
@@ -3628,6 +3643,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [laddarHistorik, setLaddarHistorik] = React.useState(true);
   const [placeholderIx, setPlaceholderIx] = React.useState(0);
 
+  /** REGISTER #20 (P5): stora paste-markörer — text med fler än
+   *  PASTE_RADER_GRANS rader som klistras i skrivfältet kollapsas till en
+   *  klickbar markör ovanför fältet (klick växlar kollapsad ⇄ redigerbar).
+   *  Innehållet bibehålls och följer med prompten vid sändning. Blocken
+   *  hör hemma i AKTIV tabbs komposit — tabbbyte/Esc/sändning rensar. */
+  const [klistrade, setKlistrade] = React.useState<{ id: string; text: string }[]>([]);
+  const [klistradOppen, setKlistradOppen] = React.useState<string | null>(null);
+
   // ── VÅG 90 K2: LAYOUT-LÄGE — sidebar (vänster) + panel (höger), kollapsbara
   //    på desktop, overlay-drawers på mobil (hamburger i chatten/headern).
   const [sidebarOppen, setSidebarOppen] = React.useState(true);
@@ -3835,6 +3858,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [sokOppen, setSokOppen] = React.useState(false);
   const [sokFras, setSokFras] = React.useState("");
   const [sokIndex, setSokIndex] = React.useState(0);
+  /** P3 (register 18, pi-tui-paritet): 1-baserad tur-position i AKTIVA
+   *  fliken — null = inget hopp gjordes ännu (läget "senaste turen").
+   *  Aktiv bara när sök-/navigeringsraden är öppen; Esc/X nollställer. */
+  const [turPos, setTurPos] = React.useState<number | null>(null);
   const [vidBotten, setVidBotten] = React.useState(true);
   const [nyaSedanUpp, setNyaSedanUpp] = React.useState(0);
 
@@ -4465,6 +4492,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setTabbar((alla) => [...alla, ny]);
     setAktivTabbId(ny.id);
     setPrompt("");
+    // P5: paste-blocken tillhör kompositorn i den tabb de klistrades i.
+    setKlistrade([]);
+    setKlistradOppen(null);
     setMobilSidebar(false);
     ytaRef.current?.focus();
   };
@@ -4475,6 +4505,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
     if (!t) return;
     setAktivTabbId(id);
     setPrompt(t.utkast);
+    // P5: blocken är inte en bilaga som delas mellan sessioner.
+    setKlistrade([]);
+    setKlistradOppen(null);
     setMobilSidebar(false);
     requestAnimationFrame(() => {
       const yta = blattraRef.current;
@@ -4494,12 +4527,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setTabbar([ny]);
       setAktivTabbId(ny.id);
       setPrompt("");
+      setKlistrade([]);
+      setKlistradOppen(null);
       return;
     }
     setTabbar(kvar);
     if (aktivTabbId === id) {
       setAktivTabbId(kvar[0].id);
       setPrompt(kvar[0].utkast);
+      setKlistrade([]);
+      setKlistradOppen(null);
     }
   };
 
@@ -6837,8 +6874,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const påPaste = React.useCallback(
     async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
       const filer = Array.from(e.clipboardData?.files ?? []);
-      if (filer.length === 0) return;
+      // P5: urklippstexten måste läsas SYNKRONT (före eventuella await) —
+      // stora paste (> PASTE_RADER_GRANS rader) kollapsas till markör i
+      // stället för att dumpas rått i fältet.
+      const text = filer.length === 0 ? (e.clipboardData?.getData("text/plain") ?? "") : "";
+      if (filer.length === 0 && räknaRader(text) <= PASTE_RADER_GRANS) return;
       e.preventDefault();
+      if (filer.length === 0) {
+        setKlistrade((gamla) => [...gamla, { id: nyttId(), text }]);
+        visaToast(`Stor paste (${räknaRader(text)} rader) kollapsad till markör — klicka på den för att visa/redigera.`);
+        return;
+      }
       const res = await (async () => {
         setLaddarUpp(true);
         try {
@@ -6861,7 +6907,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setStatusText(res.fel || "Uppladdningen misslyckades.");
       }
     },
-    [valjBilderUrUpload],
+    [valjBilderUrUpload, visaToast],
   );
 
   // ── Skrivfältets minne (våg 86 G1/G2) ──────────────────────────────────────
@@ -7824,7 +7870,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   /** Skicka från skrivfältet — kommandon först, sedan prompten i AKTIVA tabben. */
   const skicka = React.useCallback(async () => {
-    const text = prompt.trim();
+    const skriven = prompt.trim();
+    // P5: klistrade block följer med under det skrivna — fullt innehåll,
+    // inga markörer läcker ut i det som agenten ser.
+    const blockText = klistrade.map((b) => b.text).join("\n\n").trim();
+    const text = skriven && blockText ? `${skriven}\n\n${blockText}` : skriven || blockText;
     if (!text || strömmar) return;
     // VÅG 148F u2: agenten nere ⇒ skrivskyddat läge — släpp INGEN prompt
     // igenom (fältet är disabled, detta är race-skyddet om ett anrop
@@ -7836,7 +7886,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setPrompterOppen(false);
     setUploadMenyOppen(false);
 
-    const kommando = parsaKommando(text);
+    // Kommandon tolkas på det SKRIVNA — ett paste-block ska aldrig bli
+    // kommandoargument (t.ex. "/help" + logg = help, loggen stannar kvar).
+    const kommando = parsaKommando(skriven);
     if (kommando) {
       setPrompt("");
       if (!kommando.kommando) return;
@@ -7850,12 +7902,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
 
     setPrompt("");
+    setKlistrade([]);
+    setKlistradOppen(null);
     pushaHistorik(text);
     // VÅG 91 A3a: bildbilagorna följer med prompten och rensas ur fältet.
     const bilder = valdaBilder;
     if (bilder.length > 0) setValdaBilder([]);
     await skickaPrompt(aktivTabbIdRef.current, text, bilder);
-  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder, live, visaToast]);
+  }, [prompt, klistrade, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder, live, visaToast]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -9323,7 +9377,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   (peek under streaming, kollapsbar efter klart). */}
             </div>
           </div>
-          {/* "↓ Nytt" — flytande knapp när användaren scrollat upp. */}
+          {/* REGISTER #19 (P4): "↓ Hopp till slutet" — klistrig, klickbar
+              etikett när användaren scrollat upp (funnits sedan våg 84 som
+              "Nytt"; pi-tui 0.85.0-paritet = tydlig hopp-till-slut-label,
+              räknarblicken behålls när nya svar landar uppscrollat). */}
           {!vidBotten && meddelanden.length > 0 && (
             <button
               onClick={hoppaNerChatt}
@@ -9331,7 +9388,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               className="absolute bottom-4 left-1/2 z-20 flex min-h-[44px] -translate-x-1/2 items-center gap-1.5 rounded-md border border-[#30363D] bg-[#0D1117] px-4 py-2 text-xs font-semibold text-[#E6EDF3] shadow-lg transition-colors hover:border-[#58A6FF] sm:bottom-3 sm:min-h-0 sm:px-3.5 sm:py-1.5"
             >
               <ArrowDown className="h-3.5 w-3.5 text-[#58A6FF]" />
-              Nytt
+              Hopp till slutet
               {nyaSedanUpp > 0 && (
                 <span className="rounded-full bg-[#58A6FF] px-1.5 text-[10px] font-bold text-[#0D1117]">
                   {nyaSedanUpp}
@@ -9666,6 +9723,85 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </>
               )}
 
+              {/* REGISTER #20 (P5): stora paste-markörer — inklistrad text
+                  över PASTE_RADER_GRANS rader kollapsas hit. Klick på
+                  markören växlar kollapsad ⇄ redigerbar; innehållet följer
+                  med nästa sändning (se skicka). */}
+              {klistrade.length > 0 && (
+                <div className="mb-2 space-y-1.5">
+                  {klistrade.map((b) => {
+                    const oppen = klistradOppen === b.id;
+                    return (
+                      <div key={b.id}>
+                        <div className="flex items-stretch gap-1.5">
+                          <button
+                            type="button"
+                            onClick={() => setKlistradOppen(oppen ? null : b.id)}
+                            aria-expanded={oppen}
+                            title={oppen ? "Fäll ihop den klistrade texten" : "Visa och redigera den klistrade texten"}
+                            className="flex min-h-[40px] flex-1 items-center gap-1.5 rounded-md border border-[#30363D] bg-[#0D1117] px-2.5 py-1 font-mono text-[11px] text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3] sm:min-h-0"
+                          >
+                            {oppen ? (
+                              <ChevronDown className="h-3 w-3 shrink-0 text-[#58A6FF]" aria-hidden />
+                            ) : (
+                              <ChevronRight className="h-3 w-3 shrink-0 text-[#58A6FF]" aria-hidden />
+                            )}
+                            <span className="truncate">
+                              [Klistrad text: {räknaRader(b.text)} rader — klicka för att visa/redigera]
+                            </span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setKlistrade((gamla) => gamla.filter((x) => x.id !== b.id));
+                              if (oppen) setKlistradOppen(null);
+                            }}
+                            aria-label="Ta bort den klistrade texten"
+                            title="Ta bort den klistrade texten"
+                            className="flex min-h-[40px] w-10 shrink-0 items-center justify-center rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#F85149] hover:text-[#F85149] sm:min-h-0"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" aria-hidden />
+                          </button>
+                        </div>
+                        {oppen && (
+                          <div className="mt-1.5">
+                            <textarea
+                              value={b.text}
+                              onChange={(e) =>
+                                setKlistrade((gamla) => gamla.map((x) => (x.id === b.id ? { ...x, text: e.target.value } : x)))
+                              }
+                              onKeyDown={(e) => {
+                                if (e.key === "Escape") {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  setKlistradOppen(null);
+                                }
+                              }}
+                              rows={Math.min(14, Math.max(4, räknaRader(b.text)))}
+                              aria-label="Redigerar klistrad text"
+                              spellCheck={false}
+                              className="w-full resize-y rounded-md border border-[#30363D] bg-[#0D1117] px-3 py-2 font-mono text-xs leading-relaxed text-[#E6EDF3] outline-none transition-colors focus:border-[#58A6FF]"
+                            />
+                            <div className="mt-1 flex items-center justify-between gap-2">
+                              <p className="font-mono text-[10px] text-[#484F58]">
+                                {b.text.length} tecken · skickas med nästa prompt
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => setKlistradOppen(null)}
+                                className="shrink-0 text-[10px] text-[#8B949E] underline underline-offset-2 transition-colors hover:text-[#E6EDF3]"
+                              >
+                                Fäll ihop
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
               {/* Själva raden: 📎 + textarea + ⭐ + STOR skicka-knapp. */}
               <div className="flex items-end gap-2">
                 <button
@@ -9723,15 +9859,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         return;
                       }
                     }
-                    if (e.key === "Escape" && prompt && !document.fullscreenElement) {
+                    if (e.key === "Escape" && (prompt || klistrade.length > 0) && !document.fullscreenElement) {
                       // EVOLUTION E1 (gap 3): Esc med text i fältet = rensa.
                       // Utkastet är ändå persistat per tabb (v150) — detta är
                       // användarens aktiva rensning, z code-paritet 3.10.2-19.
+                      // P5: även klistrade block rensas (Esc i en öppen
+                      // blockeditor fäller bara ihop den — se onKeyDown där).
                       // I helskärm är Esc reserverat för att lämna läget.
                       e.preventDefault();
                       e.stopPropagation();
                       historikIndexRef.current = null;
                       setPrompt("");
+                      setKlistrade([]);
+                      setKlistradOppen(null);
                       return;
                     }
                     if (e.key === "ArrowUp" && !e.shiftKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -9781,7 +9921,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <button
                     type="button"
                     onClick={() => void skicka()}
-                    disabled={!prompt.trim() || live === "ned"}
+                    disabled={(!prompt.trim() && klistrade.length === 0) || live === "ned"}
                     title="Skicka (Enter)"
                     aria-label="Skicka"
                     className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40 sm:h-11 sm:w-12"

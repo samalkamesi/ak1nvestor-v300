@@ -4005,7 +4005,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [diskSessioner, setDiskSessioner] = React.useState<DiskSessionPost[]>([]);
   const diskSoktRef = React.useRef(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
-  const [toast, setToast] = React.useState<{ text: string; ton: "gron" | "fel" } | null>(null);
+  // REGISTER #21 (P6): staplande toast-stack — varje toast bär eget id så
+  // 5 s-timern och klickstängningen riktar sig mot rätt rad i stacken.
+  const [toastStack, setToastStack] = React.useState<{ id: number; text: string; ton: "gron" | "fel" }[]>([]);
+  const toastIdRef = React.useRef(0);
   const [rewindJobbar, setRewindJobbar] = React.useState(false);
 
   // ── Sessions- och workspace-hantering (våg 83 B3) ──────────────────────────
@@ -4206,6 +4209,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   // ── Skrivfältets minne (våg 86 G1/G2) ──────────────────────────────────────
   const [slashStangd, setSlashStangd] = React.useState(false);
   const [slashIndex, setSlashIndex] = React.useState(0);
+  /** REGISTER 17 (P2): @-fil-autocomplete — Esc-stängd + markerad rad. */
+  const [snabelStangd, setSnabelStangd] = React.useState(false);
+  const [snabelIndex, setSnabelIndex] = React.useState(0);
   const [prompter, setPrompter] = React.useState<SparadPrompt[]>(() => lasPrompter());
   const [prompterOppen, setPrompterOppen] = React.useState(false);
   const [promptHistorik, setPromptHistorik] = React.useState<string[]>(() => lasPromptHistorik());
@@ -4228,6 +4234,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const meddelandeRefs = React.useRef<Map<string, HTMLElement>>(new Map());
   const palettRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
   const slashRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
+  /** REGISTER 17 (P2): @-fil-autocomplete — radernas scroll-mål (sokvag → <li>-knapp). */
+  const snabelRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
   const historikIndexRef = React.useRef<number | null>(null);
   const historikUtkastRef = React.useRef("");
 
@@ -4547,10 +4555,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
     huvudTabbIdRef.current = tabbar.find((t) => t.huvud)?.id ?? "tabb-huvud";
   }, [aktivTabbId, tabbar]);
 
-  /** Bekräftelse-toast — försvinner av sig själv efter 4,5 s. */
+  /** Bekräftelse-toast — REGISTER #21 (P6): staplande stack, max 3 synliga,
+   *  försvinner av sig själva efter 5 s, klick stänger. API:t är oförändrat
+   *  mot den gamla singel-toasten — befintliga anrop fungerar som förut. */
   const visaToast = React.useCallback((text: string, ton: "gron" | "fel" = "gron") => {
-    setToast({ text, ton });
-    window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
+    const id = ++toastIdRef.current;
+    setToastStack((stack) => [...stack.slice(-2), { id, text, ton }]);
+    window.setTimeout(() => {
+      setToastStack((stack) => stack.filter((t) => t.id !== id));
+    }, 5_000);
+  }, []);
+
+  /** Stäng en toast i förtid (klick på raden). */
+  const stangToast = React.useCallback((id: number) => {
+    setToastStack((stack) => stack.filter((t) => t.id !== id));
   }, []);
 
   /** EVOLUTION E1 (gap 1): växla helskärm — tillståndet synkas av
@@ -8540,6 +8558,125 @@ export function StudioChat({ hem }: { hem: () => void }) {
     ytaRef.current?.focus();
   }, []);
 
+  // ── @-FIL-AUTOCOMPLETE (REGISTER 17, P2) ────────────────────────────────────
+  //    '@' i skrivfältet öppnar en lista med filer ur arbetsytan: källa 1 =
+  //    filträdet (GET /api/studio/filer — hämtas tyst om inte drawern redan
+  //    läst in det), källa 2 (fallback) = senaste kända filer ur turnens
+  //    diff-events (ändringar). Matchning: case-insens substring på hela
+  //    sökvägen; piltangenter + Enter/Tab infogar '@sokvag ' i texten.
+  const snabelFras = React.useMemo<{ fras: string; start: number } | null>(() => {
+    const ix = prompt.lastIndexOf("@");
+    if (ix === -1) return null;
+    const rest = prompt.slice(ix + 1);
+    if (rest.includes(" ")) return null; // mellanslag avslutar token-listan
+    if (ix > 0 && !/\s/.test(prompt[ix - 1])) return null; // '@' måste stå fritt (ej e-post)
+    return { fras: rest, start: ix };
+  }, [prompt]);
+
+  /** Debounce 200 ms — sökfrasen (och trädhämtningen) avfyras när tangenterna
+   *  lugnat sig; försvinner token:n stängs listan DIREKT (ingen fördröjning). */
+  const [snabelSokt, setSnabelSokt] = React.useState<string | null>(null);
+  React.useEffect(() => {
+    if (snabelFras === null) {
+      setSnabelSokt(null);
+      return;
+    }
+    const t = setTimeout(() => setSnabelSokt(snabelFras.fras), 200);
+    return () => clearTimeout(t);
+  }, [snabelFras]);
+
+  /** Tyst trädhämtning vid första '@' — EN gång per @-session (ref-vakt mot
+   *  oändliga omförsök; diff-filerna täcker som fallback vid nätverksfel). */
+  const snabelTradForsokRef = React.useRef(false);
+  React.useEffect(() => {
+    if (snabelFras === null) {
+      snabelTradForsokRef.current = false;
+      return;
+    }
+    if (trad !== null || tradLaddar || snabelTradForsokRef.current) return;
+    const t = setTimeout(() => {
+      snabelTradForsokRef.current = true;
+      void lasTrad();
+    }, 200);
+    return () => clearTimeout(t);
+  }, [snabelFras, trad, tradLaddar, lasTrad]);
+
+  /** Filunderlaget: trädet (endast filer, djupet-först) om det finns, annars
+   *  unika sökvägar ur diff-events — senaste turn först (iteration bakifrån). */
+  const snabelFiler = React.useMemo<string[]>(() => {
+    if (trad && trad.length > 0) {
+      const ut: string[] = [];
+      const vandra = (noder: TradNod[]): void => {
+        for (const n of noder) {
+          if (n.typ === "fil") ut.push(n.sokvag);
+          if (n.barn) vandra(n.barn);
+        }
+      };
+      vandra(trad);
+      return ut;
+    }
+    const sedda = new Set<string>();
+    for (let i = meddelanden.length - 1; i >= 0; i--) {
+      for (const a of meddelanden[i].ändringar ?? []) {
+        if (a.sokvag && !sedda.has(a.sokvag)) sedda.add(a.sokvag);
+      }
+    }
+    return [...sedda];
+  }, [trad, meddelanden]);
+
+  /** Matchningar (cap 50): filnamn som BÖRJAR med frasen först, därefter
+   *  underlagets ordning — Array#sort är stabil, ordningen förblir förutsägbar. */
+  const snabelPoster = React.useMemo<string[]>(() => {
+    if (snabelSokt === null) return [];
+    const q = snabelSokt.toLowerCase();
+    return snabelFiler
+      .map((f) => ({ f, namnStart: f.toLowerCase().slice(f.lastIndexOf("/") + 1).startsWith(q) }))
+      .filter((x) => x.f.toLowerCase().includes(q))
+      .sort((a, b) => (a.namnStart === b.namnStart ? 0 : a.namnStart ? -1 : 1))
+      .map((x) => x.f)
+      .slice(0, 50);
+  }, [snabelSokt, snabelFiler]);
+
+  /** Första dataunderlaget saknas ännu (trädet hämtas, inga diff-filer). */
+  const snabelVantar = snabelSokt !== null && snabelFiler.length === 0 && trad === null && !tradFel;
+
+  const snabelSynlig =
+    snabelSokt !== null && !snabelStangd && !prompterOppen && (snabelPoster.length > 0 || snabelVantar);
+
+  React.useEffect(() => {
+    setSnabelIndex(0);
+    setSnabelStangd(false);
+  }, [snabelSokt]);
+
+  React.useEffect(() => {
+    if (!snabelSynlig) return;
+    const f = snabelPoster[snabelIndex];
+    if (f) snabelRadRefs.current.get(f)?.scrollIntoView({ block: "nearest" });
+  }, [snabelIndex, snabelPoster, snabelSynlig]);
+
+  /** Valet ersätter hela @-token med '@sokvag ' och sätter markören efter
+   *  infogningen (rAF = efter React:s commit av det nya value). */
+  const valjSnabelFil = React.useCallback(
+    (sokvag: string) => {
+      if (!snabelFras) return;
+      const ersatt = `@${sokvag} `;
+      const ny =
+        prompt.slice(0, snabelFras.start) + ersatt + prompt.slice(snabelFras.start + 1 + snabelFras.fras.length);
+      historikIndexRef.current = null;
+      setPrompt(ny);
+      setSnabelStangd(true);
+      const markor = snabelFras.start + ersatt.length;
+      requestAnimationFrame(() => {
+        const yta = ytaRef.current;
+        if (!yta) return;
+        yta.focus();
+        yta.setSelectionRange(markor, markor);
+        hojdpassaYta(yta);
+      });
+    },
+    [prompt, snabelFras],
+  );
+
   /** Bläddra i prompthistoriken (våg 86 G2) — som terminalen. */
   const blattraHistorik = React.useCallback(
     (riktning: 1 | -1): boolean => {
@@ -8963,21 +9100,35 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (filer.length > 0) void laddaUpp(filer);
       }}
     >
-      {/* Bekräftelse-toast (grön/röd accent på mörk bottn) */}
-      {toast && (
-        <div
-          role="status"
-          className={cn(
-            "fixed left-1/2 top-3 z-[90] -translate-x-1/2 rounded-md border px-4 py-2 text-xs font-medium shadow-lg",
-            toast.ton === "fel"
-              ? "border-[#DA3633]/50 bg-[#161B22] text-[#F85149]"
-              : "border-[#238636]/50 bg-[#161B22] text-[#E6EDF3]",
-          )}
-        >
-          <span className={cn("mr-1.5", toast.ton === "fel" ? "text-[#F85149]" : "text-[#3FB950]")}>●</span>
-          {toast.text}
-        </div>
-      )}
+      {/* Bekräftelse-toast-stack — REGISTER #21 (P6): max 3 synliga, 5 s
+          självförsvinnande, klick stänger. Höger nere ovanför skrivfältet
+          på mobil (safe-area medräknad), övre högra hörnet på dator.
+          Behållaren är alltid monterad som live-region — skärmläsare
+          hinner förbereda sig på raderna som kommer och går. */}
+      <div
+        role="status"
+        className="pointer-events-none fixed right-3 bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-[90] flex flex-col items-end gap-2 md:bottom-auto md:top-3"
+      >
+        {toastStack.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => stangToast(t.id)}
+            title="Stäng meddelandet"
+            className={cn(
+              "pointer-events-auto max-w-[min(20rem,85vw)] cursor-pointer rounded-md border px-4 py-2 text-left text-xs font-medium shadow-lg",
+              t.ton === "fel"
+                ? "border-[#DA3633]/50 bg-[#161B22] text-[#F85149]"
+                : "border-[#238636]/50 bg-[#161B22] text-[#E6EDF3]",
+            )}
+          >
+            <span className={cn("mr-1.5", t.ton === "fel" ? "text-[#F85149]" : "text-[#3FB950]")} aria-hidden>
+              ●
+            </span>
+            {t.text}
+          </button>
+        ))}
+      </div>
 
       {/* ══ VÅG 90 K3: SIDEBAR (vänster, 260px, #010409) — desktop-kolumn ══ */}
       <aside
@@ -10020,6 +10171,68 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </div>
             )}
             <div className="relative">
+              {/* @-fil-autocomplete (REGISTER 17, P2) — filer ur arbetsytan
+                  ovanför fältet: filträdet om det finns, annars senaste
+                  diff-filer. Piltangenter + Enter/Tab infogar @sokvag. */}
+              {snabelSynlig && (
+                <div
+                  role="listbox"
+                  aria-label="Filautocomplete"
+                  className="absolute bottom-full left-0 right-0 z-20 mb-2 overflow-hidden rounded-md border border-[#30363D] bg-[#161B22] shadow-2xl"
+                >
+                  {snabelVantar ? (
+                    <p className="flex min-h-[52px] items-center gap-2 px-3 py-2.5 text-[11px] text-[#8B949E] sm:min-h-[44px]">
+                      <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin" aria-hidden />
+                      Hämtar filträdet…
+                    </p>
+                  ) : (
+                    <>
+                      <ul className="max-h-48 overflow-y-auto py-1">
+                        {snabelPoster.map((sokvag, i) => {
+                          const slashIx = sokvag.lastIndexOf("/");
+                          const namn = slashIx === -1 ? sokvag : sokvag.slice(slashIx + 1);
+                          const mapp = slashIx === -1 ? "" : sokvag.slice(0, slashIx);
+                          return (
+                            <li key={sokvag}>
+                              <button
+                                type="button"
+                                ref={(el) => {
+                                  if (el) snabelRadRefs.current.set(sokvag, el);
+                                  else snabelRadRefs.current.delete(sokvag);
+                                }}
+                                onMouseDown={(e) => e.preventDefault()}
+                                onMouseEnter={() => setSnabelIndex(i)}
+                                onClick={() => valjSnabelFil(sokvag)}
+                                title={`Infoga @${sokvag}`}
+                                aria-selected={i === snabelIndex}
+                                className={cn(
+                                  "flex min-h-[52px] w-full items-center gap-2.5 px-3 py-2.5 text-left transition-colors sm:min-h-[44px]",
+                                  i === snabelIndex ? "bg-[#58A6FF]/10" : "hover:bg-[#0D1117]",
+                                )}
+                              >
+                                <FileText className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" aria-hidden />
+                                <span className="min-w-0 flex-1">
+                                  <span className="block truncate font-mono text-xs font-semibold text-[#E6EDF3]">{namn}</span>
+                                  {mapp && (
+                                    <span className="block truncate text-[10px] leading-snug text-[#8B949E]">{mapp}/</span>
+                                  )}
+                                </span>
+                              </button>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                      <p className="border-t border-[#30363D] px-3 py-1.5 text-[10px] text-[#8B949E]">
+                        ↑↓ välj · Enter/Tab infogar · Esc stänger
+                        {snabelPoster.length === 50 && snabelFiler.length > 50
+                          ? ` · visar ${snabelPoster.length} av ${snabelFiler.length} filer`
+                          : ""}
+                      </p>
+                    </>
+                  )}
+                </div>
+              )}
+
               {/* Slash-autocomplete (våg 86 G1) — dropdown ovanför fältet. */}
               {slashSynlig && (
                 <div
@@ -10341,6 +10554,33 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   }}
                   onPaste={(e) => void påPaste(e)}
                   onKeyDown={(e) => {
+                    // REGISTER 17 (P2): @-fil-listan äger pilar/Enter/Tab/Esc
+                    // medan den är öppen — Esc stänger listan (rensa fältet
+                    // får vänta till nästa tryck, slash-paritet).
+                    if (snabelSynlig) {
+                      if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        setSnabelIndex((i) => Math.min(i + 1, snabelPoster.length - 1));
+                        return;
+                      }
+                      if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        setSnabelIndex((i) => Math.max(i - 1, 0));
+                        return;
+                      }
+                      if ((e.key === "Enter" || e.key === "Tab") && !e.shiftKey) {
+                        e.preventDefault();
+                        const f = snabelPoster[snabelIndex];
+                        if (f) valjSnabelFil(f);
+                        return;
+                      }
+                      if (e.key === "Escape") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setSnabelStangd(true);
+                        return;
+                      }
+                    }
                     if (slashSynlig) {
                       if (e.key === "ArrowDown") {
                         e.preventDefault();

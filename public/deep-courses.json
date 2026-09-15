@@ -200351,5 +200351,161 @@
     "lynchSection": "Peter Lynch frågade gärna vad konkurrenterna sa om ett bolag — det bästa moat-tecknet är när rivalerna erkänner försvararens ställning. Han talade också om bolag som äger en nisch så komplett att ingen bryr sig om att anfalla: perfektion i det lilla är ofta en bredare grav än medelmåttighet i det stora.",
     "grahamSection": "Benjamin Graham var försiktig med att betala för vackra berättelser om framtida fördelar — hans krav var påvisbar historik: stabila resultat över lång tid. Moat-tänkandet är i Grahams anda först när muren syns i siffrorna, inte bara i storyn; först då förtjänar den namnet trygghet.",
     "ak1Section": "I AK1A:s metodik är den här kursen MOAT-familjens grund: V13–V15 fördjupar immateriella tillgångar, varumärke och nätverkseffekter var för sig, och AKM2:s moat-dimension betygsätter hur länge fördelen håller. Med de fyra murarna på plats blir varje hög marginal en fråga om försvar i stället för tur — och varje värdering en fråga om hur länge kassaflödena skyddas."
+  },
+  "kt-01-vad-ar-en-katalysator": {
+    "slug": "kt-01-vad-ar-en-katalysator",
+    "category": "KATALYSATOR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Vad är en katalysator? — händelsen som kan flytta en aktie",
+    "summary": "Händelsen som får marknaden att ompröva ett bolag: vad en katalysator är, varför goda nyheter kan falla platt, de stora händelsetyperna och hur kalendern blir ett studieverktyg.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Förstå katalysatorbegreppet: en avgränsad, ofta daterbar händelse som kan få marknaden att ompröva ett bolags framtidsbild · Förstå förväntningarnas mekanik — det är överraskningen mot marknadens förväntan som rör kursen, inte nyhetens storlek · Känna igen de stora händelsetyperna: rapporter, lanseringar, avtal, myndighetsbeslut och kapitalstrukturhändelser · Använda den finansiella kalendern som studieverktyg — skriv ner förväntningen före, utvärdera efter · Se de klassiska fällorna: katalysatorjakt, prissatta förväntningar, rykten och utspädning bakom glada nyheter · Koppla katalysatortänkandet till AKM1:s KATALYSATOR-familj (V16–V18) och AKM2:s tidshorisonter.",
+    "why": "De flesta nybörjare möter aktiemarknaden som ett flöde av nyheter — och förväntar sig att bra nyheter ger stigande kurser. Verkligheten är snedvriden på ett karakteristiskt sätt: kursen reagerar inte på nyheten utan på skillnaden mot förväntningen, vilket förklarar varför briljanta rapporter kan falla och mediokra stiga. Katalysatorbegreppet är nyckeln till den mekanismen: det ger namn åt händelserna som omprövar ett bolag — och gör dem planerbara att studera. Kursen ger nybörjaren familjens karta (V16–V18 fördjupar varje typ) och träningen att läsa en händelse mot marknadens förväntan i stället för mot sin egen hoppfullhet.",
+    "history": {
+      "origin": "Ordet är lånat från kemin, där Jöns Jacob Berzelius på 1830-talet myntade katalys — en kraft som sätter en reaktion i rörelse utan att själv förbrukas. I finansspråket blev metaforen naturlig: en katalysator är händelsen som sätter prisbildningen i rörelse. Marknader har förstås alltid reagerat på nyheter — från kanalbyggen till skörderapporter — men det var under 1900-talets senare hälft, när institutionella analytiker började planera sitt arbete kring kommande händelser, som ordet blev en fast del av analysens vokabulär.",
+      "evolution": "Vetenskapen följde efter. År 1969 lade Fama, Fisher, Jensen och Roll med sin studie av aktiesplitt grunden till event studies — metoden att mäta hur kurser rör sig kring en avgränsad händelse. Forskningen bekräftade vad praktiker anat: marknaden anpassar sig snabbt, och det som rör kursen är det oväntade. Under 1980- och 90-talet växte sedan förväntningsperspektivet fram i full längd — att förstå vad en kurs redan prissätter blev analytikerjobbet, och Rappaport och Mauboussins Expectations Investing (2001) gav metoden ett system.",
+      "modern": "I dag är katalysatorkalendrar en standarddel av analysverktygen: rapportdatum, myndighetsbeslut med deadlines, stämmor och makroevenemang står listade månader i förväg. Samtidigt har det snabbare informationsflödet krympt överraskningsfönstret — förväntningar byggs upp och prissätts tidigare än någonsin. Den moderna katalysatorfrågan är därför inte längre bara vad som kan hända, utan vad marknaden redan räknar med. Det är precis den frågan den här kursen tränar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — händelsen som omprövar",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Förväntningarnas mekanik — varför goda nyheter kan falla",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Katalysatorkartan — de stora händelsetyperna",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Kalendern som studieverktyg",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — katalysatorer i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — händelsen som omprövar",
+        "intro": "En katalysator är inte vilken nyhet som helst — det är händelsen som kan få marknaden att tänka om om ett bolag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börskurser är ständigt pågående samlade omdömen om ett bolags framtid. Mesta tiden ändras omdömet långsamt — nya kvartal bekräftar det gamla, kursen rör sig med marknaden. Men ibland landar en händelse som tvingar fram en omprövning: en rapport som visar något annorlunda än väntat, ett myndighetsbeslut som öppnar eller stänger en marknad, ett avtal som ändrar intäktsbilden. Sådana händelser är katalysatorer — de avgränsade, ofta daterbara tillfällen då priset på nytt måste ta ställning till verksamheten.\n\nMetaforen är lånad från kemin, där katalysatorn sätter en reaktion i rörelse utan att själv förbrukas. På marknaden är det analogt: händelsen släpper loss omprövningen, men det är bolagets verkliga substans som avgör vart den bär. Därför är katalysatorn aldrig en ersättning för analys — den är dess test. En genomtänkt analys säger vad som borde hända med verksamheten; katalysatorn är tillfället då verkligheten får visa om analysen höll."
+          },
+          {
+            "type": "definition",
+            "content": "Katalysator (aktiemarknad): en avgränsad, ofta i förväg känd händelse som kan få marknaden att ompröva ett bolags framtidsbild — till exempel en kvartalsrapport, ett myndighetsbeslut, ett storavtal eller en ägarförändring."
+          },
+          {
+            "type": "insight",
+            "content": "En analys utan katalysator är en åsikt med obestämd väntetid; en katalysator utan analys är bara ett datum i kalendern."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Förväntningarnas mekanik — varför goda nyheter kan falla",
+        "intro": "Kursen reagerar inte på nyheten i sig — den reagerar på skillnaden mellan nyheten och det marknaden redan räknade med.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det svåraste och viktigaste i katalysatortänkandet: priset före händelsen är inte neutralt. Det bär marknadens samlade förväntan — analytikerkonsensus, rykten, den senaste utvecklingens trend. När händelsen sedan inträffar jämförs utfallet inte med noll, utan med den förväntan som redan betalats för i kursen. En rapport som är bra i absoluta tal men sämre än förväntan kan falla; en rapport som är medelmåttig men bättre än den depressiva stämningen kan stiga. Ett äldre börsmotto — att ryktet ofta är starkare än nyheten — beskriver samma mekanik: förväntan bygs upp före händelsen och kan tömmas på den.\n\nKonsekvensen för den som vill förstå marknaden är kraftfull: frågan är aldrig \"är nyheten bra?\" utan \"är den bättre än det marknaden redan prissatt?\". Det förklarar också varför katalysatorer ibland inte rör kursen alls — händelsen var känd, väntad och redan inräknad. Den mekanismen är systematisk, inte slumpmässig, och den går att träna på: att uppskatta vad som är prissatt är en analysfärdighet som den här familjens kurser återkommer till."
+          },
+          {
+            "type": "insight",
+            "content": "Det som rör en kurs är inte överraskningens storlek i nyheten, utan överraskningens tecken mot förväntan — därför kan ett misslyckande känna lugnare än en triumf."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Katalysatorkartan — de stora händelsetyperna",
+        "intro": "De flesta katalysatorer tillhör en handfull familjer — och varje familj har sin klocka och sina läsplatser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den återkommande rytmens katalysator är rapporten: kvartals- och årsredovisningar är börsens hjärtslag, och kring dem byggs hela den finansiella kalendern. Därutöver faller de flesta händelser in i några välkända typer. Produkt- och lanseringshändelser — nya produkter, kliniska data, teknikskiften — prövar tillväxtberättelsen (det är V16:s område). Avtal och partnerskap — kontrakt, samgåenden, strategiska allianser — kan ändra intäktsbilden över en natt (V17). Regulatoriska beslut — godkännanden, licenser, nya regler — öppnar eller stänger marknader och är ofta både daterbara och binära (V18).\n\nEn femte grupp rör kapitalstrukturen själv: emissioner, återköp, avnoteringar och bud ger händelser som rör kursen genom ägarandelen snarare än genom verksamheten. Därtill kommer bolagsstämmor och indexhändelser. Poängen med kartan är inte att memorera datum utan att känna igen typen — varje typ har nämligen sin egen mekanik: rapporter är rytmiska och jämförbara, myndighetsbeslut är binära och tidsbestämda, avtal är förhandlade och kan spricka. KATALYSATOR-familjens fördjupningskurser V16–V18 tar varje typ på allvar; den här grundkursen ger dig kartan de bygger på."
+          },
+          {
+            "type": "insight",
+            "content": "Katalysatorkartan är en checklista för beredskap — inte en lista av lovande datum."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Kalendern som studieverktyg",
+        "intro": "Katalysatorns största gåva till den som lär sig analysera: händelserna är kända i förväg — och därmed går studiet att planera.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Finansiella kalendrar listar månader i förväg när bolag redovisar, när bolagsstämmor hålls och när myndigheter väntas besluta. För eleven är det en färdig studieplan: välj ut ett fåtal bolag du lärt känna från tidigare kurser, markera deras kommande rapportdatum och förbered läsningen. Övningen som gör skillnad är att före händelsen skriva ner vad du väntar dig — inte bara siffror utan vad som skulle bekräfta eller motsäga din bild av verksamheten. När rapporten sedan ligger där jämför du: träffade din bild? Var förväntan rätt kalibrerad? Vad reagerade kursen på — och stämde det med din läsning av vad som var prissatt?\n\nDet är i den loopen — förväntan skriven före, utfall utvärderat efter — som kalibreringen växer. Utan den skrivna förväntanen blir minnet mjukt: man minns att man \"kände\" rätt. Med den får du ett ärligt mått på avståndet mellan ditt omdöme och marknadens, händelse efter händelse. Det är ren utbildningsmekanik — samma disciplin som forskare använder när de registrerar hypoteser före experimentet — och den tränar exakt den färdighet kaptitel 2 beskrev: att skilja nyhet från överraskning."
+          },
+          {
+            "type": "insight",
+            "content": "Den som skriver ner sin förväntning före händelsen lär sig dubbelt — av utfallet och av sitt eget bedömingsavstånd."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Katalysatortänkandet har en mörk sida — och den är värd att känna till innan den lär känna dig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är katalysatorjakten: när småbolags kurser handlas kraftigt kring kommande händelser kan händelsen bli hela berättelsen — ett bolag som \"äger\" ett kommande beslut riskerar att prissättas för en framtid som beror av en enda utgånga. En tillvaro som hänger på ett enda datum är sällan en god grund, hur spännande den än är. Andra fällan är den prissatta förväntan: ju mer omskriven en händelse är, desto mer av den sitter redan i kursen — och desto mindre rör själva nyheten. Tredje fällan är ryktena: läckor och forumviskningar är oäkta katalysatorer, ofta konstruerade för att röra kurser, och den som agerar på dem saknar både källa och motpart i informationskedjan.\n\nFjärde fällan är mekaniken i själva händelsen: glada nyheter kan bära en emission i sitt bagage — kapital tas in när vindarna är lugna, och utspädningen äter en del av glädjen. Femte och viktigast: katalysatorn har två utfall. Den kan bekräfta tesen — eller döda den. En misslyckad fas III-studie, ett uteblivet avtal, ett avslag från myndigheten: det är också information, och för den som bara räknat med det glada utfallet är det en oväntad läxa i risk. Den vuxna frågan är därför alltid den dubbla: vad händer med bilden om händelsen går vägen — och vad händer om den inte gör det?"
+          },
+          {
+            "type": "insight",
+            "content": "En katalysator bevisar eller motbevisar — den som bara räknat med det första utfallet har ingen plan för det andra."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — katalysatorer i AKM1:s metodik",
+        "intro": "I AKM1 är katalysatorfamiljen tidsperspektivets röst — här knyts kursen till spåret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "KATALYSATOR-familjen i AKM1:s V-spår fördjupar varje händelsetyp för sig: V16 produktlanseringar, V17 avtal och partnerskap, V18 regulatoriska katalysatorer. Den här grundkursens karta — förväntningar, typer, kalender, fällor — är det gemensamma underlaget; V-kurserna är resorna in i varje landskap. Tillsammans gör familjen det som en enskild nyhetsflödesläsning aldrig kan: den flyttar uppmärksamheten från att reagera på händelser till att förstå deras mekanik.\n\nMotiveringen når full höjd i metodiken som helhet. AKM1:s fundamentalfamiljer — tillväxt, lönsamhet, stabilitet och moat — bedömer verksamheten; katalysatorerna bedömer tidpunkten då omvärlden tvingas se den. Och i AKM2:s fem tidshorisonter får det en explicit vikt: på korta horisonter är marknaden händelsernas — rapporter, beslut och rykten rör kurser mer än fundament gör; på långa horisonter vänder makten till fundamenten. Katalysatorkunskapen är därför inte ett sidospår utan bindväven: den som förstår både vad som kan hända och vad som redan är prissatt kan läsa en kursreaktion på rätt sätt — som information om förväntningar, inte som dom om verksamheten."
+          },
+          {
+            "type": "insight",
+            "content": "Kort sikt är händelsernas marknad, lång sikt är fundamentens — katalysatorkunskapen är konsten att veta vilken man tittar på."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch betonade alltid att man ska veta varför man äger en aktie — berättelsen bakom — och att händelserna sedan är berättelsens bevis. Hans varning för story-bolag utan innehåll är katalysatorläran i ren form: en kommande händelse kan aldrig ersätta en verksamhet; den kan bara avslöja om verksamheten fanns där.",
+    "grahamSection": "Benjamin Graham behövde ingen katalysator — och det är en läxa i sig. Med tillräcklig marginal of safety mellan pris och värde blir tålamodet självt realiseringsmekanismen: värdet behöver inte veta vilket datum som flyttar kursen. För Graham var marknaden kort sikt en röstmaskin och långsikt en viktmaskin — katalysatorerna är röstmaskinens tillfällen, och den som lär sig läsa dem lär sig också när rösten drivs av felinformation i stället för av fundamenten.",
+    "ak1Section": "I AK1A:s metodik är den här kursen KATALYSATOR-familjens grund: V16–V18 fördjupar produktlanseringar, avtal och regulatoriska beslut var för sig, och AKM2:s tidshorisonter väger hur tungt händelser ska bära på varje horisont. Med förväntningsmekaniken på plats blir varje kommande rapport ett kalibreringstillfälle — och varje kursreaktion läsbar som information om vad marknaden trodde, inte bara om vad bolaget gjorde."
   }
 }

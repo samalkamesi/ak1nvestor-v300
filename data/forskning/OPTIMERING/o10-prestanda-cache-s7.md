@@ -76,11 +76,38 @@ ett designbeslut, ej en barnagents kirurgi.
 
 | Objekt | Ägare |
 |---|---|
-| portfolj-forskning `revalidate = 3600` (1 rad) | nästa s7-våg |
+| ~~portfolj-forskning `revalidate = 3600`~~ | **LEVERERAD s7 våg 6** (se §5) |
 | Global 44→52-baslinje i globals.css (designbeslut) | huvudagent/styrelse |
 | Brotli i nginx (−15–20 % kall load) | huvudagent/infra (o5 F3) |
 | Språkresolvens-CLS (produktbeslut a/b/c) | huvudagent/styrelse (o5) |
-| Läsbarhet rond 3 (filter/paginering/quiz/kakbanner/hero) | s7-u1:s kö i o8 §7 |
+| Läsbarhet rond 3 (filter/paginering/quiz/kakbanner/hero) | **LEVERERAD** (o8 §8, 3b2aab63 + kaskadkur 04303dd8) |
 
 tsc 0. Ingen bygga — prod-synken äger deploy (flock-lås); EFTER-curl för §1–2
 bokförs av nästa våg när bygget landat.
+
+## 5. EFTER-verifiering + portfolj-forskning-fix (s7 våg 6, 2026-09-15 ~17:55)
+
+**§1 EFTER — LIVE BEVISAD** (deploy 17:40:51, curl 17:48):
+`/deep-courses.json` svarar nu
+`Cache-Control: public, max-age=3600, stale-while-revalidate=86400` —
+EXAKT målbilden. 17,5 MB nödfalls-fallback omvalderas som mest 1×/timme
+i stället för vid varje hämtning. POSTEN STÄNGD.
+
+**§2 EFTER — LIVE BEVISAD** (samma deploy, curl 17:48):
+`/` svarar `s-maxage=31536000` → **`s-maxage=3600,
+stale-while-revalidate=31532400`** — årslåset dött, /kurser-mönstret
+reproducerat. POSTEN STÄNGD.
+
+**§5 portfolj-forskning (köposten ovan) — FIXAD I KOD:**
+FÖRE (prod, curl 17:48): `s-maxage=31536000` (årslås kvar). Fix =
+`export const revalidate = 3600` i `src/app/(huvud)/portfolj-forskning/
+page.tsx` (force-static + revalidate, /kurser-mönstret). **Leveransväg
+(ärligt bokförd):** raden skrevs av denna våg men sveptes med i
+syskonsamlingen 04303dd8 (17:49:52, `git add`-kollision mellan aktiva
+fabriksbarn — samma driftfyndklass som o8 rond 3:s trädrevning);
+innehållet verifierat i committen (3 rader: 2 kommentars- + 1 exportrad),
+tsc 0 körd av denna våg. EFTER-curl bokförs nedan när 04303dd8-bygget
+landat (prod-synk poll :x7).
+
+**EFTER §5:** (bokas när bygget landat)
+

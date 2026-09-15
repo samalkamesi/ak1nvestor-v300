@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-15T08:57:53.032Z",
+  "bas": "http://localhost:3000",
+  "namn": "kurskontroll2",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.47,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1737,
+        "LCP": 5750,
+        "TBT": 2526,
+        "CLS": 0.002211421825280102,
+        "TTI": 7173,
+        "SI": 4023
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0.5,
+          "visar": "Est savings of 112 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 112 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 820 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 820 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "3.4 s",
+          "rad": "Reduce JavaScript execution time — 3.4 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "10.6 s",
+          "rad": "Minimize main-thread work — 10.6 s"
+        }
+      }
+    }
+  ]
+}

@@ -122,6 +122,11 @@ Agent-anrop, 4+ via fabriksmanifest.
 
 ## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
 
+- ★ STYRELSE-MÅLEN 2026 (data/forskning/STYRELSE-MAL.md, kundorder
+  2026-09-15): ronden läser chaftern FÖRST — mål 1 (ordens fullbordande:
+  kunduppdrag.json före nya vågor) → mål 2 (beviskultur) → mega A/B/C
+  (gap-registret, godkännandeytan g1, kvartalsserien v152) → golv →
+  synlighet. Chafterns "nästa tre åtgärder" är köns topp.
 - ✓ LEVERERAT våg 140 (FAQ 42+10 poster, 13 commits 04:20–05:01; slutled
   våg 148: merge b99869e4 + prodbygge + import — se worklog)
 - ✓ LEVERERAT våg 141–147 (studio-trådens infrastruktur: trådkedja, mål-

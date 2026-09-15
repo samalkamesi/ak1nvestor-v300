@@ -1,0 +1,164 @@
+{
+  "slug": "ks-01-kapitalstruktur-grunder",
+  "category": "KAPITALSTRUKTUR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kapitalstruktur — hur bolaget är finansierat",
+  "summary": "Eget kapital mot skuld: hur finansieringen formas, vad den kostar och varför den avgör hur mycket av vinsten som finns kvar åt dig som ägare.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Skilja på eget kapital och skulder som finansieringskällor · Förstå kapitalkostnad — vad ränta och ägarnas avkastningskrav kostar bolaget · Se hur hävstång förstärker både vinst och förlust · Läsa utspädning — varför nya emissioner förändrar din andel av bolaget · Känna igen trade-off-tänkandet och pecking order i stora drag · Koppla finansieringen till V10 skuldsättningsgrad, V20 återköp och soliditeten (st-01).",
+  "why": "Bakom varje nyckeltal i stabilitetsfamiljen står en enda fråga: hur är bolaget finansierat? Kapitalstrukturen — mixen av ägarnas kapital och långivarnas pengar — bestämmer hur mycket av vinsten som äts av räntor, hur mycket som återstår för utdelning och återköp, och hur hårt bolaget träffas när konjunkturen vänder. Kursen ger nybörjaren mekaniken bakom den frågan, från räntekostnadens matematik till emissionens utspädning — kunskap som gör skuldsättningsgraden, återköpen och soliditeten läsbara som en enda sammanhängande berättelse.",
+  "history": {
+    "origin": "Frågan om den perfekta finansieringen fick sitt första berömda svar 1958, när Franco Modigliani och Merton Miller visade att — i en perfekt värld utan skatter och konkurskostnader — kapitalstrukturen inte påverkar bolagets värde. Teoremet blev finansvetenskapens utgångspunkt: all forskning sedan dess har handlat om vilka verkliga friktioner — skatter, konkursrisk, informationsasymmetrier — som bryter den perfekta världen och gör finansieringsvalet viktigt.",
+    "evolution": "Två skolor växte fram ur den frågan. Trade-off-teorin beskrev en avvägning: räntekostnader är avdragsgilla, vilket gör skuld billigare, men varje nytt lån närmar sig konkursens kostnader — någonstans finns en balans. Pecking order-teorin (Stewart Myers, 1984) såg i stället en rangordning: bolag finansierar helst med egna pengar, sedan med lån och motvilligt med nya emissioner. I Sverige blev kapitalstrukturen en överlevnadsfråga under 1990-talets finanskris, då högt belånade bolag störtade medan lågbelånade stod emot — en läxa som format svensk bolagsfinansiering sedan dess.",
+    "modern": "I dag är kapitalstruktur ett löpande styrelseärende: utdelning, återköp och emissioner är olika sidor av samma finansieringsfråga. Aktiebolagslagen (2005:551) ger aktieägare i regel företrädesrätt vid nya emissioner — rätten att värna sin andel av bolaget — och den som behärskar utspädningsmekaniken läser sådana beslut som ren matematik i stället för överraskningar."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — två källor av kapital",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Kapitalkostnad — vad pengarna kostar bolaget",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — läs finansieringen i årsredovisningen",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Hävstång och utspädning — finansieringens två klippor",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — från finansiering till nyckeltal",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — två källor av kapital",
+      "intro": "Allt ett bolag äger är finansierat på ett av två sätt: av ägarna eller av långivarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Eget kapital är ägarnas pengar: det som betalades in när aktierna tecknades plus alla vinster som behållits i bolaget i stället för att delas ut. Eget kapital ska aldrig betalas tillbaka — det är bufferten som tar förluster före någon annan. Skulder är långivarnas pengar: banklån, obligationer och leverantörsskulder. De ska betalas tillbaka enligt schema, ränta först, och de står före ägarna om bolaget skulle gå i konkurs.\n\nDenna ordning — långivare före ägare — är hela finansieringens logik. Skuld är billigare än eget kapital just för att den är säkrare: långivaren som står först i kön kräver mindre avkastning än ägaren som står sist. Men säkerheten har ett pris för bolaget: räntan ska betalas varje år oavsett hur verksamheten går, medan utdelning till ägare kan ställas in i usla år. Kapitalstrukturen är balansen mellan den billiga, stela finansieringen och den dyrare, tålmodiga."
+        },
+        {
+          "type": "definition",
+          "content": "Kapitalstruktur: Mixen av eget kapital och skulder som finansierar bolagets tillgångar. Eget kapital: Ägarnas insatser och behållna vinster — tar förlusterna först. Skuld: Långivarnas kapital — fast ränta, återbetalningsskyldighet, företräde vid konkurs."
+        },
+        {
+          "type": "insight",
+          "content": "Räntan betalas i alla väder, utdelningen bara i goda — därför är skuld billig men stel, och eget kapital dyrt men tåligt."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Kapitalkostnad — vad pengarna kostar bolaget",
+      "intro": "Varje krona i bolaget har ett pris — räntan syns i resultaträkningen, ägarnas krav syns inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skuldens kostnad är synlig och kontrakterad: räntan på banklån och obligationer står i resultaträkningen som finansiella kostnader. Eget kapitals kostnad är osynlig men verklig: ägarna kräver avkastning — utdelning och värdeökning — och ett bolag som inte levererar på sikt får svårare och dyrare att hämta nytt kapital. Tillsammans uttrycks de båda som viktad kapitalkostnad: ett genomsnitt av räntekostnaden och ägarnas avkastningskrav, viktat efter hur stor varje del av finansieringen är.\n\nSkillnaden i synlighet skapar en klassisk felbedömning: skuld ser billig ut bara för att kostnaden har ett eget namn i bokföringen. Ett bolag som lånar upp sig binder sig vid den minst flexibla finansieringen som finns — räntan står kvar i resultaträkningen genom recessioner, priskrig och kriser. Kapitalkostnadsperspektivet gör finansieringen jämförbar: en krona i ränta och en krona i utebliven ägaravkastning är båda kostnader, även om bara den första syns i bokföringen."
+        },
+        {
+          "type": "definition",
+          "content": "Viktad kapitalkostnad (WACC): Bolagets genomsnittliga kostnad för kapital — räntekostnad för skuld och avkastningskrav för eget kapital, viktat efter respektive andel av finansieringen."
+        },
+        {
+          "type": "insight",
+          "content": "Den farligaste kostnaden i en balansräkning är den som aldrig bokförs: ägarnas tålamod, som förbrukas i tystnad."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — läs finansieringen i årsredovisningen",
+      "intro": "Kapitalstrukturen syns på tre ställen i årsredovisningen — och tillsammans berättar de en historia.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första platsen är balansräkningens finansieringssida: hur stor del av tillgångarna som burits upp av eget kapital respektive skulder. Ett bolag med 30 miljarder i balansomslutning, 12 i eget kapital och 18 i skulder är till fyra av tio kronor finansierat av ägarna — soliditeten är 40 procent, och de återstående sextio är långivarnas anspråk.\n\nAndra platsen är resultaträkningens finansiella poster: räntenettot, alltså räntekostnader minus ränteinkomster. Här syns kapitalstrukturens verkliga pris — och här räknas räntetäckningsgraden: rörelseresultatet delat med räntekostnaden, som svarar på frågan hur många gånger om vinsten täcker räntan. Tredje platsen är noterna om skulderna: löptider, räntebindning och valutor. Ett lån som förfaller nästa år i en osäker konjunktur är ett annat lån än ett som förfaller om sju år till fast ränta — samma skuld, helt olika risk. Tillsammantaget ger de tre platserna finansieringens hela bild: andel, kostnad och mognad."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga tre frågor om varje skuld — hur stor, hur dyr och när förfaller den? Svaren avgör om finansieringen är ett verktyg eller en klocka som tickar."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Hävstång och utspädning — finansieringens två klippor",
+      "intro": "Lånat kapital förstärker utfallet åt båda hållen — och emissioner förändrar vad din andel är värd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hävstången är finansieringens förstärkare: när avkastningen på tillgångarna överstiger räntan växer mellanskillnaden i eget kapital, och avkastningen på det egna kapitalet blir högre än verksamhetens egna. Men mekaniken är symmetrisk — sjunker avkastningen under räntan äter skulden upp eget kapital lika snabbt. Ett bolag som lånar till fem procent för att investera i en verksamhet som avkastar åtta tjänar på skillnaden; faller avkastningen till tre går bolaget back på varje lånad krona. Hävstången är alltså inte bra eller ond — den förstärker det som redan är sant om verksamheten.\n\nUtspädning är andra sidan av finansieringen: när bolaget gör en ny emission ökar antalet aktier, och varje gammal aktie representerar en mindre andel av bolaget. Efterköper du inte med din företrädesrätt sjunker din ägarandel — ren matematik, ingen åsikt. Därför är emissioner varken goda eller dåliga i sig: en emission som finansierar värdeskapande tillväxt kan gagna kvarvarande ägare, medan en räddningsaktion till lågt pris kan flytta värde från gamla till nya ägare. Konsten är att läsa syftet och priset — inte ordet emission i sig."
+        },
+        {
+          "type": "definition",
+          "content": "Utspädning: Minskningen av en befintlig aktieägarandel av bolaget när nya aktier emitteras. Företrädesrätt: Aktieägares rätt enligt aktiebolagslagen (2005:551) att i regel få teckna andelar av en ny emission i förhållande till sin befintliga ägarandel."
+        },
+        {
+          "type": "insight",
+          "content": "Hävstången multiplicerar verksamhetens sanning och utspädningen omfördelar ägandet — båda är matematik, inte öde."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "De vanligaste misstagen om finansiering kommer från att läsa en siffra utan sitt sammanhang.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan: skuldfrihet är alltid bäst. Ett bolag som aldrig lånar kan vara klokt finansierat — eller underfinansierat: växer verksamheten kraftigt med avkastning vida över kapitalkostnaden kan en konsekvent egenfinansiering begränsa tillväxten i onödan. Skuld är ett verktyg vars värde beror på vad det bygger. Andra fällan: hög skuldsättningsgrad är alltid farligt. Branschen avgör — fastighetsbolag med långsiktiga uthyrda tillgångar bär historiskt högre belåning än konsultbolag vars värde främst bärs av medarbetarna. Nyckeltalet ska läsas mot branschnorm och bolagets egen historia, aldrig mot en universell siffra.\n\nTredje fällan är räkenskapsteknisk: sedan IFRS 16 syns leasingavtal som tillgångar och skulder i balansräkningen, vilket kan få hyresgäster att se mer belånade ut än kassaflödet egentligen visar. Fjärde och sista fällan: att bara läsa räntenettot och glömma löptiderna — samma räntekostnad kan bära en trygg struktur med utspridda förfallodatum eller en mur av förfall samma år. Kapitalstruktur läses alltid i tre dimensioner: andel, kostnad och mognad."
+        },
+        {
+          "type": "insight",
+          "content": "Det finns ingen universellt bra skuldsättningsgrad — det finns branschnormer, löptider och räntetäckning. Sammanhanget är sanningen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — från finansiering till nyckeltal",
+      "intro": "Kapitalstrukturen är roten till en hel familj nyckeltal — här knyts säcken ihop.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Med finansieringsmekaniken på plats blir stabilitetsfamiljen läsbar som en enhet: skuldsättningsgraden (V10) fångar mixen av skuld och eget kapital, soliditeten (st-01) det egna kapitalets andel av hela balansräkningen, räntetäckningsgraden hur många gånger rörelsen täcker räntan, och intäktsstabiliteten (V12) hur tåligt underlaget för alltihop är. Återköpen (V20) är samma berättelses andra sida — bolag som i stället för att låna upp sig skickar överskottskapital tillbaka till ägarna och därmed medvetet minskar det egna kapitalet.\n\nMästerskapet ligger i att se alla dessa tal som uttryck för ett enda val: hur bolaget förhåller sig till sina två kapitalkällor. Ett bolag som växer med behållna vinster, ett som lånar mot sina tillgångar och ett som återköper aktier ligger på olika punkter av samma skala — och varje punkt har sin kostnad, sin risk och sin tålighet i nedgångar. Det är den helheten AKM1:s stabilitetsviktningar bygger vidare på: inte enskilda tal, utan finansieringens hela karaktär."
+        },
+        {
+          "type": "insight",
+          "content": "Skuldsättningsgrad, soliditet, räntetäckning och återköp är fyra fönster in mot samma rum: bolagets förhållande till sina kapitalkällor."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch började gärna i balansräkningen innan han tittade på något annat: i One Up on Wall Street varnar han för att fina företag med tunga skulder kan gå under på finansieringen även när produkten säljer. För Lynch var en stark finansiering inte tråkig försiktighet utan frågan om hur länge ett bolag kan vänta ut en dålig period utan att tappa sitt oberoende.",
+  "grahamSection": "Benjamin Graham lade den finansiella ställningen bland sina kriterier för den defensiva investeraren: trygg finansiering var en del av säkerhetsmarginalen själv. För Graham var skillnaden mellan att äga ett bolag och att äga dess skuld skillnaden mellan att stå sist och först i kön — och priset skulle spegla den ordningen.",
+  "ak1Section": "I AK1A:s metodik är den här kursen finansieringsgrunden som KAPITALSTRUKTUR-familjen vilar på: V20 fördjupar återköpens mekanik, st-01 soliditet och räntetäckning, V10 skuldsättningsgraden — och AKM2:s stabilitetsdimension betygsätter finansieringens hela karaktär. Den som behärskar kapitalkostnad, hävstång och utspädning läser därefter varje styrelses utdelnings- och emissionsbeslut som sidor av ett och samma val."
+}

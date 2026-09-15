@@ -294,7 +294,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): GRÖN samma dag, RTO 52–58 s / 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT samma kväll av annan agent (femte RTO-punkten 23,9 s, radbild identisk; härdat: ram-/diskgrind exit 75, städningskontrakt slutet, RÖD väg protokollförs) | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -379,9 +379,11 @@ EnvironmentFile med chmod 600).
 - **Retention 30 dagar är REDAN mekaniserad** i samma cron-rad
   (`find … -mtime +30 -delete`) — härmed dokumenterat; 5 dumpar 11–15 sep,
   regeln tom ännu (korrekt).
-- VÄNTAR huvudagenten (1 radbyte i crontab, testat klart): lägg sist i
-  02:30-kedjan `&& node verktyg/kolla-dump-markorer.mjs --natt
-  >> /tmp/supabase-backup.log 2>&1` — röd natt blir då loggad RÖD.
+- ~~VÄNTAR huvudagenten~~ **VERKSTÄLLT 2026-09-16 av s10-u5 (fabrik):**
+  crontab-radbytet applicerat + testkört helt GRÖNT (se sektion S10-U5)
+  — tillsammans med pgpass-kuren ovan: processlistan ren, varje natt-dump
+  döms av markörkontraktet, RÖD natt låser retention (gamla dumpar
+  behålls tills kedjan är grön).
 - Fullständig rapport: data/forskning/DUMP-MARKORKOLL-2026-09-15.md.
 
 ## S10-U4 — DR-ÖVNINGEN MEKANISERAD: `verktyg/dr-ovning.mjs` (2026-09-15, LEVERERAD)
@@ -475,6 +477,33 @@ EnvironmentFile med chmod 600).
   kontroll hejdade): u3:s kur nr 1 (manifest-unika objekt) är fortfarande ej
   mekaniserad hos huvudagenten.
 - Fullständigt protokoll: data/forskning/DR-VERKTYG-GODKANNANDE-2026-09-15.md.
+
+## S10-U5 — DR-NATTKEDJAN KURAD: övningarnas eftersläpande kurer verkställda (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan redan levererad 4× (fem RTO-punkter) + aktivt
+  syskonfönster på flock-omskrivningen → spårets nästa obehandlade = de tre
+  "VÄNTAR huvudagenten"-kurerna, verkställda av fabriksbarn (samma
+  drift-rättigheter enligt u2:s sudo-bevis). Fullprotokoll:
+  data/forskning/DR-NATTKEDJAN-2026-09-16.md.
+- **Kur 1 — klartextlösenordet BORT:** /home/ak1a/.pgpass (600) +
+  PGPASSFILE i 02:30-cronen; värdet överfördes programmatiskt, återges
+  aldrig. Processlistan ren från och med 09-16 02:30.
+- **Kur 2 — markörvakten mekaniserad i natt-cronen** (u1:s VÄNTAR-rad
+  applicerad + testkörd): GRÖN exit 0 på 29,1 s — db-2026-09-16.sql.gz
+  29,8 MB / 1 287 960 rader via pgpass-vägen, domrad i
+  /tmp/supabase-backup.log. RÖD natt ⇒ retention låses (gamla dumpar
+  behålls). Gamla cron-raden backup:ad 0600 i /tmp (ALDRIG till git).
+- **Kur 3 — kedja 2:s RPO-gap SLUT:** hybrid-sync omkörd efter 7 dygns
+  tystnad (dog 09-09 på HTTP 500 sida 5): system-events-full-2026-09-15
+  .json.gz **160 928 rader / 33 sidor / 26,2 MB** + 10 per-typ-filer.
+  Domkontraktet GRÖNT (22,5 s): 0 felaktiga, **0 dubblett-id**, fönster
+  09-03→09-15. HTTP 500:et TRANSIENTT (ej reproducerbart); indexlösa
+  Range-sorteringen kvarstår som lastkänslighet → composite-index-kön
+  består. Notis: exportören stämplar UTC-datum i filnamnet.
+- **Flock-kursstatus:** VIKS till aktivt syskon (fabrikskollision bevis
+  nr 3 — deras Write 00:41:50 vann, mitt Edit hejdades av läshindret;
+  deras PG17-fönster respekterades, denna agent rörde ej PG).
+
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

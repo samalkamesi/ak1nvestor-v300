@@ -21,6 +21,16 @@
 | 7 | sa-laser-du-en-kvartalsrapport | kvartalsrapport | 815 | UTKAST | data/blogg/sa-laser-du-en-kvartalsrapport.json |
 | 8 | jamforelseindex-relativ-styrka | jämförelseindex | 810 | UTKAST | data/blogg/jamforelseindex-relativ-styrka.json |
 
+## Branschomgången (spår 3, påbörjad 2026-09-15)
+
+Branschguider — en per bransch ur 100-bolagsuniversumet (10 st), svenska först,
+översättningar (en/ar) därefter. Samma mall och samma granskning som ovan;
+utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
+
+| # | Slug | Primärt sökord | Ord | Status | Fil |
+|---|------|----------------|-----|--------|-----|
+| B1 | fastighetsaktier-sa-analyserar-du-fastighetsbolag | fastighetsaktier | 1190 | UTKAST v1 (2026-09-15, s3-u2) | data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag.json |
+
 ---
 
 ## 1. Hur fungerar aktier? Börsen, kursen och utdelningen

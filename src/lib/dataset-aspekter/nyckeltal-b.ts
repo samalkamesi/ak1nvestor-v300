@@ -32,6 +32,7 @@ import {
   lasAspektUniversum,
   MIN_MATTA,
   sammanfatta,
+  sammanfattaUniversum,
   type AspektModule,
   type AspektSida,
   type AspektStat,
@@ -108,6 +109,9 @@ function skapaAspekt(k: AspektKonfig): AspektModule {
         saLaserDu: k.saLaserDu,
         fellerAttUndvika: k.fellerAttUndvika,
         kurslankar: hittaKurslankar(k.sokord),
+        // Universumjämförelse: samma extractor/enhet över alla universumets
+        // rader — vyn renderar bransch-mot-universum av detta.
+        universum: sammanfattaUniversum(k.las, k.enhet === "procent"),
       };
       return sida;
     },

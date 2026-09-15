@@ -25,6 +25,7 @@ import {
   lasAspektUniversum,
   MIN_MATTA,
   sammanfatta,
+  sammanfattaUniversum,
   type AspektModule,
   type AspektSida,
   type AspektStat,
@@ -114,6 +115,9 @@ function nyckeltalsModul(
         saLaserDu: text.saLaserDu,
         fellerAttUndvika: text.fellerAttUndvika,
         kurslankar: hittaKurslankar(text.sokord),
+        // Universumjämförelse (s2-u2): samma extractor/enhet över alla
+        // universumets rader — vyn renderar bransch-mot-universum-blocket.
+        universum: sammanfattaUniversum(hamtaVarde, iProcent),
       };
     },
   };

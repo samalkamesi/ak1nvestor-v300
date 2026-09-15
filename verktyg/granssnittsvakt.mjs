@@ -67,12 +67,27 @@ function lasJournal() {
 }
 
 // Basen mäts varje körning; övriga platser fylls med minst-nyligen-mätta.
+// ROND 29 (Φ, v157-slutled): PRIORITERADE_SEKTIONER mäts FÖRST bland
+// aldrig-mätta — /dataset-aspekternas 130 sidor (v150) väntade annars ut
+// hela /analyser-trädet alfabetiskt (~6 körningar ≈ 36 h). Listan är
+// utbyggbar: nästa täckningsvåg lägger sitt prefix här och tas bort när
+// dess journaltäckning är komplett.
+const PRIORITERADE_SEKTIONER = ["/dataset"];
+function sektionAv(p) {
+  return "/" + (p.split("/")[1] || "");
+}
 function urvalMedJournal(unika) {
   const journal = lasJournal();
   const bas = ["/", "/studio", "/admin"];
+  const prio = (p) => (PRIORITERADE_SEKTIONER.includes(sektionAv(p)) ? 0 : 1);
   const ordnade = unika
     .filter((p) => !bas.includes(p))
-    .sort((a, b) => (journal[a] ?? 0) - (journal[b] ?? 0) || a.localeCompare(b));
+    .sort(
+      (a, b) =>
+        prio(a) - prio(b) ||
+        (journal[a] ?? 0) - (journal[b] ?? 0) ||
+        a.localeCompare(b),
+    );
   const urval = [...new Set([...bas, ...ordnade])].slice(0, SIDOR_MAX);
   const aldrigMatte = unika.filter((p) => !journal[p]).length;
   return { urval, aldrigMatte };

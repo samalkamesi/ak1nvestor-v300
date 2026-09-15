@@ -10717,3 +10717,12 @@ Fynd 1 (infra, rot): gränsnittsvaktens cron-rad var RADERAD ur crontab — enda
 Fynd 2 (bokföring): v152 fas 2 var levererat men odokumenterat — 10/10 kalendrar (data/blogg-utkast/kvartal/2026-q3/), 100/100 bolag maskinverifierade, juridikstickprov 0 mönster, granskningsrond auto-s1 klar. PIPELINE-KO uppdaterad + mega-manifestet 7/7 bokfört.
 v157: journalmekanismen lever men /dataset når mätning först efter ~6 vaktkörningar (alfabetisk kö bland aldrig-mätta) — vågen ligger kvar ◐ ärligt, stängs på journalbevis.
 Rond 27-eftersläp: gap 14 visade sig redan levererat (v164-nav + navigering n1, fil identisk arbetsyta/prod) — det förberedda landningsskriptet kasserades utan körning, dubbelbokföring undveks.
+
+## ROND 29 — 2026-09-15 05:54: v157 /dataset-prioritering + gap 17/21 stängda + fulldelegationsprotokoll [organ:Φ]
+Verkställt (sessionens beslutdel ur styrelse-mu27v0zl): verktyg/granssnittsvakt.mjs får PRIORITERADE_SEKTIONER=["/dataset"] — urvalet mäter de 130 /dataset-aspekterna (v150) FÖRST bland aldrig-mätta, i stället för efter hela /analyser-trädet (~36 h kötid borta).
+Gap 17 (@-filautocomplete, r2a ebba4910) + 21 (toast-stack, r2b 723b51d9) STÄNGDA på live-bevis: prodbygge 07:36 är nyare än leveranserna = koden live i bunlen.
+Bildserverpunkten VERIFIERAD: port 3987 har ingen lyssnare (ss tomt); regeln dokumenterad i PIPELINE-KO — kunduppladdningar serveras endast via localhost, tillfälliga bildservrar är förbjudna.
+Städning: stale organ-arkiv-SENASTE.json (rond 7-dump, ej skriven sedan 2026-09-13) bort ur prod; _rond29-skript städas efter landning.
+Fabriken: register-2 r2c (post 22 keybinding — genvagar.ts pågår i prods träd, barnets fil orörd), r2d (post 23 LaTeX), r2e (post 11 agent-träd) kör vidare; r2a/r2b klara och bevisat byggda.
+Protokoll: fulldelegationssammanträdet (styrelse-mu27v0zl) committas i STYRELSE-BESLUT.md.
+Bevis: commit + push prod; v157 stängs på catch-up-vaktkörningens journalbevis (dataset-täckning + 0 fynd).

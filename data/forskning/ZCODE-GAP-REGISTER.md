@@ -31,11 +31,11 @@
 | 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
 | 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Saknas | 4 | 2 | ÖPPEN | Sökpanel i konversationen med nästa/förra + resultaträkning |
-| 17 | Input-autocomplete @-filer (P2) | Slash finns; @-filuppslag saknas | 4 | 3 | ÖPPEN | Fuzzy @-filreferenser i inmatningen |
+| 17 | Input-autocomplete @-filer (P2) | @-filuppslag: fuzzy-match, 52 px-rader, listbox/aria, debounce 200 ms, infogning med markör | 4 | 3 | STÄNGD (r2a, ebba4910; prodbygge 07:36) | — |
 | 18 | Turmarkörer + hopp mellan turer (P3) | Saknas | 3 | 1 | ÖPPEN | Knapp/genväg föregående/nästa tur — para med #16 |
 | 19 | Hopp-till-slut-indikator (P4) | Saknas | 3 | 1 | ÖPPEN | Klickbar etikett vid uppscrollning |
 | 20 | Stora paste-markörer (P5) | Rå dump | 3 | 1 | ÖPPEN | Kollapsa >N rader till expanderbar markör |
-| 21 | In-app toast-stack (P6) | Enstaka statusrader | 3 | 1 | ÖPPEN | Staplade självförsvinnande notiser |
+| 21 | In-app toast-stack (P6) | Staplade självförsvinnande notiser, live-region, stäng-klick, mobil-safe-area | 3 | 1 | STÄNGD (r2b, 723b51d9; prodbygge 07:36) | — |
 | 22 | Keybinding-manager (P7) | Hårdkodade genvägar | 3 | 2 | ÖPPEN | Remappbara genvägar med listning |
 | 23 | LaTeX-formler i svar (P8) | Saknas | 2 | 2 | ÖPPEN | Syskon till #10 — samma renderarrör |
 

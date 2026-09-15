@@ -172,14 +172,13 @@ Agent-anrop, 4+ via fabriksmanifest.
   väntar kundpublicering (R2 — godkännandeytan g1 lever, 401-skyddad rutt).
   Fas 3 (läsårt-paket per rappdag, kartan 194e463a) redo att dispatchas.
   startar när fas 2-kalendern levererar.
-- ◐ VÅG 157 (mekanism BEVISAD, täckning ackumulerar): journalen lever
-  (vakt-sidjournal.json, 24 sidposter) men 0 /dataset/-sidor ännu —
-  urvalet (aldrig-mätta först, alfabetiskt sekundärt) arbetar sig igenom
-  /analyser-trädet före /dataset. Rond 28-rotfynd: vakt-cron-raden var
-  RADERAD ur crontab (sista rop 01:17 GRÖN) — återinstallerad + verifierad
-  (17 1,7,13,19) + catch-up-körning 06:37. ~6 körningar ≈ 36 h till full
-  130-sidors dataset-täckning. Stängs när journalen visar dataset-täckning
-  + 0 fynd.
+- ◐ VÅG 157 (mekanism BEVISAD, /dataset-prioritering verkställd rond 29):
+  journalen lever (vakt-sidjournal.json) men 0 /dataset/-sidor ännu —
+  rond 29 (Φ) ändrade urvalet: PRIORITERADE_SEKTIONER=["/dataset"] mäts
+  FÖRST bland aldrig-mätta (verktyg/granssnittsvakt.mjs) — 130 aspekter
+  når mätning direkt (~21 platser/körning) i stället för efter hela
+  /analyser-trädet (~36 h). Vakt-cron läkt rond 28 (17 1,7,13,19).
+  Stängs när journalen visar dataset-täckning + 0 fynd.
 - ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
   (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
   API-kostnad; regressionstest mot befintliga svar. R2-säker.
@@ -187,3 +186,13 @@ Agent-anrop, 4+ via fabriksmanifest.
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
 - · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)
+- ◐ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt. ROND 29: r2a (17) + r2b (21) klara + bevisat byggda (prodbygge 07:36) — gap STÄNGDA i registret; r2c (22) / r2d (23) / r2e (11) pågår i fabriken.
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200).
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Sessionen: /dataset-prioritering i vakturvalet, stäng v157 på journalbevis.
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | R2-påminnelse: 11 FLYTTKLAR väntar kundens knapp i godkännandeytan — verkställs aldrig av organen.
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Bokför per rond: worklog + beslutsminne + commit [organ:T] + push prod.
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Bygg konfigintegritetsvakten (direkt agent) — git-versionerade referensfiler för crontab/systemd/nginx, verifiering var 10:e minut, larm vid drift; filägarskap verktyg/konfigintegritet-vakt.mjs
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Härdning av godkännandeytans rutter (direkt agent) — admin-session på varje endpoint inkl publicera, hastighetstak, append-only audit-rad per publicering; filägarskap src/app/api/studio/godkannande/**
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Register 23 LaTeX-rendering med Mermaid-saneringsmönstret (direkt agent), medan fabriken fortsätter auto-s2/dataset-djup
+- ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Verifiera bildservern på port 3987 är död + dokumentera regeln: kunduppladdningar serveras endast via localhost — VERIFIERAD rond 29 (Φ): ss visar INGEN lyssnare på 3987. REGEL: kunduppladdade bilder serveras endast via localhost (bildanalysverktyg når dem aldrig externt; tillfälliga bildservrar är förbjudna).
+- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Auditlogg-hook för fabriksbarns död/OOM så framtida nattkriser lämnar spår i spårbarheten

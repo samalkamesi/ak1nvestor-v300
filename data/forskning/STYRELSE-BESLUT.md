@@ -116,3 +116,27 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Dokumentera beslutet: PIPELINE-KO med minst 3 kommande vågor, rond-protokoll i worklog samt beslutsminnesrad med åtgärdslista och ansvarigt organ
   10. När godkännandeytan lever: mät köns genomströmning (FLYTTKLAR till publicerad) och mata nästa fabriksvåg med sökordsradar-manifest samt internlänk/strukturdatamodul
 - **Mötes-id:** styrelse-mu1ub91v-g3c8sx
+
+## 2026-09-15 05:17 — STYRELSESAMMANTRÄDE — FULL DELEGATION (kundens stående direktiv 2026-09-15: fortsätt och fortsätt, fråga inte mig mer — fråga ai styrelse organen, de har full access till precis allt). Kundfrågor upp…
+
+- **Status:** KÖRS DIREKT (existential=false)
+- **Beslut:** Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de 3 inkomna organanalyserna.
+- **Motivering:** 3 av 5 organ redovisade analys; 2 var inte tillgängliga inom tidsgränsen. Fråga: STYRELSESAMMANTRÄDE — FULL DELEGATION (kundens stående direktiv 2026-09-15: fortsätt och fortsätt, fråga inte mig mer — fråga ai styrelse organen, de har full access till precis allt). Kundfrågor upphör: ALLA operativa beslut är era. R2-kärnan (priser/domän/extern publicering/nycklar/juridik-raderi…
+- **Roller:**
+  - ORDFORANDE: Rollen kunde ej redovisa: tidsgräns (50 s) — rollen redovisas som ute
+  - TEKNIK: MINNE LADDAT — tråden står efter rond 28 (vaktkronen återinstallerad, v152 fas 2 + mega 7/7 bokförda, `273024d1` i prod); nu svarar jag som Teknik (CTO) på sty…
+  - SAKERHET: MINNE LADDAT — tråden står efter rond 28 (vakt-cron läkt, vakten GRÖN 0 fynd, v152 + mega 7/7 bokförda, fabriken kör auto-s2); detta är Säkerhet-organets (CISO…
+  - JURIDIK: Rollen kunde ej redovisa: tidsgräns (90 s) — rollen redovisas som ute
+  - TILLVAXT: MINNE LADDAT — tråden står vid styrelsens fulldelegationssammanträde (rond 29): fabriken kör SEO-branschomgången (s3-u1/u2 levererade), 11 FLYTTKLAR väntar kun…
+- **Åtgärder:**
+  1. Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt.
+  2. Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200).
+  3. Sessionen: /dataset-prioritering i vakturvalet, stäng v157 på journalbevis.
+  4. R2-påminnelse: 11 FLYTTKLAR väntar kundens knapp i godkännandeytan — verkställs aldrig av organen.
+  5. Bokför per rond: worklog + beslutsminne + commit [organ:T] + push prod.
+  6. Bygg konfigintegritetsvakten (direkt agent) — git-versionerade referensfiler för crontab/systemd/nginx, verifiering var 10:e minut, larm vid drift; filägarskap verktyg/konfigintegritet-vakt.mjs
+  7. Härdning av godkännandeytans rutter (direkt agent) — admin-session på varje endpoint inkl publicera, hastighetstak, append-only audit-rad per publicering; filägarskap src/app/api/studio/godkannande/**
+  8. Register 23 LaTeX-rendering med Mermaid-saneringsmönstret (direkt agent), medan fabriken fortsätter auto-s2/dataset-djup
+  9. Verifiera bildservern på port 3987 är död + dokumentera regeln: kunduppladdningar serveras endast via localhost
+  10. Auditlogg-hook för fabriksbarns död/OOM så framtida nattkriser lämnar spår i spårbarheten
+- **Mötes-id:** styrelse-mu27v0zl-lqp458

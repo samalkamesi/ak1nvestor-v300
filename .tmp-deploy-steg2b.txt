@@ -1,0 +1,33 @@
+TSC FEL EFTER MERGE — AVBRYTER PUSH
+=== MERGE prod/develop in i ARB ===
+OK
+Merge made by the 'ort' strategy.
+ .../lasbarhet-fore-rond4-prod-2026-09-15.json      | 443 +++++++++++++++++++++
+ .../OPTIMERING/o8-mobil-lasbarhet-52px.md          |  45 +++
+ src/components/ak1a/brodkrumma.tsx                 |   2 +-
+ src/components/ak1a/forskningslage-kort.tsx        |   4 +-
+ src/components/ak1a/kallkort.tsx                   |   2 +-
+ src/components/ak1a/kurs-sok.tsx                   |   4 +-
+ .../ak1a/portfolj-forskning/bygg-portfolj-kort.tsx |   2 +-
+ src/components/ak1a/social-proof.tsx               |   4 +-
+ worklog.md                                         |  62 +--
+ 9 files changed, 500 insertions(+), 68 deletions(-)
+ create mode 100644 data/forskning/OPTIMERING/lasbarhet-fore-rond4-prod-2026-09-15.json
+
+=== ARB HEAD efter merge ===
+3c87c434 Merge branch 'develop' of /home/ak1a/AK1 into develop
+
+
+=== Bevis: våg 172-filer i träd ===
+src/app/api/studio/tjanster/resync-v4/route.ts
+src/lib/studio/studio-transport.ts
+
+
+=== tsc --noEmit (kan ta någon minut) ===
+TSC FEL:
+Command failed: git -C /home/ak1a/agent/ak1 exec -- npx tsc --noEmit
+git: 'exec' is not a git command. See 'git --help'.
+
+The most similar commands are
+	replace
+	reset

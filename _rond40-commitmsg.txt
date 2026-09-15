@@ -1,0 +1,28 @@
+studio: [organ:Φ] våg 172 — GAP 25 v4/conversation/resync: gap-återhämtning FÖRE Write/Edit-motorn + unsubscribe-hygien + observabilitetsrutt
+
+V4-LAGRET §2 #6 (V9/A3 — registrets högst rankade öppna post): resync
+returnerar initialWires (postas via response-outbox + commit) — korrekt
+gap-återhämtning efter gateway-omstart/missade ramar. Tidigare föll
+lasFilandringar() på Write/Edit-motorn när SAMTLIGA baseRevision-kandidater
+blivit stale; nu är resync sista utvägen FÖRE motorn:
+
+1. TRANSPORT lasV4Resync(): protokollFraga v4/conversation/resync med
+   topic/connectionId/clientMode (+baseLogEpoch om spårad); väntar 1,2 s på
+   response-outbox-ramar som uppdaterar v4Revision via påNotis
+   (state.updated) och v4LogEpoch via ack-form. Fel-tolerant {utford:false}
+   — ALDRIG kast. Deklarerad i StudioTransport-interfacet + ärlig
+   {utford:false}-mock (MockTransport har ingen v4-gateway).
+2. lasFilandringarV4(): fileChanges-försöket extraherat till
+   hamtaFilandringarV4EttFörsök (null=stale, array=svar, kast=annat fel —
+   oförändrad parse, semantik bevarad); vid stale-utmattning ⇒ resync ⇒
+   ETT sista försök om v4Revision ökade. Ej-stale fel ger fortfarande upp
+   v4-grenen exakt som förr.
+3. HYGIEN (V4-LAGRET §8): stangHelt() skickar nu bäst-effort
+   v4/conversation/unsubscribe {connectionId} FÖRE session/close — studion
+   läckte prenumerationer serverside vid nedstängning.
+4. RUTT /api/studio/tjanster/resync-v4 (syskon till usage-v4): GET,
+   requireAdmin, fel-tolerant 200 — återhämtningen blir observabel och
+   utlösbar utanför diff-flödet (drift + tester).
+
+KVD: tsc 0 (baslinje hållen). Bygg + deploy + live-bevis körs under
+flock direkt efter denna commit (401-härdad rutt = monterad).

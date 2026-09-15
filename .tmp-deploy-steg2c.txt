@@ -1,0 +1,10 @@
+=== tsc --noEmit i ARB (projektbinär) ===
+tsc exit-kod: 0
+TSC: 0 FEL
+
+=== PUSH develop -> prod ===
+PUSH OK
+
+
+=== PROD HEAD efter push ===
+3c87c434 Merge branch 'develop' of /home/ak1a/AK1 into develop

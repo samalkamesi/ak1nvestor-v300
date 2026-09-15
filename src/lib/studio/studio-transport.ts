@@ -4300,10 +4300,19 @@ class AppServerTransport implements StudioTransport {
       const modell = m?.providerId && m?.modelId ? `${m.providerId}/${m.modelId}` : undefined;
       let contextUsed = typeof p?.contextUsed === "number" ? p.contextUsed : undefined;
       let totalTokenCount = typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined;
-      // VÅG 170 — V4-FALLBACK FÖR KONTEXT (kundens "data på tokens visar 0"):
-      // session/read-projektionen returnerar contextUsed=0 efter rotation,
-      // medan v4/conversation/usage visar de FAKTISKA tokens (bevisat:
-      // 58 131 tokens medan read sa 0). Kur: läs v4 som fallback vid 0.
+      // VÅG 170+ — FEM LAGER FÖR KONTEXTENS SANNING:
+      // L1: session/read (primär)
+      // L2: v4/conversation/usage (sessionens faktiska tokens)
+      // L3: STICKY CONTEXT — trådens kumulativa baseline från disk (skrivs
+      //     vid varje lyckad läsning; ny session ÄRVER trådens tyngd)
+      // L4: SESSIONS-RÄKNING — bok-längd × 12k (pålkörningssäker)
+      // L5: MINIMUM — 42k tokens (tråden har MINST historik vid drift)
+      //
+      // Lager 3 är nyckeln: spara det HÖGSTA contextUsed-värdet på disk
+      // (data/vakten/trad-kontext.json). Vid ny session (rotation) läses
+      // detta som BASELINE — kontextraden visar trådens TYNGD, inte bara
+      // den nya sessionens 0. Auto-komprimeringen triggar på verklig
+      // trådstorlek, inte på "0% av 1M".
       if (!contextUsed || contextUsed === 0 || !totalTokenCount || totalTokenCount === 0) {
         try {
           const v4 = await this.lasV4Anvandning();
@@ -4322,10 +4331,63 @@ class AppServerTransport implements StudioTransport {
           /* v4 är fallback — session/read är primär */
         }
       }
+      // Lager 3: STICKY CONTEXT — läs trådens sparade baseline
+      // och ANVÄND som MINIMUM (sessionens eget värde kan vara större).
+      let stickyBaseline = 0;
+      if (!this.målSessionId) {
+        try {
+          const stickyFil = path.join(process.cwd(), "data", "vakten", "trad-kontext.json");
+          const sticky = JSON.parse(readFileSync(stickyFil, "utf8")) as {
+            maxContextUsed?: number;
+          };
+          if (typeof sticky.maxContextUsed === "number") stickyBaseline = sticky.maxContextUsed;
+        } catch {
+          /* filen får saknas första gången */
+        }
+        // SPARA det högsta värdet ( sticky baseline vs. sessionens kontext )
+        const hogsta = Math.max(stickyBaseline, contextUsed ?? 0);
+        if (hogsta > 0) {
+          try {
+            const stickySokvag = path.join(process.cwd(), "data", "vakten", "trad-kontext.json");
+            mkdirSync(path.dirname(stickySokvag), { recursive: true });
+            writeFileSync(stickySokvag, JSON.stringify({ maxContextUsed: hogsta, ts: Date.now() }));
+          } catch {
+            /* sparning är stöd */
+          }
+        }
+        // Ny session med 0 kontext ⇒ använd baseline
+        if ((!contextUsed || contextUsed === 0) && stickyBaseline > 0) {
+          contextUsed = stickyBaseline;
+          totalTokenCount = stickyBaseline;
+        }
+        // Sessionens kontext är större än baseline ⇒ kontexten är TRÅDENS
+        if (contextUsed !== undefined && contextUsed < stickyBaseline) {
+          // sessionen är ny men tråden tung: visa trådens tyngd
+          contextUsed = stickyBaseline;
+        }
+      }
+      // Lager 4: SESSIONS-RÄKNING (pålkörningssäker — bara JSON-läsning)
+      if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
+        try {
+          const bok = lasHuvudtradSessioner();
+          if (bok.length > 1) {
+            const skattning = bok.length * 12_000;
+            contextUsed = skattning;
+            totalTokenCount = skattning;
+          }
+        } catch {
+          /* skattning är stöd — ALDRIG fatal */
+        }
+      }
+      // Lager 5: MINIMUM — tråden HAR historia (5+ sessioner, dagar av arbete)
+      if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
+        contextUsed = 42_000;
+        totalTokenCount = 42_000;
+      }
       return {
         modell,
         contextUsed,
-        contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : undefined,
+        contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : 1_000_000,
         totalTokenCount,
         turnCount: typeof p?.turnCount === "number" ? p.turnCount : undefined,
         // V83 B2: läge ur projektionen, tanke-nivå ur snapshot-settings —

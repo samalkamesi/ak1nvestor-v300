@@ -9588,5 +9588,175 @@
       "fcf": []
     },
     "notering": "bankkonvention som GS/JPM-raderna: roic/skuld-EK/EV-EBIT ej meningsfullt jämförbart — null; fcfYield/fcfMarginal null (källans fritt kassaflöde −54,7 mdr USD = kundmedelsflöden, ej utdelningskapacitet); brutto-/EBIT-marginal n/a för bank hos källan — null; serier i USD (källan standardiserar LSE-noteringen till USD — CAGR opåverkad, nivåer ej i GBX); prognosTillväxt härledd ur trailing/forward-P/E (16,60/11,38 ⇒ +45,9 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent (källans egen PEG 1,28 bygger på 3-årsprognos +10,79 % — TTE-konventionen används för universumets jämförbarhet); CAGR över 4 räkenskapsår (2022–2025, 3 perioder); utdelning 0,56 GBP/aktie = 3,65 % direktavkastning, utdelningskvot 60,4 % (aterkop-fält null: insiderdata saknas hos källan); ROE/nettomarginal ur källans statistics-sida; universumets första brittiska bolag (landstäckning 11 → 12 länder)"
+  },
+  {
+    "ticker": "TEL.OL",
+    "namn": "Telenor ASA",
+    "bransch": "kommunikation",
+    "land": "Norge",
+    "valuta": "NOK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/osl/TEL/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 134.8,
+    "marknadsKapitalMdr": 185.25,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0014,
+      "resultatCAGR5ar": -0.461,
+      "omsattningTillvaxtTTM": 0.0227,
+      "prognosTillvaxt": -0.22
+    },
+    "lonksamhet": {
+      "roe": 0.2504,
+      "roic": 0.1108,
+      "bruttoMarginal": 0.6488,
+      "ebitMarginal": 0.2345,
+      "nettoMarginal": 0.1573,
+      "fcfMarginal": 0.2401
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.28,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 11.59,
+      "pb": 2.72,
+      "evEbit": 12.76,
+      "peg": null,
+      "fcfYield": 0.0976,
+      "egenKapitalMultipl": 2.72
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        76877000000,
+        80452000000,
+        75487000000,
+        76548000000
+      ],
+      "resultat": [
+        44913000000,
+        13734000000,
+        18336000000,
+        7034000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i NOK; prognosTillvaxt härledd ur trailing/forward-P/E (11,59/14,86 ⇒ −22,0 % implicit EPS-förändring); peg osatt vid negativ implicit tillväxt (ORSTED-konventionen — källans egen PEG 1,52 bygger på 3-årsprognos +7,0 %); resultatCAGR endpoint över 4 räkenskapsår (2022–2025): 2022-resultatet uppblåst av asiatiska avyttringar — ej driftstrend; fcfYield/marginaler/ROE/ROIC ur källans statistics-sida; CAGR över 4 räkenskapsår (3 perioder)"
+  },
+  {
+    "ticker": "DTE.DE",
+    "namn": "Deutsche Telekom AG",
+    "bransch": "kommunikation",
+    "land": "Tyskland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/etr/DTE/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 28.85,
+    "marknadsKapitalMdr": 138.81,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0133,
+      "resultatCAGR5ar": 0.063,
+      "omsattningTillvaxtTTM": 0.0223,
+      "prognosTillvaxt": 0.3455
+    },
+    "lonksamhet": {
+      "roe": 0.1506,
+      "roic": 0.0852,
+      "bruttoMarginal": 0.4489,
+      "ebitMarginal": 0.2111,
+      "nettoMarginal": 0.0701,
+      "fcfMarginal": 0.2349
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.65,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 16.2,
+      "pb": 1.56,
+      "evEbit": 11.95,
+      "peg": 0.47,
+      "fcfYield": 0.2085,
+      "egenKapitalMultipl": 1.56
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        117074000000,
+        114733000000,
+        118432000000,
+        121816000000
+      ],
+      "resultat": [
+        8001000000,
+        17788000000,
+        11209000000,
+        9609000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i EUR; prognosTillvaxt härledd ur trailing/forward-P/E (16,20/12,04 ⇒ +34,6 % implicit EPS-tillväxt); peg = P/E/prognostillväxt i procent enligt TTE-konventionen (källans egen PEG 0,85 bygger på 3-årsprognos +11,5 %); resultatCAGR endpoint över 4 räkenskapsår (2022–2025): 2023 förstärkt av engångsposter — ej driftstrend; fcfYield 20,85 % inkluderar T-Mobile USA-konsolidering (källans tal); ROE/ROIC/marginaler ur källans statistics-sida; CAGR över 4 räkenskapsår (3 perioder)"
   }
 ]

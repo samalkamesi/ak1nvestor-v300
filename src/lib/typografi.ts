@@ -23,10 +23,20 @@ import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
  *      ordning; se kommentaren vid instansen nedan).
  */
 
+// VÅG s7-u3 (2026-09-15, prestandaspåret): ALLA fyra fonter display:
+// "optional" (var "swap"). Bevis — Lighthouse mobil + CDP-skiftsond
+// (verktyg/prestanda-skiftspar.mjs): vid font-swap ändrade radbrytningen
+// +32 px i hero och −32 px i sifferbandet på / → CLS 0,125 (de enda
+// skiften som fanns; /kurser och /blogg = 0). "optional" målar fallback
+// EN gång och byter aldrig → noll skift, alltid. Fonterna preloadas och
+// serveras lokalt (~50 kB) → vid normala uppkopplingar hinner riktig
+// font fram inom blockperioden; endast first-visit på mycket långsamt
+// nät ser systemfont för den visningen (därefter cachad). Beslut inom
+// spårets beslutsyta (preload/weights-redan beslutade i v68/v96 kvarstår).
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 // VÅG 68 PRESTANDA B (o1 #9): Source Serif delas i två instanser — normal
@@ -37,7 +47,7 @@ const inter = Inter({
 const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   weight: ["400", "600", "700"],
   style: ["normal"],
 });
@@ -45,7 +55,7 @@ const sourceSerif = Source_Serif_4({
 const sourceSerifKursiv = Source_Serif_4({
   variable: "--font-serif-kursiv",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   weight: ["400", "600", "700"],
   style: ["italic"],
   preload: false,
@@ -54,7 +64,7 @@ const sourceSerifKursiv = Source_Serif_4({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   // VÅG 96 D1 (prestanda våg 3): mono preloads INTE längre. Prod-mätning
   // 2026-09-11: 3 woff2 preloadades på ALLA sidor (50+47+40 kB opak) men
   // startsidans HTML har 0 font-mono/verify-stamp-förekomster — monospace

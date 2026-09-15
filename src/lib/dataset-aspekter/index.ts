@@ -20,14 +20,20 @@ import { branschSlugs, lasBranschMedianer } from "../dataset-medianer";
 import { aspekter as landAspekter } from "./land";
 import { aspekter as nyckeltalA } from "./nyckeltal-a";
 import { aspekter as nyckeltalB } from "./nyckeltal-b";
+import { aspekter as multiplAspekter } from "./nyckeltal-pe-pb";
+import { omsattningTillvaxtTtm } from "./omsattning-tillvaxt-ttm";
+import { aspekter as universumAspekter } from "./universum";
 import { aspekter as varderingAspekter } from "./vardering";
 
-/** Alla fas A-moduler (15 aspekter): nyckeltal A + B, land, värderingshub. */
+/** Alla moduler (19 aspekter): nyckeltal A + B + P/E-P/B, land, värdering, universumjämförelse, TTM-tillväxt. */
 export const aspektModuler: AspektModule[] = [
   ...nyckeltalA,
   ...nyckeltalB,
+  ...multiplAspekter,
   ...landAspekter,
   ...varderingAspekter,
+  ...universumAspekter,
+  omsattningTillvaxtTtm,
 ];
 
 /** Aspekt-slug → modul (rutten slår upp params mot detta). */

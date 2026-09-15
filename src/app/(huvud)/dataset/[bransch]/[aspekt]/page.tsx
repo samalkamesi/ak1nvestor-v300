@@ -74,5 +74,8 @@ export default async function DatasetAspektSida({
       titel: (aspektUrSlug(p.aspekt)?.titel(namn) ?? p.aspekt).split(" — ")[0],
     }));
 
-  return <AspektVy sida={sida} hamtat={lasAspektUniversum().hamtat} syskon={syskon} />;
+  const { rader, hamtat } = lasAspektUniversum();
+  return (
+    <AspektVy sida={sida} hamtat={hamtat} antalBolag={rader.length} syskon={syskon} />
+  );
 }

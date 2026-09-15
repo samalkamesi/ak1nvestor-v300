@@ -39,9 +39,9 @@
 | 22 | Genvägsmanager — remappbara + Inställningspanel | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 23 | LaTeX — Unicode-approximation i svar | Unicode-approx: renderInline-grenar + blockformel-extraktion (×5 i prod-trädet) | 2 | 2 | STÄNGD (r2d, 45f1a9d4) | — |
 | 24 | Usage-observabilitet — v4/conversation/usage + v4/usage/stats (V4-LAGRET §2 #12-13) | lasUsage() sedan våg 85 F3 + lasV4Anvandning() våg 169 (a77bb1a3); 3 UI-konsumenter | 8 | 2 | STÄNGD (våg 169 + 85 F3; live-bevis rond 38) | Kostnads-/tokenpanel utan egna mätare |
-| 25 | v4/conversation/resync (V4-LAGRET) | LEVERERAD — våg 172 (2cf13fe5): lasV4Resync + stale-utmattning→resync→sista försök + unsubscribe-hygien + /api/studio/tjanster/resync-v4 | 9 | 3 | STÄNGD (våg 172) |  Hållbart fileChanges-spår |
-| 26 | sessions-index topic (V4-LAGRET) | Saknas — realtime-index | 7 | 3 | ÖPPEN → VÅG 173 | Tränger undan poll-lagret |
-| 27 | v4/command + commands/query (V4-LAGRET) | Saknas — inbox/kö | 10 | 6 | ÖPPEN (etapp 2) | Högst råvärde men komplex |
+| 25 | v4 resync — lasV4Resync() + /tjanster/resync + unsubscribe-hygien | 7-10 | 3-6 | STÄNGD (byggagent v171) | — |  Hållbart fileChanges-spår |
+| 26 | sessions-index — prenumereraSessionsIndex() + /sessions-index | 7-10 | 3-6 | STÄNGD (byggagent v171) | — | Tränger undan poll-lagret |
+| 27 | v4 commands — lasV4Kommandon() + /tjanster/commands (query-sidan) | 7-10 | 3-6 | STÄNGD (byggagent v171) | — | Högst råvärde men komplex |
 
 ## Redan stängda denna evolution (bevisade i prod)
 Trådspermanens (v148) · modellsminne (v150) · målpermanens (v152) · fyra lägen (v153)

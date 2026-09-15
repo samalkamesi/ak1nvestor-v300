@@ -1,0 +1,112 @@
+{
+  "bransch": "energi",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "bolag": [
+    {
+      "ticker": "AKRBP.OL",
+      "namn": "Aker BP ASA",
+      "land": "Norge",
+      "rapportfenster": "2026-10-29",
+      "notera": "Kvartalsvis rapportrytm; Q4-rapporten kommer i februari 2027 enligt bolagets kalender. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Aker BP — finansiella kalendern (hämtdatum 2026-09-15)", "url": "https://akerbp.com/en/investor/calendar/" }
+      ]
+    },
+    {
+      "ticker": "CVX",
+      "namn": "Chevron Corporation",
+      "land": "USA",
+      "rapportfenster": "2026-10-30 (estimat)",
+      "notera": "Kvartalsvis rapportrytm. Datumet är ett tredjepartsestimat baserat på sedvana (fredag i sista veckan i oktober) — bolaget bekräftar exakt datum via pressrelease nära rapporten. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "MarketBeat — CVX earnings (hämtdatum 2026-09-15)", "url": "https://www.marketbeat.com/stocks/NYSE/CVX/earnings/" },
+        { "namn": "Chevron — Investor events (officiell bekräftelse väntas här, hämtdatum 2026-09-15)", "url": "https://www.chevron.com/investors/events-presentations" }
+      ]
+    },
+    {
+      "ticker": "ENEL.MI",
+      "namn": "Enel SpA",
+      "land": "Italien",
+      "rapportfenster": "2026-11-11 eller 2026-11-12 (tredjepart, divergerande)",
+      "notera": "Italiensk ryttem med delårsrapporter; Q3 redovisas som nio månader. Enels officiella 2026-kalender listar hittills Q1, halårs och helår — Q3-datumet är tredjepartsestimat där källorna divergerar (MarketScreener 11/11, Investing/Yahoo/Zacks 12/11). Bekräfta mot Enels IR-sida nära rapporten. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Enel — Financial reports (officiell IR-sida, hämtdatum 2026-09-15)", "url": "https://www.enel.com/investors/financials" },
+        { "namn": "Investing.com — Enel nästa rapport (hämtdatum 2026-09-15)", "url": "https://www.investing.com/equities/enel-earnings" }
+      ]
+    },
+    {
+      "ticker": "EQNR.OL",
+      "namn": "Equinor ASA",
+      "land": "Norge",
+      "rapportfenster": "2026-10-28",
+      "notera": "Kvartalsvis rapportrytm med analystkonferens samma dag; Q3 brukar presenteras sista veckan i oktober. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Equinor — IR/Q3 2026 analyst conference (hämtdatum 2026-09-15)", "url": "https://www.equinor.com/investors/q3-2026-analyst-conference" },
+        { "namn": "Equinor — Quarterly results (hämtdatum 2026-09-15)", "url": "https://www.equinor.com/investors/quarterly-results" }
+      ]
+    },
+    {
+      "ticker": "FORTUM.HE",
+      "namn": "Fortum Oyj",
+      "land": "Finland",
+      "rapportfenster": "2026-10-28 ca 09:00 finsk tid",
+      "notera": "Nordisk ryttem: tre delårsrapporter + halårsrapport; Q3 redovisas som januari–september. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Fortum — Investors: Calendar and events (hämtdatum 2026-09-15)", "url": "https://www.fortum.com/investors/calendar-and-events" }
+      ]
+    },
+    {
+      "ticker": "IBE.MC",
+      "namn": "Iberdrola, S.A.",
+      "land": "Spanien",
+      "rapportfenster": "2026-10-21 kl 09:30 spansk tid",
+      "notera": "Spansk ryttem: Q3 redovisas som nio månader ('nueve meses') med presentation 09:30–11:00 Madrid-tid. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Iberdrola — Calendario financiero (hämtdatum 2026-09-15)", "url": "https://www.iberdrola.com/accionistas-inversores/accionistas/calendario-accionistas-inversores" }
+      ]
+    },
+    {
+      "ticker": "RWE.DE",
+      "namn": "RWE Aktiengesellschaft",
+      "land": "Tyskland",
+      "rapportfenster": "2026-11-11",
+      "notera": "Tysk ryttem: Q3 publiceras som 'interim statement' för första tre kvartalen (ej full kvartalsrapport); helåret kommer i mars 2027. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "RWE — Financial Calendar & Publications (hämtdatum 2026-09-15)", "url": "https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/" }
+      ]
+    },
+    {
+      "ticker": "SHEL",
+      "namn": "Shell plc",
+      "land": "USA",
+      "rapportfenster": "2026-10-29",
+      "notera": "Kvartalsvis ryttem; Q3-datumet angavs i bolagets Q2-2026-pressmaterial och bekräftas av kalenderkällor. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Shell — Quarterly results (hämtdatum 2026-09-15)", "url": "https://www.shell.com/investors/results-and-reporting/quarterly-results.html" },
+        { "namn": "MarketBeat — SHEL earnings (hämtdatum 2026-09-15)", "url": "https://www.marketbeat.com/stocks/NYSE/SHEL/earnings/" }
+      ]
+    },
+    {
+      "ticker": "VAR.OL",
+      "namn": "Vår Energi ASA",
+      "land": "Norge",
+      "rapportfenster": "2026-10-21 kl 07:00 norsk tid",
+      "notera": "Kvartalsvis rapportrytm; bolaget ger dessutom en trading update för Q3 redan 2026-10-12 enligt kalendern. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "Vår Energi — Financial calendar (hämtdatum 2026-09-15)", "url": "https://varenergi.no/en/investor/financial-calendar/" }
+      ]
+    },
+    {
+      "ticker": "XOM",
+      "namn": "ExxonMobil Holdings Corporation",
+      "land": "USA",
+      "rapportfenster": "2026-10-30 (estimat; spannet anges 2026-10-30 till 2026-11-03)",
+      "notera": "Kvartalsvis rapportrytm. Datum ej officiellt bekräftat — tredjepartsestimat (flera källor 30/10, MarketChameleon spannet 30/10–3/11, Investing.com avviker med 23/10). Bekräfta mot bolagets IR-sida nära rapporten. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        { "namn": "ExxonMobil — Investor relations (officiell bekräftelse väntas här, hämtdatum 2026-09-15)", "url": "https://investor.exxonmobil.com/" },
+        { "namn": "MarketBeat — XOM earnings (hämtdatum 2026-09-15)", "url": "https://www.marketbeat.com/stocks/NYSE/XOM/earnings/" }
+      ]
+    }
+  ]
+}

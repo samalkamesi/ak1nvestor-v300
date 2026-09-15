@@ -262,6 +262,38 @@ async function jagaDrift(pass) {
 }
 
 // ── F7: SECURITY ─────────────────────────────────────────────────────────────
+// s8-härdning (2026-09-15) — tre konstruktionsbrister kurade:
+// (1) BEVIS får ALDRIG bära träffraden: gamla bokfor skrev grep-resultatet
+//     (med nyckelns 12 första tecken) in i feljakt-fynd.jsonl — som F7:s
+//     EGEN sökning skannar varje jakt ⇒ en äkta träff hade blivit en
+//     självreplikerande nyckelläcka som aldrig kan gröna. Nu: endast fil:rad.
+// (2) Täckning: gamla globben data/vakten/*.log *.jsonl såg ENBART
+//     toppnivåfilerna — agentfabrikens underkataloger (ko/status/utdata med
+//     barnens fulla svar!) och .json/.txt var blinda fläckar. Nu: rekursivt,
+//     alla filtyper.
+// (3) Skal-frihet: prefixet interpolerades i ett execSync-kommando — citation
+//     i lösenordet hade brutit sökningen. Nu: in-process-sökning, värdet lämnar
+//     aldrig processen förrän matchat som radnummer.
+function sokNyckel(katalog, prefix) {
+  const traff = [];
+  let filer = 0;
+  (function vand(dir) {
+    let entries;
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const e of entries) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { vand(p); continue; }
+      filer++;
+      let txt = "";
+      try { txt = fs.readFileSync(p, "utf8"); } catch { continue; }
+      const rader = [];
+      txt.split("\n").forEach((rad, i) => { if (rad.includes(prefix)) rader.push(i + 1); });
+      if (rader.length) traff.push({ fil: path.relative(ROT, p), rader: rader.slice(0, 3), antal: rader.length });
+    }
+  })(katalog);
+  return { traff, filer };
+}
+
 function jagaSecurity() {
   // .env i git?
   try {
@@ -271,17 +303,15 @@ function jagaSecurity() {
     if (tracked !== "NEJ") bokfor("F7-security", "KRITISK", ".env.production.local är git-spårad!", "git ls-files");
     else gron("F7-security", ".env ej i git");
   } catch { /* */}
-  // Nycklar i loggar?
+  // Nycklar i vakt-ytan?
   try {
     const pass = lasPass();
     if (pass && pass.length > 5) {
-      const grepResult = execSync(
-        `grep -r "${pass.slice(0, 12)}" data/vakten/*.log data/vakten/*.jsonl 2>/dev/null | head -3 || echo REN`,
-        { cwd: ROT, timeout: 15_000, encoding: "utf8" },
-      ).trim();
-      if (grepResult && grepResult !== "REN") {
-        bokfor("F7-security", "KRITISK", "admin-nyckel i vakt-loggar!", grepResult.slice(0, 80));
-      } else gron("F7-security", "nyckel ej i vakt-loggar");
+      const { traff, filer } = sokNyckel(VAKT, pass.slice(0, 12));
+      if (traff.length) {
+        const bevis = traff.slice(0, 3).map((t) => `${t.fil}:${t.rader.join(",")}`).join(" | ");
+        bokfor("F7-security", "KRITISK", `admin-nyckel i vakt-ytan — ${traff.length} fil(er) av ${filer}!`, bevis);
+      } else gron("F7-security", `nyckel ej i vakt-ytan (${filer} filer, rekursivt)`);
     }
   } catch { /* */}
 }
@@ -296,9 +326,20 @@ async function main() {
     jagaLoggar(
       dir,
       (sp, allvar, f, b) => { antal++; console.log(`[TEST-FYND ${allvar}] ${f} — ${b}`); },
-      (sp, not) => console.log(`[TEST-GRÖN] ${not}`),
+      (sp, not) => console.log(`[TEST-GRÖN] ${sp}: ${not}`),
     );
     console.log(`[TEST KLAR] fynd=${antal}`);
+    return;
+  }
+  // Isolerat testläge: `node verktyg/feljagaren.mjs --f7-test <katalog>` kör
+  // ENDAST F7:s nyckelsökning mot katalogen med ett fast TEST-prefix (aldrig
+  // ett riktigt värde) — fynd till stdout, fyndloggen orörd.
+  if (process.argv[2] === "--f7-test") {
+    const dir = path.resolve(process.argv[3] || ".");
+    const TESTPREFIX = "TESTNYCKEL999";
+    const { traff, filer } = sokNyckel(dir, TESTPREFIX);
+    for (const t of traff) console.log(`[TEST-FYND F7] ${t.fil} rader=${t.rader.join(",")} antal=${t.antal}`);
+    console.log(`[TEST KLAR] filer=${filer} traff=${traff.length}`);
     return;
   }
   const pass = lasPass();

@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "rent": true,
+  "blockerande": [],
+  "untrackedAntal": 3,
+  "untrackedExempel": [
+    "?? data/forskning/OPTIMERING/o13-prestanda-cache-rond2-s7.md",
+    "?? verktyg/_s6u1-sektor-commitmsg.txt",
+    "?? verktyg/_s6u1-worklog-commitmsg.txt"
+  ],
+  "allaRader": [
+    "?? data/forskning/OPTIMERING/o13-prestanda-cache-rond2-s7.md",
+    "?? verktyg/_s6u1-sektor-commitmsg.txt",
+    "?? verktyg/_s6u1-worklog-commitmsg.txt"
+  ]
+}

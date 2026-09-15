@@ -294,7 +294,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s**: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -468,10 +468,16 @@ EnvironmentFile med chmod 600).
   20,0 · 23,9 s — lastberoende spridning), radbild identisk för femte gången
   (public 60/1 246 728 · public+storage 68/1 246 864 · alla 95/1 247 119 ·
   fel 780/780 kända 0 okända), städning verifierad (DR-PROV-2026-09-15-AUTO-3.md).
-- **Flock-notisen:** bekräftar S10-U3:2:s kö till huvudagenten (flock-stöd i
-  dr-ovning.mjs); tills dess rekommendation: `flock -w 900 /tmp/ak1a-dr-prov.lock
-  -- node verktyg/dr-ovning.mjs` när väntan önskas. Flock lämnar en tom
-  låsfil efter sig — oskyldigt (kärnan släpper vid processdöd); städas fri.
+- **Flock-notisen (RÄTTAD 2026-09-16 av s10-u1 o3):** rekommendationen ovan var
+  DUBBELDEFEKT och har ALDRIG fungerat: (a) `--`-separatorn stöds ej av
+  util-linux flock 2.39.3 ("failed to execute --", exit 69 — empiriskt bevisat),
+  (b) även korrekt syntax (`flock -n <låsfil> node …`) skapar flock:s tomma
+  låsfil som taLas() vägrar (exit 3 — emuleringsbevis). Flock-stödet är NU
+  INBYGGT i dr-ovning.mjs OCH dr-kedja2.mjs (re-exec under flock ≤ 900 s;
+  låsfilen städas ej i flock-läge — medvetet: unlink under flock kan skapa ny
+  inod och spränga skyddet). Bevisat i praktiken: verktyget väntade in ett
+  10-s-syskonfönster och körde sedan GRÖNT. u3:2:s kö till huvudagenten är
+  härmed LÖST.
 - **Fabrikskollision bevis nr 2** (identiska "välj själv"-uppdragstexter gav
   två agenter samma objekt; noll förlorat arbete — Write-läshindret + kollisions-
   kontroll hejdade): u3:s kur nr 1 (manifest-unika objekt) är fortfarande ej
@@ -504,6 +510,41 @@ EnvironmentFile med chmod 600).
   nr 3 — deras Write 00:41:50 vann, mitt Edit hejdades av läshindret;
   deras PG17-fönster respekterades, denna agent rörde ej PG).
 
+## S10-U1 (O3) — FULL KVARTALSÖVNING: båda kedjorna i en sekvens + flock-kur levererad (2026-09-16, GODKÄNT)
+
+- **Objektval:** uppdragstexten identisk med u2/u3/u4:s — kvartalsmallen
+  (sedan u3:2 = BÅDA kedjorna) hade aldrig körts END-TILL-END av en agent.
+  Fullprotokoll: data/forskning/DR-PROV-2026-09-16-FULL.md.
+- **Kedja 1** (dr-ovning.mjs, på db-2026-09-16 skapad 00:41:34 av s10-u5:s
+  testkörning): GRÖN exit 0 — **RTO 11,2 s** (sjätte punkten, snabbaste:
+  20,0 · 17,7 · 14,7 · 20,0 · 23,9 · 11,2), public 60/1 266 455 ·
+  public+storage 68/1 266 591 · alla scheman **99**/1 266 851 (+4 tabeller
+  på ett dygn) · fel 788 kända 0 okända. AUTO-protokoll: DR-PROV-2026-09-15-AUTO-4.md
+  (verktyget stämplar UTC — kunddag är 09-16).
+- **FLOCK-KUREN LEVERERAD I VERKTYGET** (s10-u5 viks; u3:2:s fynd 6-kur
+  mekaniserad): dr-ovning.mjs startar om sig under flock(1) på
+  /tmp/ak1a-dr-prov.lock (re-exec, väntar ≤ 900 s; pid-raden kvar som info;
+  låsfil städas ej i flock-läge — unlink under flock kan skapa ny inod och
+  spränga skyddet). **Empiriskt dubbelbevis att gamla rekommendationen var
+  trasig** (se flock-notisen: exit 69 resp exit 3-vägran) + **praktbevis:**
+  verktyget väntade in ett 10-s-syskonflock-fönster och körde sedan GRÖNT.
+- **NYTT VERKTYG `verktyg/dr-kedja2.mjs`** — kedja 2 som kommando (u4:s
+  mönster): flock-lagret + senaste-arkiv-val + skrap-DB ak1a_dr_json med
+  DDL ur SENASTE dumpen (kirurgiskt `extensions.uuid_generate_v4()` →
+  `gen_random_uuid()`; DEFAULT oviktig för COPY) + u3:2:s verktyg + oberoende
+  PG-verifiering + maskinellt protokoll + garanterad städning.
+- **Kedja 2-resultat:** 09-09-arkivet 3× GRÖN (30,7/27,0/24,6 s · 146 727
+  rader) + **nya 09-15-arkivet GRÖN 27,2 s / 160 928 rader / 0 dubbletter**,
+  tidsfönster till 2026-09-16 00:40:02, 11 event_type, jsonb läsbar.
+- **RACE-FYNDET (F3):** första försöket mot 09-15-arkivet dömdes RÖD
+  (97 557 av 160 928 — "unexpected end of file") därför att s10-u5:s
+  exportör SKREV filen mitt i läsningen (mtime 00:49:22 inuti läs-fönstret
+  00:49:01–23). Omkörning GRÖN. **Regel: RÖT mot färskt arkiv = kolla
+  exportör-process/mtime och kör om — ALDRIG mjuka upp domslutet.**
+- Städning: skrap-DB:er raderade efter varje körning, PG17 down, disk
+  76–77 GB, tmp-filer rensade. src/ orörd (tsc via projektbinär vid commit).
+  Kvartalsmallen hädanefter: `node verktyg/dr-ovning.mjs` +
+  `node verktyg/dr-kedja2.mjs` — nästa senast **2026-12-15**.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

@@ -110,5 +110,25 @@ sondobjekt; CV-kuren i denna våg täcker INTE /kurser (listan pagineras,
 
 ## 6. EFTER (bokförs efter deploy)
 
-<!-- fylls i: tabell fyra sidor före→efter, TBT/S&L-delta /bibliotek,
-     funktionsbevis, prod 200, gränsnittsvakt-status -->
+**Status 03:10Z: VÄNTAR — bygget har ej landat.** Kön vid vågslut:
+VÄNTAR-RAM 02:27 (1 484 MB) · 02:37 (1 909) · 02:47 (1 328) · 02:57 (1 448) ·
+03:07 (769 MB — huvudagentens våg 173 + nya fabriksbarn lastar servern).
+Batchen som väntar på bygg: f2256432 (u3 wrapper) + 184c6dc7 (u2 prefetch)
++ 210dd518 (u1 CV = denna våg) + 6713926a (u1 bokföring) + a12203cc (Φ 173).
+NÄSTA VÅG i spåret verkställer §3:s verifieringsplan (a)–(d) och fyller
+tabellen nedan — protokollredskapen står klara:
+
+- `node verktyg/prestanda-lighthouse.mjs efter-161 / /kurser /blogg /bibliotek`
+- ISR-fällan (o8 §11-EFTER): dubbla curl-triggar + 8 s per sida FÖRE mätning
+  (alla fyra sidor bär revalidate=3600)
+- CV-sond: /tmp/s7u1-cv-sond.mjs (antal kort, computed contentVisibility,
+  offscreen-korthöjd) — kör mot localhost efter deploy
+- `node verktyg/granssnittsvakt.mjs --bas=http://localhost:3000 --sidor=/bibliotek --snabb`
+- prod 200: curl https://lab.ak1nvestor.com/bibliotek
+
+| Sida | Poäng FÖRE→EFTER | TBT FÖRE→EFTER | S&L FÖRE→EFTER | notering |
+|---|---|---|---|---|
+| /bibliotek | 51 → | 2 824 → | 1 607 → | CV-primärt; S&L = ren attribution |
+| / | 62 → | 574 → | — | stöd åt u2:s prefetch-EFTER |
+| /kurser | 55 → | 1 253 → | 1 663 → | stöd; sondobjekt §4.2 följs |
+| /blogg | 55 → | 836 → | — | stöd |

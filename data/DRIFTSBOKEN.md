@@ -298,7 +298,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **JUNGRUNATTEN 2026-09-16 (s10-u2 o2): 02:30-cronen levererade OBEVAKAT första natten efter kuren** (markör GRÖN 1 288 041 rader via pgpass; +81 mot manuella testet = äkta ny dump) **+ sjunde RTO-punkten 12,2 s på själva cron-dumpen** (public 60 tabeller/1 266 528 rader · alla scheman 99/1 266 924 · fel 788 kända 0 okända) — kedja 1 bevisad ända till ända UTAN agent i kedjan; RAM-grindens första verkliga exit 75 (PG orörd, omkörning GRÖN). Dessförinnan FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md + DR-PROV-2026-09-16-KEDJA3.md (serverfiler) + DR-PROV-2026-09-16-KEDJA4.md (per-typ-vyorna) + DR-PROV-2026-09-16-JUNGRUNATT.md (jungfrunatten + sjunde RTO-punkten; maskinellt delprotokoll DR-PROV-2026-09-16-AUTO.md) |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **TAKLYFTET 2026-09-16 (s10-u1 O4): kedja 2:s exportör v3 — TOTAL-KONTRAKT + cron 02:40** — 200k-takets kommande TYSTA trunkering (~2026-10-05, +2 015 rader/dag) avvärjd; export GRÄNS 161 678 rader/33 sidor/42,9 s med total-kontrakt KOMPLETT 161678/161674 (dumpen bär sitt eget kompletthetsbevis — JSON-motsvarigheten till slutmarkörerna); restore RTO **38,5 s** = åttonde punkten GRÖN (0 felaktiga · 4 dublett-id kvantifierade = prod-tabellens saknade PK); exporten var OSCHEMALAGD på servern sedan hybrid-sync tystnade → **cron-rad 3 kl 02:40 installerad + referenssynkad, konfigvakten GRÖN 3/3**. Dessförinnan **JUNGRUNATTEN 2026-09-16 (s10-u2 o2): 02:30-cronen levererade OBEVAKAT första natten efter kuren** (markör GRÖN 1 288 041 rader via pgpass; +81 mot manuella testet = äkta ny dump) **+ sjunde RTO-punkten 12,2 s på själva cron-dumpen** (public 60 tabeller/1 266 528 rader · alla scheman 99/1 266 924 · fel 788 kända 0 okända) — kedja 1 bevisad ända till ända UTAN agent i kedjan; RAM-grindens första verkliga exit 75 (PG orörd, omkörning GRÖN). Dessförinnan FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md + DR-PROV-2026-09-16-KEDJA3.md (serverfiler) + DR-PROV-2026-09-16-KEDJA4.md (per-typ-vyorna) + DR-PROV-2026-09-16-JUNGRUNATT.md (jungfrunatten + sjunde RTO-punkten; maskinellt delprotokoll DR-PROV-2026-09-16-AUTO.md) + DR-TAKLYFT-2026-09-16.md (taklyft + total-kontrakt + cron 02:40; maskinellt delprotokoll DR-KEDJA2-2026-09-16-AUTO.md) |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -661,6 +661,39 @@ EnvironmentFile med chmod 600).
 - Kollisionskontroll: KEDJA 4-syskonet (07:12:52) och denna övning (07:14)
   körde i separata flock-fönster — inget krockade. Städning oberoende
   verifierad: skrap-DB raderad, PG17 down, disk 75 G, prod/src/R2 orörda.
+
+## S10-U1 (O4) — TAKLYFTET: kedja 2:s exportör härdad + total-kontrakt + cron 02:40 (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan åtta gånger levererad; det icke-levererade
+  var spårets bokförda kommande dataförlust — FULL-dumpens hårdta
+  40-sidors-tak (200k rader) i `backup-fran-molnet.mjs`, nås ~2026-10-05
+  (mätt: 161 550 i molnet · +2 015 rader/dag) = därefter TYST trunkering
+  av varje nattexport. Fullprotokoll: data/forskning/DR-TAKLYFT-2026-09-16.md.
+- **KUR (v3):** SAKERHETSTAK 400 sidor (2M rader ≈ >1 år — evighetsskydd,
+  ALDRIG dimensionerande) + **TOTAL-KONTRAKTET** (sida 0 läser
+  Content-Range via Prefer: count=exact → filen bär `totaltFranApi`,
+  truncerad döms MASKINELLT `antal < totalt` — JSON-dumpens motsvarighet
+  till SQL-dumpens slutmarkörer) + repetitionsskydd mot ignorerad Range.
+- **Bevisat i äkta körning:** export 161 678 rader/33 sidor/42,9 s/26,2 MB
+  med domen KOMPLETT 161678/161674 — kontraktets append-only-semantik
+  verifierad live (dumpen kan bära någrar fler än starttotalen, aldrig
+  färre utan att dömas TRUNCERAD). Restore via dr-kedja2: **RTO 38,5 s**
+  (åttonde punkten) · 0 felaktiga · städning PG17 down.
+- **FYND — exporten var OSCHEMALAGD på servern** (crontab + /etc/crontab
+  + pumpor-daemon mätt: 0 träffar; arkiven levde på agent-manuella körning-
+  ar sedan hybrid-sync tystnade 09-09). KUR: **cron-rad 3 kl 02:40**
+  (10 min efter kedja 1:s 02:30-dump = §4-ordningen; ingen retention i
+  raden — system-events-full är arkivhandlingar). Ändringsprotokollet
+  följt: crontab + crontab.reference i samma ändring, konfigvakten
+  **GRÖN 3/3** (s8-u2:s 30-larm-natt ej upprepad).
+- **FYND (kvantifierat):** 4 dublett-id i prod-tabellen (161 678 rader /
+  161 674 unika = exakt kontraktets differens) — känd saknad PK, nu med
+  tal: 0,0025 %. Ingen kur (prod-DDL = huvudagentkö); domen förblev GRÖN.
+- **Kollisionsbevis nr 5+6** (noll förlorat arbete): rond-46-merge raderade
+  första Editen; syskonet s10-u2 (O2):s bulk-add fångade v3-kuren ordagrant
+  in i sin commit c8df5f6b när HEAD-loppet vägrade min commit — koden lever
+  i HEAD, denna sektion + protokollet + cron är completo.
+- Jungfrunatten för rad 3 kan bevisas 2026-09-17 (s10-u2 O2:s mönster).
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

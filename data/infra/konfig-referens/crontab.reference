@@ -33,6 +33,18 @@
 # ── Rad 2: gränssnittsvakten var 6:e timme (01:17, 07:17, 13:17, 19:17) ─────
 17 1,7,13,19 * * * /home/ak1a/AK1/data/infra/contabo/granssnittsvakt-cron.sh
 #
+# ── Rad 3: moln-JSON-exporten 02:40 lokal tid, dagligen (kedja 2) ───────────
+# DR-kedja 2 (system_events — saknas i SQL-dumpen): backup-fran-molnet.mjs
+# skriver per-typ-snapshots + FULL-dumpen system-events-full-<dag>.json.gz
+# med v3 TOTAL-KONTRAKTET (totaltFranApi + maskinell truncerad-dom, tak 400
+# sidor/2M rader). Installerad 2026-09-16 (s10-u1 O4): exporten var OSCHE-
+# MALAGD på servern sedan hybrid-sync tystnade 09-09 — arkiven levde bara
+# så länge agenter körde verktyget manuellt. 02:40 = 10 min efter kedja 1:s
+# 02:30-dump (DRIFTSBOKEN §4-ordning: SQL-dump först). Ingen retention i
+# raden: system-events-full-*.json.gz är ARKIVHANDLINGAR (DRIFTSBOKEN),
+# per-typ-filerna ~60 kB/dag. Logg: /tmp/moln-backup.log.
+40 2 * * * cd /home/ak1a/AK1 && /usr/bin/node /home/ak1a/AK1/verktyg/backup-fran-molnet.mjs >> /tmp/moln-backup.log 2>&1
+#
 # OBS 1: /etc/crontab (system-wide, med root-användarfält) dokumenteras
 # SEPARAT i data/infra/contabo/crontab-korrekt.txt — denna fil gäller ENDAST
 # användar-crontaben (crontab -l, ingen användarkolumn).

@@ -107,6 +107,37 @@ import { svaraLokaltDjup } from "@/lib/ai-mentor-djup-fragor";
 // mackay/kindleberger/galbraith; kärnordsdisjunktion mot 598 ord
 // LIVE-testat, inkl syskonets djup-familj: 0 krockar).
 import { svaraLokaltHistoria } from "@/lib/ai-mentor-historia-fragor";
+// Spår 6 omgång 10 (s6-u2): +2 förhandsfrågor (DuPont-analysen, ROIC) —
+// lönsamhetsdjup-lagret ligger SIST och kan därför aldrig stjäla en fråga
+// från tidigare lager; källmärkt med flerkällsrad (ln-/v-/roic-kurserna).
+// Basen äger VARIABELUPPSLAGET, praktik-lagret marginal-familjen — detta
+// lager äger dupont-/roic-/nopat-/wacc-orden (LÖNSAMHET-kategorin hade
+// inget eget lager).
+import { svaraLokaltLonsamhetsdjup } from "@/lib/ai-mentor-lonsamhetsdjup-fragor";
+// Spår 6 omgång 10 (s6-u1): +4 förhandsfrågor ur AK1TS-familjen — ts-djup-
+// lagret (fibonacci-retracements/extensions/kluster/tidszoner, gann-vinklar/
+// cyklar, volymdjup: profil/VPOC + order flow + market profile) ligger SIST
+// och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (ts-familjens 25 kurser, 15 källmärkta). Basens teknisk-
+// monster äger indikator-familjen, impulsvag-monstret elliott-familjen —
+// detta lager äger fibonacci-/gann-/volymdjup-orden.
+import { svaraLokaltTsdjup } from "@/lib/ai-mentor-tsdjup-fragor";
+// Spår 6 omgång 10 (s6-u3): +3 förhandsfrågor ur svensk skattemekanik —
+// skattedjup-lagret (kapitalförsäkring/schablonmekanik/äganderätten,
+// bolagsskatt 20,6 %/dubbelbeskattningens kedja, optionsbeskattning/
+// personal- vs marknadsoptioner) ligger SIST och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkt med flerkällsrad (sj-05 + km-052
+// + km-051 + km-050 / km-049 + km-050 + km-051 + km-053 / sj-04 + km-051
+// + km-050 + km-049 — skattekategoriernas tio kurser). Ansvarsfördelning:
+// BASens skatt-monster äger SKATT-GRUNDORDEN (skatt/beskattning/
+// kapitalvinstskatt/källskatt/schablonskatt/utdelningsskatt/3:12 — "hur
+// fungerar ISK och skatt?" förblir basens), basen äger utdelnings-orden,
+// nästa-lagret options-GRUNDORDEN — detta lager äger endast familjeorden
+// basen saknar (kapitalförsäkring/bolagsskatt/optionsbeskattning/
+// personaloptioner/dubbelbeskattning; sond mot hela kedjan: 626+ kärnord,
+// 0 fångster i båda riktningarna). Juridikgrind: ren mekanikutbildning
+// med Skatteverket-hänvisning — aldrig kontoval eller skatteråd.
+import { svaraLokaltSkattedjup } from "@/lib/ai-mentor-skattedjup-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -806,13 +837,13 @@ export function ChatWidget() {
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
 
     // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
-    // Regel+datamotorn (tretton lager: bas + tolv syskonfiler) svarar på de
-    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 54 för-
+    // Regel+datamotorn (sexton lager: bas + femton syskonfiler) svarar på de
+    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 63 för-
     // handsfrågors monsters + generiskt V01–V20-uppslag, alla källmärkta
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

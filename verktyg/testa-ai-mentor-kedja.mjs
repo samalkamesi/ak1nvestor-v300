@@ -77,7 +77,6 @@ const MOTORDEFS = [
   { namn: "lonsamhetsdjup", fil: "ai-mentor-lonsamhetsdjup-fragor.ts", fn: "svaraLokaltLonsamhetsdjup", arr: "LONSAMHETSDJUP_MONSTER", antal: 2 },
   { namn: "tsdjup",          fil: "ai-mentor-tsdjup-fragor.ts",          fn: "svaraLokaltTsdjup",          arr: "TSDJUP_MONSTER",          antal: 4 },
   { namn: "skattedjup",      fil: "ai-mentor-skattedjup-fragor.ts",      fn: "svaraLokaltSkattedjup",      arr: "SKATTEDJUP_MONSTER",      antal: 3 },
-  { namn: "skattedjup",     fil: "ai-mentor-skattedjup-fragor.ts",     fn: "svaraLokaltSkattedjup",     arr: "SKATTEDJUP_MONSTER",     antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);

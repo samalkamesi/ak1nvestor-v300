@@ -40,6 +40,7 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B9 | halvledaraktier-sa-analyserar-du-halvledarbolag | halvledaraktier | 1178 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-02-halvledarsektorn) | data/blogg-utkast/halvledaraktier-sa-analyserar-du-halvledarbolag.json |
 | B10 | bilaktier-sa-analyserar-du-biltillverkare | bilaktier | 1383 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-09-bil) | data/blogg-utkast/bilaktier-sa-analyserar-du-biltillverkare.json |
 | B11 | saasaktier-sa-analyserar-du-saas-bolag | SaaS-aktier | 1344 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-01-saassektorn) | data/blogg-utkast/saasaktier-sa-analyserar-du-saas-bolag.json |
+| B12 | spelaktier-sa-analyserar-du-spelbolag | spelaktier | 1326 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-12-spel) | data/blogg-utkast/spelaktier-sa-analyserar-du-spelbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 

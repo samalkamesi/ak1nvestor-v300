@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (364 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (369 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 322 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 327 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -366,6 +366,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-03-marginaltrappan-och-operativ-havstavng", titel: "Marginaltrappan och operativ hävstång — resultaträkningens känslighet", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-02-kanslighetsanalys-och-stresstest", titel: "Känslighetsanalys — stresstesta balansräkningen", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-03-altman-z-score", titel: "Konkursprognos — Altman Z-score", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -382,12 +383,16 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "rs-04-riskmatrisen", titel: "Riskmatrisen — att kartlägga osäkerheten", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-03-lasa-aktiesidan", titel: "Läsa aktiesidan — siffrorna på skärmen före metoderna", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-04-marknadsstruktur", titel: "Marknadsstruktur — hur handeln faktiskt fungerar", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-03-multipelns-anatomi", titel: "Multipelns anatomi — vad ett värderingstal innehåller", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -400,4 +405,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 364;
+export const LARVAG_ANTAL_KURSER = 369;

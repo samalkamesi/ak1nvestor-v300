@@ -1,0 +1,156 @@
+{
+  "slug": "am-03-lasa-aktiesidan",
+  "category": "AKTIEMARKNADEN I PRAKTIKEN",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Läsa aktiesidan — siffrorna på skärmen före metoderna",
+  "summary": "Nybörjarkursen i aktiemarknadens praktik: aktiesidans sex huvudtal — kurs, förändring, spann, volym, börsvärde och direktavkastning — vad varje fält betyder, hur procenträkningen fungerar och vilka missläsningar som väntar den nya läsaren.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Känna igen aktiesidans sex huvudtal: senaste kurs, dagens förändring, dagens högsta och lägsta, handlad volym, börsvärde och direktavkastning · Räkna förändring i procent av gårdagens kurs — och förstå varför procent, inte kronor, är det gemensamma språket mellan aktier med olika kursnivåer · Skilja volym (antal aktier) från omsättning (kronor) och räkna den ena till den andra · Räkna börsvärde som kurs gånger antal aktier, och per-aktie-talen P/E och direktavkastning som kvoter mot kursen · Undvika nybörjarens fem missläsningar: låg kurs är inte billigt, kronförändring är inte procent, volym är inte jämförbar mellan bolag, direktavkastning är historisk, och siffrorna är fakta — inget råd · Förbereda nästa steg i spåret: orderboken bakom kursen (km-069) och spreaden som kostnad (am-01).",
+  "why": "Aktiemarknadskurserna hittills — likviditet och spread (am-01), index och passivt ägande (am-02) — börjar båda mitt i mekanikerna, och orderbokskursen (km-069) förutsätter att läsaren redan kan läsa rutan framför sig. Detta är det första steget som saknades: sifferläsandet själv. Aktiesidan är varje ny persons första möte med marknaden, och den ser ut som en vägg av tal —kurs, plus och minus, volymer, nyckeltal — utan en enda förklaring på skärmen. Kursen går igenom väggen fält för fält, med räkneövningar i procentlogik som är grammatiken för allt som följer: nyckeltal, värdering och risk mäts alla i procent av något. Den som kan läsa aktiesidan har fått bokstäverna; analysens kurser lär meningen.",
+  "history": {
+    "origin": "Kursraderna är äldre än elektroniken: på 1800-talet trycktes börskurserna i tidningarna som komprimerade listor med förkortningar, och läsaren lärde sig räkna förändringen själv — papper och penna var grafritaren. Den mekaniska börsstickan från 1867, som matade ut kurser på pappersremsa, flyttade läsningen från morgontidningen till handelsbordet, men siffrorna var desamma: kurs, förändring, volym.",
+    "evolution": "Under 1900-talet blev kurssidorna tjockare och snabbare: teletext och skärmterminaler gav intradagskurser, och de första databurna terminalerna på 1980-talet visade för första gången volym och nyckeltal i samma vy som kursen. Nätmäklarnas genombrott på 1990-talet (km-070) flyttade slutligen aktiesidan från börsens och tidningarnas monopol till allmänhetens egen skärm — och med den breda tillgången kom behovet av att fler faktiskt kunde läsa fälten.",
+    "modern": "I dag visar en telefonaktiesida mer data än en profesionell terminal för ett halvsekel sedan: realtidskurs, graf, direktavkastning, P/E-tal och nyhetsflöde i samma vy. Utmaningen har vänt: det är inte tillgången på siffror som saknas utan förklaringen av dem — fälten redovisas utan kontext, och appens utformning bjuder till läsning i flykten. Denna kurs är motorn i det motståndet: sex tal, en efter en, med räknelogiken synlig."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — aktiesidans sex huvudtal",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Kursen och förändringen — procentens grammatik",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Volym och omsättning — två sätt att mäta handel",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Börsvärde och per-aktie-talen — två skalor för samma bolag",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — nybörjarens fem missläsningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — från siffrorna till spårets kurser",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — aktiesidans sex huvudtal",
+      "intro": "Sex fält täcker nästan hela aktiesidan — och vart och ett svarar på en egen, enkel fråga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Öppna valfri finansapp och leta reda på ett bolag. Oavsett vilken app det är visar aktiesidan i princip samma sex huvudtal. Ett: senaste kursen — priset i kronor som aktien senast bytte ägare vid. Två: dagens förändring — hur mycket kursen rört sig sedan föregående börsdags stängning, angiven både i kronor och procent. Tre: dagsspannet — dagens högsta och lägsta kurs, som visar hur brett priset rört sig inom dagen. Fyra: volymen — antal handlade aktier under dagen. Fem: börsvärdet — hela bolagets marknadsvärde, kursen gånger antalet aktier. Sex: direktavkastningen — senaste årets utdelning i procent av kursen.\n\nRunt de sex huvudtalen finns sedan tilläggsfält som P/E-talet (kursen i förhållande till vinsten per aktie), betyg och nyheter — men de sex bär sidans grundinformation, och den som behärskar dem har nyckeln till allt annat. Observera vad sidan inte säger: ingenstans står varför kursen rört sig, eller om nivån är rimlig. Aktiesidan är marknadens faktaruta — den rapporterar, den bedömer inte. Det är en viktig distinktion från första dagen: fakta och omdöme är olika saker, och denna kurs lär fakta. Omdömet är analysens arbete, och det hör hemma i metodkurserna — inte i sifferfältet."
+        },
+        {
+          "type": "definition",
+          "content": "Aktiesidan — sammanställningen av kurs, förändring, spann, volym, börsvärde och nyckeltal som varje finanssajt och app visar per bolag. Sidans fält är marknadens senaste fakta om aktien — inte ett omdöme om den."
+        },
+        {
+          "type": "insight",
+          "content": "Sex tal, sex frågor: vad kostar den, vart är den på väg idag, hur brett svänger den, hur mycket handlas den, hur stort är bolaget, vad betalar den i utdelning — aktiesidan svarar på alla sex innan den säger ett ord om varför."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Kursen och förändringen — procentens grammatik",
+      "intro": "Kurs 84,00 kronor mot gårdagens 83,00 — en krona, men också 1,20 procent, och procenttalet är det som talar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förändringsfältet visar två tal: kronor och procent. Räkningen mellan dem är kursens mest använda procenträkning: förändringen i kronor delat med gårdagens kurs. Exemplet: aktien stängde igår på 83,00 kronor och står idag i 84,00 — förändringen är plus 1,00 kronor, och i procent blir det 1,00 ÷ 83,00 = 0,0120, alltså plus 1,20 procent. Observera att utgångspunkten är gårdagens kurs, inte dagens — procenten mäter avståndet från där marknaden stod, inte från där den står nu.\n\nVarför procenten är språket: jämför två aktier som båda stiger med en krona. En tiokronorsaktie som går från 10,00 till 11,00 har stigit 1,00 ÷ 10,00 = 10,0 procent — en åttahundrakronorsaktie som går från 800 till 801 har stigit 1,00 ÷ 800 = 0,125 procent. Samma krona, helt olika rörelser: den första har åttio gånger starkare procentrörelse. Aktier med olika kursnivåer går bara att jämföra i procent — och det är därför alla nyckeltal, riskmått och historiekurvor i hela biblioteket redovisas i procent. Procenten är den gemensamma nämnaren, och den som behärskar räkningen kan följa med i allt från rapportkommentarer till indexförändringar: en indexpoäng och en procentenhet är olika ting, men båda läses med samma grammatik — förändring delat med utgångsläge."
+        },
+        {
+          "type": "insight",
+          "content": "En krona är inte en rörelse förrän den sätts i förhållande till kursen den kom ifrån — procenträkningen är aktiemarknadens grammatik, och allt som följer i biblioteket är skrivet på det språket."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Volym och omsättning — två sätt att mäta handel",
+      "intro": "Volymen räknar aktier, omsättningen kronor — och först när båda är klara kan handeln jämföras mellan bolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Volymfältet visar hur många aktier som bytt ägare under dagen — inte hur många personer som handlat, och inte hur många kronor som rört sig. Räkningen mellan de två: omsättningen i kronor är volymen gånger kursen, med den reservationen att olika aktier i volymen handlats till olika priser under dagen, så produkten är en uppskattning vid dagens genomsnittliga prisnivå. Exempel: handlas 2 miljoner aktier till en kurs runt 84,00 kronor är omsättningen cirka 2 000 000 × 84,00 = 168 miljoner kronor för dagen.\n\nVolymen får sin betydelse genom jämförelse — oftast mot bolagets egen historia. Finanssajterna redovisar genomsnittsvolymen för en längre period, och dagens volym läses mot den: en dag med flera gånger normal volym betyder att något samlat intresse pågår, ofta kopplat till en nyhet eller rapport. Volymen säger inte vad det är — men den markerar att marknaden rört på sig mer än vanligt. Den tredje läsningen är tunnheten: en aktie med liten volym i förhållande till sitt genomsnitt svänger oftare kraftigt i kurs, eftersom varje order möter färre motparter. Det är inklett till spårets nästa steg — spreaden och likviditeten (am-01) — som lär vad tunn handel kostar den som faktiskt vill handla. Här räcker grundinsikten: volymen mäter handelns aktivitet, och aktiviteten är kursens underlag."
+        },
+        {
+          "type": "insight",
+          "content": "Volym i aktier och omsättning i kronor är samma handel sedd från två håll — och volymen utan kursen är som ord utan mening: antalet säger inget förrän det sätts i relation till pris och genomsnitt."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Börsvärde och per-aktie-talen — två skalor för samma bolag",
+      "intro": "Börsvärdet mäter hela bolaget, per-aktie-talen mäter rösten — och kursen är bron mellan dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börsvärdet är aktiesidans storleksmått: kursen gånger antalet aktier. Ett bolag med 500 miljoner aktier och kursen 84,00 kronor har börsvärdet 84,00 × 500 000 000 = 42 miljarder kronor. Börsvärdet gör bolag jämförbara i storlek oberoende av hur aktierna är delade — ett bolag med få, dyra aktier och ett med många, billiga kan vara exakt lika stora. Det är börsvärdet, inte kursen, som avgör hur stort ett bolag är.\n\nPer-aktie-talen går andra vägen: de delar bolagsnivån ner till aktiens nivå. Vinsten per aktie (EPS) är bolagets vinst delat med antalet aktier; P/E-talet är kursen delat med vinsten per aktie — med eps 3,36 kronor och kurs 84,00 blir P/E = 84,00 ÷ 3,36 = 25,0, vilket läses som att marknaden prissatt 25 års nuvarande vinst per aktie. Direktavkastningen är utdelningen per aktie delat med kursen: 2,10 kronor i utdelning på kursen 84,00 ger 2,10 ÷ 84,00 = 0,025, alltså 2,5 procent. Detaljerna i hur P/E-talet tolkas och kan snedvridas hör hemma i värderingskurserna (v04 och km-009); här räcker att fälten blir läsbara — kvoten mot kursen är per-aktie-talens gemensamma form. En övning att bära med sig: när nästa rapport publiceras, räkna själv vad en ny vinstsiffra gör med eps och P/E-talet — det är den rakaste vägen att göra fälten till egna."
+        },
+        {
+          "type": "insight",
+          "content": "Börsvärdet och per-aktie-talen är samma verksamhet sedd i två skalor — hela bolaget och en enda aktie — och kursen är omräkningskursen mellan dem."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — nybörjarens fem missläsningar",
+      "intro": "Aktiesidans fällor är inte avancerade — de är de fem missläsningar som väntar varje ny läsare första veckan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Misläsning ett: låg kurs är billigt. En aktie på 10 kronor är inte billigare än en på 800 — priset per aktie är en ren fråga om hur många aktier bolaget delat sitt värde på. Det är per-aktie-talen i förhållande till sitt innehåll (vinst, utdelning, tillgångar) och börsvärdet i förhållande till bolagets storlek som kan vara högt eller lågt, aldrig kursen själv. Misläsning två: kronförändring läses som rörelse. Plus 1,00 kronor är 10,0 procent på tiokronorsaktien och 0,125 på åttahundrakronorsaktien — läs alltid procentfältet, och räkna gärna om det själv tills det sitter.\n\nMisläsning tre: volym jämförd mellan bolag i antal aktier. Två miljoner aktier kan vara en dagssiffra i ett småbolag och tyst lunchhandel i ett stort — jämför i kronor (volym gånger kurs) eller mot bolagets eget genomsnitt. Misläsning fyra: direktavkastningen läst som ett löfte. Fältet visar senaste årets utdelning i procent av dagens kurs — nästa utdelning beslutas av bolagsstämman (sj-03) och kan bli högre, lägre eller noll; historiken är information, inte förbindelse. Misläsning fem, den viktigaste: att siffrorna vore en rekommendation. Aktiesidan är av pratiskt skäl full av begrepp som låter som uppmaningar — men kursen, volymen och nyckeltalen är beskrivningar av marknadens senaste tillstånd, inte omdömen om vad någon bör göra. Utbildningen på hela plattformen är byggd på den skillnaden: lärandet gäller mekanismerna, besluten är varje persons egna. Den som kan läsa sidan utan att höra den ropa har tagit nybörjarsteget på allvar."
+        },
+        {
+          "type": "insight",
+          "content": "Fem missläsningar — kursens pris, kronor utan procent, volym utan kronor, utdelning som löfte, fakta som råd — och en gemensam bot: läs fältet, räkna om det, och fråga vad siffran är en andel av."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — från siffrorna till spårets kurser",
+      "intro": "Aktiesidans fält är ytan — bakom varje tal finns en mekanism, och varje mekanism har sin kurs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursen i rutan är sista steget i en kedja av order som möts — orderboken och prissättningen är närmaste granne i biblioteket (km-069), och spreaden mellan köp- och säljkursen är den dolda kostnad som aktiesidan inte ens visar (am-01). Direktavkastningsfältet knyter an mot utdelningsspårets kurser (km-063, km-064), P/E-talet mot värderingens (v04, v05, km-009), och börsvärdet mot indexens värld (am-02), där många aktiers sammanlagda börsvärden bygger indexet som referenspunkt för allt. Aktiemarknadskursens trappa är därmed komplett från dess första steg: denna kurs har lärt rutan, am-01 lär vad handeln kostar, am-02 lär hur marknaden samlas till index.\n\nAvsluta med veckoövningen: välj ett bolag, läs dess aktiesida varje börsdag i en vecka, och anteckna de sex huvudtalen — kurs, förändring i procent, spann, volym, börsvärde, direktavkastning. Räkna minst en procentförändring för hand varje dag, och notera vilka fält som rör sig och vilka som står stilla. Börsvärdet som rör sig dagligen fast inget nytt hänt i bolaget är kursens egen röst — och det leder vidare till den fråga som hela analysutbildningen svarar på: vad är det marknaden egentligen prissätter i bolaget? Det är utbildning, och det är ramar för lärande — aldrig en uppmaning att handla i någon aktie."
+        },
+        {
+          "type": "insight",
+          "content": "Varje fält på aktiesidan har en mekanism bakom sig och en kurs om mekanismen — den som kan läsa rutan vet också var nästa fråga bor: i orderboken, i spreaden, i indexet."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch började där alla börjar: vid det han kunde se — bolagets produkter i butikshyllan och siffrorna i rapporten. Hans poäng, omformulerad för aktiesidan, är att rutan på skärmen är den minsta delen av bolaget: den visar vad marknaden betalade senast, inte vad bolaget gör. Lynch lärde sig läsa fälten för att sedan kunna gå förbi dem — och det är nybörjarkursens uppgift: behärska ytan för att kunna börja vid det väsentliga bakom den.",
+  "grahamSection": "Benjamin Grahams Mr Market är aktiesidans bästa förklaring: bakom kursrutan står en budgivare som varje dag erbjuder ett pris — ibland entusiastiskt, ibland depressivt — och läsarens uppgift är att skilja budgivarens sinnesstämning från bolagets värde. Grahams berömda råd till nybörjaren var att börja med fakta och tålamod; aktiesidans sex tal är just fakta, och procenträkningen är det första handtaget på tålamodet.",
+  "ak1Section": "I AK1A:s metodik är denna kurs AKTIEMARKNADEN I PRAKTIKEN-familjens första steg: am-03 lär rutan, km-069 orderboken bakom den, am-01 spreaden och likviditeten som handelns kostnad, am-02 index och passivt ägande som marknadens sammanlagda sida. Brobyggen: mot v04 och v05 (per-aktie-talens värderingshalva), mot km-063–km-064 (utdelningsspåret bakom direktavkastningsfältet) och mot sj-03 (stämman som beslutar utdelningen). Kursen bär inga quiz eller uppgifter utöver veckoövningen — läsningen själv är övningen."
+}

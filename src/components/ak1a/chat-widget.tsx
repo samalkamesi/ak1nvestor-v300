@@ -83,6 +83,19 @@ import { svaraLokaltAgande } from "@/lib/ai-mentor-agande-fragor";
 // avskrivnings- och leasing-familjeorden (kärnordsdisjunktion mot 511
 // ord LIVE-testat, inkl syskonets agande-familj: 0 krockar).
 import { svaraLokaltRedovisningsdjup } from "@/lib/ai-mentor-redovisningsdjup-fragor";
+// Spår 6 omgång 8 (s6-u3): +3 förhandsfrågor (värderingsmultiplar/multipel-val,
+// FOMO/förlustaversion, mästarna Buffett/Lynch/Fisher) — djup-lagret ligger
+// SIST och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt
+// med flerkällsrad (vm-03/km-011/km-010/vm-04, km-018/bf-12/km-035/tanka-
+// snabbt, buffett-way/lynch/fisher/greenwald). Ansvarsfördelning: basen äger
+// värderings-, beteende- och bok-GRUNDORDEN (värdering/dcf/pe-tal,
+// psykologi/bias, böcker/graham) — detta lager äger familjeorden basen saknar
+// (multipel/jämförelsebolag, fomo/prospektteori/kahneman, buffett/lynch/
+// fisher; kärnordsdisjunktion mot 559 ord LIVE-testat, inkl syskonens
+// agande- och redovisningsdjup-familjer: 0 krockar). Omstartsbokföring:
+// föregångarens avskrivnings-fråga är utbytt — syskonet s6-u1:s
+// redovisningsdjup-lager (FÖRE detta i kedjan) äger den familjen.
+import { svaraLokaltDjup } from "@/lib/ai-mentor-djup-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -786,7 +799,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

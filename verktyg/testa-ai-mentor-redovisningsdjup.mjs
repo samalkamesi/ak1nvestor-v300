@@ -31,7 +31,7 @@
  *   J  kärnordsdisjunktion MEKANISKT — REDOVISNINGSDJUP_MONSTER:s kärnord
  *      är disjunkta mot samtliga 10 tidigare lagers kärnord, lästa LIVE
  *      ur modulerna
- *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA elva lager i
+ *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA tolv lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b — sektor
  *      levererad utan inkoppling — kan inte upprepas tyst; samma fall
  *      som case-/praktik-/portfoljgrund-testerna)
@@ -387,7 +387,7 @@ const GAMLA = [
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
-    "svaraLokaltRedovisningsdjup",
+    "svaraLokaltRedovisningsdjup", "svaraLokaltDjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -410,9 +410,9 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 11 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 12 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "11/11 lager i ordning, inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "12/12 lager i ordning, inga okända komponenter",
   );
 }
 

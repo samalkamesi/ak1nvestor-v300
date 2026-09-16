@@ -359,6 +359,7 @@ const kedjekomponenter = [
   "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
   "svaraLokaltAgande(q, KURSREGISTER)",
   "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",
+  "svaraLokaltDjup(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -400,7 +401,7 @@ if (!importPortfoljgrund) { lFel++; console.log("      import av portfoljgrund-l
 const importAgande = widget.includes('from "@/lib/ai-mentor-agande-fragor"');
 if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 11 lager i ordning + 5 importer",
+  "L: widget-bevis — kedjeraden bär 12 lager i ordning + 6 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup live i klientkedjan" : lFel + " fel",
 );

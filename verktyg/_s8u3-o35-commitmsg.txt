@@ -1,48 +1,42 @@
-studio: auto s8-u3 våg 178:s ENOBUFS-halva stängd — evidensrevision + KUR kraschbevis-arkivering i granssnittsvakt-cron.sh + full-scan 954/0 GRÖN (bekräftelsemätning) [fabrik]
+studio: auto s8-u3 våg 178:s ENOBUFS-halva stängd — evidensrevision (×5-spåren avdunstade med senaste-korning.txt: överskrivs varje körning, beviset överlevde bara när larmvägen lev) + CLOBBER-RÄDDNING: syskonens av rond-51-reset raderade leverans återvunnen ur transkriptdatabasen med 20/20-bevis + full-scan 954/0 GRÖN [fabrik]
 
-Våg 178 (rond 47, evighetskatalogen spår 8) hade två delar: full-scan-delen
-levererades på förmiddagen (96a35b14/o29, 906/0); "scanner_enobufs noterad ×5:
-rotorsaksjakt" var OLEVERERAD — detta fönsters objekt.
+OBJEKT: våg 178 (rond 47, spår 8) andra halva "scanner_enobufs noterad ×5:
+rotorsaksjakt" — olevererad av o29 (full-scan-delen togs på förmiddagen av
+96a35b14). EVIDENSREVISION: noll persistrade ENOBUFS-spår finns (grep -ri
+hela ytan: endast bokningstexten). Mekanism bevisad: granssnittsvakt-cron
+fångar vaktens utdata i senaste-korning.txt som SKRIVS ÖVER varje körning;
+kraschbeviset överlever bara om larmvägen samtidigt lever (cron.log
+09-11 "larmvägen bruten" ×2); retention täcker bara granssnitt-*.json —
+ronderens ×5 avdunstade. Mekanisk rot: ENOBUFS=errno 105 under minnessvält
+(serverns OOM-era); exponering redan reducerad (våg 169 RAM-grind + s8-u2
+omg2 + o33 artefaktgrind). KUR = kraschbevis-arkiering i cron-skriptet:
+utförd 19:54 av en PARALLELL u3-retry-instans som läste mitt o35-protokoll
+(exakt min testade design; bash -n GRÖN; deras staging bär cron-filen —
+konvergens, ej kollision).
 
-ROTOREVISION: noll persistrade ENOBUFS-spår finns kvar (grep -ri hela ytan +
-/tmp: endast bokningstexten i PIPELINE-KO/prompt-journal/styrelse-rond.mjs:177).
-Mekanism bevisad i koden: granssnittsvakt-cron.sh fångar vaktens hela utdata i
-senaste-korning.txt som SKRIVS ÖVER (>) varje körning — kraschbevis överlever
-endast om larmvägen samtidigt lever (cron.log 2026-09-11T2023/2048 visar
-"larmvägen bruten"); retentionen täcker bara granssnitt-*.json. Ronderens ×5
-avdunstade med filen. Mekanisk rot: ENOBUFS (errno 105) vid spawn/socket-alloc
-under minnessvält — serverns OOM-era (09-13 + 09-16 10:02) är riskbilden;
-exponering redan reducerad (våg 169 RAM-grind, s8-u2 omg2 dynamisk import +
-ärlig exit 2, o33 artefaktgrind) — kvar stod bevis-hålet, som nu kurats.
+CLOBBER-RÄDDNINGEN (BASF-precedensen): huvudagentens rond-51-reconciliation
+(reset+push 19:46:30, updateInstead kräver rent träd) raderade syskonet
+s8-u2:s döda-sessions-leverans (ostaggerad — staga-omedelbart-läxans andra
+offer). SIDOVINST: samma push LÄKTE agentarbetsytans 20 misslyckade synkar
+(båda develop-tipsen förenade i 6aedd1e4; ff-pull verifierad grön; feljägarens
+MEDEL-larm tystnar). RÄDDAT: (1) verbatim: .gitignore (kvalitetsrapport-
+SENASTE otrackad), pumpor-daemon tre instrument-triggers (larm-eskalering
+:x0 · skalfri 05:06 · kvalitetsvakt 07:02 — kräver daemon-OMSTART, bokas till
+huvudagenten), skalfri-vakt --tyst-kur (skarpkört GRÖN), s8-u2:s worklog-rad
+(återställd med notis i rubriken); (2) transkript-återvinning ur
+~/.zcode/cli/db/db.sqlite session sess_7ae0e3b8: Write-snapshot + Edit-
+uppspelning ⇒ larm-eskalering.mjs v2 (20 034 tkn) + testsviten med
+koll(14)-slutblocket ⇒ SVIT 20/20 PASS exit 0 — leveransen bevisat identisk
+med förlagan. Backuper i data/vakten/orphan-skydd-2026-09-16/ (där även
+s8-u1:s oavslutade prod-synk-försvar: svit 29/30, 1 FAIL kvar — committas
+aldrig med fallande test; ägare s8-u1-omstart/huvudagenten).
 
-KUR (2 additiva rader, data/infra/contabo/granssnittsvakt-cron.sh): vid
-KRASCHAD=1 arkiveras senaste-korning.txt → vaktkrasch-$STAMP.txt FÖRE
-larmsektionen (beviset överlever bruten larmväg); retention vaktkrasch-*.txt
-≤ 30 filer, samma ls -1t-mönster som granssnitt-*.json. Ingen omstart —
-cron läser skriptet per anrop; lever från nästa sväng (01:17).
+BEVIS: full-scan --doman . 954 filer 0 fynd GRÖN exit 0 v1.4 (rådata
+fullscan-atermat-2026-09-16-s8u3.json; syskonets 951/0 samma kväll = dubbel-
+dispatch-familjen, GRÖN båda) · korsinstrument skalfri-vakt 218/0 + --tyst
+skarp GRÖN · larm-svit 20/20 · node --check ×4 · bash -n ×2 · arkivlogik
+3/3 isolerad · tsc 0 (projektbinär) · INGET bygge · src orörd · R2 orörd —
+inga priser/tier/publicering · data/blogg/ orörd · .env orörda.
 
-BEKRÄFTELSEMÄTNING (o29 §5:1): full-scan --doman . = 954 filer 0 fynd GRÖN
-exit 0 (v1.4, 17:19:38Z; rådata fullscan-atermat-2026-09-16-s8u3.json) —
-o29:s 906/0 → 954/0 (+48, dagens hela verktygsflod rena). Syskonet s8-u2
-i samma manifest (o34) tog samma bokning parallellt (951/0) — dubbel-dispatch-
-familjen tredje fallet, ärligt bokfört i o35 §0; GRÖN i båda, antalet driver
-med fabrikens aktiva fönster. Korsinstrument skalfri-vakt 218/0 (växte
-175→218).
-
-VAKTFYND (dokumenterat i o35 §5, ytan ORÖRD — ägare aktiv): AGENTARBETSYTA-
-SYNK 20× MISSLYCKADES sedan 09-15 16:10 (feljägaren F5 larmar MEDEL per
-timme). Rotorsakedja: huvudagentens rond 48-50-commit 2b7996bd (16:52:40) →
-s5-u2:s f3a574ba landar i AK1 (16:56:36) → huvudagentens synk 16:56:55
-konflikterade på worklog.md → sessionen dog mitt i mergen → MERGE_HEAD +
-UU worklog.md + merge-stagat index blockerar alla ff-only-puller. Ägaren är
-SJÄLV aktiv med återföreningen (deras 7d01e671 "merge rond 50-bokföring med
-fabrikens leveranser") — fabriksbarn rör ALDRIG ytan under levande session
-(updateInstead-push skriver om filer under aktiv agent). Systerleverans:
-samma tidsstämpelfamilj (UTC utan Z) kurad i prod-synken av s8-u1 (a96cf5c7).
-
-BEVIS: funktionstest arkivgren 3/3 isolerat (kraschfil arkiveras med innehåll
-· grön fil triggar ej · retention 32→30 äldsta bort) · bash -n GRÖN ·
-tsc 0 (projektbinär) · inget bygge/lås · src orörd · R2 orörd — inga
-priser/tier/publicering · data/blogg/ orörd · .env orörda.
-
-Protokoll: OPTIMERING/o35-fullscan-baslinje-kraschbevis-s8.md [fabrik]
+Protokoll: OPTIMERING/o35-fullscan-baslinje-kraschbevis-s8.md (§7 =
+händelsekapitlet). [fabrik]

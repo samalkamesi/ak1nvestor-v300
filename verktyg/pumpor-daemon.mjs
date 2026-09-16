@@ -81,8 +81,14 @@ function tick() {
   if (tim === 4 && min === 44) korEnGang("scenariotest", "node", ["verktyg/testa-studio-scenarion.mjs"]);
   if (min % 15 === 12) korEnGang("feljagaren", "node", ["verktyg/feljagaren.mjs"]);
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
+  // Spår 8-vaktinstrumentens triggers (o21/o22/o26-bokningarna, infriade
+  // 2026-09-16): ett instrument utan pump-rad är mätblint i drift — o22:s
+  // kvalitetsvakt var triggerlös 6 dagar och åt en 09-10-rapport som sanning.
+  if (min % 10 === 0) korEnGang("larm-eskalering", "node", ["verktyg/larm-eskalering.mjs"]); // o26 §5: minuten efter konfigintegritetens :x9 — upprepade larm ⟶ eskalering (o22-nattens 30 ignoreringar)
+  if (tim === 5 && min === 6) korEnGang("skalfri-vakt", "node", ["verktyg/skalfri-vakt.mjs", "--json", "data/vakten/skalfri-senaste.json"]); // o21: daglig kodhälsa i väktardomänen (exec-härdningens vakt)
+  if (tim === 7 && min === 2) korEnGang("kvalitetsvakt", "node", ["verktyg/kvalitetsvakt.mjs"]); // o22: färsk rapport före 07:43-ronden (SENASTE-filen gitignore:ad — ingen daglig ytsmuts)
 }
 
-logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · scenariotest 04:44 · hygien sö 03:33");
+logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · larm-eskalering :x0 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · scenariotest 04:44 · skalfri-vakt 05:06 · kvalitetsvakt 07:02 · hygien sö 03:33");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

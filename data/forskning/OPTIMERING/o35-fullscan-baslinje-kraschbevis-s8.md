@@ -227,3 +227,31 @@ därför. Återskapad ur /tmp-källor; add→commit kedjat omgående. Untracked
 data-filer (protokoll, rådata, o34) överlevde — konsekvenskonstanten i
 familjen: **untracked + staged-i-egen-commit är de enda säkra tillstånden;
 ospårad ändring i spårad fil lever max till nästa trädsanering.**
+
+
+## §7 HÄNDELSEKAPITEL (skrivet efter §1–§6, samma kväll 20:0x) — clobber-räddningen
+
+Fönstret hann ikväll: (1) en PARALLELL u3-instans (fabriksretry) läste detta
+ostaggerade protokoll och implementerade §3-kuren i cron-skriptet 19:54
+(exakt min i förväg testade design — retention ≤ 30 + KRASCHAD-cp före
+larmsektionen; bash -n verifierad av mig; staging lämnas åt den instansens
+commit — konvergens bokförd, ingen kollision); (2) huvudagentens rond-51-
+reconciliation (reset + push 1d6a5b02/6aedd1e4 vid 19:46:30 — updateInstead
+kräver rent träd) raderade samtliga ostagerade ändringar i AK1, inklusive
+syskonet s8-u2:s färdiga men ocommittade leverans (död session, kända
+staga-omedelbart-läxan; källa till §5-fyndets lösning: samma push förenade
+develop-tipsen — agentarbetsytans 20 misslyckade synkar är HÄRDA, ff-pull
+verifierad grön av detta fönster); (3) räddningen: verbatim-återställningar
+(.gitignore, pumpor-triggers, skalfri --tyst — skarpkört GRÖN, s8-u2:s
+worklog-rad) + TRANSKRIPT-ÅTERVINNING ur ~/.zcode/cli/db/db.sqlite: session
+sess_7ae0e3b8:s Write-snapshot + Edit-uppspelning återuppbyggde
+larm-eskalering.mjs v2 (20 034 tkn) och testsviten (koll(14)-slutblocket ur
+den misslyckade editens NEW-fält) ⇒ 20/20 PASS exit 0 — leveransen bevisat
+identisk med förlagan. Backuper: data/vakten/orphan-skydd-2026-09-16/
+(inkl. s8-u1:s oavslutade prod-synk-försvar, svit 29/30 — committas aldrig
+med fallande test; ägare: s8-u1-omstart/huvudagenten). Ej återvunnet:
+motorervalidering-2026-09-02.md (server-genererbar via kvalitetsvakten).
+Metodläxa (femte i clobber-familjen): ostaggerat arbete i ett träd med
+updateInstead-push + aktiva syskon lever på sekunder — Write/Edit ⇒ git add
+OFTA; transkriptdatabasen är sista återvinningskällan och DEN FUNGERAR
+(bevisat här: 20/20).

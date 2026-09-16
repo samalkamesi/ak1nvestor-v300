@@ -7,13 +7,27 @@
  *               dokumenterade tidpunkter i o22-vaktnat-halsa-s8.md)
  *   fall 5–12 = strukturgarantier (grön-avslut, återkomst, ackumulering,
  *               tysthet, skräprader, tröskel-override, grön-koppling)
+ *   fall 13–20 = v2 (o26 §5:3): kraschvakt-loggmappning (o24:s radtyper,
+ *               ARTEFAKT RÖD = 10:02-klassen, avstannad episod, tystnad-
+ *               skillnaden mellan källorna) + kvalitetsrapportålder (o22:s
+ *               mätblindhet) + per-käll-episodisolation.
  * Noll nätverk, noll child-processer; EN tmp-fil för lasRader-testet.
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { byggEpisoder, bedomEpisod, bedomTysthet, lasRader, kopplaGronTillEpisoder } from "./larm-eskalering.mjs";
+import {
+  byggEpisoder,
+  bedomEpisod,
+  bedomTysthet,
+  lasRader,
+  kopplaGronTillEpisoder,
+  oversattKraschvaktRader,
+  lasKvalitetsrapportTs,
+  bedomKvalitetsrapport,
+  markeraAvstannade,
+} from "./larm-eskalering.mjs";
 
 let pass = 0;
 const misslyckade = [];
@@ -144,6 +158,116 @@ koll(12, "tröskel-override fungerar (kortare gränser för snabba cyklar)", () 
   assert.equal(bedomEpisod(ep.aktiva[0], Z("2026-09-16T05:07:00Z"), granser).niva, 1);
 });
 
+// ═══ FALL 13–20: v2 — kraschvakt-källan + kvalitetsrapportålder (o26 §5:3) ═══
+
+// Fixturer ur VERKLIGA kraschvakt.log-rader (2026-09-16-fönstret, o24-format).
+const KRASCH_LOGG = [
+  "2026-09-16T04:14:21.100Z kooldown 90 min (av 120) — svarar=true status=online omstarter+0", // neutral
+  "2026-09-16T04:24:21.211Z KRASCHLOOP-MISSTANKE: svarar=false status=online omstarter +0 ⇒ RÄDDNINGSBYGG", // larm
+  "2026-09-16T04:26:10.000Z RÄDDNINGSBYGG MISSLYCKADES: EACCES — next run försöker igen", // larm (förlänger)
+  "2026-09-16T04:27:55.063Z RÄDDNING KLAR: appen svarar=true (mål: kunden märker max ~10-15 min)", // GRÖN
+  "2026-09-16T05:00:00.000Z TRANSIENT LAST: svarar=false vid 1:a koll, grön vid 2:a — ingen åtgärd", // neutral
+  "2026-09-16T05:05:00.000Z SVARAR INTE 2 GÅNGER men status=online omstarter +1 ⇒ PM2-RESTART (bygge ej motiverat ännu)", // larm
+  "2026-09-16T05:06:00.000Z PM2-RESTART LÄKTE appen — räddningsbygge onödigt (våg 137-bygget sparat)", // GRÖN
+  "2026-09-16T05:10:00.000Z PM2-RESTART RÄCKTE INTE ⇒ räddningsbygg", // larm
+  "2026-09-16T05:12:00.000Z ARTEFAKT RÖD efter räddningsbygget — statisk sond FEL 12/25 · appen startas men läget är INTE läkt", // larm (10:02-klassen)
+  "2026-09-16T05:13:00.000Z DEPLOY PÅGÅR (låset upptaget): svarar=false — räddning avvaktar, appen startas av deployn", // neutral
+  "2026-09-16T05:14:00.000Z ARTEFAKT GRÖN efter räddningsbygget — statisk sond 25/25", // neutral (GRÖN-artefakt = frisk info)
+  "inte en loggrad alls",
+  "",
+].join("\n");
+
+koll(13, "översättning: klass + nivå per radtyp ur verkliga loggrader, neutrala hoppas men räknas", () => {
+  const o = oversattKraschvaktRader(KRASCH_LOGG);
+  assert.equal(o.raderTotalt, 11); // 11 tidsstämplade rader (skräp+tom hoppas)
+  const klasser = o.rader.map((r) => `${r.omrade}:${r.niva}`);
+  assert.deepEqual(klasser, [
+    "kraschloop-misstanke:larm",
+    "raddningsbygg-misslyckades:larm",
+    "raddning-klar:gron",
+    "svarar-inte-2-ganger:larm",
+    "pm2-restart-lakte:gron",
+    "pm2-restart-rackte-inte:larm",
+    "artefakt-rod:larm",
+  ]);
+  assert.equal(o.senasteRadTs, "2026-09-16T05:14:00.000Z"); // neutral rad ÄR pulsen
+});
+
+koll(14, "kraschvakt-episoder: varje händelseklass = egen episod; RÄDDNING KLAR/LÄKTE avslutar med ärlig varaktighet", () => {
+  const o = oversattKraschvaktRader(KRASCH_LOGG);
+  const ep = byggEpisoder(o.rader);
+  // Klara (3): kraschloop-misstanke (04:24→04:27) · raddningsbygg-misslyckades
+  // (04:26→04:27) · svarar-inte-2-ganger (05:05→05:06). Aktiva (2):
+  // pm2-restart-rackte-inte + artefakt-rod — ingen grön efter 05:12.
+  assert.equal(ep.aktiva.length, 2);
+  assert.equal(ep.klara.length, 3);
+  const misslyckades = ep.klara.find((e) => e.nyckel.includes("raddningsbygg-misslyckades"));
+  kopplaGronTillEpisoder(ep, o.rader);
+  const e = bedomEpisod(misslyckades, Z("2026-09-16T12:00:00Z"));
+  assert.equal(e.status, "uppklarad");
+  assert.equal(e.varaktighetMin, 2); // 04:26:10→04:27:55 = 1 m 45 s ⇒ 2 (avrundat) — ärlig kort kur
+});
+
+koll(15, "ARTEFAKT RÖD som pågående läge eskalerar över tid (10:02-klassen hade ropat inom en timme)", () => {
+  const o = oversattKraschvaktRader("2026-09-16T10:04:00.000Z ARTEFAKT RÖD efter räddningsbygget — statisk sond FEL 12/25");
+  const ep = byggEpisoder(o.rader);
+  assert.equal(ep.aktiva.length, 1);
+  const efter62min = bedomEpisod(ep.aktiva[0], Z("2026-09-16T11:06:00Z"));
+  assert.equal(efter62min.niva, 2); // ESKALERING — 10:02-incidenten varade ~2 h kundsynligt
+  assert.equal(efter62min.status, "aktiv");
+});
+
+koll(16, "avstannad episod: aktiv räddning + loggen tyst > maxTystMin ⇒ nivå minst 2 + AVSTANNAD-etikett", () => {
+  const ep = byggEpisoder([{ ts: "2026-09-16T04:24:00Z", niva: "larm", typ: "kraschvakt", omrade: "x", medd: "x" }]);
+  const bedomd = [bedomEpisod(ep.aktiva[0], Z("2026-09-16T04:30:00Z"))]; // 6 min aktiv = nivå 0
+  const m = markeraAvstannade(bedomd, "2026-09-16T04:24:00Z", Z("2026-09-16T04:55:00Z")); // loggen tyst i 31 min
+  assert.equal(m[0].avstannad, true);
+  assert.equal(m[0].niva, 2); // höjd från 0 — avstannad är ALDRIG bara nivå 0
+  assert.match(m[0].etikett, /AVSTANNAD/);
+  // Frisk puls (5 min sedan senaste rad) ⇒ ingen markering
+  const frisk = markeraAvstannade(bedomd, "2026-09-16T04:50:00Z", Z("2026-09-16T04:55:00Z"));
+  assert.equal(frisk[0].avstannad, undefined);
+});
+
+koll(17, "kraschvakt-tystnad UTAN aktiv episod är NORMALT (pass-läge loggar tyst) — skillnaden mot konfig-källan", () => {
+  const o = oversattKraschvaktRader("2026-09-16T10:14:13.683Z kooldown 113 min (av 120) — svarar=true status=online omstarter+0");
+  const ep = byggEpisoder(o.rader);
+  assert.equal(ep.aktiva.length, 0); // inga episoder ⇒ inga avstannade, hur gammal loggen än är
+  const m = markeraAvstannade([], "2026-09-16T10:14:13.683Z", Z("2026-09-16T23:00:00Z"));
+  assert.equal(m.length, 0);
+});
+
+koll(18, "lasKvalitetsrapportTs läser Genererad-radens ts; saknad fil/ogiltig ts ⇒ null", () => {
+  const tmp = path.join(os.tmpdir(), `larm-esk-kval-${process.pid}.md`);
+  fs.writeFileSync(tmp, "# KVALITETSVAKTEN — 2026-09-16\n\n- **Genererad:** 2026-09-16T03:53:40.312Z (node v22.23.2 på linux)\n");
+  assert.equal(lasKvalitetsrapportTs(tmp), "2026-09-16T03:53:40.312Z");
+  fs.writeFileSync(tmp, "# ingen ts-rad alls");
+  assert.equal(lasKvalitetsrapportTs(tmp), null);
+  fs.rmSync(tmp, { force: true });
+  assert.equal(lasKvalitetsrapportTs("/finns/ej/rapport.md"), null);
+});
+
+koll(19, "kvalitetsrapportålder: färsk OK · 27 h VARNING · 55 h ESKALERING · 180 h KRITISK · null = KRITISK (kan inte mäta ≠ frisk)", () => {
+  const nu = Z("2026-09-17T07:00:00Z");
+  assert.equal(bedomKvalitetsrapport("2026-09-17T05:00:00Z", nu).niva, 0); // 2 h färsk
+  assert.equal(bedomKvalitetsrapport("2026-09-16T03:53:40Z", nu).niva, 1); // 27,1 h
+  assert.equal(bedomKvalitetsrapport("2026-09-14T23:00:00Z", nu).niva, 2); // 56 h
+  assert.equal(bedomKvalitetsrapport("2026-09-09T19:00:00Z", nu).niva, 3); // 180 h = o22-veckan
+  const blind = bedomKvalitetsrapport(null, nu);
+  assert.equal(blind.niva, 3);
+  assert.match(blind.orsak, /aldrig frisk/);
+});
+
+koll(20, "per-käll-episodisolation: konfig-källans GRÖN stänger INTE kraschvakt-episoder (olika byggEpisoder-anrop)", () => {
+  const konfig = byggEpisoder([
+    { ts: "2026-09-16T05:00:00Z", niva: "larm", typ: "k", omrade: "c", medd: "A" },
+    { ts: "2026-09-16T05:10:00Z", niva: "gron", typ: "k", omrade: "g", medd: "G" },
+  ]);
+  const krasch = byggEpisoder([{ ts: "2026-09-16T05:05:00Z", niva: "larm", typ: "kraschvakt", omrade: "artefakt-rod", medd: "artefakt-rod" }]);
+  assert.equal(konfig.klara.length, 1); // konfigens larm stängdes av sin egen grön
+  assert.equal(krasch.aktiva.length, 1); // kraschvaktens episod lever oberörd
+});
+
 // ═══ SAMMANFATTNING ═══
-console.log(`\n${pass}/12 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
+console.log(`\n${pass}/20 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
 process.exit(misslyckade.length === 0 ? 0 : 1);

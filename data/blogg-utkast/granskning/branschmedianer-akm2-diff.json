@@ -1,0 +1,8 @@
+{
+  "granskat": "data/blogg-utkast/m9-ko/branschmedianer-akm2-v2.json",
+  "granskadAv": "agentfabrik auto-s1-u1 (auto-s1-1789537520972, 2026-09-16)",
+  "rapport": "branschmedianer-akm2-KONTROLL-2026-09-16.md",
+  "bedomning": "FLYTTKLAR — 0 rättningar, 0 nya fynd; källor (md5 alla tre oförändrade 2026-09-16), siffror (56/56 maskinella kontroller i .zcode/granskning-m9-branschmedianer.mjs: 10 medianer + 10 n-mätta + 10 spridningar + 20 ytterlighetsbolag + 11 urdrag + ingress + högst/lägst alla EXAKTA mot oberoende omräkning ur korstabell-grund.json), juridik 2007:528 (juridikgrind-vakt flyttklar/grund/0 fynd + egen verb-sond 0 träffar + endast 2007:528 nämns), 911-referenser (0 träffar på 6 mönster) och länkar (3/3 HTTP 200 mot localhost) alla GRÖNA 2026-09-16",
+  "anvandning": "Postlistan är TOM MED AVSIKT: utkastet bär ett determinismkvitto (kandidatMd5 0431dd6c885861fa3b03fc1c70f6eb8a, body 4 733 tecken byte-identiskt rekonstruerad 2026-09-16, mallMd5 7b4a313a35ac6fb77204db4e176eb1a9, seed 904e0fcc… ÅTERLEDD ur trädets tre källor + månadsnyckel — kedjan källor→seed→body→kandidatMd5 hel) — varje manuell strängändring i JSON:en bryter kvittot. Innehållsändringar på m9-serien går via verktyg/m9-fabrik.mjs (regenerering med nytt kvitto). Exportvägen stryker vid publicering '(utkast)' i titeln och kvittoavsnittet i bodyn (09-14-fynd F3). Publicering = kundens beslut (R2).",
+  "poster": []
+}

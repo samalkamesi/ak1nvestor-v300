@@ -831,6 +831,63 @@ oförändrat fruset sedan första diffen; (5) om RAM frigjors: prod-synkens
 ombygge laker .next automatiskt — E35:s nästa återdiff verifierar grönt
 stil-läge + att pulsvaktens varvräknare nollställs.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u2 omgång 6 — E34 + E29 återdiffade; ANDRA VARVET mot dagens prodincident)
+
+Andra varvets andra dokvåg (u3 omgång 7+8 stängde första cykeln 36/36 och
+inledde varv 2 med E35 — deras slutstycke uppmanade "börja där verkligheten
+rört sig mest"). Objektval efter kollisionskontroll MED TRE TRÄDSKIFTEN under
+mätningen: förstavalet D21 togs av s9-u1 (6fcd6621 13:02:05), andravalen C19+D24
+av s9-u3 (b20f0b92 13:11:19) och E35-återdiffen av samma syskon (bf05b6d1
+13:20:37) — deras sektioner lästa, orörda, systemen avstodna (s10-u3-kuren).
+E34 (incidentens kärna, orörd av alla) + E29 (dagens fabrikscollisioner är
+organismens eget nya mätdata) genomfördes i stället. Allt MÄTT i arbetsytan
+2026-09-16 kl 13:05–13:21 (prod-sonder mot HTTPS+loopback, diskjämförelser
+mot .next, node-läsning av vakternas status-JSON, svitkörning, git log,
+ps, free) — inte worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Prod-läge vid 13:09 | (E34-raden 09-15 bär ingen incident) | **HTML 200 (115 985 B, identisk loopback+HTTPS) men 12/25 statiska resurser 404 på prod-HTTPS** — inkl. CSS-chunken 0dkvqmwqb0ena.css = KUNDSYNLIGT OSTYLAD sida; samtliga 12 saknas ÄVEN på disk i .next/static/chunks (97 filer, endast 2 css med ANDRA namn) |
+| Incident-kedjan | — | 10:02:39Z prod-synkens bygge OOM-dödat → 12:02Z manuellt triggat bygge "Killed" mitt i → .next inkomplett (protokoll KVALITET-VAKTEN-DEPLOYKLASSNING-2026-09-16.md) → 10:51:58Z kraschvakten DEPLOYAD automatiskt 19 commits med nytt bygge 10:49–10:50Z — MEN artefakten ÅTER inkomplett → felet PÅGICK vid mätningen |
+| ROT-FYND (djupare än "ISR-föråldring") | s8-u2 (259ae2dd) tolkade 12/25 som ISR-föråldring post-deploy | **.next/server/app/index.html är FÄRSK (12:51:39, strax efter BUILD_ID 12:50:29) och refererar DE 12 saknade chunks** — nuvarande byggets EGEN prerender pekar på filer bygget aldrig emitterade: artefaktinkonsistens I bygget, inte (endast) ISR-cache-gammal HTML; pulsvaktens diagnos "trasig-bygg" + "pm2-omstart hjälper INTE" oberoende bekräftad |
+| Vakternas synlighet (E35-gränsyta) | — | alla BLINDA vid 10:02 (kraschvakt HTML-200-blind, prod-synk commit-blind, gränssnittscron 6 h-glad) — pulsvaktens fjärde sinne (s8-u2, I DRIFT) är ENDA vakt som ser felet: statiskStatus "trasig-bygg", varv 24–25, 12/25-formulerat IDENTISKT med denna dokvågs oberoende mätning |
+| Läkningsläget | — | prod-synk 11:07:13Z: "NY KOD 5419b688 → b0b1e4ac; VÄNTAR-RAM 796 MB (<2200)"; RAM cirkulerade 629→2 044 MB under mätningen (två fria mätningar); pulsvakten 13:19:39Z: "trasig-bygg (deploy pågår — larm undertryckt)" — **ombygget PÅGICK vid dokvågens slut**; RAM-vaktens två vägringar (12:06, 13:07) var KORREKTA (förebyggde tredje OOM) |
+| Fabriksbastal (E29) | "25 klara manifest" (mätt 09-15) | **66 klara + 1 pågående av 67** (status-katalogen mätt 13:2x) — +41 klara manifest på ETT dygn; pumpor-daemonen uppe sedan 15 sep (ps); beslutsminnet 48 poster (mätt; 32 vid senaste diffen) |
+| Samtidiga syskon på DELAD fil (E29, nytt) | (regeln "exklusivt filägarskap" gäller uppdragens filer) | **DOKVÅGSUPPDRAG pekar 3 syskon på SAMMA kartfil utan lås** — mätt: TRE SYSTEMKARTAN-commits på 19 min (13:02:05 u1 · 13:11:19 u3 · 13:20:37 u3), tre dokumenterade trädskiften under denna dokvågs mätning, och en E35-sektion som skymtade i arbetsträdet ~13:1x och FÖRSVANN i en senare syskonskrivning (innehållet återställdes av u3:s egen omgång 8-commit — tur, inte mekanism) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E34 | LEVER 9 → **LEVER 8** | B7-precedensen: driftgapet nådde KONSUMENTYTAN — kunden såg ostylad sajt i timmar (10:02 → pågående 13:19) med ALLA vakter gröna; .next-bristklassen ÅTERKOM i ett "fullföljt" bygge (BUILD_ID skriven trots 12 ej emitterade chunks — nytt gap: post-build-artefaktverifiering saknas i deploy-kedjan). DR-och-backup-orkestreringen själv förblev grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens tvångsvägran korrekt) men prod-KONTINUITETEN är E34:s kärna = inte 9-läge |
+| E29 | LEVER 8 → **LEVER 8** | Tillväxt mätt (66 klara manifest, +41/dygn; beslutsminne 48) men dagens omgång AVSLÖJADE ett strukturellt gap: våg 104:s "exklusivt filägarskap per agent" gäller uppdragens egna filer — dokvågsuppdrag pekar flera syskon på SAMMA kartfil utan lås/sekvensering, med clobber-bevis (försvept sektion + tre trädskiften). E33/B14-precedensen: kunskap tillförd, inget gap stängt — ingen poängrörelse |
+
+Snittscore **7,5** (286 → 285 poäng / 38 system; E34 −1 vid denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **POST-BUILD-ARTEFAKTVERIFIERING i
+deploy-kedjan** (deploya-contabo.sh/kraschvakten): jämför
+.next/server/app/*.html:s chunk-referenser mot .next/static/ FÖRE
+pm2-restarten — idag skrevs BUILD_ID trots 12 saknade filer ("bygget klart"
+ljuger); dagens trasiga artefakt är färdigt testobjekt; (2) **pulsvaktens
+"deploy pågår — larm undertryckt" behöver tidsgräns** — undertryck utan tak
+= ny blindhet om en deploy hänger; (3) **RAM-cirkeln**: om tillgängligt
+aldrig når 2 200 medan pulsvakten ropar trasig-bygg — prioritera
+minnesfrigörelse (väntande fabriksbarn/pumpor-täthet) framför nya omgångar
+tills prod läkt; (4) **fabrikens dokvågsuppdrag behöver filsekvensering**
+(låsrad per kartfil i manifestprompts, eller "commit:a din sektion innan
+nästa syskon mäter") — clobberbeviset ovan; (5) E34:s nästa återdiff
+verifierar grönt stil-läge + att pulsvaktens varvräknare nollställs efter
+ombygget som pågick vid denna dokvågs slut.
+
+Korsvalidering av syskonen (deras sektioner orörda): (a) u1 omgång 8:s
+D21-sektion bekräftad av mina mätningar FÖRE deras commit-upptäckt — svit
+13/13 grön egen körning, XP-replay-engångs+tak i kod, POST 401
+{"fel":"Inloggning krävs."} live, GET {inloggad:false}; (b) u3 omgång 7:s
+C19/D24 bekräftad (0 sviter, 0 alarm-trösklar, /api/track 400, /api/trafik
+200 {besokareIdag:33,blockerat24h:1}, 405:orna, {"antal":7}, admin 401) —
+MITT TILLSKOTT till deras C19-rad (c): delningsknappen ÄR byggd, min-sida.tsx
+delaInsikter() + delningOppen (rader ~336–360, mätt) → POST /api/tracer med
+samtycke:true + bekräftelsetoast — "knappen är ännu ej byggd" är FÖRÅLDRADE
+kodkommentarer i rutten + tracer-mount som deras rad ärvde.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -864,18 +921,19 @@ stil-läge + att pulsvaktens varvräknare nollställs.
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Protokoll lever till 09-15 med åtgärder i innehåll (4 möten mätta — "tomma beslut" motbevisat); JSON-syntes-fallbacken lever i senaste mötet: gap 1 kvarstår |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (25 klara manifest, pumpor i ps); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (66 klara manifest av 67, +41/dygn mätt 09-16; pumpor i ps; beslutsminne 48 poster); NYTT GAP mätt 09-16: dokvågsuppdrag pekar syskon på SAMMA kartfil utan lås (3 commits/19 min + clobberbevis); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
-| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Kvartals-DR bevisad 2× (17,7 s + 14,7 s replik, 09-15); dump-markörvakt GRÖN (egen mätning); retention mekaniserad i cron; kvar: cron-koppling + pgpass (huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
+| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Vaktbältet växt: 54 sviter (+21/dygn mätt 09-16) + pulsvakt/statisk-sond/konsol/deployklassning (s8); pulsvakten FÅNGAR ett PÅGÅENDE prod-fel (12/25 chunks 404, mätt 11:12Z — läkning = prod-synkens ombygge vid RAM≥2200, 2106 MB vid mätning); motorvalidering 107/0/0 egen; kvar: motorregister 09-03, testaggregator (54 = provtagning), deploy-blockad vid RÖD (gapet EXEKTERAT av felet) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (286 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
-dokvågorna 2026-09-15, D20 +1 och B7 −1 vid dokvågorna 2026-09-16 — glömt-
+Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
+dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
+— glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
 AKM3-ensemble 0/22); C15+C16 reviderade utan scoreändring; u3 omgång 2
 diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
@@ -897,7 +955,11 @@ poängrörelse — vaktbältet 33→54 sviter på ett dygn, pulsvakt + statisk
 sond + konsol + deployklassning tillkomna (s8), pulsvakten driftbevisad
 fånga ett PÅGÅENDE kundsynligt stil-lös-fel (12/25 chunks 404 mätt 11:12Z;
 läkning = prod-synkens ombygge vid RAM≥2200), motorvalidering 107/0/0 egen
-körning.
+körning; s9-u2 omgång 6 (09-16, andra varvet) återdiffade E34/E29 mot dagens
+prodincident — E34 −1 (kundsynligt ostylad prod i timmar med blinda vakter =
+B7-precedensen; bristklassen återkom i "fullföljt" bygge), E29 orörd trots
+mätt tillväxt (66 klara manifest) men nytt clobberbevis för delade
+kartfiler bland samtidiga dokvågssyskon.
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -1914,7 +1976,22 @@ gap 1 kvarstår, FLAGGA och score oförändrade.*
   kräver åtgärder.length > 0 på en enkel fråga; (4) protokollens läsbarhet
   (markerade originalsvars-texter).
 
-## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 6): tillväxt MÄTT — status-
+katalogen bär 66 klara + 1 pågående manifest av 67 (+41 klara på ett dygn;
+25 vid senaste diffen), pumpor-daemonen uppe sedan 15 sep (ps), beslutsminnet
+48 poster (32 vid senaste diffen). MEN dagens dokvågsomgång avslöjade ett
+STRUKTURELLT GAP: våg 104:s regel "exklusivt filägarskap per agent" gäller
+uppdragens egna filer — dokvågsuppdrag pekar tre syskon på SAMMA kartfil
+(SYSTEMKARTAN.md) utan lås eller sekvensering. Mätt bevis: tre commits på
+19 minuter (6fcd6621 13:02:05 · b20f0b92 13:11:19 · bf05b6d1 13:20:37),
+tre trädskiften mitt i en syskons mätning, och en hel E35-sektion som
+skymtade i arbetsträdet ~13:1x och FÖRSVANN i en senare syskonskrivning
+(innehållet återställdes av författarens egen commit — tur, inte mekanism).
+Kur-kö: låsrad per kartfil i manifestprompts ELLER "commit:a din sektion
+innan nästa syskon mäter". Score 8 kvar (E33/B14-precedensen: kunskap
+tillförd, inget gap stängt). Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-15 (s9-u3): autonomi-pipelinen MEKANISK och
 driftbevisad. Agentfabriken (våg 146: verktyg/agentfabrik.mjs — RAM-vakt
@@ -2092,7 +2169,27 @@ publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.
   status oklar); (3) composite-indexet (ALTER-system_events-composite.sql)
   installerat? — prestanda vid växande event-tabell.
 
-## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-15)*
+## E34. Drift, backup & DR (Contabo) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 6): score 9 → 8 — DAGENS
+PROD-INCIDENT nådde konsumentytan (B7-precedensen). Mätt 13:05–13:21:
+prod-HTML 200 men 12/25 statiska resurser 404 (inkl. CSS-chunk ⇒ kundsynligt
+ostylad), samtliga 12 saknas på disk; ROT-FYNDET är djupare än "ISR-
+föråldring" (s8-u2:s tolkning): .next/server/app/index.html är FÄRSK
+(12:51:39, efter BUILD_ID 12:50:29) och refererar de 12 saknade chunks —
+byggets EGA prerender pekar på filer som aldrig emitterades = artefakt-
+inkonsistens I bygget (BUILD_ID skriven trots saknade filer). Kedja:
+OOM-dödat prod-synkbygge 10:02:39Z → manuellt triggt "Killed"-bygge 12:02Z
+→ inkomplett .next → kraschvaktens auto-deploy 10:51:58Z byggde OM men
+arten återkom inkomplett → felet PÅGICK vid 13:19 (pulsvakten: "trasig-bygg
+(deploy pågår — larm undertryckt)", varv 24–25 — ENDA vakt som ser det).
+Läkning = prod-synkens ombygge vid RAM≥2200 (796 MB vid 11:07Z-pollen;
+RAM cirkulerade 629→2 044 under mätningen). RAM-vaktens två vägringar var
+KORREKTA (förebyggde tredje OOM) och DR/backup-orkestreringen själv förblev
+grön — men prod-KONTINUITET är E34:s kärna. NYTT GAP (5): post-build-
+artefaktverifiering saknas i deploy-kedjan (jämför prerender-referenser mot
+static/ FÖRE pm2-restart — dagens trasiga artefakt är färdigt testobjekt).
+Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 3): DR-kedjan KVARTALSÖVAD OCH
 REPLIKERBAR samma dag (spår 10): natt-dumpen db-2026-09-15.sql.gz

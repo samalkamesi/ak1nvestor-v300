@@ -202,10 +202,31 @@ under restlast (se nedan) — antalet (12) är lastokänsligt, durationer är
 server (bevis: pgrep `npm exec lighthouse` 50 % CPU under min körning; load
 4,5). TBT 7755 är CPU-kontamination (samma fyndklass som o17 "lab-straffet
 är nätverkskontention" och o18 EFTER3 "larmad server") — POSITIVT ändå:
-CLS 0,0023 (mot 0 standard) visar att reservhöjderna INTE straffar. Ren
-återmätning på vilande server (vänta ut syskonets våg, ISR-trigga, kör
-`LH_JAMFOR=efter-skelett node verktyg/prestanda-lighthouse.mjs r4b2 / /kurser
-/blogg`) BOKAS som rest — pending-precedensen (b3b5e2c4/545014ff).
+CLS 0,0023 (mot 0 standard) visar att reservhöjderna INTE straffar.
+
+**Lighthouse rond 2 = FACIT på vilande server (r4b2 — RESTEN ÄR INFRIAD)**
+(rådata `start-r4b2.json`, `kurser-r4b2.json`, `blogg-r4b2.json`,
+`r4b2-sammanfattning.json`; förutsättningar: 0 lighthouse-processer, load
+~2 och sjunkande, ISR-triggad direkt före):
+
+| sida    | efter-skelett 05:31        | r4b2 vilande                |
+|---------|----------------------------|-----------------------------|
+| /       | (bas)                      | P99 · LCP 1770 · TBT 76 · CLS 0 |
+| /kurser | P52 · LCP 5844 · TBT 922   | **P93 · LCP 1902 (−3942) · TBT 279 (−643) · CLS 0** |
+| /blogg  | (bas)                      | P92 · LCP 1800 · TBT 336 · CLS 0 |
+
+ÄRLIG ATTRIBUTION (o18 §5-reservationslogiken): deltat efter-skelett→r4b2
+bär (a) CV-kuren 87af4874 — bygget 05:31 saknade klasserna (funktionssondens
+ABSENTA-vittne), (b) s5/s6-dataändringar (register 358→369, AI-mentor —
+rör ej /kurser-layout), (c) lastläget: / och /blogg (okurade denna våg)
+förbättrades också kraftigt ⇒ en betydande del av ALLA deltorna är
+"vilande server", och rond 1 (samma kod, belastad: P40) är motbeviset mot
+att läsa r4b2 som ren kur-effekt. Kurens EGEN, lastokänsliga andel står i
+S&L-sonden: 128→12 Layout-events och ~10× lägre S&L-tid. Slutsats: CV-kuren
+levererar sin strukturella vinst bevisat; poängen P93 är den verkliga
+upplevelsen för en ensam besökare på vilande server. Kvarvarande /kurser-
+gap mot / (P93 vs P99) = kända hydratiseringsroten (o19 §1, bokad till
+huvudagent).
 
 **Gränsnittsvakt /kurser — layout GRÖN, kontrast-artefakt motbevisad**
 (`granssnitt-2026-09-16T1003.json` + kontroll `…T0953.json`): överflöd 0px ·
@@ -225,7 +246,8 @@ CLS 0,0023 dokumenterar att nettostraffet är försumbart. Nästa CV-kur kan
 **Prod 200**: https://lab.ak1nvestor.com/ 200 (0,20 s) · /kurser 200
 (0,11 s) — 10:04Z.
 
-**Slutats**: o20-kurens EFTER-kedja är levererad utom den rena
-Lighthouse-poängen (bokad rest ovan). Kombinationen funktionssond (kuren
-LIVE) + S&L 128→12 events (−91 %) + totaltid ~10× lägre + CLS 0,0023 +
-layout-vakt GRÖN uppfyller §8:s väntade bevis i allt utom poängform.
+**Slutats**: o20-kurens EFTER-kedja är HELT levererad (resten från första
+commiten infriad av r4b2): funktionssond (kuren LIVE) + S&L 128→12 events
+(−91 %) + totaltid ~10× lägre + CLS 0,0023/0 + layout-vakt GRÖN + Lighthouse
+facit P93/LCP 1902/TBT 279 + prod 200. CV-kedjan /bibliotek (o18) + /kurser
+(o20) är därmed SLUTBEHANDLAD i hela spårets mätbok.

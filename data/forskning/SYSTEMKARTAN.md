@@ -774,6 +774,63 @@ system mätta mot verkligheten i 17 dokvågar (2026-09-15 → 2026-09-16);
 D22/D23 väntar kund-R2. Nästa dokvåg = andra varvet — börja där
 verkligheten rört sig mest sedan första passningen.**
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 8 — E35 ÅTERDIFFAD: s8-vaktvågen + PÅGÅENDE prod-fel)
+
+Andra varvets första dokvåg, exakt enligt omgång 7:s slutregel ("börja där
+verkligheten rört sig mest sedan första passningen"): E35 är systemet med
+störst rörelse sedan sin första diff (2026-09-15) — s8-spåret levererade en
+hel vaktvåg 2026-09-16 (deployklassning, pulsvakt, statisk sond, konsol).
+Kollisionsbokföring: uppdragets två naturliga förstaval (C19 + D24) togs av
+syskonet s9-u3 omgång 7 (b20f0b92) medan mätningarna pågick — deras sektion
+lästes och lämnas orörd; mina oberoende mätningar FÖRE commit-upptäckten
+bekräftar deras fynd (API-sonderna 400/200/405/405, fas-seten 18+24,
+rate-limit-gapet i /api/fas2-ansok — oberoende fynd av samma gap) och
+tillför fyra mått deras sektion saknar (se korsvalideringen nedan). Allt
+MÄTT i arbetsytan 2026-09-16 (svitkörningar, motorvalidering, ps-läsning
+av pulsvakt-processen, node-läsning av JSON, curl mot loopback + HTTPS,
+free -m, git log) — inte worklog-läsning:
+
+| Mått | Kartan (senaste E35-diff 09-15) | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Testsviter | "33 st (mätbart)" | **54 st** (ls mätt) — +21 på ETT dygn (fabriks- + s8-vågorna); tre nya s8-sviter KÖRDA GRÖNA egna körningar: testa-granssnitt-konsol **14/14** + testa-statisk-sond **10/10** + testa-pulsvakt-statisk **17/17** (alla exit 0) |
+| Motorvalidering | 107/0/0 (09-15) | **107 PASS / 0 FAIL / 0 SKIP (8,1 s, egen körning)** — fortsatt grön, tredje dokvågsbekräftelsen |
+| Vaktverktyg | beroende-/dödlänkar-/konfigintegritetsvakt (09-15) | **+ FYRA till (s8-vågen, ls mätt)**: pulsvakt.mjs (20 259 byte — minutpuls med lägesmaskin), pulsvakt-statisk.mjs (statiskt kontraktstest), statisk-sond.mjs (bygg-tillgångars kontrakt), granssnitt-konsol.mjs (delresurs-deploysignaturer); granssnittsvakt.mjs vuxen till 36 748 byte med DEPLOYKLASSNING (stil-lös-detektor, vänta+mät-om vid deploykollision); protokoll KVALITET-VAKTEN-DEPLOYKLASSNING-2026-09-16.md på disk |
+| Pulsvakten i drift | (fanns ej) | **LEVER SOM PROCESS**: PID 1084046, upp 20:41 min, pulserar VARJE minut (senasteKoll 11:11:36Z vid mätning 11:12:12Z), status lever:true, varv 20 — MEN ingen crontab-rad (mätt): drivningen är en engångsprocess, omstartsberoende |
+| PÅGÅENDE prod-fel | (fanns ej) | **FÅNGAT I REALTID AV SYSTEMET, MÄTT EGNA HÄNDER 11:12Z**: pulsvakten högprio "trasig-bygg" — HTML 200 men **12/25 statiska tillgångar 404**; EGEN sond: chunk 0dkvqmwqb0ena.css = **404 på loopback OCH HTTPS** (kundsynligt ostylat); gränssnittsvakten 10:41Z klassar /kurser "stil-lös sida (CSS ej laddad)" — deployklassningen gör sitt jobb |
+| Läkningsvägen | — | prod-synk.loggen: "NY KOD 5419b688→b0b1e4ac 11:07:13Z · VÄNTAR-RAM 796 MB (<2200)" — ombygget (som äger läkningen under deploylåset) väntar fortfarande: RAM **2 106 MB vid 11:12Z** (free -m), under tröskeln; felet lever tills minnet frigjors |
+| Gränssnittsvakten | cron GRÖN (09-15) | senaste rapport 2026-09-16T1041 (cron igång idag) med deployklassningen i rapportens kombinationer |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E35 | LEVER 8 → **LEVER 8** | Båda hållen samtidigt: vaktbältet växer kraftigt (+21 sviter/dygn → 54, fyra nya verktyg med kontraktstester, pulsvakt driftbevisad — den FÅNGAR ett levande prod-fel, vilket är kvalitetssystemets kärnuppdrag bevisat i skarpt läge) MEN gap 3 (deploy-blockad vid RÖD) är nu EXEKTERAT av verkligheten: .next skadades (OOM-dödat bygge) och felet nådde prod utan att någon grind stoppade vägen; aggregatorn saknas fortfarande (54 sviter = provtagning) och motorregistret förblir fruset (09-03). Netto E33/B14-precedensen: kunskap tillförd, inga gap stängda — ingen poängrörelse |
+
+**Korsvalidering C19/D24 (syskonet omgång 7:s sektion orörd, deras fynd
+bekräftade + FYRA egna tillägg):** (a) **fantomkontrollen 0/42** — alla 42
+grindslugar (18+24) MÄTTA mot public/deep-courses.json + data/bokmaster med
+node (0 fantomer — deras kodräkning kompletteras med registeräktheten);
+(b) **ADMIN_PASSWORD är SATT i prod** (närvaro mätt i .env*, värdet aldrig
+läst) — admin-ruttens dev-fallback "AK1A-2026" (fas2-access route.ts:55) är
+INAKTIV i prod; (c) admin-rutten hanterar **ENDAST fas2/free** — ingen
+fas3-aktiveringsgren (Fas 3-aktiveringens adminväg finns ej i denna rutt,
+precisering till deras gap 1-not); (d) kartans C19-begrepp "DNA-blockering"
+är en SUBSTRING-FALS (grep -i "dna" träffar endast "värd**namn**") och
+nyckelfilsradens fristående "/api/konvertering" existerar ej (endast
+/intention) — två småkartfel som deras sektion inte rörde och som bokförs
+här i stället för i deras detaljblock.
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **pulsvakten behöver överlevnad** —
+cron-rad ELLER pm2-process (idag: engångsprocess, dör vid omstart medan
+prod-felet den bevakar fortfarande är olakt); (2) **gap 3 (deploy-blockad
+vid RÖD) nu exekverat** — ett vaktrapports-stopp i deploy-skriptet (eller
+prod-synkens poll) hade hindrat .next-skadan från att bli kundsynlig;
+prioriteras om än en gång; (3) testaggregatorn viktigare för var dag som
+går (54 sviter, fortfarande provtagning); (4) motorregistret 09-03 —
+oförändrat fruset sedan första diffen; (5) om RAM frigjors: prod-synkens
+ombygge laker .next automatiskt — E35:s nästa återdiff verifierar grönt
+stil-läge + att pulsvaktens varvräknare nollställs.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -813,7 +870,7 @@ verkligheten rört sig mest sedan första passningen.**
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Kvartals-DR bevisad 2× (17,7 s + 14,7 s replik, 09-15); dump-markörvakt GRÖN (egen mätning); retention mekaniserad i cron; kvar: cron-koppling + pgpass (huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Grind blockerar varje commit (bevisad s8-u1); +3 vakter (beroende/döda länkar/konfig); kvar: motorregister 2026-09-03, testaggregator, deploy-blockad vid RÖD |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Vaktbältet växt: 54 sviter (+21/dygn mätt 09-16) + pulsvakt/statisk-sond/konsol/deployklassning (s8); pulsvakten FÅNGAR ett PÅGÅENDE prod-fel (12/25 chunks 404, mätt 11:12Z — läkning = prod-synkens ombygge vid RAM≥2200, 2106 MB vid mätning); motorvalidering 107/0/0 egen; kvar: motorregister 09-03, testaggregator (54 = provtagning), deploy-blockad vid RÖD (gapet EXEKTERAT av felet) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
@@ -835,7 +892,12 @@ u3 omgång 7 (09-16) diffade C19/D24 utan poängrörelser — samtyckesgatingen
 delvis motbevisad + PageViewBeacon-fyndet (sänder före samtycke), fas-seten
 18/24 exakta i kod, nytt rate-limit-gap i /api/fas2-ansok — och därmed är
 ALLA 36 diffbara system diffade (fullständig diff-cykel; D22/D23 väntar
-kund-R2).
+kund-R2); u3 omgång 8 (09-16) INLEDDE ANDRA VARVET med E35-återdiff utan
+poängrörelse — vaktbältet 33→54 sviter på ett dygn, pulsvakt + statisk
+sond + konsol + deployklassning tillkomna (s8), pulsvakten driftbevisad
+fånga ett PÅGÅENDE kundsynligt stil-lös-fel (12/25 chunks 404 mätt 11:12Z;
+läkning = prod-synkens ombygge vid RAM≥2200), motorvalidering 107/0/0 egen
+körning.
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -2072,7 +2134,22 @@ hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
   täckning 12/44 → 44/44 (sökvägslista komplett); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
-## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 8 — andra varvets första
+återdiff): vaktbältet har vuxit KRAFTIGT på ett dygn — 33 → **54
+testsviter** (mätt) varav tre s8-sviter körs gröna i egna körningar
+(gränssnitt-konsol 14/14, statisk-sond 10/10, pulsvakt-statisk 17/17), fyra
+nya verktyg (pulsvakt, pulsvakt-statisk, statisk-sond, gränssnitt-konsol) +
+gränssnittsvaktens deployklassning (36 748 byte). Pulsvakten LEVER som
+process (PID-mätt, varje minut) och FÅNGADE ett PÅGÅENDE prod-fel i
+realtid: 12/25 statiska tillgångar 404 (mätt egna händer 11:12Z på loopback
+OCH HTTPS — kundsynligt ostylat), medan prod-synken väntar RAM (2 106 MB <
+2 200-tröskeln) för det läkande ombygget. Motorvalideringen 107/0/0 (8,1 s,
+egen körning). Gap 3 (deploy-blockad vid RÖD) är nu EXEKTERAT av
+verkligheten — felet nådde prod utan grindstopp. Score 8 orörd (E33/B14:
+bältet stärker, aggregatorn + frusna motorregistret + gap 3 väger emot).
+Se diff-tabellen i UPPDATERING-sektionen ovan.*
 
 *Uppdatering 2026-09-15 (dokvåg s9-u1): FLAGGAN (105/2 GUL) är sedan
 2026-09-13 historia — motorvalideringen omätten nu: 107 PASS / 0 FAIL /
@@ -2090,8 +2167,9 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
 - **Vad:** Kvalitetsvakten (10 kontroller över hela sajten: varumärke,
   JSON, länkar, kursdata, sitemap, motorer, åäö, siffror — skriver
   kvalitetsrapport-SENASTE.md + RESULTAT_JSON), motorvalidering (42 motorer,
-  determinism/kontraktskontroller), 33 testsviter i verktyg/ (mätbart
-  2026-09-15), pre-commit-grinden (tsc-0 + R2-filblockad vid varje commit),
+  determinism/kontraktskontroller), 54 testsviter i verktyg/ (mätbart
+  2026-09-16; 33 vid 09-15-mätningen), pre-commit-grinden (tsc-0 +
+  R2-filblockad vid varje commit),
   verktygsbältet (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs),
   cron-kvalitet 07:00, DRIFTSBOKEN-koppling.
 - **Nyckelfiler:** verktyg/{kvalitetsvakt,validera-motorer,agent-status}.mjs,
@@ -2110,8 +2188,11 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   regenereras (42 motorer, autonomi-kolumner, testtäckning — oförändrat
   sedan 2026-09-03, git-bevis efff399c); (2) "kör-alla-tester"-
   aggregator (33 sviter + PASS/FAIL-summa i RESULTAT_JSON-mönstret) —
-  fortfarande provtagning; (3) deploy-blockad vid RÖD vaktrapport —
-  grinden stoppar commit-nivån men ingen blockerar deploy; (4) STÄNGDA:
+  fortfarande provtagning — med 54 sviter; (3) deploy-blockad vid RÖD
+  vaktrapport — grinden stoppar commit-nivån men ingen blockerar deploy;
+  EXEKTERAT 2026-09-16 (mätt): .next-skadan nådde prod som kundsynligt
+  stil-lös-fel (12/25 chunks 404) medan pulsvakten larmade högprio — ingen
+  grind stoppade vägen; (4) STÄNGDA:
   netnet+MÖS röda (2026-09-13, 107/0/0), testa-b2b-grind trasig (kör
   GRÖNT igen 2026-09-15 — se sidofynd E30-revision ovan).
 

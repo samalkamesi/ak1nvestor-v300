@@ -36,6 +36,7 @@
 | sa-laser-du-handelsbanken-q3-2026 | 2026-10-21 07:00 CET (officiellt — bolaget slog själv fast datumet i Q2-rapporten 2026-07-15; pre-close call enligt kalenderunderlaget 2026-09-30) — seriens nästa dubbelrapportdag, samma morgon som SKF | UTKAST v1 | Se raden ovan |
 | sa-laser-du-swedbank-q3-2026 | 2026-10-22 vanligen 07:00 (officiell finansiell kalender; tyst period t.o.m. 2026-10-21; Q2 publicerad 2026-07-17, helårsrapport noterad 2027-01-27) — delar dagen med Essity (paket tillkom samma omgång) | UTKAST v1 | Se raden ovan |
 | sa-laser-du-essity-q3-2026 | 2026-10-22 ca 07:00 CET (officiell IR-kalender; Q1 2026-04-23, Q2 2026-07-16, kalenderår = räkenskapsår) — delar dagen med Swedbank, Sandvik och Atlas Copco: säsongens första fyrdubbla rappdag | UTKAST v1 | Se raden ovan |
+| sa-laser-du-alfa-laval-q3-2026 | 2026-10-27 (kalenderunderlag: Q1 2026-04-22, Q2 2026-07-21; klockslag ej angivet) | PÅGÅR | Klaim — raceskydd mot syskon i omgången: fabrik auto-s4-u2 bokar Alfa Laval (tidigaste återstående universumbolag med kalenderunderlag) 2026-09-16 |
 
 ## Branschguider (spår 3 — nästa branschomgång, mall: SEO-GUIDER-2026-09.md)
 

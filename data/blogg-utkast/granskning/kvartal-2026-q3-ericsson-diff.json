@@ -1,0 +1,90 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-ericsson-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-16, omgång auto-s1-1789585526448)",
+  "rapport": "kvartal-2026-q3-ericsson.md",
+  "bedomning": "FLYTTKLAR EFTER TVÅ RÄTTNINGAR — 36/36 sifferkontroller gröna mot källfilerna (ERIC-B.ST.json 2026-08-24, bolagsunivers.json 2026-09-03, kalender-teknik.json 2026-09-15, vagvalidering-SENASTE), juridikgrind REN (kontrolleraText-spegel 0 FEL 0 VARNINGAR av 26; endast 2007:528 2 kap 5 § korrekt åberopad), 911 = 0 träffar/6 mönster, länkar 13/13 HTTP 200 mot localhost. B1–B2 maskinella byten; C1–C7 förslag som kräver beslut.",
+  "anvandning": "Verkställ B-poster exakt (sök/ersätt i angivet fält — samtliga strängar maskinellt verifierade UNIKA i filen). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "body (inledande stycke)",
+      "gammalt": "det är alltid den källan som gäller fram till allt annat",
+      "nytt": "det är alltid den källan som gäller framför allt annat",
+      "orsak": "Skrivfel: 'gäller fram till allt annat' är ingen svensk konstruktion; avsett är 'framför allt annat' (källans företräde framför allt annat). Strängen verifierad unik i filen"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 6,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts: ORD_PER_MINUT=600, Math.max(1, Math.round(ord/600))): titel+ingress+body = 1 242 ord → 2. Sjätte observerade instansen av granskningsköns systematikat (lakemedels, ravarubolag, teknikaktier, energibolagens-utdelningspolitiken, volvo-car). Exportvägen räknar om automatiskt — rättas enklast nu"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "title",
+      "gammalt": "Ericssons Q3-rapport 2026: så läser du den — läspaket med nyckeltal och scenarier",
+      "nytt": "Så läser du Ericssons Q3-rapport 2026 — nyckeltal och scenarier",
+      "orsak": "Nuvarande 81 tkn klipps i mobila sökträffar (taket ~60); förslaget är 63 tkn med sökordet 'Ericssons Q3-rapport' bevarat intill datumet"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "description",
+      "gammalt": "Ericsson rapporterar tredje kvartalet 2026 den 15 oktober kl 07:00. Här är läspaketet: motorns senaste vågmätning, nyckeltalen att ha med sig, tre sätt att läsa utfallet — och källorna bakom varje siffra.",
+      "nytt": "Ericsson rapporterar Q3 2026 den 15 oktober kl 07:00. Här är läspaketet: vågmätningen, nyckeltalen, tre sätt att läsa utfallet — och källorna bakom varje siffra.",
+      "orsak": "204 → 161 tkn (SEO-fönstret ~155–160); samma innehåll, kortare former"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "15 oktober, en vecka före hösten av industribolag",
+      "nytt": "15 oktober, före den tunga industribolagsvågan som inleds 20 oktober",
+      "orsak": "Approximation: ABB 20 oktober är 5 dagar senare (SKF 21, Atlas Copco/Sandvik 22) och Industrivärden i samma industrikalender rapporterar 10-07 — FÖRE Ericsson. Förslaget tar bort veckopåståendet och INDU-C-ambiguiteten och blir källbelagt mot kalender-industri.json"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "body (Övning B)",
+      "gammalt": "pris per gigabyte sålt, mix av nätverk versus tjänster, valutaeffekter, engångsposter",
+      "nytt": "mix av nätverk versus tjänster, IPR-licensintäkter, valutaeffekter, engångsposter",
+      "orsak": "Domänprecision: 'pris per gigabyte' är operatörens prismodell — Ericsson säljer utrustning, tjänster och IPR-licenser, inte data per gigabyte. IPR-licensintäkterna är en av leverantörens kända marginaldrivare"
+    },
+    {
+      "id": "C5",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "body (Vad motorn mäter just nu)",
+      "gammalt": "de längre horisonterna lutar åt impulsvåg",
+      "nytt": "medellång- och långhorisonten lutar åt impulsvåg",
+      "orsak": "Precision mot källan: medellång=impulsvåg och lång=impulsvåg, men mega (den längsta) = korrigering — 'de längre' blir missvisande när den allra längsta är korrigering"
+    },
+    {
+      "id": "C6",
+      "typ": "forslag",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "body (Källor, sista raden)",
+      "gammalt": "speglad i [kvartalsrapporten för 2026:3](https://lab.ak1nvestor.com/blogg)",
+      "nytt": "speglad i [vågkartans månadspost](https://lab.ak1nvestor.com/blogg/vagkartan-traffprocent)",
+      "orsak": "Kvartalsrapporten 2026:3 är OPUBLICERAD (utkast i data/blogg-utkast/) — länktexten lovar ett dokument som inte finns på målet (bloggindexet). Vågkartsposten är publicerad och speglar samma valideringsdata (verifierad HTTP 200); alternativ: API-spegeln /api/data/vagstatistik"
+    },
+    {
+      "id": "C7",
+      "typ": "forslag-r2",
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-13",
+      "nytt": "(kundens beslut — R2)",
+      "orsak": "Publiceringsdatum är kundens vetoområde (R2). 10-13 (två dagar före rappdagen 10-15) är ett rimligt default men granskaren sätter inget nytt värde; noteras så att beslutet inte glöms"
+    }
+  ]
+}

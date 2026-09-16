@@ -806,10 +806,12 @@ export function ChatWidget() {
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
 
     // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
-    // Regel+datamotorn (ai-mentor-svar.ts + kursregistret) svarar på de van-
-    // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
-    // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
-    // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
+    // Regel+datamotorn (tretton lager: bas + tolv syskonfiler) svarar på de
+    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 54 för-
+    // handsfrågors monsters + generiskt V01–V20-uppslag, alla källmärkta
+    // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
+    // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
+    // fortsätter flödet nedan till /api/chatbot precis som förr.
     const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor

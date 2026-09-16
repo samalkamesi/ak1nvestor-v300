@@ -782,6 +782,45 @@ EnvironmentFile med chmod 600).
 - PG17 orörd (nere före/efter — korrekt viloläge); R2 orörd; inga byggen;
   tsc-grinden passerad vid commit (src/ orörd av denna leverans).
 
+## S10-U2 (O3) — DR-FÖNSTRETS INDEX-PROV: ALTER-filen testad, dubbel fel + kur + ~396× (2026-09-16, GODKÄNT)
+
+- **Kö-item verkställt SOM PROV:** "ALTER-system_events-composite.sql vid
+  nästa DR-fönster" (E33 gap 3, s9-u3:s kö) — filen (våg 63) låg okörd;
+  prod-DDL rördes ALDRIG (huvudagenten/kunden äger själva prod-körningen).
+  Verktyg `verktyg/dr-index-prov.mjs` (dr-kedja2-kontraktet: flock
+  /tmp/ak1a-dr-prov.lock + RAM-/diskgrind + skrap-DB ak1a_dr_index +
+  DDL/rådata ur dagens dump + arkiv + maskinellt protokoll + garanterad
+  städning i finally). Fullprotokoll:
+  data/forskning/DR-INDEX-PROV-2026-09-16-2.md (GRÖN exit 0) +
+  DR-INDEX-PROV-2026-09-16.md (RÖD = PK-kollisionsvarianten).
+- **Filen DUBBELT UNDERKÄND mot äkta data** (161 678 rader COPY:ade):
+  (1) `CREATE INDEX IF NOT EXISTS CONCURRENTLY` = SYNTAXFEL i PostgreSQL
+  (korrekt ordning: `CONCURRENTLY IF NOT EXISTS`); (2) kolumnen `type`
+  existerar ej i prod — verkligt namn `event_type` (schemadriften igen).
+  En okritisk prod-körning hade misslyckats två gånger om.
+- **KURERAD v2 levererad i data/sql/ALTER-system_events-composite.sql**
+  (testbevis + historik i filens header):
+  `CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_system_events_type_created
+  ON public.system_events(event_type, created_at desc);` — verifierad
+  GRÖN: byggtid 0,4 s, index 1,5 MB.
+- **Prestanda (filens eget motiverade läsmönster, topp-typ oversattning
+  146 194 rader):** 74,8 ms → 0,2 ms = **~396× snabbare** (Seq Scan +
+  Sort → Index Scan). FYND: prod har INGA sekundära index på
+  system_events (dump 09-16: endast PK) — filens påstående "har idag
+  enkla index" är FALSKT; tabellen växer ~2 000 rader/dag.
+- **FYND i DR-kedjan — katastrofsekvensen kedja 1 + kedja 2 mot SAMMA DB
+  DÖR:** full dump-restore föder system_events MED PK, och arkivets
+  4 dublett-id stoppar importen (COPY dör vid rad 30 001, alternativt
+  PK-altret "could not create unique index" — båda varianterna bevisade).
+  Tidigare sekvensprov körde kedjorna mot skilda skrap-DB:er; kombinationen
+  var obevisad tills nu. KUR-KÖ till huvudagenten: dedupe-läge i
+  aterstall-system-events.mjs ELLER röjning av de 4 dublett-id i prod
+  (samma tabell som ALTER-kön — se även s10-u1 O4:s idempenskö).
+- NOTERA: scripts/supabase-schema.sql definierar fortfarande kolumnen
+  `type` (dev/prod-glidning lever — synka vid tillfälle).
+- Städning verifierad: ak1a_dr_index raderad, PG17 stoppad; R2 orörd;
+  inga byggen (src/ orörd; tsc-grinden passerad vid commit).
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

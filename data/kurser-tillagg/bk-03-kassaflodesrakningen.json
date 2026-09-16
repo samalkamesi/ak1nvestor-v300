@@ -1,0 +1,164 @@
+{
+  "slug": "bk-03-kassaflodesrakningen",
+  "category": "BOKFÖRING & ÅRSREDOVISNING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kassaflödesräkningen — pengarna som faktiskt rörde sig",
+  "summary": "De tre flödena — löpande verksamhet, investeringar och finansiering — steg för steg: hur vinsten översätts till kassa, vad frikassaflöde är och hur de tre rapporterna kontrollerar varandra.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Läsa kassaflödesräkningens tre sektioner — löpande, investerande och finansierande verksamhet · Räkna om resultatet till kassa med avskrivningar och förändringar i arbetskapital · Förstå varför en vinst kan vara kassalös och en förlust kassastark · Räkna ut frikassaflöde i ren aritmetik · Se hur utdelning och amortering lämnar bolaget i finansieringsverksamheten · Trippelkontrollera resultaträkningen, balansräkningen och kassaflödesräkningen mot varandra.",
+  "why": "Resultaträkningen (bk-02) berättar hur året gick enligt periodiseringens regler — men bolaget betalar inte räkningar med pappersvinster. Kassaflödesräkningen är den tredje rapporten som visar pengarna som faktiskt rörde sig, och den är den ärligaste av de tre: obrukbara resultat, uppblåsta lager och kunder som inte betalar syns här först. Kursen bygger vidare på exempelbolaget från balansräkningen (bk-01) och resultaträkningen (bk-02) och stänger cirklar hela vägen: samma års resultat blir samma kassa, samma utdelning, samma balansräkning — tre rapporter, en berättelse. Det är grunden för varje resultatkvalitetsläsning (ln-02) och för förståelsen av frikassaflödets roll i AKM1:s metodik.",
+  "history": {
+    "origin": "Kassaflödesräkningen är rapporternas yngsta. Intäkts- och kostnadsredovisningen räckte när ägare och banker kände bolagen personligen, men när koncerner växte fram under 1900-talet blev det möjligt att visa vinst år efter år medan kassan läckte ut genom långsamma kunder och uppblåsta lager. Kriser där vinstrika bolag gått omkull på kassabrist drev fram kravet på en egen rapport för pengarnas vägar.",
+    "evolution": "I USA blev kassaflödesrapporten obligatorisk för börsbolag 1988, och den indirekta metoden — att börja i resultatet och justera för icke-kassa-poster — blev världens standardform. I Sverige infördes kravet genom årsredovisningslagen på 1990-talet, och IFRS sammanställer sedan 2005 reglerna i IAS 7: tre sektioner, löpande verksamhet, investeringar och finansiering, oavsett bransch.",
+    "modern": "I dag är kassaflödesraderna lika bevakade som resultatraderna: frikassaflöde och utdelningens kassatäckning är fasta delar av varje svensk rapportpresentation. För läsaren är rapporten samtidigt den bästa lögn-detektorn — den som kan följa en krona från resultat via arbetskapital till kassa kan inte luras av en snygg vinstrad. Det är den läsningen den här kursen tränar."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — vinst är inte kassa",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Tre flöden — löpande, investerande, finansierande",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Löpande verksamheten — från resultat till kassa",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Praktisk läsning — läs en svensk kassaflödesräkning",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Vanliga fällor och misstag",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — frikassa och trippelkontrollen",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — vinst är inte kassa",
+      "intro": "Periodiseringen gör resultaträkningen sann mot affären — men pengarna kan vara någon annanstans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En försäljning bokförs som intäkt samma dag varan lämnar lagret, även om kunden betalar tre månader senare. Lönerna kostar när de intjänas, även om löneutbetalningen kommer veckan efter bokslut. Resultaträkningen är alltså byggd på rättigheter och skyldigheter — kassaflödesräkningen på betalningar. Skillnaden låter harmlös men är hela skillnaden: ett bolag kan redovisa vinst och ändå tömma sitt bankkonto, och ett bolag i omställning kan visa förlust medan kassan växer.\n\nDärför kompletterar de tre rapporterna varandra som tre vittnen om samma år: balansräkningen (bk-01) visar ställningen, resultaträkningen (bk-02) resan enligt reglerna, kassaflödesräkningen pengarna på kontot. Ingen av dem räcker ensam — tillsammans kan de inte ljuga för varandra."
+        },
+        {
+          "type": "definition",
+          "content": "Kassaflödesräkning: Rapport som visar bolagets in- och utbetalningar under en period, uppdelade i tre sektioner — löpande verksamhet, investeringsverksamhet och finansieringsverksamhet — och som slutar i förändringen av likvida medel."
+        },
+        {
+          "type": "insight",
+          "content": "Tänk på hushållet: lönespecifikationen är resultaträkningen, kontotransaktionerna är kassaflödet — båda beskriver samma månad, men bara det ena förklarar varför saldot på kontot ändå sjönk."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tre flöden — löpande, investerande, finansierande",
+      "intro": "Alla betalningar sorteras i tre sektioner — och strukturen är samma för ett hushåll som för ett börsbolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fortsätt på exempelbolaget från resultaträkningen (bk-02), som redovisade årets resultat 216 miljoner kronor. Den löpande verksamheten samlar affärens betalningar — kunder, leverantörer, löner, skatt — och landar det här året på 311. Investeringsverksamheten samlar köp och försäljningar av varaktiga tillgångar: bolaget bygger ut och köper maskiner för 120. Finansieringsverksamheten samlar ägarnas och långivarnas transaktioner: ränteintäkter 10 in, räntekostnader 40 ut, amortering 20 ut och utdelning 108 ut — sammanlagt −158.\n\nÅrets kassaflöde blir då 311 − 120 − 158 = +33 miljoner kronor, och likvida medel växer från 32 till 65. De tre talen bär varsin berättelse: affären ger kassa, framtiden konsumerar den, ägarna och bankerna får sin andel. Ett bolag som år efter år har stark löpande verksamhet men svag total kassa bygger för framtiden; ett bolag med svag löpande verksamhet och stark total kassa håller på att äta sitt bestånd."
+        },
+        {
+          "type": "insight",
+          "content": "311 − 120 − 158 = +33 och kassan 32 → 65: om du bara får läsa en rad i en rapportpresentation, läs den här sammanställningen — den visar på en rad vem som betalar vem av affären, framtiden och ägarna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Löpande verksamheten — från resultat till kassa",
+      "intro": "Den indirekta metoden börjar i resultatet och justerar hem kassan — fyra justeringar räcker långt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Starta i årets resultat 216 och följ den indirekta metoden steg för steg. Första steget flyttar räntan och skatten till sina sektioner: finansnettot −30 och skatten 54 ligger under rörelseresultatet, men räntorna hör hemma i finansieringsverksamheten och skatten betalas här i den löpande — läggs de tillbaka blir summan 216 + 30 + 54 = 300, precis rörelseresultatet från resultaträkningen (bk-02). Andra steget lägger tillbaka avskrivningarna: av de övriga rörelsekostnaderna (240 i resultaträkningen) är 60 avskrivningar, en kostnad utan kassaflöde — 300 + 60 = 360, som är EBITDA (v08). Tredje steget är arbetskapitalet: kundfordringarna har vuxit med 5 (intäkter bokförda men ej betalade — dra ifrån), lagret med 5 (kontantbindning — dra ifrån) och leverantörsskulderna med 15 (kostnader bokförda men ej betalda — lägg till): 360 − 5 − 5 + 15 = 365. Fjärde steget drar ifrån den betalda skatten igen, nu på sin rätta plats: 365 − 54 = 311 — kassaflödet från den löpande verksamheten.\n\nNotera ordningen i tecknen: växande fordringar och lager ÄTER kassa, växande leverantörsskulder GER kassa. Ett expansivt bolag kan alltså se rymligt ut i resultaträkningen och ändå svettas i kassan — bara för att tillväxten binder pengar i kunder och lager. Det är arbetskapitalets mekanik, fördjupad i kapitalbindningskursen (ln-04)."
+        },
+        {
+          "type": "definition",
+          "content": "Indirekt metod: Att härleda kassaflödet från den löpande verksamheten genom att börja i årets resultat och justera för poster utan kassaflöde (till exempel avskrivningar) samt förändringar i arbetskapital (fordringar, lager, skulder)."
+        },
+        {
+          "type": "insight",
+          "content": "EBITDA är trappans plan före avskrivningarna — exempelbolagets rörelseresultat 300 plus avskrivningar 60 ger 360 — men EBITDA är ingen kassa förrän arbetskapitalet och skatten räknats hem; skillnaden mellan 360 och den löpande kassan är precis de justeringarna."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktisk läsning — läs en svensk kassaflödesräkning",
+      "intro": "Rapporten ligger sist i notehierarkin för många läsare — börja i stället med den när du vill förstå ett bolag på djupet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Öppna en svensk årsredovisning och leta reda på koncern-kassaflödesräkningen. Den inleds nästan alltid med den indirekta metoden: årets resultat överst, sedan avskrivningar och nedskrivningar, sedan förändringar i arbetskapitalet, och slutlinjen kassaflöde från den löpande verksamheten. Därpå investeringsavsnittet — förvärv, maskinköp, försäljningar — och finansieringsavsnittet med nya lån, amorteringar, räntor och utdelning. Allra sist stäms kassan av: likvida medel vid årets början plus årets kassaflöde lika med likvida medel vid årets slut.\n\nI svenska börsbolag placeras räntor och skatt ibland olika mellan sektionerna — räntan ofta i finansieringen, skatten i den löpande verksamheten — men de tre sektionernas logik är alltid densamma, och noter (km-004) redovisar placeringarna. Kvartalsrapporten (km-006) visar samma tre flöden i miniatyr. Gör tre ögonkast: den löpande linjens tecken och nivå, investeringarna mot avskrivningarna, och utdelningens storlek mot den löpande kassan — det räcker för en första, ärlig bild."
+        },
+        {
+          "type": "insight",
+          "content": "Stäm av sista raden varje gång: ingående likvida medel plus årets kassaflöde lika med utgående likvida medel. Stämmer den inte har du antingen ett läsfel eller en rapport som dolde något — och båda upptäckterna är värdefulla."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Vanliga fällor och misstag",
+      "intro": "Kassaflödesräkningen är svår att fejka — men lätt att läsa fel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första fällan är att tro att EBITDA är kassa. Exempelbolaget visar det med egna tal: EBITDA 360 blir löpande kassa 311 efter arbetskapital och betald skatt — 49 av 360 kronorna försvann på vägen. Den andra fällan är engångskassan: en stor engångsförsäljning av en fastighet ger ett plus i investeringsverksamheten som aldrig återkommer — den löpande linjen är den enda som får multipliceras med något. Den tredje är utdelningens hemvist: 108 miljoner lämnar bolaget i finansieringsverksamheten, och ett bolag som under flera år betalar mer i utdelning än den löpande verksamheten genererar äter antingen bestånd, lånar eller säljer — inget av det är varaktigt. Den fjärde fällan är att glömma att kassa fortfarande inte är fri kassa: bolaget måste återinvestera för att hålla i gång — maskinerna slits även utan tillväxt.\n\nOmvända läsningen gäller också: om kundfordringarna i stället hade vuxit med 115 — allt annat lika — hade den löpande kassan sjunkit till 201, och de sista 15 miljonerna av årets vinst hade funnits bara på papper. Det är resultatkvalitetens kärna, och signalerna systematiseras i accrual-kursen (ln-02)."
+        },
+        {
+          "type": "insight",
+          "content": "Följ tre år i rad: den löpande kassans summa mot resultatenes summa. Kassan under resultatet år efter år är det tydligaste tecknet på att resultaten lever i fordringar och lager — inte på kontot."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — frikassa och trippelkontrollen",
+      "intro": "När de tre flödena sitter i huvudet kan du räkna frikassan — och stänga de tre rapporterna mot varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frikassaflödet är den löpande kassan minus investeringarna, den fria kassa som kan gå till utdelning, amortering eller buffert — i exemplelet 311 − 120 = 191 miljoner kronor. Jämför med utdelningen 108: täckningen är nästan dubbel, och marginalen är utrymmet för nästa års beslut. Det är samma kassa som bär avkastningsberäkningarna (roic-01) och kreditbedömningarna (st-01) — frikassan är rapporternas valuta.\n\nAvsluta med trippelkontrollen, hela bokföringssystemets slutprov. Eget kapital: resultat 216 minus utdelning 108 växer med 108. Skulder: leverantörer +15 minus amortering 20 minskar med 5. Balansräkningen kräver alltså att tillgångarna växt med 103 — och räkningen stämmer: maskiner +60 (köp 120 minus avskrivning 60), kundfordringar +5, lager +5, kassa +33. Tre rapporter, tre olika ingångar, en enda stängd ekvation. När du kan gå den vägen — från resultaträkning till kassaflöde till balansräkning och tillbaka — är årsredovisningen inte längre ett främmande språk utan ett slutet system du kan läsa, räkna och lita på."
+        },
+        {
+          "type": "definition",
+          "content": "Frikassaflöde: Kassaflöde från den löpande verksamheten minus investeringar i varaktiga tillgångar — den kassa som blir fri för utdelning, amortering och avkastning efter att verksamheten nödvändigtvis återinvestmerat."
+        },
+        {
+          "type": "insight",
+          "content": "Trippelkontrollen i en rad: Δtillgångar (+103) = Δskulder (−5) + Δeget kapital (+108) — samma 103 som kassa, fordringar, lager och maskiner summerar till; när den stämmer håller hela årsberättelsen ihop."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch framhöll att bolag som genererar stark kassa medan aktien handlas lågt ofta är de mest underskattade berättelserna på börsen: kassan kan betala ned skuld, återköpa aktier eller vänta ut dåliga tider. Hans genomgång av rapporterna började därför inte på vinstraden utan på frågan om affären faktiskt samlar pengar — kassaflödesräkningen svarar per konstruktion.",
+  "grahamSection": "Benjamin Graham sökte en marginal av säkerhet i substansen, och substansen betalas i kassa: hans krav på att bolaget ska klara svåra år utan att låna föder frågan hur stor del av resultatet som verkligen når kontot. För Graham var ett resultat som aldrig blir kassa ett anspråk, inte en tillgång — kassaflödesräkningen skiljer dem åt.",
+  "ak1Section": "I AK1A:s metodik är kassaflödesräkningen grund under både resultatkvaliteten (ln-02) och frikassaperspektivet i portföljtänkandet: AKM1 läser vinstens kassatäckning som en egen dimension av kvalitet. Kursen utbildar i att läsa och räkna — så fungerar metoden, aldrig investeringsråd om enskilda aktier."
+}

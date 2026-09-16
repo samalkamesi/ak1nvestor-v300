@@ -1,0 +1,8 @@
+{
+  "granskat": "data/blogg-utkast/m9-ko/forskningslaget-grona-av-100-v1.json",
+  "granskadAv": "agentfabrik auto-s1-u2 omgång 4 (2026-09-16)",
+  "rapport": "forskningslaget-grona-av-100-KONTROLL-2026-09-16.md",
+  "bedomning": "FLYTTKLAR — 0 nya rättningar; 47/47 maskinella kontroller gröna (fördelning 7/76/17/0 med summakontroll 100, regim magert med trösklar, lägestextcitat ordagrant, topp-3 med aritmetik 86,7/77,5/85,9 %, statusRegler-citat, 10×10-universum, 'oförändrad'-påståendet korsbelagt mot publicerad utgåva); juridik 2007:528 ren (juridikgrind-vakt flyttklar/grund/0 fynd; kontrolleraText-spegel 0/0); 911 = 0 träffar på 6 mönster; 3/3 internlänkar 200 + titelrenderade mot localhost; v151:s F1+F2 rättningar verifierade",
+  "anvandning": "Postlistan är TOM MED AVSIKT: v151-granskningens båda rättningar (F1: 'De tre högt rankade gröna bolagen' → 'Så räknar metoden — exempel ur det gröna utfallet' med formelförklaring + negerat köp-/säljbud + explicita divisionsrader; F2: jämförbarhetsnoten om investmentbolagen) är REDAN verkställda i utkastet (2026-09-14) och nu verifierade — dagens body är maskinellt bevisad == original + exakt dessa två rättningar. Determinismkedjan är sluten mot DAGENS träd utan git-återvinning (seriens renaste fall): samtliga tre källor md5-oförändrade sedan kvittot, seed 904e0fcc…, mallMd5 f095edf7… och kandidatMd5 60d18ca6… samtliga reproducerade ur egna omräkningar, mall-bodyn (2 370 tecken) regenererad byte-identiskt ur dagens korstabell-grund.json. Ytterligare innehållsändringar på m9-serien går via verktyg/m9-fabrik.mjs (regenerering med nytt kvitto); exportvägen stryker '(utkast)' i titeln och kvitto-avsnittet i bodyn. Publicering = kundens beslut (R2).",
+  "poster": []
+}

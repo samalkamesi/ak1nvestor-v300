@@ -526,6 +526,68 @@ cacher på disk sedan 09-01) — B7:s ensemble-kur lever, alternativt självläk
 2026-10-01 om cronen lever; (4) regimchipet bör bära indikatorernas datum
 (idag visas genesis-tal utan åldermarkering).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 5 — B13 + B11 + B10 diffade mot verkligheten)
+
+Femte u3-dokvågen. Objektval mot duplikat EFTER kollisionskontroll — och TVÅ
+trädskiften mitt i arbetet: förstavalet D38 togs av s9-u2 omgång 5 (ccb18a32)
+och andravalet B8 av s9-u1 omgång 6, båda upptäckta när filen skiftat under
+pågående mätning (s10-u3:s kollisionskur tillämpad: deras sektioner lästes,
+lämnades orörda och D38/B8 avstods — se korsvalideringen nedan). Tre FRIA
+system genomfördes i stället, alla i analysfamiljen: B13 (orörd av spårets
+dokvåger och platsen där B7/B8:s cache-tomrum återfylls), B11 + B10 (båda
+nya för kartans dokvåger). Varje rad MÄTT i arbetsytan 2026-09-16
+(svitkörningar, motorvalidering, API-sonder mot localhost:3000, ls/node-
+läsning av JSON, /etc/crontab- + vercel.json-läsning, kodläsning, grep,
+git log) — inte läst ur worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Riskportföljssviten (B13) | "grön vid senaste dokumenterade körning" | **32 PASS / 0 FAIL (egen körning, exit 0)** |
+| Uppföljningssviten (B13) | dto | **50 PASS / 0 FAIL (egen körning, exit 0)** |
+| Korstabell-underlaget (B13 gap 1) | "uppdateras manuellt — ingen autonom refresh" | **SKÄRPT MED MÅTT**: korstabell-grund.json FRUSEN — skapad 2026-09-03, 100 rader, akm2Berikad 2026-09-04 — medan bolagsunivers.json vuxit till **120 bolag** (s2-spåret; senaste skrivning 2026-09-16 01:44, mätt): underlag och korstabell GLIDER ISÄR |
+| Peer-jämförelsen (B13 gap 2) | "ytlig (median, ej kvartiler)" | **NYANSERAD — delvis designbeslut**: rank/median är AKM3-BESLUT §10.10 (MAD/kvartiler FÖRBJUDNA vid n=10; peer.ts filhuvud dokumenterar förbudet) — gapet lever bara för branscher med stort n |
+| member/portfolio-rutten (B13 gap 3) | "saknar transaktionshistorik/valideringstest" | **SKÄRPT: ingen sessionsvakt alls** — rutten (107 r, genomläst) tar memberId ur klientens body/query UTAN lasMedlemSession-kontroll, holdings mappas `any`-typade utan validering; konsumenter på publik sida /min-portfolj (portfolio-system.tsx m.fl., mätt) — kontrast: D38:s medlem/portfolj (samma dag kodläst) bär lasMedlemSession → 401 + rate-limit 60/min per authId + refresh-rotation |
+| Uppföljnings-cronen (B13) | "månadens 1:a" | **DUBBEL drivning mätt** (/etc/crontab 0 7 1 * * + vercel.json 0 7 1 * *); prediktionslogg-akm3.json + fundamental-/akm3-cacher saknas på disk (mätt) trots att 09-01 passerat — samma outredda fynd som syskonets B8-sektion noterar; nästa körning 2026-10-01 |
+| Netnet-egensviten (B11 gap 3) | "egen testsvit saknas" | **kvarstår** (mätt: 0 testa-netnet* i verktyg/) |
+| Netnet-universum (B11 gap 2) | "25-bolagslistan fast" | **fast 25, oförändrad** (mätt i netnet-skanner.tsx: VOLV-B, SAAB-B, ATCO-A, SAND, SSITY-B, ERIC-B, AZN, NDA-SE, SKF-B, ALFA, NCC-B, BALD-B, INDU-C, KINV-B, LATO-B, EVO, SINCH, SBB-B, CATE, NYF-B, FABG, BEIA, SHB-A, SWED-A, HM-B) |
+| Netnet i prod (B11) | (ej prod-mätt i kartan) | **/netnet 200 + /api/netnet LEVANDE med färsk tidsstämpel** (genererad 2026-09-16T04:43:31Z, egen sond; VOLV-B kurs 330,2 — live-kursflödet lever); motorvalideringen **107 PASS / 0 FAIL / 0 SKIP (6,9 s, egen körning)** — determinismgrenen stabil grön sedan 09-13 |
+| Netnet-git (B11) | — | ytan stabil: endast b77699ba (revalidate=3600) + 0fe32c6c (JSON-LD) sedan 09-11, inga motorändringar |
+| Konfluens-egensviten (B10 gap 1) | "ingen egen testsvit" | **kvarstår** (mätt: 0 testa-konfluens* i verktyg/) |
+| Konfluens i prod (B10) | (ej prod-mätt i kartan) | **/konfluens 200 + /api/konfluens LEVANDE** (genererad 2026-09-16T04:44:21Z, egen sond): fem-källors-raderna (värdegolv, kvalitet, fundamental vågstart, prisvågläge, divergens ⇒ konfluens 0–100 + antal datakällor) beräknas live; ingår i motorvalideringen (107/0/0 egen körning) |
+| Konfluens-historik (B10 gap 2) | "lagras ej" | **kvarstår** (mätt: ingen system_events-/utfallspersistens i konfluens-motor.ts) |
+| Korstabell-kopplingen (B10 gap 3) | "läsbar men ej testad" | **preciserad: KONCEPTUELL, ej kodad** — 0 direkta import mellan konfluens-{motor,tabell} och portfolj-forskning/* (mätt); den gemensamma vägen är motorstacken (konfluens importerar netnet- + analys- + vagfundament-motorerna, kodläst) |
+| Konfluens-git (B10) | — | ytan stabil: endast 7be67f80 (KO-rättning v105) + 0fe32c6c (JSON-LD) + b77699ba (revalidate) sedan 09-11 |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B13 | LEVER 8 → **LEVER 8** | Båda egna sviterna gröna omätta (32/0 + 50/0) och cron-bilden mätt — men korstabellen frusen 13 dagar under ett växande universum (100 rader mot 120 bolag) och member/portfolio-rutten visade sig sakna sessionsvakt på publik konsumentyta: skärpta gap, inga stängda — ingen poängrörelse |
+| B11 | LEVER 6 → **LEVER 6** | Lägesrättning med egna mätbevis: determinismgrenen stabil grön (107/0/0 egen körning + färsk live-sond), detaljblockets motbevisade FAILAR-observation städad till historik — men båda namngivna gapen lever oförändrade (0 egna sviter, fast 25-lista): ingen poängrörelse |
+| B10 | LEVER 7 → **LEVER 7** | Kunskap tillförd (E33/B14-precedensen): fem-källors-logiken lever LIVE i prod med färsk tidsstämpel (första egna sonden av radarns API) och motorvalideringen grön egenhändigt — men ingen av de tre gapen rördes (svit, historik, koppling): ingen poängrörelse |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg; inga
+poängrörelser, endast läges- och gaprättningar med egna mätbevis).
+
+**Korsvalidering av syskonen (deras sektioner orörda, ärlig bokföring):**
+(1) s9-u1 omgång 6:s B8-sektion bekräftas av denna agents samtidiga,
+oberoende B8-mätningar exakt (55/55 egen körning, vercel.json "20 5 2 * *" +
+raden SAKNAS i /etc/crontab, regimens fyra publika ytor) — deras fynd går
+djupare (regimen frusen på genesis-raden sedan 09-03, uppdateringsvägen
+vagvalidering finns ej på Contabo); B8 lämnas helt åt dem. (2) s9-u2 omgång
+5:s D38-sektion överlappar mina D38-mätningar (rutterna medlem/bevakning +
+medlem/portfolj kodlästa med session/rotation/rate-limit, korskopplingen i
+portfolj-navet.tsx:101-133, gränssnittsvakten senaste rapport 2026-09-15T23:27
+med 0 fel/176 kombinationer) — mina fynd bekräftar deras, D38 lämnas åt dem.
+
+Kö till huvudagenten från fynden: (1) **member/portfolio-rutten behöver
+sessionsvakt** — lasMedlemSession-mönstret från D38:s medlem/portfolj är den
+färdiga kurmallen (import + fyra rader); publik POST utan auth i
+/min-portfolj-kedjan är dagens skarpaste integritetsgap; (2) korstabell-refresh
+behöver cadans — korstabell-grund (09-03, 100 rader) glider ifrån
+bolagsunivers (120): skanka-/berika-kedjan ropas vid universumsväxt;
+(3) portfolj-uppfoljningens cache-skrivning utreds (sammanfaller med syskonet
+s9-u1:s B8-kö: cron-raden finns på Contabo men 0 cacher på disk sedan 09-01 —
+en enda utredning täcker båda).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -539,10 +601,10 @@ cacher på disk sedan 09-01) — B7:s ensemble-kur lever, alternativt självläk
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön (mätt 09-16); berika-pipelinen stillastående 12 d (0 cacher på disk), AKM3-ensemble 0/22 i prod, snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55, LÅST grind ΔΦ=0, hash-kedjor; mätt 09-16); men kalibreringen ENBART Vercel-cron-driven (Contabo-crontab saknar raden, mätt), regimen FROSEN på genesis 09-03 (uppdateringsvägen vagvalidering finns ej på Contabo), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
-| B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
-| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinismfelet rättat (107/0/0, 2026-09-13); egen testsvit saknas |
+| B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-16, datakällor per rad); motorvalidering 107/0/0 egen körning; kvar: 0 egen svit, historik/utfall lagras ej (mätt), korstabell-kopplingen konceptuell ej kodad |
+| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-16 + /api/netnet färsk live-sond); universum fast 25 (mätt); egen testsvit saknas fortfarande |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
-| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Månads-cron fast; peer-jämförelse ytlig |
+| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (mätt 09-16); korstabell-grund frusen 09-03 (100 r) mot bolagsunivers 120; member/portfolio UTAN sessionsvakt på publik yta (/min-portfolj, mätt); peer-median = designbeslut (AKM3 §10.10) |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 22 kvartalsfiler: 12 bolagspaket + 10 kalendrar, mätt 09-16); schemalagd re-run saknas |
@@ -569,11 +631,13 @@ cacher på disk sedan 09-01) — B7:s ensemble-kur lever, alternativt självläk
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
-dokvågorna 2026-09-15, B7 −1 vid dokvågen 2026-09-16 — berika-pipelinen
-stillastående + AKM3-ensemble 0/22); C15+C16 reviderade utan scoreändring; u3 omgång 2
+Snittscore: **7,5/10** (286 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
+dokvågorna 2026-09-15, D20 +1 och B7 −1 vid dokvågorna 2026-09-16 — glömt-
+lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
+AKM3-ensemble 0/22); C15+C16 reviderade utan scoreändring; u3 omgång 2
 diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
-poängrörelser). Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
+poängrörelser; u3 omgång 5 (09-16) diffade B13/B11/B10 utan poängrörelser).
+Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
 ---
@@ -882,39 +946,67 @@ på disk. Score 8 kvar — inga gap stängda, se diff-tabellen.*
   drift; (5) SENASTE-rapportens förnyelse är bruten (domar 09-04, filen kan
   bara förnyas av agent/manuell körning med skrivåtkomst till repot).
 
-## B10. Konfluensradarn — LEVER — 7/10
+## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): första egna prod-sonden av
+radarn — /konfluens 200 + /api/konfluens LEVANDE med färsk tidsstämpel
+(genererad 2026-09-16T04:44:21Z): fem-källors-raderna beräknas live
+(värdegolv, kvalitet, fundamental vågstart, prisvågläge, divergens ⇒
+konfluens 0–100, antal datakällor redovisat per rad). Motorvalideringen
+107/0/0 i egen körning. Ytan stabil sedan 09-11 (endast KO-/JSON-LD-/
+cache-kurur). Gap 3 preciseras: kopplingen till B13:s korstabell är
+KONCEPTUELL, ej kodad — 0 direkta import mellan konfluens-{motor,tabell}
+och portfolj-forskning/* (mätt); den gemensamma vägen är motorstacken
+(netnet + analys + vagfundament). Score 7 orörd — inga gap stängda. Se
+diff-tabellen i UPPDATERING-sektionen.*
 
 - **Vad:** Väger värde mot vågor: värdegolv först, fundamental vågstart +
   prisvågläge därefter; fem oberoende källor måste tala samman.
 - **Nyckelfiler:** src/lib/konfluens-motor.ts (493 r), src/app/(huvud)/
   konfluens, src/app/api/konfluens, src/components/ak1a/konfluens-tabell.tsx.
 - **Observation:** Force-static, pedagogisk ingress, "aldrig investeringsråd"
-  i metadatan. Ingår i motorvalideringen (PASS där).
+  i metadatan. Ingår i motorvalideringen (PASS där — 107/0/0 egen körning
+  2026-09-16; API-sonden samma dag svarar med färsk fem-källors-beräkning).
 - **GAP:** (1) ingen egen testsvit för fem-källors-logiken (regression vid
   motorändring i B7/B9 fångas bara indirekt); (2) radarns historik (hur många
-  konfluenser setts/utfall) lagras ej; (3) koppling till portföljforskningens
-  korstabell (B13) är läsbar men ej testad.
+  konfluenser setts/utfall) lagras ej (mätt 09-16: ingen persistens i motorn);
+  (3) koppling till portföljforskningens korstabell (B13) — PRECISERAD
+  2026-09-16: konceptuell, ej kodad (0 direkta import, mätt).
 
-## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-13)*
+## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-16)*
 
 *Uppdatering 2026-09-13: motorvalideringen kör nu 107 PASS / 0 FAIL /
 0 SKIP (6,4 s) — determinismfelet (VOLV-B.ST 340.3≠340.4) är borta och
 skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
 25-bolagslista.*
 
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): lägesrättning med egna
+mätbevis — determinismgrenen STABILT grön (motorvalideringen 107 PASS /
+0 FAIL / 0 SKIP på 6,9 s i egen körning — tredje dokumenterat gröna
+körningen sedan 09-13) + /netnet 200 och /api/netnet LEVANDE med färsk
+tidsstämpel (genererad 2026-09-16T04:43:31Z, egen sond — live-kursflödet
+lever, VOLV-B 330,2). Universumet fast 25 tickers, listan mätt oförändrad
+i komponenten. Observationskroppens FAILAR-text nedan är HISTORIK från
+2026-09-11. Ytan stabil: inga motorändringar sedan 09-11. Score 6 orörd —
+egna sviten och 25-listan lever som gap. Se diff-tabellen i
+UPPDATERING-sektionen.*
+
 - **Vad:** Skär 25 svenska/nordiska bolag mot Grahams net-net-kriterium
   (kurs < 2/3 × NCAV), sorterad på kurs/NCAV med NET-NET/NÄRA-markering.
 - **Nyckelfiler:** src/lib/netnet-motor.ts (292 r), src/app/(huvud)/netnet,
   src/app/api/netnet, src/components/ak1a/netnet-skanner.tsx.
-- **Observation:** **KÖRT BEVIS:** motorvalideringen FAILAR determinism —
-  "utdata skiljer mellan körningar. Första skillnad: rot.kurs: 340.3 != 340.4"
-  (VOLV-B.ST). Motorn är live-kursberoende inne i beräkningen: icke-
-  deterministisk mellan två körningar inom samma kvotfönster. Detta är en av
-  de två röda som sänker vakten till GUL (E35).
-- **GAP (avgörbart):** (1) determinism-testet får fast indata (fryst kurs-
+- **Observation:** [HISTORIK 2026-09-11 — motbevisad 2026-09-13, se
+  updatingarna ovan:] motorvalideringen FAILAR determinism — "utdata skiljer
+  mellan körningar. Första skillnad: rot.kurs: 340.3 != 340.4" (VOLV-B.ST).
+  Motorn är live-kursberoende inne i beräkningen: icke-deterministisk mellan
+  två körningar inom samma kvotfönster. Detta var en av de två röda som
+  sänkte vakten till GUL (E35).
+- **GAP (avgörbart):** (1) ~~determinism-testet får fast indata (fryst kurs-
   fixture) ELLER motorn renodlas så live-data hämtas EN gång utanför den
-  rena beräkningskärnan (mönstret från larvag.ts/A1); (2) 25-bolagslistan
-  fast — expansion beslutas; (3) egen testsvit saknas.
+  rena beräkningskärnan~~ STÄNGT 2026-09-13 — determinismgrenen grön sedan
+  dess och omätt grön 2026-09-16; (2) 25-bolagslistan fast — expansion
+  beslutas (listan mätt oförändrad 2026-09-16); (3) egen testsvit saknas
+  (mätt 2026-09-16).
 
 ## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10
 
@@ -931,7 +1023,20 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
   (3) kalkylatorn har ingen länk tillbaka till kurslektioner per variabel
   (forklaraPoang-länkarna finns i B7 — återanvänd).
 
-## B13. Portföljforskning — LEVER — 8/10
+## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): båda egna sviterna gröna
+omätta (riskportfolj 32/0 + uppföljning 50/0, egna körningar exit 0). TVÅ
+SKÄRPNINGAR: (a) korstabell-grund.json FRUSEN — skapad 2026-09-03, 100
+rader, akm2Berikad 2026-09-04 — medan bolagsunivers.json vuxit till 120
+bolag (s2-spåret, senaste skrivning 09-16 01:44, mätt): underlag och
+korstabell glider isär; (b) member/portfolio-rutten (publik konsumentyta
+/min-portfolj, genomläst) tar memberId ur klienten UTAN lasMedlemSession-
+kontroll och mappar holdings `any`-typade utan validering — skarpare än
+gamla gap 3. Peer-medianen nyanserad till designbeslut (AKM3-BESLUT §10.10:
+MAD/kvartiler förbjudna vid n=10). Uppföljnings-cronen DUBBELT driven
+(/etc/crontab + vercel.json, mätt) men 0 cacher/prediktionslogg på disk
+sedan 09-01. Score 8 orörd. Se diff-tabellen i UPPDATERING-sektionen.*
 
 - **Vad:** Korstabellen (fundamental nivå × vågstil), riskportfölj,
   uppföljning av tidigare analyser, peer-jämförelse, portföljbyggare +
@@ -942,14 +1047,21 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
   src/app/api/{portfolj-forskning,portfolio,member/portfolio,report}/**,
   src/components/ak1a/portfolj-forskning/* (7), verktyg/
   {testa-riskportfolj,testa-uppfoljning}.mjs, src/app/api/cron/
-  portfolj-uppfoljning (månadens 1:a).
-- **Observation:** Två egna testsviter (gröna vid senaste dokumenterade
-  körningar), månadsvis autonom uppföljning, deterministisk korstabell ur
-  data/portfolj-system. AKM2-kopplingen återanvänder B7:s kärna.
+  portfolj-uppfoljning (månadens 1:a — DUBBELT driven, mätt 09-16).
+- **Observation:** Två egna testsviter (gröna vid egna körningar
+  2026-09-16: 32/0 + 50/0), månadsvis autonom uppföljning, deterministisk
+  korstabell ur data/portfolj-system. AKM2-kopplingen återanvänder B7:s
+  kärna. Uppföljnings-cronen är även AKM3:s återfyllningsväg (skriver
+  fundamental- + akm3-cacher + ensemble-prediktionslogg — kodläst).
 - **GAP:** (1) korstabellens dataunderlag uppdateras manuellt (skanka-
-  akm2-snapshots) — ingen autonom refresh; (2) peer-jämförelsen ytlig
-  (median, ej kvartiler —.dataset-mönstret återanvänds ej); (3) medlemmens
-  portfölj (member/holding) saknar transaktionshistorik/valideringstest.
+  akm2-snapshots) — ingen autonom refresh; MÄTT SKÄRPT 09-16: korstabell-
+  grunden frusen sedan 2026-09-03 (100 rader) medan bolagsunivers nått 120 —
+  kedjan behöver cadans eller ropas vid universumsväxt; (2) peer-jämförelsen
+  rank/median är delvis MEDVETET (AKM3-BESLUT §10.10 förbjuder MAD/kvartiler
+  vid n=10) — kvartiler återstår bara för stora branscher; (3) member/
+  portfolio-rutten saknar sessionsvakt OCH indata-validering (mätt 09-16,
+  publik yta /min-portfolj) — transaktionshistorik saknas fortfarande men
+  integritetsgapet är skarpare.
 
 ## B14. Nyheter + marknadsdata — LEVER — 6/10 *(uppdaterad 2026-09-16)*
 

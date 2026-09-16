@@ -11491,3 +11491,6 @@ Leverans: data/forskning/DR-TAKLYFT-2026-09-16.md + DR-KEDJA2-2026-09-16-AUTO.md
 
 ## ROND 46 STÄNGNING [organ:Φ] — 2026-09-16 05:47: gap 27 STÄNGT på live-bevis
 2026-09-16T05:46:46.490Z: POST /api/studio/tjanster/kommando 401 utan + med fel lösenord, GET 405, BUILD_ID 2026-09-16T05:38:45.922Z EFTER commit 0e8dd74c, ancestor i prod, HTTPS 200. Båda halvorna lever: commands/query (våg 171) + v4/command sendText (våg 175). Återstående kommandotyper + UI-koppling = §11.4 feature-avvägning.
+
+## ROND 47 [organ:Φ] — 2026-09-16 05:50: våg 175-stängningen verkställd + pipeline ombookad (3 vågor)
+Live-bevis utan nybygg (prodbygget landade 05:38:45 UTC > commit 0e8dd74c): POST /api/studio/tjanster/kommando 401 utan + med fel lösenord, GET 405, ancestor i prod, HTTPS 200 — data/vakten/rond46-bevis.json. Stängning del 1 dog på gitignore (data/vakten = körningsdata, ej committbar — bevisfilen exkluderad, pekas ut i pipeline); del 2: commit cbe24fdc [organ:Φ] genom tsc-grinden, push e97aa579..cbe24fdc, register rad 27 STÄNGD, beslutsminne ARB+PROD, ytan ren. Regel 8 (evighetsmotorn): våg 176 AI-Mentorn (spår 6) + våg 177 zcode §11.4-registerposter + våg 178 Mimosa full-scan (spår 8) bokade. Inga subagenter dispatcherade — node-kanalen räckte.

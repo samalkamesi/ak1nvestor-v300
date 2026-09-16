@@ -19,7 +19,14 @@
  *      av duglig kod. Äkta kodfel följer fortfarande stoppregeln:
  *      fail ⇒ revert + ombygge ⇒ fortfarande fail ⇒ återställ good-HEAD
  *      + ombygge; misslyckas ÄVEN det ⇒ KRITISKT-larm, pm2 orörd
- *   7. pm2 restart ak1a + HTTPS-kontroll (4 försök) + version-stämpel
+ *   7. ARTEFAKTGRIND (2026-09-16, prodincident 10:02+12:02 /
+ *      SYSTEMKARTAN E34): .next/server/app/*.html:s /_next/static-
+ *      referenser MÅSTE finnas på disk FÖRE restart — ett RAM-svält
+ *      bygg kan skriva BUILD_ID + färsk HTML som pekar på aldrig
+ *      emitterade chunks (HTML 200 lurar HTTPS-kontrollen, kunden ser
+ *      ostylat). Transig/okänd ⇒ EJ restart, EJ DEPLOYAD-markör ⇒
+ *      ombygge nästa poll (RAM-vakten gäller).
+ *   8. pm2 restart ak1a + HTTPS-kontroll (4 försök) + version-stämpel
  *
  * BEVISAT behov 2026-09-14 (10X-omgången): p4-p9-leveranscommitters
  * byggdes under minnestaket (7 zcode-barn + pm2 + npm ci ≈ 8 GB) →
@@ -40,6 +47,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { skrivAudit } from "./audit-logg.mjs";
+import { verifieraArtefakt } from "./artefakt-verifiering.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
@@ -48,7 +56,12 @@ const MIN_RAM_MB = 2200;
 
 function logga(rad) {
   fs.mkdirSync(VAKT, { recursive: true });
-  fs.appendFileSync(LOGG, `${new Date().toISOString().slice(0, 19)} ${rad}\n`);
+  // S8-U1 (o32 §6 kö 2, rotorsaka): Z MÅSTE med — `slice(0,19)` lämnade en
+  // UTC-rad utan tidszon ⇒ Date.parse tolkade den som LOKAL tid (2 h fel i
+  // CEST). Två bevisade offer: s7-u2:s vakare (deployen 16:40:33Z osynlig)
+  // + s8-u4:s "tystnad sedan 10:27"-felläsning. Prefixet är oförändrat,
+  // datumregex `^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}` matchar som förut.
+  fs.appendFileSync(LOGG, `${new Date().toISOString().slice(0, 19)}Z ${rad}\n`);
   console.log(rad);
 }
 
@@ -211,6 +224,23 @@ async function korSynk() {
 
   // 7) restart + verifiering
   if (ok) {
+    // ARTEFAKTGRIND (E34-köpost 1, 2026-09-16): dagens incident-klass —
+    // bygget kan LYCKAS (exit 0, BUILD_ID skriven) men ändå ha lämnat en
+    // internt inkonsistent artefakt: färsk prerender-HTML som refererar
+    // chunks som aldrig emitterades. HTML svarar 200 (httpsOk nedan ser
+    // bara det) medan saknade chunks = kundsynligt ostylat. Därför mäts
+    // kontraktet FÖRE restart: trasig/okänd ⇒ INGEN pm2-restart och
+    // INGEN DEPLOYAD-markör — senaste-deployad lämnas orörd så nästa
+    // poll ser NY KOD igen, RAM-vakten gäller och ombygget sker när
+    // minnet tillåter (dagens manuella läkningsväg, nu mekanisk).
+    const artefakt = await verifieraArtefakt();
+    if (artefakt.status !== "gron") {
+      logga(
+        `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven; ombygge nästa poll (RAM-vakten gäller)`,
+      );
+      skrivAudit("prod-synk", "deploy_stoppad_artefakt", `artefakt-${artefakt.status}`, artefakt.meddelande);
+      return;
+    }
     try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
     await new Promise((s) => setTimeout(s, 6000));
     if (await httpsOk()) {

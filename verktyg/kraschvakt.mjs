@@ -36,6 +36,7 @@ import { execSync, execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { verifieraArtefakt } from "./artefakt-verifiering.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KATALOG = path.join(ROT, "data", "vakten");
@@ -176,12 +177,23 @@ async function raddningsbygg(p, state, oknadOrsak) {
     }
     process.exit(1);
   }
+  // ÄRLIGHETSGRIND (2026-09-16, prodincidentens 10:51-räddning): den
+  // byggde om men artefakten blev ÅTER inkomplett, och varm() mätte grön
+  // (HTML 200) på ett oläkt läge ⇒ "RÄDDNING KLAR" + 120-min kooldown =
+  // 20 min kundsynlig blindhet. Appen STARTAS fortfarande (den är
+  // stoppad och servern läser .next från disk oavsett), men friskt döms
+  // först när artefaktens kontrakt också är hel — kort kooldown ger
+  // nästa poll ett ärligt nytt försök.
+  const artefakt = await verifieraArtefakt();
+  if (artefakt.status !== "gron") {
+    logga(`ARTEFAKT ${artefakt.status.toUpperCase()} efter räddningsbygget — ${artefakt.meddelande} · appen startas men läget är INTE läkt (HTML-200 säger inget om chunks)`);
+  }
   try {
     execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
   } catch {
     /* pm2 avgör */
   }
-  const friskEfter = await varm();
+  const friskEfter = (await varm()) && artefakt.status === "gron";
   // (4) osäkert läge = KORT kooldown: "RÄDDNING KLAR: svarar=false"
   // (14:24/21:34) lämnade appen oglad i 2 h — nu omprövar nästa poll.
   sparaState({ ...lasState(), restarts: (ak1aRad() ?? p).restarts ?? p.restarts, senasteRaddning: Date.now(), kooldownMin: friskEfter ? 120 : 30 });

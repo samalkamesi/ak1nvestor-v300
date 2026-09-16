@@ -80,18 +80,60 @@ deployen; den kurens /blogg-effekt är nätverksside (färre RSC-hämtningar),
 inte styleLayout — baslinjen för CV-isoleringen är giltig på /blogg-koden
 före denna commit (inga andra src-ändringar rört blogglistorna sedan r4b2).
 
-## §6 EFTER (bokas enligt o17 §METOD)
+## §6 EFTER — INFRIAD 2026-09-16 ~18:2x (fabriksagent s7-u3 3/3, vakarövertag)
 
-1. Vänta att prod-synken bygger denna commit (deployordern, se §7) OCH att
-   s7u2-vakarens r5u2-EFTER-mätning är KLAR — **kör aldrig egen Lighthouse
-   parallellt med vakaren** (kontaminationsfällan, §1).
-2. Verifiera vilande server (pgrep lighthouse, load) + ISR-trigga /blogg ×2
-   + 8 s (11163-metoden) + funktionssond: cv-bloggkort närvarande ×55 i
-   SSR-HTML (spegel: FÖRE-vittnet saknade klasserna).
-3. Mät `/blogg` + en spegel (`/en/blogg`) med verktyg/prestanda-lighthouse.mjs
-   + S&L-sond (förväntad mekanism: styleLayout och dokumentkostnad sjunker;
-   TBT-rörelse sekundär då 336 ms redan lågt).
-4. KVD: gränsnittsvakt layout GRÖN (reservhöjd 22rem), prod 200, tsc 0.
+Förutsättningarna prövades i ordning: deploy KLAR (35b240d7 + denna kürs
+commit i HEAD; prod-HTML bär `cv-bloggkort` ×55, BUILD_ID 18:09,
+JS-chunks 200 = §7:s incident läkt) — vakaren DÖD sedan 12:39 utan
+mätning (`/tmp/s7u2-vakare.log`: "TAK: deploy av 35b240d7 ej klar på
+40 min — EFTER-mätning ej körd") ⇒ övertag utan kontaminationsrisk
+(0 lighthouse/chrome-processer verifierat före varje körning).
+
+1. **Funktionssond GRÖN** (verktyg/_s7u3-bloggcv-funktionssond.mjs, CDP
+   390×844, rådata `lighthouse/s7u3-funktionssond-bloggcv-EFTER-2026-09-16.json`):
+   55/55 kort bär klassen · `contentVisibility "auto"` på första OCH
+   sista · reserv `auto 352px` (22rem korrekt) · 0 dokumentanimationer
+   vid last · efter scroll: 55/55 textfyllda, sista kortet 348 px
+   (verklig höjd), cv fortfarande auto · DOM totalt 704 noder.
+2. **Lighthouse** (ISR-trigga ×2 + 8 s enligt 11163; instrumentpar
+   fullviktigt-tyst `blogg-fore-161` ↔ `blogg-r5u2b-efter`): /blogg
+   P55→53 · LCP 6 183→5 318 · TBT 836→995 · styleLayout 721→839 ms ·
+   **totalvikt 831→764 KB (−67) · unused-JS 116→74 KiB (−42)** (fetstil
+   = lastokänsligt; CPU-talen uppåtdrivna av fabrikslast 2,5–4,2 under
+   EFTER-fönstret). Spegel /en/blogg EFTER: P60 · LCP 4 285 · CLS 0.
+   Två körningar (lastdeklarerad `r5u2-efter` + vila `r5u2b-efter`) —
+   strukturtalet reproducerbart (764 KB båda).
+3. **S&L-sond** (sond-sl /blogg, rådata `s7u3-sond-sl-blogg-EFTER-
+   {2026-09-16,vila-2026-09-16}.json`): Layout 18 ev/353 ms (last) resp.
+   ~9 ev/≈300 ms (vila-om) mot u4-FÖRE 7 ev/68 ms + ULT 9 ev/39 ms —
+   antal i paritet, totaltider last-/fönsterkänsliga.
+4. **KVD**: gränsnittsvakt layout **GRÖN 0 fynd / 8 kombinationer**
+   (/blogg + /en/blogg, båda temaner, mobil+dator — reservhöjd 22rem
+   noll defekter) · prod 200 · /blogg 200 · src orörd = tsc-baslinjen
+   orörd (grinden vid commit).
+
+**DOM — ÄRLIG NEGATIV DEL:** kuren är funktionellt verifierad i prod,
+men **ingen mätbar styleLayout-minskning i lab** (FÖRE161 721 ms ↔
+EFTER 839 ms; inom lastbrus). Två förklaringar bokförs: (a) §3:s
+motiverande FÖRE-tal ("styleLayout 835 ms") kom ur `blogg-r4b2.json` —
+den mätningen var **JS-nedbruten artefakt** (totalvikt 59 KB, chunks
+5xx; s8-u4:s delresurs-500-klass, tagen 10:0x efter 10:02:39-OOM-dödet)
+— de fullviktiga tysta FÖRE-talen (fore-161: 721 ms) visar att /blogg:s
+S&L redan var lågt: kortlayouten var aldrig huvudposten (u4:s sond
+bekräftade: Layout 68 ms); "dokument 1139 ms"-skulden är parseHTML-
+klass, inte kortlayout, och kuras inte av CV. (b) CV-autos vinst är
+**strukturreserv, ej omedelbar labvinst**: initial layout berör ~2
+synliga kort redan utan CV (viewporten); kurens värde realiseras vid
+fortsatt tillväxt (kort 56, 57, … kostar noll initial layout) + vid
+scroll (offscreen-rendering hopplas). Bokförs som: kuren kvarstår
+(förebyggande, prod-GRÖN, noll regressionsbevis — CLS 0, vakten 0
+fynd, 55/55 innehåll) men spårets förväntan om omedelbar S&L-sänka på
+/blogg avskrivs med instrumentbevis.
+
+Kvar i spåret (oförändrat): brotli (huvudagent/infra), språkresolvens-
+CLS a/b/c (produktbeslut), kakpanel-LCP (huvudagent, R2-nära), chatt-
+chunk (spår 6), /kurser-hydratiseringsrefaktorn (huvudagent/styrelse),
+o27:s CPU-rest (nattfönster).
 
 ## §7 INFRA-NOTIS (bokförd för huvudagenten/prod-synkens ägare)
 

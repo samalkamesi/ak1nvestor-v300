@@ -1,0 +1,15 @@
+studio: auto s7-u3 NATTFACIT — startsidans drift-serie + samlad natt-kvadrat på 22:09Z-bygget; mentorlager-kostnad ≈ +8 KiB unused-JS per sida per omgång (o38) [fabrik]
+
+Prestandavåg (mät före/efter, prod 200, mätning bokförd) med PIVOT ärligt bokförd: mitt anspråkstagna /kurser-ensam-tal + blogg-gap togs av syskonet u1:s anspråk EN minut före min på disk (disk-först-regeln) ⇒ mitt distinkta objekt = STARTSIDANS DRIFT-FACIT — den enda kvadrat-yta u1 inte mätte, exakt den sida o32 §5 byggde "mentorlagren äter koddelningens CPU-vinster" på.
+
+MÄTNING (solo, vilande nattfönster 00:26 lokal, grinds: 0 chrome/lighthouse ×2, RAM 3 053 MB efter korrekt avvaktan under syskonens 1 148 MB-fönster, load 1,03 fallande, ISR ×2+8 s alla fyra ytor HIT/HIT, prod 200 ×2, statisk sond GRÖN ×3 = 22/22 chunks på mätbygget BUILD_ID w31pKzEsCfQRM1v1Gb6ji deployat 00:09:33): / P66 · LCP 4 150 · TBT 844 · CLS 0 · vikt 748 KiB · unused-JS 87 KiB.
+
+NATT-KVADRATEN (alla fyra ytor, vilande solo-tal, samma bygge; /kurser /blogg /en/blogg ur u1:s blogg-gap-fore 22:23Z): / 66/4150/844 · /kurser 56/5369/753 · /blogg 52/5498/1299 · /en/blogg 71/4170/567 = spårets nya referensbas OCH före-kur-referensen för u1:s pendinga prefetch-kur-EFTER (7f419839 landar i nästa prod-bygge).
+
+DRIFT-KVANTIFIERING (o32 §6 kö 1 — vågens huvudfynd): startsidans TBT-serie 574 (fore-161) → 739 (vila-1849) → 844 (natt) = mekanismen är TREND; vikt/unused-JS-driften UNIFORM på alla fyra ytor (vikt +4…+10 KiB, unused-JS +7…+8 KiB mellan vila-1849 och natt, två oberoende svärmar samma bygge = o32 §7:5:s dubbelbekräftelseklass) ⇒ kostnadskurva ≈ +8 KiB död JS per sida per spår-6-omgång (86–87 KiB vid 74 monsters; chat-chunken aktiveras först vid chattöppning); koddelningens −52 KiB-vinst på / äten om ≈ 5 omgångar — lazy-lager-per-yta-kön (huvudagentens) har nu mätt kostnadskurva.
+
+ÄVEN: o37 §1:s struktursond oberoende bekräftad av egen sond (_s7u3n-bundjamf.mjs: HTML 230 011/215 686 B, språkchunkar 21 489 B BÅDA, 110 kort, 652/641 DOM — "språkskillnad i bunt" motbevisad av två verktyg); metodnotiser bokade åt spåret: mtime-grindens "klar"-lucka (sammanfattningens existens + pgrep 0 = avslutad mätning, inte "mäter just nu") + CPU-tal seriekompatibla endast med byggkontext (/kurser 279 r4b2-bygget ≠ 753 natt-bygget).
+
+Endast data/ + verktyg/ + worklog: src orörd (data-only-mätvåg), inget bygge (prod-synken äger), R2 orörd (inga priser/tier/publicering), data/blogg/ orörd, syskonytor orörda (o31+s7u2c-filer = u2:s 8eb38354; o37+gap-filer+kur = u1:s 7f419839; mimosa/testa-*-filerna i trädet = andra spårs, orörda).
+
+LEVERANS: data/forskning/OPTIMERING/o38-prestanda-nattfacit-s7.md, data/forskning/OPTIMERING/lighthouse/start-nattfacit-0030.json, data/forskning/OPTIMERING/lighthouse/nattfacit-0030-sammanfattning.json, verktyg/_s7u3n-bundjamf.mjs, verktyg/_s7u3n-isrtrigg.mjs, worklog.md

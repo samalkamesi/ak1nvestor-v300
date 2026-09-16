@@ -14,6 +14,9 @@
  *   - medlemmar (type=medlem) + medlem_progress som egna typer (framtidssäkra).
  *   - --max-sidor=N: begränsa antal sidor i full-dumpen vid behov (1..40).
  *   - Summeringsrad med totalt antal MB skrivet.
+ *   - v2.1 (2026-09-16, DR-KEDJA4): per-typ-filerna bär truncerad-markör —
+ *     limit=5000 var OMARKERAT, en avklippt snapshot skilde sig inte från en
+ *     komplett (kontraktet kontrolleras av verktyg/dr-kedja4.mjs).
  *
  * Användning: node verktyg/backup-fran-molnet.mjs [typ] [--max-sidor=N]
  *   (körs utan argument av hybrid-sync — bakåtkompatibelt med v1-anropet)
@@ -37,6 +40,9 @@ const TYP = process.argv.slice(2).find(a => !a.startsWith("--")); // valfritt: e
 
 const STJARN_DATUM = new Date().toISOString().slice(0, 10);
 const SIDSTORLEK = 5000; // rader per sida i full-dumpen
+const PERTYP_TAK = 5000; // per-typ-snapshots: limit i REST-anropet — vid taket
+// bär filen truncerad=true sedan 2026-09-16 (DR-KEDJA4-fynd: taket var
+// OMARKERAT — en avklippt snapshot gick inte att skilja från en komplett)
 const GRANS_GZIP = 20 * 1024 * 1024; // 20 MB — över detta gzip:as full-dumpen
 const HEADERS = { apikey: NYCKEL, Authorization: "Bearer " + NYCKEL };
 
@@ -80,7 +86,7 @@ const mapa = TYP && TYP !== "system-events-full" ? TILLFALLEN.filter(t => t.fil 
 for (const t of mapa) {
   try {
     const url = BAS + "/rest/v1/system_events?type=eq." + encodeURIComponent(t.event) +
-      "&select=created_at,details&order=created_at.desc&limit=5000";
+      "&select=created_at,details&order=created_at.desc&limit=" + PERTYP_TAK;
     const r = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(20000) });
     if (!r.ok) {
       resultat.push(t.fil + ": HTTP " + r.status);
@@ -89,7 +95,7 @@ for (const t of mapa) {
     const rader = await r.json();
     mkdirSync("data/backups", { recursive: true });
     const fil = path.join("data/backups", t.fil + "-" + STJARN_DATUM + ".json");
-    skriv(fil, JSON.stringify({ typ: t.event, datum: new Date().toISOString(), antal: rader.length, rader }, null, 2));
+    skriv(fil, JSON.stringify({ typ: t.event, datum: new Date().toISOString(), antal: rader.length, truncerad: rader.length >= PERTYP_TAK, rader }, null, 2));
     resultat.push(t.fil + ": " + rader.length + " rader → " + fil);
   } catch (e) {
     resultat.push(t.fil + ": FEL " + (e?.message ?? String(e)).slice(0, 60));

@@ -453,6 +453,40 @@ körbevisad — en loggrad i rutten eller pm2-spaning vid 04:30/06:00 UTC);
 — medveten utbildningsbredd eller gap?; (3) NDA-SE-analys underbygger Nordea-
 paketet (12:e paketet utan analysunderlag).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u2 omgång 5 — D20 + D38 diffade mot verkligheten)
+
+Tolfte dokvågen (uppdragstexten "2/3" identisk med omgång 4:s — 2 FRIA system
+valda efter kollisionskontroll: 23 av 38 redan tagna av spårets dokvåger,
+D22/D23 lämnas av princip (VÄNTAR på kundens R2-beslut), inga syskonfönster
+öppna på dessa sektioner). Varje rad MÄTT i arbetsytan 2026-09-16 — kodläsning,
+git-datering, testkörning, prod-sond — aldrig worklog-läsning.
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Återställ lösenord (D20 gap 3) | "flödet saknas helt (GoTrue stödjer det)" | **MOTBEVISAT — flödet är KOMPLETT i kod**: medlem-inloggning.tsx läge `"glomt"` (UI-växel "Glömt lösenord?", neutral text "om kontot finns skickar vi en återställningslänk", knapp "Skicka återställningslänk") · /api/medlem action=glomt → POST /auth/v1/recover · EGEN rate-limit 5/IP/min (glomtAnrop-Map) · medlem-auth.ts:372–382 recover-kontrakt med neutral talkart (kontoexistens läcks aldrig). Daterat d83915fb 2026-09-11 22:09 (våg 101 K2/K3) — K1:s 452-radsläsning föregick commiten samma kväll; kartans "kvar"-not var inaktuell från början |
+| E-postverifieringsläget (D20-not "oklart") | "av/på — oklart i UI" | **BESVARAT: verifiering är PÅ och säkerhetsmedveten** — GoTrue `email_not_confirmed` mappas till felkod `"ej_bekraftad"` (medlem-auth.ts:204–229) ENDAST när e-post+lösenord var korrekta (inexistens läcker aldrig), egen UI-text + rate/natverk utskiljda som typade felkoder |
+| medlem-auth.ts | 452 r | **556 r** (glomt-kontrakt + felkodsgrenar; växten = våg 101:s K2/K3, ingen rörelse sedan) |
+| Testsviten | "17/17 gröna" | **17/17 GRÖN körd nu** (10 s) — MEN 0 träffar på glomt/recover: återställningsgrenen är OTÄCKT av sviten (nytt preciserat gap) |
+| E2E-svit (D20 gap 2) | saknas | **saknas fortfarande** (mätt: verktyg/ bär endast testa-medlem-auth + testa-medlem-progress) |
+| Prod /logga-in | — | **200** (loopback-sond) |
+| Navet D38 — kodrörelse sedan 09-13 | (senaste leverans våg 120) | **Ingen funktionsrörelse**: endast LarvagKort-läsbarhetsrader ≥52 px (3d25e4f5) + /min-sida revalidate=3600 (årlåskuren b77699ba) + (huvud)-layoutens prefetch-kur (184c6dc7) träffar ytan — kosmetik/cache, inga gap |
+| D38 gap 2 — API-texter | "pass.namn-API-texter svenska" | **LEVER (mätt)**: bevakning + portfolj-rutter svarar svenska feltexter i ALLA grenar ("Inloggning krävs." 401, "För många anrop — vänta en minut." 429) |
+| D38 gap 4 — förhandsfyllnad | "antal/kurs kunna förhandsfyllas" | **LEVER (mätt)**: 0 träffar på förhandsfyllning i portfolj-navet.tsx; våg 120:s one-click lämnar antal/kurs valfria (kommit-meddelandet "antal/kurs valfria senare" = medvetet designläge) |
+| D38 gap 1 — E2E | "inga egna E2E-tester" | **saknas fortfarande** (mätt: 0 navet-sviter i verktyg/) |
+| Prod /min-sida | — | **200 på loopback OCH HTTPS** |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| D20 | LEVER 7 → **LEVER 8** | Det namngivna huvudgapet (återställ lösenord) är STÄNGT med säkerhetsdesign (neutral talkart, egen rate-limit, GoTrue-recover) och verifieringsläget är besvarat i kod — mätbart, inte påstått. Sviten grön 17/17. Kvar: E2E-svit + glomt-grenens testtäckning (0/1 recover-kontroller). A3-precedensen: score stiger när mätbart huvudgap stängs |
+| D38 | LEVER 8 → **LEVER 8** | Kunskap tillförd utan gaprörelse (E33/B9-precedensen): svenska API-texter + förhandsfyllnad + E2E-bristen MÄTTA och lever; R2-tier-ytan orörd av princip; prod 200. Ytans cache- och läsbarhetskurar tillhör E37/o13:s värld, inte navets gap |
+
+Snittscore **7,5** (285 → **286** poäng / 38 system; D20 +1 — första poängrörelsen
+på tre dokvåger).
+
+Kö från fynden: (1) glomt-grenen in i testa-medlem-auth (recover-mappning +
+neutral talkart är rena funktioner — sviten stubbar nätverket redan);
+(2) D38:s API-texter in i nästa motorpipeline-översättningssväng (pass.namn).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -476,13 +510,13 @@ paketet (12:e paketet utan analysunderlag).
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Aspektsystemet (v150) i kod men saknat i kartan; kvartalsserien v152: kalendrar+bolagspaket i granskningskön, /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
-| D20 | Inloggning & konto (L1) | Medlem | LEVER | 7 | LOGIN-2.0 E2E-verifierad (specifika feltexter live); återställ lösenord + E2E-svit saknas |
+| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | Gäst→moln-migrering en enkelriktning |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | E-post/notiser utan tester; driftstatus overifierad |
-| D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester; pass.namn-API-texter svenska; gäst-flödet enklare |
+| D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Protokoll lever till 09-15 med åtgärder i innehåll (4 möten mätta — "tomma beslut" motbevisat); JSON-syntes-fallbacken lever i senaste mötet: gap 1 kvarstår |
@@ -1021,34 +1055,45 @@ fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
 
 # D. MEDLEM & KOMMERS
 
-## D20. Inloggning & konto (FAS L1) — LEVER — 7/10 *(uppdaterad 2026-09-13)*
+## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 
 *Uppdatering 2026-09-13: LOGIN-2.0 landat och E2E-verifierat på prod
 (specifika feltexter + live-räknare; STYRELSE-2026-09-11-V106 § 3 D1).
-FLAGGAN upphävd — kvar som gap: återställ lösenord, E2E-svit, oklart
-e-postverifieringsläge.*
+FLAGGAN upphävd.*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 5): kartans kvar-not
+"återställ lösenord" var INAKTUEL — glömt-lösenord-flödet landade redan i
+våg 101 K2/K3 (d83915fb 2026-09-11 22:09, samma kväll som K1:s 452-radsläsning
+men efter den): UI-läge "glomt" + /api/medlem → GoTrue /auth/v1/recover + EGEN
+rate-limit 5/IP/min + neutral talkart (kontoexistens läcks aldrig). Även
+"oklart e-postverifieringsläge" besvarat: verifiering PÅ — email_not_confirmed
+mappas till "ej_bekraftad" ENDAST vid korrekta uppgifter (medlem-auth.ts:204).
+medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
+(0 träffar). Score 7 → 8 (huvudgap mätbart stängt).*
 
 - **Vad:** Medlemsautentisering via Supabase Auth (GoTrue v2) genom server-
-  proxy: signup/signin/signout/session, tokens ENDAST i httpOnly-kakor
-  (access 1 h + refresh 30 d med rotation), rate-limit med IP-hash,
-  generella feltexter (läcker ej kontofinns), gäst-läge kvar som mjuk
-  fallback + migreringsbanner.
-- **Nyckelfiler:** src/lib/medlem-auth.ts (452 r, 17/17 tester gröna),
-  src/app/api/medlem/route.ts, src/components/ak1a/medlem-inloggning.tsx
-  (220 r), src/components/ak1a/{logga-in,inloggad-knapp,migrera-progress}.tsx,
-  src/app/(huvud)/logga-in + speglar, verktyg/testa-medlem-auth.mjs.
+  proxy: signup/signin/signout/session/GLÖMT-LÖSENORD (recover, neutral
+  talkart), tokens ENDAST i httpOnly-kakor (access 1 h + refresh 30 d med
+  rotation), rate-limit med IP-hash (signin + separat 5/IP/min för recover),
+  typade felkoder (ej_bekraftad/rate/natverk — inexistens läcker aldrig),
+  generell signin-feltext, gäst-läge kvar som mjuk fallback +
+  migreringsbanner.
+- **Nyckelfiler:** src/lib/medlem-auth.ts (556 r, 17/17 tester gröna mätta
+  2026-09-16), src/app/api/medlem/route.ts (glomt-gren + glomtAnrop-rate-limit),
+  src/components/ak1a/medlem-inloggning.tsx (220 r + glomt-läge), src/
+  components/ak1a/{logga-in,inloggad-knapp,migrera-progress}.tsx, src/app/
+  (huvud)/logga-in + speglar, verktyg/testa-medlem-auth.mjs.
 - **Observation:** KÄRNAN är ren och väldokumenterad (kontrakt i filhuvud,
-  hermetik vid build, SSR-vägar). Men SYSTEMRANKNINGEN #1: "TRASIG UX (fel
-  suppressas; kund blockerad 2 ggr)" — kundupplevelsen faller någonstans
-  ovanpå kärnan (t.ex. lasSvar-toleransen som visar "Något gick fel" utan
-  orsak, session-kollens tysta .catch, eller nätverkslägets detaljer).
-  LOGIN-2.0 (K3, huvudagenten) + K2-kartläggning (parallell subagent) körs
-  i våg 101 — precis rätt åtgärd.
-- **GAP (avgörbart):** (1) K2 lokalisera var fel suppressas (kandidater i
-  medlem-inloggning.tsx: lasSvar-fallback, session-catch, signup-lotsning)
-  och visa SPECIFIKA fel; (2) live-räknare (försök kvar innan rate-limit)
-  i UI; (3) återställ lösenord-flödet saknas helt (GoTrue stödjer det);
-  (4) e-postverifiering vid signup av/på — oklart i UI.
+  hermetik vid build, SSR-vägar). LOGIN-2.0 E2E-verifierad på prod
+  (specifika feltexter + live-räknare) och GLÖMT-LÖSENORD kompletterar
+  kärnan med samma säkerhetsdesign (KRITA-regeln: kontoexistens avslöjas
+  ALDRIG — recover svarar alltid neutralt). Prod /logga-in 200 (mätt).
+- **GAP (avgörbart):** (1) egen E2E-svit saknas (sviten är logikstubbar,
+  inget levande flöde); (2) glomt/recover-grenen OTÄCKT av testa-medlem-auth
+  (0 träffar — mappning + neutral talkart är rena funktioner, sviten
+  stubbar nätverket redan); (3) återställningsmejlets leveransväg (GoTrue-
+  konfig, avsändardomän) overifierad — kodvägen grön, mejlvägen omätbar
+  från arbetsytan.
 
 ## D21. Medlemsdata & progress — LEVER — 8/10
 
@@ -1134,7 +1179,17 @@ e-postverifieringsläge.*
   historik); (3) referral-utlösning (vem fick vilken kod) utan uppföljning-
   vy i admin.
 
-## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13)
+## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13 · mätt 2026-09-16)
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 5): diffad mot verkligheten —
+INGEN funktionsrörelse sedan 09-13 (endast LarvagKort-läsbarhetsrader 3d25e4f5
++ /min-sida revalidate=3600 b77699ba + (huvud)-layoutens prefetch-kur
+184c6dc7). Gap MÄTTA: API-texter fortfarande svenska i alla grenar
+("Inloggning krävs." 401 / "För många anrop — vänta en minut." 429 i både
+bevakning- och portfolj-rutterna), förhandsfyllnad 0 träffar (våg 120:s
+"antal/kurs valfria senare" = medvetet designläge), 0 egna E2E-sviter.
+Prod /min-sida 200 på loopback OCH HTTPS. Score 8 kvar (E33-precedensen:
+kunskap tillförd, inga gap stängda).*
 
 - **Vad:** Portal-megaplanens kärnleverans (STYRELSE-PORTAL-MEGA.md,
   kundens sex krav → en yta): Min Sida som plattformens nav med Dashboarden

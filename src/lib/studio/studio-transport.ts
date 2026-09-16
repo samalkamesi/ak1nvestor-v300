@@ -1741,6 +1741,24 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POST 30 (V8/A3 — våg 181): v4/command pauseGoal/resumeGoal
+   * (V4-LAGRET §11.2 rad 238 — mål-loopens paus/fortsätt). Samma §11.1-
+   * envelope som sendText men typ-driven med TOM payload (§11.2 dokumenterar
+   * pauseGoal/resumeGoal utan payload-fält). Ack-statusunionen (§11.5.1):
+   * "noop" = app-servern bar inget mål att styra — ÄKTA domslut, ej fel.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4MalStyrning(
+    typ: "pauseGoal" | "resumeGoal",
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5797,6 +5815,45 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POST 30 (§11.1/§11.2 rad 238): pauseGoal/resumeGoal — samma envelope-
+   * validering som sendText, typ-driven med tom payload. "noop"-ack
+   * (inget app-server-mål) är ett äkta domslut: skickat=true.
+   */
+  async skickaV4MalStyrning(
+    typ: "pauseGoal" | "resumeGoal",
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    if (typ !== "pauseGoal" && typ !== "resumeGoal") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig styrningstyp." };
+    }
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: typ,
+      payload: {},
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8483,6 +8540,31 @@ class MockTransport implements StudioTransport {
       status: avvisad ? "rejected" : "accepted",
       ...(avvisad ? { reasonCode: "proto.invalidPayload" } : {}),
       delivery: alternativ?.delivery ?? "startNow",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 30 (§11.2) (mock): pauseGoal/resumeGoal — deterministisk "noop"-ack
+   * (mocken bar inget app-server-mål; äkta domslut enligt §11.5.1 — INGEN
+   * påhittad reasonCode). Överridbar via mockV4MalStyrningStatus för dev-E2E
+   * av accepted-vägen.
+   */
+  mockV4MalStyrningStatus: string = "noop";
+
+  async skickaV4MalStyrning(
+    typ: "pauseGoal" | "resumeGoal",
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    if (typ !== "pauseGoal" && typ !== "resumeGoal") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig styrningstyp." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4MalStyrningStatus,
+      typ,
       source: "mock",
     };
     return { skickat: true, commandId, status: ack.status, ack, rått: ack };

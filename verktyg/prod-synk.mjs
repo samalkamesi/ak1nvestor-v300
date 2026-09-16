@@ -48,7 +48,12 @@ const MIN_RAM_MB = 2200;
 
 function logga(rad) {
   fs.mkdirSync(VAKT, { recursive: true });
-  fs.appendFileSync(LOGG, `${new Date().toISOString().slice(0, 19)} ${rad}\n`);
+  // S8-U1 (o32 §6 kö 2, rotorsaka): Z MÅSTE med — `slice(0,19)` lämnade en
+  // UTC-rad utan tidszon ⇒ Date.parse tolkade den som LOKAL tid (2 h fel i
+  // CEST). Två bevisade offer: s7-u2:s vakare (deployen 16:40:33Z osynlig)
+  // + s8-u4:s "tystnad sedan 10:27"-felläsning. Prefixet är oförändrat,
+  // datumregex `^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}` matchar som förut.
+  fs.appendFileSync(LOGG, `${new Date().toISOString().slice(0, 19)}Z ${rad}\n`);
   console.log(rad);
 }
 

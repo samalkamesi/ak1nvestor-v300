@@ -259,3 +259,153 @@ sendText (störst värde — ersätter dagens styrväg stegvis bakom feature-avv
 resolveInteraction (dialog-korten) → switchModelConfig + pause/resumeGoal → köoperationer.
 INSATS A6 kvarstår: felkoder, flight-timeout, delivery-semantikens tre lägen mot vår
 mål-loops -32010-serialisering — därför förblir etapp 2 sekvenserad EFTER gap 26-stängning.
+
+### 11.5 INSATS A6 LEVERERAD — felkoder, flights och delivery-triaden (rond 53, 2026-09-16)
+
+**Status:** LEVERERAD som forskningsdokument (gap-registrets post 36; definition-of-done
+= detta avsnitt med bevisade signaturer). Källa: bundeln 3.11.2-24
+(`/home/ak1a/.npm-global/lib/node_modules/zcode-app-cli/vendor/zcode.cjs`, 12 632 838 B
+— källklonen `/home/ak1a/forskning/zcode-cli` bär endast CLI-skalet, 13 filer; v4 lever
+bara i bundeln). Alla offset-citat är maskinverifierbara (sond: kontext-extraktion per
+term). Felklassernas minifierade namn bevaras som bevislänkar.
+
+#### 11.5.1 Ackens wire-schema (Loi @ ~10 532 462)
+
+```
+{ commandId: string,
+  status: "accepted" | "rejected" | "stale" | "duplicate" | "noop" | "failed",
+  reasonCode?: string, message?: string,
+  revisionAtDecision: number,
+  result?: { type: … } }   // bl.a. {type:"inputDisposition", delivery:"startNow"|"queue"|"guide"}
+```
+
+- **result.inputDisposition** = acken rapporterar den ADMITTERADE leveransen (skillnaden
+  mot requestedDelivery synlig här — triadens fallback blir mätbar på tråden).
+- **retryAck** (@ ~12 186 858): `status==="failed" → återges ORDAGRAT; annars → "duplicate"`
+  — ett misslyckat kommando maskeras aldrig som duplikat vid omsändning.
+- **queryUnavailableAck**: `{status:"failed", reasonCode:"fault.command.queryUnavailable"}`.
+- **Inbox-idempotens** (CommandInbox T3e, handle @ ~12 182 153): nyckelgrind (per
+  session+commandId) → inFlight-replay → lookupExact (settled) → sessionsgrind →
+  decide() → admissionSeq++ → settle() = den ack som persisteras som v4/command_fact.
+  `queueItemId = "queue_" + commandId` (Cse) — deterministikt, klientförutsägbart.
+- Ogiltig envelope ⇒ `{status:"rejected", reasonCode:"proto.invalidPayload",
+  revisionAtDecision:0}`; radmål (editUserQuery/retryTurn) valideras via
+  validateRowTarget (@ ~12 326 224): saknat mål ⇒ proto.invalidPayload, borta/ej ägd ⇒
+  proto.staleTarget, sessionslös kommandotyp ⇒ allow.
+
+#### 11.5.2 reasonCode-namespaces (fullständigt uppräknade ur bundeln)
+
+| Namespace | Koder |
+|---|---|
+| `proto.*` (10) | frameAssemblyTooLarge · frameEnvelopeTooLarge · frameFragmentCountExceeded · invalidPayload · sessionNotFound · missingBaseRevision · staleLogEpoch · staleRevision · staleTarget · payloadTooLarge |
+| `guard.*` (17) | actionUnavailable · compactOperationLock · forkAssistantOnly · forkTargetNotStable · forkTargetAmbiguous · stopTargetChanged · heldQueueConfirmationStale · workspaceRewindUnsafeFiles · workspaceRewindIgnoredFiles · workspaceRewindUnavailable · workspaceRewindApplyConflict · latestQueryEditOnly · latestAssistantRetryOnly · queueItemReserved · queueItemNotEditable · queuePromotionBusy · selectionSideChatRestrictedCommand |
+| `fault.attachment.*` (18) | previewArtifactInvalid · previewNotMedia · previewTooLarge · beginConflict · tooManyUploads · chunkCountInsufficient · uploadNotFound · commitInProgress · chunkConflict · chunkGap · tooManyChunks · emptyChunk · totalBytesExceeded · stagingCapacityExceeded · uploadIncomplete · checksumMismatch · putUnsupported · readUnsupported (+previewRefNotAuthorized/previewRangeInvalid) |
+| `fault.command.*` (19) | queryUnavailable · notImplemented · executionFailed · inputRejected · capabilityUnsupported · queuePromotionCommitFailed · assistantFeedbackUnsupported · inputDiscardedOnRestart · inputCancelled · querySessionNotFound · queryForeignWorkspace · persistentFactStoreUnavailable · persistentFactSessionNotFound · persistentFactWorkspaceMissing · stableForkStoreUnavailable · forkInputAdmissionMissing · childStartFailed |
+| `fault.*` övriga | subscribe.sessionNotFound · subscribe.resumeFailed · provider.rateLimited/serverError/requestFailed · network.timeout/sseStalled/sseDisconnected/unreachable · runtime.hookBlocked/backgroundTaskFailed/unknown/toolLifecycleIncomplete/toolFailed · gateway.disposed · projectionEventCommit.{gatewayDisposed, aborted, timeout, applyFailed, disposed, rehydrated} · subscription.notOwned · fileChanges.unsupported · fileRewindPreview.unsupported |
+| fristående | `heldQueueDispositionRequired` (u1t = V4HeldQueueDispositionRequiredError) |
+
+**Felklasser med reasonCode-fält:** Jh = V4InputAdmissionRejectedError · g1 =
+V4CommandNoopError (→ status "noop") · Ose = V4CommandNotImplementedError ("v4 command
+not implemented in M3: \<typ\>") · I1t = V4SelectionSideChatRestrictedCommandError ·
+u1t/l1t = heldQueueDispositionRequired/heldQueueConfirmationStale · vT =
+V4GoalCompactRejectedError · _y = ProjectionEventCommitWaitError.
+
+#### 11.5.3 Numeriska felkoder (qa = ZCode-protokollfelet) — med bevisade meddelanden
+
+| Kod | Meddelande (bevisat) | Vakt |
+|---|---|---|
+| -32003 | "Cannot import session history without session store" | importerad historik utan store |
+| -32009 | "Session state revision mismatch" | hT(expectedRevision) |
+| **-32010** | **"A prompt is already running for this session"** | Kpn session/send + Lwt(activeAbortController) |
+| -32012 | "Workspace model catalog revision mismatch" | _se(expectedRevision) |
+| -32013 | "Provider registry revision mismatch" | YLi(expectedProviderRevision) |
+| -32014 | "Model runtime revision mismatch" | QLi(expectedModelRuntimeRevision) |
+| -32020 | "No ZCode Protocol client is attached for \<metod\>" | requestClient utan klient |
+| -32031 | "Background task cancellation is not supported…" / "Provider runtime headers were not applied…" / restoreWarning | runtime-capability-klass (tre kallsätt) |
+| -32600 | "Workspace generate operation is already active: \<id\>" | genereringssignals-lås |
+| -32601 | "Method not found: \<metod\>" | metodrutning |
+| -32602 | "Invalid params — \<zod-fel\>" (Dn-wrapper) · "sessionId is only supported for imported history creates" · "thoughtLevel is required" | params-validering |
+| -32603 | "v4 gateway is not initialized" | requireV4Gateway |
+
+**Namnrymdsvarning:** MCP-familjen (ProtocolError-uppräkningen, @ ~7 287 456) ÅTERANVÄNDER
+nummer: ParseError -32700 · InvalidRequest -32600 · MethodNotFound -32601 · InvalidParams
+-32602 · InternalError -32603 · ResourceNotFound -32002 · MissingRequiredClientCapability
+-32021 · UnsupportedProtocolVersion -32022 · UrlElicitationRequired -32042 (+ ras-stegen
+gq=-32020 "http-method"). Samma siffra = olika felklass — studion matchar fel på
+reasonCode/message, ALDRIG på enbart numret.
+
+#### 11.5.4 Delivery-triaden — bevisad semantik per läge
+
+sendText-schemat (KLr @ ~10 527 925): `requestedDelivery?: "startNow"|"queue"|"guide"` +
+`heldQueueDisposition?: "clearQueueAndSend"|"keepQueueAndSend"` +
+`expectedHeldQueueItemIds?: string[]` + turnRuntimeModel/automationId/offPeak*/toolDisallowlist
+(automationId ⊻ offPeakTaskId via superRefine). Admissionsdefault (A2 @ ~12 170 093):
+`admittedDelivery ?? (guide→guide, queue→queue, annars startNow)`.
+
+- **startNow** (@ ~12 363 574): förvärvar
+  `acquireForegroundPromotionLease({leaseId:"send-now:<commandId>", mode:"after-current",
+  promotedInputId})` — utfall ≠ "acquired" ⇒ Jh("fault.command.inputRejected", "send now
+  foreground promotion is busy"). Vid förvärv: avbryter aktiv tur med
+  `abortMessage:"v4 sendText startNow preempts active turn"`, **pausar målet automatiskt**
+  (`goalPausedMutationReason:"send_now_goal_paused"`) och bevarar köns auto-drain
+  (`preserveQueueAutoDrainOnCancel:true`). Lease släpps i finally.
+- **queue**: `steerTurn(text,{commandKind, inputId, queryId, intent, delivery:"queue"})` ⇒
+  `{kind:"queued"}` | `{kind:"rejected", reason}` där reason mappas: input_too_large ⇒
+  proto.payloadTooLarge · empty_input ⇒ proto.invalidPayload · övrigt ⇒
+  fault.command.inputRejected. Samma mappning för compact ("/compact" tvingas alltid
+  delivery:"queue") och sendGoalCommand:s köväg.
+- **guide**: pendingInput på den AKTIVA turen (klassificerare xgt:
+  `(delivery ?? intent.admittedDelivery)==="guide" ? "guide" : "queue"`). När turen
+  slutar faller guiden TILLBAKA till kö: händelse TurnSteerDeliveryChanged
+  {requestedDelivery:"guide", admittedDelivery:"queue", fallbackReasonCode, pendingInputId,
+  targetTurnId} + steer.state="fellBack" (@ ~10 790 648). Steer-tillstånd (ybn):
+  notRequested→submitting→steering→guided|fellBack; dispatch-tillstånd (NBe):
+  admitted→queued→reserved→promoting→drained.
+- **Routing-läget** (serverns beslut, yta rje @ ~383 155): `{mode:
+  "startNow"|"enqueue"|"guide"|"reject"|"choice", reasonCode?}`. Vid "choice" MÅSTE klienten
+  svara med heldQueueDisposition + expectedHeldQueueItemIds som matchar kön EXAKT (annars
+  u1t heldQueueDispositionRequired / l1t guard.heldQueueConfirmationStale; z3e @ ~12 362 477).
+  "reject"-grenens hanterare ej påträffad i skannade kontexter — värdet är schema-bevisat.
+- **createSession + firstInput** (@ ~12 392 784): admission kind "queued" ⇒ delivery
+  "queue", annars "startNow"; misslyckad firstInput rullas tillbaka med
+  cancelInputCommand("fault.command.inputRejected").
+- **sendGoalCommand startNow-väg** (Bse): heldQueueDisposition-validering →
+  setTarget({objective, status:"active"}) — målet sätts aktivt i samma kommando.
+
+#### 11.5.5 -32010-förhållandet — mål-loopens serialisering förklaras
+
+DEN ÄLDRE styrvägen (session/send, Kpn @ ~12 096 974) AVVISAR med -32010 när
+activeAbortController lever ("A prompt is already running") — därför serialiserar
+studions mål-motor (våg 152/156) idag via vänta-och-försök-igen. **v4-triaden ersätter
+den serialiseringen: ingen av de tre lägena kastar -32010.** startNow preemptar (lease +
+abort + mål-paus "send_now_goal_paused" — notera: målet PAUSAS automatiskt, återupptas ej
+implicit), queue styrs in i den pågående turen, guide styr med garanterad kö-fallback.
+Revision-vakterna -32009/-32012/-32013/-32014 är den formella innebörden av envelopens
+baseRevision/baseLogEpoch (brygdat våg 175): fel förväntad epok/revision ⇒ stale/rejected
+INTE tyst kompatibilitet. Vid post 35 (UI-koppling) väljer studien alltså delivery-läge i
+stället för retry-på--32010 — och mål-paus-bieffekten vid startNow MÅSTE synas i UI:t.
+
+#### 11.5.6 Flights och deras tidsvakar (ärliga fynd)
+
+- **readyFlights** (ConversationV4Gateway j3e): `ensureColdReadyPublisher` (@ ~12 354 273)
+  = get-or-create av ETT löfte (coldResume.ensureResumed → hydratePublisher); städning via
+  `i.then(clear, clear)` där clear endast raderar om kartan fortfarande bär SAMMA löfte —
+  en gammal flight kan aldrig radera en nyare. ALLA frågevägar (subscribe/rowsRange/plans/
+  fileChanges/fileRewindPreview) väntar på flighten FÖRST (§11.3 bekräftat i fem kontexter).
+- **Ingen egen timeout på flight-löftet** — funnet i 3.11.2-24-skanningen. Den enda
+  tidsvakten i gatewayen är **projectionEventCommit-väntarna: XBi = 25 000 ms** ⇒
+  `fault.projectionEventCommit.timeout` (ProjectionEventCommitWaitError, timer unref:ad,
+  avbrytbar via signal; @ ~12 330 664); dispose ⇒ gatewayDisposed. eji = 2 000 =
+  telemetri-dedup-tak (inget med flights att göra).
+- **Studio-konsekvens:** vår klient behåller SIN egen tidsgräns (AbortSignal-mönstret) —
+  bundeln ger ingen flyg-timeout att lita på; en hängande hydration skulle annars hålla
+  v4/command-obestämd.
+
+#### 11.5.7 Studions tillämpning
+
+Kommandorutten (våg 175, /api/studio/tjanster/kommando) konsumerar detta så: klienten
+tolkar ack.status först (rejected+reasonCode ⇒ felmeddelande; duplicate ⇒ idempotent
+omsändning OK; noop ⇒ meddela "ingen åtgärd"), result.inputDisposition.delivery styr
+UI-etiketten, och -32010 på den äldre styrvägen blir vid post 35 ett LÄGESVAL (triaden)
+i stället för ett fel. Post 36 härmed levererad ⇒ post 35 (UI-koppling) OBLOCKERAD
+och fri att väljas — feature-avvägningen (växling + rollback) förblir dess villkor enligt §11.4.

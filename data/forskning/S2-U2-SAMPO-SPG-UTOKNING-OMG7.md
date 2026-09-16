@@ -48,3 +48,9 @@ Append-skriptet (/tmp/s2u2omg7-append.mjs, mönster 1:1 från omg5/6) beräknar 
 - CAGR5ar-fältnamnet vs 4 räkenskapsår (ärvd s1-u3-flagga, gäller nu 134 rader).
 
 **Skript:** /tmp/s2u2omg7-fore.mts · /tmp/s2u2omg7-append.mjs · /tmp/s2u2omg7-llms.mjs (idempotenta; llms-skriptet är omg6:s ordagranna återanvändning — helt dynamiskt).
+
+## Race-bokföring (omgångens fall ur mitt perspektiv)
+
+Mitt data-commit-fönster landade FÖRST: b6ae15b6 (universum 132→134 + llms 134-block). Under mitt PÅFÖLJANDE dokumentationsfönster committade syskonet s2-u1 (3d9a5e89, PepsiCo) — deras commit tog ARBETSKOPIAN vilket inkluderade mitt protokoll (denna fil) + min worklog-rad + deras PEP-rad + llms omregenererad till 135 (samma kodväg = självläkningen de själva dokumenterade: "syskonets 134-läge läks till 135 i samma regen"). Min docs-commit misslyckades korrekt på HEAD-låset ("cannot lock ref HEAD: is at 3d9a5e89 but expected b6ae15b6") — innehållet var redan säkrat i git via deras commit, förlustfritt (deras förutsägelse "deras blivande 'nothing to commit' är förlustfritt" infriades). Denna rättesnot = min enda återstående commit. KVD-tabellen ovan gäller mitt 134-leveransläge (GRÖN); slutlägets 135-KVD ägs och bokförs av syskonet enligt deras commit-meddelande. Ägarskap SAMPO.HE+SPG = s2-u2 (här dokumenterat + i worklog-raden); PEP = s2-u1.
+
+**Slutläge:** universum 135 · b6ae15b6 (mina data) + 3d9a5e89 (syskonets data + mina dokument + läkning) + denna not.

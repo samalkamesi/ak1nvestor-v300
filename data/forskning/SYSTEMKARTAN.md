@@ -888,6 +888,13 @@ delaInsikter() + delningOppen (rader ~336–360, mätt) → POST /api/tracer med
 samtycke:true + bekräftelsetoast — "knappen är ännu ej byggd" är FÖRÅLDRADE
 kodkommentarer i rutten + tracer-mount som deras rad ärvde.
 
+EFTERSKRIFT (13:28, egen sond): ombygget som pågick vid mätningens slut
+KLARADE — pulsvakt-status "gron", varvräknaren NOLLSTÄLLD (13:27:41Z), och
+huvudsidans ALLA 20 refererade statresurser svarar 200 på prod-HTTPS
+(kö-item 5 här ovan är därmed redan verifierat grönt; incidentens totala
+kundsynliga fönster 10:02→~13:27). RAM efter bygget 563 MB — nästa
+deployväntan kvarstår.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |

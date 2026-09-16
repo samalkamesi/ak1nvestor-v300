@@ -10,6 +10,17 @@
  *     (a) GET http://127.0.0.1:3000/                 → kräv HTTP 200
  *     (b) GET http://127.0.0.1:3000/api/sok?q=akm2   → kräv 200 + JSON
  *         404 = endpointen ej deployad ännu → VARNING "väntar deploy"
+ *     (d) STATISKT KONTRAKTSTEST (s8-u2 2026-09-16, o29 §6.2): hämta /
+ *         igen, extrahera ALLA _next/static-refs ur HTML:en, HEAD:a varje
+ *         (tak 80/varv) — kräv 200. Fångar "HTML 200 men tillgångarna
+ *         borta" (incidenten 10:02–10:2x: OOM-dödat bygg tömde .next/
+ *         static, pm2 serverade cachad HTML, kunden såg ostylat 20+ min
+ *         medan (a)/(b) var gröna). trasig-bygg ⇒ HÖGPRIO-LARM, ALDRIG
+ *         pm2-omstart (omstart förlorar den cachade HTML:en och lagar
+ *         inget — läkning = ombygge under låset, prod-synk/kraschvakt
+ *         äger). Under aktivt deploylås undertrycks larmet (transienta
+ *         500 är väntade medan .next skrivs om) men eskalerar efter 30
+ *         varv (≈ 30 min — fastlåst bygg är själv ett incidenttillstånd).
  *   VAR 10:E VARV (≈ 10 min) även externt:
  *     (c) GET https://lab.ak1nvestor.com/ (timeout 10 s) → fångar
  *         nginx-/certifikat-/DNS-fel (kan ej sudo-omstarta → larm direkt)
@@ -46,6 +57,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { begransaRefs, extraheraStatiskaRefs, statisktBeslut } from "./pulsvakt-statisk.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKTKATALOG = path.join(ROT, "data", "vakten");
@@ -75,6 +87,11 @@ const st = {
   autoAvstangd: false,
   varv: 0,
   sokVantarDeploy: false,
+  // (d) statiskt kontraktstest — läs-yta: statusfilens statiskStatus/statiskSenasteFel
+  statiskStatus: "ej-matt",
+  statiskSenasteFel: null,
+  statiskFelvarv: 0,
+  statiskSupprimerade: 0,
 };
 
 function nuIso() {
@@ -111,6 +128,9 @@ function skrivStatus(falt) {
           sokVantarDeploy: st.sokVantarDeploy,
           autoOmstandAvstangd: st.autoAvstangd,
           varv: st.varv,
+          statiskStatus: st.statiskStatus,
+          statiskSenasteFel: st.statiskSenasteFel,
+          statiskFelvarv: st.statiskFelvarv,
           processPid: process.pid,
         },
         null,
@@ -200,6 +220,50 @@ async function kollaExtern() {
   };
 }
 
+/** HEAD/GET av en enskild tillgång via loopback — 0 = hämtningen misslyckades. */
+async function tillgangsStatus(ref) {
+  try {
+    const h = await fetch(INTERN_BAS + ref, {
+      method: "HEAD",
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    if (h.status !== 405 && h.status !== 501) return h.status; // HEAD stöds
+    const g = await fetch(INTERN_BAS + ref, {
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    return g.status;
+  } catch {
+    return 0;
+  }
+}
+
+/** (d) Statiskt kontraktstest — HTML:en är kontraktet (statisk-sondens princip):
+ *  hämta /, extrahera ALLA _next/static-refs, HEAD:a varje (tak 80). Returnerar
+ *  rådata; BESLUTET (deploy-undertryckning, larmnivå) bor i pulsvakt-statisk.mjs
+ *  så det är testbart offline. ALDRIG pm2-omstart från detta steg. */
+async function kollaStatiska() {
+  try {
+    const sv = await fetch(`${INTERN_BAS}/`, {
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    const sidaStatus = sv.status;
+    const html = sidaStatus === 200 ? await sv.text() : "";
+    const tillgangar = [];
+    for (const ref of begransaRefs(extraheraStatiskaRefs(html))) {
+      tillgangar.push({ url: ref, status: await tillgangsStatus(ref) });
+    }
+    return { sidaStatus, tillgangar };
+  } catch (e) {
+    return { sidaStatus: 0, tillgangar: [], fel: String(e?.name || e).slice(0, 80) };
+  }
+}
+
 /** pm2-omstart av appen — körs som användaren ak1a (tillåtet utan sudo). */
 function omstartaApp() {
   try {
@@ -280,7 +344,63 @@ async function kontrollvarv(externOckså) {
     larma("hogprio", "extern", c.text);
   }
 
-  return { a, b, c, interntOk };
+  // ── (d) Statiskt kontraktstest: HTML:ens egna tillgångar ────────────────
+  // Körs endast när (a) är OK — en nere-sida ägs av (a):s omstart-logik och
+  // kan inte kontraktstestas. DOKTRIN: ALDRIG pm2-omstart på trasig-bygg
+  // (omstart förlorar cachad HTML och lagar inget — tillgångarna är borta
+  // från disken; läkning = ombygge under låset, prod-synk/kraschvakt äger).
+  let d = { ok: true, hoppadeOver: true };
+  if (a.ok) {
+    const matning = await kollaStatiska();
+    const beslut = statisktBeslut({
+      sidaStatus: matning.sidaStatus,
+      tillgangar: matning.tillgangar,
+      // Lös-funktion: flock-proben (deployPagar spawnar en process) körs
+      // ENDAST när fyndbilden är trasig-bygg — friska varv betalar den aldrig.
+      deployPagar: () => deployPagar(),
+      supprimeradeVarv: st.statiskSupprimerade,
+    });
+
+    if (beslut.status === "gron") {
+      if (st.statiskFelvarv > 0 || st.statiskSupprimerade > 0) {
+        larma("info", "statisk-aterstall",
+          `statiska tillgångar GRÖNA igen efter ${st.statiskFelvarv} varv fel / ` +
+          `${st.statiskSupprimerade} undertryckta — ${beslut.text}`);
+      }
+      st.statiskFelvarv = 0;
+      st.statiskSupprimerade = 0;
+      st.statiskStatus = "gron";
+      st.statiskSenasteFel = null;
+      d = { ok: true, text: beslut.text };
+    } else if (beslut.status === "supprimerad-deploy") {
+      st.statiskSupprimerade++;
+      st.statiskStatus = "trasig-bygg (deploy pågår — larm undertryckt)";
+      st.statiskSenasteFel = beslut.text;
+      larma("info", "statisk", `varv ${st.statiskSupprimerade}: ${beslut.text}`);
+      d = { ok: true, undertryckt: true, text: beslut.text };
+    } else if (beslut.status === "supprimerad-fastlast" || beslut.status === "trasig-bygg") {
+      st.statiskFelvarv++;
+      st.statiskStatus = beslut.status === "trasig-bygg"
+        ? "trasig-bygg"
+        : "trasig-bygg (fastlåst deployundertryck)";
+      st.statiskSenasteFel = beslut.text;
+      // Kadens: första fyndet + var 10:e varv (påminnelse) + fastlåst eskalering
+      // = högprio; övriga varv = "fel" (loggen ska inte drunkna i incidenten).
+      const hogprio =
+        beslut.status === "supprimerad-fastlast" ||
+        st.statiskFelvarv === 1 ||
+        st.statiskFelvarv % 10 === 0;
+      larma(hogprio ? "hogprio" : "fel", "statisk", `varv ${st.statiskFelvarv}: ${beslut.text}`);
+      d = { ok: false, text: beslut.text };
+    } else {
+      // sida-nere: (a) äger klassen — notera endast läget i statusfilen.
+      st.statiskStatus = "sida-nere";
+      st.statiskSenasteFel = beslut.text;
+      d = { ok: true, hoppadeOver: false, text: beslut.text };
+    }
+  }
+
+  return { a, b, c, d, interntOk };
 }
 
 /** Huvudloop — evig; varje varv isolerat i try/catch (ALDRIG krascha). */
@@ -326,13 +446,36 @@ async function testlage() {
   console.log(rad("(a) framside", a, "GET / loopback → HTTP 200"));
   console.log(rad("(b) sok-api  ", b, "GET /api/sok?q=akm2 → 200 + JSON (404 = väntar deploy)"));
   console.log(rad("(c) extern   ", c, `GET ${EXTERN_URL} → 200 (nginx/cert)`));
+
+  // (d) statiskt kontraktstest — i driftläge: hogprio-larm, ALDRIG omstart.
+  let d = { ok: true, hoppadeOver: true };
+  if (a.ok) {
+    const matning = await kollaStatiska();
+    const beslut = statisktBeslut({
+      sidaStatus: matning.sidaStatus,
+      tillgangar: matning.tillgangar,
+      deployPagar: () => deployPagar(),
+      supprimeradeVarv: 0,
+    });
+    d = {
+      ok: !beslut.raknaSomFynd,
+      text: `${beslut.status}: ${beslut.text}` + (matning.fel ? ` [hämtningsfel: ${matning.fel}]` : ""),
+    };
+  }
+  console.log(rad(
+    "(d) statiskt ", d,
+    "GET / + HEAD:a dess _next/static-refs → alla 200 (trasig-bygg = hogprio-larm i drift, ALDRIG omstart)",
+  ));
+
   const interntOk = a.ok && b.ok;
-  console.log(
-    interntOk
-      ? `RESULTAT: INTERN PULS OK${c.ok ? " · EXTERN OK" : " · EXTERN FEL (hogprio-larm i drift)"}`
-      : "RESULTAT: INTERN PULS FEL (i driftläge: pm2-omstart + larm)",
-  );
-  process.exit(interntOk ? 0 : 1);
+  const statisktOk = d.ok;
+  const del = [
+    interntOk ? "INTERN PULS OK" : "INTERN PULS FEL (i driftläge: pm2-omstart + larm)",
+    statisktOk ? "STATISKT KONTRAKT OK" : "STATISKT KONTRAKT FEL (i driftläge: hogprio-larm, ingen omstart)",
+    c.ok ? "EXTERN OK" : "EXTERN FEL (hogprio-larm i drift)",
+  ].join(" · ");
+  console.log(`RESULTAT: ${del}`);
+  process.exit(interntOk && statisktOk ? 0 : 1);
 }
 
 // Entré: --test körs en gång; annars evig loop med totalkylningsnät.

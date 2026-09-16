@@ -431,7 +431,7 @@ const GAMLA = [
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
-    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup",
+    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -454,9 +454,9 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 20 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 21 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "20 lager i ordning (djup + historia syskonlagren, lonsamhetsdjup + tsdjup + skattedjup + beteendedjup + riskdjup + riskmåttsdjup + utdelningsdjup SIST), inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "21 lager i ordning (djup + historia syskonlagren, lonsamhetsdjup + tsdjup + skattedjup + beteendedjup + riskdjup + riskmåttsdjup + utdelningsdjup + förväntningsdjup SIST), inga okända komponenter",
   );
 }
 

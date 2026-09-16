@@ -78371,6 +78371,162 @@
     "grahamSection": "Graham föredrog bolag med stabil utdelning och såg speciella utdelningar som tecken på finansiell hälsa. Han krävde dock alltid margin of safety.",
     "ak1Section": "AKM1 integrerar speciella utdelningar i V09 (ROE) och V12 (intäktsstabilitet). Extra utdelningar vid kapitalöverskott påverkar direkt bolagets riskprofil."
   },
+  "ud-09-utdelningens-hallbarhet": {
+    "slug": "ud-09-utdelningens-hallbarhet",
+    "category": "UTDELNINGSSTRATEGI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Utdelningens hållbarhet — att stressa kronorna bakom utdelningen",
+    "summary": "Avanceradkursen i utdelningsstrategi: hållbarhetsprovet — metoden som flyttar frågan från årets utdelning till utdelningens bärighet genom en hel konjunkturcykel, med täckning på kassaflödet, balansräkningens utrymme och signalväven vid en sänkning.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå hållbarhetsprovet som utdelningsfamiljens kröning — payout ratio (ud-01) mätte årets andel, fällorna (ud-04) visade enskilda misstag, och detta prov samlar dem till frågan som avgör allt: bär utdelningen en hel cykel · Räkna täckning på kassaflödet i stället för resultatet — EPS-payout och FCF-payout ger två bilder av samma bolag, och skillnaden är resultatkvalitetens bro (ln-02) · Stressa utdelningen genom en treårssvacka med genomräknad kedja: intäktsfall, hävstång, uppskjutna investeringar och rörelsekapitalets motcykel · Läsa balansräkningens utrymme — fri kassa, förfalloprofil och regleringsgolv sätter det verkliga skyddet, inte årets täckning · Förstå signalväven: varför styrelser vägrar sänka (Lintner), vad en sänning kostar i kurs (GE, Shell, AT&T) och hur en hög direktavkastning kan vara marknadens prissatta tvivel · Bygga utdelningsutrymmets hierarki — lönsamhet, investeringar, balansräkning, reglering och sist policyn — och koppla provet till AKM2:s risk- och kassaflödesdimensioner.",
+    "why": "Familjens tidigare kurser har svarat på vad utdelningen är (km-063, ud-01), hur den kan växa (km-064, ud-02) och vad som kan gå fel i enstaka fall (ud-04). Frågan som återstår är den som skiljer en utdelningsstrategi från en utdelningsillusion: är kronorna där också det år då konjunkturen vänder? En utdelning som bara hållbar ett normalår är inte en utdelning utan en tidslinje för en framtida besvikelse — och eftersom utdelningsbeslutet är det mest tröga en styrelse gör (sänkningar undviks länge, av Lintner-doktrinens både goda och dåliga skäl) samlas risken just där ingen tittar: i cykelkombinationen av fallande kassaflöde, orörd utdelning och trött balansräkning. Detta prov är utdelningsfamiljens motsvarighet till stabilitetsfamiljens kreditcykelkurs (st-04): samma tankesätt — att normalåret inte räcker som bevis — tillämpat på kronorna som betalas ut. Utan provet blir direktavkastningen en lockighet beräknad på en siffra ingen har frågat om den överlever.",
+    "history": {
+      "origin": "Utdelningen är äldre än aktiemarknaden själv: Holländska Ostindiska kompaniets stycken delade ut vinster — och ibland kapital — redan på 1610-talet, och ordet dividend kommer från latinets dividendum, det som ska delas. Genom 1800-talet och den tidiga 1900-talsbörsen var utdelningen inte en bonus utan själva avkastningen: järnvägsbolag, banker och trust delade ut det mesta av vinsten, och en aktie utan utdelning var en oddsedling. Det var denna värld Grahams generation växte upp i — där oavbruten utdelning i tjugo år var ett av det defensiva bolagens kriterier, inte en prestation utan en sedvänja.",
+      "evolution": "Teorin kom senare och vände på frågan. Lintner (1956) intervjuade amerikanska bolagsledningar och fann det mönster som fortfarande styr: bolag siktar på en långsiktig andel av vinsten, justerar motvilligt och aldrig i onödan, och hellre låter utdelningen växa långsamt än lova en nivå de kan tvingas bryta. Miller och Modigliani (1961) visade att utdelningspolitiken i en perfekt marknad inte påverkar värdet — värdet sitter i kassaflödet, inte i hur det delas. Därmed blev utdelningen ett budskap: signalteorin (Bhattacharya 1979, Miller och Rock 1985) läste en höjd utdelning som en dyr och därmed trovärdig signal, eftersom bara ett bolag med äkta kassaflöde har råd att skicka den. Klientelteorin tillade att olika ägare vill ha olika saker — och att bolag rangerar efter sin ägarbas.",
+      "modern": "Det senaste decenniet har prövat utdelningens roller i båda riktningarna. Lågränta-eran drev jakten på direktavkastning och gjorde aristokrater (ud-03) till kulturarv, samtidigt som återköpen (km-066) växte till den tysta storebrodern — samma kronor, flexiblare signal. Pandemin 2020 blev ett fullskaleprov: S&P 500-bolagens sammanlagda utdelningar föll för första gången sedan finanskrisen, Holländska Shell sänkte för första gången sedan 1945, och i Sverige stoppade Finansinspektionen bankernas utdelningar tillfälligt med hänvisning till kapitalbehovet — ett påminnelse om att utdelningsutrymmet kan återkallas utifrån. Räntesvängen 2022–2023 omvärderade sedan högavkastande aktier som obligationer. Mot den bakgrunden är hållbarhetsprovet inte nostalgia utan redskap: utdelningen är en tvångssparare i goda tider och den första posten som granskas när vändningen kommer."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — två täckningar, två sanningar",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Källorna — vartifrån utdelningskronan kommer",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Hållbarhetsprovet — fem steg på ett riktigt exempel",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Cykelstressen — tre år som avgör allt",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — signalväv, yield-bedrägeri och kulturpremie",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — utdelningsutrymmets hierarki",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — två täckningar, två sanningar",
+        "intro": "På utdelningens väg från vinst till utbetalt kassabelopp finns två mätpunkter — och de kan berätta två olika historier om samma bolag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ ett fingerat exempel genom hela kursen: Nordkärnan AB, hundra miljoner aktier, föreslagen utdelning 4,20 kronor per aktie — alltså 420 miljoner kronor. Resultaträkningen visar ett nettoresultat på 700 miljoner, vilket ger EPS på 7,00 kronor. Payout ratio på resultatet (ud-01) blir 420 delat med 700: 60 procent. Ser hyggligt ut — två tredjedelar av vinsten stannar kvar.\n\nMen kassaflödesanalysen (km-003) visar något annat: rörelsens fria kassaflöde är 560 miljoner kronor. Täckningen på kassaflödet blir 560 delat med 420: 1,33 gånger — och utdelningens andel av det fria kassaflödet är 420 delat med 560: 75 procent. Samma bolag, samma år, samma utdelning: 60 procent payout på ena måttet, 75 på det andra. Skillnaden — 140 miljoner kronor — är precis det område där resultatkvalitetskursen (ln-02) bor: intjäningar som finns i resultaträkningen men ännu inte blivit kassa. En del är ofarliga tidsförskjutningar, som fakturor som betalas nästa kvartal. En del är de accruals som kan gömma försämringar: uppskrivna lager, kapitaliserade kostnader, försäljningar som ännu inte genererat en enda krona.\n\nDärför är kassaflödestäckningen hållbarhetsprovets första sanning: utdelningen betalas i slutändan inte av resultat utan av kassa. EPS-payout 60 procent är bolagets egna bild av generositeten; FCF-payout 75 procent är bankkontots bild. Provets fråga gäller den senare — och ännu inte ens den, utan hur den ser ut ett dåligt år."
+          },
+          {
+            "type": "definition",
+            "content": "Utdelningstäckning — förhållandet mellan rörelsens fria kassaflöde och betald utdelning. Täckning över 1,0 betyder att årets verksamhet betalar årets utdelning; under 1,0 betalas differensen ur balansräkningen. Hållbarhetsprovets kärnmått — alltid på kassaflödet, aldrig enbart på resultatet."
+          },
+          {
+            "type": "insight",
+            "content": "Resultatet är en åsikt om året, kassaflödet är ett faktum om det — utdelningen betalas av faktat."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Källorna — vartifrån utdelningskronan kommer",
+        "intro": "En utdelning kan finansieras från tre ställen — bara ett av dem är en äkta inkomst. De andra två är lånad tid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Källa ett: årets kassaflöde. Den enda källa som är en inkomst i egentlig mening — verksamheten genererar mer kassa än den behöver för att investera, och överskottet lämnas tillbaka. Det är hit provet i kapitel 3 letar: en utdelning som år efter år täcks av löpande fritt kassaflöde är en mogen verksamhets naturliga andning (ud-02 visade återinvesteringens motsida: det som inte kan återinvesteras lönsamt ska ut).\n\nKälla två: balansräkningen. Bolaget betalar utdelning ur kassabuffert eller nyupptagen kredit. Detta är gråzonen — och den är bredare än den låter. Ett bolag med en engångsintäkts lyfta (en avyttring, ud-08) kan med rätta lämna ut kapital som balansräkningen inte behöver; det är kapitalåterlämning, inte utdelning i avkastningsmening. Men ett bolag som år efter år betalar ordinarie utdelning med ny skuld har inte en utdelning — det har en fasad. Gränsen syns i kapitalbindningen (ln-04): växer lånet i takt med utbetalningarna, finansierar utdelningen i praktiken kreditmarknaden.\n\nKälla tre: nyemission. Den teoretiskt renaste och praktiskt bittersta — bolaget tar in nytt kapital och betalar ut det till gamla ägare. Ingen vinst skapas; pengarna flyttas från nya till gamla ägare minus transaktionskostnader. Att en sådan konstruktion alls förekommer visar signalvävens styrka: bolaget betalar priset för att slippa sänka, eftersom sänkningen (kapitel 5) kostar mer i trovärdighet än emissionen kostar i utspäddning.\n\nBakom alla tre källorna står en beteendegrund som Lintner dokumenterade 1956: bolag sänker inte frivilligt. Styrelser sätter utdelningen som en del av en långsiktig ambition, höjer i små steg och bär med sig en djup motvilja mot att bryta en kedja — av goda skäl (stabilitet, ägarklientel) och dåliga (att sänka är att erkänna att den egna prognosen felade). Därför byggs obalansen hellre en tid än att signalen skickas — och därför måste granskningen komma utifrån, från ägaren själv."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga alltid varifrån kronorna kommer: verksamheten, balansräkningen eller nya ägare — bara det första svaret är en avkastning, de två andra är tid som lånats."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Hållbarhetsprovet — fem steg på ett riktigt exempel",
+        "intro": "Provet är en kedja av fem frågor — varje steg ger nästa sitt underlag, och svaret gäller aldrig året utan cykeln.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett: räkna det fria kassaflödet ur kassaflödesanalysen (km-003). Nordkärnan AB: EBITDA 1 320 miljoner, minus investeringar 400, minus skatt och ränta 240, minus ökat rörelsekapital 120 — kvar: 560 miljoner i fritt kassaflöde. Observera rörelsekapitalposten: den är kapitalbindningkursens (ln-04) bidrag här — en växande verksamhet binder kassa i lager och kundfordringar, och den posten äter utdelningsutrymme även när resultatet växer.\n\nSteg två: täckningen på normalåret. 560 delat med 420 är 1,33 — verksamheten betalar utdelningen med god marginal. Som utbildningsheuristik, inte lag: över omkring 1,5 finns utrymme för både svacka och tillväxt, mellan 1,0 och 1,5 är utdelningen väderberoende, och under 1,0 är den redan idag balansräkningsburen. Nordkärnan ligger i mittenskiktet — normalåret är inget avgörande bevis.\n\nSteg tre: stressa kassaflödet genom en svacka — det är kapitel 4:s genomräkning. Steg fyra: läs balansräkningens utrymme — fri kassa, skuldens förfalloprofil och räntetäckning (st-01), och om bolaget är reglerat: vad tillsynsmyndigheten tillåter. Steg fem: läs policyn och historien — styrelsens uttalade ambition (nivå, andel, tillväxt), hur utdelningen rörde sig under senaste krisen, och om speciella utdelningar (ud-08) används som cykelpåslag på ordinarie nivå. En policy som säger något i stil med hälften av långsiktigt resultat är en signal om andel, inte om nivå — och en historik utan en enda sänkning genom två kriser säger mer än tio år av höjningar i uppgång.\n\nFem steg, en kedja: kassaflödet ger täckningen, täckningen stressas av cykeln, cykeln vägs mot balansräkningen, och allt tolkas mot vad styrelsen faktiskt gör. Utan något av leden blir svaret partiellt — täckning utan stress är väderprognostisering i juli, stress utan balansräkning glömmer att en buffert kan bära en svacka, och ingen av dem säger något om vad styrelsen kommer att besluta när kroken sitter i käken."
+          },
+          {
+            "type": "insight",
+            "content": "Hållbarhet är en kedja av fem bevis — kassaflöde, täckning, stress, balansräkning, policy — och kedjan är aldrig starkare än det svagaste beviset."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Cykelstressen — tre år som avgör allt",
+        "intro": "Normalårets täckning är inget bevis — beviset är vad som händer det år då intäkterna faller tjugo procent och utdelningsbeslutet ändå fattas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konjunktursvackan för Nordkärnan AB, räknad cell för cell. Normalår: EBITDA 1 320, investeringar 400, skatt och ränta 240, rörelsekapital binder 120 — fritt kassaflöde 560, täckning 1,33.\n\nÅr ett: intäkterna faller tjugo procent. Med bolagets kostnadsstruktur faller EBITDA till 780 — det är den operativa hävstången från marginaltrappkursen (ln-03): fasta kostnader gör att resultatrörelser är större än intäktsrörelser. Förvaltningen skjuter upp investeringar till 300 och skatt och ränta faller med resultatet till 190. Rörelsekapitalet frigör 50 i motcykeln — kunder betalar sämre men bolaget beställer mindre. Fritt kassaflöde: 780 minus 300 minus 190 plus 50 är 340. Täckning: 340 delat med 420 — 0,81. Hålet mot balansräkningen: 80 miljoner.\n\nÅr två, botten: EBITDA 660. Investeringar kan inte skjutas upp längre, 260 kvarstår; skatt och ränta 160; rörelsekapitalet ger inget mer. Fritt kassaflöde 240, täckning 0,57, hålet 180 miljoner. År tre, halv återhämtning: EBITDA 1 000, investeringar 350, skatt och ränta 200, rörelsekapital binder åter 80. Fritt kassaflöde 370 — täckning 0,88, hålet 50 miljoner.\n\nTreårssvackan har sammanlagt ätit 80 plus 180 plus 50: 310 miljoner kronor ur balansräkningen — eller ur ny skuld. Nu vägs steg fyra in: hur djup är bufferten? Har bolaget 300 miljoner i fri kassa och en outnyttjad låneram är utdelningen överlevbar — till priset av ökad skuldsättning in i en svag cykel (kombinationen som kreditcykelkursen st-04 varnar för: noll räntemarginal och ett refinansieringsbehov mitt i botten). Har bolaget knappt buffert är sänkningen inte en fråga om om utan om när. Notera också rörelsekapitalets dubbla roller: i år ett hjälper det (frigör kassa), i år tre kostar det (återbindning i takt med att verksamheten växer tillbaka) — återhämtningen kan kännas hårdare mot utdelningsutrymmet än fallet, eftersom tillväkten binder kassa medan vinsten fortfarande är halv.\n\nCykelstressen är också kursens bro till risken för dold samvariation (rs-03): en portfölj av utdelningsbolag som alla betalar ur samma cykel — bolag, fastighet, industri — kan se diversifierad ut i branscherna men dela samma svackår. Utdelningsströmmarnas korrelation syns inte i normalårets direktavkastning."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan är inte om utdelningen håller normalåret — den gör nästan alltid det — utan om tre svaga år i följd betalas av verksamheten eller av framtiden."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — signalväv, yield-bedrägeri och kulturpremie",
+        "intro": "Provets fem klassiska misstag — var och en förknippad med ett av historiens större utdelningsfall.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: att läsa sänkningen som oväder i stället för prognos. När General Electric efter decennier som utdelningsaristokrat halverade utdelningen 2018 och året därpå klippte den från 0,96 till 0,04 dollar — en minskning med drygt 95 procent på två år — var budskapet inte att bolaget råkat ut för otur utan att kassaflödet under hela perioden inte burit nivån. En sänkning är styrelsens egen efterhandsbekännelse; Shell 2020, som bröt en utdelningstradition sträckande sig sedan 1945, och AT&T 2022, som efter avyttringen lämnade en nivå nästan halverad mot tidigare, är samma mönster i olika tappningar. Den som gör hållbarhetsprovet först läser sänkningen som bekräftelse i stället för chock.\n\nFälla två: direktavkastningens bedrägeri. En aktie till 100 kronor med åtta kronor i utdelning ger åtta procent direktavkastning (km-063) — men om marknaden med rimlig grund prissattar femtio procents sänkningsrisk nästa år är den förväntade utdelningen fyra kronor och den ärliga direktavkastningen fyra procent. En hög yield är ofta inte en gåva utan ett pris satt av kollektivt tvivel — yielden varnar, den lockar inte. Det är utdelningsfällornas (ud-04) mekanik på portföljnivå: attraktiva på pappret, sjunkande i realiteten.\n\nFälla tre: kulturpremien. En lång kedja av höjningar (ud-03:s aristokrater) är en verklig prestation — men den kan vändas till ett tvång där bolag hellre lånar för att hålla kedjan än bryter den. Då betalar ägaren avgiften i skuld istället för i utdelning. Fälla fyra: att läsa speciella utdelningar (ud-08) som nivå. Engångskassor från avyttringar är kapitalåterlämning — räknas de in i direktavkastningen byggs en kurva som dör av sig själv. Fälla fem: räntkänsligheten. Högavkastande aktier prissätts delvis som obligationer — stiger den riskfria räntan (km-054) kan kursen falla kraftigt medan utdelningen hålls hel. Hållbarheten kan vara intakt medan kursen ändå faller: provet skyddar inte mot ränterisk, bara mot utdelningsrisk.\n\nOch som i hela spåret: övningen är hantverket att läsa och stressa siffror i en offentlig rapport — aldrig en uppmaning att köpa eller sälja något värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor: sänkänden läst som oväder i stället för prognos, yielden läst som gåva i stället för prissatt tvivel, kedjan som tvång, engångskassor som nivå, och räntan som gör kurserna våta medan utdelningen står torr."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — utdelningsutrymmets hierarki",
+        "intro": "Alla kurser i familjen samlas till en enda bild: utdelningen är sist i kön — och det är dess styrka som bevis.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Utdelningsutrymmets hierarki har fem led, i ordning. Först lönsamheten: utan ett strukturerat överskott finns inget att fördela (ln-01, roic-01). Sedan investeringsbehovet: verksamheten har företräde — en utdelning som svälter lönsamma investeringar är en långsiktig värdeflyttning från tillväxt till kontant (ud-02). Tredje balansräkningens styrka: skuldnivå (v10), räntetäckning (st-01) och förfalloprofil sätter taket för hur länge en svacka får bäras av kredit. Fjärde regleringen: för banker och försäkringsbolag sätter tillsynen golvet — Finansinspektionens tillfälliga utdelningsstopp 2020 visade att utrymmet kan återkallas utifrån oavsett kassaflödets hälsa, och det är en riskpost i sig. Femte och sist: utdelningspolicyn. Att policyn står sist betyder inte att den är oviktig — den är summan av de fyra andra, och därför det bästa komprimerade beviset: en utdelning som stigit genom två kriser vilar på hela hierarkin.\n\nI AKM2:s system knyter kursen samman tre dimensioner. Kassaflödesdimensionen: FCF-payout som kompletterar nyckeltalen med utdelningssidan. Riskdimensionen: cykelstressen är ett miniatyrstresstest (st-02) med utdelningen som mätetal, och rs-03:s samvariation synliggörs på portföljnivå — utdelningar som alla sinar samma år. Värderingsdimensionen: en aktie som köps för direktavkastningens skull (km-063) är i praktiken en kort terminalbalansräkning (vm-06:s utdelningsdiskontering) — kursen där är känsligare för hållbarheten än för årets nivå. Och Grahams regel från en annan epok — tjugo år av oavbruten utdelning — lever kvar som princip: kontinuitet är det billigaste signalet om hierarkins hållbarhet, för det är det dyraste för bolaget att förfalska.\n\nAvsluta med den levande övningen: välj ett bolag ur kursuniversumet, hämta tre senaste rapporterna, och bygg hållbarhetsprovet — kassaflöde, täckning, en egen treårssvacka, balansräkningens utrymme, policy och historik. Sammanställ till en enda siffra: hur många procent intäkterna får falla innan täckningen når 1,0. Gör om övningen vid nästa bokslut. Det är utbildningens kärna: hållbarhet är inte en känsla för utdelningar utan ett borträknat avstånd till sänkningspunkten — och avståndet mäts i cykler, inte i år."
+          },
+          {
+            "type": "insight",
+            "content": "Utdelningen är hierarkins sista led — lönsamhet, investeringar, balansräkning och reglering går före — och just därför dess mest sammanfattande bevis: en utdelning som överlever en hel cykel har rest hela kön."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch rangerade utdelningen bland de mest tillfredsställande egenskaperna ett bolag kan visa: ett bolag som betalar utdelning och dessutom köper tillbaka aktier (km-066) demonstrerar med handling att kassaflödet är äkta och att ledningen anser aktien värd att behålla. Men han var också tydlig med att en lockande direktavkastning ofta är en kurs som redan fallit — yielden som ser billigast ut i morgontidningen är den marknaden redan prissatt som bristande. För Lynch var hållbarhetsprovet ingen separat övning utan en del av historieberättelsen: om berättelsen inte förklarar var utdelningskronorna finns i ett dåligt år är berättelsen ofärdig.",
+    "grahamSection": "Benjamin Grahams defensiva investerare krävde oavbruten utdelning i tjugo år — inte som prestation utan som sedvänja från en tid då utdelningen var avkastningen. Bakom kravet ligger en princip som hållbarhetsprovet är den moderna utgåvan av: kontinuitet är det dyraste att förfalska. Grahams säkerhetsmarginal (km-030) tillämpad på utdelningen blir täckningen — avståndet mellan kassaflödet och utdelningen är marginalen, och den som köper en aktie utan marginal köper en siffra utan skydd. Hans checklista med krav på täckning och oavbrutna betalningar var, i modern tys, ett hållbarhetsprov komprimerat till två rader.",
+    "ak1Section": "I AK1A:s metodik är denna kurs UTDELNINGSSTRATEGI-familiens kröning: km-063 lärde direktavkastningen, ud-01 andelen, km-064 tillväxten, ud-04 fallorna — och hållbarhetsprovet samlar dem till den fråga AKM2:s granskning slutligen ställer: bär utdelningen en hel cykel. Brobyggen: mot kassaflödesanalysen (km-003) och resultatkvaliteten (ln-02) för täckningens källor, mot operativ hävstång (ln-03) och kreditcykeln (st-04) för stressens mekanik, mot dold samvariation (rs-03) för portföljens samlade utdelningsrisk, och mot V10, V19 och kapitalbindningen (ln-04) för balansräkningens tak. Provets fem steg är samtidigt AI-mentorns svarsmall när frågan gäller utdelningars uthållighet: kassaflöde först, policy sist."
+  },
   "pf-13-esgportfolj": {
     "slug": "pf-13-esgportfolj",
     "category": "PORTFÖLJHANTERING",

@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (369 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (370 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 327 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 328 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -248,6 +248,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ud-06-svenska-utdelningsaktier", titel: "Svenska utdelnings-aktier", kategori: "UTDELNINGSSTRATEGI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "ud-07-utdelningskalender", titel: "Utdelnings-kalender", kategori: "UTDELNINGSSTRATEGI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 16 },
   { slug: "ud-08-speciella-utdelningar", titel: "Speciella utdelningar", kategori: "UTDELNINGSSTRATEGI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
+  { slug: "ud-09-utdelningens-hallbarhet", titel: "Utdelningens hållbarhet — att stressa kronorna bakom utdelningen", kategori: "UTDELNINGSSTRATEGI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-13-esgportfolj", titel: "ESG-portfölj", kategori: "PORTFÖLJHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-14-pensionssparande", titel: "Pensionssparande", kategori: "PORTFÖLJHANTERING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-11-kognitiv-bias", titel: "Kognitiv bias — komplett lista", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -405,4 +406,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 369;
+export const LARVAG_ANTAL_KURSER = 370;

@@ -1087,3 +1087,14 @@ h1, h2, h3, h4, h5, h6 {
     animation: none;
   }
 }
+
+/* ── PRESTANDA: CONTENT-VISIBILITY — långa kortlistor (/bibliotek: 102
+   kort, 2 685 DOM-noder) slipper style/layout/paint för offscreen-kort.
+   DOM, SEO-text, hydrering och tillgänglighetsträd opåverkade —
+   webbläsaren hoppar bara över renderingsarbetet tills kortet närmas.
+   "auto 21rem" = platshållare före första layout (kortens typhöjd);
+   efteråt minns auto-nyckeln senaste riktiga höjd ⇒ inga stavhopp. */
+.cv-kort {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 21rem;
+}

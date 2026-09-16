@@ -28,7 +28,9 @@ app-server + nginx + Let's Encrypt. All kunskap protokollförs i
 ## Backup + DR-prov
 
 - Backupper: `verktyg/backup-server-filer.mjs` (serverfiler) och
-  `verktyg/backup-fran-molnen.mjs`; databasdumpar enligt DRIFTSBOKEN.
+  `verktyg/backup-fran-molnet.mjs` (per-typ + full-JSON; namnrättad
+  2026-09-16 — SKILL.md skrev felaktigt "molnen"); databasdumpar enligt
+  DRIFTSBOKEN.
 - **DR-prov** (godkänt mall 2026-09-11): återställ gårdagens dump i
   skrap-postgres → jämför tabell-/radräkningsmot produktion → dokumentera
   återställningstid i DRIFTSBOKEN. Referens: 20 s · 60 tabeller ·

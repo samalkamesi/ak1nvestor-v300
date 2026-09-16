@@ -298,7 +298,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s**: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s**: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md + DR-PROV-2026-09-16-KEDJA3.md (serverfiler) + DR-PROV-2026-09-16-KEDJA4.md (per-typ-vyorna) |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -588,6 +588,50 @@ EnvironmentFile med chmod 600).
   ej) · cron för vecko-arkivering server-side · kundnotis datorns
   hybrid-sync. KVD: tsc 0 via projektbinär, src/ orörd, inga byggen,
   PG17 orörd HELA övningen (down före/efter), tmp städad, R2 orörd.
+
+## S10-U3 (O4) — DR-ÖVNING KEDJA 4: PER-TYP-SNAPSHOTS (2026-09-16, GODKÄNT)
+
+- **Spårets fjärde och sista restore-led bevisat** (kedja 1 SQL-dump ·
+  kedja 2 full-JSON · kedja 3 serverfiler · kedja 4 per-typ-vyorna):
+  NYTT verktyg `verktyg/dr-kedja4.mjs` i hela dr-kedja2-mönstret —
+  flock på samma /tmp/ak1a-dr-prov.lock + RAM-/diskgrind + självsabotage
+  + kontraktsvalidering + konsistenskontroll + PG-restore med RTO-mätning
+  + maskinellt protokoll + GARANTERAD städning (finally). Fullprotokoll:
+  data/forskning/DR-PROV-2026-09-16-KEDJA4.md.
+- **Resultat GRÖNT (exit 0):** självsabotage 4/4 (giltig godkänns +
+  trunkerad JSON, antal≠rader.length, fel typnamn grips) · samtliga 10
+  per-typ-filer GRÖNA och från samma set-datum 2026-09-15 (ingen typ
+  saknar dagens fil = inga tysta exportfel) · konsistens 10/10 rader
+  matchade i full-arkivet, 0 saknade · COPY 10 rader på **0,08 s** i
+  skrap-DB ak1a_dr_pertyp (probe-tabell) · oberoende PG-verifiering
+  identisk (jsonb läsbar 10, medlem-epostHash 3) · skrap-DB raderad,
+  PG17 stoppad, lås släppt.
+- **Ägtenhetssvaret på de åtta antal=0-filerna:** full-arkivet (160 928
+  rader) bär EXAKT medlem=3 + blogg_utkast=7 av de tio per-typ-typerna —
+  nollorna är ÄKTA TOMMA (system_events gallras i drift; historiken lever
+  i full-arkiven, som är ARKIVHANDLINGAR där retention aldrig gäller),
+  INTE tysta exportfel. Exportörens felväg är dessutom rent DISKRET:
+  HTTP-fel skriver INGEN fil alls (backup-fran-molnet.mjs) — "fil finns
+  med antal 0" bevisar äkta tomt, "fil saknas för set-datum" är
+  felmönstret. dr-kedja4.mjs flaggar båda fallen.
+- **FYND + kur levererad:** per-typ-limiten (5000) var OMARKERAT — en
+  avklippt snapshot skilde sig inte från en komplett (full-dumpen har
+  haft truncerad-flagga länge; per-typ-grenen saknade den) →
+  backup-fran-molnet.mjs v2.1 bär nu truncerad-markör per fil, och
+  dr-kedja4.mjs varnar vid antal ≥ 5000 i äldre filer utan markör.
+- **Volymnot, ärlig:** kedja 4 är pytteliten IDAG (10 rader, RTO 0,08 s)
+  — värdet växer med verksamhetsdata (variabler/medlem_progress/
+  termbank). Kontrakt: per-typ-filerna bär endast created_at+details;
+  FULL återställning av innehållet äger kedja 2 — kedja 4 bevisar att
+  vyerna är intakta, konsistenta och inläsbara.
+- **Sidofix:** drift-ops-SKILL.md bar verktygsnamnet
+  "backup-fran-molnen.mjs" (filen heter molnet — DRIFTSBOKEN hade rätt);
+  rättat 2026-09-16 — on-call-sökvägen till backup-verktyget är nu
+  entydig i båda handböckerna.
+- **Kö till huvudagenten: ingen ny** — spårets FYRA kedjor är samtliga
+  restore-bevisade; kvartalsmallen 2026-12-15 är fyra steg:
+  `dr-ovning.mjs` + `dr-kedja2.mjs` + `dr-kedja4.mjs` + kedja 3-manualen
+  (DR-PROV-2026-09-16-KEDJA3.md — ännu inte kommandoradiserat).
 
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)

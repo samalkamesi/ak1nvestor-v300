@@ -550,21 +550,25 @@ try {
               status = `fel: ${String(fel2).slice(0, 120)}`;
             }
           }
-          // SPÅR 8 (s8-u4): stil-lös sida (0 stylesheets) ⇒ mätningen
-          // underkänns ÄRLIGT. Kontrast/klipp/överflöd är CSS-fenomen —
-          // utan CSS mäts webbläsarens user-agent-stilar (10:03-beviset:
-          // text-gold → rgb(0,0,238), allt 16px, svart-på-svart 1:1) = 30
-          // skenfynd i stället för en "kunde inte mäta"-rad. Fångar ÄVEN
-          // CSS-förlust UTAN deploy-tecken (t.ex. korrupt .next) som u1:s
-          // låsbekräftade gren aldrig såg.
-          const sheetsAntal = await page
-            .evaluate(() => document.styleSheets.length)
-            .catch(() => -1);
-          if (sheetsAntal === 0) {
-            status = status === "ok" ? "stil-lös sida (0 stylesheets — CSS ej laddad)" : `${status} + stil-lös`;
+          // SPÅR 8 (s8-u4): stil-lös sida ⇒ mätningen underkänns ÄRLIGT.
+          // Kontrast/klipp/överflöd är CSS-fenomen — utan CSS mäts webbläsarens
+          // user-agent-stilar (10:03-beviset: text-gold → rgb(0,0,238), allt
+          // 16px, svart-på-svart 1:1) = 30 skenfynd i stället för en "kunde
+          // inte mäta"-rad. Två oberoende sonder (båda bevisade mot
+          // sabotage-stub + prod 2026-09-16 12:3x): (1) CSS-delresurs-brott
+          // i konsolen — Chrome skapar ett TOMT stylesheet-objekt ÄVEN för
+          // 500-länkar, så styleSheets.length är OPÅLITLIGT (prod visade 1
+          // sheet/0 regler på trasig CSS); (2) total stylesheet-förlust.
+          // Fångar ÄVEN CSS-förlust UTAN deploy-tecken (t.ex. korrupt .next
+          // — stående felet 12:0x-12:4x) som u1:s låsbekräftade gren aldrig såg.
+          const cssBorta =
+            konsolFel.some((rad) => /\.css\][^\n]*Failed to load resource/.test(rad)) ||
+            (await page.evaluate(() => document.styleSheets.length).catch(() => -1)) === 0;
+          if (cssBorta) {
+            status = status === "ok" ? "stil-lös sida (CSS ej laddad)" : `${status} + stil-lös`;
             const felS = 1 + (konsolFel.length > 0 ? 1 : 0);
             rapport.fel += felS;
-            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null });
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null, omford: ommatt || undefined });
             console.log(`⚑ [${tema}/${skarm.namn}] ${sida} — ${status}`);
             await new Promise((r) => setTimeout(r, 350));
             continue;

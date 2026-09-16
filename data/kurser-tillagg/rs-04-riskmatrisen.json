@@ -1,0 +1,156 @@
+{
+  "slug": "rs-04-riskmatrisen",
+  "category": "RISK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Riskmatrisen — att kartlägga osäkerheten",
+  "summary": "Intermediärkursen om risk: riskmatrisen — verktyget som flyttar en analys från en lista med oro till en strukturerad karta där sannolikhet och konsekvens vägs samman, prioriteras och följs upp över tid.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå riskmatrisen som riskfamiljens systematisering — grundkurserna (rs-01, rs-02) lärde enskilda riskbegrepp, matrisen samlar dem i ett verktyg, och syskolkursen om dold samvariation (rs-03) visar vad som händer när riskerna rör sig tillsammans · Identifiera risker i fyra kategorier: finansiella, operativa, marknadsmässiga och regelverk · Värdera varje risk på två axlar — sannolikhet och konsekvens — med EBIT eller kassaflöde som konsekvensmått · Räkna förväntad exponering (sannolikhet × konsekvens) och prioritera där åtgärden köper mest minskad exponering per krona · Skilja förväntat värde från värsta fall — matrisens vanligaste misstag är att jaga katastrofer med låg sannolikhet och ignorera tysta risker med hög frekvens · Bygga ett levande riskregister som revideras varje rapportperiod och kopplas till AKM2:s riskdimension.",
+  "why": "Grundkursen i volatilitet (rs-01) visade att risk kan mätas i prisrörelser och kursen om kundkoncentration (rs-02) visade en enda risk ur verksamheten — men en analys som bara hanterar en risk i taget blir en lista med oro, och listor rangordnar inte sig själva. Riskmatrisen är nästa steg i riskfamiljen: den tvingar fram två frågor per risk — hur troligt och hur starkt — och gör svaren jämförbara i en enda bild. Utan den tvungenheten smyger två klassiska fel in: den dramatiska risken (sällan men fasansfull) får all uppmärksamhet medan den tysta risken (varje år, måttligt) äger årsresultatet, och riskerna hanteras som ödesfrågor i stället för som poster som kan vägas mot varandra. Det är också verktyget som AKM2:s riskdimension vilar på i praktiken: betygsättningen kräver att riskerna är identifierade, värderade och avgränsade — exakt matrisens tre steg.",
+  "history": {
+    "origin": "Att rita risker i ett rutnät är äldre än både datorer och finansteori: försäkringsmatematikerna arbetade redan på 1700-talet med sannolikhet × konsekvens som skadans förväntade värde, och sjöförsäkringens tabeller var i praktiken riskregister långt före ordet fanns. Ingenjörsdisciplinerna formaliserade på 1900-talet tekniken FMEA (failure mode and effects analysis) inom amerikansk flyg- och fordonsindustri — varje fel läge värderades för sannolikhet, allvarlighetsgrad och upptäckbarhet, ett tredje spår som fortfarande skiljer ingenjörens matris från analytikerns.",
+    "evolution": "Företagsekonomien anammade verktyget via internrevisionen och COSO-ramverket (1992) som gjorde riskkartläggning till en del av intern kontroll; ISO 31000 (första versionen 2009) standardiserade processen identifiera – analysera – värdera – behandla – följa upp. Inom finans växte en parallell tradition fram ur portföljteorin: Value at Risk (km-031) sammanfattade marknadsrisker i ett enda tal för handelsborden. Skillnaden är belysande: handelsslagens matris fick sina sannolikheter ur prisdata, medan företagsanalytikern måste bygga sina ur verksamhetens struktur — kunder, leverantörer, regelverk, valuta — vilket gör hennes matris mer lik en levande kartläggning än en fotografering.",
+    "modern": "I dag är riskregister en standardfas i alla börsbolags årsredovisningar (riskavsnittet i förvaltningsberättelsen, se km-002) och matrisen är dess vanligaste bild. Samtidigt har kritiken växt fram: sannolikheter som egentligen är gissningar riskerar att måla falsk precision, och kvantitativ riskhantering missade före 2008 de risker som uppstod i samspel — korpulensen i varje enskild ruta var låg, men rutorna brann tillsammans. Svaret har blivit tvåspårigt: scenarier som övar kombinationer (km-029) och stressprov som frågar vad som händer utan sannolikheter alls (st-02). Matrisen har överlevt som ramverket — men med ödmjukare siffror."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — från riskkänsla till riskkarta",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Bygga matrisen — sannolikhet × konsekvens",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — ett riskregister steg för steg",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mätning — förväntad exponering och prioritering",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — riskdimensionen i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — från riskkänsla till riskkarta",
+      "intro": "En lista med risker rangordnar inte sig själv — matrisen är verktyget som ger varje risk två dimensioner och gör dem jämförbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Minnet från grundkurserna: volatiliteten (rs-01) lärde att priset svänger runt värdet och att svängen i sig inte är farlig — faran är när svängen tvingar en handling, som att sälja i botten. Kundkoncentrationen (rs-02) lärde motsatsen: en risk som inte syns i priset alls förrän den slår, och som då slår direkt i resultaträkningen. Båda är sanna — men de lever i olika världar, och den som försöker väga dem mot varandra i huvudet hamnar snart i känsla i stället för analys.\n\nRiskmatrisen löser jämförelseproblemet med en enda tvångsfråga per risk: hur troligt är detta, och hur stort blir det om det händer? Varje risk — en prisrörelse, en kundförlust, en leverantör som försvinner, en regel som ändras — får en plats i samma rutnät, och plussen blir jämförbara. Det är samma rörelse som Du Pont-analysen (ln-01) gjorde med lönsamheten: bryta ner ett vagt omdöme i beståndsdelar som kan räknas. Skillnaden är att riskens beståndsdelar är sannolikhet och konsekvens — det ena en grad av tro, det andra en krona."
+        },
+        {
+          "type": "definition",
+          "content": "Riskmatris — en kartläggning där varje identifierad risk värderas på två axlar (sannolikhet och konsekvens) och placeras i ett rutnät. Rutans läge avgör hanteringen: frekventa men små risker är en kostnadsfråga, sällsynta men stora en kapitalfråga — och mittrutan ett prioriteringsbeslut."
+        },
+        {
+          "type": "insight",
+          "content": "Risklistan berättar vad som kan hända — matrisen berättar vad som hinner hända före nästa rapport, och i vilken ordning det borde hanteras."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Bygga matrisen — sannolikhet × konsekvens",
+      "intro": "Axelfyra och femgradiga skalor känns pedantiska — men de är det enda som gör att två personer hamnar i samma ruta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Identifieringen börjar i fyra kategorier, som vart och en har sina egna källor. Finansiella risker: skuldsättning, ränteläge, valutor (ks-01 går igenom strukturen, rk-07 och rk-08 deras rörelser). Operativa risker: leveranskedjan, nyckelpersoner, IT-system, enskilda anläggningar (rk-11 tar bedrägerispåret). Marknadsmässiga risker: kunder, konkurrens, pristryck — kundkoncentrationen (rs-02) är den klassiska medlemmen. Regelverksrisker: lagändringar, tillstånd, skatt — rk-06 och ESG-spåret (rk-14) tillhör här.\n\nSannolikhetsaxeln görs oftast femgradig och — det viktiga — med siffror bakom orden: mycket låg runt 5 procent per år, låg runt 15, medel runt 30, hög runt 50, mycket hög över 60. Konsekvensaxeln mäts i samma enhet genom hela matrisen, och för en verksamhetsanalys är EBIT eller rörelsekassa det ärligaste måttet: hur många procent av årsresultatet försvinner om risken slår? Femgradig även här: från enstaka procent till existentiellt. Skala med procentsatser i stället för adjektiv ('allvarlig', 'betydande') är hela skillnaden mellan en matris som kan följas upp och en som är en bild i en presentation."
+        },
+        {
+          "type": "insight",
+          "content": "Sannolikheten är en grad av tro, konsekvensen en krona — matrisen tvingar båda fram samtidigt, och det är därför den avslöjar risker som känslan rankar fel."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — ett riskregister steg för steg",
+      "intro": "Tre risker, två axlar och en kolumn för åtgärd — ett register som tar en halvtimme att bygga och som bär hela nästa års uppföljning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anta ett bolag med EBIT på 900 mkr. Steg ett: identifiera — årsredovisningens riskavsnitt, senaste rapporterna och en genomläsning av verksamheten ger startlistan; här tre exempel. R1: bolagets största kund står för 12 procent av omsättningen och branschen är svag — förlust skulle kosta cirka 300 mkr i EBIT. R2: en ny tullag diskuteras i en stor exportmarknad — träff motsvarar cirka 80 mkr. R3: ett tillståndsförvaltningsärende kan vid ogillande kosta 500 mkr i ombyggnad.\n\nSteg två: värdera på axlarna. R1 bedöms 20 procent sannolikhet per år (kunden signalerar svaghet), R2 35 procent (lagen har parti stöd men förhandling pågår), R3 10 procent (ärendet ser gott ut men beslut återstår). Steg tre: räkna förväntad exponering — sannolikhet × konsekvens. R1: 0,20 × 300 = 60 mkr. R2: 0,35 × 80 = 28 mkr. R3: 0,10 × 500 = 50 mkr. Steg fyra: placera i rutnätet och fyll i åtgärdskolumnen — R1: kunddialog och breddning av orderstocken; R2: prisförhöjningar i förhandlad tid; R3: beredskap för ombyggnadsfas. Registret är nu kartan: tre rader, sex tal, tre åtgärder — och en uppföljningspunkt till nästa rapport."
+        },
+        {
+          "type": "insight",
+          "content": "Ett riskregister som fungerar har tre egenskaper: varje rad bär en siffra på båda axlarna, en ägare och en åtgärd — och revideras samma dag som rapporten släpper ny information."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — förväntad exponering och prioritering",
+      "intro": "Matrisens domslut är inte den största konsekvensen och inte den hetaste risken — det är produkten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Exemplet i förra kapitlet visar poängen i dess renaste form: R3 har den värsta konsekvensen (500 mkr) men landar på 50 i förväntad exponering — under R1:s 60, trots att R1:s konsekvens är mindre än två tredjedelar. Prioriteringsordningen blir R1 före R3 före R2. Detta är matrisens egentliga mätning: att flytta uppmärksamheten från katastrofbilden till den risk som äger det förväntade resultatet. Summeras de tre blir den totala förväntade exponeringen 60 + 28 + 50 = 138 mkr — omkring 15 procent av EBIT. En sådan riskbudget är nyttig på två sätt: den gör riskerna jämförbara mellan bolag (samma bolags typ av register, olika storlek på summan) och den sätter taket för vad åtgärder rimligen får kosta.\n\nDär inträffar nämligen matrisens andra räkneläge: en åtgärd är värd sin kostnad när den minskar förväntad exponering med mer än den kostar. Om kundarbetet i R1 bedöms halvera sannolikheten (20 till 10 procent) sjunker exponeringen med 30 mkr per år — ett arbete som kostar 5 mkr i resurser köper alltså sex gånger sin kostnad i minskad exponering. Samma test på R3:s ombyggnadsberedskap: kostnaden är låg om beredskapen bara är planering, men en faktisk ombyggnad i förväg skulle kosta mer än den 50 mkr den skyddar mot. Mätningen blir dålig bara när sannolikheterna är ren gissning — där gäller kapitel 5:s botemedel."
+        },
+        {
+          "type": "insight",
+          "content": "Prioritera på produkten, inte på konsekvensen — och pröva varje åtgärd mot samma produkt: minskad exponering per åtgärdskrona är riskarbetets avkastningsmått."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Matrisens fällor bor i siffrornas självförtroende — de flesta går att hantera om de är kända.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: falsk precision. Sannolikheten 20 procent ser ut som ett matteprov men är ett omdöme — och skillnaden mellan 15 och 25 procent är sällan mer än en känsla. Botemedlet är att arbeta i band och låta slutsatserna vila på storleksordningar: R1 ligger över R3 oavsett om sannolikheten är 15 eller 25 procent, och det är den rangordningen beslutet behöver. Fälla två: den tysta risken. Frekventa små risker — kvalitetsfel, personalomsättning, småprocesser som faller ut — hamnar aldrig i matrisen för att ingen skriver upp dem, men tillsammans äger de årsresultatet. Botemedlet: en kategori för återkommande driftstörningar med konsekvensen satt till deras årssumma. Fälla tre: riskernas samband. Matrisen värderar varje risk för sig, men de korrelerar — samma konjunktur gör att kunden i R1 och tullämnet i R2 slår samtidigt. Botemedlet är att komplettera med ett scenario (km-029) eller ett stressprov (st-02) som övar kombinationen — och kursen om dold samvariation (rs-03) tar spåret ett steg djupare: den lär läsa just de risker som delar samma underliggande rörelse.\n\nFälla fyra: den frysta matrisen. Ett register från förra årets bokslut är en karta över ett land som inte längre finns — sannolikheterna är justerade av allt som hänt sedan. Botemedlet är revision vid varje rapport, inte bara årsvis. Fälla fem: att tolka matrisen som en spådom. Den mäter exponering, inte öde — en hög förväntad exponering är ett argument för beredskap och för att räkna på marginalerna (st-01), aldrig ett uttalande om vad som kommer att hända. Och som alltid i spåret: övningen är hantverket att läsa en verksamhet — aldrig en uppmaning att handla i den."
+        },
+        {
+          "type": "insight",
+          "content": "Fem fällor — falsk precision, tysta risker, samband, frusna register, spådomstanken — ett gemensamt botemedel: band i stället för siffror, revision vid varje rapport, och scenarier som komplement."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — riskdimensionen i AKM1:s metodik",
+      "intro": "I AK1A:s system är riskmatrisen det verktyg som gör riskdimensionen granskningsbar — utan karta finns inget att betygsätta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1:s riskfamilj (V10–V12 mäter skuldsättning, likviditet och intäktsstabilitet på bolagssidan; km-013–km-016 bär portföljsidan) ger varje risk ett nyckeltal — men nyckeltalen är fotograferingar, och riskerna är processer. Matrisen är länken: skuldsättningsgraden (v10) blir en rad i registret med en sannolikhet knuten till ränteläget (rk-08), likviditeten (v11) en rad med konsekvensen satt till kostnaden för ett kassatopp, intäktsstabiliteten (v12) summan av kund- och marknadsriskerna. I AKM2:s riskdimension betyder det att betygsättningen får sitt underlag: ett lågt riskbetyg kräver att registret är komplett, att exponeringarna är värderade och att åtgärderna är på plats — inte att riskerna är noll.\n\nKorsningarna binder samman spåret. Mot volatiliteten (rs-01): prisrisk och verksamhetsrisk bor i olika kvadranter men samma matris — den första hanteras med tid och kapital, den andra med åtgärder. Mot kapitalförbränningen (v19), familjens avancerade steg: den är matrisens viktigaste konsekvensmått när konsekvensen är 'överlevnad' i stället för 'EBIT-procent'. Mot stabilitetsfamiljen (st-01, st-02): räntetäckningen mäter en redan inträffad stress, känslighetsanalysen ett tält variabelröm — matrisen frågar innan dess vad som kan hända alls. Avsluta med den levande övningen: välj ett bolag ur kursuniversumet, bygg dess register ur senaste rapportens riskavsnitt — tre till fem rader, sannolikhet och konsekvens med EBIT som mått — och revidera det vid nästa rapport. Gör om det ett år senare. Det är utbildningens kärna: risk är inte en känsla utan en karta som hålls aktuell, och kartan blir sann först när den ritas om lika ofta som verksamheten förändras."
+        },
+        {
+          "type": "insight",
+          "content": "Nyckeltalen fotograferar riskerna som redan syns — matrisen frågar efter dem som inte hunnit synas, och AKM2:s riskdimension betygsätter svarets kvalitet, inte riskens storlek."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch sa att den största risken ofta bor i det ingen talar om — hans genomgångar av bolag letade systematiskt efter det som kunde gå fel i berättelsen som presenterades. Riskmatrisen är den övningen formaliserad: varje lovande tes provas mot en lista av frågor — vad händer med den största kunden, om nyckelpersonen går, om priset pressas? Lynchs respekt för det tråkiga och kantiga bolaget är i matrisens språk en respekt för bolag vars register är kort och vars kvadranter är tomma.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal (km-030) är i grunden en riskbedömning i en enda dimension: att ta positioner med så stort avstånd till det värsta fallet att felet i bedömningen inte blir ödesdigert. Riskmatrisen kompletterar tanken från andra hållet: den ber kartläggaren att identifiera vad det värsta fallet innehåller. Grahams egna checklistor — med sina krav på omsättning, täckning och likviditet — var i praktiken ett register av fasta riskprover, ett per rad i balansräkningen.",
+  "ak1Section": "I AK1A:s metodik är denna kurs RISK-familiens systematiseringssblock: rs-01 lär måttet, rs-02 ett konkret fall, och matrisen samlar alla risker i det verktyg som AKM2:s riskdimension sedan granskar — komplett identifiering, värderade exponeringar, åtgärder på plats. Brobyggen: mot V10–V12 (varje nyckeltal en rad i registret), mot v19-kapitalförbränning (konsekvensmåttet när insatsen är överlevnad) och mot st-02:s stressprov (matrisens sannolikheter prövade utan siffror)."
+}

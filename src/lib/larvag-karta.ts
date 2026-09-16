@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (359 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (364 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 317 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 322 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -368,14 +368,18 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-02-kanslighetsanalys-och-stresstest", titel: "Känslighetsanalys — stresstesta balansräkningen", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-03-altman-z-score", titel: "Konkursprognos — Altman Z-score", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-04-stabilitet-genom-kreditcykeln", titel: "Stabilitet genom kreditcykeln — samma balansräkning, två världar", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-01-organisk-mot-forvarvad-tillvaxt", titel: "Organisk vs förvärvad tillväxt — spåra källan", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-02-volym-pris-och-mix", titel: "Volym, pris och mix — tillväxtens tre motorer", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "tx-03-nar-skapar-tillvaxt-varde", titel: "När skapar tillväxt värde? — återinvesteringens matematik", kategori: "TILLVÄXT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-01-kapitalstruktur-grunder", titel: "Kapitalstruktur — hur bolaget är finansierat", kategori: "KAPITALSTRUKTUR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-02-kapitalallokering", titel: "Kapitalallokering — styrelsens fem vägar", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-03-skuldens-anatomi", titel: "Skuldens anatomi — löptider, bindning och covenants", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-01-volatilitet-och-risk", titel: "Volatilitet och risk — skilj svängningar från förlust", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-02-kundkoncentration", titel: "Kundkoncentration — när få kunder bär intäkterna", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-03-dold-samvariation", titel: "Dold samvariation — när bolagen delar samma risk", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rs-04-riskmatrisen", titel: "Riskmatrisen — att kartlägga osäkerheten", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -386,6 +390,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
@@ -395,4 +400,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 359;
+export const LARVAG_ANTAL_KURSER = 364;

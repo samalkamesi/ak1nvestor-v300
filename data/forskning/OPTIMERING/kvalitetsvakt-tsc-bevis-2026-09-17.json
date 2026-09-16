@@ -1,0 +1,46 @@
+{
+  "ts": "2026-09-17T00:57:00.000Z",
+  "objekt": "Kvalitetsvaktens kontroll 11 — Typbaslinjen (tsc --noEmit via projektbinär)",
+  "före": {
+    "sektioner": 10,
+    "tscMätningIvakten": false,
+    "läge": "typnollen mekanisk ENDAST vid commit (pre-commit-kroken, våg 138); merge-committar passerar grinden; inget dagligt träd-bevis"
+  },
+  "efter": {
+    "sektioner": 11,
+    "sektion11": "## 11. Typbaslinje (tsc --noEmit, projektbinär — nolla sedan våg 133) — **PASS**",
+    "sektion11Info": "node node_modules/typescript/bin/tsc --noEmit — 0 fel på 7.8 s (typnollen mekanisk sedan våg 133; merge-vägen bevisas dagligen här)",
+    "körtidVaktTotalt": "18.3 s (12 s + 7.8 s tsc — väl inom cron-ruttens 50 s-budget)",
+    "status": "ANTAL FEL: 0 | MANUELLA: 4 | STATUS: GRÖN",
+    "resultatJson": { "datum": "2026-09-17", "fel": 0, "manuella": 4, "status": "GRÖN" }
+  },
+  "test": {
+    "skript": "verktyg/testa-kvalitetsvakt-tsc.mjs",
+    "resultat": "11 PASS / 0 FAIL",
+    "täckning": [
+      "sektionTsc definierad + kopplad i main",
+      "PROJEKTBINÄREN används (node_modules/typescript/bin/tsc)",
+      "npx körs ALDRIG (stränglitteral-kontroll; ordet tillåtet i varningskommentarer)",
+      "timeout-budget 120 s",
+      "deploy-transientgren (felRader.every node_modules)",
+      "saknad-binär = MANUELL",
+      "full vaktkörning exit 0",
+      "rapportsektion 11 finns och landade PASS",
+      "sammanfattningen räknar 11 sektioner",
+      "RESULTAT_JSON parsar och är GRÖN"
+    ]
+  },
+  "klassificering": {
+    "exit0": "PASS (0 fel)",
+    "typfelISrc": "FEL — baslinjebrott (typnollen gäller hela trädet, våg 133)",
+    "felEnbartINodeModules": "MANUELL — deploy-transient (K2/K3-precedensen: npm ci byter trädet; omkör efter deploy)",
+    "saknadBinär": "MANUELL — deployfönster eller saknat beroende; OMÄTT, aldrig tyst PASS",
+    "timeout120s": "MANUELL — kall cache/maskinlast; OMÄTT, aldrig tyst PASS",
+    "exitUtanolkbarrader": "MANUELL — okänd utgång, manuell uppföljning"
+  },
+  "kanaler": {
+    "primär": "vaktpumporna 07:02 lokal (ak1a-pumpor, o35-schemat; spawn utan timeout)",
+    "manuell": "/api/cron/kvalitet (50 s budget — rymmer typkörningen 18 s; kall tsc kan i värsta fall överskrida, primärkanalen äger daglig mätning)"
+  },
+  "tscFrånvilkommando": "node node_modules/typescript/bin/tsc --noEmit → exit 0 (två oberoende körningar denna våg: 8.0 s och 7.8 s)"
+}

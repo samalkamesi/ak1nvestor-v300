@@ -33,7 +33,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const REF_MONSTER = /\/_next\/static\/[A-Za-z0-9._@+-]+(?:\/[A-Za-z0-9._@+-]+)*/g;
+// % i klassen: %-kodade segment (t.ex. media/a%20b.woff2) MÅSTE fångas hela —
+// utan % trunkerar lasRefs vid kodningen och refsokVag:s avkodning kan aldrig
+// trigga (fynd: s8-u1-försök-2-test 7, 2026-09-16; kärnan delas av rsc-skann.mjs)
+const REF_MONSTER = /\/_next\/static\/[A-Za-z0-9._@+%-]+(?:\/[A-Za-z0-9._@+%-]+)*/g;
 
 /** Rekursiv walk av .next/server/app → deterministiskt sorterade HTML-vägar.
  * lasfel=true om någon katalog ej gick att läsa (okänd > gissning). */

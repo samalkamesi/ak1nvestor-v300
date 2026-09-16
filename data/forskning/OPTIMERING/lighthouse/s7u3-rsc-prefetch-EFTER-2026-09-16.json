@@ -1,0 +1,53 @@
+{
+  "datum": "2026-09-16T09:57:43.306Z",
+  "sida": "/",
+  "uppdrag": "o17 §METOD.3 EFTER — prefetch-kur 184c6dc7",
+  "kalla": "lighthouse/start-s7u3-prefetch-efter.json (audits.network-requests, frisk körning i egen namnrymd)",
+  "metodnot": "Strukturell räkning (Link-prefetch-beteende) — okänslig för parallell CPU-belastning; poäng/LCP/TBT i samma rapport ÄR belastningskontaminerade (syskon u1:s EFTER-kedje-mätningar pågick parallellt) och bokförs EJ som prestandatal.",
+  "rscPerRutt": {
+    "/logga-in": {
+      "n": 2,
+      "bytes": 1210
+    },
+    "/kurser": {
+      "n": 3,
+      "bytes": 37264
+    }
+  },
+  "totaltAntal": 5,
+  "totaltBytes": 38474,
+  "fore": {
+    "rscPerRutt": {
+      "/kurser": {
+        "n": 3,
+        "bytes": 36257
+      },
+      "/logga-in": {
+        "n": 2,
+        "bytes": 1475
+      },
+      "/cookiepolicy": {
+        "n": 2,
+        "bytes": 5779
+      },
+      "/privacy-policy": {
+        "n": 2,
+        "bytes": 6777
+      },
+      "/transparens": {
+        "n": 2,
+        "bytes": 11993
+      }
+    },
+    "totaltAntal": 11,
+    "totaltBytes": 62281,
+    "kalla": "lighthouse/start-r4-fore.json (exakt omräkning samma metod, denna våg)"
+  },
+  "prod200": "https://lab.ak1nvestor.com/ = 200 (verifierad 11:53 denna vagen)",
+  "delta": {
+    "antal": "11 -> 5 (−6)",
+    "bytes": "62281 -> 38474 (−23807 B, −38 %)",
+    "kureradeYtor": "bannerns 3 policy-rutter (cookiepolicy+privacy-policy+transparens): 6 hämtningar 24549 B -> 0",
+    "kvarvarandeMedvetna": "nav/CTA /kurser ×3 + /logga-in ×2 (o17 lämnade primära mål med prefetch — medvetet)"
+  }
+}

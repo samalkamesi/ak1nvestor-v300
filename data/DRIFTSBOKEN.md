@@ -953,6 +953,53 @@ EnvironmentFile med chmod 600).
   delprotokoll (DR-PROV-…-AUTO-4 · DR-KEDJA2-…-AUTO-4 · DR-PROV-…-KEDJA4-4
   · DR-KEDJA3-…-AUTO-5). R2 orörd; inga byggen; src/ orörd; data/blogg/ orörd.
 
+## S10-U3 (O6) — DR-ÖVNING KEDJA 6: STORAGE-RESTORE `verktyg/dr-kedja6.mjs` + FYND: TVÅ SUPABASE-PROJEKT (2026-09-16, GODKÄNT — med fynd)
+
+- **Vad/varför:** kedjorna 1–5 bevisar databasen (SQL-dump) och
+  system_events (moln-JSON); Supabase STORAGE var det enda lagret utan
+  bevisad innehålls-återställning (SQL-dumpen bär bara metadata, moln-JSON
+  läser bara events). KEDJA 6 mäter och bevisar BÅDA halvorna.
+- **Övningen (20:41–20:43 lokal, GRÖN exit 0, DR-KEDJA6-2026-09-16-AUTO.md):**
+  retentionssvep 6/6 GRÖN · markörer GRÖN (1 288 041 rader) · full restore
+  i skrap-DB 13,8 s (fel 788 kända/0 okända) · storage-metadata i dumpen:
+  5 buckets/63 objekt/0,57 MB (oförändrad sedan 2026-07-23/24) · levande
+  lista via LÄSANDE Storage-REST 0,7 s: 3 buckets/11 objekt/1,22 MB ·
+  INNEHÅLLS-PROV: ak1nvestor-code.zip 1 272 122 B nedladdat 0,72 s ==
+  live-listans metadata.size (byte-kontrakt GRÖNT — första bevisade
+  innehållsvägen). Runbook för verklig incident i protokollet §6.
+  Familjekontraktet: flock + RAM-/diskgrind + finally-städning
+  (skrap-DB raderad, PG17 stoppad, tmp borta — verifierat).
+- **FYND 1 (akut) — TVÅ SUPABASE-PROJEKT:** korsningen dump↔live gav 0
+  gemensamma objekt. Fyra instrument senare stod roten klar (DR-KEDJA6-
+  2026-09-16-TVAPROJEKT-FYND.md): dump-cronen+psql-sonderna (.pgpass →
+  db.rkaq…wxrw) och appens REST (.env → …suhvlsbp) läser OLIKA projekt.
+  rkaq: system_events 0 I ALLA DUMPAR sedan 09-11 · snapshots 1 176 468
+  (+~19k/dag) · board_decisions 47 602. aufr: system_events 162 741 VÄXER
+  · members 3 · board_decisions 77 · snapshots 404. Därmed: dagens "AKUT
+  FYND: system_events TOM i levande prod" (DR-KVARTAL §4) är MOTBEVISAT
+  som radering — tväprojekt-artefakt; **återimporten av 161 678-arkivet
+  SKA EJ genomföras** (dubbletter på levande data); dumpkontradiktionen
+  (0 vs 161 678) och members=0 upplösta. Kedjornas restore-bevis består
+  (rkaq↔rkaq), men aufr:s icke-events-tabeller är OBACKADE — backup-gap.
+- **FYND 2 (R2):** aufr:s bucket "ak1nvestor-code" är PUBLIK och listade
+  en .env.local-namngiven fil (193 B; innehållet ALDRIG läst — verktygets
+  R2-filter uteslöt .env*/pem/key/rsa/secret från innehålls-provet och
+  valde zip:en). Åtgärd = huvudagenten/kunden (R2: nyckelfiler).
+- **Kö till huvudagenten (fyndrapport §5, prioriterad):** (1) stoppa/
+  ompröva system_events-återimporten (läkekö E33 steg 4–5); (2) konfig-
+  utredning .pgpass vs .env — avsiktlig hybrid eller migreringskvarleva,
+  isåfall peka om 02:30-cronen (R2); (3) tvåprojekt-kartan i DRIFTSBOKEN;
+  (4) backup-beslut för aufr:s övriga tabeller; (5) storage-blob-backup
+  (båda projekten) + publika ak1nvestor-code-bucketet.
+- Protokoll: DR-KEDJA6-2026-09-16-AUTO.md (maskinellt) +
+  DR-KEDJA6-2026-09-16-TVAPROJEKT-FYND.md (fyndrapport med alla mätetal).
+  R2 orörd (inga .env-/nyckelfiler rörda; nycklar endast lästa ur env av
+  verktyget, aldrig loggade); inga byggen; src/ orörd; data/blogg/ orörd.
+  Kollisionsnot: s10-u2 O6:s flockprov (20:42–20:45) och denna övning
+  (20:41–20:43) delade DR-fönstret — flocken serialiserade dem (deras
+  "främmande 25 s-låshållare" var denna kedjans retentionssvep/restore):
+  låsmekanismen korsbevisad i skarpt läge, noll förlorat arbete.
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

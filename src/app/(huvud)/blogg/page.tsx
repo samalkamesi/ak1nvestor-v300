@@ -78,10 +78,15 @@ export default function BloggPage() {
                 </span>
               </Link>
               {/* Intern länk vidare in i kursbiblioteket — utanför kortets
-                  länk så ankartexten blir en egen, deskriptiv länk. */}
+                  länk så ankartexten blir en egen, deskriptiv länk.
+                  prefetch={false} (o17-precedensen): viewport-prefetch av
+                  kursrutter drog RSC-payload + route-chunks (~60 KiB) i
+                  initial load hos varje kortbesökare — LCP/TBT-gapet mot
+                  /en/blogg (spegelkorten saknar länken) mätt i o37. */}
               {kurs && (
                 <Link
                   href={`/kurser/${kurs.slug}`}
+                  prefetch={false}
                   className="mt-3 block border-t border-gold/20 pt-3 text-xs text-muted-foreground hover:text-gold max-md:min-h-[52px]"
                 >
                   Fortsätt djupare: kursen {kurs.title} — {kurs.category}

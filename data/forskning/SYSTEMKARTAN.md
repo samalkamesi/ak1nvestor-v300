@@ -588,6 +588,51 @@ bolagsunivers (120): skanka-/berika-kedjan ropas vid universumsväxt;
 s9-u1:s B8-kö: cron-raden finns på Contabo men 0 cacher på disk sedan 09-01 —
 en enda utredning täcker båda).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 6 — A4 + A5 + B12 diffade mot verkligheten)
+
+Fjortonde dokvågen i spåret; objektval efter kollisionskontroll: 29 system tagna
+av spårets dokvåger (A1/A2/A3/A6, B7–B11, B13, B14, C15–C18, D20, D38, E26–E37),
+D22/D23 lämnas av princip (VÄNTAR KUND-R2) — A4, A5 och B12 valdes bland sju
+fria (C19, D21, D24, D25 kvarstår i dokvågskön). Bokföring om syskonracet: u3
+omgång 5-sektionen (B13+B11+B10) låg osparad i arbetsträdet och landade med
+898605a7:s filcommit — innehållet intakt och respekterat, denna dokvåg rör tre
+ALDRA diffade system. Allt MÄTT i arbetsytan: kodläsning (tre rutter/filer
+genomlästa), git-datering, grep i verktyg/, live-sonder mot localhost + prod-HTTPS,
+determinism-prov med dubbla API-anrop — aldrig worklog-läsning.
+
+| Objekt | Kartans påstående | Verkligheten (mätt) |
+|---|---|---|
+| A4 gap 2 | "dagens bolags determinism garanteras ej i kod" | **MOTBEVISAT**: FNV-1a-datumhash med salt KODAD (api/dagens-pass/route.ts:33–34, 202–203 — ROTATION 12 bolag + AKM1-fråga per dag); prod-bevis: två live-anrop byte-identiska (SHB-B.ST 2026-09-16, pris 236, pos52 0,873) |
+| A4 gap 3 | "briefingens datakällor statiska — koppling till vagscan saknas" | **MOTBEVISAT**: briefing.ts:21 deklarerar Vagdata-formen "speglar /api/vagscan/senaste"; komponenten fyller vagdata-fältet via fetch (rad 8, 59, 174) |
+| A4 nyckelfil | "src/lib/kunskapsflode.json" | **FINNS EJ** — kunskapsflödet bor i komponenten kunskaps-flode.tsx (enda "kunskapsflod"-träffen i src) |
+| A4 gap 1 | "streak-logik + XP-tildelning testas ej" | **LEVER**: 0 sviter i verktyg/; streak-logiken bor i member-local.ts lasStreak, konsumerad av badges + briefing |
+| A5 gap 3 | "topplistans integritet — progress via auth-vaktad rutt men granskas ej" | **SKÄRPT**: POST /api/topplista (xp_sync) HELT utan sessionsvakt — e-post+XP tas ur klient-bodyn (route.ts:34–41), GET aggregerar senaste-per-e-post (105–111): vem som helst kan posta en annan elevs e-post med 10 M XP (impersonationsklassen från B13:s member/portfolio-fynd). Mjukande mätt: caps (xp ≤ 10 M, nivå ≤ 100), maskerad e-post, topplistan TOM live ({"topplista":[],"antal":0}) = ej utnyttjad. Gamla formuleringen gällde D21:s progress-rutt, inte denna synk-rutt |
+| A5 gap 2 | "certifikatens unikhet/verifierbarhet otyst" | **BESVARAT**: certId = `AK1A-<år>-<XP nollstoppad>` (certifikat.tsx:57) utan medlemsspecifik hash — två medlemmar med samma XP samma år får IDENTISKT id; samma medlem får nytt id vid varje XP-synk; ingen signatur/register bakom |
+| A5 gap 1 | "badge-reglernas trösklar saknar test" | **LEVER**: 0 egna sviter; badges.ts 326 r bär trösklarna som okompilerad data (xp-1000, xp-10000 …) |
+| B12 gap 3 | "kalkylatorn har ingen länk tillbaka till kurslektioner per variabel (återanvänd B7:s)" | **MOTBEVISAT**: akm1-calculator.tsx (1 411 r) importerar forklaPoang från kärnan (rad 12) och bär MODUL_KURS_LANK-map med våg 78 B3-reglerna — aldrig döda länkar, fallback kursbiblioteket (rad 67–74); kartans eget förslag är redan implementerat |
+| B12 observation | "trösklarna delas med AKM2-kärnan (en källa till sanning)" | **NYANSERAD/INVERTERAD**: superanalys.ts (507 r, use client) har 0 imports — det är tvärtom AKM2-KÄRNAN som bär viktprofilen "superanalys-2026" som en av tre kanoniska (testa-akm2-karna kontroll 6–8: summa 100; kontroll 22: kategoriupplösning) — delning genom konvention+svit; klientens kategorivikter (15/20/20/15/15/5/10) är en OBEROENDE kopia som inte följer kärnan automatiskt |
+| B12 gap 1 | "poängsummor/validering av elevens inmatning testas ej" | **TUNNARE LEVER**: kärnprofilen ÄR svit-testad (kontroll 22); klientfilens egna poängsummor 0 sviter |
+| B12 gap 2 | "delningskortets utseende vid extrema värden (0/100) overifierat" | **DELVIS LUGNAT**: totalpoängen matematiskt inlåst 0–100 per konstruktion (Σ kategorisnitt ÷ 5 × vikt × 100, rad 307–310); renderingen förblir E2E-overifierad |
+| Prod | — | /dagens-pass, /badges, /certifikat, /topplista, /superanalys, /kalkylator = 200 på loopback OCH https |
+
+| System | Före → efter | Bedömning |
+|---|---|---|
+| A4 | LEVER 7 → **LEVER 7** | Lägesrättning enligt E31/C15-precedensen: determinism + vagscan-koppling har funnits i kod sedan 09-01–09-03 (02c0920d, 4d5f2457, fcdc14ed) — kartan var inaktuell från början; huvudgapet (streak/XP-tester) orött = ingen poängrörelse |
+| A5 | LEVER 7 → **LEVER 7** | Skärpt gap utan stängning (B13-precedensen): vaktlös xp_sync-POST + kollisionsbart certId MÄTTA i kod, men topplistan är tom (0 poster, live-sond) = ingen konsumentskada ännu; 0 sviter kvarstår |
+| B12 | LEVER 7 → **LEVER 7** | Kunskap tillförd (E33/B14-precedensen): länk-gapet motbevisat, delningsbilden inverterad (kärnan bär profilen — svit-testad), testgapet tunnare men levande; ingen poängrörelse |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad; tre preciserings-dokvågar
+utan poängrörelser är spårets mönster när verkligheten bekräftar snarare än
+förändrar).
+
+Kö till huvudagenten från fynden: (1) **A5: sessionsvakt i /api/topplista POST** —
+lasMedlemSession-mönstret från D38:s medlem/portfolj är den färdiga kurmallen;
+samma våg som B13:s portfolio-kur täcker båda publika POST-ytorna; (2) A5:
+certId medlemsspecifik (hash av medlemId+år) när vakten vågas; (3) A4: datumHash
+är en ren funktion — en svit à la testa-b2b-mönstret täcker gap 1 tillsammans
+med streak-logiken; (4) B12: klientens kategorivikter antingen importeras ur
+kärnan eller kommenteras mot profilen superanalys-2026 om dubbelläget ska bort.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -595,15 +640,15 @@ en enda utredning täcker båda).
 | A1 | Kursplattformen (352 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 352 kurser, paritetssynk GRÖN, front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
 | A3 | AI-Mentorn (4 deterministiska svars­lager + modellager) | Utbildning | LEVER | 8 | 164/0-testbevis (v158, mätt); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
-| A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
-| A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
+| A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
+| A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön (mätt 09-16); berika-pipelinen stillastående 12 d (0 cacher på disk), AKM3-ensemble 0/22 i prod, snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55, LÅST grind ΔΦ=0, hash-kedjor; mätt 09-16); men kalibreringen ENBART Vercel-cron-driven (Contabo-crontab saknar raden, mätt), regimen FROSEN på genesis 09-03 (uppdateringsvägen vagvalidering finns ej på Contabo), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-16, datakällor per rad); motorvalidering 107/0/0 egen körning; kvar: 0 egen svit, historik/utfall lagras ej (mätt), korstabell-kopplingen konceptuell ej kodad |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-16 + /api/netnet färsk live-sond); universum fast 25 (mätt); egen testsvit saknas fortfarande |
-| B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
+| B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen superanalys-2026 svit-testad (kontroll 22) men klientfilen 0 sviter; länk-gap MOTBEVISAT (MODUL_KURS_LANK lever); klientens vikter oberoende kopia av kärnans (mätt 09-16) |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (mätt 09-16); korstabell-grund frusen 09-03 (100 r) mot bolagsunivers 120; member/portfolio UTAN sessionsvakt på publik yta (/min-portfolj, mätt); peer-median = designbeslut (AKM3 §10.10) |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
@@ -636,7 +681,10 @@ dokvågorna 2026-09-15, D20 +1 och B7 −1 vid dokvågorna 2026-09-16 — glömt
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
 AKM3-ensemble 0/22); C15+C16 reviderade utan scoreändring; u3 omgång 2
 diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
-poängrörelser; u3 omgång 5 (09-16) diffade B13/B11/B10 utan poängrörelser).
+poängrörelser; u3 omgång 5 (09-16) diffade B13/B11/B10 utan poängrörelser;
+u3 omgång 6 (09-16) diffade A4/A5/B12 utan poängrörelser — två motbevisade gap
+(A4), ett skärpt säkerhetsgap + besvarad certId-fråga (A5) och en inverterad
+delningsbild (B12), allt med egna mätbevis).
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -753,34 +801,71 @@ upp i filen.*
   varianter i bassviten — bredare fuzz saknas; (4) assistent-panelens egna
   vägar (assistent.ts) har fortfarande 0 testsviter (mätt).
 
-## A4. Daglig träning — LEVER — 7/10
+## A4. Daglig träning — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): två av tre gap MOTBEVISADE i
+kod+prod. Determinismen (gap 2) är KODAD — FNV-1a-datumhash med salt ger
+ROTATION[hash % 12]-bolag + AKM1-fråga per dag (api/dagens-pass/route.ts:33–34,
+202–203) — och prod-bevisad: två live-anrop gav byte-identiskt svar (SHB-B.ST
+2026-09-16). Briefingens vagscan-koppling (gap 3) LEVER: briefing.ts:21
+deklarerar Vagdata-formen "speglar /api/vagscan/senaste" och komponenten fyller
+vagdata via fetch (rad 8, 59, 174). Nyckelfel rättat: kunskapsflode.json FINNS
+EJ — flödet bor i komponenten kunskaps-flode.tsx. Gap 1 lever oförändrat:
+streak/XP-logiken (member-local.ts lasStreak) har 0 sviter. Score 7 kvar —
+rättning av kartfel som legat i koden sedan 09-01 (E31/C15-precedensen),
+huvudgapet orört. Ytan stabil sedan 09-01–09-03; /dagens-pass 200 loopback+HTTPS
+med färsk live-data (pris, 52v-position, ATR).*
 
 - **Vad:** Dagens Pass (5-minutersritual: vågklassgissning på live-data,
   dagens quiz +10 XP, flashcards, streak), veckoplan, kunskapsflöde,
   morgonbriefing.
-- **Nyckelfiler:** src/app/(huvud)/dagens-pass + src/app/api/dagens-pass,
-  src/lib/veckoplan.ts (246 r), src/lib/kunskapsflode.json,
-  src/lib/briefing.ts (206 r), src/components/ak1a/{dagens-pass,vecko-plan,
-  kunskaps-flode,morgon-briefing}.tsx.
+- **Nyckelfiler:** src/app/(huvud)/dagens-pass + src/app/api/dagens-pass
+  (route.ts 264 r — FNV-1a-datumhash), src/lib/veckoplan.ts (246 r),
+  src/lib/briefing.ts (206 r — vagdata-speglar /api/vagscan/senaste),
+  src/components/ak1a/{dagens-pass,vecko-plan,kunskaps-flode,morgon-briefing}.tsx.
 - **Observation:** Väl dokumenterade små libs med pedagogisk copy; dagens
-  pass är force-dynamic (live-data), övriga statiska. Inga tester.
-- **GAP:** (1) streak-logik + XP-tildelning testas ej; (2) dagens bolags
-  determinism (samma dag ⇒ samma pass) garanteras ej i kod; (3) briefingens
-  datakällor är statiska — koppling till vagscan-signal saknas.
+  pass är force-dynamic (live-data), övriga statiska. Inga tester (mätt igen
+  09-16: 0 träffar i verktyg/).
+- **GAP:** (1) streak-logik + XP-tildelning testas ej (lasStreak i
+  member-local.ts — ren funktion, lätt svit); (2)~~dagens bolags determinism
+  garanteras ej~~ MOTBEVISAT 09-16: datumhash kodad + prod-dubbelanrop
+  identiska; (3)~~briefingens datakällor statiska~~ MOTBEVISAT 09-16:
+  vagscan-koppling lever via /api/vagscan/senaste.
 
-## A5. Gamification — LEVER — 7/10
+## A5. Gamification — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): gap 3 SKÄRPT och gap 2 BESVARAT
+efter genomläsning av api/topplista/route.ts (130 r) + certifikat.tsx (242 r).
+(1) SKÄRPNING: POST /api/topplista (xp_sync) har INGEN sessionsvakt — e-post+XP
+tas ur klient-bodyn (rad 34–41), ägarskap bevisas aldrig, GET aggregerar
+senaste-posten-per-e-post (rad 105–111): vem som helst kan posta en annan elevs
+e-post med 10 M XP och överta listplatsen (impersonationsklassen från B13:s
+member/portfolio-fynd). Mjukande mätt: caps (xp ≤ 10 M, nivå ≤ 100, kurser ≤
+1 000), maskerad e-post i GET, och topplistan är just nu TOM
+({"topplista":[],"antal":0} live-sond) — inget utnyttjat. Gamla formuleringen
+"progress-skrivningen går via auth-vaktad rutt" gällde D21:s progress-rutt,
+INTE denna separata synk-rutt. (2) certId är KOLLISIONSBART:
+`AK1A-<år>-<XP nollstoppad>` (certifikat.tsx:57) utan medlemsspecifik hash —
+två medlemmar med samma XP samma år får identiskt id, och samma medlem får nytt
+id vid varje XP-synk; ingen signatur/register bakom. Gap 1 lever: 0 egna
+sviter (badges.ts 326 r trösklar som okompilerad data). Score 7 kvar
+(B13-precedensen: skärpt gap utan stängning, topplistan tom = ingen
+konsumentskada ännu). /badges /certifikat /topplista 200 loopback+HTTPS;
+badges.ts orörd sedan 09-01 (be04e17c).*
 
 - **Vad:** Badges (förtjänade medaljer), certifikat (kursintyg), topplista
   (XP-rankning, "poängen förtjänas, tas inte"), streak-visning.
 - **Nyckelfiler:** src/lib/badges.ts (326 r), src/app/(huvud)/{badges,
   certifikat,topplista}, src/components/ak1a/{badg-panel,certifikat,
-  topplista}.tsx, src/app/api/topplista.
+  topplista}.tsx, src/app/api/topplista (130 r — xp_sync utan sessionsvakt).
 - **Observation:** Ren logik, varumärkesriktiga texter, force-static där
-  möjligt. Topplistan bygger på medlem-progress (D21). Inga tester.
+  möjligt. Topplistan bygger på system_events (xp_sync) med senaste-vinner
+  per e-post — XP-statistiken själv lever i localStorage/member-local (D21).
 - **GAP:** (1) badge-reglerna (trösklar) saknar test; (2) certifikatens
-  unikhet/verifierbarhet (kan två identiska utfärdas?) otyst; (3) topplistans
-  integritet (XP-manipulation via klient?) — progress-skrivning går via
-  auth-vaktad rutt men granskas ej.
+  unikhet BESVARAD 09-16: certId kollisionsbart (ingen medlemshash, inget
+  register) — verifierbarhet saknas; (3) SKÄRPT 09-16: xp_sync-POST utan
+  sessionsvakt på publik rutt — impersonationsbar tills vakt finns (kö till
+  huvudagenten; topplistan tom = inget utnyttjat).
 
 ## A6. Biblioteken — LEVER — 7/10 *(uppdaterad 2026-09-16)*
 
@@ -1008,20 +1093,44 @@ UPPDATERING-sektionen.*
   beslutas (listan mätt oförändrad 2026-09-16); (3) egen testsvit saknas
   (mätt 2026-09-16).
 
-## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10
+## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): gap 3 MOTBEVISAT,
+kärnobservationen nyanserad, testbilden preciserad. (1) Kalkylatorn HAR länkar
+tillbaka per variabel: akm1-calculator.tsx (1 411 r — kartan räknade bara
+superanalys.ts 507 r; total kodbas 2 670 r med superanalys.tsx 752 r)
+importerar forklaPoang från kärnan (rad 12) och bär MODUL_KURS_LANK-map med
+våg 78 B3-reglerna (aldrig döda länkar, osäker match → kursbiblioteket, rad
+67–74) — kartans eget förslag "återanvänd B7:s" är redan implementerat.
+(2) "Trösklarna delas med AKM2-kärnan" gäller INTE på filnivå: superanalys.ts
+(use client) har 0 imports — i stället bär AKM2-KÄRNAN viktprofilen
+"superanalys-2026" som en av tre kanoniska profiler (testa-akm2-karna kontroll
+6–8: råvikter summa 100; kontroll 22: kategoriupplösning korrekt) — delning
+genom konvention+svit, inte import; klientens kategorivikter (15/20/20/15/15/
+5/10, dokumenterade i filhuvudet) är en OBEROENDE kopia som inte följer
+kärnan automatiskt. (3) "Inga tester" tunnare: profilen ÄR svit-testad;
+klientens egna poängsummor 0 sviter (gap 1 lever). Gap 2 delvis lugnat
+matematiskt: totalpoängen inlåst 0–100 per konstruktion (rad 307–310) —
+renderingen vid extrema värden förblir E2E-overifierad. Score 7 kvar
+(E33/B14-precedensen). Ytor 200 loopback+HTTPS; senaste beröring b77699ba 09-15
+(cache-headers, ingen funktionsrörelse).*
 
 - **Vad:** Guidad aktieanalys i 24 steg (V01–V20 + vågklassgissning per
   horisont) med delbart analys-kort av 100 poäng; AKM1-kalkylatorn (fri
   övningsyta med samma trösklar).
-- **Nyckelfiler:** src/lib/superanalys.ts (507 r), src/app/(huvud)/
-  {superanalys,kalkylator}, src/components/ak1a/{superanalys,
-  akm1-calculator}.tsx.
-- **Observation:** Trösklarna delas med AKM2-kärnan (en källa till sanning),
-  force-static, delbart kort utan persondata. Inga tester.
-- **GAP:** (1) poängsummor/validering av elevens inmatning testas ej;
-  (2) delningskortets utseende vid extrema värden (0/100) overifierat;
-  (3) kalkylatorn har ingen länk tillbaka till kurslektioner per variabel
-  (forklaraPoang-länkarna finns i B7 — återanvänd).
+- **Nyckelfiler:** src/lib/superanalys.ts (507 r, use client, 0 imports —
+  vikterna oberoende kopia av kärnprofilen superanalys-2026),
+  src/app/(huvud)/{superanalys,kalkylator}, src/components/ak1a/{superanalys
+  (752 r),akm1-calculator (1 411 r — forklaPoang-import + MODUL_KURS_LANK)}.tsx.
+- **Observation:** Kategorivikterna delas med AKM2-kärnan via KONVENTION +
+  kärnsvit (profil superanalys-2026, kontroll 22), inte via import; force-static
+  där möjligt; delbart kort utan persondata; totalpoäng matematiskt inlåst
+  0–100.
+- **GAP:** (1) klientfilens poängsummor/inmatningsvalidering 0 egna sviter
+  (kärnprofilen däremot svit-testad); (2) delningskortets rendering vid
+  extrema värden (0/100) E2E-overifierat — intervallet självt matematiskt
+  säkert; (3)~~kalkylatorn utan länk per variabel~~ MOTBEVISAT 09-16:
+  MODUL_KURS_LANK + forklaPoang-import lever i akm1-calculator.tsx.
 
 ## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 

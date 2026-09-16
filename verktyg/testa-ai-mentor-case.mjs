@@ -342,6 +342,8 @@ kontroll(
 // Uppdaterad av s6-u3 omgång 6 (abca6047): praktik-lagret tillagt som
 // ÅTTONDE lager SIST (index/passivt, blankning, marginal) — komponentlistan
 // följer kedjan, okända komponenter fortsätter att underkännas.
+// Uppdaterad av s6-u2 omgång 7: portfoljgrund-lagret tillagt som NIONDE
+// lager SIST (diversifiering/korrelation, valutarisk).
 const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
@@ -352,6 +354,7 @@ const kedjekomponenter = [
   "svaraLokaltSektor(q, KURSREGISTER)",
   "svaraLokaltCase(q, KURSREGISTER)",
   "svaraLokaltPraktik(q, KURSREGISTER)",
+  "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -388,10 +391,12 @@ if (!importSektor) { lFel++; console.log("      import av sektor-lagret saknas")
 if (!importCase) { lFel++; console.log("      import av case-lagret saknas"); }
 const importPraktik = widget.includes('from "@/lib/ai-mentor-praktik-fragor"');
 if (!importPraktik) { lFel++; console.log("      import av praktik-lagret saknas"); }
+const importPortfoljgrund = widget.includes('from "@/lib/ai-mentor-portfoljgrund-fragor"');
+if (!importPortfoljgrund) { lFel++; console.log("      import av portfoljgrund-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 8 lager i ordning + 3 importer",
+  "L: widget-bevis — kedjeraden bär 9 lager i ordning + 4 importer",
   lFel === 0,
-  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik live i klientkedjan" : lFel + " fel",
+  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund live i klientkedjan" : lFel + " fel",
 );
 
 // ── Sammanfattning ─────────────────────────────────────────────────────────

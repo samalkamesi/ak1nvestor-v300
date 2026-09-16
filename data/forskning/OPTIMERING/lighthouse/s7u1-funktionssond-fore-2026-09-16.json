@@ -1,0 +1,52 @@
+{
+  "datum": "2026-09-16T03:45:04.286Z",
+  "url": "http://localhost:3000/kurser",
+  "vy": "390x844 mobil",
+  "vidLast": {
+    "antalRegisterkort": 0,
+    "antalUtvalda": 0,
+    "cvRegister": null,
+    "cvUtvalt": null,
+    "intrinsicRegister": null,
+    "intrinsicUtvalt": null,
+    "antalSkelett": 24,
+    "skelettAnimation": "none",
+    "animationerVidLast": 0,
+    "kortHojdPx": null
+  },
+  "pulsSekvens": [
+    "none",
+    "none",
+    "pulse",
+    "pulse",
+    "pulse",
+    "pulse",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none"
+  ],
+  "efterScroll": {
+    "kortSynligaHojdPx": null,
+    "antalSkelettKvar": 9,
+    "kortMedText": 0,
+    "animationerEfter": 5,
+    "cvFortfarande": null
+  },
+  "apiKursAnrop": 15,
+  "domOk": false
+}

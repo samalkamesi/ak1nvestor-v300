@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-16T03:49:27.784Z",
+  "bas": "http://localhost:3000",
+  "namn": "efter-skelett",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.52,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 2488,
+        "LCP": 5844,
+        "TBT": 922,
+        "CLS": 0,
+        "TTI": 6587,
+        "SI": 4379
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 116 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 116 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 816 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 816 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.2 s",
+          "rad": "Reduce JavaScript execution time — 2.2 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "5.2 s",
+          "rad": "Minimize main-thread work — 5.2 s"
+        }
+      }
+    }
+  ]
+}

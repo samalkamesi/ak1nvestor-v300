@@ -78371,6 +78371,162 @@
     "grahamSection": "Graham föredrog bolag med stabil utdelning och såg speciella utdelningar som tecken på finansiell hälsa. Han krävde dock alltid margin of safety.",
     "ak1Section": "AKM1 integrerar speciella utdelningar i V09 (ROE) och V12 (intäktsstabilitet). Extra utdelningar vid kapitalöverskott påverkar direkt bolagets riskprofil."
   },
+  "ud-09-utdelningens-hallbarhet": {
+    "slug": "ud-09-utdelningens-hallbarhet",
+    "category": "UTDELNINGSSTRATEGI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Utdelningens hållbarhet — att stressa kronorna bakom utdelningen",
+    "summary": "Avanceradkursen i utdelningsstrategi: hållbarhetsprovet — metoden som flyttar frågan från årets utdelning till utdelningens bärighet genom en hel konjunkturcykel, med täckning på kassaflödet, balansräkningens utrymme och signalväven vid en sänkning.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå hållbarhetsprovet som utdelningsfamiljens kröning — payout ratio (ud-01) mätte årets andel, fällorna (ud-04) visade enskilda misstag, och detta prov samlar dem till frågan som avgör allt: bär utdelningen en hel cykel · Räkna täckning på kassaflödet i stället för resultatet — EPS-payout och FCF-payout ger två bilder av samma bolag, och skillnaden är resultatkvalitetens bro (ln-02) · Stressa utdelningen genom en treårssvacka med genomräknad kedja: intäktsfall, hävstång, uppskjutna investeringar och rörelsekapitalets motcykel · Läsa balansräkningens utrymme — fri kassa, förfalloprofil och regleringsgolv sätter det verkliga skyddet, inte årets täckning · Förstå signalväven: varför styrelser vägrar sänka (Lintner), vad en sänning kostar i kurs (GE, Shell, AT&T) och hur en hög direktavkastning kan vara marknadens prissatta tvivel · Bygga utdelningsutrymmets hierarki — lönsamhet, investeringar, balansräkning, reglering och sist policyn — och koppla provet till AKM2:s risk- och kassaflödesdimensioner.",
+    "why": "Familjens tidigare kurser har svarat på vad utdelningen är (km-063, ud-01), hur den kan växa (km-064, ud-02) och vad som kan gå fel i enstaka fall (ud-04). Frågan som återstår är den som skiljer en utdelningsstrategi från en utdelningsillusion: är kronorna där också det år då konjunkturen vänder? En utdelning som bara hållbar ett normalår är inte en utdelning utan en tidslinje för en framtida besvikelse — och eftersom utdelningsbeslutet är det mest tröga en styrelse gör (sänkningar undviks länge, av Lintner-doktrinens både goda och dåliga skäl) samlas risken just där ingen tittar: i cykelkombinationen av fallande kassaflöde, orörd utdelning och trött balansräkning. Detta prov är utdelningsfamiljens motsvarighet till stabilitetsfamiljens kreditcykelkurs (st-04): samma tankesätt — att normalåret inte räcker som bevis — tillämpat på kronorna som betalas ut. Utan provet blir direktavkastningen en lockighet beräknad på en siffra ingen har frågat om den överlever.",
+    "history": {
+      "origin": "Utdelningen är äldre än aktiemarknaden själv: Holländska Ostindiska kompaniets stycken delade ut vinster — och ibland kapital — redan på 1610-talet, och ordet dividend kommer från latinets dividendum, det som ska delas. Genom 1800-talet och den tidiga 1900-talsbörsen var utdelningen inte en bonus utan själva avkastningen: järnvägsbolag, banker och trust delade ut det mesta av vinsten, och en aktie utan utdelning var en oddsedling. Det var denna värld Grahams generation växte upp i — där oavbruten utdelning i tjugo år var ett av det defensiva bolagens kriterier, inte en prestation utan en sedvänja.",
+      "evolution": "Teorin kom senare och vände på frågan. Lintner (1956) intervjuade amerikanska bolagsledningar och fann det mönster som fortfarande styr: bolag siktar på en långsiktig andel av vinsten, justerar motvilligt och aldrig i onödan, och hellre låter utdelningen växa långsamt än lova en nivå de kan tvingas bryta. Miller och Modigliani (1961) visade att utdelningspolitiken i en perfekt marknad inte påverkar värdet — värdet sitter i kassaflödet, inte i hur det delas. Därmed blev utdelningen ett budskap: signalteorin (Bhattacharya 1979, Miller och Rock 1985) läste en höjd utdelning som en dyr och därmed trovärdig signal, eftersom bara ett bolag med äkta kassaflöde har råd att skicka den. Klientelteorin tillade att olika ägare vill ha olika saker — och att bolag rangerar efter sin ägarbas.",
+      "modern": "Det senaste decenniet har prövat utdelningens roller i båda riktningarna. Lågränta-eran drev jakten på direktavkastning och gjorde aristokrater (ud-03) till kulturarv, samtidigt som återköpen (km-066) växte till den tysta storebrodern — samma kronor, flexiblare signal. Pandemin 2020 blev ett fullskaleprov: S&P 500-bolagens sammanlagda utdelningar föll för första gången sedan finanskrisen, Holländska Shell sänkte för första gången sedan 1945, och i Sverige stoppade Finansinspektionen bankernas utdelningar tillfälligt med hänvisning till kapitalbehovet — ett påminnelse om att utdelningsutrymmet kan återkallas utifrån. Räntesvängen 2022–2023 omvärderade sedan högavkastande aktier som obligationer. Mot den bakgrunden är hållbarhetsprovet inte nostalgia utan redskap: utdelningen är en tvångssparare i goda tider och den första posten som granskas när vändningen kommer."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — två täckningar, två sanningar",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Källorna — vartifrån utdelningskronan kommer",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Hållbarhetsprovet — fem steg på ett riktigt exempel",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Cykelstressen — tre år som avgör allt",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — signalväv, yield-bedrägeri och kulturpremie",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — utdelningsutrymmets hierarki",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — två täckningar, två sanningar",
+        "intro": "På utdelningens väg från vinst till utbetalt kassabelopp finns två mätpunkter — och de kan berätta två olika historier om samma bolag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ ett fingerat exempel genom hela kursen: Nordkärnan AB, hundra miljoner aktier, föreslagen utdelning 4,20 kronor per aktie — alltså 420 miljoner kronor. Resultaträkningen visar ett nettoresultat på 700 miljoner, vilket ger EPS på 7,00 kronor. Payout ratio på resultatet (ud-01) blir 420 delat med 700: 60 procent. Ser hyggligt ut — två tredjedelar av vinsten stannar kvar.\n\nMen kassaflödesanalysen (km-003) visar något annat: rörelsens fria kassaflöde är 560 miljoner kronor. Täckningen på kassaflödet blir 560 delat med 420: 1,33 gånger — och utdelningens andel av det fria kassaflödet är 420 delat med 560: 75 procent. Samma bolag, samma år, samma utdelning: 60 procent payout på ena måttet, 75 på det andra. Skillnaden — 140 miljoner kronor — är precis det område där resultatkvalitetskursen (ln-02) bor: intjäningar som finns i resultaträkningen men ännu inte blivit kassa. En del är ofarliga tidsförskjutningar, som fakturor som betalas nästa kvartal. En del är de accruals som kan gömma försämringar: uppskrivna lager, kapitaliserade kostnader, försäljningar som ännu inte genererat en enda krona.\n\nDärför är kassaflödestäckningen hållbarhetsprovets första sanning: utdelningen betalas i slutändan inte av resultat utan av kassa. EPS-payout 60 procent är bolagets egna bild av generositeten; FCF-payout 75 procent är bankkontots bild. Provets fråga gäller den senare — och ännu inte ens den, utan hur den ser ut ett dåligt år."
+          },
+          {
+            "type": "definition",
+            "content": "Utdelningstäckning — förhållandet mellan rörelsens fria kassaflöde och betald utdelning. Täckning över 1,0 betyder att årets verksamhet betalar årets utdelning; under 1,0 betalas differensen ur balansräkningen. Hållbarhetsprovets kärnmått — alltid på kassaflödet, aldrig enbart på resultatet."
+          },
+          {
+            "type": "insight",
+            "content": "Resultatet är en åsikt om året, kassaflödet är ett faktum om det — utdelningen betalas av faktat."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Källorna — vartifrån utdelningskronan kommer",
+        "intro": "En utdelning kan finansieras från tre ställen — bara ett av dem är en äkta inkomst. De andra två är lånad tid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Källa ett: årets kassaflöde. Den enda källa som är en inkomst i egentlig mening — verksamheten genererar mer kassa än den behöver för att investera, och överskottet lämnas tillbaka. Det är hit provet i kapitel 3 letar: en utdelning som år efter år täcks av löpande fritt kassaflöde är en mogen verksamhets naturliga andning (ud-02 visade återinvesteringens motsida: det som inte kan återinvesteras lönsamt ska ut).\n\nKälla två: balansräkningen. Bolaget betalar utdelning ur kassabuffert eller nyupptagen kredit. Detta är gråzonen — och den är bredare än den låter. Ett bolag med en engångsintäkts lyfta (en avyttring, ud-08) kan med rätta lämna ut kapital som balansräkningen inte behöver; det är kapitalåterlämning, inte utdelning i avkastningsmening. Men ett bolag som år efter år betalar ordinarie utdelning med ny skuld har inte en utdelning — det har en fasad. Gränsen syns i kapitalbindningen (ln-04): växer lånet i takt med utbetalningarna, finansierar utdelningen i praktiken kreditmarknaden.\n\nKälla tre: nyemission. Den teoretiskt renaste och praktiskt bittersta — bolaget tar in nytt kapital och betalar ut det till gamla ägare. Ingen vinst skapas; pengarna flyttas från nya till gamla ägare minus transaktionskostnader. Att en sådan konstruktion alls förekommer visar signalvävens styrka: bolaget betalar priset för att slippa sänka, eftersom sänkningen (kapitel 5) kostar mer i trovärdighet än emissionen kostar i utspäddning.\n\nBakom alla tre källorna står en beteendegrund som Lintner dokumenterade 1956: bolag sänker inte frivilligt. Styrelser sätter utdelningen som en del av en långsiktig ambition, höjer i små steg och bär med sig en djup motvilja mot att bryta en kedja — av goda skäl (stabilitet, ägarklientel) och dåliga (att sänka är att erkänna att den egna prognosen felade). Därför byggs obalansen hellre en tid än att signalen skickas — och därför måste granskningen komma utifrån, från ägaren själv."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga alltid varifrån kronorna kommer: verksamheten, balansräkningen eller nya ägare — bara det första svaret är en avkastning, de två andra är tid som lånats."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Hållbarhetsprovet — fem steg på ett riktigt exempel",
+        "intro": "Provet är en kedja av fem frågor — varje steg ger nästa sitt underlag, och svaret gäller aldrig året utan cykeln.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett: räkna det fria kassaflödet ur kassaflödesanalysen (km-003). Nordkärnan AB: EBITDA 1 320 miljoner, minus investeringar 400, minus skatt och ränta 240, minus ökat rörelsekapital 120 — kvar: 560 miljoner i fritt kassaflöde. Observera rörelsekapitalposten: den är kapitalbindningkursens (ln-04) bidrag här — en växande verksamhet binder kassa i lager och kundfordringar, och den posten äter utdelningsutrymme även när resultatet växer.\n\nSteg två: täckningen på normalåret. 560 delat med 420 är 1,33 — verksamheten betalar utdelningen med god marginal. Som utbildningsheuristik, inte lag: över omkring 1,5 finns utrymme för både svacka och tillväxt, mellan 1,0 och 1,5 är utdelningen väderberoende, och under 1,0 är den redan idag balansräkningsburen. Nordkärnan ligger i mittenskiktet — normalåret är inget avgörande bevis.\n\nSteg tre: stressa kassaflödet genom en svacka — det är kapitel 4:s genomräkning. Steg fyra: läs balansräkningens utrymme — fri kassa, skuldens förfalloprofil och räntetäckning (st-01), och om bolaget är reglerat: vad tillsynsmyndigheten tillåter. Steg fem: läs policyn och historien — styrelsens uttalade ambition (nivå, andel, tillväxt), hur utdelningen rörde sig under senaste krisen, och om speciella utdelningar (ud-08) används som cykelpåslag på ordinarie nivå. En policy som säger något i stil med hälften av långsiktigt resultat är en signal om andel, inte om nivå — och en historik utan en enda sänkning genom två kriser säger mer än tio år av höjningar i uppgång.\n\nFem steg, en kedja: kassaflödet ger täckningen, täckningen stressas av cykeln, cykeln vägs mot balansräkningen, och allt tolkas mot vad styrelsen faktiskt gör. Utan något av leden blir svaret partiellt — täckning utan stress är väderprognostisering i juli, stress utan balansräkning glömmer att en buffert kan bära en svacka, och ingen av dem säger något om vad styrelsen kommer att besluta när kroken sitter i käken."
+          },
+          {
+            "type": "insight",
+            "content": "Hållbarhet är en kedja av fem bevis — kassaflöde, täckning, stress, balansräkning, policy — och kedjan är aldrig starkare än det svagaste beviset."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Cykelstressen — tre år som avgör allt",
+        "intro": "Normalårets täckning är inget bevis — beviset är vad som händer det år då intäkterna faller tjugo procent och utdelningsbeslutet ändå fattas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konjunktursvackan för Nordkärnan AB, räknad cell för cell. Normalår: EBITDA 1 320, investeringar 400, skatt och ränta 240, rörelsekapital binder 120 — fritt kassaflöde 560, täckning 1,33.\n\nÅr ett: intäkterna faller tjugo procent. Med bolagets kostnadsstruktur faller EBITDA till 780 — det är den operativa hävstången från marginaltrappkursen (ln-03): fasta kostnader gör att resultatrörelser är större än intäktsrörelser. Förvaltningen skjuter upp investeringar till 300 och skatt och ränta faller med resultatet till 190. Rörelsekapitalet frigör 50 i motcykeln — kunder betalar sämre men bolaget beställer mindre. Fritt kassaflöde: 780 minus 300 minus 190 plus 50 är 340. Täckning: 340 delat med 420 — 0,81. Hålet mot balansräkningen: 80 miljoner.\n\nÅr två, botten: EBITDA 660. Investeringar kan inte skjutas upp längre, 260 kvarstår; skatt och ränta 160; rörelsekapitalet ger inget mer. Fritt kassaflöde 240, täckning 0,57, hålet 180 miljoner. År tre, halv återhämtning: EBITDA 1 000, investeringar 350, skatt och ränta 200, rörelsekapital binder åter 80. Fritt kassaflöde 370 — täckning 0,88, hålet 50 miljoner.\n\nTreårssvackan har sammanlagt ätit 80 plus 180 plus 50: 310 miljoner kronor ur balansräkningen — eller ur ny skuld. Nu vägs steg fyra in: hur djup är bufferten? Har bolaget 300 miljoner i fri kassa och en outnyttjad låneram är utdelningen överlevbar — till priset av ökad skuldsättning in i en svag cykel (kombinationen som kreditcykelkursen st-04 varnar för: noll räntemarginal och ett refinansieringsbehov mitt i botten). Har bolaget knappt buffert är sänkningen inte en fråga om om utan om när. Notera också rörelsekapitalets dubbla roller: i år ett hjälper det (frigör kassa), i år tre kostar det (återbindning i takt med att verksamheten växer tillbaka) — återhämtningen kan kännas hårdare mot utdelningsutrymmet än fallet, eftersom tillväkten binder kassa medan vinsten fortfarande är halv.\n\nCykelstressen är också kursens bro till risken för dold samvariation (rs-03): en portfölj av utdelningsbolag som alla betalar ur samma cykel — bolag, fastighet, industri — kan se diversifierad ut i branscherna men dela samma svackår. Utdelningsströmmarnas korrelation syns inte i normalårets direktavkastning."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan är inte om utdelningen håller normalåret — den gör nästan alltid det — utan om tre svaga år i följd betalas av verksamheten eller av framtiden."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — signalväv, yield-bedrägeri och kulturpremie",
+        "intro": "Provets fem klassiska misstag — var och en förknippad med ett av historiens större utdelningsfall.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: att läsa sänkningen som oväder i stället för prognos. När General Electric efter decennier som utdelningsaristokrat halverade utdelningen 2018 och året därpå klippte den från 0,96 till 0,04 dollar — en minskning med drygt 95 procent på två år — var budskapet inte att bolaget råkat ut för otur utan att kassaflödet under hela perioden inte burit nivån. En sänkning är styrelsens egen efterhandsbekännelse; Shell 2020, som bröt en utdelningstradition sträckande sig sedan 1945, och AT&T 2022, som efter avyttringen lämnade en nivå nästan halverad mot tidigare, är samma mönster i olika tappningar. Den som gör hållbarhetsprovet först läser sänkningen som bekräftelse i stället för chock.\n\nFälla två: direktavkastningens bedrägeri. En aktie till 100 kronor med åtta kronor i utdelning ger åtta procent direktavkastning (km-063) — men om marknaden med rimlig grund prissattar femtio procents sänkningsrisk nästa år är den förväntade utdelningen fyra kronor och den ärliga direktavkastningen fyra procent. En hög yield är ofta inte en gåva utan ett pris satt av kollektivt tvivel — yielden varnar, den lockar inte. Det är utdelningsfällornas (ud-04) mekanik på portföljnivå: attraktiva på pappret, sjunkande i realiteten.\n\nFälla tre: kulturpremien. En lång kedja av höjningar (ud-03:s aristokrater) är en verklig prestation — men den kan vändas till ett tvång där bolag hellre lånar för att hålla kedjan än bryter den. Då betalar ägaren avgiften i skuld istället för i utdelning. Fälla fyra: att läsa speciella utdelningar (ud-08) som nivå. Engångskassor från avyttringar är kapitalåterlämning — räknas de in i direktavkastningen byggs en kurva som dör av sig själv. Fälla fem: räntkänsligheten. Högavkastande aktier prissätts delvis som obligationer — stiger den riskfria räntan (km-054) kan kursen falla kraftigt medan utdelningen hålls hel. Hållbarheten kan vara intakt medan kursen ändå faller: provet skyddar inte mot ränterisk, bara mot utdelningsrisk.\n\nOch som i hela spåret: övningen är hantverket att läsa och stressa siffror i en offentlig rapport — aldrig en uppmaning att köpa eller sälja något värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor: sänkänden läst som oväder i stället för prognos, yielden läst som gåva i stället för prissatt tvivel, kedjan som tvång, engångskassor som nivå, och räntan som gör kurserna våta medan utdelningen står torr."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — utdelningsutrymmets hierarki",
+        "intro": "Alla kurser i familjen samlas till en enda bild: utdelningen är sist i kön — och det är dess styrka som bevis.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Utdelningsutrymmets hierarki har fem led, i ordning. Först lönsamheten: utan ett strukturerat överskott finns inget att fördela (ln-01, roic-01). Sedan investeringsbehovet: verksamheten har företräde — en utdelning som svälter lönsamma investeringar är en långsiktig värdeflyttning från tillväxt till kontant (ud-02). Tredje balansräkningens styrka: skuldnivå (v10), räntetäckning (st-01) och förfalloprofil sätter taket för hur länge en svacka får bäras av kredit. Fjärde regleringen: för banker och försäkringsbolag sätter tillsynen golvet — Finansinspektionens tillfälliga utdelningsstopp 2020 visade att utrymmet kan återkallas utifrån oavsett kassaflödets hälsa, och det är en riskpost i sig. Femte och sist: utdelningspolicyn. Att policyn står sist betyder inte att den är oviktig — den är summan av de fyra andra, och därför det bästa komprimerade beviset: en utdelning som stigit genom två kriser vilar på hela hierarkin.\n\nI AKM2:s system knyter kursen samman tre dimensioner. Kassaflödesdimensionen: FCF-payout som kompletterar nyckeltalen med utdelningssidan. Riskdimensionen: cykelstressen är ett miniatyrstresstest (st-02) med utdelningen som mätetal, och rs-03:s samvariation synliggörs på portföljnivå — utdelningar som alla sinar samma år. Värderingsdimensionen: en aktie som köps för direktavkastningens skull (km-063) är i praktiken en kort terminalbalansräkning (vm-06:s utdelningsdiskontering) — kursen där är känsligare för hållbarheten än för årets nivå. Och Grahams regel från en annan epok — tjugo år av oavbruten utdelning — lever kvar som princip: kontinuitet är det billigaste signalet om hierarkins hållbarhet, för det är det dyraste för bolaget att förfalska.\n\nAvsluta med den levande övningen: välj ett bolag ur kursuniversumet, hämta tre senaste rapporterna, och bygg hållbarhetsprovet — kassaflöde, täckning, en egen treårssvacka, balansräkningens utrymme, policy och historik. Sammanställ till en enda siffra: hur många procent intäkterna får falla innan täckningen når 1,0. Gör om övningen vid nästa bokslut. Det är utbildningens kärna: hållbarhet är inte en känsla för utdelningar utan ett borträknat avstånd till sänkningspunkten — och avståndet mäts i cykler, inte i år."
+          },
+          {
+            "type": "insight",
+            "content": "Utdelningen är hierarkins sista led — lönsamhet, investeringar, balansräkning och reglering går före — och just därför dess mest sammanfattande bevis: en utdelning som överlever en hel cykel har rest hela kön."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch rangerade utdelningen bland de mest tillfredsställande egenskaperna ett bolag kan visa: ett bolag som betalar utdelning och dessutom köper tillbaka aktier (km-066) demonstrerar med handling att kassaflödet är äkta och att ledningen anser aktien värd att behålla. Men han var också tydlig med att en lockande direktavkastning ofta är en kurs som redan fallit — yielden som ser billigast ut i morgontidningen är den marknaden redan prissatt som bristande. För Lynch var hållbarhetsprovet ingen separat övning utan en del av historieberättelsen: om berättelsen inte förklarar var utdelningskronorna finns i ett dåligt år är berättelsen ofärdig.",
+    "grahamSection": "Benjamin Grahams defensiva investerare krävde oavbruten utdelning i tjugo år — inte som prestation utan som sedvänja från en tid då utdelningen var avkastningen. Bakom kravet ligger en princip som hållbarhetsprovet är den moderna utgåvan av: kontinuitet är det dyraste att förfalska. Grahams säkerhetsmarginal (km-030) tillämpad på utdelningen blir täckningen — avståndet mellan kassaflödet och utdelningen är marginalen, och den som köper en aktie utan marginal köper en siffra utan skydd. Hans checklista med krav på täckning och oavbrutna betalningar var, i modern tys, ett hållbarhetsprov komprimerat till två rader.",
+    "ak1Section": "I AK1A:s metodik är denna kurs UTDELNINGSSTRATEGI-familiens kröning: km-063 lärde direktavkastningen, ud-01 andelen, km-064 tillväxten, ud-04 fallorna — och hållbarhetsprovet samlar dem till den fråga AKM2:s granskning slutligen ställer: bär utdelningen en hel cykel. Brobyggen: mot kassaflödesanalysen (km-003) och resultatkvaliteten (ln-02) för täckningens källor, mot operativ hävstång (ln-03) och kreditcykeln (st-04) för stressens mekanik, mot dold samvariation (rs-03) för portföljens samlade utdelningsrisk, och mot V10, V19 och kapitalbindningen (ln-04) för balansräkningens tak. Provets fem steg är samtidigt AI-mentorns svarsmall när frågan gäller utdelningars uthållighet: kassaflöde först, policy sist."
+  },
   "pf-13-esgportfolj": {
     "slug": "pf-13-esgportfolj",
     "category": "PORTFÖLJHANTERING",
@@ -199083,6 +199239,330 @@
     "lynchSection": "Peter Lynch skulle ha beskrivit balansräkningen som bolagets ID-kort: den avslöjar direkt om ett bolag är en solid verksamhet med pengar i banken eller en skuldtung berättelse med vackra ord. Hans råd att förstå vad man äger börjar bokstavligt talat på tillgångssidan — och hans varning för bolag med mer goodwill än substans är en direkt läsning av kartan.",
     "grahamSection": "Benjamin Graham byggde sin helhetssyn på just substansen: det egna kapitalet i förhållande till marknadsvärdet var kärnan i hans försök att köpa till under marknadsvärde. För Graham var balansräkningen säkerhetens hem — nettotillgångsmassa, buffert och på sikt utdelningskapacitet — och han misstrodde analyser som inte kunde härledas till konkreta poster.",
     "ak1Section": "I AK1A:s metodik är balansräkningen förutsättningen för stabilitetsdimensionen: skuldsättningsgrad (V10), likviditet (V11) och intäktsstabilitet (V12) räknas alla ur dess poster. Utan kartläsning blir nyckeltalen magiska tal — med kartläsning blir de frågor man kan besvara, jämföra och väga in i en helhetsbild av bolagets tålighet."
+  },
+  "bk-02-resultatrakningen": {
+    "slug": "bk-02-resultatrakningen",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Resultaträkningen — bolagets resedagbok",
+    "summary": "Från nettoomsättning till årets resultat, steg för steg: hur du läser resultaträkningens trappa, vad rörelseresultatet egentligen mäter och hur vinsten blir kronor per aktie.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Läsa resultaträkningens trappa från nettoomsättning till årets resultat · Räkna ut bruttomarginal, rörelsemarginal och nettomarginal på samma serie · Förstå rörelseresultatet (EBIT) som brygga mellan affär och finansiering · Se hur finansnettot knyter resultaträkningen till balansräkningens skulder · Räkna ut vinst per aktie (EPS) och koppla den till P/E och utdelningskvot · Skilja återkommande resultat från engångsposter.",
+    "why": "Balansräkningen (bk-01) är kartan över vad bolaget består av — resultaträkningen är resedagboken som berättar hur året gick. Nästan varje lönsamhetsmått i AKM1:s metodik beräknas ur den här trappan: bruttomarginal (V07), rörelsemarginal (V08) och avkastning på eget kapital (V09) börjar alla på samma rader. Kursen lär svenska aktieägare läsa trappan post för post, så att nyckeltalen slutar vara magiska tal och blir frågor man själv kan besvara — och så att den dagliga rapportfloden, från kvartalssiffror till årsredovisning, blir läsbar på minuter.",
+    "history": {
+      "origin": "Resultaträkningen växte fram ur samma italienska handelstradition som balansräkningen: köpmännen i Venedig och Florens noterade intäkter och kostnader för att veta om året burit eller brutit. När aktiebolagen spreds under 1800-talet blev resultatredovisningen en juridisk nödvändighet — utdelning fick bara betalas ur verklig vinst, och styrelser behövde ett dokument som visade den.",
+      "evolution": "Under 1900-talet standardiserades resultaträkningens form: rörelsegren och finansgren skildes åt, och koncernredovisningen sammanförde dotterbolagens resor till en gemensam dagbok. EU:s börsbolag övergick 2005 till IFRS, vilket bland annat gjorde att resultatet delas upp i dels löpande verksamhet, dels poster som inte får återkomma — engångsposter föddes som eget redovisningsbegrepp.",
+      "modern": "I dag publicerar svenska noterade bolag resultaträkningen varje kvartal, och konsensusprognoser handlar bokstavligen om raderna i den: nettoomsättning, rörelseresultat och vinst per aktie. Den som kan trappans grammatik kan läsa en rapportläsning på minuter och skilja affärens rörelse från finansieringens kostnader — det är den färdighet den här kursen tränar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — en period, en berättelse",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Trappan — från omsättning till resultat",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Rörelseresultatet — affären före räntan",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk läsning — läs en svensk resultaträkning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Vanliga fällor och misstag",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — från resultat till nyckeltal",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — en period, en berättelse",
+        "intro": "Resultaträkningen är en film snarare än en stillbild: den sammanfattar allt som hänt mellan två tidpunkter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Balansräkningen fryser ögonblicket vid årets slut — resultaträkningen berättar resan dit. Den räknar ihop alla intäkter och kostnader under en period, vanligen ett kvartal eller ett år, och landar i en enda slutsiffra: årets resultat. Det är den siffra som sedan vandrar vidare till balansräkningens eget kapital — vinst ökar det, förlust minskar det — och som gör de två rapporterna till ett gemensamt system.\n\nNyckeln till hela dokumentet är periodiseringen: en intäkt bokförs när den intjänats, inte när betalningen kommer, och en kostnad bokförs när den uppkommit, inte när fakturan betalas. Därför säger resultaträkningen hur året gick, medan kassaflödesräkningen (bk-03) visar pengarna som faktiskt rörde sig — två olika sanningar som båda behövs."
+          },
+          {
+            "type": "definition",
+            "content": "Resultaträkning: Sammanställning över en period av bolagets intäkter och kostnader, som slutar i årets resultat. Intäkter och kostnader periodiseras — de bokförs när de intjänas och uppkommer, inte när pengarna betalas."
+          },
+          {
+            "type": "insight",
+            "content": "Periodiseringen är resultaträkningens kraft och dess risk: kraften är att affären syns även när betalningarna dröjer, risken är att en pappersvinst kan leva ett tag utan kassa — den skillnaden syns först i kassaflödesräkningen (bk-03) och i resultatkvaliteten (ln-02)."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Trappan — från omsättning till resultat",
+        "intro": "En svensk koncernresultaträkning är byggd som en trappa — varje steg är en subtraktion som berättar något nytt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ ett exempelbolag genom hela trappan, med belopp i miljoner kronor. Nettoomsättningen är 1 200 — allt bolaget sålt under året, efter rabatter och moms. Kostnaden för sålda varor och tjänster är 660, och resten är bruttoresultatet: 1 200 − 660 = 540, alltså en bruttomarginal på 540 ÷ 1 200 = 45,0 procent.\n\nNästa steg drar av de övriga rörelsekostnaderna — löner, lokal, sälj och administration — med 240. Kvar är rörelseresultatet: 540 − 240 = 300, en rörelsemarginal på 300 ÷ 1 200 = 25,0 procent. Därifrån går trappan vidare över finansieringen och skatten: finansnetto −30 ger resultat före skatt 270, skatten 54 ger årets resultat 216 — en nettomarginal på 216 ÷ 1 200 = 18,0 procent.\n\nTrappan är mer än addition: varje plansch är en fråga. Bruttomarginalen frågar vad produkten är värd över sin kostnad, rörelsemarginalen vad verksamheten tjänar efter hela driftens utgifter, nettomarginalen vad som till slut blir kvar åt ägarna."
+          },
+          {
+            "type": "insight",
+            "content": "Exempeltrappan 1 200 → 540 → 300 → 270 → 216 i kronor blir 45,0 → 25,0 → 22,5 → 18,0 procent i marginaler — och varje marginal är ett nyckeltal (V07, V08) som direkt kan jämföras mellan år och branschkollegor."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Rörelseresultatet — affären före räntan",
+        "intro": "Rörelseresultatet ligger på trappans mittplan — och det är avsiktligt: affären och finansieringen ska inte blandas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rörelseresultatet — på engelska EBIT, earnings before interest and taxes — mäter vad själva verksamheten tjänar, oberoende av hur den finansierats. Två identiska fabriker med samma rörelseresultat kan ge helt olika slutresultat, eftersom den ena är finansierad med lån och den andra med eget kapital. Därför hamnar räntekostnaderna först på trappans nedre plan: i exempelbolaget är de finansiella intäkterna 10 och de finansiella kostnaderna 40, ett finansnetto på −30 som speglar balansräkningens (bk-01) räntebärande skulder.\n\nDet gör räntetäckningen till en direktöversättning mellan rapporterna: rörelseresultat 300 delat med finansiella kostnader 40 ger 7,5 gånger — bolaget tjänar in sin årliga ränta sju och en halv gång om, en tålighet som fördjupas i soliditets- och räntetäckningskursen (st-01). Räntan är alltså inte en detalj i resultaträkningen utan just bron till balansräkningen: den som vet vad bolaget är skyldigt kan förutsäga trappans nästa steg."
+          },
+          {
+            "type": "definition",
+            "content": "Rörelseresultat (EBIT): Resultat efter rörelsens alla intäkter och kostnader, men före finansiella poster och skatt — den renaste mätningen på vad själva verksamheten förmår, oavsett finansiering."
+          },
+          {
+            "type": "insight",
+            "content": "Läs trappan som två våningar: översta våningen (1 200 → 300) är affären, nedersta (300 → 216) är finansiering och skatt — och jämförelser mellan bolag ska göras våning för våning, aldrig bara på slutresultatet."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk läsning — läs en svensk resultaträkning",
+        "intro": "Svenska koncernresultaträkningar följer en fast ordning — känner du den hittar du rätt på minuter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Öppna en svensk årsredovisning eller kvartalsrapport och leta reda på koncernresultaträkningen. Den börjar med nettoomsättning, fortsätter med kostnad för sålda varor och tjänster, övriga rörelsekostnader och rörelseresultat, följs av finansiella intäkter och kostnader, resultat före skatt, skatt på årets resultat och slutar i årets resultat. Noterna bakom varje rad är dagbokens marginalanteckningar: där förklaras vad som räknas som en engångspost, hur skatten beräknats och vad segmenten tjänat (km-004, km-024).\n\nGör samma tre ögonkast som i balansräkningen (bk-01): första ögonkastet på nettoomsättningens rörelse mot förra året, andra på rörelseresultatet i förhållande till omsättningen, tredje på raden längst ner — årets resultat. Kvartalsrapporten (km-006) är samma dokument i miniatyr, med det extra villkoret att säsong kan förvränga ett enskilt kvartal mot helåret."
+          },
+          {
+            "type": "insight",
+            "content": "Läs alltid koncernresultaträkningen, inte moderbolagets — koncernen är den verksamhet aktieägaren faktiskt äger andel i, och moderbolagets rader kan se helt annorlunda ut."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Vanliga fällor och misstag",
+        "intro": "Trappan kan målas missvisande — här är de fyra vanligaste sätten den lurar en otrogen läsare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första fällan är engångsposten som återkommer. Ett bolag rapporterar rörelseresultat 260 inklusive en omstruktureringskostnad på 40 och kallar den engångspost — men liknande kostnader kommer igen nästa år och året därpå. Den ärliga läsningen är då 260, inte det justerade 300: en kostnad som återkommer är löpande, vad den än kallas.\n\nDen andra fällan är skatten. Exempelbolagets 20 procents skatt är en förenkling för läsbarheten — verklig svensk bolagsskatt är 20,6 procent, och det redovisade skattebeloppet kan dessutom avvika från år till år genom uppskjutna skatter och ränteavdragsbegränsningar. Den tredje är jämförelsen av ofullständiga perioder: ett kvartal med extra leveransvecka eller en pågående omställning säger lite om helåret. Den fjärde fällan är att stanna på slutresultatet: en engångsvinst — en såld fastighet, en nedskrivning som vänts tillbaka — kan blåsa upp årets resultat utan att verksamheten förändrats ett dugg. Läs trappan steg för steg, inte bara slutsiffran."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga för varje rad: skulle den finnas nästa år också? Svaret skiljer den löpande verksamheten från engångsposterna — och bara den löpande delen förtjänar att multipliceras in i ett värderingsnyckeltal (vr-02)."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — från resultat till nyckeltal",
+        "intro": "När trappan sitter i huvudet blir nyckeltalen levande — var och en är bara en fråga till resultaträkningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta exempelbolagets sista steg: årets resultat 216 miljoner kronor fördelat på 120 miljoner aktier ger en vinst per aktie på 216 ÷ 120 = 1,80 kronor. Det är talet som resten av värderingsvärlden bygger på: en kurs på 27,00 kronor ger ett P/E på 27,00 ÷ 1,80 = 15,0, en utdelning på 0,90 kronor per aktie ger en utdelningskvot på 0,90 ÷ 1,80 = 50 procent och en direktavkastning på 0,90 ÷ 27,00 = 3,3 procent. Samma tre tal är alla uträkningar ur trappan du nu kan läsa.\n\nTrappan knyter också an till analysfamiljerna ovanför: brutto- och rörelsemarginalerna (V07, V08) är trappans plan, DuPont-uppdelningen (ln-01) tar resultatet vidare till avkastning på eget kapital (V09), och marginalserien över flera år är början på varje lönsamhetsanalys (ln-03). Avsluta med övningen: ta två bolag i samma bransch, skriv deras trappor på varsin rad och jämför planschen — vilket bolag tjänar pengar i affären, och vilket tjänar dem först i finansieringen? Det är frågan resultaträkningen är byggd för att besvara."
+          },
+          {
+            "type": "insight",
+            "content": "Vinst per aktie = årets resultat ÷ antal aktier, P/E = kurs ÷ vinst per aktie och utdelningskvot = utdelning ÷ vinst per aktie — tre formler, en enda trappa; när du ser det är resultaträkningen din."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch läste resultaträkningen som en berättelse om verksamheten han kunde besöka: marginalerna skulle stämma med det han såg på fabriksgolvet, och engångsposter som återkom var för honom en varning att ledningen hellre målar om verkligheten än beskriver den. Hans berömda sparsamma regel — förstå vad du äger — börjar bokstavligen med att kunna läsa trappan från omsättning till resultat.",
+    "grahamSection": "Benjamin Graham varnade för att köpa en slutsiffra utan att känna dess historia: för honom var det återkommande rörelseresultatet — inte årets totalvinst med engångsposter — den enda defensiva basen för värderingen. Hans krav på intäktsstabilitet över en följd av år är i grunden en läsning av resultaträkningen som serie, trappa efter trappa.",
+    "ak1Section": "I AK1A:s metodik är resultaträkningen källan till lönsamhetsvariablerna: bruttomarginal (V07), rörelsemarginal (V08) och avkastning på eget kapital (V09) räknas ur dess rader, och vinst per aktie bär värderingsmultiplarna. Kursen utbildar i att läsa och räkna — så fungerar metoden, aldrig investeringsråd om enskilda aktier."
+  },
+  "bk-03-kassaflodesrakningen": {
+    "slug": "bk-03-kassaflodesrakningen",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Kassaflödesräkningen — pengarna som faktiskt rörde sig",
+    "summary": "De tre flödena — löpande verksamhet, investeringar och finansiering — steg för steg: hur vinsten översätts till kassa, vad frikassaflöde är och hur de tre rapporterna kontrollerar varandra.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Läsa kassaflödesräkningens tre sektioner — löpande, investerande och finansierande verksamhet · Räkna om resultatet till kassa med avskrivningar och förändringar i arbetskapital · Förstå varför en vinst kan vara kassalös och en förlust kassastark · Räkna ut frikassaflöde i ren aritmetik · Se hur utdelning och amortering lämnar bolaget i finansieringsverksamheten · Trippelkontrollera resultaträkningen, balansräkningen och kassaflödesräkningen mot varandra.",
+    "why": "Resultaträkningen (bk-02) berättar hur året gick enligt periodiseringens regler — men bolaget betalar inte räkningar med pappersvinster. Kassaflödesräkningen är den tredje rapporten som visar pengarna som faktiskt rörde sig, och den är den ärligaste av de tre: obrukbara resultat, uppblåsta lager och kunder som inte betalar syns här först. Kursen bygger vidare på exempelbolaget från balansräkningen (bk-01) och resultaträkningen (bk-02) och stänger cirklar hela vägen: samma års resultat blir samma kassa, samma utdelning, samma balansräkning — tre rapporter, en berättelse. Det är grunden för varje resultatkvalitetsläsning (ln-02) och för förståelsen av frikassaflödets roll i AKM1:s metodik.",
+    "history": {
+      "origin": "Kassaflödesräkningen är rapporternas yngsta. Intäkts- och kostnadsredovisningen räckte när ägare och banker kände bolagen personligen, men när koncerner växte fram under 1900-talet blev det möjligt att visa vinst år efter år medan kassan läckte ut genom långsamma kunder och uppblåsta lager. Kriser där vinstrika bolag gått omkull på kassabrist drev fram kravet på en egen rapport för pengarnas vägar.",
+      "evolution": "I USA blev kassaflödesrapporten obligatorisk för börsbolag 1988, och den indirekta metoden — att börja i resultatet och justera för icke-kassa-poster — blev världens standardform. I Sverige infördes kravet genom årsredovisningslagen på 1990-talet, och IFRS sammanställer sedan 2005 reglerna i IAS 7: tre sektioner, löpande verksamhet, investeringar och finansiering, oavsett bransch.",
+      "modern": "I dag är kassaflödesraderna lika bevakade som resultatraderna: frikassaflöde och utdelningens kassatäckning är fasta delar av varje svensk rapportpresentation. För läsaren är rapporten samtidigt den bästa lögn-detektorn — den som kan följa en krona från resultat via arbetskapital till kassa kan inte luras av en snygg vinstrad. Det är den läsningen den här kursen tränar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — vinst är inte kassa",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Tre flöden — löpande, investerande, finansierande",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Löpande verksamheten — från resultat till kassa",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk läsning — läs en svensk kassaflödesräkning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Vanliga fällor och misstag",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — frikassa och trippelkontrollen",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — vinst är inte kassa",
+        "intro": "Periodiseringen gör resultaträkningen sann mot affären — men pengarna kan vara någon annanstans.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En försäljning bokförs som intäkt samma dag varan lämnar lagret, även om kunden betalar tre månader senare. Lönerna kostar när de intjänas, även om löneutbetalningen kommer veckan efter bokslut. Resultaträkningen är alltså byggd på rättigheter och skyldigheter — kassaflödesräkningen på betalningar. Skillnaden låter harmlös men är hela skillnaden: ett bolag kan redovisa vinst och ändå tömma sitt bankkonto, och ett bolag i omställning kan visa förlust medan kassan växer.\n\nDärför kompletterar de tre rapporterna varandra som tre vittnen om samma år: balansräkningen (bk-01) visar ställningen, resultaträkningen (bk-02) resan enligt reglerna, kassaflödesräkningen pengarna på kontot. Ingen av dem räcker ensam — tillsammans kan de inte ljuga för varandra."
+          },
+          {
+            "type": "definition",
+            "content": "Kassaflödesräkning: Rapport som visar bolagets in- och utbetalningar under en period, uppdelade i tre sektioner — löpande verksamhet, investeringsverksamhet och finansieringsverksamhet — och som slutar i förändringen av likvida medel."
+          },
+          {
+            "type": "insight",
+            "content": "Tänk på hushållet: lönespecifikationen är resultaträkningen, kontotransaktionerna är kassaflödet — båda beskriver samma månad, men bara det ena förklarar varför saldot på kontot ändå sjönk."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Tre flöden — löpande, investerande, finansierande",
+        "intro": "Alla betalningar sorteras i tre sektioner — och strukturen är samma för ett hushåll som för ett börsbolag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fortsätt på exempelbolaget från resultaträkningen (bk-02), som redovisade årets resultat 216 miljoner kronor. Den löpande verksamheten samlar affärens betalningar — kunder, leverantörer, löner, skatt — och landar det här året på 311. Investeringsverksamheten samlar köp och försäljningar av varaktiga tillgångar: bolaget bygger ut och köper maskiner för 120. Finansieringsverksamheten samlar ägarnas och långivarnas transaktioner: ränteintäkter 10 in, räntekostnader 40 ut, amortering 20 ut och utdelning 108 ut — sammanlagt −158.\n\nÅrets kassaflöde blir då 311 − 120 − 158 = +33 miljoner kronor, och likvida medel växer från 32 till 65. De tre talen bär varsin berättelse: affären ger kassa, framtiden konsumerar den, ägarna och bankerna får sin andel. Ett bolag som år efter år har stark löpande verksamhet men svag total kassa bygger för framtiden; ett bolag med svag löpande verksamhet och stark total kassa håller på att äta sitt bestånd."
+          },
+          {
+            "type": "insight",
+            "content": "311 − 120 − 158 = +33 och kassan 32 → 65: om du bara får läsa en rad i en rapportpresentation, läs den här sammanställningen — den visar på en rad vem som betalar vem av affären, framtiden och ägarna."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Löpande verksamheten — från resultat till kassa",
+        "intro": "Den indirekta metoden börjar i resultatet och justerar hem kassan — fyra justeringar räcker långt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Starta i årets resultat 216 och följ den indirekta metoden steg för steg. Första steget flyttar räntan och skatten till sina sektioner: finansnettot −30 och skatten 54 ligger under rörelseresultatet, men räntorna hör hemma i finansieringsverksamheten och skatten betalas här i den löpande — läggs de tillbaka blir summan 216 + 30 + 54 = 300, precis rörelseresultatet från resultaträkningen (bk-02). Andra steget lägger tillbaka avskrivningarna: av de övriga rörelsekostnaderna (240 i resultaträkningen) är 60 avskrivningar, en kostnad utan kassaflöde — 300 + 60 = 360, som är EBITDA (v08). Tredje steget är arbetskapitalet: kundfordringarna har vuxit med 5 (intäkter bokförda men ej betalade — dra ifrån), lagret med 5 (kontantbindning — dra ifrån) och leverantörsskulderna med 15 (kostnader bokförda men ej betalda — lägg till): 360 − 5 − 5 + 15 = 365. Fjärde steget drar ifrån den betalda skatten igen, nu på sin rätta plats: 365 − 54 = 311 — kassaflödet från den löpande verksamheten.\n\nNotera ordningen i tecknen: växande fordringar och lager ÄTER kassa, växande leverantörsskulder GER kassa. Ett expansivt bolag kan alltså se rymligt ut i resultaträkningen och ändå svettas i kassan — bara för att tillväxten binder pengar i kunder och lager. Det är arbetskapitalets mekanik, fördjupad i kapitalbindningskursen (ln-04)."
+          },
+          {
+            "type": "definition",
+            "content": "Indirekt metod: Att härleda kassaflödet från den löpande verksamheten genom att börja i årets resultat och justera för poster utan kassaflöde (till exempel avskrivningar) samt förändringar i arbetskapital (fordringar, lager, skulder)."
+          },
+          {
+            "type": "insight",
+            "content": "EBITDA är trappans plan före avskrivningarna — exempelbolagets rörelseresultat 300 plus avskrivningar 60 ger 360 — men EBITDA är ingen kassa förrän arbetskapitalet och skatten räknats hem; skillnaden mellan 360 och den löpande kassan är precis de justeringarna."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk läsning — läs en svensk kassaflödesräkning",
+        "intro": "Rapporten ligger sist i notehierarkin för många läsare — börja i stället med den när du vill förstå ett bolag på djupet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Öppna en svensk årsredovisning och leta reda på koncern-kassaflödesräkningen. Den inleds nästan alltid med den indirekta metoden: årets resultat överst, sedan avskrivningar och nedskrivningar, sedan förändringar i arbetskapitalet, och slutlinjen kassaflöde från den löpande verksamheten. Därpå investeringsavsnittet — förvärv, maskinköp, försäljningar — och finansieringsavsnittet med nya lån, amorteringar, räntor och utdelning. Allra sist stäms kassan av: likvida medel vid årets början plus årets kassaflöde lika med likvida medel vid årets slut.\n\nI svenska börsbolag placeras räntor och skatt ibland olika mellan sektionerna — räntan ofta i finansieringen, skatten i den löpande verksamheten — men de tre sektionernas logik är alltid densamma, och noter (km-004) redovisar placeringarna. Kvartalsrapporten (km-006) visar samma tre flöden i miniatyr. Gör tre ögonkast: den löpande linjens tecken och nivå, investeringarna mot avskrivningarna, och utdelningens storlek mot den löpande kassan — det räcker för en första, ärlig bild."
+          },
+          {
+            "type": "insight",
+            "content": "Stäm av sista raden varje gång: ingående likvida medel plus årets kassaflöde lika med utgående likvida medel. Stämmer den inte har du antingen ett läsfel eller en rapport som dolde något — och båda upptäckterna är värdefulla."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Vanliga fällor och misstag",
+        "intro": "Kassaflödesräkningen är svår att fejka — men lätt att läsa fel.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första fällan är att tro att EBITDA är kassa. Exempelbolaget visar det med egna tal: EBITDA 360 blir löpande kassa 311 efter arbetskapital och betald skatt — 49 av 360 kronorna försvann på vägen. Den andra fällan är engångskassan: en stor engångsförsäljning av en fastighet ger ett plus i investeringsverksamheten som aldrig återkommer — den löpande linjen är den enda som får multipliceras med något. Den tredje är utdelningens hemvist: 108 miljoner lämnar bolaget i finansieringsverksamheten, och ett bolag som under flera år betalar mer i utdelning än den löpande verksamheten genererar äter antingen bestånd, lånar eller säljer — inget av det är varaktigt. Den fjärde fällan är att glömma att kassa fortfarande inte är fri kassa: bolaget måste återinvestera för att hålla i gång — maskinerna slits även utan tillväxt.\n\nOmvända läsningen gäller också: om kundfordringarna i stället hade vuxit med 115 — allt annat lika — hade den löpande kassan sjunkit till 201, och de sista 15 miljonerna av årets vinst hade funnits bara på papper. Det är resultatkvalitetens kärna, och signalerna systematiseras i accrual-kursen (ln-02)."
+          },
+          {
+            "type": "insight",
+            "content": "Följ tre år i rad: den löpande kassans summa mot resultatenes summa. Kassan under resultatet år efter år är det tydligaste tecknet på att resultaten lever i fordringar och lager — inte på kontot."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — frikassa och trippelkontrollen",
+        "intro": "När de tre flödena sitter i huvudet kan du räkna frikassan — och stänga de tre rapporterna mot varandra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Frikassaflödet är den löpande kassan minus investeringarna, den fria kassa som kan gå till utdelning, amortering eller buffert — i exemplelet 311 − 120 = 191 miljoner kronor. Jämför med utdelningen 108: täckningen är nästan dubbel, och marginalen är utrymmet för nästa års beslut. Det är samma kassa som bär avkastningsberäkningarna (roic-01) och kreditbedömningarna (st-01) — frikassan är rapporternas valuta.\n\nAvsluta med trippelkontrollen, hela bokföringssystemets slutprov. Eget kapital: resultat 216 minus utdelning 108 växer med 108. Skulder: leverantörer +15 minus amortering 20 minskar med 5. Balansräkningen kräver alltså att tillgångarna växt med 103 — och räkningen stämmer: maskiner +60 (köp 120 minus avskrivning 60), kundfordringar +5, lager +5, kassa +33. Tre rapporter, tre olika ingångar, en enda stängd ekvation. När du kan gå den vägen — från resultaträkning till kassaflöde till balansräkning och tillbaka — är årsredovisningen inte längre ett främmande språk utan ett slutet system du kan läsa, räkna och lita på."
+          },
+          {
+            "type": "definition",
+            "content": "Frikassaflöde: Kassaflöde från den löpande verksamheten minus investeringar i varaktiga tillgångar — den kassa som blir fri för utdelning, amortering och avkastning efter att verksamheten nödvändigtvis återinvestmerat."
+          },
+          {
+            "type": "insight",
+            "content": "Trippelkontrollen i en rad: Δtillgångar (+103) = Δskulder (−5) + Δeget kapital (+108) — samma 103 som kassa, fordringar, lager och maskiner summerar till; när den stämmer håller hela årsberättelsen ihop."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch framhöll att bolag som genererar stark kassa medan aktien handlas lågt ofta är de mest underskattade berättelserna på börsen: kassan kan betala ned skuld, återköpa aktier eller vänta ut dåliga tider. Hans genomgång av rapporterna började därför inte på vinstraden utan på frågan om affären faktiskt samlar pengar — kassaflödesräkningen svarar per konstruktion.",
+    "grahamSection": "Benjamin Graham sökte en marginal av säkerhet i substansen, och substansen betalas i kassa: hans krav på att bolaget ska klara svåra år utan att låna föder frågan hur stor del av resultatet som verkligen når kontot. För Graham var ett resultat som aldrig blir kassa ett anspråk, inte en tillgång — kassaflödesräkningen skiljer dem åt.",
+    "ak1Section": "I AK1A:s metodik är kassaflödesräkningen grund under både resultatkvaliteten (ln-02) och frikassaperspektivet i portföljtänkandet: AKM1 läser vinstens kassatäckning som en egen dimension av kvalitet. Kursen utbildar i att läsa och räkna — så fungerar metoden, aldrig investeringsråd om enskilda aktier."
   },
   "ln-01-dupont-analysen": {
     "slug": "ln-01-dupont-analysen",

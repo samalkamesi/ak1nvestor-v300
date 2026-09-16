@@ -31,6 +31,15 @@ efter commit. Protokollnummer: o21 kolliderade mellan syskon (u18-not-
 precedens), o22–o24 togs medan detta fönster grävde — ls-kontroll gav
 nästa fria: o25.
 
+**Attribueringsnot (rättesebokförd 06:3x):** denna leverans landade i git
+via syskonrace 31dd0b46 — s8-u3:s meddelande, MINA fem filer. Mekanism:
+min commit blockerades av grindens tsc under prod-synkens npm ci-fönster
+(lib-bort, o24 §5-fenomenet) ⇒ filerna stod kvar stegade i det delade
+indexet då syskonets fönster öppnades. Innehållet verifierat 100 % intakt
+(ledger 4 rader, syntax OK i committat tillstånd, testfil diff-identisk);
+syskonets omcommit c476efe0 konstaterar detsamma. Rättesebokförd i worklog
+med ed581390-precedensen.
+
 ## §1 Rotorsaka
 
 Feljägaren (våg 167) skriver fynd append-only utan statusfält — korrekt i

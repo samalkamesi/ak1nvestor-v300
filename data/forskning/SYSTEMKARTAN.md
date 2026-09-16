@@ -633,6 +633,52 @@ certId medlemsspecifik (hash av medlemId+år) när vakten vågas; (3) A4: datumH
 med streak-logiken; (4) B12: klientens kategorivikter antingen importeras ur
 kärnan eller kommenteras mot profilen superanalys-2026 om dubbelläget ska bort.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u1 omgång 7 — D25 referral + e-post + notiser diffad mot verkligheten)
+
+Femtonde dokvågen (uppdragstexten identisk med omgång 6:s — B8 levererat i
+898605a7 och lämnas orött; objektval efter kollisionskontroll: 32 system
+diffade efter syskonens omgångar 5–6, D22/D23 VÄNTAR kund-R2 av princip —
+D25 FRITT valt med omdöme: lägst score bland de fyra kvarstående (C19, D21,
+D24, D25) och enda systemet med öppen "driftstatus overifierad"-fråga =
+störst mätbart glapp. Syskonrace-bokföring: s9-u3 omgång 6:s sektion
+(A4+A5+B12) låg osparad i arbetsträdet vid denna dokvågs start — innehåll
+intakt och respekterat, deras rader orörda. Allt MÄTT i arbetsytan 2026-09-16
+(genomläsning av 5 lib-filer + 4 API-rutter + vbout-adaptern, env-NÄRVARO
+mätt utan att värden lästs, /etc/crontab + vercel.json, live-sonder mot
+localhost, pm2-log, grep) — aldrig worklog-läsning:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Brev-leverantören | "driftstatus (leverans, bouncar) overifierad" | **MÄTT OKONFIGURERAD**: EMAIL_LEVERANTOR/EMAIL_API_KEY/RESEND_API_KEY/SENDGRID_API_KEY/EMAIL_FROM = 0 satta i .env* (närvaro mätt, värden olästa) — skickaMejl kan ENBAST svara "köad (leverantör saknas)"; INGET brev kan ha skickats från prod-servern |
+| Mejl-cronens drivning | "cron finns" (06:30) | **ENBART Vercel-driven**: vercel.json bär /api/cron/email `30 6 * * *` (06:30 UTC); /etc/crontab mätt SAKNAR raden — Contabo kör aldrig mejl-rondan. Speglingsgap-familjen växer: vagscan+nyheter+portfölj-uppföljning FINNS på Contabo, akm3-kalibrering+vagvalidering+email SAKNAS |
+| VBOUT-leden | **saknas helt i kartan** | **KONFIGURERAD lead-väg kartan aldrig nämnt**: src/lib/vbout.ts (123 r) — adapter till kundens Vbout-automation (host-vitlista vbt.ak1nvestor.com/ssl.vbt.io + DNS-rebinding-skydd + https-tvång, kastar aldrig); kopplad i /api/email + /api/member/register + /api/fas2-ansok (kalla: medlem/fas2-ansok/prenumeration/nyhetsbrev/manuell); VBOUT_WEBHOOK_URL SATT i .env* (mätt) = den ENDAST livsdugliga e-postvägen på prod |
+| Validering + felvägar (gap 1) | "inga tester (validering av mottagaradress, felväg)" | **KODEN lever, mätt i prod**: EMAIL_RE + längdtak (e-post 254/namn 80/text 300/aktie 40) + rate-limit 10 IP/min i /api/email (232 r); sond POST ogiltig adress → 400 `"Ogiltig e-postadress."`; typade svarsstatusar 400/429/503/502, leverantörsfel = köad (ALDRIG 502). TESTER: 0 sviter (mätt) — gapet preciseras: kod ja, tester nej |
+| Notis-tak | "localStorage/50-tak enligt våg 86" | **FÖRÅLDRAT**: taket är 100 (notiser.ts:72 `lista.slice(0, 100)`) + 30 dagars åldersgolv (:55) — kartans 50-tal gäller ej |
+| Notisernas server-sida (gap 2) | "saknar server-side-lagring" | **KVARSTÅR som design** (historiken fästs i localStorage — enhetsbyte förlorar den) MEN arkitekturen är bredare än kartan: GET /api/notiser (125 r) levererar LEVANDE underlag — mätt 200 med dagens pass SHB-B.ST (deterministisk rotation) — och signal-bussen /api/signal är NotisCenters källa (portfölj-cronen publicerar dit, kodläst :57-63). Bussen mätt: lage "supabase" men "alla"-vyn bär ENDAST statisk fallback (0 äkta signaler, mätt 06:51 lokal före dagens 08:00-nyhetsrond) |
+| Underlagets vågkarta | (ej i kartan) | **vagkarta: null mätt** — rutten visar endast färsk type=vagscan-rad (design: "gammal karta hälsas aldrig som färsk"); cron/vagscan SKRIVER event (route.ts:291, kodläst) men ändå null medan B9 mätte färsk skans 05:05Z — färskhetsfönstret/konsumentkedjan utreds ej här, bokförs som kö |
+| Referral-admin-vy (gap 3) | "utan uppföljningsvy i admin" | **DELVIS MOTBEVISAT**: /api/admin/konvertering mäter system_events type=referral details.framgang=true (totalt + rullande 30 d, :176-177) + utveckling-panelens "Tips-värvar"-rad — ANTAL lyckade värvar följs i admin; identitetsnivån medvetet bort (m10 AC2: ingen social graf, GDPR-design) |
+| m10 steg 2 | (våg 86-not "väntar J1-J2") | **fortfarande BYGGS EJ** (referral.ts:15 "väntar på kundens policy-uppdatering J1–J2") — kundväntan korrekt bokförd i kod |
+| DelaKort-konsument | nyckelfil ref-mottagare.tsx | tipskod-knappen lever i dela-kort.tsx på /forskningsbiblioteket/[ticker] (mätt kod + konsumtion); /api/referral/kod 133 r: rate-limit 6/min, kräver medlemrad (404 annars), FOMO-förbud i svaret, GET → 405 (mätt) |
+| Mallar | (inget radtal i kartan) | email-mallar.ts **274 r**: morgonMejl + veckoRapport + fas2Nudge + NYHETSBREV_MALL + MEJL_DISCLAIMER (export mätt) |
+| Köbildning i prod | overifierad | pm2-loggen: **0 träffar på POST /api/email** (ingen direktköning på logghorisonten); med leverantören osatt är "köad (leverantör saknas)" enda möjliga utfall oavsett |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| D25 | LEVER 6 → **LEVER 6** | Dubbel natur MÄTT: ytorna lever (notis-underlag 200 live, valideringsgren 400, referral POST-only 405, signal-buss lage supabase, VBOUT konfigurerad) men BREV-fUNKTIONEN kan inte verka från prod (leverantör osatt + Contabo-cronen saknas = 0 mejl möjliga); tester saknas fortfarande (gap 1), server-side-lagring kvarstår (gap 2), gap 3 delvis motbevisat. E33/B14-precedensen: kunskap tillförd, inga kod/testgap stängda eller öppnade — score orörd. LEVER kvarstår: notiscentern + referral + kö-kontraktet är fungerande ytor; riktigt utskick väntar kundsetup (kodens setup-box är checklista) — ingen poängrörelse |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **email-cronen speglas till /etc/crontab**
+(06:30 UTC = 08:30 lokal) — speglingsfamiljen (akm3-kalibrering + vagvalidering
++ email) samlas i ETT crontab-beslut, samma kö som B9:s vagscan-not; (2) **kundsetup
+för brev-leverantör** (Resend/SendGrid-konto + domänverifiering + env) är kundäga —
+email-sandare.ts:6-28 är färdig checklista; (3) **VBOUT-driften loggbevisas** —
+webhook är satt men 0 synliga sändningar i pm2-loggen: har något lead nått
+Vbout? (auditråd eller leverantörens dashboard); (4) **vagscan-eventets färskhet
+i /api/notiser** utreds (vagkarta null trots färsk skans + skrivande cron —
+notiskedjan återkopplar ej, konsumentfynd kopplat till B9); (5) notis-takets
+dokumentation 50→100 rättad i detaljblocket här.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -661,7 +707,7 @@ kärnan eller kommenteras mot profilen superanalys-2026 om dubbelläget ska bort
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
-| D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | E-post/notiser utan tester; driftstatus overifierad |
+| D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
@@ -684,7 +730,9 @@ diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
 poängrörelser; u3 omgång 5 (09-16) diffade B13/B11/B10 utan poängrörelser;
 u3 omgång 6 (09-16) diffade A4/A5/B12 utan poängrörelser — två motbevisade gap
 (A4), ett skärpt säkerhetsgap + besvarad certId-fråga (A5) och en inverterad
-delningsbild (B12), allt med egna mätbevis).
+delningsbild (B12), allt med egna mätbevis; u1 omgång 7 (09-16) diffade D25
+utan poängrörelse — brev-leverantören mätt OKONFIGURERAD, VBOUT-lead-leden
+tillagd i kartan, notis-taket rättat 50→100).
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -1451,22 +1499,44 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   status syns ej för eleven (endast toast); (3) Fas 3-certifikatets
   äkthetsverifiering (offentlig kontroll-URL) saknas.
 
-## D25. Referral + e-post + notiser — LEVER — 6/10
+## D25. Referral + e-post + notiser — LEVER — 6/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 7): diffad mot verkligheten —
+dubbel natur mätt. YTORNA lever (GET /api/notiser 200 med levande underlag,
+valideringsgren 400 mätt i prod, /api/referral/kod POST-only, signal-buss
+lage supabase). Men BREV-FUNKTIONEN kan inte verka: 0 leverantörs-variabler
+satta i .env* (mätt) + /etc/crontab saknar email-raden (ENBART Vercel 06:30
+UTC) = inga brev kan ha skickats från prod-servern. STORFYND: VBOUT-leden
+(123 r, webhook SATT) saknades helt i kartan — kundens lead-automation är
+den enda konfigurerade e-postvägen. Notis-taket rättat 50→100. Gap 3 delvis
+motbevisat (admin mäter lyckade värvar). Score 6 orörd. Se diff-tabellen i
+UPPDATERING-sektionen.*
 
 - **Vad:** Referral-koder (m10-mönstret: system_events-rader, senaste-vinner,
-  bevisad lagringsväg utan DDL), e-post-sändare + mallar, notiscenter +
-  notishistorik.
-- **Nyckelfiler:** src/lib/referral.ts (301 r), src/app/api/referral/kod,
-  src/components/ak1a/ref-mottagare.tsx, src/lib/{email-sandare (185 r),
-  email-mallar}.ts, src/app/api/{email,cron/email}, src/lib/notiser.ts
-  (363 r), src/components/ak1a/notis-center.tsx.
+  bevisad lagringsväg utan DDL), e-post-sändare + mallar + VBOUT-lead-adapter,
+  notiscenter + notishistorik + signal-buss-underlag.
+- **Nyckelfiler:** src/lib/referral.ts (301 r), src/app/api/referral/kod
+  (133 r), src/components/ak1a/{ref-mottagare,dela-kort}.tsx (tipskod-knappen
+  på /forskningsbiblioteket/[ticker]), src/lib/{email-sandare (185 r),
+  email-mallar (274 r — morgon/vecka/fas2nudge/nyhetsbrev + disclaimer),
+  vbout (123 r)}.ts, src/app/api/{email (232 r),cron/email (232 r)}, src/lib/
+  notiser.ts (363 r), src/app/api/notiser (125 r), src/components/ak1a/
+  notis-center.tsx.
 - **Observation:** Referral är mallren (dokumenterat mönster som variabel-
-  panelen byggde på). E-post: mallar + sändare + cron finns men driftstatus
-  (leverans, bouncar) overifierad. Notiser: localStorage/50-tak enligt våg 86.
-- **GAP:** (1) inga tester för e-post-sändare (validering av mottagaradress,
-  felväg); (2) notiser saknar server-side-lagring (enhetbyte = förlorad
-  historik); (3) referral-utlösning (vem fick vilken kod) utan uppföljning-
-  vy i admin.
+  panelen byggde på); m10 steg 2 BYGGS EJ (väntar kundens policy J1–J2,
+  referral.ts:15). E-post: mallar + sändare + cron finns men leverantören är
+  OKONFIGURERAD (mätt 09-16 — alla brev köas, kundsetup är checklan i
+  email-sandare.ts:6-28); VBOUT-leden däremot SATT. Notiser: localStorage
+  med 100-tak + 30 dagars golv (mätt; våg 86:s 50-tal föråldrat), servern
+  levererar levande underlag + signal-bussen.
+- **GAP:** (1) 0 testsviter för e-post-leden (VALIDERINGEN + felvägarna
+  finns i kod och är mätta i prod — 400/429/503/502 — men otästa); (2) notiser
+  saknar server-side-lagring av historiken (enhetbyte = förlorad fästning;
+  underlaget + signalerna återkommer); (3) referral-uppföljning i admin =
+  ANTAL lyckade värvar (totalt + 30 d, motbevisat gammalt gap) men ingen
+  identitetsnivå — medvetet GDPR-val; (4) NYTT: mejl-cronen ENBART
+  Vercel-driven (Contabo-crontab saknar raden) + vagkarta-null i
+  notis-underlaget trots skrivande vagscan-cron (kö till huvudagenten).
 
 ## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13 · mätt 2026-09-16)
 

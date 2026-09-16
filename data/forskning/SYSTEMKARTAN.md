@@ -1127,6 +1127,50 @@ rättas till pumpor-daemonen som drivkälla (dokumentationsprecision, ingen
 kodändring); (2) E28 gap 1 (JSON-reparatur) är motorns enda rörliga poängväg;
 (3) E30 demoklient-fixturen (AKM2Resultat) fixas innan B2B-paketet hämtas fram.
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u1 omgång 10 — E35 ÅTERDIFFAD: kontroll 11 + GRÖN vaktdrift + tmp-falsklarmet)
+
+Tredje E35-passningen (första 09-15, återdiff 09-16 13:20 av u3 omgång 8) —
+andra varvets regel "börja där verkligheten rört sig mest sedan senaste
+passningen" pekar hit igen: s8-vågen (1f43c167 + 88c6fe26 + 4c77d419,
+22:52–23:02Z natten till 09-17) levererade en hel kontrollvåg I E35:s
+värld efter senaste mätningen. Syskonrace avbokat: s9-u2 (E32+C15,
+ebb36da1) och s9-u3 omgång 10 (E27+E28+E30, 826de54c) landade committade
+under detta fönster — deras sektioner orörda; u3:s E30-rad bokför YTA-
+kurens B2B-sida, här mäts VAKTSYSTEMETS sida av samma kur. Allt MÄTT i
+arbetsytan 2026-09-17 ~01:2x lokal (egen full vaktkörning, tre svitkörningar,
+tsc via projektbinären ×2, prod-sonder loopback+HTTPS, ps, ls, grep,
+git log) — aldrig worklog:
+
+| Mått | Kartan (E35-diff 09-16 13:20) | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| Kontrollantal | 10 kontroller | **11** — KONTROLL 11 Typbaslinjen: tsc via PROJEKTBINÄREN (node_modules/typescript/bin/tsc — ALDRIG npx, deployfönstrets dummy-paket-fälla), budget 120 s, klassning enligt falsklarmsdoktrinen (typfel = baslinjebrott-FEL · node_modules-fel = MANUELL deploy-transient K2/K3 · saknad binär/timeout = MANUELL OMÄTT, aldrig tyst PASS) — kodad i 1f43c167; rotorsakan: typnollen var mekanisk ENDAST vid commit, merge-committar passerar pre-commit-grinden ⇒ dagligt 07:02-bevis i stället för commit-antagande |
+| kvalitetsvakt.mjs | 36 748 byte | **55 942 byte** (mätt): arProYta() normaliserar route-gruppssegment FÖRE yta-match (rad 333 — globen ^src/app/pro/ var död sedan födseln, pro-rutterna bor i (huvud)/pro/**) + A8-ETIKETT-UNDANTAG med räknare + transparent rapportrad (rad 396–451; o26-doktrinen: vakten döljer aldrig) |
+| Vaktrapport | 4 MANUELLA-träffar (s8-u3:s utgångsläge) | **11/11 PASS · FEL 0 · MANUELLA 0 · GRÖN — EGEN full vaktkörning 23:22:01Z** (exit 0; s8-u3:s 22:55:18Z-körning likaså GRÖN, rapportfil mätt före omkörning); YTA-undantag 4 träffar + A8-etikett 1 redovisas TRANSPARENT i sektion 3; FOMO-texten kurerad i superanalys.tsx ("Efter detta steg låses" — 1 träff, mätt) |
+| **NYTT FALSKLARM-FYND** | — | **tmp_demoklient_koll.ts LÄCKT i trädet** (01:19, untracked, mätt): genererad av testa-demoklient-data.mjs vars finally-unlink (rad 131–133) ej överlever SIGKILL (sviten dödades mitt i — fabriks-/tidsgränsklassen); följder MÄTTA I KEDJA: kvalitetsvaktens sektion 11 FAIL (GUL 23:19Z) + egen tsc-körning exit 1 (TS2345 i tmp-filen rad 64) + tsc-sviten 9/2 FAIL = pre-commit-grinden hade blockerat ALL commit; roten är MÄTKOLLISION (trasigt arbetsTRÄD, ej kodbrott — vakten mätte äkta fel med fel rot); kur: filen raderad (dess egna header "Raderas efter körning") ⇒ tsc 0 + vakt 11/11 GRÖN + svit 11/11 PASS (tre egna återmätningar) |
+| Prod-stil-läge (köpost 5 från omg 8) | ostylat-läget pågick | **GRÖNT**: hem 200 + första CSS-chunk 200 på loopback + hem 200 HTTPS (egna sonder); pulsvakt lever:true · statiskStatus "gron" · varv 330 · PID 1207077 (ps) — omg 8:s båda verifieringskrav uppfyllda |
+| Deploy-blockad (gap 3) | "EXEKTERAT — ingen grind stoppade vägen" | **ARTEFAKT-KLASSEN MEKANISKT STOPPAD**: prod-synk.mjs importerar verifieraArtefakt (rad 50) och mäter FÖRE pm2-restart (rad 236–241: status ≠ gron ⇒ deploy_stoppad_artefakt — EJ omstart, EJ DEPLOYAD-markör) + kraschvakt.mjs ärlighetsgrind (rad 39+187: friskEfter = varm() && artefakt===gron); MEN vaktrapports-stoppet (RÖD kvalitetsrapport ⇒ deploy-stopp) saknas fortfarande — gapet NARROWAT, ej stängt |
+| Testsviter | 54 | **69** (ls mätt) — aggregator-gapet VÄXER |
+| Ny svit | — | testa-kvalitetsvakt-tsc.mjs **11/11 PASS egen körning** (efter tmp-städningen; första körningens 2 FAIL VAR fyndet — sviten kör vakten och fångade det smutsiga trädet korrekt = sviten gör sitt jobb) |
+| Motorvalidering | 107/0/0 | **107 PASS / 0 FAIL / 0 SKIP (7,7 s, EGEN körning)** |
+| Motorregistret | fruset 09-03 | **fortfarande fruset** — efff399c 2026-09-03 (git mätt; 14 dagar) |
+| Övrigt bälte | — | granssnittsvakt.mjs 36 748 byte oförändrad (deployklassningen kvar); testa-mimosa-paritet.mjs på disk (metodfångsten lever) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E35 | LEVER 8 → **LEVER 8** | Kapabilitetstillväxt på PLUS-sidan (kontroll 11 gör typbaslinjen DAGLIGT mekanisk, vaktkörning 11/11 GRÖN med 0 manuella, artefaktgrind kodad i deployvägen, YTA/A8/FOMO-kurerna stänger falska träffar) mot tre MINUS-vikter: aggregator-gapet växer (69 sviter = fortfarande provtagning), motorregistret fruset 14 dagar, och dokvågen fångade ett NYTT öppet gap — tmp-läckage-klassen (SIGKILL-dödad svit lämnar tmp_*.ts som bryter baslinjen OCH commit-grinden; falsklarmsdoktrinens gråzon bevisad i skarpt läge). Netto E33/B14-precedensen: kunskap tillförd, inget namngivet gap FULLT stängt (artefakt-klassen ja, vaktrapport-stoppet nej) — ingen poängrörelse |
+
+Snittscore **7,5** (285 poäng / 38 system — oförändrad av denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **tmp-skydd mekaniseras** — vaktens
+sektion 11 och/eller pre-commit-grinden städar eller ropar ut
+tmp_*_koll.ts i trädet FÖRE mätning (motorvalideringens tmp sköter sig
+inom sin egen process — oskadad); annars kan varje SIGKILL-dödad
+svitkörning låsa ALLA commits tills manuell städning (idag: dokvågens
+handgrepp); (2) aggregatorn (54 → 69 sviter på två dygn — provtagningen
+glesare för varje dag); (3) motorregistret 14 dagar fruset; (4) gap 3:s
+sista halva: vaktrapports-stopp i deployvägen (artefaktklassen stoppad,
+RÖD kvalitetsrapport blockerar fortfarande ej).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1166,7 +1210,7 @@ kodändring); (2) E28 gap 1 (JSON-reparatur) är motorns enda rörliga poängvä
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | **FLAGGA** | 7 | PROD-TÖMT 09-16 (mätt): system_events tom sedan 13:46, arkivet 09-16 07:24 = enda kopian (27,5 MB), återimport MEKANISERAD men blockerad (dedupe-läge saknas, mätt) + KURERAD ALTER v2 FÖRLORAD i clobber (commit a3756ab7 bokför leveransen men saknar filen — disk/HEAD bär V1, dubbelt underkänd; enda v2 = index-provets protokoll rad 33); DR = SQL + moln-JSON (mätt); översättningskö 320 oförändrad (kund-SQL krävs) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Vaktbältet växt: 54 sviter (+21/dygn mätt 09-16) + pulsvakt/statisk-sond/konsol/deployklassning (s8); pulsvakten FÅNGAR ett PÅGÅENDE prod-fel (12/25 chunks 404, mätt 11:12Z — läkning = prod-synkens ombygge vid RAM≥2200, 2106 MB vid mätning); motorvalidering 107/0/0 egen; kvar: motorregister 09-03, testaggregator (54 = provtagning), deploy-blockad vid RÖD (gapet EXEKTERAT av felet) |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | 11 kontroller (KONTROLL 11 Typbaslinjen: tsc dagligen mekaniskt via 07:02-pumpan, projektbinär) + 11/11 PASS · 0 manuella · GRÖN egen vaktkörning 09-17; artefakt-klassen av gap 3 mekaniskt stoppad i deployvägen (prod-synk verifieraArtefakt FÖRE pm2-restart + kraschvakt-ärlighet, kod mätt); kvar: aggregator (69 sviter = provtagning), motorregister fruset 09-03, NYTT tmp-läckage-gap (SIGKILL-dödad svit lämnade tmp_*.ts som bröt baslinjen + commit-grinden, mätt 09-17), vaktrapports-stopp i deploy saknas |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning mätbevisad i kod (o27+o31; LCP 5 542→4 360 ms på /, o27 EFTER) + vilande facit på JS-friskt bygge (o32); kvar: inga egna tester, /studio-EFTER obokförd, språkresolvens-CLS intermittent, sökindex-cadans |
 
@@ -2567,7 +2611,21 @@ hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
   täckning 12/44 → 44/44 (sökvägslista komplett); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
-## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u1 omgång 10 — tredje passningen):
+KONTROLL 11 Typbaslinjen tillkommen (tsc via projektbinären, dagligen
+07:02 av vaktpumpan, falsklarmsklassning; s8-u1 1f43c167) + YTA-kuren
+arProYta() och A8-ETIKETT-UNDANTAG kodade (kvalitetsvakt.mjs 55 942 byte);
+EGEN vaktkörning 11/11 PASS · FEL 0 · MANUELLA 0 · GRÖN (23:22:01Z);
+prod-stilläget GRÖNT (omg 8:s köpost 5 verifierad: hem 200 + CSS-chunk 200
++ HTTPS 200, pulsvakt grön varv 330); artefakt-klassen av gap 3 mekaniskt
+stoppad i deployvägen (prod-synk verifieraArtefakt FÖRE pm2-restart +
+kraschvakt-ärlighetsgrind, kod mätt) — vaktrapports-stoppet återstår;
+sviter 54 → 69; NYTT GAP (5): tmp-läckage-klassen — SIGKILL-dödad
+svitkörning lämnade tmp_demoklient_koll.ts i trädet som bröt typbaslinjen
+OCH pre-commit-grinden (mätt i kedja, kurat + återmätt grönt ×3).
+Score 8 orörd (E33/B14). Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 8 — andra varvets första
 återdiff): vaktbältet har vuxit KRAFTIGT på ett dygn — 33 → **54
@@ -2597,11 +2655,12 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
 2026-09-11; gällande skillnader se diff-tabellen i UPPDATERING
 2026-09-15 högt upp i filen.*
 
-- **Vad:** Kvalitetsvakten (10 kontroller över hela sajten: varumärke,
-  JSON, länkar, kursdata, sitemap, motorer, åäö, siffror — skriver
+- **Vad:** Kvalitetsvakten (11 kontroller över hela sajten: varumärke,
+  JSON, länkar, kursdata, sitemap, motorer, åäö, siffror, typbaslinje —
+  kontroll 11 till 2026-09-17; skriver
   kvalitetsrapport-SENASTE.md + RESULTAT_JSON), motorvalidering (42 motorer,
-  determinism/kontraktskontroller), 54 testsviter i verktyg/ (mätbart
-  2026-09-16; 33 vid 09-15-mätningen), pre-commit-grinden (tsc-0 +
+  determinism/kontraktskontroller), 69 testsviter i verktyg/ (mätbart
+  2026-09-17; 54 vid 09-16-mätningen), pre-commit-grinden (tsc-0 +
   R2-filblockad vid varje commit),
   verktygsbältet (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs),
   cron-kvalitet 07:00, DRIFTSBOKEN-koppling.
@@ -2625,9 +2684,16 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   vaktrapport — grinden stoppar commit-nivån men ingen blockerar deploy;
   EXEKTERAT 2026-09-16 (mätt): .next-skadan nådde prod som kundsynligt
   stil-lös-fel (12/25 chunks 404) medan pulsvakten larmade högprio — ingen
-  grind stoppade vägen; (4) STÄNGDA:
+  grind stoppade vägen; NYANSERAT 09-17: artefaktklassen stoppas NU
+  mekaniskt (prod-synkens verifieraArtefakt FÖRE pm2-restart +
+  kraschvaktens ärlighetsgrind, kod mätt) — vaktrapports-stoppet
+  återstår; (4) STÄNGDA:
   netnet+MÖS röda (2026-09-13, 107/0/0), testa-b2b-grind trasig (kör
-  GRÖNT igen 2026-09-15 — se sidofynd E30-revision ovan).
+  GRÖNT igen 2026-09-15 — se sidofynd E30-revision ovan); (5) NYTT 09-17:
+  tmp-läckage-klassen — SIGKILL-dödad svitkörning lämnar tmp_*_koll.ts i
+  trädet som bryter typbaslinjen OCH pre-commit-grinden (mätt: en läcka
+  låste ALL commit-tillstånd; vakt/svit/grind saknar tmp-skydd — köpost 1
+  i UPPDATERING-sektionen).
 
 ## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-16)*
 

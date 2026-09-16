@@ -713,6 +713,67 @@ D21:s lasMedlemSession-mönster — fyra rutter mätt som referens; (3) vill
 gap 1 stängas formellt: dokumentera enkelriktningen som beslut i
 detaljblocket (i dag bärt av kodens vaghuvud).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 7 — C19 + D24 diffade mot verkligheten; D21-korsvalidering)
+
+Sjunde u3-dokvågen och spårets SLUTSTYCKE: med C19 + D24 är ALLA 36
+diffbara system diffade (38 − D22/D23 som VÄNTAR kund-R2) — kartans
+första FULLSTÄNDIGA diff-cykel sedan K1-inventeringen 2026-09-11.
+Kollisionsbokföring: D21 var denna dokvågs tredje mätobjekt men togs av
+syskonet s9-u1 omgång 8 (6fcd6621) mitt under pågående mätning — deras
+sektion orörd, D21 lämnas åt dem; mina oberoende mätningar FÖRE
+commit-upptäckten (svit 13/13 egen körning exit 0, medlem-progress.ts
+478 r, lasMedlemSession + rotationsförnyelse + 401 + 429 kodläst i
+progress-rutten, deterministiska nycklar quiz:slug:kap:i) bekräftar
+deras fynd EXAKT — se korsvalideringen nedan. Allt MÄTT i arbetsytan
+2026-09-16 (kodläsning av tracer/cookie-consent/trafik-rapportor/
+globalt-skal/kurs-access + tre fas2-rutter, grep, live-sonder mot
+localhost, node-läsning av siffror.json) — inte worklog-läsning:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| C19 tester (gap 1) | "inga tester" | **bekräftad mätt**: 0 sviter för tracer/trafik/konvertering/dash/eko i verktyg/ (grep) |
+| C19 alarm-tröskel (gap 2) | "6 steg mäts men ingen automatisk alarm-tröskel" | **bekräftad mätt** (0 larm-/tröskelträffar i konverterings-panelen) — men panelens kontrakt är bredare än kartan: SEX STEG · NOLL NYA SPÅR (P6) + P4-mätkvalitet per steg (MÄTT/SKATTAD/MANUELL — luckorna skrivs ut, göms aldrig) + x-admin-password + 5-min-modulmemo |
+| C19 GDPR (gap 3) | "kopplingen till kakmodalen manuell — spåren startar före samtycke? (verifiera gracious-defer)" | **SPLITTRAT SVAR, mätt i kod**: (a) trafik-rapportören ÄR samtyckesgated — lasCookieSamtycke (trafik-rapportor.tsx:97,153): analys-samtycke → fullt läge, annars minimalt (ENBAST path+ua, 30 % stickprov), puls kräver analys, "skapa INTE ny lagring utan analys-val"; (b) MEN PageViewBeacon (globalt-skal.tsx:243–276, "kopia ur layout.tsx") beaconar ALLTID {path, sessionId} → /api/track → user_activities i Supabase OCH skapar ak1a-session-localStorage UTAN att läsa samtycket — kakmodalens eget lagcitat (2022:482 6 kap 19–20 §§, "samtycke INNAN icke-nödvändiga cookies/localStorage") efterlevs EJ av beaconen: kartans misstanke ÄR sann för denna spårväg; (c) lokala tracern ogated (harCookieSamtycke bär "för framtida gating") men lämnar ALDRIG enheten (filhuvudkontrakt: localStorage ak1a-tracer-v1, delning endast via frivillig knapp som ännu ej byggts) |
+| C19 API-live | — | POST /api/track {} → **400** (p ≤ 200 + sessionId krävs, endast interna sökvägar i loggen, tyst nläge utan Supabase) · GET /api/trafik **200** · GET /api/tracer **405** (POST-only = den frivilliga delningsvägen) · intention GET 405 / POST {} **400** |
+| C19 P6 | "P6-disciplinen protokollförd" | **även KODDOKUMENTERAD** (mätt): del-rad.tsx ("inga klick-event, ingen pixel — bara webbläsarens egna API:er"), konverterings-panelen ("ur BEFINTLIGA källor, noll nya spår"), medlemmar-panelen ("loggas ALDRIG (P6×2)") |
+| C19 nyckeltal | tracer.ts 742 r | **742 r oförändrad** · ekosystem.ts 59 · eko-koppling.ts 581 · dashfraga.ts 291 — dashfraga-kort.tsx konsumeras av min-sida.tsx (mätt) |
+| D24 fas-set | "18/24 kurser bakom grind" | **EXAKT oförändrad mätt i kod**: FAS2_KURSER **18** + FAS3_KURSER **24** (kurs-access.ts:29–84, 274 r) — Fas-inversionen (användarens direktiv 2026-09-03): member_type free/fas2/fas3/premium/pro, fas3+ öppnar supermängden, ak1a-fas2-override lokalt; underlaget vuxit 352→**369 kurser** (siffror.json färskt mätt) utan att grindytan rörts |
+| D24 ytor | — | /fas2-ansok **200 i sv + en/ar-speglarna** + /fas3 **200** (loopback) |
+| D24 validering + admin | — | POST /api/fas2-ansok {} → **400 "Namn krävs"** + grenarna Ogiltig förfrågan/E-post/Supabase 500 (kodläst) mätta; GET /api/admin/fas2-access utan lösen → **401** |
+| D24 aktivering (gap 1) | "manuell aktivering skalar inte (sido-kö + notis finns)" | **bekräftad mätt** (POST {memberId, ge} → PATCH member_type, EN medlem per anrop) — men sido-kön är starkare än kartan visar: ansökan loggas som system_event type=fas2_ansokan (syns i admin Systemevents) + content-range-räknare i rutten + VBOUT-lead vid ansökan (vbout-import rad 3, leadmiss loggas tyst — D25:s fynd bekräftat i koden) |
+| D24 elevstatus (gap 2) | "ansökningsstatus syns ej för eleven (endast toast)" | **NYANSERAD/DELVIS MOTBEVISAD**: "Din elevstatus" visas med neutral presentation på ansökningssidan (fas2-ansok.tsx:132–150, lokal läsning + automatisk hämtning vid medlemskoppling) — det som saknas är ANSÖKNINGSUTFALLET (väntar/beviljad), inte elevstatusen |
+| D24 cert (gap 3) | "äkthetsverifiering (offentlig kontroll-URL) saknas" | **bekräftad mätt**: fas3-cert.tsx bär stapel-id:n (grund/praktik/etik/cert) — ingen publik verifierings-URL, hash eller register bakom certifikatet |
+| D24 rate-limit | (ej omnämnt i kartan) | **NYTT FYND**: /api/fas2-ansok saknar rate-limit helt (grep rate/throttle/429 = 0 träffar) — öppen POST-yta med Supabase-skrivning; kontrast mot /api/email (10 IP/min) och /api/referral/kod (6/min) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| C19 | LEVER 7 → **LEVER 7** | Gap 1+2 bekräftade mätta; gap 3 delat: samtyckesgating KODAD för trafik-rapportören (motbevisat) men PageViewBeacon sänder före samtycke (SKÄRPT — spår skrivs till Supabase + sessions-localStorage skapas före varje samtyckesval, mot kakmodalens eget lagcitat) och tracern förblir ogated-lokal — kunskap tillförd, inga kod/testgap stängda (E33/B14-precedensen) |
+| D24 | LEVER 8 → **LEVER 8** | 18/24 exakt + ytor + validerings-/admin-grindar mätta; gap 1 bekräftad (men sido-kön starkare: system_events + VBOUT), gap 2 nyanserad (elevstatus visas, ansökningsutfall saknas), gap 3 bekräftad, nytt rate-limit-gap — inga gap stängda, ingen poängrörelse |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg).
+
+**Korsvalidering D21 (syskonet s9-u1 omgång 8:s sektion orörd):** mina
+mätningar hann före deras commit-upptäckt och bekräftar fynd för fynd —
+sviten 13/13 GRÖN i egen körning (exit 0), medlem-progress.ts 478 r,
+progress-rutten lasMedlemSession + rotationsförnyelse + 401 "Inloggning
+krävs." + rate-limit per authId 429 (kodläst), och idempotensnycklarna
+quiz:slug:kap:i / kursklar:slug / stjarna:slug med "bodyns nyckel/varde/
+xp läses ALDRIG" — deras svit-detalj (import ENGÅNGS 409, importtak)
+bygger på samma kontrakt. D21 lämnas helt åt deras sektion.
+
+Kö till huvudagenten från fynden: (1) **PageViewBeacon samtyckesgates**
+(globalt-skal.tsx + layout-kopian) — läs ak1a-cookie-samtycke som
+trafik-rapportören gör, annars skrivs user_activities-rader +
+sessions-localStorage före varje samtyckesval; (2) **rate-limit i
+/api/fas2-ansok** (färdigt mönster i /api/email: 10 IP/min); (3) GDPR-
+export/radering i UI lever som D21/D20-gemensamt gap (syskonets kö);
+(4) konverteringstrattens alarm-trösklar (C19 gap 2) när panelen växer.
+
+**Med denna dokvåg är SYSTEMKARTANS diff-cykel SLUTFÖRD: 36/36 diffbara
+system mätta mot verkligheten i 17 dokvågar (2026-09-15 → 2026-09-16);
+D22/D23 väntar kund-R2. Nästa dokvåg = andra varvet — börja där
+verkligheten rört sig mest sedan första passningen.**
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -735,12 +796,12 @@ detaljblocket (i dag bärt av kodens vaghuvud).
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 22 kvartalsfiler: 12 bolagspaket + 10 kalendrar, mätt 09-16); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Aspektsystemet (v150) i kod men saknat i kartan; kvartalsserien v152: kalendrar+bolagspaket i granskningskön, /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
-| C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
+| C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (mätt 09-16); GDPR-gatingen KODAD för trafik-rapportören men PageViewBeacon sänder före samtycke (mätt 09-16 — spår till Supabase + sessions-localStorage före varje val, mot kakmodalens eget 2022:482-citat); P6 även koddokumenterad |
 | D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas i UI (mätt 09-16); replay-skyddet MOTBEVISAT (importtak + engångs-import, kodat sedan våg 87); 4 rutter ALLA vaktade (mätt 09-16); sviter 13/13 + 17/17 grön egen mätning |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
-| D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
+| D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA i kod (mätt 09-16, underlag 369 kurser); aktivering EN medlem/anrop men sido-kön starkare än kartan (system_events + VBOUT-lead); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (nytt, mätt) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
@@ -769,7 +830,12 @@ utan poängrörelse — brev-leverantören mätt OKONFIGURERAD, VBOUT-lead-leden
 tillagd i kartan, notis-taket rättat 50→100); u1 omgång 8 (09-16) diffade
 D21 utan poängrörelse — replay-skyddet MOTBEVISAT (importtak + engångs-
 import kodat sedan våg 87, svit-testat), fyra API-rutter ALLA vaktade
-(mätt), sviter 13/13 + 17/17 grön egen mätning, GDPR-gapet kvarstår.
+(mätt), sviter 13/13 + 17/17 grön egen mätning, GDPR-gapet kvarstår;
+u3 omgång 7 (09-16) diffade C19/D24 utan poängrörelser — samtyckesgatingen
+delvis motbevisad + PageViewBeacon-fyndet (sänder före samtycke), fas-seten
+18/24 exakta i kod, nytt rate-limit-gap i /api/fas2-ansok — och därmed är
+ALLA 36 diffbara system diffade (fullständig diff-cykel; D22/D23 väntar
+kund-R2).
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -1408,22 +1474,39 @@ fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
   mellan deploys — mjukare i praktiken: verktyget körs vid kurstillägg
   (sok-index.json committad färsk 2026-09-15) men ingen mekanisk tvingan.
 
-## C19. Trafik, spår & konvertering — LEVER — 7/10
+## C19. Trafik, spår & konvertering — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 7): gap 3 BESVARAT med delat
+utfall — trafik-rapportören ÄR samtyckesgated i kod (lasCookieSamtycke i
+trafik-rapportor.tsx:97,153: fullt läge endast vid analys-samtycke, annars
+minimalt läge ENBAST path+ua; puls kräver analys; "skapa INTE ny lagring
+utan analys-val"), MEN PageViewBeacon (globalt-skal.tsx:243–276 + kopian i
+layout.tsx) beaconar {path, sessionId} → /api/track → user_activities i
+Supabase OCH skapar ak1a-session-localStorage UTAN att läsa samtycket —
+kakmodalens eget lagcitat (2022:482 6 kap 19–20 §§, samtycke INNAN
+icke-nödvändiga cookies/localStorage) efterlevs EJ av beaconen; kur = lås
+beaconen på samma samtyckesnyckel. Lokala tracern ogated (harCookieSamtycke
+bär "för framtida gating") men lämnar aldrig enheten. P6 även koddokumen-
+terad. Live mätt: track POST {} → 400 · trafik 200 · tracer 405 (POST-only
+= frivillig delning) · intention 400/405.*
 
 - **Vad:** Tracern (intresseprofil), trafikrapportör, DNA-blockering,
   konverteringstratt i 6 steg + intentionsmätning, "noll nya spår"-regeln
   (P6), trafik & säkerhetsvyer i admin.
-- **Nyckelfiler:** src/lib/tracer.ts (742 r), src/lib/ekosystem.ts +
-  eko-koppling.ts, src/app/api/{track,trafik,konvertering/intention,tracer,
-  konvertering}/**, src/components/ak1a/{trafik-rapportor,trafik-status-rad,
-  dashfraga-kort}.tsx, src/lib/dashfraga.ts.
+- **Nyckelfiler:** src/lib/tracer.ts (742 r, oförändrad mätt 09-16),
+  src/lib/ekosystem.ts + eko-koppling.ts, src/app/api/{track,trafik,
+  konvertering/intention,tracer,konvertering}/**, src/components/ak1a/
+  {trafik-rapportor,trafik-status-rad,dashfraga-kort}.tsx, src/lib/
+  dashfraga.ts — samt cookie-consent.tsx (samtyckesgating) + globalt-skal.
+  tsx (PageViewBeacon).
 - **Observation:** Tracern matar eko-kopplingen (har numera komponent-
   konsumenter: assistent-panel + /api/eko — motorregistrets "noll
-  konsumenter" från 2026-09-03 är föråldrat). P6-disciplinen protokollförd.
-- **GAP:** (1) inga tester; (2) konverteringstrattens 6 steg mäts men ingen
-  automatisk alarm-tröskel; (3) GDPR-art-13-kopplingen till kakmodalen
-  (cookie-consent) är manuell — spåren startar före samtycke? (verifiera
-  gracious-defer).
+  konsumenter" från 2026-09-03 är föråldrat). P6-disciplinen protokollförd
+  OCH koddokumenterad (mätt 09-16); konverteringspanelen bär P4-mätkvalitet
+  per steg (MÄTT/SKATTAD/MANUELL).
+- **GAP:** (1) inga tester (mätt 09-16: 0 sviter); (2) alarm-trösklar för
+  tratten saknas (mätt 09-16); (3) PageViewBeacon sänder spår FÖRE
+  samtycke (mätt 09-16 — se uppdatering; trafik-rapportören är kurmallen).
 
 ---
 
@@ -1527,21 +1610,38 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   (2) när aktiverad: speglar en/ar för tier-sidorna saknas (svenska-only);
   (3) tier-CTA:n mot betalflödet (D22) när det finns.
 
-## D24. Fas 2/3-access — LEVER — 8/10
+## D24. Fas 2/3-access — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 7): fas-seten MÄTTA EXAKTA i
+kod — FAS2_KURSER 18 + FAS3_KURSER 24 (kurs-access.ts:29–84) medan
+underlaget vuxit till 369 kurser; grindytan oförändrad sedan
+Fas-inversionen (direktiv 2026-09-03). Alla ytor 200 mätta (sv + en/ar-
+speglar + /fas3); valideringsgrenar 400 + admin-grind 401 mätta live.
+Gap 1 bekräftad men sido-kön STARKARE än kartan: ansökan loggas som
+system_event type=fas2_ansokan (syns i admin Systemevents) + content-range-
+räknare + VBOUT-lead vid ansökan. Gap 2 nyanserad: "Din elevstatus" VISAS
+på ansökningssidan (fas2-ansok.tsx:132–150) — det som saknas är
+ANSÖKNINGSUTFALLET (väntar/beviljad). Gap 3 bekräftad (stapel-id:n, ingen
+publik verifiering). NYTT GAP (4): /api/fas2-ansok saknar rate-limit helt
+(mätt; kontrast /api/email 10 IP/min, /api/referral/kod 6/min) — öppen
+POST-yta med Supabase-skrivning.*
 
 - **Vad:** Ansökningsflöde för Fas 2 (fördjupningskurser) och Fas 3
   (professionsnivå), admin-aktivering per medlem, certifikat för Fas 3,
-  tier-status i klienten, 18/24 kurser bakom grind.
+  tier-status i klienten, 18/24 kurser bakom grind (mätt exakt 09-16).
 - **Nyckelfiler:** src/components/ak1a/{fas2-ansok,fas2-gate,fas3-cert}.tsx
   + spegel/spegel/fas2-ansok-{ar,en}.tsx, src/app/(huvud)/{fas2-ansok,fas3},
   src/app/api/{fas2-ansok,admin/fas2-access}, src/lib/tier-status.ts,
-  src/lib/kurs-access.ts (grindkärnan).
+  src/lib/kurs-access.ts (grindkärnan, 274 r).
 - **Observation:** Grindkorrekt i både UI och API; admin-yta för aktivering
-  finns; certifikatutfärdning kopplad till Fas 3.
-- **GAP:** (1) manuell aktivering skalar inte vid många ansökningar
-  (sido-kö + notis till admin finns, men inget bulkflöde); (2) ansöknings-
-  status syns ej för eleven (endast toast); (3) Fas 3-certifikatets
-  äkthetsverifiering (offentlig kontroll-URL) saknas.
+  finns; certifikatutfärdning kopplad till Fas 3; speglarna lever (200
+  mätta i alla tre språk).
+- **GAP:** (1) manuell aktivering skalar inte vid många ansökningar (EN
+  medlem per anrop mätt — men system_events-kön + VBOUT-lead fångar varje
+  ansökan); (2) elevstatus visas men ANSÖKNINGSUTFALLET syns ej för eleven
+  (endast toast); (3) Fas 3-certifikatets äkthetsverifiering (offentlig
+  kontroll-URL) saknas; (4) rate-limit i /api/fas2-ansok saknas (nytt,
+  mätt 09-16).
 
 ## D25. Referral + e-post + notiser — LEVER — 6/10 *(uppdaterad 2026-09-16)*
 

@@ -1,4 +1,4 @@
-# O21 — VAKTNÄTETS EGEN HÄLSA (s8-u2, spår 8 KVALITET & SÄKERHET)
+# O22 — VAKTNÄTETS EGEN HÄLSA (s8-u2, spår 8 KVALITET & SÄKERHET)
 
 **Datum:** 2026-09-16, fönster 05:40–06:0x lokal tid (03:4x–04:0x Z).
 **Agent:** fabriksbarn s8-u2 i manifest auto-s8-1789530300719 (VAKT-rollen).
@@ -13,6 +13,13 @@ rotorsaker hittades; en KURAD i denna våg, en MÄTT + BEVISAD + bokad.
 
 ## §0 Syskollisionskoll
 
+**NUMMERNOT:** detta protokoll committades först som
+o21-vaktnat-halsa-s8.md (082350e2, 06:1x) — syskonet s8-u1 landade sitt
+o21-skalfri-verktygsskal-s8.md därefter (9a44ab46) utan namnkontroll;
+jag viker numret och har döpt om mitt till o22 (s7-u4:s o19→o20-
+renommé + u1:s o18-not-precedens: serien skall vara unik, den aktiva
+agenten städar). Sektionen nedan skrevs FÖRE omdöpet.
+
 Manifestets syskon s8-u1 + s8-u3 dispatchades samma fönster (05:55,
 pm2-loggen) med samma generiska uppdragstext. Mina filer är exklusivt
 mina: data/infra/konfig-referens/crontab.reference (orörd sedan
@@ -21,7 +28,11 @@ utdata), detta protokoll (o21 ledigt vid ls-kontroll — u1:s o18-not-
 precedens tillämpad) + worklog-append (delad fil — skrev + committade i
 ett fönster, s2-u2-läxan). Syskonen s7-u1 (redispatch, 570beaac) + prod-
 synkens RAM-kö respekterade: inga tunga körningar från denna våg
-(kvalitetsvakten ~10 s, alla övriga kommandon läsningar).
+(kvalitetsvakten ~10 s, alla övriga kommandon läsningar). Eftertext:
+s8-u1:s commit svepte ÄVEN med kvalitetsvaktkörningens subprocess-utdata
+(validera-motorer.mjs-appendet 107 PASS/0 FAIL/0 SKIP i
+data/rapporter/motorervalidering-2026-09-02.md) — korrekt data, fel
+ägare i historiken; noterat här för spårbarheten.
 
 ## 1. FYND 1 — konfigintegritetsvaktens falsklarm var 10:e minut (KURAD)
 

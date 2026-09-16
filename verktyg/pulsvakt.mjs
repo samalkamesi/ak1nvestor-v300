@@ -52,6 +52,12 @@
  *
  * Designregel: ALLT i try/catch — processen får ALDRIG krascha (pm2
  * superviserar ändå, men tyst överlevande är billigare än omstarter).
+ *
+ * ENSKILD INSTANS (våg 179): PID-låsfil data/vakten/pulsvakt.las — en
+ * andra instans (manuell start, dubbel pm2-post) avslutar sig själv;
+ * dött lås tas över; låset lyfts vid rent avslut (SIGTERM/SIGINT/exit).
+ * Överlevnad vid serveromstart: pm2-ak1a.service (enabled) → resurrect
+ * ur ~/.pm2/dump.pm2 (pulsvakt ingår). --test låser ALDRIG (KVD-läge).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -63,6 +69,10 @@ const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKTKATALOG = path.join(ROT, "data", "vakten");
 const LARMLOGG = path.join(VAKTKATALOG, "pulsvakt-larm.log");
 const STATUSFIL = path.join(VAKTKATALOG, "pulsvakt-status.json");
+// Våg 179: enskild-instans-lås (körningsdata, gitignorerad). pm2 håller sina egna
+// barn åtskilda, men en manuell `node pulsvakt.mjs` (eller dubbelstart) SKULLE ge
+// två loopar = dubbla pm2-omstartar av prod — det förbjuder vakten sig själv.
+const LASFIL = path.join(VAKTKATALOG, "pulsvakt.las");
 
 const INTERN_BAS = process.env.AK1A_PULSVAKT_BAS || "http://127.0.0.1:3000";
 const EXTERN_URL = "https://lab.ak1nvestor.com/";
@@ -160,6 +170,56 @@ function larma(niva, kalla, detalj) {
     }
   }
   console.log(`${nuIso()} LARM ${niva} ${kalla}: ${detalj}`);
+}
+
+// ── Våg 179: enskild-instans-lås (PID-fil med dödstest och takeover) ─────────
+// Endast driftläget låser (--test förblir låsfritt KVD-läge). Semantik:
+//   - ledig låsfil   → vi tar den (skriver vår PID) och äger vakten
+//   - PID i filen lever (/proc) → AVSLUTA tyst med loggrad (exit 0) —
+//     den redan körande vakten äger övervakningen
+//   - PID:död låsfil → takeover (unlink + ett nytt låsförsök)
+//   - oväntat fs-fel → hogprio-larm men STARTA ÄNDÅ (enskild instans är
+//     skydd mot dubbel omstartsrätt, inte livsuppehållning — en vägran
+//     att starta lägger prod utan vakt, vilket är värre; filens doktrin
+//     "processen får ALDRIG krascha" gäller även här)
+function lasEnskildInstans() {
+  try {
+    fs.mkdirSync(VAKTKATALOG, { recursive: true });
+    try {
+      fs.writeFileSync(LASFIL, String(process.pid), { flag: "wx" });
+      return { ok: true, togOver: false };
+    } catch (e) {
+      if (e?.code !== "EEXIST") throw e;
+      const forrPid = Number(fs.readFileSync(LASFIL, "utf8").trim());
+      if (Number.isFinite(forrPid) && fs.existsSync(`/proc/${forrPid}`)) {
+        return { ok: false, forrPid };
+      }
+      // Död ägare (krockad omstart utan cleanup) — takeover med ett försök.
+      try { fs.unlinkSync(LASFIL); } catch { /* någon hann före — wx avgör */ }
+      fs.writeFileSync(LASFIL, String(process.pid), { flag: "wx" });
+      return { ok: true, togOver: true };
+    }
+  } catch (e) {
+    larma("hogprio", "lasfil", `enskild-instans-låset kunde inte sättas: ${String(e?.message || e).slice(0, 120)} — startar ändå (fail-open)`);
+    return { ok: true, osaker: true };
+  }
+}
+
+/** Städa låsfilen VID AVSLUT — endast om den fortfarande bär VÅR pid
+ *  (takeover/erstättning skall aldrig radera efterföljarens lås). */
+function lasaAv() {
+  try {
+    if (fs.readFileSync(LASFIL, "utf8").trim() === String(process.pid)) {
+      fs.unlinkSync(LASFIL);
+    }
+  } catch { /* saknad/ersatt låsfil — inget att städa */ }
+}
+process.on("exit", lasaAv);
+for (const sig of ["SIGTERM", "SIGINT"]) {
+  process.on(sig, () => {
+    console.log(`${nuIso()} PULSVAKTEN mottog ${sig} — städar låset och avslutar`);
+    process.exit(0); // exit-hooken lyfter låsfilen
+  });
 }
 
 /** GET med tydlig timeout — returnerar {ok, status, content_type, fel}. */
@@ -485,6 +545,16 @@ if (TESTLAGE) {
     process.exit(2);
   });
 } else {
+  // Våg 179: enskild instans FÖRE loopen — en andra vakare (manuell start,
+  // dubbel pm2-post) avslutar sig själv istället för att dubblera omstarter.
+  const las = lasEnskildInstans();
+  if (!las.ok) {
+    console.log(`${nuIso()} PULSVAKTEN: redan igång (pid ${las.forrPid}) — denna instans avslutar (våg 179: inga dubbla vaktare)`);
+    process.exit(0);
+  }
+  if (las.togOver) {
+    console.log(`${nuIso()} PULSVAKTEN: tog över dött lås (föregångaren kraschade utan cleanup)`);
+  }
   huvudloop().catch((e) => {
     // Sista utvägen — ska i praktiken aldrig nås (loopen fångar allt själv).
     console.error(`${nuIso()} PULSVAKTEN OVÄNTAT STOPP: ${String(e).slice(0, 200)}`);

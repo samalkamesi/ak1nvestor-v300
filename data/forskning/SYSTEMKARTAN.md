@@ -138,7 +138,7 @@ inget duplikat här. Varje rad nedan MÄTT i arbetsytan 2026-09-15:
 | Rad | Före → Efter | Skäl (bevis) |
 |---|---|---|
 | C15 | LEVER 8 → **LEVER 8** | Läge B STÄNGT (beslut 2026-09-07 med mätdata — kartan speglade det inte) och B2-knappen lever i kod; men inga nya tester/E2E-bevis tillkom sedan 09-13 och gap (1) ersätts av B2-E2E + ködjupet. Score oförändrad 8; snittet opåverkat (284 kvar) |
-| C16 | LEVER 8 → **LEVER 8** (sidofix) | Detaljblockets påstående "publiceringsknapp i admin saknas (Läge B skulle lösa)" är MOTBEVISAT av B2-knappen (våg 82); utkastantalet "8 filer i kön" rättat till 11 + m9-ko/ 3. Inga scoreändringar |
+| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82); M9-kön ej kopplad + växer KRAFTIGT (124 Kön-filer mätt 09-16 kväll: rot 31 JSON + m9-ko 7 + granskning 53 + kvartal 31 ≈ 2,8×/dygn; 55 publicerade oförändrade; sammanställningen 09-14 åldras); schemalagd re-run saknas |
 
 Sidofynd (förs till nästa dokvåg/dispatch): C18/E32-fullrevisioner kvarstår
 som kö från u3 (talen redan rättade där); demoklient-G1 + tmp_*-städning i
@@ -239,7 +239,7 @@ JSON, ls, git log) — inte läst ur worklog:
 
 | Rad | Före → Efter | Skäl (bevis) |
 |---|---|---|
-| E34 | LEVER 8 → **LEVER 9** | DR-kedjan kvartalsövad OCH replikerbar (två operatörer: 17,7 s + 14,7 s), dumpkompletthet mekaniskt grön (markörkontrakt, sabotagebevis, egen mätning), retention mekaniserad i cron-raden, fabriksbarnets sudo gör DR-övningar autonoma (inget kundfönster); nästa övning senast 2026-12-15. Kvar: cron-koppling av markörvakten + pgpass-kuren (båda väntar huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
+| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Artefaktverifierings-GRINDEN lever i båda deploy-länkarna (svit 12/12 + frisk grön prod-mätning egen, mätt 09-16 kväll) — incidentens rot-gap STÄNGT; DR-mallen ETT KOMMANDO (dr-total 130,0 s + kirurgi-kedja 5); crontab-kurer GENOMFÖRDA (pgpass + markörvakt mätt i användar-crontaben — /etc/crontab var fel källa); kvar: hybrid-sync, ISR 12/44, Storage-restore, system_events-återimport (E33) |
 | E33 | LEVER 8 → **LEVER 8** | Fynden preciserar snarare än stänger: system_events DR-väg = moln-JSON (SQL ensam räcker ej — dokumenterat), composite-indexet mätt EJ installerat (gap 3: "oklart" → bekräftat öppet), inventory åldras manuellt, kön 320 ackumulerande. Ingen score-rörelse — kunskap tillförd, inga gap stängda |
 | E28 | FLAGGA 6 → **FLAGGA 6** | Lägesrättning med egna mätbevis: protokollen lever (4 möten sedan kartans mätning, åtgärder med innehåll, kundens mega-beslut + fulla delegation protokollförda och verkställda i vågorna 146–158) — men ordförande-JSON-fallbacken lever i senaste mötet: gap 1 kvarstår, FLAGGAN kvarstår |
 
@@ -977,6 +977,85 @@ bar tidszonsbuggen (o32 §1 18:46-notisen); (3) E37:s befintliga köer
 kvarstår oförändrade (footer-läsbarhet rond 2, språkresolvens-produktbeslut
 a/b/c, sökindex-hook i deploy).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 9 — E34 + C16 återdiffade; korsvalideringar E33/E37/A3)
+
+Nionde u3-dokvågen, andra varvets fjärde omgång. Race-bokföring först
+(s10-u3-kuren på TRE nivåer): förstavalet E33 togs av syskonet s9-u1
+omgång 9 (bdaaeacb ~19:50), andravalet A3 och tredjevalet E37 av syskonet
+s9-u2 omgång 7 (bb47685f, mätt 18:0x–18:2x UTC) — alla tre upptäckta som
+trädskiften under pågående mätning; deras sektioner orörda, systemen
+avstodna, mina oberoende mätningar bokförs som korsvalideringar nedan.
+E34 förblev FRITT (syskonets E34-diff stannade 13:21 — allt som landade
+EFTER är omätt i kartan) och blev huvudobjekt; C16 (fritt sedan 09-15,
+granskningsköns tillväxt = spårets egen kontext) genomfördes som andra
+system. Varje rad MÄTT i arbetsytan 2026-09-16 19:49–20:4x lokal
+(psql-sonder mot prod via cron-radiens exakta PGPASSFILE-mönster —
+lösenordet aldrig läst; zcat+awk på nattdumpen; egna svitkörningar; egen
+markörvaktskörning; egen artefaktmätning; egen mimosa-full-scan;
+crontab-läsning; ps/curl/ls/node) — inte worklog-läsning:
+
+| Mått | Kartan (senaste E34-diff 13:21) | Verkligheten 2026-09-16 kväll (mätning) |
+|---|---|---|
+| Artefaktverifiering (E34:s NYA gap 5) | "post-build-artefaktverifiering saknas i deploy-kedjan" | **STÄNGT I KOD + DRIFT**: verktyg/artefakt-verifiering.mjs på disk (kontrakt: VARJE /_next/static-referens i .next/server/app/*.html MÅSTE finnas på disk; gron/trasig/okand = exit 0/1/2 — mätblindhet aldrig grönt); kopplad mätt med grep: prod-synk.mjs (deploygrind FÖRE pm2-restart) + kraschvakt.mjs (ärlighetsgrind efter räddningsbygg — HTML-200 lurar varm()); svit **12/12 PASS egen körning** (lasRefs: escapade flight-JSON-referenser + %-kodad avkodning, PASS 5+8); EGEN frisk mätning av prod-artefakten: **gron**, 6 053 ms, trunkerad false |
+| Crontab-kurerna | "kvar: cron-koppling + pgpass — cron-raden bär fortfarande db-lösenordet i klartext" | **MOTBEVISAT i ANVÄNDAR-crontaben** (crontab -l mätt; tidigare dokvåger läste /etc/crontab = fel källa): 02:30-raden bär PGPASSFILE=/home/ak1a/.pgpass + pg_dump 17 + **kolla-dump-markorer.mjs --natt-appenden** (s10-u1:s kö-item 1 INLÖST) + find -mtime +30-retention — inget klartextlösenord; fyra rader: 02:30 dump · 02:40 moln-JSON · 17 1,7,13,19 gränssnittsvakt-cron · sön 03:20 arkivera-server; referensfilen maskerar DATABASE_URL (konfigvakten GRÖN) |
+| DR-kedjan | "kvartals-DR 2×" | **MALL = ETT KOMMANDO**: dr-total.mjs på disk; DRIFTSBOKEN:s DR-rad omskriven — TOTAL-RTO 130,0 s (13:51–13:53) + KIRURGI-kedja 5 (tabell-återställning 1,18 M rader, sabotage gripet, 14:09–14:13) + fyra-kedjeprotokoll 13:40 (RTO 17,3 s); nästa övning 2026-12-16; EGEN markörvaktskörning: **6/6 dumpar GRÖNA** (57,1 s; 09-16-dumpen 1 288 041 rader / CREATE TABLE 99 / COPY 101) |
+| Prod-läge | "felet PÅGICK 13:19" | **GRÖNT bestående, egen sond**: hem 200 (115 269 B) + 2/2 CSS-chunkar 200 på HTTPS; pulsvakten LEVER (PID 1207077 ps-mätt; senasteKoll färsk vid mätning; varv 24; statiskStatus gron; antalOmstarter 1 — 19:49-omstarten överlevd = rond 51:s överlevnadsbeslut DRIFTBEVISAT) |
+| Moln-arkivet | — | system-events-full-2026-09-16.json.gz lever i data/backups (repo-skyddat; syskonen 09-08/09/09/09-15) — arkivet är alltså INTE enbart /tmp-kopian |
+| Granskningskön (C16) | "11 JSON + m9-ko 3 + kvartal 22 + granskning 17" | **124 filer totalt mätt** (rot 31 JSON + 2 MD · m9-ko 7 · granskning 53 · kvartal 31) — ~2,8× på ett dygn: spår 1:s m9-serie 6/6 granskningsklar + spår 3:s branschguider (försvar/detailhandel/flyg m.fl. i rotlistan) + kvartalsseriens tillväxt |
+| Publicerat (C16) | 55 | **55 oförändrat mätt** (data/blogg/) — publiceringsvägen står still medan kön växer; GRANSKNINGSKO-SAMMANSTALLNING.md (09-14) åldras bakom tillväxten |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E34 | LEVER 8 → **LEVER 9** | Återgång till 9:an (höjd 09-15, avtagen 09-16 för incidenten): incidentens ROT-GAP är nu stängt mekaniskt — artefaktverifieringsgrinden kodad i BÅDA deploy-länkarna med svit 12/12 + frisk grön prod-mätning egen; DR-mallen ETT KOMMANDO med kirurgi-kedja och RTO-bevis; crontab-kurerna (pgpass + markörvakt) mätta GENOMFÖRDA i användar-crontaben; prod grön bestående + pulsvakt-överlevnad driftbevisad. Kvar: hybrid-sync, ISR 12/44, Storage-restore, system_events-återimporten (E33:s FLAGGA — beslutet huvudagentens) |
+| C16 | LEVER 8 → **LEVER 8** | Kön växer KRAFTIGT (44 → 124 filer på ett dygn, ~2,8×) medan publiceringen står på 55 — gapet "kön ej kopplad + växer" SKÄRPS (B13/E33-precedensen: skärpt gap utan stängning, ingen poängrörelse); B2-flödet orört sedan 09-14 |
+
+**Korsvalideringar (syskonens sektioner orörda, ärlig bokföring):**
+(1) **E33** (s9-u1 omgång 9, bdaaeacb): bekräftar deras fynd oberoende —
+system_events 0 rader i prod (egen psql-sond som tabellägaren postgres),
+ALTER-filen bär V1 på disk (egen läsning: `CREATE INDEX IF NOT EXISTS
+CONCURRENTLY` + kolumnen `type` — dubbelt fel), översättningskön 320
+exakt (240/71/9 egen node-mätning), inventory 2026-08-23. **MITT TILLSKOTT
+deras sektion saknar — dumpkontradiktionen**: nattdumpen 02:30 bär **0
+COPY-rader i system_events-blocket** (två instrument: egen zcat+awk —
+blocket på dumprad 1 279 988 med exakt kolumnform, block_slut_rader=0;
+plus egen markörvaktskörning GRÖN 1 288 041 total) MEDAN kedja 2:s export
+läste 161 678 rader vid 07:24 (arkivfilens mtime 07:24:42) ⇒ **exportens
+läsväg och psql/dump kan inte läsa samma fysiska förråd** — tidslinjen
+"raderade 07:23–13:46" är underbelyst (nolltalet ÄLDRE än fönstret,
+alternativt olika förråd); samma klass: members=0 och user_activities=0 i
+BÅDA mina instrument (prod + 02:30-dumpen) trots C19:s mätta
+besokareIdag:33 vid 13:2x, medan snapshots (1 195 452, +18 984 mot
+dumpen) och board_decisions (47 602, +560) lever och växer. Detta är
+material till läkeköns steg 4 (schemasynk/förrådsutredning) FÖRE
+återimporten skriver mot prod.
+(2) **A3** (s9-u2 omgång 7): identiska tal i oberoende mätningar — 68
+frågemonster (25 bas + 43 i frågelagren, id-räknat), 24 sviter på disk,
+E01 RÖD 358/375 (mina körningar: bas **25 PASS · 1 FAIL** med D01
+determinism PASS; beteendedjup **27/27** med J01 kärnordsdisjunktion 712
+kärnord och L01 17/17 lager i ordning). Deras sektion står.
+(3) **E37** (s9-u2 omgång 7): deras o27/o31/o32-fynd bekräftas (EFTER-
+filerna på disk 18:20/18:26 egen ls). **MITT TILLSKOTT**: mimosa-paritet.mjs
+EGEN full-scan — **687 filer, 0 fynd, GRÖN** (härdade klasser:
+SSRF_INTERPOLERAD_FETCH 80 kontexter, SSRF_EXTERN_LITERAL 5, PATH_API 1,
+SHELL_URL_LOOPBACK 1); lasRefs-%-kärnfixen svitbevisad i artefaktsviten
+(PASS 5+8); sökindex FÄRSKT (17:08) med **paritet 375 = 375 = 375**
+(siffror.json = kurser = antal i sok-index.json — dagens läge synkat,
+men filhuvudets "kör skriptet efter varje kursändring" = mekanismen
+förblir manuell disciplin; deras kvar-not om cadans består).
+
+Snittscore **7,5** (284 → 285 poäng / 38 system; E34 +1 vid denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **E33-läkeköns steg 4 breddas med
+dumpkontradiktionen** — utred exportens läsväg (var läste den 161 678
+kl 07:24 när psql och dumpen ser 0?) innan aterstall-system-events skriver
+mot prod; members/user_activities-nollorna i båda instrumenten hör till
+samma fråga; (2) **C16: GRANSKNINGSKO-SAMMANSTALLNING förnyas** (rotens
+31 JSON och kvartalsserien växer förbi 09-14-vyn) + publiceringsbeslut
+för kön (124 filer väntar, 55 publicerade oförändrade); (3) mimosa
+full-scan (687/0) är driftbillig — kandidat för löpande vakt; (4)
+/studio-EFTER-mätningen vakarens tidszonstolkningsbugg (syskonets kö,
+o32 §1).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1020,7 +1099,7 @@ a/b/c, sökindex-hook i deploy).
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning mätbevisad i kod (o27+o31; LCP 5 542→4 360 ms på /, o27 EFTER) + vilande facit på JS-friskt bygge (o32); kvar: inga egna tester, /studio-EFTER obokförd, språkresolvens-CLS intermittent, sökindex-cadans |
 
-Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,5/10** (285 poäng / 38 system; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -1617,7 +1696,15 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
   får default-OG tills deploy (AC4: force-static-DNA); (3) återkopplingsyta
   (läsarmätning per post) finns ej — kommentarer avsiktligt borta.
 
-## C16. M9-innehållsfabriken — LEVER — 8/10
+## C16. M9-innehållsfabriken — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 9): granskningskön 44 → 124
+filer på ett dygn (~2,8×, ls-mätt): rot 31 JSON + 2 MD (m9-serien 6/6
+granskningsklar + branschguide-serien) · m9-ko 7 · granskning 53 · kvartal
+31 — medan data/blogg/ står på 55 publicerade oförändrade och
+GRANSKNINGSKO-SAMMANSTALLNING.md åldras (09-14-vyn). Gapet "kön ej kopplad
++ växer" SKÄRPS; score 8 kvar (B13-precedensen). Kö: sammanställningen
+förnyas + publiceringsbeslut för kön.*
 
 - **Vad:** Evergreen-utkastfabrik: deterministiska utkast (kassaflödes-
   analys-101, utdelningar-101, börspsykologi, branschmedianer ...) i kundens
@@ -2295,7 +2382,27 @@ publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.
   cadansen ojämn (lucka 09-10→09-14; senaste arkiv 09-16 07:24) —
   verifiera cron-kedjan.
 
-## E34. Drift, backup & DR (Contabo) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 9): score 8 → 9 — incidentens
+rot-gap STÄNGT + kurerna mätta genomförda. (a) Artefaktverifieringen lever
+i KOD och DRIFT: verktyg/artefakt-verifiering.mjs (varje /_next/static-
+referens i prerender-HTML måste finnas på disk; gron/trasig/okand exit
+0/1/2 — mätblindhet aldrig grönt) ropas av prod-synk.mjs FÖRE pm2-restart
+(deploygrind) och kraschvakt.mjs efter räddningsbygg (ärlighetsgrind —
+HTML-200 lurar varm()); svit 12/12 PASS egen körning + EGEN frisk
+prod-mätning gron (6 053 ms, trunkerad false). (b) ANVÄNDAR-crontaben
+(mätt; /etc/crontab var fel källa i tidigare speglingsmätningar): 02:30
+pg_dump med PGPASSFILE + markörvakts-append + 30-dagarsretention, 02:40
+moln-JSON, gränssnittsvakt 1,7,13,19, arkiv sön 03:20 — pgpass-kuren och
+markörvaktskopplingen GENOMFÖRDA (gamla kvar-noter motbevisade). (c)
+DR-mallen ETT KOMMANDO: dr-total.mjs TOTAL-RTO 130,0 s + kirurgi-kedja 5
+(1,18 M rader, sabotage gripet); egen markörvaktskörning 6/6 dumpar GRÖNA
+(09-16: 1 288 041 rader / CREATE 99 / COPY 101). (d) Prod grön bestående
+egen sond (hem 200 + 2/2 CSS 200) + pulsvakten överlevt 19:49-omstarten
+(PID-mätt, rond 51:s beslut driftbevisat). Kvar: hybrid-sync, ISR 12/44,
+Storage-restore, system_events-återimporten (E33:s FLAGGA, huvudagentens
+beslut). Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 6): score 9 → 8 — DAGENS
 PROD-INCIDENT nådde konsumentytan (B7-precedensen). Mätt 13:05–13:21:

@@ -168,5 +168,64 @@ SSR + getComputedStyle), gränsnittsvakt GRÖN, prod 200.
 
 ## 9. EFTER (bokförs efter deploy)
 
-<!-- fylls i: Lighthouse /kurser före→efter, sond Layout-antal/dur,
-     funktionssond, gränsnittsvakt, prod 200 -->
+Bokförd 2026-09-16 ~10:10Z av s7-u1 (manifest auto-s7-1789551912972).
+Deployunderlag: prod-synken DEPLOYADE cda6c4b6 09:40:26 (prod 200) —
+innehåller 87af4874 (CV-kur) + 50463d80 (skelettkur) + 184c6dc7 (prefetch);
+BUILD_ID fräsch 11:39:21 lokal (ombyggnad av samma commit). SSR-bevis före
+mätning: /kurser-HTML bär 24× cv-registerkort + cv-utvalt. ISR-triggar
+(2 rundor + 9 s, 11163-metoden) körda så mätningen inte träffar stale-HTML.
+
+**Funktionssond — ALLA deterministiska bevis GRÖNA**
+(`verktyg/prestanda-cv-funktionssond.mjs`, rådata
+`s7u1-funktionssond-cv-2026-09-16.json`): cvRegister "auto" ×24 och cvUtvalt
+"auto" ×18 (FÖRE-vittnet 05:31 hade klasserna ABSENTA i bygget) ·
+intrinsicRegister "auto 144px" / intrinsicUtvalt "auto 192px" (auto-nyckeln
+minns renderad höjd) · skelett span animationName "none" vid last, 5 dokument-
+animationer (FÖRE 29) · pulsSekvens none→pulse×1→none = pulsen ENDAST under
+pågående hämtning · efter scroll: 24/24 kort med text (FÖRE-mätningens 15),
+0 animationer kvar, cvFortfarande "auto", 10 api/kurs-anrop (IO-hämtning
+fungerar) · domOk true.
+
+**S&L-sond — det strukturella huvudbeviset** (`prestanda-sond-sl.mjs`, rådata
+`s7u1-sond-sl-efter-2026-09-16.json`): S&L total 223 ms över 12 event, största
+enskilda Layout 141 ms — mot FÖRE (§6-sonderna) 128 Layout-events och
+A/B/C/D-varianter 2 200–2 900 ms. Eventantalet 12 när /blogg-referensens 8
+(ensiffrigt-mål uppfyllt); kvarvarande 141 ms-pass = u4:s lager-2-fynd
+optional-webfont-dubbling + initial layout, dokumenterat. Mätningen skedde
+under restlast (se nedan) — antalet (12) är lastokänsligt, durationer är
+övre gränser.
+
+**Lighthouse rond 1 (förorenad — bokförd som rådata, ej facit)**
+(rådata `kurser-r4b-efter.json`, `start-r4b-efter.json`, `blogg-r4b-efter.json`,
+`r4b-efter-sammanfattning.json`): /kurser P40 · LCP 7220 · TBT 7755 · CLS
+0,0023. SAMTIDIGT pågick ett SYSKONS parallella Lighthouse-våg mot samma
+server (bevis: pgrep `npm exec lighthouse` 50 % CPU under min körning; load
+4,5). TBT 7755 är CPU-kontamination (samma fyndklass som o17 "lab-straffet
+är nätverkskontention" och o18 EFTER3 "larmad server") — POSITIVT ändå:
+CLS 0,0023 (mot 0 standard) visar att reservhöjderna INTE straffar. Ren
+återmätning på vilande server (vänta ut syskonets våg, ISR-trigga, kör
+`LH_JAMFOR=efter-skelett node verktyg/prestanda-lighthouse.mjs r4b2 / /kurser
+/blogg`) BOKAS som rest — pending-precedensen (b3b5e2c4/545014ff).
+
+**Gränsnittsvakt /kurser — layout GRÖN, kontrast-artefakt motbevisad**
+(`granssnitt-2026-09-16T1003.json` + kontroll `…T0953.json`): överflöd 0px ·
+utanför 0 · klippt 0 i alla 4 kombinationer (light/dark × 390/1280) = CV:s
+reservhöjder orsakar NOLL layoutdefekter. T1003-rondens 30 light-kontrast-
+fynd (färg rgb(0,0,238) = Ofärgad UA-länkstil mot rgb(0,0,0)) är last-
+artefakt: 09:53-rondens identiska sida/tema = kontrast 0 fynd. Mina klasser
+kan inte ändra färger — content-visibility rör layout/rendering endast.
+
+**Kalibreringsnot (till kommande CV-runder)**: reserv 144 px (9rem) mot
+verklig renderad korthöjd 215 px — auto-nyckeln eliminerar upprepat
+stavhopp per session, men första render per kort ger ~71 px tillväxt;
+CLS 0,0023 dokumenterar att nettostraffet är försumbart. Nästa CV-kur kan
+överväga auto 13rem för ännu tightare reserv. CLS-riskposten från 570beaac
+är därmed MÄTBLIG STÄNGD (0,0023).
+
+**Prod 200**: https://lab.ak1nvestor.com/ 200 (0,20 s) · /kurser 200
+(0,11 s) — 10:04Z.
+
+**Slutats**: o20-kurens EFTER-kedja är levererad utom den rena
+Lighthouse-poängen (bokad rest ovan). Kombinationen funktionssond (kuren
+LIVE) + S&L 128→12 events (−91 %) + totaltid ~10× lägre + CLS 0,0023 +
+layout-vakt GRÖN uppfyller §8:s väntade bevis i allt utom poängform.

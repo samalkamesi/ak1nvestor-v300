@@ -1,0 +1,8 @@
+Mimosa-paritet: 957 filer skannade, 0 fynd (179 rapportrader varav härdade kontexter redovisas).
+  SSRF_LOOPBACK: 25 träffar (0 härdade kontexter, 0 fynd)
+  SSRF_EXTERN_LITERAL: 11 träffar (0 härdade kontexter, 0 fynd)
+  SHELL_URL_VARIABEL: 1 träffar (1 härdade kontexter, 0 fynd)
+  SHELL_URL_LOOPBACK: 1 träffar (0 härdade kontexter, 0 fynd)
+  SSRF_INTERPOLERAD_FETCH: 140 träffar (140 härdade kontexter, 0 fynd)
+  PATH_API: 1 träffar (1 härdade kontexter, 0 fynd)
+GRÖN — inga ohärdade fynd i Mimosa:s klasser.

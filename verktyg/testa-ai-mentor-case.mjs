@@ -346,6 +346,8 @@ kontroll(
 // lager SIST (diversifiering/korrelation, valutarisk).
 // Uppdaterad av s6-u2 omgång 8: ägande-lagret tillagt som TIONDE lager
 // SIST (bolagsstämma/rösträtt, styrelse/bolagsstyrning).
+// Uppdaterad av s6-u3 omgång 9: historia-lagret tillagt som TRETTONDE
+// lager SIST (tulpanmanin, börsbubbla, aktiekraschen 1929).
 const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
@@ -360,6 +362,7 @@ const kedjekomponenter = [
   "svaraLokaltAgande(q, KURSREGISTER)",
   "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",
   "svaraLokaltDjup(q, KURSREGISTER)",
+  "svaraLokaltHistoria(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -400,10 +403,12 @@ const importPortfoljgrund = widget.includes('from "@/lib/ai-mentor-portfoljgrund
 if (!importPortfoljgrund) { lFel++; console.log("      import av portfoljgrund-lagret saknas"); }
 const importAgande = widget.includes('from "@/lib/ai-mentor-agande-fragor"');
 if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"); }
+const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
+if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 12 lager i ordning + 6 importer",
+  "L: widget-bevis — kedjeraden bär 13 lager i ordning + 7 importer",
   lFel === 0,
-  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup live i klientkedjan" : lFel + " fel",
+  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia live i klientkedjan" : lFel + " fel",
 );
 
 // ── Sammanfattning ─────────────────────────────────────────────────────────

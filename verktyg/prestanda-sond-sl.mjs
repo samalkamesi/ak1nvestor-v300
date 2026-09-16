@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * AK1A — STYLE & LAYOUT-SOND (spår 7, o18 §4.2 → o19).
+ * AK1A — STYLE & LAYOUT-SOND (spår 7, o18 §4.2 → o20).
  *
  * Svarar på: VAD äter "Style & Layout"-tid på en sida, och VILKEN kod
  * triggar det? Lighthouse rapporterar bara summan (mainthread-work-

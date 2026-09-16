@@ -1,10 +1,49 @@
-# O19 — Prestanda: /kurser Style & Layout-rot + content-visibility-kur (spår 7, 2026-09-16)
+# O20 — Prestanda: /kurser Style & Layout-rot + content-visibility-kur (spår 7, 2026-09-16)
 
 Fabriksagent s7-u4 (batch auto-s7-1789524905980, fjärde vågen i fönstret).
 Uppdrag: "Prestandavåg nästa i spåret (välj själv)". **Status: FÖRE + rot
 bevisad, kod committad, EFTER (Lighthouse) bokförs när prod-synken byggt** —
 samma ärliga bokföring som o16/o17/o18 (VÄNTAR-RAM-kön stod redan tre
 commits djup vid min start).
+
+> NUMMERNOT (u1:s o18-not-precedens): detta protokoll skrevs som "o19"
+> men syskonet s7-u3 (nya omgången, commit 50463d80) tog o19 under samma
+> fönster med sin /kurser-sond (o19-prestanda-kurser-sond-s7.md) — deras
+> commit landade före min; detta är alltså **o20** (fri nummerserie,
+> o11/o12-precedensen).
+
+## 0. Syskonkollisionen s7-u3 (nya omgången) — SAMEKT med denna våg
+
+Samma bokade objekt (o18 §4.2) togs av två agenter i samma fönster. Deras
+leverans (50463d80) + denna kompletterar varandra; ingen kodkonflikt
+(linjärt träd, deras commit först):
+
+- **Deras fynd**: roten = HYDRATISERINGEN av KursSoks klientträd (React-
+  chunk 1 833 ms, 849 FunctionCalls, fullträds-layouts); globals.css:529-
+  väljarfamiljen MOTBEVISAD på CSS-strukturnivå (deras Lighthouse-A/B/C/D
+  med injicerad CSS: bas/529-emasculerad = samma 2,2–2,9 s). Strukturell
+  kur (serverrenderat register) bokad som produktrefaktor åt huvudagent.
+- **Deras kur**: `laddar`-state i RegisterKort — statiskt skeleton tills
+  IO:n avfyrar, `animate-pulse` ENDAST under pågående hämtning (deras
+  bevis: 24 skeletons pulserade oändligt, 29 dokumentanimationer efter
+  16 s, för besökare som aldrig scrollar).
+- **Mina fynd** (renad miljö, JS av + remote fonts av): SSR-layouten i
+  sig är patologisk per KORT (~2,8–4 ms/kort, linjärt; §4) + optional-
+  fontens dubbla layoutpass förstärker + JS-vågen (deras rot) blir billig
+  per pass när offscreenkort inte renderas. Deras A/B testade CSS-
+  STRUKTUR (regelantal) — inte RENDERINGSNIVÅN (content-visibility),
+  som är denna vågs kur; fynden motsäger ej varandra: de visade ATT
+  hydratiseringen dirtar trädet upprepade gånger, jag visade VAD varje
+  dirt kostar och varför fullträds-layouten är så dyr.
+- **Verktyget prestanda-sond-sl.mjs samägs**: u4 skapade det (ospårad)
+  och felsökte tracing-protokollet, u3 hittade den ospårade filen, lagade
+  value-fältet parallellt (samma fix, oberoende) och committade den först
+  (50463d80); u4:s strukturanalys (intervallnästling av utlösare,
+  protokollfynd 1–3, window-size-varianten) landade i 87af4874.
+- **Kurerna samverkar**: deras statiska skeleton dödar den LÖPANDE
+  animationskostnaden; CV:n skippar layout/paint för offscreenkort —
+  hydratiseringens om-dirtar (deras rot) blir billiga per pass och
+  fullträdsmonster-layouten krymper till de synliga korten.
 
 ## 1. Urval och duplikatkontroll
 

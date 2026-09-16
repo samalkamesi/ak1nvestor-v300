@@ -11953,5 +11953,95 @@
       ]
     },
     "notering": "USA:s största köpcentrum-REIT — fastighetens USA-motstånd till URW:s europeiska köpcentrum (samma delsektor på två kontinenter: hyresintäkter, uthyrningsgrad, räntekänslighet); REIT-strukturen är radens pedagogiska kärna: distribuerar större delen av resultatet (utdelning 9,00 $/aktie, 4,49 % direktavkastning, payout 62,7 % — REIT-reglerna kräver 90 % av beskattad inkomst för skattefrihet), vilket krymper bokförd EK (13,58 $/aktie): P/B 15,03 och ROE 120,5 % — universumets HÖGSTA (Visaraden 61,2 % slagen dubbelt), medan ROA 5,63 % visar den verkliga avkastningen på tillgångsbasen och ROIC 9,3 %; belåningen: skuld/EK 5,04 (fastighetsskuld 29,44 mdr $ mot kassa 1,02 mdr $), räntetäckning 3,07 i not (fältet systematiskt osatt) — fastighetsbranschens LTV-konvention (belåning mot pantsatta fastigheter) gör skuld/EK-talet ej jämförbart med industrirader; TRAILING-P/E 14,38 BÄR ENGÅNGSVINSTER — Allianz-notens mekanism igen: FY2025-nettoresultatet 4 624 M$ (+95 % mot 2 368 M$) innehåller avyttringsvinster, fwd-P/E 30,79 ⇒ marknadens normaliserade EPS ≈ 6,5 $; prognosTillväxt −53,3 % implicit = universumets mest negativa (normaliseringsgap, ej värdedomen), peg null (källans n/a, konsekvent); bruttomarginal 81,4 % TTM (hyresintäkter över driftkostnader — REIT:int redovisar inte bruttovinst per år hos källan, moat null enligt Allianz-/BRK-precedenten); FCF källans levererade rad 2 007 → 2 003 → 1 968 → 2 339 M$ (TTM 2 595, fcfMarginal 37,4 %); definitionsnot: källans statistiksida räknar FCF-marginal 46,4 % på driftkassaflöde minus fastighetsförvärv (3 218 M$ TTM) — raden använder källans FCF-rad; utdelningsfälten null enligt plattformskonventionen; beta 1,31; kurs 201,30 $ realtid 2026-09-16 15:36 EDT (börsen ÖPPEN vid hämtningen — avvikelse mot spårets close-konvention, AIR.PA-precedenten; föregående close 204,10 $); 52-vägers spann 172,19–238,50 $; nästa rapport 2026-11-02"
+  },
+  {
+    "ticker": "PEP",
+    "namn": "PepsiCo, Inc.",
+    "bransch": "konsument",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/pep/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-16, kurs intraday 2026-09-16): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, utdelning, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 134.57,
+    "marknadsKapitalMdr": 183.67,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0283,
+      "resultatCAGR5ar": -0.0257,
+      "omsattningTillvaxtTTM": 0.056,
+      "prognosTillvaxt": 0.1421
+    },
+    "lonksamhet": {
+      "roe": 0.5151,
+      "roic": 0.1938,
+      "bruttoMarginal": 0.5417,
+      "ebitMarginal": 0.1604,
+      "nettoMarginal": 0.1078,
+      "fcfMarginal": 0.0958
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.39,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5426,
+      "bruttoMarginalSpread5ar": 0.0159,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 17.76,
+      "pb": 8.38,
+      "evEbit": 14.6,
+      "peg": 1.25,
+      "fcfYield": 0.0505,
+      "egenKapitalMultipl": 8.38
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        86392000000,
+        91471000000,
+        91854000000,
+        93925000000
+      ],
+      "resultat": [
+        8910000000,
+        9074000000,
+        9578000000,
+        8240000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        5604000000,
+        7924000000,
+        7189000000,
+        7672000000
+      ]
+    },
+    "notering": "livsmedels- och läskduopolets andra hälft — komplementrad till Coca-Cola (KO) i samma universum och samma bransch: där KO är den koncentrerade dryckesmodellen, bär PEP snacks-halvan (Frito-Lay/Quaker) bredvid dryckesportföljen, och paret KO–PEP är datasetets mest direkt jämförbara duo för kvartillsläsning (samma bransch, samma land, olika vallgravsform: PEP brutto 54,2 % TTM medan moat-serien 2022–2025 håller medel 54,3 % vid spridning endast 1,6 pp — livsmedelsförädlingens stabila marginalgolv, pedagogiskt mellan teknikens mjukvarurader och tillverkarnas tunna marginaler); ROE 51,5 % mot ROIC 19,4 % vid skuld/EK 2,39 — gapet bär kapitalstrukturen (samma mekanik som Visaraden: återköp och skuld krymper eget kapital, multipeln P/B 8,38 speglar det krympta talet, inte balansräkningens styrka); FCF-serien 5,6 → 7,9 → 7,2 → 7,7 mdr $ stadigt positiv, TTM 9,3 mdr $ (fcfYield 5,1 %, fcfMarginal 9,6 %); utdelningsprofilen: kvartalsvis 1,48 $ (juli-höjningen +4 %), årsnivå 5,92 $ med yield 4,40 % och payout ~78 % mot TTM-EPS 7,63 $ — utdelningsfälten null enligt universumets konvention; resultatdippen FY2025 (8 240 M$ mot 9 578 FY2024, −14,0 %) med TTM-återhämtning 10 451 M$ (+38,4 %) — fwd-multipeln 15,55 under trailing 17,76 speglar återhämtningen; prognosTillväxt härledd ur trailing/forward-P/E (17,76/15,55 ⇒ +14,2 % implicit EPS-förändring; källans 3-års EPS-prognos +5,20 %/år); peg 1,25 enligt spårkonventionen P/E ÷ prognosTillväxt i procent; omsCAGR +2,8 % endpoint 2022–2025 — volymtillväxten är svag, prissättning bär intäkterna (klassisk konsumentvarumärkes-mekanik); beta 0,36 — den försiktiga konsumtionsprofilen; kurs 134,57 $ (intraday 2026-09-16, AIR.PA-precedensen för öppna marknader) nära 52-vägers botten: spann 133,73–171,48 $, 1-årsförändring −4,27 %; nästa rapport 2026-10-08"
   }
 ]

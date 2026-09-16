@@ -21,7 +21,7 @@
  * Ren jakt ⇒ EN grön rad. Exit 0 alltid.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -64,6 +64,31 @@ function jagaKod() {
     gitTopp = execSync("git log -1 --format=%H -- src/", { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
     srcAndrad = gitTopp !== senaste;
   } catch { srcAndrad = true; }
+  // Verktyg: node --check på samtliga — skalfri arrayform (o21); körs ALLTID:
+  // blocket låg tidigare EFTER src-hoppar-returnen = tyst död (krävde att
+  // src/ samtidigt ändrats); head-40-taket borttaget samtidigt — verktyg/
+  // har 117 filer, taket lämnade 77 okontrollerade medan gröna raden
+  // lurade "40 syntax-OK".
+  try {
+    const filer = execFileSync("find", ["verktyg", "-name", "*.mjs"], { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim().split("\n").filter(Boolean);
+    let trasiga = 0;
+    for (const f of filer) {
+      try { execFileSync(process.execPath, ["--check", f], { cwd: ROT, timeout: 10_000, stdio: "pipe" }); }
+      catch (e) {
+        // Diagnosåtskillnad (o21): timeout vid systemlast är INTE syntaxfel —
+        // första alltid-på-körningen felmärkte en lasttimeout som syntaxfel
+        // (filen ren vid omkolla, fyndet aldrig reproducerat).
+        const timeout = Boolean(e && (e.killed || e.signal === "SIGTERM" || e.code === "ETIMEDOUT"));
+        if (timeout) {
+          bokfor("F1-kod", "MEDEL", `okontrollerad (timeout): ${f}`, "node --check hann inte inom 10 s — lastrelaterat, omkollas nästa jakt");
+        } else {
+          trasiga++;
+          bokfor("F1-kod", "MEDEL", `syntaxfel: ${f}`, "node --check misslyckades");
+        }
+      }
+    }
+    if (trasiga === 0) gron("F1-kod", `${filer.length} verktyg syntax-OK`);
+  } catch { /* finder misslyckades */}
   if (!srcAndrad) { gron("F1-kod", "src/ oändrad sedan senaste tsc — hoppar"); return; }
   // r39-vaccin (2026-09-15): mät ALDRIG tsc under deployfönstret — npm ci
   // river node_modules partiellt och transitiva @types (recharts d3-paket)
@@ -99,16 +124,6 @@ function jagaKod() {
   } catch (e) {
     bokfor("F1-kod", "HÖG", "tsc kraschade", String(e).slice(0, 120));
   }
-  // Verktyg: node --check på samtliga
-  try {
-    const filer = execSync('find verktyg -name "*.mjs" | head -40', { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim().split("\n");
-    let trasiga = 0;
-    for (const f of filer) {
-      try { execSync(`node --check ${JSON.stringify(f)}`, { cwd: ROT, timeout: 10_000, stdio: "pipe" }); }
-      catch { trasiga++; bokfor("F1-kod", "MEDEL", `syntaxfel: ${f}`, `node --check misslyckades`); }
-    }
-    if (trasiga === 0) gron("F1-kod", `${filer.length} verktyg syntax-OK`);
-  } catch { /* finder misslyckades */}
 }
 
 // ── F2: PROCESSER ────────────────────────────────────────────────────────────

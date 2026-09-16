@@ -73,7 +73,7 @@
  * Regel för modellen (står även i AGENTS.md): storskalig parallellism =
  * manifest. Agent-tool direkt FÅR bara användas ≤3 parallella anrop.
  */
-import { execSync, spawn } from "node:child_process";
+import { execSync, execFileSync, spawn } from "node:child_process";
 import {
   appendFileSync,
   existsSync,
@@ -274,7 +274,7 @@ async function utvarderaGrind(manifest, uppgift, fore, leveransRad) {
       if (nu === fore) {
         orsaker.push(`(b) ingen ny commit under körningen (HEAD oförändrad ${fore.slice(0, 8)})`);
       } else {
-        const amnen = execSync(`git log ${fore}..${nu} --format=%s`, { cwd: ROT, timeout: 10_000 })
+        const amnen = execFileSync("git", ["log", `${fore}..${nu}`, "--format=%s"], { cwd: ROT, timeout: 10_000 })
           .toString()
           .split("\n")
           .filter(Boolean);

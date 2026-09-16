@@ -5,7 +5,7 @@
 // SÄKERHET: återställer EXAKT de två identifierade runtime-rörda SPÅRADE
 // cache-filerna — inget bredare clean, inga nycklar, ingen .env (stopp-regeln).
 // Oväntade ändringar ⇒ listas + ABORT (ingen ändring görs).
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 
 const PROD = "/home/ak1a/AK1";
 const RORA = [
@@ -30,7 +30,9 @@ if (ovantade.length > 0) {
 }
 
 for (const f of modifierade) {
-  execSync(`git checkout -- ${JSON.stringify(f)}`, { cwd: PROD });
+  // Skalfri arrayform (o21): filsökvägen från git status når git som ETT
+  // argument — skal-meta­tecken i namn kan aldrig tolkas av ett skal.
+  execFileSync("git", ["checkout", "--", f], { cwd: PROD });
   console.log(`återställd: ${f}`);
 }
 

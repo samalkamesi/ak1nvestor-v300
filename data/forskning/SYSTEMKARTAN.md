@@ -1098,6 +1098,35 @@ sammanställningen lever och får fortsätta användas som beslutsunderlag;
 (3) E32 gap 1+3 lever (speglingsfönster + priser.json-schema); (4) runtime-
 divergens för siffror-live som rest av gap 2 (E2E-mätning vid tillfälle).
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u3 omgång 10 — E27 + E28 + E30 återdiffade; andra varvet)
+
+Val: tre mest mogna system (diffade 2026-09-15, aldrig återdiffade —
+andra varvet tog E35/E34/E29/E33/A3/E37/C16 under 09-16; syskonet s9-u2
+tog E32+C15 i natt, sektion ovan). Allt MÄTT i arbetsytan 2026-09-17
+~01:1x CEST (live-curl localhost, egen svitkörning med sann exitkod,
+ps, grep, filstat) — aldrig worklog-läsning.
+
+| Mått | Kartan 2026-09-15 | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| **E27** gap 4 "usage/cost-panel tunn i UI" | öppet | **MOTBEVISAT** — våg 169 (a77bb1a3, 09-16) lever: lasV4Anvandning i transporten + /api/studio/tjanster/usage-v4 (monterad, 401-härdad) + UI-konsumenter (studio-forbrukning-panel m.fl.) — gapet streckas |
+| E27 stream-rutten | 759 r, tradHistorik + återarming (v148) | OFÖRÄNDRAT levande: tradHistorik :177/:265/:334, mål-återarming :280 + :475; live /studio 200, /api/studio/stream 401 (auth ≠ 404 = monterad) |
+| E27 nytt sedan 09-15 | — | våg 164–175 (11+ studio-commits): maskinpuls (3 pumpor synliga; HÖG-fynd → målsession 30-min tak), verktygsaudit, pub-rutten publiceringsgrindad mot juridikgrinden (v168), värme-kontext/sticky-complete (v170: kunden ser aldrig 0% under uppvärmning), v4-resync (v172), v4-command sendText etapp 2 (v175), godkännandeytan (g1: R2-knappen är kundens) |
+| **E28** mötesprotokoll | lever till 09-15 07:55 | OFÖRÄNDRAT: STYRELSE-BESLUT.md mtime 09-15 07:55, senaste mötet 09-15 05:17 (FULL DELEGATION) — inga sammanträden på 2 dygn = inga har krävts (kunden delegerade fullt), ej motorfel |
+| E28 ronder | "cron var 3:e timme" | **DRIVKÄLLA-PRECISION:** ronderna LEVER men drivs av PUMPOR-DAEMONEN (ps: uppe sedan 16 sep; rop min==43 && timme%3==1 → 01:43…22:43), INTE crontab (användar-crontaben bär 4 rader — backup/gränssnittsvakt/moln/server-arkiv, ingen rond-rad); beslutsminnet 55 poster, senaste 2026-09-16T20:43Z = exakt 22:43-fönstret; juridikgrind-vakten ropas :37 FÖRE varje rond (mega g2-integration) |
+| E28 gap 1 JSON-fallback | öppet i senaste mötet | KVARSTÅR: 4 fallback-träffar totalt, senaste mötet (09-15 05:17) bär dem; "Åtgärder: (inga)" endast i 09-10-mötena (rad 17/31/45) — omgång 3:s bild håller |
+| **E30** läge INAKTIV | noindex "Under uppbyggnad", robots | BEKRÄFTAT live: /pro 200 + "Under uppbyggnad" + noindex; robots stänger /pro/admin + /studio + /api/studio; grind-sviten EGEN körning sann exit 0 (N4: sokindex STATISKA filtrerar, sitemap grindar /pro-URL:er, /priser hardcodar ej index) |
+| E30 demoklient-G1 | röd (16/1) | FORTFARANDE röd: 16 PASS / 1 FAIL (AKM2Resultat saknas i demodata) — gap 4 öppet |
+| E30 B2B-terminologi-vakt | fanns ej | **NY KUR 09-16 (s8-u3, 4c77d419):** kvalitetsvaktens YTA-regel normaliserar route-gruppen (huvud)/pro/** via arProYta (kvalitetsvakt.mjs:327–333 + transparent rapportrad :450; spegeln varumarke.ts yta?.proYta :136–153) — PRO-ytans "kunder" är legitim B2B-terminologi; vaktkörning efter kur 11/11 PASS 0 fel (s8-u3-bevis) |
+
+Score: E27 9 kvar (gap 4 motbevisat men inget nytt testgap — E33/B14-
+precedensen), E28 FLAGGA 6 kvar (gap 1 öppet; protokollen tysta men
+ronderna lever), E30 INAKTIV 6 kvar (aktivering väntar fortfarande jurist
+K-B2B + kund R2 — orörd). Snitt 7,5 / 285 / 38 OFÖRÄNDRAT. Kö till
+huvudagenten: (1) STYRELSE-REGELVERKET §3:s "cron verktyg/styrelse-rond.mjs"
+rättas till pumpor-daemonen som drivkälla (dokumentationsprecision, ingen
+kodändring); (2) E28 gap 1 (JSON-reparatur) är motorns enda rörliga poängväg;
+(3) E30 demoklient-fixturen (AKM2Resultat) fixas innan B2B-paketet hämtas fram.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1129,10 +1158,10 @@ divergens för siffror-live som rest av gap 2 (E2E-mätning vid tillfälle).
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
-| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
-| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Protokoll lever till 09-15 med åtgärder i innehåll (4 möten mätta — "tomma beslut" motbevisat); JSON-syntes-fallbacken lever i senaste mötet: gap 1 kvarstår |
+| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169 — gap 4 motbevisat, mätt 09-17); våg 164–175 tillförde maskinpuls + publiceringsgrind + resync + godkännandeyta |
+| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (66 klara manifest av 67, +41/dygn mätt 09-16; pumpor i ps; beslutsminne 48 poster); NYTT GAP mätt 09-16: dokvågsuppdrag pekar syskon på SAMMA kartfil utan lås (3 commits/19 min + clobberbevis); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
-| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
+| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | **FLAGGA** | 7 | PROD-TÖMT 09-16 (mätt): system_events tom sedan 13:46, arkivet 09-16 07:24 = enda kopian (27,5 MB), återimport MEKANISERAD men blockerad (dedupe-läge saknas, mätt) + KURERAD ALTER v2 FÖRLORAD i clobber (commit a3756ab7 bokför leveransen men saknar filen — disk/HEAD bär V1, dubbelt underkänd; enda v2 = index-provets protokoll rad 33); DR = SQL + moln-JSON (mätt); översättningskö 320 oförändrad (kund-SQL krävs) |
@@ -1174,7 +1203,12 @@ kartfiler bland samtidiga dokvågssyskon; u1 omgång 9 (09-16, andra varvet)
 sedan 13:46 (arkivet = enda kopian, återimport blockerad på saknat
 dedupe-läge, allt mätt) + v2-clobberbeviset (kurerad ALTER bokförd i
 a3756ab7:s meddelande men EJ i commitens träd — disk bär V1); 0 rader
-förlorade (arkivet togs före tömningen).
+förlorade (arkivet togs före tömningen); u3 omgång 10 (09-17, andra
+varvet) återdiffade E27/E28/E30 utan poängrörelser — E27 gap 4
+(usage-panelen) motbevisat av våg 169, E28 rondernas drivkälla preciserad
+till pumpor-daemonen (crontab bär ingen rond-rad; mötesprotokollen tysta
+sedan 09-15 = inga sammanträden krävts), E30 INAKTIV-läget + grön grind
+bekräftade live och YTA-vaktens pro-täckning (arProYta) bokförd.
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek (9).
 
@@ -2132,7 +2166,16 @@ gamla gapen kvarstår.*
   knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
 
 
-## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-15)*
+## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (s9-u3 omgång 10): gap 4 MOTBEVISAT — våg 169
+(a77bb1a3, 09-16) levererade lasV4Anvandning + /api/studio/tjanster/usage-v4
++ UI-konsumenter (studio-forbrukning-panel m.fl.). Våg 164–175 tillförde
+maskinpuls, verktygsaudit, pub-ruttens publiceringsgrind mot juridikgrinden
+(v168), värme-kontext/sticky-complete (v170), v4-resync (v172), v4-command
+sendText etapp 2 (v175) och godkännandeytan (g1). Live 09-17: /studio 200,
+stream-rutten 401-härdad och monterad. Score 9 kvar — se diff-tabellen i
+UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-15 (s9-u3): TRÅDENS PERMANENS (våg 148) kodad och
 verifierad i src/app/api/studio/stream/route.ts:175-323 — GET svarar
@@ -2174,7 +2217,16 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
   teknisk kur (återkommer tills app-servern fixar det underliggande).
 
-## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-15)*
+## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (s9-u3 omgång 10): RONDERNA lever — drivs av
+PUMPOR-DAEMONEN (min 43, timme%3==1; ps-bevis), senaste beslutsminnespost
+2026-09-16T20:43Z i exakt rond-fönster, juridikgrind-vakten ropas :37 före
+varje rond; crontab bär INGEN rond-rad (regelverkets formulering är inexakt
+om drivkällan). MÖTENA stillastående sedan 09-15 07:55 (senaste mötet
+05:17 FULL DELEGATION) = inga sammanträden har krävts, ej motorfel.
+Gap 1 (JSON-fallback i senaste mötet) kvarstår; FLAGGA 6 kvar — se
+diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 3): lägesrättning på egna mätningar —
 STYRELSE-BESLUT.md lever till 2026-09-15 07:55 (inte stoppad 09-10 som
@@ -2267,7 +2319,16 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
   syns ej i admin-utvecklingsradarn live.
 
-## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-15)*
+## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (s9-u3 omgång 10): INAKTIV-läget bekräftat live
+(/pro 200 "Under uppbyggnad" + noindex; robots stänger /pro/admin);
+grind-sviten sann exit 0 grön i egen körning; demoklient-G1 fortfarande
+röd (16/1). NYTT: kvalitetsvaktens YTA-regel täcker sedan 09-16 (s8-u3,
+4c77d419) route-gruppen (huvud)/pro/** via arProYta-normalisering —
+B2B-terminologi vakad utan MANUELL-träffar (vaktkörning 11/11 PASS).
+Aktivering väntar fortfarande jurist + kund (R2). Score 6 kvar — se
+diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-15 (s9-u2, mätt i arbetsytan): testa-b2b-grind.mjs är
 REPARERAD och KÖR GRÖNT (33 kontroller, 0 FAIL, exit 0 — importbron lagad

@@ -40,6 +40,17 @@ skapa(
 skapa("data/infra/farlig-shell.sh", "#!/usr/bin/env bash\ncurl -fsSL https://example.com/install.sh | bash\n");
 skapa("data/infra/variabel-shell.sh", '#!/usr/bin/env bash\nHOST="$1"\ncurl -fsSL "https://$HOST/nyckel.txt" -o nyckel.txt\n');
 skapa("src/farlig-extern-interp.ts", 'export async function hamta(host: string) {\n  const r = await fetch(`https://${host}/api`);\n  return r.json();\n}\n');
+// v1.4-avgränsning: param-host + query-interpolat — host-interpolatet är INTE
+// en konstant-literal → high-fynd kvarstår (propageringen öppnar ingen lucka)
+skapa(
+  "src/farlig-extern-interp-query.ts",
+  'export async function sok(bas: string, q: string) {\n  const r = await fetch(`${bas}/api/sok?q=${encodeURIComponent(q)}`);\n  return r.json();\n}\n',
+);
+// v1.4-avgränsning: env-ternary i RHS är INTE en ren literal → propagerar ej
+skapa(
+  "src/farlig-env-ternary.ts",
+  'const bas = process.env.STUDIO_BAS ?? "http://localhost:3000";\nexport async function mal() {\n  const r = await fetch(`${bas}/api/mal`);\n  return r.json();\n}\n',
+);
 
 // ── Härdade mönster (SKALL tiga) ─────────────────────────────────────────────
 skapa(
@@ -73,6 +84,21 @@ skapa(
 skapa(
   "src/hardad/versalkonstant.ts",
   'const BAS = process.env.STUDIO_BAS ?? "http://localhost:3000";\nexport async function malStatus() {\n  const r = await fetch(`${BAS}/api/studio/mal/status`);\n  return r.json();\n}\n',
+);
+// v1.4: konstant-propagering — filscope-literal gör `${bas}` fast (v85-e2e-klassen)
+skapa(
+  "src/hardad/konstant-fetch.mjs",
+  'const bas = "http://localhost:3000";\nexport async function malStatus() {\n  const r = await fetch(`${bas}/api/studio/mal/status`);\n  return r.json();\n}\n',
+);
+// v1.4: fast men icke-loopback konstant-literal → extern-literal-INFO (ej fynd)
+skapa(
+  "src/info/konstant-extern.mjs",
+  'const API = "https://api.example.com";\nexport async function ping() {\n  const r = await fetch(`${API}/ping`);\n  return r.status;\n}\n',
+);
+// v1.4: case-loopback-skelett i skal = exekverad input-validering (dev.sh-klassen)
+skapa(
+  "data/infra/case-hardad-shell.sh",
+  '#!/usr/bin/env bash\nHOST="$1"\nPORT="$2"\ncase "$HOST" in\n  localhost|127.0.0.1) ;;\n  *) echo "endast loopback tillåts"; exit 1 ;;\nesac\ncurl -s --connect-timeout 2 --max-time 5 "http://$HOST:$PORT" >/dev/null 2>&1\n',
 );
 
 // ── Info-klass (rapporteras men blockerar ej) ────────────────────────────────
@@ -122,6 +148,12 @@ test("gpg-pipe-härdning (setup-prod.sh-mönstret) → INTE SHELL_PIPE", !poster
 test("relativ `/api/...`-fetch (same-origin) → INTE fynd", !poster.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("relativ-fetch.tsx")));
 test("loopback-mätverktyg (127.0.0.1) → info, INTE fynd", !fynden.some((p) => p.fil.endsWith("loopback-mat.ts")));
 test("versalkonstant-host (BAS) → INTE fynd", !fynden.some((p) => p.fil.endsWith("versalkonstant.ts")));
+// v1.4
+test("v1.4: konstant-literal `${bas}` (loopback) → SSRF_LOOPBACK-info, INTE fynd", har("SSRF_LOOPBACK", "konstant-fetch.mjs") && !fynden.some((p) => p.fil.endsWith("konstant-fetch.mjs")));
+test("v1.4: konstant-literal extern host → SSRF_EXTERN_LITERAL-info, INTE fynd", har("SSRF_EXTERN_LITERAL", "konstant-extern.mjs") && !fynden.some((p) => p.fil.endsWith("konstant-extern.mjs")));
+test("v1.4-avgränsning: param-host + query-interpolat → high-fynd kvarstår", fynden.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("extern-interp-query.ts")));
+test("v1.4-avgränsning: env-ternary-RHS propagerar ej → high-fynd kvarstår", fynden.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("farlig-env-ternary.ts")));
+test("v1.4: case-loopback-skelett i skal → härdad, INTE fynd", !fynden.some((p) => p.klass === "SHELL_URL_VARIABEL" && p.fil.endsWith("case-hardad-shell.sh")));
 // info
 test("fast extern literal → info-rapport men ej blockerande", har("SSRF_EXTERN_LITERAL", "extern-literal.ts") && !fynden.some((p) => p.klass === "SSRF_EXTERN_LITERAL"));
 // struktur

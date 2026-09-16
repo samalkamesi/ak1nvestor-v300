@@ -442,7 +442,10 @@ const GAMLA = [
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här
   // underkänner fortfarande OKÄNDA (odokumenterade) komponenter.
-  const PAGAENDE_KANDA = ["svaraLokaltTsdjup"];
+  // Omgång 11 (s6-u3): beteendedjup-lagret SIST i widgeten — känd-frivillig
+  // tills detta tests fönster uppdateras till 17-läget (samma mekanism som
+  // tsdjup-raderna ovan: dokumenterad syskonpågående, inte okänd komponent).
+  const PAGAENDE_KANDA = ["svaraLokaltTsdjup", "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup"];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

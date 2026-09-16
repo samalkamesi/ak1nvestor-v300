@@ -369,6 +369,7 @@ const GAMLA = [
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
+    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -391,9 +392,9 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 16 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 18 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "14/16 lager i ordning (ägande + redovisningsdjup + djup + historia + lonsamhetsdjup + tsdjup + skattedjup SIST), inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "14/18 lager i ordning (ägande + redovisningsdjup + djup + historia + lonsamhetsdjup + tsdjup + skattedjup + beteendedjup + riskdjup SIST), inga okända komponenter",
   );
 }
 

@@ -39,6 +39,16 @@ import { svaraLokaltNasta } from "@/lib/ai-mentor-nasta-fragor";
 // därför aldrig stjäla en fråga från tidigare lager; källmärkt ur
 // kursregistret med flerkällsrad (rk-02/v19/ks-01, km-022/bk-01/bokmaster)
 import { svaraLokaltKapitalmekanik } from "@/lib/ai-mentor-kapitalmekanik-fragor";
+// Spår 6 omgång 3 (s6-u1 sektor): +3 förhandsfrågor (sektorsanalys, bank,
+// fastighet) — sektor-lagret prövas SIST och kan därför aldrig stjäla en
+// fråga från tidigare lager. KURATION s6-u1 omgång 5: lagret levererades
+// i c363ec8b men kopplades ALDRIG in här (commiten trodde widgeten "redan
+// i HEAD" — den var den inte; frågorna var död kod) — wiring enligt
+// lagrets egen dokumentation (kapitalmekanik före sektor).
+import { svaraLokaltSektor } from "@/lib/ai-mentor-sektor-fragor";
+// Spår 6 omgång 5 (s6-u1): +1 förhandsfråga (praktiska case/verkliga bolag
+// — pc-familjen, kategorins 21 kurser) — case-lagret ligger SIST i kedjan
+import { svaraLokaltCase } from "@/lib/ai-mentor-case-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -742,7 +752,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

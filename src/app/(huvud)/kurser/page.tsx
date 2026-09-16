@@ -152,7 +152,7 @@ function UtvaltKort({
   hojd?: boolean;
 }) {
   return (
-    <li>
+    <li className="cv-utvalt">
       <Link
         href={`/kurser/${c.slug}`}
         className={`group flex h-full flex-col rounded-xl border p-5 transition-all hover:-translate-y-0.5 hover:shadow-lg ${

@@ -1098,3 +1098,27 @@ h1, h2, h3, h4, h5, h6 {
   content-visibility: auto;
   contain-intrinsic-size: auto 21rem;
 }
+
+/* ── PRESTANDA (o19): CONTENT-VISIBILITY på /kurser — registret (24 kort
+   per sida) och de tre utvalda sektionerna (18 kort). Sond-bevis
+   2026-09-16 (verktyg/prestanda-sond-sl.mjs + lokal SSR-A/B):
+   registrets kort kostar LINJÄRT ~3 ms layout styck (24 kort ≈ 70–140 ms
+   othrottat) och optional-webfontens dubbla layoutpass layoutar om hela
+   listan; med CV sjönk SSR-layouten 119 → 60 ms i minst störda omgång.
+   Höjdreservation per brytpunkt: mobil registerkort ≈ 9rem (p-4 + titel
+   + metadata + learn-min-h 3.5rem), md+ kompaktrad ≈ 3rem, utvalt kort
+   ≈ 12rem (p-5 + chiprad + titel + learn + meta). Samma mekanik och
+   oförändrade DOM/SEO/hydrering som .cv-kort ovan. */
+.cv-registerkort {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 9rem;
+}
+@media (min-width: 768px) {
+  .cv-registerkort {
+    contain-intrinsic-size: auto 3rem;
+  }
+}
+.cv-utvalt {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 12rem;
+}

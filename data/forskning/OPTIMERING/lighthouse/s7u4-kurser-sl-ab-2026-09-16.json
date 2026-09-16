@@ -1,0 +1,178 @@
+{
+  "metod": "file://-A/B på räddad SSR-HTML (/kurser, curl 2026-09-16) + lokala CSS-kopior; Chrome headless 390x844, --disable-javascript --disable-remote-fonts (isolerar SSR-layouten från JS-våg och webfont-swap); Layout/UpdateLayoutTree-dur ur DevTools-trace (verktyg/prestanda-sond-sl.mjs-metodik). Brus mellan körningar = fabriksyskons CPU-last; INTERNA jämförelser inom omgång.",
+  "sektionsisolering": [
+    {
+      "variant": "v0-baseline (hela SSR-sidan)",
+      "layoutTopMs": [
+        178,
+        29
+      ],
+      "slMs": 266,
+      "kommentar": "monster-Layout dirtyObjects=1348/1348 (hela dok), layoutRoot=#document"
+    },
+    {
+      "variant": "v1-utan-kategorivagg",
+      "layoutTopMs": [
+        108
+      ],
+      "slMs": 229
+    },
+    {
+      "variant": "v2-utan-register (24 kort)",
+      "layoutTopMs": [
+        38
+      ],
+      "slMs": 80,
+      "kommentar": "största enskilda sektionsposten"
+    },
+    {
+      "variant": "v3-utan-utvalda (18 kort)",
+      "layoutTopMs": [
+        26
+      ],
+      "slMs": 83
+    },
+    {
+      "variant": "v4-utan-socialproof",
+      "layoutTopMs": [
+        28
+      ],
+      "slMs": 51
+    },
+    {
+      "variant": "v5-endast-register",
+      "layoutTopMs": [
+        9
+      ],
+      "slMs": 27,
+      "kommentar": "registret+nav+footer allena = billigt när dokumentet är kort"
+    }
+  ],
+  "kortantal_linjaritet": [
+    {
+      "variant": "v0 (24 kort)",
+      "top": 118
+    },
+    {
+      "variant": "v6 (12 kort)",
+      "top": 45
+    },
+    {
+      "variant": "v7 (6 kort)",
+      "top": 28,
+      "kommentar": "~2,8-4 ms layout PER registerkort — patologiskt (biblioteket: 0,03 ms/objekt)"
+    }
+  ],
+  "kortdelar_ab": [
+    {
+      "variant": "vA-utan-skeleton",
+      "top": 57,
+      "kommentar": "skeleton-spanen (h-[3.25rem] max-w-[38ch]) bär stor del"
+    },
+    {
+      "variant": "vB-utan-faschips",
+      "top": 122
+    },
+    {
+      "variant": "vC-utan-metadatarad",
+      "top": 31
+    },
+    {
+      "variant": "vD-korta-titlar",
+      "top": 55,
+      "kommentar": "titeltextens mätning dyr; brus mellan omgångar stort — ordningen inom omgång håller"
+    }
+  ],
+  "js_font_isolering": [
+    {
+      "test": "/kurser JS PÅ (sond mot localhost)",
+      "slMs": 594,
+      "layoutAntal": 128,
+      "kommentar": "mikro-våg: 128 Layout + 362 IO-computes + 180 rAF"
+    },
+    {
+      "test": "/kurser JS AV",
+      "slMs": 636,
+      "layoutTop": [
+        151,
+        130
+      ],
+      "kommentar": "DUBBEL layout = optional-webfontens två pass (fallback + riktiga metricer)"
+    },
+    {
+      "test": "/kurser JS AV + remote-fonts AV",
+      "slMs": 576,
+      "layoutTop": [
+        178
+      ],
+      "kommentar": "EN layout — font-swap-dubblingen bevisad"
+    },
+    {
+      "test": "/en/kurser JS PÅ",
+      "slMs": 395,
+      "layoutTop": [
+        250
+      ],
+      "kommentar": "samma monster UTAN utvalda sektioner => KursSok-gemensamt"
+    },
+    {
+      "test": "/en/kurser JS AV",
+      "slMs": 185,
+      "layoutTop": [
+        29
+      ],
+      "kommentar": "hydratisering+learn-swap-driver ~220 ms på /en"
+    },
+    {
+      "test": "/ar/kurser JS PÅ",
+      "slMs": 181,
+      "layoutTop": [
+        94
+      ],
+      "kommentar": "arabisk spegel billigare — textmätning latinsk serif dyrast"
+    }
+  ],
+  "kur_bevis": [
+    {
+      "omgang": 1,
+      "foreMs": 1406,
+      "medCvMs": 876,
+      "kommentar": "hög last (fabrikssyskon)"
+    },
+    {
+      "omgang": 2,
+      "foreMs": 699,
+      "medCvMs": 68
+    },
+    {
+      "omgang": 3,
+      "foreMs": 119,
+      "medCvMs": 60,
+      "kommentar": "minst störda omgången: -50% SSR-S&L; CV-varianten stabil 60-68 i alla omgångar"
+    }
+  ],
+  "referens_sidor": [
+    {
+      "sida": "/",
+      "slMs": 286,
+      "layoutAntal": 91,
+      "monster": 109,
+      "dirtyObjects": 573
+    },
+    {
+      "sida": "/blogg",
+      "slMs": 215,
+      "layoutAntal": 8,
+      "monster": 117,
+      "dirtyObjects": 1494
+    },
+    {
+      "sida": "/bibliotek",
+      "slMs": 219,
+      "layoutAntal": 7,
+      "monster": 156,
+      "dirtyObjects": 5084,
+      "kommentar": "5084 objekt på 156 ms = 0,031 ms/obj vs /kurser 0,13"
+    }
+  ]
+}

@@ -153,7 +153,7 @@ function RegisterKort({
   }, [c.slug]);
 
   return (
-    <li>
+    <li className="cv-registerkort">
       <Link
         href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
         title={last ? t("ksok.fasKursTitel", { fas }) : undefined}

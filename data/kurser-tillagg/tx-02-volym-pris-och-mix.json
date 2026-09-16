@@ -1,0 +1,156 @@
+{
+  "slug": "tx-02-volym-pris-och-mix",
+  "category": "TILLVÄXT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Volym, pris och mix — tillväxtens tre motorer",
+  "summary": "Fortsetzungskursen om tillväxt: den organiska siffran (tx-01) består av tre motorer — fler enheter, dyrare enheter, annorlunda enheter — och här lär du dig dela upp dem, bedöma deras hållbarhet och läsa deras skilda vägar ner i marginalerna.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Dela upp organisk tillväxt i sina tre motorer — volym (fler sålda enheter), pris (högre pris på samma enheter) och mix (annorlunda sammansättning av det sålda) · Räkna volym-pris-bron: hur två motorer tillsammans bygger omsättningstillväxten multiplicativt · Bedöma motorernas hållbarhet — volym har volymtak, pris har pristak, och mix kan vända lika snabbt som den kom · Läsa motorernas skilda vägar ner i resultatet: volym rinner genom kostnadsmassan med hävstång, pris rinner nästan rakt i marginalen, mix kan lyfta marginalen utan att en enda enhet sålts dyrare · Känna igen fällorna: inflationen förklädd till tillväxt, mixen som statistisk illusion och priset som volymens dolda fiende · Koppla motorläsningen till AKM1:s TILLVÄXT-familj (V01–V03) och AKM2:s tillväxtdimension.",
+  "why": "Grundkursen (tx-01) lärde skilja organisk tillväxt från förvärvad — men den organiska siffran är fortfarande en blandning. Ett bolag som växer åtta procent organiskt kan göra det genom att sälja åtta procent fler enheter till oförändrat pris, genom att ta åtta procent högre pris på oförändrad volym, eller genom att kunderna gradvis bytt till dyrare varor — och de tre berättelserna är helt olika. Volymtillväxt bygger på efterfrågan och kapacitet och bär operativ hävstång med sig; pristillväxt bygger på prissättningskraft och syns nästan direkt i marginalen; mix är en vandring uppåt i sortimentet som kan vara strategi — eller tur. Frågan om hållbarhet skiljer motorerna åt: volym har ett volymtak (mättnad, kapacitet), pris har ett pristak (konkurrens, substitution) och de olika motorerna möter sina tak vid olika tidpunkter. Att kunna dela upp en tillväxtsiffra i sina motorer är därför tillväxtfamiliens naturliga andra steg — det är skillnaden mellan att veta hur mycket bolaget växte och att förstå hur det växte, och den förståelsen är precis vad AKM2:s tillväxtdimension betygsätter.",
+  "history": {
+    "origin": "Säljare och inköpare har alltid vetat att omsättning är volym gånger pris — det är handelns aritmetik. Den analytiska uppdelningen växte fram med den storskaliga detaljhandeln och konsumtionsvaruindustrin på 1900-talet, då kedjorna började följa sålda enheter och pris per enheter som separata nyckeltal; inom redovisningen gjorde räntabilitets- och tillväxtanalysen samma tanke på papperet: en intäktsökning är antingen mera, dyrare eller annorlunda sålt.",
+    "evolution": "Två traditioner fördjupade hantverket. Den ena är inflationens era: på 1970-talet, när konsumentpriser steg med tvåsiffriga tal i många länder, blev det en analytisk nödvändighet att skilja nominell tillväxt (pris) från real (volym) — redovisningsläror och börsanalyser lärde ut att ett bolag kan 'växa' tio procent i nominalsiffrorna medan det sålt färre enheter. Den andra är konkurrensekonomins: Porters femkraftsram från 1979 gav prissättningskraften en teoretisk hemvist — priset man kan ta är en funktion av konkurrensen, substituten och byteskostnaderna — och därmed blev pristillväxtens hållbarhet en fråga om vallgravar snarare än om mod. Buffett formulerade senare samma tanke från ägarsidan: den enskilt viktigaste faktorn är förmågan att höja priser utan att förlora volym.",
+    "modern": "I dag uppger konsumtions- och industriföretag rutinmässigt organisk tillväxt uppdelad i volym och pris/mix i sina rapporter — uppdelningen har blivit en del av rapportspråket — och analytiker frågar efter den när den saknas. Inom mjukvarusektorn lever motsvarande tänkande i nettoinkomstrelationen per kund (net revenue retention): samma kund, mer intäkt — en mix- och prismotor mätt i retentionssiffror. Samtidigt har inflationsvågorna på 2020-talet påmint om grundläxan: när priserna stiger generellt kan halva näringslivet visa organisk 'tillväxt' som enbart är penningvärdets förändring, och den som inte delar upp motorerna kan inte skilja rörelse från stillastående."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — tre motorer bakom samma procentsats",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Volym — fler enheter och dess pris",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Pris och mix — dyrare enheter, annorlunda enheter",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Praktisk tillämpning — volym-pris-bron steg för steg",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — tre motorer bakom samma procentsats",
+      "intro": "Grundkursen skilde det organiska från det köpta — nu delar vi det organiska i sina beståndsdelar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En omsättning är i grundformen antal sålda enheter gånger pris per enhet. Växer omsättningen kan det alltså ske på två raka sätt: flera enheter (volym) eller högre pris per enhet (pris). Till det kommer det tredje, listigare sättet: att sammansättningen av det sålda förskjuts — billigare och dyrare varor byter andelar av försäljningen (mix). Ett klädmodebolag som säljer lika många plagg men en större andel ytterplagg till högre pris har en mixförbättring; ett verktygsbolag vars kunder gradvis väljer modeller i övre prissegmentet har en annan. I rapporteringen slås pris och mix ofta ihop till 'pris/mix' — en praktisk kompromiss som denna kurs ändå håller isär i tanken, eftersom deras hållbarhet skiljer sig.\n\nVarför delningen spelar roll: de tre motorerna har olika bränsle, olika tak och olika vägar ner i resultatet. Volymen drivs av efterfrågan och begränsas av kapacitet och mättnad; priset drivs av prissättningskraft och begränsas av konkurrens och substitut; mixen drivs av sortimentsval och kundernas vandring och kan vända utan att något aktivt gjorts fel. Och i resultaträkningen rör de sig olika: mer volym sprider fasta kostnader över fler enheter (operativ hävstång), högre pris faller nästan i sin helhet till marginalen, och mix kan lyfta marginalen utan att produktionen rörts. Samma procentsats i toppen — tre olika ekonomier under den."
+        },
+        {
+          "type": "definition",
+          "content": "Volym-pris-mix: den klassiska uppdelningen av organisk omsättningstillväxt. Volym = förändring i sålda enheter. Pris = förändring i pris per enhet vid oförändrad sammansättning. Mix = förändring i försäljningens sammansättning mot dyrare eller billigare enheter. Rapporteringen redovisar ofta 'pris/mix' som en post."
+        },
+        {
+          "type": "insight",
+          "content": "'Omsättningen växte åtta procent' är en observatörs mening — 'sex procent volym och två procent pris' är en analytikers: den andra meningen kan prövas, ifrågasättas och föråldras på ett sätt den första aldrig kan."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Volym — fler enheter och dess pris",
+      "intro": "Den mest påtagliga motorn: mer sålt — med hävstången och taken som hör den till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Volymtillväxt är tillväxtens klassiska form: fler kunder, fler enheter per kund, nya marknader. Dess styrka är att den bygger på verklig rörelse i verksamheten — produktion, distribution, försäljning arbetar hårdare — och den bär ofta operativ hävstång med sig: de fasta kostnaderna (fabriker, utveckling, administration) täcks av en större intäktsbas, så resultattillväxten kan springa snabbare än volymen. Ett bolag med fasta kostnader på 60 och rådighet på 20 per enhet som ökar volymen 10 procent ser resultatet växa långt mer än 10 procent — det är samma mekanik som gör volymen eftertraktad.\n\nMen volymmotorn har två inbyggda tak. Det första är kapacitetstaket: fysisk produktion och logistik kan bara pressas så långt, och varje steg därefter kräver investeringar — kapital som binder (kopplingen till roic-01:s investerade kapital är rak: volymtillväxt är sällan gratis). Det andra är mättnaden: andelen av kundernas plånböck som en produkt kan ta är ändlig, och volymtillväxt som drivs av rea och rabatt är i praktiken volym köpt av pris-motorn i omvänd riktning. Volymens kvalitet läses därför i sällskap: håller priserna (eller stiger), håller marginalerna, och kräver tillväxten proportionerligt mindre kapital än förr — då är volymen äkta. Faller priserna medan volymen stiger är frågan nästa kapitel: drivs tillväxten av efterfrågan eller av att man köper den?"
+        },
+        {
+          "type": "insight",
+          "content": "Volym är den enda motor som bygger operativ hävstång — och den enda som alltid kostar kapital förr eller senare; äkta volym känns igen på att pris och marginal håller medan den rullar."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Pris och mix — dyrare enheter, annorlunda enheter",
+      "intro": "Den tystaste motorn: intäkterna växer utan att en enda enhet till sålts.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pristillväxt är avkastningen på prissättningskraft. När ett bolag kan höja priser snabbare än kostnaderna — eller ens i takt — utan att volymen faller, är det ett av de starkaste tecknen på en verklig fördel: konkurrensen är svag, kunderna har få alternativ eller byteskostnaderna är höga (moat-kurserna mt-01 och mt-02 ger denna kraft sin teoretiska hemvist). Prismotorns ekonomi är unik: ett pris som höjs utan volymfall rinner nästan helt till marginalen, eftersom kostnadsmassan är oförändrad — därför kan små prisökningar flytta resultatet osedvanligt mycket. Pristillväxtens tak är konkurrensens: varje höjning är en inbjudan till substitut, och priset som marknaden bär i ett medgångsläge kan bli för högt i ett motgångsläge. Hållbarheten avgörs alltså inte av att priset höjts, utan av varför det tåldes.\n\nMix är den mest förbisedda motorn. Den mäter att försäljningen förskjutits i sammansättning: mot dyrare segment, mot produkter med högre marginal, mot kunder som köper mer per enhet. Mix kan vara strategi — ett medvetet arbete att flytta sortimentet uppåt — eller demografi och tur: när de rika kunderna handlar mer förskjuts mixen av sig själv. Mixens särskilda fallgata är att den kan lyfta genomsnittspriset och marginalen utan att något enskilt pris höjts eller enskild enhet sålts mer — en kollektiv förskjutning som ser ut som två motorer men är en tredje. Och mix kan vända: när kunderna vänder nedåt i sortimentet (handeln kallar det trading down) faller intäkten per enhet och marginalen med den, utan att konkurrensen förändrats ett dygn. Pris/mix som rapportpost är därför att läsa som en fråga, inte ett svar: vilken av de två var det, och vad driver den?"
+        },
+        {
+          "type": "insight",
+          "content": "Priset faller rakt i marginalen och mixen faller i genomsnittet — båda växer intäkter utan en enda ny enhet, och båda är motorer vars tank mätts i kundernas alternativ, inte i bolagets ansträngning."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — volym-pris-bron steg för steg",
+      "intro": "Grundkursens tillväxtbrygga byggdes för organiskt mot förvärvat — här byggs den inre bron, mellan motorerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förra året sålde bolaget 100 enheter till 10 kronor each: omsättningen 1 000 kronor. I år redovisas 106 enheter och omsättningen 1 124 kronor. Steg ett: läs ut volymen — 106 ÷ 100 = +6 procent. Steg två: räkna fram det genomsnittliga priset i år — 1 124 ÷ 106 ≈ 10,60 kronor. Steg tre: prisändringen — 10,60 ÷ 10 = +6 procent (i verkliga fall är genomsnittspriset en mix av allt sålt, så denna post är pris och mix tillsammans, exakt som rapporteringen slår ihop dem). Steg fyra: bron hem — kontrollen att motorerna tillsammans bygger helheten: 1,06 × 1,06 = 1,1236, det vill säga +12,4 procent, och 1 000 × 1,1236 = 1 124 kronor. Bron sluter. Tillväxten på 12,4 procent bestod av 6 procent volym och 6 procent pris/mix — två motorer som multipliceras, aldrig adderas.\n\nNästa steg är läsningen under bron. Vad hände med marginalerna? Om kostnaderna per enhet var oförändrade höjer prisdelen (6 procent på 100 enheters värdebasis) marginalen direkt, medan volymdelen sprider fasta kostnader — resultatet växer mer än 12,4 procent. Om i stället genomsnittspriset stigit därför att alla priser höjts med inflationen medan kostnaderna stigit lika mycket, är den nominella tillväxten en spegling av penningvärdet: köpkraften i omsättningen är oförändrad (och då är frågan från fällkapitlet aktuell — hur mycket av tillväxten var valuta?). Uppgiften att träna: ta ett bolag ur kursuniversumet som redovisar volym och pris/mix, bygg bron för två år i rad, och skriv en rad per år om vilken motor som bar och vad marginalen svarade. Ett år är en observation; tre år börjar bli ett mönster."
+        },
+        {
+          "type": "insight",
+          "content": "Volym gånger pris lika med omsättning — och (1 + volym) gånger (1 + pris) lika med (1 + tillväxt): bron är aritmetik, konsten är frågan den möjliggör: vilken motor, hur länge till, och till vilket kapitalpris?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Motorläsningens fällor är gamla och frestande — de flesta handlar om att se en motor och tro på en annan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: inflationen förklädd till tillväxt. I tider av allmän prisstegring kan nästan alla bolag visa organisk tillväxt som helt eller delvis är penningvärdets förändring; om prisposten matchar konsumentprisindex och volymen är noll, har verksamheten inte vuxit — den har omprissats. Fälla två: volym köpt av pris. Rabatter och reor flyttar volym — tillfälligt och med marginalen som betalning; volymtillväxt med fallande genomsnittspris och fallande marginal är inte tillväxt utan subventionerad försäljning, och den försvinner när rabatten försvinner. Fälla tre: mixillusionen — ett genomsnittspris som stiger kan dölja att alla enskilda priser står stilla medan en dyr produkt slumpvis sålts mer; omprodukteringar och lansningar gör samma syner. Motgiftet är att fråga efter underliggande volym- och prisdata för de största produkterna, inte bara det sammanvägda talet.\n\nFälla fyra: valutaspåret — för bolag med utlandsförsäljning kan en svag krona måla 'pris/mix' som i själva verket är en omräkningseffekt; den organiska siffran i lokal valuta är den ärliga. Fälla fem: att tro att motorerna är oberoende. Pris högt nog tar volym; volym hårt nog jagad urvätar pris; mix som drivs av lanseringscykler följer lanseringscykeln nedåt. Den som läser en motor måste därför alltid fråga vad de andra två gjorde samtidigt — det är bron från kapitel fyra, använd som vakt i stället för som räkneövning. Sjätte och sista: att glömma kapitalpriset. Volym mot kapacitetstaket kräver investeringar; pristillväxt ur konkurrenskraft kräver underhåll av det som ger kraften (utveckling, varumärke, kvalitet — kostnader som syns i marginalen). Ingen motor är gratis, och priset på att hålla den igång står i kassaflödet och i ROIC (roic-01). Och som alltid i spåret: detta är hantverket att läsa tillväxt — aldrig en uppmaning att handla."
+        },
+        {
+          "type": "insight",
+          "content": "De flesta tillväxtfällor är en motor i en annans kläder: inflation som pris, rabatt som volym, tur som mix, valuta som organisk kraft — bron från kapitel fyra, körd baklänges, avslöjar var och en."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+      "intro": "I AK1A:s system är motorläsningen tillväxtfamiliens kvalitetsgrad — den som väger V01–V03 mot varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "TILLVÄXT-familjens kurser V01–V03 mäter försäljningstillväxt, återkommande intäkter och diversifiering — tx-01 skilde det organiska från det köpta, och denna kurs gör den sista uppdelningen: vilka motorer som bär den organiska tillväxten och vad de är värda. Korsningarna binder ihop systemet: mot lönsamheten (ln-01, roic-01) — prismotorn syns i bruttomarginalen (V07) och volymmotorn i kapitalomsättningen, och ROIC avgör om volymen var värd sitt kapital; mot moat-familjen (mt-01, mt-02) — varaktig pristillväxt är prissättningskraft, alltså en vallgrav som mäts; mot stabiliteten (V12, st-kurserna) — en tillväxt som enbart drivs av pris i ett högkonjunkturläge är känsligare än den som drivs av volym i ett strukturellt behov; mot värderingen (vr-01, vr-02) — marknaden betalar olika för olika motorer, och multipeln bör läses med motorkunskapen i handen; och mot katalysatorfamiljen (kt-02) — förväntansträdet på ett bolag vars tillväxt är prisdrevet ska prisa vad som händer när pristaket nås.\n\nAvsluta med den levande övningen, en direkt fortsättning på grundkursens brygga: välj två bolag ur kursuniversumet som redovisar volym och pris/mix, bygg motorbron för de senaste tre åren, och ställ till varje bolag de tre frågorna: vilken motor bar (och när bytte den)? vad svarade marginalen? och vilket tak är närmast — volymens, prisets eller mixens? Skriv svaren i tre rader och återkom nästa rapport. Det är utbildningens kärna: tillväxt är inte en siffra utan en mekanik — och mekanik lär man sig genom att skruva isär den, rapport efter rapport, tills ljudet av en växande omsättning berättar vilka motorer som driver."
+        },
+        {
+          "type": "insight",
+          "content": "V01–V03 mäter hur mycket tillväxten var — volym, pris och mix förklarar vad den var värt: samma procentsats, tre kvaliteter, och hela skillnaden i hållbarhet står att läsa i motorerna."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynchs tale om 'earnings growth' som aktiens motor gäller här i högsta grad — men hans finaste bidrag till motorläsningen är kluvenheten till tillväxt som köpts med rabatt och hans respekt för bolag som kan höja priser i tysthet. Lynch påminde ofta om att den bästa tillväxten är den som inte kräver nytt kapital — i motorernas språk: pris och mix före volym mot kapacitetstaket — och hans varningar för het tillväxt i bolag utan prissättningskraft är motoranalysens äldsta röst.",
+  "grahamSection": "Benjamin Graham levde i inflationens och depressionens tidevarv och visste därför bättre än de flesta att en nominell tillväxtsiffra kan bära både verklig expansion och penningvärdets förändring — hans krav på långa serier och på att skilja förbigående från bestående är motorläsningens förfader. Grahams försiktighet med bolag vars tillväxt bygger på ett läge snarare än en kraft översatt till denna kursens termer: fråga alltid vilken motor som driver, och hur den möter sitt tak.",
+  "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familiens kvalitetsblock: V01–V03 mäter nivåerna, tx-01 spårar källan (organiskt eller förvärvat), och tx-02 delar den organiska tillväxten i volym, pris och mix — den uppdelning som avgör hur mycket tillväxten är värt i AKM2:s tillväxtdimension. Broarna går till lönsamhetsdimensionen (priset syns i marginalen, volymen i hävstången), moat-dimensionen (varaktig prissättningskraft är en vallgrav) och värderingsdimensionen (olika motorer förtjänar olika multipler) — motorläsningen är därmed en av metodens mest brofasta moduler."
+}

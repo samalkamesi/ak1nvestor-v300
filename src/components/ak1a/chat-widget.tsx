@@ -39,6 +39,32 @@ import { svaraLokaltNasta } from "@/lib/ai-mentor-nasta-fragor";
 // därför aldrig stjäla en fråga från tidigare lager; källmärkt ur
 // kursregistret med flerkällsrad (rk-02/v19/ks-01, km-022/bk-01/bokmaster)
 import { svaraLokaltKapitalmekanik } from "@/lib/ai-mentor-kapitalmekanik-fragor";
+// Spår 6 omgång 3 (s6-u1 sektor): +3 förhandsfrågor (sektorsanalys, bank,
+// fastighet) — sektor-lagret prövas SIST och kan därför aldrig stjäla en
+// fråga från tidigare lager. KURATION s6-u1 omgång 5: lagret levererades
+// i c363ec8b men kopplades ALDRIG in här (commiten trodde widgeten "redan
+// i HEAD" — den var den inte; frågorna var död kod) — wiring enligt
+// lagrets egen dokumentation (kapitalmekanik före sektor).
+import { svaraLokaltSektor } from "@/lib/ai-mentor-sektor-fragor";
+// Spår 6 omgång 5 (s6-u1): +1 förhandsfråga (praktiska case/verkliga bolag
+// — pc-familjen, kategorins 21 kurser) — case-lagret ligger SIST i kedjan
+import { svaraLokaltCase } from "@/lib/ai-mentor-case-fragor";
+// Spår 6 omgång 6 (s6-u3): +3 förhandsfrågor (index/passivt ägande,
+// blankning/short, marginalanalys) — praktik-lagret ligger SIST och kan
+// därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (bogleheads/common-sense/pf-03/am-02, pf-10/staley/lewis,
+// v07/v08/ln-01). Ansvarsfördelning: marginalens V-ord ägs av basens
+// V-uppslag (s6-u2:s emission-precedens) — praktik äger familjeorden.
+import { svaraLokaltPraktik } from "@/lib/ai-mentor-praktik-fragor";
+// Spår 6 omgång 7 (s6-u2): +2 förhandsfrågor (diversifiering/korrelation,
+// valutarisk) — portfoljgrund-lagret ligger SIST och kan därför aldrig
+// stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (pf-03/km-014/pf-11, rk-07/km-058/sj-01). Ansvarsfördelning: basens
+// V20-titelord "aktier" och portfölj-monstrets "sprida/riskspridning"
+// äger sina formuleringar — detta lager äger korrelations- och
+// valuta-familjeorden (duplikatskydd mot praktik-lagrets index-ämne
+// dokumenterat i modulens huvud).
+import { svaraLokaltPortfoljgrund } from "@/lib/ai-mentor-portfoljgrund-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -742,7 +768,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

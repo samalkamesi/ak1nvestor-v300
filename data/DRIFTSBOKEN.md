@@ -114,7 +114,11 @@ Rollback:
 
 Datorn = valv. Innehåll i data/backups/ (gitignorat, bara på datorn):
 - KOD: git-speglar (origin + contabo) + server-repo-<datum>.tar.gz
-  (~250 MB, hela /home/ak1a/AK1 UTAN node_modules/.next, vakt 500 MB).
+  (arbetsytan UTAN node_modules/.next/.git/tool-results/data-cache/
+  data-backups, ~130 MB, vakt 500 MB) + server-git-<datum>.bundle (hela
+  historiken ~140 MB, `git bundle verify`-bar). gzip-integritetskoll i
+  verktyget sedan 2026-09-16 (DR-PROV-2026-09-16-KEDJA3.md: 09-09-tarballen
+  var KORRUPT i 7 dygn oupptäckt; 09-08 frisk).
 - DATA (Supabase via backup-fran-molnet.mjs): 10 per-typ-snapshots
   (variabler, variabel-andringar, kurs-metadata + andringar,
   termbank-tillagg, blogg-utkast, blogg-publicerade, media-filer,
@@ -294,7 +298,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): GRÖN samma dag, RTO 52–58 s / 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT samma kväll av annan agent (femte RTO-punkten 23,9 s, radbild identisk; härdat: ram-/diskgrind exit 75, städningskontrakt slutet, RÖD väg protokollförs) | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s**: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -379,9 +383,11 @@ EnvironmentFile med chmod 600).
 - **Retention 30 dagar är REDAN mekaniserad** i samma cron-rad
   (`find … -mtime +30 -delete`) — härmed dokumenterat; 5 dumpar 11–15 sep,
   regeln tom ännu (korrekt).
-- VÄNTAR huvudagenten (1 radbyte i crontab, testat klart): lägg sist i
-  02:30-kedjan `&& node verktyg/kolla-dump-markorer.mjs --natt
-  >> /tmp/supabase-backup.log 2>&1` — röd natt blir då loggad RÖD.
+- ~~VÄNTAR huvudagenten~~ **VERKSTÄLLT 2026-09-16 av s10-u5 (fabrik):**
+  crontab-radbytet applicerat + testkört helt GRÖNT (se sektion S10-U5)
+  — tillsammans med pgpass-kuren ovan: processlistan ren, varje natt-dump
+  döms av markörkontraktet, RÖD natt låser retention (gamla dumpar
+  behålls tills kedjan är grön).
 - Fullständig rapport: data/forskning/DUMP-MARKORKOLL-2026-09-15.md.
 
 ## S10-U4 — DR-ÖVNINGEN MEKANISERAD: `verktyg/dr-ovning.mjs` (2026-09-15, LEVERERAD)
@@ -466,15 +472,123 @@ EnvironmentFile med chmod 600).
   20,0 · 23,9 s — lastberoende spridning), radbild identisk för femte gången
   (public 60/1 246 728 · public+storage 68/1 246 864 · alla 95/1 247 119 ·
   fel 780/780 kända 0 okända), städning verifierad (DR-PROV-2026-09-15-AUTO-3.md).
-- **Flock-notisen:** bekräftar S10-U3:2:s kö till huvudagenten (flock-stöd i
-  dr-ovning.mjs); tills dess rekommendation: `flock -w 900 /tmp/ak1a-dr-prov.lock
-  -- node verktyg/dr-ovning.mjs` när väntan önskas. Flock lämnar en tom
-  låsfil efter sig — oskyldigt (kärnan släpper vid processdöd); städas fri.
+- **Flock-notisen (RÄTTAD 2026-09-16 av s10-u1 o3):** rekommendationen ovan var
+  DUBBELDEFEKT och har ALDRIG fungerat: (a) `--`-separatorn stöds ej av
+  util-linux flock 2.39.3 ("failed to execute --", exit 69 — empiriskt bevisat),
+  (b) även korrekt syntax (`flock -n <låsfil> node …`) skapar flock:s tomma
+  låsfil som taLas() vägrar (exit 3 — emuleringsbevis). Flock-stödet är NU
+  INBYGGT i dr-ovning.mjs OCH dr-kedja2.mjs (re-exec under flock ≤ 900 s;
+  låsfilen städas ej i flock-läge — medvetet: unlink under flock kan skapa ny
+  inod och spränga skyddet). Bevisat i praktiken: verktyget väntade in ett
+  10-s-syskonfönster och körde sedan GRÖNT. u3:2:s kö till huvudagenten är
+  härmed LÖST.
 - **Fabrikskollision bevis nr 2** (identiska "välj själv"-uppdragstexter gav
   två agenter samma objekt; noll förlorat arbete — Write-läshindret + kollisions-
   kontroll hejdade): u3:s kur nr 1 (manifest-unika objekt) är fortfarande ej
   mekaniserad hos huvudagenten.
 - Fullständigt protokoll: data/forskning/DR-VERKTYG-GODKANNANDE-2026-09-15.md.
+
+## S10-U5 — DR-NATTKEDJAN KURAD: övningarnas eftersläpande kurer verkställda (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan redan levererad 4× (fem RTO-punkter) + aktivt
+  syskonfönster på flock-omskrivningen → spårets nästa obehandlade = de tre
+  "VÄNTAR huvudagenten"-kurerna, verkställda av fabriksbarn (samma
+  drift-rättigheter enligt u2:s sudo-bevis). Fullprotokoll:
+  data/forskning/DR-NATTKEDJAN-2026-09-16.md.
+- **Kur 1 — klartextlösenordet BORT:** /home/ak1a/.pgpass (600) +
+  PGPASSFILE i 02:30-cronen; värdet överfördes programmatiskt, återges
+  aldrig. Processlistan ren från och med 09-16 02:30.
+- **Kur 2 — markörvakten mekaniserad i natt-cronen** (u1:s VÄNTAR-rad
+  applicerad + testkörd): GRÖN exit 0 på 29,1 s — db-2026-09-16.sql.gz
+  29,8 MB / 1 287 960 rader via pgpass-vägen, domrad i
+  /tmp/supabase-backup.log. RÖD natt ⇒ retention låses (gamla dumpar
+  behålls). Gamla cron-raden backup:ad 0600 i /tmp (ALDRIG till git).
+- **Kur 3 — kedja 2:s RPO-gap SLUT:** hybrid-sync omkörd efter 7 dygns
+  tystnad (dog 09-09 på HTTP 500 sida 5): system-events-full-2026-09-15
+  .json.gz **160 928 rader / 33 sidor / 26,2 MB** + 10 per-typ-filer.
+  Domkontraktet GRÖNT (22,5 s): 0 felaktiga, **0 dubblett-id**, fönster
+  09-03→09-15. HTTP 500:et TRANSIENTT (ej reproducerbart); indexlösa
+  Range-sorteringen kvarstår som lastkänslighet → composite-index-kön
+  består. Notis: exportören stämplar UTC-datum i filnamnet.
+- **Flock-kursstatus:** VIKS till aktivt syskon (fabrikskollision bevis
+  nr 3 — deras Write 00:41:50 vann, mitt Edit hejdades av läshindret;
+  deras PG17-fönster respekterades, denna agent rörde ej PG).
+
+## S10-U1 (O3) — FULL KVARTALSÖVNING: båda kedjorna i en sekvens + flock-kur levererad (2026-09-16, GODKÄNT)
+
+- **Objektval:** uppdragstexten identisk med u2/u3/u4:s — kvartalsmallen
+  (sedan u3:2 = BÅDA kedjorna) hade aldrig körts END-TILL-END av en agent.
+  Fullprotokoll: data/forskning/DR-PROV-2026-09-16-FULL.md.
+- **Kedja 1** (dr-ovning.mjs, på db-2026-09-16 skapad 00:41:34 av s10-u5:s
+  testkörning): GRÖN exit 0 — **RTO 11,2 s** (sjätte punkten, snabbaste:
+  20,0 · 17,7 · 14,7 · 20,0 · 23,9 · 11,2), public 60/1 266 455 ·
+  public+storage 68/1 266 591 · alla scheman **99**/1 266 851 (+4 tabeller
+  på ett dygn) · fel 788 kända 0 okända. AUTO-protokoll: DR-PROV-2026-09-15-AUTO-4.md
+  (verktyget stämplar UTC — kunddag är 09-16).
+- **FLOCK-KUREN LEVERERAD I VERKTYGET** (s10-u5 viks; u3:2:s fynd 6-kur
+  mekaniserad): dr-ovning.mjs startar om sig under flock(1) på
+  /tmp/ak1a-dr-prov.lock (re-exec, väntar ≤ 900 s; pid-raden kvar som info;
+  låsfil städas ej i flock-läge — unlink under flock kan skapa ny inod och
+  spränga skyddet). **Empiriskt dubbelbevis att gamla rekommendationen var
+  trasig** (se flock-notisen: exit 69 resp exit 3-vägran) + **praktbevis:**
+  verktyget väntade in ett 10-s-syskonflock-fönster och körde sedan GRÖNT.
+- **NYTT VERKTYG `verktyg/dr-kedja2.mjs`** — kedja 2 som kommando (u4:s
+  mönster): flock-lagret + senaste-arkiv-val + skrap-DB ak1a_dr_json med
+  DDL ur SENASTE dumpen (kirurgiskt `extensions.uuid_generate_v4()` →
+  `gen_random_uuid()`; DEFAULT oviktig för COPY) + u3:2:s verktyg + oberoende
+  PG-verifiering + maskinellt protokoll + garanterad städning.
+- **Kedja 2-resultat:** 09-09-arkivet 3× GRÖN (30,7/27,0/24,6 s · 146 727
+  rader) + **nya 09-15-arkivet GRÖN 27,2 s / 160 928 rader / 0 dubbletter**,
+  tidsfönster till 2026-09-16 00:40:02, 11 event_type, jsonb läsbar.
+- **RACE-FYNDET (F3):** första försöket mot 09-15-arkivet dömdes RÖD
+  (97 557 av 160 928 — "unexpected end of file") därför att s10-u5:s
+  exportör SKREV filen mitt i läsningen (mtime 00:49:22 inuti läs-fönstret
+  00:49:01–23). Omkörning GRÖN. **Regel: RÖT mot färskt arkiv = kolla
+  exportör-process/mtime och kör om — ALDRIG mjuka upp domslutet.**
+- Städning: skrap-DB:er raderade efter varje körning, PG17 down, disk
+  76–77 GB, tmp-filer rensade. src/ orörd (tsc via projektbinär vid commit).
+  Kvartalsmallen hädanefter: `node verktyg/dr-ovning.mjs` +
+  `node verktyg/dr-kedja2.mjs` — nästa senast **2026-12-15**.
+
+
+## S10-U3 (O3) — DR-ÖVNING KEDJA 3: SERVERFILS-ARKIVET (2026-09-16, GODKÄNT)
+
+- **Spårets sista obevisade kedja restore-testad — och den var delvis DÖD:**
+  server-repo-2026-09-09.tar.gz KORRUPT (bruten gzip, "invalid compressed
+  data", 681 poster vid listing) i 7 dygn OUPTÄCKT som "senaste" arkivet;
+  09-08 frisk (restore 3,2 s, 2 564 filer, HEAD 023e9f95 = dokumenterad
+  deploy-punkt, bevisad föregångare). Fullprotokoll:
+  data/forskning/DR-PROV-2026-09-16-KEDJA3.md.
+- **Tre rotorsaker, alla kurerade i `backup-server-filer.mjs` (commit
+  55ddba50):** (1) verktyget godtog ssh-exit 0 + storlek men verifierade
+  ALDRIG gzip-strömmen → ny strömmande `gzipIntakt()` FÖRE rename (trasig
+  ström raderas, blir ALDRIG arkiv); (2) namndrift hetzner_key↔contabo_key —
+  Contabo-flyttningen dödade tar+env-steget silent (bevis: hybrid-sync.log
+  09-09 "ssh-nyckel saknas… hoppar") → contabo_key; (3) exkluderingslistan
+  tog med .git (502 MB, arkivet passerade 500 MB-vakten: 595,9 MB mätt) +
+  tool-results + cache + data/backups (arkiv-i-arkiv) → alla exkluderade.
+- **Nya VERIFIERADE artefakter på servern (server-side tar = ingen
+  ssh-ström):** server-repo-2026-09-16.tar.gz 132 MB, gzip -t GRÖN, 8 436
+  poster, exkluderingskontrakt 0 brott, restore-test 3,9 s / 7 903 filer /
+  src 666 filer 200 991 rader, spot-diff 4/4 identisk · server-git-
+  2026-09-16.bundle 139 MB, `git bundle verify` "complete history", klon-
+  test 8,3 s / 1 067 commits / HEAD = dagens topp. **Total kedja-3-RTO
+  ~12,2 s.** Bundle FYND: 3,6× effektivare packning än .git → `git gc`-kö
+  till huvudagenten (ALDRIG under aktiv fabriksdrift).
+- **Sidokurer:** server-env-backup chmod 644→600 (doktrin; värden lästa
+  ALDRIG — nyckelnamn endast); konfig-snapshots parse-bar men 7 d gamla
+  (datorns hybrid-sync tyst sedan 09-09 — eskalering: kundens Schemaläggare,
+  se S10-U5). Moln-JSON-arkivet 160 928 rader delat med s10-u5 (min
+  exportör 00:49 + deras verify + S10-U1(O3):s omkörning = trippelverifyat;
+  min exportör orsakade deras falska RÖDA "unexpected end of file" — se
+  deras regel RÖT-mot-färskt-arkiv).
+- **Kö till huvudagenten:** `git gc` vid lugnt fönster · 200k-taket i
+  backup-fran-molnet.mjs nås ~2026-10-04 vid +2 185 rader/dag (91 %
+  översättning; verktyget markerar taket HEDERLIGT men kapaciteten räcker
+  ej) · cron för vecko-arkivering server-side · kundnotis datorns
+  hybrid-sync. KVD: tsc 0 via projektbinär, src/ orörd, inga byggen,
+  PG17 orörd HELA övningen (down före/efter), tmp städad, R2 orörd.
+
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

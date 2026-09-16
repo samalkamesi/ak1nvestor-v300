@@ -89,16 +89,16 @@ export function CookieConsent() {
             <p className="mt-1 text-xs leading-relaxed text-[#EDE6D6]/85">
               Nödvändiga gör att tjänsten fungerar (inloggning, kursprogress). Analys hjälper
               Förståelse-Först-assistenten anpassa din utbildning. Läs mer i{" "}
-              <Link href="/cookiepolicy" className="underline hover:text-[#E8C766]">
+              <Link href="/cookiepolicy" prefetch={false} className="underline hover:text-[#E8C766]">
                 cookiepolicyn
               </Link>{" "}
               och{" "}
-              <Link href="/privacy-policy" className="underline hover:text-[#E8C766]">
+              <Link href="/privacy-policy" prefetch={false} className="underline hover:text-[#E8C766]">
                 integritetspolicyn
-              </Link>
+              </Link>{" "}
               . Hela dataregistret — vad, varför, rättslig grund och dina
               rättigheter, enligt GDPR artikel 13 — finns på{" "}
-              <Link href="/transparens" className="underline hover:text-[#E8C766]">
+              <Link href="/transparens" prefetch={false} className="underline hover:text-[#E8C766]">
                 Transparens &amp; GDPR
               </Link>
               .

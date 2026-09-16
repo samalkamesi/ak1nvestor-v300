@@ -1,0 +1,8 @@
+{
+  "granskat": "data/blogg-utkast/m9-ko/boerspsykologi-fallstugor-v1.json",
+  "granskadAv": "agentfabrik auto-s1-u1 (2026-09-16)",
+  "rapport": "boerspsykologi-fallstugor-KONTROLL-2026-09-16.md",
+  "bedomning": "FLYTTKLAR — 0 rättningar, 0 nya fynd; källor (md5 båda oförändrade), siffror (28/28 skript + 15 egna kontroller), juridik 2007:528 (juridikgrind-vakt 0 fel/0 fynd på filen), 911-referenser (0 träffar på 6 mönster) och länkar (3/3 HTTP 200 mot localhost) alla GRÖNA 2026-09-16; kandidatMd5 reproduceras exakt (utkastet oekkat sedan generering)",
+  "anvandning": "Postlistan är TOM MED AVSIKT: utkastet bär ett determinismkvitto (kandidatMd5 b90e7b95b8f260c731ef668b952bbe9e, body 4 995 tecken byte-identiskt rekonstruerad 2026-09-16) — varje manuell strängändring i JSON:en bryter kvittot. Innehållsändringar på m9-serien går via verktyg/m9-fabrik.mjs (regenerering med nytt kvitto). Exportvägen stryker vid publicering '(utkast)' i titeln och kvittoavsnittet i bodyn (09-14-fynd F1). Publicering = kundens beslut (R2).",
+  "poster": []
+}

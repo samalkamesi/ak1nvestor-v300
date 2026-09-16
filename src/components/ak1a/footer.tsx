@@ -117,6 +117,7 @@ export function Footer() {
               <Link
                 key={punkt.lank}
                 href={punkt.lank}
+                prefetch={false}
                 className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
               >
                 {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
@@ -131,54 +132,63 @@ export function Footer() {
             </h4>
             <Link
               href="/villkor"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.anvandarvillkor")}
             </Link>
             <Link
               href="/privacy-policy"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.integritetspolicy")}
             </Link>
             <Link
               href="/transparens"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("nav.transparens")}
             </Link>
             <Link
               href="/cookiepolicy"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.cookiepolicy")}
             </Link>
             <Link
               href="/ansvar"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.ansvarFriskrivning")}
             </Link>
             <Link
               href="/upphovsratt"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.upphovsratt")}
             </Link>
             <Link
               href="/kallor"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.allaKallor")}
             </Link>
             <Link
               href="/finansiell-policy"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.finansiellPolicy")}
             </Link>
             <Link
               href="/?cookies=1"
+              prefetch={false}
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5 max-md:flex max-md:min-h-[52px] max-md:items-center"
             >
               {t("footer.cookieInstallningar")}

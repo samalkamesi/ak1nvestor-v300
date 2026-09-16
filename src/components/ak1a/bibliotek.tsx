@@ -211,7 +211,7 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
           return (
             <div
               key={b.id}
-              className={`flex flex-col rounded-xl border bg-card p-5 transition hover:shadow-md ${
+              className={`cv-kort flex flex-col rounded-xl border bg-card p-5 transition hover:shadow-md ${
                 last ? "border-gold/40 hover:border-gold/60" : "border-gold/25 hover:border-gold/50"
               }`}
             >

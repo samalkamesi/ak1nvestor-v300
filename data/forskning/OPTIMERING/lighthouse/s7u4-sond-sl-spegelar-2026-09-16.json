@@ -1,0 +1,530 @@
+[
+  {
+    "url": "http://localhost:3000/en/kurser",
+    "vaggtidS": 7,
+    "traceEvents": 1069,
+    "sammanfattning": [
+      {
+        "namn": "FunctionCall",
+        "antal": 200,
+        "totalMs": 333,
+        "maxMs": 57
+      },
+      {
+        "namn": "Layout",
+        "antal": 8,
+        "totalMs": 319,
+        "maxMs": 250
+      },
+      {
+        "namn": "EvaluateScript",
+        "antal": 40,
+        "totalMs": 120,
+        "maxMs": 54
+      },
+      {
+        "namn": "UpdateLayoutTree",
+        "antal": 9,
+        "totalMs": 75,
+        "maxMs": 38
+      },
+      {
+        "namn": "ParseHTML",
+        "antal": 11,
+        "totalMs": 65,
+        "maxMs": 24
+      },
+      {
+        "namn": "MinorGC",
+        "antal": 3,
+        "totalMs": 38,
+        "maxMs": 22
+      },
+      {
+        "namn": "Paint",
+        "antal": 13,
+        "totalMs": 28,
+        "maxMs": 14
+      },
+      {
+        "namn": "PrePaint",
+        "antal": 11,
+        "totalMs": 24,
+        "maxMs": 18
+      },
+      {
+        "namn": "v8.deserializeOnBackground",
+        "antal": 26,
+        "totalMs": 23,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_SCAVENGER",
+        "antal": 3,
+        "totalMs": 21,
+        "maxMs": 10
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE",
+        "antal": 3,
+        "totalMs": 20,
+        "maxMs": 9
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+        "antal": 3,
+        "totalMs": 17,
+        "maxMs": 7
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+        "antal": 3,
+        "totalMs": 16,
+        "maxMs": 7
+      },
+      {
+        "namn": "ParseAuthorStyleSheet",
+        "antal": 2,
+        "totalMs": 13,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_TIME_TO_SAFEPOINT",
+        "antal": 3,
+        "totalMs": 12,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_BACKGROUND_UNPARK",
+        "antal": 1,
+        "totalMs": 10,
+        "maxMs": 10
+      },
+      {
+        "namn": "EventDispatch",
+        "antal": 56,
+        "totalMs": 9,
+        "maxMs": 4
+      },
+      {
+        "namn": "BackgroundProcessor::MaybeStartProcessingResponse",
+        "antal": 30,
+        "totalMs": 9,
+        "maxMs": 2
+      },
+      {
+        "namn": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+        "antal": 1,
+        "totalMs": 7,
+        "maxMs": 7
+      },
+      {
+        "namn": "V8.GC_BACKGROUND_SAFEPOINT",
+        "antal": 1,
+        "totalMs": 7,
+        "maxMs": 7
+      },
+      {
+        "namn": "BackgroundJSStreamManager::RunScriptStreamingTask",
+        "antal": 4,
+        "totalMs": 5,
+        "maxMs": 3
+      },
+      {
+        "namn": "v8.parseOnBackground",
+        "antal": 4,
+        "totalMs": 5,
+        "maxMs": 3
+      },
+      {
+        "namn": "v8.compile",
+        "antal": 40,
+        "totalMs": 4,
+        "maxMs": 1
+      },
+      {
+        "namn": "v8.parseOnBackgroundParsing",
+        "antal": 4,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "Layerize",
+        "antal": 11,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "BeginRemoteFontLoad",
+        "antal": 1,
+        "totalMs": 3,
+        "maxMs": 3
+      },
+      {
+        "namn": "IntersectionObserverController::computeIntersections",
+        "antal": 16,
+        "totalMs": 3,
+        "maxMs": 2
+      },
+      {
+        "namn": "FireIdleCallback",
+        "antal": 4,
+        "totalMs": 3,
+        "maxMs": 2
+      },
+      {
+        "namn": "TimerFire",
+        "antal": 1,
+        "totalMs": 2,
+        "maxMs": 2
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnFinishCodeCacheConsumerScriptDecode",
+        "antal": 26,
+        "totalMs": 1,
+        "maxMs": 0
+      }
+    ],
+    "slTotalMs": 395,
+    "slAntal": 17,
+    "slPerUtlosare": [
+      {
+        "utlosare": "(ingen — eget task)",
+        "antal": 17,
+        "totalMs": 395
+      }
+    ],
+    "storSLOchLayout": [
+      {
+        "event": "Layout",
+        "atMs": 450,
+        "durMs": 250,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 412,
+        "durMs": 38,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 778,
+        "durMs": 24,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 1257,
+        "durMs": 21,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 1080,
+        "durMs": 15,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 767,
+        "durMs": 11,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 1070,
+        "durMs": 10,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 294,
+        "durMs": 9,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      }
+    ],
+    "elementTopp": [],
+    "tungaFunctionCalls": [
+      {
+        "atMs": 909,
+        "durMs": 57,
+        "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+        "stack": null
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:3000/ar/kurser",
+    "vaggtidS": 7,
+    "traceEvents": 1012,
+    "sammanfattning": [
+      {
+        "namn": "Layout",
+        "antal": 6,
+        "totalMs": 147,
+        "maxMs": 94
+      },
+      {
+        "namn": "FunctionCall",
+        "antal": 158,
+        "totalMs": 128,
+        "maxMs": 19
+      },
+      {
+        "namn": "EvaluateScript",
+        "antal": 40,
+        "totalMs": 39,
+        "maxMs": 16
+      },
+      {
+        "namn": "UpdateLayoutTree",
+        "antal": 13,
+        "totalMs": 33,
+        "maxMs": 12
+      },
+      {
+        "namn": "MinorGC",
+        "antal": 3,
+        "totalMs": 31,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_SCAVENGER",
+        "antal": 3,
+        "totalMs": 29,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE",
+        "antal": 3,
+        "totalMs": 29,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+        "antal": 3,
+        "totalMs": 26,
+        "maxMs": 11
+      },
+      {
+        "namn": "ParseHTML",
+        "antal": 5,
+        "totalMs": 21,
+        "maxMs": 10
+      },
+      {
+        "namn": "Paint",
+        "antal": 11,
+        "totalMs": 15,
+        "maxMs": 5
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+        "antal": 6,
+        "totalMs": 13,
+        "maxMs": 4
+      },
+      {
+        "namn": "V8.GC_BACKGROUND_UNPARK",
+        "antal": 2,
+        "totalMs": 13,
+        "maxMs": 7
+      },
+      {
+        "namn": "V8.GC_BACKGROUND_SAFEPOINT",
+        "antal": 1,
+        "totalMs": 12,
+        "maxMs": 12
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+        "antal": 4,
+        "totalMs": 9,
+        "maxMs": 5
+      },
+      {
+        "namn": "PrePaint",
+        "antal": 15,
+        "totalMs": 7,
+        "maxMs": 3
+      },
+      {
+        "namn": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+        "antal": 1,
+        "totalMs": 6,
+        "maxMs": 6
+      },
+      {
+        "namn": "v8.compile",
+        "antal": 40,
+        "totalMs": 5,
+        "maxMs": 1
+      },
+      {
+        "namn": "TimerFire",
+        "antal": 2,
+        "totalMs": 5,
+        "maxMs": 4
+      },
+      {
+        "namn": "EventDispatch",
+        "antal": 57,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "Layerize",
+        "antal": 15,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "v8.produceCache",
+        "antal": 1,
+        "totalMs": 3,
+        "maxMs": 3
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnDataPipeReadable",
+        "antal": 1,
+        "totalMs": 2,
+        "maxMs": 2
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
+        "antal": 3,
+        "totalMs": 2,
+        "maxMs": 1
+      },
+      {
+        "namn": "FireAnimationFrame",
+        "antal": 2,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "BackgroundJSStreamManager::TryStartStreamingTask",
+        "antal": 1,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "BackgroundJSStreamManager::RunScriptStreamingTask",
+        "antal": 1,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "v8.parseOnBackground",
+        "antal": 1,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "v8.parseOnBackgroundParsing",
+        "antal": 1,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "V8.GC_TIME_TO_SAFEPOINT",
+        "antal": 3,
+        "totalMs": 1,
+        "maxMs": 1
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
+        "antal": 3,
+        "totalMs": 1,
+        "maxMs": 0
+      }
+    ],
+    "slTotalMs": 181,
+    "slAntal": 19,
+    "slPerUtlosare": [
+      {
+        "utlosare": "(ingen — eget task)",
+        "antal": 19,
+        "totalMs": 181
+      }
+    ],
+    "storSLOchLayout": [
+      {
+        "event": "Layout",
+        "atMs": 440,
+        "durMs": 94,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 752,
+        "durMs": 35,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 428,
+        "durMs": 12,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      }
+    ],
+    "elementTopp": [],
+    "tungaFunctionCalls": []
+  }
+]

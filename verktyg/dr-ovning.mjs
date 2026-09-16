@@ -22,6 +22,15 @@
 // ger VARNING i protokollet. Städning körs ALLTID (även vid fel) om inte
 // --behall gavs — en misslyckad övning lämnar aldrig skräp i PG17.
 //
+// Lås (2026-09-16, u3:2:s fynd 6-kur mekaniserad): verktyget startar om
+// sig självt under flock(1) på LAS_VAG — utesluter DR-fönstret från
+// syskonagenter som håller samma fil (t.ex. kedja 2 under eget flock-
+// fönster), med väntan upp till 900 s. Det gamla filprotokollet (wx +
+// pid-rad) lever kvar som information; DRIFTSBOKEN:s externa rekommendation
+// "flock ... -- node dr-ovning.mjs" var dubbeldefekt (se -- bevisat exit 69
+// på util-linux 2.39.3; korrekt syntax vägrades av taLas som "låset upptaget")
+// och ersätts häraförmed av verktygets egna flock-lager.
+//
 // Exit-kod: 0 = GRÖN övning (restore, mätning, protokoll, städning klart);
 //           1 = RÖD (dump underkänd, restore-fel eller okända fel — proto-
 //             koll skrivs ändå; misslyckade övningar SKALL protokollföras);
@@ -71,6 +80,16 @@ function lasArgument() {
 // --- Lås: EN agent äger PG17 DR-fönstret (s10-u3:s kur) -------------------
 
 function taLas() {
+  // Flock-läge (AK1A_DR_FLOCK=1 sätts ENBART av flockStartaOm nedan — sätt
+  // aldrig manuellt): låset ägs av yttre flock(1) på filens inod; pid-raden
+  // skrivs som information i den befintliga filen (kärnan släpper flock
+  // vid processdöd — inget dött-lås-läge kan uppstå).
+  if (process.env.AK1A_DR_FLOCK === '1') {
+    const fdFlock = openSync(LAS_VAG, 'w');
+    writeFileSync(fdFlock, `pid=${process.pid} start=${new Date().toISOString()} verktyg=dr-ovning.mjs flock=1\n`);
+    closeSync(fdFlock);
+    return;
+  }
   if (existsSync(LAS_VAG)) {
     const alder = Date.now() - statSync(LAS_VAG).mtimeMs;
     if (alder < LAS_MAX_ALDER_MS) {
@@ -90,7 +109,31 @@ function taLas() {
 }
 
 function slappLas() {
+  // Flock-läge: RÖR EJ filen — en unlink medan yttre flock håller inoden låter
+  // en tredje part flock:a en NY inod och köra parallellt (spränger skyddet).
+  // Flock lämnar en tom låsfil efter sig; det är oskyldigt (kärnan släpper
+  // vid processdöd) och nästa flock-tagare återanvänder samma inod.
+  if (process.env.AK1A_DR_FLOCK === '1') return;
   try { unlinkSync(LAS_VAG); } catch { /* redan borta */ }
+}
+
+// Starta om hela verktyget under flock(1): garanterar att dr-ovning.mjs och
+// syskonverktygens flock-fönster (samma låsfil) utesluter varandra MELLAN
+// processer, med väntan upp till 900 s (flock -w). Barnet känner igen sig
+// via AK1A_DR_FLOCK och kör jobbet direkt.
+function flockStartaOm() {
+  if (process.env.AK1A_DR_FLOCK === '1') return;
+  const skriptVag = fileURLToPath(import.meta.url);
+  const r = spawnSync('flock', ['-w', '900', LAS_VAG, process.execPath, skriptVag, ...process.argv.slice(2)], {
+    stdio: 'inherit',
+    env: { ...process.env, AK1A_DR_FLOCK: '1' },
+    timeout: 960000,
+  });
+  if (r.error) {
+    console.error(`FLOCK-KRITISKT: kunde inte starta om under flock (${r.error.message}) — övningen vägras utan lås.`);
+    process.exit(1);
+  }
+  process.exit(r.status ?? 1);
 }
 
 // --- Grind: ram + disk FÖRE allt tungt (incidenten 2026-09-15 16:42 — en   ---
@@ -502,6 +545,7 @@ SLUT — maskinellt genererat av dr-ovning.mjs ${new Date().toISOString()}
 
 function main() {
   const opts = lasArgument();
+  flockStartaOm(); // yttre flock på LAS_VAG — barnet fortsätter nedan
   taLas();
   if (!grind()) { slappLas(); process.exit(75); }
   const dom = {

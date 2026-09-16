@@ -1,8 +1,8 @@
-# KVALITETSVAKTEN — 2026-09-10
+# KVALITETSVAKTEN — 2026-09-16
 
-- **Genererad:** 2026-09-10T13:42:25.264Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-16T03:53:40.312Z (node v22.23.2 på linux)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 10.2 s
+- **Körtid:** 12.1 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,14 +15,14 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 239 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 8202 strängar extraherade
+- 274 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 8769 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
 
 ## 3. Förbjudna fraser — varumärket som kod (2b) — **MANUELL**
 
-- 242 filer, 8472 strängar granskade mot 26 förbjudna fraser (15 FEL = juridiska, 11 VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)
+- 277 filer, 9039 strängar granskade mot 26 förbjudna fraser (15 FEL = juridiska, 11 VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)
 - CITERINGS-UNDANTAG (A10): 0 fil(er) + 4 sträng(ar) hoppades över — de CITERAR förbudet: src/app/finansiell-policy/page.tsx · src/app/ansvar/page.tsx · src/app/villkor/page.tsx · src/lib/ordlista.ts · src/lib/varumarke.ts · data/varumarke.json · sträng-exakta negerande FAQ-frågor: "Ger AK1A investeri
 - FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning) · vakten sänker ALDRIG nivå för att bli grön
 - YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): A8-varningen "kunder" undantas på PRO-ytor (src/app/pro/**, src/components/ak1a/pro/**, src/lib/pro/**) — 2 träff(ar) undantagna som legitim B2B-terminologi; privata ytor varnar fortfarande och FEL-fraserna gäller överallt
@@ -44,7 +44,7 @@ Inga avvikelser hittade.
 
 ## 5. Länk-validitet (sokindex + huvudmeny + sidfooter) — **PASS**
 
-- 4 interna länkar verifierade mot 80 rutter i src/app
+- 4 interna länkar verifierade mot 98 rutter i src/app
 
 Inga avvikelser hittade.
 
@@ -56,7 +56,7 @@ Inga avvikelser hittade.
 
 ## 7. Sitemap-täckning — **PASS**
 
-- 48 sökvägar i sitemap.ts; 44 viktiga rutter jämförda
+- 53 sökvägar i sitemap.ts; 49 viktiga rutter jämförda
 - Medvetet exkluderade: /admin, /pro, /rapporter, /logga-in, /studio
 
 Inga avvikelser hittade.

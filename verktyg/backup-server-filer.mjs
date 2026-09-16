@@ -2,8 +2,9 @@
  * BACKUP SERVER-FILER — kopierar serverns repo + .env till datorns
  * backup-valv (data/backups/ — lokalt + gitignorat; kundens egen maskin).
  *
- * (1) tar-cz över ssh av /home/ak1a/AK1 UTAN node_modules/.next →
- *     data/backups/server-repo-<datum>.tar.gz (streamad, vakt max 500 MB).
+ * (1) tar-cz över ssh av /home/ak1a/AK1 (exkluderingslista nedan) →
+ *     data/backups/server-repo-<datum>.tar.gz (streamad, vakt max 500 MB,
+ *     gzip-integritetsverifierad FÖRE filen godtas).
  * (2) /home/ak1a/AK1/.env → data/backups/server-env-backup (chmod 600 lokalt).
  *
  * Mimosa-kontraktet: fasta literaler för värd/katalog/fjärrkommando (inga
@@ -13,20 +14,37 @@
  * Idempotent: omkörning samma dag skriver om samma filer. Ärliga fel:
  * trasiga/partiella filer raderas, exit-kod 1 vid hårt fel.
  *
+ * s10-u3 2026-09-16 (DR-PROV-2026-09-16-KEDJA3.md): tre kurer efter att
+ * 09-09-arkivet visade sig KORRUPT (bruten gzip, oupptäckt i 7 dygn) —
+ * contabo_key-rättning, gzip-integritetskoll före godkännande, härdad
+ * exkluderingslista.
+ *
  * Användning: node verktyg/backup-server-filer.mjs   (körs av hybrid-sync)
  */
 import { spawn, spawnSync } from "node:child_process";
-import { chmodSync, closeSync, existsSync, mkdirSync, openSync, renameSync, rmSync, writeFileSync, writeSync } from "node:fs";
+import { chmodSync, closeSync, createReadStream, existsSync, mkdirSync, openSync, renameSync, rmSync, writeFileSync, writeSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { pipeline } from "node:stream/promises";
+import { Writable } from "node:stream";
+import { createGunzip } from "node:zlib";
 
-const NYCKELFIL = path.join(os.homedir(), ".ssh", "hetzner_key");
+// s10-u3 2026-09-16: hetzner_key → contabo_key — Contabo-flyttningen lämnade
+// verktyget på den gamla leverantörens nyckelnamn; .cmd-steget kontrollerar
+// contabo_key, verktyget letade hetzner_key ⇒ tar+env-steget har hopats
+// tyst sedan 2026-09-09 (bevis: hybrid-sync.log sista körningen).
+const NYCKELFIL = path.join(os.homedir(), ".ssh", "contabo_key");
 const DATUM = new Date().toISOString().slice(0, 10);
 const MAX_BYTE_TAR = 500 * 1024 * 1024; // 500 MB-vakten
 
 // Fasta literaler — Mimosa-kontraktet (ändras endast här, aldrig via variabler)
 const SSH_MAL = "ak1a@5.189.162.162";
-const KOMMANDO_TAR = "tar czf - -C /home/ak1a/AK1 --exclude=node_modules --exclude=.next .";
+// s10-u3 2026-09-16: exkluderingslistan härdad mot bevisade problem —
+// .git (502 MB, växer okontrollerat; historiken täcks av git-spegeln/bundle —
+// med .git passerade arkivet 500 MB-vakten), tool-results (tempfiler),
+// data/cache (rörlig), data/backups (annars hamnar 500 MB gamla arkiv
+// inuti det nya). Kontrakt bevisat i DR-PROV-2026-09-16-KEDJA3.md.
+const KOMMANDO_TAR = "tar czf - -C /home/ak1a/AK1 --exclude=node_modules --exclude=.next --exclude=.git --exclude=tool-results --exclude=data/cache --exclude=data/backups .";
 const KOMMANDO_ENV = "cat /home/ak1a/AK1/.env";
 
 if (!existsSync(NYCKELFIL)) {
@@ -39,6 +57,23 @@ try {
 mkdirSync("data/backups", { recursive: true });
 
 const grundFlaggor = ["-i", NYCKELFIL, "-o", "BatchMode=yes", "-o", "ConnectTimeout=15"];
+
+/**
+ * s10-u3 2026-09-16: gzip-integritetsbevis FÖRE arkivet godtas. Beviset som
+ * fattades: 09-09-arkivet lämnade ssh-exit 0 och full storlek men bar en
+ * bruten gzip-ström ("invalid compressed data") — upptäcktes först 7 dagar
+ * senare vid restore-provet. Strömmande zlib-koll (konstant minne, portabel
+ * — inget gzip-binär-krav på Windows); exit-kod + storlek bevisar inte strömmen.
+ */
+async function gzipIntakt(fil) {
+  const sluk = new Writable({ write(_post, _kod, klar) { klar(); } });
+  try {
+    await pipeline(createReadStream(fil), createGunzip(), sluk);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 /** (1) Streama tar-cz från servern till lokal fil med storleksvakt. */
 function hamtaServerRepo() {
@@ -68,7 +103,7 @@ function hamtaServerRepo() {
     barn.on("error", (e) => {
       felText = (felText + " " + (e?.message ?? String(e))).slice(0, 300);
     });
-    barn.on("close", (kod) => {
+    barn.on("close", async (kod) => {
       closeSync(fd);
       if (forStort) {
         rmSync(tmpFil, { force: true }); // ärligt: aldrig behålla trunkerad tar
@@ -86,15 +121,21 @@ function hamtaServerRepo() {
         redig("server-repo: FEL 0 byte mottaget (tom ström) — kontrollera ssh/mål");
         return;
       }
+      if (!(await gzipIntakt(tmpFil))) {
+        rmSync(tmpFil, { force: true }); // ärligt: trasig ström blir ALDRIG arkiv (09-09-fallet)
+        redig("server-repo: FEL gzip-integriteten underkänd på " + (byte / 1048576).toFixed(0) +
+          " MB — mottagen ström är trasig/partiell, filen raderad");
+        return;
+      }
       renameSync(tmpFil, malFil);
-      redig("server-repo: OK " + (byte / 1048576).toFixed(1) + " MB → " + malFil);
+      redig("server-repo: OK " + (byte / 1048576).toFixed(1) + " MB (gzip verifierad) → " + malFil);
     });
   });
 }
 
 /** (2) Hämta .env — stdout är hemligheten: loggas ALDRIG, bara byte-antal. */
 function hamtaServerEnv() {
-  const malFil = path.join("data/backups", "server-env-backup");
+  const malFil = "data/backups/server-env-backup";
   const r = spawnSync("ssh", [...grundFlaggor, SSH_MAL, KOMMANDO_ENV], {
     encoding: "buffer", maxBuffer: 4 * 1024 * 1024, timeout: 30000, windowsHide: true,
   });

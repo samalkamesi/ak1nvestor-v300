@@ -194,4 +194,68 @@ styrväg.
 2. Exakta scheman för `v4/command`-parametrar (prompt/attachments/mode?) — kräver djupare
    dekompilering av inbox-ensamheten än denna kartläggning.
 3. `atSeq` vs frame-revision-semantik: studion kommenterar att frame-revision ≠ rowsRange.atSeq
-   som baseRevision — verifiera mot resync-schemat när gap 2 implementeras.
+   som baseRevision — verifiera mot resync-schemat när gap 2 implementeras. ✓ ROND 42: verifierad
+   i lasV4Resync (våg 172): resync-ramar uppdaterar v4Revision via state.updated — separat spår.
+
+---
+
+## 11. ETAPP 2-KARTA — v4/command dekompilerad (rond 43, 2026-09-16)
+
+**Status:** SCHEMATA KARTLAGTA ur bundeln (grep-kontext, bevisade signaturer nedan).
+**Syfte:** underlag för gap 27:s inskickningshalva (query-sidan lever sedan våg 171,
+metodvägarna verifierade mot bundeln: "v4/commands/query" ✓ "v4/command" ✓).
+
+### 11.1 Envelope (Doi — parseCommandEnvelope/HCe, wire-valideringen)
+
+```
+{
+  commandId:      string,              // klient-genererat unikt id
+  clientId:       string,              // klient-identitet (vår: v4ConnectionId-kandidat)
+  sessionId:      string | null,       // mål-session (null för createSession)
+  baseRevision?:  number,              // valfri revisionsförankring
+  baseLogEpoch?:  string (trim.min1),  // valfri epoch-förankring
+  type:           <typ-union, se 11.2>,
+  payload:        unknown,             // typspecifik last (valideras per type)
+  issuedAt:       <tidstämpel>
+}
+```
+
+Ogiltig payload ⇒ ack med `{commandId, status:"rejected", reasonCode:"proto.invalidPayload",
+message, revisionAtDecision:0}` (inbox.handle, bevisad signatur).
+
+### 11.2 Kommandotyper (KLr-kartan — payload-schema per typ)
+
+Kärntyper för studion:
+- **sendText** `{text, attachments?: qB[], requestedDelivery?: "startNow"|"queue"|"guide",
+  browserAmbientContext?, heldQu…}` — chatt-promptens kanoniska väg; delivery-triaden styr
+  köbeteende (startNow = kör nu, queue = lägg i kö, guide = styrd).
+- **createSession** `{workspaceId, firstInput?: {text, attachments?}, config?, runtimeModel?,
+  mcpServers?}` — sessionsfödelse med config i samma kommando.
+- **createSelectionSideSession** `{firstInput?: {text}}` — markeringssidession.
+- **resolveInteraction** `{resolvedBy: {clientId, optionId?}}` — interaktions-/dialog svar
+  (studions permission/dialog-kort).
+- **switchModelConfig** — modellbyte (studions modellbytardrawer).
+- **pauseGoal / resumeGoal** — mål-loopens paus/fortsätt.
+- **setAutoDrain** `{autoDrain…}` — köns automatiska tömning.
+- **Köoperationer:** sendQueuedNow `{queueItemId}`, editQueueItem `{queueItemId, newText}`,
+  reorderQueueItem `{queueItemId, beforeQueueItemId: string|null}`,
+  deleteQueueItem `{queueItemId}`.
+- **Fakta-typer (qft-setet):** applyFileRewind, forkAssistant, editUserQuery, retryTurn,
+  setAssistantFeedback `{target, feedback: "like"|"dislike"|null}`.
+
+### 11.3 Ko-semantik (handleCommand, bevisad sekvens)
+
+1. **readyFlights-vänt:** om `readyFlights.size > 0` och en flight är registrerad på
+   envelope.sessionId ⇒ `await` den FÖRE inbox-handeringen (serialisering mot pågående
+   session-födelse).
+2. **inbox.handle(t):** ack (`kind:"ack"` ⇒ returnera r.ack) ELLER settle-flöde —
+   svaret koalesceras via `settle(c)` och `onError`-rapportering till host.
+3. **Ack persisteras som v4/command_fact** (§5) — grunden för queryCommands och
+   fork-idempotens (id: `v4_command_fact:child:<parentSessionId>:<sourceCommandId>`).
+
+### 11.4 Studions migreringsordning (förslag, ej beslut)
+
+sendText (störst värde — ersätter dagens styrväg stegvis bakom feature-avvägning) →
+resolveInteraction (dialog-korten) → switchModelConfig + pause/resumeGoal → köoperationer.
+INSATS A6 kvarstår: felkoder, flight-timeout, delivery-semantikens tre lägen mot vår
+mål-loops -32010-serialisering — därför förblir etapp 2 sekvenserad EFTER gap 26-stängning.

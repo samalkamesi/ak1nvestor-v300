@@ -200,8 +200,9 @@ function main() {
   writeFileSync(TMP_TS, tmpKod, "utf8");
   let barn;
   try {
-    barn = spawnSync(`npx --yes tsx "${TMP_TS}"`, {
-      shell: true,
+    // Skalfri arrayform (o21): tmp-sökvägen når npx som argumentvärde —
+    // shell:true med interpolerad sträng var fyndklassen CHILD_PROC_INTERP.
+    barn = spawnSync("npx", ["--yes", "tsx", TMP_TS], {
       encoding: "utf8",
       timeout: TIMEOUT_MS,
       cwd: REPO,

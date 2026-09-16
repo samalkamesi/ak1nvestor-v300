@@ -1,0 +1,355 @@
+{
+  "ts": "2026-09-16T03:59:46.297Z",
+  "doman": [
+    "verktyg",
+    ".zcode",
+    ".zscripts"
+  ],
+  "skannadeFiler": 149,
+  "fynd": 0,
+  "fyndLista": [],
+  "hardadeArrayform": 51,
+  "hardadeLista": [
+    {
+      "fil": "verktyg/agentfabrik.mjs",
+      "rad": 277
+    },
+    {
+      "fil": "verktyg/aterstall-system-events.mjs",
+      "rad": 244
+    },
+    {
+      "fil": "verktyg/backup-server-filer.mjs",
+      "rad": 85
+    },
+    {
+      "fil": "verktyg/backup-server-filer.mjs",
+      "rad": 139
+    },
+    {
+      "fil": "verktyg/beroende-vakt.mjs",
+      "rad": 39
+    },
+    {
+      "fil": "verktyg/data-hygien.mjs",
+      "rad": 73
+    },
+    {
+      "fil": "verktyg/data-hygien.mjs",
+      "rad": 95
+    },
+    {
+      "fil": "verktyg/dr-kedja2.mjs",
+      "rad": 64
+    },
+    {
+      "fil": "verktyg/dr-ovning.mjs",
+      "rad": 127
+    },
+    {
+      "fil": "verktyg/dr-ovning.mjs",
+      "rad": 294
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 73
+    },
+    {
+      "fil": "verktyg/importera-oversattning.mjs",
+      "rad": 353
+    },
+    {
+      "fil": "verktyg/importera-oversattning.mjs",
+      "rad": 361
+    },
+    {
+      "fil": "verktyg/installa-kvalitetsgrind.mjs",
+      "rad": 17
+    },
+    {
+      "fil": "verktyg/integritetsvakt.mjs",
+      "rad": 108
+    },
+    {
+      "fil": "verktyg/konfigintegritet-vakt.mjs",
+      "rad": 103
+    },
+    {
+      "fil": "verktyg/kor-akm2-berika.mjs",
+      "rad": 148
+    },
+    {
+      "fil": "verktyg/kor-fvag.mjs",
+      "rad": 103
+    },
+    {
+      "fil": "verktyg/kor-oversatt-batch.mjs",
+      "rad": 488
+    },
+    {
+      "fil": "verktyg/kor-oversatt-batch.mjs",
+      "rad": 496
+    },
+    {
+      "fil": "verktyg/kvalitetsgrind.mjs",
+      "rad": 53
+    },
+    {
+      "fil": "verktyg/kvalitetsvakt.mjs",
+      "rad": 643
+    },
+    {
+      "fil": "verktyg/mobil-lasbarhet.mjs",
+      "rad": 52
+    },
+    {
+      "fil": "verktyg/organism-halsa.mjs",
+      "rad": 51
+    },
+    {
+      "fil": "verktyg/organism-halsa.mjs",
+      "rad": 103
+    },
+    {
+      "fil": "verktyg/organism-halsa.mjs",
+      "rad": 105
+    },
+    {
+      "fil": "verktyg/organism-halsa.mjs",
+      "rad": 108
+    },
+    {
+      "fil": "verktyg/prestanda-cv-funktionssond.mjs",
+      "rad": 70
+    },
+    {
+      "fil": "verktyg/prestanda-skiftspar.mjs",
+      "rad": 20
+    },
+    {
+      "fil": "verktyg/prod-synk.mjs",
+      "rad": 214
+    },
+    {
+      "fil": "verktyg/pulsvakt.mjs",
+      "rad": 186
+    },
+    {
+      "fil": "verktyg/testa-akm2-dynamik.mjs",
+      "rad": 320
+    },
+    {
+      "fil": "verktyg/testa-akm2-karna.mjs",
+      "rad": 393
+    },
+    {
+      "fil": "verktyg/testa-akm2-moduler.mjs",
+      "rad": 287
+    },
+    {
+      "fil": "verktyg/testa-akm2-snapshot.mjs",
+      "rad": 294
+    },
+    {
+      "fil": "verktyg/testa-akm3-kalibrering.mjs",
+      "rad": 468
+    },
+    {
+      "fil": "verktyg/testa-demoklient-data.mjs",
+      "rad": 121
+    },
+    {
+      "fil": "verktyg/testa-fundamental-vagmotor.mjs",
+      "rad": 276
+    },
+    {
+      "fil": "verktyg/testa-permissions-policy.mjs",
+      "rad": 205
+    },
+    {
+      "fil": "verktyg/testa-riskportfolj.mjs",
+      "rad": 295
+    },
+    {
+      "fil": "verktyg/testa-sok.mjs",
+      "rad": 146
+    },
+    {
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 260
+    },
+    {
+      "fil": "verktyg/testa-styrelse.mjs",
+      "rad": 95
+    },
+    {
+      "fil": "verktyg/testa-styrelse.mjs",
+      "rad": 108
+    },
+    {
+      "fil": "verktyg/testa-uppfoljning.mjs",
+      "rad": 246
+    },
+    {
+      "fil": "verktyg/vakt-cron.mjs",
+      "rad": 20
+    },
+    {
+      "fil": "verktyg/validera-motorer.mjs",
+      "rad": 3889
+    },
+    {
+      "fil": "verktyg/validera-motorer.mjs",
+      "rad": 3897
+    },
+    {
+      "fil": ".zcode/v2-check.mjs",
+      "rad": 5
+    },
+    {
+      "fil": ".zcode/v2-run.mjs",
+      "rad": 10
+    },
+    {
+      "fil": ".zcode/vag102-prod-stada.mjs",
+      "rad": 35
+    }
+  ],
+  "fastaKommandon": 31,
+  "fastaLista": [
+    {
+      "fil": "verktyg/agentfabrik.mjs",
+      "rad": 171
+    },
+    {
+      "fil": "verktyg/agentfabrik.mjs",
+      "rad": 182
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 64
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 98
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 109
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 115
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 132
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 141
+    },
+    {
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 315
+    },
+    {
+      "fil": "verktyg/granssnittsvakt.mjs",
+      "rad": 158
+    },
+    {
+      "fil": "verktyg/kraschvakt.mjs",
+      "rad": 41
+    },
+    {
+      "fil": "verktyg/kraschvakt.mjs",
+      "rad": 91
+    },
+    {
+      "fil": "verktyg/kraschvakt.mjs",
+      "rad": 106
+    },
+    {
+      "fil": "verktyg/kraschvakt.mjs",
+      "rad": 113
+    },
+    {
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 91
+    },
+    {
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 96
+    },
+    {
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 182
+    },
+    {
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 311
+    },
+    {
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 122
+    },
+    {
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 136
+    },
+    {
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 252
+    },
+    {
+      "fil": ".zcode/synca-prod.mjs",
+      "rad": 26
+    },
+    {
+      "fil": ".zcode/synca-prod.mjs",
+      "rad": 31
+    },
+    {
+      "fil": ".zcode/synca-prod.mjs",
+      "rad": 32
+    },
+    {
+      "fil": ".zcode/v2-tsc-rader.mjs",
+      "rad": 6
+    },
+    {
+      "fil": ".zcode/v2-tsc.mjs",
+      "rad": 9
+    },
+    {
+      "fil": ".zcode/vag102-deploya.mjs",
+      "rad": 34
+    },
+    {
+      "fil": ".zcode/vag102-prod-stada.mjs",
+      "rad": 16
+    },
+    {
+      "fil": ".zcode/vag102-prod-stada.mjs",
+      "rad": 39
+    },
+    {
+      "fil": ".zcode/vag104-clean-cache.mjs",
+      "rad": 10
+    },
+    {
+      "fil": ".zcode/vag104-clean-cache.mjs",
+      "rad": 12
+    }
+  ],
+  "undantagna": [
+    {
+      "fil": "verktyg/testa-mimosa-paritet.mjs",
+      "skäl": "testggrund: filens ÄNDAMÅL är att skriva farliga exec-mönster som STRÄNGDATA till tmp-filer som mimosa-pariteten ska hitta — radträffar är innehåll, inte körkod (o15 §Del 3-lärdomen om klasspecifika vittnen)"
+    },
+    {
+      "fil": ".zscripts/dev.sh",
+      "skäl": "bash-program: $(...)-idiom med inre citering (dirname/date/basename), inga externa värden — granskad-lämna enligt o21"
+    }
+  ]
+}

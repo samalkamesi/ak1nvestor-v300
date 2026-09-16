@@ -247,7 +247,7 @@ async function main() {
 /** RSS (byte) för processen som lyssnar på PORT (win: netstat+tasklist). */
 async function hamtaRss() {
   try {
-    const { execSync } = await import("node:child_process");
+    const { execSync, execFileSync } = await import("node:child_process");
     if (process.platform === "win32") {
       const netstat = execSync("netstat -ano", { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 });
       const rad = netstat
@@ -256,7 +256,8 @@ async function hamtaRss() {
         .find((r) => r.toUpperCase().startsWith("TCP") && r.includes(`:${PORT}`) && /LISTENING/i.test(r));
       if (!rad) return -1;
       const pid = rad.split(/\s+/).pop();
-      const ut = execSync(`tasklist /FI "PID eq ${pid}" /FO CSV /NH`, { encoding: "utf8" });
+      // Skalfri arrayform (o21): pid når tasklist som argumentvärde, aldrig skalsträng.
+      const ut = execFileSync("tasklist", ["/FI", `PID eq ${pid}`, "/FO", "CSV", "/NH"], { encoding: "utf8" });
       // "node.exe","13920","Console","1","484 596 K" — tusentalsavgränsaren
       // är plattformsberoende (mellansrag/decimalkomma/UE+201A) → strimla
       // ALLT utom siffror ur minnesfältet (kolumn 5).

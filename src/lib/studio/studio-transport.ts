@@ -1688,8 +1688,10 @@ export interface StudioTransport {
    * sessions-index/<filter> — REALTIME MULTI-SESSION-INDEX. Prenumeration på
    * live-indexet över sessioner via den befintliga subscribe-mekanismen —
    * multi-session-medvetande UTAN polling av sessionList (kan ersätta delar
-   * av R2-poll-lagret). Anropar protokollFraga("v4/subscribe", {topic:
-   * "sessions-index/<filter|*>"}, 15_000); filter "*" = alla sessioner.
+   * av R2-poll-lagret). Anropar protokollFraga("v4/conversation/subscribe",
+   * {topic:"sessions-index/<filter|*>", connectionId, clientMode}, 15_000)
+   * — topic-prefixet väljer handler (V4-LAGRET §4); filter "*" = alla
+   * sessioner.
    * Fel-tolerant: {prenumererad:false} vid fel (ALDRIG kast — index-
    * prenumeration är en förbättring, inte ett krav).
    */
@@ -3389,6 +3391,15 @@ class AppServerTransport implements StudioTransport {
   private v4LogEpoch: string | null = null;
   private v4Revision = 0;
   private v4Ansluten = false;
+  /**
+   * VÅG 173 (rond 42): sessions-index-prenumerationens läge — en LYCKAD
+   * prenumeration på "sessions-index/*" gäller resten av transportens
+   * livslängd (samma connectionId; gateway:en håller prenumerationen).
+   * Rutten /api/studio/sessions-index ska vara ett LÄGES-anrop, inte en
+   * prenumerationsfabrik vid varje GET. Återställs i stangHelt() där
+   * unsubscribe-hygienen stänger connectionens ALLA topics.
+   */
+  private v4SessionsIndexPrenumererad = false;
   // ── VÅG 90 K1: STABILITET — omstartskedja, idle-spårning, hälsa ────────────
   /** Misslyckade omstartsförsök sedan senaste LYCKADE etablering (0–3). */
   private omstartForsok = 0;
@@ -3872,6 +3883,7 @@ class AppServerTransport implements StudioTransport {
     this.sid = null;
     this.prenumererad = false;
     this.v4Ansluten = false;
+    this.v4SessionsIndexPrenumererad = false; // hygienens unsubscribe stängde alla topics
     this.v4LogEpoch = null;
     this.rensaVantandeInteraktioner();
     // Mål-läget dör med sessionen — mål-lyssnaren får ärlig snapshot.
@@ -5628,16 +5640,31 @@ class AppServerTransport implements StudioTransport {
     rått?: unknown;
   }> {
     const topic = "sessions-index/" + (filter || "*");
+    if (this.v4SessionsIndexPrenumererad) {
+      return { prenumererad: true, topic }; // läges-anrop — gateway:t har den
+    }
     try {
       const klient = this.klientForLasning();
+      // VÅG 173 (rond 42): metodvägen är "v4/conversation/subscribe" —
+      // topic-PREFIXET väljer handler (V4-LAGRET §4: subscribeSessionsIndex
+      // Reserved). "v4/subscribe" finns EJ i bundeln (grep 0 träffar) — den
+      // avvikande vägen gjorde prenumerationen tyst död (fel-toleransen
+      // sväljde felet). Parametrarna följer våg 85-mönstret (BEVISAT):
+      // connectionId + clientMode är protokollets grundfält (§1.1) och gör
+      // dessutom stangHelt()-hygienens {connectionId}-unsubscribe täckande.
       const svar = (await klient.protokollFraga(
-        "v4/subscribe",
-        { topic: "sessions-index/" + (filter || "*") },
+        "v4/conversation/subscribe",
+        {
+          topic,
+          connectionId: this.v4ConnectionId,
+          clientMode: "web-remote-replayable",
+        },
         15_000,
       )) as Record<string, unknown> | null;
       if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
         return { prenumererad: false, topic };
       }
+      this.v4SessionsIndexPrenumererad = true; // läget gäller till stangHelt
       return { prenumererad: true, topic, rått: svar };
     } catch {
       return { prenumererad: false, topic }; // fel-tolerant — ALDRIG kast

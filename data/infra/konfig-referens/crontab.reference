@@ -19,10 +19,16 @@
 #   node verktyg/konfigintegritet-vakt.mjs
 #
 # ── Rad 1: Supabase-backup 02:30 lokal tid, dagligen ────────────────────────
-# pg_dump med anslutningssträng i citattecken (HEMLIG — maskad som
-# <DATABASE_URL>; den innehåller host, användare och lösenord), gzip till
-# data/backups/supabase/, retention 30 dagar (find -mtime +30 -delete).
-30 2 * * * cd /home/ak1a/AK1 && mkdir -p data/backups/supabase && /usr/lib/postgresql/17/bin/pg_dump "<DATABASE_URL>" 2>>/tmp/supabase-backup.log | gzip > data/backups/supabase/db-$(date +\%Y-\%m-\%d).sql.gz && find data/backups/supabase -name "db-*.sql.gz" -mtime +30 -delete
+# Härdad nattkedja (s10-u5 2026-09-16, verkställd 00:49 ur s10-u1:s
+# VÄNTAR-kur): PGPASSFILE=/home/ak1a/.pgpass (läge 600) bär lösenordet —
+# anslutningssträngen i citattecken (host, användare; maskad som
+# <DATABASE_URL>) är lösenordslös; dump-markörsvakten kolla-dump-markorer.mjs
+# --natt bevisar dumpens slutmarkörer INNAN retentionen (find -mtime +30
+# -delete) får radera gamla dumpar — en RÖD natt låser retentionen.
+# Referensen synkades EFTER med s8-u2 2026-09-16 (protokoll o21): härdningen
+# verkställdes utan referensuppdatering ⇒ falsklarm var 10:e minut
+# 00:49–06:19 — denna fil skall ALDRIG leva efter verkligheten igen.
+30 2 * * * cd /home/ak1a/AK1 && mkdir -p data/backups/supabase && PGPASSFILE=/home/ak1a/.pgpass /usr/lib/postgresql/17/bin/pg_dump "<DATABASE_URL>" 2>>/tmp/supabase-backup.log | gzip > data/backups/supabase/db-$(date +\%Y-\%m-\%d).sql.gz && /usr/bin/node /home/ak1a/AK1/verktyg/kolla-dump-markorer.mjs --natt >> /tmp/supabase-backup.log 2>&1 && find data/backups/supabase -name "db-*.sql.gz" -mtime +30 -delete
 #
 # ── Rad 2: gränssnittsvakten var 6:e timme (01:17, 07:17, 13:17, 19:17) ─────
 17 1,7,13,19 * * * /home/ak1a/AK1/data/infra/contabo/granssnittsvakt-cron.sh

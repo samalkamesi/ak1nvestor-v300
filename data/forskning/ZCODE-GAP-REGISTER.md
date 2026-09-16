@@ -27,7 +27,7 @@
 | 10 | Mermaid-förhandsvisning | 509-rad komponent (flowchart/sequence/pie, tsc 0) | 2 | 3 | STÄNGD (byggagent v168) | Rendera mermaid-block i chatt-svar (klientbibliotek) |
 | 11 | Agentträd per iteration — barn syns + klickbara | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |
-| 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
+| 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | STÄNGD (våg 174) | node/fetch-svit (ingen playwright): verktyg/scenariotest/scenariotest.mjs, 7 scenarier + journal jsonl |
 | 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
 | 16 | Transkriptsökning (Ctrl+Shift+F) — navigationsrond n1 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
@@ -52,7 +52,7 @@ agent-träd (11, r2e) · transkriptsök+tur-hopp (16+18, n1) · hopp-till-slut+p
 keybinding (22, r2c) · LaTeX (23, r2d) — rond 30 stängde 7 gap; rond 38 stängde
 10 (Mermaid, våg 168 `48e14864`) + 24 (usage, våg 169 `a77bb1a3` på våg 85 F3:s
 stats-ground; live-bevis: 401-härdade rutter, bygg 17:29 efter commit, 3 UI-paneler)
-och reparerade registrets korrumperade tabellrader (23/24/27). Återstår ÖPPNA: 26 (sessions-index → våg 173) · 27 (v4/command, etapp 2) · 13 (scenariotest → våg 174). Rond 40 stängde 25 (resync, våg 172 `2cf13fe5`: transport-metod + interface + mock + stale-utmattningsintegrering + unsubscribe-hygien i stangHelt + observabilitetsrutt; live-bevis: rutter GET 401 + POST 405 live på localhost (monterad+härdad), bygg 21:08 efter commit 2cf13fe5 20:57, 2cf13fe5 ancestor till prod HEAD 91a1a52b, prod HTTPS 200).
+och reparerade registrets korrumperade tabellrader (23/24/27). Återstår ÖPPNA: 26 (sessions-index → våg 173 — KOD KURERAD rond 42 [Φ]: våg 171:s metodväg "v4/subscribe" var ogiltig (bundeln 0 träffar; tyst död via fel-tolerans) och saknade connectionId/clientMode — rättad till "v4/conversation/subscribe" enligt våg 85-mönstret + lägescacha + stangHelt-reset; stängs på live-bevis när prodbygget landat) · 27 (v4/command, etapp 2). Rond 41 stängde 13 (scenariotest, våg 174: 7/7 PASS mot körande prod — 10 skyddade rutter rena 401, SSE-läckage 0, publik hälsorutt 200 med 0 hemlighetsmarkörer, resync POST 405; sviten kalibrerad mot requireAdmin:s delade fel-bucket 10 fel/min med 7 s-pacing + 429-tolerans; journal data/vakten/scenariotest/journal.jsonl). Rond 40 stängde 25 (resync, våg 172 `2cf13fe5`: transport-metod + interface + mock + stale-utmattningsintegrering + unsubscribe-hygien i stangHelt + observabilitetsrutt; live-bevis: rutter GET 401 + POST 405 live på localhost (monterad+härdad), bygg 21:08 efter commit 2cf13fe5 20:57, 2cf13fe5 ancestor till prod HEAD 91a1a52b, prod HTTPS 200).
 
 ## Evolutionära regler
 1. Ronden läser registret FÖRRE verkställning (styrelse-rond punkt 9) — högsta ÖPPNA V/A-kvot först.

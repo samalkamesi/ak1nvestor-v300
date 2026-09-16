@@ -184,7 +184,8 @@ import { svaraLokaltRiskdjup } from "@/lib/ai-mentor-riskdjup-fragor";
 import { svaraLokaltRiskmattsdjup } from "@/lib/ai-mentor-riskmattsdjup-fragor";
 // Spår 6 omgång 12 (s6-u2): +2 förhandsfrågor ur utdelningsstrategin —
 // utdelningsdjup-lagret (utdelningsfällor/yield trap/utdelningsgrad +
-// aktieåterköp/återköpsprogram) ligger SIST och kan därför aldrig stjäla
+// aktieåterköp/återköpsprogram) ligger näst sist (syskonet förväntningsdjup
+// efter — samma omgångs fönster) och kan därför aldrig stjäla
 // en fråga från tidigare lager; källmärkt med flerkällsrad (ud-04 +
 // km-063 + ud-01 + ud-08 / km-066 + v20 + ks-02 + ud-02 — kategorin
 // UTDELNINGSSTRATEGIs 12 kurser, registrets näst största familj utan
@@ -917,7 +918,7 @@ export function ChatWidget() {
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
 
     // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
-    // Regel+datamotorn (tjugo lager: bas + nitton syskonfiler) svarar på de
+    // Regel+datamotorn (tjugoett lager: bas + tjugo syskonfiler) svarar på de
     // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 74 för-
     // handsfrågors monsters + generiskt V01–V20-uppslag, alla källmärkta
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —

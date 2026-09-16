@@ -41,15 +41,53 @@ Hydrationssäkerhet: servern renderar aldrig grenarna (villkorade på klientens 
 
 Rådata: `lighthouse/r5u2-fore-{start,kurser,blogg}.json` + `r5u2-fore-sammanfattning.json`.
 
-## EFTER (r5u2-efter — vakaren mäter automatiskt när deploynet landar)
+## EFTER (infriad 2026-09-16 ~18:2x — fabriksagent s7-u3 3/3, vakarövertag)
 
-| Sida | Poäng | LCP | TBT | CLS | unused-JS |
-|---|---|---|---|---|---|
-| / | ⟦fylls ur r5u2-efter-sammanfattning.json⟧ | | | | |
-| /kurser | ⟦kontroll: förväntas oförändrad — ändringen är exklusiv för /⟧ | | | | |
-| /blogg | ⟦kontroll: förväntas oförändrad⟧ | | | | |
+Vakaren dog 12:39 utan mätning (`/tmp/s7u2-vakare.log`: "TAK: deploy av
+35b240d7 ej klar på 40 min — EFTER-mätning ej körd"); s7-u3 övertog med
+egen mätning efter bevisad deploy (35b240d7 i HEAD, prod bär koden,
+BUILD_ID 18:09, JS-chunks 200 — 12:02-incidenten läkt).
 
-Rådata (när mätt): `lighthouse/r5u2-efter-{start,kurser,blogg}.json` + `r5u2-efter-sammanfattning.json`. Förväntad mekanism: ~190 kB källkod lämnar /-bunten → unused-JS-spillet sjunker kraftigt på /; LCP/TBT-rörelse sekundär (react-dom dominerar kvarvarande bootup-time).
+**Instrumentpar (fullviktigt + tyst FÖRE `fore-161` ↔ fullviktigt EFTER
+`r5u2b-efter`, vila vid start; `r5u2-efter-*` = första omgången med
+högre last, committad som lastdeklarerad rådata):**
+
+| Sida | Poäng | LCP ms | TBT ms | styleLayout ms | totalvikt KB | unused-JS KiB |
+|---|---|---|---|---|---|---|
+| / | 62 → 53* | 5 411 → 4 360 | 574 → 1 839* | 789 → 1 698* | **790 → 732 (−58)** | **84 → 74 (−10)** |
+| /kurser | 55 → 39* | 5 474 → 6 185* | 1 253 → 4 780* | 1 663 → 2 715* | **839 → 774 (−65)** | **116 → 73 (−43)** |
+| /blogg | 55 → 53 | 6 183 → 5 318 | 836 → 995 | 721 → 839 | **831 → 764 (−67)** | **116 → 74 (−42)** |
+
+\* CPU-beroende tal (poäng/LCP/TBT/styleLayout) uppåtdrivna av
+fabrikslast under EFTER-fönstret (load 2,5–4,2; zcode-syskon aktiva —
+`/kurser` mättes sist när lasten steg, värst drabbad). Fetstilt =
+lastokänsliga strukturtal.
+
+**Slutsatser:**
+1. Förväntan "ändringen exklusiv för /" MOTBEVISAD: vikt och unused-JS
+   sjönk på ALLA tre sidor (−58/−65/−67 KB · −10/−43/−42 KiB) — koden
+   oorganiserade den DELADE chunk-grafen (vendor/modulsplits), varav
+   /kurser+/blogg fick indirekt vinst. /-spegelns −10 KiB unJS är den
+   egna andelen; ~190 kB källkod lämnade den kritiska bunten men hämtas
+   fortfarande lazy vid idle — därför syns den som måttlig unJS-sänka,
+   ej som −190 kB totalvikt.
+2. **INSTRUMENTFYND (viktigt för hela spåret): r4b2-ronden var
+   JS-nedbruten** — `start/kurser/blogg-r4b2.json` bär totalvikt 51/75/59
+   KB med 17–22 chunk-fel (5xx-kroppar) = statiska HTML-sidor: P99/P93/P92
+   + LCP 1 770–1 902 + TBT 279–336 är SKEENPOÄNG i s8-u4:s
+   delresurs-500-klass (mätningarna togs 10:0x–10:2x, precis efter
+   10:02:39-OOM-dödet). o20 §9:s "P52→93, LCP 5844→1902, TBT 922→279"
+   attribution FÖR KORRIGERING — kurens lastokänsliga bevis (S&L-sonden
+   128→12 events) står obehindrat kvar; poängdelens förbättring var
+   artefakt. Samma gäller o28-blogg-cv:s r4b2-citat (§6 nedan).
+3. CPU-del (bootup/TBT/poäng-delta för /) OBESTÄMBAR i dagens
+   fabrikspaus-läge — **pending-rest**: om-mät vid verifierat tömd
+   fabrikskö (nattfönster) enligt pending-precedensen; strukturdelen är
+   slutbehandlad här.
+
+Rådata: `lighthouse/{start,kurser,blogg,en_blogg}-r5u2b-efter.json` +
+`r5u2b-efter-sammanfattning.json` (vila) · `lighthouse/{blogg,en_blogg}-
+r5u2-efter.json` + `r5u2-efter-sammanfattning.json` (lastdeklarerad).
 
 ## Noteringar
 

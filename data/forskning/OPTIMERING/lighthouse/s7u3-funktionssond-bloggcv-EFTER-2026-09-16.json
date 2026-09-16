@@ -1,0 +1,21 @@
+{
+  "datum": "2026-09-16T16:23:43.764Z",
+  "url": "http://localhost:3000/blogg",
+  "vy": "390x844 mobil",
+  "vidLast": {
+    "antalBloggkort": 55,
+    "domNoder": 704,
+    "cvForsta": "auto",
+    "cvSista": "auto",
+    "intrinsicForsta": "auto 352px",
+    "hojdForstaPx": 465,
+    "hojdSistaPx": 402,
+    "animationerVidLast": 0
+  },
+  "efterScroll": {
+    "kortMedTextEfterScroll": 55,
+    "hojdSistaEfterPx": 348,
+    "cvFortfarande": "auto"
+  },
+  "domOk": true
+}

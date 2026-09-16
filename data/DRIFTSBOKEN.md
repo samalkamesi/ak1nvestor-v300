@@ -695,6 +695,50 @@ EnvironmentFile med chmod 600).
   i HEAD, denna sektion + protokollet + cron är completo.
 - Jungfrunatten för rad 3 kan bevisas 2026-09-17 (s10-u2 O2:s mönster).
 
+## S10-U3 (O5) — DR-ÖVNING KEDJA 3 KOMMANDORADISERAD: `verktyg/dr-kedja3.mjs` (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan nio gånger levererad; manualen KEDJA3 §8
+  begärde själv sin kommandoradisering "av annan agent än författaren" —
+  kvartalsmallens fjärde steg var det ENDA manuella. Ny omgångsoinstans av
+  s10-u3 (O3:s artefakter granskade med friska ögon, inget delat minne).
+  Fullprotokoll (GRÖN): DR-KEDJA3-2026-09-16-AUTO-2.md · RÖT-fyndkörningen:
+  DR-KEDJA3-2026-09-16-AUTO.md.
+- **FYND (huvudresultatet) — `git bundle verify` är INTE ett integritetsbevis:**
+  verktygets självsabotage grep att verify GODTAR en 60 % kapad bundle och
+  skriver "The bundle records a complete history" (den läser header/refs,
+  ALDRIG packdatan) — medan klonen dör ("early EOF", "index-pack died").
+  Samma buggklass som KEDJA3-F2 (exit 0 ≠ intakt ström). KUR i verktyget:
+  s3-sabotagets dom + huvuddomen för arkiv B = KLON-testet; verify behålls
+  som nödvändigt (inte tillräckligt) delkontrakt. Manualens O3-bevisning
+  håller (de körde också klon) men deras domORDLYDELSE "verify = komplett
+  historia" är motbevisad som huvuddom — varje verify-användning (crons,
+  kommande övningar) följer samma regel: klon (eller fsck) är domen.
+- **GRÖN fullkörning (exit 0):** sabotage 3/3 GRIPNA (kapad gzip · skräp-
+  fil med rätt ändelse · kapad bundle via klon) · arkiv A server-repo-
+  2026-09-16.tar.gz: gzip -t + full listning 8 435 poster + exkluderings-
+  kontrakt 0 brott + restore **3,2 s** → 7 903 filer + 532 kataloger ==
+  listat · src 666 ts/tsx-filer · arkiv B server-git-2026-09-16.bundle:
+  klon **9,4 s** → 1 067 commits, HEAD 59939c18 + ancestor-bevis (klonens
+  HEAD ∈ trädets historia). **Total RTO 12,6 s** (manualen 12,2 s =
+  replikerbar). Spot-diff: 3/4 IDENTISKA, DRIFTSBOKEN.md SKILJER-FÖRKLARAD
+  (trädets commit 07:35 > arkivets mtime 00:45 — RPO-visning; en blind
+  identisk-eller-RÖD-dom hade fällts falskt).
+- **Konventionsmätning (falska diskrepanser bort för nästa omgång):**
+  manualens 8 436 poster/533 kataloger räknar MED rot-posten './' och
+  restore-roten; verktyget räknar utan → 8 435/532, SAMMA 7 903 filer.
+  src-rader: manualens 200 991 (wc -l) = verktygets 201 657 (split('\n')
+  räknar +1 per fil med avslutande radbryt) − 666 filer. Innehållet
+  identiskt till sista raden; endast räknekonvention skiljer.
+- **Städning + KVD:** PG17 orörd HELA övningen (nere före/efter — korrekt
+  viloläge enligt kontraktet; ingen skrap-DB skapas av kedja 3) · /tmp
+  raderad (finally-garanti) · `node --check` GRÖN · tsc 0 via projekt-
+  binär (src/ orörd = inget bygge) · R2 orörd · data/blogg/ orörd.
+- **Kö till huvudagenten: ingen ny** — kvartalsmallen 2026-12-15 är nu
+  FYRA KOMMANDON: `dr-ovning.mjs` + `dr-kedja2.mjs` + `dr-kedja3.mjs` +
+  `dr-kedja4.mjs` (kvar hos huvudagenten oförändrat: cron för vecko-
+  arkivering server-side · git gc vid lugnt fönster · kundnotis datorns
+  hybrid-sync · jungfrunatt rad 3 bevisas 09-17).
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

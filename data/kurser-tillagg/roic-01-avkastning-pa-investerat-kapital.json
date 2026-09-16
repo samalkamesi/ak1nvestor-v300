@@ -1,0 +1,156 @@
+{
+  "slug": "roic-01-avkastning-pa-investerat-kapital",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "ROIC — lönsamhet utan hävstångens makeup",
+  "summary": "Fortsetzungskursen om lönsamhet: avkastning på investerat kapital — måttet som mäter verksamheten själv, oberoende av hur den finansierats — och spridningen mot kapitalkostnaden som avgör om tillväxt skapar eller förstör värde.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå ROIC som lönsamhetsmåttets andra våning — Du Pont-analysen (ln-01) plockade isär ROE i tre bitar, ROIC tar bort den tredje biten (hävstången) och frågar: vad avkastar verksamheten självt? · Räkna fram NOPAT — resultatet före räntor, efter skatt på normaliserad nivå · Avgränsa investerat kapital: rörelsekapital plus nettoanläggningar, med leasing och goodwill som medvetna val · Tolka spridningen ROIC minus kapitalkostnad — tillväxt ovanför kapitalkostnaden skapar värde, tillväxt under den förstör det · Skilja hög ROIC som är äkta (litet kapitalbehov, varaktig fördel) från hög ROE som är lånad (hög hävstång på medelmåttig verksamhet) · Koppla ROIC-läsningen till AKM1:s LÖNSAMHET-familj (V07–V09) och AKM2:s lönsamhetsdimension.",
+  "why": "Grundkursen (ln-01) lärde plocka isär ROE i marginal, omsättningshastighet och hävstång — men isärplockningen lämnar en fråga öppen: när hävstången tagits bort, vad är verksamheten då värd? Det är ROIC:s fråga. Två bolag kan visa identisk ROE på 20 procent där det ena avkastar 22 procent på investerat kapital och det andra 9 — skillnaden bor i balansräkningen och syns inte i ROE-raderna. ROIC gör tre saker som ROE inte kan: det jämför verksamheter med olika skuldsättning på lika villkor, det sätter avkastningen mot kapitalkostnaden (spridningen som avgör om tillväxt skapar eller förstör värde), och det visar hur mycket av lönsamheten som är vallgrav och hur mycket som är bokslighteknik. Det är den naturliga fortsättningskursen i lönsamhetsfamiljen — och det mått AKM2:s lönsamhetsdimension betygsätter när hävstångens makeup tvätts bort.",
+  "history": {
+    "origin": "Att mätta avkastning på investerat kapital är äldre än förkortningarna: Du Pont-systemet självt — Donaldson Browns formelverk från 1912 — byggdes just för att chefer skulle se avkastningen per investerad dollar i olika fabriker, och internräntemätningen (IRR) gjorde samma sak för enskilda projekt inom kapitalbudgeteringen, en metod som växte fram med industrins storprojekt under tidigt 1900-tal.",
+    "evolution": "Forskningen flyttade måttet från projekt till bolag: Modigliani och Miller visade på 1950-talet att finansieringens struktur i sig inte skapar värde — en tanke som gör avkastningen på själva verksamheten till det naturliga måttet. Praktiken följde på 1980-talet när Stern Stewart & Co byggde EVA-traditionen (ekonomiskt resultat = spridningen mellan ROIC och kapitalkostnad gånger investerat kapital) och konsultbranschen gjorde value-based management till en industri; McKinseys Valuation-bibliotek (Copeland, Koller och Murrin, från 1990) spred NOPAT- och ROIC-hantverket till finansavdelningar världen över. Samtidigt visade Greenwald och Kahn (Competition Demystified, 2005) hur en varaktigt hög ROIC är samma sak som en vallgrav — lönsamhetsmåttet och konkurrensbegreppet växte samman.",
+    "modern": "I dag är ROIC en standarddel av värderingslitteraturen och en återkommande rad i bolagens egna kapitalmarknadsdagar — med de eviga avgränsningsfrågorna levande som någonsin: räknas goodwill och uppskjutna skatter som investerat kapital, hur behandlas leasing efter att den flyttat in i balansräkningen, och vilket resultat är normaliserat? Mauboussins arbete om avkastningens uthållighet — att hög ROIC visat sig vara mer beständig än hög tillväxt — har gett måttet en ny skepnad: det är inte bara en mätning utan ofta själva tesen om varaktigheten."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — från ROE till verksamhetens egen avkastning",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Investerat kapital — vad som räknas in och vad som lämnas utanför",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — räkna ROIC steg för steg",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mätning — spridningen mot kapitalkostnaden",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — lönsamhetskvalitet i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — från ROE till verksamhetens egen avkastning",
+      "intro": "Du Pont-analysen visade att ROE är tre saker i en siffra — denna kurs tar bort den tredje och frågar vad som återstår.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Minnet från grundkursen: ROE = vinstmarginal × kapitalomsättningshastighet × hävstång. De två första komponenterna beskriver verksamheten — hur mycket varje avsatt krona tjänar och hur snabbt kapitalet arbetar. Den tredje beskriver finansieringen: hur mycket av kapitalet som är lånat. ROE blandar de tre, och däri ligger dess både styrka och svaghet. Styrkan är helhetsbilden — ägaren äger faktiskt hävstången med. Svagheten är jämförelsen: ett högt belånat bolag med medelmåttig verksamhet kan visa samma ROE som ett obelåtat bolag med en enastående sådan, och ROE-raderna skiljer dem inte åt.\n\nROIC (return on invested capital) besvarar den bristen genom att mäta avkastningen på allt kapital som lagts i verksamheten — eget och lånat tillsammans — och genom att räkna resultatet före räntor. Därmed blir finansieringen irrelevant för måttet: båda bolagen ovan får varsin ROIC-siffra som speglar verksamheten själv, och skillnaden mellan dem syns omedelbart. kopplingen till grundkursen är rak: ROIC är Du Pont-analysens två första komponenter, ihopmultiplicerade och omräknade på hela kapitalbasen — hävstångens makeup borttvättad."
+        },
+        {
+          "type": "definition",
+          "content": "ROIC — avkastning på investerat kapital: verksamhetens rörelseresultat efter skatt (NOPAT) dividerat med det kapital som binds i verksamheten (investerat kapital). Måttet är oberoende av finansieringsstrukturen — därför kan två olika belåtna bolag jämföras på lika villkor."
+        },
+        {
+          "type": "insight",
+          "content": "ROE svarar på vad ägaren fick — ROIC svarar på vad verksamheten presterade. Den som bara läser det första förväxlar ofta lånad lönsamhet med äkta."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Investerat kapital — vad som räknas in och vad som lämnas utanför",
+      "intro": "ROIC är bara så bra som nämnaren — och nämnaren är en avgränsningsfråga, inte en sifferfråga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Investerat kapital är i sin vanligaste form allt kapital som bundits i den löpande verksamheten: rörelsekapitalet (lager, kundfordringar minus leverantörsskulder — det kapital som arbetsdagen låser) plus nettoanläggningstillgångarna (maskiner, byggnader, utrustning efter avskrivningar). Ett enklare spår, som ofta ger samma svar, är att ta den totala balansräkningen och dra ifrån det som inte hör till driften: räntebärande skulder, skatteskulder och liknande — det som återstår är kapital som ägare och långivare lagt in i verksamheten. båda vägarna ska landa i samma nämnare; gör de inte det är avgränsningarna olika, och det är just därför avgränsningarna ska dokumenteras.\n\nTre medvetna val förtjänar sitt avsnitt. Goodwill: att räkna in den ger förvärvade bolag en tyngre nämnare (och lägre ROIC) än organiskt byggda — många analytiker redovisar därför ROIC både med och utan goodwill, eftersom båda varianterna säger något: med goodwill mäter man priset som betalades, utan mäter verksamheten som den ser ut. Leasing: sedan leasingavtal togs in i balansräkningen är den inte längre en lucka, men äldre jämförelser kan skilja sig åt — kontrollera årtalen. Uppskjutna skatteskulder lämnas oftast utanför skuldsidan: de är ingen räntebärande finansiering utan en bokföringsdifferens. Konsekvensen av alla tre val: jämför aldrig två ROIC-siffror utan att veta hur nämnarna byggdes."
+        },
+        {
+          "type": "insight",
+          "content": "Nämnaren är en åsikt med siffror — goodwill, leasing och uppskjuten skatt är de tre valen som avgör om två ROIC-tal alls talar samma språk."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — räkna ROIC steg för steg",
+      "intro": "En balansräkning, en resultaträkning och fyra steg — från råa tal till en jämförbar avkastning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Steg ett: hitta rörelseresultatet (EBIT) i resultaträkningen. Anta ett bolag med EBIT på 1 000 mkr. Steg två: räkna om till NOPAT — resultat efter skatt men före räntor, det vill säga den skatt verksamheten betalar hade den varit obelåten. Med en effektiv skattesats på 20 procent blir NOPAT 1 000 × (1 − 0,20) = 800 mkr. Räntorna är redan borta (de hör till finansieringen, inte driften), och skatten omräknad på driftresultatet är hela skattekorrigeringen som krävs i grundfallet.\n\nSteg tre: bygg nämnaren ur balansräkningen. Lager 1 500, kundfordringar 1 200, leverantörsskulder 700 ger ett rörelsekapital på 2 000. Nettoanläggningstillgångar 2 000. Investerat kapital = 2 000 + 2 000 = 4 000 mkr. Steg fyra: dividera — ROIC = 800 ÷ 4 000 = 20 procent. Upprepa samma fyra steg på bolagets jämförelsebolag och de två verksamheterna talar för första gången samma språk, oberoende av hur ägarna valt att finansiera dem. Notera också bryggen till grundkursen: denna kursens 20 procent är vad ROE:ns två första Du Pont-komponenter bär tillsammans — och skillnaden mellan bolagets ROE och dess ROIC är hävstångens bidrag, räknat i procentenheter."
+        },
+        {
+          "type": "insight",
+          "content": "Fyra steg, två rapporter: EBIT → NOPAT → investerat kapital → kvot. Hela övningen tar minuter — värdefull är den bara när avgränsningarna (kapitel 2) antecknas bredvid talet."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — spridningen mot kapitalkostnaden",
+      "intro": "ROIC-siffran menar ingenting ensam — den får sin betydelse först framför kapitalets eget pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kapitalet är inte gratis: ägare kräver avkastning och långivare kräver ränta, och den sammanvägda kostnaden — ofta approximerad med WACC, den viktade kapitalkostnaden (kursen km-008 går igenom den byggstenen) — är måttets referenspunkt. Låt kapitalkostnaden vara 10 procent. Ett bolag med ROIC 20 procent tjänar tio procentenheter mer än kapitalet kostar: varje återinvestering växer värdet, och tillväxt är en tillgång. Ett bolag med ROIC 8 procent förlorar två procentenheter per år på allt kapital som binds — för det bolaget är tillväxt inte en tillgång utan en läcka: ju snabbare det växer, desto snabbare rinner värdet ut. Spridningen (ROIC minus kapitalkostnad) gånger investerat kapital är dessutom exakt det som kallas ekonomiskt resultat — EVA-traditionens kärnbegrepp från historieavsnittet.\n\nDetta är kursens egentliga mätning: att flytta läsningen från nivån ('ROIC är 14 procent') till bedömningen ('spridningen är positiv, varaktig och driven av små kapitalbehov — eller tvärtom'). En viktig empirisk notering från forskningen om avkastningens uthållighet: hög ROIC har historiskt visat sig mer beständig än hög tillväxt — konkurrenter angriper tillväxten långsammare än de angriper en vallgrav. det är också därför spridningen är en kvalitetsfråga: en ROIC långt över kapitalkostnaden som håller i många år är i praktiken samma påstående som moat-kurserna (mt-01, mt-02) formulerar i konkurrenstermer."
+        },
+        {
+          "type": "insight",
+          "content": "Tillväxt ovanför kapitalkostnaden skapar värde, tillväxt under den förstör det — spridningen, inte procentsatsen, är lönsamhetens domslut."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "ROIC:s fällor bor i nämnaren, i tidpunkten och i jämförelsen — de flesta går att hantera om de är kända.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: den gamla balansräkningen. Ett årsresultat delat med årsbokslutets kapital mäter en avkastning på ett tillfälligt fotografi — kapitalet vid årets slut kan vara införskaffat inför nästa års tillväxt och ännu inte ha hunnit tjäna något. Vanligaste botemedlet är medelvärdet av början och slutet av året, eller medel över fler år. Fälla två: engångsposter i täljaren. Vinster från avyttringar, nedskrivningsåterföringar och restvärdesjusteringar blåser upp NOPAT utan att tillhöra driften — normalisera täljaren (ett hantverk som vr-kursen om normaliserade multipler fördjupar ur värderingssidan). Fälla tre: goodwill-svängen — ett bolag som köpt sig till en stor goodwillmassa kan se måttlig ROIC med goodwill och strålande utan; redovisningen av båda varianterna är därför inte dubbelarbete utan ärlighet.\n\nFälla fyra: kapitalintensitetens sektorskillnad. Ett programvarubolag med ROIC på 30 procent och ett stålverk med 12 är inte 'bättre och sämre' — de lever under olika kapitalbehov, och den meningsfulla jämförelsen sker inom sektorn eller mot det egna bolagets historia. Fälla fem: hävstångens återkomst i förklädnad — ett bolag med stora driftsleder (leverantörsskulder långt över lager och fordringar) kan nästan helt kapitalfritt driva en hög omsättning genom nämnaren; driftledet är en fördel värd att syna, men kolla att det inte är en dold finansiering av kunderna. Och som alltid i spåret: övningen är hantverket att läsa en verksamhet — aldrig en uppmaning att handla i den."
+        },
+        {
+          "type": "insight",
+          "content": "De fem fällorna — fotografi-täljare, engångsposter, goodwill, sektorskillnad, dolda led — har ett gemensamt botemedel: dokumentera avgränsningarna, så blir nästa års jämförelse sann och inte bara snarlik."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — lönsamhetskvalitet i AKM1:s metodik",
+      "intro": "I AK1A:s system är ROIC lönsamhetsfamiliens kvalitetsmått — det som väger V07–V09 och binder dem till vallgraven och värderingen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "LÖNSAMHET-familjens fördjupningskurser V07–V09 mäter marginalerna — brutto, EBITDA och ROE — och Du Pont-analysen (ln-01) visade hur ROE byggs. ROIC fullbordar kedjan: det tar marginalernas och omsättningshastighetens gemensamma verkan och sätter den mot kapitalets pris. I AKM2:s lönsamhetsdimension betyder det att ett högt betyg kräver mer än höga marginaler — det kräver att avkastningen på allt kapital håller avstånd till kapitalkostnaden, och att avståndet inte drivs av poster som tvättas bort vid en normalisering. Korsningarna är många och nyttiga: mot moat-familjen (mt-01, mt-02) — en varaktig spridning är en vallgrav i siffror; mot kapitalstrukturen (ks-01–ks-03) — hävstången som ROE:s tredje komponent är deras hela ämne; mot värderingen (vr-01) — bolag med stabil hög ROIC förtjänar i allmänhet högre multipler, vilket är multipelgapets mest fundamentala förklaring.\n\nAvsluta med den levande övningen: välj två bolag i samma sektor ur kursuniversumet, räkna ROIC i de fyra stegen (dokumentera avgränsningarna), uppskatta en grov kapitalkostnad för varje — och skriv en rad om varje spridning: positiv eller negativ, och vad i Du Pont-profilen som driver den. Gör om det ett år senare med samma avgränsningar. Det är utbildningens kärna i denna kurs: lönsamhet är inte en siffra utan en berättelse om kapital som arbetar — och berättelsen blir sann först när den berättas likadant varje år."
+        },
+        {
+          "type": "insight",
+          "content": "Marginalerna säger hur mycket varje krona tjänar, ROIC säger vad hela verksamheten avkastar — och spridningen mot kapitalkostnaden säger om berättelsen är värd att berätta vidare."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch delade bolagen i tröga och snabba växare, men hans bärande tanke här är en annan: följ verksamheten, inte berättelsen om den. Lynch lyfte fram bolag som kunde växa utan att binda massor av kapital — de där vinsterna inte behövde ätas upp av nya fabriker innan de blev ägarnas. ROIC är den tanken formulerad som mått: hur mycket kapital verksamheten kräver för att leva och växa. Hans respekt för 'tråkiga' bolag med stadig avkastning är i ROIC-språket just uthållig spridning mot kapitalkostnaden.",
+  "grahamSection": "Benjamin Grahams arbetssätt var att läsa rådata med egna ögon och misstro det glansiga — hans berömda varning för bolag som imponerar med avkastning tjänad på lånad grund är Du Pont-traditionens äldsta röst. Grahams eget mått på företagets 'earning power' — normaliserad, uthållig resultatförmåga — är ROIC-idéns föregångare: att fråga vad verksamheten faktiskt presterar, beräknat försiktigt och över en hel cykel, innan något pris sätts mot den.",
+  "ak1Section": "I AK1A:s metodik är denna kurs LÖNSAMHET-familiens kvalitetsblock: V07–V09 mäter marginalerna, ln-01 plockar isär ROE, och ROIC sätter den sammanvägda avkastningen mot kapitalkostnaden — det värde som AKM2:s lönsamhetsdimension betygsätter när finansieringens effekter skalats bort. Spridningen mot kapitalkostnad är dessutom brobygget i andra riktningen: mot moat-dimensionen (varaktig spridning = vallgrav i siffror) och mot värderingen (stabil hög ROIC motiverar premie i multipelgapets logik)."
+}

@@ -1,46 +1,47 @@
 /**
- * TESTA AI-MENTORN — SPÅR 6, OMGÅNG 8, BYGGARE s6-u2 (ägande-lagret).
+ * TESTA AI-MENTORN — SPÅR 6, OMGÅNG 9, BYGGARE s6-u2 (lönsamhetsdjup-lagret).
  *
- * Kör:  node verktyg/testa-ai-mentor-agande.mjs
+ * Kör:  node verktyg/testa-ai-mentor-lonsamhetsdjup.mjs
  * Krav: Node >= 22.18 (type stripping default — samma som testa-ai-mentor.mjs).
  *
- * Regressionstest för s6-u2:s två nya förhandsfrågor (bolagsstämma/
- * rösträtt + styrelse/bolagsstyrning — se src/lib/ai-mentor-agande-fragor.ts)
- * med bevakning av:
+ * Regressionstest för s6-u2 omgång 9:s två nya förhandsfrågor (DuPont-
+ * analysen + ROIC — se src/lib/ai-mentor-lonsamhetsdjup-fragor.ts) med
+ * bevakning av:
  *   A  2 nya kanoniska → rätt ämne, primärkälla, FLERKÄLLA (kallor ≥ 2 +
  *      numrerad Källor-rad i texten) och ≥ 3 kurslänkar per svar
- *   B  6 felstavade/varierade varianter → samma träff som den kanoniska
+ *   B  10 felstavade/varierade varianter → samma träff som den kanoniska
  *   C  determinism — samma fråga två gånger ⇒ bitidentiskt svar
  *   D  källaäkthet — varje källa/kurslänk i de nya svaren FINNS i registret
- *      (fantomslugar är testfel) + registerdriven räknekontroll i texten
+ *      (fantomslugar är testfel) + fragor:-knappar levande mot HELA kedjan
+ *      (dessa knappar korslänkar lagrets EGNA två monster — dokumenterat
+ *      undantag från tidigare lagers "tidigare lager"-krav) +
+ *      registerdrivna räknekontroller i texten (klippskydd)
  *   E  3 omatchade frågor → null (API-flödet får dem)
  *   F  juridikgrind-lint — inga rådfraser (köp/sälj) i de nya svaren
- *   G  ANTISTÖLD — samtliga 40 tidigare kanoniska frågor ger NULL i
- *      ägande-lagret (det nya lagret kan aldrig stjäla ett existerande
- *      svar)
- *   G2 SYSKONKÄRNORD — samtliga kärnord i de 9 tidigare lagren läses
+ *   G  ANTISTÖLD — samtliga 50 tidigare kanoniska frågor ger NULL i
+ *      lönsamhetsdjup-lagret (det nya lagret kan aldrig stjäla ett
+ *      existerande svar)
+ *   G2 SYSKONKÄRNORD — samtliga kärnord i de 13 tidigare lagren läses
  *      LIVE ur modulerna och ställs som frågor ("vad är X?") → 0 fångster
- *      i detta lager (fångar även framtida syskonskar — samma fall som
- *      praktik-/portfoljgrund-testerna)
+ *      i detta lager (fångar även framtida syskonkrockar — samma fall som
+ *      praktik-/portfoljgrund-/djup-/historia-lagrens test)
  *   H  hela kedjan (makro ?? extra ?? bas ?? nästa ?? kapitalmekanik ??
- *      sektor ?? case ?? praktik ?? portfoljgrund ?? agande, som
- *      chat-widget.tsx): 42 kanoniska frågor når RÄTT lager
+ *      sektor ?? case ?? praktik ?? portfoljgrund ?? agande ??
+ *      redovisningsdjup ?? djup ?? historia ?? lonsamhetsdjup, som
+ *      chat-widget.tsx): 52 kanoniska frågor når RÄTT lager
  *   I  OMKASTAD ANTISTÖLD — mina 2 kanoniska ger NULL i kedjan UTAN
- *      ägande-lagret: inget tidigare lager fångar dem
- *   J  kärnordsdisjunktion MEKANISKT — AGANDE_MONSTER:s kärnord är
- *      disjunkta mot samtliga 9 tidigare lagers kärnord, lästa LIVE ur
- *      modulerna
- *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA tolv lager i
+ *      lönsamhetsdjup-lagret: inget tidigare lager fångar dem
+ *   J  kärnordsdisjunktion MEKANISKT — LONSAMHETSDJUP_MONSTER:s kärnord
+ *      är disjunkta mot samtliga 13 tidigare lagers kärnord, lästa LIVE
+ *      ur modulerna
+ *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA fjorton lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b — sektor
- *      levererad utan inkoppling — kan inte upprepas tyst; samma fall
- *      som case-/praktik-/portfoljgrund-testerna). Elfte komponenten
- *      (svaraLokaltRedovisningsdjup) är SYSKONET s6-u1:s parallella
- *      leverans i samma träd — modulen ägs av syskonet och importeras
- *      EJ här (fall H:s testkedja bär de tio tidigare + agande).
+ *      levererad utan inkoppling — kan inte upprepas tyst; samma fall som
+ *      case-/praktik-/portfoljgrund-/agande-/djup-/historia-testerna)
  *
  * NOTIS Node 22.23 (module-typeless-reparse): modul-namespace-åtkomst via
  * punktnotation kan ge undefined för .ts-moduler i denna miljö — alla
- * importer destruktureras därför (samma mönster som samtliga syskontest).
+ * importer destruktureras (samma mönster som samtliga syskontest).
  */
 
 import { readFileSync } from "node:fs";
@@ -55,7 +56,7 @@ const stodStrip = major > 22 || (major === 22 && minor >= 18);
 if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
   console.error(
     "FEL: Node " + process.versions.node + " saknar type stripping. " +
-      "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-agande.mjs",
+      "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-lonsamhetsdjup.mjs",
   );
   process.exit(1);
 }
@@ -63,7 +64,7 @@ if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
 // Den RIKTIGA koden ur src/ (ingen duplikation i testet) — destrukturerad.
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
 const { MONSTER, svaraLokalt } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-svar.ts")).href);
-const { svaraLokaltAgande, AGANDE_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-agande-fragor.ts")).href);
+const { svaraLokaltLonsamhetsdjup, LONSAMHETSDJUP_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-lonsamhetsdjup-fragor.ts")).href);
 
 // Syskonlager — toleranta importer (syskon kan skriva just nu).
 function tolerera(fil, exports) {
@@ -82,6 +83,10 @@ const { svaraLokaltSektor, SEKTOR_MONSTER } = await tolerera("ai-mentor-sektor-f
 const { svaraLokaltCase, CASE_MONSTER } = await tolerera("ai-mentor-case-fragor.ts", ["svaraLokaltCase", "CASE_MONSTER"]);
 const { svaraLokaltPraktik, PRAKTIK_MONSTER } = await tolerera("ai-mentor-praktik-fragor.ts", ["svaraLokaltPraktik", "PRAKTIK_MONSTER"]);
 const { svaraLokaltPortfoljgrund, PORTFOLJGRUND_MONSTER } = await tolerera("ai-mentor-portfoljgrund-fragor.ts", ["svaraLokaltPortfoljgrund", "PORTFOLJGRUND_MONSTER"]);
+const { svaraLokaltAgande, AGANDE_MONSTER } = await tolerera("ai-mentor-agande-fragor.ts", ["svaraLokaltAgande", "AGANDE_MONSTER"]);
+const { svaraLokaltRedovisningsdjup, REDOVISNINGSDJUP_MONSTER } = await tolerera("ai-mentor-redovisningsdjup-fragor.ts", ["svaraLokaltRedovisningsdjup", "REDOVISNINGSDJUP_MONSTER"]);
+const { svaraLokaltDjup, DJUP_MONSTER } = await tolerera("ai-mentor-djup-fragor.ts", ["svaraLokaltDjup", "DJUP_MONSTER"]);
+const { svaraLokaltHistoria, HISTORIA_MONSTER } = await tolerera("ai-mentor-historia-fragor.ts", ["svaraLokaltHistoria", "HISTORIA_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -99,20 +104,20 @@ function kontroll(namn, ok, detalj) {
 // ── FALL A: de två nya kanoniska med flerkällskrav ─────────────────────────
 const NYA = [
   {
-    fraga: "Vad är en bolagsstämma?",
-    amne: "bolagsstämma",
-    slug: "sj-03-bolagsstamma-och-rostratt",
+    fraga: "Vad är DuPont-analysen?",
+    amne: "dupont",
+    slug: "ln-01-dupont-analysen",
   },
   {
-    fraga: "Vad gör en styrelse?",
-    amne: "bolagsstyrning",
-    slug: "km-002-forvaltningsberattelsen",
+    fraga: "Vad är ROIC?",
+    amne: "roic",
+    slug: "roic-01-avkastning-pa-investerat-kapital",
   },
 ];
 
 NYA.forEach((f, i) => {
   const nr = "A" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltAgande(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER);
   if (!svar) {
     kontroll(nr + " " + f.amne, false, "inget lokalt svar på: '" + f.fraga + "'");
     return;
@@ -134,17 +139,21 @@ NYA.forEach((f, i) => {
 
 // ── FALL B: felstavade varianter → samma träff ──────────────────────────────
 const FELSTAVADE = [
-  { fraga: "vad ar en bolagsstamma?", amne: "bolagsstämma" }, // diafri: ä→a
-  { fraga: "hur fungerar rostratten?", amne: "bolagsstämma" }, // diafri
-  { fraga: "vad betyder aktieklasser?", amne: "bolagsstämma" },
-  { fraga: "vem sitter i styresen?", amne: "bolagsstyrning" }, // 1 fel (insättning)
-  { fraga: "vad är förvaltningsberättelsen för något?", amne: "bolagsstyrning" },
-  { fraga: "narstaende parter hur funkar det?", amne: "bolagsstyrning" }, // diafri
+  { fraga: "vad ar dupont analysen for nagot?", amne: "dupont" }, // diafri
+  { fraga: "vad är du pont modellen?", amne: "dupont" }, // flerordsfras
+  { fraga: "vad menas med dupontmodellen?", amne: "dupont" }, // sammansatt kärnord
+  { fraga: "vad är en dupon analys?", amne: "dupont" }, // 1 fel (6 tkn tål 1)
+  { fraga: "förklara duppont formeln?", amne: "dupont" }, // 1 fel + stärkord
+  { fraga: "vad är roic för något?", amne: "roic" }, // diafri
+  { fraga: "hur räknar man ut roic?", amne: "roic" }, // kärnord i ny fras
+  { fraga: "vad är wacc?", amne: "roic" }, // syskonämne i samma monster
+  { fraga: "vad menas med nopat?", amne: "roic" }, // kärnord direkt
+  { fraga: "vad är kapitalkostnaden?", amne: "roic" }, // böjning, avstånd 1
 ];
 
 FELSTAVADE.forEach((f, i) => {
   const nr = "B" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltAgande(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER);
   const ok = svar !== null && svar.amne === f.amne;
   kontroll(nr + " " + f.amne + " — '" + f.fraga + "'", ok, svar ? "ämne=" + svar.amne : "inget svar");
 });
@@ -152,8 +161,8 @@ FELSTAVADE.forEach((f, i) => {
 // ── FALL C: determinism — alla frågor × 2 körningar bitidentiska ────────────
 {
   const alla = [...NYA.map((f) => f.fraga), ...FELSTAVADE.map((f) => f.fraga)];
-  const forsta = alla.map((f) => JSON.stringify(svaraLokaltAgande(f, KURSREGISTER)));
-  const andra = alla.map((f) => JSON.stringify(svaraLokaltAgande(f, KURSREGISTER)));
+  const forsta = alla.map((f) => JSON.stringify(svaraLokaltLonsamhetsdjup(f, KURSREGISTER)));
+  const andra = alla.map((f) => JSON.stringify(svaraLokaltLonsamhetsdjup(f, KURSREGISTER)));
   const identiska = forsta.every((s, i) => s === andra[i]);
   kontroll("C01 determinism — " + alla.length + " frågor × 2 körningar bitidentiska", identiska,
     identiska ? "" : "avvikelse upptäckt");
@@ -164,7 +173,7 @@ FELSTAVADE.forEach((f, i) => {
   const slugFinns = new Set(KURSREGISTER.map((r) => r.slug));
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltAgande(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER);
     if (!svar) continue;
     for (const k of svar.kallor ?? []) {
       if (k.slug && !slugFinns.has(k.slug)) FEL.push("källa '" + k.slug + "' (" + f.amne + ") finns ej i registret");
@@ -181,24 +190,58 @@ FELSTAVADE.forEach((f, i) => {
       }
     }
   }
-  kontroll("D01 källaäkthet — inga fantomslugar i källor/länkar", FEL.length === 0,
+  kontroll("D01 källaäkthet — inga fantomslugar i de nya svaren", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : KURSREGISTER.length + " kurser genomsökta");
 
-  // Registerdriven räknekontroll: kategoriernas antal i texterna ska
-  // komma ur registret (klippskydd vid registerändring).
-  const sjAntal = KURSREGISTER.filter((r) => r.kategori === "SKATT & JURIDIK").length;
-  const bkAntal = KURSREGISTER.filter((r) => r.kategori === "BOKFÖRING & ÅRSREDOVISNING").length;
-  const sSvar = svaraLokaltAgande(NYA[0].fraga, KURSREGISTER);
-  const tSvar = svaraLokaltAgande(NYA[1].fraga, KURSREGISTER);
+  // fragor:-knappar skall landa i HELA kedjan — dessa knappar korslänkar
+  // lagrets EGNA två monster ("vad är roic?" ur DuPont-svaret och tvärtom),
+  // så kontrollen körs mot fullständiga kedjan (dokumenterat undantag från
+  // tidigare lagers "tidigare lager"-krav: ett nytt lagers interna
+  // korslänkar är per definition inte i ett tidigare lager).
+  const helakedjan = (fraga) =>
+    (svaraLokaltMakro ? svaraLokaltMakro(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltExtra ? svaraLokaltExtra(fraga, KURSREGISTER) : null) ??
+    svaraLokalt(fraga, KURSREGISTER) ??
+    (svaraLokaltNasta ? svaraLokaltNasta(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltKapitalmekanik ? svaraLokaltKapitalmekanik(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltSektor ? svaraLokaltSektor(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltCase ? svaraLokaltCase(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltPraktik ? svaraLokaltPraktik(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltPortfoljgrund ? svaraLokaltPortfoljgrund(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltAgande ? svaraLokaltAgande(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltRedovisningsdjup ? svaraLokaltRedovisningsdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltDjup ? svaraLokaltDjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltHistoria ? svaraLokaltHistoria(fraga, KURSREGISTER) : null) ??
+    svaraLokaltLonsamhetsdjup(fraga, KURSREGISTER);
+  for (const f of NYA) {
+    const svar = svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER);
+    if (!svar) continue;
+    for (const h of svar.handlings) {
+      if (!h.lank.startsWith("fragor:")) continue;
+      const q = decodeURIComponent(h.lank.slice("fragor:".length));
+      const mal = helakedjan(q);
+      if (!mal) FEL.push("fragor:-knapp '" + q + "' (" + f.amne + ") landar null i HELA kedjan — död knapp");
+    }
+  }
+  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (16 lager)", FEL.length === 0,
+    FEL.length ? FEL.join(" | ") : "0 döda knappar");
+
+  // Registerdrivna räknekontroller: kategoriernas antal och kursminuter i
+  // texterna ska komma ur registret (klippskydd vid registerändring —
+  // spår 5:s rebake).
+  const lonsamhetAntal = KURSREGISTER.filter((r) => r.kategori === "LÖNSAMHET").length;
+  const ln01 = KURSREGISTER.find((r) => r.slug === "ln-01-dupont-analysen");
+  const roic = KURSREGISTER.find((r) => r.slug === "roic-01-avkastning-pa-investerat-kapital");
+  const sDupont = svaraLokaltLonsamhetsdjup(NYA[0].fraga, KURSREGISTER);
+  const sRoic = svaraLokaltLonsamhetsdjup(NYA[1].fraga, KURSREGISTER);
   kontroll(
-    "D02 registerdrivet tal — SKATT & JURIDIK = " + sjAntal + " i stämmasvaret",
-    sSvar && sSvar.text.includes(sjAntal + " kurser"),
-    "texten ska bära registrets egna tal",
-  );
-  kontroll(
-    "D03 registerdrivet tal — BOKFÖRING & ÅRSREDOVISNING = " + bkAntal + " i styrelsesvaret",
-    tSvar && tSvar.text.includes(bkAntal + " kurser"),
-    "texten ska bära registrets egna tal",
+    "D02 registerdrivna tal — LÖNSAMHET=" + lonsamhetAntal + " · ln-01 " + (ln01 ? ln01.minuter : "?") + " min · roic-01 " + (roic ? roic.minuter : "?") + " min",
+    !!sDupont && !!sRoic &&
+      sDupont.text.includes(lonsamhetAntal + " kurser") &&
+      sRoic.text.includes(lonsamhetAntal + " kurser") &&
+      (ln01 ? sDupont.text.includes(ln01.minuter + " min") : false) &&
+      (roic ? sRoic.text.includes(roic.minuter + " min") : false),
+    "texterna ska bära registrets egna tal",
   );
 }
 
@@ -210,7 +253,7 @@ const OMATCHADE = [
 ];
 OMATCHADE.forEach((fraga, i) => {
   const nr = "E" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltAgande(fraga, KURSREGISTER);
+  const svar = svaraLokaltLonsamhetsdjup(fraga, KURSREGISTER);
   kontroll(nr + " omatchad — '" + fraga + "'", svar === null,
     svar ? "fick lokalt svar (ämne=" + svar.amne + ") — skulle gått vidare i kedjan" : "null ✓");
 });
@@ -220,16 +263,16 @@ OMATCHADE.forEach((fraga, i) => {
   const RADCITAT = /\b(köp|sälj|köp denna|sälj denna|rekommenderar att du köper)\b/i;
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltAgande(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER);
     if (!svar) continue;
     if (RADCITAT.test(svar.text)) FEL.push(f.amne + ": rådfras i text");
     for (const h of svar.handlings) if (RADCITAT.test(h.text)) FEL.push(f.amne + ": rådfras i handling '" + h.text + "'");
   }
-  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i ägande-svaren", FEL.length === 0,
+  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i lönsamhetsdjup-svaren", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "ren utbildningsformulering");
 }
 
-// ── FALL G: ANTISTÖLD — 40 tidigare kanoniska ger null i detta lager ───────
+// ── FALL G: ANTISTÖLD — 50 tidigare kanoniska ger null i detta lager ───────
 const GAMLA = [
   // Basens femton kanoniska
   { fraga: "Vad är AKM1?", amne: "akm1" },
@@ -280,20 +323,34 @@ const GAMLA = [
   // Portfoljgrund (omgång 7)
   { fraga: "Vad är diversifiering och korrelation?", amne: "diversifiering" },
   { fraga: "Vad är valutarisk?", amne: "valutarisk" },
+  // Ägande (omgång 8, syskon u2)
+  { fraga: "Vad är en bolagsstämma?", amne: "bolagsstämma" },
+  { fraga: "Vad gör en styrelse?", amne: "bolagsstyrning" },
+  // Redovisningsdjup (omgång 8, syskon u1)
+  { fraga: "Vad är avskrivningar?", amne: "avskrivning" },
+  { fraga: "Hur fungerar leasing i bokföringen?", amne: "leasing" },
+  // Djup (omgång 8, syskon u3 — omstart)
+  { fraga: "Vad är en värderingsmultipel?", amne: "multipel" },
+  { fraga: "Vad är FOMO?", amne: "fomo" },
+  { fraga: "Vem är Warren Buffett?", amne: "mastarna" },
+  // Historia (omgång 9, syskon u3)
+  { fraga: "Vad var tulpanmanin?", amne: "tulpanmanin" },
+  { fraga: "Vad är en börsbubbla?", amne: "bubbla" },
+  { fraga: "Vad hände vid aktiekraschen 1929?", amne: "krasch1929" },
 ];
 {
-  const STJALDA = GAMLA.filter((f) => svaraLokaltAgande(f.fraga, KURSREGISTER) !== null);
-  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i ägande-lagret", STJALDA.length === 0,
-    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltAgande(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
+  const STJALDA = GAMLA.filter((f) => svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER) !== null);
+  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i lönsamhetsdjup-lagret", STJALDA.length === 0,
+    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltLonsamhetsdjup(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
 }
 
 // ── FALL G2: SYSKONKÄRNORD — alla tidigare kärnord som frågor → 0 fångster ─
 {
-  const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigareMonster = [
     MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER,
     KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER,
-    PORTFOLJGRUND_MONSTER,
+    PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER,
+    DJUP_MONSTER, HISTORIA_MONSTER,
   ].filter(Array.isArray);
   let karnord = 0;
   const fragor = [];
@@ -305,7 +362,7 @@ const GAMLA = [
       }
     }
   }
-  const fangade = fragor.filter((f) => svaraLokaltAgande(f, KURSREGISTER) !== null);
+  const fangade = fragor.filter((f) => svaraLokaltLonsamhetsdjup(f, KURSREGISTER) !== null);
   kontroll(
     "G2 syskonkärnord — " + karnord + " kärnord LIVE som frågor → 0 fångster",
     fangade.length === 0,
@@ -325,14 +382,18 @@ const GAMLA = [
     (svaraLokaltCase ? svaraLokaltCase(fraga, KURSREGISTER) : null) ??
     (svaraLokaltPraktik ? svaraLokaltPraktik(fraga, KURSREGISTER) : null) ??
     (svaraLokaltPortfoljgrund ? svaraLokaltPortfoljgrund(fraga, KURSREGISTER) : null) ??
-    svaraLokaltAgande(fraga, KURSREGISTER);
+    (svaraLokaltAgande ? svaraLokaltAgande(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltRedovisningsdjup ? svaraLokaltRedovisningsdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltDjup ? svaraLokaltDjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltHistoria ? svaraLokaltHistoria(fraga, KURSREGISTER) : null) ??
+    svaraLokaltLonsamhetsdjup(fraga, KURSREGISTER);
   const fel = [];
   for (const f of [...GAMLA, ...NYA]) {
     const svar = kedja(f.fraga);
     if (!svar || svar.amne !== f.amne) fel.push("'" + f.fraga + "' ⇒ " + (svar ? svar.amne : "null") + " (väntat " + f.amne + ")");
   }
   kontroll(
-    "H01 kedja — " + GAMLA.length + " gamla + " + NYA.length + " nya når rätt lager (10 lager, som chat-widget.tsx)",
+    "H01 kedja — " + GAMLA.length + " gamla + " + NYA.length + " nya når rätt lager (16 lager, som chat-widget.tsx)",
     fel.length === 0,
     fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length) + "/" + (GAMLA.length + NYA.length) + " rätt lager",
   );
@@ -347,10 +408,14 @@ const GAMLA = [
     (svaraLokaltSektor ? svaraLokaltSektor(fraga, KURSREGISTER) : null) ??
     (svaraLokaltCase ? svaraLokaltCase(fraga, KURSREGISTER) : null) ??
     (svaraLokaltPraktik ? svaraLokaltPraktik(fraga, KURSREGISTER) : null) ??
-    (svaraLokaltPortfoljgrund ? svaraLokaltPortfoljgrund(fraga, KURSREGISTER) : null);
+    (svaraLokaltPortfoljgrund ? svaraLokaltPortfoljgrund(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltAgande ? svaraLokaltAgande(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltRedovisningsdjup ? svaraLokaltRedovisningsdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltDjup ? svaraLokaltDjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltHistoria ? svaraLokaltHistoria(fraga, KURSREGISTER) : null);
   const tjuvade = NYA.filter((f) => kedjaUtanMitt(f.fraga) !== null);
   kontroll(
-    "I01 omkastad antistöld — 2 nya kanoniska ger null i kedjan UTAN ägande-lagret",
+    "I01 omkastad antistöld — 2 nya kanoniska ger null i kedjan UTAN lönsamhetsdjup-lagret",
     tjuvade.length === 0,
     tjuvade.length ? tjuvade.map((f) => "'" + f.fraga + "' ⇒ " + kedjaUtanMitt(f.fraga).amne + " i tidigare lager").join(" | ") : "0 tidigare fångster ✓",
   );
@@ -360,18 +425,18 @@ const GAMLA = [
 {
   const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigare = new Set();
-  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER]) {
+  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER]) {
     if (!Array.isArray(monster)) continue;
     for (const m of monster) for (const k of m.karnord ?? []) tidigare.add(dia(k));
   }
   const krock = [];
-  for (const m of AGANDE_MONSTER) {
+  for (const m of LONSAMHETSDJUP_MONSTER) {
     for (const k of m.karnord ?? []) {
       if (tidigare.has(dia(k))) krock.push("'" + k + "' (" + m.id + ") finns redan i tidigare lager");
     }
   }
   kontroll(
-    "J01 kärnordsdisjunktion — AGANDE_MONSTER vs 9 tidigare lager (" + tidigare.size + " kärnord)",
+    "J01 kärnordsdisjunktion — LONSAMHETSDJUP_MONSTER vs 13 tidigare lager (" + tidigare.size + " kärnord)",
     krock.length === 0,
     krock.length ? krock.join(" | ") : "0 överlapp ✓",
   );
@@ -398,8 +463,8 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  if (!widget.includes('from "@/lib/ai-mentor-agande-fragor"')) {
-    FEL.push("importen av ai-mentor-agande-fragor saknas");
+  if (!widget.includes('from "@/lib/ai-mentor-lonsamhetsdjup-fragor"')) {
+    FEL.push("importen av ai-mentor-lonsamhetsdjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
   const kanda = new Set(KOMPONENTER);
@@ -410,14 +475,14 @@ const GAMLA = [
   kontroll(
     "L01 widget-synk — kedjan i chat-widget.tsx bär alla 16 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "14/16 lager i ordning (ägande + redovisningsdjup + syskonens djup + historia + lonsamhetsdjup + tsdjup + skattedjup SIST), inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "14/16 lager i ordning (lonsamhetsdjup + tsdjup + skattedjup SIST), inga okända komponenter",
   );
 }
 
 // ── Summering ───────────────────────────────────────────────────────────────
 console.log("");
 console.log("────────────────────────────────────────");
-console.log("AI-MENTORN spår 6 s6-u2 omgång 8 (ägande): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
-console.log("Nya förhandsfrågor: bolagsstämma/rösträtt, styrelse/bolagsstyrning · Register: " + KURSREGISTER.length + " kurser");
+console.log("AI-MENTORN spår 6 s6-u2 omgång 9 (lönsamhetsdjup): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
+console.log("Nya förhandsfrågor: DuPont-analysen, ROIC · Register: " + KURSREGISTER.length + " kurser");
 console.log("────────────────────────────────────────");
 process.exitCode = fail === 0 ? 0 : 1;

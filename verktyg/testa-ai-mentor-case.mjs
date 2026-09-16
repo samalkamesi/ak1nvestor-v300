@@ -363,6 +363,9 @@ const kedjekomponenter = [
   "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",
   "svaraLokaltDjup(q, KURSREGISTER)",
   "svaraLokaltHistoria(q, KURSREGISTER)",
+  "svaraLokaltLonsamhetsdjup(q, KURSREGISTER)",
+  "svaraLokaltTsdjup(q, KURSREGISTER)",
+  "svaraLokaltSkattedjup(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -406,9 +409,9 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 13 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 16 lager i ordning + 7 importer",
   lFel === 0,
-  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia live i klientkedjan" : lFel + " fel",
+  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );
 
 // ── Sammanfattning ─────────────────────────────────────────────────────────

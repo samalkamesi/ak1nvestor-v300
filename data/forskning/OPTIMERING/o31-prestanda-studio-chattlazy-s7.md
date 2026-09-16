@@ -1,10 +1,11 @@
 # O31 — Prestanda spår 7: /studio chatt-laty — StudioChat-bunten ur lås-vyns kritiska last (2026-09-16)
 
-**Ägare:** fabriksagent s7-u2 (byggare 2/3, nytt manifest) · **Status:** KOD
-LEVERERAD (denna commit) · tsc 0 (projektbinär) · EFTER-mätning sköts av
-fristående vakare (`/tmp/s7u2c-vakare.mjs`) när prod-synkens deploy landat
-— tabellen i §5 fylls ur `lighthouse/{studio-s7u2c-efter.json,
-s7u2c-efter-sammanfattning.json}`.
+**Ägare:** fabriksagent s7-u2 (byggare 2/3, nytt manifest) · **Status:** KLAR
+— EFTER bokförd 2026-09-17 (uppföljningsomgång s7-u2 2/3): vakaren mätte
+2026-09-16 19:01:27Z på BUILD_ID 18:59:40Z (deploy bevisad; grindar gröna:
+RAM 5 610 MB, statisk sond GRÖN, ISR-trigga ×2+8 s) → **P71 · LCP 4 168 ·
+TBT 577 · CLS 0 · vikt 556 KiB · unused-JS 104 KiB** — tabell + värdering i
+§5. Kuran BEVISAD: P +8, unused-JS −62 KiB.
 
 ## §0 Objektval + duplikatkontroll
 
@@ -90,7 +91,7 @@ beslut = R2 (kundens veto) — kur lämnas ALDRIG till barnagent. Köposten
 stängs HÄR med bevis; värdet 0,66 är priset för policyn och ska inte
 jägas av kommande vågor.
 
-## §5 EFTER (vakare — deploy-beroende)
+## §5 EFTER (vakare — MÄTT 2026-09-16 19:01:27Z, bokförd 2026-09-17)
 
 Vakare `/tmp/s7u2c-vakare.mjs` (setsid-fristående, logg `/tmp/s7u2c-vakare.log`,
 tak 4 h, poll 2 min) mäter när ALLA grindar passerats:
@@ -108,7 +109,7 @@ tak 4 h, poll 2 min) mäter när ALLA grindar passerats:
 
 | Mätning | P | LCP | TBT | CLS | bootup | totalvikt | unused-JS |
 |---|---|---|---|---|---|---|---|
-| /studio EFTER (s7u2c) | ⟦ur s7u2c-efter-sammanfattning.json⟧ | | | | | | |
+| **/studio EFTER (s7u2c, 09-16 19:01:27Z)** | **71** | **4 168** | **577** | **0** | **1 500** | **556 KiB** | **104 KiB** |
 
 Förväntad mekanism: unused-JS på /studio sjunker kraftigt (166 KiB-bäraren
 lämnar initialbunten; exakt tal = chatt-chunkens storlek I DAG inkl. 16–17
@@ -117,6 +118,33 @@ zippade vikt), TBT/bootup följer sekundärt. FUNKTIONSBEVIS för inloggad väg
 kan en barnagent inte köra (kräver admin-autentisering — R2-yta); mekanismen
 är typgrön + husmönster (o27/våg 68) och kundens nästa studiobesök är det
 levande beviset — noteras som ärlig rest tillsammans med EFTER-talen.
+
+**Värdering (bokförd 2026-09-17, uppföljningsomgång s7-u2 2/3) — kuran
+BEVISAD:** P 63→71 (+8) · LCP 5 027→4 168 ms (−859, −17 %) · TBT 638→577
+(−61) · CLS 0→0 · bootup 1 569→1 500 (−69) · totalvikt 640 009 B→556 KiB
+(−69 KiB, −11 %) · **unused-JS 166→104 KiB (−62 KiB)** — exakt den
+förväntade mekanismen ovan: chatt-chunkens initiala bidrag (62 KiB) lämnar
+lås-vybesökarens bunten. Riktningsmässigt konservativ: FÖRE mättes i
+vilande nattläge (03:33), EFTER vid load 3,82 (RAM-grinden grön men ej
+fullvila — o28 §1-disciplin) ⇒ den sanna förbättringen är snarare
+underskattad. Beviskedja: vakarlogg `/tmp/s7u2c-vakare.log` (vakaren
+väntade korrekt genom två pågående byggen — BUILD_ID ENOENT 18:19/18:59
+mitt i npm-builds — grindar gröna 19:01:18Z med BUILD_ID 18:59:40Z nyare
+än kur-commiten 3a8f2287; ISR-trigga ×2+8 s; statisk sond GRÖN) + rådata
+`lighthouse/{studio-s7u2c-efter.json, s7u2c-efter-sammanfattning.json}` +
+prod 200 på / och /studio om-verifierad 2026-09-17.
+
+**Byggeshistorik (ärlighet):** mätningen gällde BUILD_ID 18:59:40Z; prod
+har sedan dess fått ytterligare byggen (senaste 2026-09-16 22:09:33Z,
+s6-vågornas mentorlager 20–21) som bara VÄXER chatt-chunkens innehåll (§1:s
+tillväxtmekanism) — 104 KiB är alltså en undre gräns; den kurerade
+strukturen (lås-vyn bär aldrig chatten) är bygges-okänslig.
+
+**Kvarvarande (stängda/andra ägare):** unused-JS poäng 0 med 104 KiB
+spill — bärare: mentortexternas växande chunk (spår 6:s yta, stängt sedan
+o17 §AVSTÅTT/o19) + huvudbunten; bootup 1,5 s + mainthread 3,1 s =
+CPU-kostnad, last-känslig (o28/o32). Funktionsbevis inloggad väg förblir
+R2-yta — kundens nästa studiobesök är det levande beviset.
 
 ## §6 Syskon- och kollisionsbokföring
 
@@ -138,6 +166,15 @@ levande beviset — noteras som ärlig rest tillsammans med EFTER-talen.
   copyFileSync-clobber-lärdom (o18 §kollisionsbokföring) respekteras.
 - Om vakaren dör inom taket (12:39-precedensen): EFTER förblir pending och
   nästa omgång mäter enligt §5:s grillista — tabellen är självbeskrivande.
+- **Upplöst 2026-09-17 (uppföljningsomgång s7-u2 2/3):** vakaren levererade
+  INOM taket — grindar gröna 19:01:18Z, mätning 19:01:27Z, filer på disk
+  19:01:53Z; processen avslutad och borta vid omgångens start (ps-
+  verifierat 2026-09-17). o32 §6:s tidszonsbugg blev aldrig utlösande: det
+  som frigjorde mätningen var nya BUILD_ID (18:59:40Z) + RAM-grinden —
+  loggraden "grindar gröna" sammanfattar samtliga villkor inkl.
+  deploy-beviset; buggen lämnas åt o32:s ägare som dokumenterad.
 - R2 orörd: inga priser/tier/publicering (§4 = just därför STÄNGD ej kurad);
   data/blogg/ orörd; .env*/nycklar orörda; inget bygge i denna våg (ägande:
-  prod-synken under deploylåset).
+  prod-synken under deploylåset). Bokföringsomgången 2026-09-17 rör ENDAST
+  data/-filer (protokoll + mätningsrådata + worklog) — src/ orörd, inget
+  bygge.

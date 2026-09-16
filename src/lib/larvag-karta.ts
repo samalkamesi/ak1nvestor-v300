@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (375 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (381 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 333 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 339 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -253,6 +253,9 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pf-14-pensionssparande", titel: "Pensionssparande", kategori: "PORTFÖLJHANTERING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-11-kognitiv-bias", titel: "Kognitiv bias — komplett lista", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bf-12-prospektteori", titel: "Prospektteori — Kahneman & Tversky", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
+  { slug: "bf-13-arbitragens-granser", titel: "Arbitragens gränser — varför biasen får stanna i priserna", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-14-beteendeportfoljteori", titel: "Beteendeportföljteori — pyramiden med mentala konton", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-15-bubblans-anatomi", titel: "Bubblans anatomi — när allas misstag blir en och samma marknad", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mk-11-kinaekonomin", titel: "Kina-ekonomin", kategori: "MAKROEKONOMI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "vm-11-waccfallor", titel: "WACC-fällor", kategori: "VÄRDERINGSMETODER", niva: 3, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "portfolj-ekosystemet", titel: "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 55 },
@@ -370,6 +373,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-03-marginaltrappan-och-operativ-havstavng", titel: "Marginaltrappan och operativ hävstång — resultaträkningens känslighet", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-05-vad-ar-lonsamhet", titel: "Vad är lönsamhet? — vinstens förståelse i sex steg", kategori: "LÖNSAMHET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-02-kanslighetsanalys-och-stresstest", titel: "Känslighetsanalys — stresstesta balansräkningen", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-03-altman-z-score", titel: "Konkursprognos — Altman Z-score", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -403,6 +407,8 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -411,4 +417,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 375;
+export const LARVAG_ANTAL_KURSER = 381;

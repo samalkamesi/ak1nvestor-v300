@@ -1,0 +1,152 @@
+{
+  "slug": "od-01-optionens-greker",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Optionens greker — delta, gamma, theta och vega",
+  "summary": "De fyra riskmått som gör en optionsposition läsbar: hur priset rör sig med aktien (delta), hur delta självt rör sig (gamma), hur tidsvärdet smälter (theta) och vad volatiliteten kostar (vega) — i ren aritmetik på ett exempelkontrakt.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Läsa de fyra grekerna på en optionsposition och veta vad varje mått mäter · Räkna ut hur mycket optionen rör sig när aktien rör sig (delta) och hur den rörrelsen förändras (gamma) · Förstå theta som en klocka — tidsvärdets smältning dag för dag · Prissätta volatilitetens inverkan med vega och se varför volatilitet är optionens väder · Sätta ihop grekerna till en nettoexponering för en hel position, t.ex. en covered call · Veta vad grekerna INTE säger — modellens gränser och antaganden.",
+  "why": "Optionsgrunderna (km-059) visade vad en option är, och strategikurserna (km-060, km-061) visade hur covered calls och protective puts byggs — men mellan grund och strategi finns ett gap: förståelsen för VARFÖR optionspriset rör sig som det gör. Ett aktiepris rör sig i en dimension (upp eller ner). Ett optionspris rör sig i minst fyra: aktien, tiden, volatiliteten och räntan. Grekerna är instrumentpanelen som visar varje dimension för sig — och den som kan läsa panelen kan förklara varför en option kan förlora värde en vecka då aktien stod stilla, eller varför en position mådde bra av ett volatilitetsutbrott trots oförändrad kurs. Kursen bygger vidare på volatilitetsbegreppet från rs-01 och på handelsmekaniken från am-01, och förbereder den som vill gå vidare till prismodellen i Black-Scholes (km-062).",
+  "history": {
+    "origin": "När organiserad optionshandel växte fram — CBOE öppnade 1973 — upptäckte handlarna snabbt att optionens pris rörde sig på sätt som inte liknade aktiens. Marknadsmakare behövde snabba mått på sin exponering, och de lånade beteckningar från fysiken och matematiken: små förändringar beskrivs med grekiska bokstäver.",
+    "evolution": "Delta var först — känsligheten mot den underliggande aktien. Sedan kom gamma (deltats förändring), theta (tidens förslitning) och vega (volatilitetens pris; måttet heter egentligen inte en grekisk bokstav, men namnet fastnade). När Black-Scholes publicerades 1973 fick handlarna en sammanhängande teori bakom måtten, och riskavdelningar började summera greker över hela böcker — nettoexponeringar istället för enskilda kontrakt.",
+    "modern": "I dag visas grekerna som standard i varje mäklarterminal och i Nasdaq Nordic:s optionskedjor — de är optionens vedertagna riskspråk. Den som förstår delta, gamma, theta och vega kan läsa en position på sekunder: hur mycket den vinner eller förlorar på en krokarörelse, vad varje natt kostar i theta, och hur känslig hon är för volatilitetsförändringar. Språket är detsamma som institutionella handlare använder — den här kursen lär ut det som metodik, inte som uppmaning."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — priset som rör sig i fyra dimensioner", "minutes": 4 },
+    { "num": 2, "title": "Delta — känsligheten mot aktien", "minutes": 4 },
+    { "num": 3, "title": "Gamma och theta — kurvan och klockan", "minutes": 4 },
+    { "num": 4, "title": "Vega — volatilitetens pris", "minutes": 4 },
+    { "num": 5, "title": "Praktisk läsning — en positions netto-greker", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — instrumentpanelen och dess gränser", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — priset som rör sig i fyra dimensioner",
+      "intro": "En aktie har en prisrisk. En option har minst fyra — och det är därför den behöver ett eget riskspråk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett optionspris är en funktion av flera variabler på en gång: den underliggande aktiens pris, återstående löptid, förväntad volatilitet, räntan och utdelningar under perioden. Räkna med att aktien står helt stilla i en vecka — optionen kan ändå ändra pris, för att tiden gått (theta) eller för att marknadens volatilitetsförväntning skiftat (vega). Räkna med att aktien rör sig exakt dit du trodde — optionen kan ändå förlora värde om rörelsen tog för lång tid eller om volatiliteten faller samtidigt.\n\nGrekerna är namnet på delmåtten: varje grek beskriver hur mycket optionspriset förändras när en variabel rör sig ett litet steg och övriga hålls konstanta. Det är samma tankesätt som känslighetsanalysen i stabilitetsspåret (st-02) — fast för varje prisfaktor för sig. Kurserna km-060 och km-061 byggde strategier; den här kursen förklarar motorrummet som får strategierna att röra sig."
+        },
+        {
+          "type": "definition",
+          "content": "Grekerna: Samlingsnamn för optionsprisets känslighetsmått. Delta = förändring i optionspris per krona i aktien. Gamma = förändring i delta per krona i aktien. Theta = förändring i optionspris per enhet tid (vanligen per dag). Vega = förändring i optionspris per volatilitetspunkt. Alla mått gäller vid ett givet tillfälle och uppdateras när förutsättningarna ändras."
+        },
+        {
+          "type": "insight",
+          "content": "Tänk på instrumentpanelen i en bil: hastighetsmätaren (delta) säger hur snabbt du rör dig just nu, men inte hur motorn mår. Grekerna fungerar likadant — de beskriver läget NU, och läget skrivs om kontinuerligt."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Delta — känsligheten mot aktien",
+      "intro": "Delta är den första siffran varje optionsläsare lär sig: hur många öre flyttar optionen när aktien flyttar en krona?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En köpoption (call) har delta mellan 0 och 1; en säljoption (put) mellan 0 och minus 1. En call med delta 0,50 rör sig ungefär 50 öre när aktien rör sig en krona. En djupt inne-liggande call kan ha delta nära 1 — den beter sig nästan som aktien själv. En långt ut-liggande kan ha delta nära 0 — den knappt reagerar alls.\n\nDelta väger också sannolikheter i praktisk mening: en call med strike precis vid aktiekursen (at-the-money) handlas ofta runt delta 0,50, eftersom marknadens samlade bedömning är att aktien landar på ömse sidor strike med ungefär lika stor chans. Det är ingen exakt sannolikhet — modellens antaganden styrs av hur volatiliteten sätts (kapitel 4) — men som orientering är den användbar.\n\nFör den som läser strategikurserna (km-060, km-061) är delta nyckeln till konstruktionerna: den sålda callens negativa delta är själva mekanismen som ger en covered call sin dämpade karaktär mot ren aktieägande."
+        },
+        {
+          "type": "definition",
+          "content": "Delta: Optionsprisets förändring per enhets förändring i den underliggande aktiens pris, övriga faktorer konstanta. Call: 0 till +1. Put: 0 till −1. Ett kontrakt om 100 aktier med delta 0,50 motsvarar en exponering om 50 aktier (100 × 0,50)."
+        },
+        {
+          "type": "tabell",
+          "content": "Samma aktie, tre olika calls med lösen i samma månad: | Position | Delta | Aktien +1 krona ger | — | Djupt inne-liggande call | 0,90 | cirka +0,90 kronor | — | At-the-money call | 0,50 | cirka +0,50 kronor | — | Långt ut-liggande call | 0,10 | cirka +0,10 kronor |"
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: öppna en optionskedja för en stor svensk aktie och leta reda på tre calls — en långt inne, en at-the-money, en långt ut. Notera deras implicita delta genom att jämföra senaste förändring i optionspris mot aktiens rörelse samma stund. Var i kedjan är delta som brantast?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Gamma och theta — kurvan och klockan",
+      "intro": "Delta är inte konstant — och tiden är inte gratis. Gamma beskriver kurvan, theta klockan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När aktien stiger flyttar sig deltat — en at-the-money call med delta 0,50 kan ha delta 0,58 efter en uppgång på fem kronor. Det mått som beskriver deltats förändring per krona i aktien är gamma. Gamma är som störst för optioner nära strike med kort löptid: där är priskurvan som brantast, och samma krona i aktien förändrar exponeringen mest. Det är därför korta optioner nära pengarna känns som att åka berg-och-dalbana — både priset (delta) och känsligheten (gamma) rör sig snabbt.\n\nTheta är optionens klocka: hur mycket tidsvärdet smälter per dag, allt annat lika. En option med theta −0,10 kronor per dag förlorar ungefär 2 kronor i tidsvärde över tjugo dagar (0,10 × 20 = 2) om varken aktien eller volatiliteten rör sig. Obs formuleringen: allt annat lika — i verkligheten rör sig nästan alltid något. Theta är störst för samma optioner som har hög gamma; kort tid kvar betyder att varje dag tar en större andel av det återstående tidsvärdet.\n\nSäljare av optioner samlar in theta (tidsvärdet smälter åt deras håll) men bär gamma-risken: när aktien rör sig expanderar köparens exponering mot dem. Köpare betalar theta som en hyra för exponeringen och får gamma i utbyte. Ingen av sidorna har gratis lunch — de äger olika sidor av samma mynt."
+        },
+        {
+          "type": "definition",
+          "content": "Gamma: Deltats förändring per krona i den underliggande aktien. Högt gamma-värde = exponeringen förändras snabbt = positionen måste skötas om oftare. Theta: Optionsprisets förändring per dag från tidens förflöde, vanligen negativ för optionens innehavare och positiv för säljaren."
+        },
+        {
+          "type": "insight",
+          "content": "Theta och gamma är två fönster mot samma faktum: optioner nära strike och nära förfallande är de mest levande. Den som bara läser theta ser kostnaden; den som bara läser gamma ser rörelsen. Panelen visar båda — alltid."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Vega — volatilitetens pris",
+      "intro": "Volatiliteten är optionens väder: samma aktie, samma strike — olika pris beroende på stormprognos.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vega mäter hur mycket optionspriset förändras när den förväntade volatiliteten (implied volatility) flyttar en hel procentenhet — en volatilitetspunkt. En option med vega 0,15 kronor stiger cirka 0,45 kronor i pris om volatiliteten går från 22 till 25 procent (3 punkter × 0,15 = 0,45), även om aktien inte rör sig ett enda öre. Det förklarar en av nybörjarens vanligaste förvirringar: aktien står stilla, men optionen är dyrare — vädret har förändrats, inte bilen.\n\nVolatilitetsbegreppet bygger på rs-01: standardavvikelsen i avkastning, annualiserat. Implied volatility — implicit volatilitet — är marknadens framåtblickande version: den volatilitet som ryms inom optionspriset, löst baklänges ur priset själv. Hög implicit volatilitet betyder att försäkring och exponering är dyr; låg att den är billig — relativt marknadens historia och ämnets grundton (bankaktier och verktygsjättar har olika normalvolatilitet).\n\nRunt rapportdagningar stiger volatiliteten ofta före publiceringen och faller efter — känt som volatilitetsimplosion. Den som endast läser delta missar att en rapport kan komma 'rätt' och ändå lämna optionen lägre i pris: rörelsen var redan prissatt, och theta och vega tog betalt. Kalenderkurserna i kvartalsspåret visar samma fenomen från kalenderns sida — tystnad före publicering, rörelse efter."
+        },
+        {
+          "type": "definition",
+          "content": "Vega: Optionsprisets förändring per procentenhet (volatilitetspunkt) i implied volatility. Exempel: vega 0,15 kronor × volatilitetsförändring +3 punkter = +0,45 kronor i optionspris, aktien oförändrad."
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: välj en option på en aktie med kommande rapport inom två veckor och notera dagens implied volatility. Återkom efter rapporten och notera förändringen — både i volatilitet och i optionspris — med aktiens egen rörelse bredvid. Förklara sedan utfallet med grekerna: hur mycket kom från delta, hur mycket från vega och theta?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Praktisk läsning — en positions netto-greker",
+      "intro": "Grekerna lyser verkligen när positioner sättas ihop: varje ben bidrar med sin skuld i riskboken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ta covered callen ur km-060 med grekerna som läsglasögon. Exempel: du äger 100 aktier och har sålt en call på samma aktie. Aktierna har sammanlagt delta +100 (100 × 1). Den sålda callen har delta −0,50 per aktie, alltså −50 på kontraktet (100 × (−0,50)). Positionens nettodelta är +50 (100 − 50) — den beter sig i stort som ett ägande om femtio aktier, inte hundra. Det är exakt den dämpning covered call-konstruktionen är byggd för, nu uttryckt i ett enda tal.\n\nNära förfallande blir gamman i den sålda callen högre — nettodeltat börjar svikta uppåt när aktien faller och nedåt när den stiger (den sålda gammans tecken är motsatt köparens). Samtidigt samlar positionen theta: det tidsvärde den sålda callen tappar per dag är en intäktsström för positionen — mekaniskt sett, inte som rekommendation.\n\nPutsidan från km-061 läses likadant: en köpt protective put med delta −0,40 per aktie drar ner en aktieposition om 100 aktier till nettodelta +60 (100 − 40). Ju närmare pengarna puten ligger, desto mer av aktieexponeringen byts mot försäkring — och desto mer theta betalar försäkringen per dag. am-01:s spread-mått kompletterar: i trånga optioner är köp- och säljkurs så brett isär att grek-läsningen drunknar i transaktionskostnaden."
+        },
+        {
+          "type": "tabell",
+          "content": "Samma aktieägande om 100 aktier, tre konstruktioner: | Position | Nettodelta | Kännetecken | — | Bara aktierna | +100 | full exponering, ingen theta | — | Aktier + såld call (delta −0,50) | +50 | dämpad exponering, positiv theta | — | Aktier + köpt put (delta −0,40) | +60 | dämpad exponering, negativ theta |"
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: bygg på papper en covered call enligt km-060 (hypotetiskt, inga order). Notera positionens nettodelta före och efter en tänkt aktierörelse på +2 kronor, med gamma från med gamma-exemplet från kapitel 3. Hur förändras nettodelta — och vad betyder det för hur positionen beter sig i nästa kronas rörelse?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — instrumentpanelen och dess gränser",
+      "intro": "Grekerna är modellens språk — och modellen har antaganden. Mästaren vet var panelen slutar fungera.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sammanfattningsvis: delta beskriver riktningsexponeringen, gamma dess acceleration, theta tidens kostnad och vega vädrets. Tillsammans bildar de en instrumentpanel som gör det möjligt att läsa en positions risk på sekunder — och att jämföra konstruktioner som ser olika ut men bär samma exponering (ett ägande med dämpning kan byggas på fler sätt än ett).\n\nMen panelen har gränser, och tre är värda att memorera. För det första: grekerna är lokalinformation — de gäller för små förändringar kring dagens pris, inte för stora rörelser (där krävs omräkning av hela positionen). För det andra: de bygger på en modell av volatiliteten; när verkligheten spricker — gap, handelsstopp, extrema dagar — är modellgrekerna som väderprognos mitt i en storm. För det tredje: de säger ingenting om bolaget. En option är en härledd byggnad på aktien; aktien själv vilar på affären — den som inte kan läsa affären (nyckeltalen, rapporterna) läser bara byggnadens fasad.\n\nKursens nästa steg i spåret är km-062 Black-Scholes: modellen som sätter samman variablerna till ett pris och därmed förklarar var grekerna kommer ifrån. Vägen dit går via rs-01:s volatilitetsmått — samma standardavvikelse, nu i optionens tjänst.\n\nSå fungerar metoden: grekerna är ett läsverktyg för risk, inte en uppmaning att handla. Utbildningsplattformen lärar ut instrumentpanelen — beslutet om, när och om ens en position ska byggas är alltid läsarens eget."
+        },
+        {
+          "type": "insight",
+          "content": "En finansiell utbildningsklassiker: optionsägaren som 'hade rätt' om riktningen men ändå förlorade — för theta tog betalt medan hon väntade, eller vega föll när oron lagt sig. Med grekerna upphör sådana utfall att vara mysterier; de blir aritmetik."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch skulle ha påmint att en option alltid är en härledning av bolaget — han som letade efter bolag vars historia gick att förklara på en minut skulle ha betraktat greker som instrumentpanel på en bil vars motor han redan studerat. Delta utan affärsförståelse är en hastighetsmätare utan vägkarta.",
+  "grahamSection": "Benjamin Graham skulle ha sett grekerna som en fortsättning på hans grundtanke: att skilja pris från värde och förstå vad man betalar för. Theta är optionens värdemätare — pengar som försvinner med tiden utan att något händer — och Graham-tänkaren skulle noga räkna på vad tidskostnaden betyder innan en position överhuvudtaget byggs.",
+  "ak1Section": "AKM1 använder grekerna som risköversättningslager i sin derivatanalys: portföljens nettoexponeringar uttrycks i delta, gamma, theta och vega för att varje dimension ska kunna vägas separat — samma grundprincip som modellens dimensionstäckning på aktiesidan. Det är ett pedagogiskt verktyg för att synliggöra vad en konstruktion faktiskt exponerar läsaren för, inte en rekommendation att inta positionen."
+}

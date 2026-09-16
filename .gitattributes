@@ -1,0 +1,11 @@
+# AK1A — körmiljöspecifika merge-regler (spår 8, o39)
+#
+# worklog.md är en append-only-ledger: alla parter (huvudagentens klon
+# /home/ak1a/agent/ak1, fabriksagenter i /home/ak1a/AK1, arbetsstationen)
+# lägger till nya sektioner i filens slut. Vanliga merges kolliderar då i
+# EXAKT samma region (bevis: prod-synk.log "Pulling is not possible" vid
+# varje deploy 2026-09-15/16 — MERGE_MSG "# Conflicts: worklog.md").
+# union-drivrutinen förenar automatiskt båda sidors tillägg utan
+# konfliktmarkörer. Förutsättning: sektioner appendas alltid hela, i
+# filslut — rader redan incheckade skrivs ALDRIG om (gäller sedan våg 100).
+worklog.md merge=union

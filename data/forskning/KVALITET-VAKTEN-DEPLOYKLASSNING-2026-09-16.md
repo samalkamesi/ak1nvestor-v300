@@ -94,14 +94,21 @@ körs var 6:e timme (05:28 GRÖN — före skadan). Ingen maskin sonderar
 Lyckat prod-synk-bygge (kräver RAM ≥ 2200 MB; fabrikens barn ~0,8 GB/st
 frigörs vid avslut) återskapar .next + pm2-restart → resurser helagain →
 nästa vaktkörning väntas GRÖN (kokvitto bokförs av nästa våg/rond).
-**Pipeline-fråga öppen:** prod-synk.log tyst sedan 10:27 trots :x7-rop —
-verifieras av denna våg vid 12:47; förblir loggen tyst trots ledigt RAM-tak
-behöver pumpor→prod-synk-ruben huvudagentens uppmärksamhet.
+**Pipeline VERIFIERAD LEVANDE:** prod-synk.logens tidsstämplar är UTC —
+ropet 10:37:13Z (12:37 lokal) loggades korrekt (NY KOD dfc14f03 →
+VÄNTAR-RAM 1845 MB; första tolkningen "tyst sedan 10:27" var en UTC/lokal-
+tid-felläsning). Återställningen är alltså AUTOMATISK: nästa :x7-rop som
+träffar RAM ≥ 2200 bygger och läker prod utan manuell åtgärd.
 **Kö till huvudagenten (R-3):** kraschvakten behöver en resurs-sond
 (`GET /_next/static/<buildid-marker>`-eliknande kontroll av CSS-chunk) i
 sitt friskhetsbegrepp — "HTML 200 + pm2 online" bevisat otillräckligt
 (detta dokument, FYND 2). Ägarskap: verktyg/kraschvakt.mjs (annan ägare —
-röres ej utan koordinering).
+röres ej utan koordinering). **Syskonet s8-u1 omg 5 levererade redan
+byggstenen**: verktyg/statisk-sond.mjs (hämtar sida, HEAD:ar ALLA
+_next/static-refs; TRASIG-BYGG 25/25 på incidenten själv) + bokningar i
+deras o29 §6 (statisk-sond sist i prod-synkens deploy-verifikation,
+trasig-bygg som pulsvaktens läs-yta, kraschvaktens tabell) — huvudagenten
+kan hämta kuren där i stället för att skriva ny.
 
 ## SYSKONKOLLISION — protokoll båda riktningarna
 

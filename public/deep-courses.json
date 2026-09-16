@@ -79951,6 +79951,326 @@
     "grahamSection": "Grahams 'Mr. Market' är prospektteorin föregripen i praktiken: marknadens stämningsvallning — eufori över vinster, panik över förluster — är inte information om värdet utan om marknadens humör. Margin of safety blir det rationella svaret på en motpart vars värdefunktion slår runt varje dag.",
     "ak1Section": "AKM1 poängsätter bolagets 20 variabler och frågar aldrig vad du köpte aktien för — modellen flyttar därmed referenspunkten från portföljen till bolaget, vilket är dess största beteendevetenskapliga värde. På marknadsnivån återkommer massans värdefunktion i AK1TS vågvalidering, där kollektiva nollstrecksbeteenden kan synas i kursmönster kring inköpsnivåer i storlek."
   },
+  "bf-13-arbitragens-granser": {
+    "slug": "bf-13-arbitragens-granser",
+    "category": "BETEENDEFINANS",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Arbitragens gränser — varför biasen får stanna i priserna",
+    "summary": "Beteendefinansens andra fråga: om investerare är systematiskt biaserade, varför arbitreras inte felen bort? Svaret — substitutens ofullkomlighet, noise trader-risken och kapitalets horisont — genomräknat på ett arbitragexempel där det inte räcker att ha rätt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Formulera beteendefinansens kärnfråga — varför systematiska fel inte försvinner av att någon ser dem · Räkna på vad en arbitragposition kräver: substitut, horisont och finansiering · Förstå noise trader-risken — att felet kan förvärras innan det rättas (Shleifer–Vishny) · Se hur dispositionseffekt och förlustaversion kan sätta spår i orderflödet utan att spåren utplånas · Ställa de tre frågorna vid ett misstänkt misspris: substitut, finansiering, utlösare · Koppla samman säkerhetsmarginal, tidshorisont och disciplin till ett sammanhängande försvar mot pris som stannar fel.",
+    "why": "Beteendefinans-familjen har hittills bott i huvudet: biaserna (bf-11), prospektteorin (bf-12), robot-disciplinen (bf-04). Men hela fältet vilar på en obekväm motfråga som Eugene Fama reste redan på 1970-talet: om människor är förutsägbart biaserade, varför inte rikta sig mot felet och ta hem pengarna tills felet är borta? Frågan har ett seriöst svar — arbitragens gränser — och det svaret är skillnaden mellan att veta att bias finns och att förstå varför den får stanna i priserna. Kursen är familjens syntes: den kopplar psykologin (bf-serien) till marknadsstrukturen (am-04) och till värderingsgapen (vr-01), och ger den avancerade läsaren ett ramverk för att läsa avvikelser utan att anta att de stängs i nästa vecka. Det är också kursen som förklarar varför tålamod i sig inte är en strategi — tålamod måste finansieras.",
+    "history": {
+      "origin": "Den effektiva marknadshypotesen (Fama, 1970) gjorde anspråket tydligt: information prissätts omedelbart, så systematiska fel borde inte överleva. Men redan Grossman och Stiglitz (1980) visade paradoxen i det anspråket — om marknaden var perfekt effektiv skulle ingen ha skäl att betala för analys, och utan analys finns ingen som rättar priserna. Samtidigt växte listan på anomalier: dagars- och årsskifteffekter, momentum, värde-premien. Kritikernas fråga blev beteendefinansens startblock: varför lever felen kvar?",
+      "evolution": "Svaret formades under 1990-talet. De Long med flera hade redan visat att irrationellt kapital kan driva pris ifrån värde; Shleifer och Vishny (1997) vände på frågan och studerade arbitragören istället för den irrationelle handlaren — och fann en bräcklig figur: professionella som förvaltar andras kapital, med kredithorisonter och prestationskrav, inte med obegränsad tid. LTCM:s kollaps 1998 blev det levande exemplet: positioner som senare skulle visa sig rätta, men som finansieringen inte överlevde. Finanskrisen 2008 och kvant-kraschen 2007 bekräftade mönstret — tvångsförsäljningar kan driva priserna ännu längre ifrån värdet, inte närmare.",
+      "modern": "I dag är arbitragens gränser en del av den institutionella självbilden: riskavdelningar prissätter kapitalbindning, och forskningen kring riskpremier och faktorer skriver uttryckligen att en premie kan kvarstå obetald länge innan den betalar. För den svenske läsaren är småbolagslistorna en naturstudie i ämnet — smal ägarspridning, långa perioder utan analytikartäckning och pris som kan stå stilla medan värdet rör sig. Därför handlar avancerad läsvanlighet inte om att 'ha rätt tidigt' utan om att förstå vad som krävs för att överleva sin egen rätt."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — frågan som vände fältet upp och ner",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Vad arbitrag kräver — substitut, horisont, finansiering",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Noise trader-risken — felet som växer innan det rättas",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Spåren i priserna — disposition, aversion och orderflöde",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Praktisk läsning — tre frågor vid ett misstänkt misspris",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — syntes: psykologi, struktur, marginal",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — frågan som vände fältet upp och ner",
+        "intro": "Beteendefinansens första fråga var: är investerare rationella? Den andra, svårare: varför blir det inte bättre?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Om en aktie är felprisad för att dess ägare lider av bekräftelsefällan (km-019) eller ankareffekten (bf-05), då borde ju varje läsare som ser felet kunna ta motsatt position — och med tillräckligt många sådana läsare försvinner felet. Det var den effektiva marknadshypotesens argument i sin starkaste form, och det är ett bra argument: det förklarar varför de lättast åtgärdade felen verkligen försvinner.\n\nBeteendefinansens genombrott var inte att förneka argumentet utan att fråga vad det förutsätter. Svaret visade sig innehålla tre dolda krav: ett perfekt substitut att stå mot, en förutsägbar tidshorisont för rättelsen, och en finansiering som tål väntan. I nästa kapitel räknar vi på vad som händer när något av de tre kraven brister — och varför det ofta gör det.\n\nGrossman–Stiglitz-paradoxen förtjänar sin plats här: om alla fel alltid arbitreras bort gratis slutar alla leta fel — och då finns ingen kvar som rättar dem. Marknadens effektivitet är alltså inte ett tillstånd utan en jämvikt med slitage: någonstans mellan 'alla fel försvinner' och 'inget fel försvinner' ligger den verkliga marknaden."
+          },
+          {
+            "type": "definition",
+            "content": "Arbitrag: Att samtidigt köpa och sälja tillgångar som har samma eller nära samma värde men olika pris, och därmed låsa in skillnaden utan värderisk. I sin rena form förutsätter arbitragen ett perfekt substitut — två exakt likvärdiga tillgångar. I praktiken handlar de flesta 'arbitrager' på approximationer: en aktie mot ett beräknat värde, ett bolag mot ett jämförelsebolag — och där uppstår gränserna."
+          },
+          {
+            "type": "insight",
+            "content": "Formuleringen att 'marknaden kan förbli irrationell längre än du kan förbli solvent' är en gammal börsvisdom utan känd upphovsman — och den är i praktiken en sammanfattning av hela den här kursen: felet, horisonten, finansieringen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Vad arbitrag kräver — substitut, horisont, finansiering",
+        "intro": "Ren arbitrag har ingen horisont eftersom den har ett perfekt substitut. Men aktien mot dess värde? Där börjar klockan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Säg att en läsare efter full värdering bedömer att ett bolags rätt värde är 120 kronor per aktie, medan kursen står i 100. Priset ligger 16,7 procent under värdet (100 ÷ 120 = 0,833, dvs minus 16,7 procent). Det fina med ren arbitrag — samma tillgång på två börsar — är att rättelsen är mekanisk och snabb. Det dåliga med en aktie mot ett beräknat värde är att ingen lag tvingar kursen till 120. Värdet själv är en bedömning, inte ett faktum som börsen måste erkänna.\n\nDärför har den här typen av position två klockor den rena arbitragen saknar. Den första är tolkningsklockan: nya rapporter kan skriva om värdet — ibland till din fördel, ibland mot dig. Den andra är finansieringsklockan: kapital som är lånat, förtroendekapital hos fondens andelsägare eller egen tålamodskvot — allt har ett förfallodatum som inte är koordinerat med marknadens.\n\nGrahams säkerhetsmarginal är i det ljuset inte en pessimists försäkring utan en realists räkneverk: eftersom felet kan växa innan det rättas, måste avståndet mellan pris och värde räcka för att överleva resan — inte bara för att anlända om resan går rakt."
+          },
+          {
+            "type": "tabell",
+            "content": "Tre positioner mot samma bedömda värde 120 kronor: | Startläge | Prisrörelse före rättelse | Resultat före rättelse | — | Köp till 100 med eget kapital | faller till 85 | minus 15 procent på papper, positionen kan behållas | — | Köp till 100 med tolv månaders lånefinansiering | faller till 85 | marginalkrav kan tvinga stängning, förlusten realiseras | — | Köp till 100 med fondandelsägarnas kapital | faller till 85 | utflöden kan tvinga försäljning i botten |"
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: ta ett bolag ur studions universum där du kan formulera ett värde (AKM2-analysen ger ramverket). Beskriv därefter de tre kraven för att stå emot ett pris under värdet: vad är substitutet och dess brister, vad är din horisont, och vad är finansieringen under väntan? Vilket av de tre är svagast — och vad betyder det för hur stor säkerhetsmarginal som behövs?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Noise trader-risken — felet som växer innan det rättas",
+        "intro": "Shleifer–Vishnys poäng 1997: studera inte den irrationelle handlaren — studera den som ska rätta hans fel, och räkna på dennes uthållighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det klassiska svaret på 'varför lever fel kvar?' är att smarta kapital tar andra sidan. Shleifer och Vishny vände på det: de modellerade arbitragören som en professionell som förvaltar ANDRAS kapital — med prestationskrav, utflöden och kredithorisont. I den världen blir själva felet en risk: köper läsaren till 100 med värdet 120, och felet förvärras till 85, då är analysen inte bättre än finansieringen. Från 85 till 120 är rättelsen 41,2 procent (120 ÷ 85 = 1,412) — men den procenten tillhör bara den som fortfarande äger aktien när den inträffar.\n\nDetta är noise trader-risk: risken att irrationella flöden driver priset ÄNNU längre ifrån värdet under den period du måste hålla positionen. Den är anledningen till att 'rätt' och 'vinstgivande' inte är samma sak utan en tredje ingrediens — uthållighetens finansiering. LTCM 1998 är historiens tydligaste fall: positioner som i efterhand bedömdes ha grund i verkliga värdeskillnader, men som byggts med sådan hävstång att mellanliggande rörelser omöjliggjort att stanna kvar.\n\nFör läsaren av den här plattformen är kopplingen dubbel. Mot vr-01:s multipelgap: ett gap mot jämförelsebolag är inte en bricka som faller på plats utan ett avstånd som måste finansieras över tid. Mot rs-03:s dolda samvariation: de flöden som driver felet djupare delar ofta samma underliggande exponering — när de tvingas röra sig sker det samtidigt, vilket är exakt när arbitragören behöver mest motståndskraft."
+          },
+          {
+            "type": "definition",
+            "content": "Noise trader-risk: Risken att pris som drivits ifrån värde drivs ännu längre ifrån värde innan någon rättelse inträffar — och att den som tagit position mot felet tvingas avsluta den innan rättelsen. Termen myntades i forskningen om gränserna för arbitrag (De Long med flera 1990; Shleifer–Vishny 1997)."
+          },
+          {
+            "type": "insight",
+            "content": "Räkna på orderföljden i det lilla exemplet: köp till 100, botten 85, rättelse till 120. Den som höll hela vägen tjänar 20 procent. Den som tvingades stänga i botten förlorar 15 procent. Samma analys, samma bolag, samma rättelse — olika finansiering."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Spåren i priserna — disposition, aversion och orderflöde",
+        "intro": "Biaserna från bf-serien lämnar inte bara spår i huvudet — de sätter struktur i orderflödet. Varför städas strukturen inte bort?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Dispositionseffekten (bf-03, km-037) säger att ägare hellre realiserar vinster än förluster. Omsatt i orderflöde: vinnare säljs tidigt (säljtryck som bromsar uppgångar) och förlorare hålls (ett frånvänd köpstöd som bromser nedgångar). Prospektteorin (bf-12) ger förklaringen till formen på beteendet — värdefunktionen är konkav för vinster och konvex för förluster — och tillsammans ger de en mekanism där systematiskt människobeteende kan lämna systematiska spår i pris.\n\nNu motfrågan från kapitel 1: varför arbitreras inte spåren bort? Tre svar från de tidigare kapitlen. För det första är substitutet ofullständigt — en 'momentum-strategi mot disposition' är inte en riskfri låst position utan en exponering med egen risk (trendbrott, vändningar, finansiering). För det andra kräver den uthållighet över perioder då mönstret tvärt fallit ifrån — noise trader-risken i strategiform. För det tredje lever mönstren i det öppna: när tillräckligt många kapital söker samma premie krymper den — Grossman–Stiglitz-slitage istället för evig källa.\n\nDet är också kursens varnagel: ett pris-spår som MATCHAR ett beteendemönster är inte ett bevis för att mönstret orsakar spåret, och ett historiskt mönster är ingen garanti för framtida premie. Beteendefinansens ärliga slutsats är tvådelad — mekanismerna är väl belagda i forskningen, och deras prissatta avtryck varierar över tid. Den som läser avvikelser läser sannolikhetsstrukturen, inte en växelmöbel."
+          },
+          {
+            "type": "insight",
+            "content": "Notera symmetrin med förlustaversionen (km-018): den som väger förluster tyngre än vinster tenderar att hålla förlorarpositioner länge — vilket betyder att nedgångar i aktier med många privatägare kan vara trögare än i aktier med institutionella ägare. En läsbar strukturhypotes, inte en handelsregel."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Praktisk läsning — tre frågor vid ett misstänkt misspris",
+        "intro": "Teorin blir metod vid tre frågor — ställda i ordning, före någon position överhuvudtaget är aktuell.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vad är substitutet, och hur perfekt är det? Ettindex-fond mot index är nästan perfekt (minimal gräns). En aktie mot beräknat värde är en approximation där tolkningsklockan från kapitel 2 gäller. Ett bolag mot sina jämförelsebolag (vr-01) är en approximation på två ben — multiplicerade approximationsfel.\n\nFråga två: vem finansierar väntan, och hur länge? Eget kapital utan förfallodatum har längst horisont; lånat kapital, förtroendekapital eller prestationsjämförelser kortar den. Frågan är ärligast när den ställs om en själv: den faktiska — inte önskade — tålamodskvoten hos den som ska bära positionen.\n\nFråga tre: vad är utlösaren som stänger gapet? Ibland finns en sådan — en omröstning, en utfästelse, en uppköpskurs, en rapport som tvingar omvärdering (katalysatorkurserna kt-01 till kt-03). Ibland finns ingen, och rättelsen lämnas åt tid och flöden — det är läget där arbitragens gränser väger tyngst, och där säkerhetsmarginalen (fråga ett) och finansieringen (fråga två) får göra hela jobbet.\n\nNotera att alla tre frågorna är utbildningens frågor — de tränar läsningen av en situation, inte valet av den. Så fungerar metoden: strukturera förutsättningarna, räkna på överlevnaden, och låt beslutet landa hos den som bär det."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj två avvikelser ur studions material — en med utlösare (t.ex. ett bolag med en utsatt händelse i kalendern) och en utan. Besvara de tre frågorna för varje fall i skrift. Jämför: vilken av avvikelserna har den kortaste vägen mellan pris och värde — och vilken har den kortaste vägen mellan position och tvångsstängning?"
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — syntes: psykologi, struktur, marginal",
+        "intro": "Familjens tre ben sätts samman: huvudet (bf-11), priset (bf-12) och processen (bf-04) — med struktur och marginal som bärverk.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Beteendefinansens första lov: känna igen biaserna i sitt eget huvud — bf-11:s katalog och bf-12:s prospektteori är kartan. Andra lov: förstå att marknaden är sammansatt av samma huvuden, men att spåren inte försvinner bara för att de syns — arbitragens gränser (substitut, noise trader-risk, finansiering) är mekanismen som låter fel leva vidare. Tredje lov, den svåraste: organisera sitt eget arbete så att det överlever sin egen rätt — bf-04:s process-disciplin, Grahams säkerhetsmarginal och en finansiering vars horisont matchar tesens.\n\nDet är också länken vidare i plattformen. Värderingskurserna (vr-01, vr-02) ger avståndet mellan pris och värde; katalysatorkurserna (kt-01 till kt-03) ger utlösarna; stabilitetskurserna (st-01 till st-04) ger balansräknings- och räntesidan av uthålligheten. Den här kursens bidrag är frågan som binder samman dem: inte bara 'är priset fel?' utan 'vad kostar det att ha rätt — och vem betalar under resan?'\n\nSå fungerar metoden — och mer än så är inte utbildningens ärende: att ge den läsande människan ett ramverk som respekterar både psykologins lagar och kapitalets. Valet av position, horisont och finansiering är alltid läsarens eget ansvar; plattformens uppdrag slutar vid förståelsen."
+          },
+          {
+            "type": "insight",
+            "content": "Examenstillfället för den här kursen är inte en fråga utan en omformulering: när en läsare ser en uppenbar orättvisa i ett pris — byt ordet 'uppenbar chans' mot 'avstånd som måste finansieras över en tid som måste överlevas'. Om formuleringen fortfarande håller har kursen landat."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch skulle ha känt igen sig i hela kursens struktur: hans sätt var aldrig att lita på att marknaden rättade ett fel i nästa kvartal, utan att äga bolag vars verksamhet växte nog för att göra väntan oviktig — fundamentet som arbitragens gränser inte kan röra. Hans jaktmarker bekräftar kursen i praktiken: han letade bland bolag som de institutionella finansieringarna lämnat, där prisavståndet fått stanna länge.",
+    "grahamSection": "Benjamin Graham skulle ha kallat kapitel 2 för säkerhetsmarginalens bevisföring: eftersom felet kan växa innan det rättas, är marginalen inte dekoration utan konstruktionsberäkning. Mr Market — hans egen allegori — är noise trader-risken född fyrtio år före termen: en motpart som kan vara fel i båda riktningarna, länge nog att testa varje finansiering.",
+    "ak1Section": "AKM1 bygger in arbitragens gränser på två sätt: tidshorisonterna är uttryckta snarare än antagna (gapet beskrivs per horisont, inte som en rättelse på bestämt datum), och scenariodelen prissätter överlevnaden — värsta fallen hos modellen frågar inte bara 'hur fel kan värdet vara' utan 'hur djupt kan priset gå under väntan'. Det är samma två klockor som den här kursens kapitel 2 och 3, översatta till modellens språk."
+  },
+  "bf-14-beteendeportfoljteori": {
+    "slug": "bf-14-beteendeportfoljteori",
+    "category": "BETEENDEFINANS",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Beteendeportföljteori — pyramiden med mentala konton",
+    "summary": "Avanceradkursen i beteendefinans: beteendeportföljteorin — portföljen som en pyramid av mentala konton där varje lager har sitt eget mål, sin egen aspirationsnivå och sitt eget riskmått. Familiens kröning på portföljnivån: från en bias i taget till arkitekturen där de bor tillsammans.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå beteendepyramiden som BETEENDEFINANS-familiens kröning — 17 kurser visade en bias i taget, och pyramiden är arkitekturen där de bor tillsammans: mentala konton (bf-03) som byggstenar i stället för felkällor · Läsa Friedman–Savage-gåtan och dess svar: samma hushåll köper försäkring och lott — inte av osammanhängande dårskap utan för att olika mål kräver olika verktyg · Bygga pyramiden i fem steg: mål i kronor, lager från golv till topp, mått per lager efter målet, lagrens samverkan (rs-03) och omfördelningsregler satta före händelserna · Räkna en hel portfölj lager för lager på ett genomskinligt exempel — 1 200 000 kronor i fyra lager, aktiechocken som äter 21,0 procent och golvet som står · Känna igen de fem fällorna: lägerblindhet, dubbla trygghetslager, korrelationsillusionen, pyramiden utan golv och den statiska pyramiden · Koppla pyramiden till AKM2:s risk- och portföljdimensioner och till robot-reglerna (bf-04) som håller strukturen när känslorna vill annat.",
+    "why": "Familjens tidigare kurser har visat ett beteende i taget: förlustaversionen (km-018) förklarar varför förluster gör ont, de mentala kontona (bf-03) varför pengar inte är utbytbara mot varandra, dispositionseffekten (km-037) varför vinnare säljs för tidigt och prospektteorin (bf-12) hur det hela hänger ihop i värderingsfunktionen. Frågan som återstår är den som möter varje sparare på riktigt: hur samlas det till en hel portfölj? Ett portföljbeslut är inte en bias i taget — det är alla samtidigt, och utan en struktur som erkänner det blir de mentala kontona en felkälla: spararen som har ett trygghetskonto, ett utdelningskonto och ett chanskonto men aldrig räknar dem tillsammans, vet inte vilken risk hon faktiskt bär. Beteendeportföljteorin vänder på kortet: kontona är inte felet att eliminera utan materialet att bygga med — varje lager får ett mål i kronor, ett eget mått och en plats i en ordning där golvet byggs först. Det är samma rörelse som familjen gjort gång på gång i mindre skala: bekräftelsefällan (km-019) botas inte av att sluta tro utan av att styra tron, och robot-reglerna (bf-04) bygger skyddet med samma mekanismer som de skyddar mot. Denna kurs är rörelsens sista steg: från att förstå en bias till att rita huset där alla bor.",
+    "history": {
+      "origin": "Gåtan är äldre än teorin. Friedman och Savage lade 1948 fram sitt kända problem: samma hushåll tecknar försäkring och köper lott — beteenden som pekar i helt motsatta riktningar om hushållet vore en enda person med en enda riskaptit. En slät nyttokurva kan inte båda beskriva försiktigheten och hasardspelaren. Lösningen fanns länge i köket snarare än i tidskriften: hushåll som delade hushållspengar i kuvert — ett för hyra, ett för mat, ett för nöjen — och aldrig lät kuverten låna av varandra. Praxis med mentala konton föregick teorin med generationer.",
+      "evolution": "Forskningen gav kontona matematik i tre steg. Roy publicerade 1952 sin säkerhetsförst-princip: minimera sannolikheten att förmögenheten hamnar under en katastrofnivå — golvet fick sin kalkyl. Samma år visade Markowitz att avkastning och risk hänger samman genom kovariansen: spridning (pf-03) är den enda fria lunchen, men hans ramverk antog fortfarande en enda sammanvägd inställning till risk. Kahneman och Tversky (1979) flyttade referenspunkten in i värderingsfunktionen: människor mäter vinningar och förluster från mål och nivåer, inte från totalen. Thaler (1985) namngav de mentala kontona, och Shefrin och Statman visade 1985 dispositionseffekten — vinnare säljs för tidigt, förlorare hålls för länge. År 2000 sammanfogade duon bitarna i behavioral portfolio theory: portföljen som en pyramid av lager, där varje lager är ett eget säkerhetsförst-problem med egen aspirationsnivå — rädslan bor i bottenvåningarna, hoppet i toppen.",
+      "modern": "Idag lever pyramiden i praktiken under andra namn. Målbaserad rådgivning frågar inte hur mycket risk klienten tål utan vilka mål pengarna ska betala — barnets studier, bolånet, pensionen — och bygger ett lager per mål. Robottjänsterna har gjort pyramidbygget till standardvara, och måldatumsfondernas glidning mot ränta med åren är en pyramid som bygger om sig själv enligt en regel. Samtidigt har de spekulativa topparna — där chansaktier köpts utan golv under — visat pyramidens baksida: toppen byggd först, bottenvåningen aldrig byggd. Därför är teorin i denna kurs mindre en bruksanvisning än ett granskningsverktyg: den som kan läsa en portfölj som en pyramid kan också läsa sin egen — och se om golvet finns, om måtten är rätt och om lagren rör sig tillsammans."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — gåtan med försäkringen och lotten",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Källorna — från säkerhet först till beteendepyramiden",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Metoden — läsa en portfölj som en pyramid i fem steg",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Genomräkning — 1,2 miljoner i fyra lager",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — de fem klassiska pyramidmisstagen",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — från bias till arkitektur",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — gåtan med försäkringen och lotten",
+        "intro": "Ekonomernas äldsta gåta om risk: varför köper samma hushåll både försäkring och lott — och hur ser portföljen ut när svaret är en pyramid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Friedman och Savage lade 1948 fingret på motsägelsen: hushåll som noggrant försäkrar huset samma månad som de köper lottsedlar. I en värld av en enda riskaptit är det ett mysterium — den som värdesätter säkerhet nog att betala premie för den borde avstå från spelet. Mysteriet löser sig i samma ögonblick som hushållet får ha mer än ett syfte. Försäkringen köps av hushållets skyddsdrift: den sätter ett golv under katastrofen. Lotten köps av hushållets hopp: den kostar lite och kan — med liten sannolikhet — betala drömmen. Två olika beslut, två olika konton, två olika måttstockar för vad som är ett bra utfall.\n\nDet är exakt så de mentala kontona (bf-03) fungerar, och portföljen är hushållet i större skala. En och samma sparare kan bära fyra syften samtidigt: trygghet (aldrig falla under en viss nivå), utdelning (en ström av kronor varje år), tillväxt (förmögenheten växer med en viss takt) och chans (en liten post som får tiodubblas eller försvinna). Varje syfte får sitt lager i pyramiden — och varje lager sin egen aspirationsnivå, alltså den nivå eller det utfall som definierar framgång just där. Trygghetslagret lyckas om det står still; chanslaget lyckas bara om det slår.\n\nDetta bryter med den klassiska frågan hur mycket risk man tål, som förutsätter en enda sammanvägd inställning. Förlustaversionen (km-018) gör förresten frågan ännu mer vilseledande: smärtan sitter inte i portföljens total utan i det specifika kontot som förlorade. En nedgång i chanslagret bärs helt annorlunda än en lika stor nedgång i trygghetslagret — inte för att kronorna skiljer sig, utan för att berättelsen om dem gör det."
+          },
+          {
+            "type": "definition",
+            "content": "Beteendeportfölj — en portfölj uppbyggd av lager där varje lager tjänar ett mål med egen aspirationsnivå och eget riskmått, i stället för en enda sammanvägd riskaptit. Grundform: Shefrin och Statmans beteendeportföljteori (2000), med rötter i Friedman–Savage-gåtan (1948) och de mentala kontona (bf-03, Thaler 1985)."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan hur mycket risk du tål har inget ärligt svar — de ärliga frågorna är: vilka mål har du, och vad tål vart och ett?"
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Källorna — från säkerhet först till beteendepyramiden",
+        "intro": "Pyramiden står på tre bottnar: säkerhet först, kovariansen och referenspunkterna — tre forskningslinjer som år 2000 smälte samman till en.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första bottnen: Roy (1952) och säkerhetsförst-tänkandet. Medan Markowitz samma år räknade på hur man maximerar avkastning för en given risk, frågade Roy det omvända: hur minimerar man sannolikheten att förmögenheten hamnar under en katastrofnivå? Det är golvet i pyramiden — och dess matematik bor där än, i trygghetslagrets tumregel att framgången mäts i avstånd till katastrofen, inte i avkastning.\n\nAndra bottnen: Markowitz (1952) och kovariansen. Spridning (pf-03) är den enda fria lunchen på marknaden — tillgångar som inte rör sig tillsammans ger stabilare total än någon av dem ensam. Men hans ramverk arbetar med en enda inställning till risk för hela portföljen. Pyramiden lånar kovariansen utan det antagandet: frågan blir inte bara hur lagren samverkar med varandra, utan vad samverkan betyder för varje mål separat.\n\nTredje bottnen: Kahneman och Tversky (1979) samt Thaler (1985). Referenspunkterna gör att vinningar och förluster mäts från nivåer och mål — inte från förmögenhetens total. De mentala kontona ger referenspunkterna ett hem: varje konto bär sitt eget nollstrecks. Shefrin och Statman hade 1985 visat dispositionseffekten (km-037) — vinnare säljs för tidigt, förlorare hålls för länge — och kunde 2000 sammanfoga allt i beteendeportföljteorin: en pyramid där varje lager är ett eget säkerhetsförst-problem med egen aspirationsnivå, där rädslan bor i bottenvåningarna och hoppet i toppen. Teorins poäng är inte att pyramidportföljen är optimal — den är det sällan — utan att den är det verkliga portföljer ser ut som, och att den som ser strukturen kan gradera den i stället för att drivas av den."
+          },
+          {
+            "type": "insight",
+            "content": "Roy gav golvet sin matematik, Markowitz gav kovariansen sin, Kahneman och Tversky gav referenspunkterna deras — pyramiden är alla tre i ett och samma hus."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Metoden — läsa en portfölj som en pyramid i fem steg",
+        "intro": "Att läsa en portfölj som en pyramid är hantverk i fem steg — varje steg ger nästa sitt underlag, och svaret gäller arkitekturen, inte dagen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett: skriv målen i kronor, inte i procent. Procent har ingen referenspunkt — kronor har. Mål att slå index är inte en aspirationsnivå; målet att utdelningarna betalar 14 400 kronor om året är det. Detta är prospektteorins (bf-12) praktiksida: referenspunkten bestämmer vad som känns som vinning och förlust, och en pyramid utan uttalade referenspunkter låter känslan välja dem retroaktivt.\n\nSteg två: ordna lagren från golv till topp. Trygghetslagret först — Roys katastrofnivå har alltid företräde — sedan utdelning, sedan tillväxt, chanslagret sist och minst. Ordningen är hela skillnaden mot att bara ha en samling konton: en pyramid utan ordning låter toppen finansiera golvet i stort sett omöjligt, en samling utan ordning gör det varje dag.\n\nSteg tre: välj mått per lager efter målet. Trygghetslagrets mått är volatilitet och avstånd till katastrofnivån (rs-01) — inte avkastning. Utdelningslagrets mått är utdelningens hållbarhet (ud-09) och direktavkastningen (km-063) — inte kurspotential. Tillväxtlagrets mått är intäktstillväxt och marginaler (ln-01) — inte årets sväng. Chanslagrets mått är sannolikheten för totalförlust mot taket för vad en tiodubbling skulle betala — och ingenting annat.\n\nSteg fyra: räkna lagrens samverkan. Tre lager som var och en känns trygg kan röra sig tillsammans — det är dold samvariation (rs-03) på portföljnivå. Steg fem: sätt omfördelningsreglerna före händelserna. Grahams 25-procent-regel — aldrig mindre än en fjärdedel i aktier, aldrig mer än tre fjärdedelar — är historiens mest berömda exempel: en lagerpolicy med inbyggd omförderning. Robot-reglerna (bf-04) är samma tanke i modern tappning: strukturen bestämmer när känslorna får tala.\n\nFem steg, en kedja: målen ger lagren, lagren ger måtten, måtten ger samverkan, samverkans kunskap ger reglerna. Utan något av leden blir pyramiden en collage — snygg att se på, men den håller inte i en storm."
+          },
+          {
+            "type": "insight",
+            "content": "Fem steg, en kedja: mål i kronor, lager från golvet, mått efter målet, samverkan mellan lagren, regler före händelserna — kedjan är aldrig starkare än det svagaste steget."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Genomräkning — 1,2 miljoner i fyra lager",
+        "intro": "En portfölj räknad lager för lager: 1 200 000 kronor, fyra lager, en aktiechock — och ett golv som håller.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ ett fingerat exempel genom hela kursen: en sparare med 1 200 000 kronor och fyra mål. Trygghetslagret: 420 000 kronor i korta statsobligationer — 35 procent av portföljen, aspirationen att bevara 420 000 kronor nomellt. Utdelningslagret: 360 000 kronor i utdelningsaktier — 30 procent, aspirationen 4,0 procent direktavkastning, alltså 360 000 gånger 0,040: 14 400 kronor om året. Tillväxtlagret: 300 000 kronor — 25 procent, aspirationen 8 procent tillväxt om året, alltså 300 000 gånger 0,080: 24 000 kronor. Chanslagret: 120 000 kronor — 10 procent, aspirationen en tiodubbling till 1 200 000 kronor, accepterat utfall en totalförlust till noll. Summa: 420 000 plus 360 000 plus 300 000 plus 120 000 är 1 200 000 kronor; andelarna 35 plus 30 plus 25 plus 10 är 100 procent.\n\nVad väger pyramiden samman? Utdelnings-, tillväxt- och chanslagret är samtliga aktier: 360 000 plus 300 000 plus 120 000 är 780 000 kronor — 65 procent av portföljen. En klassisk 60/40-fördelning på samma kapital skulle hålla 720 000 i aktier och 480 000 i ränta. Pyramiden ligger 60 000 kronor tyngre i aktier — men skillnaden är inte främst vikten utan att varje aktiekrona har ett uttalat syfte, ett mått och en storlek satt utifrån ett mål.\n\nSedan kommer chocken: en aktiemarknadsnedgång där utdelningslagret faller 20 procent, tillväxtlagret 40 procent och chanslagret 50 procent. Utdelningslagret förlorar 360 000 gånger 0,20: 72 000 kronor. Tillväxtlagret förlorar 300 000 gånger 0,40: 120 000 kronor. Chanslagret förlorar 120 000 gånger 0,50: 60 000 kronor. Summa: 72 000 plus 120 000 plus 60 000 är 252 000 kronor — 21,0 procent av hela portföljen, som därmed står i 948 000 kronor. Trygghetslagret? Orört: 420 000 kronor kvar, katastrofnivån höll. Detta är stresstestet (st-02) på pyramidform — och notera vad chocken avslöjar om steg fyra: alla tre aktielager föll samma dag. Tre konton, en gemensam marknadsfaktor. Pyramidens poäng är inte att lagren inte rör sig tillsammans — de gör ofta det — utan att den som räknat samverkan VET att de gör det, till skillnad från spararen som trodde att tre olika berättelser var tre olika risker.\n\nAsymmetrin är chanslagrets egentliga undervisning: dubblas chanslagret tjänar portföljen 120 000 kronor — 10 procent av kapitalet — och försvinner det helt förlorar den lika många. Chocken sätter priset på taket; golvet satte priset på golvet. Däremellan bär utdelnings- och tillväxtlager portföljens långsamma arbete, mätt i sina egna tal: 14 400 kronor i utdelning, 24 000 kronor i tillväxt — under förutsättning att aspirationerna håller, vilket är deras egna prov och inte pyramidens."
+          },
+          {
+            "type": "insight",
+            "content": "Tre konton föll samma dag — pyramidens poäng är inte att lager inte rör sig tillsammans, utan att du har räknat på att de gör det."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — de fem klassiska pyramidmisstagen",
+        "intro": "Pyramidens fem klassiska misstag — var och en synlig i en verklig portföljtyp, och var och en botad av ett av stegen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: lägerblindhet. Pyramiden mäts bara per lager — utdelningslagret granskas för utdelning, chanslagret för chans — och aldrig som helhet. Aktieandelen på 65 procent i genomräkningen syns i inget enskilt lagers mått; den finns bara i summan. Fällan är mental accounting utan additionsverktyg (bf-03): kontona styckar ansvaret tills ingen bär det. Botemedlet är steg fyra — samverkansräkningen som visade att tre lager föll samma dag.\n\nFälla två: dubbla trygghetslager. Allt kallas tryggt — försvarsaktier, fastigheter, obligationer, kontanter — för att berättelsen om varje innehav låter säker. Trygghet är inte en berättelse utan ett mått: volatilitet och avstånd till katastrofnivån (rs-01). En försvarsposition som föll 40 procent i en aktiechock var aldrig trygghetslager, oavsett hur defensivt bolaget kändes.\n\nFälla tre: korrelationsillusionen. Lager som ser olika ut men drivs av samma faktor. Räntan (km-054) är den vanligaste: utdelningsaktier med hög direktavkastning och långa obligationer är båda räntekänsliga — när räntan stiger faller de tillsammans, och pyramiden som trodde sig ha två våningar har i praktiken en. Samma mekanik som dold samvariation (rs-03), nu mellan lager i stället för mellan bolag.\n\nFälla fyra: pyramiden utan golv. Toppen byggs först — chans och tillväxt — och golvet skjuts upp till dagen det borde ha funnits. Dunning–Kruger-effekten (bf-10) driver exakt dit: nybörjaren överskattar sin kontroll just över det som är svårast, och chansen känns mest kontrollerbar när erfarenheten är minst. Fälla fem: den statiska pyramiden. Mål flyttar sig med livsfasen — pensionen som var trettio år bort är om fem år femton — och en pyramid som aldrig byggs om blir med tiden en pyramid för ett liv som inte längre lever. Grahams 25-procent-regel hade omförderningsregeln inbyggd; det är modellen.\n\nOch som i hela spåret: övningen är hantverket att läsa och stressa egna siffror i en offentlig rapport — aldrig en uppmaning att köpa eller sälja något värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor: blindhet för helheten, trygghet utan mått, korrelation i förklädnad, topp utan golv — och pyramiden som aldrig får ny form."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — från bias till arkitektur",
+        "intro": "Familjens kurser samlas: biasarna är inte bara fiender — i pyramiden är flera av dem byggstenar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kronologin i denna kurs är familjens egen historia, sedd baklänges. Förlustaversionen (km-018) var den första lektionen: förluster gör ont ungefär dubbelt så mycket som vinningar känns bra. I pyramiden är det inte bara ett fel att hantera — det är skälet till att golvet finns. Ett trygghetslager bygger på att förlusten av det man inte kan förlora är outhärdlig; aversionen blir konstruktionsprincip. De mentala kontona (bf-03) var nästa: pengar som inte är utbytbara, konton med egna nivåer. Pyramiden gör kontona till planritning i stället för slarv — samma mekanism, riktad. Prospektteorin (bf-12) gav referenspunkterna sitt språk, dispositionseffekten (km-037) varnar för toppförvaltningen — vinnare säljs för tidigt just där tålamodet betalar mest — och flockbeteendet (km-035) hotar omfördelningen: när hjorden springer glider lagren, för ingen vill sälja det alla andra köper. Robot-reglerna (bf-04) är motorn som håller strukturen när känslorna vill annat.\n\nI AKM2:s system knyter kursen samman risk- och portföljdimensionerna: dold samvariation (rs-03) läses nu mellan lager, inte bara mellan bolag; stresstestet (st-02) blir pyramidens stormräkning; säkerhetsmarginalen (km-030) sätts per lager, för golvet behöver marginal som varje annat beslut. Portföljbyggandets (pf-01) fråga — vad ska varje krona göra — får sitt beteendemässiga svar: varje krona har ett konto, varje konto ett mål, varje mål ett mått.\n\nAvsluta med den levande övningen: bygg din egen pyramid på papper i fem steg — mål i kronor, lager från golv till topp, mått per lager, en samverkansräkning, en omfördelningsregel skriven i fredstid. Räkna sedan en aktiechock på 30 procent mot hela pyramiden och notera var golvet hamnar. Gör om övningen när livsfasen ändras — inte varje dag. Arkitektur håller i decennier; dagligen håller den inte alls. Det är utbildningens kärna: beteendefinansen slutar inte med att du känner dina biasar — den slutar med att du har ritat huset där de får bo, var och en på sin våning, med mått och regler anpassade efter just den."
+          },
+          {
+            "type": "insight",
+            "content": "Beteendefamiljens slutpoäng: du kan inte ta biasarna ur dig själv — men du kan ge dem varsin våning, ett eget mått och en regel som gäller när känslan inte gör det."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynchs kändaste råd — vet vad du äger och varför du äger det — blir i pyramidens ljus en fråga per våning: i vilket konto bor denna aktie, och är skälet för just det kontot fortfarande giltigt? Lynch skilde noga mellan positioner vars historia är hantverket (tillväxten som driver bolaget) och long shots — satsningar där historien mest är hopp. Pyramidens chanslager, hållet på tio procent av kapitalet, är hans varning förvandlad till arkitektur: long shots är inte fel, men de hör hemma i toppen, i liten storlek, med totalförlusten accepterad i förväg. När historien bygger konto — när chanspositionen plötsligt motiveras som trygghet — är det Lynchs egen varning som slagit till: berättelsen har bytt våning utan att ägaren märkt det.",
+    "grahamSection": "Benjamin Grahams defensiva investerare fick en regel som är en pyramid i en mening: håll mellan 25 och 75 procent i aktier, och flytta när andelen passerar gränserna. Aldrig undre 25, aldrig över 75 — en lagerpolicy med omförderningsregeln inbyggd, skriven nästan ett halvsekel före beteendeportföljteorin. Hans två läsarroller — den defensive och den enterpriserade — är dessutom två olika pyramider: samma hushåll, olika fördelning mellan golv och topp. Och säkerhetsmarginalen (km-030), Grahams centrala begrepp, är pyramidens golv formulerat som inköpsprincip: marginalen ska finnas i varje lager, för trygghetslaget är marginalen allt, och även toppen förtjänar ett köppris som lämnar utrymme för att berättelsen kan visa sig fel.",
+    "ak1Section": "I AK1A:s metodik är denna kurs BETEENDEFINANS-familiens kröning på portföljnivån: km-018 till bf-12 lärde ut biasarna en i taget, bf-04 gav reglerna — och pyramiden ritar huset de ska verka i. Brobyggen: mot mentala kontona (bf-03) och prospektteorin (bf-12) för lagrens psykologi, mot portföljbyggandet (pf-01) och spridningen (pf-03) för strukturen, mot volatiliteten (rs-01) och dold samvariation (rs-03) för måtten, mot stresstestet (st-02) för stormräkningen och säkerhetsmarginalen (km-030) för golvet, samt mot utdelningshållbarheten (ud-09) som utdelningslagrets eget prov. Femstegsmetoden är samtidigt AI-mentorns svarsmall när frågan gäller portföljstruktur: mål i kronor först, regler sist — spegelbilden av utdelningsfamiljens kassaflöde först, policy sist."
+  },
   "mk-11-kinaekonomin": {
     "slug": "mk-11-kinaekonomin",
     "category": "MAKROEKONOMI",
@@ -205395,5 +205715,181 @@
     "lynchSection": "Peter Lynch placerade sig medvetet i kedjans tredje länk: hans resonemang i One Up on Wall Street om cykelns svängningar — att vissa branscher slår in tidigt i en nedgång och vaknar tidigt i en uppgång — är transmissionsläsning på portföljns villkor. Lynchs regel att känna sina bolag bättre än marknaden är också kursens: fråga tre om värderingskänslighet kan ingen genomsnittstabell svara på, bara bolagets egen kassaflödesform.",
     "grahamSection": "Benjamin Grahams värld präglades av fasta kurvor i stället för flytande, men hans kärna lever kvar i kursen: mr Markets priser svänger med räntan och humöret, medan värdet vilar på bolagets kassaflöden — Grahams säkerhetsmarginal (km-030) blir i transmissionens språk avståndet mellan en räntekänslig kurs och en normaliserad värdering (vr-02): ju starkare värderingskanalen slagit, desto viktigare att läsa vad som är resultat och vad som är multipel.",
     "ak1Section": "I AK1A:s metodik kröner denna kurs kategorin makroekonomi och ränta (km-054 till km-058) med dess första avancerade kurs — transmissionen som binder familjens delar till bolagsläsningen och ger AKM1:s kvartalspaket deras makrokontext: ränteläge och cykelposition som inramning, fyra mätbara frågor som bro. Brobyggen: mot ln-03 (operativ hävstång i resultatlänken), st-02 (känslighetsanalysen som formaliserar räkningen), rk-05 och rk-08 (cykel- och ränterisken i riskfamiljen), rs-03 (den delade ränteexponeringen), vr-02 och vr-03 (multipelns normalisering och anatomi), km-007 och km-008 (diskonteringsräntans räkneverktyg) samt km-058 (valutalänken)."
+  },
+  "od-01-optionens-greker": {
+    "slug": "od-01-optionens-greker",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Optionens greker — delta, gamma, theta och vega",
+    "summary": "De fyra riskmått som gör en optionsposition läsbar: hur priset rör sig med aktien (delta), hur delta självt rör sig (gamma), hur tidsvärdet smälter (theta) och vad volatiliteten kostar (vega) — i ren aritmetik på ett exempelkontrakt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Läsa de fyra grekerna på en optionsposition och veta vad varje mått mäter · Räkna ut hur mycket optionen rör sig när aktien rör sig (delta) och hur den rörrelsen förändras (gamma) · Förstå theta som en klocka — tidsvärdets smältning dag för dag · Prissätta volatilitetens inverkan med vega och se varför volatilitet är optionens väder · Sätta ihop grekerna till en nettoexponering för en hel position, t.ex. en covered call · Veta vad grekerna INTE säger — modellens gränser och antaganden.",
+    "why": "Optionsgrunderna (km-059) visade vad en option är, och strategikurserna (km-060, km-061) visade hur covered calls och protective puts byggs — men mellan grund och strategi finns ett gap: förståelsen för VARFÖR optionspriset rör sig som det gör. Ett aktiepris rör sig i en dimension (upp eller ner). Ett optionspris rör sig i minst fyra: aktien, tiden, volatiliteten och räntan. Grekerna är instrumentpanelen som visar varje dimension för sig — och den som kan läsa panelen kan förklara varför en option kan förlora värde en vecka då aktien stod stilla, eller varför en position mådde bra av ett volatilitetsutbrott trots oförändrad kurs. Kursen bygger vidare på volatilitetsbegreppet från rs-01 och på handelsmekaniken från am-01, och förbereder den som vill gå vidare till prismodellen i Black-Scholes (km-062).",
+    "history": {
+      "origin": "När organiserad optionshandel växte fram — CBOE öppnade 1973 — upptäckte handlarna snabbt att optionens pris rörde sig på sätt som inte liknade aktiens. Marknadsmakare behövde snabba mått på sin exponering, och de lånade beteckningar från fysiken och matematiken: små förändringar beskrivs med grekiska bokstäver.",
+      "evolution": "Delta var först — känsligheten mot den underliggande aktien. Sedan kom gamma (deltats förändring), theta (tidens förslitning) och vega (volatilitetens pris; måttet heter egentligen inte en grekisk bokstav, men namnet fastnade). När Black-Scholes publicerades 1973 fick handlarna en sammanhängande teori bakom måtten, och riskavdelningar började summera greker över hela böcker — nettoexponeringar istället för enskilda kontrakt.",
+      "modern": "I dag visas grekerna som standard i varje mäklarterminal och i Nasdaq Nordic:s optionskedjor — de är optionens vedertagna riskspråk. Den som förstår delta, gamma, theta och vega kan läsa en position på sekunder: hur mycket den vinner eller förlorar på en krokarörelse, vad varje natt kostar i theta, och hur känslig hon är för volatilitetsförändringar. Språket är detsamma som institutionella handlare använder — den här kursen lär ut det som metodik, inte som uppmaning."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — priset som rör sig i fyra dimensioner",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Delta — känsligheten mot aktien",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Gamma och theta — kurvan och klockan",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Vega — volatilitetens pris",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Praktisk läsning — en positions netto-greker",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — instrumentpanelen och dess gränser",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — priset som rör sig i fyra dimensioner",
+        "intro": "En aktie har en prisrisk. En option har minst fyra — och det är därför den behöver ett eget riskspråk.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett optionspris är en funktion av flera variabler på en gång: den underliggande aktiens pris, återstående löptid, förväntad volatilitet, räntan och utdelningar under perioden. Räkna med att aktien står helt stilla i en vecka — optionen kan ändå ändra pris, för att tiden gått (theta) eller för att marknadens volatilitetsförväntning skiftat (vega). Räkna med att aktien rör sig exakt dit du trodde — optionen kan ändå förlora värde om rörelsen tog för lång tid eller om volatiliteten faller samtidigt.\n\nGrekerna är namnet på delmåtten: varje grek beskriver hur mycket optionspriset förändras när en variabel rör sig ett litet steg och övriga hålls konstanta. Det är samma tankesätt som känslighetsanalysen i stabilitetsspåret (st-02) — fast för varje prisfaktor för sig. Kurserna km-060 och km-061 byggde strategier; den här kursen förklarar motorrummet som får strategierna att röra sig."
+          },
+          {
+            "type": "definition",
+            "content": "Grekerna: Samlingsnamn för optionsprisets känslighetsmått. Delta = förändring i optionspris per krona i aktien. Gamma = förändring i delta per krona i aktien. Theta = förändring i optionspris per enhet tid (vanligen per dag). Vega = förändring i optionspris per volatilitetspunkt. Alla mått gäller vid ett givet tillfälle och uppdateras när förutsättningarna ändras."
+          },
+          {
+            "type": "insight",
+            "content": "Tänk på instrumentpanelen i en bil: hastighetsmätaren (delta) säger hur snabbt du rör dig just nu, men inte hur motorn mår. Grekerna fungerar likadant — de beskriver läget NU, och läget skrivs om kontinuerligt."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Delta — känsligheten mot aktien",
+        "intro": "Delta är den första siffran varje optionsläsare lär sig: hur många öre flyttar optionen när aktien flyttar en krona?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En köpoption (call) har delta mellan 0 och 1; en säljoption (put) mellan 0 och minus 1. En call med delta 0,50 rör sig ungefär 50 öre när aktien rör sig en krona. En djupt inne-liggande call kan ha delta nära 1 — den beter sig nästan som aktien själv. En långt ut-liggande kan ha delta nära 0 — den knappt reagerar alls.\n\nDelta väger också sannolikheter i praktisk mening: en call med strike precis vid aktiekursen (at-the-money) handlas ofta runt delta 0,50, eftersom marknadens samlade bedömning är att aktien landar på ömse sidor strike med ungefär lika stor chans. Det är ingen exakt sannolikhet — modellens antaganden styrs av hur volatiliteten sätts (kapitel 4) — men som orientering är den användbar.\n\nFör den som läser strategikurserna (km-060, km-061) är delta nyckeln till konstruktionerna: den sålda callens negativa delta är själva mekanismen som ger en covered call sin dämpade karaktär mot ren aktieägande."
+          },
+          {
+            "type": "definition",
+            "content": "Delta: Optionsprisets förändring per enhets förändring i den underliggande aktiens pris, övriga faktorer konstanta. Call: 0 till +1. Put: 0 till −1. Ett kontrakt om 100 aktier med delta 0,50 motsvarar en exponering om 50 aktier (100 × 0,50)."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma aktie, tre olika calls med lösen i samma månad: | Position | Delta | Aktien +1 krona ger | — | Djupt inne-liggande call | 0,90 | cirka +0,90 kronor | — | At-the-money call | 0,50 | cirka +0,50 kronor | — | Långt ut-liggande call | 0,10 | cirka +0,10 kronor |"
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: öppna en optionskedja för en stor svensk aktie och leta reda på tre calls — en långt inne, en at-the-money, en långt ut. Notera deras implicita delta genom att jämföra senaste förändring i optionspris mot aktiens rörelse samma stund. Var i kedjan är delta som brantast?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Gamma och theta — kurvan och klockan",
+        "intro": "Delta är inte konstant — och tiden är inte gratis. Gamma beskriver kurvan, theta klockan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "När aktien stiger flyttar sig deltat — en at-the-money call med delta 0,50 kan ha delta 0,58 efter en uppgång på fem kronor. Det mått som beskriver deltats förändring per krona i aktien är gamma. Gamma är som störst för optioner nära strike med kort löptid: där är priskurvan som brantast, och samma krona i aktien förändrar exponeringen mest. Det är därför korta optioner nära pengarna känns som att åka berg-och-dalbana — både priset (delta) och känsligheten (gamma) rör sig snabbt.\n\nTheta är optionens klocka: hur mycket tidsvärdet smälter per dag, allt annat lika. En option med theta −0,10 kronor per dag förlorar ungefär 2 kronor i tidsvärde över tjugo dagar (0,10 × 20 = 2) om varken aktien eller volatiliteten rör sig. Obs formuleringen: allt annat lika — i verkligheten rör sig nästan alltid något. Theta är störst för samma optioner som har hög gamma; kort tid kvar betyder att varje dag tar en större andel av det återstående tidsvärdet.\n\nSäljare av optioner samlar in theta (tidsvärdet smälter åt deras håll) men bär gamma-risken: när aktien rör sig expanderar köparens exponering mot dem. Köpare betalar theta som en hyra för exponeringen och får gamma i utbyte. Ingen av sidorna har gratis lunch — de äger olika sidor av samma mynt."
+          },
+          {
+            "type": "definition",
+            "content": "Gamma: Deltats förändring per krona i den underliggande aktien. Högt gamma-värde = exponeringen förändras snabbt = positionen måste skötas om oftare. Theta: Optionsprisets förändring per dag från tidens förflöde, vanligen negativ för optionens innehavare och positiv för säljaren."
+          },
+          {
+            "type": "insight",
+            "content": "Theta och gamma är två fönster mot samma faktum: optioner nära strike och nära förfallande är de mest levande. Den som bara läser theta ser kostnaden; den som bara läser gamma ser rörelsen. Panelen visar båda — alltid."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Vega — volatilitetens pris",
+        "intro": "Volatiliteten är optionens väder: samma aktie, samma strike — olika pris beroende på stormprognos.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Vega mäter hur mycket optionspriset förändras när den förväntade volatiliteten (implied volatility) flyttar en hel procentenhet — en volatilitetspunkt. En option med vega 0,15 kronor stiger cirka 0,45 kronor i pris om volatiliteten går från 22 till 25 procent (3 punkter × 0,15 = 0,45), även om aktien inte rör sig ett enda öre. Det förklarar en av nybörjarens vanligaste förvirringar: aktien står stilla, men optionen är dyrare — vädret har förändrats, inte bilen.\n\nVolatilitetsbegreppet bygger på rs-01: standardavvikelsen i avkastning, annualiserat. Implied volatility — implicit volatilitet — är marknadens framåtblickande version: den volatilitet som ryms inom optionspriset, löst baklänges ur priset själv. Hög implicit volatilitet betyder att försäkring och exponering är dyr; låg att den är billig — relativt marknadens historia och ämnets grundton (bankaktier och verktygsjättar har olika normalvolatilitet).\n\nRunt rapportdagningar stiger volatiliteten ofta före publiceringen och faller efter — känt som volatilitetsimplosion. Den som endast läser delta missar att en rapport kan komma 'rätt' och ändå lämna optionen lägre i pris: rörelsen var redan prissatt, och theta och vega tog betalt. Kalenderkurserna i kvartalsspåret visar samma fenomen från kalenderns sida — tystnad före publicering, rörelse efter."
+          },
+          {
+            "type": "definition",
+            "content": "Vega: Optionsprisets förändring per procentenhet (volatilitetspunkt) i implied volatility. Exempel: vega 0,15 kronor × volatilitetsförändring +3 punkter = +0,45 kronor i optionspris, aktien oförändrad."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj en option på en aktie med kommande rapport inom två veckor och notera dagens implied volatility. Återkom efter rapporten och notera förändringen — både i volatilitet och i optionspris — med aktiens egen rörelse bredvid. Förklara sedan utfallet med grekerna: hur mycket kom från delta, hur mycket från vega och theta?"
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Praktisk läsning — en positions netto-greker",
+        "intro": "Grekerna lyser verkligen när positioner sättas ihop: varje ben bidrar med sin skuld i riskboken.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta covered callen ur km-060 med grekerna som läsglasögon. Exempel: du äger 100 aktier och har sålt en call på samma aktie. Aktierna har sammanlagt delta +100 (100 × 1). Den sålda callen har delta −0,50 per aktie, alltså −50 på kontraktet (100 × (−0,50)). Positionens nettodelta är +50 (100 − 50) — den beter sig i stort som ett ägande om femtio aktier, inte hundra. Det är exakt den dämpning covered call-konstruktionen är byggd för, nu uttryckt i ett enda tal.\n\nNära förfallande blir gamman i den sålda callen högre — nettodeltat börjar svikta uppåt när aktien faller och nedåt när den stiger (den sålda gammans tecken är motsatt köparens). Samtidigt samlar positionen theta: det tidsvärde den sålda callen tappar per dag är en intäktsström för positionen — mekaniskt sett, inte som rekommendation.\n\nPutsidan från km-061 läses likadant: en köpt protective put med delta −0,40 per aktie drar ner en aktieposition om 100 aktier till nettodelta +60 (100 − 40). Ju närmare pengarna puten ligger, desto mer av aktieexponeringen byts mot försäkring — och desto mer theta betalar försäkringen per dag. am-01:s spread-mått kompletterar: i trånga optioner är köp- och säljkurs så brett isär att grek-läsningen drunknar i transaktionskostnaden."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma aktieägande om 100 aktier, tre konstruktioner: | Position | Nettodelta | Kännetecken | — | Bara aktierna | +100 | full exponering, ingen theta | — | Aktier + såld call (delta −0,50) | +50 | dämpad exponering, positiv theta | — | Aktier + köpt put (delta −0,40) | +60 | dämpad exponering, negativ theta |"
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: bygg på papper en covered call enligt km-060 (hypotetiskt, inga order). Notera positionens nettodelta före och efter en tänkt aktierörelse på +2 kronor, med gamma från med gamma-exemplet från kapitel 3. Hur förändras nettodelta — och vad betyder det för hur positionen beter sig i nästa kronas rörelse?"
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — instrumentpanelen och dess gränser",
+        "intro": "Grekerna är modellens språk — och modellen har antaganden. Mästaren vet var panelen slutar fungera.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sammanfattningsvis: delta beskriver riktningsexponeringen, gamma dess acceleration, theta tidens kostnad och vega vädrets. Tillsammans bildar de en instrumentpanel som gör det möjligt att läsa en positions risk på sekunder — och att jämföra konstruktioner som ser olika ut men bär samma exponering (ett ägande med dämpning kan byggas på fler sätt än ett).\n\nMen panelen har gränser, och tre är värda att memorera. För det första: grekerna är lokalinformation — de gäller för små förändringar kring dagens pris, inte för stora rörelser (där krävs omräkning av hela positionen). För det andra: de bygger på en modell av volatiliteten; när verkligheten spricker — gap, handelsstopp, extrema dagar — är modellgrekerna som väderprognos mitt i en storm. För det tredje: de säger ingenting om bolaget. En option är en härledd byggnad på aktien; aktien själv vilar på affären — den som inte kan läsa affären (nyckeltalen, rapporterna) läser bara byggnadens fasad.\n\nKursens nästa steg i spåret är km-062 Black-Scholes: modellen som sätter samman variablerna till ett pris och därmed förklarar var grekerna kommer ifrån. Vägen dit går via rs-01:s volatilitetsmått — samma standardavvikelse, nu i optionens tjänst.\n\nSå fungerar metoden: grekerna är ett läsverktyg för risk, inte en uppmaning att handla. Utbildningsplattformen lärar ut instrumentpanelen — beslutet om, när och om ens en position ska byggas är alltid läsarens eget."
+          },
+          {
+            "type": "insight",
+            "content": "En finansiell utbildningsklassiker: optionsägaren som 'hade rätt' om riktningen men ändå förlorade — för theta tog betalt medan hon väntade, eller vega föll när oron lagt sig. Med grekerna upphör sådana utfall att vara mysterier; de blir aritmetik."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch skulle ha påmint att en option alltid är en härledning av bolaget — han som letade efter bolag vars historia gick att förklara på en minut skulle ha betraktat greker som instrumentpanel på en bil vars motor han redan studerat. Delta utan affärsförståelse är en hastighetsmätare utan vägkarta.",
+    "grahamSection": "Benjamin Graham skulle ha sett grekerna som en fortsättning på hans grundtanke: att skilja pris från värde och förstå vad man betalar för. Theta är optionens värdemätare — pengar som försvinner med tiden utan att något händer — och Graham-tänkaren skulle noga räkna på vad tidskostnaden betyder innan en position överhuvudtaget byggs.",
+    "ak1Section": "AKM1 använder grekerna som risköversättningslager i sin derivatanalys: portföljens nettoexponeringar uttrycks i delta, gamma, theta och vega för att varje dimension ska kunna vägas separat — samma grundprincip som modellens dimensionstäckning på aktiesidan. Det är ett pedagogiskt verktyg för att synliggöra vad en konstruktion faktiskt exponerar läsaren för, inte en rekommendation att inta positionen."
   }
 }

@@ -123,3 +123,49 @@ med dokumenterad last-kontext (o28 §1:s metodregel uppfylld från båda ändar)
   (3) /en-blogg mot /blogg TBT-gap (442 vs 3 106) som sondbart objekt.
 - u3:s rest "o27 CPU-delta vid tömd fabrikskö" är härmed **infriad**:
   vilande par mot fore-161 levererat med bygges-varudeklaration.
+
+## §7 DUBBELMÄTARFYND (u1-omstartens kvitto, 19:0x) — §4:s CPU-tal delvis kontaminerade
+
+**Händelsen:** två u1-processer (denna vågs ursprungsbarn + fabriksretry
+efter 25-min-timeout) mätte SAMTIDIGT 18:49–18:52 — var för sig med
+grindar "0 chrome/lighthouse vid start", men startarna låg ~90 s isär så
+ingen såg den andres svärm. Bevis: två parallella filserier på disk med
+överlappande mtimes — vila-1849 (committad 6794e6a2) och s7u1-vila
+(committas här som bevispar). Fil-mtime = mätningens SLUT; ~60–90 s per
+sida ger fönstren nedan.
+
+**Kontamineringskarta (ömsesidig — CPU-tal, ej strukturtal):**
+
+| Mätning | Fönster | Annan svärm aktiv? | Talens status |
+|---|---|---|---|
+| deras / (vila-1849) | ~18:49:20–18:50:18 | NEJ (min start ~18:50:30) | **ENSAM — giltigt** |
+| deras /kurser | 18:50:18–18:50:48 | min / pågick | kontaminerad |
+| deras /blogg | 18:50:48–18:51:16 | min / pågick | kontaminerad |
+| deras /en/blogg | 18:51:16–18:51:43 | min / + /kurser | kontaminerad |
+| min / (s7u1-vila) | ~18:50:30–18:51:21 | deras /kurser + /blogg | kontaminerad |
+| min /kurser | 18:51:21–18:51:49 | deras /en/blogg | kontaminerad |
+| min /blogg | 18:51:49–18:52:13 | deras slut 18:51:43 | **i princip ensam** |
+| min /en/blogg | 18:52:13–18:52:38 | NEJ | **ENSAM — giltigt** |
+
+**Konsekvenser för §5:s slutsatser:**
+1. §5:s startsida-slutsats STÅR SIG (deras / togs ensam): TBT 574→739
+   (+165) vid last 0,59 är legitimt — s6:s mentorlager äter koddelningens
+   CPU-vinster på / (kön i §6 består).
+2. §5:s "/blogg:s äkta all-JS TBT 3 106 ms" är **Dubbelmätar-artefakt,
+   inte äkta kostnad** — ensam-talet (min /blogg, efter deras svärms
+   slut): TBT 1 217 · P58 · LCP 4 671. Kontamineringen ~×2,5 på TBT.
+   /blogg:s hydratiseringsskuld är reell men hälften så stor.
+3. /en/blogg ensam-tal (min): P69 · LCP 4 220 · TBT 503 — bekräftar
+   §5:s "snabbaste spegel"-fynd och TBT-gapet mot /blogg (sond-objektet
+   i §6 kö 3 består, nu med renare talpar: 503 vs 1 217).
+4. /kurser har INGET ensam-tal denna rond — enda resterande lucka i
+   trio-facit (rest: nattfönster-om-mätning).
+5. Strukturtalen är DOBBELT bekräftade (simulerat nätverk = lastokänsligt):
+   vikt 738↔739 · 780↔780 · 771↔771 · 704↔699 KB — två oberoende
+   svärmar, samma bygge, identiska tal. §4:s vikt/unused-JS/CLS-kolumner
+   är spårets solidaste baslinje hittills.
+
+**Metodläxa (bokas åt spåret):** "0 mätarprocesser vid start" räcker
+inte när fabriken kör retries — grinden måste också vara SEQ-kollad mot
+senaste Lighthouse-fil-mtime i katalogen (en fil < 3 min gammal = någon
+mäter just nu) innan egen körning.

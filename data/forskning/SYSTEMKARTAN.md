@@ -487,6 +487,45 @@ Kö från fynden: (1) glomt-grenen in i testa-medlem-auth (recover-mappning +
 neutral talkart är rena funktioner — sviten stubbar nätverket redan);
 (2) D38:s API-texter in i nästa motorpipeline-översättningssväng (pass.namn).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u1 omgång 6 — B8 AKM3 diffad mot verkligheten)
+
+Sjätte u1-dokvågen (25 system diffade av spårets dokvåger — senast s9-u2
+omgång 5 med D20/D38 i ccb18a32, upptäckt som trädskifte under pågående
+mätning; deras sektion orörd här). B8 fritt vid kollisionskontrollen och valt
+med omdöme: B7-dokvågens kö sade uttryckligen "B8-dokvåg verifierar" (AKM3-
+ensemble-fyndet). Varje rad MÄTT i arbetsytan 2026-09-16 (svitkörning,
+node-läsning av JSON-loggar, /etc/crontab + vercel.json-läsning, grep i src,
+live-curl mot localhost + API-sond) — inte läst ur worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Testsviten | "Kärnor + testsvit + cron finns" | **55 kontroller / 55 PASS / 0 FAIL, exit 0** (egen körning) — sviten täcker episoder/faser, osatt-pool, hash-kedjan (tamper-vakt G7), rapporten, determinism; lib oförändrat 2 113 r i 5 moduler sedan 09-10 16:33 (git: 6bd23a0a + e9a75fab) |
+| Cron-drivning (ÖVERSIKT: "kalibreringsloopen cron-driven") | cron finns | **ENBART Vercel-driven**: vercel.json bär `"20 5 2 * *"` (tillkommen våg 60, commit 64b9fea9 2026-09-04) — **/etc/crontab mätt SAKNAR akm3-kalibrering** (raderna: vagscan, nyheter, portfolj-uppfoljning, halsa). Prod-servern kör ALDRIG ronden; loggfil + rapport växer bara i molnet (system_events bär loggRad som kedjebas — O4-robusthet §6 i rutten). Första möjliga automatiska rond: **2026-10-02** |
+| Kalibreringsloggen | (ej i kartan) | **1 rad**: v1 · 2026-09 · typ matning · ΔΦ=0 · hash b5400a158c00…; rapporten (genererad 2026-09-04T20:12Z): 0 dom-rader / 0 episoder — clean-förbudet §10.5 kasserar allt före 2026-09-04; alla sex faser n_eff 0/20, status "vantar-grind" (designen säger 8–12 kvartal — korrekt läge, inte fel) |
+| Regime-loggen | (ej i kartan) | **1 genesis-rad 2026-09-03**: regim "magert", grönAndel 0,07 / rödAndel 0,17, nettoVagbredd OSATT ("senaste vagscan-event ej läsbart"), kravdaSnapshots 2. **FYND: regimen på prod är FROSEN på genesis** — uppdateringsvägen är cron/vagvalidering ("appendar vid reglerad förändring", route.ts:87) som SAKNAS på Contabo (mätt av s9-u2 2/3) OCH inte kan skriva fil på Vercel (read-only fs; kalibreringens loggRad-i-event-mönster finns EJ i vagvalideringens regimgren); /api/forskningslage läser senaste loggraden (route.ts:24-25, mätt) |
+| Regimens publika exponering (gap 1) | "konsumentytan tunn — visas den?" | **MOTBEVISAD — fyra ytor**: RegimeChip i forskningslage-kort (kanoniska etiketter, ogiltiga värden visas ej) konsumeras av min-sida + portfolj-forskning + prenum-CTA; transparens-sidans "Metodrad 10 — så räknas regimeindikatorn (AKM3)" = HEL tabell med indikatorer, trösklar, hysteres och kadens; pro-ytorna (morgonrond, motespaket, klientvy, målsida) + fas3. MEN: chipet bär genesis-indikatorerna UTAN datum — att dagens läge råkar vara identiskt (7/100 gröna, 17 röda — live-sondad) är sammanträffande, inte mekanism |
+| Ensemble-vyn (B7:s kö) | (B7:s sektion: 0/22) | **EGEN mätning**: /forskningsbiblioteket/HM-B.ST svarar 200 (155 kB) med **0 ensemble-träffar** i HTML:t (akm3=null ⇒ vyn renderas ej) — bekräftar B7:s 22/22-svep. Koden bär två källor (akm3-cache ELLER on-demand ur nyckeltalscachen, page.tsx:128-132) — ingen lever; portfolj-uppfoljning-cronen FINNS på Contabo (`0 7 1 * *`) men 0 fundamental-/akm3-cacher på disk trots att 09-01 passerat — orsak outredd (mätt) |
+| Träff-%-trendvy (gap 2) | "saknar historisk trendvy" | **bekräftad mätt**: data/rapporter bär endast vagvalidering-SENASTE.json/.md — ingen historik; kalibreringsrapporten versionerar via loggen men serverar ingen trend |
+| Ensemble-vikters drift (gap 3) | "bevakas ej" | **bekräftad**: prediktionsloggen lever i src (regim.ts/uppfoljning) men loggar AKM1-prediktioner, inte ensemble-vikter; ensemble.ts (172 r) persistar inga vikter — drift-bevakning saknas fortfarande |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B8 | PÅGÅR 7 → **PÅGÅR 7** | Precisering utan poängrörelse (E33/B14-precedensen): KONSTRUKTIONEN håller toppklass — 55/55 med tamper-vakt på hash-kedjan, LÅST grind ΔΦ=0 kodat som kontrakt (grindvillkor + rollback-regel i varje rad), DB-kedjebas-robusthet, månads-idempotens — och gap 1 är delvis motbevisat (fyra publika ytor). Men DRIFTVERKLIGHETEN: kalibreringen ENBART Vercel-driven (Contabo-crontab saknar raden, mätt), regimen frusen på genesis-indikatorer sedan 09-03 (osynligt för eleven), ensemble-konsumentytan tom. PÅGÅR är fortfarande det rätta läget (n_eff-målet ligger 8–12 kvartal bort enligt design); score 7 oförändrad — kunskap tillförd, inga kod- eller testgap stängda/öppnade |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **/etc/crontab-spegling**: lägg curl-rader
+för akm3-kalibrering (månadens 2:a 05:20 UTC = 07:20 lokal) och vagvalidering
+(05:30 UTC = 07:30 lokal) — samma kö som B9:s vagscan-spegelning; annars växer
+kalibreringskedjan + Bana B + regimen ENDAST i moln-JSON medan prod-diskens
+loggar står stilla; (2) **regim-raderna kedjeläggs i system_events** à la
+kalibreringens loggRad-mönster — annars kan Vercel aldrig föra regime-loggen
+vidare och regimen förblir fruset genesis-läge; (3) **portfolj-uppfoljningens
+cache-skrivning utreds** (cron-raden finns på Contabo men 0 akm3/fundamental-
+cacher på disk sedan 09-01) — B7:s ensemble-kur lever, alternativt självläker
+2026-10-01 om cronen lever; (4) regimchipet bör bära indikatorernas datum
+(idag visas genesis-tal utan åldermarkering).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -498,7 +537,7 @@ neutral talkart är rena funktioner — sviten stubbar nätverket redan);
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön (mätt 09-16); berika-pipelinen stillastående 12 d (0 cacher på disk), AKM3-ensemble 0/22 i prod, snapshot-svit env-känslig |
-| B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Kalibreringsloopen cron-driven men beslut delvis ouppfyllt |
+| B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55, LÅST grind ΔΦ=0, hash-kedjor; mätt 09-16); men kalibreringen ENBART Vercel-cron-driven (Contabo-crontab saknar raden, mätt), regimen FROSEN på genesis 09-03 (uppdateringsvägen vagvalidering finns ej på Contabo), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinismfelet rättat (107/0/0, 2026-09-13); egen testsvit saknas |
@@ -757,23 +796,52 @@ analysfilernas git-trackade akm2-block (steg 1 "analys-json", live-bevis
   gäller bara datacache:s fyra typer; ett nytt cache-tömningstillfälle öppnar
   samma AKM3-tomrum (0/22) även för AKM2 om blockformatet ändras.
 
-## B8. AKM3 (regim, kalibrering, ensemble) — PÅGÅR — 7/10
+## B8. AKM3 (regim, kalibrering, ensemble) — PÅGÅR — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 6): allt MÄTT i arbetsytan —
+svit 55/55 PASS exit 0 (egen körning), lib 2 113 r orörda sedan 09-10.
+STORFYND (drift): kalibreringsloopen är ENBART Vercel-cron-driven (vercel.json
+`20 5 2 * *`; /etc/crontab mätt SAKNAR raden — prod-servern kör aldrig ronden,
+första möjliga automatiska rond 2026-10-02) och REGIMEN är FROSEN på genesis-
+raden 2026-09-03 (uppdateringsvägen cron/vagvalidering finns ej på Contabo +
+Vercel-fs read-only; loggen bär 1 rad; chipet visar genesis-indikatorer utan
+datum). Kalibreringsloggen 1 rad (v1 2026-09, ΔΦ=0, 0 episoder — clean-förbudet;
+alla faser "vantar-grind", korrekt designläge 8–12 kvartal). Gap 1 MOTBEVISAT —
+regimen visas på FYRA publika ytor (forskningslage-chip via min-sida/portfolj-
+forskning/prenum-CTA + transparensens Metodrad 10 + pro-ytor + fas3). Ensemble-
+vyn MÄTT död igen (HM-B.ST 200 med 0 ensemble-träffar — bekräftar B7:s 0/22).
+Score 7 kvar, PÅGÅR kvar — se diff-tabellen i UPPDATERING-sektionen.*
 
 - **Vad:** Regimdetektering (marknadsläge), osäkerhetskvantifiering,
   ensemble-kärna, kalibreringsloop mot kvartalsdeduplicerade vågklass-
   snapshots.
-- **Nyckelfiler:** src/lib/akm3/{ensemble,kalibrering,osakerhet,regim,typer}.
-  ts, src/app/api/cron/akm3-kalibrering/route.ts, data/forskning/AKM3/
-  (beslut), verktyg/testa-akm3-kalibrering.mjs, src/lib/vagvalidering.ts
-  (kvartalsnyckel + protokollversion).
-- **Observation:** Kärnor + testsvit + cron finns; vagscan (B9) matar
-  kalibreringen med kvartalsgaller (våg 59-steg 2, två konsumenter enligt
-  kodkommentar). AKM3-BESLUTets fulla program (r3-dynamisering) är delvis
-  genomfört — läget "pågår" i rankningen var korrekt.
-- **GAP:** (1) regimetikettens publika exponering (visas den för eleven
-  nånstans?) — konsumentytan tunn; (2) kalibreringens träff-%-rapportering
-  (/api/data/vagstatistik) saknar historisk trendvy; (3) ensemble-vikternas
-  drift över tid bevakas ej.
+- **Nyckelfiler:** src/lib/akm3/{ensemble (172 r),kalibrering (1 161 r),
+  osakerhet (144 r),regim (472 r),typer (164 r)}.ts, src/app/api/cron/
+  akm3-kalibrering/route.ts (463 r), data/forskning/AKM3/ (beslut r1–r7),
+  verktyg/testa-akm3-kalibrering.mjs (55 kontroller), src/lib/vagvalidering.ts
+  (kvartalsnyckel + protokollversion), data/portfolj-system/
+  {kalibrering-logg,regime-logg}.json, data/rapporter/
+  akm3-kalibrering-SENASTE.md.
+- **Observation:** Kvalitetsmässigt bland de mest genomtänkta cron-konstruktionerna
+  i kodbasen: LÅST handlingsgrind ΔΦ=0 som kodat kontrakt (grindvillkor
+  n_eff ≥ 20 + kredibelt intervall + rate-limit, rollback-regeln i varje rad),
+  hash-kedjad append-only-logg med DB-kedjebas-fallback (O4-robusthet §6) och
+  tamper-vakt, månads-idempotens, OrganEvent-puls, fail-safe utan nät. Svit
+  55/55 (mätt 2026-09-16). Kalibreringens indata är Bana B (system_events
+  type=vagvalidering) — vagvaliderings-cronen som både matar kalibreringen och
+  uppdaterar regimen drivs dock ENBAST från Vercel (se gap 4).
+- **GAP:** (1) ~~regimetikettens publika exponering — konsumentytan tunn~~
+  MOTBEVISAD (mätt 09-16: chip + transparens-metodrad + pro-ytor + fas3);
+  kvar som rest: chipet bär genesis-indikatorer UTAN datum (frusen regimen
+  osynlig för eleven); (2) kalibreringens träff-%-rapportering saknar
+  historisk trendvy (mätt: endast SENASTE-filer i data/rapporter); (3)
+  ensemble-vikternas drift över tid bevakas ej (mätt: prediktionsloggen
+  loggar AKM1-prediktioner, ej ensemble-vikter); (4) **NY 09-16 —
+  driftspegling**: akm3-kalibrering + vagvalidering saknas i /etc/crontab
+  (Contabo = prod) ⇒ kalibreringskedjan + Bana B + regimen växer endast i
+  moln-JSON, prod-diskens loggar frusna (1 + 1 rad), och ensemble-konsument­
+  ytan tom (akm3=null mätt — återfyllningsvägen portfolj-uppfoljning finns
+  som cron-rad men skrev 0 cacher vid 09-1-passagen, orsak outredd).
 
 ## B9. Vågsystemet AK1TS — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 

@@ -337,8 +337,11 @@ kontroll(
 // ── FALL L: WIDGET-BEVIS — kedjan I FILEN chat-widget.tsx ──────────────────
 // Omgång 3:s sektor-leverans dog på exakt denna kontroll: filen + testet
 // fanns, men wiringen saknades (död kod i prod). Nu vaktas själva
-// widget-filen: kedjeraden måste bära ALLA sju lager I ORDNING och båda
+// widget-filen: kedjeraden måste bära ALLA lager I ORDNING och
 // importerna måste finnas.
+// Uppdaterad av s6-u3 omgång 6 (abca6047): praktik-lagret tillagt som
+// ÅTTONDE lager SIST (index/passivt, blankning, marginal) — komponentlistan
+// följer kedjan, okända komponenter fortsätter att underkännas.
 const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
@@ -348,6 +351,7 @@ const kedjekomponenter = [
   "svaraLokaltKapitalmekanik(q, KURSREGISTER)",
   "svaraLokaltSektor(q, KURSREGISTER)",
   "svaraLokaltCase(q, KURSREGISTER)",
+  "svaraLokaltPraktik(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -382,10 +386,12 @@ const importSektor = widget.includes('from "@/lib/ai-mentor-sektor-fragor"');
 const importCase = widget.includes('from "@/lib/ai-mentor-case-fragor"');
 if (!importSektor) { lFel++; console.log("      import av sektor-lagret saknas"); }
 if (!importCase) { lFel++; console.log("      import av case-lagret saknas"); }
+const importPraktik = widget.includes('from "@/lib/ai-mentor-praktik-fragor"');
+if (!importPraktik) { lFel++; console.log("      import av praktik-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 7 lager i ordning + 2 importer",
+  "L: widget-bevis — kedjeraden bär 8 lager i ordning + 3 importer",
   lFel === 0,
-  lFel === 0 ? "chat-widget.tsx wired: sektor + case live i klientkedjan" : lFel + " fel",
+  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik live i klientkedjan" : lFel + " fel",
 );
 
 // ── Sammanfattning ─────────────────────────────────────────────────────────

@@ -1718,6 +1718,29 @@ export interface StudioTransport {
    * Fel-tolerant: {fakta: null} vid fel (ALDRIG kast).
    */
   lasV4KommandoFakta(commandId?: string): Promise<{ fakta: unknown | null; rått?: unknown }>;
+  /**
+   * GAP-REGISTER POST 27 ETAPP 2 (V4-LAGRET §11, dekompilerad rond 43):
+   * v4/command — SKICKA sendText-kommando till den levande sessionen via
+   * envelope-schemat (§11.1: commandId/clientId/sessionId/type/payload/
+   * issuedAt; clientId = transportens v4ConnectionId). requestedDelivery
+   * triadens "startNow"|"queue" (§11.2 — "guide" väntar A6-insatsen).
+   * Svar = protokollets ack (§11.3; avvisad payload ⇒ status "rejected"
+   * med reasonCode "proto.invalidPayload") — ytas som tolkat statusfält +
+   * rått ack. Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   * NOTERA: detta är TRANSPORT-vägen; UI-kopplingen (ersätta dagens
+   * styrväg) är feature-avvägning enligt §11.4 — medvetet ej denna våg.
+   */
+  skickaV4SendText(
+    text: string,
+    alternativ?: { delivery?: "startNow" | "queue" },
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5730,6 +5753,50 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * ETAPP 2 (V4-LAGRET §11.1, dekompilerad rond 43): envelope wire-
+   * valideras av parseCommandEnvelope — ogiltig payload ger ack-status
+   * "rejected" (proto.invalidPayload), alltså ÄKTA svar ej fel. clientId
+   * = v4ConnectionId (gateway:ns klientidentitet). baseRevision/
+   * baseLogEpoch lämnas bryggda tills A6 (flight-/stale-semantiken) är
+   * känd — de är valfria fält i schemat.
+   */
+  async skickaV4SendText(
+    text: string,
+    alternativ?: { delivery?: "startNow" | "queue" },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const t = typeof text === "string" ? text.trim() : "";
+    if (!t) return { skickat: false, commandId: null, ack: null, fel: "Tom text — inget att skicka." };
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: "sendText",
+      payload: { text: t, requestedDelivery: alternativ?.delivery ?? "startNow" },
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      // rejected/proto.invalidPayload är protokollets domslut — kommandot
+      // tog vägen in (skickat=true); statusfältet bear domsluten.
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8394,6 +8461,31 @@ class MockTransport implements StudioTransport {
       ? (kommandon.find((k) => (k as { commandId?: unknown } | null)?.commandId === id) ?? null)
       : (kommandon.length > 0 ? kommandon[kommandon.length - 1] : null);
     return { fakta, rått: { results: kommandon, source: "mock" } };
+  }
+
+  /**
+   * ETAPP 2 (§11) (mock): deterministisk ack-simulering — speglar §11.1:s
+   * svarsform med statusfält + commandId; dev-E2E utan barnprocess.
+   * "rejected"-vägen provas med text-prefix "REJECT:" (protokolltestkrok
+   * för proto.invalidPayload-domsluten).
+   */
+  async skickaV4SendText(
+    text: string,
+    alternativ?: { delivery?: "startNow" | "queue" },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const t = typeof text === "string" ? text.trim() : "";
+    if (!t) return { skickat: false, commandId: null, ack: null, fel: "Tom text — inget att skicka." };
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const avvisad = t.startsWith("REJECT:");
+    const ack = {
+      commandId,
+      status: avvisad ? "rejected" : "accepted",
+      ...(avvisad ? { reasonCode: "proto.invalidPayload" } : {}),
+      delivery: alternativ?.delivery ?? "startNow",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
   }
 
   // ── VÅG 85 F2: skills/plugins/MCP — deterministisk dev-simulering ────────

@@ -1,0 +1,23 @@
+studio: auto s5-u3 omkörningskvitto — ursprungsleverans 8a5fdf67 oberoende återverifierad GRÖN, duplikat stoppat (worklog-notis endast) [fabrik]
+
+Bakgrund: fabriken omstartade s5-u3 efter att ursprungsprocessens skal hängde
+(kvd-skriptet tidsstämplat 17:13). Skal-häng ≠ avbruten (våg 148): commit
+8a5fdf67 landade 17:18 med hela leveransen (+3 kurser rs-05/kt-03/ma-01,
+mikrokuration ×8, register 372→375) och fabriken bokförde leveransraden —
+manifest auto-s5-1789569318697 status KLAR 3/3, 0 underkända.
+
+Omstartens oberoende verifiering MOT HEAD (allt GRÖNT, inget omarbetat):
+- KVD verktyg/_s5u3-kvd.mjs: 131 PASS 0 FAIL (struktur/register/aritmetik/
+  korsreferenser/juridik)
+- FRONT B verktyg/_s5u3-frontb.mjs: 15 PASS 0 FAIL — motorn själv nominerar
+  3/3 med genererade varför-rader, 90p kategori-fortsättning (BAS 86 +
+  nivåmatch +4)
+- node node_modules/typescript/bin/tsc --noEmit: exit 0 (baslinjen hålls)
+- larvag-synk GRÖN: register 375 = karta 375 = konstant 375 · 21
+  profilkurser · 0 fantomer
+- llms.txt + llms-full.txt "375 kurser" (6+4 ställen), speglar 375+55
+
+Denna commit: ENDAST worklog-notisen som bokför omkörningen och verifieringen —
+inga nya kurser (nästa luckor BETEENDEFINANS/OPTIONS & DERIVAT/EKOSYSTEM
+lämnas åt syskonen enligt 8a5fdf67:s lucklista). R2 orörd; data/blogg/
+(live) orörd; inget bygge. [fabrik]

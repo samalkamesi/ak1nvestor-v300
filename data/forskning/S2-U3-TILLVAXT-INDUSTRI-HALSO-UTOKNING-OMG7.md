@@ -127,22 +127,25 @@ universumfilen (renare än omgång 6:idempotens-skip). Race-disciplinen i
 protokoll + worklog + commitmsg skrivna FÖRST, append + llms + git add +
 commit i ETT tight fönster.
 
-## KVD-bevis
+## KVD-bevis (utfall, kört i leveransfönstret — commit c256c659 + denna rättes)
 
 - **Kontraktstest + läckagevakt 0**: `tsx verktyg/testa-dataset-aspekter.mjs`
-  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = GRÖNT 0 fel, väntad
-  sidkontrollnivå 166→167 (ABBV:s USA/hälsa-landaspekt; exakt tal i
-  utfallsloggen nedan). Läckagevakten läser universumet dynamiskt — 138
-  namn/tickers förbjudna, 0 träffar i sidornas JSON-utdata (A2-kontraktet
-  §1:s gränsdragning). v98-dataset-vakt (mot BYGGDA sidor) kräver next
-  build = prod-synkens ägande.
+  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = **GRÖNT 0 fel, 167
+  sidkontroller** (förutsagt 166→167 — ABBV:s USA/hälsa-landaspekt är den
+  nya sidan; varningarna 30 st är samtliga pre-existerande 'billig'-ord,
+  failar ej). Läckagevakten (bolagsvakten, exakt token-matchning) läser
+  universumet dynamiskt — **138 namn/tickers förbjudna, 0 träffar** i
+  sidornas JSON-utdata (A2-kontraktet §1:s gränsdragning). v98-dataset-vakt
+  (mot BYGGDA sidor) kräver next build = prod-synkens ägande (Vonovia-
+  precedensen — servade dataset-sidor visar 135-tal till nästa prod-bygge).
 - **Kvartiler + universumjämförelse**: verifierade via raknaBranschMedianer
   (tabell ovan) — samma räknesätt som sidorna.
 - **Aritmetik**: 22/22 GRÖN (CAGR/prognos/PEG/fcfYield/fcfMarginal/yield).
 - **tsc**: `node node_modules/typescript/bin/tsc --noEmit` = 0 fel (src/
-  orörd — ren dataleverans; pre-commit-grinden verifierar).
+  orörd; pre-commit-grinden passerad vid commit c256c659).
 - **prod 200**: /, /dataset, /dataset/tillvaxt, /dataset/industri,
-  /dataset/halso, /api/data/nyckeltalsguide = 200.
+  /dataset/halso, /api/data/nyckeltalsguide = **200 × 6** (localhost,
+  middleware-whitelistad).
 - **R2**: priser/tier/publicering orörda; data/blogg/ orörd; src/ orörd
   (inget bygge); allt är utbildningsdata med disclaimers enligt
   A2-kontraktet §5.

@@ -1126,3 +1126,27 @@ får ALDRIG krascha sattMal/rensaMal.
   bygg ⇒ HÖG kvar. Fail-safe: endast exit-status 1 (= lås hålls) räknas som deploy.
 - VACCIN: instrument ska känna systemets underhållsfönster (familj: rond 33 RAM-svält,
   35-36 larmväg-ts, 39 npm ci-race, 44 deployfönster). Kvar bokad: atomisk byggswap.
+
+## INCIDENT 2026-09-16 19:17 lokal — GRÄNSSNITTSVAKTEN dog med SIGINT (exit 130)
+- SYMPTOM: cron-körningen 19:17 (flik "17 1,7,13,19 * * *") avbröts mitt i
+  dark/390-svepet; larm VAKTFEL med halvfärdig utdata; cron.log SAKNAR 19:17-raden
+  (bash hann POSTa larmet men dö innan echo) ⇒ signalen träffade hela jobbprocessen.
+- ROT: yttre SIGINT, engångsslag. Uteslutna med belägg: kernel (journalctl 19:10–19:25
+  tyst om OOM/kill), agentfabriken (logg.jsonl tyst sedan 19:13, inga barn vid 19:17),
+  egna verktyg (pumpor/evighetsmotor/pulsvakt/kraschvakt: 0 kill/pkill-källor, bara
+  AbortSignal.timeout). INTE den bevisade 2026-09-15-roten korrupt node_modules:
+  prod = 583 paket, 0 trasiga, puppeteer-core installerad + deklarerad (package.json
+  rad 91) ⇒ nästa npm ci oskadelig.
+- KUR: ingen — prod var frisk (200, pm2 online, .next intakt). Reparationsbygget
+  (npm ci+build under flock) avstått medvetet: inget att laga, bygg avbrott hade bara
+  burit risk. Skyddet åter bevisat direkt: snabbsvep 12/12 GRÖN + riktat adminsvep
+  88/88 GRÖN (19:35); cron återupptar fullkontrollen 01:17.
+- VACCIN: (1) larmtextens "korrupt node_modules"-hypotes är en GISSNING från
+  2026-09-15 — kör diagnosen (paket-integritet + journal + fabriklogg) FÖRE npm
+  ci+build; ett onödigt bygge är själv en incidentrisk. (2) Vakten MÅSTE köras från
+  /home/ak1a/AK1 (arbetsytan har partiellt node_modules utan puppeteer-core — snabbtest
+  där ger falskt VAKTFEL "Cannot find package"). (3) "/admin 2px överflöd i mobil" är
+  ett konstant normalmönster UNDER fyndtröskeln (GRÖN 13:17 med identiskt mönster) —
+  inte ett fel, jaga det inte. (4) Studio-skalet verkställde varken rm eller node-fil
+  ikväll (häng utan effekt, omväxlande med fungerande körningar) — städning via
+  subagent; fjärde observationen av hang-typen.

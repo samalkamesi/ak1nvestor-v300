@@ -11143,5 +11143,95 @@
       ]
     },
     "notering": "betalnätverk utan utlåningsrisk — kundgälden ligger hos utgivande banker, Visa bär inte kreditförlusterna (pedagogisk kontrast mot universumets banker i samma branschfålla); bruttomarginal 97,7 % (moat-serien medel 97,7 %, spridning 0,4 pp FY2022–FY2025 — nätverksrörelse med nästan obefintlig varukostnad); ROE 61,2 % bär kapitalstrukturen (P/B 19,9, skuld/EK 0,68, omfattande återköp) — lönsamhetens kärna syns bättre i ROIC 54,8 %; räkenskapsår oktober–september — serien = FY2022–FY2025 (årtal = räkenskapsårets slutår, BHP-precedenten); prognosTillvaxt härledd ur trailing/forward-P/E (31,98/25,98 ⇒ +23,1 % implicit EPS-förändring; källans 3-års EPS-prognos +14,10 %/år); peg 1,38 enligt spårkonventionen (källans egen 1,80); resultatCAGR +10,7 % endpoint — FY2025-vinsten växde bara +2,0 % (litigation-reserver) medan rörelseresultatet +11,7 %; utdelning 2,68 USD/aktie (0,71 %, payout 22,8 % — bolaget returnerar kapital främst via återköp; utdelningsfälten null enligt universumets konvention); räntetäckning 38,34 (fältet systematiskt osatt i universumet, värdet dokumenteras här)"
+  },
+  {
+    "ticker": "ALV.DE",
+    "namn": "Allianz SE",
+    "bransch": "finans",
+    "land": "Tyskland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/etr/ALV/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; översikt/financials sid-as-of 2026-09-15 close, statistics 2026-08-18): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 444.6,
+    "marknadsKapitalMdr": 166.55,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0425,
+      "resultatCAGR5ar": 0.1389,
+      "omsattningTillvaxtTTM": 0.0658,
+      "prognosTillvaxt": 0.0512
+    },
+    "lonksamhet": {
+      "roe": 0.1961,
+      "roic": 0.1777,
+      "bruttoMarginal": 0.2501,
+      "ebitMarginal": 0.1699,
+      "nettoMarginal": 0.0972,
+      "fcfMarginal": 0.2333
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.51,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.58,
+      "pb": 2.47,
+      "evEbit": 8.61,
+      "peg": 2.85,
+      "fcfYield": 0.1673,
+      "egenKapitalMultipl": 2.47
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        95811000000,
+        99420000000,
+        110376000000,
+        113174000000
+      ],
+      "resultat": [
+        6302000000,
+        8399000000,
+        9788000000,
+        10603000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        16334000000,
+        22322000000,
+        29988000000,
+        30944000000
+      ]
+    },
+    "notering": "serier i EUR; FÖRSÄKRINGSKONCERN — universumets första rena försäkringsbolag (BRK-B är försäkringslett konglomerat): float-mekaniken förklarar kassaflödesbilden, premier intas före skadeutbetalning och ger kassa 136,0 mdr € mot traditionell skuld 33,7 mdr — källans FCF-marginal 23,3 % TTM och FCF-yield 16,7 % speglar kundmedelsflöden (samma reservation som bankradernas, men BRK-precedenten fyller fälten när källan mäter dem); skuld/EK 0,51, räntetäckning 16,7 (i not — fältet systematiskt osatt) och ROIC 17,8 % är källans värden på TRADITIONELL skuld — försäkringstekniska åtaganden (policyholder liabilities) bärs utanför måtten och gör dem ej jämförbara med icke-finansbolag (BRK-radens reservation; fälten fylls ändå enligt spårets nyare konvention när källan mäter — EQT/V-precedenten); P/E 14,58 på rapporterat TTM-resultat som BÄR ENGÅNGSVINSTEN från avyttringen av det indiska livförsäkringsengagemanget Bajaj Allianz Life (Q1 2026 nettoresultat 3 689 M€, +52 %) — källans EBT exklusive engångsposter 17 899 M€ mot rapporterat 19 952 M€ (gap ca 2,1 mdr €): på normaliserat underlag blir P/E högre än 14,58; källan publicerar ingen justerad EPS (BASF/Carlyle-precedenten omvänt: där gav källan normaliserat P/E direkt); prognosTillvaxt härledd ur trailing/forward-P/E (14,58/13,87 ⇒ +5,1 % implicit EPS-förändring, ej underliggande volymtillväxt — källans 3-årsprognoser är EPS +7,74 % och intäkter +16,64 %); peg 2,85 enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans 3-års-PEG 1,72 som not); omsattningCAGR endpoint över 4 räkenskapsår (2022–2025, +4,25 %: svagt basår 2022 följt av tre tillväxtår), resultatCAGR +13,89 % samma period (ränteläge och kombinationseffekter); P/B 2,47 med ROE 19,6 % — försäkringsvärderingar drivs av avkastning på eget kapital, källans P/TBV 4,06 i not; bruttomarginal 25,0 % TTM (statistiksida 2026-08-18); moat-fälten null: försäkringskoncerner redovisar inte bruttovinst per år hos källan (BRK-precedenten) och premier/ersättningar gör en bruttomarginalserie ej jämförbar med varubolag; resultatserien är nettoresultat till aktieägarna (exklusive minoriteter); utdelning 17,10 €/aktie (3,8 % direktavkastning; payout 54,8 % enligt källan, 56,1 % på TTM-EPS; utdelningen växt 11,40 → 17,10 € 2022–2025, +14,5 % per år) — utdelningsfält null enligt plattformskonventionen; 52-vägers spann 338,80–454,60 €; nästa rapport 2026-11-05"
   }
 ]

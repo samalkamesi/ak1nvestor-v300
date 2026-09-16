@@ -44,6 +44,9 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B13 | detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag | detailhandelsaktier | 1388 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-07-detailhandel) | data/blogg-utkast/detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json |
 | B14 | flygaktier-sa-analyserar-du-flygplansindustrin | flygaktier | 1379 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-10-flyg) | data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin.json |
 | B15 | forsvarsaktier-sa-analyserar-du-forsvarsbolag | försvarsaktier | 1199 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-03-forsvarssektorn) | data/blogg-utkast/forsvarsaktier-sa-analyserar-du-forsvarsbolag.json |
+| B16 | forsakringsaktier-sa-analyserar-du-forsakringsbolag | försäkringsaktier | 1400 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-06-finanssektorn) | data/blogg-utkast/forsakringsaktier-sa-analyserar-du-forsakringsbolag.json |
+| B17 | medieaktier-sa-analyserar-du-medie-och-streamingbolag | medieaktier | 1218 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-08-media); avgränsas mot B5 (innehållsekonomi kontra operatörer) | data/blogg-utkast/medieaktier-sa-analyserar-du-medie-och-streamingbolag.json |
+| B18 | livsmedelsaktier-sa-analyserar-du-livsmedelsbolag | livsmedelsaktier | — | PÅGÅR (s3-u1, 2026-09-16) — sektoromgång 3 (kursankare se-14-livsmedel); avgränsas mot B7 (underfamilj) och B13 (tillverkare kontra butik); klaim: data/vakten/auto-s3-1789589126587-u1-ansprak.md | data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 

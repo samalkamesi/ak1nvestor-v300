@@ -1,0 +1,175 @@
+{
+ "datum": "2026-09-16T03:4x:00Z",
+ "genererad": "2026-09-16T03:18:31.950Z",
+ "bas": "http://localhost:3000 (prod-bygget 9b01c0d4-fasen, HEAD före s7-u3-vågen)",
+ "metod": "CDP Tracing (390x844, deviceScaleFactor 2, CPU-throttle 4x, cacheDisabled) + injicerad CSS för A/B/C/D + MutationObserver via Page.addScriptToEvaluateOnNewDocument",
+ "ab_lagring": {
+  "A": "oförändrad sida",
+  "B": ".animate-pulse{animation:none !important}",
+  "C": "B + *{transition-duration:0s !important;transition-property:none !important}",
+  "D": ".flex>*/.grid>* min-width:auto + [class*=Badge] avkapad (globals.css 529-familjen emasculerad)"
+ },
+ "ab_korningar": [
+  {
+   "variant": "A",
+   "ultSum": 1302,
+   "ultN": 185,
+   "layoutSum": 1430,
+   "layoutN": 122
+  },
+  {
+   "variant": "A",
+   "ultSum": 1185,
+   "ultN": 182,
+   "layoutSum": 1176,
+   "layoutN": 112
+  },
+  {
+   "variant": "B",
+   "ultSum": 1201,
+   "ultN": 199,
+   "layoutSum": 1039,
+   "layoutN": 124
+  },
+  {
+   "variant": "C",
+   "ultSum": 1113,
+   "ultN": 148,
+   "layoutSum": 1109,
+   "layoutN": 99
+  },
+  {
+   "variant": "D",
+   "ultSum": 1132,
+   "ultN": 187,
+   "layoutSum": 1257,
+   "layoutN": 118
+  },
+  {
+   "variant": "C",
+   "ultSum": 1229,
+   "ultN": 180,
+   "layoutSum": 1066,
+   "layoutN": 114
+  }
+ ],
+ "ab_slutsats": "Alla varianter 2.2-2.9 s S&L (UpdateLayoutTree+Layout) — skillnader inom körningsvarians (~±15%). Varken animate-pulse, transitions eller 529-väljarfamiljen är huvudförbrukare.",
+ "jamforelse_sidor": {
+  "/kurser": {
+   "domMax": 1357,
+   "ultN": 125,
+   "kommentar": "se sond-sl-korningar"
+  },
+  "/blogg": {
+   "domMax": 886,
+   "ultN": 14
+  },
+  "/bibliotek": {
+   "domMax": 4399,
+   "ultN": 12,
+   "kommentar": "kostnad i få stora recalcs (u1:s CV-våg) — inte many-small-mönstret"
+  }
+ },
+ "mutationsobserver": {
+  "total": 1754,
+  "tidstall": "nästan alla 0-1.1 s (hydratisering); enstaka vid 7 s och 11 s; INGET löpande",
+  "histogram_top": {
+   "childList - | SPAN": 778,
+   "childList - | BUTTON": 189,
+   "childList - | A": 158,
+   "childList - | DIV": 144,
+   "childList - | HEAD": 79,
+   "childList - | UL": 70,
+   "childList - | LI": 70,
+   "childList - | P": 61,
+   "childList - | BODY": 29,
+   "childList - | SECTION": 23,
+   "childList - | H2": 20,
+   "childList - | NAV": 16
+  }
+ },
+ "io_och_skelett": {
+  "apiKursAnrop_vid_last": 0,
+  "animatePulse_element_efter_16s": 24,
+  "dokumentAnimationer_efter_16s": 29,
+  "slutsats": "IntersectionObserver:n (rootMargin 400px) avfyras ALDRIG vid last — registret ligger under hero + utvalda sektioner. Alla 24 skellett pulserar därför oändligt för besökare som inte scrollar. KUR: laddar-state (puls endast under pågående hämtning)."
+ },
+ "storsta_händelser_kurser": [
+  {
+   "event": "Layout",
+   "startMs": 635272207,
+   "durMs": 383,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635271982,
+   "durMs": 224,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635273618,
+   "durMs": 216,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "Layout",
+   "startMs": 635273834,
+   "durMs": 211,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "Layout",
+   "startMs": 635271663,
+   "durMs": 111,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635274667,
+   "durMs": 47,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "Layout",
+   "startMs": 635272735,
+   "durMs": 46,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635272696,
+   "durMs": 39,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635277712,
+   "durMs": 39,
+   "utlosare": "FunctionCall: FunctionCall",
+   "egenStack": null
+  },
+  {
+   "event": "UpdateLayoutTree",
+   "startMs": 635271261,
+   "durMs": 38,
+   "utlosare": "EventDispatch: EventDispatch",
+   "egenStack": null
+  }
+ ],
+ "function_call_fordelning_kurser_ms": {
+  "3tc9l_yj-kftz.js (React DOM+scheduler)": 1833,
+  "3az_gpmwfejav.js (KursSok-sidan)": 157,
+  "327cduvy_2_u9.js (Next-klient)": 86
+ },
+ "rotbedomning": "/kurser S&L-överskott (2x /blogg vid 1.5x DOM) = hydratiseringskostnad för KursSoks klientträd: många små React-commits (849 FunctionCalls) dirtyr style/layout upprepade gånger; de största enskilda händelserna är fullträds-layouts (dirty 1314-1422 objekt). CSS-nivå-quickfixar motbevisade; strukturell kur (serverrenderat register/färre klientnoder) = produktrefaktor för huvudagent/styrelse."
+}

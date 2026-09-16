@@ -108,6 +108,14 @@ function RegisterKort({
   const { t } = useSprak();
   const [detalj, setDetalj] = useState<KursDetalj | null>(null);
   const [misslyckades, setMisslyckades] = useState(false);
+  // o19 (prestanda spår 7): skellettet pulserar ENDAST medan hämtningen pågår.
+  // Tidigare pulserade det oändligt från hydratiseringen tills kortet scrollades
+  // in i viewport (IntersectionObserver:n avfyras först då) — på /kurser är
+  // registret långt under vecket, så 24 kort blinkade i bakgrunden för varje
+  // besökare som aldrig scrollade: CSS-animationsframes ≈ style-recalc/
+  // batterikostnad i minuter för innehåll ingen ser. Statiskt skellett
+  // reserverar samma höjd; pulsen är synbar feedback precis när den betyder något.
+  const [laddar, setLaddar] = useState(false);
   const textRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
@@ -115,6 +123,7 @@ function RegisterKort({
     if (!el) return;
     let aktiv = true;
     const starta = () => {
+      setLaddar(true);
       hamtaKursDetalj(c.slug).then((d) => {
         if (!aktiv) return;
         if (d) setDetalj(d);
@@ -186,7 +195,7 @@ function RegisterKort({
             {detalj?.learn ??
               (misslyckades ? null : (
                 <span
-                  className="block h-[3.25rem] max-w-[38ch] animate-pulse rounded-md bg-gold/[0.07]"
+                  className={`block h-[3.25rem] max-w-[38ch] rounded-md bg-gold/[0.07] ${laddar ? "animate-pulse" : ""}`}
                   aria-hidden="true"
                 />
               ))}

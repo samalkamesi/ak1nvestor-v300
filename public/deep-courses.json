@@ -199727,7 +199727,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Kapitalbindning och rörelsekapital — lönsamhetens andra halva",
-    "summary": "Fortsetzungskursen om lönsamhet: DuPont-kedjans nästa steg — hur mycket kapital verksamheten binder i kundfordringar, lager och leverantörskulder, kassacykeln i ren aritmetik, och varför tillväxt utan kapitaltakt kan äta kassan.",
+    "summary": "Fortsättningskursen om lönsamhet: DuPont-kedjans nästa steg — hur mycket kapital verksamheten binder i kundfordringar, lager och leverantörskulder, kassacykeln i ren aritmetik, och varför tillväxt utan kapitaltakt kan äta kassan.",
     "minutes": 24,
     "xp": 50,
     "level": "Avancerad",
@@ -200359,7 +200359,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Känslighetsanalys — stresstesta balansräkningen",
-    "summary": "Fortsetzungskursen i stabilitet: från statiska nyckeltal till scenarier — känslighetsmatrisen, räntebindningstrappan och stresstestet som visar hur länge ett bolag står emot fallande resultat och stigande ränta.",
+    "summary": "Fortsättningskursen i stabilitet: från statiska nyckeltal till scenarier — känslighetsmatrisen, räntebindningstrappan och stresstestet som visar hur länge ett bolag står emot fallande resultat och stigande ränta.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -200987,7 +200987,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Volym, pris och mix — tillväxtens tre motorer",
-    "summary": "Fortsetzungskursen om tillväxt: den organiska siffran (tx-01) består av tre motorer — fler enheter, dyrare enheter, annorlunda enheter — och här lär du dig dela upp dem, bedöma deras hållbarhet och läsa deras skilda vägar ner i marginalerna.",
+    "summary": "Fortsättningskursen om tillväxt: den organiska siffran (tx-01) består av tre motorer — fler enheter, dyrare enheter, annorlunda enheter — och här lär du dig dela upp dem, bedöma deras hållbarhet och läsa deras skilda vägar ner i marginalerna.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -202396,6 +202396,170 @@
     "grahamSection": "Benjamin Grahams säkerhetsmarginal (km-030) är i grunden en riskbedömning i en enda dimension: att ta positioner med så stort avstånd till det värsta fallet att felet i bedömningen inte blir ödesdigert. Riskmatrisen kompletterar tanken från andra hållet: den ber kartläggaren att identifiera vad det värsta fallet innehåller. Grahams egna checklistor — med sina krav på omsättning, täckning och likviditet — var i praktiken ett register av fasta riskprover, ett per rad i balansräkningen.",
     "ak1Section": "I AK1A:s metodik är denna kurs RISK-familiens systematiseringssblock: rs-01 lär måttet, rs-02 ett konkret fall, och matrisen samlar alla risker i det verktyg som AKM2:s riskdimension sedan granskar — komplett identifiering, värderade exponeringar, åtgärder på plats. Brobyggen: mot V10–V12 (varje nyckeltal en rad i registret), mot v19-kapitalförbränning (konsekvensmåttet när insatsen är överlevnad) och mot st-02:s stressprov (matrisens sannolikheter prövade utan siffror)."
   },
+  "rs-05-riskavsnittet-mellan-raderna": {
+    "slug": "rs-05-riskavsnittet-mellan-raderna",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Riskavsnittet mellan raderna — att läsa bolagets egen riskredovisning",
+    "summary": "Avanceradkursen i risk: riskavsnittet i årsredovisningen — branschens mest standardiserade och mest underskattade kapitel. Kursen lär skilja malltext från mening: vad en specifik riskbeskrivning innehåller som en generisk aldrig gör, vad årsdiffen avslöjar, var luckorna sitter — och hur varje läsning översätts till rader i riskmatrisen (rs-04).",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Läsa riskavsnittet som en genre med två register — standardiserade lagda formuleringar och bolagets egna specifika beskrivningar — och skilja dem åt på fyra provbara tecken · Köra årsdiffen: jämföra årets avsnitt med förra årets rad för rad och klassa varje förändring som tillagd, borttagen, omformulerad eller oförändrad risk · Läsa luckorna: noter, relaterade parter och eventualförpliktelser som kompletterar det som huvudtexten väljer att inte betona · Översätta varje specifik risk till en rad i riskmatrisen med sannolikhet och konsekvens på femgradiga skalor · Värdera riskkvaliteten som sådan: ett avsnitt som blir specifikare år från år är information, ett som blir mer generiskt är också information · Koppla läsningen till AKM2:s riskdimension: råmaterialet till betyget kommer inte från nyckeltal utan från denna läsning.",
+    "why": "Risk-familjen har byggt trappan: rs-01 lär skillnaden mellan prisrisk och verklig risk, rs-02 koncentrationen, rs-03 den dolda samvariationen, rs-04 matrisen som verktyg — men matrisens rader måste fyllas med råmaterial, och det största sammanhängande råmaterialet publiceras av bolaget självt: riskavsnittet i årsredovisningen. Problemet är att avsnittet är branschens mest standardiserade text — skriven under lag, kod och revisorsgranskning — och den som läser den bokstavligt läser mest försvar. Kursen fyller familjens sista lucka: konsten att läsa dokumentet kritiskt, med årsdiffen som viktigaste verktyg, och att veta att det viktigaste ofta är vad som tog bort eller aldrig fanns där. Ingen annan kurs äger detta ämne: förvaltningsberättelsen (km-002) behandlar dokumentet som helhet och noterna (km-004) redovisningstekniken — denna kurs äger själva riskläsandet.",
+    "history": {
+      "origin": "Riskredovisningen är i grunden en svensk konstruktion: 1976 års årsredovisningslag satte kravet på att redovisa risker och osäkerhetsfaktorer, och den svenska modellen — förvaltningsberättelse med ett dedikerat riskavsnitt — blev föregångare när EU:s aktieägardirektiv 2007 och svenska förändringar 2008 gjorde liknande uppgifter till norm i hela unionen. Före det var riskdiskussionen frivillig och sällsynt: bolag beskrev framgångar, sällan motgångar.",
+      "evolution": "Under 1990-talet växte textmängden men inte alltid innehållet: riskavsnitt utvecklades till en genre av sina egna, delvis skriven för juridiskt försvar — en risk som är listad kan inte påstås vara oväntad. Krigföringen, finanskrisen 2008 och pandemin 2020 drev på kraven: krisbolag som listat allt och specificerat inget tvingades om, och både tillsyn och aktieägare började ställa frågan ett bolag har svårt att böja sig undan: vilka av dessa risker har inträffat, och vad gjorde ni? Jämförelsen mellan årsavsnitt blev därmed ett analysverktyg, inte bara en läxa i läsning.",
+      "modern": "I dag är skillnaden mellan bolag större än lagtexten: vissa bolag redovisar sina viktigaste risker med mätningar, ägarskyldigheter och processer — andra publicerar i princip samma lista år efter år. AI-genererade standardtexter har dessutom sänkt tröskeln att producera långa avsnitt utan att specificera något, vilket gör de fyra specificitetstecknen och årsdiffen viktigare än någonsin. I AKM1:s metodik är denna läsning startpunkten för riskdimensionens betyg: rapportens egen riskbild vägs, inte bara nyckeltalen."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — en genre med två register",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Standard mot specifik — fyra provbara tecken",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Årsdiffen — årets mest informativa sida",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Luckläsning — det som inte står i avsnittet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — fyra missläsningar av risktext",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — från avsnitt till matris",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — en genre med två register",
+        "intro": "Ett dokument skrivet under tre hänsyn — lag, försvar och läsare — och därför alltid i två register: mallens och bolagets eget.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Riskavsnittet i en årsredovisning är inte en artikel och inte ett kapitel i en bok — det är en genre, skriven under tre hänsyn samtidigt. Lagen kräver att väsentliga risker och osäkerhetsfaktorer beskrivs. Bolagets juridiska försvar vill att varje risk som kan inträffa också är listad — en dokumenterad risk kan inte efteråt påstås ha försummts. Och läsaren — analytikern, ägaren — vill förstå vad som faktiskt kan gå fel. Resultatet är nästan alltid en text i två register: ett standardregister av formuleringar som ser likadana ut hos hundratals bolag, och ett specificerat register där bolaget beskriver sina egna förhållanden med namn, tal och processer.\n\nSkillnaden mellan registerna är kursens grundläggande läskonst. Standardregistret säger vad branschen i allmänhet utsätts för: makro, valuta, ränta, konkurrens, regulation. Det är sant men nästan innehållslöst för analys — formulerat för att uppfylla krav, inte för att förmedla bedömning. Det specificerade registret säger vad det här bolaget, med dess kunder, anläggningar, skulder och avtal, faktiskt har för exponeringar. Familjens tidigare kurser gav ämnena: rs-01 vad risk är, rs-02 kundkoncentrationen, rs-03 samvariationen, rs-04 matrisen. Kursen här lär källkritiken: att det dokument som listar riskerna är skrivet av den som bär dem."
+          },
+          {
+            "type": "definition",
+            "content": "Två register — riskavsnittets standardregister innehåller formuleringar som är utbytbara mellan bolag och branscher (makro, valuta, omvärld); det specificerade registret innehåller beskrivningar knutna till detta bolags egna förhållanden — namngivna kunder, projekt, skulder, mått eller processer. Avsändarens intresse gör standardregistret sannolikt komplett men grunt, och det specificerade registret informativt men selektivt."
+          },
+          {
+            "type": "insight",
+            "content": "Läs avsnittet som ett förhör av bolagets självkännedom: standardregistret visar att bolaget vet vad lagen kräver — det specificerade registret visar att det vet vad det själv riskerar."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Standard mot specifik — fyra provbara tecken",
+        "intro": "Specificitet är inte en känsla utan fyra tecken som var och en kan kontrolleras mot texten: tal, namn, process och motåtgärd.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett sätt att skilja registren är att leta efter fyra tecken, var och ett provbart direkt i texten. Tecken ett — tal: en riskbeskrivning som innehåller en mängd ('två kunder svarar för 34 procent av intäkterna') kan vägas in i en matris; en utan tal ('kundanpassning och konkurrens') kan det inte. Tecken två — namn: namngivna kunder, anläggningar, projekt, länder eller avtal ('fabriken i Landskrona', 'uppgraderingen av plattformen') förankrar risken i verkligheten; 'operativ risk' gör inte det. Tecken tre — process: vem äger risken, hur följs den, hur ofta ('valutapolitiken beslutas av koncernfinance och följs månadsvis') är information om förmågan att hantera; en lista utan ägarskap beskriver övervakning som kanske inte finns. Tecken fyra — motåtgärd: vad bolaget gör åt risken, inte bara vad den är.\n\nRäkna tecknen per risk i avsnittet och en bild uppstår av sig själv: ett avsnitt där de flesta risker bär tre eller fyra tecken är skrivet för läsaren; ett där de flesta bär noll är skrivet för granskaren. Observera att antalet tecken inte är någon betygsskala av bolagets kvalitet i sig — ett ärligt bolag i en enkel bransch kan ha goda skäl att inte överdriva specificiteten — men det är en skala av textens analytiska användbarhet: bara det som bär tecken kan bli en rad i riskmatrisen (rs-04). Det är också här kursen möter övriga riskfamiljekurser: talen och namnen i det specificerade registret är samma material som rs-02 lär väga för koncentration och rs-03 för samvariation — skillnaden är att bolaget har pekat ut dem själv."
+          },
+          {
+            "type": "tabell",
+            "content": "Fyra specificitetstecken — kontrollerbara en och en: | Tecken | Fråga till texten | Exempel på träff | — | Tal | Finns en mängd att väga? | '34 procent av intäkterna' | — | Namn | Är risken förankrad i namngiven verklighet? | 'fabriken i Landskrona' | — | Process | Äger och följer någon risken? | 'följs månadsvis av koncernfinance' | — | Motåtgärd | Står vad bolaget gör? | 'hedge av 12 månaders exponering' |"
+          },
+          {
+            "type": "insight",
+            "content": "Specificitet har fyra provbara tecken — tal, namn, process, motåtgärd — och bara risker som bär minst ett av dem kan flyttas från text till matris; resten är register över vad lagen kräver, inte över vad bolaget bär."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Årsdiffen — årets mest informativa sida",
+        "intro": "En enda årsredovisning talar med två röster; två årsredovisningar talar med en — diffen mellan dem.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Standardregistret är i sig nästan oläsbart — men det blir läsbart i jämförelse. Årsdiffen är metoden: lägg förra årets riskavsnitt bredvid årets, rad för rad, och klassa varje risk i en av fyra klasser. Tillagd risk: ny i år — något har hänt i bolaget eller omvärlden som förtjänar en ny rad; fråga alltid vad som utlöste den. Borttagen risk: fanns förra året, finns inte i år — den svåraste klassen: är risken löst, såld, eller bara tyst? En borttagen risk utan förklaring i resten av rapporten är en av de starkaste fråge-posterna en årsredovisning kan generera. Omformulerad risk: samma risk, nya ord — mjukare eller hårdare? En omformulering från 'viss exponering' till 'begränsad exponering' utan att något mätbart ändrats är retorik, inte analys — medan omformuleringar som lägger till tal eller namn (kapitel 2:s tecken) är verkliga uppdateringar. Oförändrad risk: samma formulering år efter år — antingen en grundlig och väl förvaltad beskrivning, eller en rad ingen läser längre.\n\nRäkna upp klasserna och diffen blir ett mått på avsnittets liv: ett levande riskarbete visar rörelse — tillagda risker som matchar det som hänt, borttagna som matchar det som lösts. Ett avsnitt där nittio procent står oförändrat år efter år är skrivet en gång och kopierat sedan — vilket i sig är ett svar på frågan hur styrt riskarbetet är. Diffen är också den bästa ingången till rs-04:s matris: tillagda och omformulerade risker är kandidater till nya rader; borttagna är kandidater till uppföljningsfrågor; oförändrade är underlag för sannolikhetsbedömning över tid."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: hämta senaste och näst senaste årsredovisningen för ett bolag du följer i studion, kör årsdiffen på riskavsnitten och klassa varje rad — tillagd, borttagen, omformulerad, oförändrad. Fråga sedan: matchar tilläggen det som faktiskt hände bolaget det året? Matchar borttagningarna det som löstes? Var fanns den största luckan mellan diffen och verkligheten?"
+          },
+          {
+            "type": "insight",
+            "content": "En årsdiff säger mer än två årsläsen: tillagd risk visar vad som hänt, borttagen risk utan förklaring är en fråga värd att ställa, och ett avsnitt som aldrig rör sig avslöjar ett riskarbete som inte heller gör det."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Luckläsning — det som inte står i avsnittet",
+        "intro": "Riskavsnittet är bolagets urval — luckorna söks i dokumenten runt omkring: noter, relaterade parter, eventualförpliktelser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det specificerade registret är selektivt: bolaget väljer vad som lyfts fram. Luckläsningen är konsten att läsa valet. Tre ställen att leta. Noterna (km-004): eventualförpliktelser, garantier, pågående tvister och leasingåtaganden redovisas i noter — och varje not med en krona i den riktningen är en risk som huvudtexten kanske inte ens nämner, fastän den är mätbar. Relaterade parter (km-026): transaktioner med styrelse, vd eller större ägare säger något om bolagets styrningsrisker som riskavsnittet sällan formulerar. Balansräkningen själv (bk-01, ks-03): skuldens storlek, löptid och valutor är fakta om risk som redovisas siffermässigt — risktexten kan kalla finansieringen 'ändamålsenlig' medan siffrorna visar en refinansieringsvägg inom arton månader.\n\nRegeln är att riskavsnittet ska stämma med dokumenten runt omkring det — och att varje avvikelse är en fråga. Tvisten i noten men inte i risktexten; valutaskillnaden i balansräkningen men inte i risklistan; kundnamnet i intäktsnoten men inte i koncentrationsstycket — luckorna är sällan lögn, men alltid urval, och urvalet är information om vad bolagets ledning själv ser som sina verkliga risker. Här binds kursen också till grannfamiljerna: rk-11 (bedrägeririsk) lär att den medvetet vilseledande rapporten är en egen kategori — denna kurs förutsätter den ärliga rapporten och lär ändå läsa den kritiskt, eftersom urval sker även i goda avsikter. Och rs-03 (dold samvariation) är själva modellen för luckläsning: den risk som aldrig skrivs ner kan vara den som delas med hela branschen."
+          },
+          {
+            "type": "insight",
+            "content": "Luckorna söks inte i texten utan bredvid den: en eventualförpliktelse i noten, en relaterad part, en valutaförskjutning i balansräkningen — varje faktum i omgivande dokument utan motsvarighet i riskavsnittet är en fråga värd mer än de tio mest generiska raderna."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — fyra missläsningar av risktext",
+        "intro": "Fällorna bor i läsarens huvud lika mycket som i texten: fullständighets-tro, risktvätt, kortläsning och bokstavstro.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett — fullständighetstro: att avsnittet är en komplett lista. Den som listat allt har inte specificerat något, och den som specificerat har valt ut — ingen av texterna är en garantiförteckning. Rätt läsning: avsnittet är bolagets eget urval, inte en checklista att bocka av. Fälla två — risktvätt: att många ord likställs med mycket risk, eller tvärtom att ett kort avsnitt betyder liten risk. En lång generisk lista kan tvätta ett bolag som gör sig bra juridiskt men inte analytiskt; ett kort specifikt avsnitt kan vara hederligt. Längden är inte budskapet — specificitetstecknen är. Fälla tre — kortläsning: att läsa årets avsnitt utan diff och omgivning. Utan årsdiffen (kapitel 3) syns inte rörelsen, och utan noterna (kapitel 4) syns inte urvalet — enbart årets text är tre fjärdedelar mindre information än de fyra verktygen tillsammans. Fälla fyra — bokstavstro: att tro att formuleringens skala är verklighetens skala. 'Begränsad exponering' är en bedömning av den som bär risken, inte ett mätresultat — värdet i en matris ska komma från läsarens egen sannolikhet och konsekvens (rs-04), med bolagets formulering som ett av flera indata. Som alltid i spåret: hela läsningen är utbildning i metod — aldrig investeringsråd och aldrig en uppmaning att handla: läsningen avgör inte vad någon bör göra med sina pengar, bara hur dokumentet ska förstås."
+          },
+          {
+            "type": "insight",
+            "content": "Fyra fällor — fullständighetstro, risktvätt, kortläsning, bokstavstro — har ett gemensamt botemedel: behandla avsnittet som urval och bedömning från riskenbäraren, aldrig som mätning eller garanti."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — från avsnitt till matris",
+        "intro": "Arbetsflödet i en enda kedja: fyra tecken, årsdiff, luckor — och en matris rad för rad.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kursens verktyg samlas i ett arbetsflöde. Steg ett: läs avsnittet och markera varje risk som bär minst ett specificitetstecken (kapitel 2) — det är kandidaterna. Steg två: kör årsdiffen (kapitel 3) — tillagda och omformulerade risker med tecken går in som nya rader, borttagna utan förklaring blir uppföljningsfrågor, oförändrade med tecken bär den längsta tidsserien för sannolikhetsbedömning. Steg tre: läs luckorna (kapitel 4) — noter, relaterade parter och balansräkning kompletterar med rader bolaget inte skrev. Steg fyra: översätt till rs-04:s matris — sannolikhet och konsekvens på varsin femgradig skala, produkten en poäng mellan 1 och 25; råmaterialet från texten, bedömningen från läsaren.\n\nEtt räknat exempel på det sista steget, med tal ur denna kursens övningar: sju risker extraherade ur avsnittet — två bär fyra tecken, två två tecken, tre noll tecken (strukna som inte matrisvärda). De fyra kvarvarande poängsätts på sannolikhet gånger konsekvens: kundkoncentration 4 × 4 = 16, valutaläge 5 × 2 = 10, nytt projekt 2 × 5 = 10, råvarupris 3 × 2 = 6. Summan av poängen 42 på maximalt 100 (fyra risker × 25) — inte ett mått att jämföra mellan bolag, men inom bolaget komplett mätbar: nästa års samma räkning visar om riskbilden växer eller krymper. Det är AKM2:s riskdimension i praktiken: betyget ska vila i dokumentläsning, inte bara i nyckeltal — och källkriteriet är specificitet, diff och luckor. Kursen kröner därmed risktrappan: rs-01 grunden, rs-02 och rs-03 de strukturella riskerna, rs-04 verktyget — och denna kurs råmaterialets källkritik."
+          },
+          {
+            "type": "insight",
+            "content": "Kedjan fyra tecken → årsdiff → luckor → matrisrad gör riskavsnittet analytiskt användbart: varje rad i rs-04:s matris ska kunna spåras till en formulering, en diff eller en lucka — annars är den gissning."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch ägnade kapitel i One Up on Wall Street åt att läsa bolagets egna dokument med skepsis mot det fint formulerade: hans råd att lämna berättelsen och leta efter vad som faktiskt kan gå fel är riskläsning i sin enklaste form. Lynchs princip att 'om du inte kan förklara vad bolaget gör kan du inte se dess risker' är denna kurs specificerad: specificitetstecknen — tal, namn, process, motåtgärd — är precis det som förklarar vad bolaget gör och därmed vad som kan gå fel.",
+    "grahamSection": "Benjamin Grahams begrepp säkerhetsmarginal (km-030) börjar i en ärlig bild av det som kan gå fel — och Grahams eget arbete med att läsa årsredovisningars finstilt (noterna, eventualförpliktelserna) är luckläsningens födelseplats. Hans varning för att acceptera ledningens formuleringar till punkt och pricka är kursens kärna i en mening: bedömningen ska vara läsarens, med dokumentet som material — aldrig tvärtom.",
+    "ak1Section": "I AK1A:s metodik kröner denna kurs risk-familjens trappa (rs-01 grunden, rs-02 koncentrationen, rs-03 samvariationen, rs-04 matrisen) med råmaterialets källkritik: AKM2:s riskdimension betygsätter förståelsen av bolagets riskbild, och den bilden börjar i bolagets eget riskavsnitt — läst med specificitetstecken, årsdiff och luckor. Brobyggen: mot km-002 (dokumentet i sin helhet), km-004 (noterna som luckkälla), km-026 (relaterade parter), rk-11 (den medvetet vilseledande rapporten som eget ämne) och bk-01/ks-03 (balansräkningen som riskkälla)."
+  },
   "mt-01-vad-ar-en-moat": {
     "slug": "mt-01-vad-ar-en-moat",
     "category": "MOAT",
@@ -202559,7 +202723,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Moat-erosion — när vallgraven grävs igen",
-    "summary": "Fortsetzungskursen om moats: hur varaktiga försvar nöts ner av teknik, reglering och ny konkurrens — och hur erosionen syns i marginaler, avkastning och försvarskostnader långt före katastrofen.",
+    "summary": "Fortsättningskursen om moats: hur varaktiga försvar nöts ner av teknik, reglering och ny konkurrens — och hur erosionen syns i marginaler, avkastning och försvarskostnader långt före katastrofen.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -203027,7 +203191,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Förväntningsanalys — vad står redan i kursen?",
-    "summary": "Fortsetzungskursen om katalysatorer: metoden att uppskatta vad marknaden redan prissatt — konsensus, implicita förväntningar i multipeln, förväntansträdet före händelsen och kalibreringen av det egna omdömet över tid.",
+    "summary": "Fortsättningskursen om katalysatorer: metoden att uppskatta vad marknaden redan prissatt — konsensus, implicita förväntningar i multipeln, förväntansträdet före händelsen och kalibreringen av det egna omdömet över tid.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -203175,6 +203339,166 @@
     "lynchSection": "Peter Lynch talade om att veta varför man äger en aktie — berättelsen — och hans varningar för story-bolag utan innehåll är i förväntningstermer en varning för berättelser som prissatts som sanningar. Lynch pläderade också för att bedöma bolagets verksamhet i stället för att jaga kortsiktiga kursrörelser; förväntningsanalysen är den disciplinens tekniska sida — den som gör det möjligt att läsa en reaktion utan att låta den diktera bilden.",
     "grahamSection": "Benjamin Grahams röstmaskin och viktmaskin ger förväntningsanalysen dess äldsta ram: kort sikt drivs priset av röster — förväntningar, stämningar, reaktioner — och lång sikt av vikten, det fundamentala innehållet. Grahams marginal är också här en uttrycklig försiktighet: den som inte kan uppskatta vad som är prissatt med någon trygghet har extra skäl att kräva avstånd mellan pris och värde. Att läsa förväntningar är att förstå röstmaskinens humör — inte att tro på den.",
     "ak1Section": "I AK1A:s metodik är den här kursen KATALYSATOR-familjens metodblock: V16–V18 fördjupar händelsetyperna, förväntningsanalysen ger dem det gemensamma hantverket — och AKM2:s tidshorisonter väger hur mycket förväntningarna ska bära på varje horisont. Med kalibreringsloopen på plats blir varje rapport ett mättillfälle för det egna omdömet, och varje kursreaktion läsbar som information om vad marknaden trodde — vilket är själva grundresonemanget i metodens korta horisonter."
+  },
+  "kt-03-katalysatorkedjor": {
+    "slug": "kt-03-katalysatorkedjor",
+    "category": "KATALYSATOR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa",
+    "summary": "Avanceradkursen om katalysatorer: andra ordningens tänk — händelsen själv (utdelningssänkningen, spin-offen, indexbytet) är bara första steget. Kursen lär de fyra flödesmekanikerna som förvandlar en händelse till en kedja av följdeffekter, hur en kedja kartläggs steg för steg — och varför kedjans sammanlagda kursrörelse ofta är större än första stegets motiverade värdeeffekt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Skilja första ordningens effekter (händelsens direkta värdepåverkan) från andra ordningens effekter (de flöden och beslut händelsen utlöser hos andra aktörer) · Känna igen de fyra kedjedrivkrafterna — index- och fondflöden, tvingad försäljning genom ägarens regelverk, analytikermodellers kaskader och belåningens mekanik · Räkna en kedjas flödesstorlek mot aktiens omsättning i ett genomräknat exempel: 1,2 miljarder kronor tvångsförsäljning mot 40 miljoner kronor dagsomsättning är trettio dagars normal handel · Följa fallet utdelningssänkning genom åtta led — från beslutet till den eftande kedjan efter flödet · Skilja kedjans flödeseffekt (tillfällig trycksättning) från första ordningens värdeeffekt (bestående omvärdering) och veta att gränsen mellan dem är analysens svåraste fråga · Kartlägga en kommande händelses kedja i fem steg som förberedelse inför en rapportläsning — som metodunderlag, aldrig som uppmaning.",
+    "why": "Katalysatorfamiljen har lärt vad en händelse är (kt-01) och hur marknadens prissatta förväntningar vägs mot den (kt-02) — men mellan händelsen och kursen finns en mekanik som ingen av kurserna äger: kedjan. En utdelningssänkning är inte enbart en lägre utdelning; den utlöser försäljning hos ägare vars regelverk inte längre tillåter innehav, omräkningar hos utdelningsinriktade index, nedjusterade modeller hos analytiker och belåningskrav hos ägare som lånat mot aktien. Det är kedjan som förklarar den återkommande empirin att kurser ibland faller mer än händelsens egna värdeeffekt motiverar — och ibland inte alls, när flödena saknas. Kursen fyller familjens sista nivålucka med just detta: andra ordningens tänk, en färdighet som kräver både kt-01:s händelsebegrepp och kt-02:s förväntningsläsning som grund — och som inte behandlas i v-kursernas katalysatortyper (v16, v17, v18).",
+    "history": {
+      "origin": "Andra ordningens tänk är äldre än den moderna marknaden: Keynes liknade aktiemarknaden vid en skönhetstävling där priserna sätts av vad andra tror att andra tror — kedjetänkandets filosofiska rot. I praktiken blev kedjor synliga först när de institutionella ägarna blev normen efter 1960-talet: när pensionsfonder och förvaltare med mandat började äga mer än privatpersoner uppstod en ny mekanik — ägare som måste handla av regler, inte av övertygelse.",
+      "evolution": "Tre vågor byggde ut kedjorna. Indexfondernas genombrott på 1980-90-talen (am-02) knöt kurser till medlemskap: inkludering och uteslutning ur ett index blev handelstvång för en hel ägarklass. Kvantitativa strategier och stoppnivåer gjorde försäljning villkorsstyrd — en kursnivå blev en händelse i sig. Och belåning mot aktier gjorde fallande kurser till nya försäljningsorder genom marginalkrav. Finanskrisen 2008 och mars 2020 visade kedjorna i sin renaste form: tvingad försäljning avlöste tvingad försäljning i tillgångar som inte hade några fundamentala nyheter alls den dagen.",
+      "modern": "I dag är kedjorna snabbare och mer mätbara: indexombalanseringar publiceras i förväg, omsättningsstatistik finns per aktie (am-01), och ägarstrukturens regelverk — index, utdelningsmandat, belåningsgränser — går att läsa ut av fondernas dokument. Skillnaden mot tidigare är att kedjan numera ofta är delvis prissatt i förväg (kt-02:s fält), vilket gör konsten dubbel: se kedjan och bedöm hur mycket av den som redan står i kursen. Det är denna kursens kärna: händelsen är första ordningen, flödena är den andra — och analysen som stannar vid första ordningen ser bara halva bilden."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — första och andra ordningens tänk",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Kedjemekanik — fyra drivkrafter bakom flödena",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Fallet utdelningssänkning — en kedja i åtta led",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Strukturella kedjor — indexbyte, spin-off och prognosindragning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — kedjedeterminism och tre missläsningar till",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — att kartlägga en kedja i fem steg",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — första och andra ordningens tänk",
+        "intro": "En händelse har två verkligheter: vad den är värd i sig — och vad den får andra att göra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första ordningens tänk läser händelsen rakt: bolaget sänker utdelningen från 6,00 till 3,00 kronor per aktie — den direkta värdeeffekten är den minskade kassaflödesströmmen till ägarna, och en modell kan räkna om vad det är värt. Det är nödvändigt men inte tillräckligt. Andra ordningens tänk ställer nästa fråga: vilka beslut utlöser händelsen hos andra? En utdelningsfond med mandat att enbart äga utdelningsbetalande bolag kan inte behålla innehavet oavsett vad den tror om bolagets framtid — och den är då en blivande säljare som inte bryr sig om pris. En analytiker med en utdelningsbaserad värderingsmodell måste räkna om — och hennes nya riktkurs blir ett nytt informationsflöde. En ägare som belånat aktien får ett marginalkrav när kursen faller — och blir säljare just för att kursen föll.\n\nDetta är katalysatorkedjans definition: en händelse vars effekter inte stannar vid sin direkta värdepåverkan utan fortsätter genom andras regelverk, modeller och kontrakt. Kedjan förklarar två empirier som första ordningens tänk inte når: att kurser ibland rör sig mer än händelsen motiverar (kedjan har tänt) och att de ibland knappt rör sig alls (flödena saknas eller var prissatta). kt-01 gav händelsebegreppet, kt-02 gav förväntningspriset — denna kurs äger steget efter: mekaniken mellan händelsen och kursen."
+          },
+          {
+            "type": "definition",
+            "content": "Katalysatorkedja — en händelse som genom andra aktörers regelverk, modeller eller kontrakt utlöser en sekvens av följdeffekter (tvingad försäljning, omingång hos index, nedjusterade riktkurser, belåningskrav), där kedjans sammanlagda kursrörelse kan avvika från händelsens direkta värdeeffekt — i båda riktningar."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan som skiljer ordningarna åt: 'vad är händelsen värd?' är första ordningen; 'vilka måste handla på grund av händelsen — och hur stora är deras flöden mot omsättningen?' är den andra."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Kedjemekanik — fyra drivkrafter bakom flödena",
+        "intro": "Kedjor drivs inte av känslor utan av regelverk: fyra mekanismer gör människor till köpare och säljare utan prisåsikt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Drivkraft ett — index- och fondflöden (am-02). Ett indexmedlemskap är ett handelstvång: utesluts bolaget måste indexföljare sälja, inkluderas det måste de köpa — oavsett vad de anser om värdet. Konstruerat exempel med mekanikens proportioner: ett index med sammanlagt 2 000 miljarder kronor i marknadsvärde, där bolaget X utgör 2,0 procent. Fonder som följer indexet förvaltar sammanlagt 60 miljarder i indexet — deras sammanlagda innehav av X är 2,0 procent av 60 miljarder = 1,2 miljarder kronor. X omsätter i genomsnitt 40 miljoner kronor per handelsdag. Flödet 1,2 miljarder delat med 40 miljoner är 30 handelsdagar av normal omsättning: uteslutningen skapar en säljtrycksperiod på motsvarande en och en halv månad — inte för att någon tror att bolaget är sämre, utan för att regelverket säger sälj. Drivkraft två — tvingad försäljning genom ägarens regelverk: utdelningsmandat, investeringspolicy, fondkategorins regler. Samma mekanik som indexen men med andra trösklar: händelsen behöver inte vara stor, bara tillräcklig för att träffa en regel.\n\nDrivkraft tre — analytikermodellernas kaskader. En prognosändring hos ett bolag ändrar indata i många modeller samtidigt, och riktkurserna publiceras i en svärm: det egna analysarbetet är första ordningen, men svärmens sammanlagda signal blir en andra ordningens kraft som förstärker eller dämpar kursen. Drivkraft fyra — belåningens mekanik: ägare som lånat mot aktier måste lägga pant eller sälja när kursen faller, och deras försäljning pressar kursen ytterligare — den mekanik som gör fall till fall. Notera gemensamnämnaren: ingen av de fyra handlar på värdering. Kedjekraften är just det prismekaniska som är fristående från frågan vad bolaget är värt — vilket är hela skillnaden mot moat- och värderingskurserna (mt-01, vr-02) och anledningen till att kedjor kan vända: när flödet eftar ut återstår värderingen."
+          },
+          {
+            "type": "insight",
+            "content": "De fyra drivkrafterna — indexflöden, regelverkstvång, modellkaskader, belåning — har en gemensam nämnare: de handlar mot eller utan prisåsikt. Kedjekraft är prismekanik, inte värdering."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Fallet utdelningssänkning — en kedja i åtta led",
+        "intro": "Ett beslut på styrelsemötet blir en svit av mekaniska steg — från beslut till efterspel, åtta led lågt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Led ett — beslutet: bolaget sänker utdelningen, i exemplet från 6,00 till 3,00 kronor. Första ordningens värdeeffekt: kassaflödet till ägarna halveras; en enkel värdering av utdelningsströmmen (km-063, km-064) ger en motiverad nedre värdejustering. Led två — mandatstöten: utdelningsinriktade fonder och strategier (ud-03, ud-06) har regelverk som utesluter icke-utdelande eller sänkande bolag — en del av dem måste sälja, och det inom en bestämd tid efter beslutet. Led tre — flödespressen: deras försäljning träffar marknaden i samma riktning samtidigt; mot omsättningen (kapitel 2:s räkning) blir trycket en fråga om innehavens storlek. Led fyra — index- och kategoriomräkning: utdelningsindex och kategorilistor räknas om vid nästa ombalansering — datumet är känt i förväg, och flödet är därmed delvis förutsägbart. Led fem — modellkaskaden: analytiker med utdelningsbaserade modeller publicerar nya räkningar och riktkurser i dagarna efter; svärmen förstärker eller nyanserar bilden. Led sex — belåningen: har ägare belånat innehavet väcker det nya marginalkrav, och deras försäljning är prisokänslig. Led sju — stopp och systematik: kursnivåer triggar stoppförsäljningar och systematiska strategier — nya säljorder skapade av kursen själv. Led åtta — efterspelet: när flödena eftar ut återstår frågan vad bolaget är värt med den nya utdelningen — och här skiljer sig historiens fall (ud-04 visar fällorna i att läsa sänkningen ensam): sänkningen är ofta ett symptom, och den fortsatta analysen hör hemma i balansräkningen (ks-03, st-04).\n\nKedjans pedagogiska poäng är kvantiteten: leden två till sju är flöden utan värderingsåsikt, och deras summa kan röra kursen mer än led ett motiverar — på vägen ner eller, i spegelvända fall (återinförd utdelning, inkludering i index), på vägen upp. Kursen lär mekaniken, inte en slutsats om att en kurs 'bör' återhämta sig: det är analysens uppgift att skilja flödesrörelsen från värderingen, fallet för fallet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj en faktisk utdelningssänkning som skett i ett bolag du kan läsa om i studions universum. Kartlägg kedjans åtta led: Vilka ägarkategorier innehade aktien? Hur stor var kursrörelsen dag ett, vecka ett, månad ett — och hur mycket av den första månadens rörelse kunde led ett motivera? Var flödena synliga i omsättningen?"
+          },
+          {
+            "type": "insight",
+            "content": "Av kedjans åtta led är sex flödesled utan värderingsåsikt — deras summa är trycket, och efterspelet tillhör värderingsanalysen: kedjan förklarar rörelsens storlek, inte dess riktning på sikt."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Strukturella kedjor — indexbyte, spin-off och prognosindragning",
+        "intro": "Tre återkommande händelsetyper vars kedjor är extra läsbara — därför att deras flöden är schemalagda eller kontraktsskrivna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Indexbytet är den mest schemalagda kedjan: beslutet om inkludering eller uteslutning tillkännages i förväg, effektdagen står i kalendern, och flödestvånget (kapitel 2:s exempel) är beräkningsbart av vem som följer indexet. Det som gör kedjan analytiskt intressant är asymmetrin: ägare som måste köpa vid inkludering betalar ofta premie, och ägare som måste sälja vid uteslutning accepterar ofta rabatt — båda flödena är prisblind mekanik. Spin-offen är den strukturella kedja där ett bolag delas i två och ägarbasen tvingas välja: index som bara får äga ena halvan, fonder med mandat för den ena typen men inte den andra — de tvingade flödena kan pressa eller lyfta halvorna var för sig, oberoende av deras värde. Ofta följer en omvärdering när de nya ägarbaserna sätter sig (vr-02:s normaliserade multipler är verktyget för att läsa den).\n\nPrognosindragningen är den tredje typen: bolaget drar in eller sänker sin prognos, och kedjan går genom modellkaskaden (kapitel 2:s tredje drivkraft) — men med en andra ordningens twist: multipeln själv kan komma att sättas om (vr-02, vr-03), eftersom marknadens bild av resultatets stabilitet förändras. En indragen prognos kan alltså ge dubbel effekt: lägre förväntade tal och lägre multiplar på dem — och spegelvänt vid överraskningar på plus-sidan. Gemensamt för de tre typerna: händelsedatumen är kända eller snart kända, flödena är identifierbara och kedjan är därför den mest studerbara av alla. Skillnaden mot v-kursernas katalysatorer (v16 produktlanseringar, v17 avtal, v18 regulatoriska) är att dessa tre är flödeskedjor vars steg är regelverksdragna — därför hör de hemma här, i kedjeämnet, inte i händelsetyperna."
+          },
+          {
+            "type": "insight",
+            "content": "De schemalagda kedjorna — indexbyte, spin-off, prognosändring — är kedjeanalysens skolrum: flödena är kända i förväg, vilket gör dem mätbara, och därmed också mönster som går att lära sig utan att någonsin bli förutsägelser."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — kedjedeterminism och tre missläsningar till",
+        "intro": "Den vanligaste fällan är inte att missa kedjan utan att tro att den alltid tänder.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett — kedjedeterminismen: att en händelse av viss typ alltid utlöser hela kedjan. Kedjan tänder bara om flödena finns: en utdelningssänkning i ett bolag som saknar utdelningsmandat-ägare och indexkopplingar är bara första ordningens värdeeffekt; en uteslutning ur ett index utan följare är en administrativ notis. Kedjekraften bor i ägarstrukturen, inte i händelsetypen. Fälla två — att blanda samman flödeseffekt och värdeeffekt: en kurs som fallit trettio procent efter en händelse som motiverar tio procent har inte 'bevisat' att resten är overreaktion — det är en hypotes, och prövningen kräver värderingsarbetet (vr-02, km-030). Den som mekaniskt räknar kedja = overreaktion har bytt en dogm mot en annan. Fälla tre — tidsfönstret: kedjor spelar ut sig över dagar, veckor och ibland månader (indexombalanseringar vid kvartalsskiften, fondflöden vid månadsskiften) — att läsa dagskursen som kedjans slut är som att döma en bok efter första kapitlet. Fälla fyra — att glömma att kedjan kan vara prissatt i förväg: när uteslutningsdatumet är känt månader i förväg har marknaden haft tid att handla före flödet (kt-02:s förväntningsfält gäller även kedjor), och själva effektdagen kan bli en icke-händelse. Kursens ram är genomgående utbildning om mekanik: att förstå hur en kedja ser ut är kunskap om hur marknaden fungerar — inte en handelsstrategi och aldrig en uppmaning att positionera sig efter flöden."
+          },
+          {
+            "type": "insight",
+            "content": "Kedjan är villkorlig: ägarstrukturen avgör om den tänder, värderingsarbetet avgör vad som är overreaktion, kalendern avgör när flödena kommer — och förväntningarna kan ha hunnit före. Fyra villkor, ingen automatik."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — att kartlägga en kedja i fem steg",
+        "intro": "Kedjeanalysens hantverk är en checklista i fem steg — före, under och efter en händelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett — identifiera första ordningen: vad är händelsens direkta värdeeffekt i tal? (Utdelningen minskar med så många kronor; prognosen sänks med så många procent — räkna om det motiverade värdet först, annars finns ingen baslinje att skilja flödesrörelsen ifrån.) Steg två — kartlägg ägarstrukturens regelverk: vilka index ingår aktien i, vilka fondkategorier äger den, hur stor andel av omsättningen är institutionell — svaret avgör om kedjan överhuvudtaget kan tända. Steg tre — uppskatta flödesstorleken mot omsättningen (kapitel 2:s metod: tvångsflöde delat med dagsomsättning = tryckperiodens längd; 1,2 miljarder mot 40 miljoner är trettio dagar). Steg fyra — sätt tidfönstret: vilka datum är kända (effektdag, ombalansering, rapportdag) och vilka flöden landar vid dem? Steg fem — skilj och bokför: efter händelsen, lär skillnaden mellan den motiverade rörelsen och den faktiska — det är kedjans signatur — och låt värderingsarbetet (vr-02) avgöra vad som består.\n\nDetta är katalysatordimensionens avancerade nivå i AKM2:s metodik: betygsättningen avser förståelsen av en händelses mekanik — vad som hände, vilka som tvingades handla, hur stora flödena var — aldrig förmågan att förutsäga kursen. Kursen kröner därmed katalysatortrappan: kt-01 händelsebegreppet, kt-02 förväntningarnas pris — och denna kurs steget mellan händelse och kurs, den mekanik som gör att samma händelse kan ge olika kursrörelser i två bolag med två ägarstrukturer. Som avslutning alltid i spåret: detta är utbildning i hur marknadens mekanismer fungerar, inte råd om vad någon bör göra — metoden är läsningen, besluten är var och ens eget."
+          },
+          {
+            "type": "insight",
+            "content": "Fem steg — värdeeffekt, ägarkartläggning, flödesuppskattning, tidfönster, efterspelsredovisning — gör andra ordningens tänk till ett hantverk: kedjan beskriver mekaniken, värderingen beskriver konsekvensen, och metodiken håller dem isär."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch varnade i One Up on Wall Street för att lämna sitt eget omdöme åt andras flöden: hans berättelse om institutionella ägare som måste sälja av regler — och därför lämnar pris kvar som ingen analysmotivering bär — är katalysatorkedjan i prosa. Samtidigt är Lynch den tydligaste förespråkaren för att skilja flödets pris från värdets: hans metod att läsa bolaget bakom kursrörelsen är exakt detta kursens femte steg — avgör vad som består när flödet eftar.",
+    "grahamSection": "Benjamin Grahams bild av marknaden som manisk motpart — mr Market — som dagligen erbjuder priser drivna av humör snarare än värde är kedjemekanikens filosofiska grund: de fyra drivkrafterna är humörets institutionella skepnad. Grahams säkerhetsmarginal (km-030) blir i kedjans språk en fråga om bestånd: en kursrörelse som är flödesburen och inte värdeburen är definitionsmässigt inte en förändring av det underliggande värdet — men Grahams eget tillägg gäller: det är värderingsarbetet, inte antagandet, som avgör vilken av dem en rörelse är.",
+    "ak1Section": "I AK1A:s metodik kröner denna kurs katalysator-familjens trappa (kt-01 händelsen, kt-02 förväntningarna) med andra ordningens mekanik — steget mellan händelse och kurs som AKM2:s katalysatordimension betygsätter i sin avancerade del: förståelsen av flöden, inte förutsägelsen av dem. Brobyggen: mot am-02 (indexens mekanik), am-01 (omsättning som flödesmätare), ud-04 (utdelningsfällorna som händelseexempel), vr-02 (normaliserade multipler när kedjan eftar), km-063/km-064 (utdelningsströmmens värde) och bf-kursernas beteendeläger (km-035:s flockbeteende — här i institutionell skepnad)."
   },
   "am-01-likviditet-och-spread": {
     "slug": "am-01-likviditet-och-spread",
@@ -203339,7 +203663,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Index och passivt ägande — hur marknadens mått blev en vara",
-    "summary": "Fortsetzungskursen om marknadens prakt: vad ett aktieindex egentligen är, hur det konstrueras — pris- mot värdeviktning, fritt flöde — och vad som händer inuti en indexfond: replikering, rebalansering, indexbyten och det mekaniska flödets konsekvenser.",
+    "summary": "Fortsättningskursen om marknadens prakt: vad ett aktieindex egentligen är, hur det konstrueras — pris- mot värdeviktning, fritt flöde — och vad som händer inuti en indexfond: replikering, rebalansering, indexbyten och det mekaniska flödets konsekvenser.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -203963,7 +204287,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "Normaliserade multipler — räkna bort cykeln",
-    "summary": "Fortsetzungskursen om värdering: när vinstbasen själv svänger är råa multipler mest brus — här lär du dig konsten att normalisera resultatet över en cykel innan multipeln läses, från median-EBIT till aktiens eget historiesnöre.",
+    "summary": "Fortsättningskursen om värdering: när vinstbasen själv svänger är råa multipler mest brus — här lär du dig konsten att normalisera resultatet över en cykel innan multipeln läses, från median-EBIT till aktiens eget historiesnöre.",
     "minutes": 24,
     "xp": 50,
     "level": "Avancerad",
@@ -204759,7 +205083,7 @@
     "chapterCount": 6,
     "totalMinutes": 24,
     "title": "ROIC — lönsamhet utan hävstångens makeup",
-    "summary": "Fortsetzungskursen om lönsamhet: avkastning på investerat kapital — måttet som mäter verksamheten själv, oberoende av hur den finansierats — och spridningen mot kapitalkostnaden som avgör om tillväxt skapar eller förstör värde.",
+    "summary": "Fortsättningskursen om lönsamhet: avkastning på investerat kapital — måttet som mäter verksamheten själv, oberoende av hur den finansierats — och spridningen mot kapitalkostnaden som avgör om tillväxt skapar eller förstör värde.",
     "minutes": 24,
     "xp": 50,
     "level": "Intermediär",
@@ -204907,5 +205231,169 @@
     "lynchSection": "Peter Lynch delade bolagen i tröga och snabba växare, men hans bärande tanke här är en annan: följ verksamheten, inte berättelsen om den. Lynch lyfte fram bolag som kunde växa utan att binda massor av kapital — de där vinsterna inte behövde ätas upp av nya fabriker innan de blev ägarnas. ROIC är den tanken formulerad som mått: hur mycket kapital verksamheten kräver för att leva och växa. Hans respekt för 'tråkiga' bolag med stadig avkastning är i ROIC-språket just uthållig spridning mot kapitalkostnaden.",
     "grahamSection": "Benjamin Grahams arbetssätt var att läsa rådata med egna ögon och misstro det glansiga — hans berömda varning för bolag som imponerar med avkastning tjänad på lånad grund är Du Pont-traditionens äldsta röst. Grahams eget mått på företagets 'earning power' — normaliserad, uthållig resultatförmåga — är ROIC-idéns föregångare: att fråga vad verksamheten faktiskt presterar, beräknat försiktigt och över en hel cykel, innan något pris sätts mot den.",
     "ak1Section": "I AK1A:s metodik är denna kurs LÖNSAMHET-familiens kvalitetsblock: V07–V09 mäter marginalerna, ln-01 plockar isär ROE, och ROIC sätter den sammanvägda avkastningen mot kapitalkostnaden — det värde som AKM2:s lönsamhetsdimension betygsätter när finansieringens effekter skalats bort. Spridningen mot kapitalkostnad är dessutom brobygget i andra riktningen: mot moat-dimensionen (varaktig spridning = vallgrav i siffror) och mot värderingen (stabil hög ROIC motiverar premie i multipelgapets logik)."
+  },
+  "ma-01-transmissionsmekaniken": {
+    "slug": "ma-01-transmissionsmekaniken",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering",
+    "summary": "Avanceradkursen i makroekonomi och ränta — kategoriens första: transmissionsmekaniken, kedjan som förbinder centralbankens styrränta med hushållens räntekostnader, företagens resultat och aktiernas värderingar. Kursen lär de två huvudkanalerna (priskanalen och värderingskanalen), den långa och variabla eftersläpningen, transmissionen i en liten öppen ekonomi med Sverige som exempel — och de fyra frågor som översätter makrobilden till bolagsläsning.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Beskriva transmissionen som en kedja med fem länkar — penningmarknad, kredit, efterfrågan, resultat, värdering — där varje länk har sin egen eftersläpning och sina läckor · Räkna priskanalen i två genomräknade exempel: ett hushåll med tremiljonersbolån där två procentenheters höjning kostar 60 000 kronor om året, och ett bolag där 300 miljoner rörlig upplåning vid samma höjning äter 6 miljoner av resultatet — 10 procent av ett resultat före skatt på 60 miljoner · Räkna värderingskanalen på en evighetsankommande kassaflödesström: 10 miljoner per år till 8 procent diskonteringsränta är 125 miljoner, till 10 procent är 100 miljoner — 20 procents värdefall på två procentenheter · Redogöra för diskonteringsräntans tre delar — realränta, inflationsförväntningar och riskpremie — och varför de rör sig olika · Förklara Sveriges transmission som en liten öppen ekonomi: rörliga bolån gör priskanalen snabb, och omvärldens styrräntor tränger igenom både via kronan (km-058) och via kapitalmarknadens avkastningskrav · Ställa de fyra bolagsfrågor som översätter makrokedjan till analys — rörlig ränta i balansräkningen, räntekänslig efterfrågan, diskonteringskänslig värdering, valutakanal — och koppla dem till känslighetsanalysen (st-02) och normaliseringen (vr-02).",
+    "why": "Familjen makroekonomi och ränta har fem kurser — räntan (km-054), inflationen (km-055), centralbankerna (km-056), konjunkturcyklerna (km-057) och valutorna (km-058) — men ingen enda på avancerad nivå, och luckan är precis den som märks när kurserna ses tillsammans: varje kurs äger en bit av makromekaniken men ingen äger det som binder samman bitarna — transmissionskedjan från beslut i centralbanken till siffror i en kvartalsrapport. Frågan 'vad gör en räntehöjning med mitt bolag?' har inget svar i en enda av familjens kurser: priset på kredit är km-054, verktygen är km-056, cykeln är km-057 — men kedjan mellan dem, med sina eftersläpningar och sina två skilda kanaler (resultatet och multipeln), är ett eget hantverk. Kursen fyller den luckan med kategoriens första avancerade kurs: en genomräknad kedja från styrränta till bolagsläsning, som kröner familjen och bygger broar till lönsamhetstrappan (ln-03), riskfamiljen (rk-05, rk-08, rs-03) och värderingen (vr-02).",
+    "history": {
+      "origin": "Transmissionstänkandet har en svensk födelseplats: Knut Wicksell beskrev 1898 den kumulativa processen — hur en bankränta som ligger under den naturliga avkastningen på kapital sätter igång en kedja av kredit, investeringar och prisstegring som inte stannar förrän räntan justeras. Hans fråga — hur en penningränta sprider sig till ekonomin — är transmissionsmekanikens första formulering, och Stockholmsskolan bar den vidare in i 1900-talet.",
+      "evolution": "Keynesianerna byggde ut kedjan med nya länkar: Tobin porträtterade hur aktiernas priser påverkar företagens investeringar (q-kvoten), Modigliani hur hushållens förmögenhet påverkar konsumtionen — plötsligt var börsen själv en transmissionslänk, inte bara dess pris. Milton Friedman tillförde empirins varning: eftersläpningarna är långa och variabla — verkningarna av en ränteförändring sprider sig över år, inte veckor, och aldrig två gånger likadant. Bernankes och Gertlers kreditkanaler moderniserade förståelsen av varför kedjan läcker: bankernas utlåning följer inte styrräntan mekaniskt.",
+      "modern": "Räntecykeln 2022–2023 blev transmissionens livesända generalrepetition: styrräntor världen över höjdes från noll till nivåer som ingen sett på decennier — i Sverige från noll till fyra procent på knappt två år — och kedjans länkar syntes en efter en: rörliga bolån fick hushållens räntekostnader att stiga inom månader, värderingskanalen pressade långa värderingsmultipler, och eftersläpningen gjorde att resultatsidan reagerade först med över ett års dröjsmål. I AKM1:s metodik är makrobilden kontexten kring varje bolagsläsning — och denna kurs är själva kopplingen mellan dem."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — kedjan med fem länkar",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Priskanalen — från styrränta till räntekostnad",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Värderingskanalen — diskonteringsräntan och multipeln",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Liten öppen ekonomi — Sveriges två extra länkar",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — fyra missläsningar av kedjan",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — fyra frågor från makro till bolag",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — kedjan med fem länkar",
+        "intro": "En ränteförändring är inte en händelse utan en process — fem länkar, var och en med sin egen eftersläpning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "När en centralbank ändrar styrräntan (km-056) börjar en kedja. Länk ett — penningmarknaden: korta räntor följer styrräntan nästan omedelbart, inom dagar. Länk två — krediten: bankernas utlåningsräntor, bolåneräntor och företagslån rör sig med olika hastighet beroende på bindningstider och konkurrens; här läcker kedjan, för utlåningen styrs också av bankernas eget risktagande. Länk tre — efterfrågan: hushåll och företag får ändrade räntekostnader och ändrar konsumtion och investeringar; denna länk har månadernas till årens eftersläpning. Länk fyra — resultaten: företagens intäkter och kostnader rör sig när efterfrågan och räntekostnaderna rör sig — ytterligare en eftersläpning, ty rapporterna kommer kvartalsvis och volymerna svarar långsammare än priserna. Länk fem — värderingen: kapitalmarknadens avkastningskrav rör sig med ränteläget och sätter om multiplerna (vr-02, vr-03) — och den länken är ofta SNABBARE än resultatlänken, vilket är kursernas paradox: värderingen reagerar på vad resultaten kommer att göra om ett år.\n\nTvå egenskaper gör kedjan svår. Eftersläpningen är lång och variabel — Friedmans klassiska formulering — verkningarna av en enda beslutändring sprider sig över flera år och aldrig två cyklar likadant. Och kedjen har två huvudkanaler som rör olika saker: priskanalen (länk två till fyra — resultatet) och värderingskanalen (länk fem — multipeln). Ett bolag kan träffas av den ena utan den andra: en stabil verksamhet med fast ränta och räntekänslig efterfrågan märks i resultaten men knappast i multipeln; ett tillväxtbolag utan skuld men med avlägsna kassaflöden märks nästan enbart i multipeln. Det är denna kursens kärna: hålla isär kanalerna och räkna på var och sig."
+          },
+          {
+            "type": "definition",
+            "content": "Transmissionsmekaniken — kedjan från centralbankens styrränta via penningmarknad, kredit, efterfrågan och resultat till värderingen, med två huvudkanaler: priskanalen (räntekostnader och efterfrågan — resultatet) och värderingskanalen (diskonteringsräntan — multipeln), förenade av en lång och variabel eftersläpning."
+          },
+          {
+            "type": "insight",
+            "content": "Kedjans fem länkar har olika fart: penningmarknaden dagar, krediten månader, efterfrågan och resultat kvartal till år — och värderingen reagerar ofta före resultaten, på sin bild av vad resultaten kommer att göra."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Priskanalen — från styrränta till räntekostnad",
+        "intro": "Två genomräknade exempel — ett hushåll och ett bolag — visar hur två procentenheter blir tusenlappar och bortfallna resultatprocent.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Hushållet: en familj med bolån på 3 000 000 kronor till rörlig ränta. Styrräntan höjs och bolåneräntan följer med två procentenheter — från 3 till 5 procent. Den årliga räntekostnaden stiger med 3 000 000 gånger 0,02 = 60 000 kronor, alltså 5 000 kronor i månaden. Det är priskanalen i sin renaste form: ingen produkt har bytt pris, ingen lön har ändrats — men hushållets utrymme att konsumera har minskat med 60 000 kronor om året, och för hushåll med litet marginalutrymme blir minskningen nästan fullständig konsumtionsbortfall. Multiplera med miljontals hushåll och kedjans tredje länk — efterfrågan — tar form: butiker, bilar, möbler, restauranger, allt som finansieras av hushållens löpande utrymme.\n\nBolaget: ett företag med upplåning på 500 miljoner kronor, varav 300 miljoner rörlig ränta och 200 miljoner bunden till fast ränta med längre löptid. Samma höjning, två procentenheter: de rörliga delens kostnad stiger med 300 gånger 0,02 = 6 miljoner kronor om året; den bundna delen påverkas först vid ny teckning när bindningstiden löper ut. Bolagets resultat före skatt var 60 miljoner — räntehöjningen äter 6 av dem, 10 procent av resultatet, utan att en enda kund har ändrat beteende. Lägg sedan till efterfrågelänken från hushållsexemplet och den totala resultatkänsligheten blir summan av två verkningar: kostnadssidan (räntan) och intäktssidan (volymen) — där operativ hävstång (ln-03) avgör hur hårt intäktsbortfall slår. Känslighetsanalysen (st-02) är verktyget som formaliserar räkningen: simulera resultatet vid plus och minus två procentenheter och läs skillnaden. Observera det asymmetriska i bindningstiderna: bolag och hushåll med lång bunden ränta står still i kedjan tills bindningen löper ut — och eftersläpningen blir därmed inte bara lång utan klumpig, med verkningar som anländer i vågor när avtal förfaller."
+          },
+          {
+            "type": "insight",
+            "content": "Priskanalen är räknebar i två steg — räntekostnadens storlek (belopp gånger ränteändring) och resultatets andel (kostnadsökningen delat på resultatet) — och bindningstiderna avgör när i kedjan verkningen anländer."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Värderingskanalen — diskonteringsräntan och multipeln",
+        "intro": "En kassaflödesström som aldrig tar slut är räkneekonomins känsligaste instrument: två procentenheter ränta blir tjugo procent värde.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Värderingskanalen börjar i en formel som kursen om räntan (km-054) introducerar och DCF-kursen (km-007) bygger ut: värdet av en kassaflödesström är framtida kassaflöden diskonterade till i dag. Den renaste varianten för att se räntans kraft är den evighetsankommande strömmen — värdet är kassaflödet delat med diskonteringsräntan. Räkna: en ström på 10 miljoner kronor per år till 8 procents diskonteringsränta är värd 10 delat med 0,08 = 125 miljoner. Höj diskonteringsräntan två procentenheter till 10 procent: 10 delat med 0,10 = 100 miljoner. Två procentenheters räntehöjning — 20 procents värdefall (25 av 125), utan att kassaflödet rört sig en krona. Det är värderingskanalen: den träffar värderingen direkt, och den träffar hårdast där kassaflödena ligger längst bort i tiden — därför pressade räntecykeln 2022–2023 tillväxtbolagens multipler hårdast (deras kassaflöden ligger i fjärran framtid) medan stabila kassaflödesbolag hade ett mjukare fall.\n\nDiskonteringsräntan själv är tre delar: realräntan (tids- och tillväxtperspektivets pris), inflationsförväntningarna (kronans självförvåning) och riskpremien (kravet för att välja aktier framför trygga alternativ) — WACC-kursen (km-008) räknar dem samman. Styrränteförändringar rör främst de två första, medan riskpremien driver av marknadens humör — och därför kan värderingskanalen röra sig även när styrräntan står still: en förändrad riskpremie räcker. Kurvans form tillför information: när korta räntor ligger över långa — en inverterad kurva, säg tvåårig 3,4 mot tioårig 3,0 procent — prissätter marknaden kommande sänkningar, och historiskt har den formen ofta förekommit i cykelns senare skede (km-057). Men notera fällan som kapitel 5 tar: kurvan är en förväntan, inte ett löfte. För bolagsläsningen översätts kanalen till multipelns känslighet: P/E-kurser (km-009) och normaliserade multipler (vr-02) är värderingskanalens instrument — och känslighetsfrågan blir mätbar: hur mycket ändras det motiverade värdet om diskonteringsräntan ändras en procentenhet?"
+          },
+          {
+            "type": "tabell",
+            "content": "Evighetsströmmen 10 miljoner per år vid olika diskonteringsräntor: | Diskonteringsränta | Värde | Förändring | — | 8 procent | 125 miljoner | — | — | 10 procent | 100 miljoner | minus 20 procent | — | 12 procent | 83 miljoner | minus 17 procent (mot 100) | — | 6 procent | 167 miljoner | plus 67 procent (mot 100) |"
+          },
+          {
+            "type": "insight",
+            "content": "Värderingskanalen är evighetsformelns fysik: samma kassaflöde, annan ränta, annat värde — och känsligheten växer med avståndet till kassaflödena; tillväxtbolag bär kanalens längsta slag."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Liten öppen ekonomi — Sveriges två extra länkar",
+        "intro": "Sveriges transmission har världens snabbaste priskanal och två extra länkar in utifrån — kronan och omvärldens styrräntor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sveriges kedja har två kännetecken. Det första: en stor andel av hushållens bolån har rörlig eller kort bunden ränta — internationellt sett ovanligt — vilket gör priskanalen ovanligt snabb: ränteförändringar når hushållens räntekostnader inom månader i stället för år, och efterfrågelänken svarar tidigare. Snabbheten är ett dubbelverktyg: centralbankens verkningar kommer fort, men de kommer också klumpigt — när många bindningstider löper ut samtidigt samlas verkningarna. Det andra kännetecknet: en liten öppen ekonomi importerar sina räntor. Kapitalmarknaderna är globala, och Sveriges långa räntor påverkas lika mycket av omvärldens styrräntor och riskaptit som av den egna centralbankens beslut — kedjan får därför två extra länkar in utifrån: omvärldens styrräntor (som tränger igenom i det avkastningskrav svenska låntagare måste betala) och valutan (km-058): en krona som försvagas gör importen dyrare och bidrar till inflationen, vilket återverkar på centralbankens spelrum — en återkopplingslänk som stora ekonomier saknar.\n\nFör bolagsläsningen betyder det två frågor till. Fråga ett: hur mycket av bolagets kostnads- och intäktssida sits i utlandet? Ett svenskt bolag med intäkter i euro och kostnader i kronor har en valutakanal som delvis motverkande räntekanalen. Fråga två: vem är bolagets räntreferens? Bolag med upplåning i svenska kronor följer den egna penningpolitiken; bolag med dollar- eller euroskuld följer Feds och ECB:s kurvor — och deras transmissionen till bolaget sker även om Riksbanken står still. Räntecykeln 2022–2023 visade båda länkarna samtidigt: globala styrräntor rörde sig tillsammans, kronan svängde, och svenska bolag med utlandsexponering fick en blandad transmission som bara de fyra bolagsfrågorna (kapitel 6) kan reda ut."
+          },
+          {
+            "type": "insight",
+            "content": "Litet och öppet betyder snabbare och mer importerat: rörliga bolån gör priskanalen bland världens snabbaste, och omvärldens styrräntor och valutan lägger två extra länkar i kedjan som måste läsas separat."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — fyra missläsningar av kedjan",
+        "intro": "Kedjans fällor är metodens spegelbilder: att läsa den mekaniskt, symmetriskt, genomsnittligt eller för snabbt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett — den mekaniska läsningen: att behandla kedjan som ett maskineri där två procents styrränta alltid ger samma verkning. Kedjan läcker i varje länk — bankernas utlåning styrs av mer än styrräntan (kreditstandarden), hushållens konsumtion av mer än räntekostnaden (förmögenhet, trygghet), företagens investeringar av mer än kreditpriset (orderstock, förväntningar). Transmissionen är en mekanik med förstärkare och dämpare, inte ett spel rum. Fälla två — symmetritron: att tro att höjningar och sänkningar verkar lika starkt åt varje håll. Historiskt verkar höjningar snabbare på efterfrågan än sänkningar — ett hushåll som tvingats dra ner konsumerar inte om automatiskt när räntan faller, och bolag som skurit kostnader bygger inte tillbaka dem i samma takt. Sänkningscykeln har sin egen, långsammare form. Fälla tre — genomsnittsbolagstro: att räkna på ekonomin som helhet och läsa svaret på ett enskilt bolag. Genomsnittet är en summering av tusen olika transmissioner — bolagets egen kedja beror på dess balansräkning (rk-08), dess kunder, dess bindningstider och dess värderingsform; rs-03:s dolda samvariation är släktfällan: många bolag som ser olika ut delar samma ränteexponering. Fälla fyra — för snabb eftersläpning: att lästa kvartalets rapport som kedjans fulla verkning. Friedman igen — eftersläpningen är lång och variabel: intäktssidan svarar när kundernas konsumtion ändrats, kostnadssidan när bindningstider löpt ut, värderingen när förväntningarna format om. Ett år in i en räntecykel är kedjan mitt i, inte slut med. Kursens ram genomgående: detta är mekanikförståelse som utbildning — hur ekonomin och värderingen hänger samman — aldrig en uppmaning att tidssätta något."
+          },
+          {
+            "type": "insight",
+            "content": "Fyra fällor — mekanisk läsning, symmetritro, genomsnittsbolagstro, för snabb eftersläpning — har samma bot: räkna bolagets egen kedja och tidsätt varje länk, i stället för att läsa ekonomin som ett maskineri eller en genomsnittstabell."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — fyra frågor från makro till bolag",
+        "intro": "Kedjan blir bolagsanalys genom fyra frågor — var och en mätbar i en årsredovisning eller en värdering.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett — hur mycket rörlig ränta bär bolaget? Läs balansräkningen (bk-01, ks-03): upplåningens storlek, bindningstider och valutor; räkna kapitel 2:s räkning (belopp gånger ränteändring delat på resultatet) vid plus och minus två procentenheter. Fråga två — hur räntekänslig är efterfrågan? Bolag som säljer bostäder, bilar, kapitalvaror eller finansierade köp svarar tidigare och hårdare än bolag som säljer livsmedel och driftskritiska tjänster; multiplicera med operativ hävstång (ln-03) för resultatkänsligheten och låt känslighetsanalysen (st-02) formalisera den. Fråga tre — hur diskonteringskänslig är värderingen? Ju längre bort kassaflödena ligger, desto hårdare slår värderingskanalen (kapitel 3:s evighetsräkning); normaliserade multipler (vr-02) håller måttet mot räntelägets svängningar. Fråga fyra — vilken valutakanal bär bolaget? Intäkter och kostnader i olika valutor ger en delvis motverkande länk (km-058) — läs den innan räntesvaret tolkas.\n\nDe fyra frågorna är makrodimensionens praktiska bro i AKM1:s metodik: varje bolagsläsning börjar med ränteläge och cykelposition som kontext (km-057, rk-05) och översätts sedan via frågorna till mätbara poster i just detta bolags rapporter. Kursen kröner därmed kategorin makroekonomi och ränta med sin första avancerade kurs: fem kurser om kedjans delar — räntan, inflationen, centralbanken, cykeln, valutan — och denna om det som binder dem: transmissionen från beslut till bolag, med eftersläpningarnas tålamod och de två kanalernas isärhållande som kärna. Och som alltid i spåret: att förstå kedjan är utbildning i hur ekonomin fungerar — analysen är läsningens verktyg, och vad var och en väljer att göra med sina beslut är varje persons eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj ett bolag ur studions universum och besvara de fyra frågorna i tal: (1) rörlig upplåning vid plus och minus två procentenheter — hur många procent av resultatet? (2) hur räntekänslig är kundens efterfrågan — vilka intäktsandelar bedöms finansierade eller uppskjutbara? (3) var i kedjan ligger värderingen — hur känslig är multiplen enligt evighetsräkningen? (4) vilka valutor sitter på intäkter och kostnader? Sammanfatta bolagets transmission i en mening."
+          },
+          {
+            "type": "insight",
+            "content": "Fyra frågor — rörlig ränta, räntekänslig efterfrågan, diskonteringskänslig värdering, valutakanal — är hela transmissionen översatt till bolagsläsning: makrobilden blir kontext, frågorna gör den mätbar."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch placerade sig medvetet i kedjans tredje länk: hans resonemang i One Up on Wall Street om cykelns svängningar — att vissa branscher slår in tidigt i en nedgång och vaknar tidigt i en uppgång — är transmissionsläsning på portföljns villkor. Lynchs regel att känna sina bolag bättre än marknaden är också kursens: fråga tre om värderingskänslighet kan ingen genomsnittstabell svara på, bara bolagets egen kassaflödesform.",
+    "grahamSection": "Benjamin Grahams värld präglades av fasta kurvor i stället för flytande, men hans kärna lever kvar i kursen: mr Markets priser svänger med räntan och humöret, medan värdet vilar på bolagets kassaflöden — Grahams säkerhetsmarginal (km-030) blir i transmissionens språk avståndet mellan en räntekänslig kurs och en normaliserad värdering (vr-02): ju starkare värderingskanalen slagit, desto viktigare att läsa vad som är resultat och vad som är multipel.",
+    "ak1Section": "I AK1A:s metodik kröner denna kurs kategorin makroekonomi och ränta (km-054 till km-058) med dess första avancerade kurs — transmissionen som binder familjens delar till bolagsläsningen och ger AKM1:s kvartalspaket deras makrokontext: ränteläge och cykelposition som inramning, fyra mätbara frågor som bro. Brobyggen: mot ln-03 (operativ hävstång i resultatlänken), st-02 (känslighetsanalysen som formaliserar räkningen), rk-05 och rk-08 (cykel- och ränterisken i riskfamiljen), rs-03 (den delade ränteexponeringen), vr-02 och vr-03 (multipelns normalisering och anatomi), km-007 och km-008 (diskonteringsräntans räkneverktyg) samt km-058 (valutalänken)."
   }
 }

@@ -19,6 +19,11 @@
  * Körs: pumpor var 15:e minut (min % 15 === 12).
  * FYND ⇒ data/vakten/feljakt-fynd.jsonl + stdout [FELJÄGT ...].
  * Ren jakt ⇒ EN grön rad. Exit 0 alltid.
+ * DEPLOYFÖNSTER (rond 44): medan flock /tmp/ak1a-deploy.lock hålls (prodbygg
+ * pågår) klassas F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
+ * väntat nere/omstartande (npm ci bygger om node_modules under levande pm2);
+ * äkta fel utan aktivt bygg förblir HÖG. Fjärde falsklarmet i familjen
+ * (rond 33/39/40/44) kurat i roten.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -52,6 +57,16 @@ function bokfor(spår, allvar, fynd, bevis) {
 }
 
 function gron(spår, not) { console.log(`[FELJÄGT GRÖN] ${spår}: ${not}`); }
+
+// Deploybyggen (prod-synk.mjs "flock -w 900", deploya-contabo.sh "flock -n")
+// håller låset under hela npm ci + build + pm2 restart — i det fönstret är
+// appen väntat osvarande. Feljägten ska larma HÖG endast utan aktivt bygg.
+function deployPagar() {
+  try {
+    execSync("flock -n /tmp/ak1a-deploy.lock true", { timeout: 5000, encoding: "utf8" });
+    return false;                          // låset togs → inget bygg pågår
+  } catch (e) { return e.status === 1; }   // exit 1 = hålls av bygg; övrigt = ej deploy
+}
 
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
 function jagaKod() {
@@ -154,14 +169,23 @@ async function jagaApi(pass) {
     "tjanster/automation", "tjanster/bakgrund",
   ];
   let fel = 0;
+  const deploy = deployPagar();
   for (const v of andpunkter) {
     try {
       const r = await fetch(`${BAS}/api/studio/${v}`, {
         headers: { "x-admin-password": pass },
         signal: AbortSignal.timeout(15_000),
       });
-      if (r.status !== 200) { fel++; bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`); }
-    } catch (e) { fel++; bokfor("F3-api", "HÖG", `/${v} nätverksfel`, String(e).slice(0, 60)); }
+      if (r.status !== 200) {
+        fel++;
+        if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        else bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`);
+      }
+    } catch (e) {
+      fel++;
+      if (deploy) bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      else bokfor("F3-api", "HÖG", `/${v} nätverksfel`, String(e).slice(0, 60));
+    }
   }
   if (fel === 0) gron("F3-api", `${andpunkter.length}/${andpunkter.length} ändpunkter 200`);
 }
@@ -258,9 +282,14 @@ function jagaLoggar(vaktDir, rapportera, gronRapport) {
 async function jagaDrift(pass) {
   try {
     const r = await fetch(`${BAS}/`, { signal: AbortSignal.timeout(15_000) });
-    if (r.status !== 200) bokfor("F6-drift", "HÖG", `prod → ${r.status}`, "HTTP-kod != 200");
-    else gron("F6-drift", `prod ${r.status}`);
-  } catch (e) { bokfor("F6-drift", "HÖG", "prod osvarar", String(e).slice(0, 60)); }
+    if (r.status !== 200) {
+      if (deployPagar()) bokfor("F6-drift", "MEDEL", `prod → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      else bokfor("F6-drift", "HÖG", `prod → ${r.status}`, "HTTP-kod != 200");
+    } else gron("F6-drift", `prod ${r.status}`);
+  } catch (e) {
+    if (deployPagar()) bokfor("F6-drift", "MEDEL", "prod osvarar — deploybygg pågår", "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+    else bokfor("F6-drift", "HÖG", "prod osvarar", String(e).slice(0, 60));
+  }
   try {
     const mem = fs.readFileSync("/proc/meminfo", "utf8").match(/MemAvailable:\s+(\d+)/);
     const mb = mem ? Math.round(parseInt(mem[1]) / 1024) : 0;

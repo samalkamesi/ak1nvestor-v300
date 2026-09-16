@@ -792,3 +792,16 @@ får ALDRIG krascha sattMal/rensaMal.
   generaliserad från bygg till larmväg).
 
 - **2026-09-15 rond 39 (F1-falsklarm):** feljägarens tsc-mätning under pågående npm ci gav 5 × TS2688 (transitiva @types/d3-* rivna minutvis). Vaccin: deploylås-probe + TS2688/2307-andra-chans i feljagaren.mjs — mät aldrig kod under underhållsfönster. Familj nr 3 av "mätning under underhåll"-falsklarm (jfr F6-tidsfilter rond 35-36, RAM-grind rond 33).
+
+## 2026-09-16 rond 44 — F3+F6-falsklarm #5: rot i DEPLOYFÖNSTRET (feljägaren låsmedveten)
+- SYMPTOM: FYNN 04:27:30Z "/tjanster/* nätverksfel; prod osvarar". Prod 200; rutterna 401 live.
+  Fyndloggen: ALLA 21 ändpunkter + F6 fetch failed samma sekund = hela localhost:3000 nere.
+- ROT: prod-synkens bygg 2 (04:27:20): bygg 1 OOM-dödat 04:23:15 (Killed/heap) förlängde
+  fönstret; npm ci bygger om node_modules under levande pm2 → app osvarande ~3 min →
+  pm2 restart 04:30:24 (pm_uptime-bevis) → DEPLOYAD 04:30:30 prod 200. Allt självläkt vid larm.
+- KUR: feljagaren.mjs deployPagar() — flock -n /tmp/ak1a-deploy.lock (hålls av prod-synk
+  "flock -w 900" + deploya-contabo "flock -n"); F3/F6-fel under aktivt bygg ⇒ MEDEL "väntat
+  fönster" (larmar ej; endast HÖG/KRITISK kickar session enligt mal-hjartslag.mjs), utan
+  bygg ⇒ HÖG kvar. Fail-safe: endast exit-status 1 (= lås hålls) räknas som deploy.
+- VACCIN: instrument ska känna systemets underhållsfönster (familj: rond 33 RAM-svält,
+  35-36 larmväg-ts, 39 npm ci-race, 44 deployfönster). Kvar bokad: atomisk byggswap.

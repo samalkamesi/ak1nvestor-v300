@@ -45,6 +45,20 @@
 # per-typ-filerna ~60 kB/dag. Logg: /tmp/moln-backup.log.
 40 2 * * * cd /home/ak1a/AK1 && /usr/bin/node /home/ak1a/AK1/verktyg/backup-fran-molnet.mjs >> /tmp/moln-backup.log 2>&1
 #
+# ── Rad 4: server-side veckoarkiv söndag 03:20 lokal tid (kedja 3) ──────────
+# DR-kedja 3 (serverfils-arkivet): verktyg/arkivera-server.mjs skapar
+# server-repo-<dag>.tar.gz (arbetsytan, exkluderingskontrakt, gzip- och
+# listningsverifierad FÖRE godkännande) + server-git-<dag>.bundle (hela
+# historiken, bundle verify) + färskar konfigsnapshotarna (nginx/crontab/pm2).
+# Installerad 2026-09-16 (s10-u1, DR-ARKIV-SERVER-2026-09-16.md): F8-kön ur
+# DR-PROV-2026-09-16-KEDJA3.md — arkiven levde på agent-manuella körningar
+# sedan hybrid-sync tystnade 09-09; RPO för kedja 3 härmed ≤ 7 dygn.
+# Söndag 03:20 = efter nattfönstrets 02:30/02:40-exporter; verktyget flockar
+# /tmp/ak1a-dr-prov.lock (mutar aldrig en pågående DR-övning). Retention
+# 60 dygn sköts av verktyget (system-events-full röras ALDRIG).
+# Logg: /tmp/server-arkiv.log.
+20 3 * * 0 cd /home/ak1a/AK1 && /usr/bin/node /home/ak1a/AK1/verktyg/arkivera-server.mjs >> /tmp/server-arkiv.log 2>&1
+#
 # OBS 1: /etc/crontab (system-wide, med root-användarfält) dokumenteras
 # SEPARAT i data/infra/contabo/crontab-korrekt.txt — denna fil gäller ENDAST
 # användar-crontaben (crontab -l, ingen användarkolumn).

@@ -736,8 +736,46 @@ EnvironmentFile med chmod 600).
 - **Kö till huvudagenten: ingen ny** — kvartalsmallen 2026-12-15 är nu
   FYRA KOMMANDON: `dr-ovning.mjs` + `dr-kedja2.mjs` + `dr-kedja3.mjs` +
   `dr-kedja4.mjs` (kvar hos huvudagenten oförändrat: cron för vecko-
-  arkivering server-side · git gc vid lugnt fönster · kundnotis datorns
+  arkivering server-side · git gc vid luget fönster · kundnotis datorns
   hybrid-sync · jungfrunatt rad 3 bevisas 09-17).
+
+## S10-U1 (O5) — KEDJA 3:S EXPORTÖR SERVER-SIDE + VECKOCRON (2026-09-16, GODKÄNT)
+
+- **F8-kön verkställd** ("cron för vecko-arkivering server-side" — kö-radens
+  enda återstående mekaniserbara objekt): serverfils-arkivet levde på agent-
+  manuella körningar sedan hybrid-sync tystnade 09-09 — kedja 3:s RPO var
+  "när en agent minns", härmed **≤ 7 dygn**. Fullprotokoll:
+  data/forskning/DR-ARKIV-SERVER-2026-09-16.md.
+- **Nytt verktyg `verktyg/arkivera-server.mjs`**: helt server-side (ingen
+  ssh-ström — 09-09:s korruptarkiv-rot elimineras), flock på
+  /tmp/ak1a-dr-prov.lock (samma kontrakt som dr-kedja* — export och DR-övning
+  mutar aldrig varandra; RÖT-mot-färskt-arkiv-racet strukturellt omöjligt),
+  RAM-/diskgrind 600 MB/5 GB, minisjälvtest, tar med exkluderingskontrakt +
+  verifiering FÖRE godkännande (gzip -t, full listning, spot-filer,
+  500 MB-vakt), bundle --all + verify, konfigsnapshots färskas (nginx/
+  crontab/pm2 — F8:s "7 dygn gamla" kurerat), atomiska namnbyten (*.del),
+  retention 60 dygn (system-events-full röras ALDRIG).
+- **Bevisad körning exit 0 (13:39–13:40 lokal):** tar 144,4 MB / 8 893
+  poster / 675 src ts/tsx / 33,1 s · bundle 151,2 MB complete history /
+  24,2 s · snapshots nginx 53 rader + crontab 3 aktiva + pm2 4 processer ·
+  totalt 58 s. Arkiven FÄRSKARE än nattens (+457 poster = förmiddagens
+  kommitten; omkörningen = idempotensbevis).
+- **Driftfynd + kur:** körning 1 RÖD på "tar: file changed as we read it"
+  (levande agentträd under 30-s-fönstret; ronderna skriver 24/7). Kur:
+  exit 1 acceptas ENDAST när samtliga felrader är "…as we read it"-noter —
+  verifieringen är den äkta grinden, exakt historik ägs av bundlen. Båda
+  lägena bevisade (rörelse kör 1, lugn kör 2).
+- **Cron rad 4 söndag 03:20 lokal** + crontab.reference i samma ändring +
+  konfigvakten **GRÖN 4/4**. Jungfrunatten för rad 4 bevisas 2026-09-20.
+- **Fabrikskollision bevis nr 7, hantverksmässigt löst (0 förlorat
+  arbete):** denna agents förstaval (dr-kedja3.mjs, bokat i worklog 11:33Z)
+  togs samtidigt av syskonet s10-u3 som SKAPADE filen 11:33 och körde under
+  flock — Write-läshindret hejdade, vike enligt s10-u5-precedenten, nytt
+  objekt = F8-kön (komplement: syskonets restore-kommando prover arkiven,
+  detta verktyg håller dem friska). Manifestets tre identiska "välj själv"-
+  texter förblir obehandlade hos huvudagenten (u3:s kur nr 1).
+- PG17 orörd (nere före/efter — korrekt viloläge); R2 orörd; inga byggen;
+  tsc-grinden passerad vid commit (src/ orörd av denna leverans).
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

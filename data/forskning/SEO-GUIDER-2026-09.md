@@ -35,6 +35,7 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B4 | teknikaktier-sa-analyserar-du-teknikbolag | teknikaktier | 1218 | UTKAST v1 (2026-09-15, s3-u1) | data/blogg-utkast/teknikaktier-sa-analyserar-du-teknikbolag.json |
 | B5 | telekomaktier-sa-analyserar-du-telekom-och-mediabolag | telekomaktier | 1273 | UTKAST v1 (2026-09-15, s3-u3) | data/blogg-utkast/telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json |
 | B6 | industriaktier-sa-analyserar-du-industribolag | industriaktier | 1229 | UTKAST v1 (2026-09-15, s3-u2) | data/blogg-utkast/industriaktier-sa-analyserar-du-industribolag.json |
+| B7 | konsumentaktier-sa-analyserar-du-konsumentbolag | konsumentaktier | 1255 | UTKAST v1 (2026-09-16, s3-u2) | data/blogg-utkast/konsumentaktier-sa-analyserar-du-konsumentbolag.json |
 
 Levererade branschguider utan B-rad (föregående omgång): energi (`sa-analyserar-du-energiaktier.json`) och material (`ravarubolag-materialbranschens-cykel.json`).
 

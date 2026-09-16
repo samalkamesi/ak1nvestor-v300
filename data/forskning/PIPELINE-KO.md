@@ -199,10 +199,14 @@ Agent-anrop, 4+ via fabriksmanifest.
   src/lib/studio/studio-transport.ts (HUVUDAGENTEN DIREKT — het fil,
   ALDRIG fabriksbarn). KVD: tsc 0 (projektbinär) + resync-grens mock-test +
   bygg under flock + prod 200. Stängs endast med live-bevis (regel 2).
-- ▶ VÅG 173 (bokad rond 38 [Φ]): gap 26 sessions-index/<filter>-topic —
-  live-index över sessioner via befintlig subscribe-mekanism (samma
-  connectionId/clientMode); tränger undan sessionList-poll. SEKVENSERAD
-  EFTER våg 172 (samma fil — studio-transport.ts).
+- ▶ VÅG 173 KOD LANDAD rond 42 [Φ] (merge + push denna rond; live-bevis →
+  stängning när prodbygget landat — RAM-kön): gap 26 sessions-index/
+  <filter>-topic. ROT KURERAD: våg 171:s leverans anropade "v4/subscribe"
+  (0 träffar i bundeln — tyst död via fel-tolerans) utan connectionId/
+  clientMode; rond 42 rättade till "v4/conversation/subscribe" + våg 85-
+  mönstrets grundfält + lägescacha (prenumerationsfabrik-kur) + stangHelt-
+  reset. Poll-trängningen realiseras av pulsrevisionens aktivaSessioner-
+  led (våg 156) + prenumerationen som realtime-grond.
 - ✓ VÅG 174 LEVERERAD rond 41 [Φ] (7/7 PASS, se registrets footer): E2E-flöden i
   studion (401-härdning, chatt-SSE, komprimerings-knapp, bilduppladdning)
   i NYA filer under verktyg/scenariotest/ — fabriks-dugligt (exklusivt

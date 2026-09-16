@@ -467,7 +467,7 @@ export function Superanalys() {
           <div className="gravor-ram rounded-xl border border-gold/30 bg-card p-6 sm:p-8">
             <h2 className="font-serif text-2xl font-bold">Granska dina {pr(total)} poäng</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Sista chansen att justera innan resultatet. Deklarerad viktning: Tillväxt 15 % ·
+              Efter detta steg låses dina val och resultatet visas. Deklarerad viktning: Tillväxt 15 % ·
               Värdering 20 % · Lönsamhet 20 % · Stabilitet 15 % · Moat 15 % · Katalysator 5 % · Risk 10 %.
             </p>
           </div>

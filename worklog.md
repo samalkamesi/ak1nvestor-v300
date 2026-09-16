@@ -12196,3 +12196,33 @@ VAL (anspråk data/vakten/s7-1789596926773-u1-ansprak.md på disk FÖRE byggstar
 ## SPÅR 7 s7-u3 (byggare 3/3, manifest auto-s7-1789596926773) — 2026-09-17 00:1x–00:3x lokal: NATTFACIT — startsidans drift-serie kompletterad + den samlade natt-kvadraten på 22:09Z-bygget; mentorlager-kostnaden ≈ +8 KiB unused-JS per sida och omgång (o38) [fabrik]
 
 VAL MED PIVOT (ärligt bokförd): min anspråk (data/vakten/s7-nattfacit-u3-ansprak-0019.md, 00:20, FÖRE mätstart) tog o32 §7 rest 4 (/kurser ensam-tal) + §6 kö 1 (drift) + gap-bonus — men syskonet u1:s anspråk (00:19, EN minut före på disk) hade tagit BOTH kurser-ensam-talet (som kompletterande mätning) OCH blogg-gapet: disk-först-regeln, deras claim vinner, noll mätning av mig på deras ytor (deras swarm löpte 22:22–22:23Z; min /-mätning startade först när deras sammanfattning + pgrep 0 ×2 bevisat dem klara). MITT KVARVARANDE DISTINKTA OBJEKT = STARTSIDANS DRIFT-FACIT: / är den enda kvadrat-yta u1 inte mätte och exakt den sida o32 §5 byggde "mentorlagren äter koddelningens CPU-vinster"-slutsatsen på. FÖRUTSÄTTNINGAR BEVISADE: prod-synk deployade 00:09:33 lokal (BUILD_ID w31pKzEsCfQRM1v1Gb6ji; s6-omgång 12:s tre lager 19–21 → 74 monsters + register 381 + s2-datan; INTE u1:s prefetch-kur — committad 7f419839 efter bygget), prod 200 ×2, statisk sond GRÖN ×3 (22/22 chunks), RAM-avvaktan korrekt (00:20: 1 148 MB under syskonens fönster → 3 053 MB vid mätstart, u2:s 1 500-tröskel), load 1,03 fallande, ISR-trigga ×2+8 s alla fyra ytor (HIT/HIT 29–84 ms). MÄTNING (verktyg/prestanda-lighthouse.mjs nattfacit-0030, mobil 4G, solo-fönster verifierat): / P66 · LCP 4 150 · TBT 844 · CLS 0 · vikt 748 KiB · unused-JS 87 KiB · mainthread 4,8 s. KVADRATEN (bygge 22:09:33Z, alla vilande solo-tal): / 66/4150/844 + u1:s trio 22:23Z (/kurser 56/5369/753, /blogg 52/5498/1299, /en/blogg 71/4170/567) = spårets nya referensbas och FÖRE-KUR-referensen för u1:s pendinga blogg-gap-efter. DRIFT-KVANTIFIERINGEN (o32 §6 kö 1, mitt huvudfynd): startsidans TBT-serie 574 (fore-161) → 739 (vila-1849, +3 lager) → 844 (natt, +3 lager + reg +3 + s2) — mekanismen är en TREND, ingen engångshändelse; och vikt/unused-JS-driften är UNIFORM över alla fyra ytor: vikt +4…+10 KiB, unused-JS +7…+8 KiB på SAMTLIGA sidor mellan vila-1849 och natt (två oberoende svärmar, samma bygge — o32 §7:5:s dubbelbekräftelseklass) ⇒ KOSTNADSKURVA ≈ +8 KiB död JS per sida per spår-6-omgång (chat-chunken som aktiveras först vid chattöppning; 86–87 KiB vid 74 monsters) — koddelningens −52 KiB-vinst på / är äten om ≈ 5 omgångar i nuvarande takt: lazy-lager-per-yta-kön (huvudagentens) har nu en mätt kostnadskurva att motiveras med. ÄVEN: o37 §1:s struktursond OBEROENDE bekräftad (min _s7u3n-bundjamf.mjs 00:22 — HTML 230 011/215 686 B, språkchunkarna 21 489 B BÅDA, 110 kort, 652/641 DOM — "språkskillnad i bunt" motbevisad av två verktyg); metodnotiser bokade åt spåret (mtime-grindens "klar"-lucka: sammanfattningens existens + pgrep 0 = avslutad mätning; CPU-tal seriekompatibla endast med byggkontext — /kurser 279 r4b2-bygget mot 753 natt-bygget är olika byggenskapare). KVD: prod 200, sond GRÖN, src orörd (data-only), inget bygge (prod-synken äger), R2 orörd, data/blogg/ orörd, syskonytor orörda (o31+s7u2c-filer = u2:s commit; o37+gap-filer+kur = u1:s 7f419839). Protokoll data/forskning/OPTIMERING/o38-prestanda-nattfacit-s7.md; rådata lighthouse/{start-nattfacit-0030.json, nattfacit-0030-sammanfattning.json}. [fabrik]
+
+## SPÅR 8 s8-u1 (manifest auto-s8) — Typbaslinjens överlevnad: kvalitetsvaktens kontroll 11 (o39) [fabrik]
+
+VAL (duplikatkontroll): spårets öppna kandidat "tsc-baslinjens överlevnad" —
+INTE levererad i någon av o9–o36 (lista granskad före start; döda länkar,
+nollfynd, mimosa full-scan, pumpor m.m. tagna av tidigare vågor). ROTORSAKA:
+typnollen (0 fel, våg 133) var mekanisk ENDAST vid commit — merge-committar
+passerar pre-commit-grinden (doktrinen: "grenarnas kod granskades var för
+sig") och trädet mellan commits var omätbart; fabriken merge:ar barn dagligen
+= luckan vardaglig, inte teoretisk. KUR: kontroll 11 i kvalitetsvakten kör
+ALLTID node node_modules/typescript/bin/tsc --noEmit via PROJEKTBINÄREN
+(ALDRIG npx — deployfönstrets dummy-paket-fälla, dokumenterad i filhuvudet),
+budget 120 s; baslinje 0 blir ett DAGLIGT 07:02-bevis (pump-schemat o35)
+i stället för ett commit-antagande. Klassificering enligt falsklarmsdoktrinen
+(aldrig tyst PASS): exit 0 = PASS · typfel i src = FEL (baslinjebrott) ·
+fel enbart i node_modules = MANUELL deploy-transient (K2/K3-precedensen) ·
+saknad binär/timeout/otolkbar utgång = MANUELL OMÄTT. Även dokumentations-
+hygien (våg 137-b-lärdomen): huvudets inaktuella "07:00 UTC via /api/cron/
+kvalitet"-rad rättad till sanningen 07:02 lokal (vaktpumporna). BEVIS:
+verktyg/testa-kvalitetsvakt-tsc.mjs 11 PASS / 0 FAIL (statiskt kontrakt +
+full vaktkörning); färska rapporten sektion 11 "0 fel på 7.8 s", total
+18.3 s, ANTAL FEL: 0 | STATUS: GRÖN, RESULTAT_JSON GRÖN; tsc oberoende
+exit 0 två körningar (8.0/7.8 s); kanalerna verifierade (pumpa spawn utan
+timeout = primär; rutten 50 s rymmer 18.3 s). Inget bygge (endast verktyg/
++ data/ — src/ orörd), R2 orörd, data/blogg/ orörd. Bokning (annan ägare):
+beroende-vaktens critical-RCE i next (2 st GHSA, fix 16.3.3 inom intervall)
+— installation ägs av prod-synken. LEVERANS: verktyg/kvalitetsvakt.mjs,
+verktyg/testa-kvalitetsvakt-tsc.mjs,
+data/forskning/OPTIMERING/o39-tsc-kvalitetsvakt-s8.md,
+data/forskning/OPTIMERING/kvalitetsvakt-tsc-bevis-2026-09-17.json. [fabrik]

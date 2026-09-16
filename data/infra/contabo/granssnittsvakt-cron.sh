@@ -41,6 +41,7 @@ KOD=$?
 
 # Retention: behåll 30 dagars rapporter + logg < 200 rader.
 ls -1t "$RAPPORTKATALOG"/granssnitt-*.json 2>/dev/null | tail -n +31 | xargs -r rm -f
+ls -1t "$RAPPORTKATALOG"/vaktkrasch-*.txt 2>/dev/null | tail -n +31 | xargs -r rm -f
 tail -200 "$LOGG" > "$LOGG.tmp" 2>/dev/null && mv "$LOGG.tmp" "$LOGG"
 
 if [ $KOD -eq 0 ]; then
@@ -65,6 +66,17 @@ KRASCHAD=0
 if ! grep -q 'GRÄNSSNITTSVAKTEN:' "$RAPPORTKATALOG/senaste-korning.txt"; then
   KRASCHAD=1
   SAMMANFATTNING="$(tail -20 "$RAPPORTKATALOG/senaste-korning.txt")"
+fi
+
+# VÅG 178/o35: kraschbevis-arkivering. senaste-korning.txt skrivs ÖVER (>)
+# vid varje körning — ett vaktkraschutdata överlever bara i larm-PROMPT:en,
+# och när larmvägen är bruten (cron.log 2026-09-11T2023/2048) avdunstar
+# beviset helt (våg 178:s "scanner_enobufs ×5" finns inte kvar på disk).
+# Timestampad kopia FÖRE larmsektionen = bestående bevis oavsett larmvägens
+# hälsa; rotorsaksjakt (ENOBUFS-klassen m.fl.) blir möjlig. Retention ≤ 30
+# körs i retention-blocket ovan (samma ls -1t-mönster som granssnitt-*.json).
+if [ $KRASCHAD -eq 1 ]; then
+  cp "$RAPPORTKATALOG/senaste-korning.txt" "$RAPPORTKATALOG/vaktkrasch-$STAMP.txt"
 fi
 
 if [ -n "${SESSION:-}" ] && [ -n "${ADMIN_PASS:-}" ]; then

@@ -1,0 +1,48 @@
+studio: auto s8-u3 våg 178:s ENOBUFS-halva stängd — evidensrevision + KUR kraschbevis-arkivering i granssnittsvakt-cron.sh + full-scan 954/0 GRÖN (bekräftelsemätning) [fabrik]
+
+Våg 178 (rond 47, evighetskatalogen spår 8) hade två delar: full-scan-delen
+levererades på förmiddagen (96a35b14/o29, 906/0); "scanner_enobufs noterad ×5:
+rotorsaksjakt" var OLEVERERAD — detta fönsters objekt.
+
+ROTOREVISION: noll persistrade ENOBUFS-spår finns kvar (grep -ri hela ytan +
+/tmp: endast bokningstexten i PIPELINE-KO/prompt-journal/styrelse-rond.mjs:177).
+Mekanism bevisad i koden: granssnittsvakt-cron.sh fångar vaktens hela utdata i
+senaste-korning.txt som SKRIVS ÖVER (>) varje körning — kraschbevis överlever
+endast om larmvägen samtidigt lever (cron.log 2026-09-11T2023/2048 visar
+"larmvägen bruten"); retentionen täcker bara granssnitt-*.json. Ronderens ×5
+avdunstade med filen. Mekanisk rot: ENOBUFS (errno 105) vid spawn/socket-alloc
+under minnessvält — serverns OOM-era (09-13 + 09-16 10:02) är riskbilden;
+exponering redan reducerad (våg 169 RAM-grind, s8-u2 omg2 dynamisk import +
+ärlig exit 2, o33 artefaktgrind) — kvar stod bevis-hålet, som nu kurats.
+
+KUR (2 additiva rader, data/infra/contabo/granssnittsvakt-cron.sh): vid
+KRASCHAD=1 arkiveras senaste-korning.txt → vaktkrasch-$STAMP.txt FÖRE
+larmsektionen (beviset överlever bruten larmväg); retention vaktkrasch-*.txt
+≤ 30 filer, samma ls -1t-mönster som granssnitt-*.json. Ingen omstart —
+cron läser skriptet per anrop; lever från nästa sväng (01:17).
+
+BEKRÄFTELSEMÄTNING (o29 §5:1): full-scan --doman . = 954 filer 0 fynd GRÖN
+exit 0 (v1.4, 17:19:38Z; rådata fullscan-atermat-2026-09-16-s8u3.json) —
+o29:s 906/0 → 954/0 (+48, dagens hela verktygsflod rena). Syskonet s8-u2
+i samma manifest (o34) tog samma bokning parallellt (951/0) — dubbel-dispatch-
+familjen tredje fallet, ärligt bokfört i o35 §0; GRÖN i båda, antalet driver
+med fabrikens aktiva fönster. Korsinstrument skalfri-vakt 218/0 (växte
+175→218).
+
+VAKTFYND (dokumenterat i o35 §5, ytan ORÖRD — ägare aktiv): AGENTARBETSYTA-
+SYNK 20× MISSLYCKADES sedan 09-15 16:10 (feljägaren F5 larmar MEDEL per
+timme). Rotorsakedja: huvudagentens rond 48-50-commit 2b7996bd (16:52:40) →
+s5-u2:s f3a574ba landar i AK1 (16:56:36) → huvudagentens synk 16:56:55
+konflikterade på worklog.md → sessionen dog mitt i mergen → MERGE_HEAD +
+UU worklog.md + merge-stagat index blockerar alla ff-only-puller. Ägaren är
+SJÄLV aktiv med återföreningen (deras 7d01e671 "merge rond 50-bokföring med
+fabrikens leveranser") — fabriksbarn rör ALDRIG ytan under levande session
+(updateInstead-push skriver om filer under aktiv agent). Systerleverans:
+samma tidsstämpelfamilj (UTC utan Z) kurad i prod-synken av s8-u1 (a96cf5c7).
+
+BEVIS: funktionstest arkivgren 3/3 isolerat (kraschfil arkiveras med innehåll
+· grön fil triggar ej · retention 32→30 äldsta bort) · bash -n GRÖN ·
+tsc 0 (projektbinär) · inget bygge/lås · src orörd · R2 orörd — inga
+priser/tier/publicering · data/blogg/ orörd · .env orörda.
+
+Protokoll: OPTIMERING/o35-fullscan-baslinje-kraschbevis-s8.md [fabrik]

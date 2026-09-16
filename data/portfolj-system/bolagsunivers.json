@@ -12043,5 +12043,275 @@
       ]
     },
     "notering": "livsmedels- och läskduopolets andra hälft — komplementrad till Coca-Cola (KO) i samma universum och samma bransch: där KO är den koncentrerade dryckesmodellen, bär PEP snacks-halvan (Frito-Lay/Quaker) bredvid dryckesportföljen, och paret KO–PEP är datasetets mest direkt jämförbara duo för kvartillsläsning (samma bransch, samma land, olika vallgravsform: PEP brutto 54,2 % TTM medan moat-serien 2022–2025 håller medel 54,3 % vid spridning endast 1,6 pp — livsmedelsförädlingens stabila marginalgolv, pedagogiskt mellan teknikens mjukvarurader och tillverkarnas tunna marginaler); ROE 51,5 % mot ROIC 19,4 % vid skuld/EK 2,39 — gapet bär kapitalstrukturen (samma mekanik som Visaraden: återköp och skuld krymper eget kapital, multipeln P/B 8,38 speglar det krympta talet, inte balansräkningens styrka); FCF-serien 5,6 → 7,9 → 7,2 → 7,7 mdr $ stadigt positiv, TTM 9,3 mdr $ (fcfYield 5,1 %, fcfMarginal 9,6 %); utdelningsprofilen: kvartalsvis 1,48 $ (juli-höjningen +4 %), årsnivå 5,92 $ med yield 4,40 % och payout ~78 % mot TTM-EPS 7,63 $ — utdelningsfälten null enligt universumets konvention; resultatdippen FY2025 (8 240 M$ mot 9 578 FY2024, −14,0 %) med TTM-återhämtning 10 451 M$ (+38,4 %) — fwd-multipeln 15,55 under trailing 17,76 speglar återhämtningen; prognosTillväxt härledd ur trailing/forward-P/E (17,76/15,55 ⇒ +14,2 % implicit EPS-förändring; källans 3-års EPS-prognos +5,20 %/år); peg 1,25 enligt spårkonventionen P/E ÷ prognosTillväxt i procent; omsCAGR +2,8 % endpoint 2022–2025 — volymtillväxten är svag, prissättning bär intäkterna (klassisk konsumentvarumärkes-mekanik); beta 0,36 — den försiktiga konsumtionsprofilen; kurs 134,57 $ (intraday 2026-09-16, AIR.PA-precedensen för öppna marknader) nära 52-vägers botten: spann 133,73–171,48 $, 1-årsförändring −4,27 %; nästa rapport 2026-10-08"
+  },
+  {
+    "ticker": "UBER",
+    "namn": "Uber Technologies, Inc.",
+    "bransch": "tillvaxt",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/uber/",
+        "paranoid": "översikt + statistics + financials + cash-flow (underlag S&P Global Market Intelligence; intraday 2026-09-16 15:3x EDT): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 70.93,
+    "marknadsKapitalMdr": 144.88,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1773,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.167,
+      "prognosTillvaxt": -0.1015
+    },
+    "lonksamhet": {
+      "roe": 0.3716,
+      "roic": 0.1918,
+      "bruttoMarginal": 0.4075,
+      "ebitMarginal": 0.1213,
+      "nettoMarginal": 0.1734,
+      "fcfMarginal": 0.1832
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.52,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 15.58,
+      "pb": 5.33,
+      "evEbit": 22.58,
+      "peg": null,
+      "fcfYield": 0.0698,
+      "egenKapitalMultipl": 5.33
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        31877000000,
+        37281000000,
+        43978000000,
+        52017000000
+      ],
+      "resultat": [
+        -9141000000,
+        1887000000,
+        9856000000,
+        10053000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        390000000,
+        3362000000,
+        6895000000,
+        9763000000
+      ]
+    },
+    "notering": "PLATTFORMSEKONOMINS LÄROBOK: tre sidor (ride-hail, Eats-leverans, frakt) matchar efterfrågan och utbud utan att äga varken bilar eller restauranger — skalbarheten syns i FCF-serien 390→3 362→6 895→9 763 M$ (fcf-marginal 1,2→18,3 %): samma intäktstillväxt med kapitallösa marginaler; NETTO ÖVER EBIT — universumets tydligaste fallen: netto 17,3 % mot ebit 12,1 % — posterna under driftsraden (omvärdering av aktieägda intressen m.m.) gör nettoresultatet till en OSTABIL resultatbas, P/E 15,6 vilar delvis på de posterna och forward-P/E 17,3 ⇒ prognosTillväxt −10,2 % (tillbakagång nästa år, AMZN-notens prognoskonvention; källans 3-årsprognos EPS +30,7 %/år och intäkt +13,6 %/år visar andra riktningen — trailing-engångsposter mot framtida drift); PEG därmed osatt enligt spårkonventionen (källans 3-års-PEG 0,51 som not — samma fall som AMZN); ROIC 19,2 % mot källans WACC 9,9 % — värdeskapande marginal; skuld/EK 0,52 (total skuld 14,7 mdr $ mot kassa 5,4 — nettoskuld bärs av FCF-styrkan); ingen utdelning — ägartillägnelsen sker via återköp (buyback yield 2,28 %); beta 1,16; resultatCAGR osatt: 2022:s förlust −9 141 M$ ger ingen meningsfull bas (AMZN/BRK-precedenten); omsättning 31,9→52,0 mdr $ = +17,7 %/år endpoint med TTM +16,7 % — plattformens tillväxt lever än; rapport i USD, kalenderår, NYSE"
+  },
+  {
+    "ticker": "BA",
+    "namn": "The Boeing Company",
+    "bransch": "industri",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/ba/",
+        "paranoid": "översikt + statistics + financials + cash-flow (underlag S&P Global Market Intelligence; intraday 2026-09-16 15:3x EDT): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår) — källans FCF-marginalfält n/a, härlett ur egna tal: FCF −210 M$ / oms TTM 93 995 M$"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 197.6,
+    "marknadsKapitalMdr": 156.18,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1033,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.248,
+      "prognosTillvaxt": -0.5657
+    },
+    "lonksamhet": {
+      "roe": 1.7354,
+      "roic": -0.127,
+      "bruttoMarginal": 0.0471,
+      "ebitMarginal": -0.0542,
+      "nettoMarginal": 0.0259,
+      "fcfMarginal": -0.0022
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 7.91,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 78.2,
+      "pb": 27.18,
+      "evEbit": null,
+      "peg": null,
+      "fcfYield": -0.0013,
+      "egenKapitalMultipl": 27.18
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        66608000000,
+        77794000000,
+        66517000000,
+        89463000000
+      ],
+      "resultat": [
+        -4935000000,
+        -2222000000,
+        -11875000000,
+        1889000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        2290000000,
+        4433000000,
+        -14310000000,
+        -1877000000
+      ]
+    },
+    "notering": "FLYGDUOPOL-TRIANGELNS SAKNADE HÖRN: AIR.PA (planhalvan Europa) + GE (motorhalvan) + denna rad = leveranskedjan komplett i universumet; kvalitetskrisens rådata: 2024 = botten med resultat −11 875 M$ och FCF −14 310 M$ (driftskassa −12 080 M$ på lageruppbyggnad 12 353 M$ — produktionsstopp betalas före leverans), 2025 vändning: nettoresultat +1 889 M$ MEDAN driftsresultatet förblir −5 191 M$ — vinsten ligger UNDER driftsraden (segmentförsäljningar m.m.), universumets renaste exempel på att netto och EBIT kan berätta emot varandra (UBER-notens spegelbild i samma omgång); ROE 173,5 % = EK-NÄRA-NOLL-EFFEKTEN: bokvärdet 7,72 $/aktie gör täljaren meningslös — P/B 27,2 är substansförhållande, inte dyrbarhet (KO/ABNB-notens släkt men med omvänt tecken); ROIC −12,7 % mot WACC 9,5 %; EV/EBIT OSATT — negativ EBIT ger ingen multipel (A2-kontraktets ärlighetsprincip: saknad redovisas som saknad, aldrig som noll); skuld/EK 7,91 (total skuld 48,4 mdr $ mot kassa 19,3) — krishanteringens lånefinansiering; utdelning vilande sedan 2020; FCF TTM −210 M$ mot ledningens guida 1–3 mdr $ för 2026 (källans nyhetsnotis) — vändningen är påbörjad men ej levererad; prognosTillväxt −56,6 % (trailing P/E 78,2 mot forward 180 — trailing bär engångsposterna; källans 3-årsprognos EPS +88,2 %/år = återhämtningsbågen från botten); PEG osatt enligt spårkonventionen; omsättning 66,6→89,5 mdr $ = +10,3 %/år med 2024-dippen −14,5 % mitt i serien och TTM +24,8 % — orderboken (AIR-notens kusin) matar återhämtningen; rapport i USD, kalenderår, NYSE"
+  },
+  {
+    "ticker": "ABBV",
+    "namn": "AbbVie Inc.",
+    "bransch": "halso",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/abbv/",
+        "paranoid": "översikt + statistics + financials + cash-flow (underlag S&P Global Market Intelligence; intraday 2026-09-16 15:3x EDT): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår) — källans ROE-, skuld/EK- och P/B-fält n/a på negativt bokfört eget kapital (−3,36 $/aktie)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 261.94,
+    "marknadsKapitalMdr": 462.88,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0175,
+      "resultatCAGR5ar": -0.2919,
+      "omsattningTillvaxtTTM": 0.104,
+      "prognosTillvaxt": 3.2879
+    },
+    "lonksamhet": {
+      "roe": null,
+      "roic": 0.177,
+      "bruttoMarginal": 0.7279,
+      "ebitMarginal": 0.3556,
+      "nettoMarginal": 0.098,
+      "fcfMarginal": 0.2828
+    },
+    "stabilitet": {
+      "skuldEgenkapital": null,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 74.31,
+      "pb": null,
+      "evEbit": 23.14,
+      "peg": 0.23,
+      "fcfYield": 0.0393,
+      "egenKapitalMultipl": null
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        58054000000,
+        54318000000,
+        56334000000,
+        61160000000
+      ],
+      "resultat": [
+        11782000000,
+        4820000000,
+        4238000000,
+        4186000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        24248000000,
+        22062000000,
+        17832000000,
+        17816000000
+      ]
+    },
+    "notering": "PATENTKLIPPAN I RÅDATA: Humiras exklusivitet föll i USA 2023 — resultatserien 11 782→4 820→4 238→4 186 M$ är klippan själva (−29,2 %/år endpoint) medan omsättningen 58,1→61,2 mdr $ (+1,8 %/år) knappt märker den — Skyrizi/Rinvoq-pickupen bär intäkterna vidare; UPPSVINGET syns TTM: netto +67,7 % (6 270 M$) och EPS 3,54 $ (+68,5 %) — patentcykelns båda halvor i EN rad (RIO-notens cykelpedagogik, fast förorsakad av juridik inte granit); NETTO 9,8 % MOT EBIT 35,6 % — UBER-notens exakta spegelbild i samma omgång: förvärvade immateriella rättigheter (Allergan) amortiseras och skrivs ned under driftsraden, GAAP-resultatet är kroniskt depressivt medan FCF-marginalen 28,3 % och ROIC 17,7 % mot WACC 5,4 % visar verksamheten bakom bokföringen — P/E 74,3 mot forward 17,3 ⇒ prognosTillväxt +328,7 % (trailing GAAP vs framåtblickande estimat — samma halva sanning som PEG 0,23 enligt spårkonventionen; källans 3-årsprognos EPS +21,7 %/år, PEG 3,42 som not) — multipel på GAAP-tal straffar förvärvare; NEGATIVT BOKFORT EK −3,36 $/aktie: ROE, skuld/EK och P/B alla OSATTA (källa n/a — substansmått meningslösa när återköpen ätit balansräkningen; KO/ABNB-notens slutled), total skuld 70,9 mdr $ mot kassa 6,6 bärs av FCF 18,2 mdr $; UTDDELNINGEN: 6,92 $/aktie = 2,6 % direktavkastning, 54 år av höjningar (ärvt från Abbott-spinoffen 2013 — samma årtal som börspredikan), payout 195,5 % på GAAP-EPS men ~50 % på justerat — payoutens beräkningsbas är del av läxan; beta 0,28 (universums lugnaste i notfamiljen — under KO:s 0,34); USA/hälsa-landaspekten öppnar med denna rad; rapport i USD, kalenderår, NYSE"
   }
 ]

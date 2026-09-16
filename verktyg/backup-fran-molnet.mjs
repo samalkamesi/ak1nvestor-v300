@@ -9,14 +9,22 @@
  *
  * v2 (FULLSTÄNDIG nivå):
  *   - FULL system_events-dump: ALLA rader oavsett type, Range-paginering
- *     5000/sida, tak 40 sidor (200k rader) → system-events-full-<datum>.json
+ *     5000/sida → system-events-full-<datum>.json
  *     (gzip:ad som .json.gz via zlib om den oväxlade dumpen > 20 MB).
  *   - medlemmar (type=medlem) + medlem_progress som egna typer (framtidssäkra).
- *   - --max-sidor=N: begränsa antal sidor i full-dumpen vid behov (1..40).
+ *   - --max-sidor=N: begränsa antal sidor i full-dumpen vid behov (1..400).
  *   - Summeringsrad med totalt antal MB skrivet.
  *   - v2.1 (2026-09-16, DR-KEDJA4): per-typ-filerna bär truncerad-markör —
  *     limit=5000 var OMARKERAT, en avklippt snapshot skilde sig inte från en
  *     komplett (kontraktet kontrolleras av verktyg/dr-kedja4.mjs).
+ *   - v3 (2026-09-16, spår 10 s10-u1 O4): FULL-dumpens hårdta 40-sidors-tak
+ *     (200k rader) LYFT till 400 sidor (2M rader) — gamla taket nås
+ *     ~2026-10-05 vid +2 015 rader/dag (mätt: 161 550 i molnet 2026-09-16)
+ *     och skulle därefter tyst trunkera varje nattexport. TOTAL-KONTRAKT:
+ *     sida 0 läser Content-Range med Prefer: count=exact → filen bär
+ *     totaltFranApi och truncerad döms MASKINELLT (antal < totalt) —
+ *     JSON-dumpens motsvarighet till SQL-dumpens slutmarkörer.
+ *     Repetitionsskydd mot ignorerad Range-paginering.
  *
  * Användning: node verktyg/backup-fran-molnet.mjs [typ] [--max-sidor=N]
  *   (körs utan argument av hybrid-sync — bakåtkompatibelt med v1-anropet)
@@ -32,9 +40,12 @@ const BAS = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const NYCKEL = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const FLAGGA_MAX_SIDOR = process.argv.find(a => a.startsWith("--max-sidor="));
+// v3: SAKERHETSTAK är ett evighetsskydd (2M rader ≈ >1 år vid +2 015/dag),
+// ALDRIG en dimensionerande gräns — kompletthet döms av total-kontraktet.
+const SAKERHETSTAK = 400;
 const MAX_SIDOR = (() => {
-  const n = FLAGGA_MAX_SIDOR ? Number(FLAGGA_MAX_SIDOR.slice(12)) : 40;
-  return Number.isInteger(n) && n >= 1 ? Math.min(n, 40) : 40; // hårt tak: 40 sidor
+  const n = FLAGGA_MAX_SIDOR ? Number(FLAGGA_MAX_SIDOR.slice(12)) : SAKERHETSTAK;
+  return Number.isInteger(n) && n >= 1 ? Math.min(n, SAKERHETSTAK) : SAKERHETSTAK;
 })();
 const TYP = process.argv.slice(2).find(a => !a.startsWith("--")); // valfritt: en typ
 
@@ -104,32 +115,55 @@ for (const t of mapa) {
 
 // (2) FULL system_events-dump — ALLA rader, Range-paginering 5000/sida.
 // Sortering på created_at.desc,id.desc (id är PK) ger stabil sidindelning.
+// v3 TOTAL-KONTRAKT: sida 0 begär Prefer: count=exact → Content-Range bär
+// tabellens total; truncerad döms MASKINELLT (antal < totaltFranApi).
+// Rakningen begärs EN gång — count-exact per sida kostar onödigt på en
+// växande tabell.
 if (!TYP || TYP === "system-events-full") {
   try {
     const alla = [];
     let sidor = 0;
-    let truncerad = false;
+    let totaltFranApi = null;
+    let rangeIgnorerat = false;
+    let senasteForstaId;
     for (let sida = 0; sida < MAX_SIDOR; sida++) {
       const fran = sida * SIDSTORLEK;
       const url = BAS + "/rest/v1/system_events?select=*&order=created_at.desc,id.desc";
-      const r = await fetch(url, {
-        headers: { ...HEADERS, Range: fran + "-" + (fran + SIDSTORLEK - 1), "Range-Unit": "items" },
-        signal: AbortSignal.timeout(60000),
-      });
+      const sidHeaders = { ...HEADERS, Range: fran + "-" + (fran + SIDSTORLEK - 1), "Range-Unit": "items" };
+      if (sida === 0) sidHeaders["Prefer"] = "count=exact";
+      const r = await fetch(url, { headers: sidHeaders, signal: AbortSignal.timeout(60000) });
       if (r.status === 416) break; // offset utanför tabellen — klar
       if (!r.ok) throw new Error("HTTP " + r.status + " på sida " + (sida + 1));
+      if (sida === 0) {
+        const cr = r.headers.get("content-range") || ""; // "0-4999/161550"
+        const m = /\/(\d+)$/.exec(cr);
+        if (m) totaltFranApi = Number(m[1]);
+      }
       const bit = await r.json();
       sidor++;
+      // Evighetsskydd: en proxy som ignorerar Range returnerar samma första
+      // rad igen — loopen skulle push:a kopior tills taket. Döm och bryt.
+      const forstaId = Array.isArray(bit) && bit.length ? bit[0].id : undefined;
+      if (forstaId !== undefined && forstaId === senasteForstaId) {
+        rangeIgnorerat = true;
+        break;
+      }
+      senasteForstaId = forstaId;
       alla.push(...bit);
       if (!Array.isArray(bit) || bit.length < SIDSTORLEK) break; // sista sidan
     }
-    truncerad = alla.length >= MAX_SIDOR * SIDSTORLEK;
+    let truncerad;
+    if (rangeIgnorerat) truncerad = true;
+    else if (totaltFranApi !== null) truncerad = alla.length < totaltFranApi; // maskinell dom
+    else truncerad = alla.length >= MAX_SIDOR * SIDSTORLEK; // fallback: sidtak utan total
     mkdirSync("data/backups", { recursive: true });
     const json = JSON.stringify(
-      { typ: "system_events_full", datum: new Date().toISOString(), antal: alla.length, sidor, truncerad, rader: alla },
+      { typ: "system_events_full", datum: new Date().toISOString(), antal: alla.length, sidor, totaltFranApi, truncerad, rader: alla },
       null, 2
     );
-    const namn = truncerad ? " (TAK " + MAX_SIDOR + " sidor nått — dumpen kan vara ofullständig)" : "";
+    const namn = truncerad
+      ? " (VARNING: dumpen TRUNCERAD — " + (rangeIgnorerat ? "Range ignorerat av proxyn" : totaltFranApi !== null ? "antal < totalt (" + alla.length + "/" + totaltFranApi + ")" : "tak " + MAX_SIDOR + " sidor nått") + ")"
+      : (totaltFranApi !== null ? " (total-kontrakt KOMPLETT " + alla.length + "/" + totaltFranApi + ")" : "");
     if (Buffer.byteLength(json) > GRANS_GZIP) {
       const fil = path.join("data/backups", "system-events-full-" + STJARN_DATUM + ".json.gz");
       const gz = gzipSync(json, { level: 6 });

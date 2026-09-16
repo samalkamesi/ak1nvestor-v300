@@ -199872,6 +199872,162 @@
     "grahamSection": "Benjamin Graham byggde hela sin trygghetsfilosofi på marginalen — avståndet mellan pris och värde, men i vidare mening mellan belastning och bärkraft. Ett stresstest är marginalen översatt till balansräkningens språk: hur mycket sämre kan det bli innan tryggheten tar slut? Grahams erfarenhet av depressionens balansräkningar gjorde honom till stresstänkare före termen: han visste att det som skiljer de som överlever kriser från de som inte gör det sällan är verksamheten — det är finansieringens uthållighet under de år då ingenting går som planerat.",
     "ak1Section": "I AK1A:s metodik är den här kursen stabilitetsspårets fortsättningsblock: soliditet och räntetäckning (st-01) ger läget, känslighetsmatrisen, bindningstrappan och stresstestet ger banan — och tillsammans med V10–V12 formas en tålighetsbild som håller även i rörelse. I AKM2:s sammanvägning blir stabilitetsvikten ärligare av stressvyn: den speglar inte bara hur ett bolag mår i dag, utan hur mycket motvind dess balansräkning står emot — vilket är den fråga metodens riskdimension verkligen ställer."
   },
+  "st-03-altman-z-score": {
+    "slug": "st-03-altman-z-score",
+    "category": "STABILITET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Konkursprognos — Altman Z-score",
+    "summary": "Stabilitetsfamiliens avancerade kurs: Altman Z-score — den klassiska konkursprognosmodellen som väger fem nyckeltal från balans- och resultaträkningen till ett enda tal, med gränsvärden som skiljer säker zon från stresszon.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå Z-scoret som stabilitetsfamiliens toppbyggnad — soliditeten (st-01) mätte en grundvall och känslighetsanalysen (st-02) ett stressprov, modellen väger fem nyckeltal till ett samlat mått på stressnivån · Räkna de fem komponenterna ur bokslutet: rörelsekapital, balanserat resultat, rörelseresultat, marknadsvärdering och kapitalomsättning — alla i förhållande till totala tillgångar · Tillämpa de klassiska vikterna (1,2 · 1,4 · 3,3 · 0,6 · 1,0) och tolka gränsvärdena: över 2,99 säker zon, 1,81–2,99 gråzon, under 1,81 stresszon · Skilja originalmodellen för börsnoterade tillverkare från varianterna för privata bolag (bokfört eget kapital i stället för börsvärde) · Känna modellens historik och dess gränser — bakåtblickande data, sektorskillnader, IFRS-skillnader mot amerikanskt GAAP · Koppla Z-läsningen till AKM1:s stabilitetsfamilj (V10–V12) och AKM2:s stabilitetsdimension.",
+    "why": "Stabilitetskurserna hittills mäter varsitt grundämne: soliditeten och räntetäckningen (st-01) visar betalningsförmågan i normala tider, känslighetsanalysen (st-02) visar hur resultaten rör sig när en enskild variabel ändras. Ingen av dem svarar på frågan som stabilitetsanalysens egentliga poäng: hur nära kanten ligger hela bolaget, allt sammanvägt? Z-scoret är den klassiska sammanvägningen — fem nyckeltal som var och en fångar en sida av stressen (likviditet, buffert, lönsamhet, finansieringsstruktur, omsättning), vikterna tagna ur statistisk analys av bolag som faktiskt gick i konkurs mot bolag som klarade sig. Modellen är dessutom stabilitetsfamiliens tydligaste exempel på något som återkommer i hela utbildningen: att ett enda tal kan bära en hel berättelse — om man vet vilka tal som byggde det och var gränserna sattes. Kursen är avancerad av ett skäl: den kräver att balansräkningens logik (bk-01) och skuldens anatomi (ks-03) redan sitter, för modellen väger dem alla på en gång.",
+    "history": {
+      "origin": "Edward Altman publicerade 1968 sin studie över amerikanska tillverkningsbolag: 33 bolag som gått i konkurs matchades parvis med 33 överlevare av samma storlek och bransch — 66 bolag sammanlagt — och 22 nyckeltal testades i en statistisk metod som kallas multipel diskriminantanalys. Fem tal visade sig bära nästan all skillnad — och de kombinerades med analytiskt härledda vikter till ett enda poängtal. Att konkurs kunde förutses med balansrader var i sig ingen ny tanke (kreditgivare hade lusläst snabbkedjor länge), men att rangordningen var statistiskt testad och samlad i en formel var det.",
+      "evolution": "Modellen spred sig från akademin till kreditavdelningar under 1970- och 80-talen — och mötte sina första gränser: originalvikterna var skattade på börsnoterade tillverkare, och utanför den världen bröt tolkningen. Altman svarade med varianter: en modifierad modell för privata bolag (där börsvärdet i fjärde termen byts mot bokfört eget kapital) och senare en anpassning för framväxande marknader. Samtidigt byggde traditionen ut syskon: Ohlsons logit-modell (1980) ersatte diskriminantanalysen med en mer flexibel statistik, och ratingsindustrin utvecklade egna modeller för avstånd till betalningsstillestånd. Z-scoret levde kvar som den mest citerade — just för att den femtaliga formeln gick att räkna för hand.",
+      "modern": "I dag används Z-scoret som snabb indikator i finansanalyser och som forskningsverktyg — och dess historiska träffsäkerhet i originalurvalet (över 90 procent rätt klassificering ett år före konkurs) citeras ofta med en viktig varning i samma andetag: modellen är skattad bakåt, på en annan redovisningsstandard (amerikanskt GAAP), i en annan räntevärld, och för en tillverkningsindustri som delvis inte längre finns. De eviga avgränsningsfrågorna är desamma som i ROIC-kursen (roic-01): vad räknas som kapital, hur behandlas leasing och goodwill — här med tillägget att IFRS-regler flyttat flera poster sedan 1968. Den moderna läsningen är därför dubbel: talet är en startpunkt som gör bolag jämförbara, och en påminnelse om att ingen formel ersätter att läsa noterna."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — att läsa stressen i balansräkningen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Modellen — fem nyckeltal och deras vikter",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — räkna Z steg för steg",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — gränsvärden, tolkning och rörelser",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — stabilitetsbedömning i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — att läsa stressen i balansräkningen",
+        "intro": "Konkursen kommer sällan som en blixt — den kommer som en sluttning, och balansräkningen har lutningen inskriven.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Stabilitetsfamiliens tidigare steg har märkt sluttningen bit för bit. Soliditetskursen (st-01) visade hur eget kapital och räntetäckning mäter hur mycket motvind bolaget står — bufferten mellan resultatet och räntekostnaden. Känslighetsanalysen (st-02) visade hur många procent resultatet tappar när räntan, valutan eller volymen rör sig. Men en läsare som får femtio nyckeltal för femtio bolag kan ändå inte svara på den enkla frågan: vilket av dem ligger närmast kanten? Alla mått pekar lite olika — hög soliditet men svag lönsamhet, god räntetäckning men tung kassaflödesprofil.\n\nZ-scoret bygger sin svarslinje på en iakttagelse från grundkursen i balansräkning (bk-01): en balansräkning är en enda sammanhängande berättelse, och stressen brukar synas i flera rörelser samtidigt — rörelsekapitalet krymper medan lånet växer och resultatet tunnas. Modellen fångar just de rörelserna: ett tal som stiger när bufferten växer, lönsamheten bär och kapitalet arbetar — och faller när skulderna äter. Poängen med ett sammanvägt tal är inte precision utan jämförelse: samma formel på alla bolag ger en gemensam skala för något som annars bara finns som spridda intryck."
+          },
+          {
+            "type": "definition",
+            "content": "Altman Z-score — en konkursprognosmodell som väger fem nyckeltal från bokslutet (alla relaterade till totala tillgångar) till ett enda poängtal Z. Högt Z pekar mot säker zon, lågt Z mot stresszon; emellan ligger gråzonen där modellen med rätta är tyst."
+          },
+          {
+            "type": "insight",
+            "content": "Ett nyckeltal är ett temperaturmått — Z-scoret är en feberkurva: samma patient, många mätningar, en linje som visar riktningen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Modellen — fem nyckeltal och deras vikter",
+        "intro": "Fem termer, fem sidor av samma stress — och vikterna som säger att vissa sidor bär mer än andra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Originalformeln för börsnoterade tillverkare: Z = 1,2 × X1 + 1,4 × X2 + 3,3 × X3 + 0,6 × X4 + 1,0 × X5. Term för term: X1 är rörelsekapital dividerat med totala tillgångar — likviditetens vikt i hela kroppen; ett bolag vars tillgångar sitter fast i maskiner medan skulderna är kortsiktiga har lågt X1. X2 är balanserat resultat (behållna vinster) dividerat med totala tillgångar — historiens buffert; bolag som ackumulerat vinster i goda år har en kudde, bolag som ätit upp den har inte. X3 är rörelseresultatet (EBIT) dividerat med totala tillgångarna — verksamhetens egen kraft, den term som håller modellen levande när buffertarna sinar.\n\nX4 är börsvärdet dividerat med bokförd räntebärande skuld — finansieringens risk: hur mycket av kapitalet som är lånat mot hur mycket marknaden värderar ägandet till. Just denna term är den som skiljer varianterna: för privata bolag byts börsvärdet mot bokfört eget kapital (och vikten justeras), eftersom ingen marknadspris finns. X5 är omsättningen dividerat med totala tillgångarna — kapitalomsättningen, hur hårt tillgångarna arbetar; kursen om Du Pont-analysen (ln-01) igenkänner komponenten direkt. Notera vad alla nämnare gemensamt gör: genom att dividera varje tal med totala tillgångarna blir bolag av olika storlek jämförbara — samma trick som gör nyckeltal till nyckeltal."
+          },
+          {
+            "type": "insight",
+            "content": "De fem termerna är en komplett stressberättelse: dagslikviditet (X1), historisk buffert (X2), lönsam kraft (X3), finansieringsstruktur (X4) och kapitalets arbetsvillkor (X5) — modellen läser balansräkningen som en helhet just för att konkursen anfaller den som en helhet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — räkna Z steg för steg",
+        "intro": "En balansräkning, fem kvoter och en multiplikation med vikterna — från bokslutstal till ett samlat betyg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Anta ett tillverkningsbolag med totala tillgångar på 2 000 mkr. Steg ett: rörelsekapital — kundfordringar 400 plus lager 350 minus leverantörsskulder 250 ger 500; X1 = 500 ÷ 2 000 = 0,25. Steg två: balanserat resultat 360; X2 = 360 ÷ 2 000 = 0,18. Steg tre: rörelseresultatet 130; X3 = 130 ÷ 2 000 = 0,065. Steg fyra: börsvärdet 1 600 mot räntebärande skuld 2 000 — X4 = 1 600 ÷ 2 000 = 0,80. Steg fem: omsättningen 2 300; X5 = 2 300 ÷ 2 000 = 1,15.\n\nNu vikterna: 1,2 × 0,25 = 0,300; 1,4 × 0,18 = 0,252; 3,3 × 0,065 = 0,2145; 0,6 × 0,80 = 0,480; 1,0 × 1,15 = 1,150. Summa: 0,300 + 0,252 + 0,2145 + 0,480 + 1,150 = 2,3965 — avrundat 2,40. Nästa kapitel tolkar talet (spoiler: gråzonen, nästan exakt mitt i) — men notera redan här vad övningen gett: fem kvoter som var för sig säger måttligt, kombinerade till ett tal som kan följas kvartal efter kvartal. Upprepa samma fem steg på bolagets historik tre år bakåt och kurvan börjar berätta: stigande Z är en historia, fallande en annan. Och som alltid när formeln fått sitt tal: dokumentera avgränsningarna (vad som räknades som räntebärande skuld, hur leasing behandlades) — annars är nästa års jämförelse inte sann utan bara snarlik."
+          },
+          {
+            "type": "insight",
+            "content": "Fem kvoter, fem multiplikationer, en summa — övningen tar minuter, och samma minuter köper en feberkurva i stället för femtiotaal separata temperaturmätningar."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — gränsvärden, tolkning och rörelser",
+        "intro": "Talet menar ingenting utan sina gränser — och gränserna betyder i sin tur olika saker beroende på bolagstyp och redovisningsstandard.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Originalmodellens gränsvärden för börsnoterade tillverkare: Z över 2,99 är säker zon; Z mellan 1,81 och 2,99 är gråzonen; Z under 1,81 är stresszonen. Exemplets 2,40 ligger i praktiken mitt i gråzonen — och tolkningen blir därför inte 'bolaget är stressat' och inte 'bolaget är säkert' utan 'modellen kräver vidare läsning': en svag lönsamhetsterm (X3 bidrog bara 0,2145 av 2,40) drar mot stresszon medan kapitalomsättningen (1,150) håller uppe. Det är gränsarnas verkliga användning: inte dom, utan differentierad diagnos.\n\nGränsvärdenas rörelser är minst lika informativa som deras nivåer. Ett Z som faller från 3,4 till 2,4 under tre år är en starkare varning än ett stabilt 2,2 — modellens egen historia visar att det är rörelserna som föregår kriserna, för termerna rör sig i takt: bufferten äts (X2 faller), resultatet trycks (X3) och lånet växer (X4:s nämnare). Sensitiviteten är också värd en räkning: X3 har modellens tyngsta vikt (3,3), så varje procentenhet rörelseresultat på totala tillgångar flyttar Z med 0,033 — mer än dubbelt så mycket som en procentenhet X1 (0,012). Lönsamheten är alltså modellens tyngsta hävstång, vilket är en tröst för bolag med god drift men en varning för dem utan. Vid privat bolags-användning gäller andra gränser (och X4 byggd på bokfört eget kapital) — använd rätt variant, aldrig originalgränserna mot en privatmodells tal."
+          },
+          {
+            "type": "insight",
+            "content": "Nivån placerar bolaget på skalan, rörelsen berättar historien och termerna förklarar varför — tre frågor, en formel, och gråzonen är modellens ärligaste svar: där säger den inte mer än att vidare läsning krävs."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "En modell byggd på 1960-talets Amerika har fällor som bor i tiden, i sektorn och i redovisningen — kända blir de hanterbara.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: sektorn. Originalvikterna är skattade på tillverkare — banker och finansbolag passar inte alls (deras balansräkningar är en annan värld; se km-040), och fastighetsbolag hamnar systematiskt fel eftersom deras tillgångar ger låg omsättning per krona. Botemedlet: använd modellen inom dess hemmaplan eller leta sektoranpassade syskon. Fälla två: redovisningsstandard. Posterna flyttade sig sedan 1968 — leasing togs in i balansräkningen (km-023), goodwill-reglerna ändrades, uppskjutna skatter växte. Samma bolag kan få annat Z bara genom standardbytet; jämför aldrig tvärs IFRS-gränser utan not. Fälla tre: det frysta talet. Z är en feberkurva och en enda mätning är ett fotografi — bolaget kan ha sålt anläggningar för att blåsa upp kassan, vilket höjer X1 idag mot priset av X5 i morgon.\n\nFälla fyra: den bakåtblickande statistiken. Modellen skattades på bolag som redan gått i konkurs — den hittar mönster liknande gårdagens kriser, inte nya sorter (den som vill öva nya sorter läser rk-12 om svarta svanar). Fälla fem: manipulationstrycket — bokslighteknik kan röra samtliga fem termer (kursen om resultatkvalitet, ln-02, är komplementet: ett Z byggt på uppblåsta resultat är bara ett noggrannare fel). Och som alltid i spåret: modellen är ett pedagogiskt mätinstrument som övar läsning av bokslut — inte en kontraktskylt, och aldrig en uppmaning att handla i bolaget."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor — sektor, standard, fotografi, bakåtblick, manipulation — och ett gemensamt botemedel: läs termerna bredvid talet, noterna bredvid termerna, och historien bredvid alltihop."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — stabilitetsbedömning i AKM1:s metodik",
+        "intro": "I AK1A:s system är Z-scoret stabilitetsfamiliens sammanvägning — nyckeltalen V10–V12 blir termer, och betyget får sin skala.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AKM1:s stabilitetsfamilj mäter tre ben: skuldsättningsgraden (v10), likviditeten (v11) och intäktsstabiliteten (v12). Z-scoret visar hur benen bär tillsammans: X1 är likviditetens term, X4 skuldstrukturens, X2 och X3 historia och kraft — modellen är i praktiken familjens sätt att väga sig själv. I AKM2:s stabilitetsdimension betyder det att bedömningen kan graderas: ett högt betyg kräver inte att varje enskilt mått är toppen, men att den sammanvägda stressnivån är låg och att rörelsen pekar rätt — exakt vad en Z-historik i tre års bild visar eller vederlägger.\n\nKorsningarna binder samman spåret. Mot skuldens anatomi (ks-03): X4 är den kursens hela fråga omformulerad till en kvot — och samma varning gäller, att bokförd skuld inte fångar alla förpliktelser. Mot känslighetsanalysen (st-02): stressprovet frågar vad som händer med ett villkor, Z frågar var bolaget står innan provet börjar — först det ena, sedan det andra, i den ordningen. Mot räntetäckningen (st-01): en god täckning med fallande Z är en läsarlek som modellen avslöjar — täckningen mäter dagens ränta, modellen mäter trögheten. Mot lönsamhets- och värderingsspåren: X3:s tunga vikt (3,3) gör gott rörelseresultat till stabilitetens starkaste källa, och vr-kurserna om multipelgap (vr-01) visar vad marknaden betalar för den kombinationen. Avsluta med den levande övningen: välj två tillverkare ur kursuniversumet, räkna Z i fem steg för båda tre år bakåt, dokumentera avgränsningarna — och skriv en rad om varje kurva: stigande, fallande eller platt, och vilken term som driver. Gör om nästa år med samma avgränsningar. Det är utbildningens kärna: stabilitet är inte ett mått utan en riktning, och riktningen syns bara när samma formel får arbeta över tid."
+          },
+          {
+            "type": "insight",
+            "content": "Nyckeltalen mäter var sitt ben — Z-scoret visar hur benen bär tillsammans, och AKM2:s stabilitetsbetyg graderar just det: sammanvägningen, dess riktning och källan bakom."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om bolag med 'starka balansräkningar' som han kunde låta ligga i fred genom svåra år — hans respekt för buffertar är Z-scorets tes i dagligt språk. Lynch var samtidigt varnande noga med att skilja billigt från stukat: ett bolag med fallande kurva såg billigt ut ända till kanten. Hans regel att läsa skulderna först av allt i en balansräkning är modellens fjärde term som instinkt.",
+    "grahamSection": "Benjamin Graham arbetade i en tid då konkurs var närmare än räntan — hans krav på att eget kapital täcka hela företagets värde, hans täckningskrav på räntan och hans fasta värdegrunder var i praktiken ett manuellt Z-score: flera mätningar som alla måste gröna innan något fick kallas stabilt. Grahams varning för fynd vars pris fallit i takt med deras buffert — de fallna änglarna i hans vokabulär — är modellens gråzon formulerad trettio år före formeln.",
+    "ak1Section": "I AK1A:s metodik är denna kurs STABILITET-familiens toppblock: st-01 mäter grundvallen, st-02 stressmotståndet, och Z-scoret väger hela bokslutets stressnivå till den skala AKM2:s stabilitetsdimension graderar — med rörelser över tid som egentliga domslut. Brobyggen: mot ks-03 (X4 som skuldkvot med dess alla förbehåll), mot ln-02 (ett Z på uppblåsta resultat är noggrannare fel) och mot v10–v12 (familjens tre ben som modelltermer)."
+  },
   "tx-01-organisk-mot-forvarvad-tillvaxt": {
     "slug": "tx-01-organisk-mot-forvarvad-tillvaxt",
     "category": "TILLVÄXT",
@@ -200187,6 +200343,162 @@
     "lynchSection": "Peter Lynchs tale om 'earnings growth' som aktiens motor gäller här i högsta grad — men hans finaste bidrag till motorläsningen är kluvenheten till tillväxt som köpts med rabatt och hans respekt för bolag som kan höja priser i tysthet. Lynch påminde ofta om att den bästa tillväxten är den som inte kräver nytt kapital — i motorernas språk: pris och mix före volym mot kapacitetstaket — och hans varningar för het tillväxt i bolag utan prissättningskraft är motoranalysens äldsta röst.",
     "grahamSection": "Benjamin Graham levde i inflationens och depressionens tidevarv och visste därför bättre än de flesta att en nominell tillväxtsiffra kan bära både verklig expansion och penningvärdets förändring — hans krav på långa serier och på att skilja förbigående från bestående är motorläsningens förfader. Grahams försiktighet med bolag vars tillväxt bygger på ett läge snarare än en kraft översatt till denna kursens termer: fråga alltid vilken motor som driver, och hur den möter sitt tak.",
     "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familiens kvalitetsblock: V01–V03 mäter nivåerna, tx-01 spårar källan (organiskt eller förvärvat), och tx-02 delar den organiska tillväxten i volym, pris och mix — den uppdelning som avgör hur mycket tillväxten är värt i AKM2:s tillväxtdimension. Broarna går till lönsamhetsdimensionen (priset syns i marginalen, volymen i hävstången), moat-dimensionen (varaktig prissättningskraft är en vallgrav) och värderingsdimensionen (olika motorer förtjänar olika multipler) — motorläsningen är därmed en av metodens mest brofasta moduler."
+  },
+  "tx-03-nar-skapar-tillvaxt-varde": {
+    "slug": "tx-03-nar-skapar-tillvaxt-varde",
+    "category": "TILLVÄXT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "När skapar tillväxt värde? — återinvesteringens matematik",
+    "summary": "Tillväxtfamiliens avancerade kurs: värdemotorn — hållbar tillväxttakt som produkten av ROIC och reinvesteringskvot, och spridningen mellan ROIC och kapitalkostnad som avgörande skiljelinjen mellan tillväxt som bygger värde och tillväxt som bränner det.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå tillväxtkursens toppbyggnad — tx-01 skilde organisk från förvärvad tillväxt och tx-02 plockade isär volym, pris och mix; denna kurs frågar vad tillväxten är värd · Använda värdemotorns formel: hållbar tillväxttakt = ROIC × reinvesteringskvot · Räkna fram hur stor andel av resultatet som måste återinvesteras för en given tillväxt — och vad som då lämnas kvar som fritt kassaflöde · Skilja på spridningen ROIC minus kapitalkostnad som värdeskapandets tecken: tillväxt ovanför kapitalkostnaden bygger värde, tillväxt under den bränner det · Jämföra två bolag med identisk tillväxt men olika kapitalåterbetalning — och se att multiplerna följer spridningen, inte takten · Koppla tillväxtkvaliteten till AKM1:s TILLVÄXT-familj (V01–V03) och AKM2:s tillväxtdimension.",
+    "why": "Tillväxtfamiljens tidigare kurser har svarat på hur tillväxten kommer till stånd — organiskt eller förvärvat (tx-01), genom volym, pris eller mix (tx-02). Denna kurs svarar på frågan efter frågan: och vad är den värd? Intuitionen säger snabbt 'mer tillväxt är bättre', men värderingsmatematiken ger ett annat svar: tillväxt är endast en råvara, och dess pris är kapitalet som måste bindas för att åstadkomma den. Ett bolag som växer 8 procent med hög avkastning på investerat kapital kan göra det med en tredjedel av resultatet återinvesterat — resten är fritt. Ett bolag med samma tillväxt men avkastning under kapitalkostnaden måste återinvestera allt, och varje krona det binder förstör värde i takt med att den arbetar. Kursen bygger direkt på ROIC-kursen (roic-01), som gav spridningsbegreppet — här förs det tillbaka till tillväxtfamiljen och blir dess domslut. Den är avancerad av ett skäl: den multiplicerar tre tidigare kurser (tx-01, tx-02, roic-01) till ett enda räkneverk, och kräver att kapitalkostnadsbyggstenen (km-008) är bekant i åtminstone sin grova storlek.",
+    "history": {
+      "origin": "Att tillväxt inte är synonymt med värde är finansens motsägelsefullaste gamla insikt: järnvägsepokens bolag växte explosionsartat medan många ägare förlorade allt — kapaciteten byggdes snabbare än trafiken betalade den. Den teoretiska bryggan kom med Modigliani och Miller (1961), som visade att ett bolags värde är dess befintliga kapital plus nettot nuvärde av alla framtida investeringar — alltså att bara investeringar med avkastning över kapitalkostnaden tillför värde. Tillväxt i sig värderades alltså redan då som en fråga om avkastningens sida.",
+      "evolution": "Konsult- och värderingslitteraturen byggde praktiken under 1980- och 90-talet: value-based management-traditionen (Stern Stewart & Co:s EVA) och McKinseys Valuation-bibliotek (Copeland, Koller och Murrin) formulerade värdemotorn i dess moderna gestalt — tillväxttakt, avkastning på nytt kapital och värdefaktorn satt i system, med den klassiska regeln 'värde skapas när avkastningen på nytt kapital överstiger kapitalkostnaden'. Inom portföljförvaltningen förde Mauboussin och forskningen om avkastningens uthållighet (roic-01:s modernhistoria) in kvalitetssidan: bolag med hög och varaktig spridning är sällsynta, och just därför värdefulla. Falldoktrinen växte parallellt: detaljhandels- och dotcom-kriser där bolag med negativ spridning växte sig stora i värdestörande takt — expansion som liknade framgång ända till kassaflödet fick sitt tal.",
+      "modern": "I dag är värdemotorn standard i bolags presentationer och i aktieanalys: tillväxtguidance läses tillsammans med kravet på avkastning på inkrementellt kapital, och nyckeltalet 'inkrementell ROIC' är skärpningen av kursens kärnbegrepp. Debatten om tillväxt utan vinst — skalbolag med brännande kassaflöde men hög omsättningstillväxt (v19-kursens territorium) — är samma gamla fråga i modern förpackning: tillväxtens pris per krona kapital, och om spridningen någon gång vänder positivt. Kursens matematik har inte ändrats sedan Modigliani–Miller — bara dess modeväxlingar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — tillväxt är en råvara med pris",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Formeln — värdemotorn ROIC × reinvesteringskvot",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — två bolag, samma tillväxt",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — spridningen som värdeskapandets tecken",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — tillväxt är en råvara med pris",
+        "intro": "Två bolag kan växa lika snabbt — och ändå vara varandras motsatser i värdeskapande.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Minnet från tillväxtkurserna hittills: den organiska och den förvärvade växten (tx-01) har olika källor och olika bördor — den förvärvade betalar goodwill, den organiska betalar kapacitet och utveckling. Volym, pris och mix (tx-02) visade rörelsens inre: samma tillväxtsumma kan vara fler sålda enheter, högre priser eller ett skifte mot dyrare varor — med olika hållbarhet och olika marginalverk. Men ingen av kurserna frågade vad tillväxten kostar i kapital. Det är denna kursens enda fråga, och den har en rak analogi i hushållsekonomien: en löneökning är bara en bra nyhet om den inte kräver dyrare pendling och högre boendekostnad — inkomsten räknas nettot mot vad som binds för att åstadkomma den.\n\nBolagets motsvarighet: varje krona tillväxt kräver kapital — lager som byggts, fabriker som restes, kundfordringar som växt (ln-04:s kapitalbindning). Frågan 'skapar tillväxten värde' är därför aldrig en fråga om takten utan om bytesförhållandet: hur mycket kapital som binds per krona nytt resultat, och vad det kapitalet hade kunnat avkasta någon annanstans. ROIC-kursen (roic-01) gav det senare måttet — spridningen mellan avkastning och kapitalkostnad. Denna kurs sätter det i arbete på tillväxtens sida."
+          },
+          {
+            "type": "definition",
+            "content": "Värdemotor — sambandet som gör tillväxttakt, avkastning och återinvestering till en enda beräkning: hållbar tillväxttakt = ROIC × reinvesteringskvot. Tillväxtens värde bestäms inte av takten utan av spridningen mellan ROIC och kapitalkostnaden."
+          },
+          {
+            "type": "insight",
+            "content": "Tillväxt är en råvara — dess pris är kapitalbindningen, och dess värde är spridningen mellan avkastning och kapitalkostnad: samma råvara, två helt olika affärer."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Formeln — värdemotorn ROIC × reinvesteringskvot",
+        "intro": "En multiplikation med tre läsningar — tillväxttakten, friheten och priset.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Formeln lyder: hållbar tillväxttakt g = ROIC × reinvesteringskvot, där reinvesteringskvoten är andelen av resultatet som binds i verksamheten i stället för att lämnas till ägarna. Läsningen i tre riktningar gör den användbar. Baklänges — frågan 'vårt bolag växer 8 procent med ROIC 25 procent': reinvesteringskvoten måste då vara 8 ÷ 25 = 32 procent; en tredjedel av resultatet återinvesteras, två tredjedelar blir fritt. Framåt — 'ROIC 20 procent och hälften av resultatet återinvesteras': tillväxten blir 0,20 × 0,5 = 10 procent. Och som gräns — 'ROIC 8 procent, samma tillväxt 8 procent': reinvesteringskvoten måste vara 8 ÷ 8 = 100 procent; allt resultat binds, inget lämnar bolaget.\n\nSläktskapen med Du Pont-traditionen är rak (ln-01 bröt isär en kvot i tre bitar; här multipliceras två till en takt), och med kursen om återinvestering kontra utdelning (km-066) — reinvesteringskvotens komplement är precis det valet. Två varningar sätts tidigt. För det första gäller formeln bara avkastningen på NYTTP kapital — räkna spridningen på marginella investeringar, inte på genomsnittet av allt gammalt (ett bolag kan sitta på 30 procent i gamla fabriker och tjäna 5 på nästa). För det andra är 'hållbar' en idealisering: verkliga bolag växer i kliv och cykler (v12 tar stabiliteten, tx-02 mixens friktion). Formeln är en skelettberäkning — dess värde är att den tvingar fram båda talen samtidigt, och att den visar att ROIC och tillväxt är samma mynts två sidor, inte två fristående nyckeltal."
+          },
+          {
+            "type": "insight",
+            "content": "En multiplikation, tre läsningar: baklänges ger den friheten, framåt takten och vid gränsen priset — och alltid samma budskap: ROIC och tillväxt kan aldrig läsas var för sig."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — två bolag, samma tillväxt",
+        "intro": "Åtta procents tillväxt i båda fallen — resten är två olika ekonomier.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolag A och bolag B växer båda med 8 procent per år. A: ett mjukvarubolag med ROIC 25 procent, kapitalkostnad 9 procent (WACC i en grov uppskattning — kursen km-008 går igenom byggstenarna). B: en detaljhandelskedja med ROIC 8 procent, samma kapitalkostnad 9 procent. Steg ett — reinvesteringskvoten: A måste återinvestera 8 ÷ 25 = 32 procent av resultatet, B måste återinvestera 8 ÷ 8 = 100 procent. Steg två — fritt kassaflöde: av varje hundra kronor resultat behåller A 68 kronor fria, B noll. Steg tre — spridningen: A ligger 25 − 9 = +16 procentenheter över kapitalkostnaden, B ligger 8 − 9 = −1 procentenhet under.\n\nNu värdemätningen: när A återinvesterar 100 mkr skapas värde i roic-01:s logik med spridningen gånger kapitalet — 16 procent × 100 = 16 mkr per år i värdeskapande utöver det återbetalade. När B återinvesterar samma 100 mkr förstörs 1 mkr per år — B betalar alltså för att växa: en tillväxtmaskin med läckande bassäng. Och ändå: båda bolagen växer 8 procent. En läsning som stannar vid tillväxttakten — presentationsbildens siffra, V01:s försäljningstillväxt — ser två likadana bolag. Värdemotorn ser en värdeskapare och en värdestörare. Det är kursens praktiska kärna: räkna alltid de tre stegen (kvot, frihet, spridning) innan tillväxtsiffran får betyda något — och notera att B:s enda väg till värdeskapande tillväxt inte är mer tillväxt utan högre ROIC (pris, mix, lägre kapitalbindning — tx-02:s hela verktygslåda)."
+          },
+          {
+            "type": "insight",
+            "content": "Samma tillväxt, 68 kronor fria mot noll, +16 mot −1 i spridning — tillväxttakten var den sista av siffrorna som skilde dem."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — spridningen som värdeskapandets tecken",
+        "intro": "Värderingen betalar för spridningen, inte takten — och det syns i multiplerna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Varför är A värt mer än B? Därför att dess värde växer även utan ny emission, ny skuld eller nytänkande: varje års återinvestering tillför värde över kapitalkostnaden, medan B:s tillväxt måste finansieras med värde från ägarna — antingen genom att resultaten binds (som här) eller, när det inte räcker, genom ny emission som späder ägandet (rk-02 tar den mekanismen). Enklast syns skillnaden i vad ett resultat är värt: A:s 68 kronor fria per hundra är värda kapitaliserade som kassaflöde; B:s noll är inte värdefullt även om samma totaltillväxt — förväntansmarknaden sammanfattar skillnaden i multiplerna (vr-01:s multipelgap förklarar det strukturellt: bolag med varaktig positiv spridning betalar premie för det, och bolag med negativ spridning rabatteras).\n\nEn andra mätning: ROIC-ledarens rätt att köpa tillväxt. Ett bolag med ROIC 25 procent och WACC 9 procent kan betala upp till (25 − 9) ÷ 9 ≈ 1,78 kronor i värdeskapande per återinvestering krona — det är marginalen som gör förvärv (tx-01:s förvärvs-sida) rationella bara när inkrementell avkastning överstiger kapitalkostnaden. En tredje, varningens: spridningen är inte evig — konkurrensen angriper den (mt-02:s erosion), och forskningens budskap från roic-01 är att hög ROIC är mer beständig än hög tillväxt men aldrig permanent. Därför mäts tillväxtkvalitet bäst som ett paket: dagens spridning, dess historiska uthållighet och kapitalbehovets riktning (lättare eller tyngre). Samma paket är sedan AKM2:s tillväxtdimension i miniatyr — betyget faller på kvaliteten i motorn, inte på dess varvtal."
+          },
+          {
+            "type": "insight",
+            "content": "Multiplerna betalar för spridningen, förvärvet är rationellt bara över kapitalkostnaden och uthålligheten avgör priset — tre mätningar, en och samma teckentabell."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Värdemotorns fällor bor i genomsnitt mot marginal, i redovisningen och i berättelsen — kända blir de hanterbara.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: genomsnitts-ROIC på allt kapital. Formeln kräver avkastningen på nytt kapital — ett bolag vars gamla anläggningar tjänar 30 men vars nästa butik tjänar 6 har en värdemotor som ser strålande ut i genomsnittet men låter allt sämre på marginalen. Botemedlet: räkna inkrementellt (deltaresultat ÷ deltakapital över några år). Fälla två: redovisningens förskjutningar. Aktiverade utvecklingskostnader, kapitaliserade rörliga kostnader och leasing flyttar både täljare och nämnare (ln-02 om resultatkvalitet, km-023 om leasing) — normalisera innan formeln körs. Fälla tre: tillväxtens sista procent. Marknadsandelen kan inte växa för evigt; den sista tillväxtprocenten är alltid dyraste (marginalkunden lockas med rabatt — tx-02:s mix-fälla) och värdemotorn som räknas på historisk ROIC glömmer det. Botemedlet: låt reinvesteringskvoten stiga i beräkningen när bolaget närmar sig mättning.\n\nFälla fyra: kapitalkostnadens pseudoprecision. WACC är en uppskattning med hela sin kedja av antaganden (km-008 och vm-11 tar dess fällor) — och spridningen '±1 procentenhet' är inom bruset. Botemedlet: räkna med ett band och låt slutsatserna vila på storleksordningar (kursen om riskmatrisens principer, rs-03, är samma lärdom på annat område). Fälla fem: berättelsen 'tillväxt för tillväxtens skull' — management belönas på omsättning, bolaget växer, berättelsen låter som framgång; enda domslutet är spridningen (dotcom- och expansionskrisernas klassiker). Och som alltid i spåret: övningen är hantverket att läsa en verksamhets värdeskapande — aldrig en uppmaning att handla i den."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor — genomsnitt, redovisning, sista procenten, pseudoprecision, berättelsen — ett gemensamt botemedel: inkrementella tal, normaliserade poster, band i stället för punkter och spridningen som enda domare."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+        "intro": "I AK1A:s system är värdemotorn TILLVÄXT-familiens domslut — takten får sitt betyg först genom spridningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AKM1:s TILLVÄXT-familj (V01–V03) mäter försäljningstillväxten, ARR-tillväxten och intäktsdiversifieringen — tre mått på rörelsens styrka och bredd. Värdemotorn läggs som fjärde lager: den kopplar samman lönsamhetssidan (V07–V09, ln-01, roic-01) och frågar vad V01:s tillväxttakt är värd i kapitalbindning. I AKM2:s tillväxtdimension betyder det att ett högt betyg kräver mer än snabb tillväxt — det kräver att den är kapitaleffektiv, alltså att reinvesteringskvoten är låg i förhållande till takten och att spridningen på nytt kapital är positiv och varaktig.\n\nKorsningarna binder samman hela utbildningen. Mot ROIC-kursen (roic-01): denna kurs är dess tillämpning på tillväxtsidan — spridningen, där hemma, blir här domslutet om tillväxtens värde. Mot moat-familjen (mt-01, mt-02): varaktig spridning kräver en vallgrav som håller konkurrenterna borta från avkastningen — tillväxt utan vallgrav är en inbjudan. Mot värderingen (vr-01, vm-03): multipelvalet följer motorn —höga multipler motiveras av hög spridning på nytt kapital, och PEG-talets (km-027) gamla problem belysts av att värdetillväxten per krona inte är takten utan takten gånger spridningen. Mot kapitalstrukturen (ks-01–ks-03): återinvestering och utdelning är samma budgets två sidor (km-066), och kapitalbindningen (ln-04) är motorns nämnare i praktiken. Avsluta med den levande övningen: välj två bolag ur kursuniversumet med liknande tillväxttakt, uppskatta ROIC på nytt kapital och reinvesteringskvot för båda — och skriv en rad om respektive värdemotor: frihet per resultat-krona och spridningens tecken. Gör om nästa år. Det är utbildningens kärna: tillväxt är en hastighet, värde är en riktning — och först när båda läses tillsammans vet läsaren om bolaget springer mot eller från sina ägares värde."
+          },
+          {
+            "type": "insight",
+            "content": "TILLVÄXT-familjen mäter rörelsens styrka, värdemotorn dess pris — och AKM2:s tillväxtbetyg faller på paketet: takt, kapitalbehov och spridning i ett."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch älskade växare — men hans bästa växare var bolag som kunde växa utan att fråga marknaden om mer kapital: bolaget som växer utan att behöva nytt eget kapital är hans version av den låga reinvesteringskvoten. Hans varning för 'diworsification' (tx-01:s historia) är samma lära i förvärvsversionen: tillväxt genom köp som sjunker under kapitalkostnaden är ingen tillväxt i värde. Lynchs snabba växare och tröga växare skiljs i hans system på takten — hans egen räkneregel, att vinstandelen som återinvesteras bör avkasta mer än ägaren kunnat få själv, skiljer dem på värdet.",
+    "grahamSection": "Benjamin Graham köpte inte tillväxtberättelser — han köpte värdefastsättningar med säkerhetsmarginal (km-030). Men hans krav på att företaget är finansiellt starkt och hans skepsis mot bolag som ständigt återkommer till marknaden för nytt kapital är värdemotorns tidigaste röst: bolag vars tillväxt ständigt kräver nytt kapital från ägarna är i Grahams läsning ett skuldbrev, inte en tillgång. Att värdeskapandet måste mätas mot kapitalets alternativkostnad var hela hans diskonteringsläras tysta fundament.",
+    "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familiens toppblock: tx-01 skiljer källorna, tx-02 rörelsens inre, och värdemotorn sätter priset — ROIC × reinvesteringskvot med spridningen som domslut, kopplad till AKM2:s tillväxtdimension där betyget faller på kapitaleffektiv tillväxt. Brobyggen: mot roic-01 (spridningsbegreppets hem), mot mt-01/mt-02 (varaktighetens källa) och mot vr-01 (multiplern som följer motorn)."
   },
   "ks-01-kapitalstruktur-grunder": {
     "slug": "ks-01-kapitalstruktur-grunder",
@@ -200979,6 +201291,318 @@
     "lynchSection": "Peter Lynchs mest citerade råd till småsparare var att känna till det man äger — och kunskapen om kundleden är ett av de tydligaste exemplen: att veta vem som betalar fakturorna är en del av att känna bolaget. Lynch talade ofta om bolag vars affär han kunde förklara i en mening, och kundkoncentrationen är ofta just den meningen: bolaget som lever allt till en kedja, eller bolaget vars kunder är tusen små. Hans syn på diversifiering på bolagsnivå — bolag som växer inom det de behärskar — är samma läsning från andra hållet.",
     "grahamSection": "Benjamin Grahams säkerhetsmarginal handlar om att beräkningar ska hålla även när antaganden faller. En värdering som vilar på en intäktsbas med hög kundkoncentration har en inbyggd sprängrisk: antagandet om fortsatta intäkter från huvudkunden är ett enda antagande med enorm vikt. Grahams försiktighet talar för att koncentrationen vägs in som en nedre justering av säkerhetsmarginalens storlek — inte som en anledning att kassera bolaget, utan som ett mått på hur mycket marginal som krävs.",
     "ak1Section": "I AK1A:s metodik är kundkoncentrationen broarna mellan tillväxt- och riskfamiljen: den kvantifierar det kvalitativa i V03:s diversifieringsläsning, förklarar V12:s intäktssvängningar och fungerar som tidig varningsrad mot V19:s kapitalförbränningsläge. En V03-viktning som läses med sin koncentrationstrappa ger en dubbelsidig bild — bredd och topp i samma vy — och det är den typen av sammansatta bedömningar AKM1:s viktningsmodell bygger vidare på."
+  },
+  "rs-03-dold-samvariation": {
+    "slug": "rs-03-dold-samvariation",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Dold samvariation — när bolagen delar samma risk",
+    "summary": "Spridningens gräns: hur flera bolag som var och en ser diversifierad ut kan bära samma underliggande exponering — och hur samvariationen läses ur fundamentaldata, mäts som exponeringskarta och vägs i riskfamiljen.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå korrelation i fundamental mening — en gemensam drivare bakom flera bolags intäkter · Läsa exponeringar ur segment-, råvaru- och finansnoter i flera årsredovisningar sida vid sida · Rita en exponeringskarta: bolag mot drivare, med andelen av portföljen per drivare · Se hur spridningens gratis lunch krymper när korrelationen stiger — med räkneexempel · Skilja priskorrelation från fundamental samvariation i båda riktningarna · Koppla samvariationen till AKM1:s V03-, V12- och V19-familjer samt rs-01:s spridning och rs-02:s kundled.",
+    "why": "Spridningen presenteras ofta som riskens första försvar — men försvaret har ett villkor som sällan sägs högt: det verkar bara så länge bolagen inte rör sig tillsammans. Kundkoncentrationskursen visade hur ett enda bolags intäkter kan vila på få axlar; den här kursen lyfter blicken en nivå. Flera bolag som var för sig ser väl spridda ut kan bära samma underliggande exponering — samma slutmarknad, råvara, cykel eller valuta — och ingen enskild årsredovisning visar det. Mönstret syns först när flera redovisningar läggs sida vid sida. Det är riskfamiljens mellansteg: från att läsa risken i ett bolag till att läsa risken mellan bolagen.",
+    "history": {
+      "origin": "Korrelerade risker var bankernas kunskap långt före portföljteorin. En bank med många lån i samma bransch — gruvor, varv, fastigheter — stod svagare än summan av sina enskilda lån, och kreditprövningen lärde sig fråga inte bara vem låntagaren var utan vad som fick alla låntagare att falla samtidigt. När Harry Markowitz 1952 formulerade spridningens matematik fanns korrelationen med i formeln från första dagen — men i praktiken kom eftervärlden oftast ihåg vikterna och glömde villkoret.",
+      "evolution": "Kriserna höll villkoret levande. 1973–1974 föll energikänsliga bolag och breda aktiemarknader tillsammans; 1987 föll allt samma dag oavsett fundamentals; 2000–2002 drabbade tekniken även bolag som bara sålde till tekniksektorn; och 2008 visade bolånekedjan hur banker, bygg och konsumenthandel var grenar på samma träd — de som byggt riskmodeller på historisk korrelation såg modellerna brista just därför att korrelationen inte är en konstant utan en storhet som rör sig, med en tendens att stiga när efterfrågan faller.",
+      "modern": "I dag binds portföljer samman på sätt som bransch-etiketter inte visar: globala leverantörskedjor, dominanta plattformar, gemensamma råvaror och en världsomspännande ränta. Pandemivåren 2020 gav senaste huvudlärdomen: ett enda gemensamt slag stängde ekonomier och fick bolag som aldrig räknats som besläktade att falla tillsammans. Faktormodeller och risksystem har vuxit fram som svar — men grundmetoden är fortfarande den gamla bankfrågan, och den går att ställa med egna händer: vad får mina bolag att falla samtidigt?"
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — spridningens villkor",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Läsningen — exponeringarna i flera årsredovisningar",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätningen — exponeringskartan",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mekaniken — varför allt rör sig tillsammans i kriser",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — tre feltolkningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — samvariation i AKM1:s familjer",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — spridningens villkor",
+        "intro": "Spridning minskar risk på ett villkor: att innehaven inte rör sig tillsammans. Villkoret är inte alltid uppfyllt — och det syns inte i ett enda bolags siffror.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Markowitz gratis lunch, som volatilitetskursen introducerade, har en matematisk prislapp: riskminskningen beror på korrelationen mellan innehaven. Räkneexemplet gör det synligt. Två bolag som vardera svänger 20 procent, lagda 50–50 i en portfölj, ger en portföljsvängning på cirka 14,1 procent om korrelationen är noll, cirka 17,3 procent om den är 0,5 — och exakt 20 procent om den är 1. Vid korrelation ett är spridningen verkningslös: portföljen svänger som sina delar, hur många delar den än har.\n\nPoängen för den fundamentala analysen är att korrelationen inte är en kursegenskap utan en exponeringsegenskap. Två bolag faller tillsammans när samma kraft driver deras intäkter eller kostnader — en gemensam slutmarknad, en gemensam råvara, en gemensam ränta. Därför går frågan att ställa i årsredovisningarna, före kurserna: delar mina bolag drivare? Det är den fråga den här kursen bygger ett hantverk kring."
+          },
+          {
+            "type": "definition",
+            "content": "Fundamental samvariation: graden av gemensam exponering — att flera bolags intäkter, kostnader eller värderingar drivs av samma underliggande faktor. Skiljs från priskorrelation, som bara mäter hur kurserna rört sig tillsammans hittills."
+          },
+          {
+            "type": "insight",
+            "content": "Spridning över bolag är inte detsamma som spridning över drivare — en portfölj kan ha tjugo innehav och ändå vila på tre gemensamma exponeringar."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Läsningen — exponeringarna i flera årsredovisningar",
+        "intro": "En årsredovisning beskriver ett bolags exponeringar. Samvariationen uppstår mellan bolag — läsningen görs därför med flera redovisningar sida vid sida.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fyra ställen bär det mesta av underlaget. Segmentnoten visar intäkter per geografi och kundkategori — två bolag från skilda branscher kan visa nästan identiska geografiprofiler och därmed samma region- och valutaexponering. Råvaru- och inköpsavsnitten visar vad som driver kostnadssidan — energi, metaller, frakt, halvledare — och därmed vilka bolag som delar kostnadscykler. De finansiella noterna visar räntebindning, valutor och netting — den gemensamma räntan är den mest underskattade gemensamma drivaren, eftersom den sitter i värderingen hos alla bolag samtidigt. Förvaltningsberättelsens riskavsnitt sammanfattar ofta ledningens egen bild av konjunkturkänsligheten.\n\nLäsövningen är systematisk: välj tre bolag ur en portfölj, lista för varje bolag de tre största efterfrågedrivarna och de två största kostnadsdrivarna, och skriv upp dem i en gemensam tabell. Det som upprepas mellan kolumnerna är portföljens dolda gemensamma risk — och det syns i ingen av redovisningarna var för sig."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan som vänder på läsningen: om den här drivaren vänder, hur många av mina kolumner vänder med den?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätningen — exponeringskartan",
+        "intro": "Från läsning till mått: exponeringskartan räknar hur stor andel av portföljen som delar varje drivare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kartan är en enkel matris: bolagen på en axel, drivarna på den andra, och andelen av varje bolags intäkter som drivaren bär i rutorna. Portföljandelen per drivare blir sedan den viktade summan — och ett räkneexempel gör poängen tydlig. Tre bolag, vardera med två tredjedelar av intäkterna knutna till samma byggnads- och räntecykel: oavsett hur portföljen viktas — 40, 35 och 25 procent eller någon annan fördelning — bär två tredjedelar av hela portföljen samma drivare. Viktningen spelar ingen roll när exponeringen är gemensam.\n\nDet är exponeringskartans huvudläxa: en portfölj som ser ut som många bolag kan i riskens värld vara ett fåtal positioner. Räkna i stället positioner per drivare — hur många oberoende intäktsben portföljen vilar på — så får måttet samma karaktär som kundkoncentrationens trappa: en andel, en riktning över tiden och en trappa som kan breddas eller smalna."
+          },
+          {
+            "type": "insight",
+            "content": "Räkna portföljen i drivare, inte i bolag: frågan är inte hur många innehav du har, utan hur många oberoende intäktsben som bär dem."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mekaniken — varför allt rör sig tillsammans i kriser",
+        "intro": "Korrelationen är inte en konstant. Den har en tendens att stiga när efterfrågan faller — och mekaniken går att följa steg för steg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre mekanismer driver samvariationen uppåt i nedgångar. Den första är den gemensamma utlösaren: när samma efterfrågekraft vänder — en cykel, en råvara, räntan — slår samma slag mot alla bolag som bär den, samtidigt. Den andra är finansieringsleden: bolag som delar kapitalmarknad får sina villkor försämrade vid samma tillfälle, vilket gör att kapitalförbränning hos flera innehav anländer på en gång. Den tredje är beteendet: när många säljer för att täcka behov eller hämta hem likviditet säljs även innehav som inte delar den fundamentala drivaren — samvariationen smittar via ägarbaser som behöver kontanter samtidigt.\n\nTillbaka till räkneexemplet från första kapitlet: portföljen som svängde 17,3 procent vid korrelation 0,5 svänger cirka 19,5 procent om korrelationen i en nedgång stiger till 0,9 — utan att något enskilt bolag blivit ett dugg riskare. Det är kärnan i varför bakåtblickande riskmått underskattar kriser: de mäter samspelet i lugnt väder, medan risken föds i stormen."
+          },
+          {
+            "type": "insight",
+            "content": "Portföljens risk i en kris bestäms inte av vad bolagen gjort hittills, utan av hur många gemensamma ben de står på när slaget kommer."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — tre feltolkningar",
+        "intro": "Samvariation är ett kraftfullt begrepp och därför också lätt att använda fel. Tre fällor står för de flesta misstagen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan: att läsa priskorrelation som om den vore fundamental samvariation. Två kurser som hittills rört sig olika kan ändå bära samma exponering — kurser är tröga, ägarbaser skiljer sig åt och nyheter anländer vid olika tidpunkter. Omvänt rör sig kurser ofta tillsammans av sentiment och flock, utan att någon gemensam fundamental drivare finns. Priset är en osäker proxy i båda riktningarna; exponeringarna läses i redovisningarna.\n\nAndra fällan: att anta att olika branscher betyder spridning. Bransch-etiketten är en redovisningskategori, inte en riskkategori — ett råvaruberoende tillverkande bolag, en konsumenttjänst och ett byggbolag kan alla tre i praktiken bära samma ränte- och konjunkturkänsliga slutmarknad. Räkna drivare, inte etiketter. Tredje fällan: att tro att historisk samvariation gäller för alltid. Exponeringar förändras — bolag byter kunder, råvaror och geografier, förvärv tillför nya ben och avyttringar tar bort gamla. Exponeringskartan är en datering som behöver ritas om, inte en sanning som en gång fastställts."
+          },
+          {
+            "type": "insight",
+            "content": "Alla tre fällorna har samma motgift: gå från kurstal och etiketter till underlaget i noterna — och datera läsningen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — samvariation i AKM1:s familjer",
+        "intro": "I AKM1:s system blir dold samvariation riskfamiljens bro mellan bolagsnivå och portföljnivå.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Läs kursen mot sina grannfamiljer. Mot V03, intäktsdiversifiering, är den samma fråga en nivå upp: V03 mäter bredden i ett bolags intäkter, exponeringskartan bredden i portföljens gemensamma ben. Mot V12, intäktsstabilitet, ger den förklaringen till samtidiga fall: flera bolags intäkter kan vara vars för sig stadiga och ändå falla tillsammans när de delar drivare. Mot V19, kapitalförbränning, tillför den tidsdimensionen: flera unga bolag i en portfölj delar ofta finansieringscykeln — när kapitalmarknaden stänger anländer kapitalförbränningslägena i kluster. Och mot rs-01:s spridningsläsning fullbordar den cirkeln: spridningen är det första försvaret, samvariationsläsningen dess villkor.\n\nAvsluta med helhetsövningen: välj tre till fem bolag ur en tänkt portfölj, rita deras exponeringskarta ur de senaste årsredovisningarna, räkna fram den största gemensamma drivarens andel — och formulera en mening om vad den andelen betyder för hur portföljen ska läsas. En mening — men den byter portföljen från en lista med bolag till en struktur av riskben, och det är riskfamiljens mellansteg i praktik."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan en analytiker ställer till en portfölj är densamma som till ett bolag: hur många axlar bär den, och hur många av dem är verkligen olika? Det är samvariationens sista ord — och nästa läsning börjar där."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch myntade varningen för diworsification — att diversifiera utan syfte blir fördjupning utan mening. Samma logik gäller mellan bolagen: att äga många innehav utan att förstå hur de hänger ihop är inte spridning utan samlande. Lynchs råd att känna till det man äger gäller relationerna lika mycket som bolagen — att se att tre av ens bolag alla lever åt samma slutmarknad är en del av den kunskapen, och den syns först när årsredovisningarna läses tillsammans.",
+    "grahamSection": "Benjamin Grahams säkerhetsmarginal räknas per placering, men hans portföljdisciplin — bred ägarspridning som praktiskt skydd — vilar på samma villkor som spridningens matematik: att innehaven inte alla vilar på samma antagande. En portfölj vars bolag delar drivare har i praktiken en enda stor position i förklädnad, och säkerhetsmarginalen ska då räknas på den gemensamma exponeringen — inte bara på varje bolag för sig. Grahams försiktighet talar för att den gemensamma exponeringens andel vägs in som ett krav på marginalens storlek.",
+    "ak1Section": "I AK1A:s metodik är dold samvariation riskfamiljens portföljsida: den lyfter V03:s diversifieringsläsning från bolagets intäkter till portföljens gemensamma drivare, förklarar hur flera V12-intäktsstabiliteter kan falla samtidigt och varnar för att kapitalförbränningslägen ofta anländer i kluster när finansieringsmarknaden stänger. Tillsammans med rs-01:s spridningsspråk och rs-02:s kundledsläsning bildar kursen risktrappans mellansteg — och broar till portföljhanteringens diversifieringspraktik (pf-03) och korrelationsrisken (rk-10) med fundamentaldata som källa."
+  },
+  "rs-04-riskmatrisen": {
+    "slug": "rs-04-riskmatrisen",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Riskmatrisen — att kartlägga osäkerheten",
+    "summary": "Intermediärkursen om risk: riskmatrisen — verktyget som flyttar en analys från en lista med oro till en strukturerad karta där sannolikhet och konsekvens vägs samman, prioriteras och följs upp över tid.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå riskmatrisen som riskfamiljens systematisering — grundkurserna (rs-01, rs-02) lärde enskilda riskbegrepp, matrisen samlar dem i ett verktyg · Identifiera risker i fyra kategorier: finansiella, operativa, marknadsmässiga och regelverk · Värdera varje risk på två axlar — sannolikhet och konsekvens — med EBIT eller kassaflöde som konsekvensmått · Räkna förväntad exponering (sannolikhet × konsekvens) och prioritera där åtgärden köper mest minskad exponering per krona · Skilja förväntat värde från värsta fall — matrisens vanligaste misstag är att jaga katastrofer med låg sannolikhet och ignorera tysta risker med hög frekvens · Bygga ett levande riskregister som revideras varje rapportperiod och kopplas till AKM2:s riskdimension.",
+    "why": "Grundkursen i volatilitet (rs-01) visade att risk kan mätas i prisrörelser och kursen om kundkoncentration (rs-02) visade en enda risk ur verksamheten — men en analys som bara hanterar en risk i taget blir en lista med oro, och listor rangordnar inte sig själva. Riskmatrisen är nästa steg i riskfamiljen: den tvingar fram två frågor per risk — hur troligt och hur starkt — och gör svaren jämförbara i en enda bild. Utan den tvungenheten smyger två klassiska fel in: den dramatiska risken (sällan men fasansfull) får all uppmärksamhet medan den tysta risken (varje år, måttligt) äger årsresultatet, och riskerna hanteras som ödesfrågor i stället för som poster som kan vägas mot varandra. Det är också verktyget som AKM2:s riskdimension vilar på i praktiken: betygsättningen kräver att riskerna är identifierade, värderade och avgränsade — exakt matrisens tre steg.",
+    "history": {
+      "origin": "Att rita risker i ett rutnät är äldre än både datorer och finansteori: försäkringsmatematikerna arbetade redan på 1700-talet med sannolikhet × konsekvens som skadans förväntade värde, och sjöförsäkringens tabeller var i praktiken riskregister långt före ordet fanns. Ingenjörsdisciplinerna formaliserade på 1900-talet tekniken FMEA (failure mode and effects analysis) inom amerikansk flyg- och fordonsindustri — varje fel läge värderades för sannolikhet, allvarlighetsgrad och upptäckbarhet, ett tredje spår som fortfarande skiljer ingenjörens matris från analytikerns.",
+      "evolution": "Företagsekonomien anammade verktyget via internrevisionen och COSO-ramverket (1992) som gjorde riskkartläggning till en del av intern kontroll; ISO 31000 (första versionen 2009) standardiserade processen identifiera – analysera – värdera – behandla – följa upp. Inom finans växte en parallell tradition fram ur portföljteorin: Value at Risk (km-031) sammanfattade marknadsrisker i ett enda tal för handelsborden. Skillnaden är belysande: handelsslagens matris fick sina sannolikheter ur prisdata, medan företagsanalytikern måste bygga sina ur verksamhetens struktur — kunder, leverantörer, regelverk, valuta — vilket gör hennes matris mer lik en levande kartläggning än en fotografering.",
+      "modern": "I dag är riskregister en standardfas i alla börsbolags årsredovisningar (riskavsnittet i förvaltningsberättelsen, se km-002) och matrisen är dess vanligaste bild. Samtidigt har kritiken växt fram: sannolikheter som egentligen är gissningar riskerar att måla falsk precision, och kvantitativ riskhantering missade före 2008 de risker som uppstod i samspel — korpulensen i varje enskild ruta var låg, men rutorna brann tillsammans. Svaret har blivit tvåspårigt: scenarier som övar kombinationer (km-029) och stressprov som frågar vad som händer utan sannolikheter alls (st-02). Matrisen har överlevt som ramverket — men med ödmjukare siffror."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — från riskkänsla till riskkarta",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Bygga matrisen — sannolikhet × konsekvens",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — ett riskregister steg för steg",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — förväntad exponering och prioritering",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — riskdimensionen i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — från riskkänsla till riskkarta",
+        "intro": "En lista med risker rangordnar inte sig själv — matrisen är verktyget som ger varje risk två dimensioner och gör dem jämförbara.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Minnet från grundkurserna: volatiliteten (rs-01) lärde att priset svänger runt värdet och att svängen i sig inte är farlig — faran är när svängen tvingar en handling, som att sälja i botten. Kundkoncentrationen (rs-02) lärde motsatsen: en risk som inte syns i priset alls förrän den slår, och som då slår direkt i resultaträkningen. Båda är sanna — men de lever i olika världar, och den som försöker väga dem mot varandra i huvudet hamnar snart i känsla i stället för analys.\n\nRiskmatrisen löser jämförelseproblemet med en enda tvångsfråga per risk: hur troligt är detta, och hur stort blir det om det händer? Varje risk — en prisrörelse, en kundförlust, en leverantör som försvinner, en regel som ändras — får en plats i samma rutnät, och plussen blir jämförbara. Det är samma rörelse som Du Pont-analysen (ln-01) gjorde med lönsamheten: bryta ner ett vagt omdöme i beståndsdelar som kan räknas. Skillnaden är att riskens beståndsdelar är sannolikhet och konsekvens — det ena en grad av tro, det andra en krona."
+          },
+          {
+            "type": "definition",
+            "content": "Riskmatris — en kartläggning där varje identifierad risk värderas på två axlar (sannolikhet och konsekvens) och placeras i ett rutnät. Rutans läge avgör hanteringen: frekventa men små risker är en kostnadsfråga, sällsynta men stora en kapitalfråga — och mittrutan ett prioriteringsbeslut."
+          },
+          {
+            "type": "insight",
+            "content": "Risklistan berättar vad som kan hända — matrisen berättar vad som hinner hända före nästa rapport, och i vilken ordning det borde hanteras."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Bygga matrisen — sannolikhet × konsekvens",
+        "intro": "Axelfyra och femgradiga skalor känns pedantiska — men de är det enda som gör att två personer hamnar i samma ruta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Identifieringen börjar i fyra kategorier, som vart och en har sina egna källor. Finansiella risker: skuldsättning, ränteläge, valutor (ks-01 går igenom strukturen, rk-07 och rk-08 deras rörelser). Operativa risker: leveranskedjan, nyckelpersoner, IT-system, enskilda anläggningar (rk-11 tar bedrägerispåret). Marknadsmässiga risker: kunder, konkurrens, pristryck — kundkoncentrationen (rs-02) är den klassiska medlemmen. Regelverksrisker: lagändringar, tillstånd, skatt — rk-06 och ESG-spåret (rk-14) tillhör här.\n\nSannolikhetsaxeln görs oftast femgradig och — det viktiga — med siffror bakom orden: mycket låg runt 5 procent per år, låg runt 15, medel runt 30, hög runt 50, mycket hög över 60. Konsekvensaxeln mäts i samma enhet genom hela matrisen, och för en verksamhetsanalys är EBIT eller rörelsekassa det ärligaste måttet: hur många procent av årsresultatet försvinner om risken slår? Femgradig även här: från enstaka procent till existentiellt. Skala med procentsatser i stället för adjektiv ('allvarlig', 'betydande') är hela skillnaden mellan en matris som kan följas upp och en som är en bild i en presentation."
+          },
+          {
+            "type": "insight",
+            "content": "Sannolikheten är en grad av tro, konsekvensen en krona — matrisen tvingar båda fram samtidigt, och det är därför den avslöjar risker som känslan rankar fel."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — ett riskregister steg för steg",
+        "intro": "Tre risker, två axlar och en kolumn för åtgärd — ett register som tar en halvtimme att bygga och som bär hela nästa års uppföljning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Anta ett bolag med EBIT på 900 mkr. Steg ett: identifiera — årsredovisningens riskavsnitt, senaste rapporterna och en genomläsning av verksamheten ger startlistan; här tre exempel. R1: bolagets största kund står för 12 procent av omsättningen och branschen är svag — förlust skulle kosta cirka 300 mkr i EBIT. R2: en ny tullag diskuteras i en stor exportmarknad — träff motsvarar cirka 80 mkr. R3: ett tillståndsförvaltningsärende kan vid ogillande kosta 500 mkr i ombyggnad.\n\nSteg två: värdera på axlarna. R1 bedöms 20 procent sannolikhet per år (kunden signalerar svaghet), R2 35 procent (lagen har parti stöd men förhandling pågår), R3 10 procent (ärendet ser gott ut men beslut återstår). Steg tre: räkna förväntad exponering — sannolikhet × konsekvens. R1: 0,20 × 300 = 60 mkr. R2: 0,35 × 80 = 28 mkr. R3: 0,10 × 500 = 50 mkr. Steg fyra: placera i rutnätet och fyll i åtgärdskolumnen — R1: kunddialog och breddning av orderstocken; R2: prisförhöjningar i förhandlad tid; R3: beredskap för ombyggnadsfas. Registret är nu kartan: tre rader, sex tal, tre åtgärder — och en uppföljningspunkt till nästa rapport."
+          },
+          {
+            "type": "insight",
+            "content": "Ett riskregister som fungerar har tre egenskaper: varje rad bär en siffra på båda axlarna, en ägare och en åtgärd — och revideras samma dag som rapporten släpper ny information."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — förväntad exponering och prioritering",
+        "intro": "Matrisens domslut är inte den största konsekvensen och inte den hetaste risken — det är produkten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Exemplet i förra kapitlet visar poängen i dess renaste form: R3 har den värsta konsekvensen (500 mkr) men landar på 50 i förväntad exponering — under R1:s 60, trots att R1:s konsekvens är mindre än två tredjedelar. Prioriteringsordningen blir R1 före R3 före R2. Detta är matrisens egentliga mätning: att flytta uppmärksamheten från katastrofbilden till den risk som äger det förväntade resultatet. Summeras de tre blir den totala förväntade exponeringen 60 + 28 + 50 = 138 mkr — omkring 15 procent av EBIT. En sådan riskbudget är nyttig på två sätt: den gör riskerna jämförbara mellan bolag (samma bolags typ av register, olika storlek på summan) och den sätter taket för vad åtgärder rimligen får kosta.\n\nDär inträffar nämligen matrisens andra räkneläge: en åtgärd är värd sin kostnad när den minskar förväntad exponering med mer än den kostar. Om kundarbetet i R1 bedöms halvera sannolikheten (20 till 10 procent) sjunker exponeringen med 30 mkr per år — ett arbete som kostar 5 mkr i resurser köper alltså sex gånger sin kostnad i minskad exponering. Samma test på R3:s ombyggnadsberedskap: kostnaden är låg om beredskapen bara är planering, men en faktisk ombyggnad i förväg skulle kosta mer än den 50 mkr den skyddar mot. Mätningen blir dålig bara när sannolikheterna är ren gissning — där gäller kapitel 5:s botemedel."
+          },
+          {
+            "type": "insight",
+            "content": "Prioritera på produkten, inte på konsekvensen — och pröva varje åtgärd mot samma produkt: minskad exponering per åtgärdskrona är riskarbetets avkastningsmått."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Matrisens fällor bor i siffrornas självförtroende — de flesta går att hantera om de är kända.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: falsk precision. Sannolikheten 20 procent ser ut som ett matteprov men är ett omdöme — och skillnaden mellan 15 och 25 procent är sällan mer än en känsla. Botemedlet är att arbeta i band och låta slutsatserna vila på storleksordningar: R1 ligger över R3 oavsett om sannolikheten är 15 eller 25 procent, och det är den rangordningen beslutet behöver. Fälla två: den tysta risken. Frekventa små risker — kvalitetsfel, personalomsättning, småprocesser som faller ut — hamnar aldrig i matrisen för att ingen skriver upp dem, men tillsammans äger de årsresultatet. Botemedlet: en kategori för återkommande driftstörningar med konsekvensen satt till deras årssumma. Fälla tre: riskernas samband. Matrisen värderar varje risk för sig, men de korrelerar — samma konjunktur gör att kunden i R1 och tullämnet i R2 slår samtidigt. Botemedlet är att komplettera med ett scenario (km-029) eller ett stressprov (st-02) som övar kombinationen — och kursen om dold samvariation (rs-03) tar hela spåret ett steg djupare: den lär läsa just de risker som delar samma underliggande rörelse.\n\nFälla fyra: den frysta matrisen. Ett register från förra årets bokslut är en karta över ett land som inte längre finns — sannolikheterna är justerade av allt som hänt sedan. Botemedlet är revision vid varje rapport, inte bara årsvis. Fälla fem: att tolka matrisen som en spådom. Den mäter exponering, inte öde — en hög förväntad exponering är ett argument för beredskap och för att räkna på marginalerna (st-01), aldrig ett uttalande om vad som kommer att hända. Och som alltid i spåret: övningen är hantverket att läsa en verksamhet — aldrig en uppmaning att handla i den."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor — falsk precision, tysta risker, samband, frusna register, spådomstanken — ett gemensamt botemedel: band i stället för siffror, revision vid varje rapport, och scenarier som komplement."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — riskdimensionen i AKM1:s metodik",
+        "intro": "I AK1A:s system är riskmatrisen det verktyg som gör riskdimensionen granskningsbar — utan karta finns inget att betygsätta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AKM1:s riskfamilj (V10–V12 mäter skuldsättning, likviditet och intäktsstabilitet på bolagssidan; km-013–km-016 bär portföljsidan) ger varje risk ett nyckeltal — men nyckeltalen är fotograferingar, och riskerna är processer. Matrisen är länken: skuldsättningsgraden (v10) blir en rad i registret med en sannolikhet knuten till ränteläget (rk-08), likviditeten (v11) en rad med konsekvensen satt till kostnaden för ett kassatopp, intäktsstabiliteten (v12) summan av kund- och marknadsriskerna. I AKM2:s riskdimension betyder det att betygsättningen får sitt underlag: ett lågt riskbetyg kräver att registret är komplett, att exponeringarna är värderade och att åtgärderna är på plats — inte att riskerna är noll.\n\nKorsningarna binder samman spåret. Mot volatiliteten (rs-01): prisrisk och verksamhetsrisk bor i olika kvadranter men samma matris — den första hanteras med tid och kapital, den andra med åtgärder. Mot kapitalförbränningen (v19), familjens avancerade steg: den är matrisens viktigaste konsekvensmått när konsekvensen är 'överlevnad' i stället för 'EBIT-procent'. Mot stabilitetsfamiljen (st-01, st-02): räntetäckningen mäter en redan inträffad stress, känslighetsanalysen ett tält variabelröm — matrisen frågar innan dess vad som kan hända alls. Avsluta med den levande övningen: välj ett bolag ur kursuniversumet, bygg dess register ur senaste rapportens riskavsnitt — tre till fem rader, sannolikhet och konsekvens med EBIT som mått — och revidera det vid nästa rapport. Gör om det ett år senare. Det är utbildningens kärna: risk är inte en känsla utan en karta som hålls aktuell, och kartan blir sann först när den ritas om lika ofta som verksamheten förändras."
+          },
+          {
+            "type": "insight",
+            "content": "Nyckeltalen fotograferar riskerna som redan syns — matrisen frågar efter dem som inte hunnit synas, och AKM2:s riskdimension betygsätter svarets kvalitet, inte riskens storlek."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch sa att den största risken ofta bor i det ingen talar om — hans genomgångar av bolag letade systematiskt efter det som kunde gå fel i berättelsen som presenterades. Riskmatrisen är den övningen formaliserad: varje lovande tes provas mot en lista av frågor — vad händer med den största kunden, om nyckelpersonen går, om priset pressas? Lynchs respekt för det tråkiga och kantiga bolaget är i matrisens språk en respekt för bolag vars register är kort och vars kvadranter är tomma.",
+    "grahamSection": "Benjamin Grahams säkerhetsmarginal (km-030) är i grunden en riskbedömning i en enda dimension: att ta positioner med så stort avstånd till det värsta fallet att felet i bedömningen inte blir ödesdigert. Riskmatrisen kompletterar tanken från andra hållet: den ber kartläggaren att identifiera vad det värsta fallet innehåller. Grahams egna checklistor — med sina krav på omsättning, täckning och likviditet — var i praktiken ett register av fasta riskprover, ett per rad i balansräkningen.",
+    "ak1Section": "I AK1A:s metodik är denna kurs RISK-familiens systematiseringssblock: rs-01 lär måttet, rs-02 ett konkret fall, och matrisen samlar alla risker i det verktyg som AKM2:s riskdimension sedan granskar — komplett identifiering, värderade exponeringar, åtgärder på plats. Brobyggen: mot V10–V12 (varje nyckeltal en rad i registret), mot v19-kapitalförbränning (konsekvensmåttet när insatsen är överlevnad) och mot st-02:s stressprov (matrisens sannolikheter prövade utan siffror)."
   },
   "mt-01-vad-ar-en-moat": {
     "slug": "mt-01-vad-ar-en-moat",

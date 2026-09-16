@@ -6,7 +6,7 @@
  *       --experimental-strip-types på Node 22.6–22.17).
  *
  * De per-fil-testerna (testa-ai-mentor*.mjs) vakar var sin motor — men ingen
- * vakar SAMMANSPELLET: chat-widget.tsx komponerar arton motorer i en ??-kedja
+ * vakar SAMMANSPELLET: chat-widget.tsx komponerar nitton motorer i en ??-kedja
  * där första icke-null vinner. Ett monster i en TIDIG motor kan tyst skugga
  * en senare motors fråga, och per-fil-testerna kan aldrig se det. Detta test
  * vakar kedjan:
@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (68 i arton motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (69 i nitton motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -56,10 +56,10 @@ if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
 }
 
 // ── Motorerna i KEDJEORDNING (måste spegla chat-widget.tsx — fall G vaktar) ─
-// 2026-09-16: arton motorer / 68 monsters efter fabrikens s6-u1/u2/u3 + om-
-// gång 9–11 (ägande, redovisningsdjup, djup, historia, lonsamhetsdjup, tsdjup,
-// skattedjup, beteendedjup, riskdjup — riskdjup på disk i syskonet u2:s
-// pågående fönster, samma disk-läge-presedens som tsdjup i 16-läget).
+// 2026-09-16: nitton motorer / 69 monsters efter fabrikens s6-u1/u2/u3 + om-
+// gång 9–12 (ägande, redovisningsdjup, djup, historia, lonsamhetsdjup, tsdjup,
+// skattedjup, beteendedjup, riskdjup + omgång 12:s riskmåttsdjup — sharpe-
+// kvoten, kategorin RISKHANTERING & PORTFÖLJTEORIs första lager).
 // Workloggen räknar
 // frågeformuleringar — monsterantalet här är KODENS sanning (mätt med import).
 const MOTORDEFS = [
@@ -81,6 +81,7 @@ const MOTORDEFS = [
   { namn: "skattedjup",      fil: "ai-mentor-skattedjup-fragor.ts",      fn: "svaraLokaltSkattedjup",      arr: "SKATTEDJUP_MONSTER",      antal: 3 },
   { namn: "beteendedjup",    fil: "ai-mentor-beteendedjup-fragor.ts",    fn: "svaraLokaltBeteendedjup",    arr: "BETEENDEDJUP_MONSTER",    antal: 3 },
   { namn: "riskdjup",        fil: "ai-mentor-riskdjup-fragor.ts",        fn: "svaraLokaltRiskdjup",        arr: "RISKDJUP_MONSTER",        antal: 2 },
+  { namn: "riskmåttsdjup",   fil: "ai-mentor-riskmattsdjup-fragor.ts",   fn: "svaraLokaltRiskmattsdjup",   arr: "RISKMATTSDJUP_MONSTER",   antal: 1 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -89,7 +90,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 68 (2026-09-16, 18-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 69 (2026-09-16, 19-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -149,6 +150,7 @@ const KANONISKA = [
   { fraga: "vad är bekräftelsefällan?", motor: 16 },
   { fraga: "vad är en skuldfälla?",    motor: 17 },
   { fraga: "vad är en svart svan?",    motor: 17 },
+  { fraga: "vad är sharpe-kvoten?",    motor: 18 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -189,7 +191,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "arton motorer lämnar frågan ifred",
+  "nitton motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -272,7 +274,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla arton motorer",
+    "H: disjunkta monster-id:n över alla nitton motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

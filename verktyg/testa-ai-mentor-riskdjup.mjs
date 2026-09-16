@@ -30,7 +30,7 @@
  *      riskdjup-lagret: inget tidigare lager fångar dem
  *   J  kärnordsdisjunktion MEKANISKT — RISKDJUP_MONSTER:s kärnord är
  *      disjunkta mot samtliga 17 tidigare lagers kärnord, lästa LIVE
- *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA arton lager i
+ *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA nitton lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b — sektor
  *      levererad utan inkoppling — kan inte upprepas tyst)
  *
@@ -485,7 +485,7 @@ const GAMLA = [
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
-    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup",
+    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -508,9 +508,9 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 18 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 20 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "riskdjup SIST av 18 lager, inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "riskdjup näst sist av 20 lager (riskmåttsdjup + utdelningsdjup efter — omgång 12), inga okända komponenter",
   );
 }
 

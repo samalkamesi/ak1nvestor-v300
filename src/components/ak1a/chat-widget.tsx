@@ -168,6 +168,56 @@ import { svaraLokaltBeteendedjup } from "@/lib/ai-mentor-beteendedjup-fragor";
 // "talen", tsdjup-precedensen). Juridikgrind: ren mekanikutbildning —
 // inga prognoser, inga placeringstips.
 import { svaraLokaltRiskdjup } from "@/lib/ai-mentor-riskdjup-fragor";
+// Spår 6 omgång 12 (s6-u1): +1 förhandsfråga ur portföljteorins riskmått —
+// riskmåttsdjup-lagret (sharpe-kvoten/riskjusterad avkastning, med beta/
+// capm/standardavvikelse som familjeord) ligger SIST och kan därför aldrig
+// stjäla en fråga från tidigare lager; källmärkt med flerkällsrad (km-016 +
+// km-013 + km-015 + km-034 — kategorin RISKHANTERING & PORTFÖLJTEORIs nio
+// kurser). Ansvarsfördelning: BASens risk-monster äger RISK-GRUNDORDEN
+// (volatilitet/drawdown/kelly/value at risk — "vad är volatilitet?" förblir
+// basens), riskdjup-lagret skuldstruktur- och svansrisk-familjerna — detta
+// lager äger endast riskmåtten de saknar (sharpe/beta/capm/standardavvikelse/
+// riskjusterad; sond mot hela kedjan: 754 kärnord, 0 fångster i båda
+// riktningarna; "beta"↔basens "betala" och "capm"↔"call"/"case" ligger på
+// avstånd 2 — toleransen är 1, ömsesidigt säkert, dokumenterat i modulen).
+// Juridikgrind: ren mått-utbildning — inga placeringstips.
+import { svaraLokaltRiskmattsdjup } from "@/lib/ai-mentor-riskmattsdjup-fragor";
+// Spår 6 omgång 12 (s6-u2): +2 förhandsfrågor ur utdelningsstrategin —
+// utdelningsdjup-lagret (utdelningsfällor/yield trap/utdelningsgrad +
+// aktieåterköp/återköpsprogram) ligger SIST och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkt med flerkällsrad (ud-04 +
+// km-063 + ud-01 + ud-08 / km-066 + v20 + ks-02 + ud-02 — kategorin
+// UTDELNINGSSTRATEGIs 12 kurser, registrets näst största familj utan
+// eget lager). Ansvarsfördelning: BASens utdelnings-monster äger
+// utdelnings-GRUNDORDEN (utdelning/direktavkastning/dividend/payout
+// ratio/återinvestering), basens V20-uppslag äger det NAKNA ordet
+// "återköp" (titelorden ur v20-kursen) — detta lager äger endast
+// familjeorden de saknar (utdelningsfälla/yield trap/avkastningsfälla/
+// utdelningsgrad/aktieåterköp/återköpsprogram; sond mot hela kedjan:
+// 766 kärnord i 19 lager, 0 fångster i båda riktningarna; "drip"
+// medvetet strunet som kärnord — kortordskuren, tsdjup-precedensen).
+// Juridikgrind: ren mått- och mekanikutbildning — inga placeringstips.
+import { svaraLokaltUtdelningsdjup } from "@/lib/ai-mentor-utdelningsdjup-fragor";
+// Spår 6 omgång 12 (s6-u3): +3 förhandsfrågor ur förväntningsspelet —
+// förväntningsdjup-lagret (förväntningsanalys/vad står redan i priset +
+// förväntningsgap/förväntningsklyfta/earnings drift/expectations game +
+// kalibrering) ligger SIST och kan därför aldrig stjäla en fråga från
+// tidigare lager; källmärkt med flerkällsrad (kt-02 + expectations-
+// investing + the-alchemy-of-finance + kt-01 / + contrarian-investment-
+// strategies + irrational-exuberance / + against-the-gods + fooled-by-
+// randomness — kategorin KATALYSATORs kurser + bokmasterns
+// förväntningskanon). Ansvarsfördelning: BASens katalysator-monster äger
+// KATALYSATOR-GRUNDORDEN (katalysator/katalysatorjakt/"prisad"), basens
+// variabeluppslag äger V-kursernas titelord (produktlanseringar/avtal/
+// regulatoriska V16–V18) — detta lager äger endast familjeorden de saknar
+// (förväntningsanalys/gap/klyfta/kalibrering/earnings drift/expectations
+// game/inprisat; sond mot hela kedjan: 754 kärnord i 18 lager vid valet,
+// 0 fångster i båda riktningarna; "inprisad" medvetet strunet — basens
+// "prisad" ligger 2 ifrån, "katalysatorjakt" ägs av basen; tsdjup-fällan
+// "förväntningar"↔"förlängningar" d=2 dokumenterad i modulen och vakas
+// av testfall J). Juridikgrind: ren metodutbildning — inga prognoser,
+// inga placeringstips.
+import { svaraLokaltForvantningsdjup } from "@/lib/ai-mentor-forvantningsdjup-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -867,13 +917,13 @@ export function ChatWidget() {
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
 
     // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
-    // Regel+datamotorn (arton lager: bas + sjutton syskonfiler) svarar på de
-    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 68 för-
+    // Regel+datamotorn (tjugo lager: bas + nitton syskonfiler) svarar på de
+    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 74 för-
     // handsfrågors monsters + generiskt V01–V20-uppslag, alla källmärkta
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

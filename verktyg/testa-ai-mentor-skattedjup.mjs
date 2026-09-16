@@ -445,7 +445,7 @@ const GAMLA = [
   // Omgång 11 (s6-u3): beteendedjup-lagret SIST i widgeten — känd-frivillig
   // tills detta tests fönster uppdateras till 17-läget (samma mekanism som
   // tsdjup-raderna ovan: dokumenterad syskonpågående, inte okänd komponent).
-  const PAGAENDE_KANDA = ["svaraLokaltTsdjup", "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup"];
+  const PAGAENDE_KANDA = ["svaraLokaltTsdjup", "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup"];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

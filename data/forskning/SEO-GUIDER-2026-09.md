@@ -37,8 +37,9 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B6 | industriaktier-sa-analyserar-du-industribolag | industriaktier | 1229 | UTKAST v1 (2026-09-15, s3-u2) | data/blogg-utkast/industriaktier-sa-analyserar-du-industribolag.json |
 | B7 | konsumentaktier-sa-analyserar-du-konsumentbolag | konsumentaktier | 1255 | UTKAST v1 (2026-09-16, s3-u2) | data/blogg-utkast/konsumentaktier-sa-analyserar-du-konsumentbolag.json |
 | B8 | tillvaxtaktier-sa-analyserar-du-tillvaxtbolag | tillväxtaktier | 1338 | UTKAST v1 (2026-09-16, s3-u3) | data/blogg-utkast/tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json |
+| B9 | halvledaraktier-sa-analyserar-du-halvledarbolag | halvledaraktier | 1178 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-02-halvledarsektorn) | data/blogg-utkast/halvledaraktier-sa-analyserar-du-halvledarbolag.json |
 
-Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret.
+Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 
 Levererade branschguider utan B-rad (föregående omgång): energi (`sa-analyserar-du-energiaktier.json`) och material (`ravarubolag-materialbranschens-cykel.json`).
 

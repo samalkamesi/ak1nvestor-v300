@@ -679,6 +679,40 @@ i /api/notiser** utreds (vagkarta null trots färsk skans + skrivande cron —
 notiskedjan återkopplar ej, konsumentfynd kopplat till B9); (5) notis-takets
 dokumentation 50→100 rättad i detaljblocket här.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u1 omgång 8 — D21 medlemsdata & progress diffad mot verkligheten)
+
+Sextonde dokvågen. Objektval efter kollisionskontroll: omgång 7 lämnade
+C19/D21/D24 fria (D22/D23 VÄNTAR kund-R2 av princip) — D21 valt med omdöme:
+medlemssystemets kärna har aldrig diffats, och B13-omgångens fynd om OVAKTADE
+member/*-portföljrutter gör D21:s egen vakthet aktuell att mäta (grannytan
+avgränsas: member/* = B13:s system). Allt MÄTT i arbetsytan 2026-09-16
+(två svitkörningar, kodläsning, grep per fil, prod-sonder mot localhost,
+git log -S) — aldrig worklog-läsning:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Testsviter | "testsvit finns och är grön vid senaste dokumenterade körning" | **13/13 KÖRD GRÖN nu** (testa-medlem-progress.mjs, exit 0 — kontrakt: deterministiska nycklar, server-fastställda värden, importtak, senaste-vinner, requestscopad läsning, URL-/bygg-hermetik) + **testa-medlem-auth 17/17 KÖRD GRÖN nu** (exit 0) |
+| medlem-progress.ts | 448 r | **478 r** (+30); våg 106-kontraktet lever i typen: paborjadeKurser + quizRatta (rad 264–266, härledning rad 303) |
+| API-yta | endast progress i nyckelfilerna | **FYRA rutter, ALLA VAKTADE** (lasMedlemSession mätt per fil: medlem, progress, portfolj, bevakning — bevakningen tillkom med våg 104) |
+| GET-kontrakt i prod | "requestskopad läsning (§B.4-dokumenterat)" | **sond mätt: 200 `{inloggad:false}`** för gäst (ruttdokumentationen: "TYST, aldrig 401-text"); POST-grenarna bär 401 utan session, 429 rate-limit, 400 validering, 502 skrivfel (kodläst) |
+| XP-replay-skydd (gap 2) | "progress-integritet (XP-replay-skydd) otyst" | **MOTBEVISAT — tydst i kod + svit**: importen ENGÅNGS (`import:<authId>:<datum>` ⇒ importGjord=true, "förbrukad"), importtaket rad 88 (teoretiskt max ur kursdata) + rad 206 "XP takat mot teoretiskt max OCH avraget för vad servern redan registrerat", server-fastställda stegvärden (quiz +10, kursklar +50, stjärna +1), främmande nycklar kan aldrig påverka aggregatet (svit-test 9 PASS). Git -S: importtaket kodades i VÅG 87 — FÖRE inventeringen; kartan hade ej läst det |
+| Gäst→moln-migrering (gap 1) | enkelriktad | **fortfarande enkelriktad** lokal→moln (migrera-progress.tsx 110 r, våg 87 §A.3: gäst med lokal progress → registrera → importera; bannern renderas aldrig utan lokal data) — öppet designval, gap kvarstår |
+| GDPR-export/radering (gap 3) | "finns ej i UI (endast kontaktväg)" | **fortfarande saknas** (0 kodträffar i profil/page.tsx — endast metadata-rader) — tyngsta kvarvarande gapet; GDPR-DATAKARTA.md lever sedan E26-mätningen men UI-ytan är obyggd |
+| Kontrast grannytan | — | B13:s fynd gäller INTE D21: member/*-konsultrutterna (memberId ur klienten, 7 rutter OVAKTADE) är portföljforskningens yta — D21:s svenska medlem/* bär lasMedlemSession på ALLA fyra rutter (mätt) och är färdig mall för grannytans kur |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| D21 | LEVER 8 → **LEVER 8** | Gap 2 motbevisat med kod+svit-bevis, men E31-precedensen gäller: skyddet kodades i våg 87 FÖRE inventeringen — kartan var inaktuell, ingen ny fix levererad av dokvågen. Kvar: GDPR-gapet (3, substansiellt) + migreringens enkelriktning (1, dokumenterat val). Sviterna ÅTERmätta grön (13/13 + 17/17), hela API-ytan helvaktad mätt — kunskap tillförd, inga gap stängda/öppnade: score orörd |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **GDPR-export/radering av eget
+konto i UI** (gap 3) — GDPR-DATAKARTA.md kartlade rätten, UI-ytan återstår;
+(2) member/*-konsultrutternas sessionsvakt (B13:s kö) har färdig mall i
+D21:s lasMedlemSession-mönster — fyra rutter mätt som referens; (3) vill
+gap 1 stängas formellt: dokumentera enkelriktningen som beslut i
+detaljblocket (i dag bärt av kodens vaghuvud).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -703,7 +737,7 @@ dokumentation 50→100 rättad i detaljblocket här.
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
 | D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
-| D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | Gäst→moln-migrering en enkelriktning |
+| D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas i UI (mätt 09-16); replay-skyddet MOTBEVISAT (importtak + engångs-import, kodat sedan våg 87); 4 rutter ALLA vaktade (mätt 09-16); sviter 13/13 + 17/17 grön egen mätning |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
@@ -732,7 +766,10 @@ u3 omgång 6 (09-16) diffade A4/A5/B12 utan poängrörelser — två motbevisade
 (A4), ett skärpt säkerhetsgap + besvarad certId-fråga (A5) och en inverterad
 delningsbild (B12), allt med egna mätbevis; u1 omgång 7 (09-16) diffade D25
 utan poängrörelse — brev-leverantören mätt OKONFIGURERAD, VBOUT-lead-leden
-tillagd i kartan, notis-taket rättat 50→100).
+tillagd i kartan, notis-taket rättat 50→100); u1 omgång 8 (09-16) diffade
+D21 utan poängrörelse — replay-skyddet MOTBEVISAT (importtak + engångs-
+import kodat sedan våg 87, svit-testat), fyra API-rutter ALLA vaktade
+(mätt), sviter 13/13 + 17/17 grön egen mätning, GDPR-gapet kvarstår.
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
@@ -1432,21 +1469,28 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   konfig, avsändardomän) overifierad — kodvägen grön, mejlvägen omätbar
   från arbetsytan.
 
-## D21. Medlemsdata & progress — LEVER — 8/10
+## D21. Medlemsdata & progress — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 
 - **Vad:** Medlemsprogress (kurssteg, quiz-XP, flashcards) i Supabase med
   lokal member-local-fallback, min-sida (nästa steg, streaks, lärväg),
   migrering gäst→moln, medlemsprofil-event.
-- **Nyckelfiler:** src/lib/medlem-progress.ts (448 r), src/lib/
+- **Nyckelfiler:** src/lib/medlem-progress.ts (478 r), src/lib/
   medlem-progress-klient.ts, src/lib/member-local.ts, src/app/api/medlem/
-  progress, src/app/(huvud)/{min-sida,profil}, src/components/ak1a/
-  {min-sida,migrera-progress,fortsatt-panel}.tsx, verktyg/
-  testa-medlem-progress.mjs.
-- **Observation:** requestskopad läsning (§B.4-dokumenterat), deterministisk
-  kärna, testsvit finns och är grön vid senaste dokumenterade körning.
-- **GAP:** (1) migrering enkelriktad (moln→lokal återgång vid offline saknas
-  — dokumentera val); (2) progress-integritet (XP-replay-skydd) otyst;
-  (3) GDPR-export/radering av eget konto finns ej i UI (endast kontaktväg).
+  {route,progress,portfolj,bevakning}, src/app/(huvud)/{min-sida,profil},
+  src/components/ak1a/{min-sida (1 093 r),migrera-progress,fortsatt-panel}.tsx,
+  verktyg/{testa-medlem-progress,testa-medlem-auth}.mjs.
+- **Observation (mätt 2026-09-16):** requestskopad läsning (§B.4-dokumenterat
+  + svit-test 11), deterministisk kärna, ALLA fyra API-rutter vaktade med
+  lasMedlemSession (mätt per fil); GET i prod svarar 200 {inloggad:false}
+  för gäst (tyst kontrakt, aldrig 401-text) medan POST bär 401/429/400/502;
+  sviterna KÖRDA GRÖNA denna dag: 13/13 progress + 17/17 auth.
+- **GAP:** (1) migrering enkelriktad (moln→lokal återgång vid offline
+  saknas — öppet designval, dokumentera för att stänga); (2) ~~progress-
+  integritet (XP-replay-skydd) otyst~~ **STÄNGT 2026-09-16**: importen är
+  engångs (import:<authId>:<datum> ⇒ förbrukad) + takad mot teoretiskt max
+  ur kursdata MED avdrag för redan registrerat (våg 87-koden, svit-testad);
+  (3) GDPR-export/radering av eget konto finns ej i UI (endast kontaktväg)
+  — tyngsta kvarvarande gapet, GDPR-DATAKARTA lever men UI-ytan är obyggd.
 
 ## D22. Betalning & prenumerationsstomme — VÄNTAR — 5/10
 

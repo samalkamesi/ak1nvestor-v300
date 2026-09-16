@@ -199,14 +199,7 @@ Agent-anrop, 4+ via fabriksmanifest.
   src/lib/studio/studio-transport.ts (HUVUDAGENTEN DIREKT — het fil,
   ALDRIG fabriksbarn). KVD: tsc 0 (projektbinär) + resync-grens mock-test +
   bygg under flock + prod 200. Stängs endast med live-bevis (regel 2).
-- ▶ VÅG 173 KOD LANDAD rond 42 [Φ] (merge + push denna rond; live-bevis →
-  stängning när prodbygget landat — RAM-kön): gap 26 sessions-index/
-  <filter>-topic. ROT KURERAD: våg 171:s leverans anropade "v4/subscribe"
-  (0 träffar i bundeln — tyst död via fel-tolerans) utan connectionId/
-  clientMode; rond 42 rättade till "v4/conversation/subscribe" + våg 85-
-  mönstrets grundfält + lägescacha (prenumerationsfabrik-kur) + stangHelt-
-  reset. Poll-trängningen realiseras av pulsrevisionens aktivaSessioner-
-  led (våg 156) + prenumerationen som realtime-grond.
+- ✓ VÅG 173 LEVERERAD+STÄNGT (rond 43 [Φ] på live-bevis): gap 26 sessions-index — protokollrot kurerad (våg 171:s ogiltiga "v4/subscribe" → "v4/conversation/subscribe" + grundfält enligt våg 85-mönstret, rond 42 commit a12203cc). live-bevis 2026-09-16T05:06:14.154Z: sessions-index-rutt GET 401 utan auth + 401 med fel lösenord (monterad+härdad), BUILD_ID 2026-09-16T04:59:21.352Z EFTER commit a12203cc (2026-09-16T03:04:44.000Z), a12203cc ancestor till prod HEAD, prod HTTPS 200.
 - ✓ VÅG 174 LEVERERAD rond 41 [Φ] (7/7 PASS, se registrets footer): E2E-flöden i
   studion (401-härdning, chatt-SSE, komprimerings-knapp, bilduppladdning)
   i NYA filer under verktyg/scenariotest/ — fabriks-dugligt (exklusivt

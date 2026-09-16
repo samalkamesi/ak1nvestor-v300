@@ -11503,5 +11503,275 @@
       ]
     },
     "notering": "varumärkes-monetariseringens lärobok: koncentrat-modellen (säljer koncentrat och sirap till oberoende bottlare — börsens renaste exempel på lättillgångstillväxt med tungt kapital hos PARTNERNA, inte hos bolaget) — bruttomarginal 61,9 %, netto 28,6 % på 50,1 mdr USD TTM och beta 0,34 (universums lugnaste rad hittills: dryckesmönstret följer inte börsen); FCF-SERIENS FALLGROPPA: 2024–2025 visar 4 741/5 296 M$ mot TTM 14 297 M$ — IRS-skadeståndet 6,0 mdr USD (2024 års upplösta skattetvist) betalades i kashtäthet medan intäkterna bokförs löpande; fcfYield 3,7 % och fcf-marginal 28,5 % är TTM-normaliserade (källans statistics) — den som läser FCF-serien ensam drar fel slutsats om verksamheten (PFE-notens spegelbild); prognosTillväxt härledd ur trailing/forward-P/E (26,66/26,11 ⇒ +2,1 % implicit EPS-tillväxt +1 år — mogen dividendlärobok; källans 3-årsprognos EPS +8,1 %/år till stor del återköpsdriven, intäkt +2,9 %/år); peg = 26,66/2,11 = 12,6 enligt spårkonventionen (källans 3-års-PEG 3,53 som not) — PEG straffar mogna utdelningsbolag: långsam men förutsägbar vinsttillväxt; utdelning 2,12 USD/aktie = 2,4 % direktavkastning, payout 63,7 %, över 60 år av årliga utdelningsökningar (källan visar +4,2 % senaste året — dividendkung-pedagogiken); P/B 10,6 — återköpen har krympt eget kapital i två decennier, substansmåttet meningslöst (ABNB-notens släkt); skuld/EK 1,16 med total skuld 44,3 mdr USD mot kassa 16,4 — nettoskuld 27,9 mdr bärs av kassaflödets stabilitet (skuld/EBITDA 2,5); rapport i USD, NYSE"
+  },
+  {
+    "ticker": "ORCL",
+    "namn": "Oracle Corporation",
+    "bransch": "teknik",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/orcl/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-16, kurs close 2026-09-15): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår FY2023–FY2026 (juni–maj)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 140.35,
+    "marknadsKapitalMdr": 424.38,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1048,
+      "resultatCAGR5ar": 0.2594,
+      "omsattningTillvaxtTTM": 0.216,
+      "prognosTillvaxt": 0.3364
+    },
+    "lonksamhet": {
+      "roe": 0.4119,
+      "roic": 0.1134,
+      "bruttoMarginal": 0.6396,
+      "ebitMarginal": 0.3427,
+      "nettoMarginal": 0.2636,
+      "fcfMarginal": -0.4001
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.52,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.7015,
+      "bruttoMarginalSpread5ar": 0.0702,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 22.01,
+      "pb": 6.87,
+      "evEbit": 22.62,
+      "peg": 0.65,
+      "fcfYield": -0.0677,
+      "egenKapitalMultipl": 6.87
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        49954000000,
+        52961000000,
+        57399000000,
+        67357000000
+      ],
+      "resultat": [
+        8503000000,
+        10467000000,
+        12443000000,
+        16984000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        8470000000,
+        11807000000,
+        -394000000,
+        -23686000000
+      ]
+    },
+    "notering": "databas- och molninfrastruktur — räkenskapsår juni–maj, serien = FY2023–FY2026 (årtal = räkenskapsårets slutår, BHP-precedenten); FCF-SVÄNGNINGEN är radens pedagogiska kärna: FCF +11,8 mdr $ FY2024 → −0,4 mdr $ FY2025 → −23,7 mdr $ FY2026 (TTM −28,7 mdr $, yield −6,8 %) när capex gick 6,9 → 21,2 → 55,7 mdr $ för AI-datacenter medan driftkassaflödet bara växte 18,7 → 20,8 → 32,0 mdr $ — tillväxten är köpt med upplåning (skuld/EK 2,52, Cerner-förvärvet + molncapex), och fcfMarginal −40,0 % TTM är universumets lägsta; ROE 41,2 % mot ROIC 11,3 % — samma kapitalstrukturseffekt som Visaraden omvänt (här driver skulden ROE, inte återköpen); bruttomarginalserien FALLER 72,9 → 71,4 → 70,5 → 65,8 % (moat-medel 70,1 %, spridning 7,0 pp) — lågmarginalmolnet (infrastruktur) växer i mixen mot högmarginell mjukvara, TTM 64,0 %; prognosTillvaxt härledd ur trailing/forward-P/E (22,01/16,47 ⇒ +33,6 % implicit EPS-förändring; källans 3-års EPS-prognos +27,34 %/år); peg 0,65 enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen 0,54); resultatCAGR +25,9 % endpoint FY2023–FY2026 (basåret 8,5 mdr $ bär integrationskostnader); utdelning 2,00 $/aktie (1,43 %, payout 31,4 %) — utdelningsfälten null enligt universumets konvention; kurs close 2026-09-15 140,35 $, 52-vägers spann 114,50–329,50 $ (1-årsförändring −51,96 % — AI-capex-storyn har prissatts om kraftigt)"
+  },
+  {
+    "ticker": "AIR.PA",
+    "namn": "Airbus SE",
+    "bransch": "industri",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/epa/AIR/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; kurs 196,36 € fördröjd notering 2026-09-16 14:39 CET, tidigare close 194,80 €): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, utdelning, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 196.36,
+    "marknadsKapitalMdr": 154.18,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0771,
+      "resultatCAGR5ar": 0.0712,
+      "omsattningTillvaxtTTM": 0.1,
+      "prognosTillvaxt": 0.0653
+    },
+    "lonksamhet": {
+      "roe": 0.2319,
+      "roic": 0.2046,
+      "bruttoMarginal": 0.1631,
+      "ebitMarginal": 0.0872,
+      "nettoMarginal": 0.0771,
+      "fcfMarginal": 0.061
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.55,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.1592,
+      "bruttoMarginalSpread5ar": 0.0196,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 25.94,
+      "pb": 5.94,
+      "evEbit": 22.04,
+      "peg": 3.97,
+      "fcfYield": 0.0305,
+      "egenKapitalMultipl": 5.94
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        58763000000,
+        65446000000,
+        69230000000,
+        73420000000
+      ],
+      "resultat": [
+        4247000000,
+        3789000000,
+        4232000000,
+        5221000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        3824000000,
+        3204000000,
+        3733000000,
+        4031000000
+      ]
+    },
+    "notering": "flygduopolets planhalva — Airbus och Boeing delar stora passangerarflygplan, i universumet kontrasterar raden mot GE Aerospace som bär jetmotorerna (industri-branschens två sidor av samma leveranskedja); orderbacklog = resultatbuffert: intäkter intas vid leverans medan kundförskott finansierar produktionen (kassa 13,1 mdr € mot traditionell skuld 14,3 mdr — skuld/EK 0,55 understiger orderbacklogens arbetskapital); bruttomarginal 16,3 % TTM (moat-serien medel 15,9 %, spridning 2,0 pp 2022–2025, högsta året 2022 då leveransvolymerna återhämtade sig snabbare än kostnadsinflationen) — serietillverkningens marginalstruktur som pedagogisk kontrast mot teknikbranschens mjukvarurader i samma universum; prognosTillvaxt härledd ur trailing/forward-P/E (25,94/24,35 ⇒ +6,5 % implicit EPS-förändring; källans 3-års EPS-prognos +16,62 %/år — fwd-multipeln bär backlog-utfall); peg 3,97 enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen 1,50 — källan räknar på 3-årsprognosen); omsCAGR +7,7 % endpoint 2022–2025 med resultatdipp 2023 (4 247 → 3 789 M€: kostnadsinflation och rymdprogramförluster) ⇒ resCAGR +7,1 % trots FY2025-rekord 5 221 M€; FCF-serien 3,8 → 3,2 → 3,7 → 4,0 mdr € stadigt positiv (motsatsen till ORCL-radens capex-svängning — fcfMarginal 6,1 % mot −40,0 %); utdelning 3,20 €/aktie (1,65 %, payout 56,8 %) — utdelningsfälten null enligt universumets konvention; kurs 196,36 € (fördröjd intraday-notering 2026-09-16 14:39 CET; 52-vägers spann 157,42–221,30 €); nästa rapport 2026-10-28"
+  },
+  {
+    "ticker": "RIO",
+    "namn": "Rio Tinto Group",
+    "bransch": "material",
+    "land": "Australien",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/rio/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; översikt close 2026-09-15, statistics 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 97.26,
+    "marknadsKapitalMdr": 164.51,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0124,
+      "resultatCAGR5ar": -0.0701,
+      "omsattningTillvaxtTTM": 0.15,
+      "prognosTillvaxt": 0.143
+    },
+    "lonksamhet": {
+      "roe": 0.1931,
+      "roic": 0.146,
+      "bruttoMarginal": 0.2975,
+      "ebitMarginal": 0.2669,
+      "nettoMarginal": 0.1958,
+      "fcfMarginal": 0.0895
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.32,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 13.59,
+      "pb": 2.29,
+      "evEbit": 11.18,
+      "peg": 0.95,
+      "fcfYield": 0.0336,
+      "egenKapitalMultipl": 2.29
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        55554000000,
+        54041000000,
+        53658000000,
+        57638000000
+      ],
+      "resultat": [
+        12392000000,
+        10058000000,
+        11552000000,
+        9966000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        9384000000,
+        8074000000,
+        5978000000,
+        4497000000
+      ]
+    },
+    "notering": "JÄRNMALNSCYKELNS LÄROBOK: dual-listed koncern (primärnoteringar London RIO.L + Sydney RIO.AX, NYSE-raderna är ADR — BHP-konventionen: ADR i USD med koncernrapportvaluta USD, land satt till Australien enligt BHP-radens mönster); världens största gruvkoncern vid sidan av BHP — järnmalm (Pilbara) väger tyngst med koppar (Oyu Tolgoi) som tillväxtbenet; serien 2022–2025 visar cykelbotten: omsättning 55,6→57,6 mdr $ (+1,2 %/år endpoint) medan resultatet 12,4→10,0 mdr $ (−7,0 %/år) och TTM-vändningen +15,0 % omsättning/+17,8 % resultat — raden är universums tydligaste exempel på att CAGR-fönstret avgör bilden (2021-topp 21,1 mdr $ resultat faller UTANFÖR fönstret; endpoint-talen är svaga, TTM vänder); FCF-SERIENS KAPEX-CYKEL: 9 384→4 497 M$ fallande medan resultatet håller 10–12 mdr $ — investeringstakten äter kasstätheten (fcf-marginal 9,0 % TTM mot netto 19,6 %; fcfYield 3,4 %); ROIC 14,6 % mot källans WACC 7,3 % — värdiskapande marginal (Siemens-notens spegelbild i samma omgång); utdelning 4,61 $/aktie = 4,7 % direktavkastning med payout 62,5 % — gruvkonventionen 40–60 % av cykelresultatet (BHP-notens kusin, payouten strax över policy-taket på TTM-vändningen); prognosTillväxt härledd ur trailing/forward-P/E (13,59/11,89 ⇒ +14,3 % implicit EPS-tillväxt +1 år; källans 3-årsprognos EPS +7,8 %/år); peg = 13,59/14,3 = 0,95 enligt spårkonventionen (källans PEG-fält n/a — noterat); bruttomarginal 29,8 % = gruvbranschens strukturnivå (BHP-notens branschreservation: råvarukostnader passeras, ingen varumärkesmarginal — jämförs endast inom material); skuld/EK 0,32 med nettoskuld 13,3 mdr $ (balansräkningen bär gruvprojekten); rapport i USD, kalenderår"
   }
 ]

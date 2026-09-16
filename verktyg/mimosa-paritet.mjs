@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // mimosa-paritet.mjs — server-side paritet för Mimosa-skannerns dokumenterade
-// fyndklasser (spår 8, s8-u3 omgång 3, 2026-09-15).
+// fyndklasser (spår 8, s8-u3 omgång 3, 2026-09-15; domänslösning omgång 4
+// 2026-09-16).
 //
 // BAKGRUND (bevis i .mimosa/ + worklog): kundens säkerhetsskanner Mimosa
 // (semgrep-hook i arbetsstationens Z-Code) är speglad till servern via
@@ -22,7 +23,9 @@
 //                                     (setup-prod.sh-fynden 2026-09-08)
 //   SHELL_URL_VARIABEL       medium URL byggd ur skal-variabel
 //   CHILD_PROC_INTERP        high   exec/execSync med interpolerat kommando
-//                                     (worklog 9586: kompileringskonstanter)
+//                                     (worklog 9586: kompileringskonstanter;
+//                                     v1.3 fångar även "${...}" i citerad
+//                                     sträng — s8-u1:s permissions-fynd)
 //   SSRF_EXTERN_LITERAL      info   fetch("https://...") fast literal —
 //                                     rapporteras, räknas ej som fynd
 //   LOSENORD_AUTOCOMPLETE    info   lösenords-placeholder + autoComplete
@@ -36,7 +39,16 @@
 // array-argument är per definition utan skal = härdad form.
 //
 // Användning:
-//   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--json UTFIL] [--tyst]
+//   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--doman REGEX]
+//                                    [--hoppa-over REGEX] [--json UTFIL] [--tyst]
+// --doman (v1.1): regex på relativ sökväg som ersätter standarddomänen
+//   src/ + data/infra/ — t.ex. '(^|/)(verktyg|\.zcode|\.zscripts)/' för
+//   väktardomänen (s8-u3 omgång 4: härdning av verktygskatalogens
+//   interpoleringar kräver mekaniskt FÖRE/EFTER-bevis).
+// --hoppa-over (v1.2): filnamns-regex för dokumenterade undantag —
+//   ENDAST testfixturer som medvetet innehåller farliga mönster som
+//   strängar (denna svits egna testa-mimosa-paritet.mjs; FYND i FÖRE-
+//   körningen 2026-09-16). Levande kod undantas ALDRIG.
 // Exit: 0 = grönt (ingen ohärdad high/medium), 1 = fynd, 2 = argumentfel.
 
 import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "node:fs";
@@ -49,22 +61,25 @@ function argVarde(flagga) {
   return i >= 0 && i + 1 < args.length ? args[i + 1] : null;
 }
 const rotArg = argVarde("--katalog");
+const domanArg = argVarde("--doman");
+const hoppaArg = argVarde("--hoppa-over");
 const jsonArg = argVarde("--json");
 const tyst = args.includes("--tyst");
 const rot = rotArg ?? process.cwd();
-const kandaFlaggor = ["--katalog", "--json", "--tyst"];
+const kandaFlaggor = ["--katalog", "--doman", "--hoppa-over", "--json", "--tyst"];
 for (const a of args) {
   if (a.startsWith("--") && !kandaFlaggor.includes(a)) {
-    console.error(`Okänd flagga: ${a}. Tillåtna: --katalog VÄG, --json FIL, --tyst`);
+    console.error(`Okänd flagga: ${a}. Tillåtna: --katalog VÄG, --doman REGEX, --hoppa-over REGEX, --json FIL, --tyst`);
     process.exit(2);
   }
 }
 
 // ── Filkarta ────────────────────────────────────────────────────────────────
-// DOMÄN = Mimosa:s bevisade fyndområden: src/ (produktkod, ts/tsx/mjs) och
-// data/infra/ (skalprogram — setup-prod.sh-fynden 2026-09-08). Verktyg/,
-// scripts/, .zcode/, .zscripts/, tool-results/ lämnas medvetet utanför:
-// väktarnas egen domän där interpolationer bär interna värden (protokollfört).
+// STANDARDDOMÄN = Mimosa:s bevisade fyndområden: src/ (produktkod,
+// ts/tsx/mjs) och data/infra/ (skalprogram — setup-prod.sh-fynden
+// 2026-09-08). Övriga kataloger nås via --doman (väktardomänen skannas
+// mekaniskt sedan s8-u3 omgång 4). node_modules/.next/.git lämnas
+// alltid utanför (lsRekursivts exkluderingslista).
 function lsRekursivt(dir) {
   const ut = [];
   for (const namn of readdirSync(dir)) {
@@ -78,8 +93,19 @@ function lsRekursivt(dir) {
   return ut;
 }
 
+// Standarddomän som regex; --doman ersätter den helt (dokumenterat i
+// hjälptexten ovan). Ogiltig regexp i --doman/--hoppa-over → exit 2.
+let domanRegex;
+let hoppaRegex = null;
+try {
+  domanRegex = domanArg ? new RegExp(domanArg) : /(^|\/)(src|data\/infra)\//;
+  hoppaRegex = hoppaArg ? new RegExp(hoppaArg) : null;
+} catch {
+  console.error(`Ogiltig regex: --doman "${domanArg}" / --hoppa-over "${hoppaArg}"`);
+  process.exit(2);
+}
 function iDoman(relVag) {
-  return /(^|\/)src\//.test(relVag) || /(^|\/)data\/infra\//.test(relVag);
+  return domanRegex.test(relVag) && !(hoppaRegex && hoppaRegex.test(relVag));
 }
 
 const allaFiler = lsRekursivt(rot)
@@ -225,7 +251,10 @@ for (const fil of allaFiler) {
     }
 
     // CHILD_PROC_INTERP: exec/execSync med interpolerat KOMMANDO ( första arg)
-    if (/\b(exec|execSync)\s*\(\s*(`[^`]*\$\{)|\b(exec|execSync)\s*\(\s*["'][^"']*["']\s*\+/.test(rad)) {
+    // v1.3: även "${...}" i citerad sträng FÖRE inre citattecken (skal-
+    // expansion ${}) — luckan påvisad av syskonet s8-u1 (skalfri-vakt.mjs,
+    // permissions-policy-fyndet); malliteraler täcktes sedan v1.0
+    if (/\b(exec|execSync)\s*\(\s*(?:`[^`]*\$\{|["'][^"']*\$\{|["'][^"']*["']\s*\+)/.test(rad)) {
       rapportera("CHILD_PROC_INTERP", "high", fil, i, rad, "oskyddad");
     }
 
@@ -260,9 +289,11 @@ for (const r of rapportRader) {
 
 const resultat = {
     verktyg: "mimosa-paritet",
-    version: "1.0",
+    version: "1.3",
     tid: new Date().toISOString(),
     katalog: rot,
+    doman: domanArg ?? "standard (src/ + data/infra/)",
+    hoppaOver: hoppaArg ?? null,
   skannadeFiler: allaFiler.length,
   perKlass,
   fynd: fynd.map((f) => `${f.fil}:${f.rad} ${f.klass} [${f.allvarlighetsgrad}] ${f.bevis}`),

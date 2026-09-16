@@ -117,12 +117,16 @@ Kvartiler + universumjämförelse behövs INTE byggas manuellt: hela
 datasetlagret räknas ur bolagsunivers.json — nya rader flödar automatiskt in
 i medianer, kvartiler och universumjämförelser på /dataset-sidorna vid nästa
 prod-bygge. Tre nya /bolag-sidor (asml-as, rio, ko) + sitemap-poster föds
-samma bygge (Vonovia-precedensen). Aspekt-effekt: INGEN ny aspektsida —
-före/efter-mätningen av ALLA 15 aspektmattor × berörda branscher visar inga
-4→5-trösklar; sidkontroller kvar 164. Land-mattor: Australien×material 1→2
-(BHP får sällskap), Tyskland×industri 0→1 (s2-u1:s Siemens = universumets
-första tyska industrirad), Nederländerna×teknik 1→2, USA×konsument 3→4 —
-ingen publiceringströskel.
+samma bygge (Vonovia-precedensen). Aspekt-effekt av MINA rader: INGEN ny
+aspektsida — före/efter-mätningen av ALLA 15 aspektmattor × berörda
+branscher visar inga 4→5-trösklar. RÄTTES efter KVD-omkörning: totala
+sidkontroller 164→165 — den nya sidan är syskonets ORCL som öppnade
+teknik/USA-LANDASPEKTEN (USA/teknik-mattan 4→5; land-mattorna låg utanför
+min 15-fältsmatris som bara mätte mina tre länders branscher — läxa:
+landaspekterna kräver full landsvep i nästa omgångs mätning). Land-mattor:
+Australien×material 1→2 (BHP får sällskap), Tyskland×industri 0→1 (s2-u1:s
+Siemens = universumets första tyska industrirad), Nederländerna×teknik 1→2,
+USA×konsument 3→4 — ingen ytterligare publiceringströskel.
 
 ## llms.txt
 
@@ -159,8 +163,9 @@ regeneration läkaren för u1:s 127-block).
 ## KVD-bevis
 
 - **Kontraktstest + läckagevakt 0**: `tsx verktyg/testa-dataset-aspekter.mjs`
-  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = GRÖNT 0 fel, **164
-  sidkontroller** (oförändrat — 0 nya aspektsidor, som förutsagt), varningar
+  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = GRÖNT 0 fel, **165
+  sidkontroller** (KVD-omkörning efter commit; 0 nya från mina rader — den
+  nya sidan är ORCL:s USA/teknik-landaspekt, se rättes ovan), varningar
   samtliga pre-existerande ('billig'-orden, failar ej). Läckagevakten läser
   universumet dynamiskt — **132 namn/tickers förbjudna, 0 träffar** i
   sidornas JSON-utdata (gränsdragningen A2-kontraktet §1) — körd på

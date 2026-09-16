@@ -895,6 +895,42 @@ huvudsidans ALLA 20 refererade statresurser svarar 200 på prod-HTTPS
 kundsynliga fönster 10:02→~13:27). RAM efter bygget 563 MB — nästa
 deployväntan kvarstår.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u1 omgång 9 — E33 ÅTERDIFFAD: prod-tömning, blockerad återimport + v2-clobberbeviset)
+
+Andra varvets tredje återdiff (E35 togs av u3 omgång 8, E34+E29 av u2
+omgång 6 — här E33, senast diffad 2026-09-15 och sedan dess drabbad av
+dagens största händelse: händelseloggens prod-tömning). Varje rad MÄTT i
+arbetsytan 2026-09-16 ~19:50 (ls/git/node-läsning — aldrig worklog):
+
+| Mått | Kartan 2026-09-15 | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Prod-tabellen system_events | "COPY 0 rader i SQL-dumpen" (DR-väg = moln-JSON) | **TOM I PROD sedan 13:46** (u3 3/3:s akuta mätning, bokförd i commit a3756ab7 "efter dagens prod-tömning"); vid 19:50-mätningen INGA spår av återimport: inga nya arkiv/exporter efter 07:24, inga aterstall-spår i data/, worklogs senaste våg (179, 17:49) tyst om ämnet. Arkivet = enda kopian |
+| Arkivet (enda kopian) | moln-JSON-arkivet = DR-väg | **system-events-full-2026-09-16.json.gz finns, 27,5 MB, 07:24** (ls-mätt) — taget FÖRE tömningen. Arkivkadansen OJÄMN: 09-08/09-09/09-15/09-16 på disk, lucka 09-10→09-14 |
+| Återimport (DR-kedja 2) | "dokumenterat i DRIFTSBOKEN" (plan) | **MEKANISERAD**: verktyg/aterstall-system-events.mjs på disk (strömmande konstant minne, --jsonl-ut med PROD-kolumnnamn type→event_type, --plan-supabase; läser ALDRIG nycklar) — men **dedupe-läge SAKNAS** (mätt: enda "ignore-duplicates"-träffen är plan-notisen rad 205) = blockeraren lever: arkivets 4 dublett-id dödar PK-återimporten (bevisat i index-provet) |
+| Composite-index (gap 3) | "MÄTT EJ INSTALLERAT — kör ALTER vid DR-fönster" | Fortfarande EJ installerat i prod — och **den kurerade v2:FÖRLORAD**: commit a3756ab7:s meddelande bokför "KURERAD v2 levererad i data/sql/ALTER-system_events-composite.sql" men `git show a3756ab7 --stat` = 6 filer, ALTER-filen EJ MED; disk OCH HEAD bär V1 (mätt: "enkla index (type…)"-headern + syntaxfelet `IF NOT EXISTS CONCURRENTLY … (type,` — det DUBBELT underkända innehållet); pathhistoriken = endast 2a55da6e 09-05. Enda v2-beviset = DR-INDEX-PROV-2026-09-16-2.md:33-34 (kurerad sats, GRÖN ~396×). Clobber-klass: våg 178/o35-precedensen (edit landar ej i commiten) — nu med bokförd-påstådd leverans i själva commitmeddelandet |
+| Översättningskö (gap 1) | "320 ackumulerande" | **320 EXAKT oförändrad** (240 vantar-motor / 71 publicerad / 9 granskning, node-mätt) — ingen tillväxt på ett dygn; kund-SQL:en fortfarande okörd, men kön växer inte heller (trolig orsak: den tomma prod-tabellen ger läsarna inget nytt att publicera — tolkning, ej mätning) |
+| Inventory | "23 dagar gammal" | **24 dagar** (generatedAt 2026-08-23, mätt) — fortfarande manuell avtappning, ingen auto-refresh |
+| Schemadrift | "type vs event_type bevisad" | **scripts/supabase-schema.sql bär fortfarande `type TEXT NOT NULL`** (rad 58/194/221/260, mätt) — dev/prod-glidningen lever kvar; V1-filens "har idag enkla index"-påstående förblir FALSKT (prod bär endast PK — index-provets dumpbevis) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E33 | LEVER 8 → **FLAGGA 7** | Ryggradstabellen är TOM i prod sedan 13:46 med arkivet som enda kopia och återimporten blockerad (dedupe-läge saknas i aterstall-verktyget, mätt) — aktivt känt fel = FLAGGA enligt lägesordningen. Samtidigt: 0 rader förlorade (arkivet togs 07:24, före tömningen), mönstret lever i 6+ övriga system, verktygskedjan växt (aterstall + index-prov ~396× + dagens 27 DR-protokoll) — därför 7, ej lägre. Score −1 enligt E34-precedensen: kärntabellens prod-läge väger tyngre än verktygsbredden |
+
+Snittscore **7,5** (285 → **284 poäng** / 38 system; E33 −1 vid denna dokvåg).
+
+Kö till huvudagenten (E33:s läkeväg — ordningen BETYDELSEBÄRANDE): (1)
+ÅTERLEVERERA ALTER v2: satsen står färdig i DR-INDEX-PROV-2026-09-16-2.md:33-34
+(`CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_system_events_type_created ON
+public.system_events(event_type, created_at desc)`) — filen på disk är V1 =
+dubbeltrappan (syntaxfel + fel kolumn, båda bevisade). (2) Kör indexet i prod
+FÖRE återimport (index-provets ordning: 396×-planen från första påfyllnadsraden).
+(3) Dedupe-läge i aterstall-system-events.mjs (resolution=ignore-duplicates
+eller prod-röjning av de 4 dublett-id) FÖRE återimport — annars dör importen
+på PK (bevisat i skrap-PG). (4) Synka scripts/supabase-schema.sql (type →
+event_type + indexet) så dev/prod slutar glida. (5) Verifiera arkivcadansen i
+cron (luckan 09-10→09-14 + dagens 07:24-sista — morgondagens arkiv avgör om
+kedjan lever).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -932,13 +968,13 @@ deployväntan kvarstår.
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
-| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
+| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | **FLAGGA** | 7 | PROD-TÖMT 09-16 (mätt): system_events tom sedan 13:46, arkivet 09-16 07:24 = enda kopian (27,5 MB), återimport MEKANISERAD men blockerad (dedupe-läge saknas, mätt) + KURERAD ALTER v2 FÖRLORAD i clobber (commit a3756ab7 bokför leveransen men saknar filen — disk/HEAD bär V1, dubbelt underkänd; enda v2 = index-provets protokoll rad 33); DR = SQL + moln-JSON (mätt); översättningskö 320 oförändrad (kund-SQL krävs) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Vaktbältet växt: 54 sviter (+21/dygn mätt 09-16) + pulsvakt/statisk-sond/konsol/deployklassning (s8); pulsvakten FÅNGAR ett PÅGÅENDE prod-fel (12/25 chunks 404, mätt 11:12Z — läkning = prod-synkens ombygge vid RAM≥2200, 2106 MB vid mätning); motorvalidering 107/0/0 egen; kvar: motorregister 09-03, testaggregator (54 = provtagning), deploy-blockad vid RÖD (gapet EXEKTERAT av felet) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -966,9 +1002,14 @@ körning; s9-u2 omgång 6 (09-16, andra varvet) återdiffade E34/E29 mot dagens
 prodincident — E34 −1 (kundsynligt ostylad prod i timmar med blinda vakter =
 B7-precedensen; bristklassen återkom i "fullföljt" bygge), E29 orörd trots
 mätt tillväxt (66 klara manifest) men nytt clobberbevis för delade
-kartfiler bland samtidiga dokvågssyskon.
+kartfiler bland samtidiga dokvågssyskon; u1 omgång 9 (09-16, andra varvet)
+återdiffade E33 — **FLAGGA 8→7**: händelseloggens kärntabell TOM i prod
+sedan 13:46 (arkivet = enda kopian, återimport blockerad på saknat
+dedupe-läge, allt mätt) + v2-clobberbeviset (kurerad ALTER bokförd i
+a3756ab7:s meddelande men EJ i commitens träd — disk bär V1); 0 rader
+förlorade (arkivet togs före tömningen).
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
-Mediebibliotek, Drift/DR (9).
+Mediebibliotek (9).
 
 ---
 
@@ -2145,7 +2186,23 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
   (3) priser.json saknar schema-validering vid inläsning (ogiltig JSON =
   tasgren).
 
-## E33. Supabase-persistenslagret — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E33. Supabase-persistenslagret — FLAGGA — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 9, återdiff): LEVER 8 →
+FLAGGA 7 — system_events är TOM i prod sedan 13:46 (u3 3/3:s akuta mätning;
+inga återimportspår vid 19:50-mätningen), arkivet 09-16 07:24 = enda kopian
+(27,5 MB), och återimporten är MEKANISERAD men BLOCKERAD: aterstall-
+system-events.mjs saknar dedupe-läge (mätt — arkivets 4 dublett-id dödar
+PK-importen, bevisat i index-provet). Samtidigt mätts den kurerade ALTER
+v2:FÖRLORAD i en clobber av våg 178-klassen: commit a3756ab7:s meddelande
+bokför "v2 levererad i data/sql/ALTER-system_events-composite.sql" men
+commiten (6 filer) saknar filen; disk + HEAD + hela pathhistoriken (enda
+commiten 2a55da6e 09-05) bär V1 = det dubbelt underkända innehållet
+(syntaxordning + kolumnen type); enda v2-beviset lever i
+DR-INDEX-PROV-2026-09-16-2.md:33-34. Läkevägen i fem steg står i
+UPPDATERING-sektionens kö. Översättningskön 320 EXAKT oförändrad
+(240/71/9, node-mätt), inventory 24 dagar, schemadriften lever
+(supabase-schema.sql rad 58/194/221/260 bär fortfarande type).*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 3): tre preciserande mätningar.
 (1) DR-FYND (s10-u2, konfirmerat s10-u1): system_events-tabellen bär COPY
@@ -2171,10 +2228,15 @@ publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.
 - **Observation:** Mönstret är bevisat i prod på 6+ system (m10-doktrinen);
   service-nyckeln används ENDAST server-side; health-rutt verifierar live.
 - **GAP:** (1) tabellen oversattningar körd? (fallback-kön 320 poster säger
-  nej — kund-SQL spår); (2) retention-organets 30-dagarsregel måste
-  exkludera innehållsbärande typer (dokumenterat beslut, implementations-
-  status oklar); (3) composite-indexet (ALTER-system_events-composite.sql)
-  installerat? — prestanda vid växande event-tabell.
+  nej — kund-SQL spår; oförändrad 09-15→09-16, node-mätt); (2) retention-
+  organets 30-dagarsregel måste exkludera innehållsbärande typer (dokumenterat
+  beslut, implementationsstatus oklar); (3) composite-indexet EJ installerat
+  i prod OCH den kurerade v2:n förlorad i clobber — återleverera ur
+  DR-INDEX-PROV-2026-09-16-2.md:33-34 och kör FÖRE återimport; (4) NYTT:
+  återimporten av den tomma prod-tabellen blockerad på dedupe-läge i
+  aterstall-system-events.mjs (4 dublett-id, bevisat); (5) NYTT: arkiv-
+  cadansen ojämn (lucka 09-10→09-14; senaste arkiv 09-16 07:24) —
+  verifiera cron-kedjan.
 
 ## E34. Drift, backup & DR (Contabo) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 

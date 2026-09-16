@@ -11967,3 +11967,36 @@ OBJEKT (duplikatkontroll + anspråk 17:08Z): TVÅ bokade olevererade poster — 
 ## SPÅR 8 s8-u3 (auto-s8-1789577718944, 3/3) — 2026-09-16: våg 178:s ENOBUFS-halva stängd (evidensrevision: ×5-spåren avdunstade med senaste-korning.txt) + CLOBBER-RÄDDNINGEN — syskonens raderade leveranser återvunna ur transkriptdatabasen med 20/20-bevis + full-scan 954/0 GRÖN [fabrik]
 
 OBJEKT (duplikatkontroll): våg 178 hade två delar — full-scan (leverad 96a35b14/o29 förmiddagen) och "scanner_enobufs noterad ×5: rotorsaksjakt" (OLEVERERAD; o29 nämner den ej) = detta fönsters objekt. o29 §5:1-baslinjeåtermätningen togs PARALLELLT av syskonet s8-u2 (o34, 951/0 — dubbel-dispatch-familjen; min mätning 19:19 = 954/0, tre filer senare, GRÖN båda). ENOBUFS-EVIDENSREVISION: noll persistrade spår finns (grep -ri hela ytan + /tmp: endast bokningstexten i PIPELINE-KO/prompt-journal/styrelse-rond.mjs:177). Mekanism bevisad i koden: granssnittsvakt-cron fångar vaktens utdata i senaste-korning.txt som SKRIVS ÖVER (>) varje körning; kraschbeviset överlever bara om larmvägen samtidigt lever (cron.log 09-11T2023/2048 "larmvägen bruten"); retentionen täcker endast granssnitt-*.json — ronderens ×5 avdunstade med filen. Mekanisk rot: ENOBUFS=errno 105 vid spawn/socket-alloc under minnessvält (serverns OOM-era 09-13+09-16); exponering redan reducerad (våg 169 RAM-grind, s8-u2 omg2 dynamisk import, o33 artefaktgrind) — kvar stod bevis-hålet. KUR (kraschbevis-arkivering): utförd 19:54 av en PARALLELL u3-INSTANS (fabriksretry som läste mitt ostaggerade o35-protokoll — konvergens, inte kollision: implementationen = exakt min i förväg testade 3/3-design, retention ≤30 + KRASCHAD-cp FÖRE larmet; bash -n GRÖN av mig; cron-skriptet lämnas i DENNAS staging — deras commit bär den). CLOBBER-HÄNDELSEN 19:46:30: huvudagentens rond-51-reconciliation (reset "moving to HEAD" + push 1d6a5b02/6aedd1e4, updateInstead kräver rent träd) raderade ALLA ostaggerade ändringar i AK1 — syskonet s8-u2:s döda session hade lämnat HELA sin leverans ostaggerad (kända läxan: staga omedelbart; andra offret). SIDOEFFEKT: agentarbetsyta-divergensen (20 synkfel sedan 09-15 16:10, rotorsakedja i o35 §5: 2b7996bd 16:52:40 → f3a574ba 16:56:36 → merge-konflikt 16:56:55 → död session) LÖSTES AV ÄGAREN I SAMMA PUSH — båda tipsen = 6aedd1e4, ff-pull grön (verifierad), feljägarens MEDEL-larm tystnar. RÄDDNINGEN (BASF-precedensen): (1) VERBATIM-återställningar ur mitt fönsters läsningar — .gitignore (kvalitetsrapport-SENASTE gitignorerad), pumpor-daemon tre vaktinstrument-triggers (larm-eskalering :x0, skalfri 05:06, kvalitetsvakt 07:02 — o21/o22/o26-infrianden), skalfri-vakt --tyst-kur (skarpkört GRÖN), s8-u2:s worklog-rad (oförändrad innehållsligt, återställningsnotis i rubriken); (2) TRANSKRIPT-ÅTERVINNING ur ~/.zcode/cli/db/db.sqlite — syskonsessionen sess_7ae0e3b8:s Write-snapshot (20 019 tkn) + Edit-uppspelning återuppbyggde larm-eskalering.mjs v2 (20 034 tkn) och testa-larm-eskalering.mjs (git-v1 + 4 edits; koll(14)-slutblocket + varaktighetMin-kuren applicerade efter misslyckade kedjor) ⇒ SVITEN 20/20 PASS exit 0 — leveransen BEVISAT identisk med förlagan; (3) backuper: data/vakten/orphan-skydd-2026-09-16/ (prod-synk-försvar + återvunna finaler + o34-utkast). EJ återvunnet: motorervalidering-2026-09-02.md (+344 server-genererad — regenererbar av kvalitetsvakten). BEVIS: full-scan --doman . = 954 filer 0 fynd GRÖN exit 0 v1.4 (rådata fullscan-atermat-2026-09-16-s8u3.json) · korsinstrument skalfri-vakt 218/0 (växte 175→218) + --tyst skarp GRÖN · larm-svit 20/20 · node --check ×4 · bash -n ×2 (cron + min arkivlogik 3/3 isolerad) · tsc 0 projektbinär · INGET bygge · src orörd · R2 orörd · data/blogg/ orörd · .env orörda. BOKNINGAR: (1) pumpor-daemonen behöver OMSTART för de tre triggerna (löpande daemon kör gamla koden) — huvudagentens rond; (2) s8-u1:s oavslutade AGENTARBETSYTA-försvar i prod-synk.mjs (191 rader, svit 29/30 — 1 FAIL "ytan innehåller rot-HEAD (ikapp)") backat i orphan-skydd — ägs av s8-u1-omstart/huvudagent, deploymaskineri committas ALDRIG med fallande test; (3) o35 §5:1-maskinregeln: återmät full-scan efter vågor som tillför filer utanför src/. Protokoll: OPTIMERING/o35-fullscan-baslinje-kraschbevis-s8.md. [fabrik]
+
+
+## SPÅR 9 s9-u1 omgång 9 — 2026-09-16 ~19:50: SYSTEMKARTAN dokvåg — E33 ÅTERDIFFAD (andra varvet): prod-tömning + blockerad återimport + v2-clobberbeviset [fabrik]
+
+OBJEKT (duplikatkontroll): alla 36 diffbara system diffade en gång (cykel
+slutförd u3 o7); andra varvet hade tagit E35 (u3 o8) + E34/E29 (u2 o6) — E33
+senast diffad 09-15 och därefter träffad av dagens största händelse
+(system_events prod-tömning 13:46) = det mest mogna återdiff-objektet;
+SYSTEMKARTAN.md fri i arbetsträdet vid start. LEVERANS: E33 LEVER 8 →
+FLAGGA 7, allt MÄTT i arbetsytan ~19:50 (ls/git/node — aldrig worklog):
+prod-tabellen TOM sedan 13:46 (u3 3/3:s mätning, bokförd i a3756ab7 "efter
+dagens prod-tömning"; 0 återimportspår vid 19:50 — inga nya arkiv efter
+07:24, worklogs våg 179 17:49 tyst om ämnet); arkivet 09-16 07:24 = enda
+kopian (27,5 MB ls-mätt; arkivlucka 09-10→09-14); återimport MEKANISERAD men
+BLOCKERAD — aterstall-system-events.mjs (strömmande konstant minne,
+--jsonl-ut type→event_type, --plan-supabase) saknar dedupe-läge (mätt: enda
+träff = plan-notis rad 205; arkivets 4 dublett-id dödar PK-importen,
+index-provets bevis); KURERAD ALTER v2 FÖRLORAD I CLOBBER (våg 178-klassen,
+NY variant: bokförd-påstådd i själva commitmeddelandet) — a3756ab7:s
+meddelande bokför "v2 levererad i data/sql/ALTER-system_events-composite.sql"
+medan `git show a3756ab7 --stat` = 6 filer UTAN ALTER-filen; disk + HEAD +
+hela pathhistoriken (enda commiten 2a55da6e 09-05) bär V1 = det dubbelt
+underkända innehållet (syntaxordning + kolumnen type); enda v2-beviset =
+DR-INDEX-PROV-2026-09-16-2.md:33-34 (GRÖN ~396×); översättningskö 320 EXAKT
+oförändrad (240/71/9 node-mätt — "ackumulerande" nyanserad); inventory 24
+dagar; schemadriften lever (supabase-schema.sql rad 58/194/221/260 = type).
+Kö till huvudagenten i kartan, 5 steg i betydelsebärande ordning (återleverera
+v2 ur protokollet → index i prod FÖRE återimport → dedupe-läge i
+aterstall-verktyget → schemasynk type→event_type → arkivcadans-verifikation).
+Snitt 285→284/38; översiktsraden + "Bäst"-listan rättad (Drift/DR 9:an
+kvar sedan u2:o6:s E34 9→8 — deras förbiseende). Endast data/forskning +
+worklog = INGET bygge; src/ orörd; tsc 0 via grinden; R2 orörd — inga
+priser/tier/publicering; data/blogg/ orörd. [fabrik]

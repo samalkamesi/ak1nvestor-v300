@@ -89,6 +89,20 @@ bevaras av next build), HTML:n refererar 12 i nya bygget omdöpta chunk-hashar
 s-maxage) där cachade sidor bär borta hashar = kundsynligt delvis ostylat.**
 ~6 min efter deploy: fortfarande trasig (10:56).
 
+**PRECISERING (11:0x, kompletterande sondering):** mekanismen är tidsfönstret
+från POSTERNAS SKRIVTID, inte deploy-tiden — ISR-poster skrivna under det
+trasiga fönstret (gamla pm2-processen regenererade sidor 10:02–10:52 MED
+gamla buildens hash-referenser) betraktas som friska i s-maxage=3600 s från
+sin skrivtid ⇒ grönt tidigast när respektive post går ut och omvalidieras
+(värsta fall ~11:52 UTC för den sist skrivna posten) — och **nästa deploy
+reagerar dem inte heller** (.next/cache bevaras av next build AV DESIGN —
+byggcache-återanvändning).Verifierat systemiskt: /kurser bär SAMMA 12 trasiga
+refs (delade layout-chunks). En ChunkLoadError på server-chunk vid
+omstartgränsen 10:51:39 (12:51:39 lokal; ssr-chunk ur FÖREGÅENDE byggläge)
+är transient vid processbytet — 0 nya sedan; BUILD_ID 10:50:29 + 758
+ssr-chunks + 97 klientchunks = bygget på disk är komplett; det som serveras
+är cachen ovanpå.
+
 **Beviskedjans värde:** prod-synkens deploy-verifikation "prod 200" passerade
 10:51:58 medan sajten var trasig — **o29 §6.1 (statisk-sond SIST i
 deploy-kedjan) bevisad levande igen**, nu med larmlogg som vittne. 10:02-fallet
@@ -106,11 +120,13 @@ dog i tysthet; 10:52-fallet larmade inom 12 sekunder.
 
 Läkning av fas 2 ägs av ISR-omvalidieringen (SWR, begäranstyrd) eller
 ev. nästa deploy — INTE av mig (byggen förbjudna; korrekt ägarskap hölls
-andra dagen i rad). **Frikopplad läkningsvakare** (s7-u2-mönstret,
+andra dagen i rad). Tidsuppskattning enligt §4: grönt senast ~11:52 UTC när
+den sist skrivna ISR-posten går ut (vakten (d) + sonder driver omvalidieringen
+med sina 60 s-förfrågningar). **Frikopplad läkningsvakare** (s7-u2-mönstret,
 `setsid node /tmp/s8u2-lakningsvakare.mjs`, pid bevisad): sonder var 3:e
 min, vid GRÖN körs `pulsvakt --test` som fullständigt facit; logg:
-`data/vakten/statisk-lakning-2026-09-16-s8u2.log`. Max 2 h, därefter ärlig
-"ej läkt inom fönstret"-rad.
+`data/vakten/statisk-lakning-2026-09-16-s8u2.log`. Max 2 h (täcker värsta
+fallet med marginal), därefter ärlig "ej läkt inom fönstret"-rad.
 
 ## §6 Bevis
 

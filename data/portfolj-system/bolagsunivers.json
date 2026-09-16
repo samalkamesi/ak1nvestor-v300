@@ -11233,5 +11233,275 @@
       ]
     },
     "notering": "serier i EUR; FÖRSÄKRINGSKONCERN — universumets första rena försäkringsbolag (BRK-B är försäkringslett konglomerat): float-mekaniken förklarar kassaflödesbilden, premier intas före skadeutbetalning och ger kassa 136,0 mdr € mot traditionell skuld 33,7 mdr — källans FCF-marginal 23,3 % TTM och FCF-yield 16,7 % speglar kundmedelsflöden (samma reservation som bankradernas, men BRK-precedenten fyller fälten när källan mäter dem); skuld/EK 0,51, räntetäckning 16,7 (i not — fältet systematiskt osatt) och ROIC 17,8 % är källans värden på TRADITIONELL skuld — försäkringstekniska åtaganden (policyholder liabilities) bärs utanför måtten och gör dem ej jämförbara med icke-finansbolag (BRK-radens reservation; fälten fylls ändå enligt spårets nyare konvention när källan mäter — EQT/V-precedenten); P/E 14,58 på rapporterat TTM-resultat som BÄR ENGÅNGSVINSTEN från avyttringen av det indiska livförsäkringsengagemanget Bajaj Allianz Life (Q1 2026 nettoresultat 3 689 M€, +52 %) — källans EBT exklusive engångsposter 17 899 M€ mot rapporterat 19 952 M€ (gap ca 2,1 mdr €): på normaliserat underlag blir P/E högre än 14,58; källan publicerar ingen justerad EPS (BASF/Carlyle-precedenten omvänt: där gav källan normaliserat P/E direkt); prognosTillvaxt härledd ur trailing/forward-P/E (14,58/13,87 ⇒ +5,1 % implicit EPS-förändring, ej underliggande volymtillväxt — källans 3-årsprognoser är EPS +7,74 % och intäkter +16,64 %); peg 2,85 enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans 3-års-PEG 1,72 som not); omsattningCAGR endpoint över 4 räkenskapsår (2022–2025, +4,25 %: svagt basår 2022 följt av tre tillväxtår), resultatCAGR +13,89 % samma period (ränteläge och kombinationseffekter); P/B 2,47 med ROE 19,6 % — försäkringsvärderingar drivs av avkastning på eget kapital, källans P/TBV 4,06 i not; bruttomarginal 25,0 % TTM (statistiksida 2026-08-18); moat-fälten null: försäkringskoncerner redovisar inte bruttovinst per år hos källan (BRK-precedenten) och premier/ersättningar gör en bruttomarginalserie ej jämförbar med varubolag; resultatserien är nettoresultat till aktieägarna (exklusive minoriteter); utdelning 17,10 €/aktie (3,8 % direktavkastning; payout 54,8 % enligt källan, 56,1 % på TTM-EPS; utdelningen växt 11,40 → 17,10 € 2022–2025, +14,5 % per år) — utdelningsfält null enligt plattformskonventionen; 52-vägers spann 338,80–454,60 €; nästa rapport 2026-11-05"
+  },
+  {
+    "ticker": "SIE.DE",
+    "namn": "Siemens AG",
+    "bransch": "industri",
+    "land": "Tyskland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/etr/SIE/",
+        "paranoid": "översikt + statistics + financials + financials/income-statement (underlag S&P Global Market Intelligence/Fiscal.ai; översikt/statistics sid-as-of 2026-09-16 intradag, financials uppdaterad 2026-08-06): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, bruttovinstserie, 4 räkenskapsår FY2022–FY2025 (bokföringsår oktober–september, årsetikett = slutår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 260.75,
+    "marknadsKapitalMdr": 198.76,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0311,
+      "resultatCAGR5ar": 0.3722,
+      "omsattningTillvaxtTTM": 0.036,
+      "prognosTillvaxt": 0.3066
+    },
+    "lonksamhet": {
+      "roe": 0.1247,
+      "roic": 0.0658,
+      "bruttoMarginal": 0.3936,
+      "ebitMarginal": 0.1236,
+      "nettoMarginal": 0.098,
+      "fcfMarginal": 0.1461
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.66,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.3815,
+      "bruttoMarginalSpread5ar": 0.0337,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 25.87,
+      "pb": 2.64,
+      "evEbit": 23.13,
+      "peg": 0.8439,
+      "fcfYield": 0.0596,
+      "egenKapitalMultipl": 2.64
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        71977000000,
+        74882000000,
+        75930000000,
+        78914000000
+      ],
+      "resultat": [
+        3723000000,
+        7949000000,
+        8301000000,
+        9620000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        8157000000,
+        10093000000,
+        9577000000,
+        10812000000
+      ]
+    },
+    "notering": "serier i EUR, bokföringsår oktober–september (FY2025 = okt 2024–sep 2025; årsetikett = slutår — BHP-/Visa-precedensen tredje instansen); KONGLOMERAT — industrins första tyska jätterad: automatisering (Digital Industries), elektrofikation (Smart Infrastructure), mobilinfrastruktur/mjukvara och 17 %-eget Healthineers-engagemang (medicinteknik) i koncernredovisningen; P/E 25,87 står på TTM-resultatet 7 950 M€ (netto −19,7 %, EPS 10,10 €) som är NEDTRYCKT — förra TTM-perioden bar FY2025:s engångsposter och trailingmultipeln är upplyst relativt normaliserat underlag: forward-P/E 19,80 (implicit EPS ≈ 13,17 €) ⇒ prognosTillväxten +30,7 % ur P/E-kvoten är NORMALISERINGSARTEFAKT, ej underliggande volymtillväxt (källans 3-årsprognoser: intäkter +7,08 %, EPS +4,97 %); FY2025-nettot 9 620 M€ bär avvecklingsverksamhet +2 059 M€ (motoravknoppningen Innomotics stängde under året enligt bolaget; källan namnger ej objektet) och tillgångsförsäljningsvinster 502 M€ — källans EBT exklusive engångsposter 10 327 M€ mot rapporterat 10 829 M€ (BASF-/Allianz-ärlighetskonventionen: riktningen dokumenteras, ingen egen justerad EPS beräknas); resultatCAGR +37,2 % endpoint mätt FRÅN DEPRIMERAT BASÅR FY2022 (netto 3 723 M€, EPS −39,5 % enligt källan) — talet Says mer om basåret än om trenden, noteras i stället för att osättas (startvärdet positivt, BASF-precedensen omvänt); bruttomarginalserie 4 år fylld (35,9/38,9/39,3/38,5 %, medel 38,1 % spread 3,4 pp — BASF-precedenten: moat fylls när källan mäter; industriell mix med digital högre marginal), roeMedel null (ingen ROE-serie hos källan); EV/EBIT 23,13 förvånande hög mot EBIT-marginal 12,4 % — EV:n bär pensions- och leaseåtaganden samt kassadiskont (not till jämförelsen med renodlade svenskraderna); skuld/EK 0,66, räntetäckning 6,08 (i not — fältet systematiskt osatt enligt spåret); FCF-marginal 14,61 % TTM (11 850 M€), fcfYield 5,96 % (11 850/198 760 — marknadsvärdeskonventionen, Allianz-precedensen); utdelning 5,35 €/aktie (2,0 % direktavkastning; payout 52,4 % enligt källan, utdelningstillväxt +2,88 % senaste året, 4 år av tillväxt) — utdelningsfält null enligt plattformskonventionen; 52-vägers spann 198,00–291,70 €; nästa rapport 2026-11-12 (FY2026 Q4)"
+  },
+  {
+    "ticker": "ASML.AS",
+    "namn": "ASML Holding N.V.",
+    "bransch": "teknik",
+    "land": "Nederländerna",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/ams/ASML/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; Euronext-sidorna intraday 2026-09-16 14:32 CET, statistics 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 1419,
+    "marknadsKapitalMdr": 529.53,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1556,
+      "resultatCAGR5ar": 0.1955,
+      "omsattningTillvaxtTTM": 0.098,
+      "prognosTillvaxt": 0.7672
+    },
+    "lonksamhet": {
+      "roe": 0.5394,
+      "roic": 0.6598,
+      "bruttoMarginal": 0.5273,
+      "ebitMarginal": 0.3542,
+      "nettoMarginal": 0.3011,
+      "fcfMarginal": 0.2842
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.09,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 50.07,
+      "pb": 24.26,
+      "evEbit": 41.08,
+      "peg": 0.65,
+      "fcfYield": 0.019,
+      "egenKapitalMultipl": 24.26
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        21173000000,
+        27559000000,
+        28263000000,
+        32667000000
+      ],
+      "resultat": [
+        5624000000,
+        7839000000,
+        7572000000,
+        9609000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        7205000000,
+        3288000000,
+        9099000000,
+        11085000000
+      ]
+    },
+    "notering": "monopol-pedagogiken: världens ENDA leverantör av EUV-litografi — utan ASML:s maskiner ingen toppnods-halvledarproduktion (TSMC, Intel, Samsung är kunder och konkurrerar om samma maskiner); bruttomarginal 52,7 % på unik maskinvara, ROIC 66,0 % och ROE 53,9 % med skuld/EK 0,09 samt NETTOKASSA 5,6 mdr € — avkastningen bärs av verksamheten, inte hävstången (P/B 24,3); 2023-års FCF-dipp 3 288 M€ (mot 11 085 M€ 2025) är arbetarkapital-cykeln (kundförskott och leveranstakt), inte lönsamhet — FCF-serien ifylld (BASF/PFE-precedensen); prognosTillväxt härledd ur trailing/forward-P/E (50,07/28,32 ⇒ +76,7 % implicit EPS-tillväxt +1 år: trailing bär 2024–25-vändningen ur cykeldippen, forward normaliserar — källans 3-årsprognoser intäkt +25,7 %/år och EPS +40,1 %/år ligger i samma riktning, AI-infrastrukturcykeln); peg = P/E/prognostillväxt i procent = 0,65 enligt spårkonventionen (källans 3-års-PEG 0,98 som not — båda under 1); utdelning 7,50 €/aktie ≈ 0,5 % direktavkastning, payout 28,3 % — tillväxtbolagets utdelning, ingen inkomstkälla; EV/EBIT 41,1 trots nettokassa (EV under marknadsvärdet) — högsta multipeln bland teknikraderna, priset på monopolstatus; kursen +94,7 % på 52 veckor (momentumnot: dubbel exponering — hög multipel PÅ hög tillväxt); rapportvaluta EUR, primärnotering Euronext Amsterdam (ADR ASML på Nasdaq i USD)"
+  },
+  {
+    "ticker": "KO",
+    "namn": "The Coca-Cola Company",
+    "bransch": "konsument",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/ko/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; översikt close 2026-09-15, statistics 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 88.71,
+    "marknadsKapitalMdr": 381.68,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0369,
+      "resultatCAGR5ar": 0.1117,
+      "omsattningTillvaxtTTM": 0.065,
+      "prognosTillvaxt": 0.0211
+    },
+    "lonksamhet": {
+      "roe": 0.4205,
+      "roic": 0.201,
+      "bruttoMarginal": 0.6189,
+      "ebitMarginal": 0.3185,
+      "nettoMarginal": 0.2856,
+      "fcfMarginal": 0.2852
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.16,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 26.66,
+      "pb": 10.56,
+      "evEbit": 25.66,
+      "peg": 12.64,
+      "fcfYield": 0.0375,
+      "egenKapitalMultipl": 10.56
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        43004000000,
+        45754000000,
+        47061000000,
+        47941000000
+      ],
+      "resultat": [
+        9542000000,
+        10714000000,
+        10631000000,
+        13107000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        9534000000,
+        9747000000,
+        4741000000,
+        5296000000
+      ]
+    },
+    "notering": "varumärkes-monetariseringens lärobok: koncentrat-modellen (säljer koncentrat och sirap till oberoende bottlare — börsens renaste exempel på lättillgångstillväxt med tungt kapital hos PARTNERNA, inte hos bolaget) — bruttomarginal 61,9 %, netto 28,6 % på 50,1 mdr USD TTM och beta 0,34 (universums lugnaste rad hittills: dryckesmönstret följer inte börsen); FCF-SERIENS FALLGROPPA: 2024–2025 visar 4 741/5 296 M$ mot TTM 14 297 M$ — IRS-skadeståndet 6,0 mdr USD (2024 års upplösta skattetvist) betalades i kashtäthet medan intäkterna bokförs löpande; fcfYield 3,7 % och fcf-marginal 28,5 % är TTM-normaliserade (källans statistics) — den som läser FCF-serien ensam drar fel slutsats om verksamheten (PFE-notens spegelbild); prognosTillväxt härledd ur trailing/forward-P/E (26,66/26,11 ⇒ +2,1 % implicit EPS-tillväxt +1 år — mogen dividendlärobok; källans 3-årsprognos EPS +8,1 %/år till stor del återköpsdriven, intäkt +2,9 %/år); peg = 26,66/2,11 = 12,6 enligt spårkonventionen (källans 3-års-PEG 3,53 som not) — PEG straffar mogna utdelningsbolag: långsam men förutsägbar vinsttillväxt; utdelning 2,12 USD/aktie = 2,4 % direktavkastning, payout 63,7 %, över 60 år av årliga utdelningsökningar (källan visar +4,2 % senaste året — dividendkung-pedagogiken); P/B 10,6 — återköpen har krympt eget kapital i två decennier, substansmåttet meningslöst (ABNB-notens släkt); skuld/EK 1,16 med total skuld 44,3 mdr USD mot kassa 16,4 — nettoskuld 27,9 mdr bärs av kassaflödets stabilitet (skuld/EBITDA 2,5); rapport i USD, NYSE"
   }
 ]

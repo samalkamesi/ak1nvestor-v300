@@ -42,7 +42,7 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B11 | saasaktier-sa-analyserar-du-saas-bolag | SaaS-aktier | 1344 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-01-saassektorn) | data/blogg-utkast/saasaktier-sa-analyserar-du-saas-bolag.json |
 | B12 | spelaktier-sa-analyserar-du-spelbolag | spelaktier | 1326 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-12-spel) | data/blogg-utkast/spelaktier-sa-analyserar-du-spelbolag.json |
 | B13 | detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag | detailhandelsaktier | — | PÅGÅR (2026-09-16 13:27Z, s3-u3 — klaimfil data/vakten/s3-omg5-u3-ansprak-detailhandel.md) — sektoromgång 2 (kursankare se-07-detail) | data/blogg-utkast/detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json |
-| B14 | flygaktier-sa-analyserar-du-flygplansindustrin | flygaktier | — | PÅGÅR (2026-09-16, s3-u2 — klaimfil data/vakten/s3-omg5-u2-ansprak-flyg.md) — sektoromgång 2 (kursankare se-10-flyg; AIR.PA + GE Aerospace) | data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin.json |
+| B14 | flygaktier-sa-analyserar-du-flygplansindustrin | flygaktier | 1379 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-10-flyg) | data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin.json |
 | B15 | forsvarsaktier-sa-analyserar-du-forsvarsbolag | försvarsaktier | 1199 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-03-forsvarssektorn) | data/blogg-utkast/forsvarsaktier-sa-analyserar-du-forsvarsbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.

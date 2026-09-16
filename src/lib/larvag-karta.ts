@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (352 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (358 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 310 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 316 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -364,9 +364,12 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "the-everything-store", titel: "The Everything Store — Brad Stone: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 0, vIndex: -1, minuter: 169 },
   { slug: "bk-01-balansrakningen", titel: "Balansräkningen — bolagets karta", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-02-kanslighetsanalys-och-stresstest", titel: "Känslighetsanalys — stresstesta balansräkningen", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-01-organisk-mot-forvarvad-tillvaxt", titel: "Organisk vs förvärvad tillväxt — spåra källan", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "tx-02-volym-pris-och-mix", titel: "Volym, pris och mix — tillväxtens tre motorer", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-01-kapitalstruktur-grunder", titel: "Kapitalstruktur — hur bolaget är finansierat", kategori: "KAPITALSTRUKTUR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-02-kapitalallokering", titel: "Kapitalallokering — styrelsens fem vägar", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-03-skuldens-anatomi", titel: "Skuldens anatomi — löptider, bindning och covenants", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -377,9 +380,12 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -388,4 +394,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 352;
+export const LARVAG_ANTAL_KURSER = 358;

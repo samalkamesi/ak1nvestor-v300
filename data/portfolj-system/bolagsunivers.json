@@ -10698,5 +10698,450 @@
       "fcf": []
     },
     "notering": "rapportvaluta USD (NASDAQ); prognosTillvaxt härledd ur trailing/forward-P/E (20,39/27,37 ⇒ −25,5 % implicit EPS-förändring — TTM-vinsten 135,3 mdr USD (+91,6 %) bär tillfälliga poster medan framåtblickande estimat normaliserar; ej underliggande volymtillväxt, källans 3-årsprognos är +8,7 %); peg osatt — negativ implicit EPS-förändring gör spårkonventionens P/E ÷ prognos-mått meningslöst (källans egen PEG 1,32); resultatCAGR osatt: negativt startvärde 2022 (−2 722 MUSD, Rivian-nedskrivningar) gör endpoint-metoden meningslös; omsättningCAGR endpoint 2022–2025 (4 räkenskapsår); FCF negativt TTM (−11,6 mdr USD: OCF 161,4 − capex 173,0 — AI-infrastrukturprogrammet) ⇒ fcfMarginal/fcfYield negativa; räntetäckning 28,13 (fältet systematiskt osatt i universumet, värdet dokumenteras här); ingen utdelning — aterkop null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "URW.PA",
+    "namn": "Unibail-Rodamco-Westfield SE",
+    "bransch": "fastighet",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/epa/URW/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 93.88,
+    "marknadsKapitalMdr": 13.56,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0631,
+      "resultatCAGR5ar": 0.9234,
+      "omsattningTillvaxtTTM": -0.021,
+      "prognosTillvaxt": -0.1345
+    },
+    "lonksamhet": {
+      "roe": 0.0863,
+      "roic": 0.0415,
+      "bruttoMarginal": 0.7043,
+      "ebitMarginal": 0.6469,
+      "nettoMarginal": 0.4462,
+      "fcfMarginal": 0.3656
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.08,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 8.69,
+      "pb": 0.62,
+      "evEbit": 16.86,
+      "peg": null,
+      "fcfYield": 0.0951,
+      "egenKapitalMultipl": 0.62
+    },
+    "golv": {
+      "typ": "tillgangstung",
+      "vardePerAktie": 113.64,
+      "marginal": 0.1739
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        2952000000,
+        2891000000,
+        3292000000,
+        3547000000
+      ],
+      "resultat": [
+        178200000,
+        -1629000000,
+        146200000,
+        1268000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Europas största köpcentrum-bolag (Westfield-märket i USA, kontors- och galleriportfölj i Europa) — Societas Europaea med säte i Paris, primärnotering Euronext Paris i EUR; IFRS-resultatserien bär fastighetsvärderingar: −1 629 M€ 2023 (nedskrivningsvåg när räntan steg), +146 M€ 2024, +1 268 M€ 2025 (uppdrivet av avyttringsvinster — 2,2 mdr € dispositioner enligt källans rapportnot) — endpoint-CAGR +92,3 %/år är ett värderings-/engångspostfenomen, ingen verksamhetstillväxt (omsättningen växte +6,3 %/år samma period); prognosTillvaxt härledd ur trailing/forward-P/E (8,69/10,04 ⇒ −13,4 % implicit EPS-tillväxt +1 år — NEGATIV: trailing-vinsten bär engångsposter, forward-P/E normaliserar uppåt; peg därmed OSATT enligt konventionen vid negativ implicit tillväxt, Vonovia-precedensen); skuldsidan är branschens kärnrisk: skuld/EK 1,08, total skuld 23,8 mdr €, nettoskuld 20,9 mdr €, LTV ~42 % enligt källans rapportnot — kapitalkostnadskänslig portfölj; golv = tillgångstung konvention (substans/aktie 113,64 €, kursen handlar till 17 % rabatt — P/B 0,62); utdelning 4,50 €/aktie ≈ 4,8 % direktavkastning, payout 43,6 % (noterad här; aterkop-fälten null enligt plattformskonventionen); källans FCF-visning är sektorquirk: financials-sidan visar FCF=OP-cashflow (capex 0 — fastighetsinvesteringar bokförs i balansräkningen) medan statistics-sidans normaliserade FCF TTM är 1,29 mdr € — fcfYield 9,5 % bygger på sistnämnda; EV/EBIT 16,9 speglar fastighetsbolagets balansräkningsstruktur — jämförs endast inom branschen"
+  },
+  {
+    "ticker": "PFE",
+    "namn": "Pfizer Inc.",
+    "bransch": "halso",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/pfe/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 27.55,
+    "marknadsKapitalMdr": 157.03,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.148,
+      "resultatCAGR5ar": -0.372,
+      "omsattningTillvaxtTTM": -0.002,
+      "prognosTillvaxt": 2.6429
+    },
+    "lonksamhet": {
+      "roe": 0.0501,
+      "roic": 0.1349,
+      "bruttoMarginal": 0.7472,
+      "ebitMarginal": 0.2958,
+      "nettoMarginal": 0.068,
+      "fcfMarginal": 0.1725
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.74,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 36.21,
+      "pb": 1.84,
+      "evEbit": 11.08,
+      "peg": 0.14,
+      "fcfYield": 0.07,
+      "egenKapitalMultipl": 1.84
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        101175000000,
+        59554000000,
+        63627000000,
+        62579000000
+      ],
+      "resultat": [
+        31372000000,
+        2119000000,
+        8031000000,
+        7771000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        26031000000,
+        4793000000,
+        9835000000,
+        9075000000
+      ]
+    },
+    "notering": "världens mest citerade läkemedelsbolag — pandemi-normaliseringens lärobok: omsättningen föll från 101,2 mdr USD 2022 (Comirnaty/Paxlovid-topp) till 62,6 mdr 2025, endpoint-CAGR −14,8 %/år; resultatet samma bana (31,4 → 7,8 mdr, −37,2 %/år) med 2023-blocket 2,1 mdr (nedskrivningar på pandemi-portföljen); trailing-P/E 36,21 bär de nedtryckta TTM-vinsterna 4,3 mdr (engångsposter/nedskrivningar) medan forward-P/E 9,94 normaliserar ⇒ prognosTillvaxt härledd ur trailing/forward-P/E blir +264 % = VÄNDSNINGSPROGNOS, inte hållbar tillväxt — peg 0,14 läses med denna not (EQT-precedensen förstärkt till sin spets); källans 3-årsprognoser är NEGATIVA (intäkt −4,2 %/år, EPS −8,5 %/år) — kontrasten forward-P/E vs 3-årsprognos är själv pedagogiken (multipel-komprimering väntas); utdelning 1,72 USD/aktie = 6,2 % direktavkastning med payout 226 % av TTM-vinsten men 62 % av forward-EPS (~2,77) — direktavkastningsfällan: utdelningen trycker mot patentklipporna (noterad här; aterkop-fälten null enligt plattformskonventionen); ROE 5,0 % mot ROIC 13,5 % — det uppköpsuppblåsta eget kapitalet (Seagen 2023, goodwill i B/V 1,84) trycker ROE medan den underliggande kapitalavkastningen är högre — köp-vs-bygg-pedagogik; FCF 11,0 mdr USD TTM trots resultatdipp (fcfYield 7,0 %) — avskrivningar/nedskrivningar slår vinst men inte kassa; bruttomarginal 74,7 % patentbranschens nivå"
+  },
+  {
+    "ticker": "ABNB",
+    "namn": "Airbnb, Inc.",
+    "bransch": "tillvaxt",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/abnb/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15 close, hämtat 2026-09-16): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 168.32,
+    "marknadsKapitalMdr": 99.24,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1338,
+      "resultatCAGR5ar": 0.0987,
+      "omsattningTillvaxtTTM": 0.136,
+      "prognosTillvaxt": 0.2689
+    },
+    "lonksamhet": {
+      "roe": 0.3454,
+      "roic": 0.1681,
+      "bruttoMarginal": 0.829,
+      "ebitMarginal": 0.2081,
+      "nettoMarginal": 0.2045,
+      "fcfMarginal": 0.3693
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.32,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 38.08,
+      "pb": 12.73,
+      "evEbit": 32.75,
+      "peg": 1.42,
+      "fcfYield": 0.049,
+      "egenKapitalMultipl": 12.73
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        8399000000,
+        9917000000,
+        11102000000,
+        12241000000
+      ],
+      "resultat": [
+        1893000000,
+        4792000000,
+        2648000000,
+        2511000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        3430000000,
+        3884000000,
+        4518000000,
+        4646000000
+      ]
+    },
+    "notering": "tillväxtbranschens motstycke till förlustbolagen: lönsam plattform med netto 20,5 % OCH FCF-marginal 36,9 % — gapet är arbetskapitalfördelen (förutbetalda gästavgifter: kassan inbetalas vid bokning, intäkten bokförs först vid vistelsen — omsättningen 13,2 mdr TTM växer +13,6 % medan kassaflödet löper före); 2023-års resultat 4 792 M$ bär en engångsskatteförmån (upplösning av värderingsreserv — källa visar resultat 3,2× rörelseresultatet samma år) — därför faller resultat-CAGR +9,9 %/år under omsättningens +13,4 %/år när 2023 ränsas ur; skuld/EK 0,32 låg men inte noll (convertibles) och kassan 12,1 mdr USD gör bolaget nettokass 9,6 mdr — krigskassa utan utdelning (källa: statistics-sidan; aterkop-fälten null enligt plattformskonventionen); prognosTillvaxt härledd ur trailing/forward-P/E (38,08/30,01 ⇒ +26,9 % implicit EPS-tillväxt +1 år; källans 3-års EPS-prognos +22,6 %/år ligger nära — konsistent bild); peg = P/E/prognostillväxt i procent = 1,42; P/B 12,7 — substansmåttet är meningslöst för en tillgångslätt plattformsmodell med återköp-driven eget kapital-minskning, värdingen bärs av kassaflödet (fcfYield 4,9 %); bruttomarginal 82,9 % = förmedlingsmodellen (intäkt är avgärd, inte bokningsvärde)"
+  },
+  {
+    "ticker": "NOVN.SW",
+    "namn": "Novartis AG",
+    "bransch": "halso",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/swx/NOVN/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-16, kurs close 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, 4 räkenskapsår 2022–2025"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 113.84,
+    "marknadsKapitalMdr": 216.38,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0925,
+      "resultatCAGR5ar": 0.2622,
+      "omsattningTillvaxtTTM": 0.027,
+      "prognosTillvaxt": 0.4441
+    },
+    "lonksamhet": {
+      "roe": 0.3035,
+      "roic": 0.1878,
+      "bruttoMarginal": 0.7498,
+      "ebitMarginal": 0.3275,
+      "nettoMarginal": 0.225,
+      "fcfMarginal": 0.2918
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.17,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.7445,
+      "bruttoMarginalSpread5ar": 0.027,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 21.3,
+      "pb": 6.38,
+      "evEbit": 16.68,
+      "peg": 0.48,
+      "fcfYield": 0.0626,
+      "egenKapitalMultipl": 6.38
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        43461000000,
+        46660000000,
+        51722000000,
+        56674000000
+      ],
+      "resultat": [
+        6955000000,
+        14850000000,
+        11941000000,
+        13984000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        13320000000,
+        13398000000,
+        16253000000,
+        17596000000
+      ]
+    },
+    "notering": "SIX-notering i CHF (kurs 113,84, börsvärde 216,4 mdr CHF); räkenskapsserier i USD enligt källans konvention (rapportvaluta USD, kvoten handlas i CHF); prognosTillvaxt härledd ur trailing/forward-P/E (21,30/14,75 ⇒ +44,4 % implicit EPS-förändring — marknadens normaliseringsförväntan efter svagt TTM-år, ej underliggande volymtillväxt; källans 3-års EPS-prognos är +6,50 %/år); peg 0,48 enligt spårkonventionen P/E ÷ prognosTillväxt i procent (källans egen PEG 2,16); resultatCAGR +26,2 %/år endpoint bär två skevheter: 2022-basen 6 955 MUSD var deprimerad (Sandoz-förluster före avknoppningen) och 2023-resultatet 14 850 MUSD överstiger årets rörelseresultat 10 234 MUSD — Sandoz-avknoppningsvinsten i discontinued operations; omsättningCAGR +9,3 % endpoint 2022–2025 mot TTM-tillväxt +2,7 %; bruttomarginal 75,0 % (moat-serien medel 74,5 %, spridning 2,7 pp 2022–2025 — patentskyddad prissättning, patentklippor är branschens huvudrisk); FCF-serien 13,3→17,6 mdr USD (OCF−capex); skuld/EK 1,17 efter förvärvsfinansiering och återköp; räntetäckning 13,36 (fältet systematiskt osatt i universumet, värdet dokumenteras här); utdelning 3,70 CHF/aktie (2,82 % direktavkastning, payout 71,1 %) — utdelningsfälten null enligt universumets konvention"
+  },
+  {
+    "ticker": "V",
+    "namn": "Visa Inc.",
+    "bransch": "finans",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/v/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-16, kurs close 2026-09-15): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF-yield, utdelning, 4 räkenskapsår FY2022–FY2025 (oktober–september)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 375.62,
+    "marknadsKapitalMdr": 689.49,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1092,
+      "resultatCAGR5ar": 0.1071,
+      "omsattningTillvaxtTTM": 0.144,
+      "prognosTillvaxt": 0.2309
+    },
+    "lonksamhet": {
+      "roe": 0.6119,
+      "roic": 0.5482,
+      "bruttoMarginal": 0.9773,
+      "ebitMarginal": 0.6688,
+      "nettoMarginal": 0.5078,
+      "fcfMarginal": 0.4723
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.68,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.977,
+      "bruttoMarginalSpread5ar": 0.0037,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 31.98,
+      "pb": 19.91,
+      "evEbit": 23.51,
+      "peg": 1.38,
+      "fcfYield": 0.0305,
+      "egenKapitalMultipl": 19.91
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        29310000000,
+        32653000000,
+        35926000000,
+        40000000000
+      ],
+      "resultat": [
+        14630000000,
+        16989000000,
+        19457000000,
+        19853000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        17879000000,
+        19696000000,
+        18693000000,
+        21577000000
+      ]
+    },
+    "notering": "betalnätverk utan utlåningsrisk — kundgälden ligger hos utgivande banker, Visa bär inte kreditförlusterna (pedagogisk kontrast mot universumets banker i samma branschfålla); bruttomarginal 97,7 % (moat-serien medel 97,7 %, spridning 0,4 pp FY2022–FY2025 — nätverksrörelse med nästan obefintlig varukostnad); ROE 61,2 % bär kapitalstrukturen (P/B 19,9, skuld/EK 0,68, omfattande återköp) — lönsamhetens kärna syns bättre i ROIC 54,8 %; räkenskapsår oktober–september — serien = FY2022–FY2025 (årtal = räkenskapsårets slutår, BHP-precedenten); prognosTillvaxt härledd ur trailing/forward-P/E (31,98/25,98 ⇒ +23,1 % implicit EPS-förändring; källans 3-års EPS-prognos +14,10 %/år); peg 1,38 enligt spårkonventionen (källans egen 1,80); resultatCAGR +10,7 % endpoint — FY2025-vinsten växde bara +2,0 % (litigation-reserver) medan rörelseresultatet +11,7 %; utdelning 2,68 USD/aktie (0,71 %, payout 22,8 % — bolaget returnerar kapital främst via återköp; utdelningsfälten null enligt universumets konvention); räntetäckning 38,34 (fältet systematiskt osatt i universumet, värdet dokumenteras här)"
   }
 ]

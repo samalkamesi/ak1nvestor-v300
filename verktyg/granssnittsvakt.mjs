@@ -27,6 +27,10 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
 import { execSync } from "node:child_process";
+// Ren klassificerare för delresurs-deploysignaturer (spår 8, s8-u1 omgång 5):
+// separat modul så att testen kan importera DEN RIKTIGA koden offline —
+// vakten själva är ett toppnivåskript som kör hela svepet vid import.
+import { konsolFelIndikerarDeployStorning } from "./granssnitt-konsol.mjs";
 // OBS: puppeteer-core importeras MEDELTIDS (dynamiskt, se huvudloopen) — en
 // statisk toppimport kraschar vid node-start om ett deploy-fönster (npm ci)
 // pågår, FÖRE verktygets egen deployvänt-logik hinner köra (bevisat
@@ -291,7 +295,13 @@ const MAT_SKRIPT = () => {
       }
       nod = nod.parentElement;
     }
-    const rootBg = parseFarg(getComputedStyle(document.documentElement).backgroundColor) || { r: 255, g: 255, b: 255, a: 1 };
+    const rootBgTolk = parseFarg(getComputedStyle(document.documentElement).backgroundColor);
+    // SPÅR 8 (s8-u4, 2026-09-16): transparent root (rgba(0,0,0,0) — normal-
+    // tillstånd vid total CSS-förlust) är CANVAS (vit i ljus UA), aldrig
+    // "opak svart": tolkades den som svart uppstod skenfyndet 1:1 svart-på-
+    // svart (bevis: data/vakten/granssnitt-2026-09-16T1003.json). Opak
+    // UA-dark-canvas (rgb(0,0,0), a=1) är däremot äkta och behålls.
+    const rootBg = !rootBgTolk || rootBgTolk.a < 0.95 ? { r: 255, g: 255, b: 255, a: 1 } : rootBgTolk;
     kandidater.push({ farg: kompositStack(halvtransparenta, rootBg), gradient: null });
     return kandidater;
   }
@@ -468,6 +478,7 @@ try {
       for (const sida of SIDOR_LISTA) {
         const url = BAS + sida;
         let status = "ok";
+        let ommatt = false; // s8-u4: sidan ommätt efter utväntad deploy-kollision
         let matning = null;
         const konsolFel = [];
         page.on("console", (msg) => {
@@ -510,6 +521,54 @@ try {
           }
           await new Promise((r) => setTimeout(r, 1200)); // hydrering + late-lazy
 
+          // SPÅR 8 (s8-u1 omgång 5, 2026-09-16): delresurs-brott MITT I
+          // svepet (CSS/chunk 500|404, net::ERR_) är deploy-signatur när
+          // låset/basen bekräftar — en ostylad sida SKA ALDRIG mätas (fallet
+          // 10:02–10:03: 31 chunk-500 på /kurser → 30 skenkontraster i en
+          // "ok"-rapport; goto-5xx-grenen ovan såg aldrig dem — huvud-
+          // dokumentet svarade 200). Frisk bas = verkligt fel som larmar
+          // som tidigare — samma fail-safe som våg 142:s goto-gren.
+          // SPÅR 8 (s8-u4, 2026-09-16 — u2-positionen i samma manifest,
+          // byggt OVANPÅ u1:s kur): avbrottet är sista utväg. FÖRST vänta
+          // ut deployen (upp till 6 min) och MÄT OM sidan — avbrott kastar
+          // alla efterföljande sidor till nästa 6-timmarscron och kostar
+          // mättryck; om-mätning bevarar svepet. Ej frisk inom taket ⇒
+          // avbryt exakt som u1 designade (fail-safe orörd).
+          if (konsolFelIndikerarDeployStorning(konsolFel) && (await deployPagar())) {
+            console.log(`⏳ [${tema}/${skarm.namn}] ${sida} — delresurs-brott under deploy-tecken: väntar ut deployen och mäter om sidan`);
+            const friskIgen = await vantaPaFriskBas(6 * 60 * 1000);
+            if (!friskIgen) { avbruten = true; break; }
+            konsolFel.length = 0; // page-lyssnarna pushar hit — nollställ inför om-mätningen
+            try {
+              const svar2 = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 25000 });
+              const kod2 = svar2 ? svar2.status() : 0;
+              await new Promise((r) => setTimeout(r, 1200));
+              if (kod2 >= 500) status = `http ${kod2} (serverfel efter deploy)`;
+              else if (konsolFelIndikerarDeployStorning(konsolFel)) status = "delresurs-fel kvar efter deploy";
+              ommatt = true;
+            } catch (fel2) {
+              status = `fel: ${String(fel2).slice(0, 120)}`;
+            }
+          }
+          // SPÅR 8 (s8-u4): stil-lös sida (0 stylesheets) ⇒ mätningen
+          // underkänns ÄRLIGT. Kontrast/klipp/överflöd är CSS-fenomen —
+          // utan CSS mäts webbläsarens user-agent-stilar (10:03-beviset:
+          // text-gold → rgb(0,0,238), allt 16px, svart-på-svart 1:1) = 30
+          // skenfynd i stället för en "kunde inte mäta"-rad. Fångar ÄVEN
+          // CSS-förlust UTAN deploy-tecken (t.ex. korrupt .next) som u1:s
+          // låsbekräftade gren aldrig såg.
+          const sheetsAntal = await page
+            .evaluate(() => document.styleSheets.length)
+            .catch(() => -1);
+          if (sheetsAntal === 0) {
+            status = status === "ok" ? "stil-lös sida (0 stylesheets — CSS ej laddad)" : `${status} + stil-lös`;
+            const felS = 1 + (konsolFel.length > 0 ? 1 : 0);
+            rapport.fel += felS;
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null });
+            console.log(`⚑ [${tema}/${skarm.namn}] ${sida} — ${status}`);
+            await new Promise((r) => setTimeout(r, 350));
+            continue;
+          }
           // VÅG 105: autoscroll — lazy-monterade sektioner (IntersectionObserver)
           // finns annars inte i DOM och mäts aldrig. Scrolla igenom, tillbaka, vänta.
           await page.evaluate(async () => {
@@ -629,7 +688,7 @@ try {
           (konsolFel.length > 0 ? 1 : 0) +
           (status === "ok" ? 0 : 1);
         rapport.fel += felAntal;
-        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning });
+        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning, omford: ommatt || undefined });
         if (status === "ok") matadeSidor.add(sida); // VÅG 157: journalförd vid ok-mätning
         const flagga = felAntal > 0 ? "⚑" : "·";
         console.log(

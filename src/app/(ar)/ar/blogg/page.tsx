@@ -69,7 +69,7 @@ export default async function BloggPageAr() {
             return (
               <div
                 key={p.slug}
-                className="flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
+                className="cv-bloggkort flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
               >
                 <Link href={`/ar/blogg/${p.slug}`} className="flex flex-1 flex-col">
                   <span className="text-xs uppercase tracking-widest text-gold">{p.pillar}</span>

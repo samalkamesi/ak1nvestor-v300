@@ -18,8 +18,15 @@
  * child_process (processen körs som användaren ak1a — tillåtet utan
  * sudo). TAK: max 1 omstart per minut; 10 omstarter utan en enda OK
  * kontroll → auto-omstarten stängs av (larm högprio) tills appen svarar
- * igen — ALDRIG loop-restart (same doktrin som ak1a-halsa).
+ * igen — ALDRIG loop-restart (same doktorin som ak1a-halsa).
  * 3 misslyckade kontroller i rad → högprio-larm.
+ *
+ * DEPLOYLÅS (rond 50, femte observationen 08:43): medan flock
+ * /tmp/ak1a-deploy.lock hålls (prodbygg pågår) SKJUTS auto-omstarten upp —
+ * deploy-kedjan äger pm2-omstarten i det fönstret, och en extra omstart
+ * mitt i npm ci+build dödar appen under pågående bygge. Felräkning och
+ * högprio-larm vid felrad kvarstår (ett fastfruset bygg ska inte tystas);
+ * saknad flock/fel = ingen deploy (fail-safe: omstart som förr).
  *
  * LARM: JSON-rader i data/vakten/pulsvakt-larm.log (självvänande, max
  * 5000 rader). Status VARJE varv: data/vakten/pulsvakt-status.json.
@@ -72,6 +79,19 @@ const st = {
 
 function nuIso() {
   return new Date().toISOString();
+}
+
+// Deploybyggen (prod-synk.mjs "flock -w 900", deploya-contabo.sh "flock -n")
+// håller låset under npm ci + build + pm2 restart — i det fönstret äger
+// deploy-kedjan omstarten. Endast exit 1 ("hålls") räknas som deploy;
+// saknad flock/övriga fel → false (fail-safe: omstart som förr).
+function deployPagar() {
+  try {
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "true"], {
+      timeout: 5_000, stdio: "ignore",
+    });
+    return false;                          // låset togs → inget bygg pågår
+  } catch (e) { return e?.status === 1; }  // exit 1 = hålls av bygg
 }
 
 /** Skriv statusfilen — de fem kontraktsfälten + diagnostik. Får aldrig kasta. */
@@ -217,7 +237,8 @@ async function kontrollvarv(externOckså) {
       larma("hogprio", "felrad", `${st.felrad} misslyckade kontroller i rad`);
     }
     const takOk = Date.now() - st.senasteOmstart >= MAX_OMSTART_PER_MIN_MS;
-    if (takOk && !st.autoAvstangd) {
+    const deploy = takOk && !st.autoAvstangd ? deployPagar() : false;
+    if (takOk && !st.autoAvstangd && !deploy) {
       omstartaApp();
       larma(
         "info",
@@ -233,6 +254,14 @@ async function kontrollvarv(externOckså) {
             " tills appen svarar igen (manuell granskning krävs)",
         );
       }
+    } else if (takOk && !st.autoAvstangd && deploy) {
+      // Rond 50: bygget äger omstarten — en extra pm2-restart mitt i
+      // npm ci+build dödar appen under pågående deploy (08:43-fallet).
+      larma(
+        "info",
+        "omstart-uppskjuten",
+        "deploybygg pågår (ak1a-deploy.lock hålls) — omstart uppskjuten, deploy-kedjan äger pm2-omstarten",
+      );
     } else if (!takOk) {
       larma("varning", "omstarttak", "omstart-tak (1/min) — väntar nästa varv");
     }

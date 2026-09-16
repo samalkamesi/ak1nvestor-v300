@@ -24,6 +24,13 @@
  * väntat nere/omstartande (npm ci bygger om node_modules under levande pm2);
  * äkta fel utan aktivt bygg förblir HÖG. Fjärde falsklarmet i familjen
  * (rond 33/39/40/44) kurat i roten.
+ * OMTESTFÖNSTER (rond 50, sjätte familjeobservationen): nätverksfel UTAN
+ * aktivt bygg kan vara ett omstart-/lastspikfönster (09:13 UTC: /session
+ * timeout 3 min efter pm2-omstart under RAM-svält 503 MB — självläkt på 41 ms
+ * minuter senare). F3:nätverksfel omtestas ETT gången efter 20 s: svarar
+ * endpointen då → MEDEL "övergående, självläkt vid omtest"; fortfarande död
+ * → HÖG och resterande nätverksfel passeras utan omtest (snabbt genomlopp
+ * vid äkta haveri).
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -170,6 +177,19 @@ async function jagaApi(pass) {
   ];
   let fel = 0;
   const deploy = deployPagar();
+  // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
+  // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
+  let serverDodVidOmtest = false;
+  const omtest = async (v) => {
+    await new Promise((sov) => setTimeout(sov, 20_000));
+    try {
+      const r = await fetch(`${BAS}/api/studio/${v}`, {
+        headers: { "x-admin-password": pass },
+        signal: AbortSignal.timeout(15_000),
+      });
+      return r.status === 200;
+    } catch { return false; }
+  };
   for (const v of andpunkter) {
     try {
       const r = await fetch(`${BAS}/api/studio/${v}`, {
@@ -183,8 +203,18 @@ async function jagaApi(pass) {
       }
     } catch (e) {
       fel++;
-      if (deploy) bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
-      else bokfor("F3-api", "HÖG", `/${v} nätverksfel`, String(e).slice(0, 60));
+      if (deploy) {
+        bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      } else if (serverDodVidOmtest) {
+        bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt)`);
+      } else {
+        const levde = await omtest(v);
+        if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
+        else {
+          serverDodVidOmtest = true;
+          bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades`);
+        }
+      }
     }
   }
   if (fel === 0) gron("F3-api", `${andpunkter.length}/${andpunkter.length} ändpunkter 200`);

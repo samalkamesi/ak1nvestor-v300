@@ -931,13 +931,59 @@ event_type + indexet) så dev/prod slutar glida. (5) Verifiera arkivcadansen i
 cron (luckan 09-10→09-14 + dagens 07:24-sista — morgondagens arkiv avgör om
 kedjan lever).
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u2 omgång 7 — A3 + E37 återdiffade; andra varvet)
+
+Fjärde återdiffen i andra varvet (E35 av u3 omgång 8, E34+E29 av u2 omgång 6,
+E33 av u1 omgång 9). KOLLISIONSBOKFÖRING: denna dokvågs första tre
+filredigeringar (denna sektion + två ÖVERSIKT-rader) CLOBBERADES ur
+arbetsträdet av syskonet u1:s Write-commit bdaaeacb 20:16 (0 spår kvar i
+HEAD) — tredje dokumenterade kartclobbern idag (efter f6669761:s bevis +
+våg 178/o35); samtliga redigeringar körda om här via node-kanalen (data/
+bash-tillåten) enligt u3-omgång-8-ÅTERKÖRS-precedensen, syskonets E33-sektion
+orörd och respekterad. Två system med dagens största rörelse valda (A3/E37-
+sektionerna orörda av alla syskon): **A3** (diffad 2026-09-15 av u1:4 —
+spår 6 byggde 14 YTTERLIGARE lager efter den mätningen) och **E37** (diffad
+2026-09-15 av u2 — spår 7:s o27/o31/o32 levererades idag). Varje rad MÄTT i
+arbetsytan 2026-09-16 18:0x–18:2x UTC (24 svitkörningar, id-räkning i kod,
+grep, node-läsning av Lighthouse-JSON, git log) — aldrig worklog-läsning:
+
+| Mått | Kartan 2026-09-15 | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Svars­lager (A3) | 4 lager (kedja chat-widget.tsx:740) | **18 lager i en ??-kedja** (chat-widget.tsx:876, egen läsning): makro ?? extra ?? bas ?? nästa ?? kapitalmekanik ?? sektor ?? case ?? praktik ?? portfoljgrund ?? agande ?? redovisningsdjup ?? djup ?? historia ?? lonsamhetsdjup ?? tsdjup ?? skattedjup ?? beteendedjup ?? riskdjup |
+| Frågemonster (A3) | 31 deterministiska mönster | **68 monsters** (id-räknat per array: basens MONSTER 25 i ai-mentor-svar.ts + 43 i 17 frågelager-filer, ls+grep mätt); riskdjup-lagrets filhuvud bär sondens eget tal 720 kärnord LIVE ur sexton lager |
+| Testsviter (A3) | 8 sviter, 164 + 38 kontroller | **24 sviter, 598 kontroller: 597 PASS / 1 FAIL** (samtliga egna körningar; 23 sviter exit 0) |
+| Registeräkthet (A3) | E01 GRÖN, 343 kurser (u1:4) | **E01 RÖD (exit 1): inbakad 358 · byggd 375** — s5 levererade 17 kurser idag (352→375, git-bevisat) EFTER senaste rebaken (b3b5e2c4, 349→358): rebake-disciplinen bröts, 17 nya kurser osynliga för mentorns källmärke |
+| Determinism (A3) | D01 bitidentisk | D01 PASS igen (20 frågor × 2 bitidentiska, mätt nu) |
+| Koddelning (E37) | SearchModal-laty (spa-hem.tsx:22-24) | **+ SPA-sektionerna** (o27, kod mätt: PREC/PORTAL/AKTIER `dynamic ssr:false` + SektionsSkelett, spa-hem.tsx:35-45 — ~190 kB renderas-aldrig-kod ur startsidans chunk) **+ StudioChat-kedjan** (o31, kod mätt: studio-klient.tsx:36 — chatt-bunten hämtas först i authad-grenen, lås-vybesökaren bär den aldrig; bunten VÄXER med varje mentorlager) |
+| Prod-mått / (E37) | O5: LCP −0,4…−1,4 s, CLS 0,000 (sv) | **o27 EFTER (r5u2b-efter-sammanfattning.json, 16:28:33Z): LCP 5 542→4 360 ms, prestandapoäng 52→53, unused-JS 83→74 KiB** · **o32 vilande facit (s7u1-vila, 16:52:38Z, load 0,56, JS-friskt bygge 22/22 chunks gröna): 0,54 / LCP 4 972 / CLS 0,000 / TBT 984** — första giltiga vilande-baslinjen sedan r4b2-ronden visade sig JS-nedbruten |
+| /kurser (E37) | (O5: +7–10 poäng) | o32 vila: **0,55 / LCP 5 429 ms** (o27 FÖRE: 47 poäng / 6 040 ms) |
+| /studio-EFTER (E37) | — | **fortfarande obokförd** (0 studio-s7u2c-efter-filer i lighthouse/, mätt; vakaren LEVER i ps, PID 1179591 — men o32 bokförde dess tidszonstolkningsbugg: Date.parse utan Z-suffix ⇒ 2 h fel) |
+| Kvar-röda auditer (E37) | språkresolvens-CLS ~0,11 | **intermittent bekräftad** (CLS 0,110 i r5u2b-EFTER men 0,000 i vilande-facitet) + **unused-JS poäng 0 kvar (74–79 KiB), bootup 3,3–3,5 s, mainthread 7,7–7,8 s** (båda mätningarna) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A3 | LEVER 8 → **LEVER 8** | Testtäckningen nästan TREDUBBLAD på ett dygn (202 → 598 kontroller, 8 → 24 sviter, allt egethändigt grönt utom EN) och kedjan 4 → 18 lager — men den röda kontrollen är själva kontraktsbrottet: E01 registeräkthet (källmärke-kontraktet gäller ej 17 nya kurser) och ingen namngiven gap stängdes (dataset-medianer okopplade, E2E mot levande API, assistent-panel 0 sviter — mätt). Kvantitativ växt utan ny kapabilitetsklass håller 8 (E33/B14-precedensen) |
+| E37 | LEVER 8 → **LEVER 8** | Två nya koddelningskur MÄTTA i kod + EFTER-tal (LCP −1,2 s på /) + första vilande-baslinjen på friskt bygge — kunskap tillförd men inga gap stängda: fortfarande inga egna regressionstester, /studio-EFTER ej landad, unused-JS/bootup röda kvar, sökindex-cadans orörd (E33/B14-precedensen) |
+
+Snittscore **7,5** (284 poäng / 38 system — oförändrad av denna dokvåg; inga
+poängrörelser, två återdiffar med läges- och kontraktsfynd — syskonets E33 −1
+landade i arbetsträdet före denna sektion och är redan räknad i snittet).
+
+Kö från fynden: (1) **registerrebake 358→375** — spår 6:s egen disciplin
+(a2f0f8ee- + b3b5e2c4-precedensen): `--baka`-rader + Write/Edit-inklistring,
+sedan E01 grönt + kedjesvit; tills dess når mentorns källmärken 17 kurser
+för få; (2) /studio-EFTER (o31 §5) kontrolleras landad — vakaren lever men
+bar tidszonsbuggen (o32 §1 18:46-notisen); (3) E37:s befintliga köer
+kvarstår oförändrade (footer-läsbarhet rond 2, språkresolvens-produktbeslut
+a/b/c, sökindex-hook i deploy).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
 | A1 | Kursplattformen (352 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 352 kurser, paritetssynk GRÖN, front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
-| A3 | AI-Mentorn (4 deterministiska svars­lager + modellager) | Utbildning | LEVER | 8 | 164/0-testbevis (v158, mätt); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
+| A3 | AI-Mentorn (18 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 597/1-testbevis över 24 sviter (mätt 09-16; E01 registeräkthet RÖD 358/375 — rebake väntar); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
@@ -972,7 +1018,7 @@ kedjan lever).
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Vaktbältet växt: 54 sviter (+21/dygn mätt 09-16) + pulsvakt/statisk-sond/konsol/deployklassning (s8); pulsvakten FÅNGAR ett PÅGÅENDE prod-fel (12/25 chunks 404, mätt 11:12Z — läkning = prod-synkens ombygge vid RAM≥2200, 2106 MB vid mätning); motorvalidering 107/0/0 egen; kvar: motorregister 09-03, testaggregator (54 = provtagning), deploy-blockad vid RÖD (gapet EXEKTERAT av felet) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning mätbevisad i kod (o27+o31; LCP 5 542→4 360 ms på /, o27 EFTER) + vilande facit på JS-friskt bygge (o32); kvar: inga egna tester, /studio-EFTER obokförd, språkresolvens-CLS intermittent, sökindex-cadans |
 
 Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
@@ -1078,51 +1124,62 @@ UPPDATERING-sektionen.*
   (våg 99, dokumentbevis); (3) lärvägens synlighet på min-sida KODAD
   (LarvagKort renderad) men E2E med levande inloggning overifierad.
 
-## A3. AI-Mentorn — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## A3. AI-Mentorn — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 
-*Uppdatering 2026-09-15 (dokvåg s9-u1:4): H2 STÄNGT på maskinbevis — våg 158
-+ spår 6:s fabriksomgångar byggde mentorn till FYRA deterministiska svars­lager
-(makro ?? extra ?? bas ?? nästa, chat-widget.tsx:740) + ett medlems-
-modellager. Mätta nu: 164 PASS / 0 FAIL i 7 svars­sviter + 38 kontroller i
-modellsviten (samtliga exit 0), determinism bitidentisk (20 frågor × 2),
-juridikgrind 0 rådsfraser, registeräkthet 343 kurser fält-för-fält, källrad +
-äkta kurslänkar per svar. Gamla gapen (2) och (3) är MOTBEVISADE (NLU-testerna
-körs i sviterna; chat-minnet dokumenterar retentionen i filhuvudet). Läge
-PÅGÅR → LEVER, score 7 → 8 — se diff-tabellen i UPPDATERING-sektionen högt
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 7, återdiff): spår 6:s
+fabriksomgångar byggde vidare efter u1:4:s mätning — kedjan är nu 18 lager
+(chat-widget.tsx:876) med 68 frågemonster (25 i basen + 43 i 17
+frågelager-filer; riskdjup-lagrets sond: 720 kärnord LIVE), och
+testtäckningen 598 kontroller i 24 sviter (597 PASS / 1 FAIL, samtliga egna
+körningar). FYND: bassvitens E01 registeräkthet RÖT (exit 1) — inbakat
+register 358 kurser mot källans 375 (s5:s 17 kursleveranser idag efter
+senaste rebaken b3b5e2c4): källmärke-kontraktet gäller ej de nya kurserna
+tills rebake. Score 8 kvar — se diff-tabellen i UPPDATERING-sektionen högt
 upp i filen.*
 
 - **Vad:** Chatt-widget som känner eleven (nivå, XP, platssammanhang),
   redigerar behovet med klarliggande motfråga, ger handlingar och AKM1/
   AK1TS-referenser — ALDRIG köp/sälj (rådgivningsgrind kodad OCH
-  maskintestad). Sedan våg 158: 31 deterministiska svars­mönster i fyra lager
-  (makro/extra/bas/nästa — DCF-inre värde, investmentbolags-NAV, options,
+  maskintestad). Sedan våg 158 + spår 6:s omgångar: 68 deterministiska
+  frågemonster i 18 lager (makro ?? extra ?? bas ?? nästa ?? kapitalmekanik
+  ?? sektor ?? case ?? praktik ?? portfoljgrund ?? agande ?? redovisningsdjup
+  ?? djup ?? historia ?? lonsamhetsdjup ?? tsdjup ?? skattedjup ??
+  beteendedjup ?? riskdjup — DCF-inre värde, investmentbolags-NAV, options,
   ränta, inflation, kapitalstruktur, organisk vs förvärvad tillväxt,
-  rapportläsning, nyckeltal, utdelning, lärväg, beteende, skatt ...) +
-  medlemens modellager /api/mentor/fraga (generateText, dagstak 429, felväg
-  503 + fallback, rollback) + Z.ai GLM-läge i den publika rutten — svaren
-  källmärks med kurslänkar ur 343-kursregistret, utan API-kostnad.
-- **Nyckelfiler:** src/lib/ai-mentor-{register (492 r),svar (935 r),
-  extra-fragor (190 r),makro-fragor (208 r),nasta-fragor (263 r)}.ts,
-  src/lib/mentor-svar.ts (199 r), src/app/api/mentor/fraga/route.ts (143 r),
+  rapportläsning, nyckeltal, utdelning, lärväg, beteende, skatt,
+  skuldfällan, svarta svanar m.m.) + medlemens modellager /api/mentor/fraga
+  (generateText, dagstak 429, felväg 503 + fallback, rollback) + Z.ai
+  GLM-läge i den publika rutten — svaren källmärks med kurslänkar ur det
+  inbakade registret (358 kurser; källan bär 375 — se gap 5), utan
+  API-kostnad.
+- **Nyckelfiler:** src/lib/ai-mentor-{register,svar}.ts + 17 frågelager-filer
+  (ai-mentor-{extra,makro,nasta,kapitalmekanik,sektor,case,praktik,
+  portfoljgrund,agande,redovisningsdjup,djup,historia,lonsamhetsdjup,tsdjup,
+  skattedjup,beteendedjup,riskdjup}-fragor.ts), src/lib/mentor-svar.ts (199 r),
+  src/app/api/mentor/fraga/route.ts (143 r),
   src/app/api/chatbot/route.ts (1 750 r, Z.ai-gren + pedagogik-promt),
   src/lib/chatbot-nlu.ts (259 r), src/lib/chat-minne.ts, src/lib/assistent.ts,
-  src/components/ak1a/{chat-widget (1 269 r),assistent-panel}.tsx,
-  verktyg/testa-ai-mentor{,-u2,-extra,-spar6,-makro,-nasta,-s6u2-omg2}.mjs +
-  testa-mentor-modell.mjs (8 sviter).
-- **Observation:** Testtäckningen är nu bland de bredaste i kodbasen: 164
-  kontroller gröna över svars­lagren (kanoniska/felstavade/omatchade frågor,
+  src/components/ak1a/{chat-widget,assistent-panel}.tsx,
+  verktyg/testa-ai-mentor*.mjs (23 sviter) + testa-mentor-modell.mjs.
+- **Observation:** Testtäckningen är nu bland de bredaste i kodbasen: 598
+  kontroller i 24 sviter (597 gröna vid 2026-09-16-mätningen — enda röda:
+  E01 registeräkthet, se gap 5; kanoniska/felstavade/omatchade frågor,
   determinism, registeräkthet, källmärkning, kursläkthet, antistöld mellan
-  lager via kärnordsdisjunktion mot 288 kärnord, juridikgrind) + modellagrets
-  38 kontroller. Registerrebaken vid kurstillägg har eget verktyg
-  (testa-ai-mentor.mjs --baka). Rutten läser ÄKTA data (getCourses, blogg,
-  EKOSYSTEM, lasPriserGallande) med Z.ai-gren + deterministisk fallback.
+  lager via kärnordsdisjunktion — riskdjup-lagrets sond bär 720 kärnord
+  LIVE) + modellagrets 38 kontroller. Registerrebaken vid kurstillägg har
+  eget verktyg (testa-ai-mentor.mjs --baka) men är MANUELL disciplin — se
+  gap 5. Rutten läser ÄKTA data (getCourses, blogg, EKOSYSTEM,
+  lasPriserGallande) med Z.ai-gren + deterministisk fallback.
 - **GAP:** (1) dataset-medianer (H2:s ursprungsidé) förblir okopplade till
   mentorns svarskällor (grep i route/svar/widget: 0 träffar) — grundningen
   sker via kursregistret; besluta om kopplingen eller stäng idén; (2) E2E mot
   LEVANDE medlems-API kräver riktig inloggning (modellsvitens mock-kakor
   täcker logiken, inte nätverket); (3) felstavs-djupet är 5 kanoniska
   varianter i bassviten — bredare fuzz saknas; (4) assistent-panelens egna
-  vägar (assistent.ts) har fortfarande 0 testsviter (mätt).
+  vägar (assistent.ts) har fortfarande 0 testsviter (mätt); (5) NY 09-16:
+  registerrebaken BRÖTS — inbakat 358 mot källans 375 (17 nya kurser),
+  bassvitens E01 RÖD (exit 1) tills --baka + Write/Edit-inklistring; kurser
+  levererade utan E01-grön rebake är oregistrerade för mentorns källmärken.
 
 ## A4. Daglig träning — LEVER — 7/10 *(uppdaterad 2026-09-16)*
 
@@ -2389,43 +2446,48 @@ Score 9 kvar; gap-listan kompletterad med backup-cadans.*
   (medvetet? dokumentera); (4) bucket-förteckningens backup är manuell
   (media-filer-*.json, 2 tillfällen 09-08/09-09 — ingen cron).
 
-## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-16)*
 
-*Uppdatering 2026-09-15 (s9-u2): prestandaspåret s7 mätbevisat på prod —
-CLS 0,125→0,000 (font-display optional ×4 fonter; sv-locale-isolering
-0,000/0 skift; standardspråk ~0,11 kvar = språkresolvens med produktbeslut
-a/b/c bokat i o5-prestanda-s7.md), LCP −0,4…−1,4 s, Lighthouse +7–10
-poäng (O5 komplett; rådata OPTIMERING/lighthouse/). SearchModal koddelad
-(spa-hem.tsx:22-24 next/dynamic ssr:false + LasyGlobal :145). Mobil
-läsbarhet ≥52 px första mätningen: verktyg/mobil-lasbarhet.mjs (CDP,
-0 npm) — FÖRE 255 tryckmål + 2 zoomfällor på 6 sidor, 8 filer kirurgiskt
-fixade max-md, zoomfällorna dödade (12/14→16 px); footer-länkar m.fl.
-medvetet kvar (rond 2). Ny mätbeviskedja: prestanda-mat.mjs +
-lighthouse-mätaren + mobil-lasbarhet.mjs.*
+*Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 7, återdiff): spår 7:s andra
+våg landade EFTER kartans 09-15-mätning — allt nedan MÄTT i kod och data:
+SPA-sektionerna koddelade (o27: PREC/PORTAL/AKTIER dynamic ssr:false +
+SektionsSkelett i spa-hem.tsx:35-45 — ~190 kB renderas-aldrig-kod ur
+startsidans kritiska chunk) och StudioChat-kedjan flyttad ur lås-vyns last
+(o31: studio-klient.tsx:36 — hämtas först i authad-grenen; bunten växer med
+varje mentorlager, lås-vybesökaren bär den aldrig). EFTER-tal (o27,
+r5u2b-efter 16:28Z): LCP 5 542→4 360 ms, unused-JS 83→74 KiB på /.
+o32 levererade första giltiga vilande-baslinjen på JS-friskt bygge (16:52Z,
+load 0,56, 22/22 chunks gröna): / 0,54 · LCP 4 972 · CLS 0,000 · TBT 984;
+/kurser 0,55 · LCP 5 429. /studio-EFTER (o31 §5) fortfarande obokförd —
+vakaren lever men dess tidszonstolkningsbugg försköt triggern (o32 §1).*
 
 - **Vad:** Kommandopalett (⌘K), sökindex (404-förslag + palett), huvudmeny +
   mobilmeny + meny-register, PWA (manifest + registrerare), tema-växlare,
   navigationsminne, global skeleton/lasy-global.
 - **Nyckelfiler:** src/components/ak1a/{kommandopalett,huvudmeny,mobilmeny,
-  pwa-registrerare,tema-vaxlare,navigationsminne,sprak-vaxlare}.tsx,
-  src/lib/{sokindex,meny-register,navigationsminne}.ts, src/app/(huvud)/
-  manifest, verktyg/kor-sokindex.mjs.
-- **Observation (uppdaterad 2026-09-15):** Ren UI-logik i AK1A-DNA;
+  pwa-registrerare,tema-vaxlare,navigationsminne,sprak-vaxlare,spa-hem,
+  studio-klient}.tsx, src/lib/{sokindex,meny-register,navigationsminne}.ts,
+  src/app/(huvud)/manifest, verktyg/kor-sokindex.mjs.
+- **Observation (uppdaterad 2026-09-16):** Ren UI-logik i AK1A-DNA;
   sökindex genereras ur äkta data (kor-sokindex destillerar); menyer
-  centraliserade i register. Nu dessutom MÄTBAR: CDP-prestandamätning,
-  Lighthouse FÖRE/EFTER-rådata och tryckyteaudit ger systemet en beviskedja
-  det saknade (alltid levererat "ignorant" — mätningarna fanns inte före
-  spår 7).
-- **GAP (uppdaterat 2026-09-15):** (1) sökindexet statiskt mellan deploys
-  (nya kurser/poster osynliga tills kor-sokindex + deploy); (2) PWA
-  offline-beteende overifierat (service worker endast registrerare?);
-  (3) palettens täckning av pro/tier-ytor följer flaggorna men testas ej;
-  (4) NY: språkresolvens-CLS — SSR sv → klient en vid navigator en-US
-  ger ~0,11 skift på standardspråket (sv-locale = 0,000); produktbeslut
-  a/b/c bokat; (5) fortfarande inga egna regressionstester (CDP/
-  Lighthouse är mätbevis, inte testsviter); (6) footer-tryckmål (20 px)
+  centraliserade i register. Mätbarheten fördjupad till SIDNIVÅ: efter
+  SearchModal-latyn (s7 rond 4) nu också SPA-sektioner + StudioChat
+  koddelade med samma husidiom (dynamic ssr:false + skelett), och första
+  vilande-baslinjen på fullfungerande bygge dokumenterar att r4b2-rondens
+  röda CPU-tal var instrumentartefakt (JS-nedbruten chunk-servning).
+- **GAP (uppdaterat 2026-09-16):** (1) sökindexet statiskt mellan deploys
+  (nya kurser/poster osynliga tills kor-sokindex + deploy; fortfarande ingen
+  hook); (2) PWA offline-beteende overifierat (service worker endast
+  registrerare?); (3) palettens täckning av pro/tier-ytor följer flaggorna
+  men testas ej; (4) språkresolvens-CLS INTERMITTENT (~0,11 i r5u2b-EFTER
+  men 0,000 i vilande-facitet — sv-locale isolerat 0,000; produktbeslut
+  a/b/c fortfarande obokat); (5) fortfarande inga egna regressionstester
+  (CDP/Lighthouse är mätbevis, inte testsviter); (6) footer-tryckmål (20 px)
   + AI-Mentor/ShortSeller-monteringsknappar (44 px) kvar till
-  läsbarhetsrond 2 (bokade, ej glömda).
+  läsbarhetsrond 2 (bokade, ej glömda); (7) NY 09-16: /studio-EFTER (o31)
+  obokförd + unused-JS poäng 0 kvar (74–79 KiB) och bootup 3,3–3,5 s /
+  mainthread 7,7–7,8 s i båda färskmätningarna — koddelningen minskade men
+  eliminerade ej spillet.
 
 ---
 

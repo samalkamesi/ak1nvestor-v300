@@ -11773,5 +11773,185 @@
       ]
     },
     "notering": "JÄRNMALNSCYKELNS LÄROBOK: dual-listed koncern (primärnoteringar London RIO.L + Sydney RIO.AX, NYSE-raderna är ADR — BHP-konventionen: ADR i USD med koncernrapportvaluta USD, land satt till Australien enligt BHP-radens mönster); världens största gruvkoncern vid sidan av BHP — järnmalm (Pilbara) väger tyngst med koppar (Oyu Tolgoi) som tillväxtbenet; serien 2022–2025 visar cykelbotten: omsättning 55,6→57,6 mdr $ (+1,2 %/år endpoint) medan resultatet 12,4→10,0 mdr $ (−7,0 %/år) och TTM-vändningen +15,0 % omsättning/+17,8 % resultat — raden är universums tydligaste exempel på att CAGR-fönstret avgör bilden (2021-topp 21,1 mdr $ resultat faller UTANFÖR fönstret; endpoint-talen är svaga, TTM vänder); FCF-SERIENS KAPEX-CYKEL: 9 384→4 497 M$ fallande medan resultatet håller 10–12 mdr $ — investeringstakten äter kasstätheten (fcf-marginal 9,0 % TTM mot netto 19,6 %; fcfYield 3,4 %); ROIC 14,6 % mot källans WACC 7,3 % — värdiskapande marginal (Siemens-notens spegelbild i samma omgång); utdelning 4,61 $/aktie = 4,7 % direktavkastning med payout 62,5 % — gruvkonventionen 40–60 % av cykelresultatet (BHP-notens kusin, payouten strax över policy-taket på TTM-vändningen); prognosTillväxt härledd ur trailing/forward-P/E (13,59/11,89 ⇒ +14,3 % implicit EPS-tillväxt +1 år; källans 3-årsprognos EPS +7,8 %/år); peg = 13,59/14,3 = 0,95 enligt spårkonventionen (källans PEG-fält n/a — noterat); bruttomarginal 29,8 % = gruvbranschens strukturnivå (BHP-notens branschreservation: råvarukostnader passeras, ingen varumärkesmarginal — jämförs endast inom material); skuld/EK 0,32 med nettoskuld 13,3 mdr $ (balansräkningen bär gruvprojekten); rapport i USD, kalenderår"
+  },
+  {
+    "ticker": "SAMPO.HE",
+    "namn": "Sampo Oyj",
+    "bransch": "finans",
+    "land": "Finland",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/quote/hel/SAMPO/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; kurs fördröjd slutnotering 2026-09-16 18:29 finsk tid): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 9.43,
+    "marknadsKapitalMdr": 24.81,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0815,
+      "resultatCAGR5ar": -0.0176,
+      "omsattningTillvaxtTTM": 0.0912,
+      "prognosTillvaxt": -0.0948
+    },
+    "lonksamhet": {
+      "roe": 0.2413,
+      "roic": 0.1742,
+      "bruttoMarginal": 0.4101,
+      "ebitMarginal": 0.2057,
+      "nettoMarginal": 0.1571,
+      "fcfMarginal": 0.1352
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.35,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.7,
+      "pb": 3.38,
+      "evEbit": 11.56,
+      "peg": null,
+      "fcfYield": 0.0594,
+      "egenKapitalMultipl": 3.38
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        8586000000,
+        8272000000,
+        9489000000,
+        10860000000
+      ],
+      "resultat": [
+        2107000000,
+        1323000000,
+        1154000000,
+        1998000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        33000000,
+        970000000,
+        1185000000,
+        1594000000
+      ]
+    },
+    "notering": "nordisk sakförsäkringskoncern (If P&C, Topdanmark, Hastings) — universumets TREDJE float-ankar (efter BRK-B och Allianz; dataägarens not i s2-u1 omg5-protokolloret följd): kassa 18,16 mdr € mot traditionell skuld 2,55 mdr € — försäkringstekniska åtaganden (skadereserver) bärs utanför skuldmåtten och float-mekaniken förklarar kassabilden (samma reservation som Allianz-raden: ROIC 17,4 % och skuld/EK 0,35 på TRADITIONELL skuld, ej jämförbart med icke-finansbolag; räntetäckning 28,7 i not — fältet systematiskt osatt); NEGATIV implicit prognosTillväxt −9,5 % — universumets första rad där forward-P/E (16,24) ligger ÖVER trailing (14,70): FY2025 var rekordår (netto 1 998 M€, +73 %) och konsensusnormaliserar nedåt samtidigt som källans 3-års EPS-prognos är +9,51 %/år — toppårsdynamik, peg därför null (källans PEG-fält n/a, konsekvent); resultatCAGR −1,75 % endpoint 2022–2025 är basårtalsstyrt: 2022 års 2 107 M€ bär Nordea-exittens realisationsvinster (2021-omsättningen 14 170 M€ inkluderade bankrörelsen), TTM-resultatet vänder +42,1 %; FCF-serien 33 → 970 → 1 185 → 1 594 M€ = floatens återuppbyggnad efter Nordea-avräkningen (2022 nästan noll); bruttomarginal 41,0 % TTM är källans S&P-beräkning på försäkringsintäkter — moat-fälten null: ingen årlig bruttovinstserie hos källan (Allianz-/BRK-precedenten) och premier/skador gör en bruttomarginalserie ej jämförbar med varubolag; beta 0,24 — universumets lugnaste rad (under KO:s 0,34); Finland/finans = branschens första Finland-rad (NDA-SE bär Sverige-konventionen); utdelning 0,36 €/aktie (3,69 %, payout 55,9 %) — utdelningsfälten null enligt plattformskonventionen; kurs 9,43 € (fördröjd slutnotering 2026-09-16 18:29 finsk tid, börsen stängd vid hämtningen); 52-vägers spann 8,64–10,39 €; nästa rapport 2026-11-04"
+  },
+  {
+    "ticker": "SPG",
+    "namn": "Simon Property Group, Inc.",
+    "bransch": "fastighet",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-16",
+        "url": "https://stockanalysis.com/stocks/spg/",
+        "paranoid": "översikt + statistics + financials + income-statement + cash-flow-statement (underlag S&P Global Market Intelligence; kurs realtid 2026-09-16 15:36 EDT, börsen öppen — föregående close 204,10 $): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025 (kalenderår)"
+      }
+    ],
+    "hamtat": "2026-09-16",
+    "pris": 201.3,
+    "marknadsKapitalMdr": 76.37,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0635,
+      "resultatCAGR5ar": 0.2936,
+      "omsattningTillvaxtTTM": 0.1502,
+      "prognosTillvaxt": -0.533
+    },
+    "lonksamhet": {
+      "roe": 1.2051,
+      "roic": 0.0932,
+      "bruttoMarginal": 0.8143,
+      "ebitMarginal": 0.474,
+      "nettoMarginal": 0.6657,
+      "fcfMarginal": 0.3739
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 5.04,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.38,
+      "pb": 15.03,
+      "evEbit": 32.1,
+      "peg": null,
+      "fcfYield": 0.034,
+      "egenKapitalMultipl": 15.03
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        5291000000,
+        5659000000,
+        5964000000,
+        6365000000
+      ],
+      "resultat": [
+        2136000000,
+        2280000000,
+        2368000000,
+        4624000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        2007000000,
+        2003000000,
+        1968000000,
+        2339000000
+      ]
+    },
+    "notering": "USA:s största köpcentrum-REIT — fastighetens USA-motstånd till URW:s europeiska köpcentrum (samma delsektor på två kontinenter: hyresintäkter, uthyrningsgrad, räntekänslighet); REIT-strukturen är radens pedagogiska kärna: distribuerar större delen av resultatet (utdelning 9,00 $/aktie, 4,49 % direktavkastning, payout 62,7 % — REIT-reglerna kräver 90 % av beskattad inkomst för skattefrihet), vilket krymper bokförd EK (13,58 $/aktie): P/B 15,03 och ROE 120,5 % — universumets HÖGSTA (Visaraden 61,2 % slagen dubbelt), medan ROA 5,63 % visar den verkliga avkastningen på tillgångsbasen och ROIC 9,3 %; belåningen: skuld/EK 5,04 (fastighetsskuld 29,44 mdr $ mot kassa 1,02 mdr $), räntetäckning 3,07 i not (fältet systematiskt osatt) — fastighetsbranschens LTV-konvention (belåning mot pantsatta fastigheter) gör skuld/EK-talet ej jämförbart med industrirader; TRAILING-P/E 14,38 BÄR ENGÅNGSVINSTER — Allianz-notens mekanism igen: FY2025-nettoresultatet 4 624 M$ (+95 % mot 2 368 M$) innehåller avyttringsvinster, fwd-P/E 30,79 ⇒ marknadens normaliserade EPS ≈ 6,5 $; prognosTillväxt −53,3 % implicit = universumets mest negativa (normaliseringsgap, ej värdedomen), peg null (källans n/a, konsekvent); bruttomarginal 81,4 % TTM (hyresintäkter över driftkostnader — REIT:int redovisar inte bruttovinst per år hos källan, moat null enligt Allianz-/BRK-precedenten); FCF källans levererade rad 2 007 → 2 003 → 1 968 → 2 339 M$ (TTM 2 595, fcfMarginal 37,4 %); definitionsnot: källans statistiksida räknar FCF-marginal 46,4 % på driftkassaflöde minus fastighetsförvärv (3 218 M$ TTM) — raden använder källans FCF-rad; utdelningsfälten null enligt plattformskonventionen; beta 1,31; kurs 201,30 $ realtid 2026-09-16 15:36 EDT (börsen ÖPPEN vid hämtningen — avvikelse mot spårets close-konvention, AIR.PA-precedenten; föregående close 204,10 $); 52-vägers spann 172,19–238,50 $; nästa rapport 2026-11-02"
   }
 ]

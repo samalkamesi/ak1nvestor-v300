@@ -1,0 +1,36 @@
+{
+  "granskat": "data/blogg-utkast/sa-analyserar-du-energiaktier.json",
+  "granskadAv": "agentfabrik auto-s1-u1 (våg auto-s1-1789604126983, 2026-09-17)",
+  "rapport": "sa-analyserar-du-energiaktier.md",
+  "bedomning": "FLYTTKLAR — 0 rättningar nödvändiga, 0 felaktiga påståenden. Källor 6/6 mot primärkällor (IEA WEI 2026:s båda tal bekräftade ordagrant: 'USD 3.4 trillion in 2026' + 'USD 2.2 trillion, almost double that of fossil fuels'; Brent-spannet 2020/2022 sant; Nord Pool SE1–SE4 och Ei korrekta; samtliga 10 namngivna bolag finns i bolagsunivers.json), räkneexempel 5/5 egenomräknade exakta (80×2/3≈53, 80−50=30, 53−50=3), juridikgrind-vakt --json: 0 fynd + grund true; rådverbgenomläsning: 1 träff ('sälja energi' i ingressens verksamhetskatalog) bedömd FALSK POSITIV — verksamhetsinfinitiv utan rådobjekt/adressat, noterad för vaktdataläggen; 911 = 0 träffar på 6 mönster; 10/10 interna länkar HTTP 200 mot localhost + fil/register-närvaro (0 mot outgivna utkast); strukturkontrakt grönt (1 126 ord, 8 rubriker, disclaimer sist, readingMinutes 2 = round(1126/600) korrekt — INTE seriens systematiska 3-slip); D1+D2 frivillig talprecision (exakt värde 90 %), D3 konventionspost",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-energiaktier.json",
+      "falt": "body",
+      "gammalt": "faller marginalen med över 80 procent — till 3 dollar per fat",
+      "nytt": "faller marginalen med 90 procent — till 3 dollar per fat",
+      "orsak": "Exakta värdet är (30−3)/30 = 90,0 %, och samma mening visar kvar-marginalen 3 dollar av 30 som bevisar det. 'Över 80 procent' är sant (90 > 80) men onödigt slött när det exakta talet står till buds — linjärt med seriens talprecision (telekom-C1-familjen, fast utan riktningsfel: här pekar ingen del åt fel håll)"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-energiaktier.json",
+      "falt": "body",
+      "gammalt": "i exemplet föll marginalen över 80 procent på ett prisfall av en tredjedel",
+      "nytt": "i exemplet föll marginalen 90 procent på ett prisfall av en tredjedel",
+      "orsak": "Samma rot som D1, i sammanfattningens upprepning — ändras endast tillsammans med D1 så att body och sammanfattning bär samma tal"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-energiaktier.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2). Seriekonvention sedan teknikaktier-D3"
+    }
+  ]
+}

@@ -208216,6 +208216,170 @@
     "grahamSection": "Benjamin Grahams värld präglades av fasta kurvor i stället för flytande, men hans kärna lever kvar i kursen: mr Markets priser svänger med räntan och humöret, medan värdet vilar på bolagets kassaflöden — Grahams säkerhetsmarginal (km-030) blir i transmissionens språk avståndet mellan en räntekänslig kurs och en normaliserad värdering (vr-02): ju starkare värderingskanalen slagit, desto viktigare att läsa vad som är resultat och vad som är multipel.",
     "ak1Section": "I AK1A:s metodik kröner denna kurs kategorin makroekonomi och ränta (km-054 till km-058) med dess första avancerade kurs — transmissionen som binder familjens delar till bolagsläsningen och ger AKM1:s kvartalspaket deras makrokontext: ränteläge och cykelposition som inramning, fyra mätbara frågor som bro. Brobyggen: mot ln-03 (operativ hävstång i resultatlänken), st-02 (känslighetsanalysen som formaliserar räkningen), rk-05 och rk-08 (cykel- och ränterisken i riskfamiljen), rs-03 (den delade ränteexponeringen), vr-02 och vr-03 (multipelns normalisering och anatomi), km-007 och km-008 (diskonteringsräntans räkneverktyg) samt km-058 (valutalänken)."
   },
+  "ma-02-lonebildning-och-kostnadsspiralen": {
+    "slug": "ma-02-lonebildning-och-kostnadsspiralen",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Lönebildningen och kostnadsspiralen — från avtal till bolagets marginal",
+    "summary": "MAKROEKONOMI & RÄNTA-familjens mellanakt — mellan räntans och inflationens grunder (km-054 till km-058) och transmissionens kröning (ma-01) ligger lönesidan, den kanal som förbinder dem åt båda håll. Kursen lär lönekostnaden som bolagets största enskilda post: i ett exempelbolag med 500 miljoner kr i omsättning är lönekostnaden 150 miljoner — 30 procent av varje omsatt krona — och en löneökning på 3,5 procent utan produktivitetsvinst kostar 5,25 miljoner kr, alltså 1,05 procentenheter av omsättningen och mer än en tiondel av rörelseresultatet. Signaturbegreppet är enhetsarbetskostnaden (ULC): lönens förändring minus produktivitetens — löneökning 4,0 procent mot produktivitet 1,0 procent ger ULC +3,0 procent, medan lön 2,0 mot produktivitet 2,0 ger 0,0: samma löneökning är två olika kostnadschorer beroende på vad produktiviteten gör. Löneandelens aritmetik styr prislyftet som krävs för marginalneutralitet: 30 procents löneandel behöver +1,05 procent på priserna, 60 procents (tjänstetäta verksamheter) behöver +2,1 procent — och där börjar kostnadsspiralen: löner driver priser, priser driver index, index driver nästa löneavtal, tills centralbanken (km-056) möter spiralen med räntan och ma-01:s kedja slår tillbaka på bolagets RÄNTEKOSTNAD medan lönekostnaden fortfarande smälter — den dubbla exponeringen. Efter kursen läses löneavtalens irrljus, konjunkturinstitutens löneökningstakter och bolagens personalkostnadsrader med samma ögon: som mekanik som kan räknas, inte som väder.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna löneandelens känslighet: lönekostnad delat på omsättning ger andelen av varje krona som är lön — exempelbolaget 150 av 500 miljoner kr = 30 procent — och löneökningens marginalkostnad är löneandelen gånger löneökningen: 30 procent × 3,5 procent = 1,05 procent av omsättningen = 5,25 miljoner kr · Räkna med produktivitetens motstånd: nettolöneökning = löneökning minus produktivitetstillväxt; +3,5 procent lön mot +1,5 procent produktivitet ger +2,0 procent nettokostnad = 3,0 miljoner kr = 0,6 procentenheter — produktiviteten räddade nästan halva marginaltrycket · Behärska enhetsarbetskostnaden (ULC): kostnaden per producerad enhet, approximativt löneökning minus produktivitetstillväxt — ULC är länken mellan löneavtal och inflation, därför att priser i slutänden måste täcka enhetskostnader · Räkna prislyftet för marginalneutralitet: löneandelen gånger nettolöneökningen — 30 procents andel vid +3,5 procent (netto) kräver +1,05 procent priser, 60 procents andel kräver +2,1 procent — och se varför tjänstetäta verksamheter har kortare väg från lön till pris · Förstå kostnadsspiralen som mekanism: löner driver priser, priser driver index och förväntningar, index driver nästa löneavtal — samt de tre motvikterna (produktivitet, konkurrensens pristak, centralbankens ränta) · Känna igen den dubbla exponeringen: när inflationen från lönespiralen möter räntehöjningar (ma-01) sitter bolaget med stigande lönekostnad OCH stigande räntekostnad samtidigt — medan räntekänsliga bolag (rk-08) tar ränteslaget först · Läsa ett bolags personalkostnadsnot och löneavtalsläge med fyra frågor: löneandel, produktivitetsspår, indexeringsgrad och andel kollektivavtalade",
+    "why": "MAKROEKONOMI & RÄNTA-familjen byggdes ut med sin kröning först: ma-01 transmissionsmekaniken (Avancerad, omgång 7) äger hela kedjan från styrränta till bolagets resultat och värdering — men familjens ma-serie har inte något mellanled mellan km-054..km-058:s grunder (ränta, inflation, centralbanker, cykler, valutor) och kröningens djup. Lönesidan är det naturliga mellansteget av ett skäl som syns i ma-01:s egen kedja: priskanalen går VIA lönekostnader och efterfrågan, och löneökningstakten är samtidigt inflationens vanligaste bränsle och bolagets största kostnadspost — men ingen kurs i registret äger den mekanismen (sond mot 396 kurser på lön, lönebildning, arbetskostnad, kostnadsspiral: endast perifera nämningar i löpande texter). mk-02-arbetsloshet (annan kategori) äger arbetsmarknadens indikator; km-055 inflation äger penningvärdet; ln-03 marginaltrappan äger marginalens struktur — denna kurs äger själva länken mellan löneavtal och marginal: löneandelen, produktivitetsmotståndet, enhetsarbetskostnaden och spiralen som förenar lönesidan med räntesidan. Kursen är medvetet byggd som ma-01:s spegel: där räntan verkar uppifrån och ner, verkar lönen nedifrån och upp — och i mitten möts de i samma resultaträkning. Ämnet är utbildning i sin renaste form: hur en kostnadspost mekaniskt rör sig genom en resultaträkning kan aldrig bli ett ställningstagande i löneförhandlingar, och de fyra avslutande frågarna ställs till siffror, inte till parter.",
+    "history": {
+      "origin": "Lönebildning som ekonomiskt studieobjekt föddes med nationalräkenskaperna: när Kuznets generation på 1930-talet mätte nationalinkomstens fördelning blev löneandelen — arbetets del av output — ett grundtal, och 1940-talets keynesianer (i Sverige Gösta Rehn och Rudolf Meidner på LO:s ekonomiska sekretariat) formulerade lönebildningens motsättning: solidarisk lönepolitik håller löner lika mellan branscher, vilket tvingar ut lågproduktiva bolag — produktiviteten blir löneavtalets motvärld. Phillips-kurvan (1958) gav sambandet mellan arbetslöshet och löneökningar sitt första statistiska språk, och 1960-talets pris-löne-spiraler gjorde enhetsarbetskostnaden till centralbankernas bevakade tal.",
+      "evolution": "1970-talet blev spiralens årtionde: indexeringar, oljechocker och löneökningar över produktivitetstillväxten matade inflationen till tvåsiffriga nivåer i stora delar av väst, och brytet med fasta växelkurser gjorde lönekostnaderna till konkurrenskraftsfråga. Sveriges svar blev den svenska modellen i ny tappning: centrala förhandlingar där regeringen, arbetsgivare och fack vägde in ränta, inflation och konkurrenskraft — en mekanism som hölls samman av att parterna såg hela kedjan. Volatiliteten på 1980-90-talen (devalveringarna, fria växelkurser, sjuklönetak och lönekostnadsklyftor) flyttade förhandlingarna utåt i ledet, och löneökningstakten blev index över systemets robusthet.",
+      "modern": "Idag lever kursens mekanik i tre bevakade tal: konjunkturinstitutets löneökningstakt (timlöneindex), enhetsarbetskostnaderna i nationalräkenskaperna och bolagens personalkostnadsandelar i årsredovisningarna. Inflationens återkomst på 2020-talet gjorde ULC-kopplingen till löpande nyhetsämne igen: centralbanker beskriver löne-pris-spiraler som riskbilden, och analytikerns första koll i varje rapportperiod är personalkostnadsraden mot intäktsraden. AK1A:s makrofamilj täcker nu båda hållen på kedjan — räntan uppifrån (ma-01) och lönen nedifrån (denna kurs) — med resultaträkningens marginal som mötesplats."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Lönen — den största posten och dess kortaste väg till marginalen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Produktivitetens motstånd — och enhetsarbetskostnaden (ULC)",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Lönebildningen — avtal, hävstång och den svenska modellen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Kostnadsspiralen — löner, priser, index och nästa avtal",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Den dubbla exponeringen — lönen och räntan i samma resultaträkning",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — fyra frågor om ett bolags löneexponering",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Lönen — den största posten och dess kortaste väg till marginalen",
+        "intro": "För de flesta bolag är lönekostnaden den största enskilda kostnadsposten — och den post som rörs ett helt år i taget, i avtal. Det gör den till både träghet och tryck.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta ett rakt exempelbolag: omsättning 500 miljoner kr, lönekostnad 150 miljoner kr, rörelseresultat 50 miljoner kr (rörelsemarginal 10,0 procent). Löneandelen — lönekostnaden delat på omsättningen — är 30 procent: av varje omsatt krona går trettio öre till löner. Denna andel är kursens första handtag, därför att den översätter varje löneökning direkt till marginalspråk.\n\nRäkneläxan: en löneökning på 3,5 procent utan produktivitetsvinst höjer lönekostnaden med 150 × 0,035 = 5,25 miljoner kr. Det är 5,25 av 500 — 1,05 procentenheter av omsättningen. Om intäkterna står stilla sjunker rörelsemarginalen från 10,0 till 8,95 procent, och rörelseresultatet faller med över en tiondel (5,25 av 50). Ingen annan kostnadspost rör sig i så steg — råvaror återprissätts löpande, hyror förhandlas per kontrakt, men löneökningen träffar hela stocken på en gång.\n\nNyckeln till hela kursen ligger i en enda insikt: löneökningens marginaltryck är LÖNEANDELEN gånger LÖNEÖKNINGEN. 3,5 procent i ett bolag med 30 procents löneandel är 1,05 procent av omsättningen; samma löneökning i ett tjänstebolag med 60 procents löneandel är 2,1 procent — dubbla trycket, samma avtal."
+          },
+          {
+            "type": "definition",
+            "content": "Löneandelen — lönekostnaden (löner plus sociala avgifter) delat med omsättningen. Översätter löneavtalsprocent till marginalprocent: marginaltrycket i procentenheter av omsättningen är ungefär löneandelen gånger löneökningen (minus produktivitetens andel av motståndet)."
+          },
+          {
+            "type": "insight",
+            "content": "Handelsbolaget med 15 procents löneandel och konsultbolaget med 60 procent lever i samma löneavtal — men samma 3,5-procentiga löneökning kostar handelsbolaget 0,5 procentenheter av omsättningen och konsultbolaget 2,1. Löneriskens storlek sitter i löneandelen, inte i avtalet."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Produktivitetens motstånd — och enhetsarbetskostnaden (ULC)",
+        "intro": "Löneökningen är bara halva ekvationen. Den andra halvan — produktiviteten — avgör om samma avtal blir en kostnadschocka eller en icke-händelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Om exempelbolagets anställda producerar 1,5 procent mer per timme nästa år — bättre verktyg, tunnare processer, mer sålt per person — behöver bolaget bara höja priserna med löneökningens ÖVERSCHOTT över produktiviteten. Nettolöneökningen blir 3,5 − 1,5 = 2,0 procent: 3,0 miljoner kr istället för 5,25, och marginaltrycket 0,6 procentenheter istället för 1,05. Produktiviteten räddade över fyra tiondelar av trycket — utan att avtalet var en krona annat.\n\nDetta är enhetsarbetskostnadens (ULC) hela idé: kostnaden per producerad enhet, inte per timme. Uppskattningsvis är ULC-förändringen lika med löneökningen minus produktivitetstillväxten. Lön +4,0 procent mot produktivitet +1,0 procent ger ULC +3,0 procent — priser och marginaler möter tre procents kostnadstryck. Lön +2,0 mot produktivitet +2,0 ger ULC 0,0 — löneökningen finansierades helt av att varje timme producerar mer. Det är därför nationalräkenskapernas ULC-serier är centralbankernas mest bevakade lönetal: det är ULC, inte lönekostnaden, som i slutänden måste täckas av priser — eller pressa marginaler.\n\nI bolagsläsningen blir ULC två rader i årsredovisningen: personalkostnadens förändring (bk-02:s resultaträkning) mot intäktens förändring per anställd. Växer personalkostnaden snabbare än omsättningen per anställd, år efter år, äter lönesidan marginalen även om varje enskilt avtal såg rimligt ut."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma löneökning +3,5 procent i exempelbolaget (omsättning 500 mkr, lön 150 mkr) vid fyra produktivitetssporrar: | Produktivitet | Nettolöneökning | Kostnad i mkr | Marginaltryck | — | 0,0 procent | 3,5 procent | 5,25 | 1,05 procentenheter | — | 1,0 procent | 2,5 procent | 3,75 | 0,75 procentenheter | — | 1,5 procent | 2,0 procent | 3,00 | 0,60 procentenheter | — | 3,5 procent | 0,0 procent | 0,00 | 0,00 procentenheter | — Fjärde raden är löneandelens skenheliga fall: produktiviteten betalade hela avtalet."
+          },
+          {
+            "type": "insight",
+            "content": "ULC är löneavtalets sanna språk: inte VAD lönerna steg med, utan VAD de steg med minus VAD varje timme producerar. En 2-procentig löneökning i ett stillastående bolag är dyrare än en 4-procentig i ett som automatiserar."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Lönebildningen — avtal, hävstång och den svenska modellen",
+        "intro": "Lönekostnaden sätts inte av marknaden från dag till dag utan av avtal som gäller år framåt. Hur avtalen byggs avgör hur snabbt kostnadschocker tar sig in i resultaträkningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sveriges lönebildning har en struktur som är värd att känna till rent mekaniskt. Centrala organisationer (på arbetsgivarsidan bland annat Svenskt Näringsliv, på löntagarsidan LO, SACO och TCO) förhandlar ramar — huvudavtal och målbilder för löneökningstakten — och lokal företagsnivå fördelar utrymmet: lokal lönedifferentiering, kompetenspremier och lokala befattningsavtal. Utfallet redovisas som löneökningstakt i timlöneindex, och konjunkturinstitutet mäter den månadsvis.\n\nTvå mekaniska egenskaper gör systemet vad det är. För det första TRÄGHETEN: avtal löper typiskt ett till tre år, så en engångschock i omvärlden letar sig in i lönekostnaderna med eftersläpning — och stannar lika länge. För det andra HÄVSTÅNGEN i förhandlingsläget: när arbetslösheten är låg blir arbetskraften en knapp resurs och löneökningstakten tenderar att överstiga produktivitetstillväxten; när den är hög (mk-02) vänder trycket nedåt. Phillips-kurvans gamla samband — förklarat som mekanism, inte som policy.\n\nDen svenska modellen — att parterna själva äger lönebildningen, med ränta och statsfinanser som omvärld — är här ett faktum att läsa, inte en ståndpunkt att ta: kursens fråga är alltid VAD löneavtalen gör med kostnadssidan, aldrig VAD avtalen BÖR innehålla."
+          },
+          {
+            "type": "insight",
+            "content": "Läs lönebildningen som en portfölj av avtal: bolagets lönekostnad är summan av avtal som löper ut olika år — när 40 procent av stocken indexerats i år och resten nästa år, är kostnadschocken utspridd men inte undanstädad."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Kostnadsspiralen — löner, priser, index och nästa avtal",
+        "intro": "Kostnadsspiralen är ekonomins mest omdiskuterade mekanism — och samtidigt den som lättast räknas i en fyra-stegs-kedja.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Spiralen har fyra steg. Steg ett: löneökningar över produktivitetstillväxten höjer enhetsarbetskostnaderna (kapitel 2). Steg två: bolag som ska täcka högre ULC höjer priser — och kursens räkneläger visar hur mycket som krävs: 30-procentig löneandel och 2,0 procent netto ger +0,6 procent på priserna för marginalneutralitet, medan 60-procentig andel kräver +1,2. Steg tre: högre priser hamnar i inflationstalet — km-055:s KPI — och i förväntningarna om framtida inflation. Steg fyra: nästa löneavtal kompenseras för inflationen, index eller förväntan — och spiralen har gått ett varv.\n\nMotvikterna är tre, och de är lika mekaniska som spiralen. Produktiviteten (kapitel 2) kan växa nog för att löneökningen inte behöver prissättas. Konkurrensens pristak kan hindra förmedlingen: bolag som möter importerad konkurrens eller prissatta kunder kan inte höja priser, utan får ta ULC-ökningen på marginalen — spiralen stannar hos bolaget i stället för hos konsumenten. Och centralbanken (km-056) kan möta spiralen med räntan: högre ränta kyler efterfrågan, sysselsättning och därmed löneökningstakten — priset är bördan på räntekänsliga bolag, vilket är nästa kapitels ämne.\n\nHistorien ger spiralens båda lägen: 1970-talets dubbelverkande index — löner indexerade mot priser som steg av löner — och 1990-talets nedbrytning, där fasta växelkursskydd togs bort, indexeringarna försvann och löneökningarna nära noll kopplades till en oberoende centralbank med inflationsmål. Mekanismen är densamma idag: frågan är bara vilka motvikter som står på."
+          },
+          {
+            "type": "definition",
+            "content": "Kostnadsspiralen — den självförstärkande loopen där löneökningar över produktivitetstillväxten höjer priser, priser höjer index och förväntningar, och index höjer nästa löneavtal; motvikter: produktivitet, konkurrensens pristak och centralbankens räntepolitik."
+          },
+          {
+            "type": "insight",
+            "content": "Spiralen behöver inte vara farlig för att vara verklig — den är ekvationen ULC-drivet pristryck mot tre bromsar. Bolagsläsningens fråga är vilken bromse ett givet bolag står närmast: har det prismakt (mt-03) att förmedla, eller tar det spiralen på marginalen?"
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Den dubbla exponeringen — lönen och räntan i samma resultaträkning",
+        "intro": "ma-01 äger kedjan från styrränta till resultat. Denna kurs äger spegeln: när inflationen kommer från lönesidan, möter bolaget båda kanalerna SAMTIDIGT.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ exempelbolaget genom ett inflationsscenario där löneökningarna (3,5 procent, ingen produktivitet) driver KPI uppåt och centralbanken svarar med högre styrränta. Lönesidan: +5,25 miljoner kr i kostnad (kapitel 1). Räntesidan: bolaget har 200 miljoner kr räntebärande skuld till 5,0 procent med hälften rörlig — styrräntan +2 procentenheter ger, via ma-01:s priskanal, cirka +2,0 miljoner kr i räntekostnad. Summan: 7,25 miljoner kr — 14,5 procent av rörelseresultatet före finansposten är borta, från två kanaler som i böckerna beskrivs var för sig.\n\nOch det är inte hela kalkylen. Efterfrågekanalen (ma-01 länk tre) jobbar i samma riktning: kunder med realt sjunkande köpkraft och högre bolånekostnader skjuter upp köp — intäktssidan pressas medan kostnadssidan stiger. Värderingskanalen (länk fyra) gör detsamma: högre diskonteringsränta pressar multiplarna (vm-11 äger fällorna). Bolagets arbetsuppgift i ett sådant läge är rent mekaniskt: vilken sida går att försvara? Prismakten avgör om lönesidan kan förmedlas (kapitel 4), bindningstiderna avgör hur snabbt räntesidan slår igenom (ks-03), och produktivitetsspåret avgör hur mycket av löneökningen som förblir bolagets problem.\n\nRäkneövningen som binder ihop hela kursen: skriv exempelbolagets tre år i en tabell med löneökningstakt, produktivitetstillväxt, prisökning, räntekostnad och rörelsemarginal. Snart syns mekaniken som en helhet — löneavtal, prislistor och räntebindningar är tre kugghjul i samma maskin, och den som bara bevakar ett av dem läser resultaträkningen halvt."
+          },
+          {
+            "type": "insight",
+            "content": "Den dubbla exponeringen är den praktiska skärningspunkten mellan denna kurs och ma-01: lönekostnaden stiger MED inflationen den hjälpte till att driva, medan räntekostnaden stiger FÖR ATT döva samma inflation — och bolaget betalar båda räkningarna i samma kolumn."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — fyra frågor om ett bolags löneexponering",
+        "intro": "Hantverket: fyra frågor som kan ställas till varje årsredovisning och varje nyhetsläge om löneavtal — och som tillsammans ger löneriskens profil.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett — LÖNEANDELEN. Vad är personalkostnaden i procent av omsättningen, och hur har den rört sig i fem år? (Noten Personal i årsredovisningen; bk-02 äger resultaträkningens rader.) En andel som stiger utan att marginalen gör det är lönesidans tysta amortering av lönsamheten.\n\nFråga två — PRODUKTIVITETSSPÅRET. Växer omsättningen per anställd i takt med eller snabbare än personalkostnaden per anställd? Det är bolagets lokala ULC-kurva — och den avgör om branschens löneökningstakt är en kostnad eller en icke-händelse.\n\nFråga tre — INDEXERINGS- OCH AVTALSSTRUKTUR. Hur stor andel av lönestocken är kollektivavtalad, hur lång är avtalslöptiden, och finns indexvillkor? Ju större indexerad andel, desto rakare väg från KPI till kostnadssidan — spiralkänsligheten är en portföljfråga.\n\nFråga fyra — FÖRMEDLINGSMÖJLIGHETEN. Har bolaget den prismakt (mt-03) som krävs för att flytta nettolöneökningen till prislistan, eller möter det prissatta kunder och tar trycket på marginalen? Kombinerat med rk-05:s cykelperspektiv: hur ser frågorna ut i högkonjunktur mot lågkonjunktur?\n\nFyra frågor, fyra svar, en profil: löneandelen ger storleken, produktivitetsspåret riktningen, avtalsstrukturen hastigheten och prismakten fördelningen mellan bolag och kund. Det är löneriskens fullständiga läskarta — och den avslutas som vanligt i studions anda: siffrorna beskriver mekaniken, valet av slutsatser förblir läsarens eget arbete."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj två bolag ur studions universum — ett tjänstetungt och ett varutungt — och besvara de fyra frågorna i tal ur senaste årsredovisningen: (1) löneandel i procent av omsättningen; (2) personalkostnad per anställd mot omsättning per anställd, tre år; (3) notens uppgift om avtalslöptider eller index om något; (4) en bedömning av prismakten ur moat- eller kundstruktur-hänsyn (mt-03, rs-02). Avsluta med en mening: vilket av de två bolagen har den rakare vägen från löneavtal till marginal, och vilket som har den rakare från ränta till marginal (ma-01)?"
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch klassade bolag efter hur lätt deras kostnader är att förstå, och lönekostnaden är den mest förklarbara av dem alla: den står i noten, per anställd, år efter år. Hans råd att läsa bolaget man äger via dess vardag — butiken, fabriken, kontoret — översätter lönesidans mekanik direkt: växer omsättningen per anställd, sköter sig löneandelen själv; växer den inte, blir varje löneavtal en marginalfråga. Lynch skilde också med eftertryck på bolagets berättelse från marknadens väder — och löneökningstakt är just gränslandet: branschens takt är väder, bolagets produktivitetsspår är berättelse.",
+    "grahamSection": "Benjamin Grahams analys av fasta kostnaders makt — operating leverage i modern terminologi — löper som en röd tråd genom hans böcker: ju större andel av kostnaderna som är bundna (och löner är bundna per avtal), desto hårdare slår omsättningsvariationer på resultatet. Grahams försiktighet med bolag vars resultat vilar på att marginalen behålls oförändrad genom konjunkturcykeln (st-04:s kreditcykelperspektiv) är löneandelen i förklädnad: han hade bett läsaren mäta personalkostnadens andel och dess rörelse före nästa steg. Säkerhetsmarginalen (km-030) räknas i marginalprocent — och löneökningstakten är den mest mekaniska enskilda posten i den kalkylen.",
+    "ak1Section": "I AK1A:s metodik är lönesidan en genomgående kolumn i fundamental analys: AKM1:s lönsamhetsvariabler (ln-familjen) tar personalkostnadens spår i marginaltrappan (ln-03), och den här kursens löneandels- och ULC-räkning knyter den till makrovariablerna ränta och inflation (ma-01, km-055). AI-Mentorn kan i studions labb (ek-03) spela exempelbolagets tre år med olika löneökningstakter, produktivitetssporrar och räntesvar — alltid som mekanik att räkna, aldrig som ställningstagande i lönefrågor. Studions juridiska grund förblir undertexten i varje kapitel: detta är hur kostnadssidan fungerar, inte vad någon part bör göra."
+  },
   "od-01-optionens-greker": {
     "slug": "od-01-optionens-greker",
     "category": "OPTIONS & DERIVAT",
@@ -208587,6 +208751,174 @@
     "lynchSection": "Peter Lynch skulle ha betraktat hela volatilitetshanteringen med sin vanliga skepsis mot papper vars mekanism han inte kunde förklara på en minut. Men hans eget viktiga bidrag till kursens ämne finns ändå, och det är prosaiskt nog: hans påpekande att marknadens känslor smittar den som lever nära dem — VIX-världen i en mening. Lynchs övertygelse att bolagets verksamhet, inte optionernas prisbild, är källan till avkastning är en sund motvikt till volens frestelse: den implicita volatiliteten säger vad marknaden KÄNNER, aldrig vad bolaget ÄR — och den som bygger hela sin bild på känslans pris har bytt analys mot termometer. Lynch-läxan i vol: läs barometern, lita inte på den.",
     "grahamSection": "Benjamin Graham hann aldrig prissätta en option med sin marginalfilosofi — optionsmarknadens standardväsen utvecklades först efter hans huvudverk — men hans testlära appliceras rakt: optionen är en SÄTTNING, och varje sättning är i hans värld antingen investering (täckt av analys och marginal) eller spekulation (täckt av hopp). Kursens riskpremie ger hans distinktion en kvantitativ ryggrad: den som SYSTEMATISKT köper skydd betalar i genomsnitt premien (spekulationens driftskostnad, i hans termer), medan den som skriver optioner mot underlag de VERKLIGEN vill äga — Grahams anda, om än inte hans bokstav — arbetar som försäkringsgivare med marginal i underlaget. Hans djupaste invändning vore dock filosofisk: implicit volatilitet prissätter marknadens SÄTTNING om framtiden, och Grahams hela verk handlar om att inte betala för annat än värde — varje krona i volpremie är därför, rakt avläst, en krona som inte arbetar i bolaget.",
     "ak1Section": "I AK1A:s metodik är denna kurs OPTIONS & DERIVAT-familjens praktiska kröning: km-059 grunder → km-060/km-061 strategierna → od-01 grekerna → km-062 formeln — och här formeln VÄNDS till läsning av marknadens förväntningar. Kursen matar två spår med ny data: katalysatorspåret får sin kvantitativa förväntningsmätare (terminsstoppen i volen är kt-02:s 'vad står redan i kursen?' i optionens exakta svar), och riskspåret får sin prissatta sida (rs-01:s pendling har i volen ett pris — och i riskpremien en kostnad för att slippa den). I AKM2-modellens riskdimension och Monte Carlo-simuleringarna är volatiliteten inmatningsvariabeln i varje scenario: kursens skillnad mellan realiserad och implicit volatilitet är skillnaden mellan bakåtmätt data och framtidspris — och i modellens värld är just den skillnaden (riskpremien) något som kan stressas, inte antas bort."
+  },
+  "od-03-warranter-och-teckningsoptioner": {
+    "slug": "od-03-warranter-och-teckningsoptioner",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Warranter och teckningsoptioner — optionen möter den svenska emissionen",
+    "summary": "Optionsfamiljens ingång på nybörjarnivån — den svenska spararens första möte med optioner sker oftast inte i den amerikanska börsoptionsmarknaden utan i nyemissionens spår: teckningsoptioner som del av emissionspaketet, och warranter som handlas på börsen med bolagets aktier som underliggande. Kursen lär skillnaden mellan en teckningsrätt (ks-04:s område — rätten under pågående emission), en teckningsoption (ett omsättningsbart värdepapper med månadslång löptid) och en warrant (emitterad av bank med bolagets aktie som underliggande, utan utspädning i bolaget). Signaturräkneläxan är värdets två delar: inre värde (aktiekurs minus teckningskurs, aldrig under noll) och tidsvärde (det man betalar för hoppet). Ett genomräknat exempel visar varför optionerna i en emission aldrig är gratis: 100 miljoner aktier till kursen 12,00 kr med optioner på 10 miljoner nya till teckningskursen 10,00 kr — full lösen ger 110 miljoner aktier, och det nya kapitalet på 100 miljoner kr späder marknadsvärdet medan vinst per aktie delas på fler andelar. Fällorna med namn: gratisstämpeln (optionerna prissätts in i emissionsvillkoret), den långa löptidens dragningskraft (ju mer tid, desto mer hopp — och desto svårare att värdera) och bank-warrantens hävstång som förväxlas med bolagspapper. Efter kursen står trappan upp: km-059 för börsoptionens grunder, od-01 för grekerna och od-02 för den implicita volatiliteten.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Skilja på tre instrument som låter lika: teckningsrätten (rätten att delta i en pågående emission — den lever några veckor och försvinner), teckningsoptionen (ett omsättningsbart värdepapper som ger rätten att teckna aktie till fast kurs fram till lösenperioden, ofta emitterad i paket med nyemissionen) och warranten (bank-emitterat värdepapper med bolagets aktie som underliggande — banken står som emittent och bolaget berörs inte av utspädning) · Räkna optionens inre värde: aktiekurs minus teckningskurs, aldrig under noll — kurs 12,00 kr mot teckningskurs 10,00 kr ger 2,00 kr i inre värde; kurs 8,00 kr ger 0 kr och hela priset är då tid · Förstå tidsvärdet: priset över det inre värdet betalas för tiden och rörelsen kvar till lösen — mer tid ger mer hopp, och hoppet nöts ner varje dag · Genomföra utspädningsräkningen: 100 miljoner aktier plus optioner på 10 miljoner till 10,00 kr — full löse ger 110 miljoner aktier; bolagets vinst delas på tio procent fler andelar även om det nya kapitalet tillför 100 miljoner kr i kassa · Läsa en emissionskommuniké med optionsspåret: hur optionernas antal, teckningskurs, löptid och lösenperiod avgör om paketet är kapitalanskaffning, incitament eller spridning · Känna igen fällorna: gratisstämpeln (optioner kostar i form av utspädning eller lägre emissionskvalitet), tidsvärdesinflationen (lång löptid lockar med hopp som är svårt att prissätta) och hävstångsförväxlingen (bank-warrantens rörelse är hävstång på aktien, inte en andel i bolaget)",
+    "why": "OPTIONS & DERIVAT-familjen fick sin första egna serie i omgång 8 (od-01 greker på Intermediär) och sin kröning i omgång 9 (od-02 implicit volatilitet på Avancerad) — men trappan saknar fortfarande sitt första steg: familjens enda nybörjarkurs är km-059 optionsgrunder, som äger den amerikanska börsoptionen (köp och försäljning av kontrakt) men aldrig de instrument den svenska spararen faktiskt möter i nyemissionssammanhang. Teckningsoptioner dyker upp i emissionspaket på den svenska börsen år efter år, och warranter handlas i tusental — ingen kurs i hela registret äger skillnaden mellan dem och teckningsrätten (sond mot 396 kurser: endast ks-04 träffar, och den äger emissionens aritmetik, inte instrumenten). Detta är dörren utan trappa igen — se-16 byggde den till sektormetoden, pc-21 till casemetoden; denna kurs bygger den till optionsfamiljen, med den svenska emissionen som ingång eftersom det är där nybörjaren möter instrumentet i verkligheten. Kursen bygger medvetet på grannarna: ks-04 äger emissionens mekanik och teckningsrättens värde, ks-06 äger konvertibeln som granninstrument, rk-02 äger emissionsrisken och sj-04 optionsbeskattningen — denna kurs äger bara själva instrumentförståelsen och lämnar djupet åt od-01:s greker och od-02:s volatilitet. Och instrumentförståelse är utbildning i ren form: vad en teckningsoption ÄR kan aldrig bli en uppmaning att teckna en.",
+    "history": {
+      "origin": "Optionen är äldre än både börsen och tryckta kurstabeller: i antikens Aten tecknade olivhandlare rättigheter till pressarnas kommande skörd, och i 1600-talets Amsterdam handlades köp- och säljoptioner på Ostindiska kompaniets aktier med premie till säljaren som förföll på avtalad dag. Den holländska tulpanmanin 1636–1637 lärde marknaden optionens båda ansikten: hävstången som förstorar vinsten och samma hävstång som förintar premien när rörelsen uteblir.",
+      "evolution": "Den moderna svenska emissionen växte fram med efterkrigstidens kapitalbehov: företrädesmissionen blev huvudregeln (ägarens rätt att värna sin andel), och med den följde teckningsrätten som kortlivat värdepapper. Teckningsoptionerna utvecklades till ett sätt att skjuta kapitalanskaffningen framför sig — bolaget fick betalt idag, optionerna löstes först senare — och blev med tiden också ett incitamentsinstrument i styrelser och ledningar. Warranterna kom in från bankvärlden under 1980- och 90-talens produktexplosion: banken emitterade papper med bolagets aktie som underliggande, hävstången paketerades för hobbyspararen, och med Internetmäklarnas genombrott blev warrantlistan en egen avdelning i kurssidorna.",
+      "modern": "Idag möter den svenska spararen båda världarna i samma app: nyemissionspaket där teckningsoptionerna erbjuds som del av villkoret, och en utförlig warrantmarknad där bankerna noterar tusental papper med hävstång på allt från svenska storbanker till råvarukorgar. AK1A:s optionsfamilj speglar båda spåren: km-059 äger börsoptionens grunder, od-01 grekerna, od-02 den implicita volatiliteten — och denna kurs äger ingången, den svenska emissionens instrument, så att trappan upp genom familjen börjar på markplan och inte på tredje våningen."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Tre instrument som låter lika — rätten, optionen, warranten",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Teckningsoptionen — rätten att teckna till fast kurs fram till en dag",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Värdets två delar — inre värde och tid",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Warranten — bankens papper på bolagets aktie",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällorna — gratisstämpeln, tiden och utspädningens räkneläger",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — läsa en emissionskommuniké med optionsspåret",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Tre instrument som låter lika — rätten, optionen, warranten",
+        "intro": "Nybörjarens första möte med optioner sker oftast i en nyemission eller på warrantlistan — inte i den amerikanska börsoptionsmarknaden. Tre instrument måste hållas isär från första dagen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Optionsfamiljen (km-059) handlar om rätten att i framtiden köpa eller sälja något till ett idag bestämt pris. Men den svenska spararen möter den rätten i tre olika klädningar, och att blanda ihop dem är nybörjarens vanligaste misstag.\n\nDen första klädningen är teckningsrätten — den lever i anslutning till en företrädesmission och är ks-04:s område: den som äger aktier vid avstämning får rätter, rätterna ger möjlighet att teckna nya aktier till emissionskursen, och rätten lever bara under emissionens korta fönster. Den andra är teckningsoptionen — ett eget omsättningsbart värdepapper, ofta emitterat i paket med en nyemission, som ger ägaren rätten att under en framtida lösenperiod teckna aktie till en fast teckningskurs. Den tredje är warranten — ett värdepapper som en bank emitterar med en aktie som underliggande, och som handlas på börsen med hävstång på aktiens rörelse."
+          },
+          {
+            "type": "definition",
+            "content": "Tre instrument, tre frågor — Teckningsrätten: del av en pågående emission, lever veckor, ägs av den som var aktieägare vid avstämning. Teckningsoptionen: eget omsättningsbart värdepapper med löptid i månader eller år, ger rätten att teckna aktie till fast kurs; emitteras av bolaget och medför utspädning vid lösen. Warranten: bank-emitterat värdepapper med aktien som underliggande; bolaget berörs inte — här finns ingen utspädning, bara hävstång."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan som skiljer instrumenten åt är VEM som står som motpart: bolaget själv (teckningsrätt och teckningsoption — bolaget får nya aktier och nytt kapital) eller en bank (warrant — en ren satsning mellan köparen och banken där bolaget bara är underliggande referens)."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Teckningsoptionen — rätten att teckna till fast kurs fram till en dag",
+        "intro": "Teckningsoptionen är ett löfte med utgångsdatum: rätten att teckna aktie till en fast kurs, t.o.m. en bestämd dag. Alla dess delar syns i emissionskommunikén.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En teckningsoption har fyra byggdelar, och alla fyra står i emissionskommunikén: ANTAL optioner (hur många som ges ut), TECKNINGSKURS (det pris som ska betalas per aktie vid lösen), LÖPTID (hur länge optionen lever) och LÖSENPERIOD (fönstret då rätten kan utnyttjas). Ett typiskt svenskt paket: en nyemission med företrädesrätt där var tecknad aktie följs av en teckningsoption, med teckningskursen lagd nära emissionskursen och löptid på ett till tre år.\n\nVarför emitterar bolag optioner i stället för att bara ta in mer kapital direkt? Därför att paketet köper två saker på en gång: lite kapital idag (emissionen) och ett löfte om kapital imorgon (optionerna) — till ett pris som syns först vid lösen, i form av utspädning. För den som tecknar emissionen kan optionen fungera som en del av avtalet: emissionskursen utan optioner hade kanske behövt läggas lägre. Ingenting på börsen är gratis — optionen är betald, bara inte i kontanter."
+          },
+          {
+            "type": "insight",
+            "content": "Optionerna i ett emissionspaket är inte en gåva utan en del av priset: bolaget säljer dagens kapitalanskaffning dyrare i framtida utspädning, och tecknaren betalar optionen i form av emissionsvillkor som hade varit billigare utan den."
+          },
+          {
+            "type": "text",
+            "content": "Att optionen är omsättningsbar är dess tredje liv: den behöver inte hållas till lösen utan kan säljas på börsen när som helst under löptiden, och dess pris rör sig då med aktiekursen, med tiden kvar till lösen och med marknadens förväntningar — precis som vilken option som helst (od-01)."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Värdets två delar — inre värde och tid",
+        "intro": "All optionprissättning, från nybörjarens papper till de avancerade modellerna, vilar på samma tvådelning: det som är värt idag och det som är värt bara om framtiden hjälper till.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En teckningsoptions värde har två delar. Det INRE VÄRDET är det som finns i handen just nu: aktiekursen minus teckningskursen, och aldrig mindre än noll. Är aktien värd 12,00 kr och teckningskursen 10,00 kr är det inre värdet 2,00 kr — optionen ger rätten att köpa tiokronorsaktier för tio kronor och sälja dem för tolv. Har aktien sjunkit till 8,00 kr är det inre värdet noll: ingen betalar för rätten att köpa för 10,00 det som kostar 8,00 på börsen — men optionen kan ändå ha ett pris, och det är den andra delen.\n\nTIDSVÄRDET är priset för hoppet: att aktien hinner över teckningskursen innan lösenperioden stänger. Mer tid ger mer hopp — en option med två års löptid är värd mer än en med två månader kvar, även vid samma inre värde, därför att framtiden har mer gångjärn att röra sig på. Och tidsvärdet nöts ner mekaniskt varje dag som går utan att aktien rör sig: det är den mekanism som i od-01 får namnet theta och i od-02 blir en hel kurs i marknadens prissättning av framtiden.\n\nNybörjarens läsregel räcker långt: optionens pris = inre värde + tidsvärde, där det inre kan räknas exakt och tidsvärdet kan förstås men inte gissas."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma teckningsoption (teckningskurs 10,00 kr) vid tre marknadslägen: | Aktiekurs | Inre värde | Optionens pris | Tidsvärde | — | 12,00 kr | 2,00 kr | 2,80 kr | 0,80 kr | — | 10,00 kr | 0,00 kr | 0,90 kr | 0,90 kr | — | 8,00 kr | 0,00 kr | 0,30 kr | 0,30 kr | — Notera: tidsvärdet är som störst nära teckningskursen — där är frågan om aktien hinner dit som allra mest öppen."
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens mönster är optionens hjärta: vid kurs 12 är optionen mest inre värde och lite hopp, vid kurs 10 mest hopp och inget säkert, vid kurs 8 bara hopp — och hoppet krymper för varje vecka som går utan rörelse."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Warranten — bankens papper på bolagets aktie",
+        "intro": "Warranten ser ut som en aktierelaterad sparprodukt och handlas som en — men mekaniskt är den en bankförpliktelse med hävstång, och bolaget märker ingenting.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En warrant emitteras av en BANK med en aktie (eller en korg, eller ett index) som underliggande. Banken lovar att betala warrantens värde vid lösen, och värdet beräknas på den underliggande aktiens utveckling med en hävstång: en warrant med hävstång fem rör sig procentuellt cirka fem gånger så mycket som aktien. Aktien +1 procent ger warranten ungefär +5 procent — och aktien −1 procent ger warranten ungefär −5 procent. Hävstången är symmetrisk, och det är den halvan som marknadsföringen gärna glömmer.\n\nSkillnaden mot teckningsoptionen är fundamental: när en warrant löses betalar BANKEN, inte bolaget. Inga nya aktier emitteras, ingen utspädning uppstår, bolagets kapital och aktieantal förändras inte — banken har i regel säkrat sin exponering sedan tidigare. Warranten är därför ingen investering i bolaget utan en satsning på bolagets aktiekurs med inbyggd hävstång, och den som blandar ihop de två riskerna läser warrantlistan som om den vore en aktielista.\n\nPraktiska detaljer som hör till hantverket: warranten har en lösenbarriär eller lösenkurs (nivån där den får värde vid lösen), en löptid med slutdag, och ofta en stop-loss-mekanism som kan avsluta papperet i förtid vid kraftiga rörelser — detaljerna står i villkorsbladet, som är warrantens emissionskommuniké."
+          },
+          {
+            "type": "definition",
+            "content": "Warrant — bank-emitterat värdepapper vars värde beror på en underliggande tillgång (oftast en aktie) med fast hävstång och löptid; vid lösen är det banken som betalar, bolaget berörs inte — ingen utspädning, ingen ny kassa, bara ett spel mellan köparen och emittentbanken."
+          },
+          {
+            "type": "insight",
+            "content": "Snabbtestet på vilket instrument du tittar på: står BOLAGET som emittent och skapas nya aktier vid lösen — teckningsoption. står BANKEN som emittent och bolaget inte berörs — warrant. heter det rätter och gäller en pågående emission — teckningsrätt (ks-04)."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällorna — gratisstämpeln, tiden och utspädningens räkneläger",
+        "intro": "Tre fällor fångar fler nybörjare än alla andra tillsammans: att tro att optioner i ett emissionspaket är gratis, att underskatta tidens värde och att glömma utspädningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "FÄLLA ETT — GRATISSTEMPELN. När ett emissionspaket innehåller teckningsoptioner presenteras det gärna som något extra på köpet. Men emissionens villkor är ett helt paket: bolaget som erbjuder optioner kunde i stället ha lagt emissionskursen lägre, tecknarna kunde ha fått mer för sina pengar — optionen är betald i form av dyrare kapital idag eller mer utspädning imorgon. Räkneläxan: ett bolag med 100 miljoner aktier och kursen 12,00 kr (marknadsvärde 1 200 miljoner kr) emitterar optioner på 10 miljoner aktier till teckningskursen 10,00 kr. Vid full lösen tillförs 100 miljoner kr och aktieantalet blir 110 miljoner. Före lösen ägde de gamla aktierna allt; efter lösen äger de gamla aktierna 100 av 110 — 90,9 procent. Nästan nio procent av bolaget bytte ägare, och det är priset som betalades för kapitalet som kom in.\n\nFÄLLA TVÅ — TIDENS EROSION. En lång löptid gör optionen dyrare och svårare att värdera, inte bättre. Tidsvärdet (kapitel 3) växer med tiden, och hoppet kan prissättas långt över det som senare infrias. Den som jämför två emissionspaket bör jämföra optionernas LÖPTID och TECKNINGSKURS som separata villkor — inte bara antalet optioner.\n\nFÄLLA TRE — HÄVSTÅNGSFÖRVÄXLINGEN. En warrant med hävstång fem på en aktie som faller 20 procent har i princip raderats (minus 100 procent på warranten vid fem gånger rörelsen) och stop-loss-villkor kan avsluta den i förtid medan aktieägaren fortfarande äger 80 procent av sitt värde och bolaget är opåverkat. Hävstången är inte bolagsrisk i miniatur — den är en annan riskklass."
+          },
+          {
+            "type": "insight",
+            "content": "Utspädningens tangentbordsräkning: gamla andel efter full lösen = gamla aktier delat med (gamla plus nya) — 100 miljoner på 110 miljoner = 90,9 procent. Det är också vinst-per-aktie-räkningens nya nämnare, scenario för scenario."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — läsa en emissionskommuniké med optionsspåret",
+        "intro": "Sista steget är hantverket: att öppna en emissionskommuniké och veta exakt vilka fyra rader som avgör vad optionerna är för något — och vilka frågor som är kvar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta fram en verklig emissionskommuniké (bolagens investorssidor bär dem alla) och läs den fyra gånger — en gång per fråga. Första läsningen: ANTAL och FÖRHÅLLANDE. Hur många optioner per tecknad aktie, och hur stor andel av aktiekapitalet kan optionerna som mest motsvara? En option per tio aktier är en annan värld än en per två.\n\nAndra läsningen: TECKNINGSKURSEN. Var ligger den mot dagens kurs — djupt under (inre värde redan vid emissionen, men emissionskursen har sannolikt lagts därefter), nära (optionen är ren framtid) eller över (en tröskel som aktien först måste klättra över)? Tredje läsningen: LÖPTID och LÖSENPERIOD. Ett år, tre år, fem år? Ett fönster eller flera? Flerlåsning med flera lösenperioder gör utspädningen successiv — kapitlet fem ger nämnaren för varje scenario. Fjärde läsningen: VAD KAPITALET SKA TILL. Emissionsdokumentet anger ändamålet — och ändamålet avgör om framtida kapitalintäkter vid lösen är avsett för tillväxt eller för att betala av tidigare åtaganden (rk-02:s fråga om emissionsriskens kvalitet).\n\nÖvningen avslutas med att skriva en enda mening per paket i jämförelseloggen: Hur många procent av bolaget byter ägare vid full lösen, till vilket pris, och hur länge är locket öppet? Därifrån leder trappan vidare upp: km-059 för börsoptionens mekanik, od-01 för hur optionen rör sig (grekerna) och od-02 för hur marknaden prissätter tiden och osäkerheten — och ks-04 äger hela emissionen som denna kurs bara läste optionsspåret av."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: hitta en emissionskommuniké med teckningsoptioner i arkivet hos ett bolag du följer (studentens egen löpande bevakning — ingen kurslista behövs). Besvara de fyra läsningarna i tal: (1) hur många procent av aktierna kan optionerna som mest motsvara? (2) var ligger teckningskursen mot dagens kurs och vad är det inre värdet per option just nu? (3) hur lång är löptiden och hur många lösenperioder finns? (4) vad anger bolaget att kapitalet vid lösen ska till? Avsluta med utspädningsmeningen: gamla andel vid full lösen = gamla aktier delat med (gamla plus nya)."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch varnade med eftertryck för instrument som förpackar hopp: hans eget mått var att förstå varje bolag man äger så väl att man kan berätta historien på en minut — och en teckningsoption har ingen egen historia, bara en härlett sådan från bolaget den vilar på. Lynch underströk också att emissioner i sig är neutrala redskap: kapitalbehov kan vara tillväxt eller överlevnad, och skillnaden sitter i ändamålet — inte i instrumentet. De svenska emissionspaketen med optioner är därför en Lynch-fråga av exakt rätt sort: vad ska kapitalet TILL, och vad kostar det i utspädning? Hans aversion gällde hävstången som förstorar det man inte förstår — och warrantens symmetriska femfaldiga rörelse är den mekanismen i ren form.",
+    "grahamSection": "Benjamin Grahams säkerhetsmarginal-tänkande (km-030) har en rak översättning till optionsinstrument: det inre värdet är det enda som kan räknas exakt, och allt utöver det är betalt för osäkerhet. Graham skulle ha läst en teckningsoptions pris som två poster — en säker (kurs minus teckningskurs) och en spekulativ (tiden) — och han höll spekulativa poster till en andel som kapitalförvaltaren medvetet kunde förlora i sin helhet. Hans varning för att låta hävstång forma placeringen är lika gammal som hans skiljelinje mellan investering och spekulation: warranten som förstorar en aktierörelse femfalt förstorar också den dagliga bruset till något som ser ut information men är brus.",
+    "ak1Section": "I AK1A:s metodik är teckningsoptioner och warranter underlag, inte Rekommendationer: en emissionskommunikés optionsspår läses med samma fyra frågor som en fundamental analys ställer till varje kapitalhändelse — hur mycket, till vilket pris, hur länge och till vad. AKM1:s kapitalstrukturvariabler (ks-serien) fångar utspädningens effekt på per-aktie-talen, och riskfamiljen (rk-02) äger frågan om emissionens kvalitet. AI-Mentorn kan visa emissionens räkneläge i studions labb (ek-03:s arbetsflöde): optionsträd med full partiell lösen, utspädningsförlopp per lösenperiod och det inre värdets känslighet för aktiekursen — alltid som mekanik, aldrig som ställningstagande. Studions juridiska grund förblir: detta är utbildning om instrument, inte råd om teckning."
   },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",
@@ -209571,5 +209903,165 @@
     "lynchSection": "Peter Lynch talade om risk på sitt eget språk: 'riskerna du känner till' mot 'riskerna du inte känner till' — och hans poäng är kartans poäng i annan gestalt: den farliga risken är inte den som syns i volatiliteten (den priset redan pendlat runt) utan den som bor i själva verksamheten och ingen fördelning fångar. Hans råd att känna bolaget man äger — affären, skulderna, branschen — är i kartans termer ett sätt att skilja pendling från förlust FÖRE måtten: den som vet varför aktien föll vet också om fallet är priset eller kapitalet. Lynch skulle dessutom ha nickat åt kapitel fyrs trappa: hans eget mått på risk var inte standardavvikelsen utan tid — hur länge kapitalet behöver vänta på att bli rätt — och hans tålamodslära är därför en släkting till drawdown-asymmetrin.",
     "grahamSection": "Benjamin Graham är den tomma sjätte radens upphovsman: hans skiljelinje mellan investerare och spekulativ köpare — den förra vill ha värdet bevisat med marginal, den senare litar på att någon annan betalar mer — flyttar risken från priset till KÖPET. Grahams 'mr Market' är dessutom volatilitetens äldsta förklaring: marknaden som manisk handelspartner som ropar priser varje dag — ibland vettigt, ofta inte — gör pendlingen till något att UTNYTTJA (köpa av honom i panik, sälja till honom i eufori) i stället för något att oroa sig för. Notera dock vad Graham INTE sa: han trodde inte att marginalen gör förlusten omöjlig — bara att den gör felbedömningen överlevbar. Det är kursens slutsats i hans anda: måtten beskriver pendlingen, marginalen och begränsningen gör den bärbar.",
     "ak1Section": "I AK1A:s metodik är denna kurs ingången till RISKHANTERING & PORTFÖLJTEORI-familjen — den första Nivån Nybörjare-kursen i en familj som tidigare bara öppnade på Intermediär och Avancerad, och därmed trappans första steg i lärvägssystemet. Kartan binder samman familjens nio beräkningskurser (km-013 till km-034) med grannspåren: rs-01:s svängning-mot-förlust, pf-02 och pf-03:s storlek och mångfald, km-030:s säkerhetsmarginal — och riskmatrisen (rs-04) som sätter samman osäkerheten i ett beslutsrum. Den som sen går vidare till AKM2-modellen möter måtten igen i dess riskdimension: volatiliteten som skalär, korrelationen mellan scenarier, och Monte Carlo-simuleringens breda utfall — alla byggda på exakt de frågor kartan formulerar."
+  },
+  "rp-02-tre-matt-tre-fragor": {
+    "slug": "rp-02-tre-matt-tre-fragor",
+    "category": "RISKHANTERING & PORTFÖLJTEORI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Tre mått, tre frågor — Sharpe, Sortino och Calmar i samma portfölj",
+    "summary": "RISKHANTERING & PORTFÖLJTEORI-familjens mellanakt — rp-01 ritade kartan över fem mått och fem frågor; denna kurs går in på de tre riskjusterade mått som jämför avkastning med risk i ETT tal: Sharpe (avkastningen över riskfria räntan delat med HELA volatiliteten), Sortino (samma täljare delat med bara NEDSIDIG volatilitet) och Calmar (avkastningen delat med det djupaste fallet). Signaturlektionen är att samma portfölj får tre olika betyg: avkastning 12,0 procent, riskfri ränta 2,0 procent, volatilitet 10,0 procent, nedsidig volatilitet 7,0 procent och maximalt fall 15,0 procent ger Sharpe 1,00, Sortino 1,43 och Calmar 0,80 — tre sanningar om samma historia, därför att varje mått straffar en annan sorts dåligt beteende. Och rankningen kan VÄNDA sig med måttet: spegelportföljen med 9,0 procent avkastning, 7,0 procent volatilitet och 8,0 procent djupaste fall har också Sharpe 1,00 — men Calmar 1,13 och därmed högre betyg än den förstnämnda trots lägre avkastning, medan Sortino håller den förstnämnda överst. Därmed blir kursens kärna den omvända rörelsen: inte vilket tal är högst, utan VILKEN FRÅGA ska jag ställa — vill jag straffa all pendling (Sharpe), bara fallet (Sortino) eller det värsta som hände (Calmar)? Fällorna hör till hantverket: årsrymden (Calmar på tre år vilar på en enda kris), annualiseringen (månadsdata går med roten av tolv till årsnivå — ungefär 3,46 — och en månadsräknad siffra får aldrig jämföras med en årsräknad utan omvandling) och jämförelsesynderna (brutto mot netto, olika perioder, olika jämförelseindex). Efter kursen läses fondtabeller och egen portföljstatistik som svar på frågor — inte som podieplaceringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna Sharpe-kvoten: (avkastning minus riskfri ränta) delat med volatiliteten — exempelportföljen (12,0 procent minus 2,0 procent) delat med 10,0 procent = 1,00; måttet straffar ALL pendling, upp som ner, och är familjens utgångspunkt (djupet i km-016) · Räkna Sortino-kvoten: samma täljare delat med enbart nedsidig volatilitet — (12,0 minus 2,0) delat med 7,0 = 1,43; måttet ignorerar uppgångarnas brus och straffar bara rörelser under målet, vilket gör det rätt mått när positiva överraskningar är välkomna och inte ska kosta betyg · Räkna Calmar-kvoten: avkastningen delat med maximalt drawdown — 12,0 delat med 15,0 = 0,80; måttet frågar inte hur ofta det pendlade utan hur djupt det SOM VORST sjönk, och kräver därför lång historik för att betyda något · Se hur måttet avgör rankningen: spegelportföljen (9,0 procent avkastning, 7,0 volatilitet, 8,0 djupaste fall) matchar Sharpe 1,00 men vinner på Calmar 1,13 och förlorar på Sortino 1,17 mot 1,43 — samma två portföljer, tre olika tabellordningar · Behärska annualiseringen: månadsbaserade kvoter förs till årsnivå med roten ur tolv (ungefär 3,46) — månads-Sharpe 0,29 motsvarar omkring 1,0 i årsläge — och en siffra utan angiven frekvens är oanvändbar i jämförelse · Känna igen jämförelsesynderna: brutto mot netto (avgifter kan vända en tabell), olika perioder (nittiotalsbull mot koronakris som startdatum) och olika jämförelseindex (informationskvotens fragment finns i rp-01) — samt den röda tråden: måttet väljs av FRÅGAN, aldrig av vilken tabell som ser bäst ut",
+    "why": "RISKHANTERING & PORTFÖLJTEORI-familjen fick sin första seriekurs i omgång 9 (rp-01 riskmåttens karta, Nybörjare) — fem mått, fem frågor, innan formlerna. Men kartan lämnar sitt naturliga nästa steg öppet: de tre riskjusterade mått som jämför avkastning och risk i ett enda tal och som fyller fondtabeller, fondbolags faktablad och portföljrapporter världen över. km-016 äger Sharpe-kvoten som ENSKILT mått (dess titel, dess kapitel), km-034 äger drawdown-begreppet, km-013 volatiliteten — men ingen kurs i registret äger MÅTTFAMILJEN som valfråga (sond mot 396 kurser på sortino, calmar, riskjusterad, informationskvot: endast perifera träffar). Detta är rp-01:s punkt fem i praktiken: vad inget enskilt mått mäter, och därför hur flera mått ska läsas TILLSAMMANS — med signaturbeviset att två portföljer med identisk Sharpe-kvot kan byta plats i tabellen beroende på vilket av de tre måtten som sorteras på. Kursen är medvetet byggd som familjens jämförelselabb: samma exempelportfölj genom alla tre formlerna, samma spegelportfölj som vänder rankningen, samma fällor som gör verkliga fondtabeller svårlästa. Och måttläsning är utbildning i ren form: en kvot är en division, inte en uppmaning — kursen lär divisionen och frågan den svarar på, aldrig vilken portfölj läsaren bör äga.",
+    "history": {
+      "origin": "Riskjusterad avkastning föddes ur ett praktiskt öknamn: 1960-talets fondtävlingar koronade den med högst avkastning — vilket systematiskt krönte den som tagit mest risk. William Sharpe (1966) tog Jack Treynors idé om avkastning per riskenhet och gav den divisionen som blev standard: överavkastning mot riskfri ränta, delat med standardavvikelsen. Priset var symmetrin: måttet straffade upp- och nedgångar lika, även om bara den ena halvan gör ont.",
+      "evolution": "Sortinon (namngiven efter Frank Sortino, 1980-talet) var det raka svaret på symmetri-problemet: dela med endast nedside-avvikelsen från målet, och låt glädjeöverraskningarna vara gratis. Calmar (1980-talets Kalifornien och tidskriften California Managed Accounts Report (Terry Young)) svarade på en annan otillräcklighet: volatilitet säger hur ofta det pendlade men inte hur djupt det som värst sjönk — Calmar satte maximalt drawdown i nämnaren och blev hedgefondsvärldens vardagsmått. Under 1990- och 2000-talen blev familjen utbyggd (informationskvot mot benchmark, MAR-kvot, Omega, Treynor) men de tre ursprungliga har visat störst livskraft just därför att de svarar på tre olika vardagsfrågor.",
+      "modern": "Idag står de tre måtten i varje faktablad och varje portföljanalysverktyg — och kursens fällor är bruksmarknadens vardag: årsrymden varierar (Calmar på tre år mot tioårig), frekvensen varierar (månads- mot årsberäkning), avgifternas läge varierar (brutto mot netto). AK1A:s portföljfamilj (pf-serien) använder måtten som verktyg bland andra, och denna kurs ger dem deras grammatik: frågan först, divisionen sedan, jämförelsen allra sist — och alltid med perioden, frekvensen och avgiftsläget skrivna bredvid talet."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Ett mått, en fråga — varför tre divisioner behövs",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Sharpe — avkastningen mot hela pendlingen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Sortino — bara nedgångarna kostar",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Calmar — avkastningen mot det djupaste fallet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällorna — årsrymd, annualisering, jämförelsesynder",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — frågan väljer måttet",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Ett mått, en fråga — varför tre divisioner behövs",
+        "intro": "rp-01 ritade kartan med fem mått och fem frågor. Detta kapitel visar varför tre av dem — Sharpe, Sortino, Calmar — hör ihop som en familj: de jämför alla avkastning med risk i ett tal, men de straffar olika dåligt beteende.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En portföljrapport som bara visar avkastning är en halv rapport: 12,0 procent om året låter bra tills frågan kommer — med hur mycket pendling, hur djupa fall och hur ofta? Riskjusterade mått är familjen av divisioner som svarar på just de frågorna: avkastning i täljaren, ett riskmått i nämnaren, ett tal som ut. Idén är gammal och god — ju mer avkastning per enhet risk, desto bättre — men allt hänger på vad som menas med RISK.\n\nTre svar har överlevt. Sharpe (kapitel 2): risken är HELA volatiliteten, alla avvikelser från medelvärdet, upp som ner. Sortino (kapitel 3): risken är bara NEDSIDIGA avvikelser — uppgångar stör inte, fall gör ont. Calmar (kapitel 4): risken är det värsta som hände — det djupaste sammanhängande fallet från topp till botten. Tre olika bilder av samma portföljhistoria, och ingen av dem kan ersätta de andra.\n\nKursens exempelportfölj bärs genom alla tre kapitlen med oförändrade tal: avkastning 12,0 procent per år, riskfri ränta 2,0 procent, volatilitet 10,0 procent, nedsidig volatilitet 7,0 procent, maximalt drawdown 15,0 procent. Tre divisioner ger tre betyg — och kapitel sex visar att INGET av dem är rätt eller fel; de svarar på olika frågor."
+          },
+          {
+            "type": "definition",
+            "content": "Riskjusterat mått — en division där avkastningen (oftast över riskfria räntan) ställs mot ett riskmått i nämnaren; familjens tre klassiker: Sharpe (mot total volatilitet), Sortino (mot nedsidig volatilitet), Calmar (mot maximalt drawdown). Ett tal, en fråga — valet av nämnare är valet av fråga."
+          },
+          {
+            "type": "insight",
+            "content": "Ordet RISK i riskjusterat är måttens hela hemlighet: Sharpe hör pendling, Sortino hör smärta, Calmar hör katastrof. Samma portfölj kan vara etta på den ena frågan och trea på den andra — och det är inte måttens fel, det är deras uppdrag."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Sharpe — avkastningen mot hela pendlingen",
+        "intro": "Familjens utgångspunkt och mest använda tal: överavkastningen delad med hela volatiliteten. Enkelt, välbeforskat — och strängt symmetrisk.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Formeln är en rad: Sharpe-kvoten är (portföljens avkastning minus riskfria räntan) delat med portföljens volatilitet. Exempelportföljen: (12,0 − 2,0) delat med 10,0 = 1,00. Tio procents överavkastning på tio procents pendling — en krona överavkastning per krona brus. Ju högre tal, desto mer avkastning per enhet pendling.\n\nTvå egenskaper gör Sharpe till utgångspunkten. För det första universaliteten: volatilitet kan beräknas för allt som har en kurva — aktier, fonder, kombinationer, handelsstrategier — vilket gör måttet tillgängligt för jämförelse över tillgångsslag. För det andra intuitionen: kvoten är enkel att FÖRKLARA (avkastning per risk) även om dess svagheter kräver ett helt kapitel var. Dess djup historia — från Treynors idé till Sharps 1966-artikel och dess roll när modern portföljteori testades — ägs av km-016.\n\nSvagheten är symmetrin: standardavvikelsen straffar uppåtrörelser lika mycket som nedåtrörelser. En portfölj som ofta smäller uppåt får högre volatilitet och alltså lägre Sharpe — trots att ingen klagar på sådana överraskningar. Det är detta som föder nästa mått."
+          },
+          {
+            "type": "insight",
+            "content": "Sharpe-kvotens blinda fläck sitter i nämnarens symmetri: den kan inte skilja brus som gör ont från brus som gör gott — båda höjer volatiliteten och sänker betyget lika mycket."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Sortino — bara nedgångarna kostar",
+        "intro": "Sortinos svar på symmetriproblemet: samma täljare, men nämnaren räknar bara avvikelserna NEDÅT från målet. Överraskningar uppåt är gratis.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sortino-kvoten behåller Sharpes täljare (avkastning minus riskfri ränta, eller minus ett valt mål) men byter nämnare: i stället för hela standardavvikelsen räknas endast nedsidesavvikelserna — månaderna (eller dagarna) då portföljen låg under målet, kvadrerade, summerade och rotade på samma sätt. Exempelportföljen: (12,0 − 2,0) delat med 7,0 = 1,43. Samma portfölj, samma historia — högre betyg, därför att uppåtbruset inte längre kostar.\n\nSkillnaden mellan 1,43 och 1,00 är i sig information: den säger att en ovanligt stor andel av exempelportföljens totala pendling satt på UPPSIDAN. En portfölj där nedsidig och total volatilitet ligger nära varandra (Sortino nära Sharpe) pendlade jämnt båda vägar; en portfölj där gapet är stort hade sina överraskningar uppåt. Måttens SKILLNAD är alltså ett diagnostiskt tal i sig — något tabeller sällan visar, men som två divisioner ger gratis.\n\nPraktiskt hör Sortino hemma där positiva överraskningar är en del av strategin och inte ska bestraffas: täckta optionsstrategier (km-060, km-061), portföljer med asymmetriska komponenter, och all analys där läsaren främst frågar hur ofta och hur hårt det FALLER — inte hur livligt det är."
+          },
+          {
+            "type": "insight",
+            "content": "Jämför aldrig Sortino-tal med olika målnivåer: nämnaren beror på målet (riskfri ränta, noll, inflationen) — en Sortino räknad mot noll och en mot riskfria räntan är två olika mått som råkar heta lika."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Calmar — avkastningen mot det djupaste fallet",
+        "intro": "Calmar byter bort både symmetrin och frekvensen: nämnaren är ett enda tal — det djupaste sammanhängande fallet från topp till botten. Frågan är inte hur ofta, utan hur värst.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Maximalt drawdown (km-034 äger begreppets fulla anatomi) är portföljens djupaste dal: avståndet från högsta toppen före fallet till botten innan återhämtningen börjar. Calmar-kvoten ställer årlig avkastning mot just det talet: exempelportföljen 12,0 delat med 15,0 = 0,80. Tolv procents avkastning per år, betalt med ett femton procents fall som värst — förhållandet mellan vanligheten och det värsta.\n\nOch här vänder kursens signaturfall på rankningen. Spegelportföljen: avkastning 9,0 procent, volatilitet 7,0 procent, nedsidig volatilitet 6,0 procent, maximalt fall 8,0 procent. Sharpe: (9,0 − 2,0) delat med 7,0 = 1,00 — IDENTISKT med exempelportföljen. Sortino: (9,0 − 2,0) delat med 6,0 = 1,17 — exempelportföljen vinner (1,43). Calmar: 9,0 delat med 8,0 = 1,13 — spegelportföljen VINNER (mot 0,80). Två portföljer, ett oavgjort och två segrar på olika håll: valet av mått avgjorde tabellen.\n\nBakom oavgjortet i Sharpe ligger en verklig skillnad: exempelportföljen tog mer total pendling men höll sig från lika djupa fall; spegelportföljen pendlade mindre och föll aldrig lika djupt. VILKEN av dem som är bäst beror på läsarens fråga — oro för sömnlöshet vid fall (Calmar) eller oro för konstant brus (Sharpe) — och på tåligheten för det värsta fallets återhämtningstid (km-034:s längd-mått)."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma två portföljer sorterade på tre mått: | Mått | Exempelportföljen (12,0 % avk) | Spegelportföljen (9,0 % avk) | Vinnare | — | Sharpe | 1,00 | 1,00 | oavgjort | — | Sortino | 1,43 | 1,17 | exempelportföljen | — | Calmar | 0,80 | 1,13 | spegelportföljen | — Slutsatsen är inte att ett mått är rätt: det är att ENDA sättet att läsa en fondtabell rätt är att veta vilken fråga varje kolumn svarar på."
+          },
+          {
+            "type": "insight",
+            "content": "Calmar kräver årsrymd för att vara mer än en anekdot: en treårig historia med en enda svår kris ger ett maxfall som kan vara tur eller otur — först när flera topp-till-botten-cykler fått plats i serien säger talet något om portföljens katastrofbeteende."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällorna — årsrymd, annualisering, jämförelsesynder",
+        "intro": "De tre divisionerna är elementära. Fällorna ligger inte i räkningen utan i sammanhanget: hur lång historik, vilken frekvens och vilka jämförelser talet tillåter sig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "FÄLLA ETT — ÅRSRYMDEN. Ett Calmar-tal över tre år vilar på max ETT värre fall; över tio år på flera. Samma portfölj kan visa 1,2 på tre lugna år och 0,5 över ett decennium som innehöll två kriser — talet är sant båda gångerna, frågan är vad det fick MÖTA. Tumregel: läs alltid årsrymden FÖRE kvoten, och misstro automatiskt alla jämförelser där årsrymderna skiljer sig åt.\n\nFÄLLA TVÅ — ANNUALISERINGEN. Månadsdata ger månads-kvoter; för att jämföra med årsbaserade tal förs de till årsnivå med roten ur tolv (ungefär 3,46). Månads-Sharpe 0,29 motsvarar alltså omkring 0,29 × 3,46 = 1,0 i årsläge. Men rotationen förutsätter samma datafrekvens i båda talen — en månadsräknad kvot jämförd med en årsräknad är inte en jämförelse utan en sifferkollision, och faktablad anger inte alltid vilken som är vilken. (Volatiliteten växer med roten ur tiden, avkastningen linjärt — det är hela annualiseringsmekaniken.)\n\nFÄLLA TRE — JÄMFÖRELSESYNDERNA. Tre klassiska: brutto mot netto (avgifter på ena sidan gör tabellen osymmetrisk — en fond med 1,0 procents avgift och lika råavkastning som en indexfond utan kostnad ser lika ut brutto och sämre ut netto); olika perioder (bullmarknadens början som startdatum gynnar högbeta portföljer — rs-03:s samvariation med tidpunkten); olika jämförelseindex (mot breda index eller smala sektorindex förändrar informationskvotens hela innebörd — rp-01:s femte mått). Ingen av fällorna syns i kvoten själv; alla syns i fotnoterna — och fotnoterna är därför en del av matematiken."
+          },
+          {
+            "type": "insight",
+            "content": "Annualiseringsmekaniken i en mening: avkastningen skalas linjärt med tiden (tolv månader blir tolv gånger), volatiliteten med roten ur tiden (roten ur tolv, ungefär 3,46) — därav formspråket månads-Sharpe × 3,46 ≈ års-Sharpe, och därav kravet på att veta frekvensen FÖRE jämförelsen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — frågan väljer måttet",
+        "intro": "Sista steget är den omvända rörelsen som ger kursen dess namn: inte vilket tal är högst, utan vilken fråga ställer jag — och därmed vilket mått som FÅR svara.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningen är alltid densamma: formulera frågan först, låt divisionen komma sedan. FRÅGA ETT — Hur mycket avkastning får jag per enhet pendling, oavsett riktning? Sharpe svarar; använd den för översiktsjämförelser över tillgångsslag och när inget särskilt är känt om portföljens form. FRÅGA TVÅ — Hur mycket gör det ONT? Sortino svarar; använd den när portföljen har asymmetriska komponenter (optioner, hedgeelement) eller när läsarens verkliga oro är fallens frekvens och djup — inte marknadens livlighet i sig. FRÅGA TRE — Hur djupt var det som värst, och vad fick jag för det? Calmar svarar; använd den när katastroftålighet väger tyngst — men bara med årsrymd som rymmer mer än ett drawdown.\n\nSedan diagnossteget, gratis ur kombinationen: Sortino nära Sharpe betyder jämn tvåsidig pendling; Sortino klart över Sharpe betyder uppåtlutande brus; Sharpe lika men Calmar olika betyder att historiens DJUP skiljer, inte dess frekvens. Tre divisioner, fyra diagnostiska skillnader — portföljens form börjar synas i avstånden mellan talen.\n\nHantverket avslutas med tabellhygien: varje kvot skrivs med tre fotnoter — årsrymd, frekvens (månads- eller årsbaserad, annualiserad eller ej) och avgiftsläge (brutto eller netto). Utan de tre är talet en siffra; med dem är det ett svar. Och som alltid i studions anda: måtten beskriver historiens form, inte framtiden och aldrig läsarens val — divisionen är mekanik, frågorna är utbildning, beslutet förblir läsarens eget arbete."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: ta två fonder eller två egna portföljdelar med minst fem års historia (studions labb, ek-03, kan exportera kurserna). Beräkna per objekt: årsavkastning, volatilitet, nedsidig volatilitet mot valt mål, maximalt drawdown — och därpå Sharpe, Sortino och Calmar. Skriv tabellen med de tre fotnoterna (årsrymd, frekvens, avgiftsläge). Avsluta med tre meningar: (1) vilket mått skiljde objekten åt mest, och vad säger det om deras form? (2) hur förändras rankningen om målnivån i Sortino ändras från noll till riskfria räntan? (3) vilket av de tre svaren skulle väga tyngst för en läsare med tre års sparhorisont — och varför?"
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch sålde avkastningens enkelhet bättre än någon: hans tjugo-baggershistorier handlar om att hitta tillväxt som marknaden missat, inte om att maximera avkastning per enhet risk. Men hans egen varningsregel — att en portfölj ska tåla att läsaren förlorar jobbet samtidigt som marknaden faller — är i praktiken en Calmar-fråga: hur djupt faller det som värst, och överlever planen det? Lynch skulle ha betraktat de tre divisionerna som tre sätt att beskriva samma nyfikenhet: vad du får, och vad du tål på vägen.",
+    "grahamSection": "Benjamin Grahams tänkande föregick portföljteorin med ett årtionde: han delade placeringen i den defensiva och den företagsamma — och för den defensiva läsaren var frågan som Calmar ställer den enda som betydde något: hur djupt kan det falla innan livsplanen brister? Grahams andelsband (aktieandeln rör sig mellan fasta gränser och återställs mekaniskt, pf-04:s rebalansering) var riskkontroll utan divisioner — men hans krav på säkerhetsmarginal (km-030) i varje enskilt val är samma tankesätt som kursens tabellhygien: talet utan sammanhang är inget värde, talet med fotnoter är ett svar.",
+    "ak1Section": "I AK1A:s metodik är de riskjusterade måtten utvärderingsspråk, inte selektionsspråk: AKM1:s tjugo fundamentalvariabler och portföljsystemets viktningar (pf-serien) producerar portföljer — Sharpe, Sortino och Calmar är sätten att LÄSA deras historik efteråt, med frågan före divisionen. Studions labb (ek-03) kan exportera valfri portföljs kurshistorik och beräkna de tre kvoterna med fulla fotnoter (årsrymd, frekvens, avgiftsläge), och AI-Mentorn visar gärna exempelberäkningar — alltid som mekanik och historiebeskrivning, aldrig som omdöme om vilken portfölj en läsare bör äga. Studions juridiska ram förblir: divisioner är utbildning, beslut är läsarens."
   }
 }

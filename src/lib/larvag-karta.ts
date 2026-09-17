@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (398 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (401 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 356 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 359 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -419,13 +419,16 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pe-03-forvarvsmaskinen", titel: "Förvärvsmaskinen — hur private equity bygger (och belastar) ett bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ma-02-lonebildning-och-kostnadsspiralen", titel: "Lönebildningen och kostnadsspiralen — från avtal till bolagets marginal", kategori: "MAKROEKONOMI & RÄNTA", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-02-implicit-volatilitet", titel: "Implicit volatilitet — marknadens pris på framtiden", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-03-warranter-och-teckningsoptioner", titel: "Warranter och teckningsoptioner — optionen möter den svenska emissionen", kategori: "OPTIONS & DERIVAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-02-labbets-karta", titel: "Labbets karta — fem motorer, ett hus: orienteringen före ek-01", kategori: "EKOSYSTEM", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-03-arbetsflodet-i-labbet", titel: "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-04-backtestens-hantverk", titel: "Backtestens hantverk — att testa en metod mot historien utan att lura sig själv", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-01-riskmattens-karta", titel: "Riskmåttens karta — fem mått, fem frågor, innan formlerna", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rp-02-tre-matt-tre-fragor", titel: "Tre mått, tre frågor — Sharpe, Sortino och Calmar i samma portfölj", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -434,4 +437,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 398;
+export const LARVAG_ANTAL_KURSER = 401;

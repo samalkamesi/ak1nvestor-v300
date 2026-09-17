@@ -84,6 +84,24 @@ kurens värde = requests/transfer/mobildata. Null-resultat ⇒ omgång 2-effekt
 → ny rot bokas (o41-disciplinen). FÖRE dubbelkällad: mina mätningar +
 u1:s FÖRE i o49 (samma klass, samma bygge).
 
+### EFTER BOKFÖRD (s7-u3 byggare 3/3, 2026-09-17 19:0x — vakarövertag enligt §5)
+
+Deploy 089ded18 16:41:37Z (BUILD_ID 6qghn83I3yt--H0fK8g0A). Mätning
+19:0x lokal (o51 §2:s omgång — rådata `lighthouse/blogg-s7u3o51-fore.json`
++ `kurser-s7u3o51-fore.json`): förväntan UPPFYLLD EXAKT, alla tal.
+
+| Tal | /blogg | /kurser |
+|---|---|---|
+| `/?_rsc` prefetch | 3 → **0** ✓ | 2 → **0** ✓ |
+| `/logga-in?_rsc` | 2 → **0** ✓ (u1) | 2 → **0** ✓ (u1) |
+| `_rsc` totalt | 5 → **0** ✓ | 6 → **3** (endast §6-köposten kvar) |
+| requests | 45 → **33** (−12) | → **41** (−4+ ✓) |
+| transfer | 704,3 → **528,4 KiB** | se o51 §2 |
+
+/blogg-kolumnen konfirmerar u1:s o49 §7-tabell (33/528,4 bitidentiskt
+40 min senare — tillståndet stabilt i prod, ingen ISR-återgång).
+Kvittot skrivet av s7-u3 (o51) i vakarövertag — kuren är prod-bevisad.
+
 ## §6 Bonusfynd — köpost till nästa omgång
 
 Sonden på /kurser: **`/kurser/the-intelligent-investor?_rsc` ×2 (0,9 + 25,1

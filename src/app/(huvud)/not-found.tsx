@@ -13,20 +13,23 @@ export const metadata: Metadata = {
 };
 
 /**
- * Slug + titel per kurs — enda data 404-förslagen behöver (liten vikt).
+ * Slugs per kurs — matchningen (Levenshtein) behöver bara slugs; titlarna
+ * hämtas löst av KursForslag via /api/kurs-titlar när ett förslag visas
+ * (SPÅR 7 s7-u3 flight-kur: gränsen serialiseras in i varje (huvud)-sidas
+ * RSC-flight — med {slug,titel}-objekt skickades ~42 K på varje sidvisning).
  * VÅG 63 bygg-2 (optimering #2): läses ur det slimmade sok-index.json
  * (~72 kB, verktyg/kor-sokindex.mjs) i stället för deep-courses.json —
  * tidigare drogs hela 17 MB in i serverbuntens modulgraf bara för att
- * plocka ut 333 titlar. KursForslag-kontraktet (slug+titel) är oändrat.
+ * plocka ut 333 titlar. KursForslag-kontraktet (slug-lista) är oändrat.
  */
-const KURSER = (
+const SLUGGAR = (
   (Array.isArray(sokindex) ? sokindex : sokindex.kurser ?? []) as Array<{
     slug?: string;
     title?: string;
   }>
 )
   .filter((k): k is { slug: string; title?: string } => typeof k.slug === "string" && k.slug.length > 0)
-  .map((k) => ({ slug: k.slug, titel: k.title ?? k.slug }));
+  .map((k) => k.slug);
 
 const NAV_KORT = [
   {
@@ -78,7 +81,7 @@ export default function NotFound() {
           </p>
 
           {/* Smarta kursförslag — fuzzy-matchar en gammal/ändrad kurslänk */}
-          <KursForslag kurser={KURSER} />
+          <KursForslag sluggar={SLUGGAR} />
 
           {/* Guld-hårlinje med mittornament */}
           <div aria-hidden className="mx-auto mt-7 flex max-w-xs items-center gap-3">

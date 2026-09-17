@@ -13663,5 +13663,275 @@
       ]
     },
     "notering": "Världens största försvarskoncern (jaktplanet F-35, robot- och rymddivisioner): UNIVERSUMETS FÖRSTA FÖRSVARSBOLAG — tillsammans med CAT öppnas USA/industri matta 3→5 ⇒ /dataset/industri/usa vid nästa bygge; ombevakad nisch 2026 (den europeiska upprustningen) med rent affärsfall i raden: oms 65 984→75 048 MUSD (+4,4 %/år) men netto 5 732→5 017 (−4,4 %/ år endpoint — cost-plus-världens marginalklymma syns i bruttot 13,6→10,2 %) med TTM-svansen 6 287 (+49,5 % YoY — 2025:s engångsposter vänder); P/E 19,80 mot forward 17,43 ⇒ prognosTillväxt +13,6 % (PEG spårkonvention 1,46; källans PEG 0,91 på 3års-EPS-prognos +18,0 % som not); ROE 89,2 % på urholkat EK (P/B 14,09 — CAT-radens spegelbild) men ROIC 27,42 % mot WACC 4,79 % = +22,63 pp — världens bredaste värdeskapandemarginaler i universumet (befintlig portfölj av kontrakt kapitaliseras billigt); utdelning 13,80 $ (2,57 %, payout 50,9 %) + återköp 1,97 %/år = totalavkastning ~4,5 %; FCF 6 132→6 908 MUSD fyra raka positiva (TTM 8 729 rekord, fcfYield 7,0 % — universumets högsta bland industri-jättarna); beta 0,10 = försvars-Buffett: okorrelerad med cykeln (CAT:s 1,59 som exakt motpol — parets pedagogik: SAME bransch, spegelvänd risk); moat FYLLT: brutto 9,9–13,6 % fem år (medel 11,8 %, spread 3,7 pp) — smalt span på låg nivå = kostnadskontrollens, inte prissättningens, vallgrav; nästa rapport 2026-10-20 (Q3)."
+  },
+  {
+    "ticker": "RY",
+    "namn": "Royal Bank of Canada",
+    "bransch": "finans",
+    "land": "Kanada",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/ry/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence + Fiscal.ai; stängningskurs 2026-09-16 16:00 EDT, sidorna pålästa 2026-09-17): pris, börsvärde, P/E-P/B-P/TBV, marginaler, ROE, WACC, utdelning/payout, beta — 4 räkenskapsår FY2022–FY2025 (november–oktober) i MCAD; bankkonvention: källan saknar bruttomarginal/ROIC/EV-mått (n/a) och redovisar FCF i kundmedelsflödenas värld"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 202.29,
+    "marknadsKapitalMdr": 281.18,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0867,
+      "resultatCAGR5ar": 0.0852,
+      "omsattningTillvaxtTTM": 0.1141,
+      "prognosTillvaxt": 0.1023
+    },
+    "lonksamhet": {
+      "roe": 0.1621,
+      "roic": null,
+      "bruttoMarginal": null,
+      "ebitMarginal": 0.457,
+      "nettoMarginal": 0.3387,
+      "fcfMarginal": null
+    },
+    "stabilitet": {
+      "skuldEgenkapital": null,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 17.89,
+      "pb": 2.72,
+      "evEbit": null,
+      "peg": 1.75,
+      "fcfYield": null,
+      "egenKapitalMultipl": 2.72
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        48501,
+        48996,
+        54112,
+        62243
+      ],
+      "resultat": [
+        15547,
+        14369,
+        15908,
+        19868
+      ],
+      "egetKapital": [],
+      "fcf": [
+        -89091,
+        -20641,
+        -70737,
+        -53108
+      ]
+    },
+    "notering": "UNIVERSALBANKENS FYRSTATSMÄSTARE (Kanadas största bolag, universumets FÖRSTA Kanada-rad — 17:e landet): segmenten FY2025 i MCAD — Personal Banking 19 854 · Commercial 8 562 · Wealth Management 22 378 (STÖRSTA segmentet — förvaltningen har vuxit förbi banksalen) · Insurance 1 321 · Capital Markets 14 426 — fördelningen gör RBC till nordamerikansk universalbank där kapitalförvaltning är störst, mot JPM:s deposits- och marknadstyngd; HSBC CANADA-FÖRVÄRVET FY2024 (12,7 mdr CAD kontant) syns i Personal Bankings hopp 15 471→17 342 MCAD — omsättningstillväxten +10,4 % FY2024 och +15,0 % FY2025 är delvis förvärvad (organisk kontra förvärvad tillväxt, tx-01-lektionen). BANKKONVENTIONEN (femte depositionsbanken efter GS/JPM/Nordea/HSBC): roic/skuld-EK/EV-EBIT ej meningsfullt jämförbart — null; källans fritt kassaflöde −53,1 mdr CAD FY2025 (serien −89,1→−20,6→−70,7→−53,1) = KUNDMEDELSFLÖDEN (depositioner och lånebok flyttar kassaflödet), ej utdelningskapacitet — fcfYield/fcfMarginal null; källans netto kassa 238 mdr USD är balansräkenskapsartefakt (kassan är kundernas pengar); bruttomarginal null (bank saknar varukostnad). UTDDELNINGSSERIEN 6 713→5 313→6 315→8 306 MCAD (vanliga aktier; FY2023:s sänkning = pandemiförsiktighet) med TTM 8 876 + återköp 4 075→6 667→13 495→18 772 MCAD = återbetalningstrappan; direktavkastning 2,43 % (4,92 USD/ADR) med payout 43,5 % och utdelningstillväxt +13,6 % senaste året. RÄKENSKAPSÅRET november–oktober (FY2025 slut 2025-10-31; Q3 FY2026 rapporterad 2026-08-27, nästa rapport Q4 december 2026) — ytterligare ett avvikande bokslutsår i universumet (BHP juli–juni, TM/BABA april–mars), slutår-etiketter. VÄRDERINGEN: P/E 17,89 mot forward 16,23 ⇒ prognosTillväxt +10,2 % implicit (TTE-konventionen) — källans 3-års EPS-prognos +10,4 %/år sammanfaller nästan exakt (ovanligt väl kalibrerat gap); PEG 1,75 spårkonvention; P/B 2,72 mot P/TBV 3,68 (bankernas eget substansmått — det tangibla bokförda kapitalet); ROE 16,2 % mot WACC 4,07 % = universalbankens marginal mot kapitalkostnaden. KURSEN: 52-vägers 143,13–218,57 USD (+39,1 %, kursen i övre delen av spannet) med beta 0,92; NYSE-ADR 1:1 (kurs och marknadsvärde i USD, serierna i CAD — växelkursen driver differensen mellan världarna)"
+  },
+  {
+    "ticker": "COP",
+    "namn": "ConocoPhillips",
+    "bransch": "energi",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/cop/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-17, kurs intraday 09:15–09:22 EDT): pris, börsvärde, P/E-P/B-härledning, marginaler, ROE/ROIC, skuld/EK, nettoskuld, FCF-yield, utdelning, beta, 4 räkenskapsår FY2022–FY2025 + bruttovinst FY2021–2025 (moat) + TTM jun-2026"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 130.75,
+    "marknadsKapitalMdr": 157.07,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0922,
+      "resultatCAGR5ar": -0.2467,
+      "omsattningTillvaxtTTM": 0.085,
+      "prognosTillvaxt": 0.3321
+    },
+    "lonksamhet": {
+      "roe": 0.1418,
+      "roic": 0.1163,
+      "bruttoMarginal": 0.4757,
+      "ebitMarginal": 0.2308,
+      "nettoMarginal": 0.144,
+      "fcfMarginal": 0.1561
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.36,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.4845,
+      "bruttoMarginalSpread5ar": 0.0298,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 17.61,
+      "pb": 2.5,
+      "evEbit": 11.61,
+      "peg": 0.53,
+      "fcfYield": 0.0632,
+      "egenKapitalMultipl": 2.5
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        80575000000,
+        57861000000,
+        56450000000,
+        60279000000
+      ],
+      "resultat": [
+        18620000000,
+        10922000000,
+        9218000000,
+        7961000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        18155000000,
+        8717000000,
+        8006000000,
+        7243000000
+      ]
+    },
+    "notering": "renodlad E&P-producent (utforskning+produktion, utan Chevron/ExxonMobils raffinaderi- och bensinstationsled) — tredje värdeläget i USA-energifållan: XOM/CVX integrerade majorer, COP producent, SLB tjänstejätte; Marathon Oil-förvärvet (slutgiltigt nov 2024) syns i 2025-års seriehöjning; 2022-toppen (vinst 18,6 mdr) = Europas LNG-kris, därefter fallande till 2025 medan TTM vänder upp (+1,1 % netto) — råvarucykeln i ett enda serieutseende; prognosTillväxt härledd ur trailing/forward-P/E (17,61/13,22 ⇒ +33,2 % implicit EPS-förändring — marknadens vinståtergångsförväntan; källans 3-års EPS-prognos +17,20 %/år som not; intäktsprognos +3,54 %/år); peg 0,53 enligt spårkonventionen (källans egen 1,02 på 3års-prognos); p/b 2,50 härlett P/E×ROE ur källans tal (internt konsistent med ROE 14,2 %), evEbit 11,60 härlett (EV 172,67 mdr = mcap 157,07 + nettoskuld 15,60, mot EBIT TTM 14 877 MUSD); bruttomarginal 47,6 % — producentens kostnadsdisciplin (moat-serien medel 48,5 %, spridning 3,0 pp FY2021–2025: oljeprisets svängningar syns i bruttovinsten men brytkostnaden är stabil); beta 0,13 — svagt korrelerad med breda marknaden trots råvarucykeln (indexvikten bär energisektorns låga beta); utdelning 3,36 USD/aktie (2,57 %, payout 44,6 % — utdelningsfälten null enligt universumets konvention); FCF-serien 18,2→7,2 mdr medan capex steg 10,2→12,6 mdr = kapitalcykelns köl; 52-vägersintervall 85,57–141,62 USD; nästa rapport 2026-11-05"
+  },
+  {
+    "ticker": "SLB",
+    "namn": "SLB (Schlumberger)",
+    "bransch": "energi",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/slb/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-17, kurs intraday 09:15–09:22 EDT): pris, börsvärde, P/E-P/B-härledning, marginaler, ROE/ROIC, skuld/EK, nettoskuld, FCF-yield, utdelning, beta, 4 räkenskapsår FY2022–FY2025 + bruttovinst FY2021–2025 (moat) + TTM jun-2026"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 52.37,
+    "marknadsKapitalMdr": 77.72,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0833,
+      "resultatCAGR5ar": -0.0065,
+      "omsattningTillvaxtTTM": 0.025,
+      "prognosTillvaxt": 0.3693
+    },
+    "lonksamhet": {
+      "roe": 0.1291,
+      "roic": 0.1159,
+      "bruttoMarginal": 0.1699,
+      "ebitMarginal": 0.1416,
+      "nettoMarginal": 0.0853,
+      "fcfMarginal": 0.1204
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.47,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.1871,
+      "bruttoMarginalSpread5ar": 0.0472,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 25.36,
+      "pb": 3.27,
+      "evEbit": 16.78,
+      "peg": 0.69,
+      "fcfYield": 0.0564,
+      "egenKapitalMultipl": 3.27
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        28091000000,
+        33135000000,
+        36289000000,
+        35708000000
+      ],
+      "resultat": [
+        3441000000,
+        4203000000,
+        4461000000,
+        3374000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        1515000000,
+        4191000000,
+        4188000000,
+        4367000000
+      ]
+    },
+    "notering": "oljeservice — äger inga reserver, säljer borrning/mätning/digitala tjänster till producenterna: universumets tredje värdekedjeläger i USA-energifållan (XOM/CVV integrerade · COP producent · SLB service) med pedagogisk bruttokontrast — 17,0 % bruttomarginal mot COP 47,6 % (tjänstearvodet mot resursägandet); moat-serien medel 18,7 %, spridning 4,7 pp FY2021–2025 (cykeln syns: 2021-låg 16,0 % → 2024-toppen 20,7 % → 2025 18,7 %); omsättning +8,3 %/år endpoint (upptagningscykel efter 2020) men netto-CAGR −0,6 % från 2022-toppen och TTM-netto −24,2 % (källan) = tjänstemarginallens svängrum; prognosTillväxt härledd ur trailing/forward-P/E (25,36/18,52 ⇒ +36,9 % implicit EPS-förändring — marknadens cykelvändningsförväntan); peg 0,69 spårkonvention; p/b 3,27 härlett P/E×ROE ur källans tal, evEbit 16,78 härlett (EV 86,41 mdr = mcap 77,72 + nettoskuld 8,69, mot EBIT TTM 5 150 MUSD); utdelning 1,18 USD/aktie (2,26 %, payout 57,2 % — utdelningsfälten null enligt universumets konvention); beta 0,77 — högre än COP:s 0,13: servicen levererar INOM cykeln, bolaget äger inte svängrummet; FCF fyra raka positiva 1,5→4,4 mdr (capexlätt verksamhet: 2,1–2,4 mdr/år); 52-vägersintervall 31,64–60,46 USD; nästa rapport 2026-10-16"
   }
 ]

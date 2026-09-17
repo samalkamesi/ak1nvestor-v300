@@ -71,7 +71,10 @@ export default async function BloggPageAr() {
                 key={p.slug}
                 className="cv-bloggkort flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
               >
-                <Link href={`/ar/blogg/${p.slug}`} className="flex flex-1 flex-col">
+                {/* prefetch={false} — samma slug-prefetch-kur som /blogg
+                    (o41, s7-u2): full flight-payload hör inte hemma i
+                    listans initiala last; hämtas vid klick. */}
+                <Link href={`/ar/blogg/${p.slug}`} prefetch={false} className="flex flex-1 flex-col">
                   <span className="text-xs uppercase tracking-widest text-gold">{p.pillar}</span>
                   <span className="mt-2 font-serif text-xl font-bold">{p.title}</span>
                   <span className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">

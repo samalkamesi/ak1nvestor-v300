@@ -61,7 +61,13 @@ export default function BloggPage() {
               key={p.slug}
               className="cv-bloggkort flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
             >
-              <Link href={`/blogg/${p.slug}`} className="flex flex-1 flex-col">
+              {/* prefetch={false} (o17/o37-precedensen): Next 16:s
+                  viewport-prefetch hämtar slug-rutten i två omgångar
+                  (partial + full flight ≈ 9,7 KiB/kort) redan i initial
+                  load — 55 kort betyder spill i LCP-fönstret för varje
+                  listbesökare; artikel-RSC:n (~9 KiB, force-static) hämtas
+                  vid klick istället. Mätt i o41 (s7-u2). */}
+              <Link href={`/blogg/${p.slug}`} prefetch={false} className="flex flex-1 flex-col">
                 <span className="text-xs uppercase tracking-widest text-gold">{p.pillar}</span>
                 <span className="mt-2 font-serif text-xl font-bold">{p.title}</span>
                 <span className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">

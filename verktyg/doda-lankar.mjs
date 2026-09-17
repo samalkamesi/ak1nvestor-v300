@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// döda-länkar-vakten — systematisk intern länkkontroll (spår 8, 2026-09-15)
+// döda-länkar-vakten — systematisk intern länkkontroll (spår 8, 2026-09-15;
+// instrumentkur o55 2026-09-17: mätfönster-grind + driftfel-tak + filskydd)
 //
 // Metod: hämtar /sitemap.xml som frö, crawlar varje sida (GET, följer
 // omdirigeringar), plockar ut ALLA interna <a href>-mål, kontrollerar varje
@@ -7,15 +8,46 @@
 // (= döda länkar) med vilka källsidor som pekar dit (rotorsaker), plus
 // omdirigeringar som observationsmaterial.
 //
+// MÄTFÖNSTER-GRIND (o47 §2 inbyggt i verktyget 2026-09-17 — tidigare fanns
+// kuren bara i protokollet): FÖRE crawlen verifieras (a) att ingen process
+// ÄGER deploy-låset — fuser = öppna fd:n, ALDRIG låsfilens existens (flock
+// lämnar filen kvar mellan deploys) — (b) ingen bygg/install-process
+// (pgrep "next build"/"npm ci"), (c) basen frisk (/ och /kurser = 200).
+// Missar ⇒ avbrott INNAN något mätvärde producerats. En crawl som PåGÅR när
+// ett byggfönster öppnar fångas av DRIFTFEL-TAKET efteråt: landar > 5 % av
+// sidorna på 5xx/nätfel KASSERAS rapporten och INGEN fyndfil skrivs
+// (artefaktdoktrinen: driftfönster bokförs aldrig som döda länkar — o47:s
+// 1 616×500-klass). Rapportfilen skrivs ALDRIG över (klockslagssuffix).
+//
+// --tvinga = diagnostikläge: hoppar grunderna och taket, märker utdatafilen
+// "diagnostik" — resultatet är ALDRIG ett mätvärde, bara driftunderlag.
+//
+// Miljövariabler (testbarhet; standardvärden = skarpt läge):
+//   AK1A_DEPLOY_LAS   sökväg till deploy-låset (standard /tmp/ak1a-deploy.lock)
+//   AK1A_BYGG_MONSTER  kommaseparerade HELA pgrep-mönster (standard
+//                      "next build,npm ci --no-audit" — mönsterflaggan:
+//                      ALDRIG bara "next" (pm2:s server bär det dagligen)
+//                      och ALDRIG bara "npm ci" (fabriksagenteras prompter
+//                      innehåller den regeln — pgrep -f matchar cmdlines,
+//                      levande bevis 2026-09-17: 3 zcode-barn vid varje våg;
+//                      deploy-kontraktets flaggor "--no-audit" finns bara i
+//                      det ÄKTA installationsanropet)
+//
 // 0 npm-beroenden (node: fetch, AbortController). Bas MÅSTE vara localhost
 // (whitelistad i middleware — AGENTS.md). Skonsam mot prod: fast concurrency,
 // tidsgräns per förfrågan, inga återförsök, hårt tak på antal sidor.
 //
 // Körning: node verktyg/doda-lankar.mjs [--bas=http://localhost:3000] [--djup=3]
+// Avslutskoder: 0 = mätvärde levererat · 1 = grind/fel (fönstret var ej
+// mätbart) · 2 = driftfönster, rapport kasserad (inget mätvärde).
 // Lämnar:  data/vakten/doda-lankar-<datum>.json + sammanfattning på stdout
 
 import fs from "node:fs";
 import path from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+
+const koraKommando = promisify(execFile);
 
 const args = process.argv.slice(2);
 function argument(namn, standard) {
@@ -24,9 +56,16 @@ function argument(namn, standard) {
 }
 const BAS = argument("bas", "http://localhost:3000").replace(/\/$/, "");
 const DJUP = parseInt(argument("djup", "3"), 10);
+const TVINGAD = args.includes("--tvinga");
 const SAMTIDIGA = 6;
 const TIDSGRANS_MS = 20_000;
 const TAK_SIDOR = 5000;
+const DRIFT_TAK = 0.05; // > 5 % serverfel/nätfel = driftfönster, ej länkgraf
+const DEPLOY_LAS = process.env.AK1A_DEPLOY_LAS || "/tmp/ak1a-deploy.lock";
+const BYGG_MONSTER = (process.env.AK1A_BYGG_MONSTER || "next build,npm ci --no-audit")
+  .split(",")
+  .map((m) => m.trim())
+  .filter(Boolean);
 
 // Sessionstyrda app-ytor omdirigerar vid anonym crawling och är inte "döda" —
 // de mäts av gränsnittsvakten i stället. API-rutter är inga länkmål.
@@ -40,6 +79,51 @@ let internationellt = 0; // totalsvarvning (takvakt)
 
 function logg(handelse, data) {
   process.stderr.write(`[doda-lankar] ${handelse}: ${JSON.stringify(data)}\n`);
+}
+
+async function lasHollare() {
+  // fuser listar processer med filen ÖPPNAD — en flock-hållare bär en öppen
+  // fd under hela byggfönstret. Filens existens säger inget (flock städar ej).
+  try {
+    const { stdout } = await koraKommando("fuser", [DEPLOY_LAS]);
+    const pids = stdout.split(/\s+/).filter(Boolean);
+    return pids.length > 0 ? pids.join(",") : null;
+  } catch {
+    return null; // exit 1 = ingen hållare; verktyg saknas = samma bedömning
+  }
+}
+
+async function lasByggprocess() {
+  for (const monster of BYGG_MONSTER) {
+    try {
+      await koraKommando("pgrep", ["-f", monster]);
+      return monster; // exit 0 = matchande process lever
+    } catch {
+      // ej hittad — nästa mönster
+    }
+  }
+  return null;
+}
+
+async function verifyeraMatfonster() {
+  const hollare = await lasHollare();
+  if (hollare) {
+    console.error(`GRIND: deployfönster aktivt — låset ägs av PID ${hollare}; mätning avbryten (o47 §2).`);
+    process.exit(1);
+  }
+  const bygg = await lasByggprocess();
+  if (bygg) {
+    console.error(`GRIND: bygg/install-process pågår ("${bygg}"); mätning avbryten (o47 §2).`);
+    process.exit(1);
+  }
+  for (const sond of ["/", "/kurser"]) {
+    const { status } = await hamta(sond);
+    if (status !== 200) {
+      console.error(`GRIND: basen ej frisk — ${sond} svarade ${status || "inget svar"}; mätning avbryten (o47 §2).`);
+      process.exit(1);
+    }
+  }
+  logg("matfonster", { grunder: "gröna", las: DEPLOY_LAS });
 }
 
 async function hamta(sokvag) {
@@ -131,9 +215,25 @@ async function crawla(fron, djup) {
   });
 }
 
+if (!TVINGAD) await verifyeraMatfonster();
+
 const fron = await lasSitemap();
 await crawla(fron, DJUP);
 logg("crawlad", { sidor: sidor.size, ms: Date.now() - t0 });
+
+// Driftfel-tak (artefaktdoktrinen): ett byggfönster som öppnar MITT I
+// mätningen ger massiva 5xx/nätfel — det är drift, inte döda länkar, och
+// får aldrig bokföras som fynd (o47: 1 616×500 = 100 % driftfel).
+const driftfel = [...sidor.values()].filter((p) => p.status === 0 || p.status >= 500).length;
+const driftAndel = sidor.size > 0 ? driftfel / sidor.size : 0;
+if (!TVINGAD && driftAndel > DRIFT_TAK) {
+  console.error(
+    `DRIFTFÖNSTER: ${(driftAndel * 100).toFixed(1)} % av ${sidor.size} sidor svarade 5xx/nätfel ` +
+      `(tak ${(DRIFT_TAK * 100).toFixed(0)} %) — rapporten kasseras, ingen fyndfil skrivs (o47 §2). ` +
+      `Diagnostik vid driftfynd: kör om med --tvinga (utdata märks diagnostik, är ALDRIG mätvärde).`
+  );
+  process.exit(2);
+}
 
 for (const [maltal, s] of kallor) {
   const post = sidor.get(maltal);
@@ -155,6 +255,7 @@ const rapport = {
   tid: new Date().toISOString(),
   sekunder: Math.round((Date.now() - t0) / 1000),
   djup: DJUP,
+  tvingad: TVINGAD,
   kontrolleradeSidor: sidor.size,
   dodaLankar: doda.length,
   omdirigeringar: omdirigeringar.length,
@@ -171,11 +272,19 @@ const rapport = {
   omdirigeringar,
 };
 
-const utFil = path.join(process.cwd(), "data", "vakten", `doda-lankar-${new Date().toISOString().slice(0, 10)}.json`);
+// Filskydd: en rapportfil skrivs ALDRIG över — samma dagens tidigare mätning
+// (t.ex. ett driftfynds bevisfil) bevaras och klockslagssuffix skiljer nästa.
+const datum = new Date().toISOString().slice(0, 10);
+let utNamn = `${TVINGAD ? "doda-lankar-diagnostik-" : "doda-lankar-"}${datum}.json`;
+let utFil = path.join(process.cwd(), "data", "vakten", utNamn);
+if (fs.existsSync(utFil)) {
+  utNamn = utNamn.replace(".json", `-${new Date().toISOString().slice(11, 19).replace(/:/g, "")}.json`);
+  utFil = path.join(process.cwd(), "data", "vakten", utNamn);
+}
 fs.mkdirSync(path.dirname(utFil), { recursive: true });
 fs.writeFileSync(utFil, JSON.stringify(rapport, null, 2) + "\n");
 
-console.log(`Kontrollerade ${sidor.size} unika sökvägar på ${BAS} (${rapport.sekunder} s)`);
+console.log(`Kontrollerade ${sidor.size} unika sökvägar på ${BAS} (${rapport.sekunder} s)${TVINGAD ? " [DIAGNOSTIK — ej mätvärde]" : ""}`);
 console.log(`DÖDA LÄNKAR: ${doda.length}`);
 for (const d of doda.slice(0, 60)) {
   console.log(`  ${d.status || "FEL"} ${d.mal}  ← ${d.kallor.slice(0, 3).join(", ") || "(sitemap)"}`);

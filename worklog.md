@@ -13002,3 +13002,47 @@ data/blogg/ orörd; syskonens ytor orörda. [fabrik]
 ## SPÅR 10 s10-u1 (manifest auto-s10-1789671929408, 1/3) — 2026-09-17 21:07–21:2x lokal: KVÄLLS-TOTAL — kvartalsmallen dr-total GRÖN i kvällsläge (5 kedjor 180,9 s) + O9:s köpost (2) STÄNGD KOMPLETT + AUTO-6:s falska RÖT oberoendeförklarad + WAL-seriens första rörelse [fabrik]
 
 OBJEKT (anspråk FÖRE ingreppet, data/vakten/auto-s10-1789671929408-u1-ansprak.md ~21:12): efter duplikatkontroll stod O9:s köpost (2) öppen — "valDump-kuren testas i dr-total.mjs-kontext" — bekräftad öppen även i u2:s kvällscommit 9d24c73b ("kvarstår … vid nästa total"); u2 ägde kvälls-DR/kur-regressionen/KVALL-RPO (AUTO-7 GRÖN 11,0 s = punkt 20, RPO 21:09), u3 ägde beslutsklocka-histogrammet + kedja3-loppet 21:12. LEVERANS: node verktyg/dr-total.mjs 21:12–21:16 exit 0 — ALLA FEM KEDJOR GRÖNA i kvällsläge (RAM-grind 1 107 MB): kedja 1 19,9 s (RTO 11,7 s = seriepunkt 21 · fel 788/0 · public 60 tabeller/1 286 328 rader · +storage 68/1 286 464 · alla scheman 99/1 286 724) · kedja 5 kirurgi 73,2 s (källa 1 195 452 rader checksumma 4ae9852b…, sabotage VÄGRADES+rullbak, recept 12,9 s checksumma IDENTISK) · kedja 2 34,6 s (163 039 rader · 0 dubblett · COPY 5 631 r/s) · kedja 4 28,5 s · kedja 3 24,7 s — TOTALT 180,9 s (DR-TOTAL-2026-09-17-AUTO.md = dagens första TOTAL). KÖPOST (2) STÄNGD på två ben: (a) DESIGNBEVIS — dr-total startar barnen UTAN --fil (kod ~rad 235, cwd REPO_ROT) → kedja 1:s default = ABSOLUT dumpkatalogväg → NOTIS-grenen kan ej triggas i total-kontext = "oförändrat beteende" BEVISAT (AUTO-8 GRÖN utan NOTIS); (b) EXPLICIT NOTIS-BEVIS — AUTO-6:s exakta bladnamns-kommando efter totalen: NOTIS-rad + GRÖN RTO 13,7 s (AUTO-9 21:18 = seriepunkt 22) — beviskedja AUTO-5 → AUTO-7 (u2) → AUTO-9: regressionen har ingen obevisad gren. OBEROENDE FORENSIK av AUTO-6:s falska RÖT (tagna innan u2:s protokoll lästes — korsvaliderar deras §3 båda vägar): dumpen oskadd (31 733 199 B, mtime 02:30:29, gzip -t OK, slutmarkörer i svans) · egen markörkoll 21:09:51 GRÖN 1 307 940 rader/4,7 s · 137 ms-BEVISET (AUTO-6:s hela körning 19:07:21.786→.923Z — äkta koll = 4–7 s ⇒ verktyget hann ALDRIG läsa filen ⇒ snabb-RÖT-grenen "Filen kunde inte läsas" = AUTO-3-klassen, ej dumpskada; PG17 orörd = fail-fast-riktningen höll) · GIT-BEVISET (sista fil-commit c3b871f7 09-16 — kuren fanns aldrig i historiken; u2:s återleverans 21:08:24 fångad som M +16/−1, deras commit 9d24c73b landade under mitt fönster = COMMIT-NORMEN följd). WAL-SERIENS FÖRSTA RÖRELSE: 497×3 (u2:s läslägespunkter) → 529 MB efter kvällens restore-aktivitet — WAL stabil under läsning, växer med PG-skrivsessioner, under 1 GB-taket; norm: aktivitetskontext protokollförs vid WAL-mätning. STÄDNING EGENMÄTT (uppdragets fjärde led): PG17 down (pg_lsclusters) · base endast OID 1/4/5 + tom pgsql_tmp · disk 72 GB · låsfilerna flock-viloläge · /tmp enligt mall. Radtalet 1 286 328 nu SJU oberoende instrument samma dygn (morgon ×2 · eftermiddag ×2 · kväll ×2 · zcat). Kö: (1) nattens 02:30-bladväxling = retrospektivt pump-noll-bevis (u2); (2) WAL per kvartal med aktivitetsnotis; (3) COMMIT-NORMEN standing; (4) TOTAL i kvartalssviten senast 2026-12-17. KVD: src/ orörd = INGET bygge (ingen kodändring; tsc-baslinjen orörd — pre-commit-grinden verifierar); R2 orörd; data/blogg/ orörd; u2/u3:s ytor orörda (u3:s DR-KEDJA3-AUTO.md + DR-BESLUTSKLOCKA-KVALL.json lämnade ocommittade åt dem; min total-kedja3 = AUTO-2); node-kanalen genomående. Leverans: data/forskning/DR-OVNING-2026-09-17-KVALL-TOTAL.md + DR-TOTAL-2026-09-17-AUTO.md + DR-PROV-2026-09-17-AUTO-{8,9}.md + DR-KEDJA5-2026-09-17-AUTO.md + DR-KEDJA2-2026-09-17-AUTO-2.md + DR-PROV-2026-09-17-KEDJA4-2.md + DR-KEDJA3-2026-09-17-AUTO-2.md + anspråksfil + DRIFTSBOKEN S10-U1 (O9) + denna sektion. [fabrik]
+
+## SPÅR 10 s10-u3 (manifest auto-s10-1789671929408, 3/3) — 2026-09-17 21:11–21:20 lokal: KVÄLLS-KEDJA-3 — serverfils-arkivet restore-bevisat fristående (flock-först) + BESLUTSKLOCKAN = DETERMINISTISK KVARTSKLOCKA (O9:s kö 4 stängd) + KÄLLCADCENSFYND [fabrik]
+
+OBJEKT (anspråk FÖRE ingreppet ~21:11, data/vakten/auto-s10-1789671929408-u3-ansprak.md): duplikatkontroll
+visade kvällens lattice — u2 ägde kvälls-RPO + kuråterleverans (9d24c73b, 21:06–21:11), u1 ägde
+KVÄLLS-TOTAL (anspråk ~21:12, 5 kedjor GRÖNA 180,9 s), u4 körde AUTO-7/8-dr-ovning — kvar för mig:
+ENDA icke-idag-levererade kvartalskedjan KEDJA 3 (serverfiler, senast 09-16 13:40) + O9:s öppna kö
+(4) episodkarta + cadensmätning. LEVERANS: node verktyg/dr-kedja3.mjs 21:11–21:12:50 GRÖN exit 0
+(flock-först — u1:s total-kedja 3 köade bakom, deras AUTO-2 = korsbevis): sabotage 3/3 gripna ·
+repo-tar 144 MB gzip GRÖN 8 892 poster/0 exkluderingsbrott · restore RTO 3,4 s — 8 322 filer + 570
+kataloger == listat, src 675 filer/203 930 rader · spot-diff 2 IDENTISKA + 2 SKILJER-FÖRKLARADE
+(kvällens 20:23/20:30-commits efter arkivets mtime 09-16 13:40: DRIFTSBOKEN + package.json/
+next@16.3.5-patchen) · git-bundle verify + klon GRÖN 9,6 s/1 195 commits + ancestor GRÖN mot
+levande HEAD · PG17 nere ankomst+slut, /tmp städad (DR-KEDJA3-2026-09-17-AUTO.md).
+KÖ 4 STÄNGD — BESLUTSKLOCKAN KARTLAD TILL KVARTSNIVÅ (läsande COUNT-sond via PGPASSFILE,
+DR-BESLUTSKLOCKA-2026-09-17-KVALL.json): board_decisions = DETERMINISTISK KVARTSKLOCKA — exakt
+8 rader per :00/:15/:30/:45 → 32/h → 768/dygn, 24 hela timmar utan undantag, enda avvikelsen i
+7-dagsserien 09-13 (765 = −3); organ_health_logs = den äkta episoden (9/3 rader vid 02/04/08/10/
+14/16/20); O9:s "episodisk (rondstyrd?)"-dom för board OMSKRIVEN — deras +0-på-9,2-min låg mellan
+:30- och :45-batcherna; värsta-falls-RPO får sin TREDJE oberoende beräkningsväg: 18 984+768+~36 ≈
+19 788 == O9:s ≈19 800 == u2:s +19 780. FYND NYTT GAP (huvudagentkö): kedja 3:s KÄLLA saknar
+mekanisk cadens — användar-crontaben (mätt) har INGEN rad för backup-server-filer.mjs (endast
+02:30 pg_dump + 02:40 moln-JSON); hybrid-sync.log SENASTE körning 09-09 20:09 med dubbla fel
+("ssh-nyckel saknas (…hetzner_key)" + "system-events-full HTTP 500") = datorns hybridkedja DÖD i
+8 dygn; nyaste paket agenttriggat 09-16 13:40 ⇒ katastrof ikväll = restore GRÖN men ~32 h
+förlorade commits. Kö: (a) server-cron ~02:50 + retention -mtime +30 i samma rad ELLER (b)
+reparera datorns synka.cmd (hetzner→contabo_key) — crontaben ägs av huvudagenten, ingen ändring
+av agenten. DR-TOTAL-KONTEXTEN (O9:s kö 3): KODBEVISREPLIK till u1:s körbevis — dr-total.mjs:235
+anropar kedjorna UTAN --fil-argument → defaultgren hittaSenasteDump() — valDump():s
+resolveringsgren berörs aldrig; u2:s "absolut väg"-antagande preciseras. KOLLISIONSBOKFÖRING:
+min dr-rpo-diff 21:13 skrev till u2:s committade KVALL-JSON-sökväg — verifierad byte-identisk
+(git status/diff tomma), deras fil orörd; min körning omklassificerad till oberoende replik (total
++19 612 == deras; mätvärden oförändrade 21:09→21:13). STÄDNING EGENMÄTT: PG17 down · inga
+skrap-svansar · låsfil flock-viloläge · disk 72 GB. KVD: node node_modules/typescript/bin/tsc
+--noEmit = 0 rader exit 0 (egen mätning; src/ orörd = INGET bygge) · R2 orörd (.pgpass endast
+PGPASSFILE-pekare; prod DB endast LÄST) · data/blogg/ orörd · syskonens ytor orörda (u2:s KVALL-
+JSON, u4:s AUTO-8, u1:s totaldelprotokoll). Kö till nästa vakt: (1) serverfilscadensen
+(huvudagent); (2) nattens 02:30-bladväxling — u2:s retrospektiva pump-noll + MIN PREDIKTION:
+board_decisions i blad 8 skall vara 47 810+768 = 48 578 ± 8; (3) 09-13-anomalien (765 i
+768-serien — vilka tre kvartar förlorades?); (4) organ-klockans 9/3-mönster kan kopplas till
+styrelserondens schema vid nästa rond-läge. Leverans: data/forskning/DR-OVNING-2026-09-17-
+KVALL-KEDJA3.md + DR-KEDJA3-2026-09-17-AUTO.md + DR-BESLUTSKLOCKA-2026-09-17-KVALL.json +
+anspråksfil + DRIFTSBOKEN (statusradens nya led + S10-U3-sektionen + tre kö-radspreciseringar) +
+denna sektion. [fabrik]

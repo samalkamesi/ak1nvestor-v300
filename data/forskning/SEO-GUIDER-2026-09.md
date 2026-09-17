@@ -49,7 +49,7 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B18 | livsmedelsaktier-sa-analyserar-du-livsmedelsbolag | livsmedelsaktier | 1333 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 3 (kursankare se-14-livsmedel); avgränsas mot B7 (underfamilj) och B13 (tillverkare kontra butik) | data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json |
 | B19 | ehandelsaktier-sa-analyserar-du-plattformsbolag | e-handelsaktier | 1206 | UTKAST v1 (2026-09-17, s3-u2) — sektoromgång 3 (kursankare v15-natverkseffekter; de kvarvarande se-XX-ankarena saknar bärning men tillväxtgrenen bär 5 fullrådatasbolag: SHOP/MELI/ABNB/UBER/SE); avgränsas mot B13 (butik kontra marknadsplats), B11 (prenumeration kontra transaktion), B8 (stil kontra affärsmodell) | data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json |
 | B20 | lyxaktier-sa-analyserar-du-lyxbolag | lyxaktier | 1221 | UTKAST v1 (2026-09-17, s3-u1) — sektoromgång 3 (kursankare se-05-lyxsektorn); levererad TROTS koordinatnoten "endast LVMH i universumet": LVMH som djupanker ur universumets rådata (2026-09-03) + live-verifierade officiella källor (LVMH helårsrapport 2025, Hermès 2025, Arnault-ägarskap) — granskningskön avgör; avgränsas mot B7 (lyx som konsument-underfamilj) och B18 (varumärkesägare, olika hyllor) | data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json |
-| B21 | logistikaktier-sa-analyserar-du-fraktbolag | logistikaktier | — | PÅGÅR s3-u2 (2026-09-17, auto-s3-1789677929531) — sektoromgång 4 (kursankare se-04-logistiksektorn + se-15-logistik, spårets enda dubbelankare); LVMH-precedensen: 0 universumsbolag, djupanker DSV + komparatorer Maersk/Kuehne+Nagel/DHL ur live-verifierade officiella rapporter — granskningskön avgör | data/blogg-utkast/logistikaktier-sa-analyserar-du-fraktbolag.json |
+| B21 | logistikaktier-sa-analyserar-du-fraktbolag | logistikaktier | 1169 | UTKAST v1 (2026-09-17, s3-u2) — sektoromgång 4 (kursankare se-04-logistiksektorn + se-15-logistik, spårets enda dubbelankare); LVMH-precedensen: 0 universumsbolag (165 bolag, 10 branscher, 0 logistik — verifierad vid val), djupanker DSV (årsrapport 1164/2025, investor.dsv.com via GlobeNewswire pga IR-certifikat) + komparatorer Maersk FY2025 (maersk.com) + Kuehne+Nagel FY2025 (newsroom.kuehne-nagel.com) live-verifierade; syskonens Ö9-öppna-notis respekterad — promptens svenska-krav styrde valmotivet, Ö9 bil-en förblir öppen; avgränsas mot B6 (tillverkning), B10 (flygplan), B19 (flödets beställare — B21 äger transportskedjan) | data/blogg-utkast/logistikaktier-sa-analyserar-du-fraktbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 
@@ -67,7 +67,8 @@ engelska/arabiska UTBILDNINGSformuleringar; disclaimer-sista-rad översatt samma
 NOT s3-u1 (2026-09-17): lyx-ankaret levererades ändå som B20 (samma dygn som noten
 skrevs) — LVMH-ankaret bar hela vägen med kompletta räkneexempel, och källorna
 live-verifierades (lvmh.com, Hermès, Bloomberg/Yahoo). Kvarvarande ankare utan
-universumsbärning: logistik, krypto, utbildning.
+universumsbärning: krypto, utbildning (logistik inlöst som B21 av s3-u2 samma
+väg som lyx→B20 — spårets enda dubbelankare se-04+se-15; 0/165 bolag vid leverans).
 
 | # | Slug | Primärt sökord (EN) | Ord | Status | Fil |
 |---|------|---------------------|-----|--------|-----|

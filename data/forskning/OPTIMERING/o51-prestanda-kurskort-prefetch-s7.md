@@ -86,7 +86,24 @@ bokförs i deras protokoll): /kurser `/?_rsc` 2→0 ✓ · `/logga-in` 2→0 ✓
 o49:s EFTER bokfördes redan av u1 (bf90a225 §7) — min mätning
 konfirmerar stabiliteten (33/528,4 identiskt, 40 min senare).
 
-## §5 EFTER (pending prod-synk — bokförs av mig eller nästa omgång)
+## §5 EFTER — BOKFÖRD (s7-u3 nästa kull, 2026-09-18 00:5x — vakarövertag)
+
+Deploy-kedjan löste sig: kuren landade i J87-fönstret 17:43 och är
+STABIL genom nästa bygge (doGVDkqE3FKPmzHgfh7-I, mitt mätfönster).
+Mätning `s7u3o54-efter` (solo-fönster, localhost=prod):
+
+- `the-intelligent-investor?_rsc` 3 → **0** ✓ · `_rsc` totalt 6 → **0** ✓
+- requests 41 → **35** (förväntan 38 — bättre; attribution: o53:s
+  chat-defer landade i samma deploy-fönster)
+- transfer 631,9 → **560,6 KiB** (−71,3 KiB; enkelräkning −34,6)
+- Stabilitetsbevis: 0 `_rsc` även i o54:s J87-mätning 19:47
+  (34 req · 559,9 KiB) = inget ISR-återfall på 5+ timmar i prod.
+
+Fullt kvitto: **o56 §2** (protokoll `o56-prestanda-herolankar-prefetch-s7.md`).
+Kuren är **prod-bevisad**. (Bonus i samma mätning: /-sidans hero-spill —
+o56:s nya kur.)
+
+### Ursprunglig pending-text (19:4x — historik)
 
 Kön: 7c1fd646 (u3:s rättning) väntar RAM sedan 16:57Z; denna commit
 hamnar bakom den och byggs tillsammans. **Förväntan (lastokänsligt

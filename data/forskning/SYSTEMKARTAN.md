@@ -1435,12 +1435,41 @@ patch-köfallet trots r58 — rotorsaka igen med 11:39Z-loggen som bevis;
 12:00Z); (4) C17 gap 0: importbro './ordlista' (v82-mönstret); (5)
 siffrorns bokmaster 103 vs diskens 105 i nästa rakna-siffror-rebake.
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u3 omgång 13 — A2 + E31 + B13 återdiffade; störst rörelse sedan passning + SSR-läkningen bokförd)
+
+Objektval enligt varv-regeln "störst verklighetsrörelse sedan senaste
+passning": A2 (17 src-commits på larvag-karta.ts sedan 09-16 — hela
+s5-spårets lärvägsdjup låg EFTER passningen), E31 (kartans äldsta stämpel
+09-15 + D23:s ointegrerade speglar-fakta), B13 (31 loggträffar;
+bolagsunivers 14 commits). Allt EGENMÄTT i arbetsytan 09-17 (egna
+svitkörningar med sanna exitkoder, node-läsning av JSON, find/grep,
+loopback-curl, git log) — aldrig worklog. DRIFTFYND: förra omgångens AKUTA
+SSR-500 (/kurser /analyser /blogg) är LÄKT — /kurser 200 · /blogg 200 ·
+/laroplan 200 · /api/larvag 200 (egna loopback-sonder): prod-synkens
+RAM-blockerade bygge landade; omgång 12:s kö 1 kan avbokas.
+
+| System | Före (passning) | Nu (mätt 09-17) | Domkraft |
+|---|---|---|---|
+| A2 | 352 kurser, synk GRÖN (09-16) | 396 kurser; synk EGEN GRÖN 396=396=396 · 21 profiler · 0 fantomer; karta 435 r (konstant 396); larvag.ts 458 r orörd sedan v99; 16 frontb-sonder; /laroplan 200 | E01-rebasten stängde registergapet; gap 1 (regressionssvit) + gap 3 (E2E) lever |
+| E31 | MÖS 107/0/0 (09-15); kön 320; speglar omätta | MÖS EGEN 107/0/0 (7,2 s, tredje gröna); ordlista 2 154→2 745 r; kön 320 oförändrad; termbankstillägg 0 poster; 18+18 speglar; tier-speglar preciserade (prenumeration/medlemskap FINNS, portfölj-ytorna SAKNAS); I1 0 artefakter | rapportnamn fast 2026-09-02 (vilseledande); D23-korsnotis integrerad |
+| B13 | univers 120; sviter 32/0 + 50/0 (09-16) | univers 153 (+33); sviter EGEN 32/0 + 50/0 exit 0; korstabell-grund frusen 09-10 (100 r) = 53 bolag efter; member/portfolio fortfarande vaktlös; cron dubbel-driven, 0 cacher (nästa rond 10-01) | glidningen fördjupad; A3-korsnotis (portfoljgrund/balans-lagren) |
+
+Poäng: A2 LEVER 7 · E31 PÅGÅR (I1) 7 · B13 LEVER 8 — OFÖRÄNDADE
+(preciseringsdokvågor, E33/B14-precedensen). Snitt 7,5 / 286 / 38
+oförändrat. Sidofixar: A1/A2-tabellradernas kurstal 390→396 (föråldrat av
+9e3bbf76:s rebake; samma sidofix-klass som 223140e1:s 381→390).
+
+Kö: (1) korstabell-cadansen (rop eller auto vid universumsväxt — 53 bolag
+väntar); (2) regressionssvit för raknaLarvag (16 frontb-sonder att hämta
+mönster ur); (3) motorvalideringsrapportens datumstämpel; (4)
+member/portfolio-sessionsvakt (B13 gap 3); (5) I1-audit (E31:s eget mål).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (390 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
-| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 390 kurser, paritetssynk GRÖN 390=390=390 (egen körning 09-17), front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
+| A1 | Kursplattformen (396 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | Registret 396 (rebake stängde E01); synk EGEN GRÖN 396=396=396 · 21 profiler (09-17); kärnan larvag.ts orörd sedan v99; 16 front-B-sonder; regressionssvit för rekommendationsreglerna + E2E-inloggning saknas |
 | A3 | AI-Mentorn (24 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 780/1-testbevis över 30 sviter (mätt 09-17; E01 registeräkthet RÖD 358/390 — rebake väntar, gapet växer 17→23→32); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
@@ -1451,7 +1480,7 @@ siffrorns bokmaster 103 vs diskens 105 i nästa rakna-siffror-rebake.
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-16, datakällor per rad); motorvalidering 107/0/0 egen körning; kvar: 0 egen svit, historik/utfall lagras ej (mätt), korstabell-kopplingen konceptuell ej kodad |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-16 + /api/netnet färsk live-sond); universum fast 25 (mätt); egen testsvit saknas fortfarande |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen superanalys-2026 svit-testad (kontroll 22) men klientfilen 0 sviter; länk-gap MOTBEVISAT (MODUL_KURS_LANK lever); klientens vikter oberoende kopia av kärnans (mätt 09-16) |
-| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (mätt 09-16); korstabell-grund frusen 09-03 (100 r) mot bolagsunivers 120; member/portfolio UTAN sessionsvakt på publik yta (/min-portfolj, mätt); peer-median = designbeslut (AKM3 §10.10) |
+| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 22 kvartalsfiler: 12 bolagspaket + 10 kalendrar, mätt 09-16); schemalagd re-run saknas |
@@ -1470,7 +1499,7 @@ siffrorns bokmaster 103 vs diskens 105 i nästa rakna-siffror-rebake.
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (66 klara manifest av 67, +41/dygn mätt 09-16; pumpor i ps; beslutsminne 48 poster); NYTT GAP mätt 09-16: dokvågsuppdrag pekar syskon på SAMMA kartfil utan lås (3 commits/19 min + clobberbevis); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
-| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |
+| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | **FLAGGA** | 7 | PROD-TÖMT 09-16 (mätt): system_events tom sedan 13:46, arkivet 09-16 07:24 = enda kopian (27,5 MB), återimport MEKANISERAD men blockerad (dedupe-läge saknas, mätt) + KURERAD ALTER v2 FÖRLORAD i clobber (commit a3756ab7 bokför leveransen men saknar filen — disk/HEAD bär V1, dubbelt underkänd; enda v2 = index-provets protokoll rad 33); DR = SQL + moln-JSON (mätt); översättningskö 320 oförändrad (kund-SQL krävs) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
@@ -1577,7 +1606,21 @@ oförändrat (kurs-access-testsvit: 0 träffar i verktyg/, mätt).*
   quiz-frågornas kvalitet/entropi omätet (ingen dubblerings-/svårighetsgrads-
   analys); (4) /labb-casen (201 st) saknar uppdateringspipeline.
 
-## A2. Lärvägen + läroplanen — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## A2. Lärvägen + läroplanen — LEVER — 7/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD efter s5-spårets
+lärvägsdjup-vågor — registret 352 → 396 kurser (+44) sedan 09-16-passningen;
+slutrebasten (9e3bbf76, "358→396") stängde E01-registergapet atomärt (karta +
+sökindex + speglar + siffror + llms i EN commit). ALLT EGENMÄTT 09-17:
+larvag-karta.ts 435 r med LARVAG_ANTAL_KURSER = 396 i koden; larvag.ts 458 r
+OFÖRÄNDRAD sedan våg 99 (deterministiska kärnan orörd genom hela tillväxten);
+larvag-synk EGEN KÖRNING GRÖN 396=396=396 · 21 profilkurser · 0 fantomer;
+LarvagKort lever på min-sida (rad 857); /laroplan 200 + /api/larvag 200
+(loopback). FRONT B-leveransbevisen växt till 16 frontb-skript (senaste
+_s5u3o11) men gap 1 lever: ingen EGEN regressionssvit för raknaLarvag-reglerna
+(varför-rads-prioriteten kan regressera tyst); gap 3 lever (E2E med levande
+inloggning overifierad). Score LEVER 7 kvar — kvantitativ tillväxt, kärnan
+orörd, gapen oförändrade (E33/B14-precedensen).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): H1 STÄNGT sedan våg 99 —
 STYRELSE-ADMIN-MEGA.md:949 "H1 LÄRVÄGS-SYSTEMET KLART (front B): status­
@@ -2023,7 +2066,22 @@ renderingen vid extrema värden förblir E2E-overifierad. Score 7 kvar
   säkert; (3)~~kalkylatorn utan länk per variabel~~ MOTBEVISAT 09-16:
   MODUL_KURS_LANK + forklaPoang-import lever i akm1-calculator.tsx.
 
-## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD efter s2-spårets
+dataset-djup-vågor — bolagsunivers.json 120 → 153 bolag (+33; 458 144 B,
+senaste skrivning 09-17 09:49) sedan 09-16-passningen. Båda egna sviterna
+GRÖNA igen i egen körning (riskportfölj 32/0 + uppföljning 50/0, exit 0 —
+tredje dokumenterade gången). SKÄRPNING: korstabell-grunden fortfarande FRUSEN
+(mtime 09-10 16:33, 83 582 B, 100 rader) medan universum nått 153 — glidningen
+FÖRDJUPAD till 53 bolag utan korstabellrad; gap 1 akutare (cadans/rop vid
+universumsväxt). member/portfolio fortfarande UTAN lasMedlemSession (grep tomt
+— gap 3 lever). Uppföljnings-cronen DUBBELT driven (/etc/crontab + vercel.json,
+mätt) men 0 fundamental/akm2/akm3-cacher på disk (endast vagfundament-VOLV_B
+09-14 = B7:s kända) — månadsronden 09-01 fyllde ej, nästa 10-01. KORSNOTIS A3:
+mentorns nya lager portfoljgrund + portfoljbalans konsumerar universumet —
+B13:s underlag matar numera AI-Mentorn direkt. Score LEVER 8 kvar
+(preciseringsdokvåg).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): båda egna sviterna gröna
 omätta (riskportfolj 32/0 + uppföljning 50/0, egna körningar exit 0). TVÅ
@@ -2779,7 +2837,22 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   demoklient-G1 röd — demodatot saknar fullständigt AKM2Resultat; fixa
   fixture eller testkontrakt innan B2B-aktiveringspaketet hämtas fram.
 
-## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-15)*
+## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD (kartans äldsta
+stämpel, 09-15). Motorvalidering EGEN KÖRNING: 107 PASS / 0 FAIL / 0 SKIP
+(7,2 s) — MÖS-lagrets tredje dokumenterade gröna (09-13, 09-15, 09-17); notis:
+rapporten skrivs till FAST filnamn motorervalidering-2026-09-02.md (vilseledande
+namn, färskt innehåll — köpost: datumstämpel). Nyckelfilerna OFÖRÄNDADE i src
+(motor 820 r · lager 890 r · termbank 540 r · kalla 346 r · kontroller 342 r)
+men ordlista.ts 2 154 → 2 745 r (+591). Fallback-kön 320 poster OFÖRÄNDRAD;
+termbank-tillagg.json TOM (0 poster). Speglar: 18 page.tsx per språk (en/ar);
+rörelsen sedan 09-15 är PRESTANDAKurer från s7-spåret (bloggspegel-listornas
+prefetch-kur 8fa5f0ce + CV-kur cd2b68ac), inga innehållsändringar i
+översättningsskiktet. TIER-SPEGLARNA PRECISERADE (D23-korsnotis, egen find):
+prenumeration + medlemskap HAR speglar (en/ar) men portfölj-ytorna SAKNAS
+fortfarande — gap 4 lever med exakt yta. I1-auditen OPÅBÖRJAD (0 artefakter,
+mätt igen). Läge PÅGÅR (I1) och score 7 kvar — auditen ÄR I1-läget.*
 
 *Uppdatering 2026-09-15 (s9-u2 omgång 3): det KÖRTA FYNDET nedan är HISTORIK —
 motorvalideringen KÖRD I DENNA DOKVÅG: 107 PASS / 0 FAIL / 0 SKIP (10,8 s),

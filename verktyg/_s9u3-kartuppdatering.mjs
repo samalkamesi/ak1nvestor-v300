@@ -1,178 +1,148 @@
 #!/usr/bin/env node
 /**
- * GENERERAD av verktyg/ — dokvåg s9-u3 omgång 12: kartredigering via node-kanal
- * (clobber-kuren: unika ankarsträngar, EN läsning→EN skrivning, omedelbar commit).
- * Raderas efter commit (worklog-mönstret).
+ * GENERERAD av verktyg/ — dokvåg s9-u3 omgång 13: kartredigering via node-kanal
+ * (clobber-kuren: en-träff-verifiering per ersättning, abort utan skrivning,
+ * EN skrivning, omedelbar commit).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const FIL = 'data/forskning/SYSTEMKARTAN.md';
-let txt = readFileSync(FIL, 'utf8');
-const gjorda = [];
+let text = readFileSync(FIL, 'utf8');
 
-function ersatt(old, ny, label) {
-  const n = txt.split(old).length - 1;
-  if (n !== 1) {
-    throw new Error(`[${label}] förväntade 1 träff, fick ${n} — ABORTERAR utan skrivning`);
-  }
-  txt = txt.replace(old, ny);
-  gjorda.push(label);
-}
+const A2_NOTIS = `*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD efter s5-spårets
+lärvägsdjup-vågor — registret 352 → 396 kurser (+44) sedan 09-16-passningen;
+slutrebasten (9e3bbf76, "358→396") stängde E01-registergapet atomärt (karta +
+sökindex + speglar + siffror + llms i EN commit). ALLT EGENMÄTT 09-17:
+larvag-karta.ts 435 r med LARVAG_ANTAL_KURSER = 396 i koden; larvag.ts 458 r
+OFÖRÄNDRAD sedan våg 99 (deterministiska kärnan orörd genom hela tillväxten);
+larvag-synk EGEN KÖRNING GRÖN 396=396=396 · 21 profilkurser · 0 fantomer;
+LarvagKort lever på min-sida (rad 857); /laroplan 200 + /api/larvag 200
+(loopback). FRONT B-leveransbevisen växt till 16 frontb-skript (senaste
+_s5u3o11) men gap 1 lever: ingen EGEN regressionssvit för raknaLarvag-reglerna
+(varför-rads-prioriteten kan regressera tyst); gap 3 lever (E2E med levande
+inloggning overifierad). Score LEVER 7 kvar — kvantitativ tillväxt, kärnan
+orörd, gapen oförändrade (E33/B14-precedensen).*`;
 
-// ── A1: rubrikdatum ──
-ersatt(
-  '## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-15)*',
-  '## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-17)*',
-  'A1-rubrik',
-);
+const E31_NOTIS = `*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD (kartans äldsta
+stämpel, 09-15). Motorvalidering EGEN KÖRNING: 107 PASS / 0 FAIL / 0 SKIP
+(7,2 s) — MÖS-lagrets tredje dokumenterade gröna (09-13, 09-15, 09-17); notis:
+rapporten skrivs till FAST filnamn motorervalidering-2026-09-02.md (vilseledande
+namn, färskt innehåll — köpost: datumstämpel). Nyckelfilerna OFÖRÄNDADE i src
+(motor 820 r · lager 890 r · termbank 540 r · kalla 346 r · kontroller 342 r)
+men ordlista.ts 2 154 → 2 745 r (+591). Fallback-kön 320 poster OFÖRÄNDRAD;
+termbank-tillagg.json TOM (0 poster). Speglar: 18 page.tsx per språk (en/ar);
+rörelsen sedan 09-15 är PRESTANDAKurer från s7-spåret (bloggspegel-listornas
+prefetch-kur 8fa5f0ce + CV-kur cd2b68ac), inga innehållsändringar i
+översättningsskiktet. TIER-SPEGLARNA PRECISERADE (D23-korsnotis, egen find):
+prenumeration + medlemskap HAR speglar (en/ar) men portfölj-ytorna SAKNAS
+fortfarande — gap 4 lever med exakt yta. I1-auditen OPÅBÖRJAD (0 artefakter,
+mätt igen). Läge PÅGÅR (I1) och score 7 kvar — auditen ÄR I1-läget.*`;
 
-// ── A1: ny återdiff-notis efter notiskedjan ──
-ersatt(
-  '· 21 profiler; quiz 8 223 fortfarande oförändrat).',
-  `· 21 profiler; quiz 8 223 fortfarande oförändrat).
+const B13_NOTIS = `*Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD efter s2-spårets
+dataset-djup-vågor — bolagsunivers.json 120 → 153 bolag (+33; 458 144 B,
+senaste skrivning 09-17 09:49) sedan 09-16-passningen. Båda egna sviterna
+GRÖNA igen i egen körning (riskportfölj 32/0 + uppföljning 50/0, exit 0 —
+tredje dokumenterade gången). SKÄRPNING: korstabell-grunden fortfarande FRUSEN
+(mtime 09-10 16:33, 83 582 B, 100 rader) medan universum nått 153 — glidningen
+FÖRDJUPAD till 53 bolag utan korstabellrad; gap 1 akutare (cadans/rop vid
+universumsväxt). member/portfolio fortfarande UTAN lasMedlemSession (grep tomt
+— gap 3 lever). Uppföljnings-cronen DUBBELT driven (/etc/crontab + vercel.json,
+mätt) men 0 fundamental/akm2/akm3-cacher på disk (endast vagfundament-VOLV_B
+09-14 = B7:s kända) — månadsronden 09-01 fyllde ej, nästa 10-01. KORSNOTIS A3:
+mentorns nya lager portfoljgrund + portfoljbalans konsumerar universumet —
+B13:s underlag matar numera AI-Mentorn direkt. Score LEVER 8 kvar
+(preciseringsdokvåg).*`;
 
-*Återdiff 2026-09-17 (s9-u3 omgång 12): talen 390 → **396 kurser** (siffror.json
-uppdaterad 2026-09-17 · deep-courses.json 396 nycklar/18,8 MB mtime 11:39 idag ·
-larvag-synk EGEN körning GRÖN: register 396 = karta 396 = konstant 396, 21
-profiler, 0 fantomer, exit 0); quiz 8 223 / XP 82 230 / fas-set 18+24 bekräftade
-oförändrade i guldkällan (data/bokmaster/ bär 105 filer mot siffrorns 103 —
-kosmetisk diskrepans, köpost); s5-spåret levererar vidare (idag pe-03 + mt-04).
-DRIFTFYND I FÖNSTRET: /kurser och /kurser/[slug] svarar HTTP 500 i prod (localhost
-+ https, egna sonder ~12:0xZ) — ChunkLoadError: server/chunks/ssr/_1tjfn0y._.js
-SAKNAS på disk (pm2-loggen 12:00Z); rot: patch-köns bygge 11:39Z föll utan ny kod
-och felgrenen "revert hoppas" lämnade .next halvtrasigt (prod-synk.loggen —
-o47:s felgren ÅTER, r58-kuren greppte ej) medan läkningen är RAM-blockerad
-(prod-synken 11:57Z VÄNTAR-RAM 872<2200, agentfabriken håller minnet) — ytan
-onåbar för kunden tills synkens nästa bygge landar; statiskt / 200. Gap 1
-oförändrat (kurs-access-testsvit: 0 träffar i verktyg/, mätt).*`,
-  'A1-notis',
-);
+const NYSEKTION = `## UPPDATERING 2026-09-17 (dokvåg s9-u3 omgång 13 — A2 + E31 + B13 återdiffade; störst rörelse sedan passning + SSR-läkningen bokförd)
 
-// ── A1: Vad-raden 352 → 396 ──
-ersatt(
-  '- **Vad:** Plattformens ryggrad: 352 kurser × 3 språk',
-  '- **Vad:** Plattformens ryggrad: 396 kurser × 3 språk',
-  'A1-vad',
-);
+Objektval enligt varv-regeln "störst verklighetsrörelse sedan senaste
+passning": A2 (17 src-commits på larvag-karta.ts sedan 09-16 — hela
+s5-spårets lärvägsdjup låg EFTER passningen), E31 (kartans äldsta stämpel
+09-15 + D23:s ointegrerade speglar-fakta), B13 (31 loggträffar;
+bolagsunivers 14 commits). Allt EGENMÄTT i arbetsytan 09-17 (egna
+svitkörningar med sanna exitkoder, node-läsning av JSON, find/grep,
+loopback-curl, git log) — aldrig worklog. DRIFTFYND: förra omgångens AKUTA
+SSR-500 (/kurser /analyser /blogg) är LÄKT — /kurser 200 · /blogg 200 ·
+/laroplan 200 · /api/larvag 200 (egna loopback-sonder): prod-synkens
+RAM-blockerade bygge landade; omgång 12:s kö 1 kan avbokas.
 
-// ── C17: rubrikdatum ──
-ersatt(
-  '## C17. Dataset-citeringsmagneterna — LEVER — 9/10 *(uppdaterad 2026-09-15)*',
-  '## C17. Dataset-citeringsmagneterna — LEVER — 9/10 *(uppdaterad 2026-09-17)*',
-  'C17-rubrik',
-);
+| System | Före (passning) | Nu (mätt 09-17) | Domkraft |
+|---|---|---|---|
+| A2 | 352 kurser, synk GRÖN (09-16) | 396 kurser; synk EGEN GRÖN 396=396=396 · 21 profiler · 0 fantomer; karta 435 r (konstant 396); larvag.ts 458 r orörd sedan v99; 16 frontb-sonder; /laroplan 200 | E01-rebasten stängde registergapet; gap 1 (regressionssvit) + gap 3 (E2E) lever |
+| E31 | MÖS 107/0/0 (09-15); kön 320; speglar omätta | MÖS EGEN 107/0/0 (7,2 s, tredje gröna); ordlista 2 154→2 745 r; kön 320 oförändrad; termbankstillägg 0 poster; 18+18 speglar; tier-speglar preciserade (prenumeration/medlemskap FINNS, portfölj-ytorna SAKNAS); I1 0 artefakter | rapportnamn fast 2026-09-02 (vilseledande); D23-korsnotis integrerad |
+| B13 | univers 120; sviter 32/0 + 50/0 (09-16) | univers 153 (+33); sviter EGEN 32/0 + 50/0 exit 0; korstabell-grund frusen 09-10 (100 r) = 53 bolag efter; member/portfolio fortfarande vaktlös; cron dubbel-driven, 0 cacher (nästa rond 10-01) | glidningen fördjupad; A3-korsnotis (portfoljgrund/balans-lagren) |
 
-// ── C17: ny återdiff-notis ──
-ersatt(
-  'testtäckningen föll tyst — netto noll.*',
-  `testtäckningen föll tyst — netto noll.*
+Poäng: A2 LEVER 7 · E31 PÅGÅR (I1) 7 · B13 LEVER 8 — OFÖRÄNDADE
+(preciseringsdokvågor, E33/B14-precedensen). Snitt 7,5 / 286 / 38
+oförändrat. Sidofixar: A1/A2-tabellradernas kurstal 390→396 (föråldrat av
+9e3bbf76:s rebake; samma sidofix-klass som 223140e1:s 381→390).
 
-*Återdiff 2026-09-17 (s9-u3 omgång 12): kvartalsunderlaget 28 → **40 Kön-filer**
-(ls-mätt: 30 bolagspaket sa-laser-du-* + 10 branschkalendrar i
-data/blogg-utkast/kvartal/2026-q3) men /kvartalsdata-src fortfarande 0 filer —
-H3 orört, gap 1 växer bara tyngre av eget underlag. Gap 0 BEKRÄFTAD oförändrad:
-testa-dataset-aspekter.mjs dör fortfarande OFÅNGAT (ERR_MODULE_NOT_FOUND
-'./ordlista' importeras ändelselöst av dataset-medianer.ts — egen körning ~12:0xZ,
-identiskt med 09-15-fyndet). Läckagevakten v98 GRÖN i egen körning (exit 0):
-0 träffar, 153 tickers + 153 namn sökta i 3 utdatafiler — kontraktet §1 håller.
-DRIFTFYND: /dataset, /dataset/energi och aspektrutten svarar HTTP 500 i prod
-(egna sonder; vid 09-15-mätningen 200) — chunk-roten, se A1-notisen; ytan
-omätbar grön tills läkningen. Score 9 kvar — fynden är drift + oförändrade gap.*`,
-  'C17-notis',
-);
-
-// ── C18: rubrikdatum ──
-ersatt(
-  '## C18. SEO/schema/llms.txt — LEVER — 9/10 *(uppdaterad 2026-09-15)*',
-  '## C18. SEO/schema/llms.txt — LEVER — 9/10 *(uppdaterad 2026-09-17)*',
-  'C18-rubrik',
-);
-
-// ── C18: ny återdiff-notis ──
-ersatt(
-  'Kursantalet i G1-gapet rättat 333 → 337. Score 9 kvar.*',
-  `Kursantalet i G1-gapet rättat 333 → 337. Score 9 kvar.*
-
-*Återdiff 2026-09-17 (s9-u3 omgång 12): sitemap 1 998 → **2 239 URL:er**
-(localhost /sitemap.xml 200, loc-räknat, egen sond); sok-index.json FÄRSK: 396
-poster genererade 2026-09-17 (public/, mtime 11:39 — kopplingen lever men
-förblir manuell disciplin, gap 3 kvar); llms.txt + llms-full-txt + robots.txt
-200 (egna sonder); seo.tsx 841 r oförändrad; OG-deploy-kopling fortfarande 0
-träffar i deploya-contabo.sh (gap 2 kvar). SVITFYND: testa-schema-kurser
-UNDERKÄNT med SANN exit 1 (egen körning, exitkod fångad utan pipe) — men ALLA
-sidfel är HTTP 500 på localhost-kurssidor: DRIFT, ej schema-kod (444/0-grönt
-09-15 gällde när ytan svarade; inget schema har ändrats). Searchbot-hälsan:
-/kurser /analyser /blogg /labb /dataset bär 500 i prod JUST NUPT (chunk-roten,
-se A1-notisen) medan statiska SEO-ytor (/, llms×2, robots, sitemap) är gröna.
-Score 9 kvar — felen är drift, inte systemets kod; gap-listan oförändrad.*`,
-  'C18-notis',
-);
-
-// ── Epilog: diff-cykelkrönikan ──
-ersatt(
-  'A3 korsvaliderat mot u2 omgång 8 med identiska oberoende tal (24 lager/80 monsters/E01 358/390).',
-  `A3 korsvaliderat mot u2 omgång 8 med identiska oberoende tal (24 lager/80 monsters/E01 358/390); u2 omgång 9 (09-17) diffade D22/D23 read-only (R2-ytorna, deras sektion). u3 omgång 12 (09-17, tredje varvet — de mest mogna 09-15-systemen) återdiffade A1/C17/C18 utan poängrörelser: A1 396 kurser (larvag GRÖN egen körning) + DRIFTFYND /kurser 500 (chunk _1tjfn0y saknas, patch-köns felgren igen, läkning RAM-blockerad), C17 kvartalskö 40 filer + gap 0 oförändrad + v98 GRÖN + /dataset 500, C18 sitemap 2 239 + sok-index färskt 396 + schemasvit UNDERKÄNT AV DRIFT.`,
-  'epilog',
-);
-
-// ── Ny UPPDATERING-sektion före ÖVERSIKT ──
-const nySektion = `## UPPDATERING 2026-09-17 (dokvåg s9-u3 omgång 12 — A1 + C17 + C18 återdiffade; tredje varvet + AKUT DRIFTFYND: prod SSR-ytor 500)
-
-Val (anspråk FÖRE byggstart, data/vakten/auto-s9-1789646128050-u3-ansprak.md):
-spårets mogenhet-regel — diffade 2026-09-15 i första varvet, ALDRIG
-återdiffade, rankade på störst rörelse: A1 (kurser 352→396 sedan dess), C17
-(kvartalskön 22→28→40 + guldkällans två vågor), C18 (prod-incidenten + döda
-länkar-återmätningen). Syskonrace: u2 omgång 9 (D22+D23) landade under
-fönstret — deras sektion orörd (s10-u3-kuren); u1:s logg tom vid anspråk.
-Allt MÄTT i arbetsytan (node-läsning av guldkällor, egna svitkörningar med
-SANN exitkod, curl-sonder localhost + https, pm2-loggen, prod-synk.loggen,
-fuser-grind mot deployfönster enligt o47 §2) — aldrig worklog-läsning.
-
-A1 LEVER 8 kvar: 396 kurser bevisat tre vägar (siffror.json 09-17 ·
-deep-courses 396 nycklar · larvag-synk EGEN GRÖN 396=396=396, 21 profiler,
-0 fantomer, exit 0); quiz 8 223 / XP 82 230 / fas 18+24 oförändrade;
-bokmaster-diskrepans 105 filer på disk mot 103 i siffror (kosmetik, köpost);
-gap 1 oförändrad (kurs-access-svit 0 träffar). C17 LEVER 9 kvar: kvartalskön
-40 filer (30 paket + 10 kalendrar) mot H3 = 0 src-filer; gap 0 BEKRÄFTAD
-(aspektsviten dör OFÅNGAT på './ordlista'-importbro, identiskt 09-15); v98
-GRÖN 0 träffar (153+153 × 3 utdatafiler). C18 LEVER 9 kvar: sitemap 2 239 ·
-sok-index färskt 396 (09-17 11:39) · llms×2 + robots 200 · OG-kopling 0
-träffar kvar · schemasviten UNDERKÄNT sann exit 1 = 100 % driftfel (500).
-
-DRIFTFYND (AKUT, bokförd i alla tre sektionerna): prod-SSR-ytor 500
-(/kurser /analyser /blogg /labb /dataset × båda nivåerna; localhost OCH
-https, egna sonder 12:0xZ) medan statiskt / 200. ROT: ChunkLoadError —
-server/chunks/ssr/_1tjfn0y._.js SAKNAS på disk (pm2-loggen 12:00Z);
-kedjan: patch-kön (next@16.3.5) föll 11:39Z "bygg misslyckades utan ny
-kod … (revert hoppas: koden är deployad sedan tidigare)" = o47:s felgren
-ÅTER — .next lämnades halvtrasigt och pm2 startad 11:39 kör döda
-chunk-referenser; LÄKNINGEN BLOCKERAD: prod-synken 11:57Z VÄNTAR-RAM
-872<2200 MB medan agentfabriken (3 barn/omgång) håller minnet — prod
-trasig tills RAM frigörs och synkens bygge landar. PARADOX-köpost: en
-grön vakthelkörning rapporterades 11:50:11Z (o48:s bevisrad) medan
-/kurser var 500 vid 12:00 — gränsnittsvaktens SSR-500-detektering ses
-över. r58-kuren ("OMBYGG på god lock när patchbygget faller utan ny
-kod") greppte ej i 11:39-fallet — verkade eller täckte ej patch-grenen.
-
-| Rad | Före → Efter | Skäl (bevis) |
-|---|---|---|
-| A1 | LEVER 8 → **LEVER 8** | Talen 352→396 (tre oberoende källor + synk GRÖN egen) men inga gap stängda/öppnade i koden; /kurser-500 är drift (chunk-roten), ej systemgap — ingen poängrörelse (E33/B14-precedensen) |
-| C17 | LEVER 9 → **LEVER 9** | Lägesbekräftelse: v98 GRÖN, kö 28→40, gap 0+1 oförändrade; /dataset-500 = drift — ingen poängrörelse |
-| C18 | LEVER 9 → **LEVER 9** | Sitemap 2 239 + sok-index färskt = kunskap tillförd; svitens UNDERKÄNT = drift (500), ingen kodförändring; gap 2+3 kvar — ingen poängrörelse |
-
-Snittscore **7,5** (286 poäng / 38 system — oförändrad; tre
-preciseringsdokvågor, syskonens ev. poängrörelser räknas i deras sektioner).
-
-Kö till huvudagenten: (1) **AKUT**: prod-SSR 500 — påskynda prod-synkens
-RAM-fönster (fabriksmellanrum) så läkningsbygget landar; (2) o47:s
-felgren "revert hoppas vid fall utan ny kod" fortfarande levande i
-patch-köfallet trots r58 — rotorsaka igen med 11:39Z-loggen som bevis;
-(3) gränsnittsvaktens SSR-500-detektering (grön 11:50Z mot röd verklighet
-12:00Z); (4) C17 gap 0: importbro './ordlista' (v82-mönstret); (5)
-siffrorns bokmaster 103 vs diskens 105 i nästa rakna-siffror-rebake.
+Kö: (1) korstabell-cadansen (rop eller auto vid universumsväxt — 53 bolag
+väntar); (2) regressionssvit för raknaLarvag (16 frontb-sonder att hämta
+mönster ur); (3) motorvalideringsrapportens datumstämpel; (4)
+member/portfolio-sessionsvakt (B13 gap 3); (5) I1-audit (E31:s eget mål).
 
 `;
-ersatt('## ÖVERSIKT — 38 system', nySektion + '## ÖVERSIKT — 38 system', 'UPPDATERING-sektion');
 
-writeFileSync(FIL, txt);
-console.log('KARTA UPPDATERAD —', gjorda.length, 'ersättningar:', gjorda.join(' · '));
+const ersattningar = [
+  {
+    namn: 'A2-stämpel+notis',
+    hitta: '## A2. Lärvägen + läroplanen — LEVER — 7/10 *(uppdaterad 2026-09-16)*\n\n*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4):',
+    ersatt: '## A2. Lärvägen + läroplanen — LEVER — 7/10 *(uppdaterad 2026-09-17)*\n\n' + A2_NOTIS + '\n\n*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4):',
+  },
+  {
+    namn: 'E31-stämpel+notis',
+    hitta: '## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-15)*\n\n*Uppdatering 2026-09-15 (s9-u2 omgång 3):',
+    ersatt: '## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-17)*\n\n' + E31_NOTIS + '\n\n*Uppdatering 2026-09-15 (s9-u2 omgång 3):',
+  },
+  {
+    namn: 'B13-stämpel+notis',
+    hitta: '## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-16)*\n\n*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5):',
+    ersatt: '## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-17)*\n\n' + B13_NOTIS + '\n\n*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5):',
+  },
+  {
+    namn: 'A2-tabellrad',
+    hitta: '| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 390 kurser, paritetssynk GRÖN 390=390=390 (egen körning 09-17), front-B-bevis; regressionssvit för rekommendationsreglerna saknas |',
+    ersatt: '| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | Registret 396 (rebake stängde E01); synk EGEN GRÖN 396=396=396 · 21 profiler (09-17); kärnan larvag.ts orörd sedan v99; 16 front-B-sonder; regressionssvit för rekommendationsreglerna + E2E-inloggning saknas |',
+  },
+  {
+    namn: 'A1-tabellrad sidofix 390→396',
+    hitta: '| A1 | Kursplattformen (390 kurser, quiz, XP, case) |',
+    ersatt: '| A1 | Kursplattformen (396 kurser, quiz, XP, case) |',
+  },
+  {
+    namn: 'E31-tabellrad',
+    hitta: '| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |',
+    ersatt: '| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |',
+  },
+  {
+    namn: 'B13-tabellrad',
+    hitta: '| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (mätt 09-16); korstabell-grund frusen 09-03 (100 r) mot bolagsunivers 120; member/portfolio UTAN sessionsvakt på publik yta (/min-portfolj, mätt); peer-median = designbeslut (AKM3 §10.10) |',
+    ersatt: '| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |',
+  },
+  {
+    namn: 'ny UPPDATERING-sektion före ÖVERSIKT',
+    hitta: '## ÖVERSIKT — 38 system',
+    ersatt: NYSEKTION + '## ÖVERSIKT — 38 system',
+  },
+];
+
+let fel = 0;
+for (const e of ersattningar) {
+  const n = text.split(e.hitta).length - 1;
+  if (n !== 1) {
+    console.error('ABORT — "' + e.namn + '" har ' + n + ' träffar (krav: 1)');
+    fel = 1;
+    break;
+  }
+}
+if (fel) {
+  console.error('Ingen skrivning gjord.');
+  process.exit(1);
+}
+for (const e of ersattningar) {
+  text = text.replace(e.hitta, e.ersatt);
+  console.log('OK — ' + e.namn);
+}
+writeFileSync(FIL, text);
+console.log('SKREV — ' + FIL + ' (' + text.length + ' tecken)');

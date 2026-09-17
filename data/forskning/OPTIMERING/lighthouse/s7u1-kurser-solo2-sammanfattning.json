@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-17T16:55:01.900Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u1-kurser-solo2",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.45,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 2272,
+        "LCP": 5875,
+        "TBT": 1990,
+        "CLS": 0,
+        "TTI": 6613,
+        "SI": 4741
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 21 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 21 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 632 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 632 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "3.1 s",
+          "rad": "Reduce JavaScript execution time — 3.1 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "7.1 s",
+          "rad": "Minimize main-thread work — 7.1 s"
+        }
+      }
+    }
+  ]
+}

@@ -259,6 +259,7 @@ testa-kurs-metadata.mjs, testa-mediabibliotek.mjs, testa-medlem-auth.mjs.
 | Admin 401/503 | .env på servern: ADMIN_PASSWORD satt? SESSION_SECRET satt ( annars sessionsväg av)? Ändrats den -> `pm2 restart ak1a --update-env`. |
 | SSL-fel | `sudo certbot certificates`; `sudo certbot renew --dry-run`; nginx -t. |
 | Fel data i prod | Sanningen = Supabase system_events; kolla valvets senaste dump för diff. |
+| Sajten 200 men ostylad/utan JS (chunkar 500) | OOM-dödat deploy-bygge raderade .next-tillgångar medan gamla pm2-processen fortfarande serverar HTML (bevisat 2026-09-17 16:28–16:41Z, ~13 min; s7-u1, o49 §8). (1) `ls .next/BUILD_ID` — saknas = bevis. (2) VÄNTA på prod-synkens nästa poll (var 10:e minut; bygger vid RAM ≥ 2200) — ombygget läker automatiskt; ALDRIG bygg själv utanför flock-låset. (3) Retry-OOM igen? Minnespressuren är ofta fabriksbarnens tsc/mät-processer — vänta ut fönstret, starta inget parallellt. (4) Verifiera efteråt: css+js-chunk 200 (`curl -o /dev/null -w '%{http_code}'` på en chunk-URL ur HTML:n) + prod 200. Mätinstrument-vetande: Lighthouse mitt i rotationen visar ALLA chunkar 500 à ~0,28 KiB — kastas, mäts om. |
 
 ## 9. KUNDKONTAKTYTOR — vem gör vad
 

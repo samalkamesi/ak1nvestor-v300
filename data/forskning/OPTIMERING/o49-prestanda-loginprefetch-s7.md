@@ -103,7 +103,85 @@ i FÖRE-mätningen) lämnad orörd enligt spårets dubbla bokning.
    — Med dem tilllagda är spårets barnägda kur-kö TOM; nästa
    prestandavåg är huvudagentens eller kräver ny sond.
 
-## §7 EFTER-bokföring
+## §7 EFTER-bokföring (17:0x lokal — deploy landad, kuren bevisad)
 
-(fylls när prod-synken byggt commit:n — pending-precedens om
-RAM-fönstret inte öppnas i agentfönstret)
+**Deploy**: prod-synken byggde och deployade **089ded18 16:41:37Z**
+("DEPLOYAD automatiskt: 9 commits — prod 200", BUILD_ID
+6qghn83I3yt--H0fK8g0A). Deployn bär TRE samverkande syskonkurer:
+min /logga-in-kur (ad04d358) + u3:s chat-defer (d75bf2f8) +
+u2:s logotyp-/-prefetch-kur (089ded18, "o50") — attributionen
+nedan är därför delad per yta.
+
+**Strukturbevis (lastokänsligt — kurplanet enligt o28):**
+
+| Mått /blogg | FÖRE (408f9e20) | EFTER (089ded18) | Delta | Ägare |
+|---|---|---|---|---|
+| `/logga-in?_rsc` i initial load | 2 st (2,47 KiB) | **0 st** | −2,47 KiB | **denna kur** |
+| `_rsc` totalt | 5 st (14,6 KiB) | **0 st** | −14,6 KiB | min −2 + u2:s /-kur −12,1 |
+| requests | 44 | 33 | −11 | 3 kurer delat |
+| transfer | 704,0 KiB | 528,4 KiB | −175,6 | chat-defer dominerar + prefetcharna |
+
+Serverbesparing (okvantifierad i Lighthouse): −1 serverrender av
+force-dynamic-/logga-in per sidvisning. Sidan HTML bär fortfarande
+CTA-länken (`href="/logga-in"` ×1 verifierad i EFTER-HTML:n) — kur
+på prefetch, inte på länken.
+
+**CPU-tal (med lastkontext)**: /blogg P49→P56 · LCP 5323→4871 ·
+TBT 3986→1080 (−73 %). TBT-förbättringen tillhör främst u3:s
+chat-defer (chunken var sidornas tyngsta JS); FÖRE-värdet mättes
+med två syskon-tsc-processer igång (167+154 % CPU, load 4→5) —
+båda talen bärs av sina lastkontexter, strukturtallen ovan är
+bevisen.
+
+**Prod 200**: /, /blogg, /kurser, /ar/blogg, /logga-in — alla 200
+via https + css/js-chunkar 200 efter läkning (se §8).
+
+**Mätningsrester infriade i samma fönster:**
+- *o45:s /kurser-solo-rest*: solo2 (load 1,3, inga tsc, inga
+  lighthouse-grannar) — **TBT 1990** (P45 · LCP 5875 · CLS 0):
+  bättre än o45:s FÖRE-par (2418 vid load 0,70) ÄVEN deras
+  advers-EFTER (2152 vid load 2,25); attribution ärlig: skillnaden
+  bär flight-kuren + chat-defer + prefetch-kurerna tillsammans.
+  Försök 1 (s7u1-kurser-solo) var tsc-kontaminerad (load 4–5) —
+  committad som varudeklarerad rådata.
+- *o41:s /ar-rest*: /ar/blogg2 — **0 _rsc · 0 logga-in · 0 fel ·
+  33 requests** — strukturell paritet med svenska /blogg (33):
+  slug-kuren + logga-in-kuren + logotyp-kuren håller på AR.
+  Försök 1 (s7u1-ar-blogg) mätte mitt i OOM-byggfönstret (alla
+  statiska 500, sidan ohydrerad — se §8) och är OGILTIG som
+  kurbevis; committad som incidentbevis.
+
+**Nytt i kö-listan (§6 uppdateras)**: /kurser kurskorts-prefetch —
+ett synligt kort (the-intelligent-investor) hämtar 3 omgångar
+(0,85+8,57+25,16 = 34,6 KiB) i initial load; o37 kurerade /blogg:s
+kurslänkar men inte /kurser:s egna kort. Nästa prestandavågs
+främsta barnägda objekt.
+
+**Protokollnumret**: u3:s commit-meddelande refererar "(o49)" utan
+att deras protokollfil funnits på disk; min o49-fil committades
+först (ad04d358 18:23, disk-först-regeln) och u2 tog o50. Landar
+u3:s protokoll senare måsta det ta nästa lediga nummer (o51+)
+enligt s7-u4-precedensen.
+
+## §8 DRIFTFYND under vågen — OOM-fönstret (bokat i DRIFTSBOKEN §8)
+
+Prod-synkens bygge OOM-dödades 16:30:05Z (kärn-kill under
+"Creating an optimized production build"; medverkande: två syskon-tsc
+à 167/154 % CPU + egen mät-chrome åt RAM-marginalen). Effekt: ~13 min
+(16:28–16:41) där HTML serverades 200 men ALLA /_next/static-chunkar
+svarade 500 — ostylade sidor för besökare. Läkning: prod-synkens
+eget retry vid 16:37-pollen (RAM 2711 ≥ 2200) byggde klart och
+deployade 089ded18 16:41:37Z; statiskt 200 + prod 200 verifierat.
+DRIFTSBOKEN §8 har fått symptomet "200 men ostylad" som ny rad.
+Instrumentfynd: Lighthouse mitt i byggrotation = alla-statiskt-500
+(sidor 200) — känns igen på transferstorlekar 0,28 KiB per chunk.
+
+## §9 Öppna ytor efter denna våg (ersätter §6)
+
+1. `/kurser` kurskorts-prefetch (34,6 KiB — nytt, barnägt).
+2. brotli (huvudagent/infra) · språkresolvens-CLS a/b/c (produkt)
+   · dölj-undantagets framtid (kundens estetikval).
+3. CV-reservhöjdens "auto 13rem"-kalibrering (o20 §9-noten).
+   — `/`-prefetchen LEVERERAD av u2 (o50); /logga-in av denna våg;
+   /kurser-solo + /ar-mätningarna: STÄNGDA här.
+

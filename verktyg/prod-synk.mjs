@@ -288,6 +288,138 @@ export function synkaArbetsyta(yta, rot) {
   return delar.join(" · ");
 }
 
+// ---------------------------------------------------------------------------
+// PATCH-KÖN (o46): beroende-patchens rotorsaksruta. Bevisat behov
+// 2026-09-15 → 09-17: critical-RCE-advisories i next låg 2 dygn med larm
+// (beroende-halsa-SENASTE.md "inkludera patchen i nästa deploy") eftersom
+// prod-synkens `npm ci` följer package-lock EXAKT och aldrig uppdaterar
+// den — larmet pekar på en manuell `npm install` som ingen äger mekaniken
+// för. Kuren: committad köfil (data/infra/patch-ko.json) som ENDAST
+// prod-synken tömmer — installationen sker här, under deploylåset, av
+// installationens ägare (fabriksbarn förbjuds npm install; regeln orubbad).
+// Kontrakt:
+//   · endast paket som redan finns i package.json — kön UPPDATERAR deps,
+//     tillför ALDRIG nya (leveranskedjeskydd, fail-closed: oläsbar
+//     package.json = tomt känt-uppsättning = allt vägras)
+//   · exakt version (inga ^~/ranges — determinism i kvittona)
+//   · max 10 poster; dedup: senaste raden per paket vinner
+//   · kvitto per försök i data/vakten/patch-kvitton.jsonl (runtime,
+//     untracked — överlever `git checkout -- .`); ok kvitteras FÖRST
+//     efter deploy + HTTPS 200 + lock-commit; 3 misslyckade för exakt
+//     (paket, version) = död post tills köfilen ändras (loop-skydd)
+//   · patch-fel blockerar ALDRIG kodleverans: misslyckad install ⇒
+//     deploy fortsätter på befintlig lock; misslyckat bygge med patchad
+//     lock ⇒ locken återställs FÖRE revert-vägen så ombygget sker på
+//     bevisat fungerande grund
+
+const PATCH_MAX_POSTER = 10;
+const PATCH_MAX_FORSOK = 3;
+const RE_PATCH_PAKET = /^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-._~]+$/;
+const RE_PATCH_VERSION = /^\d+\.\d+\.\d+(-[a-z0-9.+-]+)?$/;
+
+/** Tolka EN köpost — {paket, version} vid giltig, {fel} vid ogiltig. */
+export function tulkPatchPost(post) {
+  if (!post || typeof post !== "object") return { fel: "post är inte ett objekt" };
+  const paket = typeof post.paket === "string" ? post.paket.trim() : "";
+  const version = typeof post.version === "string" ? post.version.trim() : "";
+  if (!paket) return { fel: "paket saknas" };
+  if (!RE_PATCH_PAKET.test(paket)) return { fel: `ogiltigt paketnamn: "${paket}"` };
+  if (!RE_PATCH_VERSION.test(version)) return { fel: `ogiltig version för ${paket} (exakt semver krävs, inga ranges): "${version}"` };
+  return { paket, version };
+}
+
+/**
+ * Läs+validera köfilen. kandaPaket = Set av beroendenamn ur package.json
+ * (dependencies + devDependencies); null/undefined = INGEN filtrering —
+ * anroparen i korSynk passerar alltid ett set (fail-closed där det sker).
+ */
+export function lasPatchKo(filvag, kandaPaket) {
+  const ute = { poster: [], fel: [], saknas: false };
+  let rader;
+  try {
+    rader = JSON.parse(fs.readFileSync(filvag, "utf8"));
+  } catch (e) {
+    if (e && e.code === "ENOENT") {
+      ute.saknas = true;
+      return ute;
+    }
+    ute.fel.push("köfilen är ogiltig JSON: " + String(e && e.message ? e.message : e).slice(0, 60));
+    return ute;
+  }
+  if (!Array.isArray(rader)) {
+    ute.fel.push("köfilen måste vara en JSON-array av {paket, version}");
+    return ute;
+  }
+  const senaste = new Map();
+  for (const r of rader) {
+    const t = tulkPatchPost(r);
+    if (t.fel) {
+      ute.fel.push(t.fel);
+      continue;
+    }
+    if (kandaPaket && !kandaPaket.has(t.paket)) {
+      ute.fel.push(`främmande paket (finns ej i package.json): ${t.paket}`);
+      continue;
+    }
+    senaste.set(t.paket, t.version);
+  }
+  ute.poster = [...senaste].map(([paket, version]) => ({ paket, version }));
+  if (ute.poster.length > PATCH_MAX_POSTER) {
+    ute.fel.push(`för många poster (${ute.poster.length} > ${PATCH_MAX_POSTER}) — endast de första ${PATCH_MAX_POSTER} används`);
+    ute.poster = ute.poster.slice(0, PATCH_MAX_POSTER);
+  }
+  return ute;
+}
+
+/** Läs kvittofilen (jsonl) — oläsbar/saknad = [] (första körningen). */
+export function lasPatchKvitton(filvag) {
+  try {
+    return fs
+      .readFileSync(filvag, "utf8")
+      .split("\n")
+      .filter((rad) => rad.trim())
+      .map((rad) => {
+        try {
+          return JSON.parse(rad);
+        } catch {
+          return null;
+        }
+      })
+      .filter((k) => k && typeof k === "object");
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Aktiva poster = köposter utan ok-kvitto och med färre än
+ * PATCH_MAX_FORSOK misslyckade försök för EXAKT (paket, version) —
+ * versionbyte i köfilen nollar räkningen (ny patch = nytt liv).
+ */
+export function aktivPatchPlan(ko, kvitton) {
+  return ko.poster.filter((p) => {
+    const relevanta = kvitton.filter(
+      (k) => k.paket === p.paket && k.version === p.version && typeof k.resultat === "string",
+    );
+    if (relevanta.some((k) => k.resultat === "ok")) return false;
+    return relevanta.filter((k) => k.resultat === "misslyckad").length < PATCH_MAX_FORSOK;
+  });
+}
+
+/** Appendera kvittorad (runtime-fil) — true vid framgång. */
+export function skrivPatchKvitto(filvag, post, resultat, detalj) {
+  try {
+    fs.mkdirSync(path.dirname(filvag), { recursive: true });
+    fs.appendFileSync(
+      filvag,
+      JSON.stringify({ ts: new Date().toISOString(), paket: post.paket, version: post.version, resultat, detalj }) + "\n",
+    );
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -328,9 +460,36 @@ async function korSynk() {
   const senasteFil = path.join(VAKT, "senaste-deployad.txt");
   let senaste = "";
   try { senaste = fs.readFileSync(senasteFil, "utf8").trim(); } catch { /* första körningen */ }
-  if (lokal === senaste) return; // inget nytt — tyst (99 % av runsen)
 
-  logga(`NY KOD: ${senaste.slice(0, 8) || "(första)"} → ${lokal.slice(0, 8)}`);
+  // 1b) PATCH-KÖN (o46): en aktiv kö väcker synken ÄVEN utan ny kod —
+  //     critical-patchar ska inte vänta på nästa kod-deploy. Köfilen bor i
+  //     data/infra (committad — historien ÄR patch-historiken); kvittona i
+  //     data/vakten (runtime, untracked — överlever checkout som loggarna).
+  const patchFil = path.join(ROT, "data", "infra", "patch-ko.json");
+  const kvittoFil = path.join(VAKT, "patch-kvitton.jsonl");
+  let kandaPaket = new Set(); // fail-closed: oläsbar package.json = allt vägras
+  try {
+    const pkg = JSON.parse(fs.readFileSync(path.join(ROT, "package.json"), "utf8"));
+    kandaPaket = new Set([
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.devDependencies || {}),
+    ]);
+  } catch { /* tomt set ovan vägrar köposter — rätt fall vid trasig package.json */ }
+  const patchKo = lasPatchKo(patchFil, kandaPaket);
+  if (patchKo.fel.length) {
+    logga(`PATCH-KÖ: ${patchKo.fel.length} ogiltig(a) post(er) hoppades över — ${patchKo.fel.join(" · ").slice(0, 300)}`);
+  }
+  const patchPlan = aktivPatchPlan(patchKo, lasPatchKvitton(kvittoFil));
+  if (lokal === senaste && patchPlan.length === 0) return; // inget nytt — tyst (99 % av runsen)
+
+  if (patchPlan.length) {
+    logga(`PATCH-KÖ aktiv: ${patchPlan.map((p) => `${p.paket}@${p.version}`).join(", ")}`);
+  }
+  if (lokal === senaste) {
+    logga("PATCH-KÖ väcker synken utan ny kod (o46) — patch-install + ombygge + restart");
+  } else {
+    logga(`NY KOD: ${senaste.slice(0, 8) || "(första)"} → ${lokal.slice(0, 8)}`);
+  }
 
   // 2) RAM-VAKT (10X-incidenten): under taket OOM-dödas next build av
   //    minnesgränsen ("Killed") — felet är KAPACITET, inte kod. Vänta till
@@ -349,11 +508,43 @@ async function korSynk() {
   const goodHead = senaste || lokal;
   const nya = git(["log", "--oneline", `${goodHead}..HEAD`]);
 
+  // 3b) PATCH-KÖNS INSTALLATION (o46): sker ENDAST här — av prod-synken
+  //     (installationens ägare), under samma deploylås som bygger. En
+  //     misslyckad installation blockerar ALDRIG kodleveransen: kvitto
+  //     skrivs och korBygg nedan kör på befintlig lock som vanligt.
+  let patchInstallerad = false;
+  if (patchPlan.length) {
+    const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(" ");
+    try { fs.writeFileSync("/tmp/synk-patch.log", ""); } catch { /* */ }
+    const { spawn: spawnPatch } = await import("node:child_process");
+    const installOk = await new Promise((lyckas) => {
+      const barn = spawnPatch(
+        "bash",
+        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(`npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1`)}`],
+        { cwd: ROT, stdio: "ignore", detached: false },
+      );
+      barn.on("exit", (kod) => lyckas(kod === 0));
+      barn.on("error", () => lyckas(false));
+    });
+    if (installOk) {
+      patchInstallerad = true;
+      logga(`PATCH-KÖ installerad: ${spec} — package-lock uppdaterad i arbetsytan`);
+    } else {
+      logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
+      for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "npm install avslutades med felkod");
+    }
+  }
+
   // 5-6) bygg under flock — VÅG 123d: UTAN node-timeout (execSync-tak dödade
   // byggprocessen med SIGTERM; deploylåset serialiserar ändå, daemonen
   // övervakar). Logg till eigen fil för efteranalys.
   const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
   const { spawn } = await import("node:child_process");
+  const aterskapaPatchLas = () => {
+    // riv npm installens lock-ändring — ombyggen ska ske på bevisat
+    // fungerande grund när patchen är misstänkt gärningsman
+    try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
+  };
   const korBygg = () =>
     new Promise((lyckas) => {
       const barn = spawn(
@@ -373,10 +564,24 @@ async function korSynk() {
     // OOM = infraskal (OOM-killern/JS-heapet), INTE kodfel: HEAD lämnas
     // orött och senaste-deployad är oförändrad ⇒ automatiskt nytt försök
     // nästa poll när fabrikens barn frigjort minnet. ALDRIG revert/reset
-    // av commits som aldrig fått ett ärligt byggtillfälle.
+    // av commits som aldrig fått ett ärligt byggtillfälle. Patchad lock
+    // rivs (inget kvitto — OOM är inte patchens fel, nytt försök nästa poll).
+    if (patchInstallerad) aterskapaPatchLas();
     logga("bygg OOM-dödat (Killed/heap i /tmp/synk-build.log) — infra, ej kodfel: HEAD orört, nytt försök nästa poll");
     return;
   } else {
+    if (patchInstallerad) {
+      // patchen kan vara gärningsman: riv lock-ändringen FÖRE revert-vägen
+      // (ombygget sker på bevisat fungerande lock) + kvitta försöket
+      aterskapaPatchLas();
+      for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "bygg misslyckades med patchad lock");
+    }
+    if (!nya.trim()) {
+      // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —
+      // revert vore att reverta DIGLIG kod; patchen är enda misstänkta
+      logga("PATCH-KÖ: bygg misslyckades utan ny kod — patchen misstänkt, lock återställd, HEAD orörd (revert hoppas: koden är deployad sedan tidigare)");
+      return;
+    }
     logga("bygg MISSLYCKADES (se /tmp/synk-*.log) — revert + ombygge");
     try {
       git(["revert", "HEAD", "--no-edit"]);
@@ -423,11 +628,37 @@ async function korSynk() {
     try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
     await new Promise((s) => setTimeout(s, 6000));
     if (await httpsOk()) {
+      // PATCH-KÖNS BOKFÖRING (o46): committa den patchade locken FÖRE
+      // DEPLOYAD-markören — annars ser nästa poll kvitto-commiten som ny
+      // kod och bygger om i onödan. ok-kvitton skrivs ENDAST när commiten
+      // landat (vid commit-fail lever patchen bara i arbetsytan och rivs
+      // vid nästa synk — försöksräknaren tar omförsöken).
+      if (patchInstallerad) {
+        const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(", ");
+        try {
+          git(["add", "package.json", "package-lock.json"]);
+          fs.writeFileSync(
+            "/tmp/synk-patchmsg.txt",
+            `studio: prod-synk patch-kö — ${spec} (package-lock uppdaterad av o46-mekaniken under deploylåset; installation ägd av prod-synken)\n`,
+          );
+          git(["commit", "-F", "/tmp/synk-patchmsg.txt"]);
+          for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "ok", "deployad + HTTPS 200 + lock committad");
+          logga(`PATCH-KÖ BOKFÖRD: ${spec} — package.json + package-lock.json committade`);
+        } catch (e) {
+          for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "lock-commit misslyckades: " + String(e && e.message ? e.message : e).slice(0, 60));
+          logga(`PATCH-KÖ: lock-commit MISSLYCKADES (${forklaraGitFel(e).slice(0, 120)}) — patchen lever endast i arbetsytan; omförsök räknas`);
+        }
+      }
       const deployadHash = git(["rev-parse", "HEAD"]);
       try { fs.writeFileSync(senasteFil, deployadHash + "\n"); } catch { /* markör får vänta */ }
-      logga(`DEPLOYAD automatiskt: ${nya.split("\n").length} commits (${deployadHash.slice(0, 8)}) — prod 200`);
+      const antal = nya.trim() ? nya.split("\n").length : 0;
+      logga(
+        antal
+          ? `DEPLOYAD automatiskt: ${antal} commits (${deployadHash.slice(0, 8)}) — prod 200`
+          : `DEPLOYAD (patch-kö, o46): ${patchPlan.map((p) => `${p.paket}@${p.version}`).join(", ")} — prod 200`,
+      );
       // MEGA G3 — audit: varje autonom deploy är en spårbar händelse.
-      skrivAudit("prod-synk", "deploy", `prod@${deployadHash.slice(0, 8)}`, `${nya.split("\n").length} commits — HTTPS 200 verifierad`);
+      skrivAudit("prod-synk", "deploy", `prod@${deployadHash.slice(0, 8)}`, antal ? `${antal} commits — HTTPS 200 verifierad` : `patch-kö ${patchPlan.map((p) => p.paket).join(", ")} — HTTPS 200 verifierad`);
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills
@@ -463,7 +694,7 @@ async function korSynk() {
         const vfil = path.join(VAKT, "versionsloggen.jsonl");
         fs.appendFileSync(
           vfil,
-          JSON.stringify({ ts: new Date().toISOString(), commits: nya.split("\n").slice(0, 6) }) + "\n",
+          JSON.stringify({ ts: new Date().toISOString(), commits: nya.trim() ? nya.split("\n").slice(0, 6) : [] }) + "\n",
         );
       } catch { /* logg får vänta */ }
 

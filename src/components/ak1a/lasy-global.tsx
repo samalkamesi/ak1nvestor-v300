@@ -34,11 +34,7 @@ import dynamic from "next/dynamic";
 import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 
 // ── de tunga globala komponenterna: egna chunks, aldrig SSR-renderade ────────
-const ChatWidgetLaddad = dynamic(
-  () => import("@/components/ak1a/chat-widget").then((m) => ({ default: m.ChatWidget })),
-  { ssr: false },
-);
-
+// (ChatWidget laddas via React.lazy i LasyChatWidget nedan — se o49-noten.)
 const ShortSellerLaddad = dynamic(
   () => import("@/components/ak1a/short-seller").then((m) => ({ default: m.ShortSeller })),
   { ssr: false },
@@ -121,13 +117,109 @@ export function LasyGlobal({
 // ── konkreta lazy-monteringar (layout.tsx rör aldrig next/dynamic själv,
 //    eftersom ssr:false inte får anropas från en serverkomponent) ────────────
 
-/** AI-Mentorn (chatt + spaced repetition) — syns efter idle/interaktion. */
+// ── LasyChatWidget — chat-defer med event-vakt (o49, spår 7) ────────────────
+//
+// AI-Mentorn-chunken är sidornas TYNGSTA klientchunk (FÖRE-mätning o49:
+// 106 K transfer — större än react-chunken) och hämtades tidigare av
+// LasyGlobal:s idle-montering med 2 s-tak, på drosslad mitt i TBT-fönstret
+// (fetch startar 2 025–2 385 ms på //kurser//blogg), trots att 30-lagers-
+// motorerna i chunken bara behövs när en fråga faktiskt skickas. Chatten är
+// en TJÄNST, inte innehåll — därför tre utlösare:
+//
+//   1. första interaktionen (scroll/pekare/tangent) → montera direkt;
+//   2. "ak1a:oppna-mentor" (t.ex. Fråga-knappen i Min portfölj) → montera
+//      OCH bevara eventets förhandsfråga; MentorSignal återsänder öppningen
+//      när widgetens egen lyssnare är på plats (PalettSignal-mönstret —
+//      därför React.lazy + Suspense här: lazy-suspensionen håller signalen
+//      i samma commit som widgeten, så effekterna köder i trädordning);
+//   3. basfall i två steg: 8 s, därefter requestIdleCallback UTAN tvångs-
+//      timeout → äkta idle. På långsam mobil landar monteringen därmed
+//      efter det första tysta fönstret (TBT/TTI hinner mätas klart); på
+//      snabb enhet märks ingen skillnad mot förr — idle infaller tidigt.
+
+const ChatWidgetLazy = lazy(() =>
+  import("@/components/ak1a/chat-widget").then((m) => ({ default: m.ChatWidget })),
+);
+
+/** AI-Mentorn (chatt + spaced repetition) — monteras vid interaktion,
+ *  yttre öppningsevent eller sen idle; se blockkommentaren ovan. */
 export function LasyChatWidget() {
+  const [monterad, setMonterad] = useState(false);
+  const vantaOppna = useRef<{ fraga?: string } | null>(null);
+  const aktiv = useRef(true);
+
+  useEffect(() => {
+    const starta = () => {
+      if (!aktiv.current) return;
+      aktiv.current = false;
+      stada();
+      setMonterad(true);
+    };
+
+    // Accelerator: första riktiga interaktionen → montera direkt.
+    const handelse: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "keydown", "touchstart"];
+    handelse.forEach((h) => window.addEventListener(h, starta, { passive: true, once: true }));
+
+    // Yttre öppning: widgeten kanske inte monterats än — vakten minns
+    // förhandsfrågan och MentorSignal spelar upp öppningen efter montering.
+    const oppna = (e: Event) => {
+      if (!aktiv.current) return; // widgeten lyssnar själv sedan tidigare
+      const f = (e as CustomEvent<{ fraga?: string }>).detail?.fraga;
+      vantaOppna.current = typeof f === "string" && f.trim().length > 0 ? { fraga: f.trim() } : {};
+      starta();
+    };
+    window.addEventListener("ak1a:oppna-mentor", oppna);
+
+    // Basfall i två steg: 8 s, sedan äkta idle utan tvång (requestIdleCallback
+    // utan timeout kan aldrig tvingas köra mitt i en upptagen huvudtråd;
+    // setTimeout-fallback för webbläsare utan stöd).
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | null = null;
+    const efter8s = () => {
+      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta);
+      else starta();
+    };
+    const t = window.setTimeout(efter8s, 8000);
+
+    function stada() {
+      handelse.forEach((h) => window.removeEventListener(h, starta));
+      window.removeEventListener("ak1a:oppna-mentor", oppna);
+      window.clearTimeout(t);
+      if (idleId != null) w.cancelIdleCallback?.(idleId);
+    }
+    return stada;
+    // engångs-effekt: monteringsbeslutet beror inte på props/state
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (!monterad) return null;
   return (
-    <LasyGlobal>
-      <ChatWidgetLaddad />
-    </LasyGlobal>
+    <Suspense fallback={null}>
+      <ChatWidgetLazy />
+      {/* Syskon EFTER widgeten inom samma Suspense: när lazy-gränsen
+          resolvar commit:as båda tillsammans och widgetens lyssnare
+          (ak1a:oppna-mentor) är registrerade när signalen spelar upp
+          en väntad öppning. */}
+      <MentorSignal vantaOppna={vantaOppna} />
+    </Suspense>
   );
+}
+
+/** Engångssignal: återsänd ev. väntad öppning när widgeten lyssnar. */
+function MentorSignal({ vantaOppna }: { vantaOppna: { current: { fraga?: string } | null } }) {
+  useEffect(() => {
+    const v = vantaOppna.current;
+    if (v) {
+      vantaOppna.current = null;
+      window.dispatchEvent(new CustomEvent("ak1a:oppna-mentor", { detail: v }));
+    }
+    // engångs-effekt: körs en gång per montering (avsett beteende)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return null;
 }
 
 /** Agent 3: Short-Seller — monteras idle, event-bussen ("ak1a:shortseller-

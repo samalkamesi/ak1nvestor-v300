@@ -18,8 +18,9 @@
 //         skall inte hindra starten — flock(1) förvärvar oavsett mtime.
 //
 // Sekvens: död låsfil skapas (45 min bakdaterad) → främmande hållare flock:ar
-// SAMMA fil under N s → dr-total.mjs startar och köar → tar över → kör alla
-// fyra kedjorna → städbevis (PG17 nere, /tmp/dr-total-* borta, lås släppt).
+// SAMMA fil under N s → dr-total.mjs startar och köar → tar över → kör hela
+// kvartalsmallen (samtliga vävda kedjor, sedan O7: 1→5→2→4→3) → städbevis
+// (PG17 nere, /tmp/dr-total-* borta, lås släppt).
 //
 // Användning: node verktyg/dr-total-flockprov.mjs [--hollare-sek N]
 // Default hållare 25 s. Exit = dr-total:s exit (0 = hela övningen GRÖN).

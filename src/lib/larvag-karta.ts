@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (393 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (396 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 351 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 354 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -205,6 +205,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pc-19-case-hoganas", titel: "Case: Höganäs — järnpulver-monopol", kategori: "PRAKTISKA CASE", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "pc-20-case-essity", titel: "Case: Essity — hygienvaror", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 25 },
   { slug: "pc-21-ditt-forsta-case", titel: "Ditt första case — metoden före bolagen: ett påhittat bolag, steg för steg", kategori: "PRAKTISKA CASE", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pc-22-ditt-andra-case", titel: "Ditt andra case — jämförelsen: två bolag, samma bransch, sida vid sida", kategori: "PRAKTISKA CASE", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rk-13-gdpr-och-datarisk", titel: "GDPR och data-risk", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "rk-14-esgrisk", titel: "ESG-risk — miljö och sociala", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "rk-15-cykelrisk", titel: "Cykel-risk — konjunkturkänslighet", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -222,6 +223,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-13-utbildning", titel: "Utbildning — återkommande intäkter", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "se-14-livsmedel", titel: "Livsmedel — staplar och varumärke", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "se-15-logistik", titel: "Logistik — nätverk", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-16-sektoranalysens-metod", titel: "Sektoranalysens metod — tre frågor till vilken sektor som helst", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-05-ankareffekt", titel: "Ankareffekt — snitt irrelevant", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
@@ -420,6 +422,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-02-labbets-karta", titel: "Labbets karta — fem motorer, ett hus: orienteringen före ek-01", kategori: "EKOSYSTEM", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-03-arbetsflodet-i-labbet", titel: "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-04-backtestens-hantverk", titel: "Backtestens hantverk — att testa en metod mot historien utan att lura sig själv", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-01-riskmattens-karta", titel: "Riskmåttens karta — fem mått, fem frågor, innan formlerna", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
@@ -429,4 +432,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 393;
+export const LARVAG_ANTAL_KURSER = 396;

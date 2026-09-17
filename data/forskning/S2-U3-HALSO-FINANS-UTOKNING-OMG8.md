@@ -16,7 +16,7 @@ landmattorna.
 
 | Bolag | Ticker | Bransch | Land | Motivering |
 |---|---|---|---|---|
-| Swedish Orphan Biovitrum | SOBI.ST | hälsa | Sverige | Sverige/hälsa-mattan 4→5 ⇒ **NY LANDASPEKTSIDA** (koordinaten); sällsynta sjukdomars prissättningsmakt (brutto 77 %), nedskrivningsårets GAAP-pedagogik |
+| Swedish Orphan Biovitrum | SOBI.ST | hälsa | Sverige | Sverige/hälsa-cellen 4→5 bolag; P/E-mattan når dock bara 4 (EKTA-B saknar mätt P/E) ⇒ landsidan publiceras EJ — se RÄTTES-sektionen; sällsynta sjukdomars prissättningsmakt (brutto 77 %), nedskrivningsårets GAAP-pedagogik |
 | BlackRock | BLK | finans | USA | världens största kapitalförvaltare (AUM 13,3 biljoner $), AUM-ekonomins lärobok; USA/finans 5→6 (MA öppnade sidan tidigare samma dygn) |
 | Tryg | TRYG.CO | finans | Danmark | dataägarens bokförda kandidat från s2-u1 omg5 ("Sampo/Tryg som tredje float-ankaret" — kvartetten BRK/Allianz/Sampo/Tryg); Danmarks första finansrad (0→1, under MIN_MATTA) |
 
@@ -120,14 +120,43 @@ kvartiler och universumjämförelser på /dataset-sidorna vid nästa prod-bygge
 
 ## Landaspekter — FULLT LANDSVEP
 
-Alla (land × bransch)-celler svepta (omg6-läxan fortsatt): **Sverige/hälsa 4→5
-← NY LANDASPEKTSIDA** (SOBI — sidkontrollen väntas gå 168→169 om syskonens
-MA-sida hunnit räknas i basen, se nedan) · Danmark/finans 0→1 (TRYG, under
-MIN_MATTA=5) · USA/finans 5→6 (BLK; MA öppnade 4→5 i syskonets commit). Efter
-omgången finns **INGA celler kvar på 4** — nästa omgångs koordinater är 3:orna
-(Norge/energi 3, USA/energi 3, USA/industri 3, Sverige/teknik 3, Sverige/
-tillväxt 3). Syskonens TM öppnade JAPAN som nytt land (Japan/konsument 1) —
-deras fynd, deras bokföring.
+Alla (land × bransch)-celler svepta (omg6-läxan fortsatt) — men med den RIKTIGA
+gränsregeln (se RÄTTES-sektionen: landsidor publiceras vid P/E-MATTA ≥ 5, inte
+vid 5 bolag): Sverige/hälsa 4→5 bolag men P/E-matta 4 (EKTA-B saknar mätt P/E)
+⇒ landsidan publiceras EJ · Danmark/finans 0→1 bolag, matta 1 (TRYG) ·
+USA/finans 5→6 bolag, matta 6/6 (BLK; MA:s landsida publicerad på 141-basen).
+Efter omgången finns inga celler på 4 BOLAG — men koordinater till nästa
+omgång MÅSTE räknas på P/E-matta: Sverige/hälsa matta 4 (koordinaten kvarstår:
+ett svenskt hälsobolag till med MÄTT P/E öppnar sidan), i övrigt är närmaste
+celler Norge/energi 3, USA/energi 3, USA/industri 3, Sverige/teknik 3,
+Sverige/tillväxt 3 (bolagsräkning). Syskonens TM öppnade JAPAN som nytt land
+(Japan/konsument 1) — deras fynd, deras bokföring.
+
+## RÄTTES (post-KVD): "ny landaspektsida"-anspråket var FEL — gränsregeln gäller P/E-matta, inte bolagstal
+
+Min förhandsmätning (/tmp/s2u3omg8-mat.mts) räknade BOLAGSANTAL per
+(land × bransch)-cell och förutsade att Sverige/hälsa 4→5 öppnar en ny
+landaspektsida. Kontraktstestet mot 144-trädet gav **170 sidkontroller —
+noll nya** — och granskning av land.ts (rad 141–144) visar dubbelgrinden:
+landsidan publiceras endast när **antalet bolag med MÄTT P/E i cellen**
+(P/E-mattan) ≥ MIN_MATTA = 5. Sverige/hälsa: 5 bolag men matta 4 (AZN 24,6 ·
+CEVI 29,96 · GETI-B 24,8 · SOBI 111,1; EKTA-B saknar mätt P/E) ⇒ opublicerad.
+USA/finans 6/6 mätta — MA:s sida (publicerad på 141-basen) förblir den enda
+nya landsidan denna omgång, syskonets äga. Commitmeddelandets och worklog-
+radens "NY LANDASPEKTSIDA (Sverige/hälsa)" är därmed FELAKTIGA — rättas av
+denna sektion + worklog-rättesnoten (60b513b2); siffrorna i leveransen (alla
+tre rader, medianer, kvartiler, läckagevakt) opåverkade. LÄXA till nästa
+omgång: landsvepet räknar P/E-matta per cell —
+`u.filter(r => r.land===L && r.bransch===B && isFinite(r.vardering?.pe)).length >= 5`
+— aldrig bolagstal. Dataägare-not: EKTA-B:s saknade P/E (bottenraden i
+Sverige/hälsa) håller landsidan stängd; ETT svenskt hälsobolag till med mätt
+P/E öppnar den.
+
+CLOBBER-NOTIS: denna RÄTTES-sektion skrevs en gång, clobberades av prod-
+synkens fönster (okommittade Edits spolades; worklog-rättesnoten i samma
+fönster överlevde och committades 60b513b2) och återskapades ordagrant —
+s10-u1 O7:s clobber-bokföring är precedensen; O4-lärdomen (återskapa +
+commit OMEDELBART) följd.
 
 ## llms.txt
 
@@ -149,9 +178,12 @@ append + llms + git add + commit -o -F i ETT tight fönster. Append idempotent
 ## KVD-bevis
 
 - **Kontraktstest + läckagevakt 0**: `tsx verktyg/testa-dataset-aspekter.mjs`
-  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = GRÖNT, sidkontroller enligt
-  utfall nedan (läckagevakten läser universumet dynamiskt — 144 namn/tickers
-  förbjudna, 0 träffar i sidornas JSON-utdata; A2-kontraktet §1:s gränsdragning).
+  (cachad tsx-CLI ur npx-cachen, ALDRIG npx) = **GRÖNT 0 fel / 170 sidkontroller
+  / 30 kända varningar (pre-existerande)** — 170 == 141-basens tal: NOLL nya
+  sidor publicerade (beviset bakom RÄTTES-sektionen; läckagevakten läser
+  universumet dynamiskt — 144 namn/tickers förbjudna, 0 träffar i sidornas
+  JSON-utdata; A2-kontraktet §1:s gränsdragning). v98-dataset-vakt (mot
+  BYGGDA sidor) kräver next build = prod-synkens ägande (Vonovia-precedensen).
 - **Kvartiler + universumjämförelse**: verifierade via raknaBranschMedianer
   (tabell ovan) — samma räknesätt som sidorna.
 - **Aritmetik**: 26/26 GRÖN (CAGR/prognos/PEG/fcfYield/fcfMarginal/yield/moat).

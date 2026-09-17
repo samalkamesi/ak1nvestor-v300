@@ -1725,3 +1725,35 @@ får ALDRIG krascha sattMal/rensaMal.
   .next-kategorier, ENOTEMPTY) förklarar de två äkta byggfelen och deras
   skapaPm2Vakt är race-kuren. Se
   data/forskning/OPTIMERING/o50-patchko-atervandning-s8.md §9.
+
+## S10-U1 (O9) — KVÄLLS-TOTAL: kvartalsmallen dr-total GRÖN i kvällsläge + O9:s köpost (2) STÄNGD KOMPLETT (2026-09-17, GODKÄNT)
+
+- `node verktyg/dr-total.mjs` 21:12–21:16 lokal, **exit 0 — alla fem kedjor
+  GRÖNA i kvällsläge** (fabrikskväll, RAM-grind 1 107 MB): kedja 1 19,9 s
+  (RTO 11,7 s · public 60/1 286 328 · fel 788/0) · kedja 5 kirurgi 73,2 s
+  (källa 1 195 452 rader, checksumma identisk, sabotage vägrad) · kedja 2
+  34,6 s (163 039 rader, 0 dubblett) · kedja 4 28,5 s · kedja 3 24,7 s —
+  **TOTALT 180,9 s**. Dagens första TOTAL på 09-17 (serien 09-16 ×3 + denna);
+  totalprotokoll DR-TOTAL-2026-09-17-AUTO.md. RTO-serien: kvällspunkterna
+  20–22 (u2 11,0 · 11,7 · 13,7 s); spann 10,3–23,9 s oförändrat.
+- **O9:S KÖPOST (2) STÄNGD på två ben:** (a) designbevis — dr-total startar
+  barnen UTAN `--fil` (cwd REPO_ROT) → kedja 1:s default = absolut
+  dumpkatalogväg → valDumps NOTIS-gren kan EJ triggas i total-kontext =
+  "oförändrat beteende" bevisat (AUTO-8 GRÖN utan NOTIS); (b) explicit
+  NOTIS-bevis — AUTO-6:s exakta bladnamns-kommando efter totalen: NOTIS-rad
+  + GRÖN RTO 13,7 s (AUTO-9). Kedja: AUTO-5 → AUTO-7 (u2) → AUTO-9 —
+  regressionen har ingen obevisad gren kvar.
+- **AUTO-6:s falska RÖT oberoende bekräftad** (korsvaliderar u2:s §3):
+  dumpen oskadd (31 733 199 B, mtime 02:30:29, gzip OK, slutmarkörer) · egen
+  markörkoll 21:09:51 GRÖN 1 307 940 rader/4,7 s · **137 ms-beviset**
+  (AUTO-6:s hela körning — en äkta koll tar 4–7 s ⇒ snabb-RÖT-grenen) ·
+  git-beviset (sista fil-commit c3b871f7 09-16; kuren aldrig committad; u2:s
+  commit 9d24c73b landade under fönstret).
+- **WAL-seriens första rörelse:** 497×3 (läsläge) → **529 MB** efter
+  kvällens restore-aktivitet — WAL stabil under läsning, växer med
+  PG-skrivsessioner; under 1 GB-taket. Norm: WAL-mätning protokollför
+  aktivitetskontext.
+- Städning egenmätt: PG17 down · base endast OID 1/4/5 + tom pgsql_tmp ·
+  disk 72 GB · låsfilerna flock-viloläge. Kö: TOTAL i kvartalssviten senast
+  2026-12-17 · WAL per kvartal med aktivitetsnotis · COMMIT-NORMEN standing.
+  Protokoll: DR-OVNING-2026-09-17-KVALL-TOTAL.md + 7 maskinella protokoll.

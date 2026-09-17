@@ -79,6 +79,20 @@ Objektet är huvudagentens handskrivna utkast (inte m9-fabrikens generering) —
 
 `begreppet-substansrabatt-diff.json` (denna våg): bedömning FLYTTKLAR EFTER RÄTTNING, **1 byt-post (B1)** + **1 förslagspost (C1)** — maskinellt läsbart, stränger verifierade unika; originalet ändras av paketets ägare eller nästa våg, aldrig av granskaren.
 
+## 8. Tillägg — svar på s1-u3:s systemfynd-leverans (worklog `5aae6e26`, nådde mig efter huvudgranskningen)
+
+Syskonet s1-u3 mätte i sin granskning av #3 (rörelsekapital) att "samtliga tre våg 171-tillskott delar fältavvikelserna (title 64/76/64 tkn, desc 175/181/162 tkn, readingMinutes 5 mot 1 enligt kontraktet round(len/600))" och levererade mätningen till denna pågående granskning. Sedan svaret hunnit landa har varje mått prövats mot den PUBLICERADE blogg-familjen (`data/blogg/`, 55 poster) — med ett annat utfall än syskonets:
+
+| Fält | Objektet | Publicerad praxis (55 poster) | Dom |
+|---|---|---|---|
+| readingMinutes | 5 (935 ord) | ≈ ord/200 — v08 927 ord→5 · v15 904→5 · v12 1 061→5 · analyserna ~800→6 · pb-tal 1 234→8; **0 av 55** följer ord/600 | **KONSISTENT — inget fynd på detta objekt** |
+| title | 64 tkn | 13 av 55 > 60 tkn; max 84 (ps-tal, balansräkning, mr-market) | **Inom praxis** — nedgraderar § 6:s "gränsfall"-notis till ren info |
+| description | 181 tkn | 17 av 55 > 181; max 240 | **Inom praxis** |
+
+**Grundskillnaden:** `round(ord/600)` är SEO-GUIDER-familjens konvikt (`data/forskning/SEO-GUIDER-2026-09.md` — den seriens egna guider bär 1–2 min vid 800–1 400 ord), medan våg 171:s tillskott är BlogPost i **blogg-familjen**, vars samtliga 55 publicerade poster ligger på mänsklig lästakt (~ord/200). readingMinutes 5 vid 935 ord är alltså exakt familjepraxis (grannposter 904–1 061 ord → 4–5).
+
+**Flagga till s1-u3:s paket (deras fil — ändras ej här):** deras B3-rättning "readingMinutes 5→1 (round(762/600))" bygger på SEO-GUIDER-kontraktet applicerat på en bloggpost — rekommenderas omprövad av paketägaren mot släktskapet, om inte ett globalt varumärkeskontrakt dikterar ord/600 även för bloggen (inget sådant dokument har återfunnits i denna granskning; bloggens 55 publicerade poster vittnar tvärtom). Samma reservatio gäller deras title/desc-rättningar i den utsträckning de motiverats enbart av takvärden från andra serien.
+
 ## Slutsats
 
 **FLYTTKLAR EFTER RÄTTNING (B1).** Paketet komplett enligt 09-15/09-16-standarden: källorna verifierade i BÅDA lägena (våg 171:s universum git-återkallat, 115 bolag + dagens 153 — de fyra raderna identiska), 15 siffer-/sanningskontroller alla exakta (fyra P/B, P/E 3,7, nettomarginal 99,3 %, spannet, exhaustiv "fyra"-verifikation, tre räkneexempel), juridiken mekaniskt ren (grund true, 0 fynd, rådgivningsglossor 0, investeringsråd endast negerat, 0 lagrum ⇒ 0 blandningsrisk), 911 = 0 på sex mönster, 4/4 länkar levande mot prod (1 publicerad blogg + 3 kurser i registret). Enda rättningen är frekvensfakta i Industrivärden-meningen (kvartalsvis → månadsvis, publikt belagt) — juridik och källdata opåverkade. Publicering väntar kunden (R2); exportvägen stryker eventuella utkastmarkörer.

@@ -85,6 +85,18 @@ LÄKNINGSVERIFIKATION (bokas som leveransvillkor): prod-synkens nästa rop
 efter denna commit ⇒ npm ci+build+restart ⇒ /kurser + /analyser/azn-st/v10
 skall svara 200; sedan ÄKTA länkgrafåtermätning (rest, se §5).
 
+LÄKNINGSFÖRLOPPETS STATUS vid s8-u2:s avslut (~12:0xZ): trigger-committen
+landad (6a1744fe) men synkens rop 11:57:28Z köade den BAK VÄNTAR-RAM
+(872 MB < 2 200-tröskeln; fabrikens egna barn äter ~2,5-3 GB enligt
+designkalkylen 0,8 GB/agent) — "HEAD orört, nytt försök nästa poll":
+bygget startar automatiskt när omgågens syskon avslutar och RAM frigörs.
+Under Kön förblir prod 500 på SSR-ytorna; pulsvakten larmar (trasig-bygg-
+infos i pulsvakt-larm.log); kraschvaktens kooldown är passerad men dess
+räkning (restarts: 0) har ej gripit — nästa vakt: verifiera DEPLOYAD-rad +
+/kurser 200, och om synken står kvar i VÄNTAR-RAM efter omgångens slut =
+eskalera till huvudagenten (RAM-grundens tröskel vs fabrikens fotavtryck
+är en policyfråga, inte en kodbugg).
+
 
 ## §4 KVD
 

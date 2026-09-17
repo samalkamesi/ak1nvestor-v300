@@ -68,6 +68,11 @@ data/backups/
 # Våg 105: gränsnittsvaktens lokalrapporter (servern skriver sina egna)
 data/vakten/
 
+# Spår 8 (o33, 2026-09-16): kvalitetsvaktens SENASTE-rapport är server-genererad —
+# pumpor-daemonens 07:02-pump skriver om den dagligen; tracking = ytsmuts varje
+# morgon (samma problemklass som data/cache, våg 121). Historik bärs av protokoll.
+data/rapporter/kvalitetsrapport-SENASTE.md
+
 # Våg 121: datacentralens runtime-cache är en accelerator, aldrig ett beroende
 # (src/lib/datacache.ts: läs/skriv-fel kastar ALDRIG; cron 06:00 UTC + on-demand
 # fyller på). Appen/cronerna skriver filerna löpande — tracking gjorde varje

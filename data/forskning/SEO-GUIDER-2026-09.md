@@ -38,10 +38,42 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B7 | konsumentaktier-sa-analyserar-du-konsumentbolag | konsumentaktier | 1255 | UTKAST v1 (2026-09-16, s3-u2) | data/blogg-utkast/konsumentaktier-sa-analyserar-du-konsumentbolag.json |
 | B8 | tillvaxtaktier-sa-analyserar-du-tillvaxtbolag | tillväxtaktier | 1338 | UTKAST v1 (2026-09-16, s3-u3) | data/blogg-utkast/tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json |
 | B9 | halvledaraktier-sa-analyserar-du-halvledarbolag | halvledaraktier | 1178 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-02-halvledarsektorn) | data/blogg-utkast/halvledaraktier-sa-analyserar-du-halvledarbolag.json |
+| B10 | bilaktier-sa-analyserar-du-biltillverkare | bilaktier | 1383 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-09-bil) | data/blogg-utkast/bilaktier-sa-analyserar-du-biltillverkare.json |
+| B11 | saasaktier-sa-analyserar-du-saas-bolag | SaaS-aktier | 1344 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-01-saassektorn) | data/blogg-utkast/saasaktier-sa-analyserar-du-saas-bolag.json |
+| B12 | spelaktier-sa-analyserar-du-spelbolag | spelaktier | 1326 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-12-spel) | data/blogg-utkast/spelaktier-sa-analyserar-du-spelbolag.json |
+| B13 | detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag | detailhandelsaktier | 1388 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-07-detailhandel) | data/blogg-utkast/detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json |
+| B14 | flygaktier-sa-analyserar-du-flygplansindustrin | flygaktier | 1379 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-10-flyg) | data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin.json |
+| B15 | forsvarsaktier-sa-analyserar-du-forsvarsbolag | försvarsaktier | 1199 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 2 (kursankare se-03-forsvarssektorn) | data/blogg-utkast/forsvarsaktier-sa-analyserar-du-forsvarsbolag.json |
+| B16 | forsakringsaktier-sa-analyserar-du-forsakringsbolag | försäkringsaktier | 1400 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-06-finanssektorn) | data/blogg-utkast/forsakringsaktier-sa-analyserar-du-forsakringsbolag.json |
+| B17 | medieaktier-sa-analyserar-du-medie-och-streamingbolag | medieaktier | 1218 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-08-media); avgränsas mot B5 (innehållsekonomi kontra operatörer) | data/blogg-utkast/medieaktier-sa-analyserar-du-medie-och-streamingbolag.json |
+| B18 | livsmedelsaktier-sa-analyserar-du-livsmedelsbolag | livsmedelsaktier | 1333 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 3 (kursankare se-14-livsmedel); avgränsas mot B7 (underfamilj) och B13 (tillverkare kontra butik) | data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json |
+| B19 | ehandelsaktier-sa-analyserar-du-plattformsbolag | e-handelsaktier | 1206 | UTKAST v1 (2026-09-17, s3-u2) — sektoromgång 3 (kursankare v15-natverkseffekter; de kvarvarande se-XX-ankarena saknar bärning men tillväxtgrenen bär 5 fullrådatasbolag: SHOP/MELI/ABNB/UBER/SE); avgränsas mot B13 (butik kontra marknadsplats), B11 (prenumeration kontra transaktion), B8 (stil kontra affärsmodell) | data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json |
+| B20 | lyxaktier-sa-analyserar-du-lyxbolag | lyxaktier | 1221 | UTKAST v1 (2026-09-17, s3-u1) — sektoromgång 3 (kursankare se-05-lyxsektorn); levererad TROTS koordinatnoten "endast LVMH i universumet": LVMH som djupanker ur universumets rådata (2026-09-03) + live-verifierade officiella källor (LVMH helårsrapport 2025, Hermès 2025, Arnault-ägarskap) — granskningskön avgör; avgränsas mot B7 (lyx som konsument-underfamilj) och B18 (varumärkesägare, olika hyllor) | data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 
 Levererade branschguider utan B-rad (föregående omgång): energi (`sa-analyserar-du-energiaktier.json`) och material (`ravarubolag-materialbranschens-cykel.json`).
+
+## Översättningsomgången (spår 3, påbörjad 2026-09-17)
+
+Svenska versionerna klara (B1–B18 + energi + material = 20). Sektoromgång 4:s kvarvarande
+kursankare (logistik se-04/se-15, lyx se-05, krypto se-11, utbildning se-13) saknar
+universumsbärning (endast LVMH inom lyx av 144 bolag — halvledarprecedentet gäller) ⇒
+översättningarna (en/ar) öppnas, i B-ordning. Fil/slug = originalets + `-en`/`-ar`
+(BlogPost-formen saknar språkfält). Samma tal och räkneexempel som originalet;
+engelska/arabiska UTBILDNINGSformuleringar; disclaimer-sista-rad översatt samma budskap.
+
+NOT s3-u1 (2026-09-17): lyx-ankaret levererades ändå som B20 (samma dygn som noten
+skrevs) — LVMH-ankaret bar hela vägen med kompletta räkneexempel, och källorna
+live-verifierades (lvmh.com, Hermès, Bloomberg/Yahoo). Kvarvarande ankare utan
+universumsbärning: logistik, krypto, utbildning.
+
+| # | Slug | Primärt sökord (EN) | Ord | Status | Fil |
+|---|------|---------------------|-----|--------|-----|
+| Ö1 | fastighetsaktier-sa-analyserar-du-fastighetsbolag-en | real estate stocks | 1391 | UTKAST v1 (2026-09-17, s3-u3) — engelsk översättning av B1 (klaim auto-s3-1789607727072-u3; sektoromgång 4:s se-XX-ankare saknar bärning ⇒ översättningsspåret öppnat enligt notisen ovan) | data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json |
+| Ö2 | sa-analyserar-du-bankaktier-en | bank stocks | 1399 | UTKAST v1 (2026-09-17, s3-u2) — engelsk översättning av B2 i B-ordning (klaim auto-s3-1789630527583-u2; samma tal och räkneexempel som originalet; KVD GRÖN: 0 FEL-träffar i varumärkesgrinden, sökord i H1+ingress+2 H2, title 54/60, OG 142/155, korslänkar 14/14 identisk uppsättning med B2) | data/blogg-utkast/sa-analyserar-du-bankaktier-en.json |
+| Ö3 | lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en | pharmaceutical stocks | 1399 | UTKAST v1 (2026-09-17, s3-u1) — engelsk översättning av B3 (klaim auto-s3-1789630527583-u1; u1:s första klaim Ö2 avgiven åt u2 efter deras PÅGÅR-rad — kollisionsnotis i anspråksfilen; KVD GRÖN 0/0: länkparitet 11/11, talparitet 12, aritmetik 3/3) | data/blogg-utkast/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json |
+| Ö4 | teknikaktier-sa-analyserar-du-teknikbolag-en | tech stocks | 1393 | UTKAST v1 (2026-09-17, s3-u3) — engelsk översättning av B4 (klaim auto-s3-1789630527583-u3; KVD GRÖN 0/0: varumärkesgrind 26 regexer × 3 ytor = 0, rådverb EN+SV 0, sökord "tech stocks" i title+ingress+H2, title 48/60, OG 149/155, korslänkar 18/18 identisk uppsättning med B4, talparitet 32/32, aritmetik 7/7; källor live: eur-lex 202 ×2 + Gartner bot-skyddad men sökindexverifierad "$6.37 trillion +14.2 %") | data/blogg-utkast/teknikaktier-sa-analyserar-du-teknikbolag-en.json |
 
 ---
 

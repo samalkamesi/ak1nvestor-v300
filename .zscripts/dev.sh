@@ -89,6 +89,17 @@ wait_for_service() {
 
 	echo "Waiting for $service_name to be ready on $host:$port..."
 
+	# Vakt (våg 178 full-scan 2026-09-16): funktionen sonderar endast lokala
+	# utvecklingstjänster — case-skelettet avvisar varje host som inte är
+	# loopback INNAN curl når nätverket.
+	case "$host" in
+		localhost|127.0.0.1|\[::1\]) ;;
+		*)
+			echo "ERROR: wait_for_service: endast loopback tillåts (fick '$host')"
+			return 1
+			;;
+	esac
+
 	while [ "$attempt" -le "$max_attempts" ]; do
 		if curl -s --connect-timeout 2 --max-time 5 "http://$host:$port" >/dev/null 2>&1; then
 			echo "$service_name is ready!"

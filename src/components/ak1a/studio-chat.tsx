@@ -6651,6 +6651,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [malDialogText, malStartar, visaToast]);
 
+  // VÅG 181 (GAP-REGISTER POST 30): protokoll-paritetsbenet — mål-motorns
+  // övergång speglas på v4-kommandobussen (pauseGoal/resumeGoal, V4-LAGRET
+  // §11.2). Fel-tolerant: mål-motorns egen väg ovan är den funktionella
+  // sanningen; detta ben är protokollvägen (ack "noop" = app-servern bar
+  // inget mål — äkta domslut, ej fel enligt §11.5.1).
+  const speglaMalStyrningV4 = React.useCallback(async (typ: "pauseGoal" | "resumeGoal") => {
+    try {
+      const res = await fetch("/api/studio/tjanster/kommando", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ typ }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { status?: string; fel?: string };
+      console.info(`[v4/command ${typ}]`, data.status ?? data.fel ?? "inget svar");
+    } catch {
+      console.info(`[v4/command ${typ}] ej nåbart — mål-motorns egen väg gäller.`);
+    }
+  }, []);
+
   const pausaMal = React.useCallback(async () => {
     if (malPausar) return;
     setMalPausar(true);
@@ -6664,6 +6683,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       if (res.ok) {
         setMalStatus((s) => ({ aktiv: false, pausad: true, iteration: s?.iteration ?? 0 }));
         visaToast(data.meddelande || "Målet pausat — iterationerna stannar.");
+        void speglaMalStyrningV4("pauseGoal");
       } else {
         visaToast(data.fel || "Målet kunde ej pausas.", "fel");
       }
@@ -6672,7 +6692,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } finally {
       setMalPausar(false);
     }
-  }, [malPausar, visaToast]);
+  }, [malPausar, speglaMalStyrningV4, visaToast]);
 
   const aterupptaMal = React.useCallback(async () => {
     if (malPausar) return;
@@ -6687,6 +6707,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       if (res.ok) {
         setMalStatus((s) => ({ aktiv: true, pausad: false, iteration: s?.iteration ?? 0 }));
         visaToast(data.meddelande || "Målet återupptaget — loopen fortsätter.");
+        void speglaMalStyrningV4("resumeGoal");
       } else {
         visaToast(data.fel || "Målet kunde ej återupptas.", "fel");
       }
@@ -6695,7 +6716,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } finally {
       setMalPausar(false);
     }
-  }, [malPausar, visaToast]);
+  }, [malPausar, speglaMalStyrningV4, visaToast]);
 
   const rensaMaler = React.useCallback(async () => {
     if (malSparar) return;

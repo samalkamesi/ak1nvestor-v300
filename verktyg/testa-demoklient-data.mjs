@@ -3,8 +3,10 @@
  * AK1A — Test av demoklientens datakontrakt
  * (src/components/ak1a/pro/demoklient-data.ts — B2B-BESLUT §4c/§7 steg 4,
  * våg 61 bygg-4). Mönster som verktyg/testa-morgonrond-data.mjs:
- *   1. Genererar tmp_demoklient_koll.ts i repots rot — importerar modulen.
- *   2. Kör den med: npx --yes tsx tmp_demoklient_koll.ts
+ *   1. Genererar .tmp/tmp_demoklient_koll.ts (o43: engångsyta — gitignorerad
+ *      + tsconfig-exkluderad; ALDRIG i rot, där en SIGKILL-läcka låser
+ *      typgrinden för hela trädet) — importerar modulen.
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_demoklient_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller (BESLUT §7 steg 4(i) — "UTAN någon personuppgift (test på
@@ -29,19 +31,20 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_demoklient_koll.ts");
+const TMP_KAT = path.join(REPO, ".tmp");
+const TMP_TS = path.join(TMP_KAT, "tmp_demoklient_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ───────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_demoklient_koll.ts — GENERERAD av verktyg/testa-demoklient-data.mjs. Raderas efter körning.
-import { lasDemoklient, DEMOKLIENT_ALIAS } from "./src/components/ak1a/pro/demoklient-data";
-import { lasKorstabellGrund } from "./src/lib/portfolj-forskning/korstabell-data";
+import { lasDemoklient, DEMOKLIENT_ALIAS } from "../src/components/ak1a/pro/demoklient-data";
+import { lasKorstabellGrund } from "../src/lib/portfolj-forskning/korstabell-data";
 
 let ok = 0;
 let fail = 0;
@@ -116,9 +119,17 @@ console.log("SUMMA: " + ok + " PASS, " + fail + " FAIL");
 process.exit(fail > 0 ? 1 : 0);
 `;
 
+// OBS (o43): process.exit inuti try MOSSAR finally i Node — exit sker
+// EFTER städningen nedan, annars läcker tmp-filen vid VARJE fail.
+let slutkod = 0;
 try {
+  // .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o43) —
+  // en SIGKILL-ad körning kan lämna filen kvar utan att tsc/grind någonsin
+  // ser den; nästa körning skriver över (idempotent) och stada-tmp-ts.mjs
+  // sopar gamla läckor.
+  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  const r = spawnSync("npx", ["--yes", "tsx", "tmp_demoklient_koll.ts"], {
+  const r = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_demoklient_koll.ts"], {
     cwd: REPO,
     stdio: "inherit",
     timeout: TIMEOUT_MS,
@@ -126,7 +137,7 @@ try {
   });
   if (r.error || r.status !== 0) {
     console.error("Körningen misslyckades: " + (r.error ? r.error.message : "avslutskod " + r.status));
-    process.exit(1);
+    slutkod = 1;
   }
 } finally {
   try {
@@ -135,3 +146,4 @@ try {
     // tmp-filen fanns ej — inget att städa
   }
 }
+process.exit(slutkod);

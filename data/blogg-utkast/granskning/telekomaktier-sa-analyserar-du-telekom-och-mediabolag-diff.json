@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+  "granskadAv": "agentfabrik auto-s1-u2 (våg auto-s1-1789585526448, 2026-09-16)",
+  "rapport": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag-KONTROLL-2026-09-16.md",
+  "bedomning": "FLYTTKLART EFTER EN RÄTTNING (C1 riktningsord) — samtliga 6 externa källposter verifierade GRÖNA mot primärkällor 2026-09-16 (PTS ×2, GSMA, Ericsson, Netflix, Spotify — alla tal exakta), 8/8 räkneexapel egenomräknade exakta, varumärkesgrind 0/26 FEL 0 varningar, rådverb 0, 911 = 0 på 6 mönster, 14/14 interna länkar lever (0 mot outgivna utkast), strukturkontraktet grönt (readingMinutes 2 korrekt — INTE det systematiska 3-slippet); D1 rekommenderas (källans eget måttbegrepp), D2–D4 beslutsfrågor",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+      "falt": "body",
+      "gammalt": "knappt fem och ett halvt år",
+      "nytt": "drygt fem och ett halvt år",
+      "orsak": "Riktningsfel i samma mening som annars är matematiskt exakt: 1 ÷ 0,015 = 66,7 månader = 5,56 år — alltså STRAX ÖVER fem och ett halvt år, inte knappt (under). 'Knappt' pekar åt fel håll; livstidsvärdet 150 kr × 66,7 mån ≈ 10 000 kr i samma mening är däremot exakt och opåverkat"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+      "falt": "body",
+      "gammalt": "Netflix redovisade över 325 miljoner betalande hushåll i fjärde kvartalet 2025",
+      "nytt": "Netflix redovisade över 325 miljoner betalande abonnemang i fjärde kvartalet 2025",
+      "orsak": "Källans eget mått är 'paid memberships' (Q4-2025: passerade 325 miljoner; Reuters/Variety 2026-01-20). 'Hushåll' är Netflix äldre metrikfamilj och texten använder 'abonnenter' genomgående annars — samma term här håller guiden konsekvent med både källan och sin egen vokabulär"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+      "falt": "body",
+      "gammalt": "- Post- och telestyrelsen — auktionsresultat och tillsyn ([pts.se](https://www.pts.se))",
+      "nytt": "- Post- och telestyrelsen — auktionsresultat och tillsyn ([pts.se](https://www.pts.se/radio/auktioner/genomfordna-auktioner/))",
+      "orsak": "Båda auktionstalen (2,3 mdr resp. 4,2 mdr) ligger ett klick bort på PTS:s sida Genomförda auktioner — djuplänken gör källposten lika spårbar som övriga fem (Ericsson/GSMA/Netflix/Spotify länkas till rapportsidor, PTS till startsidan). Krasst förslag: linjärt med källorna-kontraktet"
+    },
+    {
+      "id": "D4",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json",
+      "falt": "body",
+      "gammalt": "Auktionen i 900-, 2100- och 2600 MHz-banden 2023",
+      "nytt": "Auktionen i 900 MHz-, 2,1 GHz- och 2,6 GHz-banden 2023",
+      "orsak": "PTS:s egen beteckning är 900 MHz / 2,1 GHz / 2,6 GHz (sammanhang där MHz-beteckningen blandas på raden kan läsas som tre MHz-band; talen är samma). Kosmetisk terminologianpassning till källan — inget fel i sak"
+    }
+  ]
+}

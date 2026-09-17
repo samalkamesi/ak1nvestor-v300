@@ -1,0 +1,164 @@
+{
+  "slug": "ma-01-transmissionsmekaniken",
+  "category": "MAKROEKONOMI & RÄNTA",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering",
+  "summary": "Avanceradkursen i makroekonomi och ränta — kategoriens första: transmissionsmekaniken, kedjan som förbinder centralbankens styrränta med hushållens räntekostnader, företagens resultat och aktiernas värderingar. Kursen lär de två huvudkanalerna (priskanalen och värderingskanalen), den långa och variabla eftersläpningen, transmissionen i en liten öppen ekonomi med Sverige som exempel — och de fyra frågor som översätter makrobilden till bolagsläsning.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Beskriva transmissionen som en kedja med fem länkar — penningmarknad, kredit, efterfrågan, resultat, värdering — där varje länk har sin egen eftersläpning och sina läckor · Räkna priskanalen i två genomräknade exempel: ett hushåll med tremiljonersbolån där två procentenheters höjning kostar 60 000 kronor om året, och ett bolag där 300 miljoner rörlig upplåning vid samma höjning äter 6 miljoner av resultatet — 10 procent av ett resultat före skatt på 60 miljoner · Räkna värderingskanalen på en evighetsankommande kassaflödesström: 10 miljoner per år till 8 procent diskonteringsränta är 125 miljoner, till 10 procent är 100 miljoner — 20 procents värdefall på två procentenheter · Redogöra för diskonteringsräntans tre delar — realränta, inflationsförväntningar och riskpremie — och varför de rör sig olika · Förklara Sveriges transmission som en liten öppen ekonomi: rörliga bolån gör priskanalen snabb, och omvärldens styrräntor tränger igenom både via kronan (km-058) och via kapitalmarknadens avkastningskrav · Ställa de fyra bolagsfrågor som översätter makrokedjan till analys — rörlig ränta i balansräkningen, räntekänslig efterfrågan, diskonteringskänslig värdering, valutakanal — och koppla dem till känslighetsanalysen (st-02) och normaliseringen (vr-02).",
+  "why": "Familjen makroekonomi och ränta har fem kurser — räntan (km-054), inflationen (km-055), centralbankerna (km-056), konjunkturcyklerna (km-057) och valutorna (km-058) — men ingen enda på avancerad nivå, och luckan är precis den som märks när kurserna ses tillsammans: varje kurs äger en bit av makromekaniken men ingen äger det som binder samman bitarna — transmissionskedjan från beslut i centralbanken till siffror i en kvartalsrapport. Frågan 'vad gör en räntehöjning med mitt bolag?' har inget svar i en enda av familjens kurser: priset på kredit är km-054, verktygen är km-056, cykeln är km-057 — men kedjan mellan dem, med sina eftersläpningar och sina två skilda kanaler (resultatet och multipeln), är ett eget hantverk. Kursen fyller den luckan med kategoriens första avancerade kurs: en genomräknad kedja från styrränta till bolagsläsning, som kröner familjen och bygger broar till lönsamhetstrappan (ln-03), riskfamiljen (rk-05, rk-08, rs-03) och värderingen (vr-02).",
+  "history": {
+    "origin": "Transmissionstänkandet har en svensk födelseplats: Knut Wicksell beskrev 1898 den kumulativa processen — hur en bankränta som ligger under den naturliga avkastningen på kapital sätter igång en kedja av kredit, investeringar och prisstegring som inte stannar förrän räntan justeras. Hans fråga — hur en penningränta sprider sig till ekonomin — är transmissionsmekanikens första formulering, och Stockholmsskolan bar den vidare in i 1900-talet.",
+    "evolution": "Keynesianerna byggde ut kedjan med nya länkar: Tobin porträtterade hur aktiernas priser påverkar företagens investeringar (q-kvoten), Modigliani hur hushållens förmögenhet påverkar konsumtionen — plötsligt var börsen själv en transmissionslänk, inte bara dess pris. Milton Friedman tillförde empirins varning: eftersläpningarna är långa och variabla — verkningarna av en ränteförändring sprider sig över år, inte veckor, och aldrig två gånger likadant. Bernankes och Gertlers kreditkanaler moderniserade förståelsen av varför kedjan läcker: bankernas utlåning följer inte styrräntan mekaniskt.",
+    "modern": "Räntecykeln 2022–2023 blev transmissionens livesända generalrepetition: styrräntor världen över höjdes från noll till nivåer som ingen sett på decennier — i Sverige från noll till fyra procent på knappt två år — och kedjans länkar syntes en efter en: rörliga bolån fick hushållens räntekostnader att stiga inom månader, värderingskanalen pressade långa värderingsmultipler, och eftersläpningen gjorde att resultatsidan reagerade först med över ett års dröjsmål. I AKM1:s metodik är makrobilden kontexten kring varje bolagsläsning — och denna kurs är själva kopplingen mellan dem."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — kedjan med fem länkar",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Priskanalen — från styrränta till räntekostnad",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Värderingskanalen — diskonteringsräntan och multipeln",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Liten öppen ekonomi — Sveriges två extra länkar",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — fyra missläsningar av kedjan",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — fyra frågor från makro till bolag",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — kedjan med fem länkar",
+      "intro": "En ränteförändring är inte en händelse utan en process — fem länkar, var och en med sin egen eftersläpning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När en centralbank ändrar styrräntan (km-056) börjar en kedja. Länk ett — penningmarknaden: korta räntor följer styrräntan nästan omedelbart, inom dagar. Länk två — krediten: bankernas utlåningsräntor, bolåneräntor och företagslån rör sig med olika hastighet beroende på bindningstider och konkurrens; här läcker kedjan, för utlåningen styrs också av bankernas eget risktagande. Länk tre — efterfrågan: hushåll och företag får ändrade räntekostnader och ändrar konsumtion och investeringar; denna länk har månadernas till årens eftersläpning. Länk fyra — resultaten: företagens intäkter och kostnader rör sig när efterfrågan och räntekostnaderna rör sig — ytterligare en eftersläpning, ty rapporterna kommer kvartalsvis och volymerna svarar långsammare än priserna. Länk fem — värderingen: kapitalmarknadens avkastningskrav rör sig med ränteläget och sätter om multiplerna (vr-02, vr-03) — och den länken är ofta SNABBARE än resultatlänken, vilket är kursernas paradox: värderingen reagerar på vad resultaten kommer att göra om ett år.\n\nTvå egenskaper gör kedjan svår. Eftersläpningen är lång och variabel — Friedmans klassiska formulering — verkningarna av en enda beslutändring sprider sig över flera år och aldrig två cyklar likadant. Och kedjen har två huvudkanaler som rör olika saker: priskanalen (länk två till fyra — resultatet) och värderingskanalen (länk fem — multipeln). Ett bolag kan träffas av den ena utan den andra: en stabil verksamhet med fast ränta och räntekänslig efterfrågan märks i resultaten men knappast i multipeln; ett tillväxtbolag utan skuld men med avlägsna kassaflöden märks nästan enbart i multipeln. Det är denna kursens kärna: hålla isär kanalerna och räkna på var och sig."
+        },
+        {
+          "type": "definition",
+          "content": "Transmissionsmekaniken — kedjan från centralbankens styrränta via penningmarknad, kredit, efterfrågan och resultat till värderingen, med två huvudkanaler: priskanalen (räntekostnader och efterfrågan — resultatet) och värderingskanalen (diskonteringsräntan — multipeln), förenade av en lång och variabel eftersläpning."
+        },
+        {
+          "type": "insight",
+          "content": "Kedjans fem länkar har olika fart: penningmarknaden dagar, krediten månader, efterfrågan och resultat kvartal till år — och värderingen reagerar ofta före resultaten, på sin bild av vad resultaten kommer att göra."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Priskanalen — från styrränta till räntekostnad",
+      "intro": "Två genomräknade exempel — ett hushåll och ett bolag — visar hur två procentenheter blir tusenlappar och bortfallna resultatprocent.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hushållet: en familj med bolån på 3 000 000 kronor till rörlig ränta. Styrräntan höjs och bolåneräntan följer med två procentenheter — från 3 till 5 procent. Den årliga räntekostnaden stiger med 3 000 000 gånger 0,02 = 60 000 kronor, alltså 5 000 kronor i månaden. Det är priskanalen i sin renaste form: ingen produkt har bytt pris, ingen lön har ändrats — men hushållets utrymme att konsumera har minskat med 60 000 kronor om året, och för hushåll med litet marginalutrymme blir minskningen nästan fullständig konsumtionsbortfall. Multiplera med miljontals hushåll och kedjans tredje länk — efterfrågan — tar form: butiker, bilar, möbler, restauranger, allt som finansieras av hushållens löpande utrymme.\n\nBolaget: ett företag med upplåning på 500 miljoner kronor, varav 300 miljoner rörlig ränta och 200 miljoner bunden till fast ränta med längre löptid. Samma höjning, två procentenheter: de rörliga delens kostnad stiger med 300 gånger 0,02 = 6 miljoner kronor om året; den bundna delen påverkas först vid ny teckning när bindningstiden löper ut. Bolagets resultat före skatt var 60 miljoner — räntehöjningen äter 6 av dem, 10 procent av resultatet, utan att en enda kund har ändrat beteende. Lägg sedan till efterfrågelänken från hushållsexemplet och den totala resultatkänsligheten blir summan av två verkningar: kostnadssidan (räntan) och intäktssidan (volymen) — där operativ hävstång (ln-03) avgör hur hårt intäktsbortfall slår. Känslighetsanalysen (st-02) är verktyget som formaliserar räkningen: simulera resultatet vid plus och minus två procentenheter och läs skillnaden. Observera det asymmetriska i bindningstiderna: bolag och hushåll med lång bunden ränta står still i kedjan tills bindningen löper ut — och eftersläpningen blir därmed inte bara lång utan klumpig, med verkningar som anländer i vågor när avtal förfaller."
+        },
+        {
+          "type": "insight",
+          "content": "Priskanalen är räknebar i två steg — räntekostnadens storlek (belopp gånger ränteändring) och resultatets andel (kostnadsökningen delat på resultatet) — och bindningstiderna avgör när i kedjan verkningen anländer."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Värderingskanalen — diskonteringsräntan och multipeln",
+      "intro": "En kassaflödesström som aldrig tar slut är räkneekonomins känsligaste instrument: två procentenheter ränta blir tjugo procent värde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Värderingskanalen börjar i en formel som kursen om räntan (km-054) introducerar och DCF-kursen (km-007) bygger ut: värdet av en kassaflödesström är framtida kassaflöden diskonterade till i dag. Den renaste varianten för att se räntans kraft är den evighetsankommande strömmen — värdet är kassaflödet delat med diskonteringsräntan. Räkna: en ström på 10 miljoner kronor per år till 8 procents diskonteringsränta är värd 10 delat med 0,08 = 125 miljoner. Höj diskonteringsräntan två procentenheter till 10 procent: 10 delat med 0,10 = 100 miljoner. Två procentenheters räntehöjning — 20 procents värdefall (25 av 125), utan att kassaflödet rört sig en krona. Det är värderingskanalen: den träffar värderingen direkt, och den träffar hårdast där kassaflödena ligger längst bort i tiden — därför pressade räntecykeln 2022–2023 tillväxtbolagens multipler hårdast (deras kassaflöden ligger i fjärran framtid) medan stabila kassaflödesbolag hade ett mjukare fall.\n\nDiskonteringsräntan själv är tre delar: realräntan (tids- och tillväxtperspektivets pris), inflationsförväntningarna (kronans självförvåning) och riskpremien (kravet för att välja aktier framför trygga alternativ) — WACC-kursen (km-008) räknar dem samman. Styrränteförändringar rör främst de två första, medan riskpremien driver av marknadens humör — och därför kan värderingskanalen röra sig även när styrräntan står still: en förändrad riskpremie räcker. Kurvans form tillför information: när korta räntor ligger över långa — en inverterad kurva, säg tvåårig 3,4 mot tioårig 3,0 procent — prissätter marknaden kommande sänkningar, och historiskt har den formen ofta förekommit i cykelns senare skede (km-057). Men notera fällan som kapitel 5 tar: kurvan är en förväntan, inte ett löfte. För bolagsläsningen översätts kanalen till multipelns känslighet: P/E-kurser (km-009) och normaliserade multipler (vr-02) är värderingskanalens instrument — och känslighetsfrågan blir mätbar: hur mycket ändras det motiverade värdet om diskonteringsräntan ändras en procentenhet?"
+        },
+        {
+          "type": "tabell",
+          "content": "Evighetsströmmen 10 miljoner per år vid olika diskonteringsräntor: | Diskonteringsränta | Värde | Förändring | — | 8 procent | 125 miljoner | — | — | 10 procent | 100 miljoner | minus 20 procent | — | 12 procent | 83 miljoner | minus 17 procent (mot 100) | — | 6 procent | 167 miljoner | plus 67 procent (mot 100) |"
+        },
+        {
+          "type": "insight",
+          "content": "Värderingskanalen är evighetsformelns fysik: samma kassaflöde, annan ränta, annat värde — och känsligheten växer med avståndet till kassaflödena; tillväxtbolag bär kanalens längsta slag."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Liten öppen ekonomi — Sveriges två extra länkar",
+      "intro": "Sveriges transmission har världens snabbaste priskanal och två extra länkar in utifrån — kronan och omvärldens styrräntor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveriges kedja har två kännetecken. Det första: en stor andel av hushållens bolån har rörlig eller kort bunden ränta — internationellt sett ovanligt — vilket gör priskanalen ovanligt snabb: ränteförändringar når hushållens räntekostnader inom månader i stället för år, och efterfrågelänken svarar tidigare. Snabbheten är ett dubbelverktyg: centralbankens verkningar kommer fort, men de kommer också klumpigt — när många bindningstider löper ut samtidigt samlas verkningarna. Det andra kännetecknet: en liten öppen ekonomi importerar sina räntor. Kapitalmarknaderna är globala, och Sveriges långa räntor påverkas lika mycket av omvärldens styrräntor och riskaptit som av den egna centralbankens beslut — kedjan får därför två extra länkar in utifrån: omvärldens styrräntor (som tränger igenom i det avkastningskrav svenska låntagare måste betala) och valutan (km-058): en krona som försvagas gör importen dyrare och bidrar till inflationen, vilket återverkar på centralbankens spelrum — en återkopplingslänk som stora ekonomier saknar.\n\nFör bolagsläsningen betyder det två frågor till. Fråga ett: hur mycket av bolagets kostnads- och intäktssida sits i utlandet? Ett svenskt bolag med intäkter i euro och kostnader i kronor har en valutakanal som delvis motverkande räntekanalen. Fråga två: vem är bolagets räntreferens? Bolag med upplåning i svenska kronor följer den egna penningpolitiken; bolag med dollar- eller euroskuld följer Feds och ECB:s kurvor — och deras transmissionen till bolaget sker även om Riksbanken står still. Räntecykeln 2022–2023 visade båda länkarna samtidigt: globala styrräntor rörde sig tillsammans, kronan svängde, och svenska bolag med utlandsexponering fick en blandad transmission som bara de fyra bolagsfrågorna (kapitel 6) kan reda ut."
+        },
+        {
+          "type": "insight",
+          "content": "Litet och öppet betyder snabbare och mer importerat: rörliga bolån gör priskanalen bland världens snabbaste, och omvärldens styrräntor och valutan lägger två extra länkar i kedjan som måste läsas separat."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fyra missläsningar av kedjan",
+      "intro": "Kedjans fällor är metodens spegelbilder: att läsa den mekaniskt, symmetriskt, genomsnittligt eller för snabbt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett — den mekaniska läsningen: att behandla kedjan som ett maskineri där två procents styrränta alltid ger samma verkning. Kedjan läcker i varje länk — bankernas utlåning styrs av mer än styrräntan (kreditstandarden), hushållens konsumtion av mer än räntekostnaden (förmögenhet, trygghet), företagens investeringar av mer än kreditpriset (orderstock, förväntningar). Transmissionen är en mekanik med förstärkare och dämpare, inte ett spel rum. Fälla två — symmetritron: att tro att höjningar och sänkningar verkar lika starkt åt varje håll. Historiskt verkar höjningar snabbare på efterfrågan än sänkningar — ett hushåll som tvingats dra ner konsumerar inte om automatiskt när räntan faller, och bolag som skurit kostnader bygger inte tillbaka dem i samma takt. Sänkningscykeln har sin egen, långsammare form. Fälla tre — genomsnittsbolagstro: att räkna på ekonomin som helhet och läsa svaret på ett enskilt bolag. Genomsnittet är en summering av tusen olika transmissioner — bolagets egen kedja beror på dess balansräkning (rk-08), dess kunder, dess bindningstider och dess värderingsform; rs-03:s dolda samvariation är släktfällan: många bolag som ser olika ut delar samma ränteexponering. Fälla fyra — för snabb eftersläpning: att lästa kvartalets rapport som kedjans fulla verkning. Friedman igen — eftersläpningen är lång och variabel: intäktssidan svarar när kundernas konsumtion ändrats, kostnadssidan när bindningstider löpt ut, värderingen när förväntningarna format om. Ett år in i en räntecykel är kedjan mitt i, inte slut med. Kursens ram genomgående: detta är mekanikförståelse som utbildning — hur ekonomin och värderingen hänger samman — aldrig en uppmaning att tidssätta något."
+        },
+        {
+          "type": "insight",
+          "content": "Fyra fällor — mekanisk läsning, symmetritro, genomsnittsbolagstro, för snabb eftersläpning — har samma bot: räkna bolagets egen kedja och tidsätt varje länk, i stället för att läsa ekonomin som ett maskineri eller en genomsnittstabell."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — fyra frågor från makro till bolag",
+      "intro": "Kedjan blir bolagsanalys genom fyra frågor — var och en mätbar i en årsredovisning eller en värdering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — hur mycket rörlig ränta bär bolaget? Läs balansräkningen (bk-01, ks-03): upplåningens storlek, bindningstider och valutor; räkna kapitel 2:s räkning (belopp gånger ränteändring delat på resultatet) vid plus och minus två procentenheter. Fråga två — hur räntekänslig är efterfrågan? Bolag som säljer bostäder, bilar, kapitalvaror eller finansierade köp svarar tidigare och hårdare än bolag som säljer livsmedel och driftskritiska tjänster; multiplicera med operativ hävstång (ln-03) för resultatkänsligheten och låt känslighetsanalysen (st-02) formalisera den. Fråga tre — hur diskonteringskänslig är värderingen? Ju längre bort kassaflödena ligger, desto hårdare slår värderingskanalen (kapitel 3:s evighetsräkning); normaliserade multipler (vr-02) håller måttet mot räntelägets svängningar. Fråga fyra — vilken valutakanal bär bolaget? Intäkter och kostnader i olika valutor ger en delvis motverkande länk (km-058) — läs den innan räntesvaret tolkas.\n\nDe fyra frågorna är makrodimensionens praktiska bro i AKM1:s metodik: varje bolagsläsning börjar med ränteläge och cykelposition som kontext (km-057, rk-05) och översätts sedan via frågorna till mätbara poster i just detta bolags rapporter. Kursen kröner därmed kategorin makroekonomi och ränta med sin första avancerade kurs: fem kurser om kedjans delar — räntan, inflationen, centralbanken, cykeln, valutan — och denna om det som binder dem: transmissionen från beslut till bolag, med eftersläpningarnas tålamod och de två kanalernas isärhållande som kärna. Och som alltid i spåret: att förstå kedjan är utbildning i hur ekonomin fungerar — analysen är läsningens verktyg, och vad var och en väljer att göra med sina beslut är varje persons eget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: välj ett bolag ur studions universum och besvara de fyra frågorna i tal: (1) rörlig upplåning vid plus och minus två procentenheter — hur många procent av resultatet? (2) hur räntekänslig är kundens efterfrågan — vilka intäktsandelar bedöms finansierade eller uppskjutbara? (3) var i kedjan ligger värderingen — hur känslig är multiplen enligt evighetsräkningen? (4) vilka valutor sitter på intäkter och kostnader? Sammanfatta bolagets transmission i en mening."
+        },
+        {
+          "type": "insight",
+          "content": "Fyra frågor — rörlig ränta, räntekänslig efterfrågan, diskonteringskänslig värdering, valutakanal — är hela transmissionen översatt till bolagsläsning: makrobilden blir kontext, frågorna gör den mätbar."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch placerade sig medvetet i kedjans tredje länk: hans resonemang i One Up on Wall Street om cykelns svängningar — att vissa branscher slår in tidigt i en nedgång och vaknar tidigt i en uppgång — är transmissionsläsning på portföljns villkor. Lynchs regel att känna sina bolag bättre än marknaden är också kursens: fråga tre om värderingskänslighet kan ingen genomsnittstabell svara på, bara bolagets egen kassaflödesform.",
+  "grahamSection": "Benjamin Grahams värld präglades av fasta kurvor i stället för flytande, men hans kärna lever kvar i kursen: mr Markets priser svänger med räntan och humöret, medan värdet vilar på bolagets kassaflöden — Grahams säkerhetsmarginal (km-030) blir i transmissionens språk avståndet mellan en räntekänslig kurs och en normaliserad värdering (vr-02): ju starkare värderingskanalen slagit, desto viktigare att läsa vad som är resultat och vad som är multipel.",
+  "ak1Section": "I AK1A:s metodik kröner denna kurs kategorin makroekonomi och ränta (km-054 till km-058) med dess första avancerade kurs — transmissionen som binder familjens delar till bolagsläsningen och ger AKM1:s kvartalspaket deras makrokontext: ränteläge och cykelposition som inramning, fyra mätbara frågor som bro. Brobyggen: mot ln-03 (operativ hävstång i resultatlänken), st-02 (känslighetsanalysen som formaliserar räkningen), rk-05 och rk-08 (cykel- och ränterisken i riskfamiljen), rs-03 (den delade ränteexponeringen), vr-02 och vr-03 (multipelns normalisering och anatomi), km-007 och km-008 (diskonteringsräntans räkneverktyg) samt km-058 (valutalänken)."
+}

@@ -156,6 +156,11 @@ c) DATA FÖRLORAT (t.ex. Supabase-tabell raderad): Supabase är levande
    huvudagenten tillför enbart nycklarna. OBS: händelsehistorik före
    2026-09-03 finns ENDAST i 09-08-arkivet (levande tabellen gallras) —
    system-events-full-*.json.gz är arkivhandlingar, retention gäller ALDRIG.
+   AKUT LÄGE sedan 2026-09-16 ~13:46 lokal: system_events är TOM i prod
+   (bevis: DR-KVARTAL-2026-09-16-FYRAKEDJOR.md §4) — scenariet c) ÄR AKTIVERAT
+   för tabellen: senaste kompletta källa = system-events-full-2026-09-16.json.gz
+   (161 678 rader t.o.m. 05:23 UTC; byteidentisk kopia i /tmp med md5-kvitto).
+   Skrivvägen till tabellen tystnadade samtidigt — utreds av huvudagenten.
 
 ## 5. INLOGGNING & NYCKLAR (platser, ALDRIG värden)
 
@@ -204,6 +209,9 @@ Drift/backup:
   dump (gzip över 20 MB). AV hybrid-sync varje timme + vid behov.
 - backup-server-filer.mjs — serverns repo (tar.gz, 500 MB-vakt) + .env ->
   valvet. AV hybrid-sync steg 4.
+- dr-rpo-diff.mjs — RPO-diff per tabell: dumpens COPY-räkning vs levande
+  prod-COUNT (psql via PGPASSFILE, EN UNION ALL-fråga) → oskyddade rader
+  sedan bladets 02:30. Vid DR-övning eller misstanke om dataförlust.
 - kvalitetsvakt.mjs — skannar hela sajten efter fel, skriver data/rapporter/
   kvalitetsrapport-SENASTE.md. Manuellt eller via /api/cron/kvalitet.
 - v80a-sprak-svep.mjs — hämtar nyckelsidor ur prod (sv/en/ar) och letar råa
@@ -298,7 +306,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: **FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s**: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade restore: **MIDDAGS-DR 2026-09-17 — KEDJA 4 PÅ JUNGFRU-CRON-SETET + PUMPSTARTEN TIDSATT + TOMMA PER-TYP BESVARADE (2026-09-17 14:26–14:35 lokal, s10-u1, `node verktyg/dr-kedja4.mjs` GRÖN exit 0 + `PGPASSFILE=… node verktyg/dr-rpo-diff.mjs --json` + läsande captured_at-sond, protokoll DR-OVNING-2026-09-17-MIDDAG.md + maskinellt DR-PROV-2026-09-17-KEDJA4.md + JSON DR-RPO-DIFF-2026-09-17-MIDDAG.json): kedja 4 första gången på en OBEVAKAD cron-export (09-16-setet var manuellt exporterat) — RAM-grind GRÖN direkt (1 223 MB), självtest 4/4, 10/10 per-typ-filer GRÖNA (0 VARNINGAR = inga tysta exportfel), ⊆ full-arkiv 10 matchade/0 saknade (arkiv 163 039), restore i skrap-PG 10 rader från 10 filer RTO 0,10 s, oberoende PG-verifiering (perTyp blogg_utkast=7 + medlem=3, jsonb 10), städning verifierad (ak1a_dr_pertyp raderad, PG17 nere); KÖPOSTEN TOMMA PER-TYP BESVARAD — de 8 tomma filerna är ÄKTA TOMMA: arkivets faktiska per-typ-fördelning är medlem=3 · blogg_utkast=7, alla övriga 8 bevakade typer 0 OCKSÅ i arkivet (källan tom, ej exportfel; räkneklarering: 8 av 10 per-typ-filer + full-arkivet som 11:e fil; ytan stillastående — de 10 raderna bär fönstret 09-11 10:44→23:25, inga nya event av bevakade typer på 6 dygn); MORGNONS KÖPOST PUMPSTART INFRIAD — snapshots-pumpen skriver HELA dagens batch vid exakt 08:00:00 lokal (captured_at 06:00:00.058474Z, samtliga 18 984 rader EN tidsstämpel = ett enda bulk-påstående; gårddagen identisk 06:00:00.047496Z/18 984): morgonmätningen 07:43 såg pumpen på 0 (17 min före start), middagsmätningen 14:31 såg den klar — fönstret (07:43, 14:31) slutet av mätningarna, sonden sätter start exakt; KORSBEVIS sondens 18 984 == diffens +18 984; MIDDAGS-RPO: +19 392 oskyddade på 11,9 h sedan 02:30-bladet i 3 av 60 tabeller (snapshots +18 984 · board_decisions +384 · organ_health_logs +24, inga negativa); TVÅ-KLOCKOR-BILDEN KOMPLETT: beslutsklockan +163→+408 på 6,81 h ≈ 36,0 r/h (serien 31,3–36,0, jämn dygnet runt) medan pumpen levererar EN batch/dag kl 08:00 ⇒ ~96 % av RPO-skulden byggs i en enda sekund; RUNBOOK-KÖ till huvudagenten: ett extra blad ~08:05 skär värsta-falls-RPO:n ≈ 19 700 → ≈ 408 rader (−96 %, RTO-kostnad ~10 s) — crontaben ägs av huvudagenten, inget ändrat av agenten.** Dessförinnan **JUNGRUDAGEN KEDJA 1 — FÖNSTRETS SJUNDE BLAD db-2026-09-17 RESTORE-BEVISAT + FÖNSTRET KOMPLETT 7 BLAD (N ∈ [0..6]) + FÖRSTA MORGNON-RPO:N (2026-09-17 07:39–07:45 lokal, s10-u3 O8, `node verktyg/dr-ovning.mjs --fil db-2026-09-17.sql.gz` GRÖN exit 0 + `dr-rpo-diff.mjs --json`, protokoll DR-OVNING-2026-09-17-JUNGRUDAG-7-BLAD.md + maskinellt DR-PROV-2026-09-17-AUTO.md + JSON DR-RPO-DIFF-2026-09-17-MORGON.json): nattens 02:30-blad GRÖNT 1 307 940 rader · RTO 12,1 s (seriens punkt 16, spann 10,3–23,9 s) · fel 788 kända/0 okända · public 60 tabeller/1 286 328 rader == dumpens COPY-räkning (två instrument, samma tal); dagstegsserien KONFIRMERAD med femte punkten +19 800 (spridning 8 rader över 5 steg: 19 805/19 797/19 797/19 800/19 800); FYND TVÅ KLOCKOR i RPO-bilden — beslutsklockan (board_decisions+organ_health_logs) ≈ 31 r/h jämn dygnet runt (natt 31,9 · morgon 31,3) medan snapshots-pumpen (+19 800/dag) stod HELT STILLA 02:30→07:43 (morgondelta +163 endast beslutsklockan) — timmarna efter växlingen är nästan kostnadsfria, skulden byggs först när pumpen startar (köpost: mitt-på-dagens-mätning tidssätter startet); RAM-GRINDKUR under fabrikstrefönstret: exit 75 vid 943 MB (tre fabriksbarn + main) → poll-vänta-tills-öppet 120 s → GRÖN 1 155 MB, PG orörd under väntan; SAMMA blad oberoende replikerat av s10-u1 O8 21 s senare (deras AUTO-2: 12,4 s — FYRKANTIGT KORSBEVIS restore-COUNT ×2 == dump-COPY == 1 286 328, se deras FÖDELSEBEVIS)**. Dessförinnan **JUNGFRUNATT KEDJA 2 — RAD 3:S FÖRSTA OBEVAKADE NATTEXPORT (02:40) BEVISAD ÄNDA TILL RESTORE 2026-09-17 07:36–07:39 lokal (s10-u2 O8, `node verktyg/dr-kedja2.mjs` GRÖN exit 0 på jungfrunattens arkiv system-events-full-2026-09-17.json.gz, protokoll DR-KEDJA2-2026-09-17-JUNGRUNATT.md + maskinellt DR-KEDJA2-2026-09-17-AUTO.md): jungfrunatt-bevis — /tmp/moln-backup.log FÖDD 02:40:01.838 (stat-Birth: loggen skapad av cron-körningen själv = rad 3:s första körning någonsin; 09-16:s export var manuell och skrev aldrig loggen), tidslinje 02:40:01→02:40:38 ≈ 37 s (10 per-typ-filer 02:40:02–03 → system-events-full 26.3 MB klar 02:40:38), total-kontrakt KOMPLETT 163039/163039 (v3-trunceringsvakten GRÖN på första obevakade natten), äkthetsdiff 161 678 (09-16 manuell) → 163 039 (09-17 cron) = +1 361 rader på 19 h 16 min = äkta ny export ej kopia; RESTORE: 163 039 rader · 0 felaktiga · 0 dubblett-id · RTO 25,0 s = KEDJA 2-SERIENS SNABBASTE (52–58 · 27,2 · 38,5 · 37,3 · 25,0) · COPY 6 535 r/s · oberoende PG-verifiering rader==unikaId==163 039 · tidsfönster till 09-17 02:40:02 (sista raden skriven sekunder före exporten) · severity info 162 296/warning 743 · jsonb-prov 15 915; ⇒ KEDJA 2 BEVISAD ÄNDA TILL ÄNDA UTAN AGENT I KEDJAN — BÅDA nattkedjorna (02:30 SQL + 02:40 JSON) har nu jungfrunatts-bevis ända till restore-bar lokal PG; observation: 0 dublett-id mot gårdagens 4 (hypotes: v3:s repetitionsskydd — ej bevisat, prod-PK saknas fortfarande); köpost: 8 av 11 per-typ-tabeller TOMMA i nattexporten.** Dessförinnan **FÖNSTERKONTINUITETEN: ALLA SEX blad restore-bevisade + RETENTIONSPROVET 2026-09-17 01:55–01:57 lokal (s10-u3 O7, `node verktyg/dr-ovning.mjs --fil` ×3, samlingsprotokoll DR-FONSTER-KONTINUITET-2026-09-17.md + maskinella DR-PROV-2026-09-16-AUTO-{7,8,9}.md): fönstrets MITT-BLAD restore-bevisade — db-2026-09-12 RTO 11,1 s · public 60 tabeller/1 187 329 rader · db-2026-09-13 11,2 s · 60/1 207 134 · db-2026-09-14 10,3 s (seriens snabbaste) · 60/1 226 931; fel 780 kända/0 okända ×3; markörer GRÖN ×3 ⇒ HELA retentionfönstret 09-11→09-16 restore-bevisat (fönsterdjupet + kedja 1-serien tog ändarna; varje N∈[0..5] "dagar sen katastrof" har nu bevisat blad + mätt radtal); FYND: tillväxten +439 (09-11→12) därefter KONSTANT ≈+19 800/dag (fönsterdjupets 16 016/dag-snitt = artefakt av 439-dagen), RTO ålder-oblessrad (10,3–11,2 s på 4–5 dagar gamla blad — 30-dagarsgränsen RTO-neutral); RETENTIONENS BETEENDEPROV (första): cron-radens exakta find -mtime +30 -delete raderade 40-dagars-dummy + skonade 28-dagars-dummy + lämnade 6 äkta blad (gränsen är >30 hela dygn; gränsfallsfilen städad manuellt — dummy överlever aldrig provet, RÖD markör låser &&-kedjans retention); första äkta bladraderingen ~2026-10-11+ då 09-11-bladet passerar 30 dygn — fönstret växer dit, fönsterdjupets dag-29-runbook gäller då för 09-11.** Dessförinnan **TOTAL-MALLEN KOMPLETT MED KIRURGI — fem kedjor ETT kommando 2026-09-17 01:52–01:55 lokal (s10-u1 O7, `node verktyg/dr-total.mjs` med dr-kedja5.mjs vävt som steg 2 av 5 i ordning 1→5→2→4→3; maskinellt överprotokoll DR-TOTAL-2026-09-16-AUTO-3.md (UTC-bladnamn) + 5 delprotokoll): samtliga 5 kedjor GRÖNA i EN sekvens — TOTALT 187,2 s (iterationsserie 130,0 → 147,0 → 187,2 s; kirurgin +73,0 s: full restore 11,4 s · extraktion 2,2 s/1 176 468 datarader · sabotage GRIPET · kirurgi 13,7 s · checksumma IDENTISK); kvartalsmallen 2026-12 = ETT kommando (--utan-kirurgi i rescue-läge); FLOCK-KÖ MELLAN AGENTER skarpt bevisad (syskonets dr-ovning tog prov-låset 13 ms efter överprotokollets slut — köade bakom mina barns lås, noll kollision).** Dessförinnan **NATT-DR + FÖRSTA NATTLIGA RPO-DIFFEN 2026-09-17 01:47–01:51 lokal (s10-u2 O7, `node verktyg/dr-ovning.mjs` GRÖN exit 0 + NYTT instrument `verktyg/dr-rpo-diff.mjs`, protokoll DR-OVNING-2026-09-17-NATT-RPO.md + JSON DR-RPO-DIFF-2026-09-17.json): kedja 1 i nattfönstret strax före 02:30-växlingen — markörer GRÖN 1 288 041 · RTO 12,7 s · fel 788 kända/0 okända · public 60 tabeller/1 266 528 rader == dumpens zcat-COPY-räkning (KORSBEVIS: två instrument, samma tal — kompletthetskontrakt i båda ändar); RPO-diff levande prod: 1 286 295 rader = +19 767 oskyddade på 23,3 h i 3 av 60 tabeller (snapshots +18 984 · board_decisions +744 · organ_health_logs +39, inga negativa); NATTDIFTSFYND: nattfönstret +408 rader/12,1 h ≈ 34 r/h vs ~1 730 r/h dagtid = natten ~50× lugnare — RPO-skulden byggs dagtid, timmen före 02:30 minst kostsam för DR; instrumentbuggar (felvillkor + schema-citering) bokförda+fixade innan GRÖN; PG-städning ägarmätt (skrap-DB borta, PG17 ner).** Dessförinnan **KEDJA 6 STORAGE-RESTORE + FYND TVÅ SUPABASE-PROJEKT 2026-09-16 20:41–20:43 lokal (s10-u3, `node verktyg/dr-kedja6.mjs`, maskinellt protokoll DR-KEDJA6-2026-09-16-AUTO.md + fyndrapport DR-KEDJA6-2026-09-16-TVAPROJEKT-FYND.md): storage-lagrets BÅDA halvor restore-bevisade — metadata (5 buckets/63 objekt/0,57 MB) ur nattdumpen i skrap-DB (full restore 13,8 s · fel 788 kända/0 okända · retentionssvep 6/6 GRÖN · markörer GRÖN) + innehåll via LÄSANDE Storage-REST (bucket+objektlista 0,7 s; nerladdningsprov ak1nvestor-code.zip 1 272 122 B == live-listans metadata.size — byte-kontrakt GRÖNT, första gången innehållsvägen bevisad; blobbar har INGEN historik, runbook i protokollet); FYND 1 (akut, fyra instrument): dumpkedjan (.pgpass → db.rkaq…wxrw) och appens REST (.env → …suhvlsbp = AGENTS.md:s ref) läser TVÅ OLIKA Supabase-projekt — rkaq: system_events 0 i ALLA dumpar sedan 09-11, snapshots 1 176 468 växande ~19k/dag, board_decisions 47 602; aufr: system_events 162 741 VÄXANDE (+1 063 på 11 h), members 3, board_decisions 77, snapshots 404 — dagens "system_events TOM i prod" MOTBEVISAT som radering (tväprojekt-artefakt; ÅTERIMPORTEN ska EJ genomföras), dumpkontradiktionen + members=0 upplösta; kedjorna 1/3/4/5:s restore-bevis består (rkaq↔rkaq), men aufr:s icke-events-tabeller är OBACKADE; FYND 2 (R2, orört): aufr:s bucket "ak1nvestor-code" är PUBLIK och listade en .env.local-namngiven fil (innehållet ALDRIG läst — verktygets R2-filter valde zip:en som provobjekt) — åtgärd = huvudagenten.** Dessförinnan **TOTAL-ÖVNINGEN ITERATION 2 + FLOCK-BETEENDEPROV 2026-09-16 20:42–20:45 lokal (s10-u2 O6, `node verktyg/dr-total-flockprov.mjs`, DR-TOTAL-2026-09-16-FLOCKPROV.md + maskinellt överprotokoll DR-TOTAL-2026-09-16-AUTO-2 + 4 delprotokoll): alla fyra kedjorna GRÖNA i EN sekvens — TOTALT 147,0 s == väggklocka (kedja 1 39,9 s/restore 14,3 s · public 60 tabeller/1 266 528 rader · kedja 2 39,8 s/161 678 rader/4 955 r/s · kedja 4 36,4 s/10 av 10 + sabotage 3/3 · kedja 3 30,8 s/8 322 filer/1 195 commits) MED flock-lagret BETEENDEBEVISAT (O4:s ärlighetsnot INLÖST i förtid): (i) låsfilen bar `flock=1` med LEVANDE pid under körningen, (ii) främmande aktiv 25 s-låshållare → dr-total KÖADE och tog över efter 24,1 s (gamla fillås-semantiken hade exit 3 direkt), (iii) 45 min bakdaterad död låsfil oskadlig — exit 3 uteblev; PG-städning verifierad (PG17 nere, /tmp/dr-total-* borta, låset släppt); grindläge MemAvailable 1 075 MB (nära 1 000-taket — omkörningsvägen förblev overksam); kvartalsmallen 2026-12 = ETT KOMMANDO `dr-total-flockprov.mjs` (övningskärnan + gratis flock-om-verifiering).** Dessförinnan **KIRURGI-ÖVNINGEN 2026-09-16 14:09–14:13 lokal (s10-u2 O5, `node verktyg/dr-kedja5.mjs`, DR-KEDJA5-2026-09-16-KIRURGI.md + tre maskinella delprotokoll): KEDJA 5 kirurgisk TABELLåterställning — organismens minne (public.section_data_snapshots, 1 176 468 rader ≈ 92 % av DB:n) tillbaka som ENDA tabell ur nattdumpens COPY-block: extraktion 2,4 s (zcat+awk, 93 369 KiB, antalskontrakt == källa) + atomisk applicering 15,5 s (DELETE+COPY i EN transaktion), radantal+checksumma IDENTISKA med fullt återställd källa; sabotage (kolumnfel i mitt-rad) GRIPT — psql ON_ERROR_STOP vägrade, transaktionen rullades tillbaka, tabellen orörd; NYTT stående kontrakt: retentionssvep 6/6 dumpar gzip-gröna per körning (kedja 3:s läxa mekaniserad på dumparna); FYND: (1) board_decisions kan EJ kirurgeras — SET NULL-kaskaden mot forecast_log stoppas av forecast_immutable()-triggern (äkta skydd mot olycksradering; specialrecept = huvudagenten), (2) psql accepterar TYST en vid EOF trunkerad COPY (bevisat: 705 881 rader landade exit 0) — radantal+checksumma är OBLIGATORISKT completeness-kontrakt, verktyget bär det.** Senast bevisade FÖNSTERDJUP (äldsta bladet): **FÖNSTERDJUPSÖVNINGEN 2026-09-16 20:49–20:55 lokal (s10-u1 O6, `node verktyg/dr-fonsterdjup.mjs`, DR-FONSTERDJUP-2026-09-16.md): retentionens ÄLDSTA blad (db-2026-09-11, dag 1 av 30) restore-bevisat i två körningar — RTO 15,4 + 14,5 s, okända fel 0, PG count == dumpblock för 60/60 public-tabeller (1 186 890 == 1 186 890); fönstrets tillväxtdiff äldsta→yngsta: +80 082 rader/5 dagar (≈ 16 016/dag; drivers snapshots +75 936 · board_decisions +3 493 · cron +449; 4 nya auth-plattformstabeller; konton 5→3) — gzip-integritet (kedja 5:s svep) är inte restore-barhet, detta är djupbeviset.** Senast bevisade FULLA restore: **TOTAL-KVARTALSÖVNINGEN ETT KOMMANDO 2026-09-16 13:51–13:53 (s10-u2 o4, `node verktyg/dr-total.mjs`, DR-TOTAL-2026-09-16-AUTO.md): alla fyra kedjorna GRÖNA i EN sekvens — TOTAL-RTO 130,0 s = summa==väggklocka (kedja 1 23,3 s/restore 12,2 s · kedja 2 43,8 s/161 678 r · kedja 4 33,4 s · kedja 3 29,6 s/arkiv 8 892 poster = s10-u1 o5:s minutfärska export korsbevisad) med fail-fast + RAM-omkörningskontrakt + vilolägesgaranti i finally — kvartalsmallen 2026-12 = ETT KOMMANDO (korsbevis: s10-u3 3/3:s manuella sekvens ≈105 s samma dag; flock-lagret tillagt efter körningen — BETEENDEBEVISAT 20:42 samma dag av O6, se DR-radens lead).** Dessförinnan **KVARTALSÖVNINGEN I FYRA KEDJOR 2026-09-16 13:40–13:45 (s10-u3 3/3, DR-KVARTAL-2026-09-16-FYRAKEDJOR.md): kedja 1 RTO 17,3 s — nionde punkten (public 60 tabeller/1 266 528 rader == dumpens COPY-radantal: två instrument, samma tal) + kedja 2 GRÖN 161 678 rader/39,0 s + kedja 3 GRÖN (sabotage 3/3 gripna, git-klon 1 195 commits, restore == listat) + kedja 4 GRÖN (10/10 ⊆ full-arkivet) — ALLA FYRA i EN sekvens ≈ 105 s; kvartalsmallen = FYRA kommandon (dr-ovning/dr-kedja2/dr-kedja3/dr-kedja4), nästa senast 2026-12-16. FÖRSTA FULLA LIVE-PROD-DIFFEN (psql COUNT per tabell via PGPASSFILE, 60 tabeller): RPO-delta +19 359 sedan 02:30-dumpen = väntad tillväxt i 3 tabeller, inget oväntat. **AKUT FYND: system_events TOM i levande prod** — 0 rader 13:46 lokal (tabellägare postgres bypassar RLS ⇒ talet sant; 161 678 rader fanns 07:24; raderade i fönstret 07:23–13:46 lokal; inget lokalt el. molnets cron-jobb raderar tabellen; nya events skrivs EJ heller — skrivvägen tystnade); dagens arkiv = ENDA kopian (kopia /tmp/s10u3-arkiv-sakerhetskopia.json.gz, md5 35ce34fc…); återimport mekaniserad (aterstall-system-events.mjs --plan-supabase) men skrivning mot prod = HUVUDAGENTENS beslut — se DR-KVARTAL-…-FYRAKEDJOR.md §4–5.** **RÄTTAD 20:5x lokal samma kväll av KEDJA 6 (S10-U3, se DR-KEDJA6-2026-09-16-TVAPROJEKT-FYND.md): fyndet var en TVÄPROJEKT-ARTEFAKT — psql-sonderna (→ rkaq-projektet) och exportören/REST (→ aufr, appens projekt) läser olika fysiska förråd; system_events LEVER i appens projekt (162 741 och växer) och är 0 i rkaq-dumparna sedan 09-11 ⇒ INGEN radering skett, återimporten SKA EJ genomföras.** Dessförinnan TAKLYFTET 2026-09-16 (s10-u1 O4): kedja 2:s exportör v3 — TOTAL-KONTRAKT + cron 02:40** — 200k-takets kommande TYSTA trunkering (~2026-10-05, +2 015 rader/dag) avvärjd; export GRÄNS 161 678 rader/33 sidor/42,9 s med total-kontrakt KOMPLETT 161678/161674 (dumpen bär sitt eget kompletthetsbevis — JSON-motsvarigheten till slutmarkörerna); restore RTO **38,5 s** = åttonde punkten GRÖN (0 felaktiga · 4 dublett-id kvantifierade = prod-tabellens saknade PK); exporten var OSCHEMALAGD på servern sedan hybrid-sync tystnade → **cron-rad 3 kl 02:40 installerad + referenssynkad, konfigvakten GRÖN 3/3**. Dessförinnan **JUNGRUNATTEN 2026-09-16 (s10-u2 o2): 02:30-cronen levererade OBEVAKAT första natten efter kuren** (markör GRÖN 1 288 041 rader via pgpass; +81 mot manuella testet = äkta ny dump) **+ sjunde RTO-punkten 12,2 s på själva cron-dumpen** (public 60 tabeller/1 266 528 rader · alla scheman 99/1 266 924 · fel 788 kända 0 okända) — kedja 1 bevisad ända till ända UTAN agent i kedjan; RAM-grindens första verkliga exit 75 (PG orörd, omkörning GRÖN). Dessförinnan FULL kvartalsövning BÅDA kedjorna i sekvens 2026-09-16 (s10-u1 o3) — total ~38–40 s: kedja 1 RTO **11,2 s** (sjätte punkten; public 60 tabeller/1 266 455 rader · alla scheman 99/1 266 851 · fel 788 kända 0 okända) på db-2026-09-16; kedja 2 GRÖN **27,2 s / 160 928 rader / 0 dubbletter** via NYTT verktyg `verktyg/dr-kedja2.mjs` — kvartalsmallen = TVÅ kommandon, flock INBYGGT i båda (u3:2:s kö LÖST, se flock-notisen); race-fynd bevisat: läsning mitt i pågående export döms RÖT = skyddet verkade. Tidigare: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): senaste arkiv natten 2026-09-15/16 GRÖNT — 160 928 rader, domkontrakt 0 fel/0 dubbletter (7 dagars RPO-gap SLUT, s10-u5); RTO 52–58 s vid 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT (femte RTO-punkten 23,9 s; härdat). NATTKEDJAN KURAD 2026-09-16 (s10-u5): pgpass = inget klartextlösenord i processlistan + markörvakt varje natt i cron (RÖD natt låser retention); testköt hela kedjan GRÖN 29,1 s / 1 287 960 rader | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md + DR-NATTKEDJAN-2026-09-16.md + DR-PROV-2026-09-16-FULL.md + DR-KEDJA2-2026-09-15-AUTO{,-2}.md + DR-PROV-2026-09-16-KEDJA3.md (serverfiler) + DR-PROV-2026-09-16-KEDJA4.md (per-typ-vyorna) + DR-PROV-2026-09-16-JUNGRUNATT.md (jungfrunatten + sjunde RTO-punkten; maskinellt delprotokoll DR-PROV-2026-09-16-AUTO.md) + DR-TAKLYFT-2026-09-16.md (taklyft + total-kontrakt + cron 02:40; maskinellt delprotokoll DR-KEDJA2-2026-09-16-AUTO.md) + DR-TOTAL-2026-09-16-AUTO.md (totalöverprotokoll ETT KOMMANDO; maskinella delprotokoll DR-PROV-2026-09-16-AUTO-3 + DR-KEDJA2-2026-09-16-AUTO-3 + DR-PROV-2026-09-16-KEDJA4-3 + DR-KEDJA3-2026-09-16-AUTO-4) + DR-TOTAL-2026-09-16-FLOCKPROV.md (O6: flock-beteendeprov + TOTAL iteration 2; maskinella DR-TOTAL-2026-09-16-AUTO-2 + DR-PROV-2026-09-16-AUTO-4 + DR-KEDJA2-2026-09-16-AUTO-4 + DR-PROV-2026-09-16-KEDJA4-4 + DR-KEDJA3-2026-09-16-AUTO-5) + DR-KEDJA6-2026-09-16-AUTO.md (KEDJA 6 storage-restore; maskinellt) + DR-KEDJA6-2026-09-16-TVAPROJEKT-FYND.md (tvåprojekt-fyndet + backup-gap-kartan + kö §5) + DR-OVNING-2026-09-17-NATT-RPO.md (natt-DR + första nattdiffen; JSON-delprotokoll DR-RPO-DIFF-2026-09-17.json) + DR-FONSTER-KONTINUITET-2026-09-17.md (mitt-bladen + retentionens beteendeprov; maskinella DR-PROV-2026-09-16-AUTO-{7,8,9}.md) + DR-KEDJA2-2026-09-17-JUNGRUNATT.md (jungfrunatt rad 3: första obevakade 02:40-exporten restore-bevisad; maskinellt delprotokoll DR-KEDJA2-2026-09-17-AUTO.md) + DR-OVNING-2026-09-17-JUNGRUDAG-7-BLAD.md (jungfrubladet kedja 1 + kompletta 7-bladsfönstret + första morgon-RPO:n; maskinellt DR-PROV-2026-09-17-AUTO.md + JSON DR-RPO-DIFF-2026-09-17-MORGON.json) + DR-OVNING-2026-09-17-MIDDAG.md (middags-DR: kedja 4 på jungfru-cron-setet + diagnosen tomma per-typ + pumpstart 08:00 tidsatt; maskinellt DR-PROV-2026-09-17-KEDJA4.md + JSON DR-RPO-DIFF-2026-09-17-MIDDAG.json) |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -589,6 +597,697 @@ EnvironmentFile med chmod 600).
   hybrid-sync. KVD: tsc 0 via projektbinär, src/ orörd, inga byggen,
   PG17 orörd HELA övningen (down före/efter), tmp städad, R2 orörd.
 
+## S10-U3 (O4) — DR-ÖVNING KEDJA 4: PER-TYP-SNAPSHOTS (2026-09-16, GODKÄNT)
+
+- **Spårets fjärde och sista restore-led bevisat** (kedja 1 SQL-dump ·
+  kedja 2 full-JSON · kedja 3 serverfiler · kedja 4 per-typ-vyorna):
+  NYTT verktyg `verktyg/dr-kedja4.mjs` i hela dr-kedja2-mönstret —
+  flock på samma /tmp/ak1a-dr-prov.lock + RAM-/diskgrind + självsabotage
+  + kontraktsvalidering + konsistenskontroll + PG-restore med RTO-mätning
+  + maskinellt protokoll + GARANTERAD städning (finally). Fullprotokoll:
+  data/forskning/DR-PROV-2026-09-16-KEDJA4.md.
+- **Resultat GRÖNT (exit 0):** självsabotage 4/4 (giltig godkänns +
+  trunkerad JSON, antal≠rader.length, fel typnamn grips) · samtliga 10
+  per-typ-filer GRÖNA och från samma set-datum 2026-09-15 (ingen typ
+  saknar dagens fil = inga tysta exportfel) · konsistens 10/10 rader
+  matchade i full-arkivet, 0 saknade · COPY 10 rader på **0,08 s** i
+  skrap-DB ak1a_dr_pertyp (probe-tabell) · oberoende PG-verifiering
+  identisk (jsonb läsbar 10, medlem-epostHash 3) · skrap-DB raderad,
+  PG17 stoppad, lås släppt.
+- **Ägtenhetssvaret på de åtta antal=0-filerna:** full-arkivet (160 928
+  rader) bär EXAKT medlem=3 + blogg_utkast=7 av de tio per-typ-typerna —
+  nollorna är ÄKTA TOMMA (system_events gallras i drift; historiken lever
+  i full-arkiven, som är ARKIVHANDLINGAR där retention aldrig gäller),
+  INTE tysta exportfel. Exportörens felväg är dessutom rent DISKRET:
+  HTTP-fel skriver INGEN fil alls (backup-fran-molnet.mjs) — "fil finns
+  med antal 0" bevisar äkta tomt, "fil saknas för set-datum" är
+  felmönstret. dr-kedja4.mjs flaggar båda fallen.
+- **FYND + kur levererad:** per-typ-limiten (5000) var OMARKERAT — en
+  avklippt snapshot skilde sig inte från en komplett (full-dumpen har
+  haft truncerad-flagga länge; per-typ-grenen saknade den) →
+  backup-fran-molnet.mjs v2.1 bär nu truncerad-markör per fil, och
+  dr-kedja4.mjs varnar vid antal ≥ 5000 i äldre filer utan markör.
+- **Volymnot, ärlig:** kedja 4 är pytteliten IDAG (10 rader, RTO 0,08 s)
+  — värdet växer med verksamhetsdata (variabler/medlem_progress/
+  termbank). Kontrakt: per-typ-filerna bär endast created_at+details;
+  FULL återställning av innehållet äger kedja 2 — kedja 4 bevisar att
+  vyerna är intakta, konsistenta och inläsbara.
+- **Sidofix:** drift-ops-SKILL.md bar verktygsnamnet
+  "backup-fran-molnen.mjs" (filen heter molnet — DRIFTSBOKEN hade rätt);
+  rättat 2026-09-16 — on-call-sökvägen till backup-verktyget är nu
+  entydig i båda handböckerna.
+- **Kö till huvudagenten: ingen ny** — spårets FYRA kedjor är samtliga
+  restore-bevisade; kvartalsmallen 2026-12-15 är fyra steg:
+  `dr-ovning.mjs` + `dr-kedja2.mjs` + `dr-kedja4.mjs` + kedja 3-manualen
+  (DR-PROV-2026-09-16-KEDJA3.md — ännu inte kommandoradiserat).
+
+
+## S10-U2 (O2) — JUNGRUNATTEN: nattkedjans första OBEVAKADE leverans + sjunde RTO-punkten (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan var sex gånger levererad; det icke-bevisade
+  ledet var OBEVAKAD drift — s10-u5:s nattkedjekur var MANUELLT testad
+  (00:41) och s10-u1 O3 återställde just den manuella dumpen. Fullprotokoll:
+  data/forskning/DR-PROV-2026-09-16-JUNGRUNATT.md.
+- **Jungfrunatten bevisad:** cron körde själv 02:30 — logg
+  `MARKÖRKOLL 2026-09-16T00:30:31.911Z` GRÖN **1 288 041 rader** (+81 mot
+  det manuella testet = äkthetsbevis: ny dump, ej kopia), dumpens mtime
+  02:30:31.814, pgpass-vägen (inget klartextlösenord i proceslistan),
+  retention tyst korrekt (6 dumpar, äldsta 5 dygn).
+- **Restore av CRON-dumpen** (`dr-ovning.mjs`, exit 0): RTO **12,2 s** =
+  sjunde punkten (20,0 · 17,7 · 14,7 · 20,0 · 23,9 · 11,2 · 12,2) ·
+  public 60/1 266 528 (+73 vs O3:s manuella dump; board_decisions +64 =
+  organens nattbeslut) · alla scheman 99/1 266 924 · fel 788/788 kända
+  0 okända. AUTO-protokoll: DR-PROV-2026-09-16-AUTO.md.
+- **RAM-grindens första verifiering i verklig drift:** försök 1 exit 75 vid
+  MemAvailable 519 MB (syskon i fabriksvågen) — PG17 rördes EJ av grinden;
+  omkörning GRÖN vid 2 198 MB. Vaktens skydd därmed dubbelt praktbevisat:
+  flock-vägran exit 3 (godkännandeprovet) + RAM-grind exit 75 (denna
+  övning).
+- **Kedja 1 PROVAD ÄNDA TILL ÄNDA UTAN AGENT I KEDJAN:**
+  cron → pg_dump (pgpass) → gzip → markörvakt → restore-bar dump. Kedja 1:s
+  RPO = dygnlig 02:30 (RÖD natt låser retention + syns i loggen).
+- Kollisionskontroll: KEDJA 4-syskonet (07:12:52) och denna övning (07:14)
+  körde i separata flock-fönster — inget krockade. Städning oberoende
+  verifierad: skrap-DB raderad, PG17 down, disk 75 G, prod/src/R2 orörda.
+
+## S10-U1 (O4) — TAKLYFTET: kedja 2:s exportör härdad + total-kontrakt + cron 02:40 (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan åtta gånger levererad; det icke-levererade
+  var spårets bokförda kommande dataförlust — FULL-dumpens hårdta
+  40-sidors-tak (200k rader) i `backup-fran-molnet.mjs`, nås ~2026-10-05
+  (mätt: 161 550 i molnet · +2 015 rader/dag) = därefter TYST trunkering
+  av varje nattexport. Fullprotokoll: data/forskning/DR-TAKLYFT-2026-09-16.md.
+- **KUR (v3):** SAKERHETSTAK 400 sidor (2M rader ≈ >1 år — evighetsskydd,
+  ALDRIG dimensionerande) + **TOTAL-KONTRAKTET** (sida 0 läser
+  Content-Range via Prefer: count=exact → filen bär `totaltFranApi`,
+  truncerad döms MASKINELLT `antal < totalt` — JSON-dumpens motsvarighet
+  till SQL-dumpens slutmarkörer) + repetitionsskydd mot ignorerad Range.
+- **Bevisat i äkta körning:** export 161 678 rader/33 sidor/42,9 s/26,2 MB
+  med domen KOMPLETT 161678/161674 — kontraktets append-only-semantik
+  verifierad live (dumpen kan bära någrar fler än starttotalen, aldrig
+  färre utan att dömas TRUNCERAD). Restore via dr-kedja2: **RTO 38,5 s**
+  (åttonde punkten) · 0 felaktiga · städning PG17 down.
+- **FYND — exporten var OSCHEMALAGD på servern** (crontab + /etc/crontab
+  + pumpor-daemon mätt: 0 träffar; arkiven levde på agent-manuella körning-
+  ar sedan hybrid-sync tystnade 09-09). KUR: **cron-rad 3 kl 02:40**
+  (10 min efter kedja 1:s 02:30-dump = §4-ordningen; ingen retention i
+  raden — system-events-full är arkivhandlingar). Ändringsprotokollet
+  följt: crontab + crontab.reference i samma ändring, konfigvakten
+  **GRÖN 3/3** (s8-u2:s 30-larm-natt ej upprepad).
+- **FYND (kvantifierat):** 4 dublett-id i prod-tabellen (161 678 rader /
+  161 674 unika = exakt kontraktets differens) — känd saknad PK, nu med
+  tal: 0,0025 %. Ingen kur (prod-DDL = huvudagentkö); domen förblev GRÖN.
+- **Kollisionsbevis nr 5+6** (noll förlorat arbete): rond-46-merge raderade
+  första Editen; syskonet s10-u2 (O2):s bulk-add fångade v3-kuren ordagrant
+  in i sin commit c8df5f6b när HEAD-loppet vägrade min commit — koden lever
+  i HEAD, denna sektion + protokollet + cron är completo.
+- Jungfrunatten för rad 3 kan bevisas 2026-09-17 (s10-u2 O2:s mönster).
+
+## S10-U3 (O5) — DR-ÖVNING KEDJA 3 KOMMANDORADISERAD: `verktyg/dr-kedja3.mjs` (2026-09-16, GODKÄNT)
+
+- **Objektval:** restore-kärnan nio gånger levererad; manualen KEDJA3 §8
+  begärde själv sin kommandoradisering "av annan agent än författaren" —
+  kvartalsmallens fjärde steg var det ENDA manuella. Ny omgångsoinstans av
+  s10-u3 (O3:s artefakter granskade med friska ögon, inget delat minne).
+  Fullprotokoll (GRÖN): DR-KEDJA3-2026-09-16-AUTO-2.md · RÖT-fyndkörningen:
+  DR-KEDJA3-2026-09-16-AUTO.md.
+- **FYND (huvudresultatet) — `git bundle verify` är INTE ett integritetsbevis:**
+  verktygets självsabotage grep att verify GODTAR en 60 % kapad bundle och
+  skriver "The bundle records a complete history" (den läser header/refs,
+  ALDRIG packdatan) — medan klonen dör ("early EOF", "index-pack died").
+  Samma buggklass som KEDJA3-F2 (exit 0 ≠ intakt ström). KUR i verktyget:
+  s3-sabotagets dom + huvuddomen för arkiv B = KLON-testet; verify behålls
+  som nödvändigt (inte tillräckligt) delkontrakt. Manualens O3-bevisning
+  håller (de körde också klon) men deras domORDLYDELSE "verify = komplett
+  historia" är motbevisad som huvuddom — varje verify-användning (crons,
+  kommande övningar) följer samma regel: klon (eller fsck) är domen.
+- **GRÖN fullkörning (exit 0):** sabotage 3/3 GRIPNA (kapad gzip · skräp-
+  fil med rätt ändelse · kapad bundle via klon) · arkiv A server-repo-
+  2026-09-16.tar.gz: gzip -t + full listning 8 435 poster + exkluderings-
+  kontrakt 0 brott + restore **3,2 s** → 7 903 filer + 532 kataloger ==
+  listat · src 666 ts/tsx-filer · arkiv B server-git-2026-09-16.bundle:
+  klon **9,4 s** → 1 067 commits, HEAD 59939c18 + ancestor-bevis (klonens
+  HEAD ∈ trädets historia). **Total RTO 12,6 s** (manualen 12,2 s =
+  replikerbar). Spot-diff: 3/4 IDENTISKA, DRIFTSBOKEN.md SKILJER-FÖRKLARAD
+  (trädets commit 07:35 > arkivets mtime 00:45 — RPO-visning; en blind
+  identisk-eller-RÖD-dom hade fällts falskt).
+- **Konventionsmätning (falska diskrepanser bort för nästa omgång):**
+  manualens 8 436 poster/533 kataloger räknar MED rot-posten './' och
+  restore-roten; verktyget räknar utan → 8 435/532, SAMMA 7 903 filer.
+  src-rader: manualens 200 991 (wc -l) = verktygets 201 657 (split('\n')
+  räknar +1 per fil med avslutande radbryt) − 666 filer. Innehållet
+  identiskt till sista raden; endast räknekonvention skiljer.
+- **Städning + KVD:** PG17 orörd HELA övningen (nere före/efter — korrekt
+  viloläge enligt kontraktet; ingen skrap-DB skapas av kedja 3) · /tmp
+  raderad (finally-garanti) · `node --check` GRÖN · tsc 0 via projekt-
+  binär (src/ orörd = inget bygge) · R2 orörd · data/blogg/ orörd.
+- **Kö till huvudagenten: ingen ny** — kvartalsmallen 2026-12-15 är nu
+  FYRA KOMMANDON: `dr-ovning.mjs` + `dr-kedja2.mjs` + `dr-kedja3.mjs` +
+  `dr-kedja4.mjs` (kvar hos huvudagenten oförändrat: cron för vecko-
+  arkivering server-side · git gc vid luget fönster · kundnotis datorns
+  hybrid-sync · jungfrunatt rad 3 bevisas 09-17).
+
+## S10-U1 (O5) — KEDJA 3:S EXPORTÖR SERVER-SIDE + VECKOCRON (2026-09-16, GODKÄNT)
+
+- **F8-kön verkställd** ("cron för vecko-arkivering server-side" — kö-radens
+  enda återstående mekaniserbara objekt): serverfils-arkivet levde på agent-
+  manuella körningar sedan hybrid-sync tystnade 09-09 — kedja 3:s RPO var
+  "när en agent minns", härmed **≤ 7 dygn**. Fullprotokoll:
+  data/forskning/DR-ARKIV-SERVER-2026-09-16.md.
+- **Nytt verktyg `verktyg/arkivera-server.mjs`**: helt server-side (ingen
+  ssh-ström — 09-09:s korruptarkiv-rot elimineras), flock på
+  /tmp/ak1a-dr-prov.lock (samma kontrakt som dr-kedja* — export och DR-övning
+  mutar aldrig varandra; RÖT-mot-färskt-arkiv-racet strukturellt omöjligt),
+  RAM-/diskgrind 600 MB/5 GB, minisjälvtest, tar med exkluderingskontrakt +
+  verifiering FÖRE godkännande (gzip -t, full listning, spot-filer,
+  500 MB-vakt), bundle --all + verify, konfigsnapshots färskas (nginx/
+  crontab/pm2 — F8:s "7 dygn gamla" kurerat), atomiska namnbyten (*.del),
+  retention 60 dygn (system-events-full röras ALDRIG).
+- **Bevisad körning exit 0 (13:39–13:40 lokal):** tar 144,4 MB / 8 893
+  poster / 675 src ts/tsx / 33,1 s · bundle 151,2 MB complete history /
+  24,2 s · snapshots nginx 53 rader + crontab 3 aktiva + pm2 4 processer ·
+  totalt 58 s. Arkiven FÄRSKARE än nattens (+457 poster = förmiddagens
+  kommitten; omkörningen = idempotensbevis).
+- **Driftfynd + kur:** körning 1 RÖD på "tar: file changed as we read it"
+  (levande agentträd under 30-s-fönstret; ronderna skriver 24/7). Kur:
+  exit 1 acceptas ENDAST när samtliga felrader är "…as we read it"-noter —
+  verifieringen är den äkta grinden, exakt historik ägs av bundlen. Båda
+  lägena bevisade (rörelse kör 1, lugn kör 2).
+- **Cron rad 4 söndag 03:20 lokal** + crontab.reference i samma ändring +
+  konfigvakten **GRÖN 4/4**. Jungfrunatten för rad 4 bevisas 2026-09-20.
+- **Fabrikskollision bevis nr 7, hantverksmässigt löst (0 förlorat
+  arbete):** denna agents förstaval (dr-kedja3.mjs, bokat i worklog 11:33Z)
+  togs samtidigt av syskonet s10-u3 som SKAPADE filen 11:33 och körde under
+  flock — Write-läshindret hejdade, vike enligt s10-u5-precedenten, nytt
+  objekt = F8-kön (komplement: syskonets restore-kommando prover arkiven,
+  detta verktyg håller dem friska). Manifestets tre identiska "välj själv"-
+  texter förblir obehandlade hos huvudagenten (u3:s kur nr 1).
+- PG17 orörd (nere före/efter — korrekt viloläge); R2 orörd; inga byggen;
+  tsc-grinden passerad vid commit (src/ orörd av denna leverans).
+
+## S10-U2 (O3) — DR-FÖNSTRETS INDEX-PROV: ALTER-filen testad, dubbel fel + kur + ~396× (2026-09-16, GODKÄNT)
+
+- **Kö-item verkställt SOM PROV:** "ALTER-system_events-composite.sql vid
+  nästa DR-fönster" (E33 gap 3, s9-u3:s kö) — filen (våg 63) låg okörd;
+  prod-DDL rördes ALDRIG (huvudagenten/kunden äger själva prod-körningen).
+  Verktyg `verktyg/dr-index-prov.mjs` (dr-kedja2-kontraktet: flock
+  /tmp/ak1a-dr-prov.lock + RAM-/diskgrind + skrap-DB ak1a_dr_index +
+  DDL/rådata ur dagens dump + arkiv + maskinellt protokoll + garanterad
+  städning i finally). Fullprotokoll:
+  data/forskning/DR-INDEX-PROV-2026-09-16-2.md (GRÖN exit 0) +
+  DR-INDEX-PROV-2026-09-16.md (RÖD = PK-kollisionsvarianten).
+- **Filen DUBBELT UNDERKÄND mot äkta data** (161 678 rader COPY:ade):
+  (1) `CREATE INDEX IF NOT EXISTS CONCURRENTLY` = SYNTAXFEL i PostgreSQL
+  (korrekt ordning: `CONCURRENTLY IF NOT EXISTS`); (2) kolumnen `type`
+  existerar ej i prod — verkligt namn `event_type` (schemadriften igen).
+  En okritisk prod-körning hade misslyckats två gånger om.
+- **KURERAD v2 levererad i data/sql/ALTER-system_events-composite.sql**
+  (testbevis + historik i filens header):
+  `CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_system_events_type_created
+  ON public.system_events(event_type, created_at desc);` — verifierad
+  GRÖN: byggtid 0,4 s, index 1,5 MB.
+- **Prestanda (filens eget motiverade läsmönster, topp-typ oversattning
+  146 194 rader):** 74,8 ms → 0,2 ms = **~396× snabbare** (Seq Scan +
+  Sort → Index Scan). FYND: prod har INGA sekundära index på
+  system_events (dump 09-16: endast PK) — filens påstående "har idag
+  enkla index" är FALSKT; tabellen växer ~2 000 rader/dag.
+- **FYND i DR-kedjan — katastrofsekvensen kedja 1 + kedja 2 mot SAMMA DB
+  DÖR:** full dump-restore föder system_events MED PK, och arkivets
+  4 dublett-id stoppar importen (COPY dör vid rad 30 001, alternativt
+  PK-altret "could not create unique index" — båda varianterna bevisade).
+  Tidigare sekvensprov körde kedjorna mot skilda skrap-DB:er; kombinationen
+  var obevisad tills nu. KUR-KÖ till huvudagenten: dedupe-läge i
+  aterstall-system-events.mjs ELLER röjning av de 4 dublett-id i prod
+  (samma tabell som ALTER-kön — se även s10-u1 O4:s idempenskö).
+- NOTERA: scripts/supabase-schema.sql definierar fortfarande kolumnen
+  `type` (dev/prod-glidning lever — synka vid tillfälle).
+- Städning verifierad: ak1a_dr_index raderad, PG17 stoppad; R2 orörd;
+  inga byggen (src/ orörd; tsc-grinden passerad vid commit).
+
+## S10-U2 (O4) — TOTAL-KVARTALSÖVNINGEN `verktyg/dr-total.mjs`: mallen ETT KOMMANDO (2026-09-16, GODKÄNT)
+
+- **Kvartalsmallen är nu ETT KOMMANDO:** `node verktyg/dr-total.mjs` kör
+  HELA DR-övningen — kedja 1 → 2 → 4 → 3 i mallordning (PG-kedjorna
+  först, serverfilsarkivet sist), mäter TOTAL-RTO, skriver ETT över-
+  protokoll (DR-TOTAL-<datum>-AUTO.md) och garanterar vilolägeskontraktet
+  (PG17 nere, tmp städad) även vid avbrott. Barnverktygen (dr-ovning,
+  dr-kedja2/3/4) äger själva sina DR-lås + delprotokoll — dr-total har
+  EGEN låsfil (/tmp/ak1a-dr-total.lock) och FÅR ALDRIG hålla barnens
+  låsfil (dödläge: barnet väntar på ett lås föräldern håller).
+- **ÄKTA KÖRNING GRÖN exit 0 — TOTAL-RTO 130,0 s (summa = väggklocka):**
+  kedja 1 SQL 23,3 s (restore 12,2 s · public 60 tabeller/1 266 528
+  rader · fel 788 kända 0 okända) · kedja 2 moln-JSON 43,8 s (161 678
+  rader, 4 230 rader/s COPY, 0 felaktiga — med tanke på dagens AKUTA
+  FYND att system_events gallrats tom i live prod är detta arkivet nu
+  den kompletta händelseloggen) · kedja 4 per-typ 33,4 s (sabotage 3/3
+  gripna) · kedja 3 serverfiler 29,6 s (arkiv 8 892 poster, src 675
+  filer/203 930 rader — MINUTFÄRSKT: s10-u1 o5:s arkivera-server-export
+  13:50 är samma arkiv som restore-bevisades 13:53 = syskons exportör +
+  detta verktyg korsbevisar varandra).
+- **Kontrakt:** fail-fast (en RÖD kedja avbryter övningen, avbrottsorsak
+  i protokollet) · barn exit 75 (RAM-grind) → 90 s väntan + EN omkörning
+  (JUNGRUNATT-precedensen) · RPO-läge per kedja redovisas i protokollet.
+  Den äkta körningen väntade inte på något lås (syskonens fönster
+  dr-index-prov/manuella sekvens löpte före/parallellt; flock -w 900
+  behövde aldrig vänta).
+- **KORSBEVIS med s10-u3 (3/3):s manuella sekvens** (samma dag, ≈105 s,
+  alla fyra GRÖNA) — sekvensen som sådan bevisad TVÅ oberoende vägar:
+  manuellt orkestrerad (deras) och som ETT KOMMANDO med överprotokoll +
+  omkörnings-/fail-fast-kontrakt (denna). Sektions-ID-not: O3-toget
+  togs av index-prov-syskonet samma fönster — därför O4 här.
+- **Ärlighetsnot (flock-lagret):** den äkta körningen skedde under
+  fillåsläge — flockStartaOm()-anropet saknades i leveransversionen och
+  lades till OMEDELBART efter körningen (mönstret 1:1 från dr-ovning.mjs,
+  vars flock-lager har praktbevis av s10-u1 o3; node --check GRÖN).
+  Nästa totalkörning (2026-12) verifierar flock-lagret beteendemässigt.
+  Fillåset är funktionellt (30-min-dött-lås-semantik) men inte lika
+  starkt som flock.
+- Protokoll: data/forskning/DR-TOTAL-2026-09-16-AUTO.md + fyra maskinella
+  delprotokoll (DR-PROV-2026-09-16-AUTO-3 · DR-KEDJA2-…-AUTO-3 ·
+  DR-PROV-…-KEDJA4-3 · DR-KEDJA3-…-AUTO-4). Städning verifierad: PG17
+  nere, /tmp/dr-total-* borta, total-låsfilen släppt. R2 orörd; inga
+  byggen; tsc-grinden passerad vid commit (src/ orörd).
+
+## S10-U2 (O5) — KEDJA 5: KIRURGISK TABELL-ÅTERSTÄLLNING `verktyg/dr-kedja5.mjs` (2026-09-16, GODKÄNT)
+
+- **Scenariot kedja 1–4 inte täcker:** EN tabell skadas i prod (felaktig
+  migrering/olycks-DELETE) medan övriga tabeller är friska och NYARE än
+  dumpen — full restore offrar dygnets skrivningar i friska tabeller.
+  Kedja 5 bevisar den kirurgiska vägen: ENDA tabellens COPY-block plockas
+  ur natt-dumpFILEN (streamad zcat+awk — ingen pg_dump-roundtrip) och
+  appliceras atomiskt (DELETE + COPY i EN transaktion, ON_ERROR_STOP).
+- **GRÖN körning 14:09–14:13 lokal (exit 0):** organismens minne
+  public.section_data_snapshots — 1 176 468 rader (92 % av DB:n) — tillbaka
+  på extraktion 2,4 s + applicering 15,5 s; radantal OCH checksumma
+  IDENTISKA med fullt återställd källa (full restore 13,4 s som måttstock,
+  fel 788 kända/0 okända). Städning verifierad: skrap-DB raderad, PG17
+  stoppad, tmp borta (fellogg lämnad avsiktligt).
+- **Retentionssvepet = nytt stående kontrakt:** varje kedja 5-körning
+  gzip-testar ALLA dumpar i fönstret (6/6 GRÖNA, 1,0–1,3 s/dump) — kedja
+  3:s läxa (korrupt tarball 7 dygn oupptäckt) mekaniserad på dumparna.
+- **FYND 1 — board_decisions är kirurgiskt låst:** FK:n
+  forecast_log→board_decisions (ON DELETE SET NULL) möter
+  immutabilitetstriggern forecast_immutable() som VÄGRAR UPDATE — hela
+  DELETE:n rullas tillbaka (första körningen RÖT på precis detta).
+  Positiv driftsida: en olycks-massradering av organens beslut STOPPAS av
+  eget skydd. Verklig kirurgi på tabellen kräver specialrecept (tillfällig
+  FK-paus ELLER restore-till-ny-tabell + swap) — huvudagentens ägande.
+- **FYND 2 — psql tyst-accepterar vid-EOF-trunkerad COPY:** bevisat i
+  andra körningen: en utan `\.` avsluten COPY landade med 705 881 rader
+  och psql exit 0 (!). Därför testar verktyget sabotage som DATAFEL
+  (kolumnfel i mitt-rad — grips: "missing data for column", full rullbak,
+  tabellen orörd) och bär radantal+checksumma-kontrakt på BÅDE extraktionen
+  (== källa) och resultatet (== källa). Läxa för ALLA filbaserade
+  återställningsflöden: "kommandot gick bra" ≠ komplett.
+- **Kontrakt:** flock på /tmp/ak1a-dr-prov.lock (familjen) · RAM-/diskgrind
+  (exit 75) · vägran vid blockerande inkommande FK (NO ACTION/RESTRICT/
+  SET DEFAULT) och CASCADE-FK · kollateralrapport per inkommande FK ·
+  exit 0/1/3/75. --tabell-flagga för valfri tabell, --fil för äldre dump,
+  --behall för manuell granskning.
+- **Kö till huvudagenten:** (1) väv in dr-kedja5 i TOTAL-mallen (O4) till
+  2026-12 ELLER kör manuellt vid tabellincident; (2) dokumentera
+  board_decisions-specialreceptet om/lämpligen när det behövs; (3) se även
+  O3:s akuta system_events-fynd (gallrad tom i prod) — moln-arkivet är
+  ENDA kopian, dedupe-kön kvarstår.
+- Protokoll: DR-KEDJA5-2026-09-16-KIRURGI.md (agent) + DR-KEDJA5-2026-09-16-
+  AUTO.md (RÖT triggerfyndet) + -AUTO-2.md (RÖT sabotagelektionen) +
+  -AUTO-3.md (GRÖN). R2 orörd; inga byggen (src/ orörd, .mjs-verktyg); tsc-
+  grinden passerad vid commit; data/blogg/ orörd.
+
+## S10-U2 (O6) — FLOCK-BETEENDEPROV `verktyg/dr-total-flockprov.mjs` + TOTAL-övning iteration 2 (2026-09-16, GODKÄNT)
+
+- **Vad/varför:** O4:s ärlighetsnot — flockStartaOm() lades till EFTER den
+  äkta 130,0 s-körningen ("nästa totalkörning verifierar flock-lagret
+  beteendemässigt"). Skillnaden mot gammal fillås-semantik är BETEENDE,
+  inte kodväg — därför ett körande prov. Nya verktyget gör verifieringen
+  återkommande: det startar en främmande kortlivad låshållare, startar
+  dr-total (som skall köa), samlar bevisen och kör SAMTIDIGT hela
+  kvartalsövningen (inget slösas). Flagga `--hollare-sek N` (5–300,
+  default 25).
+- **Tre bevis i EN körning (20:42–20:45 lokal, GRÖN exit 0):**
+  (i) RE-EXEC: låsfilen bar `pid=1225710 … flock=1` med pid LEVANDE under
+  körningen (ps-verifierat) — flock=1-grenen är aktiv kod.
+  (ii) KÖ-BETEENDE (det skiljande): främmande hållare (flock -c 'sleep 25',
+  startad 1,2 s före dr-total) → flock=1-raden först efter **24,1 s**;
+  tidskonsistens: hållaren släppte ≈23,8 s efter dr-total-start. Gammal
+  fillås-semantik hade svarat TOTAL-LÅSET UPTAGET + exit 3 direkt.
+  (iii) DÖTT LÅS OSKADLIGT: 45 min bakdaterad låsfil med död pid → start
+  utan exit 3 — flock förvärvar oavsett mtime.
+- **Övningen (iteration 2):** alla fyra kedjorna exit 0 — kedja 1 39,9 s
+  (restore 14,3 s · 1 288 041 dumprader · public 60 tabeller/1 266 528 ·
+  fel 788 kända 0 okända · markörsummering 1/1) · kedja 2 39,8 s (161 678
+  rader · 4 955 r/s · 0 felaktiga) · kedja 4 36,4 s (10/10 · sabotage 3/3
+  gripna) · kedja 3 30,8 s (8 322 filer == listat · klon 1 195 commits) —
+  TOTALT **147,0 s == väggklocka** (iteration 1: 130,0 s; skillnaden =
+  lastläge: grinden läste MemAvailable 1 075 MB, omkörningsvägen overksam).
+- **Städning lokal PG (maskinellt verifierad):** PG17 NERE, /tmp/dr-total-*
+  BORTA, total-låsfilen SLÄPPT (flock -n förvärvar direkt).
+- **Kvartalsmallen 2026-12 (uppdaterad):** `node verktyg/dr-total-flockprov.mjs`
+  = ETT KOMMANDO med gratis flock-om-verifiering; rå `dr-total.mjs` kvarstår
+  som kärna. Kvar i kön (oförändrat): väv in dr-kedja5 i totalen ELLER kör
+  manuellt vid tabellincident; board_decisions-specialreceptet;
+  system_events-återimporten = huvudagentens beslut.
+- Ärlighetsnot: bevisutskriftens rad "Låsfilen under köfasen (senast läst
+  innan flock=1)" är felaktigt etiketterad (poll-loopen läser och sätter i
+  samma iteration) — kö-fasen bevisas av TIDEN + levande hållarprocess;
+  korrigerad etikett till 2026-12. Bevisvärde opåverkat.
+- Protokoll: DR-TOTAL-2026-09-16-FLOCKPROV.md (agent, citerar maskinella
+  bevisblocket) + DR-TOTAL-2026-09-16-AUTO-2.md (överprotokoll) + 4
+  delprotokoll (DR-PROV-…-AUTO-4 · DR-KEDJA2-…-AUTO-4 · DR-PROV-…-KEDJA4-4
+  · DR-KEDJA3-…-AUTO-5). R2 orörd; inga byggen; src/ orörd; data/blogg/ orörd.
+
+## S10-U3 (O6) — DR-ÖVNING KEDJA 6: STORAGE-RESTORE `verktyg/dr-kedja6.mjs` + FYND: TVÅ SUPABASE-PROJEKT (2026-09-16, GODKÄNT — med fynd)
+
+- **Vad/varför:** kedjorna 1–5 bevisar databasen (SQL-dump) och
+  system_events (moln-JSON); Supabase STORAGE var det enda lagret utan
+  bevisad innehålls-återställning (SQL-dumpen bär bara metadata, moln-JSON
+  läser bara events). KEDJA 6 mäter och bevisar BÅDA halvorna.
+- **Övningen (20:41–20:43 lokal, GRÖN exit 0, DR-KEDJA6-2026-09-16-AUTO.md):**
+  retentionssvep 6/6 GRÖN · markörer GRÖN (1 288 041 rader) · full restore
+  i skrap-DB 13,8 s (fel 788 kända/0 okända) · storage-metadata i dumpen:
+  5 buckets/63 objekt/0,57 MB (oförändrad sedan 2026-07-23/24) · levande
+  lista via LÄSANDE Storage-REST 0,7 s: 3 buckets/11 objekt/1,22 MB ·
+  INNEHÅLLS-PROV: ak1nvestor-code.zip 1 272 122 B nedladdat 0,72 s ==
+  live-listans metadata.size (byte-kontrakt GRÖNT — första bevisade
+  innehållsvägen). Runbook för verklig incident i protokollet §6.
+  Familjekontraktet: flock + RAM-/diskgrind + finally-städning
+  (skrap-DB raderad, PG17 stoppad, tmp borta — verifierat).
+- **FYND 1 (akut) — TVÅ SUPABASE-PROJEKT:** korsningen dump↔live gav 0
+  gemensamma objekt. Fyra instrument senare stod roten klar (DR-KEDJA6-
+  2026-09-16-TVAPROJEKT-FYND.md): dump-cronen+psql-sonderna (.pgpass →
+  db.rkaq…wxrw) och appens REST (.env → …suhvlsbp) läser OLIKA projekt.
+  rkaq: system_events 0 I ALLA DUMPAR sedan 09-11 · snapshots 1 176 468
+  (+~19k/dag) · board_decisions 47 602. aufr: system_events 162 741 VÄXER
+  · members 3 · board_decisions 77 · snapshots 404. Därmed: dagens "AKUT
+  FYND: system_events TOM i levande prod" (DR-KVARTAL §4) är MOTBEVISAT
+  som radering — tväprojekt-artefakt; **återimporten av 161 678-arkivet
+  SKA EJ genomföras** (dubbletter på levande data); dumpkontradiktionen
+  (0 vs 161 678) och members=0 upplösta. Kedjornas restore-bevis består
+  (rkaq↔rkaq), men aufr:s icke-events-tabeller är OBACKADE — backup-gap.
+- **FYND 2 (R2):** aufr:s bucket "ak1nvestor-code" är PUBLIK och listade
+  en .env.local-namngiven fil (193 B; innehållet ALDRIG läst — verktygets
+  R2-filter uteslöt .env*/pem/key/rsa/secret från innehålls-provet och
+  valde zip:en). Åtgärd = huvudagenten/kunden (R2: nyckelfiler).
+- **Kö till huvudagenten (fyndrapport §5, prioriterad):** (1) stoppa/
+  ompröva system_events-återimporten (läkekö E33 steg 4–5); (2) konfig-
+  utredning .pgpass vs .env — avsiktlig hybrid eller migreringskvarleva,
+  isåfall peka om 02:30-cronen (R2); (3) tvåprojekt-kartan i DRIFTSBOKEN;
+  (4) backup-beslut för aufr:s övriga tabeller; (5) storage-blob-backup
+  (båda projekten) + publika ak1nvestor-code-bucketet.
+- Protokoll: DR-KEDJA6-2026-09-16-AUTO.md (maskinellt) +
+  DR-KEDJA6-2026-09-16-TVAPROJEKT-FYND.md (fyndrapport med alla mätetal).
+  R2 orörd (inga .env-/nyckelfiler rörda; nycklar endast lästa ur env av
+  verktyget, aldrig loggade); inga byggen; src/ orörd; data/blogg/ orörd.
+  Kollisionsnot: s10-u2 O6:s flockprov (20:42–20:45) och denna övning
+  (20:41–20:43) delade DR-fönstret — flocken serialiserade dem (deras
+  "främmande 25 s-låshållare" var denna kedjans retentionssvep/restore):
+  låsmekanismen korsbevisad i skarpt läge, noll förlorat arbete.
+
+## S10-U1 (O6) — FÖNSTERDJUPET: äldsta bladet restore-bevisat `verktyg/dr-fonsterdjup.mjs` (2026-09-16, GODKÄNT)
+
+- **Objektval + krockbokföring:** förstavallet KEDJA 6 (Storage-restore)
+  krockade med s10-u3:s fil på disk (dr-kedja6.mjs 20:42, mitt anspråk
+  21:05 — disk-faktum slår sent anspråk; objektet släpptes HELT, deras
+  leverans respekterad, se S10-U3 (O6) ovan). Nytt val: KEDJA 1-SERIENS
+  BLINDFLÄCK — samtliga 8 RTO-punkterna (20,0 · 17,7 · 14,7 · 20,0 ·
+  23,9 · 11,2 · 12,2 · 17,3 s) mätte färska blad; retentionens ÄLDSTA
+  blad (katastrofen som upptäcks dag 29) var ALDRIG restore-bevisat
+  (kedja 5:s retentionssvep bevisar gzip-integritet, inte restore-barhet).
+- **Bevisad körning ×2, GRÖN exit 0:** äldsta bladet db-2026-09-11.sql.gz
+  restore i färsk skrap-DB — **RTO 15,4 s + 14,5 s** (två punkter, stabilt
+  ≈15 s mitt i kedja 1-serien trots 5 dagar äldre data) · felrader 780
+  ALLA kända (okända 0) · **TVÅ INSTRUMENT IDENTISKA: PG count(*) ==
+  dumpens blockräkning för 60/60 public-tabeller** (summa 1 186 890 ==
+  1 186 890, 0 avvikande). Självtest 2/2 inkl. KEDJA 5:S LÄXA: trunkerat
+  COPY-block (saknad \.-terminator) vägras av räknaren.
+- **Blockräkningens fönsterbild (nya serien):** äldsta 97 tabeller /
+  1 192 910 rader → yngsta 101 / 1 272 992 = **+80 082 rader på 5 dagar
+  (≈ 16 016/dag)**; drivers: public.section_data_snapshots +75 936 ·
+  public.board_decisions +3 493 · cron.job_run_details +449. FYND
+  (aggregat, icke-känsligt): auth.users/identities/profiles MINSKAR 5→3
+  under veckan (konton bortagna) och 4 NYA auth-tabeller (mfa_recovery_
+  codes, scim_*) = Supabase-plattformen lagt tabeller under fönstret —
+  vid ÄLDSTA-bladets restore saknas plattformstabeller som ny kod kan
+  förvänta sig (schema-återställning ≠ plattformsversion).
+- **Instrumentnotis (genomskinlighet):** denna blockräkning räknar ALLA
+  scheman (101 tabeller inkl. cron 2/6 068) medan syskonens "alla scheman
+  99/1 266 924" exkluderar cron — skillnaden är KÄND och systematisk,
+  ej avvikelse; public-talen (60/1 266 528) är IDENTISKA mellan alla tre
+  instrumenten (JUNGRUNATT · AUTO-3 · detta).
+- **Koppling till S10-U3 (O6):s tväprojektfynd:** fönstret = rkaq-
+  projektets dumpar; detta restore-bevis gäller rkaq↔rkaq (u3:s not:
+  "Kedjornas restore-bevis består"). Korsvalidering: u3:s live-sond
+  snapshots 1 176 468 == detta yngsta blad EXAKT; board_decisions
+  live 47 602 vs dump 47 042 = dagens tillväxt efter 02:30 (konsistent).
+- **Runbook:** vid SEN upptäckt (dag 29) — kör
+  `node verktyg/dr-fonsterdjup.mjs` (eller dr-ovning --fil <äldsta>) och
+  använd äldsta FUNGERANDE bladet; gallringsslukade rader (−14 i fönstret)
+  finns ENDAST i äldre blad. Nästa kvartals-DR (2026-12): fonsterdjupet
+  körs som komplement till dr-total (djup + bredd).
+- **KVD:** node --check GRÖN · tsc 0 via projektbinär (src/ orörd —
+  verktyget är ren node, inga byggen) · R2 orörd · data/blogg/ orörd ·
+  städning verifierad: skrap-DB raderad, PG17 stoppad, tmp borta, disk
+  73 GB fri. Protokoll: DR-FONSTERDJUP-2026-09-16.md (maskinellt).
+
+## S10-U2 (O7) — NATT-DR + FÖRSTA NATTLIGA RPO-DIFFEN `verktyg/dr-rpo-diff.mjs` (2026-09-17, GODKÄNT)
+
+- **Körning 01:47–01:51 lokal (s10-u2, fabriksagent spår 10 vakt), strax
+  före 02:30-cronens växling** — kedja 1 GRÖN exit 0 (`node verktyg/dr-ovning.mjs`):
+  markörer GRÖN 1 288 041 rader · **RTO 12,7 s** (serien 11,2–23,9 s, samtliga
+  under v98 F3:s 20,0) · fel 788 kända/0 okända · public 60 tabeller/
+  1 266 528 rader (tre nivåer: +storage 68/1 266 664 · alla scheman 99/
+  1 266 924) · städning verifierad (skrap-DB raderad, PG17 stoppad).
+- **KORSBEVIS två instrument samma tal**: skrap-DB:ns psql-COUNT == dumpens
+  zcat-COPY-räkning == 1 266 528 för alla 60 public-tabeller — dubbel
+  instrumentering mot kedja 5:s "tyst trunkerad COPY"-fynd.
+- **NYTT instrument `verktyg/dr-rpo-diff.mjs`** (versionerad): dump-COPY per
+  tabell vs LEVANDE prod-COUNT (EN UNION ALL-fråga via PGPASSFILE —
+  lösenordet läses aldrig av anroparen). **Första nattdiffen: RPO-delta
+  +19 767 rader/23,3 h i 3 av 60 tabeller** (snapshots +18 984 ·
+  board_decisions +744 · organ_health_logs +39; inga negativa, inga
+  schemaförskjutningar).
+- **NATTDIFTSFYNDET**: dagtiden 09-16 gav +19 359 på 11,2 h; nattfönstret
+  13:43→01:50 endast **+408 rader på 12,1 h ≈ 34 r/h** mot dagtakt
+  ~1 730 r/h — natten ~50× lugnare; RPO-skulden byggs dagtid (organismens
+  rundor), timmen före 02:30 är den minst kostsamma för planerad DR-övning.
+- **Instrumentbuggar bokförda (ärlighetsdoktrin)**: (1) felvillkor `!exitCode`
+  dömde exit 0 som fel; (2) icke-public COPY-block (41 st, auth/storage) bröt
+  citeringen — fixat med public-filtrering + HEL blockkonsumering (datarader i
+  ignorerade block får aldrig likna COPY-start). Verktyget dömdes GRÖN först
+  efter fix + återmätning.
+- **Kollision kontrollerad**: syskonbokning s10-u1 (auto-s10-1789602326938,
+  01:52 lokal — TOTAL-kirurgi-vävning) avgränsad: detta objekt rör INTE
+  dr-total.mjs/kedja 5; flock-lagret serialiserar PG-fönstret vid behov.
+- KVD: node --check OK · src/ orörd (tsc-opåverkat noll; ren node) · R2 orörd
+  · data/blogg/ orörd · RAM-grind GRÖN (1 252 MB).
+- Fullständigt protokoll: data/forskning/DR-OVNING-2026-09-17-NATT-RPO.md +
+  maskinellt JSON-delprotokoll data/forskning/DR-RPO-DIFF-2026-09-17.json +
+  övningsprotokoll DR-PROV-2026-09-16-AUTO-5.md (bladets UTC-datum; körning
+  09-17 01:47 lokal).
+
+## S10-U1 (O7) — TOTAL-MALLEN KOMPLETT: KIRURGIN (KEDJA 5) VÄVD — fem kedjor ETT kommando (2026-09-17, GODKÄNT)
+
+- **Objektval:** s10-u2 O5:s bokförda kö ("väv dr-kedja5 i TOTAL-mallen till
+  2026-12") — bokat 01:52 lokal FÖRE ingreppet (anspråksfil + worklog);
+  syskonet s10-u2:s O7 (NATT-RPO, 01:47–01:51) avgränsat i sin sektion.
+- **Vävning `verktyg/dr-total.mjs`:** kedja 5 som steg 2 av 5 i mallordning
+  **1 → 5 → 2 → 4 → 3** (kirurgin direkt efter sin källkedja — samma
+  SQL-dump; PG-kedjorna före serverfilsarkivet) + flagga **--utan-kirurgi**
+  (rescue-läge: vid tabellincident körs dr-kedja5 manuellt med --tabell) +
+  dynamiska protokolltexter; dr-total-flockprov.mjs är generisk (kosmetisk
+  kommentar). Barnkontraktet orört: dr-kedja5 äger egen skrap-DB + barnlås.
+- **Äkta femkedjekörning 01:52–01:55 lokal GRÖN exit 0 — TOTALT 187,2 s ==
+  väggklocka** (iterationsserie 130,0 → 147,0 → 187,2 s; kirurgin +73,0 s
+  köper EN-tabells-scenariot in i kvartalsbeviset): kedja 1 21,5 s (restore
+  11,8 s · public 60/1 266 528 · fel 788 kända/0 okända) · **kedja 5 73,0 s:
+  full restore 11,4 s · källa 1 176 468 rader · extraktion 2,2 s/93 369 KiB
+  · sabotage GRIPET (psql vägrade, rullbak) · kirurgi 13,7 s · radtal+
+  checksumma IDENTISKA (7af32541f90e…)** · kedja 2 37,3 s (161 678 rader ·
+  5 158 r/s) · kedja 4 29,1 s (10/10) · kedja 3 26,4 s (8 322 filer/1 195
+  commits) · retentionssvep 6/6 dumpar gzip-gröna.
+- **FLOCK-KÖ MELLAN AGENTER skarpt bevisat:** syskonets dr-ovning (pid
+  1314546) tog prov-låset 13 ms efter överprotokollets SLUT-rad — köade
+  korrekt bakom mina barns lås genom hela totalen (O6:s beteendeprov i
+  verklig tvåagents-trafik; PG17 online efteråt = SYSKONETS aktiva fönster,
+  deras ägo — min övning städade maskinellt, överprotokollet bokför
+  "PG17 NERE vid övningens slut").
+- **Kvartalsmallen 2026-12 = ETT kommando:** `node verktyg/dr-total.mjs`
+  (fem kedjor; --utan-kirurgi i rescue-läge) + fonsterdjup vid sen upptäckt.
+- KVD: node --check ×2 · negativtest exit 2 (okänt arg före lås) · src/
+  orörd (tsc 0 via projektbinär) · R2 orörd · data/blogg/ orörd.
+- Protokoll: DR-TOTAL-2026-09-17-KIRURGIVEVNING.md (agent; lokaldatum) +
+  maskinellt DR-TOTAL-2026-09-16-AUTO-3.md (överprotokoll; UTC-bladnamn —
+  körning 09-17 01:5x lokal) + 5 delprotokoll (DR-PROV-2026-09-16-AUTO-6 ·
+  DR-KEDJA5-2026-09-16-AUTO-4 · DR-KEDJA2-2026-09-16-AUTO-5 ·
+  DR-PROV-2026-09-16-KEDJA4-5 · DR-KEDJA3-2026-09-16-AUTO-6).
+
+## S10-U3 (O7) — FÖNSTERKONTINUITETEN: mitt-bladen restore-bevisade + retentionens beteendeprov (2026-09-17, GODKÄNT)
+
+- **Objektval:** fönstrets MITT-BLAD (db-2026-09-12/-13/-14) var aldrig
+  restore-bevisade — ändarna var bevisade (fönsterdjupet: äldsta 09-11 ×2;
+  kedja 1-serien: 09-15/09-16 ×flera) men "databasen dog N dagar sedan"
+  saknade bevis för N=2..4; DR-PROV-2026-09-13.md var våg 122D:s
+  filanalys med sudo spärrat (ingen PG-restore). Därtill var retentionens
+  find-beteende dokumenterat men aldrig beteendebevisat.
+- **Tre restores GRÖNA ×3 (dr-ovning.mjs --fil, familjekontraktet intakt:
+  flock-kö + RAM-grind 3 707–3 748 MB + markörförkontroll GRÖN + färsk
+  skrap-DB + finally-städning):** 09-12 RTO 11,1 s · public 60 tabeller/
+  1 187 329 rader · 09-13 11,2 s · 60/1 207 134 · 09-14 10,3 s (seriens
+  snabbaste) · 60/1 226 931; fel 780 kända/0 okända ×3; RTO-serien
+  punkterna 13–15. ⇒ **ALLA SEX blad 09-11→09-16 restore-bevisade.**
+- **FYND:** (1) fönsterdjupets snitt "16 016 rader/dag" var artefakt av
+  EN avvikande dag — 09-11→12 endast +439, därefter KONSTANT ≈+19 800/dag
+  (19 805 · 19 797 · 19 797 · 19 800; snapshots-rytmen stabiliserad sedan
+  09-12); (2) RTO är bladålder-OBLESSRAD (10,3–11,2 s på 4–5 dagar gamla
+  blad) — dumpstorleken styr, 30-dagarsgränsen är RTO-neutral.
+- **RETENTIONENS BETEENDEPROV (första):** cron-radens exakta
+  `find … -mtime +30 -delete`: dummy 40 dagar → RADERAD; dummy 28 dagar →
+  SKONAD (gränsen är >30 hela dygn); 6 äkta blad KVAR. Gränsfallsfilen
+  städad manuellt omedelbart efter provet — en dummy som överlever skulle
+  dömas RÖD av 02:30-markörvakten och låsa &&-kedjans retention.
+  Konsekvens: första äkta bladraderingen sker tidigast ~2026-10-11+ (då
+  09-11-bladet passerar 30 dygn) — fönstret växer dit och fönsterdjupets
+  dag-29-runbook gäller då för 09-11-bladet.
+- **Kollisionsnot:** nattfönstret delades med s10-u2 O7 (NATT-RPO 01:47,
+  commit 5d377343) och s10-u1 O7 (total-kirurgi-vävning 01:52–01:55,
+  commit ab7d5308) — deras objekt orörda; flock-kön korsbevisad BÅDA
+  vägar (deras överprotokoll såg denna agents dr-ovning pid 1314546 köa
+  13 ms efter deras SLUT-rad; dessa restores köade bakom deras barnlås):
+  tre agenter, ett lås, noll förlorat arbete. DRIFTSBOKEN-editen avvaktade
+  deras staging→commit (clobber-kuren; deras text är deras ägo).
+- Städning ägarmätt: skrap-DB raderad ×3 (verktygets finally), PG17 down
+  (pg_lsclusters), testfiler borta (40-dagars raderad av provet självt,
+  28-dagars manuellt dokumenterat), fönstret exakt 6 äkta blad (ls).
+  Protokoll: DR-FONSTER-KONTINUITET-2026-09-17.md + maskinella
+  DR-PROV-2026-09-16-AUTO-{7,8,9}.md. KVD: src/ orörd = inget bygge,
+  tsc-baslinjen orörd (grinden verifierade) · R2 orörd · data/blogg/ orörd.
+
+## S10-U2 (O8) — JUNGFRUNATT KEDJA 2: rad 3:s första obevakade nattexport bevisad ända till restore (2026-09-17, GODKÄNT)
+
+- **Objektval:** s10-u1 O4:s bokförda kö ("jungfrunatten för rad 3 bevisas
+  2026-09-17 enligt s10-u2 O2:s mönster") — mogen först efter 02:40; 09-16:s
+  export var MANUELL beviskörning, natten till 09-17 var crontab-rad 3:s
+  jungfrunatt. Kedja 1:s motsvarande mönster = S10-U2 (O2).
+- **Jungfrunatt-bevis (allt mätt i arbetsytan):** `/tmp/moln-backup.log`
+  FÖDD 02:40:01.838 (stat-Birth — loggen skapad av cron-körningen själv,
+  första raden = 09-17-rubriken; 09-16:s manuella körning skrev aldrig
+  loggen) · tidslinje 02:40:01 → per-typ-filer 02:40:02–03 →
+  system-events-full-2026-09-17.json.gz 02:40:38 (26.3 MB) = ≈37 s körning ·
+  ingen agent aktiv 02:40 · loggen: **163 039 rader (33 sidor), total-kontrakt
+  KOMPLETT 163039/163039** (v3-trunceringsvakten GRÖN på första obevakade
+  natten) · äkthetsdiff 161 678 → 163 039 = **+1 361 rader på 19 h 16 min**
+  (äkta ny export, ej kopia; konsistent med aufr-takten från kedja 6).
+- **Restore GRÖN exit 0** (`node verktyg/dr-kedja2.mjs`, 07:36–07:39 lokal):
+  163 039 rader · 0 felaktiga · 0 dubblett-id · **RTO 25,0 s = kedja
+  2-seriens snabbaste** (52–58 · 27,2 · 38,5 · 37,3 · 25,0) · COPY 6 535 r/s
+  · 5/5 domkontrakt · oberoende verifiering rader==unikaId==163 039,
+  tidsfönster 09-03 22:43 → 09-17 02:40:02 (sista raden skriven sekunder
+  före exporten), severity info 162 296/warning 743, jsonb-prov 15 915.
+- **⇒ KEDJA 2 BEVISAD ÄNDA TILL ÄNDA UTAN AGENT I KEDJAN** (cron → export →
+  total-kontrakt → arkiv → restore → verifiering) — BÅDA nattkedjorna har
+  nu jungfrunatts-bevis; RPO kedja 2 = dygnlig 02:40 utan retention
+  (arkivhandlingar). Arkivet förblir ENDA kopian av system_events
+  (tväprojekt-fyndet: rkaq-dumparna saknar tabellen).
+- **Observation:** 0 dubblett-id mot gårdagens 4 — hypotes (ej bevisat):
+  v3:s repetitionsskydd stänger dubblettkällan; prod-PK:t saknas fortfarande.
+  Köpost till nästa rond: per-typ-vyernas 8 av 11 tabeller TOMMA (0 rader)
+  i nattexporten.
+- Städning oberoende verifierad: skrap-DB raderad (finally), PG17 down
+  (pg_lsclusters + psql-vägran), låsfilen endast pid-info, 73 GB ledigt.
+  KVD: src/ orörd = inget bygge · R2 orörd · data/blogg/ orörd.
+- Protokoll: DR-KEDJA2-2026-09-17-JUNGRUNATT.md (agent) + maskinellt
+  DR-KEDJA2-2026-09-17-AUTO.md. Sido-bevis samma natt: kedja 1:s 09-17-blad
+  GRÖNT 1 307 940 rader 02:30:29 (markörkoll; rad 2:s leverans konstaterad,
+  restore-ägarskap O7 + kommande rundor).
+
+## S10-U3 (O8) — JUNGRUDAGEN: fönstrets sjunde blad restore-bevisat + första morgon-RPO:n + RAM-grindens kur (2026-09-17, GODKÄNT)
+
+- **Objektval:** kontinuitetens (O7) prediktion "fönstret växer till 7+ blad"
+  inlöst — nattens 02:30-cron lämnade jungfrubladet db-2026-09-17 som INGEN
+  hade restore-bevisat (syskonet s10-u2 O8 tog jungfrunatten KEDJA 2 och
+  lämnade själva restore-ägarskapet öppet). Tre vinklar: jungfrublads-restore
+  (kedja 1), femte dagstegs-punkten, första morgon-RPO:n. Under fönstret
+  körde ett syskon dr-ovning mot SAMMA blad (deras DR-PROV-2026-09-17-AUTO-2:
+  RTO 12,4 s, identiskt radtal) — flocken serialiserade; utfallet bokfört som
+  OBEROENDE REPLIKBEVIS (12,1 + 12,4 s, 1 286 328 == 1 286 328) — se deras
+  FÖDELSEBEVIS-protokoll (fyrkantigt korsbevis) för replikens detaljer.
+- **Förkontroll:** markörkoll GRÖN 1 307 940 rader · 99 CREATE · 101 COPY.
+- **RAM-grindens första fabrikstrefönster-fall + kur:** exit 75 vid
+  MemAvailable 943 MB (tre fabriksbarn + main delar servern) → poll-
+  vänta-tills-öppet-wrapper (node, /proc/meminfo var 15:e s) → GRÖN vid
+  1 155 MB efter 120 s, **PG17 orörd under hela väntan**. Läxa: DR-övning
+  under fabrikstrefönster räknar med grindstopp; poll-mönstret = standardkur
+  (s10-u1 replikerade med 2× exit 75 + omkörningsslinga).
+- **Restore GRÖN exit 0** (07:43 lokal): **RTO 12,1 s** = RTO-seriens punkt 16
+  (spann 10,3–23,9 s, samtliga under v98 F3:s 20,0 s) · fel 788 kända/0
+  okända · public 60 tabeller/**1 286 328 rader** == dumpens COPY-räkning
+  (dr-ovning + dr-rpo-diff: två instrument, samma tal) · public+storage
+  68/1 286 464 · alla scheman 99/1 286 724.
+- **⇒ FÖNSTRET KOMPLETT 7 BLAD (09-11 → 09-17, N ∈ [0..6])** — varje
+  "dagar sen katastrof"-läge har bevisat blad + mätt radtal. Dagstegs-
+  hypotesen KONFIRMERAD: femte steget **+19 800** (serien 19 805 · 19 797 ·
+  19 797 · 19 800 · 19 800 — spridning 8 rader/0,04 % över fem dagar).
+- **FYND — TVÅ KLOCKOR i RPO-exponeringen** (första morgon-RPO:n, 5,2 h efter
+  växlingen): delta **+163** endast board_decisions +160 · organ_health_logs
+  +3 · **snapshots +0**. Beslutsklockan ≈ **31 r/h jämn dygnet runt** (natt
+  31,9 · morgon 31,3 ≈ 744/dag — styrelsens rundor); snapshots-pumpen
+  (+19 800/dag) stod STILLA 02:30→07:43 — skulden byggs först när pumpen
+  startar. Timmarna efter 02:30-växlingen är nästan kostnadsfria. Köpost:
+  mitt-på-dagens-mätning tidssätter pumpens start.
+- Städning (finally + oberoende): skrap-DB borta, PG17 down, flock släppt;
+  R2 orörd (.pgpass pekare ur publika crontaben, aldrig inläst); src/ orörd
+  = inget bygge; data/blogg/ orörd.
+- **CLOBBER-NOTIS:** leveransen committad 8b82f0a2 07:46; rundagentens
+  samtidiga gamla-läge-skrivning av DRIFTSBOKEN/worklog raderade text-raderna
+  ur arbetsytan (filerna var hela tiden säkra i historiken) — detta är
+  återföringen i tilläggscommit (clobber-kurens andra steg); s10-u1:s
+  889b5d51 bokför symmetriskt och väntar med sina text-rader tills detta
+  steg landat.
+- Protokoll: DR-OVNING-2026-09-17-JUNGRUDAG-7-BLAD.md (agent) + maskinellt
+  DR-PROV-2026-09-17-AUTO.md + JSON DR-RPO-DIFF-2026-09-17-MORGON.json.
+
+## S10-U1 (O8) — FÖDELSEBEVISETS REPLIK + LOKAL PG EGENMÄTT STÄDVERIFIERAD (2026-09-17, GODKÄNT)
+
+- Kontext: fabriksspår 10 vakt ("återställ, mät tid/rader, protokoll, städa
+  lokal PG"). Objektval efter duplikatkontroll: nyfödda bladet
+  db-2026-09-17.sql.gz (fött 02:30:29, obevisat vid start — FÖDELSEBEVIS:
+  N=0-bladet en verklig katastrof IDAG laddar från; igår bevisades N∈[1..5]).
+- RACE (symmetriskt bokförd): s10-u3 (O8) tog SAMMA blad + samma morgon-RPO
+  21 s före mig — flocken serialiserade oss, båda GRÖNA, deras commit
+  8b92f0a2 bokför min körning som "OBEROENDE REPLIKBEVIS"; restore-kärnan +
+  morgonpunktens förstahandsfynd ("två klockor") är DERAS. Detta är repliken
+  + de delar de inte täckte.
+- REPLIKEN: `node verktyg/dr-ovning.mjs --fil db-2026-09-17.sql.gz` GRÖN
+  exit 0 — markörer GRÖN 1 307 940 · RTO **12,4 s** (seriepunkt 17) · fel
+  788 kända/0 okända · public 60 tabeller/**1 286 328 rader** == dump-COPY
+  == syskonkörningen (FYRKANTIGT KORSBEVIS på födelsebladet) · +storage
+  68/1 286 464 · alla scheman 99/1 286 724. RAM-omkörning: 2× exit 75
+  (896 MB — fyra syskonpar ~0,8 GB/st) → 60 s-slinga → GRÖN (grind+kö-
+  kontraktet beteendebevisat under äkta belastning).
+- **LOKAL PG STÄDVERIFIERAD EGENMÄTT** (första gången oberoende av
+  verktygens självrapport): base/ ENDAST OID 1/4/5 + tom pgsql_tmp (NOLL
+  skrap-svans — "4 kataloger" är ls total-raden, dubbelkollat) ·
+  **pg_wal 497 MB — FÖRSTA MÅTNINGEN** (normal återanvändningsbuffert efter
+  spårets ~20 restores; shutdown-checkpoint "0 added/removed/recycled,
+  estimate 221 MB"; långt under 1 GB-taket; 73 GB ledigt — referensvärde
+  för kvartalstrend) · ren avstängning i PG-loggen · 7 blad i fönstret ·
+  /tmp-felloggar enligt mall. DOM: lokal PG fullständigt städad + viloläge
+  med egenmätta bevis.
+- **CLOBBER-OBSERVATION (VAKT):** under mitt pass skrev organ-Φ
+  DRIFTSBOKEN från en föråldrad bas (före 8b92f0a2) vilket tillfälligt
+  raderade s10-u3 (O8):s DR-rad + sektion ur arbetsträdet; s10-u3:s
+  ÅTERFÖRING-commit 72d74370 läkte det — men Φ:s egen "VÅG 181
+  LEVERERAD"-rad i DRIFTSBOKEN:s våg-ledger sopades med i svängen.
+  Köpost till Φ: återapplicera raden (deras PIPELINE-KO/ZCODE-GAP-staging
+  lever orörd). Lärdom: skrivning i delade böcker under aktiva
+  fabriksfönster SKALL följas av OMEDELBAR commit (clobber-kuren) —
+  gapet mellan skrivning och commit är fönstret.
+- Kö: födelsebevis som stående vaktpraxis (varje blad restore-bevisas sin
+  födelsedag, ~60 s) · mitt-på-dagen-RPO-punkt (tidssätter snapshots-
+  pumpens start) · WAL-mätningen återtas kvartalsvis som trend.
+- Protokoll: DR-FODELSEBEVIS-2026-09-17.md + maskinellt
+  DR-PROV-2026-09-17-AUTO-2.md (commit 889b5d51). KVD: src/ orörd = inget
+  bygge · R2 orörd (.pgpass aldrig inläst) · data/blogg/ orörd.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
@@ -792,3 +1491,40 @@ får ALDRIG krascha sattMal/rensaMal.
   generaliserad från bygg till larmväg).
 
 - **2026-09-15 rond 39 (F1-falsklarm):** feljägarens tsc-mätning under pågående npm ci gav 5 × TS2688 (transitiva @types/d3-* rivna minutvis). Vaccin: deploylås-probe + TS2688/2307-andra-chans i feljagaren.mjs — mät aldrig kod under underhållsfönster. Familj nr 3 av "mätning under underhåll"-falsklarm (jfr F6-tidsfilter rond 35-36, RAM-grind rond 33).
+
+## 2026-09-16 rond 44 — F3+F6-falsklarm #5: rot i DEPLOYFÖNSTRET (feljägaren låsmedveten)
+- SYMPTOM: FYNN 04:27:30Z "/tjanster/* nätverksfel; prod osvarar". Prod 200; rutterna 401 live.
+  Fyndloggen: ALLA 21 ändpunkter + F6 fetch failed samma sekund = hela localhost:3000 nere.
+- ROT: prod-synkens bygg 2 (04:27:20): bygg 1 OOM-dödat 04:23:15 (Killed/heap) förlängde
+  fönstret; npm ci bygger om node_modules under levande pm2 → app osvarande ~3 min →
+  pm2 restart 04:30:24 (pm_uptime-bevis) → DEPLOYAD 04:30:30 prod 200. Allt självläkt vid larm.
+- KUR: feljagaren.mjs deployPagar() — flock -n /tmp/ak1a-deploy.lock (hålls av prod-synk
+  "flock -w 900" + deploya-contabo "flock -n"); F3/F6-fel under aktivt bygg ⇒ MEDEL "väntat
+  fönster" (larmar ej; endast HÖG/KRITISK kickar session enligt mal-hjartslag.mjs), utan
+  bygg ⇒ HÖG kvar. Fail-safe: endast exit-status 1 (= lås hålls) räknas som deploy.
+- VACCIN: instrument ska känna systemets underhållsfönster (familj: rond 33 RAM-svält,
+  35-36 larmväg-ts, 39 npm ci-race, 44 deployfönster). Kvar bokad: atomisk byggswap.
+
+## INCIDENT 2026-09-16 19:17 lokal — GRÄNSSNITTSVAKTEN dog med SIGINT (exit 130)
+- SYMPTOM: cron-körningen 19:17 (flik "17 1,7,13,19 * * *") avbröts mitt i
+  dark/390-svepet; larm VAKTFEL med halvfärdig utdata; cron.log SAKNAR 19:17-raden
+  (bash hann POSTa larmet men dö innan echo) ⇒ signalen träffade hela jobbprocessen.
+- ROT: yttre SIGINT, engångsslag. Uteslutna med belägg: kernel (journalctl 19:10–19:25
+  tyst om OOM/kill), agentfabriken (logg.jsonl tyst sedan 19:13, inga barn vid 19:17),
+  egna verktyg (pumpor/evighetsmotor/pulsvakt/kraschvakt: 0 kill/pkill-källor, bara
+  AbortSignal.timeout). INTE den bevisade 2026-09-15-roten korrupt node_modules:
+  prod = 583 paket, 0 trasiga, puppeteer-core installerad + deklarerad (package.json
+  rad 91) ⇒ nästa npm ci oskadelig.
+- KUR: ingen — prod var frisk (200, pm2 online, .next intakt). Reparationsbygget
+  (npm ci+build under flock) avstått medvetet: inget att laga, bygg avbrott hade bara
+  burit risk. Skyddet åter bevisat direkt: snabbsvep 12/12 GRÖN + riktat adminsvep
+  88/88 GRÖN (19:35); cron återupptar fullkontrollen 01:17.
+- VACCIN: (1) larmtextens "korrupt node_modules"-hypotes är en GISSNING från
+  2026-09-15 — kör diagnosen (paket-integritet + journal + fabriklogg) FÖRE npm
+  ci+build; ett onödigt bygge är själv en incidentrisk. (2) Vakten MÅSTE köras från
+  /home/ak1a/AK1 (arbetsytan har partiellt node_modules utan puppeteer-core — snabbtest
+  där ger falskt VAKTFEL "Cannot find package"). (3) "/admin 2px överflöd i mobil" är
+  ett konstant normalmönster UNDER fyndtröskeln (GRÖN 13:17 med identiskt mönster) —
+  inte ett fel, jaga det inte. (4) Studio-skalet verkställde varken rm eller node-fil
+  ikväll (häng utan effekt, omväxlande med fungerande körningar) — städning via
+  subagent; fjärde observationen av hang-typen.

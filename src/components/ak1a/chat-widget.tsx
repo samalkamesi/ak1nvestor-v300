@@ -65,6 +65,256 @@ import { svaraLokaltPraktik } from "@/lib/ai-mentor-praktik-fragor";
 // valuta-familjeorden (duplikatskydd mot praktik-lagrets index-ämne
 // dokumenterat i modulens huvud).
 import { svaraLokaltPortfoljgrund } from "@/lib/ai-mentor-portfoljgrund-fragor";
+// Spår 6 omgång 8 (s6-u2): +2 förhandsfrågor (bolagsstämma/rösträtt,
+// styrelse/bolagsstyrning) — ägande-lagret ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (sj-03/km-002/km-067, km-002/km-026/sj-03). Ansvarsfördelning: basens
+// utdelnings-monster äger "utdelning", nästa-lagret "investmentbolag",
+// sektorns fastighets-monster "stamaktionär/stamaktieägare" — detta lager
+// äger stämm-, rösträtts- och styrelsefamiljeorden (kollisionskontroll
+// mot 513 tidigare kärnord dokumenterad i modulens huvud).
+import { svaraLokaltAgande } from "@/lib/ai-mentor-agande-fragor";
+// Spår 6 omgång 8 (s6-u1): +2 förhandsfrågor (avskrivningar/EBITDA,
+// leasing/IFRS 16) — redovisningsdjup-lagret ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (km-021/km-022/higgins, km-023/bk-01/km-004). Ansvarsfördelning:
+// basens rapport-monster äger rapportformens namn (resultaträkning/
+// balansräkning), extra-lagret kassaflödet — detta lager äger posterna:
+// avskrivnings- och leasing-familjeorden (kärnordsdisjunktion mot 511
+// ord LIVE-testat, inkl syskonets agande-familj: 0 krockar).
+import { svaraLokaltRedovisningsdjup } from "@/lib/ai-mentor-redovisningsdjup-fragor";
+// Spår 6 omgång 8 (s6-u3): +3 förhandsfrågor (värderingsmultiplar/multipel-val,
+// FOMO/förlustaversion, mästarna Buffett/Lynch/Fisher) — djup-lagret ligger
+// SIST och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt
+// med flerkällsrad (vm-03/km-011/km-010/vm-04, km-018/bf-12/km-035/tanka-
+// snabbt, buffett-way/lynch/fisher/greenwald). Ansvarsfördelning: basen äger
+// värderings-, beteende- och bok-GRUNDORDEN (värdering/dcf/pe-tal,
+// psykologi/bias, böcker/graham) — detta lager äger familjeorden basen saknar
+// (multipel/jämförelsebolag, fomo/prospektteori/kahneman, buffett/lynch/
+// fisher; kärnordsdisjunktion mot 559 ord LIVE-testat, inkl syskonens
+// agande- och redovisningsdjup-familjer: 0 krockar). Omstartsbokföring:
+// föregångarens avskrivnings-fråga är utbytt — syskonet s6-u1:s
+// redovisningsdjup-lager (FÖRE detta i kedjan) äger den familjen.
+import { svaraLokaltDjup } from "@/lib/ai-mentor-djup-fragor";
+// Spår 6 omgång 9 (s6-u3): +3 förhandsfrågor (tulpanmanin, börsbubblans
+// anatomi, aktiekraschen 1929) — historia-lagret ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (mackay/kindleberger/galbraith/km-057/rk-15 — samtliga KOMPLETT-kurser ur
+// bokmästar-kategorin). Ansvarsfördelning: basen äger börs-GRUNDORDEN
+// ("vad är börsens historia?" förblir basens aktiemarknads-monster) och
+// beteende-orden (panik/psykologi), djup-lagret äger fomo-familjen — detta
+// lager äger händelse-, bok- och bubbelorden (tulpan/bubbla/krasch/1929/
+// mackay/kindleberger/galbraith; kärnordsdisjunktion mot 598 ord
+// LIVE-testat, inkl syskonets djup-familj: 0 krockar).
+import { svaraLokaltHistoria } from "@/lib/ai-mentor-historia-fragor";
+// Spår 6 omgång 10 (s6-u2): +2 förhandsfrågor (DuPont-analysen, ROIC) —
+// lönsamhetsdjup-lagret ligger SIST och kan därför aldrig stjäla en fråga
+// från tidigare lager; källmärkt med flerkällsrad (ln-/v-/roic-kurserna).
+// Basen äger VARIABELUPPSLAGET, praktik-lagret marginal-familjen — detta
+// lager äger dupont-/roic-/nopat-/wacc-orden (LÖNSAMHET-kategorin hade
+// inget eget lager).
+import { svaraLokaltLonsamhetsdjup } from "@/lib/ai-mentor-lonsamhetsdjup-fragor";
+// Spår 6 omgång 10 (s6-u1): +4 förhandsfrågor ur AK1TS-familjen — ts-djup-
+// lagret (fibonacci-retracements/extensions/kluster/tidszoner, gann-vinklar/
+// cyklar, volymdjup: profil/VPOC + order flow + market profile) ligger SIST
+// och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (ts-familjens 25 kurser, 15 källmärkta). Basens teknisk-
+// monster äger indikator-familjen, impulsvag-monstret elliott-familjen —
+// detta lager äger fibonacci-/gann-/volymdjup-orden.
+import { svaraLokaltTsdjup } from "@/lib/ai-mentor-tsdjup-fragor";
+// Spår 6 omgång 10 (s6-u3): +3 förhandsfrågor ur svensk skattemekanik —
+// skattedjup-lagret (kapitalförsäkring/schablonmekanik/äganderätten,
+// bolagsskatt 20,6 %/dubbelbeskattningens kedja, optionsbeskattning/
+// personal- vs marknadsoptioner) ligger SIST och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkt med flerkällsrad (sj-05 + km-052
+// + km-051 + km-050 / km-049 + km-050 + km-051 + km-053 / sj-04 + km-051
+// + km-050 + km-049 — skattekategoriernas tio kurser). Ansvarsfördelning:
+// BASens skatt-monster äger SKATT-GRUNDORDEN (skatt/beskattning/
+// kapitalvinstskatt/källskatt/schablonskatt/utdelningsskatt/3:12 — "hur
+// fungerar ISK och skatt?" förblir basens), basen äger utdelnings-orden,
+// nästa-lagret options-GRUNDORDEN — detta lager äger endast familjeorden
+// basen saknar (kapitalförsäkring/bolagsskatt/optionsbeskattning/
+// personaloptioner/dubbelbeskattning; sond mot hela kedjan: 626+ kärnord,
+// 0 fångster i båda riktningarna). Juridikgrind: ren mekanikutbildning
+// med Skatteverket-hänvisning — aldrig kontoval eller skatteråd.
+import { svaraLokaltSkattedjup } from "@/lib/ai-mentor-skattedjup-fragor";
+// Spår 6 omgång 11 (s6-u3): +3 förhandsfrågor ur beteendefinans —
+// beteendedjup-lagret (bekräftelsefällan/bekräftelsebias, ankareffekten/
+// förankring, mental accounting/mentala konton/thaler) ligger SIST och kan
+// därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (km-019 + bf-11 + km-035 + bf-04 / bf-05 + km-020 + bf-06 +
+// bf-12 / bf-03 + bf-02 + km-037 + pf-06 — BETEENDEFINANS-kategorins 18
+// kurser). Ansvarsfördelning: BASens beteende-monster äger PSYKOLOGI-
+// GRUNDORDEN (psykologi/beteende/bias/kognitiv bias/sunk cost/halo —
+// "vad är kognitiv bias?" förblir basens), djup-lagret fomo-familjen
+// (fomo/prospektteori/förlustaversion/disposition) — detta lager äger
+// endast familjeorden de saknar (bekräftelsefälla/ankareffekt/mental
+// accounting; sond mot hela kedjan: 718 kärnord, 0 fångster i båda
+// riktningarna). Juridikgrind: generell beslutspsykologi-mekanik, ingen
+// diagnos, inga handelsrekommendationer.
+import { svaraLokaltBeteendedjup } from "@/lib/ai-mentor-beteendedjup-fragor";
+// Spår 6 omgång 11 (s6-u1): +2 förhandsfrågor ur riskdjupet — riskdjup-
+// lagret (skuldfällan/löptider/bindningstid/covenants/räntetäckningsgrad/
+// refinansiering + svarta svanar/taleb-kriterierna/svansrisk) ligger SIST
+// och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (rk-03 + ks-03 + rk-04 + st-01 / rk-12 + the-black-swan +
+// fooled-by-randomness + km-033 — RISKHANTERING-kategorins 15 kurser,
+// registrets största familj utan eget lager). Ansvarsfördelning: BASens
+// risk-monster äger RISK-GRUNDORDEN (risk/tail risk/regulatorisk risk),
+// makro ränte-orden inkl. "räntetäckning" — detta lager äger endast
+// familjeorden de saknar (skuldfälla/räntetäckningsgrad/covenants/löptid/
+// svart svan/svansrisk; sond mot hela kedjan: 720 kärnord, 0 fångster i
+// båda riktningarna; "taleb" medvetet strunet som kärnord — ett fel från
+// "talen", tsdjup-precedensen). Juridikgrind: ren mekanikutbildning —
+// inga prognoser, inga placeringstips.
+import { svaraLokaltRiskdjup } from "@/lib/ai-mentor-riskdjup-fragor";
+// Spår 6 omgång 12 (s6-u1): +1 förhandsfråga ur portföljteorins riskmått —
+// riskmåttsdjup-lagret (sharpe-kvoten/riskjusterad avkastning, med beta/
+// capm/standardavvikelse som familjeord) ligger SIST och kan därför aldrig
+// stjäla en fråga från tidigare lager; källmärkt med flerkällsrad (km-016 +
+// km-013 + km-015 + km-034 — kategorin RISKHANTERING & PORTFÖLJTEORIs nio
+// kurser). Ansvarsfördelning: BASens risk-monster äger RISK-GRUNDORDEN
+// (volatilitet/drawdown/kelly/value at risk — "vad är volatilitet?" förblir
+// basens), riskdjup-lagret skuldstruktur- och svansrisk-familjerna — detta
+// lager äger endast riskmåtten de saknar (sharpe/beta/capm/standardavvikelse/
+// riskjusterad; sond mot hela kedjan: 754 kärnord, 0 fångster i båda
+// riktningarna; "beta"↔basens "betala" och "capm"↔"call"/"case" ligger på
+// avstånd 2 — toleransen är 1, ömsesidigt säkert, dokumenterat i modulen).
+// Juridikgrind: ren mått-utbildning — inga placeringstips.
+import { svaraLokaltRiskmattsdjup } from "@/lib/ai-mentor-riskmattsdjup-fragor";
+// Spår 6 omgång 12 (s6-u2): +2 förhandsfrågor ur utdelningsstrategin —
+// utdelningsdjup-lagret (utdelningsfällor/yield trap/utdelningsgrad +
+// aktieåterköp/återköpsprogram) ligger näst sist (syskonet förväntningsdjup
+// efter — samma omgångs fönster) och kan därför aldrig stjäla
+// en fråga från tidigare lager; källmärkt med flerkällsrad (ud-04 +
+// km-063 + ud-01 + ud-08 / km-066 + v20 + ks-02 + ud-02 — kategorin
+// UTDELNINGSSTRATEGIs 12 kurser, registrets näst största familj utan
+// eget lager). Ansvarsfördelning: BASens utdelnings-monster äger
+// utdelnings-GRUNDORDEN (utdelning/direktavkastning/dividend/payout
+// ratio/återinvestering), basens V20-uppslag äger det NAKNA ordet
+// "återköp" (titelorden ur v20-kursen) — detta lager äger endast
+// familjeorden de saknar (utdelningsfälla/yield trap/avkastningsfälla/
+// utdelningsgrad/aktieåterköp/återköpsprogram; sond mot hela kedjan:
+// 766 kärnord i 19 lager, 0 fångster i båda riktningarna; "drip"
+// medvetet strunet som kärnord — kortordskuren, tsdjup-precedensen).
+// Juridikgrind: ren mått- och mekanikutbildning — inga placeringstips.
+import { svaraLokaltUtdelningsdjup } from "@/lib/ai-mentor-utdelningsdjup-fragor";
+// Spår 6 omgång 12 (s6-u3): +3 förhandsfrågor ur förväntningsspelet —
+// förväntningsdjup-lagret (förväntningsanalys/vad står redan i priset +
+// förväntningsgap/förväntningsklyfta/earnings drift/expectations game +
+// kalibrering) ligger SIST och kan därför aldrig stjäla en fråga från
+// tidigare lager; källmärkt med flerkällsrad (kt-02 + expectations-
+// investing + the-alchemy-of-finance + kt-01 / + contrarian-investment-
+// strategies + irrational-exuberance / + against-the-gods + fooled-by-
+// randomness — kategorin KATALYSATORs kurser + bokmasterns
+// förväntningskanon). Ansvarsfördelning: BASens katalysator-monster äger
+// KATALYSATOR-GRUNDORDEN (katalysator/katalysatorjakt/"prisad"), basens
+// variabeluppslag äger V-kursernas titelord (produktlanseringar/avtal/
+// regulatoriska V16–V18) — detta lager äger endast familjeorden de saknar
+// (förväntningsanalys/gap/klyfta/kalibrering/earnings drift/expectations
+// game/inprisat; sond mot hela kedjan: 754 kärnord i 18 lager vid valet,
+// 0 fångster i båda riktningarna; "inprisad" medvetet strunet — basens
+// "prisad" ligger 2 ifrån, "katalysatorjakt" ägs av basen; tsdjup-fällan
+// "förväntningar"↔"förlängningar" d=2 dokumenterad i modulen och vakas
+// av testfall J). Juridikgrind: ren metodutbildning — inga prognoser,
+// inga placeringstips.
+import { svaraLokaltForvantningsdjup } from "@/lib/ai-mentor-forvantningsdjup-fragor";
+// Spår 6 omgång 13 (s6-u1): +1 förhandsfråga — rebalansering —
+// portfoljbalans-lagret (rebalansering/ombalansering/återbalansering/
+// kärna och satellit/riskparitet/taktisk allokering/portföljvikter/
+// equal weight/rebalanseringspremie/bandbreddsmetoden) ligger SIST och
+// kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (pf-04-rebalansering primär + the-intelligent-asset-
+// allocator + all-about-asset-allocation + the-bogleheads-guide-to-
+// investing — kategorin PORTFÖLJHANTERINGs 14 kurser + bokmasterns
+// allokeringsskolning). Ansvarsfördelning: BASens portfölj-monster äger
+// portfölj-GRUNDORDEN (sondbevis: "hur rebalanserar man en portfölj?" +
+// "vad är 60 40 portföljen?" fångas av basen) — detta lager äger endast
+// SAMMANSÄTTNINGARNA (utdelningsdjup-precedensen); portfoljgrund äger
+// diversifiering (endast KÄLLA + fragor:-knapp här), skattedjup äger
+// ISK/depå-djupet (endast kurslänk). Sond mot hela kedjan: 771 kärnord
+// i 21 lager, 0 fångster i båda riktningarna. Juridikgrind: ren
+// mekanikutbildning — inga placeringstips.
+import { svaraLokaltPortfoljbalans } from "@/lib/ai-mentor-portfoljbalans-fragor";
+// Spår 6 omgång 13 (s6-u2): +2 förhandsfrågor — känslighetsanalys/
+// stresstest + soliditetsgrad/balansstyrka — stabilitetsdjup-lagret
+// (känslighetsanalys · känslighetstest · stresstest · stresstesta ·
+// stresstestning · stresstestar · soliditetsgrad · soliditetsläget ·
+// balansstyrka) ligger SIST och kan därför aldrig stjäla en fråga från
+// tidigare lager; källmärkt med flerkällsrad (st-02 primär + the-
+// intelligent-investor + st-01 + margin-of-safety; st-01 primär +
+// security-analysis + v10-skuldsattningsgrad + interpretation-of-
+// financial-statements — kategorin STABILITETs 5 kurser, dess första
+// egna lager). Ansvarsfördelning: basen äger GRUNDORDEN (soliditet +
+// hävstång via kapitalstruktur-monstret, likviditet via aktiemarknads-
+// monstret, V-titelorden skuldsättningsgrad/kvick/intäktsstabilitet via
+// variabeluppslaget) — detta lager äger endast FAMILJEORDEN (sondbevis:
+// "vad är soliditet?" fångas av basen, "vad är räntetäckningsgrad?" av
+// riskdjupet); riskdjup äger skuldfällan (räntetäckningen endast
+// grannmått + räkneexempel här). Sond mot hela kedjan: 810 kärnord i
+// 22 lager (inkl syskon u1:s portfoljbalans på disk i samma fönster),
+// 0 fångster i båda riktningarna. Juridikgrind: ren metodutbildning —
+// inga placeringstips.
+import { svaraLokaltStabilitetsdjup } from "@/lib/ai-mentor-stabilitetsdjup-fragor";
+// Spår 6 omgång 13 (s6-u3): +3 förhandsfrågor — Grahams värdegolv —
+// grahamgolv-lagret (net net · netnet · ncav · nettotillgångsvärde ·
+// värdegolv + cigar butts · cigarettfimp + mr market · herr marknad)
+// ligger SIST och kan därför aldrig stjäla en fråga från tidigare lager;
+// källmärkt med flerkällsrad (value-investing-from-graham-to-buffett +
+// the-intelligent-investor + security-analysis + the-snowball /
+// the-essays-of-warren-buffett + the-warren-buffett-way — bokmasterns
+// värderingskanon, 103 kurser i BOKMASTER-kategorin). WIDGET-KOPPLING
+// (praktik-lagrets fall K): förslagsknapparna "Vad är en net-net?" och
+// "Förklara NCAV & cigar-butts" ställer exakt frågan "vad är en net-net
+// och NCAV?" — som före detta lager gick till API-flödet vid varje
+// klick; kedjan svarar nu lokalt utan API-kostnad. Ansvarsfördelning:
+// basens böcker-monster äger GRAHAM-ORDEN (kärnorden "graham"/"intelligent
+// investor" fångar alla "grahams …"-frågor — sondbevis; här endast KÄLLOR
+// + STARKORD, starkord kan aldrig stjäla), nästa-lagret äger substansvärde/
+// NAV-rabatt (fragor:-knapp länkar dit), djup-lagrets mästare äger Buffett-
+// frågorna (knapp länkar dit). Sond mot hela kedjan: 810 kärnord i 22
+// lager (inkl syskonens portfoljbalans + stabilitetsdjup på disk i samma
+// fönster), 0 fångster i båda riktningarna; "ncav"↔nästa-lagrets "nav"
+// d=1 dokumenterad i modulen (stöld omöjlig: nav fångas FÖRE, testfall
+// J3). Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltGrahamgolv } from "@/lib/ai-mentor-grahamgolv-fragor";
+
+// Spår 6 omgång 14 (s6-u2): värderingsjusteringar — normalisering/CAPE +
+// WACC, SIST i kedjan. Kärnorden sonderade mot samtliga 24 tidigare lager
+// (0 fångster i båda riktningarna — verktyg/testa-ai-mentor-varderjustering.mjs
+// fall G2/J vakar mekaniskt LIVE ur modulerna). vm-04 är redan SIDOKÄLLA i
+// djup-lagrets multipel-monster — här ägs ämnet normalisering; källor får
+// delas mellan lager, kärnord aldrig. Juridikgrind: metodutbildning.
+import { svaraLokaltVarderjustering } from "@/lib/ai-mentor-varderjustering-fragor";
+
+// Spår 6 omgång 14 (s6-u1): +1 förhandsfråga (köpoption med säljoptionen
+// som inbyggd spegel) — optionsdjup-lagret ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (km-059/od-01/od-02/km-062). Ansvarsfördelning: nästa-lagret äger
+// options-ÖVERSIKTSORDEN (option/call/put/covered call/protective put/
+// black scholes — sondbevis), detta lager äger de svenska komponentorden
+// (köpoption/säljoption/lösenpris/strikepris/optionspremie/tidsvärde/
+// underliggande/optionsgreker); kurserna od-01 + od-02 nås av ingen annan
+// mentorväg (kärnordsdisjunktion mot 815 ord LIVE-testat, 0 krockar —
+// verktyg/_s6u1-sond-omg14.mjs).
+import { svaraLokaltOptionsdjup } from "@/lib/ai-mentor-optionsdjup-fragor";
+// Spår 6 omgång 14 (s6-u3): +3 förhandsfrågor — riskläsningsdjup-lagret
+// (kundkoncentration/koncentrationsrisk/kundberoende · riskmatris ·
+// riskavsnitt/riskbeskrivning/riskredovisning) ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (rs-02-kundkoncentration + rk-09-koncentrationsrisk + rs-03-dold-
+// samvariation + rs-04-riskmatrisen + rs-05-riskavsnittet-mellan-raderna
+// + rk-11-bedrageririsk + km-032 — RISK-kategorins tre läsningskurser
+// rs-02/rs-04/rs-05 som primärer). RISK var registrets näst största helt
+// otäckta kategori: volatilitet ägs av basens risk-monster, dold
+// samvariation av portföljgrundens korrelationsfamilj, kapitalförbränning
+// av basens V19 — detta lager bär ENDAST sammansatta familjeord basen
+// saknar (V19-precedensen; sond verktyg/_s6u3-sond-omg14.mjs: 843 kärnord
+// LIVE, 0 fångster i båda riktningarna; syskonen u2:s varderjustering +
+// u1:s optionsdjup på disk i samma fönster — disk-läge-presedensen,
+// kärnorden mekaniskt disjunkta mot detta lager i båda riktningarna).
+// Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltRisklasningsdjup } from "@/lib/ai-mentor-risklasningsdjup-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -764,11 +1014,13 @@ export function ChatWidget() {
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
 
     // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
-    // Regel+datamotorn (ai-mentor-svar.ts + kursregistret) svarar på de van-
-    // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
-    // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
-    // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER);
+    // Regel+datamotorn (tjugoett lager: bas + tjugo syskonfiler) svarar på de
+    // vanligaste nybörjarfrågorna deterministiskt utan API-kostnad: 74 för-
+    // handsfrågors monsters + generiskt V01–V20-uppslag, alla källmärkta
+    // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
+    // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
+    // fortsätter flödet nedan till /api/chatbot precis som förr.
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

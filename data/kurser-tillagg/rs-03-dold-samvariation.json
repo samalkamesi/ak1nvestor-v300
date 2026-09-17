@@ -1,0 +1,156 @@
+{
+  "slug": "rs-03-dold-samvariation",
+  "category": "RISK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Dold samvariation — när bolagen delar samma risk",
+  "summary": "Spridningens gräns: hur flera bolag som var och en ser diversifierad ut kan bära samma underliggande exponering — och hur samvariationen läses ur fundamentaldata, mäts som exponeringskarta och vägs i riskfamiljen.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå korrelation i fundamental mening — en gemensam drivare bakom flera bolags intäkter · Läsa exponeringar ur segment-, råvaru- och finansnoter i flera årsredovisningar sida vid sida · Rita en exponeringskarta: bolag mot drivare, med andelen av portföljen per drivare · Se hur spridningens gratis lunch krymper när korrelationen stiger — med räkneexempel · Skilja priskorrelation från fundamental samvariation i båda riktningarna · Koppla samvariationen till AKM1:s V03-, V12- och V19-familjer samt rs-01:s spridning och rs-02:s kundled.",
+  "why": "Spridningen presenteras ofta som riskens första försvar — men försvaret har ett villkor som sällan sägs högt: det verkar bara så länge bolagen inte rör sig tillsammans. Kundkoncentrationskursen visade hur ett enda bolags intäkter kan vila på få axlar; den här kursen lyfter blicken en nivå. Flera bolag som var för sig ser väl spridda ut kan bära samma underliggande exponering — samma slutmarknad, råvara, cykel eller valuta — och ingen enskild årsredovisning visar det. Mönstret syns först när flera redovisningar läggs sida vid sida. Det är riskfamiljens mellansteg: från att läsa risken i ett bolag till att läsa risken mellan bolagen.",
+  "history": {
+    "origin": "Korrelerade risker var bankernas kunskap långt före portföljteorin. En bank med många lån i samma bransch — gruvor, varv, fastigheter — stod svagare än summan av sina enskilda lån, och kreditprövningen lärde sig fråga inte bara vem låntagaren var utan vad som fick alla låntagare att falla samtidigt. När Harry Markowitz 1952 formulerade spridningens matematik fanns korrelationen med i formeln från första dagen — men i praktiken kom eftervärlden oftast ihåg vikterna och glömde villkoret.",
+    "evolution": "Kriserna höll villkoret levande. 1973–1974 föll energikänsliga bolag och breda aktiemarknader tillsammans; 1987 föll allt samma dag oavsett fundamentals; 2000–2002 drabbade tekniken även bolag som bara sålde till tekniksektorn; och 2008 visade bolånekedjan hur banker, bygg och konsumenthandel var grenar på samma träd — de som byggt riskmodeller på historisk korrelation såg modellerna brista just därför att korrelationen inte är en konstant utan en storhet som rör sig, med en tendens att stiga när efterfrågan faller.",
+    "modern": "I dag binds portföljer samman på sätt som bransch-etiketter inte visar: globala leverantörskedjor, dominanta plattformar, gemensamma råvaror och en världsomspännande ränta. Pandemivåren 2020 gav senaste huvudlärdomen: ett enda gemensamt slag stängde ekonomier och fick bolag som aldrig räknats som besläktade att falla tillsammans. Faktormodeller och risksystem har vuxit fram som svar — men grundmetoden är fortfarande den gamla bankfrågan, och den går att ställa med egna händer: vad får mina bolag att falla samtidigt?"
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — spridningens villkor",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Läsningen — exponeringarna i flera årsredovisningar",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Mätningen — exponeringskartan",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mekaniken — varför allt rör sig tillsammans i kriser",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — tre feltolkningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — samvariation i AKM1:s familjer",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — spridningens villkor",
+      "intro": "Spridning minskar risk på ett villkor: att innehaven inte rör sig tillsammans. Villkoret är inte alltid uppfyllt — och det syns inte i ett enda bolags siffror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Markowitz gratis lunch, som volatilitetskursen introducerade, har en matematisk prislapp: riskminskningen beror på korrelationen mellan innehaven. Räkneexemplet gör det synligt. Två bolag som vardera svänger 20 procent, lagda 50–50 i en portfölj, ger en portföljsvängning på cirka 14,1 procent om korrelationen är noll, cirka 17,3 procent om den är 0,5 — och exakt 20 procent om den är 1. Vid korrelation ett är spridningen verkningslös: portföljen svänger som sina delar, hur många delar den än har.\n\nPoängen för den fundamentala analysen är att korrelationen inte är en kursegenskap utan en exponeringsegenskap. Två bolag faller tillsammans när samma kraft driver deras intäkter eller kostnader — en gemensam slutmarknad, en gemensam råvara, en gemensam ränta. Därför går frågan att ställa i årsredovisningarna, före kurserna: delar mina bolag drivare? Det är den fråga den här kursen bygger ett hantverk kring."
+        },
+        {
+          "type": "definition",
+          "content": "Fundamental samvariation: graden av gemensam exponering — att flera bolags intäkter, kostnader eller värderingar drivs av samma underliggande faktor. Skiljs från priskorrelation, som bara mäter hur kurserna rört sig tillsammans hittills."
+        },
+        {
+          "type": "insight",
+          "content": "Spridning över bolag är inte detsamma som spridning över drivare — en portfölj kan ha tjugo innehav och ändå vila på tre gemensamma exponeringar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Läsningen — exponeringarna i flera årsredovisningar",
+      "intro": "En årsredovisning beskriver ett bolags exponeringar. Samvariationen uppstår mellan bolag — läsningen görs därför med flera redovisningar sida vid sida.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fyra ställen bär det mesta av underlaget. Segmentnoten visar intäkter per geografi och kundkategori — två bolag från skilda branscher kan visa nästan identiska geografiprofiler och därmed samma region- och valutaexponering. Råvaru- och inköpsavsnitten visar vad som driver kostnadssidan — energi, metaller, frakt, halvledare — och därmed vilka bolag som delar kostnadscykler. De finansiella noterna visar räntebindning, valutor och netting — den gemensamma räntan är den mest underskattade gemensamma drivaren, eftersom den sitter i värderingen hos alla bolag samtidigt. Förvaltningsberättelsens riskavsnitt sammanfattar ofta ledningens egen bild av konjunkturkänsligheten.\n\nLäsövningen är systematisk: välj tre bolag ur en portfölj, lista för varje bolag de tre största efterfrågedrivarna och de två största kostnadsdrivarna, och skriv upp dem i en gemensam tabell. Det som upprepas mellan kolumnerna är portföljens dolda gemensamma risk — och det syns i ingen av redovisningarna var för sig."
+        },
+        {
+          "type": "insight",
+          "content": "Frågan som vänder på läsningen: om den här drivaren vänder, hur många av mina kolumner vänder med den?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mätningen — exponeringskartan",
+      "intro": "Från läsning till mått: exponeringskartan räknar hur stor andel av portföljen som delar varje drivare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kartan är en enkel matris: bolagen på en axel, drivarna på den andra, och andelen av varje bolags intäkter som drivaren bär i rutorna. Portföljandelen per drivare blir sedan den viktade summan — och ett räkneexempel gör poängen tydlig. Tre bolag, vardera med två tredjedelar av intäkterna knutna till samma byggnads- och räntecykel: oavsett hur portföljen viktas — 40, 35 och 25 procent eller någon annan fördelning — bär två tredjedelar av hela portföljen samma drivare. Viktningen spelar ingen roll när exponeringen är gemensam.\n\nDet är exponeringskartans huvudläxa: en portfölj som ser ut som många bolag kan i riskens värld vara ett fåtal positioner. Räkna i stället positioner per drivare — hur många oberoende intäktsben portföljen vilar på — så får måttet samma karaktär som kundkoncentrationens trappa: en andel, en riktning över tiden och en trappa som kan breddas eller smalna."
+        },
+        {
+          "type": "insight",
+          "content": "Räkna portföljen i drivare, inte i bolag: frågan är inte hur många innehav du har, utan hur många oberoende intäktsben som bär dem."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mekaniken — varför allt rör sig tillsammans i kriser",
+      "intro": "Korrelationen är inte en konstant. Den har en tendens att stiga när efterfrågan faller — och mekaniken går att följa steg för steg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre mekanismer driver samvariationen uppåt i nedgångar. Den första är den gemensamma utlösaren: när samma efterfrågekraft vänder — en cykel, en råvara, räntan — slår samma slag mot alla bolag som bär den, samtidigt. Den andra är finansieringsleden: bolag som delar kapitalmarknad får sina villkor försämrade vid samma tillfälle, vilket gör att kapitalförbränning hos flera innehav anländer på en gång. Den tredje är beteendet: när många säljer för att täcka behov eller hämta hem likviditet säljs även innehav som inte delar den fundamentala drivaren — samvariationen smittar via ägarbaser som behöver kontanter samtidigt.\n\nTillbaka till räkneexemplet från första kapitlet: portföljen som svängde 17,3 procent vid korrelation 0,5 svänger cirka 19,5 procent om korrelationen i en nedgång stiger till 0,9 — utan att något enskilt bolag blivit ett dugg riskare. Det är kärnan i varför bakåtblickande riskmått underskattar kriser: de mäter samspelet i lugnt väder, medan risken föds i stormen."
+        },
+        {
+          "type": "insight",
+          "content": "Portföljens risk i en kris bestäms inte av vad bolagen gjort hittills, utan av hur många gemensamma ben de står på när slaget kommer."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — tre feltolkningar",
+      "intro": "Samvariation är ett kraftfullt begrepp och därför också lätt att använda fel. Tre fällor står för de flesta misstagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan: att läsa priskorrelation som om den vore fundamental samvariation. Två kurser som hittills rört sig olika kan ändå bära samma exponering — kurser är tröga, ägarbaser skiljer sig åt och nyheter anländer vid olika tidpunkter. Omvänt rör sig kurser ofta tillsammans av sentiment och flock, utan att någon gemensam fundamental drivare finns. Priset är en osäker proxy i båda riktningarna; exponeringarna läses i redovisningarna.\n\nAndra fällan: att anta att olika branscher betyder spridning. Bransch-etiketten är en redovisningskategori, inte en riskkategori — ett råvaruberoende tillverkande bolag, en konsumenttjänst och ett byggbolag kan alla tre i praktiken bära samma ränte- och konjunkturkänsliga slutmarknad. Räkna drivare, inte etiketter. Tredje fällan: att tro att historisk samvariation gäller för alltid. Exponeringar förändras — bolag byter kunder, råvaror och geografier, förvärv tillför nya ben och avyttringar tar bort gamla. Exponeringskartan är en datering som behöver ritas om, inte en sanning som en gång fastställts."
+        },
+        {
+          "type": "insight",
+          "content": "Alla tre fällorna har samma motgift: gå från kurstal och etiketter till underlaget i noterna — och datera läsningen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — samvariation i AKM1:s familjer",
+      "intro": "I AKM1:s system blir dold samvariation riskfamiljens bro mellan bolagsnivå och portföljnivå.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Läs kursen mot sina grannfamiljer. Mot V03, intäktsdiversifiering, är den samma fråga en nivå upp: V03 mäter bredden i ett bolags intäkter, exponeringskartan bredden i portföljens gemensamma ben. Mot V12, intäktsstabilitet, ger den förklaringen till samtidiga fall: flera bolags intäkter kan vara vars för sig stadiga och ändå falla tillsammans när de delar drivare. Mot V19, kapitalförbränning, tillför den tidsdimensionen: flera unga bolag i en portfölj delar ofta finansieringscykeln — när kapitalmarknaden stänger anländer kapitalförbränningslägena i kluster. Och mot rs-01:s spridningsläsning fullbordar den cirkeln: spridningen är det första försvaret, samvariationsläsningen dess villkor.\n\nAvsluta med helhetsövningen: välj tre till fem bolag ur en tänkt portfölj, rita deras exponeringskarta ur de senaste årsredovisningarna, räkna fram den största gemensamma drivarens andel — och formulera en mening om vad den andelen betyder för hur portföljen ska läsas. En mening — men den byter portföljen från en lista med bolag till en struktur av riskben, och det är riskfamiljens mellansteg i praktik."
+        },
+        {
+          "type": "insight",
+          "content": "Frågan en analytiker ställer till en portfölj är densamma som till ett bolag: hur många axlar bär den, och hur många av dem är verkligen olika? Det är samvariationens sista ord — och nästa läsning börjar där."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch myntade varningen för diworsification — att diversifiera utan syfte blir fördjupning utan mening. Samma logik gäller mellan bolagen: att äga många innehav utan att förstå hur de hänger ihop är inte spridning utan samlande. Lynchs råd att känna till det man äger gäller relationerna lika mycket som bolagen — att se att tre av ens bolag alla lever åt samma slutmarknad är en del av den kunskapen, och den syns först när årsredovisningarna läses tillsammans.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal räknas per placering, men hans portföljdisciplin — bred ägarspridning som praktiskt skydd — vilar på samma villkor som spridningens matematik: att innehaven inte alla vilar på samma antagande. En portfölj vars bolag delar drivare har i praktiken en enda stor position i förklädnad, och säkerhetsmarginalen ska då räknas på den gemensamma exponeringen — inte bara på varje bolag för sig. Grahams försiktighet talar för att den gemensamma exponeringens andel vägs in som ett krav på marginalens storlek.",
+  "ak1Section": "I AK1A:s metodik är dold samvariation riskfamiljens portföljsida: den lyfter V03:s diversifieringsläsning från bolagets intäkter till portföljens gemensamma drivare, förklarar hur flera V12-intäktsstabiliteter kan falla samtidigt och varnar för att kapitalförbränningslägen ofta anländer i kluster när finansieringsmarknaden stänger. Tillsammans med rs-01:s spridningsspråk och rs-02:s kundledsläsning bildar kursen risktrappans mellansteg — och broar till portföljhanteringens diversifieringspraktik (pf-03) och korrelationsrisken (rk-10) med fundamentaldata som källa."
+}

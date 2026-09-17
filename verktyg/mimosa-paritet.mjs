@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // mimosa-paritet.mjs — server-side paritet för Mimosa-skannerns dokumenterade
-// fyndklasser (spår 8, s8-u3 omgång 3, 2026-09-15).
+// fyndklasser (spår 8, s8-u3 omgång 3, 2026-09-15; domänslösning omgång 4
+// 2026-09-16; konstant-propagering + SHELL-case-vittne v1.4, våg 178
+// full-scan 2026-09-16).
 //
 // BAKGRUND (bevis i .mimosa/ + worklog): kundens säkerhetsskanner Mimosa
 // (semgrep-hook i arbetsstationens Z-Code) är speglad till servern via
@@ -22,7 +24,9 @@
 //                                     (setup-prod.sh-fynden 2026-09-08)
 //   SHELL_URL_VARIABEL       medium URL byggd ur skal-variabel
 //   CHILD_PROC_INTERP        high   exec/execSync med interpolerat kommando
-//                                     (worklog 9586: kompileringskonstanter)
+//                                     (worklog 9586: kompileringskonstanter;
+//                                     v1.3 fångar även "${...}" i citerad
+//                                     sträng — s8-u1:s permissions-fynd)
 //   SSRF_EXTERN_LITERAL      info   fetch("https://...") fast literal —
 //                                     rapporteras, räknas ej som fynd
 //   LOSENORD_AUTOCOMPLETE    info   lösenords-placeholder + autoComplete
@@ -35,8 +39,29 @@
 // "härdad-kontext" som RAPPORTERAS men aldrig blockerar. execFile/spawn med
 // array-argument är per definition utan skal = härdad form.
 //
+// v1.4 — KONSTANT-PROPAGEERING (rotorsaksfix, full-scan 2026-09-16): en
+// mallsträngs HOST-bärande interpolat (mallsträngens första `${…}`, eller
+// det som följer direkt efter schema://) som är en filscope-konstant
+// tilldelad en REN http(s)-strängliteral (`const bas = "http://localhost:3000"`)
+// gör hela URL:en fast vid kompilering — samma riskbild som en bokstavlig
+// fetch-URL. Loopback-literal klassas SSRF_LOOPBACK-info, övrig fast literal
+// SSRF_EXTERN_LITERAL-info. Param/args/env/ternary-host propagerar ALDRIG
+// (endast rena literaler) och path/query-interpolat propageras inte heller —
+// de kan aldrig byta host. Beviset som öppnade klassen: v85-e2e-skriptet
+// (11 falska HIGH) där `bas` var fast loopback-literal 17 rader från
+// användningen, utanför vittnesfönstret.
+//
 // Användning:
-//   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--json UTFIL] [--tyst]
+//   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--doman REGEX]
+//                                    [--hoppa-over REGEX] [--json UTFIL] [--tyst]
+// --doman (v1.1): regex på relativ sökväg som ersätter standarddomänen
+//   src/ + data/infra/ — t.ex. '(^|/)(verktyg|\.zcode|\.zscripts)/' för
+//   väktardomänen (s8-u3 omgång 4: härdning av verktygskatalogens
+//   interpoleringar kräver mekaniskt FÖRE/EFTER-bevis).
+// --hoppa-over (v1.2): filnamns-regex för dokumenterade undantag —
+//   ENDAST testfixturer som medvetet innehåller farliga mönster som
+//   strängar (denna svits egna testa-mimosa-paritet.mjs; FYND i FÖRE-
+//   körningen 2026-09-16). Levande kod undantas ALDRIG.
 // Exit: 0 = grönt (ingen ohärdad high/medium), 1 = fynd, 2 = argumentfel.
 
 import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "node:fs";
@@ -49,22 +74,25 @@ function argVarde(flagga) {
   return i >= 0 && i + 1 < args.length ? args[i + 1] : null;
 }
 const rotArg = argVarde("--katalog");
+const domanArg = argVarde("--doman");
+const hoppaArg = argVarde("--hoppa-over");
 const jsonArg = argVarde("--json");
 const tyst = args.includes("--tyst");
 const rot = rotArg ?? process.cwd();
-const kandaFlaggor = ["--katalog", "--json", "--tyst"];
+const kandaFlaggor = ["--katalog", "--doman", "--hoppa-over", "--json", "--tyst"];
 for (const a of args) {
   if (a.startsWith("--") && !kandaFlaggor.includes(a)) {
-    console.error(`Okänd flagga: ${a}. Tillåtna: --katalog VÄG, --json FIL, --tyst`);
+    console.error(`Okänd flagga: ${a}. Tillåtna: --katalog VÄG, --doman REGEX, --hoppa-over REGEX, --json FIL, --tyst`);
     process.exit(2);
   }
 }
 
 // ── Filkarta ────────────────────────────────────────────────────────────────
-// DOMÄN = Mimosa:s bevisade fyndområden: src/ (produktkod, ts/tsx/mjs) och
-// data/infra/ (skalprogram — setup-prod.sh-fynden 2026-09-08). Verktyg/,
-// scripts/, .zcode/, .zscripts/, tool-results/ lämnas medvetet utanför:
-// väktarnas egen domän där interpolationer bär interna värden (protokollfört).
+// STANDARDDOMÄN = Mimosa:s bevisade fyndområden: src/ (produktkod,
+// ts/tsx/mjs) och data/infra/ (skalprogram — setup-prod.sh-fynden
+// 2026-09-08). Övriga kataloger nås via --doman (väktardomänen skannas
+// mekaniskt sedan s8-u3 omgång 4). node_modules/.next/.git lämnas
+// alltid utanför (lsRekursivts exkluderingslista).
 function lsRekursivt(dir) {
   const ut = [];
   for (const namn of readdirSync(dir)) {
@@ -78,8 +106,19 @@ function lsRekursivt(dir) {
   return ut;
 }
 
+// Standarddomän som regex; --doman ersätter den helt (dokumenterat i
+// hjälptexten ovan). Ogiltig regexp i --doman/--hoppa-over → exit 2.
+let domanRegex;
+let hoppaRegex = null;
+try {
+  domanRegex = domanArg ? new RegExp(domanArg) : /(^|\/)(src|data\/infra)\//;
+  hoppaRegex = hoppaArg ? new RegExp(hoppaArg) : null;
+} catch {
+  console.error(`Ogiltig regex: --doman "${domanArg}" / --hoppa-over "${hoppaArg}"`);
+  process.exit(2);
+}
 function iDoman(relVag) {
-  return /(^|\/)src\//.test(relVag) || /(^|\/)data\/infra\//.test(relVag);
+  return domanRegex.test(relVag) && !(hoppaRegex && hoppaRegex.test(relVag));
 }
 
 const allaFiler = lsRekursivt(rot)
@@ -105,6 +144,12 @@ const VITTNEN_PATH = [
   /startsWith\(/,              // prefixkontroll (inneslutningsvakten)
   /sanera|sakra|vitlista|inneslutning|prefixkontroll/i,
 ];
+// v1.4 (SHELL_URL_VARIABEL): case-skelett som accepterar ENDAST loopback —
+// en rad som "localhost|127.0.0.1) ;;" är EXEKVERAD input-validering
+// (default-reject: varje annan host når aldrig curl), inte dokumentation.
+// Skalprogram utan skelettet förblir fynd. Bevisfall: .zscripts/dev.sh:s
+// wait_for_service härdades med detta mönster (väg 178).
+const VITTNEN_SHELL_URL = [/^\s*(localhost|127\.0\.0\.1)[^)]*\)\s*;;/];
 
 function hardadKontext(rader, idx, fonster = 8, vittnen = VITTNEN_FETCH) {
   const fran = Math.max(0, idx - fonster);
@@ -120,6 +165,16 @@ function hardadKontext(rader, idx, fonster = 8, vittnen = VITTNEN_FETCH) {
 // Filnivå-helper: hela filen som importerar/anropar den vitlistade rest-helpers
 // bär härdade origins (worklog 2662 — supabase-rest.ts är serverns host-vakt).
 const FIL_HELPER = /getSupabaseRest|supabaseRest\(|kontrolleraHost|valideraEndpoint/;
+
+// v1.4 — konstant-propagering: const X = "http(s)://…" som REN filscope-
+// literal (env/ternary/uttryck i RHS matchar ALDRIG) gör `${X}` till en
+// fast URL vid kompilering. Se rubrikens v1.4-stycke för full motivering.
+function konstantUrl(texten, namn) {
+  const m = texten.match(
+    new RegExp(`\\bconst\\s+${namn.replace(/\$/g, "\\$")}\\s*=\\s*(['"])(https?:\\/\\/[^'"\\\\]+)\\1\\s*;`)
+  );
+  return m ? m[2] : null;
+}
 
 // request-källor för PATH_API: variabelnamn som troligen bär request-data
 const KALLOR = /(?:searchParams\.get|url\.searchParams|params\.|request\.json|await\s+req\.json|JSON\.parse\([^)]*\))/;
@@ -185,7 +240,9 @@ for (const fil of allaFiler) {
         if (loopback) {
           rapportera("SHELL_URL_LOOPBACK", "info", fil, i, rad, "loopback-sond");
         } else {
-          const hardad = /deb\.nodesource|deb\.docker|signed-by|apt\.snapshot/i.test(rad) || hardadKontext(rader, i, 5);
+          // v1.4: fönstret 5→8 (case-skelettet har flera rader) + klasspecifika
+          // vittnen i stället för FETCH-listan (som aldrig passade skal).
+          const hardad = /deb\.nodesource|deb\.docker|signed-by|apt\.snapshot/i.test(rad) || hardadKontext(rader, i, 8, VITTNEN_SHELL_URL);
           rapportera("SHELL_URL_VARIABEL", "medium", fil, i, rad, hardad ? "härdad-kontext" : "oskyddad");
         }
       }
@@ -206,8 +263,16 @@ for (const fil of allaFiler) {
       const arRelativ = /^["'`]\//.test(urlDel.trim());
       const arLoopback = /127\.0\.0\.1|localhost|\[::1\]/.test(urlDel);
       const harInterpolation = /\$\{/.test(urlDel);
+      // v1.4 — konstant-propagering (se rubriken): host-bärande interpolat =
+      // mallsträngens första `${enkeltNamn}` eller det efter schema://;
+      // path/query-interpolat kan aldrig byta host och propageras ej.
+      const hostInterp =
+        urlDel.match(/^`?\$\{\s*([A-Za-z_$][\w$]*)\s*\}/) ??
+        urlDel.match(/:\/\/\$\{\s*([A-Za-z_$][\w$]*)\s*\}/);
+      const hostKonstant = hostInterp ? konstantUrl(text, hostInterp[1]) : null;
+      const fastKonstant = hostKonstant !== null;
       const externLiteralMedInterp = /["'`]https?:\/\//.test(urlDel) && harInterpolation;
-      if (!arRelativ && !arLoopback && (externLiteralMedInterp || (harInterpolation && !/["'`]https?:\/\//.test(urlDel)) || /\+\s*\w/.test(urlDel))) {
+      if (!arRelativ && !arLoopback && !fastKonstant && (externLiteralMedInterp || (harInterpolation && !/["'`]https?:\/\//.test(urlDel)) || /\+\s*\w/.test(urlDel))) {
         const hardad =
           hardadKontext(rader, i, 14) ||
           FIL_HELPER.test(text) ||
@@ -215,8 +280,10 @@ for (const fil of allaFiler) {
           /\$\{[A-Z][A-Z0-9_]*\}/.test(urlDel) || // versalkonstant (kompile-tidsvärd)
           /^[`"'][^`"'$]*["']\s*\+\s*[A-Z][A-Z0-9_]*\b/.test(urlDel.trim());
         rapportera("SSRF_INTERPOLERAD_FETCH", "high", fil, i, rad, hardad ? "härdad-kontext" : "oskyddad");
-      } else if (arLoopback) {
-        rapportera("SSRF_LOOPBACK", "info", fil, i, rad, "loopback-mätverktyg");
+      } else if (arLoopback || (fastKonstant && /127\.0\.0\.1|localhost|\[::1\]/.test(hostKonstant))) {
+        rapportera("SSRF_LOOPBACK", "info", fil, i, rad, fastKonstant ? "konstant-literal" : "loopback-mätverktyg");
+      } else if (fastKonstant) {
+        rapportera("SSRF_EXTERN_LITERAL", "info", fil, i, rad, "konstant-literal");
       }
     }
     // fast extern literal utan interpolation (info — rapporteras, blockerar ej)
@@ -225,7 +292,10 @@ for (const fil of allaFiler) {
     }
 
     // CHILD_PROC_INTERP: exec/execSync med interpolerat KOMMANDO ( första arg)
-    if (/\b(exec|execSync)\s*\(\s*(`[^`]*\$\{)|\b(exec|execSync)\s*\(\s*["'][^"']*["']\s*\+/.test(rad)) {
+    // v1.3: även "${...}" i citerad sträng FÖRE inre citattecken (skal-
+    // expansion ${}) — luckan påvisad av syskonet s8-u1 (skalfri-vakt.mjs,
+    // permissions-policy-fyndet); malliteraler täcktes sedan v1.0
+    if (/\b(exec|execSync)\s*\(\s*(?:`[^`]*\$\{|["'][^"']*\$\{|["'][^"']*["']\s*\+)/.test(rad)) {
       rapportera("CHILD_PROC_INTERP", "high", fil, i, rad, "oskyddad");
     }
 
@@ -260,9 +330,11 @@ for (const r of rapportRader) {
 
 const resultat = {
     verktyg: "mimosa-paritet",
-    version: "1.0",
+    version: "1.4",
     tid: new Date().toISOString(),
     katalog: rot,
+    doman: domanArg ?? "standard (src/ + data/infra/)",
+    hoppaOver: hoppaArg ?? null,
   skannadeFiler: allaFiler.length,
   perKlass,
   fynd: fynd.map((f) => `${f.fil}:${f.rad} ${f.klass} [${f.allvarlighetsgrad}] ${f.bevis}`),

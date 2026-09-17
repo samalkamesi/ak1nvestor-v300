@@ -1,0 +1,72 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-nike-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-16, omgång auto-s1-1789585526448)",
+  "rapport": "kvartal-2026-q3-nike.md",
+  "bedomning": "EFTER RÄTTNING — A1–A2 blockerande (EV-kedjans operationsordning är omvänd i meningen; 10-13-datumen kallas estimat fast kalendrarnas egna poster säger officiellt), B1–B4 enklare byten (readingMinutes enligt plattformskontraktet, descriptions rondräkning, stavfel, insiderprecision), C1 förslag som kräver beslut (kanonisk-kärna-premiären kolliderar med Wallenstam)",
+  "anvandning": "Verkställ A- och B-poster exakt (sök/ersätt i angivet fält — samtliga strängar verifierade UNIKA i filen). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "A1",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "body (Källkritiken, EV-kedjan)",
+      "gammalt": "Och skillnaden visar balansen: EV 58,8 minus börsvärde 56,7 minus skuld 11,0 ger en härledd kassa på **cirka 9,0 miljarder dollar**.",
+      "nytt": "Och skillnaden visar balansen: börsvärde 56,7 plus skuld 11,0 minus EV 58,8 ger en härledd kassa på **cirka 9,0 miljarder dollar**.",
+      "orsak": "Så som meningen står ger subtraktionen −9,0 miljarder, inte +9,0. Kassan härleds ur EV-definitionen (EV = börsvärde + skuld − kassa ⇒ kassa = börsvärde + skuld − EV): 56,729 + 11,046 − 58,769 = +9,01 ≈ 9,0 — sluttalet i texten är alltså RÄTT men den skrivna operationen är omvänd. I avsnittet som presenteras som seriens starkaste konsistensbevis ('en EV-kedja som håller länk för länk' även i titeln) måste själva kedjans räknesteg stå rätt"
+    },
+    {
+      "id": "A2",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "de amerikanska mönsterdatumen den 13 oktober (Johnson & Johnson, Goldman Sachs, JPMorgan) är estimat enligt kalendrarnas egna metodnoter och inte bolagsbekräftade",
+      "nytt": "de amerikanska datumen den 13 oktober (Johnson & Johnson, Goldman Sachs, JPMorgan) är officiellt bekräftade i kalendrarna men ligger tolv dagar senare",
+      "orsak": "Påståendet motsäger paketets egen källa. Kalender-finans.json:s GS-post: 'Datumet är officiellt — bolaget har lyft ut samtliga 2026 rappdatum i pressrummet'; JPM-posten: 'Datumet är officiellt — bolaget tillkännagav samtliga 2026 rappdatum i förväg'; kalender-halso.json:s JNJ-post: 'Datumet är officiellt utlagt på bolagets IR-sida'. Metodnoten ('USA-estimat markeras explicit') reserverar sig för OBEBKRÄFTADEF datum — dessa tre är explicit bekräftade. Urvalsslutsatsen (NIKE tidigast, 1/10) överlever rättningen och förstärks: nästa amerikanska kollega kommer först 12 dagar senare"
+    },
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 6,
+      "nytt": 5,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts: ORD_PER_MINUT=600, Math.max(1, Math.round(ord/600)) där ord = titel+ingress+body): 3 192 ord / 600 = 5,3 → 5. Volvo-car-granskningens B3-precedens (2026-09-15). Seriebred flagga: serien saknar enhetlig räknepraxis (np3 3 098 ord → 5, NIKE 3 080 → 6 i utkastet) — kontraktet är normen"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "description",
+      "gammalt": "identitetstestets sjätte runda (4,9 % nära-godkännande)",
+      "nytt": "identitetstestets sjunde runda (4,9 % nära-godkännande)",
+      "orsak": "Seriens egen räkning: essity = fjärde, alfa-laval = femte, wallenstam = sjätte, NIKE = sjunde (np3/tele2/volvo-group = åttonde) — bodyns egen avsnittstitel 'Källkritikens sjunde runda', PEG-observationerna ('sju observationer') och byggcommitens 'identitetstestets sjunde runda' räknar alla NIKE som den sjunde. Endast descriptionsfältet avviker"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "body (Stabilitet, insidernotisen)",
+      "gammalt": "Elva registrerade köp av insystare",
+      "nytt": "Elva registrerade köp av insiders",
+      "orsak": "'insystare' är inget svenskt ord. Texten själv använder 'insiderköp', 'Insiderfältets' och 'insidersammanhang' — 'insiders' är seriens term"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "body (Stabilitet, insidernotisen)",
+      "gammalt": "alla tidigare paketbolag hade värdet 0",
+      "nytt": "alla tidigare paketbolag hade värdet 0 eller saknade värde",
+      "orsak": "Universumfilen: Evolution (EVO.ST, paket före NIKE) har insider=NULL och Precise Biometrics saknar rad i universumfilen — byggcommitens egen formulering '0 eller saknas' är den exakta. Premiären (första värdet över noll) påverkas inte: inget tidigare paketbolag har ett värde > 0"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-nike-q3-2026.json",
+      "falt": "body (inledningen)",
+      "gammalt": "och det första paketet byggt på bolag utanför seriens kanoniska kärna — de sjutton tidigare paketen täckte vågvalideringsuniversumets kalenderbolag och hela analysbiblioteket",
+      "nytt": "och det första paketet byggt på bolag utanför seriens kanoniska kärna vid sidan av syskonpaketet Wallenstam som bröt samma mark i samma omgång — sexton av de sjutton tidigare paketen täckte vågvalideringsuniversumets kalenderbolag och hela analysbiblioteket",
+      "orsak": "Maskinell kontroll av byggtillståndet (git 6ecb409d): Wallenstam-paketet fanns i trädet FÖRE NIKE och Wallenstam står utanför BÅDA kärnkällorna — inte i vågskannerns 12-tickeruniversum (VOLV-B, SAAB-B, ATCO-A, SAND, SWED-A, ESSITY-B, ERIC-B, AZN, NDA-SE, SKF-B, ALFA, SHB-B) och utan analysfil — precis som NIKE. 'Första-paketet'-premiären tillhör därmed Wallenstam eller delas; dessutom saknade vågvalideringskalenderbolaget Volvo Group paket vid bygget (16 av 17 kom från kärnkällorna). Texten ÄRKÄNNER syskonet i urvalsavsnittet ('levererades parallellt i samma omgång') — premieärpåståendet bör stämmas av med det. Alternativ förenkling: stryk 'första utanför kärnan' och behåll de rent tekniska premiärerna (första USA-noterade, första brutna räkenskapsåret hos US-bolag)"
+    }
+  ]
+}

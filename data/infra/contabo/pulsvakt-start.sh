@@ -33,10 +33,19 @@
 #   var 60 s: GET / + /api/sok?q=akm2 via loopback (Host lab.ak1nvestor.com)
 #             fel → pm2 restart ak1a --update-env (max 1/min, max 10 utan OK,
 #             3 fel i rad → högprio-larm; därefter vakten klarar sig själv)
+#   var 60 s: (d) STATISKT KONTRAKTSTEST (s8-u2 2026-09-16, o30): hämta /,
+#             HEAD:a dess _next/static-refs (tak 80) — HTML:en är kontraktet.
+#             trasig-bygg (tomm/tömd .next, hashrotation vid deploy,
+#             ISR-föråldring) → hogprio-larm var 1:a + var 10:e varv,
+#             ALDRIG pm2-omstart (omstart förlorar cachad HTML, lagar inget
+#             — läkning = ombygge under låset, prod-synk/kraschvakt äger).
+#             Under aktivt deploylås undertrycks larmet (transient) men
+#             eskalerar efter 30 varv (fastlåst bygg = incident i sig).
 #   var 10:e varv: GET https://lab.ak1nvestor.com/ — fel → högprio-larm
 #             (nginx/cert kan EJ auto-omstartas — sudo är kundens domän)
 #   Larm: data/vakten/pulsvakt-larm.log (JSON-rader, max 5000)
-#   Status: data/vakten/pulsvakt-status.json (varje varv)
+#   Status: data/vakten/pulsvakt-status.json (varje varv; sedan o30 även
+#             statiskStatus/statiskSenasteFel/statiskFelvarv)
 #
 #   OBS (våg 122A): styrelse-ronden läser ännu ENDAST data/vakten/senaste-
 #   korning.txt — pulsvaktens larmfil syns inte automatiskt i ronden. Koppling

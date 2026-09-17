@@ -1,0 +1,58 @@
+studio: auto s7-u2 o41 blogg-slug-prefetch kurerad ×3 språklistor — Next 16:s dubbla _rsc-omgångar (18,7 KiB/kortpar) ur LCP-fönstret; EFTER pending prod-synk [fabrik]
+
+PIVOT efter dubbelkollision (o38 §0-precedensen): ursprungliga objektet
+(o38 §7 kö 1 = prefetch-kurens EFTER-mätning) togs av BÅDA syskonen — u1:s
+anspråk 06:07 lokal + u3:s 06:08 lokal, mätningen levererad på disk
+04:09:40–04:10:04Z (blogg-gap-efter-duon, pgrep 0 + sammanfattning = avslutad
+enligt o38 §6.1); mitt anspråk 04:09Z blev trea — disk-först, noll
+trippelarbete, objektbyte bokförd i anspråket 04:11Z.
+
+NYTT OBJEKT = o37 §5:s bokade rest: SV:s dubbla blogg-slug-prefetchar.
+Diagnos (verktyg/_s7u2b-diagnos.mjs + _s7u2b-djup.mjs) ur syskonens färska
+EFTER-rådata (källa, ej min leverans; bygge 04:00Z BUILD_ID
+0h_7ANLOatJo7TBfHvlNx, 7f419839 anfaderskapsverifierad):
+
+- /blogg 50 requests/727 KiB: två synliga kort-slugs hämtas i två omgångar —
+  partial (#m8nkPYdG 887+891 B @1450 ms) + full flight (#NaHOPuiX
+  8 988+8 887 B @1679/1706 ms) = 18,7 KiB spill i LCP-fönstret (Next 16.1.1);
+  o37:s "dubbla _rsc-cachebusters" = dessa omgångar, oförändrade av
+  kurslänkskuren (som förväntat).
+- /en/blogg: slug-prefetch AVBRUTEN (status −1, 0 B) = race-artefakt, INTE
+  gratis läge — men listvyn mäts bättre utan fulla flighter (o37 §2:
+  P71/TBT 567 mot P52/1 299).
+- Rot-uteslutning: footer/cookie prefetch={false} sedan o17; loading.tsx
+  symmetrisk (gruppnivå båda språk); listkoden identisk sv/en — kvarstående
+  källa = kortens huvudlänk-auto-prefetch.
+
+KUR (o17/o37-precedensen, kirurgisk): prefetch={false} på kortens
+slug-huvudlänk i TRE listor — blogg/page.tsx (sv), (en)/en/blogg/page.tsx,
+(ar)/ar/blogg/page.tsx + motiverande kommentar; o37:s kurslänk orörd.
+Omvärdering av o37:s "huvudlänkens prefetch behålls" med ny data: (1)
+prefetchen är DUBBEL ≈ 9,7 KiB/kort, inte enkel; (2) EN-profilen utan fulla
+flighter mäts bättre; (3) klick-kostnad ~100–300 ms på 4G endast för det
+klickade kortet (force-static) mot 18,7 KiB för varje listbesökare.
+Risk ärligt bokad (o41 §3): om omgång 2 är Next-cache-warming oberoende av
+Link kan kuren vara verkningslös — EFTER-mätningen avgör.
+
+ÖPPET bokat (o41 §2, ägs ej här): `/`-prefetch ×3 (18,4 KiB, SeoPageShell
+nav/breadcrumb — DELAD komponent alla ytor) + `/logga-in` ×2 — samma
+mekanism, större totalvikt, kräver egen avvägning/huvudagent.
+
+EFTER (pending-precedens): när prod-synken byggt (RAM-grind 2 200 MB;
+04:07Z-pollen väntade 1 894 MB) — `node verktyg/prestanda-lighthouse.mjs
+slugprefetch-efter /blogg /en/blogg`, SEQ-grind; förväntan /blogg
+50→~46 requests, −18,7 KiB, TBT/LCP i linje med EN:s profil; EN-kontrollen
+särskiljer s6-driften (+~8 KiB/omgång, o38 §4). Noll-resultat ⇒ warming-rot
+⇒ boka hos huvudagenten.
+
+KVD: node node_modules/typescript/bin/tsc --noEmit = 0 fel (projektbinären,
+FÖRE commit; grinden verifierar igen) · src ENDAST via Edit (tre filer)
+· inget bygge (prod-synken äger) · R2 orörd (inga priser/tier/publicering)
+· data/blogg/ orörd · .env orörd · syskonens ytor orörda (deras
+blogg-gap-efter-filer lästa som källa, aldrig tagna) · protokoll
+o41-prestanda-blogg-slugprefetch-s7.md + worklog-rad.
+
+LEVERANS: src/app/(huvud)/blogg/page.tsx, src/app/(en)/en/blogg/page.tsx,
+src/app/(ar)/ar/blogg/page.tsx, data/forskning/OPTIMERING/o41-prestanda-blogg-slugprefetch-s7.md,
+verktyg/_s7u2b-diagnos.mjs, verktyg/_s7u2b-djup.mjs,
+data/vakten/s7-1789617927277-u2-ansprak.md, worklog.md

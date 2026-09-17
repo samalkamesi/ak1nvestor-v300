@@ -1,0 +1,156 @@
+{
+  "slug": "bf-14-beteendeportfoljteori",
+  "category": "BETEENDEFINANS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Beteendeportföljteori — pyramiden med mentala konton",
+  "summary": "Avanceradkursen i beteendefinans: beteendeportföljteorin — portföljen som en pyramid av mentala konton där varje lager har sitt eget mål, sin egen aspirationsnivå och sitt eget riskmått. Familiens kröning på portföljnivån: från en bias i taget till arkitekturen där de bor tillsammans.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Förstå beteendepyramiden som BETEENDEFINANS-familiens kröning — 17 kurser visade en bias i taget, och pyramiden är arkitekturen där de bor tillsammans: mentala konton (bf-03) som byggstenar i stället för felkällor · Läsa Friedman–Savage-gåtan och dess svar: samma hushåll köper försäkring och lott — inte av osammanhängande dårskap utan för att olika mål kräver olika verktyg · Bygga pyramiden i fem steg: mål i kronor, lager från golv till topp, mått per lager efter målet, lagrens samverkan (rs-03) och omfördelningsregler satta före händelserna · Räkna en hel portfölj lager för lager på ett genomskinligt exempel — 1 200 000 kronor i fyra lager, aktiechocken som äter 21,0 procent och golvet som står · Känna igen de fem fällorna: lägerblindhet, dubbla trygghetslager, korrelationsillusionen, pyramiden utan golv och den statiska pyramiden · Koppla pyramiden till AKM2:s risk- och portföljdimensioner och till robot-reglerna (bf-04) som håller strukturen när känslorna vill annat.",
+  "why": "Familjens tidigare kurser har visat ett beteende i taget: förlustaversionen (km-018) förklarar varför förluster gör ont, de mentala kontona (bf-03) varför pengar inte är utbytbara mot varandra, dispositionseffekten (km-037) varför vinnare säljs för tidigt och prospektteorin (bf-12) hur det hela hänger ihop i värderingsfunktionen. Frågan som återstår är den som möter varje sparare på riktigt: hur samlas det till en hel portfölj? Ett portföljbeslut är inte en bias i taget — det är alla samtidigt, och utan en struktur som erkänner det blir de mentala kontona en felkälla: spararen som har ett trygghetskonto, ett utdelningskonto och ett chanskonto men aldrig räknar dem tillsammans, vet inte vilken risk hon faktiskt bär. Beteendeportföljteorin vänder på kortet: kontona är inte felet att eliminera utan materialet att bygga med — varje lager får ett mål i kronor, ett eget mått och en plats i en ordning där golvet byggs först. Det är samma rörelse som familjen gjort gång på gång i mindre skala: bekräftelsefällan (km-019) botas inte av att sluta tro utan av att styra tron, och robot-reglerna (bf-04) bygger skyddet med samma mekanismer som de skyddar mot. Denna kurs är rörelsens sista steg: från att förstå en bias till att rita huset där alla bor.",
+  "history": {
+    "origin": "Gåtan är äldre än teorin. Friedman och Savage lade 1948 fram sitt kända problem: samma hushåll tecknar försäkring och köper lott — beteenden som pekar i helt motsatta riktningar om hushållet vore en enda person med en enda riskaptit. En slät nyttokurva kan inte båda beskriva försiktigheten och hasardspelaren. Lösningen fanns länge i köket snarare än i tidskriften: hushåll som delade hushållspengar i kuvert — ett för hyra, ett för mat, ett för nöjen — och aldrig lät kuverten låna av varandra. Praxis med mentala konton föregick teorin med generationer.",
+    "evolution": "Forskningen gav kontona matematik i tre steg. Roy publicerade 1952 sin säkerhetsförst-princip: minimera sannolikheten att förmögenheten hamnar under en katastrofnivå — golvet fick sin kalkyl. Samma år visade Markowitz att avkastning och risk hänger samman genom kovariansen: spridning (pf-03) är den enda fria lunchen, men hans ramverk antog fortfarande en enda sammanvägd inställning till risk. Kahneman och Tversky (1979) flyttade referenspunkten in i värderingsfunktionen: människor mäter vinningar och förluster från mål och nivåer, inte från totalen. Thaler (1985) namngav de mentala kontona, och Shefrin och Statman visade 1985 dispositionseffekten — vinnare säljs för tidigt, förlorare hålls för länge. År 2000 sammanfogade duon bitarna i behavioral portfolio theory: portföljen som en pyramid av lager, där varje lager är ett eget säkerhetsförst-problem med egen aspirationsnivå — rädslan bor i bottenvåningarna, hoppet i toppen.",
+    "modern": "Idag lever pyramiden i praktiken under andra namn. Målbaserad rådgivning frågar inte hur mycket risk klienten tål utan vilka mål pengarna ska betala — barnets studier, bolånet, pensionen — och bygger ett lager per mål. Robottjänsterna har gjort pyramidbygget till standardvara, och måldatumsfondernas glidning mot ränta med åren är en pyramid som bygger om sig själv enligt en regel. Samtidigt har de spekulativa topparna — där chansaktier köpts utan golv under — visat pyramidens baksida: toppen byggd först, bottenvåningen aldrig byggd. Därför är teorin i denna kurs mindre en bruksanvisning än ett granskningsverktyg: den som kan läsa en portfölj som en pyramid kan också läsa sin egen — och se om golvet finns, om måtten är rätt och om lagren rör sig tillsammans."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — gåtan med försäkringen och lotten",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Källorna — från säkerhet först till beteendepyramiden",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Metoden — läsa en portfölj som en pyramid i fem steg",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Genomräkning — 1,2 miljoner i fyra lager",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — de fem klassiska pyramidmisstagen",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — från bias till arkitektur",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — gåtan med försäkringen och lotten",
+      "intro": "Ekonomernas äldsta gåta om risk: varför köper samma hushåll både försäkring och lott — och hur ser portföljen ut när svaret är en pyramid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Friedman och Savage lade 1948 fingret på motsägelsen: hushåll som noggrant försäkrar huset samma månad som de köper lottsedlar. I en värld av en enda riskaptit är det ett mysterium — den som värdesätter säkerhet nog att betala premie för den borde avstå från spelet. Mysteriet löser sig i samma ögonblick som hushållet får ha mer än ett syfte. Försäkringen köps av hushållets skyddsdrift: den sätter ett golv under katastrofen. Lotten köps av hushållets hopp: den kostar lite och kan — med liten sannolikhet — betala drömmen. Två olika beslut, två olika konton, två olika måttstockar för vad som är ett bra utfall.\n\nDet är exakt så de mentala kontona (bf-03) fungerar, och portföljen är hushållet i större skala. En och samma sparare kan bära fyra syften samtidigt: trygghet (aldrig falla under en viss nivå), utdelning (en ström av kronor varje år), tillväxt (förmögenheten växer med en viss takt) och chans (en liten post som får tiodubblas eller försvinna). Varje syfte får sitt lager i pyramiden — och varje lager sin egen aspirationsnivå, alltså den nivå eller det utfall som definierar framgång just där. Trygghetslagret lyckas om det står still; chanslaget lyckas bara om det slår.\n\nDetta bryter med den klassiska frågan hur mycket risk man tål, som förutsätter en enda sammanvägd inställning. Förlustaversionen (km-018) gör förresten frågan ännu mer vilseledande: smärtan sitter inte i portföljens total utan i det specifika kontot som förlorade. En nedgång i chanslagret bärs helt annorlunda än en lika stor nedgång i trygghetslagret — inte för att kronorna skiljer sig, utan för att berättelsen om dem gör det."
+        },
+        {
+          "type": "definition",
+          "content": "Beteendeportfölj — en portfölj uppbyggd av lager där varje lager tjänar ett mål med egen aspirationsnivå och eget riskmått, i stället för en enda sammanvägd riskaptit. Grundform: Shefrin och Statmans beteendeportföljteori (2000), med rötter i Friedman–Savage-gåtan (1948) och de mentala kontona (bf-03, Thaler 1985)."
+        },
+        {
+          "type": "insight",
+          "content": "Frågan hur mycket risk du tål har inget ärligt svar — de ärliga frågorna är: vilka mål har du, och vad tål vart och ett?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Källorna — från säkerhet först till beteendepyramiden",
+      "intro": "Pyramiden står på tre bottnar: säkerhet först, kovariansen och referenspunkterna — tre forskningslinjer som år 2000 smälte samman till en.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första bottnen: Roy (1952) och säkerhetsförst-tänkandet. Medan Markowitz samma år räknade på hur man maximerar avkastning för en given risk, frågade Roy det omvända: hur minimerar man sannolikheten att förmögenheten hamnar under en katastrofnivå? Det är golvet i pyramiden — och dess matematik bor där än, i trygghetslagrets tumregel att framgången mäts i avstånd till katastrofen, inte i avkastning.\n\nAndra bottnen: Markowitz (1952) och kovariansen. Spridning (pf-03) är den enda fria lunchen på marknaden — tillgångar som inte rör sig tillsammans ger stabilare total än någon av dem ensam. Men hans ramverk arbetar med en enda inställning till risk för hela portföljen. Pyramiden lånar kovariansen utan det antagandet: frågan blir inte bara hur lagren samverkar med varandra, utan vad samverkan betyder för varje mål separat.\n\nTredje bottnen: Kahneman och Tversky (1979) samt Thaler (1985). Referenspunkterna gör att vinningar och förluster mäts från nivåer och mål — inte från förmögenhetens total. De mentala kontona ger referenspunkterna ett hem: varje konto bär sitt eget nollstrecks. Shefrin och Statman hade 1985 visat dispositionseffekten (km-037) — vinnare säljs för tidigt, förlorare hålls för länge — och kunde 2000 sammanfoga allt i beteendeportföljteorin: en pyramid där varje lager är ett eget säkerhetsförst-problem med egen aspirationsnivå, där rädslan bor i bottenvåningarna och hoppet i toppen. Teorins poäng är inte att pyramidportföljen är optimal — den är det sällan — utan att den är det verkliga portföljer ser ut som, och att den som ser strukturen kan gradera den i stället för att drivas av den."
+        },
+        {
+          "type": "insight",
+          "content": "Roy gav golvet sin matematik, Markowitz gav kovariansen sin, Kahneman och Tversky gav referenspunkterna deras — pyramiden är alla tre i ett och samma hus."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Metoden — läsa en portfölj som en pyramid i fem steg",
+      "intro": "Att läsa en portfölj som en pyramid är hantverk i fem steg — varje steg ger nästa sitt underlag, och svaret gäller arkitekturen, inte dagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Steg ett: skriv målen i kronor, inte i procent. Procent har ingen referenspunkt — kronor har. Mål att slå index är inte en aspirationsnivå; målet att utdelningarna betalar 14 400 kronor om året är det. Detta är prospektteorins (bf-12) praktiksida: referenspunkten bestämmer vad som känns som vinning och förlust, och en pyramid utan uttalade referenspunkter låter känslan välja dem retroaktivt.\n\nSteg två: ordna lagren från golv till topp. Trygghetslagret först — Roys katastrofnivå har alltid företräde — sedan utdelning, sedan tillväxt, chanslagret sist och minst. Ordningen är hela skillnaden mot att bara ha en samling konton: en pyramid utan ordning låter toppen finansiera golvet i stort sett omöjligt, en samling utan ordning gör det varje dag.\n\nSteg tre: välj mått per lager efter målet. Trygghetslagrets mått är volatilitet och avstånd till katastrofnivån (rs-01) — inte avkastning. Utdelningslagrets mått är utdelningens hållbarhet (ud-09) och direktavkastningen (km-063) — inte kurspotential. Tillväxtlagrets mått är intäktstillväxt och marginaler (ln-01) — inte årets sväng. Chanslagrets mått är sannolikheten för totalförlust mot taket för vad en tiodubbling skulle betala — och ingenting annat.\n\nSteg fyra: räkna lagrens samverkan. Tre lager som var och en känns trygg kan röra sig tillsammans — det är dold samvariation (rs-03) på portföljnivå. Steg fem: sätt omfördelningsreglerna före händelserna. Grahams 25-procent-regel — aldrig mindre än en fjärdedel i aktier, aldrig mer än tre fjärdedelar — är historiens mest berömda exempel: en lagerpolicy med inbyggd omförderning. Robot-reglerna (bf-04) är samma tanke i modern tappning: strukturen bestämmer när känslorna får tala.\n\nFem steg, en kedja: målen ger lagren, lagren ger måtten, måtten ger samverkan, samverkans kunskap ger reglerna. Utan något av leden blir pyramiden en collage — snygg att se på, men den håller inte i en storm."
+        },
+        {
+          "type": "insight",
+          "content": "Fem steg, en kedja: mål i kronor, lager från golvet, mått efter målet, samverkan mellan lagren, regler före händelserna — kedjan är aldrig starkare än det svagaste steget."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Genomräkning — 1,2 miljoner i fyra lager",
+      "intro": "En portfölj räknad lager för lager: 1 200 000 kronor, fyra lager, en aktiechock — och ett golv som håller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Följ ett fingerat exempel genom hela kursen: en sparare med 1 200 000 kronor och fyra mål. Trygghetslagret: 420 000 kronor i korta statsobligationer — 35 procent av portföljen, aspirationen att bevara 420 000 kronor nomellt. Utdelningslagret: 360 000 kronor i utdelningsaktier — 30 procent, aspirationen 4,0 procent direktavkastning, alltså 360 000 gånger 0,040: 14 400 kronor om året. Tillväxtlagret: 300 000 kronor — 25 procent, aspirationen 8 procent tillväxt om året, alltså 300 000 gånger 0,080: 24 000 kronor. Chanslagret: 120 000 kronor — 10 procent, aspirationen en tiodubbling till 1 200 000 kronor, accepterat utfall en totalförlust till noll. Summa: 420 000 plus 360 000 plus 300 000 plus 120 000 är 1 200 000 kronor; andelarna 35 plus 30 plus 25 plus 10 är 100 procent.\n\nVad väger pyramiden samman? Utdelnings-, tillväxt- och chanslagret är samtliga aktier: 360 000 plus 300 000 plus 120 000 är 780 000 kronor — 65 procent av portföljen. En klassisk 60/40-fördelning på samma kapital skulle hålla 720 000 i aktier och 480 000 i ränta. Pyramiden ligger 60 000 kronor tyngre i aktier — men skillnaden är inte främst vikten utan att varje aktiekrona har ett uttalat syfte, ett mått och en storlek satt utifrån ett mål.\n\nSedan kommer chocken: en aktiemarknadsnedgång där utdelningslagret faller 20 procent, tillväxtlagret 40 procent och chanslagret 50 procent. Utdelningslagret förlorar 360 000 gånger 0,20: 72 000 kronor. Tillväxtlagret förlorar 300 000 gånger 0,40: 120 000 kronor. Chanslagret förlorar 120 000 gånger 0,50: 60 000 kronor. Summa: 72 000 plus 120 000 plus 60 000 är 252 000 kronor — 21,0 procent av hela portföljen, som därmed står i 948 000 kronor. Trygghetslagret? Orört: 420 000 kronor kvar, katastrofnivån höll. Detta är stresstestet (st-02) på pyramidform — och notera vad chocken avslöjar om steg fyra: alla tre aktielager föll samma dag. Tre konton, en gemensam marknadsfaktor. Pyramidens poäng är inte att lagren inte rör sig tillsammans — de gör ofta det — utan att den som räknat samverkan VET att de gör det, till skillnad från spararen som trodde att tre olika berättelser var tre olika risker.\n\nAsymmetrin är chanslagrets egentliga undervisning: dubblas chanslagret tjänar portföljen 120 000 kronor — 10 procent av kapitalet — och försvinner det helt förlorar den lika många. Chocken sätter priset på taket; golvet satte priset på golvet. Däremellan bär utdelnings- och tillväxtlager portföljens långsamma arbete, mätt i sina egna tal: 14 400 kronor i utdelning, 24 000 kronor i tillväxt — under förutsättning att aspirationerna håller, vilket är deras egna prov och inte pyramidens."
+        },
+        {
+          "type": "insight",
+          "content": "Tre konton föll samma dag — pyramidens poäng är inte att lager inte rör sig tillsammans, utan att du har räknat på att de gör det."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — de fem klassiska pyramidmisstagen",
+      "intro": "Pyramidens fem klassiska misstag — var och en synlig i en verklig portföljtyp, och var och en botad av ett av stegen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: lägerblindhet. Pyramiden mäts bara per lager — utdelningslagret granskas för utdelning, chanslagret för chans — och aldrig som helhet. Aktieandelen på 65 procent i genomräkningen syns i inget enskilt lagers mått; den finns bara i summan. Fällan är mental accounting utan additionsverktyg (bf-03): kontona styckar ansvaret tills ingen bär det. Botemedlet är steg fyra — samverkansräkningen som visade att tre lager föll samma dag.\n\nFälla två: dubbla trygghetslager. Allt kallas tryggt — försvarsaktier, fastigheter, obligationer, kontanter — för att berättelsen om varje innehav låter säker. Trygghet är inte en berättelse utan ett mått: volatilitet och avstånd till katastrofnivån (rs-01). En försvarsposition som föll 40 procent i en aktiechock var aldrig trygghetslager, oavsett hur defensivt bolaget kändes.\n\nFälla tre: korrelationsillusionen. Lager som ser olika ut men drivs av samma faktor. Räntan (km-054) är den vanligaste: utdelningsaktier med hög direktavkastning och långa obligationer är båda räntekänsliga — när räntan stiger faller de tillsammans, och pyramiden som trodde sig ha två våningar har i praktiken en. Samma mekanik som dold samvariation (rs-03), nu mellan lager i stället för mellan bolag.\n\nFälla fyra: pyramiden utan golv. Toppen byggs först — chans och tillväxt — och golvet skjuts upp till dagen det borde ha funnits. Dunning–Kruger-effekten (bf-10) driver exakt dit: nybörjaren överskattar sin kontroll just över det som är svårast, och chansen känns mest kontrollerbar när erfarenheten är minst. Fälla fem: den statiska pyramiden. Mål flyttar sig med livsfasen — pensionen som var trettio år bort är om fem år femton — och en pyramid som aldrig byggs om blir med tiden en pyramid för ett liv som inte längre lever. Grahams 25-procent-regel hade omförderningsregeln inbyggd; det är modellen.\n\nOch som i hela spåret: övningen är hantverket att läsa och stressa egna siffror i en offentlig rapport — aldrig en uppmaning att köpa eller sälja något värdepapper."
+        },
+        {
+          "type": "insight",
+          "content": "Fem fällor: blindhet för helheten, trygghet utan mått, korrelation i förklädnad, topp utan golv — och pyramiden som aldrig får ny form."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — från bias till arkitektur",
+      "intro": "Familjens kurser samlas: biasarna är inte bara fiender — i pyramiden är flera av dem byggstenar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kronologin i denna kurs är familjens egen historia, sedd baklänges. Förlustaversionen (km-018) var den första lektionen: förluster gör ont ungefär dubbelt så mycket som vinningar känns bra. I pyramiden är det inte bara ett fel att hantera — det är skälet till att golvet finns. Ett trygghetslager bygger på att förlusten av det man inte kan förlora är outhärdlig; aversionen blir konstruktionsprincip. De mentala kontona (bf-03) var nästa: pengar som inte är utbytbara, konton med egna nivåer. Pyramiden gör kontona till planritning i stället för slarv — samma mekanism, riktad. Prospektteorin (bf-12) gav referenspunkterna sitt språk, dispositionseffekten (km-037) varnar för toppförvaltningen — vinnare säljs för tidigt just där tålamodet betalar mest — och flockbeteendet (km-035) hotar omfördelningen: när hjorden springer glider lagren, för ingen vill sälja det alla andra köper. Robot-reglerna (bf-04) är motorn som håller strukturen när känslorna vill annat.\n\nI AKM2:s system knyter kursen samman risk- och portföljdimensionerna: dold samvariation (rs-03) läses nu mellan lager, inte bara mellan bolag; stresstestet (st-02) blir pyramidens stormräkning; säkerhetsmarginalen (km-030) sätts per lager, för golvet behöver marginal som varje annat beslut. Portföljbyggandets (pf-01) fråga — vad ska varje krona göra — får sitt beteendemässiga svar: varje krona har ett konto, varje konto ett mål, varje mål ett mått.\n\nAvsluta med den levande övningen: bygg din egen pyramid på papper i fem steg — mål i kronor, lager från golv till topp, mått per lager, en samverkansräkning, en omfördelningsregel skriven i fredstid. Räkna sedan en aktiechock på 30 procent mot hela pyramiden och notera var golvet hamnar. Gör om övningen när livsfasen ändras — inte varje dag. Arkitektur håller i decennier; dagligen håller den inte alls. Det är utbildningens kärna: beteendefinansen slutar inte med att du känner dina biasar — den slutar med att du har ritat huset där de får bo, var och en på sin våning, med mått och regler anpassade efter just den."
+        },
+        {
+          "type": "insight",
+          "content": "Beteendefamiljens slutpoäng: du kan inte ta biasarna ur dig själv — men du kan ge dem varsin våning, ett eget mått och en regel som gäller när känslan inte gör det."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynchs kändaste råd — vet vad du äger och varför du äger det — blir i pyramidens ljus en fråga per våning: i vilket konto bor denna aktie, och är skälet för just det kontot fortfarande giltigt? Lynch skilde noga mellan positioner vars historia är hantverket (tillväxten som driver bolaget) och long shots — satsningar där historien mest är hopp. Pyramidens chanslager, hållet på tio procent av kapitalet, är hans varning förvandlad till arkitektur: long shots är inte fel, men de hör hemma i toppen, i liten storlek, med totalförlusten accepterad i förväg. När historien bygger konto — när chanspositionen plötsligt motiveras som trygghet — är det Lynchs egen varning som slagit till: berättelsen har bytt våning utan att ägaren märkt det.",
+  "grahamSection": "Benjamin Grahams defensiva investerare fick en regel som är en pyramid i en mening: håll mellan 25 och 75 procent i aktier, och flytta när andelen passerar gränserna. Aldrig undre 25, aldrig över 75 — en lagerpolicy med omförderningsregeln inbyggd, skriven nästan ett halvsekel före beteendeportföljteorin. Hans två läsarroller — den defensive och den enterpriserade — är dessutom två olika pyramider: samma hushåll, olika fördelning mellan golv och topp. Och säkerhetsmarginalen (km-030), Grahams centrala begrepp, är pyramidens golv formulerat som inköpsprincip: marginalen ska finnas i varje lager, för trygghetslaget är marginalen allt, och även toppen förtjänar ett köppris som lämnar utrymme för att berättelsen kan visa sig fel.",
+  "ak1Section": "I AK1A:s metodik är denna kurs BETEENDEFINANS-familiens kröning på portföljnivån: km-018 till bf-12 lärde ut biasarna en i taget, bf-04 gav reglerna — och pyramiden ritar huset de ska verka i. Brobyggen: mot mentala kontona (bf-03) och prospektteorin (bf-12) för lagrens psykologi, mot portföljbyggandet (pf-01) och spridningen (pf-03) för strukturen, mot volatiliteten (rs-01) och dold samvariation (rs-03) för måtten, mot stresstestet (st-02) för stormräkningen och säkerhetsmarginalen (km-030) för golvet, samt mot utdelningshållbarheten (ud-09) som utdelningslagrets eget prov. Femstegsmetoden är samtidigt AI-mentorns svarsmall när frågan gäller portföljstruktur: mål i kronor först, regler sist — spegelbilden av utdelningsfamiljens kassaflöde först, policy sist."
+}

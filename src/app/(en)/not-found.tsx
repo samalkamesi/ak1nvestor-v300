@@ -18,14 +18,18 @@ export const metadata: Metadata = {
  * noindex automatiskt). dir="ltr" ärvs av (en)-rot-layoutens <html lang="en">.
  * KursForslag fuzzy-matchar /en/kurser/…-slugar via våg-85-regexen.
  */
-const KURSER = (
+/**
+ * Slugs per kurs — matchningen behöver bara slugs; titlarna hämtas löst
+ * via /api/kurs-titlar (SPÅR 7 s7-u3 flight-kur, se (huvud)/not-found.tsx).
+ */
+const SLUGGAR = (
   (Array.isArray(sokindex) ? sokindex : sokindex.kurser ?? []) as Array<{
     slug?: string;
     title?: string;
   }>
 )
   .filter((k): k is { slug: string; title?: string } => typeof k.slug === "string" && k.slug.length > 0)
-  .map((k) => ({ slug: k.slug, titel: k.title ?? k.slug }));
+  .map((k) => k.slug);
 
 const NAV_KORT = [
   {
@@ -77,7 +81,7 @@ export default function NotFound() {
           </p>
 
           {/* Smarta kursförslag — fuzzy-matchar en gammal/ändrad kurslänk */}
-          <KursForslag kurser={KURSER} />
+          <KursForslag sluggar={SLUGGAR} />
 
           {/* Guld-hårlinje med mittornament */}
           <div aria-hidden className="mx-auto mt-7 flex max-w-xs items-center gap-3">

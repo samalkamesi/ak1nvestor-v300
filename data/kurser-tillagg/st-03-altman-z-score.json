@@ -1,0 +1,157 @@
+{
+  "slug": "st-03-altman-z-score",
+  "category": "STABILITET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Konkursprognos — Altman Z-score",
+  "summary": "Stabilitetsfamiliens avancerade kurs: Altman Z-score — den klassiska konkursprognosmodellen som väger fem nyckeltal från balans- och resultaträkningen till ett enda tal, med gränsvärden som skiljer säker zon från stresszon.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Förstå Z-scoret som stabilitetsfamiliens toppbyggnad — soliditeten (st-01) mätte en grundvall och känslighetsanalysen (st-02) ett stressprov, modellen väger fem nyckeltal till ett samlat mått på stressnivån · Räkna de fem komponenterna ur bokslutet: rörelsekapital, balanserat resultat, rörelseresultat, marknadsvärdering och kapitalomsättning — alla i förhållande till totala tillgångar · Tillämpa de klassiska vikterna (1,2 · 1,4 · 3,3 · 0,6 · 1,0) och tolka gränsvärdena: över 2,99 säker zon, 1,81–2,99 gråzon, under 1,81 stresszon · Skilja originalmodellen för börsnoterade tillverkare från varianterna för privata bolag (bokfört eget kapital i stället för börsvärde) · Känna modellens historik och dess gränser — bakåtblickande data, sektorskillnader, IFRS-skillnader mot amerikanskt GAAP · Koppla Z-läsningen till AKM1:s stabilitetsfamilj (V10–V12) och AKM2:s stabilitetsdimension.",
+  "why": "Stabilitetskurserna hittills mäter varsitt grundämne: soliditeten och räntetäckningen (st-01) visar betalningsförmågan i normala tider, känslighetsanalysen (st-02) visar hur resultaten rör sig när en enskild variabel ändras. Ingen av dem svarar på frågan som stabilitetsanalysens egentliga poäng: hur nära kanten ligger hela bolaget, allt sammanvägt? Z-scoret är den klassiska sammanvägningen — fem nyckeltal som var och en fångar en sida av stressen (likviditet, buffert, lönsamhet, finansieringsstruktur, omsättning), vikterna tagna ur statistisk analys av bolag som faktiskt gick i konkurs mot bolag som klarade sig. Modellen är dessutom stabilitetsfamiliens tydligaste exempel på något som återkommer i hela utbildningen: att ett enda tal kan bära en hel berättelse — om man vet vilka tal som byggde det och var gränserna sattes. Kursen är avancerad av ett skäl: den kräver att balansräkningens logik (bk-01) och skuldens anatomi (ks-03) redan sitter, för modellen väger dem alla på en gång.",
+  "history": {
+    "origin": "Edward Altman publicerade 1968 sin studie över amerikanska tillverkningsbolag: 33 bolag som gått i konkurs matchades parvis med 33 överlevare av samma storlek och bransch — 66 bolag sammanlagt — och 22 nyckeltal testades i en statistisk metod som kallas multipel diskriminantanalys. Fem tal visade sig bära nästan all skillnad — och de kombinerades med analytiskt härledda vikter till ett enda poängtal. Att konkurs kunde förutses med balansrader var i sig ingen ny tanke (kreditgivare hade lusläst snabbkedjor länge), men att rangordningen var statistiskt testad och samlad i en formel var det.",
+    "evolution": "Modellen spred sig från akademin till kreditavdelningar under 1970- och 80-talen — och mötte sina första gränser: originalvikterna var skattade på börsnoterade tillverkare, och utanför den världen bröt tolkningen. Altman svarade med varianter: en modifierad modell för privata bolag (där börsvärdet i fjärde termen byts mot bokfört eget kapital) och senare en anpassning för framväxande marknader. Samtidigt byggde traditionen ut syskon: Ohlsons logit-modell (1980) ersatte diskriminantanalysen med en mer flexibel statistik, och ratingsindustrin utvecklade egna modeller för avstånd till betalningsstillestånd. Z-scoret levde kvar som den mest citerade — just för att den femtaliga formeln gick att räkna för hand.",
+    "modern": "I dag används Z-scoret som snabb indikator i finansanalyser och som forskningsverktyg — och dess historiska träffsäkerhet i originalurvalet (över 90 procent rätt klassificering ett år före konkurs) citeras ofta med en viktig varning i samma andetag: modellen är skattad bakåt, på en annan redovisningsstandard (amerikanskt GAAP), i en annan räntevärld, och för en tillverkningsindustri som delvis inte längre finns. De eviga avgränsningsfrågorna är desamma som i ROIC-kursen (roic-01): vad räknas som kapital, hur behandlas leasing och goodwill — här med tillägget att IFRS-regler flyttat flera poster sedan 1968. Den moderna läsningen är därför dubbel: talet är en startpunkt som gör bolag jämförbara, och en påminnelse om att ingen formel ersätter att läsa noterna."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — att läsa stressen i balansräkningen",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Modellen — fem nyckeltal och deras vikter",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — räkna Z steg för steg",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mätning — gränsvärden, tolkning och rörelser",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — stabilitetsbedömning i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — att läsa stressen i balansräkningen",
+      "intro": "Konkursen kommer sällan som en blixt — den kommer som en sluttning, och balansräkningen har lutningen inskriven.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stabilitetsfamiliens tidigare steg har märkt sluttningen bit för bit. Soliditetskursen (st-01) visade hur eget kapital och räntetäckning mäter hur mycket motvind bolaget står — bufferten mellan resultatet och räntekostnaden. Känslighetsanalysen (st-02) visade hur många procent resultatet tappar när räntan, valutan eller volymen rör sig. Men en läsare som får femtio nyckeltal för femtio bolag kan ändå inte svara på den enkla frågan: vilket av dem ligger närmast kanten? Alla mått pekar lite olika — hög soliditet men svag lönsamhet, god räntetäckning men tung kassaflödesprofil.\n\nZ-scoret bygger sin svarslinje på en iakttagelse från grundkursen i balansräkning (bk-01): en balansräkning är en enda sammanhängande berättelse, och stressen brukar synas i flera rörelser samtidigt — rörelsekapitalet krymper medan lånet växer och resultatet tunnas. Modellen fångar just de rörelserna: ett tal som stiger när bufferten växer, lönsamheten bär och kapitalet arbetar — och faller när skulderna äter. Poängen med ett sammanvägt tal är inte precision utan jämförelse: samma formel på alla bolag ger en gemensam skala för något som annars bara finns som spridda intryck."
+        },
+        {
+          "type": "definition",
+          "content": "Altman Z-score — en konkursprognosmodell som väger fem nyckeltal från bokslutet (alla relaterade till totala tillgångar) till ett enda poängtal Z. Högt Z pekar mot säker zon, lågt Z mot stresszon; emellan ligger gråzonen där modellen med rätta är tyst."
+        },
+        {
+          "type": "insight",
+          "content": "Ett nyckeltal är ett temperaturmått — Z-scoret är en feberkurva: samma patient, många mätningar, en linje som visar riktningen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Modellen — fem nyckeltal och deras vikter",
+      "intro": "Fem termer, fem sidor av samma stress — och vikterna som säger att vissa sidor bär mer än andra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Originalformeln för börsnoterade tillverkare: Z = 1,2 × X1 + 1,4 × X2 + 3,3 × X3 + 0,6 × X4 + 1,0 × X5. Term för term: X1 är rörelsekapital dividerat med totala tillgångar — likviditetens vikt i hela kroppen; ett bolag vars tillgångar sitter fast i maskiner medan skulderna är kortsiktiga har lågt X1. X2 är balanserat resultat (behållna vinster) dividerat med totala tillgångar — historiens buffert; bolag som ackumulerat vinster i goda år har en kudde, bolag som ätit upp den har inte. X3 är rörelseresultatet (EBIT) dividerat med totala tillgångarna — verksamhetens egen kraft, den term som håller modellen levande när buffertarna sinar.\n\nX4 är börsvärdet dividerat med bokförd räntebärande skuld — finansieringens risk: hur mycket av kapitalet som är lånat mot hur mycket marknaden värderar ägandet till. Just denna term är den som skiljer varianterna: för privata bolag byts börsvärdet mot bokfört eget kapital (och vikten justeras), eftersom ingen marknadspris finns. X5 är omsättningen dividerat med totala tillgångarna — kapitalomsättningen, hur hårt tillgångarna arbetar; kursen om Du Pont-analysen (ln-01) igenkänner komponenten direkt. Notera vad alla nämnare gemensamt gör: genom att dividera varje tal med totala tillgångarna blir bolag av olika storlek jämförbara — samma trick som gör nyckeltal till nyckeltal."
+        },
+        {
+          "type": "insight",
+          "content": "De fem termerna är en komplett stressberättelse: dagslikviditet (X1), historisk buffert (X2), lönsam kraft (X3), finansieringsstruktur (X4) och kapitalets arbetsvillkor (X5) — modellen läser balansräkningen som en helhet just för att konkursen anfaller den som en helhet." 
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — räkna Z steg för steg",
+      "intro": "En balansräkning, fem kvoter och en multiplikation med vikterna — från bokslutstal till ett samlat betyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anta ett tillverkningsbolag med totala tillgångar på 2 000 mkr. Steg ett: rörelsekapital — kundfordringar 400 plus lager 350 minus leverantörsskulder 250 ger 500; X1 = 500 ÷ 2 000 = 0,25. Steg två: balanserat resultat 360; X2 = 360 ÷ 2 000 = 0,18. Steg tre: rörelseresultatet 130; X3 = 130 ÷ 2 000 = 0,065. Steg fyra: börsvärdet 1 600 mot räntebärande skuld 2 000 — X4 = 1 600 ÷ 2 000 = 0,80. Steg fem: omsättningen 2 300; X5 = 2 300 ÷ 2 000 = 1,15.\n\nNu vikterna: 1,2 × 0,25 = 0,300; 1,4 × 0,18 = 0,252; 3,3 × 0,065 = 0,2145; 0,6 × 0,80 = 0,480; 1,0 × 1,15 = 1,150. Summa: 0,300 + 0,252 + 0,2145 + 0,480 + 1,150 = 2,3965 — avrundat 2,40. Nästa kapitel tolkar talet (spoiler: gråzonen, nästan exakt mitt i) — men notera redan här vad övningen gett: fem kvoter som var för sig säger måttligt, kombinerade till ett tal som kan följas kvartal efter kvartal. Upprepa samma fem steg på bolagets historik tre år bakåt och kurvan börjar berätta: stigande Z är en historia, fallande en annan. Och som alltid när formeln fått sitt tal: dokumentera avgränsningarna (vad som räknades som räntebärande skuld, hur leasing behandlades) — annars är nästa års jämförelse inte sann utan bara snarlik."
+        },
+        {
+          "type": "insight",
+          "content": "Fem kvoter, fem multiplikationer, en summa — övningen tar minuter, och samma minuter köper en feberkurva i stället för femtiotaal separata temperaturmätningar."
+ 
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — gränsvärden, tolkning och rörelser",
+      "intro": "Talet menar ingenting utan sina gränser — och gränserna betyder i sin tur olika saker beroende på bolagstyp och redovisningsstandard.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Originalmodellens gränsvärden för börsnoterade tillverkare: Z över 2,99 är säker zon; Z mellan 1,81 och 2,99 är gråzonen; Z under 1,81 är stresszonen. Exemplets 2,40 ligger i praktiken mitt i gråzonen — och tolkningen blir därför inte 'bolaget är stressat' och inte 'bolaget är säkert' utan 'modellen kräver vidare läsning': en svag lönsamhetsterm (X3 bidrog bara 0,2145 av 2,40) drar mot stresszon medan kapitalomsättningen (1,150) håller uppe. Det är gränsarnas verkliga användning: inte dom, utan differentierad diagnos.\n\nGränsvärdenas rörelser är minst lika informativa som deras nivåer. Ett Z som faller från 3,4 till 2,4 under tre år är en starkare varning än ett stabilt 2,2 — modellens egen historia visar att det är rörelserna som föregår kriserna, för termerna rör sig i takt: bufferten äts (X2 faller), resultatet trycks (X3) och lånet växer (X4:s nämnare). Sensitiviteten är också värd en räkning: X3 har modellens tyngsta vikt (3,3), så varje procentenhet rörelseresultat på totala tillgångar flyttar Z med 0,033 — mer än dubbelt så mycket som en procentenhet X1 (0,012). Lönsamheten är alltså modellens tyngsta hävstång, vilket är en tröst för bolag med god drift men en varning för dem utan. Vid privat bolags-användning gäller andra gränser (och X4 byggd på bokfört eget kapital) — använd rätt variant, aldrig originalgränserna mot en privatmodells tal."
+        },
+        {
+          "type": "insight",
+          "content": "Nivån placerar bolaget på skalan, rörelsen berättar historien och termerna förklarar varför — tre frågor, en formel, och gråzonen är modellens ärligaste svar: där säger den inte mer än att vidare läsning krävs." 
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "En modell byggd på 1960-talets Amerika har fällor som bor i tiden, i sektorn och i redovisningen — kända blir de hanterbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: sektorn. Originalvikterna är skattade på tillverkare — banker och finansbolag passar inte alls (deras balansräkningar är en annan värld; se km-040), och fastighetsbolag hamnar systematiskt fel eftersom deras tillgångar ger låg omsättning per krona. Botemedlet: använd modellen inom dess hemmaplan eller leta sektoranpassade syskon. Fälla två: redovisningsstandard. Posterna flyttade sig sedan 1968 — leasing togs in i balansräkningen (km-023), goodwill-reglerna ändrades, uppskjutna skatter växte. Samma bolag kan få annat Z bara genom standardbytet; jämför aldrig tvärs IFRS-gränser utan not. Fälla tre: det frysta talet. Z är en feberkurva och en enda mätning är ett fotografi — bolaget kan ha sålt anläggningar för att blåsa upp kassan, vilket höjer X1 idag mot priset av X5 i morgon.\n\nFälla fyra: den bakåtblickande statistiken. Modellen skattades på bolag som redan gått i konkurs — den hittar mönster liknande gårdagens kriser, inte nya sorter (den som vill öva nya sorter läser rk-12 om svarta svanar). Fälla fem: manipulationstrycket — bokslighteknik kan röra samtliga fem termer (kursen om resultatkvalitet, ln-02, är komplementet: ett Z byggt på uppblåsta resultat är bara ett noggrannare fel). Och som alltid i spåret: modellen är ett pedagogiskt mätinstrument som övar läsning av bokslut — inte en kontraktskylt, och aldrig en uppmaning att handla i bolaget."
+        },
+        {
+          "type": "insight",
+          "content": "Fem fällor — sektor, standard, fotografi, bakåtblick, manipulation — och ett gemensamt botemedel: läs termerna bredvid talet, noterna bredvid termerna, och historien bredvid alltihop." 
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — stabilitetsbedömning i AKM1:s metodik",
+      "intro": "I AK1A:s system är Z-scoret stabilitetsfamiliens sammanvägning — nyckeltalen V10–V12 blir termer, och betyget får sin skala.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1:s stabilitetsfamilj mäter tre ben: skuldsättningsgraden (v10), likviditeten (v11) och intäktsstabiliteten (v12). Z-scoret visar hur benen bär tillsammans: X1 är likviditetens term, X4 skuldstrukturens, X2 och X3 historia och kraft — modellen är i praktiken familjens sätt att väga sig själv. I AKM2:s stabilitetsdimension betyder det att bedömningen kan graderas: ett högt betyg kräver inte att varje enskilt mått är toppen, men att den sammanvägda stressnivån är låg och att rörelsen pekar rätt — exakt vad en Z-historik i tre års bild visar eller vederlägger.\n\nKorsningarna binder samman spåret. Mot skuldens anatomi (ks-03): X4 är den kursens hela fråga omformulerad till en kvot — och samma varning gäller, att bokförd skuld inte fångar alla förpliktelser. Mot känslighetsanalysen (st-02): stressprovet frågar vad som händer med ett villkor, Z frågar var bolaget står innan provet börjar — först det ena, sedan det andra, i den ordningen. Mot räntetäckningen (st-01): en god täckning med fallande Z är en läsarlek som modellen avslöjar — täckningen mäter dagens ränta, modellen mäter trögheten. Mot lönsamhets- och värderingsspåren: X3:s tunga vikt (3,3) gör gott rörelseresultat till stabilitetens starkaste källa, och vr-kurserna om multipelgap (vr-01) visar vad marknaden betalar för den kombinationen. Avsluta med den levande övningen: välj två tillverkare ur kursuniversumet, räkna Z i fem steg för båda tre år bakåt, dokumentera avgränsningarna — och skriv en rad om varje kurva: stigande, fallande eller platt, och vilken term som driver. Gör om nästa år med samma avgränsningar. Det är utbildningens kärna: stabilitet är inte ett mått utan en riktning, och riktningen syns bara när samma formel får arbeta över tid."
+        },
+        {
+          "type": "insight",
+          "content": "Nyckeltalen mäter var sitt ben — Z-scoret visar hur benen bär tillsammans, och AKM2:s stabilitetsbetyg graderar just det: sammanvägningen, dess riktning och källan bakom." 
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch talade om bolag med 'starka balansräkningar' som han kunde låta ligga i fred genom svåra år — hans respekt för buffertar är Z-scorets tes i dagligt språk. Lynch var samtidigt varnande noga med att skilja billigt från stukat: ett bolag med fallande kurva såg billigt ut ända till kanten. Hans regel att läsa skulderna först av allt i en balansräkning är modellens fjärde term som instinkt.",
+  "grahamSection": "Benjamin Graham arbetade i en tid då konkurs var närmare än räntan — hans krav på att eget kapital täcka hela företagets värde, hans täckningskrav på räntan och hans fasta värdegrunder var i praktiken ett manuellt Z-score: flera mätningar som alla måste gröna innan något fick kallas stabilt. Grahams varning för fynd vars pris fallit i takt med deras buffert — de fallna änglarna i hans vokabulär — är modellens gråzon formulerad trettio år före formeln.",
+  "ak1Section": "I AK1A:s metodik är denna kurs STABILITET-familiens toppblock: st-01 mäter grundvallen, st-02 stressmotståndet, och Z-scoret väger hela bokslutets stressnivå till den skala AKM2:s stabilitetsdimension graderar — med rörelser över tid som egentliga domslut. Brobyggen: mot ks-03 (X4 som skuldkvot med dess alla förbehåll), mot ln-02 (ett Z på uppblåsta resultat är noggrannare fel) och mot v10–v12 (familjens tre ben som modelltermer)."
+}

@@ -344,6 +344,13 @@ kontroll(
 // följer kedjan, okända komponenter fortsätter att underkännas.
 // Uppdaterad av s6-u2 omgång 7: portfoljgrund-lagret tillagt som NIONDE
 // lager SIST (diversifiering/korrelation, valutarisk).
+// Uppdaterad av s6-u2 omgång 8: ägande-lagret tillagt som TIONDE lager
+// SIST (bolagsstämma/rösträtt, styrelse/bolagsstyrning).
+// Uppdaterad av s6-u3 omgång 11: beteendedjup-lagret tillagt som SJUTTONDE
+// lager SIST (bekräftelsefällan, ankareffekten, mental accounting) +
+// syskonet u2:s riskdjup som ARTONDE SIST (på-disk-läge).
+// Uppdaterad av s6-u3 omgång 9: historia-lagret tillagt som TRETTONDE
+// lager SIST (tulpanmanin, börsbubbla, aktiekraschen 1929).
 const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
@@ -355,6 +362,27 @@ const kedjekomponenter = [
   "svaraLokaltCase(q, KURSREGISTER)",
   "svaraLokaltPraktik(q, KURSREGISTER)",
   "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
+  "svaraLokaltAgande(q, KURSREGISTER)",
+  "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",
+  "svaraLokaltDjup(q, KURSREGISTER)",
+  "svaraLokaltHistoria(q, KURSREGISTER)",
+  "svaraLokaltLonsamhetsdjup(q, KURSREGISTER)",
+  "svaraLokaltTsdjup(q, KURSREGISTER)",
+  "svaraLokaltSkattedjup(q, KURSREGISTER)",
+  "svaraLokaltBeteendedjup(q, KURSREGISTER)",
+  "svaraLokaltRiskdjup(q, KURSREGISTER)",
+  "svaraLokaltRiskmattsdjup(q, KURSREGISTER)",
+  "svaraLokaltUtdelningsdjup(q, KURSREGISTER)",
+  "svaraLokaltForvantningsdjup(q, KURSREGISTER)",
+
+  "svaraLokaltPortfoljbalans(q, KURSREGISTER)",
+  "svaraLokaltStabilitetsdjup(q, KURSREGISTER)",
+  "svaraLokaltGrahamgolv(q, KURSREGISTER)",
+  // Omgång 14:s fönsterlager (disk-läge): u2 varderjustering + u1 optionsdjup
+  // + s6-u3 riskläsningsdjup — SIST av 27.
+  "svaraLokaltVarderjustering(q, KURSREGISTER)",
+  "svaraLokaltOptionsdjup(q, KURSREGISTER)",
+  "svaraLokaltRisklasningsdjup(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -393,10 +421,14 @@ const importPraktik = widget.includes('from "@/lib/ai-mentor-praktik-fragor"');
 if (!importPraktik) { lFel++; console.log("      import av praktik-lagret saknas"); }
 const importPortfoljgrund = widget.includes('from "@/lib/ai-mentor-portfoljgrund-fragor"');
 if (!importPortfoljgrund) { lFel++; console.log("      import av portfoljgrund-lagret saknas"); }
+const importAgande = widget.includes('from "@/lib/ai-mentor-agande-fragor"');
+if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"); }
+const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
+if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 9 lager i ordning + 4 importer",
+  "L: widget-bevis — kedjeraden bär 24 lager i ordning + 7 importer",
   lFel === 0,
-  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund live i klientkedjan" : lFel + " fel",
+  lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );
 
 // ── Sammanfattning ─────────────────────────────────────────────────────────

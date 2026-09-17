@@ -1122,3 +1122,16 @@ h1, h2, h3, h4, h5, h6 {
   content-visibility: auto;
   contain-intrinsic-size: auto 12rem;
 }
+
+/* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
+   55 inlägg renderas alla i initial HTML). r4b2-facit: styleLayout 835 ms
+   är /blogg:s största mainthread-post; samma mekanik som .cv-kort och
+   .cv-registerkort — offscreen kort hopsaltar renderingsarbetet, DOM/SEO/
+   hydrering orörda. En höjdnivå räcker (kortens höjd varierar mindre mellan
+   brytpunkterna än registerkortens): p-6 + pelare + titel + ingress +
+   läsrad + datum (+ svensk kurslänk) ≈ 22rem; auto-nyckeln minns därefter
+   senaste riktiga höjd per kort. */
+.cv-bloggkort {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 22rem;
+}

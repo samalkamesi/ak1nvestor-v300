@@ -1,0 +1,286 @@
+[
+  {
+    "url": "http://localhost:3000/blogg",
+    "vaggtidS": 7,
+    "traceEvents": 1136,
+    "sammanfattning": [
+      {
+        "namn": "BackgroundJSStreamManager::RunScriptStreamingTask",
+        "antal": 29,
+        "totalMs": 374,
+        "maxMs": 74
+      },
+      {
+        "namn": "v8.parseOnBackground",
+        "antal": 29,
+        "totalMs": 373,
+        "maxMs": 74
+      },
+      {
+        "namn": "FunctionCall",
+        "antal": 139,
+        "totalMs": 339,
+        "maxMs": 129
+      },
+      {
+        "namn": "Layout",
+        "antal": 10,
+        "totalMs": 276,
+        "maxMs": 149
+      },
+      {
+        "namn": "v8.parseOnBackgroundParsing",
+        "antal": 43,
+        "totalMs": 271,
+        "maxMs": 45
+      },
+      {
+        "namn": "EvaluateScript",
+        "antal": 37,
+        "totalMs": 174,
+        "maxMs": 95
+      },
+      {
+        "namn": "v8.parseOnBackgroundWaiting",
+        "antal": 14,
+        "totalMs": 81,
+        "maxMs": 18
+      },
+      {
+        "namn": "ParseHTML",
+        "antal": 9,
+        "totalMs": 54,
+        "maxMs": 20
+      },
+      {
+        "namn": "UpdateLayoutTree",
+        "antal": 9,
+        "totalMs": 48,
+        "maxMs": 27
+      },
+      {
+        "namn": "MinorGC",
+        "antal": 3,
+        "totalMs": 18,
+        "maxMs": 8
+      },
+      {
+        "namn": "BackgroundProcessor::MaybeStartProcessingResponse",
+        "antal": 29,
+        "totalMs": 16,
+        "maxMs": 14
+      },
+      {
+        "namn": "V8.GC_SCAVENGER",
+        "antal": 3,
+        "totalMs": 16,
+        "maxMs": 7
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE",
+        "antal": 3,
+        "totalMs": 16,
+        "maxMs": 7
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+        "antal": 3,
+        "totalMs": 13,
+        "maxMs": 5
+      },
+      {
+        "namn": "EventDispatch",
+        "antal": 114,
+        "totalMs": 11,
+        "maxMs": 2
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnFinishStreaming",
+        "antal": 29,
+        "totalMs": 10,
+        "maxMs": 8
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+        "antal": 3,
+        "totalMs": 9,
+        "maxMs": 4
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+        "antal": 2,
+        "totalMs": 8,
+        "maxMs": 4
+      },
+      {
+        "namn": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+        "antal": 1,
+        "totalMs": 7,
+        "maxMs": 7
+      },
+      {
+        "namn": "ParseAuthorStyleSheet",
+        "antal": 2,
+        "totalMs": 7,
+        "maxMs": 6
+      },
+      {
+        "namn": "Paint",
+        "antal": 12,
+        "totalMs": 7,
+        "maxMs": 3
+      },
+      {
+        "namn": "v8.compile",
+        "antal": 37,
+        "totalMs": 6,
+        "maxMs": 2
+      },
+      {
+        "namn": "PrePaint",
+        "antal": 10,
+        "totalMs": 5,
+        "maxMs": 2
+      },
+      {
+        "namn": "BackgroundJSStreamManager::TryStartStreamingTask",
+        "antal": 29,
+        "totalMs": 4,
+        "maxMs": 1
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnDataPipeReadable",
+        "antal": 20,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "IntersectionObserverController::computeIntersections",
+        "antal": 14,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "TimerFire",
+        "antal": 1,
+        "totalMs": 3,
+        "maxMs": 3
+      },
+      {
+        "namn": "Layerize",
+        "antal": 7,
+        "totalMs": 2,
+        "maxMs": 1
+      },
+      {
+        "namn": "FireIdleCallback",
+        "antal": 4,
+        "totalMs": 2,
+        "maxMs": 1
+      },
+      {
+        "namn": "FireAnimationFrame",
+        "antal": 2,
+        "totalMs": 1,
+        "maxMs": 1
+      }
+    ],
+    "slTotalMs": 324,
+    "slAntal": 19,
+    "slPerUtlosare": [
+      {
+        "utlosare": "(ingen — eget task)",
+        "antal": 19,
+        "totalMs": 324
+      }
+    ],
+    "storSLOchLayout": [
+      {
+        "event": "Layout",
+        "atMs": 379,
+        "durMs": 149,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 951,
+        "durMs": 70,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 531,
+        "durMs": 30,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 277,
+        "durMs": 27,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 672,
+        "durMs": 9,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 942,
+        "durMs": 9,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 2011,
+        "durMs": 8,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      }
+    ],
+    "elementTopp": [],
+    "tungaFunctionCalls": [
+      {
+        "atMs": 813,
+        "durMs": 129,
+        "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+        "stack": null
+      }
+    ]
+  }
+]

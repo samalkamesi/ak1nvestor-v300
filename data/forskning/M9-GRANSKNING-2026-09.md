@@ -251,3 +251,46 @@ systemet som designat: fabrikens tal är alltid spårbara till fil.
   faktiska filer, global seed omräknad, kontrolleraText 0 FEL 0 varningar,
   strukturkrav, negerad disclaimer sist, kvitto-avsnitt närvarande, och
   nyckeltalen omräknade ur källfilerna (medianer, räkningar, binomial).
+
+---
+
+## 8. Uppdatering 2026-09-16 (dokvåg s9-u2) — kön har vuxit bortom serierna
+
+§1–7 ovan speglar våg 95/96-läget (2026-09-11): sex evergreen-serier i
+Supabase-kön. Sedan dess har granskningskön vuxit till ett träd med fyra
+delar — allt nedan MÄTT i arbetsytan 2026-09-16 (ls per katalog, räknat
+fil för fil — inte läst ur worklog):
+
+| Del | Innehåll | Mätning 2026-09-16 |
+|---|---|---|
+| Roten `data/blogg-utkast/*.json` | Bransch- och nyckeltalsguider (bankaktier, halvledare, P/E-talet, portföljteori, nyemission …) | **28 JSON** |
+| `m9-ko/` | Sex M9-serierna (§2 + §7) + index.json | **6 utkast** |
+| `kvartal/2026-q3/` | Kvartalsserien (V152 fas 2–3): "Så läser du …"-läspaket per bolag + branschkalendrar | **28 filer = 18 bolagspaket + 10 kalendrar** |
+| `granskning/` | Granskningsunderlag: MD-versioner, diff-filer, kontrollrapporter | **47 filer** (31 MD · 14 diff.json · kontroller) |
+| `GRANSKNINGSKO-SAMMANSTALLNING.md` | **Kundens kö-vy** — hela kön som en lista | 38 kB, senast uppdaterad 2026-09-16 09:44 |
+
+Vad det betyder för dig:
+
+1. **Ditt inträde till hela kön är sammanställningen.** Öppna
+   `data/blogg-utkast/GRANSKNINGSKO-SAMMANSTALLNING.md` — varje rad är ett
+   utkast som väntar på dig, med status, källor och not. Kvartalsserien
+   redovisas där med fullständig källtäckning per paket.
+2. **M9-serierna granskas som tidigare — §1 gäller oförändrat.** Sex serier
+   ligger i Supabase-kön och panelens flöde (läs → stäm av mot kvittot →
+   ta bort kvitto-avsnittet → "Skicka till granskad" → export) är samma.
+   Att de hålls aktuella syns i granskningskatalogen: tre av serierna
+   (branschmedianer, kassaflödesanalys, börspsykologi) har
+   KONTROLL-rapporter daterade **2026-09-16**.
+3. **Grundregeln består i ALLA delar av kön:** maskinen sätter aldrig
+   "granskad" eller "publicerad" — publicering är ditt klick (R2), oavsett
+   om utkastet kommer från M9-fabriken, kvartalsserien eller
+   branschguiderna.
+4. **Evergreen-notis:** M9-seriernas underlag (korstabell-grund.json,
+   vågvalideringsdomarna) är oförändrade sedan 2026-09-03/09-04 —
+   evergreen-regeln släpper därför inga oktoberutgåvor ännu; nya
+   månadsutkast kommer när underlagen rör sig. Köns totala volym drivs
+   just nu av kvartalsserien (18 paket mot rappdagarna 2026-10-01 →
+   2026-10-27) och branschguiderna.
+
+*Levande hållning: denna sektion uppdateras när köns storlek eller form
+ändras — nästa dokvåg mäter igen.*

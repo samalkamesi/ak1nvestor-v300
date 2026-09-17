@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { Server } from "lucide-react";
 
 import { useAk1aStore } from "@/lib/ak1a-store";
@@ -10,7 +11,6 @@ import {
   sparaAdminLosenord,
 } from "@/lib/admin-klient";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
-import { StudioChat } from "@/components/ak1a/studio-chat";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,6 +25,28 @@ import { Input } from "@/components/ui/input";
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
+
+// VÅG s7 u2 (o16-köpost 2 / o31, koddelning 2026-09-16): StudioChat-kedjan
+// (chat + paneler + studio-transport, EXKLUSIVT ropad här — inga andra
+// importörer) bundleades tidigare statiskt till VARJE /studio-besökare:
+// 141+ KiB unused-JS i lås-vyn enligt o16:s Lighthouse. Chatt-chunken
+// hämtas nu först när authad-grenen renderas; server-HTML:n är oförändrad
+// (grenen renderades aldrig vid SSR — initial state är alltid lås-vyn),
+// ISR-cachen (o16) orörd. Samma mönster som spa-hem:s sektioner (o27).
+const StudioChat = dynamic(
+  () =>
+    import("@/components/ak1a/studio-chat").then((m) => ({
+      default: m.StudioChat,
+    })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="paper-texture flex min-h-[60vh] items-center justify-center">
+        <p className="text-sm text-muted-foreground">Öppnar chatten…</p>
+      </div>
+    ),
+  },
+);
 
 export default function StudioKlient() {
   const { setSection, setIsAdmin } = useAk1aStore();

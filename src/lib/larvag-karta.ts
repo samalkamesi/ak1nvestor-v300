@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (358 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (396 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 316 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 354 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -204,6 +204,8 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pc-18-case-oresund", titel: "Case: Öresund — investmentbolag", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "pc-19-case-hoganas", titel: "Case: Höganäs — järnpulver-monopol", kategori: "PRAKTISKA CASE", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "pc-20-case-essity", titel: "Case: Essity — hygienvaror", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 25 },
+  { slug: "pc-21-ditt-forsta-case", titel: "Ditt första case — metoden före bolagen: ett påhittat bolag, steg för steg", kategori: "PRAKTISKA CASE", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pc-22-ditt-andra-case", titel: "Ditt andra case — jämförelsen: två bolag, samma bransch, sida vid sida", kategori: "PRAKTISKA CASE", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rk-13-gdpr-och-datarisk", titel: "GDPR och data-risk", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "rk-14-esgrisk", titel: "ESG-risk — miljö och sociala", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "rk-15-cykelrisk", titel: "Cykel-risk — konjunkturkänslighet", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -221,6 +223,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-13-utbildning", titel: "Utbildning — återkommande intäkter", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "se-14-livsmedel", titel: "Livsmedel — staplar och varumärke", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "se-15-logistik", titel: "Logistik — nätverk", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-16-sektoranalysens-metod", titel: "Sektoranalysens metod — tre frågor till vilken sektor som helst", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-05-ankareffekt", titel: "Ankareffekt — snitt irrelevant", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
@@ -248,10 +251,14 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ud-06-svenska-utdelningsaktier", titel: "Svenska utdelnings-aktier", kategori: "UTDELNINGSSTRATEGI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "ud-07-utdelningskalender", titel: "Utdelnings-kalender", kategori: "UTDELNINGSSTRATEGI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 16 },
   { slug: "ud-08-speciella-utdelningar", titel: "Speciella utdelningar", kategori: "UTDELNINGSSTRATEGI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
+  { slug: "ud-09-utdelningens-hallbarhet", titel: "Utdelningens hållbarhet — att stressa kronorna bakom utdelningen", kategori: "UTDELNINGSSTRATEGI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-13-esgportfolj", titel: "ESG-portfölj", kategori: "PORTFÖLJHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-14-pensionssparande", titel: "Pensionssparande", kategori: "PORTFÖLJHANTERING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-11-kognitiv-bias", titel: "Kognitiv bias — komplett lista", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bf-12-prospektteori", titel: "Prospektteori — Kahneman & Tversky", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
+  { slug: "bf-13-arbitragens-granser", titel: "Arbitragens gränser — varför biasen får stanna i priserna", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-14-beteendeportfoljteori", titel: "Beteendeportföljteori — pyramiden med mentala konton", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-15-bubblans-anatomi", titel: "Bubblans anatomi — när allas misstag blir en och samma marknad", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mk-11-kinaekonomin", titel: "Kina-ekonomin", kategori: "MAKROEKONOMI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "vm-11-waccfallor", titel: "WACC-fällor", kategori: "VÄRDERINGSMETODER", niva: 3, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "portfolj-ekosystemet", titel: "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 55 },
@@ -363,29 +370,60 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "shoe-dog", titel: "Shoe Dog — Phil Knight: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 0, vIndex: -1, minuter: 156 },
   { slug: "the-everything-store", titel: "The Everything Store — Brad Stone: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 0, vIndex: -1, minuter: 169 },
   { slug: "bk-01-balansrakningen", titel: "Balansräkningen — bolagets karta", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bk-02-resultatrakningen", titel: "Resultaträkningen — bolagets resedagbok", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bk-03-kassaflodesrakningen", titel: "Kassaflödesräkningen — pengarna som faktiskt rörde sig", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-03-marginaltrappan-och-operativ-havstavng", titel: "Marginaltrappan och operativ hävstång — resultaträkningens känslighet", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-05-vad-ar-lonsamhet", titel: "Vad är lönsamhet? — vinstens förståelse i sex steg", kategori: "LÖNSAMHET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-02-kanslighetsanalys-och-stresstest", titel: "Känslighetsanalys — stresstesta balansräkningen", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-03-altman-z-score", titel: "Konkursprognos — Altman Z-score", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-04-stabilitet-genom-kreditcykeln", titel: "Stabilitet genom kreditcykeln — samma balansräkning, två världar", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-01-organisk-mot-forvarvad-tillvaxt", titel: "Organisk vs förvärvad tillväxt — spåra källan", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-02-volym-pris-och-mix", titel: "Volym, pris och mix — tillväxtens tre motorer", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "tx-03-nar-skapar-tillvaxt-varde", titel: "När skapar tillväxt värde? — återinvesteringens matematik", kategori: "TILLVÄXT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-01-kapitalstruktur-grunder", titel: "Kapitalstruktur — hur bolaget är finansierat", kategori: "KAPITALSTRUKTUR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-02-kapitalallokering", titel: "Kapitalallokering — styrelsens fem vägar", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-03-skuldens-anatomi", titel: "Skuldens anatomi — löptider, bindning och covenants", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ks-04-emissionens-mekanik", titel: "Emissionens mekanik — kvot, teckningsrätt och utspädningens aritmetik", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ks-05-covenanter-och-kreditbetyg", titel: "Covenanter och kreditbetyg — skuldens spelregler och prislapp", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ks-06-konvertibler-och-hybridkapital", titel: "Konvertibler och hybridkapital — skulden som kan bli eget kapital", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-01-volatilitet-och-risk", titel: "Volatilitet och risk — skilj svängningar från förlust", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-02-kundkoncentration", titel: "Kundkoncentration — när få kunder bär intäkterna", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rs-03-dold-samvariation", titel: "Dold samvariation — när bolagen delar samma risk", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rs-04-riskmatrisen", titel: "Riskmatrisen — att kartlägga osäkerheten", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rs-05-riskavsnittet-mellan-raderna", titel: "Riskavsnittet mellan raderna — att läsa bolagets egen riskredovisning", kategori: "RISK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-04-vallgravens-fodelse", titel: "Vallgravens födelse — hur en moat byggs sten för sten", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-03-lasa-aktiesidan", titel: "Läsa aktiesidan — siffrorna på skärmen före metoderna", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-04-marknadsstruktur", titel: "Marknadsstruktur — hur handeln faktiskt fungerar", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-05-handelsdagens-auktioner", titel: "Handelsdagens auktioner — öppning, löpande handel och stängning", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-06-kortlage-och-aktieutlaning", titel: "Kortläge och aktieutlåning — den andra sidan av orderboken", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-03-multipelns-anatomi", titel: "Multipelns anatomi — vad ett värderingstal innehåller", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-03-forvarvsmaskinen", titel: "Förvärvsmaskinen — hur private equity bygger (och belastar) ett bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-02-implicit-volatilitet", titel: "Implicit volatilitet — marknadens pris på framtiden", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-02-labbets-karta", titel: "Labbets karta — fem motorer, ett hus: orienteringen före ek-01", kategori: "EKOSYSTEM", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-03-arbetsflodet-i-labbet", titel: "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-04-backtestens-hantverk", titel: "Backtestens hantverk — att testa en metod mot historien utan att lura sig själv", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rp-01-riskmattens-karta", titel: "Riskmåttens karta — fem mått, fem frågor, innan formlerna", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -394,4 +432,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 358;
+export const LARVAG_ANTAL_KURSER = 396;

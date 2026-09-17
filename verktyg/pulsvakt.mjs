@@ -10,6 +10,17 @@
  *     (a) GET http://127.0.0.1:3000/                 → kräv HTTP 200
  *     (b) GET http://127.0.0.1:3000/api/sok?q=akm2   → kräv 200 + JSON
  *         404 = endpointen ej deployad ännu → VARNING "väntar deploy"
+ *     (d) STATISKT KONTRAKTSTEST (s8-u2 2026-09-16, o29 §6.2): hämta /
+ *         igen, extrahera ALLA _next/static-refs ur HTML:en, HEAD:a varje
+ *         (tak 80/varv) — kräv 200. Fångar "HTML 200 men tillgångarna
+ *         borta" (incidenten 10:02–10:2x: OOM-dödat bygg tömde .next/
+ *         static, pm2 serverade cachad HTML, kunden såg ostylat 20+ min
+ *         medan (a)/(b) var gröna). trasig-bygg ⇒ HÖGPRIO-LARM, ALDRIG
+ *         pm2-omstart (omstart förlorar den cachade HTML:en och lagar
+ *         inget — läkning = ombygge under låset, prod-synk/kraschvakt
+ *         äger). Under aktivt deploylås undertrycks larmet (transienta
+ *         500 är väntade medan .next skrivs om) men eskalerar efter 30
+ *         varv (≈ 30 min — fastlåst bygg är själv ett incidenttillstånd).
  *   VAR 10:E VARV (≈ 10 min) även externt:
  *     (c) GET https://lab.ak1nvestor.com/ (timeout 10 s) → fångar
  *         nginx-/certifikat-/DNS-fel (kan ej sudo-omstarta → larm direkt)
@@ -18,8 +29,15 @@
  * child_process (processen körs som användaren ak1a — tillåtet utan
  * sudo). TAK: max 1 omstart per minut; 10 omstarter utan en enda OK
  * kontroll → auto-omstarten stängs av (larm högprio) tills appen svarar
- * igen — ALDRIG loop-restart (same doktrin som ak1a-halsa).
+ * igen — ALDRIG loop-restart (same doktorin som ak1a-halsa).
  * 3 misslyckade kontroller i rad → högprio-larm.
+ *
+ * DEPLOYLÅS (rond 50, femte observationen 08:43): medan flock
+ * /tmp/ak1a-deploy.lock hålls (prodbygg pågår) SKJUTS auto-omstarten upp —
+ * deploy-kedjan äger pm2-omstarten i det fönstret, och en extra omstart
+ * mitt i npm ci+build dödar appen under pågående bygge. Felräkning och
+ * högprio-larm vid felrad kvarstår (ett fastfruset bygg ska inte tystas);
+ * saknad flock/fel = ingen deploy (fail-safe: omstart som förr).
  *
  * LARM: JSON-rader i data/vakten/pulsvakt-larm.log (självvänande, max
  * 5000 rader). Status VARJE varv: data/vakten/pulsvakt-status.json.
@@ -34,16 +52,27 @@
  *
  * Designregel: ALLT i try/catch — processen får ALDRIG krascha (pm2
  * superviserar ändå, men tyst överlevande är billigare än omstarter).
+ *
+ * ENSKILD INSTANS (våg 179): PID-låsfil data/vakten/pulsvakt.las — en
+ * andra instans (manuell start, dubbel pm2-post) avslutar sig själv;
+ * dött lås tas över; låset lyfts vid rent avslut (SIGTERM/SIGINT/exit).
+ * Överlevnad vid serveromstart: pm2-ak1a.service (enabled) → resurrect
+ * ur ~/.pm2/dump.pm2 (pulsvakt ingår). --test låser ALDRIG (KVD-läge).
  */
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { begransaRefs, extraheraStatiskaRefs, statisktBeslut } from "./pulsvakt-statisk.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKTKATALOG = path.join(ROT, "data", "vakten");
 const LARMLOGG = path.join(VAKTKATALOG, "pulsvakt-larm.log");
 const STATUSFIL = path.join(VAKTKATALOG, "pulsvakt-status.json");
+// Våg 179: enskild-instans-lås (körningsdata, gitignorerad). pm2 håller sina egna
+// barn åtskilda, men en manuell `node pulsvakt.mjs` (eller dubbelstart) SKULLE ge
+// två loopar = dubbla pm2-omstartar av prod — det förbjuder vakten sig själv.
+const LASFIL = path.join(VAKTKATALOG, "pulsvakt.las");
 
 const INTERN_BAS = process.env.AK1A_PULSVAKT_BAS || "http://127.0.0.1:3000";
 const EXTERN_URL = "https://lab.ak1nvestor.com/";
@@ -68,10 +97,28 @@ const st = {
   autoAvstangd: false,
   varv: 0,
   sokVantarDeploy: false,
+  // (d) statiskt kontraktstest — läs-yta: statusfilens statiskStatus/statiskSenasteFel
+  statiskStatus: "ej-matt",
+  statiskSenasteFel: null,
+  statiskFelvarv: 0,
+  statiskSupprimerade: 0,
 };
 
 function nuIso() {
   return new Date().toISOString();
+}
+
+// Deploybyggen (prod-synk.mjs "flock -w 900", deploya-contabo.sh "flock -n")
+// håller låset under npm ci + build + pm2 restart — i det fönstret äger
+// deploy-kedjan omstarten. Endast exit 1 ("hålls") räknas som deploy;
+// saknad flock/övriga fel → false (fail-safe: omstart som förr).
+function deployPagar() {
+  try {
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "true"], {
+      timeout: 5_000, stdio: "ignore",
+    });
+    return false;                          // låset togs → inget bygg pågår
+  } catch (e) { return e?.status === 1; }  // exit 1 = hålls av bygg
 }
 
 /** Skriv statusfilen — de fem kontraktsfälten + diagnostik. Får aldrig kasta. */
@@ -91,6 +138,9 @@ function skrivStatus(falt) {
           sokVantarDeploy: st.sokVantarDeploy,
           autoOmstandAvstangd: st.autoAvstangd,
           varv: st.varv,
+          statiskStatus: st.statiskStatus,
+          statiskSenasteFel: st.statiskSenasteFel,
+          statiskFelvarv: st.statiskFelvarv,
           processPid: process.pid,
         },
         null,
@@ -120,6 +170,56 @@ function larma(niva, kalla, detalj) {
     }
   }
   console.log(`${nuIso()} LARM ${niva} ${kalla}: ${detalj}`);
+}
+
+// ── Våg 179: enskild-instans-lås (PID-fil med dödstest och takeover) ─────────
+// Endast driftläget låser (--test förblir låsfritt KVD-läge). Semantik:
+//   - ledig låsfil   → vi tar den (skriver vår PID) och äger vakten
+//   - PID i filen lever (/proc) → AVSLUTA tyst med loggrad (exit 0) —
+//     den redan körande vakten äger övervakningen
+//   - PID:död låsfil → takeover (unlink + ett nytt låsförsök)
+//   - oväntat fs-fel → hogprio-larm men STARTA ÄNDÅ (enskild instans är
+//     skydd mot dubbel omstartsrätt, inte livsuppehållning — en vägran
+//     att starta lägger prod utan vakt, vilket är värre; filens doktrin
+//     "processen får ALDRIG krascha" gäller även här)
+function lasEnskildInstans() {
+  try {
+    fs.mkdirSync(VAKTKATALOG, { recursive: true });
+    try {
+      fs.writeFileSync(LASFIL, String(process.pid), { flag: "wx" });
+      return { ok: true, togOver: false };
+    } catch (e) {
+      if (e?.code !== "EEXIST") throw e;
+      const forrPid = Number(fs.readFileSync(LASFIL, "utf8").trim());
+      if (Number.isFinite(forrPid) && fs.existsSync(`/proc/${forrPid}`)) {
+        return { ok: false, forrPid };
+      }
+      // Död ägare (krockad omstart utan cleanup) — takeover med ett försök.
+      try { fs.unlinkSync(LASFIL); } catch { /* någon hann före — wx avgör */ }
+      fs.writeFileSync(LASFIL, String(process.pid), { flag: "wx" });
+      return { ok: true, togOver: true };
+    }
+  } catch (e) {
+    larma("hogprio", "lasfil", `enskild-instans-låset kunde inte sättas: ${String(e?.message || e).slice(0, 120)} — startar ändå (fail-open)`);
+    return { ok: true, osaker: true };
+  }
+}
+
+/** Städa låsfilen VID AVSLUT — endast om den fortfarande bär VÅR pid
+ *  (takeover/erstättning skall aldrig radera efterföljarens lås). */
+function lasaAv() {
+  try {
+    if (fs.readFileSync(LASFIL, "utf8").trim() === String(process.pid)) {
+      fs.unlinkSync(LASFIL);
+    }
+  } catch { /* saknad/ersatt låsfil — inget att städa */ }
+}
+process.on("exit", lasaAv);
+for (const sig of ["SIGTERM", "SIGINT"]) {
+  process.on(sig, () => {
+    console.log(`${nuIso()} PULSVAKTEN mottog ${sig} — städar låset och avslutar`);
+    process.exit(0); // exit-hooken lyfter låsfilen
+  });
 }
 
 /** GET med tydlig timeout — returnerar {ok, status, content_type, fel}. */
@@ -180,6 +280,50 @@ async function kollaExtern() {
   };
 }
 
+/** HEAD/GET av en enskild tillgång via loopback — 0 = hämtningen misslyckades. */
+async function tillgangsStatus(ref) {
+  try {
+    const h = await fetch(INTERN_BAS + ref, {
+      method: "HEAD",
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    if (h.status !== 405 && h.status !== 501) return h.status; // HEAD stöds
+    const g = await fetch(INTERN_BAS + ref, {
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    return g.status;
+  } catch {
+    return 0;
+  }
+}
+
+/** (d) Statiskt kontraktstest — HTML:en är kontraktet (statisk-sondens princip):
+ *  hämta /, extrahera ALLA _next/static-refs, HEAD:a varje (tak 80). Returnerar
+ *  rådata; BESLUTET (deploy-undertryckning, larmnivå) bor i pulsvakt-statisk.mjs
+ *  så det är testbart offline. ALDRIG pm2-omstart från detta steg. */
+async function kollaStatiska() {
+  try {
+    const sv = await fetch(`${INTERN_BAS}/`, {
+      headers: { Host: HOST_RUBRIK },
+      redirect: "manual",
+      signal: AbortSignal.timeout(INTERN_TAK_MS),
+    });
+    const sidaStatus = sv.status;
+    const html = sidaStatus === 200 ? await sv.text() : "";
+    const tillgangar = [];
+    for (const ref of begransaRefs(extraheraStatiskaRefs(html))) {
+      tillgangar.push({ url: ref, status: await tillgangsStatus(ref) });
+    }
+    return { sidaStatus, tillgangar };
+  } catch (e) {
+    return { sidaStatus: 0, tillgangar: [], fel: String(e?.name || e).slice(0, 80) };
+  }
+}
+
 /** pm2-omstart av appen — körs som användaren ak1a (tillåtet utan sudo). */
 function omstartaApp() {
   try {
@@ -217,7 +361,8 @@ async function kontrollvarv(externOckså) {
       larma("hogprio", "felrad", `${st.felrad} misslyckade kontroller i rad`);
     }
     const takOk = Date.now() - st.senasteOmstart >= MAX_OMSTART_PER_MIN_MS;
-    if (takOk && !st.autoAvstangd) {
+    const deploy = takOk && !st.autoAvstangd ? deployPagar() : false;
+    if (takOk && !st.autoAvstangd && !deploy) {
       omstartaApp();
       larma(
         "info",
@@ -233,6 +378,14 @@ async function kontrollvarv(externOckså) {
             " tills appen svarar igen (manuell granskning krävs)",
         );
       }
+    } else if (takOk && !st.autoAvstangd && deploy) {
+      // Rond 50: bygget äger omstarten — en extra pm2-restart mitt i
+      // npm ci+build dödar appen under pågående deploy (08:43-fallet).
+      larma(
+        "info",
+        "omstart-uppskjuten",
+        "deploybygg pågår (ak1a-deploy.lock hålls) — omstart uppskjuten, deploy-kedjan äger pm2-omstarten",
+      );
     } else if (!takOk) {
       larma("varning", "omstarttak", "omstart-tak (1/min) — väntar nästa varv");
     }
@@ -251,7 +404,63 @@ async function kontrollvarv(externOckså) {
     larma("hogprio", "extern", c.text);
   }
 
-  return { a, b, c, interntOk };
+  // ── (d) Statiskt kontraktstest: HTML:ens egna tillgångar ────────────────
+  // Körs endast när (a) är OK — en nere-sida ägs av (a):s omstart-logik och
+  // kan inte kontraktstestas. DOKTRIN: ALDRIG pm2-omstart på trasig-bygg
+  // (omstart förlorar cachad HTML och lagar inget — tillgångarna är borta
+  // från disken; läkning = ombygge under låset, prod-synk/kraschvakt äger).
+  let d = { ok: true, hoppadeOver: true };
+  if (a.ok) {
+    const matning = await kollaStatiska();
+    const beslut = statisktBeslut({
+      sidaStatus: matning.sidaStatus,
+      tillgangar: matning.tillgangar,
+      // Lös-funktion: flock-proben (deployPagar spawnar en process) körs
+      // ENDAST när fyndbilden är trasig-bygg — friska varv betalar den aldrig.
+      deployPagar: () => deployPagar(),
+      supprimeradeVarv: st.statiskSupprimerade,
+    });
+
+    if (beslut.status === "gron") {
+      if (st.statiskFelvarv > 0 || st.statiskSupprimerade > 0) {
+        larma("info", "statisk-aterstall",
+          `statiska tillgångar GRÖNA igen efter ${st.statiskFelvarv} varv fel / ` +
+          `${st.statiskSupprimerade} undertryckta — ${beslut.text}`);
+      }
+      st.statiskFelvarv = 0;
+      st.statiskSupprimerade = 0;
+      st.statiskStatus = "gron";
+      st.statiskSenasteFel = null;
+      d = { ok: true, text: beslut.text };
+    } else if (beslut.status === "supprimerad-deploy") {
+      st.statiskSupprimerade++;
+      st.statiskStatus = "trasig-bygg (deploy pågår — larm undertryckt)";
+      st.statiskSenasteFel = beslut.text;
+      larma("info", "statisk", `varv ${st.statiskSupprimerade}: ${beslut.text}`);
+      d = { ok: true, undertryckt: true, text: beslut.text };
+    } else if (beslut.status === "supprimerad-fastlast" || beslut.status === "trasig-bygg") {
+      st.statiskFelvarv++;
+      st.statiskStatus = beslut.status === "trasig-bygg"
+        ? "trasig-bygg"
+        : "trasig-bygg (fastlåst deployundertryck)";
+      st.statiskSenasteFel = beslut.text;
+      // Kadens: första fyndet + var 10:e varv (påminnelse) + fastlåst eskalering
+      // = högprio; övriga varv = "fel" (loggen ska inte drunkna i incidenten).
+      const hogprio =
+        beslut.status === "supprimerad-fastlast" ||
+        st.statiskFelvarv === 1 ||
+        st.statiskFelvarv % 10 === 0;
+      larma(hogprio ? "hogprio" : "fel", "statisk", `varv ${st.statiskFelvarv}: ${beslut.text}`);
+      d = { ok: false, text: beslut.text };
+    } else {
+      // sida-nere: (a) äger klassen — notera endast läget i statusfilen.
+      st.statiskStatus = "sida-nere";
+      st.statiskSenasteFel = beslut.text;
+      d = { ok: true, hoppadeOver: false, text: beslut.text };
+    }
+  }
+
+  return { a, b, c, d, interntOk };
 }
 
 /** Huvudloop — evig; varje varv isolerat i try/catch (ALDRIG krascha). */
@@ -297,13 +506,36 @@ async function testlage() {
   console.log(rad("(a) framside", a, "GET / loopback → HTTP 200"));
   console.log(rad("(b) sok-api  ", b, "GET /api/sok?q=akm2 → 200 + JSON (404 = väntar deploy)"));
   console.log(rad("(c) extern   ", c, `GET ${EXTERN_URL} → 200 (nginx/cert)`));
+
+  // (d) statiskt kontraktstest — i driftläge: hogprio-larm, ALDRIG omstart.
+  let d = { ok: true, hoppadeOver: true };
+  if (a.ok) {
+    const matning = await kollaStatiska();
+    const beslut = statisktBeslut({
+      sidaStatus: matning.sidaStatus,
+      tillgangar: matning.tillgangar,
+      deployPagar: () => deployPagar(),
+      supprimeradeVarv: 0,
+    });
+    d = {
+      ok: !beslut.raknaSomFynd,
+      text: `${beslut.status}: ${beslut.text}` + (matning.fel ? ` [hämtningsfel: ${matning.fel}]` : ""),
+    };
+  }
+  console.log(rad(
+    "(d) statiskt ", d,
+    "GET / + HEAD:a dess _next/static-refs → alla 200 (trasig-bygg = hogprio-larm i drift, ALDRIG omstart)",
+  ));
+
   const interntOk = a.ok && b.ok;
-  console.log(
-    interntOk
-      ? `RESULTAT: INTERN PULS OK${c.ok ? " · EXTERN OK" : " · EXTERN FEL (hogprio-larm i drift)"}`
-      : "RESULTAT: INTERN PULS FEL (i driftläge: pm2-omstart + larm)",
-  );
-  process.exit(interntOk ? 0 : 1);
+  const statisktOk = d.ok;
+  const del = [
+    interntOk ? "INTERN PULS OK" : "INTERN PULS FEL (i driftläge: pm2-omstart + larm)",
+    statisktOk ? "STATISKT KONTRAKT OK" : "STATISKT KONTRAKT FEL (i driftläge: hogprio-larm, ingen omstart)",
+    c.ok ? "EXTERN OK" : "EXTERN FEL (hogprio-larm i drift)",
+  ].join(" · ");
+  console.log(`RESULTAT: ${del}`);
+  process.exit(interntOk && statisktOk ? 0 : 1);
 }
 
 // Entré: --test körs en gång; annars evig loop med totalkylningsnät.
@@ -313,6 +545,16 @@ if (TESTLAGE) {
     process.exit(2);
   });
 } else {
+  // Våg 179: enskild instans FÖRE loopen — en andra vakare (manuell start,
+  // dubbel pm2-post) avslutar sig själv istället för att dubblera omstarter.
+  const las = lasEnskildInstans();
+  if (!las.ok) {
+    console.log(`${nuIso()} PULSVAKTEN: redan igång (pid ${las.forrPid}) — denna instans avslutar (våg 179: inga dubbla vaktare)`);
+    process.exit(0);
+  }
+  if (las.togOver) {
+    console.log(`${nuIso()} PULSVAKTEN: tog över dött lås (föregångaren kraschade utan cleanup)`);
+  }
   huvudloop().catch((e) => {
     // Sista utvägen — ska i praktiken aldrig nås (loopen fångar allt själv).
     console.error(`${nuIso()} PULSVAKTEN OVÄNTAT STOPP: ${String(e).slice(0, 200)}`);

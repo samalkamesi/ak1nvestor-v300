@@ -19,6 +19,18 @@
  * Körs: pumpor var 15:e minut (min % 15 === 12).
  * FYND ⇒ data/vakten/feljakt-fynd.jsonl + stdout [FELJÄGT ...].
  * Ren jakt ⇒ EN grön rad. Exit 0 alltid.
+ * DEPLOYFÖNSTER (rond 44): medan flock /tmp/ak1a-deploy.lock hålls (prodbygg
+ * pågår) klassas F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
+ * väntat nere/omstartande (npm ci bygger om node_modules under levande pm2);
+ * äkta fel utan aktivt bygg förblir HÖG. Fjärde falsklarmet i familjen
+ * (rond 33/39/40/44) kurat i roten.
+ * OMTESTFÖNSTER (rond 50, sjätte familjeobservationen): nätverksfel UTAN
+ * aktivt bygg kan vara ett omstart-/lastspikfönster (09:13 UTC: /session
+ * timeout 3 min efter pm2-omstart under RAM-svält 503 MB — självläkt på 41 ms
+ * minuter senare). F3:nätverksfel omtestas ETT gången efter 20 s: svarar
+ * endpointen då → MEDEL "övergående, självläkt vid omtest"; fortfarande död
+ * → HÖG och resterande nätverksfel passeras utan omtest (snabbt genomlopp
+ * vid äkta haveri).
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -52,6 +64,16 @@ function bokfor(spår, allvar, fynd, bevis) {
 }
 
 function gron(spår, not) { console.log(`[FELJÄGT GRÖN] ${spår}: ${not}`); }
+
+// Deploybyggen (prod-synk.mjs "flock -w 900", deploya-contabo.sh "flock -n")
+// håller låset under hela npm ci + build + pm2 restart — i det fönstret är
+// appen väntat osvarande. Feljägten ska larma HÖG endast utan aktivt bygg.
+function deployPagar() {
+  try {
+    execSync("flock -n /tmp/ak1a-deploy.lock true", { timeout: 5000, encoding: "utf8" });
+    return false;                          // låset togs → inget bygg pågår
+  } catch (e) { return e.status === 1; }   // exit 1 = hålls av bygg; övrigt = ej deploy
+}
 
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
 function jagaKod() {
@@ -154,14 +176,46 @@ async function jagaApi(pass) {
     "tjanster/automation", "tjanster/bakgrund",
   ];
   let fel = 0;
+  const deploy = deployPagar();
+  // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
+  // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
+  let serverDodVidOmtest = false;
+  const omtest = async (v) => {
+    await new Promise((sov) => setTimeout(sov, 20_000));
+    try {
+      const r = await fetch(`${BAS}/api/studio/${v}`, {
+        headers: { "x-admin-password": pass },
+        signal: AbortSignal.timeout(15_000),
+      });
+      return r.status === 200;
+    } catch { return false; }
+  };
   for (const v of andpunkter) {
     try {
       const r = await fetch(`${BAS}/api/studio/${v}`, {
         headers: { "x-admin-password": pass },
         signal: AbortSignal.timeout(15_000),
       });
-      if (r.status !== 200) { fel++; bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`); }
-    } catch (e) { fel++; bokfor("F3-api", "HÖG", `/${v} nätverksfel`, String(e).slice(0, 60)); }
+      if (r.status !== 200) {
+        fel++;
+        if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        else bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`);
+      }
+    } catch (e) {
+      fel++;
+      if (deploy) {
+        bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      } else if (serverDodVidOmtest) {
+        bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt)`);
+      } else {
+        const levde = await omtest(v);
+        if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
+        else {
+          serverDodVidOmtest = true;
+          bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades`);
+        }
+      }
+    }
   }
   if (fel === 0) gron("F3-api", `${andpunkter.length}/${andpunkter.length} ändpunkter 200`);
 }
@@ -258,9 +312,14 @@ function jagaLoggar(vaktDir, rapportera, gronRapport) {
 async function jagaDrift(pass) {
   try {
     const r = await fetch(`${BAS}/`, { signal: AbortSignal.timeout(15_000) });
-    if (r.status !== 200) bokfor("F6-drift", "HÖG", `prod → ${r.status}`, "HTTP-kod != 200");
-    else gron("F6-drift", `prod ${r.status}`);
-  } catch (e) { bokfor("F6-drift", "HÖG", "prod osvarar", String(e).slice(0, 60)); }
+    if (r.status !== 200) {
+      if (deployPagar()) bokfor("F6-drift", "MEDEL", `prod → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      else bokfor("F6-drift", "HÖG", `prod → ${r.status}`, "HTTP-kod != 200");
+    } else gron("F6-drift", `prod ${r.status}`);
+  } catch (e) {
+    if (deployPagar()) bokfor("F6-drift", "MEDEL", "prod osvarar — deploybygg pågår", "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+    else bokfor("F6-drift", "HÖG", "prod osvarar", String(e).slice(0, 60));
+  }
   try {
     const mem = fs.readFileSync("/proc/meminfo", "utf8").match(/MemAvailable:\s+(\d+)/);
     const mb = mem ? Math.round(parseInt(mem[1]) / 1024) : 0;

@@ -1,0 +1,30 @@
+studio: auto s10-u2 (O6) DR-spåret: flock-lagret i dr-total BETEENDEBEVISAT + TOTAL-övning iteration 2 GRÖN 147,0 s — O4:s ärlighetsnot inlöst i förtid
+
+Nytt verktyg verktyg/dr-total-flockprov.mjs (spår 10, s10-u2 omgång 6):
+startar främmande kortlivad låshållare, startar dr-total (skall KÖA, ej
+exit 3 som gamla fillås-semantiken), samlar tre bevis och kör SAMTIDIGT
+hela kvartalsövningen — mallen 2026-12 = ETT KOMMANDO med gratis
+flock-om-verifiering (--hollare-sek N, default 25).
+
+Bevis (20:42–20:45 lokal, GRÖN exit 0): (i) re-exec — låsfilen bar
+pid=1225710 flock=1 med LEVANDE node-pid; (ii) kö-beteende — flock=1
+först efter 24,1 s bakom främmande 25 s-hållare (släpp ≈23,8 s, tids-
+konsistent; fillås-läget hade exit 3 direkt); (iii) 45 min bakdaterad
+död låsfil oskadlig — exit 3 uteblev.
+
+Övningen: kedja 1 39,9 s (restore 14,3 s · 1 288 041 dumprader · public
+60 tabeller/1 266 528 rader · fel 788 kända 0 okända) · kedja 2 39,8 s
+(161 678 rader · 4 955 r/s) · kedja 4 36,4 s (10/10 · sabotage 3/3) ·
+kedja 3 30,8 s (8 322 filer · klon 1 195 commits) — TOTALT 147,0 s ==
+väggklocka (iteration 1: 130,0 s; delta = lastläge, grinden läste
+MemAvailable 1 075 MB, omkörning overksam).
+
+Städning lokal PG maskinellt verifierad: PG17 NERE, /tmp/dr-total-*
+BORTA, total-låset SLÄPPT. Ärlighetsnot: en bevisetikett ("senast läst
+innan flock=1") är missvisande — kuri till 2026-12, bevisvärde opåverkat
+(dokumenterat i protokollet).
+
+Endast data/ + verktyg/*.mjs = INGET bygge; src/ orörd (tsc 0); R2 orörd;
+data/blogg/ orörd. Protokoll: DR-TOTAL-2026-09-16-FLOCKPROV.md + maskinellt
+överprotokoll AUTO-2 + 4 delprotokoll + DRIFTSBOKEN (DR-rad lead + sektion
+S10-U2 O6) + worklog.

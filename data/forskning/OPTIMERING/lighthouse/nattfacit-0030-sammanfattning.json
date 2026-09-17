@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-16T22:26:09.298Z",
+  "bas": "http://localhost:3000",
+  "namn": "nattfacit-0030",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "poang": {
+        "prestanda": 0.66,
+        "tillganglighet": 0.98,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1585,
+        "LCP": 4150,
+        "TBT": 844,
+        "CLS": 0,
+        "TTI": 6554,
+        "SI": 1652
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 87 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 87 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 748 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 748 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.3 s",
+          "rad": "Reduce JavaScript execution time — 2.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.8 s",
+          "rad": "Minimize main-thread work — 4.8 s"
+        }
+      }
+    }
+  ]
+}

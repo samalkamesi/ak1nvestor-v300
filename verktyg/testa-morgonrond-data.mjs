@@ -3,8 +3,10 @@
  * AK1A — Test av morgonrondens träff-%-parser
  * (src/components/ak1a/pro/morgonrond-data.ts — B2B-BESLUT §4a kort 1,
  * våg 61 bygg-3). Mönster som verktyg/testa-akm3-kalibrering.mjs:
- *   1. Genererar tmp_morgonrond_koll.ts i repots rot — importerar parsern.
- *   2. Kör den med: npx --yes tsx tmp_morgonrond_koll.ts
+ *   1. Genererar .tmp/tmp_morgonrond_koll.ts (o43: engångsyta — gitignorerad
+ *      + tsconfig-exkluderad; ALDRIG i rot, där en SIGKILL-läcka låser
+ *      typgrinden för hela trädet) — importerar parsern.
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_morgonrond_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller:
@@ -21,18 +23,19 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_morgonrond_koll.ts");
+const TMP_KAT = path.join(REPO, ".tmp");
+const TMP_TS = path.join(TMP_KAT, "tmp_morgonrond_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ───────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_morgonrond_koll.ts — GENERERAD av verktyg/testa-morgonrond-data.mjs. Raderas efter körning.
-import { lasVagvalideringTraff, tolkaVagvalideringText } from "./src/components/ak1a/pro/morgonrond-data";
+import { lasVagvalideringTraff, tolkaVagvalideringText } from "../src/components/ak1a/pro/morgonrond-data";
 
 const FIXTUR = [
   "# Vågvalidering — vågmotorns träffhistorik",
@@ -109,9 +112,17 @@ console.log("SUMMA: " + ok + " PASS, " + fail + " FAIL");
 process.exit(fail === 0 ? 0 : 1);
 `;
 
+// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o43) —
+// en SIGKILL-ad körning kan lämna filen kvar utan att tsc/grind någonsin
+// ser den; nästa körning skriver över (idempotent) och stada-tmp-ts.mjs
+// sopar gamla läckor.
+mkdirSync(TMP_KAT, { recursive: true });
 writeFileSync(TMP_TS, TS_KOD, "utf8");
 
 // ── 2) Kör tmp-filen ─────────────────────────────────────────────────────────
+// OBS (o43): process.exit inuti try MOSSAR finally i Node — tidigare version
+// läckte tmp-filen vid VARJE körning (även PASS); exit sker nu EFTER städningen.
+let slutkodWrapper = 1;
 try {
   // Windows + mellanslag i sökvägen: args-array + shell delar vid blanksteg —
   // därför EN citerad kommandosträng (repot ligger under "Workstation Z G4").
@@ -122,13 +133,12 @@ try {
     timeout: TIMEOUT_MS,
     shell: true,
   });
-  const slutkod = res.status ?? 1;
-  if (slutkod !== 0) {
-    console.error("testa-morgonrond-data: FAIL (avslutskod " + slutkod + ")");
-    process.exit(1);
+  slutkodWrapper = res.status ?? 1;
+  if (slutkodWrapper !== 0) {
+    console.error("testa-morgonrond-data: FAIL (avslutskod " + slutkodWrapper + ")");
+  } else {
+    console.log("testa-morgonrond-data: ALLT PASS");
   }
-  console.log("testa-morgonrond-data: ALLT PASS");
-  process.exit(0);
 } finally {
   try {
     unlinkSync(TMP_TS);
@@ -136,3 +146,4 @@ try {
     // tmp-filen fanns inte — inget att städa
   }
 }
+process.exit(slutkodWrapper);

@@ -1,0 +1,156 @@
+{
+  "slug": "am-04-marknadsstruktur",
+  "category": "AKTIEMARKNADEN I PRAKTIKEN",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Marknadsstruktur — hur handeln faktiskt fungerar",
+  "summary": "Avancerad kurs i aktiemarknadens praktik: marknadsstrukturen — en orders väg genom mäklare, handelsplatser, mörka pooler och avräkning; hur auktioner, algoritmer och fragmentering formar priset bakom kursrutan, och vad MiFID II:s regelverk försöker åstadkomma.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Följa en orders väg genom systemet: orderläggning, mäklare, handelsplats eller intern handel, matchning, clearing och avräkning · Kartlägga handelsplatsernas Europa: reglerade marknader, multilateral handelsplats (MTF), systematisk intern handel (SI) och mörka orderböcker — och skillnaden mellan ljus och mörk likviditet · Förklara prisbildningens tre lägen — öppnings- och stängningsauktion, intermittenta auktioner och kontinuerlig handel — och räkna volymviktade referenspriser (VWAP) · Beskriva algoritmhandeln och högfrekvenshandeln: marknadsgörande, indexarbitrage och fart som strategi, med flashkraschen 2010 som fallstudie · Redogöra för fragmenteringens logik och MiFID II:s verktyg: bäst-pris-kravet, dubbelvolymtaket för mörk handel, tickstorleksregler och transparensrapportering · Koppla strukturen till analysarbetet: varför en notering på en tunn aktie är ett annat slags faktum än en notering på en stor, och hur passiva flöden koncentreras till stängningsauktionen.",
+  "why": "Likviditetskursen (am-01) lär spreaden som kostnad och indexkursen (am-02) lär hur marknaden samlas — men båda förutsätter en marknad i bakgrunden vars struktur aldrig förklarats: var matchas egentligen orden, vad är en mörk pool, varför handlas samma aktie på många platser samtidigt, och vad gör fart och algoritmer med prisbildningen? Detta är familjens avancerade steg: strukturen bakom rutan. Kunskapen är inte kuriosa — den ändrar hur kursdata ska läsas. En notering från en tunn akties glesa handel är ett svagare prisfactum än en notering från en storsäljares kontinuerliga auktion; en stängningskurs som satts i en auktion med koncentrerat passivt flöde säger något annat än en mitt-på-dagen-kurs; och en avläsning av volym utan strukturkontext är en halv avläsning. Kursen gör aktiemarknadstrappan komplett: am-03 lär rutan, am-01 kostnaden, am-02 indexet — am-04 byggelsen bakom allt tre.",
+  "history": {
+    "origin": "Den första marknadsstrukturen var fysisk: handeln på börsens golv, där mäklare ropade order och noteringar sattes av mötet mellan röster i rummet. Open outcry-systemet —ropa ut order tills motpart hittats — bar en inbyggd transparens: allt som hände skedde framför alla. De fasta platserna växte fram som nationella börser under 1600- till 1800-talet, från Amsterdams börs till Stockholmsbörsen, och deras monopol var i praktiken regelverket: en aktie, en plats, en orderbok.",
+    "evolution": "Elektroniseringen från 1980- och 90-talen lösgjorde handeln från golvet: orderböcker flyttade till system och matchning blev mjukvara. Genombrottet för dagens struktur kom i två steg: amerikanska Reg NMS (2005) som krävde att order routas till bästa pris bland landets handelsplatser och därmed skapade det fragmenterade amerikanska landskapet, och europeiska MiFID I (2007) som bröt de nationella börsmonopolen och öppnade för multilaterala handelsplatser. Mörka pooler — orderböcker utan förhand synliga priser — växte fram på båda sidor av Atlanten som svar på behovet av att flytta stora order utan att synas i den ljusa orderboken.",
+    "modern": "Dagens europeiska struktur regleras av MiFID II (tillämpat 2018): harmoniserade tickstorlekar, dubbelvolymtak för mörk handel i aktier (4 procent per plats och 8 procent totalt per aktie vid införandet), krav på bäst möjliga resultat för kunden och omfattande transparensrapportering. Parallellt har tre mönster växt sig starka: stängningsauktionerna bär en växande andel av dagens volym i takt med passiva indexflöden (am-02), algoritm- och högfrekvenshandeln svarar för en stor del av orderflödet i de ljusa böckerna, och diskussionen om konsoliderad banddata och betalning för orderflöde (i princip inte tillåten i EU) pågår. Boken Flash Boys skildrar fartens fördelar och debatten från insidan — kursen lär mekanismerna bakom skeendet."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — en orders väg genom systemet",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Handelsplatsernas kartbild — ljus och mörk likviditet",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Prisbildning — auktioner och kontinuerlig handel",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Fart som strategi — algoritmer och högfrekvenshandel",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fragmentering och transparens — MiFID II:s verktyg",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — strukturkunskapen i analysarbetet",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — en orders väg genom systemet",
+      "intro": "Bakom varje notering i kursrutan ligger en kedja som tar sekunder att resa och två dagar att slutgöra — kedjan är marknadsstrukturens skelett.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Följ en order från början. En kund lägger en order hos sin mäklare — en köporder eller säljorder, oftast med antingen ett pris (limitorder, som bara kan verkställas till det priset eller bättre) eller utan (marknadsorder, som verkställs till bästa tillgängliga pris). Mäklaren har sedan val: att skicka ordern vidare till en handelsplats där den matchas mot en motorder, att ha en motpart internt (intern handel — om mäklaren gör det tillräckligt ofta och systematiskt räknas verksamheten som systematisk intern handel, SI), eller att ruta den dit förutsättningarna just då är bäst. Matchas ordern på en handelsplats sker det i orderbokens logik (km-069 lär mekanismen): bäst pris först, och vid samma pris den som väntat längst.\n\nEfter matchningen börjar den osynliga halvan. Clearing — clearinghuset ställer sig mellan parterna och garanterar att var och en får sitt, vilket gör att motpartsrisken försvinner ur handeln. Avräkning (settlement) — själva överföringen av aktier och pengar, i Europa normalt två börsdagar efter handeln (T+2), med en övergång till T+1 på väg. Hela kedjan — order på millisekunder, avräkning på dagar — är byggd för att åtskilja två risker: prisrisken (som mätts i kursrörelser, rs-01) och motpartsrisken (som clearinghuset bär). För läsaren av analyser är kedjan relevant av en enda anledning: kursen som rapporteras är en matchning i realtid bland alla dessa vägar — och vilken väg den tog påverkar hur mycket siffran säger."
+        },
+        {
+          "type": "definition",
+          "content": "Marknadsstruktur — de regler, platser och system som för en order från köpare till säljare: handelsplatser och deras orderböcker, mäklare och intern handel, clearing och avräkning, samt regelverken (i Europa MiFID II) som sätter ramarna för alltihop."
+        },
+        {
+          "type": "insight",
+          "content": "Handeln sker på millisekunder och slutgörs på dagar — marknadsstrukturens historia är historien om att hålla isär prisrisk och motpartsrisk, och varje del av kedjan är byggd för en av dem."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Handelsplatsernas kartbild — ljus och mörk likviditet",
+      "intro": "Samma aktie handlas inte på ett ställe längre — kartan har ljusa orderböcker, mörka pooler och mellanting, och sidorna kompletterar varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Reglerade marknader — börserna i traditionell mening, som Nasdaq Stockholm — driver ljusa orderböcker: priser synliga för alla innan handel, alla möter alla. Multilaterala handelsplatser (MTF) är samma modell under något enklare regelverk, ofta ägda av andra teknikföretag — de konkurrerar med hastighet, avgifter och incitament för dem som ställer tvåsidiga kurser. Systematisk intern handel (SI) är tredje formen: en bank eller mäklare som handlar mot sina kunders order ur eget lager, priserna publiceras efter handel men syns inte först. Och de mörka poolerna — mörka MTF:er och bankinterna system — visar inga priser alls före handel: order möts mot ett rådgivande pris som hämtats från den ljusa marknaden.\n\nLogiken bakom mörkret är inte mystik utan storlek. En institution som ska omplacera en position i ett litet bolag kan inte lägga hela ordern i den ljusa orderboken utan att flytta priset mot sig själv — orderboken är som en vågmarknad: den som ska köpa mycket syns, och priset rinner iväg före henne. Mörka pooler erbjuder att handela utan att visa handen, till priset av att hon inte heller ser marknaden — en avvägning mellan marknadspåverkan och prisvisshet. Regelverket har därför satt gränser: MiFID II:s dubbelvolymtak, infört 2018, begränsade mörk handel i aktier till 4 procent av volymen per plats och 8 procent totalt per aktie — en signal om var gränsen mellan nyttig och överdriven osynlighet ligger, även om taket senare omförhandlats. Kartbilden att minnas: den ljusa boken sätter priset, de mörka och interna formerna handlar runt det priset — alla hänger vid referensen från den synliga marknaden."
+        },
+        {
+          "type": "insight",
+          "content": "Ljusa böcker sätter priset, mörka pooler handlar vid det — strukturens paradox är att osynlig likviditet bara fungerar för att den synliga finns som referens."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Prisbildning — auktioner och kontinuerlig handel",
+      "intro": "Priset sätts på tre sätt under dagen: i auktioner som samlar order till en enda matchning, och mellan dem i den kontinuerliga handelns möte — referensprisen knyter ihop dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börsdagen börjar och slutar med auktioner. I öppningsauktionen samlas order under en tid — köp- och säljorder staplas utan att matchas — och vid auktionens slut matchas allt som kan matchas till ett enda pris: det pris som maximerar den omsatta volymen. Samma mekanism avslutar dagen i stängningsauktionen, och den stängningskurs som alla aktiesidor och grafer visar sätts just där — inte i den kontinuerliga handeln. Mellan auktionerna sker kontinuerlig handel: varje inkommande order matchas direkt mot det som står i orderboken (km-069), pris för pris. Vid extrema rörelser kan handelsplatserna dessutom trigga intermittenta auktioner som pausar den kontinuerliga handeln — som pausar den kontinuerliga handeln och låter order samlas igen, ett verktyg mot att priset springer ifrån sina motparter i panikartade lägen.\n\nAuktionernas vikt har vuxit med de passiva flödena: indexfonder som följer sitt index handlar gärna vid stängningen, där referenspriset är tydligast — vilket gör att en växande andel av dagens volym pressas ihop i dagens sista minuter (am-02 tar indexmekaniken). Referenspriserna knyter ihop dagen, och det vanligaste är VWAP — volymviktat medelpris. Räkningen: handlas 1 miljon aktier till 82,00 kronor och 1 miljon till 86,00 är VWAP (82 × 1 + 86 × 1) ÷ 2 = 84,00 kronor. Med ojämna volymer, säg 3 miljoner till 82,00 och 1 miljon till 86,00, blir VWAP (82 × 3 + 86 × 1) ÷ 4 = (246 + 86) ÷ 4 = 83,00 — volymen drar genomsnittet mot där handeln faktiskt skedde. Institutionella institutionen jämför sina utföranden mot VWAP som ett mått på hur bra de kom in och ut — det gör referenspriset till mer än kuriosa: det är handelns eget betygsblad."
+        },
+        {
+          "type": "insight",
+          "content": "Stängningskursen som alla refereras sätts i en auktion, inte i handelns ström — och VWAP är dagens sammanvägda facit: volymen väger varje pris med hur mycket som verkligen bytte ägare."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Fart som strategi — algoritmer och högfrekvenshandel",
+      "intro": "En stor andel av orderflödet i de ljusa böckerna kommer från algoritmer — och den snabbaste flanken, högfrekvenshandeln, har fart som affärsidé.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Algoritmhandel är överordnat begrepp: order styrs av program snarare än av en persons handpåläggning. Tre huvudfamiljer. Marknadsgörande: algoritmer som kontinuerligt ställer köp- och säljkurser i orderboken och lever på spreaden — de är moderna släktingar till börsgolvets marknadsgörare och fyller en funktion: utan tvåsidiga kurser blir handeln dyrare (am-01 lär spreadens kostnadssida). Indexarbitrage: algoritmer som håller aktier och indexderivat i linje med varandra — avviker priset från sin referens säljs det som blivit dyrt och köps det som blivit billigt tills skillnaden är borta; det är mycket av orsaken till att index och kurvor rör sig tillsammans. Execution-algoritmer: institutioners verktyg för att dela upp stora order i mindre bitar över tid — VWAP-algoritmer sprider order i proportion till förväntad volym just för att minimera marknadspåverkan.\n\nHögfrekvenshandel (HFT) är den snabbaste flanken: strategier som mäts i mikrosekunder, där fördelen ligger i att vara först — till exempel mellan två handelsplatser som ännu inte hunnit ta del av samma information. Boken Flash Boys skildrade just den kapplöpningen och debatten om huruvida fart är en tjänst eller en skatt på de långsammaste. Fartens riskbild illustreras tydligast av flashkraschen den 6 maj 2010, då amerikanska index föll kraftigt inom loppet av minuter — enskilda aktier till orimliga priser — för att sedan återhämta sig nästan lika snabbt. Uppföljningen visade hur snabba algoritmer som drog sig ur gjorde likviditeten tunn just när den behövdes som mest, och den händelsen har format efterföljande regelverk: intermittenta auktioner, circuit breakers och rapporteringskrav. För analysläsaren är poängen blygsammare men verklig: den ljusa orderbokens djup och tvåsidighet är till stor del algoritmiskt — det gör kurserna kontinuerliga och sprider smala, men det betyder också att likviditeten kan försvinna snabbare än en människa hinner reagera."
+        },
+        {
+          "type": "insight",
+          "content": "Algoritmerna gör handeln billig i det normala och tunn i det extrema — samma tvåsidighet som fyller orderboken varje millisekund kan tömma den på mikrosekunder när riskmodellerna säger stop."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fragmentering och transparens — MiFID II:s verktyg",
+      "intro": "Fragmentering var regelverkets pris för konkurrens — MiFID II:s verktyg är försöket att sy ihop det som brutits upp, utan att ta tillbaka fördelarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När MiFID I bröt börsmonopolen 2007 var avsikten konkurrens: fler platser, lägre avgifter, snabbare innovation. Priset blev fragmenteringen — samma aktie handlas nu på en handfull platser parallellt, och ingen enskild orderbok visar hela marknaden. MiFID II (2018) svarade med verktyg snarare än återmonopolisering. Bäst-pris-kravet: mäklare ska ta alla rimliga steg för att ge kunden bästa möjliga resultat — inte bara bästa pris, utan sammantaget utfall med hänsyn till kostnad, hastighet och sannolikhet att ordern verkställs. Transparensrapporteringen: genomförda affärer publiceras nästintill omedelbart, vilket gör att en samlad bild av marknaden kan byggas även när handeln är spridd. Dubbelvolymtaket: mörk handel i aktier begränsades (4 procent per plats, 8 procent per aktie vid införandet) för att hålla den ljusa orderboken — prissettaren — välmående. Tickstorleksreglerna: minsta prissteg harmoniserades efter pris och likviditet, vilket bland annat gjorde marknadsgörandet mer förutsägbart.\n\nTvå debatter fortgår. Den första gäller konsoliderad banddata — en enda ström av alla handelsplatsers priser, som skulle göra fragmenteringen osynlig för användaren; tekniken finns men formatet och finansieringen är fortfarande omstridda. Den andra gäller betalning för orderflöde (PFOF) — mäklare som får betalt för att skicka kundorder till en viss motpart, en modell som förekommer i USA men i princip inte är tillåten inom EU, just för att incitamenten kan stå mot kundens bästa pris. Nätmäklarkursen (km-070) tar affärsmodellerna kring vanliga handlares kostnader. Gemensamt för verktygen är tanken bakom: konkurrens mellan platser, men transparens om utfallet — ett fragmenterat system vars bitar ska gå att sätta samman igen av den som vill se helheten."
+        },
+        {
+          "type": "insight",
+          "content": "MiFID II:s grundtanke: låt handeln vara fragmenterad för konkurrensens skull, men tvinga fram transparens så att helheten kan återskapas — priserna får vara spridda, informationen ska inte vara det."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — strukturkunskapen i analysarbetet",
+      "intro": "Strukturkunskapen landar i analysen som läsregler: vad en notering säger beror på var den sattes, hur tunnt det handlades och vem som stod på andra sidan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre läsregler sammanfattar kursen. Regel ett: väga noteringens tyngd. En kursrörelse på en tunn aktie med liten volym kan vara en enda orders verk — inte marknadens samlade röst; samma rörelse i en stor aktie med bred volym är ett tyngre faktum. Volymfältet (am-03) blir strukturinformation, inte kuriosa: det anger hur många som stod bakom prisflytten. Regel två: läs auktionspriser som auktionspriser. Stängningskursen sätts i en auktion där passiva flöden är tungt representerade — den är dagens officiella facit men inte nödvändigtvis den kontinuerliga handelns jämvikt; den som jämför intradagsrörelser med stängningsnotiser jämför två slags priser. Regel tre: likviditet är ett tillstånd, inte en konstant. Orderbokens djup är algoritmiskt och kan försvinna i snabbhet — spreaden som är en krona i lugnt läge kan bli flera i oroligt (am-01), och stresstestet av en portfölj (st-02, km-032) ska räkna med att utförandet själv kostar mer just när försäljningen är som angelägenast.\n\nAktiemarknadstrappan är därmed komplett: am-03 lär rutan, am-01 handelns kostnad, am-02 indexets mekanik — och denna kurs byggnaden bakom: platserna, auktionerna, algoritmerna och regelverket. Avsluta med övningen: välj en stor och en liten aktie, läs deras aktiesidor vid stängning tre dagar i rad — notera volym, spann och hur mycket av kursrörelsen som kom i dagens sista-minuters-auktion (många sajter visar intradagsgraf). Skillnaden mellan de två aktiernas profil är strukturkunskapen i praktiken. Det är utbildning i att läsa marknadens mekanik — aldrig en uppmaning att handla i någon aktie."
+        },
+        {
+          "type": "insight",
+          "content": "En notering är inte bara ett pris utan en händelse med adress: vilken plats, vilken auktion, vilken volym, vilka motparter — analysens mognad börjar när siffran läses med sin adress."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch arbetade i en annan epoks struktur — mäklare, telefoner och papperskvitton — men hans kärnlärs levde kvar: marknadens kortsiktiga svängar är inte bolagets öde. Strukturkursen ger den läran en mekanisk grund: mycket av det som ser ut som marknadens domar — svängningar på tunn volym, prisflykt i stressade lägen — är strukturens fysik snarare än samlade omdömen om bolaget. Lynchs tålamod med bolag vars berättelse han förstod är, på strukturens språk, en vägran att låta orderbokens tillstånd tala om vad verksamheten är värd.",
+  "grahamSection": "Benjamin Grahams Mr Market erbjuder priser varje dag — marknadsstrukturen förklarar var buden ifrån kommer och varför de svänger. Grahams budgivare var en enda personifikation; dagens motsvarighet är en blandning av auktioner, algoritmer och fragmenterade orderböcker, vilket gör att samma sinnesstämningens svängningar kan förstoras av strukturens fysik. Säkerhetsmarginalens (km-030) logik stärks av kunskapen: ju tunnare och mer algoritmdriven priset sätts, desto oftare kan budet avlägsna sig från värdet — och desto viktigare är det att skilja pris från värde, vilket var Grahams kärnbudskap från första sidan.",
+  "ak1Section": "I AK1A:s metodik är denna kurs AKTIEMARKNADEN I PRAKTIKEN-familjens kröning: am-03 lär rutan, am-01 spreaden och likviditeten, am-02 index och passivt ägande — am-04 visar byggnaden bakom: handelsplatser, auktioner, algoritmer, MiFID II. Brobyggen: mot km-069 (orderbokens mekanik i detalj), km-070 (nätmäklarna och handelns kostnader för privatpersoner), flash-boys (boken som skildrar fartens kapplöpning), st-02 och km-032 (stresstester där likviditeten kan försvinna) samt rs-01 (prisriskens mått). Kursens läsregler — noteringens tyngd, auktionsprisens karaktär, likviditet som tillstånd — är skrivna för analysarbetets vardag."
+}

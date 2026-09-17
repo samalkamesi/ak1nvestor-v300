@@ -1,0 +1,567 @@
+{
+  "verktyg": "mimosa-paritet",
+  "version": "1.3",
+  "tid": "2026-09-16T04:12:35.057Z",
+  "katalog": "/home/ak1a/AK1",
+  "doman": "(^|/)(verktyg|\\.zcode|\\.zscripts)/",
+  "hoppaOver": "(testa-mimosa-paritet\\.mjs|\\.zscripts/dev\\.sh)$",
+  "skannadeFiler": 147,
+  "perKlass": {
+    "SSRF_EXTERN_LITERAL": {
+      "totalt": 6,
+      "hardade": 0,
+      "fynd": 0
+    },
+    "SSRF_INTERPOLERAD_FETCH": {
+      "totalt": 55,
+      "hardade": 55,
+      "fynd": 0
+    },
+    "SSRF_LOOPBACK": {
+      "totalt": 6,
+      "hardade": 0,
+      "fynd": 0
+    }
+  },
+  "fynd": [],
+  "fyndPoster": [],
+  "rapportPoster": [
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": ".zcode/vag102-deploya.mjs",
+      "rad": 68,
+      "bevis": "const r = await fetch(\"https://lab.ak1nvestor.com/\", { headers: { \"User-Agent\": \"ak1a-deploy-check\" }, signal: AbortSign",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/agent-status.mjs",
+      "rad": 73,
+      "bevis": "const r = await fetch(\"https://lab.ak1nvestor.com/\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/automation-motor.mjs",
+      "rad": 105,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/doda-lankar-externa.mjs",
+      "rad": 87,
+      "bevis": "const svar = await fetch(`${BAS}${sokvag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/doda-lankar.mjs",
+      "rad": 49,
+      "bevis": "const svar = await fetch(`${BAS}${sokvag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/evighetsmotor.mjs",
+      "rad": 82,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/evighetsmotor.mjs",
+      "rad": 98,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 159,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/${v}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/feljagaren.mjs",
+      "rad": 260,
+      "bevis": "const r = await fetch(`${BAS}/`, { signal: AbortSignal.timeout(15_000) });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/granssnittsvakt.mjs",
+      "rad": 101,
+      "bevis": "const res = await fetch(`${bas}/sitemap.xml`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/integritetsvakt.mjs",
+      "rad": 135,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/integritetsvakt.mjs",
+      "rad": 151,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/integritetsvakt.mjs",
+      "rad": 251,
+      "bevis": "const r = await fetch(`${BAS}/api/trafik`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/integritetsvakt.mjs",
+      "rad": 280,
+      "bevis": "const r = await fetch(`${BAS}${rutt === \"/\" ? \"/\" : rutt}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/kraschvakt.mjs",
+      "rad": 81,
+      "bevis": "const r = await fetch(\"http://localhost:3000/\", { signal: AbortSignal.timeout(tidsgransMs) });",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/m9-fabrik.mjs",
+      "rad": 373,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 85,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 101,
+      "bevis": "const svar = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 124,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 161,
+      "bevis": "const rk = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 184,
+      "bevis": "await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 205,
+      "bevis": "const resatt = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 222,
+      "bevis": "const kick = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 262,
+      "bevis": "const fj = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 313,
+      "bevis": "await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/mal-hjartslag.mjs",
+      "rad": 335,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/minnesberedare.mjs",
+      "rad": 60,
+      "bevis": "const s = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/minnesberedare.mjs",
+      "rad": 78,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/mobil-lasbarhet.mjs",
+      "rad": 63,
+      "bevis": "const r = await fetch(`http://127.0.0.1:${PORT}/json`);",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/organism-halsa.mjs",
+      "rad": 87,
+      "bevis": "const res = await fetch(\"http://localhost:3000/api/studio/mal/status\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prestanda-cv-funktionssond.mjs",
+      "rad": 77,
+      "bevis": "const nySida = await fetch(`http://127.0.0.1:${PORT}/json/new?about:blank`, {",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prestanda-mat.mjs",
+      "rad": 190,
+      "bevis": "const nySida = await fetch(`http://127.0.0.1:${PORT}/json/new?about:blank`, { method: \"PUT\" }).then((r) => r.json());",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prestanda-mat.mjs",
+      "rad": 217,
+      "bevis": "await fetch(`http://127.0.0.1:${PORT}/json/close/${nySida.id}`);",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prestanda-skiftspar.mjs",
+      "rad": 27,
+      "bevis": "const listor = await (await fetch(`http://127.0.0.1:${PORT}/json/list`)).json();",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prestanda-sond-sl.mjs",
+      "rad": 264,
+      "bevis": "const nySida = await fetch(`http://127.0.0.1:${PORT}/json/new?about:blank`, { method: \"PUT\" }).then((r) => r.json());",
+      "kontext": "loopback-mätverktyg"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prod-synk.mjs",
+      "rad": 87,
+      "bevis": "const r = await fetch(\"https://lab.ak1nvestor.com/\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "verktyg/prod-synk.mjs",
+      "rad": 239,
+      "bevis": "const r = await fetch(\"http://localhost:3000/api/studio/session\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 76,
+      "bevis": "const r = await fetch(`${BAS}/api/studio/mal/status`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 84,
+      "bevis": "const s = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 110,
+      "bevis": "await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/styrelse-rond.mjs",
+      "rad": 188,
+      "bevis": "res = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 33,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 56,
+      "bevis": "fetch(`${BAS}/api/studio/interaktion`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 93,
+      "bevis": "const statusRes = await fetch(`${BAS}/api/studio/stream`, { headers: HEADERS });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 111,
+      "bevis": "const rwRes = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 139,
+      "bevis": "const listaRes = await fetch(`${BAS}/api/studio/session`, { headers: HEADERS });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 146,
+      "bevis": "const felRes = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 157,
+      "bevis": "const saknadTurn = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-rewind.mjs",
+      "rad": 171,
+      "bevis": "const rwT = await fetch(`${BAS}/api/studio/session`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-scenarion.mjs",
+      "rad": 53,
+      "bevis": "const r = await fetch(`${BAS}${vag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-scenarion.mjs",
+      "rad": 68,
+      "bevis": "const a = await (await fetch(`${BAS}/api/studio/stream`, { headers: pass_ })).json();",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-scenarion.mjs",
+      "rad": 69,
+      "bevis": "const b = await (await fetch(`${BAS}/api/studio/stream`, { headers: pass_ })).json();",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-scenarion.mjs",
+      "rad": 80,
+      "bevis": "const m = await (await fetch(`${BAS}/api/studio/mal/status`, { headers: pass_ })).json();",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-scenarion.mjs",
+      "rad": 103,
+      "bevis": "const a = await (await fetch(`${BAS}/api/studio/audit`, { headers: pass_ })).json();",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 41,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 64,
+      "bevis": "fetch(`${BAS}/api/studio/interaktion`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 107,
+      "bevis": "const statusRes = await fetch(`${BAS}/api/studio/stream`, { headers: HEADERS });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 167,
+      "bevis": "const kartaRes = await fetch(`${BAS}/api/studio/stream`, { headers: HEADERS });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-tabbar.mjs",
+      "rad": 211,
+      "bevis": "const felRes = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-ttfb.mjs",
+      "rad": 44,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/stream`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-ttfb.mjs",
+      "rad": 71,
+      "bevis": "fetch(`${BAS}/api/studio/interaktion`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-studio-ttfb.mjs",
+      "rad": 121,
+      "bevis": "const statusRes = await fetch(`${BAS}/api/studio/stream`, { headers: HEADERS });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-styrelse.mjs",
+      "rad": 63,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/halsa`, { signal: AbortSignal.timeout(3_000) });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-styrelse.mjs",
+      "rad": 117,
+      "bevis": "const post = await fetch(`${BAS}/api/studio/styrelse`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-styrelse.mjs",
+      "rad": 138,
+      "bevis": "const res = await fetch(`${BAS}/api/studio/styrelse?id=${encodeURIComponent(id)}&senast=${String(senast)}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/testa-tradspermanens.mjs",
+      "rad": 62,
+      "bevis": "const res = await fetch(`${BAS}${sokvag}`, { headers: HEADERS, signal: AbortSignal.timeout(timeoutMs) });",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "verktyg/trafiklogg-hook.mjs",
+      "rad": 80,
+      "bevis": "await fetch(`${RUTT}?nyckel=${encodeURIComponent(nyckel)}`, {",
+      "kontext": "härdad-kontext"
+    }
+  ],
+  "exit": 0
+}

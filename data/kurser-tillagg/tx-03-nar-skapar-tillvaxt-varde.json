@@ -1,0 +1,156 @@
+{
+  "slug": "tx-03-nar-skapar-tillvaxt-varde",
+  "category": "TILLVÄXT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "När skapar tillväxt värde? — återinvesteringens matematik",
+  "summary": "Tillväxtfamiliens avancerade kurs: värdemotorn — hållbar tillväxttakt som produkten av ROIC och reinvesteringskvot, och spridningen mellan ROIC och kapitalkostnad som avgörande skiljelinjen mellan tillväxt som bygger värde och tillväxt som bränner det.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Förstå tillväxtkursens toppbyggnad — tx-01 skilde organisk från förvärvad tillväxt och tx-02 plockade isär volym, pris och mix; denna kurs frågar vad tillväxten är värd · Använda värdemotorns formel: hållbar tillväxttakt = ROIC × reinvesteringskvot · Räkna fram hur stor andel av resultatet som måste återinvesteras för en given tillväxt — och vad som då lämnas kvar som fritt kassaflöde · Skilja på spridningen ROIC minus kapitalkostnad som värdeskapandets tecken: tillväxt ovanför kapitalkostnaden bygger värde, tillväxt under den bränner det · Jämföra två bolag med identisk tillväxt men olika kapitalåterbetalning — och se att multiplerna följer spridningen, inte takten · Koppla tillväxtkvaliteten till AKM1:s TILLVÄXT-familj (V01–V03) och AKM2:s tillväxtdimension.",
+  "why": "Tillväxtfamiljens tidigare kurser har svarat på hur tillväxten kommer till stånd — organiskt eller förvärvat (tx-01), genom volym, pris eller mix (tx-02). Denna kurs svarar på frågan efter frågan: och vad är den värd? Intuitionen säger snabbt 'mer tillväxt är bättre', men värderingsmatematiken ger ett annat svar: tillväxt är endast en råvara, och dess pris är kapitalet som måste bindas för att åstadkomma den. Ett bolag som växer 8 procent med hög avkastning på investerat kapital kan göra det med en tredjedel av resultatet återinvesterat — resten är fritt. Ett bolag med samma tillväxt men avkastning under kapitalkostnaden måste återinvestera allt, och varje krona det binder förstör värde i takt med att den arbetar. Kursen bygger direkt på ROIC-kursen (roic-01), som gav spridningsbegreppet — här förs det tillbaka till tillväxtfamiljen och blir dess domslut. Den är avancerad av ett skäl: den multiplicerar tre tidigare kurser (tx-01, tx-02, roic-01) till ett enda räkneverk, och kräver att kapitalkostnadsbyggstenen (km-008) är bekant i åtminstone sin grova storlek.",
+  "history": {
+    "origin": "Att tillväxt inte är synonymt med värde är finansens motsägelsefullaste gamla insikt: järnvägsepokens bolag växte explosionsartat medan många ägare förlorade allt — kapaciteten byggdes snabbare än trafiken betalade den. Den teoretiska bryggan kom med Modigliani och Miller (1961), som visade att ett bolags värde är dess befintliga kapital plus nettot nuvärde av alla framtida investeringar — alltså att bara investeringar med avkastning över kapitalkostnaden tillför värde. Tillväxt i sig värderades alltså redan då som en fråga om avkastningens sida.",
+    "evolution": "Konsult- och värderingslitteraturen byggde praktiken under 1980- och 90-talet: value-based management-traditionen (Stern Stewart & Co:s EVA) och McKinseys Valuation-bibliotek (Copeland, Koller och Murrin) formulerade värdemotorn i dess moderna gestalt — tillväxttakt, avkastning på nytt kapital och värdefaktorn satt i system, med den klassiska regeln 'värde skapas när avkastningen på nytt kapital överstiger kapitalkostnaden'. Inom portföljförvaltningen förde Mauboussin och forskningen om avkastningens uthållighet (roic-01:s modernhistoria) in kvalitetssidan: bolag med hög och varaktig spridning är sällsynta, och just därför värdefulla. Falldoktrinen växte parallellt: detaljhandels- och dotcom-kriser där bolag med negativ spridning växte sig stora i värdestörande takt — expansion som liknade framgång ända till kassaflödet fick sitt tal.",
+    "modern": "I dag är värdemotorn standard i bolags presentationer och i aktieanalys: tillväxtguidance läses tillsammans med kravet på avkastning på inkrementellt kapital, och nyckeltalet 'inkrementell ROIC' är skärpningen av kursens kärnbegrepp. Debatten om tillväxt utan vinst — skalbolag med brännande kassaflöde men hög omsättningstillväxt (v19-kursens territorium) — är samma gamla fråga i modern förpackning: tillväxtens pris per krona kapital, och om spridningen någon gång vänder positivt. Kursens matematik har inte ändrats sedan Modigliani–Miller — bara dess modeväxlingar."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — tillväxt är en råvara med pris",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Formeln — värdemotorn ROIC × reinvesteringskvot",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — två bolag, samma tillväxt",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mätning — spridningen som värdeskapandets tecken",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — tillväxt är en råvara med pris",
+      "intro": "Två bolag kan växa lika snabbt — och ändå vara varandras motsatser i värdeskapande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Minnet från tillväxtkurserna hittills: den organiska och den förvärvade växten (tx-01) har olika källor och olika bördor — den förvärvade betalar goodwill, den organiska betalar kapacitet och utveckling. Volym, pris och mix (tx-02) visade rörelsens inre: samma tillväxtsumma kan vara fler sålda enheter, högre priser eller ett skifte mot dyrare varor — med olika hållbarhet och olika marginalverk. Men ingen av kurserna frågade vad tillväxten kostar i kapital. Det är denna kursens enda fråga, och den har en rak analogi i hushållsekonomien: en löneökning är bara en bra nyhet om den inte kräver dyrare pendling och högre boendekostnad — inkomsten räknas nettot mot vad som binds för att åstadkomma den.\n\nBolagets motsvarighet: varje krona tillväxt kräver kapital — lager som byggts, fabriker som restes, kundfordringar som växt (ln-04:s kapitalbindning). Frågan 'skapar tillväxten värde' är därför aldrig en fråga om takten utan om bytesförhållandet: hur mycket kapital som binds per krona nytt resultat, och vad det kapitalet hade kunnat avkasta någon annanstans. ROIC-kursen (roic-01) gav det senare måttet — spridningen mellan avkastning och kapitalkostnad. Denna kurs sätter det i arbete på tillväxtens sida."
+        },
+        {
+          "type": "definition",
+          "content": "Värdemotor — sambandet som gör tillväxttakt, avkastning och återinvestering till en enda beräkning: hållbar tillväxttakt = ROIC × reinvesteringskvot. Tillväxtens värde bestäms inte av takten utan av spridningen mellan ROIC och kapitalkostnaden."
+        },
+        {
+          "type": "insight",
+          "content": "Tillväxt är en råvara — dess pris är kapitalbindningen, och dess värde är spridningen mellan avkastning och kapitalkostnad: samma råvara, två helt olika affärer."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Formeln — värdemotorn ROIC × reinvesteringskvot",
+      "intro": "En multiplikation med tre läsningar — tillväxttakten, friheten och priset.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln lyder: hållbar tillväxttakt g = ROIC × reinvesteringskvot, där reinvesteringskvoten är andelen av resultatet som binds i verksamheten i stället för att lämnas till ägarna. Läsningen i tre riktningar gör den användbar. Baklänges — frågan 'vårt bolag växer 8 procent med ROIC 25 procent': reinvesteringskvoten måste då vara 8 ÷ 25 = 32 procent; en tredjedel av resultatet återinvesteras, två tredjedelar blir fritt. Framåt — 'ROIC 20 procent och hälften av resultatet återinvesteras': tillväxten blir 0,20 × 0,5 = 10 procent. Och som gräns — 'ROIC 8 procent, samma tillväxt 8 procent': reinvesteringskvoten måste vara 8 ÷ 8 = 100 procent; allt resultat binds, inget lämnar bolaget.\n\nSläktskapen med Du Pont-traditionen är rak (ln-01 bröt isär en kvot i tre bitar; här multipliceras två till en takt), och med kursen om återinvestering kontra utdelning (km-066) — reinvesteringskvotens komplement är precis det valet. Två varningar sätts tidigt. För det första gäller formeln bara avkastningen på NYTTP kapital — räkna spridningen på marginella investeringar, inte på genomsnittet av allt gammalt (ett bolag kan sitta på 30 procent i gamla fabriker och tjäna 5 på nästa). För det andra är 'hållbar' en idealisering: verkliga bolag växer i kliv och cykler (v12 tar stabiliteten, tx-02 mixens friktion). Formeln är en skelettberäkning — dess värde är att den tvingar fram båda talen samtidigt, och att den visar att ROIC och tillväxt är samma mynts två sidor, inte två fristående nyckeltal."
+        },
+        {
+          "type": "insight",
+          "content": "En multiplikation, tre läsningar: baklänges ger den friheten, framåt takten och vid gränsen priset — och alltid samma budskap: ROIC och tillväxt kan aldrig läsas var för sig."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — två bolag, samma tillväxt",
+      "intro": "Åtta procents tillväxt i båda fallen — resten är två olika ekonomier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolag A och bolag B växer båda med 8 procent per år. A: ett mjukvarubolag med ROIC 25 procent, kapitalkostnad 9 procent (WACC i en grov uppskattning — kursen km-008 går igenom byggstenarna). B: en detaljhandelskedja med ROIC 8 procent, samma kapitalkostnad 9 procent. Steg ett — reinvesteringskvoten: A måste återinvestera 8 ÷ 25 = 32 procent av resultatet, B måste återinvestera 8 ÷ 8 = 100 procent. Steg två — fritt kassaflöde: av varje hundra kronor resultat behåller A 68 kronor fria, B noll. Steg tre — spridningen: A ligger 25 − 9 = +16 procentenheter över kapitalkostnaden, B ligger 8 − 9 = −1 procentenhet under.\n\nNu värdemätningen: när A återinvesterar 100 mkr skapas värde i roic-01:s logik med spridningen gånger kapitalet — 16 procent × 100 = 16 mkr per år i värdeskapande utöver det återbetalade. När B återinvesterar samma 100 mkr förstörs 1 mkr per år — B betalar alltså för att växa: en tillväxtmaskin med läckande bassäng. Och ändå: båda bolagen växer 8 procent. En läsning som stannar vid tillväxttakten — presentationsbildens siffra, V01:s försäljningstillväxt — ser två likadana bolag. Värdemotorn ser en värdeskapare och en värdestörare. Det är kursens praktiska kärna: räkna alltid de tre stegen (kvot, frihet, spridning) innan tillväxtsiffran får betyda något — och notera att B:s enda väg till värdeskapande tillväxt inte är mer tillväxt utan högre ROIC (pris, mix, lägre kapitalbindning — tx-02:s hela verktygslåda)."
+        },
+        {
+          "type": "insight",
+          "content": "Samma tillväxt, 68 kronor fria mot noll, +16 mot −1 i spridning — tillväxttakten var den sista av siffrorna som skilde dem."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — spridningen som värdeskapandets tecken",
+      "intro": "Värderingen betalar för spridningen, inte takten — och det syns i multiplerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför är A värt mer än B? Därför att dess värde växer även utan ny emission, ny skuld eller nytänkande: varje års återinvestering tillför värde över kapitalkostnaden, medan B:s tillväxt måste finansieras med värde från ägarna — antingen genom att resultaten binds (som här) eller, när det inte räcker, genom ny emission som späder ägandet (rk-02 tar den mekanismen). Enklast syns skillnaden i vad ett resultat är värt: A:s 68 kronor fria per hundra är värda kapitaliserade som kassaflöde; B:s noll är inte värdefullt även om samma totaltillväxt — förväntansmarknaden sammanfattar skillnaden i multiplerna (vr-01:s multipelgap förklarar det strukturellt: bolag med varaktig positiv spridning betalar premie för det, och bolag med negativ spridning rabatteras).\n\nEn andra mätning: ROIC-ledarens rätt att köpa tillväxt. Ett bolag med ROIC 25 procent och WACC 9 procent kan betala upp till (25 − 9) ÷ 9 ≈ 1,78 kronor i värdeskapande per återinvestering krona — det är marginalen som gör förvärv (tx-01:s förvärvs-sida) rationella bara när inkrementell avkastning överstiger kapitalkostnaden. En tredje, varningens: spridningen är inte evig — konkurrensen angriper den (mt-02:s erosion), och forskningens budskap från roic-01 är att hög ROIC är mer beständig än hög tillväxt men aldrig permanent. Därför mäts tillväxtkvalitet bäst som ett paket: dagens spridning, dess historiska uthållighet och kapitalbehovets riktning (lättare eller tyngre). Samma paket är sedan AKM2:s tillväxtdimension i miniatyr — betyget faller på kvaliteten i motorn, inte på dess varvtal."
+        },
+        {
+          "type": "insight",
+          "content": "Multiplerna betalar för spridningen, förvärvet är rationellt bara över kapitalkostnaden och uthålligheten avgör priset — tre mätningar, en och samma teckentabell."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Värdemotorns fällor bor i genomsnitt mot marginal, i redovisningen och i berättelsen — kända blir de hanterbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: genomsnitts-ROIC på allt kapital. Formeln kräver avkastningen på nytt kapital — ett bolag vars gamla anläggningar tjänar 30 men vars nästa butik tjänar 6 har en värdemotor som ser strålande ut i genomsnittet men låter allt sämre på marginalen. Botemedlet: räkna inkrementellt (deltaresultat ÷ deltakapital över några år). Fälla två: redovisningens förskjutningar. Aktiverade utvecklingskostnader, kapitaliserade rörliga kostnader och leasing flyttar både täljare och nämnare (ln-02 om resultatkvalitet, km-023 om leasing) — normalisera innan formeln körs. Fälla tre: tillväxtens sista procent. Marknadsandelen kan inte växa för evigt; den sista tillväxtprocenten är alltid dyraste (marginalkunden lockas med rabatt — tx-02:s mix-fälla) och värdemotorn som räknas på historisk ROIC glömmer det. Botemedlet: låt reinvesteringskvoten stiga i beräkningen när bolaget närmar sig mättning.\n\nFälla fyra: kapitalkostnadens pseudoprecision. WACC är en uppskattning med hela sin kedja av antaganden (km-008 och vm-11 tar dess fällor) — och spridningen '±1 procentenhet' är inom bruset. Botemedlet: räkna med ett band och låt slutsatserna vila på storleksordningar (kursen om riskmatrisens principer, rs-04, är samma lärdom på annat område). Fälla fem: berättelsen 'tillväxt för tillväxtens skull' — management belönas på omsättning, bolaget växer, berättelsen låter som framgång; enda domslutet är spridningen (dotcom- och expansionskrisernas klassiker). Och som alltid i spåret: övningen är hantverket att läsa en verksamhets värdeskapande — aldrig en uppmaning att handla i den."
+        },
+        {
+          "type": "insight",
+          "content": "Fem fällor — genomsnitt, redovisning, sista procenten, pseudoprecision, berättelsen — ett gemensamt botemedel: inkrementella tal, normaliserade poster, band i stället för punkter och spridningen som enda domare."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — tillväxtkvalitet i AKM1:s metodik",
+      "intro": "I AK1A:s system är värdemotorn TILLVÄXT-familiens domslut — takten får sitt betyg först genom spridningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1:s TILLVÄXT-familj (V01–V03) mäter försäljningstillväxten, ARR-tillväxten och intäktsdiversifieringen — tre mått på rörelsens styrka och bredd. Värdemotorn läggs som fjärde lager: den kopplar samman lönsamhetssidan (V07–V09, ln-01, roic-01) och frågar vad V01:s tillväxttakt är värd i kapitalbindning. I AKM2:s tillväxtdimension betyder det att ett högt betyg kräver mer än snabb tillväxt — det kräver att den är kapitaleffektiv, alltså att reinvesteringskvoten är låg i förhållande till takten och att spridningen på nytt kapital är positiv och varaktig.\n\nKorsningarna binder samman hela utbildningen. Mot ROIC-kursen (roic-01): denna kurs är dess tillämpning på tillväxtsidan — spridningen, där hemma, blir här domslutet om tillväxtens värde. Mot moat-familjen (mt-01, mt-02): varaktig spridning kräver en vallgrav som håller konkurrenterna borta från avkastningen — tillväxt utan vallgrav är en inbjudan. Mot värderingen (vr-01, vm-03): multipelvalet följer motorn —höga multipler motiveras av hög spridning på nytt kapital, och PEG-talets (km-027) gamla problem belysts av att värdetillväxten per krona inte är takten utan takten gånger spridningen. Mot kapitalstrukturen (ks-01–ks-03): återinvestering och utdelning är samma budgets två sidor (km-066), och kapitalbindningen (ln-04) är motorns nämnare i praktiken. Avsluta med den levande övningen: välj två bolag ur kursuniversumet med liknande tillväxttakt, uppskatta ROIC på nytt kapital och reinvesteringskvot för båda — och skriv en rad om respektive värdemotor: frihet per resultat-krona och spridningens tecken. Gör om nästa år. Det är utbildningens kärna: tillväxt är en hastighet, värde är en riktning — och först när båda läses tillsammans vet läsaren om bolaget springer mot eller från sina ägares värde."
+        },
+        {
+          "type": "insight",
+          "content": "TILLVÄXT-familjen mäter rörelsens styrka, värdemotorn dess pris — och AKM2:s tillväxtbetyg faller på paketet: takt, kapitalbehov och spridning i ett."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch älskade växare — men hans bästa växare var bolag som kunde växa utan att fråga marknaden om mer kapital: bolaget som växer utan att behöva nytt eget kapital är hans version av den låga reinvesteringskvoten. Hans varning för 'diworsification' (tx-01:s historia) är samma lära i förvärvsversionen: tillväxt genom köp som sjunker under kapitalkostnaden är ingen tillväxt i värde. Lynchs snabba växare och tröga växare skiljs i hans system på takten — hans egen räkneregel, att vinstandelen som återinvesteras bör avkasta mer än ägaren kunnat få själv, skiljer dem på värdet.",
+  "grahamSection": "Benjamin Graham köpte inte tillväxtberättelser — han köpte värdefastsättningar med säkerhetsmarginal (km-030). Men hans krav på att företaget är finansiellt starkt och hans skepsis mot bolag som ständigt återkommer till marknaden för nytt kapital är värdemotorns tidigaste röst: bolag vars tillväxt ständigt kräver nytt kapital från ägarna är i Grahams läsning ett skuldbrev, inte en tillgång. Att värdeskapandet måste mätas mot kapitalets alternativkostnad var hela hans diskonteringsläras tysta fundament.",
+  "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familiens toppblock: tx-01 skiljer källorna, tx-02 rörelsens inre, och värdemotorn sätter priset — ROIC × reinvesteringskvot med spridningen som domslut, kopplad till AKM2:s tillväxtdimension där betyget faller på kapitaleffektiv tillväxt. Brobyggen: mot roic-01 (spridningsbegreppets hem), mot mt-01/mt-02 (varaktighetens källa) och mot vr-01 (multiplern som följer motorn)."
+}

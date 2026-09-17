@@ -1,0 +1,732 @@
+{
+  "verktyg": "mimosa-paritet",
+  "version": "1.3",
+  "tid": "2026-09-16T04:12:44.506Z",
+  "katalog": "/home/ak1a/AK1",
+  "doman": "standard (src/ + data/infra/)",
+  "hoppaOver": null,
+  "skannadeFiler": 677,
+  "perKlass": {
+    "SHELL_URL_LOOPBACK": {
+      "totalt": 1,
+      "hardade": 0,
+      "fynd": 0
+    },
+    "SSRF_INTERPOLERAD_FETCH": {
+      "totalt": 80,
+      "hardade": 80,
+      "fynd": 0
+    },
+    "PATH_API": {
+      "totalt": 1,
+      "hardade": 1,
+      "fynd": 0
+    },
+    "SSRF_EXTERN_LITERAL": {
+      "totalt": 5,
+      "hardade": 0,
+      "fynd": 0
+    }
+  },
+  "fynd": [],
+  "fyndPoster": [],
+  "rapportPoster": [
+    {
+      "klass": "SHELL_URL_LOOPBACK",
+      "allvarlighetsgrad": "info",
+      "fil": "data/infra/contabo/ak1a-varm.sh",
+      "rad": 17,
+      "bevis": "kod=$(curl -s -o /dev/null -w \"%{http_code}\" --max-time 30 \"http://127.0.0.1:3000$v\")",
+      "kontext": "loopback-sond"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/activity/route.ts",
+      "rad": 66,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/user_activities`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/beteende/route.ts",
+      "rad": 255,
+      "bevis": "fetch(`${rest.origin}/rest/v1/members?select=member_type&limit=1000`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/bookings/route.ts",
+      "rad": 64,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/bookings?id=eq.${encodeURIComponent(String(id))}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/bookings/route.ts",
+      "rad": 102,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/bookings?id=eq.${encodeURIComponent(String(riktigId))}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/konvertering/route.ts",
+      "rad": 107,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/${filtrum}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/kundbild/route.ts",
+      "rad": 26,
+      "bevis": "fetch(`${rest.origin}/rest/v1/members?id=eq.${encodeURIComponent(memberId)}&select=*`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/kundbild/route.ts",
+      "rad": 34,
+      "bevis": "fetch(`${rest.origin}/rest/v1/client_portfolios?member_id=eq.${encodeURIComponent(memberId)}&select=id,name,analysis_sta",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/members/route.ts",
+      "rad": 77,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/members?id=eq.${encodeURIComponent(id)}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 15,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/${table}?select=*&limit=0`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 93,
+      "bevis": "fetch(`${rest.origin}/rest/v1/members?select=member_type`, { headers: rest.headers, signal: AbortSignal.timeout(10000) }",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 94,
+      "bevis": "fetch(`${rest.origin}/rest/v1/client_portfolios?select=analysis_status`, { headers: rest.headers, signal: AbortSignal.ti",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 95,
+      "bevis": "fetch(`${rest.origin}/rest/v1/bookings?select=status`, { headers: rest.headers, signal: AbortSignal.timeout(10000) }),",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 96,
+      "bevis": "fetch(`${rest.origin}/rest/v1/user_activities?select=session_id,action,section,created_at&order=created_at.desc&limit=20",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 97,
+      "bevis": "fetch(`${rest.origin}/rest/v1/system_events?select=type,severity,message,created_at&order=created_at.desc&limit=200`, { ",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/stats/route.ts",
+      "rad": 99,
+      "bevis": "fetch(`${rest.origin}/rest/v1/client_portfolios?select=*&order=created_at.desc&limit=20`, { headers: rest.headers, signa",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/upload-analysis/route.ts",
+      "rad": 30,
+      "bevis": "const createRes = await fetch(`${rest.origin}/rest/v1/client_analyses`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/upload-analysis/route.ts",
+      "rad": 54,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/client_portfolios?id=eq.${portfolioId}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/upload-analysis/route.ts",
+      "rad": 65,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/utveckling/route.ts",
+      "rad": 154,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events?select=id&${filter}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/admin/utveckling/route.ts",
+      "rad": 195,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/oversattningar?select=scope_typ`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/ai-analys/generera/route.ts",
+      "rad": 44,
+      "bevis": "const existingData = await fetch(`${req.nextUrl.origin}/api/analysis/${ticker}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/ai-analys/generera/route.ts",
+      "rad": 115,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/booking/route.ts",
+      "rad": 23,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/bookings`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/booking/route.ts",
+      "rad": 83,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/bookings?id=eq.${id}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/akm3-kalibrering/route.ts",
+      "rad": 330,
+      "bevis": "const res = await fetch(`${sb.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/email/route.ts",
+      "rad": 172,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/portfolj-uppfoljning/route.ts",
+      "rad": 705,
+      "bevis": "const res = await fetch(`${sb.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/vagscan/route.ts",
+      "rad": 291,
+      "bevis": "const res = await fetch(`${sb.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/vagvalidering/route.ts",
+      "rad": 681,
+      "bevis": "const res = await fetch(`${sb.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/cron/vagvalidering/route.ts",
+      "rad": 729,
+      "bevis": "const res = await fetch(`${sb.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/email/route.ts",
+      "rad": 182,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/fas2-ansok/route.ts",
+      "rad": 57,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/fas2-ansok/route.ts",
+      "rad": 109,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events?type=eq.fas2_ansokan&select=id`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/konvertering/intention/route.ts",
+      "rad": 71,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/analys-efterfragad/route.ts",
+      "rad": 23,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/holding/route.ts",
+      "rad": 31,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/client_holdings?id=eq.${encodeURIComponent(holdingId)}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/portfolio/analys/route.ts",
+      "rad": 78,
+      "bevis": "fetch(`${rest.origin}/rest/v1/client_portfolios?id=eq.${encodeURIComponent(portfolioId)}&select=*`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/portfolio/analys/route.ts",
+      "rad": 82,
+      "bevis": "fetch(`${rest.origin}/rest/v1/client_holdings?portfolio_id=eq.${encodeURIComponent(portfolioId)}&select=*&order=created_",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/portfolio/route.ts",
+      "rad": 24,
+      "bevis": "const portfolioRes = await fetch(`${rest.origin}/rest/v1/client_portfolios`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/portfolio/route.ts",
+      "rad": 59,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/client_holdings`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/register/route.ts",
+      "rad": 39,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/members?id=eq.${member.id}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/member/register/route.ts",
+      "rad": 52,
+      "bevis": "const createRes = await fetch(`${rest.origin}/rest/v1/members`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/migrate-to-supabase/route.ts",
+      "rad": 14,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/${table}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/migrate-to-supabase/route.ts",
+      "rad": 32,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/${table}?id=neq.00000000-0000-0000-0000-000000000000`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/migrate-to-supabase/route.ts",
+      "rad": 41,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/${table}?on_conflict=${onConflict}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/organ/runda/route.ts",
+      "rad": 40,
+      "bevis": "fetch(`${rest.origin}/rest/v1/user_activities?created_at=gte.${sedan}&select=session_id`, { headers: rest.headers, signa",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/organ/runda/route.ts",
+      "rad": 41,
+      "bevis": "fetch(`${rest.origin}/rest/v1/members?select=id`, { headers: rest.headers, signal: AbortSignal.timeout(10000) }),",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/pro/admin/route.ts",
+      "rad": 98,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events?${filter}&select=id`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/stock-data/[ticker]/route.ts",
+      "rad": 89,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "PATH_API",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/studio/minne/route.ts",
+      "rad": 262,
+      "bevis": "const rot = namn === AGENTS_NAMN ? path.resolve(studioArbetsyta()) : path.resolve(minnesRot());",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/autonom/route.ts",
+      "rad": 128,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/beslut/route.ts",
+      "rad": 38,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/members?select=id&limit=1`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/djup/route.ts",
+      "rad": 57,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/organ_consultations`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/djup/route.ts",
+      "rad": 81,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/organ_consultations?id=eq.${consultationId}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/djup/route.ts",
+      "rad": 144,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/djup/route.ts",
+      "rad": 188,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/organ_consultations?${params}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/kommunikation/route.ts",
+      "rad": 122,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/marknadsforing/route.ts",
+      "rad": 119,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/styrelse/protokoll/route.ts",
+      "rad": 56,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/meeting_protocols`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/topplista/route.ts",
+      "rad": 48,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/track/route.ts",
+      "rad": 24,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/user_activities`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/app/api/trafik/route.ts",
+      "rad": 216,
+      "bevis": "fetch(`${rest.origin}/rest/v1/system_events?type=eq.trafik&select=created_at,details&order=created_at.desc&limit=3000`, ",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "src/lib/analys-motor.ts",
+      "rad": 282,
+      "bevis": "const r = await fetch(\"https://fc.yahoo.com\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "src/lib/analys-motor.ts",
+      "rad": 292,
+      "bevis": "const r2 = await fetch(\"https://query1.finance.yahoo.com/v1/test/getcrumb\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/autonom/organ-bus.ts",
+      "rad": 23,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/autonom/organ.ts",
+      "rad": 643,
+      "bevis": "await fetch(`${sb.origin}/rest/v1/${LOG_TABLE}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/blogg-speglar.ts",
+      "rad": 141,
+      "bevis": "const svar = await fetch(`${rest.origin}${sokvag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/blogg-utkast.ts",
+      "rad": 435,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/blogg-utkast.ts",
+      "rad": 566,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/kurs-speglar.ts",
+      "rad": 159,
+      "bevis": "const svar = await fetch(`${rest.origin}${sokvag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/kurs-speglar.ts",
+      "rad": 248,
+      "bevis": "const svar = await fetch(`${rest.origin}${sokvag}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/mediabibliotek.ts",
+      "rad": 285,
+      "bevis": "const res = await fetch(`${bas.origin}/storage/v1/bucket`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/mediabibliotek.ts",
+      "rad": 324,
+      "bevis": "await fetch(`${bas.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/mediabibliotek.ts",
+      "rad": 413,
+      "bevis": "const res = await fetch(`${bas.origin}/storage/v1/object/list/${MEDIA_BUCKET}`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "src/lib/netnet-motor.ts",
+      "rad": 112,
+      "bevis": "const r = await fetch(\"https://fc.yahoo.com\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/netnet-motor.ts",
+      "rad": 120,
+      "bevis": "const r2 = await fetch(`https://${host}/v1/test/getcrumb`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/organ-event.ts",
+      "rad": 48,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/referral.ts",
+      "rad": 257,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/referral.ts",
+      "rad": 285,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/sakerhet.ts",
+      "rad": 159,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/sakerhet.ts",
+      "rad": 236,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/signal-bus.ts",
+      "rad": 166,
+      "bevis": "await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/studio/styrelse.ts",
+      "rad": 506,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "src/lib/vagfundament-motor.ts",
+      "rad": 255,
+      "bevis": "const res = await fetch(\"https://fc.yahoo.com\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_EXTERN_LITERAL",
+      "allvarlighetsgrad": "info",
+      "fil": "src/lib/vagfundament-motor.ts",
+      "rad": 266,
+      "bevis": "const res2 = await fetch(\"https://query2.finance.yahoo.com/v1/test/getcrumb\", {",
+      "kontext": "fast-literal"
+    },
+    {
+      "klass": "SSRF_INTERPOLERAD_FETCH",
+      "allvarlighetsgrad": "high",
+      "fil": "src/lib/variabler-lagring.ts",
+      "rad": 330,
+      "bevis": "const res = await fetch(`${rest.origin}/rest/v1/system_events`, {",
+      "kontext": "härdad-kontext"
+    }
+  ],
+  "exit": 0
+}

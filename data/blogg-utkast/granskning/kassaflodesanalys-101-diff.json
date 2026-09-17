@@ -1,0 +1,8 @@
+{
+  "granskat": "data/blogg-utkast/m9-ko/kassaflodesanalys-101-v1.json",
+  "granskadAv": "agentfabrik auto-s1-u2 omgång 3 (2026-09-16)",
+  "rapport": "kassaflodesanalys-101-KONTROLL-2026-09-16.md",
+  "bedomning": "FLYTTKLAR — 0 nya rättningar; 87/87 maskinella kontroller gröna (medianer 10,8/3/0,78 på n=92/87/84, fördelning 26/28/33/9 med summakontroll, 10 bolagsrader, konverteringshärledningen aritmetiskt bevisad); juridik 2007:528 ren (juridikgrind-vakt flyttklar/grund/0 fynd); 911 = 0 träffar på 6 mönster; 3/3 internlänkar 200 + titelrenderade mot localhost; v151:s F1-rättning verifierad korrekt",
+  "anvandning": "Postlistan är TOM MED AVSIKT: v151-granskningens enda rättning (F1: fördelningsmeningen '— och 9 är negativa' → '— varav 9 negativa', de 9 negativa är delmängd av de 33 under 2 %) är REDAN verkställd i utkastet (2026-09-14) och nu verifierad. Determinismkedjan är sluten via F1-backtrack: med F1-meningen återställd reproduceras kvittots BÅDA md5:er (mallMd5 ad29b10651c263f553daf1a30b4c63a9, kandidatMd5 3331bfa49edcc2dc7a9a0fab64f22fe6) exakt ur committad fabrikkod + original-källan (bolagsunivers.json @ git f3f56268, md5 f4cee658… — dagens fil har vuxit 100→120 bolag, väntat). Ytterligare innehållsändringar på m9-serien går via verktyg/m9-fabrik.mjs (regenerering med nytt kvitto); exportvägen stryker '(utkast)' i titeln och kvittoavsnittet i bodyn. Publicering = kundens beslut (R2).",
+  "poster": []
+}

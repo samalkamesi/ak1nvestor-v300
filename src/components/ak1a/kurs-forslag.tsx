@@ -15,13 +15,31 @@
  * som det gamla mönstret orsakade (SSR=null, klient=förslag) försvinner.
  * För 404:or utan /kurser/-prefix (statisk /_not-found) blir resultatet []
  * på båda sidor — oförändrat beteende.
+ *
+ * SPÅR 7 s7-u3 (FLIGHT-KUREN 2026-09-17) — props bär ENDAST slugs; titlarna
+ * hämtas löst. Bakgrund: not-found-gränserna serialiseras av Next in i VARJE
+ * sidas RSC-flight inom gruppen — med {slug,titel}-objekt för 393 kurser
+ * skickades ~42 K onödig data på varje sidvisning (bevis: /om 48 K HTML varav
+ * 393 objekt; /kurser flight 155 K med KURSREGISTER DUBBELT: 393 titel-objekt
+ * + 396 register-objekt). Matchningen (Levenshtein) behöver bara slugs —
+ * titlarna är rent visningspolering och hämtas från /api/kurs-titlar ENDAST
+ * när ett förslag faktiskt visas (max 3 slugs, högst en gång per slug).
+ * No-JS-kontraktet (våg 81) består: länkarna renderas i server-HTML med
+ * läsbar slug-etikett; titeln är progressiv förbättring.
  */
 
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export type KursSlug = { slug: string; titel: string };
+/** Läsbar etikett ur en slug ("100-baggers" → "100 Baggers"). */
+function lasbarSlug(slug: string): string {
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((w) => (w.length <= 1 ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1)))
+    .join(" ");
+}
 
 function normalisera(s: string): string {
   try {
@@ -52,7 +70,7 @@ function avstand(a: string, b: string): number {
   return fore[n];
 }
 
-export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
+export function KursForslag({ sluggar }: { sluggar: string[] }) {
   const pathname = usePathname();
   const forslag = React.useMemo(() => {
     if (!pathname) return [];
@@ -65,13 +83,36 @@ export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
     if (!match) return [];
     const prefix = match[1] ?? "";
     const sokt = match[2];
-    return kurser
-      .map((k) => ({ ...k, d: avstand(sokt, k.slug) }))
+    return sluggar
+      .map((slug) => ({ slug, d: avstand(sokt, slug) }))
       .sort((a, b) => a.d - b.d)
       .slice(0, 3)
       .filter((k, i) => k.d <= Math.max(6, sokt.length / 2) || i === 0)
       .map((k) => ({ ...k, href: `/${prefix}kurser/${k.slug}` }));
-  }, [kurser, pathname]);
+  }, [sluggar, pathname]);
+
+  // s7-u3: titelpolering — hämtas först när förslag visas (404 är den
+  // enda ytan där komponenten renderar något). Deterministisk på servern
+  // (effect körs ej) ⇒ server-HTML och första klientrendering är identiska.
+  const nyckel = forslag.map((k) => k.slug).join(",");
+  const [titlar, setTitlar] = React.useState<Record<string, string>>({});
+  React.useEffect(() => {
+    if (!nyckel) return;
+    let aktiv = true;
+    fetch(`/api/kurs-titlar?slugs=${encodeURIComponent(nyckel)}`)
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, string>>) : {}))
+      .then((hamtade) => {
+        if (aktiv && Object.keys(hamtade).length > 0) {
+          setTitlar((fore) => ({ ...fore, ...hamtade }));
+        }
+      })
+      .catch(() => {
+        /* nätverksfel: slug-etiketterna består — graciös degradering */
+      });
+    return () => {
+      aktiv = false;
+    };
+  }, [nyckel]);
 
   if (forslag.length === 0) return null;
 
@@ -90,7 +131,7 @@ export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
               href={k.href}
               className="btn-marin group flex items-center justify-between gap-2 px-4 py-3"
             >
-              <span className="font-serif text-sm font-bold text-[#EDE6D6]">{k.titel}</span>
+              <span className="font-serif text-sm font-bold text-[#EDE6D6]">{titlar[k.slug] ?? lasbarSlug(k.slug)}</span>
               <span
                 aria-hidden
                 className="text-[#E8C766] transition-transform duration-150 group-hover:translate-x-1"

@@ -3,8 +3,9 @@
  * KVALITETSVAKTEN — AK1A:s kontinuerliga felsökningssystem.
  * Användarens direktiv: "vi måste ha system som ständigt söker efter fel och rättar".
  *
- * Skannar HELA sajten varje körning (lokalt eller via /api/cron/kvalitet kl 07:00
- * UTC) och skriver ÖVERSKRIVANDE rapport till data/rapporter/kvalitetsrapport-SENASTE.md.
+ * Skannar HELA sajten varje körning (dagligen 07:02 lokal av vaktpumporna
+ * enligt o35-schemat; manuellt via /api/cron/kvalitet) och skriver
+ * ÖVERSKRIVANDE rapport till data/rapporter/kvalitetsrapport-SENASTE.md.
  *
  * Sju kontroller:
  *   1. ÅÄÖ-bortfall i bokmaster-text — ALL text ur data/bokmaster/*.json matchas
@@ -29,6 +30,17 @@
  *      Fallanvändning om subprocessen inte kan köras: senaste rapportfilens
  *      SISTA RESULTAT/Totalt-rad (append-läge gör att första träffen kan vara gammal).
  *
+ * Därtill rapportsektioner 8–10 (motorer, ÅÄÖ-degenerering, sifferkonsistens)
+ * och sedan o39:
+ *  11. Typbaslinje — kör ALLTID node node_modules/typescript/bin/tsc --noEmit
+ *      via PROJEKTBINÄREN (ALDRIG npx: i deployfönstret kan npx lösa tsc till
+ *      cachens dummy-paket). Exit 0 = PASS; typfel = baslinjebrott (FEL —
+ *      typnollen är mekanisk sedan våg 133, men merge-committar passerar
+ *      pre-commit-grinden, så det dagliga 07:02-beviset är vakten). Saknad
+ *      binär / timeout / fel som ALLA pekar in i node_modules = MANUELL
+ *      (deploy-transient enligt K2/K3-precedensen — omätning bokförs ärligt,
+ *      vakten ger ALDRIG tyst PASS).
+ *
  * Statusregler (dokumenterade i rapporten):
  *   RÖD  = fler än 9 fel ELLER ogiltig JSON-fil
  *   GUL  = 1–9 fel ELLER fler än 99 manuella granskningar
@@ -42,6 +54,7 @@ import { spawn, spawnSync, execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { stadaTmpFiler } from "./tmp-stad.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "kvalitetsrapport-SENASTE.md");
@@ -312,8 +325,13 @@ const CITERINGS_UNDANTAG_STRANGAR = new Set([
 // JUST den varningen. FEL-nivåns juridiska fraser gäller ALLTID, även på
 // B2B-ytor (vakten sänker aldrig nivån för att bli grön), och privata ytor
 // varnar fortfarande för "kunder" (A8 oförändrat).
+// ROUTE-GRUPPSNORMALISERING (o39): pro-rutterna BOR i route-gruppen
+// src/app/(huvud)/pro/** — "(huvud)" är osynlig i URL:en men synlig i
+// källvägen, så globben ^src/app/pro/ matchade ALDRIG verkligheten (döda
+// regeln ⊕ dagligt falskt brus i MANUELL-kön). Normalisera bort alla
+// "(grupp)/"-segment FÖRE yta-matchen.
 const PRO_YTA_RE = /^(?:src\/app\/pro\/|src\/components\/ak1a\/pro\/|src\/lib\/pro\/)/;
-const arProYta = (kalla) => PRO_YTA_RE.test(kalla);
+const arProYta = (kalla) => PRO_YTA_RE.test(kalla.replace(/\([^/)]+\)\/?/g, ""));
 
 /** Läs FORBJUDNA_FRASER ur data/varumarke.json (komplicerar regexarna med "giu"). */
 function lasForbjudnaFraser() {
@@ -376,6 +394,7 @@ function sektionForbjudnaFras() {
   let undantagnaFiler = 0;
   let undantagnaStrangar = 0;
   let ytaUndantagnaKunder = 0;
+  let etikettUndantagnaKunder = 0;
   const sedda = new Set();
   for (const fil of filer) {
     const kalla = rel(fil);
@@ -407,6 +426,14 @@ function sektionForbjudnaFras() {
             // dokumenteras, men kräver ingen manuell granskning (endast
             // VARNING-nivån; FEL-fraserna gäller även här).
             ytaUndantagnaKunder += 1;
+          } else if (m[0].toLowerCase() === "kunder" && text.trim() === m[0]) {
+            // A8-ETIKETT (o39): en ENSAM etikett "Kunder" (hela strängvärdet,
+            // objekt-label i analysvyer — stock-analysis-view:s sektion om
+            // BOLAGETS kunder) namnger bolagsfakta, inte AK1A:s användare.
+            // A8 skyddar påståenden om relationen ("våra kunder"), som kräver
+            // meningskontext — ett ord har ingen. Löptext-träffar varnar
+            // fortfarande; undantaget räknas och syns i rapporten varje dag.
+            etikettUndantagnaKunder += 1;
           } else {
             manuella.push({ fil: k, plats: `rad ${rad} (${typ})`, ord: `${m[0]} → ${istallet}`, kontext: kontext(text, m.index, 50) });
           }
@@ -421,7 +448,8 @@ function sektionForbjudnaFras() {
   }
   info.push(`CITERINGS-UNDANTAG (A10): ${undantagnaFiler} fil(er) + ${undantagnaStrangar} sträng(ar) hoppades över — de CITERAR förbudet: ${[...CITERINGS_UNDANTAG_FILER].join(" · ")} · sträng-exakta negerande FAQ-frågor: ${[...CITERINGS_UNDANTAG_STRANGAR].map((s) => `"${s}"`).join(" / ")}`);
   info.push("FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning) · vakten sänker ALDRIG nivå för att bli grön");
-  info.push(`YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): A8-varningen "kunder" undantas på PRO-ytor (src/app/pro/**, src/components/ak1a/pro/**, src/lib/pro/**) — ${ytaUndantagnaKunder} träff(ar) undantagna som legitim B2B-terminologi; privata ytor varnar fortfarande och FEL-fraserna gäller överallt`);
+  info.push(`YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): A8-varningen "kunder" undantas på PRO-ytor (src/app/pro/** — inklusive route-gruppen src/app/(huvud)/pro/**, normaliserad — src/components/ak1a/pro/**, src/lib/pro/**) — ${ytaUndantagnaKunder} träff(ar) undantagna som legitim B2B-terminologi; privata ytor varnar fortfarande och FEL-fraserna gäller överallt`);
+  info.push(`A8-ETIKETT-UNDANTAG (o39): ${etikettUndantagnaKunder} ensam-etikett(er) "Kunder" (hela strängvärdet = objekt-label) undantagna — de namnger BOLAGETS kunder i analysvyer (fundamental analys-term), inte AK1A:s användare; löptext-träffar på "kunder" varnar fortfarande`);
   return { namn, fel, manuella, info };
 }
 
@@ -863,6 +891,132 @@ function sektionSiffror() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// SEKTION 11 — Typbaslinje: tsc --noEmit via PROJEKTBINÄREN (spår 8, o39)
+// ════════════════════════════════════════════════════════════════════════════
+// Typnollen (0 fel) är mekanisk vid varje commit (pre-commit-kroken, våg 138)
+// men MERGE-committar passerar grinden (grenarnas kod granskades var för sig)
+// och arbetsytan kan smutsas mellan commits — denna sektion ger det dagliga
+// 07:02-beviset att baslinjen lever i TRÄDET, oavsett väg in. Projektbinär,
+// aldrig npx (deployfönstret kan lösa tsc till cachens dummy-paket).
+function sektionTsc() {
+  const namn = "Typbaslinje (tsc --noEmit, projektbinär — nolla sedan våg 133)";
+  const fel = [];
+  const manuella = [];
+  const info = [];
+  const tscBin = path.join(REPO, "node_modules", "typescript", "bin", "tsc");
+
+  if (!existsSync(tscBin)) {
+    // node_modules byts av prod-synkens npm ci — saknad binär mitt i ett
+    // deployfönster är transient (prod-synkens ägande) men aldrig tyst PASS.
+    manuella.push({
+      fil: "node_modules/typescript/bin/tsc",
+      plats: "-",
+      ord: "saknad binär",
+      kontext: "projektets tsc-binär finns inte — pågående deploy (npm ci) eller saknat beroende; omkör vakten när deployen är klar",
+    });
+    info.push("projektbinären node_modules/typescript/bin/tsc saknas — baslinjen OMÄTT denna körning (deployfönster?)");
+    return { namn, fel, manuella, info };
+  }
+
+  const t0 = Date.now();
+  let sub;
+
+  // s8-u2 (SYSTEMKARTAN gap 5, kö 1): SIGKILL-läckor ur svitfamiljen (femton
+  // körskripts tmp_*.ts i roten, finally-unlink överlever ej kill) har BEVISAT
+  // brutit baslinjen och låst ALLA commits (2026-09-17 01:19). Vakten
+  // självläker FÖRE mätningen — signaturverifierat (verktyg/tmp-stad.mjs),
+  // transparent enligt o26-doktrinen: städningen syns i rapporten, tsc mäter
+  // det städade trädet. Skonade filer (trackade/signaturlösa) rörs aldrig —
+  // syns i tsc-utdata om de bryter baslinjen.
+  const stad = stadaTmpFiler();
+  if (stad.stadade.length > 0) {
+    info.push(
+      `tmp-städning FÖRE tsc: ${stad.stadade.length} signaturverifierad(e) genererad(e) fil(er) raderade (${stad.stadade.join(", ")}) — SIGKILL-läckeklassen mekaniserat oskadliggjord (gap 5 kö 1; verktyg/tmp-stad.mjs)`
+    );
+  }
+  if (stad.skonade.length > 0) {
+    info.push(
+      `tmp-städning skonade ${stad.skonade.length} fil(er) (${stad.skonade.map((s) => `${s.fil}: ${s.orsak}`).join("; ")}) — lämnade åt tsc, som flaggar dem tydligt om de bryter baslinjen`
+    );
+  }
+
+  try {
+    sub = spawnSync(process.execPath, [tscBin, "--noEmit"], {
+      cwd: REPO,
+      encoding: "utf8",
+      timeout: 120_000,
+      maxBuffer: 8 * 1024 * 1024,
+      env: { ...process.env, NO_COLOR: "1" },
+    });
+  } catch (e) {
+    manuella.push({
+      fil: "verktyg/kvalitetsvakt.mjs",
+      plats: "sektionTsc",
+      ord: "spawn-fel",
+      kontext: String(e?.message || e).slice(0, 160),
+    });
+    info.push("tsc kunde inte startas (spawn-fel) — baslinjen OMÄTT denna körning");
+    return { namn, fel, manuella, info };
+  }
+
+  const sek = ((Date.now() - t0) / 1000).toFixed(1);
+  const utdata = `${sub.stdout || ""}${sub.stderr || ""}`;
+
+  if (sub.error && sub.error.code === "ETIMEDOUT") {
+    manuella.push({
+      fil: "node_modules/typescript/bin/tsc",
+      plats: "-",
+      ord: "timeout",
+      kontext: `tsc --noEmit överskred 120 s (kall cache eller maskinlast) — baslinjen OMÄTT; kör "node node_modules/typescript/bin/tsc --noEmit" manuellt`,
+    });
+    info.push("tsc överskred budgeten 120 s — OMÄTT, inte godkänt (vakten ger aldrig tyst PASS)");
+    return { namn, fel, manuella, info };
+  }
+
+  if (sub.status === 0) {
+    info.push(`node node_modules/typescript/bin/tsc --noEmit — 0 fel på ${sek} s (typnollen mekanisk sedan våg 133; merge-vägen bevisas dagligen här)`);
+    return { namn, fel, manuella, info };
+  }
+
+  const felRader = utdata.split("\n").filter((r) => r.includes(" error "));
+  // Deploy-transient (K2/K3-precedensen): npm ci byter node_modules under
+  // fötterna — fel som ALLA pekar in i node_modules är prod-synkens fönster,
+  // inte ett baslinjebrott i src/.
+  const deployMisstanke = felRader.length > 0 && felRader.every((r) => r.includes("node_modules"));
+
+  if (deployMisstanke) {
+    manuella.push({
+      fil: "node_modules",
+      plats: "-",
+      ord: "deploy-misstanke",
+      kontext: `tsc exit ${sub.status} med ${felRader.length} felrader som ALLA pekar in i node_modules — troligen pågående deploy (npm ci byter trädet); omkör vakten efter deployen`,
+    });
+    info.push(`tsc exit ${sub.status} på ${sek} s — alla ${felRader.length} felrader inuti node_modules ⇒ klassad deploy-transient (MANUELL), inte baslinjebrott`);
+    return { namn, fel, manuella, info };
+  }
+
+  if (felRader.length === 0) {
+    manuella.push({
+      fil: "node_modules/typescript/bin/tsc",
+      plats: "-",
+      ord: "okänd utgång",
+      kontext: `tsc exit ${sub.status} utan tolkbara error-rader: ${utdata.trim().split("\n")[0]?.slice(0, 160) || "(tom utdata)"}`,
+    });
+    info.push(`tsc exit ${sub.status} på ${sek} s men inga tolkbara error-rader — OMÄTT, manuell uppföljning krävs`);
+    return { namn, fel, manuella, info };
+  }
+
+  info.push(`tsc exit ${sub.status} på ${sek} s — ${felRader.length} felrader ⇒ BASELINJEBROTT (typnollen gäller hela trädet, våg 133)`);
+  for (const r of felRader.slice(0, 40)) {
+    fel.push({ fil: "tsc", plats: "-", detalj: r.trim().slice(0, 220) });
+  }
+  if (felRader.length > 40) {
+    fel.push({ fil: "tsc", plats: "-", detalj: `… och ${felRader.length - 40} felrader till` });
+  }
+  return { namn, fel, manuella, info };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 function statusForSektion(s) {
   if (s.status) return s.status; // SKIP-genväg
   if ((s.fel ?? []).length > 0) return "FAIL";
@@ -924,6 +1078,7 @@ async function main() {
     await sektionMotorer(),
     await sektionAaoDegen(),
     sektionSiffror(),
+    sektionTsc(),
   ];
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);
@@ -940,7 +1095,7 @@ async function main() {
   md.push(`# KVALITETSVAKTEN — ${datum}`);
   md.push("");
   md.push(`- **Genererad:** ${startIso} (node ${process.version} på ${process.platform})`);
-  md.push(`- **Skript:** \`verktyg/kvalitetsvakt.mjs\` — körs dagligen 07:00 UTC via \`/api/cron/kvalitet\``);
+  md.push(`- **Skript:** \`verktyg/kvalitetsvakt.mjs\` — körs dagligen 07:02 lokal av vaktpumporna (o35) + manuellt via \`/api/cron/kvalitet\``);
   md.push(`- **Körtid:** ${((Date.now() - t0) / 1000).toFixed(1)} s`);
   md.push("");
   md.push("**Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.");
@@ -958,7 +1113,7 @@ async function main() {
   md.push("");
   md.push(`## ANTAL FEL: ${totalFel} | MANUELLA: ${totalMan} | STATUS: ${status}`);
   md.push("");
-  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering)._");
+  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering, typbaslinje)._");
   md.push("");
 
   mkdirSync(path.dirname(RAPPORT_SOK), { recursive: true });

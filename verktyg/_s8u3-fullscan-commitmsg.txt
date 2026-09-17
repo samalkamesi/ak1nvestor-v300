@@ -1,0 +1,17 @@
+studio: auto s8-u3 våg 178 Mimosa full-scan — hela trädet mätt + rotorsaksfixar: FÖRE 905 filer/16 fynd → EFTER 906/0 GRÖN [fabrik]
+
+Rondens bokning våg 178 (worklog r 11500) inlöst: mimosa-pariteten hade
+aldrig mätt HELA trädet (endast standarddomän + väktardomän). Tre
+rotorsaksfixar: (1) v1.4 KONSTANT-PROPAGEERING — `${X}` där X är filscope-
+const med ren http(s)-literal klassas som fast URL (loopback → info,
+annan → extern-literal-info); ENDAST host-bärande interpolat propageras,
+env/ternary/param-host förblir high (6 nya tester, varav 2 avgränsningar).
+(2) SHELL-case-vittne + dev.sh RIKTIGHÄRDAD: "localhost|127.0.0.1) ;;" =
+exekverad default-reject-validering — o23:s granskad-lämna-undantag
+AVVECKLAT i koden. (3) v85-e2e-skriptet (11 falska high, bär
+prod-loginflödet) flyttat ur gitignorad tool-results/ → verktyg/
+e2e-prod-studio-v85.mjs. Bevis: 26/26 PASS; full-scan 906/0 GRÖN med
+endast fixture-undantaget; standarddomän 682/0 oförändrad; skalfri-vakt
+GRÖN 175/0 (korsinstrument); tsc 0; inget bygge. Protokoll
+OPTIMERING/o29 + rådata fullscan-{fore,efter}. Syskon: o28 togs av s7-u2
+under fönstret → o29; granssnittsvakt.mjs (syskon-aktiv) orörd.

@@ -23,11 +23,12 @@ import sokindex from "../../public/sok-index.json";
  *utom robots-noindex automatiskt på 404-svar.
  */
 
-// Slug + titel per kurs (samma urval som grupp-not-found:arna, men utan
-// TS-casts — detta är en .js-fil och ska vara ren JavaScript).
-const KURSER = (Array.isArray(sokindex) ? sokindex : sokindex.kurser ?? [])
+// Slugs per kurs — matchningen behöver bara slugs; titlarna hämtas löst
+// via /api/kurs-titlar (SPÅR 7 s7-u3 flight-kur; denna rot-fil renderas
+// endast för HELT omatchade URL:er men följer samma kontrakt som grupperna).
+const SLUGGAR = (Array.isArray(sokindex) ? sokindex : sokindex.kurser ?? [])
   .filter((k) => typeof k.slug === "string" && k.slug.length > 0)
-  .map((k) => ({ slug: k.slug, titel: k.title ?? k.slug }));
+  .map((k) => k.slug);
 
 const NAV_KORT = [
   {
@@ -93,7 +94,7 @@ export default function GlobalNotFound() {
               </p>
 
               {/* Smarta kursförslag — fuzzy-matchar en gammal/ändrad kurslänk */}
-              <KursForslag kurser={KURSER} />
+              <KursForslag sluggar={SLUGGAR} />
 
               {/* Guld-hårlinje med mittornament */}
               <div aria-hidden className="mx-auto mt-7 flex max-w-xs items-center gap-3">

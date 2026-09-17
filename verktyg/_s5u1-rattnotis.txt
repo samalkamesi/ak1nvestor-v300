@@ -1,0 +1,1 @@
+studio: auto s5-u1 rättesnotis — commit e5c3459f:s blandläge (register 362 via kollisionsvärde, llms/karta 359) dokumenterat ärligt; disk GRÖN 362=362=362; syskonens kommande commit läker HEAD-konsistensen [fabrik]

@@ -8,10 +8,7 @@ import { Header } from "@/components/ak1a/header";
 import { Footer } from "@/components/ak1a/footer";
 import { LasyGlobal } from "@/components/ak1a/lasy-global";
 import { HomeSection } from "@/components/ak1a/sections/home-section";
-import { PrecSection } from "@/components/ak1a/sections/prec-section";
-import { AktierSection } from "@/components/ak1a/sections/aktier-section";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
-import { PortalSection } from "@/components/ak1a/sections/portal-section";
 import { RefMottagare } from "@/components/ak1a/ref-mottagare";
 
 // VÅG s7 (prestandaspåret 2026-09-15): sökmodalen lämnar startsidans kritiska
@@ -23,6 +20,42 @@ const SearchModalLaddad = dynamic(
   () => import("@/components/ak1a/overlays").then((m) => ({ default: m.SearchModal })),
   { ssr: false },
 );
+
+// VÅG s7 u2 (koddelning 2026-09-16): SPA-sektionerna PREC/AKTIER/PORTAL
+// renderas ALDRIG vid initial laddning (store:s standardsektion är "hem"),
+// men deras kod bundleades ändå ivrigt i startsidans kritiska chunk —
+// Lighthouse: unused-javascript poäng 0. Kedjan prec-section → StockAnalysis
+// View (83 kB källa) + portal-section → ClientPortal (81 kB) + aktier-section
+// (24 kB) är EXKLUSIVT ropade här (inga andra importörer) → next/dynamic
+// flyttar hela ~190 kB källkod ur den kritiska bunten. Första besöket på en
+// sektion hämtar dess chunk (en bråkdel av en sekund på bredband); HomeSection
+// lämnas ivrig — den äger LCP-heron.
+const PrecSectionLaddad = dynamic(
+  () => import("@/components/ak1a/sections/prec-section").then((m) => ({ default: m.PrecSection })),
+  { ssr: false, loading: () => <SektionsSkelett /> },
+);
+
+const AktierSectionLaddad = dynamic(
+  () => import("@/components/ak1a/sections/aktier-section").then((m) => ({ default: m.AktierSection })),
+  { ssr: false, loading: () => <SektionsSkelett /> },
+);
+
+const PortalSectionLaddad = dynamic(
+  () => import("@/components/ak1a/sections/portal-section").then((m) => ({ default: m.PortalSection })),
+  { ssr: false, loading: () => <SektionsSkelett /> },
+);
+
+/** Platshållare medan en uppskjuten sektions-chunk hämtas (visas endast vid
+ *  sektionsbyte efter interaktion — initial laddning renderar alltid "hem"). */
+function SektionsSkelett() {
+  return (
+    <div className="mx-auto flex min-h-[60vh] max-w-5xl items-center justify-center px-4">
+      <span className="animate-pulse font-serif text-sm text-muted-foreground">
+        Laddar sektion …
+      </span>
+    </div>
+  );
+}
 
 // ── M3 SPA-avveckling (2026-09-02) ─────────────────────────────────────────
 // Dessa sektioner duplicerar riktiga routes — valet omdirigeras dit i stället
@@ -135,9 +168,9 @@ export function SpaHem() {
         ) : (
           <>
             {section === "hem" && <HomeSection />}
-            {section === "prec" && <PrecSection />}
-            {section === "aktier" && <AktierSection />}
-            {section === "portal" && <PortalSection />}
+            {section === "prec" && <PrecSectionLaddad />}
+            {section === "aktier" && <AktierSectionLaddad />}
+            {section === "portal" && <PortalSectionLaddad />}
           </>
         )}
       </main>

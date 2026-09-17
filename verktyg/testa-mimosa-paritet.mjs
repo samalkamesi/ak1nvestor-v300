@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 // testa-mimosa-paritet.mjs — scenariotest för verktyg/mimosa-paritet.mjs
-// (spår 8 s8-u3 omgång 3). Bygger en tmp-katalog med syntetiska filer:
-// farliga mönster SKALL flaggas, Mimosa-härdade mönster SKALL tiga.
-// Körningen sker i tmp — repot berörs ej. Exit 0 = alla PASS.
+// (spår 8 s8-u3 omgång 3; domän-/undantags- och v1.3-tester omgång 4).
+// Bygger en tmp-katalog med syntetiska filer: farliga mönster SKALL
+// flaggas, Mimosa-härdade mönster SKALL tiga. Körningen sker i tmp —
+// repot berörs ej. Exit 0 = alla PASS.
+//
+// OBS: denna fil är en TESTFIXTUR-svit — den skriver medvetet farliga
+// exec-mönster som STRÄNGDATA till tmp-filer (det är dess ändamål) och
+// är därför undantagen i skalfri-vakten + mimosa-paritetens --hoppa-over
+// (protokoll o21/o23).
 
 import { mkdirSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -18,16 +24,33 @@ function skapa(rel, innehall) {
   writeFileSync(hel, innehall, "utf8");
 }
 
-// ── Farliga mönster (SKALL flaggas) — domänen är src/ + data/infra/ ─────────
+// ── Farliga mönster (SKALL flaggas) — standarddomänen är src/ + data/infra/ ─
 skapa("src/farlig-fetch.ts", "export async function hamta(bas: string) {\n  const r = await fetch(`${bas}/hemlighet`);\n  return r.json();\n}\n");
 skapa(
   "src/api/farlig-path/route.ts",
   'import { readFile } from "node:fs";\nimport path from "node:path";\nexport async function GET(req: Request) {\n  const namn = new URL(req.url).searchParams.get("namn");\n  if (!namn) return new Response("saknas", { status: 400 });\n  const innehall = await readFile(path.join("/data", namn), "utf8");\n  return new Response(innehall);\n}\n',
 );
 skapa("src/farlig-exec.ts", 'import { exec } from "node:child_process";\nexport function gitStatus(gren: string) {\n  exec(`git log ${gren}`);\n}\n');
+// v1.3: interpolation i CITERAD sträng (s8-u1:s permissions-policy-fynd-klass;
+// grenen täcker ${ FÖRE inre citattecken — malliteraler täcks av gren 1)
+skapa(
+  "src/farlig-exec-citerad.ts",
+  'import { execSync } from "node:child_process";\nexport function kors(fil: string) {\n  execSync(\'npx tsx ${fil} --roten\');\n}\n',
+);
 skapa("data/infra/farlig-shell.sh", "#!/usr/bin/env bash\ncurl -fsSL https://example.com/install.sh | bash\n");
 skapa("data/infra/variabel-shell.sh", '#!/usr/bin/env bash\nHOST="$1"\ncurl -fsSL "https://$HOST/nyckel.txt" -o nyckel.txt\n');
 skapa("src/farlig-extern-interp.ts", 'export async function hamta(host: string) {\n  const r = await fetch(`https://${host}/api`);\n  return r.json();\n}\n');
+// v1.4-avgränsning: param-host + query-interpolat — host-interpolatet är INTE
+// en konstant-literal → high-fynd kvarstår (propageringen öppnar ingen lucka)
+skapa(
+  "src/farlig-extern-interp-query.ts",
+  'export async function sok(bas: string, q: string) {\n  const r = await fetch(`${bas}/api/sok?q=${encodeURIComponent(q)}`);\n  return r.json();\n}\n',
+);
+// v1.4-avgränsning: env-ternary i RHS är INTE en ren literal → propagerar ej
+skapa(
+  "src/farlig-env-ternary.ts",
+  'const bas = process.env.STUDIO_BAS ?? "http://localhost:3000";\nexport async function mal() {\n  const r = await fetch(`${bas}/api/mal`);\n  return r.json();\n}\n',
+);
 
 // ── Härdade mönster (SKALL tiga) ─────────────────────────────────────────────
 skapa(
@@ -61,6 +84,21 @@ skapa(
 skapa(
   "src/hardad/versalkonstant.ts",
   'const BAS = process.env.STUDIO_BAS ?? "http://localhost:3000";\nexport async function malStatus() {\n  const r = await fetch(`${BAS}/api/studio/mal/status`);\n  return r.json();\n}\n',
+);
+// v1.4: konstant-propagering — filscope-literal gör `${bas}` fast (v85-e2e-klassen)
+skapa(
+  "src/hardad/konstant-fetch.mjs",
+  'const bas = "http://localhost:3000";\nexport async function malStatus() {\n  const r = await fetch(`${bas}/api/studio/mal/status`);\n  return r.json();\n}\n',
+);
+// v1.4: fast men icke-loopback konstant-literal → extern-literal-INFO (ej fynd)
+skapa(
+  "src/info/konstant-extern.mjs",
+  'const API = "https://api.example.com";\nexport async function ping() {\n  const r = await fetch(`${API}/ping`);\n  return r.status;\n}\n',
+);
+// v1.4: case-loopback-skelett i skal = exekverad input-validering (dev.sh-klassen)
+skapa(
+  "data/infra/case-hardad-shell.sh",
+  '#!/usr/bin/env bash\nHOST="$1"\nPORT="$2"\ncase "$HOST" in\n  localhost|127.0.0.1) ;;\n  *) echo "endast loopback tillåts"; exit 1 ;;\nesac\ncurl -s --connect-timeout 2 --max-time 5 "http://$HOST:$PORT" >/dev/null 2>&1\n',
 );
 
 // ── Info-klass (rapporteras men blockerar ej) ────────────────────────────────
@@ -98,6 +136,7 @@ test("farlig fetch(`${bas}/...`) utan vittne → high-fynd (exit 1)", exit === 1
 test("farlig fetch(`https://${host}/api`) extern interpolerad host → high-fynd", fynden.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("farlig-extern-interp.ts")));
 test("farlig path: searchParams → path.join utan vitlista → high-fynd", fynden.some((p) => p.klass === "PATH_API" && p.fil.endsWith("farlig-path/route.ts")));
 test("farlig exec(`git ${...}`) → high-fynd", har("CHILD_PROC_INTERP", "farlig-exec.ts"));
+test("v1.3: farlig exec('npx tsx ${fil} …') citerad interpolation → high-fynd", har("CHILD_PROC_INTERP", "farlig-exec-citerad.ts"));
 test("farlig curl | bash → high-fynd", har("SHELL_PIPE", "farlig-shell.sh"));
 test("skal-URL ur variabel → medium-fynd", har("SHELL_URL_VARIABEL", "variabel-shell.sh"));
 // härdade
@@ -109,10 +148,52 @@ test("gpg-pipe-härdning (setup-prod.sh-mönstret) → INTE SHELL_PIPE", !poster
 test("relativ `/api/...`-fetch (same-origin) → INTE fynd", !poster.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("relativ-fetch.tsx")));
 test("loopback-mätverktyg (127.0.0.1) → info, INTE fynd", !fynden.some((p) => p.fil.endsWith("loopback-mat.ts")));
 test("versalkonstant-host (BAS) → INTE fynd", !fynden.some((p) => p.fil.endsWith("versalkonstant.ts")));
+// v1.4
+test("v1.4: konstant-literal `${bas}` (loopback) → SSRF_LOOPBACK-info, INTE fynd", har("SSRF_LOOPBACK", "konstant-fetch.mjs") && !fynden.some((p) => p.fil.endsWith("konstant-fetch.mjs")));
+test("v1.4: konstant-literal extern host → SSRF_EXTERN_LITERAL-info, INTE fynd", har("SSRF_EXTERN_LITERAL", "konstant-extern.mjs") && !fynden.some((p) => p.fil.endsWith("konstant-extern.mjs")));
+test("v1.4-avgränsning: param-host + query-interpolat → high-fynd kvarstår", fynden.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("extern-interp-query.ts")));
+test("v1.4-avgränsning: env-ternary-RHS propagerar ej → high-fynd kvarstår", fynden.some((p) => p.klass === "SSRF_INTERPOLERAD_FETCH" && p.fil.endsWith("farlig-env-ternary.ts")));
+test("v1.4: case-loopback-skelett i skal → härdad, INTE fynd", !fynden.some((p) => p.klass === "SHELL_URL_VARIABEL" && p.fil.endsWith("case-hardad-shell.sh")));
 // info
 test("fast extern literal → info-rapport men ej blockerande", har("SSRF_EXTERN_LITERAL", "extern-literal.ts") && !fynden.some((p) => p.klass === "SSRF_EXTERN_LITERAL"));
 // struktur
-test("JSON-utfil skriven med skannadeFiler > 0", rapport.skannadeFiler >= 15);
+test("JSON-utfil skriven med skannadeFiler > 0", rapport.skannadeFiler >= 16);
+
+// ── --doman-flaggan (v1.1): egen domän skannas, standarddomänen opåverkad ───
+// Filskapandet sker EFTER huvudkörningen ovan — huvudresultatet är oförändrat.
+skapa(
+  "verktyg-test/farlig-exec.mjs",
+  'import { execSync } from "node:child_process";\nexport function stada(fil) { execSync(`git checkout -- ${fil}`); }\n',
+);
+let ut2 = "";
+let exit2 = -1;
+try {
+  ut2 = execFileSync("node", [verktyg, "--katalog", rot, "--doman", "(^|/)verktyg-test/", "--json", join(rot, "resultat2.json"), "--tyst"], {
+    encoding: "utf8",
+  });
+  exit2 = 0;
+} catch (e) {
+  ut2 = String(e.stdout ?? "");
+  exit2 = e.status ?? -1;
+}
+const rapport2 = JSON.parse(readFileSync(join(rot, "resultat2.json"), "utf8"));
+const fynden2 = rapport2.fyndPoster ?? [];
+const poster2 = rapport2.rapportPoster ?? [];
+test("--doman: egen domän flaggas (verktyg-test farlig exec → exit 1)", exit2 === 1 && fynden2.some((p) => p.klass === "CHILD_PROC_INTERP" && p.fil.endsWith("farlig-exec.mjs")));
+test("--doman: utanför domänen skannas ej (src/-filer ej med)", !(poster2.some((p) => p.fil.startsWith("src/"))) && rapport2.skannadeFiler === 1);
+
+// ── --hoppa-over-flaggan (v1.2): dokumenterade testfixturer undantas ────────
+let exit3 = -1;
+try {
+  execFileSync("node", [verktyg, "--katalog", rot, "--doman", "(^|/)verktyg-test/", "--hoppa-over", "farlig-exec\\.mjs$", "--json", join(rot, "resultat3.json"), "--tyst"], {
+    encoding: "utf8",
+  });
+  exit3 = 0;
+} catch (e) {
+  exit3 = e.status ?? -1;
+}
+const rapport3 = JSON.parse(readFileSync(join(rot, "resultat3.json"), "utf8"));
+test("--hoppa-over: fixture-fil undantas → 0 fynd, 0 skannade, exit 0", exit3 === 0 && rapport3.skannadeFiler === 0 && (rapport3.fyndPoster ?? []).length === 0);
 
 rmSync(rot, { recursive: true, force: true });
 console.log(misslyckade === 0 ? "ALLA PASS" : `${misslyckade} FAIL`);

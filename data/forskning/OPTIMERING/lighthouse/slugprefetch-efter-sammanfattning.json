@@ -1,0 +1,95 @@
+{
+  "datum": "2026-09-17T10:20:42.398Z",
+  "bas": "http://localhost:3000",
+  "namn": "slugprefetch-efter",
+  "sidor": [
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.55,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1926,
+        "LCP": 4999,
+        "TBT": 1191,
+        "CLS": 0,
+        "TTI": 6380,
+        "SI": 4029
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 94 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 94 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 707 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 707 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.6 s",
+          "rad": "Reduce JavaScript execution time — 2.6 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.9 s",
+          "rad": "Minimize main-thread work — 4.9 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/en/blogg",
+      "poang": {
+        "prestanda": 0.51,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1289,
+        "LCP": 4542,
+        "TBT": 5367,
+        "CLS": 0,
+        "TTI": 9377,
+        "SI": 4413
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 94 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 94 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 714 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 714 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "4.9 s",
+          "rad": "Reduce JavaScript execution time — 4.9 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "11.0 s",
+          "rad": "Minimize main-thread work — 11.0 s"
+        }
+      }
+    }
+  ]
+}

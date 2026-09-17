@@ -1,0 +1,72 @@
+{
+  "granskat": "data/blogg-utkast/energibolagens-utdelningspolitik.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-16, omgång 4)",
+  "rapport": "energibolagens-utdelningspolitik.md",
+  "bedomning": "FLYTTKLART EFTER C-POSTERNA — 0 blockerande fynd; samtliga 11 sifferpåståenden exakta i båda graftillstånden (115/120), inga falska superlativer (kontrast mot syskonguiden material+tillväxt). C1 kosmetiskt (readingMinutes mot kontraktet), C2/C3 är granskningens väsentliga: källattribueringen missar StockAnalysis som ensam källa för 3 av 13 bolag — däribland Neste, mittenvärdesbärare för skuld/EK (0,560) och P/E (16,05)",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen — verifierade med grep = exakt 1 träff före leverans). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 1,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts:194, ORD_PER_MINUT=600): Math.max(1, Math.round(890/600)) = 1. Exportvägen räknar om automatiskt — kosmetiskt men rättas enklast nu. Seriens andra verifierade instans (material+tillväxt: 924 ord → 2 mot filens 3) och den kraftigaste: två stegs avvikelse"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "body",
+      "gammalt": "publika nyckeltal (september 2026; källor Yahoo Finance och MarketStack)",
+      "nytt": "publika nyckeltal (september 2026; källor Yahoo Finance, MarketStack och StockAnalysis)",
+      "orsak": "Datakällans egna källfält: 10 av 13 energibolag bär Yahoo Finance + MarketStack (hamtat 2026-09-03) men TotalEnergies, Neste och Ørsted bär enbart StockAnalysis (hamtat 2026-09-15) — i både 115- och 120-tillståndet, alltså skrivfel, inte åldrad data. Substantiellt: Neste bär ensam mittenvärdet för skuld/eget kapital (0,560 — utkastets huvudtal) och ett av två mittenvärden för P/E (16,05); Ørsted är orsaken till n=12 på P/E och prognos"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "body (Källor och vidare läsning)",
+      "gammalt": "hämtade september 2026 från Yahoo Finance och MarketStack",
+      "nytt": "hämtade september 2026 från Yahoo Finance, MarketStack och StockAnalysis",
+      "orsak": "Samma ofullständiga attribuering som C2 på sin andra plats i texten (källsektionens universum-rad) — rättas i samma svep för konsekvens"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "title",
+      "gammalt": "Utdelningspolitiken inom energi — bas, extra och råvaraprisets mekanik",
+      "nytt": "Utdelningspolitiken inom energi — bas, extra och råvarapriset",
+      "orsak": "Nuvarande title är 70 tecken; Google trunkerar sökresultat runt 60 och branschguide-mallens span var 46–55. mx1-serien bär 70–84 (seriebeslut, andra verifierade instansen). Förslaget stryker bara svansordet och behåller alla sökord på 61 tecken"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "description",
+      "gammalt": "Energi är en av börsens utdelningstungaste branscher — och utdelningen rör sig med råvarapriset. Så läser du basutdelning, extrautdelning, kassaflödets uthållighet och de klassiska fällorna. Med källor.",
+      "nytt": "Energi är en utdelningstung bransch. Så läser du basutdelning, extrautdelning och kassaflödets uthållighet — med klassiska fällor och källor.",
+      "orsak": "Nuvarande description är 202 tecken mot SEO-normen ~150–160 (lakemedelsguidens 157 godkändes; serien bär 193–208). Förslaget håller 141 tecken med ämneskärnan och sökorden kvar"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "body (efter tredje utdelningsmodellen)",
+      "gammalt": "men också investeringsbehov som konkurrerar med utdelningen om samma kassa.",
+      "nytt": "men också investeringsbehov som konkurrerar med utdelningen om samma kassa. Universumets trettonde energibolag — Neste, raffinering och förnybara bränslen — hamnar mellan modellerna: råvarukänslighet som prospekteraren, investeringsprogram som elbolaget.",
+      "orsak": "Utkastet räknar '13 bolag' men namnger 12; Neste (som ensam bär mittenvärdet för skuld/EK och ett av P/E-mittenvärdena — se C2) lämnas okommenterad. Inte ett fel — grupperna är modeller, inte uttömmande klassificering — men notisen vägleder läsaren mot datasetet. Ankaret är unikt i filen (grep = 1 träff)"
+    },
+    {
+      "id": "D4",
+      "typ": "forslag",
+      "fil": "energibolagens-utdelningspolitik.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

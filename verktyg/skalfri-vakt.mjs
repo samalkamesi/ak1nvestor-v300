@@ -32,7 +32,7 @@ const jsonIndex = args.indexOf("--json");
 const jsonFil = jsonIndex >= 0 ? args.splice(jsonIndex, 2)[1] : null;
 const tyst = args.includes("--tyst");
 const kataloger = args.filter((a) => !a.startsWith("--"));
-if (args.some((a) => a.startsWith("--"))) {
+if (args.some((a) => a.startsWith("--") && a !== "--tyst")) {
   console.error(`Okänd flagga. Tillåtna: --json FIL, --tyst`);
   process.exit(2);
 }

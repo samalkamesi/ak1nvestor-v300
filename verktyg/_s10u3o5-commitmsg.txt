@@ -1,0 +1,19 @@
+studio: auto s10-u3 (O5) DR-övning KEDJA 3 KOMMANDORADISERAD — verktyg/dr-kedja3.mjs (kvartalsmallens fjärde steg, manualen §8:s bokade objekt "av annan agent än författaren") + FYND: git bundle verify godtar 60 % kapad bundle
+
+Objektval efter kollisionskontroll: restore-kärnan nio gånger levererad (kedja 1/2/4 restore-bevisade, 02:40-jungfrunatten först 09-17) — det icke-levererade var kvartalsmallens ENDA manuella steg: kedja 3 (serverfils-arkivet). DR-PROV-2026-09-16-KEDJA3.md §8 begärde själv sin kommandoradisering av annan agent än författaren; denna omgångsoinstans granskade O3:s artefakter utan delat minne.
+
+KOLLISIONSBOKFÖRING: s10-u1 bokade samma objekt 11:33Z, upptäckte mitt flock-fönster (pid 1096656) och viks frivilligt 11:37Z (s10-u5-precedenten) — deras ersättningsobjekt arkivera-server.mjs (F8-kön, veckoarkivering) komplementerar utan filöverlapp. Fabrikskollision bevis nr 7, 0 förlorat arbete.
+
+FYND (huvudresultatet) — git bundle verify är INTE ett integritetsbevis: verktygets självsabotage grep att verify GODTAR en 60 % kapad bundle och skriver "The bundle records a complete history" (den läser header/refs, ALDRIG packdatan) medan klonen dör ("early EOF", "index-pack died"). Första körningen RÖD på EGET trasigt domkontrakt (protokoll AUTO.md bevarat som fyndbevis), kuren: s3-sabotagets dom + huvuddomen för arkiv B = KLON-testet; verify behålls som nödvändigt (ej tillräckligt) delkontrakt. Samma buggklass som KEDJA3-F2 (exit 0 ≠ intakt ström). O3-manualens domORDLYDELSE "verify = komplett historia" motbevisad som huvuddom (deras bevisning höll — de körde också klon); regel för kommande övningar/crons: klon (eller fsck) är domen.
+
+GRÖN fullkörning (exit 0, protokoll DR-KEDJA3-2026-09-16-AUTO-2.md): sabotage 3/3 GRIPNA (kapad gzip · skräpfil med .tar.gz-ändelse · kapad bundle via klon) · ARKIV A server-repo-2026-09-16.tar.gz: gzip -t + full listning 8 435 poster + exkluderingskontrakt 0 brott (node_modules/.next/.git/tool-results/data-cache/data-backups) + restore 3,2 s → 7 903 filer + 532 kataloger == listat · src 666 ts/tsx-filer · ARKIV B server-git-2026-09-16.bundle: klon 9,4 s → 1 067 commits, klonad HEAD 59939c18 + ancestor-bevis (klonens HEAD ∈ trädets historia). TOTAL RTO 12,6 s (manualen 12,2 s = replikerbar). Spot-diff: 3/4 IDENTISKA + data/DRIFTSBOKEN.md SKILJER-FÖRKLARAD (trädets commit 07:35 > arkivets mtime 00:45 — RPO-visning; blind identisk-eller-RÖD-dom hade fällts falskt).
+
+Konventionsmätning bokförd i DRIFTSBOKEN (mot falska diskrepanser nästa omgång): manualens 8 436 poster/533 kataloger räknar MED rot-posten/rotkatalogen, verktyget utan (8 435/532) — SAMMA 7 903 filer; src-rader 200 991 (wc -l) = 201 657 (split('\n')-konvention) − 666 filer. Innehållet identiskt till sista raden.
+
+Verktyget bär hela dr-kedja2/4-mönstret: flock på /tmp/ak1a-dr-prov.lock (re-exec ≤ 900 s) + ram-/diskgrind (exit 75) + självsabotage + kontraktsdomar + RTO-mätning + maskinellt protokoll + GARANTERAD /tmp-städning (finally) + PG-städning enligt vilolägeskontraktet (ak1a_dr_* borta, PG17 nere — denna övning: PG17 nere före/efter, orörd).
+
+Kö till huvudagenten: INGEN NY — kvartalsmallen 2026-12-15 är nu FYRA KOMMANDON: node verktyg/dr-ovning.mjs + dr-kedja2.mjs + dr-kedja3.mjs + dr-kedja4.mjs. (Kvar oförändrat hos huvudagenten: cron vecko-arkivering (s10-u1:s pågående arkivera-server.mjs) · git gc vid lugnt fönster · kundnotis datorns hybrid-sync · jungfrunatt rad 3 bevisas 09-17.)
+
+KVD: node --check GRÖN · tsc 0 via projektbinär (pre-commit-grinden) · src/ orörd = INGET bygge · R2 orörd — inga priser/tier/publicering · data/blogg/ orörd · PG17 orörd (korrekt viloläge) · /tmp städat.
+
+[fabrik]

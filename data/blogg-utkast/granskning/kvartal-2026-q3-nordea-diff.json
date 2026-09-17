@@ -1,0 +1,117 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-nordea-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-17, omgång auto-s1-1789625727468)",
+  "rapport": "kvartal-2026-q3-nordea.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 96 sifferkontroller gröna mot källfilerna (vagvalidering-SENASTE.md rad NDA-SE.ST domdatum 2026-09-04; bolagsunivers.json NDA-SE.ST hämtat 2026-09-03 MASKINELLT IDENTISK mellan byggtidens vintage 0e399f13 [115 bolag] och dagens 144-fil; samtliga 10 medianer EXAKTA mot vintage 0e399f13 [finans 12 bolag]; sex kalenderfiler), juridikgrind REN enligt 2007:528 (5 verbträffar, samtliga nekande/neutrala; endast 2007:528 2 kap 5 § åberopad = ingen lagrumsblandning), 911 = 0 träffar/6 mönster/4 fält, länkar 15/15 interna + 1 externa HTTP 200. B1–B6 maskinella byten; C1–C6 förslag som kräver beslut. P/B-källkritiken (paketets bärande övning) aritmetiskt korrekt i alla led utom de tre dokumenterade talen B2/B3/B5.",
+  "anvandning": "Verkställ B-poster exakt (sök/ersätt i angivet fält — strängen maskinellt verifierad UNIK i filen). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 6,
+      "nytt": 4,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts: ORD_PER_MINUT=600, Math.max(1, Math.round(ord/600)) på titel+ingress+body): egen exakt räkning 2 455 ord → 4. Samma systematik som granskningsköns N5-flagga: 09-15-vintagens paket överskrider kontraktet medan sena 09-16-vintagen matchar. Exportvägen räknar om automatiskt — rättas enklast nu"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Källkritikens fall)",
+      "gammalt": "dividera med ROE 0,153 — och resultatet blir 140,4",
+      "nytt": "dividera med ROE 0,1534 — och resultatet blir 140,4",
+      "orsak": "21,537 ÷ 0,153 = 140,8; det redovisade 140,4 kräver källans fulla ROE 0,1534 (21,537 ÷ 0,1534 = 140,40). Härledningen fyra meningar senare använder redan 0,1534 korrekt — meningens indata var avrundad medan resultatet behöll fullprecisionen. I paketets eigen källkritikövning ('kontrollräkna multiplar') bör varje steg bära samma precision"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Värdering — PEG-noten)",
+      "gammalt": "ger 2,19",
+      "nytt": "ger 2,18",
+      "orsak": "12,976 ÷ 5,94 = 2,1845 → 2,18. Textens 2,19 uppstår bara om P/E först avrundas till 13,0 (13,0 ÷ 5,94 = 2,19) — blandad avrundningsväg i samma paket som övning C räknar med fulla 12,976. Punktens kärna (källans 8,87 matchar inte den egna konventionen) opåverkad"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "Därnäst följer Sandvik, Swedbank och Essity den 22 oktober, Alfa Laval den 27 oktober och AstraZeneca i slutet av månaden.",
+      "nytt": "Därnäst följer Handelsbanken och SKF den 21 oktober, Sandvik, Swedbank, Atlas Copco och Essity den 22 oktober och Alfa Laval den 27 oktober — AstraZenecas datum är ännu inte bolagsbekräftat (bolagets eventssida säger november, kalenderkällorna 30 oktober).",
+      "orsak": "Två fel i en mening mot kalenderkällorna: (1) universumskollegorna Handelsbanken (2026-10-21, onsdag) och SKF (2026-10-21) rapporterar FÖRE den 22:a och Atlas Copco (2026-10-22) samma dag — 'därnäst … 22 oktober' ger fel ordning och tre namn fattas; (2) AstraZeneca-redovisningen är ohedgad: källraden säger '2026-11 enligt bolagets eventssida; kalenderkällor anger 2026-10-30, ej bolagsbekräftat' — 'i slutet av månaden' presenterar det osäkra som säkert (NIKE-A2-familjen). Ersättningen täcker samtliga åtta universumskollegor med kalenderrad, korrekt ordnad"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Källkritikens fall — tre observationer)",
+      "gammalt": "de nordiska storbankerna i universumet ligger mellan 1,2 och 3,1",
+      "nytt": "de nordiska storbankerna i universumet — Handelsbanken, SEB och Swedbank — ligger mellan 1,6 och 2,1",
+      "orsak": "Medianvintagen (0e399f13): SHB-A 1,596 · SEB-A 1,945 · SWED-A 2,066 — spannet 1,60–2,07, avrundat 1,6–2,1. Utkastets endpoints 1,2 och 3,1 tillhör INTE storbankerna utan investeringsbolagen Öresund (1,167) och Latour (3,128). Rättningen STÄRKER argumentet: den härledda P/B 1,99 ligger mitt i det äkta spannet (och finansmedianen 2,01 bredvid)"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Källor — första punkten)",
+      "gammalt": "internt: data/rapporter/vagvalidering-SENASTE.json",
+      "nytt": "internt: data/rapporter/vagvalidering-SENASTE.md",
+      "orsak": "Per-ticker-domarna (NDA-SE-raden med 3 träffar/1 miss och momentana) finns ENDAST i md-spegeln; json-filen bär aggregaten (totalt, perHorisontKlass) men ingen NDA-rad — rekursiv sökning i json: 0 träffar. Källpekaren skall peka på filen som faktiskt bär det citerade"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag-r2",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-13",
+      "nytt": "(kundens beslut — R2)",
+      "orsak": "Publiceringsdatum är kundens vetoområde (R2). 10-13 (två dagar före rappdagen 10-15) följer seriemönstret (industrivärden 10-05 mot 10-07) och är ett rimligt default, men granskaren sätter inget nytt värde (ericsson/industrivärden-precedenterna)"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "är Nordea det som rapporterar tidigast av dem som ännu inte har ett läspaket",
+      "nytt": "var Nordea det som rapporterade tidigast av dem som då saknade läspaket",
+      "orsak": "Påståendet var SANT vid bygget 2026-09-15 (endast Ericsson-paketet fanns bland universumets tidiga rappdagar; övriga kollegor 21/10 eller senare) — men vid publiceringstillfället har HELA universumet paket (alla 12 har läspaket i dagens träd), och presens-formen 'är … ännu inte har' läses då falsk. Dåtidsformen gör meningen tidslös. Tidsmarkör-värde: urvalet dokumenterar bygbeslutet, inte dagens stock"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Så står sig bolaget mot branschen)",
+      "gammalt": "inom en knapp procentenhet från branschmedianen på i princip varenda rad",
+      "nytt": "nära branschmedianen på i princip varenda rad",
+      "orsak": "Bokstavligen sant endast för P/B (0,01) och ROE (0,7 pp); rörelsemarginalen ligger 3,8 pp och nettomarginalen 1,4 pp över, P/E 1,1 multiplar under. 'i princip varenda rad' bär delvis, men 'knapp procentenhet' är en mätning den inte håller för tre av fem rader — 'nära' säger samma sak utan att mäta om. Riktningarna i tankstrecksatsen ('P/E strax under, ROE strax över, marginaler strax över') är korrekta och behålls"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag-aktualisering",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "body (Stabilitet — skuldsättningspunkten)",
+      "gammalt": "aspektsidan för skuldsättning saknas för finansbranschen i aktuellt underlag just av den anledningen",
+      "nytt": "aspektsidan för skuldsättning saknades för finansbranschen när paketet byggdes (noll mätta bolag) men har sedan tillkommit — kontrollera läget vid publicering",
+      "orsak": "Sann vid bygget: aspekten uteslöts ur slutledsregistret 2026-09-14 med n=0 mätta finansbolag (våg 150-u2), och llms-vintagen 09-15 20:31 har ingen dataset/finans/skuldsattning-rad. I DAGENS träd renderar sidan med data (median 0,4x, 144-bolagsfilen) sedan dataset-djup-spåret vuxit finansgrenen. NDA:s egna fält förblir null — bolagspåståendet står sig, sidans existens förändrad. Uppdateras enklast före publicering"
+    },
+    {
+      "id": "C5",
+      "typ": "forslag",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "title",
+      "gammalt": "Nordeas Q3-rapport 2026: så läser du den — seriens första bankpaket, med två valutor och en källkritisk övning",
+      "nytt": "Så läser du Nordeas Q3-rapport 2026 — banknyckeltal och P/B-fallet",
+      "orsak": "110 → 66 tkn. Ericsson-precedenten (C1 i kvartal-2026-q3-ericsson-diff.json): långa titlar klipps i mobila sökträffar (tak ~60); sökorden Nordea + Q3-rapport + 2026 bevaras, och 'P/B-fallet' bärs av paketets bärande övning. Seriebred praxis spretar (77–245 tkn) — därför förslag, inte byt: titellängden bör avgöras serieenhetligt"
+    },
+    {
+      "id": "C6",
+      "typ": "forslag",
+      "fil": "sa-laser-du-nordea-q3-2026.json",
+      "falt": "description",
+      "gammalt": "Nordea publicerar tredje kvartalet 2026 torsdagen 15 oktober. Här är läspaketet: vågvalideringens öppna kvitto med tre träffar och en miss, nyckeltalen mot finansbranschens medianer — och en genomgång av hur en uppenbart felaktig P/B-siffra avslöjas med identiteten P/E = P/B ÷ ROE. Scenariorutan räknas i ren aritmetik på euro-basen, och varje siffra har sin källa.",
+      "nytt": "Nordea redovisar Q3 2026 torsdagen 15 oktober. Läspaketet: vågkvittot, nyckeltalen mot finansmedianerna — och hur en felaktig P/B avslöjas med P/E = P/B ÷ ROE.",
+      "orsak": "366 → 158 tkn. SEO-fönstret ~155–160 (ericsson-precedenten C2): veckodag + datum (verifierat: 2026-10-15 = torsdag), alla tre budskapen (vågkvitto, medianjämförelse, P/B-övningen) och identitetsformeln bevaras; 'scenarioruta … källa'-meningen är body-innehåll. Seriebred praxis spretar — förslag, inte byt"
+    }
+  ]
+}

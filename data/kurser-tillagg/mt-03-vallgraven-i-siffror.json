@@ -1,0 +1,156 @@
+{
+  "slug": "mt-03-vallgraven-i-siffror",
+  "category": "MOAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Vallgraven i siffror — att mäta en moats styrka och livslängd",
+  "summary": "Kröningskursen i moat-familjen: att sätta siffror på konkurrensövertaget — hur starkt överskottet är i kronor, hur länge persistensstudier säger det består, hur fort det avmattas och vilka fem mätetal som följer vallgraven år för år.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Omsätta vallgraven från adjektiv till aritmetik: överskottsavkastningen (ROIC minus avkastningskravet) gånger investerat kapital = vallgravens värde i kronor per år · Förstå persistens och reversion — lönsamhetens beständighet studeras över decennier, och hastigheten i avmattningen (fadet) är vallgravens halveringstid · Räkna överskott och fade i ren aritmetik: spridningen 8 procentenheter på 1 250 miljoner investerat kapital = 100 miljoner överskott om året, och en halvering på sex år motsvarar omkring elva procents årlig avmattning · Känna fem mätetal — ett per vallgravskälla: kundbortfall för byteskostnader, täthet för nätverk, kostnadsavstånd för kostnadsläge, prispremie för varumärke, licenslöptid för regulatoriskt skydd · Känna fällorna: överlevnadsbias i persistensdata, cykeltopp som fejkad moat, cirkulariteten att läsa vallgraven ur multipeln, kort historia och tillväxt utan kapitalåterkomst · Återkomma till den årliga vallgravsrevisionen: mt-02:s kvalitativa test blir ett numeriskt revisionsblad med bäst-före-datum",
+  "why": "Familjens två första steg gav vokabulären och varningsögonen. mt-01 lärde vad en moat är — ett hållbart konkurrensövertag som håller andra borta från bolagets vinster. mt-02 lärde att varje vallgrav eroderar och hur man stress-testar den med frågor. Det som saknas är kröningen: att sätta siffror på hela berättelsen. Hur stark är vallgraven? Svaret är inte 'mycket starkt' utan ett tal — överskottsavkastningen i kronor per år. Hur länge håller den? Svaret är inte 'länge' utan persistens och reversionstakt — lönsamhetens dokumenterade benägenhet att återgå mot genomsnittet, mätt i decennier. Och hur vet jag att den fortfarande finns i nästa årsredovisning? Svaret är fem mätetal som följs år från år, ett per vallgravskälla. Utan den här kursen förblir 'hållbart konkurrensövertag' en adjektivberättelse som bekräftar sig själv — analytikern som vill se en moat ser en moat. Med mätningen blir vallgraven en hypotes med bäst-före-datum: den kan falsifieras, revideras och prissättas. Det är steget från att känna igen kvalitet till att mäta dess varaktighet — och varaktigheten är exakt det som långsiktig värdering betalar för.",
+  "history": {
+    "origin": "Att betala för varaktighet är äldre än måtten för den. Benjamin Grahams marginalen — köp med rabatt mot värde — byggde på insikten att framtiden är osäker, men hans verktyg var pris och tillgångar, inte konkurrensövertagets livslängd. Det var Warren Buffett som på 1980-talet gav metaforen dess namn och dess kanoniska räkneexempel: See's Candies, köpt 1972 för 25 miljoner dollar med omkring 2 miljoner dollar i årsöverskott — tolv och en halv gånger överskottet, vida över bokfört värde. Priset var bara försvarbart om överskottet var varaktigt och kunde återinvesteras med god avkastning. Buffett hade alltså mätt vallgraven innan ordet fanns på tryck: han betalade för en kassflödesstråle han trodde skulle bestå, och breven till aktieägarna genom årtiondena förklarade varför den gjorde det.",
+    "evolution": "Från brev till data. Under 1990- och 2000-talen lärde stora persistensstudier ut lönsamhetens demografi: avkastning på investerat kapital återgår mot genomsnittet — men långsamt, och ojämnt: hög lönsamhet avmattas trögare än låg växer, och en liten andel bolag behåller toppositioner i decennier. Forskningen formaliserades när lönsamheten blev en egen faktor i förklaringsmodellerna för avkastning — gross profitability i den akademiska litteraturen 2013 och femfaktormodellen 2015 — och när analysbranschen byggde moat-betyg med uttryckliga fade-antaganden: bred, smal eller ingen vallgrav, var och en med en antagen avmattningstakt. Mätningen hade fått sin institutionella form: vallgraven var inte längre en berättelse utan en parameter.",
+    "modern": "I dag är vallgravsmätning standard i såväl kapitalförvaltning som bolagsstyrning: ledningar presenterar tabeller över kunder som stannar kvar och kundbortfall i procent, nätverkstjänster rapporterar aktiva användare och engagemang, och enhetsekonomin — intäkt, marginal och kundbortfall per kund — är det språk som chefer och ägare möts i. Den moderna färdigheten är inte att hitta siffrorna utan att väga dem: kombinera persistensstatistikens varnande medelvärde med de fem mätetal som säger om just det här bolaget är ett undantag — och med mt-02:s erosionsfrågor om vad som skulle kunna fylla vallgraven. I AK1A:s system är den här kursen den kvantitativa grunden under AKM2:s moat-dimension: betyget och dess trend ska gå att härleda ur tal, inte ur sinnebild."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — från adjektiv till aritmetik",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Konstruktion — persistens, reversion och fade",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — överskottet i kronor, ren aritmetik",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mätning — fem vallgravskällor, fem mätetal",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — den årliga vallgravsrevisionen i AKM1",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — från adjektiv till aritmetik",
+      "intro": "Vallgraven definierades i mt-01 och hotades i mt-02 — här börjar mätningen: vad är styrka, när den räknas i kronor?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En moat är inte ett intryck utan ett kassaflödesfenomen. Definitionen i en enda mening: ett hållbart konkurrensövertag är förmågan att tjäna mer på sitt kapital än kapitalet kostar — och att göra det längre än konkurrenterna hinner ifatt. Ur definitionen följer mätningen direkt. Styrkan är spridningen: avkastningen på investerat kapital minus avkastningskravet — ROIC minus WACC, det kunskapsmått som roic-kursen i lönsamhetsfamiljen bygger upp. Storleken är spridningen gånger kapitalet: samma skydd på mer investerat kapital är en bredare vall. Livslängden är tiden spridningen antas bestå — och den är aldrig evig, vilket både persistensstudierna och mt-02:s erosionstänkande slår fast.\n\nVarför tvinga fram siffror? Därför att adjektiv bekräftar sig själva. Den som vill tro på ett bolag hittar alltid adjektiv — starkt varumärke, lojala kunder, ledande ställning — och varje ord låter sant i ett lysande bokslut. Siffror gör tvärt om: de exakta motsatsen. Ett tal kan stämmas av, jämföras mellan år och falsifieras av nästa rapport. 'Kunderna är lojala' är en åsikt; 'kundbortfallet är 4 procent om året och har legat där i fem år' är en mätning med bäst-före-datum. Hela den här kursen handlar om att byta de första mot de senare.\n\nEn bild att bära med sig: vallgraven är en vall med vatten och en källa. Spridningen är vattnets djup — hur mycket överskott som står över kravet varje år. Kapitalbasen är vallens längd. Källan är det som fyller på — byteskostnader, nätverk, kostnadsläge, varumärke, skydd — och erosionen i mt-02 är allt som dränerar. Mätningen i den här kursen handlar om tre frågor till den bilden: hur djupt är vattnet (kapitel 3), hur snabbt sjunker det (kapitel 2) och rinner källan fortfarande (kapitel 4)."
+        },
+        {
+          "type": "definition",
+          "content": "Vallgravens styrka = spridningen (ROIC minus avkastningskravet) — dess storlek = spridningen gånger investerat kapital — dess livslängd = antagna år av bestånd, aldrig evighet. Moat är kassaflödesfenomenet, inte sinnebilden."
+        },
+        {
+          "type": "insight",
+          "content": "Adjektiv bekräftar, siffror falsifierar. En moat som inte kan uttryckas i spridning, kapital och tid är en berättelse — och berättelser är som billigast när bokslutet är som vackrast."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — persistens, reversion och fade",
+      "intro": "Lönsamhetens demografi: persistensstudier över decennier, reversion mot genomsnittet och fade-takten som vallgravens halveringstid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frågan 'hur länge håller en vallgrav' besvaras inte av en enskild balansräkning utan av demografin — vad som händer med många bolags lönsamhet över lång tid. Persistensstudierna, som bygger på årtionden av redovisningsdata, har tre stadiga fynd. För det första: avkastning på investerat kapital återgår mot genomsnittet — reversionen är lönsamhetens tyngdlag. För det andra: den är ojämn — hög lönsamhet avmattas trögare än låg lönsamhet återhämtar sig, och en liten andel bolag håller toppositioner i decennier; det är just den asymmetrin som gör moat till ett begrepp värt att mäta. För det tredje: branschens struktur spelar roll — i kapitaltunga, koncentrerade branscher med höga byteskostnader reverterar lönsamheten långsammare än i commoditetsbranscher där alla kan kopiera alla.\n\nUr reversionen växer kursens centrala begrepp: fade — avmattningstakten i spridningen. Om spridningen i dag är 8 procentenheter och historien säger att den brukar halveras på sex år, är det en årlig avmattning på omkring elva procent — 8 gånger 0,89 sex gånger blir strax under 4, alltså nära hälften. Fade-takten fungerar som vallgravens halveringstid: den översätter 'hållbart' till ett datum. Ett bolag med djup spridning och långsam fade har en vallgrav som förtjänar årsvis uppföljning; ett med grund spridning och snabb fade har en vallgrav som är en cykelfördel — verklig just nu, men inte en struktur att lita på in i nästa decennium.\n\nViktigt är också vad persistens INTE säger. Studierna mäter överlevare och genomsnitt; de är en varningens medelvärde, inte en förutsägelse om det enskilda bolaget. Kapitel 5 återkommer till fällorna — överlevnadsbias och cykeltoppen — men redan här ska inställningen vara rätt: persistensstatistiken är utgångspunkten som det enskilda bolaget sedan måsteargumentera emot, med sina egna fem mätetal. Det är mycket svårare att vara ett undantag än att låta som ett."
+        },
+        {
+          "type": "insight",
+          "content": "Fade = spridningens halveringstid. Persistensstudierna ger medelvägen — trög reversion för hög lönsamhet — och det enskilda bolagets mätetal ska läsas som ansökan om att vara undantaget."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — överskottet i kronor, ren aritmetik",
+      "intro": "Tre övningar: överskottet i kronor, fade-räkningen och återinvesteringens växel — vallgraven som talserie.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första övningen: överskottet i kronor. Ett bolag har 1 250 miljoner investerat kapital och ger 16 procent avkastning på det — rörelseöverskottet efter skatt blir 1 250 gånger 0,16 = 200 miljoner. Avkastningskravet — den avkastning kapitalmarknaden kräver av bolagets risk — antas 8 procent: 1 250 gånger 0,08 = 100 miljoner. Skillnaden är vallgraven i pengar: 200 minus 100 = 100 miljoner överskott om året, kapital som konkurrenterna i genomsnitt inte förmår skapa på samma kapital. Det är det talet — inte adjektiven — som är moatens styrka, och det är talet som varje årsstudie ska stämmas mot: blir 100 till 110 eller till 70 nästa år?\n\nAndra övningen: fade-räkningen. Spridningen är 16 minus 8 = 8 procentenheter. Antag en halveringstid på sex år, alltså omkring elva procents årlig avmattning: spridningen blir cirka 7,1 nästa år, omkring 6,3 året därpå och strax under 4 efter sex år — överskottet sjunker i takt med spridningen, från 100 miljoner mot omkring 50. Räkningen är ingen prognos utan en referensbana: om bolaget faktiskt håller spridningen — mätetalen i kapitel 4 pekar rätt — är det på god väg att vara ett av persistensstudiernas undantag. Om spridningen istället faller fortare än referensbanan har mt-02:s erosionsvarning blivit kvantifierad: vallgraven dräneras synligt.\n\nTredje övningen: återinvesteringens växel. En vallgrav är värd mer än sitt årsöverskott om överskottet kan återinvesteras i nytt kapital med samma spridning — det är tillväxtfamiljens formel g = ROIC gånger återinvesteringskvot i dess renaste skepnad (tx-03 fördjupar den). Räkneexempel: ROIC 16 procent och hälften av överskottet återinvesterat ger 0,16 gånger 0,5 = 8 procent organisk tillväxt — på 1 250 miljoner kapital växer överskottsflödet i stället för att bara delas ut. En vallgrav som inte kan absorbera kapital — vatten utan vall att bredda — ger trygghet men ingen sammansatt tillväxt. Mätningen ska därför alltid avslutas med frågan: kan överskottet återinvesteras till 16 procent, eller bara delas ut?"
+        },
+        {
+          "type": "insight",
+          "content": "Vallgraven i tre tal: 100 miljoner överskott (spridning 8 poäng på 1 250 miljoner), en referensbana som halverar på sex år (≈11 procents fade) och en återinvesteringsexpansion (0,16 × 0,5 = 8 procent). Talen kan stämmas av — adjektiven kan inte."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — fem vallgravskällor, fem mätetal",
+      "intro": "Varje vallgravskälla har ett eget mätetal och ett eget decay-symptom — källan som fyller på, talet som bevisar det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "mt-01 redogjorde för vallgravens källor i ord; här får varje källa sitt mätetal och sitt decay-symptom — det tal som visar att just den källan sinar. Första källan: byteskostnader — vad det kostar kunden att byta leverantör, i pengar, arbete och risk. Mätetalet är kundbortfallet: andelen kunder som försvinner per år. Ett bolag med 4 procent kundbortfall förlorar en fjärdedel av kundstocken på omkring sju år — att byta är uppenbarligen besvärligt; 15 procent kundbortfall halverar samma stock på drygt fyra år. Decay-symptomet: stigande kundbortfall i två årsredovisningar i rad, särskilt hos de största kunderna.\n\nAndra källan: nätverkseffekter — produktens värde växer med antalet användare. Mätetalet är tätheten: aktiva användare, andel av transaktioner som går via plattformen, engagemang per kund — och priset per transaktion som plattformen kan ta ut. Decay-symptomet: fallande engagemang trots växande nominell användarbas — fler gäster, mindre sällskap. Tredje källan: kostnadsläge — strukturellt lägre kostnad per enhet. Mätetalet är kostnadsavståndet: marginalen i procentenheter mot branschens median, följt över en hel cykel; en kostnadsfördel som 6 procentenheter marginal är en vall, men bara om den står kvar även det år råvarupriset vände. Decay-symptomet: marginalerna närmar sig medianen utan att bolaget medvetet prissatt ned sig — skalan har slutat verka.\n\nFjärde källan: immateriella tillgångar — varumärke, patent, data. Mätetalet är prispremien: hur många procent mer bolaget kan ta ut än jämförbara produkter, alternativt förnyelsetakten på patentportföljen. Decay-symptomet: premien eroderar eller patentlöptiderna klustrar sig mot samma utgångsår. Femte källan: regulatoriska och strukturella skydd — licenser, tillstånd, naturmonopol. Mätetalet är skyddets löptid och förnyelsebarhet: år kvar på licensen, politisk vindriktning, och hur dyrt det skulle vara för en utmanare att bygga motsvarande tillstånd. Decay-symptomet: allt mer framskridna omprövningar eller remisser om ändrade regler. Fem källor, fem tal — och gemensamt: vallgraven mäts aldrig med ett enda nyckeltal, utan med den kombination av källor som faktiskt bär just det här bolaget."
+        },
+        {
+          "type": "insight",
+          "content": "Byteskostnad → kundbortfall. Nätverk → täthet och engagemang. Kostnadsläge → marginalavståndet mot medianen över en cykel. Varumärke → prispremie. Skydd → löptid och förnyelse. Fem källor, fem tal, fem decay-symptom — och aldrig ett enskilt nyckeltal i stället för kombinationen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Sex sätt att mäta fel — var och en gör vallgraven starkare på papperet än i verkligheten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan: överlevnadsbias. Persistensstudierna bygger på bolag som fanns kvar att studera — de som tappade vallgraven och köptes upp eller försvann är underrepresenterade i data. Statistiken överskattar därför beständigheten något, och den som citerar 'undantagen som höll i decennier' utan att nämna de som inte gjorde det läser historien baklänges. Skyddet: behandla referensbanan som en varning, inte som en rättighet.\n\nAndra fällan: cykeltoppen som vallgrav. Ett bolag på toppen av konjunkturcykeln visar hög ROIC — men spridningen kommer från cykeln, inte från strukturen, och den försvinner när cykeln vänder utan att en enda kund bytt leverantör. Stabilitetskursen i familjen bredvid (st-04) lär igenkänningen: mät spridningen över en hel cykel, aldrig från ett toppår. Tredje fällan: cirkulariteten — att läsa vallgraven ur multipeln. 'Bolaget handlas högt, alltså har marknaden insett dess moat' är ett cirkelresonemang: multipeln är en förväntning (vr-03:s anatomi), och att använda den som bevis för vallgraven gör förväntningen till sin egen grund. Mät vallgraven i driftstal — sedan kan värderingskursens multipler få prissätta det som mätts.\n\nFjärde fällan: nisch förväxlad med skala. En liten nisch kan bära en yrkesmässigt stark vallgrav — för liten för någon att attackera — medan samma 'ledande ställning' i en stor marknad bjuder in kapitalstarka utmanare. Frågan är aldrig 'är bolaget störst' utan 'hur dyrt är det att ta sig in just här'. Femte fällan: den korta historien. Tre års kundbortfall eller marginalstabilitet är väder, inte klimat — persistens handlar om decennier, och mätserien ska vara minst en cykel innan den kallas mönster. Sjätte fällan: tillväxt utan spridning. En omsättning som växer utan att ROIC överstiger avkastningskravet bygger ingen vallgrav — det är expansion som knappt betalar kapitalets kostnad (tx-03:s domslut); moat mäts i överskott per kapitalkrona, aldrig i tillväxttakt. Gemensamt för alla sex: fällorna lurar inte i talen utan i urvalet och tolkningen av dem — mätningen är hantverket, misstaget är vad som mäts."
+        },
+        {
+          "type": "insight",
+          "content": "Överlevnadsbias, cykeltopp, cirkelmultipeln, nisch-mot-skala, den korta serien, tillväxt utan spridning — sex fällor som alla gör vallgraven vackrare än den är. Mät i drifttal över en hel cykel, och låt aldrig multipeln vara sitt eget bevis."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — den årliga vallgravsrevisionen i AKM1",
+      "intro": "Familjens test blir ett revisionsblad: fem mätetal, spridning och fade — vallgraven följs som en forsättning av anläggningstillgången den är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Familjens trappa är nu hel. mt-01 gav källorna, mt-02 gav erosionsögonen och det kvalitativa vallgravstestet, och den här kursen har gett talen. Det som återstår är att göra mätningen till en rutin — den årliga vallgravsrevisionen. Formatet är ett enda blad per bolag: rad ett, spridningen — ROIC och avkastningskrav, skillnaden i procentenheter, jämfört med förra året. Rad två, överskottet i kronor — spridningen gånger investerat kapital. Rad tre, fade-statusen — ligger spridningen på, över eller under referensbanan från kapitel 3? Rader fyra till åtta: de fem mätetalen — kundbortfall, täthet, marginalavstånd, prispremie, skyddslöptid — var och en med sin trendpil. Ett blad, åtta rader, tio minuter — och vallgraven har gått från berättelse till balansräkningens granne: en tillgångspost som revideras, inte en känsla som minns.\n\nI AKM1:s metodik är det här bladet underlaget till AKM2:s moat-dimension: betyget och dess trend ska kunna härledas ur raderna — ett växande överskott på en stabil spridning med fallande kundbortfall är en moat i förbättring; ett överskott som rör sig nedåt längs referensbanan med stigande kundbortfall är en moat på väg att bli historia, hur vackert bokslutet än ter sig. Revisionen vägs samman med grannkurserna: nämnarens kvalitet från resultatkvalitetskursen (ln-02 — är överskottet äkta?), cykelpositionen från stabilitetsfamiljen (st-04) och värderingen från vr-serien, som prissätter exakt den varaktighet som bladet mäter.\n\nDen avslutande övningen, i ren aritmetik och med ett offentligt bokslut som underlag: välj ett bolag, räkna ROIC på driftkapitalet, sätt en avkastningskravsbandbredd på några procentenheter och beräkna överskottet i kronor för bandets båda ändar. Jämför med föregående års redovisning: steg överskottet, höll det, eller föll det — och vilket av de fem mätetalen förklarar rörelsen? Avsluta med en mening förankrad i talen: 'vallgraven är just nu X miljoner om året och rör sig åt Y-hållet, och nästa revision görs vid nästa årsredovisning.' Det är metodik och mätning — så fungerar verktygen; vad någon äger eller gör med sin förståelse är varje ägares egen fråga, och plattformen utbildar alltid bara om hur metoden fungerar."
+        },
+        {
+          "type": "insight",
+          "content": "Den årliga vallgravsrevisionen: åtta rader — spridning, överskott, fade-status och de fem mätetalen med trendpilar. Vallgraven som reviderad tillgångspost i stället för en känsla — och underlaget som AKM2:s moat-betyg ska härledas ur."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch mätte vallgraven i drifttal och i butiksgolvet snarare än i begrepp: hans genomgångar av ett bolag började i försäljningen i befintliga butiker (same-store sales), enhetstillväxt och marginalens beteende genom prishöjningar — ett bolag som kan höja priset utan att kunderna försvinner har en mätbar moat, och ett vars marginal sjunker vid första motvind har ingen, hur känt varumärket än är. Lynchs varning är den här kursens femte kapitel i förväg: berättelsen om 'det bästa bolaget i branschen' är värd exakt det mätetalet den kan visa upp — hans föredragna bolag var de som var tråkiga nog att ingen anföll dem och mätbara nog att han själv kunde räkna deras vallgrav år från år.",
+  "grahamSection": "Benjamin Graham skulle ha sett mätningens poäng och dess gräns: hans marginalen — köp med rabatt mot värde — är i grunden en placering av mistro mot precis de framtidsantaganden som vallgravsräkningen bygger på. Graham accepterade aldrig att lönsamhetens varaktighet fick bära hela beslutet: ett mått på moat, hur noggrant än räknat, är en skattning av framtiden, och för Graham var skillnaden mellan skattning och säkerhet just priset — betala så lite att även en felräknad vallgrav lämnar marginal. Den här kursens referensbana och hans rabatt är båda sätt att hantera samma sanning: att även mätta förväntningar kan slå fel.",
+  "ak1Section": "I AK1A:s metodik är den här kursen MOAT-familjens kröning: den binder mt-01:s källor och mt-02:s vallgravstest till aritmetiken — spridningen (roic-01), överskottet i kronor, fade-referensbanan och de fem mätetalen — och gör den årliga vallgravsrevisionen till underlaget för AKM2:s moat-dimension och dess trendpuls. Den korslänkar tx-03 (g = ROIC × återinvesteringskvot — återinvesteringsexpansionen), vr-01/vr-02/vr-03 (multiplerna prissätter varaktigheten; multipeln är aldrig sitt eget bevis), st-04 (cykeln som vallgravens äkta prov), rs-02 (kundkoncentration — kundbortfallets baksida) och ln-02 (resultatkvaliteten — är överskottet äkta?). Så fungerar metoden: mät, revidera, härled betyget — utbildning, aldrig råd."
+}

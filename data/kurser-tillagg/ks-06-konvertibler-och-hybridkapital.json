@@ -1,0 +1,192 @@
+{
+  "slug": "ks-06-konvertibler-och-hybridkapital",
+  "category": "KAPITALSTRUKTUR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Konvertibler och hybridkapital — skulden som kan bli eget kapital",
+  "summary": "Kapitaltrappans mitt: instrumenten som varken är ren skuld eller ren aktie. Registrets kapitalstruktursfamilj har grunderna (ks-01), allokeringen (ks-02) och skuldens anatomi (ks-03) — men ingen kurs om mellanformerna: KONVERTIBELN, lånet med rätt att bytas till aktier, och PREFERENSAKTIEN, aktien med fast utdelning och batong i kön. Kursen räknar båda mekanikerna genom: konvertibeln med löp 1 000 kronor, kupong 2,0 procent (mot 5,0 för vanliga obligationer — utfärdarens besparing 30 kronor om året är priset för valrätten) och konverteringskurs 125: aktie 160 ger 8 × 160 = 1 280, alltså +28,0 procent, aktie 100 ger tillbaka lånet — golvet och optionen i samma papper. Preferensen prissatt som en evighetsränta: direktavkastningen 6,5 på nominell 100 ger pris 6,5/7,8 × 100 = 83,3 när avkastningskravet stiger från 6,5 till 7,8 procent — ett fall på 16,7 procent utan att utdelningen rör sig. Signaturkapitlet är stämpelordningen: ett bolag med fritt kassaflöde 70, ränta 60 och preferensutdelning 25 betalar räntan fullt ut, preferensen 10 av 25 — och de vanliga aktieägarna noll. Avslutningen: hybridkapitalets historia från järnvägens obligationslån till bankernas AT1-papper — och Credit Suisse mars 2023, när cirka 16 miljarder francs nollskrevs medan aktieägarna lämnades ett bud: läxan att papprens ordning i en kris avgörs av mer än prospektet.",
+  "minutes": 24,
+  "xp": 50,
+  "why": "KAPITALSTRUKTUR-familjen hade tre våningar men ingen mitt: ks-01 finansieringsgrunderna, ks-02 styrelsens allokeringsvägar och ks-03 banklånens och obligationernas anatomi — men instrumenten MITT EMELLAN saknades helt i registret (temasök mot samtliga 381 kurser vid valet: noll träffar utanför bokreferenser). Det är ingen kuriosa: konvertibler och preferensaktier är en betydande och väletablerad del av den svenska marknaden — bolag finansierar sig med dem, aktieägare möter dem i utspädningsberäkningar (rk-02) och balansräkningar (bk-01), och den som inte kan läsa en mellanform kan inte heller avgöra om den som erbjuder en 'trygg' placering talar om skuldens säkerhet eller aktiens risk. Kursen bygger direkt på grannarna: ks-01:s trapplogik, ks-03:s räntebegrepp, st-01:s soliditetsmått (där hybriderna ställer den bästa frågan: räknas de som skuld eller eget kapital? svaret skiljer sig åt mellan balansräkning, ratinginstitut och utdelningspolicy) — och v20:s återköp som den spegelvända allokeringsbeslutningen.",
+  "level": "Intermediär",
+  "learn": "Placera hybridinstrumenten på kapitaltrappan: banklån och obligationer (ren skuld) → konvertibler (skuld med valrätt) → preferensaktier (aktie med skuldens utdelningslogik) → vanliga aktier (rent eget kapital) — och förklara varför varje steg ner i trappan ger lägre kupong men högre risk · Räkna konvertibeln slutligt: löp 1 000 med konverteringskurs 125 ger 8 aktier; aktiekurs 160 vid lösen ger 8 × 160 = 1 280 kronor alltså +28,0 procent, medan aktiekurs 100 låter lånet betalas tillbaka — och paritetspunkten (aktie 125) där de två utfallen är värda exakt lika mycket · Förklara kupongbesparingens logik: utfärdaren betalar 2,0 i stället för 5,0 procent — 3,0 procentenheter eller 30 kronor om året på 1 000 — och 'betalar' med rättigheten att få leverera aktier till 125 · Prissätta preferensaktien som evighetsränta: pris = utdelning/avkastningskrav, alltså 6,5/0,065 = 100 vid krav 6,5 procent och 6,5/0,078 = 83,3 när kravet stiger till 7,8 — en räntestigning på 1,3 procentenheter faller priset 16,7 procent utan att en enda utdelningskrona ändrats · Tillämpa stämpelordningen i ett räkneexempel: fritt kassaflöde 70, räntekostnad 60, preferensutdelning 25 — räntan betalas fullt ut, preferensen får 10 av 25 (40 procent), vanliga aktieägare noll · Känna igen hybridens risker: utspädningen vid konvertering (rk-02), inlösenrisken när priset blir för god för utfärdaren, räntekänsligheten hos ett papper utan slutdatum — och krisläxan från Credit Suisse 2023, när cirka 16 miljarder francs AT1-kapital nollskrevs före aktiekapitalets slutgiltiga värde",
+  "history": {
+    "origin": "Mellanformerna är äldre än börserna. Järnvägsbolagen på 1800-talet — historiens största infrastrukturfinansiering — prövade varenda variant på trappan: räntebärande obligationer för de färdiga sträckorna, konvertibla lån där långivaren fick rätt byta skuld mot aktier när linjen betalade, och preferensaktier som gav de som vågade mest en fast andel av frukten före de vanliga ägarna. Amerika byggde sitt telefonnät och sina järnvägar delvis på konvertibla obligationer — papper som lät entreprenören låna billigt och låta framgång betala räntan i aktier i stället för kontanter. Preferensaktienkodifierades i amerikansk associationsrätt i slutet av 1800-talet och blev snabbt ägarledningens favorit vid nyemissioner: kapital utan röstmakt, utdelning före de vanliga — finansieringens och kontrollens åtskillnad i ett enda instrument.",
+    "evolution": "Efterkrigstiden gjorde mellanformerna till institutionellas verktyg: investmentbolag och konglomerat utfärdade konvertibler för att låna billigt mot framtida värdepapper, och 1970-talets stillsammandragande aktiemarknad gjorde de fasta utdelningarna i preferensaktier attraktiva när vanliga utdelningar skars. Sverige fick sin moderna preferensmarknad från 2000-talets mitt, när banker och investmentbolag — kapitaltunga verksamheter med reglerade kapitalkrav — upptäckte att preferensaktier räknas som eget kapital men bär en utdelningslogik som bolaget kan planera. Finanskrisen 2008 blev hybridhistoriens vattendelare: banker världen över visade sig ha finansierat sig med papper vars 'perpetuala' utdelningar skulle kunna ställas in men vars kapitalfunktion ifrågasattes just när det behövdes — och svaret blev Basel III:s kapitallagstiftning, som skapade en ny, reglerad kategori: AT1-papper (additional tier 1), hybridkapital med inbyggda omvandlings- och nollskrivningsmekanismer vid kapitalbrist.",
+    "modern": "Idag lever mellanformerna tre liv parallellt: som FÖRETAGSFINANSIERING (konvertibla obligationslån är ett standardvapen för tillväxtbolag som vill låna billigare än den ränta deras belåning bär — betalat med utspädningsrisk, rk-02), som BÖRSHANDEL (preferensaktier noteras som egna serier med sin egen direktavkastning och sin egen räntekänslighet — en kategori investerare söker dem just för den fasta utdelningen, st-01:s räntetäckningslogik i omvänd riktning), och som BANKKAPITAL (AT1-papper med myndighetsutlöst nollskrivning). Kursens sista kapitel stannar vid den tredje världens största läxa: när UBS i mars 2023 övertog Credit Suisse nollskrevs cirka 16 miljarder francs av AT1-kapitalet medan aktieägarna lämnades ett bud — en ordning som vände upp och ner på den hierarki prospekten ritat, beslutad av myndighet och inte av marknad, och som rubbade prissättningen på bankhybrider i hela Europa: papprets mekanik är en sak, papprets öde i en systemkris en annan."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Mellanformen — kapitaltrappans mitt",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Konvertibeln — lånet med valrätt",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Preferensaktien — utdelningen utan slutdatum",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Stämpelordningen — vem betalas först",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Utfärdarens kalkyl och innehavarens risker",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Från järnväg till krisbank — hybridens läxa",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Mellanformen — kapitaltrappans mitt",
+      "intro": "Ks-01 lärde trappan: skuld längst ner, eget kapital längst upp. Denna kurs handlar om stegen MITT EMELLAN.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ren skuld och rent eget kapital är begripliga ytterligheter: långivaren har rätt till ränta och amortering men aldrig mer, aktieägaren har rätt till allt som blir över men aldrig garanterat något. Mellan dem lever en hel familj instrument som LÅR av skulden och LÅNAR av aktien: konvertibeln är ett lån som kan förvandlas till aktier — skuldens säkerhet med aktiens uppsida; preferensaktien är en aktie med fast utdelning och företräde framför de vanliga — aktiens evighet med skuldens utdelningslogik. Gemensamt namn i finansspråket: hybridkapital, och det är ett bättre ord än det låter, ty 'hybrid' här betecknar inte en tvekande kompromiss utan en medveten konstruktion — varje hybrid är byggd för att ge utfärdaren något skulden inte ger (billig kupong, evig löptid, kapitalklassificering) och innehavaren något aktien inte ger (kön i betalningsordningen, förutsägbar utdelning)."
+        },
+        {
+          "type": "tabell",
+          "content": "Kapitaltrappan — från säkrast till mest riskabelt anspråk (exempel på varje steg i parentes): | Steg | Instrument | Avkastning | Får före | Exempel | — | 1 | Banklån / obligation (ks-03) | Ränta + amortering | Alla andra | Företagsobligation 5,0 % | — | 2 | KONVERTIBEL | Låg ränta — eller aktier | Vanliga aktier | Kupong 2,0 % + bytesrätt | — | 3 | PREFERENSAKTIE | Fast utdelning | Vanliga aktier | Direktavkastning 6,5 % | — | 4 | Vanlig aktie | Restvärdet — inget garanterat | Ingen | Aktie 160 |"
+        },
+        {
+          "type": "insight",
+          "content": "Trappans viktigaste läsning är inte vad varje steg BÄR utan VAD DET KOSTAR: varje steg ner betalar mindre i kronor per år men kräver mer av utfärdarens framtid — obligationen kostar 50 kronor ränta per tusen om året och inget annat, konvertibeln 20 men med en framtida aktieleverans om kursen går, preferensutdelningen 65 per tusen i all oändlighet, och den vanliga aktien kostar allt som blir över. Kapitalstruktur (ks-01) är konsten att välja var på trappan nästa krona ska hämtas — och hybriderna är trappans rörliga steg."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konvertibeln — lånet med valrätt",
+      "intro": "Ett papper, två utfall, ett val som tillhör LÅNGIVAREN: räkna konvertibeln från löp till slutvärde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En konvertibel är ett obligationslån med en inbyggd rättighet: långivaren får, under vissa villkor och till ett på förhand bestämt pris, BYTA lånet mot aktier. Konkret exempel: ett bolag emitterar konvertibelt obligationslån med lösenbelopp 1 000 kronor, årlig kupong 2,0 procent och konverteringskurs 125 kronor — det vill säga rätten att byta varje lån på 1 000 mot 1 000/125 = 8 aktier. Varför skulle någon låna ut till 2,0 procent när vanliga obligationer för samma bolag bär 5,0? Därför att kupongen bara är halva ersättningen: den andra halvan är OPTIONSVERDET, rätten att i stället för 1 000 kronor ta emot 8 aktier — och om aktien vid lösen handlas till 160 kronor är de 8 aktierna värda 8 × 160 = 1 280 kronor, en avkastning på 28,0 procent på lösenbeloppet. Utfärdarens besparing — 5,0 minus 2,0 = 3,0 procentenheter, eller 30 kronor om året per tusen — är alltså priset bolaget betalar för valrätten."
+        },
+        {
+          "type": "text",
+          "content": "De två utfallen, räknade färdigt: GÅR AKTIEN TILL 160 — konvertera. 8 aktier × 160 = 1 280 kronor; innehavaren står över aktiens uppsida (minus att kupongen under åren varit lägre än marknadens). STANNAR AKTIEN PÅ 100 — konvertera inte. Att byta 1 000 kronor mot 8 aktier värda 8 × 100 = 800 vore en förlust på 200 kronor; lånet betalas tillbaka till 1 000 och innehavaren bär aktiens fall till liten del — golvet i strukturen. MITT EMELLAN ligger paritetspunkten: aktie 125 ger 8 × 125 = 1 000, exakt lånets värde — där är de två utfallen lika mycket värda och där börjar optionen ha värde. Detta är konvertibeln i en mening: en obligation med golvet kvar och en bit av aktiens tak till ett pris av lägre kupong."
+        },
+        {
+          "type": "tabell",
+          "content": "Konvertibeln 1 000 / kupong 2,0 % / konverteringskurs 125 — tre slutlägen: | Aktiekurs vid lösen | Utfall för innehavaren | Värde | Avkastning | — | 160 kronor | Konvertera: 8 aktier | 8 × 160 = 1 280 | +28,0 % | — | 125 kronor (paritet) | Likgiltigt | 8 × 125 = 1 000 | 0,0 % | — | 100 kronor | Behålla lånet | 1 000 + kuponger | Kupongen 2,0 % per år |"
+        },
+        {
+          "type": "insight",
+          "content": "Ett viktigt hygieniskt förbehåll till exemplet: verkliga konvertibler bär fler detaljer än dessa tre tal — löptid, konverteringsfönster, inlösenrätter för utfärdaren, ibland förskjutningar av konverteringskursen. Kursexemplet visar GRUNDMEKANIKEN (golvet, pariteten, optionen); en verklig emissionskalkyl läses i prospektet — och utspädningen för befintliga aktieägare beräknas som vid varje ny aktieemission (rk-02)."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Preferensaktien — utdelningen utan slutdatum",
+      "intro": "Aktie till namnet, obligation till sinnet: den fasta utdelning som aldrig slutar binder priset vid räntan — för alltid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En preferensaktie är en aktie med två ordningar bytta: utdelningen är FAST (ett på förhand bestämt belopp per år, inte styrelsens år från år) och kön är FRAMFÖR de vanliga aktieägarna — 'preferens' är latinets företräde och betyder här precis vad det säger: preferensutdelningen ska betalas FÖRE vanlig utdelning kan betalas alls. Däremot står preferensägaren EFTER alla långivare: ränta och amortering går före. Preferensaktien är alltså steg tre på trappan — efter skulden, före den vanliga aktien — och den saknar i regel slutdatum: emissionen är 'perpetual', pappret inlösens när utfärdaren vill (mot villkor i villkoren), inte när tiden är ute."
+        },
+        {
+          "type": "text",
+          "content": "Utan slutdatum blir prissättningen en EVIGHETSRÄNTA — samma matematik som en obligation som aldrig förfaller: pris = årlig utdelning delat med avkastningskrav. Räkneexemplet: en preferensaktie med nominellt belopp 100 kronor och utdelning 6,50 kronor om året. När marknadens avkastningskrav är 6,5 procent är priset 6,50/0,065 = 100 kronor — emissionens vardagssituation. Men om ränteläget höjer avkastningskravet till 7,8 procent (en höjning med 1,3 procentenheter) faller priset till 6,50/0,078 = 83,3 kronor: en prisnedgång på 16,7 procent UTAN att utdelningskronan ändrats med en enda öre. Mekaniken stänger åt andra hållet med: den som köper till 83,3 kronor får 6,50/83,3 = 7,8 procent i direktavkastning — exakt det nya kravet. Det är obligationsmatematik (km-054:s räntelogik) i aktiekläder, och den gör preferensaktien till ett räntekänsligt papper: ju längre utblick, desto hårdare slår ränteförändringar — här finns ingen förfallodag som 'räddar' priset till slut."
+        },
+        {
+          "type": "tabell",
+          "content": "Preferensaktien 100 kronor / utdelning 6,50 — evighetsräntans prisformel i två räntelägen: | Marknadens avkastningskrav | Pris = utdelning/krav | Förändring | Köparens direktavkastning | — | 6,5 % | 6,50/0,065 = 100,0 | Emissionsläge | 6,50/100,0 = 6,5 % | — | 7,8 % | 6,50/0,078 = 83,3 | −16,7 % | 6,50/83,3 = 7,8 % |"
+        },
+        {
+          "type": "insight",
+          "content": "Notera vad räkningen AVSLÖJAR om 'den trygga utdelningen': preferensens fasta 6,50 är trygg i KRONOR räknat men inte i AVKASTNING räknat — priset på tryggheten svänger med räntan som vilket räntepapper som helst (rk-08:s durationstanke i praktiken). Den som söker fast avkastning och köper preferensaktien har bytt en typ av osäkerhet (utdelningsbeslut) mot en annan (ränterörelser) — och den skillnaden syns inte i utdelningstabellen utan först i prisrutan vid en räntevändning."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Stämpelordningen — vem betalas först",
+      "intro": "Hybridens hela mening visar sig först när utrymmet tryter. Ett räkneexempel genom hela betalningsordningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolagets betalningsordning är en kö — en stämpelordning i gammal svensk bokföringsterminologi — och hybrider är definierade genom sin PLATS i den kön: först ränta och amortering till långivarna (betalar inte det där, och långivarna kan sätta bolaget i förhandling eller konkurs), sedan preferensutdelningen, och först därefter vanlig utdelning till aktieägarna. Räkneexemplet: ett bolag med fritt kassaflöde 70 miljoner kronor före finansieringskostnader, räntekostnad 60 miljoner, planerad preferensutdelning 25 miljoner och hoppad vanlig utdelning 40 miljoner. Stämpelordningen tvingar igenom följande: räntan 60 betalas FULLT UT (långivarna står först och 70 räcker för dem); återstår 70 − 60 = 10 miljoner; preferenserna får 10 av sina 25 miljoner — 40 procent av utdelningen; de vanliga aktieägarna får 0. Notera SKYDDET och dess gräns: preferensägarna står före de vanliga — men om utdelningen är ackumulerande (kumulativ) sparas skulden till nästa år, och om den inte är det kan utdelningen gå förlorad; prospektet avgör, inte namnet."
+        },
+        {
+          "type": "tabell",
+          "content": "Stämpelordningen i siffror — fritt kassaflöde 70, ränta 60, preferens 25, planerad vanlig utdelning 40 (miljoner kronor): | Kön | Anspråk | Betalas | Andel | Kvar efter steget | — | 1. Långivare | Ränta 60 | 60 | 100 % | 10 | — | 2. Preferensägare | 25 | 10 | 40 % | 0 | — | 3. Vanliga aktieägare | 40 | 0 | 0 % | 0 |"
+        },
+        {
+          "type": "text",
+          "content": "Samma kö i goda tider ter sig självklar — alla betalas, ordningen märks inte. Värdet av att KUNNA ordningen uppstår i tre lägen, alla vanliga i analyser: (1) UTDELNINGSPRESS — kan bolaget betala både ränta, preferenser och vanlig utdelning av sitt fria kassaflöde, eller äter finansiärerna i kön före aktieägarna allt? (ud-09 stressar kronorna bakom utdelningen; här ser man var i kön de egna anspråken står); (2) KAPITALBRIST — i en omförhandling står preferensägarna skulderna nära men ägarskapet långt ifrån: deras förhandlingskort är utdelningskravet, inte röstmajoriteten (preferensaktier bär i regel begränsad röstvärde); (3) SOLIDITETSBILDEN — i balansräkningen (bk-01) räknas preferenskapital som EGET kapital, vilket stärker soliditeten (st-01) — men ratinginstitut och analytiker behandlar det ofta som halv skuld, ty utdelningen är fast och står tidigt i kön. Samma krona, tre sanningar: bokförarens, ratinginstitutets och aktieägarens — hybriden tvingar läsaren att välja vems mönster man litar på."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Utfärdarens kalkyl och innehavarens risker",
+      "intro": "Varje hybrid är en affär mellan två parter som båda tror sig få det bättre. Kalkylerna — och fällorna — på bägge sidor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "UTFÄRDARENS KALKYL (ks-02:s allokeringssynvinkel): bolaget väljer hybrider när de tre renodlade vägarna är dyrare eller sämre. Låna vanligt — kostar full ränta (5,0 i exemplet) men ingen utspädning. Emittera aktier — kostar utspädning idag (rk-02) men ingen ränta. Konvertibeln splittar notan: 2,0 i kupong NU och — om aktien går bra — utspädning SENARE, när bolaget är större och varje aktie bär mer; ett tillväxtbolag med förväntat stigande kurs 'betalar' valrätten i egna aktier som det själv tror bli mindre värda per styck när de väl levereras (att tänka som hör hemma i kapitalallokeringens fem vägar, ks-02). Preferensen ger den omvända mixen: ALDRIG utspädning (utdelningen är fast) men heller aldrig slut på kostnaden — 6,50 om året i all evighet, ett pris som låter lågt och lever länge. V20:s återköp är spegelbilden: bolag som INTE behöver kapital köper tillbaka aktier; bolag som behöver det hybridiskt kan välja att inlösa preferensaktier när ränteläget gör ny emission billigare — inlösenrisken, se nedan."
+        },
+        {
+          "type": "text",
+          "content": "INNEHAVARENS RISKER — fyra, alla specifika för mellanformen: (1) UTSPÄDNINGSRISKEN åt andra hållet — konvertibelinnehavaren ÄR utspädningen: när lån konverteras levereras nya aktier till 125 medan marknaden handlar till 160, och befintliga aktieägare bär värdeöverföringen (rk-02 räknar mekaniken); (2) INLÖSENRISKEN — utfärdaren har i regel rätt inlösa pappret när det passar den: preferensen som köpts för 100 med 6,5 i utdelning inlöses när allmänna räntan fallit och ny emission kostar mindre — innehavaren får tillbaka 100 och mister just den avkastning som var poängen; (3) RÄNTEKÄNSLIGHETEN — utan slutdatum finns ingen 'hemresa' till nominalet (kapitel tre: 16,7 procent prisfall på 1,3 procentenhets räntehöjning); (4) MELLANFORMSFÄLLAN — i kriser är hybriden inte halva av två världar utan ofta hela av en: den FALLER som en aktie (kapitalbrist handlar om överlevnad, inte om kuponger) men den BETALAR som en skuld (uppsidan är takad vid kupongen eller den fasta utdelningen). Värsta fallet för aktieägaren — noll — är också möjlig för preferensägaren, men utan aktieägarens teoretiska obegränsade uppsida under resans gång."
+        },
+        {
+          "type": "tabell",
+          "content": "Hybridens fyrarisker — var de bor och vem som bär dem: | Risk | Mekanik | Vem bär | — | Utspädning | Konvertering levererar nya aktier under marknadskurs | Befintliga aktieägare (rk-02) | — | Inlösen | Utfärdaren köper tillbaka när det passar den | Hybridägaren (förlorar avkastningen) | — | Räntekänslighet | Inget slutdatum — inget prisstöd av förfall | Preferensägaren (−16,7 % i exemplet) | — | Mellanformsfälla | Faller som aktie, betalar som skuld | Hybridägaren i kris |"
+        },
+        {
+          "type": "insight",
+          "content": "Den sammanfattande fråga innehavaren bör ställa — och som kursen lärt en att räkna på: VAR I TRAPPAN står mitt anspråk, VAD är golvat (konvertibelns lånevärde 1 000; preferensens utdelning 6,50) och VAD är öppet (aktieutdelningen 160-scenariot; räntefallet)? Hybriden är ett byggt instrument: dess risk är INTE ett naturfenomen att gissa sig till utan en konstruktion att läsa ut ur villkoren — och den som inte kan läsa konstruktionen kan inte heller prissätta den."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Från järnväg till krisbank — hybridens läxa",
+      "intro": "Hybridhistoriens sista kapitel hände i mars 2023 — och skrev om papprens hierarki på ett dygn.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kapitel ett till fem har läst hybriden ur PROSPEKTET: en skriven konstruktion med kö, golv och optioner. Historiens sista lektion är att prospektet inte är den sista instansen — myndigheten är. När finanskrisen 2008 visade att bankers kapital kunde ätas upp snabbare än deras utdelningar kunde stängas, skrev Basel III:s regler in en ny mekanik i bankhybriderna: AT1-papper (additional tier 1), kapitalinstrument med AUTOMATISK verkan vid kapitalbrist — utdelningen kan ställas in, pappret kan omvandlas till aktier eller skrivas ner till noll. Systemet byggde in krisens slagord: bankens ägare och hybridägare, inte skattebetalarna, ska täcka det första hålet."
+        },
+        {
+          "type": "text",
+          "content": "Provet kom i mars 2023. När UBS övertog Credit Suisse över en helg — en räddning genomförd under schweiziska finansmyndigheternas tryck — nollskrevs cirka 16 miljarder francs av bankens AT1-kapital, medan aktieägarna lämnades ett bud i aktier och alltså inte noll. Hierarkin bröts: i den klassiska stämpelordningen står aktieägaren SIST, men här fick hybridägarna det sämre än de som står efter dem. Beslutet var legalt — pappren BARS av klausulen om myndighetsutlöst nollskrivning — men omtumlande för marknaden: den skrivna ordningen och den upplevda ordningen var två olika saker, och europeiska bankhybrider prissattes om i veckor som ingick. Läxan i kursens termer: stämpelordningen är en kö på ett PAPPER — men pappret lever i en VÄRLD av myndighetsbeslut, och i det ögonblick systemet sätts på prov kan ordningen på pappret åsidosättas av ordningen i krisen. Hybridens 'mellan' är aldrig bara matematik; det är också politik."
+        },
+        {
+          "type": "definition",
+          "content": "Hybridens tre frågor — en sammanfattande checklista för läsning av ett verkligt villkorsdokument: (1) VART I KÖN står anspråket — efter vilka, före vilka, och med vilka rättigheter när kön inte räcker till? (2) VAD ÄR FAST och VAD ÄR ÖPPET — golv (lösenvärde, kupong, utdelningsbelopp) och option (konverteringsrätt, avkastning vid inlösen, räntans väg)? (3) VEM KAN ÄNDRA SPELET — inlösenrätter, utdelningsstopp, myndighetsklausuler? Tre frågor, tre svar — och en läsning som gör mellanformen begriplig utan att göra den enkel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: läs ett verkligt villkorsdokument med kursens tre frågor. (1) Hitta en svensk konvertibel eller preferensserie (prospekt och villkor finns hos respektive bolag — börsens hemsidor listar aktiva serier) och SLÅ UPP de tre talen kursen räknar med: för konvertibeln lösenbelopp, kupong och konverteringskurs — räkna din paritetspunkt och ditt slutvärde vid två tänkta aktiekurser; för preferensen utdelning och villkor för inlösen — räkna priset vid två avkastningskrav som i kapitel tre. (2) Placera anspråket i bolagets stämpelordning: vem står före, vem efter? (3) Ställ den fjärde frågan från kapitel sex: finns en klausul som kan ändra spelet — och vem har rätt att använda den? Kursens ram genomgående: detta är utbildning i hur instrumenten läses och räknas — konstruktionernas mekanik är läsningens verktyg, aldrig en uppmaning, och vad var och en väljer att göra med sina beslut är varje persons eget."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch höll sig hellre till det han kunde förklara för ett barn på en minut — och hans test applicerat på hybrider är sällsyckt effektivt: kan du säga VAD du får betalt, NÄR du får det, och VEM som bestämmer om du får det? En vanlig aktie svarar 'kanske utdelning, när styrelsen vill' — svårt men ärligt; en vanlig obligation svarar 'ränta varje år, ingen bestämmer, konkurslagen gör' — enkelt och sant. Hybriden svarar 'fasta pengar, men bolaget kan ställa in, inlösa eller — i en bank — en myndighet kan skriva ner allt': varje ord sant, men ingen mening enkel. Lynchs varning för papper vars historia han inte kunde berätta utan att tveka är här en bruksanvisning: mellanformer är inte omöjliga att äga klokt, men omöjliga att äga outsourcat — den som inte själv kan räkna paritetspunkten ska inte ha konvertibeln, och den som inte räknat 6,50/0,078 ska inte ha preferensen.",
+  "grahamSection": "Benjamin Graham delade världspapperen i två lådor — investment och spekulation — och hybriderna hamnar obekvämt mellan hans egna lådor: fast utdelning talar investeringens språk, men avsaknad av slutdatum och säkerhet talar spekulationens. Hans lösning för mellanformerna var principiell: räkna dem som det SÄMRE av sina två halvor tills det motsatta bevisats — konvertibeln som en dyr obligation (inte som en billig aktie), preferensen som en aktie utan uppsida (inte som en trygg obligation). Det är en konservativ översättning av kursens mellanformsfälla: i goda tider visar hybriden sitt fina jag, i dåliga det sämre — och Graham ville att priset skulle betala för det sämre. Hans säkerhetsmarginal (km-030) blir för hybrider en fråga om avstånd i KÖ, inte bara i pris: hur många steg före aktieägaren står man egentligen, och vad är de stegen värda i en omförhandling?",
+  "ak1Section": "I AK1A:s metodik är denna kurs KAPITALSTRUKTUR-familjens fjärde steg och den som gör trappan komplett i MELLANRIKET: ks-01 grunderna, ks-02 allokeringen, ks-03 skuldens anatomi — och här instrumenten som flyttar gränsen mellan skuld och eget kapital. Kursen matar grannspåren med data de saknat: balansräkningskurserna (bk-01) möter preferenskapitalet som lyfter soliditeten (st-01) utan att flytta risk, utdelningskurserna (ud-09) möter anspråk som står FÖRE aktieutdelningen i kön, emissionskursen (rk-02) möter utspädningen som kommer genom bakdörren vid konvertering, och kreditcykelkursen (st-04) möter refinansieringsväggen hos papper som ALDRIG förfaller men heller aldrig slutar kosta. I AKM2-modellens kapitalmekanik-dimension väger hybriderna in som just gränsfall: kapital som beter sig som skuld i räkningen och som eget kapital i balansen — och skillnaden mellan de två bilderna är en av de frågor en grundlig bolagsanalys ska kunna ställa och besvara."
+}

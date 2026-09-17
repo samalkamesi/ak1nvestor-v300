@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-industrivarden-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-17, omgång auto-s1-1789604126983) — KOMPLEMENT till s1-u2:s huvudgranskning (kvartal-2026-q3-industrivarden.md + -diff.json), som vann objektet enligt klaim-protokollet (deras anspråk 02:18:52, min 02:19:25)",
+  "rapport": "kvartal-2026-q3-industrivarden-KOMPLEMENT-u3.md",
+  "bedomning": "KORSKONFIRMERAR u2:s dom FLYTTKLAR EFTER RÄTTNING — oberoende sond (verktyg/_s1u3-indu-kontroll.mjs, 64 kontroller) ger samma bild: 0 sifferfel, 4/4 källor exakta, juridik grön, 911 = 0/6, 16/16 länkar 200. Kompletterar med FYRA poster deras granskning saknar (K2 Datavakten = seriens signaturnummer; K5 stavfel; K6 källsidslänk) och korsbevisar deras C2 ('fjärde formatet') med klassningsmotivering",
+  "anvandning": "Poster här KOMPLETTERAR u2:s diff — verkställ deras B1 först, därefter dessa efter beslut. K5 är ett rent byt (strängen unik). K1 bekräftar deras C2-sträng som korrekt byte med stärkt klassning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "K1",
+      "typ": "korskonfirmation-av-C2",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "och därmed seriens tredje format",
+      "nytt": "och därmed seriens fjärde format",
+      "orsak": "Dubbel oberoende bevisning: både u2:s granskning (deras C2) och denna sond dömer 'fjärde'. U2:s reservtion ('alternativ läsning: biltillverkning+industri som ett gemensamt tillverkningsformat') kan avfärdas: meningen räknar själv upp TRE namngivna format i parentes — telekom (Ericsson), detaljhandel (H&M), biltillverkning (Volvo Car) — varefter 'den bolagstyp' som presenteras är den fjärde i meningen EGEN uppräkning; byggordningen bekräftar (volvo-car, ericsson, hm-b = seriens tre första paket, fas 3 2026-09-15, innan Industrivärden). Nike-B2-precedensen klassade ett identiskt rondräkningsfel ('sjätte'→'sjunde') som B/byt — detta bör vara ett byt, inte ett förslag"
+    },
+    {
+      "id": "K2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Värdering, P/E-raden)",
+      "gammalt": "En låg P/E betyder här inte \"billigt\" — den betyder ofta att ett tidigare år haft stora realisationsvinster.",
+      "nytt": "En låg P/E betyder här inte \"billigt\" — den betyder ofta att ett tidigare år haft stora realisationsvinster. (Datavakten: identiteten P/E = P/B ÷ ROE ger 1,03 ÷ 0,323 = 3,2 mot källans 3,7 — cirka 13 procents spänning, och till skillnad från bankpaketen finns här ingen valutamixning att förklara bort: SEK hela vägen. Kvar står vinstens svängningar mellan mättillfällena — investmentbolagsutgåvan av seriens återkommande test, där ett svängt resultat gör 'P/E' till ett intervall snarare än ett tal.)",
+      "orsak": "Seriens signaturnummer — identitetstestet P/E = P/B ÷ ROE — saknas i både utkastet och huvudgranskningen (u2 korsbekräftade P/E 3,7 mot bolagssidans titel, en annan och bra vinkel, men testet självt saknas). Utfallet är onödigt intressant: 1,029/0,3227 = 3,189 mot 3,671 = 13,1 % avvikelse i EN valuta (jfr NP3:s 14 %, som dokumenterades som seriens största i en valuta; bankfallen kunde förklaras med valutamixning — här finns ingen sådan dörr). NP3-paketets 'tre vinstvägar — tre P/E'-lära i investmentbolagsutgåva, och den förstärker utkastets egen P/E-varning med mätbar aritmetik"
+    },
+    {
+      "id": "K3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Nyckeltalen, ärlighetsraden)",
+      "gammalt": "(femårsserierna bygger på fyra år med hål i, därför redovisas inga CAGR-tal)",
+      "nytt": "(femårsserierna bygger på fyra år med hål i, därför redovisas inga CAGR-tal här — källans eget omsättning-CAGR-fält, 90,8 procent per år, räknar ändå på samma luckiga serie och lämnas medvetet oredovisat)",
+      "orsak": "U2:s N4 dokumenterar källfältet (omsättningCAGR5ar = 0,9083) som backstadium men föreslår ingen textändring. Paketets ärlighetsdoktrin ('paketet gissar aldrig') tjänar på att nämna fältet den medvetet valt bort: en läsare som öppnar källfilen själv möts av '90,8 %/år' — utan en not i utkastet ser det ut som en bortglömd superialsiffra snarare än ett medvetet struntat artefakt-tal (657 Mkr-basen 2020, 2023 saknad, 2022 utan omsättning)"
+    },
+    {
+      "id": "K4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Värdering, PEG-notisen)",
+      "gammalt": "PEG-talet redovisas inte som nyckeltal här: det bygger på prognostillväxt, som är osatt för bolaget — att räkna PEG på osatt grund vore fejkprecision.",
+      "nytt": "PEG-talet redovisas inte som nyckeltal här: konventionen bygger på prognostillväxt, som är osatt för bolaget — att räkna PEG på osatt grund vore fejkprecision. En not för den nyfikne: källans egen PEG-kolumn bär ändå värdet 5,47, på okänd grund — ett fält som säger något annat än dess namn lovar.",
+      "orsak": "U2:s N1 dokumenterar peg = 5,47 med den vassaste backstage-analysen (implicit tillväxt 3,671 ÷ 5,47 ≈ 0,67 % — samma implicita nolla som SHB-fallet) men utan textförslag. 'Det bygger på prognostillväxt' är sant om KONVENTIONEN men antyder att PEG inte kan finnas i källan — den finns (5,47) trots prognosTillvaxt null, och gapet mellan fält och grund är i sig pedagogik i ett paket som bygger hela sin vinkel på källkritik. Seriens PEG-lära: fältets pålitlighet följer källan, inte fältnamnet"
+    },
+    {
+      "id": "K5",
+      "typ": "byt",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Vad motorn mäter just nu)",
+      "gammalt": "Elliots, Fibonacci, Gann och Lucas-teorierna",
+      "nytt": "Elliotts, Fibonacci, Gann och Lucas-teorierna",
+      "orsak": "Stavfel som huvudgranskningen citerar utan att se (deras §2 återger utkaststrängen 'Elliots, Fibonacci, Gann och Lucas enhälligt positiva' med ✓). Teorin är uppkallad efter Ralph Nelson Elliott — dubbel-t; utkastet självt skriver 'Elliott/Lucas' med dubbel-t i vågklassnotisen två meningar tidigare och analysfilens fältnamn är 'elliott'. Strängen verifierad unik i filen (1 träff)"
+    },
+    {
+      "id": "K6",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Praktiskt)",
+      "gammalt": "och metodens transparansregler på [transparenssidan](/transparens).",
+      "nytt": "och metodens transparansregler på [transparenssidan](/transparens) — [källsidan](/kallor) förklarar hur datainsamlingarna görs.",
+      "orsak": "Seriepraxis: syskonpaketen länkar kurser/transparens/kallor (nike-paketet: 'kurser/transparens/kallor'); detta paket har en hel Källor-sektion men länkar aldrig källsidan bakom 'AK1A:s egna datainsamlingar'. /kallor verifierad HTTP 200 mot localhost av denna granskning (02:2x lokal). Strängen verifierad unik"
+    }
+  ]
+}

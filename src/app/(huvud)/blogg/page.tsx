@@ -59,9 +59,15 @@ export default function BloggPage() {
           return (
             <div
               key={p.slug}
-              className="flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
+              className="cv-bloggkort flex flex-col rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
             >
-              <Link href={`/blogg/${p.slug}`} className="flex flex-1 flex-col">
+              {/* prefetch={false} (o17/o37-precedensen): Next 16:s
+                  viewport-prefetch hämtar slug-rutten i två omgångar
+                  (partial + full flight ≈ 9,7 KiB/kort) redan i initial
+                  load — 55 kort betyder spill i LCP-fönstret för varje
+                  listbesökare; artikel-RSC:n (~9 KiB, force-static) hämtas
+                  vid klick istället. Mätt i o41 (s7-u2). */}
+              <Link href={`/blogg/${p.slug}`} prefetch={false} className="flex flex-1 flex-col">
                 <span className="text-xs uppercase tracking-widest text-gold">{p.pillar}</span>
                 <span className="mt-2 font-serif text-xl font-bold">{p.title}</span>
                 <span className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">
@@ -78,10 +84,15 @@ export default function BloggPage() {
                 </span>
               </Link>
               {/* Intern länk vidare in i kursbiblioteket — utanför kortets
-                  länk så ankartexten blir en egen, deskriptiv länk. */}
+                  länk så ankartexten blir en egen, deskriptiv länk.
+                  prefetch={false} (o17-precedensen): viewport-prefetch av
+                  kursrutter drog RSC-payload + route-chunks (~60 KiB) i
+                  initial load hos varje kortbesökare — LCP/TBT-gapet mot
+                  /en/blogg (spegelkorten saknar länken) mätt i o37. */}
               {kurs && (
                 <Link
                   href={`/kurser/${kurs.slug}`}
+                  prefetch={false}
                   className="mt-3 block border-t border-gold/20 pt-3 text-xs text-muted-foreground hover:text-gold max-md:min-h-[52px]"
                 >
                   Fortsätt djupare: kursen {kurs.title} — {kurs.category}

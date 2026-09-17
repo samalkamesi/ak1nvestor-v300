@@ -12881,3 +12881,48 @@ SPÅR 8 s8-u1 omgång 16 (vakt 1/3) — 2026-09-17 20:1x lokal: o55 PATCH-BYGGET
 ## SPÅR 8 s8-u2 (manifest auto-s8-1789667729291, 2/3) — 2026-09-17 ~18:0x–18:4x lokal: DÖDA LÄNKAR-INSUMENTET KURAT + ÅTERMÄTNING LEVERERAD 3 473/0 — o47:s REST stängd; två falsklarmsklasser funna på levande processverkligahet (o55) [fabrik]
 
 OBJEKT (anspråk FÖRE ingreppet, data/vakten/auto-s8-1789667729291-u2-ansprak.md; prod-läkning verifierad 200 FÖRE anspråk): o47 REST + o48:s dubbla bokning "döda länkar-återmätningen förblir öppen" — två omgångars väntan infriad. METODFUND SOM BLEV OBJEKTETS KÄRNA: o47 §2:s kurer (fuser-ÄGANDE, byggprocess, hälsogrind) fanns ENDAST i protokollet — verktyget orört = varje framtida mätning utanför just den protokoll-läsande agenten riskerade omigen 1 616×500-artefakten; instrumentet kurades, inte metoden. KURER (verktyg/doda-lankar.mjs): mätfönster-grind FÖRE crawl (fuser ÄGANDE aldrig existens + pgrep byggprocess + hälsogrind / och /kurser 200; missar = avbrott kod 1 FÖRE mätvärde) + driftfel-tak EFTER crawl (>5 % 5xx/nätfel = rapport KASSERAS, ingen fyndfil, kod 2 — artefaktdoktrinen mekaniserad) + rapportfil skrivs ALDRIG över (klockslagssuffix) + --tvinga = diagnostik märks i filnamnet (aldrig mätvärde) + miljövariabler AK1A_DEPLOY_LAS/AK1A_BYGG_MONSTER för testbarhet. TVÅ FALSKLARMSKLASSER FÅNGADE LEVANDE: (F1) whitespace-split av mönster gav pgrep -f "next" — pm2 'ak1a' (npm run start → next start-barn) bär "next" DAGLIGEN ⇒ verktyget kunde ALDRIG mäta (första prod-försöket stoppat i fönster där fuser tom och inget bygge körde); (F2) pgrep -f "npm ci" matchar FABRIKSAGENTERNAS EGENA zcode-prompter (regeln 'ALDRIG npm ci' syns i cmdlinen hos alla 3 barn vid varje våg — levande bevis) ⇒ breda mönster deckar varje mätning medan fabriken lever. KUR: kommaseparerade HELA mönster "next build,npm ci --no-audit" (sekvenserna finns bara i äkta bygg/install-kommandon; pm2 bär "next start", prompter blott "npm ci") — klassregel bokförd: pgrep-mönster väljs mot serverns FULLA processverklighet (o43 §5:s läxa igen). BEVIS: svit verktyg/testa-doda-lankar.mjs 24 PASS 0 FAIL 0 SKIP (hälsogrind · drift-tak kod 2 utan fil · mätvärde med död länk+källor · filskydd byte-identisk · pgrep-grind deterministisk via argv0 · F4 låsfil UTAN ägare mäts fint = existens inte indikator · G smala mönster mot LEVANDE fabrik); fixturer i mkdtemp OS-tmp; ÅTERMÄTNING i verifierat stilli fönster (grindarna gröna i verktygets egen logg; prod-synk VÄNTAR-RAM): 3 473 unika sökvägar · DÖDA 0 · omdirigeringar 0 · 793 s ljummen klass · exit 0 · rapport data/vakten/doda-lankar-2026-09-17-182642.json medan o47:s 13:46-bevisfil ORÖRD (filskyddet levande bevisat, md5 9973a5d6); grafens tillväxt 3 012→3 227→3 473 med 0 äkta döda = grafen HEL trots 461 nya sökvägar (register-vågen /en /ar-speglar); kvalitetsvakten helkörning --kör-motorer 18:13:42Z 11/11 PASS · FEL 0 · MANUELLA 0 · GRÖN; tsc 0 projektbinär; node --check ×2. KVD: src/ orörd · INGET bygge (prod-synken äger) · R2 orörd · data/blogg orörd · syskonytor orörda (s8-u1:s pågående prod-synk.mjs-kur rördes inte — komplementära ytor). Bokningar (o55 §6): externa verktyget saknar grindarna (bär över vid behov); varm 44 s-punktprov; s9-u3:s "vaktens SSR-500-detektering" förblir ÖPPEN hos kvalitetsvakt-ytan. Protokoll: OPTIMERING/o55-doda-lankar-instrumentkur-s8.md. [fabrik]
+
+## SPÅR 9 s9-u2 omgång 10 — 2026-09-17 ~15:3x lokal: SYSTEMKARTAN dokvåg — B9 + A4 återdiffade (andra varvet; mätblindhet under planerat patch-bygge) [fabrik]
+
+Objektval mot duplikat (anspråk FÖRE mätning, data/vakten/auto-s9-u2-ansprak-omg10.md;
+senaste kart-commits c70adaab/93f43878/4fd4242e/d6d3520b/8b90113d — B9+A4 aldrig
+återdiffade sedan 09-16, valda på varv-2-regeln "störst verklighetsrörelse": B8-korsnotisen
+"B9-gränsfyndet åldras vidare" + A4:s dagligen roterande yta). DRIFTFÖRHÅLLANDE: prod i
+PLANERAT patch-byggfönster under hela mätningen (prod-synk.logg 18:37Z "PATCH-KÖ aktiv:
+next@16.3.5", pm2 stoppad medvetet enligt o48/r58-kuren, .next under ombyggnad — BUILD_ID
+saknas, lock satt; återstart garanteras av main():s finally) ⇒ live-sonder svarade
+502/refused — dokvågen äger ej läkningen; fil-, kod-, cron-, arkiv- och svitmätningar
+opåverkade. B9 LEVER 8 kvar — TRE FYND: (1) KARTFEL RÄTTAT: /etc/crontab rad 24 (fil-mtime
+09-08 22:02) kör vagscan 06:30 lokal DAGLIGEN (curl med Host-header mot 127.0.0.1) —
+kartans 09-16-påstående "Contabo-crontaben saknar raderna" läste användar-crontab (fel
+källa); motbevisades redan i min 09-16-worklog men inarbetades EJ i sektionen förrän nu;
+(2) SKÄRPNING med arkivbevis: system-events-full-2026-09-16.json.gz (export 05:24Z, 161 678
+rader) bär EXAKT EN vagscan-rad — 05:05:24Z "Vågkarta: 206 impulsvågor, 90 korrigeringar
+(12/12 bolag mätta)" = Vercel-cronens minut (i linje med 09-15:s 05:05:22Z) — Contabo-
+fönstret 04:30Z (06:30 lokal) lämnade 0 spår TROTS att koden skriver skans-raden UTAN
+daglig dedupe (route.ts rad ~289: "EN skrivning per körning"; dedupe gäller bara
+kvartalssnapshoten ⇒ två lyckade körningar = två rader) ⇒ Contabo-körningen FALLERAR TYST
+och curl:as till /dev/null 2>&1 = rotobevisbarhet inbyggd — gap 4 går från "raden saknas"
+till "raden finns men är okörbevisad/tyst fallerande"; (3) vagvalidering fortfarande
+OSPEGELAD på Contabo (båda crontab-källor mätta — B8-kedjekravet kvarstår till molnronden
+2026-10-02). Styrkor bekräftade: svit EGEN 57/57 PASS exit 0, universum fast 12 tickers
+(route.ts:36–38), SENASTE-rapporten oförändrad (domar 09-04 = 13 dagar, mtime 09-10 16:33),
+/api/data/vagstatistik läser den från disk (kod rad 30–31) med 0 sid-/komponentkonsumenter
+(gap 3 lever). A4 LEVER 7 kvar — ROTATIONEN OBEROENDE VERIFIERAD OFFLINE: FNV-1a-datumhashen
+(salt 1) ombereknad ur route.ts (verktyg/_s9u2-a4-rotation-koll.mjs, exit 0) ger 2026-09-16 →
+ROTATION[4] = SHB-B.ST = EXAKT passningens prod-dubbelanrop ⇒ algoritm + sanning bevisad
+utan nät, och 2026-09-17 → ROTATION[3] = SAND.ST (rotationens nya väntade värde när pm2
+återstartas); NY KOPPLING: ROTATION = samma 12-bolags AKM1-universum som vagscan-cronen —
+dagens-pass tränar i B9:s skannade universum (kartan fångade inte detta); alla 8 nyckelfiler
+orörda sedan 09-16 (git log tomt); gap 1 lever (0 sviter för streak/XP; lasStreak i
+member-local.ts:69 orörd). Snitt 7,5 / 286 / 38 OFÖRÄNDRAT (två preciseringsdokvågor,
+E33/B14-precedensen). Kö till huvudagenten: (1) Contabo-vagscan-cronens tysta fallerande —
+körbevis/loggning (pumpor-kanalen loggar; curl >/dev/null gör det inte); (2) vagvalidering-
+spegling på Contabo (annars frusna prod-loggar till 2026-10-02); (3) SENASTE-rapportens
+förnyelse; (4) A4 streak/XP-svit (lasStreak ren funktion — lätt första svit). KVD: endast
+data/forskning/SYSTEMKARTAN.md + worklog + anspråksfil + verktyg/_s9u2-* = INGET bygge
+(deploy ägs av prod-synken under lås); src/ orörd (tsc 0 via commit-grinden); R2 orörd —
+inga priser/tier/publicering; data/blogg/ orörd; syskonens ytor orörda (motorervalidering
++ övriga ospammat innehåll lämnade). Redigering via node-kanal (_s9u2-omg10-kartuppdatering.mjs:
+6 en-träff-ersättningar med abort-grind, körda mot ren karta; HEAD 957272f8 oförändrat under
+hela fönstret) + EN skrivning + OMEDELBAR commit = clobber-kuren. [fabrik]

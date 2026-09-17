@@ -535,6 +535,11 @@ const GAMLA = [
     "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
     "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup",
     "svaraLokaltGrahamgolv",
+    // Omgång 14:s fönsterlager (disk-läge-presedensen): u2 varderjustering +
+    // u1 optionsdjup + s6-u3 riskläsningsdjup — SIST av 27.
+    "svaraLokaltVarderjustering",
+    "svaraLokaltOptionsdjup",
+    "svaraLokaltRisklasningsdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

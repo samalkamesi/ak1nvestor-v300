@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (80 i tjugofyra motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (86 i tjugosju motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -100,6 +100,13 @@ const MOTORDEFS = [
   // cigar butts + Mr Market), sist i kedjan; bär widgetknappen "vad är en
   // net-net och NCAV?" som före leveransen gick till API-flödet.
   { namn: "grahamgolv", fil: "ai-mentor-grahamgolv-fragor.ts", fn: "svaraLokaltGrahamgolv", arr: "GRAHAMGOLV_MONSTER", antal: 3 },
+  // 2026-09-17 omgång 14: varderjustering (syskon u2 — normalisering/CAPE +
+  // WACC) + optionsdjup (s6-u1 — köpoption med säljoptionsspegeln; aktiverar
+  // od-01/od-02 som ingen mentorväg nådde) + risklasningsdjup (syskon u3 —
+  // kundkoncentration/riskmatris/riskavsnitt, RISKläsningskursernas första).
+  { namn: "varderjustering", fil: "ai-mentor-varderjustering-fragor.ts", fn: "svaraLokaltVarderjustering", arr: "VARDERJUSTERING_MONSTER", antal: 2 },
+  { namn: "optionsdjup", fil: "ai-mentor-optionsdjup-fragor.ts", fn: "svaraLokaltOptionsdjup", arr: "OPTIONS_DJUP_MONSTER", antal: 1 },
+  { namn: "risklasningsdjup", fil: "ai-mentor-risklasningsdjup-fragor.ts", fn: "svaraLokaltRisklasningsdjup", arr: "RISKLÄSNINGSDJUP_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -108,7 +115,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 80 (2026-09-17, 24-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 86 (2026-09-17, 27-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -182,6 +189,15 @@ const KANONISKA = [
   { fraga: "vad är en net-net och NCAV?", motor: 23 },
   { fraga: "vad är cigar butts?",        motor: 23 },
   { fraga: "vem är mr market?",          motor: 23 },
+  // Omgång 14: varderjustering (normalisering är deras egna fråga — "vad är
+  // wacc?" ägs fortfarande av lonsamhetsdjup och "vad är cape?" av
+  // case/riskmåttsdjup, deras dokumenterade ansvarsfördelning),
+  // optionsdjup + risklasningsdjup.
+  { fraga: "vad är normalisering?",     motor: 24 },
+  { fraga: "vad är en köpoption?",      motor: 25 },
+  { fraga: "vad är kundkoncentration?", motor: 26 },
+  { fraga: "vad är en riskmatris?",     motor: 26 },
+  { fraga: "hur läser jag riskavsnittet?", motor: 26 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -226,7 +242,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "tjugofyra motorer lämnar frågan ifred",
+  "tjugosju motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -309,7 +325,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla tjugofyra motorer",
+    "H: disjunkta monster-id:n över alla tjugosju motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

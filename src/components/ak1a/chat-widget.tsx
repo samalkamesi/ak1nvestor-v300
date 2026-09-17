@@ -279,6 +279,43 @@ import { svaraLokaltStabilitetsdjup } from "@/lib/ai-mentor-stabilitetsdjup-frag
 // J3). Juridikgrind: ren metodutbildning — inga placeringstips.
 import { svaraLokaltGrahamgolv } from "@/lib/ai-mentor-grahamgolv-fragor";
 
+// Spår 6 omgång 14 (s6-u2): värderingsjusteringar — normalisering/CAPE +
+// WACC, SIST i kedjan. Kärnorden sonderade mot samtliga 24 tidigare lager
+// (0 fångster i båda riktningarna — verktyg/testa-ai-mentor-varderjustering.mjs
+// fall G2/J vakar mekaniskt LIVE ur modulerna). vm-04 är redan SIDOKÄLLA i
+// djup-lagrets multipel-monster — här ägs ämnet normalisering; källor får
+// delas mellan lager, kärnord aldrig. Juridikgrind: metodutbildning.
+import { svaraLokaltVarderjustering } from "@/lib/ai-mentor-varderjustering-fragor";
+
+// Spår 6 omgång 14 (s6-u1): +1 förhandsfråga (köpoption med säljoptionen
+// som inbyggd spegel) — optionsdjup-lagret ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (km-059/od-01/od-02/km-062). Ansvarsfördelning: nästa-lagret äger
+// options-ÖVERSIKTSORDEN (option/call/put/covered call/protective put/
+// black scholes — sondbevis), detta lager äger de svenska komponentorden
+// (köpoption/säljoption/lösenpris/strikepris/optionspremie/tidsvärde/
+// underliggande/optionsgreker); kurserna od-01 + od-02 nås av ingen annan
+// mentorväg (kärnordsdisjunktion mot 815 ord LIVE-testat, 0 krockar —
+// verktyg/_s6u1-sond-omg14.mjs).
+import { svaraLokaltOptionsdjup } from "@/lib/ai-mentor-optionsdjup-fragor";
+// Spår 6 omgång 14 (s6-u3): +3 förhandsfrågor — riskläsningsdjup-lagret
+// (kundkoncentration/koncentrationsrisk/kundberoende · riskmatris ·
+// riskavsnitt/riskbeskrivning/riskredovisning) ligger SIST och kan därför
+// aldrig stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
+// (rs-02-kundkoncentration + rk-09-koncentrationsrisk + rs-03-dold-
+// samvariation + rs-04-riskmatrisen + rs-05-riskavsnittet-mellan-raderna
+// + rk-11-bedrageririsk + km-032 — RISK-kategorins tre läsningskurser
+// rs-02/rs-04/rs-05 som primärer). RISK var registrets näst största helt
+// otäckta kategori: volatilitet ägs av basens risk-monster, dold
+// samvariation av portföljgrundens korrelationsfamilj, kapitalförbränning
+// av basens V19 — detta lager bär ENDAST sammansatta familjeord basen
+// saknar (V19-precedensen; sond verktyg/_s6u3-sond-omg14.mjs: 843 kärnord
+// LIVE, 0 fångster i båda riktningarna; syskonen u2:s varderjustering +
+// u1:s optionsdjup på disk i samma fönster — disk-läge-presedensen,
+// kärnorden mekaniskt disjunkta mot detta lager i båda riktningarna).
+// Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltRisklasningsdjup } from "@/lib/ai-mentor-risklasningsdjup-fragor";
+
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
  *
@@ -983,7 +1020,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

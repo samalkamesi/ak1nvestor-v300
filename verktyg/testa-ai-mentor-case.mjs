@@ -378,6 +378,11 @@ const kedjekomponenter = [
   "svaraLokaltPortfoljbalans(q, KURSREGISTER)",
   "svaraLokaltStabilitetsdjup(q, KURSREGISTER)",
   "svaraLokaltGrahamgolv(q, KURSREGISTER)",
+  // Omgång 14:s fönsterlager (disk-läge): u2 varderjustering + u1 optionsdjup
+  // + s6-u3 riskläsningsdjup — SIST av 27.
+  "svaraLokaltVarderjustering(q, KURSREGISTER)",
+  "svaraLokaltOptionsdjup(q, KURSREGISTER)",
+  "svaraLokaltRisklasningsdjup(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";

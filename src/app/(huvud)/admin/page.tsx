@@ -471,8 +471,13 @@ export default function AdminDashboard() {
         >
           {/* VÅG 104: flikraden scrollas horisontellt på mobil (21 flikar ≈
               2000 px får ALDRIG breda ut sidan); tryckytor ≥44 px, etiketter
-              bryts ej (whitespace-nowrap + shrink-0) — skrivbordet oförändrat. */}
-          <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:thin] sm:mx-0 sm:px-0">
+              bryts ej (whitespace-nowrap + shrink-0) — skrivbordet oförändrat.
+              VÅG 185 (s8-u1): utbrytarmarginalen MASTE matcha förälderns px-4
+              exakt — globals.css "MEGA MOBILE"-override gör px-4 = 14 px på
+              ≤640 px, så -mx-4 (−16 px) läckte 2 px per sida (body.scrollWidth
+              392 i 390-vy = vaktens konstanta 2px-fynd på alla admin-flikar
+              sedan våg 104); -mx-[0.875rem] = samma 14 px som paddingen. */}
+          <div className="-mx-[0.875rem] overflow-x-auto px-4 pb-1 [scrollbar-width:thin] sm:mx-0 sm:px-0">
             <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
               {ALLA_FLIKAR.filter((f) => !arRedaktor || !f.endastAdmin).map((f) => (
                 <TabsTrigger

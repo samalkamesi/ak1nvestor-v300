@@ -1533,7 +1533,7 @@ loopback-curl + DR-protokollens artefakter — aldrig worklog):
 | E34 | LEVER 9 → **LEVER 9** | Redan toppreviderad (omgång 9); passningen tillför instrumentdjup (RPO per tabell, födelsebevis, obevakad nattkedja) och patch-kön som mekaniserat väntar-läge — inget nytt rot-gap stängt, inget öppnat: ISR 12/44 lever kvar, migreringsfilens klartext-lösenord är NYTT gap (säkerhetsklass), prod-bygget av 16.3.5 inte landat vid mätningen |
 | C16 | LEVER 8 → **LEVER 8** | Sammanställningen förnyad + granskningsmotorn bevisad i högvarv (3 kontroller/dygn med maskinella paket) — men publiceringsuttaget står still (55 frysta, kundens klick = R2) och kön växer +51/dygn; B13-precedensen: ingen score-rörelse utan E2E-publiceringsbevis. Flaskhalsen är FÖRFLYTTAD från granskning till publiceringsbeslut |
 
-Snittscore **7,5** (286 → **287 poäng** / 38 system; E33 +1 vid denna dokvåg).
+Snittscore **7,55** (tabellsumma **287** / 38 system; u3:s dokvåg flyttade E33 +1 OCH E34 +1 — E34-radens "LEVER 9 → LEVER 9" är Före-skrivfel, faktisk rörelse 8→9; provenans-rättning s9-u1 omg 13: omgång 13:s och u2:s "286" existerade aldrig i tabellen — summan var 285 före u3:s +2).
 
 Sidofynd utanför de tre systemen: (a) E33:s femstegskö FÖRENKLAS — steg 2-3
 (index FÖRE återimport + dedupe-läge) var motiverade av en återimport som nu
@@ -1543,6 +1543,58 @@ tväprojekt-mätfällan dokumenteras i DRIFTSBOKEN (rkaq vs aufr — pg_dump sak
 tabellen; sonder mot "system_events i prod" MÅSTE deklarera projekt).
 (b) MIGRERING-NY-DATOR.md-lösenordet (E34) eskaleras till huvudagenten —
 filen är kundnära driftdokumentation men repot speglas mot GitHub.
+
+## UPPDATERING 2026-09-17 (dokvåg s9-u1 omgång 13 — E29 återdiffad; clobber-kuren bevisad i skarpt läge + målhjärtats driftfönster-känslighet)
+
+Objektval EFTER kollision: E34 var förstahandsvalet (spårets största
+verklighetsrörelse: patch-kedjan) men syskon u3:s disk-skrivning (20:46:33)
+och commit (f1a33e95, 20:47:03) hann FÖRE min anspråksfil — disk-först-
+presedensen tillämpad, E34 avstått, deras sektion orörd (korsvalidering
+nedan). E29 valt i stället: senast passat 09-16 och kvällens händelser ÄR
+dess namngivna gap. Varje rad EGENMÄTT 09-17 ~20:35–21:05 lokal (pm2,
+node-läsning av status/jsonl/loggar, ls, grep, git — aldrig worklog).
+
+| Mått | Kartan (09-16) | Verkligheten 09-17 (mätning) |
+|---|---|---|
+| Fabrikmanifest | 66 klara av 67 (+41/dygn) | **116 klara av 117**; kön bär 1 pågående (auto-s9-1789670129370 = denna dokvågs eget manifest) |
+| Leveransbevis | ej mätt | **387 utdataloggar** i agentfabrik/utdata/ |
+| Beslutsminne | 48 poster | **62 poster** (+14), 6 bokförda idag, senast 17:43:30Z — rondkadansen (3 h) lever |
+| Pumpor-daemonen | "i ps" | **ak1a-pumpor online 25 h, ↺19** (pm2-mätt) |
+| Clobber-gapet ("samma kartfil utan lås") | 3 commits/19 min + clobberbevis (09-16) | **ÅTERKOM MITT I DENNA DOKVÅG, från förlorarsidan**: min kartuppdaterares abort-grind VÄGRADE skriva när u3:s E34-rad bytts under fönstret ("ABORT E34-rad: 0 träffar" → exit 1, ingen skrivning) = en-träff-verify-kuren BEVISAD I SKARPT LÄGE; men min anspråksfil skrevs FÖR SENT (minuter efter deras disk-skrivning) — koordinationen fungerar ENDAST när anspråk läggs FÖRE mätstart |
+| Målmachineriet i driftfönster | obehörigt | **evighetsmotorn 2× "mål-status OSVARBAR (två försök)"** (18:38:39Z mitt i patchfönstret 2 + 18:48:39Z; evighetsmotor.log) — samma klass som prod-synkens "mål-återarmning FEL 502" 18:32:57Z: driftfönstret bryter målhjärtat i flera system; designen ärlig (loggar + avslutar, hjärtat :x1 äger återaktivering) |
+| Kunduppdragsprotokollet | mekaniskt (v156) | **VILANDE, korrekt**: kunduppdrag.json + uppdrag-klart.json saknas = ingen order i flykt just nu |
+| Egen testsvit | "saknas" | **PRECISERAD**: testa-pumpor-scheman.mjs + testa-styrelse.mjs FINNS (2 st); agentfabrik / evighetsmotor / uppdragsprotokoll utan egna sviter |
+| CRON_SECRET | ej satt | **fortfarande 0 namnträff** i .env* (namn-närvaro endast, värden aldrig lästa — B14-precedensen) |
+
+Poäng: **E29 LEVER 8 kvar** — kunskap tillförd utan gaprörelse (E33/B14-
+precedensen): clobber-kuren är skarptbevisad men gapet (strukturellt utan
+lås) lever, svitgapet preciseras bara, CRON_SECRET kvar. Snitt 7,55 / 287 /
+38 (se räkningssidofix nedan).
+
+Korsvalidering E34 (syskon u3:s passning f1a33e95 — deras mätning slutade
+"prod-bygget av 16.3.5 inte landat vid mätningen"; raden orörd): min mätning
+EFTER deras: **next-server v16.3.5 LEVER i processlistan** (byggd
+18:37–18:41Z), 6 ytor 200 (/, /kurser, /blogg, /laroplan, /analyser,
+/studio), patchfönstren exakt **4m51s + 3m44s**, **rond 2 var OBEHÖVIG**
+(rond 1 deployade redan 16.3.5; lock-commit-räknaren dömer "nothing to
+commit" som misslyckad — 4 kvitton i patch-kvitton.jsonl, kön stängs på
+falsk grund), döda-länkar-sviten 24/0/0 i byggfritt fönster MEN FAILAR
+under pågående äkta bygge (byggprocess-grinden ser globala /proc; fixturen
+isolerar ej). Köposter (1) lock-commit no-op = framgång när målversionen
+redan är committad, (2) patchfönstret ~4 min kundsynlig/rond, (3) döda-
+länkar-sviten märks "kräver byggfritt fönster" — förs till E34/E35:s köer.
+
+Räkningssidofixar (dokvåg-hygien): snitt-provenansen rättas — tabellsumman
+var **285** vid omgång 13 (prosans "286" existerade aldrig i tabellen; u2:s
+"286 OFÖRÄNDRAT" bar samma drift) och är nu **287** = 285 + E33 +1 +
+E34 +1 (u3:s E34-cell "LEVER 9 → LEVER 9" är Före-skrivfel; faktisk
+rörelse 8→9).
+
+Kö till huvudagenten: (1) kartfil-lås/kur för dokvåg-syskon — anspråk FÖRE
+mätstart som promptregel + en-träff-abort som norm (båda halvorna bevisade
+ikväll); (2) lock-commit no-op-klassen (E34-kö, se korsvalideringen);
+(3) målhjärtats driftfönster-tålighet (synkens återarmning + motorns sond);
+(4) agentfabrik/evighetsmotor-sviter.
 
 ## ÖVERSIKT — 38 system
 
@@ -1577,7 +1629,7 @@ filen är kundnära driftdokumentation men repot speglas mot GitHub.
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Audit-loggen 3,8× aktivare på 2 dygn (258 969 B / 1 008 rader / 301 aktörer / 143 deploy — fabrikens faktiska driftlogg, mätt 09-17); sviten 14/14 grön igen + requireAdmin 401 live båda ytorna; /admin-500 = o47-driftklassen (API oskadat); juridik-FP 8→17 + FLYTTKLAR 21→63 (gap 5 brittare); kvar: manuell spegling, publicera-E2E (R2-knapp orörd — val-filen finns ej), IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169 — gap 4 motbevisat, mätt 09-17); våg 164–175 tillförde maskinpuls + publiceringsgrind + resync + godkännandeyta |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (66 klara manifest av 67, +41/dygn mätt 09-16; pumpor i ps; beslutsminne 48 poster); NYTT GAP mätt 09-16: dokvågsuppdrag pekar syskon på SAMMA kartfil utan lås (3 commits/19 min + clobberbevis); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 116 klara manifest av 117 (mätt 09-17 kväll; kön bär 1 pågående = spår-9-manifestet) · 387 utdatologgar som leveransbevis · beslutsminne 62 poster (6 idag, senast 17:43:30Z — rondkadansen lever) · pumpor-daemon online 25 h ↺19 · kunduppdragsfilerna vilar korrekt (ingen order i flykt); CLOBBER-GAPET ÅTERKOM MITT I 09-17:S DOKVÅG: syskonets E34-rad byttes under fönstret, abort-grinden VÄGRADE skriva = clobber-kuren BEVISAD I SKARPT LÄGE från förlorarsidan (men anspråk måste FÖRE mätstart — mitt kom minuter för sent, disk-först-presedensen tillämpad, E34 avstått); NYTT FYND: evighetsmotorns mål-sond 2× OSVARBAR under kvällens patchfönster (18:38:39Z + 18:48:39Z — samma driftfönsterklass som prod-synkens "mål-återarmning FEL 502"); svitgapet preciserat: pumpor + styrelse HAR sviter, agentfabrik/evighetsmotor/uppdrag saknar; CRON_SECRET fortfarande 0 namnträff |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |

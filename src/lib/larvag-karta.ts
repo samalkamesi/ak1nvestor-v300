@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (391 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (393 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 349 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 351 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -396,6 +396,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-04-vallgravens-fodelse", titel: "Vallgravens födelse — hur en moat byggs sten för sten", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -411,6 +412,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-03-forvarvsmaskinen", titel: "Förvärvsmaskinen — hur private equity bygger (och belastar) ett bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -427,4 +429,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 391;
+export const LARVAG_ANTAL_KURSER = 393;

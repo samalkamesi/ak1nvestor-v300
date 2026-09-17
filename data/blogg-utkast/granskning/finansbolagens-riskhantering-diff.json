@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/finansbolagens-riskhantering.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-17, klaim a36ad0de)",
+  "rapport": "finansbolagens-riskhantering-KONTROLL-2026-09-17.md",
+  "bedomning": "FLYTTKLART EFTER C-POSTER — 0 blockerande fynd; C1/C2 är granskningens väsentliga (superlativen 'universumets bredaste spann' är falsk på båda sina platser: konsumentbranschens spann 19–70 = 51 poäng mot finans 30–80 = 50 poäng, mätt i samma publicerade branschmedianpost som utkastet självt hänvisar till), C3 kosmetiskt men systematiskt (sjätte instansen). Samtliga tolv mediantal MED n-uppgifter är exakta mot underlaget @ 806f9359 och medianmetoden är den korrekta (medel av mittersta)",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga strängar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "body",
+      "gammalt": "mellan 30 och 80 — universumets bredaste spann, från Nordea Bank till Investor",
+      "nytt": "mellan 30 och 80 — endast konsumentbranschens spann 19–70 är bredare, från Nordea Bank till Investor",
+      "orsak": "Universumspåstående falskt enligt den egna källan: den publicerade branschmedianartikeln (data/blogg/branschmedianer-akm2.json) redovisar konsument 19–70 (bredd 51 poäng) mot finans 30–80 (bredd 50). Rangen rättas, påståendets kraft (bred spridning = flera affärsmodeller) behålls"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "är universumets bredaste: branschgruppen är inte en utan flera affärsmodeller",
+      "nytt": "är ett av universums bredaste — endast konsumentbranschens 19–70 slår det: branschgruppen är inte en utan flera affärsmodeller",
+      "orsak": "Samma falska superlativ som C1 på sin andra plats i texten (samma felklass som materialbolagens-tillvaxt C2+C3: superlativ i bullet + sammanfattning)"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (600 ord/min): 985 ord ÷ 600 = 1,64 ⇒ 2. Sjätte instansen av det systematiska slippet i branschguide-familjen (lakemedels, ravarubolag, teknik, material, finans — ravarubolag bär det fortfarande i arbetsytan). Exportvägen räknar om automatiskt men rättas enklast nu"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "title",
+      "gammalt": "Riskhantering inom finans — bankens tre risker och de mått som syns i rapporten",
+      "nytt": "Riskhantering inom finans — bankens tre risker i rapporten",
+      "orsak": "Nuvarande title är 79 tecken; mx1-seriebeslutet tillåter 70–84 men Google trunkerar sökresultat runt 60. Förslaget håller 58 tecken med sökorden (riskhantering, finans, bankens tre risker, rapport) kvar"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "description",
+      "gammalt": "För en bank är riskhanteringen inte en stödfunktion utan affärsmodellen. Så läser du kreditrisk, ränterisk och likviditetsrisk — med kapitaltäckning, kreditförlustnivåer och datasetets medianer. Med källor.",
+      "nytt": "För en bank är riskhanteringen affärsmodellen, inte stödfunktion. Så läser du kredit-, ränte- och likviditetsrisk — med kapitaltäckning och medianer.",
+      "orsak": "Nuvarande description är 206 tecken mot SEO-normen ~150–160. Förslaget håller 151 tecken med ämneskärnan och de tre riskerna kvar"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "finansbolagens-riskhantering.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

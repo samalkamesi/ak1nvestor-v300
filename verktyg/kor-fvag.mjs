@@ -5,10 +5,11 @@
  * src/lib/portfolj-forskning/fundamental-vagmotor.ts (P2, klar).
  *
  * Mönstret är detsamma som verktyg/testa-fundamental-vagmotor.mjs:
- *   1. Genererar tmp_fvag_kor.ts i repots rot — en fil som importerar motorn
+ *   1. Genererar .tmp/tmp_fvag_kor.ts (våg 150:s gitignorerade engångsyta,
+ *      tsconfig-exkluderad — o44) — en fil som importerar motorn
  *      och loopar hela universet (AKM1-bedömningen läses in per bolag så att
  *      poäng och motivering citeras i våganteckningarna — spårbarhet).
- *   2. Kör den med: npx --yes tsx tmp_fvag_kor.ts  (src/ rörs ALDRIG)
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_fvag_kor.ts  (src/ rörs ALDRIG)
  *   3. Skriver data/cache/fvag-{TICKER}.json per bolag (ticker sanerad:
  *      ABB.ST → ABB_ST, samma mönster som P1:s sanera_filnamn) och städar
  *      tmp-filen.
@@ -25,16 +26,17 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_fvag_kor.ts");
+const TMP_KAT = path.join(REPO, ".tmp");
+const TMP_TS = path.join(TMP_KAT, "tmp_fvag_kor.ts");
 const CACHE = path.join(REPO, "data", "cache");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_fvag_kor.ts — GENERERAD av verktyg/kor-fvag.mjs. Raderas efter körning.
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { raknaFVag } from "./src/lib/portfolj-forskning/fundamental-vagmotor";
-import { HORIZONTER } from "./src/lib/portfolj-forskning/typer";
-import type { AKM1Bedomning, BolagsNyckeltal } from "./src/lib/portfolj-forskning/typer";
+import { raknaFVag } from "../src/lib/portfolj-forskning/fundamental-vagmotor";
+import { HORIZONTER } from "../src/lib/portfolj-forskning/typer";
+import type { AKM1Bedomning, BolagsNyckeltal } from "../src/lib/portfolj-forskning/typer";
 
 // Sanera ticker till filnamn (samma mönster som P1:s sanera_filnamn + punktbyte):
 // endast [A-Za-z0-9._-] tillåts, '..' och punktprefix avvisas, punkt ersätts med '_'.
@@ -96,11 +98,13 @@ process.exit(skrivna === univers.length && univers.length > 0 ? 0 : 1);
 `;
 
 // ── Generera tmp-fil, kör via tsx, städa ────────────────────────────────────
+// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
 function main() {
+  mkdirSync(TMP_KAT, { recursive: true });
   mkdirSync(CACHE, { recursive: true });
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  console.log("[kor-fvag] kör npx --yes tsx tmp_fvag_kor.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_fvag_kor.ts"], {
+  console.log("[kor-fvag] kör npx --yes tsx .tmp/tmp_fvag_kor.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_fvag_kor.ts"], {
     cwd: REPO,
     stdio: "inherit",
     shell: true,

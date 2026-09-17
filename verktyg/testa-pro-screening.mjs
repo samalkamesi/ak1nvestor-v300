@@ -3,9 +3,10 @@
  * AK1A — Test av PRO-screeningens rena logik
  * (src/components/ak1a/pro/pro-screening.tsx — B2B-BESLUT §4b + §7 steg 3,
  * våg 61 bygg-3). Mönster som verktyg/testa-morgonrond-data.mjs:
- *   1. Genererar tmp_pro_screening_koll.ts i repots rot — importerar
+ *   1. Genererar .tmp/tmp_pro_screening_koll.ts (våg 150:s gitignorerade
+ *      engångsyta, tsconfig-exkluderad — o44) — importerar
  *      komponentmodulns EXPORTERADE rena hjälpare (inget DOM/render behövs).
- *   2. Kör den med: npx --yes tsx tmp_pro_screening_koll.ts
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_pro_screening_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller:
@@ -23,19 +24,20 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_pro_screening_koll.ts");
+const TMP_KAT = path.join(REPO, ".tmp");
+const TMP_TS = path.join(TMP_KAT, "tmp_pro_screening_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ───────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_pro_screening_koll.ts — GENERERAD av verktyg/testa-pro-screening.mjs. Raderas efter körning.
-import { byggCsv, lasTalInput, sortVarde } from "./src/components/ak1a/pro/pro-screening";
-import type { KorstabbellRad } from "./src/lib/portfolj-forskning/typer";
+import { byggCsv, lasTalInput, sortVarde } from "../src/components/ak1a/pro/pro-screening";
+import type { KorstabbellRad } from "../src/lib/portfolj-forskning/typer";
 
 function rad(andel: Partial<KorstabbellRad>): KorstabbellRad {
   return {
@@ -140,9 +142,15 @@ console.log("SUMMA: " + ok + " PASS, " + fail + " FAIL");
 process.exit(fail === 0 ? 0 : 1);
 `;
 
+// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44) —
+// en SIGKILL-ad körning kan lämna filen kvar utan att tsc/grind ser den;
+// nästa körning skriver över (idempotent) och stada-tmp-ts.mjs sopar gamla.
+// OBS (o44): process.exit inuti try MOSSAR finally — exit sker EFTER städningen.
+mkdirSync(TMP_KAT, { recursive: true });
 writeFileSync(TMP_TS, TS_KOD, "utf8");
 
 // ── 2) Kör tmp-filen ─────────────────────────────────────────────────────────
+let slutkodWrapper = 1;
 try {
   // Windows + mellanslag i sökvägen: EN citerad kommandosträng (se
   // testa-morgonrond-data.mjs).
@@ -153,13 +161,12 @@ try {
     timeout: TIMEOUT_MS,
     shell: true,
   });
-  const slutkod = res.status ?? 1;
-  if (slutkod !== 0) {
-    console.error("testa-pro-screening: FAIL (avslutskod " + slutkod + ")");
-    process.exit(1);
+  slutkodWrapper = res.status ?? 1;
+  if (slutkodWrapper !== 0) {
+    console.error("testa-pro-screening: FAIL (avslutskod " + slutkodWrapper + ")");
+  } else {
+    console.log("testa-pro-screening: ALLT PASS");
   }
-  console.log("testa-pro-screening: ALLT PASS");
-  process.exit(0);
 } finally {
   try {
     unlinkSync(TMP_TS);
@@ -167,3 +174,4 @@ try {
     // tmp-filen fanns inte — inget att städa
   }
 }
+process.exit(slutkodWrapper);

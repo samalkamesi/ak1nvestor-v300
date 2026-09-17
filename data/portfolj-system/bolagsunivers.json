@@ -13123,5 +13123,275 @@
       ]
     },
     "notering": "universumets FÖRSTA KINA-RAD (16:e landet) och e-handelskvartettens fjärde modell — AMZN (teknik), MELI+SHOP (tillväxt), BABA (konsument): fyra kontinentala e-handelsarketyper; ADR-konventionen (BHP/RIO/TM-precedenten): kurs 107,27 $ och börsvärde 266,63 mdr $ i USD medan räkenskapsserierna FY2023–FY2026 (april–mars, års-etikett = slutår) är i koncernrapportvalutan CNY — VIE-STRUKTURENS PEDAGOGIK: ADR:n är kontraktuella rättigheter mot konglomeratet, ej direkt aktieinnehav i de kinesiska operativa bolagen (källans HFCAA-år som historisk kontext — ADR-mekaniken är en riskdimension som ingen annan universumsrad bär); NORMALISERINGSGAPET ÅTTONDE POSTEN: trailing P/E 24,48 mot fwd 13,24 ⇒ prognosTillväxt +84,9 % — källans USD-TTM-netto −49,7 % medan CNY-året föll −18,2 % (växelkurs- och basnot: 10,79 mdr $ TTM mot 105,9 mdr CNY FY2026), källans 3-års EPS-prognos +45,32 %/år och källans PEG 0,41 som not (spårets 0,29 på trailing/fwd-konventionen); NETTO ÖVER EBIT (7,04 % mot 4,56 %) — UBER-/ABBV-/TM-mönstret: räntenetto på 56,78 mdr $ kassan + andelsintäkter ligger under driftsraden (driftsresultatet 151,7→63,0 mdr CNY i omställningsåret FY2026); EV/EBIT 35,54 medan EV/EBITDA 17,0 och EV 249,1 < mcap = NETTOKASSA 17,5 mdr $ (56,78 kassa mot 39,24 skuld; skuld/EK 0,24, räntetäckning 4,93×) — multipeln på nedtryckt EBIT-nämnare, SOBI-mekaniken; P/B 1,62 UNDER konsument-medianen — substansnära trots topp-30-börsvärde (källans balansräkningsvy: nettokassa 365→35 mdr CNY FY2024→FY2026 = omställningens pris); ROIC 3,08 % MOT WACC 6,41 % = −3,33 pp (värdeförstörande marginal — Siemens-notens släkt men djupare: AI-investeringarna ligger under kapitalkostnaden medan fwd-P/E:n prissätter normalisering); FCF TTM −11,42 mdr $ (OCF 11,70 − capex 23,12) = universumets TREDJE negativa FCF-rad (ORCL, TM, BABA — första på e-handel/moln) med fcfYield −4,28 % och fcfMarginal −7,4 %; FCF-SERIENS CAPEX-TRAPPA 165,4→150,5→77,5→−49,9 mdr CNY (capex 34→32→86→126 — AI-infrastrukturens pris i en serie, ORCL-notens kinesiska spegel); MOAT-SERIEN 36,9/37,7/40,0/39,8 % (medel 38,6 % spridning 3,1 pp — marknadsplatsens brutto håller genom omställningen); UTDDELNINGEN 1,05 $ = 0,98 % payout 23,5 % med CNY-serien 6,87→7,22→7,62→7,24 (FY2026 sänkt) och buyback-yield −0,39 % = nettoUTSPÄDNING (utspädningen som affärsvillkor i ett tal); beta 0,50; 52-vägers spann 91,99–192,67 $ med −32,1 % på ett år — 2026 års kursfall bär källans nyhetsflöde: securities class actions kring militärkopplings-designationer och AI-distillation-påståenden (klassperiodens topp 173,68 mot botten 95,07 $); rapport i CNY, räkenskapsår april–mars, NYSE-ADR"
+  },
+  {
+    "ticker": "GRNG-B.ST",
+    "namn": "Gränges AB (publ)",
+    "bransch": "material",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/sto/GRNG/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; close 2026-09-16 17:29 CET, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår 2022–2025 i serier; Nasdaq-tickern är GRNG B men källsluggen GRNG (suffixlös konvention hos källan)"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 166,
+    "marknadsKapitalMdr": 17.69,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0501,
+      "resultatCAGR5ar": 0.1319,
+      "omsattningTillvaxtTTM": 0.2271,
+      "prognosTillvaxt": 0.2269
+    },
+    "lonksamhet": {
+      "roe": 0.1156,
+      "roic": 0.0902,
+      "bruttoMarginal": 0.2588,
+      "ebitMarginal": 0.0562,
+      "nettoMarginal": 0.0375,
+      "fcfMarginal": -0.0114
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.56,
+      "rantaTackning": 7.3,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.2993,
+      "bruttoMarginalSpread5ar": 0.0495,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.71,
+      "pb": 1.57,
+      "evEbit": 13.27,
+      "peg": 0.65,
+      "fcfYield": -0.0207,
+      "egenKapitalMultipl": 1.57
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        24492000000,
+        22519000000,
+        23506000000,
+        28362000000
+      ],
+      "resultat": [
+        700000000,
+        1010000000,
+        1013000000,
+        1015000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        119000000,
+        2066000000,
+        -836000000,
+        581000000
+      ]
+    },
+    "notering": "världens ledande aluminiumvalsare (roning/clustering för värmepanners véhicel- och HVAC-kondensorer — halvfabrikatledet mellan smältverk och bil-/kylindustri; tre segment: Americas 13 248 · Asia 7 461 · Europe 8 600 Mkr FY2025 med eliminationer): SVERIGE/MATERIAL-CELLENS MÅTTA 4→5 = LANDSIDAN /dataset/material/sverige ÖPPNAS med denna rad (BILL.ST saknar mätt P/E och håller sidan stängd sedan omg 8); P/E 14,71 mot fwd 11,99 ⇒ prognosTillväxt +22,7 % (källans 3-års EPS-prognos +18,36 %/år och källans PEG 1,21 som not — spårkonventionens 0,65 på det implicita ettårsgapet); TILLVÄXTÅRET FY2025: omsättning +20,7 % till 28 362 Mkr (Konin-expansionen i full drift + USA-volymer) efter 2023 års −8,1 % — råvarucykeln i endpoint-CAGR +5,0 %/år döljer både dippen och återhämtningen; RESULTATET STABILT GENOM CYKELN: netto 700→1 015 Mkr (+13,2 %/år endpoint) medan bruttovinsten växer 6 767→7 872 — aluminiepriset passeras genom omsättningen men förädlingsmarginalen håller; MOAT FYLLT: bruttomarginal 27,6–32,6 % fem år (medel 29,9 %, spread 4,9 pp) — råvaruvalsarens vallgrav är processen, inte priset (Holcim-radens spegelbild: 1,8 pp transportekonomi mot 4,9 pp råvarupass-through); FCF TTM −366 Mkr = FY2024:s −836 + pågående kapitalcykel (capex 613 Mkr mot OCF 247 Mkr TTM; fcfMarginal −1,1 %, fcfYield −2,1 % — källans FCF-marginalrad −1,14 % TTM; ORCL/TM/BABA-familjen av negativa FCF-rader, här expansions-capex Konin+Finspång); skuld 6,30 mdr mot kassa 0,89 (skuld/EK 0,56, skuld/EBITDA 2,39, räntetäckning 7,3×) — Konin-låneboken; ROIC 9,02 % mot WACC 7,77 % = +1,25 pp värdeskapandemarginal (positiv men trängre än skogsgrannarnas); utdelning 3,40 kr (1,95 %, payout 29,0 %, 4 år av höjningar +6,3 %/år); beta 0,94; 52-vägers +27,7 % (spann 148–188 kr-klass); 106,59 M aktier (+0,23 %/år — neutral utspädning); nästa rapport 2026-10-22 (Q3)"
+  },
+  {
+    "ticker": "ATT.ST",
+    "namn": "Attendo AB (publ)",
+    "bransch": "halso",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/sto/ATT/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; close 2026-09-16 17:29 CET, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning/återköp, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår 2022–2025 i serier"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 128,
+    "marknadsKapitalMdr": 18.06,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0942,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": -0.0107,
+      "prognosTillvaxt": 0.1994
+    },
+    "lonksamhet": {
+      "roe": 0.1872,
+      "roic": 0.0757,
+      "bruttoMarginal": 0.369,
+      "ebitMarginal": 0.1034,
+      "nettoMarginal": 0.0514,
+      "fcfMarginal": 0.1427
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 3.15,
+      "rantaTackning": 2.52,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.3341,
+      "bruttoMarginalSpread5ar": 0.0483,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 19.25,
+      "pb": 3.41,
+      "evEbit": 17,
+      "peg": 0.97,
+      "fcfYield": 0.1499,
+      "egenKapitalMultipl": 3.41
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        14496000000,
+        17287000000,
+        18980000000,
+        18991000000
+      ],
+      "resultat": [
+        -45000000,
+        376000000,
+        450000000,
+        813000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        1165000000,
+        2095000000,
+        2272000000,
+        2657000000
+      ]
+    },
+    "notering": "nordens största vård- och omsorgsgivare (äldreomsorg, LSS, individ- och familjeomsorg; ~33 000 anställda i Sverige, Norge, Danmark och Finland): SVERIGE/HÄLSA-CELLENS MÅTTA 4→5 = LANDSIDAN /dataset/halso/sverige ÖPPNAS med denna rad (omg 8:s RÄTTES-läxa infriad: koordinaten var ETT bolag med MÄTT P/E — EKTA-B saknar det fortfarande; vårdbolaget är AZN/CEVI/GETI-B/SOBI:s biotech-cells första vårdtjänsterad = cellens två världar: läkemedelsprissättning mot personalintensiv drift); P/E 19,25 mot fwd 16,05 ⇒ prognosTillväxt +19,9 % (källans 3-års EPS-prognos +16,54 %/år som not; källans PEG n/a); VINSTVÄNDELSEN FY2022→2025: netto −45→813 Mkr (resultatCAGR null — negativ startår, UBER/SPOT-precedensen) medan omsättningen växer +9,4 %/år (14 496→18 991 Mkr; integrations- och bemanningsefterdyningen 2023 +19,3 %) — VT-vändningen 2022→2023 är celldynamik: bemanningsbrist, norsk omstrukturering och norska äldreomsorgsförlusterna vänds till LO-us 2024–2025; 52-VÄGARNA +87,4 % = marknadens omprissättning av vändningen (RSI 69,8 nära överköpt); IFRS-16-PEDAGOGIKEN: EBITDA 7,50 % av omsättningen medan EBIT 10,34 % — källans EBITDA mäter efter leasingavskrivningar (vårdhemmens hyresavtal i balansräkningen) och FCF-marginalen 14,27 % mot netto 5,14 % visar hyresbetalningarna efter EBITDA-rad; skuld/EK 3,15 (skuld/EBITDA 5,28, räntetäckning 2,5×) = fastighetsliknande balansräkning med arbetarkapital — ROE 18,7 % bär hävstången medan ROIC 7,57 % mot WACC 6,88 % = +0,69 pp trång värdeskapandemarginal (hävstångens och marginalens två sidor i en rad); ÅTERKÖPSAKTIONEN: aktieantalet −4,25 %/år (buyback-yield 4,25 %, utdelning 1,80 kr = 1,47 %, payout 13,2 % — shareholder yield 5,7 %; insiderägande 16,3 %); FCF-SERIEN 1 165→2 657 Mkr fyra år i rad positiv och växande (fcfYield 15,0 % TTM — källans FCF-yield 14,99 %); moat FYLLT: bruttomarginal 31,2–36,0 % fem år (medel 33,4 %, spread 4,8 pp) — bemanningstaktens och bemanningsmixens rörelse; beta 1,01; 141,11 M aktier; senaste rapport 2026-08-20 (Q2), nästa förväntad november 2026 (obekräftad av källan)"
+  },
+  {
+    "ticker": "TCEHY",
+    "namn": "Tencent Holdings Limited",
+    "bransch": "teknik",
+    "land": "Kina",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/tcehy/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; OTC-ADR close 2026-09-16, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning/återköp, bruttovinst 5 räkenskapsår (moat) + 4 räkenskapsår FY2022–FY2025 i serier — kurs/mcap i USD, räkenskapsserier i koncernvaluta CNY, bokföringsår kalenderår (ADR-konventionen TM/BABA); fcfMarginal ur källans CNY-kvantum (168 309 MCNY TTM / oms 788 483, källans CF-tabellrad 21,35 % — statistics-ytans 21,08 % avviker internt, fältbäraren CF-tabellen), fcfYield ur USD-ytan (24,78/497,13 mdr $)"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 54.46,
+    "marknadsKapitalMdr": 497.13,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1067,
+      "resultatCAGR5ar": 0.061,
+      "omsattningTillvaxtTTM": 0.1197,
+      "prognosTillvaxt": 0.1363
+    },
+    "lonksamhet": {
+      "roe": 0.1991,
+      "roic": 0.1827,
+      "bruttoMarginal": 0.567,
+      "ebitMarginal": 0.3331,
+      "nettoMarginal": 0.2987,
+      "fcfMarginal": 0.2135
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.39,
+      "rantaTackning": 20.4,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.4885,
+      "bruttoMarginalSpread5ar": 0.1317,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.34,
+      "pb": 2.76,
+      "evEbit": 12.84,
+      "peg": 1.05,
+      "fcfYield": 0.0498,
+      "egenKapitalMultipl": 2.76
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        554552000000,
+        609015000000,
+        660257000000,
+        751766000000
+      ],
+      "resultat": [
+        188243000000,
+        115216000000,
+        194073000000,
+        224842000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        123412000000,
+        200954000000,
+        195594000000,
+        215570000000
+      ]
+    },
+    "notering": "Kinas största internetkoncern (WeChat 1,4 mdr användare + spel (världens största spelbolag på omsättning) + reklam + fintech + molnet): KINA/TEKNIK 0→1 = cellens första rad (u1:s BABA öppnade landet i konsument samma dygn — BABA/Tencent-koordinatens andra halva, s2-u2 omg8:s bokförda par); matta 1, under MIN_MATTA — ingen landsida (landöppnarlogik enligt BASF-precedenten); ADR-pedagogiken delas med BABA-raden (OTC-linjen TCEHY mot Hongkong-linjen 0700 — kurs här i USD, ekonomi i CNY); P/E 14,34 mot fwd 12,62 ⇒ prognosTillväxt +13,6 % (PEG spårkonvention 1,05 — normaliseringsgap-listans mest NORMALA kina-rad: varken trailing-deprimerad som BABA +84,9 % eller reprised; källans PEG n/a); ROIC 18,27 % mot WACC 7,58 % = +10,69 pp värdeskapandemarginal — BABA:s −3,33 pp SPEGELBILD i samma land: plattformens moat utan capex-svällande molnbygge (capex 20,25 mdr $ mot BABA:s 23,12 med TRE gånger EBIT-marginalen: 33,3 mot 4,6 %); MOAT-RESAN: bruttomarginal 43,9 → 43,1 → 48,1 → 52,9 → 56,3 % fem raka år (medel 48,9 %, spread 13,2 pp — universumets STÖRSTA dokumenterade moat-spridning: WeChat-ekosystemets mixresa från spel till annonser/moln med take-rate-höjning; Microsofts 67,9 % ligger över men på plantå, Tencent KLÄTTRAR); FCF-SERIEN 123→201→196→216 mdr CNY fyra år positiv (fcfYield 5,0 %, fcfMarginal 21,4 % TTM) — BABA:s −49,9 mdr FY2026 är kontrasten i samma ekosystem-täckning; 2023-dippen i netto 188→115 mdr CNY = investeringsvärderingar (Meituan/JD-andelar till lägre värden) medan driften växte — BABA-notens mekanik omvänt; skuld/EK 0,39 med kassa 67,56 mot skuld 69,46 mdr $ = balanserad, räntetäckning 20,4×; utdelning 0,60 $ (1,11 %, payout 17,7 %) + återköp 1,10 %/år (aktieantalet −1,10 %) = shareholder yield 2,2 %; beta 0,74; 52-vägers −34,3 % (samma Kina-repricing som BABA −32,1 % — reglerings- och ADR-riskpremien som parnot); nästa rapport 2026-11-11 (Q3); 115 927 anställda"
   }
 ]

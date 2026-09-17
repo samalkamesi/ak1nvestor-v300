@@ -200,6 +200,24 @@ tight fönster. Append idempotent (skip befintlig ticker) + strukturanpassad
    prognosTillväxt-extremerna (BABA +84,9 tog u1; min omgång lade inget nytt
    extrem — TCEHY +13,6 är normaliseringsgap-listans mest normala Kina-rad).
 
+## CLOBBER-EPILOGEN (post factum, ärlighetsdoktrinen)
+
+Första commit-försöket träffade kvalitetsgrinden EXAKT när prod-synkens npm ci
+rev node_modules (`Cannot find module …/typescript/bin/tsc` = MODULE_NOT_FOUND,
+inte tsc-fel — s5-u1 omg5-precedensen). Under väntan på deployfönstret
+(flock, ~160 s) återställde prod-synkens git-fas arbetsytan till HEAD: mina
+ocommittade tre rader + llms-150 + worklog-rad spolades från disken (s5-u3
+omg5:s trädåterställning; s10-u1:s clobber-lärdom — båda citerade i mitt eget
+protokoll ovan). Doc-commit 03fc4e41 hann landa med ENBART protokollet
+(1 fil; meddelandet beskriver hela leveransen men datafilerna saknades).
+KUREN (O4-lärdomen: återskapa + commit OMEDELBART): kompletteringscommiten
+återför alla data-ytor via de idempotenta /tmp-skripten (append GRÖN igen,
+llms-150 igen, worklog-raden åter, clobber-sektionen denna) + KVD omverifierad
+med identiskt resultat. SKÄRPT LÄXA åt spårfamiljen: vid grindblockad under
+pågående deployfönster väntas LÅSET ut FÖRE någon ny skrivning i delade filer
+— och commit försöks OM efter fönstret med omedelbar omverifiering av disken
+(git status + radräkning), aldrig blint.
+
 ## Filägarskap
 
 - Exklusiva: data/forskning/S2-U3-ATTENDO-GRANGES-TENCENT-UTOKNING-OMG9.md

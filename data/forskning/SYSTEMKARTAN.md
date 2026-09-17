@@ -1366,6 +1366,20 @@ Poäng: D22 5 och D23 7 OFÖRÄNDRADE — R2-lägena rördes inte; starkare stom
 E32 + C15 sektionsstämplar 09-15 → 09-17 (manifest-körningen 2/3 ovan diffade
 dem 2026-09-17 men lämnade stämpeln).
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u1 omgång 12 — E26 Admin-panelen återdiffad; andra varvet)
+
+| Yta | Kartan sa (09-15) | Verkligheten MÄTT 2026-09-17 (~14:0x lokal) |
+|---|---|---|
+| Audit-loggen (E26) | 68 677 byte aktiv | **258 969 byte / 1 008 rader** (3,8×) — 301 unika aktörer; åtgärder: 357 uppgift_start · 334 uppgift_klar · 162 modellkatalog-synk · 143 deploy · 8 komprimering_tier3 · 1 fabrikskirurgi · 1 beslut · 1 deploy_revert · 1 g2-fullbordande; span 09-14 23:19:59Z → LEVANDE (sista raden = fabriksbarns start 11:55:28Z idag) — mega-beslut spår 2 är fabrikens FAKTISKA driftlogg |
+| Admin-sessionssviten (E26) | 14/14 (mätt 09-15) | **14/14 KÖRD GRÖN igen** (egen körning: rollmatris, v79-500-gren, ekar-aldrig-lösenordet) |
+| Admin-API-rutter (E26) | 24 rutter | **25 route.ts** — räknekorrigering: git diff-filter=A sedan 09-15 = 0 nya ruttfiler (09-15-notisens 24 var räkneavvikelse, ej tillväxt) |
+| requireAdmin i prod (E26) | antaget | **MÄTT LIVE**: /api/admin/variabler utan auth ⇒ 401 · /api/studio/godkannande utan auth ⇒ 401; /admin-sidans 500 ÄR o47-driftfelet (samma sekund: /kurser + /blogg 500, / 200 — SSR-klassen, ej admin-specifikt; API-lagret oskadat) |
+| Juridikgrind-vakten (E26 gap 5) | GUL 0 FEL / 8 FP-VARNINGAR | **GUL 0 FEL / 17 VARNINGAR** (larmfilens senaste körning 11:37:28Z idag) — FP-kön FÖRDUBBLAD på 2 dygn; FLYTTKLAR-strängen nu i **63** utkastfiler (21 vid 09-15-mätningen) = granskningskön växer rakt in i vakten |
+| Godkännandeval-filen (E26 gap 6) | saknas (R2-knappen orörd) | **FINNS FORTFARANDE EJ** — kundens publiceringsknapp förblir orörd; flödet kodbevisat, ej körbevisat |
+| Övriga ytor (E26) | — | paneler 16 oförändrade · admin-auth.ts 245 r oförändrad · audit-logg.ts 130 r · sessionStorage-rester lever (77 träffar x-admin-password i src/) · rate-limit 8 av 25 rutter · IP-block 0 träffar · GDPR-DATAKARTA.md lever (24 026 B, mtime 09-15) |
+
+| E26 | LEVER 8 → **LEVER 8** | Preciseringsdokvåg utan poängrörelse (E33/B14-precedensen): styrkorna bekräftade med färska egna mått (audit 3,8× aktivare, sviten grön, vakten 401 live) men juridik-FP-kön fördubblad (8→17) + FLYTTKLAR 21→63 gör gap 5 BRITTARE — vakten drunknar gradvis i granskningsköns meta-texter; publicera-E2E förblir kundens (R2). Kö till huvudagenten: juridikgrindens citat-vs-råd-kur hastas (63 väntande filer), IP-block förblir öppet |
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1396,7 +1410,7 @@ dem 2026-09-17 men lämnade stämpeln).
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA i kod (mätt 09-16, underlag 369 kurser); aktivering EN medlem/anrop men sido-kön starkare än kartan (system_events + VBOUT-lead); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (nytt, mätt) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
-| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
+| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Audit-loggen 3,8× aktivare på 2 dygn (258 969 B / 1 008 rader / 301 aktörer / 143 deploy — fabrikens faktiska driftlogg, mätt 09-17); sviten 14/14 grön igen + requireAdmin 401 live båda ytorna; /admin-500 = o47-driftklassen (API oskadat); juridik-FP 8→17 + FLYTTKLAR 21→63 (gap 5 brittare); kvar: manuell spegling, publicera-E2E (R2-knapp orörd — val-filen finns ej), IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169 — gap 4 motbevisat, mätt 09-17); våg 164–175 tillförde maskinpuls + publiceringsgrind + resync + godkännandeyta |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (66 klara manifest av 67, +41/dygn mätt 09-16; pumpor i ps; beslutsminne 48 poster); NYTT GAP mätt 09-16: dokvågsuppdrag pekar syskon på SAMMA kartfil utan lås (3 commits/19 min + clobberbevis); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
@@ -1448,7 +1462,7 @@ varvet) återdiffade E27/E28/E30 utan poängrörelser — E27 gap 4
 till pumpor-daemonen (crontab bär ingen rond-rad; mötesprotokollen tysta
 sedan 09-15 = inga sammanträden krävts), E30 INAKTIV-läget + grön grind
 bekräftade live och YTA-vaktens pro-täckning (arProYta) bokförd.
-u3 omgång 11 (09-17, andra varvet) återdiffade B7/B8 utan poängrörelser — B7 bekräftad med 156 gröna + 22/22-livlina (metodnotis: URL-transform `_`→`.` i bibliotekssvep, annars 10 falska 404:or) men berika 13 d + cache-nyansen 33 runtime-filer, B8 fruset kvar (loggar 1+1 rad, regimen genesis-tal live i 14 d, ensemble 0/22, nästa molnrond 10-02, sviten 55/55 ×3 + instabilitetsnotis); A3 korsvaliderat mot u2 omgång 8 med identiska oberoende tal (24 lager/80 monsters/E01 358/390).
+u3 omgång 11 (09-17, andra varvet) återdiffade B7/B8 utan poängrörelser — B7 bekräftad med 156 gröna + 22/22-livlina (metodnotis: URL-transform `_`→`.` i bibliotekssvep, annars 10 falska 404:or) men berika 13 d + cache-nyansen 33 runtime-filer, B8 fruset kvar (loggar 1+1 rad, regimen genesis-tal live i 14 d, ensemble 0/22, nästa molnrond 10-02, sviten 55/55 ×3 + instabilitetsnotis); A3 korsvaliderat mot u2 omgång 8 med identiska oberoende tal (24 lager/80 monsters/E01 358/390). s9-u1 omgång 12 (09-17, andra varvet) återdiffade E26 utan poängrörelse — audit-loggen 3,8× aktivare (1 008 rader/301 aktörer/143 deploy = fabrikens faktiska driftlogg), sviten 14/14 grön igen, requireAdmin 401 live på båda ytor, /admin-500 = o47-driftklassen (API oskadat), juridik-FP 8→17 + FLYTTKLAR 21→63 (gap 5 brittare), 25 rutter (räknekorrigering, 0 nya i git sedan 09-15); R2-knappen orörd som väntat.
 s9-u2 omgång 9 (09-17) diffade D22/D23 utan poängrörelser — R2-ytorna mätta
 read-only (inget pris, ingen flagga, inga env-värden): D22:s intention-led
 starkare än kartan (system_event + admin-vy) + nytt gap 4 (intentioner i
@@ -2407,7 +2421,7 @@ kunskap tillförd, inga gap stängda).*
 
 # E. STYRNING, VERKTYG & GRUND
 
-## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-17)*
 
 *Uppdatering 2026-09-15 (s9-u2 omgång 3): MEGA-BESLUTETS SPÅR 1–2 SAKNADES I
 KARTAN och lever nu (allt mätt i arbetsytan): godkännandeytan
@@ -2421,6 +2435,24 @@ GDPR-DATAKARTA.md. Admin-sessionssviten 14/14 GRÖN mätt nu; 16 panelkomponente
 kundens), juridikvakten ger FP på meta-texter som citerar förbudsorden,
 gamla gapen kvarstår.*
 
+*Uppdatering 2026-09-17 (s9-u1 omgång 12, andra varvet): ÅTERDIFFAD med
+egna mått — 09-15-läget bekräftat och STÄRKT: audit-loggen 68,7 KB →
+258 969 byte / 1 008 rader (301 unika aktörer; 357 uppgift_start +
+334 uppgift_klar + 162 modellkatalog-synk + 143 deploy + 8 tier3-
+komprimeringar + 1 fabrikskirurgi + 1 beslut + 1 deploy_revert) =
+fabrikens FAKTISKA driftlogg, span 09-14 23:19:59Z → levande (sista
+raden = fabriksbarns start 11:55:28Z idag); admin-sessionssviten 14/14
+GRÖN i egen körning igen; requireAdmin MÄTT LIVE (401 på
+/api/admin/variabler och /api/studio/godkannande utan auth); /admin-
+sidans 500 = o47-driftklassen (samma sekund: /kurser + /blogg 500, /
+200 — SSR-felet, ej admin-specifikt; API-lagret oskadat). Skärpningar:
+juridikgrindens FP-kön 8 → 17 VARNINGAR + FLYTTKLAR 21 → 63 utkastfiler
+(gap 5 brittare); R2-knappen orörd — godkannande-val.json finns
+fortfarande ej (flödet kodbevisat, ej körbevisat); paneler 16 +
+admin-auth.ts 245 r oförändrade; sessionStorage-resterna lever (77
+träffar x-admin-password i src/); rate-limit på 8 av 25 rutter, IP-block
+0 träffar; GDPR-DATAKARTA.md lever (24 026 B). Score 8 kvar.*
+
 - **Vad:** "WordPress på långt håll": 15+ flikar (översikt, medlemmar,
   variabler, blogg-publicering, översättning/termbank, kurser-metadata,
   media, bokningar, analys-uppladdning med Elliott-redigerare, aktivitet,
@@ -2432,7 +2464,7 @@ gamla gapen kvarstår.*
   — byggda på samma admin-session.
 - **Nyckelfiler:** src/app/(huvud)/admin/page.tsx, src/components/ak1a/admin/
   (16 komponenter), src/lib/{admin-auth (245 r),admin-klient,medlem-admin}.ts,
-  src/app/api/admin/** (24 rutter), src/app/api/studio/godkannande/**
+  src/app/api/admin/** (25 rutter — räknekorrigering 09-17: 0 nya ruttfiler i git sedan 09-15, 09-15-notisens 24 var räkneavvikelse), src/app/api/studio/godkannande/**
   (route + publicera), src/lib/studio/audit-logg.ts,
   verktyg/{testa-admin-session (14/14 mätt 2026-09-15),juridikgrind-vakt}.mjs,
   data/vakten/{audit-logg.jsonl,godkannande-val.json,juridik-larm.json},
@@ -2451,9 +2483,10 @@ gamla gapen kvarstår.*
   rester (x-admin-password) lever kvar som bootstrap; (3) analys-uppladdningens
   Elliott-redigerare saknar test; (4) admin-URL:en offentligt känd —
   fail2ban-liknande skydd mot lösenordsmalming finns via rate-limit men
-  ingen IP-block; (5) NY: juridikgrind-vaktens ordlista ger 8 FP-VARNINGAR
-  på meta-texter som CITERAR förbudsorden (t.ex. gransknings-MD:er som
-  redovisar "0 träffar på köp/sälj-råd") — grinden lär sig skilja citat
+  ingen IP-block; (5) SKÄRPT 09-17: FP-kön FÖRDUBBLAD — 8 → 17 VARNINGAR (larmfilens
+  senaste körning 11:37Z; 0 FEL kvar) på meta-texter som CITERAR
+  förbudsorden; FLYTTKLAR-strängen i utkastkön 21 → 63 filer sedan 09-15 —
+  granskningskön växer rakt in i vakten, grinden lär sig skilja citat
   från råd; (6) NY: publicera-vägen E2E-bevisas först vid kundens första
   knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
 

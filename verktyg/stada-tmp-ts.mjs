@@ -9,24 +9,28 @@
  * (alla .ts-filer i trädet) ⇒ tsc exit 1 ⇒ pre-commit-grinden blockerar ALL
  * commit i trädet (falsklarm: mätkollision i arbetsTRÄDET, inte kodbrott).
  *
- * KUREN har tre lager (o43): verktygen skriver numera i .tmp/ + tsconfig
- * exclude ".tmp"; DENNA städhjälpare är försvar på djupet för kvarvarande
- * rot-läckor och gamla .tmp-läckor — den ropas av pre-commit-grinden FÖRE
- * typmätningen och av kvalitetsvakten sektion 11 (med transparensrad).
+ * KUREN har tre lager (o44): verktygen skriver numera i .tmp/ + tsconfig
+ * exclude; ROT-zonens städare ägs av verktyg/tmp-stad.mjs (s8-u2 — ropas av
+ * pre-commit-grinden FÖRE typmätningen och av kvalitetsvakten sektion 11).
+ * DENNA städare är .tmp-zonens komplement (zonsopare, ALDRIG rot — se
+ * kollisionsnotis data/vakten/s8-tmpskydd-kollisions-notis-u2.md): den sopar
+ * GAMLA signaturbärande läckor i .tmp/ (exit-mossning: process.exit inuti
+ * try mossar finally i Node — bevisat 2026-09-17; SIGKILL samma effekt).
  *
  * SÄKERHETSKONTRAKT (hårda):
- *   - Endast filer med namn ^tmp_[a-z0-9_]+\.ts$ överhuvudtaget kandidater.
+ *   - Endast filer med namn ^tmp_[a-z0-9_]+\.ts$ överhuvudtaget kandidater
+ *     (fabrikens v150- och s2-KVD-skript i .tmp/ matchar ALDRIG namnet).
  *   - Signaturkrav: filen BÖRJAR med "// tmp_" OCH innehåller EXAKT
  *     "GENERERAD av verktyg/" OCH "Raderas efter körning" (de genererade
  *     filernas egna header). Främmande innehåll ⇒ SKONAD och protokollförd.
- *   - Rot-läckor städas alltid (verktygen skriver inte längre i roten —
- *     en signaturkorrekt rot-fil är per definition en läcka).
+ *   - REPO-ROTen rörs ALDRIG (tmp-stad.mjs:s zon).
  *   - .tmp-filer städas först när de är äldre än --alder-ms (default 6 h)
  *     — en pågående svits fil (timeout 240 s) skonas.
  *
  * Användning:  node verktyg/stada-tmp-ts.mjs [--torr] [--json] [--alder-ms N]
  * Avslutskod:  0 alltid när städningen kunde köras (främmande filer är
- *              varningsrader — de syns i git status och ägs av sin skapare).
+ *              varningsrader — de ägs av sin skapare; rot-zonen ägs av
+ *              tmp-stad.mjs).
  */
 import { existsSync, readdirSync, readFileSync, statSync, unlinkSync } from "node:fs";
 import path from "node:path";
@@ -64,21 +68,11 @@ export function stadaTmpTs({ repoRot = REPO, alderMs = DEFAULT_ALDER_MS, torr = 
   const skonadeUnga = [];
   const tmpKatalog = path.join(repoRot, ".tmp");
 
-  // 1) Rot-läckor: verktygen skriver numera i .tmp/ — en signaturkorrekt
-  //    tmp_*.ts i repots rot är en historisk SIGKILL-läcka och städas alltid.
-  for (const namn of existsSync(repoRot) ? readdirSync(repoRot) : []) {
-    if (!NAMN_RE.test(namn) || !statSync(path.join(repoRot, namn)).isFile()) continue;
-    const fil = path.join(repoRot, namn);
-    if (!arSignaturkorrekt(fil)) {
-      skonadeSignatur.push({ fil: namn, orsak: "tmp-namn i rot men FRÄMMANDE innehåll — protokollförd, RÖRS EJ" });
-      continue;
-    }
-    if (!torr) unlinkSync(fil);
-    stadade.push({ fil: namn, orsak: "rot-läcka (SIGKILL-klassen, o43) — signaturverifierad" });
-  }
-
-  // 2) .tmp-läckor: gamla engångsfiler från avbrutna körningar; en fil från
-  //    en PÅGÅENDE svit (tsxp-timeout 240 s) är yngre än gränsen och skonas.
+  // ZONAVTAL (kollisionsnotis s8-tmpskydd-kollisions-notis-u2.md): ROT-zonens
+  // läckor ägs av verktyg/tmp-stad.mjs (ropas av pre-commit + vakten sektion
+  // 11) — denna städare röR ALDRIG repo-roten. Dess zon är .tmp/: gamla
+  // engångsfiler från avbrutna körningar (exit-mossning/SIGKILL); en fil
+  // från en PÅGÅENDE svit (tsx-timeout 240 s) är yngre än gränsen och skonas.
   for (const namn of existsSync(tmpKatalog) ? readdirSync(tmpKatalog) : []) {
     if (!NAMN_RE.test(namn) || !statSync(path.join(tmpKatalog, namn)).isFile()) continue;
     const fil = path.join(tmpKatalog, namn);
@@ -115,7 +109,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     for (const s of r.skonadeSignatur) console.log(`VARNING  ${s.fil} — ${s.orsak}`);
     for (const s of r.skonadeUnga) console.log(`SKONAD   ${s.fil} — ${s.orsak}`);
     if (r.stadade.length + r.skonadeSignatur.length + r.skonadeUnga.length === 0) {
-      console.log("tmp-städning (o43): 0 läckor — trädet rent");
+      console.log("tmp-städning (o44): 0 läckor — trädet rent");
     }
   }
   process.exit(0);

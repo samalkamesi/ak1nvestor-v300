@@ -41,15 +41,16 @@ function nyFil(kat, namn, innehall) {
 }
 
 try {
-  // 1) Rot-läcka med EXAKT genererad header ⇒ städas
+  // 1) ZONAVTAL: repo-roten ägs av tmp-stad.mjs (s8-u2) — ÄVEN en
+  //    signaturkorrekt rot-läcka lämnas ORÖRD av denna städare.
   const rotLacka = nyFil(rot, "tmp_demoklient_koll.ts", HEADER("tmp_demoklient_koll.ts") + "import x;\n");
   let r = stadaTmpTs({ repoRot: rot });
-  kolla("1 rot-läcka med signatur städas", !existsSync(rotLacka) && r.stadade.length === 1 && r.stadade[0].fil === "tmp_demoklient_koll.ts");
+  kolla("1 rot-läcka lämnas orörd (zonavtal: roten ägs av tmp-stad.mjs)", existsSync(rotLacka) && r.stadade.length === 0);
 
-  // 2) Rot-fil med tmp-namn men FRÄMMANDE innehåll ⇒ skonas + protokollförs
+  // 2) Rot-fil med tmp-namn men FRÄMMANDE innehåll ⇒ orörd och orapporterad
   const frammande = nyFil(rot, "tmp_viktigt.ts", "// min egen fil — RÖR EJ\nexport const x = 1;\n");
   r = stadaTmpTs({ repoRot: rot });
-  kolla("2 främmande tmp-namn i rot skonas", existsSync(frammande) && r.skonadeSignatur.some((s) => s.fil === "tmp_viktigt.ts"));
+  kolla("2 främmande tmp-namn i rot orörd + orapporterad", existsSync(frammande) && !r.skonadeSignatur.some((s) => s.fil === "tmp_viktigt.ts"));
 
   // 3) .tmp: ung signaturfil (mtime nu) ⇒ skonas (pågående svit)
   const ung = nyFil(tmpKat, "tmp_morgonrond_koll.ts", HEADER("tmp_morgonrond_koll.ts"));

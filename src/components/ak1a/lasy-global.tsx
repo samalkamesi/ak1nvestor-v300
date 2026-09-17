@@ -10,13 +10,17 @@
  *
  * LÖSNING (ändrar bara NÄR/HUR komponenterna laddas — inga interna ändringar):
  *
- *  - LasyGlobal: monterar sina barn vid requestIdleCallback (med setTimeout-
- *    fallback för webbläsare utan stöd) ELLER vid första riktiga interaktion
- *    (scroll/pekare/tangent) — det som inträffar först. Schemaläggningen görs
- *    i useEffect, alltså FÖRST när wrappern själv har hydratiserats: servern
- *    renderar null, klientens första rendering är null → hydrationsskillnad
- *    är strukturellt omöjlig och monteringen kan aldrig konkurrera med själva
- *    hydratiseringen.
+ *  - LasyGlobal: monterar sina barn vid första riktiga interaktionen
+ *    (scroll/pekare/tangent) ELLER — basfallet i två steg (o57) — vid 8 s +
+ *    äkta requestIdleCallback (generöst 2 500 ms-tak; utan rIC-stöd monteras
+ *    vid 8 s). Schemaläggningen görs i useEffect, alltså FÖRST när wrappern
+ *    själv har hydratiserats: servern renderar null, klientens första
+ *    rendering är null → hydrationsskillnad är strukturellt omöjlig och
+ *    monteringen kan aldrig konkurrera med själva hydratiseringen. DIREKTA
+ *    idle-tak (förr 2 000 ms) är BORTTAGET: taket kunde TVINGA monteringen
+ *    (chunk-fetch + modulvärdering) mitt i blocking-fönstret på drosslad
+ *    mobil — bevisat i o53 §2 (chatten) och o57 §1 (ShortSeller/NotisCenter/
+ *    SearchModal: tjänstevågen 1,2–2,7 s in i TBT-fönstret).
  *
  *  - De tunga komponenterna hämtas via next/dynamic (ssr:false) → egen chunk
  *    som bara laddas när komponenten verkligen renderas.
@@ -71,17 +75,11 @@ function schemalaggIdle(aterkomst: () => void, timeoutMs: number): IdlePlan {
 // ── LasyGlobal — generisk idle-mount ────────────────────────────────────────
 
 /**
- * Renderar {children} först vid idle (eller första interaktion). Servern och
- * klientens första rendering är identiskt null → hydrationssäker.
+ * Renderar {children} först vid första interaktionen eller sen idle
+ * (8 s + requestIdleCallback). Servern och klientens första rendering är
+ * identiskt null → hydrationssäker.
  */
-export function LasyGlobal({
-  children,
-  timeoutMs = 2000,
-}: {
-  children: ReactNode;
-  /** Tak i ms innan idle-callbacken tvingas köra (requestIdleCallback-timeout). */
-  timeoutMs?: number;
-}) {
+export function LasyGlobal({ children }: { children: ReactNode }) {
   const [monterad, setMonterad] = useState(false);
 
   useEffect(() => {
@@ -98,12 +96,26 @@ export function LasyGlobal({
     const handelse: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "keydown", "touchstart"];
     handelse.forEach((h) => window.addEventListener(h, starta, { passive: true, once: true }));
 
-    // Basfall: när huvudtråden blir ledig (hydratisering klar + LCP fri).
-    const plan = schemalaggIdle(starta, timeoutMs);
+    // Basfall i två steg (o57, o53:s LasyChatWidget-mönster): 8 s, därefter
+    // requestIdleCallback med generöst tak ⇒ monteringen sker tidigast ~8 s
+    // och först efter det första tysta fönstret — aldrig mitt i blocking-
+    // fasen. Ett DIREKT idle-tak (som det gamla 2 000 ms) tvingar fram
+    // monteringen så snart taket slår till, även på en tråd som arbetar.
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | null = null;
+    const efter8s = () => {
+      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta, { timeout: 2500 });
+      else starta();
+    };
+    const t = window.setTimeout(efter8s, 8000);
 
     function stada() {
       handelse.forEach((h) => window.removeEventListener(h, starta));
-      plan.avbryt();
+      window.clearTimeout(t);
+      if (idleId != null) w.cancelIdleCallback?.(idleId);
     }
     return stada;
     // engångs-effekt: monteringsbeslutet beror inte på props/state
@@ -223,8 +235,9 @@ function MentorSignal({ vantaOppna }: { vantaOppna: { current: { fraga?: string 
   return null;
 }
 
-/** Agent 3: Short-Seller — monteras idle, event-bussen ("ak1a:shortseller-
- *  attacka") fungerar som förut när båda globala komponenterna monterats. */
+/** Agent 3: Short-Seller — monteras vid interaktion eller sen idle (o57:
+ *  8 s + äkta idle; event-bussen "ak1a:shortseller-attacka" är intern och
+ *  fungerar som förut när komponenten monterats). */
 export function LasyShortSeller() {
   return (
     <LasyGlobal>
@@ -233,7 +246,9 @@ export function LasyShortSeller() {
   );
 }
 
-/** Notisklockan — monteras idle (defererar även /api/notiser-hämtningen). */
+/** Notisklockan — monteras vid interaktion eller sen idle (o57; defererar
+ *  även /api/notiser-hämtningen ur det kritiska fönstret — push-behörighet
+ *  frågas som förut först vid klicket på klockan). */
 export function LasyNotisCenter() {
   return (
     <LasyGlobal>

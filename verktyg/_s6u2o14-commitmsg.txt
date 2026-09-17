@@ -1,0 +1,16 @@
+studio: auto s6-u2 lärvägsdjup AI-Mentorn +2 förhandsfrågor — normalisering/CAPE · SOTP (värderingsjustering-lagret, 25:e av 27 i kedjan)
+
+Spår 6 omgång 14, byggare 2/3. Två källmärkta förhandsfrågor utan API-kostnad — värderingens två justeringsrattar:
+
+- NORMALISERING (vr-02-normaliserade-multipler primär + vm-04-cyklisk-justering + Shillers Irrational Exuberance): nämnarens justeringsratt — årsvinst i cykliskt bolag svarar på VAR I CYKELN inte VAD BOLAGET TJÄNAR; tioårssnittet, CAPE-läsningen och gapet mellan dagsmultipel och normaliserad som studieobjekt.
+- SUM OF THE PARTS (km-012 primär + vr-03-multipelns-anatomi + Damodarans Investment Valuation): helhetens justeringsratt — del A 10×8=80 + del B 5×12=60 − 5 centralkostnader = substansvärde 135 mot marknad 110 ⇒ konglomeratrabatt (135−110)/135 = 18,5 %, aritmetik med oberoende omräkning i testet D03.
+
+ÄMNESVAL MED DOKUMENTERAT BYTE: omgångens andra val var WACC — kasserades när lönsamhetsdjupets ROIC-monster visade sig äga kärnorden wacc/kapitalkostnad ("vad är WACC?" ⇒ roic genom hela kedjan; B15 bevisar). Även "cape" togs ur kärnorden: kortordskollision case↔cape d=1 ("vad är cape?" ägs av case-mönstret; B16) — CAPE-ämnet bärs av shiller-/normaliser-orden. Källor får delas mellan lager (vm-04 är redan sidokälla i multipel-monstret), kärnord aldrig.
+
+KÄLLMÄRKNING + LÄNKAR: båda svaren bär numrerad Källor-lista (kallradFler, 3 källor var) + 4 handlings (3 kurser + 1 levande fragor:-knapp → multipel- och substansvärde-mönstren).
+
+REGRESSIONSTEST verktyg/testa-ai-mentor-varderjustering.mjs: 33 PASS 0 FEL — kanoniska + felstavningar (diafri/verbal/familjeord), determinism bitidentisk, källaäkthet mot 396 kurser (0 fantomslugar), registerdrivna tal (klippskydd mot rebake), SOTP-aritmetik oberoende omräknad, juridikgrind 0 rådfraser, antistöld 66 tidigare kanoniska + 843 syskonkärnord LIVE → 0 fångster, kärnordsdisjunktion mot 26 lager LIVE, SIST-gruppens invariant i 27-lägets kedja, widget-synk (27 komponenter i ordning + import).
+
+KEDJAN: 27 lager i chat-widget.tsx — detta lager efter grahamgolv, före syskonens optionsdjup + riskläsningsdjup (landade på disk under mitt fönster; deras egna tester äger deras djupkontroller). tsc 0 via projektbinär. Endast data under src/lib + widget + verktyg; inget bygge (deploy ägs av prod-synken); R2 orörd; data/blogg/ orörd. [fabrik]
+
+SLUTLÄGES-BÄRING (c612565b-presedensen — ingen commit refererar en saknad modul): widgeten importerar alla tre omgång-14-modulerna och de 17 harmoniskt uppdaterade vakt-testerna dokumenterar samtliga 27 komponenter, därför bär denna commit även fönstrets syskonleveranser om de inte hunnit committas: u1:s optionsdjup (optionsdjup-fragor + test 27 PASS) + u3:s riskläsningsdjup (risklasningsdjup-fragor + test 28 PASS) + deras gemensamma vakt-kirurgi — allt oberoende omkört grönt i 31-filssviten (837 PASS 0 FAIL, kedjetestet 60/60 med 27 motorer / 86 monsters) före commit. u1:s worklog-rad (rad 12582+) följer med worklog.md; provenansen för syskonens ytor förblir deras att bokföra.

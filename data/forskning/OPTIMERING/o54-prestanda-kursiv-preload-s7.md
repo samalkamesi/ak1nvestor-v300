@@ -103,9 +103,16 @@ trace-bevis; inget R2-rörande).
   mäts när nästa prod-bygge landat (BUILD_ID-byte + kursiv-woff2 i
   preload-listan verifieras före mätning).
 
-## §5 EFTER-mätning — PENDING (bokförs när prod-synkens bygge landat)
+## §5 EFTER-mätning — PENDING (väntestatus 20:12 lokal, 2026-09-17)
 
-Kriterier: (a) SSR-HTML bär preload-rad för kursiv-woff2:n; (b) font-C
+Kur-commit 772b67f9 sitter i prod-trädet sedan 19:59; prod-synkens
+bygge har inte startat — RAM-vakten håller det (tillgängligt 884–1 161
+MB under hela fönstret 19:56–20:12 < 2 200 MB-tröskeln; orsak =
+fabrikens aktiva syskonkull ≈ 2,4 GB zcode-barn, samma skydd som
+våg 146/148 beslutade). Prod 200 oavbruten på J87oNXS1k5w1NAMDS1rpJ.
+
+Nästa omgång mäter EFTER när BUILD_ID bytts, med kriterierna:
+(a) SSR-HTML bär preload-rad för kursiv-woff2:n; (b) font-C
 nätverksstart ≈ 80–150 ms (ej 954–1 509); (c) LCP ned på / och /kurser;
 (d) CLS fortsatt 0 (optional målar en gång — inget swap-skifte).
 

@@ -578,9 +578,25 @@ async function korSynk() {
     }
     if (!nya.trim()) {
       // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —
-      // revert vore att reverta DIGLIG kod; patchen är enda misstänkta
-      logga("PATCH-KÖ: bygg misslyckades utan ny kod — patchen misstänkt, lock återställd, HEAD orörd (revert hoppas: koden är deployad sedan tidigare)");
-      return;
+      // revert vore att reverta DIGLIG kod. MEN det fallna bygget har
+      // redan rivit .next (next build tömmer katalogen FÖRE
+      // kompileringsfelet): pm2 serverar HTML ur minnet medan ALLA
+      // statiska filer ger 500 (bevisat 2026-09-17 11:39–11:43: 22/22
+      // statiska 500, .next/BUILD_ID borta). Ombygge på den återställda
+      // (bevisat fungerande) locken är OBLIGATORISKT — patchen är
+      // tillbakadragen (misslyckad-kvittoa skrevs ovan, locken riven),
+      // därför nollställs patchInstallerad så steg 7 aldrig committar
+      // den rivna locken eller skriver ok-kvitton för den.
+      logga("PATCH-KÖ: bygg misslyckades utan ny kod — patchen misstänkt, lock återställd; OMBYGG på god lock (det fallna bygget rivit .next)");
+      patchInstallerad = false;
+      if (await korBygg()) {
+        ok = true;
+        logga("ombygge på god lock OK — prod åter tjänstduglig, patchen tillbakadragen (HEAD orörd)");
+      } else {
+        logga("ombygge på god lock MISSLYCKADES — pm2 orörd, manuell granskning krävs");
+        skrivAudit("prod-synk", "deploy_avbruten", "ombygge-god-lock", "patch-mode utan ny kod: även ombygget på god lock misslyckades — manuell granskning krävs");
+        return;
+      }
     }
     logga("bygg MISSLYCKADES (se /tmp/synk-*.log) — revert + ombygge");
     try {

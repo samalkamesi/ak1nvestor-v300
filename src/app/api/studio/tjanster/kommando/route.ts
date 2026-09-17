@@ -22,14 +22,27 @@ export const dynamic = "force-dynamic";
  * den funktionella styrvägen. Ack "noop" = app-servern bar inget mål —
  * äkta domslut, ej fel (§11.5.1).
  *
- * Övriga typer (resolveInteraction, switchModelConfig, köoperationerna)
- * senare enligt §11.4:s migreringsordning. Att ersätta dagens styrväg
- * helt är feature-avvägning enligt §11.4.
+ * POST 31+32 (V5/A2 + V7/A5 — våg 182): POST {typ: "setAutoDrain",
+ * autoDrain} | {typ: "sendQueuedNow"|"deleteQueueItem", queueItemId} |
+ * {typ: "editQueueItem", queueItemId, newText} | {typ:
+ * "reorderQueueItem", queueItemId, beforeQueueItemId?: string|null} →
+ * transport.skickaV4KoStyrning — kompöttningssystemets fyra operationer
+ * + köns automatiska tömning (§11.2 rad 239–242). queueItemId härleds
+ * klientförutsägbart som "queue_"+commandId (§11.5.1 Cse). Ack-"noop"
+ * och guard-koderna (queueItemReserved, queueItemNotEditable,
+ * queuePromotionBusy — §11.5.2) är ÄKTA domslut, ej fel. UI-koppling
+ * (köpanel) är feature-avvägning enligt §11.4 — API-vägen först.
+ *
+ * Övriga typer (resolveInteraction, switchModelConfig) senare enligt
+ * §11.4:s migreringsordning. Att ersätta dagens styrväg helt är
+ * feature-avvägning enligt §11.4.
  *
  * Validering: text 1–4 000 tecken (chatt-promptkultur), delivery ∈
  * {startNow, queue} ("guide" väntar A6-insatsen — flight-timeout och
  * delivery-semantikens tre lägen mot mål-loopens serialisering); typ ∈
- * {pauseGoal, resumeGoal} för styrningsgrenen.
+ * {pauseGoal, resumeGoal} för styrningsgrenen; kö-grenens payload per
+ * §11.2 (autoDrain boolean, queueItemId trimmad icke-tom, newText
+ * 1–4 000 tecken, beforeQueueItemId string|null).
  * Fel-tolerant 200 {skickat:false, fel} för transportfel
  * (observabilitetskulturen) — 400 ENDAST ogiltig kropp (klientens fel).
  * GET ej exporterad ⇒ 405 (metodkontrakt).
@@ -49,21 +62,83 @@ export async function POST(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
 
-  let kropp: { text?: unknown; delivery?: unknown; typ?: unknown };
+  let kropp: {
+    text?: unknown;
+    delivery?: unknown;
+    typ?: unknown;
+    autoDrain?: unknown;
+    queueItemId?: unknown;
+    newText?: unknown;
+    beforeQueueItemId?: unknown;
+  };
   try {
-    kropp = (await req.json()) as { text?: unknown; delivery?: unknown; typ?: unknown };
+    kropp = (await req.json()) as typeof kropp;
   } catch {
     return jsonSvar({ skickat: false, fel: "Ogiltig JSON-kropp." }, 400);
   }
 
   // POST 30 (våg 181): styrningsgrenen — pauseGoal/resumeGoal (§11.2).
-  if (kropp.typ !== undefined) {
-    if (kropp.typ !== "pauseGoal" && kropp.typ !== "resumeGoal") {
-      return jsonSvar({ skickat: false, fel: "typ måste vara pauseGoal eller resumeGoal." }, 400);
-    }
+  if (kropp.typ === "pauseGoal" || kropp.typ === "resumeGoal") {
     const transport: StudioTransport = hamtaStudioTransport();
     try {
       const svar = await transport.skickaV4MalStyrning(kropp.typ);
+      return jsonSvar({ ...svar, transport: transport.namn });
+    } catch (fel) {
+      return jsonSvar({
+        skickat: false,
+        commandId: null,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+        transport: transport.namn,
+      });
+    }
+  }
+
+  // POST 31+32 (våg 182): kö-grenen — setAutoDrain + köoperationer (§11.2
+  // rad 239–242). 400 ENDAST ogiltig kropp; protokollets egna domslut
+  // (ack-status/reasonCode) passerar som 200-svar.
+  if (kropp.typ !== undefined) {
+    const transport: StudioTransport = hamtaStudioTransport();
+    const q = typeof kropp.queueItemId === "string" ? kropp.queueItemId.trim() : "";
+    const n = typeof kropp.newText === "string" ? kropp.newText.trim() : "";
+    const b = typeof kropp.beforeQueueItemId === "string" ? kropp.beforeQueueItemId.trim() : "";
+    let payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    };
+    if (kropp.typ === "setAutoDrain") {
+      if (typeof kropp.autoDrain !== "boolean") {
+        return jsonSvar({ skickat: false, fel: "setAutoDrain kräver autoDrain boolean." }, 400);
+      }
+      payload = { autoDrain: kropp.autoDrain };
+    } else if (kropp.typ === "editQueueItem") {
+      if (!q) return jsonSvar({ skickat: false, fel: "editQueueItem kräver queueItemId." }, 400);
+      if (!n || n.length > 4000) {
+        return jsonSvar({ skickat: false, fel: "editQueueItem kräver newText (1–4 000 tecken)." }, 400);
+      }
+      payload = { queueItemId: q, newText: n };
+    } else if (kropp.typ === "reorderQueueItem") {
+      if (!q) return jsonSvar({ skickat: false, fel: "reorderQueueItem kräver queueItemId." }, 400);
+      payload = { queueItemId: q, beforeQueueItemId: b === "" ? null : b };
+    } else if (kropp.typ === "sendQueuedNow" || kropp.typ === "deleteQueueItem") {
+      if (!q) return jsonSvar({ skickat: false, fel: `${kropp.typ} kräver queueItemId.` }, 400);
+      payload = { queueItemId: q };
+    } else {
+      return jsonSvar(
+        {
+          skickat: false,
+          fel: "typ måste vara pauseGoal, resumeGoal, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
+        },
+        400,
+      );
+    }
+    try {
+      const svar = await transport.skickaV4KoStyrning(
+        kropp.typ,
+        payload,
+      );
       return jsonSvar({ ...svar, transport: transport.namn });
     } catch (fel) {
       return jsonSvar({

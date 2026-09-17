@@ -1759,6 +1759,34 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POSTER 31+32 (V5/A2 + V7/A5 — våg 182): v4/command
+   * setAutoDrain + köoperationerna (V4-LAGRET §11.2 rad 239–242):
+   * setAutoDrain {autoDrain}, sendQueuedNow {queueItemId},
+   * editQueueItem {queueItemId, newText},
+   * reorderQueueItem {queueItemId, beforeQueueItemId: string|null},
+   * deleteQueueItem {queueItemId}. queueItemId härleds klientförutsägbart
+   * som "queue_"+commandId (§11.5.1 Cse). Ack-unionens "noop" liksom
+   * guard-koderna (queueItemReserved, queueItemNotEditable,
+   * queuePromotionBusy m.fl. §11.5.2) är ÄKTA domslut, ej fel.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5854,6 +5882,72 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POSTER 31+32 (§11.2 rad 239–242): setAutoDrain + köoperationerna —
+   * samma envelope-validering som sendText; payload byggs per typ ur
+   * KLr-kartan och payload-grinden här är VÅR validering (protokollets
+   * egen domslutsväg nås via ack status/reasonCode).
+   */
+  async skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const p = payload ?? {};
+    let wire: { autoDrain?: boolean; queueItemId?: string; newText?: string; beforeQueueItemId?: string | null };
+    if (typ === "setAutoDrain") {
+      if (typeof p.autoDrain !== "boolean") {
+        return { skickat: false, commandId: null, ack: null, fel: "setAutoDrain kräver autoDrain boolean." };
+      }
+      wire = { autoDrain: p.autoDrain };
+    } else if (typ === "editQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      const n = typeof p.newText === "string" ? p.newText.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver queueItemId." };
+      if (!n) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver newText." };
+      wire = { queueItemId: q, newText: n };
+    } else if (typ === "reorderQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "reorderQueueItem kräver queueItemId." };
+      const b = typeof p.beforeQueueItemId === "string" ? p.beforeQueueItemId.trim() : "";
+      wire = { queueItemId: q, beforeQueueItemId: b === "" ? null : b };
+    } else {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: `${typ} kräver queueItemId.` };
+      wire = { queueItemId: q };
+    }
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: typ,
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8564,6 +8658,54 @@ class MockTransport implements StudioTransport {
     const ack = {
       commandId,
       status: this.mockV4MalStyrningStatus,
+      typ,
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POSTER 31+32 (§11.2) (mock): deterministisk "noop"-ack — mockens kö
+   * är statisk (lasV4Kommandon), ingen drain att styra; äkta domslut
+   * enligt §11.5.1, INGEN påhittad reasonCode. Samma payload-grind som
+   * AppServerTransport (kontraktstrogen dev-E2E). Överridbar via
+   * mockV4KoStyrningStatus.
+   */
+  mockV4KoStyrningStatus: string = "noop";
+
+  async skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const p = payload ?? {};
+    if (typ === "setAutoDrain") {
+      if (typeof p.autoDrain !== "boolean") {
+        return { skickat: false, commandId: null, ack: null, fel: "setAutoDrain kräver autoDrain boolean." };
+      }
+    } else if (typ === "editQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      const n = typeof p.newText === "string" ? p.newText.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver queueItemId." };
+      if (!n) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver newText." };
+    } else if (typ === "reorderQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "reorderQueueItem kräver queueItemId." };
+    } else if (typ === "sendQueuedNow" || typ === "deleteQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: `${typ} kräver queueItemId.` };
+    } else {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig kö-styrningstyp." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4KoStyrningStatus,
       typ,
       source: "mock",
     };

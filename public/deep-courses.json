@@ -202808,6 +202808,198 @@
     "grahamSection": "Benjamin Graham var obligationsanalytiker innan han blev aktieanalytiker — hans och Dodds Security Analysis inleds med fasta fordringar, inte med aktier — och hela idén om säkerhetsmarginal är född ur frågan hur stort avståndet är mellan ett bolags betalningsförmåga och dess skuld. Covenanter är den frågans avtalsform: nedskrivna krav på att avståndet ska bestå. Grahams berömda regel att obligationer ska bedömas som om aktien inte fanns — kan bolaget betala även i dåliga år? — är räntetäckningsgradens ande, och betygstrappan är den institutionaliserade versionen av den bedömning han gjorde för hand.",
     "ak1Section": "I AK1A:s metodik är denna kurs KAPITALSTRUKTUR-familjens kontraktsblock: den knyter ks-01:s finansieringsmix och ks-03:s skuldanatomi till avtalens trösklar och betygens prislapp, och den mekaniserar samma nyckeltal som STABILITET-familjen (st-01, st-03) lär ut som buffertmått — bankens golv och analytikerns instrument är släkt. Tillsammans med v20:s återköppstema och AKM2:s kapitalstrukturdimension täcker den hela skuldsidans läsning — så fungerar metoden, i utbildningens tjänst."
   },
+  "ks-06-konvertibler-och-hybridkapital": {
+    "slug": "ks-06-konvertibler-och-hybridkapital",
+    "category": "KAPITALSTRUKTUR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Konvertibler och hybridkapital — skulden som kan bli eget kapital",
+    "summary": "Kapitaltrappans mitt: instrumenten som varken är ren skuld eller ren aktie. Registrets kapitalstruktursfamilj har grunderna (ks-01), allokeringen (ks-02) och skuldens anatomi (ks-03) — men ingen kurs om mellanformerna: KONVERTIBELN, lånet med rätt att bytas till aktier, och PREFERENSAKTIEN, aktien med fast utdelning och batong i kön. Kursen räknar båda mekanikerna genom: konvertibeln med löp 1 000 kronor, kupong 2,0 procent (mot 5,0 för vanliga obligationer — utfärdarens besparing 30 kronor om året är priset för valrätten) och konverteringskurs 125: aktie 160 ger 8 × 160 = 1 280, alltså +28,0 procent, aktie 100 ger tillbaka lånet — golvet och optionen i samma papper. Preferensen prissatt som en evighetsränta: direktavkastningen 6,5 på nominell 100 ger pris 6,5/7,8 × 100 = 83,3 när avkastningskravet stiger från 6,5 till 7,8 procent — ett fall på 16,7 procent utan att utdelningen rör sig. Signaturkapitlet är stämpelordningen: ett bolag med fritt kassaflöde 70, ränta 60 och preferensutdelning 25 betalar räntan fullt ut, preferensen 10 av 25 — och de vanliga aktieägarna noll. Avslutningen: hybridkapitalets historia från järnvägens obligationslån till bankernas AT1-papper — och Credit Suisse mars 2023, när cirka 16 miljarder francs nollskrevs medan aktieägarna lämnades ett bud: läxan att papprens ordning i en kris avgörs av mer än prospektet.",
+    "minutes": 24,
+    "xp": 50,
+    "why": "KAPITALSTRUKTUR-familjen hade tre våningar men ingen mitt: ks-01 finansieringsgrunderna, ks-02 styrelsens allokeringsvägar och ks-03 banklånens och obligationernas anatomi — men instrumenten MITT EMELLAN saknades helt i registret (temasök mot samtliga 381 kurser vid valet: noll träffar utanför bokreferenser). Det är ingen kuriosa: konvertibler och preferensaktier är en betydande och väletablerad del av den svenska marknaden — bolag finansierar sig med dem, aktieägare möter dem i utspädningsberäkningar (rk-02) och balansräkningar (bk-01), och den som inte kan läsa en mellanform kan inte heller avgöra om den som erbjuder en 'trygg' placering talar om skuldens säkerhet eller aktiens risk. Kursen bygger direkt på grannarna: ks-01:s trapplogik, ks-03:s räntebegrepp, st-01:s soliditetsmått (där hybriderna ställer den bästa frågan: räknas de som skuld eller eget kapital? svaret skiljer sig åt mellan balansräkning, ratinginstitut och utdelningspolicy) — och v20:s återköp som den spegelvända allokeringsbeslutningen.",
+    "level": "Intermediär",
+    "learn": "Placera hybridinstrumenten på kapitaltrappan: banklån och obligationer (ren skuld) → konvertibler (skuld med valrätt) → preferensaktier (aktie med skuldens utdelningslogik) → vanliga aktier (rent eget kapital) — och förklara varför varje steg ner i trappan ger lägre kupong men högre risk · Räkna konvertibeln slutligt: löp 1 000 med konverteringskurs 125 ger 8 aktier; aktiekurs 160 vid lösen ger 8 × 160 = 1 280 kronor alltså +28,0 procent, medan aktiekurs 100 låter lånet betalas tillbaka — och paritetspunkten (aktie 125) där de två utfallen är värda exakt lika mycket · Förklara kupongbesparingens logik: utfärdaren betalar 2,0 i stället för 5,0 procent — 3,0 procentenheter eller 30 kronor om året på 1 000 — och 'betalar' med rättigheten att få leverera aktier till 125 · Prissätta preferensaktien som evighetsränta: pris = utdelning/avkastningskrav, alltså 6,5/0,065 = 100 vid krav 6,5 procent och 6,5/0,078 = 83,3 när kravet stiger till 7,8 — en räntestigning på 1,3 procentenheter faller priset 16,7 procent utan att en enda utdelningskrona ändrats · Tillämpa stämpelordningen i ett räkneexempel: fritt kassaflöde 70, räntekostnad 60, preferensutdelning 25 — räntan betalas fullt ut, preferensen får 10 av 25 (40 procent), vanliga aktieägare noll · Känna igen hybridens risker: utspädningen vid konvertering (rk-02), inlösenrisken när priset blir för god för utfärdaren, räntekänsligheten hos ett papper utan slutdatum — och krisläxan från Credit Suisse 2023, när cirka 16 miljarder francs AT1-kapital nollskrevs före aktiekapitalets slutgiltiga värde",
+    "history": {
+      "origin": "Mellanformerna är äldre än börserna. Järnvägsbolagen på 1800-talet — historiens största infrastrukturfinansiering — prövade varenda variant på trappan: räntebärande obligationer för de färdiga sträckorna, konvertibla lån där långivaren fick rätt byta skuld mot aktier när linjen betalade, och preferensaktier som gav de som vågade mest en fast andel av frukten före de vanliga ägarna. Amerika byggde sitt telefonnät och sina järnvägar delvis på konvertibla obligationer — papper som lät entreprenören låna billigt och låta framgång betala räntan i aktier i stället för kontanter. Preferensaktienkodifierades i amerikansk associationsrätt i slutet av 1800-talet och blev snabbt ägarledningens favorit vid nyemissioner: kapital utan röstmakt, utdelning före de vanliga — finansieringens och kontrollens åtskillnad i ett enda instrument.",
+      "evolution": "Efterkrigstiden gjorde mellanformerna till institutionellas verktyg: investmentbolag och konglomerat utfärdade konvertibler för att låna billigt mot framtida värdepapper, och 1970-talets stillsammandragande aktiemarknad gjorde de fasta utdelningarna i preferensaktier attraktiva när vanliga utdelningar skars. Sverige fick sin moderna preferensmarknad från 2000-talets mitt, när banker och investmentbolag — kapitaltunga verksamheter med reglerade kapitalkrav — upptäckte att preferensaktier räknas som eget kapital men bär en utdelningslogik som bolaget kan planera. Finanskrisen 2008 blev hybridhistoriens vattendelare: banker världen över visade sig ha finansierat sig med papper vars 'perpetuala' utdelningar skulle kunna ställas in men vars kapitalfunktion ifrågasattes just när det behövdes — och svaret blev Basel III:s kapitallagstiftning, som skapade en ny, reglerad kategori: AT1-papper (additional tier 1), hybridkapital med inbyggda omvandlings- och nollskrivningsmekanismer vid kapitalbrist.",
+      "modern": "Idag lever mellanformerna tre liv parallellt: som FÖRETAGSFINANSIERING (konvertibla obligationslån är ett standardvapen för tillväxtbolag som vill låna billigare än den ränta deras belåning bär — betalat med utspädningsrisk, rk-02), som BÖRSHANDEL (preferensaktier noteras som egna serier med sin egen direktavkastning och sin egen räntekänslighet — en kategori investerare söker dem just för den fasta utdelningen, st-01:s räntetäckningslogik i omvänd riktning), och som BANKKAPITAL (AT1-papper med myndighetsutlöst nollskrivning). Kursens sista kapitel stannar vid den tredje världens största läxa: när UBS i mars 2023 övertog Credit Suisse nollskrevs cirka 16 miljarder francs av AT1-kapitalet medan aktieägarna lämnades ett bud — en ordning som vände upp och ner på den hierarki prospekten ritat, beslutad av myndighet och inte av marknad, och som rubbade prissättningen på bankhybrider i hela Europa: papprets mekanik är en sak, papprets öde i en systemkris en annan."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Mellanformen — kapitaltrappans mitt",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konvertibeln — lånet med valrätt",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Preferensaktien — utdelningen utan slutdatum",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Stämpelordningen — vem betalas först",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Utfärdarens kalkyl och innehavarens risker",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Från järnväg till krisbank — hybridens läxa",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Mellanformen — kapitaltrappans mitt",
+        "intro": "Ks-01 lärde trappan: skuld längst ner, eget kapital längst upp. Denna kurs handlar om stegen MITT EMELLAN.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ren skuld och rent eget kapital är begripliga ytterligheter: långivaren har rätt till ränta och amortering men aldrig mer, aktieägaren har rätt till allt som blir över men aldrig garanterat något. Mellan dem lever en hel familj instrument som LÅR av skulden och LÅNAR av aktien: konvertibeln är ett lån som kan förvandlas till aktier — skuldens säkerhet med aktiens uppsida; preferensaktien är en aktie med fast utdelning och företräde framför de vanliga — aktiens evighet med skuldens utdelningslogik. Gemensamt namn i finansspråket: hybridkapital, och det är ett bättre ord än det låter, ty 'hybrid' här betecknar inte en tvekande kompromiss utan en medveten konstruktion — varje hybrid är byggd för att ge utfärdaren något skulden inte ger (billig kupong, evig löptid, kapitalklassificering) och innehavaren något aktien inte ger (kön i betalningsordningen, förutsägbar utdelning)."
+          },
+          {
+            "type": "tabell",
+            "content": "Kapitaltrappan — från säkrast till mest riskabelt anspråk (exempel på varje steg i parentes): | Steg | Instrument | Avkastning | Får före | Exempel | — | 1 | Banklån / obligation (ks-03) | Ränta + amortering | Alla andra | Företagsobligation 5,0 % | — | 2 | KONVERTIBEL | Låg ränta — eller aktier | Vanliga aktier | Kupong 2,0 % + bytesrätt | — | 3 | PREFERENSAKTIE | Fast utdelning | Vanliga aktier | Direktavkastning 6,5 % | — | 4 | Vanlig aktie | Restvärdet — inget garanterat | Ingen | Aktie 160 |"
+          },
+          {
+            "type": "insight",
+            "content": "Trappans viktigaste läsning är inte vad varje steg BÄR utan VAD DET KOSTAR: varje steg ner betalar mindre i kronor per år men kräver mer av utfärdarens framtid — obligationen kostar 50 kronor ränta per tusen om året och inget annat, konvertibeln 20 men med en framtida aktieleverans om kursen går, preferensutdelningen 65 per tusen i all oändlighet, och den vanliga aktien kostar allt som blir över. Kapitalstruktur (ks-01) är konsten att välja var på trappan nästa krona ska hämtas — och hybriderna är trappans rörliga steg."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konvertibeln — lånet med valrätt",
+        "intro": "Ett papper, två utfall, ett val som tillhör LÅNGIVAREN: räkna konvertibeln från löp till slutvärde.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En konvertibel är ett obligationslån med en inbyggd rättighet: långivaren får, under vissa villkor och till ett på förhand bestämt pris, BYTA lånet mot aktier. Konkret exempel: ett bolag emitterar konvertibelt obligationslån med lösenbelopp 1 000 kronor, årlig kupong 2,0 procent och konverteringskurs 125 kronor — det vill säga rätten att byta varje lån på 1 000 mot 1 000/125 = 8 aktier. Varför skulle någon låna ut till 2,0 procent när vanliga obligationer för samma bolag bär 5,0? Därför att kupongen bara är halva ersättningen: den andra halvan är OPTIONSVERDET, rätten att i stället för 1 000 kronor ta emot 8 aktier — och om aktien vid lösen handlas till 160 kronor är de 8 aktierna värda 8 × 160 = 1 280 kronor, en avkastning på 28,0 procent på lösenbeloppet. Utfärdarens besparing — 5,0 minus 2,0 = 3,0 procentenheter, eller 30 kronor om året per tusen — är alltså priset bolaget betalar för valrätten."
+          },
+          {
+            "type": "text",
+            "content": "De två utfallen, räknade färdigt: GÅR AKTIEN TILL 160 — konvertera. 8 aktier × 160 = 1 280 kronor; innehavaren står över aktiens uppsida (minus att kupongen under åren varit lägre än marknadens). STANNAR AKTIEN PÅ 100 — konvertera inte. Att byta 1 000 kronor mot 8 aktier värda 8 × 100 = 800 vore en förlust på 200 kronor; lånet betalas tillbaka till 1 000 och innehavaren bär aktiens fall till liten del — golvet i strukturen. MITT EMELLAN ligger paritetspunkten: aktie 125 ger 8 × 125 = 1 000, exakt lånets värde — där är de två utfallen lika mycket värda och där börjar optionen ha värde. Detta är konvertibeln i en mening: en obligation med golvet kvar och en bit av aktiens tak till ett pris av lägre kupong."
+          },
+          {
+            "type": "tabell",
+            "content": "Konvertibeln 1 000 / kupong 2,0 % / konverteringskurs 125 — tre slutlägen: | Aktiekurs vid lösen | Utfall för innehavaren | Värde | Avkastning | — | 160 kronor | Konvertera: 8 aktier | 8 × 160 = 1 280 | +28,0 % | — | 125 kronor (paritet) | Likgiltigt | 8 × 125 = 1 000 | 0,0 % | — | 100 kronor | Behålla lånet | 1 000 + kuponger | Kupongen 2,0 % per år |"
+          },
+          {
+            "type": "insight",
+            "content": "Ett viktigt hygieniskt förbehåll till exemplet: verkliga konvertibler bär fler detaljer än dessa tre tal — löptid, konverteringsfönster, inlösenrätter för utfärdaren, ibland förskjutningar av konverteringskursen. Kursexemplet visar GRUNDMEKANIKEN (golvet, pariteten, optionen); en verklig emissionskalkyl läses i prospektet — och utspädningen för befintliga aktieägare beräknas som vid varje ny aktieemission (rk-02)."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Preferensaktien — utdelningen utan slutdatum",
+        "intro": "Aktie till namnet, obligation till sinnet: den fasta utdelning som aldrig slutar binder priset vid räntan — för alltid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En preferensaktie är en aktie med två ordningar bytta: utdelningen är FAST (ett på förhand bestämt belopp per år, inte styrelsens år från år) och kön är FRAMFÖR de vanliga aktieägarna — 'preferens' är latinets företräde och betyder här precis vad det säger: preferensutdelningen ska betalas FÖRE vanlig utdelning kan betalas alls. Däremot står preferensägaren EFTER alla långivare: ränta och amortering går före. Preferensaktien är alltså steg tre på trappan — efter skulden, före den vanliga aktien — och den saknar i regel slutdatum: emissionen är 'perpetual', pappret inlösens när utfärdaren vill (mot villkor i villkoren), inte när tiden är ute."
+          },
+          {
+            "type": "text",
+            "content": "Utan slutdatum blir prissättningen en EVIGHETSRÄNTA — samma matematik som en obligation som aldrig förfaller: pris = årlig utdelning delat med avkastningskrav. Räkneexemplet: en preferensaktie med nominellt belopp 100 kronor och utdelning 6,50 kronor om året. När marknadens avkastningskrav är 6,5 procent är priset 6,50/0,065 = 100 kronor — emissionens vardagssituation. Men om ränteläget höjer avkastningskravet till 7,8 procent (en höjning med 1,3 procentenheter) faller priset till 6,50/0,078 = 83,3 kronor: en prisnedgång på 16,7 procent UTAN att utdelningskronan ändrats med en enda öre. Mekaniken stänger åt andra hållet med: den som köper till 83,3 kronor får 6,50/83,3 = 7,8 procent i direktavkastning — exakt det nya kravet. Det är obligationsmatematik (km-054:s räntelogik) i aktiekläder, och den gör preferensaktien till ett räntekänsligt papper: ju längre utblick, desto hårdare slår ränteförändringar — här finns ingen förfallodag som 'räddar' priset till slut."
+          },
+          {
+            "type": "tabell",
+            "content": "Preferensaktien 100 kronor / utdelning 6,50 — evighetsräntans prisformel i två räntelägen: | Marknadens avkastningskrav | Pris = utdelning/krav | Förändring | Köparens direktavkastning | — | 6,5 % | 6,50/0,065 = 100,0 | Emissionsläge | 6,50/100,0 = 6,5 % | — | 7,8 % | 6,50/0,078 = 83,3 | −16,7 % | 6,50/83,3 = 7,8 % |"
+          },
+          {
+            "type": "insight",
+            "content": "Notera vad räkningen AVSLÖJAR om 'den trygga utdelningen': preferensens fasta 6,50 är trygg i KRONOR räknat men inte i AVKASTNING räknat — priset på tryggheten svänger med räntan som vilket räntepapper som helst (rk-08:s durationstanke i praktiken). Den som söker fast avkastning och köper preferensaktien har bytt en typ av osäkerhet (utdelningsbeslut) mot en annan (ränterörelser) — och den skillnaden syns inte i utdelningstabellen utan först i prisrutan vid en räntevändning."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Stämpelordningen — vem betalas först",
+        "intro": "Hybridens hela mening visar sig först när utrymmet tryter. Ett räkneexempel genom hela betalningsordningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolagets betalningsordning är en kö — en stämpelordning i gammal svensk bokföringsterminologi — och hybrider är definierade genom sin PLATS i den kön: först ränta och amortering till långivarna (betalar inte det där, och långivarna kan sätta bolaget i förhandling eller konkurs), sedan preferensutdelningen, och först därefter vanlig utdelning till aktieägarna. Räkneexemplet: ett bolag med fritt kassaflöde 70 miljoner kronor före finansieringskostnader, räntekostnad 60 miljoner, planerad preferensutdelning 25 miljoner och hoppad vanlig utdelning 40 miljoner. Stämpelordningen tvingar igenom följande: räntan 60 betalas FULLT UT (långivarna står först och 70 räcker för dem); återstår 70 − 60 = 10 miljoner; preferenserna får 10 av sina 25 miljoner — 40 procent av utdelningen; de vanliga aktieägarna får 0. Notera SKYDDET och dess gräns: preferensägarna står före de vanliga — men om utdelningen är ackumulerande (kumulativ) sparas skulden till nästa år, och om den inte är det kan utdelningen gå förlorad; prospektet avgör, inte namnet."
+          },
+          {
+            "type": "tabell",
+            "content": "Stämpelordningen i siffror — fritt kassaflöde 70, ränta 60, preferens 25, planerad vanlig utdelning 40 (miljoner kronor): | Kön | Anspråk | Betalas | Andel | Kvar efter steget | — | 1. Långivare | Ränta 60 | 60 | 100 % | 10 | — | 2. Preferensägare | 25 | 10 | 40 % | 0 | — | 3. Vanliga aktieägare | 40 | 0 | 0 % | 0 |"
+          },
+          {
+            "type": "text",
+            "content": "Samma kö i goda tider ter sig självklar — alla betalas, ordningen märks inte. Värdet av att KUNNA ordningen uppstår i tre lägen, alla vanliga i analyser: (1) UTDELNINGSPRESS — kan bolaget betala både ränta, preferenser och vanlig utdelning av sitt fria kassaflöde, eller äter finansiärerna i kön före aktieägarna allt? (ud-09 stressar kronorna bakom utdelningen; här ser man var i kön de egna anspråken står); (2) KAPITALBRIST — i en omförhandling står preferensägarna skulderna nära men ägarskapet långt ifrån: deras förhandlingskort är utdelningskravet, inte röstmajoriteten (preferensaktier bär i regel begränsad röstvärde); (3) SOLIDITETSBILDEN — i balansräkningen (bk-01) räknas preferenskapital som EGET kapital, vilket stärker soliditeten (st-01) — men ratinginstitut och analytiker behandlar det ofta som halv skuld, ty utdelningen är fast och står tidigt i kön. Samma krona, tre sanningar: bokförarens, ratinginstitutets och aktieägarens — hybriden tvingar läsaren att välja vems mönster man litar på."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Utfärdarens kalkyl och innehavarens risker",
+        "intro": "Varje hybrid är en affär mellan två parter som båda tror sig få det bättre. Kalkylerna — och fällorna — på bägge sidor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "UTFÄRDARENS KALKYL (ks-02:s allokeringssynvinkel): bolaget väljer hybrider när de tre renodlade vägarna är dyrare eller sämre. Låna vanligt — kostar full ränta (5,0 i exemplet) men ingen utspädning. Emittera aktier — kostar utspädning idag (rk-02) men ingen ränta. Konvertibeln splittar notan: 2,0 i kupong NU och — om aktien går bra — utspädning SENARE, när bolaget är större och varje aktie bär mer; ett tillväxtbolag med förväntat stigande kurs 'betalar' valrätten i egna aktier som det själv tror bli mindre värda per styck när de väl levereras (att tänka som hör hemma i kapitalallokeringens fem vägar, ks-02). Preferensen ger den omvända mixen: ALDRIG utspädning (utdelningen är fast) men heller aldrig slut på kostnaden — 6,50 om året i all evighet, ett pris som låter lågt och lever länge. V20:s återköp är spegelbilden: bolag som INTE behöver kapital köper tillbaka aktier; bolag som behöver det hybridiskt kan välja att inlösa preferensaktier när ränteläget gör ny emission billigare — inlösenrisken, se nedan."
+          },
+          {
+            "type": "text",
+            "content": "INNEHAVARENS RISKER — fyra, alla specifika för mellanformen: (1) UTSPÄDNINGSRISKEN åt andra hållet — konvertibelinnehavaren ÄR utspädningen: när lån konverteras levereras nya aktier till 125 medan marknaden handlar till 160, och befintliga aktieägare bär värdeöverföringen (rk-02 räknar mekaniken); (2) INLÖSENRISKEN — utfärdaren har i regel rätt inlösa pappret när det passar den: preferensen som köpts för 100 med 6,5 i utdelning inlöses när allmänna räntan fallit och ny emission kostar mindre — innehavaren får tillbaka 100 och mister just den avkastning som var poängen; (3) RÄNTEKÄNSLIGHETEN — utan slutdatum finns ingen 'hemresa' till nominalet (kapitel tre: 16,7 procent prisfall på 1,3 procentenhets räntehöjning); (4) MELLANFORMSFÄLLAN — i kriser är hybriden inte halva av två världar utan ofta hela av en: den FALLER som en aktie (kapitalbrist handlar om överlevnad, inte om kuponger) men den BETALAR som en skuld (uppsidan är takad vid kupongen eller den fasta utdelningen). Värsta fallet för aktieägaren — noll — är också möjlig för preferensägaren, men utan aktieägarens teoretiska obegränsade uppsida under resans gång."
+          },
+          {
+            "type": "tabell",
+            "content": "Hybridens fyrarisker — var de bor och vem som bär dem: | Risk | Mekanik | Vem bär | — | Utspädning | Konvertering levererar nya aktier under marknadskurs | Befintliga aktieägare (rk-02) | — | Inlösen | Utfärdaren köper tillbaka när det passar den | Hybridägaren (förlorar avkastningen) | — | Räntekänslighet | Inget slutdatum — inget prisstöd av förfall | Preferensägaren (−16,7 % i exemplet) | — | Mellanformsfälla | Faller som aktie, betalar som skuld | Hybridägaren i kris |"
+          },
+          {
+            "type": "insight",
+            "content": "Den sammanfattande fråga innehavaren bör ställa — och som kursen lärt en att räkna på: VAR I TRAPPAN står mitt anspråk, VAD är golvat (konvertibelns lånevärde 1 000; preferensens utdelning 6,50) och VAD är öppet (aktieutdelningen 160-scenariot; räntefallet)? Hybriden är ett byggt instrument: dess risk är INTE ett naturfenomen att gissa sig till utan en konstruktion att läsa ut ur villkoren — och den som inte kan läsa konstruktionen kan inte heller prissätta den."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Från järnväg till krisbank — hybridens läxa",
+        "intro": "Hybridhistoriens sista kapitel hände i mars 2023 — och skrev om papprens hierarki på ett dygn.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kapitel ett till fem har läst hybriden ur PROSPEKTET: en skriven konstruktion med kö, golv och optioner. Historiens sista lektion är att prospektet inte är den sista instansen — myndigheten är. När finanskrisen 2008 visade att bankers kapital kunde ätas upp snabbare än deras utdelningar kunde stängas, skrev Basel III:s regler in en ny mekanik i bankhybriderna: AT1-papper (additional tier 1), kapitalinstrument med AUTOMATISK verkan vid kapitalbrist — utdelningen kan ställas in, pappret kan omvandlas till aktier eller skrivas ner till noll. Systemet byggde in krisens slagord: bankens ägare och hybridägare, inte skattebetalarna, ska täcka det första hålet."
+          },
+          {
+            "type": "text",
+            "content": "Provet kom i mars 2023. När UBS övertog Credit Suisse över en helg — en räddning genomförd under schweiziska finansmyndigheternas tryck — nollskrevs cirka 16 miljarder francs av bankens AT1-kapital, medan aktieägarna lämnades ett bud i aktier och alltså inte noll. Hierarkin bröts: i den klassiska stämpelordningen står aktieägaren SIST, men här fick hybridägarna det sämre än de som står efter dem. Beslutet var legalt — pappren BARS av klausulen om myndighetsutlöst nollskrivning — men omtumlande för marknaden: den skrivna ordningen och den upplevda ordningen var två olika saker, och europeiska bankhybrider prissattes om i veckor som ingick. Läxan i kursens termer: stämpelordningen är en kö på ett PAPPER — men pappret lever i en VÄRLD av myndighetsbeslut, och i det ögonblick systemet sätts på prov kan ordningen på pappret åsidosättas av ordningen i krisen. Hybridens 'mellan' är aldrig bara matematik; det är också politik."
+          },
+          {
+            "type": "definition",
+            "content": "Hybridens tre frågor — en sammanfattande checklista för läsning av ett verkligt villkorsdokument: (1) VART I KÖN står anspråket — efter vilka, före vilka, och med vilka rättigheter när kön inte räcker till? (2) VAD ÄR FAST och VAD ÄR ÖPPET — golv (lösenvärde, kupong, utdelningsbelopp) och option (konverteringsrätt, avkastning vid inlösen, räntans väg)? (3) VEM KAN ÄNDRA SPELET — inlösenrätter, utdelningsstopp, myndighetsklausuler? Tre frågor, tre svar — och en läsning som gör mellanformen begriplig utan att göra den enkel."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: läs ett verkligt villkorsdokument med kursens tre frågor. (1) Hitta en svensk konvertibel eller preferensserie (prospekt och villkor finns hos respektive bolag — börsens hemsidor listar aktiva serier) och SLÅ UPP de tre talen kursen räknar med: för konvertibeln lösenbelopp, kupong och konverteringskurs — räkna din paritetspunkt och ditt slutvärde vid två tänkta aktiekurser; för preferensen utdelning och villkor för inlösen — räkna priset vid två avkastningskrav som i kapitel tre. (2) Placera anspråket i bolagets stämpelordning: vem står före, vem efter? (3) Ställ den fjärde frågan från kapitel sex: finns en klausul som kan ändra spelet — och vem har rätt att använda den? Kursens ram genomgående: detta är utbildning i hur instrumenten läses och räknas — konstruktionernas mekanik är läsningens verktyg, aldrig en uppmaning, och vad var och en väljer att göra med sina beslut är varje persons eget."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch höll sig hellre till det han kunde förklara för ett barn på en minut — och hans test applicerat på hybrider är sällsyckt effektivt: kan du säga VAD du får betalt, NÄR du får det, och VEM som bestämmer om du får det? En vanlig aktie svarar 'kanske utdelning, när styrelsen vill' — svårt men ärligt; en vanlig obligation svarar 'ränta varje år, ingen bestämmer, konkurslagen gör' — enkelt och sant. Hybriden svarar 'fasta pengar, men bolaget kan ställa in, inlösa eller — i en bank — en myndighet kan skriva ner allt': varje ord sant, men ingen mening enkel. Lynchs varning för papper vars historia han inte kunde berätta utan att tveka är här en bruksanvisning: mellanformer är inte omöjliga att äga klokt, men omöjliga att äga outsourcat — den som inte själv kan räkna paritetspunkten ska inte ha konvertibeln, och den som inte räknat 6,50/0,078 ska inte ha preferensen.",
+    "grahamSection": "Benjamin Graham delade världspapperen i två lådor — investment och spekulation — och hybriderna hamnar obekvämt mellan hans egna lådor: fast utdelning talar investeringens språk, men avsaknad av slutdatum och säkerhet talar spekulationens. Hans lösning för mellanformerna var principiell: räkna dem som det SÄMRE av sina två halvor tills det motsatta bevisats — konvertibeln som en dyr obligation (inte som en billig aktie), preferensen som en aktie utan uppsida (inte som en trygg obligation). Det är en konservativ översättning av kursens mellanformsfälla: i goda tider visar hybriden sitt fina jag, i dåliga det sämre — och Graham ville att priset skulle betala för det sämre. Hans säkerhetsmarginal (km-030) blir för hybrider en fråga om avstånd i KÖ, inte bara i pris: hur många steg före aktieägaren står man egentligen, och vad är de stegen värda i en omförhandling?",
+    "ak1Section": "I AK1A:s metodik är denna kurs KAPITALSTRUKTUR-familjens fjärde steg och den som gör trappan komplett i MELLANRIKET: ks-01 grunderna, ks-02 allokeringen, ks-03 skuldens anatomi — och här instrumenten som flyttar gränsen mellan skuld och eget kapital. Kursen matar grannspåren med data de saknat: balansräkningskurserna (bk-01) möter preferenskapitalet som lyfter soliditeten (st-01) utan att flytta risk, utdelningskurserna (ud-09) möter anspråk som står FÖRE aktieutdelningen i kön, emissionskursen (rk-02) möter utspädningen som kommer genom bakdörren vid konvertering, och kreditcykelkursen (st-04) möter refinansieringsväggen hos papper som ALDRIG förfaller men heller aldrig slutar kosta. I AKM2-modellens kapitalmekanik-dimension väger hybriderna in som just gränsfall: kapital som beter sig som skuld i räkningen och som eget kapital i balansen — och skillnaden mellan de två bilderna är en av de frågor en grundlig bolagsanalys ska kunna ställa och besvara."
+  },
   "rs-01-volatilitet-och-risk": {
     "slug": "rs-01-volatilitet-och-risk",
     "category": "RISK",
@@ -206772,6 +206964,202 @@
     "grahamSection": "Benjamin Graham skulle ha sett grekerna som en fortsättning på hans grundtanke: att skilja pris från värde och förstå vad man betalar för. Theta är optionens värdemätare — pengar som försvinner med tiden utan att något händer — och Graham-tänkaren skulle noga räkna på vad tidskostnaden betyder innan en position överhuvudtaget byggs.",
     "ak1Section": "AKM1 använder grekerna som risköversättningslager i sin derivatanalys: portföljens nettoexponeringar uttrycks i delta, gamma, theta och vega för att varje dimension ska kunna vägas separat — samma grundprincip som modellens dimensionstäckning på aktiesidan. Det är ett pedagogiskt verktyg för att synliggöra vad en konstruktion faktiskt exponerar läsaren för, inte en rekommendation att inta positionen."
   },
+  "od-02-implicit-volatilitet": {
+    "slug": "od-02-implicit-volatilitet",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Implicit volatilitet — marknadens pris på framtiden",
+    "summary": "Familjens praktiska kröning: volatiliteten inte som statistik utan som PRIS. Km-013 mäter realiserad volatilitet — standardavvikelsen på det som REDAN hänt — men optionens pris bärs av något annat: den volatilitet marknaden PRISAR för framtiden. Kursen räknar hela kedjan med enkelhetsregeln för optioner vid penningslag: pris ≈ 0,4 × aktiekurs × volatilitet × roten ur löptiden. En option på en aktie till 100 kronor, tre månader kvar (roten ur 0,25 = 0,5) och volatilitet 20 procent kostar cirka 0,4 × 100 × 0,20 × 0,5 = 4,0 kronor — och nu vänds formeln in och ut: ser marknaden priset 5,0 kronor är den implicita volatiliteten 5,0/(0,4 × 100 × 0,5) = 25,0 procent. Det som i Black-Scholes (km-062) var INDATA blir i marknadens händer UTDATA — formeln, inte marknaden, har bytt riktning. Därifrån kartläser kursen volatilitetsytan: snedheten (skew) som föddes ur 1987 års krasch och ger tabellen strike 80/90/100/110/120 mot volatilitet 28/24/20/18/17 procent, terminsstrukturens toppar före katalysatorer, VIX — rädslans barometer — med räk-regeln att månadens förväntade svängning är VIX delat med roten ur 12 (VIX 24 ger 6,9 procent; toppen 82,69 i mars 2020 ger 23,9), och volatilitetsriskpremien — varför optioner systematiskt prissätter mer volatilitet än som realiseras (exemplet 22 mot 19, premie 3 procentenheter). Kursens signatur: volen är optionens valuta — men den är också den enda variabeln i priset som inte kan observeras, bara härledas.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Skilja realiserad och implicit volatilitet i en mening: den realiserade mäter standardavvikelsen i det som hänt (km-013:s bakåtblickande statistik), den implicita är den volatilitet som LÖSER optionens pris — marknadens framåtblickande pris på kommande svängningar · Räkna optionspriset med enkelhetsregeln vid penningslag: pris ≈ 0,4 × aktiekurs × volatilitet × √löptid — aktie 100, tre månader (√0,25 = 0,5), volatilitet 20 procent ger 0,4 × 100 × 0,20 × 0,5 = 4,0 kronor · INVERTERA regeln — kursens kärnräkning: optionen prissatt till 5,0 kronor bär den implicita volatiliteten 5,0/(0,4 × 100 × 0,5) = 25,0 procent; det som var formelns indata blir dess utdata · Läsa volatilitetsytan: snedheten som gör att säljoptioner under kurs prissätter högre volatilitet än köpoptioner över (strike 80/90/100/110/120 mot 28/24/20/18/17 procent) — ett ärr efter krasken 1987 — och terminsstrukturen vars toppar före katalysatorer visar vad marknaden väntar på · Omvandla VIX till förväntad svängning: månadsregeln VIX/√12 ger VIX 24 → 24/3,464 = 6,9 procent och krashtoppen 82,69 (mars 2020) → 23,9 procent — indexet är en volatilitet i procentenheter, inte en kurs · Förklara volatilitetsriskpremien: optioner prissatt med 22 procent implicit mot 19 procent realiserad (premie 3 procentenheter) — försäkringssäljarens systematiska ersättning, och skälet att 'köpa skydd' har en driftskostnad · Tillämpa läsningen: hög implicit volatilitet före en katalysator (kt-01) betyder att marknaden redan prissatar rörelsen — förväntningsanalysens (kt-02) tal i optionens värld",
+    "why": "OPTIONS & DERIVAT-familjen har grunderna (km-059), de två klassiska strategierna (km-060, km-061), grekerna (od-01) och formeln (km-062) — men inte VOLATILITETEN SJÄLV som pris. Luckan är inte en bokstav utan familjens kopplingsled till allt annat: optionens pris består av sex ingredienser, fem observerbara (aktiekurs, strike, löptid, ränta, utdelning) och EN icke-observerbar — volatiliteten — och just därför blev volatiliteten i praktisk handel det som HANDLAS: när alla andra tal står stilla är volen det enda som rör sig i priset. Kursen bygger medvetet på od-01 (vega — volens känslighet — är en av grekerna) och km-062 (formeln som vänds), men flyttar blicken från MEKANIKEN till PRISET: vad säger det om marknadens förväntningar, varför är ytan sned, varför heter VIX rädslans barometer, och varför kostar 'att vara försäkrad' även när inget händer? Den som förstår implicit volatilitet läser optioner som förväntningsdata (kt-02:s fråga — vad står redan i priset? — har sitt raka svar i volen) och inte bara som instrument — det är familjens kröning på den praktiska sidan.",
+    "history": {
+      "origin": "När Fischer Black och Myron Scholes publicerade sin prisformel 1973 var volatiliteten en instruktion i marginalen: ett tal att skatta ur historiken och stoppa in. Men en formel som prissätter en tillgång utifrån sex ingredienser, varav fem är direkt observerbara på skärmen, får en oväntad följd: den SJÄTTE ingrediensen kan lösas ut. Om optionen handlas till ett pris, och fem av sex tal är kända, är den implicita volatiliteten — bokstavligen 'den underförstådda' — det tal som gör att formeln reproducerar marknadspriset. Inom några år hade handeln vänt formeln: optionsmakare citerade inte priser utan volatiliteter, och skärmar visade volen i stället för premien. Marknaden hade hittat sitt eget barometerhus i en prisformel.",
+      "evolution": "Två händelser formade ytan. Den första var måndagen den 19 oktober 1987, när Dow föll 22,6 procent på en dag — en rörelse som den då gällande volatilitetsbilden (i stort sett lika för alla strikes) sa var nästintill omöjlig. Efter kraschen prissatte marknaden permanent högre volatilitet i säljoptioner långt under kursen: den som ville ha skydd mot nästa djupa fall fick betala mer än den som spekulativt köpte uppgång. Snedheten — skew — var född, och den har aldrig återgått till 1987 års platta yta: ett kvartssekel senare prissätts fortfarande nedskyddet dyrare i volatilitet än uppsidan, som ett kollektivt minne av en enda dag. Den andra händelsen var indexet: CBOE lanserade 1993 VIX (efter Robert Whaleys beräkningar) som ett mått på implicit volatilitet i S&P 100-optioner, och breddade 2003 mätningen till S&P 500:s hela optionskedja — ett enda tal för marknadens prissatta rädsla trettio dagar framåt. Med VIX föddes också volatilitet som tillgångsklass: framtider och certifikat på indexet, och en hel industri som handlar själva osäkerheten.",
+      "modern": "Idag är implicit volatilitet standardmått på varje termins- och optionsmarknad: rapportbevakningen tittar på volens topp innan rapporten (ett bolags optioner kan prisa 34 procent implicit i rapportveckan mot 22 i stilla veckor — marknadens egen sannolikhetssägning om rörelsens storlek), riskestyrningen tittar på VIX, och strategerna talar om 'att vara långa eller korta volatilitet' som en position i sig. Kursen sätter systematik i det: den inverterade formeln (kapitel två), ytan och snedheten (kapitel tre), VIX-regeln (kapitel fyra) och riskpremien (kapitel fem) — fyra verktyg som tillsammans gör volen läsbar: inte bara 'hur mycket pendlar det' utan 'vad KOSTAR det att vara osäker just nu, och vem betalar vem för tålamodet?'"
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Två sorts volatilitet — bakåt och framåt",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Inverteringen — priset blir indata, volen utdata",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Ytan — snedhet, leenden och terminsstruktur",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "VIX — rädslans barometer",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Riskpremien — försäkringens pris",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Att läsa volen i praktiken",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Två sorts volatilitet — bakåt och framåt",
+        "intro": "Samma ord, två världar: volatiliteten som har hänt och volatiliteten som väntas. Optionens pris bor i den senare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Realiserad volatilitet — km-013:s värld — är statistik på det FÖRFLUTNA: standardavvikelsen i aktiens faktiska dagsavkastningar, till exempel 19 procent om året räknat bakåt. Implicit volatilitet är något helt annat: det tal som, insatt i prissättningsformeln, ger optionens MARKNADSPRIS — alltså den volatilitet som säljare och köpare SAMMAN har kommit överens om att prisa in i papperet. Skillnaden är som mellan väderleksrapporten för gårdagen (uppmätt) och börsen för morgondagens paraplypris (pris på förväntan): gårdagens regn kan ligga till grund, men paraplypriset styrs av vad folk tror om imorgon — och just därför kan det flytta utan att en enda droppe fallit."
+          },
+          {
+            "type": "text",
+            "content": "Varför heter den 'implicit'? Därför att den aldrig OBSERVERAS — den härleds. Optionens pris består av sex ingredienser: aktiekurs, lösenpris, löptid, ränta, utdelning och volatilitet. Fem av dem står på skärmen och i villkoren; den sjätte syns ingenstans. Men eftersom priset STÅR på skärmen finns ekvationen: det pris som handlas IMPLICERAR en volatilitet — det underförstådda talet som gör att formeln träffar priset. I kapitel två räknas den härledningen steg för steg; här räcker konsekvensen: optionens pris är i praktiken en SÄTTNING på framtida svängningar, och den som köper en option utan att fråga vilken volatilitet som prissatts har köpt en förväntan utan att veta vilken."
+          },
+          {
+            "type": "definition",
+            "content": "Realiserad volatilitet: standardavvikelsen i faktiska avkastningar — bakåtblickande, uppmätbar (km-013). Implicit volatilitet: den volatilitet som löser prissättningsformeln mot optionens marknadspris — framåtblickande, härledd, aldrig direkt observerad. Optionens pris är deras mötesplats: den realiserade är råvaran i skattningen, den implicita är marknadens pris på vad som KOMMER."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Inverteringen — priset blir indata, volen utdata",
+        "intro": "Black-Scholes tog volen som indata och gav priset som utdata. Marknaden kör formeln baklänges — här är räkningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Prisformeln i sin fulla längd (km-062) är en ekvation med normalfördelningstabeller — men för optioner VID PENNINGSLAG (lösenpriset nära aktiekursen) finns en enkelhetsregel som fångar det mesta: optionens pris är cirka 0,4 × aktiekursen × volatiliteten × roten ur löptiden (i år). Regeln är värd att minnas av bara ett skäl: den visar rakt vilka tre saker som driver priset — nivån på aktien, tiden kvar och volatiliteten. Räkneexemplet: aktie 100 kronor, option med tre månader kvar (löptid 0,25 år, roten ur 0,25 = 0,5), volatilitet 20 procent. Pris ≈ 0,4 × 100 × 0,20 × 0,5 = 4,0 kronor. Fyrtalet i regeln är en approximation av en matematisk konstant — noggrann nog för att SE sambanden, inte för att handla efter (verklig prissättning kräver fullständig formel; kursexemplet är pedagogik, inte verktyg)."
+          },
+          {
+            "type": "text",
+            "content": "Nu inverteringen — marknadens egen rörelse. Antag att samma option (aktie 100, tre månader kvar) handlas till 5,0 kronor i stället för 4,0. Ingen ingrediens i formeln har ändrats: aktien står stilla, löptiden tickar som förut, räntan och utdelningen likaså. Det ENDA som kan bära de extra kronorna är volatiliteten — och enkelhetsregeln löser den: 5,0/(0,4 × 100 × 0,5) = 5,0/20,0 = 0,25, alltså 25,0 procents implicit volatilitet. Det är hela den intellektuella vändningen i ett enda räknesteg: marknaden visar PRIS, formeln svarar VOLATILITET. I Black-Scholes värld är volen indata och priset utdata; på en verklig börs är det tvärtom — priset är det observerade, volen det härledda. Optionspriser är därför, rakt avlästa, volatilitetsnoteringar: en option köpt för 5,0 kronor där 4,0 är 'tids- och nivåvärdet vid 20 procents vol' säger att någon betalar för en förväntan som prissätter 25 procent."
+          },
+          {
+            "type": "tabell",
+            "content": "Inverteringen i siffror (aktie 100, löptid 0,25 år, √0,25 = 0,5, enkelhetsregel pris ≈ 0,4 × S × vol × √T): | Situation | Räkning | Resultat | — | Pris vid vol 20 % | 0,4 × 100 × 0,20 × 0,5 | 4,0 kronor | — | Marknadspris observeras | — | 5,0 kronor | — | Implicit volatilitet | 5,0/(0,4 × 100 × 0,5) = 5,0/20,0 | 25,0 % | — | Volens prisbidrag | (25,0 − 20,0) × 0,4 × 100 × 0,5 / 100 | +1,0 kronor |"
+          },
+          {
+            "type": "insight",
+            "content": "Konsekvensen av inverteringen är värd att stanna vid: två identiska optioner på identiska aktier kan bära OLIKA implicit volatilitet bara för att efterfrågan skiljer — om många vill köpa skydd drar premien upp och volen 'stiger' UTAN att aktien rört sig en millimeter. Implicit volatilitet är därför lika mycket en efterfrågevariabel som en förväntan: den mäter vad skyddet KOSTAR, inte bara vad marknaden tror. Därav kopplingen till vega (od-01): optionens känslighet för just den kanske rörligaste ingrediensen."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Ytan — snedhet, leenden och terminsstruktur",
+        "intro": "Om volen vore ett tal per aktie vore allt enkelt. Den är en YTFA — över strikes och löptider — och dess form bär historia.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den implicita volatiliteten är inte samma för alla optioner på samma aktie. Räknas den ut för varje strike och varje löptid och ritas i tre dimensioner uppstår volatilitetsytan — och dess FORM är information. Två vanliga former: LEENDET (smilet), där volen är högre för strikes långt BÅDA hållen från kursen (vanligt på råvaror och valutor, där stora svängningar i båda riktningarna är naturligt), och SNEDHETEN (skew), där volen stiger ju LÄGRE lösenpriset ligger — nedskyddet kostar mer i volatilitet än uppsidan. Den klassiska snedheten för en svensk eller amerikansk aktie vid penningslag ser ut ungefär så här: strike 80 prissätter 28 procent, strike 90 prissätter 24, strike 100 (vid penningslag) prissätter 20, strike 110 prissätter 18 och strike 120 prissätter 17 procent."
+          },
+          {
+            "type": "tabell",
+            "content": "Volatilitetsytans snedhet — exempelaktie, handelskurs 100, tre månader (implicit volatilitet per strike): | Lösenpris | Läge | Implicit vol | — | 80 | Djupt ur penningslag, skydd | 28 % | — | 90 | Under kursen, skydd | 24 % | — | 100 | Vid penningslag | 20 % | — | 110 | Över kursen, uppsida | 18 % | — | 120 | Djupt över kursen | 17 % |"
+          },
+          {
+            "type": "text",
+            "content": "Varför är ytan sned? Historiens korta svar: den 19 oktober 1987. Före den dagen prissatte marknaden i stort sett samma volatilitet för alla strikes — en platt kurva, ty djupa fall ansågs så osannolika att skyddet knappast kostade mer än spekulativ uppgång. Efter att Dow fallit 22,6 procent på EN dag skrevs prissättningen om för alltid: den som säljer skydd mot djupa fall kräver sedan dess betalt för det marknaden BEVISADE är möjligt — och snedheten har kvarstått i decennier, genom bullmarknader och lågvågor, som ett kollektivt ärr av en enda måndag. Ytans andra dimension är TERMINSSTRUKTUREN: volatiliteten över löptider. I stilla tider är den svagt stigande — lång löptid prissätter något högre vol, ty osäkerheten ackumuleras. Före en katalysator (räntebeslut, rapport, kt-01:s händelser) vänder profilen: den korta löptiden toppar, ty just DEN veckan bär händelsen. Ett bolags optioner kan prissätta 34 procent i rapportveckan mot 22 i stilla veckor — marknadens egen uppskattning av rapportens sprängvidd, utskriven i volatilitet."
+          },
+          {
+            "type": "insight",
+            "content": "Ytan ger den som kan läsa den två frågor att ställa till VARJE optionsposition: (1) VAR på ytan står papperet jag tittar på — är det skyddssidan (där volen är dyr) eller uppsidan (där den är billig) som prissatts? (2) VILKEN FORM har ytan just nu — platt (likgiltighet), sned (rädsla för fall) eller toppad kort (något väntas hända)? Ingen av svaren är en rekommendation — men båda är läsning: ytan är marknadens humör utskrivet i strikes, och den som bara ser EN vol per aktie ser en bråkdel av bilden."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "VIX — rädslans barometer",
+        "intro": "Ett enda tal för marknadens prissatta rädsla — och en enkel räkneregel för att översätta det till förväntad svängning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "VIX är Chicago-börsens (CBOE) index över implicit volatilitet i S&P 500-optioner med cirka trettio dagars löptid — beräknat ur hela optionskedjan, alltså ett slags sammanvägd volatilitetsyta sammanfattad i ett tal. Indexet publicerades 1993 (beräknat av Robert Whaley) och breddades 2003 till dagens metod. VIX noteras i PERCENTENHETER, som en årlig volatilitet: VIX 20 betyder att optionmarknaden prissätter cirka 20 procents årlig svängningsbredd i indexet — inte att indexet KOMMER att svänga 20 procent, utan att försäkringen mot den bilden kostar därefter. Mediekulturens namn, 'rädslans barometer' (fear gauge), kommer av beteendet: VIX stiger kraftigt i panik (när alla samtidigt vill ha skydd och volen drivs upp av efterfrågan) och sjunker i tillförsikt — inte som en orsak, utan som ett PRIS på den gemensamma känslan."
+          },
+          {
+            "type": "text",
+            "content": "Räkregeln som gör VIX läsbart: för att översätta den ÅRLIGA volatiliteten till en förväntad MÅNADSSVÄNGNING delas talet med roten ur 12 (ty volatiliteten skalar med roten ur tiden, sedan Bachelier). √12 = 3,464. VIX 24 ger 24/3,464 = 6,9 procent: optionmarknaden prissätter att indexets typiska månadsrörelse (ett spann motsvarande en standardavvikelse) är omkring sju procent i dessa nivåer. I extremrädsla: VIX noterade 82,69 som högst den 16 mars 2020, i pandemins våldsammaste vecka — 82,69/3,464 = 23,9 procent i månaden, en prissatt normalmånad på nära ett kvarts index. Historiens två referenspunkter till: finanskrisens topp 80,86 (november 2008) och samma nivåer i mars 2020 — medan lugna marknader noterade VIX i tonen 12–20 (12/3,464 = 3,5 procent i månaden). Tre exempel, en mekanik: barometern översätts alltid med roten ur tolv."
+          },
+          {
+            "type": "tabell",
+            "content": "VIX-översättningen — årsvol till månadsvängning (regel: månadsbredd = VIX/√12, √12 = 3,464): | Läge | VIX | Månadsbredd | — | Lugn marknad | 12 | 12/3,464 = 3,5 % | — | Normal | 24 | 24/3,464 = 6,9 % | — | Finanskrisens topp (nov 2008) | 80,86 | 23,3 % | — | Pandemins topp (16 mars 2020) | 82,69 | 82,69/3,464 = 23,9 % |"
+          },
+          {
+            "type": "insight",
+            "content": "Två varningar vid läsning av VIX — båda kursens genomgående tema i miniatyr. För det första: VIX är ett PRIS, inte en prognos — det stiger när skydd EFTERFRÅGAS, och kan därför både överdriva (panik köper försäkring vid bottnen) och underdriva (sämjan säljer den billigt vid toppen; bf-15:s bubbelkurser). För det andra: procentsiffran är en SPANNbredd, inte ett riktmärke — '23,9 procent i månaden' betyder typisk storlek på svängningen, inte att indexet väntas FALLA 23,9. Rädslans barometer mäter hur grovt det kan blåsa, inte åt vilket håll skeppet seglar."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Riskpremien — försäkringens pris",
+        "intro": "Optioner kostar mer än de betalar ut — i genomsnitt och med systematik. Det är inget marknadsfel utan en lön.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mät noggrant och länge, och ett mönster framträder: den volatilitet som optioner PRISAR ligger systematiskt ÖVER den volatilitet som realiseras. Exempeltal som fångar typiken: optioner prissatta med 22 procent implicit volatilitet mot 19 procent realiserad — en volatilitetsriskpremie på 3 procentenheter. Mekanismen är försäkringsekonomins klassiska: den som SÄLJER skydd (skriver optioner, km-060) tar på sig risken för stora svängningar och kompenseras i genomsnitt av premien — på samma sätt som försäkringsbolaget i genomsnitt tjänar på husförsäkringarna, och för samma skäl: köparen av skydd betalar för RO i stället för förväntan. Premien är alltså inte ett marknadsfel att laga utan en lön för riskbärande — men dess STORLEK varierar, och det är där läsningen börjar."
+          },
+          {
+            "type": "text",
+            "content": "Premiens två sidor, ärligt framställda. Säljarsidan: att systematiskt skriva optioner är att arbeta som försäkringsgivare — jämn inkomster, sällan stora utgifter, MEN de stora utgifterna kommer just när allt annat går sämst (kraschen som utlöser skyddet är samma krash som faller aktieportföljen; km-033:s svansrisk). Köparsidan: att systematiskt köpa skydd är att betala en driftskostnad för ro — som husförsäkringens premie, varje år, även det år huset inte brinner. I spektrumets mitt lever strategierna som FORMAR volen: straddlar och strangles (köpa rörelse oavsett riktning), covered calls (sälja uppsidan, km-060), protective puts (köpa golvet, km-061) — alla i grunden positioner i implicit mot realiserad volatilitet, dolda eller öppet."
+          },
+          {
+            "type": "tabell",
+            "content": "Volatilitetsriskpremien — exempeltal (långtidstypik, enskilda perioder varierar kraftigt): | Storhet | Tal | — | Implicit volatilitet (prissatt) | 22 % | — | Realiserad volatilitet (uppmätt) | 19 % | — | Riskpremie | 22 − 19 = 3 procentenheter | — | Tolkning | Optioner kostar i genomsnitt mer än de betalar ut — försäkrarens lön |"
+          },
+          {
+            "type": "insight",
+            "content": "Premien kopplar samman kursens alla kapitel: den förutsätter inverteringen (kapitel två — utan härledd vol ingen jämförelse), den syns i ytan (kapitel tre — snedheten är premiens dyraste del, ty nedskyddet efterfrågas mest), den driver VIX (kapitel fyra — indexet ligger ofta över den realiserade volen just av detta skäl) — och den förklarar varför 'att alltid vara försäkrad' har ett pris som syns i avkastningen över tid. Kursens slutsats om premien är inte en strategirekommendation utan en läsregel: innan en optionsposition avgörs, fråga inte bara 'åt vilket håll' utan 'vilken vol är prissatt — och mot vilken förväntan?'"
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Att läsa volen i praktiken",
+        "intro": "Kursens sista kapitel: fyra läsverktyg samlade — och hur de möter katalysatorspåret och strategikurserna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Samla verktygen. ETT: den inverterade regeln — ur pris till vol (5,0 kronor på aktie 100 med kvartal kvar → 25,0 procent). TVÅ: ytan — var på snedheten står papperet, och vad terminsstrukturens toppar väntar på. TRE: VIX-översättningen — roten ur tolv, från årsvol till månadsvängning. FYRA: riskpremien — volen över realiserat är en kostnad att kännas vid, inte en anomali att förundras över. Tillsammans är de en läsning av optioner som FÖRVÄNTNINGSDATA: priset på rörelse, riktning och ro — utskrivet innan händelsen."
+          },
+          {
+            "type": "text",
+            "content": "Verktygen möter spårets grannkurser på bestämda ställen. KATALYSATORSPÅRET (kt-01, kt-02): den implicita volatilitetens terminstopp före en händelse är marknadens egen svarsräkning på 'vad står redan i kursen?' — ett bolag vars rapportvecka prissätter 34 mot stilla veckors 22 har svårt att IMPONERA med en normal rörelse, ty optionköpare redan betalt för den; förväntningsanalysen i optionens kläder. STRATEGIKURSERNA (km-060, km-061): varje strategi är i smyg en volposition — covered call säljer vol, protective put köper den — och 'vilken vol som prissatts' är därför en del av strategins pris, inte ett bihang. GREKERNA (od-01): vega är volens känslighet, och denna kurs är vegans underlag — varför känsligheten finns och vad den känslighet KÄNNER. OCH RS-01:s grundskiljelinje: realiserad volatilitet är pendlingens mått — den implicita är pendlingens PRIS; båda behövs, ingen av dem är 'risk' i sig."
+          },
+          {
+            "type": "definition",
+            "content": "Implicit volatilitet — kursen i fyra meningar: (1) det är den volatilitet som löser formeln mot marknadspriset — härledd, inte observerad; (2) den varierar över strikes och löptider — ytan bär information (snedheten: rädsla för fall; terminstoppen: väntade händelser); (3) den sammanfattas i VIX, översatt till månadsvängning med roten ur 12; (4) den ligger systematiskt över realiserad volatilitet — riskpremien, försäkringens pris. Frågan varje läsning börjar med: vilken vol är prissatt — och vad säger den om vad marknaden väntar?"
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: läs en verklig volatilitetsyta — utan att röra en enda order. (1) Hitta optionskedjan för en stor, omsatt aktie (många mäklare och börsers hemsidor visar implicit volatilitet per strike gratis) och anteckna volen för fem strikes kring aktiekursen: är ytan platt, sned eller logande — och vad säger formen? (2) Jämför två löptider: prissar nästa månad annorlunda än halvåret — och finns en katalysator (rapport, beslut) mellan dem som kan förklara det? (3) Översätt med roten ur tolv: om ett index-VIX står noterat, räkna den prissatta månadssvängningen och jämför med hur indexet FAKTISKT rört sig senaste månaden — är premien just nu positiv? Kursens ram genomgående: detta är utbildning i hur volatilitet läses och härleds — verktygen är analysens instrument, aldrig en uppmaning, och vad var och en väljer att göra med sina beslut är varje persons eget."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch skulle ha betraktat hela volatilitetshanteringen med sin vanliga skepsis mot papper vars mekanism han inte kunde förklara på en minut. Men hans eget viktiga bidrag till kursens ämne finns ändå, och det är prosaiskt nog: hans påpekande att marknadens känslor smittar den som lever nära dem — VIX-världen i en mening. Lynchs övertygelse att bolagets verksamhet, inte optionernas prisbild, är källan till avkastning är en sund motvikt till volens frestelse: den implicita volatiliteten säger vad marknaden KÄNNER, aldrig vad bolaget ÄR — och den som bygger hela sin bild på känslans pris har bytt analys mot termometer. Lynch-läxan i vol: läs barometern, lita inte på den.",
+    "grahamSection": "Benjamin Graham hann aldrig prissätta en option med sin marginalfilosofi — optionsmarknadens standardväsen utvecklades först efter hans huvudverk — men hans testlära appliceras rakt: optionen är en SÄTTNING, och varje sättning är i hans värld antingen investering (täckt av analys och marginal) eller spekulation (täckt av hopp). Kursens riskpremie ger hans distinktion en kvantitativ ryggrad: den som SYSTEMATISKT köper skydd betalar i genomsnitt premien (spekulationens driftskostnad, i hans termer), medan den som skriver optioner mot underlag de VERKLIGEN vill äga — Grahams anda, om än inte hans bokstav — arbetar som försäkringsgivare med marginal i underlaget. Hans djupaste invändning vore dock filosofisk: implicit volatilitet prissätter marknadens SÄTTNING om framtiden, och Grahams hela verk handlar om att inte betala för annat än värde — varje krona i volpremie är därför, rakt avläst, en krona som inte arbetar i bolaget.",
+    "ak1Section": "I AK1A:s metodik är denna kurs OPTIONS & DERIVAT-familjens praktiska kröning: km-059 grunder → km-060/km-061 strategierna → od-01 grekerna → km-062 formeln — och här formeln VÄNDS till läsning av marknadens förväntningar. Kursen matar två spår med ny data: katalysatorspåret får sin kvantitativa förväntningsmätare (terminsstoppen i volen är kt-02:s 'vad står redan i kursen?' i optionens exakta svar), och riskspåret får sin prissatta sida (rs-01:s pendling har i volen ett pris — och i riskpremien en kostnad för att slippa den). I AKM2-modellens riskdimension och Monte Carlo-simuleringarna är volatiliteten inmatningsvariabeln i varje scenario: kursens skillnad mellan realiserad och implicit volatilitet är skillnaden mellan bakåtmätt data och framtidspris — och i modellens värld är just den skillnaden (riskpremien) något som kan stressas, inte antas bort."
+  },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",
     "category": "EKOSYSTEM",
@@ -206959,5 +207347,201 @@
     "lynchSection": "Peter Lynch var i grunden en enkelt-röstnings-man — känn bolaget, räkna på det, äg det du förstår — men hans berömda regler är i själva verket skyddväggar av samma slag: hans investera-i-det-du-känner-till är en oberoenderegel (rösta inte på vad du inte kan läsa), hans tålamodsplikt är en kalibreringsregel (döm inte tesen innan bevisen anlänt), och hans varning för att överge strategin så snart modet svänger är deklarationsplikten i vardagsformat: bestäm regeln före resan, annars byter du ut den vid varje motgång. En ensemble av röster utan sådana väggar blir, som Lynch påpekade om de flesta som jagar trender, bara ett sätt att ha fel mer systematiskt.",
     "grahamSection": "Benjamin Graham skulle ha känt igen röstbudgetens ethos från sin egen tids diversifieringslära: sprid rösterna, ty ingen enskild domare är värd att bära hela beslutet — men han skulle också ha invänt att en röstkedja som vilar på prisbilden allena saknar den fundamentala motvikt hans säkerhetsmarginal (km-030) bär. I labbets arkitektur är invändningen byggd in snarare än besvarad: AKM1:s tjugo variabler är just motrösterna, och Konfluenskravet — att värde och vågor måste mötas innan en tes får bära — är Grahams marginal omformulerad som rättesnöre för en ensemble. Hans djupaste arv till viktningen är dock blygseln: hans måttstock var inte att modellen har rätt utan att den överlever sina egna fel — vilket är horisontvikternas och riskbudgetens gemensamma syfte.",
     "ak1Section": "I AK1A:s metodik är SAM-viktningen ekosystemets femte ben och bindväven mellan flaggskeppen: AK1TS-kursens 25-cellersmatris levererar råsignalerna som denna kurs räknar vidare, Konfluenskursens oberoendekrav vaktar rösternas äkthet, Vågfundamentet bidrar tidsserieperspektivet (varje signal är själv en serie med egen historia), och AKM1-poängen möter total-SAM i den samlade bilden — fundamentet och priset som två röstblock som ska föras samman, inte väljas mellan. Kursens fyra skyddväggar är hela metodikens operativa kultur i miniatyr: deklarera före, dölj inget, döm eftersläpningen — och den öppnar samtidigt EKOSYSTEM-familjens nivåtrappa i lärvägssystemet, som familjens första kurs som kan nomineras på avancerad nivå för den som läst flaggskeppen och vill fortsätta uppåt."
+  },
+  "rp-01-riskmattens-karta": {
+    "slug": "rp-01-riskmattens-karta",
+    "category": "RISKHANTERING & PORTFÖLJTEORI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Riskmåttens karta — fem mått, fem frågor, innan formlerna",
+    "summary": "Familjens ingångskurs — orienteringen före formlerna. RISKHANTERING & PORTFÖLJTEORI har nio kurser som alla BERÄKNAR (volatilitet, korrelation, beta, Sharpe, VaR, drawdown) men ingen som berättar VILKEN FRÅGA varje mått svarar på och varför samma sak har fem olika mått. Kursen räknar ett genomfört syskonpar genom alla steg: aktie A (+4, +6, +10, +12) och aktie B (−14, +6, +18, +22) har IDENTISK medelavkastning 8,0 procent men volatilitet 3,16 mot 14,0 procent — B pendlar 4,4 gånger bredare. Därifrån bygger kursen kartan: volatiliteten svarar på 'hur mycket pendlar det', beta på 'hur mycket rör det sig med marknaden', Sharpe på 'hur mycket avkastning per enhet pendling', VaR på 'hur illa kan en normal dag bli' och drawdown på 'hur djupt har det som djupast fallit' — med återhämtningstrappan (−38 procent kräver +61,3 procent tillbaka; Dow 1929–1932: 381,17 → 41,22 = −89,2 som krävde +824,7). Signaturkapitlet visar det INGEN av de fem mäter: den permanenta kapitalförlusten — och vilka skydd som finns för den.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Skilja de två sorters risk som varje måttfamilj bygger på — prisets pendling (tillfällig svängning) och kapitalets förlust (permanent förstörelse) — och förklara varför grannkursen rs-01 kallar det analysens viktigaste skillnad · Räkna standardavvikelsen i ett genomfört exempel: aktie A (+4, +6, +10, +12 procent) och aktie B (−14, +6, +18, +22) har båda medelavkastningen 8,0 procent men A:s volatilitet är √10 = 3,16 procent mot B:s √196 = 14,0 procent — samma medel, 4,4 gånger olika pendling · Tolka beta som gemensam rörelse: en aktie som i genomsnitt rör sig 8 procent när index rör sig 5 procent har beta 8/5 = 1,6 (förstärkaren) medan 3,5/5 = 0,7 är dämparen · Räkna Sharpe-kvoten med räntefritt alternativ 2,0 procent: A ger (8 − 2)/3,16 = 1,90 och B ger (8 − 2)/14,0 = 0,43 — identisk överavkastning, fyra gånger olika avkastning per enhet risk · Läsa VaR som en tröskel (inte värsta fallet utan det värsta på de flesta dagar) och drawdowns återhämtningstrappa: −10 kräver +11,1, −38 kräver +61,3, −50 kräver +100,0 och Dow 1929–1932 (381,17 → 41,22) var −89,2 procent som krävde +824,7 för att komma tillbaka · Använda kartan 'rätt mått för rätt fråga' — och känna igen det ingen av de fem måtten mäter: den permanenta förlusten, vars skydd heter säkerhetsmarginal (km-030) och begränsad positionsstorlek (pf-02)",
+    "why": "Familjen RISKHANTERING & PORTFÖLJTEORI var den enda i registret med kurser på Intermediär och Avancerad men INGEN ingång: nio kurser som alla beräknar mått, ingen som orienterar bland dem. Den som möter volatilitet, beta, Sharpe, VaR och drawdown första gången ser fem formler och ingen väg mellan dem — och riskerar att tro att risk ÄR formlerna. Denna kurs är kartan före formlerna: vilken fråga varje mått besvarar, varför samma sak har fem mått (de svarar på olika frågor), och vad ingen av dem fångar. Den bygger medvetet på grannarna i stället för att ersätta dem: rs-01 skiljer redan svängning från förlust (kursens första kapitel länkar dit och står på den skillnaden), km-013 till km-034 beräknar varje mått i detalj, pf-03 visar varför korrelationen gör portföljen till annat än summan av delarna — denna kurs är orienteringen som gör familjens nio dörrar läsbara, och familjens första steg på Nybörjarnivån.",
+    "history": {
+      "origin": "Spåret tillbaka går till 1700-talets spelproblem: när Jakob Bernoulli och Abraham de Moivre studerade tärningar och livslängder föddes matematiken för avvikelser från medelvärdet — grunden till standardavvikelsen, alltså volatilitetsmåttet, mer än tvåhundra år innan någon prissatte en aktie med den. Louis Bachelier gick 1900 i sin avhandling om spekulation fram till att prisrörelsers spridning växer med roten ur tiden — insikten bakom varje √T i modern finans — och Arthur Bowley lade på 1920-talet det mått som bär hans namn på riskmåttens trappa. Men det var Alfred Cowles kraschanalys 1932 och framför allt Holbrook Working och Maurice Kendalls tidsseriestudier på 1950-talet som gjorde avkastningar till data — och därmed möjliga att mäta.",
+      "evolution": "Vändningen från aktiernas risk till PORTFÖLJENS risk kom 1952, när Harry Markowitz i en enda kort artikel formulerade idén som hela familjen vilar på: risken hos en kombination av tillgångar är inte summan av deras enskilda risker, ty samvariationen — korrelationen — räknas med. Äga två aktier som inte rör sig i takt och portföljen pendlar smalare än någon av dem. Volatiliteten blev portföljens valutakurs, och byggstenarna följde i rask takt: Sharpe-kvoten (William Sharpe, 1966) satte avkastning i relation till pendling, betan (från Sharpe och Lintners CAPM, 1964–65) fångade rörelsen med marknaden, och VaR växte fram i slutet av 1980-talet hos JP Morgan (chefen Dennis Weatherstone ville ha ett enda tal om dagens värsta rimliga utfall på alla marknader — den så kallade 16:15-rapporten) för att sedan bli banktillsynens standardmått. Drawdown-analysen är familjens äldsta i praktiken: varje gammal investerare som överlevt 1929 eller 1973 visste att vägen tillbaka är längre än fallet — kursen sätter siffror på den vetskapen.",
+      "modern": "Idag lever måtten parallellt eftersom de svarar på olika frågor: riskkontroll hos förvaltare styrs ofta av VaR och drawdown-begränsningar, fondjämförelser av Sharpe-kvoter, indexfonders exponering av beta, och den akademiska forskningen av volatilitet och korrelation. Efter 2008 kom den viktigaste kompletteringen: måttens svaghet vid samtidiga kriser (korrelationerna går mot 1 precis när mångfalden behövs som mest) — det som rk-12 kallar svarta svanar och km-031 mäter i svansarna. Familjens karta i denna kurs är medvetet byggd för läsning FÖRE formlerna: den som sen vill BERÄKNA har nio dörrar — km-013 volatilitet, km-014 korrelation, km-015 beta, km-016 Sharpe, km-017 positionsstorlek, km-031 VaR, km-032 stresstest, km-033 svansrisk och km-034 drawdown — och vet efter kartan vilken dörr som leder till vilken fråga."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Innan formlerna — två sorters risk",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Volatiliteten — hur mycket det pendlar",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Beta och korrelation — rörelsen tillsammans",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Sharpe, VaR och drawdown — tre frågor till",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Kartan — fem mått, fem frågor",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Vad inget mått mäter — den permanenta förlusten",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Innan formlerna — två sorters risk",
+        "intro": "Familjens nio kurser beräknar mått. Denna kurs börjar ett steg tidigare: vad är det måtten försöker fånga?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grannkursen rs-01 — volatilitet och risk — drar den grundläggande skiljelinjen som allt annat vilar på: det FINNS två helt olika sorters risk. Den första är prisets PENDLING — aktien som köptes för 100 kronor och i mora ligger på 84 trots att inget hänt i bolaget; smärtsam att se, men inte i sig en förlust, ty priset är andras åsikt just nu och inte bolagets verklighet. Den andra är KAPITALETS FÖRLUST — bolaget som lånade för mycket, torde inte betala räntan och där aktien som köptes för 100 kronor slutgiltigt är värd noll eller nära noll; ingen väntan läker den skadan. Svängningar kan bli förluster om paniken tvingar en säljare, och förluster börjar ofta som svängningar — men de är två olika fenomen, och hela riskmåttens värld delar sig på den linjen."
+          },
+          {
+            "type": "text",
+            "content": "Varför har då samma svåra ord 'risk' FEM vanliga mått? Därför att ingen enskild siffra svarar på alla frågor. Volatiliteten beskriver pendlingens bredd — men säger inget om VAR pendlingen sker (en pendling på grund av ränta är inte en pendling på grund av konkursoro). Beta beskriver rörelsen RELATERAD till marknaden — men blandar ihop fall orsakade av marknaden med fall orsakade av bolaget. Sharpe-kvoten ställer avkastning mot pendling — men vet inte skillnaden mellan välförtjänt och oförtjänt risk. VaR anger en tröskel för dåliga dagar — men talar inte om hur dåligt det blir NÄR tröskeln brister. Drawdown mäter det djupaste historiska fallet — men historien är ingen garanti för framtiden. Fem mått, fem frågor, fem blindfläckar: det är kartan denna kurs bygger."
+          },
+          {
+            "type": "definition",
+            "content": "Riskmåttens två familjer i en mening: VOLATILITETSMÅTT (volatilitet, beta, Sharpe) beskriver hur priset BEVEGER sig — de ser risk som pendling; FÖRLUSTMÅTT (VaR, drawdown) beskriver hur DJUPT det kan falla — de ser risk som förlust. Ingen av de fem mäter den PERMANENTA förlusten: att kapitalet aldrig kommer tillbaka. Det mätet finns inte — det kan bara hanteras, med säkerhetsmarginal och begränsad positionsstorlek (kapitel sex)."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Volatiliteten — hur mycket det pendlar",
+        "intro": "Ett genomfört syskonpar med samma medelavkastning — och fyra gånger olika pendling. Standardavvikelsen steg för steg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Två aktier, fyra år vardera. Aktie A: +4, +6, +10 och +12 procent. Aktie B: −14, +6, +18 och +22 procent. Medelavkastningen är IDENTISK: A ger (4 + 6 + 10 + 12)/4 = 32/4 = 8,0 procent om året, och B ger (−14 + 6 + 18 + 22)/4 = 32/4 = 8,0 procent om året. Den som bara läser medeltalet — årsredovisningens absolut vanligaste siffra — ser två likadana aktier. Men ingen som ägt dem skulle kalla upplevelsen lika: A:s värsta år var +4, B:s värsta år var −14. Skillnaden heter volatilitet, och den mäts med standardavvikelsen: avståndet från medelvärdet, i genomsnitt, räknat som roten ur medelkvadraten."
+          },
+          {
+            "type": "text",
+            "content": "Räkningen för A: avvikelserna från medlet 8 är −4, −2, +2 och +4; kvadraterna 16, 4, 4 och 16; summan 40; delat med antalet år 4 ger 10; roten ur 10 är 3,16 procent. Räkningen för B: avvikelserna är −22, −2, +10 och +14; kvadraterna 484, 4, 100 och 196; summan 784; delat med 4 ger 196; roten ur 196 är 14,0 procent. A pendlar typiskt omkring tre procentenheter från sitt medel, B fjorton. Förhållandet: 14,0/3,16 = 4,4 — B pendlar drygt fyra gånger bredare med SAMMA genomsnittliga avkastning. Det är den insikten som gör volatiliteten till måtten mått: medeltalet döljer pendlingarna, standardavvikelsen blottlägger dem."
+          },
+          {
+            "type": "tabell",
+            "content": "Syskonparet A och B — samma medel, olika pendling (årsavkastningar i procent): | Storhet | Aktie A | Aktie B | — | År 1 | +4 | −14 | — | År 2 | +6 | +6 | — | År 3 | +10 | +18 | — | År 4 | +12 | +22 | — | Medelavkastning | 8,0 | 8,0 | — | Avvikelser från medel | −4, −2, +2, +4 | −22, −2, +10, +14 | — | Kvadratsumman | 40 | 784 | — | Standardavvikelse | √10 = 3,16 | √196 = 14,0 | — | Pendlingskvot B/A | — | 4,4× |"
+          },
+          {
+            "type": "insight",
+            "content": "Volatilitetens blindfläck är värd att minnas direkt: B:s siffra 14,0 är inte 'sämre' i meningen mer förlust — den är bredare PENDLING. En aktie kan pendla vilt kring ett växande värde och en annan ligga stilla hela vägen ner till noll. Volatiliteten är ett mått på OVÄNTADETHET, inte på tragik — därav behovet av fyra mått till. Den som vill beräkna vidare har dörren i km-013."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Beta och korrelation — rörelsen tillsammans",
+        "intro": "Volatiliteten mäter pendlingens bredd. Beta och korrelation mäter något annat: hur rörelsen hänger samman med andras.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Beta svarar på frågan: när MARKNADEN rör sig, hur mycket rör sig då aktien? Tanken är enkel statistik: om aktien i genomsnitt rört sig 8 procent upp de dagar index rört sig 5 procent upp — och lika förstärkt neråt — är betan 8/5 = 1,6. En beta över ett är en FÖRSTÄRKARE: indexet faller 10 procent och aktien faller i genomsnitt 16. En beta under ett är en DÄMPARE: en aktie som i genomsnitt rört sig 3,5 procent när index rört sig 5 har beta 3,5/5 = 0,7 — indexet faller 10 och aktien i genomsnitt 7. Beta säger alltså inte hur mycket aktien pendlar totalt, utan hur mycket av pendlingen som ÄR marknadens — resten är aktiens egen (den delen kallas idiosynkratisk risk, och den är den diversifierbara)."
+          },
+          {
+            "type": "text",
+            "content": "Korrelationen är betans kusin och svarar på frågan: rör sig två tillgångar TILLSAMMANS, OBEROENDE, eller MITT MOT? Korrelationskoefficienten ligger alltid mellan −1 och +1. +1 betyder perfekt samgång — två aktier som stiger och faller i lås; 0 betyder inget samband — den enas rörelse säger inget om den andras; −1 betyder perfekt motsats — den ena stiger precis när den andra faller. Här ligger portföljteorins kärna (pf-03): två aktier med korrelation +1 ger ingen mångfald alls — två kopior av samma risk — medan allt under +1 gör portföljens pendling smalare än de enskilda delarnas. Det är mekaniken bakom den gamla visdomen om korgen och äggen: korgen hjälper inte om alla ägg faller i takt, och hjälper som bäst när de inte gör det."
+          },
+          {
+            "type": "tabell",
+            "content": "Beta och korrelation — fråga, värld och läsning: | Mått | Fråga | Värdeexempel | Lesning | — | Beta | Hur mycket rör aktien sig med marknaden? | 8/5 = 1,6 | Förstärkare — faller och stiger mer än index | — | Beta | — | 3,5/5 = 0,7 | Dämpare — rör sig mindre än index | — | Korrelation | Rör sig två tillgångar tillsammans? | +1 | Perfekt samgång — ingen mångfald | — | Korrelation | — | 0 | Ingen koppling — full mångfaldseffekt | — | Korrelation | — | −1 | Perfekt motgång — den teoretiska drömmen |"
+          },
+          {
+            "type": "insight",
+            "content": "Den viktigaste varningen om båda måtten: de är HISTORIK. Korrelationen som varit +0,2 i tio år kan bli +0,9 i krisen — när allt säljs samtidigt flyr kapitalet samma väg och mångfalden som beräknades försvinner. Det är kärnan i rk-12:s svarta svanar och skälet till att stressetester (km-032) finns: att fråga inte bara 'hur har det hängt samman' utan 'vad händer när sambanden går mot ett'."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Sharpe, VaR och drawdown — tre frågor till",
+        "intro": "Tre mått till, tre nya frågor: avkastning per enhet pendling, tröskeln för dåliga dagar, och vägen tillbaka efter fallet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "SHARPE-KVOTEN ställer frågan som varje jämförelse förtjänar: hur mycket avkastning får jag per enhet pendling? Räkningen är en division: överavkastningen (avkastningen minus det RÄNTEFRITT alternativet) delat med volatiliteten. Med det räntefria alternativet 2,0 procent ger syskonparet från kapitel två: A har (8 − 2)/3,16 = 6/3,16 = 1,90 och B har (8 − 2)/14,0 = 6/14,0 = 0,43. SAMMA överavkastning — sex procentenheter över räntan i båda fallen — men A levererar den med knappt en fjärdedel av pendlingen. Sharpe-kvoten gör 'jämn kvalitet' till ett tal, och är därför jämförelsernas standardmått mellan fonder och strategier (km-016 beräknar den i detalj)."
+          },
+          {
+            "type": "text",
+            "content": "VAR — VALUE AT RISK — svarar på frågan: hur illa kan en NORMAL dålig dag bli? Formuleringen är alltid en tröskel med sannolikhet: 'med 95 procents säkerhet blir förlusten inte värre än 2,3 procent denna dag' betyder att nitton dagar av tjugo slutar bättre än −2,3 procent — och att den tjugonde kan sluta VIDLIGT sämre, för VaR säger inget om hur djupt det faller NÄR tröskeln brister. Det är måttets kända blindfläck: två portföljer med samma 95-procentars VaR kan se helt olika ut i de fem procenten värst — skillnaden lever i svansarna (km-031 och km-033)."
+          },
+          {
+            "type": "text",
+            "content": "DRAWDOWN mäter det som hänt — det djupaste fallet från en topp till efterföljande botten — och dess mest lärorade egenskap är ASYMMETRIN i vägen tillbaka. En aktie köpt för 100 som som djupast nått 62 har drawdown −38 procent; för att komma tillbaka till 100 krävs inte +38 utan 100/62 − 1 = 61,3 procent. Trappan: −10 kräver +11,1; −20 kräver +25,0; −38 kräver +61,3; −50 kräver +100,0. Och historiens skolboksexempel: Dow Jones industriindex föll från 381,17 den 3 september 1929 till 41,22 den 8 juli 1932 — ett fall på 1 − 41,22/381,17 = 89,2 procent — och vägen tillbaka till toppen krävde 381,17/41,22 − 1 = 824,7 procent (den tog 25 år, och det är själva poängen: djupa fall gör ränta-på-ränta (pf-06) till en läxa om förlorad tid, inte bara förlorade kronor)."
+          },
+          {
+            "type": "tabell",
+            "content": "Återhämtningstrappan — fallet mot vägen tillbaka (köpkurs 100): | Bottenkurs | Drawdown | Vägen tillbaka | — | 90 | −10,0 % | +11,1 % | — | 80 | −20,0 % | +25,0 % | — | 62 | −38,0 % | +61,3 % | — | 50 | −50,0 % | +100,0 % | — | Dow 1929–1932: 381,17 → 41,22 | −89,2 % | +824,7 % |"
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Kartan — fem mått, fem frågor",
+        "intro": "Kursens signaturmoment: hela familjen på ett blad. Vilket mått svarar på vilken fråga — och vad missar varje mått?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Nu kan kartan byggas. Fem mått, fem frågor, fem svarstyper — och bakom varje mått en dörr i familjen för den som vill beräkna själv. Kartans användning är att ställa FRÅGAN först och måttet sen: den som undrar 'hur mycket pendlar min portfölj' ska inte läsas en drawdown-tabell, och den som undrar 'hur djupt kan det falla' får inget svar av en Sharpe-kvot. Fel mått för rätt fråga är en av analysens vanligaste fällor — vanligast av allt att låta ETT mått (oftast volatiliteten) stå för ALLA frågor, ty det mått som först lärts känns som måttet."
+          },
+          {
+            "type": "tabell",
+            "content": "RISKMÅTTENS KARTA — fem mått, fem frågor, fem blindfläckar: | Mått | Fråga | Exempel | Blindfläck | Beräkna i | — | Volatilitet | Hur mycket pendlar det? | √10 = 3,16 mot √196 = 14,0 | Säger inget om VAR pendlningen bor | km-013 | — | Beta | Hur mycket rör det sig med marknaden? | 8/5 = 1,6 | Blandar marknadens och bolagets orsaker | km-015 | — | Sharpe-kvot | Hur mycket avkastning per enhet pendling? | 6/3,16 = 1,90 mot 6/14,0 = 0,43 | Dömer inte riskens KVALITET | km-016 | — | VaR | Hur illa blir en normal dålig dag? | 95 %: värre än −2,3 bara en dag av tjugo | Tyst om vad som händer NÄR tröskeln brister | km-031 | — | Drawdown | Hur djupt har det som djupast fallit? | −38 % kräver +61,3 % tillbaka | Historien är ingen garanti för framtiden | km-034 |"
+          },
+          {
+            "type": "insight",
+            "content": "Kartan har en sjätte rad som står TOM — och det är dess viktigaste: PERMANENT FÖRLUST. Ingen av de fem måtten mäter att kapitalet aldrig kommer tillbaka; volatiliteten ser pendling, VaR ser trösklar, drawdown ser historien. Förlusten som aldrig läker är riskens enda säkra slutstation — och den hanteras inte med mått utan med MARGINAL och BEGRÄNSNING: köp med avstånd till värdet (km-030) och äga så lite av det enskilda att ingen enskild förlust bär hela portföljen (pf-02). Kapitel sex ägnas helt åt den tomma raden."
+          },
+          {
+            "type": "text",
+            "content": "En not om måttens inbördes ordning: de hänger ihop i en kedja. Volatiliteten är byggstenen — Sharpe-kvoten dividerar med den, VaR räknas ur en fördelning av den, och beta är volatilitet DELAD i gemensam och egen del. Den som behärskar kapitel två:s standardavvikelse har redan räknat på hälften av familjen; resten är samma mynt sedda från olika håll. Därmed är kursens löfte infritt: formlerna i de nio dörrrarna är inte fem främmande språk utan EN grammatik — frågan först, måttet sen, blindfläcken alltid."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Vad inget mått mäter — den permanenta förlusten",
+        "intro": "Kursens avslutning: den risk ingen tabell fångar — och de två skydd som faktiskt finns mot den.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fem mått, fem frågor — och alla fem bygger på samma djupare antagande: att risken är en FÖRDELNING att beskriva. Men den värsta risken i verkliga livet är inte en fördelning utan en HÄNDELSE: bolaget som gått omkull, aktien som aldrig kommer tillbaka, kapitalet som är borta för gott. Benjamin Grahams hela livsverk — säkerhetsmarginalen (km-030) — är svaret på den risken: handla med AVSTÅND mellan pris och värde, så att analysens felmarginal inte blir förlust. Marginalen är inget mått — den är en VANA: köp inte det som är 'kanske värt' priset, utan det som med marginal är värt mer."
+          },
+          {
+            "type": "text",
+            "content": "Det andra skyddet är STORLEKEN. Positionsstorlekskursen (pf-02) formulerar regeln i sin enklaste gestalt: ingen enskild position ska bära hela portföljen — om det värsta händer en aktie (noll) ska portföljen överleva som lärande erfarenhet, inte som sluträkning. Det är också den praktiska lösningen på volatilitetens blindfläck från kapitel ett: eftersom INGET mått i förväg skiljer pendlingen som läker från förlusten som består, bygger skyddet inte på att VETA skillnaden utan på att KLARA båda. Mångfalden (pf-03, km-014) är samma tanke i plural: flera aktier vars öden inte är samma öde, så att portföljens värsta dag aldrig är värre än en av dess aktiers värsta dag."
+          },
+          {
+            "type": "definition",
+            "content": "Riskens två skydd — MARGINAL och BEGRÄNSNING: (1) säkerhetsmarginalen (km-030) skyddar mot felbedömningen — avståndet mellan pris och värde är utrymmet att ha fel utan att förlora; (2) positionsstorleken (pf-02) skyddar mot det ovetbara — ingen enskild aktie får vara så stor att dess undergång är portföljens undergång. Tillsammans svarar de på den fråga inget av de fem måtten ens ställer: inte 'hur mycket pendlar det' utan 'överlever jag det värsta — och lär jag mig något på vägen'."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: bygg din egen karta. (1) Ta två tillgångar du känner (två aktier, en aktie och en fond — vad du har till hands) och räkna deras senaste fyra årsavkastningar; beräkna medel och standardavvikelsen som i kapitel två och se om medeltalet döljer skillnader du inte visste att du hade. (2) Ställ de fem frågorna till din sammanlagda bild: vilken fråga kan du svara på med dina siffror, vilken saknar du data för? (3) Fråga dig till sist den sjätte — finns det i din bild något som INTE är pendling utan möjlig permanent förlust, och vad är i så fall marginalen och storleken som skyddar det? Kursens ram genomgående: detta är utbildning i hur riskmått läses — måtten är läsningens verktyg, aldrig en uppmaning, och vad var och en väljer att göra med sina beslut är varje persons eget."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om risk på sitt eget språk: 'riskerna du känner till' mot 'riskerna du inte känner till' — och hans poäng är kartans poäng i annan gestalt: den farliga risken är inte den som syns i volatiliteten (den priset redan pendlat runt) utan den som bor i själva verksamheten och ingen fördelning fångar. Hans råd att känna bolaget man äger — affären, skulderna, branschen — är i kartans termer ett sätt att skilja pendling från förlust FÖRE måtten: den som vet varför aktien föll vet också om fallet är priset eller kapitalet. Lynch skulle dessutom ha nickat åt kapitel fyrs trappa: hans eget mått på risk var inte standardavvikelsen utan tid — hur länge kapitalet behöver vänta på att bli rätt — och hans tålamodslära är därför en släkting till drawdown-asymmetrin.",
+    "grahamSection": "Benjamin Graham är den tomma sjätte radens upphovsman: hans skiljelinje mellan investerare och spekulativ köpare — den förra vill ha värdet bevisat med marginal, den senare litar på att någon annan betalar mer — flyttar risken från priset till KÖPET. Grahams 'mr Market' är dessutom volatilitetens äldsta förklaring: marknaden som manisk handelspartner som ropar priser varje dag — ibland vettigt, ofta inte — gör pendlingen till något att UTNYTTJA (köpa av honom i panik, sälja till honom i eufori) i stället för något att oroa sig för. Notera dock vad Graham INTE sa: han trodde inte att marginalen gör förlusten omöjlig — bara att den gör felbedömningen överlevbar. Det är kursens slutsats i hans anda: måtten beskriver pendlingen, marginalen och begränsningen gör den bärbar.",
+    "ak1Section": "I AK1A:s metodik är denna kurs ingången till RISKHANTERING & PORTFÖLJTEORI-familjen — den första Nivån Nybörjare-kursen i en familj som tidigare bara öppnade på Intermediär och Avancerad, och därmed trappans första steg i lärvägssystemet. Kartan binder samman familjens nio beräkningskurser (km-013 till km-034) med grannspåren: rs-01:s svängning-mot-förlust, pf-02 och pf-03:s storlek och mångfald, km-030:s säkerhetsmarginal — och riskmatrisen (rs-04) som sätter samman osäkerheten i ett beslutsrum. Den som sen går vidare till AKM2-modellen möter måtten igen i dess riskdimension: volatiliteten som skalär, korrelationen mellan scenarier, och Monte Carlo-simuleringens breda utfall — alla byggda på exakt de frågor kartan formulerar."
   }
 }

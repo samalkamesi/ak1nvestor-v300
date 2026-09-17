@@ -1,0 +1,36 @@
+{
+  "granskat": "data/blogg-utkast/sa-tolkar-du-utdelningskalendern.json",
+  "granskadAv": "agentfabrik auto-s1-u3 (auto-s1-1789673729457, 2026-09-17)",
+  "rapport": "sa-tolkar-du-utdelningskalendern.md (KONTROLL 2026-09-17 — exakt slug-namn medvetet, se rapportens namnotis: juridikgrind-vakten härleder slug ur filnamnet)",
+  "bedomning": "FLYTTKLAR — 0 juridikfynd (vakt fynd 0 + grund true; varumärkesgrind 26 regexer × 3 ytor = 0 FEL 0 VARNING; samtliga 8 rådgivningsglossträffar i mekanisk/negerad kontext; 0 lagrum = 0 blandningsrisk), 0 sifferfel (kalendertabell 9/9 mot kalender-fastighet/industri.json med hämtdatum 2026-09-15; räkneexempel 100−4=96 och 3/8-kronorsfallen egenomräknade; x-dagsmekaniken korrekt mot Euroclear-praxis), 911 = 0 träffar på 9 mönster (6 serie + 3 utökade), 5/5 kurslänkar HTTP 200 + registerverifierade, struktur 8/8 (BlogPost 9 fält, disclaimer sista rad, 0 mjuka bindestreck), fält KONSISTENTA med publicerad Grunderna-praxis (egen pillar-fin mätning: ord/rm 145–192 median 188, objektet 171 — INGEN fältändring krävs; avgör u2↔u3:s metoddebatt för blogg-familjen). 1 frivillig LÅG-komplettering (C1) + 2 frivilliga förslag (C2, C4) + 1 notis (C3).",
+  "anvandning": "C1 är en källnotsbyte i utkast-JSON:en — verkställs av våg 171:s ägare (huvudagenten) eller vid nästa regenerering; granskaren skriver ALDRIG i andras utkast. C2/C4 är frivilliga förslag (sökords-H2 respective korttitel). FÄLTEN title/description/readingMinutes kräver INGA ändringar på detta objekt: pillar-fina mätningen av 55 publicerade poster (Grunderna ord/rm 145–192) visar att 76 tkn/162 tkn/5 min ligger inom familjepraxis — syskonet u3:s ord/600-rekommendation (rörelsekapital B1–B3) hör hemma i SEO-GUIDER-serien, ej blogg-familjen; flagga lämna åt den paketägaren. Publicering = kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "sa-tolkar-du-utdelningskalendern.json",
+      "falt": "body (källnotis, näst sista raden)",
+      "gammalt": "_Kalendertalen ur bolagens officiella IR-kalendrar (lästa 2026-09-15, via AK1A:s kvartalsunderlag); fälttäckningen ur bolagsuniversumet (Yahoo Finance och MarketStack, insamling 2026-09-03)._",
+      "nytt": "_Kalendertalen ur bolagens officiella IR-kalendrar (lästa 2026-09-15, via AK1A:s kvartalsunderlag); fälttäckningen ur bolagsuniversumet (Yahoo Finance och MarketStack, insamling 2026-09-03, med tilläggsrader hämtade från StockAnalysis 2026-09-15)._",
+      "orsak": "KÄLLFULLSTÄNDIGHET (LÅG): 15 av vintagefilens 115 rader (git 4ce26f70) är hämtade 2026-09-15 från StockAnalysis — källnoten täcker grundinsamlingen men inte tilläggen. Samma fyndfamilj och samma kur som rörelsekapital-C2; bodyns 'insamling 2026-09-03' lämnas orörd enligt serieprecedensen (huvudinsamlingens namn). Ärlighetsnotens bärande påståenden (0 utdelningsbeloppsfält, återköp mätt 0 av 115) är verifierade sanna i både vintage och dagens 159-radiga fil och påverkas ej"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "sa-tolkar-du-utdelningskalendern.json",
+      "falt": "body (H2)",
+      "gammalt": "## Tre riktiga kalendrar — tre olika mönster",
+      "nytt": "## Tre riktiga utdelningskalendrar — tre olika mönster",
+      "orsak": "SÖKORDSHYGIEN (LÅG): primära sökordet 'utdelningskalendern' finns i title och ingress men i ingen H2; publicerade Grunderna-poster bär ämnesordet i H2. Tillägget förändrar inte meningens innehåll — kalendrarna i tabellen är just utdelningskalendrar"
+    },
+    {
+      "id": "C4",
+      "typ": "byt",
+      "fil": "sa-tolkar-du-utdelningskalendern.json",
+      "falt": "title",
+      "gammalt": "Så tolkar du utdelningskalendern: stämma, avstämningsdag, x-dag och betaldag",
+      "nytt": "Utdelningskalendern: stämma, avstämningsdag, x-dag, betaldag",
+      "orsak": "FRIVILLIGT (LÅG): nuvarande title 76 tkn ligger inom publicerad familjepraxis (13/55 > 60, max 84) och bryter ingen regel; kandidaten på 59 tkn minskar klipprisk i mobila sökresultat och behåller alla fyra sökordsleden. Ägarens val — kan avvisas utan att domen ändras"
+    }
+  ]
+}

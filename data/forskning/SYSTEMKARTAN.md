@@ -1318,6 +1318,54 @@ självläkning intakt); (4) berika-cadansen (B7:s gamla kö lever oförändrat);
 (5) metodnotisen för framtida bibliotekssvep: URL-transform sista `_` →
 `.` (annars 10/22 falska 404:or — denna dokvågs eget misstag, dokumenterat).
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u2 omgång 9 — D22 + D23 diffade mot verkligheten; R2-ytorna)
+
+De två system som lämnats sist i varje diff-cykel (u3 omgång 7 bokförde
+"D22/D23 väntar kund-R2") är nu mätta — READ-ONLY: inget pris ändrat, ingen
+flagga satt, inga .env-värden lästa (endast namn-närvaro, B14-precedensen).
+R2:vårt gäller ÄNDRINGAR (priser/tier/aktivering), inte inventering — K1:s
+inventering dokumenterade dessa system från första början på samma sätt.
+Därmed har ALLA 38 system diffats minst en gång: den fullständiga cykeln
+inkluderar R2-ytorna.
+
+**D22 BETALNING & PRENUMERATIONSSTOMME — kartans ryggrad HÅLLER, tre nyanser:**
+
+| Mått | Kartan 2026-09-11 | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| Stommen | prenumeration.ts 202 r + 4 komponenter + (huvud)+speglar | OFÖRÄNDRAD: 202 r; aktivera-panel/niva-kort/prenum-cta/rabatt-band orörda sedan 09-10 (senaste rörande commit f3448b0f, våg 77); 6 ytor på disk: (huvud) + (en) + (ar) × {prenumeration, medlemskap} |
+| "Ingen betalmotor: ingen Stripe/annan PSP-kod i src/" | påstående | BEKRÄFTAT med nyans: PSP-namnen finns ENDAST som R2-veto-ordlista i styrelsemotorn (styrelse.ts:123–127: stripe/kortbetalning/swish/klarna/paypal/checkout/fakturering…) + substring-falskar i analysskiktet ("trösklarna", "nycklarna") — noll implementering; /api/webhook bär fortfarande ENDAST vbt-routen |
+| "Aktiveringsintention i localStorage + e-postnotis till admin" | så skrev kartan | MOTBEVISAD I FORMEN — leden är STARKARE: aktivera-panelen postar ALLTID ett anonymiserat A4-event till POST /api/konvertering/intention (94 r: system_events type=konvertering_intention severity=info, in-memory rate-limit 10/min, fälttak 60 tecken, nyhetsbrevscheck → befintligt /api/email-flöde); "admin-notisen" är en ADMIN-VY (/api/admin/konvertering, 368 r, 401 utan lösenord — AC5) över system_events, INTE ett brev; email-mallar.ts (274 r) bär morgonMejl/veckoRapport/fas2Nudge — ingen intentionsmall (brev-leverantören ändå okonfigurerad, D25-mätningen) |
+| Prod-ytor | ej mätt | /prenumeration + /medlemskap = 500 på loopback — men det är det KÄNDA GLOBALA SSR-driftfelet (mätt samma sekund: / svarar 200, /kurser 500, chunk-fel i pm2-errorloggen; o47:s bokföring), inte D22-fel; ytkoden byggd + speglar på disk |
+| Prisregistret | FAS 2 9 999 kr, FAS 3 13 999 kr | + detaljer ur priser.json: årspriserna 2 490/4 490/7 990 kr samt fas3IntroManad 299 kr/mån exkl. moms det första året (B2-beslutet) |
+
+GAP D22: (1) PSP-blockerat på kundens 8 L4-beslut — kvarstår; (2) transaktionspris
+MÅSTE läsas ur samma lager vid köp — kvarstår (kontrakt kodat); (3) ångerrätts-
+flödet (2005:59 2 kap 10–11 §§) endast text — kvarstår; **NYTT (4)**:
+intentionerna landar i system_events — tabellen vars prod-tömning E33 bokfört
+(FLAGGA) — intentionerna delar den förlustkänsligheten tills E33 läker
+(korsnotis). 0 egna testsviter (mätt: inga testa-*prenum*/betal*/pris*).
+
+**D23 PRISSTEGEN — grinden nu MÄTT I PROD (starkare bevis än vid K1):**
+
+| Mått | Kartan 2026-09-11 | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| Sidorna | byggda klara, 404-grind | 3 sidor på disk (61+64+61 r; senaste rörande commit 2a566cfd, våg 99 — orörda sedan); notFound()-grind i page.tsx; 404-grenen osonderbar just nu (SSR-driftfelet svarar 500 på allt dynamiskt) |
+| Flagga | NEXT_PUBLIC_TIER_AKTIV=1 aktiverar | namnet finns i INGEN .env-fil (mätt: grep -l på namnet = tomt; värden aldrig lästa) ⇒ fortfarande AV, väntar kundens prisbeslut |
+| Gating | robots + sitemap läser samma flagga | **MÄTT I PROD**: robots.txt = 0 portfolj-rader, sitemap.xml = 0 tier-URL:er (båda serverade OK trots driftfelet) ⇒ tierAktiv()=false bevisad i KÖRANDE instans |
+| Priskälla | "alla pristal ur lasPriserGallande() — ingen hårdkodad siffra" | PRECISERAD två-lager (tier-sida.tsx:157–161): strukturen ur priser.json via lasPriser() + pristalen live via lasPriserGallande() (Supabase-override senaste-vinner, filen = fallback); CTA = mailto:info@ak1nvestor.com + Fas-ansökan (mänsklig aktivering, ingen motor krävs) |
+| Speglar | en/ar för tier-sidorna saknas | BEKRÄFTAT mätt: find i (en)/(ar) efter portfolj-* = tomt |
+
+GAP D23: (1) kundens slutliga priser (R2) — kvarstår; (2) speglar en/ar —
+kvarstår (mätt); (3) tier-CTA mot betalflödet (D22) — kvarstår; notiser:
+0 egna testsviter (mätt) + aktiveringsproceduren bär BYGGKRAV — NEXT_PUBLIC_*
+inlineras vid bygge, så env-sättning vid nästa ombyggnad är den säkra vägen
+(tier-status.ts:s egen dokumentation: ISR-fönstret räcker i andra hand).
+
+Poäng: D22 5 och D23 7 OFÖRÄNDRADE — R2-lägena rördes inte; starkare stomme
+(D22) och bättre grindbevis (D23) motiverar ingen rörelse. Sidofixar:
+E32 + C15 sektionsstämplar 09-15 → 09-17 (manifest-körningen 2/3 ovan diffade
+dem 2026-09-17 men lämnade stämpeln).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1343,8 +1391,8 @@ självläkning intakt); (4) berika-cadansen (B7:s gamla kö lever oförändrat);
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (mätt 09-16); GDPR-gatingen KODAD för trafik-rapportören men PageViewBeacon sänder före samtycke (mätt 09-16 — spår till Supabase + sessions-localStorage före varje val, mot kakmodalens eget 2022:482-citat); P6 även koddokumenterad |
 | D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas i UI (mätt 09-16); replay-skyddet MOTBEVISAT (importtak + engångs-import, kodat sedan våg 87); 4 rutter ALLA vaktade (mätt 09-16); sviter 13/13 + 17/17 grön egen mätning |
-| D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
-| D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
+| D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy + rate-limit, inget brev); kundens 8 beslut; intentioner bor i E33:s flaggade tabell |
+| D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env (mätt 09-17); grinden MÄTT I PROD (robots/sitemap = 0 tier-URL:er); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA i kod (mätt 09-16, underlag 369 kurser); aktivering EN medlem/anrop men sido-kön starkare än kartan (system_events + VBOUT-lead); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (nytt, mätt) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
@@ -1401,6 +1449,12 @@ till pumpor-daemonen (crontab bär ingen rond-rad; mötesprotokollen tysta
 sedan 09-15 = inga sammanträden krävts), E30 INAKTIV-läget + grön grind
 bekräftade live och YTA-vaktens pro-täckning (arProYta) bokförd.
 u3 omgång 11 (09-17, andra varvet) återdiffade B7/B8 utan poängrörelser — B7 bekräftad med 156 gröna + 22/22-livlina (metodnotis: URL-transform `_`→`.` i bibliotekssvep, annars 10 falska 404:or) men berika 13 d + cache-nyansen 33 runtime-filer, B8 fruset kvar (loggar 1+1 rad, regimen genesis-tal live i 14 d, ensemble 0/22, nästa molnrond 10-02, sviten 55/55 ×3 + instabilitetsnotis); A3 korsvaliderat mot u2 omgång 8 med identiska oberoende tal (24 lager/80 monsters/E01 358/390).
+s9-u2 omgång 9 (09-17) diffade D22/D23 utan poängrörelser — R2-ytorna mätta
+read-only (inget pris, ingen flagga, inga env-värden): D22:s intention-led
+starkare än kartan (system_event + admin-vy) + nytt gap 4 (intentioner i
+E33:s flaggade tabell), D23:s grind bevisad i prod via robots/sitemap;
+därmed är ALLA 38 system diffade minst en gång — fullständig cykel även
+för R2-ytorna.
 Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek (9).
 
@@ -1957,7 +2011,7 @@ kvarstår (mätt). Score 6 orörd — kunskap tillförd, inga gap stängda.*
 
 # C. INNEHÅLL & TILLVÄXT
 
-## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-17)*
 
 *Uppdatering 2026-09-15 (dokvåg s9-u2:2): LÄGE B ÄR BESLUTAT —
 ordförandebeslut 2026-09-07 (STYRELSE-BLOGG-LAGE-B.md): Läge A består som
@@ -2185,7 +2239,18 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   (3) GDPR-export/radering av eget konto finns ej i UI (endast kontaktväg)
   — tyngsta kvarvarande gapet, GDPR-DATAKARTA lever men UI-ytan är obyggd.
 
-## D22. Betalning & prenumerationsstomme — VÄNTAR — 5/10
+## D22. Betalning & prenumerationsstomme — VÄNTAR — 5/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u2 omgång 9, read-only — inget pris
+rördes): stommen OFÖRÄNDRAD sedan våg 77 (202 r + 4 komponenter orörda
+sedan 09-10); "ingen PSP-kod" bekräftad (PSP-namnen endast R2-veto-ordlista
+i styrelsemotorn + substring-falskar); "e-postnotis till admin" MOTBEVISAD
+I FORMEN — intention-leden är starkare: anonymiserat A4-event →
+/api/konvertering/intention (system_events type=konvertering_intention,
+rate-limit 10/min, fälttak) + admin-VY /api/admin/konvertering (401-vaktad),
+inget brev; NYTT GAP 4: intentionerna bor i system_events (E33:s FLAGGA-
+tabell). Prod-ytor osonderbara pga det globala SSR-driftfelet (mätt: /
+200 medan /kurser 500 samma sekund).*
 
 - **Vad:** Prenumerationssidan med tre nivåer, fas-rabatt (0,2) travas i
   klienten, aktiveringsintention i localStorage (köpflödets minne tills
@@ -2204,7 +2269,16 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   samma lager vid köp (kontrakt redan i variabler-lagring); (3) ångerrätt-
   flödet (2005:59 2 kap 10-11 §§) endast text — ingen ångerknapp/kvitto.
 
-## D23. Prisstegen (portfölj-tier) — VÄNTAR (bakom flagga) — 7/10
+## D23. Prisstegen (portfölj-tier) — VÄNTAR (bakom flagga) — 7/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u2 omgång 9, read-only — ingen flagga
+sattes): grinden MÄTT I PROD — robots.txt 0 tier-rader + sitemap 0 tier-
+URL:er ⇒ tierAktiv()=false i körande instans; NEXT_PUBLIC_TIER_AKTIV finns
+i ingen .env-fil (namn-närvaro mätt, värden aldrig lästa); priskällan
+preciserad två-lager (lasPriser struktur + lasPriserGallande pristal,
+Supabase-override senaste-vinner); speglar en/ar mätt SAKNAS; aktiveringen
+bär BYGGKRAV (NEXT_PUBLIC_* inlineras vid bygge). Sidorna orörda sedan
+våg 99 (2a566cfd). 0 egna testsviter.*
 
 - **Vad:** Tre tier-sidor (portfolj-grund/plus/hyra = 249/449/799 kr/mån i
   registret) byggda KLARA men oåtkomliga tills kundens prisbeslut:
@@ -2621,7 +2695,7 @@ tier-spegelgapet kvarstår (en/ar portfolj-grund saknas, ls mätt). Läge PÅGÅ
   mätt kvarstående 2026-09-15).
 
 
-## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-17)*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 2): siffror.json bekräftad mot
 guldkällan (337/8 223/82 230 + kanonSomKurs 96; uppdaterad 2026-09-15 i

@@ -199,6 +199,21 @@ function hittaSenasteDump() {
   return path.join(DUMP_KATALOG, filer[filer.length - 1]);
 }
 
+// s10-u3 O9:s kur, återlevererad av s10-u2 2026-09-17 kväll (förlorades från
+// disken före commit — se DR-OVNING-2026-09-17-KVALL-RPO.md §3): ett bart
+// bladnamn skall resolvera mot DUMP_KATALOG, inte arbetskatalogen. Fail-fast
+// bevaras i båda riktningarna: finns vägen varken given eller i dumpkatalogen
+// behålls den givna så markörkollen rapporterar RÖTT med den sökvägen.
+function valDump(given) {
+  if (existsSync(given)) return path.resolve(given);
+  const kandidat = path.join(DUMP_KATALOG, path.basename(given));
+  if (existsSync(kandidat)) {
+    console.log(`NOTIS: "${given}" hittades ej på given sökväg — resolverad mot dumpkatalogen: ${kandidat}`);
+    return kandidat;
+  }
+  return path.resolve(given);
+}
+
 function forkontrollDump(dump) {
   console.log(`[1/7] Dumpkontroll (kolla-dump-markorer.mjs --fil) …`);
   const r = kor('node', [path.join(REPO_ROT, 'verktyg', 'kolla-dump-markorer.mjs'), '--fil', dump], { timeoutMs: 120000 });
@@ -557,7 +572,7 @@ function main() {
   };
   let gron = false;
   try {
-    dom.dumpVag = opts.fil ? path.resolve(opts.fil) : hittaSenasteDump();
+    dom.dumpVag = opts.fil ? valDump(opts.fil) : hittaSenasteDump();
     dom.dumpNamn = path.basename(dom.dumpVag);
     dom.retention = raknaRetention();
     console.log(`DR-ÖVNING ${dom.datumIso} — dump: ${dom.dumpNamn}${opts.behall ? ' (--behall)' : ''}`);

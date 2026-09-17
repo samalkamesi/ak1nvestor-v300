@@ -12966,3 +12966,35 @@ tålighet; (4) fabrik/evighet-sviter. KVD: endast SYSTEMKARTAN + worklog +
 anspråksfil + verktyg/_s9u1-e29-* + _s9u1-e34-* (abortalternativet som
 bevisfil) = INGET bygge; src/ orörd (tsc 0 egen mätning + via grinden);
 R2 orörd; data/blogg/ orörd; syskonens ytor orörda. [fabrik]
+
+## SPÅR 10 s10-u2 (vakt 2/3) — 2026-09-17 21:06–21:11 lokal: KVÄLLS-DR — sista RPO-profilluckan stängd (pump-noll 14:40→21:09) + FÖRLORAD valDump-kur återlevererad och committad [fabrik]
+
+Leverans: DR-övning kväll, O9:s köpost (1) "lätt kvälls-RPO-punkt ~22:00"
+infriad vid 21:09. Körningar: AUTO-6 (21:07, bart bladnamn) = FALSK RÖT-vägran
+med PG17 orörd — men SAMMA kommandoform var GRÖN 14:33 (AUTO-5) ⇒ REGRESSION:
+valDump()-kuren bevisades på disk men fanns ALDRIG i git (senaste commit på
+verktyg/dr-ovning.mjs = c3b871f7 09-16; diff tom; ingen stash/reflog; O9:s
+commit f1a33e95 dokumenterar kuren i meddelandet men committade ej filen) och
+försvann vid mtime 14:37 — ocommittad kur = ingen kur. ÅTERLEVERERAD troget
+O9:s publicerade spec (given väg → DUMP_KATALOG/<bladnamn> + NOTIS → annars
+RÖT med sökväg, fail-fast bevaras i båda riktningarna); node --check GRÖN;
+beteendeprov AUTO-7 (21:08): exakt AUTO-6:s kommando → NOTIS + GRÖN, RTO
+11,0 s (seriepunkt 20, dagens snabbaste; spannet 10,3–23,9 oförändrat; morgon/
+eftermiddag/kväll samma blad ≈ samma tid = RTO tjockleks- inte klockslags-
+beroende), 60 tabeller/1 286 328 rader = SEX oberoende instrument samma tal,
+fel 788 kända/0 okända. KVÄLLENS RPO-PUNKT 21:09:10 (JSON
+DR-RPO-DIFF-2026-09-17-KVALL.json): snapshots 1 214 436 == 14:31 == 14:40 =
+PUMP-NOLL på 6,5 h (engångsbatch 08:00, kvällsdripp utesluten; resten
+21:09→02:29 bevisas retrospektivt av nattens bladväxling); beslutsklockan
++220/6,48 h = 34 r/h = tredje dagtimmen samma snitt (episodisk i takt,
+konstant i dygnssnitt); värsta-fall-RPO ≈ +19 780 möter O9:s ≈ +19 800 (två
+vägar, samma dom: worst case == dagsteget). Städning egenmätt: PG17 down ·
+base endast OID 1/4/5 + tom pgsql_tmp · pg_wal 497 MB TREDJE dygnspunkten
+(WAL stabil hela dygnet — gratis svar till O9:s kö 3) · /tmp enligt mall ·
+skrap-DB:s frånvaro bevisad av psql-vägran. NY NORM i DRIFTSBOKEN:
+verktygsändring + beteendeprov + commit I SAMMA FÖNSTER — "dokumenterad i
+commit-meddelande" ≠ levererad. Kö: (1) nattens 02:30-växling = retrospektivt
+pump-noll-bevis; (2) O9:s kö (2) valDump-NOTIS i dr-total.mjs-kontext vid
+nästa total; (3) COMMIT-NORMEN som standing-rad. KVD: src/ orörd = INGET
+bygge; node --check GRÖN; R2 orörd (.pgpass endast PGPASSFILE-pekare);
+data/blogg/ orörd; syskonens ytor orörda. [fabrik]

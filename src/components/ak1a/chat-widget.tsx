@@ -219,6 +219,65 @@ import { svaraLokaltUtdelningsdjup } from "@/lib/ai-mentor-utdelningsdjup-fragor
 // av testfall J). Juridikgrind: ren metodutbildning — inga prognoser,
 // inga placeringstips.
 import { svaraLokaltForvantningsdjup } from "@/lib/ai-mentor-forvantningsdjup-fragor";
+// Spår 6 omgång 13 (s6-u1): +1 förhandsfråga — rebalansering —
+// portfoljbalans-lagret (rebalansering/ombalansering/återbalansering/
+// kärna och satellit/riskparitet/taktisk allokering/portföljvikter/
+// equal weight/rebalanseringspremie/bandbreddsmetoden) ligger SIST och
+// kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrad (pf-04-rebalansering primär + the-intelligent-asset-
+// allocator + all-about-asset-allocation + the-bogleheads-guide-to-
+// investing — kategorin PORTFÖLJHANTERINGs 14 kurser + bokmasterns
+// allokeringsskolning). Ansvarsfördelning: BASens portfölj-monster äger
+// portfölj-GRUNDORDEN (sondbevis: "hur rebalanserar man en portfölj?" +
+// "vad är 60 40 portföljen?" fångas av basen) — detta lager äger endast
+// SAMMANSÄTTNINGARNA (utdelningsdjup-precedensen); portfoljgrund äger
+// diversifiering (endast KÄLLA + fragor:-knapp här), skattedjup äger
+// ISK/depå-djupet (endast kurslänk). Sond mot hela kedjan: 771 kärnord
+// i 21 lager, 0 fångster i båda riktningarna. Juridikgrind: ren
+// mekanikutbildning — inga placeringstips.
+import { svaraLokaltPortfoljbalans } from "@/lib/ai-mentor-portfoljbalans-fragor";
+// Spår 6 omgång 13 (s6-u2): +2 förhandsfrågor — känslighetsanalys/
+// stresstest + soliditetsgrad/balansstyrka — stabilitetsdjup-lagret
+// (känslighetsanalys · känslighetstest · stresstest · stresstesta ·
+// stresstestning · stresstestar · soliditetsgrad · soliditetsläget ·
+// balansstyrka) ligger SIST och kan därför aldrig stjäla en fråga från
+// tidigare lager; källmärkt med flerkällsrad (st-02 primär + the-
+// intelligent-investor + st-01 + margin-of-safety; st-01 primär +
+// security-analysis + v10-skuldsattningsgrad + interpretation-of-
+// financial-statements — kategorin STABILITETs 5 kurser, dess första
+// egna lager). Ansvarsfördelning: basen äger GRUNDORDEN (soliditet +
+// hävstång via kapitalstruktur-monstret, likviditet via aktiemarknads-
+// monstret, V-titelorden skuldsättningsgrad/kvick/intäktsstabilitet via
+// variabeluppslaget) — detta lager äger endast FAMILJEORDEN (sondbevis:
+// "vad är soliditet?" fångas av basen, "vad är räntetäckningsgrad?" av
+// riskdjupet); riskdjup äger skuldfällan (räntetäckningen endast
+// grannmått + räkneexempel här). Sond mot hela kedjan: 810 kärnord i
+// 22 lager (inkl syskon u1:s portfoljbalans på disk i samma fönster),
+// 0 fångster i båda riktningarna. Juridikgrind: ren metodutbildning —
+// inga placeringstips.
+import { svaraLokaltStabilitetsdjup } from "@/lib/ai-mentor-stabilitetsdjup-fragor";
+// Spår 6 omgång 13 (s6-u3): +3 förhandsfrågor — Grahams värdegolv —
+// grahamgolv-lagret (net net · netnet · ncav · nettotillgångsvärde ·
+// värdegolv + cigar butts · cigarettfimp + mr market · herr marknad)
+// ligger SIST och kan därför aldrig stjäla en fråga från tidigare lager;
+// källmärkt med flerkällsrad (value-investing-from-graham-to-buffett +
+// the-intelligent-investor + security-analysis + the-snowball /
+// the-essays-of-warren-buffett + the-warren-buffett-way — bokmasterns
+// värderingskanon, 103 kurser i BOKMASTER-kategorin). WIDGET-KOPPLING
+// (praktik-lagrets fall K): förslagsknapparna "Vad är en net-net?" och
+// "Förklara NCAV & cigar-butts" ställer exakt frågan "vad är en net-net
+// och NCAV?" — som före detta lager gick till API-flödet vid varje
+// klick; kedjan svarar nu lokalt utan API-kostnad. Ansvarsfördelning:
+// basens böcker-monster äger GRAHAM-ORDEN (kärnorden "graham"/"intelligent
+// investor" fångar alla "grahams …"-frågor — sondbevis; här endast KÄLLOR
+// + STARKORD, starkord kan aldrig stjäla), nästa-lagret äger substansvärde/
+// NAV-rabatt (fragor:-knapp länkar dit), djup-lagrets mästare äger Buffett-
+// frågorna (knapp länkar dit). Sond mot hela kedjan: 810 kärnord i 22
+// lager (inkl syskonens portfoljbalans + stabilitetsdjup på disk i samma
+// fönster), 0 fångster i båda riktningarna; "ncav"↔nästa-lagrets "nav"
+// d=1 dokumenterad i modulen (stöld omöjlig: nav fångas FÖRE, testfall
+// J3). Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltGrahamgolv } from "@/lib/ai-mentor-grahamgolv-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -924,7 +983,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

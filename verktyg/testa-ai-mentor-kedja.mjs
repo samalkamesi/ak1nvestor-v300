@@ -6,7 +6,7 @@
  *       --experimental-strip-types på Node 22.6–22.17).
  *
  * De per-fil-testerna (testa-ai-mentor*.mjs) vakar var sin motor — men ingen
- * vakar SAMMANSPELLET: chat-widget.tsx komponerar tjugoett motorer i en ??-kedja
+ * vakar SAMMANSPELLET: chat-widget.tsx komponerar tjugofyra motorer i en ??-kedja
  * där första icke-null vinner. Ett monster i en TIDIG motor kan tyst skugga
  * en senare motors fråga, och per-fil-testerna kan aldrig se det. Detta test
  * vakar kedjan:
@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (74 i tjugoett motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (80 i tjugofyra motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -63,6 +63,10 @@ if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
 // utdelningsdjup — utdelningsfällor + aktieåterköp, UTDELNINGSSTRATEGIs
 // första; förväntningsdjup — förväntningsanalys/gap/kalibrering,
 // KATALYSATORs första, sist i kedjan).
+// 2026-09-17: tjugofyra motorer / 80 monsters efter omgång 13 (syskon u1:
+// portfoljbalans — rebalansering, PORTFÖLJHANTERINGs djup; s6-u2:
+// stabilitetsdjup — känslighetsanalys/stresstest + soliditetsgrad,
+// STABILITETs första egna lager, sist i kedjan).
 // Workloggen räknar
 // frågeformuleringar — monsterantalet här är KODENS sanning (mätt med import).
 const MOTORDEFS = [
@@ -87,6 +91,15 @@ const MOTORDEFS = [
   { namn: "riskmåttsdjup",   fil: "ai-mentor-riskmattsdjup-fragor.ts",   fn: "svaraLokaltRiskmattsdjup",   arr: "RISKMATTSDJUP_MONSTER",   antal: 1 },
   { namn: "utdelningsdjup",  fil: "ai-mentor-utdelningsdjup-fragor.ts",  fn: "svaraLokaltUtdelningsdjup",  arr: "UTDELNINGSDJUP_MONSTER",  antal: 2 },
   { namn: "förväntningsdjup", fil: "ai-mentor-forvantningsdjup-fragor.ts", fn: "svaraLokaltForvantningsdjup", arr: "FÖRVÄNTNINGSDJUP_MONSTER", antal: 3 },
+  // Omgång 13: syskon u1:s portfoljbalans (rebalansering — på disk i samma
+  // fönster, disk-läge-presedensen) + detta spårs stabilitetsdjup
+  // (känslighetsanalys/stresstest + soliditetsgrad — STABILITETs första).
+  { namn: "portfoljbalans", fil: "ai-mentor-portfoljbalans-fragor.ts", fn: "svaraLokaltPortfoljbalans", arr: "PORTFOLJBALANS_MONSTER", antal: 1 },
+  { namn: "stabilitetsdjup", fil: "ai-mentor-stabilitetsdjup-fragor.ts", fn: "svaraLokaltStabilitetsdjup", arr: "STABILITETSDJUP_MONSTER", antal: 2 },
+  // Omgång 13: detta spårs grahamgolv — Grahams värdegolv (net-net/NCAV +
+  // cigar butts + Mr Market), sist i kedjan; bär widgetknappen "vad är en
+  // net-net och NCAV?" som före leveransen gick till API-flödet.
+  { namn: "grahamgolv", fil: "ai-mentor-grahamgolv-fragor.ts", fn: "svaraLokaltGrahamgolv", arr: "GRAHAMGOLV_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -95,7 +108,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 74 (2026-09-16, 21-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 80 (2026-09-17, 24-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -161,6 +174,14 @@ const KANONISKA = [
   { fraga: "vad är förväntningsanalys?", motor: 20 },
   { fraga: "vad är förväntningsgapet?",  motor: 20 },
   { fraga: "vad är kalibrering?",        motor: 20 },
+  { fraga: "vad är rebalansering?",      motor: 21 },
+  { fraga: "vad är känslighetsanalys?",  motor: 22 },
+  { fraga: "vad är stresstest?",         motor: 22 },
+  { fraga: "vad är soliditetsgrad?",     motor: 22 },
+  { fraga: "vad är balansstyrka?",       motor: 22 },
+  { fraga: "vad är en net-net och NCAV?", motor: 23 },
+  { fraga: "vad är cigar butts?",        motor: 23 },
+  { fraga: "vem är mr market?",          motor: 23 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -185,6 +206,10 @@ const PROBER = [
   // nära djup- respektive ägande-lagrets kärnord — kedjan måste skilja dem.
   { fraga: "vad är rösträtt?",         motor: 9 },
   { fraga: "vad är jämförelsebolag?",  motor: 11 },
+  // Stabilitetsdjup-lagrets dokumenterade ansvarsgränser (omgång 13):
+  // basen äger GRUNDORDEN — stabilitetsdjupet bär bara familjeorden.
+  { fraga: "vad är soliditet?", motor: 2 },
+  { fraga: "hur stresstestar jag en balansräkning?", motor: 2 },
 ];
 for (const { fraga, motor } of PROBER) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -201,7 +226,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "tjugoett motorer lämnar frågan ifred",
+  "tjugofyra motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -284,7 +309,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla tjugoett motorer",
+    "H: disjunkta monster-id:n över alla tjugofyra motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

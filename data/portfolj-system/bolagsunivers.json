@@ -14473,5 +14473,260 @@
       ]
     },
     "notering": "Svensk electronics manufacturing services (EMS — kretskortsmontage och helhetsmontering åt industrial/medtech/infrastruktur; källan klassar bolaget Technology): tillsammans med ENEA koordinaten Sverige/teknik 3→5 mätbara ⇒ /dataset/teknik/sverige vid nästa bygge — och pedagogiken inbyggd: ENEA:s mjukvarubrutto 77 % mot NOTE:s EMS-brutto 14,3 % i SAMMA branschetikett = kvartilspridningens levande exempel (mjukvarans marginal mot monteringens volym). Serierna FY2022–FY2025 MSEK: oms 3 687→3 814 (+1,1 %/år endpoint, fyrtakt med FY2023-toppen 4 243) · netto 254,2→281,7 (+3,5 %/år endpoint, fyra raka positiva år) · FCF 3,4→393,4 (vändningen 2021→2022 från −60,6 till positivt, därefter tre raka starka: 250,1/512,3/393,4). P/E 19,74 mot forward 14,48 ⇒ prognosTillväxt +36,3 % (PEG 0,54 spårkonventionen; källans egen PEG 1,99 på 3års-EPS-prognos +15,7 % som not) · P/B 2,68 · EV/EBIT 17,47 (EV = börsvärde + nettoskuld 1 640 MSEK — källans EV 6,55 mdr). ROE 14,82 %, ROCE 13,13 % mot WACC 6,11 % = +7,02 pp (kaptitaltätt men värdeskapande); skuld/EK 0,98 (EMS-finansiering med lager/kundfordringar), räntetäckning 7,4×, quick ratio 0,63. Utdelning: DPS n/a hos källan men payout 80,16 % + 1 år av utdelningstillväxt (ny policy) redovisas; återköp 0,14 %/år; insiders 30,0 %; beta 0,59; 52-vägers 138,10–205,20; analytiker Buy mål 197,00 (+12,8 %). Nästa rapport 2026-10-23."
+  },
+  {
+    "ticker": "VIT-B.ST",
+    "namn": "Vitec Software Group AB (publ)",
+    "bransch": "teknik",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "Yahoo Finance + Vitec bokslutskommuniké 2025",
+        "hamtat": "2026-09-17",
+        "url": "https://finance.yahoo.com/quote/VIT-B.ST/financials/",
+        "paranoid": "financials LIVE (intradag 2026-09-17 15:05 CET, kurs 223,60 SEK) + bolagets bokslutskommuniké jan-dec 2025 (vitecsoftware.com/MFN): pris/mcap 8,87 mdr (223,60 × 39,68 M aktier, TTM-andel Yahoos), P/E 19,68 härleld ur pris ÷ EPS TTM 11,36 (källans panel-P/E bar dec-2025-cache 30,28 vid kurs 302,20 — STEL CACHE avförd via no_cache-hämtning, dokumenterad i protokollet), serier FY2022–2025 + TTM SEK (källans årsvisa avrundning 3 värdesiffror för 2022–2024; FY2025 mot officiella bokslutet 3 633 Mkr), EK 5 074 M + soliditet 47 % + nettoskuld 3 791 M + utdelning 3,68 kr/aktie (24:e året i rad med höjd utdelning) ur BOKSLUTSKOMMUNIKÉN; P/B = mcap ÷ EK; EV/EBIT = (mcap + nettoskuld) ÷ EBIT TTM 731,89 M; räntetäckning = EBIT ÷ räntekostnad TTM 110,13 M; ROE = netto TTM ÷ EK; bruttomarginaler TTM-fönstret bär källans avrundning (±0,3 pp band); FCF-komponent (capex) redovisas ej i källans flöde — fcfYield/fcfMarginal OSATTA, OCF TTM 1,06 mdr som taknotis; källan klassar bolaget Technology/Software - Application — branschfältet teknik är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 223.6,
+    "marknadsKapitalMdr": 8.87,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.2242,
+      "resultatCAGR5ar": 0.2114,
+      "omsattningTillvaxtTTM": null,
+      "prognosTillvaxt": null
+    },
+    "lonksamhet": {
+      "roe": 0.0889,
+      "roic": null,
+      "bruttoMarginal": 0.477,
+      "ebitMarginal": 0.1983,
+      "nettoMarginal": 0.1222,
+      "fcfMarginal": null
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.7473,
+      "rantaTackning": 6.6,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.4887,
+      "bruttoMarginalSpread5ar": 0.0266,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 19.68,
+      "pb": 1.75,
+      "evEbit": 17.3,
+      "peg": null,
+      "fcfYield": null,
+      "egenKapitalMultipl": 1.75
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1980000000,
+        2780000000,
+        3330000000,
+        3633000000
+      ],
+      "resultat": [
+        244870000,
+        339180000,
+        410100000,
+        435360000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Vertikal-SaaS:ens svenska urtyp och fjärde mätbara svenska teknikraden i HEAD-läget (s2-u2:s ENEA+NOTE — deras omg12, protokoll staged — fördjupar grenen vid sin re-landning och Sverige/teknik-mattan passerar MIN_MATTA=5): repetitiva intäkter 88 % av omsättningen (3 204 av 3 633 Mkr, bokslutet 2025) = prenumerationsdjupet ingen svensk teknikrad hittills bär; utdelningstrappan 24 RAKA ÅR av höjda utdelningar (3,68 kr föreslaget för 2026, 1,65 % direktavkastning, payout 32 %) — CNQ:s 10-årssvit får en svensk tvilling; oms +22,4 %/år och resultat +21,1 %/år endpoint FY2022→2025 (basåret bär källans 3-siffriga avrundning 1,98 mdr) med TTM-vänden oms 3,69 mdr; bruttomarginalen 50,3 → 47,7 % (TTM) fem punkter = medel 48,9 % spridning 2,7 pp — VALLGRAVEN i siffror (förvärvsintegreringar äter marginalglast, aldrig graven); obligationssteget 2025 (nettoskuld 3 791 M, skuld/EK 0,75 räknat på nettoskuld-vägen, räntetäckning 6,6×) ändrade kapitalstrukturen från kassabolag till belånat rullande förvärvsmaskineri — investing-cash −1,44 mdr TTM mot OCF +1,06 mdr; ROE 8,9 % på EK 5 074 M (bokslutets egna tal 9 %) = vallgravens pris: den höga marginalen betalas i förvärvat goodwill-EK, P/B 1,75; P/E 19,68 vid kurs 223,60 (EPS TTM 11,36; källans dec-2025-cache 30,28/302,20 avförd dokumenterat — protokollets cache-epilog). NOTIS DATAÄGAREN: Yahoos årsvisa avrundning (1,98/2,78/3,33 mdr) mot officiella 3 334 Mkr (2024) — serien källkonsekvent Yahoo, bokslutstalen i noteringen."
+  },
+  {
+    "ticker": "ARM",
+    "namn": "Arm Holdings plc",
+    "bransch": "teknik",
+    "land": "Storbritannien",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/ARM/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; NASDAQ close 2026-09-17 16:00 EDT): pris 264,94 USD (+8,59 % på dagen), mcap 282,98 mdr, P/E 249,04 mot forward 102,18, P/B 30,19, EV/EBIT 310,87, ROE 13,35 % / ROIC 14,16 % mot WACC 25,59 %, marginaler brutto 97,54 / EBIT 17,30 / netto 20,25 / FCF 29,21 %, skuld/EK 0,06 + nettokassa 3,40 mdr, FCF TTM 1 510 M, beta 3,89, ingen utdelning; serier FY2023–FY2026 (slutår mars) i USD; FY-slutår mars-etiketter = TM/BABA-precedensens spegel (mars i stället för apr); källan klassar bolaget Technology/Semiconductors — branschfältet teknik är källkonsekvent; Storbritannien (Cambridge) = landfältet"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 264.94,
+    "marknadsKapitalMdr": 282.98,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.2246,
+      "resultatCAGR5ar": 0.1993,
+      "omsattningTillvaxtTTM": 0.2511,
+      "prognosTillvaxt": 1.4371
+    },
+    "lonksamhet": {
+      "roe": 0.1335,
+      "roic": 0.1416,
+      "bruttoMarginal": 0.9754,
+      "ebitMarginal": 0.173,
+      "nettoMarginal": 0.2025,
+      "fcfMarginal": 0.2921
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.06,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.9619,
+      "bruttoMarginalSpread5ar": 0.0239,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 249.04,
+      "pb": 30.19,
+      "evEbit": 310.87,
+      "peg": 1.73,
+      "fcfYield": 0.0053,
+      "egenKapitalMultipl": 30.19
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        2679000000,
+        3233000000,
+        4007000000,
+        4920000000
+      ],
+      "resultat": [
+        524000000,
+        306000000,
+        792000000,
+        904000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Universumets första Storbritannien-teknikrad (UK:s andra rad totalt — SHEL energi) och chip-licensieringens rena IP-modell: bruttomarginal 97,54 % = UNIVERSUMETS HÖGSTA MÄTTA (femårsserien 95,2–97,5 %, medel 96,2 %, spridning 2,4 pp — digital vallgrav utan fysik, jämför ASML ~65 och NVDA ~75); P/E 249,04 mot forward 102,18 ⇒ prognosTillväxt +143,7 % (DNO-precedensen: gapets storlek, inte en prognos; källans PEG 2,58 som not, spårets 1,73 bär fältet); P/B 30,19 och EV/EBIT 310,87 = universumets högsta multiplar; ROIC 14,16 % MOT WACC 25,59 % = −11,4 pp — negative spread där tillväxtförväntningen bär hela värderingen (kärnpedagogiken mot SUBC:s +9,2 pp samma omgång årsskiftet); netto 20,3 % ÖVER EBIT 17,3 % (BABA/ABBV/TM/CNQ-mönstret: ränteintäkter på 3,89 mdr-kassan + skatteeffekter); FCF TTM 1 510 M med fcfMarginal 29,2 % men fcfYield 0,53 % — kassflödets kvalitet mot multiplarnas höjd; beta 3,89 = UNIVERSUMETS HÖGSTA (CAT 1,59 slog allt 2026-09-16; ARM mer än dubblar) och 52-växlaren +70,8 % med dagen +8,59 %; FY2024-EBIT-kollapsen 76,5 M (2,4 % marginal — IPO-årets aktiebaserade kompensation) mot netto 306 M = historiens netto>EBIT-instans; FY2025-FCF-dippen 178 M vände till 979 M (FY2026) och 1 510 M TTM; ingen utdelning (källa), SoftBank-notisen (majoritetsägaren sedan 2016, börsdelen 2023) bär ägarbilden; serier FY2023–FY2026 slutår mars (fyra publika börsår, endpoint FY2023→FY2026: oms +22,5 %/år, resultat +19,9 %/år)."
+  },
+  {
+    "ticker": "NTDOY",
+    "namn": "Nintendo Co., Ltd.",
+    "bransch": "kommunikation",
+    "land": "Japan",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/NTDOY/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence + Fiscal.ai; OTC ADR NTDOY försenad kurs 2026-09-17 15:57 EST, finansiella senast uppdaterade 2026-08-06): kurs 13,37 USD, mcap 63,00 mdr, EV 50,31 mdr UNDER mcap (nettokassa 12,11 mdr, NOLL räntebärande skuld enligt källan), P/E 21,54, P/B 3,51, EV/EBIT 14,50, ROIC 52,78 % mot WACC 5,03 %, op-marginal 19,74 %, FCF-marginal 11,35 %, utdelning 0,35 USD/aktie (2,59 %), beta 0,14; serier FY2022–FY2026 (slutår MARS — TM/BABA-precedensen) i JPY miljoner medan kurs/mcap/EV/kassa står i USD = rapportvaluta-precedensen (EQNR-spegeln); fcfYield härlemt valutaneutralt ur källans egna kvoter (FCF/EV × EV/mcap); ROE härleld ur identiteten P/B ÷ P/E (båda källkvoter — ren bråkform, ADR/EPS-förvirring omöjlig); bruttomarginaler = bruttovinst ÷ omsättning per år ur serien; källan klassar bolaget Communication Services/Electronic Gaming & Multimedia — branschfältet kommunikation är källkonsekvent (Sectra-precedensen: källan vinner över magen)"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 13.37,
+    "marknadsKapitalMdr": 63,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1303,
+      "resultatCAGR5ar": -0.0068,
+      "omsattningTillvaxtTTM": 0.5151,
+      "prognosTillvaxt": null
+    },
+    "lonksamhet": {
+      "roe": 0.163,
+      "roic": 0.5278,
+      "bruttoMarginal": 0.4451,
+      "ebitMarginal": 0.1974,
+      "nettoMarginal": 0.2105,
+      "fcfMarginal": 0.1135
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5369,
+      "bruttoMarginalSpread5ar": 0.2166,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 21.54,
+      "pb": 3.51,
+      "evEbit": 14.5,
+      "peg": null,
+      "fcfYield": 0.0262,
+      "egenKapitalMultipl": 3.51
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        1601677000,
+        1671865000,
+        1164922000,
+        2313051000
+      ],
+      "resultat": [
+        432768000,
+        490602000,
+        278806000,
+        424056000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Universumets första Japan/kommunikation-rad (Japans andra rad — TM:s spegel: konsumentdynamik i kommunikationsdräkt enligt källans GICS-klassning, Electronic Gaming & Multimedia) och omg8:s dokumenterade reserv infriad: KONSOLCYKELN KOMPLETT I EN RAD — FY2025 Switch-efterdyningens botten (oms −30 %, bruttomarginal 61,0 % = mjukvarans andel på botten) mot FY2026 Switch 2-året (oms +98,6 %, bruttomarginal 39,3 % = hårdvarulanseringens marginalbrott) ger moat-spridning 21,7 pp (universumets näst bredaste efter DNO) på medel 53,7 %; endpoint FY2023→FY2026: oms +13,0 %/år men resultat −0,7 %/år — CYKELNS HEMMLIGHET: intäkterna dubblas, ägandet flyttas till hårdvaran, nettot står still (hårdvarans inlåsningseffekt som pedagogik); ROIC 52,78 % MOT WACC 5,03 % = +47,8 pp UNIVERSUMETS BREDDASTE POSITIVA SPRIDEN (IP + skuldfrihet: kassa 12,11 mdr USD, noll räntebärande skuld, current ratio 3,73 — EV 50,31 mdr UNDER mcap 63,0 = kassan finansierar en femtedel av bolaget); netto 21,1 % ÖVER EBIT 19,7 % (BABA/ABBV/TM/CNQ/ARM-mönstrets sjätte instans — valutakursbärande finansiella poster); utdelning 0,35 USD (2,59 %, payout ~56 % = yield × P/E — cykeltoppens utdelning delas med aktieägarna) med beta 0,14 (LMT 0,10:s nærmaste grann — kontraktets beta i underhållningsindustrin); P/E 21,54 på TTM +51,5 % (Switch 2:s leveransår) med 52-växlaren −45,2 % (2025-toppen 23,66 USD mot dagens 13,37); P/B 3,51 på härledt EK 17,95 mdr USD med ROE 16,3 % (identiteten P/B ÷ P/E); fcfYield 2,62 % härlemt valutaneutralt ur källkvoterna. NOTIS DATAÄGAREN: källans finansiella uppdaterade 2026-08-06 (försening EV/EBITDA-tabellerna) — kursen 09-17, seriernas FY2026 = mars-året komplett."
   }
 ]

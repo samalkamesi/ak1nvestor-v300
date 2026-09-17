@@ -1623,3 +1623,26 @@ får ALDRIG krascha sattMal/rensaMal.
   inte ett fel, jaga det inte. (4) Studio-skalet verkställde varken rm eller node-fil
   ikväll (häng utan effekt, omväxlande med fungerande körningar) — städning via
   subagent; fjärde observationen av hang-typen.
+
+## 2026-09-17 17:42–17:47Z — prod 502: avbrutet bygge mellan BUILD_ID och prerender-manifest (s7-u3, o53 §4)
+
+- SYMPTOM: pm2 ak1a kraschloop (ENOENT .next/prerender-manifest.json, ↺ 3 700+)
+  ⇒ nginx 502 på alla sidor ~5 min. Root: 17:27- och 17:37-ropens byggen
+  OMM-dödades/avbröts under minnestränghet (fabriksomgång + gränssnittsvaktens
+  6-timmarscron delade RAM-taket); 17:37-bygget skrev BUILD_ID men hann inte
+  skriva manifestet innan död — sekvensens pm2-restart startade ändå.
+- ROT: next build är INTE atomisk — BUILD_ID skrivs före sista manifesterna;
+  exit-väg + "bygg klar"-detektering räcker inte som hälsokontroll.
+- KUR: manuell återställning av vakande s7-agent: tsc 0 verifierade HELA
+  node_modules först (npm ci skötts undvikit, sparade 3 min) → pm2 stop →
+  npm run build under /tmp/ak1a-deploy.lock via node-kanal
+  (verktyg/_s7u3e-prodatallning.mjs) → pm2 restart → prod 200 ×3 17:47:02Z,
+  BUILD_ID J87oNXS1k5w1NAMDS1rpJ.
+- VACCIN: (1) prod-synkens HTTPS-steg bör GRINDA mot
+  .next/prerender-manifest.json:s existens FÖRE pm2 restart (billigt:
+  existsSync) — "bygget exitade 0" bevisar inte komplett .next.
+  (2) pm2-restart mot ofullständigt .next ger kraschloop som pm2 inte
+  hämtar sig från — stop → bygga klart → start är rätt ordning, aldrig
+  bara retry. (3) Bygg under samtidig tung cron (gränssnittsvakten ~1 GB
+  chrome) + fabrikens barn = OMM-fälla; RAM-vaktens tröskel bör räkna
+  med byggheap + cron, inte bara ledig RAM.

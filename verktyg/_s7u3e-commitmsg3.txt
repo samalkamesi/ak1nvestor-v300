@@ -1,0 +1,13 @@
+studio: auto s7-u3 o53 EFTER + kvitto + incidensbokföring — chat-defer-kuren KLAR: strukturbevis (chat-chunken 106,4 K ur nätverkstimingen, 0 requests >6 s, JS-transfer −106 K/sida) + beteendekvitto bägge hållen (0 chatt-DOM @3 s virtual, DOM @15 s på rättat J87oNXS) + DRIFTSBOKEN-rad för 502-incidensen 17:42–17:47Z [fabrik]
+
+Denna commit är bokföringen av s7-u3:s chat-defer-våg (o53): EFTER-mätning
+(solo) med TBT / −48 % och /blogg −16 % (CPU-tal lastbandsdeklarerade —
+FÖRE-mätningen skedde under fabrikssvärm; strukturen bärs beviset av),
+rättningens kvitto på J87oNXS1k5w1NAMDS1rpJ, lasy-global-kommentarernas
+protokollnummerrättning (o49→o53: nummerkollisionerna med syskonens
+o49/o50/o51/o52 dokumenterade i protokollet §0-not), DRIFTSBOKEN-rad med
+vaccin (manifest-grind före pm2-restart; stop→bygg→start-ordning) och
+worklog-posten. Kod: ENDAST kommentarsrättningar i lasy-global.tsx (tsc 0;
+kuren + rättningen redan committade d75bf2f8 + 7c1fd646 och deployade).
+Rådata: lighthouse/{start,kurser,blogg}-s7u3e-chatefter*.json. R2 orörd;
+data/blogg/ orörd. [fabrik]

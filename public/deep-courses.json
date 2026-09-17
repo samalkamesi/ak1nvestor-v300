@@ -207948,6 +207948,206 @@
     "grahamSection": "Benjamin Graham är hela kursens andlige upphovsman: hans livsverk står i dubbel bokförings tecken — analys byggd av SKILDA frågor som kontrollerar varandra, exakt det konfluensrummet kallar oberoende källor. Grahams grundsyn att marknaden har ett psyke (mr Market) och bolaget en verklighet (räkenskaperna) är ekosystemets äldsta planritning: AKM1-rummet läser verkligheten, vågrummet läser marknadens humör — och den som blandar ihop dem blandar, i Grahams termer, rösten med lyssnaren. Slutligen hans dokumentationsdisciplin: varje slutsats med källa och avgränsning, varje tal spårbart — det är en maskins hela skillnad mot ett spådomskort, och skälet till att denna kurs betonar omräkningsbarhet i varje rum. Graham frågade aldrig vad marknaden tyckte om hans analys — han frågade om den höll, och det är husets vägg också.",
     "ak1Section": "I AK1A:s metodik är denna kurs EKOSYSTEM-familjens första steg på Nybörjarnivån — orienteringen som gör familjens fyra övriga dörrar läsbara (akm1-kursen, ak1ts-kursen, vågfundamentet och konfluenskursen) och ek-01:s SAM-beräkning meningsfull som nästa nivå. Kursen är också ekosystemets självbeskrivning utåt: fem rum, fem frågor, en yttervägg — motorerna läser, de avger aldrig rekommendationer, och varje utdata är dokumenterad så att den kan räknas om. Den binder samman labbets delar med utbildningstrappan utanför (am-03, bk-01, rp-01, pc-21) till en promenadordning — och lämnar läsaren med den fem-fråge-karta som i AKM2-modellen växer till helhetsbilden: fundamentet, vågen, serien, konfluensen och sammanräkningen, var och en på sin plats i ett hus som byggts för att läsa — inte att befalla."
   },
+  "ek-03-arbetsflodet-i-labbet": {
+    "slug": "ek-03-arbetsflodet-i-labbet",
+    "category": "EKOSYSTEM",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01",
+    "summary": "EKOSYSTEM-familjens mittrappsteg — kursen mellan ritningen och formlerna. ek-02 visade huset med fem rum (en fråga per motor) och ek-01 äger SAM-viktningens röstlängd på djupet, men mellan dem finns ett arbete som ingen kurs ägt: HUR en analys faktiskt går till, från rådata till loggad dokumentation, i bestämd ordning. Denna kurs är det arbetet. Flödet har fem stationer — samla in, bedöma, läsa struktur, väga samman, dokumentera — och ordningen är inte förslagsvis: horisonten väljs FÖRE teorin (annars plockas verktyget efter önskat svar), AKM1:s variabler bedöms en i taget FÖRE sammanvägningen (annars smiter helhetsintrycket in och beställer sina egna belägg), och konfluensens oberoendekrav kontrolleras FÖRE att SAM-ytan ens får läsas. Genomgående exempel är Norra Verkstads AB — pc-21:s påhittade bolag, medvetet återanvänt: samma siffror (intäkter 850, 1 000 och 1 150; nettoresultat 92; eget kapital 460; 46 miljoner aktier à 30 kronor), annat arbete — pc-21 tränade case-metoden på bolaget, denna kurs tränar motorflödet på samma kropp. Signaturgreppet är arbetsdagen: hela flödet körs en gång i realtid, 30 plus 45 plus 60 plus 20 plus 25 minuter = 180 minuter, och varje tal som motorerna matas med kontrollräknas i löptext (ROE 92/460 = 20,0 procent, lönsamhetsminiatyren 4 plus 3 plus 4 plus 4 = 15 av 20, Kort-raden 2 av 5 utslag)). Kursens ram genomgående: flödet strukturerar läsning — det avger aldrig råd, och loggens sista kolumn heter slutsats utan råd av ett skäl.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Köra labbets fulla analysflöde i bestämd ordning: samla in (tre oberoende källtyper), bedöma (AKM1 variabel för variabel med skriven motivering), läsa struktur (AK1TS med horisonten vald FÖRE teorin), väga samman (konfluensens tre källor före SAM-ytan) och dokumentera (femradig logg) — och förklara varför ordningen är en del av metoden, inte en detalj i den · Tillämpa horisontdisciplinen: frågan avgör horisonten (Mikro 5 dagar, Kort 63 dagar, Lång 150 veckor och Mega hela historiken — fyra av matrisens fem), och valet görs innan någon teori får titta — annars blir matrisens 25 celler 25 chanser att välja det verktyg som passar ett svar som redan fattats · Arbeta AKM1:s sätt: en variabel i taget, varje poäng 0–5 med motivering i tre delar (källa, bedömning, varför inte grannbetyget) — kursens miniatyr bedömer lönsamhetsfamiliens fyra variabler till 4, 3, 4 och 4 = 15 av 20 på Norra Verkstads AB · Skilja källornas bevisstyrka åt vid insamlingen: räkenskap (bolagets eget påstående), marknadsdata (många säljares och köpares samlade pris) och verksamhetsbeskrivning (bolagets berättelse om sig själv) — tre upphov som inte kan ha smittat varandra, vilket är konfluenskravets första vaccin · Läsa SAM-YTAN utan formler: röster in, sammanställning ut, per horisont — viktningens matematik ägs av ek-01 och väntar där; det denna kurs lär är vad ytan får och inte får säga · Dokumentera så att omräkning är möjlig: loggen med fem kolumner (rad, fråga, källa, uträkning, slutsats utan råd) är analysens existensbevis — en utomstående med samma källor och samma logg ska kunna landa i samma dokument, vilket är ekosystemets svar på personberoendet · Återanvända ett case medvetet: Norra Verkstads AB bär pc-21:s bevisade tal, och att köra motorflödet på en redan genomarbetad kropp tränar skillnaden mellan metodens delar och deras samspel",
+    "why": "EKOSYSTEM-familjen hade trappans yttersta steg men inte mittpartiet: ek-02 (Nybörjare) ritade huset med fem rum och ek-01 (Avancerad) äger SAM-viktningens formler — men den läsare som har lärt sig VAD motorerna heter och VAD formlerna räknar äger fortfarande inte ARBETET mellan dem: i vilken ordning materialet samlas, när horisonten väljs, hur en variabel bedöms utan att helhetsintrycket beställer beläggen, varför loggen är analysens existensbevis. Det är den klassiska glipan mellan kartan och territoriet — och den fylls bara av ett arbetsflöde som körts. Därför Intermediär-nivån och därför genomgående exempel: kursen kör hela flödet en gång i realtid på Norra Verkstads AB — pc-21:s påhittade bolag, återanvänt med avsikt så att husets kurser fördjupar varandra i stället för att duplicera: pc-21 äger case-metoden på bolaget, ek-02 äger orienteringen i huset, ek-01 äger viktformlerna, och denna kurs äger dagen emellan — de fem stationerna, tidsbudgeten 30 plus 45 plus 60 plus 20 plus 25 minuter och loggen som gör att en annan läsare kan räkna om allt. Utan mittrappsteget är familjen två dörrar och ingen korridor; med det kan en läsare gå från kartan till formlerna utan att någonsin ha utfört arbetet blint.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Flödet — varför ordningen är en del av metoden",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Station ett — samla in: tre källor som inte kan ha smittat varandra",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Station två — bedöma: AKM1-arbetet en variabel i taget",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Station tre — läsa struktur: AK1TS med horisonten före teorin",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Station fyra — väga samman: konfluens och SAM-ytan",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Station fem — dokumentera: loggen som gör omräkning möjlig",
+        "minutes": 4
+      }
+    ],
+    "history": {
+      "origin": "Arbetsflödet som idé är äldre än både datorer och aktiemarknad. Dubbel bokföring — renässansens italienska handelshus — var i grunden en FLÖDESARKITEKTUR: varje affär skulle antecknas i bestämd ordning, i två register som kontrollerar varandra, och med en dokumentation som gjorde att en annan bokhållare kunde gå samma väg och landa i samma summa. Kravet på omräkningsbarhet fanns alltså före räknemaskinerna: en anteckning som ingen kan kontrollera var inte en bokföring utan ett påstående. Inom analysens värld formaliserade Benjamin Graham på 1930-talet arbetsdelningen mellan insamling, bedömning och slutsats: hans analysarbeten byggde på att varje fråga besvarades för sig, med källa, innan något vägdes samman — helhetsintrycket skulle komma SIST, inte först.",
+      "evolution": "1900-talet förde flödestänkandet in i flygindustrin och medicinen: checklistan föddes när flygplansbesättningar insåg att även experter glömmer saker i fel ordning, och kirurgin visade att en fast arbetsgång minskar komplikationer — inte för att kirurgerna blev skickligare utan för att ordningen skyddade dem mot sina egna blindfläckar. Inom finans väckte den kvantitativa traditionen (från Markowitz portföljmatematik 1952 och framåt) ett motstående spår: processer som dokumenterades i kod blev omräkningsbara per konstruktion, men sällan genomskinliga — svartboxar vars flöde ingen utomstående kunde följa. I Sverige byggde banker och förvaltare egna analysprocesser, nästan alltid outdokumenterade: en skicklig analytiker byggde flödet, flödet följde analytikern ut i pension, och nästa generation började om från början. Personberoendet — inte bristen på metod — var bristen.",
+      "modern": "Labbets ekosystem är ett medvetet svar på just den bristen: flödet är dokumenterat, deterministiskt och uppdelat i fem stationer som var och en lämnar spår efter sig. AKM1:s tjugo variabler bedöms en i taget med skriven motivering; AK1TS läser prisets struktur på en horisont som väljs innan teorin får titta; vågfundamentet håller varje måtts tidsserie och definierar dess normal; konfluensradarn kräver tre källor som inte kan ha smittat varandra; SAM-viktningen räknar samman rösterna per horisont — och loggen binder ihop dagen så att vem som helst kan räkna om den. Familjens kurser äger varsin maskin; denna kurs äger dagen som förenar dem, med ek-02:s karta i bakfickan och ek-01:s formler framför. Och en vägg som är lika viktig som allt annat: flödet strukturerar läsning och dokumentation — det avger aldrig råd, och vad varje läsare gör med sin kunskap är läsarens eget beslut, precis som lagen om värdepappersrörelser kräver av en utbildningsplattform."
+    },
+    "lynchSection": "Peter Lynch arbetade som få just det som denna kurs kallar station ett och två: han började alltid i verksamheten — det han kunde se, förklara och besöka — och lät räkenskaperna sedan bekräfta eller vederlägga berättelsen, aldrig tvärtom. Ordningen var hans filter, inte en smakfråga: hans poäng var ofta den att den som köper en berättelse utan siffror och den som läser siffror utan berättelse båda gör halva jobbet. Hans arbetsgång — företagsbesök, anteckningsböcker, uppföljning i kategorier — var en logg i denna kursens mening: varje intryck fick en rad, och raderna kunde gås om. Det kursen ärvar av honom är riktningen: insamling före bedömning, bedömning före sammanvägning, och dokumentationen som minnet som gör att flödet kan granskas i efterhand — av läsaren själv, vilket ofta är den svåraste granskaren.",
+    "grahamSection": "Benjamin Graham är flödesdisciplinens andlige upphovsman: hans livsverk vilar på att analys är ett ARBETE som ska kunna kontrolleras, inte en åsikt som ska troddas. I Securities Analysis lärde han ut att varje slutsats ska bäras av en kedja av belägg där varje länk är redovisad — källa, beräkning, avgränsning — och att analytikerns största fiende är det egna förstaintrycket, som utan fast arbetsgång beställer sina belägg i efterhand. Just därför skulle han känna igen sig i denna kursens två hårdaste regler: variabeln bedöms FÖRE sammanvägningen (annars letar helhetsintrycket fram sina egna belägg) och loggen skrivs FÖRE dagen är slut (annars blir minnet en redaktör). Grahams säkerhetsmarginal började inte i formeln utan i processen: ett arbete som kan räknas om är det enda underlag en marginal över huvud taget kan vila på.",
+    "ak1Section": "I AK1A:s metodik är denna kurs EKOSYSTEM-familjens mittrappsteg — Intermediär-nivån mellan ek-02:s karta (Nybörjare) och ek-01:s SAM-formler (Avancerad). Den fyller trappans mitt med det som var familjens tunnaste lager: själva arbetsflödet. Grundtrappan utanför huset bärs medvetet med: am-03 lär läsa aktiesidan, bk-01 balansräkningen, rp-01 riskmåttens karta och pc-21 case-metoden — flödet bygger på dem och pekar tillbaka på dem. Genomgående exempel är Norra Verkstads AB, pc-21:s påhittade bolag: samma bevisade tal, annat arbete, vilket tränar skillnaden mellan metodens DELAR (caseläsning, fundamental bedömning, vågläsning) och deras SAMSPEL. Kursen rörd aldrig viktformlerna — de ägs av ek-01 — och aldrig prisfrågan: flödet strukturerar läsning, och hela ramen är att läsarens eventuella beslut förblir läsarens eget, aldrig kursens.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Flödet — varför ordningen är en del av metoden",
+        "intro": "Familjen har en karta (ek-02) och formler (ek-01). Detta kapitel presenterar det som finns mellan dem: arbetet, i bestämd ordning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En analys i labbet är inte ett verktygs utdata utan en KEDJA av arbetsmoment: samla in, bedöma, läsa struktur, väga samman, dokumentera. Ordningen låter som en detalj — den är metoden. Tre ordningsregler bär hela flödet. För det första väljs horisonten FÖRE teorin: AK1TS matris har fem horisonter och fem teorier, och den som låter en favoritteori välja horisont har gett sig själv tjugofem celler att plocka från, varav någon nästan alltid passar ett svar som redan fattats. För det andra bedöms AKM1:s variabler en i taget FÖRE någon sammanvägning: helhetsintrycket är en utmärkt sammanfattning av tjugo bedömningar men en usel BESTÄLLARE av dem — låt det komma först och det letar fram sina egna belägg. För det tredje kontrolleras konfluensens oberoendekrav FÖRE SAM-ytan ens får läsas: sammanställningen av röster är meningsfull bara när rösterna inte kan ha smittat varandra."
+          },
+          {
+            "type": "text",
+            "content": "Genomgående exempel är Norra Verkstads AB — pc-21:s HELT påhittade bolag, återanvänt med avsikt. pc-21 tränade case-metoden på bolaget (läsa fyra sidor, räkna sju nyckeltal, tolka tre år, dokumentera en caselogg); denna kurs tränar motorflödet på samma kropp. Siffrorna är desamma och redan bevisade i syskonkursen: intäkter tre år 850, 1 000 och 1 150 miljoner kronor, rörelseresultat 119, 128 och 138, nettoresultat 92 det senaste året, eget kapital 460, balansomslutning 1 150, 46 miljoner aktier till kursen 30 kronor. Dagens uppgift: köra hela flödet en gång — från tom mapp till loggad analys — och notera att inget moment kräver mer än grundskolans aritmetik och ett källkritiskt öga. Tidsbudgeten för dagen är 30 minuter för insamling, 45 för fundamental bedömning, 60 för strukturläsning, 20 för sammanvägning och 25 för dokumentation: sammanlagt 180 minuter, en förmiddag."
+          },
+          {
+            "type": "definition",
+            "content": "FLÖDETS FEM STATIONER — en mening per station, hela dagen: (1) SAMLA IN — ringa in tre källtyper som inte kan ha smittat varandra: räkenskaper, marknadsdata, verksamhetsbeskrivning; (2) BEDÖMA — AKM1-arbetet: en variabel i taget, poäng 0–5 med skriven motivering i tre delar (källa, bedömning, varför inte grannbetyget); (3) LÄSA STRUKTUR — AK1TS-arbetet: välj horisont efter FRÅGAN först, läs sedan radens fem celler; (4) VÄGA SAMMAN — konfluens först (tre oberoende källor), sedan SAM-ytan (röster in, sammanställning ut — formlerna ägs av ek-01); (5) DOKUMENTERA — loggen med fem kolumner, skriven samma dag, omräkningsbar för en utomstående. Ingen station avger råd — den sista kolumnen heter av ett skäl slutsats utan råd."
+          },
+          {
+            "type": "insight",
+            "content": "Ordningsreglerna har ett gemensamt djupare skäl: varje moment ska göras när beslutsunderlaget är komplett men omdömet ännu inte bestämt. Det är flödets skydd mot de två klassiska fel som forskningen i beteendefinans gett egna namn — bekräftelse (vi söker det som stödjer det vi redan tror) och förankring (första intrycket styr allt som kommer efteråt). En fast arbetsgång flyttar beslutet till en punkt där kunskapen är som störst och önskan som minst styrande. Det är också determinismens praktiska sida: samma indata och samma ordning ger samma utfall — och en kollega som går samma väg ska landa i samma dokument. Flödet är alltså inte byråkrati kring motorerna; det är det som gör motorerna till ett system i stället för fem åsikter med gemensam inkorg."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Station ett — samla in: tre källor som inte kan ha smittat varandra",
+        "intro": "Insamlingen bestämmer taket: motorerna kan aldrig bli bättre än sitt bränsle. Tre källtyper, tre upphov, tre olika bevisstyrka.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Till Norra Verkstads AB samlas tre slag av material. Första slaget är RÄKENSKAPSMATERIALET: tre års rapporter med balansräkning (eget kapital 460, balansomslutning 1 150 — soliditeten 460/1 150 = 40,0 procent), resultaträkning (marginaler 14,0, 12,8 och 12,0) och kassaflödesanalys (operativt kassaflöde 125, investeringar 65, fritt kassaflöde alltså 125 − 65 = 60). Andra slaget är MARKNADSDATA: kurs 30 kronor, 46 miljoner aktier, börsvärde 46 × 30 = 1 380 miljoner kronor — och ur kursen och räkenskapen tillsammans föds multiplarna: vinst per aktie 92/46 = 2,0 kronor ger P/E 30/2,0 = 15,0, bokvärde per aktie 460/46 = 10,0 kronor ger P/B 30/10,0 = 3,0. Tredje slaget är VERKSAMHETSBESKRIVNINGEN: affärsidén, kunderna, konkurrenterna, orderstocken — bolagets berättelse om sig själv."
+          },
+          {
+            "type": "text",
+            "content": "Det viktiga vid station ett är inte mängden utan skillnaden i BEVISSTYRKA och UPPHOV. Räkenskapen är bolagets eget påstående om sig självt — granskat, men ändå en självbeskrivning. Marknadsdata är många säljares och köpares samlade pris — ingen enskild parts påstående, men heller ingen sanning om värde, bara ett avtal om dagens nivå. Verksamhetsbeskrivningen är en berättelse — bärande för förståelse, svag som belägg. Tre olika upphov är inte en svaghet utan flödets första vaccin: konfluensradarns oberoendekrav börjar redan här, vid insamlingen, eftersom tre källor med tre olika upphov inte kan ha smittat varandra. Grundtrappan utanför ekosystemfamiljen bärs medvetet med i arbetet: am-03 har lärt ut att läsa aktiesidan (multiplarna ovan är dess territorium), bk-01 balansräkningen, rp-01 riskmåttens karta — motorerna förutsätter basläsningen och bygger på den."
+          },
+          {
+            "type": "tabell",
+            "content": "GRUNDTRAPPAN × FLÖDETS STATIONER — vad varje grundkurs ger dagen: | Grundkurs | Vad den tränar | Var det används i flödet | — | am-03 — läsa aktiesidan | Kursnivå, multiplar, direktavkastning (här P/E 15,0 och P/B 3,0) | Station ett och tre — marknadsdata och strukturläsning | — | bk-01 — balansräkningen | EK, BO, soliditet (här 460, 1 150, 40,0 procent) | Station ett och två — insamling och fundamental bedömning | — | rp-01 — riskmåttens karta | Fem måtts fem olika riskfrågor | Station fyra — oberoendet vägs in i sammanställningen | — | pc-21 — ditt första case | Case-metodens fyra steg på detta bolag | Hela flödet — samma kropp, annat arbete |"
+          },
+          {
+            "type": "insight",
+            "content": "Källkritiken vid insamlingen kan sträckas till tre frågor som varje tal ska stå ut med: VEM uppgav talet, NÄR, och KAN DET KONTROLLERAS OBEROENDE? Börsvärdet 1 380 miljoner kronor klarar den tredje frågan nästan per definition — det är själva definitionen av ett marknadspris att många stått bakom det. Eget kapital 460 är starkare som granskat tal men svagare som oberoende — upphovet är samma bolag som lämnar resultaträkningen. En logg som inte skiljer på det — som listar 1 380 och 460 bredvid varandra som om de vore samma sorts fakta — har redan på station ett blandat ihop två bevisvärldar. Kursens minnesregel: siffran är gratis, upphovet är arbetet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Station två — bedöma: AKM1-arbetet en variabel i taget",
+        "intro": "Tjugo variabler, sju kategorier, max 100 poäng — och en arbetsregel som är minst lika viktig som modellen: en i taget, med motivering.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AKM1 poängsätter det fundamentala: tjugo variabler i sju kategorier, 0–5 poäng per variabel, sammanlagt max 100. Modellens detaljer ägs av akm1-kursen; det denna station tränar är ARBETSSÄTTET. Tre regler gäller. Regel ett: EN VARIABEL I TAGET — bedömningen sker variabel för variabel med talet från källan framför sig, inte som en helhetsbedömning som sedan fördelas. Regel två: MOTIVERINGEN har tre delar — källa (var talet finns), bedömning (vilken poäng) och avgränsning (varför inte grannbetyget: varför inte 2, varför inte 4). Regel tre: GRÄNSBEDÖMNINGEN är där omdömet bor — avståndet mellan 3 och 4 är hela skillnaden mellan medel och överlägsen, och det är just där motiveringen måste vara som skarpast."
+          },
+          {
+            "type": "text",
+            "content": "Miniatyren på Norra Verkstads AB visar fyra av modellens variabler ur lönsamhetsfamiljen. Första: avkastning på eget kapital — netto 92 på eget kapital 460 ger ROE 92/460 = 20,0 procent — bedömning 4 av 5, med avgränsningen att marginalfallen fallit tre år i rad (14,0, 12,8, 12,0), vilket håller betyget under toppen. Andra: rörelsemarginal mot normal — senaste året 138/1 150 = 12,0 procent mot seriens medel (14,0 + 12,8 + 12,0)/3 = 12,9 procent — bedömning 3 av 5, under normal men inom seriens eget spann. Tredje: intäktstillväxt — 850 till 1 000 är +17,6 procent och 1 000 till 1 150 är +15,0 procent — bedömning 4 av 5, tillväxt utan volatilitet i nivå. Fjärde: resultatets kontantkvalitet — fritt kassaflöde 60 mot netto 92 betyder att 60/92 = 65,2 procent av resultatet är kontant — bedömning 4 av 5, med avgränsning mot 5 på grund av kontantkvalitetens beroende av investeringstakten. Kategorins miniatyrsumma: 4 + 3 + 4 + 4 = 15 av 20 möjliga."
+          },
+          {
+            "type": "tabell",
+            "content": "LÖNSAMHETSMINIATYREN — fyra bedömningar på Norra Verkstads AB: | Variabelområde | Källtalen | Poäng | Avgränsningens kärna | — | Avkastning på eget kapital | 92/460 = 20,0 % | 4 av 5 | Hög avkastning, men marginalfallen faller — inte toppbetyg | — | Rörelsemarginal mot normal | 12,0 mot 12,9 i serie | 3 av 5 | Under medel, inom seriens eget spann | — | Intäktstillväxt | +17,6 % och +15,0 % | 4 av 5 | Två starka år i rad, nivån stabil | — | Resultatets kontantkvalitet | 60/92 = 65,2 % kontant | 4 av 5 | Två tredjedelar kontant, investeringstakten håller betyget nere | — | Miniatyrsumma | fyra variabler | 15 av 20 | Lönsamhetsfamiljen bär — modellen har 16 variabler kvar |"
+          },
+          {
+            "type": "insight",
+            "content": "Motiveringstvånget är modellens själ, och det är värt att säga varför: ett betyg utan mening är en åsikt, ett betyg med skriven gränsmotivering är ett OMDÖME — något som kan granskas, ifrågasättas och förbättras. Determinismen gäller alltså arbetet, inte siffrorna av sig själva: två läsare med samma källtal och samma regler hamnar på samma betyg, men skiljer talen sig — eller tolkningen av verksamheten — skiljer sig betyget, och LOGGEN visar exakt var. Det är också här flödet lär sin ödmjukaste läxa: precisionen ligger inte i att modellen ger ett exakt svar, utan i att varje steg mot svaret är dokumenterat nog för att en annan läsare ska kunna hålla med — eller invända med skäl."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Station tre — läsa struktur: AK1TS med horisonten före teorin",
+        "intro": "Fem horisonter gånger fem teorier är tjugofem celler — och en ordningsregel som stänger dörren för det vanligaste självbedrägeriet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AK1TS läser prisets struktur. Matrisen har fem tidshorisonter — Mikro (fem handelsdagar), Kort (63 dagar, kvartalsvågen), Lång (150 veckor, konjunkturvågen) och Mega (hela historiken) är fyra av dem — kombinerade med fem teorier (Elliott, Fibonacci, GANN, Lucas och volym) till tjugofem celler per aktie. Våglärans detaljer ägs av ak1ts-kursen; denna station tränar FLÖDESDISCIPLINEN: horisonten väljs FÖRE teorin, och horisonten väljs av FRÅGAN. Frågan till Norra Verkstads AB är mellansiktig — handlar läsningen om det närmaste kvartalet till ett halvår, alltså den period där både kvartalsrapportens innehåll och prisets kvartalsrytm spelar in — och det pekar på Kort-horisonten (63 dagar). Valet är gjort INNAN någon teori fått titta på kursgrafen: det är hela poängen."
+          },
+          {
+            "type": "text",
+            "content": "Med horisonten vald läses RADEN cell för cell — fem teorier, fem celler, var och en ger utslag eller tystnad. I exempelkörningen ger två av fem celler utslag och tre tiger: ett respektabelt men inte starkt strukturutslag. Två läsregler hör till. För det första: en vågläsning på EN horisont säger ingenting om en ANNAN horisont — det är hela poängen med matrisen, inte ett fel i den; en aktie kan bära en ren struktur på Kort samtidigt som Mega är formlös, och båda läsningarna är sanna på sina egna villkor. För det andra: utslaget är en LÄSNING av prisets form, inte en förutsägelse — cellen säger att en struktur finns, inte vad marknaden därefter gör. Skillnaden är kursens vägg i miniatyr: strukturläsning strukturerar information, den befriar inte från beslutet."
+          },
+          {
+            "type": "tabell",
+            "content": "KORT-RADEN — fem celler på 63 dagar, exempelkörningens läsning: | Teori | Utslag | Cellens läsning | — | Elliott | Ja | Kvartalsvågen bär en utmätningsstruktur som kan räknas | — | Fibonacci | Nej | Inget prisavstånd motsvarade seriens egna förhållanden | — | GANN | Nej | Tid och pris vägda mot varandra gav ingen läsbar figur | — | Lucas | Ja | Räkneserien matchar antalet handelsdagar sedan svängningens början | — | Volym | Nej | Omsättningen bekräftar inte rörelsens inre struktur | — | Radens summa | 2 av 5 | Respektabel struktur — inte stark; noteras i loggen med horisonten angiven |"
+          },
+          {
+            "type": "insight",
+            "content": "Horisontdisciplinen förtjänar sitt namn eftersom den skyddar mot något mycket mänskligt: den som väljer teori FÖRE horisont — eller enbart läser den cell som ser mest lovande ut — har tjugofem försök att hitta ett mönster som passar ett svar som redan fattats, och bland tjugofem celler finns nästan alltid något som liknar ett mönster. Det är strukturläsningens variant av bekräftelsebeteendet, och ordningen är motgifvet: fråga först, horisont sedan, teori sist, och hela raden läses — tystnader lika noggrant som utslag. En tyst cell är inte frånvaro av information utan information om att en familj av verktyg inte finner struktur just här; i loggen noteras raden med horisonten, utslagen OCH tystnaderna."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Station fyra — väga samman: konfluens och SAM-ytan",
+        "intro": "Tre oberoende källor före sammanställningen — och en yta som får läsas först när oberoendet är vaktat.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konfluensradarns krav är bekant från ek-02 men förtjänas först här, i arbetet: TRE källor som inte kan ha smittat varandra. Norra Verkstads exempel ger precis tre. Källa A — fundamentalbilden: AKM1-arbetets lönsamhetsminiatyr på 15 av 20 (kapitel tre), bärande av räkenskapernas fråga hur bolaget mår. Källa B — prisstrukturen: AK1TS:s Kort-rad med 2 av 5 utslag (kapitel fyra), bärande av marknadsdatas fråga om rörelsen har en form. Källa C — tidsserienormalen: vågfundamentets bild av att marginalserien 14,0, 12,8 och 12,0 har medel 12,9 och att senaste årets 12,0 ligger UNDER normal men INOM seriens egen spännvidd, bärande av historiens fråga vad som är normalt för just detta mått. Tre källor, tre upphov: räkenskaperna, kursdata, tidsseriehistoriken — ingen av dem kan ha hämtat sitt svar från de två andra."
+          },
+          {
+            "type": "text",
+            "content": "SAM-ytan är det sista steget och det ytligaste i denna kurs — medvetet. Rösterna matas in per horisont, sammanställningen läses av, och där slutar kursens mandat: viktningens formler ägs av ek-01 och väntar där. Vad som kan tränas här är YTANS läsning. Exempelbilden: källa A och C talar lönsamhetens och historiens språk (båda noterar stark nivå med sjunkande trend), källa B talar strukturens språk (svag form) — och de är inte oense, de svarar på olika FRÅGOR. Flödets läsregel: konfluens handlar inte om att källorna säger samma sak utan om att de är OBEROENDE och var och en korrekt läst på sin egen fråga. Sammanställningen blir då en SAMMANVÄGNING av tre olika bilder av samma bolag — inte en omröstning om en enda sanning."
+          },
+          {
+            "type": "definition",
+            "content": "KONFLUENS KONTRA SAM — två olika väktare med olika poster: KONFLUENS är kravet FÖRE — något får heta signal först när tre källor med tre skilda upphov var och en är korrekt läst; det är en egenskap hos KÄLLORNA (räkenskap, kursdata, tidsserie), inte hos måtten. SAM är sammanställningen EFTER — rösterna räknas ihop per horisont med den viktning som ek-01 äger; det är en egenskap hos METODEN. Flödets regel: aldrig läsa SAM-ytan före konfluenskontrollen — en sammanvägning av beroende källor är inte en starkare bild utan samma bild räknad flera gånger."
+          },
+          {
+            "type": "insight",
+            "content": "Det klassiska felet vid sammanvägning är värt ett eget stycke: att räkna ihop tre mått som alla kommer från samma rådata och kalla det konfluens. P/E 15,0, direktavkastningen och P/B 3,0 är tre läsningar — men alla tre är räknade på samma kurs (30 kronor) och samma bokförda tal (92, 46 och 460): det är EN källa räknad tre gånger, och sammanställningen av den ger inte tre röster utan en röst med högre volym. Oberoende är en egenskap hos upphoven, inte hos formlerna — och det är just därför station ett samlade tre KÄLLTYPER och inte tio MÅTT. Ek-02:s formulering bärs med genom hela flödet: två källor kan vara en slump, en kopia eller ett sant sammanträffande — först tre som inte kan ha smittat varandra gör anspråk på att heta signal."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Station fem — dokumentera: loggen som gör omräkning möjlig",
+        "intro": "Analysen finns bara när den kan räknas om. Fem kolumner, fem rader, skrivna samma dag — och en sista kolumn utan råd.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Loggen är flödets existensbevis. Fem kolumner räcker: RAD (löpnummer), FRÅGA (vad som undersöktes), KÄLLA (var talet finns), UTRÄKNING (räkningen som text), SLUTSATS UTAN RÅD (vad som kan noteras — aldrig vad som bör göras). Norra Verkstads exempellogg blev fem rader efter en förmiddags arbete, och varje rad bär sin stations arbete: rad ett för insamlingen (tre källtyper, tre upphov), rad två för fundamental bedömning (miniatyrens fyra belägg), rad tre för strukturläsningen (Kort-raden med utslag och tystnader), rad fyra för sammanvägningen (tre källor, oberoende kontrollerat), rad fem för dagen själv (tidsbudgeten — 30 plus 45 plus 60 plus 20 plus 25 = 180 minuter). Dagen därpå ska loggen kunna läsas av någon som inte var där — och förstås."
+          },
+          {
+            "type": "text",
+            "content": "Omräkningsbarhetens test är ekosystemets hårdaste och enklaste: en utomstående med samma källor och samma logg ska kunna kontrollera varje tal — 92/460 = 20,0 procent, (14,0 + 12,8 + 12,0)/3 = 12,9, 60/92 = 65,2 procent, 4 + 3 + 4 + 4 = 15 av 20 — och varje bedömning, och landa i samma dokument eller invända med skäl mot en angiven rad. Det är svaret på personberoendet som historieavsnittet beskrev: systemet överlever analytikern bara om analytikerns arbete är skrivet. Därför skrivs loggen SAMMA DAG — minnet är en redaktör som silar bort det som inte passar — och därför är sista kolumnen formulerad utan råd: loggen dokumenterar vad som finns och vad det kan betyda för läsningens skull; vad läsaren därefter gör med sin egen kunskap är läsarens beslut, aldrig loggens eller labbets."
+          },
+          {
+            "type": "tabell",
+            "content": "LOGGEN — Norra Verkstads AB, fem rader efter 180 minuter: | Rad | Fråga | Källa | Uträkning | Slutsats utan råd | — | 1 | Vilka källor bär dagen? | Tre års rapporter, marknadsdata, verksamhetsbeskrivning | BO 1 150, EK 460, soliditet 40,0 %; 46 M aktier à 30 = 1 380 Mkr | Tre upphov samlade — oberoendet möjligt | — | 2 | Hur mår lönsamheten? | AKM1-miniatyren, fyra variabler | 4+3+4+4 = 15 av 20; ROE 20,0 %; kontantkvalitet 65,2 % | Lönsamhetsfamiljen bär; marginalerna noteras fallande | — | 3 | Har priset form på Kort? | AK1TS-raden, 63 dagar | 2 av 5 celler i utslag, tre tysta | Respektabel struktur — inte stark | — | 4 | Är signalen äkta? | Konfluens: A räkenskap, B kurs, C tidsserie | Tre oberoende källor lästa var för sig | Underlaget är samlat — SAM-ytan läst utan formler | — | 5 | Står dagen för omräkning? | Flödet självt | 30+45+60+20+25 = 180 min | Varje tal och bedömning har rad — dagen kan räknas om |"
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: kör ditt eget flöde. (1) Välj ETT bolag — påhittat som Norra Verkstad, eller en verklig aktie du är nyfiken på — och samla tre källtyper med olika upphov; notera för varje tal vem som uppgav det. (2) Bedöm fyra variabler ur ETT område (till exempel lönsamhet eller skuld) med poäng 0–5 och skriven avgränsning — varför inte grannbetyget. (3) Välj horisont genom att först skriva ner FRÅGAN, läs sedan hela raden och anteckna tystnaderna lika noggrant som utslagen. (4) Kontrollera konfluens: har dina tre källor tre skilda upphov — eller är någon av dem samma rådata räknad två gånger? (5) Skriv loggen fem rader, sista kolumnen utan råd, och låt den vila över natten: läs den dagen efter och fråga om en utomstående hade kunnat följa den. Kursens ram: flödet är läsningens verktyg och dokumentationens hus — hur du väljer att handla på din egen kunskap är ditt beslut, alltid."
+          }
+        ]
+      }
+    ]
+  },
   "rp-01-riskmattens-karta": {
     "slug": "rp-01-riskmattens-karta",
     "category": "RISKHANTERING & PORTFÖLJTEORI",

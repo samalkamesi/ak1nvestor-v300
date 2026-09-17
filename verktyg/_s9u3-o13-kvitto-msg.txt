@@ -1,0 +1,1 @@
+studio: auto s9-u3 o13 sidokvitto — motorvalideringsrapporten färsk från dokvågens egna körning (107 PASS / 0 FAIL / 0 SKIP, 7,2 s) skriven till FASTA filnamnet motorervalidering-2026-09-02.md = själva köposten som bokfördes i E31-sektionen (datumstämpel saknas i filnamnet — rapporten innehåller färsk tidsstämpel); träd lämnas rent för prod-synken. [fabrik]

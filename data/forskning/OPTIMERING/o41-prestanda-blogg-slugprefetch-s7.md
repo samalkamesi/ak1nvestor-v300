@@ -162,3 +162,49 @@ komponent, ägs av huvudagenten/styrelse) + `/logga-in` ×2 (1,7 KiB);
 (2) /kurser-TBT pågår hos syskon u3 (egen anspråksfil); (3) poängbandets
 övergång P62→P55 på / mellan morgon/natt-facit (o42 §2) — driftobservatör
 hos kommande facit.
+
+## §6b Oberoende omkörning — kuren konfirmerad av andra mätset (s7-u1, 12:26–12:28 lokal, 2026-09-17)
+
+**Kollisionsbokföring (ärlig):** anspråksrace inom 6 sekunder — u1:s
+anspråk 12:19:27, u2:s 12:19:33 (båda mot o41-EFTER; vakten tom på
+o41-anspråk vid bådas läsning ⇒ ingen bröt disk-först, fönstret för smalt
+för reaktion). u2:s mätningar 12:20:13–12:21:31 + commit `baaac347`
+12:25:32 landade MEDAN u1 höll SEQ-grinden (u1:s pgrep såg deras
+chrome-fönster + u3:s /kurser-FÖRE 12:23:52 och väntade ut båda —
+väntrummet visade sig alltså vara själva kollisionen). **Deras leverans
+står (§6 orörd här); denna sektion = oberoende verifiering, mönstret från
+s5-u3:s omköro-rättesnotis.** u1:s fönster 12:26:31–12:28:12 var rent
+(0 chrome-processer, ps-verifierat) och SOLO PER SIDA från start —
+o37-EFTER:s metodfynd följt utan omvägar.
+
+**Resultat — samtliga strukturtal konfirmerade (andra oberoende mätset
+på samma bygge 2rW0uv):**
+
+| Yta      | Tal           | Poäng | LCP | TBT | CLS | Requests | Transfer |
+|----------|---------------|-------|-----|-----|-----|----------|----------|
+| /blogg   | FÖRE 06:09    | P55   | 5109| 1060| 0   | 50       | 727 KiB |
+| /blogg   | **EFTER u1 12:27 solo** | P54 | 4865 | 1735* | 0 | **44** | **707 KiB (−20)** |
+| /en/blogg| FÖRE 06:10    | P53   | 4945| 2356** | 0 | 47       | 714 KiB |
+| /en/blogg| **EFTER u1 12:28 solo** | P54 | 4756 | 1948* | 0 | **46** | **715 KiB (±0)** |
+
+- **SV slug-_rsc 4 → 0** (u2: detsamma; FÖRE-talet 49/50 requests
+  dubbelkällat — determinismbandet håller) · **EN slug-_rsc 1 → 0
+  deterministiskt** (FÖRE-racet kan inte återkomma: länken prefetchar
+  ej) · kursrute-_rsc 0 → 0 (o37 håller i andra mätset).
+- Null-risken (§3) oberoende motbevisad ÄN EN GÅNG: `prefetch={false}`
+  styr båda Next 16.1.1-omgångarna — två mätset, noll undantag.
+- Kö-objekt 1 oförändrat konfirmerat: `/`×3 (18 626 B — växt med
+  register 396) + `/logga-in` ×2/×3 kvar i initial load.
+- *CPU-tal med lastkontext: u1:s TBT 1735/1948 mot u2:s 1191/1524 på
+  SAMMA bygge — skillnaden är last (uptime 4,62 vid u1:s fönster; tre
+  aktiva fabriksbarn + mät-chrome), inte kureffekt; strukturplanet
+  lastokänsligt (o28-mätplanet). LCP förbättrat på båda språken
+  (5109→4865, 4945→4756), inom intra-build-band. **FÖRE 06:09/06:10 =
+  u3:s 06:0x-ronder (sist-i-svärm-kontaminerade TBT 1060/2356) —
+  struktur- och viktalen därifrån är giltiga, CPU-talen varudeklareras.**
+
+**Verktyg:** `verktyg/_s7u1e-analys.mjs` (FÖRE/EFTER-strukturdiff:
+_rsc per pathname, slug-klassificering, övrig-_rsc — återanvändbart vid
+kö-objekt 1:s framtida kur). Rådata i egen namnrymd:
+`lighthouse/{blogg,en_blogg}-slugprefetch-efter-{sv,en}.json` +
+sammanfattningar. Prod HTTPS 200 ×2 efter mätning.

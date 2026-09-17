@@ -21,7 +21,7 @@
  *      i texten (klippskydd)
  *   E  3 omatchade frågor → null (API-flödet får dem)
  *   F  juridikgrind-lint — inga rådfraser (köp/sälj) i de nya svaren
- *   G  ANTISTÖLD — tidigare kanoniska frågor (62: basens 15 + våg 158:9 +
+ *   G  ANTISTÖLD — tidigare kanoniska frågor (64: basens 15 + våg 158:9 +
  *      makro 2 + nästa 3 + sektor 3 + kapitalmekanik 2 + case 1 + praktik 3
  *      + portfoljgrund 2 + ägande 2 + redovisningsdjup 2 + djup 3 +
  *      historia 3 + lönsamhetsdjup 2 + skattedjup 1 + beteendedjup 1 +
@@ -372,6 +372,10 @@ const GAMLA = [
   { fraga: "Vad är kalibrering?", amne: "kalibrering" },
   // Portfoljbalans (omgång 13, syskon u1 — samma fönster)
   { fraga: "Vad är rebalansering?", amne: "rebalansering" },
+  // Grahamgolv (omgång 13, syskon u3 — samma fönster)
+  { fraga: "Vad är net-net?", amne: "netnet" },
+  { fraga: "Vad är cigar butt?", amne: "cigarbutt" },
+  { fraga: "Vem är Mr Market?", amne: "mrmarket" },
 ];
 {
   const STJALDA = GAMLA.filter((f) => svaraLokaltStabilitetsdjup(f.fraga, KURSREGISTER) !== null);
@@ -388,7 +392,7 @@ const GAMLA = [
     DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER,
     SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER,
     RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER,
-    PORTFOLJBALANS_MONSTER,
+    PORTFOLJBALANS_MONSTER, GRAHAMGOLV_MONSTER,
   ].filter(Array.isArray);
   let karnord = 0;
   const fragor = [];
@@ -433,7 +437,8 @@ function kedjaGenomAllt(fraga) {
     (svaraLokaltUtdelningsdjup ? svaraLokaltUtdelningsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltForvantningsdjup ? svaraLokaltForvantningsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltPortfoljbalans ? svaraLokaltPortfoljbalans(fraga, KURSREGISTER) : null) ??
-    svaraLokaltStabilitetsdjup(fraga, KURSREGISTER);
+    svaraLokaltStabilitetsdjup(fraga, KURSREGISTER) ??
+    (svaraLokaltGrahamgolv ? svaraLokaltGrahamgolv(fraga, KURSREGISTER) : null);
   if (!s) return null;
   // motor-namnet härleds ur vilket steg som returnerade — enkel variant:
   // leta igenom stegen igen (billigt, entydigt).
@@ -448,7 +453,7 @@ function kedjaGenomAllt(fraga) {
     ["beteendedjup", svaraLokaltBeteendedjup], ["riskdjup", svaraLokaltRiskdjup],
     ["riskmattsdjup", svaraLokaltRiskmattsdjup], ["utdelningsdjup", svaraLokaltUtdelningsdjup],
     ["forvantningsdjup", svaraLokaltForvantningsdjup], ["portfoljbalans", svaraLokaltPortfoljbalans],
-    ["stabilitetsdjup", svaraLokaltStabilitetsdjup],
+    ["stabilitetsdjup", svaraLokaltStabilitetsdjup], ["grahamgolv", svaraLokaltGrahamgolv],
   ];
   for (const [namn, fn] of steg) {
     if (fn && fn(fraga, KURSREGISTER)) return { motor: namn, svar: fn(fraga, KURSREGISTER) };
@@ -481,7 +486,8 @@ function kedjaGenomAllt(fraga) {
     (svaraLokaltRiskmattsdjup ? svaraLokaltRiskmattsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltUtdelningsdjup ? svaraLokaltUtdelningsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltForvantningsdjup ? svaraLokaltForvantningsdjup(fraga, KURSREGISTER) : null) ??
-    (svaraLokaltPortfoljbalans ? svaraLokaltPortfoljbalans(fraga, KURSREGISTER) : null);
+    (svaraLokaltPortfoljbalans ? svaraLokaltPortfoljbalans(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltGrahamgolv ? svaraLokaltGrahamgolv(fraga, KURSREGISTER) : null);
 
   // Invarianten: ett SIST-lager ändrar ALDRIG ett tidigare svar.
   const fel = [];
@@ -503,7 +509,7 @@ function kedjaGenomAllt(fraga) {
     if (!med || med.svar.amne !== f.amne) fel.push("NY '" + f.fraga + "' ⇒ " + (med ? med.svar.amne : "null") + " (väntat " + f.amne + ")");
   }
   kontroll(
-    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + (GAMLA.filter((x) => x.amne).length) + " ämneskontroller + " + NYA.length + " nya når rätt lager (23 lager, som chat-widget.tsx)",
+    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + (GAMLA.filter((x) => x.amne).length) + " ämneskontroller + " + NYA.length + " nya når rätt lager (24-lägets kedja: grahamgolv Syskonet u3:s, sist efter detta lager — se deras test)",
     fel.length === 0,
     fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length) + "/" + (GAMLA.length + NYA.length) + " rätt",
   );
@@ -521,7 +527,7 @@ function kedjaGenomAllt(fraga) {
 {
   const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigare = new Set();
-  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER]) {
+  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, GRAHAMGOLV_MONSTER]) {
     if (!Array.isArray(monster)) continue;
     for (const m of monster) for (const k of m.karnord ?? []) tidigare.add(dia(k));
   }
@@ -532,7 +538,7 @@ function kedjaGenomAllt(fraga) {
     }
   }
   kontroll(
-    "J01 kärnordsdisjunktion — STABILITETSDJUP_MONSTER vs 22 tidigare lager (" + tidigare.size + " kärnord)",
+    "J01 kärnordsdisjunktion — STABILITETSDJUP_MONSTER vs 23 tidigare lager (" + tidigare.size + " kärnord)",
     krock.length === 0,
     krock.length ? krock.join(" | ") : "0 överlapp ✓",
   );

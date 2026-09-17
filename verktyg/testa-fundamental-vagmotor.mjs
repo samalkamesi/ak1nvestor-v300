@@ -4,11 +4,10 @@
  *
  * Skriptet gör så här (node kan inte importera TS direkt — samma mönster som
  * verktyg/validera-motorer.mjs):
- *   1. Genererar .tmp/tmp_fvag_koll.ts (våg 150:s gitignorerade engångsyta,
- *      tsconfig-exkluderad — o44) — en fil som importerar motorn
+ *   1. Genererar tmp_fvag_koll.ts i repots rot — en fil som importerar motorn
  *      (src/lib/portfolj-forskning/fundamental-vagmotor.ts) och kör den mot
  *      fyra fixtures + enhetskontroller.
- *   2. Kör den med: npx --yes tsx .tmp/tmp_fvag_koll.ts
+ *   2. Kör den med: npx --yes tsx tmp_fvag_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Fixtures:
@@ -25,13 +24,12 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_fvag_koll.ts");
+const TMP_TS = path.join(REPO, "tmp_fvag_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ────────
@@ -44,9 +42,9 @@ import {
   klassaVag,
   klassaVagDetaljerad,
   raknaFVag,
-} from "../src/lib/portfolj-forskning/fundamental-vagmotor";
-import { HORIZONTER } from "../src/lib/portfolj-forskning/typer";
-import type { AKM1Bedomning, BolagsNyckeltal } from "../src/lib/portfolj-forskning/typer";
+} from "./src/lib/portfolj-forskning/fundamental-vagmotor";
+import { HORIZONTER } from "./src/lib/portfolj-forskning/typer";
+import type { AKM1Bedomning, BolagsNyckeltal } from "./src/lib/portfolj-forskning/typer";
 
 const HZ_SV = { mikro: "mikro", kort: "kort", medellang: "medellång", lang: "lång", mega: "mega" };
 const AR = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"];
@@ -272,12 +270,10 @@ process.exit(antalFail > 0 ? 1 : 0);
 `;
 
 // ── 2) Skriv tmp-fil, kör via tsx, städa ────────────────────────────────────
-// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
 function main() {
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  console.log("[testa-fundamental-vagmotor] kör npx --yes tsx .tmp/tmp_fvag_koll.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_fvag_koll.ts"], {
+  console.log("[testa-fundamental-vagmotor] kör npx --yes tsx tmp_fvag_koll.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_fvag_koll.ts"], {
     cwd: REPO,
     stdio: "inherit",
     shell: true,

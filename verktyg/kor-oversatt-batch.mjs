@@ -41,8 +41,7 @@
  *
  * KÖRMÖNSTER (samma som verktyg/importera-oversattning.mjs): node kan inte
  * importera TS direkt → skriptet genererar tmp_kor_oversatt_batch.ts i
- * .tmp/ (våg 150:s gitignorerade engångsyta, tsconfig-exkluderad — o44),
- * kör den med npx --yes tsx under hård tidsbudget och läser
+ * repo-roten, kör den med npx --yes tsx under hård tidsbudget och läser
  * JSON-svaret mellan ASCII-markörer. Framstegsrader (prefix "[batch]")
  * reläas live. tmp-filerna städas alltid.
  *
@@ -60,14 +59,13 @@
  *             1 = fel (lagerfel, timeout, oläsbar utdata, ogiltiga flaggor).
  */
 import { spawn, spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_kor_oversatt_batch.ts");
-const TMP_MANIFEST = path.join(TMP_KAT, "tmp_kor_oversatt_batch_manifest.json");
+const TMP_TS = path.join(REPO, "tmp_kor_oversatt_batch.ts");
+const TMP_MANIFEST = path.join(REPO, "tmp_kor_oversatt_batch_manifest.json");
 const MARK_START = "===KOR_OVERSATT_BATCH_JSON_START===";
 const MARK_END = "===KOR_OVERSATT_BATCH_JSON_END===";
 
@@ -163,9 +161,9 @@ function typOchSprakUrId(id: string): [string, string] {
 
 // ── Läge --status: räkna källregister + lager, NOLL motoranrop ───────────────
 async function koraStatus(): Promise<Record<string, unknown>> {
-  const { listaKallor } = await import("../src/lib/oversattning/kalla");
-  const { lasStatusKarta } = await import("../src/lib/oversattning/lager");
-  const { getSupabaseRest } = await import("../src/lib/supabase-rest");
+  const { listaKallor } = await import("./src/lib/oversattning/kalla");
+  const { lasStatusKarta } = await import("./src/lib/oversattning/lager");
+  const { getSupabaseRest } = await import("./src/lib/supabase-rest");
 
   const kallor = listaKallor();
   const kallorPerTyp: Record<string, number> = {};
@@ -230,15 +228,15 @@ async function koraStatus(): Promise<Record<string, unknown>> {
 
 // ── Läge batch: maximal översättningsomgång under slutvillkoren ──────────────
 async function koraBatch(manifest: Manifest): Promise<Record<string, unknown>> {
-  const { listaKallor, MALSPRAK } = await import("../src/lib/oversattning/kalla");
+  const { listaKallor, MALSPRAK } = await import("./src/lib/oversattning/kalla");
   const {
     oversatt,
     lasMyMemoryStatistik,
     MYMEMORY_MAX_ORD_PER_DAG,
     MYMEMORY_MAX_ANROP_PER_DAG,
     MAX_KALLTEXST_LANGD,
-  } = await import("../src/lib/oversattning/motor");
-  const { lasSpara, lasStatusKarta } = await import("../src/lib/oversattning/lager");
+  } = await import("./src/lib/oversattning/motor");
+  const { lasSpara, lasStatusKarta } = await import("./src/lib/oversattning/lager");
 
   const FLUSH = 12; // rader per lasSpara-anrop — ≤ lager.ts RADERA_MAX_NYCKLAR
   const MOTOR_BORTA_GRANS = 3; // konsekutiva vantar-motor utan framgång ⇒ stopp
@@ -495,7 +493,7 @@ function doda(barn) {
 
 function korTsx(timeoutMs) {
   return new Promise((res) => {
-    const barn = spawn("npx", ["--yes", "tsx", ".tmp/tmp_kor_oversatt_batch.ts", ".tmp/tmp_kor_oversatt_batch_manifest.json"], {
+    const barn = spawn("npx", ["--yes", "tsx", "tmp_kor_oversatt_batch.ts", "tmp_kor_oversatt_batch_manifest.json"], {
       cwd: REPO,
       shell: true,
       env: { ...process.env, NO_COLOR: "1" },
@@ -635,8 +633,6 @@ async function main() {
     return 1;
   }
 
-  // .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_MANIFEST, JSON.stringify({ lage: f.status ? "status" : "batch", maxMin: f.maxMin, maxAntal: f.maxAntal }), "utf8");
   writeFileSync(TMP_TS, TS_KOD, "utf8");
 

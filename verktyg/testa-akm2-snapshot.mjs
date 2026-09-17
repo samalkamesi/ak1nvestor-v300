@@ -4,9 +4,8 @@
  * våg 86) + retention-kopplingen i src/lib/autonom/organ.ts.
  *
  * Mönster som verktyg/testa-akm2-karna.mjs (node kan inte importera TS direkt):
- *   1. Genererar tmp-Testfil (TS) i .tmp/ (våg 150:s gitignorerade
- *      engångsyta, tsconfig-exkluderad — o44),
- *   2. kör den med: npx --yes tsx .tmp/tmp_akm2_snapshot_koll.ts,
+ *   1. Genererar tmp-Testfil (TS) i repo-roten,
+ *   2. kör den med: npx --yes tsx tmp_akm2_snapshot_koll.ts,
  *   3. läser JSON-svaret mellan markörerna, skriver ut PASS/FAIL, städar.
  *
  * REN LOGIK — INGEN nätförbindelse: .env laddas ALDRIG här (getSupabaseRest
@@ -41,14 +40,13 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
 const TMP_NAMN = "tmp_akm2_snapshot_koll.ts";
-const TMP = path.join(TMP_KAT, TMP_NAMN);
+const TMP = path.join(REPO, TMP_NAMN);
 const MARK_START = "===AKM2_SNAP_JSON_START===";
 const MARK_END = "===AKM2_SNAP_JSON_END===";
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
@@ -70,7 +68,7 @@ import {
   lasAkm2Snapshot,
   skrivAkm2Snapshot,
   type Akm2SnapshotLasRad,
-} from "../src/lib/akm2-snapshot-lagring";
+} from "./src/lib/akm2-snapshot-lagring";
 
 const MARK_START = "===AKM2_SNAP_JSON_START===";
 const MARK_END = "===AKM2_SNAP_JSON_END===";
@@ -290,12 +288,10 @@ function hittaJson(ut) {
   return ut.slice(a + MARK_START.length, b);
 }
 
-// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
 try {
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP, TS_KOD, "utf8");
-  console.log("[testa-akm2-snapshot] kör npx --yes tsx .tmp/" + TMP_NAMN + " ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/" + TMP_NAMN], {
+  console.log("[testa-akm2-snapshot] kör npx --yes tsx " + TMP_NAMN + " ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", TMP_NAMN], {
     cwd: REPO,
     shell: true,
     encoding: "utf8",

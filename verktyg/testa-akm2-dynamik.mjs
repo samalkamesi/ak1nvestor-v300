@@ -4,10 +4,9 @@
  *
  * Samma mönster som verktyg/testa-fundamental-vagmotor.mjs (node kan inte
  * importera TS direkt):
- *   1. Genererar .tmp/tmp_dynamik_koll.ts (våg 150:s gitignorerade
- *      engångsyta, tsconfig-exkluderad — o44) — importerar dynamiklagret
+ *   1. Genererar tmp_dynamik_koll.ts i repots rot — importerar dynamiklagret
  *      och fundamental-vagmotorn (för råklass-beviset på stigande P/B-serie).
- *   2. Kör den med: npx --yes tsx .tmp/tmp_dynamik_koll.ts
+ *   2. Kör den med: npx --yes tsx tmp_dynamik_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller (≥ 12 krav — här 30):
@@ -29,13 +28,12 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_dynamik_koll.ts");
+const TMP_TS = path.join(REPO, "tmp_dynamik_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ────────
@@ -53,16 +51,16 @@ import {
   phiTillJustering,
   raknaDynamikLager,
   tekniskRiktningTotalt,
-} from "../src/lib/akm2/dynamik";
-import { klassaVag } from "../src/lib/portfolj-forskning/fundamental-vagmotor";
-import { HORIZONTER_VIKT } from "../src/lib/portfolj-forskning/typer";
+} from "./src/lib/akm2/dynamik";
+import { klassaVag } from "./src/lib/portfolj-forskning/fundamental-vagmotor";
+import { HORIZONTER_VIKT } from "./src/lib/portfolj-forskning/typer";
 import type {
   AKM1Bedomning,
   FVagAnalys,
   Horisont,
   VagKlass,
   VariabelVagstatus,
-} from "../src/lib/portfolj-forskning/typer";
+} from "./src/lib/portfolj-forskning/typer";
 
 type Kontroll = { namn: string; ok: boolean; detalj: string };
 const KOLL: Kontroll[] = [];
@@ -316,12 +314,10 @@ process.exit(antalFail > 0 ? 1 : 0);
 `;
 
 // ── 2) Skriv tmp-fil, kör via tsx, städa ────────────────────────────────────
-// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
 function main() {
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  console.log("[testa-akm2-dynamik] kör npx --yes tsx .tmp/tmp_dynamik_koll.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_dynamik_koll.ts"], {
+  console.log("[testa-akm2-dynamik] kör npx --yes tsx tmp_dynamik_koll.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_dynamik_koll.ts"], {
     cwd: REPO,
     stdio: "inherit",
     shell: true,

@@ -17,9 +17,8 @@
  *   okänd nyckel       → VARNING + skip (finns inte i källa-registret)
  *
  * KÖRMÖNSTER (samma som verktyg/validera-motorer.mjs): node kan inte importera
- * TS direkt → skriptet genererar tmp_import_oversattning.ts i .tmp/ (våg 150:s
- * gitignorerade engångsyta, tsconfig-exkluderad — o44; "../src/lib/..."-
- * importer löser sig därifrån), kör den med `npx --yes tsx` under
+ * TS direkt → skriptet genererar tmp_import_oversattning.ts i repo-roten (så
+ * att "./src/lib/..."-importer löser sig), kör den med `npx --yes tsx` under
  * hård tidsbudget och läser JSON-svaret mellan ASCII-markörer. tmp-filen och
  * manifestet städas alltid (även vid fel/timeout).
  *
@@ -42,15 +41,14 @@
  * Avslutskod: 0 = ok (även nedgraderat tabell-saknas-läge), 1 = fel.
  */
 import { spawn, spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const IMPORT_KAT = path.join(REPO, "data", "oversattning-import");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_import_oversattning.ts");
-const TMP_MANIFEST = path.join(TMP_KAT, "tmp_import_oversattning_manifest.json");
+const TMP_TS = path.join(REPO, "tmp_import_oversattning.ts");
+const TMP_MANIFEST = path.join(REPO, "tmp_import_oversattning_manifest.json");
 const TIMEOUT_MS = 300_000; // 5 min: 17 MB källa-register + kontroller + nätkall
 const MARK_START = "===IMPORT_OVERSATTNING_JSON_START===";
 const MARK_END = "===IMPORT_OVERSATTNING_JSON_END===";
@@ -209,10 +207,10 @@ async function kor(): Promise<Record<string, unknown>> {
   if (!manifestSokvag) throw new Error("manifest-sökväg saknas (argv[2])");
   const manifest = JSON.parse(readFileSync(manifestSokvag, "utf8")) as ManifestFiler;
 
-  const { listaKallor } = await import("../src/lib/oversattning/kalla");
-  const { korKontroller, KVALITETSTRASKEL } = await import("../src/lib/oversattning/kontroller");
-  const { bestamStatus } = await import("../src/lib/oversattning/motor");
-  const { lasSpara, TabellSaknasFel } = await import("../src/lib/oversattning/lager");
+  const { listaKallor } = await import("./src/lib/oversattning/kalla");
+  const { korKontroller, KVALITETSTRASKEL } = await import("./src/lib/oversattning/kontroller");
+  const { bestamStatus } = await import("./src/lib/oversattning/motor");
+  const { lasSpara, TabellSaknasFel } = await import("./src/lib/oversattning/lager");
 
   // Källkarta: scope-nyckel → källa. ui-nycklar ("nav.lar") och kursblocksnycklar
   // ("zero-to-one:kap1:block1") delar inte namnrymd (ui har inga kolon).
@@ -360,7 +358,7 @@ function doda(barn) {
 
 function korTsx() {
   return new Promise((res) => {
-    const barn = spawn("npx", ["--yes", "tsx", ".tmp/tmp_import_oversattning.ts", ".tmp/tmp_import_oversattning_manifest.json"], {
+    const barn = spawn("npx", ["--yes", "tsx", "tmp_import_oversattning.ts", "tmp_import_oversattning_manifest.json"], {
       cwd: REPO,
       shell: true,
       env: { ...process.env, NO_COLOR: "1" },
@@ -426,8 +424,6 @@ async function main() {
     return 1;
   }
 
-  // .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_MANIFEST, JSON.stringify({
     kontrollera,
     importSokvag: IMPORT_KAT,

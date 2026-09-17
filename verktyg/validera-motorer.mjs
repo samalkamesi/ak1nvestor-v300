@@ -9,11 +9,10 @@
  * avslutskod 1 — Kvalitetsvakten (sektion 7) stoppar då med GUL/RÖD.
  *
  * Skriptet gör så här (node kan inte importera TS direkt):
- *   1. Genererar .tmp/tmp_motor_koll.ts (våg 150:s gitignorerade engångsyta,
- *      tsconfig-exkluderad — o44) — en fil som sätter upp en
+ *   1. Genererar tmp_motor_koll.ts i repots rot — en fil som sätter upp en
  *      localStorage-shim (klientmotorernas kontrakt) och DÄREFTER importerar
  *      motorerna via await import(...) och kör alla kontroller.
- *   2. Kör den med: npx --yes tsx .tmp/tmp_motor_koll.ts  (under en hård
+ *   2. Kör den med: npx --yes tsx tmp_motor_koll.ts  (under en hård
  *      Promise.race-tidsbudget på 90 sekunder — robusthetskrav E).
  *   3. Läser JSON-utdata mellan två ASCII-markörer, skriver/apenderar
  *      Markdown-rapport till data/rapporter/motorervalidering-2026-09-02.md.
@@ -74,8 +73,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_motor_koll.ts");
+const TMP_TS = path.join(REPO, "tmp_motor_koll.ts");
 const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "motorervalidering-2026-09-02.md");
 const TIMEOUT_MS = 90_000; // krav E: 90 s totalbudget
 const MARK_START = "===MOTORKOLL_JSON_START===";
@@ -3813,40 +3811,40 @@ function skriv(timeout: boolean): void {
 let fardig = false;
 (async () => {
   // Importera FÖRST när shimen är satt — klientmodulerna ser window/localStorage.
-  VFM = await import("../src/lib/vagfundament-motor");
-  ANA = await import("../src/lib/analys-motor");
-  NET = await import("../src/lib/netnet-motor");
-  KON = await import("../src/lib/konfluens-motor");
-  PVA = await import("../src/lib/portfolj-vagor");
-  NLU = await import("../src/lib/chatbot-nlu");
-  OMT = await import("../src/lib/omtanke-motor");
-  KUR = await import("../src/lib/kurstips");
-  DAS = await import("../src/lib/dashfraga");
-  VKN = await import("../src/lib/vagkon");
-  SRP = await import("../src/lib/spaced-repetition");
-  VPL = await import("../src/lib/veckoplan");
-  BRE = await import("../src/lib/briefing");
-  BDG = await import("../src/lib/badges");
-  ABK = await import("../src/lib/analysbank");
-  AST = await import("../src/lib/assistent");
-  KAR = await import("../src/lib/akm2/karna");
-  RSK = await import("../src/lib/portfolj-forskning/riskportfolj");
-  AK2 = await import("../src/lib/portfolj-forskning/akm2-koppling");
-  OSK = await import("../src/lib/akm3/osakerhet");
-  PER = await import("../src/lib/portfolj-forskning/peer");
-  FVG = await import("../src/lib/portfolj-forskning/fundamental-vagmotor");
-  UPP = await import("../src/lib/portfolj-forskning/uppfoljning");
-  VVAL = await import("../src/lib/vagvalidering");
-  ENS = await import("../src/lib/akm3/ensemble");
-  REG = await import("../src/lib/akm3/regim");
-  OVS = await import("../src/lib/oversattning/termbank");
-  KLL = await import("../src/lib/oversattning/kalla");
-  KTR = await import("../src/lib/oversattning/kontroller");
-  MOT = await import("../src/lib/oversattning/motor");
-  LGR = await import("../src/lib/oversattning/lager");
-  ORD = await import("../src/lib/ordlista");
-  FLS = await import("../src/lib/forskningslaget");
-  TEN = await import("../src/lib/pro/tenant");
+  VFM = await import("./src/lib/vagfundament-motor");
+  ANA = await import("./src/lib/analys-motor");
+  NET = await import("./src/lib/netnet-motor");
+  KON = await import("./src/lib/konfluens-motor");
+  PVA = await import("./src/lib/portfolj-vagor");
+  NLU = await import("./src/lib/chatbot-nlu");
+  OMT = await import("./src/lib/omtanke-motor");
+  KUR = await import("./src/lib/kurstips");
+  DAS = await import("./src/lib/dashfraga");
+  VKN = await import("./src/lib/vagkon");
+  SRP = await import("./src/lib/spaced-repetition");
+  VPL = await import("./src/lib/veckoplan");
+  BRE = await import("./src/lib/briefing");
+  BDG = await import("./src/lib/badges");
+  ABK = await import("./src/lib/analysbank");
+  AST = await import("./src/lib/assistent");
+  KAR = await import("./src/lib/akm2/karna");
+  RSK = await import("./src/lib/portfolj-forskning/riskportfolj");
+  AK2 = await import("./src/lib/portfolj-forskning/akm2-koppling");
+  OSK = await import("./src/lib/akm3/osakerhet");
+  PER = await import("./src/lib/portfolj-forskning/peer");
+  FVG = await import("./src/lib/portfolj-forskning/fundamental-vagmotor");
+  UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
+  VVAL = await import("./src/lib/vagvalidering");
+  ENS = await import("./src/lib/akm3/ensemble");
+  REG = await import("./src/lib/akm3/regim");
+  OVS = await import("./src/lib/oversattning/termbank");
+  KLL = await import("./src/lib/oversattning/kalla");
+  KTR = await import("./src/lib/oversattning/kontroller");
+  MOT = await import("./src/lib/oversattning/motor");
+  LGR = await import("./src/lib/oversattning/lager");
+  ORD = await import("./src/lib/ordlista");
+  FLS = await import("./src/lib/forskningslaget");
+  TEN = await import("./src/lib/pro/tenant");
   körVagfundament = VFM.körVagfundament;
   hamtaBalansPoster = VFM.hamtaBalansPoster;
   körAnalysMotor = ANA.körAnalysMotor;
@@ -3896,7 +3894,7 @@ function doda(barn) {
 
 async function kørTsx() {
   return new Promise((res) => {
-    const barn = spawn("npx", ["--yes", "tsx", ".tmp/tmp_motor_koll.ts"], {
+    const barn = spawn("npx", ["--yes", "tsx", "tmp_motor_koll.ts"], {
       cwd: REPO,
       shell: true,
       env: { ...process.env, NO_COLOR: "1" },
@@ -3956,7 +3954,7 @@ function byggRapport(payload, meta) {
   const linjer = [];
   linjer.push("---\n");
   linjer.push("# Motorervalidering — 100%-väktaren — " + ts + "\n");
-  linjer.push("- **Skript:** `verktyg/validera-motorer.mjs` (genererar `.tmp/tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)");
+  linjer.push("- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)");
   linjer.push("- **Miljö:** node " + process.version + " på " + process.platform + "; tickers: VOLV-B.ST, SAAB-B.ST (fas A live-data; fas B källfrusen uppspelning)");
   linjer.push("- **Körtid:** " + meta.totalS.toFixed(1) + " s (budget 90 s" + (meta.timeout ? " — **ÖVERSKRIDEN, process dödad**" : ", inom budget") + ")");
   const intern = payload && typeof payload.total_ms === "number" ? payload.total_ms : null;
@@ -4009,13 +4007,11 @@ function byggRapport(payload, meta) {
 // ── main ──────────────────────────────────────────────────────────────────────
 async function main() {
   const t0 = Date.now();
-  // .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
-  process.stdout.write("[validera-motorer] genererar .tmp/tmp_motor_koll.ts ...\n");
-  mkdirSync(TMP_KAT, { recursive: true });
+  process.stdout.write("[validera-motorer] genererar tmp_motor_koll.ts ...\n");
   writeFileSync(TMP_TS, TS_KOD, "utf8");
   mkdirSync(path.dirname(RAPPORT_SOK), { recursive: true });
   try {
-    process.stdout.write("[validera-motorer] kör npx --yes tsx .tmp/tmp_motor_koll.ts (budget 90 s) ...\n");
+    process.stdout.write("[validera-motorer] kör npx --yes tsx tmp_motor_koll.ts (budget 90 s) ...\n");
     const r = await kørTsx();
     // Källfrysnings-diagnostik: om uppspelningen saknade en url syns det här
     // (motorn sväljer felet → enda spåret är stderr) — skrivs vid < 100% PASS.

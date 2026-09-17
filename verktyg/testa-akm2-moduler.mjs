@@ -5,10 +5,9 @@
  *
  * Skriptet gör så här (node kan inte importera TS direkt — samma mönster som
  * verktyg/testa-fundamental-vagmotor.mjs):
- *   1. Genererar .tmp/tmp_akm2_modul_koll.ts (våg 150:s gitignorerade
- *      engångsyta, tsconfig-exkluderad — o44) — en fil som importerar
+ *   1. Genererar tmp_akm2_modul_koll.ts i repots rot — en fil som importerar
  *      src/lib/akm2/moduler och kör kontroller mot två fixtures + kantfall.
- *   2. Kör den med: npx --yes tsx .tmp/tmp_akm2_modul_koll.ts
+ *   2. Kör den med: npx --yes tsx tmp_akm2_modul_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Fixtures (syntetiska — ingen verklig kursdata):
@@ -26,19 +25,18 @@
  * Pedagogiskt testverktyg — ALDRIG investeringsråd.
  */
 import { spawnSync } from "node:child_process";
-import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_KAT = path.join(REPO, ".tmp");
-const TMP_TS = path.join(TMP_KAT, "tmp_akm2_modul_koll.ts");
+const TMP_TS = path.join(REPO, "tmp_akm2_modul_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ────────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_akm2_modul_koll.ts — GENERERAD av verktyg/testa-akm2-moduler.mjs. Raderas efter körning.
-import type { BolagsNyckeltal, Bransch } from "../src/lib/portfolj-forskning/typer";
+import type { BolagsNyckeltal, Bransch } from "./src/lib/portfolj-forskning/typer";
 import {
   KARNA_MODUL_FUNKTIONER,
   KARNA_MODUL_VARIABLER,
@@ -56,7 +54,7 @@ import {
   raknaV27Utdelningskontinuitet,
   raknaV28EarningsYield,
   raknaV29Insider,
-} from "../src/lib/akm2/moduler";
+} from "./src/lib/akm2/moduler";
 
 type Kontroll = { namn: string; ok: boolean; detalj: string };
 const KOLL: Kontroll[] = [];
@@ -283,12 +281,10 @@ process.exit(antalFail > 0 ? 1 : 0);
 `;
 
 // ── 2) Skriv tmp-fil, kör via tsx, städa ────────────────────────────────────
-// .tmp/ = våg 150:s gitignorerade engångsyta, tsconfig-exkluderad (o44).
 function main() {
-  mkdirSync(TMP_KAT, { recursive: true });
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  console.log("[testa-akm2-moduler] kör npx --yes tsx .tmp/tmp_akm2_modul_koll.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_akm2_modul_koll.ts"], {
+  console.log("[testa-akm2-moduler] kör npx --yes tsx tmp_akm2_modul_koll.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_akm2_modul_koll.ts"], {
     cwd: REPO,
     stdio: "inherit",
     shell: true,

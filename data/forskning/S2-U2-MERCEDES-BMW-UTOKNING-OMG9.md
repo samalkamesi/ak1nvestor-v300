@@ -71,9 +71,13 @@ Appenden (JSON.parse → JSON.stringify(u, null, 2), omg 8-skriptets mönster or
 | Bygge | INGET (endast data/ + public/ = dataleverans; Vonovia-precedensen — servade dataset-sidor visar 144-tal tills prod-synkens bygge) |
 | R2 | Orörd — priser/tier/publicering orörda; data/blogg/ orörd; src/ orörd |
 
-## Race-bokföring
+## Race-bokföring — SLUTLÄGE efter två rättelser (maskinbevisat ur repots diffar)
 
-Inget race denna omgång (första leveransen i manifestet vid min commit): arbetsytan bar endast mina två filer vid KVD. Syskonens u1/u3-rader, om de landar i bolagsunivers.json före min commit, åker med i commiten med innehållet intakt (BASF-precedenten) — ägarskapet MBG.DE + BMW.DE + llms-146-block = s2-u2 dokumenteras här; deras rader förblir deras dokumentation.
+**Förloppet (serialiserat rent — INGET innehåll åkte med i någon riktning):** min append 144→146 → **min commit 707b4cdd bar exakt MBG.DE+BMW.DE (146 rader, BABA frånvarande — maskinverifierat: `git show 707b4cdd:…bolagsunivers.json` = 146 rader utan BABA; föräldern = 144)** → syskonet s2-u1:s append läste mitt 146-träd och la BABA → **deras commit 1a125ebf bar ENDAST BABA-raden + llms-147-regen + deras docs** (deras rättES 0cc8968b bevisar diff-staten: 90 rader = en bolagsrad) → deras 0cc8968b. Git:index.lock serialiserade fönstren — flock-kontraktet gjorde sitt jobb; det ALDRIG inträffade "sväljandet" som båda parter först bokförde.
+
+**Dokumentationshistorik (ärlighetsdoktrinen, rättelse på rättelse):** (1) min original-sektion skrevs "inget race" vid KVD-tiden — det visade sig RÄTT i efterhand (min commit bar bara mina rader) men var vid skrivandekorret obekräftat; (2) min första RÄTTES (worklog) hävdade att 707b4cdd svepte med BABA+llms-147 — FELAKTIGT: post-commit-HEAD-kontrollen kördes EFTER u1:s 1a125ebf landat och tolkade deras läge som min commits innehåll (läxa: verifiera VILKEN commit som är HEAD — HEAD rör sig under aktiva fabriksfönster); (3) denna sektion = slutläget, byggt på `git show`-bevisen, i överensstämmelse med u1:s egen rättES 0cc8968b ("u2 committade MERCEDES-BENZ+BMW själva … min commit bar ENDAST BABA-raden … inget åkte med").
+
+**Ägarskap (opponerat av båda sidor):** MBG.DE + BMW.DE + deras dokumentation + llms-146-momentet = s2-u2 (707b4cdd); BABA + llms-147-regen = s2-u1 (1a125ebf). Slutläge: universum == llms == HEAD == 147. Konsumentens slutläge bärs av deras 147-regen: 19 bolag · P/E 18,9 kv 15,3–22,4 (n=18) — Alibabas 24,48 lyfter medianen +0,7 över mina 18,2; totalt 21,2 (n=138 av 147). u1 valde Alibaba (Kina/konsument) från Kanada/Kina-koordinaterna — Sverige/hälsa-koordinaten (P/E-matta 4) lämnades orörd och kvarstår; inga tickerkollisioner med mina rader.
 
 ## Notiser till dataägaren
 

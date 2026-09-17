@@ -85,12 +85,56 @@ function ramTillgangligtMB() {
   }
 }
 
-/** Läs /tmp/synk-build.log — OOM-spår ("Killed", JS-heap)? */
-function byggetOomDodades() {
+/** Läs en loggfil till sträng — "" vid saknad/oläsbar (o49: bedömningen
+ *  skiljer "filen tom" från "filen saknas" i SIGNATURFALLET att flock
+ *  aldrig släppte in barnet; saknad fil = samma sak här — barnet äger skapandet). */
+function slasLogg(filvag) {
   try {
-    return /Killed|SIGKILL|heap out of memory|CBKilled/i.test(fs.readFileSync("/tmp/synk-build.log", "utf8"));
+    return fs.readFileSync(filvag, "utf8");
   } catch {
-    return false;
+    return "";
+  }
+}
+
+/**
+ * Bedöm ett misslyckat bygg ur dess loggtexter (o49): TRE möjliga typer —
+ * · "startade-aldrig": flock -w 900 fick ALDRIG deploylåset ⇒ barnet dog
+ *   FÖRE inre bash ⇒ ingen av loggfilerna skrevs (deploy-konkurrens,
+ *   inte kod- eller patch-fel — samma vänta-och-försök-igen som OOM)
+ * · "oom": OOM-spår i byggloggen ("Killed", JS-heap) = infraskal
+ * · "riktigt-fel": allt annat kräver revert-väg eller diagnos.
+ * Rotorsake (2026-09-17 11:29+11:39): två patch-byggfegl utan spår i
+ * /tmp — loggarna hade redan skrivits över av senare lyckade byggen,
+ * orsaken blev obestämbar och loop-skyddet stängde RCE-patchen på
+ * tre kvitton VARAV ETT SPURIOUS (se o49).
+ */
+export function bedomByggMisslyckande(npmciText, byggText) {
+  const npmci = typeof npmciText === "string" ? npmciText : "";
+  const bygg = typeof byggText === "string" ? byggText : "";
+  if (npmci.trim() === "" && bygg.trim() === "") return "startade-aldrig";
+  if (/Killed|SIGKILL|heap out of memory|CBKilled/i.test(bygg)) return "oom";
+  return "riktigt-fel";
+}
+
+/**
+ * Bevara bygg-loggar före de skrivs över (o49 Kur B): kopiera källfilerna
+ * in i en målmapp med tidsstämpel-prefix. Returnerar de sparade namnen
+ * (tom lista = inget gick att bevara — kallas ALDRIG kritiskt).
+ */
+export function bevaraByggLoggar(mapp, kallor) {
+  try {
+    fs.mkdirSync(mapp, { recursive: true });
+    const stampel = new Date().toISOString().replace(/[:.]/g, "-");
+    const sparade = [];
+    for (const [kalla, namn] of kallor) {
+      try {
+        fs.copyFileSync(kalla, path.join(mapp, `${stampel}-${namn}`));
+        sparade.push(namn);
+      } catch { /* källan borta — inget att bevara */ }
+    }
+    return sparade;
+  } catch {
+    return [];
   }
 }
 
@@ -420,6 +464,67 @@ export function skrivPatchKvitto(filvag, post, resultat, detalj) {
   }
 }
 
+/**
+ * O48 (r58:s köpost, 2026-09-17): PM2-VAKTEN för patch-byggfönstret.
+ * Rotorsakan den stänger: 16.3.5-byggets .next-tömning dog på ENOTEMPTY
+ * rmdir .next/server/app/ar/kurser — pm2:s live-ISR skrev filer i
+ * kataloger som höll på att rivas (två fallna patch-deployer 11:29 +
+ * 11:39, därefter död patch-kö och RCE:n kvar i prod). Stoppad pm2 =
+ * inga ISR-skrivare = inget race. Vakten är den mekaniska garantin för
+ * att prod ALDRIG lämnas utan process: aterstarta() ropas i main():s
+ * finally och täcker ALLA utfall (return, felgrenar, kastat fel).
+ * starta() är ok-vägens vanliga restart + nollställer stoppflaggan så
+ * finally blir no-op — misslyckas den fångas den här internt och
+ * finally:n gör nödstarten (förr var en misslyckad restart i ok-vägan
+ * tyst). pm2Kora/logg injiceras — testsvitan spelar in anropen i stället
+ * för att röra skarp pm2.
+ */
+export function skapaPm2Vakt(pm2Kora = standardPm2, logg = logga) {
+  let stoppad = false;
+  return {
+    arStoppad: () => stoppad,
+    stoppa() {
+      if (stoppad) return true;
+      try {
+        pm2Kora(["stop", "ak1a"]);
+        stoppad = true;
+        logg("PATCH-KÖ: pm2 stoppad under byggfönstret (o48/r58-kur — tomt .next = inga ISR-skrivare = inget race; återstart garanteras av main():s finally)");
+        return true;
+      } catch (e) {
+        logg("PATCH-KÖ: pm2-stopp misslyckades — bygger vidare som idag (ISR-racet lever, ombygge-grenen fångar): " + String(e && e.message ? e.message : e).slice(0, 80));
+        return false;
+      }
+    },
+    starta() {
+      try {
+        pm2Kora(["restart", "ak1a"]);
+        stoppad = false;
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    aterstarta() {
+      if (!stoppad) return "behovdes-ej";
+      stoppad = false;
+      try {
+        pm2Kora(["restart", "ak1a"]);
+        logg("PATCH-KÖ: pm2 återstartad efter byggfönstret (o48-garantin)");
+        return "startad";
+      } catch (e) {
+        logg("PATCH-KÖ: pm2-återstart MISSLYCKADES — KRÄVER MANUELL START (pm2 start ak1a): " + String(e && e.message ? e.message : e).slice(0, 80));
+        return "misslyckades";
+      }
+    },
+  };
+}
+
+function standardPm2(args) {
+  execFileSync("pm2", args, { timeout: 60_000, stdio: "ignore" });
+}
+
+const pm2Vakt = skapaPm2Vakt();
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -448,6 +553,12 @@ async function main() {
     await korSynk();
   } finally {
     try { fs.rmSync(lasSokvag, { recursive: true, force: true }); } catch {}
+    // O48: prod lämnas ALDRIG utan process — patch-fönstrets pm2-stopp
+    // återtas här i ALLA utfall (return, felgrenar, kastat fel).
+    // "misslyckades" = läget larmas via audit — ALDRIG tyst (r58-doktrinen).
+    if (pm2Vakt.aterstarta() === "misslyckades") {
+      skrivAudit("prod-synk", "pm2_ej_startad", "patch-fonster", "pm2-återstart efter patch-byggfönstret misslyckades — manuell start krävs (pm2 start ak1a)");
+    }
   }
 }
 
@@ -529,6 +640,18 @@ async function korSynk() {
     if (installOk) {
       patchInstallerad = true;
       logga(`PATCH-KÖ installerad: ${spec} — package-lock uppdaterad i arbetsytan`);
+      // O48 (r58:s köpost): pm2 STOPPAS före byggsteget i patch-läget —
+      // ett lock-byte (t.ex. next 16.3.2→16.3.5) byter chunknamn och
+      // tömmer .next, och pm2:s live-ISR hinner skriva filer i kataloger
+      // som håller på att rmdir:as (ENOTEMPTY, bevisat 11:29 + 11:39).
+      // Stoppet sker FÖRE korBygg så hela fönstret (npm ci raderar
+      // node_modules + build tömmer .next) är skrivarfritt — och utan de
+      // bevisade next-not-found-restartlooparna (pm2 stoppad restartar
+      // inte). Återstarten är mekaniskt garanterad av main():s finally.
+      // Misslyckas stoppet: byggfönstret körs som idag och felgrenen
+      // (ombygge på god lock) fångar fallet — fail-open mot gårdagens
+      // beteende, aldrig ny död vinkel.
+      pm2Vakt.stoppa();
     } else {
       logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "npm install avslutades med felkod");
@@ -558,11 +681,21 @@ async function korSynk() {
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
-  if (await korBygg()) {
+  const korResultat = await korBygg();
+  const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
+  if (korResultat) {
     ok = true;
-  } else if (byggetOomDodades()) {
+  } else if (feltyp === "startade-aldrig") {
+    // o49: flock -w 900 fick aldrig deploylåset (manuell deploy/pmpa pågick)
+    // ⇒ byggkommandot startade ALDRIG och loggfilerna förblev tomma. Det är
+    // konkurrens, inte kod- eller patch-fel: INGA kvitton, INGEN revert —
+    // HEAD orört, nytt försök nästa poll (samma vänta-semantik som OOM).
+    if (patchInstallerad) aterskapaPatchLas();
+    logga("bygg startade ALDRIG (deploylåset upptaget hela -w 900 — flock-konkurrens, ej fel) — HEAD orört, nytt försök nästa poll");
+    return;
+  } else if (feltyp === "oom") {
     // OOM = infraskal (OOM-killern/JS-heapet), INTE kodfel: HEAD lämnas
-    // orött och senaste-deployad är oförändrad ⇒ automatiskt nytt försök
+    // orätt och senaste-deployad är oförändrad ⇒ automatiskt nytt försök
     // nästa poll när fabrikens barn frigjort minnet. ALDRIG revert/reset
     // av commits som aldrig fått ett ärligt byggtillfälle. Patchad lock
     // rivs (inget kvitto — OOM är inte patchens fel, nytt försök nästa poll).
@@ -571,10 +704,26 @@ async function korSynk() {
     return;
   } else {
     if (patchInstallerad) {
-      // patchen kan vara gärningsman: riv lock-ändringen FÖRE revert-vägen
-      // (ombygget sker på bevisat fungerande lock) + kvitta försöket
+      // patchen kan vara gärningsman: BEVARA loggarna FÖRE allt annat (o49
+      // Kur B — /tmp skrivs över av nästa bygg och 11:29/11:39-felen blev
+      // obestämbara just därför), riv sedan lock-ändringen FÖRE revert-vägen
+      // (ombygget sker på bevisat fungerande lock) + kvitta försöket.
+      // o49 Kur A: patchInstallerad NOLLSTÄLLS här — commit-steget i steg 7
+      // ska ALDRIG försöka bokföra en redan riven lock. Bugg-bevis
+      // 2026-09-17 11:33: bygg-miss → revert → lyckat ombygg → "git add
+      // package.json package-lock.json" hade INGET staggat → commit
+      // "nothing to commit" exit 1 → SPURIOUS misslyckad-kvitto som
+      // tröttade loop-skyddsräknaren utan att patchen ens fått skulden.
+      const sparade = bevaraByggLoggar(path.join(VAKT, "patch-byggfel"), [
+        ["/tmp/synk-npmci.log", "npmci.log"],
+        ["/tmp/synk-build.log", "build.log"],
+      ]);
+      if (sparade.length) {
+        logga(`PATCH-KÖ: bygg-loggar bevarade (${sparade.join(", ")}) i data/vakten/patch-byggfel/ — rotorsaksdiagnos överlever nästa bygg`);
+      }
       aterskapaPatchLas();
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "bygg misslyckades med patchad lock");
+      patchInstallerad = false;
     }
     if (!nya.trim()) {
       // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —

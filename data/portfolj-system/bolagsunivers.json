@@ -12313,5 +12313,275 @@
       ]
     },
     "notering": "PATENTKLIPPAN I RÅDATA: Humiras exklusivitet föll i USA 2023 — resultatserien 11 782→4 820→4 238→4 186 M$ är klippan själva (−29,2 %/år endpoint) medan omsättningen 58,1→61,2 mdr $ (+1,8 %/år) knappt märker den — Skyrizi/Rinvoq-pickupen bär intäkterna vidare; UPPSVINGET syns TTM: netto +67,7 % (6 270 M$) och EPS 3,54 $ (+68,5 %) — patentcykelns båda halvor i EN rad (RIO-notens cykelpedagogik, fast förorsakad av juridik inte granit); NETTO 9,8 % MOT EBIT 35,6 % — UBER-notens exakta spegelbild i samma omgång: förvärvade immateriella rättigheter (Allergan) amortiseras och skrivs ned under driftsraden, GAAP-resultatet är kroniskt depressivt medan FCF-marginalen 28,3 % och ROIC 17,7 % mot WACC 5,4 % visar verksamheten bakom bokföringen — P/E 74,3 mot forward 17,3 ⇒ prognosTillväxt +328,7 % (trailing GAAP vs framåtblickande estimat — samma halva sanning som PEG 0,23 enligt spårkonventionen; källans 3-årsprognos EPS +21,7 %/år, PEG 3,42 som not) — multipel på GAAP-tal straffar förvärvare; NEGATIVT BOKFORT EK −3,36 $/aktie: ROE, skuld/EK och P/B alla OSATTA (källa n/a — substansmått meningslösa när återköpen ätit balansräkningen; KO/ABNB-notens slutled), total skuld 70,9 mdr $ mot kassa 6,6 bärs av FCF 18,2 mdr $; UTDDELNINGEN: 6,92 $/aktie = 2,6 % direktavkastning, 54 år av höjningar (ärvt från Abbott-spinoffen 2013 — samma årtal som börspredikan), payout 195,5 % på GAAP-EPS men ~50 % på justerat — payoutens beräkningsbas är del av läxan; beta 0,28 (universums lugnaste i notfamiljen — under KO:s 0,34); USA/hälsa-landaspekten öppnar med denna rad; rapport i USD, kalenderår, NYSE"
+  },
+  {
+    "ticker": "MA",
+    "namn": "Mastercard Incorporated",
+    "bransch": "finans",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/ma/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; stängningskurs 2026-09-16 16:00 EDT, sidorna pålästa 2026-09-17): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, räntetäckning, WACC, 4 räkenskapsår 2022–2025 (kalenderår) — källan redovisar ingen varukostnad (gross profit == revenue alla år)"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 567.75,
+    "marknadsKapitalMdr": 497.35,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1382,
+      "resultatCAGR5ar": 0.1466,
+      "omsattningTillvaxtTTM": 0.16,
+      "prognosTillvaxt": 0.1695
+    },
+    "lonksamhet": {
+      "roe": 2.412,
+      "roic": 0.9378,
+      "bruttoMarginal": 1,
+      "ebitMarginal": 0.5988,
+      "nettoMarginal": 0.4634,
+      "fcfMarginal": 0.4761
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 4.4,
+      "rantaTackning": 28.08,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 1,
+      "bruttoMarginalSpread5ar": 0,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 31.53,
+      "pb": 89.62,
+      "evEbit": 24.29,
+      "peg": 1.86,
+      "fcfYield": 0.0336,
+      "egenKapitalMultipl": null
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        22237,
+        25098,
+        28167,
+        32791
+      ],
+      "resultat": [
+        9930,
+        11195,
+        12874,
+        14968
+      ],
+      "egetKapital": [],
+      "fcf": [
+        10753,
+        11609,
+        14306,
+        17159
+      ]
+    },
+    "notering": "KORTDUOPOLETS ANDRA HALVA (V-redan-i-universumet, KO/PEP-precedenten): V mot MA är datasetets närmaste tvillingpar — P/E 32,0 mot 31,5 och FCF-marginal 47,2 mot 47,6 % är nästan identiska (marknaden prissätter nätverksduopolet som ETT kassflödessystem) medan skillnaderna lever i balansräkningsmåtten: P/B 19,9 mot 89,6, ROE 61,2 mot 241,2 %, skuld/EK 0,68 mot 4,40 — tre artefakter av samma mekanik i olika grad (återköpen äter det bokförda kapitalet: MA:s substans 6,40 $/aktie mot kurs 567,75; universumets högsta P/B är en kapitalstrukturfråga, ingen riskfråga — källans skuld/EBITDA 1,11 med räntetäckning 28× visar skulden 24,6 mot kassa 11,6 mdr $ mätt mot RÖRELSEN); BRUTTOMARGINALEN 100 % = nätverksmodellens signatur: ingen varukostnad existerar (gross profit == revenue i källan alla fyra åren — moat-medel 1,0 med spridning 0,0 pp: kostnadslaget är drift+marknadsföring, inte COGS; V:s 97,7 % är samma värld); FCF-SERIENS KAPITALLÖSA SKALNING: 10,8→11,6→14,3→17,2 mdr $ (+17,0 %/år) med capex endast 0,4–0,5 mdr $/år (mindre än marknadsföringen) — TTM 16,7 mdr $ ger fcfYield 3,4 % på 497-mdr-kroppen; TILLVÄXTEN: omsättning 22,2→32,8 mdr $ (+13,8 %/år endpoint) och resultat 9,9→15,0 mdr $ (+14,7 %/år) med TTM +16,0 % — kassakonverteringen netto 46,3 % mot EBIT 59,9 % (skatte- och minoritetsled, inga nedskrivningsvärldar här); UTDDELNINGEN 3,48 $ = 0,61 % direktavkastning med payout 19,1 % — återbetalningstrappan: utdelning 1,9→2,8 mdr $/år MEN återköp 8,9→12,0 mdr $/år = 80 % av ägarflödet går via aktiekursen, inte kupongen (även bokförda EPS 10,22→16,52 $ +17,4 %/år delvis återköpsköpt — skillnaden mot omsättningstillväxten 13,8 % är aktieantalets minskning); PEG 1,86 spårkonvention (källans 1,63 på 3-års EPS-prognos +16,30 %/år som not — båda över 1: duopolets tillväxt är prissatt, inte gratis); beta 0,74, 52-vägers spann 464,52–601,62 $ (kursen i övre kvartilen), nästa rapport 2026-10-29; ROIC 93,8 % mot WACC 8,0 % = spreaden duopolmoraten lever av; rapport i USD, kalenderår, NYSE"
+  },
+  {
+    "ticker": "TM",
+    "namn": "Toyota Motor Corporation",
+    "bransch": "konsument",
+    "land": "Japan",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/tm/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence + Fiscal.ai; kurs close 2026-09-16, efterhandel 195,25 $): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår FY2023–FY2026 (april–mars) — financials i JPY (koncernrapportvaluta) medan kurs/mcap/TTM-derivat i USD enligt ADR-konventionen (BHP/RIO-precedenten); statistics-sidans FCF/skuld i USD-översättning"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 192.21,
+    "marknadsKapitalMdr": 229.73,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1091,
+      "resultatCAGR5ar": 0.1622,
+      "omsattningTillvaxtTTM": 0.072,
+      "prognosTillvaxt": -0.4121
+    },
+    "lonksamhet": {
+      "roe": 0.124,
+      "roic": 0.0417,
+      "bruttoMarginal": 0.1677,
+      "ebitMarginal": 0.0706,
+      "nettoMarginal": 0.0863,
+      "fcfMarginal": -0.017
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.15,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.186,
+      "bruttoMarginalSpread5ar": 0.0407,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 8.33,
+      "pb": 0.98,
+      "evEbit": 19.18,
+      "peg": null,
+      "fcfYield": -0.0236,
+      "egenKapitalMultipl": 0.98
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        37154298000000,
+        45095325000000,
+        48036704000000,
+        50684952000000
+      ],
+      "resultat": [
+        2451318000000,
+        4944933000000,
+        4765086000000,
+        3848098000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        -402476000000,
+        -507734000000,
+        -1206797000000,
+        558376000000
+      ]
+    },
+    "notering": "världens största biltillverkare — konsumentens första GLOBALA biltillverkare (Volvo Car-radens småbolagsskala var branschens enda biltäckning dessförinnan) och universumets första Japan-rad (15:e landet); ADR-konventionen (BHP/RIO-precedenten): kurs 192,21 $ och börsvärde 229,73 mdr $ i USD medan räkenskapsserierna FY2023–FY2026 (april–mars, V-/ASML-FY-konventionen) är i koncernrapportvalutan JPY — derivativesvalutan noteras: fcfMarginal −1,7 % och fcfYield −2,36 % på källans USD-TTM-par (−5,43/319,65 resp. −5,43/229,73), JPY-parets motsvarighet −1,6 % (−842/51 957 mdr); NETTO ÖVER EBIT (8,63 % mot 7,06 %) — UBER-/ABBV-mönstret: räntenetto och andelsintäkter (partners + finansdotterbolag) ligger under driftsraden; finansdivisionen (Toyota Financial Services) bär skuldbilden: total skuld 270,41 mdr $ mot kassa 82,13 mdr $, skuld/EK 1,15 med samma VFS-reservation som Volvo-raden (belåningen finansierar utlåningsboken, ej industridrift); ROIC 4,17 % mot ROE 12,40 % — kapitalintensiteten (tillverkningsbolag + finansdel) gör avkastningsmåtten ej jämförbara med tjänste-/varumärkesrader; VÄRDERINGSPEDAGOGEN: trailing P/E 8,33 mot fwd 14,17 — källans konsensus ser vinstnormalisering −41 % (prognosTillväxt −0,4121, universumets tredje negativa rad men första på en topp-20-börsvärdesrad; källans 3-års intäktsprognos +4,15 %/år), peg null (källans PEG n/a — konventionen prognos ≤ 0 ger null, konsekvent); FCF-SERIEN cyklar −402 → −508 → −1 207 → +558 mdr JPY (batteri/EV-capex 4,9 mdr JPY/år mot OCF 3,0–5,5 mdr) med TTM −5,43 mdr $ NEGATIV — universumets andra negativa FCF-rad efter ORCL men första i tillverkning; TTM-vändningen: omsättning TTM 51 957 mdr JPY (+2,5 % JPY/+7,2 % USD) och resultat TTM 4 484 mdr JPY över FY2026:s 3 848; bruttomarginalcykeln 17,0 → 20,8 → 19,9 → 16,7 % (medel 18,6 %, spridning 4,1 pp — yensvaghetens vinstpåslag 2023–24 och normaliseringen, moat-fälten ifyllda enligt BASF-precedenten); utdelning 5,35 $/ADR (2,78 %, payout 24,9 %, tre år av höjningar men senaste året −0,86 %); beta 0,34 — delar med KO om andraplatsen som universumets lugnaste (SAMPO 0,24); EV/EBIT 19,18 och EV/EBITDA 12,57 på ADR-USD; 52-vägers spann 166,10–248,90 $; nästa rapport 2026-11-04 (Q2 FY2027)"
+  },
+  {
+    "ticker": "HOLN.SW",
+    "namn": "Holcim AG",
+    "bransch": "material",
+    "land": "Schweiz",
+    "valuta": "CHF",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/swx/HOLN/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence + Fiscal.ai; kurs fördröjd 2026-09-16 17:30 CET): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC, skuld/EK, FCF, 4 räkenskapsår 2022–2025 (kalenderår) — serien spänner över Amrize-avknoppningen (nordamerikanska verksamheten avknoppad 2025; FY2022–2023 inkl., FY2024→ exkl.)"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 68.46,
+    "marknadsKapitalMdr": 37.66,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.1863,
+      "resultatCAGR5ar": 0.588,
+      "omsattningTillvaxtTTM": 0.0034,
+      "prognosTillvaxt": 4.7928
+    },
+    "lonksamhet": {
+      "roe": 0.0278,
+      "roic": 0.0432,
+      "bruttoMarginal": 0.4203,
+      "ebitMarginal": 0.1324,
+      "nettoMarginal": 0.0241,
+      "fcfMarginal": 0.1185
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.66,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.4255,
+      "bruttoMarginalSpread5ar": 0.0184,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 96.74,
+      "pb": 2.26,
+      "evEbit": 18.88,
+      "peg": 0.2,
+      "fcfYield": 0.0496,
+      "egenKapitalMultipl": 2.26
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        29189000000,
+        27009000000,
+        16201000000,
+        15724000000
+      ],
+      "resultat": [
+        3291000000,
+        3043000000,
+        2922000000,
+        13179000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        3013000000,
+        3965000000,
+        4582000000,
+        1727000000
+      ]
+    },
+    "notering": "världens största cement- och byggmaterialkoncern — materialets SAKNADE byggmaterial-ankare (grenens struktur före denna rad: fem skogsbolag + fyra gruvor/metaller + kemin BASF + stålet SSAB + aluminiumet NHY + gödseln Yara, noll cement — BASF-precedentens lucklogik i samma bransch); Schweiz/material = branschens första Schweiz-rad (LOGN/ROG/NESN/NOVN ligger i andra branscher). AMRIZE-AVKNOPNINGEN genomsyrar hela raden (nordamerikanska verksamheten avknoppad 2025): FY2022–2023 inkluderar den avknoppade verksamheten (omsättning 27–29 mdr CHF), FY2024→ är exkl. (~16 mdr) — omsättningsfallet −40,0 % 2024 är SCOPE-BROTTET, ej organisk contraction; FY2025-resultatet 13 179 M CHF (+356 % EPS-tillväxt) bär avknoppningsvinsten (deconsolideringsresultatet), TTM-resultatet 381 M CHF (−97 %) är fortsatt verksamhet med engångsbelastning — därför är trailing P/E 96,74 meningslöst på TTM-EPS 0,68 CHF medan fwd-P/E 16,70 bär marknadens normaliserade bild: prognosTillväxt +4,79 implicit = universumets MEST EXTREMA positiva normaliseringsgap (SPG-raden −53 % är spegelbilden; BASF-/Allianz-/SPG-notens mekanik i sin mest lärobokslika form — normaliserad vinst ~2,2–2,9 mdr CHF/år enligt FY2022–2024); peg 0,20 spårkonvention MATERIELLT FÖRVRÄNGD av gapet (källans PEG 1,16 på 3-årsprognos +14,3 %/år som not — inget av talen är en äkta tillväxtbild); endpoint-CAGR:erna spänner över avknoppningsgränsen: omsättning −18,6 %/år är scope-brottet och resultat +58,8 %/år är avknoppningsvinsten — bägge maskinellt korrekta men ej ekonomiskt meningsfulla (ärlighetsdoktrinen: talen levereras med denna reservation, ej döljs); MOAT-FYNDET: bruttomarginalen 41,8 / 42,5 / 43,6 / 42,3 % — medel 42,6 %, spridning endast 1,8 pp RAKT GENOM scope-brottet: cementens vallgrav är lokal transportekonomi (viktsvärde per lastbil — ingen prissätter cement över långa avstånd), vilket gör bruttomarginalen strukturoberoende; FCF positiv genom hela omställningen 3,0 → 4,0 → 4,6 → 1,7 mdr CHF (TTM 1 869 M, fcfYield 5,0 %, fcfMarginal 11,8 %) — capex ~1,1 mdr/år mot OCF 3,0 TTM; utdelning 1,70 CHF (2,37 %) — payout 247,5 % på TTM-EPS men ~43 % på normaliserad utdelningsbar bas, fyra år av höjningar (YoY-talet −45,2 % är avknoppningsjusterat antal andelar/effect); skuld 10,95 mot kassa 3,60 mdr CHF (skuld/EK 0,66, nettskuld 7,35 mdr); ROE 2,78 %/ROIC 4,32 % på TTM-nämnden — förvrängda av engångsbelastningen (normaliserad ROE ~10–12 % på EK ~10 mdr CHF); beta 0,74; 52-vägers spann 60,10–82,54 CHF; nästa rapport 2026-10-23"
   }
 ]

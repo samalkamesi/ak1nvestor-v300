@@ -14204,7 +14204,7 @@
     },
     "notering": "Kanadas största oberoende olje- och gasproducent (källan klassar bolaget Energy/Oil & Gas Exploration & Production; NYSE-noterad i USD men rapporterar i CAD — serierna i rapportvaluta): universumets ANDRA Kanada-rad (efter u1:s RY samma omgång — 17:e landet fördjupas direkt) och u1:s explicit utlämnade koordinat infriad; Kanada/energi 0→1; P/E 12,66 mot forward 13,00 ⇒ prognosTillväxt −2,6 % (PEG osatt — negativ prognostillväxt, SAMPO-precedensen; källans konsensus ser svagt fallande EPS nästa år); nettoMarginal 26,3 % ÖVER EBIT-marginalen 25,8 % (BABA/ABBV/TM-mönstret: finansiella poster och skatteeffekter lyfter nettot); ROE 26,69 % · ROIC 14,11 % mot WACC 8,49 % = +5,62 pp; bruttomarginalen femårsstämd 51,7 % (spread 7,4 pp) — råvaruprisets volatilitet i kanadensisk tappning; utdelning 1,78 USD (3,54 %, payout 44,9 %, 10 RAKA ÅR av utdelningstillväxt — universumets längsta aktiva svit, +6,7 % senaste) + AKTIEANTAL −1,10 %/år = äkta återköp (buyback-yield 1,10 %); skuld/EK 0,43 · räntetäckning 10,6× · nettoskuld 12,37 mdr USD; beta 0,88 · 52-vägsintervallet 29,68–52,31 USD med nuvarande 50,22 nära toppen; FY2025 i rapportvalutan: omsättning 38,8 mdr CAD · resultat 10,8 mdr CAD (+77 %); nästa rapport 2026-11-05."
   },
-    {
+  {
     "ticker": "005930.KS",
     "namn": "Samsung Electronics Co., Ltd.",
     "bransch": "teknik",
@@ -14293,5 +14293,185 @@
       ]
     },
     "notering": "UNIVERSUMETS FÖRSTA SYDKOREA-RAD (18:e landet) — och halvledartrion fullständig: ASML (EUV-litografin, Nederländerna) → TSMC (foundry, Taiwan) → Samsung (MINNE + foundry tvåa) — teknikgrenens kapitallogiska kedja från maskin till krets till produkt. MINNESCYKELN I FYRA AKTER: resultat 54,7 → 14,5 biljoner KRW FY2023 (−74 % — DRAM/NAND-prisrasen) → 33,6 → 44,3 FY2025; endpoint-CAGR −6,8 %/år TROTS att omsättningen växer +3,4 %/år — 2022-toppen var rekordår (pandemiefterfrågan + svag won) och 2025 ligger fortfarande under den: minnet prissätts som en råvara och resultat-CAGR:n bär cykeln (CVX/XOM/EQNR-familjen — 56 negativa precedenser i universumet). MOTCYKLISK KAPEX = minnesindustrins signatur: kapex-serien 49,4 → 57,6 → 51,4 → 47,5 biljoner KRW — capex-TOPPEN FY2023 träffar resultattratten exakt (man bygger fabriker när priserna är som lägst — ASML:s maskiner är mottagaren); FCF-serien +12,8 → −13,5 → +21,6 → +37,8 biljoner KRW (FY2023 negativ av samma skäl). 2026:S SUPERCYKEL (AI-minne): TTM omsättning 485,3 T KRW (+57,3 %) vs FY2025:s 333,6 T; TTM-resultat 135,3 T = TRE FY2025; bruttomarginal TTM 57,5 % mot FY2025:s 39,4 % — P/E 12,39 mot forward 4,06 ⇒ prognosTillväxt +205 % (TTE-konventionen; universumets näst extremaste efter DNO +366 %) och PEG 0,06 spårkonvention (källans egen 0,04 som not) — gap-mått på en cykel topp, ej en köprekommendation. KAPITALLOGIKEN: ROIC 36,9 % mot WACC 12,6 % (två och en halv gång kapitalkostnaden — motcyklisk kapex ÄR vallgraven); nettokassa 167,6 T KRW (kassa 190,0 − skuld 22,4); skuld/EK 0,04; EV/EBIT 8,10 replikerbar ((1 610,8 + 22,4 − 190,0) ÷ 179,0 TTM-EBIT ≈ 8,1). CHEBOL-STRUKTUREN: elektronik + halvledare + display i samma bolag — bredare intäktsbas än TSMC/ASML, lägre renhet i jämförelsen; utdelning 2 264 KRW/aktie (0,90 % direktavkastning) med payout 7,4 % (TTM-utdelningar ÷ TTM-resultat); återköpen FÖDS först FY2024: 1,8 T → 8,2 T KRW FY2025. P/B-NOTIS: källans P/B 2,78 (totalt eget kapital) mot pris/BVPS 2,93 (stamaktie-BVPS 86 052 KRW) — källans equity-mått skiljer mellan multiplar (ROE 30,8 % bär dess eget underlag); fälten bär källans publicerade värden. KURSEN: KRX-primärnotering 252 500 KRW, 52-vägers spann 76 700–374 500 (kursen mitt i spannet efter våldsam AI-rally med kraftig reträtt); beta 1,54; marknadsvärde 1 610,8 T KRW ≈ 1,18 biljoner USD (OTC-korsreferens) = universumets största icke-USA-rad. RÄKENSKAPSÅRET kalenderår (FY2025 = jan–dec 2025); nästa rapport 2026-10-28 (Q3 2026)"
+  },
+  {
+    "ticker": "ENEA.ST",
+    "namn": "Enea AB (publ)",
+    "bransch": "teknik",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/sto/ENEA/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; fördröjd STO-kurs previous close 2026-09-17, sidorna pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT–EV/EBITDA, marginaler, ROE/ROCE/WACC, skuld/EK, räntetäckning, återköpsyield, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; rapportvaluta SEK; källan klassar bolaget Technology — branschfältet teknik är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 64.6,
+    "marknadsKapitalMdr": 1.2138,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0141,
+      "resultatCAGR5ar": -0.3965,
+      "omsattningTillvaxtTTM": -0.015,
+      "prognosTillvaxt": 0.0206
+    },
+    "lonksamhet": {
+      "roe": 0.0641,
+      "roic": 0.0927,
+      "bruttoMarginal": 0.7733,
+      "ebitMarginal": 0.2172,
+      "nettoMarginal": 0.121,
+      "fcfMarginal": 0.1665
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.19,
+      "rantaTackning": 16.41,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.7844,
+      "bruttoMarginalSpread5ar": 0.0706,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 11.37,
+      "pb": 0.71,
+      "evEbit": 7.48,
+      "peg": 5.51,
+      "fcfYield": 0.1223,
+      "egenKapitalMultipl": 0.71
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        927670000,
+        912680000,
+        904270000,
+        888990000
+      ],
+      "resultat": [
+        224810000,
+        -550720000,
+        143060000,
+        49410000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        159170000,
+        251600000,
+        272310000,
+        95970000
+      ]
+    },
+    "notering": "Svensk telecom- och cybersäkerhetsmjukvara (realtidsoperativsystem, trafikanalys och nätverksskydd sedan 1968 — källan klassar bolaget Technology): öppnar med NOTE koordinaten Sverige/teknik 3→5 mätbara ⇒ /dataset/teknik/sverige publiceras vid nästa prod-bygge (omg11:s utpekade koordinat; originalkandidaterna föll — Fortnox AVMOTERAD 2025-07-24 efter Omega II:s uppköp, Sectra klassas av källan som Healthcare). Affärsmodellen i ett tal: bruttomarginal 76–84 % fem år (medel 78,4 %, spread 7,1 pp) = mjukvaruvallgrav som NOTE:s EMS-hårdvara (13–14 %) speglar i samma branschetikett — tekniketikettens två världar. Serierna FY2022–FY2025 MSEK: oms 927,7→889,0 (−1,4 %/år endpoint — platt försäljning) men netto 224,8→49,4 (−39,7 %/år endpoint) där FY2023 = storförlust −550,7 MSEK med EBIT +9,4: svansen sitter UNDER driftsraden (finansiella/engångsposter enligt källans resultat), TTM netto 107,9 (+52,1 % YoY) på väg tillbaka; FCF fyra raka positiva 159,2/251,6/272,3/96,0 (TTM 148,5, fcfYield 12,2 %). P/E 11,37 (forward 11,14 ⇒ prognosTillväxt +2,1 %, PEG 5,51 spårkonventionen — stillastående konsensus) · P/B 0,71 = källkonsekvent med identiteten P/E × ROE (11,37 × 6,41 %) · EV/EBIT 7,48 mot EV/EBITDA 5,45. ROCE 9,27 % mot WACC 7,97 % = +1,30 pp (mjukt värdeskapande); skuld/EK 0,19, räntetäckning 16,4×, nettoskuld 234,4 MSEK; ingen utdelning — kapitalåterföring via återköp 5,51 %/år (aktieantal −5,51 % YoY); insiders 43,5 %; beta 0,90; 52-vägers 54,00–92,70. Nästa rapport 2026-10-22."
+  },
+  {
+    "ticker": "NOTE.ST",
+    "namn": "NOTE AB (publ)",
+    "bransch": "teknik",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/sto/NOTE/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement + dividend (underlag S&P Global Market Intelligence; fördröjd STO-kurs previous close 2026-09-17, sidorna pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT–EV/EBITDA, marginaler, ROE/ROCE/WACC, skuld/EK, räntetäckning, payout, återköpsyield, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; rapportvaluta SEK; källan klassar bolaget Technology (Electronic Manufacturing Services) — branschfältet teknik är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 172.1,
+    "marknadsKapitalMdr": 4.9135,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0114,
+      "resultatCAGR5ar": 0.0348,
+      "omsattningTillvaxtTTM": 0.04,
+      "prognosTillvaxt": 0.3633
+    },
+    "lonksamhet": {
+      "roe": 0.1482,
+      "roic": 0.1313,
+      "bruttoMarginal": 0.1425,
+      "ebitMarginal": 0.0945,
+      "nettoMarginal": 0.0627,
+      "fcfMarginal": 0.0462
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.98,
+      "rantaTackning": 7.35,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.131,
+      "bruttoMarginalSpread5ar": 0.0177,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 19.74,
+      "pb": 2.68,
+      "evEbit": 17.47,
+      "peg": 0.54,
+      "fcfYield": 0.0373,
+      "egenKapitalMultipl": 2.68
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        3687000000,
+        4243000000,
+        3901000000,
+        3814000000
+      ],
+      "resultat": [
+        254240000,
+        319960000,
+        248030000,
+        281740000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        3380000,
+        250110000,
+        512320000.00000006,
+        393360000
+      ]
+    },
+    "notering": "Svensk electronics manufacturing services (EMS — kretskortsmontage och helhetsmontering åt industrial/medtech/infrastruktur; källan klassar bolaget Technology): tillsammans med ENEA koordinaten Sverige/teknik 3→5 mätbara ⇒ /dataset/teknik/sverige vid nästa bygge — och pedagogiken inbyggd: ENEA:s mjukvarubrutto 77 % mot NOTE:s EMS-brutto 14,3 % i SAMMA branschetikett = kvartilspridningens levande exempel (mjukvarans marginal mot monteringens volym). Serierna FY2022–FY2025 MSEK: oms 3 687→3 814 (+1,1 %/år endpoint, fyrtakt med FY2023-toppen 4 243) · netto 254,2→281,7 (+3,5 %/år endpoint, fyra raka positiva år) · FCF 3,4→393,4 (vändningen 2021→2022 från −60,6 till positivt, därefter tre raka starka: 250,1/512,3/393,4). P/E 19,74 mot forward 14,48 ⇒ prognosTillväxt +36,3 % (PEG 0,54 spårkonventionen; källans egen PEG 1,99 på 3års-EPS-prognos +15,7 % som not) · P/B 2,68 · EV/EBIT 17,47 (EV = börsvärde + nettoskuld 1 640 MSEK — källans EV 6,55 mdr). ROE 14,82 %, ROCE 13,13 % mot WACC 6,11 % = +7,02 pp (kaptitaltätt men värdeskapande); skuld/EK 0,98 (EMS-finansiering med lager/kundfordringar), räntetäckning 7,4×, quick ratio 0,63. Utdelning: DPS n/a hos källan men payout 80,16 % + 1 år av utdelningstillväxt (ny policy) redovisas; återköp 0,14 %/år; insiders 30,0 %; beta 0,59; 52-vägers 138,10–205,20; analytiker Buy mål 197,00 (+12,8 %). Nästa rapport 2026-10-23."
   }
 ]

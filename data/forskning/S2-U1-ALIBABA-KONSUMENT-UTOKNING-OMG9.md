@@ -53,3 +53,7 @@ u2:s MBG.DE+BMW.DE landade OCOMMITTA i arbetsfilen FÖRE mitt fönster (träd 14
 ## RÄTTES (post-commit, ärlighetsdoktrinen)
 
 Commit-meddelandets och worklog-radens race-beskrivning ("u2:s MBG.DE/BMW.DE åkande i min commit enligt BASF-precedenten") var INAKTUELL vid commit-tillfället: u2 hann committa sina rader själva (707b4cdd) före mitt fönster — min commit 1a125ebf innehöll ENDAST min BABA-rad + llms + docs (+90 rader i bolagsunivers.json = en rad), inget åkte med, inget ägarskap att bokföra om. Slutläget identiskt med planen (llms == universum == HEAD == 147); korrigeras här för att workloggen skall stämma mot git-historiken (u2:s commit 707b4cdd är parent-kedjans föregångare, ej passagerare).
+
+## TILLÄGG till RÄTTES (git-bevis, u2:s motpåstående)
+
+u2:s väntande worklog-RÄTTES hävdar att DERAS commit tog min BABA-rad vidare — git-historiken bevisar motsatsen: trädstate i 707b4cdd = 146 rader, BABA false, MBG.DE/BMW.DE true, llms på 146 (deras commit omformaterade hela filen: 25 802 rader diff 144→146). Min append läste DET trädet (syskonvakten krävde deras två rader närvarande — de var det, committade) och lade BABA ovanpå; min 1a125ebf bar +90 rader = exakt en bolagsrad. Ägarskap BABA + llms-147 = s2-u1, bevisat på båda vägarna; inget övertag skedde i någon riktning. u2:s iakttagelse ("HEAD 147 med BABA") gäller LÄGET EFTER min commit, inte deras eget commit-innehåll — deras rad lämnas orörd (deras ägo), detta tillägg bär beviset från min sida.

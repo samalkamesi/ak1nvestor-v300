@@ -1,0 +1,135 @@
+// Diff-paket för HOLM-granskningen — byggs UR utkastfilen för byte-exakta strängar
+import fs from "node:fs";
+const u = JSON.parse(fs.readFileSync("/home/ak1a/AK1/data/blogg-utkast/kvartal/2026-q3/sa-laser-du-holm-q3-2026.json", "utf8"));
+const body = u.body;
+const NB = "\u00a0";
+
+const gammaltTabell =
+  `| Intäkter 21${NB}394 | 1${NB}335 | 1${NB}376 | 1${NB}418 |\n` +
+  `| Intäkter 22${NB}056 | 1${NB}549 | 1${NB}597 | 1${NB}645 |\n` +
+  `| Intäkter 22${NB}718 | 1${NB}763 | 1${NB}817 | 1${NB}872 |`;
+const nyttTabell =
+  `| Intäkter 21${NB}394 | 1${NB}335 | 1${NB}549 | 1${NB}763 |\n` +
+  `| Intäkter 22${NB}056 | 1${NB}376 | 1${NB}597 | 1${NB}817 |\n` +
+  `| Intäkter 22${NB}718 | 1${NB}418 | 1${NB}645 | 1${NB}872 |`;
+
+// säkerhetskontroller: alla gamla strängar exakt en gång, nya förekommer ej
+const kontroll = [
+  ["A1-tabell", gammaltTabell],
+  ["B2", "handssignal"],
+  ["B3", "En tredjedel av branschmedianen"],
+  ["B4", "326,60 delat med 18,8 är"],
+  ["B5", "326,60 ÷ 18,8 = 17,35"],
+  ["C1", "Hypotes, redovisad som hypotes: ett TTM-fönster snett mot räkenskapsåret — filen skiljer inte."],
+  ["C4", "ungefär två procent av EV"],
+];
+for (const [id, s] of kontroll) {
+  const n = body.split(s).length - 1;
+  if (n !== 1) { console.error(`AVBRYT: ${id} förekommer ${n} gånger (väntat 1)`); process.exit(1); }
+}
+for (const [id, s] of [["ny tabell", nyttTabell], ["handsignal", "handsignal"], ["Två femtedelar", "Två femtedelar"], ["B4 ny helsträng", "326,60 delat med 18,824 är"], ["B5 ny helsträng", "326,60 ÷ 18,824 = 17,35"]]) {
+  if (body.includes(s)) { console.error(`AVBRYT: ${id} finns redan i filen`); process.exit(1); }
+}
+console.log("Alla 7 söksträngar unika (1 träff), alla nya frånvarande — diff säker.");
+
+const diff = {
+  granskat: "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-holm-q3-2026.json",
+  granskadAv: "agentfabrik s1-u3 (2026-09-17, omgång auto-s1-1789625727468)",
+  rapport: "kvartal-2026-q3-holmen.md",
+  bedomning: "FLYTTKLAR EFTER RÄTTNING — 102 maskinella kontroller (verktyg/_s1u3-holmen-verify.mjs, oberoende omräkning ur råfilerna): samtliga källfält exakta mot bolagsunivers.json 2026-09-03 (HOLM-B.ST-raden fält för fält), alla medianer egna beräknade ur 144-filen (P/E-medianen 18,824 = Holmen självt, 7:e sorterade av 13 — maskinellt bevisat), identitetstest/absolutkontroll/PEG/EV-kedja/FCF egna omräknade, kalenderfakta 100 % (sexdubbla rappdagen + 14-paket), juridikgrind REN enligt 2007:528 (rådverb enbart i nekande kontexter, endast 2007:528 2 kap 5 §, disclaimer sist), 911 = 0 träffar/6 mönster, 20/20 interna länkar HTTP 200 mot localhost. FYND: A1 scenariorutans tabell TRANSPOSERAD (6 av 9 celler felplacerade — värdena spegelvända kring diagonalen, korrekt matris maskinellt rekonstruerad) + B2–B5 fyra maskinella byten + C1–C5 beslutsförslag.",
+  anvandning: "Verkställ A1 + B-poster exakt (sök/ersätt i angivet fält — samtliga stränger maskinellt verifierade UNIKA i filen, U+00A0 i tusentalsavgränsningar bevarat i A1). C-poster kräver beslut. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  poster: [
+    {
+      id: "A1",
+      typ: "byt",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Övning C — scenariorutan)",
+      gammalt: gammaltTabell,
+      nytt: nyttTabell,
+      orsak: "Tabellen är TRANSPOSERAD: värdena ligger spegelvända kring diagonalen, så 6 av 9 celler visar fel par (intäkt × marginal). Diagonalen [1 335, 1 597, 1 872] är rätt av symmetri; övriga sex inte. Exempel: cellen (Intäkter 21 394; Marginal 7,24 %) visar 1 376 — korrekt är 21 394 × 0,0724 = 1 549. Alla nio TALEN är korrekt beräknade (matrisens alla värden finns) men placeringen är fel: radetiketterna är intäktsnivåer och kolumnetiketterna marginaler, medan värdena lagts in kolumnvis. Korrekt matris maskinellt rekonstruerad ur 22 056 × (0,97/1,00/1,03) × (0,0624/0,0724/0,0824). Byggar-KVD:n kontrollerade värdemängden — inte placeringen. OBS: strängen innehåller U+00A0 (hårt mellanslag) i alla tusentalsavgränsningar — ersätt hela blocket, inte enskilda siffror"
+    },
+    {
+      id: "B2",
+      typ: "byt",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Övning C, sista meningen)",
+      gammalt: "inte en handssignal",
+      nytt: "inte en handsignal",
+      orsak: "Stavfel: korrekt svensk stavning är 'handsignal' (en s). Strängen verifierad unik i filen"
+    },
+    {
+      id: "B3",
+      typ: "byt",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Stabilitet — skuldkvoten)",
+      gammalt: "En tredjedel av branschmedianen",
+      nytt: "Två femtedelar av branschmedianen",
+      orsak: "Bråksform felaktig: 0,1277 ÷ 0,32 = 39,9 % ≈ två femtedelar (40 %), inte en tredjedel (33 %). Grannmeningens 'en fjärdedel av universumets 0,52' (24,8 %) är korrekt och visar att avsikten var en bråkapproximation — den här glider 7 procentenheter. Alternativ: '40 procent av branschmedianen'. Strängen verifierad unik"
+    },
+    {
+      id: "B4",
+      typ: "byt",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Källkritik — implicit EPS)",
+      gammalt: "326,60 delat med 18,8 är",
+      nytt: "326,60 delat med 18,824 är",
+      orsak: "Aritmetiken som skriven stämmer inte: 326,60 ÷ 18,8 = 17,37, men textens slutvärde 17,35 kräver den exakta dividenden 18,824 (326,60 ÷ 18,824 = 17,350). Slutvärdet 17,35 är det korrekta (rätt EPS ur källfältet) — divisionsformen anger den avrundade multipeln. Samma rättning som B5 i källor-sektionen. Strängen verifierad unik"
+    },
+    {
+      id: "B5",
+      typ: "byt",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Källor — identitetstest-raden)",
+      gammalt: "326,60 ÷ 18,8 = 17,35 kronor",
+      nytt: "326,60 ÷ 18,824 = 17,35 kronor",
+      orsak: "Samma sak som B4, spegelplats i källor-sektionen: 326,60 ÷ 18,8 = 17,37; 17,35 kräver 18,824. Strängen verifierad unik"
+    },
+    {
+      id: "C1",
+      typ: "forslag",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Källkritik — absolutkontrollen)",
+      gammalt: "Hypotes, redovisad som hypotes: ett TTM-fönster snett mot räkenskapsåret — filen skiljer inte.",
+      nytt: "Hypotesen bärs av fältet självt: P/E multiplicerat med nettofältets vinst (22 056 × 11,86 procent = 2 616 miljoner kronor) stänger på 49,2 miljarder mot börsvärdets 49,1 — det är 0,2 procent; fältens vinst-värld är nettofältet, inte årsseriens 2 879. Ett TTM-fönster snett mot räkenskapsåret — filen skiljer inte, hypotesen är den bärande förklaringen.",
+      orsak: "Svar på s4-u1:s OMLEVERANS-NOT till granskningskön (worklog 2026-09-17): deras sondering visar att absolutkontrollen stänger på 0,22 procent när vinsten tas ur NETTOFÄLTET (22 056 × 11,86 % = 2 616 Mkr; 18,824 × 2 616 = 49,2 mdr mot 49,1) — oberoende omräknad av denna granskning (+0,22 %, D8). Utkastet redovisar gapet +10,3 procent mot ÅRSSERIEN med TTM som blott hypotes; med nettofält-stängningen blir hypotesen bevisad förklaring och källkritiken starkare. Sammanställningens Holmen-rad bär samma 'gapar +10,3 %; TTM-hypotes'-formulering (s4-r3:s äga — flaggas, ändras inte här)"
+    },
+    {
+      id: "C2",
+      typ: "forslag",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "title",
+      gammalt: "Holmens delårsrapport 2026: så läser du den — seriens första materialpaket: P/E 18,8 exakt på branschmedianen, P/B och ROE under, identitetstestet stänger på 0,4 procent (första icke-banken i bankzonen), nettomarginalen över rörelsemarginalen",
+      nytt: "Holmens delårsrapport 2026: så läser du den — P/E 18,8 på branschmedianen, identitetstestet i bankzonen (första icke-banken), nettomarginalen över rörelsemarginalen",
+      orsak: "242 → 158 tkn. Ericsson-precedensen (C1 i kvartal-2026-q3-ericsson-diff.json): långa titlar klipps i mobila sökträffar (tak ~60 tkn). Behåller de tre signaturtalen; stryker dubbelredovisningen ('exakt på', 'P/B och ROE under' täcks av bristerna i description). Seriepraxis spretar (77–245) — därför förslag, inte byt: titellängden bör avgöras serieenhetligt"
+    },
+    {
+      id: "C3",
+      typ: "forslag",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "description",
+      gammalt: "Holmen redovisar januari–september torsdagen den 22 oktober på morgonen. Här är seriens första materialpaket: skogsindustrins cykelläsart — P/E 18,8 exakt på materialgrenens median (det sjunde sorterade värdet av tretton) medan P/B 0,91 ligger 35 procent under och ROE 4,8 procent 33 under, nettomarginalen 11,9 procent ÖVER rörelsemarginalen 7,2 (gap grovt 1 019 miljoner kronor, tredje fallet i serien), identitetstestet P/E = P/B ÷ ROE som stänger på 0,4 procent, och skuldkvoten 0,13 som grenens lägsta. Scenariorutan räknas på 2025 års bas och varje siffra har sin källa.",
+      nytt: "Holmen redovisar januari–september torsdagen 22 oktober. Läspaketet: skogsindustrins cykelläsart — P/E 18,8 på grenens median medan P/B och ROE ligger under, nettomarginalen över rörelsemarginalen, identitetstestet som stänger på 0,4 procent och skuldkvoten som grenens lägsta. Scenariorutan räknas på 2025 års bas och varje siffra har sin källa.",
+      orsak: "576 → 330 tkn. SEO-fönstret ~155–160 (ericsson-precedensen C2) nås inte utan innehållsförlust, men 576 är seriens längsta description hittills (förra rekordet 242 förenklat till 187 i industrivärden-C4). Förslaget behåller alla sex budskap (rappdag, cykelläsart, medianläge, marginalordningen, identitetstestet, skuldkvoten, scenarioruta + källor) och stryper bara talens dubbelredovisning. Seriebred praxis spretar — förslag, inte byt"
+    },
+    {
+      id: "C4",
+      typ: "forslag",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "body (Källkritik — EV-kedjans residual)",
+      gammalt: "ungefär två procent av EV",
+      nytt: "knappt två procent av börsvärdet",
+      orsak: "Precision: kassa-residualen 0,87 mdr är 1,4 % av kedje-EV 61,1, 1,6 % av fält-EV 55,2 och 1,8 % av börsvärdet 49,1 — 'ungefär två procent av EV' överdriver med tanke på att meningen just har presenterat EV 61,1 (där andelen är 1,4 %). Alternativ tätare sanning: 'cirka en och en halv procent av EV:t'. Gränsfall — storleksordningen rätt, referensen glider"
+    },
+    {
+      id: "C5",
+      typ: "forslag-r2",
+      fil: "sa-laser-du-holm-q3-2026.json",
+      falt: "publishedAt",
+      gammalt: "2026-10-21",
+      nytt: "(kundens beslut — R2)",
+      orsak: "Publiceringsdatum är kundens vetoområde. 10-21 (dagen före rappdagen 10-22) är konsistent med seriens närmsta motsvarigheter (nike 09-30/10-01, hm-b 09-23/09-24) — rimligt default, granskaren sätter inget nytt värde (ericsson-/industrivärden-precedenserna)"
+    }
+  ]
+};
+fs.writeFileSync("/home/ak1a/AK1/data/blogg-utkast/granskning/kvartal-2026-q3-holmen-diff.json", JSON.stringify(diff, null, 1) + "\n");
+console.log("Diff skriven: 10 poster (A1 + B2–B5 byt + C1–C4 förslag + C5 R2-notis).");

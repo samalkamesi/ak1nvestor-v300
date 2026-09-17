@@ -1,0 +1,13 @@
+studio: auto s5-u1 ks-04 emissionens mekanik — lärvägsdjup +1 kurs: KAPITALSTRUKTURs femte kurs (register 381→382), spegeln till v20 återköpet — familjen ägde aktieantalet MINSKAT, aldrig ÖKAT [fabrik]
+
+OBJEKT (klaim FÖRE byggstart, anspråksfil på disk): KAPITALSTRUKTUR = minsta serien i minsta kategorin — familjen äger grunderna (ks-01), allokeringen (ks-02), skuldens anatomi (ks-03) och återköpet (v20) men saknade emissionen. GRÄNSDEKLARATION mot riskfamiljen: rk-02-emissionrisk äger VARNINGEN, denna kurs äger INSTRUMENTET (finansieringsbeslutets mekanik från bolagssidan).
+
+PEDAGOGIK — fingerade Skogskraft AB genom alla kapitel, all aritmetik maskinell: 100 M aktier à 10 kr, 200 Mkr till teckningskurs 8 = 25 M nya, kvot 1:4; ex-kurs 9,60 på TVÅ oberoende vägar ((4×10+8)÷5 = (1000+200)÷125); teckningsrättens värde 0,40 med sluten kontroll (4×0,40 = 9,60−8); ägarens tre val: teckna 48 = 40+8, sälja rättigheterna 38,40+1,60 = 40,00, inget 38,40 = −4 %; krisfallet kurs 4/kurs 2 → ex 3,00 = −25 % för passiva (rabatten = försäkringspremie betald av de som inte tecknar); kvittningsspegeln (25×8 = 200 skuld borta, ex-kursen 9,60, banken 20 %); garanti 2 % = 4 Mkr; skuld/EK 0,67→0,50 med ROE-fällan 10→7,5 %.
+
+KOLLISIONSBOKFÖRING: tresiffrigt NUMRACER på ks-04 (u2 04:40 covenanter, u3 04:41 konvertibler, jag 04:43 emissionens-mekanik; u2/u3 såg inte varandra — 1-minutsfönstret). Temana distinkta = ingen kassering; register-först-regeln (bf-13/ud-09-precedenserna, av syskonen själva förklarade) ger numret till den enda registerleveransen = denna. Förslag bokfört: u2 → ks-05, u3 → ks-06. Syskonens filer orörda.
+
+SYNKADEJA atomär: lagg-till-kurs (efter ks-03), karta 382 (gratis 340 · Fas2 18 · Fas3 24 · V 20/20), sökindex + speglar (382 + 55), siffror 382 (quiz 8 223 oförändrad), llms 6+4 mönster (Dow 381,17 och Coinbase 381 USD bevarade), larvag-synk GRÖN 382=382=382 · 21 profilkurser · 0 fantomer.
+
+FRONT B GRÖN 6/6 (läsreplik BAS 86 + nivåmatch +4, klara-listan dynamisk ur kartfamiljen): fulläst KS-läsare 0 kandidater → ks-04 poäng 90 med genererad varför-rad; kartordning, försvarsläge, determinism, Intermediär-pool 2→3 bevisade.
+
+KVD 0 FEL 2 VARNING (varningarna friade: neutrala sälj-kontexter; enkelordsbetoningar enligt ln-05-precedensen). ÄKTA FÅNGST av sluten ekvation: val A bar 4×8 = 32 men kvoten 1:4 tecknar EN ny aktie = betalning 8 (48 = 40+8) — kurs och kontroll rättade FÖRE leverans. Egna språkfel rättade före KVD (sönderrivna ord, en engelskläcka, stavfel, versalstil). tsc 0 via projektbinär. Endast data/ + public/ + genererad karta + verktyg + worklog; inget bygge; R2 orörd; data/blogg/ orörd.

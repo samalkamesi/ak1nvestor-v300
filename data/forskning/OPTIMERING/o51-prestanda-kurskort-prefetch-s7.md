@@ -95,6 +95,16 @@ requests 41→38 · transfer −34,6 KiB (631,9 → ~597 KiB). CPU-tal med
 lastkontext (o41-EFTER-metoden). Null-resultat ⇒ omgång 2-effekt →
 ny rot bokas (o41-disciplinen).
 
+**Väntestatus vid vågens avslut (19:4x lokal):** commit 90cd7c57 är
+registrerad hos prod-synken ("NY KOD: 089ded18 → 90cd7c57", poll
+17:07:29Z + 17:17:29Z) men bygget VÄNTAR-RAM (2030 MB < 2200-tröskeln;
+syskon-mätning + tsc-processer höll marginalen nere; deploy-vakt
+_verktyg/_s7u3e-vanta-deploy.mjs_ löpte ut efter 18 min utan ny
+BUILD_ID — prod förblev 200 på 6qghn83I3yt--H0fK8g0A hela tiden).
+Nästa omgång: när prod-synken deployat (RAM frigörs av sig självt)
+→ mät EFTER enligt §5:s förväntan → boka här + worklog. Deploy-kön
+before-mig: 7c1fd646 (u3:s chat-rättning) landar i SAMMA bygge.
+
 ## §6 Kö efter omgången
 
 1. 7c1fd646 + denna kurs EFTER (två kurer i samma deploy-fönster —

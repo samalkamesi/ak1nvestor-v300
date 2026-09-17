@@ -13033,5 +13033,95 @@
       ]
     },
     "notering": "tyska bil-duons andra halva — konsumentglipans slutgiltiga stängning tillsammans med Mercedes-raden (universumet 144 → 146; Tyskland 8 → 10 rader); KONSUMENTENS LÄGSTA P/E: 5,90 (under VOLCAR:s 5,96; de lägre universumraderna INDU-C/VNA/INVE-B är investeringsbolag/fastighet med andra multiplikmekaniker) och P/B 0,38 — universumets NÄST LÄGSTA äkta P/B (VOLCAR 0,369 lägst; BRK-B:s 0,001 artefakt) — BVPS 164,24 € mot kurs 62,14 € (P/TBV 0,53); prognosTillväxt −30,7 % — SPEGELBILDEN till Mercedes-radens +15,5 %: fwd P/E 8,51 ÖVER trailing 5,90 ⇒ konsensus ser EPS-normalisering NEDÅT (fwd-EPS 7,30 € mot TTM 10,52 € som bär utjämningspositiv; TTM-netto +13,0 % vänder upp medan FCF gräver), peg null enligt prognos-≤-0-konventionen (TM-precedenten; källans PEG 2,23 på 3-års EPS-tillväxt +2,65 %/år som not); FCF NEGATIVT TREDJE ÅRET I RAD: 2024 −4,6 → 2025 −2,7 → TTM −5,3 mdr € — universumets DJUPESTE FCF-svacka (TM:s ettårsminus −5,4 var gapet; här är SERIEN röd): OCF 23,5 → 17,5 → 7,6 → 8,2 mdr € (2022–2025) med TTM 4,0, mot capex ~11 mdr €/år = Neue Klasse-omställningen (batterifabriker + anda/plattform), fcfMarginal −4,1 %, fcfYield −14,2 % (källans −14,15 %) — vinst och kassaflöde separerade: läroboken i varför P/E 5,9 inte är P/FCF (källans P/FCF n/a på negativt flöde; P/OCF 5,91); FY2022-resultatet 17,9 mdr € bär BMW BRILLIANCE-konsolideringsvinsten (one-off vid fullkonsolideringen av det kinesiska joint venturet Q1 2022) — netto ÖVER EBIT: 17,9 mdr € mot 14,1 mdr € (nettomarginal 12,6 % mot EBIT-marginal 9,9 % — UBER/ABBV/TM-mönstret) och resCAGR −25,9 % spänner över engångsposten (ärlighetsnot: CAGR:n maskinellt korrekt, ekonomiskt bär den one-offet + cykeln); bruttomarginalserien 16,2 → 18,0 → 14,7 → 13,8 % (medel 15,7 %, spridning 4,2 pp) — samma malörter som Mercedes (Kina-priskrig + el-omställning) på en enhet lägre nivå: volympremiumets marginal kontra premiummärkelets — duons jämförelserad i sig pedagogik; DIREKTAVKASTNING 4,40 € = 7,00 % — NÄST HÖGSTA dokumenterade efter Mercedes-raden; utdelningsserien 8,50 → 6,00 → 4,30 → 4,40 € = två sänkningar följda av den FÖRSTA höjningen (+2,3 %; vändningsnoten Mercedes ännu inte levererat), ex-dag 2026-04-29, payout 42,1 % på TTM (lägre än Mercedes 66,0 — capexen tar utrymmet), buyback-yield 1,08 %, ägaravkastning 8,08 %; finansarmen: total skuld 116,79 mdr € mot kassa 15,64 (skuld/EBITDA 8,61, räntetäckning 51,5×) — Volvo-notens/VFS-mönstrets FJÄRDE instans; EV/Earnings 20,82 mot P/E 5,90; segment TTM: bilar 113,2 + motorcyklar 3,1 + finans 39,7 mdr € (elimineringar −28,0); ROIC 2,92 % mot WACC 2,50 % = +0,42 pp — trängre värdeskapandemarginal än Mercedes +1,28 (BLK-radens +0,11 är universumets trängste); ROE 6,59 %; beta 0,77; 52-vägers spann 60,45–96,85 € (−25,6 % på ett år — duons svagaste); 159 104 anställda (grundat 1916); nästa rapport 2026-11-04"
+  },
+  {
+    "ticker": "BABA",
+    "namn": "Alibaba Group Holding Limited",
+    "bransch": "konsument",
+    "land": "Kina",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/baba/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence + Fiscal.ai; kurs close 2026-09-16 16:00 EDT, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, FCF, 4 räkenskapsår FY2023–FY2026 (april–mars) — financials i CNY (koncernrapportvaluta) medan kurs/mcap/TTM-derivat i USD enligt ADR-konventionen (BHP/RIO/TM-precedenten); statistics-sidans FCF/skuld i USD"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 107.27,
+    "marknadsKapitalMdr": 266.63,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0562,
+      "resultatCAGR5ar": 0.1346,
+      "omsattningTillvaxtTTM": 0.044,
+      "prognosTillvaxt": 0.8489
+    },
+    "lonksamhet": {
+      "roe": 0.0636,
+      "roic": 0.0308,
+      "bruttoMarginal": 0.382,
+      "ebitMarginal": 0.0456,
+      "nettoMarginal": 0.0704,
+      "fcfMarginal": -0.0742
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.24,
+      "rantaTackning": 4.93,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.3858,
+      "bruttoMarginalSpread5ar": 0.031,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 24.48,
+      "pb": 1.62,
+      "evEbit": 35.54,
+      "peg": 0.29,
+      "fcfYield": -0.0428,
+      "egenKapitalMultipl": 1.62
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        868687000000,
+        941168000000,
+        996347000000,
+        1023670000000
+      ],
+      "resultat": [
+        72509000000,
+        79741000000,
+        129470000000,
+        105904000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        165422000000,
+        150506000000,
+        77537000000,
+        -49850000000
+      ]
+    },
+    "notering": "universumets FÖRSTA KINA-RAD (16:e landet) och e-handelskvartettens fjärde modell — AMZN (teknik), MELI+SHOP (tillväxt), BABA (konsument): fyra kontinentala e-handelsarketyper; ADR-konventionen (BHP/RIO/TM-precedenten): kurs 107,27 $ och börsvärde 266,63 mdr $ i USD medan räkenskapsserierna FY2023–FY2026 (april–mars, års-etikett = slutår) är i koncernrapportvalutan CNY — VIE-STRUKTURENS PEDAGOGIK: ADR:n är kontraktuella rättigheter mot konglomeratet, ej direkt aktieinnehav i de kinesiska operativa bolagen (källans HFCAA-år som historisk kontext — ADR-mekaniken är en riskdimension som ingen annan universumsrad bär); NORMALISERINGSGAPET ÅTTONDE POSTEN: trailing P/E 24,48 mot fwd 13,24 ⇒ prognosTillväxt +84,9 % — källans USD-TTM-netto −49,7 % medan CNY-året föll −18,2 % (växelkurs- och basnot: 10,79 mdr $ TTM mot 105,9 mdr CNY FY2026), källans 3-års EPS-prognos +45,32 %/år och källans PEG 0,41 som not (spårets 0,29 på trailing/fwd-konventionen); NETTO ÖVER EBIT (7,04 % mot 4,56 %) — UBER-/ABBV-/TM-mönstret: räntenetto på 56,78 mdr $ kassan + andelsintäkter ligger under driftsraden (driftsresultatet 151,7→63,0 mdr CNY i omställningsåret FY2026); EV/EBIT 35,54 medan EV/EBITDA 17,0 och EV 249,1 < mcap = NETTOKASSA 17,5 mdr $ (56,78 kassa mot 39,24 skuld; skuld/EK 0,24, räntetäckning 4,93×) — multipeln på nedtryckt EBIT-nämnare, SOBI-mekaniken; P/B 1,62 UNDER konsument-medianen — substansnära trots topp-30-börsvärde (källans balansräkningsvy: nettokassa 365→35 mdr CNY FY2024→FY2026 = omställningens pris); ROIC 3,08 % MOT WACC 6,41 % = −3,33 pp (värdeförstörande marginal — Siemens-notens släkt men djupare: AI-investeringarna ligger under kapitalkostnaden medan fwd-P/E:n prissätter normalisering); FCF TTM −11,42 mdr $ (OCF 11,70 − capex 23,12) = universumets TREDJE negativa FCF-rad (ORCL, TM, BABA — första på e-handel/moln) med fcfYield −4,28 % och fcfMarginal −7,4 %; FCF-SERIENS CAPEX-TRAPPA 165,4→150,5→77,5→−49,9 mdr CNY (capex 34→32→86→126 — AI-infrastrukturens pris i en serie, ORCL-notens kinesiska spegel); MOAT-SERIEN 36,9/37,7/40,0/39,8 % (medel 38,6 % spridning 3,1 pp — marknadsplatsens brutto håller genom omställningen); UTDDELNINGEN 1,05 $ = 0,98 % payout 23,5 % med CNY-serien 6,87→7,22→7,62→7,24 (FY2026 sänkt) och buyback-yield −0,39 % = nettoUTSPÄDNING (utspädningen som affärsvillkor i ett tal); beta 0,50; 52-vägers spann 91,99–192,67 $ med −32,1 % på ett år — 2026 års kursfall bär källans nyhetsflöde: securities class actions kring militärkopplings-designationer och AI-distillation-påståenden (klassperiodens topp 173,68 mot botten 95,07 $); rapport i CNY, räkenskapsår april–mars, NYSE-ADR"
   }
 ]

@@ -379,6 +379,9 @@ const GAMLA = [
     "svaraLokaltVarderjustering",
     "svaraLokaltOptionsdjup",
     "svaraLokaltRisklasningsdjup",
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -401,7 +404,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 24 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "24 lager i ordning (ägande + redovisningsdjup + djup + historia + lonsamhetsdjup + tsdjup + skattedjup + beteendedjup + riskdjup + riskmåttsdjup + utdelningsdjup + förväntningsdjup + portfoljbalans + stabilitetsdjup SIST), inga okända komponenter",
   );

@@ -107,6 +107,18 @@ const MOTORDEFS = [
   { namn: "varderjustering", fil: "ai-mentor-varderjustering-fragor.ts", fn: "svaraLokaltVarderjustering", arr: "VARDERJUSTERING_MONSTER", antal: 2 },
   { namn: "optionsdjup", fil: "ai-mentor-optionsdjup-fragor.ts", fn: "svaraLokaltOptionsdjup", arr: "OPTIONS_DJUP_MONSTER", antal: 1 },
   { namn: "risklasningsdjup", fil: "ai-mentor-risklasningsdjup-fragor.ts", fn: "svaraLokaltRisklasningsdjup", arr: "RISKLÄSNINGSDJUP_MONSTER", antal: 3 },
+  // 2026-09-17 omgång 15: avkastningskurva (s6-u1 — den omvända
+  // avkastningskurvan/inverterad yield curve; aktiverar mk-08/mk-06/mk-01
+  // som ingen mentorväg nådde; makro äger ränteorden, detta lager bär
+  // kurvsammansättningarna — nakna inverter-ord bara starkord,
+  // invester-stammens tavstånd 1–2) + avkastningsdjup (syskon u2 —
+  // avkastningens tre källor + tvärsnittet mellan bolag, vr-familjens två
+  // mentorväglösa kurser) + värderingsverktyg (syskon u3 — scenarioanalys
+  // + DDM/Gordon + PEG ratio). Kärnorden mekaniskt disjunkta i alla
+  // riktningar (sonderna _s6u{1,2,3}-sond-omg15.mjs + direkta motorprover).
+  { namn: "avkastningskurva", fil: "ai-mentor-avkastningskurva-fragor.ts", fn: "svaraLokaltAvkastningskurva", arr: "AVKASTNINGSKURVA_MONSTER", antal: 1 },
+  { namn: "avkastningsdjup", fil: "ai-mentor-avrakningsdjup-fragor.ts", fn: "svaraLokaltAvkastningsdjup", arr: "AVKASTNINGSDJUP_MONSTER", antal: 2 },
+  { namn: "värderingsverktyg", fil: "ai-mentor-varderingsverktyg-fragor.ts", fn: "svaraLokaltVarderingsverktyg", arr: "VARDERINGSVERKTYG_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -115,7 +127,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 86 (2026-09-17, 27-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 92 (2026-09-17 omgång 15, 30-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -198,6 +210,12 @@ const KANONISKA = [
   { fraga: "vad är kundkoncentration?", motor: 26 },
   { fraga: "vad är en riskmatris?",     motor: 26 },
   { fraga: "hur läser jag riskavsnittet?", motor: 26 },
+  // Omgång 15: avkastningskurva (s6-u1) + avkastningsdjup (u2) +
+  // värderingsverktyg (u3) — kanoniska ur deras egna rubriker.
+  { fraga: "vad är den omvända avkastningskurvan?", motor: 27 },
+  { fraga: "vad är avkastningskällor?", motor: 28 },
+  { fraga: "vad är tvärsnittsanalys?",  motor: 28 },
+  { fraga: "vad är scenarioanalys?",    motor: 29 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -242,7 +260,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "tjugosju motorer lämnar frågan ifred",
+  "trettio motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -325,7 +343,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla tjugosju motorer",
+    "H: disjunkta monster-id:n över alla trettio motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

@@ -108,7 +108,7 @@ const { svaraLokaltGrahamgolv, GRAHAMGOLV_MONSTER } = await tolerera("ai-mentor-
 // i samma fönster, wire:ade EFTER detta lager i kedjan (widgetens 27-läge);
 // deras egna tester äger deras djupkontroller.
 const { svaraLokaltOptionsdjup, OPTIONS_DJUP_MONSTER } = await tolerera("ai-mentor-optionsdjup-fragor.ts", ["svaraLokaltOptionsdjup", "OPTIONS_DJUP_MONSTER"]);
-const { svaraLokaltRisklasningsdjup, RISKLÄSNINGSDJUP_MONSTER } = await tolerera("ai-mentor-risklasningsdjup-fragor.ts", ["svaraLokaltRisklasningsdjup", "RISKLÄSNINGSDJUP_MONSTER"]);
+const { svaraLokaltRisklasningsdjup, RISKLÄSNINGSDJUP_MONSTER } = await tolerera("ai-mentor-risklasningsdjup-fragor.ts", ["svaraLokaltRisklasningsdjup", "svaraLokaltVarderingsverktyg", "svaraLokaltAvkastningsdjup", "svaraLokaltAvkastningskurva", "RISKLÄSNINGSDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -611,6 +611,8 @@ function kedjaGenomAllt(fraga) {
     "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup",
     "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering",
     "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup",
+    "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -633,7 +635,7 @@ function kedjaGenomAllt(fraga) {
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 27 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "varderjustering före syskonens optionsdjup + riskläsningsdjup (27 lager), inga okända komponenter",
   );

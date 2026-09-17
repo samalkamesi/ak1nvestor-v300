@@ -108,7 +108,7 @@ const { svaraLokaltVarderjustering, VARDERJUSTERING_MONSTER } = await tolerera("
 // spegelkollision utan skada); deras motor importeras TOLERANT och deras
 // komponent förts in harmoniskt i kedjespeglarna + L-listan (deras
 // testunderhåll enligt 23bfd63f-doktrinen är fortfarande deras att landa).
-const RLD = await tolerera("ai-mentor-risklasningsdjup-fragor.ts", ["svaraLokaltRisklasningsdjup", "RISKLASNINGSDJUP_MONSTER"]);
+const RLD = await tolerera("ai-mentor-risklasningsdjup-fragor.ts", ["svaraLokaltRisklasningsdjup", "svaraLokaltVarderingsverktyg", "svaraLokaltAvkastningsdjup", "svaraLokaltAvkastningskurva", "RISKLASNINGSDJUP_MONSTER"]);
 const svaraLokaltRisklasningsdjup = RLD.svaraLokaltRisklasningsdjup;
 const RISKLASNINGSDJUP_MONSTER = RLD.RISKLASNINGSDJUP_MONSTER;
 
@@ -564,6 +564,8 @@ const GAMLA = [
     "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup",
     "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering",
     "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup",
+    "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -586,7 +588,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 27 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "optionsdjup före syskonens risklasningsdjup — omgång 14:s fyra leveranser sista, inga okända komponenter",
   );

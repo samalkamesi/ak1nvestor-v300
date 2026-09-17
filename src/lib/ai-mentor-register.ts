@@ -504,6 +504,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "vr-03-multipelns-anatomi", titel: "Multipelns anatomi — vad ett värderingstal innehåller", kategori: "VÄRDERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "vr-04-avkastningens-tre-kallor", titel: "Avkastningens tre källor — vinsttillväxt, utdelning och multipelns resa: redovisningen av var avkastningen kom ifrån", kategori: "VÄRDERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "way-of-the-turtle", titel: "Way of the Turtle — Faith: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 168, niva: "Alla" },
   { slug: "what-works-on-wall-street", titel: "What Works on Wall Street — O'Shaughnessy: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
   { slug: "when-genius-failed", titel: "When Genius Failed — Lowenstein: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 140, niva: "Alla" },

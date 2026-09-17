@@ -315,6 +315,66 @@ import { svaraLokaltOptionsdjup } from "@/lib/ai-mentor-optionsdjup-fragor";
 // kärnorden mekaniskt disjunkta mot detta lager i båda riktningarna).
 // Juridikgrind: ren metodutbildning — inga placeringstips.
 import { svaraLokaltRisklasningsdjup } from "@/lib/ai-mentor-risklasningsdjup-fragor";
+// Spår 6 omgång 15 (s6-u1): +1 förhandsfråga — avkastningskurve-lagret
+// (den omvända avkastningskurvan/inverterad yield curve/räntekurvan) ligger
+// SIST och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt
+// med flerkällsrad (mk-08-omvand-yield-curve primär + mk-06-penningpolitik
+// + ma-01-transmissionsmekaniken + mk-01-bnp-och-tillvaxt — aktiverar tre
+// kurser ingen mentorväg nådde: sonden räknade mk-08/mk-06/mk-01 olänkade).
+// Ansvarsfördelning (V19-precedensen): makro-lagret äger ränteorden
+// (styrränta/ränta/penningpolitik/obligation — sondbevis), detta lager
+// bär ENDAST sammansatta kurvord + fraser; nakna inverter-ord är bara
+// starkord (cape/case-klassen: "inverterad" ligger tavstånd 1–2 från
+// "investerad"/"investering"); basen äger naket "spread", riskdjupet
+// "löptid". Sond verktyg/_s6u1-sond-omg15.mjs: kedjeprober NULL genom
+// samtliga 27 lager före leveransen. Juridikgrind: ren metodutbildning —
+// inga placeringstips, inga prognoser, historiken bokförd med sina
+// osäkerheter. I samma fönster: ai-mentor-register rebakat 401→402
+// (basotestets E01 var rött — vr-04-rebaken i spår 5 nådde aldrig
+// mentorsregistret; nu 26/26 grönt).
+import { svaraLokaltAvkastningskurva } from "@/lib/ai-mentor-avkastningskurva-fragor";
+// Spår 6 omgång 15 (s6-u2): +2 förhandsfrågor — avkastningsdjup-lagret
+// (avkastningens tre källor: vr-04 primär + vr-03 + kt-02 + ud-09 ·
+// tvärsnittet mellan bolag: vr-01 primär + vr-02 + km-027-pegratio + v06)
+// ligger SIST och kan därför aldrig stjäla en fråga från tidigare lager;
+// källmärkt med flerkällsrader — aktiverar VÄRDERING-familjens två kurser
+// ingen mentorväg nådde (sondens NULL-familj: "vad är avkastning?" ·
+// "var kommer avkastningen ifrån?" · "vad är totalavkastning?" ·
+// "prisavkastning" · "vad är tvärsnittsanalys?" · "hur jämför jag bolag?").
+// Ansvarsfördelning (emission/V19-precedensen): djup-lagret äger i praktiken
+// multipel-orden ("multipelgapet"/"multipelns resa" fångas av dem, sondbevis
+// d=2 till "multipelvalet") — detta lager når vr-01/vr-04 via tvärsnitts-
+// och avkastningsformuleringar; singularen "avkastningskälla" (tavstånd 2
+// till utdelningsdjupets "avkastningsfälla") bärs medvetet EJ här; syskonet
+// s6-u1:s avkastningskurva-lager (samma fönster, disk-läge-presedensen) är
+// kärnordsdisjunkt i båda riktningarna (deras kurvfamilj: avkastningskurva/
+// räntekurva/kurvinvertering — mina käll-/tvärsnittsfamiljer, tavstånd ≥ 4).
+// Sond verktyg/_s6u2-sond-omg15.mjs: 27 motorer / 86 monsters / 897 kärnord
+// LIVE + tre ronder. Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltAvkastningsdjup } from "@/lib/ai-mentor-avrakningsdjup-fragor";
+// Spår 6 omgång 15 (s6-u3): +3 förhandsfrågor — värderingsverktyg-lagret
+// (scenarioanalys/scenarier · utdelningsdiskonteringsmodellen/gordons
+// tillväxtmodell/ddm/gordon growth · peg ratio/peg/peg-kvoten) ligger SIST
+// och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrader (km-029-scenarioanalys + km-032-stresstesting + rs-04-
+// riskmatrisen + vm-04-cyklisk-justering · vm-06-dividend-discount-model-ddm
+// + ud-09-utdelningens-hallbarhet + km-064-utdelningstillvaxt + vm-01-
+// grahams-formel · km-027-pegratio + km-009-pe + km-007-dcf + tx-03) —
+// VÄRDERINGSMETODER-kategorins tre ännu otäckta verktyg: scenarioanalys,
+// DDM och PEG gick ALLA NULL genom hela kedjan före detta lagret.
+// Ansvarsfördelning (emission/V19-precedensen): basens utdelning-monster
+// äger grundorden ("utdelning", "dividend", "dividender", "direktavkastning",
+// "payout ratio" — sondbevis), lönsamhetsdjupet äger wacc/kapitalkostnad,
+// värderingsjusteringen normalisering/CAPE/SOTP, riskläsningsdjupet
+// riskmatris/riskavsnitt — detta lager bär ENDAST sammansatta familjeord
+// ingen tidigare äger; syskonen i samma fönster (u1:s avkastningskurva +
+// u2:s avrakningsdjup med "vinsttillväxten"/tvärsnitt-familjen — disk-läge-
+// presedensen) är kärnordsdisjunkta i båda riktningarna; u2:s tvärsnitts-
+// text nämner PEG-logiken som KÄLLA (km-027 delas som källa, aldrig som
+// kärnord). Sond verktyg/_s6u3-sond-omg15.mjs: 29 motorer / 89 monsters /
+// 945 kärnord LIVE, 10/10 kanoniska NULL. Juridikgrind: ren metodutbildning
+// med påhittade tal — inga placeringstips.
+import { svaraLokaltVarderingsverktyg } from "@/lib/ai-mentor-varderingsverktyg-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -1020,7 +1080,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

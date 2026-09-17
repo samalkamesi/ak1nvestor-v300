@@ -1,8 +1,9 @@
 # o57 — Prestanda: LasyGlobal tvåstegs-basfall (tjänstevågen ur TBT-fönstret)
 
 **Spår 7 · s7-u2 (manifest auto-s7-1789685729701, byggare 2/3) · 2026-09-18**
-**Status: FÖRE mätt + kur levererad (tsc 0, commit 35c313cd) · EFTER pending
-prod-synkens bygge (rop xx:7).**
+**Status: KLAR — kur + EFTER mekaniskt bokförda (§5: våg-tidsbevis PASS på
+samtliga kurerade chunkar, TBT / −621 ms); deployad BYm2zhRXDsyFAAVBk3Krb;
+prod 200 ×3.**
 
 ## §0 Sammandrag (o57)
 
@@ -79,9 +80,13 @@ anropet ur mätfönstret).
 - `timeoutMs`-proppen avskaffas — ingen konsument skickade den (spa-hem,
   LasyShortSeller, LasyNotisCenter), och en död styrknapp med gamla semantiken
   bjuder till att missleda nästa våg.
-- **PalettVakt orörd** (4 s-tyst idle har dokumenterat syfte: besöks-
-  registreringen; ligger inte i 2 s-toppen och palettens ⌘K-svar är redan
-  omedelbart via vaktens egna lyssnare).
+- **PalettVakt orörd** — men §3:s ursprungliga motivering ("4 s; ligger inte
+  i 2 s-toppen") var FEL och rättas här: `schemalaggIdle(…, 4000)` är ett
+  TAK, inte en fördröjning — på tysta traces infaller första äkta idle redan
+  ~0,9–1,2 s och paletten + besöksregistrering + badge/streak-deps monteras
+  då (§5 residualvåg ≈ 15–21 K). Orördhet var korrekt BESLUT (dokumenterat
+  syfte: besöksregistreringen; ⌘K svarar omedelbart via vaktens egna
+  lyssnare) men palettfamiljen är spårets nästa öppna defer-objekt — se §6.
 - `schemalaggIdle` behålls (PalettVakt använder den).
 
 Kostnad/avvägning: passiva besökare utan enda interaktion ser tjänsteknapparna
@@ -97,25 +102,58 @@ på varje sidvisning. Inom spårets beslutsyta (o53-precedensen; inget R2).
 - Bygge: NEJ (prod-synken äger, rop var 10:e minut vid minut 7) — commit i
   develop räcker; EFTER mäts när BUILD_ID byts.
 
-## §5 EFTER-mätning — PENDING (skrivet 01:15 lokal 2026-09-18)
+## §5 EFTER-mätning — BOKFÖRD (mätt 01:11–01:12 lokal, build BYm2zhRXDsyFAAVBk3Krb)
 
-Kur-commit 35c313cd i develop sedan 01:12; prod-synkens nästa rop 01:17 bygger
-(RAM-vakten kan hålla det — ärligt fönster deklareras vid bokning). Kriterier:
+Prod-synken deployade 23:10:02Z (extra rop — 01:10 lokal): kur-commit
+35c313cd + syskonet u3:s o56-kur (home-section prefetch={false}) i SAMMA
+deploy-fönster; BUILD_ID doGVDk → BYm2zh verifierad FÖRE mätning, prod 200.
+Rådata: `lighthouse/{start,kurser,blogg}-s7u2o57-efter.json` +
+`s7u2o57-efter-sammanfattning.json`. Lastband: EFTER mätt vid load 2,3 (syskon
+aktiva) mot FÖRE:s solo 0,51 — bandet snedvrider TBT åt SÄMRE hållet för
+EFTER; strukturveviset (a) är lastokänsligt.
 
-(a) tjänstevågens fyra chunkar hämtas INTE alls under Lighthouse-tracen på
-    någon mätsida (o53 §5-mönstret: "hämtas ej alls under mätningen");
-(b) TBT ned, särskilt /blogg (FÖRE 1 292 ms);
-(c) LCP/CLS oförändrade eller bättre (CLS 0 kvar — inget nytt målar in);
-(d) prod 200 + BUILD_ID verifierad före mätning.
+| Sida | P FÖRE→EFTER | LCP | TBT | CLS | SI |
+|---|---|---|---|---|---|
+| / | **P64 → P74** | 4 120 → 4 251 | **1 065 → 444 (−621 ms, −58 %)** | 0 → 0 | 1 498 → 1 379 |
+| /kurser | P61 → P59 | 5 147 → 5 113 | 802 → 1 001 (+199, lastband) | 0 → 0 | 3 067 → 1 904 |
+| /blogg | P59 → P60 | 4 592 → 4 760 | **1 292 → 1 048 (−244 ms)** | 0 → 0 | 1 528 → 1 688 |
+
+**Kriterier:** (a) **PASS** — de kurerade chunkarna hämtas INTE alls i
+EFTER-tracen: shortseller (1v7kmw1m0wmat) och notis (1zm6sf2dup1hn) = noll
+träffar på alla tre sidor (i FÖRE: 1 180–1 335 ms), SearchModal-familjen på /
+(1qvevmz_r67hk 7 K + 1c3hmq2wqhl4q 9 K) = noll träffar (i FÖRE: ~1,0–1,1 s).
+(b) **PASS med band** — / −621 ms (största rensningen, där vågen var tyngst
+≈ 70 K), /blogg −244 ms, /kurser +199 ms (CPU-bindna kurskorts-hydratisering +
+last 2,3 — riktningslöst, strukturveviset bär). (c) **PASS** — LCP inom ±170
+ms-band, CLS 0 på samtliga (inget nytt målar in). (d) **PASS** — BUILD_ID-byte
++ prod 200 före mätning.
+
+**Residualvåg (ärligt):** en sen våg återstår på alla sidor ≈ 15–21 K vid
+0,9–1,25 s = **PalettVakt-familjen** (kommandopalett-chunken 3-bylxy1ipbmj +
+besöksregistrerings-depen 1pzpqqxps3ruw, på /kurser//blogg dessutom
+badge/streak-depen 2iy81ex7whhmo + 3c-wisnfu4b51) — utanför denna kurs
+deklarerade omfattning, se §6.
+
+**Attribuering (dubbelkurs-fönstret):** u3:s o56-kur (hero-prefetch off)
+minskar TRANSFERN på / (≈ −38 K _rsc) men rör ingen chunk-montering; denna
+vågs TBT/våg-tidsrörelser är LasyGlobal-kurens verkande (o56-EFTER
+syskonets eget att boka). /kursers SI-fall 3 067 → 1 904 bär troligen bägge.
 
 ## §6 Kvarstående observationer
 
+- **PalettVakt-familjen (öppet, namnrymd fri — spårets nästa defer-objekt):**
+  palett-chunk 3-bylxy1ipbmj (17 K transfer) + besöksregistrerings-dep
+  1pzpqqxps3ruw (9 K) + badge/streak-deps (2iy81ex7whhmo 11 K +
+  3c-wisnfu4b51 4 K på /kurser//blogg) hämtas fortfarande vid första idle
+  0,9–1,25 s (o57 §5 residualvåg). Kurs-idé: samma tvåstegs-basfall med
+  bevarad ⌘K/"ak1a:oppna-sok"-respons (vakt-lyssnarna finns redan) — bara
+  den tysta idle-monteringen flyttas; besöksregistreringen tål ~8 s.
 - React-chunkens hydratiseringsdominans (o45 §1: 59 % av blocking) — strukturell
   trädbantning, fortfarande öppet (o53 §6, o54 §6).
 - Chat-chunkens intern-vektdelning — AI-mentor-spårets yta (o53 §6).
-- PalettVakt:s 4 s-idle: utanför denna kurs omfattning; palettchunkens vikt
-  (3-bylxy1ipbmj 17 K råmaterial i initial load-vågen på /) kan förtjäna en
-  egen sond — namnrymd fri.
+- /kurser TBT steg i EFTER-fönstret (+199 ms vid load 2,3) — kurskorts-
+  hydratiseringen är sidans kvarvarande CPU-kostnad; mätvärdigt i nästa
+  solo-fönster.
 
 ## §7 Metod och ärlighet
 
@@ -124,7 +162,7 @@ build qDivc, lastband med syskonkul) visar lastprofilens andra halva — båda
 redovisas, mekanismen är strukturell och lastokänslig i riktning (alltid före
 TTI). Våg-timingbeviset (a) är primärt; TBT-tal (b) deklareras med lastband.
 Syskonkollisioner: u1 (o54-EFTER) och u3 (o54+o51-EFTER, protokoll o56) mätte
-på samma bygge 00:58–01:03 — deras tvärsnitt än dual-use som oberoende FÖRE-
-källor. Rådataskydd: s7u2o50-efter-trion (min namnrymd, o50 §5:s bokade
-mätning) committas med denna våg om syskonet u3:s plan inte hann före (disk-
-först gäller). R2 orörd; data/blogg/ orörd; inget bygge av mig.
+på samma bygge 00:58–01:03 — deras tvärsnitt är dual-use som oberoende FÖRE-
+källor. Rådataskydd: s7u2o50-efter-trion (min namnrymd) räddades av syskonet
+u3 i 67057a64 innan min commit — disk-först respekterat, ingen duplikat. R2
+orörd; data/blogg/ orörd; inget bygge av mig.

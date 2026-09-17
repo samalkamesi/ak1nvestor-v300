@@ -1,10 +1,13 @@
 # O41 — Blogg-kortens slug-prefetch kurerad i tre språklistor: dubbla _rsc-omgångarnas 18,7 KiB ur LCP-fönstret (spår 7)
 
-**Ägare:** fabriksagent s7-u2 (byggare 2/3, manifest auto-s7-1789617927277)
-· **Status:** KUR LEVERERAD (tsc 0, commit pending) — EFTER-mätning enligt
-pending-precedensen när prod-synken byggt
+**Ägare:** fabriksagent s7-u2 (byggare 2/3, manifest auto-s7-1789617927277;
+EFTER-bokföring av efterföljaren s7-u2 i manifest auto-s7-1789640127873)
+· **Status: KUR LEVERERAD OCH EFTER-MÄTT — slug-_rsc 4→0 bevisat i prod
+(bygge 11:39, deploy landat 12:2x); null-risken utföll INTE (omgång 2 är
+Link-prefetch, ej cache-warming)** — se §6
 · Anspråk + pivot: `data/vakten/s7-1789617927277-u2-ansprak.md` (04:09Z,
-pivot 04:11Z — se §0)
+pivot 04:11Z — se §0); EFTER-anspråk:
+`data/vakten/auto-s7-1789640127873-u2-ansprak.md` (12:2x lokal)
 
 ## §0 Objektval: dubbelkollision → pivot (o38 §0-precedensen)
 
@@ -94,3 +97,68 @@ slugprefetch-efter /blogg /en/blogg` på vilande server med o32:s SEQ-grind.
 TBT/LCP-chans förbättrad i linje med EN:s profil; EN oförändrad ±drift
 (o38 §4: +~8 KiB/omgång från s6-lager — särskiljs av /en-blogg-kontrollen).
 **Noll-resultat ⇒ omgång 2 är warming ⇒ boka ny rot hos huvudagenten.**
+
+## §6 EFTER — kuren mekaniskt bevisad i prod (12:1x–12:21 lokal, 2026-09-17)
+
+**Bygge:** prod-synkens bygge BUILD_ID `2rW0uv5tcRccLtkPlZot` (klart
+11:39:50 lokal) innehåller kur-commiten 8fa5f0ce (06:19) — sista commit i
+bygget c8e4b940 11:33; s6:s två mentorlager (bc9ab0ba 12:08, df6fbdb5
+12:10) landade EFTER byggstart och bär INTE i mätningen. Prod HTTPS 200
+verifierad före och efter mätning. Solo-fönster: inga chrome/lighthouse-
+processer, lighthouse-katalogen tom sedan 06:18; syskon u3:s anspråk
+(12:17) = /kurser-TBT — noll ytaöverlapp.
+
+**Kvadrat (Lighthouse mobil, localhost, SEQ):**
+
+| Yta      | Tal          | Poäng | LCP  | TBT | CLS | Requests | Transfer |
+|----------|--------------|-------|------|-----|-----|----------|----------|
+| /blogg   | FÖRE 06:14   | P62   | 4158 | 1197| 0   | 49       | 744 135 B (727 KiB) |
+| /blogg   | **EFTER 12:1x** | P55 | 4999 | 1191| 0   | **44**   | **724 250 B (707 KiB)** |
+| /en/blogg| FÖRE 06:13   | P60   | 4274 | 1035| 0   | 48       | 753 112 B (735 KiB) |
+| /en/blogg| **EFTER 12:21 solo** | P58 | 4467 | 1524 | 0 | **46** | **731 638 B (714 KiB)** |
+
+**Mekaniskt bevis (contamineringståligt, o28-mätplanet):**
+- **/blogg slug-_rsc 4 → 0.** FÖRE-båda ronderna (u2 solo + u3) visar
+  identiska 4 slug-_rsc (2 slugs × 2 omgångar: 887+891 B + 8 988+8 887 B);
+  EFTER: noll. Kursrute-_rsc 0 → 0 (o37-kuren håller).
+- **Transfer −19 885 B (−19,4 KiB) mot kalkylen −18,7 KiB** — träff inom
+  4 %. Requests 49 → 44 (−5, kalkylen sa −4).
+- URL-diffen fördjupar fyndet: prefetchen drog **även route-JS-chunks** —
+  2 slug-stigar + 6 chunk-filer borta mot 5 nya (bygg-hashar); kurens
+  räckvidd är större än den RSC-räknade kalkylen.
+- /en/blogg: slug-_rsc 1 → 0, requests 48 → 46, −21,5 KiB.
+- **Null-risken (§3) utföll INTE**: omgång 2 var Link-prefetch —
+  `prefetch={false}` styr BÅDA omgångarna i Next 16.1.1. Ingen ny rot
+  behövs hos huvudagenten.
+- /ar-blogg: kurkod identisk (r 77), mekanism bevisad på båda mätta
+  speglarna — /ar ej separat mätt (tidsfenster); kodbevis + spegelbevis
+  bärs, egen mätning bokas som frivillig rest.
+
+**CPU-tal (byggkontext OLIKA — ärlighetstavlan):** FÖRE mättes på
+04:00Z-bygget (register 390), EFTER på 11:39-bygget (register 396 via
+s5:s tre vågor 7a3dc7d2/9e3bbf76/c8e4b940) — /en-kontrollen (kur-vinst
+≈0 där: 1 avbruten slug-prefetch) isolerar driften: TBT +489, LCP +193
+mellan byggena. /blogg TBT 1197→1191 (≈0 — kurens nätverksvinst köper
+ingen mätbar CPU-vinst; RSC-parse av 20 KiB är marginellt), LCP 4158→4999
+ligger INOM FÖRE-byggets egen intra-build-spridning (u2 4158 mot u3 5109
+samma bygge = ±950 ms band). Poäng P62→P55/P60→P58 bärs av LCP-bandet +
+registerdrift, inte av kuren (kuren tar bort nätverkslast i
+LCP-fönstret — kan inte försämra). "TBT/LCP-chans förbättrad" (§5:s
+förväntan) infriades alltså INTE mätbart — kurens värde är requests/
+transfer/mobildata, bokförs så.
+
+**Metodnotiser:** (1) sist-i-svärm-grinden (o42 §7.3) avfyrade på rondens
+sista sida: /en 5367 ms TBT i svärmpar (P51) → solo-ommatchning 1524 ms
+(P58) = ×3,5-artefakt bevisad, solo-talet gäller; (2) FÖRE-talen 49/50
+requests dubbelkällade (u2 solo + u3, 744 135/744 731 B — verktygets
+determinism inom 600 B); (3) rådata i egna namnrymder
+`lighthouse/{blogg,en_blogg}-slugprefetch-efter*.json` +
+`slugprefetch-efter{,2}-sammanfattning.json` (clobber-regeln; kontaminerad
+/en-svärmpar BEVARAD som artefaktbevis i slugprefetch-efter-filerna).
+
+**Kö (vidare):** (1) §2:s öppna prefetch-objekt KVAR OCH NU STÖRST I
+KLASSEN: `/`-prefetchen ×3 (18,4 KiB, SeoPageShell nav/breadcrumb — delad
+komponent, ägs av huvudagenten/styrelse) + `/logga-in` ×2 (1,7 KiB);
+(2) /kurser-TBT pågår hos syskon u3 (egen anspråksfil); (3) poängbandets
+övergång P62→P55 på / mellan morgon/natt-facit (o42 §2) — driftobservatör
+hos kommande facit.

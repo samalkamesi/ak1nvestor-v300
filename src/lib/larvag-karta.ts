@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (402 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (405 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 360 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 363 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -400,6 +400,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-04-vallgravens-fodelse", titel: "Vallgravens födelse — hur en moat byggs sten för sten", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-05-byteskostnader-och-inlasning", titel: "Byteskostnader och inlåsning — moaten som håller kunden kvar", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -421,9 +422,11 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-02-lonebildning-och-kostnadsspiralen", titel: "Lönebildningen och kostnadsspiralen — från avtal till bolagets marginal", kategori: "MAKROEKONOMI & RÄNTA", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ma-03-realrantan", titel: "Realräntan — pengars tidsvärde efter inflation", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-02-implicit-volatilitet", titel: "Implicit volatilitet — marknadens pris på framtiden", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-03-warranter-och-teckningsoptioner", titel: "Warranter och teckningsoptioner — optionen möter den svenska emissionen", kategori: "OPTIONS & DERIVAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-04-kombinerade-optionspositioner", titel: "Kombinerade optionspositioner — collar, straddle och prisspridning", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-02-labbets-karta", titel: "Labbets karta — fem motorer, ett hus: orienteringen före ek-01", kategori: "EKOSYSTEM", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-03-arbetsflodet-i-labbet", titel: "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -438,4 +441,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 402;
+export const LARVAG_ANTAL_KURSER = 405;

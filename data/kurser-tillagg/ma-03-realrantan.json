@@ -1,0 +1,144 @@
+{
+  "slug": "ma-03-realrantan",
+  "category": "MAKROEKONOMI & RÄNTA",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Realräntan — pengars tidsvärde efter inflation",
+  "summary": "MAKROEKONOMI & RÄNTA-familjens andra kröning vid sidan av transmissionsmekaniken (ma-01): realräntan, den del av räntan som återstår när inflationens förväntningar räknats bort. Kursen lär Fisherekvationen (nominalränta = realränta + förväntad inflation, 5,0 = 2,5 + 2,5), breakeven-inflationen som marknadens pris på förväntningar (nominell obligationsränta 4,0 procent mot realobligationens 2,0 ger 2,0 procents förväntad inflation), skillnaden mellan ex-ante och ex-post (den verkliga realräntan kan bara räknas baklänges: 7,0 procents utfall mot 9,0 procents inflation ger minus 1,8 procent), och realräntans omvända relation till värderingen — en perpetuitet vid 5 procents kalkylränta är värd 2 000 kronor och vid 6 procent 1 667, skillnaden hela 16,7 procent. Genomgående utbildning i mekanismen, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna Fisherekvationen i båda riktningarna: nominalräntan är realräntan plus förväntad inflation (5,0 = 2,5 + 2,5), och realräntan ur marknadens tal fås som skillnaden mellan nominell obligationsränta och breakeven-inflation. Läsa breakeven-inflationen som marknadens samlade bud på kommande inflation och känna dess två brusposter (riskpremie och likviditet). Räkna ex-post-reallräntan baklänges med båda metoderna — approximationen 7,0 minus 9,0 lika minus 2,0 procentenheter och den exakta kvoten 1,07/1,09 minus 1 lika minus 1,8 procent — och veta var de skiljer sig. Räkna realräntans värderingseffekt: nuvärdet av 100 kronor om ett år är 95,24 kronor vid 5 procent och 94,34 vid 6 procent, och en perpetuitet på 100 kronor per år faller från 2 000 till 1 667 kronor när kalkylräntan stiger en procentenhet. Känna de negativa realräntornas mekanik och de fyra reaktionerna på dem.",
+  "why": "MAKROEKONOMI & RÄNTA-familjen har efter lönebildningskursen (ma-02) två tomma hyllor kring sitt kärnbegrepp: km-054 äger nominalräntan som pris på pengar och km-055 inflationens mått, men ingen kurs i hela registret äger själva realräntan — Fisherekvationen, breakeven-marknaden och den omvända relationen till värderingsmultiplar (sond mot registret: noll träffar på realränta, Fisherekvation eller breakeven-inflation bland kurserna). Det är familjens analysmässigt tyngsta tal: det är den reala, inte den nominella, räntan som styr pengars tidsvärde, lånevilja och aktiemarknadens diskonteringsränta — och den kan bara förstås genom att hantera förväntningar, vilket gör den till en naturlig Avancerad-kröning bredvid ma-01 och samtidigt familjens andra Avancerade kurs (A-luckan i familjens trappa: en av sju kurser före denna leverans).",
+  "history": {
+    "origin": "Skillnaden mellan nominala och reala storheter blev ett ekonomiskt problem först när penningväsendet slutade vara metalliskt bundet: under guldmyntfotens epok var prisnivån i praktiken stationär över decennier och räntan kunde läsas som en ren tidspris. Irving Fisher formulerade sambandet i sitt arbete om räntans natur (The Theory of Interest, 1930): den ränta som syns i kontrakt är nominell, men den som styr sparande och investeringar är real, och skillnaden mellan dem är den inflation köparen och säljaren väntar sig — en skillnad som kan misstolkas systematiskt, vilket Fisher kallade penningillusionen: att tro att fler kronor är mer värde.",
+    "evolution": "Under 1900-talets andra hälft blev ämnet praktiskt brinnande: 1970-talets inflation överraskade både låntagare och långivare och gav negativa ex-post-reala räntor — den som lånat till fast ränta vann på inflationens bekostnad, och den som sparat på kontot förlorade köpkraft varje år. Marknadens svar blev instrument som skriver om räntan i reala termer: USA lanserade TIPS (statsobligationer vars kapital indexeras mot konsumentprisindex) 1997, och Riksgälden gav ut reala obligationer i Sverige under 1990-talet — med dem föddes breakeven-inflationen, marknadens kontinuerligt uppdaterade bud på kommande inflation, som ett nytt informationslager vid sidan av statistikmyndigheternas efterhandsmått.",
+    "modern": "I dag är realräntan ett bakgrundstal i varje värderingsdiskussion: när centralbankerna rapporterar är marknadens fråga inte vad styrräntan blev utan vad den blir minus inflationen, och aktiemarknadens multiplar debatteras i termer av det reala kalkylräntans läge (den lågränteperiod som följde finanskrisen fick sin litteratur om multiplarnas beroende av diskonteringsräntan). Samtidigt har breakeven-marknaden sina kända brusposter — inflationsriskpremie och likviditetsskillnader mellan nominella och reala obligationer — vilket gör den till ett stöd, inte ett facit. Metoden i denna kurs är därför dubbelt formulerad: räkna exakt på det som hänt, håll förväntningarna som intervall."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Nominalt mot reellt — Fisherekvationen", "minutes": 4 },
+    { "num": 2, "title": "Breakeven-inflationen — marknadens pris på förväntningar", "minutes": 4 },
+    { "num": 3, "title": "Ex-ante och ex-post — den verkliga realräntan räknas baklänges", "minutes": 4 },
+    { "num": 4, "title": "Realräntan och värderingen — diskonteringsräntans reala del", "minutes": 4 },
+    { "num": 5, "title": "Negativa realräntor — när kontot betalar för förvaringen", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — realräntan som bakgrundstal i varje analys", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Nominalt mot reellt — Fisherekvationen",
+      "minutes": 4,
+      "intro": "Två räntor bär samma namn. Den ena står i låneavtalet, den andra styr vad lånet faktiskt kostar i köpkraft — och analysen börjar med att skilja dem åt mekaniskt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fisherekvationen — uppkallad efter Irving Fisher — är familjens grundidentitet: nominalräntan är realräntan plus förväntad inflation. Med ett sparkonto som ger 5,0 procent ränta och inflation som förväntas bli 2,5 procent blir den reala räntan 5,0 − 2,5 = 2,5 procent — köpkraften växer med två och en halv procent per år, inte med fem. Tre saker är värda att notera om identiteten. För det första är den en identitet, inte en teori: den definierar realräntan som restposten mellan två tal, och det är alltid okontroversiellt att räkna den — kontroverserna gäller vilka tal som ska in. För det andra bygger den på förväntningar: det är inte den inflation som blir, utan den som låntagare och långivare räknar med när räntan sättas, vilket är skälet till kapitel tre hela sin existens. För det tredje kan restposten vara negativ: vid 4,0 procents nominell ränta och 6,0 procents förväntad inflation är den reala räntan minus 2,0 procent — att låna är då köpkraftsvinstande i förväntan, vilket är en av de starkaste drivkrafter som finns i en ekonomi. Km-054 äger nominalräntan som begrepp och km-055 inflationens mått; denna kurs äger själva övergången mellan dem. Frågan att ställa till varje räntesituation är därför alltid dubbel: vad står det i avtalet, och vad väntas penningvärdet göra? Enbart det första talet beskriver avtalet; först båda beskriver ekonomin. Formuleringen är hela kursens metod: räkna identiteten, ifrågasätt ingångsvärdena, håll förväntningarna som intervall — utbildning i hantverket, inte en bedömning av någon verklig låne- eller sparsituation."
+        },
+        {
+          "type": "definition",
+          "content": "Realräntan — den del av räntan som återstår när förväntad inflation räknats bort: approximativt nominalräntan minus förväntad inflation, exakt (1 plus nominalräntan) delat med (1 plus förväntad inflation) minus 1. Realräntan mäter hur mycket köpkraft som växer per tidsenhet och är det tal som styr sparande, lånevilja och värderingsdiskonteringen; nominalräntan är det kontraktsskrivna talet."
+        },
+        {
+          "type": "insight",
+          "content": "Approximationen och den exakta kvoten skiljer sig mest vid höga tal: 5,0 minus 2,5 ger 2,5 procentenheter, medan 1,05/1,025 minus 1 ger 2,4 procent — försumbart vid svensk inflationsnivå, men vid 20 procents inflation och 25 procents ränta ger subtraktionen 5 procentenheter mot kvotens exakta 4,2 procent. Vid låga tal räcker subtraktionen; vid höga blir kvoten den ärliga räkningen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Breakeven-inflationen — marknadens pris på förväntningar",
+      "minutes": 4,
+      "intro": "Förväntningar kan inte mätas direkt, men de kan prissättas. Nominella och reala statsobligationer sida vid sida ger marknadens levande inflationsförväntan som en subtraktion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen bygger på två instrument som Riksgälden och motsvarande utgivare erbjuder: en vanlig nominell statsobligation, som betalar fast ränta i kronor, och en realobligation, vars kapital och kupong indexeras mot konsumentprisindex. Antag att den nominella tioårslånga obligationen ger 4,0 procent och den reala 2,0 procent. En investerare som väljer den nominella avstår den garanterat reala räntan 2,0 procent mot chansen på mer om inflationen blir låg; den som väljer realen låser 2,0 procent oavsett inflation. Vid vilken förväntad inflation är marknaden indifferent? Där utfallen matchas: om inflationen blir 4,0 − 2,0 = 2,0 procent ger båda obligationerna samma reala avkastning. Detta tal — nominell ränta minus real obligationsränta — är breakeven-inflationen, och den läses dagligen ur marknadspriser som marknadens samlade bud på genomsnittlig inflation till obligationens löptid. Två brusposter kräver alltid en fotnot. Den första är inflationsriskpremien: den nominella obligationen bär inflationsrisk (utfallet kan överraska), och priset på den risken pumpar upp breakeven-nivån över den rena förväntan. Den andra är likviditet: reala obligationer är en smalare marknad, och deras (oftast något högre) avkastningskrav för att hållas trycker breakeven åt motsatt håll. Breakeven-talet är därför ett stöd, inte ett facit — rimlighetstestas med hjälp av centralbankens mål (km-056 äger centralbankernas ram) och statistikmyndighetens mätningar (km-055 äger indextekniken). Notera också vad marknaden faktiskt svarar på: frågan är inte vad inflationen ska bli i verkligheten utan vad den genomsnittlige prissättaren räknar med — vilket gör breakeven till lika mycket en läsning av marknadens psykologi (bf-familjens territorium) som av penningväsendet. I analysarbete används talet som ett av flera spår: breakeven trender uppåt betyder växande inflationströtthet i priser, nedåt betyder tvärtom — och skillnaden mellan marknadens bud och egen uppfattning är själva analysunderlaget."
+        },
+        {
+          "type": "tabell",
+          "content": "Nominell 10-årsränta | Real obligationsränta | Breakeven-inflation | Trolig läsning\n4,0 % | 2,0 % | 2,0 % | Marknad prissätter målnära inflation — stabila förväntningar\n4,0 % | 1,0 % | 3,0 % | Högre inflationsförväntan eller ökad riskpremie i nominella lån\n3,0 % | 2,0 % | 1,0 % | Förväntningar under målet — eller hög likviditetspremie i reala lån\n2,0 % | 0,0 % | 2,0 % | Lågt ränteläge med intakta förväntningar — klassisk lågräntemiljö"
+        },
+        {
+          "type": "insight",
+          "content": "Breakeven är det enda inflationsmått som uppdateras i realtid och med riktiga pengar bakom varje siffra — men den mäter förväntningar med inblandning av två premier, inte framtiden. Använd den som termometer, inte som prognos: trender och förändringar bär mer information än nivån själv."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Ex-ante och ex-post — den verkliga realräntan räknas baklänges",
+      "minutes": 4,
+      "intro": "Förväntningar är talet före händelsen. Efter händelsen finns ett annat tal — den reala ränta som faktiskt blev — och skillnaden mellan dem förklarar en stor del av finanshistoriens överraskningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ex-ante betyder före händelsen: realräntan beräknad på förväntad inflation, det kapitel ett och två arbetar med. Ex-post betyder efter händelsen: realräntan beräknad på den inflation som verkligen inträffade — det enda sättet en sparare faktiskt kan konstatera vad ett år på kontot blev i köpkraft. Räkneexempel: ett sparkonto gav 7,0 procent under ett år då inflationen landade på 9,0 procent. Approximativ ex-post-realränta: 7,0 − 9,0 = −2,0 procentenheter. Exakt: (1,07/1,09) − 1 = 0,9817 − 1 = −1,8 procent. Kontots ägare hade alltså färre kronor men ännu mindre köpkraft — en förlust som aldrig syns på kontoutdraget, vilket är penningillusionen (kapitel ett) i praktisk tappning. Historiens klassiska exempel är 1970-talet: låntagare med fast nominell ränta fick kraftigt negativa ex-post-reala räntor när inflationen överraskade uppåt, sparare på konton motsvarande — en av de största omfördelningarna i modern ekonomisk historia, driven inte av beslut utan av förväntningarnas misslyckande. Skillnaden ex-ante mot ex-post är också mätstocken för överraskning: centralbanker och marknadsanalytiker sammanställer systematiskt skillnaden mellan breakeven-inflationen (ex-ante, kapitel två) och utföll inflation (ex-post) för att förstå var förväntningarna brister — ett arbete som km-056 utvecklar på centralbankssidan. För den enskilda analysen är poängen disciplinen: varje räntekalkyl ska deklarera om den är ex-ante (och därmed vilar på ett antagande om framtida inflation) eller ex-post (och därmed bara gäller historien). Att blanda dem — att räkna verkliga avkastningar med förväntad inflation, eller framtidskalkyler med historisk — är en av de vanligaste räknefelskällorna i finansieringsanalys, och enkelt att undvika: märk varje tal med sin tidsriktning."
+        },
+        {
+          "type": "insight",
+          "content": "Ex-post-räkningen är historiens facit och ex-ante-räkningen är beslutets underlag — analysen behöver båda, men aldrig i samma formel. När någon presenterar en förväntad realavkastning utan att säga vilken inflation som antagits är kalkylen ofullständig: realräntan är alltid ett talpar, ränta och inflation tillsammans."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Realräntan och värderingen — diskonteringsräntans reala del",
+      "minutes": 4,
+      "intro": "Varje värdering diskonterar framtiden till nutid, och diskonteringsräntans reala del är realräntan. Det är här makrotalen från kapitel ett till tre möter multipeln på börsen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundmekanismen är nuvärdet. Hundra kronor om ett år är idag värt 100/1,05 = 95,24 kronor vid 5,0 procents kalkylränta och 100/1,06 = 94,34 kronor vid 6,0 — en procentenhet högre ränta tar 0,90 kronor av nuvärdet, ungefär en procent. Effekten förstärks med tidens längd och kulminerar i perpetuiteten, den oändliga årsbetalningen som är aktiens förenklade släkting: en betalning på 100 kronor per år för alltid är vid 5,0 procents kalkylränta värd 100/0,05 = 2 000 kronor och vid 6,0 procent värd 100/0,06 = 1 667 kronor — en procentenhet ränta raderar 16,7 procent av värdet. Här är kopplingen till värderingsmultiplarna (vr-03 äger multipelns anatomi): en akties P/E-tal är i sin enklaste mekanik släkt med inversen av kalkylräntan, och när marknadens reala diskonteringsränta stiger faller multiplarna som en vikt på en fjäder, även när bolagets kassaflöden är oförändrade. WACC-kurserna (km-008 och vm-11) äger den fullständiga diskonteringsräntan med riskpremier; denna kurs äger insikten att WACC:ens botten ligger just i realräntan — riskpremierna läggs ovanpå den reala grundräntan, vilket betyder att varje realränteförändring flyttar hela kedjan. Därför är realräntan ett bakgrundstal i varje värderingsdiskussion: frågan huruvida en given multipel är hög eller låg kan inte besvaras utan en syn på det reala ränteläget — ett P/E-tal som var rimligt vid två procents realränta kan vara dyrt vid fyra, med samma bolag och samma vinst. Samtidigt gäller den omvända försiktigheten: relationen är en mekanisk släktskap, inte en modell som lyder exakt — multiplarna styrs också av tillväxt, risk och sentiment, och lågränteperioder har visat multiplar både över och under vad rent mekaniska räkningar antyder. Räkna därför alltid bägge riktningarna: vad säger dagens multiplapel om antagen kalkylränta, och vad gör en realränteförändring om en procentenhet med mitt värde — en känslighetsövning i km-032:s anda, tillämpad på diskonteringsräntans botten."
+        },
+        {
+          "type": "definition",
+          "content": "Perpetuitet — en betalning som återkommer för alltid; nuvärdet är den årliga betalningen delat med kalkylräntan (100/0,05 = 2 000 kronor). Perpetuitetens värde är linjärt omvänd mot räntan, vilket gör den till den tydligaste illustrationen av realräntans makt över värden: en procentenhet upp i räntan är en sjättedel ned i värde."
+        },
+        {
+          "type": "insight",
+          "content": "Realräntan flyttar värderingsgolvet, riskpremierna flyttar avståndet till golvet — tillsammans bestämmer de multiplarnas spelrum. Den som kan hålla isär de två rörelserna kan läsa en multipelexpansion korrekt: var den driven av billigare pengar eller av mindre upplevd risk? Svaret ändrar vad som krävs för att värderingens fortsättning ska bäras av kassaflöden."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Negativa realräntor — när kontot betalar för förvaringen",
+      "minutes": 4,
+      "intro": "Nominellt plus, reellt minus: den negativa realräntan är finansens mest smygande tillstånd, osynlig på kontoutdraget och ändå omdanande för hela ekonomin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken är kapitel ett i tillämpning: kontoräntan 0 procent och inflation 2,0 procent ger realräntan minus 2,0 procent. På 100 000 kronor sparade i ett år: 1/1,02 = 0,98039, det vill säga 98 039 kronor i dagens penningvärde — en köpkraftsförlust på 1 961 kronor som aldrig registreras som en förlust, eftersom kontots saldo är oförändrat. Historiskt har negativa realräntor två ursprung: överraskande hög inflation (1970-talet, ex-post-varianten från kapitel tre) och medvetet låga nominella räntor i kristider och efter dem (2000-talets lågränteperiod, ex-ante-varianten). Reaktionerna följer fyra spår, alla med välförstådda bieffekter. Det första är konsumtion: pengar som förlorar värde i förvaring bjuds ut som köp idag i stället för imorgon — stimulerande för ekonomin på kort sikt, men en torped mot långsiktigt sparande. Det andra är reala tillgångar: bostäder, skog, metaller och mark prisas delvis som ett skydd mot penningvärdet, vilket gör deras värdering beroende av realränteläget — ett beroende som också är en fälla när realräntan vänder. Det tredje är aktier: multiplarnas mekanik från kapitel fyra gynnar långa kassaflöden när realräntan är låg, men premien för risk (och den cirklar bf-15 äger kring bubblans anatomi) kan spänna bågen långt bortom vad diskonteringsräntan motiverar. Det fjärde är de reala obligationerna från kapitel två: efterfrågan på garanterad real avkastning ökar i negativa realräntelägen, vilket i sig trycker deras avkastning — skyddet blir dyrare precis när det behövs. Samtliga fyra reaktioner är mekanik, inte rekommendationer: kursens uppgift är att läsaren ska kunna räkna själv vad ett givet realränteläge gör med köpkraft, nuvärden och multiplar, och förstå varför marknadens deltagare rör sig som de gör — besluten är alltid läsarens egna, på egen analys."
+        },
+        {
+          "type": "tabell",
+          "content": "Läge | Kontoränta | Inflation | Realränta (approx.) | 100 000 kr efter ett år i dagens värde\nPositiv realränta | 3,0 % | 2,0 % | +1,0 % | 100 980 kr\nNoll realränta | 2,0 % | 2,0 % | 0,0 % | 100 000 kr\nMilt negativ | 1,0 % | 2,0 % | −1,0 % | 99 020 kr\nKlart negativ | 0,0 % | 2,0 % | −2,0 % | 98 039 kr\nDjupt negativ (ex-post, överraskande inflation) | 1,0 % | 6,0 % | −5,0 % | 95 283 kr"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens sista rad är kapitel tre i siffror: ex-ante stod kontot mot 2,0 procents förväntad inflation och kändes som ett milt minus; ex-post blev det minus 5 procent — skillnaden mellan de två är den overraskning som flyttar förmögenhet mellan sparare och låntagare utan att någon skriver under något."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — realräntan som bakgrundstal i varje analys",
+      "minutes": 4,
+      "intro": "Realräntan är sällan analysens huvudperson — men den är nästan alltid kulissen. Mästerskapet är att bära den med i varje värdering och varje ränteläsning, utan att göra den till mer än den är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Samla kursens verk i fyra händer. Den första: Fisherekvationens dubbla fråga — vid varje ränteläge, ställ båda frågorna (vad är nominellt, vad förväntas inflationen bli) och räkna realräntan innan någon slutsats dras om dyrt eller billigt låneläge. Den andra: breakeven-läsningen — håll marknadens inflationsbud som en tidsserie bredvid centralbankens mål och statistikmyndighetens mått, och notera förändringarna mer än nivåerna (kapitel två). Den tredje: ex-ante- och ex-post-disciplinen — märk varje räntetal med sin tidsriktning i egna kalkyler, så blandas aldrig förväntan med facit (kapitel tre). Den fjärde: värderingskopplingen — räkna perpetuitetskänsligheten (kapitel fyra) i varje multipelanalys: vad gör en realränteförändring om en procentenhet med värdet, och vad säger dagens multipel om antagen kalkylränta? Koppla till familjens övriga kurser: ma-01 äger kedjan från styrränta till bolagets resultat, ma-02 lönesidan, km-058 valutorna — realräntan är deras gemensamma bottenlager, talet som gör att samma styrränta kan vara stram i ett läge och generöst i ett annat. Och väggens plats i metodiken: AKM2:s scenarioramar låter realränteläget variera mellan grenarna, just därför att det är ett bakgrundstal som varken bolaget eller analytikern kontrollerar men som ändå flyttar varje nuvärde — att hålla det som en variabel i stället för en konstant är hela skillnaden mellan en värdering som överlever en räntevändning och en som inte gör det. Fem frågor att stå kvar vid: Vilken realränta antar min kalkyl? Varför just den? Vad säger breakeven-marknaden? Hur mycket ändras värdet om realräntan flyttar en procentenhet? Och när läser jag om svaret? Detta är utbildningens slut: metoden är räknebar, antagandena är läsarens, och omprövningen är inbyggd i frågorna — aldrig en uppmaning, alltid ett hantverk."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en egen realräntekarta i fyra steg: (1) Hämta en aktuell nominell statsobligationsränta och, om tillgänglig, motsvarande reala obligationsränta, och räkna breakeven-inflationen. (2) Jämför med statistikbyråns senaste inflationsmått och centralbankens mål — skiljer sig marknadens bud, och åt vilket håll? (3) Räkna din egen ex-post-reallränta för det senaste året: vad gav ditt konto (eller dina nominella placeringar) mot den inflation som verkligen blev? (4) Räkna perpetuitetskänsligheten för ett bolag du följer: med en enkel schablon för årligt kassaflöde, vad händer med värdet om kalkylräntan stiger från dagens nivå med en procentenhet? Skriv ner alla fyra svar med datum — och upprepa läsningen vid nästa räntebeslut."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch arbetade med tumregeln att aktier och räntor konkurrerar om samma kapital, och hans genomgångar av hur ränteläget flyttar aktiernas attraktivitet är realräntelogik i praktiken — när de reala alternativen blir dyra söker kapital avkastning i bolag vars tillväxt slår räntan med bred marginal. Lynch betonade dock att tillväxtbolagets eget arbete väger tyngre än kulisstal: en ränte-driven multipelexpansion är en vind som kan vika, medan vinsttillväxten är bolagets egen motor.",
+  "grahamSection": "Benjamin Graham skrev om obligationens och aktiens konkurrens om sparandet i termer av företagens avkastningskrav mot räntans, och hans berömda formel tillämpar en räntebas som just flyttas med marknadsläget — realräntan är den basens botten. Grahams försiktighet gäller också här: hans krav på säkerhetsmarginal innebär att ett värde som bara bär på ett gynnsamt realränteläge inte är ett köpvärde utan ett ränteläge — marginalen ska täcka vändningen, inte bara dagen.",
+  "ak1Section": "I AK1A:s metodik ingår realräntan som bakgrundsvariabel i AKM2:s scenarioarbete: räntegrenarna varierar det reala kalkylränteläget mellan scenario och därmed multiplarnas spelrum (anknytning till vr-familjen och km-008-WACC-kedjan), och arbetsflödet (ek-03-traditionen) dokumenterar vilket realränteläge varje värdering antagit — så att omprövningspunkten är sökbar när marknaden flyttar grunden."
+}

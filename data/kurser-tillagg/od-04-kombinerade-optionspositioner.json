@@ -1,0 +1,144 @@
+{
+  "slug": "od-04-kombinerade-optionspositioner",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kombinerade optionspositioner — collar, straddle och prisspridning",
+  "summary": "OPTIONS & DERIVAT-familjens sjätte steg: efter grunderna (km-059), grekerna (od-01), den implicita volatiliteten (od-02), emissionens instrument (od-03) och de enskilda strategikurserna (km-060 covered calls, km-061 protective puts) återstår konststycket att bygga positioner av flera ben. Kursen lär collarn (köpt put stroke 90 för 3 kr finansierad av såld call stroke 110 för 3 kr — nettopremie noll, båda taken låsta), straddle och strangle (att köpa rörelse utan riktning: break-even 92 och 108 vid sammanlagd premie 8 kr), vertikal prisspridning (köpt call 100 för 4 kr såld call 110 för 2 kr — maxvinst 8 kr, maxförlust 2 kr), och payoff-diagrammet som ritas före bygget. Genomgående exempelaktie till 100 kronor med full aritmetik — utbildning i instrumentens mekanik, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Konstruera en collar och räkna dess två tak: köpt put plus såld call kring en ägd aktie låser nedre och övre gräns — vid nettopremie noll blir utfallsrummet 90 till 110 kronor mot en aktie som köpts för 100. Räkna straddlens och stranglens break-even: totalpremien bestämmer rörelsens minimi (premie 8 kronor på strike 100 ger break-even 92 och 108; separata strikar 90 och 110 med premie 4 kronor ger 86 och 114). Räkna en vertikal prisspridnings maxvinst, maxförlust och break-even ur de två benens premier (köpt call 100 för 4, såld call 110 för 2: maxvinst 8, maxförlust 2, break-even 102). Läsa och rita payoff-diagram med knäpunkter vid strikarna. Känna de tre fällorna: tidens erosion mot köpta positioner, premieinkomstens dolda risk vid sålda, och ordet spreads två betydelser (optionsprisspridning mot köp-sälj-spreaden i am-01).",
+  "why": "OPTIONS & DERIVAT-familjen har efter fem steg inget kapitel som äger kombinationerna: km-059 äger instrumentet, km-060 och km-061 äger varsin enskild strategi, od-01 äger prismekaniken, od-02 volatilitetspriset och od-03 emissionens warranter — men sonden mot hela registret (straddle, strangle, collar, prisspridning, premieinkomst) ger noll träffar bland kurserna. Mellan enskilda ben och en hel position saknas alltså konstruktionsläran: payoff-diagrammet, break-even-arithmetiken och finansieringslogiken där ett ben betalar ett annat — det steg där optionskunskapen blir positionsbyggnad i stället för instrumentkännedom. Kursen fyller od-seriens andra Intermediär-nivå (od-01 är den första) och bygger vidare direkt på km-059 till km-061 utan att röra deras territorium: här ägs samspelet mellan ben, där ägs benen.",
+  "history": {
+    "origin": "Optionskombinationer är äldre än de organiserade marknaderna som standardiserade dem: när börshandeln med standardiserade optioner inleddes i Chicago 1973 fanns termins- och optionsstrategier sedan sekler i råvaruhandel och Amsterdambörsens tidiga kontrakt — bagare som säkrade spannmål och köpmän som låste växelkurser byggde positioner av flera ben långt före någon ritade payoff-diagram. Kombinationernas växelverkande logik — att ett ben kan betala ett annat — växte fram ur praktisk nödvändet: premien var ett verkligt utlägg och finansieringen av den ena försäkringen med den andres inkomst en självklar hushållning.",
+    "evolution": "När Black-Scholes-modellen publicerades 1973 fick marknaden ett gemensamt pris- och riskordförråd, och kombinationsstrategierna formaliserades: namn som collar, straddle och spread blev standardiserade byggstenar med definierade payoff-profiler. Samtidigt gjorde clearingsystemet och standardiserade kontrakt positionerna möjliga att nettoräkna — en såld option mot en köpt i samma serie kan ställas mot varandra, vilket sänkte kapitalbindningen och gjorde flerbenade konstruktioner praktiskt genomförbara för fler deltagare. Institutionella ägare tog collarn i bruk som ett sätt att sätta tak och golv kunderna kunde förstå: en position som ser ut som en aktie men med definierade gränser.",
+    "modern": "I dag är kombinerade positioner en standarddel av börsens vardag: indexmarknadens stora positioner bygger ofta av spreadkonstruktioner, och detaljhandeln möter samma logik i täckta och säkrade konstruktioner hos nätmäklare, där payoff-visualisering är inbyggd i orderläggningen. Den pedagogiska kärnan är oförändrad: varje flerbensposition är en aritmetisk summa av enskilda ben, och payoff-diagrammet läser den summan som en form — knäpunkter vid strikarna, lutning mellan dem, tak där benen tar ut varandra. Kursen undervisar den aritmetiken från första principen, med påhittade tal, som ett hantverk — aldrig som en uppmaning att inta någon position."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Varför kombinera — enskilda ben och deras luckor", "minutes": 4 },
+    { "num": 2, "title": "Collarn — försäkrad aktie med finansierad premie", "minutes": 4 },
+    { "num": 3, "title": "Straddle och strangle — rörelsen utan riktning", "minutes": 4 },
+    { "num": 4, "title": "Vertikal prisspridning — köpt och sålt ben i samma riktning", "minutes": 4 },
+    { "num": 5, "title": "Payoff-diagrammet — rita positionen före bygget", "minutes": 4 },
+    { "num": 6, "title": "Fällor och mästerskap — premien, tiden och marginalen", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Varför kombinera — enskilda ben och deras luckor",
+      "minutes": 4,
+      "intro": "Varje enskilt optionsben har en sida som lyfter och en som läcker. Kombinationernas poäng är att benens luckor kan stängas av varandra — men bara om aritmetiken förstås före byggstart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgå från familjens tidigare kurser. Km-059 lärde instrumentet: en option är rätten — inte skyldigheten — att köpa (call) eller sälja (put) till ett förbestämt pris, strike, före lösendagen, till en betald premie. Km-060 byggde covered call: ägda aktier plus såld call ger premieinkomst mot att uppsidan avstås ovanför striken. Km-061 byggde protective put: ägda aktier plus köpt put ger ett golv mot en betald premie. Notera luckorna hos varje enskilt ben. Covered call: nedsidan är i princip aktiens hela — premien på 3 kronor tröstar föga om aktien faller 30. Protective put: uppsidan är oförändrad men premien är en säker kostnad som varje år äter avkastningen — försäkringen är aldrig gratis. Den köpta nakna optionen: full potential men tiden arbetar emot (od-01 äger theta). Den sålda nakna optionen: premieinkomst men obegränsad exponering. Kombinationens idé är nu enkel att formulera: ta två ben vars luckor ligger på varsin sida och låt dem mötas. Såld call finansierar köpt put — collarn, kapitel två. Köpt call finansierar köpt put — straddeln, kapitel tre, som byter riktning mot rörelse. Såld call ovanför köpt call — prisspridningen, kapitel fyra, som säljer av en del av potentialen för att sänka kostnaden. Regeln som styr alla konstruktioner är addition: en kombinerad positions payoff i varje utfall är summan av benens payoffs i samma utfall, och dess kostnad är summan av benens premier (solda ben räknas negativt). Inget ben samverkar på annat sätt — men genom att välja strikar och antal väljs vilka luckor som stängs och vilka som finns kvar. Detta är kursens arbetsmetod: räkna varje ben för sig, summera, läs resultatet som en profil. Exempelaktien är genomgående påhittad, noterad till 100 kronor, och samtliga premier är konstruerade för räkneläran — detta är utbildning i mekanik, inte en beskrivning av någon verklig marknad och aldrig en rekommendation att inta en position."
+        },
+        {
+          "type": "definition",
+          "content": "Kombinerad optionsposition — en position byggd av två eller flera optionsben (ibland med underliggande aktie) där varje bens payoff adderas till helhetens. Konstruktionens kännetecken är att benens svaga sidor väljs att ligga på varsin sida, så att ett ben begränsar det andras risk — collarn låser tak och golv, straddlen byter riktning mot rörelse, prisspridningen säljer av ytterområdet för att finansiera innerområdet."
+        },
+        {
+          "type": "insight",
+          "content": "En kombinerad position skapar ingen ny risk ur tomma intet — den omfördelar risken mellan utfall. Collarn flyttar värde från de stora rörelserna till tryggheten; straddeln flyttar det från stillastående till rörelse; prisspridningen från ytterområdet till ett smalare band. Frågan vid varje konstruktion är därför aldrig om den är bra, utan vilket utfallsrum den köper och vad den betalar i premierna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Collarn — försäkrad aktie med finansierad premie",
+      "minutes": 4,
+      "intro": "Collarn är kombinationernas mest pedagogiska konstruktion: en försäkring som betalas med avstången framtid. Två ben, en ägd aktie — och ett utfallsrum med två tak.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen på exempelaktien till 100 kronor: äg aktien, köp en put med strike 90 till premien 3 kronor, sälj en call med strike 110 till premien 3 kronor. Nettopremien är 3 − 3 = 0 kronor — försäkringen är finansierad av avståendet. Räkna utfallen vid lösen. Aktien 85: aktien är värd 85, puten ger rätten att sälja till 90 och är värd 5, callen utlöper värdelös — totalt 90 kronor, en förlust på 10 mot inköpspriset 100. Aktien 95: aktien 95, puten 0, callen 0 — totalt 95, förlust 5. Aktien 105: totalt 105, vinst 5. Aktien 115: callen utlöser och aktien säljs till 110 — totalt 110, vinst 10. Utfallsrummet är alltså låst mellan 90 och 110: nedre taket satt av puten, övre av callen, och eftersom nettopremien var noll är break-even själva inköpspriset — positionen börjar tjäna först över 100 och förlorar som mest 10. De två ingående kurserna syns i konstruktionen: puten är exakt km-061:s protective put, callen är exakt km-060:s covered call — collarn är deras union, där premiens utgift och inkomst tar ut varandra. Avvägningarna vid konstruktionen: smalare rum (strikarna 95 och 105) ger billigare eller till och med positiv nettopremie men lämnar mindre kvar av aktielivet; bredare rum (80 och 120) kostar mer eller ger mindre tillbaka men bevarar mer av rörelsen. Valet av strikar är alltså ett pris på trygghet, och det priset syns direkt i nettopremien — en mekanisk läsning, ingen tumregel om vad som är rätt. Notera slutligen vad collarn inte gör: den skyddar inte mot att båda taken är fel — den som behöver aktien att stiga mer än 110 har sålt precis den delen, och den som faller mer än 90 skyddas bara till 90. Försäkringen har en självrisk (100 − 90 = 10 kronor) och en avstådd framtid (över 110); båda är konstruktionens kontrakt."
+        },
+        {
+          "type": "tabell",
+          "content": "Aktiekurs vid lösen | Aktiens värde | Put 90 (köpt för 3) | Call 110 (såld för 3) | Totalt vid lösen | Resultat mot 100\n85 | 85 | 5 | 0 | 90 | −10\n95 | 95 | 0 | 0 | 95 | −5\n100 | 100 | 0 | 0 | 100 | 0\n105 | 105 | 0 | 0 | 105 | +5\n115 | 110 (callen utlöser) | 0 | −5 | 110 | +10"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens ytterligheter är kontraktets kärna: vid 85 är förlusten exakt lika stor som vid 80 eller 70 — nedre taket står oavsett hur djupt aktien faller, och samma oföränderlighet gäller vinsten över 110. Collarn köper ett känt utfallsrum; priset är de tio kronor av rörelsen som finns på var sida om rummet."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Straddle och strangle — rörelsen utan riktning",
+      "minutes": 4,
+      "intro": "Alla kombinationer handlar inte om att sätta tak. Straddeln och dess släkting stranglen köper själva rörelsen — och betalar med stillaståendets pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Straddeln på exempelaktien 100 kronor: köp en call med strike 100 till premien 4 kronor och en put med samma strike 100 till premien 4 kronor — total kostnad 8 kronor. Vid lösen gäller additionen: aktien 108 ger callen 8 och puten 0, totalt 8 mot kostnaden 8 — noll. Aktien 92 ger puten 8, totalt 8 — noll. Aktien 100 ger båda 0 — förlusten är hela premien, 8 kronor, som är positionens maximala förlust. Break-even ligger alltså på 92 och 108: aktien måste röra sig mer än 8 kronor, åt vilket håll som helst, för att straddeln ska gå plus. Ingen riktning köps — bara rörelsen, mätt från striken. Stranglen är samma idé med separata strikar: köp put 90 till 2 kronor och call 110 till 2 kronor, totalt 4 kronor. Billigare, men med dött område emellan: först vid 86 (90 − 4) och 114 (110 + 4) når break-even, och alla kurser mellan 90 och 110 ger full förlust av premien. Valet mellan dem är ett pris på form: straddeln betalar mer för att reagera på mindre rörelse, stranglen betalar mindre men kräver mer. Tidsaspekten är konstruktionens egentliga motpart (od-01 äger theta, od-02 prisbilden): en straddle med sjuttio dagar kvar till lösen har den tiden på sig att röra sig 8 kronor, och varje stillastående dag försvinner en del av köpt tid — köparen av rörelse är samtidigt säljare av tid till marknaden. Därmed är straddeln också en position i volatilitet: en lönsam omgång kräver rörelse över 8 kronor är släkt med det mått km-013 äger och med den prisbild od-02 lär ut — den som betalar 8 kronor för rörelse har köpt en implicit volatilitetsbild, och om marknaden redan prissatt större rörelse än den som kommer blir premien förlorad även när aktien rör sig en del. Detta är mekanik att förstå och räkna — inte en strategi att rekommendera, och kursens exempelgivna premier är konstruerade för aritmetiken."
+        },
+        {
+          "type": "tabell",
+          "content": "Position | Ben | Total premie | Max förlust | Break-even nedåt | Break-even uppåt\nStraddle 100 | Köp call 100 (4) + köp put 100 (4) | 8 kr | 8 kr | 92 | 108\nStrangle 90/110 | Köp call 110 (2) + köp put 90 (2) | 4 kr | 4 kr | 86 | 114"
+        },
+        {
+          "type": "insight",
+          "content": "Straddlens asymmetiska hemlighet: maxförlusten är alltid premien, men vinstpotentialen är öppna i båda riktningarna — den som köper rörelse riskerar åtta kronor för att kunna få tjugo. Balansen vilar på att marknaden sätter premien just så dyr att sannolikhetsvägd rörelse räknar hem den; köparens jobb är att skilja verklig rörelseförväntan från prissatt."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Vertikal prisspridning — köpt och sålt ben i samma riktning",
+      "minutes": 4,
+      "intro": "Den vertikala prisspridningen är kombinationernas arbetshäst: köp ett ben, sälj ett annat med samma löptid, och låt mellansområdet bära positionen. Här möter också ordet spreads två betydelser — och kursen håller dem isär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen, i sin uppåtriktade form (bull call): köp en call med strike 100 till premien 4 kronor, sälj en call med strike 110 till premien 2 kronor — nettokostnad 2 kronor. Räkna utfallen. Aktien 98 vid lösen: båda benen värdelösa, förlusten är nettokostnaden 2 kronor — positionens maximum. Aktien 102: den köpta callen är värd 2, nettot 0 — break-even. Aktien 106: den köpta 6, den sålda 0 (utlöper) — vinst 4. Aktien 112: den köpta är värd 12 men den sålda kostar 2 (skillnaden mot strike 110) — nettovinst 10 − 2 = 8 kronor, vilket är maximum: där ovanför växer det sålda benet lika fort som det köpta och taket står. Positionen har alltså tre definierade tal — maxförlust 2, maxvinst 8, break-even 102 — alla urskiljbara ur de två premier som bygger den: maxvinst är strikskillnaden (10) minus nettokostnaden (2). Nedåtriktade spegelbilder konstrueras identiskt med puter, och samma logik bygger positioner som säljer innerområdet och köper ytterområdet — mekaniken är alltid additionen av ben. En terminologisk vaktpost är på plats, för ordet sprider här två betydelser i finanssvenskan: optionsprisspridningen (denna kurs — två optioner med skilda strikar i samma serie) är släkt men skild från handelsspreaden som am-01 äger (skillnaden mellan köp- och säljkurs i orderboken). Förvirringen är verklig: båda kallas spread i dagligt tal, och kursen skriver därför alltid prisspridning när optionsbemärkelsen avses. Praktiskt gäller för alla konstruktioner dessutom likviditeten i respektive ben: en prisspridning har två ben att stänga, dubbelt så många transaktioner med varsin köp-sälj-skillnad — en kostnadspost som finns i am-01:s territorium och som urholkar precis de små nettopremier konstruktören räknat hem. Notis om skatt: avräkning och beskattning av optionspositioner har egna regler som sj-04 äger — detta kapitel räknar på bruttomekanik, före skatt, och hänvisar dit för regelverket."
+        },
+        {
+          "type": "definition",
+          "content": "Vertikal prisspridning — optionsposition av två ben i samma serie och med samma löptid men olika strikar: ett köpt och ett sålt. Maxförlust är nettokostnaden (inköpta minus sålda premier), maxvinst är strikskillnaden minus nettokostnaden, och break-even är den köpta striken plus nettokostnaden (för call-konstruktioner)."
+        },
+        {
+          "type": "insight",
+          "content": "Prisspridningens affär i en mening: den köper en billig del av en position och säljer tillbaka den del som kostar mest per enhet förväntad utdelning. Nettokostnaden 2 kronor mot den nakna callens 4 är hälften så mycket risk — priset är att vinsten takas på 8 i stället för att vara öppen. Konstruktionen väljer sitt utfallsrum precis som collarn gjorde, men i positivt plan."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Payoff-diagrammet — rita positionen före bygget",
+      "minutes": 4,
+      "intro": "Alla kursens konstruktioner är samma hantverk i slutänden: en linje med knäpunkter. Payoff-diagrammet är det verktyget — och det ritas före, inte efter, bygget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Diagrammets axlar är enkla: horisontellt aktiekursen vid lösen, vertikalt positionens resultat. Varje enskilt ben är en bit av en linje: en köpt call är platt under striken (förlusten är premien, oföränderlig) och stigande medlutning 1:1 ovanför; en såld call är spegeln — platt tak, fallande under; en ägd aktie är en rät linje genom noll med lutning 1:1. Kombinationens diagram ritas genom att addera benens linjer punkt för punkt: collarn blir en trappa med plan golv under 90 och plan tak över 110; straddeln blir ett V med botten på −8 vid 100; prisspridningen blir en trappa med lutning bara mellan 100 och 110. Knäpunkterna — där linjen byter lutning — ligger alltid vid strikarna, och det är diagrammets viktigaste läsregel: en position med knä vid 90, 100 och 110 har tre ben med de strikarna, och tvärtom låter varje konstruktion sina strikar avläsas direkt ur grafen. De tre kontrollfrågorna varje diagram ska svara på före en byggs: Var är break-even (linjens skärning med noll)? Vilket är maximalt utfall åt båda håll (den plana delen, om någon)? Vilken lutning har positionen i sitt känsligaste område (hur mycket ändras resultatet per krona aktierörelse)? Fråga tre är grekernas territorium i praktik (od-01): lutningen mot aktiekursen är delta, och en kombinerad positions delta är — precis som payoffenen — summan av benens. Diagrammet förenklar medvetet genom att frysa tiden vid lösen; den löpande verkligheten har en tredje axel (tiden) och en fjärde (volatiliteten, od-02:s territorium), där positionens värde rör sig mellan dagarna. Därför är diagrammet ett beslutsunderlag för konstruktionens utfallsrum, inte en kursprognos — det visar vad som gäller OM, aldrig vad som kommer att ske. Metodiken är densamma som hela kursen: räkna varje ben, addera, läs profilen — och rita den före något ben lagts, så att konstruktionen styrs av utfallsrummet i stället för av benens lockelser."
+        },
+        {
+          "type": "insight",
+          "content": "En payoff-diagramfacit-trick värt att minas: antalet knäpunkter avslöjar antalet ben, och lutningen mellan knäpunkterna avslöjar nettoexponeringen där. En position som är platt under 95, stiger mellan 95 och 105, och är platt över 105 är en prisspridning — läsbara diagram är kombinationernas språk, och att kunna läsa baklänges är hälften av hantverket."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Fällor och mästerskap — premien, tiden och marginalen",
+      "minutes": 4,
+      "intro": "Kombinerade positioner är aritmetiskt rena men praktiskt krävande. Tre fällor återkommer hos alla konstruktioner — premiens lockelse, tidens erosion och kapitalets binding — och mästerskapet ligger i att räkna med dem före bygget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: premieinkomstens asymmetri. Sålda ben ger pengar på kontot direkt och känns trygga — men en såld options risk är köpt options spegelbild: möjligheten att få behålla premien är liten och känd, medan kostnaden när det går fel kan vara multipelt större. Collarns sålda call är därför bunden till en ägd aktie (covered) och prisspridningens sålda ben är bundet till ett köpt med högre tak — konstruktionerna i denna kurs ska aldrig innehålla naket sålda ben; det är själva skillnaden mellan positionsbygge och spekulation i premie. Fälla två: tidens erosion. Köpta kombinationer — straddle, strangle, prisspridningens nettokostnad — förlorar tidsvärde varje dag marknaden ligger stilla, och break-even-aritmetiken som räknades vid lösen gäller alltså bara vid lösen: en straddle som behövs röra sig 8 kronor kan ligga på minus 5 med en vecka kvar trots oförändrad aktiekurs, bara för att den köpta tiden smält. Försäljning före lösen präglas av samma mekanik via marknadspriset, inte av diagrammets lösenlinje. Fälla tre: kapitalbinding och transaktionskostnad. En cash-secured put — den sålda puten där hela köpesumman reserveras — binder kapital som alternativt kunde burit ränta, och varje flerbensposition har dubbelt så många ben att öppna och (eventuellt) stänga, var och en med sin handelsspread (am-01:s territorium) och eventuell courtage — nettopremien 2 kronor i prisspridningen tärs snabbt av fyra transaktionskostnader om benen är illikvida. Mästerskapet summeras i kursens tre steg, i ordning: konstruera utfallsrummet först (vilka tak, vilket dött område, vilken lutning), räkna alla tre talen (maxvinst, maxförlust, break-even) och rita linjen, och pröva därefter konstruktionen mot tid och kostnad (tidsfasta? behövs stängas? vad kostar fyra ben?). Ett systematiskt exempel på mekanik — inte uppmaning — är den samlade kedja som kallas wheel: sälj en cash-secured put strike 100 för premien 2; löses puten in köps aktien till effektiv kostnad 98 (100 minus 2); sälj därefter en call strike 100 för premien 2, som vid utlösning säljer aktien till effektiva 102 (100 plus 2) — en rond på 4 kronor mot en bunden insats på 98, det vill säga 4,08 procent, om båda benen löses in på det sättet, och med samtliga fällor fortfarande inbyggda: bindingen av kapitalet, premiens asymmetri om aktien faller djupt under 98, och transaktionskostnaderna för varje vända. Räknelärans fråga till varje sådan konstruktion är alltid densamma: vilket utfallsrum köper jag, vad betalar jag, och vad är alternativkostnaden för bundet kapital? Detta är utbildningens slutord — mekaniken är räknebar och positionernas konstruktion ett hantverk, men besluten om att inta dem är varje läsares eget, på egen analys och med full förståelse för att kombinerade instrument förstorar både skydd och förlust i exakt den mån deras aritmetik anger."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita och räkna tre konstruktioner själv med en påhittad aktie till 200 kronor: (1) En collar med strik 180 och 220 där nettopremien ska bli noll — vilka ungefärliga premier kräver det, och vilket blir utfallsrummet? (2) En straddle med strike 200 och total premie 14 kronor — var ligger break-even, och hur stor är maxförlusten? (3) En prisspridning med köpt call 200 (premie 8) och såld call 215 (premie 4) — räkna maxvinst, maxförlust och break-even, och rita payoff-linjen med knäpunkter. Kontrollera varje svar med additionsregeln: räkna benen var för sig vid kurserna 170, 200 och 230, och summera."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch var öppet skeptisk mot optioner som placeringsverktyg för den som inte är fulltidsinvesterare — hans linje var att aktieforskningens avkastning inte behöver hävstångsbyggen för att bära. Men hans princip att förstå varje instruments mekanik innan det rörs är kombinationernas bästa försäkring: payoff-diagrammet är instrumentets historia berättad i förväg, och den som kan läsa den behöver inte lita på någon annans konstruktion.",
+  "grahamSection": "Benjamin Graham mötte knappast standardiserade optionsbörser i sin aktiva period, men hans princip om att varje position ska bäras av ett beräknat säkerhetsöverskott översätts direkt: en kombinerad positions maxförlust är dess självrisk, och konstruktionen ska ha ett utfallsrum som motiverar den förlusten. Collarns definierade gränser är i Grahams bemärkelse den mest disciplinerade av kursens konstruktioner — den som vet sin värsta dag på förhand.",
+  "ak1Section": "I AK1A:s metodik hör kombinerade positioner hemma i verktygslådan för den avancerade läsaren, undervisade som mekanik med full aritmetik: AKM2:s riskkolumner (rs-familjens matris) kan bära en positions maxförlust som definierad nedsida, och arbetsflödet (ek-03-traditionen) dokumenterar konstruktionens tre tal — maxvinst, maxförlust, break-even — innan någon position alls förekommer i analysen. Kursens juridiska grundhållning är familjens: instrumentens mekanik är utbildning, och ingenting i konstruktionsläran är en rekommendation att inta en position."
+}

@@ -1,0 +1,144 @@
+{
+  "slug": "mt-05-byteskostnader-och-inlasning",
+  "category": "MOAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Byteskostnader och inlåsning — moaten som håller kunden kvar",
+  "summary": "MOAT-familjens femte akt: efter vad en moat är (mt-01), hur den nöts (mt-02), hur den mäts (mt-03) och hur den byggs (mt-04) återstår den mest undervärderade av Dorseys fyra vallgravstyper — byteskostnaderna, tröskeln som gör att kunden stannar även när konkurrenten är billigare. Kursen lär de fyra mekanismerna (integration, lärande, kontrakt och data), churn-aritmetiken där halverad kundbortfallstakt fördubblar kundvärdet (1/0,20 = 5 år mot 1/0,10 = 10 år), och läsningen av inlåsningen i årsredovisningen: nettointäktsretention, kontraktslängder och segment. Genomgående exempelbolag Svea System AB med full aritmetik — utbildning i metoden, aldrig råd om enskilda placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna medellivstiden ur churn: kundbortfallstakten inverterad ger tiden en kund stannar i snitt — 20 procents churn ger 1/0,20 = 5 år, 10 procent ger 10 år — och det enkla kundvärdet är årligt kundbidrag gånger livstid: 72 000 kr per år ger 360 000 kr vid 5 år och 720 000 kr vid 10. Räkna bytesbeslutet från kundens sida: den årliga besparing en konkurrent erbjuder ställs mot migrationskostnaden, och återbetalningstiden avgör om tröskeln håller. Läsa inlåsningen i rapporten: nettointäktsretention (bas 100 med expansion, pris och churn), bindande kontraktslängder och segmentvis churn. Väga byteskostnader mot familjens övriga vallgravar och känna igen de tre fällorna: den ilskna kunden, regleringen och disruptören som bygger bron runt tröskeln.",
+  "why": "MOAT-familjen har efter fyra akter ingen kurs som äger kvarhållningen som egen mekanik: v13 och v14 äger de immateriella rättigheterna och varumärkeslojaliteten, v15 äger nätverkseffekterna, mt-01 grundbegreppet, mt-02 erosionen, mt-03 mätningen och mt-04 bygget — men Dorsey-ramverkets fjärde och mest impermeabla typ, byteskostnaderna, är oskriven i hela registret (sond mot registrets samtliga kurser: noll träffar på byteskostnad, switching eller inlåsning). Det är vallgravstypen som inte syns i varken marginaler eller varumärkesmätningar förrän churnsiffran läses rätt — och den som förklarar hur ett bolag kan behålla prissättningen mot billigare konkurrenter år efter år. Kursen fyller familjens tredje Avancerad-nivå (v15 och mt-03 är de andra två) och kompletterar se-01-saassektorn som äger churn som sektormått: här ägs principen och aritmetiken tvärs över alla sektorer.",
+  "history": {
+    "origin": "Byteskostnaden som ekonomiskt begrepp föddes i efterkrigstidens industriteknik: när ett företags utrustning väl installerades i kundens fabrik — med kopplingar till kundens egna system, personal utbildad av leverantören och reservdelslager anpassade efter konstruktionen — blev priset på att byta leverantör plötsligt större än priset på själva maskinen. Fenomenet beskrevs tidigt inom organisationsforskningen som relationsspecifika investeringar: kostnader som bara har värde inom den pågående relationen och förloras vid ett byte. Inlåsning, på engelska lock-in, blev under 1980-talets systembranscher ett medvetet designmål snarare än en biverkning.",
+    "evolution": "Teorin fick sin analytiska form när strategiforskningen på 1990-talet (Paul Klemperer och andra) formulerade byteskostnadernas tredelning: sökkostnader före köpet, transaktions- och omställningskostnader vid bytet, och osäkerheten om den nya leverantörens kvalitet. Samtidigt visade spelteoretiska modeller att hög byteskostnad kan tjäna både kund och bolag — djupare investeringar blir lönsamma att göra när relationen förväntas bestå — men också att den skapar utrymme för prissättning ovanför konkurrensnivån, det som kallas harvestfas: först byggs relationen, sedan skördas den. IT-branschens programvarulicenser med årliga avgifter och databasernas migrationskomplexitet gjorde mekanismen till hela företagsmodeller.",
+    "modern": "I dag läser marknaden inlåsning framför allt i retentionssiffror: nettointäktsretention över 100 procent — befintliga kunder spenderar mer än bortfaller — har blivit det mest citerade enskilda talet i prenumerationsbolags rapporter, och kontraktslängder, bindingsperioder och migrationspartnerskap analyseras som vallgravsindikatorer. Samtidigt har reglering (portabilitetskrav, öppna api:er) och molnmigrationer sänkt trösklar i flera branscher, vilket gör erosionen av byteskostnader till en permanent bevakningspunkt snarare än en engångsfråga. Metoden i denna kurs — att räkna tröskeln från kundens sida — är densamma oavsett sektor."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Tröskeln — vad en byteskostnad är", "minutes": 4 },
+    { "num": 2, "title": "Fyra mekanismer — integration, lärande, kontrakt och data", "minutes": 4 },
+    { "num": 3, "title": "Churn-aritmetiken — livstid, kundvärde och tröskelns kronor", "minutes": 4 },
+    { "num": 4, "title": "Att läsa inlåsningen i rapporten — retention, kontrakt och segment", "minutes": 4 },
+    { "num": 5, "title": "Fällorna — den ilskna kunden, regleringen och disruptören", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — att väga byteskostnader mot övriga vallgravar", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Tröskeln — vad en byteskostnad är",
+      "minutes": 4,
+      "intro": "En moat syns oftast i marginaler och varumärke. Byteskostnaden är den tysta vallgraven: den syns först när en kund står vid tröskeln — och väljer att stå kvar trots ett billigare alternativ på andra sidan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ta ett rakt exempel. Svea System AB (påhittat bolag, genomgående i kursen) säljer ett affärssystem för 120 000 kr per år och kund. En konkurrent lanserar ett system som gör nästan samma sak för 102 000 kr per år — 18 000 kr lägre. På pappret borde kunderna lämna Svea System i flock. Men att byta system är inte att byta etikett i hyllan: kundens personal måste utbildas om (beräknat 250 interna timmar), data från tio år av affärer måste migreras och kontrolleras, integrations mot bokföring, lager och lön måste byggas om, och under övergångsperioden körs dubbla system parallellt. Kundens interna kalkyl: 250 timmar à 1 200 kr = 300 000 kr i engångskostnad, plus en riskpost för det som går fel under migrationen. Den årliga besparingen på 18 000 kr betalar tillbaka migrationskostnaden efter 300 000/18 000 = 16,7 år. Tröskeln håller — inte för att Svea Systems produkt är bättre, utan för att den är dyr att lämna. Detta är byteskostnaden: summan av allt kunden förlorar eller måste betala för att byta leverantör, mätt i pengar, besvär och risk. Notera asymmetrin i tidsperspektivet: leverantören räknar inlåsningen i årsintäkter, kunden räknar den i engångskostnad — och båda har rätt. Moat-analytikerns uppgift är att räkna båda sidorna, vilket resten av kursen gör mekaniskt. Detta är utbildning i hur mekanismen fungerar och mäts, inte en bedömning av något faktiskt bolag."
+        },
+        {
+          "type": "definition",
+          "content": "Byteskostnad (switching cost) — den totala kostnaden för en kund att byta leverantör: avgifter för uppsägning, migrering av data och system, utbildning av personal, dubbelkörning under övergången samt risken för driftstörningar och försämrad kvalitet tills den nya relationen mogner. Indirekt räknas även sökkostnaden för att hitta och utvärdera alternativen. Tröskeln håller när byteskostnaden överstiger det värde bytet skapar."
+        },
+        {
+          "type": "insight",
+          "content": "Billig konkurrens hotar inte en inlåst kundbas i proportion till prisskillnaden utan i proportion till prisskillnaden mot byteskostnaden. En konkurrent som är 15 procent billigare mot en kundbas med 300 000 kr i migrationskostnad per kund vid 120 000 kr i årsavgift behöver nästan sjutton års besparing för att bära bytet — priset är alltså ett praktiskt verktyg, men tröskeln är det som avgör."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Fyra mekanismer — integration, lärande, kontrakt och data",
+      "minutes": 4,
+      "intro": "Byteskostnader är inte en storlek utan fyra olika mekanismer som ofta verkar tillsammans. Att skilja dem åt är praktiskt: de syns på olika ställen i rapporten och de eroderar av olika anledningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första mekanismen är teknisk integration: kundens systemväv är byggd kring leverantörens produkt. Varje koppling — mot bokföringen, lagret, löneadministratören, bankerna — är en förbindelse som måste byggas om vid ett byte. Ju fler beröringspunkter, desto högre tröskel, och desto mer av tröskeln ligger hos kundens egen it-avdelning som måste äga projektet. Andra mekanismen är lärandet: personalen har tusentals timmars vana vid produktens flöden, kortkommandon och felfall. Utbildningskostnaden syns inte som en faktura utan som produktivitet som försvinner under månader — den svåraste kostnadsposten att prissätta och därmed den mest underskattade. Tredje mekanismen är den kontraktsliga: bindningstider, uppsägningstider och avgifter skriver tröskeln på papper. Ett treårskontrakt med tolv månaders uppsägningstid ger i praktiken fyra års framförhållning från det att kunden bestämt sig för att gå — tiden gör beslutet reversibelt innan det verkställs. Fjärde mekanismen är data: tio års transaktioner, kundhistorik och inställningar lever i leverantörens system, och varje migration riskerar att tappa eller förvanska dem. Data är den mekanism som växer av sig själv — tröskeln blir högre för varje år relationen varar, utan att leverantören lyfter ett finger. De fyra mekanismerna multipliceras snarare än adderas: integration kräver lärande, lärandet producerar data, datan kräver kontrakt som skyddar investeringen."
+        },
+        {
+          "type": "tabell",
+          "content": "Mekanism | Var den syns i kundens kalkyl | Var den syns i leverantörens rapport | Hur den eroderar\nIntegration | Ombyggnad av kopplingar, projekttid it | Andel intäkter från djupt integrerade produkter | Öppna standarder, api-krav, mellanhänder som bygger broar\nLärande | Utbildning, tillfälligt lägre produktivitet | Utbildningsinsatser, certifieringar, community | Enklaste möjliga gränssnitt, generella färdigheter\nKontrakt | Bindningstid, uppsägningstid, avgifter | Kontraktslängder, ordervärde, backlogg | Reglering av bindningstider, kundanpassade krav\nData | Migrationsrisk, kontrollarbete, historik som försvinner | Lagring per kund, exportfunktioners existens | Portabilitetsregler, standardformat, exportverktyg"
+        },
+        {
+          "type": "insight",
+          "content": "De två första mekanismerna — integration och lärande — är osynliga i leverantörens balansräkning men är kundens verkliga kostnad; de två sista — kontrakt och data — syns i rapporten men är de svagaste: kontrakt kan regleras bort och data kan tvingas fram i öppna format. Den hållbaraste inlåsningen är den som kunden själv inte vill lämna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Churn-aritmetiken — livstid, kundvärde och tröskelns kronor",
+      "minutes": 4,
+      "intro": "Inlåsningens ekonomi sammanfattas i en enda talserie: hur länge kunderna stannar. Churn-takten inverterad ger medellivstiden, och medellivstiden gånger kundbidraget ger kundvärdet — kursens kärnberäkning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundtalet är churn, kundbortfallstakten per år. Om 20 procent av kunderna lämnar varje år är medellivstiden för en kund 1/0,20 = 5 år; halveras churn till 10 procent förlängs livstiden till 1/0,10 = 10 år. Detta är aritmetikens mest underskattade symmetri: en halvering av bortfallet är en fördubbling av livstiden. Räkna vidare på Svea System: årsavgiften 120 000 kr med 40 procent direkta kostnader ger ett årligt kundbidrag på 120 000 × 0,60 = 72 000 kr. Enkelt kundvärde utan diskontering blir 72 000 × 5 = 360 000 kr vid 20 procents churn och 72 000 × 10 = 720 000 kr vid 10 procent. Med andra ord: en liten churn-minskning är värdefull långt utöver det bortfall den direkt sparar, eftersom alla kvarvarande kunder samtidigt får längre förväntad livstid. Koppla nu tillbaka till kapitel ett: konkurrentens 18 000 kr i årlig besparing möter kundens migrationskostnad 300 000 kr — för att bytet ska löna sig på fem år (kundens normala beslutshorisont om livstiden är fem år) måste besparingen vara minst 300 000/5 = 60 000 kr per år, det vill säga hälften av avgiften. Så länge konkurrensen pressar priserna mindre än så håller tröskeln sig. Här är analysfrågan att ställa till varje bolag med prenumerationsintäkter: vilken churn-takt antar kalkylen, och vad är beviset? Ett bolag vars värde vilar på kundvärdesmultiplar är i grunden ett bolag vars värde vilar på en churnsiffra — och churn förändras med trösklar, konkurrens och produktens kvalitet, vilket gör den till en levande, inte en statisk, storhet. Räkna alltid med både enkelt kundvärde (som här, för genomskinlighet) och diskonterat kundvärde när beslutet kräver det — metodiken är densamma, tidsvägningen tillkommer."
+        },
+        {
+          "type": "tabell",
+          "content": "Churn per år | Medellivstid 1/churn | Årligt kundbidrag | Enkelt kundvärde (bidrag ÷ churn)\n20 % | 5,00 år | 72 000 kr | 360 000 kr\n15 % | 6,67 år | 72 000 kr | 480 000 kr\n10 % | 10,00 år | 72 000 kr | 720 000 kr\n7,5 % | 13,33 år | 72 000 kr | 960 000 kr\n5 % | 20,00 år | 72 000 kr | 1 440 000 kr\n\nKundvärdet är exakt bidraget delat med churn-takten — samma tal som bidrag gånger livstid, räknat utan mellanavrundning: 72 000 ÷ 0,15 = 480 000 och 72 000 ÷ 0,075 = 960 000."
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens budskap är kurvans form, inte dess enskilda rader: kundvärdet fördubblas när churn halveras — från 360 000 kr till 720 000 kr — utan att en enda ny kund tillkommit och utan att priset höjts. Inlåsningens avkastning sits alltså inte i intäktssidan utan i livstidskolumnen, och det är därför retention är den mest värdeskapande enskilda siffran ett prenumerationsbolag kan röra."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Att läsa inlåsningen i rapporten — retention, kontrakt och segment",
+      "minutes": 4,
+      "intro": "Trösklar finns inte som en sifferpost i bokslutet — de måste läsas ut indirekt. Tre ställen bär bevisen: retentionstal, kontraktsuppgifter och segmentuppdelningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det första beviset är nettointäktsretention, ofta förkortat nrr: hur stor en årskohort befintliga kunder är värd ett år senare, räknat i intäkter. Konstruktionen: börja på bas 100, lägg till expansion (kunder som köper mer), prisökningar, dra ifrån nedgraderingar och churn. Ett tal som 107 betyder att kohorten växt 7 procent trots bortfall — expansionen (+8) och priserna (+3) har mer än ätit churn (−4): 100 + 8 + 3 − 4 = 107. Retention över 100 är det starkaste enskilda tecknet på att tröskeln håller och dessutom fördjupas: kunder som redan är kvar köper mer. Brutto-churn, retentionen innan expansion, avslöjar å andra sidan underliggande nöjdhet — ett bolag med brutto-churn 15 procent och nrr 102 äger en annan riskbild än ett med brutto-churn 5 procent och nrr 102: det första pendlar på högre volym, det andra på djupare ro. Det andra beviset är kontraktsstrukturen: bindningstider, uppsägningstider och ordervärde i rörelse (backlogg) visar hur mycket av intäktsströmmen som är skriven på papper och hur lång tid ett konkurrensteg får verka innan det syns i siffrorna. Läs skillnaden mellan årsvis och månatlig debitering: samma churn-takt är mycket mer smittsam när kunderna kan lämna med trettio dagars varsel. Det tredje beviset är segmenten: churn per kundstorlek eller bransch visar var tröskeln är som djupast — oftast hos de största kunderna med mest integration — och därmed var prissättningsutrymmet faktiskt sitter. Kvalitativa spår: hur många gånger ordet migration förekommer i kundcase, hur stor del av implementeringen kunden själv äger, och om bolaget publicerar exportvägar i öppna format eller tyst om dem. Sök även i noterna: återstående ordervärde av tecknade kontrakt och andelen återkommande intäkter är båda direkta inlåsningsindikatorer, släkt med km-006-kvartalsrapportens läsning av intäktskvalitet (ln-02-familjen äger accruals-sidorna)."
+        },
+        {
+          "type": "definition",
+          "content": "Nettointäktsretention (nrr) — en årskohorts intäktsvärde efter tolv månader delat med dess startvärde: bas 100 plus expansion plus pris, minus nedgradering minus churn. Ett tal över 100 visar att befintliga kunder tillsammans spenderar mer än förra året; brutto-retention är samma tal utan expansion och pris, och skillnaden mellan de två avslöjar hur mycket av tillväxten som kommer inifrån kundbasen."
+        },
+        {
+          "type": "insight",
+          "content": "Ett bolag med nrr kring 107 behöver knappast någon nykundsförsäljning alls för att växa i lågt tempo — kohorterna gör det själva. Omvänt är höga siffror ett löfte om att läsa vidare: nrr säger att kunderna stannar och köper mer, men inte varför — svaret på varför är just det tröskelarbete kapitel två till tre mätte i kronor."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Fällorna — den ilskna kunden, regleringen och disruptören",
+      "minutes": 4,
+      "intro": "Inlåsning är kraftfull men ömtålig på tre specifika sätt. De tre fällorna är värda en egen läsning eftersom var och en kan vända en mur till en läckande damm i takt, i stället för i ett enda genombrott.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: den ilskna kunden. Byteskostnader som enbart vilar på kontrakt och hinder skapar missnöje — kunden som inte kan lämna men vill, och som berättar det för andra. Symtomet syns i sjunkande expansionstal: nrr som mest bärs av pris (plus 3) och inte av volym (plus 8) är en kundbas som betalar mer och köper mindre. På sikt bygger vrede sin egen brygga: när väl en konkurrent erbjuder migration subventionerad — betalad av konkurrenten i utbyte mot fler år i kontrakt — samlas de mest missnöjda först, och deras avgång ger konkurrenten en referensbas att bygga vidare på. Moat-litteraturen skiljer därför mellan inlåsning genom värde (kunden stannar för att det lönar sig) och inlåsning genom hinder (kunden stannar för att utfarten kostar); den förra är värd mer per krona retention eftersom den inte läcker vrede. Fälla två: regleringen. Trösklar som är kontraktsligt skrivna är politiskt exponerade — bindningstider kan förbjudas, portabilitetskrav kan tvinga fram export i öppna format, och gränsöverskridande dataregler kan förkorta kontrakt. En vallgrav vars djup lagstiftaren kan bestämma är en hyrd, inte ägd, fördel — läs därför alltid hur stor del av inlåsningen som sitter i kontrakt mot i integration och lärande (kapitel två: de kontraktsliga är de svagaste). Fälla tre: disruptören som bygger bron. Nya aktörer attackerar sällan tröskeln rakt på; de bygger runt den — en parallell produkt som importeras stegvis, en billig delmängd som börjar vid utkanten av kundbasen (de minsta kunderna med lägst integration) och växer inåt. Tecknet att bevaka: när konkurrenter börjar annonsera gratis migrering och kompatibilitet med etablerade format har tröskeln börjat prissättas av någon annan. Dessa tre fällor är inte anledning att avfärda byteskostnader som vallgrav — de är anledning att mäta dess erosion med samma vana som mt-02 lär för moat i allmänhet: trösklar som aldrig omprövas blir antaganden, och antaganden är inte vallgravar."
+        },
+        {
+          "type": "insight",
+          "content": "Den mest hållbara retentionen är den som aldrig behöver nämna kontraktet: kunden stannar för att bytets kostnad överstiger bytets värde och för att hon är nöjd — tröskeln och lojaliteten förstärker varandra. När bolaget istället skyltar med bindningstider i varje pressrelease har vallgraven börjat bäras av juridik snarare än ekonomi, och det är ett tidigt erosionsspår."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — att väga byteskostnader mot övriga vallgravar",
+      "minutes": 4,
+      "intro": "En vallgrav är sällan av en enda typ. Mästerskapet ligger i att väga de fyra typerna mot varandra och mot priset — för en stark moat till fel pris är fortfarande en dålig affär, vilket hela vr-familjen visar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dorsey-ramverkets fyra vallgravstyper har olika klockslag: immateriella tillgångar (v13-patent och v14-varumärke) slår igenom snabbt och skyddar priset direkt, nätverkseffekter (v15) växer exponentiellt men sent, kostnadsfördelar bär volymtunga branscher, och byteskostnader (denna kurs) är den långsammaste av alla — de byggs relationsvis och mognar med år. I praktiken förstärker de varandra: ett system med hög integrationskostnad och ett starkt varumärke har en annan vägg än summan av delarna, eftersom varumärket sänker kundens sökkostnad för att stanna (inget skäl att ens leta) medan integrationen höjer kostnaden för att gå. Väga därför alltid parvis: nrr-talet tillsammans med brutto-churn (kapitel fyra), livstiden tillsammans med kundbidraget (kapitel tre), kontraktens andel av inlåsningen mot integrationens (kapitel två). Koppla slutligen till värderingen: ett bolag med kundvärde 720 000 kr per kund och 1 000 kunder har ett enkelt kundvärdesdjup på 720 miljoner kr — men multipeln köper framtida kohorter också, och där träder vr-03-multipelns-anatomi och tx-03-frågan när skapar tillväxt värde in: retentionens värde är verkligt först när det landar i framtida kassaflöden som inte redan är prissatta. Frågor att bära med sig från denna kurs: Vilken churn antar kalkylen och vad säger historiken? Hur mycket av tröskeln sitter i kontrakt mot i integration och lärande? Vinner retentionen på volym eller på pris? Och vem skulle kunna betala för att riva tröskeln — och vad skulle det kosta honom? Kursen har varit genomgående ett påhittat exempelbolag och en metod att räkna med — utbildning i mekanismen, aldrig en uppmaning att handla något värdepapper, och metoden är tillämpad på fakta först när siffrorna kommer från en faktisk rapport och läsarens eget arbete."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett prenumerationsbolag du kan läsa rapport för och gör fyra rön utan att titta i facit först: (1) Beräkna medellivstiden ur publicerad brutto-churn — om den inte publiceras, uppskatta intervallet från nrr och expansionsandel tillsammans. (2) Uppskatta det enkla kundvärdet med antagen kundbidragsmarginal och jämför med bolagets börsvärde per kund: vad betalar marknaden för framtida kohorter? (3) Klassa inlåsningen efter kapitel två: hur mycket sitter i kontrakt, hur mycket i integration och lärande? (4) Formulera en omprövningspunkt: vilken händelse skulle ändra din churn-uppskattning, och när ska du läsa efter den? Skriv ner svaren innan du läser bolagets egna retention presentationer — skillnaden mellan ditt och deras tal är kursens kunskap i praktiken."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch favoriserade bolag vars kunder kommer tillbaka av vana och vars produkter blir en del av kundens dagliga rutin — hans exempel om bolag vars varor kunderna köper om och om igen (rakblad, förbrukningsvaror, konsumentvanor) är byteskostnader i sin mjukaste form: vanans tröskel. Lynch skulle läsa retention som ett tecken på just denna vana och ogilla bolag som skyltar med bindningstider, eftersom det avslöjar att kunderna stannar av tvång snarare än av smak — det tråkiga bolaget med lojal kundbas var hans ideal, och kundens ovilja att byta är det osynliga beviset.",
+  "grahamSection": "Benjamin Graham hade inget eget begrepp för byteskostnader, men hans krav på intäktsstabilitet och konsekvent vinsthistorik är indirekt ett retentionstest: ett bolag vars kunder återkommer år efter år uppvisar den jämna intäktsbana Graham sökte, medan utsatt churn visar sig som taggiga intäkter. Grahams säkerhetsmarginal ger också kursens mest försiktiga regel: räkna kundvärdet med konservativ churn och diskontera hårt — trösklar kan eroderas (kapitel fem), och marginalen ska täcka det fallet den inte gör.",
+  "ak1Section": "I AK1A:s metodik är byteskostnaderna en av de fyra vallgravstyper som vägs i moat-delen av analysen (mt-familjen): de ger churn-takten som input till intäktsstabilitetsbedömningen och därmed till V12-intaktsstabilitet och tillväxtscenario-kolumnerna. AKM2:s scenarioarbete (km-029-traditionen) använder retentionens två ytterlägen — tröskeln håller mot tröskeln rivs — som bas- och nedsidesgren i kassaflödesmodellen, och arbetsflödet (ek-03-traditionen) dokumenterar churn-antagandet explicit så att omprövningspunkterna är sökbara vid nästa rapport."
+}

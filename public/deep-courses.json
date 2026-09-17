@@ -205172,6 +205172,174 @@
     "grahamSection": "Benjamin Graham betraktade varaktiga fördelar med intresse men vägrade att betala för dem i förskott — hans hantverk var att köta tryggheten i priset snarare än i berättelsen. Två av hans idéer lever först i den här kursen. Den första är grävårets etiska skärning: Grahams krav på påvisbart värde skulle ställa samma fråga som kapitel fyra — bygger kostnaden något, eller kostar den bara? Den andra är regelverkskällans tvetydighet: ett monopolistiskt skydd var för Grahams del ingen anledning i sig till förtroende, eftersom det politiska vädret som delar ut skyddet också kan dra det tillbaka. Att han ändå höll de flesta av sina positioner kortare än en moats livstid säger kursen något om: födelsen är inte till för den otålige, och den som köper en färdig vallgrav betalar för en historia som redan är skriven — resten är erosionens (mt-02) tid.",
     "ak1Section": "I AK1A:s metodik är denna kurs MOAT-familiens tredje hörnsten och ursprungsskicket till tre grannfamiljer. I AKM1:s bolagsläsning ger den moat-frågan sin tidsaxel: ursprunget (denna kurs) mot erosionen (mt-02) mot revisionen (mt-03) — tre frågor som tillsammans ersätter en enda stor, är detta bolag skyddat, med tre besvarbara. I AKM2:s ram övar kursen nyckelskillnaden mellan nivåer av analys: byggskedets underavkastning är inte ett bunkrat faktum utan en bedömning — grävande eller förstörande — och övningen att skilja dem är bland de mest överförbara i hela metodiken, från unga tillväxtbolag till mogna bolags reinvesteringsepoker. Kopplingen till kapitalmekaniken är dessutom dubbel: grävårets form är J-kurvans (pe-01), och grävårets facit mäts i avkastning på investerat kapital (roic-01) — moat-läran och kapitalägarskapets klockor är samma lära sedd från var sin sida av vallgraven."
   },
+  "mt-05-byteskostnader-och-inlasning": {
+    "slug": "mt-05-byteskostnader-och-inlasning",
+    "category": "MOAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Byteskostnader och inlåsning — moaten som håller kunden kvar",
+    "summary": "MOAT-familjens femte akt: efter vad en moat är (mt-01), hur den nöts (mt-02), hur den mäts (mt-03) och hur den byggs (mt-04) återstår den mest undervärderade av Dorseys fyra vallgravstyper — byteskostnaderna, tröskeln som gör att kunden stannar även när konkurrenten är billigare. Kursen lär de fyra mekanismerna (integration, lärande, kontrakt och data), churn-aritmetiken där halverad kundbortfallstakt fördubblar kundvärdet (1/0,20 = 5 år mot 1/0,10 = 10 år), och läsningen av inlåsningen i årsredovisningen: nettointäktsretention, kontraktslängder och segment. Genomgående exempelbolag Svea System AB med full aritmetik — utbildning i metoden, aldrig råd om enskilda placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna medellivstiden ur churn: kundbortfallstakten inverterad ger tiden en kund stannar i snitt — 20 procents churn ger 1/0,20 = 5 år, 10 procent ger 10 år — och det enkla kundvärdet är årligt kundbidrag gånger livstid: 72 000 kr per år ger 360 000 kr vid 5 år och 720 000 kr vid 10. Räkna bytesbeslutet från kundens sida: den årliga besparing en konkurrent erbjuder ställs mot migrationskostnaden, och återbetalningstiden avgör om tröskeln håller. Läsa inlåsningen i rapporten: nettointäktsretention (bas 100 med expansion, pris och churn), bindande kontraktslängder och segmentvis churn. Väga byteskostnader mot familjens övriga vallgravar och känna igen de tre fällorna: den ilskna kunden, regleringen och disruptören som bygger bron runt tröskeln.",
+    "why": "MOAT-familjen har efter fyra akter ingen kurs som äger kvarhållningen som egen mekanik: v13 och v14 äger de immateriella rättigheterna och varumärkeslojaliteten, v15 äger nätverkseffekterna, mt-01 grundbegreppet, mt-02 erosionen, mt-03 mätningen och mt-04 bygget — men Dorsey-ramverkets fjärde och mest impermeabla typ, byteskostnaderna, är oskriven i hela registret (sond mot registrets samtliga kurser: noll träffar på byteskostnad, switching eller inlåsning). Det är vallgravstypen som inte syns i varken marginaler eller varumärkesmätningar förrän churnsiffran läses rätt — och den som förklarar hur ett bolag kan behålla prissättningen mot billigare konkurrenter år efter år. Kursen fyller familjens tredje Avancerad-nivå (v15 och mt-03 är de andra två) och kompletterar se-01-saassektorn som äger churn som sektormått: här ägs principen och aritmetiken tvärs över alla sektorer.",
+    "history": {
+      "origin": "Byteskostnaden som ekonomiskt begrepp föddes i efterkrigstidens industriteknik: när ett företags utrustning väl installerades i kundens fabrik — med kopplingar till kundens egna system, personal utbildad av leverantören och reservdelslager anpassade efter konstruktionen — blev priset på att byta leverantör plötsligt större än priset på själva maskinen. Fenomenet beskrevs tidigt inom organisationsforskningen som relationsspecifika investeringar: kostnader som bara har värde inom den pågående relationen och förloras vid ett byte. Inlåsning, på engelska lock-in, blev under 1980-talets systembranscher ett medvetet designmål snarare än en biverkning.",
+      "evolution": "Teorin fick sin analytiska form när strategiforskningen på 1990-talet (Paul Klemperer och andra) formulerade byteskostnadernas tredelning: sökkostnader före köpet, transaktions- och omställningskostnader vid bytet, och osäkerheten om den nya leverantörens kvalitet. Samtidigt visade spelteoretiska modeller att hög byteskostnad kan tjäna både kund och bolag — djupare investeringar blir lönsamma att göra när relationen förväntas bestå — men också att den skapar utrymme för prissättning ovanför konkurrensnivån, det som kallas harvestfas: först byggs relationen, sedan skördas den. IT-branschens programvarulicenser med årliga avgifter och databasernas migrationskomplexitet gjorde mekanismen till hela företagsmodeller.",
+      "modern": "I dag läser marknaden inlåsning framför allt i retentionssiffror: nettointäktsretention över 100 procent — befintliga kunder spenderar mer än bortfaller — har blivit det mest citerade enskilda talet i prenumerationsbolags rapporter, och kontraktslängder, bindingsperioder och migrationspartnerskap analyseras som vallgravsindikatorer. Samtidigt har reglering (portabilitetskrav, öppna api:er) och molnmigrationer sänkt trösklar i flera branscher, vilket gör erosionen av byteskostnader till en permanent bevakningspunkt snarare än en engångsfråga. Metoden i denna kurs — att räkna tröskeln från kundens sida — är densamma oavsett sektor."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Tröskeln — vad en byteskostnad är",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Fyra mekanismer — integration, lärande, kontrakt och data",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Churn-aritmetiken — livstid, kundvärde och tröskelns kronor",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Att läsa inlåsningen i rapporten — retention, kontrakt och segment",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällorna — den ilskna kunden, regleringen och disruptören",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — att väga byteskostnader mot övriga vallgravar",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Tröskeln — vad en byteskostnad är",
+        "minutes": 4,
+        "intro": "En moat syns oftast i marginaler och varumärke. Byteskostnaden är den tysta vallgraven: den syns först när en kund står vid tröskeln — och väljer att stå kvar trots ett billigare alternativ på andra sidan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta ett rakt exempel. Svea System AB (påhittat bolag, genomgående i kursen) säljer ett affärssystem för 120 000 kr per år och kund. En konkurrent lanserar ett system som gör nästan samma sak för 102 000 kr per år — 18 000 kr lägre. På pappret borde kunderna lämna Svea System i flock. Men att byta system är inte att byta etikett i hyllan: kundens personal måste utbildas om (beräknat 250 interna timmar), data från tio år av affärer måste migreras och kontrolleras, integrations mot bokföring, lager och lön måste byggas om, och under övergångsperioden körs dubbla system parallellt. Kundens interna kalkyl: 250 timmar à 1 200 kr = 300 000 kr i engångskostnad, plus en riskpost för det som går fel under migrationen. Den årliga besparingen på 18 000 kr betalar tillbaka migrationskostnaden efter 300 000/18 000 = 16,7 år. Tröskeln håller — inte för att Svea Systems produkt är bättre, utan för att den är dyr att lämna. Detta är byteskostnaden: summan av allt kunden förlorar eller måste betala för att byta leverantör, mätt i pengar, besvär och risk. Notera asymmetrin i tidsperspektivet: leverantören räknar inlåsningen i årsintäkter, kunden räknar den i engångskostnad — och båda har rätt. Moat-analytikerns uppgift är att räkna båda sidorna, vilket resten av kursen gör mekaniskt. Detta är utbildning i hur mekanismen fungerar och mäts, inte en bedömning av något faktiskt bolag."
+          },
+          {
+            "type": "definition",
+            "content": "Byteskostnad (switching cost) — den totala kostnaden för en kund att byta leverantör: avgifter för uppsägning, migrering av data och system, utbildning av personal, dubbelkörning under övergången samt risken för driftstörningar och försämrad kvalitet tills den nya relationen mogner. Indirekt räknas även sökkostnaden för att hitta och utvärdera alternativen. Tröskeln håller när byteskostnaden överstiger det värde bytet skapar."
+          },
+          {
+            "type": "insight",
+            "content": "Billig konkurrens hotar inte en inlåst kundbas i proportion till prisskillnaden utan i proportion till prisskillnaden mot byteskostnaden. En konkurrent som är 15 procent billigare mot en kundbas med 300 000 kr i migrationskostnad per kund vid 120 000 kr i årsavgift behöver nästan sjutton års besparing för att bära bytet — priset är alltså ett praktiskt verktyg, men tröskeln är det som avgör."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Fyra mekanismer — integration, lärande, kontrakt och data",
+        "minutes": 4,
+        "intro": "Byteskostnader är inte en storlek utan fyra olika mekanismer som ofta verkar tillsammans. Att skilja dem åt är praktiskt: de syns på olika ställen i rapporten och de eroderar av olika anledningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första mekanismen är teknisk integration: kundens systemväv är byggd kring leverantörens produkt. Varje koppling — mot bokföringen, lagret, löneadministratören, bankerna — är en förbindelse som måste byggas om vid ett byte. Ju fler beröringspunkter, desto högre tröskel, och desto mer av tröskeln ligger hos kundens egen it-avdelning som måste äga projektet. Andra mekanismen är lärandet: personalen har tusentals timmars vana vid produktens flöden, kortkommandon och felfall. Utbildningskostnaden syns inte som en faktura utan som produktivitet som försvinner under månader — den svåraste kostnadsposten att prissätta och därmed den mest underskattade. Tredje mekanismen är den kontraktsliga: bindningstider, uppsägningstider och avgifter skriver tröskeln på papper. Ett treårskontrakt med tolv månaders uppsägningstid ger i praktiken fyra års framförhållning från det att kunden bestämt sig för att gå — tiden gör beslutet reversibelt innan det verkställs. Fjärde mekanismen är data: tio års transaktioner, kundhistorik och inställningar lever i leverantörens system, och varje migration riskerar att tappa eller förvanska dem. Data är den mekanism som växer av sig själv — tröskeln blir högre för varje år relationen varar, utan att leverantören lyfter ett finger. De fyra mekanismerna multipliceras snarare än adderas: integration kräver lärande, lärandet producerar data, datan kräver kontrakt som skyddar investeringen."
+          },
+          {
+            "type": "tabell",
+            "content": "Mekanism | Var den syns i kundens kalkyl | Var den syns i leverantörens rapport | Hur den eroderar\nIntegration | Ombyggnad av kopplingar, projekttid it | Andel intäkter från djupt integrerade produkter | Öppna standarder, api-krav, mellanhänder som bygger broar\nLärande | Utbildning, tillfälligt lägre produktivitet | Utbildningsinsatser, certifieringar, community | Enklaste möjliga gränssnitt, generella färdigheter\nKontrakt | Bindningstid, uppsägningstid, avgifter | Kontraktslängder, ordervärde, backlogg | Reglering av bindningstider, kundanpassade krav\nData | Migrationsrisk, kontrollarbete, historik som försvinner | Lagring per kund, exportfunktioners existens | Portabilitetsregler, standardformat, exportverktyg"
+          },
+          {
+            "type": "insight",
+            "content": "De två första mekanismerna — integration och lärande — är osynliga i leverantörens balansräkning men är kundens verkliga kostnad; de två sista — kontrakt och data — syns i rapporten men är de svagaste: kontrakt kan regleras bort och data kan tvingas fram i öppna format. Den hållbaraste inlåsningen är den som kunden själv inte vill lämna."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Churn-aritmetiken — livstid, kundvärde och tröskelns kronor",
+        "minutes": 4,
+        "intro": "Inlåsningens ekonomi sammanfattas i en enda talserie: hur länge kunderna stannar. Churn-takten inverterad ger medellivstiden, och medellivstiden gånger kundbidraget ger kundvärdet — kursens kärnberäkning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grundtalet är churn, kundbortfallstakten per år. Om 20 procent av kunderna lämnar varje år är medellivstiden för en kund 1/0,20 = 5 år; halveras churn till 10 procent förlängs livstiden till 1/0,10 = 10 år. Detta är aritmetikens mest underskattade symmetri: en halvering av bortfallet är en fördubbling av livstiden. Räkna vidare på Svea System: årsavgiften 120 000 kr med 40 procent direkta kostnader ger ett årligt kundbidrag på 120 000 × 0,60 = 72 000 kr. Enkelt kundvärde utan diskontering blir 72 000 × 5 = 360 000 kr vid 20 procents churn och 72 000 × 10 = 720 000 kr vid 10 procent. Med andra ord: en liten churn-minskning är värdefull långt utöver det bortfall den direkt sparar, eftersom alla kvarvarande kunder samtidigt får längre förväntad livstid. Koppla nu tillbaka till kapitel ett: konkurrentens 18 000 kr i årlig besparing möter kundens migrationskostnad 300 000 kr — för att bytet ska löna sig på fem år (kundens normala beslutshorisont om livstiden är fem år) måste besparingen vara minst 300 000/5 = 60 000 kr per år, det vill säga hälften av avgiften. Så länge konkurrensen pressar priserna mindre än så håller tröskeln sig. Här är analysfrågan att ställa till varje bolag med prenumerationsintäkter: vilken churn-takt antar kalkylen, och vad är beviset? Ett bolag vars värde vilar på kundvärdesmultiplar är i grunden ett bolag vars värde vilar på en churnsiffra — och churn förändras med trösklar, konkurrens och produktens kvalitet, vilket gör den till en levande, inte en statisk, storhet. Räkna alltid med både enkelt kundvärde (som här, för genomskinlighet) och diskonterat kundvärde när beslutet kräver det — metodiken är densamma, tidsvägningen tillkommer."
+          },
+          {
+            "type": "tabell",
+            "content": "Churn per år | Medellivstid 1/churn | Årligt kundbidrag | Enkelt kundvärde (bidrag ÷ churn)\n20 % | 5,00 år | 72 000 kr | 360 000 kr\n15 % | 6,67 år | 72 000 kr | 480 000 kr\n10 % | 10,00 år | 72 000 kr | 720 000 kr\n7,5 % | 13,33 år | 72 000 kr | 960 000 kr\n5 % | 20,00 år | 72 000 kr | 1 440 000 kr\n\nKundvärdet är exakt bidraget delat med churn-takten — samma tal som bidrag gånger livstid, räknat utan mellanavrundning: 72 000 ÷ 0,15 = 480 000 och 72 000 ÷ 0,075 = 960 000."
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens budskap är kurvans form, inte dess enskilda rader: kundvärdet fördubblas när churn halveras — från 360 000 kr till 720 000 kr — utan att en enda ny kund tillkommit och utan att priset höjts. Inlåsningens avkastning sits alltså inte i intäktssidan utan i livstidskolumnen, och det är därför retention är den mest värdeskapande enskilda siffran ett prenumerationsbolag kan röra."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Att läsa inlåsningen i rapporten — retention, kontrakt och segment",
+        "minutes": 4,
+        "intro": "Trösklar finns inte som en sifferpost i bokslutet — de måste läsas ut indirekt. Tre ställen bär bevisen: retentionstal, kontraktsuppgifter och segmentuppdelningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det första beviset är nettointäktsretention, ofta förkortat nrr: hur stor en årskohort befintliga kunder är värd ett år senare, räknat i intäkter. Konstruktionen: börja på bas 100, lägg till expansion (kunder som köper mer), prisökningar, dra ifrån nedgraderingar och churn. Ett tal som 107 betyder att kohorten växt 7 procent trots bortfall — expansionen (+8) och priserna (+3) har mer än ätit churn (−4): 100 + 8 + 3 − 4 = 107. Retention över 100 är det starkaste enskilda tecknet på att tröskeln håller och dessutom fördjupas: kunder som redan är kvar köper mer. Brutto-churn, retentionen innan expansion, avslöjar å andra sidan underliggande nöjdhet — ett bolag med brutto-churn 15 procent och nrr 102 äger en annan riskbild än ett med brutto-churn 5 procent och nrr 102: det första pendlar på högre volym, det andra på djupare ro. Det andra beviset är kontraktsstrukturen: bindningstider, uppsägningstider och ordervärde i rörelse (backlogg) visar hur mycket av intäktsströmmen som är skriven på papper och hur lång tid ett konkurrensteg får verka innan det syns i siffrorna. Läs skillnaden mellan årsvis och månatlig debitering: samma churn-takt är mycket mer smittsam när kunderna kan lämna med trettio dagars varsel. Det tredje beviset är segmenten: churn per kundstorlek eller bransch visar var tröskeln är som djupast — oftast hos de största kunderna med mest integration — och därmed var prissättningsutrymmet faktiskt sitter. Kvalitativa spår: hur många gånger ordet migration förekommer i kundcase, hur stor del av implementeringen kunden själv äger, och om bolaget publicerar exportvägar i öppna format eller tyst om dem. Sök även i noterna: återstående ordervärde av tecknade kontrakt och andelen återkommande intäkter är båda direkta inlåsningsindikatorer, släkt med km-006-kvartalsrapportens läsning av intäktskvalitet (ln-02-familjen äger accruals-sidorna)."
+          },
+          {
+            "type": "definition",
+            "content": "Nettointäktsretention (nrr) — en årskohorts intäktsvärde efter tolv månader delat med dess startvärde: bas 100 plus expansion plus pris, minus nedgradering minus churn. Ett tal över 100 visar att befintliga kunder tillsammans spenderar mer än förra året; brutto-retention är samma tal utan expansion och pris, och skillnaden mellan de två avslöjar hur mycket av tillväxten som kommer inifrån kundbasen."
+          },
+          {
+            "type": "insight",
+            "content": "Ett bolag med nrr kring 107 behöver knappast någon nykundsförsäljning alls för att växa i lågt tempo — kohorterna gör det själva. Omvänt är höga siffror ett löfte om att läsa vidare: nrr säger att kunderna stannar och köper mer, men inte varför — svaret på varför är just det tröskelarbete kapitel två till tre mätte i kronor."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Fällorna — den ilskna kunden, regleringen och disruptören",
+        "minutes": 4,
+        "intro": "Inlåsning är kraftfull men ömtålig på tre specifika sätt. De tre fällorna är värda en egen läsning eftersom var och en kan vända en mur till en läckande damm i takt, i stället för i ett enda genombrott.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: den ilskna kunden. Byteskostnader som enbart vilar på kontrakt och hinder skapar missnöje — kunden som inte kan lämna men vill, och som berättar det för andra. Symtomet syns i sjunkande expansionstal: nrr som mest bärs av pris (plus 3) och inte av volym (plus 8) är en kundbas som betalar mer och köper mindre. På sikt bygger vrede sin egen brygga: när väl en konkurrent erbjuder migration subventionerad — betalad av konkurrenten i utbyte mot fler år i kontrakt — samlas de mest missnöjda först, och deras avgång ger konkurrenten en referensbas att bygga vidare på. Moat-litteraturen skiljer därför mellan inlåsning genom värde (kunden stannar för att det lönar sig) och inlåsning genom hinder (kunden stannar för att utfarten kostar); den förra är värd mer per krona retention eftersom den inte läcker vrede. Fälla två: regleringen. Trösklar som är kontraktsligt skrivna är politiskt exponerade — bindningstider kan förbjudas, portabilitetskrav kan tvinga fram export i öppna format, och gränsöverskridande dataregler kan förkorta kontrakt. En vallgrav vars djup lagstiftaren kan bestämma är en hyrd, inte ägd, fördel — läs därför alltid hur stor del av inlåsningen som sitter i kontrakt mot i integration och lärande (kapitel två: de kontraktsliga är de svagaste). Fälla tre: disruptören som bygger bron. Nya aktörer attackerar sällan tröskeln rakt på; de bygger runt den — en parallell produkt som importeras stegvis, en billig delmängd som börjar vid utkanten av kundbasen (de minsta kunderna med lägst integration) och växer inåt. Tecknet att bevaka: när konkurrenter börjar annonsera gratis migrering och kompatibilitet med etablerade format har tröskeln börjat prissättas av någon annan. Dessa tre fällor är inte anledning att avfärda byteskostnader som vallgrav — de är anledning att mäta dess erosion med samma vana som mt-02 lär för moat i allmänhet: trösklar som aldrig omprövas blir antaganden, och antaganden är inte vallgravar."
+          },
+          {
+            "type": "insight",
+            "content": "Den mest hållbara retentionen är den som aldrig behöver nämna kontraktet: kunden stannar för att bytets kostnad överstiger bytets värde och för att hon är nöjd — tröskeln och lojaliteten förstärker varandra. När bolaget istället skyltar med bindningstider i varje pressrelease har vallgraven börjat bäras av juridik snarare än ekonomi, och det är ett tidigt erosionsspår."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — att väga byteskostnader mot övriga vallgravar",
+        "minutes": 4,
+        "intro": "En vallgrav är sällan av en enda typ. Mästerskapet ligger i att väga de fyra typerna mot varandra och mot priset — för en stark moat till fel pris är fortfarande en dålig affär, vilket hela vr-familjen visar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Dorsey-ramverkets fyra vallgravstyper har olika klockslag: immateriella tillgångar (v13-patent och v14-varumärke) slår igenom snabbt och skyddar priset direkt, nätverkseffekter (v15) växer exponentiellt men sent, kostnadsfördelar bär volymtunga branscher, och byteskostnader (denna kurs) är den långsammaste av alla — de byggs relationsvis och mognar med år. I praktiken förstärker de varandra: ett system med hög integrationskostnad och ett starkt varumärke har en annan vägg än summan av delarna, eftersom varumärket sänker kundens sökkostnad för att stanna (inget skäl att ens leta) medan integrationen höjer kostnaden för att gå. Väga därför alltid parvis: nrr-talet tillsammans med brutto-churn (kapitel fyra), livstiden tillsammans med kundbidraget (kapitel tre), kontraktens andel av inlåsningen mot integrationens (kapitel två). Koppla slutligen till värderingen: ett bolag med kundvärde 720 000 kr per kund och 1 000 kunder har ett enkelt kundvärdesdjup på 720 miljoner kr — men multipeln köper framtida kohorter också, och där träder vr-03-multipelns-anatomi och tx-03-frågan när skapar tillväxt värde in: retentionens värde är verkligt först när det landar i framtida kassaflöden som inte redan är prissatta. Frågor att bära med sig från denna kurs: Vilken churn antar kalkylen och vad säger historiken? Hur mycket av tröskeln sitter i kontrakt mot i integration och lärande? Vinner retentionen på volym eller på pris? Och vem skulle kunna betala för att riva tröskeln — och vad skulle det kosta honom? Kursen har varit genomgående ett påhittat exempelbolag och en metod att räkna med — utbildning i mekanismen, aldrig en uppmaning att handla något värdepapper, och metoden är tillämpad på fakta först när siffrorna kommer från en faktisk rapport och läsarens eget arbete."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta ett prenumerationsbolag du kan läsa rapport för och gör fyra rön utan att titta i facit först: (1) Beräkna medellivstiden ur publicerad brutto-churn — om den inte publiceras, uppskatta intervallet från nrr och expansionsandel tillsammans. (2) Uppskatta det enkla kundvärdet med antagen kundbidragsmarginal och jämför med bolagets börsvärde per kund: vad betalar marknaden för framtida kohorter? (3) Klassa inlåsningen efter kapitel två: hur mycket sitter i kontrakt, hur mycket i integration och lärande? (4) Formulera en omprövningspunkt: vilken händelse skulle ändra din churn-uppskattning, och när ska du läsa efter den? Skriv ner svaren innan du läser bolagets egna retention presentationer — skillnaden mellan ditt och deras tal är kursens kunskap i praktiken."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch favoriserade bolag vars kunder kommer tillbaka av vana och vars produkter blir en del av kundens dagliga rutin — hans exempel om bolag vars varor kunderna köper om och om igen (rakblad, förbrukningsvaror, konsumentvanor) är byteskostnader i sin mjukaste form: vanans tröskel. Lynch skulle läsa retention som ett tecken på just denna vana och ogilla bolag som skyltar med bindningstider, eftersom det avslöjar att kunderna stannar av tvång snarare än av smak — det tråkiga bolaget med lojal kundbas var hans ideal, och kundens ovilja att byta är det osynliga beviset.",
+    "grahamSection": "Benjamin Graham hade inget eget begrepp för byteskostnader, men hans krav på intäktsstabilitet och konsekvent vinsthistorik är indirekt ett retentionstest: ett bolag vars kunder återkommer år efter år uppvisar den jämna intäktsbana Graham sökte, medan utsatt churn visar sig som taggiga intäkter. Grahams säkerhetsmarginal ger också kursens mest försiktiga regel: räkna kundvärdet med konservativ churn och diskontera hårt — trösklar kan eroderas (kapitel fem), och marginalen ska täcka det fallet den inte gör.",
+    "ak1Section": "I AK1A:s metodik är byteskostnaderna en av de fyra vallgravstyper som vägs i moat-delen av analysen (mt-familjen): de ger churn-takten som input till intäktsstabilitetsbedömningen och därmed till V12-intaktsstabilitet och tillväxtscenario-kolumnerna. AKM2:s scenarioarbete (km-029-traditionen) använder retentionens två ytterlägen — tröskeln håller mot tröskeln rivs — som bas- och nedsidesgren i kassaflödesmodellen, och arbetsflödet (ek-03-traditionen) dokumenterar churn-antagandet explicit så att omprövningspunkterna är sökbara vid nästa rapport."
+  },
   "kt-01-vad-ar-en-katalysator": {
     "slug": "kt-01-vad-ar-en-katalysator",
     "category": "KATALYSATOR",
@@ -208556,6 +208724,174 @@
     "grahamSection": "Benjamin Grahams analys av fasta kostnaders makt — operating leverage i modern terminologi — löper som en röd tråd genom hans böcker: ju större andel av kostnaderna som är bundna (och löner är bundna per avtal), desto hårdare slår omsättningsvariationer på resultatet. Grahams försiktighet med bolag vars resultat vilar på att marginalen behålls oförändrad genom konjunkturcykeln (st-04:s kreditcykelperspektiv) är löneandelen i förklädnad: han hade bett läsaren mäta personalkostnadens andel och dess rörelse före nästa steg. Säkerhetsmarginalen (km-030) räknas i marginalprocent — och löneökningstakten är den mest mekaniska enskilda posten i den kalkylen.",
     "ak1Section": "I AK1A:s metodik är lönesidan en genomgående kolumn i fundamental analys: AKM1:s lönsamhetsvariabler (ln-familjen) tar personalkostnadens spår i marginaltrappan (ln-03), och den här kursens löneandels- och ULC-räkning knyter den till makrovariablerna ränta och inflation (ma-01, km-055). AI-Mentorn kan i studions labb (ek-03) spela exempelbolagets tre år med olika löneökningstakter, produktivitetssporrar och räntesvar — alltid som mekanik att räkna, aldrig som ställningstagande i lönefrågor. Studions juridiska grund förblir undertexten i varje kapitel: detta är hur kostnadssidan fungerar, inte vad någon part bör göra."
   },
+  "ma-03-realrantan": {
+    "slug": "ma-03-realrantan",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Realräntan — pengars tidsvärde efter inflation",
+    "summary": "MAKROEKONOMI & RÄNTA-familjens andra kröning vid sidan av transmissionsmekaniken (ma-01): realräntan, den del av räntan som återstår när inflationens förväntningar räknats bort. Kursen lär Fisherekvationen (nominalränta = realränta + förväntad inflation, 5,0 = 2,5 + 2,5), breakeven-inflationen som marknadens pris på förväntningar (nominell obligationsränta 4,0 procent mot realobligationens 2,0 ger 2,0 procents förväntad inflation), skillnaden mellan ex-ante och ex-post (den verkliga realräntan kan bara räknas baklänges: 7,0 procents utfall mot 9,0 procents inflation ger minus 1,8 procent), och realräntans omvända relation till värderingen — en perpetuitet vid 5 procents kalkylränta är värd 2 000 kronor och vid 6 procent 1 667, skillnaden hela 16,7 procent. Genomgående utbildning i mekanismen, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna Fisherekvationen i båda riktningarna: nominalräntan är realräntan plus förväntad inflation (5,0 = 2,5 + 2,5), och realräntan ur marknadens tal fås som skillnaden mellan nominell obligationsränta och breakeven-inflation. Läsa breakeven-inflationen som marknadens samlade bud på kommande inflation och känna dess två brusposter (riskpremie och likviditet). Räkna ex-post-reallräntan baklänges med båda metoderna — approximationen 7,0 minus 9,0 lika minus 2,0 procentenheter och den exakta kvoten 1,07/1,09 minus 1 lika minus 1,8 procent — och veta var de skiljer sig. Räkna realräntans värderingseffekt: nuvärdet av 100 kronor om ett år är 95,24 kronor vid 5 procent och 94,34 vid 6 procent, och en perpetuitet på 100 kronor per år faller från 2 000 till 1 667 kronor när kalkylräntan stiger en procentenhet. Känna de negativa realräntornas mekanik och de fyra reaktionerna på dem.",
+    "why": "MAKROEKONOMI & RÄNTA-familjen har efter lönebildningskursen (ma-02) två tomma hyllor kring sitt kärnbegrepp: km-054 äger nominalräntan som pris på pengar och km-055 inflationens mått, men ingen kurs i hela registret äger själva realräntan — Fisherekvationen, breakeven-marknaden och den omvända relationen till värderingsmultiplar (sond mot registret: noll träffar på realränta, Fisherekvation eller breakeven-inflation bland kurserna). Det är familjens analysmässigt tyngsta tal: det är den reala, inte den nominella, räntan som styr pengars tidsvärde, lånevilja och aktiemarknadens diskonteringsränta — och den kan bara förstås genom att hantera förväntningar, vilket gör den till en naturlig Avancerad-kröning bredvid ma-01 och samtidigt familjens andra Avancerade kurs (A-luckan i familjens trappa: en av sju kurser före denna leverans).",
+    "history": {
+      "origin": "Skillnaden mellan nominala och reala storheter blev ett ekonomiskt problem först när penningväsendet slutade vara metalliskt bundet: under guldmyntfotens epok var prisnivån i praktiken stationär över decennier och räntan kunde läsas som en ren tidspris. Irving Fisher formulerade sambandet i sitt arbete om räntans natur (The Theory of Interest, 1930): den ränta som syns i kontrakt är nominell, men den som styr sparande och investeringar är real, och skillnaden mellan dem är den inflation köparen och säljaren väntar sig — en skillnad som kan misstolkas systematiskt, vilket Fisher kallade penningillusionen: att tro att fler kronor är mer värde.",
+      "evolution": "Under 1900-talets andra hälft blev ämnet praktiskt brinnande: 1970-talets inflation överraskade både låntagare och långivare och gav negativa ex-post-reala räntor — den som lånat till fast ränta vann på inflationens bekostnad, och den som sparat på kontot förlorade köpkraft varje år. Marknadens svar blev instrument som skriver om räntan i reala termer: USA lanserade TIPS (statsobligationer vars kapital indexeras mot konsumentprisindex) 1997, och Riksgälden gav ut reala obligationer i Sverige under 1990-talet — med dem föddes breakeven-inflationen, marknadens kontinuerligt uppdaterade bud på kommande inflation, som ett nytt informationslager vid sidan av statistikmyndigheternas efterhandsmått.",
+      "modern": "I dag är realräntan ett bakgrundstal i varje värderingsdiskussion: när centralbankerna rapporterar är marknadens fråga inte vad styrräntan blev utan vad den blir minus inflationen, och aktiemarknadens multiplar debatteras i termer av det reala kalkylräntans läge (den lågränteperiod som följde finanskrisen fick sin litteratur om multiplarnas beroende av diskonteringsräntan). Samtidigt har breakeven-marknaden sina kända brusposter — inflationsriskpremie och likviditetsskillnader mellan nominella och reala obligationer — vilket gör den till ett stöd, inte ett facit. Metoden i denna kurs är därför dubbelt formulerad: räkna exakt på det som hänt, håll förväntningarna som intervall."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Nominalt mot reellt — Fisherekvationen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Breakeven-inflationen — marknadens pris på förväntningar",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Ex-ante och ex-post — den verkliga realräntan räknas baklänges",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Realräntan och värderingen — diskonteringsräntans reala del",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Negativa realräntor — när kontot betalar för förvaringen",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — realräntan som bakgrundstal i varje analys",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Nominalt mot reellt — Fisherekvationen",
+        "minutes": 4,
+        "intro": "Två räntor bär samma namn. Den ena står i låneavtalet, den andra styr vad lånet faktiskt kostar i köpkraft — och analysen börjar med att skilja dem åt mekaniskt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fisherekvationen — uppkallad efter Irving Fisher — är familjens grundidentitet: nominalräntan är realräntan plus förväntad inflation. Med ett sparkonto som ger 5,0 procent ränta och inflation som förväntas bli 2,5 procent blir den reala räntan 5,0 − 2,5 = 2,5 procent — köpkraften växer med två och en halv procent per år, inte med fem. Tre saker är värda att notera om identiteten. För det första är den en identitet, inte en teori: den definierar realräntan som restposten mellan två tal, och det är alltid okontroversiellt att räkna den — kontroverserna gäller vilka tal som ska in. För det andra bygger den på förväntningar: det är inte den inflation som blir, utan den som låntagare och långivare räknar med när räntan sättas, vilket är skälet till kapitel tre hela sin existens. För det tredje kan restposten vara negativ: vid 4,0 procents nominell ränta och 6,0 procents förväntad inflation är den reala räntan minus 2,0 procent — att låna är då köpkraftsvinstande i förväntan, vilket är en av de starkaste drivkrafter som finns i en ekonomi. Km-054 äger nominalräntan som begrepp och km-055 inflationens mått; denna kurs äger själva övergången mellan dem. Frågan att ställa till varje räntesituation är därför alltid dubbel: vad står det i avtalet, och vad väntas penningvärdet göra? Enbart det första talet beskriver avtalet; först båda beskriver ekonomin. Formuleringen är hela kursens metod: räkna identiteten, ifrågasätt ingångsvärdena, håll förväntningarna som intervall — utbildning i hantverket, inte en bedömning av någon verklig låne- eller sparsituation."
+          },
+          {
+            "type": "definition",
+            "content": "Realräntan — den del av räntan som återstår när förväntad inflation räknats bort: approximativt nominalräntan minus förväntad inflation, exakt (1 plus nominalräntan) delat med (1 plus förväntad inflation) minus 1. Realräntan mäter hur mycket köpkraft som växer per tidsenhet och är det tal som styr sparande, lånevilja och värderingsdiskonteringen; nominalräntan är det kontraktsskrivna talet."
+          },
+          {
+            "type": "insight",
+            "content": "Approximationen och den exakta kvoten skiljer sig mest vid höga tal: 5,0 minus 2,5 ger 2,5 procentenheter, medan 1,05/1,025 minus 1 ger 2,4 procent — försumbart vid svensk inflationsnivå, men vid 20 procents inflation och 25 procents ränta ger subtraktionen 5 procentenheter mot kvotens exakta 4,2 procent. Vid låga tal räcker subtraktionen; vid höga blir kvoten den ärliga räkningen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Breakeven-inflationen — marknadens pris på förväntningar",
+        "minutes": 4,
+        "intro": "Förväntningar kan inte mätas direkt, men de kan prissättas. Nominella och reala statsobligationer sida vid sida ger marknadens levande inflationsförväntan som en subtraktion.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mekanismen bygger på två instrument som Riksgälden och motsvarande utgivare erbjuder: en vanlig nominell statsobligation, som betalar fast ränta i kronor, och en realobligation, vars kapital och kupong indexeras mot konsumentprisindex. Antag att den nominella tioårslånga obligationen ger 4,0 procent och den reala 2,0 procent. En investerare som väljer den nominella avstår den garanterat reala räntan 2,0 procent mot chansen på mer om inflationen blir låg; den som väljer realen låser 2,0 procent oavsett inflation. Vid vilken förväntad inflation är marknaden indifferent? Där utfallen matchas: om inflationen blir 4,0 − 2,0 = 2,0 procent ger båda obligationerna samma reala avkastning. Detta tal — nominell ränta minus real obligationsränta — är breakeven-inflationen, och den läses dagligen ur marknadspriser som marknadens samlade bud på genomsnittlig inflation till obligationens löptid. Två brusposter kräver alltid en fotnot. Den första är inflationsriskpremien: den nominella obligationen bär inflationsrisk (utfallet kan överraska), och priset på den risken pumpar upp breakeven-nivån över den rena förväntan. Den andra är likviditet: reala obligationer är en smalare marknad, och deras (oftast något högre) avkastningskrav för att hållas trycker breakeven åt motsatt håll. Breakeven-talet är därför ett stöd, inte ett facit — rimlighetstestas med hjälp av centralbankens mål (km-056 äger centralbankernas ram) och statistikmyndighetens mätningar (km-055 äger indextekniken). Notera också vad marknaden faktiskt svarar på: frågan är inte vad inflationen ska bli i verkligheten utan vad den genomsnittlige prissättaren räknar med — vilket gör breakeven till lika mycket en läsning av marknadens psykologi (bf-familjens territorium) som av penningväsendet. I analysarbete används talet som ett av flera spår: breakeven trender uppåt betyder växande inflationströtthet i priser, nedåt betyder tvärtom — och skillnaden mellan marknadens bud och egen uppfattning är själva analysunderlaget."
+          },
+          {
+            "type": "tabell",
+            "content": "Nominell 10-årsränta | Real obligationsränta | Breakeven-inflation | Trolig läsning\n4,0 % | 2,0 % | 2,0 % | Marknad prissätter målnära inflation — stabila förväntningar\n4,0 % | 1,0 % | 3,0 % | Högre inflationsförväntan eller ökad riskpremie i nominella lån\n3,0 % | 2,0 % | 1,0 % | Förväntningar under målet — eller hög likviditetspremie i reala lån\n2,0 % | 0,0 % | 2,0 % | Lågt ränteläge med intakta förväntningar — klassisk lågräntemiljö"
+          },
+          {
+            "type": "insight",
+            "content": "Breakeven är det enda inflationsmått som uppdateras i realtid och med riktiga pengar bakom varje siffra — men den mäter förväntningar med inblandning av två premier, inte framtiden. Använd den som termometer, inte som prognos: trender och förändringar bär mer information än nivån själv."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Ex-ante och ex-post — den verkliga realräntan räknas baklänges",
+        "minutes": 4,
+        "intro": "Förväntningar är talet före händelsen. Efter händelsen finns ett annat tal — den reala ränta som faktiskt blev — och skillnaden mellan dem förklarar en stor del av finanshistoriens överraskningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ex-ante betyder före händelsen: realräntan beräknad på förväntad inflation, det kapitel ett och två arbetar med. Ex-post betyder efter händelsen: realräntan beräknad på den inflation som verkligen inträffade — det enda sättet en sparare faktiskt kan konstatera vad ett år på kontot blev i köpkraft. Räkneexempel: ett sparkonto gav 7,0 procent under ett år då inflationen landade på 9,0 procent. Approximativ ex-post-realränta: 7,0 − 9,0 = −2,0 procentenheter. Exakt: (1,07/1,09) − 1 = 0,9817 − 1 = −1,8 procent. Kontots ägare hade alltså färre kronor men ännu mindre köpkraft — en förlust som aldrig syns på kontoutdraget, vilket är penningillusionen (kapitel ett) i praktisk tappning. Historiens klassiska exempel är 1970-talet: låntagare med fast nominell ränta fick kraftigt negativa ex-post-reala räntor när inflationen överraskade uppåt, sparare på konton motsvarande — en av de största omfördelningarna i modern ekonomisk historia, driven inte av beslut utan av förväntningarnas misslyckande. Skillnaden ex-ante mot ex-post är också mätstocken för överraskning: centralbanker och marknadsanalytiker sammanställer systematiskt skillnaden mellan breakeven-inflationen (ex-ante, kapitel två) och utföll inflation (ex-post) för att förstå var förväntningarna brister — ett arbete som km-056 utvecklar på centralbankssidan. För den enskilda analysen är poängen disciplinen: varje räntekalkyl ska deklarera om den är ex-ante (och därmed vilar på ett antagande om framtida inflation) eller ex-post (och därmed bara gäller historien). Att blanda dem — att räkna verkliga avkastningar med förväntad inflation, eller framtidskalkyler med historisk — är en av de vanligaste räknefelskällorna i finansieringsanalys, och enkelt att undvika: märk varje tal med sin tidsriktning."
+          },
+          {
+            "type": "insight",
+            "content": "Ex-post-räkningen är historiens facit och ex-ante-räkningen är beslutets underlag — analysen behöver båda, men aldrig i samma formel. När någon presenterar en förväntad realavkastning utan att säga vilken inflation som antagits är kalkylen ofullständig: realräntan är alltid ett talpar, ränta och inflation tillsammans."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Realräntan och värderingen — diskonteringsräntans reala del",
+        "minutes": 4,
+        "intro": "Varje värdering diskonterar framtiden till nutid, och diskonteringsräntans reala del är realräntan. Det är här makrotalen från kapitel ett till tre möter multipeln på börsen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grundmekanismen är nuvärdet. Hundra kronor om ett år är idag värt 100/1,05 = 95,24 kronor vid 5,0 procents kalkylränta och 100/1,06 = 94,34 kronor vid 6,0 — en procentenhet högre ränta tar 0,90 kronor av nuvärdet, ungefär en procent. Effekten förstärks med tidens längd och kulminerar i perpetuiteten, den oändliga årsbetalningen som är aktiens förenklade släkting: en betalning på 100 kronor per år för alltid är vid 5,0 procents kalkylränta värd 100/0,05 = 2 000 kronor och vid 6,0 procent värd 100/0,06 = 1 667 kronor — en procentenhet ränta raderar 16,7 procent av värdet. Här är kopplingen till värderingsmultiplarna (vr-03 äger multipelns anatomi): en akties P/E-tal är i sin enklaste mekanik släkt med inversen av kalkylräntan, och när marknadens reala diskonteringsränta stiger faller multiplarna som en vikt på en fjäder, även när bolagets kassaflöden är oförändrade. WACC-kurserna (km-008 och vm-11) äger den fullständiga diskonteringsräntan med riskpremier; denna kurs äger insikten att WACC:ens botten ligger just i realräntan — riskpremierna läggs ovanpå den reala grundräntan, vilket betyder att varje realränteförändring flyttar hela kedjan. Därför är realräntan ett bakgrundstal i varje värderingsdiskussion: frågan huruvida en given multipel är hög eller låg kan inte besvaras utan en syn på det reala ränteläget — ett P/E-tal som var rimligt vid två procents realränta kan vara dyrt vid fyra, med samma bolag och samma vinst. Samtidigt gäller den omvända försiktigheten: relationen är en mekanisk släktskap, inte en modell som lyder exakt — multiplarna styrs också av tillväxt, risk och sentiment, och lågränteperioder har visat multiplar både över och under vad rent mekaniska räkningar antyder. Räkna därför alltid bägge riktningarna: vad säger dagens multiplapel om antagen kalkylränta, och vad gör en realränteförändring om en procentenhet med mitt värde — en känslighetsövning i km-032:s anda, tillämpad på diskonteringsräntans botten."
+          },
+          {
+            "type": "definition",
+            "content": "Perpetuitet — en betalning som återkommer för alltid; nuvärdet är den årliga betalningen delat med kalkylräntan (100/0,05 = 2 000 kronor). Perpetuitetens värde är linjärt omvänd mot räntan, vilket gör den till den tydligaste illustrationen av realräntans makt över värden: en procentenhet upp i räntan är en sjättedel ned i värde."
+          },
+          {
+            "type": "insight",
+            "content": "Realräntan flyttar värderingsgolvet, riskpremierna flyttar avståndet till golvet — tillsammans bestämmer de multiplarnas spelrum. Den som kan hålla isär de två rörelserna kan läsa en multipelexpansion korrekt: var den driven av billigare pengar eller av mindre upplevd risk? Svaret ändrar vad som krävs för att värderingens fortsättning ska bäras av kassaflöden."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Negativa realräntor — när kontot betalar för förvaringen",
+        "minutes": 4,
+        "intro": "Nominellt plus, reellt minus: den negativa realräntan är finansens mest smygande tillstånd, osynlig på kontoutdraget och ändå omdanande för hela ekonomin.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mekaniken är kapitel ett i tillämpning: kontoräntan 0 procent och inflation 2,0 procent ger realräntan minus 2,0 procent. På 100 000 kronor sparade i ett år: 1/1,02 = 0,98039, det vill säga 98 039 kronor i dagens penningvärde — en köpkraftsförlust på 1 961 kronor som aldrig registreras som en förlust, eftersom kontots saldo är oförändrat. Historiskt har negativa realräntor två ursprung: överraskande hög inflation (1970-talet, ex-post-varianten från kapitel tre) och medvetet låga nominella räntor i kristider och efter dem (2000-talets lågränteperiod, ex-ante-varianten). Reaktionerna följer fyra spår, alla med välförstådda bieffekter. Det första är konsumtion: pengar som förlorar värde i förvaring bjuds ut som köp idag i stället för imorgon — stimulerande för ekonomin på kort sikt, men en torped mot långsiktigt sparande. Det andra är reala tillgångar: bostäder, skog, metaller och mark prisas delvis som ett skydd mot penningvärdet, vilket gör deras värdering beroende av realränteläget — ett beroende som också är en fälla när realräntan vänder. Det tredje är aktier: multiplarnas mekanik från kapitel fyra gynnar långa kassaflöden när realräntan är låg, men premien för risk (och den cirklar bf-15 äger kring bubblans anatomi) kan spänna bågen långt bortom vad diskonteringsräntan motiverar. Det fjärde är de reala obligationerna från kapitel två: efterfrågan på garanterad real avkastning ökar i negativa realräntelägen, vilket i sig trycker deras avkastning — skyddet blir dyrare precis när det behövs. Samtliga fyra reaktioner är mekanik, inte rekommendationer: kursens uppgift är att läsaren ska kunna räkna själv vad ett givet realränteläge gör med köpkraft, nuvärden och multiplar, och förstå varför marknadens deltagare rör sig som de gör — besluten är alltid läsarens egna, på egen analys."
+          },
+          {
+            "type": "tabell",
+            "content": "Läge | Kontoränta | Inflation | Realränta (approx.) | 100 000 kr efter ett år i dagens värde\nPositiv realränta | 3,0 % | 2,0 % | +1,0 % | 100 980 kr\nNoll realränta | 2,0 % | 2,0 % | 0,0 % | 100 000 kr\nMilt negativ | 1,0 % | 2,0 % | −1,0 % | 99 020 kr\nKlart negativ | 0,0 % | 2,0 % | −2,0 % | 98 039 kr\nDjupt negativ (ex-post, överraskande inflation) | 1,0 % | 6,0 % | −5,0 % | 95 283 kr"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens sista rad är kapitel tre i siffror: ex-ante stod kontot mot 2,0 procents förväntad inflation och kändes som ett milt minus; ex-post blev det minus 5 procent — skillnaden mellan de två är den overraskning som flyttar förmögenhet mellan sparare och låntagare utan att någon skriver under något."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — realräntan som bakgrundstal i varje analys",
+        "minutes": 4,
+        "intro": "Realräntan är sällan analysens huvudperson — men den är nästan alltid kulissen. Mästerskapet är att bära den med i varje värdering och varje ränteläsning, utan att göra den till mer än den är.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Samla kursens verk i fyra händer. Den första: Fisherekvationens dubbla fråga — vid varje ränteläge, ställ båda frågorna (vad är nominellt, vad förväntas inflationen bli) och räkna realräntan innan någon slutsats dras om dyrt eller billigt låneläge. Den andra: breakeven-läsningen — håll marknadens inflationsbud som en tidsserie bredvid centralbankens mål och statistikmyndighetens mått, och notera förändringarna mer än nivåerna (kapitel två). Den tredje: ex-ante- och ex-post-disciplinen — märk varje räntetal med sin tidsriktning i egna kalkyler, så blandas aldrig förväntan med facit (kapitel tre). Den fjärde: värderingskopplingen — räkna perpetuitetskänsligheten (kapitel fyra) i varje multipelanalys: vad gör en realränteförändring om en procentenhet med värdet, och vad säger dagens multipel om antagen kalkylränta? Koppla till familjens övriga kurser: ma-01 äger kedjan från styrränta till bolagets resultat, ma-02 lönesidan, km-058 valutorna — realräntan är deras gemensamma bottenlager, talet som gör att samma styrränta kan vara stram i ett läge och generöst i ett annat. Och väggens plats i metodiken: AKM2:s scenarioramar låter realränteläget variera mellan grenarna, just därför att det är ett bakgrundstal som varken bolaget eller analytikern kontrollerar men som ändå flyttar varje nuvärde — att hålla det som en variabel i stället för en konstant är hela skillnaden mellan en värdering som överlever en räntevändning och en som inte gör det. Fem frågor att stå kvar vid: Vilken realränta antar min kalkyl? Varför just den? Vad säger breakeven-marknaden? Hur mycket ändras värdet om realräntan flyttar en procentenhet? Och när läser jag om svaret? Detta är utbildningens slut: metoden är räknebar, antagandena är läsarens, och omprövningen är inbyggd i frågorna — aldrig en uppmaning, alltid ett hantverk."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör en egen realräntekarta i fyra steg: (1) Hämta en aktuell nominell statsobligationsränta och, om tillgänglig, motsvarande reala obligationsränta, och räkna breakeven-inflationen. (2) Jämför med statistikbyråns senaste inflationsmått och centralbankens mål — skiljer sig marknadens bud, och åt vilket håll? (3) Räkna din egen ex-post-reallränta för det senaste året: vad gav ditt konto (eller dina nominella placeringar) mot den inflation som verkligen blev? (4) Räkna perpetuitetskänsligheten för ett bolag du följer: med en enkel schablon för årligt kassaflöde, vad händer med värdet om kalkylräntan stiger från dagens nivå med en procentenhet? Skriv ner alla fyra svar med datum — och upprepa läsningen vid nästa räntebeslut."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch arbetade med tumregeln att aktier och räntor konkurrerar om samma kapital, och hans genomgångar av hur ränteläget flyttar aktiernas attraktivitet är realräntelogik i praktiken — när de reala alternativen blir dyra söker kapital avkastning i bolag vars tillväxt slår räntan med bred marginal. Lynch betonade dock att tillväxtbolagets eget arbete väger tyngre än kulisstal: en ränte-driven multipelexpansion är en vind som kan vika, medan vinsttillväxten är bolagets egen motor.",
+    "grahamSection": "Benjamin Graham skrev om obligationens och aktiens konkurrens om sparandet i termer av företagens avkastningskrav mot räntans, och hans berömda formel tillämpar en räntebas som just flyttas med marknadsläget — realräntan är den basens botten. Grahams försiktighet gäller också här: hans krav på säkerhetsmarginal innebär att ett värde som bara bär på ett gynnsamt realränteläge inte är ett köpvärde utan ett ränteläge — marginalen ska täcka vändningen, inte bara dagen.",
+    "ak1Section": "I AK1A:s metodik ingår realräntan som bakgrundsvariabel i AKM2:s scenarioarbete: räntegrenarna varierar det reala kalkylränteläget mellan scenario och därmed multiplarnas spelrum (anknytning till vr-familjen och km-008-WACC-kedjan), och arbetsflödet (ek-03-traditionen) dokumenterar vilket realränteläge varje värdering antagit — så att omprövningspunkten är sökbar när marknaden flyttar grunden."
+  },
   "od-01-optionens-greker": {
     "slug": "od-01-optionens-greker",
     "category": "OPTIONS & DERIVAT",
@@ -209095,6 +209431,174 @@
     "lynchSection": "Peter Lynch varnade med eftertryck för instrument som förpackar hopp: hans eget mått var att förstå varje bolag man äger så väl att man kan berätta historien på en minut — och en teckningsoption har ingen egen historia, bara en härlett sådan från bolaget den vilar på. Lynch underströk också att emissioner i sig är neutrala redskap: kapitalbehov kan vara tillväxt eller överlevnad, och skillnaden sitter i ändamålet — inte i instrumentet. De svenska emissionspaketen med optioner är därför en Lynch-fråga av exakt rätt sort: vad ska kapitalet TILL, och vad kostar det i utspädning? Hans aversion gällde hävstången som förstorar det man inte förstår — och warrantens symmetriska femfaldiga rörelse är den mekanismen i ren form.",
     "grahamSection": "Benjamin Grahams säkerhetsmarginal-tänkande (km-030) har en rak översättning till optionsinstrument: det inre värdet är det enda som kan räknas exakt, och allt utöver det är betalt för osäkerhet. Graham skulle ha läst en teckningsoptions pris som två poster — en säker (kurs minus teckningskurs) och en spekulativ (tiden) — och han höll spekulativa poster till en andel som kapitalförvaltaren medvetet kunde förlora i sin helhet. Hans varning för att låta hävstång forma placeringen är lika gammal som hans skiljelinje mellan investering och spekulation: warranten som förstorar en aktierörelse femfalt förstorar också den dagliga bruset till något som ser ut information men är brus.",
     "ak1Section": "I AK1A:s metodik är teckningsoptioner och warranter underlag, inte Rekommendationer: en emissionskommunikés optionsspår läses med samma fyra frågor som en fundamental analys ställer till varje kapitalhändelse — hur mycket, till vilket pris, hur länge och till vad. AKM1:s kapitalstrukturvariabler (ks-serien) fångar utspädningens effekt på per-aktie-talen, och riskfamiljen (rk-02) äger frågan om emissionens kvalitet. AI-Mentorn kan visa emissionens räkneläge i studions labb (ek-03:s arbetsflöde): optionsträd med full partiell lösen, utspädningsförlopp per lösenperiod och det inre värdets känslighet för aktiekursen — alltid som mekanik, aldrig som ställningstagande. Studions juridiska grund förblir: detta är utbildning om instrument, inte råd om teckning."
+  },
+  "od-04-kombinerade-optionspositioner": {
+    "slug": "od-04-kombinerade-optionspositioner",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Kombinerade optionspositioner — collar, straddle och prisspridning",
+    "summary": "OPTIONS & DERIVAT-familjens sjätte steg: efter grunderna (km-059), grekerna (od-01), den implicita volatiliteten (od-02), emissionens instrument (od-03) och de enskilda strategikurserna (km-060 covered calls, km-061 protective puts) återstår konststycket att bygga positioner av flera ben. Kursen lär collarn (köpt put stroke 90 för 3 kr finansierad av såld call stroke 110 för 3 kr — nettopremie noll, båda taken låsta), straddle och strangle (att köpa rörelse utan riktning: break-even 92 och 108 vid sammanlagd premie 8 kr), vertikal prisspridning (köpt call 100 för 4 kr såld call 110 för 2 kr — maxvinst 8 kr, maxförlust 2 kr), och payoff-diagrammet som ritas före bygget. Genomgående exempelaktie till 100 kronor med full aritmetik — utbildning i instrumentens mekanik, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Konstruera en collar och räkna dess två tak: köpt put plus såld call kring en ägd aktie låser nedre och övre gräns — vid nettopremie noll blir utfallsrummet 90 till 110 kronor mot en aktie som köpts för 100. Räkna straddlens och stranglens break-even: totalpremien bestämmer rörelsens minimi (premie 8 kronor på strike 100 ger break-even 92 och 108; separata strikar 90 och 110 med premie 4 kronor ger 86 och 114). Räkna en vertikal prisspridnings maxvinst, maxförlust och break-even ur de två benens premier (köpt call 100 för 4, såld call 110 för 2: maxvinst 8, maxförlust 2, break-even 102). Läsa och rita payoff-diagram med knäpunkter vid strikarna. Känna de tre fällorna: tidens erosion mot köpta positioner, premieinkomstens dolda risk vid sålda, och ordet spreads två betydelser (optionsprisspridning mot köp-sälj-spreaden i am-01).",
+    "why": "OPTIONS & DERIVAT-familjen har efter fem steg inget kapitel som äger kombinationerna: km-059 äger instrumentet, km-060 och km-061 äger varsin enskild strategi, od-01 äger prismekaniken, od-02 volatilitetspriset och od-03 emissionens warranter — men sonden mot hela registret (straddle, strangle, collar, prisspridning, premieinkomst) ger noll träffar bland kurserna. Mellan enskilda ben och en hel position saknas alltså konstruktionsläran: payoff-diagrammet, break-even-arithmetiken och finansieringslogiken där ett ben betalar ett annat — det steg där optionskunskapen blir positionsbyggnad i stället för instrumentkännedom. Kursen fyller od-seriens andra Intermediär-nivå (od-01 är den första) och bygger vidare direkt på km-059 till km-061 utan att röra deras territorium: här ägs samspelet mellan ben, där ägs benen.",
+    "history": {
+      "origin": "Optionskombinationer är äldre än de organiserade marknaderna som standardiserade dem: när börshandeln med standardiserade optioner inleddes i Chicago 1973 fanns termins- och optionsstrategier sedan sekler i råvaruhandel och Amsterdambörsens tidiga kontrakt — bagare som säkrade spannmål och köpmän som låste växelkurser byggde positioner av flera ben långt före någon ritade payoff-diagram. Kombinationernas växelverkande logik — att ett ben kan betala ett annat — växte fram ur praktisk nödvändet: premien var ett verkligt utlägg och finansieringen av den ena försäkringen med den andres inkomst en självklar hushållning.",
+      "evolution": "När Black-Scholes-modellen publicerades 1973 fick marknaden ett gemensamt pris- och riskordförråd, och kombinationsstrategierna formaliserades: namn som collar, straddle och spread blev standardiserade byggstenar med definierade payoff-profiler. Samtidigt gjorde clearingsystemet och standardiserade kontrakt positionerna möjliga att nettoräkna — en såld option mot en köpt i samma serie kan ställas mot varandra, vilket sänkte kapitalbindningen och gjorde flerbenade konstruktioner praktiskt genomförbara för fler deltagare. Institutionella ägare tog collarn i bruk som ett sätt att sätta tak och golv kunderna kunde förstå: en position som ser ut som en aktie men med definierade gränser.",
+      "modern": "I dag är kombinerade positioner en standarddel av börsens vardag: indexmarknadens stora positioner bygger ofta av spreadkonstruktioner, och detaljhandeln möter samma logik i täckta och säkrade konstruktioner hos nätmäklare, där payoff-visualisering är inbyggd i orderläggningen. Den pedagogiska kärnan är oförändrad: varje flerbensposition är en aritmetisk summa av enskilda ben, och payoff-diagrammet läser den summan som en form — knäpunkter vid strikarna, lutning mellan dem, tak där benen tar ut varandra. Kursen undervisar den aritmetiken från första principen, med påhittade tal, som ett hantverk — aldrig som en uppmaning att inta någon position."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Varför kombinera — enskilda ben och deras luckor",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Collarn — försäkrad aktie med finansierad premie",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Straddle och strangle — rörelsen utan riktning",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Vertikal prisspridning — köpt och sålt ben i samma riktning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Payoff-diagrammet — rita positionen före bygget",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Fällor och mästerskap — premien, tiden och marginalen",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Varför kombinera — enskilda ben och deras luckor",
+        "minutes": 4,
+        "intro": "Varje enskilt optionsben har en sida som lyfter och en som läcker. Kombinationernas poäng är att benens luckor kan stängas av varandra — men bara om aritmetiken förstås före byggstart.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Utgå från familjens tidigare kurser. Km-059 lärde instrumentet: en option är rätten — inte skyldigheten — att köpa (call) eller sälja (put) till ett förbestämt pris, strike, före lösendagen, till en betald premie. Km-060 byggde covered call: ägda aktier plus såld call ger premieinkomst mot att uppsidan avstås ovanför striken. Km-061 byggde protective put: ägda aktier plus köpt put ger ett golv mot en betald premie. Notera luckorna hos varje enskilt ben. Covered call: nedsidan är i princip aktiens hela — premien på 3 kronor tröstar föga om aktien faller 30. Protective put: uppsidan är oförändrad men premien är en säker kostnad som varje år äter avkastningen — försäkringen är aldrig gratis. Den köpta nakna optionen: full potential men tiden arbetar emot (od-01 äger theta). Den sålda nakna optionen: premieinkomst men obegränsad exponering. Kombinationens idé är nu enkel att formulera: ta två ben vars luckor ligger på varsin sida och låt dem mötas. Såld call finansierar köpt put — collarn, kapitel två. Köpt call finansierar köpt put — straddeln, kapitel tre, som byter riktning mot rörelse. Såld call ovanför köpt call — prisspridningen, kapitel fyra, som säljer av en del av potentialen för att sänka kostnaden. Regeln som styr alla konstruktioner är addition: en kombinerad positions payoff i varje utfall är summan av benens payoffs i samma utfall, och dess kostnad är summan av benens premier (solda ben räknas negativt). Inget ben samverkar på annat sätt — men genom att välja strikar och antal väljs vilka luckor som stängs och vilka som finns kvar. Detta är kursens arbetsmetod: räkna varje ben för sig, summera, läs resultatet som en profil. Exempelaktien är genomgående påhittad, noterad till 100 kronor, och samtliga premier är konstruerade för räkneläran — detta är utbildning i mekanik, inte en beskrivning av någon verklig marknad och aldrig en rekommendation att inta en position."
+          },
+          {
+            "type": "definition",
+            "content": "Kombinerad optionsposition — en position byggd av två eller flera optionsben (ibland med underliggande aktie) där varje bens payoff adderas till helhetens. Konstruktionens kännetecken är att benens svaga sidor väljs att ligga på varsin sida, så att ett ben begränsar det andras risk — collarn låser tak och golv, straddlen byter riktning mot rörelse, prisspridningen säljer av ytterområdet för att finansiera innerområdet."
+          },
+          {
+            "type": "insight",
+            "content": "En kombinerad position skapar ingen ny risk ur tomma intet — den omfördelar risken mellan utfall. Collarn flyttar värde från de stora rörelserna till tryggheten; straddeln flyttar det från stillastående till rörelse; prisspridningen från ytterområdet till ett smalare band. Frågan vid varje konstruktion är därför aldrig om den är bra, utan vilket utfallsrum den köper och vad den betalar i premierna."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Collarn — försäkrad aktie med finansierad premie",
+        "minutes": 4,
+        "intro": "Collarn är kombinationernas mest pedagogiska konstruktion: en försäkring som betalas med avstången framtid. Två ben, en ägd aktie — och ett utfallsrum med två tak.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konstruktionen på exempelaktien till 100 kronor: äg aktien, köp en put med strike 90 till premien 3 kronor, sälj en call med strike 110 till premien 3 kronor. Nettopremien är 3 − 3 = 0 kronor — försäkringen är finansierad av avståendet. Räkna utfallen vid lösen. Aktien 85: aktien är värd 85, puten ger rätten att sälja till 90 och är värd 5, callen utlöper värdelös — totalt 90 kronor, en förlust på 10 mot inköpspriset 100. Aktien 95: aktien 95, puten 0, callen 0 — totalt 95, förlust 5. Aktien 105: totalt 105, vinst 5. Aktien 115: callen utlöser och aktien säljs till 110 — totalt 110, vinst 10. Utfallsrummet är alltså låst mellan 90 och 110: nedre taket satt av puten, övre av callen, och eftersom nettopremien var noll är break-even själva inköpspriset — positionen börjar tjäna först över 100 och förlorar som mest 10. De två ingående kurserna syns i konstruktionen: puten är exakt km-061:s protective put, callen är exakt km-060:s covered call — collarn är deras union, där premiens utgift och inkomst tar ut varandra. Avvägningarna vid konstruktionen: smalare rum (strikarna 95 och 105) ger billigare eller till och med positiv nettopremie men lämnar mindre kvar av aktielivet; bredare rum (80 och 120) kostar mer eller ger mindre tillbaka men bevarar mer av rörelsen. Valet av strikar är alltså ett pris på trygghet, och det priset syns direkt i nettopremien — en mekanisk läsning, ingen tumregel om vad som är rätt. Notera slutligen vad collarn inte gör: den skyddar inte mot att båda taken är fel — den som behöver aktien att stiga mer än 110 har sålt precis den delen, och den som faller mer än 90 skyddas bara till 90. Försäkringen har en självrisk (100 − 90 = 10 kronor) och en avstådd framtid (över 110); båda är konstruktionens kontrakt."
+          },
+          {
+            "type": "tabell",
+            "content": "Aktiekurs vid lösen | Aktiens värde | Put 90 (köpt för 3) | Call 110 (såld för 3) | Totalt vid lösen | Resultat mot 100\n85 | 85 | 5 | 0 | 90 | −10\n95 | 95 | 0 | 0 | 95 | −5\n100 | 100 | 0 | 0 | 100 | 0\n105 | 105 | 0 | 0 | 105 | +5\n115 | 110 (callen utlöser) | 0 | −5 | 110 | +10"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens ytterligheter är kontraktets kärna: vid 85 är förlusten exakt lika stor som vid 80 eller 70 — nedre taket står oavsett hur djupt aktien faller, och samma oföränderlighet gäller vinsten över 110. Collarn köper ett känt utfallsrum; priset är de tio kronor av rörelsen som finns på var sida om rummet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Straddle och strangle — rörelsen utan riktning",
+        "minutes": 4,
+        "intro": "Alla kombinationer handlar inte om att sätta tak. Straddeln och dess släkting stranglen köper själva rörelsen — och betalar med stillaståendets pris.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Straddeln på exempelaktien 100 kronor: köp en call med strike 100 till premien 4 kronor och en put med samma strike 100 till premien 4 kronor — total kostnad 8 kronor. Vid lösen gäller additionen: aktien 108 ger callen 8 och puten 0, totalt 8 mot kostnaden 8 — noll. Aktien 92 ger puten 8, totalt 8 — noll. Aktien 100 ger båda 0 — förlusten är hela premien, 8 kronor, som är positionens maximala förlust. Break-even ligger alltså på 92 och 108: aktien måste röra sig mer än 8 kronor, åt vilket håll som helst, för att straddeln ska gå plus. Ingen riktning köps — bara rörelsen, mätt från striken. Stranglen är samma idé med separata strikar: köp put 90 till 2 kronor och call 110 till 2 kronor, totalt 4 kronor. Billigare, men med dött område emellan: först vid 86 (90 − 4) och 114 (110 + 4) når break-even, och alla kurser mellan 90 och 110 ger full förlust av premien. Valet mellan dem är ett pris på form: straddeln betalar mer för att reagera på mindre rörelse, stranglen betalar mindre men kräver mer. Tidsaspekten är konstruktionens egentliga motpart (od-01 äger theta, od-02 prisbilden): en straddle med sjuttio dagar kvar till lösen har den tiden på sig att röra sig 8 kronor, och varje stillastående dag försvinner en del av köpt tid — köparen av rörelse är samtidigt säljare av tid till marknaden. Därmed är straddeln också en position i volatilitet: en lönsam omgång kräver rörelse över 8 kronor är släkt med det mått km-013 äger och med den prisbild od-02 lär ut — den som betalar 8 kronor för rörelse har köpt en implicit volatilitetsbild, och om marknaden redan prissatt större rörelse än den som kommer blir premien förlorad även när aktien rör sig en del. Detta är mekanik att förstå och räkna — inte en strategi att rekommendera, och kursens exempelgivna premier är konstruerade för aritmetiken."
+          },
+          {
+            "type": "tabell",
+            "content": "Position | Ben | Total premie | Max förlust | Break-even nedåt | Break-even uppåt\nStraddle 100 | Köp call 100 (4) + köp put 100 (4) | 8 kr | 8 kr | 92 | 108\nStrangle 90/110 | Köp call 110 (2) + köp put 90 (2) | 4 kr | 4 kr | 86 | 114"
+          },
+          {
+            "type": "insight",
+            "content": "Straddlens asymmetiska hemlighet: maxförlusten är alltid premien, men vinstpotentialen är öppna i båda riktningarna — den som köper rörelse riskerar åtta kronor för att kunna få tjugo. Balansen vilar på att marknaden sätter premien just så dyr att sannolikhetsvägd rörelse räknar hem den; köparens jobb är att skilja verklig rörelseförväntan från prissatt."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Vertikal prisspridning — köpt och sålt ben i samma riktning",
+        "minutes": 4,
+        "intro": "Den vertikala prisspridningen är kombinationernas arbetshäst: köp ett ben, sälj ett annat med samma löptid, och låt mellansområdet bära positionen. Här möter också ordet spreads två betydelser — och kursen håller dem isär.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konstruktionen, i sin uppåtriktade form (bull call): köp en call med strike 100 till premien 4 kronor, sälj en call med strike 110 till premien 2 kronor — nettokostnad 2 kronor. Räkna utfallen. Aktien 98 vid lösen: båda benen värdelösa, förlusten är nettokostnaden 2 kronor — positionens maximum. Aktien 102: den köpta callen är värd 2, nettot 0 — break-even. Aktien 106: den köpta 6, den sålda 0 (utlöper) — vinst 4. Aktien 112: den köpta är värd 12 men den sålda kostar 2 (skillnaden mot strike 110) — nettovinst 10 − 2 = 8 kronor, vilket är maximum: där ovanför växer det sålda benet lika fort som det köpta och taket står. Positionen har alltså tre definierade tal — maxförlust 2, maxvinst 8, break-even 102 — alla urskiljbara ur de två premier som bygger den: maxvinst är strikskillnaden (10) minus nettokostnaden (2). Nedåtriktade spegelbilder konstrueras identiskt med puter, och samma logik bygger positioner som säljer innerområdet och köper ytterområdet — mekaniken är alltid additionen av ben. En terminologisk vaktpost är på plats, för ordet sprider här två betydelser i finanssvenskan: optionsprisspridningen (denna kurs — två optioner med skilda strikar i samma serie) är släkt men skild från handelsspreaden som am-01 äger (skillnaden mellan köp- och säljkurs i orderboken). Förvirringen är verklig: båda kallas spread i dagligt tal, och kursen skriver därför alltid prisspridning när optionsbemärkelsen avses. Praktiskt gäller för alla konstruktioner dessutom likviditeten i respektive ben: en prisspridning har två ben att stänga, dubbelt så många transaktioner med varsin köp-sälj-skillnad — en kostnadspost som finns i am-01:s territorium och som urholkar precis de små nettopremier konstruktören räknat hem. Notis om skatt: avräkning och beskattning av optionspositioner har egna regler som sj-04 äger — detta kapitel räknar på bruttomekanik, före skatt, och hänvisar dit för regelverket."
+          },
+          {
+            "type": "definition",
+            "content": "Vertikal prisspridning — optionsposition av två ben i samma serie och med samma löptid men olika strikar: ett köpt och ett sålt. Maxförlust är nettokostnaden (inköpta minus sålda premier), maxvinst är strikskillnaden minus nettokostnaden, och break-even är den köpta striken plus nettokostnaden (för call-konstruktioner)."
+          },
+          {
+            "type": "insight",
+            "content": "Prisspridningens affär i en mening: den köper en billig del av en position och säljer tillbaka den del som kostar mest per enhet förväntad utdelning. Nettokostnaden 2 kronor mot den nakna callens 4 är hälften så mycket risk — priset är att vinsten takas på 8 i stället för att vara öppen. Konstruktionen väljer sitt utfallsrum precis som collarn gjorde, men i positivt plan."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Payoff-diagrammet — rita positionen före bygget",
+        "minutes": 4,
+        "intro": "Alla kursens konstruktioner är samma hantverk i slutänden: en linje med knäpunkter. Payoff-diagrammet är det verktyget — och det ritas före, inte efter, bygget.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Diagrammets axlar är enkla: horisontellt aktiekursen vid lösen, vertikalt positionens resultat. Varje enskilt ben är en bit av en linje: en köpt call är platt under striken (förlusten är premien, oföränderlig) och stigande medlutning 1:1 ovanför; en såld call är spegeln — platt tak, fallande under; en ägd aktie är en rät linje genom noll med lutning 1:1. Kombinationens diagram ritas genom att addera benens linjer punkt för punkt: collarn blir en trappa med plan golv under 90 och plan tak över 110; straddeln blir ett V med botten på −8 vid 100; prisspridningen blir en trappa med lutning bara mellan 100 och 110. Knäpunkterna — där linjen byter lutning — ligger alltid vid strikarna, och det är diagrammets viktigaste läsregel: en position med knä vid 90, 100 och 110 har tre ben med de strikarna, och tvärtom låter varje konstruktion sina strikar avläsas direkt ur grafen. De tre kontrollfrågorna varje diagram ska svara på före en byggs: Var är break-even (linjens skärning med noll)? Vilket är maximalt utfall åt båda håll (den plana delen, om någon)? Vilken lutning har positionen i sitt känsligaste område (hur mycket ändras resultatet per krona aktierörelse)? Fråga tre är grekernas territorium i praktik (od-01): lutningen mot aktiekursen är delta, och en kombinerad positions delta är — precis som payoffenen — summan av benens. Diagrammet förenklar medvetet genom att frysa tiden vid lösen; den löpande verkligheten har en tredje axel (tiden) och en fjärde (volatiliteten, od-02:s territorium), där positionens värde rör sig mellan dagarna. Därför är diagrammet ett beslutsunderlag för konstruktionens utfallsrum, inte en kursprognos — det visar vad som gäller OM, aldrig vad som kommer att ske. Metodiken är densamma som hela kursen: räkna varje ben, addera, läs profilen — och rita den före något ben lagts, så att konstruktionen styrs av utfallsrummet i stället för av benens lockelser."
+          },
+          {
+            "type": "insight",
+            "content": "En payoff-diagramfacit-trick värt att minas: antalet knäpunkter avslöjar antalet ben, och lutningen mellan knäpunkterna avslöjar nettoexponeringen där. En position som är platt under 95, stiger mellan 95 och 105, och är platt över 105 är en prisspridning — läsbara diagram är kombinationernas språk, och att kunna läsa baklänges är hälften av hantverket."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Fällor och mästerskap — premien, tiden och marginalen",
+        "minutes": 4,
+        "intro": "Kombinerade positioner är aritmetiskt rena men praktiskt krävande. Tre fällor återkommer hos alla konstruktioner — premiens lockelse, tidens erosion och kapitalets binding — och mästerskapet ligger i att räkna med dem före bygget.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: premieinkomstens asymmetri. Sålda ben ger pengar på kontot direkt och känns trygga — men en såld options risk är köpt options spegelbild: möjligheten att få behålla premien är liten och känd, medan kostnaden när det går fel kan vara multipelt större. Collarns sålda call är därför bunden till en ägd aktie (covered) och prisspridningens sålda ben är bundet till ett köpt med högre tak — konstruktionerna i denna kurs ska aldrig innehålla naket sålda ben; det är själva skillnaden mellan positionsbygge och spekulation i premie. Fälla två: tidens erosion. Köpta kombinationer — straddle, strangle, prisspridningens nettokostnad — förlorar tidsvärde varje dag marknaden ligger stilla, och break-even-aritmetiken som räknades vid lösen gäller alltså bara vid lösen: en straddle som behövs röra sig 8 kronor kan ligga på minus 5 med en vecka kvar trots oförändrad aktiekurs, bara för att den köpta tiden smält. Försäljning före lösen präglas av samma mekanik via marknadspriset, inte av diagrammets lösenlinje. Fälla tre: kapitalbinding och transaktionskostnad. En cash-secured put — den sålda puten där hela köpesumman reserveras — binder kapital som alternativt kunde burit ränta, och varje flerbensposition har dubbelt så många ben att öppna och (eventuellt) stänga, var och en med sin handelsspread (am-01:s territorium) och eventuell courtage — nettopremien 2 kronor i prisspridningen tärs snabbt av fyra transaktionskostnader om benen är illikvida. Mästerskapet summeras i kursens tre steg, i ordning: konstruera utfallsrummet först (vilka tak, vilket dött område, vilken lutning), räkna alla tre talen (maxvinst, maxförlust, break-even) och rita linjen, och pröva därefter konstruktionen mot tid och kostnad (tidsfasta? behövs stängas? vad kostar fyra ben?). Ett systematiskt exempel på mekanik — inte uppmaning — är den samlade kedja som kallas wheel: sälj en cash-secured put strike 100 för premien 2; löses puten in köps aktien till effektiv kostnad 98 (100 minus 2); sälj därefter en call strike 100 för premien 2, som vid utlösning säljer aktien till effektiva 102 (100 plus 2) — en rond på 4 kronor mot en bunden insats på 98, det vill säga 4,08 procent, om båda benen löses in på det sättet, och med samtliga fällor fortfarande inbyggda: bindingen av kapitalet, premiens asymmetri om aktien faller djupt under 98, och transaktionskostnaderna för varje vända. Räknelärans fråga till varje sådan konstruktion är alltid densamma: vilket utfallsrum köper jag, vad betalar jag, och vad är alternativkostnaden för bundet kapital? Detta är utbildningens slutord — mekaniken är räknebar och positionernas konstruktion ett hantverk, men besluten om att inta dem är varje läsares eget, på egen analys och med full förståelse för att kombinerade instrument förstorar både skydd och förlust i exakt den mån deras aritmetik anger."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rita och räkna tre konstruktioner själv med en påhittad aktie till 200 kronor: (1) En collar med strik 180 och 220 där nettopremien ska bli noll — vilka ungefärliga premier kräver det, och vilket blir utfallsrummet? (2) En straddle med strike 200 och total premie 14 kronor — var ligger break-even, och hur stor är maxförlusten? (3) En prisspridning med köpt call 200 (premie 8) och såld call 215 (premie 4) — räkna maxvinst, maxförlust och break-even, och rita payoff-linjen med knäpunkter. Kontrollera varje svar med additionsregeln: räkna benen var för sig vid kurserna 170, 200 och 230, och summera."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch var öppet skeptisk mot optioner som placeringsverktyg för den som inte är fulltidsinvesterare — hans linje var att aktieforskningens avkastning inte behöver hävstångsbyggen för att bära. Men hans princip att förstå varje instruments mekanik innan det rörs är kombinationernas bästa försäkring: payoff-diagrammet är instrumentets historia berättad i förväg, och den som kan läsa den behöver inte lita på någon annans konstruktion.",
+    "grahamSection": "Benjamin Graham mötte knappast standardiserade optionsbörser i sin aktiva period, men hans princip om att varje position ska bäras av ett beräknat säkerhetsöverskott översätts direkt: en kombinerad positions maxförlust är dess självrisk, och konstruktionen ska ha ett utfallsrum som motiverar den förlusten. Collarns definierade gränser är i Grahams bemärkelse den mest disciplinerade av kursens konstruktioner — den som vet sin värsta dag på förhand.",
+    "ak1Section": "I AK1A:s metodik hör kombinerade positioner hemma i verktygslådan för den avancerade läsaren, undervisade som mekanik med full aritmetik: AKM2:s riskkolumner (rs-familjens matris) kan bära en positions maxförlust som definierad nedsida, och arbetsflödet (ek-03-traditionen) dokumenterar konstruktionens tre tal — maxvinst, maxförlust, break-even — innan någon position alls förekommer i analysen. Kursens juridiska grundhållning är familjens: instrumentens mekanik är utbildning, och ingenting i konstruktionsläran är en rekommendation att inta en position."
   },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",

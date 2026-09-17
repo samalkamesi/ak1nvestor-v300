@@ -1,7 +1,7 @@
 # O52 — Prestanda spår 7, våg: blogginläggssidans prefetch-spill (2026-09-17)
 
 **Ägare:** fabriksagent s7-u1 (omtagning, manifest auto-s7-1789661728938) ·
-**Status:** KUR LEVERERAD — EFTER väntar prod-synkens bygge (§5)
+**Status:** LEVERERAD + **EFTER BOKFÖRD 2026-09-17 19:5x** (§5 — prod-bevisad)
 
 ## §1 Val + duplikatkontroll
 
@@ -67,14 +67,34 @@ varumarkes-logo.tsx, lasy-global.tsx). seo-page-shell.tsx orörd (brodkrumma
 + sidfooter kirurgerades i egna filer). Ingen DOM/klass-förändring — bara
 attributet + kommentarer.
 
-## §5 EFTER (väntar prod-synkens deploy av denna commit)
+## §5 EFTER (BOKFÖRD 2026-09-17 19:5x — deploy J87oNXS1k5w1NAMDS1rpJ, "DEPLOYAD automatiskt: 5 commits (1c969cf6)" 17:43:13Z)
 
-Förväntan på `/blogg/sa-laser-du-en-balansrakning-pa-15-minuter`
-(kallmät): `?_rsc` **5 → 0**, requests **40 → 35**, transfer **−28,8 KiB**;
-poäng/LCP/TBT bär last-/driftbrus (o28-mätplanet) — strukturen är beviset.
-Under-vecket-kurerna (kurser/relaterade/sidfooter) syns EJ i kallmätet —
-bokförs som realanvändar-notis. Sond + Lighthouse i egna namnrymder
-`lighthouse/blogg_sa-…-o52post-efter*.json` när BUILD_ID bytts.
+Samma sida, samma instrument (Lighthouse mobil + sond, localhost=prod):
+
+| Mått | FÖRE | EFTER | Delta |
+|---|---|---|---|
+| `?_rsc`-prefetch | **5** (28,8 KiB) | **0** | **−5 · −28,8 KiB (kalkylträff 100 %)** |
+| Requests | 40 | 35 | −5 |
+| Transfer | 556,2 KiB | 527,4 KiB | **−28,8 KiB** |
+| Poäng | P56 | P64 | +8 |
+| LCP | 5121 ms | 4673 ms | −448 ms |
+| TBT | 802 ms | 620 ms | −182 ms |
+| CLS | 0 | 0 | oförändrat |
+
+Strukturbeviset bär (requests/transfer mekaniskt utfall exakt som kalkylen);
+CPU-tal (P/LCP/TBT) med vanligt körbrus-kontext men riktning rätt. Rådata:
+`lighthouse/blogg_sa-laser-du-en-balansrakning-pa-15-minuter-o52post-efter.json`
++ `lighthouse/o52post-efter-sammanfattning.json`. Under-vecket-kurerna
+(kurser/relaterade/sidfooter) syns ej i kallmätet = realanvändarnotis.
+
+### §5b Driftnotis (OOM-incidenten under EFTER-fönstret)
+
+Prod-synkens deploy-bygge OOM-dödades 17:30:29Z (RAM < taket), .next
+raderades, pm2 kraschloopade (extern 502 ~13 min). DRIFTSBOKEN-rad 262:s
+runbook följdes EXAKT: VÄNTA på prod-synkens nästa poll (ALDRIG eget
+bygge utanför flock-låset); flock-läkbygget deployade 17:43:13Z, prod 200
++ chunk 200 verifierade. Bevisraden i DRIFTSBOKEN utökad (samma läge som
+16:28–16:41Z samma dag — andra förekomsten, automatiskt läkt båda gånger).
 
 ## §6 Kö/fynd till nästa omgång
 
@@ -87,5 +107,7 @@ bokförs som realanvändar-notis. Sond + Lighthouse i egna namnrymder
 ## §7 Bokföring
 
 FÖRE mätt + bokförd (§2), källanalys empirisk (§3), kur levererad med
-tsc 0 (§4), EFTER-pending ärligt (§5). Worklog-rad i samma commit.
-R2 orörd; data/blogg/ orörd (mätdata i OPTIMERING/); inget bygge.
+tsc 0 (§4), **EFTER bokförd med mekaniskt bevis** (§5: −28,8 KiB exakt,
+?_rsc 5→0), driftnotis (§5b). Worklog-rader i kur-commiten (ee18d91d) +
+EFTER-bokförings-commiten. R2 orörd; data/blogg/ orörd (mätdata i
+OPTIMERING/); inget eget bygge (flock-regeln höll under hela incidenten).

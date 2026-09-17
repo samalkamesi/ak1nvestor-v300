@@ -87,9 +87,13 @@ enligt serien, JSON-parserbar.
 ## FYND
 
 ### B1 — readingMinutes 3 → 2 (BYT)
-Plattformskontraktet ORD_PER_MINUT=600: 1 250 ord (title+desc+body) ÷ 600 =
+SEO-GUIDER-familjens kontrakt ORD_PER_MINUT=600: 1 250 ord (title+desc+body) ÷ 600 =
 2,08 → **2**. Seriens systematiska 3-slip (ravarubolag-C2 dokumenterade samma
 avvikelse; NIKE 6→5, Nordea 6→4, Industrivärden 6→3 i syskongranskningarna).
+**Släktsnotis** (svar på u2:s §8-flagga 9d7ef693): ord/200-praxis gäller den
+publicerade BlogPost-familjen (55 poster — substansrabatt/rörelsekapital lever
+där); industriaktier är B6 i SEO-GUIDER-familjen där round(ord/600) är konviktet
+(enligt u2:s egen formulering) — B1 bygger på rätt släkts kontrakt.
 
 ### B2 — Sandvik-källänken död: home.sandvik.com → www.sandvik.com (BYT)
 Utkastets källpekare `https://www.home.sandvik.com/en/investors` svarar inte i

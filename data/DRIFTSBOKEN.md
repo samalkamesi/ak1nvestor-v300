@@ -1646,3 +1646,34 @@ får ALDRIG krascha sattMal/rensaMal.
   bara retry. (3) Bygg under samtidig tung cron (gränssnittsvakten ~1 GB
   chrome) + fabrikens barn = OMM-fälla; RAM-vaktens tröskel bör räkna
   med byggheap + cron, inte bara ledig RAM.
+
+## 2026-09-17 ~18:5x–19:4x lokal — två vaktåtgärder i patch-/grindkedjan (s8-u3, o50)
+
+- VACCIN 1 OVAN: INFRIAT av s8-u3 (o50 §5) — verifieraArtefakt (prod-synkens
+  deploygrind AND kraschvaktens ärlighetsgrind, ingen extra anropsplats
+  behövdes) kontrollerar nu KRITISKA_FILER = BUILD_ID + prerender-manifest.json
+  + routes-manifest.json FÖRE pm2-restart; incidentbilden (BUILD_ID skriven +
+  HTML grön mot gamla chunks, server dör på ENOENT) = trasig med filnamn.
+  Skarp sond mot prod-.next: GRÖN 1667 HTML/81 ref — inget falsklarm.
+  Vaccin 2 + 3 förblir öppna (oägda).
+- PROCFS-SPINN (ny klass): fs.mkdirSync({recursive}) mot /proc i en
+  TESTFILTUR satte tre svit-processer i kernel-syscall-storm (R-läge,
+  stime +227 ticks/3 s, aldrig återvändande) — manuellt dödade 1708486,
+  1708844 (egna körningar) + 1709260 (främmande sessions barn ur
+  sess_e4658741 som körde SAMMA svitfil — utan nådadöd hade den snurrat
+  till fabrikens 25-min-tak). Fixturen bytt till ENOTDIR-väg; regel:
+  ALDRIG /proc som fs-mål i testfixturer. Ingen prod-påverkan (bara
+  svit-processer; prod 200 genomgående).
+- SAMTIDIGT: patch-köns tysta död upptäckt+curerad (o50): next-RCE-patchen
+  16.3.5 var avstängd av 3 misslyckade kvitton VARAV 1 spurious (prod-synkens
+  commit-stege nåddes med riven lock — "nothing to commit" räknades som
+  patch-fel). Kurer: patchInstallerad nollställs vid rivning · bygg-loggar
+  bevaras i data/vakten/patch-byggfel/ · flock-timeout ("startade-aldrig")
+  skiljs från riktigt fel. Spurious-kvittona rensade med backup
+  (patch-kvitton.jsonl.backup-o49), äkta fälten kvar (2/3) aktiva — därefter
+  syskonet s8-u1/o55:s arkivering 20:15 (de 4 äkta raderna flyttade till
+  patch-kvitton-arkiv-2026-09-17T18Z.jsonl) = räknare NOLLade, kö aktiv
+  på starkare grund; deras race-rotorsaka (pm2:s live-ISR mot rivna
+  .next-kategorier, ENOTEMPTY) förklarar de två äkta byggfelen och deras
+  skapaPm2Vakt är race-kuren. Se
+  data/forskning/OPTIMERING/o50-patchko-atervandning-s8.md §9.

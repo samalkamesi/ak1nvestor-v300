@@ -17,7 +17,7 @@
  *     genererar ALDRIG undantag
  * Körning: node verktyg/testa-prod-synk-patchko.mjs  (exit 0 = GRÖN)
  */
-import { mkdtempSync, writeFileSync, readFileSync } from "node:fs";
+import { mkdtempSync, writeFileSync, readFileSync, readdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -26,6 +26,8 @@ import {
   lasPatchKvitton,
   aktivPatchPlan,
   skrivPatchKvitto,
+  bedomByggMisslyckande,
+  bevaraByggLoggar,
 } from "./prod-synk.mjs";
 
 let pass = 0;
@@ -120,6 +122,39 @@ kolla("versionbyte i köfilen = nytt liv (gamla kvitton räknas ej)", aktivPatch
 skrivPatchKvitto(kvittoFil, { paket: "zod", version: "4.6.5" }, "misslyckad", "f1");
 skrivPatchKvitto(kvittoFil, { paket: "zod", version: "4.6.5" }, "ok", "andra försöket");
 kolla("ok efter misslyckad = posten klar", !aktivPatchPlan(lasPatchKo(koFil, kanda), lasPatchKvitton(kvittoFil)).some((p) => p.paket === "zod"));
+
+console.log("== bedomByggMisslyckande (o49: flock-skiljning + OOM) ==");
+kolla("båda loggarna tomma = startade-aldrig (flock -w 900 utan lås)", bedomByggMisslyckande("", "") === "startade-aldrig");
+kolla("endast whitespace i loggarna = startade-aldrig", bedomByggMisslyckande("  \n\t", "\n ") === "startade-aldrig");
+kolla("saknade loggfiler (undefined) = startade-aldrig (bash >> skapar alltid — barnet körde aldrig)", bedomByggMisslyckande(undefined, undefined) === "startade-aldrig");
+kolla("npm ci skrev men byggloggen tom = riktigt-fel (npm ci failade)", bedomByggMisslyckande("added 800 packages in 40s\nnpm error code ELIFECYCLE", "") === "riktigt-fel");
+kolla("'Killed' i byggloggen = oom", bedomByggMisslyckande("added 800 packages", "Killed\nnpm error code 134") === "oom");
+kolla("'heap out of memory' = oom", bedomByggMisslyckande("ok", "<--- Last few GCs --->\nFATAL ERROR: Reached heap limit — heap out of memory") === "oom");
+kolla("'CBKilled' (cgroup-v2 OOM-killern) = oom", bedomByggMisslyckande("ok", "build failed — CBKilled") === "oom");
+kolla("vanligt kompileringsfel = riktigt-fel", bedomByggMisslyckande("ok", "Type error: Property 'x' does not exist") === "riktigt-fel");
+kolla("'Killed' ENDAST i npmci-loggen räknas inte (citerat i text) = riktigt-fel", bedomByggMisslyckande("Killed in logs", "Type error") === "riktigt-fel");
+kolla("null-input hanteras som saknad (sträng-tvång saknas → tomt)", bedomByggMisslyckande(null, null) === "startade-aldrig");
+
+console.log("== bevaraByggLoggar (o49 Kur B: diagnosen överlever /tmp-omskrivningen) ==");
+const kalla1 = path.join(TMP, "kalla-npmci.log");
+const kalla2 = path.join(TMP, "kalla-build.log");
+writeFileSync(kalla1, "npm ci körd 09-17\n");
+writeFileSync(kalla2, "Failed to compile.\n./src/app/x.ts:7:22\n");
+const bevarMapp = path.join(TMP, "patch-byggfel");
+const sparade1 = bevaraByggLoggar(bevarMapp, [[kalla1, "npmci.log"], [kalla2, "build.log"]]);
+kolla("båda loggfilerna bevarade", sparade1.length === 2 && sparade1.includes("npmci.log") && sparade1.includes("build.log"));
+const bevarFiler = readdirSync(bevarMapp).filter((f) => f.endsWith(".log"));
+kolla("tidsstämpel-prefix i filnamnen (ISO med : och . utbytta)", bevarFiler.every((f) => /^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d+Z-(npmci|build)\.log$/.test(f)));
+kolla("innehållet kopierat ordagrant", bevarFiler.some((f) => readFileSync(path.join(bevarMapp, f), "utf8") === "npm ci körd 09-17\n"));
+kolla("idempotens: ny anrop sparar NY uppsättning (raderingar sker aldrig)", (() => { const fore = readdirSync(bevarMapp).length; bevaraByggLoggar(bevarMapp, [[kalla1, "npmci.log"], [kalla2, "build.log"]]); return readdirSync(bevarMapp).length === fore + 2; })());
+const sparade2 = bevaraByggLoggar(bevarMapp, [[path.join(TMP, "finns-ej.log"), "spok.log"], [kalla1, "npmci.log"]]);
+kolla("saknad källa skippas utan att döda anropet", sparade2.length === 1 && !sparade2.includes("spok.log"));
+// OBS (o49-doktrinär lärdom): målet här är ENOTDIR (katalog under en FIL) —
+// ALDRIG /proc/…: fs.mkdirSync recursive på procfs SPINNAR i kerneln
+// (syscall-storm, empiriskt bevisat 2026-09-17: tre svitprocesser i R-läge,
+// stime +227 ticks/3 s, dödade manuellt). ENOTDIR kastar direkt = samma
+// kontrakt (omöjlig målmapp → tom lista) utan procfs-fällan.
+kolla("omöjlig målmapp = tom lista, ALDRIG undantag", bevaraByggLoggar(path.join(kalla1, "under-fil"), [[kalla1, "npmci.log"]]).length === 0);
 
 console.log("== kvittofilens format (korSynk läser samma rader) ==");
 const rader = readFileSync(kvittoFil, "utf8").trim().split("\n");

@@ -48,6 +48,7 @@ export function Sidfooter() {
                     {punkt.guldknapp ? (
                       <Link
                         href={punkt.lank}
+                        prefetch={false}
                         className="inline-block rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90 max-md:min-h-[52px]"
                       >
                         {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
@@ -55,6 +56,12 @@ export function Sidfooter() {
                     ) : (
                       <Link
                         href={punkt.lank}
+                        prefetch={false}
+                        // prefetch={false} (o17-footer-precedensen, här på
+                        // rika sitemap-footern som o17:s footer.tsx-kur missade):
+                        // footerns kolumnlänkar ligger under vecket — inte
+                        // tidskritiska navigationsmål, men prefetchar tunga
+                        // flighter när läsaren scrollar fram dem (o52 §3).
                         className="text-sm text-muted-foreground hover:text-foreground max-md:flex max-md:min-h-[52px] max-md:items-center"
                       >
                         {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
@@ -70,15 +77,27 @@ export function Sidfooter() {
         <div className="marin-panel mt-10 rounded-xl border border-gold/25 px-5 py-5 text-xs text-[#EDE6D6]">
           <p>
             {t("footer.disclaimer")}{" "}
-            <Link href="/privacy-policy" className="underline hover:text-[#E8C766]">
+            <Link
+              href="/privacy-policy"
+              prefetch={false}
+              className="underline hover:text-[#E8C766]"
+            >
               {t("footer.integritetspolicy")}
             </Link>{" "}
             ·{" "}
-            <Link href="/villkor" className="underline hover:text-[#E8C766]">
+            <Link
+              href="/villkor"
+              prefetch={false}
+              className="underline hover:text-[#E8C766]"
+            >
               {t("footer.villkor")}
             </Link>{" "}
             ·{" "}
-            <Link href="/finansiell-policy" className="underline hover:text-[#E8C766]">
+            <Link
+              href="/finansiell-policy"
+              prefetch={false}
+              className="underline hover:text-[#E8C766]"
+            >
               {t("footer.finansiellPolicy")}
             </Link>
           </p>

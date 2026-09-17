@@ -67,7 +67,17 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
       const label = seg.slice(1, seg.indexOf("]"));
       const href = seg.slice(seg.indexOf("](") + 2, -1);
       out.push(
-        <Link key={`${keyPrefix}-a${i}`} href={href} className="text-gold underline hover:opacity-80">
+        <Link
+          key={`${keyPrefix}-a${i}`}
+          href={href}
+          prefetch={false}
+          // prefetch={false} (o41/o52-precedensen): brödtextens korsreferenser
+          // är synliga i viewport ⇒ Next 16 prefetchar målinlägget i två
+          // omgångar (partial + full flight ≈ 8,7 KiB) i LCP-fönstret per
+          // kall inläggsvisning (o52 §2). Målet är force-static/ISR
+          // (klick ≈ 100–300 ms), hover-prefetch lever kvar (Next 16).
+          className="text-gold underline hover:opacity-80"
+        >
           {label}
         </Link>
       );
@@ -182,6 +192,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <li key={c.slug}>
                 <Link
                   href={`/kurser/${c.slug}`}
+                  prefetch={false}
+                  // prefetch={false} (o41/o52-precedensen): under vecket —
+                  // kurs-flighterna är sajtenes tyngsta (o50 §6), prefetchas
+                  // när läsaren scrollar fram dem; klick ≈ 100–300 ms
+                  // (force-static), hover-prefetch lever (Next 16).
                   className="group block text-sm"
                 >
                   <span className="font-semibold group-hover:text-gold">
@@ -195,13 +210,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             ))
           ) : (
             <li>
-              <Link href="/kurser" className="text-sm font-semibold hover:text-gold">
+              <Link href="/kurser" prefetch={false} className="text-sm font-semibold hover:text-gold">
                 Hela kursbiblioteket i institutionell aktieanalys — från AKM1:s 20 variabler till sektorsanalys
               </Link>
             </li>
           )}
           <li>
-            <Link href="/laroplan" className="text-sm font-semibold hover:text-gold">
+            <Link href="/laroplan" prefetch={false} className="text-sm font-semibold hover:text-gold">
               Läroplanen — den strukturerade vägen från nybörjare till oberoende analytiker
             </Link>
           </li>
@@ -214,7 +229,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <ul className="mt-4 space-y-3">
             {related.map((p) => (
               <li key={p.slug}>
-                <Link href={`/blogg/${p.slug}`} className="group block">
+                <Link href={`/blogg/${p.slug}`} prefetch={false} className="group block">
                   <span className="font-serif font-semibold group-hover:text-gold">{p.title}</span>
                   <span className="block text-sm text-muted-foreground">{p.description}</span>
                 </Link>

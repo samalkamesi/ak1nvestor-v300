@@ -12663,3 +12663,36 @@ OBJEKT (anspråk FÖRE byggstart, data/vakten/auto-s9-1789646128050-u3-ansprak.m
 ## SPÅR 10 s10-u1 (manifest auto-s10-1789647928135, 1/3) — 2026-09-17 ~14:3x lokal: MIDDAGS-DR — kedja 4 på jungfru-cron-setet + pumpstarten tidsatt (08:00:00 exakt) + diagnosen tomma per-typ-filer [fabrik]
 
 OBJEKT (anspråk FÖRE ingreppet, data/vakten/auto-s10-1789647928135-u1-ansprak.md): duplikatkontroll visade kedja 1 (db-2026-09-17) och kedja 2 (nattens full-arkiv) redan LEVERERADE i morse av syskonen — valde i stället spårets två öppna köposter: (1) "mitt-på-dagens-mätning tidssätter startet" (DR-OVNING-2026-09-17-JUNGRUDAG-7-BLAD.md) och (2) "8 av 11 per-typ-tabeller TOMMA i nattexporten" (DR-KEDJA2-2026-09-17-JUNGRUNATT.md), plus kedja 4 som ALDRIG körts på ett OBEVAKAT cron-exporterat set. LEVERANSER: (A) `node verktyg/dr-kedja4.mjs` GRÖN exit 0 — RAM-grind direkt grön (1 223 MB), självtest 4/4, 10/10 per-typ-filer GRÖNA 0 VARNINGAR, ⊆ full-arkiv 10/0 (arkiv 163 039), restore i skrap-PG 10 rader/10 filer RTO 0,10 s, oberoende verifiering, garanterad städning (ak1a_dr_pertyp raderad, PG17 nere — egen efterverifiering); kedja 4 därmed bevisad på BÅDA exportvägarna (manuell 09-16 + obevakad cron 09-17). (B) DIAGNOS KÖPOST 2: de 8 tomma per-typ-filerna är ÄKTA TOMMA — arkivets faktiska per-typ-fördelning medlem=3 · blogg_utkast=7, övriga 8 bevakade typer 0 OCKSÅ i arkivet (källan tom, ej exportfel; ett tyst exportfel är diskret och hade flaggats VARNING); räkneklarering 8 av 10 per-typ + full-arkivet = 11:e filen; ytan stillastående sedan 09-11 (fönstret 10:44→23:25, 0 nya event av bevakade typer på 6 dygn) — per-typ-lagrets värde är kontraktet (⊆ arkivet), inte volymen. (C) MIDDAGS-RPO `dr-rpo-diff.mjs --json` kl 12:31:37Z: blad 1 286 328 / levande 1 305 720 / **+19 392 oskyddade på 11,9 h** i 3 av 60 tabeller (snapshots +18 984 · beslutsklockan +408) — JSON DR-RPO-DIFF-2026-09-17-MIDDAG.json. (D) KÖPOST 1 INFRIAD — PUMPSTARTEN TIDSATT EXAKT: läsande captured_at-sond (doktrinerad COUNT-klass, endast antal+tidsstämplar) visar HELA dagens snapshots-batch 18 984 rader med EN tidsstämpel 06:00:00.058474Z = 08:00:00,058 lokal (gårddagen identisk: 06:00:00.047496Z/18 984) = ETT bulk-påstående från en schemalagd daglig körning; morgonmätningen 07:43 såg 0 (17 min före), middagen 14:31 klart — korsbevis sondens 18 984 == diffens +18 984. TVÅ-KLOCKOR-BILDEN KOMPLETT: beslutsklockan 36,0 r/h jämn (serien 31,3–36,0), pumpen EN batch/dag 08:00 ⇒ ~96 % av RPO-skulden byggs i en sekund; RUNBOOK-KÖ till huvudagenten: extra blad ~08:05 skär värsta-fallet ≈ 19 700 → ≈ 408 rader (−96 %, ~10 s RTO) — crontab = huvudagentens beslut, orört här. Bevis: tre protokollfiler (samlings + 2 maskinella) + DRIFTSBOKEN DR-rad + denna sektion. src/ orörd (ingen kodändrad — tsc-ej-aktuellt, commit-grinden bär baslinjen); R2 orörd (.pgpass/.env aldrig inlästa i process — PGPASSFILE-pekare till psql enligt kontraktet); data/blogg/ orörd; data/backups/ läsandes. Syskonytor orörda (s9-u3 skrev worklog under fönstret — append via node-kanal). [fabrik]
+## SPÅR 10 s10-u3 (omgång 9, O9) — 2026-09-17 14:28–14:41 lokal: EFTERMIDDAGS-DR — dubbel RPO-punkt stabil + intra-dag-noll + FALSK RÖT-DOM KURAD OCH BETEENDEPROVAD [fabrik]
+
+Order "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG" —
+objektval: morgonens öppna köpost "mitt-på-dagen-RPO-punkt" (RPO-serien saknade
+mitt-på-dagen-läge). KOLLISIONSBOKFÖRING: syskonet s10-u1:s MIDDAG-DR
+(14:26–14:35, commit 07dd6aa0) lästes under fönstret FÖRE mina bokföringar —
+deras objekt (kedja 4 + pumpstart) orörda av mig; de hann tidsätta pumpens
+start EXAKT 08:00:00,058 med tidsstämpel-sond, min planerade
+hastighets-extrapolering omdefinierades därför till intra-dag-stabilitet.
+LEVERANSER: (1) restore db-2026-09-17 GRÖN ×2 — RTO-punkt 18 = 17,1 s +
+punkt 19 = 14,1 s (dagens snabbaste); 60 tabeller/1 286 328 rader == dump-COPY
+== morgonens ×2 = FEM instrument samma tal. (2) RPO dubbel punkt — 14:31:
++19 392 oskyddade/11,9 h (snapshots +18 984 · beslutsklockan +408 · 3/60) ==
+syskonets middagmätning SAMMA minut = oberoende replik; 14:40:39: TOTALT +0
+på 9,2 min mitt på dagen ⇒ engångspump, ingen drip; dygns-RPO-profilen
+KOMPLETT: 02:30 växling (0) → 08:00 batchkliv (+18 984) → episodiskt kryp →
+VÄRSTA FALL ≈ +19 800 == dagsteget sekunder före växlingen (två beräkningsvägar
+möts); 02:30-placeringen optimal bland ett blad; beslutsklockan preciserad
+till EPISODISK (34 r/h snitt men +0 på 9,2 min). (3) VAKTFYND+KUR: `--fil`
+med bart bladnamn dömdes FALSKT RÖTT (path.resolve mot cwd; AUTO-3: restore
+VÄGRADES, PG17 orörd = fail-fast bevisat i felriktningen) → kirurgisk
+valDump() i verktyg/dr-ovning.mjs (bladnamn resolvas mot dumpkatalogen med
+NOTIS; äkta saknad fil förblir RÖD) → beteendeprov AUTO-5: SAMMA kommando
+GRÖNT, full restore 14,1 s; node --check GRÖN; inga andra verktyg rörda.
+(4) Städning egenmätt: PG17 down · base endast OID 1/4/5 · pg_wal 497 MB
+oförändrad · /tmp enligt mall. Kö: kvälls-RPO-punkt ~22:00 (sista
+profilluckan) · valDump-NOTIS i dr-total-kontext · WAL-trend kvartalsvis.
+Endast data/forskning/DR-{OVNING-2026-09-17-EFTERMIDDAG-RPO.md,PROV-2026-09-17-AUTO-{3,4,5}.md,RPO-DIFF-2026-09-17-EFTERMIDDAG.json}
++ data/DRIFTSBOKEN.md (DR-raden + sektion S10-U3 (O9)) + worklog.md +
+verktyg/dr-ovning.mjs; src/ orörd = INGET bygge; R2 orörd (.pgpass endast
+PGPASSFILE-pekare, aldrig inläst); data/blogg/ orörd; data/backups/ endast
+lästa. [fabrik]
+

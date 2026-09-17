@@ -13933,5 +13933,275 @@
       ]
     },
     "notering": "oljeservice — äger inga reserver, säljer borrning/mätning/digitala tjänster till producenterna: universumets tredje värdekedjeläger i USA-energifållan (XOM/CVV integrerade · COP producent · SLB service) med pedagogisk bruttokontrast — 17,0 % bruttomarginal mot COP 47,6 % (tjänstearvodet mot resursägandet); moat-serien medel 18,7 %, spridning 4,7 pp FY2021–2025 (cykeln syns: 2021-låg 16,0 % → 2024-toppen 20,7 % → 2025 18,7 %); omsättning +8,3 %/år endpoint (upptagningscykel efter 2020) men netto-CAGR −0,6 % från 2022-toppen och TTM-netto −24,2 % (källan) = tjänstemarginallens svängrum; prognosTillväxt härledd ur trailing/forward-P/E (25,36/18,52 ⇒ +36,9 % implicit EPS-förändring — marknadens cykelvändningsförväntan); peg 0,69 spårkonvention; p/b 3,27 härlett P/E×ROE ur källans tal, evEbit 16,78 härlett (EV 86,41 mdr = mcap 77,72 + nettoskuld 8,69, mot EBIT TTM 5 150 MUSD); utdelning 1,18 USD/aktie (2,26 %, payout 57,2 % — utdelningsfälten null enligt universumets konvention); beta 0,77 — högre än COP:s 0,13: servicen levererar INOM cykeln, bolaget äger inte svängrummet; FCF fyra raka positiva 1,5→4,4 mdr (capexlätt verksamhet: 2,1–2,4 mdr/år); 52-vägersintervall 31,64–60,46 USD; nästa rapport 2026-10-16"
+  },
+  {
+    "ticker": "SUBC.OL",
+    "namn": "Subsea 7 S.A.",
+    "bransch": "energi",
+    "land": "Norge",
+    "valuta": "NOK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/osl/SUBC/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; fördröjd OSL-kurs 2026-09-17 15:08 CET, statistics påläst 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; bolaget rapporterar i USD trots NOK-notering — serierna följer rapportvalutan USD enligt EQNR-precedensen, medan kurs/börsvärde/nettokassa står i NOK; P/B härledd ur identiteten P/E × ROE, EV/EBIT ur EV (börsvärde − nettokassa 1,88 mdr NOK) mot TTM-EBIT 10,224 mdr NOK; källan klassar bolaget Energy/Oil & Gas Equipment & Services — branschfältet energi är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 324.4,
+    "marknadsKapitalMdr": 95.42,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1132,
+      "resultatCAGR5ar": 0.9314,
+      "omsattningTillvaxtTTM": 0.061,
+      "prognosTillvaxt": 0.2542
+    },
+    "lonksamhet": {
+      "roe": 0.1419,
+      "roic": 0.1666,
+      "bruttoMarginal": 0.1838,
+      "ebitMarginal": 0.1373,
+      "nettoMarginal": 0.0815,
+      "fcfMarginal": 0.2307
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.2,
+      "rantaTackning": 13.76,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.0925,
+      "bruttoMarginalSpread5ar": 0.0953,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 15.79,
+      "pb": 2.24,
+      "evEbit": 9.15,
+      "peg": 0.62,
+      "fcfYield": 0.1713,
+      "egenKapitalMultipl": 2.24
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        5136000000,
+        5974000000,
+        6837000000,
+        7086000000
+      ],
+      "resultat": [
+        57100000,
+        15400000,
+        201400000,
+        411400000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        254800000,
+        78800000,
+        582700000,
+        1190000000
+      ]
+    },
+    "notering": "Norsk-britisk undervattensteknikkoncern för offshore-pipeläggning och construction (källan klassar bolaget Energy/Oil & Gas Equipment & Services; noterad i NOK på Oslo Børs men rapporterar i USD — serierna i rapportvaluta enligt EQNR-precedensen): tillsammans med DNO Norge/energi 3→5 ⇒ /dataset/energi/norge PUBLICERAS vid nästa bygge (AKRBP · EQNR · VAR + SUBC · DNO); P/E 15,79 mot forward 12,59 ⇒ prognosTillväxt +25,4 % (PEG spårkonvention 0,62); vallgravens födelse i realtid: bruttomarginalen 6,1→15,6 % 2021–2025 (medel 9,3 %, spread 9,5 pp) medan resultat-CAGR +93,1 %/år endpoint stiger ur cykelbotten 15,4 MUSD 2023 — offshore-cykeln i ett enda bolags siffror; balansräkningens bottenplatta: NETTOKASSA 1,88 mdr NOK · skuld/EK 0,20 · räntetäckning 13,8×; fcfYield 17,1 % (universumets fjärde högsta); utdelning 13,00 NOK (3,92 %, payout 98,9 % = cykeltoppens utdelning, +105 % höjd, 3 år av tillväxt); beta 0,60 · 52-vägsintervallet 180,10–358,20 NOK med nuvarande 324,40 nära toppen; nästa rapport 2026-11-19."
+  },
+  {
+    "ticker": "DNO.OL",
+    "namn": "DNO ASA",
+    "bransch": "energi",
+    "land": "Norge",
+    "valuta": "NOK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/osl/DNO/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; fördröjd OSL-kurs 2026-09-17 15:14 CET, statistics påläst 2026-09-17): pris, börsvärde, P/E, marginaler, ROE/ROIC/WACC, skuld/EK, book value per share, utdelning, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; bolaget rapporterar i USD trots NOK-notering — serierna följer rapportvalutan USD enligt EQNR-precedensen, medan kurs/börsvärde/nettoskuld/FCF står i NOK; P/B härledd ur pris ÷ book value per share (9,86 NOK), EV/EBIT ur EV (börsvärde + nettoskuld 5,79 mdr NOK) mot TTM-EBIT 10,752 mdr NOK; källan klassar bolaget i Energy — branschfältet energi är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 19.23,
+    "marknadsKapitalMdr": 19.26,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.023,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.6391,
+      "prognosTillvaxt": 3.6581
+    },
+    "lonksamhet": {
+      "roe": 0.0856,
+      "roic": 0.0625,
+      "bruttoMarginal": 0.5599,
+      "ebitMarginal": 0.4493,
+      "nettoMarginal": 0.0496,
+      "fcfMarginal": 0.3053
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.83,
+      "rantaTackning": 22.29,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.4947,
+      "bruttoMarginalSpread5ar": 0.2755,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 25.34,
+      "pb": 1.95,
+      "evEbit": 2.33,
+      "peg": 0.07,
+      "fcfYield": 0.3614,
+      "egenKapitalMultipl": 1.95
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1377000000,
+        667500000,
+        666800000,
+        1474000000
+      ],
+      "resultat": [
+        384900000,
+        18600000,
+        -27100000,
+        -48300000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        756100000,
+        30500000,
+        213200000,
+        102900000
+      ]
+    },
+    "notering": "Norsk oljeproducent med kärnverksamhet i Kurdistanregionen och Norge (källan klassar bolaget i Energy/Oil & Gas Exploration & Production; noterad i NOK på Oslo Børs men rapporterar i USD — serierna i rapportvaluta enligt EQNR-precedensen): tillsammans med SUBC Norge/energi 3→5 ⇒ /dataset/energi/norge PUBLICERAS vid nästa bygge; resultatsvängen är universumets mest dramatiska: vinst 384,9 MUSD 2022 → FÖRLUST −48,3 MUSD 2025 (resultatCAGR osatt — endpoint på negativt slutår är meningslöst, SINCH-konventionen) medan TTM juni 2026 vänder +76,7 MUSD och omsättningen +63,9 % TTM efter Kurdistan-uppgörelserna; P/E 25,34 mot forward 5,44 ⇒ prognosTillväxt +365,8 % (PEG spårkonvention 0,07 — universumets yttersta extremvärde, slaget IVSO:s +54 %; källans framförhållning är att konsensus ser EPS femdubblas — talet redovisas som gapets storlek, inte som prognos); bruttomarginalens femårsspann 39,0–66,5 % (medel 49,5 %, spread 27,6 pp — universumets bredaste moat-spread med råge, näst bredaste är 13,2 pp): Kurdistan-exportstörningarnas och betalningsuppgörelsernas stämpel i varje årskurva; fcfYield 36,1 % — universumets HÖGSTA (P/FCF ≈ 2,8; diskonteringen är politisk risk, inte bristande kassa); utdelning 1,50 NOK (8,26 %, payout 161,1 % = utdelning över TTM-vinst, +14,3 % höjd, 4 år av tillväxt); beta −0,15 — universumets FÖRSTA NEGATIVA beta (aktien rör sig historiskt motsatt bärset); skuld/EK 0,83 · räntetäckning 22,3× · nettoskuld 5,79 mdr NOK · insiders 13,3 %; 52-vägsintervallet 12,44–21,96 NOK med nuvarande 19,23; nästa rapport 2026-10-29."
+  },
+  {
+    "ticker": "CNQ",
+    "namn": "Canadian Natural Resources Limited",
+    "bransch": "energi",
+    "land": "Kanada",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/CNQ/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; NYSE realtidskurs 2026-09-17 9:37 AM EDT, statistics påläst 2026-09-17): pris, börsvärde, P/E, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning, återköp, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; NYSE-noterad i USD men rapporterar i CAD — serierna följer rapportvalutan CAD (EQNR-precedensens spegel), medan kurs/börsvärde/nettoskuld/FCF står i USD; P/B härledd ur identiteten P/E × ROE, EV/EBIT ur EV (börsvärde + nettoskuld 12,37 mdr USD) mot TTM-EBIT 8,104 mdr USD (marginalen är valutaneutral); källan klassar bolaget Energy/Oil & Gas Exploration & Production — branschfältet energi är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 50.22,
+    "marknadsKapitalMdr": 103.66,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0287,
+      "resultatCAGR5ar": -0.0036,
+      "omsattningTillvaxtTTM": 0.1526,
+      "prognosTillvaxt": -0.0262
+    },
+    "lonksamhet": {
+      "roe": 0.2669,
+      "roic": 0.1411,
+      "bruttoMarginal": 0.5158,
+      "ebitMarginal": 0.2576,
+      "nettoMarginal": 0.2631,
+      "fcfMarginal": 0.2162
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.43,
+      "rantaTackning": 10.6,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5168,
+      "bruttoMarginalSpread5ar": 0.0736,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 12.66,
+      "pb": 3.38,
+      "evEbit": 14.32,
+      "peg": null,
+      "fcfYield": 0.0666,
+      "egenKapitalMultipl": 3.38
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        42298000000,
+        35968000000,
+        35656000000,
+        38762000000
+      ],
+      "resultat": [
+        10937000000,
+        8233000000,
+        6106000000,
+        10820000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        14255000000,
+        7444000000,
+        8003000000,
+        8315000000
+      ]
+    },
+    "notering": "Kanadas största oberoende olje- och gasproducent (källan klassar bolaget Energy/Oil & Gas Exploration & Production; NYSE-noterad i USD men rapporterar i CAD — serierna i rapportvaluta): universumets ANDRA Kanada-rad (efter u1:s RY samma omgång — 17:e landet fördjupas direkt) och u1:s explicit utlämnade koordinat infriad; Kanada/energi 0→1; P/E 12,66 mot forward 13,00 ⇒ prognosTillväxt −2,6 % (PEG osatt — negativ prognostillväxt, SAMPO-precedensen; källans konsensus ser svagt fallande EPS nästa år); nettoMarginal 26,3 % ÖVER EBIT-marginalen 25,8 % (BABA/ABBV/TM-mönstret: finansiella poster och skatteeffekter lyfter nettot); ROE 26,69 % · ROIC 14,11 % mot WACC 8,49 % = +5,62 pp; bruttomarginalen femårsstämd 51,7 % (spread 7,4 pp) — råvaruprisets volatilitet i kanadensisk tappning; utdelning 1,78 USD (3,54 %, payout 44,9 %, 10 RAKA ÅR av utdelningstillväxt — universumets längsta aktiva svit, +6,7 % senaste) + AKTIEANTAL −1,10 %/år = äkta återköp (buyback-yield 1,10 %); skuld/EK 0,43 · räntetäckning 10,6× · nettoskuld 12,37 mdr USD; beta 0,88 · 52-vägsintervallet 29,68–52,31 USD med nuvarande 50,22 nära toppen; FY2025 i rapportvalutan: omsättning 38,8 mdr CAD · resultat 10,8 mdr CAD (+77 %); nästa rapport 2026-11-05."
   }
 ]

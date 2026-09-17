@@ -1246,6 +1246,49 @@ EnvironmentFile med chmod 600).
 - Protokoll: DR-OVNING-2026-09-17-JUNGRUDAG-7-BLAD.md (agent) + maskinellt
   DR-PROV-2026-09-17-AUTO.md + JSON DR-RPO-DIFF-2026-09-17-MORGON.json.
 
+## S10-U1 (O8) — FÖDELSEBEVISETS REPLIK + LOKAL PG EGENMÄTT STÄDVERIFIERAD (2026-09-17, GODKÄNT)
+
+- Kontext: fabriksspår 10 vakt ("återställ, mät tid/rader, protokoll, städa
+  lokal PG"). Objektval efter duplikatkontroll: nyfödda bladet
+  db-2026-09-17.sql.gz (fött 02:30:29, obevisat vid start — FÖDELSEBEVIS:
+  N=0-bladet en verklig katastrof IDAG laddar från; igår bevisades N∈[1..5]).
+- RACE (symmetriskt bokförd): s10-u3 (O8) tog SAMMA blad + samma morgon-RPO
+  21 s före mig — flocken serialiserade oss, båda GRÖNA, deras commit
+  8b92f0a2 bokför min körning som "OBEROENDE REPLIKBEVIS"; restore-kärnan +
+  morgonpunktens förstahandsfynd ("två klockor") är DERAS. Detta är repliken
+  + de delar de inte täckte.
+- REPLIKEN: `node verktyg/dr-ovning.mjs --fil db-2026-09-17.sql.gz` GRÖN
+  exit 0 — markörer GRÖN 1 307 940 · RTO **12,4 s** (seriepunkt 17) · fel
+  788 kända/0 okända · public 60 tabeller/**1 286 328 rader** == dump-COPY
+  == syskonkörningen (FYRKANTIGT KORSBEVIS på födelsebladet) · +storage
+  68/1 286 464 · alla scheman 99/1 286 724. RAM-omkörning: 2× exit 75
+  (896 MB — fyra syskonpar ~0,8 GB/st) → 60 s-slinga → GRÖN (grind+kö-
+  kontraktet beteendebevisat under äkta belastning).
+- **LOKAL PG STÄDVERIFIERAD EGENMÄTT** (första gången oberoende av
+  verktygens självrapport): base/ ENDAST OID 1/4/5 + tom pgsql_tmp (NOLL
+  skrap-svans — "4 kataloger" är ls total-raden, dubbelkollat) ·
+  **pg_wal 497 MB — FÖRSTA MÅTNINGEN** (normal återanvändningsbuffert efter
+  spårets ~20 restores; shutdown-checkpoint "0 added/removed/recycled,
+  estimate 221 MB"; långt under 1 GB-taket; 73 GB ledigt — referensvärde
+  för kvartalstrend) · ren avstängning i PG-loggen · 7 blad i fönstret ·
+  /tmp-felloggar enligt mall. DOM: lokal PG fullständigt städad + viloläge
+  med egenmätta bevis.
+- **CLOBBER-OBSERVATION (VAKT):** under mitt pass skrev organ-Φ
+  DRIFTSBOKEN från en föråldrad bas (före 8b92f0a2) vilket tillfälligt
+  raderade s10-u3 (O8):s DR-rad + sektion ur arbetsträdet; s10-u3:s
+  ÅTERFÖRING-commit 72d74370 läkte det — men Φ:s egen "VÅG 181
+  LEVERERAD"-rad i DRIFTSBOKEN:s våg-ledger sopades med i svängen.
+  Köpost till Φ: återapplicera raden (deras PIPELINE-KO/ZCODE-GAP-staging
+  lever orörd). Lärdom: skrivning i delade böcker under aktiva
+  fabriksfönster SKALL följas av OMEDELBAR commit (clobber-kuren) —
+  gapet mellan skrivning och commit är fönstret.
+- Kö: födelsebevis som stående vaktpraxis (varje blad restore-bevisas sin
+  födelsedag, ~60 s) · mitt-på-dagen-RPO-punkt (tidssätter snapshots-
+  pumpens start) · WAL-mätningen återtas kvartalsvis som trend.
+- Protokoll: DR-FODELSEBEVIS-2026-09-17.md + maskinellt
+  DR-PROV-2026-09-17-AUTO-2.md (commit 889b5d51). KVD: src/ orörd = inget
+  bygge · R2 orörd (.pgpass aldrig inläst) · data/blogg/ orörd.
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

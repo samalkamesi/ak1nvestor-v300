@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-industrivarden-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-17, omgång auto-s1-1789604126983)",
+  "rapport": "kvartal-2026-q3-industrivarden.md",
+  "bedomning": "FLYTTKLAR EFTER EN RÄTTNING — 56/56 sifferkontroller gröna mot källfilerna (INDU-C.ST.json 2026-08-24, bolagsunivers.json 2026-09-03 [oförändrad i dagens 138-bolagsfil], kalender-industri.json 2026-09-15, data/rapporter/vagvalidering-SENASTE.md), juridikgrind REN enligt 2007:528 (2 rådverb-träffar, båda i nekande konstruktioner; endast 2007:528 2 kap 5 § åberopad = ingen lagrumsblandning), 911 = 0 träffar/6 mönster, länkar 16/16 HTTP 200 mot localhost med korrekta måltitlar. B1 maskinellt byte; C1–C4 förslag som kräver beslut.",
+  "anvandning": "Verkställ B-poster exakt (sök/ersätt i angivet fält — strängen maskinellt verifierad UNIK i filen). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 6,
+      "nytt": 3,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts: ORD_PER_MINUT=600, Math.max(1, Math.round(ord/600)) på titel+ingress+body): egen exakt räkning 1 736 ord → 3. Del av granskningsköns dokumenterade systematikat: 09-15-vintagens paket överskrider kontraktet (6–7 mot 2–5) medan sena 09-16-vintagen matchar — se rapportens N5. Exportvägen räknar om automatiskt — rättas enklast nu"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag-r2",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-05",
+      "nytt": "(kundens beslut — R2)",
+      "orsak": "Publiceringsdatum är kundens vetoområde (R2). 10-05 (två dagar före rappdagen 10-07) är ett rimligt default men granskaren sätter inget nytt värde; noteras så att beslutet inte glöms (ericsson-precedenten C7)"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "och därmed seriens tredje format",
+      "nytt": "och därmed seriens fjärde format",
+      "orsak": "Intern ordningsdisput i samma mening: kolonkonstruktionen räknar upp TRE föregående format (\"efter telekom (Ericsson), detaljhandel (H&M) och biltillverkning (Volvo Car)\") varefter investmentbolaget presenteras som \"det tredje formatet\" — tre föregångare ger fjärde. Alternativ läsning (författaren räknat biltillverkning+industri som ett gemensamt tillverkningsformat) finns, men då är det i stället uppräkningen som blir missvisande; \"fjärde\" är den tolkningsvariant som är konsekvent med meningens egen lista. Strängen verifierad unik i filen"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "title",
+      "gammalt": "Industrivärdens Q3-rapport 2026: så läser du den — läspaket med substansvärde, nyckeltal och scenarier",
+      "nytt": "Så läser du Industrivärdens Q3-rapport 2026 — substansvärde och nyckeltal",
+      "orsak": "102 → 73 tkn. Ericsson-precedenten (C1 i kvartal-2026-q3-ericsson-diff.json): långa titlar klipps i mobila sökträffar (tak ~60); sökorden Q3-rapport + datum + substansvärde bevaras. Seriebred praxis spretar (77–245 tkn bland de 22 paketen) — därför förslag, inte byt: titellängden bör avgöras serieenhetligt"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "falt": "description",
+      "gammalt": "AB Industrivärden redovisar tredje kvartalet 2026 onsdagen 7 oktober. Här är läspaketet: motorns senaste vågmätning, nyckeltalen att ha med sig — med substansvärdet som huvudtal — tre sätt att öva på utfallet, och källorna bakom varje siffra.",
+      "nytt": "Industrivärden redovisar Q3 2026 onsdagen 7 oktober. Läspaketet: vågmätningen, nyckeltalen med substansvärdet som huvudtal, tre sätt att öva på utfallet — och källorna bakom varje siffra.",
+      "orsak": "242 → 187 tkn. SEO-fönstret ~155–160 (ericsson-precedenten C2) nås inte utan innehållsförlust i \"tre sätt att öva\"-uppräkningen; förslaget behåller alla budskap (vågmätning, substansvärde som huvudtal, tre övningar, källor) och veckodag + datum som är verifierat korrekt (2026-10-07 = onsdag). Seriebred praxis spretar — förslag, inte byt"
+    }
+  ]
+}

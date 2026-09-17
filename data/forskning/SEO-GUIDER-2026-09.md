@@ -47,10 +47,30 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B16 | forsakringsaktier-sa-analyserar-du-forsakringsbolag | försäkringsaktier | 1400 | UTKAST v1 (2026-09-16, s3-u2) — sektoromgång 2 (kursankare se-06-finanssektorn) | data/blogg-utkast/forsakringsaktier-sa-analyserar-du-forsakringsbolag.json |
 | B17 | medieaktier-sa-analyserar-du-medie-och-streamingbolag | medieaktier | 1218 | UTKAST v1 (2026-09-16, s3-u3) — sektoromgång 2 (kursankare se-08-media); avgränsas mot B5 (innehållsekonomi kontra operatörer) | data/blogg-utkast/medieaktier-sa-analyserar-du-medie-och-streamingbolag.json |
 | B18 | livsmedelsaktier-sa-analyserar-du-livsmedelsbolag | livsmedelsaktier | 1333 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 3 (kursankare se-14-livsmedel); avgränsas mot B7 (underfamilj) och B13 (tillverkare kontra butik) | data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json |
+| B19 | ehandelsaktier-sa-analyserar-du-plattformsbolag | e-handelsaktier | 1206 | UTKAST v1 (2026-09-17, s3-u2) — sektoromgång 3 (kursankare v15-natverkseffekter; de kvarvarande se-XX-ankarena saknar bärning men tillväxtgrenen bär 5 fullrådatasbolag: SHOP/MELI/ABNB/UBER/SE); avgränsas mot B13 (butik kontra marknadsplats), B11 (prenumeration kontra transaktion), B8 (stil kontra affärsmodell) | data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json |
+| B20 | lyxaktier-sa-analyserar-du-lyxbolag | lyxaktier | 1221 | UTKAST v1 (2026-09-17, s3-u1) — sektoromgång 3 (kursankare se-05-lyxsektorn); levererad TROTS koordinatnoten "endast LVMH i universumet": LVMH som djupanker ur universumets rådata (2026-09-03) + live-verifierade officiella källor (LVMH helårsrapport 2025, Hermès 2025, Arnault-ägarskap) — granskningskön avgör; avgränsas mot B7 (lyx som konsument-underfamilj) och B18 (varumärkesägare, olika hyllor) | data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 
 Levererade branschguider utan B-rad (föregående omgång): energi (`sa-analyserar-du-energiaktier.json`) och material (`ravarubolag-materialbranschens-cykel.json`).
+
+## Översättningsomgången (spår 3, påbörjad 2026-09-17)
+
+Svenska versionerna klara (B1–B18 + energi + material = 20). Sektoromgång 4:s kvarvarande
+kursankare (logistik se-04/se-15, lyx se-05, krypto se-11, utbildning se-13) saknar
+universumsbärning (endast LVMH inom lyx av 144 bolag — halvledarprecedentet gäller) ⇒
+översättningarna (en/ar) öppnas, i B-ordning. Fil/slug = originalets + `-en`/`-ar`
+(BlogPost-formen saknar språkfält). Samma tal och räkneexempel som originalet;
+engelska/arabiska UTBILDNINGSformuleringar; disclaimer-sista-rad översatt samma budskap.
+
+NOT s3-u1 (2026-09-17): lyx-ankaret levererades ändå som B20 (samma dygn som noten
+skrevs) — LVMH-ankaret bar hela vägen med kompletta räkneexempel, och källorna
+live-verifierades (lvmh.com, Hermès, Bloomberg/Yahoo). Kvarvarande ankare utan
+universumsbärning: logistik, krypto, utbildning.
+
+| # | Slug | Primärt sökord (EN) | Ord | Status | Fil |
+|---|------|---------------------|-----|--------|-----|
+| Ö1 | fastighetsaktier-sa-analyserar-du-fastighetsbolag-en | real estate stocks | 1391 | UTKAST v1 (2026-09-17, s3-u3) — engelsk översättning av B1 (klaim auto-s3-1789607727072-u3; sektoromgång 4:s se-XX-ankare saknar bärning ⇒ översättningsspåret öppnat enligt notisen ovan) | data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json |
 
 ---
 

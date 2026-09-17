@@ -1,20 +1,30 @@
 #!/usr/bin/env node
-// dr-total.mjs — TOTAL-kvartalsövningen: alla fyra DR-kedjorna som ETT kommando
-// (spår 10, s10-u2 omgång 3, 2026-09-16)
+// dr-total.mjs — TOTAL-kvartalsövningen: samtliga DR-kedjor som ETT kommando
+// (spår 10, s10-u2 omgång 3, 2026-09-16 · kirurgi-vävning s10-u1 O7, 2026-09-17)
 //
 // Läge efter O5-leveranserna: varje kedja är kommandoradisierad och bevisad
 // (kedja 1 dr-ovning.mjs · kedja 2 dr-kedja2.mjs · kedja 3 dr-kedja3.mjs ·
-// kedja 4 dr-kedja4.mjs) men kvartalsmallen är FYRA kommandon. Detta verktyg
-// gör HELA kvartalsövningen till ett enda: kör kedjorna sekventiellt i
-// DRIFTSBOKENs mallordning, mäter TOTAL-RTO (kundens fråga: hur lång tid
-// tar det att få tillbaka ALLT?), skriver ETT totalprotokoll och garanterar
-// vilolägeskontraktet (PG17 nere, inga skrap-DB:er, tmp städad) även vid
-// avbrott.
+// kedja 4 dr-kedja4.mjs · kedja 5 dr-kedja5.mjs) men kvartalsmallen är FEM
+// kommandon. Detta verktyg gör HELA kvartalsövningen till ett enda: kör
+// kedjorna sekventiellt i DRIFTSBOKENs mallordning, mäter TOTAL-RTO (kundens
+// fråga: hur lång tid tar det att få tillbaka ALLT?), skriver ETT
+// totalprotokoll och garanterar vilolägeskontraktet (PG17 nere, inga
+// skrap-DB:er, tmp städad) även vid avbrott.
 //
-// Ordningsval 1 → 2 → 4 → 3 (dokumenterat i totalprotokollet): de tre
-// PG-burna datakedjorna först (SQL → moln-JSON → per-typ), serverfils-
-// arkivet sist — samma ordning som DRIFTSBOKENs mallrad från JUNGRUNATT-
-// omgången (dr-ovning + dr-kedja2 + dr-kedja4 + kedja 3).
+// Ordningsval 1 → 5 → 2 → 4 → 3 (dokumenterat i totalprotokollet): de fyra
+// PG-burna datakedjorna först, serverfilsarkivet sist — samma ordning som
+// DRIFTSBOKENs mallrad från JUNGRUNATT-omgången (dr-ovning + dr-kedja2 +
+// dr-kedja4 + kedja 3), med kirurgin (O7)placerad direkt efter sin källkedja:
+// kedja 5 extraherar ur samma SQL-dump som kedja 1 återställer, och PG-
+// fönstret hålls sammanhängande före moln-/per-typ-/serverfilsstegen.
+//
+// Kirurgi-steget (s10-u2 O5:s bokförda kö, vävt av s10-u1 O7): kedja 5
+// bevisar EN-tabells-scenariot (extraktion ur dumpfilen + atomisk DELETE+COPY
+// + sabotagegripande + innehållschecksumma) i sin EGEN skrap-DB under samma
+// barnlås som övriga PG-kedjor. --utan-kirurgi hoppar över steget: vid verklig
+// tabellincident körs dr-kedja5 MANUELLT med --tabell, och i en pågående
+// katastrof vill man inte betala övningstiden för ett scenario man redan är
+// mitt uppe i.
 //
 // Lås: EGEN fil /tmp/ak1a-dr-total.lock (re-exec under flock(1), samma
 // mönster som dr-ovning.mjs). Barnen tar själva /tmp/ak1a-dr-prov.lock —
@@ -26,7 +36,7 @@
 // som exit 75 (RAM-grind) väntar 90 s och får EN ny chans (JUNGRUNATT-
 // precedenten: omkörning när minnet frigjorts).
 //
-// Exit: 0 GRÖN (alla fyra kedjorna gröna) · 1 RÖD/avbrott (protokoll
+// Exit: 0 GRÖN (samtliga kedjor gröna) · 1 RÖD/avbrott (protokoll
 // skrivs alltid) · 3 total-låset upptaget · 75 ram-/diskgrind stängd.
 
 import { spawnSync } from 'node:child_process';
@@ -53,6 +63,14 @@ const KEDJOR = [
     kalla: () => senasteFil('data/backups/supabase', /^db-.*\.sql\.gz$/),
   },
   {
+    // s10-u1 O7: kirurgin direkt efter sin källkedja (samma SQL-dump).
+    n: 5, verktyg: 'dr-kedja5.mjs',
+    namn: 'Kirurgisk tabell-återställning (EN-tabells-scenariot)',
+    monster: /^DR-KEDJA5-\d{4}-\d{2}-\d{2}-AUTO(-\d+)?\.md$/,
+    kalla: () => senasteFil('data/backups/supabase', /^db-.*\.sql\.gz$/),
+    valbar: true, // --utan-kirurgi hoppar över (rescue-läge, se filhuvudet)
+  },
+  {
     n: 2, verktyg: 'dr-kedja2.mjs',
     namn: 'Moln-JSON: system_events (fullarkiv)',
     monster: /^DR-KEDJA2-\d{4}-\d{2}-\d{2}-AUTO(-\d+)?\.md$/,
@@ -74,17 +92,21 @@ const KEDJOR = [
 
 function lasArgument() {
   const args = process.argv.slice(2);
+  const utanKirurgi = args.includes('--utan-kirurgi');
   for (const a of args) {
     if (a === '--hjalp' || a === '--help') {
-      console.log('Användning: node verktyg/dr-total.mjs');
-      console.log('Kör HELA kvartals-DR-övningen (kedja 1→2→4→3) som ett kommando.');
-      console.log('Flaggor: --hjalp (denna text). Barnverktygens flaggor styrs ej härvid —');
+      console.log('Användning: node verktyg/dr-total.mjs [--utan-kirurgi]');
+      console.log('Kör HELA kvartals-DR-övningen (kedja 1→5→2→4→3) som ett kommando.');
+      console.log('Flaggor: --utan-kirurgi (hoppa över kirurgi-steget — rescue-läge) ·');
+      console.log('--hjalp (denna text). Barnverktygens flaggor styrs ej härvid —');
       console.log('de kör mot senaste arkivet var och en (kvartalsmallens kontrakt).');
       process.exit(0);
     }
+    if (a === '--utan-kirurgi') continue;
     console.error(`Okänt argument: ${a} (se --hjalp)`);
     process.exit(2);
   }
+  return { utanKirurgi };
 }
 
 // --- Lås: EN total-körning i taget (dr-ovning.mjs:s bevisade mönster) ------
@@ -269,11 +291,11 @@ function skrivProtokoll(dom) {
   const gron = dom.kedjor.every((k) => k.exit === 0) && dom.avbrottsorsak === null;
   const summaSek = dom.kedjor.reduce((s, k) => s + (k.vaggSek || 0), 0);
   const rader = [];
-  rader.push(`# DR-TOTAL ${dom.datumIso} — KOMPLETT kvartalsövning, alla fyra kedjorna (${gron ? 'GODKÄNT' : 'UNDERKÄNT'})`);
+  rader.push(`# DR-TOTAL ${dom.datumIso} — KOMPLETT kvartalsövning, samtliga ${dom.kedjor.length} kedjor (${gron ? 'GODKÄNT' : 'UNDERKÄNT'})`);
   rader.push('');
-  rader.push('Körd av `verktyg/dr-total.mjs` (spår 10) — kvartalsmallens FYRA steg som ETT');
-  rader.push('kommando, i DRIFTSBOKENs mallordning 1 → 2 → 4 → 3 (PG-kedjorna först,');
-  rader.push('serverfilsarkivet sist). Barnverktygen äger sina egna DR-lås');
+  rader.push('Körd av `verktyg/dr-total.mjs` (spår 10) — kvartalsmallens steg som ETT');
+  rader.push(`kommando, i DRIFTSBOKENs mallordning ${dom.kedjor.map((k) => k.n).join(' → ')} (PG-kedjorna`);
+  rader.push('först, serverfilsarkivet sist). Barnverktygen äger sina egna DR-lås');
   rader.push('(/tmp/ak1a-dr-prov.lock) och sina egna delprotokoll — detta är överprotokollet.');
   rader.push('');
   rader.push('| Kedja | Vad | Verktyg | Exit | Väggtid | Dom | Delprotokoll |');
@@ -305,10 +327,15 @@ function skrivProtokoll(dom) {
     rader.push('Avbrottsorsak: ingen');
     rader.push('');
   }
+  if (dom.skippade.length > 0) {
+    rader.push('Skippade steg (flagga):');
+    for (const s of dom.skippade) rader.push(`- ${s}`);
+    rader.push('');
+  }
   for (const not of dom.noteringar) rader.push(`- ${not}`);
   rader.push('');
   rader.push(`Dom: **${gron ? 'GRÖN (exit 0)' : 'RÖD (exit 1)'}** — ${gron
-    ? 'alla fyra kedjorna restore-bevisade i EN sekvens; TOTAL-RTO ovan är plattformens återställningstid för data+kod (nätverksflytt till ny VPS tillkommer i verklig katastrof).'
+    ? `samtliga ${dom.kedjor.length} kedjor restore-bevisade i EN sekvens; TOTAL-RTO ovan är plattformens återställningstid för data+kod (nätverksflytt till ny VPS tillkommer i verklig katastrof).`
     : 'minst en kedja underkänd eller övningen avbröts — se avbrottsorsak och delprotokoll.'}`);
   rader.push('');
   rader.push(`SLUT — maskinellt genererat av dr-total.mjs ${new Date().toISOString()}`);
@@ -320,7 +347,7 @@ function skrivProtokoll(dom) {
 // --- Huvud ---------------------------------------------------------------------
 
 function main() {
-  lasArgument();
+  const opts = lasArgument();
   flockStartaOm(); // hela totalövningen under EGET flock (dokumenterat ovan)
   taLas();
   const tmp = `/tmp/dr-total-${process.pid}`;
@@ -328,7 +355,7 @@ function main() {
   const startTs = Date.now();
   const datumIso = new Date().toISOString().slice(0, 10);
   const dom = {
-    datumIso, kedjor: [], avbrottsorsak: null, noteringar: [],
+    datumIso, kedjor: [], skippade: [], avbrottsorsak: null, noteringar: [],
     vaggTotalSek: 0,
   };
   let exit = 0;
@@ -339,6 +366,11 @@ function main() {
     }
     const start = Date.now();
     for (const kedja of KEDJOR) {
+      if (kedja.valbar && opts.utanKirurgi) {
+        dom.skippade.push(`kedja ${kedja.n} (${kedja.verktyg}) — flagga --utan-kirurgi (rescue-läge)`);
+        console.log(`=== KEDJA ${kedja.n}: ${kedja.namn} SKIPPAD (--utan-kirurgi) ===`);
+        continue;
+      }
       console.log(`=== KEDJA ${kedja.n}: ${kedja.namn} (${kedja.verktyg}) ===`);
       const resultat = korKedja(kedja, tmp, startTs);
       resultat.kalla = kedja.kalla();

@@ -1213,13 +1213,66 @@ stopp i deployvägen (RÖD kvalitetsrapport ⇒ deploy-stopp); (4) transient-
 fönstret i demoklientens fail-städning kan stramas åt (omedelbar unlink) —
 kosmetiskt, grinden fångar residualen.
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u2 omgång 8 — A3 + E37 återdiffade; andra varvet)
+
+Tredje passningen för båda systemen (A3: u1:4 09-15 → u2 omgång 7 09-16 20:21 ·
+E37: u2 09-15 → u2 omgång 7) — men andra varvets regel "börja där verkligheten
+rört sig mest sedan senaste passningen" pekar hit igen: sedan 20:21 levererade
+s6 SJU mentor-commits 23:58–06:01 (sex helt nya lager) och s7 tre
+prestandavågor 06:17–06:22 (o37/o41/o42: prefetch-kur + natt-/morgonfacit).
+Kollisionsbokföring: denna redigering blockerades EN gång av syskonet u1
+omgång 11:s commit (E35 → LEVER 9, deras sektion läst och orörd ovan) —
+omredigering direkt efter deras landning; A3+E37 är denna slots egna system
+sedan omgång 7, inget syskonfönster öppet på dem. Varje rad MÄTT i arbetsytan
+2026-09-17 ~07:0x lokal (30 svitkörningar med sanna exitkoder, node-läsning
+av Lighthouse-/siffror-JSON, egen larvag-synk-körning, grep i kod, git log,
+ls) — aldrig worklog-läsning:
+
+| Mått | Kartan (omgång 7, 09-16 20:21) | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| Lagerkedjan (A3) | 18 lager (chat-widget.tsx:876) | **24 lager** (chat-widget.tsx:986, egen läsning): makro ?? extra ?? bas ?? nästa ?? kapitalmekanik ?? sektor ?? case ?? praktik ?? portfoljgrund ?? agande ?? redovisningsdjup ?? djup ?? historia ?? lonsamhetsdjup ?? tsdjup ?? skattedjup ?? beteendedjup ?? riskdjup ?? **riskmattsdjup ?? utdelningsdjup ?? forvantningsdjup ?? portfoljbalans ?? stabilitetsdjup ?? grahamgolv** (fetmarkerade = sex nya, committade fce83d6a…3367b5f8 23:58–06:01) |
+| Frågemonster (A3) | 68 (25 bas + 43 i 17 filer) | **80** (id-räknat: basens MONSTER 25 i ai-mentor-svar.ts + 55 i 23 frågelager-filer — de nya lagrens +12 = 3+1+2+1+2+3) |
+| Testsviter (A3) | 24 sviter / 598 kontroller (597/1) | **30 sviter / 781 kontroller: 780 PASS / 1 FAIL** (samtliga egna körningar: 29 sviter exit 0, däribland de sex nya — grahamgolv 30/0, forvantningsdjup 30/0, portfoljbalans 27/0, riskmattsdjup 27/0, stabilitetsdjup 27/0, utdelningsdjup 26/0 — + bassviten 25/1 + modellagret 38 kontroller gröna) |
+| E01 registeräkthet (A3) | RÖD 358/375 (gap 17) | **RÖTARE 358/390 — gapet VUXIT 23→32** (egen körning: "inbakad=358 · byggd=390 — kör --baka"; ingen rebake-commit sedan b3b5e2c4 09-16 03:49 trots sju mentor-commits efteråt, git-mätt) — disciplinen bröts av morgonens sex leveranser |
+| Dödkodsklassen (A3) | sektorlagret var död kod (c363ec8b) | **EJ UPPREPAD**: kedjeraden i widgeten bär alla 24 lager OCH varje nytt lager kom med egen grön svit (kedjesviten 55/0, egen körning) |
+| /studio-EFTER (E37, omgång 7:s kö 2) | "obokförd" | **LANDAD**: studio-s7u2c-efter.json = **71 poäng · LCP 4 168 ms · TBT 577 · CLS 0** (node-mätt) — serien studio-fore 55/5 863/909 → o16-efter 63/5 027/638 → s7u2c 71/4 168/577: +16 poäng och LCP −1,7 s genom kedjan, app-ytans högsta mätta poäng |
+| Hem-serien (E37) | o32-vila 54/4 972/984 | **nattfacit-0030: 66/4 150/844 · morgonfacit-0618: 60/4 832/902** (node-mätt ur OPTIMERING/lighthouse; CLS 0,0 i båda) — bästa hemmämätningen hittills är nattens 66, driftband 60–66 mellan natt och morgon |
+| /kurser (E37) | o32-vila 55/5 429 | **53/5 325/1 636** — LCP bättre men TBT 1 636 ms är facitets värsta kärnmått (morgonfacit, node-mätt) |
+| /blogg prefetch-kur (E37) | prefetch={false} i (huvud)-listan (o17) | **prefetch={false} i TRE språklistrar** ((huvud)/blogg/page.tsx:70+95 med o17/o37-precedens-kommentaren · (en) · (ar), grep-mätt) + mätbevis: före 52/5 498 → **efter3-solo 62/4 158** (LCP −1,3 s) |
+| Sökindex (E37) | friskt 09-16 23:32 | **friskt 2026-09-17 05:52** (public/sok-index.json mtime) — synkat med morgonens 390-våg; cadansen förblir manuell disciplin (gapet kvarstår) |
+| Footer-läsbarhet rond 2 (E37-kö) | bokad | **fortfarande obokförd** — ingen footer-commit sedan bokningen (git-mätt) |
+| Röda auditer (E37) | unused-JS 74–79 KiB · bootup 3,3–3,5 s | **kvar i morgonfacitet**: unused-JS 93 KiB (poäng 0,5) · bootup 3,0 s (0) · mainthread 6,4 s (0) — tre nollor i JS-familjen |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A3 | LEVER 8 → **LEVER 8** | Testtäckningen växte 598→781 kontroller på ett dygn (30 sviter, 29 gröna, dödkodsklassen mekaniskt förhindrad) och kedjan 18→24 lager — men den ENDA röda kontrollen är själva kontraktbrottet: E01-gapet VUXIT 23→32 kurser (register-disciplinen bröts av morgonens sex leveranser, mätt). Kvantitativ växt utan ny kapabilitetsklass + fördjupat kontraktsgap = ingen poängrörelse (omgång 7:s egen precedent höll 8 vid 597/1 med samma logik) |
+| E37 | LEVER 8 → **LEVER 8** | Tre nya prod-mätbelägg (studio 71 = app-ytans högsta, hem 66 i nattfacitet, blogg 62 efter prefetch-kuren i ×3 språklistrar) + köposten /studio-EFTER inlöst — men 0 egna regressionstester, tre röda JS-auditer och /kurser-TBT 1 636 ms kvar: kunskap tillförd, inga namngivna gap stängda (E33/B14-precedensen) |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg;
+syskonets E35 +1 landade före denna sektion och är redan räknad i baslinjen).
+
+Sidofixar (mätta, inga poängändringar): kursantalet 381 → **390** i A1/A2:s
+ÖVERSIKT-rader + A1-detaljblockets mätkedja (siffror.json uppdaterad
+2026-09-17, node-mätt: 390 kurser · 8 223 quiz oförändrat — s5:s morgonvåg
+381→390; **larvag-synk EGEN körning GRÖN 390=390=390 · 0 fantomer · 21
+profiler**, exit 0).
+
+Kö till huvudagenten från fynden: (1) **registerrebake 358→390** — gapet
+17→23→32 på tre mätningar och varje ny kursvåg utan --baka fördjupar det;
+--baka bör bli obligatoriskt leveranssteg i s5/s6-fabriksprompterna
+(b3b5e2c4-precedensen), annars bokförs det om igen av nästa dokvåg; (2)
+**/kurser TBT 1 636 ms** = morgonfacitets värsta kärnmått — kurskortslistan
+växer med registret (390), nästa prestandaronds förstahandsobjekt; (3) E37:s
+gamla köer orörda: footer-läsbarhet rond 2, språkresolvens-produktbeslut a/b/c,
+sökindex-hook i deploy.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (381 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
-| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 381 kurser, paritetssynk GRÖN, front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
-| A3 | AI-Mentorn (18 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 597/1-testbevis över 24 sviter (mätt 09-16; E01 registeräkthet RÖD 358/375 — rebake väntar); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
+| A1 | Kursplattformen (390 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 390 kurser, paritetssynk GRÖN 390=390=390 (egen körning 09-17), front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
+| A3 | AI-Mentorn (24 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 780/1-testbevis över 30 sviter (mätt 09-17; E01 registeräkthet RÖD 358/390 — rebake väntar, gapet växer 17→23→32); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
@@ -1254,7 +1307,7 @@ kosmetiskt, grinden fångar residualen.
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 11 kontroller (KONTROLL 11 Typbaslinjen: tsc dagligen mekaniskt, projektbinär) + 11/11 PASS · 0 manuella · GRÖN egen vaktkörning 09-17 05:09Z; tmp-läckeklassen STÄNGD i BÅDA ändarna (o44-ROTKUR: .tmp/-generering + tsconfig-glob tmp_*.ts + exit-efter-finally; s8-u2:s tmp-stad.mjs i pre-commit + sektion 11 — svit 15/15 + 12/12, falsklarmsrepetition GRÖN HOOK_EXIT=0; allt egenhändigt omätet 09-17); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (74 sviter = provtagning), motorregister fruset 09-03, vaktrapports-stopp i deploy saknas (mätt: 0 träffar i prod-synk) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning mätbevisad i kod (o27+o31; LCP 5 542→4 360 ms på /, o27 EFTER) + vilande facit på JS-friskt bygge (o32); kvar: inga egna tester, /studio-EFTER obokförd, språkresolvens-CLS intermittent, sökindex-cadans |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning (o27+o31) + blogg-prefetch-kur ×3 språklistrar (o37/o41: /blogg 52→62, LCP −1,3 s) + /studio-EFTER LANDAD 71 poäng/LCP 4 168 (serien 55→63→71) + nattfacit / 66 poäng (o38); kvar: inga egna tester, språkresolvens-CLS intermittent, /kurser-TBT 1 636, sökindex-cadans |
 
 Snittscore: **7,5/10** (286 poäng / 38 system; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
@@ -1311,7 +1364,7 @@ balansräkning, DuPont, soliditet/räntetäckning + V-spåret 20/20 i
 kurskartan; larvag-synk GRÖN 337=337=337). Score oförändrat — samma
 kontraktsbrott kvarstår i gaplistan. Senare samma dag (s9-u1:4-mätning):
 registerrebake 337 → **343 kurser** (siffror.json + commit 570c51ee +
-E01-äkthetstestet) — talen i Vad-raden gäller 343.* Ännu senare (s9-u2 2/3-mätning 2026-09-16): **352 kurser** (mx-vågorna kväll 09-15; quiz 8 223 oförändrad — nya kurser bär inga quiz). Senast (s9-u2 dokvåg 2026-09-17): **381 kurser** (s5:s kvällsvåg 09-16, 896c91ca; quiz 8 223 fortfarande oförändrad — larvag-synk GRÖN 381=381=381 · 0 fantomer, mätt).
+E01-äkthetstestet) — talen i Vad-raden gäller 343.* Ännu senare (s9-u2 2/3-mätning 2026-09-16): **352 kurser** (mx-vågorna kväll 09-15; quiz 8 223 oförändrad — nya kurser bär inga quiz). Senast (s9-u2 dokvåg 2026-09-17): **381 kurser** (s5:s kvällsvåg 09-16, 896c91ca; quiz 8 223 fortfarande oförändrad — larvag-synk GRÖN 381=381=381 · 0 fantomer, mätt). Senare samma morgon (s9-u2 omgång 8, 2026-09-17): **390 kurser** (s5:s morgonvåg; larvag-synk EGEN körning GRÖN 390=390=390 · 0 fantomer · 21 profiler; quiz 8 223 fortfarande oförändrat).
 
 - **Vad:** Plattformens ryggrad: 352 kurser × 3 språk (deep-courses.json,
   103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP), 201 analyscase

@@ -92,10 +92,81 @@ byggt kuren — pending-precedens (b3b5e2c4/545014ff/o17 §METOD):
 `LH_JAMFOR=efter node verktyg/prestanda-lighthouse.mjs blogg-gap-efter
 /blogg /en/blogg` på vilande server med o32:s SEQ-grind.
 
+## §6b EFTER — LEVERERAD 2026-09-17 06:0x–06:2x lokal (s7-u3, manifest auto-s7)
+
+Anspråk: data/vakten/s7-blogggapefter-u3-ansprak-1789618081.md (disk FÖRE
+mätstart). Deployunderlag bevisat: BUILD_ID-mtime 2026-09-17 05:59:25 >
+kur-commit 7f419839 00:26:06; prod HTTPS 200 ×2 (/blogg 84 ms · /en/blogg
+94 ms); ISR-trigga ×2 + 8 s per sida och rond (11163-metoden).
+
+**Viktigt byggkontext-förbehåll:** FÖRE-bygget (22:09Z) bar 71 monsters +
+register 387; EFTER-bygget (05:59) bär 80 monsters + register 390 + 3
+kurser ⇒ absoluta CPU-tal väntas bära spår-6-driften (o38 §4: ≈ +8 KiB
+unused-JS per sida per omgång — uniform på BÅDA ytorna). Därför är
+/en/blogg den interna kontrollen och GAPET det drift-immuna måttet.
+
+### Struktur (lastokänsligt — det avgörande beviset, rådata rond 1)
+
+| Mått | FÖRE | EFTER | Delta |
+|------|------|-------|-------|
+| kurs-RSC-prefetchar (/kurser/*?_rsc) | 2 st (21,4 KiB RSC + 38,7 KiB route-chunks) | **0 st** | kuren verkar exakt som designad |
+| requests /blogg | 54 | 50 | −4 (gap mot EN 6 → 3) |
+| totalvikt /blogg | 779 KiB | 727 KiB | −52 (gap mot EN 71 → 13 KiB, −58) |
+| unused-JS | 86 KiB | 94 KiB | drift +8 (båda sidor +7/+8 — o38-kurvan) |
+| blogg-slug-prefetchar | 8,8+8,7 KiB (2 busters) | kvar (2 busters + 2 fulla 34+33 KiB) | §5:s MEDVETNA rest (huvudlänkens prefetch) |
+
+### CPU-tal (fönsterkänsliga — tre ronder, position deklarerad)
+
+| Rond | /blogg | /en/blogg | Fönster |
+|------|--------|-----------|---------|
+| FÖRE (o37 §2) | P52 · 5 498 · **1 299** | P71 · 4 170 · **567** | vila, bygge 22:09 — gap 732 ms |
+| EFTER r1 | P55 · 5 109 · **1 060** | P53 · 4 945 · 2 356* | SV först, EN sist* |
+| EFTER r2 | P57 · 4 320 · 1 972* | P60 · 4 274 · **1 035** | EN först, SV sist* |
+| EFTER r3 solo | P62 · 4 158 · **1 197** | — | solo, load 1,3 |
+
+\* **Sist-i-svärm-artefakt** (metodfynd, se nedan): i BÅDA ronder fick
+mätningen som låg SIST i svärmen uppblåst TBT (r1: EN 2 356; r2: SV 1 972)
+— tecknet på gapet växlar med mätposition, inte med språket. Jämförbara
+serier = först-i-svärm + solo.
+
+**Gap-slutsats (drift-immun):** FÖRE-gapet var reproducerbart i två
+oberoende svärmar (o32: 1 217/503 = 714 ms; o37: 1 299/567 = 732 ms —
+alltid SV ≈ 2× EN). EFTER: friska fönster SV 1 060–1 197 mot EN 1 035 ⇒
+gap 25–160 ms, inom körbrus. **Gapet är KOLLAPSAT.**
+
+**Absolut drift, ärligt bokförd:** EN:s TBT 567 → 1 035 (+468 ms) på en
+EN-yta kuren inte rör = spår-6-driften mellan byggena (9 monsters + register
++3 + kurser +3) — o38 §4:s kostnadskurva oberoende bekräftad på fjärde
+ytan. /blogg:s 1 299 → 1 060–1 197 TROTS driften = kurens netto-vinst
+ligger ÖVER +468 ms i urdrift-led. EN:s poängsänkning P71 → P60 är driftens
+(absolut TBT-nivå), inte kurens. LCP /blogg 5 498 → 4 158–4 320 (−1 200).
+
+### Metodfynd (bokas åt spårets mätbok)
+
+Svärmens SISTA mätning får uppblåst TBT oavsett sida (trolig chrome-
+nedstängnings-/cache-återverkans-eftersläpning in i nästa körning) —
+utökar o38 §6:s notis: serierna "först-i-svärm" och "solo" är jämförbara,
+"sist-i-svärm" kräver varudeklaration. Rekommendation: EFTER-mätningar
+körs solo per sida eller med sis-mätningen struken.
+
+### Status
+
+o37 §6 EFTER **KLAR** — kuren bevisad i prod: strukturbevis (prefetcharna
+borta ur initial load), gap-kollaps (732 → inom brus), prod 200 ×2.
+Kvar i kön oförändrad: §5-resten (blogg-slug-prefetch-dubblingarna —
+huvudlänkens prefetch behålls enligt beslut) + lazy-lager-per-yta
+(huvudagentens, nu med EN-driftens +468 ms som ytterligare motivation).
+
 ## §7 KVD
 
 - FÖRE-rådata: lighthouse/{blogg,en_blogg,kurser}-blogg-gap-fore.json +
   blogg-gap-fore-sammanfattning.json (3 sidor i vilande fönster).
+- EFTER-rådata (3 ronder): lighthouse/{blogg,en_blogg}-blogg-gap-efter.json
+  + blogg-gap-efter-sammanfattning.json (r1) · {en_blogg,blogg}-
+  blogg-gap-efter2.json + -efter2-sammanfattning.json (r2) · blogg-
+  blogg-gap-efter3-solo.json + -efter3-solo-sammanfattning.json (solo).
+  Kontaminerade sist-i-svärm-tal behålls SOM varudeklaration (o37
+  FÖRE-rond-1-presedens).
 - Jämförelseverktyg: verktyg/_s7u1-blogggap-jamfor.mjs (nätverksdiff +
   longtasks + mainthread ur rådata — återanvändbart vid EFTER-ronden).
 - tsc 0; src ändrad ENDAST i blogg/page.tsx (page.tsx senast rörd av

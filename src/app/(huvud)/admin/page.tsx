@@ -971,7 +971,10 @@ function ActivityRow({ activity, compact }: { activity: ActivityLog; compact?: b
             {ACTION_LABELS[activity.action] || activity.action}
           </Badge>
           {activity.section && (
-            <span className="shrink-0 text-muted-foreground">/{activity.section}</span>
+            // Våg s8-u3: shrink-0 här sprängde 390px-vyn när section är en
+            // lång sökväg (blogg/<slug>, 274px+) — flex-item som vägrar
+            // krympa skapade horisontell överflöd på alla admin-flikar.
+            <span className="min-w-0 truncate text-muted-foreground">/{activity.section}</span>
           )}
           {activity.targetId && (
             <span className="truncate font-mono text-[10px] text-muted-foreground">

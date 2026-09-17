@@ -1,7 +1,9 @@
 # o54 — Prestanda: serif-kursiv preloadad (LCP-fonten ur den kritiska kedjan)
 
 **Spår 7 · s7-u1 (manifest auto-s7-1789661728938, byggare 1/3) · 2026-09-17**
-**Status: FÖRE mätt + kur levererad (tsc 0) · EFTER pending prod-bygge.**
+**Status: KUR LEVERERAD + EFTER BOKFÖRD 2026-09-18 (s7-u1, omgång
+2026-09-18 ~00:5x–01:1x) — kriterierna (a)(b)(d) gröna, (c) grön på
+/kurser + /blogg, / oförändrad med NY ROT (skriptbunden FCP, §6).**
 
 ## §0 Sammandrag (o54)
 
@@ -103,30 +105,87 @@ trace-bevis; inget R2-rörande).
   mäts när nästa prod-bygge landat (BUILD_ID-byte + kursiv-woff2 i
   preload-listan verifieras före mätning).
 
-## §5 EFTER-mätning — PENDING (väntestatus 20:12 lokal, 2026-09-17)
+## §5 EFTER-mätning — BOKFÖRD 2026-09-18 (s7-u1, bygge doGVDkqE3FKPmzHgfh7-I)
 
-Kur-commit 772b67f9 sitter i prod-trädet sedan 19:59; prod-synkens
-bygge har inte startat — RAM-vakten håller det (tillgängligt 884–1 161
-MB under hela fönstret 19:56–20:12 < 2 200 MB-tröskeln; orsak =
-fabrikens aktiva syskonkull ≈ 2,4 GB zcode-barn, samma skydd som
-våg 146/148 beslutade). Prod 200 oavbruten på J87oNXS1k5w1NAMDS1rpJ.
+Väntan bröts: prod-synken landade kur-commiten (772b67f9 i trädet,
+BUILD_ID byte J87oNXS1 → **doGVDkqE3FKPmzHgfh7-I**). Mätning
+2026-09-18 ~00:57–01:00 lokal (load 0,54 vid start, stigande till
+2,06 under fönstret — syskonkull vaknade; deklarerat band), verktyg
+`verktyg/prestanda-lighthouse.mjs s7u1o54-efter / /kurser /blogg`,
+rådata `lighthouse/{start,kurser,blogg}-s7u1o54-efter.json` +
+`s7u1o54-efter-sammanfattning.json`.
 
-Nästa omgång mäter EFTER när BUILD_ID bytts, med kriterierna:
-(a) SSR-HTML bär preload-rad för kursiv-woff2:n; (b) font-C
-nätverksstart ≈ 80–150 ms (ej 954–1 509); (c) LCP ned på / och /kurser;
-(d) CLS fortsatt 0 (optional målar en gång — inget swap-skifte).
+**Kriterierna:**
+
+- **(a) preload-rad i SSR-HTML: GRÖN.** / bär `<link rel=preload …
+  ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2>` — hashen verifierad mot
+  @font-face-blocket `font-family:"Source Serif 4";font-style:italic`
+  (latin-subsetet) i CSS-chunken. Tre font-preloads i dokumentet
+  (kursiv + inter + serif-normal).
+- **(b) kursiv-fontens nätverksstart: GRÖN, i syskontakt.**
+
+  | Sida | FÖRE font-start | EFTER font-start | Syskonfonter EFTER |
+  |---|---|---|---|
+  | / | 1 509 ms | **159 ms** | 150/159 ms |
+  | /kurser | 954 ms | **55 ms** | 54/54 ms |
+  | /blogg | (ej separat mätt) | **65 ms** | 62/65 ms |
+
+  Font-fasen är UR LCP-kedjan på samtliga tre sidor — lastokänsligt
+  nätverksbevis (o54 §7-metoden).
+- **(c) LCP ned: GRÖN på /kurser och /blogg, EJ på / (ny rot, §6).**
+
+  | Sida | FÖRE P/LCP/TBT | EFTER P/LCP/TBT | renderDelay | observerat FCP→LCP |
+  |---|---|---|---|---|
+  | /kurser | P51 · 5 386 · 1 164 | **P58 · 5 097 · 1 026** | 2 203 → **1 271** (−932) | 2 244 → 1 197/1 298 |
+  | /blogg | P64 · 4 649 · 677 | P55 · 4 582 · 2 378* | 2 203 → **941** (−1 262) | 2 224 → **301/984** |
+  | / | P50 · 5 548 · 1 406 | P50 · 5 613 · 1 397 | 2 240 → 2 236 (±0) | 2 297 → 2 299 (±0) |
+
+  */blogg simTBT 2 378 är KONTAMINERAT (load steg 0,54→2,06 under
+  fönstret; obsFCP 301/obsLCP 984 — det snabbaste någonsin uppmätta
+  på sidan — bevisar att sidan själv inte långsammare; solo-rond i
+  vilofönster = bokad rest).*
+- **(d) CLS 0: GRÖN** på samtliga tre sidor (optional målar en gång).
+
+**Slutsats:** preload-kuren gjorde exakt vad den kunde — font-fasen
+försvann ur den kritiska kedjan överallt och /kurser//blogg tog hem
+LCP/FCP-nedgångar. Att / inte rörde sig (obsFCP 2 297 → 2 299 ms)
+beror på att dess första målning är STYRT av JS-huvudtråden, inte av
+fonten: Script Evaluation 3 480 ms (observerat) på / mot 2 220 ms på
+/kurser; sista synkrona chunkarna slutar 2 360–2 369 ms = FCP:ns
+plats. Fonten var en av två rötter (o54 §2:s "font-discovery + CPU-
+blocking") — nu återstår den strukturella (§6-köpost).
+
+FÖRE-fönstrets eget band (o54 §1: kraschvaktsbygge deklarerat) och
+EFTER-fönstrets (syskon-last stigande) bokförs öppet — nätverks- och
+strukturbevisen bär slutsatsen, CPU-talen deklareras med kontext.
 
 ## §6 Kvarstående observationer
 
+- **NY KÖPOST (2026-09-18, EFTER-rundan): /:s FCP är skriptbunden.**
+  Chunks unika för / (mot /kurser, EFTER-tracen): Turbopack-runtime-
+  chunk (1c3hmq2wqhl4q, 9 KiB, slut 2 369 ms) + lucide-icon-chunk
+  (1qvevmz_r67hk, 7 KiB, slut 2 366 ms) + tre tidiga ~12–13 KiB-chunks
+  (slut 726–786 ms). Script Evaluation 3 480 ms på / mot 2 220 på
+  /kurser; obsFCP = 2 297 ms genom hela kuren (fonten borta ur kedjan
+  men målningen väntar på JS-kön). Strukturell trädbantning av
+  startsidans hydratisering = samma klass som o45 §1 (React-chunkens
+  59 %-dominans) — huvudagentens område; barnägda delfynd att sonda:
+  vilka klientkomponenter i spa-hem-kedjan som kan följa SearchModal-
+  mönstret (dynamic + LasyGlobal).
 - React-chunkens hydratiseringsdominans (o45 §1: 59 % av blocking) —
   allt öppet, strukturell trädbantning (o53 §6-observation kvarstår).
 - Chat-chunkens intern-vektdelning — AI-mentor-spårets yta (o53 §6).
-- /blogg har LCP 4 649 utan kursiv-hero — drivs av CPU-blocking;
-  berörs ej av denna kur (marginell +51 KiB-kö deklareras i EFTER).
+- /blogg har LCP 4 582 utan kursiv-hero — drivs av CPU-blocking;
+  kurens +51 KiB-preload deklarerad ovan (marginell).
+- REST (bokad): solo-rond på /blogg i vilofönster för ett rent
+  simTBT-tal (2026-09-18-fönstret var kontaminerat, se §5*).
 
 ## §7 Metod och ärlighet
 
 FÖRE-mätningarna skedde med kraschvaktsbygge i bakgrunden (CPU-band
 deklarerat); observed==simulated-jämförelsen (FCP=LCP observerat) gör
-font-beviset lastokänsligt. EFTER mäts i första stabila solo-fönster
-efter BUILD_ID-byte. R2 orörd; data/blogg/ orörd; inget bygge av mig.
+font-beviset lastokänsligt. EFTER mättes 2026-09-18 ~00:57 i det bästa
+tillgängliga fönstret (load 0,54 vid start, inga byggen igång; steg
+till 2,06 under fönstret när syskonkullen vaknade — deklarerat i §5,
+det lastokänsliga font-/preload-beviset bär slutsatsen). R2 orörd;
+data/blogg/ orörd; inget bygge av mig.

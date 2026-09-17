@@ -33,9 +33,17 @@ export const dynamic = "force-dynamic";
  * queuePromotionBusy — §11.5.2) är ÄKTA domslut, ej fel. UI-koppling
  * (köpanel) är feature-avvägning enligt §11.4 — API-vägen först.
  *
- * Övriga typer (resolveInteraction, switchModelConfig) senare enligt
- * §11.4:s migreringsordning. Att ersätta dagens styrväg helt är
- * feature-avvägning enligt §11.4.
+ * POST 28 (V8/A4 — våg 184): POST {typ: "resolveInteraction", optionId?} →
+ * transport.skickaV4InteraktionSvar — dialog- och behörighetskortens
+ * svarsväg (§11.2 rad 235–236, §11.4:s migreringssteg 2): payload
+ * {resolvedBy: {clientId, optionId?}} där clientId härleds i transporten
+ * till dess v4ConnectionId. Ack "noop" = ingen väntande interaktion —
+ * äkta domslut, ej fel (§11.5.1). UI-koppling (dialog-kortens övergång)
+ * är feature-avvägning enligt §11.4 — API-vägen först.
+ *
+ * Övriga typer (switchModelConfig, createSession-familjen, fakta-typerna)
+ * senare enligt §11.4:s migreringsordning. Att ersätta dagens styrväg
+ * helt är feature-avvägning enligt §11.4.
  *
  * Validering: text 1–4 000 tecken (chatt-promptkultur), delivery ∈
  * {startNow, queue} ("guide" väntar A6-insatsen — flight-timeout och
@@ -70,6 +78,7 @@ export async function POST(req: NextRequest) {
     queueItemId?: unknown;
     newText?: unknown;
     beforeQueueItemId?: unknown;
+    optionId?: unknown;
   };
   try {
     kropp = (await req.json()) as typeof kropp;
@@ -82,6 +91,33 @@ export async function POST(req: NextRequest) {
     const transport: StudioTransport = hamtaStudioTransport();
     try {
       const svar = await transport.skickaV4MalStyrning(kropp.typ);
+      return jsonSvar({ ...svar, transport: transport.namn });
+    } catch (fel) {
+      return jsonSvar({
+        skickat: false,
+        commandId: null,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+        transport: transport.namn,
+      });
+    }
+  }
+
+  // POST 28 (våg 184): interaktions-grenen — resolveInteraction (§11.2 rad
+  // 235–236). optionId valfri (dialog utan alternativ skickas utan);
+  // clientId härleds i transporten. 400 ENDAST ogiltig kropp; protokollets
+  // eget domslut ("noop") passerar som 200-svar.
+  if (kropp.typ === "resolveInteraction") {
+    const o = typeof kropp.optionId === "string" ? kropp.optionId.trim() : "";
+    if (kropp.optionId !== undefined && kropp.optionId !== null && o === "") {
+      return jsonSvar({ skickat: false, fel: "optionId måste vara icke-tom string eller utelämnas." }, 400);
+    }
+    if (o.length > 200) {
+      return jsonSvar({ skickat: false, fel: "optionId överskrider 200 tecken." }, 400);
+    }
+    const transport: StudioTransport = hamtaStudioTransport();
+    try {
+      const svar = await transport.skickaV4InteraktionSvar(o === "" ? null : o);
       return jsonSvar({ ...svar, transport: transport.namn });
     } catch (fel) {
       return jsonSvar({
@@ -129,7 +165,7 @@ export async function POST(req: NextRequest) {
       return jsonSvar(
         {
           skickat: false,
-          fel: "typ måste vara pauseGoal, resumeGoal, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
+          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
         },
         400,
       );

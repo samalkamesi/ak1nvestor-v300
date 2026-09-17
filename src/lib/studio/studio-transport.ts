@@ -1787,6 +1787,26 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POST 28 (V8/A4 — våg 184): v4/command resolveInteraction
+   * (V4-LAGRET §11.2 rad 235–236 — dialog- och behörighetskortens svarsväg,
+   * §11.4:s migreringssteg 2): payload {resolvedBy: {clientId, optionId?}}
+   * där clientId härleds internt till transportens v4ConnectionId (klienten
+   * äger den inte) och optionId är kortets valda alternativ (valfritt —
+   * dialog utan alternativ skickas utan fältet). Ack-statusunionen (§11.5.1):
+   * "noop" = ingen väntande interaktion — ÄKTA domslut, ej fel.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5948,6 +5968,51 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POST 28 (§11.2 rad 235–236): resolveInteraction — resolvedBy.clientId
+   * härleds till transportens v4ConnectionId (envelope-kulturen; klienten
+   * äger den inte), optionId endast när kortet bar ett valt alternativ.
+   * "noop"-ack (ingen väntande interaktion) är ett äkta domslut:
+   * skickat=true.
+   */
+  async skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const o = typeof optionId === "string" ? optionId.trim() : "";
+    if (o.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "optionId överskrider 200 tecken." };
+    }
+    const wire: { resolvedBy: { clientId: string; optionId?: string } } = {
+      resolvedBy: o === "" ? { clientId: this.v4ConnectionId } : { clientId: this.v4ConnectionId, optionId: o },
+    };
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: "resolveInteraction",
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8707,6 +8772,32 @@ class MockTransport implements StudioTransport {
       commandId,
       status: this.mockV4KoStyrningStatus,
       typ,
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 28 (§11.2 rad 235–236) (mock): deterministisk "noop"-ack — mocken
+   * bär ingen väntande interaktion, "noop" är ÄKTA domslut enligt §11.5.1,
+   * INGEN påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E). Överridbar via mockV4InteraktionStatus.
+   */
+  mockV4InteraktionStatus: string = "noop";
+
+  async skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const o = typeof optionId === "string" ? optionId.trim() : "";
+    if (o.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "optionId överskrider 200 tecken." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4InteraktionStatus,
+      typ: "resolveInteraction",
       source: "mock",
     };
     return { skickat: true, commandId, status: ack.status, ack, rått: ack };

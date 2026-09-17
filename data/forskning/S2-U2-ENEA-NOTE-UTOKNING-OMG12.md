@@ -158,3 +158,24 @@ data-drivet via aspektParametrar().
 - Delade (read-modify-write): data/portfolj-system/bolagsunivers.json (mina
   ENEA.ST/NOTE.ST; s2-u1:s Samsung + övriga 159 orörda, innehållsidentiska
   bevisade), public/llms.txt (min 162-harmonisering), worklog.md (append).
+
+
+## CLOBBER-EPILOG (leveransen överlevde prod-synkens återställningsfönster)
+
+Sekvensen: (1) append + llms-regen + HELA KVD-sviten GRÖN på 162-läget
+~22:25; (2) prod-synken (PID 1759566, start 22:27) fast-forwardade
+arbetsytan f415af07→0ad009ab (s2-u1:s Samsung-commit, detekterad 20:27Z) och
+ÅTERSTÄLLDE mina ocommittade universum+llms-ändringar — disk tillbaka på
+160, exakt HEAD-storlek 487094 B, båda mtime 22:27 (omg9:s dokumenterade
+clobber-fönster, andra besöket); första git add-försöket dessutom avvisat
+helt (data/vakten gitignorerad — exit 1, lärdomen "add-först-på-ALLA-vägar"
+i praktiken: addera UTAN ignorerade vägar); (3) deploylåset bevakat till
+FRITT 22:30:04 (deploy landad 20:29:54Z "prod 200"), (4) OMEDELBAR
+återställning enligt O4-lärdomen: idempotent append omkört (bit-identisk
+utdata — skriptet deterministiskt ur inbäddad källdata), llms HELREGEN,
+stage + COMMIT 718… nej — f4b68f66 FÖRE nästa synkcykel; (5) KVD
+omverifierad GRÖN på det committade läget (läckagevakt 0/162+162 i 1 517
+filer · kontraktstest 0 fel · prod 200 ×5 · /llms.txt LIVE på 162 med 12
+förekomster). Commit:at tillstånd kan ej clobbras av fast-forward —
+förlorad tid 4 minuter, noll förlorat innehåll. Lärdom bekräftad: data-
+leveranser i synkfönstret skall committas FÖRE KVD-utskrift, inte efter.

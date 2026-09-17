@@ -1166,7 +1166,10 @@ sektion 11 och/eller pre-commit-grinden städar eller ropar ut
 tmp_*_koll.ts i trädet FÖRE mätning (motorvalideringens tmp sköter sig
 inom sin egen process — oskadad); annars kan varje SIGKILL-dödad
 svitkörning låsa ALLA commits tills manuell städning (idag: dokvågens
-handgrepp); (2) aggregatorn (54 → 69 sviter på två dygn — provtagningen
+handgrepp) — **STÄNGT 09-17 s8-u2 (vakt/grind-halvan: tmp-stad.mjs i
+pre-commit + sektion 11, svit 15/15 + levande läcka-genom-commit-bevis)
+med s8-u1:s rot-halva (tmp-generering → .tmp/) pågående parallellt —
+kollisionsnotis data/vakten/s8-tmpskydd-kollisionsnotis-u2.md**; (2) aggregatorn (54 → 69 sviter på två dygn — provtagningen
 glesare för varje dag); (3) motorregistret 14 dagar fruset; (4) gap 3:s
 sista halva: vaktrapports-stopp i deployvägen (artefaktklassen stoppad,
 RÖD kvalitetsrapport blockerar fortfarande ej).
@@ -2693,7 +2696,14 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   tmp-läckage-klassen — SIGKILL-dödad svitkörning lämnar tmp_*_koll.ts i
   trädet som bryter typbaslinjen OCH pre-commit-grinden (mätt: en läcka
   låste ALL commit-tillstånd; vakt/svit/grind saknar tmp-skydd — köpost 1
-  i UPPDATERING-sektionen).
+  i UPPDATERING-sektionen); **VAKT/GRIND-ÄNDAN STÄNGD 09-17 av s8-u2**
+  (verktyg/tmp-stad.mjs: signaturverifierad städning — rot-nivå + namnmönster
+  tmp_*.ts/tmp_*_manifest.json + EJ git-trackad + GENERERAD-signatur — ropas
+  av pre-commit FÖRE tsc + sektion 11 med transparensrad; svit 15/15, levande
+  gränsbevis: äkta läcka städad AV GRINDEN under commiten; protokoll
+  TMP-SKYDD-VAKT-GRIND-2026-09-17.md); **ROT-ÄNDAN** (tmp-generering flyttas
+  ur roten till .tmp/) ägs av s8-u1 enligt anspråk — pågår, komplementär
+  halva, se data/vakten/s8-tmpskydd-kollisions-notis-u2.md.
 
 ## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-16)*
 

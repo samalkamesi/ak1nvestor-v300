@@ -28,6 +28,17 @@ if git rev-parse -q --verify MERGE_HEAD >/dev/null 2>&1; then
   exit 0
 fi
 
+# s8-u2 (2026-09-17, SYSTEMKARTAN gap 5 kö 1): signaturverifierad tmp-städning
+# FÖRE typmätningen. Femton körskript genererar tmp_*.ts i repo-roten och
+# städar dem i finally — finally överlever INTE SIGKILL (fabrikstak/OOM/kill),
+# och tsconfig inkluderar "**/*.ts" ⇒ läckan typas av tsc och låste ALLA
+# commits (bevisat 2026-09-17 01:19: tmp_demoklient_koll.ts, vakt GUL + svit
+# 9/2). Grinden självläker KÄNT engångsskräp (verktyg/tmp-stad.mjs: rot-nivå +
+# namnmönster + INTE git-trackad + GENERERAD-signatur); okända filer lämnas
+# åt tsc som blockerar TYDLIGT. Städarens eget fel låser ALDRIG commit-taket
+# (|| echo) — tsc förblir den hårda grinden.
+node verktyg/tmp-stad.mjs || echo "KVALITETSGRINDEN: tmp-städningen kunde inte köras — fortsätter (tsc avgör)" >&2
+
 # s8-determinism (2026-09-15): projektets EGEN tsc-binär, ALDRIG npx — mitt i
 # en deploy (npm ci river node_modules) kan npx lösa "tsc" till cachens
 # dummy-paket tsc@2.0.4 (bevisat 2026-09-15 04:57, deployfönster). Saknad

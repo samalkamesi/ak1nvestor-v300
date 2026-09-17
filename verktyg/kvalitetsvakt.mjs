@@ -54,6 +54,7 @@ import { spawn, spawnSync, execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { stadaTmpFiler } from "./tmp-stad.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "kvalitetsrapport-SENASTE.md");
@@ -919,6 +920,26 @@ function sektionTsc() {
 
   const t0 = Date.now();
   let sub;
+
+  // s8-u2 (SYSTEMKARTAN gap 5, kö 1): SIGKILL-läckor ur svitfamiljen (femton
+  // körskripts tmp_*.ts i roten, finally-unlink överlever ej kill) har BEVISAT
+  // brutit baslinjen och låst ALLA commits (2026-09-17 01:19). Vakten
+  // självläker FÖRE mätningen — signaturverifierat (verktyg/tmp-stad.mjs),
+  // transparent enligt o26-doktrinen: städningen syns i rapporten, tsc mäter
+  // det städade trädet. Skonade filer (trackade/signaturlösa) rörs aldrig —
+  // syns i tsc-utdata om de bryter baslinjen.
+  const stad = stadaTmpFiler();
+  if (stad.stadade.length > 0) {
+    info.push(
+      `tmp-städning FÖRE tsc: ${stad.stadade.length} signaturverifierad(e) genererad(e) fil(er) raderade (${stad.stadade.join(", ")}) — SIGKILL-läckeklassen mekaniserat oskadliggjord (gap 5 kö 1; verktyg/tmp-stad.mjs)`
+    );
+  }
+  if (stad.skonade.length > 0) {
+    info.push(
+      `tmp-städning skonade ${stad.skonade.length} fil(er) (${stad.skonade.map((s) => `${s.fil}: ${s.orsak}`).join("; ")}) — lämnade åt tsc, som flaggar dem tydligt om de bryter baslinjen`
+    );
+  }
+
   try {
     sub = spawnSync(process.execPath, [tscBin, "--noEmit"], {
       cwd: REPO,

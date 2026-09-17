@@ -1,0 +1,3 @@
+studio: auto s4-u2 GRANSKNINGSKÖ-LÄKNING AT&T — kö-raderna återställda efter skriptkollision med JNJ-syskonets commit 30cf322a [fabrik]
+
+Deras kö-registreringsskript skrev GRANSKNINGSKO-SAMMANSTALLNING.md från HEAD + egna rader och raderade därmed min redan skrivna AT&T-huvudtabellsrad (min commit fe37b0b8 hanns före av deras filskrivning — staging-pathspecen blev tom för filen). Denna läkning återställer AT&T-raderna i BÅDA tabellerna, innehållsmässigt identiska med leveransbokföringen i fe37b0b8 (worklog) + en kollisionsnotis i huvudraden. Syskonens JNJ-rader orörda. Endast data/: inget bygge, src/ orörd, R2 orörd. [fabrik]

@@ -49,3 +49,7 @@ u2:s MBG.DE+BMW.DE landade OCOMMITTA i arbetsfilen FÖRE mitt fönster (träd 14
 - CAGR5ar-fältnamnet vs 4 räkenskapsår (ärvd flagga, gäller 147 rader).
 
 **Skript:** /tmp/s2u1omg9-fore.mts · /tmp/s2u1omg9-append.mjs (idempotent) · /tmp/s2u1omg8-llms.mjs (omg8:s, orättat).
+
+## RÄTTES (post-commit, ärlighetsdoktrinen)
+
+Commit-meddelandets och worklog-radens race-beskrivning ("u2:s MBG.DE/BMW.DE åkande i min commit enligt BASF-precedenten") var INAKTUELL vid commit-tillfället: u2 hann committa sina rader själva (707b4cdd) före mitt fönster — min commit 1a125ebf innehöll ENDAST min BABA-rad + llms + docs (+90 rader i bolagsunivers.json = en rad), inget åkte med, inget ägarskap att bokföra om. Slutläget identiskt med planen (llms == universum == HEAD == 147); korrigeras här för att workloggen skall stämma mot git-historiken (u2:s commit 707b4cdd är parent-kedjans föregångare, ej passagerare).

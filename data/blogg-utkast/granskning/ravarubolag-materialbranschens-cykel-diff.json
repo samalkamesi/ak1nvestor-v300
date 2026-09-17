@@ -1,0 +1,135 @@
+{
+  "granskat": "data/blogg-utkast/ravarubolag-materialbranschens-cykel.json",
+  "granskadAv": "agentfabrik auto-s1-u1 (auto-s1-1789625727468, 2026-09-17)",
+  "rapport": "ravarubolag-materialbranschens-cykel.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — materialmedianerna 7/7 EXAKTA (P/B 1,309 · P/E 18,491 n=9 · EV/EBIT 17,728 n=9 · rörelse 9,74 % · brutto 33,52 % · ROE 7,17 % · omsCAGR −2,19 % mot utkastets 1,3/18,5/17,7/9,7/33,5/7,2/−2,2), detaljpåståenden 4/4 gröna (Billerud P/E null + marginal −0,65 % · Yara P/E 8,29 lägst av tio + prognos −20,9 % ≈ −21 · P/B<1 exakt skogsfyran BILL 0,72/STERV 0,74/SCA 0,80/HOLM 0,91), juridikgrind-vakt --json grund true + 0 fynd (flyttklar=false var endast saknad granskningspost), rådverb 1 träff = falsk positiv (verksamhetsinfinitiv), 911 = 0 träffar på 6 mönster, 14/14 interna länkar HTTP 200 + fil/register-närvaro (0 mot outgivna utkast). RÄTTNINGAR: universum-kolumnens sex tal (B1–B8) avviker 0,1–0,8 från den källbas filen själv deklarerar (100 bolag 2026-09-03 — sex baslägen testade, inget reproducerar talen; sannolikt byggats på ocommittat mellanläge), C1 skadad sträng グラf, C2 readingMinutes 3→2 (1 234 ord/600), C3 Newmont land=USA spräcker 'svenska och nordiska'. F1–F3 förslag",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga strängar maskinellt verifierade UNIKA i källfilen — en träff var). 'forslag' kräver beslut före verkställning (F1a+F1b endast tillsammans). Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "18,5 mot 20,4",
+      "nytt": "18,5 mot 20,5",
+      "orsak": "Universum-median P/E enligt den deklarerade källbasen (100 bolag, hamtat 2026-09-03) är 20,52 (n=92) — inte 20,4. Inget av sex testade baslägen (100 dagens/f3f56268 · 116 · 144 · median-av-branschmedianer · bara-Sverige) reproducerar 20,4"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "17,7 mot 19,5",
+      "nytt": "17,7 mot 19,8",
+      "orsak": "Universum-median EV/EBIT = 19,81 (n=95) på 100-basen — inte 19,5"
+    },
+    {
+      "id": "B3a",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "Rörelsemarginalen ligger på 9,7 procent mot 21,2",
+      "nytt": "Rörelsemarginalen ligger på 9,7 procent mot 22,0",
+      "orsak": "Universum-median rörelsemarginal = 21,98 % (n=100) — inte 21,2. Ingressens formulering"
+    },
+    {
+      "id": "B3b",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "9,7 procent mot 21,2 — bruttomarginalen 33,5 mot 47,8",
+      "nytt": "9,7 procent mot 22,0 — bruttomarginalen 33,5 mot 48,0",
+      "orsak": "Samma rörelsetal (21,98 %) i siffersektionen + universum-bruttomarginalen 47,97 % (n=100) — inte 47,8"
+    },
+    {
+      "id": "B3c",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "rörelsemarginal 9,7 mot 21,2 procent",
+      "nytt": "rörelsemarginal 9,7 mot 22,0 procent",
+      "orsak": "Samma rörelsetal i sammanfattningens medianrad — tredje och sista förekomsten av 21,2"
+    },
+    {
+      "id": "B5a",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "7,2 procent mot 14,9",
+      "nytt": "7,2 procent mot 15,0",
+      "orsak": "Universum-median ROE = 15,02 % (n=97) — inte 14,9. Siffersektionens rad"
+    },
+    {
+      "id": "B5b",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "ROE 7,2 mot 14,9",
+      "nytt": "ROE 7,2 mot 15,0",
+      "orsak": "Samma ROE-tal i sammanfattningen — andra och sista förekomsten av 14,9"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "−2,2 procent om året mot +3,5 för börsen",
+      "nytt": "−2,2 procent om året mot +4,1 för börsen",
+      "orsak": "Universum-median omsättningstillväxt 5 år = +4,06 %/år (n=91) — inte +3,5"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "råvaruprisets egetグラf",
+      "nytt": "råvaruprisets egen graf",
+      "orsak": "Två japanska katakana (U+30B0 U+30E9) mitt i den svenska meningen — skadad sträng, sannolikt input-metod-olycka i byggsteget. Icke-ASCII-skannningen ger exakt dessa två tecken som enda utanför vitlistan i hela filen"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "readingMinutes",
+      "gammalt": "3",
+      "nytt": "2",
+      "orsak": "Plattformskontraktet ORD_PER_MINUT=600: 1 234 ord (titel+ingress+body) ÷ 600 = 2,06 → 2. Seriens systematiska 3-slip (lakemedels, ravarubolag, teknikaktier, energibolagens, volvo-car, ericsson) — kuren hör hemma i byggarverktyget; här rightas instansen"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "Universumets tio svenska och nordiska bolag",
+      "nytt": "Universumets tio materialbolag",
+      "orsak": "Newmont (NEM) har land=USA i källan (lägen: 5 Sverige · 2 Norge · 2 Finland · 1 USA) — 'svenska och nordiska' är falskt för det bolag texten sedan lyfter i sin egen familjekatalog. Neutral term som håller för alla tio"
+    },
+    {
+      "id": "F1a",
+      "typ": "forslag",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "Den andra fällan är enstensbilden",
+      "nytt": "Den andra fällan är stillsbilden",
+      "orsak": "'en­stensbilden' är inget svenskt ord (uppenbart skadad sträng) och kopplas inte till rubrikens 'stenbilden'. Trolig avsedd term: stillsbilden — ett fruset ögonblick av en rörelse, exakt definitionen meningen ger ('att läsa ett år som läget'). Verkställ endast tillsammans med F1b"
+    },
+    {
+      "id": "F1b",
+      "typ": "forslag",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "body",
+      "gammalt": "P/E och stenbilden",
+      "nytt": "P/E och stillsbilden",
+      "orsak": "Rubrikharmonisering till F1a — samma term på båda ställena. Om byggaren avsåg ett cykel/sten-ordspel ska i stället termen definieras vid första användning, men någon definition saknas i nuvarande text"
+    },
+    {
+      "id": "F2",
+      "typ": "forslag",
+      "fil": "ravarubolag-materialbranschens-cykel.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell flytt till data/blogg/ sätts publiceringsdagen (publicering = kundens beslut, R2). Seriekonvention sedan teknikaktier-D3"
+    }
+  ]
+}

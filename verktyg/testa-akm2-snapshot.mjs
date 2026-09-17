@@ -8,11 +8,12 @@
  *   2. kör den med: npx --yes tsx tmp_akm2_snapshot_koll.ts,
  *   3. läser JSON-svaret mellan markörerna, skriver ut PASS/FAIL, städar.
  *
- * REN LOGIK — INGEN nätförbindelse: .env laddas ALDRIG här (getSupabaseRest
- * blir null utan NEXT_PUBLIC_SUPABASE_URL), så lasAkm2Snapshot/skrivAkm2Snapshot
- * testas via deras deterministiska vaktsvar (byggfas/hermetik + validering +
- * "Supabase ej konfigurerat"). Senaste-vinner, tolkning, tombstone-frånvaro och
- * tak-logik testas som rena funktioner.
+ * REN LOGIK — INGEN nätförbindelse: .env laddas ALDRIG här, men skal-miljön
+ * KAN bära Supabase-variablerna (prod-servern GÖR det — fabriksbarnens env),
+ * så getSupabaseRest är bara null om kontrollen PINNER bort dem. Kontroll 11
+ * gör precis det (o48-hermetik-pinnen): nätfrihet AV KONSTRUKTION, inte av
+ * förutsättning. Senaste-vinner, tolkning, tombstone-frånvaro och tak-logik
+ * testas som rena funktioner.
  *
  * Kontroller (≥ 8 enligt direktivet — här 12):
  *   (1)  Nyckelform: event-typ "akm2_snapshot" + schema "akm2-resultat-v1".
@@ -32,7 +33,11 @@
  *        före env-kontrollen — bevisat av att feltexten inte är "ej konfigurerat").
  *   (11) Skriv-validering (ren): ointygad ticker / ogiltigt resultat / misspar
  *        ticker↔resultat.ticker ⇒ ok:false FÖRE nät; giltigt utan env ⇒
- *        "Supabase ej konfigurerat" (valideringen passerade).
+ *        "Supabase ej konfigurerat" (valideringen passerade). HERMETIK-PINN
+ *        (o48): de tre Supabase-variablerna raderas under kontrollen och
+ *        återställs i finally — utan pinn tar r4 env-grenen vidare till NÄTET
+ *        (läsning + i värsta fall POST mot prod-lagret; påvisad 2026-09-15
+ *        22:07Z då fixturen "Fixtur AB" blev gällande ABB.ST-snapshot i prod).
  *   (12) kanoniskJson: jsonb-nyckelordning (a-b vs b-a) är samma snapshot;
  *        olika värden skiljer — idempotensens likhet ljuger aldrig.
  *
@@ -243,20 +248,39 @@ kolla(
 }
 
 // (11) Skriv-validering — ren, nät-fri, före env-kontrollen.
+// HERMETIK-PINN (o48): samma princip som (10):s NEXT_PHASE-pinn — kontrollen
+// FÅR INTE vara miljöberoende. Prod-serverns skal bär RIKTIGA Supabase-
+// variabler; utan pinn tar r4 env-grenen vidare till nätet (läsning + POST
+// mot prod-lagret) och svaret blir ok/hoppat i stället för "ej konfigurerat"
+// = deterministisk FAIL på servern + fixture-skraft i prod (påvisat
+// 2026-09-15 22:07Z). Raderade variabler ⇒ deterministiskt nätfritt ÖVERALLT.
 {
-  const giltigt = fixtureResultat("ABB.ST", 62);
-  const r1 = await skrivAkm2Snapshot({ ticker: "AB CD", resultat: giltigt as never });
-  const r2 = await skrivAkm2Snapshot({ ticker: "AAPL", resultat: { ticker: "AAPL" } as never });
-  const r3 = await skrivAkm2Snapshot({ ticker: "AAPL", resultat: fixtureResultat("MSFT", 50) as never });
-  const r4 = await skrivAkm2Snapshot({ ticker: "ABB.ST", resultat: giltigt as never });
-  const avvisade =
-    !r1.ok && typeof r1.fel === "string" && r1.fel.includes("avbröts") &&
-    !r2.ok && !r3.ok && r3.fel !== undefined && r3.fel.includes("misspar");
-  const passeradValidering = !r4.ok && typeof r4.fel === "string" && r4.fel.includes("ej konfigurerat");
-  kolla(
-    "skriv-validering: ointygad/ogiltig/misspar avvisas; giltig utan env ⇒ ärligt 'ej konfigurerat'",
-    avvisade && passeradValidering,
-  );
+  const PINN_NYCKLAR = ["NEXT_PUBLIC_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "NEXT_PUBLIC_SUPABASE_ANON_KEY"];
+  const pinnFore: Record<string, string | undefined> = {};
+  for (const nyckel of PINN_NYCKLAR) {
+    pinnFore[nyckel] = process.env[nyckel];
+    delete process.env[nyckel];
+  }
+  try {
+    const giltigt = fixtureResultat("ABB.ST", 62);
+    const r1 = await skrivAkm2Snapshot({ ticker: "AB CD", resultat: giltigt as never });
+    const r2 = await skrivAkm2Snapshot({ ticker: "AAPL", resultat: { ticker: "AAPL" } as never });
+    const r3 = await skrivAkm2Snapshot({ ticker: "AAPL", resultat: fixtureResultat("MSFT", 50) as never });
+    const r4 = await skrivAkm2Snapshot({ ticker: "ABB.ST", resultat: giltigt as never });
+    const avvisade =
+      !r1.ok && typeof r1.fel === "string" && r1.fel.includes("avbröts") &&
+      !r2.ok && !r3.ok && r3.fel !== undefined && r3.fel.includes("misspar");
+    const passeradValidering = !r4.ok && typeof r4.fel === "string" && r4.fel.includes("ej konfigurerat");
+    kolla(
+      "skriv-validering: ointygad/ogiltig/misspar avvisas; giltig utan env ⇒ ärligt 'ej konfigurerat'",
+      avvisade && passeradValidering,
+    );
+  } finally {
+    for (const nyckel of PINN_NYCKLAR) {
+      if (pinnFore[nyckel] === undefined) delete process.env[nyckel];
+      else process.env[nyckel] = pinnFore[nyckel];
+    }
+  }
 }
 
 // (12) kanoniskJson — jsonb bevarar inte nyckelordning: likheten ljuger aldrig.

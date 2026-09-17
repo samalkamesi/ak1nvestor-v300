@@ -13393,5 +13393,275 @@
       ]
     },
     "notering": "Kinas största internetkoncern (WeChat 1,4 mdr användare + spel (världens största spelbolag på omsättning) + reklam + fintech + molnet): KINA/TEKNIK 0→1 = cellens första rad (u1:s BABA öppnade landet i konsument samma dygn — BABA/Tencent-koordinatens andra halva, s2-u2 omg8:s bokförda par); matta 1, under MIN_MATTA — ingen landsida (landöppnarlogik enligt BASF-precedenten); ADR-pedagogiken delas med BABA-raden (OTC-linjen TCEHY mot Hongkong-linjen 0700 — kurs här i USD, ekonomi i CNY); P/E 14,34 mot fwd 12,62 ⇒ prognosTillväxt +13,6 % (PEG spårkonvention 1,05 — normaliseringsgap-listans mest NORMALA kina-rad: varken trailing-deprimerad som BABA +84,9 % eller reprised; källans PEG n/a); ROIC 18,27 % mot WACC 7,58 % = +10,69 pp värdeskapandemarginal — BABA:s −3,33 pp SPEGELBILD i samma land: plattformens moat utan capex-svällande molnbygge (capex 20,25 mdr $ mot BABA:s 23,12 med TRE gånger EBIT-marginalen: 33,3 mot 4,6 %); MOAT-RESAN: bruttomarginal 43,9 → 43,1 → 48,1 → 52,9 → 56,3 % fem raka år (medel 48,9 %, spread 13,2 pp — universumets STÖRSTA dokumenterade moat-spridning: WeChat-ekosystemets mixresa från spel till annonser/moln med take-rate-höjning; Microsofts 67,9 % ligger över men på plantå, Tencent KLÄTTRAR); FCF-SERIEN 123→201→196→216 mdr CNY fyra år positiv (fcfYield 5,0 %, fcfMarginal 21,4 % TTM) — BABA:s −49,9 mdr FY2026 är kontrasten i samma ekosystem-täckning; 2023-dippen i netto 188→115 mdr CNY = investeringsvärderingar (Meituan/JD-andelar till lägre värden) medan driften växte — BABA-notens mekanik omvänt; skuld/EK 0,39 med kassa 67,56 mot skuld 69,46 mdr $ = balanserad, räntetäckning 20,4×; utdelning 0,60 $ (1,11 %, payout 17,7 %) + återköp 1,10 %/år (aktieantalet −1,10 %) = shareholder yield 2,2 %; beta 0,74; 52-vägers −34,3 % (samma Kina-repricing som BABA −32,1 % — reglerings- och ADR-riskpremien som parnot); nästa rapport 2026-11-11 (Q3); 115 927 anställda"
+  },
+  {
+    "ticker": "IVSO.ST",
+    "namn": "Invisio AB (publ)",
+    "bransch": "kommunikation",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/quote/sto/IVSO/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement + balance-sheet (underlag S&P Global Market Intelligence; STO-close 2026-09-17 09:25 CET fördröjd kurs, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier; källan klassar bolaget Technology/Communication Equipment — branschfältet kommunikation är källkonsekvent"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 234.6,
+    "marknadsKapitalMdr": 10.56,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.3084,
+      "resultatCAGR5ar": 0.6986,
+      "omsattningTillvaxtTTM": 0.1048,
+      "prognosTillvaxt": 0.5397
+    },
+    "lonksamhet": {
+      "roe": 0.2254,
+      "roic": 0.2792,
+      "bruttoMarginal": 0.5635,
+      "ebitMarginal": 0.1767,
+      "nettoMarginal": 0.1298,
+      "fcfMarginal": 0.1258
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.06,
+      "rantaTackning": 28.02,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5796,
+      "bruttoMarginalSpread5ar": 0.0459,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 42.68,
+      "pb": 9.03,
+      "evEbit": 30.5,
+      "peg": 0.79,
+      "fcfYield": 0.0229,
+      "egenKapitalMultipl": 9.03
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        775500000,
+        1239000000,
+        1807000000,
+        1737000000
+      ],
+      "resultat": [
+        44500000,
+        178400000,
+        306400000,
+        218100000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        33400000,
+        183700000,
+        145500000,
+        285200000
+      ]
+    },
+    "notering": "Svensk utvecklare och tillverkare av avancerade kommunikationssystem (hörselskydd och headset med benledningsteknik för försvar, polis och räddningstjänst — källan klassar bolaget Communication Equipment): öppnar koordinaten Sverige/kommunikation matta 4→5 ⇒ /dataset/kommunikation/sverige PUBLICERAS vid nästa bygge (omg9:s utlämnade koordinat — Bredband2 saknade källtäckning, Invisio fanns färsk på /quote/sto/IVSO); källan klassar bolaget Communication Equipment; P/E 42,68 mot forward 27,72 ⇒ prognosTillväxt +54,0 % (PEG spårkonvention 0,79; källans egen PEG 1,03 på 3års-EPS-prognos +39,7 % som not); ROIC 27,92 % mot WACC 9,06 % = +18,86 pp värdeskapandemarginal — bred som en plattform utan plattformens kapitalbindning; utdelning 3,00 kr (1,32 %, payout 55,6 %, +30,4 % höjd) MEN aktieantalet +1,51 %/år = utspädning (buyback-yield −1,51 % — universumets ovanliga negativa återköpsrad); beta 0,87 · 52-vägers −29,5 % (försvars-tillverkningens eftersläpning efter 2024 års +45,9 %-topp: oms 1 807→1 737 Mkr FY2025 = −3,9 %, TTM åter +10,5 %); vändningsåren 2021–2023 i serien: netto 14,5→44,5→178,4 Mkr (skalfördelar på 57–58 % bruttomarginal — moat FYLLT: brutto 57,4–60,3 % fem år, medel 58,0 %, spread 4,6 pp — smal span för hudhörlivrar mot försvarskunder); kassaposition: nettokassa 218 Mkr, skuld/EK 0,06, räntetäckning 28×; nästa rapport 2026-10-30 (Q3)."
+  },
+  {
+    "ticker": "CAT",
+    "namn": "Caterpillar Inc.",
+    "bransch": "industri",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/CAT/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; NYSE-close 2026-09-16, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning/återköp, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 782.72,
+    "marknadsKapitalMdr": 359.8,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0438,
+      "resultatCAGR5ar": 0.0983,
+      "omsattningTillvaxtTTM": 0.1056,
+      "prognosTillvaxt": 0.2387
+    },
+    "lonksamhet": {
+      "roe": 0.5697,
+      "roic": 0.183,
+      "bruttoMarginal": 0.2971,
+      "ebitMarginal": 0.1865,
+      "nettoMarginal": 0.1451,
+      "fcfMarginal": 0.1204
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.33,
+      "rantaTackning": 26.35,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.2903,
+      "bruttoMarginalSpread5ar": 0.0666,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 33.73,
+      "pb": 18.55,
+      "evEbit": 28.63,
+      "peg": 1.41,
+      "fcfYield": 0.025,
+      "egenKapitalMultipl": 18.55
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        59427000000,
+        67060000000,
+        64809000000,
+        67589000000
+      ],
+      "resultat": [
+        6705000000,
+        10335000000,
+        10792000000,
+        8884000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        5167000000,
+        9793000000,
+        8820000000,
+        7453000000
+      ]
+    },
+    "notering": "Världens största tillverkare av anläggningsmaskiner, gruvutrustning, dieselmotorer och gasturbiner (konkurrenterna Epiroc/Sandvik/SKF i universumets svenska industri-rad — CAT är den globala referensen de prissätts mot): öppnar USA/industri matta 3→5 tillsammans med LMT ⇒ /dataset/industri/usa PUBLICERAS vid nästa bygge (ETN+GE+BA fick sällskap); P/E 33,73 mot forward 27,23 ⇒ prognosTillväxt +23,9 % (PEG spårkonvention 1,41; källans PEG 1,49 som not) — 52-vägers +79,6 % har prissatt cykel-toppen: oms +4,4 %/år endpoint MEN TTM +10,6 %, netto 6 705→8 884 MUSD (+9,8 %/år) med FY2024-toppen 10 792; ROIC 18,30 % mot WACC 11,67 % = +6,63 pp; P/B 18,55 = återköpsmaskinens urholkade bokförda EK (aktieantalet −2,67 %/år; utdelning 6,52 $ 0,83 % payout 28,1 %); moat FYLLT: brutto 25,9–32,5 % fem år (medel 29,0 %, spread 6,7 pp — cykeln syns i spannet: 2022:s 26,2 mot 2023–24:s 31,7–32,5); skuld/EK 2,33 med räntetäckning 26× — CAT Financials lånebok är affären, inte olyckan (nettoskuld 39,2 mdr $); FCF 5 167→7 453 MUSD fyra raka positiva (capex 2,6→4,3 mdr = kapitalcykelns köl); beta 1,59 = universumets mest cykel-exponerade industri-jättar; nästa rapport 2026-10-28 (Q3)."
+  },
+  {
+    "ticker": "LMT",
+    "namn": "Lockheed Martin Corporation",
+    "bransch": "industri",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-17",
+        "url": "https://stockanalysis.com/stocks/LMT/",
+        "paranoid": "översikt + statistics + financials + cash-flow-statement (underlag S&P Global Market Intelligence; NYSE-close 2026-09-16, sidor pålästa 2026-09-17): pris, börsvärde, P/E–P/B–EV/EBIT, marginaler, ROE/ROIC/WACC, skuld/EK, utdelning/återköp, 5 räkenskapsår bruttovinst (moat) + 4 räkenskapsår FY2022–FY2025 i serier"
+      }
+    ],
+    "hamtat": "2026-09-17",
+    "pris": 537.25,
+    "marknadsKapitalMdr": 123.99,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0438,
+      "resultatCAGR5ar": -0.0434,
+      "omsattningTillvaxtTTM": 0.0262,
+      "prognosTillvaxt": 0.136
+    },
+    "lonksamhet": {
+      "roe": 0.8916,
+      "roic": 0.2742,
+      "bruttoMarginal": 0.118,
+      "ebitMarginal": 0.1089,
+      "nettoMarginal": 0.0816,
+      "fcfMarginal": 0.1133
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.34,
+      "rantaTackning": 7.55,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.1182,
+      "bruttoMarginalSpread5ar": 0.0369,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 19.8,
+      "pb": 14.09,
+      "evEbit": 16.79,
+      "peg": 1.46,
+      "fcfYield": 0.0704,
+      "egenKapitalMultipl": 14.09
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        65984000000,
+        67571000000,
+        71043000000,
+        75048000000
+      ],
+      "resultat": [
+        5732000000,
+        6920000000,
+        5336000000,
+        5017000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        6132000000,
+        6229000000,
+        5287000000,
+        6908000000
+      ]
+    },
+    "notering": "Världens största försvarskoncern (jaktplanet F-35, robot- och rymddivisioner): UNIVERSUMETS FÖRSTA FÖRSVARSBOLAG — tillsammans med CAT öppnas USA/industri matta 3→5 ⇒ /dataset/industri/usa vid nästa bygge; ombevakad nisch 2026 (den europeiska upprustningen) med rent affärsfall i raden: oms 65 984→75 048 MUSD (+4,4 %/år) men netto 5 732→5 017 (−4,4 %/ år endpoint — cost-plus-världens marginalklymma syns i bruttot 13,6→10,2 %) med TTM-svansen 6 287 (+49,5 % YoY — 2025:s engångsposter vänder); P/E 19,80 mot forward 17,43 ⇒ prognosTillväxt +13,6 % (PEG spårkonvention 1,46; källans PEG 0,91 på 3års-EPS-prognos +18,0 % som not); ROE 89,2 % på urholkat EK (P/B 14,09 — CAT-radens spegelbild) men ROIC 27,42 % mot WACC 4,79 % = +22,63 pp — världens bredaste värdeskapandemarginaler i universumet (befintlig portfölj av kontrakt kapitaliseras billigt); utdelning 13,80 $ (2,57 %, payout 50,9 %) + återköp 1,97 %/år = totalavkastning ~4,5 %; FCF 6 132→6 908 MUSD fyra raka positiva (TTM 8 729 rekord, fcfYield 7,0 % — universumets högsta bland industri-jättarna); beta 0,10 = försvars-Buffett: okorrelerad med cykeln (CAT:s 1,59 som exakt motpol — parets pedagogik: SAME bransch, spegelvänd risk); moat FYLLT: brutto 9,9–13,6 % fem år (medel 11,8 %, spread 3,7 pp) — smalt span på låg nivå = kostnadskontrollens, inte prissättningens, vallgrav; nästa rapport 2026-10-20 (Q3)."
   }
 ]

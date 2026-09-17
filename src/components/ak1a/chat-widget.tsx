@@ -376,6 +376,61 @@ import { svaraLokaltAvkastningsdjup } from "@/lib/ai-mentor-avrakningsdjup-frago
 // med påhittade tal — inga placeringstips.
 import { svaraLokaltVarderingsverktyg } from "@/lib/ai-mentor-varderingsverktyg-fragor";
 
+// AI-MENTORN lager 31 (spår 6, omgång 16, s6-u1): warranter och tecknings-
+// optioner (od-03 primär + ks-04 + od-01 + od-02). Sond verktyg/
+// _s6u1-sond-omg16.mjs: 30 motorer / 92 monsters / 971 kärnord LIVE,
+// samtliga warrant-/teckningsoption-/emissionsrätts-frågor NULL genom
+// kedjan; aktiverar två olänkade kurser (od-03, ks-04). Juridikgrind:
+// ren instrumentutbildning med kursens påhittade exempeltal — inga
+// placeringstips.
+import { svaraLokaltWarrant } from "@/lib/ai-mentor-warrant-fragor";
+
+// AI-MENTORN lager 32 (spår 6, omgång 16, s6-u2): tidsaxel-lagret — kedjans
+// NÄR-frågor. Två källmärkta förhandsfrågor: (1) konjunkturindikatorerna
+// (ma-04 primär + ma-01 + kt-02 + ma-02 — tre klockor: ledande/jämnivå/
+// eftersläpande, diffusionsindexets 50-streck, panelen på tre ben) och
+// (2) refinansieringsmuren (st-05 primär + st-04 + ks-03 + st-01 —
+// balansräkningens fjärde dimension tiden: förfallotabellen, klungmåttet,
+// mur-kvoten 2,3×, uppslaget och kalenderns 12–18 månader). Båda aktiverar
+// färska spår-5-kurser (ma-04, st-05 — registrerade 2026-09-17) som INGEN
+// mentorväg nådde. Sond verktyg/_s6u2-sond-omg16.mjs: 30 motorer / 92
+// monsters / 971 kärnord LIVE — hela konjunkturindikator- och klung-
+// formuleringssfären NULL genom kedjan. Ansvarsfördelning (emission/V19-
+// precedensen): riskdjupet äger refinansiering/löptid solo + covenants —
+// detta lager bär ENDAST sammansatta klung-/mur-/löptidsprofilord; basens
+// kapitalstruktur-monster behåller "när förfaller skulden?" (sondbevis
+// FÅNGAD); sektorn äger konjunkturCYKEL-familjen — här bärs endast
+// indikator-/barometer-/PMI-orden; makro äger ränta/realränta/inflation
+// (högst starkord här). Syskonen i samma fönster (u1:s warrant lager 31 +
+// u3:s kapitalbindning på disk) är kärnordsdisjunkta i båda riktningarna.
+// Juridikgrind: ren metodutbildning med kursfilernas påhittade exempel —
+// inga placeringstips, ingen prognos om den verkliga ekonomin.
+import { svaraLokaltTidsaxel } from "@/lib/ai-mentor-tidsaxel-fragor";
+
+// AI-MENTORN lager 33 (spår 6, omgång 16, s6-u3): kapitalbindnings-lagret —
+// lönsamhetens andra halva. Tre källmärkta förhandsfrågor: (1) rörelsekapital/
+// arbetande kapital/working capital (ln-04 primär + bk-01 + bk-03 + km-003 —
+// omsättningstillgångar minus kortfristiga skulder, bindningens pris och den
+// negativa bindningens mekanik) och (2) kassakonverteringscykeln/CCC
+// (ln-04 primär + bk-03 + km-003 + bk-01 — DIO + DSO − DPO = 55 dagar i
+// exempelbolaget, känsligheten 10 dagar = 6 Mkr) och (3) lageromsättningen
+// (ln-04 primär + roic-02 + bk-01 + km-003 — 146 ÷ 20 = 7,3 varv, DIO =
+// 365 ÷ 7,3 = 50 dagar, piskmekaniken och åldrande lagrets fällor).
+// Aktiverar ln-04 som ingen mentorväg nådde. Sond verktyg/_s6sista-u3-sond.mjs:
+// 30 motorer / 92 monsters / 971 kärnord LIVE — rörelsekapital-, kapital-
+// bindnings-, kassakonverterings-, kassacykel-, ccc-, dso-, dpo-, dio- och
+// hela lageromsättnings-familjen NULL genom kedjan, 0 grannar inom tolerans 2.
+// Ansvarsfördelning (emission/V19-precedensen): extra äger kassaflödes-
+// familjens GRUNDORD ("fritt kassaflöde" går dit — kedjebevisat), lonsamhets-
+// djupet äger ROIC/kapitalomsättningshastigheten som helhetsmått (roic-02
+// delas som KÄLLA), basen äger balansräkningen som helhet — detta lager
+// bär ENDAST sammansättningarna rörelsekapital/kapitalbindning/kassacykel/
+// lageromsättning + kortorden ccc/dso/dpo/dio (exakta, ägda av ingen av 971).
+// Syskonen i samma fönster (u1:s warrant lager 31 + u2:s tidsaxel lager 32)
+// är kärnordsdisjunkta i båda riktningarna (korsprover 0/0). Juridikgrind:
+// ren metodutbildning med påhittade exempeltal — inga placeringstips.
+import { svaraLokaltKapitalbindning } from "@/lib/ai-mentor-kapitalbindning-fragor";
+
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
  *
@@ -1080,7 +1135,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

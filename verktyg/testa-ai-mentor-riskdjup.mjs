@@ -497,7 +497,10 @@ const GAMLA = [
     "svaraLokaltAvkastningskurva",
     "svaraLokaltAvkastningsdjup",
     "svaraLokaltVarderingsverktyg",
-  ];
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

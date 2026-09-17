@@ -438,7 +438,10 @@ const GAMLA = [
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltSkattedjup",
-  ];
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här
   // underkänner fortfarande OKÄNDA (odokumenterade) komponenter.
@@ -457,10 +460,9 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  // Skattedjup skall ligga SIST bland de kända (efter alla tidigare).
-  const posSist = rad.lastIndexOf("svaraLokaltSkattedjup(");
-  const kandaEfterSist = KOMPONENTER.slice(0, -1).some((k) => rad.indexOf(k + "(") > posSist);
-  if (posSist !== -1 && kandaEfterSist) FEL.push("svaraLokaltSkattedjup ligger inte sist bland de kända komponenterna");
+  // Skattedjup låg SIST vid leveransen (omgång 10); omgångarna 11–16 har
+  // lagt elva lager efter det — SIST-kravet är utbytt mot ordningsvakten
+  // ovan (omgång 8-presedensens vaktform; harmoniserat av u2 omgång 16).
   if (!widget.includes('from "@/lib/ai-mentor-skattedjup-fragor"')) {
     FEL.push("importen av ai-mentor-skattedjup-fragor saknas");
   }

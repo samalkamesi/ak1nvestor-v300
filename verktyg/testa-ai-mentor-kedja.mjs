@@ -119,6 +119,22 @@ const MOTORDEFS = [
   { namn: "avkastningskurva", fil: "ai-mentor-avkastningskurva-fragor.ts", fn: "svaraLokaltAvkastningskurva", arr: "AVKASTNINGSKURVA_MONSTER", antal: 1 },
   { namn: "avkastningsdjup", fil: "ai-mentor-avrakningsdjup-fragor.ts", fn: "svaraLokaltAvkastningsdjup", arr: "AVKASTNINGSDJUP_MONSTER", antal: 2 },
   { namn: "värderingsverktyg", fil: "ai-mentor-varderingsverktyg-fragor.ts", fn: "svaraLokaltVarderingsverktyg", arr: "VARDERINGSVERKTYG_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 16: warrant (s6-u1 — warranter/teckningsoptioner/
+  // emissionsrätter, od-03 primär; aktiverar od-03 + ks-04 som ingen
+  // mentorväg nådde; nästa äger nakna option-orden, kapitalmekaniken
+  // emissionsfamiljen — detta lager bär endast warrant-sammansättningarna)
+  // + tidsaxel (syskon u2, samma fönster — konjunkturindikatorerna +
+  // refinansieringsmuren, kedjans NÄR-frågor; aktiverar ma-04 + st-05,
+  // spår 5:s omgång-13-kurser; riskdjupet äger refinansieringsorden,
+  // sektorn konjunkturCYKEL-orden — deras lager bär indikator-/klung-/
+  // mur-orden). Kärnorden mekaniskt disjunkta (sonderna
+  // _s6u{1,2}-sond-omg16.mjs + detta tests H-fall).
+  { namn: "warrant", fil: "ai-mentor-warrant-fragor.ts", fn: "svaraLokaltWarrant", arr: "WARRANT_MONSTER", antal: 1 },
+  { namn: "tidsaxel", fil: "ai-mentor-tidsaxel-fragor.ts", fn: "svaraLokaltTidsaxel", arr: "TIDSAXEL_MONSTER", antal: 2 },
+  // + kapitalbindning (syskon u3, samma fönster — rörelsekapital +
+  // kassakonverteringscykeln + lageromsättning, lönsamhetens andra halva;
+  // aktiverar ln-04/bk-01/bk-03/km-003).
+  { namn: "kapitalbindning", fil: "ai-mentor-kapitalbindning-fragor.ts", fn: "svaraLokaltKapitalbindning", arr: "KAPITALBINDNING_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -127,7 +143,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 92 (2026-09-17 omgång 15, 30-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 98 (2026-09-18 omgång 16: warrant +1, tidsaxel +2, kapitalbindning +3 — 33-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -216,6 +232,14 @@ const KANONISKA = [
   { fraga: "vad är avkastningskällor?", motor: 28 },
   { fraga: "vad är tvärsnittsanalys?",  motor: 28 },
   { fraga: "vad är scenarioanalys?",    motor: 29 },
+  // Omgång 16: warrant (s6-u1) + tidsaxel (syskon u2, samma fönster) —
+  // kanoniska ur lagrens egna rubriker.
+  { fraga: "vad är warranter och teckningsoptioner?", motor: 30 },
+  { fraga: "vad är konjunkturindikatorer?", motor: 31 },
+  { fraga: "vad är refinansieringsmuren?",  motor: 31 },
+  { fraga: "vad är rörelsekapital?", motor: 32 },
+  { fraga: "vad är kassakonverteringscykeln?", motor: 32 },
+  { fraga: "vad är lageromsättning?", motor: 32 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -260,7 +284,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "trettio motorer lämnar frågan ifred",
+  "trettiotre motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -343,7 +367,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla trettio motorer",
+    "H: disjunkta monster-id:n över alla trettiotre motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

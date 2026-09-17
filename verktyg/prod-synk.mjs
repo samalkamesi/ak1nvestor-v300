@@ -109,6 +109,185 @@ async function httpsOk() {
   return false;
 }
 
+// ---------------------------------------------------------------------------
+// AGENTARBETSYTA-SYNKENS FÖRSVAR (o43; påbörjad s8-u1/o33 2026-09-16,
+// clobber-strandad, färdigställd 2026-09-17): worklog.md är en append-ledger
+// där alla parter appendar i filslut ⇒ varje merge i agentklonen kolliderar i
+// exakt samma radregion. Naiva "pull --ff-only + larm" lämnade klassen olöst
+// i dygn (rond 50:s döda merge 2026-09-15, 30-larms-natten, recidiv
+// 00:10–02:20 2026-09-17 trots o40:s klon-läkning — rond-agenter som
+// committar lokalt återskapar divergensen). Självläkning med VÄGRANS-gränser:
+//   · död merge (MERGE_HEAD kvar) med konflikt ENDAST i union-klassen
+//     (worklog.md + .gitattributes) ⇒ union-lös (vår sida före deras) +
+//     avrunda merge — ytan levande igen
+//   · konflikt i FRÄMMANDE fil ⇒ VÄGRAS — kastar med filnamnet, ytan orörd
+//   · divergens utan dött läge ⇒ merge-vägen (attributet fogar worklog)
+//   · ocommittade ändringar ⇒ VÄGRAS (skyddar pågående arbete)
+// Kontrakt: verktyg/testa-prod-synk-arbetsytasynk.mjs (34/34).
+// ---------------------------------------------------------------------------
+const ARBETSYTA_UNION_KLASS = new Set(["worklog.md", ".gitattributes"]);
+
+/** Union-lös git-konfliktmarkörer: vår sida före deras, bas (diff3) ägs ingen.
+ *  Returnerar { text, block } — kastar på oavslutat/kapslat block (ALDRIG
+ *  tyst halvlösning). */
+export function unionLosMarkorer(text) {
+  const rader = String(text).split("\n");
+  const ut = [];
+  let varSida = [];
+  let derasSida = [];
+  let lage = "normal"; // normal | var | bas | deras
+  let block = 0;
+  for (const rad of rader) {
+    if (/^<{7}( |$)/.test(rad)) {
+      if (lage !== "normal") throw new Error("kapslade konfliktblock stöds ej");
+      lage = "var";
+      block += 1;
+      continue;
+    }
+    if (lage === "var" && /^\|{7}/.test(rad)) {
+      lage = "bas";
+      continue;
+    }
+    if ((lage === "var" || lage === "bas") && /^={7}$/.test(rad)) {
+      lage = "deras";
+      continue;
+    }
+    if (lage === "deras" && /^>{7}( |$)/.test(rad)) {
+      ut.push(...varSida, ...derasSida);
+      varSida = [];
+      derasSida = [];
+      lage = "normal";
+      continue;
+    }
+    if (lage === "normal") ut.push(rad);
+    else if (lage === "var") varSida.push(rad);
+    else if (lage === "deras") derasSida.push(rad);
+    // lage === "bas": diff3-basrader ägs ingen sida — bort
+  }
+  if (lage !== "normal") throw new Error("oavslutat konfliktblock — vägrar tyst halvlösning");
+  return { text: ut.join("\n"), block };
+}
+
+/** .gitattributes-innehåll med union-raden säkrad — null om redan närvarande
+ *  (idempotent). Kommentarraden bär provenans. */
+export function sakraUnionAttributInnehall(innehall) {
+  const nuvarande = String(innehall ?? "");
+  if (/^worklog\.md merge=union$/m.test(nuvarande)) return null;
+  const bas = nuvarande.trim() === "" ? "" : nuvarande.endsWith("\n") ? nuvarande : nuvarande + "\n";
+  return `${bas}# s8-u1/o33 — worklog.md är append-ledger: union-fogning i stället för döende merge-konflikt\nworklog.md merge=union\n`;
+}
+
+/** Git-fel → enradig rotorsak (stderr före message; whitespace kollapsat).
+ *  Kurar "smutsigt träd?"-gissningen från o40 §6 (felklassning UU/divergens). */
+export function forklaraGitFel(fel) {
+  const stderr = fel && typeof fel.stderr === "string" ? fel.stderr : "";
+  const kalla = (stderr || (fel && fel.message) || String(fel ?? "")).replace(/\s+/g, " ").trim();
+  return kalla ? kalla.slice(0, 160) : "okänt fel";
+}
+
+/** Synka agentens arbetsyta (yta) mot prod-trädet (rot) — självläkande för
+ *  append-ledgerns merge-klass, VÄGRAR främmande filer + ocommittat arbete.
+ *  Returnerar en satt-beskrivning; kastar med rotorsak vid vägran. */
+export function synkaArbetsyta(yta, rot) {
+  const delar = [];
+  const gitYta = (args) =>
+    execFileSync("git", ["-C", yta, ...args], {
+      timeout: 120_000,
+      encoding: "utf8",
+      stdio: "pipe",
+    }).trim();
+  const konfliktFiler = () =>
+    gitYta(["diff", "--name-only", "--diff-filter=U"])
+      .split("\n")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+  const losUnion = (filer) => {
+    let block = 0;
+    for (const f of filer) {
+      const p = path.join(yta, f);
+      const r = unionLosMarkorer(fs.readFileSync(p, "utf8"));
+      if (f === ".gitattributes") {
+        // attributlistor är additiva — rad-union med dedup
+        r.text = [...new Set(r.text.split("\n"))].join("\n");
+      }
+      fs.writeFileSync(p, r.text);
+      block += r.block;
+    }
+    return block;
+  };
+
+  const sakraAttribut = () => {
+    const p = path.join(yta, ".gitattributes");
+    const nuvarande = fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "";
+    const ny = sakraUnionAttributInnehall(nuvarande);
+    if (ny === null) return false;
+    fs.writeFileSync(p, ny);
+    gitYta(["add", ".gitattributes"]);
+    return true;
+  };
+
+  const dodMerge = fs.existsSync(path.join(yta, ".git", "MERGE_HEAD"));
+  if (dodMerge) {
+    const filer = konfliktFiler();
+    const frammade = filer.filter((f) => !ARBETSYTA_UNION_KLASS.has(f));
+    if (frammade.length > 0) {
+      throw new Error(
+        `död merge med konflikt i främmande fil (${frammade.join(", ")}) — auto-lösning vägras, ytan lämnas orörd`,
+      );
+    }
+    const block = losUnion(filer);
+    sakraAttribut();
+    if (filer.length > 0) gitYta(["add", ...filer]);
+    gitYta(["commit", "-q", "--no-edit", "-m", "synk: död merge union-löst (append-ledger) — arbetsytans självläkning"]);
+    delar.push(`död merge union-löst (${block} block)`);
+  } else {
+    // --untracked-files=no: untrackade skrivfiler (rond-agenternas _r*-skrap)
+    // blockerar INTE git-synken och ska aldrig bli falsklarm — endast
+    // ändringar i FÖLJDA filer skyddas (bevisad live-klass 2026-09-17:
+    // ytan bar ?? _r53/_r54-filer vid grön synk).
+    const smutsig = gitYta(["status", "--porcelain", "--untracked-files=no"]);
+    if (smutsig.trim()) {
+      throw new Error(
+        `ocommittade ändringar i ytan skyddas (${smutsig.trim().split("\n").length} rader) — synk väntar på commit`,
+      );
+    }
+    if (sakraAttribut()) {
+      gitYta(["commit", "-q", "-m", "synk: worklog.md merge=union säkrat (append-ledger)"]);
+    }
+  }
+
+  gitYta(["fetch", "-q", rot, "develop"]);
+  try {
+    const ut = gitYta(["merge", "--ff-only", "FETCH_HEAD"]);
+    delar.push(/already up to date/i.test(ut) ? "redan ikapp" : "snabbframåt");
+  } catch (fel) {
+    try {
+      gitYta(["merge", "--no-edit", "FETCH_HEAD"]);
+      delar.push("merge-vägen (union-skyddad)");
+    } catch (mergeFel) {
+      const filer = konfliktFiler();
+      if (filer.length === 0) {
+        try { gitYta(["merge", "--abort"]); } catch { /* redan avbruten */ }
+        throw new Error(`merge misslyckades utan konfliktfiler: ${forklaraGitFel(mergeFel)}`);
+      }
+      const frammade = filer.filter((f) => !ARBETSYTA_UNION_KLASS.has(f));
+      if (frammade.length > 0) {
+        gitYta(["merge", "--abort"]);
+        throw new Error(
+          `merge-konflikt i främmande fil (${frammade.join(", ")}) — merge avbröts, ytan lämnas ren`,
+        );
+      }
+      const block = losUnion(filer);
+      sakraAttribut();
+      if (filer.length > 0) gitYta(["add", ...filer]);
+      gitYta(["commit", "-q", "--no-edit", "-m", "synk: merge union-löst (append-ledger)"]);
+      delar.push(`merge-vägen — union-löst manuellt (${block} block)`);
+    }
+  }
+  return delar.join(" · ");
+}
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -293,22 +472,19 @@ async function korSynk() {
       // (/home/ak1a/agent/ak1) mot prod-trädet + färskt AGENTS.md. Bevisat
       // behov 2026-09-14: arbetsytan stod kvar på våg 140 medan prod nått 147
       // — agenten levde i en gammal kodvärld och gjorde om redan levererat
-      // arbete. --ff-only skyddar agentens ev. pågående ocommittade arbete;
-      // misslyckande LARMAR i loggen (ALDRIG tyst — det var så glidet uppstod).
+      // arbete. sedan o43: SELVVLÄKNING — append-ledgerns merge-klass läks
+      // (union), främmande konflikt/ocommittat arbete VÄGRAS + larmar med
+      // rotorsak (ALDRIG tyst — det var så glidet uppstod).
       try {
         const AGENT_YTA = "/home/ak1a/agent/ak1";
-        execFileSync(
-          "git",
-          ["-C", AGENT_YTA, "pull", "--ff-only", "/home/ak1a/AK1", "develop"],
-          { timeout: 120_000, encoding: "utf8", stdio: "pipe" },
-        );
+        const satt = synkaArbetsyta(AGENT_YTA, ROT);
         fs.copyFileSync(
           path.join(ROT, "data", "infra", "agent-arbetsyta", "AGENTS.md"),
           path.join(AGENT_YTA, "AGENTS.md"),
         );
-        logga("AGENTARBETSYTA synkad (pull --ff-only + AGENTS.md) — agenten lever i aktuell kod");
+        logga(`AGENTARBETSYTA synkad (${satt} + AGENTS.md) — agenten lever i aktuell kod`);
       } catch (e) {
-        logga("AGENTARBETSYTA-SYNK MISSLYCKADES (smutsigt träd? åtgärda nästa rond): " + String(e).slice(0, 120));
+        logga("AGENTARBETSYTA-SYNK MISSLYCKADES (" + forklaraGitFel(e) + ") — åtgärda nästa rond");
       }
     } else {
       logga("VARNING: deployad men HTTPS ej verifierad — kontrollera manuellt");
@@ -316,4 +492,16 @@ async function korSynk() {
   }
 }
 
-main().catch((fel) => logga("FEL: " + String(fel).slice(0, 200)));
+// Import-vakt (o43): testsvitan importerar denna moduls funktioner — main()
+// (deploy-kedjan!) får ENDAST köras som direkt program (pumporna/deploy),
+// ALDRIG som sidoeffekt av en import.
+const arDirektProgram = (() => {
+  try {
+    return Boolean(process.argv[1]) && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+})();
+if (arDirektProgram) {
+  main().catch((fel) => logga("FEL: " + String(fel).slice(0, 200)));
+}

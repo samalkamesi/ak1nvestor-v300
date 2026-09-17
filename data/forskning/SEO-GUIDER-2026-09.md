@@ -71,6 +71,9 @@ universumsbärning: logistik, krypto, utbildning.
 | # | Slug | Primärt sökord (EN) | Ord | Status | Fil |
 |---|------|---------------------|-----|--------|-----|
 | Ö1 | fastighetsaktier-sa-analyserar-du-fastighetsbolag-en | real estate stocks | 1391 | UTKAST v1 (2026-09-17, s3-u3) — engelsk översättning av B1 (klaim auto-s3-1789607727072-u3; sektoromgång 4:s se-XX-ankare saknar bärning ⇒ översättningsspåret öppnat enligt notisen ovan) | data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json |
+| Ö2 | sa-analyserar-du-bankaktier-en | bank stocks | 1399 | UTKAST v1 (2026-09-17, s3-u2) — engelsk översättning av B2 i B-ordning (klaim auto-s3-1789630527583-u2; samma tal och räkneexempel som originalet; KVD GRÖN: 0 FEL-träffar i varumärkesgrinden, sökord i H1+ingress+2 H2, title 54/60, OG 142/155, korslänkar 14/14 identisk uppsättning med B2) | data/blogg-utkast/sa-analyserar-du-bankaktier-en.json |
+| Ö3 | lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en | pharmaceutical stocks | 1399 | UTKAST v1 (2026-09-17, s3-u1) — engelsk översättning av B3 (klaim auto-s3-1789630527583-u1; u1:s första klaim Ö2 avgiven åt u2 efter deras PÅGÅR-rad — kollisionsnotis i anspråksfilen; KVD GRÖN 0/0: länkparitet 11/11, talparitet 12, aritmetik 3/3) | data/blogg-utkast/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json |
+| Ö4 | teknikaktier-sa-analyserar-du-teknikbolag-en | tech stocks | 1393 | UTKAST v1 (2026-09-17, s3-u3) — engelsk översättning av B4 (klaim auto-s3-1789630527583-u3; KVD GRÖN 0/0: varumärkesgrind 26 regexer × 3 ytor = 0, rådverb EN+SV 0, sökord "tech stocks" i title+ingress+H2, title 48/60, OG 149/155, korslänkar 18/18 identisk uppsättning med B4, talparitet 32/32, aritmetik 7/7; källor live: eur-lex 202 ×2 + Gartner bot-skyddad men sökindexverifierad "$6.37 trillion +14.2 %") | data/blogg-utkast/teknikaktier-sa-analyserar-du-teknikbolag-en.json |
 
 ---
 

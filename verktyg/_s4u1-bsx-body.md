@@ -1,0 +1,111 @@
+Boston Scientific Corporation — ticker BSX på New York Stock Exchange — redovisar sitt resultat för tredje kvartalet 2026 onsdagen den **28 oktober**, enligt bolagets IR-eventsida, med konferenssamtal klockan 08:00 östlig USA-tid samma morgon. Det här är utbildningspaket i AK1A:s kvartalsrapportserie — hälsogrenens tredje paket efter AstraZeneca och Johnson &amp; Johnson, och grenens andra USA-paket. Seriens fjortonde läsart: **trappan** — vad rapportläsaren lär när lönsamheten byggs steg för steg i stället för att svänga. Bolaget är renodlad medtech — hjärtkatetrar, stimulatorer, stent, endoskopi — och därmed den rena motpolen till grenens läkemedelshalva: ingen patentklippa, men heller ingen zigzag från portföljkirurgi. Det hela är utbildning i metod: inte en rekommendation att köpa, sälja eller behålla några värdepapper.
+
+## Urvalet: varför Boston Scientific är nästa paket i serien
+
+Urvalsprincipen står kvar: tidigaste officiellt bekräftade rappdagen bland återstående kalenderbolag med bärande universumdata. Fältet efter Johnson &amp; Johnson-paketet (13 oktober): AT&T 21 oktober är officiellt bekräftat, men dess paketfil landade på disk under omgångens byggfönster och lämnas åt den handen. Prologis 15 oktober bär officiell konferensbokning men saknar årsserier i universumsfilen — bolaget sorteras på den egna precedensen om bärande data. Netflix, GE och Newmont är estimatdatum, Verizon ett tredjepartsfönster — alla faller på principen om officiell bekräftelse. Kvar står **Boston Scientific 28 oktober: datumet utlagt på bolagets egen IR-eventsida, tredjepartskalendern samstämmig — och en av universumsfilens bärande poster**: alla värderings- och lönsamhetsfält ifyllda, fyra sammanhängande år av intäkter och resultat, CAGR-fält som replikeras exakt av slutpunktsformeln. Eli Lilly rapporterar dagen därpå men med svagare bekräftelsegrad i kalenderunderlaget — BSX vinner rangen. Ärlighetsnot med Tele2-paketets presedens: bolaget står utanför vågvalideringens tolvbolagsuniversum och saknar analysfil — ingen dom och ingen 25-cellersmatris redovisas; luckan är information, inget värde är gissat.
+
+Bär datan? Identitetstestet stänger på 5,8 procent, EV-kedjan på 5 procent, FCF-paret på 5 — och absolutkontrollens gap på minus 20 procent har ett vittne som räknas fram i källkritiken och som landar fem procent ifrån. Luckorna finns och redovisas: balansserier för eget kapital och kassaflöde är tomma i källan, räntetäckningen saknas, moat-fälten är null, och CAGR-fälten bygger på fyra räkenskapsår, inte fem (Prologis-precedensen: hålen ska gå att förstå, inte döljas).
+
+## Nyckeltalen att ha med sig — trappans egen uppsättning
+
+Värdena nedan är senaste mätta tal ur bolagsuniversumets datainsamling (bolagets post hämtad 2026-09-03, med dubbelkoll av kurs och multiplar mot en andra källa), med länkar till aspektsidor som lär ut hur talet räknas och tolkas inom hälsobranschen.
+
+**Värdering — billigt i grenen, på medianen i universumet**
+
+- Pris per vinst (P/E): **19,4** — [P/E inom hälsa](/dataset/halso/pe). Fjärde lägsta av grenens femton ifyllda fält, 22 procent under branschmedianen 24,8 och 5 procent under universumets 20,5 (n=150). Läs ihop med historien nedan: grenens snabbaste resultattillväxt bär ett av grenens lägsta vinstpriser — spänningen är paketets kärna.
+- Pris per bokfört eget kapital (P/B): **2,81** — [P/B inom hälsa](/dataset/halso/pb). Femte lägsta av femton, 36 procent under branschmedianen 4,36 och i nivå med universumets 2,83 (n=156). Kontrasten mot grenens patentmotorer är fysisk: Johnson &amp; Johnson 7,8, Roche 7,9, Coloplast 8,0 — medtech utan kliningsromaner betalar boknära.
+- Enterprise value per rörelseresultat (EV/EBIT): **17,1** — [EV/EBIT inom hälsa](/dataset/halso/ev-ebit). **Exakt på branschmedianen 17,1** (n=16; avståndet 0,4 procent), 7 procent under universumets 18,5 (n=151).
+- Fri kassaflödesavkastning (FCF-yield): **3,50 procent** — [så räknas FCF-avkastningen](/dataset/halso/fcf-avkastning). Sjätte högsta av grenens femton, under branschmedianen 4,3 men över universumets mittparti.
+- PEG-talet: **0,67** — [PEG inom hälsa](/dataset/halso/peg) — under branschmedianen 0,79 och universumets 1,49 (n=134); ser till konventionen ser det nästan gratis ut — källkritiken pensionerar det med seriens största klyfta hittills.
+- Vid insamlingen var kursen **48,37 dollar** och börsvärdesfältet **cirka 70,1 miljarder dollar**. [Värderingsöversikten](/dataset/halso/vardering) sätter multiplarna i sitt sammanhang.
+
+**Lönsamhet — under grenen på flödena, över på nettot**
+
+- Räntabilitet på eget kapital (ROE): **15,3 procent** — [så räknas ROE](/dataset/halso/roe). Sjunde av femton, under branschmedianen 18,5 men precis i nivå med universumets 15,6 (n=155). Grenens läkemedelshalva drar upp medianen; medtech-räntabiliteten mäts lägre — läs den mot trappan, inte mot grannarna.
+- Räntabilitet på investerat kapital (ROIC): **12,8 procent** — [så räknas ROIC](/dataset/halso/roic) — tredje lägsta av femton, under branschmedianen 17,4 och universumets 13,6 (n=141). Källans egen not: talet är en approximerad proxy (rörelseresultat före skatt delat på skuld plus bokfört eget kapital) — nivån, inte decimalen, är budskapet.
+- Bruttomarginal: **69,2 procent** — [bruttomarginal inom hälsa](/dataset/halso/brutto-marginal) — strax under branschmedianen 71,0 (n=16), vida över universumets 47,6 (n=157). Närmaste granne i serien: Johnson &amp; Johnsons 68,1 — de två amerikanska medtech-husen sitter inom en procentenhet av varandra; det är läkemedelssidan (Novo Nordisk 82,0, Eli Lilly 83,4) som håller medianen uppe.
+- Rörelsemarginal (EBIT): **22,9 procent** — sjätte av sexton, under branschmedianen 27,7 men över universumets 20,7 (n=158). Notera gapet inuti grenen: brutto-till-EBIT kostar 46,3 procentenheter — forskning, process, säljkår i hundratalet länder.
+- Nettomarginal: **17,5 procent** — [så läses nettomarginalen](/dataset/halso/netto-marginal) — elfte av sexton och **4,1 procentenheter över branschmedianen 13,4**, 3,8 över universumets 13,7 (n=159). Under EBIT-medianen men över netto-medianen: trappans sista steg är grönare än grenens.
+- Fri kassaflödesmarginal: **11,7 procent** — sjunde av sexton, under branschmedianen 14,1 men över universumets 12,3-halva (n=148). Kassan två tredjedelar av vinsten — tillväxten äter kassa via rörelsekapital och kapacitet, en taktfråga att läsa i rapporten.
+
+**Tillväxt — maskinen som byggde marginalen**
+
+- Intäkter över senaste fyra räkenskapsåren: **plus 16,54 procent per år** (12 682 → 14 240 → 16 747 → 20 074 miljoner dollar, med årliga steg +12,29/+17,61/+19,87 procent) — [så räknas CAGR](/dataset/halso/omsattning-cagr-5ar). Ärlighetsnot: källan ger fyra år, inte fem. Stegen accelererar — inget plateau ännu i volymen.
+- Resultat samma period: **plus 65,27 procent per år** — 642 → 1 570 → 1 853 → 2 898 miljoner dollar, med steg **+144,55/+18,03/+56,40 procent**. [Resultat-CAGR förklarad](/dataset/halso/resultat-cagr-5ar). Resultatet 4,5× på tre år medan intäkterna tog +58 procent — lyftet sitter i marginalen, inte i volymen.
+- Härledd nettomarginalserie (resultat delat med intäkter, egen beräkning med redovisad metod): **5,06 → 11,03 → 11,06 → 14,44 procent**. Fyra år, inget nedåtsteg: 2022 års 5-procentsnivå är seriens botten bland paketbolagen hittills, och trappan upp är paketets signatur — kontrasten mot SCAs glidning (32,8 → 15,7) och Johnson &amp; Johnsons zigzag (18,9 → 41,3 → 15,8 → 28,5) kunde inte vara tydligare.
+- Intäktstillväxt senaste tolvmånadersperioden: **plus 7,5 procent** — [så läses TTM-tillväxten](/dataset/halso/omsattningstillvaxt-ttm) — under årsstegens takt: bromsen är inne i volymräkningen.
+- Prognostillväxt: **plus 3,92 procent** — [om prognostillväxt](/dataset/halso/prognos-tillvaxt) — samlad marknadsuppskattning av vinsttillväxten nästa år, ett pedagogiskt begrepp, inte en sanning och inte vår prognos. Bakspegeln säger +65 procent per år, vindrutan +3,9 — ingen av dem är den andra.
+
+**Stabilitet — medelbart belånad medtech**
+
+- Skulder per eget kapital: **0,50** — [om skuldsättning](/dataset/halso/skuldsattning). Fjärde lägsta av grenens femton, 22 procent under branschmedianen 0,64 och under universumets 0,52 (n=144).
+- Räntetäckning: **osatt** — källan saknar räntekostnad för senaste räkenskapsåret; med EBIT 4,6 miljarder mot skulder kring 12,5 miljarder enligt EV-kedjan är hålet hanterbart, men det sägs som det är.
+- Utdelnings- och återköpsfält: null i universumsposten — beskedet kommer med rapporten.
+- Insiderregistrerade köp senaste sex månader: **0** — som i nästan alla paketbolag; frånvaron av tal är ingen signal.
+
+## Källkritik: trappan som håller — och PEG som faller längst av alla
+
+Kör identitetstestet **P/E = P/B ÷ ROE** på källvärdena: P/B 2,807 dividerat med ROE 0,1534 blir **18,30** mot källans P/E-tal 19,426 — skillnad **5,80 procent**. Omvänt: 19,426 × 0,1534 = **2,98** mot P/B 2,807 — 6,2 procent. Implicit vinst per aktie: 48,37 ÷ 19,426 = **2,49 dollar**. Vinstavkastningen ROE ÷ P/B: 15,34 ÷ 2,807 = **5,46 procent** — bokföringsavkastningen i köpkursen är nästan exakt en obligationstruism, vilket är själva medtech-läsan: kapitalet binder i produktportfölj och pipeline, inte i klingande patentkassing. Seriens spann 0,3–14 procent — mittfåra.
+
+Sedan absolutkontrollen — med tecknet vänt åt andra hållet. P/E-fältet 19,426 × 2025 års resultat 2 898 miljoner = **56,3 miljarder** mot börsvärdesfältets 70,1 — residual **minus 19,7 procent**. Omvänt: börsvärdet ÷ P/E-fältet = **3 609 miljoner** implicit årsunderlag, 24,5 procent **över** kalenderårets 2 898. P/E rakt på 2025 års resultat: 24,2. Efter Holmens plus 10,3 och Johnson &amp; Johnsons plus 27,1 kommer här det tredje fallet med positivt underlagsgap: vinsten har **stigit under räkenskapsåret**, och P/E-fältet mäter ett starkare tolvmånadersfönster än kalenderåret — Johnson &amp; Johnson-paketets spegelbild, där underlaget i stället låg under kalderåret. Vittnet: nettofältet 17,50 procent × TTM-intäkterna 21 580 miljoner (20 074 × 1,075) = **3 776 miljoner** — mot det implicita underlaget 3 609, inbördes kvot **1,05**. Två fält ur källans olika moduler landar fem procent ifrån varann: P/E-fältet är ett trailing-tal på ett fönster som växer in i prognosfältets fråga. Fjärde kontrollen i samma familj: ROE-korsningen — 3 609 ÷ 24 970 (EV-kedjans eget kapital) = **14,45 procent** mot fältets 15,34. Grönt.
+
+Sedan PEG-fältet — seriens största klyfta hittills. Konventionen 19,426 ÷ 3,92 = **4,96** mot källans 0,67: faktor 7,4 (förra rekordet SCAs 0,45 mot 1,00 i faktor två). Baklänges implicerar källans fält 19,426 ÷ 0,67 = **28,99 procent** tillväxt — som matchar vare sig prognosfältet 3,92, TTM-fältet 7,5 eller resultat-CAGR-fältet 65,27, utan ligger som en egen spårning mitt emellan historia och konsensus. PEG-kontrollens femte klassiker: fältet är två artefakter multiplicerade — historiens takt i nämnaren, marknadens multiplar i täljaren — och som mått på framtida prisvärdhet är det pensionerat. Hierarkin oförändrad: härledbara multiplar kontrolleras, okända vägar är räknestorheter.
+
+Sedan EV-kedjan — NIKE-paketets femstegskontroll: 70,1 ÷ P/B 2,807 = eget kapital **25,0 miljarder**; × skuldkvot 0,5015 = skulder **12,5 miljarder**; EV = **82,6 miljarder**; EBIT 2025 = 20 074 × 22,90 procent = **4 597 miljoner**; EV/EBIT-kedjan = 82 620 ÷ 4 597 = **17,97** mot källans 17,146 — kvot **1,05**, tätare än Johnson &amp; Johnsons 1,07 och seriens näst tätaste bland paketen hittills.
+
+Sedan FCF-paret: marginalvägen 11,68 procent × 20 074 = **2 345 miljoner** mot yieldvägen 3,50 procent × 70,1 = **2 453 miljoner** — kvot **1,05**, i paritet med grenens amerikanska syskonpaket. Räkningen: gröna — identitet 5,8, EV-kedja 1,05, FCF-paret 1,05, ROE-kors 14,45 mot 15,34, TTM-vittnet 1,05; förklarat — absolutkontrollen med tecknet som är själva berättelsen; pensionerat — PEG. Trappan håller i alla riktningar: kontrollerna stämmer, och det enda gapet pekar uppåt i resultaträkningen, inte åt sidan i fältens logik.
+
+## Så står sig bolaget mot branschen
+
+| Nyckeltal | Boston Scientific | Median hälsa | Median hela universumet |
+|---|---|---|---|
+| P/E | 19,4 | 24,8 (n=15) | 20,5 (n=150) |
+| P/B | 2,81 | 4,36 (n=15) | 2,83 (n=156) |
+| Räntabilitet på eget kapital (ROE) | 15,3 % | 18,5 % (n=15) | 15,6 % (n=155) |
+| Rörelsemarginal (EBIT) | 22,9 % | 27,7 % (n=16) | 20,7 % (n=158) |
+| Nettomarginal | 17,5 % | 13,4 % (n=16) | 13,7 % (n=159) |
+
+(Alla värden hämtade 2026-09-03 för bolagets del; medianerna beräknade 2026-09-17 ur 159-bolagsfilen — 16 bolag i hälsogrenen, n per mått redovisat; PEG-medianen 0,79 (n=15), EV/EBIT 17,1 (n=16), FCF-yield 4,3 procent (n=15). Servade dataset-sidor visar äldre medianer tills nästa prod-bygge.)
+
+Läsningen: billigt i grenen, mitt i universumet — P/E 22 procent under hälsogrenens median men 5 under universumets; P/B 36 under grenen men exakt i universumets mittfåra; EV/EBIT på grenens median till punkten. Lönsamheten under grenen på räntabilitet och rörelse, över på netto — och historien snabbast i hela paketserien. Grenens tre paket i ett stycke: AstraZeneca (patentmotorn, P/B 48,8), Johnson &amp; Johnson (mittpositionen med kedjan i behåll) och Boston Scientific (trappan som bygger sig själv — långsammast prissatt, snabbast vuxen). Jämförelsen mot samtliga kollegor finns i [universumjämförelsen](/dataset/halso/universumjamforelse), och bolagets sida i biblioteket finns [här](/bolag/bsx).
+
+## Tre sätt att läsa utfallet — övningar i metod
+
+Tre övningar i vad en rapportläsare tittar på för ett renodlat medtech-bolag — ingen är en bedömning av den 28 oktober, alla är träning i metod och ren aritmetik.
+
+**Övning A — läs trappan: hur många steg återstår?** Grundberättelsen: marginalserien 5,06 → 11,03 → 11,06 → 14,44 procent, resultatsteg +144,55/+18,03/+56,40, intäktssteg +12,29/+17,61/+19,87. Från 2022 års botten har nettomarginalen tagit 9,4 procentenheter på fyra år — i en gren där Johnson &amp; Johnson står på 21,5 och läkemedelshalvan högre. Träningsfrågorna till rapporten: vilka kostnadsposter har bärt trappan hittills (skalning av bruttovinsten, mix, engångsposter i bottenåret?) — och är 14,4 ett steg på vägen eller ett plan? Räkneövning: vid oförändrad bruttomarginal 69,2 krävs en brutto-till-EBIT-trappa på 46,3 procentenheter för dagens läge; varje procentenhet EBIT-flyttning är 200 miljoner dollar i resultat. Kontrasten till seriens andra morfologier: SCAs glidning (varje år sämre), Johnson &amp; Johnsons zigzag (poster flyttar år mellan år) — här är frågan aldrig vad som hände, utan hur länge det pågår.
+
+**Övning B — läs PEG-treklövern: 0,67, 4,96, 28,99.** Tre tillväxttal i samma PEG-fält: källans 0,67, konventionens 4,96 (P/E delat med prognosfältet), och den implicita nämnaren 28,99 procent. Räkneövningar utan prognoskaraktär: för PEG lika med ett på konventionen krävs 19,4 procent nästa-års-tillväxt — nästan fem gånger konsensusfältets 3,92; vid oförändrad multipel och infriad prognostillväxt står P/E vid 19,426 ÷ 1,0392 = **18,7** om ett år. Lärdomen är PEG:s tredje ansikte: efter SCA (dubbelt artefakt) och Johnson &amp; Johnson (nämnaren mellan fält) visar det här fallet en nämnare som inte finns i källans egna fält alls — historian diskonterad som framtid. Fråga inte "är PEG låg?" utan "vems tillväxt står i nämnaren — historiens, konsensus, eller ingen?"
+
+**Övning C — scenariorutan i ren aritmetik, och marginalvikten mitt i listan.** Universumet saknar kvartalsserier, så rutan räknas på 2025 som bas: intäkter 20 074 miljoner dollar och rörelsemarginal 22,90 procent ger rörelseresultatet cirka 4 597 miljoner. Med tre intäktsnivåer (±3 procent) och tre marginaler (±1 procentenhet) blir rutan, i miljoner dollar:
+
+| Rörelseresultat, miljoner dollar | Marginal 21,90 % | Marginal 22,90 % | Marginal 23,90 % |
+|---|---|---|---|
+| Intäkter 19 472 | 4 264 | 4 459 | 4 654 |
+| Intäkter 20 074 | 4 396 | 4 597 | 4 798 |
+| Intäkter 20 676 | 4 528 | 4 735 | 4 942 |
+
+Två räknesatser: en procentenhet marginal flyttar resultatet cirka 201 miljoner vid oförändrade intäkter; tre procent mer intäkter flyttar det cirka 138 miljoner — **marginalratten väger 1,46 gånger tyngre**. Essity-paketets formel (ett delat på tre gånger marginalnivån) ger samma tal: **1,46** — mitt i seriens lista: SCA 8,55 > Holmen 4,6 > Volvo Group 3,2 > NIKE/Essity 2,6 > Alfa Laval 2,1 ≈ ABB 2,0 > Telia 1,89 > Sandvik/Atlas Copco 1,6–1,7 > **Boston Scientific 1,46** > Tele2 1,37 ≈ Iberdrola 1,36 > Hydro 1,20 > Johnson &amp; Johnson 1,14 > banker/Wallenstam 0,5–0,6. Yara-paketets gränsnot får här sin motsvarighet uppåt: en hög marginal är svår att flytta, men det här huset har flyttat netto nio procentenheter på fyra år — historiskt är trappan rörlig, och rutans en procentenhet är 4,4 procent av EBIT-nivån. Alla nio celler är aritmetik på 2025 års bas, inga prognoser.
+
+## Praktiskt inför 28 oktober
+
+- Rappdagen onsdagen den 28 oktober enligt bolagets IR-eventsida, konferenssamtal klockan 08:00 östlig USA-tid = cirka 13:00 svensk tid; tredjepartskalendern anger samma datum. Ingen tyst period är utlagd — usa-bolag redovisar inte svenska tystperioder (kontrast SCAs 30 kalenderdagar).
+- Jämförelseperiod: kontrollera om siffrorna redovisas som Q3 (juli–september) eller rullande tolv månader — H&M-läsarten: rätt bas i fjol är samma period. Segmentredovisningen bär två huvudgrenar (kardiovaskulärt och medtech-övrigt i bolagets egen indelning) — läs marginaltrappan per segment.
+- Valuta: amerikanska dollar i rapport och notering — ingen valutaterm i multiplarna (samma klass som NIKE- och JNJ-paketen, kontrast mot ABB och Nordea).
+- Den 28:e är bolaget dagens enda universumbärande paketbolag: SSAB (07:30 svensk tid), UPM och Fortum saknar universumposter, Meta- och Alphabet-datum är estimat — men tvärgrensdagen är ändå seriens bredaste slutet av oktober. Dagen efter rapporterar Eli Lilly — hälsogrenens fjärde paket är nästa fält, och AstraZeneca väntar i november.
+- Ordlista för alla begrepp finns i [kurserna](/kurser). Metodtransparensen finns på [transparenssidan](/transparens) och [källsidan](/kallor).
+- Efter rapporten uppdateras universumet vid nästa insamling — bolagets post står på 2026-09-03-vindan. Oavsett utfall: ny rad i det öppna kvittot.
+
+## Källor
+
+- Rappdag 2026-10-28, konferenssamtal kl 08:00 ET — officiell: Boston Scientifics IR-eventsida (Datumet är utlagt på bolagets IR-eventsida; Zacks anger samma datum), kalenderunderlag hämtat 2026-09-15 — internt: data/blogg-utkast/kvartal/2026-q3/kalender-halso.json.
+- Nyckeltal, kurser, börsvärde och serier: bolagsuniversumets datainsamling för BSX 2026-09-03 (Yahoo Finance, quoteSummary-moduler; MarketStack dubbelkoll av kurs, P/E, P/B och börsvärde med slutkurs 2026-09-02; ROIC-proxy-not; räntetäckning osatt; EK/FCF-balansserier och moat-fält null — redovisade luckor; serier/CAGR 4 räkenskapsår; prognostillväxt = konsensus EPS +1 år) — internt: data/portfolj-system/bolagsunivers.json. Medianer beräknade 2026-09-17 ur samma fil (159 bolag, varav 16 i hälsogrenen; positioner: P/E 4/15, P/B 5/15, EV/EBIT 9/16, PEG 7/15, FCF-yield 6/15, ROE 7/15, ROIC 3/15, bruttomarginal 8/16, EBIT 6/16, nettomarginal 11/16, FCF-marginal 7/16, skuld/EK 4/15; universumets n per mått: P/E 150, P/B 156, EV/EBIT 151, ROE 155, ROIC 141, brutto 157, EBIT 158, netto 159, FCF-marginal 148, FCF-yield 144, skuld/EK 144, PEG 134).
+- Identitetstest: egen beräkning enligt P/E = P/B ÷ ROE (2,807 ÷ 0,1534 = 18,30 mot källans 19,426; differens 5,80 procent; omvänt 19,426 × 0,1534 = 2,98 mot 2,807; implicit vinst per aktie 48,37 ÷ 19,426 = 2,49 dollar; vinstavkastning ROE ÷ P/B = 5,46 procent). Absolutkontroll: 19,426 × 2 898 = 56,3 mdr mot mcap-fältet 70,1 mdr; residual −19,7 procent; implicit årsunderlag 3 609 miljoner (+24,5 procent mot 2025); P/E direkt på 2025 års resultat 24,2; TTM-vittnet nettofält 17,50 % × TTM-intäkter 21 580 = 3 776 mot 3 609, kvot 1,05 (TTM-intäkter = 20 074 × 1,075). ROE-korskontroll: 3 609 ÷ 24 970 = 14,45 procent mot fältets 15,34.
+- PEG-analys: källans 0,67 med prognostillväxt 3,92 procent; konventionen 19,426 ÷ 3,92 = 4,96 (faktor 7,4 — seriens största klyfta, förra rekordet SCA faktor 2); implicit tillväxt ur fältet 28,99 procent, matchar inget av källans egna tillväxttal (3,92/7,5/65,27).
+- EV-kedja: egen beräkning i fem steg (EK 70,099 ÷ 2,807 = 25,0 mdr; skuld × 0,5015 = 12,5 mdr; EV 82,6 mdr; EBIT 20 074 × 22,90 % = 4 597 MUSD; EV/EBIT-kedja 17,97 mot källans 17,146 — kvot 1,05). FCF-par: marginalvägen 11,68 % × 20 074 = 2 345 MUSD mot yieldvägen 3,50 % × 70,1 mdr = 2 453 MUSD — kvot 1,05.
+- CAGR-kontroller: intäkter (20 074 ÷ 12 682)^(1/3) − 1 = +16,54 procent mot fältets 0,1654; resultat (2 898 ÷ 642)^(1/3) − 1 = +65,27 procent mot fältets 0,6527 — båda gröna med exponenten antal år minus ett (seriens konvention, Castellum-paketet).
+- Scenarioruta, räknesatser och marginalvikt: aritmetik på 2025 års bas ur universumsserierna (bas 20 074 MUSD; 22,90 %; brutto-till-EBIT-trappa −46,3 procentenheter; netto-trappan 5,06 → 14,44); nio celler och båda räknesatserna maskinellt dubbeltkontrollerade vid tillverkningen 2026-09-17; marginalvikt 1 ÷ (3 × 0,2290) = 1,46.
+- Vågvalideringsnot: bolaget står utanför vågvalideringens tolvbolagsuniversum och saknar analysfil i data/analyses/ (11 filer, ingen BSX) — paketet bygger på kalender och universumsdata, ingen dom och ingen 25-cellersmatris redovisas (Tele2-paketets presedens; luckan är information, inget värde är gissat).
+- Pivot-not: detta är omgångens andra val — förstavalet Johnson &amp; Johnson (13 oktober) kolliderade med syskonet u3:s klaim och färdiga paket (klaim-genom-handling, Yara-precedensen); JNJ-materialet kasserades utan spår och JNJ-paketet är deras.
+
+*Detta är pedagogisk finansutbildning enligt lagen (2007:528) 2 kap 5 § — inte investeringsrådgivning. Alla siffror är hämtade ur AK1A:s egna datainsamlingar med källa och datum angivna; där en källa saknar data står det explicit, och där källans fält inte håller för kontroll redovisas beräkningen i stället. Inga köp-, sälj- eller hållningsrekommendationer förekommer, och publiceringen av detta paket är kundens beslut.*

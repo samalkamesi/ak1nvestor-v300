@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-16)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-17)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -1174,6 +1174,45 @@ glesare för varje dag); (3) motorregistret 14 dagar fruset; (4) gap 3:s
 sista halva: vaktrapports-stopp i deployvägen (artefaktklassen stoppad,
 RÖD kvalitetsrapport blockerar fortfarande ej).
 
+## UPPDATERING 2026-09-17 (dokvåg s9-u1 omgång 11 — E35 ÅTERDIFFAD: tmp-skyddet FULLT levererat i båda ändarna)
+
+Fjärde E35-passningen (09-15 · 09-16 13:20 · 09-17 01:2x) — andra varvets
+regel pekar hit igen: sedan omgång 10:s mätning levererade s8-vågen BÅDA
+halvorna av tmp-skyddet (448365a9 s8-u2 vakt/grind ~04:42Z + 84a1841f
+s8-u1 ROTKUR o44) mot det gap omgång 10 öppnade. Objektval mot duplikat
+EFTER kollisionskontroll: auto-s9-manifestet (05:05Z) kör tre dokvågs-
+syskon mot SAMMA kartfil — u1:tak = 1 system, E35 valt och commit sker
+omedelbart efter redigeringen (clobber-kuren). Allt MÄTT i arbetsytan
+2026-09-17 ~07:1x lokal (sex egna svitkörningar + full vaktkörning +
+motorvalidering, curl loopback+HTTPS, ps, ls/grep, git log) — aldrig
+worklog-läsning:
+
+| Mått | Kartan (E35-diff omgång 10) | Verkligheten 2026-09-17 (mätning) |
+|---|---|---|
+| tmp-gap (5) vakt/grind-halvan | STÄNGT av s8-u2 (påstått i kön) | **BEKRÄFTAT EGNA KÖRNINGAR**: tmp-stad.mjs ropas av pre-commit FÖRE tsc (hook rad 40 med \|\| echo-fallback — städarens fel låser aldrig commit-taket) + kvalitetsvaktens sektion 11 ropar den med transparent rad (kod mätt rad 57/927/934); svit 15/15 PASS egen körning |
+| tmp-gap (5) rot-halvan | "pågår (s8-u1)" | **STÄNGD (o44, 84a1841f) + verifierad**: tsconfig exclude .tmp + tmp_*.ts (rad 42–43, mätt) · svitgenerering i .tmp/ · zonsoparen stada-tmp-ts.mjs (rot = u2:s tmp-stad, .tmp = u1:s) med svit 12/12 PASS egen körning · TREDJE läckvägen dokumenterad: process.exit inuti try mossar finally — morgonrondsviten läckte vid VARJE körning, ej bara vid SIGKILL (o44-protokoll rad 27–30, live-bevisat) |
+| Falsklarmsrepetitionen | — | **GRÖN enligt protokoll** (planterad 01:19-läcka i rot → pre-commit självläker: TMP-STÄD + tsc, HOOK_EXIT=0) + EGEN repetitions­mätning: morgonrond 19/19 & demoklient 16/1 (G1 = känd demodata-brist, ej regression) körs — rot ren; ETT transientfönster på sekunder fångat (en tmp-fil syntes direkt efter demoklientens fail-väg, borta vid nästa ls = svitens fördröjda egenstädning; residualen bär städaren i grinden) |
+| Vaktkörning | 11/11 GRÖN (23:22Z) | **11/11 PASS · FEL 0 · MANUELLA 0 · GRÖN — EGEN körning 05:09:35Z** (rapportfilen omskriven; tmp-städningen inbyggd i sektion 11) |
+| Motorvalidering | 107/0/0 | **107 PASS / 0 FAIL / 0 SKIP (6,2 s, EGEN körning)** — validera-motorer städar nu sin EGEN tmp-fil (utfällande rad i svitutdata) |
+| Testsviter | 69 | **74** (ls-mätt; +5 på ett dygn) — aggregator-gapet VÄXER |
+| Prod + pulsvakt | grön (varv 330) | hem 200 loopback OCH HTTPS (egna sonder); pulsvakt lever:true · statiskStatus "gron" · varv 675 · PID 1207077 (ps + statusfil; senasteKoll 05:08:59Z färsk) |
+| Motorregistret | fruset 09-03 | **fortfarande fruset** — efff399c 2026-09-03 (git-mätt; 14 dagar) |
+| Vaktrapports-stopp (gap 3:sista halvan) | saknas | **fortfarande saknas, mätt**: 0 vaktrapport/kvalitetsrapport-träffar i prod-synk.mjs (deployvägen bär artefaktgrinden men inget RÖD-rapport-stopp) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E35 | LEVER 8 → **LEVER 9** | D20/E34-precedenserna: ett NAMNGIVET gap från föregående dokvåg är FULLT stängt mekaniskt i BÅDA ändarna — klassen som 2026-09-17 01:19 LÅSTE ALL commit och krävde manuella handgrepp är död i tre lager (.tmp/-generering + tsconfig-glob + signaturverifierad städare i grind OCH vakt), bevisat levande av TVÅ oberoende agenter (äkta läcka städad UNDER commiten; planterad repetition självläker HOOK_EXIT=0) och ÅTER verifierat egenhändigt här (15/15 + 12/12 + 19/19 + 16/1 + vaktkörning 11/11 GRÖN + 107/0/0). Kontroll 11 gör typbaslinjen daglig. Restgapen namnges: aggregatorn VÄXER (74 sviter = fortfarande provtagning), motorregistret fruset 14 dagar, vaktrapports-stoppet — inget av dem nådde konsumentytan och två av tre bär dokument-/processkaraktär. Kvalitetssystemets kärnuppdrag — hålla kvaliteten MEKANISK — bevisat i skarpt läge: hel incidentklass stängd på ett dygn |
+
+Snittscore **7,5** (285 → **286** poäng / 38 system; E35 +1 vid denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) aggregatorn ("kör-alla-tester" med
+PASS/FAIL-summa i RESULTAT_JSON-mönstret) — 74 sviter och växer, provtagnings-
+glappet fördjupas per dag; (2) motorregistret 14 dagar fruset (efff399c) —
+regenereras med testtäckningskolumner; (3) gap 3:s sista halva: vaktrapports-
+stopp i deployvägen (RÖD kvalitetsrapport ⇒ deploy-stopp); (4) transient-
+fönstret i demoklientens fail-städning kan stramas åt (omedelbar unlink) —
+kosmetiskt, grinden fångar residualen.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1213,11 +1252,11 @@ RÖD kvalitetsrapport blockerar fortfarande ej).
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | **FLAGGA** | 7 | PROD-TÖMT 09-16 (mätt): system_events tom sedan 13:46, arkivet 09-16 07:24 = enda kopian (27,5 MB), återimport MEKANISERAD men blockerad (dedupe-läge saknas, mätt) + KURERAD ALTER v2 FÖRLORAD i clobber (commit a3756ab7 bokför leveransen men saknar filen — disk/HEAD bär V1, dubbelt underkänd; enda v2 = index-provets protokoll rad 33); DR = SQL + moln-JSON (mätt); översättningskö 320 oförändrad (kund-SQL krävs) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | PROD-INCIDENT 09-16 (mätt): OOM-kedja → .next inkomplett → KUNDSYNLIGT OSTYLAD 10:02→pågående 13:19 med alla vakter blinda utom pulsvaktens nya sond; bristklassen ÅTERKOM i "fullföljt" bygge 12:50 (färsk prerender refererar 12 ej emitterade chunks — 12/25 × 404 mätt mot prod OCH disk); läkning = ombygge vid RAM≥2200 (pågick vid mätningens slut); DR/backup själv grön (kvartals-DR 2×, dump-markörvakt, RAM-vaktens vägran RÄTT); NYTT GAP: post-build-artefaktverifiering; kvar: cron-koppling + pgpass, hybrid-sync, ISR 12/44, Storage-restore |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | 11 kontroller (KONTROLL 11 Typbaslinjen: tsc dagligen mekaniskt via 07:02-pumpan, projektbinär) + 11/11 PASS · 0 manuella · GRÖN egen vaktkörning 09-17; artefakt-klassen av gap 3 mekaniskt stoppad i deployvägen (prod-synk verifieraArtefakt FÖRE pm2-restart + kraschvakt-ärlighet, kod mätt); kvar: aggregator (69 sviter = provtagning), motorregister fruset 09-03, NYTT tmp-läckage-gap (SIGKILL-dödad svit lämnade tmp_*.ts som bröt baslinjen + commit-grinden, mätt 09-17), vaktrapports-stopp i deploy saknas |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 11 kontroller (KONTROLL 11 Typbaslinjen: tsc dagligen mekaniskt, projektbinär) + 11/11 PASS · 0 manuella · GRÖN egen vaktkörning 09-17 05:09Z; tmp-läckeklassen STÄNGD i BÅDA ändarna (o44-ROTKUR: .tmp/-generering + tsconfig-glob tmp_*.ts + exit-efter-finally; s8-u2:s tmp-stad.mjs i pre-commit + sektion 11 — svit 15/15 + 12/12, falsklarmsrepetition GRÖN HOOK_EXIT=0; allt egenhändigt omätet 09-17); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (74 sviter = provtagning), motorregister fruset 09-03, vaktrapports-stopp i deploy saknas (mätt: 0 träffar i prod-synk) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning mätbevisad i kod (o27+o31; LCP 5 542→4 360 ms på /, o27 EFTER) + vilande facit på JS-friskt bygge (o32); kvar: inga egna tester, /studio-EFTER obokförd, språkresolvens-CLS intermittent, sökindex-cadans |
 
-Snittscore: **7,5/10** (285 poäng / 38 system; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,5/10** (286 poäng / 38 system; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -2614,7 +2653,23 @@ hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
   täckning 12/44 → 44/44 (sökvägslista komplett); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
-## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+
+*Uppdatering 2026-09-17 (dokvåg s9-u1 omgång 11 — fjärde passningen): gap (5)
+tmp-läckage-klassen är FULLT STÄNGD i båda ändarna och score höjs 8 → 9.
+01:19-klassen som låste ALL commit är mekaniskt död i tre lager: ROTKUR (o44,
+84a1841f — svitgenerering i .tmp/, exit-efter-finally mot process.exit-mossade
+finally: morgonrondsviten läckte vid VARJE körning, ej bara vid SIGKILL;
+tsconfig-glob tmp_*.ts; zonsoparen stada-tmp-ts.mjs 12/12) + vakt/grind-halvan
+(s8-u2 448365a9 — tmp-stad.mjs signaturverifierad i pre-commit + sektion 11,
+svit 15/15, äkta läcka städad UNDER commiten) + falsklarmsrepetitionen GRÖN
+(planterad läcka → hooken självläker HOOK_EXIT=0). EGENHÄNDIGT omätet i denna
+dokvåg: vaktkörning 11/11 GRÖN (05:09:35Z), motorvalidering 107/0/0 (6,2 s),
+morgonrond 19/19 + demoklient 16/1 (G1 känd demodata-brist) med ren rot,
+74 sviter, prod 200 + pulsvakt grön varv 675. Restgap: aggregatorn (74
+sviter, växer), motorregistret fruset 14 dagar, vaktrapports-stoppet i
+deploy (mätt: 0 träffar i prod-synk). Se diff-tabellen i
+UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u1 omgång 10 — tredje passningen):
 KONTROLL 11 Typbaslinjen tillkommen (tsc via projektbinären, dagligen
@@ -2662,8 +2717,8 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   JSON, länkar, kursdata, sitemap, motorer, åäö, siffror, typbaslinje —
   kontroll 11 till 2026-09-17; skriver
   kvalitetsrapport-SENASTE.md + RESULTAT_JSON), motorvalidering (42 motorer,
-  determinism/kontraktskontroller), 69 testsviter i verktyg/ (mätbart
-  2026-09-17; 54 vid 09-16-mätningen), pre-commit-grinden (tsc-0 +
+  determinism/kontraktskontroller), 74 testsviter i verktyg/ (mätt 09-17
+  omgång 11; 69 vid omgång 10), pre-commit-grinden (tsc-0 +
   R2-filblockad vid varje commit),
   verktygsbältet (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs),
   cron-kvalitet 07:00, DRIFTSBOKEN-koppling.
@@ -2683,7 +2738,7 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   regenereras (42 motorer, autonomi-kolumner, testtäckning — oförändrat
   sedan 2026-09-03, git-bevis efff399c); (2) "kör-alla-tester"-
   aggregator (33 sviter + PASS/FAIL-summa i RESULTAT_JSON-mönstret) —
-  fortfarande provtagning — med 54 sviter; (3) deploy-blockad vid RÖD
+  fortfarande provtagning — med 74 sviter (mätt 09-17, omgång 11); (3) deploy-blockad vid RÖD
   vaktrapport — grinden stoppar commit-nivån men ingen blockerar deploy;
   EXEKTERAT 2026-09-16 (mätt): .next-skadan nådde prod som kundsynligt
   stil-lös-fel (12/25 chunks 404) medan pulsvakten larmade högprio — ingen
@@ -2701,9 +2756,14 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   tmp_*.ts/tmp_*_manifest.json + EJ git-trackad + GENERERAD-signatur — ropas
   av pre-commit FÖRE tsc + sektion 11 med transparensrad; svit 15/15, levande
   gränsbevis: äkta läcka städad AV GRINDEN under commiten; protokoll
-  TMP-SKYDD-VAKT-GRIND-2026-09-17.md); **ROT-ÄNDAN** (tmp-generering flyttas
-  ur roten till .tmp/) ägs av s8-u1 enligt anspråk — pågår, komplementär
-  halva, se data/vakten/s8-tmpskydd-kollisions-notis-u2.md.
+  TMP-SKYDD-VAKT-GRIND-2026-09-17.md); **ROT-ÄNDAN STÄNGD 09-17 (s8-u1 o44, 84a1841f)**: svitgenereringen
+  skrivs i .tmp/ + exit-efter-finally (process.exit inuti try mossar finally
+  — TREDJE läckvägen, live-bevisad) + tsconfig-glob tmp_*.ts + zonsoparen
+  stada-tmp-ts.mjs (svit 12/12); falsklarmsrepetitionen GRÖN (planterad
+  01:19-läcka → pre-commit självläker HOOK_EXIT=0) — klassen mekaniskt död
+  i BÅDA ändarna, egenhändigt omätet i dokvåg omgång 11 (15/15 + 12/12 +
+  19/19 + 16/1 + vakt 11/11 GRÖN). Zonavtalet dokumenterat i
+  data/vakten/s8-tmpskydd-kollisions-notis-u2.md + o44-protokollet.
 
 ## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-16)*
 

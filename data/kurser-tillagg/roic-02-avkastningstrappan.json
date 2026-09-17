@@ -1,0 +1,156 @@
+{
+  "slug": "roic-02-avkastningstrappan",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Avkastningstrappan — marginal och kapitalomsättning: ROIC:s två vägar",
+  "summary": "roic-seriens andra kurs: sönderdelningen av avkastningen på investerat kapital i sina två byggstenar — resultatmarginal och kapitalomsättningshastighet. Två bolag med identisk avkastning kan ha vunnit den på helt olika vägar, och vägarna skiljer sig i hållbarhet, förbättringsutrymme och fällor. Kursen lär räkna trappan, läsa förändringar i den och undvika nämnarens manipulationer.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "ROIC:s sönderdelning i två steg: resultatmarginal (vinst per intäktskrona) och kapitalomsättningshastighet (intäkter per investerad krona) — hur trappan räknas, hur samma avkastning vuxit fram på olika vägar (premiumens väg mot volymens väg), hur förändringar läses i stegen, och hur nämnaren (investerat kapital) kan både frigöra avkastning och gömma manipulationer.",
+  "why": "roic-01 gav begreppet — avkastning på investerat kapital, lönsamheten utan hävstångens makeup — och tx-03 förde det till tillväxtens domslut. Men själva talet är en produkt, och produkten döljer sin tillblivelse: en ROIC på 20 procent kan vara 25 procents marginal gånger 0,8 i kapitalomsättningshastighet — priset på en premiumprodukt — eller 3 procents marginal gånger 6,7 — volymen i en varuhuskedja. Samma avkastning, två helt olika bolag, med olika hållbarhet, olika förbättringsutrymme och olika fällor. Sönderdelningen är inte ett nytt mått utan ROIC-läsningens källkritik, och den ägs av ingen kurs i registret: DuPont-analysen (ln-01) äger motsvarande trappa för räntabiliteten på eget kapital — med hävstången som tredje steg — men ROIC:s trappa, den utan hävstång, står obyggd; roic-01 äger begreppet och spridningen (mot kapitalkostnaden), inte byggstenarna. Kursen bygger trappan: två vägar upp, hur de läses, hur de förbättras — och hur nämnaren både kan frigöra och fördunkla.",
+  "history": {
+    "origin": "Trappan är äldre än dess mest berömda namn. När DuPontkoncernens ingenjör Donaldson Brown omkring 1912 fick i uppdrag att reda ut koncernens vildvuxna siffror konstaterade han att räntabiliteten på kapitalet inte var ett tal utan en produkt: vinstmarginalen gånger kapitalets omsättningshastighet. Plötsligt kunde två fabricker med samma avkastning skiljas åt — den som tjänade mycket per såld krona och den som vände kapitalet ofta — och insikten följde med Brown till General Motors, där den blev ett av näringslivets första systematiska styrverktyg. Att mäta lönsamhet som en produkt av två händer är fortfarande kurvans kärna.",
+    "evolution": "Under 1900-talets senare hälft flyttade trappan från styrning till värdering. Värderingsforskningen och det värdeskapande styret — rörelser som mätte avkastning mot kapitalkostnad i stället för mot bokfört resultat — gjorde ROIC till navet och hävstången till makeupen (roic-01:s linje): DuPont-trappan byggdes om utan dess tredje steg, eftersom skulden flyttades ner i kapitalkostnaden i stället för upp i talen. Samtidigt lärde konkurrensläran trappans biologiska gräns: moat-kurserna (mt-01) förklarar varför hög marginal håller, och kapitalbindningsläran (ln-04) varför nämnaren växer — trappan blev mötesplatsen mellan prissättningskraft och kapitaldisciplin.",
+    "modern": "I dag läser marknaden trappan sektor för sektor. Tillgångslösa verksamheter — mjukvara, plattformar, tjänster — visar hög hastighet och bär sin avkastning i marginalen; kapitaltäta branscher — industri, infrastruktur, handel med fysiska lager — bär den i volym och omsättningshastighet. Jämförelser mellan sektorer säger därför mer om branschens natur än om skickligheten, medan förändringen i ett bolags egen trappa över tid — marginalens väg mot omsättningens väg — säger mer om ledningen än någon enskild nivå. Trappan är därmed ROIC-bokens viktigaste komplettering: talet säger hur mycket, trappan säger hur."
+  },
+  "grahamSection": "Benjamin Graham och hans medarbetare skrev Security Analysis medan DuPont-trappan var ung och ännu inte allmänt använd — men deras krav på att förstå ett resultats KÄLLA är trappans fråga i tidig form: en vinst som vuxit ur pris eller ur volym, ur kapital eller ur hävstång, är olika lästa utfall av samma krona. Grahams earning power var tänkt att bära av ett uthålligt värde — och uthålligheten sitter i trappans steg, inte i produkten. Hans margin of safety (km-030) blir här ett krav på båda händerna: marginalen och omsättningen ska bära var för sig.",
+  "lynchSection": "Peter Lynch sökte i vardagen och belönades av frekvens: kedjor vars kunder återkommer varje vecka bär kapitalomsättningshastigheten i sin kalender — hans förmåga att se en hög omsättningshastighet i ett fullt parkerat parkeringshus utanför en butik är trappan läst med ögonen i stället för i rapporten. Och hans varningar för berättelser utan marginal är trappans andra steg: en produkt som alla älskar men ingen betalar för har en smal trappa oavsett hur fort den vrids. Lynchs hantverk var att läsa båda stegen i verkligheten före siffrorna.",
+  "ak1Section": "I AK1A:s metodik är den här kursen LÖNSAMHET-familjens verktygsskrin till roic-01: V-fältets tillväxttaler (v01, v02) får sin dom i tx-03:s formel — och den formelns avkastningsled läses här in i sina byggstenar. Trappan kopplar familjens övriga kurser: marginaltrappan (ln-03) äger den första stapelns känslighet, kapitalbindningen (ln-04) den andra stapelns tyngd, Dupont-analysen (ln-01) äger spegeltrappan på eget kapital — med hävstången som ROIC-trappan medvetet lämnar utanför.",
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — samma avkastning, två vägar",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Marginalens väg — priset bär avkastningen",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Omsättningens väg — hastigheten bär den",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Trappan i praktiken — läsning och förbättring",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — nämnarens makter",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — trappan i AKM1:s metodik",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — samma avkastning, två vägar",
+      "intro": "roic-01 lärde läsa avkastningen på investerat kapital som ett tal. Denna kurs lär läsa talet som en produkt — och produkten har exakt två faktorer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avkastningen på investerat kapital kan skrivas som en produkt av två kvoter: rörelseresultatet delat med intäkterna — resultatmarginalen, alltså vad bolaget tjänar på varje såld krona — multiplicerat med intäkterna delat på det investerade kapitalet — kapitalomsättningshastigheten, alltså hur många kronor varje investerad krona omsätter på ett år. Intäkterna förkortar bort, och kvar står rörelseresultatet delat med investerat kapital: ROIC, identiskt med roic-01:s tal. Trappan är alltså ingen nydefinition — den är samma tal uppsprättat i sina två händer, och kursen räknar konsekvent på rörelseresultatsnivå (före räntor och före skattens nedtrampning; skattesteget och kapitalkostnaden ägs av roic-01 och tx-03).\n\nTvå tänkta bolag gör mekaniken levande. Bolag A: intäkt 100, rörelseresultat 25 — marginalen 25 procent — och investerat kapital 125, alltså omsättningshastigheten 100 delat med 125, det vill säga 0,8. ROIC blir 25 delat med 125 — 20 procent; i trappform: 25 procent gånger 0,8. Bolag B: intäkt 1 000, rörelseresultat 30 — marginalen 3 procent — och investerat kapital 150, alltså hastigheten 1 000 delat med 150, det vill säga omkring 6,7. ROIC blir 30 delat med 150 — åter 20 procent; i trappform: 3 procent gånger 6,7. Två bolag, identisk avkastning, och produkten är det enda av talen som är identisk mellan bolagen.\n\nDetta är kursens påstående: att ROIC utan trappan är en diagnos utan anamnes. Vägarna skiljer sig i allt som analytiker bryr sig om — hållbarhet (marginalen vaktas av konkurrens, hastigheten av branschens kapitalbehov), förbättringsutrymme (en procentenhet marginal är inte en procentenhet hastighet) och fällor (kapitel 5). Trappan är det första verktyget för den som vill veta varifrån avkastningen kommer — frågan som ln-01 ställer om räntabiliteten på eget kapital och som här får sitt svar utan hävstångens makeup."
+        },
+        {
+          "type": "definition",
+          "content": "Avkastningstrappan: ROIC = resultatmarginal × kapitalomsättningshastighet, där resultatmarginalen är rörelseresultatet per intäktskrona och kapitalomsättningshastigheten intäkterna per investerad kapitalkrona (rörelsekapital plus anläggningstillgångar i driften). Motsvarar DuPont-trappans två första steg (ln-01) — hävstångssteget är medvetet borttaget, eftersom finansieringen bor i kapitalkostnaden (roic-01)."
+        },
+        {
+          "type": "insight",
+          "content": "En produkt säger inte hur den blev till: 20 procent är 25 gånger 0,8 och 3 gånger 6,7 — ett bolag som lever på priset, ett som lever på volymen. ROIC-talet diagnostiserar; trappan berättar vägen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Marginalens väg — priset bär avkastningen",
+      "intro": "Första vägen upp är premiumens: bolaget tjänar mycket per såld krona och accepterar att kapitalet vreds långsamt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolag A:s profil — hög marginal, låg hastighet — tillhör verksamheter där differentieringen bär priset: specialiserad mjukvara, patent (v13), starka varumärken (v14), konsulttjänster med djup. Marginaltrappan (ln-03) äger resultaträkningens känslighet: när 25 öre av varje intäktskrona är rörelseresultat, bär varje kostnadskrona relativt litet av totalsumman, och en procents enhets marginalförbättring faller nästan rakt igenom — på intäkt 100 betyder marginalen 26 i stället för 25 att ROIC stiger från 20,0 till 20,8 procent (26 delat med 125), alltså 0,8 procentenheter, medan en marginell kostnadsökning på samma storlek faller symmetriskt nedåt. Marginalvägens kraft är alltså dess hävstång i resultaträkningen — och dess svaghet är densamma: känsligheten är symmetrisk, och priset som bär marginalen är också det som konkurrensen angriper först (mt-01:s vallgrav är marginalens livförsäkring; mt-02 dess erosionstest).\n\nDen låga hastigheten berättar resten. Kapital 125 mot intäkt 100 kan avspegla långa utvecklingstider, kundkontrakt med eftersläpande betalning, eller tillgångar som tar tid att värna — och varje årsvedertagen sanning om branschen styr vilken hastighet som är dess egen normal. En hastighet på 0,8 är ingen brist i en värld där produkten tar två år att bygga; den är en brist om den speglar lager som ingen behöver (ln-04:s kapitalbindning).\n\nMarginalvägens klassiska förbättringssätt är därför dubbla: försvara priset (moat-kurserna) och gallra kostnadstrappan (ln-03) — medan hastighetsledet ofta lämnas åt branschens natur. Att läsa ett bolag på marginalvägen är att läsa dess prisvärde: vad kunderna betalar som inte konkurrenterna kan kopiera."
+        },
+        {
+          "type": "insight",
+          "content": "Hög marginal är prissättningskraft i siffror — och priset är det konkurrenter angriper först. Marginalvägen läses därför med moat-frågan: vad skyddar 25 öret, och hur länge?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Omsättningens väg — hastigheten bär den",
+      "intro": "Andra vägen upp är volymens: bolaget tjänar lite per krona men vrider kapitalet många varv om året.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolag B:s profil — låg marginal, hög hastighet — tillhör handel och högvolymverksamheter: dagligvaruhandel, distribution, vissa tjänsteverksamheter med betalning före kostnad. Där är 3 procents marginal ingen skam utan branschens natur — prismedvetna kunder, tunna differentieringar, volymens ekonomi — och avkastningen byggs i stället på att varje investerad krona arbetar ofta: lager som säljs ut och fylls på igen (ln-04:s kapitalbindning är här en dygd när den är kort), hyresytor som omsätts varje dag, ett rörelsekapital som nästan finasierar sig självt när kunderna betalar snabbare än leverantörerna.\n\nRäknelägret skiljer sig från marginalvägens. På intäkt 1 000 och kapital 150 ger en förbättrad marginal från 3,0 till 3,3 procent (en tiondels förbättring, relativt) ROIC 33 delat med 150 — 22 procent; men samma resa kan gå via hastigheten: kapital 150 minskat till 136 (samme tiondel, relativt) ger 30 delat med 136 — omkring 22,1 procent. Aritmetiskt sys de därför likadana; ekonomiskt gör de det inte. Marginalförbättringen på volymvägen kräver ofta stordrift, inköpsmakt eller sortimentsdisciplin — körbara men långsamma strategier — medan hastighetsförbättringen ofta sitter i kapitalhantverket: kortare lagerlöptid, snabbare kundbetaling, hårdare kapitalstyrning. Och där marginalvägens känslighet ligger i priset, ligger volymvägens i rullningen: ett lager som stannar, en hyresyta som töms, en kundbetaling som dröjer — hastigheten faller och ROIC med den, även när marginalen består.\n\nVolymvägens läsfråga är därför frekvensen: hur ofta vrids kapitalet, och vad i verksamheten styr varvet? Frågan kan tyckas mekanisk men har djupare syssla: den tvingar analytikern att skilja en branschs natur (hög hastighet av behov) från ett bolags skick (hög hastighet av disciplin) — och bara det senare är en moat i sig."
+        },
+        {
+          "type": "insight",
+          "content": "Volymvägens avkastning bor i varvet, inte i priset: samma 3-procentsmarginal ger 20 procent ROIC vid 6,7 varv och 15 vid 5 — och skillnaden mellan branschens natur och bolagets disciplin är hela skillnaden mellan att acceptera talet och att läsa det."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Trappan i praktiken — läsning och förbättring",
+      "intro": "Trappans värde kommer fram i jämförelserna: bolaget mot sig självt över tid, och de två stegen mot varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första läsningen är förloppet. Ett tänkt bolag år ett: intäkt 200, rörelseresultat 16 (marginal 8 procent), investerat kapital 160 (hastighet 1,25) — ROIC 10 procent. År tre: intäkt 260, rörelseresultat 26 (marginal 10 procent), investerat kapital 156 (hastighet omkring 1,67) — ROIC omkring 16,7 procent (26 delat med 156). Avkastningen har stigit från 10,0 till 16,7 procent, och trappan visar var — i tre led som summerar exakt: marginalledet ger 16/160 mot 20/160, alltså 10,0 till 12,5 procent (plus 2,5 enheter — år tre marginal på år ett kapital och volym); volymledet ger 20/160 mot 26/160, alltså 12,5 till 16,25 (plus 3,75 — de sextio extra intäktskronorna till 10 procents marginal); kapitalledet ger 26/160 mot 26/156, alltså 16,25 till 16,7 (plus 0,4 — nämnarens krympning). Läsningen är enkel men ovanligt konkret: förbättringen var till största delen en pris- och volymresa, inte en kapitalresa — och frågan till ledningen skrivs därefter.\n\nDen andra läsningen är trappans tak. Marginalen har ett pris-tak (substitutionen) och hastigheten ett bransch-tak (kapitalbehovets natur) — och ett bolag som förbättrat i flera år närmar sig därför sina tak med avtagande steg. Trappan gör avklingningen synlig före sammanfattningstalet: när ROIC fortfarande stiger men båda stegen planar, är förbättringen snart slut — och när ett steg stiger medan det andra faller, pågår ett byte av väg som förtjänar namn (marginalisering av sortimentet mot kapitalfrisättning, eller tvärtom).\n\nDen tredje läsningen gäller förbättringens val. Kapitalfrisättning utan resultatpåverkan — lager 160 till 136 i kapitel 3:s logik, fast här: kapital 160 till 144 genom kortare lagerlöptid vid oförändrad resultaträd — höjer ROIC från 20,0 (32 delat med 160) till omkring 22,2 procent (32 delat med 144) utan att en enda vara sås dyrare. Sådana resor är kapitalstyrningens bjäsar: osynliga i resultaträkningen, synliga i trappans andra steg. Att läsa dem kräver balansräkningen — och det är inget fel utan poängen: lönsamhet bor i båda rapporterna."
+        },
+        {
+          "type": "insight",
+          "content": "Trappan tre läsningar: varifrån förbättringen kom (steg för steg), var den tar slut (pris-tak och bransch-tak) och var nästa finns (kapitalfrisättningen — den resa som aldrig syns i resultaträkningen)."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — nämnarens makter",
+      "intro": "Trappans andra steg har en nämnare, och nämnare kan både rädda och fördunkla. Fyra makter att känna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Makt ett: att krympa nämnaren utan att verksamheten förbättras. Ett bolag kan sälja tillgångar, täcka kapitalbehov med hyrningsavtal i stället för ägande, eller skjuta investeringar framför sig — i samtliga fall sjunker det investerade kapitalet och stiger hastigheten, utan att en enda krona tjänas mer. Skillnaden mot kapitel 4:s äkta kapitalfrisättning är uthålligheten: den äkta resan håller (kort lagerlöptid är en disciplin som består), den oäkta håller till nästa rapport när leasingen eller eftersläpningen landar. Kontermedlet är att läsa nämnarens beståndsdelar (ln-04) och fråga vad som saknas i den — inte bara vad som står.\n\nMakt två: cykeln i nämnaren. Kapitaltäta bolag skriver sina balansräkningar vid konjunkturens mest generösa punkt (st-04:s kreditcykelparallell) — produktionsmedlen värderas högt i toppen och hastigheten ser lägre ut än sin trend, medan bottenläget visar tvärtom. En trappa läst i en enda balansräkning är en trappa läst i ett väderläge; normaliseringen (vr-02:s princip för multiplar, här för kapital) är samma hantverk på andra sidan rapporten.\n\nMakt tre: jämförelser över branschgränser. Att jämföra mjukvarans 0,8 med handelns 6,7 är att jämföra klimat med väder — branschens natur sätter spannet (se-16:s sektormetod för sorteringen), och bara avvikelser från den egna branschens span är tal om skicklighet. Det rimliga jämförelsetalet är trappan mot sektorns trappa, ROIC mot kapitalkostnaden (roic-01:s spridning) — aldrig hastigheten mot en främmande branschs.\n\nMakt fyra: produkten som alibi. En stigande ROIC byggd på ett fallande steg och ett stigande kan se sund ut i sammanfattningen medan verksamheten byter karaktär — de två händerna bör redovisas var för sig, alltid. Trappan används rätt först när båda stegen redovisas vid sidan av produkten: det är kursens praktiska råd till varje analys — skriv ut alla tre talen, alltid."
+        },
+        {
+          "type": "insight",
+          "content": "Nämnaren är trappans mest manipulerbara del: den kan krympas på äkta och oäkta vis, skrivas i ett gynnsamt väderläge och jämföras i fel klimat. Motgiftet är alltid detsamma — läs beståndsdelarna, inte bara talet."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — trappan i AKM1:s metodik",
+      "intro": "I metodiken är trappan det mikroskop som roic-01:s tal förtjänar: varje ROIC-läsning följs av frågan om vägen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "LÖNSAMHET-familjen har byggt varsin del av huset: Dupont-analysen (ln-01) äger räntabilitetens trappa på eget kapital — marginal, omsättningshastighet och hävstång — medan roic-01 äger avkastningen utan hävstången och dess spridning mot kapitalkostnaden. Denna kurs fogar samman dem: samma två första steg, lästa på det investerade kapitalet, med hävstången medvetet lämnad där den hör hemma (i kapitalkostnaden, enligt roic-01:s linje). Resultatet är en familjekedja: marginaltrappan (ln-03) äger första stegets känslighet, kapitalbindningen (ln-04) andra stegets tyngd — och tx-03 för hela byggnaden till tillväxtens domslut, där avkastningen multipliceras med återinvesteringen.\n\nI AKM1:s analysflöde blir trappan därför läsregeln efter varje ROIC-tal: skriv ut tre siffror — avkastning, marginal, hastighet — och läs dem mot sektorns span (se-16) och bolagets egen historia (kapitel 4:s tre läsningar). V-fältet bidrar med sammanhanget: ett bolag vars intäkter stilla växer (v01) medan hastigheten faller binder kapital snabbare än det säljer — en varning som varken marginalen eller ROIC ensamma visar, eftersom produkten kan hålla sig stilla medan vägen byts.\n\nDärmed har roic-serien två kurser: begreppet och spridningen (roic-01), byggstenarna och vägarna (roic-02). Tillsammans svarar de på lönsamhetsfrågans båda halvor — hur mycket tjänar bolaget på sitt kapital, och varifrån kommer det — och lämnar till grannarna att föra svaret vidare: till tillväxtens pris (tx-03) och till ägandets tålamod (ud-09).\n\nKursen är utbildning i analysmetodik: att sönderdela, läsa och jämföra offentliga nyckeltal. Hur någon värderar ett enskilt bolag utifrån läsningen är läsarens eget arbete — och kursens avslutande övning tränar metoden, inte något beslut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Övning: välj två bolag i studions universum från olika branscher — gärna en med hög marginal och en med hög omsättningshastighet. Räkna deras trappor (marginal, hastighet, ROIC på rörelseresultatsnivå) från senaste rapporten, skriv de tre talen sida vid sida och läs: (1) vilken väg bär varje bolags avkastning; (2) vilken av de tre läsningarna från kapitel 4 som passar varje bolag just nu; (3) om något steg ser ut att närma sig sitt tak. Sammanfatta i en mening per bolag: varifrån kommer avkastningen — och vad skulle rubba den?"
+        }
+      ]
+    }
+  ]
+}

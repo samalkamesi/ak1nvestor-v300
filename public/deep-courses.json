@@ -202108,6 +202108,182 @@
     "grahamSection": "Benjamin Graham räknade inte med ett år i taget utan med perioder — hans earning power var en avkastningsförmåga uppskattad över en hel cykel och med försiktighet, innan något pris sattes mot den. På skuldsidan var kravet samma: trygghetsmarginalen skulle finnas i belastningens avstånd till bärkraften, inte bara i genomsnitt utan i det svagare läget. Denna kursens dubbla normalisering — täljare och nämnare — är Grahams periodtänkande tillämpat på finansieringen: frågan är aldrig vad bolaget bär som bäst, utan vad det bär när världen är som minst hjälpsam.",
     "ak1Section": "I AK1A:s metodik är denna kurs STABILITET-familiens kröningsblock: V10–V12 mäter nyckeltalen, st-01 läser dem som ett läge, st-02 stressar dem som en bana — och denna kurs sätter dem i kretsloppet, där både resultat och refinansieringspris rör sig. Cykelvyn är också brobygget till övriga dimensioner: till kapitalstrukturen (ks-01 till ks-03) för skuldens uppbyggnad, till normaliseringstraditionen (vr-02) för täljarens hantverk, till kapitalbindningen (ln-04) för reserverna i driften, och till riskfamiljen (rk-05) för cykelrisken sedd från händelsesidan. I AKM2:s sammanvägning blir stabilitetsvikten därmed en cykelfråga — inte bara hur bolaget står i dag, utan vilken värld dess balansräkning redan har överlevt."
   },
+  "st-05-refinansieringsmuren": {
+    "slug": "st-05-refinansieringsmuren",
+    "category": "STABILITET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Refinansieringsmuren — när skulden förfaller i klunga",
+    "summary": "STABILITET-familjens femte kurs och det tredje mellansteg — kursen som äger NÄR. st-01 gav täckningsgraderna (hur stor räntan är mot resultatet), st-02 stressmetoden (vad som händer om siffrorna viker), st-03 konkursmodellen och st-04 kreditcykeln (att marknadens fönster öppnas och stängs) — men ingen av dem äger den fråga som avgör om en balansräkning överlever ett enskilt datum: NÄR förfaller skulden? Denna kurs äger den frågan. Kärnbegreppet är LÖPTIDSPROFILEN — tabellen över när varje lån, obligation och kreditram måste omförhandlas — och dess farligaste form: REFINANSIERINGSMUREN, den klunga av förfall som ligger inom ett och samma fönster. Signaturgreppet är Svea Fastigheter AB, ett helt påhittat bolag med skulder på 1 200,0 miljoner kronor och en förfalloprofil i klunga — 200,0 · 400,0 · 350,0 · 150,0 · 100,0 — där år 2 och 3 tillsammans bär 750,0 miljoner, 62,5 procent av hela skulden, bakom ett och samma fönster. Bolaget är friskt efter varenda etablerat mått: räntetäckningen 137,0 ÷ 36,0 = 3,8× och soliditeten är trygg — men muren är 3,75 gånger större än kassa och outnyttjade ramar tillsammans (750,0 ÷ 200,0), och när det stängda fönstret tvingar fram refinansiering till 6,5 procent mot dagens snitt 3,0 procent stiger räntekostnaden från 36,0 till 62,3 miljoner och täckningen faller från 3,8× till 2,2× — utan att en enda krona ny skuld tagits och utan att verksamheten försämrats en enda procent. Spegelräkningen mot en jämnt fördelad profil (240,0 × 5 år, muren 480,0 = 40,0 procent) ger vid samma uppslag 2,6× i stället för 2,2×: klungan i sig är skillnaden. Kursens fyra mätredskap: klungmåttet (nästa 24 månaders andel av skulden), mur-kvoten (750,0 ÷ (80,0 + 120,0 + 2 × 60,0) = 2,3× mot kassa, ramar och fönstrets kassaflöde), uppslagskänsligheten (+3,5 procentenheter på murandelen = 26,3 miljoner per år) och förhandlingskalendern (banker förhandlar 12 till 18 månader före förfall — en mur är många förhandlingar samma kvartal). Gränserna mot grannarna hålls skarpa: skuldens instrument ägs av ks-03, cykelns fönster av st-04, covenant och kreditpris av ks-05, täckningsgraderna av st-01, stressmetoden av st-02. Ramen genomgående: förfallotabellen är en läsning av balansräkningens tidsdimension — utbildning, aldrig råd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Läsa en balansräknings fjärde dimension — tiden: löptidsprofilen visar när varje skuld förfaller, och två bolag med identisk skuld, identisk räntetäckning och identisk soliditet kan ha väsensskilda risker bara genom att deras förfall ligger olika tätt · Behärska klungmåttet: nästa 24 månaders förfall som andel av hela skulden — Svea Fastigheter 750,0 av 1 200,0 = 62,5 procent i klunga mot 480,0 = 40,0 procent för den jämnt fördelade spegelprofilen 240,0 × 5 · Räkna mur-kvoten: muren delat i kassa plus outnyttjade ramar plus fönstrets kassaflöde — 750,0 ÷ (80,0 + 120,0 + 2 × 60,0) = 2,3×; en kvot över ett betyder att bolaget MÅSTE förhandla, och förhandlingsbudet står i kalendern, inte i bolaget · Mäta uppslagskänsligheten: vad (+3,5) procentenheter gör med murandelen — 0,035 × 750,0 = 26,3 miljoner mer i ränta per år, räntekostnaden 36,0 → 62,3 miljoner och täckningen 3,8× → 2,2× utan en krona ny skuld · Skilja flödesmått från stockmått: räntetäckningen (st-01) mäter dagens ränta mot dagens resultat — muren mäter en framtida förhandling mot en framtida marknad; ett bolag kan bära 3,8× i täckning och ändå inte passera ett enda datum · Läsa förhandlingskalendern: refinansiering inleds 12 till 18 månader före förfall — klungan betyder många förhandlingar i samma kvartal, mot banker vars egen kapacitet att låna ut också är begränsad, och samma mur som är ofarlig i ett öppet fönster (st-04:s cykel) kan vara en överlevnadsfråga i ett stängt · Bygga om muren i fyra steg — förlänga före förfall (murbrytaren, till en premie), sprida förfallen, mönstra med kassaflödet under fönstret och hålla reserverna — som mekanik att förstå, inte som handling att rekommendera · Undvika fällorna: snitträntans fred (medeltalet 3,0 procent döljer klungan), täckningens blindhet, cykelförmodan att fönstret är öppet när det behövs och den osynliga muren — leasing, derivat och konvertibler som inte står i skuldtabellen men förfaller som skuld (ks-06)",
+    "why": "STABILITET-familjen hade mätt skulden i nivå, känslighet, modell och cykel — men inte i tid. st-01 (Nybörjare) äger täckningsgraderna: soliditet och räntetäckning som svenska standardmått. st-02 (Intermediär) äger stressmetoden: känslighetsanalysen av balansräkningen. st-03 (Avancerad) äger konkursmodellen: Altman Z-score. st-04 (Avancerad) äger kreditcykeln: samma balansräkning i goda och onda år. v10–v12 äger de enskilda måtten. Gemensamt behandlar de skulden som ett TILLSTÅND — hur mycket, hur dyr, hur känslig — och lämnar öppen den fråga som historiens balansrätningskriser gång på gång handlat om: när måste den omförhandlas? Det är ingen kuriosa utan stabilitetsläsningens fjärde dimension: ett bolag behöver inte gå förlustigt för att falla — det räcker att en mur förfaller i ett stängt fönster, och tvärtom kan ett betydligt svagare bolag passera samma cykel friktionsfritt bara dess förfall ligger utspritt. En läsare som aldrig byggt en förfalloprofil ser två identiska balansräkningar där den ene bär en tidsbomb och den andre en rutinlista. Därför Intermediär-nivån och därför det genomgående exemplet: Svea Fastigheter AB, ett helt påhittat fastighetsbolag — sektorn där refinansiering är livsnerven, eftersom fastighetslån aldrig amorteras klart utan alltid rullas — med 1 200,0 miljoner i skuld fördelad 200,0 · 400,0 · 350,0 · 150,0 · 100,0: klungan 750,0 miljoner (62,5 procent) i år 2 och 3, räntetäckningen 3,8× som intet säger om datumet, och uppslagsräkningen 36,0 → 62,3 miljoner i ränta som visar hur ett friskt bolag sjunker till 2,2× utan att förändras. Kursen flyttar aldrig grannarnas stenar: ks-03 äger skuldens instrument och deras bindningsmekanik, st-04 äger cykeln och dess fönster, ks-05 äger covenant och kreditbetyg, st-01 täckningsgraderna, st-02 stressmetoden, ln-04 kapitalbindningen i rörelsen och rk-01 brännräckvidden i kassan — här ägs endast förfallets klungdimension. Med femte kursen får STABILITET sitt tredje mellansteg och trappan sin tidsaxel: den som kan nivå, känslighet, modell och cykel kan nu också läsa kalendern — och skilja en balansräkning som förfaller i tysthet från en som förfaller i klunga.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — när skulden förfaller är också en risk",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — förfallotabellen och de fyra måtten",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — det stängda fönstret",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — mur-kvot, uppslag och kalender",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — kalendern i stabilitetsarbetet",
+        "minutes": 4
+      }
+    ],
+    "history": {
+      "origin": "Insikten att skuldens förfallotidpunkt är en egen risk är lika gammal som bankväsendet. Banken själv lever av den: att låna kort och utlåna långt — mognadstransformation — är kärnan i bankens affär och samtidigt dess innersta sårbarhet, för om långivarna vill ha tillbaka sina pengar före låntagarna betalar tillbaka sina står evenemanget still. När nationalekonomer på 1980-talet formade teorierna om rullningsrisk — risken att en skuld måste förnyas på villkor som bestäms av just den dagens marknad — var det denna mekanik de fångade: en förhandling som inte kan skjutas upp blir en förhandling utan alternativ. I företagskreditens värld blev praktiken gradvis en hantverksregel: krediteringen av ett bolag handlar inte bara om hur mycket det är skyldigt utan om när det måste träffa sina långivare — och termen refinansieringsmur växte fram i kreditanalysen som namn på det ögonblick då många förfall sammanfaller: en vägg av förhandlingar som måste passeras, oavsett var räntan och konjunkturen står just då.",
+      "evolution": "Finanskriserna gjorde muren till ett namn utanför kreditavdelningarna. Erfarenheterna av kriserna 2008–2009 — då marknader som bolag planerat att refinansiera i plötsligt var stängda — flyttade frågan från bankernas internmaterial till den offentliga analysen: kreditanalytiker och ratingbyråer började publicera förfalloprofiler som standardvyer, och bolag med klungor fick räkna med att frågan kom i varje rapport. I Europa följde eurokrisens år samma mönster, och i Sverige blev de höga räntorna 2022–2023 en levande läxa i realtid: fastighetsbolag — den sektor där lån konstruerats för att rullas, inte amorteras klart — fick möta förfall som skulle förhandlas om till betydligt dyrare villkor, och skillnaden mellan utspridda och klungade förfallprofiler syntes i hur lugnt eller stökigt respektive bolag kunde hantera samma ränteläge. Parallellt växte treasury-yrket på bolagssidan: att förvalta förfalloprofilen — sprida den, förlänga den i god tid, hålla reserver mot stängda fönster — blev en egen disciplin, och skillnaden mellan en hanterad och en slentrianmässigt rullad profil blev en del av vad som skiljer finansiellt hantverk från tur.",
+      "modern": "I labbet är denna kurs STABILITET-familjens tidsaxel: den som mätt nivåerna (st-01), stressat dem (st-02), modellerat konkursrisken (st-03) och läst cykeln (st-04) saknar fortfarande kalendern — och utan den vet läsaren inte vilka av balansräkningens tal som är tal om DAGEN och vilka som är tal om ett DATUM. Kursens bidrag till metodiken är förfalloprofilen som standardvy: varje genomräkning av ett skuldbärande bolag följt av tabellen över när skulden förfaller, klungmåttet och mur-kvoten — en läsning som i riskmatrisen (rs-04) ger en egen kolumn: sannolikheten att fönstret är stängt just den månad muren förfaller. Kopplingen till husets övriga rum är medveten tät: cykelfönstret är st-04:s, kreditpriset och covenanten är ks-05:s, instrumentens bindningsmekanik är ks-03:s, och kapitalbindningen i själva rörelsen (ln-04) skiljs från skuldens förfall medvetet — det ena är pengar som sitter fast i verksamheten, det andra är avtal som löper ut. Och ramen är oföränderlig: förfallotabellen strukturerar läsning av vad bolaget MÅSTE göra — den föreskriver inte vad någon läsare ska göra; utbildning, aldrig råd."
+    },
+    "lynchSection": "Peter Lynchs arbetssätt i vändningar och besvärliga bolag innehåller kursens fråga i sin mest konkreta form: innan storyn får tala får balansräkningen tala. Hans husregel i situationer där ett bolag bar skuld var att fråga inte bara hur mycket utan när den skulle betalas eller förnyas — ett bolag med en välskriven berättelse och en mur som förföll innan berättelsen hann slå igenom var, i hans erfarenhet, ett bolag där länge-dispositionen fick ta risken åt berättelsen. Lynch skrev om skillnaden mellan bolag som överlever en svacka för att få se uppgången och bolag som tvingas utfärda aktier och sälja tillgångar mitt i den — emissioner, avyttringar, tvångsförsäljningar — och roten i den skillnaden låg ofta inte i verksamheten utan i finansieringens kalender. Hans praktiska läsning är kursens: den som bedömer ett skuldbärande bolag efter storyn och täckningsgraden men utan förfallotabellen bedömer det i halvdager — storyn talar om vad som KAN hända, kalendern om vad som MÅSTE hända först, och i spänningen mellan de två avgörs ofta vem som fick behålla sitt ägande när det blev värdefullt.",
+    "grahamSection": "Benjamin Grahams marginal-tanke ger kursens fråga sin djupaste formulering: marginalen är inte bara ett avstånd mellan pris och värde utan ett avstånd i tid mellan behov och tvång. Det bolag som MÅSTE refinansiera har ingen marginal i förhandlingen — det är en part utan alternativ, och Grahams gamla iakttagelse att den som måste transagera accepterar marknadens pris, medan den som kan vänta kan förhandla, är hela refinansieringsmurens mekanik i en mening. I hans och Dodds eget analysarbete med seniora skuldposter ingick därför läsningen av när värdepapper förföll: en obligation som löper tre år till och en som löper tio är olika papper också i kris, även om räntan och nominalkursen är desamma. Grahams krav på finansiell styrka — att bolaget ska kunna bära sig självt utan att behöva marknadens nåd — är ur detta perspektiv ett krav på att kalendern aldrig ska kunna tvinga fram en affär: soliditeten är förmågan att tacka nej, och det bolag vars mur gör att nej är omöjligt har gett ifrån sig just den friheten, hur bra dess täckningsgrad än må se ut på pappret. Marginalen, sammanfattat kursens väg, är rätten att välja datum — och den som inte väljer datumet blir vald av det.",
+    "ak1Section": "I AK1A:s metodik är denna kurs STABILITET-familjens femte steg — det tredje mellanstaget på Intermediär-nivån, mellan st-02:s stressmetod och familjens två avancerade rum (st-03, st-04). Dess roll i metodiken är att ge varje stabilitetsläsning en kalender: frågan när förfaller skulden ställs automatiskt bredvid frågan hur stor den är, och svaret söks i förfallotabellens fyra mått — klungmått, mur-kvot, uppslagskänslighet och förhandlingskalender — snarare än i en känsla av att bolaget nog klarar det. I AKM1-sammanhanget matar kursen riskdelens arbete: muren är en av de få risker som har ett DATUM, vilket gör den mätbar i riskmatrisen (rs-04) på ett sätt som de flesta andra risker inte är — sannolikheten är cykelfönstrets (st-04), konsekvensen är uppslagsräkningen (26,3 miljoner per år i exemplet), och tidsaxeln är förfallotabellens egen. I ekosystemets dokumentationsdisciplin (ek-03) loggas förfalloprofilen som en av balansräkningens standardvyer: tabellen skrivs ner med källa vid varje genomräkning av ett skuldbärande bolag, så att nästa läsare kan räkna om mur-kvoten mot sitt eget antagande om fönstret. Genomgående exempel är Svea Fastigheter AB — ett helt påhittat bolag, valt för att räkneläxan ska vara ren: skuld 1 200,0 miljoner, klunga 750,0 (62,5 procent) i år 2 och 3, kassa 80,0, outnyttjad ram 120,0, fritt kassaflöde 60,0 per år, mur-kvot 750,0 ÷ 320,0 = 2,3×, och uppslaget som för 3,8× till 2,2× utan att bolaget förändrats. Kursen äger inte grannarnas stenar: ks-03:s instrument, st-04:s cykelfönster, ks-05:s covenant och kreditpris, st-01:s grader, st-02:s stressmetod, ln-04:s kapitalbindning och rk-01:s brännräckvidd nämns och länkas men byggs aldrig om. Och hela ramen är husets: förfallotabellen talar om vad bolaget måste förhandla och när — vad läsaren gör med den kunskapen är läsarens eget beslut; utbildning, aldrig råd.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — när skulden förfaller är också en risk",
+        "intro": "Familjen har mätt nivå, känslighet, konkursrisk och cykel (st-01 till st-04). Detta kapitel öppnar den dimension ingen av dem äger: kalendern — när skulden måste omförhandlas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Frågan heter: när förfaller skulden? Tänk två bolag med identisk balansräkning i varje mått som familjen hittills mätt: samma skuld, 1 200,0 miljoner; samma räntetäckning, 3,8×; samma soliditet. Det första bolagets skuld förfaller jämnt — en femtedel per år i fem år. Det andra bär en klunga: mer än hälften av allt förfaller inom samma tvåårsfönster. Efter varenda etablerat mått är bolagen utbytbara — men deras nästa fem år är olika historier. Det första bolaget förhandlar om små belopp varje år, alltid med resten av profilen som buffert; det andra måste en gång, inom ett bestämt fönster, förnya tre femtedelar av hela sin skuld på en gång — och om marknaden just då är stängd eller dyr är det ingen förhandling i meningen två parter som kan gå därifrån, utan ett möte där den ena parten har ett datum och den andra har priset. Skillnaden mellan bolagen syns inte i några av måtten från st-01 — den bor i LÖPTIDSPROFILEN: tabellen över när varje lån, obligation och ram löper ut, bolagets egen kalender över när bolaget måste möta kreditmarknaden."
+          },
+          {
+            "type": "text",
+            "content": "Genomgående exempel är Svea Fastigheter AB — ett HELT påhittat fastighetsbolag, valt för att sektorn är refinansieringens hemmaplan: fastighetslån konstrueras för att rullas, inte amorteras klart, så profilen är inte en detalj utan bolagets finansiella puls. Siffrorna: skuld 1 200,0 miljoner kronor; kassa 80,0; outnyttjad kreditram 120,0; fritt kassaflöde 60,0 per år; rörelseresultatet bär en räntekostnad på 36,0 miljoner vid snitträntan 3,0 procent (0,030 × 1 200,0), vilket ger räntetäckningen 137,0 ÷ 36,0 = 3,8× — ett mått i linje med allt st-01 lärt om friska bolag. Förfalloprofilen, i miljoner: år 1: 200,0 · år 2: 400,0 · år 3: 350,0 · år 4: 150,0 · år 5 och senare: 100,0. Läs tabellen en gång till och markera det som är kursens kärna: år 2 och 3 tillsammans förfaller 400,0 + 350,0 = 750,0 miljoner — tre femtedelar av hela skulden, 62,5 procent, bakom ett och samma fönster. Det är REFINANSIERINGSMUREN: klungan av förfall som måste passeras, oavsett var cykeln (st-04) och räntan (ma-01:s kedja) står just då. En balansräkning kan alltså vara frisk i varje mått och ändå bära ett datum som är farligare än alla måtten."
+          },
+          {
+            "type": "definition",
+            "content": "MURENS BYGGSTENAR — (1) LÖPTIDSPROFILEN: tabellen över när varje skuldpost förfaller, år för år (Svea Fastigheter: 200,0 · 400,0 · 350,0 · 150,0 · 100,0 — summa 1 200,0); (2) KLUNGAN: det fönster, vanligen 24 månader, i vilket förfallen är som tätast — här år 2–3 med 750,0 miljoner; (3) KLUNGMÅTTET: fönstrets förfall som andel av hela skulden (750,0 ÷ 1 200,0 = 62,5 procent — mot en jämn profils 40,0 procent); (4) REFINANSIERINGSMUREN: klungan sedd som arbetsuppgift — mängden skuld som MÅSTE förnyas innan fönstret stängs, med förhandlingens kalender (12–18 månader före förfall) inräknad; (5) MUR-KVOTEN: klungan delat i kassa plus outnyttjade ramar plus fönstrets fria kassaflöde — Svea Fastigheter: 750,0 ÷ (80,0 + 120,0 + 2 × 60,0) = 2,3×. Gränsen mot grannarna: skuldens INSTRUMENT ägs av ks-03, cykelns FÖNSTER av st-04, KREDITPRISET av ks-05, TÄCKNINGSGRADERNA av st-01, STRESSMETODEN av st-02 — denna kurs äger endast förfallots TID: klungan, kalendern och vad de gör mot en balansräkning som i alla andra avseenden är frisk."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — förfallotabellen och de fyra måtten",
+        "intro": "Förfallotabellen är konstruktionen — fyra mått läser den: klungan, kvoten, känsligheten och kalendern.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett: BYGG TABELLEN. Alla skuldliknande poster — banklån, obligationer, kreditramar, konvertibler (ks-06), leasingåtaganden — på en rad per år, oavsett form: kursen mäter inte instrumenten (det äger ks-03) utan deras slutdatum. Steg två: MÄT KLUNGAN. Markera det rullande 24-månadersfönstret där förfallen är tätast och räkna ut andelen av hela skulden — Svea Fastigheter: (400,0 + 350,0) ÷ 1 200,0 = 62,5 procent. Steg tre: RÄKNA MUR-KVOTEN. Klungan delat i allt som kan betala eller bära den utan marknaden: kassan, de outnyttjade ramarna och fönstrets fria kassaflöde — 750,0 ÷ (80,0 + 120,0 + 2 × 60,0) = 750,0 ÷ 320,0 = 2,3×. Kvoten över 1,0 betyder: marknadens medgivande krävs, och därmed är frågan inte om bolaget är lönsamt utan om fönstret är öppet. Steg fyra: LÄS KALENDERN. Refinansieringsförhandlingar inleds i praktiken 12 till 18 månader före förfall — Svea Fastigheter måste alltså börja förhandla om år 2:s 400,0 redan under år 1, om år 3:s 350,0 under år 2: en mur är inte ett datum utan ett arbetsprogram som börjar långt före själva förfallet."
+          },
+          {
+            "type": "tabell",
+            "content": "SVEA FASTIGHETERS FÖRFALLOPROFIL — skuld 1 200,0 Mkr, snittränta 3,0 procent: | Förfalloår | Belopp (Mkr) | Andel av skulden | Kumulativt | — | År 1 | 200,0 | 16,7 procent | 200,0 | — | År 2 | 400,0 | 33,3 procent | 600,0 | — | År 3 | 350,0 | 29,2 procent | 950,0 | — | År 4 | 150,0 | 12,5 procent | 1 100,0 | — | År 5+ | 100,0 | 8,3 procent | 1 200,0 | — | KLUNGAN år 2–3 | 750,0 | 62,5 procent | — | — | Kassa + outnyttjad ram | 200,0 | — | — | — | Fritt kassaflöde, 2 år | 120,0 | — | — | — | MUR-KVOTEN | 750,0 ÷ 320,0 = 2,3× | — | — |"
+          },
+          {
+            "type": "text",
+            "content": "Tabellens tre läsläxor. För det första KOLONNEN BELOPP: förfallotabellen är balansräkningens spegelvända sida — balansräkningen visar hur mycket, tabellen hur länge; först med båda framför sig ser läsaren vad st-01:s grader inte kan se: att 3,8× i täckning är ett uttalande om DAGENS ränta, inte om år 2:s. För det andra KLUNGRADERNA: 62,5 procent är ingen smärre avvikelse från en jämn profil — jämnt fördelat vore fönstret 480,0 (40,0 procent); klungan bär 270,0 miljoner MER i fönstret (750,0 − 480,0), och varje miljon av dem är en förhandling som inte kan skjutas upp. För det tredje MUR-KVOTENS TALORDNING: 2,3× betyder att muren är mer än dubbelt så stor som allt bolaget själv kan ställa upp utan marknaden — kassa, ram och två års kassaflöde tillsammans. Kvoten är kursens enda nya räkneoperation: en division, men den delar världen i bolag som kan vänta och bolag som måste träffa. Att muren alls FINNS beror på att amortering inte är ett alternativ här: 750,0 på 24 månader vore 375,0 per år att amortera — mot ett fritt kassaflöde på 60,0. Amorteringsvägen täcker en sjundedel av muren; resten måste lånas om. Siffran 375,0 ÷ 60,0 = 6,3× är därför kursens kortaste förklaring av varför refinansiering inte är ett val för ett bolag som Svea Fastigheter utan ett strukturellt måste."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — det stängda fönstret",
+        "intro": "Murens praktiska fråga: vad händer när förfallet möter ett fönster som cykeln (st-04) stängt? Svea Fastigheter år 2, räkneexemplet i tre steg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Scenariot: år 2 inleds med att kreditcykeln vänder — st-04:s mekanik, inte denna kursens: bankerna blir återhållsamma, marginalerna hårdare, villkoren dyrare. Svea Fastigheter har 400,0 som förfaller under året och börjat förhandla i god tid (kalenderns 12–18 månader). Fönstret är inte STÄNGT — det är DYRT: den ränta marknaden erbjuder för att rulla muren är 6,5 procent, mot dagens snitt 3,0. Räkneläxan i tre steg. Steg ett: UPPSALGET. Den nya räntan slår mot murandelen: (6,5 − 3,0) = 3,5 procentenheter × 750,0 = 26,3 miljoner mer i ränta per år, för alltid fram tills skulden betalas eller förnyas igen. Steg två: DEN NYA RÄNTEKOSTNADEN. Efter att både år 2:s och år 3:s klunga rullats: 750,0 till 6,5 procent plus de kvarvarande 450,0 till gamla 3,0 — 48,8 + 13,5 = 62,3 miljoner per år, mot förra 36,0. Steg tre: TÄCKNINGENS VANDRING. Med oförändrat rörelseresultat: 137,0 ÷ 62,3 = 2,2×. Notera vad som HÄNT och vad som INTE hänt: ingen ny skuld (1 200,0 före och efter), ingen försämrad verksamhet (137,0 före och efter), ingen misskötsel, ingen förlust — och ändå har bolaget sjunkit från 3,8× till 2,2× i räntetäckning, en tredjedel av sin marginal, mellan två rapportsidor. Orsak: ett datum och en ränta. DET är refinansieringsmurens signatur: risk som inte syns i någon nivåmått, bara i kalendern."
+          },
+          {
+            "type": "tabell",
+            "content": "UPPSLAGET — klungprofil mot jämn profil, samma skuld 1 200,0 Mkr, samma uppslag +3,5 procentenheter: | | Svea Fastigheter (klunga) | Jämn profil (240,0 × 5) | — | Mur, 24 mån | 750,0 (62,5 procent) | 480,0 (40,0 procent) | — | Extra ränta per år, 3,5 pp | 0,035 × 750,0 = 26,3 | 0,035 × 480,0 = 16,8 | — | Räntekostnad efter | 62,3 | 52,8 | — | Räntetäckning efter | 2,2× | 2,6× | — | Förlorad marginal | 3,8× → 2,2× | 3,8× → 2,6× |"
+          },
+          {
+            "type": "text",
+            "content": "Tabellens radpar är kursens bevis: samma bolag, samma skuld, samma cykel, samma uppslag — den enda skillnaden är FÖRFALLETS FORM, och den ensamma skillnaden flyttar täckningen två tiondelar och räntekostnaden 9,5 miljoner per år (62,3 − 52,8). Klungan är alltså inte en andraordensdetalj av mängden skuld utan en egen riskposition, skapad i finansieringsbeslut som kanske låg ett decennium bakåt — bolag bygger murar obemärkt, obligation för obligation, och upptäcker dem först i förfallotabellen. Vad kan ett bolag i Svea Fastigheters läge göra med profilen i förväg? Fyra mekaniker, alla med pris: FÖRLÄNGA I FÖRTID (förnya lån innan fönstret, till en premie i ränta — murbrytaren; priset är sämre villkor i dag mot friheten från datumet i morgon), SPRIDA FÖRFALLET (låna långa och korta medvetet blandat, så att inget fönster bär mer än en rimlig andel), MÖNSTRA MED KASSAFLÖDET (låta amortering och kassaflöde bygga en kudde under just muren — ln-04:s kapitalbindning visar varifrån), och HÅLLA RESERVER (outnyttjade ramar och likviditet, v11:s område, som alternativa bärare). Kursen beskriver mekanikerna — vad varje läsare eller bolag väljer är deras eget beslut; här läser vi vad som finns i verktygslådan och vad varje verktyg kostar."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — mur-kvot, uppslag och kalender",
+        "intro": "Hantverket blir till fyra mätningar som kan stå i varje analys: kvoten, känsligheten, kalendern — och den jämförande spegeln.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mätning ett: MUR-KVOTEN — klungan mot allt som bär utan marknad: 750,0 ÷ (80,0 + 120,0 + 120,0) = 2,3×. Kvotens trappsteg: under 1,0 bär bolaget självt sin mur (kassa, ramar och kassaflöde täcker förfallet — refinansiering blir ett val, inte ett måste); kring 1,0–2,0 krävs marknaden men förhandlingarna är hanterliga; över 2,0 — som Svea Fastigheter — är bolagets frihet begränsad och kalendern blir en del av själva analysen; över 3,0 är mur-passagen beroende av att fönstret står öppet. Mätning två: UPPSLAGSKÄNSLIGHETEN — en enkel produkt per kandidatuppslag: +1,0 procentenhet på klungan = 7,5 miljoner per år; +3,5 = 26,3; +5,0 = 37,5 (0,05 × 750,0). Räkningen tar tio sekunder och ger känsligheten i kronor — vilket gör den begriplig också för den som inte minns vad en duration heter (verktyget duration ägs av räntefamiljens kurser, mk-04). Mätning tre: KALENDERN — när börjar förhandlingarna? Förfall minus 12 till 18 månader, baklänges räknat från tabellen: år 2:s 400,0 inleds under år 1 — och om två års klunga 750,0 ska rullas utan klunga i förhandlingsarbetet måste två tredjedelar av det hela vara förlängt innan år 2 ens börjar. Mätning fyra: SPEGELPROFILEN — samma skuld jämnt fördelad, som motbild: 240,0 × 5, mur 480,0, kvot 480,0 ÷ 320,0 = 1,5×. Skillnaden 2,3× mot 1,5× är klungans hela pris i en kolumn."
+          },
+          {
+            "type": "tabell",
+            "content": "FYRA MÄTNINGAR — Svea Fastigheter mot spegelprofilen (samma skuld, samma kassaflöde): | Mätning | Klungprofil | Jämn profil | — | Mur, 24 mån (Mkr) | 750,0 | 480,0 | — | Klungmått | 62,5 procent | 40,0 procent | — | Mur-kvot | 2,3× | 1,5× | — | Extra ränta vid +3,5 pp (Mkr/år) | 26,3 | 16,8 | — | Räntetäckning efter uppslag | 2,2× | 2,6× | — | Förhandlingsstart | år 1 (två spår) | löpande |"
+          },
+          {
+            "type": "text",
+            "content": "Att läsa mätningarna tillsammans är mästerskapets början: kvoten säger om marknaden MÅSTE tillfrågas, känsligheten säger vad det kostar om den svarar dyrt, kalendern säger när frågan ställs och spegeln säger vad profilen skulle kosta i ett annat utfall. Tillsammans fångar de det som st-01:s grader systematiskt missar: att stabilitet inte är ett tillstånd utan en tidsplan. Även grannen på cykelsidan (st-04) får en spegel av mätningarna: kreditcykeln beskriver FÖNSTRET — när marknaden lånar ut — men mur-kvoten beskriver BEROENDET — hur mycket av bolagets öde som passerar genom fönstret; ett bolag med kvot under 1,0 går igenom en stängd cykel med ryggen fri, ett bolag med 2,3× tar hela cykelrisken på sin täckningsgrad. De två läsningarna är komplementer: cykeln utan mur-läsningen är väderrapport utan flygplan, mur-läsningen utan cykeln är flygplan utan väderrapport. Slutnotis om ordningen i större sammanhang: förfallotabellen är också utdelningspolitikens granne — kronor som lämnas ut (ud-09:s hållbarhetsläsning) är kronor som inte bygger kudde under muren, och omvänt; balansen mellan dem är en kapitalallokeringsfråga (ks-02), inte denna kursens att avgöra — här konstateras bara att de två besluten delar samma kassa."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Murens fällor har en gemensam nämnare: alla låter kalendern se lugnare ut än den är — och varje bot är en mätning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: SNITTRÄNTANS FRED — att läsa 3,0 procent i snittränta som ett uttalande om framtiden. Snittet är en MINNESBILD av de räntor som en gång tecknades, inte ett löfte om de som kommer: när muren rullas ärver inte de nya lånen de gamlas villkor utan dagens marknad — i exemplet sjunker ingen ränta, men täckningen sjunker ändå en tredjedel. Boten: läs alltid snitträntan med förfallotabellen bredvid — räntan är giltig fram till nästa förfall, inte ett år längre. Fälla två: TÄCKNINGENS BLINDHET — att tro att 3,8× i räntetäckning (st-01) skyddar mot muren. Täckningen är ett FLÖDESMÅTT: dagens ränta mot dagens resultat. Muren är ett STOCKMÅTT: en mängd skuld som möter en framtida marknad. Ett bolag kan bära 3,8× och inte passera ett enda datum — och ett bolag kan passera med 2,0× om inget förfaller. De två måtten svarar på olika frågor och skyddar mot olika risker. Fälla tre: CYKELFÖRMODAN — att räkna med att fönstret står öppet när det behövs. Cykeln (st-04) är just läran om att den inte lyder bolagets kalender: samma mur som är rutin i ett öppet fönster är en överlevnadsfråga i ett stängt, och samma bolag med samma mur kan få olika öden bara genom vilket år muren råkar förfalla — det som kan kallas tidsolyckan, helt utan att något i bolaget förändrats."
+          },
+          {
+            "type": "text",
+            "content": "Fälla fyra: MURBRYTAREN I EFTERHAND — att förväxla premien med felet. Att förnya i förtid till sämre villkor kostar — räntan under avtalsperioden blir högre än den behövde vara om fönstret hade förblivit öppet. Men att JÄMFÖRA premien med det öppna fönstrets ränta är att jämföra med ett utfall som inte var valbart när beslutet togs: rätt jämförelse är mot det stängda fönstrets pris vägt med dess sannolikhet. Det är ingen värdering av valet — mekaniken, inte rekommendationen, är kursens ämne — men läsningen av premien som slöseri är själv en fälla: försäkring ser dyr ut precis tills den behövs. Fälla fem: DEN OSYNLIGA MUREN — att bygga förfallotabellen av enbart skuldraden. Skuldlika poster förfaller som skuld även när de inte heter skuld: leasingåtaganden löper ut och måste förnyas eller kapas, konvertibler (ks-06) har lösen- och mognadsdagar som kan bli återbetalningsdagar, derivat och ränteswappar har fasta datum där positionen måste rullas. En förfallotabell utan dessa poster är som en balansräkning utan skulder: snygg, och meningslös. Boten: ALLA fordringar med datum i tabellen — oavsett hur de klassas i redovisningen."
+          },
+          {
+            "type": "definition",
+            "content": "FEM BOTAR MOT FEM FÄLLOR — (1) LÄS SNITTRÄNTAN MED TABELLEN: räntan gäller till nästa förfall, inte ett år till (3,0 procent är ett minne, 6,5 procent var frågan); (2) SKILJ FLÖDE FRÅN STOCK: räntetäckningen (st-01) mäter dagens ränta mot dagens resultat, mur-kvoten mäter framtidens förfall mot bolagets egna bärare — båda behövs, ingen av dem ersätter den andra; (3) SCENARIERA FÖNSTRET: räkna uppslaget vid minst två kandidatrick (+3,5 procentenheter gav 26,3 per år, +5,0 ger 37,5) och läs dem mot st-04:s cykel — sannolikheten är cykelns, konsekvensen är er egen produkt; (4) JÄMFÖR PREMIEN MED RISKNET, inte med det öppna fönstret: murbrytarens kostnad står mot det stängda fönstrets pris vägt med sannolikhet — aldrig mot ett utfall ingen kunde välja; (5) TA ALLA DATUM I TABELLEN: bank, obligationer, ramar, konvertibler, leasing, derivat — en mur som inte står i skuldraden förfaller ändå."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — kalendern i stabilitetsarbetet",
+        "intro": "Det sista steget är att balansräkningens fjärde dimension blir en vana: varje skuldbärande bolag möts av frågan när — och tabellen är alltid första svaret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mästerskapet består i att frågan NÄR FÖRFALLER SKULDEN ställs automatiskt — i varje genomräkning av ett skuldbärande bolag, bredvid frågorna hur mycket, hur dyr och hur känslig. I familjens struktur blir kalendern den femte pelaren: st-01 gav graderna (nivåerna), st-02 stressmetoden (känsligheten), st-03 konkursmodellen (sannolikheten), st-04 cykeln (fönstret) — och denna kurs gav datumet: när allt det andra måste hålla. Tillsammans gör de fem läsningarna balansräkningen till vad den är för en fundamental läsare: inte ett dokument utan en tidsmaskin — varje post har ett nu och ett sedan, och stabiliteten bor i skillnaden. I metodikens dokumentationsdisciplin (ek-03) får förfallotabellen sin fasta plats i loggen: tabellen skrivs ner med källa, klungmåttet och mur-kvoten räknas fram vid varje ny genomräkning, och anteckningen om vilka förhandlingar som redan påbörjats (kalendern!) är lika mycket en del av analysen som talen själva — en annan läsare ska kunna öppna loggen och se både muren och arbetsprogrammet. Och i riskmatrisen (rs-04) får muren sin egen rad: en risk med datum är den mest planerbara av alla risker — den kan inte smyga, bara överraska den som aldrig slog upp tabellen."
+          },
+          {
+            "type": "insight",
+            "content": "Den djupaste lärdomen är att MUREN INTE ÄR EN SKULDFRÅGA utan en KALENDERFRÅGA. Två bolag med identisk skuld, identisk täckning och identisk soliditet kan bära olika öden bara genom förfallets form — 62,5 procent i klunga mot 40,0 jämnt fördelat blev i exemplet skillnaden mellan 2,2× och 2,6× efter samma uppslag, 9,5 miljoner per år i ränta, producerad av ingenting annat än datumen. Nivåmåtten frågar hur djup sjön är; förfallotabellen frågar när den måste korsas. Båda frågorna behövs — och den som bara ställer den första har läst halva balansräkningen. Så fungerar metoden — en läsning av tid, aldrig en uppmaning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: bygg en egen förfallotabell. (1) Välj ETT skuldbärande bolag — påhittat som Svea Fastigheter, eller en verklig verksamhet du är nyfiken på — och samla ALLA skuldliknande poster med datum: lån, obligationer, ramar, konvertibler, leasing. (2) Bygg tabellen år för år, räkna ut klungmåttet (nästa 24 månaders förfall ÷ total skuld) och mur-kvoten (klungan ÷ (kassa + outnyttjade ramar + 2 års fritt kassaflöde)). (3) Scenariera uppslaget: vad kostar +2,0 och +5,0 procentenheter på klungan, per år, i kronor — och var landar räntetäckningen efter? (4) Läs kalendern baklänges: vilka förhandlingar måste inledas inom tolv månader från i dag? (5) Rita spegelprofilen — samma skuld jämnt fördelad — och notera skillnaden i kvot och känslighet: det är klungans pris. Skriv tabellen med källor i din logg (ek-03). Hela övningen strukturerar läsning; den avger aldrig råd — vad du gör med din tabell är ditt eget beslut. Utbildning, aldrig råd."
+          }
+        ]
+      }
+    ]
+  },
   "tx-01-organisk-mot-forvarvad-tillvaxt": {
     "slug": "tx-01-organisk-mot-forvarvad-tillvaxt",
     "category": "TILLVÄXT",
@@ -208396,6 +208572,162 @@
     "grahamSection": "Benjamin Grahams arbetssätt var att läsa rådata med egna ögon och misstro det glansiga — hans berömda varning för bolag som imponerar med avkastning tjänad på lånad grund är Du Pont-traditionens äldsta röst. Grahams eget mått på företagets 'earning power' — normaliserad, uthållig resultatförmåga — är ROIC-idéns föregångare: att fråga vad verksamheten faktiskt presterar, beräknat försiktigt och över en hel cykel, innan något pris sätts mot den.",
     "ak1Section": "I AK1A:s metodik är denna kurs LÖNSAMHET-familiens kvalitetsblock: V07–V09 mäter marginalerna, ln-01 plockar isär ROE, och ROIC sätter den sammanvägda avkastningen mot kapitalkostnaden — det värde som AKM2:s lönsamhetsdimension betygsätter när finansieringens effekter skalats bort. Spridningen mot kapitalkostnad är dessutom brobygget i andra riktningen: mot moat-dimensionen (varaktig spridning = vallgrav i siffror) och mot värderingen (stabil hög ROIC motiverar premie i multipelgapets logik)."
   },
+  "roic-02-avkastningstrappan": {
+    "slug": "roic-02-avkastningstrappan",
+    "category": "LÖNSAMHET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Avkastningstrappan — marginal och kapitalomsättning: ROIC:s två vägar",
+    "summary": "roic-seriens andra kurs: sönderdelningen av avkastningen på investerat kapital i sina två byggstenar — resultatmarginal och kapitalomsättningshastighet. Två bolag med identisk avkastning kan ha vunnit den på helt olika vägar, och vägarna skiljer sig i hållbarhet, förbättringsutrymme och fällor. Kursen lär räkna trappan, läsa förändringar i den och undvika nämnarens manipulationer.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "ROIC:s sönderdelning i två steg: resultatmarginal (vinst per intäktskrona) och kapitalomsättningshastighet (intäkter per investerad krona) — hur trappan räknas, hur samma avkastning vuxit fram på olika vägar (premiumens väg mot volymens väg), hur förändringar läses i stegen, och hur nämnaren (investerat kapital) kan både frigöra avkastning och gömma manipulationer.",
+    "why": "roic-01 gav begreppet — avkastning på investerat kapital, lönsamheten utan hävstångens makeup — och tx-03 förde det till tillväxtens domslut. Men själva talet är en produkt, och produkten döljer sin tillblivelse: en ROIC på 20 procent kan vara 25 procents marginal gånger 0,8 i kapitalomsättningshastighet — priset på en premiumprodukt — eller 3 procents marginal gånger 6,7 — volymen i en varuhuskedja. Samma avkastning, två helt olika bolag, med olika hållbarhet, olika förbättringsutrymme och olika fällor. Sönderdelningen är inte ett nytt mått utan ROIC-läsningens källkritik, och den ägs av ingen kurs i registret: DuPont-analysen (ln-01) äger motsvarande trappa för räntabiliteten på eget kapital — med hävstången som tredje steg — men ROIC:s trappa, den utan hävstång, står obyggd; roic-01 äger begreppet och spridningen (mot kapitalkostnaden), inte byggstenarna. Kursen bygger trappan: två vägar upp, hur de läses, hur de förbättras — och hur nämnaren både kan frigöra och fördunkla.",
+    "history": {
+      "origin": "Trappan är äldre än dess mest berömda namn. När DuPontkoncernens ingenjör Donaldson Brown omkring 1912 fick i uppdrag att reda ut koncernens vildvuxna siffror konstaterade han att räntabiliteten på kapitalet inte var ett tal utan en produkt: vinstmarginalen gånger kapitalets omsättningshastighet. Plötsligt kunde två fabricker med samma avkastning skiljas åt — den som tjänade mycket per såld krona och den som vände kapitalet ofta — och insikten följde med Brown till General Motors, där den blev ett av näringslivets första systematiska styrverktyg. Att mäta lönsamhet som en produkt av två händer är fortfarande kurvans kärna.",
+      "evolution": "Under 1900-talets senare hälft flyttade trappan från styrning till värdering. Värderingsforskningen och det värdeskapande styret — rörelser som mätte avkastning mot kapitalkostnad i stället för mot bokfört resultat — gjorde ROIC till navet och hävstången till makeupen (roic-01:s linje): DuPont-trappan byggdes om utan dess tredje steg, eftersom skulden flyttades ner i kapitalkostnaden i stället för upp i talen. Samtidigt lärde konkurrensläran trappans biologiska gräns: moat-kurserna (mt-01) förklarar varför hög marginal håller, och kapitalbindningsläran (ln-04) varför nämnaren växer — trappan blev mötesplatsen mellan prissättningskraft och kapitaldisciplin.",
+      "modern": "I dag läser marknaden trappan sektor för sektor. Tillgångslösa verksamheter — mjukvara, plattformar, tjänster — visar hög hastighet och bär sin avkastning i marginalen; kapitaltäta branscher — industri, infrastruktur, handel med fysiska lager — bär den i volym och omsättningshastighet. Jämförelser mellan sektorer säger därför mer om branschens natur än om skickligheten, medan förändringen i ett bolags egen trappa över tid — marginalens väg mot omsättningens väg — säger mer om ledningen än någon enskild nivå. Trappan är därmed ROIC-bokens viktigaste komplettering: talet säger hur mycket, trappan säger hur."
+    },
+    "grahamSection": "Benjamin Graham och hans medarbetare skrev Security Analysis medan DuPont-trappan var ung och ännu inte allmänt använd — men deras krav på att förstå ett resultats KÄLLA är trappans fråga i tidig form: en vinst som vuxit ur pris eller ur volym, ur kapital eller ur hävstång, är olika lästa utfall av samma krona. Grahams earning power var tänkt att bära av ett uthålligt värde — och uthålligheten sitter i trappans steg, inte i produkten. Hans margin of safety (km-030) blir här ett krav på båda händerna: marginalen och omsättningen ska bära var för sig.",
+    "lynchSection": "Peter Lynch sökte i vardagen och belönades av frekvens: kedjor vars kunder återkommer varje vecka bär kapitalomsättningshastigheten i sin kalender — hans förmåga att se en hög omsättningshastighet i ett fullt parkerat parkeringshus utanför en butik är trappan läst med ögonen i stället för i rapporten. Och hans varningar för berättelser utan marginal är trappans andra steg: en produkt som alla älskar men ingen betalar för har en smal trappa oavsett hur fort den vrids. Lynchs hantverk var att läsa båda stegen i verkligheten före siffrorna.",
+    "ak1Section": "I AK1A:s metodik är den här kursen LÖNSAMHET-familjens verktygsskrin till roic-01: V-fältets tillväxttaler (v01, v02) får sin dom i tx-03:s formel — och den formelns avkastningsled läses här in i sina byggstenar. Trappan kopplar familjens övriga kurser: marginaltrappan (ln-03) äger den första stapelns känslighet, kapitalbindningen (ln-04) den andra stapelns tyngd, Dupont-analysen (ln-01) äger spegeltrappan på eget kapital — med hävstången som ROIC-trappan medvetet lämnar utanför.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — samma avkastning, två vägar",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Marginalens väg — priset bär avkastningen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Omsättningens väg — hastigheten bär den",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Trappan i praktiken — läsning och förbättring",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — nämnarens makter",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — trappan i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — samma avkastning, två vägar",
+        "intro": "roic-01 lärde läsa avkastningen på investerat kapital som ett tal. Denna kurs lär läsa talet som en produkt — och produkten har exakt två faktorer.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Avkastningen på investerat kapital kan skrivas som en produkt av två kvoter: rörelseresultatet delat med intäkterna — resultatmarginalen, alltså vad bolaget tjänar på varje såld krona — multiplicerat med intäkterna delat på det investerade kapitalet — kapitalomsättningshastigheten, alltså hur många kronor varje investerad krona omsätter på ett år. Intäkterna förkortar bort, och kvar står rörelseresultatet delat med investerat kapital: ROIC, identiskt med roic-01:s tal. Trappan är alltså ingen nydefinition — den är samma tal uppsprättat i sina två händer, och kursen räknar konsekvent på rörelseresultatsnivå (före räntor och före skattens nedtrampning; skattesteget och kapitalkostnaden ägs av roic-01 och tx-03).\n\nTvå tänkta bolag gör mekaniken levande. Bolag A: intäkt 100, rörelseresultat 25 — marginalen 25 procent — och investerat kapital 125, alltså omsättningshastigheten 100 delat med 125, det vill säga 0,8. ROIC blir 25 delat med 125 — 20 procent; i trappform: 25 procent gånger 0,8. Bolag B: intäkt 1 000, rörelseresultat 30 — marginalen 3 procent — och investerat kapital 150, alltså hastigheten 1 000 delat med 150, det vill säga omkring 6,7. ROIC blir 30 delat med 150 — åter 20 procent; i trappform: 3 procent gånger 6,7. Två bolag, identisk avkastning, och produkten är det enda av talen som är identisk mellan bolagen.\n\nDetta är kursens påstående: att ROIC utan trappan är en diagnos utan anamnes. Vägarna skiljer sig i allt som analytiker bryr sig om — hållbarhet (marginalen vaktas av konkurrens, hastigheten av branschens kapitalbehov), förbättringsutrymme (en procentenhet marginal är inte en procentenhet hastighet) och fällor (kapitel 5). Trappan är det första verktyget för den som vill veta varifrån avkastningen kommer — frågan som ln-01 ställer om räntabiliteten på eget kapital och som här får sitt svar utan hävstångens makeup."
+          },
+          {
+            "type": "definition",
+            "content": "Avkastningstrappan: ROIC = resultatmarginal × kapitalomsättningshastighet, där resultatmarginalen är rörelseresultatet per intäktskrona och kapitalomsättningshastigheten intäkterna per investerad kapitalkrona (rörelsekapital plus anläggningstillgångar i driften). Motsvarar DuPont-trappans två första steg (ln-01) — hävstångssteget är medvetet borttaget, eftersom finansieringen bor i kapitalkostnaden (roic-01)."
+          },
+          {
+            "type": "insight",
+            "content": "En produkt säger inte hur den blev till: 20 procent är 25 gånger 0,8 och 3 gånger 6,7 — ett bolag som lever på priset, ett som lever på volymen. ROIC-talet diagnostiserar; trappan berättar vägen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Marginalens väg — priset bär avkastningen",
+        "intro": "Första vägen upp är premiumens: bolaget tjänar mycket per såld krona och accepterar att kapitalet vreds långsamt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolag A:s profil — hög marginal, låg hastighet — tillhör verksamheter där differentieringen bär priset: specialiserad mjukvara, patent (v13), starka varumärken (v14), konsulttjänster med djup. Marginaltrappan (ln-03) äger resultaträkningens känslighet: när 25 öre av varje intäktskrona är rörelseresultat, bär varje kostnadskrona relativt litet av totalsumman, och en procents enhets marginalförbättring faller nästan rakt igenom — på intäkt 100 betyder marginalen 26 i stället för 25 att ROIC stiger från 20,0 till 20,8 procent (26 delat med 125), alltså 0,8 procentenheter, medan en marginell kostnadsökning på samma storlek faller symmetriskt nedåt. Marginalvägens kraft är alltså dess hävstång i resultaträkningen — och dess svaghet är densamma: känsligheten är symmetrisk, och priset som bär marginalen är också det som konkurrensen angriper först (mt-01:s vallgrav är marginalens livförsäkring; mt-02 dess erosionstest).\n\nDen låga hastigheten berättar resten. Kapital 125 mot intäkt 100 kan avspegla långa utvecklingstider, kundkontrakt med eftersläpande betalning, eller tillgångar som tar tid att värna — och varje årsvedertagen sanning om branschen styr vilken hastighet som är dess egen normal. En hastighet på 0,8 är ingen brist i en värld där produkten tar två år att bygga; den är en brist om den speglar lager som ingen behöver (ln-04:s kapitalbindning).\n\nMarginalvägens klassiska förbättringssätt är därför dubbla: försvara priset (moat-kurserna) och gallra kostnadstrappan (ln-03) — medan hastighetsledet ofta lämnas åt branschens natur. Att läsa ett bolag på marginalvägen är att läsa dess prisvärde: vad kunderna betalar som inte konkurrenterna kan kopiera."
+          },
+          {
+            "type": "insight",
+            "content": "Hög marginal är prissättningskraft i siffror — och priset är det konkurrenter angriper först. Marginalvägen läses därför med moat-frågan: vad skyddar 25 öret, och hur länge?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Omsättningens väg — hastigheten bär den",
+        "intro": "Andra vägen upp är volymens: bolaget tjänar lite per krona men vrider kapitalet många varv om året.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolag B:s profil — låg marginal, hög hastighet — tillhör handel och högvolymverksamheter: dagligvaruhandel, distribution, vissa tjänsteverksamheter med betalning före kostnad. Där är 3 procents marginal ingen skam utan branschens natur — prismedvetna kunder, tunna differentieringar, volymens ekonomi — och avkastningen byggs i stället på att varje investerad krona arbetar ofta: lager som säljs ut och fylls på igen (ln-04:s kapitalbindning är här en dygd när den är kort), hyresytor som omsätts varje dag, ett rörelsekapital som nästan finasierar sig självt när kunderna betalar snabbare än leverantörerna.\n\nRäknelägret skiljer sig från marginalvägens. På intäkt 1 000 och kapital 150 ger en förbättrad marginal från 3,0 till 3,3 procent (en tiondels förbättring, relativt) ROIC 33 delat med 150 — 22 procent; men samma resa kan gå via hastigheten: kapital 150 minskat till 136 (samme tiondel, relativt) ger 30 delat med 136 — omkring 22,1 procent. Aritmetiskt sys de därför likadana; ekonomiskt gör de det inte. Marginalförbättringen på volymvägen kräver ofta stordrift, inköpsmakt eller sortimentsdisciplin — körbara men långsamma strategier — medan hastighetsförbättringen ofta sitter i kapitalhantverket: kortare lagerlöptid, snabbare kundbetaling, hårdare kapitalstyrning. Och där marginalvägens känslighet ligger i priset, ligger volymvägens i rullningen: ett lager som stannar, en hyresyta som töms, en kundbetaling som dröjer — hastigheten faller och ROIC med den, även när marginalen består.\n\nVolymvägens läsfråga är därför frekvensen: hur ofta vrids kapitalet, och vad i verksamheten styr varvet? Frågan kan tyckas mekanisk men har djupare syssla: den tvingar analytikern att skilja en branschs natur (hög hastighet av behov) från ett bolags skick (hög hastighet av disciplin) — och bara det senare är en moat i sig."
+          },
+          {
+            "type": "insight",
+            "content": "Volymvägens avkastning bor i varvet, inte i priset: samma 3-procentsmarginal ger 20 procent ROIC vid 6,7 varv och 15 vid 5 — och skillnaden mellan branschens natur och bolagets disciplin är hela skillnaden mellan att acceptera talet och att läsa det."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Trappan i praktiken — läsning och förbättring",
+        "intro": "Trappans värde kommer fram i jämförelserna: bolaget mot sig självt över tid, och de två stegen mot varandra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första läsningen är förloppet. Ett tänkt bolag år ett: intäkt 200, rörelseresultat 16 (marginal 8 procent), investerat kapital 160 (hastighet 1,25) — ROIC 10 procent. År tre: intäkt 260, rörelseresultat 26 (marginal 10 procent), investerat kapital 156 (hastighet omkring 1,67) — ROIC omkring 16,7 procent (26 delat med 156). Avkastningen har stigit från 10,0 till 16,7 procent, och trappan visar var — i tre led som summerar exakt: marginalledet ger 16/160 mot 20/160, alltså 10,0 till 12,5 procent (plus 2,5 enheter — år tre marginal på år ett kapital och volym); volymledet ger 20/160 mot 26/160, alltså 12,5 till 16,25 (plus 3,75 — de sextio extra intäktskronorna till 10 procents marginal); kapitalledet ger 26/160 mot 26/156, alltså 16,25 till 16,7 (plus 0,4 — nämnarens krympning). Läsningen är enkel men ovanligt konkret: förbättringen var till största delen en pris- och volymresa, inte en kapitalresa — och frågan till ledningen skrivs därefter.\n\nDen andra läsningen är trappans tak. Marginalen har ett pris-tak (substitutionen) och hastigheten ett bransch-tak (kapitalbehovets natur) — och ett bolag som förbättrat i flera år närmar sig därför sina tak med avtagande steg. Trappan gör avklingningen synlig före sammanfattningstalet: när ROIC fortfarande stiger men båda stegen planar, är förbättringen snart slut — och när ett steg stiger medan det andra faller, pågår ett byte av väg som förtjänar namn (marginalisering av sortimentet mot kapitalfrisättning, eller tvärtom).\n\nDen tredje läsningen gäller förbättringens val. Kapitalfrisättning utan resultatpåverkan — lager 160 till 136 i kapitel 3:s logik, fast här: kapital 160 till 144 genom kortare lagerlöptid vid oförändrad resultaträd — höjer ROIC från 20,0 (32 delat med 160) till omkring 22,2 procent (32 delat med 144) utan att en enda vara sås dyrare. Sådana resor är kapitalstyrningens bjäsar: osynliga i resultaträkningen, synliga i trappans andra steg. Att läsa dem kräver balansräkningen — och det är inget fel utan poängen: lönsamhet bor i båda rapporterna."
+          },
+          {
+            "type": "insight",
+            "content": "Trappan tre läsningar: varifrån förbättringen kom (steg för steg), var den tar slut (pris-tak och bransch-tak) och var nästa finns (kapitalfrisättningen — den resa som aldrig syns i resultaträkningen)."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — nämnarens makter",
+        "intro": "Trappans andra steg har en nämnare, och nämnare kan både rädda och fördunkla. Fyra makter att känna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Makt ett: att krympa nämnaren utan att verksamheten förbättras. Ett bolag kan sälja tillgångar, täcka kapitalbehov med hyrningsavtal i stället för ägande, eller skjuta investeringar framför sig — i samtliga fall sjunker det investerade kapitalet och stiger hastigheten, utan att en enda krona tjänas mer. Skillnaden mot kapitel 4:s äkta kapitalfrisättning är uthålligheten: den äkta resan håller (kort lagerlöptid är en disciplin som består), den oäkta håller till nästa rapport när leasingen eller eftersläpningen landar. Kontermedlet är att läsa nämnarens beståndsdelar (ln-04) och fråga vad som saknas i den — inte bara vad som står.\n\nMakt två: cykeln i nämnaren. Kapitaltäta bolag skriver sina balansräkningar vid konjunkturens mest generösa punkt (st-04:s kreditcykelparallell) — produktionsmedlen värderas högt i toppen och hastigheten ser lägre ut än sin trend, medan bottenläget visar tvärtom. En trappa läst i en enda balansräkning är en trappa läst i ett väderläge; normaliseringen (vr-02:s princip för multiplar, här för kapital) är samma hantverk på andra sidan rapporten.\n\nMakt tre: jämförelser över branschgränser. Att jämföra mjukvarans 0,8 med handelns 6,7 är att jämföra klimat med väder — branschens natur sätter spannet (se-16:s sektormetod för sorteringen), och bara avvikelser från den egna branschens span är tal om skicklighet. Det rimliga jämförelsetalet är trappan mot sektorns trappa, ROIC mot kapitalkostnaden (roic-01:s spridning) — aldrig hastigheten mot en främmande branschs.\n\nMakt fyra: produkten som alibi. En stigande ROIC byggd på ett fallande steg och ett stigande kan se sund ut i sammanfattningen medan verksamheten byter karaktär — de två händerna bör redovisas var för sig, alltid. Trappan används rätt först när båda stegen redovisas vid sidan av produkten: det är kursens praktiska råd till varje analys — skriv ut alla tre talen, alltid."
+          },
+          {
+            "type": "insight",
+            "content": "Nämnaren är trappans mest manipulerbara del: den kan krympas på äkta och oäkta vis, skrivas i ett gynnsamt väderläge och jämföras i fel klimat. Motgiftet är alltid detsamma — läs beståndsdelarna, inte bara talet."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — trappan i AKM1:s metodik",
+        "intro": "I metodiken är trappan det mikroskop som roic-01:s tal förtjänar: varje ROIC-läsning följs av frågan om vägen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "LÖNSAMHET-familjen har byggt varsin del av huset: Dupont-analysen (ln-01) äger räntabilitetens trappa på eget kapital — marginal, omsättningshastighet och hävstång — medan roic-01 äger avkastningen utan hävstången och dess spridning mot kapitalkostnaden. Denna kurs fogar samman dem: samma två första steg, lästa på det investerade kapitalet, med hävstången medvetet lämnad där den hör hemma (i kapitalkostnaden, enligt roic-01:s linje). Resultatet är en familjekedja: marginaltrappan (ln-03) äger första stegets känslighet, kapitalbindningen (ln-04) andra stegets tyngd — och tx-03 för hela byggnaden till tillväxtens domslut, där avkastningen multipliceras med återinvesteringen.\n\nI AKM1:s analysflöde blir trappan därför läsregeln efter varje ROIC-tal: skriv ut tre siffror — avkastning, marginal, hastighet — och läs dem mot sektorns span (se-16) och bolagets egen historia (kapitel 4:s tre läsningar). V-fältet bidrar med sammanhanget: ett bolag vars intäkter stilla växer (v01) medan hastigheten faller binder kapital snabbare än det säljer — en varning som varken marginalen eller ROIC ensamma visar, eftersom produkten kan hålla sig stilla medan vägen byts.\n\nDärmed har roic-serien två kurser: begreppet och spridningen (roic-01), byggstenarna och vägarna (roic-02). Tillsammans svarar de på lönsamhetsfrågans båda halvor — hur mycket tjänar bolaget på sitt kapital, och varifrån kommer det — och lämnar till grannarna att föra svaret vidare: till tillväxtens pris (tx-03) och till ägandets tålamod (ud-09).\n\nKursen är utbildning i analysmetodik: att sönderdela, läsa och jämföra offentliga nyckeltal. Hur någon värderar ett enskilt bolag utifrån läsningen är läsarens eget arbete — och kursens avslutande övning tränar metoden, inte något beslut."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj två bolag i studions universum från olika branscher — gärna en med hög marginal och en med hög omsättningshastighet. Räkna deras trappor (marginal, hastighet, ROIC på rörelseresultatsnivå) från senaste rapporten, skriv de tre talen sida vid sida och läs: (1) vilken väg bär varje bolags avkastning; (2) vilken av de tre läsningarna från kapitel 4 som passar varje bolag just nu; (3) om något steg ser ut att närma sig sitt tak. Sammanfatta i en mening per bolag: varifrån kommer avkastningen — och vad skulle rubba den?"
+          }
+        ]
+      }
+    ]
+  },
   "ma-01-transmissionsmekaniken": {
     "slug": "ma-01-transmissionsmekaniken",
     "category": "MAKROEKONOMI & RÄNTA",
@@ -208891,6 +209223,166 @@
     "lynchSection": "Peter Lynch arbetade med tumregeln att aktier och räntor konkurrerar om samma kapital, och hans genomgångar av hur ränteläget flyttar aktiernas attraktivitet är realräntelogik i praktiken — när de reala alternativen blir dyra söker kapital avkastning i bolag vars tillväxt slår räntan med bred marginal. Lynch betonade dock att tillväxtbolagets eget arbete väger tyngre än kulisstal: en ränte-driven multipelexpansion är en vind som kan vika, medan vinsttillväxten är bolagets egen motor.",
     "grahamSection": "Benjamin Graham skrev om obligationens och aktiens konkurrens om sparandet i termer av företagens avkastningskrav mot räntans, och hans berömda formel tillämpar en räntebas som just flyttas med marknadsläget — realräntan är den basens botten. Grahams försiktighet gäller också här: hans krav på säkerhetsmarginal innebär att ett värde som bara bär på ett gynnsamt realränteläge inte är ett köpvärde utan ett ränteläge — marginalen ska täcka vändningen, inte bara dagen.",
     "ak1Section": "I AK1A:s metodik ingår realräntan som bakgrundsvariabel i AKM2:s scenarioarbete: räntegrenarna varierar det reala kalkylränteläget mellan scenario och därmed multiplarnas spelrum (anknytning till vr-familjen och km-008-WACC-kedjan), och arbetsflödet (ek-03-traditionen) dokumenterar vilket realränteläge varje värdering antagit — så att omprövningspunkten är sökbar när marknaden flyttar grunden."
+  },
+  "ma-04-konjunkturindikatorerna": {
+    "slug": "ma-04-konjunkturindikatorerna",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Konjunkturindikatorerna — månadens siffror och bolagets nästa rapport",
+    "summary": "Fjärde kursen i ma-serien: de månatliga konjunkturmätningarna — inköpschefsindex, förtroendebarometrar, orderstockar — och hur de läses. Kursen lär skillnaden mellan ledande och eftersläpande mått, diffusionsindexets aritmetik, hur mjuka undersökningar förhåller sig till hårda data, och hur en indikatorpanel blir bakgrunden när bolagets egen rapport (km-006) ska läsas mot förväntningarna (kt-02).",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Att läsa konjunkturindikatorerna: ledande mot eftersläpande mått, diffusionsindex (50-strecket) och nettobalansens räknesätt, mjukaundersökningars natur och hårda datas eftersläpning, indikatorns väg till bolagets intäktsrad via transmissionsmekaniken (ma-01) — och de fem fällor som gör en enskild månadsiffra till brus i stället för signal.",
+    "why": "MAKROEKONOMI & RÄNTA-familjen har byggt grundhuset klart: km-054 till km-058 äger räntan, inflationen, centralbankerna, cyklerna och valutorna, ma-01 äger hela transmissionskedjan från styrränta till bolagets resultat och värdering, ma-02 äger lönesidan. Men familjen saknar det praktiska fönstret mot verkligheten som alla dessa kurser förutsätter: hur läses själva månatliga statistiken? Konjunkturcykeln (km-057) är ett mönster i efterhand — indikatorerna är dess puls, månad för månad, och ingen kurs i registret äger dem: sonden mot registret ger noll träffar på inköpschefer och förtroendebarometrar och endast en perifer orderstocksnämning i sektormetoden (se-16). Kursen fyller luckan mellan cykelteorin och rapportkalendern (km-006): den lär räknesätten bakom indexen (diffusion, nettobalans), ordningen bland dem (mjuka data leder, hårda släpar efter) och hur en panel på tre mått blir bakgrunden när nästa kvartalsrapport ska förstås — med förväntningsanalysens (kt-02) måttstock. Ämnet är utbildning i ren form: att förstå hur en statistisk serie konstrukteras och bör läsas kan aldrig bli ett ställningstagande.",
+    "history": {
+      "origin": "Fröet såddes av konjunkturforskningen i början av 1900-talet, när nationalekonomin slutade betrakta kriser som naturkatastrofer och började mäta dem som mönster. Forskningsinstitutet NBER:s arbete med att datera och kvantifiera cykler — kulminerande i Mitchell och Burns mätningsprogram från 1930-talet — gav föreställningen om indikatorer som barometrar: serier som stiger och faller med eller före konjunkturen, som lufttrycket före vädret. Ordet barometer följde med: ekonomins väderinstrument, lästa i panel, aldrig ensamma.",
+      "evolution": "Efterkrigstiden förvandlade barometrarna till regelbundna publiceringar. Inköpschefernas inköpsundersökningar — från början interna beläggningsmätningar — växte till månatliga inköpschefsindex med standardiserade frågor och säsongsrensning, och tog sin plats som industrins klassiska ledande mått. Konjunkturinstitutet i Sverige, grundat 1937, byggde motsvarande tradition med förtroendebarometrar för hushåll och företag; konsumentförtroendets mätningar i USA från slutet av 1940-talet gav metoden sin spridning. Diffusionslogiken — andelen uppåt vägd mot andelen oförändrad — blev gemensam nämnare: index som mäter utbredning, inte storlek.",
+      "modern": "I dag är indikatorkalendern tät och global: inköpschefsindex för tillverkning och tjänster publiceras varje månad i större ekonomier, förtroendebarometrar harmoniseras över länder, och orderstockar följs i statistik och i bolagens egna rapporter. Två moderna drag tillstår: serienas första versioner revideras ofta, och marknadernas reaktion styrs lika mycket av siffrorna mot förväntningarna som av nivåerna själva — samma förväntningsmekanism som aktieanalysen lär ut (kt-02). Indikatorn är därmed inte ett utfall utan ett samtal: mätningen, revideringen och tolkningen, månad efter månad."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — tre klockor: ledande, jämnivå, eftersläpande",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Mjuka data — undersökningarna och deras räknesätt",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Hårda data — orderstockar, produktion, sysselsättning",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Från indikator till bolagets nästa rapport",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — fem sätt att övertolka en månadsiffra",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — panelen i metodiken",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — tre klockor: ledande, jämnivå, eftersläpande",
+        "intro": "Konjunkturcykeln (km-057) är mönstret; indikatorerna är pulsen. Vägen in i ämnet går via en enda indelning: när i cykeln mäts egentligen?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Familjens tidigare kurser har byggt maskineriet: räntan som pris på pengar (km-054), inflationen som penningvärdets motstånd (km-055), centralbankerna som förare (km-056), cyklerna som mönster (km-057) och valutorna som den öppna ekonomins länk (km-058) — och ma-01 band ihop dem till kedjan från styrränta till bolagets resultat. Men maskineriet måste matas med mätningar, och mätningarna anländer i olika tid. Därav ämnets första och viktigaste indelning, arvet från konjunkturforskningens barometrar: ledande mått, som rör sig före konjunkturen — beslut och attityder som föregår produktionen (förtroendebarometrar, inköpschefsindex, orderstockar); jämnivåmått, som mäter konjunkturen medan den sker — produktion, försäljning, fakturering; och eftersläpande mått, som reagerar sent — sysselsättning och arbetslöshet (mk-02), kapacitetsutnyttjande, löneutvecklingen (ma-02).\n\nOrdningsföljden är ingen tillfällighet utan mekanik. Ett beslut (beställa, anställa, investera) föregår alltid sin verkan (produktion, leverans, lönekostnad) — och attityder föregår beslut. Förtroendebarometern fångar hushållens och företagens sinnesstämning innan den blivit handling; inköpschefen svarar på orderläget innan det hunnit bli fakturering; arbetsmarknadens tal skrivs sist, för att anställa och säga upp är dyra beslut som dröjer. Eftersläpande mått är därför inte sämre — de bekräftar det de ledande antydde, och deras vikt i inflationens mekanik (ma-02:s kostnadsspiral) gör dem centrala för räntefamiljens läsning.\n\nIndelningen ger också kursens huvudregel: en indikator läses aldrig ensam, och aldrig utan sin klocka. Frågan är inte vad siffran visar, utan när i ordningen den hör hemma — och vad som rimligen redan har hänt i de tidigare leden när den sena siffran publiceras."
+          },
+          {
+            "type": "definition",
+            "content": "Ledande indikator: en serie som historiskt rör sig i samma riktning som konjunkturen men i genomsnitt före den — beslut och attityder (förtroende, inköpschefer, orderstockar). Skiljs från jämnivåmått (produktion, fakturering) och eftersläpande mått (sysselsättning, löner, kapacitetsutnyttjande) som reagerar efter konjunkturläget."
+          },
+          {
+            "type": "insight",
+            "content": "Tre klockor, en mekanik: attityder slår beslut, beslut slår produktion, produktion slår sysselsättning. Den sena siffran bekräftar — den ledande antyder. Att läsa dem utan sin klocka är att läsa väderprognos och historik i samma spalt."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Mjuka data — undersökningarna och deras räknesätt",
+        "intro": "Månadens första konjunktursiffror är nästan alltid undersökningar: frågor till människor som sitter nära besluten. Deras räknesätt förtjänar att begripas inifrån.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Inköpschefsindex (i branschlitteraturen ofta förkortat PMI) frågar inköpschefer vid tillverknings- och tjänsteföretag om en handfull förhållanden — nya order, produktion, sysselsättning, leveranstider, lager — gentemot föregående månad, och sammanställer svaren till ett diffusionsindex. Räknesättet är enkelt och starkt: andelen som svarar högre plus hälften av andelen som svarar oförändrat. Ett tänkt exempel: av de tillfrågade svarar 35 procent högre, 45 procent oförändrat och 20 procent lägre — kontrollen att summorna stämmer ges av 35 plus 45 plus 20 lika med 100 — och indexet blir 35 plus hälften av 45, alltså 35 plus 22,5, alltså 57,5. Skalan är säsongsrensat centrerad kring 50: över 50 betyder att fler ser förbättring än försämring (expansion), under 50 att fler ser försämring (kontraktion), och 50 exakt är neutralitet. Indexet mäter alltså utbredning — hur många företag som rör sig uppåt — inte hur mycket varje företag rör sig; en bred men svag uppgång och en smal men stark kan ge samma tal.\n\nFörtroendebarometrar — för hushåll (konsumentförtroende) och företag (näringslivsförtroende) — följer samma logik men rapporteras ofta som nettobalans: andelen positiva svar minus andelen negativa. Tänkt exempel igen: 40 procent av hushållen positiva om sin ekonomiska framtid, 35 neutrala, 25 negativa (40 plus 35 plus 25 lika med 100) — nettobalansen blir 40 minus 25, alltså plus 15. Talserien rör sig kring noll i stället för kring 50, men budskapet är släkt: mätningen fångar riktning och utbredning, nivåerna är inte kronor.\n\nMjuka datas styrka och svaghet är samma egenskap: de mäter sinnesstämning och orderläge i realtid, före fakturering och bokföring — men de mäter vad människor säger, inte vad ekonomin gör. Därför läses de som tidiga signaler med felmarginal, och deras värde ligger i serien (riktning över månader) snarare än i en enskild publicering"
+          },
+          {
+            "type": "definition",
+            "content": "Diffusionsindex: andelen uppåtsvarande plus hälften av andelen oförändrade svar, per fråga, säsongsrensat och centrerat kring 50. Mäter utbredning av en rörelse bland svarande — inte rörelsens storlek. Släkt med nettobalans (positiva minus negativa, centrerad kring noll) i förtroendebarometrar."
+          },
+          {
+            "type": "insight",
+            "content": "Båda räknesätten mäter samma sak på olika skala: hur utbredd en rörelse är. Därför säger ett diffusionsindex 52 något om bredd men ingenting om kraft — och en serie i närheten av 50 är definitionsmässigt talande genom sitt tystnadens register."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Hårda data — orderstockar, produktion, sysselsättning",
+        "intro": "Undersökningarna följs av statistiken: orderstockar, industriproduktion, sysselsättning. Här bor beläggningen — och eftersläpningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Orderstocken är industrins eget ledande hårda mått: nya order minus fakturering, ackumulerat. Logiken är bokföringsren — ett tänkt exempel: ett företag tar in nya order för 120 och fakturerar 100 under en period; orderstocken växer då med differensen 20, och kvoten mellan nya order och fakturering — 120 delat med 100, alltså 1,2 — säger att beläggningen växer. Orderstocken är också den punkt där mjukt och hårt möts: inköpschefens svar (kapitel 2) handlar i praktiken om samma orderläge som orderstatistiken fångar — men statistiken kommer med fördröjning och revidering, medan undersökningen publiceras först. I sektormetoden (se-16) är orderstocken ett av materialen när en sektors konjunkturkänslighet ska bedömas; i bolagets egen rapportkalender (km-006) är orderintaget den rad som förväntningsmarknaden läser närmast.\n\nProduktions- och försäljningsstatistiken — industriproduktion, fakturering, detaljhandelsmätningar — är jämnivåmåtten: de mäter vad ekonomin faktiskt gjorde, efter det gjorts. Deras pris är publiceringsfördröjningen och revideringarna; deras värde är att de inte ber någon om en åsikt. Sysselsättningen och arbetslösheten (mk-02) släpar sist: anställningar och uppsägningar är beslut med konsekvenser, och de dröjer även när orderingången vänt. Löneutvecklingen (ma-02) hör hemma på samma efterled — den skrivs i avtal och ritas över tid, vilket är skälet till att den bär inflationens mekanik snarare än konjunkturens puls.\n\nOrdningen mellan måtten kan sammanfattas i en tänkt tidsaxel (illustrativ, inte empirisk): attityderna vänder först, inköpschefernas svar och orderstocken följer, produktionen statistikförs därefter, och sysselsättningen skrivs sist. När den sista siffran bekräftar vändningen har de ledande redan hunnit ett stycke vidare — därför läses panelen baklänges lika ofta som framlänges: vad säger de sena talen om var de tidiga står nu?"
+          },
+          {
+            "type": "insight",
+            "content": "Orderstocken är bron: samma verklighet som inköpschefen svarar om, fast i bokförd form och med fördröjning. Skillnaden mellan dem är inte sanningen utan tiden — och tiden är hela indikatorläsningens ämne."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Från indikator till bolagets nästa rapport",
+        "intro": "Indikatorernas slutstation är inte makron — den är den enskilda rapporten. Här binds kursen tillbaka till familjen och till förväntningsanalysen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ma-01:s transmissionskedja slutar i bolagets resultat och värdering; indikatorerna är kedjans tidigaste led i praktiken. Läsningen går i två steg. Steg ett: från indikator till efterfrågan — ett inköpschefsindex över 50 för en ekonomi som är en bolagets marknad talar om att beställningsviljan växt; en fallande orderstock i bolagets sektor (se-16) talar om att sektorns konjunktur vänt mot just dess kunder. Konjunkturkänsligheten skiljer sektorer åt — samma totalsiffra betyder olika saker för en investeringsvarutillverkare och en förbrukningsvarukedja — och det är sektormetodens första fråga.\n\nSteg två: från efterfrågan till förväntning — och här träder förväntningsanalysen (kt-02) in. Aktiepriset prissätter inte rapporten utan förväntningen på den; en stark kvartalsrapport mot en änn starkare förväntning kan mötas av besvikelse, och en svag rapport mot en redan sänkt förväntning av lättnad. Indikatorpanelen är därför bakgrunden mot vilken bolagets egen guidning (km-006:s rapportdelar) läses: säger bolaget att orderingången stärkt medan sektorns orderstock fallit, är skillnaden i sig ett fynd — antingen har bolaget vunnit andel (tx-01:s organiska spår), eller förtjänar påståendet en följdfråga. Omvänt: en bolagsledning som bekräftar sektorns bild ger ett sammanhängande material.\n\nDärmed har kursen sin plats i metodiken: familjens kurser äger mekanismerna (ränta, inflation, cykler, transmission, löner), denna kurs äger mätningarna — och förväntningsanalysen (kt-02) äger mötet mellan mätningarna och priset. Panelen konstrueras i kapitel 6; dess regler har sin grund i kapitel 5:s fällor."
+          },
+          {
+            "type": "insight",
+            "content": "Indikatorn blir analys först i mötet med förväntningen: rapportens ord om orderläget läses mot statistikens ord om sektorn — och skillnaden mellan dem är antingen en andelsvinst (tx-01) eller en följdfråga. Samma siffra, två berättelser."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — fem sätt att övertolka en månadsiffra",
+        "intro": "Indikatorläsningens hantverk ligger inte i att hitta signaler utan i att vägra se dem där det bara är brus. Fem fällor återkommer.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: den enskilda månaden. En månadsiffra på ett diffusionsindex är ett enda utfall ur en serie med korta svängningar; riktningen läses över flera månader, nivån bekräftas av grannserien. Regel: en våg är inte en trend förrän den syns i båda — attityden och orderstocken, inte bara den ena.\n\nFälla två: revideringarna. Första publiceringen av hård statistik är preliminär; den kan revideras när mer material anländer, och revideringar kan flytta en hel kvartalsbild. Den som backar en analys på första-versionen bygger på is. Undersökningar revideras sällan — men de mätter attityder, som också kan ångra sig.\n\nFälla tre: säsongsrensningsens artefakter. Månatliga serier justeras för återkommande mönster (semester, helger, modellbyten), och justeringen kan skapa skenbara svängar i kanterna av serien — särskilt kring årsskiften. Två månadstal i rad mot trenden kring en säsongsgräns förtjänar en extra fråga.\n\nFälla fyra: tomrummet kring 50. Ett index på 50,5 säger att nästan ingen ser någon förändring — informationen ligger i själva avsaknaden, inte i tecknet. Diffusionsindex läses bäst som avstånd från 50, inte som över eller under; nettobalanser på samma sätt kring noll.\n\nFälla fem: allas siffra. Ett index som hela marknaden tittar på kan börja påverka det den mäter — beslutsfattare som handlar efter publiceringen förstärker eller dämpar rörelsen, och nyheten kan prissättas före den publiceras (kt-02:s klangbotten). Det gör inte siffran värdelös, men det flyttar värdet från överraskningen till tolkningen: vad som redan stod i priset (vr-01:s multipelgap) när siffran kom.\n\nGemensamt för de fem: indikatorn är ett instrument, inte en instruktion. Kursen lär ut läsning — hur en serie konstrueras, revideras och bör avvägas — och utlåtandet om vad någon bör göra med läsningen finns inte i ämnet."
+          },
+          {
+            "type": "insight",
+            "content": "Fem fällor, en gemensam rot: att läsa en månadsiffra som en händelse i stället för ett utfall i en serie. Instrumentet är ärligt — det är instrumentets läsare som avgör om signalen är signal."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — panelen i metodiken",
+        "intro": "Kursens slutverktyg är en panel på tre mått — ett mjukt ledande, ett hårt order-, ett eftersläpande — lästa mot sektorn och bolagets guidning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Panelen byggs på tre ben. Ett mjukt ledande mått: förtroendebarometern eller inköpschefsindex för den ekonomi som bär bolagets marknad — det fångar attitydernas vändning först. Ett hårt ordermått: orderstocken eller orderintagets kvot (kapitel 3) i bolagets sektor — det bekräftar att attityderna blivit beställningar. Ett eftersläpande mått: sysselsättning eller, för räntefamiljens läsning (km-054, ma-01), löneutvecklingen (ma-02) — det skriver konjunkturens protokoll i efterhand och bär inflationens mekanik. Tre ben, tre klockor: attityd, beställning, bekräftelse.\n\nReglerna för panelen är kapitel 5:s fällor i positiv form: riktning läses över månader, nivå som avstånd från neutralpunkten, revideringar respekteras, och sektorns känslighet (se-16) väger in innan totalsiffrorna talar om bolaget. I metodiken kompletterar panelen transmissionskedjan (ma-01) med dess tidiga led och förväntningsanalysen (kt-02) med dess bakgrund: V-familjens försäljningstal (v01) och återkommande intäkter (v02) är månadssiffrornas kvartalsvis summerade kusiner — och när nästa rapport (km-006) anländer läses dess orderingång mot panelen, inte mot minnet av förra kvartalet.\n\nSerien täcker tre sidor: ma-01 äger kedjan (uppifrån och ner), ma-02 äger lönesidan (nedifrån och upp), ma-04 äger mätningarna (månad för månad). Familjens grundkurser km-054 till km-058 bär varsin termometer; serien lär ut hur termometrarna hänger samman — och hur de läses.\n\nKursen är utbildning i statistisk läsning: konstruktion, ordning, revidering och avvägning av offentliga serier. Hur någon använder läsningen — och om alls — är läsarens eget beslut, och kursens avslutande övning tränar hantverket, inte ställningstagandet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj en sektor i studions universum och bygg dess minipanel — (1) ett mjukt ledande mått (förtroende eller inköpschefer) för sektorns marknad; (2) ett hårt mått (orderstock eller motsvarande) för samma sektor; (3) ett eftersläpande mått som berör sektorns kostnadssida. Läs de tre över tre månader i samma diagram och formulera i en mening: pekar de åt samma håll, och i så fall vilket? Jämför därefter med nästa rapport från ett bolag i sektorn: bekräftar dess ord om orderläget din panelbild — eller avviker den, och vad säger avvikelsen i så fall?"
+          }
+        ]
+      }
+    ],
+    "ak1Section": "I AK1A:s metodik är den här kursen MAKROEKONOMI & RÄNTA-familjens mätpunkt: transmissionen (ma-01) äger kedjan, lönebildningen (ma-02) äger kostnadssidan — och konjunkturindikatorerna äger det månadsvisa materialet som kedjans tidigaste led. Panelen läses tillsammans med V-familjens försäljningstal (v01, v02) och förväntningsanalysen (kt-02) när rapportkalenderns (km-006) order- och guidningsrader ska förstås — samma bakgrund som sektormetoden (se-16) använder för sektorns konjunkturkänslighet.",
+    "grahamSection": "Benjamin Grahams relation till indikatorer var dubbel: han avfärdade prognoser — hans marknadsmetafor mr Market handlar om att priset är en sinnesstämd motpart, inte en sanningsägare — men han respekterade mätningar. En indikator är i hans anda ett faktum att känna, inte en signal att handla på: hans marginal of safety (km-030) byggdes för att klara också den kvartalets överraskning som panelen missade. Graham läste statistiken som kontext och priset som utmaning — aldrig tvärtom.",
+    "lynchSection": "Peter Lynch retades med makroprognoser — hans hållning var att ekonomens totalprognoser säger föga om det enskilda bolagets framtid — men han läste orderböcker. Hans råd att besöka bolag och fråga efter beläggning, orderläge och ledtider är exakt denna kurs i praktikernas form: den ledande informationen sitter närmare verksamheten än till statistikbyråns publiceringskalender. Lynchs lärdom för indikatorläsningen är nivån: mätningen som bäst görs på det ställe där ordern faktiskt skrivs."
   },
   "od-01-optionens-greker": {
     "slug": "od-01-optionens-greker",

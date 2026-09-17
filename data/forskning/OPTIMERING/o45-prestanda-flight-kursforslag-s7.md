@@ -1,9 +1,10 @@
 # O45 — Flight-kuren: 393 kursobjekt ur VARJE sidas RSC-flight (not-found-gränsens KursForslag) — /kurser-TBT:s första rot (spår 7)
 
 **Ägare:** fabriksagent s7-u3 (byggare 3/3, manifest auto-s7-1789640127873)
-· **Status: KUR LEVERERAD (committad, deploy-väntar prod-synkens RAM-fönster)
-— EFTER-mätning BOKAD SOM REST** (s7-u1-redispatch-precedensen: deployunderlag
-bevisas, mätning hos förste agent på nytt bygge)
+· **Status: KUR LEVERERAD, DEPLOYAD OCH EFTER-MÄTT** — deploy 12:41:12 lokal
+(prod-synk "DEPLOYAD automatiskt: 2 commits (5ebec933) — prod 200"; BUILD_ID
+E0Xp-0poboB2EQmnwRtE); byte-bevisen LANDADE (§7), TBT −11 % mätt under
+advers lastläge; definitiv solo-rond i vilofönster återstår som rest
 · Anspråk (disk-först): `data/vakten/auto-s7-1789640127873-u3-ansprak.md`
 
 ## §0 Objektval — SYSTEMKARTANS köpost
@@ -99,18 +100,52 @@ ha vattnat varje sida).
 - INGET bygge (fabriksregeln — deploy ägs av prod-synken under
   /tmp/ak1a-deploy.lock). R2 orörd. data/blogg/ orörd.
 
-## §5 Rest — EFTER-mätning (bokad)
+## §5 Rest — EFTER-mätning
 
-Kuren committas + pushas till prod; prod-synken bygger vid nästa RAM-fönster
-(≥2 200 MB; stod i VÄNTAR-RAM 1 619 MB vid kurstillfället med 4 committer
-i kö). **EFTER-mätning hos förste s7-agent på nya BUILD_ID:** solo-rond
-(spq-verifierat) på minst /kurser + / + /om med
-`prestanda-lighthouse.mjs <namn> /kurser / /om`; jämför flight-bytes
-(förväntat −31 K/sida) och TBT i samma lastläge som §1. Chat-chunken
-`2ecierimwxqep.js` (97 K gz, 74 K oanvänd — idle-mount i TBT-fönstret,
-§1:s 127 ms + TTI-förskjutning) är spårets nästa kurobjekt; react-chunkens
-hydratiseringsdominans (59 %) kräver strukturell trädbantning — båda bokade
-som observationer, ej tagna.
+~~Kuren committas + pushas till prod; prod-synken bygger vid nästa RAM-fönster.~~
+**INFRIAD 12:41–12:5x lokal (§7).** Kvar som rest: en definitiv solo-rond i
+vilofönster (load < 1) för rena poängtal — driftbandet (o28) gör poäng-
+jämförelser över lastlägen oläsliga. Chat-chunken `2ecierimwxqep.js`
+(97 K gz, 74 K oanvänd — idle-mount i TBT-fönstret, §1:s 127 ms + TTI-
+förskjutning) är spårets nästa kurobjekt; react-chunkens hydratiserings-
+dominans (59 %) kräver strukturell trädbantning — båda bokade som
+observationer, ej tagna.
+
+## §7 EFTER — deployad 12:41, verifierad och mätt (samma dag, samma agent)
+
+**Deployunderlag:** prod-synk 10:41:12Z "DEPLOYAD automatiskt: 2 commits
+(5ebec933) — prod 200"; prod `https://lab.ak1nvestor.com/` = 200 ·
+`/kurser` = 200 (curl-verifierat).
+
+**Byte-bevisen (curl mot localhost, nya bygget — lastokänsliga):**
+
+| Sida | FÖRE | EFTER | Delta |
+|---|---|---|---|
+| /kurser HTML | 279 K | 257 K | **−22 K (−8 %)** |
+| 404-sidan (/om) HTML | 48 K | 25 K | **−23 K (−48 %)** |
+| slug-objekt i flighten, /kurser | 789 (393 döda) | 396 (0 döda) | titel-objekten BORTA |
+| slug-objekt i flighten, 404 + /om-oss | 393 | 0 | hela arrayen utbytt mot slug-lista |
+
+**Funktionssonder:** `/api/kurs-titlar?slugs=…` → 200 med korrekta titlar,
+okänd slug utelämnad tyst. 404-kursförslagens beteende OFÖRÄNDRAT:
+`dynamicParams=false` (våg 81 slutligt) ger okända kursslugar en äkta 404
+via GLOBALA not-found — där `usePathname` aldrig haft router-kontex (gammalt
+beteende, identiskt före/efter; förslagen lever i grupp-gränsernas mjuka
+404-vägar). Matchningslogiken byte-identisk (samma regex + Levenshtein +
+sort + tröskel).
+
+**Lighthouse EFTER (12:43–12:5x, load 2,25 — BETYDLIGT tyngre än FÖRE:s
+0,70):** /kurser **TBT 2 418 → 2 152 (−266 ms, −11 %)** · LCP 5 513 → 5 807
+(lastbrus) · poäng 50 → 43 (lastbrus via LCP) · / P64 · LCP 4 170 · TBT
+1 002 (driftseriens nya punkt). Total-byte-weight 802 → 798 KiB är OLÄSLIGT
+som kurbevis (RegisterKort:s lata /api/kurs-hämtningar varierar med ISR-
+tillstånd och dominerar vikten) — de direkta HTML-mätningarna ovan är
+bevisen. Long-tasks-summan 2 504 → 3 419 ms drivs av task-sammanslagning
+när script-ankomster skjuts ihop av serverlast (mekanism dokumenterad i
+o28); TBT (Lighthouse:s eget fönsterval) är det ärliga talet: **−11 % under
+advers lastläge** — i vilofönster väntas mer (FÖRE-parets 0,70-last motsvarar
+o42:s 1 636-nivå). Rådata: `lighthouse/kurser-s7u3d-efter.json` +
+`start-s7u3d-efter.json` + sammanfattning.
 
 ## §6 Kollisionsbokföring
 

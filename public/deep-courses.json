@@ -202648,6 +202648,166 @@
     "grahamSection": "Benjamin Grahams relation till nya emissioner var dubbelsidig — och talar till kursens kärna. Till försvar ställde han sig företrädesrätten och minoritetsskyddet: ägare ska inte kunna utspädas bakom ryggen, och mekaniken med teckningsrätt var i hans era den ordning som garanterade det. Till varning ställde han sig mot emissioner som säljs när marknaden vill köpa: hans iakttagelse — att nya erbjudanden strömmar till när säljaren har mest att vinna, inte när köparen har det — är emissionens beteendemotiv i en mening. För Grahams-läsaren blir kursens aritmetik därför ett skydd: den som kan räkna ex-kurs och rättvärde behöver inte tro på erbjudandets ramar utan kan kontrollera dem — och den som dessutom läser KAPITALBEHOVETS bakgrund (tillväxt eller reparation) har Grahams båda frågor besvarade innan marknadens entusiasm hinner tala.",
     "ak1Section": "I AK1A:s metodik är emissionen kapitalstrukturens femte läsning — den som knyter ihop familjens fyra tidigare kurser: ks-01:s två kapitalkällor får sitt exakta motstycke i beslutet som ökar aktieantalet, ks-02:s fem allokeringsvägar får emissionen som finansieringssidan av samma skifte som återköpet (v20) är förbrukningssidan av, och ks-03:s skuldanatomi möter kvittningsemissionen där gränsen mellan skuld och eget kapital praktiskt flyttas. Kursen ger aritmetiken bakom AKM1:s kapitalstrukturvariabler när de läses i verklighetens transaktioner: ex-kursens två vägar, rättvärdets sluta kontroll och skuld-EK-trappan (0,67 → 0,50) är de tal som gör emissionsmeddelanden till läsbar text i stället för bakgrundsbuller. Gränsen mot riskspåret är deklarerad: rk-02-emissionrisk äger utspädningen som portföljrisk — här ägs instrumentet — och tillsammans bildar de två kurserna kapitalstrukturens och riskens täckning av samma händelse från var sin sida."
   },
+  "ks-05-covenanter-och-kreditbetyg": {
+    "slug": "ks-05-covenanter-och-kreditbetyg",
+    "category": "KAPITALSTRUKTUR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Covenanter och kreditbetyg — skuldens spelregler och prislapp",
+    "summary": "Fortsättningskursen om kapitalstruktur: lånet är inte bara en summa utan ett avtal med spelregler. Finansiella covenanter — utlovade trösklar för räntetäckning, skuldsättning och soliditet — och kreditbetygstrappan från AAA till D, som tillsammans avgör vad skulden kostar och vad som händer när det blir trångt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Läsa låneavtalet som en samling spelregler: finansiella covenanter är tröskelvärden bolaget lovar fordringsägarna att hålla — räntetäckningsgrad, nettoskuld över EBITDA, soliditet — och varje tröskel har sitt eget mätögonblick · Förstå mekaniken vid en covenantträff: förhandling först, sedan höjd ränta, utdelningsstopp och i sista hand inträde — och varför den ordningen nästan alltid håller · Räkna trösklarnas utrymme i ren aritmetik: hur långt rörelseresultatet kan falla innan golvet för räntetäckningsgraden bryts · Läsa kreditbetygstrappan AAA till D och den enskilt mest prisdrivande strecket i skuldvärlden: gränsen mellan investment grade och högavkastande utlåning · Räkna vad betyget kostar: spreaden över styrräntan omräknad i kronor på ett konkret lånebelopp · Känna fällorna — företagsanpassade nyckeltalsdefinitioner, trösklar mätta enbart vid periodsslut, tysta undantag och betygens bakåtblickande natur — och koppla allt till AKM1:s KAPITALSTRUKTUR- och STABILITET-familjer.",
+    "why": "Kapitalstrukturkursens första steg (ks-01) lärde finansieringsmixen: skuld och eget kapital i balans, med räntan som skillnad. Skuldens anatomi (ks-03) öppnade skuldbeloppets inre: löptider, räntevillkor och återbetalningsstruktur. Mellan dem finns ett lager som varken handlar om mixen eller om anatomin, men som ofta avgör hur det går när verksamheten svagar: avtalets spelregler och skuldens prislapp. Två bolag med identisk skuldsättning kan befinna sig i helt olika världar bara för att det ena lovat sina banker en räntetäckningsgrad på minst tre och det andra inte lovat något — det första tvingas agera tidigt, det andra kan somna in tills kassan sinar. Och två bolag med samma skuld kan betala hundratals miljoner olika i ränta, bara för att kreditbetyget skiljer en enda trappstege. För den som läser årsredovisningar är detta fältet där noterna om finansiella åtaganden slutar vara legal kringutrustning och börjar bära berättelsen: vilka trösklar gäller, hur nära ligger verksamheten dem, och vad händer dagen de bryts. Kursen bygger mätinstrument för precis den läsningen — och den är mekanik, inte råd om någons lån.",
+    "history": {
+      "origin": "Skuldens spelregler är äldre än aktiemarknaden. När amerikanska järnvägsbolag lånade stora belopp på 1800-talet krävde obligationsägarna skydd nedskrivet i avtalen: att bolaget inte fick belåna banorna på nytt, inte betala utdelning om vissa vilkor bröts, inte ta ny skuld före de gamla fordringsägarna. Dessa trust deed-villkor var tidiga covenanter — regler skrivna för att skydda långivaren när saker går dåligt, det vill säga precis när skyddet behövs. Kritiken mot dem var lika tidig: i ett verkligt krisläge kan de reglerna förvandla ett betalningsproblem till en konkurs, genom att tvinga fram omsorgslösa nödlösningar. Debatten om hur hårda låneavtal ska vara är alltså inte modern — den är lika gammal som obligationsmarknaden.",
+      "evolution": "Prislappen institutionaliserades 1909, då John Moody publicerade de första systematiska betygen på amerikanska järnvägsobligationer: en trappa av bokstavsbetyg som sammanfattade sannolikheten att lånet betalades tillbaka. Poor's och Standard Statistics följde (de två förenades till det som i dag heter ett av de stora betygsinstituten), och under 1900-talets mitt hade betygsbokstäverna blivit världens lånekostnadsvaluta: en utlänares spread över styrräntan bestämdes i princip av vilken bokstav som stod på pappret. När högavkastande obligationer växte fram som en egen marknad på 1970- och 1980-talen byggdes dessutom en hel finansieringsvärld under trappans mittgräns — bolag som medvetet betalde högre ränta mot friare avtal. Kriserna 1998 och 2008 lärde marknaden den omvända mekaniken: nedgraderningar slår om hela spreaden på en gång, och en covenant som var tänkt som skydd kan i stressade tider förvärra fallet genom att stänga utdelningar och kredittillgångar precis när bolaget behöver flexibilitet.",
+      "modern": "I dag läses covenanterna oftast i balansräkningens noter, under rubriker som finansiella åtaganden, och variationen är stor: banklån bär traditionellt tydliga nyckeltalströsklar, medan den noterade lånesidan under decennier rört sig mot lättare avtal — lån utan klassiska finansiella covenanter, som väckt en hel litteratur om vad skyddet är värt när det saknas. Kreditbetygen har fått sällskap av betygsliknande mått från dataleverantörer, men bokstavstrappan lever kvar som referenspunkten — särskilt för svenska storbolag, där gränsen mellan investment grade och högavkastande i praktiken ofta är en enda betygsgrad. För rapportläsaren är fältet dessutom en brygga: samma nyckeltal som bankerna skriver i avtalen — räntetäckningsgrad, skuldsättningsgrad, soliditet — är de som STABILITET-familjens kurser (st-01, st-03) lär ut som bolagets egna mått. Bankens golv och analytikerns instrument är släkt; denna kurs förenar dem."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — lånet är ett avtal, inte bara en summa",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Delarna — trösklar, betygstrappa och mätögonblick",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — trösklarnas utrymme i ren aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — vad betyget kostar i kronor och ören",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — spelreglerna i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — lånet är ett avtal, inte bara en summa",
+        "intro": "Kapitalstrukturens två första kurser behandlade skulden som storlek och struktur — här tillkommer den tredje dimensionen: skulden som förhållande mellan bolag och fordringsägare, med skrivna regler och en prislapp.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett lån beskrivs ofta bara med två tal: beloppet och räntan. Men i avtalet mellan bolaget och långivarna finns nästan alltid mer: regler om vad bolaget får och inte får göra så länge lånet lever, och en mekanism som avgör räntans storlek — bolagets uppfattade kreditvärdighet. Reglerna kallas finansiella covenanter och är i grunden löften: bolaget utlovar att hålla vissa nyckeltal över eller under angivna trösklar. Löper bolaget väl kommer löftena knappast att märkas; det är när verksamheten svagar som de träder i kraft och formar händelseförloppet — exakt som ett försäkringsvillkor läses noggrant först vid skadetillfället.\n\nFordringsägarna har alltså två instrument: spelreglerna (covenanterna), som styr vad bolaget måste och inte får göra i dåliga tider, och priset (räntan), som kompenserar för risken att lånet inte betalas tillbaka. Priset sätts ofta med hjälp av kreditbetyg — bokstavsbetyg som sammanfattar bedömd förmåga att betala. De två hänger ihop: svaga spelregler och lågt betyg hör ihop med hög ränta, starka regler och högt betyg med lägre. För den som analyserar ett bolag gör det skuldsidan levande på ett sätt som balansräkningens slutsumma aldrig kan: två bolag med samma skuldbelopp kan ha olika räntekostnad, olika handlingsfrihet och olika krisförlopp — hela skillnaden bor i avtal och betyg."
+          },
+          {
+            "type": "definition",
+            "content": "Finansiellt covenant: ett i låne- eller obligationsavtal skrivet löfte om att hålla ett nyckeltal över eller under en angiven tröskel — till exempel räntetäckningsgraden minst 3,0 eller nettoskulden högst 4,5 gånger EBITDA. Bryts tröskeln utlöses avtalets konsekvenser: förhandling, rättslig standardräntehöjning, utdelningsstopp eller i sista hand att lånet sägs upp i förtid."
+          },
+          {
+            "type": "insight",
+            "content": "Skulden har tre dimensioner: storleken (hur mycket), strukturen (ks-03: löptid och säkerhet) och förhållandet (denna kurs: spelregler och prislapp). Först när alla tre är upplagda syns vad kapitalstrukturen faktiskt gör i en nedgång."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Delarna — trösklar, betygstrappa och mätögonblick",
+        "intro": "Covenanterna kretsar kring ett fåtal nyckeltal — samma mått som STABILITET-familjen lär ut som bolagets eget skydd — och betygen sammanfattas i en trappa vars mittlinje är skuldvärldens viktigaste streck.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre covenantfamiljer dominerar praktiken. Den första är täckningsmått: räntetäckningsgraden — rörelseresultatet dividerat med räntekostnaden — som mäter hur mycket vinsten kan falla innan räntan äter den; st-01-kursen behandlar den som bolagets egen buffert, här är den bankens golv. Den andra är skuldbördemått: nettoskuld dividerat med EBITDA, som mäter hur många års ravkassa (före avskrivningar och investeringar) skulden motsvarar. Den tredje är substansmått: soliditet eller eget kapital i förhållande till balansräkningen, som mäter hur mycket av företagets substans som utgör skydd för fordringsägarna. Till det kommer mätögonblicken: de flesta trösklar kontrolleras vid varje kvartals- eller årsslut, mot bokslutssiffror — inte mot dagens verklighet. En tröskel kan alltså formellt hålla hela vägen fram till bokslutsdagen den bryts.\n\nPrislappens trappa har långa bokstavssteg: från det högsta betyget (AAA) genom dubbla och enkla betygssteg, ner till BBB — och mellan BBB och BB går skuldvärldens mest omtalade gräns. Över strecket kallas utlåningen investment grade: institutionella placerares husregel-värld, där många pensions- och förvaltningskapitalförvaltare över huvud taget får låna ut. Under strecket — BB och lägre — börjar högavkastande utlåning med högre ränta och hårdare krav på avtalskontroll. Ett enda betygssteg över eller under den linjen kan därför flytta hundratals miljoner i räntekostnad för ett stort bolag, inte för att riskenförändringen är dramatisk i sig, utan för att hela placerarbasen byts ut. Nedanför trappans mitt väntar steg för steg mer ansträngda beteckningar, och i botten D: utfällan har inletts eller anses overhängande."
+          },
+          {
+            "type": "insight",
+            "content": "Bankens covenant-golv och analytikerns stabilitetsmått är samma tal i två roller: räntetäckningsgraden är st-01:s buffert och ks-04:s tröskel. Skillnaden är vem som reagerar när talet bryts — bolagsledningen, eller avtalet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — trösklarnas utrymme i ren aritmetik",
+        "intro": "Covenant-analysens kärna är en enkel fråga: hur långt kan verksamheten falla innan tröskeln bryts? Svaret räknas — och det räknas olika för varje tröskel.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta ett räkneexempel i ren aritmetik. Ett bolag har rörelseresultat 900 miljoner kronor och räntekostnad 180 miljoner. Räntetäckningsgraden är 900 dividerat med 180, lika med 5,0 — varje räntkrona täcks av fem rörelsekronor. Låneavtalet kräver minst 3,0. Hur djupt får resultatet falla? Golvet 3,0 gånger räntekostnaden 180 miljoner ger ett minimirörelseresultat på 3,0 × 180 = 540 miljoner. Utrymmet är alltså 900 − 540 = 360 miljoner, vilket är 360/900 = 40 procent av dagens resultat — räkneexemplens poäng: en räntetäcknings-covenant med måttligt golv ger gott fallutrymme.\n\nNu samma bolag med nästa tröskel: nettoskuld 3 600 miljoner mot EBITDA 900 miljoner ger skuldbördan 3 600/900 = 4,0, med avtalstak 4,5. Hur djupt får EBITDA falla? Taket 4,5 innebär minimi-EBITDA = 3 600/4,5 = 800 miljoner — utrymme 100 miljoner, alltså 100/900 ≈ 11 procent. Samma bolag, samma skuld — men skuldbördetröskeln har en bråkdel av räntetäckningströskelns fallutrymme. Det är covenant-analysens andra huv: trösklarna är inte lika, och den som vill veta när det blir trångt ska inte läsa medeltalet utan den trångaste tröskeln — den som först bryts. I praktiska avtalspaket finns ofta båda, och det är den strängaste som blir verksamhetens operativa verklighet: innan den når noll finns förhandlingsutrymme, efteråt finns avtalets konsekvenser."
+          },
+          {
+            "type": "definition",
+            "content": "Tröskelutrymme (headroom): avståndet mellan det aktuella nyckeltalet och avtalströskeln, gärna omräknat i hur många procent verksamheten (resultatet eller EBITDA) får falla innan tröskeln bryts. Det trångaste utrymmet i avtalspaketet — inte det genomsnittliga — är det som styr."
+          },
+          {
+            "type": "insight",
+            "content": "Räntetäckningsgraden mäter resultatets väg till golvet; skuldbördan mäter ravkassans. Räkna båda — och läs därefter avtalet som en karta över vilket mått som slår till först."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — vad betyget kostar i kronor och ören",
+        "intro": "Kreditbetyget abstraherar risken till en bokstav — spreaden översätter bokstaven till kronor. Här är den översättningen, omräknad.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Låneräntan byggs i princip av två delar: en referensränta (ofta en styrränta eller penningmarknadsränta) plus en spread som speglar kreditrisken — betyget i sifferform. Räkneexempel i ren aritmetik: ett bolag med lån 4 000 miljoner kronor och referensränta 2,0 procent. Med god betygskvalitet — strax över mittlinjen — kan spreaden vara omkring 1,25 procent, alltså total ränta 3,25 procent och räntekostnad 4 000 × 0,0325 = 130 miljoner per år. Faller samma bolag under mittlinjen till högavkastande territorium kan spreaden i stället bli omkring 5,0 procent, totalt 7,00 procent och räntekostnad 4 000 × 0,0700 = 280 miljoner. Skillnaden är 280 − 130 = 150 miljoner per år — och över en femårig löptid 150 × 5 = 750 miljoner, bara i ränta, för en enda betygsgrad.\n\nDärav betygsstregets dramatik: när ett stort bolag riskerar att falla från investment grade till högavkastande — på fackspråk en fallen angel — läggs hela spreaden om på en gång, eftersom placerarbasen byts ut. Det är också därför betygsnedgraderingar kan förvärra nedgången de beskriver: räntekostnaden stiger just när resultatet sjunker, och i svåra fall kan det ökade trycket leda till att covenanterna berörs — en mekanism där pris och spelregler förstärker varandra. Mot den bakgrunden läses utdelningsbeslut ibland som signaler om betygsdisziplin: en pausad utdelning behåller kapital i bolaget, stärker balansräkningen och kan vara ett medvetet bidrag till betyget — medan samma utdelning, bibehållen i ett ansträngt läge, kan äta det utrymme covenanterna kräver (v20-kursens återköpstema är samma mynt från andra sidan: kapital som lämnar bolaget påverkar fordringsägarnas säkerhet). Allt detta är beskrivning av mekanik — hur systemet hänger ihop — och aldrig en uppmaning att köpa eller sälja något som helst värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Spreaden är betyget omräknat i kronor: 3,75 procentenheter extra på 4 000 miljoner är 150 miljoner om året. Därför är betygsstrecket vid trappans mitt inte en vetenskaplig gräns utan en placerarteknisk — och därför slår den så hårt."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Covenant-texter och betygsbokstäver ser objektiva ut — men båda bärs av definitioner, ögonblick och människor som kan göra dem missvisande.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan bor i definitionerna: avtalens nyckeltal är inte lärobokens. EBITDA i ett covenant kan vara företagsanpassad — med tillbakaförda engångskostnader, omfördelade poster eller egna justeringsklausuler — vilket gör att bolagets avtalstal och analytikerns uträknade tal kan skilja, ibland mycket. Den som vill läsa trösklarnas utrymme på riktigt måste hitta avtalets definition, inte nöja sig med den egna. Andra fällan är mätögonblicken: trösklar kontrolleras vid periodsslut, och balansräkningens slutrader går att försköna enligt samma mönster som ln-04-kursen visade för rörelsekapitalet — utdelningar som senareläggs, inköp som styrs, poster som periodiseras. Tredje fällan är de tysta undantagen: en tröskel som bryts kan förhandlas bort för en period (ett så kallat undantagstillstånd i avtalet), ofta mot höjd ränta eller säkerhet — i registret syns det inte som en träff, men i verkligheten har spelreglorna luckrats.\n\nFjärde fällan gäller betygen: de är bakåtblickande bedömningar som reagerar sent på förändringar — instituten vill inte flytta ett betyg fram och tillbaka i onödan — och samtidigt kan överreagera i sviter, när flera institut agerar i klunga efter varandra. Betyget är alltså varken en föregångare eller ett facit. Femte fällan är trappstegseffekten som sagts: priset slår om klivvis, vilket gör att små förändringar i företaget kan ge stora förändringar i räntan — den som läser skulden utan betygstrappan underskattar därför icke-linjäriteten. Sjätte och sista fällan är att läsa covenantträff som automatiskt kollaps: oftast följer förhandling, och utfallet beror på förhållandet mellan bolag och bank — men att anta att träffen är harmlös är lika fel. Medelmåttan är trist men sann: en träff är början på ett förlopp, inte slutet på ett."
+          },
+          {
+            "type": "insight",
+            "content": "Läs avtalets egna definitioner, läs trösklarna vid deras mätögonblick, och läs betygen som ett sent och klivvis verkande pris — aldrig som en sanning om bolaget i sig."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — spelreglerna i AKM1:s metodik",
+        "intro": "I AK1A:s system är denna kurs KAPITALSTRUKTUR-familjens kontraktsblock: den som redan kan finansieringsmixen (ks-01), allokeringen (ks-02) och skuldens anatomi (ks-03) får här de regler och det pris som binder samman hela spåret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Familjens trappa är nu hela: ks-01 grundar finansieringsmixen, ks-02 visar hur kapital allokeras mellan räntebärande skuld, utdelning och återköp (v20), ks-03 öppnar skuldens inre struktur — och denna kurs lägger till förhållandet till fordringsägarna: trösklarna som styr och betyget som prissätter. Grannfamiljerna fördjupar samma tal: STABILITET-kurserna (st-01 om räntetäckning och soliditet, st-02 om känslighetsanalys, st-03 om Altman Z) ger buffertperspektivet, RISKHANTERINGENS rk-03 tar skuldfallan ur portföljens synvinkel, och AKM2:s kapitalstrukturdimension samlar hela fältet i modellens eget mått. I AKM1:s tjugo grundvariabler finns skuldsättningsgraden (V10) och likviditeten (V11) — båda läses rikare när avtalen bakom dem syns.\n\nAvsluta med den levande övningen: välj ett eller två bolag ur universumets rådata, leta upp noterna om finansiella åtaganden i senaste årsredovisning, och identifiera — om de redovisas — vilka nyckeltalströsklar som gäller. Räkna sedan trösklarnas utrymme i ren aritmetik enligt kapitel tre: hur många procent får resultatet respektive EBITDA falla innan den trångaste tröskeln slår till? Jämför till sist med betygsupplysningar, om bolaget har sådana: ligger betyg och tröskelutrymme ihop, eller berättar de två olika historier om samma skuld? Det är övningen i sin renaste form — att läsa skuldsidan som ett levande avtal snarare än en post i balansräkningen, och att förstå att hela kursen är utbildning om mekanik: aldrig en uppmaning att köpa eller sälja, utan en lektion i hur spelreglerna bakom skulden fungerar."
+          },
+          {
+            "type": "insight",
+            "content": "När kontraktet syns blir kapitalstrukturen fullständig: mixen (ks-01), allokeringen (ks-02), anatomin (ks-03) och spelreglerna (ks-05) — fyra kurser som tillsammans läser skuldsidan som den levande del av verksamheten den är."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch höll balansräkningen för första sidan i analysen — före berättelsen — och hans varningslistor riktar sig med förkärlek mot bolag där skulden växer fortare än verksamheten. För en Lynch-läsare är covenant-läsningen den naturliga förlängningen: att veta var bankernas golv ligger är att veta var bolagets handlingsfrihet tar slut. Lynch beskrev också, med viss glimt, hur företag som pressas av låneavtal tvingas sälja tillgångar i precis fel ögonblick — mekaniken i denna kurs, kapitel för kapitel, är samma observation i avtalstextens form.",
+    "grahamSection": "Benjamin Graham var obligationsanalytiker innan han blev aktieanalytiker — hans och Dodds Security Analysis inleds med fasta fordringar, inte med aktier — och hela idén om säkerhetsmarginal är född ur frågan hur stort avståndet är mellan ett bolags betalningsförmåga och dess skuld. Covenanter är den frågans avtalsform: nedskrivna krav på att avståndet ska bestå. Grahams berömda regel att obligationer ska bedömas som om aktien inte fanns — kan bolaget betala även i dåliga år? — är räntetäckningsgradens ande, och betygstrappan är den institutionaliserade versionen av den bedömning han gjorde för hand.",
+    "ak1Section": "I AK1A:s metodik är denna kurs KAPITALSTRUKTUR-familjens kontraktsblock: den knyter ks-01:s finansieringsmix och ks-03:s skuldanatomi till avtalens trösklar och betygens prislapp, och den mekaniserar samma nyckeltal som STABILITET-familjen (st-01, st-03) lär ut som buffertmått — bankens golv och analytikerns instrument är släkt. Tillsammans med v20:s återköppstema och AKM2:s kapitalstrukturdimension täcker den hela skuldsidans läsning — så fungerar metoden, i utbildningens tjänst."
+  },
   "rs-01-volatilitet-och-risk": {
     "slug": "rs-01-volatilitet-och-risk",
     "category": "RISK",
@@ -205003,6 +205163,166 @@
     "lynchSection": "Peter Lynch arbetade i en annan epoks struktur — mäklare, telefoner och papperskvitton — men hans kärnlärs levde kvar: marknadens kortsiktiga svängar är inte bolagets öde. Strukturkursen ger den läran en mekanisk grund: mycket av det som ser ut som marknadens domar — svängningar på tunn volym, prisflykt i stressade lägen — är strukturens fysik snarare än samlade omdömen om bolaget. Lynchs tålamod med bolag vars berättelse han förstod är, på strukturens språk, en vägran att låta orderbokens tillstånd tala om vad verksamheten är värd.",
     "grahamSection": "Benjamin Grahams Mr Market erbjuder priser varje dag — marknadsstrukturen förklarar var buden ifrån kommer och varför de svänger. Grahams budgivare var en enda personifikation; dagens motsvarighet är en blandning av auktioner, algoritmer och fragmenterade orderböcker, vilket gör att samma sinnesstämningens svängningar kan förstoras av strukturens fysik. Säkerhetsmarginalens (km-030) logik stärks av kunskapen: ju tunnare och mer algoritmdriven priset sätts, desto oftare kan budet avlägsna sig från värdet — och desto viktigare är det att skilja pris från värde, vilket var Grahams kärnbudskap från första sidan.",
     "ak1Section": "I AK1A:s metodik är denna kurs AKTIEMARKNADEN I PRAKTIKEN-familjens kröning: am-03 lär rutan, am-01 spreaden och likviditeten, am-02 index och passivt ägande — am-04 visar byggnaden bakom: handelsplatser, auktioner, algoritmer, MiFID II. Brobyggen: mot km-069 (orderbokens mekanik i detalj), km-070 (nätmäklarna och handelns kostnader för privatpersoner), flash-boys (boken som skildrar fartens kapplöpning), st-02 och km-032 (stresstester där likviditeten kan försvinna) samt rs-01 (prisriskens mått). Kursens läsregler — noteringens tyngd, auktionsprisens karaktär, likviditet som tillstånd — är skrivna för analysarbetets vardag."
+  },
+  "am-05-handelsdagens-auktioner": {
+    "slug": "am-05-handelsdagens-auktioner",
+    "category": "AKTIEMARKNADEN I PRAKTIKEN",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Handelsdagens auktioner — öppning, löpande handel och stängning",
+    "summary": "Fortsättningskursen om aktiemarknaden i praktiken: handelsdagen har en inbyggd rytm. Innan öppning samlas order in och matchas i en auktion som sätter första kursen, mitt på dagen matchar orderboken kontinuerligt (am-01:s spread), och i slutauktionen sätts dagens officiella stängningskurs — mekaniken bakom, i ren aritmetik.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå varför auktioner finns: när köpare och säljare inte möts kontinuerligt samlas orderna ihop och en enda kurs söks — den som maximerar den omsatta volymen · Räkna auktionskursen i ren aritmetik: kumulativa köp- och säljsidor, priset där de möts och den volym som kan handlas · Läsa handelsdagens rytm: orderinsamling före öppning, löpande handel där orderboken matchar kontinuerligt (am-01:s spread och km-069:s orderbok), och slutauktionen som sätter referenskursen som index och fonder värderas mot · Känna volatilitetsmekanikerna: när en aktie rör sig för snabbt kan handeln pausas i ett volatilitetsavbrott och återupptas via en kort auktion — sedan EU:s MiFID II (2018) ett krav på reglerade handelsplatser · Se varför slutauktionen växt: passiva index- och fondflöden (am-02) prissätts mot stängningskursen, därför samlas stora omsättningsvolymer där — särskilt vid indexombalanseringar · Känna fällorna: tunna auktionskurser, gap mellan dagarna, omindexeringsdagens block och skillnaden mellan senaste kurs och officiell stängningskurs — och koppla allt till AKM1:s praktikspår.",
+    "why": "Aktiemarknadens kurser beskrivs ofta som en enda linje — men linjen är sysstad av tre olika maskiner. Orderboken (km-069) visar vilka order som väntar; spread-kursen (am-01) visar vad kontinuerlig handel kostar; aktiesidan (am-03) visar dagens högsta och lägsta. Det som saknas mellan dem är tiden: när på dagen en kurs sattes förändrar vad den betyder. Den första kursen på morgonen kommer ur en auktion där nattens samlade order möts — den kan gapa långt ifrån gårdagens stängning, inte för att något hänt, utan för att matchningsögonblicket är ett annat. Mitt på dagen formas kurserna löpande, med de spreads am-01 lär ut. Och dagens sista officiella kurs sätts i en slutauktion vars volym under decennier vuxit med indexeringen — för att index, börshandlade fonder och fondbolags värdering alla hänger på just stängningskursen. För den som vill läsa en graf, en kvartalsrapports kursdata eller en fondvärdning rätt är handelsdagens rytm alltså ingen kuriosa utan en del av mätinstrumentet: samma aktie, samma dag, tre olika prisbildande mekanismer. Kursen bygger den tiden in i läsningen — ren mekanik, aldrig en uppmaning att handla.",
+    "history": {
+      "origin": "Börsen föddes som auktion. På medeltidens och renässansens handelsplatser — från Bruges loggor till Amsterdams börs från 1602 — samlades köpare och säljare fysiskt på ett golv vid fasta tider, och en försäljare eller mäklare utropade priser tills affärer kom till stånd. Utropsrösten var bokstavligen auktionsmekanismen: alla order i rummet samtidigt, en kurs i taget. Att handeln hade fasta öppettider var ingen restriktion utan själva poängen — likviditeten samlades när alla visste att alla andra var där. Än i dag lever den strukturen kvar som handelsdagens rytm: en samlings- och matchningsfas först, därefter handel, och en sista matchning som stänger dagen.",
+      "evolution": "När handeln telefoniserades och datoriserades under 1900-talets senare hälft flyttade auktionen från golvet in i systemet, men mekanismen behöll sin form. De elektroniska börserna som växte fram på 1990- och 2000-talen byggdes kring en central orderbok som matchar kontinuerligt — och upptäckte samtidigt varför auktionerna behövdes kvar: vid dagens början och slut saknas den kontinuitet som den löpande matchningen förutsätter. Slutauktionen fick ny tyngd när indexeringen växte: index beräknas på stängningskurser, börshandlade fonder skapar och löser andelar mot dem, och fondbolag värderar sina innehav mot dem — all flödeslogik samlas vid dagens slut, och börserna byggde matchningsmekanismer för att ta emot den. Europeiska regelverket MiFID II (i kraft 2018) formaliserade även pauserna: reglerade handelsplatser måste ha mekanismer som hejdar handeln när kursen rör sig för snabbt, och återupptaganden sker via korta auktioner.",
+      "modern": "I dag är slutauktionen en av marknadens mest trafikerade minuter. På många stora börser handlas en betydande andel av dagens volym just i stängningsauktionen, drivet av två krafter: fondbolag som värderar mot stängningskursen och index- och passiva flöden (am-02:s territorium) som följer den. Vid kvartalsvisa indexombalanseringar — när ett index byter sammansättning — sväller slutauktionsvolymerna kraftigt, eftersom alla fonder som följer indexet måste handla vid samma referenskurs för att ligga nära indexet. Samtidigt har handelsdagens mitt blivit mer fragmenterad: en stor andel av handeln sker utanför börsens ordinarie orderbok, inom regelverkets ramar för rapportering, vilket gör börsens egna auktioner ännu mer centrala som referenspunkter. För rapportläsaren betyder det att kursdata har en inbyggd kalender: öppningskurs, slutkurs och volymer är inte bara tre kolumner (am-03) utan tre olika mekanismer — och denna kurs är kartan över dem."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — varför handeln har en rytm",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Delarna — dagens tre lägen: samling, löpande handel, stängning",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — auktionskursen i ren aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — pauser, volatilitetsavbrott och kurssäkringar",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — handelsdagen i AKM1:s praktikspår",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — varför handeln har en rytm",
+        "intro": "En kurs är inte bara ett tal — det är ett tal satt av en viss mekanik vid en viss tidpunkt. Handelsdagen har tre sådana mekanisker, och de besvarar tre olika frågor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kontinuerlig handel förutsätter att det vid varje givet ögonblick finns motparter på båda sidor: någon som vill köpa till ungefär det pris någon annan vill sälja till. Det gäller ofta mitt på dagen i en stor aktie — där orderboken ständigt har bud och lösen nära varandra, med den spread am-01-kursen lär ut. Men det gäller inte alltid. Efter en helg av nyheter, vid en rapportsläpp, i en liten aktie med få aktiva handlare, eller vid dagens slut när fondbolagen gör sina dagliga avstämningar — då möter inte orderna varandra av sig själva. Då behövs en mekanik som samlar alla order och matchar dem vid ett enda tillfälle: en auktion.\n\nDärav handelsdagens rytm, som är byggd i nästan alla aktier på nästan alla börser. Före öppningen samlas order in utan att de matchas; vid öppningstillfället matchas allt på en gång och dagens första kurs sätts — öppningsauktionen. Därefter matchas order löpande allteftersom de kommer, och kursen rör sig kontinuerligt. Mot dagens slut övergår handeln återigen i en insamlings- och matchningsfas: slutauktionen, som sätter dagens officiella stängningskurs. Tre lägen, tre prisbildande mekanismer, en och samma aktie. Den som läser en graf eller en kurslista utan att veta vilken mekanik som satt vilken kurs, läser tre språk som om de vore ett."
+          },
+          {
+            "type": "definition",
+            "content": "Auktion (på börsen): en matchningsfas där order samlas in under en tid utan att affärer genomförs, för att sedan matchas samtidigt till en enda kurs — den kurs vid vilken den omsatta volymen blir så stor som möjligt. Auktioner används vid öppning, vid stängning och efter handelspauser."
+          },
+          {
+            "type": "insight",
+            "content": "Kontinuerlig handel sätter priset när motparter finns löpande; auktionen sätter priset när de inte gör det. Dagens första och sista kurs är därför auktionskurser — satta av alla order som samlats, inte av den senaste enskilda affären."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Delarna — dagens tre lägen: samling, löpande handel, stängning",
+        "intro": "Låt oss gå igenom dagens tre lägen i tur och ordning — med Stockholmsbörsen som konkret exempel på hur rytmen ser ut i praktiken.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Öppningen. Innan handeln börjar samlas order in: mäklare, fondbolag och andra deltagare lägger in sina order, och systemet visar (beroende på börsens regler) vilket tryck som byggs upp — men ingen affär genomförs. Vid öppningstillfället — på Stockholmsbörsen klockan 09:00 — stängs insamlingen och samtliga order matchas i en enda auktion: den kurs som maximerar omsatt volym blir dagens öppningskurs. Nattens och morgonens nyheter har då redan hunnit prissättas; öppningskursen kan därför ligga långt ifrån gårdagens stängningskurs, ett gap, utan att en enda löpande affär ägt rum.\n\nMitt på dagen. Från öppning till slut pågår löpande matchning: en köporder som anländer matchas direkt mot den bästa väntande säljordern, och om ingen väntar läggs orderen i boken som ett bud. Detta är am-01:s och km-069:s värld — spreaden mellan bästa bud och bästa lösen, orderdjupet bakom dem, och nätmäklarna (km-070) som hela tiden ställer order och därmed förser marknaden med kontinuitet. Här sätts kursen affär för affär, och grafens täta mittfält är denna mekaniks signatur. Stängningen. Mot dagens slut — på Stockholmsbörsen efter den löpande handelns slut — öppnar slutauktionen: order samlas igen, ofta med en referenskurs och en indikativ auktionskurs som visas under insamlingen, och vid auktionsögonblicket matchas allt till en enda kurs: dagens officiella stängningskurs. Det är den kursen index beräknas på, som börshandlade fonder handlas nära och som fondbolagens innehav värderas mot — vilket förklarar varför dagens tyngsta volymer så ofta ligger i just den minuten."
+          },
+          {
+            "type": "insight",
+            "content": "Dagens tre lägen sätter tre olika kurser: öppningsauktionens gap-första kurs, den löpande handelns affär-för-affär-kurser och slutauktionens officiella stängningskurs. Samma aktie, samma dag — tre mekanisker att skilja på."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — auktionskursen i ren aritmetik",
+        "intro": "Hur hittar auktionen sin kurs? Svaret är en av marknadens enklaste och vackraste räkneoperationer: priset där så många affärer som möjligt kan genomföras samtidigt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En auktion bygger två trappor. Köpsidan rangordnas från högst till lägst: hur många aktier vill köpas till minst vilken kurs (bud)? Säljsidan från lägst till högst: hur många aktier erbjuds till högst vilken kurs (lösen)? Sedan räknas trapporna kumulativt, och vid varje tänkbar kurs mäts hur många aktier som faktiskt kan byta ägare: alla bud på eller över kursen möter alla lösen på eller under den — den omsatta volymen är det mindre av de två kumulativa talen. Auktionskursen är den kurs där detta tal är som störst.\n\nEtt räkneexempel i ren aritmetik. Bud: 100 aktier till 102, 150 aktier till 101, 200 aktier till 100, 250 aktier till 99 och 300 aktier till 98 — sammanlagt 1 000 aktier köpsidetrappa. Lösen: 120 aktier till 98, 130 aktier till 99, 180 aktier till 100, 220 aktier till 101 och 300 aktier till 102 — sammanlagt 950 aktier. Räkna kumulativt vid varje kursnivå. Vid 102 står 100 bud överst; vid 101 har 100 + 150 = 250 bud samlats; vid 100 är de 450; vid 99 är 700; vid 98 alla 1 000. Säljsidan spegelvänt: vid 98 erbjuds 120; vid 99 är det 250; vid 100 är det 430; vid 101 är det 650; vid 102 är det 950. Omsatt volym vid varje kurs är det mindre talet: vid 98 minst(1 000, 120) = 120; vid 99 minst(700, 250) = 250; vid 100 minst(450, 430) = 430; vid 101 minst(250, 650) = 250; vid 102 minst(100, 950) = 100. Störst volym ges vid kurs 100: 430 aktier omsätts, och 100 är därmed auktionskursen. Vid priset återstår på köpsidan 450 − 430 = 20 omatchade bud — ett köpsidoöverskott, som signalerar uppåttryck vid nästa matchningstillfälle. Så sätter en auktion sin kurs: inte genom förhandling, utan genom att läsa av var de två trapporna möts som tjockast."
+          },
+          {
+            "type": "definition",
+            "content": "Auktionskurs: den kurs vid vilken den omsatta volymen maximeras — beräknad som det minsta av kumulativ köpefterfrågan (alla bud på eller över kursen) och kumulativ säljtillgång (alla lösen på eller under kursen), sökt över alla möjliga kurser. Obalansen vid auktionskursen — omatchade bud eller lösen — signalerar tryck i den riktningen vid nästa handel."
+          },
+          {
+            "type": "insight",
+            "content": "Auktionen söker inte 'rättpris' utan den mest omsättbara kursen — priset där flest order får mötas. Överskottet som blir kvar är därför information: trycket riktas åt det hållet nästa gång marknaden öppnar."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — pauser, volatilitetsavbrott och kurssäkringar",
+        "intro": "Handelsdagen har även en fjärde mekanism, som bara syns ibland: pausen. När kursen rör sig för snabbt stoppas handeln — och starten sker, återigen, via en auktion.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En volatilitetsmekanik är börsens katastrofhjälm. Den enklaste formen är statisk: handeln i en aktie pausas om kursen rör sig mer än ett fast tröskelavstånd från en referenskurs, till exempel vid en mycket kraftig ögonblickssvängning. Den mer förfinade är dynamisk: paus utlöses inte av avståndet i sig utan av hastigheten — rör sig kursen för fort inom en kort tid stoppas handeln, även om det totala avståndet är måttligt. Sedan EU:s handelsregelverk MiFID II trädde i kraft 2018 måste reglerade handelsplatser ha sådana mekanismer; syftet är att ge marknaden andhämtning: en minut till två för att läsa nyheten, tänka om och placera order — utan att handel sker i panikens omedelbara spår.\n\nVad händer under pausen? Orderna får inte försvinra — de samlas. När pausen löper ut återupptas handeln via en kort auktion: alla order som samlats under pausen matchas till en enda kurs, på exakt det sätt kapitel tre räknade ut. Pausen är alltså inte ett hål i prisbildningen utan en komprimerad auktion med fördröjning. På samma sätt arbetar hela handelsdagens stoppmekanik (på engelska circuit breakers): kraftiga indexrörelser kan trigga bredare pauser, nivå för nivå, och återupptagandet sker via samlad matchning. För den som mäter volatilitet (rs-01-kursens fält) är detta en viktig fotnot: pausade minuter betyder att den observerade volatiliteten kan vara lägre än den underliggande — kurser som inte fick röra sig syns inte i statistiken. Den observerade volatiliteten mäter alltså inte bara marknadens rörelse utan också stoppmekanismens dämpning av den."
+          },
+          {
+            "type": "insight",
+            "content": "Pausen är auktion i förklädnad: order samlas under tystnad och matchas till en enda kurs när handeln återtar. Den som läser volatilitet bör minnas att stoppad handel är osynlig rörelse — avbrottet döljer, inte avlägsnar, trycket."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Handelsdagens rytm gör kursdata rikare — men också lättare att missläsa. Här är de vanligaste fällorna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är att läsa öppningskursen som en vanlig kurs. Öppningsauktionen kan vara tunn — få order, liten volym — och en tunn auktion ger ett pris med liten bärighet: nästa löpande affär kan ligga långt ifrån den. Ett gap på morgonen är information om nattens orderflöde, inte nödvändigtvis om dagens kommande handel. Andra fällan är att blanda samman senaste kurs och officiell stängningskurs: den sista löpande affären före slutauktionen och själva slutauktionskursen kan skilja — och det är den senare som index och fonder värderas mot. Kurslistans kolumner (am-03) skiljer dem åt, men i grafens tätaste öga ser de likadana ut.\n\nTredje fällan är omindexeringsdagen: när ett index byter sammansättning måste alla som följer indexet handela vid samma referenskurs — slutauktionen — och blocken som då rörs kan flytta kursen mer än några nyheter. Den som ser ett kraftigt slutauktionsutslag en kvartalsdag ska alltså fråga: var det en omindexering, eller en händelse? Fjärde fällan är att tro att auktionsvolymen mäter intresse: en stor slutauktion speglar ofta mekaniska flöden (fonder som stämmer av, index som balanserar) snarare än nytillägd övertygelse. Femte fällan gäller pauserna: ett volatilitetsavbrott kan upplevas som lugn — handeln ju står still — men är snarare dess motsats; den samlade ordern som matchas efter pausen är ofta mer laddad än löpande handel. Sjätte och sista fällan gäller manipulationen: att försöka påverka slutkursen — genom att lägga order i slutauktionen som inte speglar en ärlig avsikt — är marknadsmissbruk enligt EU:s marknadsmissbruksförordning, och tillsynen ser extra noga på just den minuten. Även här gäller spårets princip: kursdata är struktur att läsa, aldrig en anledning att handla — och hela kursen är utbildning om mekanik, inte en rekommendation om något som helst värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga alltid vilken mekanik som satte kursen: auktion eller löpande handel, tunn eller tjock volym, informationsdriven eller mekaniskt flödesdriven. Samma kurs, olika betydelse — det är handelsdagsläsningens kärna."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — handelsdagen i AKM1:s praktikspår",
+        "intro": "I AK1A:s system är denna kurs praktikspårets tidsblock: am-01 lär spreaden, km-069 orderboken, am-03 kurslistan — här fogas tiden samman till en hel handelsdag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Familjens trappa är nu bred: am-01 (likviditet och spread — den löpande handelns kostnad), am-02 (index och passivt ägande — de flöden som samlas vid stängningen), am-03 (läsa aktiesidan — kurslistans kolumner), am-04 (marknadsstruktur — handelsplatslandskapet) och denna kurs om dagens rytm. Tillsammans med km-069 (orderboken och prissättning) och km-070 (nätmäklarna i Sverige) täcker spåret hela vägen från den enskilda ordern till marknadsstrukturen. I AKM1:s perspektiv hör hit också V11 (likviditet som grundvariabel) — en akties handelsrytm är en del av dess likviditetsprofil — och rs-01 (volatilitet), där handelspauserna visade sig statistiskt snedvridande. AKM2:s tillämpningslager läser kursdata på samma sätt: öppning, löpande handel och stängning är tre olika datakällor, och modellen som blandar dem råkar illa ut.\n\nAvsluta med den levande övningen: välj en stor och en mindre aktie ur universumet och följ dem över en hel handelsdag. Notera öppningskursen och avståndet mot föregående dags stängningskurs (gapet), spreadens storlek mitt på dagen (am-01:s metod), och slutauktionens volym — gärna på en vanlig dag och, om kalendern tillåter, på en indexombalanseringsdag. Räkna sedan det egna exemplet ur kapitel tre: om du hade bud på 101 och lösen på 100, vilken kurs ger störst omsatt volym? Det är övningen i sin renaste form: att läsa handelsdagen som tre mekanisker med tre olika budskap — och att minna om att allt detta är utbildning i hur marknaden fungerar, aldrig en uppmaning att köpa eller sälja något som helst värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "När tiden sitter i läsningen blir kursdata komplett: orderboken visar vilka order som väntar, spreaden vad kontinuitet kostar, och handelsdagens rytm när och hur kurserna sätts — tre instrument, ett mätverk."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch myntade påminnelser om att marknadens korta svängar är dåliga beslutsunderlag — att långt fler förlorat pengar på att förbereda sig för nedgångar än i själva nedgångarna — och handelsdagens mekanik ger hans hållning en förklaring: dagens första och sista kurs sätts av auktioner vars volymer delvis är mekaniska, och den som handlar på varje gap läser i praktiken orderflödets brus som nyheter. Lynches långa blick — företaget före kursen, historien före dagen — är raka motsatsen till att jaga öppnings- och slutkurser, och hans dagliga rutin var att läsa bolag, inte minuter.",
+    "grahamSection": "Benjamin Grahams Mr Marknad är hela denna kurs i en enda figur: han ställer varje dag ett pris — ibland entusiastiskt, ibland depressivt — och förnuftets uppgift är att skilja prisets humör från värderingen. Auktionsmekaniken visar var humöret bor: öppningsgappet är nattens samlade sinnesstämning, slutauktionens volym delvis mekaniskt flöde. Grahams berömda distinktion — att marknaden på kort sikt är en röstmaskin och på lång sikt en vågmaskin — låter sig konkret räknas här: rösterna avges i handelsdagens auktioner och affärer, vägningen sker i företaget över år.",
+    "ak1Section": "I AK1A:s metodik är denna kurs AKTIEMARKNADEN I PRAKTIKEN-familjens tidsblock: den fogar am-01:s spread, km-069:s orderbok och am-03:s kurslista till en hel handelsdag — och den mekaniserar kopplingen till am-02:s passiva flöden, som alla värderas mot slutauktionens kurs. Tillsammans med V11 (likviditet) och rs-01 (volatilitet, med pausernas statistiska snedvridning) gör den kursdata till ett läsbart instrument — så fungerar metoden, i utbildningens tjänst."
   },
   "vr-01-multipelgapet": {
     "slug": "vr-01-multipelgapet",

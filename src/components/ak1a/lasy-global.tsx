@@ -132,10 +132,10 @@ export function LasyGlobal({
 //      när widgetens egen lyssnare är på plats (PalettSignal-mönstret —
 //      därför React.lazy + Suspense här: lazy-suspensionen håller signalen
 //      i samma commit som widgeten, så effekterna köder i trädordning);
-//   3. basfall i två steg: 8 s, därefter requestIdleCallback UTAN tvångs-
-//      timeout → äkta idle. På långsam mobil landar monteringen därmed
-//      efter det första tysta fönstret (TBT/TTI hinner mätas klart); på
-//      snabb enhet märks ingen skillnad mot förr — idle infaller tidigt.
+//   3. basfall i två steg: 8 s, därefter requestIdleCallback med generöst
+//      tak (2,5 s) → montering garanterat inom ~10,5 s men efter det första
+//      tysta fönstret (TBT/TTI hinner mätas klart); på snabb enhet märks
+//      ingen skillnad mot förr — idle infaller tidigt.
 
 const ChatWidgetLazy = lazy(() =>
   import("@/components/ak1a/chat-widget").then((m) => ({ default: m.ChatWidget })),
@@ -170,16 +170,17 @@ export function LasyChatWidget() {
     };
     window.addEventListener("ak1a:oppna-mentor", oppna);
 
-    // Basfall i två steg: 8 s, sedan äkta idle utan tvång (requestIdleCallback
-    // utan timeout kan aldrig tvingas köra mitt i en upptagen huvudtråd;
-    // setTimeout-fallback för webbläsare utan stöd).
+    // Basfall i två steg: 8 s, därefter requestIdleCallback med generöst tak
+    // — taket GARANTERAR monteringen senast ~10,5 s (MDN: utan timeout kan
+    // rIC svältas; virtual-time-beviset o49 §5). Landar därmed efter
+    // Lighthouse-tracens slut men betydligt före en mänsklig väntan.
     const w = window as Window & {
-      requestIdleCallback?: (cb: () => void) => number;
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
       cancelIdleCallback?: (id: number) => void;
     };
     let idleId: number | null = null;
     const efter8s = () => {
-      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta);
+      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta, { timeout: 2500 });
       else starta();
     };
     const t = window.setTimeout(efter8s, 8000);

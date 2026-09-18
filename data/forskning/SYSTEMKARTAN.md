@@ -1967,6 +1967,38 @@ KVD: endast data/forskning/SYSTEMKARTAN.md + worklog.md + anspråksfil + detta
 sondskript — INGET bygge; src/ orörd (tsc-ej-aktuellt, commit-grinden bär
 baslinjen); R2 orörd; data/blogg/ orörd; syskonens yter orörda.
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u1-OMSTART, manifest auto-s9-1789731901131 — E36 mediebiblioteket återdiffad; E29-duplikat avstått)
+
+OMSTARTSBOKFÖRING (ärlig): ursprungs-u1-processen levererade detta manifests
+E29-uppdrag KOMPLETT under omstartens fönster — commit 62bb7b85 kl 13:56:47
+(SYSTEMKARTAN + worklog; reflog-bevisat) — duplikat avstods enligt spårets
+regel; omstartens oberoende korsvalidering (verktyg/_s9u1-e29-atermatning.mjs)
+bekräftar samtliga E29-tal (146/147 klara manifest · 68 beslutsposter · pumpor
+pm2 online 43 h ↺19, ps pid 1198464 · evighet 614 kontroller · svitgap
+oförändrat · CRON_SECRET 0 · kunduppdragsfilerna frånvarande). ANDRA VALET:
+E36 — kandidaterna C19/D20/D25/E36/D38 samtliga kodstilla sedan 09-16, men
+E36 ensam bar DATA-drift (backup-filerna på disk). Anspråk på disk FÖRE
+mätning (auto-s9-1789731901131-u1-ansprak2.md, gitignorerad väg); syskonen
+u2 (7b7cff77) och u3 (5b959338) klara och orörda.
+
+| Mått | Kartan (09-16-passningen) | Verkligheten 2026-09-18 (egenmätt) |
+|---|---|---|
+| media-filer-*.json | "manuell, 2 tillfällen 09-08/09-09, ingen cron" | **6 filer; AUTOMATISK nattlig** sedan s10-u1:s e97aa579 09-16 (användar-crontab "40 2 * * *" → backup-fran-molnet.mjs; första auto-filen 09-17 00:40:03 UTC, därefter 09-18 00:40:02 — variabler-exporterna samma sekund = samma körning) |
+| Filernas innehåll | kallade "bucket-förteckning" | **INTE en bucket-förteckning** — exporten listar EVENT-TYPEN media_fil (backup-fran-molnet.mjs:79); antal=0 rader=[] i SAMTLIGA 6 = händelsetrömmen äkta tom sedan 09-08 (mediabibliotek.ts:65 SKRIVER media_fil vid varje uppladdning — ingen uppladdning/radering skett; s10-u3:s "äkta tomma"-klass) |
+| Bucket-förteckningens backup | "manuell" (gap 4) | **FINNS EJ** — inget verktyg förtecknar Storage-objekten; det kartan trodde var backup är en tom event-export ⇒ GAP 4 SKÄRPT till DR-risk: bucketen vilar enbart på Supabase-plattformen |
+| Svit + kontrakt | 18/18 (påstått 09-16) | **18/18 GRÖN EGEN** (exit 0) + kontrakt A7 REN (SVG-förbud, 2 MB-tak, magic-byte, uuid-nyckel, hermetik) |
+| OG-koppling | 0 og-generate i deploy-skriptet; 404 OG-filer i git | **0 träffar återmätt · public/og = 404 trackade i git** (8 bloggbilder på toppnivå + kurs-OG i underkataloger; disk = git, arbetsytan ren) — fortfarande MANUELLT disciplinsteg |
+| Kärnfilen | 577 r, oförändrad | **578 r**, senaste commit 7b2666c1 2026-09-07 — fortfarande kodstilla sedan 09-07 |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E36 | LEVER 9 → **LEVER 9** | Gap 4 föll isär i två fynd (automatisk event-export påvisad + bucket-förteckningens FRAÅVARO) men inget gap stängdes eller föll i funktion — E33/B14-precedensen; sviten grön igen, kärnan kodstilla |
+
+Snitt **7,6 / 288 / 38 OFÖRÄNDRAT** (kunskapsdokvåg). Kö till huvudagenten:
+(1) bucket-förtecknings-export i nattjobbet (Storage-objektlistan till
+data/backups/ — stänger DR-gapet mekaniskt); (2) OG-kopplingen förblir manuell
+(0 träffar återmätt; disciplinen bevisad sedan 09-09-leveransen).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2007,7 +2039,7 @@ baslinjen); R2 orörd; data/blogg/ orörd; syskonens yter orörda.
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | "PROD-TÖMT 09-16" MOTBEVISAT (mätt 09-17): 163 039 rader levande i appens projekt (aufr) — 13:46-mätningen föll i tväprojektfällan (rkaq-dumpar saknar tabellen, kedja 6); arkiv-cron grön OBEVAKAT 02:40, 0 dublett-id; kvar: ALTER V1 på disk/HEAD (v2 endast i index-provsprotokollet), composite-index ej installerat, schema-drift, inventory 25 d; kedja 2 = enda system_events-kopian |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Rot-gapet STÄNGT (omgång 9: artefaktverifiering i deploy+kraschvakt); 09-18: patch-kön SLUTLEVERERAD (kön `[]` + ok-kvitton next/eslint 16.3.5 med hela beviskedjan, 6 spurious-rader arkiverade — falsk-grund-stängningen kurad; lasPatchKo läser tom fil); DRIFTSBOKEN 2px-rättad (150 982 B 02:22); prod 200 ×4 egen (/, /kurser, /blogg, /studio); 09-18 DAG: deploy prod@e5eca448 05:29:45Z HTTPS-200-kvitto + BUILD_ID BBrkvx9 + next-server 16.3.5 live (egna mätningar) + nattens S10-födelsebevisövningar (blad 8 i födelsetimmen, pump-noll STÄNGD, WAL-platå) + driftminnet maskinellt i feljakt-ledgern (o65: 69 salvor, bygg-OOM ×3); pm2 online; kvar: ISR 12/44 (fem nätter fast), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 12 kontroller (KONTROLL 12 SSR-livssonden 09-18: o47:s blindhet botad — sentinellrutter provar LEVANDE SSR i varje vaktkörning) + 12/12 PASS · 0 manuella · GRÖN egen vaktkörning 09-18 05:39Z; feljakt-stormtriagen LEVER (o65: backlog 245/245 bedömda, stormar-grind allt-eller-inget, svit 20/20 egen); tmp-läckeklassen STÄNGD i BÅDA ändarna (o44+s8-u2, svit 15/15+12/12); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (90 sviter = provtagning, mätt 09-18), motorregister fruset 09-03, vaktrapports-stopp i deploy (mätt: 0 träffar i prod-synk) |
-| E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
+| E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 GRÖN egen (09-18); OG manuellt kvar (0 träffar återmätt, public/og 404 i git); media-EVENT-exporten cronad 02:40 (s10-u1) men antal=0 ×6 OCH bucket-förteckningen backas av INGEN (gap skärpt) |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | Prestandaserien o45–o62 LEVER i prod (tolv kurer med EFTER-bevis: / _rsc 5→3 · requests 45→38 · transfer −42,3 KiB · /logga-in ×2 borta · PalettVakt-defern ur TBT-fönstret; band / P61 · TBT 675, /kurser TBT 1 074) + SPA-/StudioChat-koddelning (o27+o31) + mobil-mätverktyget METROLOGISKT HÄRDAT (o62: 19 fantomer bevisade, 52-px-ronden SLUT för barnägda ytor — 6 fynd = ShortSeller-knappens dokumenterade 44×44-undantag, 0 zoomfällor); kvar: o63-köposten (herons TREDJE länk home.slutTitta, 36,0 KiB spill), 2 designbeslut (prosa-länkar + 44-korset = huvudagent), inga egna sviter, språkresolvens-CLS intermittent, sökindex-cadans |
 
 Snittscore: **7,6/10** (287 poäng / 38 system; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
@@ -3899,7 +3931,19 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   19/19 + 16/1 + vakt 11/11 GRÖN). Zonavtalet dokumenterat i
   data/vakten/s8-tmpskydd-kollisions-notis-u2.md + o44-protokollet.
 
-## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-16)*
+## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u1-omstart, manifest auto-s9-1789731901131):
+gap 4 föll ISÄR — media-filer-*.json är INTE en bucket-förteckning utan
+nattjobbens export av EVENT-TYPEN media_fil (backup-fran-molnet.mjs:79), numera
+AUTOMATISK kl 02:40 lokal sedan s10-u1:s e97aa579 09-16 (crontab "40 2 * * *";
+första auto-filen 09-17 00:40 UTC), med antal=0 rader=[] i alla 6 filerna =
+händelsetrömmen äkta tom sedan 09-08 (mediabibliotek.ts:65 skriver media_fil
+vid varje uppladdning — ingen skett). SANNINGEN: Storage-bucketens förteckning
+backas upp AV INGEN — gap 4 SKÄRPT till DR-risk. Återmätt GRÖNT: sviten 18/18
+egen (exit 0, kontrakt A7 REN) · OG 0 träffar i deploy-skriptet + public/og
+404 trackade i git (disk = git) · kärnfilen 578 r kodstilla sedan 7b2666c1
+(09-07). Score 9 kvar (kunskap tillförd, inget gap stängt/fallet).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): sviten OMÄTT GRÖN igen —
 18/18 kontroller + kontrakt A7 REN (SVG-förbud, 2 MB-tak, magic-byte,
@@ -3923,8 +3967,10 @@ Score 9 kvar; gap-listan kompletterad med backup-cadans.*
   (guide finns, validering av att OG verkligen finns saknas — deploy-skriptet
   bär fortfarande 0 og-generate-koppling, mätt 2026-09-16); (2) bucket-
   kvot/storleksbudget bevakas ej; (3) (2) audio/video-format stöds ej
-  (medvetet? dokumentera); (4) bucket-förteckningens backup är manuell
-  (media-filer-*.json, 2 tillfällen 09-08/09-09 — ingen cron).
+  (medvetet? dokumentera); (4) Storage-bucketens förteckning backas upp AV INGEN — media-filer-*.json
+  visade sig vara nattjobbens TOMMA event-export av typen media_fil (antal=0 ×6,
+  automatiserad 02:40 sedan s10-u1:s e97aa579) — DR-gap skärpt 09-18, kö till
+  huvudagenten: objektlistning av Storage-bucketen i nattjobbet.
 
 ## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-18)*
 

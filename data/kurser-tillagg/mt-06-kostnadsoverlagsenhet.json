@@ -1,0 +1,144 @@
+{
+  "slug": "mt-06-kostnadsoverlagsenhet",
+  "category": "MOAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kostnadsöverlägsenhet — moaten ingen ser",
+  "summary": "MOAT-familjens sjätte steg: den försvarsmur som inte syns på produkten. Tre av de klassiska murarna syns utåt — patentet, varumärket, nätverket — och den fjärde, byteskostnaden, känns av kunden (mt-05). Kostnadsöverlägsenheten är den femte och tystaste: samma produkt, samma pris, men en strukturellt lägre kostnad per enhet — och kursen lär räkna den. Kärnan är skalfördelens aritmetik: en fabrik med fasta kostnader 1 000 miljoner kronor per år och rörlig kostnad 40 kronor per enhet har enhetskostnaden 1 000 delat med 50 plus 40 lika med 60 kronor vid volymen 50 miljoner enheter, men 1 000 delat med 100 plus 40 lika med 50 kronor vid fördubblad volym — fallet från 60 till 50 kronor är 16,7 procent, och konkurrenten som står kvar på 50 miljoner enheter kan inte sälja till 55 kronor och överleva. Därpå processfördelen och de unika tillgångarna — gruvan närmare kunden med fraktkostnad 30 kronor per ton mot konkurrentens 55 ger 25 kronor per tons varaktigt övertag så länge fyndigheten räcker — och erfarenhetseffekten, där kostnaden per enhet faller med den ackumulerade volymen. Kursens vassaste verktyg är cykelprovet: en låg kostnad är en moat först när den överlever en hel kapacitetscykel, och fingeravtrycket läs i bruttomarginalernas botten — exemplets bolag med bruttomarginal 31 procent mot branschens median 24 i botten (+7 procentenheter) och 38 mot 34 i topp (+4) bär sitt ärligaste bevis just i botten, där alla andra kostnader pressas. Slutligen nischmoaten: en marknad på 800 miljoner kronor som kräver 300 miljoner i anläggningar ger jätten med 20 procents avkastningskrav ett vinstkrav på 60 miljoner — 7,5 procent av hela marknaden — medan nischbolaget med 15 procents krav nöjer sig med 45 miljoner. Genomgående utbildning i att mäta den osynliga muren, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna skalfördelens enhetskostnadskurva: fast kostnad 1 000 miljoner kronor per år plus rörlig 40 kronor per enhet ger vid volym 50 miljoner enheter kostnaden 1 000 delat med 50 plus 40 lika med 60 kronor per enhet, och vid fördubblad volym 1 000 delat med 100 plus 40 lika med 50 kronor — fallet 16,7 procent, räknat som 60 minus 50 dividerat med 60. Förstå att fördelen har två ben: den fasta kostnaden fördelas på fler enheter och de stora volymerna ger dessutom lägre inköps- och distributionskostnad, därför faller kurvan snabbare än den rörliga kostnaden ensam. Räkna process- och tillgångsfördelar: gruvan med frakt 30 kronor per ton mot konkurrentens 55 bär ett övertag på 25 kronor per ton som varar så länge fyndigheten och läget — ett exempel på moat med utgångsdatum, släkt med mt-02-moat-erosion-och-vallgravstest. Tillämpa cykelprovet: läs bruttomarginalerna i topp och botten av kapacitetscykeln mot branschens, som i v07-bruttomarginal, och leta efter botten-spridningen — exempelbolagets plus 7 procentenheter i botten (31 mot 24) är starkare moat-bevis än plus 4 i toppen (38 mot 34), för i toppen får nästan alla över. Räkna nischens tröskel: marknad 800 miljoner kronor, anläggningar 300 miljoner, avkastningskrav 20 procent ger jättens vinstkrav 300 gånger 0,20 lika med 60 miljoner kronor — 7,5 procent av marknaden — mot nischbolagets 300 gånger 0,15 lika med 45 miljoner, och skillnaden förklarar varför stora bolag lämnar små marknader i fred. Skilja kostnadsmoat från cykellåg konjunktur: den som rapporterar låga kostnader under ett års gynnsamma råvarupris bär ingen moat, och först när kostnadsläget håller genom en hel cykel finns mur. Ställa de fem mätfrågorna till varje kostnadspåstående: varifrån kommer fördelen, hur stor är den per enhet, hur länge håller den, vad krävs för att kopiera den, hur ser den ut i cykelns botten.",
+  "why": "MOAT-familjen bär fem steg — vad en moat är, hur den nöts, hur den mäts, hur den föds och hur byteskostnaderna håller kunden kvar — men ingen fördjupning av den källa som är svårast att se: kostnadsöverlägsenheten, Dorsey-katalogens tysta mur. Varken mt-01:s fyra murar i översikt eller mt-04:s fem källors uppkomstmekanik i korthet äger kostnadssidan på djupet; den saknar sin egen ekonomi — kurvan, processen, cykelprovet, nischen. Familjen bär två Avancerad-steg och behöver ett tredje Intermediär-steg som fördjupar mellan mt-03:s mätning och mt-05:s kundfäste. För den som läser årsredovisningar är det här den mest förbisedda muren: den syns inte på produkten, bara i marginalernas uthållighet.",
+  "history": {
+    "origin": "Kostnadsfördelens historia är industrihistoria själv: järnvägarna som spred fast kostnad över allt längre sträckor, kemijättarna vars processer blev hemligheter i sig, och gruvbolagen vars fyndigheter avgjorde överlevnad. I den tidiga värdepappersanalysen noterades redan på nittonhundratalets början att vissa bolag tålde priskrig som andra inte — men utan verktyg att förklara varför utöver ordet position.",
+    "evolution": "När konkurrensstrategin blev ett eget forskningsfält på nittonhundrasjuttiotalet fick kostnadsfördelen sin systematik: erfarenhetseffekten mättes — kostnaden per enhet föll med en fast procent för varje fördubbling av ackumulerad volym — och erfarenhetskurvorna blev hela branschers kartor. Senare skilde strategilitteraturen tydligt mellan kostnadsfördel som är kopierbar — alla kan i princip bygga samma fabrik — och sådan som vilar på struktur som inte kan köpas: läget, fyndigheten, den ackumulerade inlärningen.",
+    "modern": "Idag är kostnadsmoaten standardläsningen i råvar- och verkstadsbranscher, och erfarenhetseffekterna lever vidare i tillverkningens skal och digitala verksamheters marginalkostnader. För den som utbildar sig i bolagsanalys är den tysta muren också den disciplinerande: den tvingar analysen bort från produktytans intryck och in i kostnadskurvor, cykelns botten och trösklarnas aritmetik — det är där muren antingen finns eller inte gör det."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Den tysta muren — moaten som inte syns på produkten", "minutes": 4 },
+    { "num": 2, "title": "Skalfördelns aritmetik — den fasta kostnadens två ansikten", "minutes": 4 },
+    { "num": 3, "title": "Processen och fyndigheten — fördelar som inte kan köpas", "minutes": 4 },
+    { "num": 4, "title": "Cykelprovet — moat eller bara ett bra år?", "minutes": 4 },
+    { "num": 5, "title": "Nischen — för liten för jätten", "minutes": 4 },
+    { "num": 6, "title": "Mästarskapet — att mäta den osynliga muren", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Den tysta muren — moaten som inte syns på produkten",
+      "minutes": 4,
+      "intro": "De flesta moater avslöjar sig själva. Patentet har nummer, varumärket syns på hyllan, nätverket växer för varje användare, och byteskostnaden märks den dag kunden prövar att byta. Kostnadsöverlägsenheten gör inget av detta: produkten ser likadan ut, priset är samma — och ändå står ena bolaget kvar när priskriget grymt tar slut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Föreställ två tillverkare av samma produkt till samma pris. Kundens upplevelse är identisk; produktbroschyren skiljer sig inte; analytikern som bara läser om produkten hittar ingen skillnad. Men under ytan bär det ena bolaget en kostnadsstruktur som är strukturellt lägre — inte marginellt lägre, inte lägre bara detta år, utan lägre på ett sätt som består. Det är kostnadsöverlägsenheten: den klassiska katalogen av moatkällor räknar immateriella rättigheter, varumärke, nätverk och byteskostnader, se grannkurserna v13-patent-ip, v14-varumarke och v15-natverkseffekter samt mt-05-byteskostnader-och-inlasning — och därtill kostnadssidan, som Dorsey-katalogen kallar den bortglömda källan. Kostnadsmoaten är tyst av två skäl. För det första syns den inte i produktens yta alls: den lever i fabrikens skala, i processens inlärning, i fyndighetens läge — platser som kunden aldrig ser. För det andra förväxlas den lätt med något den inte är: ett tillfälligt lågt råvarupris, en svag valuta, en cykelns botten där alla kostnader är låga. Kursens centrala uppgift är just att skilja det varaktiga övertaget från det tillfälliga — och det görs inte med intryck utan med räkning och tid."
+        },
+        {
+          "type": "definition",
+          "content": "Kostnadsöverlägsenhet: en varaktigt lägre kostnad per enhet än konkurrenternas vid jämförbar produkt och kvalitet — strukturellt sundare, inte cykliskt gynnsamt. Den uppkommer främst genom tre mekanismer: skalfördelar (fast kostnad fördelad på större volym), processfördelar (inlärning och arbetssätt som konkurrenterna saknar) och fördelaktiga tillgångar (fyndighet, läge, rättigheter som inte kan köpas eller kopieras)."
+        },
+        {
+          "type": "insight",
+          "content": "Kostnadsmoaten är den enda moat som inte kan luras fram i en produktlansering och inte kan köpas för marknadsföringspengar — men den är också den som oftast påstås i förbifart av bolagsledningar. Därför är den kurs i mätning snarare än i igenkänning: påståendet är gratis, kostnadskurvan är beviset. Kapitel två till fem bygger var sitt räkneverk för att pröva påståendet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Skalfördelns aritmetik — den fasta kostnadens två ansikten",
+      "minutes": 4,
+      "intro": "Skalfördelen är den mest påtagliga av kostnadsfördelarna och den som bäst låter sig räknas med fyra tal. Kursen bygger den med en fabrik i tre volymlägen — och visar varför fördelen växer snabbare än intuitionen tror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En fabrik har fasta kostnader 1 000 miljoner kronor per år — byggnad, maskiner, underhåll, administration — och en rörlig kostnad på 40 kronor per tillverkad enhet. Vid en årsvolym på 50 miljoner enheter blir enhetskostnaden 1 000 delat med 50 plus 40: den fasta kostnaden bär 20 kronor per enhet och summan blir 60 kronor. Fördubblas volymen till 100 miljoner enheter fördelas de samma fasta kostnaderna på dubbelt så många enheter: 1 000 delat med 100 är 10 kronor, plus de rörliga 40, alltså 50 kronor per enhet. Fallet från 60 till 50 kronor är på 16,7 procent — räknat som 60 minus 50 dividerat med 60 — från en volymfördubbling. Detta är skalfördelens första ansikte, och det är starkare än det ser ut: konkurrenten som står kvar på 50 miljoner enheter har kvar sin kostnad på 60 kronor. Om priset sätts till 55 kronor tjänar skalbolaget 5 kronor per enhet medan konkurrenten förlorar 5 — priset har blivit ett vapen som bara den ena sidan kan bära. Det andra ansikte som gör att kurvan ofta faller snabbare än räkningen visar: de stora volymerna ger dessutom lägre inköpspriser på råvaror och lägre kostnad per enhet i distribution — volymen prutar inte bara på den egna fabriken utan på hela kedjan. Grannkursen om logistik, se-04-logistiksektorn, visar samma mekanik i nätverk: en rutt med hundra upphämtningar kostar betydligt mindre per paket än en med tio, och den tätheten kan en konkurrent inte låna. Båda ansiktena pekar på samma slutsats: skalfördelens moat sitter inte i att vara störst en gång utan i att volymen är svår att ta ifrån bolaget."
+        },
+        {
+          "type": "tabell",
+          "content": "Volym per år | Fast kostnad per enhet | Rörlig kostnad | Enhetskostnad\n50 miljoner enheter | 1 000/50 = 20 kronor | 40 kronor | 60 kronor\n100 miljoner enheter | 1 000/100 = 10 kronor | 40 kronor | 50 kronor\nSkillnad | minus 10 kronor | oförändrad | minus 16,7 procent"
+        },
+        {
+          "type": "insight",
+          "content": "Observera symmetrin som gör skalan till ett tveckantigt verktyg: samma fasta kostnader som ger fördelen på väg upp ger smärta på väg ner. Om volymen halveras fördelas 1 000 miljoner på 25 miljoner enheter — 40 kronor per enhet i fast kostnad, alltså 80 kronor totalt, mot konkurrentens oförändrade 60. Skalan är en moat för den som behåller volymen och en fälla för den som tappar den; därför är skalbranscher präglade av kapacitetscykler och priskrig — verktyget i rk-05-cykelrisk för att läsa rytmerna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Processen och fyndigheten — fördelar som inte kan köpas",
+      "minutes": 4,
+      "intro": "Skalan kan i princip byggas: den som har kapital kan bygga en lika stor fabrik. Två andra kostnadsfördelar är svårare att kopiera, för de vilar på tid och geografi — två ting som inte kan köpas i efterhand.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Processfördelen är inlärningens fördel: det sätt på vilket ett bolag organiserar arbete, flöden och kvalitet som gör att det åstadkommer samma sak med mindre resurser. Erfarenhetseffekten är dess mätbara kärna och har dokumenterats i tillverkning sedan mitten av nittonhundratalet — kostnaden per enhet sjunker med en fast andel för varje fördubbling av den ackumulerade volymen, alltså summan av allt bolaget någonsin tillverkat, inte årets volym. En konkurrent kan bygga en fabrik i samma storlek men kan inte bygga trettio års tillverkningshistoria; det är processfördelens kärna. Den andra strukturen är de fördelaktiga tillgångarna, och den renaste formen är fyndigheten: en gruva som ligger nära kunden och havet har en fraktkostnad på, säg, 30 kronor per ton medan konkurrenten vars gruva ligger inåt landet och längre från hamn betalar 55 kronor per ton. Skillnaden är 25 kronor per ton, varje ton, varje år — inte för att det ena bolaget arbetar bättre utan för att berget ligger bättre till. Fördelen varar så länge fyndigheten räcker, och det är samtidigt moatens utgångsdatum: när fyndigheten sinar finns ingen återställare, vilket är släkt med erosionstänket i mt-02-moat-erosion-och-vallgravstest. Samma struktur återfinns i lägesfördelar utanför gruvnäringen — ett kraftverk närmare nätet, en lagerbyggnad närmare stan, ett bryggeri ovanpå sitt vatten. Gemensamt för process och tillgång är att ingen av dem kan köpas: de måste förvärvas genom tid eller geografi, vilket är skälet till att de är de mest hållbara av kostnadsfördelarna — och de svåraste att återskapa när de en gång oroats."
+        },
+        {
+          "type": "tabell",
+          "content": "Kostnadskälla | Var fördelen bor | Hur den kopieras | Utgångsdatum\nSkalfördel | Fabrikens och kedjans volym | Bygg egen skala — kapitalkrävande | Följer volymen\nProcessfördel | Ackumulerad inlärning | Kan inte köpas, bara återuppbyggas genom tid | Kan erodera genom omsättning av kunnande\nFördelaktig tillgång | Fyndighet, läge, rättighet | Kan inte flyttas eller köpas billigare | Fyndighetens längd"
+        },
+        {
+          "type": "insight",
+          "content": "Tre rader, tre tider: skalan kan byggas om på år, processen på decennier, fyndigheten aldrig. Den som läser en bolagsbeskrivning som påstår varaktig kostnadsfördel bör alltså fråga vilken av de tre raderna påståendet tillhör — svaret avgör både hur trovärdigt påståendet är och hur länge fördelen kan tänkas bära."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Cykelprovet — moat eller bara ett bra år?",
+      "minutes": 4,
+      "intro": "Kostnadspåståenden är som sjukdomar: de ska provas under stress. Kapacitetscykeln — expansion, överkapacitet, rensning, botten, ny expansion — är råvar- och verkstadsbranschernas stressprov, och kursens vassaste verktyg är att läsa moaten just i botten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett bolag kan rapportera imponerande marginaler i cykelns topp och ändå inte bära någon kostnadsmoat: i toppen köper kunderna det mesta, och även den dyraste producenten kan visa siffror den glömmer ett år senare. Det ärliga fönstret är botten — när överkapaciteten pressar priserna och alla kostnadsskillnader blottas. Kursens exempel: ett bolag vars bruttomarginal i cykelns topp ligger på 38 procent mot branschens median 34 — en spread på plus 4 procentenheter — men som i botten håller 31 procent mot branschens 24: plus 7 procentenheter. Vilket av talen är moatens fingeravtryck? Botten-talet, av två skäl. För det första är det just i botten som kostnadstrukturen avgör vem som överlever: bolaget som ligger 7 procentenheter över medianen kan gå med vinst medan andra blöder, och räknar vi vidare är det ett övertag som kan användas för att hålla priset nere och rensa svagare konkurrenter bort. För det andra är topp-spridningen smutsig: i toppen får nästan alla över, och skillnaderna speglar snarare produktmix och timing än struktur. Mätningen gör kursens grannar till verktyg: v07-bruttomarginal för marginalräkningen, mt-03-vallgraven-i-siffror för att sätta marginalen i relation till avkastningen på investerat kapital, och rk-05-cykelrisk för cykelns rytm. Tidsaxeln är provets andra halva: en moat ska ha dokumenterat sig genom minst en hel cykel. Ett bolag som byggt sin kostnadsfördel under tre goda år har inte bevisat något — det bolag som höll sin spread genom botten 2015 till 2016 och genom pandemiåret har ett vittnesmål som ingen enskild rapport kan ge. Detta är anledningen till att kursen upprepade gånger återkommer till historik: marginalserier över tio år säger mer om moaten än vilken investerarpresentation som helst."
+        },
+        {
+          "type": "tabell",
+          "content": "Cykelläge | Bolagets bruttomarginal | Branschens median | Spread\nTopp | 38 procent | 34 procent | plus 4 procentenheter\nBotten | 31 procent | 24 procent | plus 7 procentenheter — moatens fingeravtryck"
+        },
+        {
+          "type": "insight",
+          "content": "Cykelprovet generaliserar bortom råvaror: varje bransch har sina stressår — modebranschen sitt förändringsår, byggbranschen sitt ränteår, teknikbranschen sitt plattformsår. Principen är densamma: moaten mäts i motvind. Den som vill veta om en kostnadsfördel är äkta letar inte efter bolagets bästa år utan dess sämsta — och frågar hur stor spridningen var just då."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Nischen — för liten för jätten",
+      "minutes": 4,
+      "intro": "Den sista kostnadsfördelen är en paradox: att vara liten. På en tillräckligt smal marknad är skalbolagets storhet — dess krav på avkastning per satsad miljon — det som skyddar nischbolaget. Räkningen kallas ibland försvar genom ointresse, och den följer en enkel aritmetik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anta en marknad som totalt omsätter 800 miljoner kronor per år. För att betjäna den krävs anläggningar för 300 miljoner kronor. Ett storbolag med ett avkastningskrav på 20 procent på nytt kapital — viktigt: avkastningskravet gäller inte kvartersbolag utan jättar med stora organisationer att föda — måste visa en vinst på 300 gånger 0,20 lika med 60 miljoner kronor per år från satsningen. Det är 60 delat med 800 lika med 7,5 procent av hela marknaden, i ren vinst, varje år — innan organisationens gemensamma kostnader för att överhuvudtaget hantera affären. Styrelserummet räknar vidare: samma engagemang av ledning och kapital kan läggas på en marknad tio gånger större, och då faller beslutet av sig självt — inte för att marknaden är ointressant utan för att den är för liten för jättens aptit. Nischbolaget med ett avkastningskrav på 15 procent behöver bara 300 gånger 0,15 lika med 45 miljoner kronor, det är 45 delat med 800 lika med 5,6 procent av marknaden, och dess organisation är byggd för just denna storlek. Resultatet är en moat utan murstenar: nischbolaget äger sin lilla marknad inte för att det är bäst utan för att ingen tillräckligt stor bryr sig. Historien fullbordas av mekaniken i mt-04-vallgravens-fodelse: varje moat kostar något att bygga, och nischens pris är tillväxttakten — samma räkning som skyddar mot jätten begränsar mot expandering utåt, för på nästa, större marknad är det nischbolaget som möter någon ännu större. Nischmoaten är alltså trygg och insnörd på samma gång, och den som läser den ska läsa båda sidorna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räk en egen nischanalys som studieövning: (1) Välj tre bolag som du bedömer verka i nischer och uppskatta deras marknaders storlek i omsättning — grova tal räcker, notera hur du resonerat. (2) Uppskatta anläggningsbehovet för att betjäna varje marknad. (3) Räkna jättens vinstkrav vid 20 procents avkastningskrav och nischbolagets vid 15, och sätt båda i procent av marknaden. (4) Avgör för varje nisch om tröskeln skyddar — är marknaden tillräckligt liten för att jätten stannar utanför? (5) Skriv ned för varje bolag vilken av kursens fyra fördelar som bäst beskriver dess kostnadssida: skala, process, tillgång eller nisch — och ett tal som stödjer påståendet. Övningens vinst ligger i steg fem: påståendet utan tal är bara en åsikt."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästarskapet — att mäta den osynliga muren",
+      "minutes": 4,
+      "intro": "Kursens sista steg samlar de fyra räkneverken — skalan, processen, cykelprovet, nischen — till fem frågor som kan bäras till varje kostnadspåstående, och till den gräns som gäller allt annat i utbildningen: moatläraren mäter, och mäter aldrig råd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fem mätfrågorna. Först: varifrån kommer fördelen — skala, process, tillgång eller nisch; fyra olika källor betyder fyra olika hållbarheter. Sedan: hur stor är den per enhet — kronor eller procent, inte ord; en kostnadsfördel som inte kan skrivas som ett tal är en känsla. Därpå: hur länge håller den — fyndigheten har ett slutdatum, processen kan erodera, skalan kan byggas om, nischen kan växa. Fjärde: vad krävs för att kopiera den — kapital räcker för skala, tid krävs för process, och ingenting räcker för fyndigheten. Femte: hur ser den ut i cykelns botten — spridningen i bruttomarginal mot branschens median, det är där muren antingen står eller faller. Med dessa fem frågor blir moatläsningen till ett hantverk: mt-01-vad-ar-en-moat gav vokabulären, mt-02 erosionen, mt-03 mätningen, mt-04 byggandet, mt-05 kundfästet — och denna kurs gav kostnadssidan sin egen ekonomi. Den tysta muren belönar den som läser siffror hellre än berättelser, och det är kanske kursens egentliga läxa: i en värld av produktpresentationer och hållbarhetsord är den mest undervärderade konkurrensfördelen den som inte kan fotograferas alls. Detta är utbildning, aldrig råd om placeringar."
+        },
+        {
+          "type": "insight",
+          "content": "Kostnadsmoaten lär en läxa på metanivå som gäller alla moatläsningar: ju mindre som syns, desto mer som måste räknas. Varumärket kan fotograferas, nätverket kan räknas i användare — kostnadsfördelen finns bara som skillnad mellan två kostnadskurvor, synlig endast för den som tar sig tid att lägga dem bredvid varandra över en hel cykel. Den som gör det arbetar med samma underlag som bolagsledningarna själva — och det är den slutliga poängen med mätning: den som kan räkna muren kan också förstå när någon annan överdriver den."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch letade gärna i tråkiga branscher där kostnadstrukturen gjorde jobbet — bolag som ägde sin lilla värld utan att någon skrev om dem. Hans blick för det oskrivna är kursens släktskap: den tysta muren bor ofta i bolag som ingen notifierar, just för att fördelen inte syns på produkten.",
+  "grahamSection": "Benjamin Grahams krav på marginal genom räkning snarare än genom berättelse är kostnadsmoatens närmaste släktskap i den klassiska litteraturen: en kostnadsfördel som inte kan visas i tal var för Graham ingen fördel alls. Kursens fem mätfrågor är den tillämpade formen av den hållningen.",
+  "ak1Section": "I AK1A:s metodik läses kostnadsöverlägsenheten som en av moatfamiljens källor vid sidan av de immateriella och nätverksbaserade: cykelprovet och botten-spridningen används som bakgrundstakt när bruttomarginalserier jämförs med branschens. Kursen bygger vidare på mt-01-vad-ar-en-moat till mt-05-byteskostnader-och-inlasning och möter mätningarna i v07-bruttomarginal och mt-03-vallgraven-i-siffror. Detta är utbildning, aldrig råd om placeringar."
+}

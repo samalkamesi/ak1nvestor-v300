@@ -1,0 +1,144 @@
+{
+  "slug": "ks-07-kapitalstrukturens-avvagning",
+  "category": "KAPITALSTRUKTUR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kapitalstrukturens avvägning — tre teorier om skuldens rättvikt",
+  "summary": "KAPITALSTRUKTUR-familjens sjunde steg och teorikröning: den Avancerade kurs som samlar seriens sex praktiksteg till en enda fråga — varför bär bolaget just den skuld det bär? Kursen bygger på Modigliani och Millers tankeexperiment: i en värld utan skatt och konkurskostnad är finansieringsformen irrelevant, för delningen av kakan ändrar inte kakan — två identiska bolag, det ett skuldfritt och det andra med skuld 400 miljoner kronor till 5 procent, är värda samma totalt 1 000 miljoner kronor (driftskassa 100 miljoner per år delat med avkastningskravet 10 procent), men aktieägarna i skuldbolaget bär högre risk och kräver högre avkastning: 80 miljoner kvar till ägarna efter 20 miljoners ränta på 600 miljoners aktievärde är 13,3 procent. Därpå de två bucklorna som gör teorin till praktik: skatten (räntan är avdragsgill — sköldvärdet vid 20,6 procents bolagsskatt är 400 gånger 0,206 lika med 82,4 miljoner kronor, kapitaliserat som 4,12 miljoner per år delat med 5 procents ränta) och nöd kostnaden (den väntade kostnaden av betalningssvårigheter växer snabbare än skölden — exempeltabellens nettokurva 0, plus 67,4, plus 104,8 och plus 67,2 miljoner vid skuld 0, 400, 800 och 1 200 ger sin topp vid 800). Därtill pecking order-observationen — internt kassaflöde först, skuld sedan, emission sist — och kassaflödets karaktär som förklaring till varför fastighetsbolag med långa kontrakt bär vida mer skuld än uppdragsbolag med värdet i huvudena. Genomgående utbildning i teoriernas logik, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna Modigliani-Miller-tankeexperimentet med egna tal: driftskassa 100 miljoner kronor per år i evighet delat med avkastningskravet 0,10 ger värdet 1 000 miljoner kronor; skuldbolaget med skuld 400 miljoner till 5 procent betalar ränta 20 miljoner per år, lämnar 80 miljoner till ägarna på ett aktievärde av 1 000 minus 400 lika med 600 miljoner — avkastningskravet stiger till 80 dividerat med 600 lika med 13,3 procent, och totalvärdet är oförändrat: delningen av kakan ändrar inte kakan. Räkna skatteskölden: räntan är avdragsgill vid 20,6 procents bolagsskatt, den årliga besparingen är räntan 20 gånger 0,206 lika med 4,12 miljoner kronor, och kapitaliserad till låneräntan 5 procent blir sköldvärdet 4,12 dividerat med 0,05 lika med 82,4 miljoner kronor — samma svar som den korta formen skuld gånger skattesats, 400 gånger 0,206. Räkna trade-off-kurvans topp i tabellform: vid skuld 0, 400, 800 och 1 200 miljoner växer skölden med 0, 82,4, 164,8 och 247,2 miljoner medan den väntade nöd kostnaden växer med 0, 15, 60 och 180 miljoner — nettot 0, plus 67,4, plus 104,8 och plus 67,2 ger sin topp vid 800 miljoner, och kurvan är poängen, inte siffran. Redogöra för pecking order-observationen och dess förklaring: lönsamma bolag lånar mindre inte av försiktighet utan av behov, och pengarna hämtas i ordningen internt kassaflöde, skuld, emission. Para kassaflödets karaktär med skuldbördan: stabila kontraktsbärda strömmar och materiell säkerhet bär högre skuld än uppdragsbaserade verksamheter, och huvudregeln är att skulden ska mätas mot kassaflödets stabilitet. Ställa de fem frågorna till varje balansräkning: vad kostar skulden, vad skyddar den mot, vad händer vid förfall, vem bär risken, vad säger teorierna om valet.",
+  "why": "KAPITALSTRUKTUR-familjen bär sex praktiksteg — grunderna, kapitalallokeringens fem vägar, skuldens anatomi, emissionens mekanik, covenanter och kreditbetyg, konvertibler och hybridkapital — men inget steg samlar dem till teorin om varför skuldnivån ser ut som den gör: de tre klassiska svar som tillsammans förklarar balansräkningens kanske mest omdiskuterade tal. Serien bär fyra Intermediär-steg i rad sedan grunderna och saknar kröningen som vänder frågan från hur skulden ser ut till varför den gör det. Kursen bygger direkt på ks-01-kapitalstruktur-grunder och ks-03-skuldens-anatomi, och lånar priset på skuld från ma-05-kreditpremien och tiden från st-05-refinansieringsmuren — teorikursen är slussen där praktikstegen möts.",
+  "history": {
+    "origin": "Frågan om skuldens rättvikt är äldre än modern finans: långivare har i alla tider skilt mellan skeppsfärder som kunde försvinna i storm och stadiga inkomster som kom igen varje år, och prissatt dem olika. Men den systematiska frågan — finns ett bästa förhållande mellan skuld och eget kapital — formulerades skarpt först på nittonhundrafemtiotalet, när två forskare visade att svaret i en idealiserad värld är nej: finansieringen kan inte skapa värde i sig.",
+    "evolution": "Efter irrelevansresultatet vändes forskningen till att förklara varför verkligheten ändå visar mönster: skatten gjorde räntan billigare än utdelningen, konkursriskens kostnader gjorde för mycket skuld dyrt, och kurvan mellan dem fick en topp. Senare kom den beteendemässiga observationen att bolag inte väljer i teorins diagram utan i en hierarki: egna pengar först, lån sedan, nytt eget kapital sist — och att de mest lönsamma bolagen ofta är de minst belånade, av behov snarare än dygd.",
+    "modern": "Idag läser analystvärlden kapitalstruktur som en summa av alla tre lärorna: ränteskillnadens pris enligt kreditpremien, förfalloklungornas tidslinja, och branschens kassaflödeskaraktär som förklarar varför reglerade verksamheter och fastighetsägare bär hög skuld medan kunskapsbolag bär låg. För den som utbildar sig är teorikursen den gemensamma nämnaren: den förklarar varför balansräkningar i samma bransch liknar varandra — och varför de skiljer sig mellan branscher."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Två bolag, en kaka — tankeexperimentet som flyttade frågan", "minutes": 4 },
+    { "num": 2, "title": "Den första bucklan — skatten betalar en del av räntan", "minutes": 4 },
+    { "num": 3, "title": "Den andra bucklan — nöd kostnaden och kurvan med topp", "minutes": 4 },
+    { "num": 4, "title": "Pecking order — i vilken ordning pengarna faktiskt hämtas", "minutes": 4 },
+    { "num": 5, "title": "Kassaflödets karaktär — varför hyresvärden lånar mer än byrån", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — tre teorier, ett omdöme", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Två bolag, en kaka — tankeexperimentet som flyttade frågan",
+      "minutes": 4,
+      "intro": "Före teorin var skulddiskussionen värderingar: skuld var antingen sund försiktighet eller vårdslös spel. Tankeexperimentet från nittonhundrafemtiotalet bytte fråga: vad skulle hända i en värld där finansieringen inte kunde skapa värde? Svaret blev finansens mest berömda utgångspunkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tänk två bolag med identisk verksamhet: samma kunder, samma maskiner, samma driftskassa på 100 miljoner kronor per år, för evighet, och samma avkastningskrav 10 procent hos ägarna av den skuldfria verksamheten. Värdet av verksamheten är då 100 dividerat med 0,10 lika med 1 000 miljoner kronor — det är kakan, och den gräddas av verksamheten, inte av finansieringen. Det första bolaget är skuldfritt: aktierna är värda hela 1 000 miljoner kronor och ägarna tar emot hela kassan. Det andra bolaget har lånat 400 miljoner kronor till 5 procent: räntan är 400 gånger 0,05 lika med 20 miljoner kronor per år, och kvar till aktieägarna levereras 100 minus 20 lika med 80 miljoner kronor per år. Hur mycket är deras aktier värda? I tankeexperimentets värld — utan skatt, utan konkurskostnad, utan informationsproblem — är totalvärdet fortfarande 1 000 miljoner: kakan har inte ändrats av att den delas annorlunda. Aktierna i skuldbolaget är då värda 1 000 minus skulden 400 lika med 600 miljoner kronor, och avkastningen på dem är 80 dividerat med 600 lika med 13,3 procent per år — mot 10 procent i det skuldfria bolaget. Skillnaden är risk, inte värde: skuldbolagets ägare sitter närmare elden, och marknaden kräver betalt för det i form av högre avkastning, men ingen har skapat eller förstört värde genom att välja finansiering."
+        },
+        {
+          "type": "definition",
+          "content": "Irrelevanssatsen (Modigliani-Miller): i en perfekt värld — utan skatt, konkurskostnader och informationsproblem — är bolagets totalvärde oberoende av hur det finansieras. Delningen av kassaflödet mellan långivare och ägare ändrar inte kassaflödet självt. Satens pedagogiska kraft ligger i vad den utesluter: allt värde som finansieringen ändå skapar i verkligheten måste komma från de imperfektioner som antagits bort."
+        },
+        {
+          "type": "insight",
+          "content": "Satens djupaste användning är negativ: den säger inte att finansieringen är oviktig, utan att finansieringens betydelse alltid måste hänföras till någonting — en skatt, en risk, en information. När kursens nästa kapitel visar att skatten gör skulden billigare är det just en sådan imperfektion som getts ett pris. Att fråga vilken imperfektion som prissätts är den utbildade frågan vid varje balansräkning."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Den första bucklan — skatten betalar en del av räntan",
+      "minutes": 4,
+      "intro": "Verklighetens första avvikelse från den perfekta världen är räkenskapernas mest praktiska: räntan dras av före beskattningen, utdelningen gör det inte. Därmed kostar skulden bolaget mindre än kupongen — och skillnaden har ett värde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Åter till exempelbolaget med skuld 400 miljoner kronor och ränta 20 miljoner per år. Bolagsskatten ligger på 20,6 procent, se km-049-bolagsskatt-206 för dess grunder. Eftersom räntan är avdragsgill betalar bolaget 20,6 procent mindre skatt än det skuldfria tvillingbolaget hade gjort på samma förutsättning: besparingen är 20 gånger 0,206 lika med 4,12 miljoner kronor per år, rakt igenom varje år så länge skulden består. Värdet idag av en evig sådan ström, kapitaliserad till låneräntan 5 procent, är 4,12 dividerat med 0,05 lika med 82,4 miljoner kronor — och det är skattesköldens värde. Kortformen ger samma svar: skuld gånger skattesats, 400 gånger 0,206 lika med 82,4 miljoner. Med skölden blir skuldbolagets totalvärde 1 000 plus 82,4 lika med 1 082,4 miljoner kronor, medan det skuldfria bolaget förblir värt 1 000. Skatten har alltså gjort en bit av finansieringen billig — staten bär en del av räntan. Men notera vad resonemanget inte sagt: inget ännu begränsar hur stor skulden borde vara. Om skölden växer med skulden, rak i proportion, verkar mer skuld alltid bättre — och det är i nästa kapitel som kurvan böjs."
+        },
+        {
+          "type": "tabell",
+          "content": "Post | Skuldfria bolaget | Skuldbolaget | Skillnaden\nDriftskassa per år | 100 miljoner kronor | 100 miljoner kronor | 0\nRänta till långivare | 0 | 20 miljoner kronor | plus 20\nKvar före skatt | 100 miljoner kronor | 80 miljoner kronor | minus 20\nSkattebesparing, per år | 0 | 4,12 miljoner kronor | plus 4,12\nSköldvärde, kapitaliserat | 0 | 82,4 miljoner kronor | plus 82,4\nTotalvärde | 1 000 miljoner kronor | 1 082,4 miljoner kronor | plus 82,4"
+        },
+        {
+          "type": "insight",
+          "content": "Sköldens mekanik är värd att minnas i dess enkla form — skuld gånger skattesats — men dess budskap är viktigare: finansieringens värde är alltid någon annans betalning. Här är det skattesystemet som subventionerar räntan; i nästa kapitel är det tvärtom bolaget som betalar för risken. Kursens två bucklar är alltså inte två godtyckliga korrigeringar utan två prisflöden i motsatta riktningar."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Den andra bucklan — nöd kostnaden och kurvan med topp",
+      "minutes": 4,
+      "intro": "Om skatten var den enda bucklan skulle bolagen stapla skuld mot himlen. De gör det inte, och anledningen har ett pris: när skulden blir tung nog börjar den väntade kostnaden av betalningssvårigheter växa — inte linjärt utan snabbare. Mellan de två krafterna får kurvan sin topp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nöd kostnaden är summan av allt som händer när skulden inte längre kan bäras tryggt: omförhandlingar som kostar både tid och villkor, kunder och leverantörer som krämer betalning i förskott, nyckelpersoner som söker sig till tryggare arbetsgivare, och i värsta fall en rekonstruktion där verksamhetens värde gallras. Dessa kostnader är inte en klippa vid en exakt skuldnivå utan en sannolikhetsvikt som växer med belåningen — och den växer fortare och fortare. Kursens exempeltabell visar mekanismen i fyra lägen. Vid skuld 0 är skölden 0 och den väntade nöd kostnaden 0: nettot av skulden är 0. Vid skuld 400 miljoner är skölden 82,4 miljoner — 400 gånger 0,206 — och den väntade nöd kostnaden uppskattas till 15 miljoner: nettot plus 67,4. Vid skuld 800 miljoner är skölden 164,8 miljoner och nödkostnaden 60: nettot plus 104,8. Vid skuld 1 200 miljoner är skölden 247,2 miljoner men nödkostnaden 180: nettot plus 67,2. Nettokurvan stiger, planar och faller — med sin topp vid 800 miljoner i exemplet. Siffrorna är pedagogiska, inte branschdata; det bärande är formen. Skulden bär också ett löpande pris som stiger med belåningen, se ma-05-kreditpremien: exempeltalets ränta kan läsas som 5,0 procent vid skuld 400, 6,5 procent vid 800 — räntekostnad 800 gånger 0,065 lika med 52 miljoner per år — och 9,0 procent vid 1 200, alltså 1 200 gånger 0,09 lika med 108 miljoner per år; kreditmarknadens prislapp växer med samma böjning som nöd kostnadens. Och tiden spelar in: när skulden förfaller i klungor blir refinansieringsmuren i st-05-refinansieringsmuren den konkreta form i vilken nöd kostnaden förverkligas."
+        },
+        {
+          "type": "tabell",
+          "content": "Skuld | Skattesköld (skuld × 0,206) | Väntad nöd kostnad | Nettovärde av skulden\n0 miljoner | 0 | 0 | 0\n400 miljoner | 82,4 miljoner | 15 miljoner | plus 67,4\n800 miljoner | 164,8 miljoner | 60 miljoner | plus 104,8\n1 200 miljoner | 247,2 miljoner | 180 miljoner | plus 67,2"
+        },
+        {
+          "type": "insight",
+          "content": "Kurvans poäng är inte att 800 miljoner är rätt skuld — exemplen är konstruerade — utan att det finns ett inre logiskt förhållande: två krafter i motsatt riktning, en nästan rak (skölden) och en konvex (nödkostnaden), ger tillsammans en topp. Samma kurvtänkande återkommer i allt från försäkringens självrisk till lagersystemets buffer, och det är en av finansteoriens mest lärbara bild: optimum uppstår där marginalkostnaden växer ikapp marginalnyttan."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Pecking order — i vilken ordning pengarna faktiskt hämtas",
+      "minutes": 4,
+      "intro": "Trade-off-kurvan beskriver ett val som om bolaget stod vid ett ritbord och optimerade. Verklighetens bolag gör något annat: de hämtar pengarna i en bestämd ordning, och observationen av den ordningen är den tredje teorin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Iakttagelser av verkliga bolag visar en påfallande mönsterstämma: när ett nytt projekt ska finansieras används först internt genererade pengar — balanserad kassaflöde från verksamheten själv. Om det inte räcker tillkommer lån. Nyemission är sista utvägen, inte första. Ordningen kallas pecking order — hackordningen — och den har en förklaring som inte handlar om kurvor utan om information och kostnad. Internt kassaflöde har ingen emissionskostnad och ingen signal; lånet har en ränta men beror inte på att marknaden värdesätter aktien; emissionen både kostar — placering, rådgivning, rabatt — och signalerar, rätt eller fel, att styrelsen anser aktien värd att sälja vid det här priset. Kursens grannkurs om emissionens mekanik, ks-04-emissionens-mekanik, räknar den biten i detalj; här räcker kalkylen att en emission på 500 miljoner kronor med sammanlagda kostnader i storleksordningen 4 procent kostar 500 gånger 0,04 lika med 20 miljoner kronor innan en enda krona nått projektet. Pecking order förklarar också en av finansens mest missförstådda samband: de mest lönsamma bolagen har ofta de lägsta skulderna. Det är inte ett tecken på att lönsamma bolag är försiktiga, utan på att de behöver hämta färre pengar utifrån — skulden är restposten av behov, inte uttryck för karaktär. För läsaren av rapporter betyder det att skuldkvoten ska tolkas tillsammans med lönsamheten: samma skuldkvot kan vara naturlig i ett växande bolag och alarmerande i ett moget."
+        },
+        {
+          "type": "tabell",
+          "content": "Källa | Plats i ordningen | Kostnad | Signaleffekt\nInternt kassaflöde | Först | Ingen emissionskostnad | Ingen\nNytt lån | Andra | Ränta, ofta stigande med belåningen | Liten\nNyemission | Sist | Emissionskostnad, ofta cirka 4 procent | Stor — priset på aktien prövas"
+        },
+        {
+          "type": "insight",
+          "content": "Pecking order är en påminnelse om att teorier beskriver beslut som fattas av människor med information som är ojämnt fördelad. Hackordningen är inte ett bevis för att bolag är irrationella — den är ofta den billigaste vägen. Men den betyder att en balansräkning inte alltid är ett optimum från kapitel tre; den kan vara ett arv från den ordning i vilken behovet uppstod. Att fråga sig varifrån pengarna senast hämtades är därför en giltig läsfråga vid varje årsredovisning."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Kassaflödets karaktär — varför hyresvärden lånar mer än byrån",
+      "minutes": 4,
+      "intro": "De tre teorierna förutsätter en variabel de sällan säger högt: kassaflödets karaktär. Ett bolag med tioåriga hyreskontrakt och en fastighet som säkerhet lever i en annan värld än ett uppdragsbolag vars värde går hem på fredag. Därför bär de olika mycket skuld.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Jämför två bolag med samma balansräkningsstorlek. Fastighetsbolaget har hyreskontrakt som löper flera år, hyresgäster som betalar varje månad, och byggnader som kan tas i pant: dess intäktsström är jämn och säkerheten materiell, och branschen bär därför traditionellt hög skuld — i exemplena omkring 60 procent av balansräkningen. Teknikkonsulten har uppdrag som löper månader, anställda vars kunskap är väsentliga tillgångar, och nästan ingen pantsäkerhet: kassaflödet kan halveras från ett kvartal till nästa om ett par stora uppdrag slutar, och branschen bär därför låg skuld — i exemplena omkring 10 procent. Skillnaden är inte mod eller feghet utan nöd kostnadens geometri från kapitel tre: den väntade kostnaden av betalningssvårigheter växer mycket fortare för det svängande kassaflödet, och kurvans topp hamnar tidigare. Måttet på karaktären finns i registrets grannkurser: intäktsstabiliteten i v12-intaktsstabilitet, skuldsättningsgradens räkneverk i v10-skuldsattningsgrad, och räntetäckningens trygghetsmått i st-01-soliditet-och-rantetackning. En praktisk läsövning: välj tre börsbolag i olika branscher, hämta skuldkvoten och intäkternas stabilitet över fem år ur årsredovisningarna — kurserna bk-01-balansrakningen och bk-02-resultatrakningen visar var talen bor — och para ihop: högre stabilitet, högre buren skuld. Mönstret brukar vara tydligt, och det är samma mönster som teorierna förutsätter: skuldbördan ska mätas mot kassaflödets stabilitet, inte mot en generell regel om rätt skuldkvot."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räk en egen tre-teori-läsning av ett verkligt bolag, som ren studieövning: (1) Hämta senaste årsredovisningen och räk skuldsättningsgraden enligt v10-skuldsattningsgrad och räntetäckningen enligt st-01-soliditet-och-rantetackning. (2) Uppskatta skattesköldens storleksordning: räntebärande skuld gånger 0,206. (3) Beskriv kassaflödets karaktär: hur stor andel av intäkterna som återkommer genom kontrakt eller prenumerationsliknande strukturer, med v12-intaktsstabilitet som måttstock. (4) Placera bolaget på kapitel tre:s kurva med ord — tidigt, mitt eller sent — och motivera med nöd kostnadens logik. (5) Avgör slutligen vilken av de tre teorierna som bäst förklarar bolagets faktiska skuldnivå, och skriv ned svaret med datum. Övningens mål är omdömet, inte rekommendationen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — tre teorier, ett omdöme",
+      "minutes": 4,
+      "intro": "Kursens sista steg samlar de tre teorierna till ett enda arbetsredskap: irrelevansen som visar att finansieringens värde alltid måste förklaras, skatten och nödkostnaden som förklarar den, och hackordningen som beskriver hur valet faktiskt görs. Med fem frågor och en tydlig gräns: detta är utbildning, aldrig råd om placeringar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fem frågor som bär kursen vidare till varje ny balansräkning: Först: vad kostar skulden — räntan och kreditpremiens pris, ma-05-kreditpremien. Sedan: vad skyddar den mot — skattesköldens storlek, kapitel två. Därpå: vad händer vid förfall — klungornas tidslinja, st-05-refinansieringsmuren. Fjärde: vem bär risken — ägarnas 13,3 procent mot 10 från kapitel ett är hela skillnaden mellan att ära en kaka och att äga hälften av två. Femte: vad säger teorierna om valet — är skuldnivån nära en kurvtopp, ett arv från hackordningen, eller ett uttryck för kassaflödets karaktär? Tre teorier, ett omdöme: den som kan alla tre kan läsa en balansräkning som en historia om val — gjorda av styrelser under skatt, risk och information — i stället för som en lista över tal. Detta är utbildning i teoriernas logik, aldrig råd om placeringar."
+        },
+        {
+          "type": "insight",
+          "content": "Den största insikten från teorikursen är ödmjukheten den lär ut: det finns ingen universellt rätt skuldkvot, bara skuldkvoter som passar eller inte passar ett kassaflöde, ett regelverk och en tid. Den som söker en enkel siffra att lita på söker fel; den som kan frågorna kan följa vilken balansräkning som helst, i vilken bransch som helst, med egen penna."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch berättade med värme om bolag utan skuld som sov gott i kriser, och med lika tydlig blick om skuldtunga förvärvsfall. Hans läsning var alltid kassaflödets karaktär först — kursens kapitel fem är den systematiserade formen av den instinkten: skulden ska vägas mot det den belånar.",
+  "grahamSection": "Benjamin Grahams krav på räntetäckning och trygg balansräkning var en tidig, praktisk form av nöd kostnadens tänkande: marginalen mot betalningssvårigheter är värd att betala för i form av lägre sköld. Kursens kurva med topp är det teoretiska namnet på den gamla hantverksregeln.",
+  "ak1Section": "I AK1A:s metodik läses kapitalstrukturen som en av analysens fasta dimensioner: teorikursens tre frågor — sköld, nödkostnad, hackordning — används som bakgrundstakt när bolagets finansiering jämförs med branschens bärighet. Kursen knyter samman praktikstegen ks-01-kapitalstruktur-grunder till ks-06-konvertibler-och-hybridkapital och är slussen mellan dem och riskmätningarna i st-spåret. Detta är utbildning, aldrig råd om placeringar."
+}

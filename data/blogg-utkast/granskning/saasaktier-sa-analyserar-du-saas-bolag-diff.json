@@ -1,0 +1,129 @@
+{
+  "granskat": "2026-09-18",
+  "granskadAv": "fabrik auto-s1-1789735501260 u3 (granskare 3/3; anspråk data/vakten/auto-s1-1789735501260-u3-ansprak.md)",
+  "rapport": "granskning/saasaktier-sa-analyserar-du-saas-bolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — sex bruttomarginaltal (Kambi 98,9 · Palantir 84,8 · SAP 73,7 · Truecaller 73,1 · Microsoft 67,9 · Sinch 18,4) + Kambis EV/EBIT 197 EXAKTA mot rådata i FYRA kandidat-vintager (0e399f13 115 / 9839c530 120 / 37aecd55 125 / 6c4cc758 126 — SaaS-bolagen identiska i alla, källkedjan sluten trots universumglidning), aritmetik 8/8 gröna, juridik 2007:528 ren (juridikgrind-vakt fynd 0, grund true; 2 rådverbträffar = falska positiva 'bolag som säljer mjukvara'; inget lagrum åberopas = lagrumsblandning omöjlig), 911 = 0 träffar/7 mönster, 16/16 interna länkar HTTP 200 mot localhost + 5/5 externa källor 200. FYND: B1 Rule of 40-märkningen (tillväxtkomponenterna 17,3/19,3/44,4/13,1 är prognosTillväxt = konsensus EPS-tillväxt +1 år, inte 'tillväxttakten'; SAP:s 'precis över' VÄNDER på intäktstillväxt: 6,0 + 23,8 = 29,8 under strecket), B2 superlativfelklassen ('hela spannet … från Kambi 98,9' — Kambi rang 4 av 114: Industrivärden/Öresund/Evolution 100,0 över; bland mjukvarubolag Evolution ensam över), B3 'sektorns tyngsta lönsamhet' om Microsoft falskt på marginaler (Palantir 47,1/49,0/35,1 > 45,1/40,3/5,0), B4 'marginella kusten'→kostnaden, B5 'räntkänsliga'→räntekänsliga, B6 readingMinutes 2→6 (1 239 ord textrensat = 620 ord/min; publicerat max 224 av 55 poster). Publicering = kundens beslut (R2).",
+  "anvandning": "Byggaren (eller nästa våg med skrivrättighet i utkastet) applicerar B4–B6 + C1 maskinellt; B1–B3 + C3 är redaktionella beslut med föreslagen lydelse. Granskaren skriver inte i utkast-JSON:en. Vid flytt till data/blogg/ gäller D1 (publishedAt = publiceringsdagen, R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (sektion 'Rule of 40 — tillväxt och kassaflöde i ett enda tal')",
+      "gammalt": "Sektorns sammanfattande tumregel heter Rule of 40: tillväxttakten i procent plus kassaflödesmarginalen i procent, tillsammans minst 40. Idén är att ett bolag antingen ska växa snabbt eller generera kassa — helst båda. Med universumets tal blir regeln levande: SAP landar på 17,3 + 23,8 = 41,1 — precis över.",
+      "nytt": "Sektorns sammanfattande tumregel heter Rule of 40: tillväxttakten i procent plus kassaflödesmarginalen i procent, tillsammans minst 40 — där tillväxtsidan i universumets data är analyskonsensus för nästa år, inte redovisad intäktstillväxt. Idén är att ett bolag antingen ska växa snabbt eller generera kassa — helst båda. Med universumets tal blir regeln levande: SAP landar på 17,3 + 23,8 = 41,1 — precis över på konsensusmåttet, men under strecket på redovisad intäktstillväxt (6,0 + 23,8 = 29,8); tillväxtdefinitionen är alltså själv en del av övningen.",
+      "orsak": "Tillväxtkomponenterna (SAP 17,3 · Microsoft 19,3 · Palantir 44,4 · Sinch 13,1) är i rådata prognosTillväxt = konsensus EPS-tillväxt +1 år (earningsTrend, fältets egen notering) — texten kallar dem 'tillväxttakten', vilket läsaren enligt konventionen (Bessemer, utkastets egen källa) tolkar som intäktstillväxt. SAP:s 'precis över'-slutsats är en artefakt av måttvalet: omsCAGR5 6,0 + fcfMarginal 23,8 = 29,8 och TTM 9,4 + 23,8 = 33,2, båda under 40. Microsoft (21,1/22,7), Palantir (68,0/127,9) och Sinch (5,3/9,9) håller sina slutsatser vid måttbyte. Kassaflödessidan är rätt märkt (fcfMarginal) — endast tillväxtsidan. Föreslagen lydelse märker måttet ärligt och gör måttskillnaden till pedagogik istället för för dold källa till fel; alternativt omräkning på intäktstillväxt med Palantir som 'över'-exempel.",
+      "kurs": "beslut"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (ingress)",
+      "gammalt": "I AK1A:s analysuniversum finns hela spannet av mjukvaruekonomi: från Kambi, som redovisar 98,9 procents bruttomarginal på sin plattform, till Sinch, vars meddelandetjänster inte når 19.",
+      "nytt": "I AK1A:s analysuniversum finns hela spannet av mjukvaruekonomi: från Evolution och Kambi — där källans konventioner redovisar 100,0 respektive 98,9 procents bruttomarginal — till Sinch, vars meddelandetjänster inte når 19.",
+      "orsak": "Superlativfelklassen (nionde fyndplatsen i serien): Kambi är rang 4 av 114 mätta bolag i utkastets eget underlag — Industrivärden 100,0, Öresund 100,0 och Evolution 100,0 (källans nettokonvention, definierad i syskonguiden B12 spelaktier) ligger över; bland mjukvarubolag är Evolution ensam över Kambi. Sinch-änden är sann (mjukvarubotten 18,4; bankernas 0,0 och Polestars −1,1 är inte mjukvaruekonomi). Kur enligt finans-precedensen: rangen rättas, kraften behålls — spannet blir tvärtom bredare och mer lärorikt.",
+      "kurs": "beslut"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (sektion 'Rule of 40')",
+      "gammalt": "Microsoft, med sektorns tyngsta lönsamhet, landar på",
+      "nytt": "Microsoft, världens största mjukvarabolag, landar på",
+      "orsak": "'Sektorns tyngsta lönsamhet' är falskt på marginaler i utkastets eget SaaS-set: Palantir ebit 47,1 / netto 49,0 / fcf 35,1 mot Microsofts 45,1 / 40,3 / 5,0 (Evolution högre än båda om mjukvaruekonomi räknas: 57,8 / 51,8 / 59,2) — och utkastets egen tabell tre meningar senare visar Palantirs 35,1 mot Microsofts 5,0 på just kassaflödessidan. Sant endast i absoluta tal. 'Världens största mjukvarabolag' är sant på alla läsningar och behåller poängen (storleken förklarar kassans väg).",
+      "kurs": "beslut"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (sektion 'Bruttomarginalen avslöjar affärsmodellen')",
+      "gammalt": "där den marginella kusten är nära noll",
+      "nytt": "där den marginella kostnaden är nära noll",
+      "orsak": "Stavfel som byter ord: 'kusten' (geografi) i stället för 'kostnaden' (ekonomi) — meningsbärande i en guide om marginalkostnader.",
+      "kurs": "maskinellt"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (Sammanfattningen, sista bullet)",
+      "gammalt": "fjärran kassaflöden är räntkänsliga",
+      "nytt": "fjärran kassaflöden är räntekänsliga",
+      "orsak": "Stavfel; kroppens risksektion stavar rätt ('känsligare … för räntan').",
+      "kurs": "maskinellt"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "6",
+      "orsak": "1 239 ord textrensat (1 344 rå) vid rm 2 = 620 ord/min = 2,8× publicerat max (egen mätning idag: 55 publicerade poster, 51–224 wpm, 0 över 240 — konsumentaktier-precedensen 09-18 mätte textrensat). round(1 239/200) = 6. Råkonventionen ger 6,7 → 7; textrensat-mått valt efter senaste publicerade granskningspraxis.",
+      "kurs": "maskinellt"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (sektion 'Bruttomarginalen avslöjar affärsmodellen')",
+      "gammalt": "Längst ner: Sinch på 18,4.",
+      "nytt": "Längst ner bland mjukvarubolagen: Sinch på 18,4.",
+      "orsak": "Scoping: som universumpåstående falskt (Polestar −1,1, banker/Kinnevik 0,0 under), som mjukvarupåstående sant. Tre ord gör meningen universumsäker utan att tappa kraften.",
+      "kurs": "maskinellt"
+    },
+    {
+      "id": "C2",
+      "typ": "flagga",
+      "fil": "(rådata — data/portfolj-system/bolagsunivers.json)",
+      "falt": "MSFT lonksamhet.fcfMarginal",
+      "gammalt": "5,0 %",
+      "nytt": "dataägaren (spår 2) verifierar fältdefinition/period",
+      "orsak": "Intern proportionskontrast i samma post: ebit 45,1 / netto 40,3 mot fcfMarginal 5,0 — ovanlig följd för ett moget megacap-bolag (möjligen capex-tung FY eller definitionsskillnad). Utkastet rapporterar fältet troget och förklaringsklausulen ('satsar kassan i stället för att samla den') är förenlig med 2026 års investeringscykel — ingen textändring krävs, men fältet förtjänar en oberoende källkoll innan vägledning citerar det vidare.",
+      "kurs": "beslut"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "body (Källor, sista punkt)",
+      "gammalt": "- AK1A:s analysuniversum — bolagsrådata, hämtad 2026-09-15",
+      "nytt": "- AK1A:s analysuniversum — universumdragning 2026-09-15 (bolagsposter hämtade 2026-09-03)",
+      "orsak": "Posternas eget hamtat-datum i rådata är 2026-09-03 (Yahoo); 2026-09-15 är universumfilens dragning. Dubbeldatumet gör källpälsen exakt och skyddar mot 'hur färskt är talet'-frågan vid publicering.",
+      "kurs": "beslut"
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "publiceringsdagen sätts vid flytt till data/blogg/",
+      "orsak": "Skapandedatum i utkast; publicering = kundens beslut (R2).",
+      "kurs": "beslut"
+    },
+    {
+      "id": "D2",
+      "typ": "notis",
+      "fil": "saasaktier-sa-analyserar-du-saas-bolag-en.json (syskonspegel — ej denna granskares objekt)",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "7 (1 400 ord, ord/200-praxis)",
+      "orsak": "EN-spegeln Ö11 bär samma fel: rm 2 vid 1 400 ord = 700 wpm; dess register-not dokumenterar round(ord/600) som konvention — 600-konventionen står i konflikt med publicerad praxis (0 av 55 poster över 240 wpm). Könotis till Ö11:s framtida granskare. Stafletten B4 ('kusten') och B5 ('räntkänsliga') bör också eftersöks i spegeln vid dess granskning.",
+      "kurs": "beslut"
+    },
+    {
+      "id": "D3",
+      "typ": "notis",
+      "fil": "data/forskning/SEO-GUIDER-2026-09.md (register — ägs av spåret, ej redigerat)",
+      "falt": "B11-raden ordtal",
+      "gammalt": "1344",
+      "nytt": "(konventionsnotis: 1 344 = råkonventionen, stämmer exakt; textrensat mått = 1 239)",
+      "orsak": "Samma konventionsskillnad som konsumentaktier-flaggan 09-18 (register 1 255 mot mätt 1 410 rå). Mallägaren väljer ETT mått (rå eller textrensat) och anger det i mallen — granskarnas rm-beräkningar följer sedan samma mått.",
+      "kurs": "beslut"
+    }
+  ]
+}

@@ -2030,6 +2030,47 @@ gränserna är för snäva för produktionssvarstiden; (3) prod-körbar
 mötessyntes-sond (autentiserad, icke-protokollskrivande) så fallbördan
 upptäcks innan nästa riktiga sammanträde krävs.
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u2, manifest auto-s9-1789752906622 — D24 + D25 diffade mot verkligheten)
+
+Objektval: D24 + D25 — äldsta återstående klassen (09-16-passningarna) som
+varken är R2-väntande (D22/D23) eller tagna idag; u1:s disk-anspråk (läst
+20:0x) listar dagens ytor (A2 A3 A5 A6 B10 B11 B12 B14 C15 C17 E26 E28 E29
+E34 E35 E36) — D24/D25 fria. Mitt anspråk på disk FÖRE mätstart
+(data/vakten/auto-s9-1789752906622-s9-u2-ansprak.md, gitignorerad väg —
+disk-först-presedensen). Varje rad MÄTT egenhändigt 2026-09-18 ~20:0x–20:4x
+lokal: kodläsning av fas-seten (elementräknade), siffror.json-läsning,
+live-sonder loopback + HTTPS, /etc/crontab + /var/log/syslog + vercel.json,
+.env-namnnivå, git-bevis:
+
+| Mått | Kartan (09-16-passningarna) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| FAS-seten (D24) | 18 + 24 exakta (kurs-access.ts:29–84) | **18 + 24 EXAKTA ÅTERMÄTTA** (elementräknade i kod; Set-oförändrade) — grindkärnan stilla sedan f2d585bf 2026-09-07 (git-bevis; 274 r oförändrad) |
+| Underlaget (D24) | 369 kurser | **426** — siffror.json (regenererad idag): s5-vågarna +57 kurser på två dygn utan att fas-seten rörts; fas-andelen 4,9/6,5 % → 4,2/5,6 % (manuell fas-urvalning = design, ej glidning) |
+| Ytor (D24) | 200 (sv + en/ar-speglar + /fas3) | **200 ×5 ÅTERMÄTTA** — /fas2-ansok sv/en/ar + /fas3 loopback (31–889 ms) + HTTPS 200 (80 ms); SSR-läkningen 09-17 håller för hela fas-ytan |
+| Valideringsgren + admin-grind (D24) | 400 + 401 | **400 + 401 ÅTERMÄTTA** — POST {} → 400; /api/admin/fas2-access utan auth → 401 |
+| Rate-limit gap 4 (D24) | saknas (nytt 09-16) | **KVARSTÅR** — 0 träffar på rate/limit/429 i /api/fas2-ansok/route.ts (grep); öppen POST-yta med Supabase-skrivning oförändrad |
+| Mejldrivningen (D25) | "ENBART Vercel-driven (Contabo-crontab saknar raden)" | **BEKRÄFTAD + FÖRDJUPAD I B14-KLASSEN**: /etc/crontab (mätt igen) bär endast vagscan/nyheter/portfolj — ingen email-rad; vercel.json äger /api/cron/email 06:30 UTC men B14-fyndet (09-18) bevisade Vercel = passiv backup ⇒ mejlrondan saknar BEVISAD driver i prod |
+| Själva rutten (D25) | "validering + rate-limit kodade (400 mätt)" | **FUNKAR FULLT UT I PROD** — egen sond: ok:true · skickade:3 (KÖADE morgonmejl) · skickadeFaktiskt:0 · leverantorKonfigurerad:false · supabaseSparad:true · notering "KÖAT, EJ SKICKAT" (vilolägesdesign: kön i system_events type=email_kö, MAX_KO_PER_KORNING=100, retention 500 r/30d); ÄRLIGHETSNOT: sonden var SKRIVANDE — 3 brev köades + organ-event (samma effekt som ruttens egen dagliga rond) |
+| CRON_SECRET (D25) | osatt (E29/B14-klass) | **OSATT ÅTERMÄTT + skärpt för D25**: /api/cron/email svarar 200 UTAN auth — och rutten SKRIVER (brevkö + organ-event): klassen är öppen skriv-yta, ej bara läsning |
+| Vagkarta-gapet (D25) | "vagkarta-null i notis-underlaget (kö till huvudagenten)" | **STÄNGT I VERKLIGHETEN** — /api/notiser svarar med levande vagkarta {"sammanfattning":"206 impulsvågor · 90 korrigeringar · 149 basbyggen","genererad":"2026-09-18T05:05:22Z"} + dagens pass ESSITY-B.ST; syslog-bevis: Contabo-cronen körde vagscan 06:30:01 lokal (04:30Z) ⇒ ~35 min runtime förklarar 05:05Z-stämpeln UTAN Vercel-antagande (korsfynd mot B9:s "dubbla drivningen": Contabo-förklaringen räcker) |
+| Notis-kontraktet (D25) | tak 100 + 30 dagars golv | **ÅTERMÄTT I KOD**: slice(0,100) (notiser.ts:72) + STANDARD_MAX_ALDER_DAGAR=30 (notiser.ts:55,207) |
+| Referral + VBOUT (D25) | POST-only + VBOUT SATT | **405 på GET (mätt)** · vbout.ts 123 r + webhook/vbt 132 r på disk · VBOUT_WEBHOOK_URL i .env.local (namnnivå); .env bär INGA leverantörsnamn — EMAIL_LEVERANTOR/EMAIL_API_KEY saknas ⇒ breven förblir köade |
+| Filrörelse D25 | — | **KODSTILLA sedan 2d67d75b 2026-09-06** (m10 steg 1) — notiser/email/referral/vbout orörda genom båda passningarna |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| D24 | LEVER 8 → **LEVER 8** | Hela ytan helgrön igen (5×200, 400/401-grindar, fas-set exakta) men inget gap stängt: rate-limit-gapet återmätt öppet, underlagstillväxten kräver ingen kod (fas-urvalningen manuell design); E33/B14-precedensen |
+| D25 | LEVER 6 → **LEVER 6** | Ett gap STÄNGT (vagkarta-null — fältet lever med färsk data) men två skärpningar i B14-klassen tillkomna: mejlrondan saknar BEVISAD driver (Contabo-raden finns ej + Vercel passiv) och CRON_SECRET-gapet träffar här en SKRIVANDE rutt (200 utan auth); netto: kunskap tillförd, kapabiliteten oförändrad (breven var redan omöjliga utan leverantör) ⇒ ingen poängrörelse |
+
+Snittscore **7,6 / 287 / 38 OFÖRÄNDRAT** (båda poängen orörda med
+motiveringarna ovan). Kö till huvudagenten: (1) /etc/crontab-rad för
+/api/cron/email (samma ompekning/klass som u3:s B14-kö — root-ägd yta,
+dokvågen läser endast) ELLER medvetet beslut att brevpipelinen vilar tills
+leverantören sätts; (2) CRON_SECRET-klassen får en skrivande exponent
+(email-rutten) — höjd prio i E29:s secret-kö; (3) D24:s rate-limit-gap
+(öppen POST med Supabase-skrivning) står sig sedan 09-16 — kurformen finns
+i /api/email (10 IP/min).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2057,8 +2098,8 @@ upptäcks innan nästa riktiga sammanträde krävs.
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas i UI (mätt 09-16); replay-skyddet MOTBEVISAT (importtak + engångs-import, kodat sedan våg 87); 4 rutter ALLA vaktade (mätt 09-16); sviter 13/13 + 17/17 grön egen mätning |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy + rate-limit, inget brev); kundens 8 beslut; intentioner bor i E33:s flaggade tabell |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env (mätt 09-17); grinden MÄTT I PROD (robots/sitemap = 0 tier-URL:er); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
-| D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA i kod (mätt 09-16, underlag 369 kurser); aktivering EN medlem/anrop men sido-kön starkare än kartan (system_events + VBOUT-lead); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (nytt, mätt) |
-| D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
+| D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA återmätta (09-18; kurs-access.ts orörd sedan 09-07) mot underlag **426** kurser (+57/dygn-par, s5-vågorna); ytor 200 ×5 + valideringsgren 400 + admin-grind 401 (återmätta — SSR-läkningen håller); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (återmätt öppen 09-18) |
+| D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-pipelinen VILANDE I BÅDA ÄNDARNA (mätt 09-18): rutten fungerar fullt ut (200, 3 brev KÖADE i system_events, supabaseSparad) MEN ingen bevisad driver (/etc/crontab saknar email-raden återmätt + Vercel passiv enligt B14-fyndet) + leverantör okonfigurerad (0 env-namn); CRON_SECRET osatt ⇒ skrivande rutt öppen (200 utan auth); vagkarta-gapet STÄNGT (notis-underlaget lever, 05:05Z + syslog-bevis); notis-tak 100 + 30 d-golv återmätta i kod; referral 405 POST-only; VBOUT SATT; 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
@@ -3178,7 +3219,18 @@ våg 99 (2a566cfd). 0 egna testsviter.*
   (2) när aktiverad: speglar en/ar för tier-sidorna saknas (svenska-only);
   (3) tier-CTA:n mot betalflödet (D22) när det finns.
 
-## D24. Fas 2/3-access — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## D24. Fas 2/3-access — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2, manifest auto-s9-1789752906622):
+återdiffad — HELGRÖN igen men underlaget exploderat: FAS-seten 18+24
+EXAKTA ÅTERMÄTTA (elementräknade, kurs-access.ts orörd sedan f2d585bf
+09-07) mot underlag 369 → 426 kurser (siffror.json, +57 på två dygn av
+s5-vågarna); fas-andelen 4,2/5,6 % — urvalningen är manuell design, ej
+glidning. Ytor 200 ×5 återmätta (sv/en/ar + /fas3 loopback + HTTPS;
+SSR-läkningen håller), valideringsgren 400 + admin-grind 401 lever.
+Gap 4 återmätt ÖPPET: 0 rate-limit-träffar i rutten (öppen POST med
+Supabase-skrivning, kurformen finns i /api/email). Score 8 orörd
+(E33/B14-precedensen).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 7): fas-seten MÄTTA EXAKTA i
 kod — FAS2_KURSER 18 + FAS3_KURSER 24 (kurs-access.ts:29–84) medan
@@ -3211,7 +3263,24 @@ POST-yta med Supabase-skrivning.*
   kontroll-URL) saknas; (4) rate-limit i /api/fas2-ansok saknas (nytt,
   mätt 09-16).
 
-## D25. Referral + e-post + notiser — LEVER — 6/10 *(uppdaterad 2026-09-16)*
+## D25. Referral + e-post + notiser — LEVER — 6/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2, manifest auto-s9-1789752906622):
+återdiffad — ett gap STÄNGT, två skärpningar i B14-klassen. STÄNGT:
+vagkarta-fältet i notis-underlaget lever (egen sond: 206 impulsvågor · 90
+korrigeringar · 149 basbyggen, genererad 05:05:22Z idag; syslog-bevisar
+Contabo-cronens 06:30:01-lokala vagscan + ~35 min runtime — ingen Vercel-
+antagande behövs). SKÄRPT: mejlrondan saknar BEVISAD driver — /etc/crontab
+(mätt igen) bär ingen email-rad och vercel.json:s 06:30 UTC-cron står på
+den passiva backup-plattformen (B14-fyndet); rutten SJÄLV fungerar fullt
+ut (egen sond: ok:true, 3 brev KÖADE i system_events, supabaseSparad:true,
+MAX_KO_PER_KORNING=100 — vilolägesdesignen "kön är sanningen" lever) MEN
+leverantorKonfigurerad:false (EMAIL_LEVERANTOR/EMAIL_API_KEY saknas, mätt
+namnnivå). SKÄRPT: CRON_SECRET osatt ⇒ /api/cron/email svarar 200 UTAN
+auth på en SKRIVANDE rutt (brevkö + organ-event). Notis-kontraktet återmätt
+i kod (tak 100 + 30 dagars golv); referral GET 405 POST-only lever; koden
+stilla sedan 2d67d75b 09-06. Score 6 orörd (netto: kunskap tillförd,
+kapabilitet oförändrad).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 7): diffad mot verkligheten —
 dubbel natur mätt. YTORNA lever (GET /api/notiser 200 med levande underlag,
@@ -3246,9 +3315,12 @@ UPPDATERING-sektionen.*
   saknar server-side-lagring av historiken (enhetbyte = förlorad fästning;
   underlaget + signalerna återkommer); (3) referral-uppföljning i admin =
   ANTAL lyckade värvar (totalt + 30 d, motbevisat gammalt gap) men ingen
-  identitetsnivå — medvetet GDPR-val; (4) NYTT: mejl-cronen ENBART
-  Vercel-driven (Contabo-crontab saknar raden) + vagkarta-null i
-  notis-underlaget trots skrivande vagscan-cron (kö till huvudagenten).
+  identitetsnivå — medvetet GDPR-val; (4) ~~mejl-cronen ENBART Vercel-driven
+  (Contabo-crontab saknar raden) + vagkarta-null~~ **DELVIS STÄNGT 09-18**:
+  vagkarta-fältet lever med färsk data (mätt); drivningsdelen SKÄRPT i
+  B14-klassen — ingen email-rad i /etc/crontab (återmätt) + Vercel passiv =
+  mejlrondan saknar bevisad driver, och CRON_SECRET-gapet träffar här en
+  SKRIVANDE rutt (200 utan auth, mätt).
 
 ## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13 · mätt 2026-09-16)
 

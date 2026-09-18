@@ -1,6 +1,6 @@
 /**
- * LANDASPEKTER — sverige + usa för /dataset/[bransch]/[aspekt] (VÅG 150 u3)
- * =====================================================================
+ * LANDASPEKTER — sverige + usa + danmark för /dataset/[bransch]/[aspekt] (VÅG 150 u3)
+ * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
  * "sverige" och "usa") som filtrerar 100-bolagsuniversumet på land-fältet
@@ -156,7 +156,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
       ];
 
       const ingress =
-        `Universumets ${rader.length} bolag (10 branscher × 10) har ${iLandet.length} bolag med ` +
+        `Universumets ${rader.length} bolag har ${iLandet.length} bolag med ` +
         `${k.landNamn} i land-fältet; av dem tillhör ${bolag.length} branschen ${namn.toLowerCase()}. ` +
         (pe.median === null
           ? `Inget av dem har ett mätt P/E-värde ännu — tabellen redovisar därför sitt eget antal mätta per nyckeltal. `
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── De två modulerna — EXAKT 2 (sverige + usa) ───────────────────────────────
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14 s2-u3) ──────────────
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -256,5 +256,19 @@ export const aspekter: AspektModule[] = [
       "ränteläge, redovisningspraxis (US GAAP kontra IFRS) och marknadsstruktur skiljer mellan " +
       "börserna — jämför därför den här medianen med amerikanska bolags median, och var varsam med " +
       "att läsa den mot tal från svenskbolag.",
+  }),
+  byggLandAspekt({
+    slug: "danmark",
+    land: "Danmark",
+    forled: "Danska",
+    landNamn: "Danmark",
+    valutaMening:
+      "De danska bolagen redovisar oftast i danska kronor (DKK) — men enstaka Danmark-registrerade " +
+      "bolag är noterade och redovisar i dollar (USD), och land-fältet säger inget om " +
+      "rapportvalutan. Multiplerna och marginalerna är i sig valutaneutrala tal, men dansk krona och " +
+      "svensk krona är skilda valutor med egna räntenivåer, och marknadsstruktur samt ägarstrukturer " +
+      " (stiftelseägda ankare är vanliga på Köpenhamnsbörsen) skiljer från Stockholmsbörsen — jämför " +
+      "därför den här medianen med danska bolags median, och var varsam med att läsa den mot tal " +
+      "från svensk- eller dollarnotrade bolag.",
   }),
 ];

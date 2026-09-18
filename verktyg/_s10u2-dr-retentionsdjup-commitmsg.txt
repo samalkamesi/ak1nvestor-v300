@@ -1,0 +1,16 @@
+studio: auto s10-u2 DR-övning retentionsdjup — äldsta dumpen (7 d) återställd GRÖNT
+
+Spår 10 (vakt) 2/3, manifest auto-s10-1789754706687. Första övningen någonsin
+mot retention-fönstrets DJUPASTE punkt: db-2026-09-11.sql.gz via det
+kanoniska verktyget (dr-ovning.mjs --fil) — inget nytt verktyg.
+
+Bevis: RTO 11,9 s · public 60 tabeller / 1 186 890 rader · 0 okända fel ·
+städning verifierad (PG17 ner, skrap-DB borta). Konsistenbevis: samma dump
+ger exakt 1 187 291 totalt = v98 F3:s siffra från 09-11 (oberoende replik,
+7 dagar senare). Båda fönsterändarna bevisade samma kväll (AUTO-15 18:08Z +
+denna 18:48Z). Fynd: flock-låskontraktet bevisat skarpt mellan två
+fabrikssyskon (postmaster_start_time-bevis), verifieringsregel för
+PG-online-vid-falsklarm, fulla 30-dagars-bevisningen möjlig först 2026-10-11+.
+
+LEVERANS: data/forskning/DR-PROV-2026-09-18-AUTO-16.md,
+data/forskning/DR-OVNING-2026-09-18-KVALL-RETENTIONSDJUP.md

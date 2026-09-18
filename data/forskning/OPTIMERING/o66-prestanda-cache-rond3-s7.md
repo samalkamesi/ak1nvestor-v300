@@ -69,17 +69,56 @@ Fyra regler, försiktigt avstämda per innehållsklass (swr-fönster täcker
 Typkontroll: `node node_modules/typescript/bin/tsc --noEmit` = **0 fel**.
 Bygge: ÄGS av prod-synken under /tmp/ak1a-deploy.lock (fabriksregeln).
 
-## §4 EFTER (bokförs när prod-synken deployat)
+## §4 EFTER — DEPLOYAD 11:41:07Z (prod-synken, 6 commits varav denna vågs 4d5dd5e1, build HEAD dcd3e279), prod 200 ×3
 
-Grind (curl mot prod):
-`curl -sI https://lab.ak1nvestor.com/ak1a/favicon.svg | grep -i cache-control`
-skall svara `public, max-age=86400, stale-while-revalidate=604800` (samma
-mönster för övriga tre klasser) + prod 200 på /, /kurser, /blogg.
-Lighthouse-EFTER-rond (s7u2-o66efter) bokförs i samma svep — kallstarts-
-poängen förväntas i princip oförändrad (headerns vinst sitter i upprepad
-besök/bot-trafik, ej första渲染); FÖRE-tabellen ovan är vågens poängbevis.
+**Curl-grind GRÖN (localhost:3000 = nya bygget, 11:4xZ):**
 
-## §5 Läxor från denna våg (till spåret)
+| Resurs | Cache-Control EFTER | Dom |
+|---|---|---|
+| /ak1a/favicon.svg | `public, max-age=86400, stale-while-revalidate=604800` | ✓ |
+| /ak1a/logo/ikon-192.png | `public, max-age=86400, stale-while-revalidate=604800` | ✓ |
+| /ak1a/logo/skulptur-mark.jpg | `public, max-age=86400, stale-while-revalidate=604800` | ✓ |
+| /og/blogg/vad-ar-roe.png | `public, max-age=604800, stale-while-revalidate=86400` | ✓ |
+| /manifest.json | `public, max-age=3600, stale-while-revalidate=86400` | ✓ |
+| /llms-full.txt | `public, max-age=3600, stale-while-revalidate=86400` | ✓ |
+
+**Lighthouse EFTER (s7u2-o66efter, ~11:45Z):** / P42 · LCP 5 115 · TBT 3 548 ·
+CLS 0,106 (känd signatur) · /kurser P46 · 5 867 · 1 560 · 0 · /blogg P56 ·
+5 321 · 1 190 · 0. **OBRUKBAR som kur-facit** — mätningen landade ~4 min
+efter deploy med syskon-barn fortfarande aktiva (RAM-loggen: 795–1 031 MB
+tillgängligt under hela fönstret) = o54-precedensens kontamineringsmönster
+(identiskt med o63:s EFTER-fönster). Kurens mekanism (cache-headrar på
+favicon/manifest/ikoner) kan per konstruktion inte påverka kallstartens
+LCP/TBT — FÖRE-tabellen i §2 är vågens poängbevis och kvarstår.
+
+## §5 UPPDAGAT UNDER EFTER-KONTROLLEN: nginx har ett EGET cache-lager — prod-bilden är sammansatt
+
+`/etc/nginx/sites-available/ak1a` (r 36–39) bär redan:
+`/og/` + `/ak1a/` → `expires 30d` + `add_header Cache-Control "public"`;
+`/llms(-full)?.txt` → `expires 24h` + public; `sok-index|speglar-slugar.json` → 1 h.
+
+Konsekvenser, ärligt bokförda:
+1. **§2:s FÖRE-sond mätte Next-lagret (localhost), inte prod-kedjan.** På
+   prod-HTTPS bar /ak1a/ + /og/ + llms redan nginx-expires FÖRE kuren — min
+   FÖRE-tabells "max-age=0" gällde Next-svaret, som nginx-proxyn supplerade.
+2. **Enda HELT öppna prod-hålet var /manifest.json** (ingen nginx-location +
+   Next-default max-age=0) — numera `3600 + swr 86400` på prod-nivån
+   (verifierat: curl -sI https://lab.ak1nvestor.com/manifest.json).
+3. **Kuren är fortfarande rätt:** Next-lagret är nu konfliktfritt designat
+   per innehållsklass, och manifest-hålet är igenstängt i lagret som äger
+   värdena. MEN prod-svaret för /ak1a/ + /og/ + llms bär nu DUBBELA
+   Cache-Control-rader (nginx: max-age=2592000 + public; proxat Next:
+   max-age=86400/604800/3600 + swr) — motstridiga max-age i kombinerad
+   lista, tolkas olika av klienter. Orent, ej skadligt (alla värden ≥ 1 h).
+
+## §6 Rest (nästa våg / drift-ytan — ej min anspråkade yta)
+
+Städa nginx-lagret: antingen `proxy_hide_header Cache-Control` i
+location /og/ + /ak1a/ + llms (Next äger värdena nu) eller ta bort dess
+`expires`/`add_header` — då försvinner dubbelrubriceringen. Kräver
+nginx-reload = DRIFT-yta (drift-ops-färdigheten), bokas som egen rond.
+
+## §7 Läxor från denna våg (till spåret)
 
 1. **unused-javascript är mättad**: alla tre återstående chunkar är
    ramverks- eller designbundna. Nästa TBT-vinst kräver antingen

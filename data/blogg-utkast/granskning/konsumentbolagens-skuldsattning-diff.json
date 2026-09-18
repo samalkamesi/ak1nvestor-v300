@@ -1,0 +1,100 @@
+{
+  "granskat": "data/blogg-utkast/konsumentbolagens-skuldsattning.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-18, anspråk auto-s1-1789713300301)",
+  "rapport": "konsumentbolagens-skuldsattning-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER B-POSTER — superlativen 'universumets högsta ROE' falsk (teknik 26,4 % > konsument 24,2 %, rank 2 av 10 i utkastets egen vintage 0e399f13; två platser), Volvo Car-delen av 'skulden strukturell' motsagd av sitt eget tal (0,31× mot Electrolux 2,58×), räntetäckningsdefinitionen inverterad med 'om året'-fel, median kallas 'genomsnitt' två gånger i samma mening, readingMinutes underskattad (871 ord). Samtliga nio mediantal EXAKTA med korrekta n-redovisningar; AKM2-spannet 19–70 ordagrant och 'en av universumets bredaste spann' SANN (bredd 51 poäng = bredast av tio); juridik ren, 911 ren, 10/10 interna länkar 200, externa 200",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga strängar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Vad datasetet säger, bullet 2)",
+      "gammalt": "Median ROE: 24,2 procent (12 mätta) — universumets högsta.",
+      "nytt": "Median ROE: 24,2 procent (12 mätta) — näst högsta i universumet, efter teknikens 26,4.",
+      "orsak": "Superlativen falsk i utkastets eget underlag: teknikbranschens ROE-median är 26,4 % (10 mätta) mot konsumentens 24,19 % (12 mätta) i samma vintage (0e399f13, 115 bolag) — konsument rank 2 av 10 branschgrupper. Finans-precedensens kur: rangen rättas, kraften behålls"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "och universumets högsta ROE på 24,2 procent — kombinationen förtjänar en DuPont-kontroll innan den tolkas som kvalitet.",
+      "nytt": "och universumets näst högsta ROE på 24,2 procent, efter teknikens 26,4 — kombinationen förtjänar en DuPont-kontroll innan den tolkas som kvalitet.",
+      "orsak": "Samma falska superlativ på sammanfattningens andra punkt; rättningen gör kontrasten mer lärorikt (teknikens kapitalsnåla plattformar kontra konsumentens varumärkesdrivna hävstång — precis vad DuPont-kontrollen ska visa)"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Spektret, vitvaror och bilar)",
+      "gammalt": "Här är skulden strukturell, och lågkonjunkturen prövar den på riktigt.",
+      "nytt": "Här är skulden strukturell — Electrolux bär gruppens högsta skuldkvot, 2,6 gånger — och lågkonjunkturen prövar den på riktigt; Volvo Car är för sin del lågt upplånat (0,3 gånger), men kapitalbindningen i fabrikerna gör balansräkningen tung ändå.",
+      "orsak": "Påståendet gällde båda namngivna exemplen men bar bara av dem: Electrolux 2,58x = konsumentgruppens högsta av 12 mätta, medan Volvo Car 0,31x = näst lägst (vintage 0e399f13). Rättningen behåller branskaraktären, lägger datan och stärker guidens egen poäng: samma segment kan bära olika skuld"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Så prövar du skuldsättningens bärighet, steg 1)",
+      "gammalt": "Räntekostnaden i procent av rörelseresultatet visar andningen: hur många gånger om året täcker resultatet räntan?",
+      "nytt": "Räntetäckningen visar andningen: hur många gånger rörelseresultatet täcker räntekostnaden?",
+      "orsak": "Definitionen stod inverterad (ränta/EBIT i procent — det omvända förhållandet) och blandades med multipel-formen; 'om året' är en tidsfrekvens som inte hör hemma — räntetäckningsgraden är en multipel (EBIT ÷ räntekostnad), ingen per-år-frekvens. Metodfel i en guide vars uppgift är att lära ut begreppet; länktexten till steg 1:s kurs ('soliditet och räntetäckning') stämmer redan mot den rättade formen"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Vad datasetet säger, bullet 1)",
+      "gammalt": "— måttlig i genomsnitt, men genomsnittet är här det minst talande talet, eftersom spridningen mellan bolagen är branschens hela poäng.",
+      "nytt": "— måttlig i medianen, men medianen är här det minst talande talet, eftersom spridningen mellan bolagen är branschens hela poäng.",
+      "orsak": "Talet 0,69 är MEDIAN (redovisas som sådant i samma mening) men kallas 'genomsnitt' två gånger — begreppsfel i en guide som lär ut att läsa nyckeltal; kur: samma sats, rätt begrepp"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 4,
+      "orsak": "871 ord på 3 minuter = 290 ord/min — snabbare än samtliga 55 publicerade poster (maximum 229 ord/min). Bloggfamiljens praxis är ~ord/200 (substansrabatt-domen 09-17): round(871/200) = 4; grannposter kring 870 ord publicerade med 4–8 min. Andra under-skattade readingMinutes i mx1-serien (hälsa B4 var det första)"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Spektret, globala varumärkesgrupper)",
+      "gammalt": "den som tjänar på varumärket behöver sällan låna för att växa.",
+      "nytt": "den som tjänar på varumärket lånar sällan av behov — även när balansräkningen bär lån, som Nestlés 2,1 gånger, är valet aktivt.",
+      "orsak": "Gruppens fyra namngivna: LVMH 0,53 · P&G 0,64 · Nike 0,74 men NESTLÉ 2,13x (vintage 0e399f13) — 'behöver sällan låna' blir spänd mot gruppens eget högsta upplånade namn. Förslaget behåller budskapet (styrningsval, inte tvång) och förankrar det i datan; LVMH/P&G/Nike bär redan 'sällan'-formuleringen"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (ingress)",
+      "gammalt": "delar kund men inte balansräkning",
+      "nytt": "delar kunder men inte balansräkningar",
+      "nyttFörkomstIFilen": 1,
+      "orsak": "Elliptisk singular läser konstigt mot descriptionens egen plural ('Konsumentbolag delar kunder men inte balansräkningar'); parallellformen är tydligare och konsekvent inom samma post. VALIDERINGSNOTIS: 'nytt' förekommer redan 1 gång i filen — i DESCRIPTION-fältet (ej i bodyn); söksträngen 'gammalt' är unik (1 träff = bodyingressen) så bytet är entydigt och blir en exakt parallell till descriptionen, inte en kollision"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "body (Vad datasetet säger, bullet 5)",
+      "gammalt": "en moget växande bransch",
+      "nytt": "en moget vuxen bransch",
+      "orsak": "Femårsmedelväxten är 1,35 %/år — knappt 'växande'; 'mot'-konstruktionen till konsensusprognosen 9,3 % bär redan kontrasten. Försiktigt förslag: tonen 'mogen' behålls, 'växande' stryks"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "konsumentbolagens-skuldsattning.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

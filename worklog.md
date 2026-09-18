@@ -13480,3 +13480,89 @@ OBJEKT (anspråk FÖRE ingreppet 08:09, data/vakten/auto-s10-1789711500221-u1-an
 OBJEKT (anspråk FÖRE mätstart 08:07, data/vakten/auto-s10-1789704300078-u2-ansprak.md med prediktionstabell): duplikatkontroll mot worklogs s10-sektioner + DRIFTSBOKEN DR-rad + data/forskning/DR-* visade blad 8 restore-bevisat ×3 (natt/morgon) och pump-noll ENDAST retrospektivt (blad-diff) + sond-baserat (captured_at EN ts) — ingen hade mätt 08:00-fönstret LEVANDE samma morgon batchen landar. VINKEL: realtids-diff med förhandsregistrerade prediktioner (u1:s natt-metod portad till dagsläget) + fjärde restore-punkten (seriens första post-pump).
 
 LEVERANS: (A) PGPASSFILE-pekare + node verktyg/dr-rpo-diff.mjs --json kl 08:09:16 lokal (9 min 16 s efter pumpen): blad 1 306 119 / levande 1 325 291 / **RPO +19 172** på 5,64 h i 3 av 60 tabeller — PREDIKTIONER 5/5 INFRIADE: snapshots **+18 984 EXAKT** (intervallet ±100; == gårdagens batch = pump-noll LEVANDE, tredje oberoende vägen) · board_decisions **+176 EXAKT** (±24; 22 kvart × 8, 0 missade kvartsbatchar) · organ_health_logs +12 (0–18) · övriga 57 +0 (≤10) · totalt +19 172 (19 140–19 260, mitt i). JSON DR-RPO-DIFF-2026-09-18-MORGON-PUMP.json. (B) node verktyg/dr-ovning.mjs --fil db-2026-09-18 GRÖN exit 0: markörer GRÖN 1 327 830 rader/CREATE 99/COPY 101 (5,5 s) · **RTO 13,5 s** (bonusprediktion 10–18 s; blad 8:s fyra punkter 10,2/10,9/17,4/13,5) · fel 788 kända/0 okända · public 60/1 306 119 == dump-COPY == nattens tre restores. Maskinellt DR-PROV-2026-09-18-AUTO-4.md. (C) RACE-BOKFÖRING (symmetrisk): syskon s10-u1 (manifest auto-s10-1789711500221, commit 930c2097 DAGPULS-DR) valde oberoende samma fönster — mitt flock-barn (pid 1991162) höll DR-låset, deras barn (pid 1991343) tog flocken **90 ms** efter mitt AUTO-4-skrivande (08:10:05.600 → .690): seriens snappaste generationsskifte, noll dödtid, båda GRÖNA; deras RPO-mätning 08:10:47 == mina tal exakt (90 s isär, board 8/kvart förklarar oförändradhet) = DUBBEL oberoende instrumentering av pumpens landning; deras ytor orörda, deras captured_at-sond korroborerar min realtids-diff. (D) STÄDNING med ärlighetsnotis: min första "oberoende" mätning 08:11 fångade deras AKTIVA PG-fönster (PG17 online + färsk OID 193869 = deras skrap-DB) — jag rörde deras fönster ej, väntade ut deras exit och mätte om 08:12:4x: PG17 down (pg_lsclusters) · psql-vägran (skrap-DB:s frånvaro bevisad) · base ENDAST OID 1/4/5 (noll skrap-svans) · pg_wal 529 MB SJÄTTE punkten i serien (497×3→529→529→529→529: två restores till rörde ej) · disk 72 GB · låsfil flock-viloläge. FYND (lågt, köpost till verktygsägaren): dr-ovning.mjs:s fellogg namnges per DATUM — två agenter samma dag skriver SAMMA /tmp-fil (min + u1:s 788-radersloggar kolliderade idag, identiskt innehåll denna gång; pid-/sekundsuffix önskas — verktyget orört, COMMIT-NORMEN gäller vid kur). KVD: src/ orörd = INGET bygge (node node_modules/typescript/bin/tsc --noEmit egenmätt 0 rader; pre-commit-grinden verifierar baslinjen) · R2 orörd (.pgpass ENDAST PGPASSFILE-pekare till psql, aldrig inläst; prod endast LÄST — GDPR-rent: antal + tidsstämplar) · data/blogg/ orörd · data/backups/ endast lästa · syskonens ytor orörda. Protokoll: DR-OVNING-2026-09-18-MORGON-PUMP.md + JSON + AUTO-4 + DRIFTSBOKEN (DR-radens lead + fillista) + denna sektion. Kö: retentionstriggern ~2026-10-11 · TOTAL i kvartalssviten senast 2026-12-18 · födelsebevis 09-19 02:30 · felloggs-kuren åt verktygsägaren. [fabrik]
+
+## SPÅR 10 s10-u3 (manifest auto-s10-1789711500221, vakt 3/3) — 2026-09-18 08:14–08:21 lokal: ARKIVSVEP — helarkivet restore-bevisat i EN sekvens (8/8 blad GRÖNA) + vault-fyndet: radräkningsformeln saknade sitt tredje undantag [fabrik]
+
+Leverans (anspråk FÖRE mätstart ~08:10, data/vakten/auto-s10-1789711500221-u3-ansprak.md):
+NYTT familjeverktyg verktyg/dr-arkivsvep.mjs (familjekontraktet ordagrant: flock
+på /tmp/ak1a-dr-prov.lock, RAM-/diskgrind före VARJE blad, kolla-dump-markorer per
+blad, blockräknare med självtest 2/2 + trunkeringsvägran, färsk skrap-DB ak1a_dr_arkiv
+per blad, restore med RTO + felkategorisering, mellanblads-dropdb, finally-städning,
+maskinellt protokoll med AUTO-numrering) + KÖRNING 2 GRÖN exit 0: 8/8 blad
+(db-09-11…db-09-18, äldst→yngst) — RTO 11,0–16,8 s/blad, 106,2 s totalt ·
+PER-TABELL-RADKONTRAKT EXAKT på samtliga blad (dumpens COPY-räkning == psql
+count(*); 94 tab → 98 tab) · markörer GRÖN 8/8 · fel 780→788 kända/0 okända.
+MASKINELLA PROTOKOLL: DR-PROV-2026-09-18-AUTO-7.md (GRÖN-kvittot) + AUTO-6.md
+(RÖT-beviset från körning 1 — bevarat som intyg).
+
+FYND 1 — vault.secrets = formelns TREDJE undantag: körning 1 vägrade GRÖN på
+alla blad ("vault.secrets SAKNAS i skrap-DB, dumpen bar 0 rader") — verifiering:
+dumpen kräver CREATE EXTENSION supabase_vault (finns ej lokalt ⇒ schemat skapas
+aldrig; COPY-blocket är TOMT, dumprad 1 320 724 + direkt \.) — samma klass som
+cron men 0 rader. Inattens radräkningsformel (u3 MORGON-RETENTION) synt den
+inte (schemanivå-instrument); kodifierad i KANDA_SCHEMA_UNDANTAG = {cron, vault}
+med motivering i källan; protokollmallens notering rättad efteråt (AUTO-7:s
+"utom cron" är ofullständig — dokumenterat i agentprotokollet).
+
+FYND 2 — +4 tabeller mellan blad 09-15→09-16 är Supabases auth-utbyggnad
+(auth.mfa_recovery_codes, auth.mfa_recovery_code_sets, auth.scim_tokens,
+auth.scim_users; blockdiff 97→101, kända fel +8) — plattformens, ej kundens;
+vid äkta DR återskapas de av målmiljön.
+
+FYND 3 — tillväxttrappan daterar pumpens födelsedygn: 09-11→09-12 +439 rader,
+därefter +19 79x/dag mekaniskt (section_data_snapshots +18 984/dag exakt ==
+pump-u2:s realtidsdiff 08:09, tredje oberoende vägen) — pumpstarten = dygnet
+09-12→09-13; vaktpost: avvikande blad-par = pumpstopp-slarm.
+
+FYND 4 — felloggar per BLAD-namn (/tmp/dr-arkivsvep-fel-db-<datum>.log) =
+krockimmun mot pump-u2:s fynd (dr-ovning.mjs namnger per DATUM, två agenter
+samma dag krockar) — deras köpost till verktygsägaren kvarstår.
+
+ÄRLIGHETSRÄTTELSE (bokförd i anspråk + agentprotokoll §1): premissen "mitten
+aldrig restore-bevisad" var delvis fel — O7:s kontinuitetsövning 09-17
+(db-09-12/13/14) och 09-15:s kvartalsövning (db-09-15) hade bevisat bladen var
+för sig; genuint nya = en-sekvens-svepet + per-tabell-kontraktet + verktyget +
+vault-fyndet. Maskingenererade AUTO-6/7 orörda (doktrin).
+
+Städning (uppdragets fjärde led, oberoende mätt): PG17 down (pg_lsclusters +
+psql-socketvägran) · skrap-DB borta · låsfil flock-viloläge · fixtures borta ·
+disk 72 G oförändrad · 8 felloggor medvetet kvar (bevis).
+
+KVD: src/ orörd = INGET bygge (rent node-verktyg; pre-commit-grinden verifierar
+baslinjen) · R2 orörd (prod rördes aldrig) · data/blogg/ orörd · syskonytor
+orörda (pump-u2:s AUTO-4-respekt, flock-ordning efter deras fönster 08:09–08:13;
+u1:s DAGPULS AUTO-5 orört). Kö: (1) dr-ovning-fellogg per datum → per
+blad/agent (pump-u2:s, bekräftat); (2) formelrevision cron+vault; (3)
+kvartalssviten = dr-total + dr-arkivsvep senast 2026-12-17; (4) pumpsignaturen
+som vaktpost. Protokoll: data/forskning/DR-ARKIVSVEP-2026-09-18.md +
+AUTO-6/AUTO-7 + DRIFTSBOKEN (DR-radens lead + protokollförteckningen) + denna
+sektion. [fabrik]
+
+## SPÅR 10 s10-u3 ARKIVSVEP-EPILOG — DRIFTSBOKEN-clobber bokförd (s9-u2-klassen, pathspec-kuren verifierad) [fabrik]
+
+Efter mina två DRIFTSBOKEN-Edit (~08:26–08:27) konstaterades disk == HEAD (164 239
+tecken, mina rader borta, grep 0/0): ett aktivt syskons Read-Modify-Write (node-append
+som cachat före-mig-tillståndet) skrev över filen 08:27:00 — lost update, exakt
+a63fa6d5:s klass. KUR VERIFIERAD: Edit om-gjorda + git commit -F <fil> -- <pathspec>
+omedelbart = commit 6709b333 bär DR-radens lead + förteckningen (grep 1 i HEAD).
+Läxa bekräftad: vid delade megaytor (DRIFTSBOKEN/worklog) = skrivning + pathspec-commit
+i samma fönster; kolla disk==HEAD om status visar tomt efter egen Edit.
+
+## SPÅR 1 s1-u2 (auto-s1-1789713300301, 2/3) — 2026-09-18: konsumentbolagens-skuldsattning KONTROLLKOMPLETT (mx1 #5 — SERIEN 5/5 SLUTGRANSKAD); 9/9 medianer exakta, B1 superlativfel tredje fallet i serien [fabrik]
+
+Leverans: granskning/konsumentbolagens-skuldsattning-KONTROLL-2026-09-18.md + konsumentbolagens-skuldsattning-diff.json (10 poster maskinvaliderade 10/10: gammalt ×1 unikt, nytt frånvarande utom C2:s deklarerade description-parallell) + anspråk data/vakten/auto-s1-1789713300301-u2-ansprak.md 08:38 lokal FÖRE arbetet (0 syskonutdata vid klagetidpunkten; sond .zcode/granskning-mx1-konsument.mjs = lokal, gitignorerad). VAL enligt köregeln: uppdragstitelns "m9-utkast #2" = auto-platshållare (m9-ko 6/6 + våg 171:s tre tillskott sedan 09-17 21:48); hälsa-granskningens §8-könotis (03:40 idag) erbjuder uttryckligen "mx1 #5 konsumentbolagens-skuldsattning väntar" = detta objekt, även FIFO-äldst bland ogranseade rotguider (09-15 23:54). MED DENNA = MX1-SERIEN 5/5 KLAR (energi/finans/material/hälsa/konsument).
+
+GRANSKNING: källor, siffror, juridik (2007:528), 911. KÄLLOR: vintage git-låst 0e399f13 (115 bolag) via seriecommit 806f9359; Yahoo+MarketStack 2026-09-03 ordagrant; konsument 13 bolag exakta (Carlsberg, Electrolux, Essity, H&M, Inditex, LVMH, McDonald's, Nike, P&G, Volvo Car, Evolution, Axfood, Nestlé); dagens träd 171/19 = glidningen flaggad. SIFFROR 9/9 MEDIANER EGNA OMRÄKNADE EXAKTA med peer-kontraktet (mittersta-par): skuld/EK 0,6939→0,69 (n=12, McDonald's null) · ROE 24,19→24,2 (12) · brutto 45,70 (13) · netto 8,38→8,4 (13) · P/B 3,94→3,9 (12) · P/E 20,447→20,4 (12) · fcfYield 4,87→4,9 (11; Carlsberg+Inditex null) · CAGR5 1,35→1,4 (12; Inditex historik saknas) · prognos 9,27→9,3 (13) — samtliga n-tal förklarade av källans nuller; AKM2-spann 19–70 Electrolux→H&M ordagrant mot publicerad branschmedianer-akm2.json; "en av universumets bredaste spann" SANN (bredd 51 = bredast av tio: finans 50, material 48, energi 46, teknik 41); spektrumförankring bolag för bolag — Axfood-noteringen ordagrant ("tunna marginaler brutto 14,8 %"), Evolution 0,02×, Electrolux 2,58×. FYND: B1 (VÄSENTLIGT, systematik) "universumets högsta ROE" FALSK på BÅDA platser — teknik 26,4 % > konsument 24,2 % (rank 2/10, samma vintage) — TREDJE superlativfelet i mx1-serien (finans C1+C2, hälsa B1–B3, denna) = 3 av 5 utkast; kur finans-precedensen: rangen rättas, kraften behålls; B2 "Här är skulden strukturell" bar bara av sina två exempel för Electrolux (2,58× = gruppens högsta) — Volvo Car 0,31× = näst lägst; kur lägger datan och behåller branskaraktären; B3 räntetäckningsdefinitionen INVERTERAD ("räntekostnaden i procent av rörelseresultatet ... hur många gånger OM ÅRET") — multipel vs procent + tidsfrekvensfel; B4 median kallas "genomsnitt" 2× i samma mening (0,69 är median — begreppsfel i guide som lär ut nyckeltal); B5 readingMinutes 3→4 (871 ord = 290 ord/min > publicerad max 229; ord/200-praxis round=4; andra under-skattningen i serien). C1–C3 frivilliga (Nestlé 2,13× i "behöver sällan låna"-gruppen · ingressellips "delar kund" → plural · "moget växande" vid 1,4 % → "moget vuxen") + D1 publishedAt (R2). JURIDIK REN: 0 äkta rådgivningsglossor (1 träff = "återköp ", B8-precedensen), varumärkesmönster 0 äkta (3 sonderträffar = "klassiska"/"inte gratis"/URL-artefakt "niva"), 0 lagrum (IFRS 16 = regelverk; Riksbank+FI = myndigheter) ⇒ lagrumsblandning omöjlig, disclaimer negerad sist. 911 = 0 träffar/6 mönster. LÄNKAR 10/10 interna HTTP 200 mot localhost + register/LIVE-filsverifierade (5 kurser + 4 blogg + /dataset; 0 utkastlänkar), riksbank.se + fi.se 200. STRUKTUR: ord 871 (band 800–1200), 6 rubriker, title 84 tkn (= exakt praxis-max, inom), desc 208 (inom 240). SYSTEMFLAGGA åt mx1-fabriken: mekanisk rankkontroll (median mot alla tio branschernas medianer i samma vintage) i genereringssteget — då faller hela superlativfyndklassen bort; + sammanställningsägaren (mx1 5/5 kan bokföras som slutblock) + CAGR-4-års-notis åt dataägaren (källans egna radnotering: "källan ger 4, inte 5"). Dom: FLYTTKLAR EFTER RÄTTNING — publicering = kundens klick (R2). KVD: endast data/ + worklog + klaim/commit-filer = INGET bygge; src/ orörd (tsc-baslinjen vilar i pre-commit-grinden); R2 orörd; data/blogg/ orörd; syskonytor orörda. Kö till nästa omgång: (1) ~24 branschguider i rotkatalogen (konsumentaktier/halvledare/tillväxt 09-16 02:1x äldst); (2) -en-speglar saknar granskningspaket helt; (3) kvartalspaket utan granskningsfil: ABB, Alfa Laval, Atlas Copco, Boliden, Boston Scientific, Castellum, CellaVision, Essity, Evolution, Handelsbanken, Iberdrola, Nokia, Norsk Hydro, Novo Nordisk, NP3, Precise Biometrics, Saab, Samsung, Sandvik, SAP, Tele2, Telia, Volvo Group, AT&T m.fl. [fabrik]
+
+
+## SPÅR 1 s1-u1 (auto-s1-1789713300301, 1/3) — 2026-09-18: konsumentaktier B7 KONTROLLKOMPLETT (branschomgången 9/10; pivot från dubbelclaimat mx1 #5); 18 tal EXAKTA mot låst vintage, B1 = superlativfelsklassen tredje guide i raden
+
+Leverans: granskning/konsumentaktier-sa-analyserar-du-konsumentbolag-KONTROLL-2026-09-18.md + konsumentaktier-sa-analyserar-du-konsumentbolag-diff.json (5 poster maskinvaliderade 5/5: gammalt ×1 unikt i filen, nytt frånvarande; utkast-JSON:en orörd — granskaren skriver aldrig i andras filer; sond .zcode/granskning-s1u1-konsumentaktier.mjs = lokal, gitignorerad).
+
+PIVOT enligt köregeln: malltextens "m9-utkast #1" = platshållare (m9 komplett sedan 09-16; sjunde omgången); förra omgångens könotis-objekt mx1 #5 konsumentbolagens-skuldsattning DUBBELCLAIMAT av syskonen (u2 08:39:06 — race-vinnare, KONTROLL+diff levererad, mx1-serien 5/5 SLUTGRANSKAD; u3 08:39:47) — jag trea på ett tvåhästslopp ⇒ FIFO-nästa: B7 konsumentaktier (commit 319a8b20, 09-16 02:12, äldsta ogranskade rotguiden; 0 granskningsfiler + 0 anspråk på objektet vid min anspråkstid 08:41, raceskydd enligt klaim-protokollet).
+
+GRANSKNING: källor, siffror, juridik (2007:528), 911. KÄLLOR: vintage git-låst till utkastets EGEN commit 319a8b20 (universumträdet 120 bolag; Yahoo+MarketStack per rad; hamtat 10× 2026-09-03 + Evolution/Axfood/Nestlé 2026-09-15) — samtliga medianer reproducerade till decimalen = bevisat rätt underlag. FYND: B1 superlativfel — "LVMH:s bruttomarginal på 66 procent är universumets högsta" = RANG 35 AV 119 mätta i utkastets eget underlag (Evolution i samma bransch 100,0 · Industrivärden/Öresund 100,0 · Kambi 98,9 · Novo 82,0 · Meta 81,8 — 34 bolag över; byggarens pre-commit-KVD rättade två superlativ men missade den tredje, samma fyndklass som finans C1+C2 + hälsa B1–B3); kur sann i guidens egen taxonomi: "branschens högsta bland varumärkesbolagen — bara plattformsbolaget Evolution ligger högre" (närmaste under: McDonald's 57,4). B2: sammanfattningens "spannet 14–66 procent i universumet" håller ej (konsument 14,1–100,0; universum −1,1–100,0). B3: descriptionens "branschens högsta ROE" motägs av guidens EGEN kropp ("näst högst … efter teknik"; teknik 28,68 > konsument 24,19) — kurrektionen håller OG-taket 150/155. B4: readingMinutes 2→7 (1 401 ord textrensat = 701 ord/min mot publicerat maximum 240 av 55 poster; bloggfamiljens ~ord/200-praxis, substansrabatt-domen 09-17). C1: "hämtad 2026-09-15" fel för 5 av 6 tal i sin egen mening → "september 2026".
+
+GRÖNT: 18 talpåståenden EXAKTA (median-ROE 24,19 + universum 15,34; EBIT 14,60/21,10; P/E 20,447→20,4 med gränsnotis + universum 20,52; EV/EBIT 15,72/18,98; P/B 3,94/2,79; skuld/EK 0,694; FCF-marginal 9,30; 15 per-bolagstal: LVMH 66,4 · Inditex 56,5 · H&M 54,1 · Axfood 14,8 · Electrolux 14,1 · Volvo 15,6 · MCD-EBIT 46,48 · Volvo P/E 5,96 · Inditex 27,93 · ELUX EBIT −3,19 + skuld 2,58 · Nestlé 2,13 · H&M 2,26 · Carlsberg 1,34 · Evolution 0,02) + ROE-rangen "näst högst av tio branscher efter teknik" SANN (byggarens egenrättade superlativ håller: teknik 28,68 > konsument 24,19 > industri 20,3) + kvartilspannet 18,1–22,3 SANT som diskret IQR (exakt 3/12 under · 3/12 över; R7 ger 17,5–22,4 = metodnotis F4) + 5/5 räkneexempel (3×4×2=24 · 30×0,5×1,2=18 · 100−75−21=4 · 95−71,25−21=2,75 · 31,25 %→"31 procent") + juridikgrind-vakt --json: fynd 0 + grund true (113 dokument) + rådgivningsglossor 0 + lagrum 0 + disclaimer EXAKT + 911 0/6 + 15/15 interna länkar HTTP 200 (7 kurser + 8 publicerade poster; byggarens "16/16 (8+8)" = överräkning — ln-01 dubbellänkad) + externa levande (axfood/konj 200 · hmgroup/lvmh 301-redirects · mcdonalds bot-skydd, Ö7-precedensen).
+
+FLAGGOR: (1) mallägaren: SEO-GUIDER B7-radens ordtal 1 255 FEL — verkligt 1 410 rå / 1 401 textrensat (Ö7-syskonet mätte originalet till 1 410 raw; commit-meddelandet bär samma fel); (2) -en-familjens 1 400-tak vs originalets 1 410 = trim-/takbeslut åt ägaren (D2); (3) dataägaren: universumglidning 120→171 — regenerering ger annan population/medianer; (4) publishedAt = skapandedatum (R2-notis). KVD: endast data/ + worklog + klaimfil (gitignorerad data/vakten) = INGET bygge; src/ orörd (tsc-baslinjen verifieras av pre-commit-grinden); R2 orörd (priser/tier/publicering); data/blogg/ orörd; u2:s mx1-#5-ytor orörda. KÖNOTIS: halvledaraktier (09-16 02:20) + tillvaxtaktier (09-16 02:21) äldst bland ogranskade branschguider, därefter saas/spel/bil → försvar/detaljhandel/flyg → försäkring/media/livsmedel → e-handel/lyx → -en-speglar + kvartalspaket utan granskningsfil. [fabrik]

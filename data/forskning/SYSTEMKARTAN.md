@@ -1645,6 +1645,32 @@ idempotensgrind (E34-REST, klassen tröttat kön två gånger); (2) juridik-
 grindens FP-kur hastas (E26, se omgång 12 — kön växer rakt in i vakten);
 (3) v4-dialogens UI-koppling (E27, feature-avvägning enligt §11.4).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u1 omgång 14 — A6 Biblioteken återdiffad; läspaketkön tredubbad på två dygn, underlagsgapet blev en klass)
+
+Objektval enligt spårets mogenhet-regel (äldsta stämpeln utan återdiff +
+störst verklighetsrörelse): A6 stämplad 09-16 och aldrig återdiffad; bland
+de elva 09-16-stämplade kandidaterna (A5 A6 B10 B11 B12 B14 C19 D20 D25
+D38 E36) hade enbart A6 mätbar rörelse — läspaketkön; övriga stilla
+(topplistan tom, ingen src-rörelse i deras ytor, inga nya datafiler).
+Syskonkontroll: u2/u3:s senaste passningar (omgång 9–13) rörde D22 D23 B9
+A4 A1 C17 C18 A2 E31 B13 — A6 orört, inget duplikat. Allt EGENMÄTT i
+arbetsytan 09-18 (node-mätning med sidans eget analysfabrik-v1-kontrakt +
+explicita ticker-tabeller, per-paket-matchning mot båda underlagskatalogerna,
+ls/mtimes, git log, loopback-curl + HTTPS).
+
+| System | Före (passning 09-16) | Nu (mätt 09-18) | Domkraft |
+|---|---|---|---|
+| A6 | Kön 22 filer (12 paket + 10 kalendrar), serien "fullbordad"; bokmaster 103; forskningsbibliotek 22 tickers; gap 4 = Nordeas enkelfall | Kön 46 filer (36 paket + 10 kalendrar — TREDUBLAT); per-paket: 11 med AKM2-analysbank (en-till-en med bankens 11) · 7 med forskningsbiblioteks-AKM1 (AT&T, BSX, Nike, Norsk Hydro, Novo, NP3, SAP) · 18 utan alla underlag; bokmaster 105 på disk (siffror.json 103); 22 tickers orörd sedan 09-10 (0 förkastade); /bibliotek /forskningsbiblioteket /kallor 200 loopback+HTTPS; gap 1 öppen (0 bokmaster-referenser i pre-commit) | yttillväxt utan underlagsföljd — gap 4 skärpt till klass (25 paket utan AKM2-underlag); serieproduktionen (s1/s4) löper ifrån underlagsbasen |
+
+Poäng: A6 LEVER 7 — OFÖRÄNDRAD (preciseringsdokvåg, B13-precedensen:
+yttillväxt + skärpt gap utan stängning). Snitt 7,5 / 286 / 38 oförändrat.
+
+Kö: (1) medvetet universumbeslut för de 18 nakna paketen — underlags-
+produktion ELLER lucknotis-standard som Nordea-paketet bär; (2) lint-dörr
+för bokmaster-JSON i pre-commit (gap 1, öppen sedan 09-16); (3) siffror-
+rebake 103→105 (A1:s kosmetik-köpost, bokförd 09-17); (4) universumfrågan
+22↔11 (gap 2, frusen sedan 09-10 — inget nytt underlag tillkommit).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1654,7 +1680,7 @@ grindens FP-kur hastas (E26, se omgång 12 — kön växer rakt in i vakten);
 | A3 | AI-Mentorn (24 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 780/1-testbevis över 30 sviter (mätt 09-17; E01 registeräkthet RÖD 358/390 — rebake väntar, gapet växer 17→23→32); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
-| A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
+| A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr — gap 1 öppen, mätt 09-18); läspaketkön 36 paket varav 25 utan AKM2-underlag (klass, mätt 09-18); universum 22 vs 11 tickers (2 gemensamma, frusen sedan 09-10) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-17); berika-pipelinen stillastående 13 d (0 akm2-cacher; däremot 33 runtime-filer åter i data/cache — netnet/analys lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller), snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 ×3 återmätningar 09-17 + LÅST grind ΔΦ=0, hash-kedjor); men kalibreringen ENBART Vercel-cron-driven (nästa molnrond 2026-10-02; Contabo-crontab saknar fortfarande raden, mätt 09-17), regimen FROSEN på genesis 09-03 (14 d; genesis-talen lever live i /api/forskningslage), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
@@ -1968,7 +1994,9 @@ badges.ts orörd sedan 09-01 (be04e17c).*
   sessionsvakt på publik rutt — impersonationsbar tills vakt finns (kö till
   huvudagenten; topplistan tom = inget utnyttjat).
 
-## A6. Biblioteken — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## A6. Biblioteken — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u1 omgång 14): läspaketkön TREDUBLAD på två dygn — 22→46 filer (36 sa-laser-paket + 10 kalendrar; s1/s4-vågorna levererade JNJ, Samsung, Novo, SAP, AT&T, BSX, Nike m.fl.) — medan underlagsbasen står stilla: data/analyses 11 och forskningsbiblioteket 22 tickers, båda oförändrade sedan 09-10 (mtimes + git log). Per-paket-mätning 09-18 med sidans eget analysfabrik-v1-kontrakt + explicita ticker-tabeller: 11 paket med AKM2-analysbankunderlag (en-till-en med bankens 11 — fortfarande heltäckande där), 7 med forskningsbibliotekets AKM1-vy (AT&T, BSX, Nike, Norsk Hydro, Novo Nordisk, NP3, SAP), 18 UTAN såväl AKM2- som AKM1-underlag — gap 4 är inte längre Nordeas enkelfall utan en KLASS: 25 av 36 paket saknar analysbankunderlag. Bokmaster 105 JSON på disk mot siffrorns 103 (rebaken = A1:s bokförda kosmetik-köpost); bokkanon 102 böcker orörd. Gap 1 (lint-dörr) fortfarande öppen: verktyg/ bär endast integrera-bokmaster.mjs, pre-commit-kroken 0 bokmaster-referenser (grep). /bibliotek /forskningsbiblioteket /kallor 200 loopback + HTTPS (egna sonder). Score 7 orörd — yttillväxt + skärpt gap utan stängning (B13-precedensen). Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 2/3): läspaketserien FULLBORDAD i
 granskningskön — samtliga 11 bolag i data/analyses har kvartalsläspaket (en-till-
@@ -1980,7 +2008,7 @@ oförändrad manuell (lagg-till-KALLA är verktygets rätta namn). 0 egna sviter
 Score 7 kvar — yttillväxt utan gap-stängning. Se diff-tabellen i UPPDATERING
 2026-09-16 högt upp i filen.*
 
-- **Vad:** Bokmastern (103 bokbaserade kurser), bokkanon (102 böcker),
+- **Vad:** Bokmastern (105 JSON på disk 09-18 — siffror.json bär 103, rebaken A1:s köpost), bokkanon (102 böcker),
   forskningsbiblioteket (per-ticker-analysunderlag), källor & upphovsrätt.
 - **Nyckelfiler:** data/bokmaster/*.json, data/bokkanon.json,
   src/app/(huvud)/{bibliotek,forskningsbiblioteket,kallor},
@@ -1990,13 +2018,7 @@ Score 7 kvar — yttillväxt utan gap-stängning. Se diff-tabellen i UPPDATERING
 - **Observation:** Kvalitetsvakten PASSAR åäö-bortfall + kursdata-konsistens
   för bokmaster (0 fel). Upphovsrättsgranskning dokumenterad. Verktygskedjan
   (validera→integrera→källa-attribution via lagg-till-kalla) existerar men är manuell.
-- **GAP:** (1) verktygskedjan saknar ett enda kommando (lint-dörr) som
-  blockerar ogiltig bokmaster-JSON före commit; (2) universum-fråga (mätt 2026-09-16): forskningsbiblioteket 22 tickers mot
-  analysbanken (B7:s data/analyses) 11 med endast 2 gemensamma (HM-B, INDU-C) —
-  synkningen är sekundär mot universumbeslutet; (3) källförteckning per kurs
-  maskinläsbar endast delvis; (4) NY 09-16: Nordea-läspaketet (12:e paketet)
-  saknar AKM2-analysunderlag (NDA-SE finns ej i data/analyses — lucknotis i
-  paketet).
+- **GAP:** (1) verktygskedjan saknar fortfarande (mätt 09-18) ett enda kommando (lint-dörr) som blockerar ogiltig bokmaster-JSON före commit — verktyg/ bär endast integrera-bokmaster.mjs, pre-commit-kroken 0 bokmaster-referenser; (2) universum-fråga (mätt 2026-09-16, återmätt 09-18 oförändrad): forskningsbiblioteket 22 tickers mot analysbanken (B7:s data/analyses) 11 med endast 2 gemensamma (HM-B, INDU-C) — katalogen frusen sedan 09-10, 0 filer förkastade av analysfabrik-v1-kontraktet; synkningen är sekundär mot universumbeslutet; (3) källförteckning per kurs maskinläsbar endast delvis; (4) SKÄRPT 09-16→09-18: paket utan AKM2-underlag är en KLASS, inte Nordeas enkelfall — 25 av 36 läspaket saknar analysbankunderlag, 18 av dem även forskningsbiblioteks-AKM1 (per-paket mätt 09-18 mot båda katalogerna).
 
 ---
 

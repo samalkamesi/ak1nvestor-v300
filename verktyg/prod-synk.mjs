@@ -166,6 +166,34 @@ export function bedomByggMisslyckande(npmciText, byggText) {
 }
 
 /**
+ * Blind-revert-vakten (o72): avgör om en commits filer överhuvudtaget kan
+ * påverka `next build`. BEVIS 72682834: felgrenens `git revert HEAD` rullade
+ * 3 minuter efter commit tillbaka o47:s tmp-migrering 3c78e03f — en ren
+ * verktyg/+data/-commit som ALDRIG kan orsaka ett Next-byggfel (byggfelet
+ * var race/infra) — och öppnade o44-köpostet igen. KUR: revertera ENDAST när
+ * HEAD själv berör byggytan; annars är HEAD oskyldig INNAN bevis och ska
+ * ombyggas orörd (det fallna bygget har redan rivit .next).
+ *
+ * Konservativ åt revertern-hållet: opreciserade filer (t.ex. "src" utan
+ * slash, katalogbyte "app/...") räknas som byggyta via prefixet utan
+ * snedstreck; null/undefined (obestämbar) ⇒ true = gammalt beteende kvarstår.
+ */
+const BYGGYTA_PREFIX = [
+  "src", "public", "app", "styles",
+  "package.json", "package-lock.json",
+  "next.config.", "next-env.d.ts",
+  "tsconfig.", "tailwind.", "postcss.", "middleware.",
+];
+export function headRorByggyta(filer) {
+  if (!Array.isArray(filer)) return true;
+  return filer.some((f) => {
+    if (typeof f !== "string" || f.trim() === "") return false;
+    const namn = f.trim();
+    return BYGGYTA_PREFIX.some((p) => namn === p || namn.startsWith(p.endsWith(".") ? p : p + "/"));
+  });
+}
+
+/**
  * Bevara bygg-loggar före de skrivs över (o49 Kur B): kopiera källfilerna
  * in i en målmapp med tidsstämpel-prefix. Returnerar de sparade namnen
  * (tom lista = inget gick att bevara — kallas ALDRIG kritiskt).
@@ -808,14 +836,35 @@ async function korSynk() {
         return;
       }
     }
-    logga("bygg MISSLYCKADES (se /tmp/synk-*.log) — revert + ombygge");
+    // O72 blind-revert-vakten: HEAD som ENBART rör icke-byggyta (verktyg/,
+    // data/, docs) kan aldrig vara gärningsmanet till ett Next-byggfel —
+    // revert avstås, ombygg på orörd HEAD skyddar både leveransen och .next.
+    let headFiler = null;
     try {
-      git(["revert", "HEAD", "--no-edit"]);
-      if (await korBygg()) {
-        ok = true;
-        logga("revert+ombygge OK — prod bygger på föregående commit");
-        skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
-      } else throw new Error("revert-bygget failade");
+      headFiler = git(["show", "--name-only", "--format=", "HEAD"]).split("\n").map((s) => s.trim()).filter(Boolean);
+    } catch { /* obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }
+    const rorByggyta = headRorByggyta(headFiler);
+    logga(
+      "bygg MISSLYCKADES (se /tmp/synk-*.log) — " +
+        (rorByggyta
+          ? "HEAD rör byggyta: revert + ombygge"
+          : `HEAD rör ENBART icke-byggyta (${headFiler.length} filer) — revert AVSTÅS (o72), ombygg på orörd HEAD`)
+    );
+    try {
+      if (!rorByggyta) {
+        if (await korBygg()) {
+          ok = true;
+          logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
+          skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
+        } else throw new Error("ombygg-utan-revert failade");
+      } else {
+        git(["revert", "HEAD", "--no-edit"]);
+        if (await korBygg()) {
+          ok = true;
+          logga("revert+ombygge OK — prod bygger på föregående commit");
+          skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
+        } else throw new Error("revert-bygget failade");
+      }
     } catch {
       logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
       try {

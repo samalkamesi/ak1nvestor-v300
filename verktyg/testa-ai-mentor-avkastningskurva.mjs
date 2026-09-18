@@ -579,15 +579,15 @@ const GAMLA = [
   );
 }
 
-// ── FALL K: register-läge — 414 kurser (spår 5:s omgång-14-rebake) ──────────
+// ── FALL K: register-läge — 420 kurser (spår 5:s omgång-14-rebake) ──────────
 {
   // 2026-09-18: 402 → 408 av spår 5 omgång 13 (st-05, ma-04, roic-02, mt-05,
   // ma-03-realrantan, od-04) — harmoniskt uppdaterat av s6-u1 omgång 16:s
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 414 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
-    KURSREGISTER.length === 414,
+    "K03 register-läge — 420 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
+    KURSREGISTER.length === 420,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -631,7 +631,7 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-avkastningskurva-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

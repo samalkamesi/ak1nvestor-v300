@@ -675,8 +675,12 @@ const GAMLA = [
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
   // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u3:s
   // portfoljpraktik wireades EFTER detta lager — känt och välkommet.
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   kanda.add("svaraLokaltPortfoljpraktik");
+  // Omgång 18:s fönsterlager (2026-09-18): u1 utdelningskalender + u2 kreditdjup.
+  kanda.add("svaraLokaltUtdelningskalender");
+  kanda.add("svaraLokaltKreditdjup");
+  kanda.add("svaraLokaltSektordjup");
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

@@ -394,6 +394,11 @@ const kedjekomponenter = [
   "svaraLokaltEkosystemdjup(q, KURSREGISTER)",
   "svaraLokaltHandelsdag(q, KURSREGISTER)",
   "svaraLokaltPortfoljpraktik(q, KURSREGISTER)",
+  // Omgång 18:s fönsterlager (2026-09-18): u1 utdelningskalender +
+  // u2 kreditdjup — harmoniserat av u1:s widget-vaktspass.
+  "svaraLokaltUtdelningskalender(q, KURSREGISTER)",
+  "svaraLokaltKreditdjup(q, KURSREGISTER)",
+  "svaraLokaltSektordjup(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -437,7 +442,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 33 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 39 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

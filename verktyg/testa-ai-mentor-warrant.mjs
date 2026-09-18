@@ -34,7 +34,7 @@
  *      warrant-lagret: inget tidigare lager fångar den
  *   J  kärnordsdisjunktion MEKANISKT — WARRANT_MONSTER:s kärnord är
  *      disjunkta mot samtliga tidigare lagers kärnord, lästa LIVE
- *   K  register-läge — 414 kurser (spår 5:s omgång-14-rebake; basotestet
+ *   K  register-läge — 420 kurser (spår 5:s omgång-14-rebake; basotestet
  *      E01 är grinden som fångar glömda rebakar)
  *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA 31 lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b kan inte
@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 414 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
-    KURSREGISTER.length === 414,
+    "K03 register-läge — 420 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
+    KURSREGISTER.length === 420,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -656,7 +656,7 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-warrant-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

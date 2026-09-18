@@ -115,6 +115,9 @@ const { svaraLokaltPortfoljpraktik, PORTFOLJPRAKTIK_MONSTER } = await tolerera("
 // i widgeten EFTER detta lager (lager 38, sist) — känt och välkommet; deras
 // klaim data/vakten/auto-s6-1789724700618-s6-u2-ansprak.md.
 const { svaraLokaltKreditdjup, KREDITDJUP_MONSTER } = await tolerera("ai-mentor-kreditdjup-fragor.ts", ["svaraLokaltKreditdjup", "KREDITDJUP_MONSTER"]);
+// Samma fönster: u3:s sektordjup wireades SIST (lager 39) — känt och välkommet;
+// deras anspråk auto-s6-1789724700618-s6-u3-ansprak.md (arbetsytans rot).
+const { svaraLokaltSektordjup, SEKTORDJUP_MONSTER } = await tolerera("ai-mentor-sektordjup-fragor.ts", ["svaraLokaltSektordjup", "SEKTORDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -269,7 +272,8 @@ FELSTAVADE.forEach((f, i) => {
     svaraLokaltHandelsdag(fraga, KURSREGISTER) ??
     (svaraLokaltPortfoljpraktik ? svaraLokaltPortfoljpraktik(fraga, KURSREGISTER) : null) ??
     svaraLokaltUtdelningskalender(fraga, KURSREGISTER) ??
-    (svaraLokaltKreditdjup ? svaraLokaltKreditdjup(fraga, KURSREGISTER) : null);
+    (svaraLokaltKreditdjup ? svaraLokaltKreditdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltSektordjup ? svaraLokaltSektordjup(fraga, KURSREGISTER) : null);
   for (const f of NYA) {
     const svar = svaraLokaltUtdelningskalender(f.fraga, KURSREGISTER);
     if (!svar) continue;
@@ -280,7 +284,7 @@ FELSTAVADE.forEach((f, i) => {
       if (!mal) FEL.push("fragor:-knapp '" + q + "' (" + f.amne + ") landar null i HELA kedjan — död knapp");
     }
   }
-  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (38 lager)", FEL.length === 0,
+  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (39 lager)", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "0 döda knappar");
 
   // Registerdrivna räknekontroller: kategorins antal och kursminuter i
@@ -506,7 +510,7 @@ const GAMLA = [
     AVKASTNINGSKURVA_MONSTER, VARDERINGSVERKTYG_MONSTER,
     WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER,
     EKOSYSTEMDJUP_MONSTER, HANDELSDAG_MONSTER, PORTFOLJPRAKTIK_MONSTER,
-    KREDITDJUP_MONSTER,
+    KREDITDJUP_MONSTER, SEKTORDJUP_MONSTER,
   ].filter(Array.isArray);
   let karnord = 0;
   const fragor = [];
@@ -557,6 +561,7 @@ const GAMLA = [
     ["portfoljpraktik", svaraLokaltPortfoljpraktik],
     ["utdelningskalender", svaraLokaltUtdelningskalender],
     ["kreditdjup", svaraLokaltKreditdjup],
+    ["sektordjup", svaraLokaltSektordjup],
   ];
   const kora = (lager, fraga) => {
     for (const [, fnk] of lager) {
@@ -595,7 +600,7 @@ const GAMLA = [
     if (!mal) fel.push("motfråga '" + q + "' landar null i kedjan — död knapp");
   }
   kontroll(
-    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (38 lager, som chat-widget.tsx)",
+    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (39 lager, som chat-widget.tsx)",
     fel.length === 0,
     fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length + 1) + "/" + (GAMLA.length + NYA.length + 1) + " rätt",
   );
@@ -613,7 +618,7 @@ const GAMLA = [
 {
   const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigare = new Set();
-  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, VARDERINGSVERKTYG_MONSTER, WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER, EKOSYSTEMDJUP_MONSTER, HANDELSDAG_MONSTER, PORTFOLJPRAKTIK_MONSTER, KREDITDJUP_MONSTER]) {
+  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, VARDERINGSVERKTYG_MONSTER, WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER, EKOSYSTEMDJUP_MONSTER, HANDELSDAG_MONSTER, PORTFOLJPRAKTIK_MONSTER, KREDITDJUP_MONSTER, SEKTORDJUP_MONSTER]) {
     if (!Array.isArray(monster)) continue;
     for (const m of monster) for (const k of m.karnord ?? []) tidigare.add(dia(k));
   }
@@ -650,7 +655,7 @@ const GAMLA = [
     "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
     "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
-    "svaraLokaltKreditdjup",
+    "svaraLokaltKreditdjup", "svaraLokaltSektordjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -669,15 +674,15 @@ const GAMLA = [
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
   // Omgång 18:s fönsterlager: u2:s kreditdjup wireades EFTER detta lager
   // (lager 38, sist) — härmed känt (omgång 8/17-presedensen).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 38 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 39 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "utdelningskalender näst sist av 38 lager (u2:s kreditdjup efter — samma fönster), inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "utdelningskalender lager 37 av 39 (u2:s kreditdjup + u3:s sektordjup efter — samma fönster), inga okända komponenter",
   );
 }
 

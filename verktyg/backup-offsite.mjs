@@ -35,7 +35,7 @@ function logga(rad) {
 
 function main() {
   const stämpel = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-  const filnamn = `ak1a-offsite-${stämpel}.zip`;
+  const filnamn = `ak1a-offsite-${stämpel}.tar.gz`;
   const sökväg = path.join(BACKUP_KAT, filnamn);
 
   fs.mkdirSync(BACKUP_KAT, { recursive: true });

@@ -88,6 +88,15 @@ Kriterier: (a) _rsc-flygningar → 0 vid kall entré på /ar + /en
 parallell Lighthouse, inget byggfönster — deklarerat). Utförs av mig om
 fönstret räcker, annars nästa våg (o66/o71-precedensen).
 
+**Deploystatus 22:47:19Z:** synkens poll SEDE kuren (HEAD effb9429) men
+RAM-grinden vägrade: "VÄNTAR-RAM: 1 505 MB tillgängligt (< 2 500 = 2 200
+bygg + 300 reserv; 1 zcode-barn)" — o63-agentens identiska läge 2026-09-18
+(deras kur åkte med i syskonens deployfönster 40 min senare). Nytt försök
+var 10:e minut; HEAD orört. Observation åt drift-spåret (inte min yta):
+synkens loggrad bär datumet 2026-09-18 vid realtid 2026-09-19 —
+tidsstämpelbugg i prod-synk.mjs (dagens rader är oskiljbara från gårdagens
+i grep; rad-ordning + innehåll skiljer dem).
+
 ## §5 Rest + läxor
 
 - LCP ~4,5 s på speglarna delar /-sidans strukturägarskap (hero-rendering

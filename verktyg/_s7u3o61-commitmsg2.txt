@@ -1,0 +1,1 @@
+studio: auto s7-u3 o61-bokföring — protokoll o61-prestanda-palettvakt-defer-s7.md (§0–§7: FÖRE-data, rot, kur 5ed8c48a, EFTER-kriterier a–d) + worklog-rad; väntestatus enligt o54/o56-precedensen (prod-synk VÄNTAR-RAM, EFTER mäts vid BUILD_ID-byte) + ny köpost: SSR-preload-fyndet på /kurser + /blogg kringgår lazy-gränsen [fabrik]

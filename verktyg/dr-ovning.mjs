@@ -304,7 +304,14 @@ function kategoriseraFel(felrader) {
 
 function aterstall(dump, dom) {
   console.log('[4/7] ÅTERSTÄLLER (zcat | psql) — RTO-mätning startar …');
-  const felFil = `/tmp/dr-ovning-fel-${dom.datumIso}.log`;
+  // Felloggen namnges per BLAD + PROCESS (pid + ms-tidsstämpel): det tidigare
+  // namnet (per kördatum) lät två agenters körningar samma dag skriva SAMMA
+  // /tmp-fil och skriva över varandras felbevis (pump-u2:s krockfynd
+  // 2026-09-18 — deras log kolliderade med DAGPULS-u1:s; ARKIVSVEP-kö 1).
+  // Bladnamnet ger läsbarhet, pid + ms garanterar unikhet; protokollets §4-rad
+  // pekar på just denna körnings fil och ingen senare körning rör den.
+  const blad = dom.dumpNamn.replace(/^db-/, '').replace(/\.sql\.gz$/, '');
+  const felFil = `/tmp/dr-ovning-fel-blad-${blad}-p${process.pid}-${Date.now()}.log`;
   const t0 = process.hrtime.bigint();
   const r = spawnSync('bash', ['-c',
     `zcat '${dump.replace(/'/g, "'\\''")}' | sudo -n -u postgres psql -d ${SKRAP_DB} -X -q 2>'${felFil}'`],

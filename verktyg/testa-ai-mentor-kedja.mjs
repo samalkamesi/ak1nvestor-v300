@@ -194,6 +194,17 @@ const MOTORDEFS = [
   // candlestick/rsi/macd/moving average-orden — 10 kedjefångster); rond 2:
   // 11 frågor NULL, 0 grannar mot 1 202 kärnord, 0 omvända stölder).
   { namn: "sektordjup", fil: "ai-mentor-sektordjup-fragor.ts", fn: "svaraLokaltSektordjup", arr: "SEKTORDJUP_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 19: sektorskola 2 (s6-u3 — tre analytikerklassiker:
+  // läkemedelsbolag patentbrant/pipeline/blockbuster + detaljhandelsbolag
+  // like-for-like/marginaltrappa + logistikbolag nätverksmatte/
+  // kapitaltäthet/lastmile; aktiverar 8 mentorväglösa kurser — km-039,
+  // km-048, pc-02, se-07, km-044, se-05, se-04, se-15 — PRAKTISKA CASE och
+  // MOAT får sina första mentorvägar; extra äger moat/vallgrav (rond 2 av
+  // sonden _s6u3-sond-omg19.mjs DÖDADE moat-lager-idén — deras kärnord),
+  // e-handel ENDAST stärkord efter prototyp-stöldprovet i
+  // _s6u3-sond2-omg19.mjs: 16 kandidatfrågor NULL, 0 grannar mot 1 229
+  // kärnord).
+  { namn: "sektorskola2", fil: "ai-mentor-sektorskola2-fragor.ts", fn: "svaraLokaltSektorskola2", arr: "SEKTORSKOLA2_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -202,7 +213,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 110 (2026-09-18 omgång 18: utdelningskalender +1, kreditdjup +2, sektordjup +3 — 39-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 113 (2026-09-18 omgång 19: sektorskola2 +3 — 40-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -323,6 +334,14 @@ const KANONISKA = [
   { fraga: "vad är net revenue retention?", motor: 38 },
   { fraga: "vad är en foundry?", motor: 38 },
   { fraga: "vad är krigsmateriel?", motor: 38 },
+  // Omgång 19: sektorskola 2 (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "hur analyserar jag läkemedelsbolag?", motor: 39 },
+  { fraga: "hur analyserar jag detaljhandelsbolag?", motor: 39 },
+  { fraga: "hur analyserar jag logistikbolag?", motor: 39 },
+  { fraga: "vad är patentbranten?", motor: 39 },
+  { fraga: "vad är en pipeline?", motor: 39 },
+  { fraga: "vad är like-for-like?", motor: 39 },
+  { fraga: "vad är lastmile?", motor: 39 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);

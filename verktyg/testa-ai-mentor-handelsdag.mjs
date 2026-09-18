@@ -657,7 +657,8 @@ const GAMLA = [
     "svaraLokaltVarderingsverktyg",
     "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
     "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag",
-  ];
+    "svaraLokaltSektorskola2",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

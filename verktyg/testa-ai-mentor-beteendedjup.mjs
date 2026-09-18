@@ -457,7 +457,8 @@ const GAMLA = [
     // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik",];
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+];
   // Syskon-pågående lager (u2:s riskdjup, wirad SIST i widgeten under detta
   // fönster): KÄND men krävs ej — deras commit äger modulen. Vakten underkänner
   // fortfarande OKÄNDA (odokumenterade) komponenter.

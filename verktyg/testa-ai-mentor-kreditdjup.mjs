@@ -556,7 +556,8 @@ GAMLA.forEach((f) => {
     // FÖRE detta lager, s6-u2 kreditdjup SIST.
     "svaraLokaltUtdelningskalender",
     "svaraLokaltKreditdjup",
-  ];
+    "svaraLokaltSektorskola2",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

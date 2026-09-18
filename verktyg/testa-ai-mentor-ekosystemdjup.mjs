@@ -612,7 +612,8 @@ const GAMLA = [
   
     // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u1 handelsdag + u3 portföljpraktik.
     "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik",];
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

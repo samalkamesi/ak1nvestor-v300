@@ -399,6 +399,9 @@ const kedjekomponenter = [
   "svaraLokaltUtdelningskalender(q, KURSREGISTER)",
   "svaraLokaltKreditdjup(q, KURSREGISTER)",
   "svaraLokaltSektordjup(q, KURSREGISTER)",
+  // Omgång 19 (2026-09-18): s6-u3 sektorskola 2 — läkemedel/detaljhandel/
+  // logistik, SIST av 40 (svitharmonisering: dokumentationsplikten).
+  "svaraLokaltSektorskola2(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";

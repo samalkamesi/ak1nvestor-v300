@@ -445,7 +445,8 @@ const GAMLA = [
     // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik",];
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här
   // underkänner fortfarande OKÄNDA (odokumenterade) komponenter.

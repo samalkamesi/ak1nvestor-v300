@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (423 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (426 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 381 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 384 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -396,6 +396,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ks-04-emissionens-mekanik", titel: "Emissionens mekanik — kvot, teckningsrätt och utspädningens aritmetik", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-05-covenanter-och-kreditbetyg", titel: "Covenanter och kreditbetyg — skuldens spelregler och prislapp", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-06-konvertibler-och-hybridkapital", titel: "Konvertibler och hybridkapital — skulden som kan bli eget kapital", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ks-07-kapitalstrukturens-avvagning", titel: "Kapitalstrukturens avvägning — tre teorier om skuldens rättvikt", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-01-volatilitet-och-risk", titel: "Volatilitet och risk — skilj svängningar från förlust", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-02-kundkoncentration", titel: "Kundkoncentration — när få kunder bär intäkterna", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-03-dold-samvariation", titel: "Dold samvariation — när bolagen delar samma risk", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -407,6 +408,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-04-vallgravens-fodelse", titel: "Vallgravens födelse — hur en moat byggs sten för sten", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-05-byteskostnader-och-inlasning", titel: "Byteskostnader och inlåsning — moaten som håller kunden kvar", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-06-kostnadsoverlagsenhet", titel: "Kostnadsöverlägsenhet — moaten ingen ser", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -417,6 +419,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "am-04-marknadsstruktur", titel: "Marknadsstruktur — hur handeln faktiskt fungerar", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-05-handelsdagens-auktioner", titel: "Handelsdagens auktioner — öppning, löpande handel och stängning", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-06-kortlage-och-aktieutlaning", titel: "Kortläge och aktieutlåning — den andra sidan av orderboken", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-07-indexomlaggningen", titel: "Indexomläggningen — flödet som flyttar kursen utan en enda nyhet", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-03-multipelns-anatomi", titel: "Multipelns anatomi — vad ett värderingstal innehåller", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -459,4 +462,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 423;
+export const LARVAG_ANTAL_KURSER = 426;

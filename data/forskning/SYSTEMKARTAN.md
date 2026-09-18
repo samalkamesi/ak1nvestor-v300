@@ -1886,6 +1886,39 @@ svitens huvud SKALL stämma med svitens beteende); (2) A1:s ÖVERSIKT-kurstal
 (396→420) + quiz-frysningen (A1/s5-spåret); (3) H3-kvartalsruten växer ifrån
 sitt underlag (52 Kön-filer).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789731901131 — E29 autonoma organet återdiffad; tredje varvet)
+
+Val mot duplikat: E29:s detailblock bar stamplen 2026-09-16 (äldsta klassen
+som återstod efter u3:s B10/B11/B14-anspråk på disk 13:47). Anspråk på disk
+FÖRE mätstart (data/vakten/auto-s9-1789731901131-u1-ansprak.md, gitignorerad
+väg — disk-först-presedensen sedan 09-17:s E34-clobberläxa); KUR-BEVIS I
+EGNA FÖNSTRET: syskonet u2:s sektion ovan bokför självt "syskonens val
+respekterade (u1 = E29, u3 = B10+B11+B14 — disk-först vid båda)" och valde
+A2+C17 — disciplinen fungerade, noll kollision i detta fönster. Varje rad
+MÄTT i arbetsytan 2026-09-18 ~14:00:
+
+| Mått | Kartan (09-17-kvällsraden) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| Fabriksmanifest | 116 klara av 117 | **146 klara av 147** (+30 på ~20 h; enda pågående = detta manifest) — 22 auto-manifest startade IDAG (21 klara) |
+| Utdataloggar | 387 | **475** (+88 leveransbevis) |
+| Beslutsminne | 62 poster, senast 17:43:30Z | **68 poster**, senast **rond 51 kl 11:43:03Z** (4 poster idag — rondkadansen lever) |
+| pumpor-daemon | online 25 h ↺19 | **pm2 'ak1a-pumpor' online 42 h ↺19** (ps: sedan 16 sep) + fabriksprocessen fångad LEVANDE i mätfönstret (pid 2140015, startad 13:45 — matade detta manifests barn) |
+| evighetsmotorn | "verktyg på disk" (09-15-rad) | **614 kontroller, senaste 11:48:03Z** (state+log); loggen "målet INAKTIVT — lämnas åt hjärtat :x1/ronden" + mal-state återarmat 11:41Z (24/7-STANDBY) = maskineriet levande under mätningen |
+| Svitgap | pumpor+styrelse HAR · fabrik/evighet/uppdrag saknar | **OFÖRÄNDRAT återmätt**: testa-pumpor-scheman.mjs + testa-styrelse.mjs på disk; 0 svitträffar för agentfabrik/evighetsmotor/uppdrag |
+| CRON_SECRET | 0 namnträff | **0 env-filer bär namnet (återmätt)**; namnet refererat i src (5 cron-rutter + nyheter/scan + ekosystem-panel) — cron-vakten vilar fortsatt på ett osatt secret |
+| Kunduppdragsfiler | vilar korrekt | **fortfarande frånvarande** (kunduppdrag.json + uppdrag-klart.json existerar ej; senaste UPPDRAG KLART 09-14 i uppdragsloggen) = ingen order i flykt |
+| Drivbild | crontab bär ingen rond-rad | **återmätt**: användar-crontab bär backup/vakt/arkiv-rader — fortfarande INGEN rond-/fabriksrad; pm2 äger pumpor-daemonen |
+| Kollisionsklassen | 09-16 kartfil · 09-17 E34-rad (abort-grind bevisad) | **ÅTERKOMMEN 09-18 i ny skepnad** (s8-fönstret 13:30–13:36): protokollnumret o67 TRIPPELKOLLIDERADE (u1 driftsbok + u3 protokollfil + u2 flytt o67→o68) OCH git-index-kollision (057f8446:s commit utan paths tog u3:s staggade namnbyte med sig) — allt ärligt bokfört i 6e44422c/dcd3e279 + två disknotiser (data/vakten/auto-s8-1789730101010-u1-o67- och -u2-o68-commitnotis.md, mätta på disk 13:32/13:34) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E29 | LEVER 8 → **LEVER 8** | Tillväxten talar för högre (+30 manifest utan förlorad uppgift, rondkoll på 51, processerna levande under mätningen, disk-först-disciplinen bevisad i eget fönster) MEN kollisionsklassen är nu bevisad i TRE fönster i TRE skepnader (kartfil 09-16 · kartrad 09-17 · nummerserie+git-index 09-18) och kuren är DISCIPLIN, inte mekanism — fabrikens commit-instruktion föder syskonen utan isolerade nummerserier/staging-ytor. E33/B14-precedensen: kunskap tillförd, inget gap stängt ⇒ ingen poängrörelse |
+
+Snitt **7,6 / 288 / 38 OFÖRÄNDRAT** (återdiff utan poängrörelse). Kur-kö till
+fabriksägaren: per-uppgift isolerad protokollnummerserie + commit med EXPLICITA
+paths (aldrig allt staggat) i fabriks-prefixet — stänger kollisionsklassen
+mekaniskt i stället för disciplinärt.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1919,7 +1952,7 @@ sitt underlag (52 Kön-filer).
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 116 klara manifest av 117 (mätt 09-17 kväll; kön bär 1 pågående = spår-9-manifestet) · 387 utdatologgar som leveransbevis · beslutsminne 62 poster (6 idag, senast 17:43:30Z — rondkadansen lever) · pumpor-daemon online 25 h ↺19 · kunduppdragsfilerna vilar korrekt (ingen order i flykt); CLOBBER-GAPET ÅTERKOM MITT I 09-17:S DOKVÅG: syskonets E34-rad byttes under fönstret, abort-grinden VÄGRADE skriva = clobber-kuren BEVISAD I SKARPT LÄGE från förlorarsidan (men anspråk måste FÖRE mätstart — mitt kom minuter för sent, disk-först-presedensen tillämpad, E34 avstått); NYTT FYND: evighetsmotorns mål-sond 2× OSVARBAR under kvällens patchfönster (18:38:39Z + 18:48:39Z — samma driftfönsterklass som prod-synkens "mål-återarmning FEL 502"); svitgapet preciserat: pumpor + styrelse HAR sviter, agentfabrik/evighetsmotor/uppdrag saknar; CRON_SECRET fortfarande 0 namnträff |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 146 klara manifest av 147 (mätt 09-18 ~14:00; +30 sedan 09-17 kväll, 22 startade idag) · 475 utdataloggar · beslutsminne 68 poster (rond 51 11:43:03Z, 4 idag) · pumpor 42 h ↺19 + FABRIKSPROCESSEN FÅNGAD LEVANDE i mätfönstret (pid 2140015) · evighetsmotorn 614 kontroller (11:48:03Z) + målet återarmat 11:41Z · kunduppdragsfilerna fortsatt frånvarande (ingen order i flykt) · svitgapet oförändrat (fabrik/evighet/uppdrag 0) · CRON_SECRET 0 env · KOLLISIONSKLASSEN ÅTERKOM 09-18 i ny skepnad (s8-fönstret: o67-trippelkollision + git-index-kollision, ärligt bokförd med disknotiser) = bevisad i 3 fönster/3 skepnader, kuren disciplin ej mekanism — MEN disk-först-disciplinen bevisad i eget fönster (u2 läste anspråket, valde A2+C17, 0 kollision); kur-kö: fabrikinstruktion med isolerade nummerserier + explicita paths per commit |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
@@ -3266,7 +3299,25 @@ gap 1 kvarstår, FLAGGA och score oförändrade.*
   kräver åtgärder.length > 0 på en enkel fråga; (4) protokollens läsbarhet
   (markerade originalsvars-texter).
 
-## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789731901131):
+återdiff med anspråk på disk FÖRE mätstart — och KUR-BEVIS i eget fönster:
+syskonet u2 bokförde i sin sektion "syskonens val respekterade (u1 = E29 …
+— disk-först)" och valde A2+C17, noll kollision. Tillväxt mätt: 146 klara
+manifest av 147 (+30 sedan 09-17 kväll; 22 startade idag), 475 utdataloggar
+(+88), beslutsminnet 68 poster (rond 51, 11:43:03Z), pumpor-daemonen 42 h ↺19,
+den levande fabriksprocessen fångad i mätfönstret (pid 2140015 — matade detta
+manifests barn), evighetsmotorn 614 kontroller (11:48:03Z) med målet återarmat
+11:41Z, kunduppdragsfilerna fortsatt frånvarande (ingen order i flykt),
+svitgapet och CRON_SECRET oförändrade (återmätta). MEN kollisionsklassen från
+09-16/09-17 ÅTERKOM 09-18 i ny skepnad: s8-fönstrets protokollnummer-
+trippelkollision (o67 ×3) + git-index-kollision (syskons commit utan paths tog
+allt staggat) — ärligt bokförd i 6e44422c/dcd3e279 med disknotiser. Score 8
+kvar: kuren är disciplin (disk-först + explicita paths + tidig protokollcommit
++ ärlig bokföring), inte mekanism — fabrikens commit-instruktion saknar
+fortfarande isolerade nummerserier och staging-ytor per uppgift. Se
+diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 6): tillväxt MÄTT — status-
 katalogen bär 66 klara + 1 pågående manifest av 67 (+41 klara på ett dygn;
@@ -3318,7 +3369,10 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   endpoints annars (localhost-caller på Contabo + Vercel-header stöds).
 - **GAP:** (0) fabrikens delar (agentfabrik/evighetsmotor/pumpor) saknar
   egen testsvit — RAM-vakt/timeout/lås är verifierade i drift men inte
-  regressions-testade; (1) CRON_SECRET sätt i prod-env (en rad) eller bind
+  regressions-testade, OCH syskonkoordineringen vilar på disciplin: delade
+  namnresurser (kartrader · protokollnummer · git-index) kolliderar i tre
+  fönster utan mekanisk kur (fabrikinstruktion saknar isolerade serier +
+  explicita paths per commit — kur-kö bokad 09-18); (1) CRON_SECRET sätt i prod-env (en rad) eller bind
   crons till localhost-only; (2) 28 motorer utan triggare — inventera vilka
   som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
   syns ej i admin-utvecklingsradarn live.

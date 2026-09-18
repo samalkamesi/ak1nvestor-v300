@@ -15280,5 +15280,95 @@
    ]
   },
   "notering": "Världens största järnmals- och pelletsproducent (segment FY2025 BRL: Iron Ore 101 658 · Pellets 6 196 · Nickel 16 571 · Copper 22 251 — källans segmenttabell): tillsammans med PBR universumets första Sydamerika-rader och grundplåten till framtida /dataset/material/brasilien + /dataset/energi/brasilien. MOAT-FALLETS LÄROBOK: bruttomarginal 60,0 % (FY2021, järnmalmsboomen) → 35,0 % (FY2025) — spread 25,1 pp = universumets NÄST BREDASTE efter DNO (27,6 pp): råvaruvallgraven som försvinner med priscykeln (femårsgenomsnitt 43,8 %). P/E 30,72 mot forward 8,71 ⇒ prognosTillväxt +252,7 % = universumets näst extremaste gap efter DNO (+365,8 %; ARM +143,7 och Samsung +205,1 klara den nedre trappan) — PEG 0,12 spårkonventionen, gap-mått inte frikort. TTM-netto 2,00 mdr USD (−64,2 %) mot EBIT 11,68 mdr: skillnaden bor UNDER driftsraden — finansiella poster och skatteprovisioner med effektiv skattesats 64,4 % (Brumadinho/Samarco-efterdyningar), därav payout 152,4 % av TTM-EPS medan utdelningen bärs av kassaflödet (FCF 3,66 mdr, fcfYield 5,95 %, DPS 0,712 USD = 4,92 %). DPS BRL-serien 14,094→5,691→6,987→4,757→5,477 = samma cykeldoktrin som PBR men mjukare amplitud. Serierna FY2022–FY2025 mkr BRL: oms 226 508→213 595 (−1,9 %/år endpoint) · netto 95 924→13 814 (−47,6 %/år endpoint — cykelbotten) · FCF 30 017→15 375. ROIC 7,67 % mot WACC 7,51 % = +0,16 pp (knapp marginal på TTM-botten) medan ROCE 15,69 % visar driftens kraft; skuld/EK 0,55, räntetäckning 3,9×. Beta 0,75. Insiders 0,02 %, institutioner 53,9 %. Nästa rapport 2026-10-29 (Q3), ex-div 2026-08-13."
+ },
+  {
+  "ticker": "FCX",
+  "namn": "Freeport-McMoRan Inc.",
+  "bransch": "material",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/stocks/fcx/",
+    "paranoid": "NYSE-primärnoteringen (översikt + statistics + financials + cash-flow-statement + balance-sheet; underlag S&P Global Market Intelligence + Fiscal.ai; stängningskurs 2026-09-17): pris, mcap 101,74 mdr, EV/EBIT 15,32 EV/EBITDA 11,31, P/E 34,72 forward 20,21, P/B 5,06 (mcap/common equity 20,109 mdr JUN-26 OCH pris/BVPS 70,85/14,00 — equity-måttens konvergens, inte spread), marginaler TTM, ROE 14,75/ROIC 12,68/ROCE 13,34/WACC 11,11, skuld/EK 0,32 (på total equity 32,222 INKL minoriteter 12,113 — på common equity 0,51: konsolideringsnotis), räntetäckning 16,55×, nettoskuld 6,28 mdr, utdelning 0,60 USD/aktie (0,85 %, payout 29,41 % exakt 0,60/2,04), köpavkastning 0,09 %, beta 1,40, 52-v 35,15–80,24 (+56,4 %), Altman Z 2,69, Piotroski F 5, effektiv skattesats 31,06 %, analytiker 72,05 (23 st), institutioner 88,93 %, 29 000 anställda, oms/anställd 0,892 MUSD; bransch Materials/Copper källkonsekvent med NEM/BHP/RIO-familjen"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 70.85,
+  "marknadsKapitalMdr": 101740,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0439,
+   "resultatCAGR5ar": -0.1406,
+   "omsattningTillvaxtTTM": 0.0019,
+   "prognosTillvaxt": 0.718
+  },
+  "lonksamhet": {
+   "roe": 0.1475,
+   "roic": 0.1268,
+   "bruttoMarginal": 0.3828,
+   "ebitMarginal": 0.2726,
+   "nettoMarginal": 0.1138,
+   "fcfMarginal": 1.762
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.32,
+   "rantaTackning": 16.55,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": null
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4153,
+   "bruttoMarginalSpread5ar": 0.1067,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 34.72,
+   "pb": 5.06,
+   "evEbit": 15.32,
+   "peg": 0.48,
+   "fcfYield": 0.0173,
+   "egenKapitalMultipl": 5.06
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    22780,
+    22855,
+    25455,
+    25915
+   ],
+   "resultat": [
+    3461,
+    1842,
+    1883,
+    2197
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1670,
+    455,
+    2352,
+    1116
+   ]
+  },
+  "notering": "KOPPAR-LEDET FÖDS I MATERIALGRENEN — och USA/material-cellen (universumets sämsta USA-cell: nio av tio branscher hade 5+, material ensam med NEM) får sin andra rad: NEM+FCX = ÄDELMETALL/BASMETALL-JÄMFÖRELSERADEN i USA-fållan, grundplåt mot /dataset/material/usa (MIN_MATTA=5 — koordinat åt kommande omgångar: 1→2 här). FCX = VÄRLDENS STÖRSTA BÖRSNOTERADE RENODLADE KOPPARPRODUCENT (Grasberg i Indonesiens bergstrakt — bland världens största kopparfyndigheter; diversifierade BHP/RIO bryter mer koppar men som helhetsgruvor) med betydande guldproducentroll som Grasbergs biprodukt; 29 000 anställda, 0,89 MUSD omsättning per anställd, huvudkontor Phoenix AZ — ingen landstvetydighet (LIN-klassens dilemma undviks). NEM-KONTRASTEN (samma pristagar-DNA, två metaller): NEM P/E 15,8 · fcfYield 6,7 % · bruttomarginal 68,0 % mot FCX 34,7 · 1,7 % · 38,3 % — guldens kassaprinter mot kopparets kapitalbalans; koppar = elektrifieringens metall (datacenter, elnät, EV) där varje ny gruva tar årtionden. KAPITALCYKELN ÄR BERÄTTELSEN: capex 3 469 → 4 824 → 4 808 → 4 494 mdr USD (17–19 % av omsättningen 2023–24; TTM 4 138) — Indonesiens förädlingskrav (Manyar-smältverket, brand okt 2024 med återuppbyggnad 2025) + Grasbergs underhållsbudget; FCF 1 670 → 455 → 2 352 → 1 116 mdr genom cykeln med TTM 1 762 på driftskassa 5 900 — smältverksåren åt kassan, återhämtningsåret ger tillbaka (femårsmedel 1,4 mdr). MINORITETSPEDAGOGIKEN (konsolideringens lärobok): balansräkningens totala equity 32,2 mdr USD INKLUDERAR 12,1 mdr minoritetsintresse (PT Freeport Indonesia — FCX bokför HELA Grasberg men bär ekonomiskt intresse 48,8 % efter 2018 års divestment): skuld/EK 0,32 på total equity mot 0,51 på moderbolagsägarens; minoritetsposten = 38 % av balansräkningens equity. PRIS/VOLYM-ÅRET: TTM-intäkt +0,2 % trots starka kopparpriser — volymsidan höll tillbaka (smältningskapacitet och exportstörningar efter branden) medan nettovinsten steg +53,1 % = MARGINALÅTERKOMSTEN; bruttomarginal 42,6 % (FY2022) → 40,7 → 39,6 → 37,1 % (FY2025) med FY2021-toppen 47,7 % — femårsspread 10,7 pp: råvaruvallgraven rider på metallpriset (moat-fälten dokumenterar; NEM:s 68 %-brutto är fyndighetens, inte branschens). VARDERING: P/E 34,72 mot forward 20,21 ⇒ prognosTillväxt +71,8 % (TTE-konventionen — vändningsgap i DNO/VALE-klassens NEDRE trappa, långt under Holcims +479) med PEG 0,48 spårkonvention (källans 0,55 — källspridningsnot i VALE/005930.KS-familjen); källans 3-års EPS-prognos +36,4 %/år som kalibrerings-not; EV/EBIT 15,32 REPLIKERBAR EXAKT ((101,74 + 10,36 − 4,08) ÷ 7,05 mdr TTM-EBIT); P/B 5,06 på BÅDA vägarna (mcap ÷ common equity 20,109 OCH pris ÷ BVPS 14,00 — equity-måttens sällsynta konvergens); fcfYield 1,7 % (1,762 ÷ 101,74) — mittemellan i materialgrenen (Yara 1,79 % över, SCA 1,53 % under) men en annan värld än NEM:s 6,7 %. KAPITALMARGINALKNAPP: ROIC 12,68 % mot WACC 11,11 % = +1,57 pp — råvarucykelns värdemätare (VALE +0,16 pp samma familj; konsultkontrasten TCS +61,2 pp). UTDELNINGEN: DPS 0,60 USD (0,85 % direktavkastning) med payout 29,4 % — bas+variabel-policyn mot kapitalcykeln; utdelningar betalda 866 → 863 → 865 → 865 mdr USD PLATT medan återköpen 1 402 → 50 → 94 → 130 (2022-cykeltoppens raket avstannad — utdelningsdisciplin när kassan skall till smältverk); effektiv skattesats 31,06 % (indonesisk beskattning och exportavgifter på PT-FI). RÖRLIGHET: beta 1,40 — råvarucykeln i betaform; 52-vägers 35,15–80,24 (+56,4 %, kursen 70,85 nära toppspannet); Altman Z 2,69, Piotroski F 5; institutioner 88,93 %. Räkenskapsår kalenderår (universumets huvudkonvention); nästa rapport 2026-10-22 (Q3 2026 — materialgrenens nästa FIFO-dag, före VALE 10-29)"
  }
 ]

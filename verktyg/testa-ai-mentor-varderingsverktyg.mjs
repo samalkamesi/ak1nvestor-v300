@@ -24,7 +24,7 @@
  *   J2 närhet      — kärnorden ligger utanför matcharens fel-tolerans mot
  *                    varje tidigare kärnord (≤3 tkn exakt · ≤7 tkn 1 fel ·
  *                    >7 tkn 2 fel · fras = inklusion — spegeln av traff())
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 30 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 33 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 15:s
@@ -656,6 +656,10 @@ const GAMLA = [
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

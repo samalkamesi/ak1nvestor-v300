@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (107 i trettioåtta motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (119 i fyrtiotre motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -205,6 +205,33 @@ const MOTORDEFS = [
   // _s6u3-sond2-omg19.mjs: 16 kandidatfrågor NULL, 0 grannar mot 1 229
   // kärnord).
   { namn: "sektorskola2", fil: "ai-mentor-sektorskola2-fragor.ts", fn: "svaraLokaltSektorskola2", arr: "SEKTORSKOLA2_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 20: beteendemekanik (s6-u3 — psykologins tysta
+  // mekanismer: priming + tillgänglighetsfällan + övermod/overconfidence;
+  // aktiverar 5 mentorväglösa kurser — bf-08, bf-01, km-036 primära + bf-10,
+  // bf-07 källor; rond 2 av sonden _s6u3-sond2-omg20.mjs DÖDADE halo +
+  // dunning-kruger som kärnord — basens beteende-monster äger dem, deras
+  // kurser bärs ENDAST som källor enligt V19; "kalibrering" förväntnings-
+  // djupets, nybörjar-frågorna basens "borja"-monsters; rond 3 GRÖN: 0
+  // grannar mot 1 259 kärnord, 0 främmande i prototyp-stöldprovet).
+  { namn: "beteendemekanik", fil: "ai-mentor-beteendemekanik-fragor.ts", fn: "svaraLokaltBeteendemekanik", arr: "BETEENDEMEKANIK_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 20: pe-mekanik (s6-u1 — private equity:s aritmetik:
+  // IRR/internräntan med 26,0-procent-på-3-år mot 14,9-på-10-år-jämförelsen,
+  // förvärvsmaskinens LBO-trappa 600 lån/400 eget med 2,6x-mot-1,4x-spegeln,
+  // utfasningarnas fyra dörrar + vattenfallet 1 000 + 400 + 800 med GP 160/
+  // LP 2 040 och DPI-måttet; aktiverar 4 mentorväglösa kurser — pe-02 primär
+  // + pe-03 + pe-04 + ib-02, KATEGORIN PRIVATE EQUITY & INVESTMENTBOLAG
+  // fullt länkad 5/9 → 9/9, the-outsiders femte källan; sonden
+  // _s6u1-sond-omg20.mjs + sond2: hela familjen NULL genom kedjan, 27
+  // kärnord renta mot 1 230 — basen äger PE-helhetsfrågan/onoterat-orden
+  // (bärs som fragor:-knapp), redovisningsdjupet exit-familjen, djup-lagret
+  // multipel-orden: exit och onoterat nämns ENDAST i text).
+  { namn: "pe-mekanik", fil: "ai-mentor-pe-mekanik-fragor.ts", fn: "svaraLokaltPeMekanik", arr: "PE_MEKANIK_MONSTER", antal: 1 },
+  // 2026-09-18 omgång 20 (samma trefönster): överlevnadsdjup (s6-u2 —
+  // likviditetsreserven st-06 + konkursprognos/Altman Z-score st-03, STABI-
+  // LITETs två mentorväglösa djupkurser; sond _s6u2-sond-omg20.mjs: hela
+  // överlevnads-familjen NULL genom kedjan; motordef här för G-fallets
+  // widget-spegling — kanoniska rader bärs av deras eget leveranstest).
+  { namn: "överlevnadsdjup", fil: "ai-mentor-overlevnadsdjup-fragor.ts", fn: "svaraLokaltOverlevnadsdjup", arr: "OVERLEVNADSDJUP_MONSTER", antal: 2 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -213,7 +240,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 113 (2026-09-18 omgång 19: sektorskola2 +3 — 40-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 119 (2026-09-18 omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2 — 43-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -342,6 +369,29 @@ const KANONISKA = [
   { fraga: "vad är en pipeline?", motor: 39 },
   { fraga: "vad är like-for-like?", motor: 39 },
   { fraga: "vad är lastmile?", motor: 39 },
+  // Omgång 20: beteendemekanik (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är priming?", motor: 40 },
+  { fraga: "vad är primingeffekten?", motor: 40 },
+  { fraga: "vad är tillgänglighetsfällan?", motor: 40 },
+  { fraga: "vad är övermod?", motor: 40 },
+  { fraga: "vad är overconfidence?", motor: 40 },
+  { fraga: "vad är kompetensillusionen?", motor: 40 },
+  // Omgång 20: pe-mekanik (s6-u1) — kanoniska ur lagrets tre sektioner.
+  { fraga: "hur fungerar irr och förvärvsmaskinen?", motor: 41 },
+  { fraga: "vad är internräntan?", motor: 41 },
+  { fraga: "vad är lbo?", motor: 41 },
+  { fraga: "vad är utfasningar?", motor: 41 },
+  { fraga: "vad är vattenfallet?", motor: 41 },
+  { fraga: "vad är carried interest?", motor: 41 },
+  // Omgång 20: överlevnadsdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är likviditetsreserven?", motor: 42 },
+  { fraga: "vad är överlevnadstid?", motor: 42 },
+  { fraga: "hur länge räcker kassan?", motor: 42 },
+  { fraga: "vad är kassaräckvidd?", motor: 42 },
+  { fraga: "vad är altman z-score?", motor: 42 },
+  { fraga: "vad är z-score?", motor: 42 },
+  { fraga: "vad är konkursprognos?", motor: 42 },
+  { fraga: "vad är konkursrisk?", motor: 42 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -386,7 +436,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "trettioåtta motorer lämnar frågan ifred",
+  "fyrtiotre motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

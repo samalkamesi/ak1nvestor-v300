@@ -622,9 +622,14 @@ const GAMLA = [
     "svaraLokaltUtdelningskalender",
     "svaraLokaltKreditdjup",
     "svaraLokaltSektordjup",
-    // Omgång 19: detta lager — SIST av 40.
+    // Omgång 19: detta lager — SIST av 40 vid leverans; omgång 20:s tre
+    // lager (beteendemekanik + pe-mekanik + överlevnadsdjup) wireades
+    // efter det (svitharmoniseringens dokumentationsplikt).
     "svaraLokaltSektorskola2",
-  ];
+    "svaraLokaltBeteendemekanik",
+    "svaraLokaltPeMekanik",
+    "svaraLokaltOverlevnadsdjup",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -646,7 +651,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 40 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 43 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "sektorskola2 sist av 40 lager, inga okända komponenter",
   );

@@ -512,6 +512,10 @@ const GAMLA = [
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -534,7 +538,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "riskmåttsdjup av 21 lager (utdelningsdjup + förväntningsdjup efter — omgång 12:s syskonleveranser), inga okända komponenter",
   );

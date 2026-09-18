@@ -28,7 +28,7 @@
  *   J3 nav-fällan  — "vad är nav?" fångas av NÄSTA-lagret före detta (d=1
  *                    mot kärnordet "ncav" — dokumenterat, aldrig stöld i
  *                    kompositionen eftersom kedjan prövar nästa först)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 24 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 27 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): portfoljbalans
@@ -581,6 +581,10 @@ const GAMLA = [
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

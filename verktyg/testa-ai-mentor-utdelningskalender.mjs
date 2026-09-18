@@ -25,7 +25,7 @@
  *                    med/utan detta lager + ämneskontroller + nya rätt
  *   I  omkastad    — den nya kanoniska → null i kedjan UTAN detta lager
  *   J  disjunktion — kärnorden överlappar inget tidigare lagers (mekaniskt)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 37 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 40 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): detta lager
@@ -657,6 +657,10 @@ const GAMLA = [
     "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
     "svaraLokaltKreditdjup", "svaraLokaltSektordjup",
     "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

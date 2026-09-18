@@ -34,7 +34,7 @@
  *      warrant-lagret: inget tidigare lager fångar den
  *   J  kärnordsdisjunktion MEKANISKT — WARRANT_MONSTER:s kärnord är
  *      disjunkta mot samtliga tidigare lagers kärnord, lästa LIVE
- *   K  register-läge — 420 kurser (spår 5:s omgång-14-rebake; basotestet
+ *   K  register-läge — 426 kurser (spår 5:s omgång-16-rebake; basotestet
  *      E01 är grinden som fångar glömda rebakar)
  *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA 31 lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b kan inte
@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 420 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
-    KURSREGISTER.length === 420,
+    "K03 register-läge — 426 kurser (spår 5:s omgång-16-rebake 2026-09-18; basotestet E01 grönt)",
+    KURSREGISTER.length === 426,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -641,6 +641,10 @@ const GAMLA = [
     "svaraLokaltEkosystemdjup",
     "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -663,7 +667,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 36 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "warrant efter värderingsverktyg; syskonens tidsaxel + kapitalbindning efter mitt lager (samma fönster) — kan aldrig stjäla en fråga",
   );

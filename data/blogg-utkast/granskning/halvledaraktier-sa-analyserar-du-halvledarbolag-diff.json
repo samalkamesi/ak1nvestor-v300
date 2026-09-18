@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/halvledaraktier-sa-analyserar-du-halvledarbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789735501260-u1 (2026-09-18)",
+  "rapport": "halvledaraktier-sa-analyserar-du-halvledarbolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: readingMinutes 2→6 (1 104 ord textrensat = 552 ord/min, över dubbelt snabbare än snabbaste publicerade posten 240; bloggfamiljens praxis round(ord/200), substansrabatt-domen 09-17 — samma underskattningsklass som hälsa #4 B4 och konsumentaktier B4). C1: 'universumets halvledartrio' + spann 27,8–117,5 är EXAKTA mot byggvintagen (9839c530: exakt tre halvledarbolag) men motbevisade av dagens universum 177 (ASML P/E 50,1 tillkom 09-16 14:58, Samsung P/E 12,4 tillkom 09-17 22:21 och ligger UNDER spannets golv) — påståendet är i presens mot ett levande dataset och bör livsuppdateras senast vid publicering. C2: dateringen '(2026-09-15)' stämmer för 1 av 3 bolag i meningen (endast TSM as-of 09-15; NVDA/AMD bär 09-03-vindor) — konsumentaktier-C1:s fyndklass. I övrigt GRÖNT: 18/18 talpåståenden (11 universumstal EXAKTA, SIA externt verifierade, 6 räkneexempel omräknade), juridik 2007:528 ren (0 rådord, disclaimer sist), 911 ren (0/6 mönster), 12/12 unika interna länkar HTTP 200, struktur grön (mallens B9-ord 1 178 = råordtalet exakt)",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga strängar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "halvledaraktier-sa-analyserar-du-halvledarbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": 2,
+      "nytt": 6,
+      "orsak": "1 104 ord textrensat (1 178 rå) på 2 minuter = 552 ord/min — över dubbelt snabbare än den snabbaste av 55 publicerade poster (v09-roe-analys 240). Bloggfamiljen följer ~ord/200 (substansrabatt-domen 09-17: 0/55 följer ord/600, som är SEO-guiderfamiljens kontrakt): round(1 104/200) = round(1 178/200) = 6. Samma underskattningsklass som hälsa #4 B4 och konsumentaktier B4; även Ö10-spegeln berörs (1 393 ord → 7, flagga 1 i rapporten)"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "halvledaraktier-sa-analyserar-du-halvledarbolag.json",
+      "falt": "body (Multipeln — trailing lurar, forward talar)",
+      "gammalt": "Universumets halvledartrio handlas till P/E-tal mellan 27,8 (TSMC) och 117,5 (AMD) — ett spann som gör varje jämförelse meningslös utan kontext.",
+      "nytt": "Universumets halvledarbolag handlas till P/E-tal mellan 12,4 (Samsung) och 117,5 (AMD) — ett spann som gör varje jämförelse meningslös utan kontext.",
+      "orsak": "GRÖN mot byggvintagen (9839c530, 09-16 01:44: exakt tre halvledarbolag NVDA/AMD/TSM — utkastet korrekt när det byggdes) men MOTBEVISAD av dagens universum: Samsung (P/E 12,39) tillkom 0ad009ab 09-17 22:21 och ligger under spannets golv 27,8; ASML (P/E 50,07) tillkom e16c17d5 09-16 14:58. Påståendet står i presens mot ett levande dataset som sajten visar (/dataset) — livsuppdateras senast vid publicering. Formuleringen är antalslös (robust mot framtida tillskott) och pedagogiken stärks: golvet 12,4 spänner spannet till nästan 10×. Vid verkställning bör ingressens urvalsmening ('tre av branschens tyngsta namn') och räkneexemplen (28,4/1,657≈17, 117,5/2,042≈58) lämnas orörda — de är urval och EXAKTA"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "halvledaraktier-sa-analyserar-du-halvledarbolag.json",
+      "falt": "body (Vad är halvledaraktier — värdekedjan avgör analysen)",
+      "gammalt": "universumets rådata (2026-09-15) visar bruttomarginaler på 74,7 procent för NVIDIA och 55,7 för AMD",
+      "nytt": "universumets rådata (september 2026) visar bruttomarginaler på 74,7 procent för NVIDIA och 55,7 för AMD",
+      "orsak": "Dateringen stämmer för 1 av 3 bolag i meningen: endast TSM bär 09-15/as-of (StockAnalysis); NVDA och AMD är hämtade 2026-09-03 (Yahoo+MarketStack, hamtat-fältet i universumfilen) — samma fyndklass som konsumentaktier-C1 ('hämtad 2026-09-15' stämde för 1 av 6). 'september 2026' är sant för alla tre vindor"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "halvledaraktier-sa-analyserar-du-halvledarbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

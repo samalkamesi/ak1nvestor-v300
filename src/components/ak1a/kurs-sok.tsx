@@ -541,8 +541,10 @@ export function KursSok({
       )}
 
       {/* KATEGORIVÄGGEN — hela biblioteket i glimten: varje kategori med
-          räknare; klick sätter filtret och scrollar till registret */}
-      <section aria-label={t("ksok.allaKategorierAria")} className="mt-12 rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
+          räknare; klick sätter filtret och scrollar till registret.
+          cv-kategorivagg (o78): väggen ligger långt under vecket på mobil —
+          content-visibility hoppar style/layout tills den närmas. */}
+      <section aria-label={t("ksok.allaKategorierAria")} className="mt-12 cv-kategorivagg rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
         <h2 className="font-serif text-2xl font-bold">
           {t("ksok.kategorivagg")}
           <span className="ml-2 text-sm font-normal tabular-nums text-muted-foreground">

@@ -1157,3 +1157,39 @@ h1, h2, h3, h4, h5, h6 {
   content-visibility: auto;
   contain-intrinsic-size: auto 22rem;
 }
+
+/* ── PRESTANDA (o78): CONTENT-VISIBILITY på under-vecks-SEKTIONER —
+   nästa steg efter kort-cv-familjen (o19/o28). Trace-bevis 2026-09-19
+   (o76 §5:s köpost "Style & Layout 1 215 ms på /kurser"; sond
+   _s7u3o78-sond-trace.mjs: UpdateLayoutTree 156 ms + Layout 158 ms i
+   första fullträds-passet, FCP 2 636 ms) — korten hade cv men de stora
+   SEKTIONERNA under vecket saknade det: DOM-karta (_s7u3o78-sond-dom.mjs,
+   mobil 412px): 284 oskyddade element under vecket. A/B-bevis med proxy-
+   metodik (_s7u3o78-proxy.mjs — Lighthouse genom identisk kanal med och
+   utan CSS): styleLayout 1 014 → 726 ms (−288 ms), CLS 0 kvar,
+   scriptEvaluation oförändrad (1 252/1 253 — ren kontroll).
+   Reservationerna = sonderade mobilhöjder: kategorivägg 1 223 px,
+   socialproof 1 474 px, kurstips 364 px, nästa-steg 230 px, sidfooter
+   2 145 px; "auto"-nyckeln minns verklig höjd efter första renderingen —
+   reservation ≈ mätt höjd ⇒ inga stavhopp vid scroll. DOM/SEO/hydrering
+   orörda, samma garanti som kort-cv-familjen. */
+.cv-kategorivagg {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 76rem;
+}
+.cv-socialproof {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 92rem;
+}
+.cv-kurstips {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 23rem;
+}
+.cv-nasta-steg {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 14rem;
+}
+.cv-sidfooter {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 134rem;
+}

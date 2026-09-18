@@ -28,7 +28,10 @@ export function Sidfooter() {
   const { t } = useSprak();
 
   return (
-    <footer className="border-t-2 border-gold/40 bg-card">
+    // cv-sidfooter (o78): hela sitemap-footern (81 element, 2 145 px på mobil)
+    // ligger under vecket på i princip alla sidor — content-visibility hoppar
+    // style/layout/paint tills den närmar sig viewporten. Se globals.css.
+    <footer className="cv-sidfooter border-t-2 border-gold/40 bg-card">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="hjarlinje mb-10" aria-hidden="true" />
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

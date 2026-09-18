@@ -1,0 +1,195 @@
+{
+  "url": "http://localhost:3000/kurser",
+  "ts": "2026-09-18T23:33:16.905Z",
+  "viewport": {
+    "w": 412,
+    "h": 844,
+    "dokHojd": 16427
+  },
+  "totalElement": 962,
+  "cvKlasser": {
+    "cv-kort": 0,
+    "cv-registerkort": 24,
+    "cv-utvalt": 18,
+    "cv-bloggkort": 0
+  },
+  "sektioner": [
+    {
+      "tag": "SCRIPT",
+      "id": "jsonld-webbsajt",
+      "klass": "",
+      "topPx": 0,
+      "hojdPx": 0,
+      "element": 0,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "jsonld-organisation",
+      "klass": "",
+      "topPx": 0,
+      "hojdPx": 0,
+      "element": 0,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "jsonld-faq",
+      "klass": "",
+      "topPx": 0,
+      "hojdPx": 0,
+      "element": 0,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "H1",
+      "klass": "font-serif text-4xl font-bold",
+      "topPx": 141,
+      "hojdPx": 64,
+      "element": 0,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "P",
+      "klass": "mt-4 max-w-3xl text-muted-foreground leading-relax",
+      "topPx": 221,
+      "hojdPx": 104,
+      "element": 0,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "DIV",
+      "klass": "",
+      "topPx": 357,
+      "hojdPx": 12140,
+      "element": 651,
+      "cv": "visible",
+      "contain": "none"
+    },
+    {
+      "tag": "SECTION",
+      "klass": "marin-panel relative overflow-hidden rounded-3xl p",
+      "topPx": 12545,
+      "hojdPx": 1474,
+      "element": 55,
+      "cv": "visible",
+      "contain": "none"
+    }
+  ],
+  "cvLoserAntal": 284,
+  "cvLoserKlumpar": [
+    [
+      "DIV.paper-texture.min-h-screen",
+      137
+    ],
+    [
+      "DIV.mx-auto.max-w-6xl",
+      61
+    ],
+    [
+      "MAIN.",
+      31
+    ],
+    [
+      "FOOTER.border-t-2.border-gold/40",
+      28
+    ],
+    [
+      "DIV.",
+      13
+    ],
+    [
+      "DIV.mt-10",
+      6
+    ],
+    [
+      "DIV.pt-10",
+      4
+    ],
+    [
+      "DIV.mt-12.grid",
+      3
+    ],
+    [
+      "NEXT-ROUTE-ANNOUNCER.",
+      1
+    ]
+  ],
+  "fonter": [
+    "Inter 100 900 unloaded",
+    "Inter 100 900 unloaded",
+    "Inter 100 900 unloaded",
+    "Inter 100 900 unloaded",
+    "Inter 100 900 unloaded",
+    "Inter 100 900 unloaded",
+    "Inter 100 900 loaded",
+    "Inter Fallback normal error",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 loaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 loaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 loaded",
+    "Source Serif 4 Fallback normal error",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 unloaded",
+    "Source Serif 4 400 loaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 600 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 700 unloaded",
+    "Source Serif 4 Fallback normal error",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono 100 800 unloaded",
+    "JetBrains Mono Fallback normal unloaded"
+  ],
+  "fontRes": [
+    {
+      "fil": "68d403cf9f2c68c5…",
+      "startMs": 206,
+      "slutMs": 1627
+    },
+    {
+      "fil": "83afe278b6a6bb3c…",
+      "startMs": 209,
+      "slutMs": 1584
+    },
+    {
+      "fil": "ea3421846039b7f3…",
+      "startMs": 209,
+      "slutMs": 1650
+    }
+  ]
+}

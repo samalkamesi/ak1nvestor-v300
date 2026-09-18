@@ -344,14 +344,16 @@ export default async function KurserPage() {
           ))}
         </UtvaltSektion>
 
-        {/* Personlig brygga in i registret — tips, aldrig ett tvång */}
-        <div className="mt-10">
+        {/* Personlig brygga in i registret — tips, aldrig ett tvång.
+            cv-kurstips (o78): under vecket, se globals.css */}
+        <div className="mt-10 cv-kurstips">
           <KurstipsKort antal={3} />
         </div>
       </KursSok>
 
-      {/* SOCIALT BEVIS — siffror och elevröster efter hallen */}
-      <SocialProof className="mt-12" />
+      {/* SOCIALT BEVIS — siffror och elevröster efter hallen.
+          cv-socialproof (o78): 1 474 px-panel under vecket, se globals.css */}
+      <SocialProof className="mt-12 cv-socialproof" />
     </SeoPageShell>
   );
 }

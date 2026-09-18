@@ -140,6 +140,48 @@ slutTitta-länken). Förväntan för o63-EFTER utökas med detta protokolls fynd
 paret @~1,4 s försvinner troligen tillsammans med _rsc 3→0 (samma Link-mekanism).
 INGEN ny kur från o61 — ingen dubbelkirurgi på s7-u2:s yta.
 
+### §5.2 Oberoende konvergens (s7-u1 solo-trio, 12:46–12:49 lokal — anspråk 10:39:02Z disk-först)
+
+Kollisionsupplösning: s7-u1:s anspråk (10:39:02Z) var FÖRST på disk, s7-u3:s
+(10:41:20Z) tre minuter senare — men u3:s mätning startade före och deras §5.1-
+bokföring (med rotorsaks-diagnosen) landade på disk först ⇒ §5.1 står som
+primär bokföring, denna §5.2 bidrar det oberoende konvergerande tvärsnittet
+(noll omskrivning av deras domar — o54 §0b-mönstret omvänt).
+
+Fönster: samma build obkh6gWm · RAM-grind GRÖN (1 805–1 869 MB) · ISR-trigga
+×2+8 s · INGEN parallell Lighthouse-svärm (u2:s o63-trio + u3:s trio klara
+före start; pgrep + mtime-verifierat) — lasten 2,0→3,6 är fabrikskullens
+ambienta zcode-cli (~10 %/process), betydligt renare än §5.1:s dubbelmätar-
+fönster men EJ solo-rent: (b)(c) förblir §6.4:s rest. Rådata:
+`lighthouse/{start,kurser,blogg}-s7u1o61-efter.json` + sammanfattning.
+
+Konvergens per dom:
+
+- **(a) BEKRÄFTAD RÖD på samma sätt**: paret `3-bylxy1ipbmj.js` 17 710 B
+  @1 470 ms + `0rlekqdvsvonw.js` 9 706 B @1 468 ms på / — oberoende av §5.1:s
+  1 392/1 383 (FÖRE 1 376–1 393): tre mätpunkter, samma bild, ~1,4 s är
+  reproducibelt oberoende av mätarlast. `2iy81ex7whhmo` EJ hämtad —
+  monteringskaskaden borta även här (kurens kärna oberoende bevisad).
+  /kurser @330 ms + /blogg @254 ms = SSR-preload lever (§6.1 oförändrat).
+- **(d) BEKRÄFTAD GRÖN med starkare mekanik**: deployad chunk 2qnjvou52dgsk
+  bär 3× "8e3" + 3× "2500" (ALLA tre tvåstegs-defrarna — LasyGlobal,
+  LasyChatWidget, PalettVakt — i samma chunk); källgranskning lasy-global.tsx
+  r 280–337: keydown/ak1a:oppna-sok-lyssnarna registreras vid hydratisering,
+  orörda av kuren.
+- **(b)(c) tredje punkten i lastkänslighetskurvan (ej bedömningsbar, deklarerad)**:
+  TBT / 899 · /kurser 917 · /blogg 957 vid load 2,0–3,6 (mellan §5.1:s 995/
+  1 194/1 920 vid tyngre fönster och FÖRE:s 470/1 081/683 vid 0,54) · LCP
+  +8/−188/+419 mot FÖRE · CLS 0 ×3 ✓.
+- **Strukturtal (lastokänsliga, byggdrift deklarerad stE6SStz→obkh6gWm med
+  o62+s5-15+s6-18 ombord)**: totalvikt 591→577 · 537→522 · 505→490 KiB
+  (−14/−15/−15 — driftbilden +8 K/omgång är slagen denna generation) ·
+  unused-JS 22→24 · 45→48 · 46→49 KiB (+2/+3/+3) · bootup 2,2→2,1 ·
+  2,1→1,6 · 1,3→1,7 s.
+
+Slutsats §5.2: §5.1:s dom håller vid oberoande om mätning — rotorsaken
+(Link-prefetch, o63-ägd) och kurens kärnbevis (monteringen ur fönstret) är
+dubbelverkade. o63-EFTER-sonden bör även kvittera paret (§6.5 lever).
+
 ## §6 Kvarstående observationer (kö till nästa omgång)
 
 1. SSR-preload-fyndet: på /kurser + /blogg preloadas palett-chunken redan i HTML

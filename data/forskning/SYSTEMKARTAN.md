@@ -1919,6 +1919,54 @@ fabriksägaren: per-uppgift isolerad protokollnummerserie + commit med EXPLICITA
 paths (aldrig allt staggat) i fabriks-prefixet — stänger kollisionsklassen
 mekaniskt i stället för disciplinärt.
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789731901131 — B10 + B11 + B14 återdiffade; DRIFTFYND: Contabo-nyhetscronen 404-död sedan skapandet + tyst tom nyhetslista live)
+
+Objektval: B-radens tre ENDAST kvarvarande system utan andra varvet — B7+B8
+(09-17 omg 11), B9 (09-17), B12 (09-18 u2), B13 (09-17 omg 13) var redan
+återdiffade; B10+B11 passades senast 09-16 omgång 5, B14 09-16 (u2 2/3).
+Anspråk FÖRE mätstart (data/vakten/auto-s9-1789731901131-u3-ansprak.md);
+syskonens val respekterade och deras sektioner orörda (u1 = E29, u2 = A2+C17
+— u2:s sektion noterade mitt val disk-först). Varje rad MÄTT egenhändigt
+2026-09-18 ~13:46–14:05 lokal: live-sonder loopback (3 sidor + 4 API:er),
+EGEN motorvalidering med sann exitkod, git/ls/grep/node-räkningar,
+pm2-logspaning, /etc/crontab-läsning.
+
+| Mått | Kartan (09-16-passningarna) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| /api/konfluens (B10) | färsk tidsstämpel 09-16T04:44:21Z | **genererad 2026-09-18T11:48:25Z** (egen sond): 10 rader · 10/10 med ≥3 datakällor · fem-källors-fältet komplett (värdegolv/kvalitet/fundamentalVagstart/prisVaglage/divergens) · 2 rader klassade |
+| /api/netnet (B11) | färsk tidsstämpel 09-16T04:43:31Z, VOLV-B 330,2 | **genererad 2026-09-18T11:48:35Z**: 25 rader (= universumet fast 25 fortfarande, praktiskt bevis i svaret) · VOLV-B.ST kurs 335,9 — live-flödet lever; sonden refreshade 25 netnet-cachefiler i data/cache (13:48 lokal) |
+| Motorvalidering | 107/0/0 (6,9 s, tredje gröna) | **107 PASS / 0 FAIL / 0 SKIP (6,4 s, exit 0 — FJÄRDE dokumenterat gröna; tmp_motor_koll.ts städad av verktyget självt)** |
+| Sidstatus | /konfluens /netnet /nyheter 200 | **200 ×3 igen** (egna sonder) |
+| Filstabilitet B10/B11/B14 | stabil sedan 09-11 | **orörd sedan 09-16-passningarna** (git-bevis; radtal 493/292/844 exakt kvar) |
+| B14 Contabo-cron | "crontab-bevisad men ej KÖRbevisad" | **KÖRBEVIS NEGATIVT — 404 LIVE**: /etc/crontab rad 25 curlar /api/cron/nyheter som svarar 404 (egen sond med crontabens exakta Host-header); rutten har ALDRIG funnits i git-historien (git log --all över sökvägen = tom) medan grannraderna vagscan + portfolj-uppfoljning pekar på rutter SOM FINNS — mönstret rätt, sökvägen fel; scan-rutten heter /api/nyheter/scan sedan 02f7495b (2026-09-03) |
+| B14 pm2-logg | "ingen logg (curl >/dev/null)" | **0 'nyheter'-rader i ak1a-out.log(+.1) senaste 2 dygnen** — konsistent med 404 |
+| B14 nyhetsflöde | gap 2-varning: "kan tyst bli tom nyhetslista" | **REALISERAT LIVE**: /api/nyheter → ok:true · nyheter:[] · franCache:true · antal:0 (13:50 lokal) och TOMMA svaret disk-cachats (data/cache/analys-nyh_c8f24f66.json, 93 B, 0 poster, cachad 11:50:06Z — 30 min TTL) + routens 5-min-minnescache; SAMTIDIGT cacheades en RIK hämtning 5 minuter tidigare för en annan konfignyckel (analys-nyh_e406a84d.json: 40 nyheter från SVT Ekonomi/Dagens industri/Privata Affärer/Yahoo, senaste publikation 13:36 lokal — organisk trafik, före mina sonder) ⇒ externa flödet lever intermittens men tomma svar cachas tyst; /nyheter-HTML (71 kB, egen sond) bär 0 nyhetstexter = kunden ser viloläget |
+| B14 CRON_SECRET | ej satt | **fortfarande 0 namnträffar** i .env + .env.local (namnnivå — värden ALDRIG inlästa) |
+| B14 vercel.json | /api/nyheter/scan 08:00 UTC | **raden kvar oförändrad** — men detta är nu ENDRIVNING på den passiva backup-plattformen |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B10 | LEVER 7 → **LEVER 7** | Allt grönt igen (API färskt, 107/0/0 fjärde gången, filer orörda) och inga gap stängda; gap 3 fördjupad med namnkollisionsfyndet (se sektionen) — E33/B14-precedensen |
+| B11 | LEVER 6 → **LEVER 6** | Allt grönt oförändrat (25 rader, VOLV-B live, determinismgrön); svit-gapet och 25-listan lever — ingen poängrörelse |
+| B14 | LEVER 6 → **LEVER 5** | Prod-drivningen av skannern död (404 sedan raden skrevs — rutten fanns aldrig) + kundsynlig tyst-tom nyhetslista live = dataflödesförsämring av B7-precedensklassen (09-16:s motsvarande nedgång för berika-pipelinen); kunskap tillförd men kapabiliteten sämre än kartan trodde |
+
+Snittscore **7,6/10 OFÖRÄNDRAD i avrundning — 287 poäng / 38 system**
+(B14 −1; u2:s A3 +1 samma dag före).
+
+Kö till huvudagenten: (1) **/etc/crontab rad 25 ompekas till
+/api/nyheter/scan** (root-ägd yta — dokvågen läser endast; grannmönstret
+vagscan/portfolj-uppfoljning bevisar rätt form) ELLER medvetet beslut att
+Vercel äger nyhetsscanen (då bör raden tas bort — död kod i drift); (2)
+src-spår: tomma flödessvar bör ej disk-cachas 30 min (eller bli larmklass i
+vakten) — viloläget är kundsynligt på /nyheter; (3) OrganEvent-belägg:
+Supabase-fråga efter organ/nyheter-events avgör om Vercel-scans överhuvudtaget
+kör på den passiva plattformen; (4) B10/B13-terminologin nu dokumenterad —
+ev. namnbyte av portfolj-forsknings lager3-fält är frivilligt.
+
+KVD: endast data/forskning/SYSTEMKARTAN.md + worklog.md + anspråksfil + detta
+sondskript — INGET bygge; src/ orörd (tsc-ej-aktuellt, commit-grinden bär
+baslinjen); R2 orörd; data/blogg/ orörd; syskonens yter orörda.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1932,11 +1980,11 @@ mekaniskt i stället för disciplinärt.
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-17); berika-pipelinen stillastående 13 d (0 akm2-cacher; däremot 33 runtime-filer åter i data/cache — netnet/analys lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller), snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 ×3 återmätningar 09-17 + LÅST grind ΔΦ=0, hash-kedjor); men kalibreringen ENBART Vercel-cron-driven (nästa molnrond 2026-10-02; Contabo-crontab saknar fortfarande raden, mätt 09-17), regimen FROSEN på genesis 09-03 (14 d; genesis-talen lever live i /api/forskningslage), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
-| B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-16, datakällor per rad); motorvalidering 107/0/0 egen körning; kvar: 0 egen svit, historik/utfall lagras ej (mätt), korstabell-kopplingen konceptuell ej kodad |
-| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-16 + /api/netnet färsk live-sond); universum fast 25 (mätt); egen testsvit saknas fortfarande |
+| B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-18: 10 rader, 10/10 ≥3 källor; motorvalidering 107/0/0 fjärde gröna); kvar: 0 egen svit, historik/utfall lagras ej; kopplingen till B13 fördjupad 09-18: 0 import MEN namnkollision — portfolj-forsknings eget "konfluens"-begrepp (teorikonsensus per horisont) är ett annat mått än radarns datakällkonsensus |
+| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-18 + /api/netnet färsk 09-18: 25 rader, VOLV-B 335,9 — live-flödet lever); universum fast 25; egen testsvit saknas fortfarande |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (mätt 09-18: lever); FOMO-kuren live i prod (chunk-bevis 09-18); ytan UTANFÖR vaktens FALLBACK_SIDOR — rutinmäts ej (nytt, mätt) |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |
-| B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
+| B14 | Nyheter + marknadsdata | Analys | LEVER | 5 | 0 sviter; "dubbel drivning" MOTBEVISAD 09-18: Contabo-cronens mål /api/cron/nyheter = 404 (rutten fanns aldrig i git-historien — scan heter /api/nyheter/scan) ⇒ enda drivning Vercel-cron på passiv backup; gap 2 REALISERAT live: tyst tom nyhetslista (ok:true + 0 nyheter, tomt svar disk-cachat 30 min) medan rik hämtning (40 nyheter) cacheats minuterna före; CRON_SECRET ej satt |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, 09-07); B2-knappen lever metodbevakad (GET 405, ej 404 — egen sond 09-18); kön 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal 49; +24/dygn) med FÖRNYAD kundvy (GRKO 05:22Z); 55 publicerade orörda (R2); kvar: B2-E2E (kundens knapp), OG default tills deploy |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp lever (v82); kön 175 filer (+51/dygn: rot 48 · m9-ko 7 · granskning 77 · kvartal 43, mätt 09-17) med sammanställningen FÖRNYAD 16:58 + 3 oberoende kontrollgranskningar/dygn (maskinella paket); flaskhals = publiceringsuttaget (55 frysta, kundens klick R2); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Universum 177 (10 branscher) + landaspekt danmark (09-18); 52 Kön-filer men /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG tredje passningen (importbro saknas) |
@@ -1962,7 +2010,7 @@ mekaniskt i stället för disciplinärt.
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | Prestandaserien o45–o62 LEVER i prod (tolv kurer med EFTER-bevis: / _rsc 5→3 · requests 45→38 · transfer −42,3 KiB · /logga-in ×2 borta · PalettVakt-defern ur TBT-fönstret; band / P61 · TBT 675, /kurser TBT 1 074) + SPA-/StudioChat-koddelning (o27+o31) + mobil-mätverktyget METROLOGISKT HÄRDAT (o62: 19 fantomer bevisade, 52-px-ronden SLUT för barnägda ytor — 6 fynd = ShortSeller-knappens dokumenterade 44×44-undantag, 0 zoomfällor); kvar: o63-köposten (herons TREDJE länk home.slutTitta, 36,0 KiB spill), 2 designbeslut (prosa-länkar + 44-korset = huvudagent), inga egna sviter, språkresolvens-CLS intermittent, sökindex-cadans |
 
-Snittscore: **7,6/10** (288 poäng / 38 system; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,6/10** (287 poäng / 38 system; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -2474,7 +2522,7 @@ patch-byggfönstret. Score 8 kvar.*
   + loggning krävs; (5) SENASTE-rapportens förnyelse är bruten (domar 09-04, filen kan
   bara förnyas av agent/manuell körning med skrivåtkomst till repot).
 
-## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-18)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): första egna prod-sonden av
 radarn — /konfluens 200 + /api/konfluens LEVANDE med färsk tidsstämpel
@@ -2488,6 +2536,21 @@ och portfolj-forskning/* (mätt); den gemensamma vägen är motorstacken
 (netnet + analys + vagfundament). Score 7 orörd — inga gap stängda. Se
 diff-tabellen i UPPDATERING-sektionen.*
 
+*Uppdatering 2026-09-18 (dokvåg s9-u3 manifest auto-s9-1789731901131): andra
+varvet — allt MÄTT egenhändigt: /konfluens 200 + /api/konfluens LEVANDE med
+färsk tidsstämpel (genererad 2026-09-18T11:48:25Z, egen sond): 10 rader,
+10/10 med ≥3 datakällor, fem-källors-fältet komplett, 2 rader klassade;
+motorvalideringen 107/0/0 (6,4 s, exit 0 — fjärde dokumenterat gröna);
+filerna orörda sedan 09-11 (git-bevis, motorn 493 r oförändrad). Gap 1 lever
+(ingen testa-konfluens* finns). Gap 3 FÖRDJUPAD: 0 import mellan
+konfluens-{motor,tabell} och portfolj-forskning (återmätt) MEN
+portfolj-forskning bär ett EGET "konfluens"-begrepp — lager3-fältet
+"3 av 5 teorier pekar uppåt" (typer.ts:173, akm2-koppling.ts:115/136) är
+TEORIKONSENSUS per horisont, ett annat mått än radarns DATAKÄLLKONSENSUS;
+enda textuella bryggan är stilkommentaren vag-stil.tsx:196 ("bandmönster
+från konfluensradarn"). Score 7 orörd (E33/B14-precedensen — inga gap
+stängda).*
+
 - **Vad:** Väger värde mot vågor: värdegolv först, fundamental vågstart +
   prisvågläge därefter; fem oberoende källor måste tala samman.
 - **Nyckelfiler:** src/lib/konfluens-motor.ts (493 r), src/app/(huvud)/
@@ -2499,9 +2562,12 @@ diff-tabellen i UPPDATERING-sektionen.*
   motorändring i B7/B9 fångas bara indirekt); (2) radarns historik (hur många
   konfluenser setts/utfall) lagras ej (mätt 09-16: ingen persistens i motorn);
   (3) koppling till portföljforskningens korstabell (B13) — PRECISERAD
-  2026-09-16: konceptuell, ej kodad (0 direkta import, mätt).
+  2026-09-16: konceptuell, ej kodad (0 direkta import, mätt). FÖRDJUPAD
+  2026-09-18: namnkollision — portfolj-forsknings eget "konfluens"-begrepp
+  (teorikonsensus per horisont) är ett ANNAT mått än radarns
+  datakällkonsensus; enda bron är stilkommentaren vag-stil.tsx:196.
 
-## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-16)*
+## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-18)*
 
 *Uppdatering 2026-09-13: motorvalideringen kör nu 107 PASS / 0 FAIL /
 0 SKIP (6,4 s) — determinismfelet (VOLV-B.ST 340.3≠340.4) är borta och
@@ -2518,6 +2584,17 @@ i komponenten. Observationskroppens FAILAR-text nedan är HISTORIK från
 2026-09-11. Ytan stabil: inga motorändringar sedan 09-11. Score 6 orörd —
 egna sviten och 25-listan lever som gap. Se diff-tabellen i
 UPPDATERING-sektionen.*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u3 manifest auto-s9-1789731901131): andra
+varvet — /netnet 200 + /api/netnet LEVANDE färsk (genererad
+2026-09-18T11:48:35Z, egen sond): 25 rader = universumet fast 25 fortfarande
+(API-svaret är det praktiska beviset), VOLV-B.ST kurs 335,9 (live-flödet
+lever; 330,2 vid 09-16-passningen); sonden refreshade 25 netnet-cachefiler i
+data/cache (13:48 lokal — lasEllerHamta-leddet lever). Motorvalideringen
+107/0/0 (6,4 s, exit 0) — determinismgrenens underlag oförändrat grönt.
+Filerna orörda sedan 09-11 (git-bevis; netnet-motorn 292 r oförändrad mot
+kartan). Gaps oförändrade: egen svit saknas fortfarande (ingen
+testa-netnet*), 25-listan fast. Score 6 orörd.*
 
 - **Vad:** Skär 25 svenska/nordiska bolag mot Grahams net-net-kriterium
   (kurs < 2/3 × NCAV), sorterad på kurs/NCAV med NET-NET/NÄRA-markering.
@@ -2641,7 +2718,7 @@ sedan 09-01. Score 8 orörd. Se diff-tabellen i UPPDATERING-sektionen.*
   publik yta /min-portfolj) — transaktionshistorik saknas fortfarande men
   integritetsgapet är skarpare.
 
-## B14. Nyheter + marknadsdata — LEVER — 6/10 *(uppdaterad 2026-09-16)*
+## B14. Nyheter + marknadsdata — LEVER — 5/10 *(uppdaterad 2026-09-18)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 2/3): cron-bilden mätt — DUBBEL drivning
 (/etc/crontab: /api/cron/nyheter 08:00 lokal = 06:00 UTC + vercel.json:
@@ -2651,8 +2728,33 @@ scan-kontraktet dokumenterat i koden (universum 12 tickers hårdkodat, tröskel
 påverkans ≥ 70, max 5 signaler/scan + OrganEvent, "ALDRIG krascha"). 0 sviter
 kvarstår (mätt). Score 6 orörd — kunskap tillförd, inga gap stängda.*
 
+*Uppdatering 2026-09-18 (dokvåg s9-u3 manifest auto-s9-1789731901131): andra
+varvet med TVÅ DRIFTFYND, allt EGENMÄTT. (1) KÖRBEVISET NEGATIVT —
+/etc/crontab rad 25 curlar /api/cron/nyheter som svarar 404 LIVE (egen sond
+med crontabens exakta Host-header) och rutten har ALDRIG funnits i
+git-historien (git log --all över sökvägen = tom; grannraderna vagscan +
+portfolj-uppfoljning pekar på rutter som FINNS — mönstret rätt, sökvägen
+fel; scan-rutten heter /api/nyheter/scan sedan 02f7495b 2026-09-03) ⇒
+Contabo-leden av "dubbel drivning" har varit död sedan raden skrevs;
+pm2-utloggen bär 0 "nyheter"-rader senaste 2 dygnen (konsistent). Enda
+kvarvarande drivning = Vercel-cron 08:00 UTC (vercel.json-raden kvar) på den
+PASSIVA backup-plattformen — scan-körning kan ej beläggas lokalt (OrganEvent
+skriver till Supabase). (2) GAP 2 REALISERAT LIVE — /api/nyheter svarade
+ok:true, nyheter:[], franCache:true, antal:0 (egen sond 13:50 lokal) och det
+TOMMA resultatet disk-cachats (data/cache/analys-nyh_c8f24f66.json, 93 B,
+0 poster, cachad 11:50:06Z — 30 min TTL + routens 5-min-minnescache) medan
+en RIK hämtning cacheats 5 minuter tidigare för en annan konfignyckel
+(analys-nyh_e406a84d.json: 40 nyheter från SVT Ekonomi/Dagens industri/
+Privata Affärer/Yahoo, senaste publikation 13:36 lokal — organisk trafik
+före mina sonder) ⇒ externa flödet lever intermittens men tomma svar cachas
+TYST; /nyheter-renderingen (71 kB HTML, egen sond) bär 0 nyhetstexter =
+kunden ser viloläget. CRON_SECRET fortfarande 0 namnträffar (.env +
+.env.local, namnnivå — värden ALDRIG inlästa). Nyhets-motorn 844 r orörd
+sedan 09-16 (git-bevis). Score 6 → 5: prod-drivningen av skannern död +
+kundsynlig tyst-tom lista = dataflödesförsämring av B7-precedensklassen.*
+
 - **Vad:** Nyhetsmotor (aktienyheter med källhänvisning), nyhetskanaler,
-  daglig scan-cron i dubbel drivning (Contabo /etc/crontab 08:00 lokal + Vercel 08:00 UTC, mätt 2026-09-16), stock-data/indikatorer-API:er mot externa
+  daglig scan-cron — "dubbel drivning" MOTBEVISAD 09-18: Contabo-leden 404-död sedan raden skrevs (se GAP 4); enda drivning Vercel 08:00 UTC, stock-data/indikatorer-API:er mot externa
   leverantörer, shortseller-bank, morgonrond-data till PRO.
 - **Nyckelfiler:** src/lib/{nyhets-motor (844 r),nyhetskanaler,
   shortseller-bank}.ts, src/app/(huvud)/nyheter, src/app/api/{nyheter,
@@ -2662,12 +2764,17 @@ kvarstår (mätt). Score 6 orörd — kunskap tillförd, inga gap stängda.*
   Externa beroenden (MarketStack, Yahoo) har fallback men inga tester av
   fallback-vägarna.
 - **GAP:** (1) ingen testsvit alls; (2) rate-kvoter/fel från externa API:er
-  bevakas ej (kan tyst bli tom nyhetslista); (3) nyheternas juridikgrind
-  (rubrikformuleringar) körs via kontrolleraText endast vid publicering —
-  ej på leverantörens rubriker; (4) NY 09-16: Contabo-cronens exekvering är
-  crontab-bevisad men ej KÖRbevisad (curl till /dev/null, ingen logg —
-  pm2-spaning vid 06:00 UTC ger svaret) och CRON_SECRET är fortfarande
-  osatt (E29-gap 1 gäller även här).
+  bevakas ej — REALISERAT LIVE 09-18: ok:true + 0 nyheter serveras och det
+  tomma svaret disk-cachas 30 min (93 B-post mätt) trots att en rik hämtning
+  (40 nyheter) cacheats minuterna tidigare för annan konfig; viloläget är
+  kundsynligt på /nyheter; (3) nyheternas juridikgrind (rubrikformuleringar)
+  körs via kontrolleraText endast vid publicering — ej på leverantörens
+  rubriker; (4) BESVARAD 09-18 — NEGATIVT körbevis: crontab-målet
+  /api/cron/nyheter svarar 404 live och rutten har ALDRIG funnits i
+  git-historien (scan ligger på /api/nyheter/scan sedan 02f7495b 09-03) ⇒
+  Contabo-leden död sedan raden skrevs; enda drivning = Vercel-cron på den
+  passiva backup-plattformen (ej lokalt beläggbar — OrganEvent → Supabase).
+  CRON_SECRET fortfarande osatt (E29-gap 1 gäller även här).
 
 ---
 

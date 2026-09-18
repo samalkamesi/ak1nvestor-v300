@@ -501,6 +501,59 @@ import { svaraLokaltHandelsdag } from "@/lib/ai-mentor-handelsdag-fragor";
 // frågor alla 35 lagren före lämnar null.
 import { svaraLokaltPortfoljpraktik } from "@/lib/ai-mentor-portfoljpraktik-fragor";
 
+// AI-MENTORN lager 37 (spår 6, omgång 18, s6-u1): utdelningskalender-lagret —
+// utdelningens tidslinje: stämma → avstämningsdag/record date → ex-dag med
+// kursjustering (200,00 − 5,00 = 195,00 referenskurs, 2,5 procent) →
+// utbetalningsdag + svensk turnus (vår/höst) + DRIP-räntesnurran (1 000 ×
+// 5,00 = 5 000 ÷ 195,00 = 25,64 nya aktier = +2,56 %/år vid oförändrad
+// utdelning) + Dogs of the Dow med utdelningsfällan som motläxa. Aktiverar
+// FEM mentorväglösa kurser — UTDELNINGSSTRATEGI fullt länkad 3/8 → 8/8
+// (ud-07 primär + ud-05 + km-065 + ud-03 + ud-06). Ansvarsfördelning
+// (V19-precedensen): basen äger utdelningsaktie(r)/direktavkastning/
+// återinvestering/dividend-aristocrats-frågorna ("vad är svenska
+// utdelningsaktier?" och "när betalas utdelningen ut?" FÅNGAS av basen —
+// sondbevisat; ud-03/ud-06 är här KÄLLOR, aldrig kärnord), utdelningsdjupet
+// äger fällor/återköp/utdelningsgrad (dess fråga bär fragor:-knappen),
+// skattedjupet äger DRIP-beskattningens detaljer. Sond verktyg/
+// _s6u1-sond-omg18.mjs + _s6u1-sond2-omg18.mjs: 36 motorer / 104 monsters /
+// 1 147 kärnord LIVE — kalenderfamiljen (ex-dag, record date, avstämnings-
+// dag, avanmälan, utbetalningsdag, stämmobonus, turnus, drip, dogs of the
+// dow) NULL genom kedjan, 21 planerade kärnord RENTA («betaldag» kasserad:
+// granne till basens «betala», tavstånd 2), 0 omvända stölder mot 59
+// kanoniska frågor. Juridikgrind: ren metodutbildning med tydligt märkta
+// generella räkneexempel — inga placeringstips, Dogs presenteras alltid med
+// sin skeptiska motläxa. Ligger SIST: fångar bara frågor alla 36 lagren
+// före lämnar null.
+import { svaraLokaltUtdelningskalender } from "@/lib/ai-mentor-utdelningskalender-fragor";
+
+// AI-MENTORN lager 38 (spår 6, omgång 18, s6-u2): kreditdjup-lagret —
+// kreditens pris: kreditpremien (ma-05 — MAKROEKONOMI & RÄNTA:S ENDA
+// mentorväglösa kurs, aktiveras här; staten 2,0 % mot bolaget 3,5 % =
+// spread 1,5 procentenheter; 1 000-kronorslånet 35 − 20 = 15 kronor =
+// priset på förväntad förlust; kronprislappen 2 000,0 miljoner × 3,5 % =
+// 70,0 mot 40,0 riskfritt = 30,0 miljoner/år) + kreditrating/covenanter
+// (ks-05 — KAPITALSTRUKTUR:s mentorväglösa kurs, aktiveras här; betygs-
+// trappan investment grade/high yield + fallen angels; räntetäckning
+// 900,0/180,0 = 5,0× mot tröskel 3,0× → utrymme 360,0 miljoner; betygs-
+// prislappen 4 000,0 miljoner × 3,25 % = 130,0 mot 7,00 % = 280,0 =
+// 150,0 miljoner/år). Ansvarsfördelning (V19-precedensen, allt sondbevisat
+// i _s6u2-sond-omg18.mjs: 36 motorer/104 monsters LIVE): makro äger
+// obligation/statsobligations-orden ("betyg på obligationer?" och "spread
+// över statsobligationer?" FÅNGAS av makro), basen äger naket "spread"
+// och "z-spread", riskdjupet äger covenants/löptid/refinansiering solo
+// (kedjan kör det FÖRE — covenant-endiga frågor lämnas dit; ks-05:s
+// covanter-titel är här KÄLLA), avkastningskurvan äger kurvorden. Här
+// bärs ENBART kredit-sammansättningarna: kreditpremie/kreditspread/
+// kreditriskpremie + kreditrating/kreditbetyg/betygstrappa/investment
+// grade/high yield/högavkastande/fallen angels/ratingnedgång/kredit-
+// värdighet/kreditrisk/företagsobligation(er) — hela familjen NULL
+// genom kedjan före detta lager. Flerkällskällmärke 4 källor + 3
+// kurslänkar + levande fragor:-knapp per monster. Juridikgrind: ren
+// metodutbildning med kursernas egna påhittade exempeltal — inga
+// placeringstips. Ligger SIST: fångar bara frågor alla 37 lagren före
+// lämnar null.
+import { svaraLokaltKreditdjup } from "@/lib/ai-mentor-kreditdjup-fragor";
+
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
  *
@@ -1205,7 +1258,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

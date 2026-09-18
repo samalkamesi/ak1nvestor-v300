@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (104 i trettiosex motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (107 i trettioåtta motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -160,6 +160,28 @@ const MOTORDEFS = [
   // diversifiering/valutarisk, makro inflationsorden; sond
   // _s6u3-sond-omg17.mjs: familjerna NULL genom kedjan, 0 grannar).
   { namn: "portföljpraktik", fil: "ai-mentor-portfoljpraktik-fragor.ts", fn: "svaraLokaltPortfoljpraktik", arr: "PORTFOLJPRAKTIK_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 18: utdelningskalender (s6-u1 — utdelningens tidslinje:
+  // stämma → avstämningsdag/record date → ex-dag med kursjustering →
+  // utbetalningsdag + svensk turnus + DRIP-räntesnurran + Dogs of the Dow
+  // med utdelningsfällan som motläxa; aktiverar ud-03/ud-05/ud-06/ud-07/
+  // km-065 — KATEGORIN UTDELNINGSSTRATEGI fullt länkad 3/8 → 8/8; basen
+  // äger kvar utdelningsaktie(r)/direktavkastning/återinvestering/
+  // dividend-aristocrats-frågan («betaldag» kasserat som kärnord — granne
+  // till basens «betala», tavstånd 2; utdelningsdjupet äger fällorna och
+  // bär fragor:-knappen, skattedjupet DRIP-beskattningen; sond
+  // _s6u1-sond-omg18.mjs + _s6u1-sond2-omg18.mjs: familjen NULL genom
+  // kedjan, 21 kärnord renta mot 1 147, 0 omvända stölder).
+  { namn: "utdelningskalender", fil: "ai-mentor-utdelningskalender-fragor.ts", fn: "svaraLokaltUtdelningskalender", arr: "UTDELNINGSKALENDER_MONSTER", antal: 1 },
+  // 2026-09-18 omgång 18: kreditdjup (s6-u2 — kreditens pris: kreditpremien
+  // med spread som kurs och kronprislapp + kreditrating/covenanter med
+  // betygstrappan och tröskel-aritmetiken; aktiverar ma-05 — MAKROEKONOMI &
+  // RÄNTA:S ENDA mentorväglösa kurs — och ks-05 — KAPITALSTRUKTUR:s
+  // mentorväglösa kurs; makro äger obligation/statsobligations-orden,
+  // basen naket "spread"/"z-spread", riskdjupet covenants/löptid/
+  // refinansiering solo, avkastningskurvan kurvorden; sond
+  // _s6u2-sond-omg18.mjs: hela kreditpris-familjen NULL genom kedjans
+  // 36 motorer / 104 monsters).
+  { namn: "kreditdjup", fil: "ai-mentor-kreditdjup-fragor.ts", fn: "svaraLokaltKreditdjup", arr: "KREDITDJUP_MONSTER", antal: 2 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -168,7 +190,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 104 (2026-09-18 omgång 17: ekosystemdjup +2, handelsdag +1, portföljpraktik +3 — 36-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 107 (2026-09-18 omgång 18: utdelningskalender +1, kreditdjup +2 — 38-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -276,6 +298,11 @@ const KANONISKA = [
   { fraga: "hur stor ska en aktieposition vara?", motor: 35 },
   { fraga: "vad är tax-loss harvesting?", motor: 35 },
   { fraga: "vad är pensionssparande?", motor: 35 },
+  // Omgång 18: utdelningskalender (s6-u1) — kanonisk ur lagrets egen rubrik.
+  { fraga: "vad är ex-dagen?", motor: 36 },
+  // Omgång 18: kreditdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är kreditpremien?", motor: 37 },
+  { fraga: "vad är kreditrating?", motor: 37 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -320,7 +347,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "trettiosex motorer lämnar frågan ifred",
+  "trettioåtta motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -403,7 +430,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla trettiosex motorer",
+    "H: disjunkta monster-id:n över alla trettioåtta motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

@@ -1771,7 +1771,13 @@ får ALDRIG krascha sattMal/rensaMal.
   + routes-manifest.json FÖRE pm2-restart; incidentbilden (BUILD_ID skriven +
   HTML grön mot gamla chunks, server dör på ENOENT) = trasig med filnamn.
   Skarp sond mot prod-.next: GRÖN 1667 HTML/81 ref — inget falsklarm.
-  Vaccin 2 + 3 förblir öppna (oägda).
+  VACCIN 2 + 3: INFRIADE 2026-09-18 av s8-u1 (o67) — (2) kraschvaktens
+  felsgren vid misslyckat räddningsbygg mäter nu verifieraArtefakt FÖRE
+  start: pm2-restart ENDAST vid hel artefakt, annars STOPPAD + kooldown
+  30 (nästa poll bygger klart — aldrig bara retry); (3) prod-synkens
+  RAM-tak räknar med tunga klassers tillväxt: chrome-cron levande ⇒
+  +1024 MB, zcode-barn ⇒ +300/st (cap 4) ovanpå basen 2200 — VÄNTAR-RAM
+  bär behov + reserv. Svit 26/26 + 17/17, skarpt: 177 ps-rader 0 falska.
 - PROCFS-SPINN (ny klass): fs.mkdirSync({recursive}) mot /proc i en
   TESTFILTUR satte tre svit-processer i kernel-syscall-storm (R-läge,
   stime +227 ticks/3 s, aldrig återvändande) — manuellt dödade 1708486,

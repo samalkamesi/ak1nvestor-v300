@@ -23,12 +23,24 @@
  * domdTs vinner. Bedömning utan matchande fynd varnas (änkla) så att
  * en roterad fyndlogg aldrig döljer sanning.
  *
+ * NYCKELKONTRAKTET (o67, 2026-09-18 — härdning av o65 §5 F1):
+ * basnyckeln kan KOLLIDERA när F5:s generiska fyndtext matchar två
+ * loggrader i samma millisekunds-skanning (bevisat ×2 09-17). Därför:
+ * kollisionsgrupp = flera fyndrader med samma basnyckel; en bedömning
+ * med valfritt fält `bevisHash` (10 hex av sha256 på fyndradens bevis)
+ * matchar ENDAST raden med den hashen (precis dom); bedömning utan
+ * fältet täcker hela gruppen (legacy — de historiska radernas kontrakt
+ * är heligt). Per rad vinner senaste domdTs; oavgjort ⇒ precis dom.
+ * Kollisionsgrupper rapporteras explicit (de döljer annars en
+ * tvetydighet: en bedömning som täcker två rader).
+ *
  * Körs: på begäran av ronder/sessioner (läsverktyg, exit 0 alltid —
  * läget är information, inte ett grind beslut).
  *   node verktyg/feljakt-lage.mjs
  *   node verktyg/feljakt-lage.mjs --vaktkatalog=/tmp/feljaktlagetest
  */
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -60,6 +72,13 @@ function lasJsonl(fil, etikett) {
 
 const nyckel = (f) => `${f.ts}|${f["spår"] ?? f.spar ?? ""}|${f.fynd ?? ""}`;
 
+// o67-nyckelkontraktet: se filhuvudet. Samma härledning som verktyg/
+// feljakt-stormar.mjs (duplicerad med avsikt — detta är ett renodlat
+// skript utan importbar kärna, och IMPORT AV DETTA SKRIPTET SKULLE KÖRA DET)
+const bevisHash = (f) => createHash("sha256").update(String(f?.bevis ?? "")).digest("hex").slice(0, 10);
+const radEffektivNyckel = (b) =>
+  typeof b?.bevisHash === "string" && b.bevisHash ? `${nyckel(b)}#${b.bevisHash}` : nyckel(b);
+
 // ── bedömningar: senaste vinner per nyckel, dom måste vara känd klass ──────
 function byggaBedomningar(rader) {
   const karta = new Map();
@@ -69,24 +88,46 @@ function byggaBedomningar(rader) {
       skral.push(b);
       continue;
     }
-    const k = nyckel(b);
+    const k = radEffektivNyckel(b);
     const nuvarande = karta.get(k);
     if (!nuvarande || (b.domdTs ?? "") >= (nuvarande.domdTs ?? "")) karta.set(k, b);
   }
   return { karta, skral };
 }
 
+// kollisionsgrupper bland fyndraderna: basnyckel → antal rader (>1 = krock)
+function kollisionsGrupper(fyndRader) {
+  const antal = new Map();
+  for (const f of fyndRader) {
+    const b = nyckel(f);
+    antal.set(b, (antal.get(b) ?? 0) + 1);
+  }
+  return new Map([...antal.entries()].filter(([, n]) => n > 1));
+}
+
+// per fyndrad: precis dom (bas#hash) slår bas-dom vid oavgjort, senaste
+// domdTs vinner annars; ingen träff ⇒ raden förblir öppen
+function hittaBedomning(f, krock, karta) {
+  const b = nyckel(f);
+  const precist = krock.has(b) ? karta.get(`${b}#${bevisHash(f)}`) : undefined;
+  const bas = karta.get(b);
+  if (!precist) return bas;
+  if (!bas) return precist;
+  return (bas.domdTs ?? "") > (precist.domdTs ?? "") ? bas : precist;
+}
+
 // ── huvudlöpning ───────────────────────────────────────────────────────────
 const { rader: fynd, saknas: fyndSaknas } = lasJsonl(FYNDLOGG, "fyndlogg");
 const { rader: bedomRader, saknas: bedomSaknas } = lasJsonl(BEDOMNINGAR, "bedömningar");
 const { karta: bedomda, skral } = byggaBedomningar(bedomRader);
+const krock = kollisionsGrupper(fynd);
 
 const oppna = [];
 const klassade = { "falskt-pos": [], rotkurad: [], pagaende: [], "transient-design": [] };
 const anklade = [];
 
 for (const f of fynd) {
-  const b = bedomda.get(nyckel(f));
+  const b = hittaBedomning(f, krock, bedomda);
   if (b) {
     klassade[b.dom].push({ fynd: f, bedomning: b });
   } else {
@@ -94,7 +135,7 @@ for (const f of fynd) {
   }
 }
 for (const [k, b] of bedomda) {
-  const match = fynd.some((f) => nyckel(f) === k);
+  const match = fynd.some((f) => nyckel(f) === k || (krock.has(nyckel(f)) && `${nyckel(f)}#${bevisHash(f)}` === k));
   if (!match) anklade.push(b);
 }
 
@@ -110,6 +151,14 @@ if (skral.length) console.log(`[FELJAKT-LAGE VARN] ${skral.length} bedömningsra
 if (anklade.length) {
   console.log(`[FELJAKT-LAGE VARN] ${anklade.length} bedömning(ar) matchar inget fynd (änkel — fyndlogg roterad? kontrollera att bedömningen inte döljer sanning):`);
   for (const b of anklade.slice(0, 5)) console.log(`    änkel: ${b.ts} ${b.dom} — ${b.fynd}`);
+}
+if (krock.size) {
+  console.log(`[FELJAKT-LAGE NOT] ${krock.size} nyckelkollision(er) — basnyckeln täcker ${[...krock.values()].reduce((a, n) => a + n, 0)} fyndrader (${krock.size} nycklar); precis dom = bevisHash-fält (o67):`);
+  for (const [b, n] of [...krock.entries()].slice(0, 5)) {
+    const tacker = klassade["falskt-pos"].concat(klassade.rotkurad, klassade.pagaende, klassade["transient-design"])
+      .filter(({ fynd: f }) => nyckel(f) === b).length;
+    console.log(`    kollision: ${b} — ${n} rader, ${tacker} täckta av bedömning`);
+  }
 }
 console.log(`Totalt fynd: ${fynd.length} · bedömda: ${fynd.length - oppna.length} · ÖPPNA ÄKTA: ${oppna.length} (varav HÖG/KRITISK: ${oppnaHoga.length})`);
 const domSumma = DOMER.map((d) => `${d}: ${klassade[d].length}`).join(" · ");
@@ -139,7 +188,13 @@ const rapport = {
   perDom: Object.fromEntries(DOMER.map((d) => [d, klassade[d].length])),
   oppnaPerSpar: perSpår,
   oppnaLista: oppna.map((f) => ({ ts: f.ts, allvar: f.allvar, spar: f["spår"] ?? f.spar, fynd: f.fynd, bevis: (f.bevis ?? "").slice(0, 140) })),
-  ankladeBedomningar: anklade.map((b) => ({ ts: b.ts, dom: b.dom, fynd: b.fynd })),
+  ankladeBedomningar: anklade.map((b) => ({ ts: b.ts, dom: b.dom, fynd: b.fynd, bevisHash: b.bevisHash ?? null })),
+  nyckelkollisioner: [...krock.entries()].map(([bas, antalRader]) => ({
+    basnyckel: bas,
+    antalRader,
+    tackerAvBedomning: klassade["falskt-pos"].concat(klassade.rotkurad, klassade.pagaende, klassade["transient-design"])
+      .filter(({ fynd: f }) => nyckel(f) === bas).length,
+  })),
 };
 try {
   fs.mkdirSync(VAKT, { recursive: true });

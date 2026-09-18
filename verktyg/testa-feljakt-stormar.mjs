@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 /**
- * TESTA FELJÄKT-STORMAR (spår 8, o34) — offline scenariotest
+ * TESTA FELJÄKT-STORMAR (spår 8, o34; kollisionslager o67) — offline scenariotest
  * Körs: node verktyg/testa-feljakt-stormar.mjs  (exit 0 = alla PASS)
  * Testar kärnorna i feljakt-stormar.mjs: klustrings-, kontext-,
  * familje- och valideringslogiken mot syntetiska data i tempkatalog —
- * aldrig mot den levande journalen.
+ * aldrig mot den levande journalen. Sektion 6–7: nyckelkontraktet
+ * (o67) — kollisionsgrupper, precis dom via bevisHash, legacy bas-dom.
  */
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { klustra, hamtaKontext, forslagFamilj, valideraBedomning, lasJsonl, nyckel, DOMER } from "./feljakt-stormar.mjs";
+import { klustra, hamtaKontext, forslagFamilj, valideraBedomning, lasJsonl, nyckel, bevisHash, effektivNyckel, radEffektivNyckel, kollisionsGrupper, DOMER } from "./feljakt-stormar.mjs";
 
 let pass = 0;
 const misslyckade = [];
@@ -105,6 +106,84 @@ function kontroll(namn, villkor, detalj = "") {
   const igen = kör([`--vaktkatalog=${VAKT}`, `--bekrafta=${bedFil}`]);
   kontroll("bekrafta: samma rad igen FROSTAS (redan i ledgern) och exit ≠ 0",
     igen.kod !== 0 && igen.ut.includes("redan i ledgern") && lasJsonl(path.join(VAKT, "feljakt-bedomningar.jsonl")).length === 1);
+
+  fs.rmSync(tmp, { recursive: true, force: true });
+}
+
+// ── 6. nyckelkontraktet (o67): kollisionsgrupper + precis dom ──────────────
+// Speglar o65 §5 F1:s bevisade fall: två fyndrader, identisk (ts, spår,
+// fynd), olikt bevis (olika matchrad i bevisfältet).
+{
+  const A = { ts: "2026-09-17T11:43:04.406Z", "spår": "F5-logg", allvar: "MEDEL", fynd: "prod-synk.log: felmönster på ny rad", bevis: "/misslyckades/i → PATCH-KÖ: lock-commit MISSLYCKADES" };
+  const B = { ts: "2026-09-17T11:43:04.406Z", "spår": "F5-logg", allvar: "MEDEL", fynd: "prod-synk.log: felmönster på ny rad", bevis: "/FEL[: ]/ → mål-återarmning FEL 502" };
+  const krock = kollisionsGrupper([A, B]);
+  kontroll("kollision: gruppen detekteras (basnyckeln, 1 grupp)", krock.size === 1 && krock.has(nyckel(A)));
+  kontroll("kollision: bevisHash är 10 hex och skiljer raderna", /^[0-9a-f]{10}$/.test(bevisHash(A)) && bevisHash(A) !== bevisHash(B));
+  kontroll("kollision: effektiv nyckel bär #hash-suffix",
+    effektivNyckel(A, krock) === `${nyckel(A)}#${bevisHash(A)}` && effektivNyckel(A, krock) !== effektivNyckel(B, krock));
+
+  const oppnaEffektiva = new Set([nyckel(A), `${nyckel(A)}#${bevisHash(A)}`, `${nyckel(A)}#${bevisHash(B)}`]);
+  const ledgerEffektiva = new Set();
+  const bas = { ...A, dom: "rotkurad", rotorsaka: "r", bevis: "b", protokoll: "o67", domdAv: "test" };
+  const precis = { ...bas, bevisHash: bevisHash(A) };
+  kontroll("kollision: bas-dom (legacy, utan bevisHash) godtas fortfarande",
+    valideraBedomning(bas, oppnaEffektiva, ledgerEffektiva).length === 0);
+  kontroll("kollision: precis dom (bevisHash) godtas mot effektiv nyckel",
+    valideraBedomning(precis, oppnaEffektiva, ledgerEffektiva).length === 0);
+  kontroll("kollision: precis dom vägras när hashen matchar ingen öppen kollisionsrad",
+    valideraBedomning({ ...precis, bevisHash: "0000000000" }, oppnaEffektiva, ledgerEffektiva).some((f) => f.includes("bevisHash matchar ingen")));
+  kontroll("kollision: felaktigt bevisHash-format vägras med tydligt fel",
+    valideraBedomning({ ...precis, bevisHash: "XYZ" }, oppnaEffektiva, ledgerEffektiva).some((f) => f.includes("bevisHash fel format")));
+  kontroll("kollision: precis dom vägras om nyckeln redan finns i ledgern (re-dom = ny våg)",
+    valideraBedomning(precis, oppnaEffektiva, new Set([`${nyckel(A)}#${bevisHash(A)}`])).some((f) => f.includes("redan i ledgern")));
+  kontroll("kollision: radEffektivNyckel härleds ur radens eget bevisHash-fält",
+    radEffektivNyckel(precis) === `${nyckel(A)}#${bevisHash(A)}` && radEffektivNyckel(bas) === nyckel(bas));
+}
+
+// ── 7. bekrafta end-to-end med kollisionspar i isolerad tempkatalog ───────
+{
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "stormkrock-"));
+  const VAKT = path.join(tmp, "vakten");
+  fs.mkdirSync(VAKT, { recursive: true });
+  const FYNDTEXT = "prod-synk.log: felmönster på ny rad";
+  const X1 = { ts: "2026-09-17T11:43:04.406Z", "spår": "F5-logg", allvar: "MEDEL", fynd: FYNDTEXT, bevis: "/misslyckades/i → PATCH-KÖ: lock-commit MISSLYCKADES" };
+  const X2 = { ...X1, bevis: "/FEL[: ]/ → mål-återarmning FEL 502" };
+  fs.writeFileSync(path.join(VAKT, "feljakt-fynd.jsonl"), [X1, X2].map((f) => JSON.stringify(f)).join("\n") + "\n");
+  fs.writeFileSync(path.join(VAKT, "feljakt-bedomningar.jsonl"), "");
+
+  const { execFileSync } = await import("node:child_process");
+  const rot = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+  const kör = (args) => {
+    try { return { kod: 0, ut: execFileSync("node", [path.join(rot, "verktyg", "feljakt-stormar.mjs"), ...args], { encoding: "utf8", env: process.env }).toString() }; }
+    catch (e) { return { kod: e.status ?? 1, ut: String(e.stdout ?? "") }; }
+  };
+
+  // precis dom av BÅDA raderna i paret (olika domklasser — kollisionens poäng)
+  const bedFil = path.join(tmp, "krock.jsonl");
+  fs.writeFileSync(bedFil, [
+    { ...X1, dom: "rotkurad", rotorsaka: "patch-köns kedja", bevis: "o50", protokoll: "o67", domdAv: "test", bevisHash: bevisHash(X1) },
+    { ...X2, dom: "transient-design", rotorsaka: "deployfönster", bevis: "NY KOD 11:42", protokoll: "o67", domdAv: "test", bevisHash: bevisHash(X2) },
+  ].map((r) => JSON.stringify(r)).join("\n") + "\n");
+
+  const torr = kör([`--vaktkatalog=${VAKT}`, "--torr", `--bekrafta=${bedFil}`]);
+  kontroll("krock-bekrafta: torrsim 2 GRÖNA (olika domklasser på samma basnyckel)",
+    torr.kod === 0 && torr.ut.includes("2 GRÖNA") && torr.ut.includes("SKULLE"));
+
+  const skarp = kör([`--vaktkatalog=${VAKT}`, `--bekrafta=${bedFil}`]);
+  const ledgerEfter = lasJsonl(path.join(VAKT, "feljakt-bedomningar.jsonl"));
+  kontroll("krock-bekrafta: skarp append av 2 precis-domer, öppet läge 0",
+    skarp.kod === 0 && ledgerEfter.length === 2 && skarp.ut.includes("nytt öppet läge: 0"));
+
+  // legacy-vägen på ett nytt par: bas-dom täcker BÅDA raderna (o65:s läge)
+  const VAKT2 = path.join(tmp, "vakten2");
+  fs.mkdirSync(VAKT2, { recursive: true });
+  fs.writeFileSync(path.join(VAKT2, "feljakt-fynd.jsonl"), [X1, X2].map((f) => JSON.stringify(f)).join("\n") + "\n");
+  fs.writeFileSync(path.join(VAKT2, "feljakt-bedomningar.jsonl"), "");
+  const basFil = path.join(tmp, "bas.jsonl");
+  fs.writeFileSync(basFil, JSON.stringify({ ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o67", domdAv: "test" }) + "\n");
+  const basKör = kör([`--vaktkatalog=${VAKT2}`, `--bekrafta=${basFil}`]);
+  kontroll("krock-bekrafta: bas-dom utan bevisHash godtas och täcker hela paret (läge 0)",
+    basKör.kod === 0 && basKör.ut.includes("nytt öppet läge: 0"));
 
   fs.rmSync(tmp, { recursive: true, force: true });
 }

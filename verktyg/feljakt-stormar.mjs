@@ -29,6 +29,17 @@
  *     rotorsaka+bevis+protokoll+domdAv obligatoriska; domdTs sätts av
  *     verktyget. Valideringsfel ⇒ INGEN rad appendas (allt-eller-inget).
  *
+ * NYCKELKONTRAKTET (o67, 2026-09-18 — härdning av o65 §5 F1):
+ *     Basnyckeln (ts, spår, fynd) kan kollidera när F5:s generiska
+ *     fyndtext matchar två loggrader i samma millisekunds-skanning —
+ *     bevisat ×2 09-17. Effektiv nyckel utökas därför med bevis-hash
+ *     (`bas#hash10`) för fyndrader som INGÅR i en kollisionsgrupp.
+ *     Bedömningsrader kan bära valfritt fält `bevisHash` (10 hex) för
+ *     precis dom av EN rad i paret; utan fältet gäller basnyckeln
+ *     (legacy — täcker hela gruppen, de 243 historiska radernas
+ *     kontrakt är heligt). Precis dom är en precisionsuppgradering,
+ *     aldrig ett ogiltigförklaringande av bas-domens räckvidd.
+ *
  *   node verktyg/feljakt-stormar.mjs --torr --bekrafta <fil>
  *     Validera utan append (kvitto om vad som SKULLE skrivas).
  *
@@ -41,6 +52,7 @@
  * appendar ledger).
  */
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -72,6 +84,37 @@ export function lasJsonl(fil) {
 }
 
 export const nyckel = (f) => `${f.ts}|${f["spår"] ?? f.spar ?? ""}|${f.fynd ?? ""}`;
+
+// ── nyckelkontraktet (o67): bevis-hash för kollisionsgrupper ───────────────
+// sha256(fyndradens bevis), 10 hex — kort nog att läsas, långt nog att
+// skilja de bevisade kollisionsparen (olika matchrad i bevisfältet).
+export function bevisHash(f) {
+  return createHash("sha256").update(String(f?.bevis ?? "")).digest("hex").slice(0, 10);
+}
+
+// Effektiv nyckel för en FYNDRAD: bas#hash endast när basen ingår i en
+// kollisionsgrupp (kollisionsbasNycklar = Set av basnycklar med >1 rad).
+export function effektivNyckel(f, kollisionsbasNycklar) {
+  const b = nyckel(f);
+  return kollisionsbasNycklar?.has(b) ? `${b}#${bevisHash(f)}` : b;
+}
+
+// Effektiv nyckel för en BEDÖMNINGSRAD: hash-suffix enbart när raden
+// självt bär bevisHash (precis dom) — annars basnyckeln (legacy-dom).
+export function radEffektivNyckel(rad) {
+  const b = nyckel(rad);
+  return typeof rad?.bevisHash === "string" && rad.bevisHash ? `${b}#${rad.bevisHash}` : b;
+}
+
+// Kollisionsgrupper bland fyndrader: bas → antal rader (ren, testad).
+export function kollisionsGrupper(fynd) {
+  const antal = new Map();
+  for (const f of fynd) {
+    const b = nyckel(f);
+    antal.set(b, (antal.get(b) ?? 0) + 1);
+  }
+  return new Set([...antal.entries()].filter(([, n]) => n > 1).map(([b]) => b));
+}
 
 // ── klustringskärna (ren — testas maskinellt) ─────────────────────────────
 export function klustra(fynd, gapMin = GAP_MIN_STANDARD) {
@@ -140,15 +183,24 @@ function uppgiftAktiva(kontextText, salv) {
 }
 
 // ── valideringskärna (ren) ─────────────────────────────────────────────────
-export function valideraBedomning(rad, oppnaNycklar, ledgerNycklar) {
+// oppnaEffektiva/ledgerEffektiva: Set av EFFEKTIVA nycklar — för varje öppet
+// fynd dess basnyckel, plus bas#hash för rader i kollisionsgrupper (precision
+// existerar bara där kollisioner existerar); ledgerns nycklar härleds ur
+// radernas egna fält (radEffektivNyckel).
+export function valideraBedomning(rad, oppnaEffektiva, ledgerEffektiva) {
   const fel = [];
   for (const falt of ["ts", "spår", "fynd", "dom", "rotorsaka", "bevis", "protokoll", "domdAv"])
     if (!rad || typeof rad[falt] !== "string" || !rad[falt].trim()) fel.push(`saknar ${falt}`);
   if (fel.length) return fel;
   if (!DOMER.includes(rad.dom)) fel.push(`okänd domklass '${rad.dom}' (kända: ${DOMER.join(", ")})`);
-  const n = nyckel(rad);
-  if (!oppnaNycklar.has(n)) fel.push(`matchar inget ÖPPET fynd (änkel eller redan bedömd): ${n}`);
-  if (ledgerNycklar.has(n)) fel.push(`nyckeln redan i ledgern (re-dom = ny våg, ny rad): ${n}`);
+  if (rad.bevisHash !== undefined && !/^[0-9a-f]{10}$/.test(String(rad.bevisHash)))
+    fel.push(`bevisHash fel format (10 hex, gemener): '${rad.bevisHash}'`);
+  const n = radEffektivNyckel(rad);
+  if (!oppnaEffektiva.has(n))
+    fel.push(rad.bevisHash
+      ? `bevisHash matchar ingen öppen kollisionsrad (hashen måste vara effektivNyckel-suffixet på fyndraden): ${n}`
+      : `matchar inget ÖPPET fynd (änkel eller redan bedömd): ${n}`);
+  if (ledgerEffektiva.has(n)) fel.push(`nyckeln redan i ledgern (re-dom = ny våg, ny rad): ${n}`);
   return fel;
 }
 
@@ -166,14 +218,40 @@ const UNDERLAG = path.join(VAKT, "feljakt-stormar-SENASTE.json");
 
 const fynd = lasJsonl(FYNDLOGG);
 const ledger = lasJsonl(BEDOMNINGAR);
-const bedomda = new Set(ledger.map(nyckel));
-const oppna = fynd.filter((f) => !bedomda.has(nyckel(f)));
+
+// ── öppna rader enligt nyckelkontraktet (o67): precis > grov, bas-fallback ──
+// delad form med feljakt-lage.mjs (där dokumenterad; duplicerad av skäl:
+// lage är ett renodlat skript utan importbar kärna — IMPORT SKULLE KÖRA DET)
+function byggaBedomningskarta(rader) {
+  const karta = new Map();
+  for (const b of rader) {
+    if (!b || typeof b.ts !== "string" || typeof b.fynd !== "string" || !DOMER.includes(b.dom)) continue;
+    const k = radEffektivNyckel(b);
+    const nuvarande = karta.get(k);
+    if (!nuvarande || (b.domdTs ?? "") >= (nuvarande.domdTs ?? "")) karta.set(k, b);
+  }
+  return karta;
+}
+
+function oppnaRader(fyndRader, ledgerRader) {
+  const krock = kollisionsGrupper(fyndRader);
+  const karta = byggaBedomningskarta(ledgerRader);
+  return fyndRader.filter((f) => {
+    const b = nyckel(f);
+    const precist = krock.has(b) ? karta.get(`${b}#${bevisHash(f)}`) : undefined;
+    const bas = karta.get(b);
+    // senaste domdTs vinner; oavgjort ⇒ precis (finkornigast sanning)
+    if (!precist) return !bas;
+    if (!bas) return false;
+    return !((bas.domdTs ?? "") > (precist.domdTs ?? ""));
+  });
+}
+
+const krock = kollisionsGrupper(fynd);
+const oppna = oppnaRader(fynd, ledger);
 
 function raknaOppna() {
-  const igen = lasJsonl(FYNDLOGG);
-  const nuLedger = lasJsonl(BEDOMNINGAR);
-  const nu = new Set(nuLedger.map(nyckel));
-  return igen.filter((f) => !nu.has(nyckel(f))).length;
+  return oppnaRader(lasJsonl(FYNDLOGG), lasJsonl(BEDOMNINGAR)).length;
 }
 
 if (bekraftaArg) {
@@ -187,13 +265,20 @@ if (bekraftaArg) {
     console.error("[feljakt-stormar] bedömningsfil tom eller ogiltig JSONL");
     process.exit(1);
   }
-  const oppnaNycklar = new Set(oppna.map(nyckel));
-  const ledgerNycklar = bedomda;
+  // effektiva nycklar (o67): bas för alla öppna rader + bas#hash för rader
+  // i kollisionsgrupper — precis dom är bara möjlig där kollisionen finns
+  const oppnaNycklar = new Set();
+  for (const f of oppna) {
+    const b = nyckel(f);
+    oppnaNycklar.add(b);
+    if (krock.has(b)) oppnaNycklar.add(`${b}#${bevisHash(f)}`);
+  }
+  const ledgerNycklar = new Set(ledger.map(radEffektivNyckel));
   const frost = [];
   const gröna = [];
   const sett = new Set();
   for (const rad of rader) {
-    const n = nyckel(rad);
+    const n = radEffektivNyckel(rad);
     if (sett.has(n)) { frost.push(`${n} — dublettnyckel i filen`); continue; }
     sett.add(n);
     const fel = valideraBedomning(rad, oppnaNycklar, ledgerNycklar);
@@ -240,7 +325,11 @@ const salvor = klustra(oppna).map((s) => {
   return {
     id: s.id, start: s.start, slut: s.slut, antal: s.rader.length, spar, allvar,
     familj: forslagFamilj(s, Object.values(kontext).flat()),
-    fynd: s.rader.map((r) => ({ ts: r.ts, spår: r["spår"] ?? r.spar, allvar: r.allvar, fynd: r.fynd })),
+    fynd: s.rader.map((r) => ({
+      ts: r.ts, spår: r["spår"] ?? r.spar, allvar: r.allvar, fynd: r.fynd,
+      // o67: kollisionsradens identitet — precis dom kräver detta värde
+      ...(krock.has(nyckel(r)) ? { bevisHash: bevisHash(r) } : {}),
+    })),
     kontext,
   };
 });
@@ -249,6 +338,7 @@ const rapport = {
   genererad: new Date().toISOString(),
   oppnaFore: oppna.length,
   antalSalvor: salvor.length,
+  nyckelkollisioner: krock.size,
   familjer: {},
   salvor: salvor.map(({ kontext, ...s }) => ({ ...s, kontextrader: Object.fromEntries(Object.entries(kontext).map(([k, v]) => [k, v.length])) })),
 };

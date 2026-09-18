@@ -1,17 +1,22 @@
 #!/usr/bin/env node
 /**
- * testa-feljakt-lage.mjs (o22) — offline scenariotest för feljakt-lage.mjs
+ * testa-feljakt-lage.mjs (o22; kollisionslager o67) — offline scenariotest för feljakt-lage.mjs
  *
- * Sex fall mot en fejkad vakt-katalog i /tmp (aldrig äkta data/vakten):
+ * Åtta fall mot en fejkad vakt-katalog i /tmp (aldrig äkta data/vakten):
  *   1. bedömt fynd (falskt-pos) lämnar det öppna och hamnar i perDom
  *   2. obemannat fynd förblir ÖPPET ÄKTA
  *   3. öppet HÖG-fynd räknas i oppnaHogaKritiska
  *   4. två bedömningar på samma nyckel — senaste domdTs vinner
  *   5. änkel-bedömning (inget matchande fynd) varnas + ogiltig domklass ignoreras
  *   6. saknad bedömningsfil ⇒ alla fynd öppna (graceful) + ogiltig JSON-rad hoppas över
- * Körs: node verktyg/testa-feljakt-lage.mjs  →  PASS x/6 eller FAIL med detalj.
+ *   7. nyckelkollision (o65 §5 F1): precis dom (bevisHash) täcker EN rad —
+ *      systerraden förblir öppen; kollisionsgruppen rapporteras
+ *   8. legacy bas-dom täcker hela kollisionsparet; precis dom med nyare
+ *      domdTs vinner på sin egen rad (precedens: senaste vinner, oavgjot ⇒ precis)
+ * Körs: node verktyg/testa-feljakt-lage.mjs  →  PASS x/8 eller FAIL med detalj.
  */
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -70,11 +75,41 @@ fs.writeFileSync(path.join(TMP2, "feljakt-fynd.jsonl"), JSON.stringify(F2) + "\n
 const r2 = kora(TMP2);
 kontroll(6, "saknad ledger ⇒ alla öppna + ogiltig rad hoppas över", r2.resultat?.totalt === 1 && r2.resultat?.oppna === 1 && r2.resultat?.oppnaHogaKritiska === 1 && r2.ut.includes("bedömningsledger saknas") && r2.ut.includes("ogiltig JSON hoppas över"), JSON.stringify(r2.resultat));
 
+// ── test 7–8: nyckelkollisioner (o65 §5 F1 / o67-kontraktet) ───────────────
+const X1 = { ts: "2026-09-17T11:43:04.406Z", "spår": "F5-logg", allvar: "MEDEL", fynd: "prod-synk.log: felmönster på ny rad", bevis: "/misslyckades/i → PATCH-KÖ: lock-commit MISSLYCKADES" };
+const X2 = { ...X1, bevis: "/FEL[: ]/ → mål-återarmning FEL 502" };
+const hash10 = (f) => createHash("sha256").update(String(f.bevis ?? "")).digest("hex").slice(0, 10);
+
+// test 7: precis dom (bevisHash) täcker EN rad i paret — systern förblir öppen
+const TMP3 = fs.mkdtempSync(path.join(os.tmpdir(), "feljakt-lage-krock-"));
+fs.writeFileSync(path.join(TMP3, "feljakt-fynd.jsonl"), [F1, F2, F3, X1, X2].map((f) => JSON.stringify(f)).join("\n") + "\n");
+fs.writeFileSync(path.join(TMP3, "feljakt-bedomningar.jsonl"), [B1, { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) }].map((b) => JSON.stringify(b)).join("\n") + "\n");
+const r3 = kora(TMP3);
+kontroll(7, "kollision: precis dom täcker EN rad (X1 bedömd, X2 öppen) + gruppen rapporteras",
+  r3.resultat?.totalt === 5 && r3.resultat?.bedomda === 2 && r3.resultat?.oppna === 3 &&
+  r3.rapport?.nyckelkollisioner?.length === 1 && r3.rapport?.nyckelkollisioner?.[0]?.tackerAvBedomning === 1 &&
+  r3.ut.includes("nyckelkollision") && r3.rapport?.oppnaLista?.some((f) => f.fynd === X1.fynd),
+  JSON.stringify(r3.resultat));
+
+// test 8: legacy bas-dom täcker paret; nyare precis dom vinner på sin rad
+fs.writeFileSync(path.join(TMP3, "feljakt-bedomningar.jsonl"), [
+  B1,
+  { ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T04:00:00.000Z" },
+  { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) },
+].map((b) => JSON.stringify(b)).join("\n") + "\n");
+const r4 = kora(TMP3);
+kontroll(8, "kollision: bas-dom täcker paret (3 bedömda) och nyare precis dom vinner på X1 (falskt-pos: 2 · rotkurad: 1)",
+  r4.resultat?.bedomda === 3 && r4.resultat?.oppna === 2 &&
+  r4.rapport?.perDom?.["falskt-pos"] === 2 && r4.rapport?.perDom?.rotkurad === 1 &&
+  r4.ut.includes("2 täckta av bedömning"),
+  JSON.stringify(r4.resultat));
+
 // ── städning + utfall ──────────────────────────────────────────────────────
 fs.rmSync(TMP, { recursive: true, force: true });
 fs.rmSync(TMP2, { recursive: true, force: true });
+fs.rmSync(TMP3, { recursive: true, force: true });
 if (fail.length) {
-  console.log(`\nUTFALL: ${pass}/6 PASS — FAIL: ${fail.join(", ")}`);
+  console.log(`\nUTFALL: ${pass}/8 PASS — FAIL: ${fail.join(", ")}`);
   process.exit(1);
 }
-console.log(`\nUTFALL: 6/6 PASS`);
+console.log(`\nUTFALL: 8/8 PASS`);

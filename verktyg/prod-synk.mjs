@@ -85,6 +85,55 @@ function ramTillgangligtMB() {
   }
 }
 
+// VACCIN 3 (DRIFTSBOKEN 2026-09-17 17:42–17:47Z, o53 §4): MemAvailable
+// mäter NU — byggtröskeln måste också räkna med PÅGÅENDE tunga processers
+// VÄXT under byggets ~3 minuter. 17:42-OOM:ens formel var byggheap +
+// gränssnittsvaktens chrome-cron (~1 GB, 6-timmarscykeln kan landa mitt i
+// byggfönstret) + fabrikens zcode-barn. Deras NU-varande RSS är redan
+// borta ur MemAvailable — reserven täcker det de KAN komma att äta.
+const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 300 };
+
+/** Klassificera `ps -eo args=`-rader → tunga processklasser (vaccin 3).
+ * Smalhetsregeln (o55 F2-läxan — breda mönster deckar varje mätning medan
+ * fabriken lever): chrome-klassen matchar ENDAST första token (processens
+ * körbara fil) — pm2:s "next start", "npm ci"-prompterrader och
+ * "grep chrome" kan aldrig träffa; zcode-klassen kräver ".zcode"-sökväg
+ * i args, som bara zcode-cli/node-repl-mcp-barn bär (repots egna verktyg
+ * ligger under /home/ak1a/AK1/verktyg/…). */
+export function raknaTungaProcesser(argsRader) {
+  const klasser = { chrome: 0, zcodeBarn: 0 };
+  for (const rad of Array.isArray(argsRader) ? argsRader : []) {
+    const text = String(rad);
+    const bas = (text.trim().split(/\s+/)[0] ?? "").split("/").pop() ?? "";
+    if (/^(chrome|chromium|headless_shell|chrome_headless)$/i.test(bas)) klasser.chrome++;
+    else if (text.includes(".zcode")) klasser.zcodeBarn++;
+  }
+  return klasser;
+}
+
+/** Byggutrymmes-bedömning (vaccin 3): basbehovet = byggheap (MIN_RAM_MB,
+ * 10X-incidentens empiri) + tillväxtreserv per levande tung klass. Testas
+ * av verktyg/testa-prod-synk-ramvakt.mjs. ramMB null/undefined = omätbart
+ * ⇒ ok (fail-open, oförändrat sedan våg 10X: ett målfel får aldrig vårda
+ * deployer i all evighet). */
+export function bedomByggUtrymme({ ramMB, tunga = {} }) {
+  const chrome = (tunga.chrome ?? 0) > 0 ? 1 : 0; // klassreserv oavsett antal delprocesser (chrome forkar renderers)
+  const zcodeBarn = Math.min(tunga.zcodeBarn ?? 0, 4); // cap 4: en 12-barnssvärm är vårddat av basen långt före cap:et
+  const reservMB = chrome * RAM_RESERV_MB.chrome + zcodeBarn * RAM_RESERV_MB.zcodeBarn;
+  const behovMB = MIN_RAM_MB + reservMB;
+  const detaljer = [
+    chrome ? `chrome-cron levande (+${RAM_RESERV_MB.chrome})` : null,
+    zcodeBarn ? `${zcodeBarn} zcode-barn (+${zcodeBarn * RAM_RESERV_MB.zcodeBarn})` : null,
+  ].filter(Boolean);
+  return {
+    ok: ramMB === null || ramMB === undefined ? true : ramMB >= behovMB,
+    behovMB,
+    reservMB,
+    detalj: detaljer.join(" + ") || "inga tunga klasser",
+    meddelande: reservMB > 0 ? "tung cron/fabrik lever — reserv för deras tillväxt under bygget (17:42-OOM:ens formel)" : "byggheap-basen",
+  };
+}
+
 /** Läs en loggfil till sträng — "" vid saknad/oläsbar (o49: bedömningen
  *  skiljer "filen tom" från "filen saknas" i SIGNATURFALLET att flock
  *  aldrig släppte in barnet; saknad fil = samma sak här — barnet äger skapandet). */
@@ -605,9 +654,21 @@ async function korSynk() {
   // 2) RAM-VAKT (10X-incidenten): under taket OOM-dödas next build av
   //    minnesgränsen ("Killed") — felet är KAPACITET, inte kod. Vänta till
   //    nästa poll (10 min) i stället för att bygga dömt. HEAD orört.
+  //    VACCIN 3 (DRIFTSBOKEN 17:42Z): taket räknar med PÅGÅENDE tunga
+  //    processers tillväxt (gränssnittsvaktens chrome-cron + fabrikens
+  //    zcode-barn) — MemAvailable ensam ser dem inte komma.
+  let psRader = null;
+  try {
+    psRader = execFileSync("ps", ["-eo", "args="], { encoding: "utf8", timeout: 10_000 }).split("\n");
+  } catch {
+    /* klasser 0/0 = oförändrat beteende (fail-open vid omätbart) */
+  }
   const ram = ramTillgangligtMB();
-  if (ram !== null && ram < MIN_RAM_MB) {
-    logga(`VÄNTAR-RAM: ${ram} MB tillgängligt (< ${MIN_RAM_MB}) — bygger när minnet frigjorts; HEAD orört, nytt försök nästa poll`);
+  const utrymme = bedomByggUtrymme({ ramMB: ram, tunga: raknaTungaProcesser(psRader) });
+  if (!utrymme.ok) {
+    logga(
+      `VÄNTAR-RAM: ${ram} MB tillgängligt (< ${utrymme.behovMB} = ${MIN_RAM_MB} bygg + ${utrymme.reservMB} reserv; ${utrymme.detalj}) — bygger när minnet frigjorts; HEAD orört, nytt försök nästa poll`
+    );
     return;
   }
 

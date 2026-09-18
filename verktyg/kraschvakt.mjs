@@ -133,6 +133,27 @@ export function planeraAtguard({ okNu, status, oknad, lasUpptagen: upptagen, omk
   return { typ: "dod-app" };
 }
 
+/** VACCIN 2 (DRIFTSBOKEN 2026-09-17 17:42Z, o53 §4): beslutstabell för
+ * misslyckat räddningsbygg. rm -rf .next skedde FÖRE npm ci+build ⇒ ett
+ * misslyckat/avbrutet/OOM-dödat bygg lämnar artefakten saknad eller
+ * partiell, och pm2-restart mot den = ENOENT-kraschloop som pm2 aldrig
+ * hämtar sig från (bevis: ↺ 3 700+, nginx 502 ~5 min). Rätt ordning är
+ * stop → bygga KLART → start — ALDRIG bara retry. verifieraArtefakt
+ * (o50:s KRITISKA_FILER-kontrakt) är domaren: först när artefakten är
+ * restart-bar får appen startas; annars lämnas pm2 stoppad med KORT
+ * kooldown (kurens (4) osäkert-läges-doktrin) så nästa poll bygger
+ * klart istället för att snurra appen mot saknade manifest. */
+export function planeraStartEfterMisslyckatBygg(artefaktStatus) {
+  if (artefaktStatus === "gron") {
+    return { startaPm2: true, kooldownMin: 30, meddelande: "artefakten hel — appen startas (restart-bar trots byggfelet)" };
+  }
+  return {
+    startaPm2: false,
+    kooldownMin: 30,
+    meddelande: `artefakt ${artefaktStatus} — pm2 lämnas STOPPAD (restart mot ofullständigt .next = kraschloop, 502-klassen 17:42); kooldown 30 ⇒ nästa poll bygger klart`,
+  };
+}
+
 /** Uppvärmning: nät mätningar à 20 s — första svaret vinner. Nybyggd
  * kall app (ISR) behöver mer än våg 137:s fasta 15 s: 21:34-fallet
  * mätte false vid 15 s men appen svarade vid 21:44. */
@@ -169,12 +190,28 @@ async function raddningsbygg(p, state, oknadOrsak) {
       { timeout: 1_500_000, stdio: "inherit" }
     );
   } catch (e) {
-    logga(`RÄDDNINGSBYGG MISSLYCKADES: ${String(e).slice(0, 120)} — next run försöker igen`);
-    try {
-      execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
-    } catch {
-      /* pm2 avgör */
+    // VACCIN 2 (DRIFTSBOKEN 17:42Z): rm -rf .next skedde FÖRE bygger —
+    // misslyckat bygg lämnar artefakten saknad/partiell och pm2-restart
+    // mot den = ENOENT-kraschloop (↺ 3 700+-beviset). Artefaktgrind FÖRE
+    // start + kort kooldown — ALDRIG bara retry.
+    const artefakt = await verifieraArtefakt();
+    const start = planeraStartEfterMisslyckatBygg(artefakt.status);
+    logga(
+      `RÄDDNINGSBYGG MISSLYCKADES: ${String(e).slice(0, 120)} — ${start.meddelande} (artefakt: ${artefakt.meddelande.slice(0, 80)})`
+    );
+    if (start.startaPm2) {
+      try {
+        execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+      } catch {
+        /* pm2 avgör */
+      }
     }
+    sparaState({
+      ...lasState(),
+      restarts: (ak1aRad() ?? p).restarts ?? p.restarts,
+      senasteRaddning: Date.now(),
+      kooldownMin: start.kooldownMin,
+    });
     process.exit(1);
   }
   // ÄRLIGHETSGRIND (2026-09-16, prodincidentens 10:51-räddning): den

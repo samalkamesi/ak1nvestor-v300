@@ -3,7 +3,16 @@
 // ingen IO: varje scenario mappas mot ett bevisat fall ur kraschvakt.log
 // 2026-09-14→15 (7 feltriggrade räddningsbygg, alla omstarter +0).
 // Körs: node verktyg/testa-kraschvakt.mjs → "PASS n/n" och exit 0.
-import { planeraAtguard, tolkaPm2, kooldownAktiv } from "./kraschvakt.mjs";
+//
+// VACCIN 2 (s8-u1, DRIFTSBOKEN 2026-09-17 17:42Z): misslyckat
+// räddningsbygg startade pm2 UTAN artefaktgrind — rm -rf .next skedde
+// FÖRE bygger ⇒ restart mot saknad/partiell artefakt = ENOENT-kraschloop
+// (↺ 3 700+, nginx 502). Nu: planeraStartEfterMisslyckatBygg + struktur-
+// kontrakt på felgrenens ordning (grind FÖRE restart, kort kooldown).
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { planeraAtguard, tolkaPm2, kooldownAktiv, planeraStartEfterMisslyckatBygg } from "./kraschvakt.mjs";
 
 let pass = 0;
 const fel = [];
@@ -115,6 +124,57 @@ krav(
   "19 ingen senasteRaddning → ingen kooldown",
   kooldownAktiv({}, nu) === false
 );
+
+// ── VACCIN 2 (DRIFTSBOKEN 17:42Z): start-beslut efter misslyckat
+//    räddningsbygg — artefaktgrind FÖRE pm2, ALDRIG bara retry ─────────
+krav(
+  "20 misslyckat bygg + artefakt gron → startaPm2 (restart-bar trots felet)",
+  (() => {
+    const r = planeraStartEfterMisslyckatBygg("gron");
+    return r.startaPm2 === true && r.kooldownMin === 30;
+  })()
+);
+krav(
+  "21 misslyckat bygg + artefakt trasig → pm2 STOPPAD (kraschloop-klassen död)",
+  (() => {
+    const r = planeraStartEfterMisslyckatBygg("trasig");
+    return r.startaPm2 === false && r.kooldownMin === 30 && r.meddelande.includes("STOPPAD");
+  })()
+);
+krav(
+  "22 misslyckat bygg + artefakt okand → pm2 STOPPAD (försiktighet: omätbart ≠ restart-bar)",
+  (() => {
+    const r = planeraStartEfterMisslyckatBygg("okand");
+    return r.startaPm2 === false && r.kooldownMin === 30;
+  })()
+);
+krav(
+  "23 kooldown 30 även vid gron artefakt (osäkert läge — bygget misslyckades ju; kurens (4))",
+  kooldownAktiv({ senasteRaddning: nu - 15 * 60_000, kooldownMin: planeraStartEfterMisslyckatBygg("gron").kooldownMin }, nu) === true
+);
+
+// ── VACCIN 2 strukturkontrakt (ordagranna, pm2vakt-svitens mönster):
+//    felgrenen mäter artefakten FÖRE start-beslut, restart bara bakom
+//    grinden, kort kooldown sparas i felgrenen ─────────────────────────
+{
+  const kalla = readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "kraschvakt.mjs"), "utf8");
+  const loggPos = kalla.indexOf("RÄDDNINGSBYGG MISSLYCKADES:");
+  const felStart = loggPos >= 0 ? kalla.lastIndexOf("catch (e) {", loggPos) : -1;
+  const felSlut = kalla.indexOf("process.exit(1);", loggPos);
+  const felgren = felStart >= 0 && felSlut > felStart ? kalla.slice(felStart, felSlut) : "";
+  krav(
+    "24 felgrenen ropar verifieraArtefakt + planeraStartEfterMisslyckatBygg",
+    felgren.includes("verifieraArtefakt(") && felgren.includes("planeraStartEfterMisslyckatBygg(")
+  );
+  krav(
+    "25 pm2-restart ENDAST bakom if (start.startaPm2) i felgrenen",
+    felgren.includes("if (start.startaPm2)") && felgren.indexOf("if (start.startaPm2)") < felgren.indexOf('"pm2 restart ak1a --time"')
+  );
+  krav(
+    "26 felgrenen sparar kort kooldown (120-kvarvarande bussen botad)",
+    felgren.includes("sparaState(") && felgren.includes("kooldownMin: start.kooldownMin")
+  );
+}
 
 // ── Sammanfattning ─────────────────────────────────────────────────────
 if (fel.length) {

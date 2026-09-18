@@ -200672,6 +200672,170 @@
     "grahamSection": "Benjamin Graham sökte en marginal av säkerhet i substansen, och substansen betalas i kassa: hans krav på att bolaget ska klara svåra år utan att låna föder frågan hur stor del av resultatet som verkligen når kontot. För Graham var ett resultat som aldrig blir kassa ett anspråk, inte en tillgång — kassaflödesräkningen skiljer dem åt.",
     "ak1Section": "I AK1A:s metodik är kassaflödesräkningen grund under både resultatkvaliteten (ln-02) och frikassaperspektivet i portföljtänkandet: AKM1 läser vinstens kassatäckning som en egen dimension av kvalitet. Kursen utbildar i att läsa och räkna — så fungerar metoden, aldrig investeringsråd om enskilda aktier."
   },
+  "bk-04-koncernredovisningens-grunder": {
+    "slug": "bk-04-koncernredovisningens-grunder",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Koncernredovisning — bolaget som äger bolag: konsolideringens logik",
+    "summary": "BOKFÖRING & ÅRSREDOVISNING-familjens första steg uppför trappan efter nybörjartrion (bk-01 balansräkningen, bk-02 resultaträkningen, bk-03 kassaflödesräkningen) — och registrets första kurs om KONCERNEN: ordet koncern gav noll träffar i sonden mot 408 kurser, trots att nästan varje noterad aktie SOM ÄR en koncern. Kurserna bk-01 till bk-03 lärde läsaren läsa EN balansräkning, EN resultaträkning, EN kassaflödesräkning — men den rapport en aktieägare faktiskt får i posten är tolv, fyrtio eller trehundra sådana rapporter svetsade samman till en. Denna kurs äger svetsningen: konsolideringens logik. Tre räkneexempel bärs genom kapitlen med oförändrade tal. Signaturövningen är elimineringen: modern säljer varor till dotterbolaget för 100 Mkr (självkostnad 80), dottern säljer vidare externt för 130 — utan konsolidering ser läsaren en koncern med omsättning 230 och två separata vinster; med eliminering är koncernens EKONOMISKA sanning omsättning 130, kostnad 80, resultat 50, och årsredovisningens 230 är en sifferkollision mellan internpris och världen. Därefter minoritetsintressena: modern äger 80 procent av dottern, dotterns resultat 100 Mkr delas 80 till koncernens ägare och 20 till minoriteterna — samma kvartsdelning av dotterbolagets eget kapital på 500 Mkr (400 i koncern-EK, 100 i minoritetsposten). Och goodwill-mekaniken: köpeskillnad 700 Mkr mot verkligt nettovärde 520 Mkr lämnar 180 Mkr kvar på koncernbalansräkningen som post — inte som bedömning av framtiden utan som aritmetisk rest. Kursens genomgående tes: koncernredovisningen finns därför att juridiska skal och ekonomisk verklighet är två olika ting — bolagsrätten ser tjugotalet bolag, ekonomin ser ett — och konsolideringen är bron emellan. Efter kursen läser eleven en koncernårsredovisning som EN berättelse istället för en stapel av företag den inte kan hålla isär.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå koncernbegreppet: ett moderbolag som kontrollerar ett eller flera dotterbolag — kontroll är nyckelordet, inte ägarandel i sig — och därför redovisar som EN ekonomisk enhet trots att bolagsrätten ser flera · Följa konsolideringen: moder- och dotterbolagets balans- och resultaträkningar läggs ihop rad för rad till koncernrapporten, och moderens investering i dottern slås ut mot dotterns egna kapital (annars räknas samma pengar två gånger) · Räkna elimineringen: internförsäljning 100 Mkr (självkostnad 80, dottern säljer vidare externt för 130) — utan eliminering dubbelräknas omsättningen till 230, med eliminering blir koncernsanningen omsättning 130 och resultat 50; ligger varorna kvar i dotterns lager vid årets slut dras dessutom internvinsten 20 av lagrets värde · Dela resultatet med minoritetsintressena: modern äger 80 procent — dotterns resultat 100 Mkr ger 80 i koncernens netto och 20 i minoritetsraden, och dotterns egna kapital 500 Mkr visas som 400 inom koncern-EK och 100 som minoritetsintresse · Se goodwill uppstå: köpeskillnad 700 Mkr mot verkligt värde på förvärvade nettotillgångar 520 Mkr — resten 180 Mkr kapitaliseras som goodwill i koncernbalansräkningen (postens nedskrivningstest och ROE-verkan ägs av km-022; här ägs mekaniken som skapar den) · Läsa koncernrapporten som analysverktyg: segmenten (km-024) visar var resultatet görs, koncernnoterna (km-004) var det gömmer sig, och skillnaden mellan moderbolagets egen rapport och koncernrapporten är skillnaden mellan juridik och ekonomi",
+    "why": "BOKFÖRING & ÅRSREDOVISNING-familjens bk-serie är registrets renaste nybörjartrappa: bk-01 balansräkningen, bk-02 resultaträkningen och bk-03 kassaflödesräkningen — tre Nybörjar-kurser som var och en öppnar ett statement, men ingen som går vidare till det statement en aktieägare i praktiken möter: koncernrapporten. Sond mot 408 kurser: ordet koncern har noll träffar i titlar och sammanfattningar — koncernredovisning är samtidigt normen för varje noterat bolag i Sverige (flertalet av aktierna i studions bolagsuniversum redovisar som koncern) och den mekanism utan vilken elimineringar, minoritetsintressen och koncern-goodwill är olösliga gåtor. Grannkurserna äger var sitt annex: km-022 äger goodwill som POST (nedskrivningstestet, avskrivningsfrågan), km-026 äger transaktioner mellan relaterade parter som NOT, km-024 äger segmentredovisningen som UTDRAG — men ingen kurs äger MASKINEN som bygger koncernrapporten från moder- och dotterbalansräkningar (källägande är inte temalikhet; emission/V19-presedensen). Kursen är medvetet byggd som trappans nästa steg: samma tre statements som bk-01 till bk-03 lärde ut, men MULTIPLERADE och sammanfogda — med elimineringsexemplet (230 blir 130), minoritetsdelningen (80/20 av 100) och goodwill-resten (700 minus 520 blir 180) som tre aritmetiska bevis att konsolidering inte är administrativ utsmyckning utan rapportens hela innebörd. Och koncernläsning är utbildning i sin renaste form: att förstå hur tolv rapporter blir en är att förstå vad en aktie faktiskt ÄGER — kursen lär mekaniken, aldrig vilka aktier läsaren bör köpa.",
+    "history": {
+      "origin": "Koncernredovisningen föddes ur sin egen frånvaro: den industriella fusionens epok i slutet av 1800-talet skapade amerikanska trustbildningar och europeiska familjesfärer — Wallenberg-sfärens ursprung (km-068) hör till de svenska exemplen — där ett holdingbolag ägde tiotals verksbolag. Bolagsrätten nöjde sig med det: varje bolag var en egen juridisk person med egen redovisning. Men den som försökte förstå vad en aktie i holdingsällskapet var värd mötte en rysk docka av rapporter utan sammanlagd bild, och internehandel mellan bolagen kunde blåsa upp omsättning och resultat utan att en enda extern krona rörde sig.",
+      "evolution": "1900-talets lagstiftning stängde dockan steg för steg: tysk koncernredovisningsplikt kom på 1960-talet, svenska aktiebolagsregler följde med krav på koncernredovisning för större koncerner, och den internationella standarden som idag bär ansvaret — IFRS 10, med kontrollmodellen som avgör vilka bolag som konsolideras — gjorde under 2000-talet koncernrapporten till DEN primära rapporten för noterade bolag världen över, med moderbolagets egen rapport som bihang. Samma epok byggde ut verktygen: köpeskillnadsredovisning med goodwill som systematisk post, minoritetsintressena som egen rad, och segmentrapporteringen (km-024) som svar på nästa fråga — vad koncernen gör i sina delar.",
+      "modern": "Idag är koncernredovisning normen: en svensk storbank eller industrigrupp redovisar hundratals dotterbolag genom en konsolideringsprocess som vid årsskiftet maskinellt slår ihop, eliminerar och justerar — och aktieanalytikerns första val i rapporten är koncernen, inte juridiken. Studions läsning bygger på samma ordning: bk-01 till bk-03 lär statements, denna kurs lär sammanfogningen, km-004 och km-024 lär noter och segment — och AI-Mentorn visar elimineringsexempel på begäran, alltid som mekanik och aldrig som omdöme om en viss akties redovisning."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Koncernen — ett ekonomiskt väsen i tjugotalet juridiska skal",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konsolideringen — tolv rapporter blir en",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Elimineringarna — internhandeln som inte fick finnas",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Minoritetsintressena — när inte hela dottern är din",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Koncern-goodwill — köpeskillnadens aritmetiska rest",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Läskonsten — koncernrapporten som en enda berättelse",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Koncernen — ett ekonomiskt väsen i tjugotalet juridiska skal",
+        "intro": "Bk-01 till bk-03 lärde ett bolags tre statements. Men bolaget bakom nästan varje aktie är många bolag — och detta kapitel förklarar varför koncernbegreppet alls finns.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En aktie i en svensk industri- eller bankkoncern är sällan andelen i ETT bolag — den är andelen i ett moderbolag som äger dotterbolag som äger dotterdotterbolag, spridda över länder, register och ibland halva kartan. Bolagsrätten ser varje bolag som egen person med egen bokföring (bk-01:s grunder). Ekonomin ser något annat: en enda verklighet där pengar flyttas internt, varor säljs mellan egna bolag och resultat föds på tretton ställen samtidigt.\n\nKoncernredovisningens hela existensberättigande är detta gapet. Definitionen är kontroll: ett moderbolag som kontrollerar ett annat bolag — genom majoritetsröster, genom avtal, genom rätten att utse ledning — ska redovisa dotterbolaget som en del av sig själv, oavsett om ägarandelen är 100 procent eller 51. Kontrollen, inte procentsiffran, avgör; ett 40-procentägande med kontroll via avtal konsolideras, ett 49-procentägande utan kontroll gör det inte (det blir i stället en finansiell placering på en rad).\n\nDärmed blir koncernrapporten en översättning: från många juridiska personer till en ekonomisk. Resten av kursen är översättningens tre klassiska moment — slå ihop, ta bort det interna, dela med minoriteterna — och det avslutande viktningsexemplet goodwill. Samma tre statements som nybörjartrion lärde ut återkommer; skillnaden är att de nu är tjugotalet stycken som ska bli ett."
+          },
+          {
+            "type": "definition",
+            "content": "Koncern — moderbolag och dotterbolag under gemensam kontroll, redovisade som EN ekonomisk enhet: alla balansräkningar, resultaträkningar och kassaflödesräkningar konsolideras till en koncernrapport. Grunden är kontroll — inte ägarandelens storlek i sig."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan en koncernrapport svarar på är inte vad moderbolaget äger utan vad aktieägarna FÅR: den ekonomiska verkligheten bakom alla juridiska skalen — därför är koncernnumren de första en läsare söker, och moderbolagets egen rapport ett bihang för juridikintresserade."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konsolideringen — tolv rapporter blir en",
+        "intro": "Det första momentet är addition med ett undantag: rad för rad läggs bolagen samman — men moderns investering i dottern ska bort, annars räknas samma pengar två gånger.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grundmekaniken är additionen: koncernens balansräkning är samtliga bolags balansräkningar ADDERADE rad för rad — byggnader med byggnader, kassa med kassa, skulder med skulder. Koncernens resultaträkning är samma summation av intäkter och kostnader. Det som ser banalt ut har en djup poäng: koncernen blir ett stort sammanlagt bolag, och jämförelser mellan koncernår blir meningsfulla (bk-02:s läsregler på större kropp).\n\nUndantaget är moderens post Investeringar i dotterföretag. När modern köpt dottern för säg 400 Mkr står det som en TILLGÅNG i moderns balansräkning — men i koncernen finns ingen sådan tillgång: dotterns byggnader, maskiner och kassa är redan med via radsummeringen. Investeringen är därför ett internt anspråk som SLÅS UT: raderas mot dotterns egna kapital, och nästa kapitel visar vad som händer när de två storheterna inte träffar exakt.\n\nKassaflödesrapporten (bk-03) följer samma logik: koncernens kassaflöde är de externa rörelserna — och därmed är internehandel, interna lån och intern utdelning bortprioriterade, vilket förklarar varför koncernens kassaflöde kan se annorlunda ut än moderbolagets. Förvaltningsberättelsen (km-002) och övriga delar av årsredovisningen skrivs för koncernen som helhet — årsredovisningen en aktieägare håller i handen är alltså redan från början en koncernprodukt."
+          },
+          {
+            "type": "insight",
+            "content": "Koncernbalansräkningens viktigaste strykning: moderns investeringspost försvinner — den är ett anspråk på något koncernen redan äger via radsummeringen; det egna kapitalet som återstår efter utslagningen är koncernens gemensamma ägarpott."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Elimineringarna — internhandeln som inte fick finnas",
+        "intro": "Kursens signaturkapitel: samma tre tal genom hela övningen — internförsäljning 100, självkostnad 80, externt vidareförsäljningspris 130 — visar varför omsättning 230 är en sifferkollision och 130 är sanningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Moderbolaget tillverkar komponenter med självkostnad 80 Mkr och säljer dem till dotterbolaget för 100 Mkr. Dottern monterar och säljer vidare till kunder utanför koncernen för 130 Mkr. Som separata bolag ser rapporterna ut så: modern omsätter 100 med vinst 20 (100 minus 80); dottern omsätter 130 med vinst 30 (130 minus 100). Lägg ihop utan eftertanke och koncernen verkar omsätta 230 med resultat 50.\n\nKonsolideringen eliminerar det interna: försäljningen 100 är ingen intäkt för koncernen (kunden satt inne i huset) och inköpet 100 är ingen kostnad (säljaren satt inne i huset). Båda raderna stryks — och koncernens resultaträkning blir externt korrekt: omsättning 130, kostnad 80, resultat 50. OBSERVERA att resultatet 50 är detsamma i båda framställningarna (20 plus 30); elimineringen förändrar INTE vinsten när varan lämnat koncernen — den tar bort den dubbelräknade OMSÄTTNINGEN och gör marginalen ärlig: 50 på 130 är koncernens verkliga förhållande, 50 på 230 är en illusion av storlek.\n\nMen varan kan också stanna KVAR: ligger den kvar i dotterns lager vid årets slut har koncernen inte sålt den än — och modern har ändå räknat hem en internvinst på 20. Lagerposten i koncernbalansräkningen är då uppskriven med vinsten som bara existerar internt; konsolideringen drar av internvinsten från lagret och resultaten justeras ned tills varan faktiskt lämnar koncernen. Samma mekanik gäller interna fordringar och skulder (modern lånar dottern pengar: en fordran här, en skuld där — i koncernen tar de ut varandra) och intern utdelning (dottern delar ut till modern: kassa flyttas internt, ingen koncernhändelse). Internhandel är också relaterade-part-transaktioner — km-026 äger notsystemet som listar dem."
+          },
+          {
+            "type": "tabell",
+            "content": "Samma verksamhet med och utan eliminering: | Rad | Utan eliminering (summa bolag) | Med eliminering (koncern) | — | Omsättning | 230 (100 plus 130) | 130 | — | Kostnader | 180 (80 plus 100) | 80 | — | Resultat | 50 (20 plus 30) | 50 | — | Bruttomarginal | 22 procent | 38 procent | — Skillnaden i marginal är elimineringens hela poäng: koncernens verkliga förhållande mellan externt pris och verklig kostnad — 50 delat med 130 — syns först när internhandeln strukits."
+          },
+          {
+            "type": "insight",
+            "content": "Elimineringens signum är asymmetrin: omsättning och kostnader förändras, resultaten gör det inte — NÄR varan lämnat koncernen. Det som alltid förändras är proportionerna: marginaler, omsättningens storlek, bolagens inbördes vikter — och därmed alla nyckeltal som byggs på dem."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Minoritetsintressena — när inte hela dottern är din",
+        "intro": "Konsolidering på kontroll medför att även bolag koncernen bara äger 80 procent tas med till 100 procent — minoritetsintressena är mekanismen som skiljer ut de saknade 20.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kontrollmodellen slår igenom här på ett sätt som förvånar nya läsare: dotterbolaget konsolideras TILL HUNDRA PROCENT — alla tillgångar, alla skulder, hela omsättningen — även när moderbolaget äger bara 80. Logiken är att koncernen KONTROLLERAR hela verksamheten; den ekonomiska verkligheten är hel oavsett ägarandelen.\n\nMen ägandet är det inte. Därför delar koncernredovisningen upp två rader. Resultaträkningen: dotterns resultat 100 Mkr visas först som helhet i koncernens rörelseresultat, och därefter dras MINORITETERNAS ANDEL — 20 Mkr (20 procent av 100) — som egen rad före det netto som tillhör koncernens aktieägare (80 Mkr). Balansräkningen: dotterns egna kapital 500 Mkr delas i 400 (moderns andel, inne i koncernens egna kapital) och 100 som eget kapital-motsvarande rad för minoritetsintressena.\n\nFör analysen är detta två gånger nyttigt. Det syns VAD i koncernen som faktiskt tillhör ägarna — en koncern där minoritetsandelen växt stor bär en resultatström som aktieägaren aldrig ser som utdelning från koncernen. Och det syns VILKA dotterbolag som bara delvis ägs — förvärv gjorda i etapper (pe-03:s förvärvsmaskin bygger ofta så) lämnar tydliga minoritetsspår. Icke-kontrollerade äganden på 20 till 50 procent konsolideras INTE utan visas som finansiella placeringar — ägandets gråzon där inflytande finns men kontroll saknas, redovisade efter eget regelverk och ofta svåra att värdera (en klassisk gömma i koncernbalansräkningar; km-004:s noter är sökplatsen)."
+          },
+          {
+            "type": "tabell",
+            "content": "Dotterbolaget 80-procentigt: resultat 100 Mkr, eget kapital 500 Mkr: | Rad | Koncernens visning | Minoritetens andel | — | Dotterns resultat | 100 i koncernrörelsen | 20 som minoritetsrad | — | Koncernens netto | 80 till aktieägarna | 20 lämnar koncernen | — | Dotterns EK | 400 i koncern-EK | 100 i minoritetspost | — De fyra talen är samma två divisioner: 100 gånger 0,8 och 500 gånger 0,8 — och den som kan se dem i en rapport kan också räkna BAKLÄNGES: en minoritetsrad på 25 Mkr vid 20-procentigt ägande betyder dotterresultat 125."
+          },
+          {
+            "type": "insight",
+            "content": "Minoritetsraden är koncernens ärlighetssiffra: konsolideringen tog in HELA dottern — raden visar hur stor del av det hela som ska lämna koncernen igen innan aktieägarnas eget netto står kvar."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Koncern-goodwill — köpeskillnadens aritmetiska rest",
+        "intro": "Kapitel två lovade ett problem när moderns investering och dotterns egna kapital inte träffar: detta kapitel visar vad som blir kvar — posten som kallas goodwill.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kapitel två övertalade oss att slå ut investeringen mot det egna kapitalet. Vid ett FÖRVÄRV är de två storheterna nästan aldrig lika — och skillnaden är koncernredovisningens mest omdiskuterade post. Exemplet: koncernen köper dotterbolaget för 700 Mkr. Dotterns identifierbara nettotillgångar — byggnader, maskiner, varulager, kassa, minus skulder — värderas till verkliga värden till 520 Mkr. Köpeskillnaden är alltså 180 Mkr STÖRRE än det förvärvade nättet.\n\nVad är de 180? Två delar, redovisningstekniskt: en uppskrivning av tillgångar till verkliga värden (redan inräknad i 520) och RESTEN — det som inte kan hänföras till någon identifierbar tillgång: kundrelationer, varumärke, samlad kompetens, synergier. Den resten kapitaliseras som GOODWILL i koncernbalansräkningen: en post på 180 Mkr som varje läsare av förvärvsintensiva koncerner möter i stor skala.\n\nKursen äger RESTEN:s tillkomst — aritmetiken 700 minus 520. Vad posten SEDAN gör ägs av km-022: goodwill skrivs inte av systematiskt utan testas för nedskrivning, och en nedskrivning träffar resultatet i klump. För koncernläsaren är kopplingen dubbel: förvärvsmaskiner (pe-03) producerar goodwill-poster, och emissioner som betalar förvärv (ks-04) förstorar båda sidor av balansräkningen. En koncern med goodwill värd en fjärdedel av balansräkningen bär därför en implicit FRAMTIDSFÖRVÄNTNING i sin balansräkning — förvärvspriset betalade för något osynligt, och syns det inte i resultaten kommer nedskrivningstestet (km-022) förr eller senare."
+          },
+          {
+            "type": "insight",
+            "content": "Goodwill i en mening: köpeskillnaden minus verifierbara tillgångar — priset för det som inte kan räknas, kapitaliserat som post; ju större andel av balansräkningen, desto mer av bolagets värde står i FRAMTIDENS kolonn istället för historiens."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Läskonsten — koncernrapporten som en enda berättelse",
+        "intro": "Sista steget för samman de fyra momenten till en läsordning — från koncernens siffror till bolagens verkligheter och tillbaka.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Koncernredovisningens moment i ordning: SLÅ IHOP (raderna adderas; investeringen slås ut), ELIMINERA (internt försvinner: internhandel, interna fordringar och skulder, internutdelning, internvinst i lager), DELA MED MINORITETERNA (hela dottern in, främmande andel ut), VIKTA GOODWILL (resten av köpeskillnaden kvarstår som post). Fyra moment, en rapport — och en läsordning som vänder på samma steg.\n\nLÄSORDNINGEN. Först koncernens siffror — de är aktieägarens ekonomiska verklighet (kapitel ett). Sedan segmenten (km-024): koncernens resultat styckat på verksamhetsområden visar VAR ekonomin görs — en koncern kan bära en guldgruva och en risig affär i samma totalsiffra. Därefter noterna (km-004): koncernnoterna är detaljernas hem — förvärv, minoriteter, relaterade parter (km-026). Kvartalsrapporten (km-006) är koncernens puls i miniatyr. Och slutligen bakslagningen: vad moderbolagets EGEN rapport säger om juridiken — utdelningskapacitet bor ofta där — men aldrig om koncernens ekonomi.\n\nKvartals- och årsströmmen av koncernsiffror är därmed en enda berättelse istället för en stapel av företag läsaren inte kan hålla isär — och som alltid i studions anda: koncernläsning är mekanik och förståelse, aldrig en omdömesmaskin; vad en rapport VÄRD är i läsarens eget arbete, inte kursens."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: välj en koncernårsredovisning från en bekant aktie (studions bibliotek och bolagsuniversum räcker). Uppgift ett: hitta minoritetsraderna i koncernresultatet och koncern-EK — räkna baklänges på något delägt dotterbolag om andelen framgår av noterna. Uppgift två: leta upp en internhandel i koncernen (relaterade-part-noten är sökplatsen, km-026) och beskriv med kapitel tre:s modell vad omsättningen skulle vara utan den. Uppgift tre: hitta goodwill-posten och uppskatta dess andel av koncernens balansomslutning — och formulera i tre meningar vad den andelen säger om hur stor del av balansräkningen som står i framtidsförväntningar istället för verifierade tillgångar."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch läste koncerner som berättelser: hans favoritfall var bolag där en dold dotterverksamhet var värd mer än hela moderbolagets börskurs — dottern-värd-mer-än-modern-logiken. Koncernredovisningen är just den mekanik som gör sådana fall SYNLIGA: segmenten (km-024) visar vad delarna gör, minoritetsraderna visar vad koncernen inte helt äger, och elimineringarna visar hur stor den verkliga externa affären är. Lynch skulle ha sagt att konsolideringen är arbetet med att skilja historien från bokföringen — och att minoritets- och segmentnoter är de ställen en tålmodig läsare hittar det som marknaden inte orkat räkna på.",
+    "grahamSection": "Benjamin Graham manade sina läsare att behandla balansräkningen som faktamängd och kursen som åsikt — och koncernredovisningen testar den maningen hårt: goodwill är per definition det i balansräkningen som INTE är verifierbar faktamängd utan betald förväntning, och en koncern med stor goodwillandel bär mer åsikt än fakta i sin balansräkning. Grahams försiktighet med uppskrivna poster (km-030:s säkerhetsmarginal-tänkande) är därför direkt tillämpbar på kapitel fem:s rest — köpeskillnaden är sann aritmetik, men VÄRDET av det den köpte är en annan fråga, och Grahams svar på den frågan var alltid marginalen.",
+    "ak1Section": "I AK1A:s metodik är koncernredovisningen NAVET i fundamental läsning: AKM1:s variabler och nyckeltalsbanken (km-serien) bygger på koncernsiffror per konstruktion — bolagsuniversumets bolag är koncerner, och elimineringar, minoriteter och goodwill är därför inte kuriosa utan förutsättningar för att multiplar och marginaler (bk-01 till bk-03:s nybörjarverktyg) ska betyda något. Studions AI-Mentorn visar elimineringsexempel och minoritetsdelningar på begäran — alltid som mekanik och historiebeskrivning, aldrig som omdöme om en viss koncerns redovisning eller värde. Koncernläsning är utbildning; beslutet om vad en aktie är värd förblir läsarens eget arbete."
+  },
   "ln-01-dupont-analysen": {
     "slug": "ln-01-dupont-analysen",
     "category": "LÖNSAMHET",
@@ -202755,6 +202919,182 @@
     "lynchSection": "Peter Lynch älskade växare — men hans bästa växare var bolag som kunde växa utan att fråga marknaden om mer kapital: bolaget som växer utan att behöva nytt eget kapital är hans version av den låga reinvesteringskvoten. Hans varning för 'diworsification' (tx-01:s historia) är samma lära i förvärvsversionen: tillväxt genom köp som sjunker under kapitalkostnaden är ingen tillväxt i värde. Lynchs snabba växare och tröga växare skiljs i hans system på takten — hans egen räkneregel, att vinstandelen som återinvesteras bör avkasta mer än ägaren kunnat få själv, skiljer dem på värdet.",
     "grahamSection": "Benjamin Graham köpte inte tillväxtberättelser — han köpte värdefastsättningar med säkerhetsmarginal (km-030). Men hans krav på att företaget är finansiellt starkt och hans skepsis mot bolag som ständigt återkommer till marknaden för nytt kapital är värdemotorns tidigaste röst: bolag vars tillväxt ständigt kräver nytt kapital från ägarna är i Grahams läsning ett skuldbrev, inte en tillgång. Att värdeskapandet måste mätas mot kapitalets alternativkostnad var hela hans diskonteringsläras tysta fundament.",
     "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familiens toppblock: tx-01 skiljer källorna, tx-02 rörelsens inre, och värdemotorn sätter priset — ROIC × reinvesteringskvot med spridningen som domslut, kopplad till AKM2:s tillväxtdimension där betyget faller på kapitaleffektiv tillväxt. Brobyggen: mot roic-01 (spridningsbegreppets hem), mot mt-01/mt-02 (varaktighetens källa) och mot vr-01 (multiplern som följer motorn)."
+  },
+  "tx-04-tillvaxtens-granser": {
+    "slug": "tx-04-tillvaxtens-granser",
+    "category": "TILLVÄXT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Tillväxtens gränser — S-kurvan, mättnaden och utrymmesräkningen",
+    "summary": "TILLVÄXT-familjens fjärde kurs och det andra avancerade rummet — kursen som äger TAKET. v01 äger måttet (försäljningstillväxten), tx-01 källan (organisk eller förvärvad), tx-02 motorerna (volym, pris och mix), tx-03 värdeskapandet (återinvesteringens matematik) — men ingen av dem äger den fråga som till slut avgör varje tillväxtberättelse: HUR LÄNGE kan tillväxten löpa? Denna kurs äger den frågan. Kärnbegreppet är S-KURVAN — den logistiska vägen där tillväxten i absoluta enheter först stiger, kulminerar vid hälften av mättnaden och sedan faller — och dess mätredskap UTRYMMESRÄKNINGEN: penetrationsgraden, det återstående utrymmet, flödesandelen mot beståndsanden och klockan som räknar år till det praktiska taket. Signaturgreppet är Svea Laddning AB, ett helt påhittat bolag vars installerade bestånd växt 240 000 · 300 000 · 360 000 · 420 000 · 480 000 laddportar — exakt 60 000 nya per år i fyra år — medan PROCENTSTEGEN fallit 25,0 · 20,0 · 16,7 · 14,3 procent: procentens fade är ren aritmetik, inte konkurrens, och kurssignaturen är att läsa den som sådan. Med taket 2 400 000 portar är penetrationsgraden 480 000 ÷ 2 400 000 = 20,0 procent och det återstående utrymmet 80,0 procent; den logistiska kalibreringen r = 60 000 ÷ 384 000 = 0,15625 ger procenttillväxten som en FALLANDE LINJÄR FUNKTION AV PENETRATIONEN — 12,5 procent vid 20, 7,8 vid 50, 3,1 vid 80 — kulmen 93 750 portar per år vid halverat tak och spegelsymmetrin att 20 och 80 procents penetration bär exakt samma absoluta tillväxt. Kursens tre klockor mot frågan hur länge: den linjära läsningen 24,0 år till det praktiska taket, den naiva procentextapolationen 11,8 år (som når 100 procent efter 13,7 år — en absurditet som modellen själv inte kan se) och den logistiska klockan 17,7 år — samma fråga, tre svar, och skillnaden mellan dem är felet i varje tillväxtprognos som glömmer taket. Gränserna mot grannarna hålls skarpa: måttet ägs av v01, motorerna av tx-02, värdeskapandet av tx-03, moatens varaktighet av mt-02, förväntningarnas pris av kt-02, cykelns normalisering av vr-02. Ramen genomgående: utrymmesräkningen strukturerar läsning av hur länge en tillväxt KAN löpa — utbildning, aldrig råd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Läsa tillväxtens tak som en egen dimension — två bolag med identisk tillväxt i procent kan ha väsensskilda framtidar bara deras penetrationsgrader skiljer: 14,3 procent på 20 procents penetration är början på en berättelse, 14,3 procent på 80 procents penetration är dess slut · Behärska S-kurvan: den logistiska vägen där absolut tillväxt kulminerar vid hälften av taket — Svea Laddnings kalibrering r = 60 000 ÷ 384 000 = 0,15625 ger kulmen 0,15625 × 600 000 = 93 750 portar per år vid 1 200 000 installerade, och procenttillväxten g(p) = r × (1 − p): 12,5 procent vid 20,0 · 10,9 vid 30,0 · 7,8 vid 50,0 · 5,0 vid 68,0 · 3,1 vid 80,0 — en fallande linjär funktion av penetrationen · Räkna procentens fade ur kronorna: konstant absolut tillväxt 60 000 portar per år ger procentsteg 25,0 · 20,0 · 16,7 · 14,3 mot beståndet 240 000 → 480 000 — när nämnaren växer sjunker procentsatsen utan att någonting ha hänt i konkurrensen · Använda den logistiska klockan: tid från penetration p1 till p2 = (1 ÷ r) × ln(odds2 ÷ odds1), med 1 ÷ r = 6,4 år: 20 → 50 procent tar 6,4 × ln 4 = 8,9 år, 50 → 80 procent likaså 8,9 år (korridorens symmetri), hela resan 20 → 80 procent 6,4 × ln 16 = 17,7 år · Ställa tre klockor mot samma fråga och läsa skillnaden som prognosrisk: linjärt 24,0 år till det praktiska taket (1 440 000 ÷ 60 000), naiv procentextapolation 11,8 år (1,125 upphöjt till n = 4), logistiskt 17,7 år — och den naiva modellens absurtet att nå 100 procent efter 13,7 år (1,125 upphöjt till n = 5) · Skilja flödesandel från beståndsandel: Svea Laddning säljer 60 000 av marknadens 240 000 nya portar = 25,0 procent av flödet mot 20,0 procent av beståndet — flödet är nuets röst, beståndet historiens medelvärde, och vid oförändrad flödesandel vandrar beståndsanden mot flödesanden · Läsa marknadsvinden: andel som sjunker 25,0 → 22,0 procent i ett marknadsflöde som växer 240 000 → 300 000 ger 0,22 × 300 000 = 66 000 enheter — 10,0 procent fler sålda med SÄNKT position: enhetstillväxt är inte positionstillväxt · Räkna ersättningsandelen ur bruttotillväxten: av 60 000 sålda portar ersätter 12 000 utgångna — netto 48 000 mot beståndet 480 000 = 10,0 procent verklig expansion mot 12,5 brutto · Undvika fällorna: det statiska taket (en marknad som växer 3,0 procent per år har efter tio år taket 2 400 000 × 1,3439 ≈ 3 225 000 — taket andas), procentextapolationen (modellen når 100 procent utan att blinka), TAM-förälskelsen (bolagets tak är dess ANDEL av marknaden, inte marknadens storlek) och flow-stock-förväxlingen · Bygga gränsparagrafen — penetrationsgrad, återstående utrymme, vilken klocka, ersättningsandel — som standardvy i varje genomräkning av ett tillväxtbolag (ek-03), och ge mättnadsrisken sin rad i riskmatrisen (rs-04): en risk utan datum men med riktning",
+    "why": "TILLVÄXT-familjen hade mätt tillväxtens källa, motorer och värde — men inte dess LÄNGD. v01 (Nybörjare) äger måttet: försäljningstillväxten som rad i rapporten. v02 (Intermediär) äger ARR-konventionen: återkommande intäkter som eget släkte. v03 (Nybörjare) äger spridningen: intäktsdiversifieringen. tx-01 (Intermediär) äger källan: organisk mot förvärvad tillväxt. tx-02 (Intermediär) äger motorerna: volym, pris och mix. tx-03 (Avancerad) äger värderingen av tillväxten: när återinvesteringen skapar värde och när den bränner det. Gemensamt behandlar de tillväxten som ett TILLSTÅND — hur stor, hur sammansatt, hur lönsam — och lämnar öppen den fråga som varje multipel i praktiken besvarar i förväg: hur många år räcker den? Det är ingen kuriosa utan tillväxtläsningens fjärde fråga: procenttillväxt på låg penetration är en berättelses inledning, samma procent på hög penetration dess sista kapitel, och skillnaden syns inte i någon av familjens tidigare mått — den bor i förhållandet mellan bestånd och tak. En läsare som aldrig byggt en S-kurva ser två identiska tillväxtbolag där det ena står vid kurvans uppförsbacke och det andra vid nedförsbacken. Därför Avancerad-nivån och därför det genomgående exemplet: Svea Laddning AB, ett helt påhittat bolag i laddinfrastruktur — en bransch där taket faktiskt är räkneligt, eftersom antalet laddplatser har en fysisk mättnad — med beståndet 480 000 portar mot taket 2 400 000, procentstegen 25,0 · 20,0 · 16,7 · 14,3 vid konstanta 60 000 nya per år, och den logistiska kalibreringen som ur en enda observerad tillväxt härrör hela kurvan: kulmen 93 750 portar per år, spegelsymmetrin 20–80, klockan 17,7 år. Kursen flyttar aldrig grannarnas stenar: tx-03 äger återinvesteringens matematik och frågan om tillväxten är VÄRD sitt pris, mt-02 äger moatens varaktighet (varför ett bolag kan springa snabbare än marknaden), kt-02 äger förväntningsanalysen (vad multipeln redan prissätter), vr-02 äger den normaliserade multipeln, v01–v03 sina mått, ma-04 konjunkturens klockor — här ägs endast TAKET: penetrationen, mättnaden, utrymmet och tiden till dess praktiska rand. Med fjärde kursen får TILLVÄXT sitt andra avancerade rum och trappan sin slutvägg: den som mätt källan, motorerna och värdet kan nu också räkna hur långt huset är — och skilja en tillväxt som har år kvar från en som har minnen kvar.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — procentens fade medan kronorna består",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — S-kurvan och den logistiska klockan",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — tre klockor mot samma fråga",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — utrymmesräkningens fyra mått",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — gränsparagrafen i varje tillväxttes",
+        "minutes": 4
+      }
+    ],
+    "history": {
+      "origin": "Tanken att tillväxt har en inbyggd broms är äldre än aktiemarknaden. Där befolkningsekonomerna på 1830-talet såg befolkningen växa geometriskt satte Verhulst 1838 namn på motkraften: den logistiska kurvan, där tillväxttakten är proportionell mot såväl det redan etablerade som det återstående utrymmet — en växel som växer av sig själv och hejdar sig själv. Samma form återfanns i spridningslärans studier av hur nyheter, epidemier och innovationer färdas genom en befolkning: antagandet från början är långsamt, mitt i antagandet snabbast, i slutet nästan stilla — och när Bass 1969 formade sin antagandemodell för nya produkter var S-kurvan redan spridningslärans naturlag. För kredit- och bolagsanalysen blev kurvan en hantverksregel: en produkt med räknelig mättnad — telefonlinjer, bilar per hushåll, laddplatser per fordonsflotta — har en tillväxtbana som kan kalibreras från en enda punkts penetration och tak.",
+      "evolution": "Efterkrigstidens expansionsårtionden gjorde taket till en analysfråga för varje tillväxtbolag. Telefonens spridning från kuriositet till hushållsinventarium följde S-kurvan i länderna i takt — och analysen av när mättnaden närmade sig blev teleoperatörernas ödesfråga. Strategibranschen formaliserade på 1970- och 80-talen utrymmesräkningen: den adresserbara marknaden som trappsteg av tak — totalt, tjänbart, nåbart — där varje steg skars ner mot det bolaget faktiskt kunde räkna med att nå. IT-expansionen på 1990-talet och mobilerans genombrott på 2000-talet gav kurvan dess mest citerade läxor: bolag vars procenttillväxt extrapolerats ett decennium in i framtiden medan penetrationen passerade hälften, och vars börsvärden skrevs om när procentens fade — aritmetiskt ofrånkomlig — började synas i rapporterna. Sverige fick sina egna S-kurvor i bredbandsutbyggnaden och senare i laddinfrastrukturen, där taket är fysiskt räkneligt på ett sätt som få marknader erbjuder.",
+      "modern": "I labbet är denna kurs TILLVÄXT-familjens tak: den som mätt källan (tx-01), motorerna (tx-02) och värdeskapandet (tx-03) saknar fortfarande längdmåttet — och utan det vet läsaren inte om en tolvprocentig tillväxt är en ramp eller en utloppskanal. Kursens bidrag till metodiken är gränsparagrafen: varje tillväxttes följd av penetrationsgraden, det återstående utrymmet, den klocka som räknas med och ersättningsandelen i bruttoförsäljningen — en läsning som i riskmatrisen (rs-04) får mättnadsrisken sin egen rad: en risk utan datum men med riktning, mätbar i procentenheter kvarvarande utrymme. Kopplingen till husets övriga rum är medveten tät: moatens varaktighet (mt-02) förklarar varför ett bolag kan hålla en flödesandel över sitt historiska jämviktsläge, förväntningsanalysen (kt-02) äger vad multipeln prissätter av de återstående åren, och den normaliserade multipeln (vr-02) skiljer cykelns topp från kurvans. Och ramen är oföränderlig: utrymmesräkningen talar om hur länge en tillväxt KAN löpa — vad läsaren betalar för den är värderingsfamiljens fråga, inte denna kursens; utbildning, aldrig råd."
+    },
+    "lynchSection": "Peter Lynchs arbetssätt med tillväxtbolag innehåller kursens fråga i sin mest praktiska form: hans observation att de farligaste bolagen att betala dyrt för är de vars tillväxttakt just är på väg att falla — inte för att verksamheten försämrats, utan för att mättnaden närmar sig. Lynch skrev om hur en kedja som växt i tjugo procent per år i ett antal år, och som marknaden lärt sig prissätta i den takten, möter en vägg av ren aritmetik när antalet butiker, kunder eller hushåll närmar sig sitt tak: den N:de butiken öppnas i en stad där de övriga redan finns, och procenten faller fastän varje ny butik är lika bra som den första. Hans läsning är kursens: han skilde mellan berättelsens innehåll (produkten, ledningen, positionen) och berättelsens LÄNGD (hur många dubblingar som fysiskt återstår), och hans varning var att marknaden betalar för den andra med data från den första. Den praktiska övning han rekommenderade — räkna själv hur stor andel av det tänkbara universum bolaget redan nått — är exakt denna kurss utrymmesräkning: innan tillväxtprocenten får tala får taket tala.",
+    "grahamSection": "Benjamin Grahams marginal-tanke ger kursens fråga sin försiktighetsform: en tillväxtprognos är en hypotes om framtiden, och marginalen är det skydd som krävs när hypotesen visar sig ha en slutpunkt som prognosen inte kände till. Graham och Dodd var tidiga med att varna för priserna som diskonterade långa serier av hög tillväxt just eftersom seriens längd är det minst mätbara i hela kalkylen — företagets historia kan ange hur fort det växt, men bara marknadens fysik anger hur länge det KAN, och den fysiken — taket, penetrationen, mättnaden — står inte i bolagets egna rapporter utan i världen utanför dem. Grahams krav på att värdet ska stå på sådant som kan räknas här och nu, med tillväxt som möjlighet snarare än fundament, är ur detta perspektiv en gränshyllning: han vägrade betala för år han inte kunde räkna. Vägen sammanfattad i kursens spegel: den som kör naiv procentextapolation har byggt sin marginal på en modell som når 100 procent penetration utan att blinka — och marginal som vilar på en omöjlighet är ingen marginal.",
+    "ak1Section": "I AK1A:s metodik är denna kurs TILLVÄXT-familjens fjärde steg — det andra avancerade rummet, efter tx-03:s återinvesteringens matematik och bredvid familjens tre tidigare rum. Dess roll i metodiken är att varje tillväxtläsning får ett tak: frågan hur många år återstår ställs automatiskt bredvid frågan hur snabbt, och svaret söks i utrymmesräkningens fyra mått — penetrationsgrad, återstående utrymme, flödesandel mot beståndsandel och klockan till det praktiska taket — snarare än i en känsla av att bolaget nog växer ett tag till. I AKM1-sammanhanget matar kursen tillväxtvariablernas tolkning: en försäljningstillväxt (v01) som läses utan penetration är en halv siffra — samma procent är olika berättelser på 20 och 80 procents mättnad, och värdet av skillnaden syns i förväntningsanalysen (kt-02), där multipeln i praktiken prissätter antalet återstående tillväxtår. I ekosystemets dokumentationsdisciplin (ek-03) loggas gränsparagrafen som standardvy: penetrationsgrad och tak med källa, vald klocka motiverad, ersättningsandelen noterad — så att nästa läsare kan räkna om klockan mot sitt eget tak. Genomgående exempel är Svea Laddning AB — ett helt påhittat bolag, valt för att laddinfrastrukturens tak är fysiskt räkneligt: bestånd 480 000 laddportar, tak 2 400 000, penetration 20,0 procent, konstant absolut tillväxt 60 000 portar per år, kalibrering r = 0,15625, kulmen 93 750 och den logistiska klockan 17,7 år från 20 till 80 procent. Kursen äger inte grannarnas stenar: tx-03:s värderingsmatematik, mt-02:s moatvaraktighet, kt-02:s prissatta förväntningar, vr-02:s normalisering, ma-04:s konjunkturklockor och v01–v03:s mått nämns och länkas men byggs aldrig om. Och hela ramen är husets: utrymmesräkningen talar om hur länge en tillväxt kan löpa — vad läsaren gör med den kunskapen är läsarens eget beslut; utbildning, aldrig råd.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — procentens fade medan kronorna består",
+        "intro": "Familjen har mätt källan, motorerna och värdet (tx-01 till tx-03, v01 till v03). Detta kapitel öppnar den dimension ingen av dem äger: längden — hur många år tillväxten har kvar innan den möter sitt tak.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Frågan heter: hur länge kan tillväxten löpa? Tänk två bolag med identisk rapportrad — fjolårets tillväxt 14,3 procent i båda fallen, identisk produkt, identisk ledning. Det första bolaget har nått 20,0 procent av sin tänkbara marknad. Det andra har nått 80,0. Efter varenda mått som familjen hittills mätt är bolagen utbytbara — men deras nästa tio år är olika historier. Det första bolagets 14,3 procent är en ramp: framför det ligger fyra femtedelar av marknaden outforskad och varje såld enhet gör nästa lite lättare. Det andra bär samma procent på en nedförsbacke: återstår en femtedel, och samma absoluta ansträngning producerar allt mindre proportionell rörelse. Skillnaden bor inte i något mått familjen byggt — den bor i FÖRHÅLLANDET MELLAN BESTÅND OCH TAK: vad branschen kallar penetrationsgraden. Detta är S-kurvans territorium: tillväxtens bana mot ett ändligt utrymme, där takten i absoluta enheter först stiger, kulminerar vid hälften av mättnaden och sedan faller — formen som ger kurvan dess S."
+          },
+          {
+            "type": "text",
+            "content": "Genomgående exempel är Svea Laddning AB — ett HELT påhittat bolag i laddinfrastruktur, valt för att branschen bär kursens poäng i ren form: taket är fysiskt räkneligt, eftersom antalet tänkbara laddplatser har en mättnad (bilar och parkeringsytor är ändliga). Siffrorna: installerat bestånd 480 000 laddportar; tak — den totalt adresserbara mängden portar — 2 400 000; penetrationen 480 000 ÷ 2 400 000 = 20,0 procent; återstående utrymme 1 − 0,20 = 80,0 procent. Beståndets historia, i portar: 240 000 · 300 000 · 360 000 · 420 000 · 480 000. Läs serien en gång till och markera det som är kursens första signatur: den absoluta tillväxten är EXAKT 60 000 portar varje år — konstant i kronor och enheter — medan procentstegen faller 25,0 · 20,0 · 16,7 · 14,3 procent, ty varje år delar samma 60 000 med ett större bestånd: 60 000 ÷ 240 000 = 25,0; 60 000 ÷ 300 000 = 20,0; 60 000 ÷ 360 000 = 16,7; 60 000 ÷ 420 000 = 14,3. PROCENTENS FADE ÄR ARITMETIK, INTE KONKURRENS. En läsare som ser fallande procentsteg och tolkar dem som försvagad affär har förväxlat nämnaren med verksamheten — och en analys som belönar stigande procent på växande bestånd har förväxlat acceleration med storlek."
+          },
+          {
+            "type": "definition",
+            "content": "TAKETS BYGGSTENAR — (1) TAKET (K): den totalt adresserbara mängden — för Svea Laddning 2 400 000 portar; (2) BESTÅNDET (N): det installerade eller sålda utfallet hittills — 480 000 portar; (3) PENETRATIONSGRADEN (p): N ÷ K = 480 000 ÷ 2 400 000 = 20,0 procent; (4) DET ÅTERSTÅENDE UTRYMMET (1 − p): 80,0 procent — det som återstår att erövra; (5) FLÖDESANDELEN: bolagets andel av marknadens ÅRLIGA nyförsäljning — Svea Laddning säljer 60 000 av marknadens totalt 240 000 nya portar per år = 25,0 procent av flödet, mot 20,0 procent av beståndet: flödet är nuets röst, beståndet historiens medelvärde; (6) S-KURVAN: banan N(t) mot K, vars TAKT r × N × (1 − N ÷ K) först stiger, kulminerar vid N = K ÷ 2 och sedan faller. Gränsen mot grannarna: MÅTTET ägs av v01, KÄLLAN av tx-01, MOTORERNA av tx-02, VÄRDET av tx-03, MOATENS VARAKTIGHET av mt-02 — denna kurs äger endast TAKET: penetrationen, mättnaden, utrymmet och tiden till dess praktiska rand."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — S-kurvan och den logistiska klockan",
+        "intro": "S-kurvan är konstruktionen — en enda kalibrering ur en observerad tillväxt härrör hela banan: takten som funktion av penetrationen, kulmen och klockan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den logistiska regeln lyder: absolut tillväxt per år = r × N × (1 − N ÷ K) — proportionell mot det ETABLERADE (N) och det ÅTERSTÅENDE (1 − N ÷ K) tillsammans. Kalibrera den mot Svea Laddning med en enda ekvation: i läget N = 480 000 var tillväxten 60 000, så r = 60 000 ÷ (480 000 × (1 − 0,20)) = 60 000 ÷ 384 000 = 0,15625 — och hela kurvan är nu given. Tre egenskaper ur regeln. För det första: PROCENTTILLVÄXTEN ÄR EN FALLANDE LINJÄR FUNKTION AV PENETRATIONEN — procenttakten g(p) = r × (1 − p): vid 20,0 procents penetration 0,15625 × 0,80 = 12,5 procent; vid 30,0 0,15625 × 0,70 = 10,9; vid 50,0 7,8; vid 68,0 5,0; vid 80,0 3,1; vid 90,0 1,6. Procenten har inget eget liv — den är utrymmets skugga. För det andra: KULMEN. Absolut tillväxt är som störst när N × (1 − N ÷ K) är som störst, vilket sker vid N = K ÷ 2 = 1 200 000 portar — halverat tak — och uppgår till r × K ÷ 4 = 0,15625 × 600 000 = 93 750 portar per år: Svea Laddning kommer att sälja SOM STÖRST just när halva marknaden är dess, inte i början. För det tredje: SPEGELSYMMETRIN — penetrationerna 20,0 och 80,0 procent bär exakt samma absoluta tillväxt: 0,15625 × 480 000 × 0,80 = 60 000 och 0,15625 × 1 920 000 × 0,20 = 60 000. Väggen upp och väggen ner är samma vägg sedd från var sin sida."
+          },
+          {
+            "type": "tabell",
+            "content": "SVEA LADDNINGS S-KURVA — procenttakt g(p) = 0,15625 × (1 − p) och absolut takt mot taket 2 400 000: | Penetration p | Procenttakt | Absolut takt (portar/år) | — | 20,0 procent | 12,5 procent | 60 000 | — | 30,0 procent | 10,9 procent | 78 750 | — | 50,0 procent | 7,8 procent | 93 750 (KULMEN) | — | 68,0 procent | 5,0 procent | 81 600 | — | 80,0 procent | 3,1 procent | 60 000 (SPEGELN) | — | 90,0 procent | 1,6 procent | 33 750 |"
+          },
+          {
+            "type": "text",
+            "content": "Tabellens kolumn absolut takt är kursens bevisgång: 60 000 vid 20,0 procent stiger till 93 750 vid 50,0 och faller tillbaka till exakt 60 000 vid 80,0 — portarna per år är en kulle, inte en linje, och procenten faller genom HELA resan. Ur regeln följer också KLOCKAN — tiden mellan två penetrationer: t = (1 ÷ r) × ln(odds2 ÷ odds1), där odds(p) = p ÷ (1 − p) och 1 ÷ r = 6,4 år exakt. Från 20,0 till 50,0 procent: odds 0,25 mot 1,00, kvot 4, t = 6,4 × ln 4 = 8,9 år. Från 50,0 till 80,0 procent: odds 1,00 mot 4,00, kvot 4, t = 8,9 år — MITTKORRIDORENS SYMMETRI: upploppet och nedloppet tar exakt lika lång tid. Hela resan 20,0 → 80,0 procent: kvot 16, t = 6,4 × ln 16 = 17,7 år. Notera vad klockan INTE säger: den räknar penetration, inte vinst eller värde — värdet av de återstående åren ägs av tx-03, priset på dem av kt-02. Här ägs endast tiden: en modell som från ett enda observerat par (bestånd, tillväxt, tak) levererar banans längd — och därmed det tal varje naiv procentprognos i praktiken gissar: hur många år kan detta pågå?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — tre klockor mot samma fråga",
+        "intro": "Murens praktiska fråga var ett datum; tillväxtens är ett antal år. Svea Laddning på 20,0 procent penetration, 60 000 portar per år, tak 2 400 000 — frågan: när nås det praktiska taket 80 procent? Tre modeller, tre svar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den LINJÄRA läsningen — kanske den vanligaste i snabbanalysen: tillväxten har varit 60 000 portar per år i fyra år, alltså fortsätter den. Kvar till det praktiska taket: 1 920 000 − 480 000 = 1 440 000 portar; 1 440 000 ÷ 60 000 = 24,0 år. Till hundra procent: 1 920 000 ÷ 60 000 = 32,0 år. Linjärläsningens fel är att den förnekar både kulmen och fade:n — den tror att bolaget springer jämnt hela vägen till väggen, och den ger därmed rätt svar på fel fråga: antalet år VID OFÖRÄNDRADE ENHETER. Den NAIVA procentextapolationen — prognosverkstadens standardmodell: senaste årets procent, 12,5, fortsätter sammansatt. Till 80 procent: 480 000 × 1,125 upphöjt till n = 1 920 000, alltså 1,125 upphöjt till n = 4, n = ln 4 ÷ ln 1,125 = 11,8 år. Till hundra procent: 1,125 upphöjt till n = 5, n = 13,7 år — och här avslöjar modellen sig själv: den når HUNDRA PROCENT penetration efter knappt fjorton år, en siffra ingen seriös analys tror på men som kalkylbladet levererar utan att blinka, ty procenten är i modellen fristående från utrymmet. Den LOGISTISKA klockan — kursens modell: kalibrerad på samma observationer ger den 20,0 → 80,0 procent på 6,4 × ln 16 = 17,7 år. Tre klockor mot samma fråga: 24,0 · 11,8 · 17,7 år. Skillnaden mellan dem är inte akademisk — det är felet i varje tillväxtprognos som glömmer taket: den naiva modellen stjäl 5,9 år från verkligheten, den linjära lånar ut 6,3."
+          },
+          {
+            "type": "tabell",
+            "content": "TRE KLOCKOR — Svea Laddning från penetration 20,0 procent (bestånd 480 000, absolut takt 60 000/år, tak 2 400 000): | Klocka | Antagande | År till 80 procent | År till 100 procent | — | Linjär | enheter oförändrade 60 000/år | 24,0 | 32,0 | — | Naiv procent | 12,5 procent sammansatt utan tak | 11,8 | 13,7 (absurditet) | — | Logistisk | r = 0,15625, kulmen 93 750 vid 50 procent | 17,7 | (asymptot — nås aldrig i ändlig tid) |"
+          },
+          {
+            "type": "text",
+            "content": "Tabellens sista rad bär den logistiska klockans djupaste konsekvens: hundra procent nås ALDRIG — kurvan närmar sig taket asymptotiskt, varje år återstår en andel av det återstående. Därför arbetar kursen med det PRAKTISKA TAKET: 80 procent, penetrationen där procenttakten fallit under 3,1 och den absoluta tillväxten under spegelvärdet av dagens. Och taket i sig är ingen konstant — det är utrymmesräkningens tredje läxa: växer den adresserbara marknaden 3,0 procent per år (flera bilar, tätare städer, nya användarklasser) är taket efter tio år 2 400 000 × 1,03 upphöjt till 10 = 2 400 000 × 1,3439 ≈ 3 225 000 portar — TAKET ANDAS. En blygsam marknadstillväxt på tre procent flyttar mättnadsmuren drygt 800 000 portar på ett decennium: utrymmesräkningen är därför ingen engångsövning utan en vy som räknas om när taket rör sig — och som loggas med sitt datum (ek-03), ty ett tak från 2026 är en annan sanning än ett tak från 2036. Vad en läsare gör med de tre klockorna är läsarens eget beslut; kursens ämne är mekaniken i dem — och skillnaden mellan att gissa antalet år och att räkna det."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — utrymmesräkningens fyra mått",
+        "intro": "Hantverket blir till fyra mätningar som kan stå i varje analys: penetrationen, utrymmet, andelen — och tröskelåret då procenten faller under en vald gräns.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mätning ett: PENETRATIONSGRADEN — bestånd delat i tak, med taket dokumenterat som antagande: Svea Laddning 480 000 ÷ 2 400 000 = 20,0 procent. Trappstegen att läsa efter: under 10 procent är kurvan i sin krypande start (största risken: att adoptionen aldrig tar fart — moatfrågan, mt-02); 10–50 procent är uppförsbacke med stigande absolut takt; 50–80 procent är kulmen och den första fade:n; över 80 procent är bolaget en mättnadsförvaltare vars tillväxt i princip är marknadens (mk-01) plus ersättning. Mätning två: DET ÅTERSTÅENDE UTRYMMET — 1 − p = 80,0 procent, i enheter 1 920 000 portar: den råa fråga varje expansionstryck ställs mot. Utrymmet är dock inte bolagets att ta — det är MARKNADENS att ge: bolagets tak är dess andel av utrymmet, inte utrymmet självt. Mätning tre: ANDELEN — flö mot stock. Svea Laddning säljer 60 000 av marknadens 240 000 nya portar per år: FLÖDESANDELEN 25,0 procent mot BESTÅNDSANDELEN 20,0. Flödesanden är nuets röst — den andel av dagens beslut bolaget vinner; beståndsanden är historiens medelvärde. Vid oförändrad flödesandel vandrar beståndsanden mot den som en asymptot: varje år som bolaget tar 25,0 procent av flödet växer beståndets andel av det växande beståndet mot 25,0. Stegringen däremot — att höja flödesanden — är moatens och prissättningens territorium (mt-01, tx-02), inte utrymmesräkningens: här mäts bara VAR bolaget står, inte hur det springer."
+          },
+          {
+            "type": "tabell",
+            "content": "FYRA MÄTNINGAR — Svea Laddning, läge: bestånd 480 000, tak 2 400 000, flöde 60 000 av marknadens 240 000: | Mätning | Värde | Läsning | — | Penetrationsgrad | 20,0 procent | uppförsbackens nedersta tredjedel | — | Återstående utrymme | 80,0 procent (1 920 000 portar) | marknadens att ge, inte bolagets att ta | — | Flödesandel / beståndsandel | 25,0 / 20,0 procent | nuet över historiens medel — beståndet på väg mot 25,0 | — | Tröskelåret (procent under 5,0) | penetration 68,0 procent efter 6,4 × ln 8,5 = 13,7 år | klockan till fade:ns synliga gryning |"
+          },
+          {
+            "type": "text",
+            "content": "Mätning fyra: TRÖSKELÅRET — den praktiska blandningen av klocka och gräns. Procenttakten faller under en vald tröskel när r × (1 − p) faller under den: för 5,0 procent gäller 1 − p = 5,0 ÷ 15,625 = 0,32, alltså p = 68,0 procent — och klockan dit från 20,0 procent är 6,4 × ln(2,125 ÷ 0,25) = 6,4 × ln 8,5 = 13,7 år. Tröskelåret översätter hela konstruktionen till analysspråk: om bolagets berättelse bygger på tvåsiffrig procenttillväxt är 13,7 år den logistiska klockans svar på hur länge siffran kan bäras — räknat, inte gissat. Till mätningarna hör två multiplicerare som kan vända dem. MARKNADSVINDEN: andel och enheter kan röra sig i varsin riktning — sjunker flödesanden från 25,0 till 22,0 procent medan marknadsflödet växer från 240 000 till 300 000 portar säljer bolaget 0,22 × 300 000 = 66 000 portar: 10,0 procent FLER enheter på SÄNKT andel. Enhetstillväxt är inte positionstillväxt; den som läser enheter ser framsteg, den som läser andel ser reträtt — och båda har rätt om sin variabel. ERSÄTTNINGEN: av de 60 000 sålda portarna ersätter 12 000 utgångna — beståndets NETTOtillväxt är 48 000, alltså 48 000 ÷ 480 000 = 10,0 procent, mot bruttots 12,5: i mogna mättnadslägen kan en majoritet av flödet vara återköp av det egna beståndet, och brutto-intäkten döljer att marknaden inte växer — bara byter ut sig själv."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Gränsens fällor har en gemensam nämnare: alla låter utrymmet se större ut än det är — och varje bot är en mätning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: DET STATISKA TAKET — att räkna utrymmet mot dagens marknad och glömma att marknaden själv rör sig. Ett tak på 2 400 000 portar är en fotografi; marknaden som växer 3,0 procent per år gör taket till en film — efter tio år ≈ 3 225 000. Boten: datumera taket i loggen (ek-03) och omräkna gränsparagrafen när marknadsantagandet ändras — ett tak utan årtal är en siffra utan ansvar. Fälla två: PROCENTEXTRAPOLATIONEN — att projicera senaste årets procent in i framtiden som vore den en egenskap hos bolaget. Svea Laddnings 12,5 procent är en EGENSKAP HOS UTRYMMET (r × 0,80), inte hos bolaget: samma bolag på 50,0 procents penetration bär 7,8 och på 80,0 bär 3,1 — med oförändrad konkurrenskraft. Boten: skriv procenten som funktion av penetration, g(p) = r × (1 − p), och extrapolera FUNKTIONEN, aldrig punkten. Fälla tre: FLOW-STOCK-FÖRVÄXLINGEN — att läsa beståndsanden (20,0 procent) som bolagets aktuella styrka. Beståndet är det medelvärde historien landat i; flödet (25,0 procent) är den andel marknadens nyckel just nu ger bolaget. Ett bolag kan bära fallande beståndsandel med stigande flödesandel — yngre än sitt rykte — och tvärtom: stigande beståndsandel på fallande flödesandel är ett imperium som tömmer sin pipeline. Boten: mät alltid bägge, läs deras riktning, och låt beståndets vandring mot flödet (20,0 → 25,0) ta sin tid — den är en asymptot, inte ett språng."
+          },
+          {
+            "type": "text",
+            "content": "Fälla fyra: TAM-FÖRÄLSKELSEN — att förväxla marknadens storlek med bolagets möjlighet. Ett tak på 2 400 000 portar frestar med hela utrymmet som berättelse — men bolagets tak är dess ANDEL av utrymmet: med flödesanden 25,0 procent är bolagets jämviktsbestånd 0,25 × 2 400 000 = 600 000 portar, en fjärdedel av taket — inte 80 procent av det. Att höja andelen är moatens arbete (mt-01, mt-02), inte utrymmesräkningens; här konstateras bara aritmetiken: UTAN ANDELSFÖRBÄTTRING är bolagets tak en bråkdel av marknadens. Fälla fem: DEN OSYNLIGA ERSÄTTNINGEN — att läsa bruttoförsäljning som tillväxt. Svea Laddnings 60 000 sålda portar innehåller 12 000 som ersätter utgångna: netto 48 000, 10,0 procent mot bruttots 12,5. I högmättnadslägen kan bruttoflödet stå kvar i åratal medan nettot krymper mot noll — intäkterna (v01) ser stabila ut, beståndet står stilla, och den som inte skiljer de två tror att marknaden fortfarande expanderar när den i själva verket bara förnyar sig själv. Boten: be alltid om (eller skatta) ersättningsandelen i flödet — och läs netto, inte brutto, när frågan är hur länge tillväxten löper."
+          },
+          {
+            "type": "definition",
+            "content": "FEM BOTAR MOT FEM FÄLLOR — (1) DATUMERA TAKET: varje tak skrivs med år och källa; när marknaden rör sig omräknas gränsparagrafen (2 400 000 → ≈ 3 225 000 på tio år vid 3,0 procent); (2) EXTRAPOLERA FUNKTIONEN, INTE PUNKTEN: procenten skrivs som g(p) = r × (1 − p) — 12,5 · 7,8 · 3,1 på 20 · 50 · 80 procents penetration — aldrig som en konstant; (3) MÄT BÅDA ANDELARNA: flödesandelen (25,0) är nuet, beståndsanden (20,0) historien, och deras riktning säger olika saker om samma bolag; (4) RÄKNA BOLAGETS EGET TAK: jämviktsbeståndet = flödesanden × marknadens tak = 0,25 × 2 400 000 = 600 000 portar — marknadens storlek är inte bolagets möjlighet förrän andelen förbättras (mt-01); (5) LÄS NETTO: ersättningsandelen (12 000 av 60 000) skiljer expansion (48 000 · 10,0 procent) från förnyelse (0 netto) — bruttoflödet döljer mättnaden som inkomsterna döljer den."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — gränsparagrafen i varje tillväxttes",
+        "intro": "Det sista steget är att taket blir en vana: varje tillväxtberättelse möts av frågan hur länge — och gränsparagrafen är alltid första svaret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mästerskapet består i att frågan HUR LÄNGE ställs automatiskt — i varje genomräkning av ett tillväxtbolag, bredvid frågorna hur snabbt, varifrån och till vilket värde. I familjens struktur blir taket den fjärde pelaren: v01 gav måttet, tx-01 källan, tx-02 motorerna, tx-03 värderingen — och denna kurs gav längden: när det övriga måste ta slut. Tillsammans gör de fyra läsningarna tillväxttesen till vad den är för en fundamental läsare: inte en kurva som pekar uppåt mot evigheten, utan en bana med räknelig kulmen, räknelig spegel och räkneligt slut — och därmed prissättbar (kt-02). I metodikens dokumentationsdisciplin (ek-03) får GRÄNSPARAGRAFEN sin fasta plats i loggen: penetrationsgrad med tak och årtal, återstående utrymme, vald klocka med motivering, flödes- och beståndsandel, ersättningsandel — fem rader som gör att nästa läsare kan räkna om klockan mot ett eget tak utan att börja om. Och i riskmatrisen (rs-04) får mättnaden sin egen rad: den är den ovanliga risken som saknar datum men har RIKTNING — den kan inte smyga, bara överraska den som aldrig frågade hur länge."
+          },
+          {
+            "type": "insight",
+            "content": "Den djupaste lärdomen är att TAKET INTE ÄR EN PROGNOSFRÅGA utan en GEOMETRISK sådan. Hur snabbt ett bolag växer är en fråga om produkten, prissättningen och konkurrensen — moatens och motorernas territorium. Hur LÄNGE det kan växa är en fråga om förhållandet mellan bestånd och utrymme: 480 000 mot 2 400 000, 20,0 procents penetration, en klocka på 17,7 år till det praktiska taket — tal som varken ledning eller produkt kan flytta mer än i kanterna. Procenten är utrymmets skugga (12,5 · 7,8 · 3,1), kulmen står vid halverat tak (93 750 vid 1 200 000), och spegeln vid 80 procent bär exakt dagens 60 000. Den som internaliserar geometrin slutar fråga om tillväxten kommer att sakta av — den frågan besvarar aritmetiken med JA, vid en räknelig punkt — och börjar fråga VAR PÅ KURVAN bolaget står. Så fungerar metoden — en läsning av längd, aldrig en uppmaning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: bygg en egen gränsparagraf. (1) Välj ETT tillväxtbolag — påhittat som Svea Laddning, eller en verklig verksamhet du är nyfiken på — och SKRIV NER TAKET: den adresserbara mängden (enheter, kunder, hushåll — det som är ändligt), med källa och år. (2) Räkna beståndet och penetrationen p; skriv utrymmet 1 − p. (3) Kalibrera kurvan: ta senaste årets absoluta tillväxt och lös r = tillväxt ÷ (bestånd × (1 − p)); skriv procentfunktionen g(p) = r × (1 − p) för p, p + 30 och 80 procent. (4) Ställ tre klockor mot frågan år till 80 procent: linjär, naiv procent, logistisk — och notera skillnaden som prognosrisk. (5) Räkna flödesanden mot beståndsanden, och skatta ersättningsandelen i flödet: netto, inte brutto. (6) Datumera: när marknaden växer, omräkna taket. Skriv gränsparagrafen med källor i din logg (ek-03). Hela övningen strukturerar läsning; den avger aldrig råd — vad du gör med din klocka är ditt eget beslut. Utbildning, aldrig råd."
+          }
+        ]
+      }
+    ]
   },
   "ks-01-kapitalstruktur-grunder": {
     "slug": "ks-01-kapitalstruktur-grunder",
@@ -211235,5 +211575,165 @@
     "lynchSection": "Peter Lynch sålde avkastningens enkelhet bättre än någon: hans tjugo-baggershistorier handlar om att hitta tillväxt som marknaden missat, inte om att maximera avkastning per enhet risk. Men hans egen varningsregel — att en portfölj ska tåla att läsaren förlorar jobbet samtidigt som marknaden faller — är i praktiken en Calmar-fråga: hur djupt faller det som värst, och överlever planen det? Lynch skulle ha betraktat de tre divisionerna som tre sätt att beskriva samma nyfikenhet: vad du får, och vad du tål på vägen.",
     "grahamSection": "Benjamin Grahams tänkande föregick portföljteorin med ett årtionde: han delade placeringen i den defensiva och den företagsamma — och för den defensiva läsaren var frågan som Calmar ställer den enda som betydde något: hur djupt kan det falla innan livsplanen brister? Grahams andelsband (aktieandeln rör sig mellan fasta gränser och återställs mekaniskt, pf-04:s rebalansering) var riskkontroll utan divisioner — men hans krav på säkerhetsmarginal (km-030) i varje enskilt val är samma tankesätt som kursens tabellhygien: talet utan sammanhang är inget värde, talet med fotnoter är ett svar.",
     "ak1Section": "I AK1A:s metodik är de riskjusterade måtten utvärderingsspråk, inte selektionsspråk: AKM1:s tjugo fundamentalvariabler och portföljsystemets viktningar (pf-serien) producerar portföljer — Sharpe, Sortino och Calmar är sätten att LÄSA deras historik efteråt, med frågan före divisionen. Studions labb (ek-03) kan exportera valfri portföljs kurshistorik och beräkna de tre kvoterna med fulla fotnoter (årsrymd, frekvens, avgiftsläge), och AI-Mentorn visar gärna exempelberäkningar — alltid som mekanik och historiebeskrivning, aldrig som omdöme om vilken portfölj en läsare bör äga. Studions juridiska ram förblir: divisioner är utbildning, beslut är läsarens."
+  },
+  "rp-03-riskparitet": {
+    "slug": "rp-03-riskparitet",
+    "category": "RISKHANTERING & PORTFÖLJTEORI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Riskparitet — att viktta portföljen efter risk, inte kronor",
+    "summary": "RISKHANTERING & PORTFÖLJTEORI-familjens tredje steg och SERIENS AVANCERADE SLUTSTEN: rp-01 ritade kartan (fem mått, fem frågor), rp-02 lärde mätFAMILJEN (Sharpe, Sortino, Calmar) — och denna kurs vänder på hela perspektivet: frågan är inte längre hur risk MÄTS utan hur portföljen VIKTAS. Sond mot 408 kurser: riskparitet, riskbidrag och all weather ger noll träffar — allokeringens mest omtalade princip sedan 2000-talet saknas helt i registret, medan grannarna äger var sitt annex: km-014 grundkorrelationen, rk-10 korrelationen i kriser, pf-04 rebalanseringen som METOD att hålla målvikter. Signaturräkningen är kronviktens hemliga antagande: den klassiska 60/40-portföljen (60 procent aktier, 40 obligationer, aktievolatilitet 15 procent, obligationsvolatilitet 5 procent, korrelation 0,2) har portföljvolatilitet 9,6 procent — men AKTIerna bär 91,8 procent av den risken (bidrag 8,81 av 9,60 procentenheter), obligationerna 8,2 procent. Sextiofyrtio är alltså kronmått, inte riskmått: i risken är portföljen 92/8 i risken. Riskparitetens regel vänder vikten: lös portföljen så varje tillgång bidrar LIKA MYCKET till volatiliteten — med kursets tal landar lösningen exakt på 25/75, portföljvolatilitet 5,8 procentenheter med 2,90 från varje håll — och för att återfå 60/40-portföljens risknivå krävs hävstång 9,6 delat med 5,8, omkring 1,65 gånger. Därmed öppnas kursens andra halva: hävstångens pris. Mars 2020 visade mekanismens mörka sida när volatiliteten steg, målvikterna föll och tvångsförsäljningar förstärkte fallet de var byggda att dämpa. Kursens tes står fast ändå: riskpariteten är inte en färdig portfölj utan en FRÅGA — vem bär risken i din portfölj, och ville du ha det svaret? — och frågan är utbildning, aldrig råd om vilka tillgångar läsaren bör äga.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna portföljvolatiliteten från vikter, volatiliteter och korrelation: 60/40 med aktier 15 procent, obligationer 5 procent och korrelation 0,2 ger variansen 81 + 4 + 7,2 = 92,2 och volatiliteten 9,6 procent — formlens tre termer är aktiernas och obligationernas egen pendling plus samvariationstermen · Räkna RISKBIDRAGEN: varje tillgångs andel av portföljvolatiliteten — aktierna bidrar 8,81 procentenheter (91,8 procent av 9,60), obligationerna 0,79 (8,2 procent); bidragen summerar alltid till portföljvolatiliteten, och 60/40 visar sig vara 92/8 i risken · Förstå riskparitetsregeln: välj vikter så att ALLA riskbidrag blir lika stora — med kursets tal är lösningen exakt 25 procent aktier och 75 procent obligationer, portföljvolatilitet 5,8 procentenheter varav 2,90 från varje tillgång · Räkna hävstångsbehovet: för att matcha 60/40-portföljens 9,6 procent volatilitet med 25/75-portföljens 5,8 krävs 9,6 delat med 5,8, omkring 1,65 gånger — och Sharpe-kvoten (rp-02) är oförändrad av hävstången FÖRE lånekostnaden: avkastning och risk skalas lika · Känna mekanismens felkällor: volatilitetsskattningens fönster (kalibrering på lugna perioder underskattar krisens pendling), korrelationens vandel (rk-10:s tema — samband som gick mot noll kan gå mot ett när krisen kommer) och rebalanseringstvånget (pf-04:s metod — varje återställning är en affär, och i mars 2020 var det en tvångsadkomst) · Behärska den omvända rörelsen: frågan före formeln — vem bär risken (kronvikt eller riskvikt), vilken riskdefinition (volatilitet, fall, svans — rp-01:s karta) och vilket pris för hävstången läsaren är beredd att betala i låneränta och mod i kris",
+    "why": "RISKHANTERING & PORTFÖLJTEORI-familjens serie står i trappan rp-01 Nybörjare (kartan), rp-02 Intermediär (måttfamiljen) — och saknar sitt Avancerade steg; kategorins tolfte kurs och seriens tredje sluter trappan med den fråga som förenar hela familjen: måtten beskriver risken, men VIKTAR gör den. Sond mot 408 kurser på riskparitet, riskbidrag, all weather, lika riskandelar: noll träffar — trots att principen är en av 2000-talets mest omtalade allokeringstankar, institutionellt förankrad och flitigt kritiserad efter just de kriser den var byggd för. Grannarna håller avstånd: km-014 äger korrelationens grunder och diversifieringens logik, rk-10 äger korrelationen I KRISER, pf-04 äger rebalansering som metod, rp-02 äger mätFAMILJEN, km-016 enskilda Sharpe-kvoten — ingen kurs äger ALLOKERINGSPRINCIPEN att vika portföljen efter riskbidrag istället för kronor (källägande är inte temalikhet; emission/V19-presedensen). Kursen är medvetet byggd som seriens vändpunkt: samma exempelportfölj (60/40, volatiliteter 15 och 5, korrelation 0,2) genom hela bågen — först läs som kronor, sedan som risk (92/8), sedan omviktad (25/75), sedan hävstångad (1,65) och slutligen stressad (mars 2020) — med siffror som bär hela berättelsen: 8,81 av 9,60 procentenheter är inte en åsikt utan en division. Och riskparitet är utbildning i ren form: det handlar om att förstå VEM som bär en portföljs risk — en insikt lika nödvändig för en indexfondssparare som för en strateg — och kursen lär divisionen och frågan, aldrig vilka tillgångar läsaren bör äga.",
+    "history": {
+      "origin": "Idén att viktta efter risk i stället för kronor är äldre än namnet: Harry Markowitz diversifieringsarbete på 1950-talet hade redan visat att portföljens risk inte är vikternas viktade snitt — korrelationen gör att en minoritet av tillgångarna kan bära majoriteten av pendlingen. Men den praktiska vändningen kom först när institutionella placeringar på 1990-talet började ifrågasätta varför jämna 60/40-strategier fick sina kriser från exakt den tillgång som dominerade risken. Vid samma tid formulerade gruppen kring Ray Dalio på Bridgewater det som skulle bli känt som All Weather-filosofin — att ingen tidpunkt gynnar alla tillgångar, men att varje tillgång har ett väder den hatar, och att en portfölj byggd för alla väder måste fråga vad varje tillgång BIDRAR i risk, inte vad den KOSTAR i kronor.",
+      "evolution": "Under 2000-talet blev principen produkt: riskparitetsfonder växte fram som en egen strategiklass hos förvaltare världen över, med volatilitetsmålvikter, regelbunden omviktning och — för de flesta — hävstång för att hämta tillbaka avkastningen som den riskminskade basportföljen lämnat efter sig. Finanskrisen 2008 gav principen dess första stora hörsal: portföljer som sett diversifierade ut i kronor visade sig koncentrerade i risk. Och i mars 2020 kom motprovet som gav kritikerna deras material: när volatiliteten steg sjönk målvikterna mekaniskt, rebalanseringen blev tvångsförsäljning, och hävstången förstorade precis den likviditetseffekt den var avsedd att dämpa — mekanismen verkade som designad, men designen själv ifrågasattes.",
+      "modern": "Idag lever riskpariteten i skikt: som ren princip (fråga vem som bär risken), som förvaltningsprodukt (fondkategorin med dess hävstångs- och volatilitetsmekanik) och som tankeverktyg som nått långt utanför institutionella kretsar — volatilitetsmålstyrning och riskbudgettänk återfinns i allt från pensionsförvaltning till privatportföljers regelverk. I studionsfamiljen är kursens plats given: rp-01 lär frågorna, rp-02 mätningen, denna kurs allokeringen — och pf-serien (särskilt pf-04:s rebalansering och pf-03:s diversifiering) bär hantverket vidare in i portföljens vardag. AI-Mentorn räknar gärna riskbidragsexempel på begäran, alltid som mekanik och aldrig som rekommendation av strategi eller tillgång."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Kronviktens antagande — 60/40 i risken",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Riskbidraget — rösterna bakom volatiliteten",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Regeln — varje tillgång röstas lika",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Hävstången — riskparitetens pris",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällorna — minnet, vandeln och tvånget",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — frågan före allokeringen",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Kronviktens antagande — 60/40 i risken",
+        "intro": "Familjens två första kurser mätte risken. Denna kurs börjar med att VISA den: den klassiska 60/40-portföljen räknad i risk, inte kronor — och resultatet är kursens valspråk.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sextio procent aktier och fyrtio procent obligationer är världens vanaste portföljskiss — och dess vanaste missförstånd. I KRONOR är den 60/40; frågan kursen ställer är vad hon är i RISK. Exempelportföljen bärs genom hela kursen med oförändrade tal: aktiernas volatilitet 15 procent (km-013 äger måttet), obligationernas 5 procent, korrelationen dem emellan 0,2 (km-014 äger sambandet).\n\nPortföljvolatiliteten är ingen viktad medelvärdering utan variansens formel: 0,6 i kvadrat gånger 15 i kvadrat, plus 0,4 i kvadrat gånger 5 i kvadrat, plus två gånger 0,6 gånger 0,4 gånger 0,2 gånger 15 gånger 5 — det är 81 plus 4 plus 7,2, variansen 92,2, roten 9,6 procent. Portföljen pendlar alltså knappt tio procent om året, betydligt lugnare än aktiens femton — diversifieringen FUNGERAR.\n\nMen fråga inte hur mycket, fråga VEM: hur fördelar sig de 9,6 procentenheterna på portföljens två delar? Nästa kapitel räknar svaret — aktierna bär 8,81 procentenheter och obligationerna 0,79 — och därmed är portföljen som riskbärare inte 60/40 utan 92/8. Samma division som gör 60/40 lugnare än ren aktieportfölj gör den till en aktieportfölj med noteringsskygghet: obligationerna är utsmyckning, aktierna är risken. Detta är kronviktens hemliga antagande — att vikterna i kronor skulle tala om var risken bor — och det antagandet är falskt så fort volatiliteterna skiljer sig."
+          },
+          {
+            "type": "definition",
+            "content": "Kronvikt mot riskvikt — kronvikten är andelen av portföljens MARKNADSVÄRDE i varje tillgång (60/40); riskvikten är andelen av portföljens VOLATILITET som varje tillgång bidrar med (i exempelportföljen 92/8). De två sammanfaller bara när volatiliteterna är lika — vilket de i praktiken aldrig är."
+          },
+          {
+            "type": "insight",
+            "content": "60/40:s paradoxala trygghet: diversifieringen minskar portföljens TOTALA pendling men koncentrerar SAMMA pendling till en enda källa — ju lugnare aktierna låter i sällskap av obligationer, desto mer av den kvarvarande risken sitter hos aktierna."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Riskbidraget — rösterna bakom volatiliteten",
+        "intro": "Portföljvolatiliteten har en röstlängd: varje tillgång bidrar med en andel som går att räkna — och bidragen summerar alltid till helheten. Detta kapitel räknar rösterna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Riskbidraget är portföljmatematikens mest undervärda storhet: HUR MYCKET av portföljens volatilitet kommer från den här tillgången? Beräkningen går i två steg. Steg ett: tillgångens marginella risk — hur mycket portföljvolatiliteten växer om vikten växer en aning; det är tillgångens kovarians MED PORTFÖLJEN (inte sin egen varians — samspelet räknas, inte storleken i sig). Steg två: multiplicera med vikten. Aktierna i exempelportföljen: kovariansen med portföljen ger marginell risk 14,68 procentenheter per enhet vikt; gånger vikten 0,6 blir bidraget 8,81 procentenheter. Obligationerna: marginell risk 1,98, gånger 0,4, blir 0,79 procentenheter.\n\nOch nu röstlängdens lag: 8,81 plus 0,79 är 9,60 — portföljvolatiliteten EXAKT. Riskbidragen delar alltid upp helheten utan rest; det är ingen approximation utan en identitet, och den gör varje portfölj läsbar som en riskfördelning: 8,81 av 9,60 är 91,8 procent aktier, 8,2 procent obligationer.\n\nTalet bär vidare. En portfölj där en tillgång har hälften av kronorna men nio tiondelar av risken är en portfölj vars ÖDE hänger på den tillgången —RP-02:s måttfamilj beskriver sådana kurvor efteråt (Sharpe, Sortino, Calmar), men kurvans FORM bestämdes här, i vikterna. Därav nästa kapitels regel: om riskbidraget är den sanna röstlängden, vad händer om varje tillgång får LIKA många röster?"
+          },
+          {
+            "type": "tabell",
+            "content": "Exempelportföljen (60/40) som röstlängd: | Storhet | Aktier | Obligationer | Portföljen | — | Kronvikt | 60 procent | 40 procent | 100 | — | Volatilitet (egen) | 15,0 procent | 5,0 procent | 9,6 procent | — | Riskbidrag | 8,81 enheter | 0,79 enheter | 9,60 enheter | — | Riskandel | 91,8 procent | 8,2 procent | 100 procent | — Rad fyra är rad tre delat med summan: riskandelarna är riskbidragens procentform — och kronraden mot riskraden är kursens hela funna: 60/40 mot 92/8."
+          },
+          {
+            "type": "insight",
+            "content": "Riskbidragets lag: bidragen summerar alltid exakt till portföljvolatiliteten — en identitet, inte en uppskattning; därför kan VARJE portfölj, även en med tjugo tillgångar, skrivas som en riskfördelning med hundra procent att fördela."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Regeln — varje tillgång röstas lika",
+        "intro": "Riskparitetens regel är en rad: välj vikterna så att alla riskbidrag blir lika stora. Med exempelportföljens tal landar lösningen exakt på 25/75 — och portföljen förvandlas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Regeln formuleras som en likhet: AKTIERNAS riskbidrag ska vara OBLIGATIONERNAS riskbidrag. Med exempelportföljens tal (15 mot 5 i volatilitet, korrelation 0,2) söks alltså vikterna där aktiernas bidrag och obligationernas bidrag träffar varandra mitt i portföljvolatiliteten — med löftet om en hälft var.\n\nLösningen är för dessa tal ovanligt elegant: exakt 25 procent aktier och 75 procent obligationer. Verifikationen är rak räkning: portföljvariansen blir 14,06 plus 14,06 plus 5,63, sammanlagt 33,75, roten 5,81 procentenheter — och riskbidragen landar på 2,90 procentenheter från varje håll, var för sig exakt hälften. 25/75 i kronor är 50/50 i risken: portföljen är bokstavligen riskparitetisk.\n\nJämför de två portföljerna sida vid sida. 60/40: volatilitet 9,6 procent, risk 92/8 — portföljen som ser balanserad ut men är en aktiehistoria. 25/75: volatilitet 5,8 procent, risk 50/50 — portföljen som ÄR balanserad men lämnat ifrån sig både avkastning och volym, ty aktierna — historiens avkastningsmotor — har krympt till en fjärdedel. Här står riskpariteten vid sitt vägskäl, och det är nästa kapitels ämne: portföljen har bara hälften av risknivån; den som vill ha tillbaka den måste LÅNA — 9,6 delat med 5,8 är omkring 1,65 gånger — och lånet är principens pris, dess kritikers punkt och mars 2020:s story."
+          },
+          {
+            "type": "insight",
+            "content": "Med kursets tal blir lösningen exakt kvart — en pedagogisk lycka, inte en lag: i allmänhet kräver lika-riskbidragslösningen ingen rund vikt alls; siffrorna 25/75 bär exempelportföljen, inte regeln."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Hävstången — riskparitetens pris",
+        "intro": "Riskparitetsportföljen är LUGNARE än 60/40 — och därmed, i samma rörelse, billigare i förväntad avkastning. Hävstången är vägen tillbaka, och den har tre prislappar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "PRISLAPP ETT — LÅNERÄNTAN. Att skala 25/75-portföljen med 1,65 betyder att läggan finansieras med lånat kapital, och lånet kostar ränta (km-054 äger räntans mekanik). Skalan flyttar avkastning och volatilitet lika: 1,65 gånger 5,8 ger 9,6 procent volatilitet, och 1,65 gånger 25/75:s avkastning GER 60/40:s avkastning — minus lånekostnaden, som är skillnaden mellan förhoppning och resultat. Sharpe-kvoten (rp-02) är nämligen oförändrad av hävstången FÖRE kostnader: avkastning över riskfri ränta och volatilitet skalas båda med samma faktor — divisionen står still. Hävstången skapar alltså ingen riskjusterad förbättring; den flyttar portföljen längs samma linje, och låneräntan drar den nedåt.\n\nPRISLAPP TVÅ — MEKANIKENS TVING. Riskparitetsprodukter är sällan statiska: volatilitetsmålstyrning skalar ner exponeringen när pendlingen stiger, och omställningen kräver FÖRSÄLJNINGAR i nedgången — rebalansering (pf-04:s metod) med felslagen timing. I mars 2020 gick mekanismen som en klocka och förstärkte ändå fallet: volatilitet upp, vikter ner, försäljningar tvång, nedgång djupare. Mekanismen var inte trasig — den VAR sin design, och designens konsekvens i en likviditetskris är strukturerbar.\n\nPRISLAPP TRE — RÄNTEKÄNSLIGHETEN. En portfölj till tre fjärdedelar obligationer, dessutom hävstångad, är i praktiken en RÄNTEPOSITION: när stigande räntor pressar obligationskurserna, och hävstången förstorar rörelsen. Risk som balanserades bort mellan aktier och obligationer kan komma tillbaka genom en enda gemensam faktor — räntan — som slår på båda samtidigt; det är korrelationens vandel, nästa kapitels andra fälla."
+          },
+          {
+            "type": "insight",
+            "content": "Hävstångens aritmetik i en mening: 1,65 gånger 5,8 är 9,6 — volatiliteten återställd; 1,65 gånger 25/75:s avkastning är 60/40:s — MINUS låneräntan; och Sharpe-kvoten rörde sig inte en decimal — det är hela skillnaden mellan att flytta på en portfölj och att förbättra den."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällorna — minnet, vandeln och tvånget",
+        "intro": "Regeln vilar på tre skattningar — volatilitet, korrelation, och omvärldens tålamod. Alla tre förändras, och det är i förändringarna fällorna ligger.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "FÄLLA ETT — VOLATILITETENS MINNE. Riskbidraget räknas på historisk pendling, och historien har ett minne som sträcker sig exakt så långt som fönstret den fick: en femtonårig lugn period ger låga skattningar, försiktiga vikter — och en fullkomlig överraskning när krisens pendling är tre gånger fönstrets. Valet av fönster är alltså inte teknikalitet utan PORTFÖLJENS VERKLIGHETSBESKRIVNING, och känsligheten mot valet (st-02:s verktyg) är större än de flesta användare tror.\n\nFÄLLA TVÅ — KORRELATIONENS VANDEL. Exempelportföljens 0,2 är ett snitt, och snitt är förrädiska: korrelationen är inte en konstant utan ett väderbetingat beteende — i stressade marknader drar sambanden mot varandra (rk-10 äger hela temat), och det samband som skulle dämpa aktiernas fall kan i stället föra obligationernas fall SAMTIDIGT. En riskparitet som var 50/50 vid korrelation 0,2 kan vid korrelation 0,6 vara 65/35 i praktiken — balansen var aldrig i vikterna, den var i SAMBANDET, och sambandet flyttar sig.\n\nFÄLLA TRE — TVÅNGETS ARITMETIK. Omställningen av en riskparitetsportfölj är inte ett beslut utan en utlöst sekvens: nivån slår till, försäljningen verkställs, och transaktionskostnaden (rp-01:s femte fråga) betalas i exakt det ögonblick då likviditeten är som dyrast. Mars 2020 visade trion i samspel: minnet (lugnt fönster), vandeln (korrelationen mot ett) och tvånget (mekaniska försäljningar) — tre fällor, en vecka. Ingen av dem gör principen falsk; alla tre gör den dyrare än broschyren anger, och priset ska vägas mot vad balansen faktiskt köper: en portfölj vars risken inte dikteras av en enda tillgångs volatilitet."
+          },
+          {
+            "type": "insight",
+            "content": "Tre fällor, en gemensam rot: alla tre är antaganden som VAR sanna i skattningsfönstret — volatiliteten, korrelationen, likviditeten — och riskparitetens svaghet ligger inte i regeln utan i att regeln ARBETAR MED minnet av en värld som kan ha bytt karaktär."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — frågan före allokeringen",
+        "intro": "Sista steget är familjens omvända rörelse (rp-01 inledde den, rp-02 övade den): inte vilken portfölj är bäst, utan vilken FRÅGA allokeringen ska svara på — och vad svaret kostar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningen är alltid densamma: frågan först, divisionen sedan. FRÅGA ETT — VEM bär risken i portföljen? Räkna riskbidragen (kapitel två): om en tillgång bär över åttio procent av volatiliteten är portföljen kronor till formen och koncentration till innehållet — kunskapen är värd lika mycket för den som BEVARAR vikterna som för den som ändrar dem, ty nu vet läsaren vad hon äger. FRÅGA TVÅ — VAD är risk? Riskpariteten viktar på volatilitet; rp-01:s karta räknade fem mått med olika svar — fall, svans, frekvens — och en portfölj kan vara jämn i volatilitet men skev i svans (km-031:s värsta-fall-mått, km-034:s fall). Jämlikheten gäller nämnaren man valde, inte alla nämnare samtidigt. FRÅGA TRE — VAD kostar omviktningen? Hävstångens tre prislappar (kapitel fyra) plus transaktioner och skatt (pf-familjens fält): vägen från 92/8 till 50/50 är inte gratis, och priset ska stå bredvid vinsten i varje beslut.\n\nSedan diagnosen, gratis ur kombinationen: riskandelar som avläsar portföljens verkliga ryggrad; Sharpe-kvoter (rp-02) som prövar om omviktningen flyttade portföljen till en bättre linje eller bara längs den gamla; och pf-04:s rebalanseringsfråga — vem som ska återställa vikterna, hur ofta och till vilket pris. Riskpariteten är därmed vad den alltid var: inte en färdig portfölj utan en fråga med aritmetik — vem bär risken, vad är risk, vad kostar balansen.\n\nOch som alltid i studions anda: kursen lär divisionerna och frågorna, aldrig svaret för läsarens egen portfölj — allokeringen är läsarens arbete, och utbildningens uppgift är att göra arbetet informerat."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övning: ta en egen eller hypotetisk portfölj med två-tre tillgångar (studions labb, ek-03, kan exportera kurshistorik). Uppgift ett: skatta varje tillgångs volatilitet och parvis korrelation på samma fönster, och räkna portföljvolatiliteten med variansformeln. Uppgift två: räkna riskbidragen — vilken tillgång bär störst andel, och hur skiljer sig riskandelarna från kronandelarna? Uppgift tre: lös (grovt eller exakt) vikterna som ger lika riskbidrag, och beskriv i tre meningar: vad portföljen förlorar i förväntad avkastning, vad den vinner i balans, och vilken av kapitel fem:s tre fällor som väger tyngst för just de tillgångarna."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch placerade med hela sin tyngd i vad han förstod — och hans varningsregel från rp-02 återkommer här med skärpa: en portfölj ska tåla att läsaren förlorar jobbet samtidigt som marknaden faller. Riskbidragsräkningen är det mätbara svaret på just den uthålligheten: om en tillgång bär nio tiondelar av pendlingen är det den tillgången läsaren måste kunna leva utan i ett år — och det är en fråga Lynch skulle ha ställt före varje köp, oavsett hur många tillväxthistorier kedjan rymde.",
+    "grahamSection": "Benjamin Graham delade placeringen i andelar med FASTA gränser och mekanisk återställning — pf-04:s rebalansering är hans direktavkomma — men hans djupare bidrag till denna kurs är åtskillnaden mellan form och innehåll: en portfölj som SER diversifierad ut men bär sin risk hos en enda källa är formens seger över substansen, och Grahams säkerhetsmarginal-tänkande (km-030) överförs rakt till riskvikterna — marginalen finns inte i antalet poster utan i hur oberoende posternas öden är. Riskparitetsfrågan — vem bär risken — är Grahams fråga om vad som återstår när det oväntade händer.",
+    "ak1Section": "I AK1A:s metodik är riskbidragen PORTFÖLJSIDANS motsvarighet till nyckeltalens fundamentalsidor: AKM1 och nyckeltalsbanken (km-serien) frågar vad BOLAGET bär, riskbidragen frågar vad PORTFÖLJEN bär — och studions labb (ek-03) kan exportera kurshistorik för båda. AI-Mentorn räknar riskbidragsexempel och hävstångsscenarier på begäran, alltid som mekanik och historiebeskrivning, aldrig som rekommendation av strategi, hävstång eller tillgångsallokering — frågan före allokeringen är utbildning, och svaret förblir läsarens eget arbete."
   }
 }

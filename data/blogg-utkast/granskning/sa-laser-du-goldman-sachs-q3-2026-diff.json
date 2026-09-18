@@ -1,0 +1,27 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-goldman-sachs-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-18, manifest auto-s1-1789758924831, anspråk data/vakten/auto-s1-1789758924831-u1-ansprak.md med pivot-notis)",
+  "rapport": "sa-laser-du-goldman-sachs-q3-2026-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER EN RÄTTNING — TTM-fältet (omsattningTillvaxtTTM = 0,425 exakt) visas som 'plus 43 procent' i nyckeltalsraden och '43 %' i mediantabellen men som '42,5 procent' på TRE ställen i Datavakten och läsningsraden — samma fält bär två format i samma paket, och seriens doktrin är öppen sifferredovisning med exakta fältvärden (42,5 är det exakta; 43 är Math.round-slupp i byggarens f0-formatterare). I övrigt GRÖNT HELA VÄGEN: 103 maskinella kontroller 0 avvikelser — 14 universumfältsmatchningar exakta, 14 härledda kvartals-/TTM-/aktietalsberäkningar bekräftade (Q1+Q2 = H1 37 565 exakt; TTM-vinst 20 896; TTM-intäkt 66 154; aktietalet 334,76/315,92 M med minskning 5,63 %), datavaktens fem test alla omräknade gröna (identitetsgaps +6,04/−5,70 %; implicita underlag 18,89/17,81 mdr; absolutkontroll +9,98/−9,58 %; PEG-konvention 3,31 mot fältets 1,24 med implicit 12,48 %), finansgrenens 7 medianer + 7 rangplatser EGNA omräkningar exakta, universummedianerna exakta mot deklarerad 177-post-vintage (abafac2b), JPM-tvillingraden ordagrant sann mot filens JPM-rad (dubbelmediansammanffallet dokumenterat i rapporten — ser ut som copy-paste men är äkta), scenariorutan 9/9 celler + tre räknesatser, båda multiplövningarna; kalenderblocket DUBBELVERIFIERAT LIVE mot pressrumsnotisen (granskarens egen hämtning 2026-09-18: 'Third quarter 2026 – Tuesday, October 13, 2026' ordagrant, 07:30 ET/09:30 ET, Q4 tisdag 2027-01-19, notisen publicerad 2025-08-18); juridiken ren enligt 2007:528 (4 verbkontexter, samtliga nekande/pedagogiska; endast 2 kap 5 § åberopad); 911 = 0 träffar/6 mönster; 13/13 interna länkar HTTP 200; struktur identisk med serien; metadata-kontrakt gröna (readingMinutes 5 = 3 174/600; 13/10-2026 och 19/1-2027 är tisdagar; publishedAt = rappdagen). Noteringar utan diff: universumfilen växer (177→183 samma dag) — källradens vintage-deklaration bär detta; '15,479 × 20,90 = 323,4'-visningen kräver fullprecisionen 20,896; NDA-PEG-citatet 2,19 är troget mot Nordea-paketets egen text men promille mot dagens fil (2,1845)",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; båda strängarna maskinverifierade unika = exakt 1 träff i filen). Originalet ändras av paketets ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "sa-laser-du-goldman-sachs-q3-2026.json",
+      "falt": "body (Nyckeltalen — Tillväxt)",
+      "gammalt": "källans fält anger **plus 43 procent**",
+      "nytt": "källans fält anger **plus 42,5 procent**",
+      "orsak": "Fältets exakta värde är 0,425 (42,5 %). Datavaktens test 5 och läsningsraden läser samma fält som '42,5 procent' på tre ställen — nyckeltalsradens '43' är byggarens f0()-heltalsavrundning (Math.round(42,5) = 43) och skapar två olika tal för samma fält i samma paket. Öppen sifferredovisning är seriens doktrin"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "sa-laser-du-goldman-sachs-q3-2026.json",
+      "falt": "body (Så står sig bolaget mot branschen — tabellraden)",
+      "gammalt": "| TTM-tillväxt (källans fält) | 43 % | 10,00 % | 7,20 % | 18/19 |",
+      "nytt": "| TTM-tillväxt (källans fält) | 42,5 % | 10,00 % | 7,20 % | 18/19 |",
+      "orsak": "Samma fält, samma rättning som B1a — dessutom bär kolumnens övriga värden decimalformat (10,00 %, 7,20 %), så '42,5 %' följer kolumnens egen konvention. Rangplatsen 18/19 är räknad på 0,425 och opåverkad av visningsformatet"
+    }
+  ]
+}

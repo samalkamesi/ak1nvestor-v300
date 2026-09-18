@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/spelaktier-sa-analyserar-du-spelbolag.json",
+  "granskadAv": "agentfabrik s1-u2 (auto-s1-1789758924831, 2026-09-18, anspråk 21:20 lokal)",
+  "rapport": "spelaktier-sa-analyserar-du-spelbolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — Spelinspektionens Q2 2026 fel på tre ställen (utkastet 6,9 mdr/+2,8 %; primärkällans tabell 2026-09-18: 7 380 mnkr mot 7 024 = 7,4 mdr/+5,1 %; felkälla sannolikt helåret 2024:s +2,8 %) + readingMinutes 2→6 enligt ~ord/200-seriepraxis (1 281 ord; femte rm-felet i serien) + källstatus 'konsensusprognosen'→implicit härledning ur forward-P/E. I övrigt HELT GRÖN: 25/25 Evolution-tal exakta mot universumets vintage 2026-09-15 (pris 890,60 · marginaler 100/57,8/51,8 · ROIC 31,2 · skuld/EK 0,02 · serie 1 457→2 067 M€ 2022–2025 · TTM −2,2 · P/E 15,15/13,60 · PEG 1,33 egenomräknad 1,3289), aritmetik 5/5 (budvärde 132,6 mdr eget 695×191 M aktier · 890,6/695=1,2814 · 58-euro-exemplet), budpliktsfakta webbverifierad (24 juli >30 %, 13 aug 695 kr, ~131,7 mdr webb mot 'cirka 132' ✓, styrelsens avstå-rekommendation 2026-08-24 ✓), Q1 2026 korrekt (6 680 mnkr +0,8 %), juridik ren enligt 2007:528 (2 rådverbträffar båda i deskriptiva kontexter — 'säljs till spelbolagen', styrelsens eget yttrande; utbildningsram i ingress; disclaimer-sista-rad i B-seriens serieform; 0 lagrum = ingen blanding), 911 = 0 träffar på 6 mönster, 12/12 interna länkar HTTP 200 mot localhost, 0 universums-superlativer",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga gammalt-strängar maskinverifierade unika = exakt 1 träff i filen, och nytt-strängarna frånvarande i originalet). Originalet ändras av guidens ägare eller exportvägen — inte av granskaren. Publicering = kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "A1",
+      "typ": "byt",
+      "fil": "spelaktier-sa-analyserar-du-spelbolag.json",
+      "falt": "body (ingressen)",
+      "gammalt": "en spelomsättning på 6,9 miljarder kronor under andra kvartalet 2026 — en ökning med 2,8 procent",
+      "nytt": "en spelomsättning på 7,4 miljarder kronor under andra kvartalet 2026 — en ökning med 5,1 procent",
+      "orsak": "Primärkälla kontradikerad: Spelinspektionens statistiktabell (spelinspektionen.se/om-oss/statistik/, hämtad 2026-09-18) ger Q2 2026 = 7 380 mnkr mot Q2 2025 = 7 024 mnkr = +5,1 %; tredjepartsbekräftad (hurbra.se 2026-08-31, iGaming Future). Utkastets '+2,8 procent' är sannolikt helåret 2024:s ökning (27,8 mdr, Spelinspektionens nyhetsrum 2025-02-20); '6,9 mdr' saknar hittad källa. Q1-talet (6,7/+0,8) är korrekt och orört"
+    },
+    {
+      "id": "A2",
+      "typ": "byt",
+      "fil": "spelaktier-sa-analyserar-du-spelbolag.json",
+      "falt": "body (Licensen-sektionen, tillväxtmeningen)",
+      "gammalt": "och Q2 på 6,9 (+2,8 procent)",
+      "nytt": "och Q2 på 7,4 (+5,1 procent)",
+      "orsak": "Samma rotorsak som A1 — Q2 2026 = 7,38 mdr (+5,1 %) enligt primärkällan; parentesformen i löptexten"
+    },
+    {
+      "id": "A3",
+      "typ": "byt",
+      "fil": "spelaktier-sa-analyserar-du-spelbolag.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "Q2 2026: 6,9 miljarder kronor, +2,8 procent",
+      "nytt": "Q2 2026: 7,4 miljarder kronor, +5,1 procent",
+      "orsak": "Samma rotorsak som A1 — sammanfattningens tredje förekomst av Q2-felet; ÄR 7,38 mdr ⇒ 7,4 i löptextens en-decimal-konvention (jämför Q1:s 6,68 ⇒ 6,7)"
+    },
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "spelaktier-sa-analyserar-du-spelbolag.json",
+      "falt": "readingMinutes (JSON-fält)",
+      "gammalt": "\"readingMinutes\": 2,",
+      "nytt": "\"readingMinutes\": 6,",
+      "orsak": "1 281 ord textrensat på 2 minuter = 640 ord/min. Seriepraxis ~200 ord/min satt av domarna 09-17/09-18 (substansrabatt; konsumentaktier 1 401 ord → rm 7; skuldsättning 871 → rm 4; tillväxt 1 200 → rm 6): round(1 281/200) = 6. Femte rm-felet i serien, fjärde med underskattning — systemflagga till byggfabriken: beräkna rm ur ordtalet"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "spelaktier-sa-analyserar-du-spelbolag.json",
+      "falt": "body (Tillväxten-sektionen)",
+      "gammalt": "konsensusprognosen för nästa år ligger på +11,4 procent",
+      "nytt": "prognostillväxten för nästa år ligger på +11,4 procent (implicit, härledd ur forward-P/E)",
+      "orsak": "Universumets not definierar talet: 'prognosTillvaxt härledd ur trailing/forward-P/E (15,15/13,60 ⇒ +11,4 % implicit EPS-tillväxt)' — en härledning ur P/E-kvoten, inte en extern analytikonsensus. 'Konsensusprognosen' överdriver källans status; talet självt är exakt mot universumet"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /**
- * LANDASPEKTER — sverige + usa + danmark för /dataset/[bransch]/[aspekt] (VÅG 150 u3)
+ * LANDASPEKTER — sverige + usa + danmark + schweiz för /dataset/[bransch]/[aspekt]
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14 s2-u3) ──────────────
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) ──
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -270,5 +270,19 @@ export const aspekter: AspektModule[] = [
       " (stiftelseägda ankare är vanliga på Köpenhamnsbörsen) skiljer från Stockholmsbörsen — jämför " +
       "därför den här medianen med danska bolags median, och var varsam med att läsa den mot tal " +
       "från svensk- eller dollarnotrade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "schweiz",
+    land: "Schweiz",
+    forled: "Schweiziska",
+    landNamn: "Schweiz",
+    valutaMening:
+      "De schweiziska bolagen redovisar i schweiziska franc (CHF) — en valuta med egen " +
+      "räntenivå och en historisk roll som säkerhetsvaluta, vilket trycker ned " +
+      "kapitalkostnaderna för schweiziska bolag jämfört med euro- och dollarmiljöer. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men SIX Swiss Exchange " +
+      "bär många globala verksamheter där majoriteten av intäkterna tjänas utomlands — " +
+      "jämför därför den här medianen med schweiziska bolags median, och var varsam med " +
+      "att läsa den mot tal från svensk- eller euro-noterade bolag.",
   }),
 ];

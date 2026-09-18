@@ -18,7 +18,12 @@ function ScrollArea({
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1"
+        // [&>div]:!block (s8-u3): Radix viewportens innersta div är
+        // display:table med min-width:100% — den sväller till innehållets
+        // míninmått och pressade ActivityRow-korten 401px breda i en
+        // 390px-vy (admin-överflödet våg s8-u3). Uppströms shadcn-ui:s
+        // exakta kure för samma Radix-beteende.
+        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&>div]:!block"
       >
         {children}
       </ScrollAreaPrimitive.Viewport>

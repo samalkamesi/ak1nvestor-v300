@@ -1,0 +1,16 @@
+studio: auto s7-u1 o71 spa-hem-trädbantning — o54 §6-köposten tagen: SearchModal-mönstret på startsidans sista JS-only-grenar (SektionVidarebefodran + RefMottagare ur kritisk hydratisering)
+
+VAL: förstavalet nginx-ronden (o66 §6-rest) kasserades — s7-u2:s anspråk landade disk-först 18:35 lokal och deras kur är redan levererad i prod (o70 + DRIFTSBOKEN 16:43Z). Ersättningsval: spårets egna bokade köpost o54 §6 — "/:s FCP är skriptbunden; sond: vilka klientkomponenter i spa-hem-kedjan som kan följa SearchModal-mönstret".
+
+SOND (FÖRE på läkt prod-bygge -udydQnIf-pUcE4iU5sqV; last 3,73–4,14 deklarerat, TBT kontaminerat = 7 893; strukturplan lastokänsligt): 18 chunks/274 KiB modul-kartlagda — spa-hem-chunken 13,0 KiB ("Laddar sektion"/"flyttat in det här i biblioteket"); Header (Toppvaxel+lucide), Home-texter ("Kunskapsflödet"), ordbok (hero-texten "Lär dig läsa bolag" — MGTM-design), CookieConsent, lucide-ikoner, lasy-global-vakter (⌘K, o61-beslut) = samtliga SSR- eller designbundna. NEGATIVT resultat bokförd ärligt: inga ytterligare SearchModal-kandidater finns i kedjan.
+
+KUR (kontrakt bevarade — SSR-HTML identik, no-JS våg 81 orört; ?ref=-AC2 orörd):
+- src/lib/ak1a/sektionsrutter.ts (NY): ROUTE_FOR_SEKTION + NAMN_FOR_SEKTION i vägerlätt lib (exklusiva för spa-hem, grep-bevisat) — SpaHem:fatta boolean-beslutet utan vyn.
+- src/components/ak1a/sektion-vidarebefodran.tsx (NY): M3-vyn ordagrant (timer + slug-frysning + logotyp-JSX) via next/dynamic ssr:false + SektionsSkelett-fallback inom det existerande 800 ms-redirect-fönstret.
+- src/components/ak1a/spa-hem.tsx: båda grenarna dynamic ssr:false (RefMottagare utan fallback — SSR-kontraktet är null-fallet, källkommentar citerad); VarumarkesLogo lämnar spa-hem-chunken (delas kvar i header/footer-chunks — ingen duplikatkostnad).
+
+KVD: node node_modules/typescript/bin/tsc --noEmit = 0 FEL (projektbinär); inga teströpare (grep verktyg/*.mz == 0 träff); pre-commit-grind passerar mekaniskt. INGET bygge (fabriksregeln — prod-synken deployar denna commit vid nästa poll; EFTER-mätning enligt kriterier a–d i protokollet §4 när BUILD_ID bytts, o54/o61-precedensen).
+
+DRIFT-KONTEXT (§0 i protokollet): fönstret inleddes under prod-incident 16:30:33–16:42:19Z (två OOM-dödda synkbyggen → .next halvraderad → pm2 boot-loop → 502) — diagnostiserad (pm2-logg + fuser-grind), läkt av prod-synkens 16:37-poll + deploy; egen andel = diagnostik + EN overksam pm2-restart 16:41:15Z (våg 100 hölls — inget race mot byggägaren); händelsen bokförd av s7-u2 i DRIFTSBOKEN med systemisk köpost (fabrikens barn × synkbygge). FÖRE-mätningen skedde på det LÄKTA bygget med prod 200 ×3 egen-verifierad.
+
+R2 orörd (priser/tier/publicering orörda); data/blogg/ orörd (inga utkast heller); syskonytor orörda (o61-fil-M = s7-u3:s pågående yta, lämnad). [fabrik]

@@ -15822,5 +15822,94 @@
    ]
   },
   "notering": "ENGÅNGS-ENDOSKOPI GRUNDAREN — VÄNDNINGENS LÄROBOK: single-use-bronkoskopi/koloskopi och självtest; FY2022-botten netto 93 M DKK vid EBIT-marginal 2,74 % (efter COVID-testboomens fall) → FY2025 netto 609 M vid 12,99 % — VINSTTRAPPAN 247→93→168→235→609 M DKK (+25,3 %/år endpoint) med bruttomarginalens sågtand 56,8→60,2 % (spread 5,6 pp: devices-moat är produktcykler, inte licensavtal — Genmab-kontrasten i samma cell); P/E 34,12 mot forward 22,79 ⇒ prognosTillväxt +49,8 % (PEG spår 0,69, källans 0,75 som not); ROIC 9,04 % UNDER WACC 11,69 % = −2,7 pp (ARM-klassen: värdestoffet bor i tillväxtförväntningen — kontrast mot Lundbecks +9,0 pp i samma cell); 3-årsprognos EPS +17,6 %/år mot intäkt +9,3 % = marginalhävstången; NETTOKASSA 126 M DKK (kassa 705/skuld 579) ger EV 16,97 UNDER mcap 17,10 — cellens enda nettokassa-bolag; direktavkastning 0,62 % (DPS 0,41 DKK, payout 21,6 %) + återköp 0,67 %; insiders 20,45 % = grundarfamiljen Obels krets (Det Obelske Familiefond); 52-veckor −32,41 % (spann 56,25–111,80) med beta 1,39 = kursens egen vändningsberättelse; FY slut september (oktober–september, slutårsetikett — tredje årskonventionen); FCF-serien härledd ur källans FCF-marginal × intäkt (−43,1 → +673,7 M DKK FY2022–2025, vändningen FY2023 — derivationsbas dokumenterad); senaste rapport 2026-08-26 (Q3 FY25/26), nästa ej listad hos källan; analys Hold 81,77 DKK (8 st)."
+ },
+  {
+  "ticker": "BUD",
+  "namn": "Anheuser-Busch InBev SA/NV",
+  "bransch": "konsument",
+  "land": "Belgien",
+  "valuta": "USD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/stocks/bud/",
+    "paranoid": "NYSE-ADR BUD (översikt + statistics + financials + cash-flow-statement + balance-sheet; underlag S&P Global Market Intelligence; stängningskurs 2026-09-17): pris 78,77, mcap 155,46 mdr, EV 228,23, P/E 16,67 forward 16,79, P/B 1,54 (mcap/total equity 101,19 OCH not: pris/BVPS 78,77/47,42 = 1,66 common-bas — minoritetsspridningen dokumenterad), EV/EBIT 13,63 EV/EBITDA 11,56, marginaler TTM brutto 56,49 EBIT 26,75 netto 14,90 FCF 21,98, ROE 11,39/ROIC 8,01/ROCE 9,06/WACC 6,95, skuld/EK 0,72 (total equity-bas), räntetäckning 5,07×, nettoskuld 64,72 mdr (72,73 skuld − 8,01 kassa), utdelning 0,83 USD/ADR (1,05 %, payout 17,83 %; replik 0,83/4,64 = 17,89 % — aktiebas-spridning), återköpsavkastning 1,28 %, aktieägaravkastning 2,33 %, beta 0,78, 52-v 58,33–86,60 (+35,97 %), Altman Z 1,5, Piotroski F 8, effektiv skattesats 22,31 %, analytiker Köp (11 st, mål 97,03), institutioner 28,85 %, insiders 1,38 %, 136 805 anställda, oms/anställd 457 695 USD, intäktstillväxtprognos 3 år +5,67 %, EPS-prognos 3 år +13,38 %; bransch Consumer Staples/Brewers källkonsekvent med CARL-B.CO-familjen"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 78.77,
+  "marknadsKapitalMdr": 155.46,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0088,
+   "resultatCAGR5ar": 0.0463,
+   "omsattningTillvaxtTTM": 0.07
+  },
+  "lonksamhet": {
+   "roe": 0.1139,
+   "roic": 0.0801,
+   "bruttoMarginal": 0.5649,
+   "ebitMarginal": 0.2675,
+   "nettoMarginal": 0.149,
+   "fcfMarginal": 0.2198
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.72,
+   "rantaTackning": 5.07,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": null
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.554,
+   "bruttoMarginalSpread5ar": 0.036,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 16.67,
+   "pb": 1.54,
+   "evEbit": 13.63,
+   "peg": null,
+   "fcfYield": 0.0885,
+   "egenKapitalMultipl": 1.54
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    57786,
+    59380,
+    59768,
+    59320
+   ],
+   "resultat": [
+    5969,
+    5341,
+    5855,
+    6837
+   ],
+   "egetKapital": [],
+   "fcf": [
+    8138,
+    8627,
+    11192,
+    11227
+   ]
+  },
+  "notering": "BELGIEN = UNIVERSUMETS 21:A LAND (BABA/RY/Samsung/TCS/PBR-precedenskedjans nästa bricka; omg14-u1:s utpekade fria koordinat 'Belgien/BUD') och CARLSBERG-JÄMFÖRELSERADEN FÖDS: öl-duon som spårets bevisade mönster (NEM+FCX ädelmetall/basmetall, MBG+BMW tyska biltvillingar) — BUD P/E 16,7 · brutto 56,5 % · EBIT 26,8 % mot CARL-B 18,2 · 45,0 · 14,6: VÄRLDENS STÖRSTA BRYGGERIKONCERN mot nordisk utmanare, och efter tio års deleveraging LÄGRE skuld/EK än utmanaren (0,72 mot 1,34 — skuldresan klarad). AB INBEV = 500+ VARUMÄRKEN (Budweiser, Corona, Stella Artois, Michelob Ultra, Spaten, Beck's) i 150+ länder, 136 805 anställda, 0,458 MUSD omsättning per anställd, rötter till 1366 (Den Hoorn-bryggeriet Leuven — universumets äldsta företagslinje); huvudkontor Bryssel med SA/NV-dubbeljuridik (belgisk/schweizisk konventionsnot), NYSE-ADR BUD primär för USD-datan, rapportering i USD sedan 2019. SABMILLER-SKULDENS DELEVERAGING-RESA (universumets tyngsta skuldpedagogik — kontrasten mot BABA:s 17,5 mdr NETTOKASSA i omg9): förvärvet 2016 (~100 mdr USD) satte total skuld 88,9 mdr (FY2021) som nu är 72,7 — netto 64,7 mdr (72,73 − 8,01); EV 228,2 mot mcap 155,5 = SKULDANS SYNLIGHET I EV/EBIT-SPRIDNINGEN; FCF-trappan 8,1 → 8,6 → 11,2 → 11,2 mdr USD (FY2022–25, TTM 13,8) med capex fallande 5,2 → 3,7 mdr; utdelningarna betalda 2 442 → 3 013 → 2 672 → 4 543 mdr och återköpen 0 → 362 → 937 → 2 301 (TTM 1 701) — DELEVERAGING FÖRST, AKTIEÄGARSTRÖM EFTER: kapitalprioritetens lärobok. FCF-MASKINEN: FCF 13,8 mdr TTM på omsättning 62,6 = fcfYield 8,85 % (REPLIKERBAR EXAKT 13,762/155,46) och FCF-marginal 22,0 % — bland konsumentgrenens fetaste (KO/PEP-familjen), med payout blott 17,8 % (utdelningen 0,83 USD/ADR, 1,05 % direktavkastning): skuldprioriteten håller utdelningen låg trots maskinen. MOAT = STABILITET (VALE-KONTRASTEN): bruttomarginal 5 år inom 3,6 pp-band — 57,5 → 54,5 → 53,9 → 55,3 → 55,9 % (medel 55,4, spread 0,036) — prissättningsmakten över 500 varumärken håller genom pandemi/inflation/krona; Carlsbergs 45,0 % är vallgraven på nästa nivå ned. VÄRLDENS STÖRSTA-doktrinen: BUD brygger mer öl än nr 2+3 TILLSAMMANS (volym ~585 Mhl-familjen mot Heineken+Carlsberg). PROGNOS-GAPET NEGATIVT — UNIVERSUMETS FÖRSTA: forward P/E 16,79 ÖVER trailing 16,67 ⇒ TTE −0,7 %: TTM-nettot 9,3 mdr (+31,1 %) är uppsvällt (Q2-26-fönstret) och marknaden diskonterar normalisering; prognosTillväxt-fältet UTELÄMNAS och peg = null enligt AMZN/KAMBI/VOLCAR-B-konventionen (sonderad denna omgång — 29 null-peg-rader, 0 negativa); källans 3-års EPS-prognos +13,38 %/år och intäkt +5,67 %/år som kalibrerings-noter. MINORITETSPEDAGOGIKEN: total equity 101,2 mdr TTM inkluderar ~10,4 mdr minoritetsintressen (FY2025: total 97,736 − minoritet 10,449 = common 87,287 EXAKT; Ambev-kedjans konsolideringsstruktur) — P/B 1,54 på total-bas mot pris/BVPS 1,66 på common-bas (47,42 × 1,97 mdr); EV-repliken (mcap+skuld−kassa) 220,2 ÷ EBIT 16,75 = 13,15 mot källans 13,63 — källans EV 228,2 väger in minoritet/pension (källspridningsnot i VALE/005930.KS-familjen). KAPITALMARGINALKNAPP: ROIC 8,01 % mot WACC 6,95 % = +1,06 pp — skuldtung kapitalbas pressar marginalen (FCX +1,57 samma familj; konsultkontrasten TCS +61,2); ROE 11,39 % (källans common-bas) mot netto/total equity 9,2 % (replik-not). DUALITETEN: Altman Z 1,5 (lågt — skuldbördans signatur) MEDAN Piotroski F 8 (hög — rörelsens kvalitet): balansräkningens risk och resultaträkningens styrka i samma rad; räntetäckning 5,07×; beta 0,78 defensivt konsumentmonster; 52-vägers 58,33–86,60 (+36,0 %); institutioner 28,85 % (familjestrukturerat ägande — BUD:s fyra belgiska grundarfamiljer + Altria/BAT-blokken dokumenterat lågt flyt). Räkenskapsår kalenderår (universumets huvudkonvention); nästa rapport 2026-10-29 (Q3 2026 — samma FIFO-dag som VALE)"
  }
 ]

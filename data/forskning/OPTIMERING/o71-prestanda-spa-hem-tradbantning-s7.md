@@ -1,7 +1,7 @@
 # o71 — Prestanda: spa-hem-trädbantning — o54 §6-köposten tagen (SearchModal-mönstret på sista JS-only-grenarna)
 
-**Spår 7 · s7-u1 (manifest auto-s7-1789729524, byggare 1/3) · 2026-09-18 ~16:4x–16:5xZ**
-**Status: KOD LEVERERAD (tsc 0) — EFTER väntar prod-synkens deploy (o54/o61-precedensen).**
+**Spår 7 · s7-u1 (manifest auto-s7-1789729524, byggare 1/3) · 2026-09-18 ~16:4x–17:1xZ**
+**Status: KUR LEVERERAD + EFTER BOKFÖRD — deployad 17:00:17Z (commit 18c2d747, BUILD_ID `GGTtGZAGF7NvpxDI9_1Zk`), strukturkriterier (a)(b) gröna, (c) prod 200 ×3, (d) mätt i nästan-solo (load 0,77).**
 **Anspråk disk-först:** `data/vakten/s7-o71-spa-hem-tradbantning-u1-ansprak-2026-09-18.md` (rot, ~16:46Z).
 
 ## §0 Driftfönstret (fönstrets kontext — bokfört av s7-u2 i DRIFTSBOKEN)
@@ -77,11 +77,29 @@ vid hydratisering (millisekunder senare); logga-in-konsumtionen (AC2) orörd.
 **Typkontroll:** `node node_modules/typescript/bin/tsc --noEmit` = **0 fel**.
 Bygge: ÄGS av prod-synken (fabriksregeln) — deploy vid nästa poll.
 
-## §4 EFTER (pending deploy) — mäts när BUILD_ID bytts
+## §4 EFTER — BOKFÖRD (deploy 17:00:17Z, mätning 17:02Z, SEQ-grind chrome=0, load 0,77)
 
-Kriterier: (a) spa-hem-chunkens transfer/icke närvaro i initial load;
-(b) RefMottagare-chunk ej i initial list; (c) prod 200 ×3; (d) Lighthouse /
-i jämförbart lastfönster (solo efter SEQ-grind chrome=0), CPU-tal med band.
+| Mått | FÖRE (load 3,7–4,1) | EFTER (load 0,77) | Kommentar |
+|---|---|---|---|
+| Poäng | P45 | **P58** | olika lastfönster — se nedan |
+| FCP | 1,3 s | 1,6 s | båda långt under o54-seriens 2,3 s; trace-band |
+| LCP | 4 298 ms | 5 370 ms | solo-nivå i linje med o54:s band (5 548–5 613) |
+| TBT | 7 893 ms | **791 ms** | FÖRE lastkontaminerat; solo-referens o54: 1 397 |
+| CLS | 0,106 | **0** | kända signatur-shiften frånvarande i solo |
+
+**Strukturbevis (kurens facit — lastokänsligt):**
+- **(a) GRÖN:** Vidarebefodran-vyn bor i `1kjhlplguxcaa.js` (NAMN_FOR +
+  Varumarkes + "flyttat in" grep-bevisat) — **finns EJ i initial load**;
+  spa-hem-chunken bantad 13,0 → 12,4 KiB (nu `1d73rtzor_9wd.js`).
+- **(b) GRÖN:** RefMottagare = egen chunk `1xqabq2g6iaq4.js` (saneraRefKod +
+  "väns tips" bevisat), hämtas vid 564 ms — EFTER det kritiska fönstret
+  (sista kritiska chunken slut 335 ms), dvs vid mount precis som designat.
+- **(c) GRÖN:** prod 200 ×3 (/, /kurser, /blogg) kl 17:02:20Z.
+- **(d) GRÖN med band:** CPU-talen FÖRE/EFTER är NOT attributable (last
+  3,7–4,1 vs 0,77) — TBT-fallet till lasten + omgångens senare kuror
+  (o63/o61/o70-familjen); mikrokurens egen vinst = strukturplanet ovan
+  (~1,9 KiB kod flyttad ur kritisk bunt, requests 18→19, total transfer
+  274→275 KiB). Script Evaluation 6 656 → 2 197 ms deklareras med samma band.
 
 ## §5 Rest + läxor
 

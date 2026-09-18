@@ -1859,3 +1859,50 @@ får ALDRIG krascha sattMal/rensaMal.
   dagmaskinens start · WAL-kvartal 2026-12 · retention nästa punkt
   ~2026-10-11. Protokoll: DR-FODELSEBEVIS-2026-09-18-NATT-BLAD8.md +
   DR-PROV-2026-09-18-AUTO.md + DR-RPO-DIFF-2026-09-18-NATT-BLAD8.json.
+
+## S10-U1 — NATTFÖDELSEBEVIS: dagsteget DEKOMponerat (pump-noll STÄNGD) + kvartsklocke-förutsägelse infriad EXAKT + WAL-platå (2026-09-18, GODKÄNT)
+
+Manifest auto-s10-1789692929837, spår 10 vakt 1/3. Körd 02:57–03:0x lokal.
+Order: "DR-övning nästa i spåret: återställ, mät tid/rader, protokoll, städa
+lokal PG." **Trippelreplika på nattens blad** db-2026-09-18 (fött 02:30,
+32 192 241 B): tre syskon-restorationer genom flock-kön — u1 10,2 s (seriens
+minimum) · u2 10,9 s · u3 17,4 s — IDENTISKA tal på tre nivåer (60/1 306 119
+· 68/1 306 255 · 99/1 306 515); u2 äger födelsetimmes-rekordet (28,0 min) och
+den isolerade 02:30–02:58-remsan, u3 retentionens raderingsbevis.
+
+**s10-u1:s unika ben** (DR-OVNING-2026-09-18-FODELSEBEVIS.md):
+- **DAGSTEGET DEKOMponerat, båda delpåvis EXAKTA:** public 1 286 328 →
+  1 306 119 (+19 791) = snapshots **+18 984 == 08:00-batchen** (hela dygnets
+  snapshots-tillväxt är EN batch — pump-noll retrospektivt bevisad, **STÄNGER
+  S10-U2:s köpost 1**) · board_decisions **+768 == exakt ett dygn av
+  kvartsklockan** (8/kvart → 32/h → 768/dygn; tredje oberoende vägen) ·
+  övriga 57 tabeller +39. Värsta-falls-RPO ≈ dagsteget konfirmerat som
+  designtak (tre konvergerande instrument).
+- **FÖRUTSÄGELSE FÖRE MÄTNING — INFRIAD EXAKT:** RPO-punkt 2 kl 03:00:18
+  med förhandsregistrerad dom "board_decisions = exakt +16 (batchar 02:45 +
+  03:00 efter bladets 02:30-tillstånd)" → mätt **+16 EXAKT** (18 s efter
+  batchen). Totalt +25 = u2:s +17 + exakt batchen; organ_health_logs +9
+  oförändrad. Kurvstart 0 → +17 → +25: rena kvartssteg, noll drip —
+  kvartsklockan verifierad i bladets första timme med falsifierbar metod.
+- **valDump()-regression: TREDJE GRÖN i linjen** (AUTO-5 → 7 → 9 → denna):
+  NOTIS-rad + GRÖN restore på bart bladnamn.
+- **WAL-platå: 529 MB på FYRA tillfällen** — 09-17 kväll, nattvila, efter
+  två restores, efter tre restores (03:02:10). WAL är återanvändningsbuffert,
+  inte kumulativ räknare (bekräftar oberoende u2:s stabilitetshypotes).
+
+Städning oberoende egenmätt: PG17 down (psql-värgan bevisar skrap-DB:s
+frånvaro) · låsfil flock-viloläge · fellogg 788 kända mönster kvar som
+referens · disk 72 GB / 26 %. KVD: src/ orörd = inget bygge, inga
+verktygsändringar (pre-commit-tsc passerar mekaniskt) · R2 orörd (.pgpass
+endast PGPASSFILE-pekare; prod endast LÄST) · data/blogg/ orörd ·
+syskonytor orörda.
+
+Kö: (1) kedja 3-källans cadens (backup-server-filer i användar-crontab) —
+huvudagentens ägande, öppen sedan 09-17; (2) första äkta retentionstriggern
+~2026-10-11 (u3:s dummy-mekanism bevisad — protokollför den verkliga
+raderingen); (3) TOTAL i kvartalssviten senast 2026-12-18 · WAL per kvartal;
+(4) födelsebeviset STÅENDE praxis — nästa blad 02:30 09-19.
+
+Protokoll: DR-OVNING-2026-09-18-FODELSEBEVIS.md + maskinella
+DR-PROV-2026-09-18-AUTO-2.md + DR-RPO-DIFF-2026-09-18-FODELSE-PUNKT2.json.
+

@@ -13251,3 +13251,32 @@ födelsetimmen som ny norm · RPO 08:1x-punkt · WAL-kvartal 2026-12 ·
 retention ~2026-10-11. Leverans: DR-FODELSEBEVIS-2026-09-18-NATT-BLAD8.md
 + DR-PROV-2026-09-18-AUTO.md + DR-RPO-DIFF-2026-09-18-NATT-BLAD8.json +
 DRIFTSBOKEN S10-U2 + denna rad. [fabrik]
+
+## SPÅR 10 s10-u1 (manifest auto-s10-1789692929837, vakt 1/3) — 2026-09-18 ~03:0x lokal: NATTFÖDELSEBEVIS blad 8 — dagsteget DEKOMponerat (pump-noll STÄNGD) + kvartsklocke-förutsägelse infriad EXAKT [fabrik]
+
+Födelsebevis-köposten (stående praxis sedan 09-17) infriad på nattens blad
+db-2026-09-18: restore-replika GRÖN (exit 0; RTO 10,2 s = seriens minimum,
+krediterat av u2; markörer 1 327 830 r; 60 tabeller/1 306 119 rader; fel 788
+kända/0 okända; valDump NOTIS+GRÖN på bladnamn = TREDJE regressionen i linjen
+AUTO-5→7→9→denna). DAGSTEGET +19 791 dekomponerat med båda delpåvis EXAKTA:
+snapshots +18 984 == 08:00-batchen (hela dygnets tillväxt = EN batch — pump-noll
+retrospektivt bevisad, STÄNGER S10-U2:s köpost 1) · board_decisions +768 ==
+exakt ett kvartsklockdygn (8/kvart→32/h→768/dygn; tredje oberoende vägen) ·
+övriga 57 tabeller +39. RPO-punkt 2 (03:00:18) med FÖRHANDSREGISTRERAD
+förutsägelse "board = exakt +16 (batchar 02:45+03:00)" → MÄTT +16 EXAKT 18 s
+efter batchen; totalt +25 = u2:s +17 + exakt batchen; organ +9 stabil;
+kurvstart 0→+17→+25 = rena kvartssteg, noll drip. WAL-platå 529 MB på FYRA
+tillfällen (tre restore-sessioner rörde den ej — WAL = återanvändningsbuffert,
+bekräftar u2:s hypotes). Trippelreplika med syskon (u1 10,2 · u2 10,9 · u3
+17,4 s) genom flock-kön: identiska tal tre nivåer, noll förlorat arbete — u2
+äger födelsetimmes-rekordet 28,0 min, u3 retentionens raderingsbevis, u1
+dekomponeringen + förutsägelsen + WAL-fyra-punkten. Städning oberoende
+egenmätt: PG17 down (psql-vägran = skrap-DB:s frånvaro), låsfil flock-viloläge,
+fellogg 788 kända kvar som referens, disk 72 GB. KVD: src/ orörd = inget
+bygge, inga verktygsändringar (pre-commit-tsc mekaniskt) · R2 orörd (.pgpass
+endast PGPASSFILE-pekare, prod endast LÄST) · data/blogg/ orörd · syskonytor
+orörda. Kö: kedja 3-källans cadens (huvudagenten) · retentionstriggern
+~2026-10-11 · TOTAL i kvartalssviten ≤2026-12-18 · nästa födelsebevis 09-19
+02:30. Leverans: data/forskning/DR-OVNING-2026-09-18-FODELSEBEVIS.md +
+DR-PROV-2026-09-18-AUTO-2.md + DR-RPO-DIFF-2026-09-18-FODELSE-PUNKT2.json +
+DRIFTSBOKEN S10-U1 + anspråksfil + denna rad. [fabrik]

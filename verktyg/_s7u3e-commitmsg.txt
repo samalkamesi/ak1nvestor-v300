@@ -1,0 +1,30 @@
+studio: auto s7-u3 chat-defer-kuren — AI-Mentorn-chunken (106 K transfer, sidornas TYNGSTA JS-chunk, större än react-chunken) ur TBT-fönstret: LasyChatWidget blir egen event-vakt (o49) [fabrik]
+
+ROT (FÖRE-mätning, deployat bygge qDivc0Sh, lighthouse/s7u3e-chatfore*):
+chat-chunken 3v1r20o-hksum.js hämtas 2 025–2 385 ms efter navigation på
+samtliga tre mätsidor — mitt i FCP–TTI-fönstret — därför att LasyGlobal:s
+idle-montering med 2 s-tak tvingas köra på drosslad mobil medan huvudtråden
+fortfarande arbetar. Chatten är en TJÄNST, inte innehåll: 30-lagers
+svarsmotorerna i chunken behövs först när en fråga skickas.
+
+KUR (lasy-global.tsx — spårets egen fil sedan o1/våg 68; transport, ej
+beteende): LasyChatWidget ersätter LasyGlobal-barnet med egen vakt i
+PalettVakt-mönstret — tre utlösare: (1) första interaktionen
+(scroll/pek/tangent) monterar direkt; (2) yttre "ak1a:oppna-mentor"-event
+(t.ex. Fråga-knappen i Min portfölj) monterar OCH bevarar förhandsfrågan —
+MentorSignal återsänder öppningen när widgetens lyssnare är på plats;
+(3) basfall 8 s + därefter requestIdleCallback UTAN tvångs-timeout = äkta
+idle → på långsam mobil landar chatten efter första tysta fönstret, på
+snabb enhet som förr. Widgeten laddas via React.lazy + Suspense (inte
+next/dynamic): lazy-suspensionen håller MentorSignal i SAMMA commit som
+widgeten när gränsen resolvar, så effektordningen garanterar att lyssnaren
+finns före återsändningen — PalettVakt-precedensen i samma fil.
+
+BEVIS: node node_modules/typescript/bin/tsc --noEmit = 0; kedjetestet
+64 PASS 0 FAIL (fall G:s kompositionsordning i chat-widget.tsx orörd);
+chat-widget.tsx själv orörd (0 rader ändrade — syskonens aktiva yta);
+ShortSeller/NotisCenter/LasyGlobal orörda; globalt-skal.tsx orört
+(export-signaturen LasyChatWidget behållen). INGET bygge — prod-synken äger
+(fabriksregeln); EFTER-mätning bokförs på ny BUILD_ID av samma agent enligt
+o45-mönstret. Endast src/components/ak1a/lasy-global.tsx + FÖRE-rådata ×4 +
+sond + anspråk + denna fil; R2 orörd; data/blogg/ orörd. [fabrik]

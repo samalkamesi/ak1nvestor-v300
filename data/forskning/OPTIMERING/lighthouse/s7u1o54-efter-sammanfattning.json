@@ -1,0 +1,139 @@
+{
+  "datum": "2026-09-17T22:59:12.666Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u1o54-efter",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "poang": {
+        "prestanda": 0.5,
+        "tillganglighet": 0.98,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1779,
+        "LCP": 5613,
+        "TBT": 1397,
+        "CLS": 0,
+        "TTI": 5671,
+        "SI": 4474
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 21 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 21 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 632 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 632 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "3.5 s",
+          "rad": "Reduce JavaScript execution time — 3.5 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "7.7 s",
+          "rad": "Minimize main-thread work — 7.7 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.58,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1389,
+        "LCP": 5097,
+        "TBT": 1026,
+        "CLS": 0,
+        "TTI": 5458,
+        "SI": 3493
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 45 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 45 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 560 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 560 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.2 s",
+          "rad": "Reduce JavaScript execution time — 2.2 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "5.4 s",
+          "rad": "Minimize main-thread work — 5.4 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.55,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1234,
+        "LCP": 4582,
+        "TBT": 2378,
+        "CLS": 0,
+        "TTI": 4582,
+        "SI": 1863
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 46 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 46 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 529 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 529 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "1.3 s",
+          "rad": "JavaScript execution time — 1.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.9 s",
+          "rad": "Minimize main-thread work — 4.9 s"
+        }
+      }
+    }
+  ]
+}

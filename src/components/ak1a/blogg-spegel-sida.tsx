@@ -118,7 +118,15 @@ export function BloggSpegelSida({
             <ul className="mt-4 space-y-3">
               {related.map((p) => (
                 <li key={p.slug}>
-                  <Link href={`/${lang}/blogg/${p.slug}`} className="group block">
+                  <Link
+                    href={`/${lang}/blogg/${p.slug}`}
+                    prefetch={false}
+                    // prefetch={false} (o41/o52-precedensen): under vecket —
+                    // spegelns "Läs också"-kort prefetchas när läsaren
+                    // scrollar fram dem; klick ≈ 100–300 ms (force-static),
+                    // hover-prefetch lever (Next 16).
+                    className="group block"
+                  >
                     <span className="font-serif font-semibold group-hover:text-gold">{p.title}</span>
                     <span className="block text-sm text-muted-foreground">{p.description}</span>
                   </Link>
@@ -176,7 +184,15 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
       const label = seg.slice(1, seg.indexOf("]"));
       const href = seg.slice(seg.indexOf("](") + 2, -1);
       out.push(
-        <Link key={`${keyPrefix}-a${i}`} href={href} className="text-gold underline hover:opacity-80">
+        <Link
+          key={`${keyPrefix}-a${i}`}
+          href={href}
+          prefetch={false}
+          // prefetch={false} (o41/o52-precedensen, spegelparitet med svenska
+          // /blogg/[slug]): brödtextens korsreferenser prefetchas i två
+          // omgångar per kall visning (o52 §2); hover-prefetch lever (Next 16).
+          className="text-gold underline hover:opacity-80"
+        >
           {label}
         </Link>
       );

@@ -1,0 +1,188 @@
+{
+  "skapad": "2026-09-18T12:28:30.176Z",
+  "verktyg": "verktyg/dr-pumpvakt.mjs",
+  "signaturKonstanter": {
+    "pumpFoddYngreBlad": "2026-09-13",
+    "snapshotsPerDag": 18984,
+    "boardBand": [
+      760,
+      780
+    ],
+    "organBand": [
+      0,
+      100
+    ]
+  },
+  "kandaSchemaUndantag": [
+    "cron",
+    "vault"
+  ],
+  "blad": [
+    {
+      "namn": "db-2026-09-11.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1100532,
+      "board": 43549,
+      "organ": 2676,
+      "publicRader": 1186890
+    },
+    {
+      "namn": "db-2026-09-12.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1100532,
+      "board": 43968,
+      "organ": 2700,
+      "publicRader": 1187329
+    },
+    {
+      "namn": "db-2026-09-13.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1119516,
+      "board": 44741,
+      "organ": 2748,
+      "publicRader": 1207134
+    },
+    {
+      "namn": "db-2026-09-14.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1138500,
+      "board": 45506,
+      "organ": 2796,
+      "publicRader": 1226931
+    },
+    {
+      "namn": "db-2026-09-15.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1157484,
+      "board": 46274,
+      "organ": 2841,
+      "publicRader": 1246728
+    },
+    {
+      "namn": "db-2026-09-16.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1176468,
+      "board": 47042,
+      "organ": 2889,
+      "publicRader": 1266528
+    },
+    {
+      "namn": "db-2026-09-17.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1195452,
+      "board": 47810,
+      "organ": 2937,
+      "publicRader": 1286328
+    },
+    {
+      "namn": "db-2026-09-18.sql.gz",
+      "markorerGron": true,
+      "snapshots": 1214436,
+      "board": 48578,
+      "organ": 2976,
+      "publicRader": 1306119
+    }
+  ],
+  "par": [
+    {
+      "fran": "2026-09-11",
+      "till": "2026-09-12",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 0,
+      "board": 419,
+      "organ": 24,
+      "dPublic": 439,
+      "slarm": false,
+      "notiser": [
+        "epok-par (yngre blad 2026-09-12 före pumpens födelse 2026-09-13) — inget pumpkrav",
+        "VARNING: Δboard_decisions 419 utanför observationsband 760–780 (1 dag; par 2026-09-11→2026-09-12)"
+      ]
+    },
+    {
+      "fran": "2026-09-12",
+      "till": "2026-09-13",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 773,
+      "organ": 48,
+      "dPublic": 19805,
+      "slarm": false,
+      "notiser": []
+    },
+    {
+      "fran": "2026-09-13",
+      "till": "2026-09-14",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 765,
+      "organ": 48,
+      "dPublic": 19797,
+      "slarm": false,
+      "notiser": []
+    },
+    {
+      "fran": "2026-09-14",
+      "till": "2026-09-15",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 768,
+      "organ": 45,
+      "dPublic": 19797,
+      "slarm": false,
+      "notiser": []
+    },
+    {
+      "fran": "2026-09-15",
+      "till": "2026-09-16",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 768,
+      "organ": 48,
+      "dPublic": 19800,
+      "slarm": false,
+      "notiser": []
+    },
+    {
+      "fran": "2026-09-16",
+      "till": "2026-09-17",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 768,
+      "organ": 48,
+      "dPublic": 19800,
+      "slarm": false,
+      "notiser": []
+    },
+    {
+      "fran": "2026-09-17",
+      "till": "2026-09-18",
+      "dagar": 1,
+      "vantanSnapshots": 18984,
+      "snapshots": 18984,
+      "board": 768,
+      "organ": 39,
+      "dPublic": 19791,
+      "slarm": false,
+      "notiser": []
+    }
+  ],
+  "restore": {
+    "blad": "db-2026-09-18.sql.gz",
+    "rtoSek": 13.67,
+    "markorGron": true,
+    "publicTabeller": 60,
+    "publicRader": 1306119,
+    "kontrakteradeTabeller": 98,
+    "avvikelser": [],
+    "felKanda": 788,
+    "felOkanda": 0
+  },
+  "dom": "GRÖN",
+  "protokoll": "data/forskning/DR-PROV-2026-09-18-AUTO-13.md"
+}

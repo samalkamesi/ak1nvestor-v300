@@ -5,10 +5,10 @@
  * Oberoende verifiering av src/lib/studio/permissions-policy.ts — INGEN
  * server, INGEN transport, INGEN Next-kontext (node kan inte importera TS
  * direkt, därför samma recept som validera-motorer.mjs):
- *   1. Genererar tmp_permissions_policy_koll.ts i repots rot — importerar
- *      ENDAST den rena policymodulen och kör ALLA fall (JSON-resultat mellan
- *      två ASCII-markörer).
- *   2. Kör den med: npx --yes tsx tmp_permissions_policy_koll.ts (hård
+ *   1. Genererar tmp_permissions_policy_koll.ts i .tmp-zonen (o44: gitignorerad
+ *      engångsyta) — importerar ENDAST den rena policymodulen och kör ALLA fall
+ *      (JSON-resultat mellan två ASCII-markörer).
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_permissions_policy_koll.ts (hård
  *      120 s-budget).
  *   3. Skriver RADRAPPORT-tabellen till stdout och städar tmp-filen
  *      (även vid fel/timeout).
@@ -34,12 +34,12 @@
  * Avslutskod:  0 OM OCH ENDAST OM 0 FAIL. Annars 1.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_permissions_policy_koll.ts");
+const TMP_TS = path.join(REPO, ".tmp", "tmp_permissions_policy_koll.ts");
 const TIMEOUT_MS = 120_000;
 const MARK_START = "===PERMPOLICY_JSON_START===";
 const MARK_END = "===PERMPOLICY_JSON_END===";
@@ -128,7 +128,7 @@ const FALL = [
 const tmpKod = [
   "// AUTOGENERERAD av verktyg/testa-permissions-policy.mjs (våg 94 B) —",
   "// REN modultest, raderas efteråt. Importerar ENDAST policyn.",
-  'import { autoPolicyAktiv, autoPolicySvar, arIArbetsyta, roKansligFil } from "./src/lib/studio/permissions-policy";',
+  'import { autoPolicyAktiv, autoPolicySvar, arIArbetsyta, roKansligFil } from "../src/lib/studio/permissions-policy";',
   "",
   "interface Fall {",
   "  namn: string;",
@@ -197,6 +197,7 @@ function stada() {
 
 function main() {
   console.log(`[permissions-policy] REN modultest — ${FALL.length} policyfall + hjälparkontroller`);
+  mkdirSync(path.dirname(TMP_TS), { recursive: true }); // o44: engångszonen finns alltid
   writeFileSync(TMP_TS, tmpKod, "utf8");
   let barn;
   try {

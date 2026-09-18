@@ -4,7 +4,7 @@
  * §8 + §11 steg 6, r1-bayes.md). Mönster som verktyg/testa-akm2-dynamik.mjs:
  *   1. Genererar tmp_kalibrering_koll.ts i repots rot — importerar
  *      kalibreringslagret + akm2/dynamik (speglingkontroller).
- *   2. Kör den med: npx --yes tsx tmp_kalibrering_koll.ts
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_kalibrering_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller (LAGEN — r1 §1.2/§2.1 + BESLUT §8/§10/§11.6):
@@ -34,12 +34,12 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_kalibrering_koll.ts");
+const TMP_TS = path.join(REPO, ".tmp", "tmp_kalibrering_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ────────
@@ -81,8 +81,8 @@ import {
   type KalibreringDomRad,
   type KalibreringLogg,
   type KalibreringLoggRad,
-} from "./src/lib/akm3/kalibrering";
-import { MARKOV_PRIOR, PHI as DYNAMIK_PHI, bestamVagfas } from "./src/lib/akm2/dynamik";
+} from "../src/lib/akm3/kalibrering";
+import { MARKOV_PRIOR, PHI as DYNAMIK_PHI, bestamVagfas } from "../src/lib/akm2/dynamik";
 
 type Kontroll = { namn: string; ok: boolean; detalj: string };
 const KOLL: Kontroll[] = [];
@@ -463,9 +463,10 @@ process.exit(antalFail > 0 ? 1 : 0);
 
 // ── 2) Skriv tmp-fil, kör via tsx, städa ────────────────────────────────────
 function main() {
+    mkdirSync(path.dirname(TMP_TS), { recursive: true }); // o44: engångszonen finns alltid
   writeFileSync(TMP_TS, TS_KOD, "utf8");
-  console.log("[testa-akm3-kalibrering] kör npx --yes tsx tmp_kalibrering_koll.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_kalibrering_koll.ts"], {
+  console.log("[testa-akm3-kalibrering] kör npx --yes tsx .tmp/tmp_kalibrering_koll.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_kalibrering_koll.ts"], {
     cwd: REPO,
     stdio: "inherit",
     shell: true,

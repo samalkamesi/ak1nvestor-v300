@@ -106,7 +106,18 @@ export function VarumarkesLogo({
   // Link när href finns (mobilmenyn vill stänga + navigera via onClick).
   if (href) {
     return (
-      <Link href={href} onClick={onClick} className={gemensamKlass} aria-label="AK1A Research Lab — till startsidan">
+      <Link
+        href={href}
+        prefetch={false}
+        // prefetch={false} (o17/o41/o49-precedensen): logon är synlig i
+        // viewport på varje sida ⇒ Next 16 prefetchar `/` i tre omgångar
+        // (partial + full flight ≈ 12 KiB) i varje sidvisnings LCP-fönster.
+        // Startsidan är force-static (klick ≈ 100–300 ms), hover-prefetch
+        // lever kvar (Next 16); mätt i o50.
+        onClick={onClick}
+        className={gemensamKlass}
+        aria-label="AK1A Research Lab — till startsidan"
+      >
         {inre}
       </Link>
     );

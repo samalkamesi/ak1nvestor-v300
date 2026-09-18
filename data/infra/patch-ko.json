@@ -1,4 +1,6 @@
 [
-  { "paket": "next", "version": "16.3.5" },
-  { "paket": "eslint-config-next", "version": "16.3.5" }
+  {
+    "paket": "sharp",
+    "version": "0.35.4"
+  }
 ]

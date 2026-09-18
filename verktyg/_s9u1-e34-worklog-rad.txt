@@ -1,0 +1,46 @@
+
+## SPÅR 9 s9-u1 omgång 13 — 2026-09-17 ~20:5x–21:0x lokal: SYSTEMKARTAN dokvåg — E34 Drift, backup & DR återdiffad (andra varvet) + patch-rond 2 följd LIVE från 502 till läkt prod 200 [fabrik]
+
+Leverans: dokvåg s9-u1 omgång 13 — E34 (femte passningen av systemet, andra
+återdiffen; objektval enligt varv-regeln: E34:s domän tog sedan 09-16-passningen
+emot o50 + o55 + RCE-patchen 16.3.5 + döda-länkar-vågen = spårets största
+verklighetsrörelse). DOKVÅGEN FÖLL MITT I DRIFTEN: mätningen inleddes 20:37 i ett
+PÅGÅENDE prod-502 (pm2 stoppad 18:37:35Z av pm2-vaktens designgren under
+patch-rond 2) och avslutades i LÄKT prod (pm2 online 18:41:19Z, 6 ytor 200, tsc
+0). ALLT EGENMÄTT — sviter med sanna exitkoder, skarp sond, processlista,
+node-läsning av kvitton/rapporter, crontab, synklogg, git log. FYND: (1) omgång
+9:s NAMNGIVNA HUVUDGAP "post-build-artefaktverifiering" STÄNGT MEKANISKT —
+verifieraArtefakt bär KRITISKA_FILER (BUILD_ID + prerender + routes-manifest,
+artefakt-verifiering.mjs:48) i prod-synkens deploygrind (prod-synk.mjs:785,
+stoppar pm2-restart + DEPLOYAD-markör) + kraschvaktens ärlighetsgrind; svit
+15/15 + skarp sond GRÖN 1364 HTML/81 ref egen. (2) pm2-race-kuren DRIFTBEVISAD
+×2: skapaPm2Vakt (:482) stoppar i patch-grenen, återstart i main():s finally —
+garantin höll 18:33:01Z + 18:41:19Z; svit 35/35 egen. (3) RCE-PATCHEN LIVE I
+PROD: next-server v16.3.5 i processlistan, package+lock committade (957272f8),
+patchkö-svit 51/51 egen. (4) KVITTO-LÖGNEN LEVER: lock-commit-räknaren dömer
+"nothing to commit" som misslyckad (18:32:57Z + 18:41:09Z, 4 kvitton) trots
+levererad patch ⇒ rond 2 var OBEHÖVIG (~4 min extra kundsynlig nedtid) och
+kön stänger på falsk grund — köpost 1 till huvudagenten (s8-u2:s lockcommit-notis
+dömde klassen innehållsmässigt harmlös; dokvågen bekräftar innehållet, visar
+räknarens konsekvens). (5) TRE kundsynliga 502-fönster samma dag: 17:42–47Z
+(avbrutet bygge, DRIFTSBOKEN) + patchfönster 4m51s + 3m44s — patchfönstret är
+ett obokat nedtidsfönster (köpost 2). (6) DÖDA LÄNKAR 3 473/0/793 s tvingad:false
+(20:26:42) + FILSKYDDET BEVISAT: o47:s 13:46-bevisfil (1 616 döda,
+hela-sajten-nere-profilen) orörd vid sidan av; svit 24/0/0 egen MEN
+miljökänslighet mätt: sviten FAILAR under pågående äkta bygge (byggprocess-
+grinden ser globala /proc; fixture-cwd isolerar ej) — köpost 4: märk sviten
+"kräver byggfritt fönster" (E35-korsnotis). (7) DR-KEDJA7 ×4 samma dag +
+crontab-kurer mätta live (pg_dump 02:30 PGPASSFILE + markörkontroll + retention;
+molnbackup 02:40). (8) "mål-återarmning FEL 502" 18:32:57Z i synkloggen —
+patchfönstret bröt målhjärtat (köpost 3: retry-tålighet). Poäng: E34 LEVER 8
+KVAR — huvudgap stängt men tre nya gap öppnade samma dag (netto E33/B14-
+precedensen; B7-precedensen spänner: driftgap nådde konsumentytan IDAG). Snitt
+7,5 / 286 / 38 oförändrat. KOLLISIONSHANTERING: syskon u2:s B9+A4 (7e124f59)
+läst + respekterat (deras "live-sonder 502"-notis var patchfönstret — deras
+sektion orörd); anspråksfil data/vakten/auto-s9-1789670129370-u1-ansprak.md
+skriven FÖRE kartskrivningen; redigering via node-kanal (_s9u1-e34-
+kartuppdatering.mjs: 2 en-träff-ersättningar med abort-grind) + EN skrivning +
+OMEDLBAR commit = clobber-kuren. KVD: endast SYSTEMKARTAN + worklog + anspråksfil
++ verktyg/_s9u1-e34-* = INGET bygge (deploy ägs av prod-synken under lås);
+src/ orörd (tsc 0 egen mätning + via grinden); R2 orörd; data/blogg/ orörd;
+syskonens ytor orörda. [fabrik]

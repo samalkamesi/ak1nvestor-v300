@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+  "granskadAv": "agentfabrik s1-u2 (auto-s1-1789735501260, 2026-09-18, anspråk ~15:4x lokal)",
+  "rapport": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER EN RÄTTNING — readingMinutes 2→6 (1 200 ord textrensat = 600 ord/min mot bloggfamiljens ~ord/200-praxis; fjärde rm-felet i serien) + tre kurrer: tvetydig 'på tvären med' (siffersant: tillväxt 47,75 mot universum 47,77), kapitalförbrukning→kapitalförbränning i description+tags (guidens egen term och kärnlänk v19-kapitalforbranning), källsektionens huvudkälla-markering. I övrigt HELT GRÖN: 15/15 talpåståenden EXAKTA mot vintage 83a5fe10 (9 branschmedianer egna omräkningar med peer-kontraktet + 3 universumsmedianer + spridning 14,6–104,2 mot '15 till över 100'), aritmetik 12/12, elva bolag exakt, Kinnevik/Industrivärden-lådorna sanna, JURIDIKEN ren (grund true, 0 fynd, 1 rådord i negerad kontext, 0 lagrum), 911 0/6, 21/21 interna länkar HTTP 200 + 4 externa levande, 0 universums-superlativer — första branschguiden i omgången ren på superlativfelklassen",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga gammalt-strängar maskinverifierade unika = exakt 1 träff i filen, och nytt-strängarna frånvarande i originalet). Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "readingMinutes (JSON-fält)",
+      "gammalt": "\"readingMinutes\": 2,",
+      "nytt": "\"readingMinutes\": 6,",
+      "orsak": "1 200 ord textrensat (1 338 rå) på 2 minuter = 600 ord/min mot publicerad bloggfamiljs-praxis ~ord/200 (konsumentaktier-dom 09-18: 1 401 ord → rm 7; skuldsättnings-dom: 871 → rm 4; substansrabatt-dom 09-17). round(1 200÷200) = 6. Fjärde rm-felet i serien, tredje med underskattning — systemflagga till byggfabriken: beräkna rm ur ordtalet"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "body (Lönsamheten-sektionen)",
+      "gammalt": "Bruttomarginalen 47,8 procent (n=11) ligger på tvären med universumets median",
+      "nytt": "Bruttomarginalen 47,8 procent (n=11) ligger i nivå med universumets median",
+      "orsak": "Siffersant — tillväxtens 47,75 mot universumets 47,77 i samma vintage (skillnad 0,02 pp) — men 'på tvären med' är tvetydig svenska (läses lätt 'i motsättning till'); avsedd betydelse är 'i nivå med'. Bonusnot för ägaren: den nästan exakta överensstämmelsen (47,8 mot 47,8) är i sig ett pedagogiskt poängterbart fynd"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "description",
+      "gammalt": "Tillväxtaktier: kapitalförbrukning, multipelns pris",
+      "nytt": "Tillväxtaktier: kapitalförbränning, multipelns pris",
+      "orsak": "Guidens egen term är kapitalförbränning (rubrik 'Kapitalförbränningen — kassan är klockan', kroppens definition, kärnlänken /kurser/v19-kapitalforbranning); description använder avvikande 'kapitalförbrukning' — terminologin ska vara enhetlig med det guiden lär ut"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "tags[2] (JSON-rad)",
+      "gammalt": "\"kapitalförbrukning\",",
+      "nytt": "\"kapitalförbränning\",",
+      "orsak": "Samma terminologiavvikelse som C2 men i taggen (maskinverifierad unik med citat+komma-avgränsning; descriptionens förekomst utan citat berörs ej av denna post)"
+    },
+    {
+      "id": "C4",
+      "typ": "förslag",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "body (Källor-sektionen, femte raden)",
+      "gammalt": "- AK1A:s bolagsuniversum — nyckeltal per bolag, hämtade september 2026; medianer med antal mätta bolag (n) redovisade på [dataset-sidan](/dataset)",
+      "nytt": "- AK1A:s bolagsuniversum — huvudkälla för guidens alla medianer och per-bolagstal: nyckeltal per bolag, hämtade september 2026 (10 av 11 bolag 2026-09-03 via Yahoo Finance + MarketStack, MercadoLibre 2026-09-16); medianer med antal mätta bolag (n) redovisade på [dataset-sidan](/dataset)",
+      "orsak": "De fyra externa källraderna är tematiska stöd (ingen av guidens tal hämtas ur dem); den talbärande källan står sist utan markering. Förslaget lyfter fram den faktiska källkedjan — valfritt för ägaren"
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "(publiceringsdag sätts av kunden vid ev. flytt — R2)",
+      "orsak": "publishedAt = skapandedatum (utkastets commit-dag), ej publiceringsdag; samma R2-notis som samtliga syskongranskningar i serien (AZN C4-precedensen)"
+    }
+  ]
+}

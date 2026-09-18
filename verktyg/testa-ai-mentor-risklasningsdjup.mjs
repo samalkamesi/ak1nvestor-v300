@@ -22,7 +22,7 @@
  *                    med/utan detta lager + ämneskontroller + nya rätt
  *   I  omkastad    — de 3 nya kanoniska → null i kedjan UTAN detta lager
  *   J  disjunktion — kärnorden överlappar inget tidigare lagers (mekaniskt)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 27 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 30 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 14:s
@@ -557,7 +557,22 @@ const GAMLA = [
     "svaraLokaltGrahamgolv",
     "svaraLokaltVarderjustering", "svaraLokaltOptionsdjup",
     "svaraLokaltRisklasningsdjup",
-  ];
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -573,13 +588,13 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-risklasningsdjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 27 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "riskläsningsdjup sist av 27 lager, inga okända komponenter",
   );

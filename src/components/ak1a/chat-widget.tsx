@@ -315,6 +315,307 @@ import { svaraLokaltOptionsdjup } from "@/lib/ai-mentor-optionsdjup-fragor";
 // kärnorden mekaniskt disjunkta mot detta lager i båda riktningarna).
 // Juridikgrind: ren metodutbildning — inga placeringstips.
 import { svaraLokaltRisklasningsdjup } from "@/lib/ai-mentor-risklasningsdjup-fragor";
+// Spår 6 omgång 15 (s6-u1): +1 förhandsfråga — avkastningskurve-lagret
+// (den omvända avkastningskurvan/inverterad yield curve/räntekurvan) ligger
+// SIST och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt
+// med flerkällsrad (mk-08-omvand-yield-curve primär + mk-06-penningpolitik
+// + ma-01-transmissionsmekaniken + mk-01-bnp-och-tillvaxt — aktiverar tre
+// kurser ingen mentorväg nådde: sonden räknade mk-08/mk-06/mk-01 olänkade).
+// Ansvarsfördelning (V19-precedensen): makro-lagret äger ränteorden
+// (styrränta/ränta/penningpolitik/obligation — sondbevis), detta lager
+// bär ENDAST sammansatta kurvord + fraser; nakna inverter-ord är bara
+// starkord (cape/case-klassen: "inverterad" ligger tavstånd 1–2 från
+// "investerad"/"investering"); basen äger naket "spread", riskdjupet
+// "löptid". Sond verktyg/_s6u1-sond-omg15.mjs: kedjeprober NULL genom
+// samtliga 27 lager före leveransen. Juridikgrind: ren metodutbildning —
+// inga placeringstips, inga prognoser, historiken bokförd med sina
+// osäkerheter. I samma fönster: ai-mentor-register rebakat 401→402
+// (basotestets E01 var rött — vr-04-rebaken i spår 5 nådde aldrig
+// mentorsregistret; nu 26/26 grönt).
+import { svaraLokaltAvkastningskurva } from "@/lib/ai-mentor-avkastningskurva-fragor";
+// Spår 6 omgång 15 (s6-u2): +2 förhandsfrågor — avkastningsdjup-lagret
+// (avkastningens tre källor: vr-04 primär + vr-03 + kt-02 + ud-09 ·
+// tvärsnittet mellan bolag: vr-01 primär + vr-02 + km-027-pegratio + v06)
+// ligger SIST och kan därför aldrig stjäla en fråga från tidigare lager;
+// källmärkt med flerkällsrader — aktiverar VÄRDERING-familjens två kurser
+// ingen mentorväg nådde (sondens NULL-familj: "vad är avkastning?" ·
+// "var kommer avkastningen ifrån?" · "vad är totalavkastning?" ·
+// "prisavkastning" · "vad är tvärsnittsanalys?" · "hur jämför jag bolag?").
+// Ansvarsfördelning (emission/V19-precedensen): djup-lagret äger i praktiken
+// multipel-orden ("multipelgapet"/"multipelns resa" fångas av dem, sondbevis
+// d=2 till "multipelvalet") — detta lager når vr-01/vr-04 via tvärsnitts-
+// och avkastningsformuleringar; singularen "avkastningskälla" (tavstånd 2
+// till utdelningsdjupets "avkastningsfälla") bärs medvetet EJ här; syskonet
+// s6-u1:s avkastningskurva-lager (samma fönster, disk-läge-presedensen) är
+// kärnordsdisjunkt i båda riktningarna (deras kurvfamilj: avkastningskurva/
+// räntekurva/kurvinvertering — mina käll-/tvärsnittsfamiljer, tavstånd ≥ 4).
+// Sond verktyg/_s6u2-sond-omg15.mjs: 27 motorer / 86 monsters / 897 kärnord
+// LIVE + tre ronder. Juridikgrind: ren metodutbildning — inga placeringstips.
+import { svaraLokaltAvkastningsdjup } from "@/lib/ai-mentor-avrakningsdjup-fragor";
+// Spår 6 omgång 15 (s6-u3): +3 förhandsfrågor — värderingsverktyg-lagret
+// (scenarioanalys/scenarier · utdelningsdiskonteringsmodellen/gordons
+// tillväxtmodell/ddm/gordon growth · peg ratio/peg/peg-kvoten) ligger SIST
+// och kan därför aldrig stjäla en fråga från tidigare lager; källmärkt med
+// flerkällsrader (km-029-scenarioanalys + km-032-stresstesting + rs-04-
+// riskmatrisen + vm-04-cyklisk-justering · vm-06-dividend-discount-model-ddm
+// + ud-09-utdelningens-hallbarhet + km-064-utdelningstillvaxt + vm-01-
+// grahams-formel · km-027-pegratio + km-009-pe + km-007-dcf + tx-03) —
+// VÄRDERINGSMETODER-kategorins tre ännu otäckta verktyg: scenarioanalys,
+// DDM och PEG gick ALLA NULL genom hela kedjan före detta lagret.
+// Ansvarsfördelning (emission/V19-precedensen): basens utdelning-monster
+// äger grundorden ("utdelning", "dividend", "dividender", "direktavkastning",
+// "payout ratio" — sondbevis), lönsamhetsdjupet äger wacc/kapitalkostnad,
+// värderingsjusteringen normalisering/CAPE/SOTP, riskläsningsdjupet
+// riskmatris/riskavsnitt — detta lager bär ENDAST sammansatta familjeord
+// ingen tidigare äger; syskonen i samma fönster (u1:s avkastningskurva +
+// u2:s avrakningsdjup med "vinsttillväxten"/tvärsnitt-familjen — disk-läge-
+// presedensen) är kärnordsdisjunkta i båda riktningarna; u2:s tvärsnitts-
+// text nämner PEG-logiken som KÄLLA (km-027 delas som källa, aldrig som
+// kärnord). Sond verktyg/_s6u3-sond-omg15.mjs: 29 motorer / 89 monsters /
+// 945 kärnord LIVE, 10/10 kanoniska NULL. Juridikgrind: ren metodutbildning
+// med påhittade tal — inga placeringstips.
+import { svaraLokaltVarderingsverktyg } from "@/lib/ai-mentor-varderingsverktyg-fragor";
+
+// AI-MENTORN lager 31 (spår 6, omgång 16, s6-u1): warranter och tecknings-
+// optioner (od-03 primär + ks-04 + od-01 + od-02). Sond verktyg/
+// _s6u1-sond-omg16.mjs: 30 motorer / 92 monsters / 971 kärnord LIVE,
+// samtliga warrant-/teckningsoption-/emissionsrätts-frågor NULL genom
+// kedjan; aktiverar två olänkade kurser (od-03, ks-04). Juridikgrind:
+// ren instrumentutbildning med kursens påhittade exempeltal — inga
+// placeringstips.
+import { svaraLokaltWarrant } from "@/lib/ai-mentor-warrant-fragor";
+
+// AI-MENTORN lager 32 (spår 6, omgång 16, s6-u2): tidsaxel-lagret — kedjans
+// NÄR-frågor. Två källmärkta förhandsfrågor: (1) konjunkturindikatorerna
+// (ma-04 primär + ma-01 + kt-02 + ma-02 — tre klockor: ledande/jämnivå/
+// eftersläpande, diffusionsindexets 50-streck, panelen på tre ben) och
+// (2) refinansieringsmuren (st-05 primär + st-04 + ks-03 + st-01 —
+// balansräkningens fjärde dimension tiden: förfallotabellen, klungmåttet,
+// mur-kvoten 2,3×, uppslaget och kalenderns 12–18 månader). Båda aktiverar
+// färska spår-5-kurser (ma-04, st-05 — registrerade 2026-09-17) som INGEN
+// mentorväg nådde. Sond verktyg/_s6u2-sond-omg16.mjs: 30 motorer / 92
+// monsters / 971 kärnord LIVE — hela konjunkturindikator- och klung-
+// formuleringssfären NULL genom kedjan. Ansvarsfördelning (emission/V19-
+// precedensen): riskdjupet äger refinansiering/löptid solo + covenants —
+// detta lager bär ENDAST sammansatta klung-/mur-/löptidsprofilord; basens
+// kapitalstruktur-monster behåller "när förfaller skulden?" (sondbevis
+// FÅNGAD); sektorn äger konjunkturCYKEL-familjen — här bärs endast
+// indikator-/barometer-/PMI-orden; makro äger ränta/realränta/inflation
+// (högst starkord här). Syskonen i samma fönster (u1:s warrant lager 31 +
+// u3:s kapitalbindning på disk) är kärnordsdisjunkta i båda riktningarna.
+// Juridikgrind: ren metodutbildning med kursfilernas påhittade exempel —
+// inga placeringstips, ingen prognos om den verkliga ekonomin.
+import { svaraLokaltTidsaxel } from "@/lib/ai-mentor-tidsaxel-fragor";
+
+// AI-MENTORN lager 33 (spår 6, omgång 16, s6-u3): kapitalbindnings-lagret —
+// lönsamhetens andra halva. Tre källmärkta förhandsfrågor: (1) rörelsekapital/
+// arbetande kapital/working capital (ln-04 primär + bk-01 + bk-03 + km-003 —
+// omsättningstillgångar minus kortfristiga skulder, bindningens pris och den
+// negativa bindningens mekanik) och (2) kassakonverteringscykeln/CCC
+// (ln-04 primär + bk-03 + km-003 + bk-01 — DIO + DSO − DPO = 55 dagar i
+// exempelbolaget, känsligheten 10 dagar = 6 Mkr) och (3) lageromsättningen
+// (ln-04 primär + roic-02 + bk-01 + km-003 — 146 ÷ 20 = 7,3 varv, DIO =
+// 365 ÷ 7,3 = 50 dagar, piskmekaniken och åldrande lagrets fällor).
+// Aktiverar ln-04 som ingen mentorväg nådde. Sond verktyg/_s6sista-u3-sond.mjs:
+// 30 motorer / 92 monsters / 971 kärnord LIVE — rörelsekapital-, kapital-
+// bindnings-, kassakonverterings-, kassacykel-, ccc-, dso-, dpo-, dio- och
+// hela lageromsättnings-familjen NULL genom kedjan, 0 grannar inom tolerans 2.
+// Ansvarsfördelning (emission/V19-precedensen): extra äger kassaflödes-
+// familjens GRUNDORD ("fritt kassaflöde" går dit — kedjebevisat), lonsamhets-
+// djupet äger ROIC/kapitalomsättningshastigheten som helhetsmått (roic-02
+// delas som KÄLLA), basen äger balansräkningen som helhet — detta lager
+// bär ENDAST sammansättningarna rörelsekapital/kapitalbindning/kassacykel/
+// lageromsättning + kortorden ccc/dso/dpo/dio (exakta, ägda av ingen av 971).
+// Syskonen i samma fönster (u1:s warrant lager 31 + u2:s tidsaxel lager 32)
+// är kärnordsdisjunkta i båda riktningarna (korsprover 0/0). Juridikgrind:
+// ren metodutbildning med påhittade exempeltal — inga placeringstips.
+import { svaraLokaltKapitalbindning } from "@/lib/ai-mentor-kapitalbindning-fragor";
+
+// AI-MENTORN lager 34 (spår 6, omgång 17, s6-u2): ekosystemdjup-lagret —
+// kundens egen metodik får sina första förhandsfrågor. Två källmärkta mönster:
+// (1) SAM-viktningen/röstlängdningen (ek-01 primär + ek-02 + ek-03 +
+// konfluens-kursen — fem teorier viktas till en signal: mikro-profilen VOL
+// 30/FIB 25/EW 20/GANN 15/LUC 10, räkningen 0,6×30 + 0,4×25 + −0,2×20 +
+// 0×15 + 0,1×10 = 25,0 → SAM(mikro) = +0,25, röstbudgeten 26,00 + 25,75 +
+// 23,25 + 15,00 + 10,00 = 100 och de fyra skyddväggarna) och (2) backtestens
+// hantverk (ek-04 primär + ek-05 + ek-01 + am-02 — överlevnadsfällans 6,7
+// procentenheter: (20×11,0 + 3×(−40,0)) ÷ 23 ≈ 4,3 mot 11,0, träna-pröva-
+// disciplinen på skilda decennier + Monte Carlo-simuleringen som systermetod:
+// percentilbandet P5 92 · P50 150 · P95 230 mot basfallets 152).
+// Aktiverar ek-01..ek-05 — HELA EKOSYSTEM-kategorien var mentorväglös
+// (sondens genomräkning: 0 av 5 nåddes av 207/414). Sond verktyg/
+// _s6u2-sond-omg17.mjs: 33 motorer / 98 monsters / 1 060 kärnord LIVE —
+// sam-viktnings-, röstlängdnings-, backtest-, monte-carlo- och simulering-
+// familjerna NULL genom kedjan, 0 grannar inom tolerans, 0 omvända stölder
+// mot 50 kanoniska frågor. Ansvarsfördelning (dokumentationsplikten): basen
+// äger ekosystemets HELHETSORD (konfluens/vågfundamentet/ak1ts — konfluens-
+// kursen är här KÄLLA), nästa äger DCF/inre-värde-orden (ek-05:s 152-kronors-
+// schablon nämns som mekanik i text, aldrig kärnord), historia äger krascherna
+// (historien här bara MATERIAL), stabilitetsdjupet äger stresstest (↔backtest
+// tavstånd > 4, mekaniskt verifierat). Juridikgrind: ren metodutbildning med
+// kursernas egna publicerade räkneexempel — inga placeringstips, SAM-värdet
+// +0,25 är en övning i normalisering, inte en signal.
+import { svaraLokaltEkosystemdjup } from "@/lib/ai-mentor-ekosystemdjup-fragor";
+
+// AI-MENTORN lager 35 (spår 6, omgång 17, s6-u1): handelsdag-lagret —
+// kedjans VAR-fråga för allt mellan tangenttrycket och avräkningen. Ett
+// källmärkt monster: HANDELSDAGEN — marknadsstrukturen, auktionerna och
+// kortläget (am-05 primär + am-03 + am-04 + am-06 + Flash Boys — 5 källor,
+// 4 kurslänkar + 1 tidigare-lager-knapp). Aktiverar fyra mentorväglösa
+// kurser och gör KATEGORIN AKTIEMARKNADEN I PRAKTIKEN fullt länkad
+// (4/8 → 8/8). Sond verktyg/_s6u1-sond-omg17.mjs (+ sond2/sond3): hela
+// familjen NULL genom kedjan, samtliga kärnord renta mot 1 032 syskonord.
+// Ansvarsfördelning: basen äger orderbok/likviditet/spread/nätmäklare,
+// praktik äger blankningsstrategin och kortpositions-orden, nästa äger
+// optionerna (auktionen tavstånd 3 — disjunkta), redovisningsdjupet äger
+// leasing (clearing kasserat som kärnord, nämns endast i text).
+// Juridikgrind: mekanismerna som utbildning med kursernas egna räkne-
+// exempel — inga placeringstips, kortlägets ram är förståelse, aldrig
+// uppmuntran. Ligger SIST: fångar bara frågor alla lager före lämnar null.
+import { svaraLokaltHandelsdag } from "@/lib/ai-mentor-handelsdag-fragor";
+
+// AI-MENTORN lager 36 (spår 6, omgång 17, s6-u3): portföljpraktik-lagret —
+// PORTFÖLJHANTERING:s praktiska beslutsfrågor. Tre källmärkta mönster:
+// (1) positionsstorleken ("hur stor ska en aktieposition vara?" — räknad
+// baklänges från risken: 100 000 × 1 % = 1 000 kr; stoppavstånd 50 − 45 =
+// 5 kr/aktie ⇒ 200 aktier = 10 000 kr = 10 % av portföljen, stopp 48 ⇒
+// 500 aktier = 25 %; pf-02 primär + pf-11 + rk-01 + pf-03), (2) tax-loss
+// harvesting (att skörda en realiserad förlust mot en vinst i aktiedepån:
+// 100 000 − 40 000 = 60 000, skatt 30 % × 60 000 = 18 000 mot 30 000 —
+// en räntefri KREDIT, inte en gåva; pf-09 primär + km-051 + km-052 +
+// pf-08) och (3) pensionssparande (tidshorisontens aritmetik: 1 000 kr/
+// månaden i 360 månader vid 0,5 %/månad ≈ 1 004 500 kronor, realt efter
+// 2 % inflation i 30 år ≈ 554 500; pf-14 primär + pf-06 + km-055 +
+// ma-03). Ansvarsfördelning (V19-precedensen): basen äger FORMULERINGEN
+// "position sizing" och skatt-/ISK-grubben (pf-02 är här KÄLLA, aldrig
+// kärnord — detta lager bär positionstorleks-/aktieposition-sammansätt-
+// ningarna), skattedjupet äger kapitalförsäkringsfamiljen (detta lager
+// bär endast förlustrealiseringsorden), portföljbalans äger rebalansering,
+// portföljgrund äger diversifiering/valutarisk, makro äger inflations-
+// orden (här stärkord). Sond verktyg/_s6u3-sond-omg17.mjs: 33 motorer /
+// 98 monsters / 1 032 kärnord LIVE — positionstorleks-, skörde- och
+// pension-familjerna NULL genom kedjan, 0 grannar inom tolerans, G2-prov
+// 0 omvända stölder. Juridikgrind: ren metodutbildning med påhittade
+// exempeltal — inga placeringstips, inga skatte-/pensionsråd (Skatte-
+// verket-hänvisningen är den ärliga utgången). Ligger SIST: fångar bara
+// frågor alla 35 lagren före lämnar null.
+import { svaraLokaltPortfoljpraktik } from "@/lib/ai-mentor-portfoljpraktik-fragor";
+
+// AI-MENTORN lager 37 (spår 6, omgång 18, s6-u1): utdelningskalender-lagret —
+// utdelningens tidslinje: stämma → avstämningsdag/record date → ex-dag med
+// kursjustering (200,00 − 5,00 = 195,00 referenskurs, 2,5 procent) →
+// utbetalningsdag + svensk turnus (vår/höst) + DRIP-räntesnurran (1 000 ×
+// 5,00 = 5 000 ÷ 195,00 = 25,64 nya aktier = +2,56 %/år vid oförändrad
+// utdelning) + Dogs of the Dow med utdelningsfällan som motläxa. Aktiverar
+// FEM mentorväglösa kurser — UTDELNINGSSTRATEGI fullt länkad 3/8 → 8/8
+// (ud-07 primär + ud-05 + km-065 + ud-03 + ud-06). Ansvarsfördelning
+// (V19-precedensen): basen äger utdelningsaktie(r)/direktavkastning/
+// återinvestering/dividend-aristocrats-frågorna ("vad är svenska
+// utdelningsaktier?" och "när betalas utdelningen ut?" FÅNGAS av basen —
+// sondbevisat; ud-03/ud-06 är här KÄLLOR, aldrig kärnord), utdelningsdjupet
+// äger fällor/återköp/utdelningsgrad (dess fråga bär fragor:-knappen),
+// skattedjupet äger DRIP-beskattningens detaljer. Sond verktyg/
+// _s6u1-sond-omg18.mjs + _s6u1-sond2-omg18.mjs: 36 motorer / 104 monsters /
+// 1 147 kärnord LIVE — kalenderfamiljen (ex-dag, record date, avstämnings-
+// dag, avanmälan, utbetalningsdag, stämmobonus, turnus, drip, dogs of the
+// dow) NULL genom kedjan, 21 planerade kärnord RENTA («betaldag» kasserad:
+// granne till basens «betala», tavstånd 2), 0 omvända stölder mot 59
+// kanoniska frågor. Juridikgrind: ren metodutbildning med tydligt märkta
+// generella räkneexempel — inga placeringstips, Dogs presenteras alltid med
+// sin skeptiska motläxa. Ligger SIST: fångar bara frågor alla 36 lagren
+// före lämnar null.
+import { svaraLokaltUtdelningskalender } from "@/lib/ai-mentor-utdelningskalender-fragor";
+
+// AI-MENTORN lager 38 (spår 6, omgång 18, s6-u2): kreditdjup-lagret —
+// kreditens pris: kreditpremien (ma-05 — MAKROEKONOMI & RÄNTA:S ENDA
+// mentorväglösa kurs, aktiveras här; staten 2,0 % mot bolaget 3,5 % =
+// spread 1,5 procentenheter; 1 000-kronorslånet 35 − 20 = 15 kronor =
+// priset på förväntad förlust; kronprislappen 2 000,0 miljoner × 3,5 % =
+// 70,0 mot 40,0 riskfritt = 30,0 miljoner/år) + kreditrating/covenanter
+// (ks-05 — KAPITALSTRUKTUR:s mentorväglösa kurs, aktiveras här; betygs-
+// trappan investment grade/high yield + fallen angels; räntetäckning
+// 900,0/180,0 = 5,0× mot tröskel 3,0× → utrymme 360,0 miljoner; betygs-
+// prislappen 4 000,0 miljoner × 3,25 % = 130,0 mot 7,00 % = 280,0 =
+// 150,0 miljoner/år). Ansvarsfördelning (V19-precedensen, allt sondbevisat
+// i _s6u2-sond-omg18.mjs: 36 motorer/104 monsters LIVE): makro äger
+// obligation/statsobligations-orden ("betyg på obligationer?" och "spread
+// över statsobligationer?" FÅNGAS av makro), basen äger naket "spread"
+// och "z-spread", riskdjupet äger covenants/löptid/refinansiering solo
+// (kedjan kör det FÖRE — covenant-endiga frågor lämnas dit; ks-05:s
+// covanter-titel är här KÄLLA), avkastningskurvan äger kurvorden. Här
+// bärs ENBART kredit-sammansättningarna: kreditpremie/kreditspread/
+// kreditriskpremie + kreditrating/kreditbetyg/betygstrappa/investment
+// grade/high yield/högavkastande/fallen angels/ratingnedgång/kredit-
+// värdighet/kreditrisk/företagsobligation(er) — hela familjen NULL
+// genom kedjan före detta lager. Flerkällskällmärke 4 källor + 3
+// kurslänkar + levande fragor:-knapp per monster. Juridikgrind: ren
+// metodutbildning med kursernas egna påhittade exempeltal — inga
+// placeringstips. Ligger SIST: fångar bara frågor alla 37 lagren före
+// lämnar null.
+import { svaraLokaltKreditdjup } from "@/lib/ai-mentor-kreditdjup-fragor";
+
+// AI-MENTORN — SEKTORDJUP (spår 6, omgång 18, s6-u3): tre sektorspecifika
+// förhandsfrågor — SaaS-bolag (MRR/churn/NRR/Rule of 40, se-01) +
+// halvledarbolag (cykeln, foundry/fabless, se-02) + försvarsbolag (order-
+// stockens beläggning, anslagscykler, se-03). SEKTORANALYS var omgångens
+// största mentorväglösa block (21/27 kurser). Sond _s6u3-sond-omg18.mjs
+// (två ronder — rond 1 dödade indikatordjup: basen äger candlestick/rsi/
+// macd-orden): 11 frågor NULL genom kedjan, 0 kärnordsgrannar mot 1 202
+// syskonord, 0 omvända stölder. Ansvarsfördelning: sektormotorn äger
+// "-sektorn"-fraserna, basen "arr" (V02-uppslaget), tidsaxeln orderstock/
+// backlog — detta lager bär endast bolagsfamiljerna och länkar deras
+// frågor som knappar. Juridikgrind: metodutbildning med påhittade tal,
+// inga omdömen om enskilda bolag/länder. Ligger SIST: fångar bara frågor
+// alla 38 lagren före lämnar null.
+import { svaraLokaltSektordjup } from "@/lib/ai-mentor-sektordjup-fragor";
+
+// Omgång 19 (s6-u3): sektorskola 2 — läkemedelsbolag (patentbrant/pipeline) +
+// detaljhandelsbolag (like-for-like/marginaltrappa) + logistikbolag
+// (nätverk/kapitaltäthet). Källmärkt, registerbärande (8 kurser) och
+// utbildningsformulerat (2007:528) som syskonen. Ligger SIST av 40:
+// fångar bara frågor alla 39 lagren före lämnar null på.
+import { svaraLokaltSektorskola2 } from "@/lib/ai-mentor-sektorskola2-fragor";
+
+// Omgång 20 (s6-u3): beteendemekanik — priming + tillgänglighetsfällan +
+// övermod (overconfidence). Psykologins tysta mekanismer, källmärkta och
+// registerbärande (5 kurser: bf-08, bf-01, km-036 primära + bf-10, bf-07
+// källor) och utbildningsformulerat (2007:528) som syskonen. Gränser sonderade
+// i tre ronder: basens beteende-monster äger halo/dunning-kruger-orden (deras
+// kurser bärs här ENDAST som källor), förväntningsdjupet äger "kalibrering",
+// basens "borja"-monster äger nybörjar-frågorna. Ligger SIST av 41: fångar
+// bara frågor alla 40 lagren före lämnar null på.
+import { svaraLokaltBeteendemekanik } from "@/lib/ai-mentor-beteendemekanik-fragor";
+
+// Omgång 20 (s6-u1): pe-mekanik — IRR/internräntan, förvärvsmaskinens
+// hävstång (LBO) och utfasningarnas vattenfall (carry, föredragen avkastning).
+// Private equity:s aritmetik, källmärkt och registerbärande (5 källor:
+// pe-02 primär + pe-03 + pe-04 + ib-02 + the-outsiders — KATEGORIN
+// PRIVATE EQUITY & INVESTMENTBOLAG fullt länkad 5/9 → 9/9) och
+// utbildningsformulerat (2007:528) som syskonen. Gränser sonderade i
+// verktyg/_s6u1-sond-omg20.mjs + sond2: hela IRR/förvärvsmaskin-familjen
+// NULL genom kedjan, 27 kärnord renta mot 1 230; basen äger
+// PE-helhetsfrågan och onoterat-bolag-orden (bärs här som fragor:-knapp),
+// redovisningsdjupet exit-familjen, djup-lagret multipel-orden — exit
+// och onoterat nämns ENDAST i text. Ligger SIST av 42: fångar bara
+// frågor alla 41 lagren före lämnar null på.
+import { svaraLokaltPeMekanik } from "@/lib/ai-mentor-pe-mekanik-fragor";
+
+// Omgång 20 (s6-u2): överlevnadsdjup — bolagets överlevnad, stabilitets-
+// familjens krönande par: likviditetsreserven (tre ben kassa/obeskattat
+// netto/facilitet, smal 1 470,0 + bred 1 676,4, överlevnadstid 7,0/8,0
+// månader, spegelbolaget 1,2) + konkursprognos/Altman Z-score (fem
+// nyckeltal med vikter, exemplet Z = 2,3965 ≈ 2,40 i gråzonen 1,81–2,99).
+// Aktiverar st-06 + st-03 (spår 5:s färska kurser var mentorväglösa) och
+// gör STABILITET fullt mentorlänkad 9/9 med v11/v12 som källor. Kärnorden
+// mekaniskt disjunkta (sond _s6u2-sond-omg20 i tre ronder: hela
+// likviditetsreserv- och konkursprognos-fären NULL genom kedjan, 0 grannar
+// mot 1 257 kärnord; basen äger naket "likviditet"/"kvick", kapitalbindningen
+// rörelsekapital, tidsaxeln muren, riskdjupet covenants — deras frågor bärs
+// som knappar). Källmärkt 5+4 källor + kurslänkar + registerdrivna tal.
+// Juridikgrind: metodutbildning med kursexemplets påhittade tal — gränsvärden
+// som läsverktyg, aldrig handlingsanvisning. Ligger SIST av 43: fångar bara
+// frågor alla 42 lagren före lämnar null på.
+import { svaraLokaltOverlevnadsdjup } from "@/lib/ai-mentor-overlevnadsdjup-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -1020,7 +1321,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

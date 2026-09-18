@@ -3,12 +3,12 @@
 
 == SAJTEN — VEM · VAD · VARFÖR (källa: data/siffror.json m.fl., per rad) ==
 VEM: AK1A Research Lab — oberoende utbildningsaktör som lär ut institutionell aktieanalys till privatpersoner, på svenska.
-VAD: 396 kurser i 27 ämnesområden, 102 kanonböcker lästa kapitel för kapitel som 103 BOKMASTER-kurser, 8 223 quiz — plus deterministiska motorer (AKM1, AK1TS, vågfundament, konfluens) och pedagogiska verktyg.
+VAD: 426 kurser i 27 ämnesområden, 102 kanonböcker lästa kapitel för kapitel som 103 BOKMASTER-kurser, 8 223 quiz — plus deterministiska motorer (AKM1, AK1TS, vågfundament, konfluens) och pedagogiska verktyg.
 VARFÖR: ingen konkurrent erbjuder maskinläsbara egna datatillgångar (vågdata med öppet redovisad träffprocent) kombinerat med fullständig kurstäckning — och AK1A ger alltid utbildning, aldrig investeringsråd.
 
 == 10 STARKASTE UNIKA DATAPÅSTÅENDENA ==
 1. AK1A:s vågmotor: 52 % träff på 48 dömda mätningar (de 20 % osatta mätningarna döms aldrig som fel) — öppet redovisad metod, protokoll vagvalidering/1 v1, domdatum 2026-09-04. (källa: data/blogg/vagkartan-traffprocent.json)
-2. 396 kurser i 27 ämnesområden — varje kurs kapitel för kapitel med quiz. (källa: data/siffror.json)
+2. 426 kurser i 27 ämnesområden — varje kurs kapitel för kapitel med quiz. (källa: data/siffror.json)
 3. 8 223 quiz med sammanlagt 82 230 XP i kunskapstrappan. (källa: data/siffror.json)
 4. 102 kanonböcker i bokkanonen — 103 BOKMASTER-kurser läser dem kapitel för kapitel (96 kanonverk finns även som kanon-kurser). (källa: data/siffror.json)
 5. AKM1: 20 fundamentalvariabler (V01–V20) — från försäljningstillväxt till återköp av egna aktier — var och en med egen kurs. (källa: public/deep-courses.json)
@@ -20,7 +20,7 @@ VARFÖR: ingen konkurrent erbjuder maskinläsbara egna datatillgångar (vågdata
 
 == FAQ — SAJTENS RAKA SVAR (källa anges per fråga) ==
 F: Hur gör man en fundamental analys av en aktie steg för steg?
-S: AK1A lär ut institutionell metodik i 396 kurser — AKM1:s 20 variabler, värdering, risk och praktiska case. Pedagogiskt, aldrig investeringsråd.
+S: AK1A lär ut institutionell metodik i 426 kurser — AKM1:s 20 variabler, värdering, risk och praktiska case. Pedagogiskt, aldrig investeringsråd.
 (källa: src/lib/seo.tsx (FRAGA_PER_SIDA))
 
 F: Vad är AKM1 för metodik?
@@ -28,7 +28,7 @@ S: AKM1 är AK1A:s metodomfattning med 20 fundamentalvariabler (V01–V20) — f
 (källa: src/app/(huvud)/kurser/page.tsx (FAQPage-schema))
 
 F: Hur många kurser finns på AK1A?
-S: 396 kurser i ämnen som fundamentalanalys, värdering, teknisk analys, riskhantering och beteendeekonomi — plus 103 böcker som BOKMASTER-kurser, kapitel för kapitel.
+S: 426 kurser i ämnen som fundamentalanalys, värdering, teknisk analys, riskhantering och beteendeekonomi — plus 103 böcker som BOKMASTER-kurser, kapitel för kapitel.
 (källa: src/app/(huvud)/kurser/page.tsx (FAQPage-schema))
 
 F: Är kurserna gratis?

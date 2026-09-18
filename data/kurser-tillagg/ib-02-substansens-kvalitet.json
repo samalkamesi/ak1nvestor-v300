@@ -1,0 +1,176 @@
+{
+  "slug": "ib-02-substansens-kvalitet",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Substansens kvalitet — att granska vad substanssiffran innehåller",
+  "summary": "Två investmentbolag med samma substanssiffra kan bära olika säkerhet i den siffran: noterat mot onoterat, värdets ålder, ägandelinjer, latent skatt och nettoskuld — granskningen som gör substansen läsbar på riktigt.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Skilja på substansens poster efter prissättningsmaskin: noterade innehav prissätts varje sekund, onoterade vid transaktioner och beslut · Räkna fram förvaltarvärdets andel av substansen — hur stor del av siffran som vilar på egna värderingar · Fråga efter värdets ålder: när prissattes de onoterade posterna senast, och av utomstående eller internt · Räkna på ägandelinjernas bråkaritmetik — substansposten är alltid andel gånger värde · Justera bruttosubstansen med latent skatt och nettoskuld · Ställa substanskvalitetens fem frågor mot en verklig delårsrapport och gränsen mot grannkurserna (km-067 rabattläsningen, km-012 summan av delarna).",
+  "why": "Substansvärdesräkningen från ib-01 ser ut att ge ett exakt svar: summorna är tal, talen står i rapporten, och kvartalsredovisningen trycker en siffra per aktie. Men två investmentbolag med identisk substans kan bära helt olika säkerhet i den siffran. Skillnaden sitter inte i siffrans storlek utan i posternas kvalitet: hur mycket som prissatts av en levande marknad, hur färska de egna värderingarna är, vilka ägandelinjer som står bakom raderna och vilka tysta poster — latent skatt, kontant, skuld — som skiljer brutto från netto. Den som inte kan granska substansen inifrån har bara halva verktyget: rabatten mot substansen (km-067) säger ingenting om vad substansen själv är värd. Kursen ger granskningen: fyra frågor till posterna och en nettoräkning — samma aritmetik som ib-01, men riktad inåt mot underlaget i stället för utåt mot kursen.",
+  "history": {
+    "origin": "När investmentbolagen växte fram som egna börsföretag blev substansräkningen deras redovisningssjälvklara kärna: innehaven listades, skulderna drogs ifrån, och summan delades på aktierna. Under svenskt traditionellt regelverk värderades onoterade innehav ofta till anskaffningsvärden — substansen blev stabil men trög, och läsarna lärde sig att en siffra kunde vara både ärlig och gammal.",
+    "evolution": "Med internationella redovisningsprinciper och en växande transaktionsmarknad för onoterade bolag försköts praxis mot markerade värden: senaste genomförda transaktion, nedskrivningar vid bestående värdefall, multiplar på underliggande resultat. Värderingsåldern blev därmed en mätbar storhet — en post kan dateras, och gapet mellan två avläsningar kan räknas. Samtidigt visade forskningen kring noterade holdingbolag att marknadens förtroende för substansen samvarierade med hur mycket av den som gick att kontrollera utifrån.",
+    "modern": "I dag redovisar de flesta svenska investmentbolag substans kvartalsvis, med noterade innehav till aktuellt börsvärde och onoterade enligt angivna värderingsprinciper. Efter svagare transaktionsår syns mekaniken tydligt: äldre värden ligger kvar i rapporten medan världen utanför har rört sig, och frågan om värdets ålder har gått från kuriosa till rutin. Den moderna läsningen är därför tvådelad: vad står det i substansen, och hur väl står det sig?"
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Från siffra till underlag — de två systrarna",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Noterat i substansen — börsens prisättare inuti NAV",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Onoterat i substansen — värdet utan kurs och dess ålder",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Ägandelinjer och minoritet — bråkets aritmetik",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "De tysta posterna — latent skatt, kontant och skuld",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — substanskvalitetens fem frågor",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Från siffra till underlag — de två systrarna",
+      "intro": "Två påhittade investmentbolag, samma substanssiffra — och två helt olika underlag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Möt de två systrarna i kursens genomgående exempel, båda påhittade. Svea Holding AB redovisar substansen 100 miljoner kronor: noterade innehav till börsvärde 70, onoterade innehav 25, kontanter 15, skulder minus 10 — summeringen 70 + 25 + 15 − 10 = 100 är exakt den räkning ib-01 kapitel två lär ut. Norr Holding AB redovisar samma substans 100: noterat 20, onoterat 75, kontant 15, skuld minus 10 — samma summa, samma aritmetik.\n\nSkillnaden sitter i vad summorna är gjorda av. Sveas tal domineras av noterade innehav: poster som börsen prissätter varje sekund med tusentals köpare och säljare. Norrs domineras av onoterade: poster som förvaltaren själv har värderat vid transaktioner, beslut eller genom nedskrivningsprövningar. Kalla andelen av substansen som vilar på egna värderingar för förvaltarvärdet: Svea bär 25 av 100 — 25 procent — medan Norr bär 75 av 100 — 75 procent. Samma siffra, tre gånger så mycket omdöme i den ena.\n\nDetta är kursens arbetsredskap: substanskvalitet. Frågan till en substanssiffra är aldrig bara hur stor den är, utan av vad den är sammansatt — hur mycket som är prissatt av en marknad med många deltagare, hur mycket som är uppskattat i efterhand av få. De kommande kapitlen går igenom posterna en i taget: det noterade, det onoterade, ägandelinjerna och de tysta posterna."
+        },
+        {
+          "type": "definition",
+          "content": "Substanskvalitet: hur stor andel av ett investmentbolags substansvärde som är prissatt av en levande marknad (noterade innehav, kontanter) respektive uppskattat genom egna värderingar (onoterade innehav) — och hur färska de senare värderingarna är."
+        },
+        {
+          "type": "tabell",
+          "content": "SYSTRARNA — SAMMA SUBSTANS, OLIKA UNDERLAG: | Post | Svea Holding | Norr Holding | — | Noterade innehav (börsvärde) | 70 | 20 | — | Onoterade innehav (värderade) | 25 | 75 | — | Kontanter | 15 | 15 | — | Skulder | −10 | −10 | — | Substansvärde | 100 | 100 | — | Varav förvaltarvärderat | 25 (25 procent) | 75 (75 procent) |"
+        },
+        {
+          "type": "insight",
+          "content": "70 + 25 + 15 − 10 = 100 och 20 + 75 + 15 − 10 = 100: identiska substanser i storlek, olika i bärighet. Sveas siffra förnyas av börsen varje sekund; Norrs till tre fjärdedelar av egna värderingar. Frågan till substansen är av vad — inte bara hur mycket."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Noterat i substansen — börsens prisättare inuti NAV",
+      "intro": "Noterade innehav gör substansen levande: kursrörelserna passerar rakt igenom den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveas största post är 30 procent av det noterade Verkstadsbolaget AB, som börsen värderar till totalt 40 miljoner. Substansposten blir ägandelinjen gånger börsvärdet: 30 procent av 40 = 12. Nästa kvartal har underliggande aktie stigit 10 procent, bolaget värderas nu till 44 — och posten har blivit 44 gånger 0,30 = 13,2. Substansen har vuxit med 1,2 miljoner utan att förvaltaren gjort ett enda aktivt beslut: mekaniken är en genomströmningskanal från börsen in i redovisningen.\n\nDet har tre konsekvenser för läsningen. För det första svänger kvartalssubstansen med börsen — en fallande substans i en fallande marknad är inte detsamma som förstört värde, och en stigande i en stigande är inte bevis på skicklighet. För det andra ska avkastningen i det noterade lagret läsas mot sin indexbild: vad gjorde marknaden i stort under perioden? För det tredje är posten reellt realiserbar i princip till siffran — det finns en orderbok bakom varje krona — även om stora ägarblock i praktiken handlas med hänsyn till likviditet och prisverkningar (am-01 äger spreadens mekanik, am-03 läsningen av kurssidan).\n\nGränsen mot värderingsfamiljen: att avgöra om underliggande bolag är bra prissatt — om multipeln 40-delat på vinsten är hög eller låg — ägs av vr-01 och v05. Här räcker insikten att posten är börsens, inte förvaltarens: priset förnyas av andra, och det är just därför posten bär hög substanskvalitet."
+        },
+        {
+          "type": "insight",
+          "content": "30 procent av 40 = 12; underliggande plus 10 procent ger 44 gånger 0,30 = 13,2. Noterade innehav gör substansen levande — börsens rörelser passerar rakt igenom, och äran eller skulden för det lagret tillhör marknaden, inte förvaltaren."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Onoterat i substansen — värdet utan kurs och dess ålder",
+      "intro": "Onoterade poster prissätts vid transaktioner och beslut — och mellan dem åldras värdet i tysthet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norr har 75 i onoterade innehav — substansens största och känsligaste block. Ett onoterat bolag har ingen orderbok som prissätter det varje sekund. Värdet sätts vid verkliga händelser: när en utomstående köper en andel till ett visst pris, när en ny finansieringsrunda görs, när förvaltaren gör en nedskrivningsprövning. Mellan händelserna står siffran still — men inte världen.\n\nSignaturfallet, med påhittade tal. Ett portföljbolag bokförs till 180 miljoner, prissatt som rörelseresultatet före avskrivningar 20 gånger multipeln 9 — 20 gånger 9 = 180. Två år passerar. Bolaget har sviktat försiktigt till resultatet 18, och marknadens multiplar för liknande bolag har fallit till 6. Samma bolag bär i dag 18 gånger 6 = 108. Gapet mellan bokförd substans och omdömet om idag är 180 − 108 = 72 — fyra tiondelar av posten — trots att ingen rad i rapporten har flyttats. Om värderingen inte har förnyats visar substansen 180 medan världen har rört sig.\n\nDärav rutinfrågorna: när prissattes posten senast? Av vem — en transaktion mellan utomstående parter väger tyngre än en intern omvärdering, eftersom utomstående hade eget intresse av priset. Och åt vilket håll får värderingar gå? Här gäller en asymmetri: nedskrivningar görs när värdet fallit bestående, men motsvarande uppskrivningar sker sällan mekaniskt — posten trappas ner för hand men uppåt krävs ofta en transaktion. Onoterat i substansen är därför varken gömt värde eller gömd risk i sig — det är ett omdöme som åldras, och åldern kan och bör mätas."
+        },
+        {
+          "type": "insight",
+          "content": "20 gånger 9 = 180 bokfört; två år senare 18 gånger 6 = 108. Gapet 72 är 40,0 procent av posten — värdets ålder är substansens klocka. Fråga alltid: när prissattes posten senast, och av utomstående eller av den egna förvaltningen?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Ägandelinjer och minoritet — bråkets aritmetik",
+      "intro": "En substanspost är alltid andel gånger värde — och andelen bestämmer mer än siffran.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norr har 75 i onoterat, och nu syns bråket bakom: det är 40 procent av ett privat bolag som vid senaste transaktion värderades till 187,5 miljoner — 0,40 gånger 187,5 = 75. De återstående 60 procenten ägs av andra: en grundarfamilj och en medägande industri. Siffran 75 är exakt, men vad de 75 är värda i en verklig situering avgörs också av de andra — styrelseplatser, utdelningsbeslut, kommersiella avtal mellan ägarna. Hade andelen varit 20 procent hade samma bolag bidragit med 187,5 gånger 0,20 = 37,5 — substansräkningen böjer sig för bråket, men inflytandet gör det i högre grad: samma krona är olika starkt placerad vid 5 procent (finansiellt), 30 till 40 procent (block med förhandlingsvikt) och över hälften (kontroll)."
+        },
+        {
+          "type": "text",
+          "content": "Spegelfallet är minoriteten i eget hus: äger bolaget i stället 80 procent av ett dotterbolag, lämnas 20 procent till minoritetsägare — redovisningsmässigt hanterar koncernen det genom bokslutsaggregation (bk-04 äger den mekaniken), men substansläsningen stannar vid det enkla: posten bär 80 procent av värdet och bolaget har 100 procent av besluten om utdelning och riktning. Två spegelfall att minnas: minoritetsposten i andras bolag ger värde utan kontroll — vid blocköverlåtelser prissätches sådana poster ofta under sin andel av börsvärdet; majoritetsposten med minoritet ger kontroll med delat värde — en skillnad som syns först den dagen posten ska realiseras. Ägarandelens längd är alltså kvalitetens fjärde fråga: inte bara vad innehavet är värt, utan vad andelen förmår."
+        },
+        {
+          "type": "definition",
+          "content": "Ägandelinje: den andel av ett innehavsbolags värde som tillhör investmentbolaget. Substansposten är alltid andel gånger värde — andelen styr både substansrätten och inflytandet över vad posten faktiskt kan förverkliga."
+        },
+        {
+          "type": "insight",
+          "content": "0,40 gånger 187,5 = 75 i substansen — men de andra 60 procentna äger besluten om utdelning och riktning. Bråket är substansens aritmetik och dess politik samtidigt: siffran är exakt, mandatet är förhandlat."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "De tysta posterna — latent skatt, kontant och skuld",
+      "intro": "Mellan bruttosubstans och nettosubstans står tre poster som sällan får rubriker — men alltid får betalas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först den latent skatten. Norrs onoterade poster har ett samlat anskaffningsvärde på 15 miljoner och bokförs till 75. Skulle innehaven realiseras till bokförd nivå uppstår en realisationsvinst på 75 − 15 = 60 — och på vinsten väntar en skatt. Räkneexemplet antar en skattesats på 25 procent: 60 gånger 0,25 = 15 i framtida skatt. Bruttosubstansen 100 blir netto 100 − 15 = 85. Antagandet är ett studieexempel — den verkliga skatten beror på ägarled, holdingstruktur, karensregler och tidpunkten, och den delen av juridiken ägs av skattekurserna (km-051 kapitalvinstskatten). Poängen lever ändå: mellan varje substanssiffra och dess realiserbara värde står en post som inte syns i sammanställningen men som existerar så snart innehaven någon dag säljs.\n\nSedan kontanten och skulden. Kontanten, 15 i båda systrarna, är substansens enda oomtvistade post — inget omdöme krävs för vad en sedel är värd. Men den är också passiv: den är ett väntande på kapitalallokeringens beslut (ks-02 äger det hantverket) och den drar ingen avkastning i väntan. Skulden, minus 10, drar av rakt i räkningen men bär egna frågor: löptid och räntebindning avgör hur mycket av framtiden som redan är utlånad (st-05 äger förfallostrukturens mekanik). Tillsammans ger de nettoposten: 15 − 10 = 5 i nettokontant — portföljen bär sig själv mellan affärerna, och substansens svängningar kommer från innehaven, inte från finansieringen."
+        },
+        {
+          "type": "tabell",
+          "content": "NORR HOLDING — FRÅN BRUTTO TILL NETTO (RAKNEEXEMPEL): | Rad | Belopp | — | Bokförd substans | 100 | — | Latent skatt: (75 − 15) gånger 25 procent | −15 | — | Nettosubstans efter skatteantagandet | 85 | — | Kontant emot skuld: 15 − 10 | +5 nettokontant | —"
+        },
+        {
+          "type": "insight",
+          "content": "Brutto 100, netto 85: den latenta skatten är ingen hypotes utan en bokförd framtid — den väntar bara på realisation. Kontantens 15 mot skuldens 10 avgör om portföljen bär sig själv mellan affärerna. Tre tysta poster, en nettoräkning."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — substanskvalitetens fem frågor",
+      "intro": "PRIVATE EQUITY & INVESTMENTBOLAG-familjen läses numera inifrån och ut: ib-01 äger räkningen, denna kurs granskningen — rabattens varför förblir km-067:s.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Samla kursen i fem frågor att bära till varje substansrapport. Ett: hur stor andel av substansen är noterat — och hur stor del vilar därmed på förvaltarens egna värderingar? Två: när prissattes de onoterade posterna senast, och av utomstående parter eller av den egna förvaltningen? Tre: vilka ägandelinjer bär posterna — minoritetsblock, kontrollposter, delade beslut? Fyra: vilken latent skatt och nettoskuld står mellan brutto och netto? Fem: hur har sammansättningen rört sig över åren — växer det förvaltarvärderade eller det noterade, blir substansen äldre eller färskare? Fem frågor, och substansen har blivit ett underlag i stället för en siffra.\n\nGränsdragningen mot grannkurserna är kursens sista lektion i noggrannhet. km-067 äger rabattläsningen — varför kursen står mot substansen; denna kurs äger substansens inre. km-012 äger summan-av-delarna-metoden som värderingsteknik; bk-04 äger koncernredovisningens mekanik; v05 äger förhållandet mellan pris och bokfört värde; pe-04 äger den onoterade världens aktörer utanför börsen. Case-kurserna pc-04 och pc-18 visar läsningen på två verkliga svenska investmentbolag — samma frågor, riktiga rapporter. Familjens inre ordning är därmed komplett för grunderna: ib-01 räkningen, ib-02 granskningen, och vidare mot pe-serien för dem som vill följa kapitalet ett steg till."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram två investmentbolags senaste delårsrapporter. Räkna för varje bolag fram: andelen noterat av substansen (post för post om listan ger det), den äldsta stora onoterade postens ålder — om rapporten anger värderingsdatum eller princip — samt kontanter minus skuld. Ställ de två substansernas kvalitet mot varandra och formulera en mening om vilken siffra du litar mer på, och varför. Upprepa vid nästa rapport: flyttade sig sammansättningen, och blev de onoterade posterna äldre eller förnyade?"
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor gör substansen läsbar: andelen noterat, värdets ålder, ägandelinjerna, nettot av skatt och skuld, sammansättningens rörelse. Rabatten mot substansen är en fråga om kursen — kvaliteten i substansen är frågan om siffran. Två verktyg, en hel läsning."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch lärde ut att det finns en bolagsverklighet bakom varje aktie — för investmentbolaget gäller det två gånger: bakom aktien ligger innehaven, bakom innehaven ligger värderingarna. Hans krav att man ska kunna förklara vad man äger, utan att behöva luta sig mot en högre makts kurslista, är exakt substanskvalitetens test: den som inte kan redogöra för hur en onoterad post prissatts äger en berättelse, inte ett underlag. Lynch sökte också bolag där framgången inte behövde förklas med finansiella konstruktioner — hans skepsis mot värden som ingen kan realisera är kursens nettoräkning i förkortning: räkna först vad som faktiskt kan betalas ut, sedan vad aktien kostar.",
+  "grahamSection": "Benjamin Graham byggde sin analys på substans och nedre gränser — net-nets i originalets anda — men han var samtidigt den förste att varna för att bokförda tal kan vara ärligt fel: ärliga eftersom de följer regelverket, fel eftersom underlaget åldrats eller aldrig prövats av en köpare. Hans marginal skulle därför inte bara ligga i rabatten mot substansen utan i själva substansens hållbarhet: en nettosubstans där tre fjärdedelar vilar på interna värderingar av onoterade innehav kräver större marginal än en där de flesta kronor har en orderbok. Grahams egen bana — att köpa hela eller stora andelar av undervärderade bolag och sedan verka för att frigöra värdet — är också kursens levande exempel på varför ägandelinjen spelar roll: minoritetsposten och kontrollposten är två olika investeringar i samma bolag.",
+  "ak1Section": "I AK1A:s metodik är denna kurs det andra steget i ib-serien och PRIVATE EQUITY & INVESTMENTBOLAG-familjens granskningslager: ib-01 äger substansräkningen, denna kurs äger frågan om vad siffran bär — och km-067 behåller rabattläsningen som sin yta. I AKM1:s bolagsläsning ger kursen underlagsfrågorna till substansdata: hur mycket av det redovisade värdet som är marknadsprissatt, hur gammalt det onoterade är, vilka ägarandelar som gäller. I AKM2:s ram övar den osäkerhetsdimensionen: förvaltarvärdets andel är ett mått på omdömets vikt i totalen, och värdets ålder ett mått på informationsföråldring — båda räknebara, båda input i riskprofilen. Kursens paritet med ak1ts-kurserna är metodikens ideal: samma fråga ställs till motorns data som till rapportens rader."
+}

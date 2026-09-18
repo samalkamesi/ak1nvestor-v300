@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/industriaktier-sa-analyserar-du-industribolag.json",
+  "granskadAv": "agentfabrik s1-u1 (auto-s1-1789649728193, 2026-09-17)",
+  "rapport": "industriaktier-sa-analyserar-du-industribolag.md",
+  "bedomning": "FLYTTKLAR EFTER TVÅ RÄTTNINGAR — 41 kontroller (verktyg/_s1u1-industri-verify.mjs): medianpåståendena 7/7 EXAKTA mot byggtidens vintage (git 0e399f13, 115 bolag, industri n=12: P/E 28 mot universum 20,2 · EBIT 16,9 % · FCF 10,8 % · tillväxt TTM 8,4 % · kvartiler 18,2–35,8 · P/B 4,9 · samtliga 12 bolagsnamn nämnda, 0 påhittade), aritmetik 6/6 (book-to-bill 1,1 · 1,5 mdr topp · 8,5×8 % ≈ 0,7 mdr botten · 240/12=20 · 180/6=30 · ×0,85), juridikgrind-vakt --json grund true + 0 fynd, rådgivningsverb 0 på 8 mönster, varumärkesgrind 26 fraser × 3 ytor = 0, 911 = 0 träffar på 6 mönster, 11/11 interna länkar HTTP 200 + 5/5 kursmål i deep-courses.json + 0 utkastlänkar, 3/4 externa källor 200. RÄTTNINGAR: B1 readingMinutes 3→2 (1 250 ord/600), B2 Sandvik-källänken död i två kanaler → www.sandvik.com (bevisat 200 med IR-innehåll). C1 mätperiod på tillväxttalet, C2 publishedAt R2",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga strängar maskinellt verifierade UNIKA i källfilen — en träff var; nya stränger frånvarande). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "industriaktier-sa-analyserar-du-industribolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "3",
+      "nytt": "2",
+      "orsak": "SEO-GUIDER-familjens kontrakt ORD_PER_MINUT=600 (SEO-GUIDER-2026-09.md; B-guiderna byggda under det): 1 250 ord (title+desc+body) ÷ 600 = 2,08 → 2. SLÄKTSNOTIS (svar på u2:s §8-flagga 9d7ef693): ord/200-praxis gäller den PUBLICERADE BlogPost-familjen (55 poster) — industriaktier är B6 i SEO-GUIDER-familjen där round(ord/600) är konviktet (u2:s egen formulering) och där serieprecedenserna rightar instansen (ravarubolag-C2, NIKE-B1, Nordea-B1, Industrivärden-B1). Kuren hör hemma i byggarverktyget; här rightas instansen"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "industriaktier-sa-analyserar-du-industribolag.json",
+      "falt": "body",
+      "gammalt": "([home.sandvik.com](https://www.home.sandvik.com/en/investors))",
+      "nytt": "([sandvik.com](https://www.sandvik.com/en/investors))",
+      "orsak": "Källänken home.sandvik.com är DÖD i två kanaler (curl: DNS/timeout; WebFetch: ENOTFOUND — DNS saknar värden) medan https://www.sandvik.com/en/investors/ svarar HTTP 200 med äkta IR-innehåll ('Annual report', 'Investors', 'Financial' i svarskroppen; domänen löser via www → Episerver/Cloudflare). Länktext + URL i en post"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "industriaktier-sa-analyserar-du-industribolag.json",
+      "falt": "body",
+      "gammalt": "och omsättningstillväxten 8,4 procent",
+      "nytt": "och omsättningstillväxten (rullande tolv månader) 8,4 procent",
+      "orsak": "Rådata bär två tillväxtmått med olika medianer: TTM 8,4 % (utkastets tal — korrekt) och 5-års-CAGR 4,1 %. Utan mätperiod kan läsaren tro att femårstillväxten är 8,4 %. Ingen tvingande lagtext — precisering"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "industriaktier-sa-analyserar-du-industribolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell flytt till data/blogg/ sätts publiceringsdagen (publicering = kundens beslut, R2). Seriekonvention sedan teknikaktier-D3"
+    }
+  ]
+}

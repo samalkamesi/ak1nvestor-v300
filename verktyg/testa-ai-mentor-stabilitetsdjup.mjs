@@ -562,7 +562,22 @@ function kedjaGenomAllt(fraga) {
     "svaraLokaltVarderjustering",
     "svaraLokaltOptionsdjup",
     "svaraLokaltRisklasningsdjup",
-  ];
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -578,13 +593,13 @@ function kedjaGenomAllt(fraga) {
     FEL.push("importen av ai-mentor-stabilitetsdjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 24 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "stabilitetsdjup SIST av 23 lager (syskon u1:s portfoljbalans före), inga okända komponenter",
   );

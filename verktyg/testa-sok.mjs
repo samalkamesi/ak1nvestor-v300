@@ -8,7 +8,7 @@
  *   1. Genererar tmp_sok_koll.ts i repots rot — importerar API-rutten och
  *      sök-servern och anropar GET direkt med Request-objekt (ingen server
  *      behövs — route.ts använder web-standard Response, inget next/import).
- *   2. Kör den med: npx --yes tsx tmp_sok_koll.ts
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_sok_koll.ts
  *   3. Skriver ut svensk PASS/FAIL-rapport per rad och städar tmp-filen.
  *
  * Kontroller (styrelsebeslut mtzou25g åtgärd 5):
@@ -25,20 +25,20 @@
  * Pedagogisk forskning — ALDRIG investeringsråd.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_sok_koll.ts");
+const TMP_TS = path.join(REPO, ".tmp", "tmp_sok_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ────────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_sok_koll.ts — GENERERAD av verktyg/testa-sok.mjs. Raderas efter körning.
 // (async-main: repot är CJS-package — top-level await stöds ej i tsx här.)
-import { GET } from "./src/app/api/sok/route";
-import { normaliseraSok, sokServerSide } from "./src/lib/sok-server";
+import { GET } from "../src/app/api/sok/route";
+import { normaliseraSok, sokServerSide } from "../src/lib/sok-server";
 
 let fail = 0;
 function kolla(namn: string, ok: boolean, detalj: string): void {
@@ -140,10 +140,12 @@ main().catch((e) => {
 `;
 
 // ── 2) Skriv, kör, städa ──────────────────────────────────────────────────────
-writeFileSync(TMP_TS, TS_KOD, "utf8");
+  mkdirSync(path.dirname(TMP_TS), { recursive: true }); // o44: engångszonen finns alltid
+  writeFileSync(TMP_TS, TS_KOD, "utf8");
 console.log("Testar /api/sok (server-sidig sajtsökning, våg 122E) via npx tsx …\n");
+let slutkod = 1;
 try {
-  const res = spawnSync("npx", ["--yes", "tsx", "tmp_sok_koll.ts"], {
+  const res = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_sok_koll.ts"], {
     cwd: REPO,
     encoding: "utf8",
     stdio: ["ignore", "inherit", "inherit"],
@@ -151,9 +153,10 @@ try {
   });
   if (res.error) {
     console.error("FEL: kunde inte köra npx tsx: " + res.error.message);
-    process.exit(1);
+    slutkod = 1;
+  } else {
+    slutkod = res.status ?? 1;
   }
-  process.exit(res.status ?? 1);
 } finally {
   try {
     unlinkSync(TMP_TS);
@@ -161,3 +164,4 @@ try {
     // tmp-filen fanns inte — inget att städa.
   }
 }
+process.exit(slutkod); // o44 R2: exit EFTER finally — annars mossas unlink vid varje körning

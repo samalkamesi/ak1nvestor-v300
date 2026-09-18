@@ -28,7 +28,7 @@
  *   J3 nav-fällan  — "vad är nav?" fångas av NÄSTA-lagret före detta (d=1
  *                    mot kärnordet "ncav" — dokumenterat, aldrig stöld i
  *                    kompositionen eftersom kedjan prövar nästa först)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 24 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 27 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): portfoljbalans
@@ -570,7 +570,22 @@ const GAMLA = [
     "svaraLokaltVarderjustering",
     "svaraLokaltOptionsdjup",
     "svaraLokaltRisklasningsdjup",
-  ];
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -586,13 +601,13 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-grahamgolv-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 24 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "grahamgolv sist av 24 lager, inga okända komponenter",
   );

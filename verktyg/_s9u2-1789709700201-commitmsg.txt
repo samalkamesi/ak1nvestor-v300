@@ -1,0 +1,27 @@
+studio: auto s9-u2 SYSTEMKARTAN-dokvåg 2/3 (manifest auto-s9-1789709700201) — E37 + E35 diffade mot verkligheten
+
+Objektval enligt andrarondens regel "störst rörelse sedan senaste
+passningen": båda passerades 09-17 07:14–07:15 och bar sedan dess
+spårets tätaste leveransrader — E37 hela prestandaserien s7 (o45–o62,
+tolv kurer med EFTER-bevis) och E35 hela kvalitetsvågen s8 (o46–o65:
+patch-kedjan, döda-länksinstrumentet, mimosa-pariteten, SSR-livssonden,
+stormtriagen). Klaim i worklog FÖRE mätning (raceskydd mot u1/u3).
+
+ALLA rader egenmätta 09-18 ~05:3x–05:5x lokal: EGEN full vaktkörning
+12/12 PASS · 0 fel · 0 manuella · GRÖN (05:39:43Z, exit 0) —
+kontrollantalet 11→12 (sektion 12 SSR-livssonden = o47:s blindhet
+botad; kontroll 11 tsc grön i samma körning); stormar-svit 20/20 PASS
+egen; ledgern 245 fynd + 243 bedömningar (egen wc); sviter 74→90 (ls);
+egna HTTPS-sonder / · /kurser · /blogg · /studio ALLA 200 på 59–75 ms
+(bygge BBrkvx9); o56-EFTER-talen (/ _rsc 5→3 · requests 45→38 ·
+transfer −42,3 KiB) och o62-facit (6 fynd = endast ShortSeller-knappens
+dokumenterade 44×44-undantag, 0 zoomfällor) verifierade ur protokollen.
+
+Poäng: E35 9 orörd, E37 8 orörd (motiverade i kartans poängtabell —
+B12-precedensen); snitt 7,6 (288/38) oförändrad. Kö till huvudagenten
+bokad: o63-köposten (herons TREDJE länk, 36,0 KiB spill), E37:s två
+designbeslut (styrelse-yta), E35-aggregatorn (90 sviter).
+
+Ren dataleverans: src/ orörd = inget bygge, R2 orörd, data/blogg/ orörd.
+
+LEVERANS: data/forskning/SYSTEMKARTAN.md, worklog.md

@@ -85,12 +85,140 @@ function ramTillgangligtMB() {
   }
 }
 
-/** Läs /tmp/synk-build.log — OOM-spår ("Killed", JS-heap)? */
-function byggetOomDodades() {
+// VACCIN 3 (DRIFTSBOKEN 2026-09-17 17:42–17:47Z, o53 §4): MemAvailable
+// mäter NU — byggtröskeln måste också räkna med PÅGÅENDE tunga processers
+// VÄXT under byggets ~3 minuter. 17:42-OOM:ens formel var byggheap +
+// gränssnittsvaktens chrome-cron (~1 GB, 6-timmarscykeln kan landa mitt i
+// byggfönstret) + fabrikens zcode-barn. Deras NU-varande RSS är redan
+// borta ur MemAvailable — reserven täcker det de KAN komma att äta.
+const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 300 };
+
+/** Klassificera `ps -eo args=`-rader → tunga processklasser (vaccin 3).
+ * Smalhetsregeln (o55 F2-läxan — breda mönster deckar varje mätning medan
+ * fabriken lever): chrome-klassen matchar ENDAST första token (processens
+ * körbara fil) — pm2:s "next start", "npm ci"-prompterrader och
+ * "grep chrome" kan aldrig träffa; zcode-klassen kräver ".zcode"-sökväg
+ * i args, som bara zcode-cli/node-repl-mcp-barn bär (repots egna verktyg
+ * ligger under /home/ak1a/AK1/verktyg/…). */
+export function raknaTungaProcesser(argsRader) {
+  const klasser = { chrome: 0, zcodeBarn: 0 };
+  for (const rad of Array.isArray(argsRader) ? argsRader : []) {
+    const text = String(rad);
+    const bas = (text.trim().split(/\s+/)[0] ?? "").split("/").pop() ?? "";
+    if (/^(chrome|chromium|headless_shell|chrome_headless)$/i.test(bas)) klasser.chrome++;
+    else if (text.includes(".zcode")) klasser.zcodeBarn++;
+  }
+  return klasser;
+}
+
+/** Byggutrymmes-bedömning (vaccin 3): basbehovet = byggheap (MIN_RAM_MB,
+ * 10X-incidentens empiri) + tillväxtreserv per levande tung klass. Testas
+ * av verktyg/testa-prod-synk-ramvakt.mjs. ramMB null/undefined = omätbart
+ * ⇒ ok (fail-open, oförändrat sedan våg 10X: ett målfel får aldrig vårda
+ * deployer i all evighet). */
+export function bedomByggUtrymme({ ramMB, tunga = {} }) {
+  const chrome = (tunga.chrome ?? 0) > 0 ? 1 : 0; // klassreserv oavsett antal delprocesser (chrome forkar renderers)
+  const zcodeBarn = Math.min(tunga.zcodeBarn ?? 0, 4); // cap 4: en 12-barnssvärm är vårddat av basen långt före cap:et
+  const reservMB = chrome * RAM_RESERV_MB.chrome + zcodeBarn * RAM_RESERV_MB.zcodeBarn;
+  const behovMB = MIN_RAM_MB + reservMB;
+  const detaljer = [
+    chrome ? `chrome-cron levande (+${RAM_RESERV_MB.chrome})` : null,
+    zcodeBarn ? `${zcodeBarn} zcode-barn (+${zcodeBarn * RAM_RESERV_MB.zcodeBarn})` : null,
+  ].filter(Boolean);
+  return {
+    ok: ramMB === null || ramMB === undefined ? true : ramMB >= behovMB,
+    behovMB,
+    reservMB,
+    detalj: detaljer.join(" + ") || "inga tunga klasser",
+    meddelande: reservMB > 0 ? "tung cron/fabrik lever — reserv för deras tillväxt under bygget (17:42-OOM:ens formel)" : "byggheap-basen",
+  };
+}
+
+/** Läs en loggfil till sträng — "" vid saknad/oläsbar (o49: bedömningen
+ *  skiljer "filen tom" från "filen saknas" i SIGNATURFALLET att flock
+ *  aldrig släppte in barnet; saknad fil = samma sak här — barnet äger skapandet). */
+function slasLogg(filvag) {
   try {
-    return /Killed|SIGKILL|heap out of memory|CBKilled/i.test(fs.readFileSync("/tmp/synk-build.log", "utf8"));
+    return fs.readFileSync(filvag, "utf8");
   } catch {
-    return false;
+    return "";
+  }
+}
+
+/**
+ * Bedöm ett misslyckat bygg ur dess loggtexter (o49): TRE möjliga typer —
+ * · "startade-aldrig": flock -w 900 fick ALDRIG deploylåset ⇒ barnet dog
+ *   FÖRE inre bash ⇒ ingen av loggfilerna skrevs (deploy-konkurrens,
+ *   inte kod- eller patch-fel — samma vänta-och-försök-igen som OOM)
+ * · "oom": OOM-spår i byggloggen ("Killed", JS-heap) = infraskal
+ * · "riktigt-fel": allt annat kräver revert-väg eller diagnos.
+ * Rotorsake (2026-09-17 11:29+11:39): två patch-byggfegl utan spår i
+ * /tmp — loggarna hade redan skrivits över av senare lyckade byggen,
+ * orsaken blev obestämbar och loop-skyddet stängde RCE-patchen på
+ * tre kvitton VARAV ETT SPURIOUS (se o49).
+ */
+export function bedomByggMisslyckande(npmciText, byggText) {
+  const npmci = typeof npmciText === "string" ? npmciText : "";
+  const bygg = typeof byggText === "string" ? byggText : "";
+  if (npmci.trim() === "" && bygg.trim() === "") return "startade-aldrig";
+  if (/Killed|SIGKILL|heap out of memory|CBKilled/i.test(bygg)) return "oom";
+  return "riktigt-fel";
+}
+
+/**
+ * Blind-revert-vakten (o72): avgör om en commits filer överhuvudtaget kan
+ * påverka `next build`. BEVIS 72682834: felgrenens `git revert HEAD` rullade
+ * 3 minuter efter commit tillbaka o47:s tmp-migrering 3c78e03f — en ren
+ * verktyg/+data/-commit som ALDRIG kan orsaka ett Next-byggfel (byggfelet
+ * var race/infra) — och öppnade o44-köpostet igen. KUR: revertera ENDAST när
+ * HEAD själv berör byggytan; annars är HEAD oskyldig INNAN bevis och ska
+ * ombyggas orörd (det fallna bygget har redan rivit .next).
+ *
+ * Konservativ åt revertern-hållet: opreciserade filer (t.ex. "src" utan
+ * slash, katalogbyte "app/...") räknas som byggyta via prefixet utan
+ * snedstreck; null/undefined (obestämbar) ⇒ true = gammalt beteende kvarstår.
+ */
+const BYGGYTA_PREFIX = [
+  "src", "public", "app", "styles",
+  "package.json", "package-lock.json",
+  "next.config.", "next-env.d.ts",
+  "tsconfig.", "tailwind.", "postcss.", "middleware.",
+];
+export function headRorByggyta(filer) {
+  if (!Array.isArray(filer)) return true;
+  return filer.some((f) => {
+    if (typeof f !== "string" || f.trim() === "") return false;
+    const namn = f.trim();
+    return BYGGYTA_PREFIX.some((p) => namn === p || namn.startsWith(p.endsWith(".") ? p : p + "/"));
+  });
+}
+
+/**
+ * Bevara bygg-loggar före de skrivs över (o49 Kur B): kopiera källfilerna
+ * in i en målmapp med tidsstämpel-prefix. Returnerar de sparade namnen
+ * (tom lista = inget gick att bevara — kallas ALDRIG kritiskt).
+ *
+ * o73: filnamnet bär monoton sekvens efter tidsstämpeln — millisekunden är
+ * INTE en unik nyckel (mikro-repro 2026-09-18: 171/200 anropspar inom samma
+ * ms skrev över varandras diagnoser; svitens idempotenstest föll intermit-
+ * tent av samma rot). Sekvensen är per-process: omstart landar ny stampel.
+ */
+let bevarSekvens = 0;
+export function bevaraByggLoggar(mapp, kallor) {
+  try {
+    fs.mkdirSync(mapp, { recursive: true });
+    const stampel = new Date().toISOString().replace(/[:.]/g, "-");
+    const sekvens = String(++bevarSekvens).padStart(3, "0");
+    const sparade = [];
+    for (const [kalla, namn] of kallor) {
+      try {
+        fs.copyFileSync(kalla, path.join(mapp, `${stampel}-${sekvens}-${namn}`));
+        sparade.push(namn);
+      } catch { /* källan borta — inget att bevara */ }
+    }
+    return sparade;
+  } catch {
+    return [];
   }
 }
 
@@ -420,6 +548,67 @@ export function skrivPatchKvitto(filvag, post, resultat, detalj) {
   }
 }
 
+/**
+ * O48 (r58:s köpost, 2026-09-17): PM2-VAKTEN för patch-byggfönstret.
+ * Rotorsakan den stänger: 16.3.5-byggets .next-tömning dog på ENOTEMPTY
+ * rmdir .next/server/app/ar/kurser — pm2:s live-ISR skrev filer i
+ * kataloger som höll på att rivas (två fallna patch-deployer 11:29 +
+ * 11:39, därefter död patch-kö och RCE:n kvar i prod). Stoppad pm2 =
+ * inga ISR-skrivare = inget race. Vakten är den mekaniska garantin för
+ * att prod ALDRIG lämnas utan process: aterstarta() ropas i main():s
+ * finally och täcker ALLA utfall (return, felgrenar, kastat fel).
+ * starta() är ok-vägens vanliga restart + nollställer stoppflaggan så
+ * finally blir no-op — misslyckas den fångas den här internt och
+ * finally:n gör nödstarten (förr var en misslyckad restart i ok-vägan
+ * tyst). pm2Kora/logg injiceras — testsvitan spelar in anropen i stället
+ * för att röra skarp pm2.
+ */
+export function skapaPm2Vakt(pm2Kora = standardPm2, logg = logga) {
+  let stoppad = false;
+  return {
+    arStoppad: () => stoppad,
+    stoppa() {
+      if (stoppad) return true;
+      try {
+        pm2Kora(["stop", "ak1a"]);
+        stoppad = true;
+        logg("PATCH-KÖ: pm2 stoppad under byggfönstret (o48/r58-kur — tomt .next = inga ISR-skrivare = inget race; återstart garanteras av main():s finally)");
+        return true;
+      } catch (e) {
+        logg("PATCH-KÖ: pm2-stopp misslyckades — bygger vidare som idag (ISR-racet lever, ombygge-grenen fångar): " + String(e && e.message ? e.message : e).slice(0, 80));
+        return false;
+      }
+    },
+    starta() {
+      try {
+        pm2Kora(["restart", "ak1a"]);
+        stoppad = false;
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    aterstarta() {
+      if (!stoppad) return "behovdes-ej";
+      stoppad = false;
+      try {
+        pm2Kora(["restart", "ak1a"]);
+        logg("PATCH-KÖ: pm2 återstartad efter byggfönstret (o48-garantin)");
+        return "startad";
+      } catch (e) {
+        logg("PATCH-KÖ: pm2-återstart MISSLYCKADES — KRÄVER MANUELL START (pm2 start ak1a): " + String(e && e.message ? e.message : e).slice(0, 80));
+        return "misslyckades";
+      }
+    },
+  };
+}
+
+function standardPm2(args) {
+  execFileSync("pm2", args, { timeout: 60_000, stdio: "ignore" });
+}
+
+const pm2Vakt = skapaPm2Vakt();
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -448,6 +637,12 @@ async function main() {
     await korSynk();
   } finally {
     try { fs.rmSync(lasSokvag, { recursive: true, force: true }); } catch {}
+    // O48: prod lämnas ALDRIG utan process — patch-fönstrets pm2-stopp
+    // återtas här i ALLA utfall (return, felgrenar, kastat fel).
+    // "misslyckades" = läget larmas via audit — ALDRIG tyst (r58-doktrinen).
+    if (pm2Vakt.aterstarta() === "misslyckades") {
+      skrivAudit("prod-synk", "pm2_ej_startad", "patch-fonster", "pm2-återstart efter patch-byggfönstret misslyckades — manuell start krävs (pm2 start ak1a)");
+    }
   }
 }
 
@@ -494,9 +689,21 @@ async function korSynk() {
   // 2) RAM-VAKT (10X-incidenten): under taket OOM-dödas next build av
   //    minnesgränsen ("Killed") — felet är KAPACITET, inte kod. Vänta till
   //    nästa poll (10 min) i stället för att bygga dömt. HEAD orört.
+  //    VACCIN 3 (DRIFTSBOKEN 17:42Z): taket räknar med PÅGÅENDE tunga
+  //    processers tillväxt (gränssnittsvaktens chrome-cron + fabrikens
+  //    zcode-barn) — MemAvailable ensam ser dem inte komma.
+  let psRader = null;
+  try {
+    psRader = execFileSync("ps", ["-eo", "args="], { encoding: "utf8", timeout: 10_000 }).split("\n");
+  } catch {
+    /* klasser 0/0 = oförändrat beteende (fail-open vid omätbart) */
+  }
   const ram = ramTillgangligtMB();
-  if (ram !== null && ram < MIN_RAM_MB) {
-    logga(`VÄNTAR-RAM: ${ram} MB tillgängligt (< ${MIN_RAM_MB}) — bygger när minnet frigjorts; HEAD orört, nytt försök nästa poll`);
+  const utrymme = bedomByggUtrymme({ ramMB: ram, tunga: raknaTungaProcesser(psRader) });
+  if (!utrymme.ok) {
+    logga(
+      `VÄNTAR-RAM: ${ram} MB tillgängligt (< ${utrymme.behovMB} = ${MIN_RAM_MB} bygg + ${utrymme.reservMB} reserv; ${utrymme.detalj}) — bygger när minnet frigjorts; HEAD orört, nytt försök nästa poll`
+    );
     return;
   }
 
@@ -529,6 +736,18 @@ async function korSynk() {
     if (installOk) {
       patchInstallerad = true;
       logga(`PATCH-KÖ installerad: ${spec} — package-lock uppdaterad i arbetsytan`);
+      // O48 (r58:s köpost): pm2 STOPPAS före byggsteget i patch-läget —
+      // ett lock-byte (t.ex. next 16.3.2→16.3.5) byter chunknamn och
+      // tömmer .next, och pm2:s live-ISR hinner skriva filer i kataloger
+      // som håller på att rmdir:as (ENOTEMPTY, bevisat 11:29 + 11:39).
+      // Stoppet sker FÖRE korBygg så hela fönstret (npm ci raderar
+      // node_modules + build tömmer .next) är skrivarfritt — och utan de
+      // bevisade next-not-found-restartlooparna (pm2 stoppad restartar
+      // inte). Återstarten är mekaniskt garanterad av main():s finally.
+      // Misslyckas stoppet: byggfönstret körs som idag och felgrenen
+      // (ombygge på god lock) fångar fallet — fail-open mot gårdagens
+      // beteende, aldrig ny död vinkel.
+      pm2Vakt.stoppa();
     } else {
       logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "npm install avslutades med felkod");
@@ -558,11 +777,21 @@ async function korSynk() {
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
-  if (await korBygg()) {
+  const korResultat = await korBygg();
+  const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
+  if (korResultat) {
     ok = true;
-  } else if (byggetOomDodades()) {
+  } else if (feltyp === "startade-aldrig") {
+    // o49: flock -w 900 fick aldrig deploylåset (manuell deploy/pmpa pågick)
+    // ⇒ byggkommandot startade ALDRIG och loggfilerna förblev tomma. Det är
+    // konkurrens, inte kod- eller patch-fel: INGA kvitton, INGEN revert —
+    // HEAD orört, nytt försök nästa poll (samma vänta-semantik som OOM).
+    if (patchInstallerad) aterskapaPatchLas();
+    logga("bygg startade ALDRIG (deploylåset upptaget hela -w 900 — flock-konkurrens, ej fel) — HEAD orört, nytt försök nästa poll");
+    return;
+  } else if (feltyp === "oom") {
     // OOM = infraskal (OOM-killern/JS-heapet), INTE kodfel: HEAD lämnas
-    // orött och senaste-deployad är oförändrad ⇒ automatiskt nytt försök
+    // orätt och senaste-deployad är oförändrad ⇒ automatiskt nytt försök
     // nästa poll när fabrikens barn frigjort minnet. ALDRIG revert/reset
     // av commits som aldrig fått ett ärligt byggtillfälle. Patchad lock
     // rivs (inget kvitto — OOM är inte patchens fel, nytt försök nästa poll).
@@ -571,10 +800,26 @@ async function korSynk() {
     return;
   } else {
     if (patchInstallerad) {
-      // patchen kan vara gärningsman: riv lock-ändringen FÖRE revert-vägen
-      // (ombygget sker på bevisat fungerande lock) + kvitta försöket
+      // patchen kan vara gärningsman: BEVARA loggarna FÖRE allt annat (o49
+      // Kur B — /tmp skrivs över av nästa bygg och 11:29/11:39-felen blev
+      // obestämbara just därför), riv sedan lock-ändringen FÖRE revert-vägen
+      // (ombygget sker på bevisat fungerande lock) + kvitta försöket.
+      // o49 Kur A: patchInstallerad NOLLSTÄLLS här — commit-steget i steg 7
+      // ska ALDRIG försöka bokföra en redan riven lock. Bugg-bevis
+      // 2026-09-17 11:33: bygg-miss → revert → lyckat ombygg → "git add
+      // package.json package-lock.json" hade INGET staggat → commit
+      // "nothing to commit" exit 1 → SPURIOUS misslyckad-kvitto som
+      // tröttade loop-skyddsräknaren utan att patchen ens fått skulden.
+      const sparade = bevaraByggLoggar(path.join(VAKT, "patch-byggfel"), [
+        ["/tmp/synk-npmci.log", "npmci.log"],
+        ["/tmp/synk-build.log", "build.log"],
+      ]);
+      if (sparade.length) {
+        logga(`PATCH-KÖ: bygg-loggar bevarade (${sparade.join(", ")}) i data/vakten/patch-byggfel/ — rotorsaksdiagnos överlever nästa bygg`);
+      }
       aterskapaPatchLas();
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "bygg misslyckades med patchad lock");
+      patchInstallerad = false;
     }
     if (!nya.trim()) {
       // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —
@@ -598,14 +843,35 @@ async function korSynk() {
         return;
       }
     }
-    logga("bygg MISSLYCKADES (se /tmp/synk-*.log) — revert + ombygge");
+    // O72 blind-revert-vakten: HEAD som ENBART rör icke-byggyta (verktyg/,
+    // data/, docs) kan aldrig vara gärningsmanet till ett Next-byggfel —
+    // revert avstås, ombygg på orörd HEAD skyddar både leveransen och .next.
+    let headFiler = null;
     try {
-      git(["revert", "HEAD", "--no-edit"]);
-      if (await korBygg()) {
-        ok = true;
-        logga("revert+ombygge OK — prod bygger på föregående commit");
-        skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
-      } else throw new Error("revert-bygget failade");
+      headFiler = git(["show", "--name-only", "--format=", "HEAD"]).split("\n").map((s) => s.trim()).filter(Boolean);
+    } catch { /* obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }
+    const rorByggyta = headRorByggyta(headFiler);
+    logga(
+      "bygg MISSLYCKADES (se /tmp/synk-*.log) — " +
+        (rorByggyta
+          ? "HEAD rör byggyta: revert + ombygge"
+          : `HEAD rör ENBART icke-byggyta (${headFiler.length} filer) — revert AVSTÅS (o72), ombygg på orörd HEAD`)
+    );
+    try {
+      if (!rorByggyta) {
+        if (await korBygg()) {
+          ok = true;
+          logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
+          skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
+        } else throw new Error("ombygg-utan-revert failade");
+      } else {
+        git(["revert", "HEAD", "--no-edit"]);
+        if (await korBygg()) {
+          ok = true;
+          logga("revert+ombygge OK — prod bygger på föregående commit");
+          skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
+        } else throw new Error("revert-bygget failade");
+      }
     } catch {
       logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
       try {

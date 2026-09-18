@@ -1,0 +1,96 @@
+{
+  "slug": "roic-03-inkrementell-roic",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Inkrementell ROIC — nästa kronas avkastning och medeltalets blindhet",
+  "summary": "LÖNSAMHET-familjens tredje steg i fördjupningsserien: den inkrementella avkastningen, ROIC beräknad på bara de nya kronorna, och de tre tillstånd där det vanliga medeltalet slutar bära information. Kursens grundräkning: ett bolag med kapital 1 000 miljoner kronor och vinst 150 bär bokförd ROIC på 15,0 procent — men nästa stora satsning, 200 miljoner kapital som tillför 16 miljoner i vinst, bär inkrementell ROIC på exakt 8,0 procent, och det kombinerade bolaget landar på 166 dividerat med 1 200 lika med 13,8 procent. Fyra satsningsår i samma mönster senare har medeltalet vandrat ner till 214 dividerat med 1 800 lika med 11,9 procent — medeltalet rör sig alltid mot marginalen, aldrig omvänt. Därpå inflationens minne: en maskin bokförd till 100 mot en ersättningskostnad på 250 gör att samma vinst 40 miljoner ser ut som 40 procent i bokförda kronor men 16 procent i nya. Tredje fallet är det negativa egna kapitalet, där hela formeln går i sönder och kassaflödets avkastning tar vid — FCF 80 mot ett börsvärde 800 ger 10 procent. Genomgående utbildning i att räkna och läsa, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna den inkrementella ROIC som förändringstal: vinsttillskott dividerat med kapitaltillskott, och skilja den från det bokförda medeltalet. Grundräkningen: bas 1 000 och vinst 150 ger 15,0 procent, satsningen 200 mot 16 ger 8,0 procent inkrementellt, kombinerat 166 mot 1 200 ger 13,8 procent — och efter fyra likadana satsningsår 214 mot 1 800 ger 11,9 procent. Förstå medeltalets vandring mot marginalen, räkna om inflationens effekt på gamla anläggningar (vinst 40 på bokförd 100 mot ersättningskostnad 250 ger 40 mot 16 procent), känna igen det negativa egna kapitalets fall där ROIC-formeln mister sitt tecken och ersätta den med kassaflödesavkastning. Tillämpa förändringstal på två verkliga räkneår: skillnaden i vinst dividerat med skillnaden i kapital. Kursen bygger på ROIC:s grund (roic-01) och avkastningstrappan (roic-02) och förväntar att båda sitter.",
+  "why": "LÖNSAMHET-familjens roic-serie bär två steg — ROIC utan hävstångens makeup och avkastningstrappan (båda Intermediär) — men inget tredje: serien saknar både nybörjar- och avanceradsteget, och det avancerade rummet är det som bär familjens viktigaste fråga vidare: vad händer med medeltalet när bolaget växer? Sond mot registrets 414 kurser: inkrementell avkastning som begrepp ger inga träffar bland kurserna — förändringstalen förekommer i förbigående i återinvesteringens matematik (tx-03) men aldrig som huvudämne med egen räknelära för ROIC. Ämnet är dessutom seriens naturliga krön: den som kan trappans två vägar (marginal och kapitalomsättning) möter förr eller senare bolaget där 15 procent bokförd avkastning döljer att nya kronor tjänar 8 — och utan detta steg stannar serien halvvägs. Fallet knyter dessutom an till tre grannfamiljer samtidigt: inflationens gamla anläggningar (bokföring), återinvesteringens värdeskapande (tillväxt) och resultatkvalitetens misstro (gränsen mellan beteende och bokföring).",
+  "history": {
+    "origin": "Skillnaden mellan gamla och nya satsningars avkastning upptäcktes i praktiken innan den formulerades: järnvägsbolagen på artonhundratalet byggde sina första sträckor genom de lönsammaste korridorerna och de sista genom tunnlar av tvivel — och aktieägare som räknade på genomsnittet lärde sig att nästa mil betalades sämre än den förra. Gruvbolagens utmattade fyndigheter hade lärt samma läxa tidigare: medeltalet över hela gruvan sade föga om nästa schakt.",
+    "evolution": "När kapitalbudgeteringens teknik växte fram under nittonhundratalet formaliserades just skillnaden: interna räntor beräknades på marginella projekt, inte på verksamheten i genomsnitt, och företag lärde sig rangordna satsningar efter nästa kronas avkastning. Inflationsepokens erfarenheter under nittonhundrasjuttiotalet tillförde den andra halvan: bokförda anläggningar från lågpristider blåste upp bokföringsmässiga avkastningar medan ersättningskostnaderna steg — vilket gjorde medeltalet till ett delvis historiskt tal om vad kapitalet en gång kostade.",
+    "modern": "I dag lever frågan i varje tillväxtbolag som balanserar kärnverksamhetens mogna avkastning mot expansionens tunnare — och i varje återköpsmaskin vars negativa eget kapital gör ROIC-formeln oduglig som jämförelsetal. Dataåtkomsten har gjort förändningstalen lättillgängliga för den som vill räkna själv: två årsredovisningar räcker för skillnaden i vinst över skillnaden i kapital, vilket är kursens praktiska kärna."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Medeltalets blindhet — när 15 procent döljer 8", "minutes": 4 },
+    { "num": 2, "title": "Räkna korridoren — bas, marginal och det vandrande medeltalet", "minutes": 4 },
+    { "num": 3, "title": "Inflationen i gamla anläggningar — bokförd ROIC och nya kronor", "minutes": 4 },
+    { "num": 4, "title": "Negativt eget kapital — fallet där formeln går sönder", "minutes": 4 },
+    { "num": 5, "title": "Räkna själv — förändringstalen mellan två år", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — när medeltalet räcker och när det ljuger", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Medeltalets blindhet — när 15 procent döljer 8",
+      "minutes": 4,
+      "intro": "Bokförd ROIC svarar på hur hela kapitalmassan historiskt presterat. Frågan som avgör framtiden är en annan: vad tjänar nästa tillförda krona?",
+      "blocks": [
+        { "type": "text", "content": "Grundräkningen. Ett bolag bär investerat kapital på 1 000 miljoner kronor och vinst på 150 miljoner — bokförd ROIC blir 150 dividerat med 1 000 lika med 15,0 procent, ett tal som ser friskt ut i vilken jämförelse som helst. Bolaget satsar nu 200 miljoner i en ny anläggning som tillför 16 miljoner i årlig vinst. Satsningens egen avkastning: 16 dividerat med 200 lika med 8,0 procent — hälften av vad kärnverksamheten bär. Det kombinerade bolaget redovisar efter satsningen 166 miljoner i vinst på 1 200 miljoner kapital: 13,8 procent. Medeltalet föll alltså med över en procentenhet i ett enda steg, trots att ingen del av verksamheten försämrades. Om 15-procenttalet används som väntavärde på framtida satsningar överskattas systematiskt vad nya kronor tjänar — det är medeltalets blindhet: det beskriver kapitalets förflutna, inte dess nästa tillfälle." },
+        { "type": "definition", "content": "Inkrementell ROIC — avkastningen på endast det tillförda kapitalet: vinstökningen dividerat med kapitalökningen. Ett förändringstal som mäter nästa kronas avkastning, till skillnad från bokförd ROIC som är ett medeltal över hela det installerade kapitalet." },
+        { "type": "insight", "content": "Medeltalet och marginalen bär samma relation som genomsnittet och sista mätningen: när bolaget växer blir medeltalet alltmer en beskrivning av historien och allt mindre en prognos. Frågan varje bolagsägare vill besvarad — vad tjänar nästa krona — står bara i marginaltalet." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Räkna korridoren — bas, marginal och det vandrande medeltalet",
+      "minutes": 4,
+      "intro": "Ett års satsning är ett datapunkt. Ritar man ut flera år visar sig korridoren — och medeltalets obevekliga vandring mot marginalen.",
+      "blocks": [
+        { "type": "text", "content": "Fortsätt mönstret: varje år tillförs 200 miljoner kapital som ger 16 miljoner ny vinst. Efter år ett: kapital 1 200, vinst 166, ROIC 13,8 procent. Efter år fyra: kapital 1 800, vinst 214, ROIC 214 dividerat med 1 800 lika med 11,9 procent. Varken basens 15 eller marginalens 8 ändras — ändå sjunker det redovisade talet år från år, för att den lågavkastande andelen växer i viktblandningen. Detta är medeltalets vandring: det rör sig alltid mot den senaste tillförda kronans avkastning. Omvänt gäller spegelfallet — ett bolag vars nya satsningar tjänar mer än medeltalet ser sitt bokförda tal stiga år från år, vilket är just den mekanik som gör unga högavkastande tillväxtbolag så värdefulla enligt återinvesteringens matematik (tx-03): när marginalen ligger över medeltalet blir tillväxt en avkastningsmotor i sig." },
+        { "type": "tabell", "content": "År | Kapital (Mkr) | Vinst (Mkr) | Bokförd ROIC | Årets satsning | Inkrementell ROIC\nBas | 1 000 | 150 | 15,0 procent | — | —\n1 | 1 200 | 166 | 13,8 procent | 200 mot 16 | 8,0 procent\n2 | 1 400 | 182 | 13,0 procent | 200 mot 16 | 8,0 procent\n3 | 1 600 | 198 | 12,4 procent | 200 mot 16 | 8,0 procent\n4 | 1 800 | 214 | 11,9 procent | 200 mot 16 | 8,0 procent" },
+        { "type": "insight", "content": "Tabellens fem rader bär kursens kärnsats: en fallande ROIC-kurva betyder inte automatiskt att verksamheten försämras — den kan betyda att bolaget bygger ut sig mot en sämre marginal. Omvändningen gäller också: stigande ROIC utan förändrad kärna avslöjar att nya kronor tjänar mer än gamla." }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Inflationen i gamla anläggningar — bokförd ROIC och nya kronor",
+      "minutes": 4,
+      "intro": "Medeltalet kan ljuga inte bara om framtiden utan om själva kronorna: anläggningar bokförda till gamla priser gör avkastningen till ett delvis historiskt tal.",
+      "blocks": [
+        { "type": "text", "content": "En maskin köptes för tjugo år sedan för 100 miljoner kronor och driver fortfarande en verksamhet som gör 40 miljoner i vinst. Bokförd ROIC på maskinen: 40 dividerat med 100 lika med 40 procent — ett lysande tal. Men maskinen närmar sig slutet av sitt liv, och att bygga en motsvarande idag kostar 250 miljoner. Räknas vinsten mot ersättningskostnaden i stället för det bokförda värdet: 40 dividerat med 250 lika med 16 procent. Samma verksamhet, samma vinst — två tal som ligger en bra bit ifrån varandra, och skillnaden är inflationens och prisutvecklingens arbete under tjugo år. Det bokförda medeltalet svarar alltså på frågan hur väl bolagets kapital betalade sig historiskt; frågan hur väl verksamheten står sig när kapitalet ska bytas ut besvaras först i nya kronor. För kapitaltunga och gamla industrier kan skillnaden mellan de två läsningarna utgöra hela skillnaden mellan en verksamhet som ser självbärande ut och en som i förlängningen äter av sitt eget kapital vid varje förnyelse." },
+        { "type": "text", "content": "Praktiken för läsaren: notera anläggningars ålder och förvärvspriser i balansräkningen (bk-01), och ställ frågan vad som händer med vinsten om anläggningarna prissätts om till dagens kostnad. Full räkning kräver ersättningsvärden som bolaget sällan redovisar — men självbedömningens räckvidd räcker långt: maskiner med boken värde 100 och förnyelsekalkyl 250 är inte ett hypotetiskt fall utan en vanlig konstruktion i mogna industrier." },
+        { "type": "insight", "content": "Bokförd ROIC har ett minne — den bär med sig vad kapitalet kostade när det köptes. Ju äldre anläggningarna och ju högre inflationen under åren, desto mer talar talet om dåtidens prisnivå och desto mindre om dagens lönsamhet." }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Negativt eget kapital — fallet där formeln går sönder",
+      "minutes": 4,
+      "intro": "Vissa bolag köper tillbaka egna aktier tills det egna kapitalet blir negativt. Då mister ROIC-formeln sitt tecken — och en annan avkastning måste ta vid.",
+      "blocks": [
+        { "type": "text", "content": "Ett moget bolag med stora återköp kan komma att redovisa eget kapital på minus 200 miljoner kronor medan vinsten är 100 miljoner. ROIC-beräkning på investerat kapital ger då en negativ nämnare — men ingen menar att avkastningen är negativ, och formuleringen blir oanvändbar som jämförelsetal. Fallet är inte exotiskt utan ett resultat av återköpsmaskinen som strategi: bolaget skickar ut kapital snabbare än vinster bygger det, och balansräkningens eget kapital slutar beskriva verksamhetens storlek. Läsningen byter då redskap, från balansräkningens stocktal till kassaflödets ström: det fria kassaflödet. Ett bolag med FCF på 80 miljoner mot ett börsvärde på 800 miljoner bär en kassaflödesavkastning på 10 procent — ett tal som fungerar oavsett tecknet på det egna kapitalet, därför att det jämför två tal som inte påverkas av återköpsbokföringen på samma sätt. Observera att detta är en beskrivning av hur talen fungerar, inte en bedömning av återköp som strategi — återköpens villkor och hållbarhet analyseras i utdelnings- och kapitalstrukturkurserna." },
+        { "type": "tabell", "content": "Mått | Räkning | Fallbolaget | Kommentar\nROIC (bokförd) | vinst dividerat med investerat kapital | negativ nämnare | formeln oduglig som jämförelse\nROE | vinst dividerat med eget kapital | negativt tal | säger inget om lönsamheten\nKassaflödesavkastning | FCF dividerat med börsvärde | 80 av 800 lika med 10 procent | fungerar oberoende av tecknet\nVinstavkastning | vinst dividerat med börsvärde | 100 av 800 lika med 12,5 procent | komplement ur resultatsidan" },
+        { "type": "insight", "content": "Tre av fyra rader i tabellen misslyckas eller talar förbi fallet — bara de börsvärdesbaserade måtten lever kvar. Lärdomen är allmän: när en formels nämnare förstörs av finansieringshistorik, byt till mått som jämför verksamhetens prestation mot dess pris." }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Räkna själv — förändringstalen mellan två år",
+      "minutes": 4,
+      "intro": "Den inkrementella ROIC kräver ingen prognos: den kan hämtas ur två årsredovisningar som skillnadstal.",
+      "blocks": [
+        { "type": "text", "content": "Metoden: välj två räkneår med någorlunda jämn verksamhet, hämta investerat kapital och rörelsevinst efter skatt för båda, och räkna differenserna. Kapitalet växte från 900 till 1 200 miljoner — skillnaden 300. Vinsten växte från 120 till 144 — skillnaden 24. Den inkrementella ROIC: 24 dividerat med 300 lika med 8,0 procent. Två varningar. För det första engångsposter: en avyttrad enhet eller en nedskrivning i endera året gör skillnadstalet till brus — justera först, i enlighet med bokföringens ventil-kurs. För det andra årsrytm: ett jämfört år bör inte vara pandemiåret eller strejkåret; korridoren mellan två normala år säger mer än spannet mellan två extrema. Notera att metoden mäter genomsnittet av årens satsningar, inte varje enskild satsning — men det är precis det som efterfrågas: hur bolaget som helhet konverterar nya kronor till vinst." },
+        { "type": "utmaning", "content": "Välj ett bolag du följer och hämta investerat kapital och rörelsevinst efter skatt för två räkneår med minst tre års mellanrum (balansräkningen och resultaträkningen, bk-01 och bk-02, bär grunden; kassaflödesräkningen, bk-03, ger kontrolltalet som resultatet ska förhålla sig till). Räkna differenserna och den inkrementella ROIC. Jämför med den bokförda ROIC i båda åren: ligger marginalen över eller under medeltalet, och vandrar medeltalet i förutsagd riktning? Avsluta med att notera vilka engångsposter som kan störa skillnadstalet — och hur du justerade för dem. Spara räkningen: mätmönstret är detsamma som i avkastningstrappans DuPont, fast här på förändringar i stället för nivåer." }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — när medeltalet räcker och när det ljuger",
+      "minutes": 4,
+      "intro": "Kursens sista konst är avgörandet: inte kasta medeltalet, utan veta när det bär information och när det bär minne.",
+      "blocks": [
+        { "type": "text", "content": "Medeltalet räcker när tre villkor håller. För det första när bolaget är stabilt i sin sammansättning: samma verksamhet, ingen pågående expansion ut från kärnan, inga stora förvärv som blandar kapital från olika prisnivåer. För det andra när anläggningarna är unga eller priserna lugna: inflationseffekten mellan bokfört och ersättningsvärde begränsad. För det tredje när det egna kapitalet är positivt och finansieringen ordinär: formelns nämnare intakt. Sviker något av villkoren ljuger medeltalet på tre kända sätt: det överskattar framtiden när expansionen tjänar under medeltalet (grundfallet 15 mot 8), det överskattar lönsamheten när gamla anläggningar bokförts i lågpristiders kronor (40 mot 16), och det mister helt sitt tecken när återköpen vänt det egna kapitalet negativt. I varje fall är botemedlet detsamma: byt perspektiv från stock till förändring, eller från balansräkning till pris — förändringstal, ersättningskronor, kassaflödesavkastning. Och ställ alltid den avslutande kontrollen mot resultatkvaliteten (ln-02): är vinsten som förändringstalen bygger på av det slag som blir kontanter? Den som behärskar båda läsningarna — medeltal och marginal, med tillägget av ett sunt tvivel om vinstens beskaffenhet — har roic-seriens hela trappa." },
+        { "type": "insight", "content": "Bolagets ROIC-kurva är två berättelser överlagrade: vad kapitalet en gång tjänade och vad det senaste kapitalet tjänar nu. Den avancerade läsaren skiljer berättelserna åt innan någon av dem används — för att veta om bolaget är en avkastningsmaskin som mattas, en som mogna, eller en vars tal bara är historia som talar." }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch berättade om bolag som växte sig rika på att multiplicera en lyckad formel — och om bolag som växte sig fattiga på att multiplicera en felaktig. Kursens marginaltal är precis den skiljelinjen: formeln som fungerade i de första butikerna men inte i de tjugonde. Lynch påminde också om att de bästa tillväxtberättelserna är de där expansionen fortfarande möter kapital som tjänar som kärnan — vilket är marginal över medeltal, kursens mekanik i en mening.",
+  "grahamSection": "Benjamin Grahams skepticism mot bokförda tal fick sin tydligaste form i inflationens epok: han påpekade att vinster räknade på historiskt bokförda anläggningar överdriver den verkliga avkastningen när priserna stigit, och han föredrog att se verksamheten prövas mot vad den skulle kosta att bygga om. Kursens ersättningskronor är den läran i räkneform: 40 dividerat med 250, inte 100.",
+  "ak1Section": "I AK1A:s metodik används den inkrementella läsningen som djupkontroll i lönsamhetsmotorerna: universumsdata kan kompletteras med förändringstal enligt kursens differensmetod, och i AKM2-traditionen kan marginalen mot medeltalet föras som en scenariovariabel — ett bolag som expanderar under sitt medeltal pressar de långsiktiga grenarna, ett över medeltalet ljusar dem. Arbetet att hålla isär bokförd och real avkastning vid inflation dokumenteras i vidarekurserna om balansräkningen och resultatkvaliteten."
+}

@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-17T16:30:37.431Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u1-ar-blogg",
+  "sidor": [
+    {
+      "sokvag": "/ar/blogg",
+      "poang": {
+        "prestanda": 0.83,
+        "tillganglighet": 0.96,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1106,
+        "LCP": 1748,
+        "TBT": 645,
+        "CLS": 0,
+        "TTI": 2072,
+        "SI": 3006
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 55 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 55 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "0.3 s",
+          "rad": "JavaScript execution time — 0.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "2.6 s",
+          "rad": "Minimize main-thread work — 2.6 s"
+        }
+      }
+    }
+  ]
+}

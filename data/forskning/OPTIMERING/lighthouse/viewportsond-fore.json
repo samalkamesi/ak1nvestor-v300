@@ -1,0 +1,176 @@
+{
+  "vh": 823,
+  "lankar": [
+    {
+      "i": 0,
+      "href": "/logga-in",
+      "text": "Become a member — free →",
+      "top": 502,
+      "bottom": 558,
+      "iViewport": true
+    },
+    {
+      "i": 1,
+      "href": "/kurser",
+      "text": "Explore the courses",
+      "top": 570,
+      "bottom": 628,
+      "iViewport": true
+    },
+    {
+      "i": 2,
+      "href": "/kurser",
+      "text": "420coursesFrom the foundations of ",
+      "top": 841,
+      "bottom": 999,
+      "iViewport": false
+    },
+    {
+      "i": 3,
+      "href": "/kurser",
+      "text": "8 223quiz questionsEvery course en",
+      "top": 1023,
+      "bottom": 1200,
+      "iViewport": false
+    },
+    {
+      "i": 4,
+      "href": "/kurser",
+      "text": "103complete booksFrom Security Ana",
+      "top": 1224,
+      "bottom": 1382,
+      "iViewport": false
+    },
+    {
+      "i": 5,
+      "href": "/kurser",
+      "text": "Fundamental analysis from the grou",
+      "top": 1963,
+      "bottom": 2290,
+      "iViewport": false
+    },
+    {
+      "i": 6,
+      "href": "/kurser",
+      "text": "Built on the masters' books103 boo",
+      "top": 2306,
+      "bottom": 2583,
+      "iViewport": false
+    },
+    {
+      "i": 7,
+      "href": "/nyheter",
+      "text": "Alla nyheter →",
+      "top": 3554,
+      "bottom": 3606,
+      "iViewport": false
+    },
+    {
+      "i": 8,
+      "href": "/nyheter",
+      "text": "Efter konkursen: Altor har pumpat ",
+      "top": 3706,
+      "bottom": 3758,
+      "iViewport": false
+    },
+    {
+      "i": 9,
+      "href": "/nyheter",
+      "text": "Pizza Hut i konkurs i Sverige",
+      "top": 3766,
+      "bottom": 3818,
+      "iViewport": false
+    },
+    {
+      "i": 10,
+      "href": "/nyheter",
+      "text": "Reklamförbud och dyrare plagg – ny",
+      "top": 3826,
+      "bottom": 3878,
+      "iViewport": false
+    },
+    {
+      "i": 11,
+      "href": "/kurser",
+      "text": "+ nya kurser i biblioteket",
+      "top": 3886,
+      "bottom": 3938,
+      "iViewport": false
+    },
+    {
+      "i": 12,
+      "href": "/logga-in",
+      "text": "1Create your account0 SEK · one mi",
+      "top": 4204,
+      "bottom": 4341,
+      "iViewport": false
+    },
+    {
+      "i": 13,
+      "href": "/kurser",
+      "text": "2All courses unlocked420 courses, ",
+      "top": 4373,
+      "bottom": 4509,
+      "iViewport": false
+    },
+    {
+      "i": 14,
+      "href": "/logga-in",
+      "text": "Become a member — free →",
+      "top": 5156,
+      "bottom": 5212,
+      "iViewport": false
+    },
+    {
+      "i": 15,
+      "href": "/kurser",
+      "text": "Browse the courses first",
+      "top": 5249,
+      "bottom": 5263,
+      "iViewport": false
+    },
+    {
+      "i": 16,
+      "href": "/kurser",
+      "text": "All courses",
+      "top": 5847,
+      "bottom": 5899,
+      "iViewport": false
+    },
+    {
+      "i": 17,
+      "href": "/analyser",
+      "text": "Analyses",
+      "top": 5959,
+      "bottom": 6011,
+      "iViewport": false
+    },
+    {
+      "i": 18,
+      "href": "/blogg",
+      "text": "The Blog",
+      "top": 6071,
+      "bottom": 6123,
+      "iViewport": false
+    }
+  ],
+  "rsc": [
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 1101,
+      "storlek": 655
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 1135,
+      "storlek": 8752
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 1136,
+      "storlek": 27153
+    }
+  ],
+  "scrollY": 0,
+  "docH": 7058
+}

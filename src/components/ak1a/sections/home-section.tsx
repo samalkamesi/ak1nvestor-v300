@@ -310,12 +310,22 @@ export function HomeSection() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/logga-in"
+                  prefetch={false}
+                  // prefetch={false} (o17/o41/o49-precedensen): herons knappar
+                  // sitter i viewport på sajtens entré ⇒ varje kall besökare
+                  // prefetchar /logga-in ×2 omgångar innan något klickats. Se
+                  // data/forskning/OPTIMERING/o56 (spårets prefetch-familj).
                   className="btn-guld-signatur inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
                 >
                   {t("home.bliMedlemGratis")} <span aria-hidden="true">→</span>
                 </Link>
                 <Link
                   href="/kurser"
+                  prefetch={false}
+                  // Samma kur som grannknappen: /kurser-flighten är ~35 KiB i
+                  // tre omgångar (multiomgångs-prefetch på EN länk, o50 §2) —
+                  // tyngsta enskilla spillposten på startsidan. Hover-prefetch
+                  // lever; klickkostnad ~100–300 ms (ISR-sida).
                   className="inline-flex items-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
                 >
                   {t("home.utforskaKurserna")}
@@ -354,6 +364,12 @@ export function HomeSection() {
               <Link
                 key={s.etikett}
                 href={s.href}
+                prefetch={false}
+                // prefetch={false} (o63): bandet ligger direkt under vecket —
+                // Next:s länk-observer med ~200 px rootMargin räknar kort 1–2
+                // (/kurser) som synliga vid kall entré på mobil, vilket drog
+                // 3 auto-prefetch-flighter (~36 KiB) ~0,9 s efter load
+                // (CDP-IO-audit 2026-09-18). Hover-prefetch lever.
                 className="group rounded-lg border border-border bg-card p-5 transition-all hover:border-gold/50 hover:shadow-md"
               >
                 <p className="font-serif text-4xl font-bold leading-none text-foreground sm:text-5xl">

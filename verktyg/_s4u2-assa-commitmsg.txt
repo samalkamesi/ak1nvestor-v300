@@ -1,0 +1,30 @@
+studio: auto s4-u2 Q3-läspaket ASSA ABLOY (auto-s4-1789742101501 2/3) — industri-grenens sjunde paket, seriens 43:e: läsarten UTSPÄDNINGEN (intäkter dubbelt grenens tempo, vinst på halva takten, netto EXAKT på grenens median) + seriens första EV-kedja BAKLÄNGES när källan saknar börsvärde; vunnet i seriens största trippelrace — u1→SSAB och u3→UPM pivoterade enligt fil-på-disk/BASF-precedenserna, deras ytor orörda, race-notiser i alla tre klaimfilerna [fabrik]
+
+Data: ASSA-B.ST ur bolagsunivers 2026-09-03 (Yahoo; MarketStack utan dubbelkoll, redovisas
+öppet; mcap/ROIC/räntetäckning/FCF-yield/utdelning null — hanteras transparent), rappdag
+2026-10-27 kl 08:00 officiell (egen IR-sida: "delårsrapporten står som nästa kalenderpost"),
+medianer omräknade ur 183-postfilen (industri n=14–17, universum n=144–183).
+
+Signaturnummer: (1) grenparadoxen — brutto 43,14 % tredje högst av 17, kostnadstrappa 26,27 pp,
+netto 10,82 % exakt på grenens median, ROE 15,57 % fjärde lägst; identitet P/B ÷ ROE = 22,678
+mot P/E 23,95 (+5,61 %, tidsmetrik-klass) med per-andelsspegel EPS 14,76/BPS 100,11.
+(2) EV-kedjan baklänges: EV 475,0 mdr → EK 113,9 → mcap 402,1 + skuld 73,0; korsprov mellan
+fältfamiljer P/E×TTM 408,0 mot 402,1 = +1,47 % (seriens tätaste absolutkontroll) + ROE-kors
+14,96 mot 15,57 (0,961) — cirkulariteten öppen, korsprovet äkta. (3) underlagsdetektiven
++15,9 % (vinsten stiger in i kalenderåret, JNJ-klassen); PEG 1,45 under konventionen 1,970
+(GS-profilen), implicit nämnare 16,52 % matchar inget fält; FCF-paret obyggbart (yield null).
+Scenariorutor 18 celler (marginalvikt 1,98; bruttokvot 0,77 = Yara-notens spegel);
+multipelövning 21,35. Härledd nettomarginalserie 11,00/9,69/10,41/9,65 % = läsarten.
+
+KVD verktyg/_s4u2-assa-kvd.mjs GRÖN: 124 PASS 0 FEL 0 VARNINGAR (struktur, juridik exakt ett
+lagrum 2007:528 2 kap 5 §, 20 interna länkar HTTP 200, källtalsparitet 27 tal, 60+ aritmetik-
+kontroller med oberoende omräkning, medianer+rang ur 183-filen, 18 scenarieceller); fem egna
+fel fångade FÖRE commit. 3 397 ord/readingMinutes 6; title 282/desc 584 tkn. KO-rader i båda
+tabellerna (syskonens orörda). src/ orörd, INGET bygge, data/blogg/ (live) orörd — utkast i
+data/blogg-utkast/, publicering = kundens beslut (R2).
+
+LEVERANS: data/blogg-utkast/kvartal/2026-q3/sa-laser-du-assa-abloy-q3-2026.json,
+data/blogg-utkast/GRANSKNINGSKO-SAMMANSTALLNING.md,
+data/vakten/auto-s4-1789742101501-u2-ansprak.md, verktyg/_s4u2-assa-berakna.mjs,
+verktyg/_s4u2-assa-bygg.mjs, verktyg/_s4u2-assa-kvd.mjs, verktyg/_s4u2-assa-body.md,
+worklog.md

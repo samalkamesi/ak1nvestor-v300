@@ -1,0 +1,58 @@
+{
+  "datum": "2026-09-17T17:47-17:56Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u1o54-fore",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "poang": {
+        "prestanda": 0.5,
+        "tillganglighet": 0.98,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1897,
+        "LCP": 5548,
+        "TBT": 1406,
+        "TTI": 5770,
+        "SI": 4523
+      },
+      "bygge": "J87oNXS1k5w1NAMDS1rpJ-fonster"
+    },
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.51,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 2210,
+        "LCP": 5386,
+        "TBT": 1164,
+        "TTI": 5817,
+        "SI": 4488
+      },
+      "bygge": "J87oNXS1k5w1NAMDS1rpJ-fonster"
+    },
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.64,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1885,
+        "LCP": 4649,
+        "TBT": 677,
+        "TTI": 4887,
+        "SI": 3963
+      },
+      "bygge": "J87oNXS1k5w1NAMDS1rpJ-fonster"
+    }
+  ]
+}

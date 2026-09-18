@@ -155,6 +155,13 @@ function UtvaltKort({
     <li className="cv-utvalt">
       <Link
         href={`/kurser/${c.slug}`}
+        prefetch={false}
+        // prefetch={false} (o17/o41/o50-precedensen): utvalda kort är de
+        // första synliga länkarna på /kurser ⇒ Next 16 prefetchar det
+        // översta kortet i tre omgångar (partial + full flight ≈ 35 KiB —
+        // kurs-SMG-flighter är sajtens tyngsta) i sidvisningens
+        // LCP-fönster. Kurs-sidorna är ISR (revalidate 3600, klick ≈
+        // 100–300 ms), hover-prefetch lever kvar (Next 16); mätt i o51.
         className={`group flex h-full flex-col rounded-xl border p-5 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
           hojd
             ? "border-gold/50 bg-gradient-to-b from-gold/[0.09] to-card shadow-sm hover:border-gold"

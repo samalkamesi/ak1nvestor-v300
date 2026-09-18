@@ -1,0 +1,39 @@
+{
+  "titel": "Beslutsklockans episodkarta — 2026-09-17 kväll (s10-u3, spår 10 vakt 3/3)",
+  "uppdrag": "O9:s köpost (4): 'beslutsklockans episoder kan kartläggas med captured_at-histogram (läsande sond)' — infriad med created_at (tabellens faktiska tidskolumn)",
+  "metod": "Läsande psql-sond mot prod (PGPASSFILE=~ak1a/.pgpass, endast COUNT-aggregat per timme/kvart/dag — inga radvärden, inga personvärden; GDPR-ren)",
+  "sond_tidpunkt": "2026-09-17 21:15–21:17 lokal",
+  "board_decisions": {
+    "totalt_vid_sonden": 48410,
+    "span": { "min": "2026-07-15 19:25:26.304438 lokal", "max": "2026-09-17 21:15:01.6172 lokal" },
+    "per_dag_lokal": {
+      "09-10": 768, "09-11": 768, "09-12": 768, "09-13": 765,
+      "09-14": 768, "09-15": 768, "09-16": 768, "09-17": 688
+    },
+    "per_heltimme_lokal_0916_2200_till_0917_2100": {
+      "obs": "24 hela timmar à EXAKT 32 rader, noll undantag; 21:00 pågående 16 (= halva timmen)"
+    },
+    "per_kvart_lokal_1900_2115": {
+      "19:00": 8, "19:15": 8, "19:30": 8, "19:45": 8,
+      "20:00": 8, "20:15": 8, "20:30": 8, "20:45": 8,
+      "21:00": 8, "21:15": 8
+    },
+    "dom": "DETERMINISTISK KVARTSKLOCKA: 8 rader exakt per :00/:15/:30/:45 → 32/h → 768/dygn. Inte episodisk, inte rondstyrd. Enda avvikelsen i 7-dagsserien: 09-13 (765 = 768−3)."
+  },
+  "organ_health_logs": {
+    "per_timme_lokal_0917": {
+      "02:00": 9, "04:00": 3, "08:00": 9, "10:00": 3,
+      "14:00": 9, "16:00": 3, "20:00": 9
+    },
+    "dom": "ÄKTA EPISODISK: ronder vid irregulära timmar med alternerande 9/3-mönster — den verkliga episodkomponenten i beslutsklockan (board+organ) är ORGAN-klockan."
+  },
+  "omskrivning_av_tidigare_dom": {
+    "eftermiddagens_dom": "O9 (14:41): '+0 på 9,2 min mitt på dagen ⇒ klockan är EPISODISK (rondstyrd?), inte jämn'",
+    "kvällens_dom": "FALSK för board_decisions: med kvartsbatcher är gap upp till ~15 min fullt naturligt — fönstret 14:31–14:40 låg helt mellan :30- och :45-batcherna. Jämnheten är STARKARE än 'jämn i snitt': exakt 8/kvart.",
+    "middagens_dom": "s10-u1 (14:3x): 'beslutsklockan ≈ 36,0 r/h jämn dygnet runt' — bekräftad och förklarad mekaniskt (32 board + ~2 organ i snitt)."
+  },
+  "konsekvens_for_varsta_falls_rpo": {
+    "berakning": "snapshots 18 984 + board 768 + organ ~36 ≈ 19 788 rader/dygn",
+    "dom": "TREDJE oberoende beräkningsvägen möter O9:s ≈19 800 och u2:s mätning ≈19 780 — värsta-fallet-RPO == dagsteget, nu med deterministisk komponentdebitt"
+  }
+}

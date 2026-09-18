@@ -1,0 +1,40 @@
+
+## SPÅR 9 s9-u1 omgång 13 — 2026-09-17 ~21:0x lokal: SYSTEMKARTAN dokvåg — E29 Autonoma organet återdiffad (andra varvet) EFTER kollisionspivot från E34 [fabrik]
+
+Leverans: dokvåg s9-u1 omgång 13. FÖRSTA VALET var E34 (spårets största
+verklighetsrörelse: hela patch-kedjan) och mätningen genomfördes FULLT UT
+(allt egenunder 20:35–21:00: artefakt-verifiering 15/15 + skarp sond GRÖN
+1364 HTML/81 ref · prod-synk-pm2vakt 35/35 · prod-synk-patchko 51/51 ·
+döda-länkar 24/0/0 i byggfritt fönster (FAIL under pågående bygge =
+miljökänslighet: byggprocess-grinden ser globala /proc) · tsc 0 rader exit 0
+via projektbinär · 6 ytor 200 · next-server v16.3.5 LIVE i processlistan ·
+patchfönstren exakt 4m51s + 3m44s · rond 2 OBEHÖVIG — lock-commit-räknaren
+dömer "nothing to commit" som misslyckad, 4 kvitton, kön stängs på falsk
+grund · "mål-återarmning FEL 502" 18:32:57Z i synkloggen). MEN: syskon u3:s
+disk-skrivning (20:46:33) + commit (f1a33e95, 20:47:03, E33+E34+C16) hann
+FÖRE min anspråksfil — disk-först-presedensen tillämpad, E34 avstått, deras
+sektion orörd; MIN ABORT-GRIND BEVISADE SIG I SKARPT LÄGE: kartuppdateraren
+VÄGRADE skriva när E34-raden bytts under fönstret ("ABORT 0 träffar", exit 1,
+ingen skrivning) = clobber-kuren fungerar från förlorarsidan. PIVOT: E29
+Autonoma organet + cron-pipeline (senast passad 09-16; kvällens kollisionsdrama
+ÄR dess namngivna gap). E29 EGENMÄTT: fabrik 116 klara manifest av 117 (mot
+66/67) · 387 utdataloggar · beslutsminne 62 poster (6 idag, senast 17:43:30Z)
+· pumpor online 25 h ↺19 · kunduppdrapsfilerna vilar korrekt (ingen order) ·
+svitgapet PRECISERAT (pumpor+styrelse HAR sviter; fabrik/evighet/uppdrag
+saknar) · CRON_SECRET 0 namnträff (värden aldrig lästa) · NYTT FYND:
+evighetsmotorns mål-sond 2× OSVARBAR under patchfönstret (18:38:39Z +
+18:48:39Z — samma driftfönsterklass som synkens brutna mål-återarmning:
+driftfönstret bryter målhjärtat i flera system). Poäng: E29 LEVER 8 KVAR
+(E33/B14-precedensen — kunskap utan gaprörelse). RÄKNINGSSIDOFIXAR: snitt-
+provenansen rättad — tabellsumman var 285 vid omgång 13 ("286" i prosan
+existerade aldrig i tabellen), nu 287 = 285 + E33 +1 + E34 +1 (u3:s
+"LEVER 9 → LEVER 9" är Före-skrivfel, faktisk rörelse 8→9); snitt 7,55.
+KORSVALIDERING E34 bokförd i sektionen (deras "prod-bygget inte landat vid
+mätningen" kompletteras med 16.3.5-LIVE-processbeviset + fönstermåtten +
+kvitto-lögnen — E34-raden orörd, deras yta). Kö: (1) kartfil-lås/anspråk-
+FÖRE-mätstart som promptregel (båda halvorna av clobber-kuren bevisade
+ikväll); (2) lock-commit no-op-klassen; (3) målhjärtats driftfönster-
+tålighet; (4) fabrik/evighet-sviter. KVD: endast SYSTEMKARTAN + worklog +
+anspråksfil + verktyg/_s9u1-e29-* + _s9u1-e34-* (abortalternativet som
+bevisfil) = INGET bygge; src/ orörd (tsc 0 egen mätning + via grinden);
+R2 orörd; data/blogg/ orörd; syskonens ytor orörda. [fabrik]

@@ -1,0 +1,157 @@
+{
+  "/": {
+    "poangPrestanda": 63,
+    "LCP": 4515,
+    "TBT": 955,
+    "CLS": 0,
+    "requests": 45,
+    "overforingKiB": 633.1,
+    "woff2Start": [
+      {
+        "fil": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+        "startMs": 37960,
+        "overforingKiB": 50
+      },
+      {
+        "fil": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+        "startMs": 38269,
+        "overforingKiB": 47.6
+      },
+      {
+        "fil": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+        "startMs": 41290,
+        "overforingKiB": 50.6
+      }
+    ],
+    "rscPrefetch": [
+      {
+        "url": "http://localhost:3000/logga-in",
+        "startMs": 789675,
+        "overforingKiB": 0.4
+      },
+      {
+        "url": "http://localhost:3000/kurser",
+        "startMs": 790258,
+        "overforingKiB": 0.8
+      },
+      {
+        "url": "http://localhost:3000/logga-in",
+        "startMs": 949850,
+        "overforingKiB": 1.9
+      },
+      {
+        "url": "http://localhost:3000/kurser",
+        "startMs": 966007,
+        "overforingKiB": 8.6
+      },
+      {
+        "url": "http://localhost:3000/kurser",
+        "startMs": 980599,
+        "overforingKiB": 26.3
+      }
+    ],
+    "lcpInsights": [
+      {
+        "nyckel": "lcp-breakdown-insight",
+        "titel": "LCP breakdown",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "Time to first byte",
+                "duration": 17.752
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay",
+                "duration": 503.461
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-0-P",
+            "path": "1,HTML,1,BODY,9,DIV,1,MAIN,0,DIV,0,SECTION,0,DIV,0,DIV,1,DIV,2,P",
+            "selector": "div.mx-auto > div.marin-panel > div.relative > p.mt-5",
+            "boundingRect": {
+              "top": 324,
+              "bottom": 470,
+              "left": 56,
+              "right": 356,
+              "width": 300,
+              "height": 146
+            },
+            "snippet": "<p class=\"mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm…\">",
+            "nodeLabel": "Learn to read companies like an analyst — from your first annual report to the …"
+          }
+        ]
+      }
+    ]
+  },
+  "/kurser": {
+    "poangPrestanda": 58,
+    "LCP": 5135,
+    "TBT": 1043,
+    "CLS": 0,
+    "requests": 35,
+    "overforingKiB": 560.6,
+    "woff2Start": [
+      {
+        "fil": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+        "startMs": 151565,
+        "overforingKiB": 50
+      },
+      {
+        "fil": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+        "startMs": 160790,
+        "overforingKiB": 47.6
+      },
+      {
+        "fil": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+        "startMs": 162048,
+        "overforingKiB": 50.6
+      }
+    ],
+    "rscPrefetch": []
+  },
+  "/blogg": {
+    "poangPrestanda": 62,
+    "LCP": 4187,
+    "TBT": 1209,
+    "CLS": 0.0001612133514958607,
+    "requests": 33,
+    "overforingKiB": 528.5,
+    "woff2Start": [
+      {
+        "fil": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+        "startMs": 41769,
+        "overforingKiB": 50
+      },
+      {
+        "fil": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+        "startMs": 42138,
+        "overforingKiB": 47.6
+      },
+      {
+        "fil": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+        "startMs": 42393,
+        "overforingKiB": 50.6
+      }
+    ],
+    "rscPrefetch": []
+  }
+}

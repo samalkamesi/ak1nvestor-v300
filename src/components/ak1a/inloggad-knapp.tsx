@@ -116,6 +116,13 @@ export function InloggadKnapp({ stor = false }: { stor?: boolean }) {
     return (
       <Link
         href="/logga-in"
+        prefetch={false}
+        // prefetch={false} (o17/o41-precedensen): headerns CTA är synlig
+        // i viewport på varje sida ⇒ Next 16 prefetchar /logga-in i två
+        // omgångar (partial + full flight ≈ 2,5 KiB) i varje sidvisnings
+        // LCP-fönster — och rutten är force-dynamic, så full flighten
+        // kostar även en serverrender per sidvisning. Hover-prefetch
+        // lever kvar (Next 16), musanvändare förlorar inget; mätt i o49.
         className={
           stor
             ? "block w-full rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl hover:opacity-90"

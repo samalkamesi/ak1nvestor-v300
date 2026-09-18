@@ -438,14 +438,26 @@ const GAMLA = [
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltSkattedjup",
-  ];
+      "svaraLokaltWarrant",
+    "svaraLokaltTidsaxel",
+    "svaraLokaltKapitalbindning",
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
+  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltBeteendemekanik",
+  "svaraLokaltPeMekanik",
+  "svaraLokaltOverlevnadsdjup",
+];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här
   // underkänner fortfarande OKÄNDA (odokumenterade) komponenter.
   // Omgång 11 (s6-u3): beteendedjup-lagret SIST i widgeten — känd-frivillig
   // tills detta tests fönster uppdateras till 17-läget (samma mekanism som
   // tsdjup-raderna ovan: dokumenterad syskonpågående, inte okänd komponent).
-  const PAGAENDE_KANDA = ["svaraLokaltTsdjup", "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup", "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup", "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering", "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup"];
+  const PAGAENDE_KANDA = ["svaraLokaltTsdjup", "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup", "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup", "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering", "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup", "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup", "svaraLokaltVarderingsverktyg"];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -457,15 +469,14 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  // Skattedjup skall ligga SIST bland de kända (efter alla tidigare).
-  const posSist = rad.lastIndexOf("svaraLokaltSkattedjup(");
-  const kandaEfterSist = KOMPONENTER.slice(0, -1).some((k) => rad.indexOf(k + "(") > posSist);
-  if (posSist !== -1 && kandaEfterSist) FEL.push("svaraLokaltSkattedjup ligger inte sist bland de kända komponenterna");
+  // Skattedjup låg SIST vid leveransen (omgång 10); omgångarna 11–16 har
+  // lagt elva lager efter det — SIST-kravet är utbytt mot ordningsvakten
+  // ovan (omgång 8-presedensens vaktform; harmoniserat av u2 omgång 16).
   if (!widget.includes('from "@/lib/ai-mentor-skattedjup-fragor"')) {
     FEL.push("importen av ai-mentor-skattedjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, ...PAGAENDE_KANDA]);
+  const kanda = new Set([...KOMPONENTER, ...PAGAENDE_KANDA, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

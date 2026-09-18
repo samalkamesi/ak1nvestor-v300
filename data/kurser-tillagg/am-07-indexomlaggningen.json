@@ -1,0 +1,144 @@
+{
+  "slug": "am-07-indexomlaggningen",
+  "category": "AKTIEMARKNADEN I PRAKTIKEN",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Indexomläggningen — flödet som flyttar kursen utan en enda nyhet",
+  "summary": "AKTIEMARKNADEN I PRAKTIKEN-familjens sjunde steg: indexomläggningen, den mekaniska händelse där en indexförvaltare ändrar indexets sammansättning och indexvärldens pengar måste följa efter — oavsett vad någon tycker om bolaget. Kursen lär flödesräkningen: ett bolag med börsvärde 40 000 miljoner kronor och fritt flöde 80 procent bär 32 000 miljoner köpbara aktier; när ett storindex äger 12 procent av det fria flödet måste indexförvaltarna tillsammans köpa 3 840 miljoner kronor av aktien, och utspeglingen vid en uteslutning är densamma spegelvänt (en enda indexfond på 50 000 miljoner med bolagets vikt 1,2 procent äger 600 miljoner som ska säljas när bolaget lämnar indexet). Därpå kursens bågar: exempeltalets resa 42,00 kronor vid tillkännagivandet, 44,52 kronor före effektdagen (plus 6 procent) och 42,74 kronor en månad efter (minus 4 procent från toppen — netto plus 1,8 procent), med tre förklaringslager: forcering av dem som räknat ut flödet före andra, avmattning kring effektdagen och delvis reversering när flödet sinar. Vidare den tysta rytm som aldrig når nyhetsflödet: kvartalsombalansering där en fonds 10 000 miljoner och en viktvandring från 1,8 till 2,2 procent tvingar fram 40 miljoner kronor köp utan att en enda analys skrivs, samt omsättningsräkningen som tidsaxel: 3 840 miljoner fördelat på 60 miljoner per handelsdag är 64 handelsdagar — därför börjar flödet veckor före effektdagen. Genomgående utbildning i att skilja prisrörelse från informationsinnehåll, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna indexflödet vid en tillkomst i tre steg: börsvärde 40 000 miljoner kronor gånger fritt flöde 0,80 lika med 32 000 miljoner köpbara aktier; andelen som indexvärlden måste äga, här 12 procent; produkten 32 000 gånger 0,12 lika med 3 840 miljoner kronor som ska köpas — en ordersumma bestämd av regelverket, inte av åsikter. Räkna uteslutningsspegeln: indexfond 50 000 miljoner gånger bolagets indexvikt 1,2 procent lika med 600 miljoner kronor som lämnar aktien när bolaget utesluts — samma mekanik spegelvänt. Läsa kursens tre bågar kring en omläggning: forceringen mellan tillkännagivande och effektdag (exempeltalet 42,00 till 44,52 kronor, plus 6 procent), avmattningen kring själva effektdagen, och den delvisa reverseringen efteråt (44,52 gånger 0,96 lika med 42,74 kronor; netto plus 1,8 procent sedan tillkännagivandet) — mekanismer att förstå, inte signaler att handla på. Räkna rebalanseringsflödet utan en enda omläggning: fond 10 000 miljoner, vikten vandrar från 1,8 till 2,2 procent genom kursrörelser, skillnaden 0,4 procentenheter gånger 10 000 lika med 40 miljoner kronor köp vid nästa ombalansering. Räkna flödets tidsaxel: 3 840 miljoner dividerat med aktiens dagliga omsättning 60 miljoner lika med 64 handelsdagar — flödet börjar långt före effektdagen och därför börjar bågen också där. Ställa de fyra läsfrågorna till varje omläggningsrubrik: vilket index och vilket regelverk, vilken vikt, vilket datum, vilket uppskattat flöde — och veta skillnaden mellan en kursrörelse som bär information och en som bara bär pengar.",
+  "why": "AKTIEMARKNADEN I PRAKTIKEN-familjen bär sex steg — likviditeten och spreaden, indexet som konstruktion, aktiesidans första siffror, marknadsstrukturen, dagens auktioner och kortläget — men inget steg äger själva händelsen där indexet och marknaden möts: omläggningen, när indexvärldens regelverk tvångsmatar pengar in i och ur en aktie. Am-02 öppnar dörren i en enda mening om indexbyten och det mekaniska flödet; denna kurs går igenom den. Den som läser rapporter och nyheter möter flera gånger om året kurshopp som ingen fundamental nyhet bär — här är räkneverktyget som skiljer flödets pris från världens dom.",
+  "history": {
+    "origin": "När börsens index enbart var mätinstrument spelade sammansättningen ingen roll för priserna: att ett bolag tillkom eller lämnade ett index var en notis, inte en händelse. Den första indexfonds-eran förändrade det: från att index var linjal blev de ägande maskiner, och en regelverksändring blev en orderbilaga. De första noggrant dokumenterade fallen kom i amerikanska standardindex under nittonhundratalets senare hälft, där tillkomster föregicks av mätbara kursstegringar.",
+    "evolution": "Allt eftersom det passiva ägandet växte från kuriosa till en av marknadens största ägarkategorier växte flödena med det. Indexförvaltarna byggde formella omläggningskalendrar — kvartalsvis eller halvårsvis — med tillkännagivanden veckor före effektdag, och en hel arbitraggren lärde sig räkna flödet före fonderna själva. Studier av omläggningar dokumenterade ett mönster: stegring mellan tillkännagivande och effektdag, därefter delvis tillbakafall — med storlekar som varierat över årtiondena.",
+    "modern": "Idag löper omläggningskalendrar som en jämn rytm genom året, och kvartalsvisa ombalanseringar flyttar summor ingen enskild analys skrivit om. För den som utbildar sig i att läsa marknaden är omläggningen det renaste laboratoriet: en prisrörelse vars orsak är helt känd — regelverk, vikter och datum — och där kursen ändå rör sig i bågar, precis som den gör av mycket dunklare skäl."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Ett beslut som ingen analytiker fattar — vad en omläggning är", "minutes": 4 },
+    { "num": 2, "title": "Flödesräkningen — vad indexvärlden måste äga", "minutes": 4 },
+    { "num": 3, "title": "Kursens bågar — före tillkännagivandet, vid effektdagen, efteråt", "minutes": 4 },
+    { "num": 4, "title": "Den tysta rytm som aldrig når nyhetsflödet", "minutes": 4 },
+    { "num": 5, "title": "Att läsa händelsen — fyra frågor och två fällor", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — flödesblicken som komplement, aldrig som dom", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Ett beslut som ingen analytiker fattar — vad en omläggning är",
+      "minutes": 4,
+      "intro": "Varje kvartal och varje halvår sitter indexkommittéer — hos de stora indexhusen och börsernas egna indexgrupper — och går igenom regelverkens kriterier: storlek, handel, fritt flöde, hemvist. Deras beslut är inte analytiska omdömen om bolaget utan administrativa tillämpningar av regler. Ändå kan beslutet flytta miljarder i en aktie.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En indexomläggning börjar med ett papper: indexregelverkets kriterier har mätts, ett bolag kvalar in eller faller ur, och kommittén tillkännager beslutet med en förhandstid på ofta några veckor fram till effektdagen — dagen då indexet räknas om och den nya sammansättningen blir officiell. Här ligger kursens kärna: det som händer mellan tillkännagivandet och effektdagen styrs inte av några nya kunskaper om bolaget. Det styrs av att en mycket stor grupp förvaltare är bundna att följa indexet. De kan inte tycka till om beslutet; deras uppdrag är att hålla portföljen i linje med indexet, annars mäter de fel mot sitt jämförelsemål. När ett bolag tillkommer måste de köpa, och när det lämnar måste de sälja — oavsett vad de själva anser om bolagets framtid. Detta är flödet som flyttar kursen utan en enda nyhet, och det är värt att lära sig räkna på, för det är ett av de tillfällen då prisrörelsens orsak är fullständigt känd: regelverk, vikter och datum, allt offentligt."
+        },
+        {
+          "type": "definition",
+          "content": "Indexomläggning: den händelse då en indexförvaltare ändrar ett indexes sammansättning — ett bolag tillkommer, ett utesluts, en vikt justeras — med tillkännagivande i förväg och en bestämd effektdag. För indexbundna förvaltare är ändringen en orderbilaga: den som följer indexet måste köpa det som tillkommer och sälja det som lämnar, i proportion till sitt kapital."
+        },
+        {
+          "type": "insight",
+          "content": "Vanligaste missförståndet är att läsa en omläggningsrubrik som ett omdöme: bolaget är bra, för det kom in i indexet. Kommittén har inte sagt att bolaget är bra — den har konstaterat att bolaget uppfyller regelverkets storleks- och handelsmått. Kursrörelsen bär information om flödet, inte om bolaget. Att skilja de två åt är hela skillnaden mellan att läsa marknaden och att gissa."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Flödesräkningen — vad indexvärlden måste äga",
+      "minutes": 4,
+      "intro": "För att förstå hur stort ett omläggningsflöde kan bli behövs tre tal: bolagets börsvärde, andelen fritt flöde, och hur stor del av det fria flödet indexvärlden håller. Kursen går igenom räkningen med ett genomgående exempel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ta ett exempelbolag med börsvärde 40 000 miljoner kronor. Andelen av aktierna som är fritt handelbara — resten kan sitta hos långsiktig huvudägare — är 80 procent. Det fria flödet är alltså 40 000 gånger 0,80 lika med 32 000 miljoner kronor av aktier som faktiskt kan köpas. Anta nu att det tillkommande storindexet, räknat på hur indexet är viktat, kommer att representera ett ägande av 12 procent av det fria flödet. Då är orderbilagan till indexvärlden 32 000 gånger 0,12 lika med 3 840 miljoner kronor som måste köpas i aktien — inte för att någon analytiker skrivit något positivt, utan för att regelverket nu inkluderar bolaget. Kontrollen av räkningen är värd att göra baklänges också: 3 840 dividerat med 32 000 är just 12 procent. Spegelvända gäller vid en uteslutning: en enda indexfond med 50 000 miljoner kronor i förvaltat kapital och bolagets indexvikt på 1,2 procent äger 50 000 gånger 0,012 lika med 600 miljoner kronor i aktien som ska säljas när bolaget lämnar indexet — och det gäller varje fond som följer indexet, var för sig, alla enligt samma regelverk."
+        },
+        {
+          "type": "tabell",
+          "content": "Steg i flödesräkningen | Exempeltalet | Vad talet fångar\nBörsvärde | 40 000 miljoner kronor | Marknadens totala prislapp på bolaget\nFritt flöde, andel | 80 procent | Andel aktier som kan köpas fritt\nFritt flöde, kronor | 32 000 miljoner kronor | 40 000 × 0,80 — den köpbara poolen\nIndexvärldens andel | 12 procent | Regelverkets vikt i det fria flödet\nOrderbilagan | 3 840 miljoner kronor | 32 000 × 0,12 — vad som måste köpas\nUteslutningsspegeln | 600 miljoner kronor | 50 000 × 0,012 — vad en fond måste sälja"
+        },
+        {
+          "type": "insight",
+          "content": "Notera vad räkningen inte säger: den säger inte att kursen stiger med flödetets storlek. Priset sätts där orderboken möter ordern, och det beror på hur många som vill sälja just dessa dagar — likviditetens och spreadens värld, som am-01 lär ut och km-069-orderbok-och-prissattning fördjupar. Flödesräkningen ger orderbilagans storlek, inte kursens svar. Skillnaden mellan de två är själva hantverket."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Kursens bågar — före tillkännagivandet, vid effektdagen, efteråt",
+      "minutes": 4,
+      "intro": "När flödet är känt i förväg börjar en tävling om vem som köper först. Det ger omläggningskursen dess typiska form: en båge upp före effektdagen, avmattning kring själva dagen, och ofta en delvis tillbakagång efteråt. Kursen går igenom bågen med talschema.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Exempeltalet: bolagets aktie står i 42,00 kronor när tillkännagivandet kommer. De som räknat ut flödet — och det är många, alla tal är offentliga — börjar köpa i förväg, i vetskap om att effektdagens tvångsköp kommer att ge dem motparter. Till effektdagen har kursen stigit till 44,52 kronor, en uppgång på 6 procent, räknat som 44,52 dividerat med 42,00. När flödet sedan sinar och de som köpt i förväg börjar realisera, faller aktien i exemplet 4 procent på en månad: 44,52 gånger 0,96 lika med 42,74 kronor. Netto sedan tillkännagivandet blir 42,74 mot 42,00 — uppgång med 1,8 procent. Detta är mekanismerna i den klassiska bilden av omläggningskursen, dokumenterad i studier av indexförändringar: uppgång mellan tillkännagivande och effektdag, därefter delvis tillbakafall, med storlekar som varierat över årtionden. Kursen lär ut formen och räkneverket, inte en storhet att citera — den som möter en omläggningsrubrik ska kunna rita bågen själv, inte minnas en procentsats från en tabell."
+        },
+        {
+          "type": "tabell",
+          "content": "Fas | Vem som handlar | Exempeltalet | Vad fasen lär ut\nFöre tillkännagivandet | Spekulanter som räknat kriterierna | 42,00 kronor | Flödet kan förutses av dem som kan regelverket\nTill effektdagen | Förväntare och arbitragörer köper i förväg | 44,52 kronor (+6 procent) | Kända framtida köp prissätts redan före\nKring effektdagen | Indexförvaltarna genomför tvångsköpen | Omsättningstoppar | Flödet är som störst när nyhetsvärdet är som minst\nEfteråt | Förväntare realiserar, flödet sinar | 42,74 kronor (−4 procent från toppen) | Nettoeffekten kan vara litare än bågen\nNetto sedan tillkännagivandet | Alla tillsammans | +1,8 procent | Bågens storlek är inte bolagets historia"
+        },
+        {
+          "type": "insight",
+          "content": "Bågen har ett djupare värde än omläggningar själva: den visar att en känd framtida order prissätts redan innan den verkställs. Samma logik återkommer överallt där framtida flöden är kända — stora förvärvslikvider, återköpsprogram, fondströmmar. Den som en gång räknat en omläggningsbåge med egna tal har ett tankemönster som fungerar långt utanför indexvärlden."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Den tysta rytm som aldrig når nyhetsflödet",
+      "minutes": 4,
+      "intro": "Omläggningarna är de synliga topparna. Under dem löper en jämn rytm av mekaniska flöden som aldrig blir rubriker: kvartalsombalanseringar, viktuppföljning och nya sparpenningar. Kursen visar hur även en helt omdömeslös mekanik flyttar pengar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En indexfond som ska följa sitt index kan inte bara köpa en gång och sedan vila. Vikterna i indexet rör sig varje dag, för kurserna rör sig, och vid varje ombalanseringstillfälle — ofta kvartalsvis — måste fonden rätta till sina avvikelser. Räkneexempel: en fond med 10 000 miljoner kronor håller ett bolag vars indexvikt, genom att bolagets kurs stigit mer än indexets, har vandrat från 1,8 procent till 2,2 procent. Skillnaden är 0,4 procentenheter, och fonden måste köpa 10 000 gånger 0,004 lika med 40 miljoner kronor av aktien vid ombalanseringen — inte för att fonden tror något om bolaget, utan för att avvikelsen annars växer. Detta är viktdriv: kursrörelser föder nya order. Därtill kommer sparflödet: varje månadssparande in i indexfonder blir köp av hela korgen, mekaniskt och jämnt. Tillsammans bildar ombalanseringar och sparflöden en grundström i marknaden som är värd att känna till, för den förklarar kurshandling i nyhetstomma veckor — och den är samma kraft som gör kalenderkvartalens dagar till rytmiska toppar i omsättningen. Den som vill se flödenas spegelbild på andra sidan orderboken möter dem igen i kortlägets mekanik, som am-06 lär ut."
+        },
+        {
+          "type": "tabell",
+          "content": "Mekaniskt flöde | Utlösare | Exempeltalet | Regelverkets roll\nTillkomst i index | Indexkommitténs beslut | 3 840 miljoner kronor köp | Ordern given av inklusionen\nUteslutning ur index | Indexkommitténs beslut | 600 miljoner kronor försäljning | Ordern given av exklusionen\nViktdriv vid ombalansering | Kurser rör vikterna | 40 miljoner kronor köp | Avvikelsen ska rättas\nSparflöde in i fonder | Månadssparande | Köp av hela korgen | Fonden ska spegla indexet\nRänteomläggningsdag | Indexräkneomsättning | Omsättningstopp i kalendern | Effektdagens mekanik"
+        },
+        {
+          "type": "insight",
+          "content": "Den gemensamma nämnaren: i alla fem raderna fattas inget beslut om bolaget. Det är marknadens byråkrati — regler som blir order. Att veta att den byråkratin existerar, och kunna räkna dess storleksordningar, hör till den som vill förstå varför kurser ibland rör sig mycket i dagar då världen sagt mycket lite."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Att läsa händelsen — fyra frågor och två fällor",
+      "minutes": 4,
+      "intro": "En omläggningsrubrik är en övning i läsning. Kursen samlar de fyra frågor som ska besvaras innan rubriken får betyda något, och de två fällor som fångar den som slutat tänka vid rubriken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra frågorna. För det första: vilket index och vilket regelverk — ett bolag kan tillkomma ett index och lämna ett annat samma kvartal, och flödena kan delvis ta ut varandra. För det andra: vilken vikt — en tillkomst med vikten 0,3 procent av ett litet index är en notis, med 1,2 procent av ett stort index ett väderläge. För det tredje: vilket datum — bågen lever på tiden mellan tillkännagivande och effektdag, och den som läser rubriken efter effektdagen läser historia. För det fjärde: vilket uppskattat flöde — kapitel två och fyra räckverktygen, och svaret ska vara en kronsumma, inte en känsla. Fälla ett: att läsa flödet som värde — kursen steg alltså är bolaget bättre; nej, kursen steg för att en orderbilaga verkställdes, och bågen i kapitel tre visar att nettoeffekten ofta är litare än bågen. Fälla två: att läsa flödet som en garanti — flödet ska köpas, alltså stiger kursen fram till effektdagen; nej, flödet är känt av alla, och det som är känt av alla har redan börjat prissättas. Räkna i stället tidsaxeln: exempeltalets 3 840 miljoner kronor fördelat på en daglig omsättning i aktien på 60 miljoner kronor är 3 840 dividerat med 60 lika med 64 handelsdagar — flödet kan inte vänta till effektdagen ens om det ville, och det är därför bågen börjar vid tillkännagivandet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räk en egen omläggningsanalys i fem steg, som ren studieövning utan koppling till några placeringar: (1) Välj ut en nyligen tillkännagen omläggning — tillkomst eller uteslutning — och skriv upp index, regelverk och effektdag. (2) Hämta bolagets börsvärde och uppskatta andelen fritt flöde; räkna den köpbara poolen. (3) Uppskatta indexvärldens andel av det fria flödet för detta index, gärna med ett intervall, och räkna flödet i kronor. (4) Hämta aktiens dagliga omsättning och räkna flödets tidsaxel i handelsdagar. (5) Skriv ned din förväntade båge — riktning före effektdagen, rimlig nettotal efter en månad — och stäm av mot vad som faktiskt hänt när månaden gått. Notera vad du hade rätt om och var räkningen svek: det är övningens egentliga resultat."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — flödesblicken som komplement, aldrig som dom",
+      "minutes": 4,
+      "intro": "Kursens sista steg samlar hantverket: flödesblicken som ett av flera glasögon, med de fem frågor som bär den, och med gränsen tydlig — detta är utbildning i att läsa marknadens mekanik, aldrig råd om placeringar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fem frågorna att bära med sig från denna kurs: Vems beslut är detta — kommitté eller analys? Vilket tal bär orderbilagan — vikt gånger fritt flöde? När verkställs den — och vad betyder det för när bågen börjar? Vem är motparten — och vilken likviditet möter ordern, i spreadens värld från am-01? Och vad säger kursrörelsen egentligen om bolaget — svaret är oftast: ingenting, och det är en insikt värd sin vikt i guld. Flödesblicken kompletterar den fundamentala läsningen; den ersätter den aldrig. Bolagets historia — intäkter, marginaler, kassaflöde, ägande — är ämnet för analysens huvudspår, och omläggningsmekaniken är en bakgrundstakt: den förklarar kursens korta bågar, inte dess långa linje. Som studieobjekt är omläggningen oslagbar, för orsakerna är offentliga och räkneverket kan övas gång på gång med egen penna. Detta är utbildning i marknadens mekanik, aldrig råd om placeringar."
+        },
+        {
+          "type": "insight",
+          "content": "Den som behärskar denna kurs kan inte förutsäga kurser — det kan ingen, och kursen hävdar aldrig det. Den kan skilja tre saker åt som annars blandas ihop: en prisrörelse som bär information om bolaget, en som bär information om flödena, och en som inte bär något alls. Att veta vilken av de tre man ser på, är halva den utbildade blicken."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch uppmanade läsaren att skilja på bolagets historia och aktiens korta svängningar, och omläggningsbågen är ett av de tydligaste exemplen: en aktie kan stiga kraftigt en månad utan att bolaget blivit ett dugg bättre. Hans blick på berättelsen bakom kurserna är kursens släktband — flödesblicken frågar alltid vem som köpte och varför.",
+  "grahamSection": "Benjamin Grahams skilje mellan pris och värde får sin renaste illustrationsplats i omläggningen: flödet flyttar priset, men rör inte bolagets värde. Margin of safety-skolan läser därför mekaniska kursbågar som väder, inte som klimat — och kursens bågtänkande är en övning i just den distinktionen.",
+  "ak1Section": "I AK1A:s metodik läses omläggningsmekaniken som en bakgrundstakt i bolagsanalyserna: när en kursrörelse sammanfaller med ett känt indexflöde, noteras flödet som förklaring innan några fundamental hypoteser byggs. Kursens flödesräkning och tidsaxel är verktyg i den utbildningen, och ämnet knyter an till spårets grannar — am-02 för indexens konstruktion, am-01 och km-069 för orderns möte med orderboken, kt-01 för katalysatorbegreppet."
+}

@@ -40,6 +40,17 @@
  *      binär / timeout / fel som ALLA pekar in i node_modules = MANUELL
  *      (deploy-transient enligt K2/K3-precedensen — omätning bokförs ärligt,
  *      vakten ger ALDRIG tyst PASS).
+ *  12. SSR-livssond (o64) — probar deterministiska sentinellrutter (o47:s
+ *      exakta 500-rötter: / /kurser /analyser /blogg /labb /en /ar) på
+ *      loopback. Mätfönster-grind FÖRE mätvärde (o55 §2: fuser-ÄGANDE av
+ *      deploylåset + pgrep HELA byggmönster MED släktexkludering — den egna
+ *      processkedjan kan aldrig bli "byggprocess", o55 F2-klassen död även
+ *      hos observatören). 5xx-svar = FEL (o47-klassen: servern svarar =
+ *      äkta fel, omstart ger connection refused); 4xx/nätfel/timeout =
+ *      MANUELL; deploy/byggfönster = MANUELL "OMÄTT" (aldrig tyst PASS,
+ *      aldrig artefakt-FEL). Logik i verktyg/ssr-livssond.mjs (importerbar
+ *      modul enligt tmp-stad.mjs-precedensen; svit:
+ *      verktyg/testa-kvalitetsvakt-ssr500.mjs).
  *
  * Statusregler (dokumenterade i rapporten):
  *   RÖD  = fler än 9 fel ELLER ogiltig JSON-fil
@@ -55,6 +66,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { stadaTmpFiler } from "./tmp-stad.mjs";
+import { sektionSsrLivssond } from "./ssr-livssond.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "kvalitetsrapport-SENASTE.md");
@@ -1079,6 +1091,7 @@ async function main() {
     await sektionAaoDegen(),
     sektionSiffror(),
     sektionTsc(),
+    await sektionSsrLivssond(),
   ];
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);
@@ -1113,7 +1126,7 @@ async function main() {
   md.push("");
   md.push(`## ANTAL FEL: ${totalFel} | MANUELLA: ${totalMan} | STATUS: ${status}`);
   md.push("");
-  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering, typbaslinje)._");
+  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering, typbaslinje, SSR-livssond)._");
   md.push("");
 
   mkdirSync(path.dirname(RAPPORT_SOK), { recursive: true });

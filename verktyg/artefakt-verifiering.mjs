@@ -38,6 +38,15 @@ const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // trigga (fynd: s8-u1-försök-2-test 7, 2026-09-16; kärnan delas av rsc-skann.mjs)
 const REF_MONSTER = /\/_next\/static\/[A-Za-z0-9._@+%-]+(?:\/[A-Za-z0-9._@+%-]+)*/g;
 
+// o50 (s8-u3) — DRIFTSBOKEN 2026-09-17 17:42–17:47Z vaccin 1: pm2-dödens
+// minimala filkontrakt. Ett avbrutet/OOM-dödat bygg kan skriva BUILD_ID +
+// prerender-HTML (med giltiga referenser till GAMLA chunks ⇒ HTML-måttet
+// grönt) men dö FÖRE server-manifesten — servern kraschloopar på ENOENT
+// (bevisat: .next/prerender-manifest.json, nginx 502 ~5 min, ↺ 3 700+).
+// Dessa tre skriver next build ALLTID (empiriskt verifierat mot friskt .next,
+// J87oNXS-deployen 19:46) — saknas någon är artefakten inte restart-bar.
+const KRITISKA_FILER = ["BUILD_ID", "prerender-manifest.json", "routes-manifest.json"];
+
 /** Rekursiv walk av .next/server/app → deterministiskt sorterade HTML-vägar.
  * lasfel=true om någon katalog ej gick att läsa (okänd > gissning). */
 export function samlaHtmlFiler(katalog) {
@@ -94,11 +103,22 @@ export async function verifieraArtefakt(alternativ = {}) {
     referenser: 0,
     unikaReferenser: 0,
     saknade: [],
+    saknadeManifest: [],
     trunkerad: false,
     varaktighetMs: 0,
   };
   if (!fs.existsSync(serverApp)) {
     resultat.meddelande = `${path.relative(rot, serverApp) || serverApp} finns ej — ingen artefakt att mäta (kunde inte mäta, inte grön)`;
+    resultat.varaktighetMs = Date.now() - start;
+    return resultat;
+  }
+  // o50: manifest-kontraktet FÖRE HTML-måttet — restart-döden (502-klassen)
+  // är svårare än ostylat: pm2 startar ALDRIG mot saknat manifest, hur
+  // hänförliga chunk-referenserna än är.
+  resultat.saknadeManifest = KRITISKA_FILER.filter((f) => !fs.existsSync(path.join(nextKatalog, f)));
+  if (resultat.saknadeManifest.length) {
+    resultat.status = "trasig";
+    resultat.meddelande = `${resultat.saknadeManifest.length} kritisk(a) fil(er) saknas i .next (${resultat.saknadeManifest.join(", ")}) — avbrutet bygg, artefakten är inte restart-bar (502-klassen 2026-09-17: pm2 ENOENT prerender-manifest.json)`;
     resultat.varaktighetMs = Date.now() - start;
     return resultat;
   }

@@ -14,7 +14,7 @@
  *   1. Genererar tmp_akm2_berika.ts i repots rot — importerar
  *      src/lib/portfolj-forskning/akm2-koppling.ts (som i sin tur importerar
  *      den O RÖRDA AKM2-kärnan src/lib/akm2/) och loopar universet.
- *   2. Kör den med: npx --yes tsx tmp_akm2_berika.ts
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_akm2_berika.ts
  *   3. Skriver:
  *      a) data/cache/akm2-{TICKER}.json — fullt AKM2Resultat (schema
  *         akm2-resultat-v1) + serialiserbar Akm2Profil per bolag
@@ -38,7 +38,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_akm2_berika.ts");
+const TMP_TS = path.join(REPO, ".tmp", "tmp_akm2_berika.ts");
 const CACHE = path.join(REPO, "data", "cache");
 const KORSTABELL = path.join(REPO, "data", "portfolj-system", "korstabell-grund.json");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
@@ -51,8 +51,8 @@ import {
   raknaAkm2ForNyckeltal,
   akm2ProfilUr,
   AKM2_VIKTPROFIL,
-} from "./src/lib/portfolj-forskning/akm2-koppling";
-import type { BolagsNyckeltal, KorstabbellRad } from "./src/lib/portfolj-forskning/typer";
+} from "../src/lib/portfolj-forskning/akm2-koppling";
+import type { BolagsNyckeltal, KorstabbellRad } from "../src/lib/portfolj-forskning/typer";
 
 // Sanera ticker till filnamn (samma mönster som kor-fvag/analysfabriken):
 // endast [A-Za-z0-9._-] tillåts, '..' och punktprefix avvisas, '.' → '_'.
@@ -142,10 +142,11 @@ console.log("[kor-akm2-berika] skillnad mot AKM1: medel " + medel + " | hojda " 
 
 // ── Generera tmp-fil, kör via tsx, städa ────────────────────────────────────
 try {
+    mkdirSync(path.dirname(TMP_TS), { recursive: true }); // o44: engångszonen finns alltid
   writeFileSync(TMP_TS, TS_KOD, "utf8");
   mkdirSync(CACHE, { recursive: true });
-  console.log("[kor-akm2-berika] kör npx --yes tsx tmp_akm2_berika.ts ...");
-  const barn = spawnSync("npx", ["--yes", "tsx", "tmp_akm2_berika.ts"], {
+  console.log("[kor-akm2-berika] kör npx --yes tsx .tmp/tmp_akm2_berika.ts ...");
+  const barn = spawnSync("npx", ["--yes", "tsx", ".tmp/tmp_akm2_berika.ts"], {
     cwd: REPO,
     shell: true,
     encoding: "utf8",

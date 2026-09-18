@@ -20,13 +20,13 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TMP_NAMN = "tmp_riskportfolj_test.ts";
-const TMP = path.join(REPO, TMP_NAMN);
+const TMP = path.join(REPO, ".tmp", TMP_NAMN);
 const MARK_START = "===RISKPORTFOLJ_JSON_START===";
 const MARK_END = "===RISKPORTFOLJ_JSON_END===";
 
@@ -37,10 +37,10 @@ const TS_KOD = String.raw`
 import {
   RISKNIVAER, RISK_NIVOR, RISK_TAKTER, hamtaRiskProfil, byggPortfolj,
   rattaErsattningar, raknaPoang, kontrolleraKrav, MIN_INNEHAV, MAX_INNEHAV,
-} from "./src/lib/portfolj-forskning/riskportfolj";
+} from "../src/lib/portfolj-forskning/riskportfolj";
 import type {
   Bransch, Horisont, KorstabbellRad, RiskNiva, TillvaxtTakt, UppfoljningSnapshot, VagKlass,
-} from "./src/lib/portfolj-forskning/typer";
+} from "../src/lib/portfolj-forskning/typer";
 
 const MARK_START = "===RISKPORTFOLJ_JSON_START===";
 const MARK_END = "===RISKPORTFOLJ_JSON_END===";
@@ -291,8 +291,9 @@ console.log(MARK_END);
 // ── Kör tmp-filen via tsx och tolka JSON-blocket ─────────────────────────────
 let resultat = null;
 try {
+    mkdirSync(path.dirname(TMP), { recursive: true }); // o44: engångszonen finns alltid
   writeFileSync(TMP, TS_KOD, "utf8");
-  const proc = spawnSync("npx", ["--yes", "tsx", TMP_NAMN], {
+  const proc = spawnSync("npx", ["--yes", "tsx", ".tmp/" + TMP_NAMN], {
     cwd: REPO,
     shell: true,
     encoding: "utf8",

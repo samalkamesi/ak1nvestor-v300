@@ -1759,6 +1759,107 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POSTER 31+32 (V5/A2 + V7/A5 — våg 182): v4/command
+   * setAutoDrain + köoperationerna (V4-LAGRET §11.2 rad 239–242):
+   * setAutoDrain {autoDrain}, sendQueuedNow {queueItemId},
+   * editQueueItem {queueItemId, newText},
+   * reorderQueueItem {queueItemId, beforeQueueItemId: string|null},
+   * deleteQueueItem {queueItemId}. queueItemId härleds klientförutsägbart
+   * som "queue_"+commandId (§11.5.1 Cse). Ack-unionens "noop" liksom
+   * guard-koderna (queueItemReserved, queueItemNotEditable,
+   * queuePromotionBusy m.fl. §11.5.2) är ÄKTA domslut, ej fel.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
+  /**
+   * GAP-REGISTER POST 28 (V8/A4 — våg 184): v4/command resolveInteraction
+   * (V4-LAGRET §11.2 rad 235–236 — dialog- och behörighetskortens svarsväg,
+   * §11.4:s migreringssteg 2): payload {resolvedBy: {clientId, optionId?}}
+   * där clientId härleds internt till transportens v4ConnectionId (klienten
+   * äger den inte) och optionId är kortets valda alternativ (valfritt —
+   * dialog utan alternativ skickas utan fältet). Ack-statusunionen (§11.5.1):
+   * "noop" = ingen väntande interaktion — ÄKTA domslut, ej fel.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
+  /**
+   * GAP-REGISTER POST 29 (V6/A4 — våg 183): v4/command switchModelConfig
+   * (V4-LAGRET §11.2 rad 237 — modellbytardrawerns kommando, §11.4:s
+   * migreringssteg 3 jämte pause/resumeGoal): modellbyte på den LEVANDE
+   * sessionen via kommandobussen. §11.2 bär inget explicit payload-schema
+   * för typen — lasten {modelId} är vår tolkning av modellkatalogens
+   * id-kultur (våg 82), och protokollets egen domslutsväg (ack rejected +
+   * proto.invalidPayload, alternativt fault.command.notImplemented /
+   * capabilityUnsupported — §11.5.2) är slutdomare. Dagens funktionella
+   * styrväg (modell-katalogens rutt → bytModell) förblir styrväg;
+   * UI-övergången är feature-avvägning enligt §11.4.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
+  /**
+   * GAP-REGISTER POST 33 (V6/A6 — våg 187): v4/command createSession +
+   * createSelectionSideSession (V4-LAGRET §11.2 rad 232–234 —
+   * sessionsfödelse med config+i första kommandot; readyFlights-ko
+   * §11.3 sker app-server-sidigt i handleCommand — transporten bär
+   * bara envelope). createSession: payload {firstInput?: {text},
+   * runtimeModel?} där workspaceId/config/attachments/mcpServers
+   * utelämnas med dokumenterad tolkning (app-servern process-ägger
+   * workspacen; frånvaro = protokollets tolkning) och envelope-
+   * sessionId är NULL (§11.1 rad 214 — sessionsfödelse har ingen
+   * mål-session). createSelectionSideSession: payload {firstInput?:
+   * {text}} med tolkningen envelope-sessionId = AKTIV session
+   * (markeringssidessionen föds ur pågående samtal — §11.2 bär inget
+   * explicit envelope-krav; protokollets egen domslutsväg
+   * (proto.invalidPayload, fault.command — §11.5.2) är slutdomare).
+   * Ack-statusunionen (§11.5.1): samtliga domslut passerar som svar.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5854,6 +5955,224 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POSTER 31+32 (§11.2 rad 239–242): setAutoDrain + köoperationerna —
+   * samma envelope-validering som sendText; payload byggs per typ ur
+   * KLr-kartan och payload-grinden här är VÅR validering (protokollets
+   * egen domslutsväg nås via ack status/reasonCode).
+   */
+  async skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const p = payload ?? {};
+    let wire: { autoDrain?: boolean; queueItemId?: string; newText?: string; beforeQueueItemId?: string | null };
+    if (typ === "setAutoDrain") {
+      if (typeof p.autoDrain !== "boolean") {
+        return { skickat: false, commandId: null, ack: null, fel: "setAutoDrain kräver autoDrain boolean." };
+      }
+      wire = { autoDrain: p.autoDrain };
+    } else if (typ === "editQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      const n = typeof p.newText === "string" ? p.newText.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver queueItemId." };
+      if (!n) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver newText." };
+      wire = { queueItemId: q, newText: n };
+    } else if (typ === "reorderQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "reorderQueueItem kräver queueItemId." };
+      const b = typeof p.beforeQueueItemId === "string" ? p.beforeQueueItemId.trim() : "";
+      wire = { queueItemId: q, beforeQueueItemId: b === "" ? null : b };
+    } else {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: `${typ} kräver queueItemId.` };
+      wire = { queueItemId: q };
+    }
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: typ,
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
+  /**
+   * POST 28 (§11.2 rad 235–236): resolveInteraction — resolvedBy.clientId
+   * härleds till transportens v4ConnectionId (envelope-kulturen; klienten
+   * äger den inte), optionId endast när kortet bar ett valt alternativ.
+   * "noop"-ack (ingen väntande interaktion) är ett äkta domslut:
+   * skickat=true.
+   */
+  async skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const o = typeof optionId === "string" ? optionId.trim() : "";
+    if (o.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "optionId överskrider 200 tecken." };
+    }
+    const wire: { resolvedBy: { clientId: string; optionId?: string } } = {
+      resolvedBy: o === "" ? { clientId: this.v4ConnectionId } : { clientId: this.v4ConnectionId, optionId: o },
+    };
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: "resolveInteraction",
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
+  /**
+   * POST 29 (§11.2 rad 237): switchModelConfig — modellbyte via
+   * kommandobussen på den levande sessionen. Payload-formen {modelId} är
+   * vår tolkning (§11.2 bär inget schema för typen) — protokollets egen
+   * payload-grind (proto.invalidPayload) är slutdomare.
+   */
+  async skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const m = typeof modellId === "string" ? modellId.trim() : "";
+    if (!m) return { skickat: false, commandId: null, ack: null, fel: "switchModelConfig kräver modellId." };
+    if (m.length > 200) return { skickat: false, commandId: null, ack: null, fel: "modellId överskrider 200 tecken." };
+    const wire = { modelId: m };
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: "switchModelConfig",
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
+  /**
+   * POST 33 (§11.2 rad 232–234): createSession + createSelectionSideSession
+   * — sessionsfödelse via kommandobussen. createSession bär sessionId NULL
+   * (§11.1 rad 214) med firstInput/runtimeModel som enda exponerade last
+   * (workspaceId utelämnas — app-servern process-äger workspacen; frånvaro
+   * = protokollets tolkning). createSelectionSideSession tolkas mot AKTIV
+   * session (markeringssidessionen föds ur pågående samtal) — kräver
+   * levande session, annars fel-tolerant avvis. readyFlights-ko (§11.3)
+   * sker app-server-sidigt i handleCommand. Protokollets domslut
+   * (ack-status/reasonCode, §11.5.2) är slutdomare.
+   */
+  async skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    if (typ !== "createSession" && typ !== "createSelectionSideSession") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig sessionstyp." };
+    }
+    const t = typeof firstInputText === "string" ? firstInputText.trim() : "";
+    if (t.length > 4000) {
+      return { skickat: false, commandId: null, ack: null, fel: "firstInput-text överskrider 4 000 tecken." };
+    }
+    const rm = typeof runtimeModel === "string" ? runtimeModel.trim() : "";
+    if (rm.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "runtimeModel överskrider 200 tecken." };
+    }
+    let wire: Record<string, unknown>;
+    let malSession: string | null;
+    if (typ === "createSession") {
+      wire = { ...(t ? { firstInput: { text: t } } : {}), ...(rm ? { runtimeModel: rm } : {}) };
+      malSession = null;
+    } else {
+      if (!this.sid) {
+        return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — createSelectionSideSession föds ur pågående samtal." };
+      }
+      wire = t ? { firstInput: { text: t } } : {};
+      malSession = this.sid;
+    }
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: malSession,
+      type: typ,
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8564,6 +8883,141 @@ class MockTransport implements StudioTransport {
     const ack = {
       commandId,
       status: this.mockV4MalStyrningStatus,
+      typ,
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POSTER 31+32 (§11.2) (mock): deterministisk "noop"-ack — mockens kö
+   * är statisk (lasV4Kommandon), ingen drain att styra; äkta domslut
+   * enligt §11.5.1, INGEN påhittad reasonCode. Samma payload-grind som
+   * AppServerTransport (kontraktstrogen dev-E2E). Överridbar via
+   * mockV4KoStyrningStatus.
+   */
+  mockV4KoStyrningStatus: string = "noop";
+
+  async skickaV4KoStyrning(
+    typ: "setAutoDrain" | "sendQueuedNow" | "editQueueItem" | "reorderQueueItem" | "deleteQueueItem",
+    payload: {
+      autoDrain?: boolean;
+      queueItemId?: string;
+      newText?: string;
+      beforeQueueItemId?: string | null;
+    },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const p = payload ?? {};
+    if (typ === "setAutoDrain") {
+      if (typeof p.autoDrain !== "boolean") {
+        return { skickat: false, commandId: null, ack: null, fel: "setAutoDrain kräver autoDrain boolean." };
+      }
+    } else if (typ === "editQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      const n = typeof p.newText === "string" ? p.newText.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver queueItemId." };
+      if (!n) return { skickat: false, commandId: null, ack: null, fel: "editQueueItem kräver newText." };
+    } else if (typ === "reorderQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: "reorderQueueItem kräver queueItemId." };
+    } else if (typ === "sendQueuedNow" || typ === "deleteQueueItem") {
+      const q = typeof p.queueItemId === "string" ? p.queueItemId.trim() : "";
+      if (!q) return { skickat: false, commandId: null, ack: null, fel: `${typ} kräver queueItemId.` };
+    } else {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig kö-styrningstyp." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4KoStyrningStatus,
+      typ,
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 28 (§11.2 rad 235–236) (mock): deterministisk "noop"-ack — mocken
+   * bär ingen väntande interaktion, "noop" är ÄKTA domslut enligt §11.5.1,
+   * INGEN påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E). Överridbar via mockV4InteraktionStatus.
+   */
+  mockV4InteraktionStatus: string = "noop";
+
+  async skickaV4InteraktionSvar(
+    optionId?: string | null,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const o = typeof optionId === "string" ? optionId.trim() : "";
+    if (o.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "optionId överskrider 200 tecken." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4InteraktionStatus,
+      typ: "resolveInteraction",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 29 (§11.2 rad 237) (mock): deterministisk "noop"-ack — mocken
+   * bär ingen modellväxling, "noop" är ÄKTA domslut enligt §11.5.1, INGEN
+   * påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E). Överridbar via mockV4ModellbyteStatus.
+   */
+  mockV4ModellbyteStatus: string = "noop";
+
+  async skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const m = typeof modellId === "string" ? modellId.trim() : "";
+    if (!m) return { skickat: false, commandId: null, ack: null, fel: "switchModelConfig kräver modellId." };
+    if (m.length > 200) return { skickat: false, commandId: null, ack: null, fel: "modellId överskrider 200 tecken." };
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4ModellbyteStatus,
+      typ: "switchModelConfig",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 33 (§11.2 rad 232–234) (mock): deterministisk "noop"-ack — mocken
+   * föder ingen app-server-session, "noop" är ÄKTA domslut enligt §11.5.1,
+   * INGEN påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E), inklusive sid-sessionens levande-session-
+   * krav. Överridbar via mockV4SessionsFodelseStatus.
+   */
+  mockV4SessionsFodelseStatus: string = "noop";
+
+  async skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    if (typ !== "createSession" && typ !== "createSelectionSideSession") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig sessionstyp." };
+    }
+    const t = typeof firstInputText === "string" ? firstInputText.trim() : "";
+    if (t.length > 4000) {
+      return { skickat: false, commandId: null, ack: null, fel: "firstInput-text överskrider 4 000 tecken." };
+    }
+    const rm = typeof runtimeModel === "string" ? runtimeModel.trim() : "";
+    if (rm.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "runtimeModel överskrider 200 tecken." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4SessionsFodelseStatus,
       typ,
       source: "mock",
     };

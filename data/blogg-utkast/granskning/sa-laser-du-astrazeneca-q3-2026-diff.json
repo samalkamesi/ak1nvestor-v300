@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-astrazeneca-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-18, manifest auto-s1-1789694729881, anspråk data/vakten/auto-s1-1789694729881-u3-ansprak.md)",
+  "rapport": "sa-laser-du-astrazeneca-q3-2026-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER TVÅ RÄTTNINGAR (C2+C3) + TVÅ FÖRSLAG (C1+C4) — 114/114 maskinella kontroller gröna, 0 röda fynd. Källkedjan sluten mot byggversionen git 09ebc188 (universum 115, AZN-radens 19 tal exakta; nio medianer egna omräknade exakta med n=11/n=106; motordata 2026-08-24 exakt; domprotokoll 2026-09-04 ordagrant; kalender dubbelkällad med korrekt reservation). Datavaktens valutablandnings-underkännande (P/B 48,8, EV/EBIT 170,0, fcfYield 0,2 %) aritmetiskt korrekt; scenariorutan 9/9 celler; Essity-formelns marginalvikt 1,42 på plats",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; strängarna maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-astrazeneca-q3-2026.json",
+      "falt": "body (Värdering, PEG-raden)",
+      "gammalt": "PEG-talet: **1,26** — [PEG-aspekten](/dataset/halso/peg)",
+      "nytt": "PEG-talet: **1,26** (källans fält; konventionen P/E ÷ prognostillväxt ger 24,6 ÷ 9,0 ≈ 2,7 — fältet varierar med källans beräkningsväg och är seriens dokumenterat instabila mått, se Volvo Group-paketets fullträff) — [PEG-aspekten](/dataset/halso/peg)",
+      "orsak": "Seriens alla senare paket redovisar PEG-konventionstestet (kvotspridning 0,18–8,0 dokumenterad i Essity/Alfa/NP3/Telia/Boliden-paketen); paketet redovisar källtalen utan not vilket bryter seriens källkritiska standard. Förslaget lägger testet utan att tolka talet (juridikgrinden berörs ej)"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "sa-laser-du-astrazeneca-q3-2026.json",
+      "falt": "body (Vad motorn mäter just nu)",
+      "gammalt": "52-veckorsspann** — exakt mitt i.",
+      "nytt": "52-veckorsspann** — i princip mitt i.",
+      "orsak": "Källans pos52 = 0,503 = 50,3 procent, inte exakt 50. Påståendets kraft ('exakt') överskrider underlaget; 'i princip' behåller läsningen (spannets mitt-zon) utan det falska precisionsanspråket. Strängen 'exakt mitt i' är unik i filen (maskinverifierad)"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "sa-laser-du-astrazeneca-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 7,
+      "nytt": 4,
+      "orsak": "Kvartalsfamiljens kontrakt vid denna ordlängd: närmaste syskon med i princip identisk längd har 4 (JNJ 1 859 ord → 4, Novo 1 867 → 4, SAP 1 881 → 4, AT&T 1 698 → 4; det vill säga ~430–470 ord/min). rm 7 vid 1 753 ord (250 ord/min) delas i serien endast av mx2-syskonet Evolution (1 611 ord → 7) = mx2-byggarens systematiska avvikelse, inte familjepraxis"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-astrazeneca-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-27",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är ett framtidsdatum satt av byggaren (inte skapande- eller publiceringsdag). Vid filflytt till data/blogg/ ska datumet sättas till publiceringsdagen — publicering = kundens beslut (R2)"
+    }
+  ]
+}

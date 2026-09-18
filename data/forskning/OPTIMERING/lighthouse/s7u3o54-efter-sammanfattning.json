@@ -1,0 +1,49 @@
+{
+  "datum": "2026-09-17T23:03:23.500Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u3o54-efter",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "poang": {
+        "prestanda": 0.63
+      },
+      "karnmattMs": {
+        "FCP": 1247,
+        "LCP": 4515,
+        "TBT": 955,
+        "CLS": 0,
+        "TTI": 5798,
+        "SI": 1353
+      }
+    },
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.58
+      },
+      "karnmattMs": {
+        "FCP": 1386,
+        "LCP": 5135,
+        "TBT": 1043,
+        "CLS": 0,
+        "TTI": 5299,
+        "SI": 2836
+      }
+    },
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.62
+      },
+      "karnmattMs": {
+        "FCP": 1233,
+        "LCP": 4187,
+        "TBT": 1209,
+        "CLS": 0.0001612133514958607,
+        "TTI": 4757,
+        "SI": 1812
+      }
+    }
+  ]
+}

@@ -10,12 +10,17 @@
  *
  * SKYDDSLAGER (i ordning):
  *   1. requireAdmin — kundens admin-session (samma som övriga studio-ytor).
+ *   1b. HÄRDNINGSTAK (o64) — 6 authade försök/minut (sitter efter authen så
+ *       anonym trafik aldrig kan förbruka fönstret); 429 med Retry-After.
  *   2. Väntelistsvakt — sokvag MÅSTE stå i den aktuella FLYTTKLAR-listan
  *      (lasGodkannandePoster): granskingsledens verdict är inpassbiljetten;
  *      vilken som helst sökväg går inte att publicera.
  *   3. Engångsvakt — slug får INTE redan finnas i data/blogg/ (409).
  *   4. VÅG 66-GRINDEN — kontrolleraText 0 FEL krävs på exakt det innehåll
  *      som publiceras (samma grind som admin-panelens exportväg).
+ *   Samtliga avvisningar (2–4 + taket) lämnar en append-only audit-rad
+ *   "publicera-avvisad" — kundens knapptryckningar är fullt spårbara även
+ *   när en vakt nekar (o64).
  *
  * TVÅ UTKASTFORMER:
  *   · BlogPost-form (SEO-guiderna, redan exakt content.ts-form) → grinden +
@@ -49,16 +54,52 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /** JSON-svar utan caching — studio-ytan får aldrig cachas. */
-function jsonSvar(kropp: unknown, status = 200): Response {
+function jsonSvar(kropp: unknown, status = 200, extraHeaders: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(kropp), {
     status,
-    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...extraHeaders },
   });
+}
+
+/**
+ * HÄRDNING (styrelsens KÖRS DIREKT-post "härdning av godkännandeytans
+ * rutter", o64): in-memory tak på AUTHADE publiceringsförsök — 6/minut.
+ * Kunden publicerar handmanövrerat, ett tryck i taget med UI-bekräftelse;
+ * 6/min stoppar maskinella sviter utan att röra mänskligt bruk. Taket sitter
+ * MEDVETET EFTER requireAdmin: anonym trafik får aldrig kunna förbruka
+ * fönstret och låsa kundens R2-knapp. Mönstret är admin-auth:s
+ * tidsfönster-array (pm2 fork = en process); 429 pushar ALDRIG — fönstret
+ * återhämtar sig när stormen tystnar.
+ */
+const publiceraTider: number[] = [];
+const MAX_PUBLICERA_PER_MIN = 6;
+
+function takUppnaatt(): boolean {
+  const nu = Date.now();
+  while (publiceraTider.length && nu - publiceraTider[0] > 60_000) publiceraTider.shift();
+  return publiceraTider.length >= MAX_PUBLICERA_PER_MIN;
+}
+
+/**
+ * Append-only spår för autentiserade men AVVISADE publiceringsförsök (o64):
+ * R2-knappen ska lämna kvitto även när en vakt nekar — samma audit-logg som
+ * de lyckade trycken, åtgärd "publicera-avvisad". Ogiltiga JSON-kroppar /
+ * saknad sokvag spåras INTE (formulärskräp utan artefakt; taket stoppar
+ * ändå sådana sviter vid sjunde försöket).
+ */
+function avvisad(sokvag: string, detalj: string): void {
+  skrivAudit("kund", "publicera-avvisad", sokvag, detalj);
 }
 
 export async function POST(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
+
+  if (takUppnaatt()) {
+    avvisad("(tak)", "429 — taket (6 försök/minut) nått; kundens session avvisad med Retry-After 60.");
+    return jsonSvar({ fel: "För många publiceringsförsök — vänta en minut." }, 429, { "Retry-After": "60" });
+  }
+  publiceraTider.push(Date.now());
 
   let kropp: { sokvag?: unknown };
   try {
@@ -77,6 +118,7 @@ export async function POST(req: NextRequest) {
     return jsonSvar({ fel: "Väntelistan kunde ej läsas — försök igen." }, 500);
   }
   if (!post) {
+    avvisad(sokvag, "404 — står ej i FLYTTKLAR-väntelistan (kan vara publicerad eller ogranskad).");
     return jsonSvar(
       {
         fel:
@@ -90,6 +132,7 @@ export async function POST(req: NextRequest) {
   const liveSokvag = `data/blogg/${post.slug}.json`;
   const helLive = path.join(process.cwd(), liveSokvag);
   if (existsSync(helLive)) {
+    avvisad(sokvag, `409 — slugen "${post.slug}" står redan i data/blogg/ (engångsvakten).`);
     return jsonSvar({ fel: `Slugen "${post.slug}" är redan publicerad i data/blogg/.` }, 409);
   }
 
@@ -133,6 +176,7 @@ export async function POST(req: NextRequest) {
         ) as { senasteKorning?: { status?: string; ts?: string } };
         const grindStatus = larmFil?.senasteKorning?.status;
         if (grindStatus && grindStatus !== "GRÖN") {
+          avvisad(sokvag, `400 — juridikgrindens senaste dom är ${grindStatus} (våg 168-pubbromsen).`);
           return jsonSvar(
             {
               fel: `Publicering nekas — juridikgrindens senaste dom är ${grindStatus} (körd ${(larmFil.senasteKorning?.ts || "?").slice(0, 16)}). Grinden kör varje timme :37 — försök igen efter nästa gröna dom.`,
@@ -153,11 +197,13 @@ export async function POST(req: NextRequest) {
           ...rapport.fel.map((f) => `"${f.fras}" → ${f.ersattning}`),
           ...rapport.strukturFel.map((s) => s.meddelande),
         ];
+        avvisad(sokvag, `400 — våg 66-grinden nekade (0 FEL krävs): ${alla.join("; ").slice(0, 300)}`);
         return jsonSvar({ fel: `Publicering nekas — 0 FEL krävs (våg 66-grinden): ${alla.join("; ")}`.slice(0, 500) }, 400);
       }
       utBuffer = bytes;
       detalj = "utkastet kopierat byte-identiskt (drop-in-publicerbar)";
     } else {
+      avvisad(sokvag, "400 — okänd utkastform (varken BlogPost title/body eller m9-kö titel/bodyMarkdown).");
       return jsonSvar(
         { fel: "Okänd utkastform — varken BlogPost (title/body) eller m9-köutkast (titel/bodyMarkdown)." },
         400,

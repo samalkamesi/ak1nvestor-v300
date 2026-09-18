@@ -1,0 +1,27 @@
+{
+  "granskat": "data/blogg-utkast/begreppet-substansrabatt.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-17, omgång auto-s1-1789649728193)",
+  "rapport": "begreppet-substansrabatt-KONTROLL-2026-09-17.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — 43 enskilda kontroller (15 käll-/siffer: fyra P/B exakta 1,03/1,16/1,17/3,13 mot vardering.pb 1.029/1.159/1.167/3.128, P/E 3,7 mot 3.671, nettomarginal 99,3 % mot 0.9931, spannet min–max, 'fyra investmentbolag' exhaustivt verifierad i både våg 171-universumet (git 4ce26f70, 115 bolag) och dagens 153-bolagsträd där de fyra raderna är IDENTISKA oförändrade, tre räkneexempel märkta valda tal och aritmetiskt korrekta · 8 juridik: juridikgrind-vakten --json grund true + fynd 0, rådgivningsglossor 0, investeringsråd endast negerat ×2, 0 lagrum = 0 blandningsrisk, disclaimer sista rad · 6 911-mönster = 0 träffar · 8 länk: 4/4 HTTP 200 mot localhost (1 publicerad blogg + 3 kurser konfirmerade i deep-courses-data.ts) · 6 struktur: 7 rubriker, tabell välformad, metadata HELT). FYND: B1 Industrivärden-meningens 'kvartalsvis' — bolaget redovisar substansvärdet MÅNADSVIS (504 kr 31 maj → 521 kr 30 juni → 532 kr 31 aug 2026, publik pressmeddelanderapportering) — underdrift i försiktig riktning men felaktigt som faktapåstående. Plus C1 förstärkningsförslag med publikt NAV.",
+  "anvandning": "Verkställ B1 exakt (sök/ersätt — strängen maskinellt verifierad UNIK i filen). C1 kräver beslut (tillför publik NAV utanför universumets källor; inkluderar källnotstillägg). Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "begreppet-substansrabatt.json",
+      "falt": "body (Så läses ett investmentbolags rapport — mening 2)",
+      "gammalt": "Några bolag — som Industrivärden — redovisar substansvärdet kvartalsvis, vilket ger tätare uppdateringar än de flesta branscher.",
+      "nytt": "Några bolag — som Industrivärden — redovisar substansvärdet månadsvis, vilket ger tätare uppdateringar än de flesta branscher.",
+      "orsak": "Frekvensfakta: Industrivärden publicerar substansvärdet per aktie vid varje månads slut — 504 kr (31 maj 2026), 521 kr (30 juni 2026), 532 kr (31 aug 2026) — alltså MÅNADSVIS, inte kvartalsvis. Underdriften går i försiktig riktning (argumentet 'tätare uppdateringar än de flesta branscher' förstärks av sanningen) men 'kvartalsvis' är felaktigt som påstående om verkligheten och påståendet står inte i universumets källor (kontrollerbart yttervärldsfakta). Källor: Industrivärdens månadsvisa substansvärdepressmeddelande via Placera.se 2026-07-08 och Affärsvärlden 2026-08-31. Strängen verifierad unik i filen ('kvartalsvis' 1 träff, 'månadsvis' 0)"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "begreppet-substansrabatt.json",
+      "falt": "body (Spridningen i riktiga tal — tolkningsmeningen)",
+      "gammalt": "Industrivärden handlas i praktiken till substansen, Investor och Öresund på en modest premie, och Latour till mer än trippelt bokfört värde.",
+      "nytt": "Industrivärden handlas i praktiken till substansen — det publika substansvärdet 532 kronor per aktie i slutet av augusti mot källans kurs 534,20 — Investor och Öresund på en modest premie, och Latour till mer än trippelt bokfört värde.",
+      "orsak": "Förstärkning med oberoende korsbevis: universumets kurs 534,20 kr (2026-09-03) mot publikt substansvärde 532 kr/aktie (31 aug 2026) ger kvot ≈ 1,004 — huvudläsningen 'i praktiken till substansen' blir källbelagd snarare än tolkningsbar. KRAV om bytesvägen väljs: källnoten (näst sista stycket) måste då utökas med substansvärdets källa (Industrivärdens månadsrapportering), eftersom dagens källnot täcker bara P/B, P/E och nettomarginal ur Yahoo/MarketStack 2026-09-03. Förslag, inte byt: tillför data utanför universumets fält och det är paketägarens stilbeslut. Strängen verifierad unik"
+    }
+  ]
+}

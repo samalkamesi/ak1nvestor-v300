@@ -260,13 +260,18 @@ if (process.argv[2] === "kvd") {
   const externa = [...new Set((body.match(/\]\((https?:\/\/[^)]+)\)/g) || []).map((s) => s.slice(2, -1)))];
   F(externa.length === 1 && externa[0].includes("yara.com"), `externa länkar ${externa.length}`);
 
-  const { execSync } = await import("node:child_process");
+  // Mimosa-paritet (s8-u2 2026-09-18): länkarna (ur bloggtextens data) når
+  // ALDRIG ett skal — fetch ersätter execSync(`node -e …path:'${l}'`)
+  // (CHILD_PROC_INTERP); redirect:"manual" bevarar rå-statussemantiken.
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   let ok200 = 0;
   for (const l of links) {
     let code = "";
     for (let forsok = 0; forsok < 3; forsok++) {
-      try { code = execSync(`node -e "const h=require('http');h.get({host:'localhost',port:3000,path:'${l}'},r=>{process.stdout.write(String(r.statusCode));}).on('error',()=>process.stdout.write('ERR'))"`, { timeout: 25000 }).toString(); } catch { code = "ERR"; }
+      try {
+        const res = await fetch(`http://localhost:3000${l}`, { signal: AbortSignal.timeout(25000), redirect: "manual" });
+        code = String(res.status);
+      } catch { code = "ERR"; }
       if (code === "200") break;
       await sleep(500);
     }

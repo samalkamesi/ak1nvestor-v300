@@ -1,0 +1,72 @@
+{
+  "granskat": "data/blogg-utkast/rorelsekapital-och-kassstrom.json",
+  "granskadAv": "agentfabrik auto-s1-u3 (auto-s1-1789649728193, 2026-09-17)",
+  "rapport": "rorelsekapital-och-kassstrom-KONTROLL-2026-09-17.md",
+  "bedomning": "FLYTTKLAR EFTER 3 FÄLTRÄTTNINGAR (B1–B3, maskinella fält — inga tvingande body-ändringar) + 3 frivilliga LÅGA-förslag (C1–C3). Innehållet grönt i bottom: 115-bolagsversionenVerifierad (bolagsunivers.json @ git 0e399f13 = exakt byggversionen), 97 mätbara med korrekt urvalslogik (105 har båda fält; 8 med netto ≤ 0 uteslöts ur kvoten — kvot på negativ nämnare är omtolkbar, KINV-B 0 vore division med noll), median 0,8356 → 0,84, 37 > 1,0, 26 < 0,5 — ALLA EXAKTA; tabellens 4 bolag × 3 tal = 12/12 gröna mot källfilen (kvoterna t.o.m. räknade på råvärden: H&M 1,8151→1,82, inte visningstalsvägen 1,80); räkneexempel 10+5−8=7 ✓; juridik 2007:528 REN (varumärkesgrind 0 FEL 0 VARNING av 26 regexer, 0 rådverb, inga lagrum = ingen blandningsrisk, negerad disclaimer sist); 911 = 0 träffar/6 mönster; 4/4 internlänkar registerverifierade + HTTP 200 mot localhost; 0 mjuka bindestreck",
+  "anvandning": "Posterna B1–B3 är fältbyten i utkast-JSON:en (title/description/readingMinutes) — verkställs av byggaragenten (våg 171:s ägare) eller kunden före export; granskaren skriver ALDRIG i andras utkast. C1–C3 är frivilliga textförslag i samefilen (urvalsprecisering, källnotis-tillägg, två språkdetaljer) — var och en självständigt reversibla. SYSTEMFYND (ej objektbundet): samtliga tre våg 171-tillskott bär samma fältavvikelser (title 64/76/64 tkn, desc 175/181/162 tkn, readingMinutes 5 mot kontraktets 1) — se rapportens §7; syskonet u2:s pågående substansrabatt-granskning och nästa omgångs utdelningskalender-granskare har användning av mätningen. Publicering = kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "title",
+      "gammalt": "Rörelsekapital och kassaflöde: varför kassan inte följer vinsten",
+      "nytt": "Rörelsekapital och kassaflöde: kassan följer inte vinsten",
+      "orsak": "Title 64 tkn över seriens SEO-gräns 60 (syskonmallen ≤ 60; aktieanalys-granskningens spec-format). Kandidaten 57 tkn, behåller båda sökorden (rörelsekapital, kassaflöde) och budskapet; 'varför' implicerar dessutom en fråga som 'kassan följer inte vinsten' besvarar rakare"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "description",
+      "gammalt": "Vinst är redovisning, kassa är faktum. Rörelsekapitalet — kundfordringar, lager, leverantörsskulder — förklarar ofta skillnaden. Med konverteringsgradstal ur AK1A:s universum.",
+      "nytt": "Vinst är redovisning, kassa är faktum. Rörelsekapitalet — fordringar, lager, leverantörsskulder — förklarar skillnaden. Konverteringsgraden i riktiga tal.",
+      "orsak": "OG-description 175 tkn över gränsen 155. Kandidaten 154 tkn: behåller ankaret (vinst/kassa), alla tre komponenterna (fordringar+kortform), källhänvisningen; 'Konverteringsgraden i riktiga tal' bevarar datalöftet från 'ur AK1A:s universum' i komprimerad form (AK1A-namnet återfinns i bodyns källa-avsnitt)"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "readingMinutes",
+      "gammalt": "5",
+      "nytt": "1",
+      "orsak": "Kontraktet round(ord/600) = round(762/600) = 1. Värdet 5 (fem minuter) överskattar lästiden ~5×; samtliga publicerade syskonposter följer 600-ordskontraktet (granskningarna mäter varje gång)"
+    },
+    {
+      "id": "C1",
+      "typ": "fogga",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "body",
+      "gammalt": "Bland 115 bolag i universumet (insamling 2026-09-03) finns båda fälten mätta för 97. Fördelningen:",
+      "nytt": "Bland 115 bolag i universumet (insamling 2026-09-03) finns båda fälten mätta för 105; kvoten kräver positiv nettomarginal som nämnare, så konverteringsgraden beräknas för 97. Fördelningen:",
+      "orsak": "PRECISION (LÅG): 'mätta för 97' är urvalet outalat — 105 bolag har båda fält, varav 8 med netto ≤ 0 (EKTA, ELUX, BILL, VPLAY, WBD, PCELL, PSNY + KINV med exakt 0) lämnas utanför därför att kvot med negativ/noll nämnare är omtolkbar (KINV vore division med noll). Byggradens urval är metodiskt RÄTT — det förtjänar en mening, särskilt i en guide vars signaturnummer är just en kvot med Volvo Cars negativa värde som exempel"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "body (källnotis)",
+      "gammalt": "_Nettomarginal och FCF-marginal ur bolagsuniversumet (Yahoo Finance och MarketStack, insamling 2026-09-03); konverteringsgraden härledd ur dessa fält med beräkningen redovisad ovan; räkneexemplen är märkta valda tal och kommer inte ur underlaget._",
+      "nytt": "_Nettomarginal och FCF-marginal ur bolagsuniversumet (Yahoo Finance och MarketStack, insamling 2026-09-03, med tilläggsrader hämtade från StockAnalysis 2026-09-15); konverteringsgraden härledd ur dessa fält med beräkningen redovisad ovan; räkneexemplen är märkta valda tal och kommer inte ur underlaget._",
+      "orsak": "KÄLLFULLSTÄNDIGHET (LÅG): 13 av de 97 mätbara bolagen (SKA-B, EVO, TEL.OL, DTE.DE, VNA.DE, VOLV-B, EQT, AXFO, ROG.SW, NESN.SW, TTE.PA, NESTE.HE, SPOT) bär StockAnalysis i sina källor enligt filen @ 0e399f13 — de fyra tabellbolagen bär alla Yahoo+MarketStack och påverkas inte. Källnotisen täcker grundinsamlingen men inte tilläggen; kompletteringen håller spårbarheten hel (doktrinen: fabrikens tal är alltid spårbara till källa)"
+    },
+    {
+      "id": "C3a",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "body",
+      "gammalt": "Bokar samma bolag 6 kronor i vinst kan kassan ändå ha minskat — siffrorna mäter två olika saker.",
+      "nytt": "Bokför samma bolag 6 kronor i vinst kan kassan ändå ha minskat — siffrorna mäter två olika saker.",
+      "orsak": "SPRÅK (LÅG): villkorlig bisats utan 'Om' är talspråklig; 'Bokför' (registrerar i bokföringen) är dessutom mer träffande än 'Bokar' för resultaträkningens värld. Not: full kura vore 'Om samma bolag bokför 6 kronor i vinst kan kassan ändå ha minskat' — verbet böjt som huvudsats med bibehållen villorisk är dock den minsta ändringen och läses korrekt"
+    },
+    {
+      "id": "C3b",
+      "typ": "byt",
+      "fil": "rorelsekapital-och-kassstrom.json",
+      "falt": "body",
+      "gammalt": "H&M visar motsatta riktningen: kassaflödet springer före vinsten",
+      "nytt": "H&M visar den motsatta riktningen: kassaflödet springer före vinsten",
+      "orsak": "SPRÅK (LÅG): bestämd artikel saknas i den fasta konstruktionen"
+    }
+  ]
+}

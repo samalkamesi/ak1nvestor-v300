@@ -37,13 +37,18 @@ async function kollAsync(nr, vad, fn) {
   }
 }
 
-// Fixturbyggare: en minimal .next-artefakt under tmp.
+// Fixturbyggare: en minimal .next-artefakt under tmp. manifest=true (o50):
+// skriver prerender-/routes-manifest som ett komplett next build alltid gör.
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "artefakt-test-"));
-function byggFixtur({ htmlFiler = [], statiska = [] } = {}) {
+function byggFixtur({ htmlFiler = [], statiska = [], manifest = true } = {}) {
   const next = path.join(tmp, `next-${Math.random().toString(36).slice(2, 8)}`);
   fs.mkdirSync(path.join(next, "server", "app"), { recursive: true });
   fs.mkdirSync(path.join(next, "static", "chunks"), { recursive: true });
   fs.writeFileSync(path.join(next, "BUILD_ID"), "testbuild\n");
+  if (manifest) {
+    fs.writeFileSync(path.join(next, "prerender-manifest.json"), '{"version":3}\n');
+    fs.writeFileSync(path.join(next, "routes-manifest.json"), '{"version":3}\n');
+  }
   for (const [namn, innehall] of htmlFiler) {
     const hel = path.join(next, "server", "app", namn);
     fs.mkdirSync(path.dirname(hel), { recursive: true });
@@ -166,6 +171,34 @@ try {
     const r = await verifieraArtefakt({ nextKatalog: djup, skrivLage: false });
     assert.equal(r.status, "trasig");
     assert.equal(r.saknade[0].sida, path.join("kurser", "sv", "many", "z.html"));
+  });
+
+  // ═══ o50: 502-klassen (DRIFTSBOKEN 2026-09-17 17:42–17:47Z vaccin 1) ═══
+  const femhundraTva = byggFixtur({
+    htmlFiler: [["index.html", HTML(["/_next/static/chunks/a.js"])]],
+    statiska: ["chunks/a.js"],
+    manifest: false,
+  });
+  await kollAsync(13, "502-klassen: perfekt HTML + SAKNADE manifest ⇒ trasig (pm2 ENOENT-kraschloopen)", async () => {
+    const r = await verifieraArtefakt({ nextKatalog: femhundraTva, skrivLage: false });
+    assert.equal(r.status, "trasig");
+    assert.ok(r.saknade.length === 0); // HTML-måttet självt är grönt — felet är manifesten
+    assert.deepEqual(r.saknadeManifest.sort(), ["prerender-manifest.json", "routes-manifest.json"].sort()); // BUILD_ID skriven — exakt incidentbilden
+    assert.ok(r.meddelande.includes("prerender-manifest"));
+  });
+
+  const halvbyggd = byggFixtur({ htmlFiler: [["index.html", HTML(["/_next/static/chunks/a.js"])]], statiska: ["chunks/a.js"] });
+  fs.rmSync(path.join(halvbyggd, "prerender-manifest.json"));
+  await kollAsync(14, "exakt incidentfilen: ENDAST prerender-manifest.json saknad ⇒ trasig med den namngiven", async () => {
+    const r = await verifieraArtefakt({ nextKatalog: halvbyggd, skrivLage: false });
+    assert.equal(r.status, "trasig");
+    assert.deepEqual(r.saknadeManifest, ["prerender-manifest.json"]);
+  });
+
+  await kollAsync(15, "komplett artefakt: manifest-kontraktet grönt och saknadeManifest tomt rapporteras", async () => {
+    const r = await verifieraArtefakt({ nextKatalog: mangfald, skrivLage: false });
+    assert.equal(r.status, "gron");
+    assert.deepEqual(r.saknadeManifest, []);
   });
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });

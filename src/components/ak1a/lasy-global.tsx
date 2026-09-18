@@ -10,13 +10,17 @@
  *
  * LÖSNING (ändrar bara NÄR/HUR komponenterna laddas — inga interna ändringar):
  *
- *  - LasyGlobal: monterar sina barn vid requestIdleCallback (med setTimeout-
- *    fallback för webbläsare utan stöd) ELLER vid första riktiga interaktion
- *    (scroll/pekare/tangent) — det som inträffar först. Schemaläggningen görs
- *    i useEffect, alltså FÖRST när wrappern själv har hydratiserats: servern
- *    renderar null, klientens första rendering är null → hydrationsskillnad
- *    är strukturellt omöjlig och monteringen kan aldrig konkurrera med själva
- *    hydratiseringen.
+ *  - LasyGlobal: monterar sina barn vid första riktiga interaktionen
+ *    (scroll/pekare/tangent) ELLER — basfallet i två steg (o57) — vid 8 s +
+ *    äkta requestIdleCallback (generöst 2 500 ms-tak; utan rIC-stöd monteras
+ *    vid 8 s). Schemaläggningen görs i useEffect, alltså FÖRST när wrappern
+ *    själv har hydratiserats: servern renderar null, klientens första
+ *    rendering är null → hydrationsskillnad är strukturellt omöjlig och
+ *    monteringen kan aldrig konkurrera med själva hydratiseringen. DIREKTA
+ *    idle-tak (förr 2 000 ms) är BORTTAGET: taket kunde TVINGA monteringen
+ *    (chunk-fetch + modulvärdering) mitt i blocking-fönstret på drosslad
+ *    mobil — bevisat i o53 §2 (chatten) och o57 §1 (ShortSeller/NotisCenter/
+ *    SearchModal: tjänstevågen 1,2–2,7 s in i TBT-fönstret).
  *
  *  - De tunga komponenterna hämtas via next/dynamic (ssr:false) → egen chunk
  *    som bara laddas när komponenten verkligen renderas.
@@ -24,8 +28,10 @@
  *  - PalettVakt: ⌘K/Ctrl+K-, "/"- och "ak1a:oppna-sok"-lyssnarna är vägerlätta
  *    och registreras direkt vid hydratisering, medan själva paletten (React.lazy)
  *    laddas först vid första öppningen — tangentbordslyssnaren tappas aldrig.
- *    En tyst idle-montering (4 s) återställer palettens automatiska besöks-
- *    registrering (navigationsminnet) även utan öppning, precis som före.
+ *    En tyst tvåstegs-återhämtning (o61: 8 s + äkta idle) återställer
+ *    palettens automatiska besöksregistrering (navigationsminnet) även
+ *    utan öppning — aldrig mitt i blocking-fönstret (det gamla direkta
+ *    rIC-taket 4 s landade på första idle ≈1 s; o57 §6).
  *
  * CookieConsent lämnas orörd i layout.tsx — den kräver omedelbar synlighet.
  */
@@ -34,11 +40,7 @@ import dynamic from "next/dynamic";
 import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 
 // ── de tunga globala komponenterna: egna chunks, aldrig SSR-renderade ────────
-const ChatWidgetLaddad = dynamic(
-  () => import("@/components/ak1a/chat-widget").then((m) => ({ default: m.ChatWidget })),
-  { ssr: false },
-);
-
+// (ChatWidget laddas via React.lazy i LasyChatWidget nedan — se o49-noten.)
 const ShortSellerLaddad = dynamic(
   () => import("@/components/ak1a/short-seller").then((m) => ({ default: m.ShortSeller })),
   { ssr: false },
@@ -75,17 +77,11 @@ function schemalaggIdle(aterkomst: () => void, timeoutMs: number): IdlePlan {
 // ── LasyGlobal — generisk idle-mount ────────────────────────────────────────
 
 /**
- * Renderar {children} först vid idle (eller första interaktion). Servern och
- * klientens första rendering är identiskt null → hydrationssäker.
+ * Renderar {children} först vid första interaktionen eller sen idle
+ * (8 s + requestIdleCallback). Servern och klientens första rendering är
+ * identiskt null → hydrationssäker.
  */
-export function LasyGlobal({
-  children,
-  timeoutMs = 2000,
-}: {
-  children: ReactNode;
-  /** Tak i ms innan idle-callbacken tvingas köra (requestIdleCallback-timeout). */
-  timeoutMs?: number;
-}) {
+export function LasyGlobal({ children }: { children: ReactNode }) {
   const [monterad, setMonterad] = useState(false);
 
   useEffect(() => {
@@ -102,12 +98,26 @@ export function LasyGlobal({
     const handelse: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "keydown", "touchstart"];
     handelse.forEach((h) => window.addEventListener(h, starta, { passive: true, once: true }));
 
-    // Basfall: när huvudtråden blir ledig (hydratisering klar + LCP fri).
-    const plan = schemalaggIdle(starta, timeoutMs);
+    // Basfall i två steg (o57, o53:s LasyChatWidget-mönster): 8 s, därefter
+    // requestIdleCallback med generöst tak ⇒ monteringen sker tidigast ~8 s
+    // och först efter det första tysta fönstret — aldrig mitt i blocking-
+    // fasen. Ett DIREKT idle-tak (som det gamla 2 000 ms) tvingar fram
+    // monteringen så snart taket slår till, även på en tråd som arbetar.
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | null = null;
+    const efter8s = () => {
+      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta, { timeout: 2500 });
+      else starta();
+    };
+    const t = window.setTimeout(efter8s, 8000);
 
     function stada() {
       handelse.forEach((h) => window.removeEventListener(h, starta));
-      plan.avbryt();
+      window.clearTimeout(t);
+      if (idleId != null) w.cancelIdleCallback?.(idleId);
     }
     return stada;
     // engångs-effekt: monteringsbeslutet beror inte på props/state
@@ -121,17 +131,115 @@ export function LasyGlobal({
 // ── konkreta lazy-monteringar (layout.tsx rör aldrig next/dynamic själv,
 //    eftersom ssr:false inte får anropas från en serverkomponent) ────────────
 
-/** AI-Mentorn (chatt + spaced repetition) — syns efter idle/interaktion. */
+// ── LasyChatWidget — chat-defer med event-vakt (o49, spår 7) ────────────────
+//
+// AI-Mentorn-chunken är sidornas TYNGSTA klientchunk (FÖRE-mätning o49:
+// 106 K transfer — större än react-chunken) och hämtades tidigare av
+// LasyGlobal:s idle-montering med 2 s-tak, på drosslad mitt i TBT-fönstret
+// (fetch startar 2 025–2 385 ms på //kurser//blogg), trots att 30-lagers-
+// motorerna i chunken bara behövs när en fråga faktiskt skickas. Chatten är
+// en TJÄNST, inte innehåll — därför tre utlösare:
+//
+//   1. första interaktionen (scroll/pekare/tangent) → montera direkt;
+//   2. "ak1a:oppna-mentor" (t.ex. Fråga-knappen i Min portfölj) → montera
+//      OCH bevara eventets förhandsfråga; MentorSignal återsänder öppningen
+//      när widgetens egen lyssnare är på plats (PalettSignal-mönstret —
+//      därför React.lazy + Suspense här: lazy-suspensionen håller signalen
+//      i samma commit som widgeten, så effekterna köder i trädordning);
+//   3. basfall i två steg: 8 s, därefter requestIdleCallback med generöst
+//      tak (2,5 s) → montering garanterat inom ~10,5 s men efter det första
+//      tysta fönstret (TBT/TTI hinner mätas klart); på snabb enhet märks
+//      ingen skillnad mot förr — idle infaller tidigt.
+
+const ChatWidgetLazy = lazy(() =>
+  import("@/components/ak1a/chat-widget").then((m) => ({ default: m.ChatWidget })),
+);
+
+/** AI-Mentorn (chatt + spaced repetition) — monteras vid interaktion,
+ *  yttre öppningsevent eller sen idle; se blockkommentaren ovan. */
 export function LasyChatWidget() {
+  const [monterad, setMonterad] = useState(false);
+  const vantaOppna = useRef<{ fraga?: string } | null>(null);
+  const aktiv = useRef(true);
+
+  useEffect(() => {
+    const starta = () => {
+      if (!aktiv.current) return;
+      aktiv.current = false;
+      stada();
+      setMonterad(true);
+    };
+
+    // Accelerator: första riktiga interaktionen → montera direkt.
+    const handelse: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "keydown", "touchstart"];
+    handelse.forEach((h) => window.addEventListener(h, starta, { passive: true, once: true }));
+
+    // Yttre öppning: widgeten kanske inte monterats än — vakten minns
+    // förhandsfrågan och MentorSignal spelar upp öppningen efter montering.
+    const oppna = (e: Event) => {
+      if (!aktiv.current) return; // widgeten lyssnar själv sedan tidigare
+      const f = (e as CustomEvent<{ fraga?: string }>).detail?.fraga;
+      vantaOppna.current = typeof f === "string" && f.trim().length > 0 ? { fraga: f.trim() } : {};
+      starta();
+    };
+    window.addEventListener("ak1a:oppna-mentor", oppna);
+
+    // Basfall i två steg: 8 s, därefter requestIdleCallback med generöst tak
+    // — taket GARANTERAR monteringen senast ~10,5 s (MDN: utan timeout kan
+    // rIC svältas; virtual-time-beviset o49 §5). Landar därmed efter
+    // Lighthouse-tracens slut men betydligt före en mänsklig väntan.
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | null = null;
+    const efter8s = () => {
+      if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(starta, { timeout: 2500 });
+      else starta();
+    };
+    const t = window.setTimeout(efter8s, 8000);
+
+    function stada() {
+      handelse.forEach((h) => window.removeEventListener(h, starta));
+      window.removeEventListener("ak1a:oppna-mentor", oppna);
+      window.clearTimeout(t);
+      if (idleId != null) w.cancelIdleCallback?.(idleId);
+    }
+    return stada;
+    // engångs-effekt: monteringsbeslutet beror inte på props/state
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (!monterad) return null;
   return (
-    <LasyGlobal>
-      <ChatWidgetLaddad />
-    </LasyGlobal>
+    <Suspense fallback={null}>
+      <ChatWidgetLazy />
+      {/* Syskon EFTER widgeten inom samma Suspense: när lazy-gränsen
+          resolvar commit:as båda tillsammans och widgetens lyssnare
+          (ak1a:oppna-mentor) är registrerade när signalen spelar upp
+          en väntad öppning. */}
+      <MentorSignal vantaOppna={vantaOppna} />
+    </Suspense>
   );
 }
 
-/** Agent 3: Short-Seller — monteras idle, event-bussen ("ak1a:shortseller-
- *  attacka") fungerar som förut när båda globala komponenterna monterats. */
+/** Engångssignal: återsänd ev. väntad öppning när widgeten lyssnar. */
+function MentorSignal({ vantaOppna }: { vantaOppna: { current: { fraga?: string } | null } }) {
+  useEffect(() => {
+    const v = vantaOppna.current;
+    if (v) {
+      vantaOppna.current = null;
+      window.dispatchEvent(new CustomEvent("ak1a:oppna-mentor", { detail: v }));
+    }
+    // engångs-effekt: körs en gång per montering (avsett beteende)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return null;
+}
+
+/** Agent 3: Short-Seller — monteras vid interaktion eller sen idle (o57:
+ *  8 s + äkta idle; event-bussen "ak1a:shortseller-attacka" är intern och
+ *  fungerar som förut när komponenten monterats). */
 export function LasyShortSeller() {
   return (
     <LasyGlobal>
@@ -140,7 +248,9 @@ export function LasyShortSeller() {
   );
 }
 
-/** Notisklockan — monteras idle (defererar även /api/notiser-hämtningen). */
+/** Notisklockan — monteras vid interaktion eller sen idle (o57; defererar
+ *  även /api/notiser-hämtningen ur det kritiska fönstret — push-behörighet
+ *  frågas som förut först vid klicket på klockan). */
 export function LasyNotisCenter() {
   return (
     <LasyGlobal>
@@ -157,9 +267,11 @@ export function LasyNotisCenter() {
  * 1. De vägerlätta globala lyssnarna registreras vid hydratisering — ⌘K svarar
  *    alltså direkt, precis som tidigare.
  * 2. Paletten (React.lazy) hämtas först när den faktiskt öppnas första gången.
- * 3. Tyst idle-montering efter 4 s: palettens automatiska besöksregistrering
- *    (navigationsminnet, "senast besökta") fungerar som förut även för den
- *    som aldrig öppnar paletten.
+ * 3. Tyst återhämtning i två steg (o61: 8 s + äkta idle med generöst tak):
+ *    palettens automatiska besöksregistrering (navigationsminnet, "senast
+ *    besökta") fungerar som förut även för den som aldrig öppnar paletten —
+ *    men chunkfamiljen hämtas aldrig mitt i blocking-fönstret (det gamla
+ *    direkta rIC-taket 4 s monterade vid första idle ≈1 s; o57 §6).
  *
  * När paletten har monterats sköter den själv ⌘K-toggle, "/" och eventet —
  * vakten tiger (monterad-flaggan sätts av PalettSignal efter palettens egna
@@ -205,13 +317,22 @@ export function PalettVakt() {
     document.addEventListener("keydown", tang);
     window.addEventListener("ak1a:oppna-sok", viaEvent);
 
-    // Tyst återhämtning: besöksregistreringen lever igen efter idle.
-    const plan = schemalaggIdle(() => setLaddad(true), 4000);
+    // Tyst återhämtning (o61 — o53/o57:s tvåstegsmönster): först efter 8 s,
+    // därefter äkta idle med generöst tak. ⌘K-, "/"- och sökknapps-svaren bor
+    // i vakten ovan och är omedelbara; besöksregistreringen tål att vänta.
+    // (Förr: schemalaggIdle direkt med 4 000 ms-tak ⇒ montering vid första
+    // idle ~1 s in på drosslad mobil — palett-familjen mitt i TBT-fönstret.)
+    let plan: IdlePlan | null = null;
+    const efter8s = () => {
+      plan = schemalaggIdle(() => setLaddad(true), 2500);
+    };
+    const t = window.setTimeout(efter8s, 8000);
 
     return () => {
       document.removeEventListener("keydown", tang);
       window.removeEventListener("ak1a:oppna-sok", viaEvent);
-      plan.avbryt();
+      window.clearTimeout(t);
+      plan?.avbryt();
     };
   }, []);
 

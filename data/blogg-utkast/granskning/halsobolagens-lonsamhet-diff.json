@@ -1,0 +1,117 @@
+{
+  "granskat": "data/blogg-utkast/halsobolagens-lonsamhet.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-18, anspråk auto-s1-1789695030458)",
+  "rapport": "halsobolagens-lonsamhet-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER B-POSTER — tre falska universums-superlativer (bruttomarginal rank 2 efter fastighet 69,8; P/B rank 3 efter tillväxt 11,1 och teknik 6,4; AKM2-spann rank 2 efter fastighetens 18 poäng — samma fyndklass som finans #2:s C1+C2, mätt i utkastets eget underlag), readingMinutes fel släkts riktning (underskattat, seriens första fall), två stavfel. Samtliga nio mediantal EXAKTA med korrekta n-redovisningar mot vintage 0e399f13 (115 bolag, utkastets egna byggunderlag); juridik ren, 911 ren, 8/8 interna länkar 200",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga strängar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "description",
+      "gammalt": "Hälsa är bolagsuniversumets lönsammaste bransch i toppen av resultaträkningen",
+      "nytt": "Hälsa är bland bolagsuniversumets lönsammaste branscher i toppen av resultaträkningen",
+      "orsak": "Superlativen falsk i utkastets eget underlag: fastighetsbranschens bruttomarginal-median är 69,8 % mot hälsans 68,7 % (vintage 0e399f13, 11 resp. 11 bolag) — hälsa rank 2 av 10 branschgrupper"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body (ingress)",
+      "gammalt": "Ingen branschgrupp i AK1A:s bolagsuniversum är så lönsam i toppen av resultaträkningen som hälsa.",
+      "nytt": "Bara fastighetsbolagens hyresrörelse når i AK1A:s bolagsuniversum högre lönsamhet i toppen av resultaträkningen än hälsa.",
+      "orsak": "Samma falska superlativ som B1a på ingressplatsen; rättningen behåller hälsans exceptionella läge men med korrekt rang — och gör kontrasten pedagogiskt användbar (hyresrörelsens tomma topp mot hälsans forskningsbetalda)"
+    },
+    {
+      "id": "B1c",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Vad datasetet säger )",
+      "gammalt": "Median bruttomarginal: 68,7 procent (11 mätta) — universumets högsta.",
+      "nytt": "Median bruttomarginal: 68,7 procent (11 mätta) — näst högsta i universumet, efter fastighetens 69,8.",
+      "orsak": "Samma falska superlativ på listplatsen; finans-precedensens mönster (C1): rangen rättas, påståendets kraft behålls"
+    },
+    {
+      "id": "B1d",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "Hälsa är universumets lönsammaste bransch i brutto — median 68,7 procent — men resan till netto 17,5 procent betalas med forskning och försäljning.",
+      "nytt": "Hälsa är nästan universumets lönsammaste bransch i brutto — median 68,7 procent mot fastighetens 69,8 — men resan till netto 17,5 procent betalas med forskning och försäljning.",
+      "orsak": "Samma falska superlativ på sammanfattningens första punkt"
+    },
+    {
+      "id": "B2a",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Vad datasetet säger )",
+      "gammalt": "Median P/B 6,2 (11 mätta) — universumets högsta — och P/E 24,7 (10 mätta).",
+      "nytt": "Median P/B 6,2 (11 mätta) — tredje högst i universumet efter tillväxtens 11,1 och teknikens 6,4 — och P/E 24,7 (10 mätta).",
+      "orsak": "Superlativen falsk: tillväxt 11,10 och teknik 6,36 ligger över hälsans 6,19 (samma vintage) — rank 3 av 10"
+    },
+    {
+      "id": "B2b",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Vad datasetet säger )",
+      "gammalt": "Notera kombinationen: högsta bruttomarginalen och högsta P/B i samma bransch.",
+      "nytt": "Notera kombinationen: bruttomarginal och P/B båda i universumets toppskikt.",
+      "orsak": "Meningen bär båda falska superlativerna (B1+B2); slutsatsen — att marknaden betalar för lönsamheten — är kvar i nästa mening och är fortfarande sann"
+    },
+    {
+      "id": "B2c",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "Högsta P/B i universumet (6,2) speglar att marknaden betalar för just denna lönsamhet.",
+      "nytt": "P/B bland universumets högsta (6,2) speglar att marknaden betalar för just denna lönsamhet.",
+      "orsak": "Samma falska P/B-superlativ på sammanfattningens tredje punkt"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Vad datasetet säger )",
+      "gammalt": "mellan 46 och 66 — universumets trängsta spann, från Fresenius till Novo Nordisk.",
+      "nytt": "mellan 46 och 66 — universumets näst trängsta spann efter fastighetens 42–60, från Fresenius till Novo Nordisk.",
+      "orsak": "Spannbredderna i den publicerade branschmedianposten som utkastet själv hänvisar till: fastighet 42–60 = 18 poäng < hälsa 46–66 = 20 poäng. Nästa mening ('inbördes jämnare än de flesta') är fortfarande sann och behålls"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 4,
+      "orsak": "853 ord på 3 minuter = 284 ord/min — snabbare än samtliga 55 publicerade poster (maximum 229, v09-roe). Bloggfamiljens praxis är ~ord/200 (substansrabatt-domen 09-17: 0/55 följer ord/600, som är SEO-guiderfamiljens konvikt): round(853/200) = 4; grannar kring 853 ord publicerade med 4–8 min. SERIENS FÖRSTA UNDERskattade readingMinutes (tidigare systematik var överskattning)"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Tre fällor )",
+      "gammalt": "klipphan är redan inbokad",
+      "nytt": "klippan är redan inbokad",
+      "orsak": "Stavfel: ordet är 'klippan' (patentklippan — patent cliff); 'klipphan' är inte ett ord"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "body ( Så läser du lönsamheten , steg 3)",
+      "gammalt": "När fallen de största patenten?",
+      "nytt": "När faller de största patenten?",
+      "orsak": "Verbform: 'fallen' är substantiv/form fel här — frågan ska bär verbet 'faller'"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "halsobolagens-lonsamhet.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

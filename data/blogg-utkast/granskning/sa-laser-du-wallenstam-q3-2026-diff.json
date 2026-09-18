@@ -1,0 +1,65 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wallenstam-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-18, omgång auto-s1-1789694729881)",
+  "rapport": "sa-laser-du-wallenstam-q3-2026-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR UTAN RÄTTNING — se rapporten: källor (vintage-låsta 126/12 vid byggcommit 9e973f07, WALL B byte-identisk till idag), siffror (26 fält + 10 medianer i KANONMETODEN + ~30 aritmetikkontroller), juridik (26 regexer 0/0, 911 = 0/6), länkar (18/18 HTTP 200) och struktur gröna. 0 A-poster, 0 B-poster — seriens renaste paket under 09-15-standarden. C1–C2 kosmetiska förslag, C3–C4 notiser, C5 R2.",
+  "anvandning": "C-poster = ägarens/stilens beslut; ingen är tvång. C2 är den enda strängändringen värd att överväga (sök/ersätt i description-fältet, strängen verifierad unik i filen). C1: exakta cellvärden anges i orsaksfältet om ägaren vill synka svansavrundningen — mittraden och räknesatserna är redan exakta, så att låta stå är också försvarligt. C5 är R2 (publiceringstid = kundens klick). Originalet ändras av paketets ägare eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "korskontroller": [
+    "vintage 9e973f07: 126 bolag/12 fastighet; idag 165/13; WALL-B.ST byte-identisk (JSON-jämförelse)",
+    "medianer kanonmetoden: P/E 11,29/20,53 · P/B 0,81/2,79 · ROE 8,37 (n=11)/15,34 · EBIT 63,88/21,22 · netto 45,98/14,67 — 10/10 mot utkastets tabell",
+    "medianer övre-mittersta (JNJ:s C1-metod): pe 11,37 · ebit 64,69 · netto 47,34 — avviker; paketet följer alltså KANONEN (positivt metodfynd)",
+    "Öresund: kalender-FINANS 2026-10-09 kl 08:00 (preliminär MFN) + serier 2013/2014/2018/2019 + CAGR/prognos null — utkastets urvalsdom håller",
+    "Kinnevik: P/E null + ROE −0,2164 — 'saknar P/E och har negativ avkastning i fälten' håller",
+    "kvintett-PEG spot: Nordea källa 8,87/konvention 2,19 = kvot 4,05 — inom utkastets spann 1,3–8,0",
+    "2026-10-15 = torsdag (UTC); Cision-citatet 'Interim report Q3, 2026 – October 15, 2026' ordagrant i kalender-noten; MarketScreener med i WALL-B:s kalenderkällor",
+    "WALL-B saknas i vagvalidering-SENASTE.json — 'ingen dom, ingen 25-cellersmatris' håller"
+  ],
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "forlag",
+      "fil": "sa-laser-du-wallenstam-q3-2026.json",
+      "falt": "body — Övning C: scenariorutans sex kantceller",
+      "gammalt": "| Intäkter 2 984,7 | 1 682,4 | 1 712,5 | 1 742,5 |\n| Intäkter 3 169,3 | 1 786,6 | 1 818,1 | 1 849,8 |",
+      "nytt": "| Intäkter 2 984,7 | 1 682,5 | 1 712,3 | 1 742,5 |\n| Intäkter 3 169,3 | 1 786,5 | 1 818,2 | 1 849,9 |",
+      "orsak": "Ren omräkning: 2 984,7×0,5637 = 1 682,48 · ×0,5737 = 1 712,32 · ×0,5837 = 1 742,45; 3 169,3×0,5637 = 1 786,55 · ×0,5737 = 1 818,15 · ×0,5837 = 1 849,85. Utkastets celler avviker som mest 0,18 Mkr (0,01 %) — svansavrundning vid tillverkningen, troligen räknad på oavrundade marginaler. Mittraden (3 077,0: 1 734,5/1 765,3/1 796,0) och båda räknesatserna (≈31 Mkr/pp; ≈53 Mkr per 3 %) är exakta. Slutsatser opåverkade — verkställ endast om cellexakthet önskas; observera att 'nytt' då också bör förankras i textens '1 712,5'-klass om den refereras någon annanstans (den gör det inte)"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-wallenstam-q3-2026.json",
+      "falt": "description — NAV-meningen",
+      "gammalt": "P/B-läsningen med kursen 41 kronor mot en NAV-proxy på 51,40 kronor per aktie",
+      "nytt": "P/B-läsningen med kursen 41,02 kronor mot en NAV-proxy på 51,40 kronor per aktie",
+      "orsak": "Bodyn använder 41,02 konsekvent (fältvärdet); descriptionen avrundar till '41 kronor' i samma mening som '51,40 kronor' står med decimaler — inkonsekvent precision. Inte ett fel (41,02 ≈ 41), en stilfråga. Strängen 'kursen 41 kronor' unik i filen"
+    },
+    {
+      "id": "C3",
+      "typ": "notis",
+      "fil": "sa-laser-du-wallenstam-q3-2026.json",
+      "falt": "body — nyckeltal EV/EBIT 32,1",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "Fältet 32,05 citeras korrekt, men egen korsräkning (MV 25,924 + skuld 1,0747×EK 32,5 = 60,8 mdr) / (EBIT 1 765 Mkr) = 34,5 — fältet ~7 % under. Paketet gör inget eget EV-påstående och varnar redan explicit för att EV-måttet för belåtade fastighetsbolag 'säger mer om skuldstrukturen än om värderingen' — ingen självmotsägelse, ingen rättning. Samma fältklass som JNJ-paketets EV-fynd (beräkningsväg okänd); värt att samla i seriens pågående fältkatalog"
+    },
+    {
+      "id": "C4",
+      "typ": "notis",
+      "fil": "sa-laser-du-wallenstam-q3-2026.json",
+      "falt": "body — ROE 8,37 %",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "Årskors: netto 2 564 Mkr / EK 32,5 mdr (ur NAV×aktier = MV/PB, inbördes konsistenta) = 7,9 % mot fältets 8,37 % — trolig definitionsskillnad (senaste räkenskapsårets EK mot medel-EK). Paketet gör ingen sådan korsning och påstår inget om ROE:s beräkningsväg utöver att citera fältet — ingen rättning; notis för seriens fältkatalog"
+    },
+    {
+      "id": "C5",
+      "typ": "r2-notis",
+      "fil": "sa-laser-du-wallenstam-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-13",
+      "nytt": "",
+      "orsak": "Rappdagen är 2026-10-15; publishedAt 10-13 följer seriens dagen-före-praxis (nike 10-01/rapport 10-02, hm-b, holmen). Publiceringstidpunkten är kundens beslut (R2) — ingen ändring från granskaren"
+    }
+  ],
+  "agarflagga": "SAKNAR ÄNDRING I DENNA FIL: syskonpaketet sa-laser-du-np3-q3-2026.json bär publishedAt 2026-10-14 medan kalender-fastighet.json anger NP3 = 2026-10-16 ('officiellt bekräftat datum') — rapporteras till NP3-paketets ägare via denna diff; påverkar INTE wallenstam-paketets eget innehåll (som korrekt skriver 'NP3 (16 oktober)')"
+}

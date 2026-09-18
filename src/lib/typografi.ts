@@ -1,26 +1,24 @@
 import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 
 /**
- * TYPOGRAFI — VÅG 84 SPIKE (agent V84-SPIKE; STYRELSE-VAG84-PLAN steg 1).
+ * TYPOGRAFI — VÅG 84 SPIKE (agent V84-SPIKE; STYRELSE-VAG84-PLAN steg 1);
+ * AKTIV KÄLLA sedan VÅG 85 (html-lang-massflyttet): src/app/layout.tsx
+ * raderades och alla tre rot-layouterna ((huvud)/(en)/(ar)) rullar sina
+ * dokument via <GlobaltSkal> som sätter typografiKlasser på <body>.
  *
- * ⚠️ DÖD KOD — FÅR EI IMPORTERAS FRÅN AKTIVA RUTTER ÄN (0 imports i nuläget).
- * Filen är den deploybara förberedelsen inför html-lang-route-group-flyttet
- * (STYRELSE-SPEGLAR-P2 §2): de fyra next/font-instanserna lyfts ur
- * src/app/layout.tsx till modul-singletons så att ALLA TRE framtida
- * rot-layouterna — (huvud) sv, (en), (ar) — delar EXAKT samma fontobjekt
+ * ⚠️ ÄNDRINGAR HÄR TRÄFFAR ALLA TRE SPRÅKROTARNA SAMTIDIGT — de fyra
+ * next/font-instanserna är modul-singletons som delas av alla layouter
  * (identiska CSS-variabler, identisk preload, ingen koddubblering).
  *
- * Flytt-agentens kontrakt (steg 2):
- *   1. Varje ny rot-layout: `import { typografiKlasser } from "@/lib/typografi"`
- *      — eller hellre: lät <GlobaltSkal> (src/components/ak1a/globalt-skal.tsx)
- *      äga body-klassen helt, layouten ropar bara <GlobaltSkal lang="…">.
- *   2. Fontinstanserna nedan är KOPIAN av src/app/layout.tsx:25-58 — rader
- *      därutur tas BORT ur layout.tsx när flyttet sker (en sanning).
- *   3. Ingen ändring i konfigurationen (subsets/weights/preload) får ske här
- *      utan eget beslut — grunden är "906 = 906 förbyggda sidor, visuellt
- *      identisk" (VAG84-PLAN steg 3). Undantag som BESLUTATS: jetbrainsMono
- *      preload:false (VÅG 96 D1 — styrelsebeslutet ger D1 font/laddnings-
- *      ordning; se kommentaren vid instansen nedan).
+ * Flytt-agentens kontrakt (steg 2 — INFRIAT våg 85):
+ *   1. Varje rot-layout ropar <GlobaltSkal lang="…"> som äger body-klassen.
+ *   2. Denna fil är sanningen; gamla instansdeklarationer i layouter
+ *      togs bort atomärt vid flyttet.
+ *   3. Ingen ändring i konfigurationen (subsets/weights/preload) utan
+ *      eget beslut — grunden är "906 = 906 förbyggda sidor, visuellt
+ *      identisk" (VAG84-PLAN steg 3). Undantag som BESLUTATS:
+ *      jetbrainsMono preload:false (VÅG 96 D1) och serif-kursiv
+ *      preload:true (VÅG s7-u1/o54) — se kommentarerna vid instanserna.
  */
 
 // VÅG s7-u3 (2026-09-15, prestandaspåret): ALLA fyra fonter display:
@@ -40,10 +38,8 @@ const inter = Inter({
 });
 
 // VÅG 68 PRESTANDA B (o1 #9): Source Serif delas i två instanser — normal
-// (400/600/700) preloadas; italic lämnas ur preload-listan (hämtas on demand
-// med display:swap när serif-kursiv löptext renderas). Eftersom Google
-// tjänar variabla woff2-filer är filunderlaget oförändrat: RIKTIG italic
-// behålls för alla vikter, bara preloaden försvinner.
+// (400/600/700) preloadas. Eftersom Google tjänar variabla woff2-filer är
+// filunderlaget oförändrat: RIKTIG italic behålls för alla vikter.
 const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
@@ -52,13 +48,24 @@ const sourceSerif = Source_Serif_4({
   style: ["normal"],
 });
 
+// VÅG s7-u1 (o54, 2026-09-17): serif-KURSIV preloadas igen (o1 #9:s
+// preload:false upphävs). Bevis — Lighthouse-trace på prod (FÖRE §1):
+// kursiv-woff2:n (51 KiB) var den ENDA fonten utan preload ⇒ upptäcktes
+// via style-resolution först 954–1 509 ms in (A/B: 80–133 ms), mitt i
+// JS-kön — och den är LCP-KRITISK: hero-citatet ("Lär dig läsa bolag
+// som en analytiker…", p.font-serif.text-lg.italic) är LCP-elementet
+// på /, /en och /ar, och med display:optional (s7-u3-beslutet) REJAS
+// fonten om den inte hunnit fram ⇒ LCP-elementet målas i fallback i
+// Lantern-kedjan med element render delay 2 203–2 240 ms (TTFB 41–56 ms
+// — all tid är render-fördröjning). Preload → fetch vid ~80 ms som A/B
+// ⇒ font-fasen ur den kritiska kedjan. Kostnad: +51 KiB preload på
+// kalla sidvisningar utan kursivtext — cache-täckt efter första besöket.
 const sourceSerifKursiv = Source_Serif_4({
   variable: "--font-serif-kursiv",
   subsets: ["latin"],
   display: "optional",
   weight: ["400", "600", "700"],
   style: ["italic"],
-  preload: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({

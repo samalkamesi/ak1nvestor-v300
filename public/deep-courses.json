@@ -205920,6 +205920,178 @@
       }
     ]
   },
+  "rs-08-modellrisken": {
+    "slug": "rs-08-modellrisken",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Modellrisken — den femte adressen: antagandena, felmarginalen och det egna felet",
+    "summary": "Riskfamiljens åttonde steg vänder spegeln: efter bolagets fyra riskadresser står den femte — analysen själv. Kursen lär antagandeinventering, känslighetsräkning och felbudgeten baklänges: hur lite antagandena behöver ha fel, samtidigt, för att radera marginalen till kursen. Utan den räkningen är säkerhetsmarginalen en siffra, inte ett skydd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Skilja på marknadsrisk och modellrisk — risken att bolaget slår fel mot risken att analysen slår fel · Rita antagandeinventeringen: varje tal i en värdering är ett antagande med källa, klass och slaglängd · Räkna känsligheten en variabel i taget — värdets svar på blygsamma förändringar i marginal, tillväxt och multipel · Se interaktionseffekten — antagandefel adderas inte, de multipliceras · Räkna felbudgeten baklänges från kursen — de minsta samverkande justeringarna som raderar marginalen · Dokumentera en pre-mortem av den egna analysen — de fem frågorna före varje slutsats, med gränserna mot grannkurserna (rs-06 riskens anatomi, kt-02 kalibreringen, ek-05 fördelningarna, km-030 marginalbegreppet).",
+    "why": "Riskfamiljens sju första kurser letade risken i bolaget: svängningarna skildes från förlusten (rs-01), enskilda källor kartlades (rs-02, rs-03), matrisen rangordnade osäkerheten (rs-04), årsredovisningens eget riskavsnitt lästes (rs-05) och rs-06 satade namn på de fyra adresser där risken bor — resultatet, balansräkningen, ägandet och värderingen — medan rs-07 lärde ut inköpssidan: leverantörskoncentrationen som kundkoncentrationens spegel. Men de adresserna ligger alla i bolaget. Den femte adressen ligger i läsaren: analysen själv. En värdering är ett hopp av antaganden, och varje antagande kan vara fel på ett sätt som spelar roll för slutsatsen. Det obekväma faktum är att en marginal på åtta procent till kursen kan raderas av två blygsamma samverkande fel — en halv procentenhet på vinstmarginalen och en halv multipelenhet — som vart och ett för sig är helt ofarligt. Kursen gör därför det arbete som Grahams säkerhetsmarginal alltid var avsett att bli men sällan får: en räkning av hur fel analysen fick ha fel. Det är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget.",
+    "history": {
+      "origin": "Kartläggarens fel är äldre än finansmarknaden: sjökortens marginaler, landmätarnas dubbelmätningar, ingenjörernas säkerhetsfaktorer — alla yrken som räknar på en framtid har fått lära sig att själva räkningen är en riskkälla. Finansen ärvde läxan tidigt. Benjamin Graham byggde hela sin konst på insikten att framtiden inte kan förutsägas, och att den enda hederliga hanteringen av det problemet är marginalen: köp så billigt att analysen får ha fel och ändå lämna ägaren hel. Säkerhetsmarginalen var från början inte ett mått på hur mycket marknaden hade fel — den var ett mått på hur mycket analytikern fick ha fel.",
+      "evolution": "Under 1900-talet blev modellfelet ett eget forskningsfält. Känslighetsanalysen — att flytta ett antagande i taget och se hur slutsatsen svarar — blev standard i allt från byggnadsstatik till prospektering, och värderingslitteraturen anammade tabellerna. Scenarioanalysen lät flera antaganden röra sig tillsammans, och när beräkningskraften blev billig gjorde Monte Carlo-metoderna punktestimat till fördelningar — en utveckling laboratoriet övar i egen kurs (ek-05). Samtidigt dokumenterade psykologin hur modellen smickrar sin ägare: bekräftelsefällan letar antaganden som passar slutsatsen, och överkonfidensen gör intervallen för trånga. Modellrisken visade sig bo i två rum — antagandenas matematik och analytikerns psykologi — och kurserna fick lära ut båda.",
+      "modern": "I dag är modellrisken svårare än någonsin just för att verktygen är så bra. Kalkylbladet svarar med två decimaler oavsett om input är en årsredovisning eller en gissning, och precisionen i utdata bär lätt över som förtroende för input — falsk precision är kalkylbladets defaultläge. Samtidigt har kalibreringsforskningen gett motgift: den som loggar sina egna utfall lär sig skillnaden mellan sjuttioprocentig säkerhet och känslan av sjuttioprocentig säkerhet. Backtestens hantverk (ek-04) gör samma sak baklänges — hur hade metoden svarat förr? För aktiestudenten landar allt detta i en disciplin: att räkna vändpunktskorgen, de minsta samverkande antagandefel som raderar marginalen, före varje slutsats — och att skriva ner den tillsammans med analysen, så att framtiden kan granska den mot verkligheten."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — den femte adressen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — antagandeinventeringen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätning — känsligheten och interaktionen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Felbudgeten — att räkna baklänges",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — de fem frågorna och pre-mortemen",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch hyllade grova tal som fångar verksamheten framför precisa tal som fångar kalkylbladet: det räcker att vara ungefärligt rätt på ett bolag man förstår, medan exakt fel är den dyraste kombinationen av alla. Hans varning för sexmånadersmål och decimalknivar i prognoser är modellriskens raka föregångare — han såg att precisionen i utdata lätt köps som trygghet i antagandena. Lynchs andra bidrag är ödmjukheten inför det egna spåren: den som loggar vad man trodde och varför får med tiden två portföljer, den man äger och den man lärde känna — och den andra är minst lika värdefull. Kursens felbudget är den övningen i räkneform.",
+    "grahamSection": "Benjamin Graham formulerade modellrisken innan ordet fanns: framtiden är ett intervall, inte en punkt, och analytikern som agerar som om punkten vore känd har inte analyserat bort osäkerheten utan bara dolt den. Säkerhetsmarginalen var hans försäkring mot det egna felet — köp med så stort avstånd mellan pris och värde att antagandena får ha fel och slutsatsen ändå håller. Hans andra regel är lika viktig: marginalen skyddar bara mot fel i antagandena, inte mot fel i omdömet — den som behöver marginalen minst är den som har störst nytta av den. Grahams elever har burit räkningen vidare: marginalen är inte en egenskap hos bolaget utan en egenskap hos analysen, och den mäts i hur fel antagandena samlat fick ha.",
+    "ak1Section": "I AK1A:s metodik stänger denna kurs riskfamiljens yttersta ring: rs-01 till rs-07 letade risken i bolaget — rs-07 senast på inköpssidan — och rs-08 vänder den: risken i analysen. I AKM1:s bolagsläsning blir vändpunktskorgen en kontrollstation före varje stabilitetsvägd slutsats: innan slutsatsen skrivs räknas den minsta korgen av samverkande antagandefel som välter den — en slutsats som kräver att alla antaganden håller exakt är inte en slutsats utan ett vad. I AKM2:s ram kompletterar kursen fördelningstänkandet från ek-05:s Monte Carlo: fördelningen beskriver bredden på vägarna, felbudgeten beskriver avståndet till avgrunden. Gränserna är avsiktliga — rs-06 äger bolagets fyra adresser, kt-02 äger kalibreringen mot marknadens förväntningar, ek-04 backtestens hantverk, km-030 marginalbegreppet och km-019 och km-036 psykologin — denna kurs äger analysens eget fel.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — den femte adressen",
+        "intro": "Riskkursen har hittills letat i bolaget. Nu vänder den spegeln — mot läsarens egen räkning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "rs-06 gav riskarbetet en karta: risken bor på fyra adresser i bolaget — resultatet, balansräkningen, ägandet och värderingen. Varje adress kan granskas, mätas och vägas. Men kartan har en tyst förutsättning: att den som granskar har rätt. En analys som granskar alla fyra adresserna med felaktiga antaganden är inte fyra gånger säkrare — den är fyra gånger mer övertygande och lika fel. Detta är den femte adressen: modellen själv, med dess antaganden, dess känslighet och dess benägenhet att smickra sin ägare. Skilj noga på två risker som ofta förväxlas. Marknadsrisken är att bolaget utvecklas sämre än väntat — analysen var rätt, framtiden var sämre. Modellrisken är att analysen hade fel från början: antagandena om marginal, tillväxt eller multipel bar inte, och slutsatsen vilade på dem ändå. De två kräver olika botemedel — marknadsrisken hanteras med positionens storlek och tiden, modellrisken med inventering, känslighet och felbudget. En förlorad position kan vara det ena eller det andra, och skillnaden avgör om erfartenheten blir en lärdom eller en falsk. Kursens exempelbolag Nora Industri är påhittat, och siffrorna är valda för räkneövningens skull — detta är utbildning i metod, inte kommentar till något noterat bolag."
+          },
+          {
+            "type": "definition",
+            "content": "MODELLRISK — risken att en slutsats vilar på antaganden som är fel på ett sätt som spelar roll för slutsatsen · FEMTE ADRESSEN — rs-06:s fyra adresser ligger i bolaget; den femte ligger i analysen · MARKNADSRISK mot MODELLRISK — bolaget slog fel mot analysen slog fel; olika risker, olika botemedel · FELBUDGET — hur mycket antagandena samlat får ha fel innan slutsatsen vänder · GRÄNS: rs-06 äger bolagets adresser, kt-02 kalibreringen mot marknaden, km-019 och km-036 psykologin, km-030 marginalbegreppet — denna kurs äger analysens eget fel."
+          },
+          {
+            "type": "insight",
+            "content": "Bolaget har ingen aning om din värdering. Att kursen föll bevisar inte att du hade fel, och att kursen steg bevisar inte att du hade rätt — utfallet prövar aldrig antagandena, bara tålamodet. Endast inventeringen prövar antagandena."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — antagandeinventeringen",
+        "intro": "En värdering är en maskin av tal. Inventeringen sorterar talen efter var de kommer ifrån — och efter vad som händer när de drar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Varje tal i en värdering tillhör en av tre klasser. Rapporttal står i årsredovisningen: gårdagens intäkt, årets marginal — kända, men kända för förra året. Härledda tal räknas ur rapporten: marginalens trend, kapitalomsättningen, nyckeltalens följd — säkra som aritmetik, osäkra som tolkning. Framtidsantaganden är den tredje klassen: tillväxttakten, marginalen om fem år, multipeln vid horisonten — här vilar ingenting på papper, och här står värderingens tyngsta bärare. Inventeringen är enkel att göra och sällan gjord: skriv varje tal i en kolumn med sin klass och sin källa, och markera vilka tal som kan röras utan att det syns. Nora Industri, kursens påhittade exempel: intäkt per aktie år fem antas till 135 kronor, vinstmarginalen till 12 procent och multipeln till 14. Räkningen blir 135 gånger 0,12 ger vinst 16,2 kronor, och 16,2 gånger 14 ger ett värde av 226,8 kronor per aktie. Tre av fyra tal i den kedjan är framtidsantaganden — det enda som är härlett är produkten. Det är inventeringens viktigaste fynd: värderingar har oftast färre rapporttal än de ser ut att ha, och den som kan peka ut vilka tal som bär slutsatsen kan också räkna vad de får ha fel."
+          },
+          {
+            "type": "tabell",
+            "content": "ANTAGANDEINVENTERING — NORA INDUSTRI (PÅHITTADE TAL): INTÄKT PER AKTJE ÅR 5: 135 kr — framtidsantagande (tillväxten redan inbakad) · VINSTMARGINAL: 12,0 procent — framtidsantagande · MULTIPEL ÅR 5: 14 — framtidsantagande · VINST PER AKTJE: 135 × 0,12 = 16,2 kr — härlett · VÄRDE PER AKTJE: 16,2 × 14 = 226,8 kr — härlett · KLASSFÖRDELNINGEN: 3 framtidsantaganden, 0 rapporttal, 2 härledda — kedjan vilar på antagandena."
+          },
+          {
+            "type": "insight",
+            "content": "Inventeringens fråga är inte om antagandena är rimliga — den frågan svarar alltid ja. Frågan är vilka tre tal som bär hela slutsatsen, och vad som händer när de rör sig."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätning — känsligheten och interaktionen",
+        "intro": "Känslighetsräkningen flyttar ett antagande i taget. Sedan flyttar den alla — och skillnaden mellan de två svaren är kursens kärna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med blygsamma slag, inte extrema: en procentenhet på marginalen, två enheter på multipeln, fem kronor på intäkten. Marginalen 13 procent i stället för 12: 135 gånger 0,13 ger 17,55, gånger 14 ger 245,7 — värdet stiger 18,9 kronor eller 8,3 procent. Multipeln 16 i stället för 14: 16,2 gånger 16 ger 259,2 — uppgången 32,4 kronor eller 14,3 procent, den största av de enskilda. Intäkten 140 i stället för 135: 140 gånger 0,12 ger 16,8, gånger 14 ger 235,2 — 8,4 kronor eller 3,7 procent. Notera ordningen: multipeln slår hårdast, marginalen därefter, intäkten mjukast — känslighetstabellen visar var analysen är sårbar, och sårbarheten sällan där uppmärksamheten ligger. Nu interaktionen, som är räkningens egentliga poäng. Flytta alla tre samtidigt i samma riktning: 140 gånger 0,13 ger 18,2, gånger 16 ger 291,2 — en ökning med 64,4 kronor. Summan av de tre enskilda slagen är 18,9 plus 32,4 plus 8,4, alltså 59,7 kronor. Skillnaden — 4,7 kronor — är interaktionseffekten: den uppstår för att slagen verkar på varandras produkter, inte bredvid varandra. Effekten är liten vid blygsamma slag och våldsam vid stora, och den är alltid starkast när slagen går åt samma håll — det vill säga när alla antaganden felar samtidigt, vilket är exakt det scenario den som älskar sin analys aldrig räknar på."
+          },
+          {
+            "type": "tabell",
+            "content": "KÄNSLIGHETSTABELLEN — ETT SLAG I TAGET MOT BAS 226,8: MARGINAL 12 till 13 procent: 135 × 0,13 = 17,55 × 14 = 245,7 (+18,9 kr, +8,3 procent) · MULTIPEL 14 till 16: 16,2 × 16 = 259,2 (+32,4 kr, +14,3 procent) · INTÄKT 135 till 140: 140 × 0,12 = 16,8 × 14 = 235,2 (+8,4 kr, +3,7 procent) · SAMTIDIGT: 140 × 0,13 = 18,2 × 16 = 291,2 (+64,4 kr, +28,4 procent) · INTERAKTIONEN: 64,4 − 59,7 = 4,7 kr ovanpå summan — felen förlåter inte varandra."
+          },
+          {
+            "type": "insight",
+            "content": "Antagandefel adderas inte — de multipliceras. Tre blygsamma fel på raken bär mer än summan av sina delar, och interaktionen växer med felen. Den som bara räknar ett slag i taget underskattar alltid det värsta fallet."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Felbudgeten — att räkna baklänges",
+        "intro": "Känsligheten frågar vad som händer om antagandena rör sig. Felbudgeten frågar det omvända och nyttigare: hur lite behöver de röra sig för att välta slutsatsen?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt en kurs under värdet: Nora Industri noterad till 210 kronor. Basvärdet 226,8 ger en marginal av 16,8 dividerat med 210 — hela 8,0 procent. En marginal på 8,0 procent ser trygg ut, och här gör modellrisken sin entré: pröva två blygsamma samverkande fel. Håll intäkten oförändrad, sänk vinstmarginalen en halv procentenhet — till 11,5 — och multipeln en halv enhet — till 13,5. Räkningen: 135 gånger 0,115 ger 15,525, gånger 13,5 ger 209,6 kronor. Marginalen till kursen 210 är borta; slutsatsen har vänt på två fel som vart och ett är för litet att oroa någon. Kontrollera att inget av felen ensamt bröt slaget: marginalen 11,5 procent med oförändrad multipel ger 15,5 gånger 14, alltså 217,4 kronor — strax över kursen; multipeln 13,5 med oförändrad marginal ger 16,2 gånger 13,5, alltså 218,7 kronor — också över. Det är först tillsammans som slagen välter, och det är precis så verkliga analysfel ser ut: inte ett grovt misstag utan tre försiktiga som går åt samma håll. Felbudgeten är alltså korgen av minsta samverkande justeringar som raderar marginalen — vändpunktsantagandena. En analys vars vändpunktskorg är smal — där en halv procentenhet här och en halv enhet där räcker — kräver mer av framtiden än den som tål grova slag. Jämför därför analyser efter korgens bredd, inte efter marginalens siffra: åtta procent på tre sköra antaganden är mindre marginal än fem procent på ett antagande som är förankrat i rapporten."
+          },
+          {
+            "type": "definition",
+            "content": "FELBUDGETEN — den minsta korgen av samverkande antagandefel som raderar marginalen till kursen · RÄKNINGEN BAKLÄNGES: från kursen mot värdet, inte från värdet mot kursen · NORA-EXEMPLET: kurs 210 mot värde 226,8 — marginal 8,0 procent — raderas av marginal 12 till 11,5 procent och multipel 14 till 13,5 tillsammans (209,6 kronor), där inget fel ensammast välter (217,4 respektive 218,7) · TVÅ FRÅGOR: hur brett tål analysen att antagandena felar — och vad kräver den av framtiden för att hålla?"
+          },
+          {
+            "type": "insight",
+            "content": "Fråga inte vad bolaget måste göra för att du ska ha rätt. Fråga hur lite det kan göra — hur små de samverkande felen får vara — och ändå lämna analysen hel. Svaret är felbudgeten, och den är en egenskap hos analysen, inte hos bolaget."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Modellrisken har sina favoritställen. Sex fällor täcker de flesta sätt som en välräknad analys ändå går fel på.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är precisionens lockelse: kalkylbladet svarar med två decimaler oavsett om input är revisionssäkra rapporttal eller ren gissning, och precisionen i utdata köps lätt som trygghet i antagandena — en värdering som redovisar 226,82 kronor känns tryggare än en som redovisar ungefär 225, trots att skillnaden är skräp. Andra fällan är bekräftelsefällan, vars psykologi km-019 äger: antagandena väljs för att nå den slutsats som redan dragits, och känslighetstabellen byggs smal — fyra oskyldiga slag men aldrig de två som välter. Tredje fällan är överkonfidensen, km-036:s område: intervallen blir för trånga, sannolikheten att alla antaganden håller samtidigt överskattas, och kalibreringen mot egna historiska utfall uteblir. Fjärde fällan är punktestimat: ett tal per antagande i stället för intervall eller scenarier — ek-05:s fördelningar är botemedlet, felbudgeten är dess fattiga kusin som fungerar utan motor. Femte fällan är förankringen i det egna: den första modellen blir ankaret, och varje revidering dras mot den gamla siffran i stället för mot rapporten — vr-05:s gap mellan pris och värde gäller även mellan gammalt och nytt värde. Sjätte fällan är spegelfällan: att tro att säkerhetsmarginalen är en egenskap hos bolaget — köpt en gång, ägd för alltid. Marginalen är en egenskap hos analysen: samma bolag kan köpas med marginal eller utan, samma kurs kan bära en robust eller en skör läsning, och skillnaden sitter i antagandenas korg, inte i tickern. Gemensam rot för alla sex: modellen är ett verktyg som gärna smickrar sin ägare, och motgången ligger i att räkna det som smickrar minst — de samverkande slagen."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en rot: den som älskar sin analys räknar inte på dess död. Pre-mortemen — att skriva analysens fyra mest sannolika dödsorsaker innan slutsatsen signeras — är därför inte pessimism utan hygien."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — de fem frågorna och pre-mortemen",
+        "intro": "Kursen samlas i fem frågor — inventeringen, känsligheten, korgen, marginalens pris och pre-mortemen — den fullständiga läsningen av den femte adressen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vilka tal i min analys är rapport, vilka är härledda och vilka är framtidsantaganden — och vilka tre bär slutsatsen? Fråga två: hur mycket rör sig värdet när varje bärartal flyttas ett blygsamt slag — och vilket slår hårdast? Fråga tre: vad är vändpunktskorgen — de minsta samverkande justeringarna som raderar marginalen till kursen, räknade baklänges från noteringen? Fråga fyra: vad kräver analysen av framtiden för att hålla — en marginal på åtta procent som viker för en halv procentenhet plus en halv multipelenhet är ett lån på mycket kort tid? Fråga fem: vad skulle jag tro om en utomstående visade mig samma siffror med motsatt slutsats — och vilka fyra skäl är mest sannolika för att min analys visar sig fel om ett år? De två sista frågorna är pre-mortemen: skriv svaren ned, datera dem och lagra dem med analysen — de är den enda mätningen av modellrisk som inte kan smickras i efterhand. Detta är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget, och kursens påhittade bolag Nora existerar bara för räkningens skull."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj en analys du själv gjort — eller bygg en på ett påhittat bolag med Naras tre bärare: intäkt, marginal, multipel. Inventera alla tal med klass och källa. Räkna känslighetstabellen med ett blygsamt slag per bärare, och sedan samtliga slag samtidigt — notera interaktionseffekten mot summan av de enskilda. Räkna felbudgeten baklänges mot en kurs du väljer: hitta den smalaste korgen av samverkande justeringar som raderar marginalen, och kontrollera att inget enskilt fel välter slutsatsen. Avsluta med en daterad pre-mortem: de fyra mest sannolika skälen till att analysen visar sig fel om ett år. Upprepa övningen varje kvartal på samma bolag — korgens rörelse över tiden är den ärligaste mätningen av hur din modellrisk utvecklas."
+          },
+          {
+            "type": "insight",
+            "content": "rs-familjens karta har nu åtta steg — och den femte adressen är den enda av dem du kan bättra på i morgon: bolagets adresser måste granskas om och om igen, men antagandenas korg kan alltid räknas bredare redan före nästa slutsats."
+          }
+        ]
+      }
+    ]
+  },
   "mt-01-vad-ar-en-moat": {
     "slug": "mt-01-vad-ar-en-moat",
     "category": "MOAT",
@@ -212995,6 +213167,178 @@
     "lynchSection": "Peter Lynch rekommenderade utdelningsaktier med samma förankring som tillväxtaktier — bolaget som delar ut är bolag som tjänar — och hans syn på optionsmarknadens löftesrikedom var känd skeptisk: det som ser ut som inkomst är ofta ett avstående av uppsida. Kursens covered call-räkning är hans poäng i siffror: premin på 4 är verklig i två av tre världar, men uppgångens 11 tillhör den som höll aktien — och Lynch-historyns bästa decennier byggde på att inte sälja uppsidan för smör.",
     "grahamSection": "Benjamin Graham såg utdelningen som ägarens mest pålitliga kvitto på att vinsten är verklig, och hans försiktighet med instrument vars värde bygger på motparters aktivitet säger sig själv i optionsvärlden: pariteten är ekvation, men strategin är kontext. Grahams tanke om att varje värdepapper ska förstås från sitt kassaflöde lever i kursens grundmur — optionen äger rörelsen, aktien äger kassaflödet, och den som inte vet vilken av de två hon köpt har inte gjort hemarbetet.",
     "ak1Section": "I AK1A:s metodik ingår utdelningsmekaniken som bakgrundskontroll i optionsrelaterade analyser: motorernas scenarioarbete kan låta en utdelningsändring verka i både aktiespåret (ud-familjens utrymme) och instrumentprisernas spår (paritetsledet), och arbetsflödet (ek-03-traditionen) dokumenterar avstämningsdatum i de fall en analys rör positioner över ett sådant — så att mekaniska kursjusteringar inte misstolkas som värderingsrörelser när loggen läses i efterhand."
+  },
+  "od-06-positionen-efter-bygget": {
+    "slug": "od-06-positionen-efter-bygget",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Positionen efter bygget — delta, band och förfallodagen",
+    "summary": "Optionsfamiljens sjätte steg äger livet efter köpet: deltat som levande exponering som förändras utan ägarens beslut, gammans omskrivning av positionen för varje krona, thetan som daglig hyra — och förfallodagens mekanik med automatisk lösen, tilldelning och pinningsrisken. Kursen lär förvaltningens räknelära: hur många aktier positionen egentligen bär, när omhedgingen hör hemma i beslutet och när förfallodagen börjar bestämma i stället för ägaren.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Läsa positionens aktuella exponering i aktieekvivalenter — deltat gånger antal kontrakt gånger kontraktstorlek · Förstå att positionen förändras utan beslut — gamman flyttar deltat och karaktären med det · Räkna dagens break-even-rörelse — förhållandet mellan theta och gamma som roten ur två gånger thetan dividerat med gamman · Praktisera omhedging med band — justera när exponeringen lämnar beslutet, inte vid varje kurssteg · Hantera förfallodagens mekanik — automatisk lösen, tilldelning, pinningsrisken vid lösenpriset och kapitalbehovet i aktier · Vägleda stängningen i tid — restvärdeslogiken och gränserna mot grannkurserna (od-01 grekerna, od-04 byggena, od-05 lösningen, km-060 tilldelningen, am-01 likviditeten, sj-04 beskattningen).",
+    "why": "Optionsfamiljen har byggt och prissatt positioner: grunderna och skyddet (km-059, km-061), grekerna som mått (od-01), volen som pris (od-02), emissionens instrument (od-03), kombinationerna (od-04) och utdelningens möte (od-05). Gemensam tystnad: livet efter köpet. En aktieposition är i grunden oföränderlig — ägandet består till dess att ägaren säljer. En optionsposition är ett annat slags åtagande: varje handelsdag betalas thetan, varje krona aktien rör sig skriver gamman om deltat, och hela åtagandet har ett slutdatum som ägaren inte kan förhandla bort. Siffrorna i kursen gör problemet konkret: en position som vid köpet bär fyrtio aktiers exponering bär tvåhundrasextio efter en åtta kronors rörelse — utan att ägaren rört ett finger. Den som lärde sig bygga positioner men inte förvalta dem har lärt sig hälften av hantverket, och det är oftast den hälften som avgör utfallet. Kursen gör förvaltningen till eget område: exponeringens bokföring, bandet, hyran och slutdatumet. Det är utbildning i mekanik med påhittade exempel — inte uppmaningar att köpa eller sälja något värdepapper; avgörandet är alltid läsarens eget.",
+    "history": {
+      "origin": "Konsten att hålla en bok i balans är äldre än de listade optionerna: handelshusen som säkrade spannmålstransporter och valutor visste att en säkring som lämnas ensam slutar vara en säkring — den blir en vadslagning med annat namn. Marknadsgaranten (market maker), den som ställer priser i optioner åt andra, har alltid levt med kursens kärnproblem från motsatt håll: varje dag måste hela boken vägas, deltat får inte växa okontrollerat, och hyran — skillnaden mellan såld och köpt tid — måste täcka rörelsen som boken bär. Förvaltningens räknelära föddes ur det yrket, länge före detaljhandlarens tillträde till samma marknader.",
+      "evolution": "När optionsprissättningen formaliserades på 1970-talet — modellen i km-062 och de listade marknaderna i Chicago samma år — fick räkneläran sitt språk: grekerna blev riskbron mellan en formel och en positionsbok. Bandbaserad omhedging växte fram som hantverk: att hedgea vid trösklar i stället för vid varje prissteg, för varje justering kostar spread och glidning. Portföljförsäkringens era på 1980-talet gav läxan i sin renaste form: när många följer samma band åt samma håll förstärker banden själva rörelsen de ska skydda mot — omhedging är ett beslut i en marknad av andra som fattar samma beslut.",
+      "modern": "I dag sköter clearing och system mycket av mekaniken: optioner som är in the money vid förfallo löses ofta automatiskt, tilldelning meddelas via bank och broker, och kontraktens storlekar är standardiserade. Det har inte tagit bort kunskapskravet — det har flyttat det. Den som inte kan räkna kapitalbehovet vid automatisk lösen får sin utbildning av clearingmeddelandet en fredag, och den som inte vet att gamman växer sista veckorna förstår inte varför positionen känns annorlunda fast aktien står stilla. För aktiestudenten är detta optionshantverkets andra hälft: bygget är en handling, förvaltningen är en vana — en position läses en gång per dag tills förfallodagen bestämmer resten."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — positionen som åtagande",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — deltat som levande exponering",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätning — gammans skörd och thetans hyra",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk tillämpning — band, order och restvärde",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — förfallodagen och de tysta glidningarna",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — förvaltarens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch var öppet skeptisk till att privatpersoner handlar optioner: han menade att den som köper kort tid betalar varje dag för något som smälter — säljaren av tiden samlar hyran medan köparen sällan behåller oddsen. Hans varning är kursens bärande bjälke, formulerad som hantverkskrav: den som inte kan räkna på deltat, thetan och förfallodagen äger inte positionen — positionen äger den som inte räknar. Lynch älskade däremot instrument när mekaniken var förstådd från insidan: hans eget arbete med teckningsoptioner och utspädningar (od-03:s värld) visar att skeptiken aldrig gällde instrumentet utan köparens okunnighet om dess klocka.",
+    "grahamSection": "Benjamin Graham ägnade teckningsoptionerna egna kapitel i Security Analysis och hans slutsats var mekanisk snarare än moralisk: optionen är en fordran på framtida utspädning, och den som inte räknar dess värde har inte ett instrument utan en lucka i balansräkningen. Överfört till dagens börsoptioner är budskapet detsamma som kursens: instrumentets värde är en funktion av tid och villkor, och analysen av dem hör till ägandet — det finns ingen passiv optionsposition, bara en obemannad position. Grahams försäkringstänkande fullbordar bilden: en option är i grunden en försäkring, och försäkring förutsätter att köparen förstår både risken som täcks och priset som betalas — thetan — innan kontraktet skrivs.",
+    "ak1Section": "I AK1A:s metodik kompletterar denna kurs optionsfamiljen med dess tidsliga sida: od-01 gav grekerna som mått, od-02 volen som pris, od-03 emissionens instrument, od-04 byggena och od-05 utdelningens möte — od-06 äger tiden däremellan: exponeringens dagliga bokföring, bandets beslut och förfallodagens mekanik. I AKM1:s ram är aktieekvivalenter en kontrollstation: en portföljs verkliga aktieexponering inkluderar optionernas delta, annars är riskbilden ofullständig. I AKM2:s ram kompletterar kursen ek-05:s fördelningar: Monte Carlo visar bredden på vägarna, förfallodagen gör varje väg ändlig — en optionsposition är en tidsserie med sista datapunkt utsatt i förväg. Gränserna är avsiktliga: pf-02 äger positionens storlek i portföljen och pf-04 portföljens balansering — denna kurs äger den enskilda positionens liv från köp till förfall.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — positionen som åtagande",
+        "intro": "Byggkurserna slutade där förvaltningen börjar: vid orderbekräftelsen. Här börjar positionens liv.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En aktieposition är en stilla sak. Köp hundra aktier och exponeringen är hundra aktier i dag, i morgon och om ett år — ägandet förändras bara när ägaren handlar. En optionsposition är en levande sak: exponeringen står inte i orderbekräftelsen utan skrivs om varje handelsdag av kursrörelser, volatilitet och tidens gång, och hela åtagandet har ett sista datum. Tre mekanismer bär livet efter bygget. Deltat översätter optionen till aktieexponering — det är positionens aktuella språk, och det ändras. Gamman är deltats hastighet: för varje krona aktien rör sig skrivs deltat om, och positionen blir snabbt en annan än den som köptes. Thetan är hyran: tidsvärdet smälter varje dag, och för den köpta positionen är smältningen en kostnad som betalas i förväg. Kursens exempel är en köpt straddle — kombinationen som od-04 bygger — med tio kontrakt, lösenpris 150 kronor och kontraktstorlek hundra aktier per kontrakt, alltså tusen aktieenheter sammanlagt. Alla tal är påhittade för räkneövningens skull. Detta är utbildning i mekanik, inte råd om positioner — men mekaniken är densamma för den som en dag står med en egen orderbekräftelse och undrar vad den egentligen köpt."
+          },
+          {
+            "type": "definition",
+            "content": "AKTIEEKVIVALENTER — positionens deltat gånger antal kontrakt gånger kontraktstorleken: optionens exponering uttryckt som antal aktier · GAMMA — deltats förändring per krona i aktien: positionens omskrivningshastighet · THETA — tidsvärdets dagliga smältning: den köpta positionens hyra · FÖRFALLODAGEN — det datum då optionen upphör och mekaniken bestäms av lösen, utlöpande eller tilldelning · GRÄNS: od-04 äger byggena, od-01 grekerna som mått, od-05 lösningens tumregel, km-060 tilldelningen på skrivna optioner — denna kurs äger livet däremellan."
+          },
+          {
+            "type": "insight",
+            "content": "En aktie äger du tills du säljer den. En option lånar du av tiden — och hyran börjar löpa samma dag."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — deltat som levande exponering",
+        "intro": "Positionens första sanning är exponeringen i aktieekvivalenter — och dess andra sanning är att den inte står stilla.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Översättningen är en rad: deltat gånger antal kontrakt gånger hundra. Vid köpet är straddeln nästan neutral: köpoptionen med deltat plus 0,52 och säljoptionen med deltat minus 0,48 ger nettodelta plus 0,04 per straddle — tio kontrakt gånger hundra aktier gånger 0,04 är fyrtio aktiers exponering. Så gott som balanserad, kan ägaren tro. Sedan rör sig aktien: åtta kronor upp, till 158. Grekerna svarar — köpoptionens delta växer till plus 0,63, säljoptionens krymper till minus 0,37, nettodelta blir plus 0,26. Samma rad igen: tio gånger hundra gånger 0,26 är tvåhundrasextio aktier. Positionen har mer än sexdubblat sin aktieexponering utan att ägaren fattat ett enda beslut — den som var neutral i måndags är bara neutral i måndags. Detta är förvaltningens första arbete: att läsa positionens aktuella exponering varje handelsdag, inte den som orderbekräftelsen visade. Notera också vad som händer på köpsidan av lösenpriset: om aktien i stället fallit åtta kronor hade säljoptionens delta vuxit och nettodelta blivit negativt — glidningen går åt båda håll, och den som bara räknar på det ena händer har lärt sig hälften av bokföringen"
+          },
+          {
+            "type": "tabell",
+            "content": "AKTIEEKVIVALENTER — STRADDLE 10 KONTRAKT, LÖSENPRIS 150, PÅHITTADE TAL: VID KÖPET: köpoption +0,52, säljoption −0,48, nettodelta +0,04 → 10 × 100 × 0,04 = 40 aktier · EFTER RÖRELSEN TILL 158: köpoption +0,63, säljoption −0,37, nettodelta +0,26 → 10 × 100 × 0,26 = 260 aktier · FÖRÄNDRINGEN: +220 aktier utan ett beslut — positionen är en annan · MORGONRUTINEN: räkna exponeringen på dagens kurser, inte på köpdagens."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan varje morgon är inte vad köpte jag — den är hur många aktier bär jag i dag. Svaret står inte i orderbekräftelsen, och det är aldrig samma två dagar i rad."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätning — gammans skörd och thetans hyra",
+        "intro": "Den köpta positionen betalar en daglig hyra för att få rätt till rörelse. Räkneläran mellan hyran och skörden är positionens puls.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt siffror på mekaniken: gamman 0,02 per aktie och krona, thetan minus 0,50 kronor per aktie och handelsdag — på tusen aktieenheter är hyran femhundra kronor per dag. En dag med åtta kronors rörelse skördar gammans vinst: hälften av gamman gånger rörelsens kvadrat, alltså 0,5 gånger 0,02 gånger 8 gånger 8, är 0,64 kronor per aktie — sexhundrafyrtio kronor på positionen, och netto för dagen efter thetan blir sexhundrafyrtio minus femhundra, plus hundrafyrtio kronor. En dag utan rörelse kostar femhundra. Därav break-even-rörelsen, den rörelse per dag som exakt betalar hyran: roten ur två gånger thetan dividerat med gamman — roten ur två gånger 0,50 delat med 0,02, alltså roten ur femtio, ungefär 7,1 kronor, knappt 4,7 procent av lösenpriset 150. Förhållandet är positionens ekonomi i ett tal: stort i förhållande till kursens vanliga dagliga rörelse och hyran är dyr i förhållande till skörden; litet och positionen betalar sig själv på rörelsen ensam. Notera att räkningen är förenklad — verklighetens delta och gamma är kurvor, inte konstanter, och volatilitetens inverkan (od-02:s värld) lämnas därhän — men pulstalet är ändå förvaltarens viktigaste enkla mått: det översätter grekerna till en enda fråga, hur mycket måste aktien röra sig i dag för att dagen ska betala sig?"
+          },
+          {
+            "type": "tabell",
+            "content": "GAMMA-THETA-RÄKNESTYCKET — PÅHITTADE TAL, 10 KONTRAKT = 1 000 AKTIEENHETER: THETAN −0,50 kr per aktie och handelsdag → hyra 500 kr/dag · DAG MED 8 KR RÖRELSE: 0,5 × 0,02 × 8 × 8 = 0,64 kr per aktie → 640 kr · NETTO FÖR DAGEN: 640 − 500 = +140 kr · STILLASTÅENDE DAG: −500 kr · BREAK-EVEN-RÖRELSEN: roten ur (2 × 0,50 / 0,02) = roten ur 50 ≈ 7,1 kr ≈ 4,7 procent av 150 · RÄKNINGEN FÖRENKLAD: delta och gamma är kurvor i verkligheten — pulstalet är en första översättning, inte en prissättning."
+          },
+          {
+            "type": "insight",
+            "content": "Thetan är hyran och gamman är det hyran köper: rörelse. Den stillastående dagen kostar femhundra kronor — och samma mekanik gör att åtta kronors rörelse betalar mer än en dags hyra. Förvaltningen är att veta vilket av lägena positionen lever i."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — band, order och restvärde",
+        "intro": "Omhedging kan aldrig vara varje prissteg — beslutet måste ha en tröskel. Bandet är den tröskeln, och restvärdeslogiken styr när positionen alls ska leva vidare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bandet är en skriven regel för omhedging: nettodelta får röra sig fritt inom ett intervall, och först när det lämnar intervallet justeras exponeringen. Kursens exempelband är plus och minus 0,10 nettodelta per straddle — på tio kontrakt plus och minus hundra aktier. Vid nettodelta plus 0,26, alltså tvåhundrasextio aktier, är bandet passerat: justeringen säljer hundrasextio aktier och lämnar positionen vid plus 0,10, alltså hundra aktier — inne i bandet igen, men inte noll. Det är avsiktligt: bandet låter positionen behålla en liten exponering åt det håll den redan rört sig, så att inte varje prissteg blir en affär. Bandets bredd är en avvägning mellan två kostnader: smalt band ger många justeringar och sprider transaktionskostnaden — spreaden, som am-01 lär läsa — medan brett band ger långa perioder med obalanserad exponering. Marknadsgaranten som lever av att hedgea gör avvägningen varje dag; privatpersonen gör den sällan, och då är det hellre ett brett band än inget. Vid ordern gäller verktygen från am-familjen: begränsade order i aktien, aldrig marknadsorder i en tunn bok. Och stängningsfrågan — restvärdeslogiken: den sista veckans tidsvärde är litet i kronor, men gamman är som störst just där; positionens risk är som högst när dess pris är som lägst. Restvärdet ska alltså inte samlas in av slöhet — en position som inte längre betalar sin risk stängs eller rullas medvetet, medan den som gör det får leva. Beskattningen av varje gren av beslutet ägs av sj-04."
+          },
+          {
+            "type": "definition",
+            "content": "HEDGEBAND — skriven tröskel för omhedging: exponeringen får glida inom bandet, justeras först utanför · EXEMPLET: band ±0,10 nettodelta per straddle = ±100 aktier på 10 kontrakt; vid +0,26 säljs 160 aktier till +0,10 · BANDBREDDENS AVVÄGNING: smalt band = många order och spreadkostnad (am-01), brett band = längre obalans · RESTVÄRDESLOGIKEN — sista veckans tidsvärde är litet i kronor men gamman är som störst: risken är högst när priset är lägst · GRÄNS: sj-04 äger beskattningen av varje beslutsgren."
+          },
+          {
+            "type": "insight",
+            "content": "Ett band är en överenskommelse med sig själv om när beslutet får vänta. Utan band blir omhedgingen ett humör; med band blir den en metod — och humöret är alltid dyrare."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — förfallodagen och de tysta glidningarna",
+        "intro": "Förvaltningens fel är sällan dramatiska — de är glidningar som ingen lyfter på. Sex fällor täcker de flesta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är glidningen själv: positionen blir en annan utan beslut, och den som läser orderbekräftelsens exponering i stället för dagens lever marknadsrisk den aldrig valde — fyrtio aktier i måndags var tvåhundrasextio på fredag. Andra fällan är pinningsrisken: står aktien vid 150,05 på förfallodagen — femtio öre från lösenpriset — vet ingen i förväg vilka optioner som löses; ägaren kan öppna nästa handelsdag med eller utan tusen aktier, och planen måste rymma båda utfallen. Tredje fällan är gammans tysta tillväxt: sista veckorna växer gamman kraftigt även om aktien står stilla — positionen förändras i karaktär utan en enda notis i kurslisten, och den som sover till förfallo vaknar i en annan position. Fjärde fällan är likviditeten: yttersta lösenpriser och sista dagar har täta böcker, och spreaden — am-01:s läsning — kan äta ett restvärde som såg rimligt ut på skärmen. Femte fällan är kapitalbehovet: automatisk lösen av tusen aktier à 150 kronor kräver 150 000 kronor — tusen gånger hundrafemtio — i kontanter eller marginalutrymme, och kapitalet måste stå klart på förfallodagen, inte dagen efter, medan tilldelningen på den skrivna sidan är km-060:s värld. Sjätte fällan är kalendern: thetan ränsas även över helgen medan gamman bara arbetar när börsen är öppen — den som köper på fredag betalar för tre kalenderdagar som inte kan producera någon rörelse alls. Gemensam rot: en optionsposition har en inbyggd klocka, och alla sex fällorna är sätt att låtsas att den inte finns."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam rot: klockan. Positionen åldras varje dag, och förfallodagen är ingen händelse att oroa sig för i sista veckan — den är positionens sista datapunkt, utsatt sedan första dagen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — förvaltarens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga dagliga läsningen av en position som lever.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur många aktieekvivalenter bär positionen i dag — deltat på dagens kurser, inte på köpets? Fråga två: hur mycket skrivs exponeringen om per krona — vilken är gamman, och växer den mot förfallo? Fråga tre: vad kostar dagen — thetan i kronor, och vad är break-even-rörelsen den ska betala? Fråga fyra: var står bandet, och var står deltat mot det — är justeringen ett beslut i dag eller en regel som redan slagit till? Fråga fem: vad händer på förfallodagen i tre lägen — aktien vid 140, 150 och 160 — i lösta kontrakt, aktier, kapitalbehov och skatt (sj-04)? Den som svarar på de fem frågorna har positionen under uppsikt i stället för tvärtom, och svaren tar fem minuter när rutinen satt. Detta är utbildning i mekanik med påhittade exempel — inte uppmaningar att köpa, sälja eller skriva något värdepapper; avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Förvalta en position på papper till dess förfall: välj en noterad aktie, ett lösenpris och en förfallodag minst en månad bort, och anteckna en köpt straddles pris från dag ett — påhittade kontraktsantal räcker. Logga varje handelsdag: aktiekurs, positionens nettodelta i aktieekvivalenter, thetan i kronor och break-even-rörelsen. Skriv bandet före första loggraden, notera varje dag bandet slår till och vilken justering regeln ger. På förfallodagen: räkna utfallet i tre lägen — aktien under, vid och över lösenpriset — inklusive kapitalbehov och beskattning enligt sj-04:s läsning. Jämför till sist loggen med det faktiska förloppet: vad kostade hyran sammanlagt, vad skördade rörelsen, och var stod bandet mot humöret? Upprepa en gång till med ny förfallodag — förvaltning är en vana, inte en insikt."
+          },
+          {
+            "type": "insight",
+            "content": "Optionsfamiljens karta har nu sex djupsteg: grunderna, volen, emissionens instrument, kombinationerna, utdelningen — och förvaltningen. Bygget avgör vad du har rätt till; förvaltningen avgör vad du har kvar när klockan slagit."
+          }
+        ]
+      }
+    ]
   },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",

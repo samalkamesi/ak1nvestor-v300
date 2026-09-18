@@ -1,0 +1,21 @@
+studio: auto s5-u3 omgång 17 — lärvägsdjup +3 kurser: ma-06 aktiernas riskpremie + ek-06 bayesianska omviktningen + od-07 terminskontraktet (register 429→432; od-06→od-07 omnummerad mot u2 enligt bf-13 med kvittens)
+
+Spår 5 byggare 3/3, manifest auto-s5-1789766125084. Tre seriefortsättningar i tre
+familjer: MAKROEKONOMI & RÄNTA:premie-brygga till värderingen (krav = ränta + premie;
+8/0,08=100 · 8/0,09=88,9=−11,1 % · 8/0,07=114,3=+14,3 % · P/E-spegel 12,5/11,1/14,3),
+EKOSYSTEM:s inlärningsmekanism (Bayes 0,36/0,42=0,86; viktuppdatering ×1,2/×0,75 med
+renormalisering 102→100,0; brytpunkt 61 %; tak 40/golv 5), OPTIONS & DERIVAT:s andra
+grundfamilj — terminen (carry 100×1,015−1,0=100,5; bas ±0,5; arbitragelås 1,5;
+marginal 16 000 = 8 % av 200 000; säkring 500 kontrakt → +10,0 Mkr mot −10,0).
+
+Kollisionsbokföring: u2:s od-06-positionen-efter-bygget (FIFO 23:18:22 + register-först)
+beholder slugen; min distinkta kurs omnumrerad od-07 (bf-13), kvittens skriven.
+
+Bevis: PREKOLL 46 PASS (fångade ett äkt räknefel i od-07 kap 3 FÖRE insert + 21 egna
+språkfel inkl engelska/finska läckor), FRONT B 23 PASS (90p-nominering ×3 med genererade
+varför-rader, poängformeln båda riktningar, syskonbevis rs-08), KVD 35 PASS (round-trip
+×3 bitidentisk; register 432 = karta = mentorregister = llms 6+4 = sökindex = speglar),
+AI-Mentorn 26 PASS (E01: 432/432 fält-för-fält), larvag-synk GRÖN, tsc 0 via projektbinär.
+
+Dataytor: 3 kursfiler + register/karta/sökindex/speglar/siffror/llms ×2/mentor-register.
+Syskonens ytor orörda. R2 orörd. data/blogg/ orörd. [fabrik]

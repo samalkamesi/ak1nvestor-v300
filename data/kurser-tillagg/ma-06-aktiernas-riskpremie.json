@@ -1,0 +1,144 @@
+{
+  "slug": "ma-06-aktiernas-riskpremie",
+  "category": "MAKROEKONOMI & RÄNTA",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Aktiernas riskpremie — varför börsen betalar mer än statsobligationen",
+  "summary": "MAKROEKONOMI & RÄNTA-familjens sjätte steg: aktiernas riskpremie, skillnaden mellan vad börsen förväntas avkasta och vad statsobligationen betalar — den premie som betalar ägandets osäkerhet. Kursen lär grundräkningen med två tillgångar (aktier 8,0 procent mot obligation 2,0 procent ger premien 6,0 procentenheter), vad premien betalar för (svängningarna: aktierna rör sig 17 procent mot obligationernas 6, och faller mer än 20 procent i 6 av 40 år mot obligationernas 1), historiemätningen baklänges (exempelserien aktier 9,0 procent mot obligation 3,0 procent i ett helt sekel, och 30-årskraften 1,08 upphöjt till 30 lika med 10,1 mot 1,02 upphöjt till 30 lika med 1,81 — skillnaden 5,6 gånger), och kopplingen till värderingen: aktiens avkastningskrav är riskfri ränta plus premie (2,0 plus 6,0 lika med 8,0 procent), och när premien stiger till 7,0 sjunker värdet av ett kassaflöde 8 kronor från 100 till 88,9 kronor (minus 11,1 procent), när den faller till 5,0 stiger det till 114,3 kronor (plus 14,3 procent). Genomgående utbildning i att räkna och läsa mekanismen, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna aktiernas riskpremie som skillnaden mellan två förväntade avkastningar: aktier 8,0 procent minus statsobligation 2,0 procent lika med 6,0 procentenheter — och veta att båda talen måste bära samma valuta, samma period och samma skattenivå för att subtraktionen ska betyda ägandets risk och inte måttstockens skillnader. Förklara vad premien betalar för: aktiemarknadens svängningar (17 procent mot 6 i exempeltalen) och nedgångsårens frekvens (6 av 40 år med fall över 20 procent mot obligationernas 1 av 40) — premien är priset på att bära den ojämna resan, inte ett löfte om gratis avkastning. Mäta premien baklänges med historien: exempelseklets 9,0 procent för aktier mot 3,0 för obligationer ger samma 6,0 procentenheter, och ränta-på-ränta gör skillnaden till 10,1 mot 1,8 på trettio år (1,08 upphöjt till 30 lika med 10,1; 1,02 upphöjt till 30 lika med 1,81). Räkna premien in i värderingen: avkastningskravet är riskfri ränta plus premie (2,0 plus 6,0 lika med 8,0 procent), och ett kassaflöde 8 kronor är värt 100 kronor vid 8,0 procents krav men 88,9 vid 9,0 (minus 11,1 procent) och 114,3 vid 7,0 (plus 14,3 procent) — premiens rörelse är värderingens motor. Läsa P/E-spegeln: avkastningskrav 8,0 procent motsvarar P/E 12,5 (1 delat med 0,080), krav 9,0 motsvarar 11,1 och krav 7,0 motsvarar 14,3. Ställa de fem läsningsfrågorna till varje premiesiffra — mot vilket alternativ, vilket fönster, vad ingår i aktiens tal, vad är prissattjust nu, vad skulle flytta premien.",
+  "why": "MAKROEKONOMI & RÄNTA-familjen har fem egna steg — transmissionsmekaniken (ma-01), lönebildningen (ma-02), realräntan (ma-03), konjunkturindikatorerna (ma-04) och kreditpremien (ma-05) — men ingen av dem äger den premie som binder samman familjen med börsen själv: aktiernas riskpremie, avkastningen över statsobligationen. Kreditpremien (ma-05) jämför bolagets LÅN mot statens; denna kurs jämför AKTIEÄGANDET mot utlåningen — samma subtraktion, andra instrument, och tillsammans täcker de två premiens hela familj. Sond mot registrets 426 kurser: fraserna aktiernas riskpremie och equity risk ger noll träffar bland kurserna — ordet riskpremien förekommer endast i ma-05:s dekomposition av kreditspreaden (bolagets lån) och i förbifarten i od-02 — medan varje värderingskurs (km-007 DCF, km-008 WACC) vilar på talet som premiekursen skulle lära ut: avkastningskravet är riskfri ränta plus premie. Realräntan (ma-03) äger inflationens avdrag och kreditpremien (ma-05) låntagarrisken — men ägarriskens pris saknar sin egen kurs, trots att det är det enda tal som förklarar varför samma bolag är värt 100 vid en premie och 89 vid en annan. Kursen kräver bara addition, division och tålamod med långa serier — och ger den enskilt starkaste bryggan mellan familjens räntekurser (km-054) och värderingsfamiljens multiplar (vr-04).",
+  "history": {
+    "origin": "Idén att aktier måste avkasta mer än säkra papper är äldre än några indexserier: i det tidiga nittonhundratalets USA noterade ekonomer att industriaktier gav högre utdelningsavkastning än obligationer just för att allmänheten misstrodde aktien som tillgång — utdelningen skulle gottgöra risken. Den moderna frågan väcktes när de första långa avkastningsserierna sammanställdes i USA under mellankrigstiden: plötsligt gick det att RÄKNA vad ägandet historiskt betalat över utlåningen, och talet blev ett eget studieobjekt.",
+    "evolution": "Efter andra världskriget växte premien till akademiens mest analyserade finansiella tal: de stora avkastningsdatabaserna som byggdes i USA från 1926 och framåt gjorde «hur mycket betalade aktier över obligationer» till en räkbar fråga för varje sekelhalva, och finansteorins genombrott på femtiotalet gav förklaringen — premien är kompensationen för svängningarna, priset på en resa vars utfall är osäkert. Samtidigt växte den historiska paradoxen fram: den uppmätta premien visade sig större än vad rimlig riskaversion förmådde förklara, en gåta som genererade en hel forskningslitteratur och gjorde talet till en ständigt omdebatterad storhet snarare än ett fakta.",
+    "modern": "I dag är premien den tysta variabeln i varje värdering: när en analytiker rabattar framtida kassaflöden med 8 i stället för 9 procent har premien rört sig en procentenhet, och när börsen faller utan att någon nyhet förändrat bolagen är det ofta premien som breddats — samma bolag, högre krav. Centralbankernas årtionden av låga räntor (km-056) pressade också diskussionen om premiens normalnivå: är 6 procentenheter historiens lag eller historiens ärftlighet? Kursens svar är metodiskt, inte profetiskt: läs fönstret, läs förklaringarna, och räkna alltid konsekvensen i värdering — för det är där premien slår."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Två tillgångar, två priser — ägandets premie som subtraktion", "minutes": 4 },
+    { "num": 2, "title": "Vad premien betalar för — svängningarnas prislista", "minutes": 4 },
+    { "num": 3, "title": "Historiens siffra — att mäta premien baklänges", "minutes": 4 },
+    { "num": 4, "title": "Premien i värderingen — från procentenheter till aktievärde", "minutes": 4 },
+    { "num": 5, "title": "Var talen finns — serier, krav och den egna räkningen", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — fem frågor till varje premie", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Två tillgångar, två priser — ägandets premie som subtraktion",
+      "minutes": 4,
+      "intro": "Familjens tidigare kurser har subtraherat räntor mot varandra; här är den sista och största subtraktionen: vad aktieägandet förväntas ge över vad utlåningen ger.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ställ två tillgångar bredvid varandra. Den ena är ett index av börsens aktier, som i exemplen förväntas avkasta 8,0 procent per år över lång tid — prisökning och utdelning tillsammans. Det andra är statsobligationen, som ger 2,0 procent per år med nästan full säkerhet att beloppet betalas tillbaka. Subtraktionen ger 8,0 minus 2,0 lika med 6,0 procentenheter: det är aktiernas riskpremie — den extra avkastning som ägandet måste bjuda över utlåningen för att någon ska välja den ojämna resan före den jämna. Kursen använder samma läseregel som kreditpremien (ma-05) och med samma skärpa: en premie är bara ett tal om båda sidor mäts på samma sätt — samma valuta, samma periodlängd, samma behandling av skatt och kostnader. En aktieavkastning före courtage mot en obligationsränta efter är ingen premie utan ett måttfel. Notera också vad subtraktionen INTE säger: den säger inte att aktier ÄR bättre, bara att marknaden historiskt betalat för deras osäkerhet — om den kommande trettioårsperioden blir obligationens, är premien ingen garanti. Det är hela kursens första och viktigaste budskap: premien är ett pris, inte ett löfte, och priser förändras med det de prissätter."
+        },
+        {
+          "type": "definition",
+          "content": "Aktiernas riskpremie — skillnaden mellan börsens förväntade totalavkastning och statsobligationens avkastning med matchande horisont, mätt i procentenheter per år. Talet är marknadens pris på att bära aktiernas osäkerhet: en högre premie betyder högre krav på ägandet, inte sämre bolag."
+        },
+        {
+          "type": "insight",
+          "content": "Familjen har nu tre subtraktioner som tillsammans plockar isär räntan och avkastningen: realräntan (ma-03) drar bort inflationen och lämnar tidens pris, kreditpremien (ma-05) drar bort statens ränta från bolagets lån och lämnar låntagarrisken, och aktiernas riskpremie drar bort obligationsräntan från börsen och lämnar ägarrisken. Tre frågor, tre subtraktioner, en och samma disciplin: jämför lika med lika."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Vad premien betalar för — svängningarnas prislista",
+      "minutes": 4,
+      "intro": "Varför ska ägandet betala 6,0 procentenheter mer? Svaret finns inte i bolagens kvalitet utan i resans karaktär: samma årsgenomsnitt nås på helt olika vägar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Låt exempeltalen måla de två resorna. Aktiemarknaden som helhet svänger med en standardavvikelse kring 17 procent på årsbasis (rs-01 äger volatilitetens hela mätning) — det innebär att ett normalår kan avvika många procentenheter från väntat, och att extremiteterna är talrika. Statsobligationen svänger kring 6 procent. Ännu tydligare är nedgångsåren: i en exempelserie av 40 år föll aktierna mer än 20 procent i 6 av åren — 6 delat med 40 lika med 15 procent av åren, ett år av sju — medan obligationerna gjorde detsamma i 1 av 40, alltså 2,5 procent. Det är detta premien köper: inte en sämre tillgång utan en krångligare väg till samma mål. Räkna premiens pris per riskenhet: 6,0 procentenheter delat med 17 procent svängning ger ungefär 0,35 procentenheter premie för varje procentenhet svängning — en krångelvräkning som gör de två tillgångarna jämförbara i en enda siffra. Men notera listans sista rad också: premien betalar för SVÄNGNINGARNA, inte för katastrof. Ett år då aktierna faller 35 procent utplånar mer än fem års premie (5 gånger 6,0 lika med 30 procentenheter — och utfallet slår till i ett enda år), vilket är förklaringen till att premien måste vara just flera procentenheter: den ska bära inte bara de många små svängningarna utan de få stora fallen. Kursen levererar mekaniken; hur mycket osäkerhet en enskild läsare bör bära är portföljens fråga (pf-familjen) och aldrig en kursrekommendation."
+        },
+        {
+          "type": "tabell",
+          "content": "Mått | Aktier (exempel) | Statsobligation (exempel) | Läsning\nFörväntad avkastning | 8,0 procent per år | 2,0 procent per år | Premien 6,0 procentenheter\nÅrssvängning | 17 procent | 6 procent | Aktiernas väg är tre gånger krokigare\nÅr med fall över 20 procent | 6 av 40 | 1 av 40 | 15 procent av åren mot 2,5 procent\nPremie per riskenhet | 6,0 ÷ 17 ≈ 0,35 procentenheter per procent svängning | — | Krånglets pris i en siffra"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens tal är exempeltal, valda för räkbarhet — men deras storleksordning är sekelseriernas: aktiers svängning i nivå kring en sjundedel av kapitalet på årsbasis, och nedgångar över en femtedel i genomsnitt ett av sex till åtta år. Premien är ingen gåva; den är priset på att sitta kvar genom åren som tabellens tredje rad räknar."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Historiens siffra — att mäta premien baklänges",
+      "minutes": 4,
+      "intro": "Den mest citerade premien är den som redan hänt: vad gav aktier över obligationerna, år för år, sekel ut? Men historien är ett instrument som måste läsas med sin bruksanvisning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Baklängesmätningen är enkel att beskriva: ta en lång serie av börsens totalavkastning (prisförändring plus återinvesterad utdelning — vr-04 äger avkastningens tre källor), ta motsvarande serie för statsobligationer, och räkna skillnaden. I kursens exempelsekel gav aktierna 9,0 procent per år och obligationerna 3,0 — skillnaden 6,0 procentenheter, samma tal som framåtblickande exempel. Sedan kommer ränta-på-ränta, premiens egna bevis: en krona växer till 1,08 upphöjt till 30 efter trettio år med 8,0 procent — det är 10,1 kronor — medan obligationens krona växer till 1,02 upphöjt till 30 lika med 1,81. Förhållandet 10,1 delat med 1,81 är 5,6: efter ett halvt sekel ägande bär den ena kronan mer än fem av den andra. Men historien har tre bruksanvisningsvarningar. Den första är fönstret: välj de senaste tjugo åren i stället för ett sekel, och samma marknad kan visa en premie på 2 procentenheter — eller 10 — utan att något fundamentalt förändrats; korta fönster mäter periodens tur, inte ägandets pris. Den andra är överlevnaden: de långa serierna kommer från marknader som inte dog — den som mäter premien bara på historiens vinnare får ett tal som är för vackert för att vara sant. Den tredje är riktningen: historien mäter vad som HÄNDE, och frågan i värderingen gäller vad som KRÄVS — baklängespremien och kravpremien är släkt men inte identiska, och kapitel fyra visar skillnaden i kronor. Med de tre varningarna läsna är historien ändå osannolikt värdefull: den är den enda långa serie premien har."
+        },
+        {
+          "type": "tabell",
+          "content": "Mätning | Exempeltal | Räkning | Läsning\nBaklänges, sekel | Aktier 9,0 · obligation 3,0 | 9,0 − 3,0 = 6,0 procentenheter | Samma nivå som framåtblickande exempel\nTrettio år med skillnaden | Aktier 8,0 · obligation 2,0 | 1,08³⁰ = 10,1 · 1,02³⁰ = 1,81 | Ägandets krona bär 5,6 gånger mer\nKort fönster | Senaste 20 åren | — | Kan visa 2 eller 10 utan ny grund\nÖverlevnad | Vinnarmarknadernas serie | — | Talet är vinkat uppåt"
+        },
+        {
+          "type": "insight",
+          "content": "1,08 upphöjt till 30 lika med 10,1 och 1,02 upphöjt till 30 lika med 1,81 — två exponenter och en division är hela beviset för att 6,0 procentenheter, som låter abstrakt på ett år, är en förmögenhet på ett yrkesliv. Premiens största egenskap är att den är lång: den betalas ut i små årliga tillskott som bara blir en bergskedja i termer av år, inte månader."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Premien i värderingen — från procentenheter till aktievärde",
+      "minutes": 4,
+      "intro": "Premiens verkliga makt visar sig inte i historieboken utan i varje värdering: avkastningskravet är riskfri ränta plus premie, och kravet är det tal som delar framtiden i värde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygg avkastningskravet som en summa: riskfri ränta 2,0 procent (km-054 äger räntans grunder) plus aktiernas riskpremie 6,0 procentenheter ger aktiens avkastningskrav 8,0 procent — det tal som i en DCF-värdering (km-007) delar framtida kassaflöden till dagens värde, och som i WACC (km-008) möter skuldens billigare krav. Ta ett bolag med ett bestående kassaflöde 8 kronor per aktie och aktien: vid krav 8,0 procent är värdet 8 delat med 0,080 lika med 100 kronor. Flytta nu premien en enda procentenhet. Stiger den till 7,0 — marknaden kräver mera för ägandets osäkerhet, kanske efter en kris (ma-05:s termometerläsning är släkten) — blir kravet 9,0 procent och värdet 8 delat med 0,090 lika med 88,9 kronor: minus 11,1 procent, utan att bolaget förändrats en krona. Faller premien till 5,0 blir kravet 7,0 procent och värdet 8 delat med 0,070 lika med 114,3 kronor: plus 14,3 procent. Detta är kursens kärntabell: premiens procentenhet är värderingens procenttal, och börsens svåra år utan bolagsnyheter är ofta just en premievidgning. Spegeln heter P/E: ett avkastningskrav 8,0 procent motsvarar en vinstavkastning på samma 8,0 procent, alltså P/E 12,5 (1 delat med 0,080); krav 9,0 motsvarar P/E 11,1 (1 delat med 0,090) och krav 7,0 motsvarar P/E 14,3 (1 delat med 0,070). Multiplarnas resa (vr-04:s tredje källa) och premiens rörelse är samma fenomen i två språk — och den som kan översätta ser att en börs som blivit dyrare utan att vinsten växte nästan alltid bär en premie som smalnat."
+        },
+        {
+          "type": "tabell",
+          "content": "Premie | Avkastningskrav (2,0 + premie) | Värde av 8 kr kassaflöde | Ändring | P/E-spegel (1 ÷ krav)\n5,0 procentenheter | 7,0 procent | 8 ÷ 0,070 = 114,3 kr | +14,3 procent | 14,3\n6,0 procentenheter | 8,0 procent | 8 ÷ 0,080 = 100 kr | utgångsläge | 12,5\n7,0 procentenheter | 9,0 procent | 8 ÷ 0,090 = 88,9 kr | −11,1 procent | 11,1"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellen förklarar finansens mest förvirrande fall: börsen sjunker 11 procent och ingen nyhet förklarar varför. Svaret står i tredje raden — premien vidgades en procentenhet. Samma bolag, samma kassaflöde, högre pris på osäkerheten. Omvänt gäller att en smalnande premie kan göra börsen «dyr» i P/E samtidigt som den är neutralt prissatt i krav — de två språken måste läsas tillsammans."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Var talen finns — serier, krav och den egna räkningen",
+      "minutes": 4,
+      "intro": "Premien är inte ett publicerat dagsiffra utan en storhet som måste byggas — ur historiska serier, ur analytikers krav eller ur den egna värderingen. Kapitlet visar de tre vägarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första vägen är historiens: de långa totalavkastningsindex som publiceras för svenska och utländska marknader bär både aktiens och obligationens serie, och en subtraktion år för år (med kapitel tre:s varningar om fönster och överlevnad) ger den baklängesmäta premien. Den andra vägen går genom avkastningskravet: analyshus och värderingsmodeller publicerar sina krav, och differensen mot den matchande statsräntan (ma-05:s paritetsregel — samma löptid, i praktiken långa serier för en lång tillgång) ger deras premie; skillnader mellan husen är i sig information, för de visar hur olika marknaden definierar ägandets pris. Den tredje vägen är den egna: den som själv värderar bolag (km-007:s kassaflödesmodell) bär redan en premie i sitt rabattsats — veta vilket, och talet är räknebart ur varje publicerad värdering: en DCF till 100 kronor för ett bestående kassaflöde 8 kronor avslöjar kravet 8,0 procent, och minus den aktuella räntan 2,0 står premien där: 6,0 procentenheter. Tre praktiska vakthållningar hör hemma på alla tre vägar. Håll realtalen i schack: realräntan (ma-03) och inflationen (km-055) kan förvränga en nominellt mätt premie om den ena serien är real och den andra nominell. Håll totalavkastningen hel: en aktieserie utan utdelning är ingen aktieserie (vr-04). Och håll perioden ärlig: en premie mätt under tio gyllene år säger ingenting om ägandets pris — bara om periodens. Den som bygger en egen liten premiebok — en rad per kvartal med tre tal: aktieserie, matchande obligationsränta, differens — får efter några år något som ingen kurs kan ge: ett eget minne av hur talet andas med sin tid, och ett läsminne till nästa gång börsen flyttar sig utan nyheter."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räk en egen premie i fyra steg: (1) Hämta börsens totalavkastning för det senaste året (indexet med utdelningar återinvesterade) och den långa statsräntans utfall — båda är offentliga tal. (2) Räkna differensen i procentenheter och skriv ned den med datum. (3) Välj ett bolag du följer och hitta (eller räkna fram) kassaflöde per aktie i en publik värdering; dividera värde med kassaflöde för att få dess avkastningskrav, och dra ifrån dagens långa statsränta — det är värderarens premie just nu. (4) Jämför dina två tal och notera skillnaden: är historiens premie bredare eller smalare än kravets? Upprepa nästa kvartal — efter fyra omgångar börjar serien andas, och kapitel fyrs tabell blir läsbar på riktiga tal."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor till varje premie",
+      "minutes": 4,
+      "intro": "Kursens sista kapitel för samman subtraktionen, svängningarna, historien och värderingen till ett förhörsmönster: fem frågor som gör varje premiesiffra läsbar — och som håller metoden öppen för omprövning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sammanförelsen i fem frågor. Fråga ett: mot vilket alternativ? — premien kräver sin statsobligation, och utan matchande horisont och valuta är talet ett måttfel (kapitel ett). Fråga två: vilket fönster? — ett sekel bär ägandets pris, ett decennium bär periodens tur (kapitel tre). Fråga tre: vad ingår i aktiens tal? — totalavkastning med återinvesterad utdelning, före eller efter kostnad på BÅDA sidor (kapitel ett och fem). Fråga fyra: vad är prissatt just nu? — den framåtblickande premien, alltså kravet minus räntan, och därmed P/E-spegeln (kapitel fyra): en börs till P/E 14,3 vid ränta 2,0 bär en premie kring 5,0 procentenheter — räkna det själv och talet slutar vara en hemlighet. Fråga fem: vad skulle flytta den? — svängningarnas pris (kapitel två) förändras med kronorna: en kris breddar premien (kravet stiger, värdet faller — ofta utan bolagsnyheter), ett lugnt decennium smalnar den, och realräntans och kreditpremiens rörelser (ma-03, ma-05) är premiens närmaste släkt i familjens ekvation. Fem frågor, fyra kapitel verktyg, en subtraktion. Kursens plats i familjen är därmed satt: ma-01 äger kedjan från styrränta till bolaget, ma-02 kostnadsspiralen, ma-03 inflationens avdrag, ma-04 månadens signaler, ma-05 låntagarens risk — och denna kurs ägarriskens pris, den premie som binder räntefamiljen till värderingsfamiljens multiplar. Avslutningshållningen är kursens hela väsen: detta är utbildning i att räkna och läsa en mekanism, inte uppmaningar i någon riktning — valet mellan den jämna och den krokiga vägen, och priset läsaren är beredd att bära för osäkerheten, är alltid läsarens eget beslut på egen analys, och de fem frågorna är byggda för att ställas igen nästa kvartal, nästa kris, nästa gång börsen rör sig utan att någon sagt varför."
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor och en subtraktion — det är hela kursen. Resten är träning: en premie mätt per kvartal, en P/E-spegel räknad på riktiga tal, och med åren ett eget minne av hur ägandets pris andas — från lågkonjunkturernas 9 procentenheter till lugnperiodens 4 — är skillnaden mellan att läsa en kurs och att kunna ett hantverk."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch formulerade premiens vardag med sin förmåga att göra stora tal till vardagskunskap: aktier som faller 35 procent har fallit förr och faller igen, och den som inte tål resan ska inte räkna med premien. Hans berättelser om bolag som köpts i panik och sålts i eufori är i kursens språk premiens svängningar i aktion — samma bolag, olika pris på osäkerheten — och hans råd att veta varför man äger är premiens spegelvända sida: den som vet varför bär svängningarna, den som inte vet bär bara dem.",
+  "grahamSection": "Benjamin Grahams margin of safety är premien tillämpad i förväg: köp med rabatt så att kravet sjunker i värderingen medan kassaflödet står still. Grahams egen tids varning — att obligationer och aktier byter plats som billigast i olika epoker — är kursens subtraktion i berättad form, och hans krav på att veta sitt avkastningskrav före köpet gör premien till en förhandsräkning snarare än en efterkonstruktion.",
+  "ak1Section": "I AK1A:s metodik bär premien två roller: i AKM2-traditionens scenarioramar är premien en av de variabler som får röra sig mellan grenarna (en bredare premie pressar samtliga värden, en smalare lyfter dem — ek-05:s simuleringar gör kopplingen mätbar), och i portföljernas riskmått (rs-01:s volatilitet) är premien det tal som förklarar VARFÖR osäkerheten betalas. Arbetsflödet (ek-03) loggar vilket premieval varje analys bär, så att antagandet kan granskas och bytas — premien är en modells variabel, inte en sanning."
+}

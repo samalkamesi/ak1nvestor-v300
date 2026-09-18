@@ -1942,3 +1942,31 @@ DR-RPO-DIFF-2026-09-18-DAGPULS.json.
 Kö: (1) 09-20 03:20 jungfrukörningen; (2) 2026-10-13 02:30 första bladraderingen
 (oförändrat); (3) kedja 3-retentionens beteendeprov tidigast efter 09-20;
 (4) nästa födelsebevis 02:30 09-19.
+
+## 2026-09-18 16:43Z — s7-u2 (fabrik, manifest auto-s7-1789729524): nginx-cache-lager renodlat (o70) + OOM-återhämtningsfönstret 16:30–16:42Z
+
+**Händelse:** prod 502 16:30:33Z–16:42:19Z (~11,8 min). Rot: prod-synkens
+byggen 16:17Z och 16:27Z OOM-dödades (RAM-tak: fabrikens 3 s7-barn + next
+build > 8 GB); varje dödat bygge lämnade .next halvraderad ⇒ pm2 boot-loop
+("no production build") ⇒ errored (backoff, själv läker ALDRIG). Läkning:
+prod-synkens poll 16:37:06Z byggde GRÖNT (RAM-vaken släppte igenom),
+artefaktgrind + pm2 restart + prod 200 kl 16:42:19Z — exekt enligt design;
+inget manuellt ingripande behovdes (våg 100-regeln hölls: racea aldrig
+byggägaren under ett pågående fönster).
+
+**Åtgärd (planerad o66 §6-rest, körd EFTER prod 200):**
+/etc/nginx/sites-available/ak1a våg-96-D1-cacheblock renodlat — Next äger
+cache-policyn via next.config.ts headers() (o66): /og/ + /ak1a/ +
+/_next/static/ = enbar proxy_pass (nginx expires/add_header undertryckte
+Next-raderna HELT pa prod — dubbla/motstridiga rader borta); llms-regexen
+delad: = /llms.txt behaller nginx 24h (Next saknar regel), llms-full.txt =
+Next 3600+swr. sok-index/speglar ORÖRDA (enda lagret). Backup:
+/etc/nginx/sites-available/ak1a.bak-o70-20260918-164x; repo-spegel
+data/backups/server-nginx-ak1a.conf färskad. Verifierat: nginx -t GRÖN,
+graceful reload 16:43:16Z, FÖRE/EFTER-sweep maskinell (10+1 resurser, JSON i
+data/forskning/OPTIMERING/), prod 200 ×3, pm2 online.
+
+**Kö till drift-spåret:** OOM-kedjan är systemisk — fabrikens 3-barns-fönster
++ prod-synkens bygge overlappar; överväg RAM-vakt-höjning eller
+byggfenster-koordinering (fabriken ticker xx:05, synken xx: x1 — kollision
+var 10:e minut vid samtidig belastning).

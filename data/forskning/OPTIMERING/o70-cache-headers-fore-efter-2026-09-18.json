@@ -1,0 +1,150 @@
+{
+  "objekt": "o70 cache rond 4 — nginx-lagerstädning (spår 7)",
+  "spur": "7 prestanda",
+  "manifest": "auto-s7-1789729524 s7-u2",
+  "beskrivning": "FÖRE = prod med nginx våg-96-D1-lager aktivt (undertrycker Next). EFTER = D1-fyra-radersblock renodlat, Next äger /ak1a/+/og//llms-full, nginx behålls endast för ytor utan Next-regel.",
+  "fore": {
+    "ts": "2026-09-18T16:42:40.408Z",
+    "kalla": "https://lab.ak1nvestor.com",
+    "resurser": {
+      "/ak1a/favicon.svg": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=2592000",
+          "public"
+        ]
+      },
+      "/ak1a/logo/ikon-192.png": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=2592000",
+          "public"
+        ]
+      },
+      "/ak1a/logo/skulptur-mark.jpg": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=2592000",
+          "public"
+        ]
+      },
+      "/og/blogg/vad-ar-roe.png": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=2592000",
+          "public"
+        ]
+      },
+      "/manifest.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=3600, stale-while-revalidate=86400"
+        ]
+      },
+      "/llms-full.txt": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=86400",
+          "public"
+        ]
+      },
+      "/llms.txt": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=86400",
+          "public"
+        ]
+      },
+      "/sok-index.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=3600",
+          "public"
+        ]
+      },
+      "/speglar-slugar.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=3600",
+          "public"
+        ]
+      },
+      "/_next/static/chunks/0el5nt6-nk2y3.js": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=31536000",
+          "public, immutable"
+        ]
+      }
+    }
+  },
+  "efter": {
+    "ts": "2026-09-18T16:43:20.241Z",
+    "kalla": "https://lab.ak1nvestor.com",
+    "resurser": {
+      "/ak1a/favicon.svg": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=86400, stale-while-revalidate=604800"
+        ]
+      },
+      "/ak1a/logo/ikon-192.png": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=86400, stale-while-revalidate=604800"
+        ]
+      },
+      "/ak1a/logo/skulptur-mark.jpg": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=86400, stale-while-revalidate=604800"
+        ]
+      },
+      "/og/blogg/vad-ar-roe.png": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=604800, stale-while-revalidate=86400"
+        ]
+      },
+      "/manifest.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=3600, stale-while-revalidate=86400"
+        ]
+      },
+      "/llms-full.txt": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=3600, stale-while-revalidate=86400"
+        ]
+      },
+      "/llms.txt": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=86400",
+          "public"
+        ]
+      },
+      "/sok-index.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=3600",
+          "public"
+        ]
+      },
+      "/speglar-slugar.json": {
+        "status": 200,
+        "cacheControlRader": [
+          "max-age=3600",
+          "public"
+        ]
+      },
+      "/_next/static/chunks/0el5nt6-nk2y3.js": {
+        "status": 200,
+        "cacheControlRader": [
+          "public, max-age=31536000, immutable"
+        ]
+      }
+    }
+  }
+}

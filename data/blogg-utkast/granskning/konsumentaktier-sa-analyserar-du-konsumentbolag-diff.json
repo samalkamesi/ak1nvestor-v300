@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+  "granskadAv": "agentfabrik s1-u1 (auto-s1-1789713300301, 2026-09-18, anspråk 08:41 lokal)",
+  "rapport": "konsumentaktier-sa-analyserar-du-konsumentbolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — en falsk universums-superlativ (LVMH 66 'universumets högsta' bruttomarginal = i verkligheten rang 35 av 119 mätta i utkastets eget underlag; Evolution i samma bransch 100,0) + spannefel i sammanfattningen (konsument 14,1–100,0, universum −1,1–100,0) + description-superlativ motägd av guidens egen kropp (teknik 28,7 > konsument 24,2) + readingMinutes 2→7 mot publicerad praxis (max 240 ord/min av 55 poster; 701 ord/min i utkastet). I övrigt: 18 talpåståenden EXAKTA mot vintage 319a8b20 (universumträdet 120 bolag vid utkastets egen commit), byggarens egenrättade ROE-rang SANN, 5/5 räkneexempel korrekta, juridik ren (vakt: fynd 0 + grund true), 911 ren, 15/15 interna länkar 200, externa källor levande",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga gammalt-strängar maskinverifierade unika = exakt 1 träff i filen, och nytt-strängarna frånvarande i originalet). Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+      "falt": "body (Lyx-bullet under 'Vad är konsumentaktier')",
+      "gammalt": "LVMH:s bruttomarginal på 66 procent är universumets högsta: kunden betalar för varumärket, inte för tillverkningskostnaden.",
+      "nytt": "LVMH:s bruttomarginal på 66 procent är branschens högsta bland varumärkesbolagen — bara plattformsbolaget Evolution ligger högre: kunden betalar för varumärket, inte för tillverkningskostnaden.",
+      "orsak": "Superlativen falsk i utkastets eget underlag (vintage 319a8b20): 34 av 119 mätta bolag över LVMH:s 66,4 — däribrot Evolution i SAMMA bransch (100,0), Industrivärden/Öresund (100,0), Novo (82,0), Meta (81,8). Rättningen håller kontrasten inom branschens varumärkesbolag (närmaste under: McDonald's 57,4) och är sann i guidens egen taxonomi (Evolution = plattformsbolag enligt spel-bulletn) — samma fyndklass som finans C1+C2 och hälsa B1–B3"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+      "falt": "body (Sammanfattningen, punkt 2)",
+      "gammalt": "Bruttomarginalen är varumärkesmåttet: spannet 14–66 procent i universumet, och prissättningsmakten syns där först.",
+      "nytt": "Bruttomarginalen är varumärkesmåttet: inom branschen spänner den från 14 till 66 procent — Evolutions plattformsbrutto ligger utanför — och prissättningsmakten syns där först.",
+      "orsak": "Spannet 14–66 gäller inte 'i universumet': konsumentbranschens faktiska spann är 14,1–100,0 (Evolution 100,0 = branschens max) och universumets −1,1–100,0 (Polestar −1,1; storbankerna 0) i vintagen. Rättningen scoper spannet till branschens varumärkes- och handelsdel med Evolution explicit utanför — samma information, sann scope"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+      "falt": "description",
+      "gammalt": "DuPont-rakningen bakom branschens högsta ROE",
+      "nytt": "DuPont-rakningen bakom en av universumets högsta ROE",
+      "orsak": "Descriptionens superlativ motägs av guidens egen kropp ('näst högst av universumets tio branscher, efter teknik') och av underlaget: teknik 28,68 % > konsument 24,19 % (rank 2 av 10). 'En av universumets högsta' är sann och behåller kraften; ny längd 149 tkn inom mallens OG-tak 155"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+      "falt": "readingMinutes (metadata)",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 7",
+      "orsak": "1 401 ord (textrensat) på 2 minuter = 701 ord/min — nära tre gånger snabbare än den snabbaste publicerade posten (v09-roe-analys 240 ord/min av 55 mätta). Bloggfamiljens praxis ~ord/200 (substansrabatt-domen 09-17): round(1401/200) = 7"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json",
+      "falt": "body (Marginalens två världen, första stycket)",
+      "gammalt": "(universumets rådata, hämtad 2026-09-15)",
+      "nytt": "(universumets rådata, hämtad september 2026)",
+      "orsak": "Fem av de sex tal meningen bär (LVMH, Inditex, H&M, Electrolux, Volvo Cars) är 2026-09-03-rader i vintagen; bara Axfood (av meningens bolag) är en 2026-09-15-rad (Evolution och Nestlé likaså, men de finns inte i meningen). Datumangivelsen är fel för sitt eget innehåll — 'september 2026' täcker båda hämtningsfönstren"
+    }
+  ]
+}

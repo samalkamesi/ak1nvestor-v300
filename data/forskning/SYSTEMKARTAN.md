@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-17)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-18)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -1707,6 +1707,72 @@ sidrotation (FALLBACK_SIDOR bär 6 sidor — B12:s publik yta rutinmäts ej);
 (2) B12 klientfilens egna sviter (gap 1, tredje mätningen); (3) A3:s mjuka
 gap: dataset-medianer-beslut + assistent-panel (0 sviter kvar).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u2 manifest auto-s9-1789709700201 — E35 + E37 diffade mot verkligheten)
+
+Objektval: **störst rörelse sedan senaste passningen** (andrarondens regel).
+Båda passerades 09-17 07:14–07:15 — och är sedan dess spårens mest
+rörda ytor: E37 bar hela prestandaserien s7 (o45 flight, o49–o57
+prefetch/defer-kurerna, o61 PalettVakt-defern, o62 mobil-läsbarheten)
+och E35 bar kvalitetsvågen s8 (o46–o50 patch-kedjan, o55 döda länkar,
+o59 mimosa, o64 SSR-livssonden, o65 stormtriagen). Klaim i worklog
+FÖRE mätning; syskon u1/u3 hänvisade till andra system. Varje rad
+MÄTT egenhändigt 09-18 ~05:3x–05:5x lokal (vaktkörning, svitkörningar
+med sanna exitkoder, wc/ls/grep, live-sonder, protokoll-läsning):
+
+| Mått | Kartan (förra passningen) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| Vaktens kontroller (E35) | 11 kontroller | **12** — KONTROLL 12 SSR-livssonden (o64, 40a512be): o47:s blindhet botad, prod kan inte igen stå sjuk med 1 616 SSR-500 okända — sentinellrutter (/ /kurser /analyser /blogg /labb /en /ar) provas på loopback i VARJE vaktkörning |
+| EGEN vaktkörning (E35) | 11/11 PASS GRÖN (09-17 05:09Z) | **12/12 PASS · 0 fel · 0 manuella · GRÖN** (egen körning 05:39:43Z, exit 0) — inkl. sektion 12 och typbaslinjen (kontroll 11, tsc projektbinär) |
+| Testsviter (E35) | 74 (mätt 09-17 omg 11) | **90** (ls verktyg/testa-*.mjs — +16 på ett dygn) |
+| Feljakts-systemet (E35) | outtalt (endast o25-köpost) | **STORMTRIAGEN LEVER** (o65, e5eca448): backlog 245/245 bedömda (FÖRE 241 öppna/97 HÖG-KRIT → EFTER 0/0), ledgern 245 fyndrader + 243 bedömningsrader (egen wc — differensen = nyckelkollisionerna, bokade hos verktygsägaren), stormar-grinden allt-eller-inget; svit **20/20 PASS** egen körning (domklasser 4) |
+| Döda-länksvakt (E35) | 3 012 sökvägar / 0 fynd (09-15) | **INSTRUMENTET KURATERAT** (o55, 957272f8): 3 473/0 + negativt kontrollfall |
+| Prefetch-serien (E37) | blogg ×3 (o37/o41) + koddelning o27/o31 | **TOLV kurer till**: o45 flight (393 kursobjekt ur RSC-payloaden), o49 /logga-in (2→0), o50 logo ×3 omgångar, o51 kurskort-lista, o52 blogginlägg (?_rsc 5→0), o53 chat-defer (rIDLE 2 500 ms), o54 kursiv-preload (LCP-elementet), o56 herolänkar (**/ _rsc 5→3 · requests 45→38 · transfer 633,1→590,8 KiB**), o57 LasyGlobal tvåstegs (8 s + idle), o61 PalettVakt-defer (15–21 K-familjen ur TBT-fönstret) |
+| Lighthouse-band / (E37) | nattfacit 66 poäng (o38) | **P61 · LCP 5 162 · TBT 675 · CLS 0** (o56-EFTER-tvärsnittet, bygge stE6SStz — band, ej kriterium; /kurser P57 · TBT 1 074; /blogg P66) |
+| 52-px-delspåret (E37) | gap 6: "rond 2 bokad" | **SLUT för barnägda ytor** (o62, fe3e85dd): mätverktyget metrologiskt härdat (settle-vänta + stabilitetspass; 19 fantomer bevisade av tre CDP-sonder), EFTER 6 fynd på 6 sidor = SAMMA element (ShortSeller-döljknappen 44×44, o8 §8:s dokumenterade undantag, WCAG 2.5.8 + Apple HIG), 0 zoomfällor; kvar = 2 designbeslut (huvudagent-yta) |
+| Kvarvarande _rsc-spill (E37) | outtalt | **/kurser ×3 (36,0 KiB) bitidentisk** — ägaren herons TREDJE länk (home.slutTitta-textlänken ~526); köpost o63 med färdig kurs-idé (väntan _rsc 3→0 · 38→35 req · ~555 KiB) |
+| Prod-läge (E37/E35) | prod 200 | **Egna HTTPS-sonder: / · /kurser · /blogg · /studio ALLA 200 på 59–75 ms** (05:4x); bygge BBrkvx9 (nyare än o62:s c7v5uV — s8-vågornas deploys) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E35 | LEVER 9 → **LEVER 9** | Vaktbältet växte 11→12 kontroller + 74→90 sviter + ett helt nytt delsystem (feljakt-stormtriagen) — men de bärande gapen lever oförändrade: aggregatorn (90 sviter = fortfarande provtagning), motorregistret fruset sedan 09-03, vaktrapports-stoppet i deploy; score redan i taket |
+| E37 | LEVER 8 → **LEVER 8** | Serien är mätbart störst i repot (_rsc 5→3, −42,3 KiB, TBT 1 636→1 074-band, 52-px-ronden avslutad) men inkrementell polering av ett system som redan bar 8 — kvar: o63-köposten outlevererad, 0 egna sviter, språkresolvens-CLS intermittent, sökindex-cadans (B12-precedensen: kurer utan ny kapabilitet flyttar ej poäng) |
+
+Snittscore **7,6** (288/38 oförändrad — båda poängen orörda med motivering ovan).
+
+Kö till huvudagenten: (1) **o63-köposten** — herons TREDJE länk
+(home.slutTitta-textlänken, identisk kirurgi som o56, väntat −36 KiB +
+3 requests per kall familjen); (2) **E37:s två designbeslut** — prosa-
+länkar i löpande text + 44-korset (dokumenterat undantag vs 52-golv) =
+styrelse-yta, ej barn-agent; (3) **E35:s aggregator-växt** — 90 sviter
+utan kör-alla-aggregator, motorregistret 15 d fruset, vaktrapports-
+stoppet fortfarande 0 träffar i prod-synk.
+
+## UPPDATERING 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789709700201 — A5 Gamification återdiffad mot verkligheten)
+
+Andra varvet för A5 (förra passningen 09-16, dokvåg s9-u3 omgång 6). Varje
+rad MÄTT i arbetsytan 2026-09-18 05:39–06:05Z — inte läst ur worklog. Anspråk
+FÖRE mätstart (data/vakten/auto-s9-1789709700201-u1-ansprak.md, HEAD e5eca448);
+syskon u3:s anspråk (E35+E26/E37) respekterat.
+
+| Mått | Kartan 2026-09-16 | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| A5-kod i git | passningens läge 09-16 | **0 commits sedan 09-16** — api/topplista 129 r · certifikat.tsx 242 r · topplista.tsx 136 r · badg-panel.tsx 235 r · badges.ts 326 r (orörd sedan 02c0920d 09-01): HELT STILLA |
+| Publika ytor | /badges /certifikat /topplista 200 | **200 på loopback OCH HTTPS** (egna sonder) |
+| Topplistan live | TOM | **FORTFARANDE TOM** (GET {"topplista":[],"antal":0}) — 0 xp_sync i fönstret ⇒ gap 3 "inget utnyttjat" intakt |
+| Sessionsvakt POST | saknas (e-post ur klient-body rad 34) | **ÅTERVERIFIERAD SAKNAS** (auth-grep 0 träffar; caps orörda rad 38–40: xp ≤ 10 M · nivå ≤ 100 · kurser ≤ 1 000) |
+| NYTT: POST-svaret | ej noterat 09-16 | **läcker {rank,total} till oautentiserad anropare** (rad 63–83) — placering av främmande e-post läsbar av vem som helst |
+| NYTT: GET-fönstret | ej noterat 09-16 | **aggregerar endast senaste 500 xp_sync** (rad 97) — äldre synkar faller av listan helt |
+| certId | kollisionsbart (certifikat.tsx:57) | **OFÖRÄNDRAD** konstruktion AK1A-år-XP-pad-6 — gap 2 lever |
+| Badges | trösklar som okompilerad data | **29 troféer** i badges.ts (28 flaggskepp f3a56fc9 + Ritualstartad 02c0920d, båda 09-01) |
+| Gap 1 (sviter) | 0 egna sviter | **0 fortfarande** (ingen badge/topplista/certifikat-svit i verktyg/, mätt) |
+| Bränslet (SIDOFYND) | quiz 8 223 · XP 82 230 (A1 09-17) | kurser **414** (+18 sedan 09-17; s5-vågorna tx-04/ma-05/ek-05/od-05 …) men quiz **8 223** · quizXp **82 230** OFÖRÄNDADE (siffror.json uppdaterad 09-18 06:01) — nya kurser bär INGA quiz |
+
+Score A5 LEVER 7 orörd — kodstasis + skärpta precisioner utan gap-stängning
+(B13-precedensen). Snitt 7,6 / 288 / 38 OFÖRÄNDRAT. Kö: (1) sessionsvakt +
+rank-läcka på /api/topplista (huvudagenten); (2) A1/A2-ÖVERSIKT-radernas
+kurstal 396 föråldrat (414 mätt 09-18 — A1:s yta, lämnad orörd här);
+(3) quiz-tillväxt för nya kurser (A1/s5-spåret).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1715,7 +1781,7 @@ gap: dataset-medianer-beslut + assistent-panel (0 sviter kvar).
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | Registret 396 (rebake stängde E01); synk EGEN GRÖN 396=396=396 · 21 profiler (09-17); kärnan larvag.ts orörd sedan v99; 16 front-B-sonder; regressionssvit för rekommendationsreglerna + E2E-inloggning saknas |
 | A3 | AI-Mentorn (33 deterministiska svarslager + modellager) | Utbildning | LEVER | 9 | 38 sviter ALLA GRÖNA 0 FAIL (mätt 09-18; E01 STÄNGD: 408/408 fält-för-fält, rebaken höll genom 398→401→408-vågorna); kedjan 98 monsters/33 motorer; dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
-| A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
+| A5 | Gamification (badges 29 troféer, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter (mätt 09-18); gap 3 ÅTERMÄTT ÖPPEN 09-18: POST utan sessionsvakt + läcker {rank,total} till oautentiserad anropare (topplistan fortfarande tom = inget utnyttjat), GET-fönster 500 händelser; certId kollisionsbart (certifikat.tsx:57); bränslet fruset: quiz 8 223/XP 82 230 oförändrade medan kurserna växte 396→414 |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr — gap 1 öppen, mätt 09-18); läspaketkön 36 paket varav 25 utan AKM2-underlag (klass, mätt 09-18); universum 22 vs 11 tickers (2 gemensamma, frusen sedan 09-10) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-17); berika-pipelinen stillastående 13 d (0 akm2-cacher; däremot 33 runtime-filer åter i data/cache — netnet/analys lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller), snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 ×3 återmätningar 09-17 + LÅST grind ΔΦ=0, hash-kedjor); men kalibreringen ENBART Vercel-cron-driven (nästa molnrond 2026-10-02; Contabo-crontab saknar fortfarande raden, mätt 09-17), regimen FROSEN på genesis 09-03 (14 d; genesis-talen lever live i /api/forskningslage), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
@@ -1746,9 +1812,9 @@ gap: dataset-medianer-beslut + assistent-panel (0 sviter kvar).
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | "PROD-TÖMT 09-16" MOTBEVISAT (mätt 09-17): 163 039 rader levande i appens projekt (aufr) — 13:46-mätningen föll i tväprojektfällan (rkaq-dumpar saknar tabellen, kedja 6); arkiv-cron grön OBEVAKAT 02:40, 0 dublett-id; kvar: ALTER V1 på disk/HEAD (v2 endast i index-provsprotokollet), composite-index ej installerat, schema-drift, inventory 25 d; kedja 2 = enda system_events-kopian |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Rot-gapet STÄNGT (omgång 9: artefaktverifiering i deploy+kraschvakt); 09-18: patch-kön SLUTLEVERERAD (kön `[]` + ok-kvitton next/eslint 16.3.5 med hela beviskedjan, 6 spurious-rader arkiverade — falsk-grund-stängningen kurad; lasPatchKo läser tom fil); DRIFTSBOKEN 2px-rättad (150 982 B 02:22); prod 200 ×4 egen (/, /kurser, /blogg, /studio); pm2 online; kvar: ISR 12/44 (fem nätter fast), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 11 kontroller (KONTROLL 11 Typbaslinjen: tsc dagligen mekaniskt, projektbinär) + 11/11 PASS · 0 manuella · GRÖN egen vaktkörning 09-17 05:09Z; tmp-läckeklassen STÄNGD i BÅDA ändarna (o44-ROTKUR: .tmp/-generering + tsconfig-glob tmp_*.ts + exit-efter-finally; s8-u2:s tmp-stad.mjs i pre-commit + sektion 11 — svit 15/15 + 12/12, falsklarmsrepetition GRÖN HOOK_EXIT=0; allt egenhändigt omätet 09-17); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (74 sviter = provtagning), motorregister fruset 09-03, vaktrapports-stopp i deploy saknas (mätt: 0 träffar i prod-synk) |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 12 kontroller (KONTROLL 12 SSR-livssonden 09-18: o47:s blindhet botad — sentinellrutter provar LEVANDE SSR i varje vaktkörning) + 12/12 PASS · 0 manuella · GRÖN egen vaktkörning 09-18 05:39Z; feljakt-stormtriagen LEVER (o65: backlog 245/245 bedömda, stormar-grind allt-eller-inget, svit 20/20 egen); tmp-läckeklassen STÄNGD i BÅDA ändarna (o44+s8-u2, svit 15/15+12/12); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (90 sviter = provtagning, mätt 09-18), motorregister fruset 09-03, vaktrapports-stopp i deploy (mätt: 0 träffar i prod-synk) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning (o27+o31) + blogg-prefetch-kur ×3 språklistrar (o37/o41: /blogg 52→62, LCP −1,3 s) + /studio-EFTER LANDAD 71 poäng/LCP 4 168 (serien 55→63→71) + nattfacit / 66 poäng (o38); kvar: inga egna tester, språkresolvens-CLS intermittent, /kurser-TBT 1 636, sökindex-cadans |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | Prestandaserien o45–o62 LEVER i prod (tolv kurer med EFTER-bevis: / _rsc 5→3 · requests 45→38 · transfer −42,3 KiB · /logga-in ×2 borta · PalettVakt-defern ur TBT-fönstret; band / P61 · TBT 675, /kurser TBT 1 074) + SPA-/StudioChat-koddelning (o27+o31) + mobil-mätverktyget METROLOGISKT HÄRDAT (o62: 19 fantomer bevisade, 52-px-ronden SLUT för barnägda ytor — 6 fynd = ShortSeller-knappens dokumenterade 44×44-undantag, 0 zoomfällor); kvar: o63-köposten (herons TREDJE länk home.slutTitta, 36,0 KiB spill), 2 designbeslut (prosa-länkar + 44-korset = huvudagent), inga egna sviter, språkresolvens-CLS intermittent, sökindex-cadans |
 
 Snittscore: **7,6/10** (288 poäng / 38 system; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
@@ -2000,7 +2066,9 @@ Alla 8 nyckelfiler orörda sedan 09-16 (git log); gap 1 lever: fortfarande
   identiska; (3)~~briefingens datakällor statiska~~ MOTBEVISAT 09-16:
   vagscan-koppling lever via /api/vagscan/senaste.
 
-## A5. Gamification — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## A5. Gamification — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789709700201 — A5 återdiffad, andra varvet): HELT KODSTILLA men RÖRELSE I BRÄNSLET. Samtliga A5-filer orörda i git sedan 09-16 (api/topplista 129 r · certifikat.tsx 242 r · topplista.tsx 136 r · badg-panel.tsx 235 r; badges.ts 326 r orörd sedan 02c0920d 09-01) — 0 commits, mätt. /badges /certifikat /topplista 200 på loopback+HTTPS (egna sonder). Topplistan FORTFARARDE TOM (GET {"topplista":[],"antal":0} — 0 xp_sync i fönstret) ⇒ gap 3 lever med "inget utnyttjat" intakt; sessionsvakten ÅTERVERIFIERAD SAKNAS I KOD (auth-grep 0 träffar; e-post ur klient-body rad 34; caps orörda rad 38–40: xp ≤ 10 M · nivå ≤ 100 · kurser ≤ 1 000). TVÅ NYA PRECISIONER I GAP 3: (a) POST-svaret läcker {rank,total} till oautentiserad anropare (rad 63–83) — vem som helst kan posta en främmande e-post och läsa av dennas placering, samma klass som impersonationen; (b) GET aggregerar ENBART senaste 500 xp_sync-händelserna (rad 97) — en elev som synkat längre bak faller AV listan helt. BRÄNSLEFYND: siffror.json (uppdaterad 09-18 06:01 av s5-vågorna) bär 414 kurser (+18 sedan A1:s 09-17-mätning 396) men quiz 8 223 · quizXp 82 230 OFÖRÄNDADE — nya kurser (tx-04, ma-05, ek-05, od-05 …) bär INGA quiz: topplistens bränsle fruset medan kursflödet växer (spegelbild av A6:s underlagsfynd). Badges preciserade 29 troféer (28 flaggskepp f3a56fc9 + Ritualstartad 02c0920d, båda 09-01). Gap 1 lever: 0 egna sviter (ingen badge/topplista/certifikat-svit i verktyg/, mätt). certId orörd kollisionsbar (certifikat.tsx:57). Score 7 orörd — kodstasis + skärpta precisioner utan stängning (B13-precedensen). Sidofynd åt A1:s nästa dokvåg: ÖVERSIKT-radernas kurstal 396 föråldrat (414 i siffror+deep-courses, mätt 09-18 — A1:s yta, lämnad orörd här).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): gap 3 SKÄRPT och gap 2 BESVARAT
 efter genomläsning av api/topplista/route.ts (130 r) + certifikat.tsx (242 r).
@@ -2029,11 +2097,14 @@ badges.ts orörd sedan 09-01 (be04e17c).*
 - **Observation:** Ren logik, varumärkesriktiga texter, force-static där
   möjligt. Topplistan bygger på system_events (xp_sync) med senaste-vinner
   per e-post — XP-statistiken själv lever i localStorage/member-local (D21).
-- **GAP:** (1) badge-reglerna (trösklar) saknar test; (2) certifikatens
-  unikhet BESVARAD 09-16: certId kollisionsbart (ingen medlemshash, inget
-  register) — verifierbarhet saknas; (3) SKÄRPT 09-16: xp_sync-POST utan
-  sessionsvakt på publik rutt — impersonationsbar tills vakt finns (kö till
-  huvudagenten; topplistan tom = inget utnyttjat).
+- **GAP:** (1) badge-reglerna (trösklar) saknar test (mätt 09-18: 0 egna
+  sviter i verktyg/); (2) certifikatens unikhet BESVARAD 09-16, orörd 09-18:
+  certId kollisionsbart (certifikat.tsx:57, AK1A-år-XP utan medlemshash, inget
+  register) — verifierbarhet saknas; (3) SKÄRPT 09-16, ÅTERMÄTT ÖPPEN 09-18:
+  xp_sync-POST utan sessionsvakt på publik rutt — impersonationsbar tills vakt
+  finns (kö till huvudagenten; topplistan fortfarande tom = inget utnyttjat);
+  09-18-tillägg: POST-svaret läcker {rank,total} till oautentiserad anropare
+  och GET aggregerar endast senaste 500 händelserna (äldre synkar faller av).
 
 ## A6. Biblioteken — LEVER — 7/10 *(uppdaterad 2026-09-18)*
 
@@ -3356,7 +3427,29 @@ hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
   täckning 12/44 → 44/44 (sökvägslista komplett); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
-## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 9/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9-1789709700201 —
+femte passningen): kvalitetsvågen s8 (09-17 13:00 → 09-18 07:24) är
+systemets största tillväxt sedan kartans födelse — ALLT egenmätt i denna
+dokvåg: (1) **KONTROLL 12 SSR-livssonden** (o64, 40a512be) — o47:s
+bevisade blindhet (prod stod med 1 616 SSR-500 i timmar medan ALLA vakter
+var gröna) är botad: sentinellrutterna / /kurser /analyser /blogg /labb
+/en /ar provas på loopback i varje vaktkörning, 5xx = sektions-FEL inom
+ett cron-varv; EGEN full vaktkörning **12/12 PASS · 0 fel · 0 manuella ·
+GRÖN** (05:39:43Z, exit 0) inklusive kontroll 11 (tsc, projektbinär) —
+sju rutter levande 97–153 ms. (2) **Feljakt-stormtriagen LEVER** (o65,
+e5eca448): backlog 245/245 bedömda (FÖRE 241 öppna/97 HÖG-KRIT → EFTER
+0/0, dom: rotkurad 151 · transient-design 91 · falskt-pos 2 · pågående
+1); ledgern 245 fyndrader + 243 bedömningsrader (egen wc; differensen =
+dokumenterade nyckelkollisioner, härdning bokad hos verktygsägaren);
+stormar-grinden allt-eller-inget; svit **20/20 PASS egen körning**
+(domklasser 4). (3) Sviter **74 → 90** (+16/dygn, ls-mätt). (4) Döda-
+länksinstrumentet kuraterat (o55: 3 473/0 + kontrollfall) och mimosa-
+pariteten mätt (o59). Score 9 orörd — aggregatorn (90 sviter = fortfarande
+provtagning), motorregistret (fruset sedan 09-03) och vaktrapports-stoppet
+i deploy (0 träffar i prod-synk) lever kvar. Se diff-tabellen i
+UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u1 omgång 11 — fjärde passningen): gap (5)
 tmp-läckage-klassen är FULLT STÄNGD i båda ändarna och score höjs 8 → 9.
@@ -3416,14 +3509,15 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
 2026-09-11; gällande skillnader se diff-tabellen i UPPDATERING
 2026-09-15 högt upp i filen.*
 
-- **Vad:** Kvalitetsvakten (11 kontroller över hela sajten: varumärke,
-  JSON, länkar, kursdata, sitemap, motorer, åäö, siffror, typbaslinje —
-  kontroll 11 till 2026-09-17; skriver
+- **Vad:** Kvalitetsvakten (12 kontroller över hela sajten: varumärke,
+  JSON, länkar, kursdata, sitemap, motorer, åäö, siffror, typbaslinje,
+  SSR-livssond — kontroll 12 till 2026-09-18; skriver
   kvalitetsrapport-SENASTE.md + RESULTAT_JSON), motorvalidering (42 motorer,
-  determinism/kontraktskontroller), 74 testsviter i verktyg/ (mätt 09-17
-  omgång 11; 69 vid omgång 10), pre-commit-grinden (tsc-0 +
+  determinism/kontraktskontroller), 90 testsviter i verktyg/ (mätt 09-18
+  dokvågen; 74 vid omgång 11), pre-commit-grinden (tsc-0 +
   R2-filblockad vid varje commit),
   verktygsbältet (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs),
+  feljakt-stormtriagen (ledgern + bedömningar + stormar-grind, o65),
   cron-kvalitet 07:00, DRIFTSBOKEN-koppling.
 - **Nyckelfiler:** verktyg/{kvalitetsvakt,validera-motorer,agent-status}.mjs,
   verktyg/hooks/pre-commit (grinden, våg 138+s8-u1),
@@ -3441,7 +3535,8 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   regenereras (42 motorer, autonomi-kolumner, testtäckning — oförändrat
   sedan 2026-09-03, git-bevis efff399c); (2) "kör-alla-tester"-
   aggregator (33 sviter + PASS/FAIL-summa i RESULTAT_JSON-mönstret) —
-  fortfarande provtagning — med 74 sviter (mätt 09-17, omgång 11); (3) deploy-blockad vid RÖD
+  fortfarande provtagning — med 90 sviter (mätt 09-18, dokvåg s9-u2; 74 vid
+  omgång 11); (3) deploy-blockad vid RÖD
   vaktrapport — grinden stoppar commit-nivån men ingen blockerar deploy;
   EXEKTERAT 2026-09-16 (mätt): .next-skadan nådde prod som kundsynligt
   stil-lös-fel (12/25 chunks 404) medan pulsvakten larmade högprio — ingen
@@ -3495,7 +3590,33 @@ Score 9 kvar; gap-listan kompletterad med backup-cadans.*
   (medvetet? dokumentera); (4) bucket-förteckningens backup är manuell
   (media-filer-*.json, 2 tillfällen 09-08/09-09 — ingen cron).
 
-## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9-1789709700201 —
+tredje passningen; översiktsraden senast 09-17 omgång 8): prestandaserien
+s7 (o45–o62, 09-17 12:00 → 09-18 07:00) är systemets tätaste leveransrad
+någonsin — tolv kurer sedan kartans o41-läge, ALLA med mekaniska
+EFTER-bevis i protokoll: o45 flight (393 {slug,titel}-kursobjekt ur varje
+sidas RSC-payload), o49 /logga-in (2→0), o50 logo ×3 omgångar, o51
+kurskortens list-prefetch, o52 blogginlägg (?_rsc 5→0), o53 chat-defer
+(rIDLE-tak 2 500 ms på 8-s-steget), o54 kursiv-preload (hero-citatet =
+LCP-elementet), o56 herolänkar (**/ _rsc 5→3 · requests 45→38 · transfer
+633,1→590,8 KiB**; /kurser+/blogg _rsc 0 orörda), o57 LasyGlobal
+tvåstegs-basfall (8 s + idle — prod-bevisat), o61 PalettVakt-defern
+(15–21 K-chunkfamiljen ur TBT-fönstret på /). Lighthouse-band (o56-EFTER,
+bygge stE6SStz): / P61 · LCP 5 162 · TBT 675 · CLS 0 — /kurser P57 ·
+TBT 1 074 · /blogg P66. KVAR: /kurser ×3 (36,0 KiB) bitidentiskt spill =
+herons TREDJE länk (home.slutTitta-textlänken ~526, alltid viewport,
+utan prefetch={false}) — köpost o63 med färdig kurs-idé. 52-px-delspåret
+SLUT för barnägda ytor (o62): mätverktyget metrologiskt härdat (19
+fantomer bevisade av tre CDP-sonder — o8:s paginerings-"1"-anomali
+hänförd till samma klass), EFTER 6 fynd/6 sidor = endast ShortSeller-
+döljknappen 44×44 (o8 §8:s dokumenterade undantag; att den nu mäts på
+alla sidor är i sig bevis på o57:s defer), 0 zoomfällor; 2 designbeslut
+kvar (prosa-länkar + 44-korset) = huvudagent-yta. Egna HTTPS-sonder
+09-18: / · /kurser · /blogg · /studio ALLA 200 på 59–75 ms. Score 8
+orörd (o63 outlevererad + 0 egna sviter + CLS-intermittens + sökindex-
+cadans). Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 7, återdiff): spår 7:s andra
 våg landade EFTER kartans 09-15-mätning — allt nedan MÄTT i kod och data:
@@ -3524,18 +3645,20 @@ vakaren lever men dess tidszonstolkningsbugg försköt triggern (o32 §1).*
   koddelade med samma husidiom (dynamic ssr:false + skelett), och första
   vilande-baslinjen på fullfungerande bygge dokumenterar att r4b2-rondens
   röda CPU-tal var instrumentartefakt (JS-nedbruten chunk-servning).
-- **GAP (uppdaterat 2026-09-16):** (1) sökindexet statiskt mellan deploys
+- **GAP (uppdaterat 2026-09-18):** (1) sökindexet statiskt mellan deploys
   (nya kurser/poster osynliga tills kor-sokindex + deploy; fortfarande ingen
   hook); (2) PWA offline-beteende overifierat (service worker endast
   registrerare?); (3) palettens täckning av pro/tier-ytor följer flaggorna
   men testas ej; (4) språkresolvens-CLS INTERMITTENT (~0,11 i r5u2b-EFTER
   men 0,000 i vilande-facitet — sv-locale isolerat 0,000; produktbeslut
   a/b/c fortfarande obokat); (5) fortfarande inga egna regressionstester
-  (CDP/Lighthouse är mätbevis, inte testsviter); (6) footer-tryckmål (20 px)
-  + AI-Mentor/ShortSeller-monteringsknappar (44 px) kvar till
-  läsbarhetsrond 2 (bokade, ej glömda); (7) NY 09-16: /studio-EFTER (o31)
-  obokförd + unused-JS poäng 0 kvar (74–79 KiB) och bootup 3,3–3,5 s /
-  mainthread 7,7–7,8 s i båda färskmätningarna — koddelningen minskade men
+  (CDP/Lighthouse är mätbevis, inte testsviter); (6) STÄNGT 09-18 (o62):
+  52-px-delspåret SLUT för barnägda ytor — kvar = två DESIGNBESLUT
+  (prosa-länkar i löpande text + 44-korset vs 52-golv) = huvudagent/
+  styrelse-yta; (7) /kurser ×3 _rsc-spill (36,0 KiB) = herons TREDJE länk
+  (home.slutTitta-textlänken) — köpost o63 outlevererad; (8) /studio-EFTER
+  (o31) fortfarande obokförd + unused-JS poäng 0 kvar (74–79 KiB) och
+  bootup 3,3–3,5 s / mainthread 7,7–7,8 s — koddelningen minskade men
   eliminerade ej spillet.
 
 ---

@@ -31,6 +31,12 @@ import { execSync } from "node:child_process";
 // separat modul så att testen kan importera DEN RIKTIGA koden offline —
 // vakten själva är ett toppnivåskript som kör hela svepet vid import.
 import { konsolFelIndikerarDeployStorning } from "./granssnitt-konsol.mjs";
+// Sidvalslogiken (rotation + FALLBACK + sektionsprioritering) — ren modul
+// så att sviten kan importera DEN RIKTIGA koden offline (s8-u2 2026-09-18).
+import {
+  urvalMedJournal as urvalMedJournalRen,
+  FALLBACK_SIDOR,
+} from "./granssnitt-urval.mjs";
 // OBS: puppeteer-core importeras MEDELTIDS (dynamiskt, se huvudloopen) — en
 // statisk toppimport kraschar vid node-start om ett deploy-fönster (npm ci)
 // pågår, FÖRE verktygets egen deployvänt-logik hinner köra (bevisat
@@ -59,13 +65,16 @@ const SKARMBILD = lasArg("skarmbild", "nej") === "ja";
 
 // Sidlista — VÅG 105: härleds ur sajtens EGEN sitemap (aldrig gissade
 // sökvägar — /labbet vs /labb-fällan gav 20 skenfynd i första serverkörningen).
-// Urval — VÅG 157 (Θ): MÄTJOURNAL i data/vakten/vakt-sidjournal.json —
-// aldrig-mätta sidor (t.ex. 130 nya /dataset-aspektsidor) väljs FÖRST,
-// därefter äldst-mätt-först (round-robin över tiden). Före våg 157 togs
-// alltid samma topp-16 (grunda + kortaste djupa) — hundratals sidor mättes
-// aldrig. SIDOR_MAX 16→24 = fördubblad täckningstakt.
-const SIDOR_MAX = 24;
-const FALLBACK_SIDOR = ["/", "/kurser", "/labb", "/blogg", "/dataset", "/om-oss"];
+// Urval — VÅG 157 (Θ): MÄTJOURNAL i data/vakten/vakt-sidjournal.json.
+// ROTKUR 2026-09-18 (s8-u2): urvalslogiken bor i granssnitt-urval.mjs —
+// v157:s sortering lät PRIORITERADE_SEKTIONER gälla FÖRE mätåldern, så
+// /dataset (141 sidor > 21 rotationsplatser) höll rotationen låst ÄVEN
+// efter sektionens journaltäckning var komplett (09-15): 1 679 av 1 943
+// sitemap-sidor (86 % — bl.a. /en + /ar = 820 sidor, /kurser, /labb,
+// /bolag, /blogg samt verktygssidorna /superanalys + /kalkylator) kunde
+// ALDRIG mätas. Ny semantik: sektionsprioritering ENDAST bland
+// aldrig-mätta, grunda sidor (unika mallar) före djupa, därefter GLOBAL
+// äldst-mätt-först. Kontrakt: verktyg/testa-granssnitt-urval.mjs.
 const JOURNAL_FIL = path.join(ROT, "data", "vakten", "vakt-sidjournal.json");
 
 function lasJournal() {
@@ -73,31 +82,8 @@ function lasJournal() {
   catch { return {}; }
 }
 
-// Basen mäts varje körning; övriga platser fylls med minst-nyligen-mätta.
-// ROND 29 (Φ, v157-slutled): PRIORITERADE_SEKTIONER mäts FÖRST bland
-// aldrig-mätta — /dataset-aspekternas 130 sidor (v150) väntade annars ut
-// hela /analyser-trädet alfabetiskt (~6 körningar ≈ 36 h). Listan är
-// utbyggbar: nästa täckningsvåg lägger sitt prefix här och tas bort när
-// dess journaltäckning är komplett.
-const PRIORITERADE_SEKTIONER = ["/dataset"];
-function sektionAv(p) {
-  return "/" + (p.split("/")[1] || "");
-}
 function urvalMedJournal(unika) {
-  const journal = lasJournal();
-  const bas = ["/", "/studio", "/admin"];
-  const prio = (p) => (PRIORITERADE_SEKTIONER.includes(sektionAv(p)) ? 0 : 1);
-  const ordnade = unika
-    .filter((p) => !bas.includes(p))
-    .sort(
-      (a, b) =>
-        prio(a) - prio(b) ||
-        (journal[a] ?? 0) - (journal[b] ?? 0) ||
-        a.localeCompare(b),
-    );
-  const urval = [...new Set([...bas, ...ordnade])].slice(0, SIDOR_MAX);
-  const aldrigMatte = unika.filter((p) => !journal[p]).length;
-  return { urval, aldrigMatte };
+  return urvalMedJournalRen(unika, lasJournal());
 }
 
 async function lasSidor(bas) {

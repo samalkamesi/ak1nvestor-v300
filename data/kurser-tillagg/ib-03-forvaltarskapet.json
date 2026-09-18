@@ -1,0 +1,180 @@
+{
+  "slug": "ib-03-forvaltarskapet",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren",
+  "summary": "Bakom varje substanssiffra står en ägare med makt: röstvärde mot kapitalandel, mandatets trappor på stämman, successionens spädning av rösterna och rabattens samband med förvaltarskapets kvalitet — läsningen av vem som bestämmer vad kapitalet gör.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna isär kapitalandel och röstandel — två tal som ser ut att vara samma sak men styr olika saker · Räkna ut röstvikten i en struktur med olika aktieklasser: en aktie med en röst, en med tiodelens, och summan som ger huvudägaren majoritet med en bråkdel av kapitalet · Läsa mandatets trappor: vilka beslut en enkel majoritet bär, vilka som kräver två tredjedelar, och var blockeringströskeln ligger · Mäta förvaltarskapets kvalitet i tal: genomsnittlig innehavstid och substansomsättning per år · Räkna successionens spädning — hur röstmajoriteten urvattnas generation för generation · Ställa förvaltarskapets fem frågor mot en verklig ägarstruktur och gränsen mot grannkurserna (km-067 rabattläsningen, sj-03 stämmans formalia, pe-04 den onoterade världen).",
+  "why": "ib-01 lär ut räkningen av ett investmentbolag och ib-02 granskningen av substansens innehåll — men båda kurserna behandlar bolaget som om det förvaltade sig självt. Det gör det inte. Bakom varje rapport står en ägare eller en grupp ägare som fattar besluten: vad som köps, vad som säljs, vad som betalas ut, vem som sitter i styrelsen. I bolag med olika aktieklasser kan den makten se mycket annorlunda ut än kapitalet: en huvudägare med en tiondel av kapitalet kan bära mer än hälften av rösterna, och samma substanssiffra är därför inte samma investering under två olika ägarstrukturer. Detta är förvaltarskapet — den sida av ägandet som varken substansräkningen eller rabattläsningen fångar, men som avgör vad båda siffrorna till slut är värda. Kursen ger verktygen: rösternas aritmetik, mandatets trappor, långsiktighetens mätetal och successionens mekanik — och gränsen mot grannkurserna som äger rabatten, stämmoformalian och den onoterade världen.",
+  "history": {
+    "origin": "När svenska industrifamiljer behövde nytt kapital för expansionen men inte ville lämna ifrån sig styret, växte aktieklasserna fram som kompromissen: kapitalet släpptes in genom aktier med försvagad röst, medan grundarna behöll aktier med full röstvikt. Systemet blev en svensk tradition — familjen kunde äga en bråkdel av bolaget och ändå föra dess politik genom generationer, och börsen fick sin tillgång till industrin utan att kontrollen bytte händer.",
+    "evolution": "Med tiden blev röstskillnaderna föremål för debatt: utomstående investerare, tjänstepensioner och fonder som bar nästan allt kapital fick konstatera att deras röster vägde en bråkdel av huvudägarnas. Frågan gick från kuriosa till strukturfråga — hur stor röstskillnad ett bolag ska få bära, hur minoriteter skyddas, och hur styrelser nomineras. Parallellt professionaliserades ägandet: där familjeägandet en gång var personligt och informellt växte förvaltarskapet fram som ett hantverk med egna mätetal — innehavstider, omsättningshastighet, allokeringens spårbarhet.",
+    "modern": "I dag lever strukturerna kvar men landskapet är bredare: svenska investmentbolag och industrigrupper bär fortfarande aktieklassstrukturer med generationsskiften pågående, samtidigt som sparandet via fonder och kapitalförsäkringar gjort den enskilda ägaren mer frånvarande än någonsin — rösterna utnyttjas sällan, och mandaten koncentreras i praktiken till dem som nominerar styrelser. Den moderna läsningen av ett bolag inleds därför ofta med ägarlistan: vem äger vilken aktieklass, hur länge har de funnits, och vad händer med rösterna vid nästa generationsskifte. Förvaltarskapet har gått från familjefråga till analysfråga — och dess tal går att räkna."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Kapital och röster — andelarna som inte är lika",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Röstokens konstruktion — en aktieklass, tio rösters vikt",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Mandatets trappor — majoriteter, blockering och nominering",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Ägarkvaliteten i priset — rabattens samband med förvaltarskapet",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Succession och asymmetri — maktens tre fällor",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — förvaltarskapets fem frågor",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kapital och röster — andelarna som inte är lika",
+      "intro": "Två andelar följer varje aktie — andelen av kapitalet och andelen av rösterna — och de behöver inte vara i närheten av varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Möt kursens genomgående exempel, påhittat från första till sista krona. Hovgården AB är ett noterat investmentbolag med två aktieklasser: 55 miljoner A-aktier där varje aktie bär en röst, och 495 miljoner B-aktier där varje aktie bär tiodelens röst. En grundarfamilj äger samtliga A-aktier och inga B — resten handlas fritt på börsen.\n\nRäkna först kapitalet. Totalt finns 55 + 495 = 550 miljoner aktier, och familjen äger 55 av dem: kapitalandelen är 55 delat med 550 = tio procent. Räkna sedan rösterna. A-aktierna bär 55 gånger 1 = 55,0 miljoner röster och B-aktierna 495 gånger 0,1 = 49,5 miljoner — sammanlagt 104,5 miljoner röster i bolaget. Familjens 55,0 miljoner av dem ger röstandelen 55,0 delat med 104,5 = 52,6 procent.\n\nDetta är kursens kärnpåstående: samma ägare bär tio procent av kapitalet och 52,6 procent av rösterna. Substansräkningen från ib-01 och granskningen från ib-02 behandlar den första andelen — vad tio procent av kapitalet är värt. Förvaltarskapet handlar om den andra — vad 52,6 procent av rösterna förmår. Den som bara kan läsa den första andelen äger hälften av analysen: hon vet vad innehaven är värda, men inte vem som bestämmer vad de gör."
+        },
+        {
+          "type": "definition",
+          "content": "Förvaltarskap: den aktiva ägarens roll i ett bolag — rätten och förmågan att genom röster påverka besluten om allokering, styrelse, utdelning och riktning. Förutsättningen för att kunna läsa det är skiljaktigheten mellan kapitalandel (andel av aktiekapitalet — styr ägarandelen av värde och förlust) och röstandel (andel av rösterna — styr mandaten)."
+        },
+        {
+          "type": "tabell",
+          "content": "HOVGÅRDEN AB — SAMMA ÄGARE, TVÅ ANDELAR: | Rad | Tal | — | A-aktier (1 röst per aktie) | 55,0 miljoner | — | B-aktier (0,1 röst per aktie) | 495,0 miljoner | — | Aktier totalt | 550,0 miljoner | — | Röster totalt: 55,0 + 49,5 | 104,5 miljoner | — | Familjens kapitalandel: 55 av 550 | 10,0 procent | — | Familjens röstandel: 55,0 av 104,5 | 52,6 procent |"
+        },
+        {
+          "type": "insight",
+          "content": "10,0 procent av kapitalet och 52,6 procent av rösterna — samma ägare, två andelar, och skillnaden mellan dem är hela förvaltarskapsfrågan. Substansen svarar på vad kapitalandelen är värd; rösterna svarar på vem som bestämmer."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Röstokens konstruktion — en aktieklass, tio rösters vikt",
+      "intro": "Aktieklassernas aritmetik är enkel — men dess konsekvenser för vem som styr är allt annat än.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen kallas röstok: A-aktien bär tio B-aktiers röstvikt. Hovgårdens familj köpte inte en enda extra aktie för att få den räkningen — vikten sitter i aktieslaget, inte i antalet. Sätt siffrorna mot varandra för att se mekanikens styrka: hade alla 550 miljoner aktier burit en röst vardera, hade familjens 55 miljoner gett röstandelen 55 delat med 550 = tio procent — en minoritet bland många. Med aktieklasserna blir samma aktier 52,6 procent. Skillnaden är 52,6 − 10,0 = 42,6 procentenheter makt, köpt utan en enda ny aktiekrona.\n\nTvå kopplingar gör konstruktionen levande i läsningen. Den första går till priset: eftersom A-aktierna bär kontrollen handlas de ofta högre än B-aktierna i samma bolag — marknaden prissätter röstandelen för sig (vr-05 äger den allmänna läsningen av pris mot värde; här konstateras bara fenomenet). Den andra går till ägarsidan utanför börsen: i den onoterade världen finns inga aktieklasser att samla makt genom — där köper man andelar, och andelen är både kapital och röst (pe-04 äger den världens logik). Att en B-ägare i Hovgården betalar för sin del av kassaflödet men bär en tiondels röstvikt per aktie är alltså inte en naturlag utan en konstruktion — gjord av dem som en gång ägde allt, för att släppa in kapital utan att släppa ifrån sig styret.\n\nEn sista aritmetisk iakttagelse bär med sig till nästa kapitel: familjens 52,6 procent är en majoritet — men en tunn sådan. Resterande 49,5 miljoner röster, 47,4 procent av samtliga, ligger hos B-ägarna. Två block, en stämma — och vilka beslut som faktiskt kan passera avgörs av vilken tröskel varje beslutstyp kräver. Det är mandatets trappor."
+        },
+        {
+          "type": "insight",
+          "content": "Utan aktieklasser: 55 av 550 = 10,0 procent röster. Med dem: 55,0 av 104,5 = 52,6 procent. Konstruktionen köper 42,6 procentenheter makt utan en enda ny aktie — och A-aktiernas kurspremie mot B är marknadens pris på just den skillnaden."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mandatets trappor — majoriteter, blockering och nominering",
+      "intro": "Rösternas summa blir till makt först genom trapporna: olika beslut kräver olika trösklar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolagsstämmans beslut sorteras i nivåer, och aritmetiken är densamma som i varje annan röstning (formalian kring kallelse och rösträkning ägs av sj-03 — här är det trösklarna som är saken). Vardagsbesluten — styrelsens val på stämman, utdelningens storlek, det löpande mandatet — kräver enkel majoritet: mer än hälften av röstkraften. Grundläggande beslut — ändringar i bolagets grundläggande villkor — kräver kvalificerad majoritet, i praktiken två tredjedelar.\n\nStäll Hovgårdens två block mot trapporna. Familjens 52,6 procent klarar varje enkel majoritet: familjens förslag går igenom så länge fler än hälften räcker. Men två tredjedelar av 104,5 miljoner röster är 69,7 miljoner, och familjen bär 55,0 — det saknas 14,7 miljoner röster för att nå den nivån, ungefär en sjättedel av hela B-stammen. Omvänt bär B-ägarna samlade 49,5 miljoner röster = 47,4 procent — långt ifrån majoritet, men med råge över en tredjedel av rösterna (34,8 miljoner). Samlade kan de alltså inte fatta, men väl förhindra: varje kvalificerat beslut dör utan dem. Makten i bolaget är därför uppdelad i två våningar — familjen styr vardagen, B-ägarna äger vetorätten till det grundläggande.\n\nUnder trapporna löper en tredje maktkanal som sällan syns i siffrorna: nomineringen. Styrelsen föreslås i praktiken av en nomineringsprocess där storägarna dominerar — i Hovgården sätter familjen sannolikt majoriteten av förslagen till de sju platserna. Den som nominerar kontrollerar inte bara vilka som väljs, utan vilka frågor som ens kommer till stämman. Röstandelen är därför inte bara ett tal — den är kartan över tre olika makter: att fatta (enkel majoritet), att blockera (en tredjedel) och att föreslå (nomineringen)."
+        },
+        {
+          "type": "text",
+          "content": "Ett räkneexempel sammanfattar trapporna. Antag att stämman ska besluta i en fråga av det kvalificerade slaget — att två tredjedelar krävs. Familjen röstar ja med sina 55,0 miljoner röster. Av B-ägarna röstar 60 procent ja, det vill säga 29,7 miljoner röster, och 40 procent nej, det vill säga 19,8 miljoner. Ja-sidan når 55,0 + 29,7 = 84,7 miljoner röster av 104,5 — 81,1 procent, långt över tröskeln, och beslutet går igenom. Men hade B-ägarna varit samlade i motstånd står ja-sidan vid 55,0 miljoner = 52,6 procent, och beslutet faller. Samma förslag, samma huvudägare, två utfall — skillnaden ligger helt hos minoritetens samlingsgrad. Detta är den praktiska läsningen av mandatets trappor: huvudägarens makt är störst när de övriga ägarna är splittrade och minst när de enas — och därför är ägarlistans koncentration, få eller många större B-block, en del av själva maktläget, inte bara en namnförteckning."
+        },
+        {
+          "type": "definition",
+          "content": "Blockerande minoritet: en röstandel över en tredjedel av samtliga röster, som ensam kan förhindra beslut som kräver kvalificerad majoritet. I Hovgården bär B-ägarna samlade 47,4 procent — en position som inte kan styra vardagen men kan stoppa det grundläggande."
+        },
+        {
+          "type": "insight",
+          "content": "Familjen: 52,6 procent — klarar 50-nivån, saknar 14,7 miljoner röster till 66,7-procentnivån. B-ägarna: 47,4 procent — ingen majoritet, men en säker blockerande position. Tre makter i samma röstsumma: att fatta, att blockera, att nominera."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Ägarkvaliteten i priset — rabattens samband med förvaltarskapet",
+      "intro": "NAV-rabatten är inte bara en siffra om substansen — den är marknadens sammanfattande omdöme om förvaltarskapet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "km-067 lär ut rabattläsningen: kursen mot substansen, varför rabatten finns, när den växer och krymper. Detta kapitel lägger en dimension till den läsningen: rabatten samvarierar med ägarsidan. Två påhittade investmentbolag med identisk substanssiffra — 100 kronor per aktie i bägge — kan handlas mycket olika beroende på vem som förvaltar. Det ena bolaget har en utspridd ägarbas och en portfölj som byts i marknadstakt; det handlas till 75 kronor, en rabatt på 25 procent. Det andra bär en huvudägare som fört portföljen i över ett decennium, med tydlig allokeringstradition och jämn utdelning; det handlas till 85 kronor, en rabatt på 15 procent. Skillnaden är 10 kronor per aktie — en tiondel av substansen — och i exemplet är det priset på förvaltarskapet.\n\nDet viktiga är att ägarkvaliteten inte är mystik utan två mätetal. Det första är genomsnittlig innehavstid: hur länge posterna i portföljen faktiskt burits — i exemplet bär det långsiktiga bolagets poster 11 år mot branschens 4. Det andra är substansomsättning: hur stor andel av portföljen som byts ut per år — 6 procent i det långsiktiga fallet mot 25 procent i det hastiga. Låg omsättning och lång innehavstid är förstås inget bevis på skicklighet — ett slött förvaltarskap kan också sitta still — men de är mätbara drag som skiljer en institution med uthållighet från förvaltning av passerande kapital. Tillsammans med allokeringens spårbarhet (ks-02 äger själva hantverket) ger de förvaltarskapet en historik att läsa.\n\nGränserna mot grannkurserna är viktiga här. km-067 äger rabattens mekanik — denna kurs äger bara påståendet att ägarsidan är en av dess förklaringsfaktorer. vr-05 äger den allmänna läsningen av pris mot värde. Och om huvudägaren i stället är en fond med egen livscykel — köpa, utveckla, lämna ifrån sig — är det pe-serien som äger den logiken: förvärvsmaskinen har ett slutdatum, medan förvaltarskapet i exemplet är en institution utan sådant. Skillnaden syns i rabatten: marknaden betalar för uthållighet."
+        },
+        {
+          "type": "tabell",
+          "content": "TVÅ BOLAG, SAMMA SUBSTANS — OLIKA FÖRVALTARSKAP (PÅHITTADE TAL): | Rad | Det utspridda bolaget | Det långsiktiga bolaget | — | Substans per aktie | 100 kronor | 100 kronor | — | Kurs | 75 kronor | 85 kronor | — | NAV-rabatt | 25 procent | 15 procent | — | Genomsnittlig innehavstid | 4 år | 11 år | — | Substansomsättning per år | 25 procent | 6 procent |"
+        },
+        {
+          "type": "insight",
+          "content": "Samma substans, 10 kronors kurskillnad: rabatten är också ett omdöme om ägaren. Innehavstid och substansomsättning gör förvaltarskapet mätbart — 11 år och 6 procent mot 4 år och 25 procent är två olika institutioner, även om substanssiffran är identisk."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Succession och asymmetri — maktens tre fällor",
+      "intro": "Röstmajoriteten är en konstruktion — och konstruktioner åldras: tre fällor varje ägarläsare bär med sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är successionens spädning. Hovgårdens 52,6 procent vilar på A-stammen — men stammar delas vid arv. Antag att varje generationsskifte flyttar en tiondel av familjens A-aktier till nya händer utanför den styrande kärnan (ett förenklat räkneexempel, inte en prognos). Vid första skiftet blir kärnans A-innehav 55,0 gånger 0,9 = 49,5 miljoner, och röstsumman i bolaget blir 49,5 + 49,5 = 99,0 miljoner — familjens röstandel 49,5 delat med 99,0 = exakt 50,0 procent. Majoriteten är borta vid själva tröskeln: ensam majoritet kräver mer än hälften, och kärnan står och stampar på exakt hälften — ett enda samlat B-block utanför den väger nu tyngre i varje omröstning. Vid andra skiftet bär kärnan 49,5 gånger 0,9 = 44,55 miljoner röster av 44,55 + 49,5 = 94,05 — det är 47,4 procent, en minoritet på riktigt. Två generationer, fem procentenheter — och bolaget som styrdes med en tiondel av kapitalet styrs plötsligt inte alls.\n\nAndra fällan är riskasymmetrin. Familjen bär tio procent av kapitalet: tio procent av utdelningen när den kommer, men också bara tio procent av förlusten om portföljen förslösas. Mandatet är däremot hela — inom enkel majoritet fattas besluten om 100 procent av kapitalet av ägare som bär 10 procent av risken. Detta är inte ett anklagelsemoment utan en strukturfråga att läsa: vilka motvikter finns — blockerande minoriteter, styrelsens sammansättning, allokeringens transparens — när beslutsrätten och riskbärandet är så olika fördelade?\n\nTredje fällan är minoritetens substansillusion — och den knyter tillbaka till ib-02. Där visades att en minoritetspost i ett onoterat bolag ofta realiseras under sin andel av värdet, eftersom besluten om timing och utdelning bor hos majoriteten. Samma logik gäller B-ägaren i Hovgården: substansandelen är en andel av det bokförda värdet, men utan röstmakt att driva realisation är det ett värde som kan hållas stilla i väntan på andras beslut. Minoritetens tal ser ut som ägande men beter sig som en fordran vars förfallodag majoriteten sätter. Rabatten (km-067) är i den meningen inte bara ett tankefel hos marknaden: den har delvis sitt ursprung i att substansrätten utan röster är svagare än substansrätten med dem."
+        },
+        {
+          "type": "tabell",
+          "content": "SUCCESSIONENS SPÄDNING — HOVGÅRDENS RÖSTANDEL VID ETT TIODELSSKIFTE PER GENERATION (PÅHITTAD MODELL): | Generation | Familjens A-röster | Röster totalt i bolaget | Familjens röstandel | — | Utgångsläge | 55,00 miljoner | 104,50 miljoner | 52,6 procent | — | Första skiftet | 49,50 miljoner | 99,00 miljoner | 50,0 procent | — | Andra skiftet | 44,55 miljoner | 94,05 miljoner | 47,4 procent |"
+        },
+        {
+          "type": "insight",
+          "content": "55,0 av 104,5 = 52,6 procent; 49,5 av 99,0 = exakt 50,0; 44,55 av 94,05 = 47,4. Två generationsskiften förvandlar majoriteten till minoritet — och minoritetens substans är svagare än siffran, eftersom förfallodagen skrivs av majoriteten."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — förvaltarskapets fem frågor",
+      "intro": "PRIVATE EQUITY & INVESTMENTBOLAG-familjen läses numera även bakifrån: ib-01 äger räkningen, ib-02 granskningen, denna kurs ägandet — rabattens varför förblir km-067:s.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Samla kursen i fem frågor att bära till varje ägarstruktur. Ett: vem är huvudägaren — och vilka är de två andelarna, kapital och röster? Två: vilken makt ger röstandelen genom trapporna — klarar den vardagsbesluten ensam, och var ligger blockeringströskeln för de övriga? Tre: hur länge har ägaren burit portföljen — innehavstid och substansomsättning, de två mätetalen? Fyra: vad säger rabatten om marknadens omdöme om just detta förvaltarskap — och har omdömet rört sig? Fem: vad händer vid nästa generationsskifte — finns en succession som späder rösterna, och vem samlar då minoriteterna?\n\nGränsdragningen mot grannkurserna är kursens sista lektion i noggrannhet. ib-01 äger substansräkningen och ib-02 substansens inre; km-067 äger rabattläsningen; km-068 äger Wallenberg-sfären som levande exempel på det långsiktiga förvaltarskapet i svensk tradition; pe-serien äger fondernas värld med livscykel och utfasningar, och pe-04 den onoterade ägarsidan utanför börsen; sj-03 äger stämmoformalian; ks-02 äger kapitalallokeringens hantverk; st-05 äger skuldsidan av ägandet; ud-09 äger utdelningens hållbarhet — ett av huvudägarens tyngsta återkommande beslut. Case-kurserna pc-04 och pc-18 visar läsningen på två verkliga svenska strukturer. Med de fem frågorna är familjens trappa fullständig — formen (ib-01), innehållet (ib-02) och makten (ib-03) — och ägarlistan har blivit ett analysunderlag i stället för en namnuppräkning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram ägarlistan och eventuell aktieklassstruktur för ett noterat investmentbolag eller industrbolag med huvudägare. Räkna fram huvudägarens kapitalandel och röstandel — med aktievikter om klasserna skiljer sig — samt vilka beslutsnivåer röstandelen klarar ensam och var största samlade minoritet har sin blockeringströskel. Slå upp innehavstid eller substansomsättning om det går: hur länge har huvudägaren burit sina större poster? Avsluta med en mening om vad rabatten mot substans — om en sådan redovisas — säger om just detta förvaltarskap, och upprepa om ett år: stod omdömet sig?"
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor gör ägarsidan läsbar: de två andelarna, trapporna, innehavstiden, rabattens omdöme, successionen. Formen, innehållet och makten — ib-familjens tre steg — förvandlar ägarlistan till analys."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch framhöll ofta ägarsignalen i bolagsläsningen: när ledningen och huvudägaren har eget kapital i spelet — aktier köpta för egetkonto, inte bara tilldelade — talar det om att samma människor bär konsekvenserna av sina beslut. Hans idé om att man ska förstå vad man äger fick därmed en andra sida: att förstå vem som äger. Hans skepsis mot bolag där beslutsfattarna saknar egen risk är kursens riskasymmetri i sammandrag — mandat utan kapital bär en annan drivkraft än mandat med — och hans sätt att komplettera siffrorna med frågan vad de egna ägarna faktiskt gjorde är förvaltarskapsläsningens urform: köpte, höll, eller sålde i takt med att berättelsen byggdes.",
+  "grahamSection": "Benjamin Graham visade tidigt att passivt ägande lämnar värde på bordet: hans egen praktik omfattade köp av minoritetsblock i bolag där värdet satt fast under en oengagerad majoritet, för att sedan bruka rösträtten och driva igenom beslut som frigjorde det — röstandelen använd som analysens sista verktyg, inte som bisak. Det är kursens kärna i Grahams belysning: skillnaden mellan att äga en fordran på substans och att äga en del av besluten om den. Hans marginal blev därmed också en ägarversion — minoritetens marginal ligger inte bara i rabatten mot substansen (km-067) utan i frågan om minoritetens ställning överhuvudtaget kan förverkliga något: en blockeringströskel, en nominering, ett bud. Kursen lär ut mekaniken i läsning — utbildningens mark, inte metoder i aktieägaraktivism.",
+  "ak1Section": "I AK1A:s metodik är denna kurs det tredje steget i ib-serien och PRIVATE EQUITY & INVESTMENTBOLAG-familjens förvaltarskapslager: ib-01 äger substansräkningen, ib-02 granskningen av det inre, denna kurs ägarsidans makt — och km-067 behåller rabattläsningen som sin yta. I AKM1:s bolagsläsning ger kursen ägarinputen: huvudägare, kapital- och röstandel, innehavstid — data som matar samma bolagsbedömning som fundamentaldata. I AKM2:s ram övar den osäkerhetsdimensionen: successionens spädning och riskasymmetrin är båda mätbara riskfaktorer som kan vägas in i scenarier, och blockeringsminoritetens ställning är en fråga om positioner som avgör vilka utfall som alls kan passera. Pariteten med ak1ts-kurserna är metodikens ideal: röstandelen behandlas som vilken annan variabel som helst — ett tal med historia och framtid, inte en företeelse."
+}

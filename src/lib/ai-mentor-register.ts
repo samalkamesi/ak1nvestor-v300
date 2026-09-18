@@ -175,6 +175,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "how-to-make-money-in-stocks", titel: "How to Make Money in Stocks — O'Neil: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 16, quiz: 48, minuter: 176, niva: "Alla" },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Nybörjare" },
   { slug: "ib-02-substansens-kvalitet", titel: "Substansens kvalitet — att granska vad substanssiffran innehåller", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "ib-03-forvaltarskapet", titel: "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "intermarket-analysis", titel: "Intermarket Analysis — Murphy: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 16, quiz: 48, minuter: 180, niva: "Alla" },
   { slug: "interpretation-of-financial-statements", titel: "The Interpretation of Financial Statements — Graham: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 13, quiz: 39, minuter: 130, niva: "Alla" },
   { slug: "investment-valuation", titel: "Investment Valuation — Damodaran: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 18, quiz: 54, minuter: 198, niva: "Alla" },

@@ -2,6 +2,21 @@
 
 Rader med [STYRELSEN]-prefix är styrelsens KÖRS DIREKT-beslut (våg 91 A2, STYRELSE-ADMIN-MEGA.md). Dev-mock-testrader rensade 2026-09-10 (mötet protokollfört i STYRELSE-BESLUT.md).
 
+## STRATEGISKT SKIFTE 2026-09-18 — KVALITET > KVANTITET (styrer ALLA vågval)
+
+Kunddirektiv (fulltext: data/forskning/STRATEGISKT-SKIFTE-2026-09-18.md).
+Fokusordning: 1 **BRANDING** (spår 11) · 2 **FINSLIPNING** (kvalitet på det
+som finns) · 3 **KURS-FAS 2-FÖRDJUPNING** (de 20 indikatorerna på djupet:
+läsa/tolka faktiska årsredovisningar, praktisk innebörd, kritiskt tänkande,
+räkna på RIKTIGA bolag — INGA böcker/författare) · 4 **KURS-FAS 3-FÖRBEREDELSE**
+("under byggnation — kommer snart", aldrig resultatlöften).
+**PAUSADE spår (evighetskatalogen 1-5)**: granskningskön · dataset-djup ·
+SEO-guider · kvartalsrapporter · lärvägarna — inga NYA bokningar där tills
+kunden ändrar; pågående fabriksmanifest får avslutas i fred.
+Systemkvalitet fortgår (våg 188 = paritetregistrets sista post 34) men
+viker för 1-4 vid resurskonflikt. MODEL-ROUTING: branding/finslipningsbarn
+→ GLM-5.3-Flash; arkitektur/kod + Fas 2-pedagogik → GLM-5.3.
+
 ## VÅG 101 — HAND I HAND (2026-09-11, kunddirektiv "ja fortsätt bygg hand i hand")
 
 Kunddirektiv + systemrankningen (STYRELSE-ADMIN-MEGA.md) = kön. Två
@@ -218,8 +233,11 @@ Agent-anrop, 4+ via fabriksmanifest.
 - ✓ VÅG 186 LEVERERAD+STÄNGD (ronder 65–66 [Φ]): UI-koppling sendText (V9/A5 — registrets högsta öppna kvot 1,8) — chattens skicka-knapp ⇄ v4-kommandobussen bakom feature-avvägning: skickaPromptV4 i studio-chat.tsx (POST /api/studio/tjanster/kommando {text, delivery}, ack-presentering, fel-tolerant med återfall), flagga ak1a-v4-sendvag per-webbläsare-persisterad (localStorage) + Zap-toggle bredvid skicka-knappen (kundvänliga titlar, ingen jargon), v4-svaret pollas avgränsat via GET ?sessionId → meddelandeUrHistorik, gamla styrvägen orörd som rollback. Kod 25133bff genom tsc-grinden (0 fel), push med re-merge-strategin (fabrikens 4 commits togs emot), prod-HEAD 9f63f861. Live-bevis (rond 66): 25133bff ancestor i prod-HEAD 09fdb0a7 · flaggnyckel ak1a-v4-sendvag i byggd client-chunk (prodbygg bIsHGIwr 2026-09-18T16:29 — fabrikens deploy byggde om med koden kvar) · GET / 200 · kommandorutt GET 405. Registerpost 35 STÄNGD. ÅTERSTÅR ÖPPNA: 33, 34 (våg 187/188).
 - ✓ VÅG 187 LEVERERAD+STÄNGD (rond 66 kod + rond 67 stängd [Φ]): createSession/createSelectionSideSession (V6/A6 — sessionsfödelse med config+i första kommandot via kommandobussen; readyFlights-ko §11.3) — skapaSession + skapaMarkeringsSidSession i studio-transport.ts (interface + AppServerTransport: envelope-sessionId:null = sessionsfödelse, workspaceId utelämnas med dokumenterad tolkning (app-servern process-äger workspacen); createSelectionSideSession mot aktiva sessionen) + MockTransport-spegel + kommandoruttens båda grenar (401-härdad). Kod 9dc17cdd pushad rond 66 men byggdröjde (fabriksbarn höll prod-ytan + RAM-port). Live-bevis (rond 67): 9dc17cdd ancestor i prod-HEAD 57639901 · createSession + createSelectionSideSession i byggda server-chunks (prodbygg DzHmnCObc 2026-09-18T17:29) · GET / 200 · kommandorutt GET 405. Registerpost 33 STÄNGD. ÅTERSTÅR ÖPPNA i registret: 34 (våg 188).
 - · VÅG 188 BOKAD (registrets ordning 34): v4/command fakta-typer qft — applyFileRewind/forkAssistant/editUserQuery/retryTurn/setAssistantFeedback (V6/A6). Registernoten: bygger på v4/command_fact-persistens (§5/§11.3) — fakta-lagret läses/kartläggs FÖRE implementation. Stängs på live-bevis.
-- · VÅG 189 BOKAD (evighetskatalogen spår 6 — AI-Mentorn 2.0, rotation: spåret orört idag): +10 förhandsfrågor om aktiemarknadens mekaniker (ordervärlden, likviditet, index-konstruktion — utbildningsform, ALDRIG råd enligt 2007:528), källmärkning + kurslänkar per svar, regressionstest, utan API-kostnad. R2-säker: ingen publicering, endast motordata.
-- · VÅG 190 BOKAD (evighetskatalogen spår 1 — granskningskön, förstahandsval): granska m9-utkast #1–2 i data/blogg-utkast/ — källor, siffror, juridik-språk (2007:528), 911-referenser → flyttklart paket med diff-rapport (publicering förblir R2: väntar kund, ALDRIG autonom).
+- ⏸ VÅG 189 EFTERSATT (skiftet 2026-09-18: systemkvalitet viker för fokus 1-4; spår 6 AI-Mentorn): +10 förhandsfrågor om aktiemarknadens mekaniker (ordervärlden, likviditet, index-konstruktion — utbildningsform, ALDRIG råd enligt 2007:528), källmärkning + kurslänkar per svar, regressionstest, utan API-kostnad. R2-säker: ingen publicering, endast motordata. Körs vid lucka i fokus 1-4.
+- ⏸ VÅG 190 PAUSAD (skiftet 2026-09-18: spår 1 granskningskön pausad): granska m9-utkast #1–2 i data/blogg-utkast/ — källor, siffror, juridik-språk (2007:528), 911-referenser → flyttklart paket med diff-rapport (publicering förblir R2: väntar kund, ALDRIG autonom). Återupptas när kunden häver pausen.
+- · VÅG 191 BOKAD (skiftet fokus 1 — BRANDING, spår 11): brandgenomgång av ALLA publika ytor (hem, kurser, dataset, blogg, pris, om oss) — första intryck, ton, tydlighet per sida → data/forskning/BRANDING/brandgenomgang-2026-09.md med konkreta förslag per sida (rubriker, ingresser, CTA:er); juridikgrind i alla formuleringar (utbildning, aldrig råd); Flash-routad fabrik eller direkt agent.
+- · VÅG 192 BOKAD (skiftet fokus 3 — KURS-FAS 2-FÖRDJUPNING): underlag indikator 1–5 av 20 till Fas 2-paketet — per indikator: vad den INNEBÄR i praktiken, läsa/tolka i faktisk årsredovisning (ur universumets 189 bolag), räkneexempel på RIKTIGA bolag, kritiskt tänkande (fällor/misstolkningar) → data/forskning/KURS-FAS2/ underlagsfiler; pedagogik på GLM-5.3; ALDRIG råd (2007:528); inga böcker/författare (kundens eget område).
+- · VÅG 193 BOKAD (skiftet fokus 2 — FINSLIPNING): kvalitetsrond på det som finns — gränssnittsvaktens senaste rapport efterlevd 0-fynd, textpolish på stamvägarna (hem/kurser/pris), brutna länkar + stavfels-svep över publika sidor, CTA-tydlighet → rapport + punktfixar i datafiler (dataleverans, inget bygge).
 - · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)

@@ -9,6 +9,35 @@ z code för att få lab.ak1nvestor.com att vära tack vare studio men också utv
 jobba som en super maskin med parallella flera 10 tals agenter som agerar tillsammans tack vare
 ai styrelse organen som ska forska själv tillsammans parallellt med varandra."
 
+## STRATEGISKT SKIFTE 2026-09-18 — KVALITET > KVANTITET (gällande topprioritet)
+
+Kundens direktiv (kärna; fulltext: data/forskning/STRATEGISKT-SKIFTE-2026-09-18.md):
+**inga nya kurser** (portalen klar, 426 räcker) · fördjupa de 20 fundamentala
+indikatorerna (KURS-FAS 2) · KURS-FAS 3 = "under byggnation" (garanti-texter
+bort — "förbered dig till Fas 3") · branding djupare på ALLA sidor ·
+GLM-5.3-Flash för enkla uppgifter.
+
+**NY FOKUSORDNING (styrer ALLA rondvalsbeslut tills kunden ändrar):**
+1. **BRANDING & ATTRAKTION** — alla sidor skall locka (spår 11, våg 191+)
+2. **FINSLIPNING** — kvalitet på allt som redan finns (vakten 0 fynd, polish)
+3. **KURS-FAS 2-FÖRDJUPNING** — de 20 indikatorerna på djupet: läsa/tolka
+   faktiska årsredovisningar, vad varje indikator INNEBÄR i praktiken,
+   kritiskt tänkande, räkna på RIKTIGA bolag — INGA böcker/författare
+   (dem gör kunden utanför plattformen)
+4. **KURS-FAS 3-FÖRBEREDELSE** — "under byggnation — kommer snart",
+   "bygg din analysförmåga steg för steg" (aldrig resultatlöften)
+5. Systemkvalitet fortgår (paritetregistrets sista post 34 = våg 188;
+   evighetskatalogens spår 7-9) men viker för 1-4 vid resurskonflikt.
+
+NOTERA dubbeltydigheten: programmets FAS 0-3 nedan = supermaskinens faser;
+kundens "Fas 1/2/3" = KURSPAKETEN (gratis/9 999/13 999 kr). Skiftets
+"Fas 2/3" avser KURSPAKETEN.
+
+Pausade spår (evighetskatalogen): 1 granskningskön · 2 dataset-djup ·
+3 SEO-guider · 4 kvartalsrapporter · 5 lärvägarna. Nytt spår 11: branding.
+MODEL-ROUTING: fabriksbarn på branding/finslipning → GLM-5.3-Flash
+(snabb, billig, tillräcklig); arkitektur/kod + Fas 2-pedagogik → GLM-5.3.
+
 ## MÅLBILD (obönhörlig)
 
 1. **Studio = z code, 100 %**: varje tjänst i zcode-binären har en studio-motsvarighet
@@ -42,6 +71,11 @@ Pelare 9 + 10 stängda enligt fullmaktssamträdets punkt 2 med KVD-bevis (se tab
 
 ## FASER
 
+> **HISTORISK 2026-09-18** — FAS 0-3 nedan är supermaskinens ORIGINALfaser
+> (före skiftet). De förblir sanna som bakgrund, men nya vågval styrs av
+> SKIFTETS fokusordning (se sektionen överst i dokumentet). Observera
+> dubbeltydigheten: programmets FAS 0-3 ≠ kundens KURSPAKET Fas 1/2/3.
+
 - **FAS 0 (v148–v164, LEVERERAD 2026-09-15): MINNET + MÅLET + UTKASTET** — kundens tre
   akuta smärtor bevisade i prod (pelare 1–4 ✅, se tabellen).
 - **FAS 1 (pågående): PARITETSKARTAN LEVANDE** — drivs av ZCODE-GAP-REGISTRET:
@@ -59,6 +93,11 @@ Pelare 9 + 10 stängda enligt fullmaktssamträdets punkt 2 med KVD-bevis (se tab
   hemskärmsgenväg + push-notis-liknande borta-banner = primära kanaler.
 
 ## NÄSTA FAS (Fas 2 — fullmaktssamträdets kö + nästa tre ronder, justerat 2026-09-15)
+
+> **HISTORISK 2026-09-18** — plan från före skiftet; det mesta är sedan
+> förverkligat (REGISTER-2 klart rond 30, gap-poster 17-35 stängda
+> successivt — endast post 34/våg 188 återstår). Aktuell kö styrs av
+> skiftet: se PIPELINE-KO.md § STRATEGISKT SKIFTE.
 
 Rangordning enligt registrets regel 1 (högst V/A-kvot först) + kundens tillväxtdirektiv.
 Underlag: 5 öppna gap-poster (9 Diff V4/A2 · 14 historiksök V3/A1 · 11 agent-träd V4/A3 ·

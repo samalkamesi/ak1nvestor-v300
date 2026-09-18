@@ -77,6 +77,7 @@ function tick() {
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);
   if (min === 47 && tim % 6 === 4) korEnGang("integritetsvakt", "node", ["verktyg/integritetsvakt.mjs"]); // BUILD_ID + 5xx FÖRE kundens ögon (mega g5) — 3,5 h efter gränssnittsvakten
   if (min === 23 && tim % 6 === 4) korEnGang("minnesberedare", "node", ["verktyg/minnesberedare.mjs"]);
+  if (min === 52 && tim % 6 === 2) korEnGang("backup-offsite", "node", ["verktyg/backup-offsite.mjs"]);
   if (tim === 3 && min === 10) korEnGang("ISR-värmare", "bash", ["data/infra/contabo/ak1a-varm.sh"]);
   if (tim === 4 && min === 44) korEnGang("scenariotest", "node", ["verktyg/testa-studio-scenarion.mjs"]);
   if (min % 15 === 12) korEnGang("feljagaren", "node", ["verktyg/feljagaren.mjs"]);

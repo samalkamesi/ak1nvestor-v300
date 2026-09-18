@@ -1729,9 +1729,14 @@ får ALDRIG krascha sattMal/rensaMal.
   2026-09-15 — kör diagnosen (paket-integritet + journal + fabriklogg) FÖRE npm
   ci+build; ett onödigt bygge är själv en incidentrisk. (2) Vakten MÅSTE köras från
   /home/ak1a/AK1 (arbetsytan har partiellt node_modules utan puppeteer-core — snabbtest
-  där ger falskt VAKTFEL "Cannot find package"). (3) "/admin 2px överflöd i mobil" är
-  ett konstant normalmönster UNDER fyndtröskeln (GRÖN 13:17 med identiskt mönster) —
-  inte ett fel, jaga det inte. (4) Studio-skalet verkställde varken rm eller node-fil
+  där ger falskt VAKTFEL "Cannot find package"). (3) RÄTTAD 2026-09-18 (s8-u3-retry,
+  u1:s bokning): "/admin 2px överflöd i mobil" var INTE ett normalmönster utan ett äkta
+  defekt i tre lager (tabbradens -mx-4-utbrytning o58 + ActivityRow shrink-0 + Radix
+  ScrollArea-table-svällning) — kurerat 2026-09-17/18, slutmätt 0/88 GRÖN på deploy
+  5d8bbd1f 00:10Z (OPTIMERING-protokoll o58 + S8-U3-ACTIVITYROW-OVERFLOD; kedjesond
+  l=0 v=390). "GRÖN 13:17 med identiskt mönster"-slutsatsen var mätblindhet: dokument-
+  scrollen klipptes (0px överflöd) medan element låg utanför — jaga ALLTID
+  utanfor-signalen, aldrig bara överflödstalet. (4) Studio-skalet verkställde varken rm eller node-fil
   ikväll (häng utan effekt, omväxlande med fungerande körningar) — städning via
   subagent; fjärde observationen av hang-typen.
 

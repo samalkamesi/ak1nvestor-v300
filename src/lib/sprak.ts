@@ -7,7 +7,8 @@
  *
  * - Register: 'sv' | 'en' | 'ar' (ar ⇒ dir="rtl" på <html>)
  * - Lagring: localStorage "ak1a-sprak-v1"
- * - Detektering: navigator-språk, ENDAST om sv/en/ar — annars svenska
+ * - Resolution: sparat val ⇒ svenska (o75: navigator-detekt ur auto-init —
+ *   hydrat-språkbyte gav CLS 0,106 på /; se detekteraSprak-dokumentationen)
  * - t(nyckel): typsäker översättning ur ORDLISTA (src/lib/ordlista.ts)
  *   med {parameter}-interpolation och sv-fallback
  *
@@ -77,6 +78,17 @@ export function sparaSprak(sprak: SprakId): void {
  * "en-US" ⇒ en). Alla andra språk ⇒ null ⇒ svenska. Ingen geografi, ingen
  * gissning: kunddirektivet är "exakt samma avancering", och standardspråket
  * på en svenskspråkig sajt är svenska tills eleven själv väljer.
+ *
+ * O75 (spår 7, 2026-09-19): används INTE längre av hamtaSprak(). Den gamla
+ * auto-init-kedjan (localStorage ⇒ navigator ⇒ sv) bytte UI-språk till
+ * en/ar VID HYDRATISERINGEN för förstabesökare utan sparat val — SSR-HTML:n
+ * är alltid svenska, textnoderna byts efter första paint och hero-citatets
+ * engelska rad är längre ⇒ radbrytning +1 ⇒ CLS 0,106 på / (bevis:
+ * data/forskning/OPTIMERING/o75-prestanda-hydratsprak-cls-s7.md — geometri-
+ * diff: hero-p 117→146 px vid skiftet; fonter blockerade = skiftet kvarstår).
+ * Detekteringen behålls exporterad för framtida SSR-KONSISTENT användning
+ * (middleware Accept-Language → spegelredirect /en|/ar), som är det enda
+ * sättet att auto-välja språk UTAN layoutskift — aldrig via klient-hydrat.
  */
 export function detekteraSprak(): SprakId | null {
   if (typeof navigator === "undefined") return null;
@@ -95,9 +107,14 @@ export function detekteraSprak(): SprakId | null {
   return null;
 }
 
-/** Full resolution: sparat val ⇒ navigator ⇒ svenska. */
+/**
+ * Full resolution: sparat val ⇒ svenska (o75 — navigator-leden borttagen;
+ * se detekteraSprak-dokumentationen ovan). Väljaren + speglarna /en|/ar
+ * (indexbara) är elevens väg till andra språk, precis som kunddirektivet
+ * "svenska tills eleven själv väljer" formulerar det.
+ */
 export function hamtaSprak(): SprakId {
-  return lasSprak() ?? detekteraSprak() ?? "sv";
+  return lasSprak() ?? "sv";
 }
 
 export function dirForSprak(sprak: SprakId): "ltr" | "rtl" {

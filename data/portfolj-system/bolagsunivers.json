@@ -15011,94 +15011,274 @@
   },
   "notering": "Self-storage-ikonen — fastighetsform med lägst kapitalbindning per intäktsdollar: ROE 21,93 % och ROIC 11,71 % (trio:s topp på båda) för att ett lagerrörelse varken kräver hissar, värmesystem eller broker-kedja — hyresgästen gör flyttjobbet självt; brutto 74,4 % och netto 41,6 % = universumets bredaste self-storage-marginaler med EV/EBIT 30,07 mot O:s 30,45 (olika världar, nästan samma multiple); ENGÅNGSVINSTFÄLLAN dokumenterad i källan: FY2022 netto 4 142 M $ (pretax ~102 % av omsättningen — fastighetsförsäljningsvinster) ger resultatCAGR endpoint −2,2 %/år TROTS stabil drift: TTM netto +12,9 % på oms +3,2 % visar den underliggande motorn, trailing-P/E 28,69 mot forward 30,83 (prognosTillväxt −6,9 %, peg osatt enligt ORSTED-konventionen) = konsensus väntar lägre EPS — normaliseringsgap-listans nya post; utdelningen DPS 8,00→8,00→12,00→12,00→12,00 $ (2023 års 50 %-höjning sedan platta) med payout 114,5 % av EPS (REIT-konventionen) och 3,99 % direktavkastning; FCF +1,71 mdr = trio:s ENDA positiva (fcfYield 2,93 %) — self-storage kräver minst nyinvestering per befintlig box, expansionen går via förvärv (skuld 7,5→10,3 mdr) inte via byggräls; omsättningstillväxten +7,3 %/år endpoint med TTM +3,2 % = USA:s flytt- och boendecykel (tillgång på bostäder styr efterfrågan); beta 0,94. NOTIS DATAÄGAREN: källans OCF=FCF-identitet i financials (capex exkluderad där) — vardering.fcfYield bär statistics-konventionen."
  },
-    {
-    "ticker": "TCS.NS",
-    "namn": "Tata Consultancy Services Limited",
-    "bransch": "teknik",
-    "land": "Indien",
-    "valuta": "INR",
-    "kallor": [
-      {
-        "namn": "StockAnalysis",
-        "hamtat": "2026-09-18",
-        "url": "https://stockanalysis.com/quote/nse/TCS/",
-        "paranoid": "NSE-primärnoteringen (översikt + statistics + financials + cash-flow-statement; underlag S&P Global Market Intelligence + Fiscal.ai; stängningskurs 2026-09-17 15:15 IST): pris, börsvärde, P/E-forward-P/B-EV/EBIT-PEG, marginaler, ROE/ROIC, WACC, utdelning/payout, beta, anställda — 5 räkenskapsår FY2022–FY2026 (april–mars, slutårsetikett) i INR; källans yield-fält 4,78 % avviker från DPS/kurs 5,07 % (källans eget underlag) — notis i raden"
-      }
-    ],
+ {
+  "ticker": "TCS.NS",
+  "namn": "Tata Consultancy Services Limited",
+  "bransch": "teknik",
+  "land": "Indien",
+  "valuta": "INR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
     "hamtat": "2026-09-18",
-    "pris": 2190,
-    "marknadsKapitalMdr": 7920000,
-    "tillvaxt": {
-      "omsattningCAGR5ar": 0.0863,
-      "resultatCAGR5ar": 0.0645,
-      "omsattningTillvaxtTTM": 0.077,
-      "prognosTillvaxt": 0.1228
-    },
-    "lonksamhet": {
-      "roe": 0.4774,
-      "roic": 0.6638,
-      "bruttoMarginal": 0.4039,
-      "ebitMarginal": 0.2489,
-      "nettoMarginal": 0.1805,
-      "fcfMarginal": 0.1746
-    },
-    "stabilitet": {
-      "skuldEgenkapital": 0.1,
-      "rantaTackning": null,
-      "fcfPositivaSenaste5": null,
-      "kassaManaderBurnRate": null,
-      "nyemissionerSenaste5ar": null
-    },
-    "aterkop": {
-      "senasteArMdr": null,
-      "andelUtestande": null,
-      "insiderkopSenaste6man": null
-    },
-    "moat": {
-      "bruttoMarginalMedel5ar": 0.4097,
-      "bruttoMarginalSpread5ar": 0.0497,
-      "roeMedel5ar": null
-    },
-    "vardering": {
-      "pe": 15.91,
-      "pb": 7.15,
-      "evEbit": 11.07,
-      "peg": 1.3,
-      "fcfYield": 0.0608,
-      "egenKapitalMultipl": 7.15
-    },
-    "golv": {
-      "typ": "osatt",
-      "vardePerAktie": null,
-      "marginal": null
-    },
-    "serier": {
-      "ar": [
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "omsattning": [
-        2254580,
-        2408930,
-        2553240,
-        2670210
-      ],
-      "resultat": [
-        421470,
-        459080,
-        485530,
-        492100
-      ],
-      "egetKapital": [],
-      "fcf": [
-        394330,
-        421360,
-        449280,
-        478700
-      ]
-    },
-    "notering": "UNIVERSUMETS FÖRSTA INDIEN-RAD (19:e landet) — och teknikgrenens IT-TJÄNSTE-LED föds: ASML (maskinerna) → TSMC (foundry) → 005930.KS (minnet) täcker kapitalets kedja; TCS täcker MÄNNISKAN — världens största renodlade IT-tjänstekoncern med 584 519 anställda och 4,72 M INR i omsättning per anställd (0,85 M i vinst): affärsmodellen ÄR personalen. KONSULTENS KAPITALBALANS: ROIC 66,4 % mot WACC 5,2 % = +61,2 procentenheter — bland universumets bredaste noteringsspridningarna (Mastercards +85,8 pp bredast i noteringssvepet; Nintendos +47,8 pp passerad) — kapitalåtergången i en affär där huvudtillgången går hem varje kväll; nettokassa 337,2 mdr INR (93,20 per aktie; kassa 450,3 − skuld 113,1), skuld/EK 0,10. TJÄNSTEAFFÄRENS KASSAFLÖDESIDENTITET: driftskassa 520,9 mdr INR FY2026 mot resultat 492,1 = 106 % — tjänsteintäkter faktureras och betalas (kontrast mot lagerbärande branschgrannar); FCF +394 → +421 → +449 → +479 mdr INR fyra raka; capex 25,3 → 22,0 → 39,8 → 42,2 mdr = 1,6–2,0 % av omsättningen — foundry-kontrasten: TSMC/Samsung binder hundratals miljarder i fabriker, konsulten hyr kompetens. TILLVÄXTNEDGÅNGEN: omsättning +6,0 % → +4,6 % (FY2025→FY2026) med TTM +7,7 %, resultat +5,5 % → +1,4 % med TTM +1,1 % — indisk IT möter lönekostnadsinflation och AI-automatiseringens fråga; endpoint-CAGR FY2022→FY2026 omsättning +8,6 %/år, resultat +6,4 %/år — och FÖRSTA GÅNGEN I UNIVERSUMET beräknas fältet 'CAGR5ar' på FEM räkenskapsår (den ärvda flaggan 'namnet vs 4 perioder' är här bokstavligen sant). UTDDELNINGSMASKINEN: utdelningar betalda 133 → 413 → 251 → 449 → 394 mdr INR FY2022–FY2026 — indisk interim+special-policy ger taggig serie (källans '1 år utdelningstillväxt' är ett fältartefakt av YoY-fallet −12,6 %, ej historien) + återköp 180 → 42 → 210 → 0 → 0 (programmen pausade sedan FY2024); DPS 111 INR (5,07 % på kursen 2 190; källans yield-fält 4,78 % bär dess eget underlag — notis) med payout 79,9 % — utdelningsandelen bland universumets högsta mot en balansräkning som inte behöver kapitalet. VARDERINGEN: P/E 15,91 mot forward 14,17 ⇒ prognosTillväxt +12,3 % (TTE-konventionen; källans 3-års EPS-prognos +5,44 %/år som kontrast-not — konsensus kalibrerad lägre än TTE-gapet), PEG 1,30 spårkonvention (källans 2,35 som not — ENEA/NOTE-klassens källspridning); P/B 7,15 (källans) mot pris/BVPS 7,23 (BVPS 303,01) — equity-måttens inre spridning, 005930.KS-notisens kusin; EV/EBIT 11,07 replikerbar ((7 920 + 113,1 − 450,3) ÷ 686,6 TTM-EBIT ≈ 11,0); fcfYield 6,1 % (481,6 ÷ 7 920). MARGINALTRAPPAN: brutto 40,4 % → EBIT 24,9 % → netto 18,1 % — lönekostnaden är affären; bruttomarginalens 5-årsmedel 40,97 % med spread 4,98 pp = vallgravens stadiga form (FY2022 43,3 % → FY2025 38,3 % → TTM-vändning upp). ROE-NOTIS: källans 47,74 % mot egen replik 45,4 % (NI ÷ (BVPS × aktier)) — källans equity-underlag skiljer; fältet bär källans tal. FY2026:S FÖRVÄRVSSPOR: investing-kassaflödet −128,5 mdr med acquisitions −67,7 mdr — första större förvärvet i en annars organiskt växt historia. KURSEN: NSE-primärnotering 2 190 INR (2026-09-17), 52-vägers spann 1 976,80–3 350,00 (kursen nära bottenspannet efter IT-sektorns AI-osäkerhetsreträtt), beta 0,17 — bland universumets lugnaste (endast DNO −0,15, TRYG/LMT 0,10, COP 0,13, NTDOY 0,14 lägre av 32 noterade); institutioner 89,2 %, insiders 0,01 %; börsvärde 7,92 biljoner INR. RÄKENSKAPSÅRET april–mars (FY2026 = apr 2025–mar 2026, slutårsetikett — RBC:s nov–okt-konventions kusin, universumets tredje årskonvention); nästa rapport 2026-10-09 (Q2 FY2027 — teknikgrenens tidigaste kommande rappdag: före ENEA/NOTE 10-22/23, SAP 10-21, Samsung 10-28)"
-  }
+    "url": "https://stockanalysis.com/quote/nse/TCS/",
+    "paranoid": "NSE-primärnoteringen (översikt + statistics + financials + cash-flow-statement; underlag S&P Global Market Intelligence + Fiscal.ai; stängningskurs 2026-09-17 15:15 IST): pris, börsvärde, P/E-forward-P/B-EV/EBIT-PEG, marginaler, ROE/ROIC, WACC, utdelning/payout, beta, anställda — 5 räkenskapsår FY2022–FY2026 (april–mars, slutårsetikett) i INR; källans yield-fält 4,78 % avviker från DPS/kurs 5,07 % (källans eget underlag) — notis i raden"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 2190,
+  "marknadsKapitalMdr": 7920000,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0863,
+   "resultatCAGR5ar": 0.0645,
+   "omsattningTillvaxtTTM": 0.077,
+   "prognosTillvaxt": 0.1228
+  },
+  "lonksamhet": {
+   "roe": 0.4774,
+   "roic": 0.6638,
+   "bruttoMarginal": 0.4039,
+   "ebitMarginal": 0.2489,
+   "nettoMarginal": 0.1805,
+   "fcfMarginal": 0.1746
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.1,
+   "rantaTackning": null,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": null
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4097,
+   "bruttoMarginalSpread5ar": 0.0497,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 15.91,
+   "pb": 7.15,
+   "evEbit": 11.07,
+   "peg": 1.3,
+   "fcfYield": 0.0608,
+   "egenKapitalMultipl": 7.15
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "omsattning": [
+    2254580,
+    2408930,
+    2553240,
+    2670210
+   ],
+   "resultat": [
+    421470,
+    459080,
+    485530,
+    492100
+   ],
+   "egetKapital": [],
+   "fcf": [
+    394330,
+    421360,
+    449280,
+    478700
+   ]
+  },
+  "notering": "UNIVERSUMETS FÖRSTA INDIEN-RAD (19:e landet) — och teknikgrenens IT-TJÄNSTE-LED föds: ASML (maskinerna) → TSMC (foundry) → 005930.KS (minnet) täcker kapitalets kedja; TCS täcker MÄNNISKAN — världens största renodlade IT-tjänstekoncern med 584 519 anställda och 4,72 M INR i omsättning per anställd (0,85 M i vinst): affärsmodellen ÄR personalen. KONSULTENS KAPITALBALANS: ROIC 66,4 % mot WACC 5,2 % = +61,2 procentenheter — bland universumets bredaste noteringsspridningarna (Mastercards +85,8 pp bredast i noteringssvepet; Nintendos +47,8 pp passerad) — kapitalåtergången i en affär där huvudtillgången går hem varje kväll; nettokassa 337,2 mdr INR (93,20 per aktie; kassa 450,3 − skuld 113,1), skuld/EK 0,10. TJÄNSTEAFFÄRENS KASSAFLÖDESIDENTITET: driftskassa 520,9 mdr INR FY2026 mot resultat 492,1 = 106 % — tjänsteintäkter faktureras och betalas (kontrast mot lagerbärande branschgrannar); FCF +394 → +421 → +449 → +479 mdr INR fyra raka; capex 25,3 → 22,0 → 39,8 → 42,2 mdr = 1,6–2,0 % av omsättningen — foundry-kontrasten: TSMC/Samsung binder hundratals miljarder i fabriker, konsulten hyr kompetens. TILLVÄXTNEDGÅNGEN: omsättning +6,0 % → +4,6 % (FY2025→FY2026) med TTM +7,7 %, resultat +5,5 % → +1,4 % med TTM +1,1 % — indisk IT möter lönekostnadsinflation och AI-automatiseringens fråga; endpoint-CAGR FY2022→FY2026 omsättning +8,6 %/år, resultat +6,4 %/år — och FÖRSTA GÅNGEN I UNIVERSUMET beräknas fältet 'CAGR5ar' på FEM räkenskapsår (den ärvda flaggan 'namnet vs 4 perioder' är här bokstavligen sant). UTDDELNINGSMASKINEN: utdelningar betalda 133 → 413 → 251 → 449 → 394 mdr INR FY2022–FY2026 — indisk interim+special-policy ger taggig serie (källans '1 år utdelningstillväxt' är ett fältartefakt av YoY-fallet −12,6 %, ej historien) + återköp 180 → 42 → 210 → 0 → 0 (programmen pausade sedan FY2024); DPS 111 INR (5,07 % på kursen 2 190; källans yield-fält 4,78 % bär dess eget underlag — notis) med payout 79,9 % — utdelningsandelen bland universumets högsta mot en balansräkning som inte behöver kapitalet. VARDERINGEN: P/E 15,91 mot forward 14,17 ⇒ prognosTillväxt +12,3 % (TTE-konventionen; källans 3-års EPS-prognos +5,44 %/år som kontrast-not — konsensus kalibrerad lägre än TTE-gapet), PEG 1,30 spårkonvention (källans 2,35 som not — ENEA/NOTE-klassens källspridning); P/B 7,15 (källans) mot pris/BVPS 7,23 (BVPS 303,01) — equity-måttens inre spridning, 005930.KS-notisens kusin; EV/EBIT 11,07 replikerbar ((7 920 + 113,1 − 450,3) ÷ 686,6 TTM-EBIT ≈ 11,0); fcfYield 6,1 % (481,6 ÷ 7 920). MARGINALTRAPPAN: brutto 40,4 % → EBIT 24,9 % → netto 18,1 % — lönekostnaden är affären; bruttomarginalens 5-årsmedel 40,97 % med spread 4,98 pp = vallgravens stadiga form (FY2022 43,3 % → FY2025 38,3 % → TTM-vändning upp). ROE-NOTIS: källans 47,74 % mot egen replik 45,4 % (NI ÷ (BVPS × aktier)) — källans equity-underlag skiljer; fältet bär källans tal. FY2026:S FÖRVÄRVSSPOR: investing-kassaflödet −128,5 mdr med acquisitions −67,7 mdr — första större förvärvet i en annars organiskt växt historia. KURSEN: NSE-primärnotering 2 190 INR (2026-09-17), 52-vägers spann 1 976,80–3 350,00 (kursen nära bottenspannet efter IT-sektorns AI-osäkerhetsreträtt), beta 0,17 — bland universumets lugnaste (endast DNO −0,15, TRYG/LMT 0,10, COP 0,13, NTDOY 0,14 lägre av 32 noterade); institutioner 89,2 %, insiders 0,01 %; börsvärde 7,92 biljoner INR. RÄKENSKAPSÅRET april–mars (FY2026 = apr 2025–mar 2026, slutårsetikett — RBC:s nov–okt-konventions kusin, universumets tredje årskonvention); nästa rapport 2026-10-09 (Q2 FY2027 — teknikgrenens tidigaste kommande rappdag: före ENEA/NOTE 10-22/23, SAP 10-21, Samsung 10-28)"
+ },
+ {
+  "ticker": "PBR",
+  "namn": "Petróleo Brasileiro S.A. - Petrobras",
+  "bransch": "energi",
+  "land": "Brasilien",
+  "valuta": "USD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/stocks/pbr/",
+    "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; NYSE-ADR close 2026-09-17 20,94 USD, sidorna pålästa 2026-09-18): pris, mcap 129,27 mdr USD, EV 190,10 mdr, P/E 5,02 forward 4,62, P/B 1,39 (mcap/equity — källans P/TBV 1,43), EV/EBIT 4,98 EV/EBITDA 4,05, marginaler, ROE 30,27 %/ROIC 18,69 %/WACC 1,99 %, skuld/EK 0,76, nettoskuld 60,37 mdr USD, utdelning 1,185 USD/aktie (5,66 %, payout 28,39 %), beta −0,21, 52-v 11,43–22,24 (+61,8 %), Altman Z 1,53, Piotroski F 8, analytiker Buy 22,38 USD; ADR-konvention: 1 ADR = 2 stamaktier (källans shares-out 12,89 mdr = samtliga stamaktier ON+PN; mcap bärs av 6,174 mdr ADR-ekvivalenter; EPS 4,17 är per ADR); FY-serier i rapportvaluta BRL (mkr) enligt CNQ/EQNR-precedensen — statistics-TTM är USD-översatt; bransch Energy/Oil & Gas Integrated källkonsekvent med XOM/CVX/SHEL/TTE-familjen"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 20.94,
+  "marknadsKapitalMdr": 129.27,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.0811,
+   "resultatCAGR5ar": -0.1638,
+   "omsattningTillvaxtTTM": 0.112,
+   "prognosTillvaxt": 0.0866
+  },
+  "lonksamhet": {
+   "roe": 0.3027,
+   "roic": 0.1869,
+   "bruttoMarginal": 0.506,
+   "ebitMarginal": 0.3605,
+   "nettoMarginal": 0.2431,
+   "fcfMarginal": 0.1941
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.76,
+   "rantaTackning": null,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": null
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.5024,
+   "bruttoMarginalSpread5ar": 0.0509,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 5.02,
+   "pb": 1.39,
+   "evEbit": 4.98,
+   "peg": 0.58,
+   "fcfYield": 0.159,
+   "egenKapitalMultipl": 1.39
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    641256000000,
+    511994000000,
+    490829000000,
+    497549000000
+   ],
+   "resultat": [
+    188328000000,
+    124606000000,
+    36606000000,
+    110129000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    205754000000,
+    155381000000,
+    124181000000,
+    91619000000
+   ]
+  },
+  "notering": "Universumets FÖRSTA SYDAMERIKA-RAD och 19:e landet: Brasiliens statskontrollerade oljemajor (statlig majoritet via Petrobras Participações; Reuters etiketterar 'state-run'; källan klassar Energy/Oil & Gas Integrated). UTDDELNINGSCYKELNS LÄROBOK: DPS BRL 7,773 (FY2021) → 17,062 (FY2022, direktavkastning 52,2 % i oljeboomens topp) → 7,270 → 5,734 → 3,199 (FY2025, 5,1 %) — utdelningen följer oljepriset, precis som konventionen lär (nuvarande 1,185 USD = 5,66 %, payout 28,39 % av TTM-EPS 4,17). FY2024-dipet netto 36,6 mdr BRL → FY2025 110,1 mdr (+200,8 %) = skatte-/engångsposternas svans. TTM (USD): oms 105,87 mdr (+11,2 %), netto 25,74 mdr (+72,4 %), bruttomarginal 50,6 %, EBIT 36,1 %, FCF 20,55 mdr (fcfYield 15,9 % — kassaflödesmaskinen i oljeprisets farvatten). P/E 5,02 mot forward 4,62 ⇒ prognosTillväxt +8,7 % (PEG 0,58 spårkonventionen; källans PEG n/a). ROIC 18,69 % mot WACC 1,99 % = +16,7 pp; ROE 30,3 %. Beta −0,21 = universumets andra negativa beta (DNO −0,15) — oljan som motvikt mot tekniktunga index. Skuld/EK 0,76, nettoskuld 60,4 mdr USD, Debt/EBITDA 1,27; räntetäckning n/a hos källan. Insiders 1,73 % (formella insiders — den statliga kontrollen bärs av holdingsbolag utanför källans insiderdefinition). Nästa rapport 2026-11-10 (Q3), ex-div 2026-08-25."
+ },
+ {
+  "ticker": "VALE",
+  "namn": "Vale S.A.",
+  "bransch": "material",
+  "land": "Brasilien",
+  "valuta": "USD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/stocks/vale/",
+    "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; NYSE-ADR close 2026-09-17 14,47 USD, ADR 1:1, sidorna pålästa 2026-09-18): pris, mcap 61,49 mdr USD, EV 77,97 mdr, P/E 30,72 forward 8,71, P/B 1,58 (mcap/equity; P/TBV 2,15), EV/EBIT 6,68 EV/EBITDA 5,22, marginaler, ROE 4,11 %/ROIC 7,67 %/ROCE 15,69 %/WACC 7,51 %, skuld/EK 0,55, räntetäckning 3,89×, nettoskuld 15,47 mdr USD, utdelning 0,712 USD/aktie (4,92 %, payout 152,4 % av TTM-EPS), köpavkastning 0,01 %, beta 0,75, 52-v 10,58–17,94 (+32,6 %), Altman Z 1,96, Piotroski F 7, analytiker Buy 16,66 USD (25 st); EFFEKTIV SKATTESATS 64,40 % TTM (källans signifikanta tal — provisioner för Brumadinho/Samarco-förpliktelser trycker TTM-nettot); FY-serier i rapportvaluta BRL (mkr) — statistics-TTM är USD-översatt; bransch Materials/Other Industrial Metals & Mining källkonsekvent med BHP/RIO-familjen"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 14.47,
+  "marknadsKapitalMdr": 61.49,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.0194,
+   "resultatCAGR5ar": -0.4758,
+   "omsattningTillvaxtTTM": 0.04,
+   "prognosTillvaxt": 2.527
+  },
+  "lonksamhet": {
+   "roe": 0.0411,
+   "roic": 0.0767,
+   "bruttoMarginal": 0.3492,
+   "ebitMarginal": 0.2774,
+   "nettoMarginal": 0.0475,
+   "fcfMarginal": 0.087
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.55,
+   "rantaTackning": 3.89,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": null
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4375,
+   "bruttoMarginalSpread5ar": 0.2507,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 30.72,
+   "pb": 1.58,
+   "evEbit": 6.68,
+   "peg": 0.12,
+   "fcfYield": 0.0595,
+   "egenKapitalMultipl": 1.58
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    226508000000,
+    208066000000,
+    206005000000,
+    213595000000
+   ],
+   "resultat": [
+    95924000000,
+    39940000000,
+    31592000000,
+    13814000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    30017000000,
+    36459000000,
+    15101000000,
+    15375000000
+   ]
+  },
+  "notering": "Världens största järnmals- och pelletsproducent (segment FY2025 BRL: Iron Ore 101 658 · Pellets 6 196 · Nickel 16 571 · Copper 22 251 — källans segmenttabell): tillsammans med PBR universumets första Sydamerika-rader och grundplåten till framtida /dataset/material/brasilien + /dataset/energi/brasilien. MOAT-FALLETS LÄROBOK: bruttomarginal 60,0 % (FY2021, järnmalmsboomen) → 35,0 % (FY2025) — spread 25,1 pp = universumets NÄST BREDASTE efter DNO (27,6 pp): råvaruvallgraven som försvinner med priscykeln (femårsgenomsnitt 43,8 %). P/E 30,72 mot forward 8,71 ⇒ prognosTillväxt +252,7 % = universumets näst extremaste gap efter DNO (+365,8 %; ARM +143,7 och Samsung +205,1 klara den nedre trappan) — PEG 0,12 spårkonventionen, gap-mått inte frikort. TTM-netto 2,00 mdr USD (−64,2 %) mot EBIT 11,68 mdr: skillnaden bor UNDER driftsraden — finansiella poster och skatteprovisioner med effektiv skattesats 64,4 % (Brumadinho/Samarco-efterdyningar), därav payout 152,4 % av TTM-EPS medan utdelningen bärs av kassaflödet (FCF 3,66 mdr, fcfYield 5,95 %, DPS 0,712 USD = 4,92 %). DPS BRL-serien 14,094→5,691→6,987→4,757→5,477 = samma cykeldoktrin som PBR men mjukare amplitud. Serierna FY2022–FY2025 mkr BRL: oms 226 508→213 595 (−1,9 %/år endpoint) · netto 95 924→13 814 (−47,6 %/år endpoint — cykelbotten) · FCF 30 017→15 375. ROIC 7,67 % mot WACC 7,51 % = +0,16 pp (knapp marginal på TTM-botten) medan ROCE 15,69 % visar driftens kraft; skuld/EK 0,55, räntetäckning 3,9×. Beta 0,75. Insiders 0,02 %, institutioner 53,9 %. Nästa rapport 2026-10-29 (Q3), ex-div 2026-08-13."
+ }
 ]

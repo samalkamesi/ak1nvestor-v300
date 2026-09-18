@@ -13537,3 +13537,13 @@ kvartalssviten = dr-total + dr-arkivsvep senast 2026-12-17; (4) pumpsignaturen
 som vaktpost. Protokoll: data/forskning/DR-ARKIVSVEP-2026-09-18.md +
 AUTO-6/AUTO-7 + DRIFTSBOKEN (DR-radens lead + protokollförteckningen) + denna
 sektion. [fabrik]
+
+## SPÅR 10 s10-u3 ARKIVSVEP-EPILOG — DRIFTSBOKEN-clobber bokförd (s9-u2-klassen, pathspec-kuren verifierad) [fabrik]
+
+Efter mina två DRIFTSBOKEN-Edit (~08:26–08:27) konstaterades disk == HEAD (164 239
+tecken, mina rader borta, grep 0/0): ett aktivt syskons Read-Modify-Write (node-append
+som cachat före-mig-tillståndet) skrev över filen 08:27:00 — lost update, exakt
+a63fa6d5:s klass. KUR VERIFIERAD: Edit om-gjorda + git commit -F <fil> -- <pathspec>
+omedelbart = commit 6709b333 bär DR-radens lead + förteckningen (grep 1 i HEAD).
+Läxa bekräftad: vid delade megaytor (DRIFTSBOKEN/worklog) = skrivning + pathspec-commit
+i samma fönster; kolla disk==HEAD om status visar tomt efter egen Edit.

@@ -127,11 +127,16 @@ mekanismen utbyggbar.
    "sitemap+journal (1 943 url:ar, 1 738 aldrig mätta)" + ≥17 aldrig-mätta
    rotnivåsidor mätta, journalen växer 264 → ~285+. /kalkylator i första
    svepet, /superanalys inom ~2-3. Återrapporteras av vaktposten.
-2. **Riktad FÖRE/EFTER-mätning --sidor=/superanalys,/kalkylator:** väntar
-   RAM (fönstret hade 762–906 MB tillgängligt; chrome-vakten ~1 GB;
-   fabriksRAM-tröskel 1 500 MB — syskon aktiva). Körs när minnet frigörs
-   (2 sidor × 2 teman × 2 skärmar = 8 kombinationer); fynd där ägs av
-   nästa våg enligt rotorsaksprotokollen.
+2. **Riktad mätning --sidor=/superanalys,/kalkylator — LEVERERAD samma
+   fönster (EFTERBOKFÖRD 13:5x):** RAM frigjordes när omgångens syskon
+   exiterade (762–998 → 2 302 MB tillgängligt) och mätningen kördes mot
+   loopback: **8/8 kombinationer (2 sidor × 2 teman × 2 skärmar) · 0 fynd
+   · 0 konsolfel · status ok · exit 0** — rapport
+   data/vakten/granssnitt-2026-09-18T1135.json (gitignorerad väg).
+   De två förut blinda verktygssidorna är alltså FRISKA i dagsläget;
+   blindheten var ändå verklig (rotationen hade ALDRIG nått dem — nu
+   når den dem rutinmässigt via §4-kuren). --sidor-läget roterar inte
+   journalen: de första organiska journalmätningarna sker via cron (§6.1).
 3. **Täckningsprognos:** 1 738 aldrig-mätta / (24-3) platser × 4 svep/dygn
    ≈ 18 dygn till full journa täckning; därefter global round-robin med
    återbesök ~var 81:a dag per sida (1 943/24 platser) — bas-sidorna

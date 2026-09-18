@@ -1,0 +1,25 @@
+{
+  "skapad": "2026-09-18T12:24:32.584Z",
+  "verktyg": "verktyg/dr-pumpvakt.mjs",
+  "signaturKonstanter": {
+    "pumpFoddYngreBlad": "2026-09-13",
+    "snapshotsPerDag": 18984,
+    "boardBand": [
+      760,
+      780
+    ],
+    "organBand": [
+      0,
+      100
+    ]
+  },
+  "kandaSchemaUndantag": [
+    "cron",
+    "vault"
+  ],
+  "blad": [],
+  "par": [],
+  "restore": null,
+  "dom": "RÖD",
+  "protokoll": "data/forskning/DR-PROV-2026-09-18-AUTO-11.md"
+}

@@ -15550,5 +15550,277 @@
    ]
   },
   "notering": "Nordisk e-handel i två motorer (FY2025 mkr): Boozt.com 6 659 (premium multi-brand) + Booztlet.com 1 628 (re-/outlet) — fullpris och rea som separata världar i samma bolag, TTM 8 535 mkr (+3,7 %). TILLVÄXTENS LÖNSAMHETSSIDA (mot Klarna i samma cell): netto positivt fem raka år 187/233/342/301 mkr (FY2022–25), EBIT-marginal TTM 5,3 % (2026-guidance 5,3–6,5 % enligt bolaget, Q2-2026 'near doubling of EBIT margin' på +13 % omsättningstillväxt), FCF 703 Mkr TTM (fcfYield 8,2 %) efter rekordåret FY2025 985 Mkr — e-handelns lagervarande kassaflöde: FCF-serien 360/109/127/985 (fyra år) svänger med capex-/lagercykeln (FY2022:s autobahn-år 446 Mkr capex i NECS-robotlogistik, FY2024 21 Mkr). MOAT STABIL: bruttomarginalerna 29,9/29,5/28,7/29,0/29,1 % (FY2021–25) — medel 29,2 %, spread 1,22 pp = universumets smalaste klass (e-handelsbruttot som konstant: prissättningen håller bruttovinsten medan volymen växer 5 814→8 287 mkr +12,5 %/år 5-årigt; endpoint FY22→25 +7,1 %/år, nettoresultatet +17,2 %/år — hävstången i fast kostnadstäckning). VÄRDERINGSGAPET: P/E 30,75 mot forward 18,25 ⇒ prognosTillväxt +68,5 % (spårkonventionen) = Q2-accelerationen prissatt i konsensus (PEG 0,45 spårkonventionen; källans PEG 0,77 på 3-årsperspektivet — båda dokumenterade); ROIC 10,94 % mot WACC 13,25 % = −2,31 pp (tillväxten ännu inte gratis). Balansvändningen: från nettokassa +657 Mkr (FY2025) till nettoskuld 643 Mkr (30 jun 2026) — skuld/EK 0,28, räntetäckning 12,9×; utdelning saknas (källan: Dividend n/a — kapitalåterbetalning via återköp/extrautdelning beslutade separata år, ej årlig strm). Beta 1,79 — mot Klarnas n/a: cellens volatilitetspar. Nästa rapport 2026-11-03 (Q3)."
+ },
+ {
+  "ticker": "GMAB",
+  "namn": "Genmab A/S",
+  "bransch": "halso",
+  "land": "Danmark",
+  "valuta": "USD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/stocks/gmab/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "S&P Global Market Intelligence + Fiscal.ai-underlag; close 2026-09-17 16:00 EDT 34,54 $/20,59 mdr; P/E 26,13 forward 20,88 ⇒ prognosTillväxt +25,1 % TTE (källans 3-årsprognos +20,1 % intäkt/+14,6 % EPS — ovanligt väl kalibrerat gap, RY-klassen); källans PEG n/a ⇒ spårets 1,04 (P/E ÷ prognosTillväxt i procent, EVO-konventionen); P/B 3,46 EV/EBIT 18,27 EV/EBITDA 17,70 EV/FCF 28,05; brutto 93,03 % EBITDA 33,33 % EBIT 32,29 % netto 19,08 % FCF 21,04 %; ROE 14,00 % ROA 8,79 % ROIC 12,07 % ROCE 11,73 % WACC 7,35 %; skuld 5,27 mdr kassa 1,51 mdr ⇒ NETTOSKULD 3,76 mdr (EV 24,37 = 20,59+3,76 EXAKT) — royaltybolagets kapitalbalans vänts på ett år av FY2025-förvärvet (cash acquisitions −7 215 M$, källan); räntetäckning 4,96; TTM oms 4 131 M (+22,3 %) netto 788 M (−37,9 %) FCF 869 M (OCF 891) ⇒ fcfYield 4,22 %; ingen utdelning, återköp 448 M$ FY2025 (buyback-yield 1,73 %), insiders 1,21 %; beta 0,70; 52-v +22,29 %; eff skatt 13,02 %; analytiker Strong Buy 38,86 (12 st); nästa rapport 2026-11-05; EPS-panelglidning i källan dokumenterad (översikt/statistics '1,27' mot financials 12,65 TTM; aktier 59,70 M ⇒ 788/59,7 = 13,2 $/aktie — P/E-talet internt konsekvent 20,59/0,788 = 26,13); Industry Biotechnology, Sector Healthcare — branschfältet halso källkonsekvent"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 34.54,
+  "marknadsKapitalMdr": 20.59,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.213,
+   "resultatCAGR5ar": 0.0713,
+   "omsattningTillvaxtTTM": 0.2225,
+   "prognosTillvaxt": 0.2514
+  },
+  "lonksamhet": {
+   "roe": 0.14,
+   "roic": 0.1207,
+   "bruttoMarginal": 0.9303,
+   "ebitMarginal": 0.3229,
+   "nettoMarginal": 0.1908,
+   "fcfMarginal": 0.2104
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.89,
+   "rantaTackning": 4.96,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": 1.21
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.9691,
+   "bruttoMarginalSpread5ar": 0.064,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 26.13,
+   "pb": 3.46,
+   "evEbit": 18.27,
+   "peg": 1.04,
+   "fcfYield": 0.0422,
+   "egenKapitalMultipl": 3.46
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    2084000000,
+    2390000000,
+    3121000000,
+    3720000000
+   ],
+   "resultat": [
+    783330000,
+    631000000,
+    1133000000,
+    963000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    516520000,
+    1018000000,
+    1099000000,
+    1149000000
+   ]
+  },
+  "notering": "DANSK BIOTEK I ROYALITY-KLASSEN: Darzalex-royaltyportföljen (J&J-partnerskapet) ger bruttomarginal 93,0 % — men serien visar GLIDNINGEN 100,0 → 98,6 → 95,4 → 93,6 % FY2022–2025: när egna utvecklingsprogram och kommersiella kostnader växer in mattas royaltypuren (moat-spread 6,4 pp — vallgraven är licensavtalet, inte produkten); FY2025-FÖRVÄRVET vänder kapitalbalansen: kontantförvärv −7 215 M$ (källans cash-acquisitions) tar bolaget från nettokassa till NETTOSKULD 3,76 mdr (kassa 1,51/skuld 5,27; EV 24,37 = 20,59+3,76 exakt) — royaltybolagets balansräkning omskriven på ett år; TTM-kontrasten intäkt +22,3 % mot vinst −37,9 % = förvärvskostnadernas och R&D-satsningens år (netto 1 133→788 M$ glidande), medan FCF håller 869 M$ (fcfYield 4,22 %); ROIC 12,07 % mot WACC 7,35 % = +4,7 pp; ingen utdelning men återköpstrappa 76→143→96→576→448 M$ FY2021–2025 (FY2024-toppen); EPS-panelglidning i källan dokumenterad i paranoid (statistics 1,27 mot financials 12,65 — aktier 59,70 M ger 13,2 $; P/E-talet internt konsekvent); analytiker Strong Buy mål 38,86 $ (12 st); nästa rapport 2026-11-05. NOTIS DATAÄGAREN: GMAB-noteras i USD (US-primärnotering, dansk hemmamarknad i land-fältet enligt kontraktets registerdata-princip)."
+ },
+ {
+  "ticker": "HLUN.B",
+  "namn": "H. Lundbeck A/S",
+  "bransch": "halso",
+  "land": "Danmark",
+  "valuta": "DKK",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/quote/cph/HLUN.B/ (+ /statistics/ + /dividend/ + A-aktiens översikt)",
+    "paranoid": "S&P Global Market Intelligence-underlag; B-aktien (mest omsatt klass) intraday 2026-09-18 09:22 CET 42,92 DKK/mcap 41,63 mdr (A-aktien 40,00, P/E 10,58/fwd 6,75 — klasskillnaden dokumenterad); P/E 10,75 forward 6,98 ⇒ prognosTillväxt +54,0 % TTE mot källans 3-årsprognos +1,1 % intäkt/+2,7 % EPS = NORMALISERINGSGAP-listans nya topp (PSA/DNO-klassen — PEG 0,20 är gap-mått); källans PEG 1,62 som not; P/B 1,55 (BVPS 27,15) EV/EBIT 7,53 EV/EBITDA 5,84 EV/FCF 9,36; brutto 82,06 % EBITDA 31,86 % EBIT 24,99 % netto 15,16 % FCF 20,11 %; ROE 15,41 % ROIC 13,67 % WACC 4,64 %; skuld 9,42 mdr kassa 2,20 mdr ⇒ nettoskuld 7,22 (EV 48,85 = 41,63+7,22 EXAKT); räntetäckning 405,5×; aktier 991,23 M EPS TTM 3,97; TTM oms 25 960 M (+10,4 %) netto 3 940 M (+14,7 %) ⇒ FCF 5 220 M (20,11 %) fcfYield 12,54 %; direktavkastning 2,68 % (DPS 1,15, ex 2026-03-19), payout 29,0 %, utdelningstillväxt +21,05 %, återköp −0,04 %, insiders 0,15 %; beta 0,26; 52-v −2,01 %; eff skatt 27,65 %; analytiker Buy 48,58 (13 st); CACHE-FYNDET (VIT-B-klassen, dokumenterat): web_reader-kanalen servade åldriga HLUN-paneler (statistics dec-2025, financials TTM sep-2024) — färska WebFetch-värden gäller, fasta historiska årsur ditmoat-serien; FY2024 härlett ur översiktens tillväxtprocenter (intäkt +11,93 % ⇒ 22 010; vinst +1,56 % ⇒ 3 141); Industry Drug Manufacturers – Specialty & Generic, Sector Healthcare — branschfältet halso källkonsekvent"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 42.92,
+  "marknadsKapitalMdr": 41.63,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.1087,
+   "resultatCAGR5ar": 0.2473,
+   "omsattningTillvaxtTTM": 0.104,
+   "prognosTillvaxt": 0.5401
+  },
+  "lonksamhet": {
+   "roe": 0.1541,
+   "roic": 0.1367,
+   "bruttoMarginal": 0.8206,
+   "ebitMarginal": 0.2499,
+   "nettoMarginal": 0.1516,
+   "fcfMarginal": 0.2011
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.35,
+   "rantaTackning": 405.5,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": 0.15
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.7757,
+   "bruttoMarginalSpread5ar": 0.0166,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 10.75,
+   "pb": 1.55,
+   "evEbit": 7.53,
+   "peg": 0.2,
+   "fcfYield": 0.1254,
+   "egenKapitalMultipl": 1.55
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    16299000000,
+    18246000000,
+    19912000000,
+    22005000000,
+    24630000000
+   ],
+   "resultat": [
+    1318000000,
+    1916000000,
+    2290000000,
+    3141000000,
+    3190000000
+   ],
+   "egetKapital": [],
+   "fcf": []
+  },
+  "notering": "CNS-FARMAKONENS KVARTILEXTREM: psykiatri/neurologi-portföljen (Rexulti/Vraylar på arvet från Cipralex-epoken) = Danmark/hälsa-cellens BILLIGA ände på P/E 10,75 (forward 6,98) — med Novo Nordisk 11,80 och Coloplast 38,65 samt nya trion ger cellen P25–P75 11,8–34,1 (kontraktets percentilkonvention): landsidan /dataset/halso/danmark blir ett av kvartilpedagogikens renaste exempel (diagnosportfölj mot tillväxtbiotek mot medtech i EN fålla); UTDDELNINGSTRAPPAN 0,58 → 0,70 → 0,95 → 1,15 DKK (2023→2026, senaste höjningen +21,05 %) på payout 29,0 % av EPS 3,97 — kapitalåtergången växer medan 3-årsprognosens intäkt står stilla (+1,11 %/år: patentmogen portfölj); TTE-GAPET +54,0 % mot 3-års-EPS-prognos +2,7 % = normaliseringsgap-listans nya topp — engångsliknande konsensussprång, PEG 0,20 som gap-mått (PSA/DNO-konventionen); RÄNTETÄCKNINGEN 405,5× vid skuld 9,42 mdr mot kassa 2,20 (nettoskuld 7,22 driver EV 48,85): obligationsläroboken — billigt lånat kapital mot psykiatriska kassor; bruttomarginal 82,06 % TTM (moat-serien FY2019–2023 ~77,5 % ur cachad vintage — cache-notis i paranoid, VIT-B-klassen); FCF 5 220 M DKK TTM = fcfYield 12,54 % (elva högsta av 160 mätta i universumet); ROIC 13,67 % mot WACC 4,64 % = +9,0 pp; B-aktien mest omsatt (42,92) med A-aktien 40,00 som kontrollklass; beta 0,26 i universumets lugnare kvartil; analys Buy 48,58 DKK (13 st); serier.fcf tom medvetet (färsk FCF-flik oåtkomlig via källkanalen vid avläsningen — TFM-värdet dokumenterat i stället; cache-vintagen OPÅLITLIG för ändå inte FY2024–2025); FY2024-talen härledda ur källans tillväxtprocenter (dokumenterat); nästa rapportdag ej listad hos källan vid avläsningen (senaste 2026-08-19, H1)."
+ },
+ {
+  "ticker": "AMBU.B",
+  "namn": "Ambu A/S",
+  "bransch": "halso",
+  "land": "Danmark",
+  "valuta": "DKK",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-18",
+    "url": "https://stockanalysis.com/quote/cph/AMBU.B/ (+ /statistics/ + /financials/)",
+    "paranoid": "S&P Global Market Intelligence + Fiscal.ai-underlag; intraday 2026-09-18 09:13 CET 65,65 DKK/17,10 mdr (data-uppdaterad 2026-09-17, financials senast kontrollerad 2026-09-16); P/E 34,12 forward 22,79 ⇒ prognosTillväxt +49,8 % TTE; PEG spår 0,69 mot källans 0,75 (konventionen: P/E ÷ prognosTillväxt i procent); P/B 2,77 (P/TBV 6,09) EV/EBIT 24,07 EV/EBITDA 18,09 EV/FCF 23,03; brutto 60,11 % EBITDA 13,93 % EBIT 11,30 % netto 8,18 % FCF 11,82 %; ROE 8,45 % ROA 5,81 % ROIC 9,04 % ROCE 10,57 % WACC 11,69 % (ROIC UNDER WACC = −2,7 pp, ARM-klassen); skuld 579 M kassa 705 M ⇒ NETTOKASSA 126 M (EV 16,97 under mcap 17,10); räntetäckning 15,67; aktier 261,05 M (löpande klass 226,73) EPS TTM 1,92; TTM oms 6 237 M (+4,7 %) netto 510 M (+42,1 %) ⇒ FCF 737 M, fcfYield 4,31 %; direktavkastning 0,62 % (DPS 0,41, ex 2025-12-04) payout 21,57 % återköp 0,67 % insiders 20,45 % (grundarfamiljen Obels krets — Det Obelske Familiefond-fållan); beta 1,39; 52-v −32,41 % (spann 56,25–111,80); eff skatt 23,08 %; analytiker Hold 81,77 (8 st); FY SLUT SEPTEMBER (okt–sep, slutårsetikett — tredje årskonventionen i universumet efter Samsung mar/TCS mar); FCF-serien härledd ur källans FCF-marginal × intäkt per år (derivationsbasen i källan, inte en separat flik); Industry Medical Devices, Sector Healthcare — branschfältet halso källkonsekvent"
+   }
+  ],
+  "hamtat": "2026-09-18",
+  "pris": 65.65,
+  "marknadsKapitalMdr": 17.1,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.1075,
+   "resultatCAGR5ar": 0.253,
+   "omsattningTillvaxtTTM": 0.0468,
+   "prognosTillvaxt": 0.4976
+  },
+  "lonksamhet": {
+   "roe": 0.0845,
+   "roic": 0.0904,
+   "bruttoMarginal": 0.6011,
+   "ebitMarginal": 0.113,
+   "nettoMarginal": 0.0818,
+   "fcfMarginal": 0.1182
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.09,
+   "rantaTackning": 15.67,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+   "senasteArMdr": null,
+   "andelUtestande": null,
+   "insiderkopSenaste6man": 20.45
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.5924,
+   "bruttoMarginalSpread5ar": 0.0555,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 34.12,
+   "pb": 2.77,
+   "evEbit": 24.07,
+   "peg": 0.69,
+   "fcfYield": 0.0431,
+   "egenKapitalMultipl": 2.77
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    4013000000,
+    4444000000,
+    4775000000,
+    5391000000,
+    6037000000
+   ],
+   "resultat": [
+    247000000,
+    93000000,
+    168000000,
+    235000000,
+    609000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    152100000,
+    -43100000,
+    447000000,
+    725100000,
+    673700000
+   ]
+  },
+  "notering": "ENGÅNGS-ENDOSKOPI GRUNDAREN — VÄNDNINGENS LÄROBOK: single-use-bronkoskopi/koloskopi och självtest; FY2022-botten netto 93 M DKK vid EBIT-marginal 2,74 % (efter COVID-testboomens fall) → FY2025 netto 609 M vid 12,99 % — VINSTTRAPPAN 247→93→168→235→609 M DKK (+25,3 %/år endpoint) med bruttomarginalens sågtand 56,8→60,2 % (spread 5,6 pp: devices-moat är produktcykler, inte licensavtal — Genmab-kontrasten i samma cell); P/E 34,12 mot forward 22,79 ⇒ prognosTillväxt +49,8 % (PEG spår 0,69, källans 0,75 som not); ROIC 9,04 % UNDER WACC 11,69 % = −2,7 pp (ARM-klassen: värdestoffet bor i tillväxtförväntningen — kontrast mot Lundbecks +9,0 pp i samma cell); 3-årsprognos EPS +17,6 %/år mot intäkt +9,3 % = marginalhävstången; NETTOKASSA 126 M DKK (kassa 705/skuld 579) ger EV 16,97 UNDER mcap 17,10 — cellens enda nettokassa-bolag; direktavkastning 0,62 % (DPS 0,41 DKK, payout 21,6 %) + återköp 0,67 %; insiders 20,45 % = grundarfamiljen Obels krets (Det Obelske Familiefond); 52-veckor −32,41 % (spann 56,25–111,80) med beta 1,39 = kursens egen vändningsberättelse; FY slut september (oktober–september, slutårsetikett — tredje årskonventionen); FCF-serien härledd ur källans FCF-marginal × intäkt (−43,1 → +673,7 M DKK FY2022–2025, vändningen FY2023 — derivationsbas dokumenterad); senaste rapport 2026-08-26 (Q3 FY25/26), nästa ej listad hos källan; analys Hold 81,77 DKK (8 st)."
  }
 ]

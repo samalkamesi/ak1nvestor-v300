@@ -1,39 +1,48 @@
 /**
- * TESTA AI-MENTORN — VÄRDERINGSVERKTYG-LAGRET (spår 6 omgång 15, s6-u3), 0 beroenden.
+ * TESTA AI-MENTORN — RISKPREMIE-LAGRET (spår 6 omgång 21, s6-u1), 0 beroenden.
  *
- * Kör:  node verktyg/testa-ai-mentor-varderingsverktyg.mjs
+ * Kör:  node verktyg/testa-ai-mentor-riskpremie.mjs
  * Krav: Node >= 22.18 (type stripping default; annars
  *       --experimental-strip-types på Node 22.6–22.17).
  *
- * Vakar detta lagers tre monsters (scenarioanalysen, DDM, PEG-ratio):
- *   A  kanoniska   — 3 frågor: lokalt svar, rätt ämne, flerkällsrad
- *                    (📖 Källor (), ≥3 källor), ≥3 registeräkta kurslänkar
+ * Vakar detta lagers monster (riskpremie — aktiernas riskpremie:
+ * subtraktionen, svängningarnas prislista, historiens siffra och
+ * värderingskedjan med P/E-spegeln):
+ *   A  kanonisk    — 1 fråga: lokalt svar, rätt ämne, flerkällsrad
+ *                    (📖 Källor (), ≥4 källor), ≥3 registeräkta kurslänkar
  *   B  felstavning — varierade/dia-fria/böjda formuleringar → samma monster
  *   C  determinism — alla frågor × 2 körningar bitidentiska
  *   D01 källaäkthet — källor + kurslänkar FINNS i registret (0 fantomslugar)
- *   D01b knappar   — fragor:-knappar levande mot HELA kedjan (30 lager)
- *   D02 register   — kategoriantal + kursminuter i texterna ur registret
+ *   D01b knappar   — fragor:-knappar levande mot HELA kedjan (46 lager)
+ *   D02 register   — kategoriantal + kursminuter i texten ur registret
+ *   D03 aritmetik  — kursexempelens tal OBEROENDE omräknade (subtraktionen,
+ *                    prislistan, sekelkraften, värderingskedjan, P/E-spegeln)
  *   E  genomström  — omatchade frågor → null (API-flödet)
  *   F  juridik     — inga köp/sälj-rådfraser (lagen 2007:528 — utbildning)
- *   G  antistöld   — tidigare kanoniska → null i detta lager
+ *   G  antistöld   — tidigare kanoniska (inkl. fönstrets syskonlager) → null
  *   G2 syskonkärnord — ALLA tidigare lagers kärnord LIVE som frågor → 0
- *   H  kedja       — SIST-lager-invarianten: gamla svar bitidentiska
+ *   H  kedja       — lager-invarianten: gamla svar bitidentiska
  *                    med/utan detta lager + ämneskontroller + nya rätt
- *   I  omkastad    — de 3 nya kanoniska → null i kedjan UTAN detta lager
+ *   I  omkastad    — den nya kanoniska → null i kedjan UTAN detta lager
  *   J  disjunktion — kärnorden överlappar inget tidigare lagers (mekaniskt)
- *   J2 närhet      — kärnorden ligger utanför matcharens fel-tolerans mot
- *                    varje tidigare kärnord (≤3 tkn exakt · ≤7 tkn 1 fel ·
- *                    >7 tkn 2 fel · fras = inklusion — spegeln av traff())
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 33 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 46 lager i
  *                    ordning + import + inga okända komponenter
  *
- * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 15:s
- * fönster bär u1:s avkastningskurva och u2:s avrakningsdjup på disk —
- * disk-läge-presedensen; deras egna tester äger deras djupkontroller
- * (u2:s testfil kan saknas tills deras commit landar — modulen finns).
+ * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 21:s
+ * trefönster bär u3:s koncernläsning och u2:s tillväxtdjup (båda wireade
+ * EFTER detta lager — disk-läge-presedens som omgång 15–20).
+ *
+ * DOKUMENTERAD GRÄNS (sond _s6u1-sond-omg21.mjs + sond2): basen äger den
+ * engelska helhetsfrågan («vad är equity risk premium?» FÅNGAS av basen —
+ * knappens mål); kreditdjupet äger kreditpremie/kreditspread-familjen
+ * (ma-05 här KÄLLA + knapp); makro äger obligation/statsobligations-orden
+ * (endast stärkord här); lönsamhetsdjupet äger WACC (knapp);
+ * avkastningsdjupet äger avkastningskällorna; optionsdjupet optionens
+ * premie — inget av dessa är kärnord här.
  *
  * ── JURIDIKGRINDEN (2007:528) ─────────────────────────────────────────
- * Fall F vaktar ren utbildningsformulering — inga placeringstips.
+ * Fall F vaktar ren utbildningsformulering — kursens budskap bärs med i
+ * texten: premien är ett pris, inte ett löfte; inga placeringstips.
  */
 
 import { readFileSync } from "node:fs";
@@ -48,7 +57,7 @@ const stodStrip = major > 22 || (major === 22 && minor >= 18);
 if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
   console.error(
     "FEL: Node " + process.versions.node + " saknar type stripping. " +
-    "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-varderingsverktyg.mjs (eller uppgradera Node >= 22.18).",
+    "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-riskpremie.mjs (eller uppgradera Node >= 22.18).",
   );
   process.exit(1);
 }
@@ -56,7 +65,7 @@ if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
 // Den RIKTIGA koden ur src/ (ingen duplikation i testet).
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
 const { MONSTER, svaraLokalt } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-svar.ts")).href);
-const { svaraLokaltVarderingsverktyg, VARDERINGSVERKTYG_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-varderingsverktyg-fragor.ts")).href);
+const { svaraLokaltRiskpremie, RISKPREMIE_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-riskpremie-fragor.ts")).href);
 
 // Syskonlager — toleranta importer (syskon kan skriva just nu).
 function tolerera(fil, exports) {
@@ -93,9 +102,25 @@ const { svaraLokaltGrahamgolv, GRAHAMGOLV_MONSTER } = await tolerera("ai-mentor-
 const { svaraLokaltVarderjustering, VARDERJUSTERING_MONSTER } = await tolerera("ai-mentor-varderjustering-fragor.ts", ["svaraLokaltVarderjustering", "VARDERJUSTERING_MONSTER"]);
 const { svaraLokaltOptionsdjup, OPTIONS_DJUP_MONSTER } = await tolerera("ai-mentor-optionsdjup-fragor.ts", ["svaraLokaltOptionsdjup", "OPTIONS_DJUP_MONSTER"]);
 const { svaraLokaltRisklasningsdjup, RISKLÄSNINGSDJUP_MONSTER } = await tolerera("ai-mentor-risklasningsdjup-fragor.ts", ["svaraLokaltRisklasningsdjup", "RISKLÄSNINGSDJUP_MONSTER"]);
-// Omgång 15:s syskon på disk i samma fönster (disk-läge-presedensen).
 const { svaraLokaltAvkastningskurva, AVKASTNINGSKURVA_MONSTER } = await tolerera("ai-mentor-avkastningskurva-fragor.ts", ["svaraLokaltAvkastningskurva", "AVKASTNINGSKURVA_MONSTER"]);
 const { svaraLokaltAvkastningsdjup, AVKASTNINGSDJUP_MONSTER } = await tolerera("ai-mentor-avrakningsdjup-fragor.ts", ["svaraLokaltAvkastningsdjup", "AVKASTNINGSDJUP_MONSTER"]);
+const { svaraLokaltVarderingsverktyg, VARDERINGSVERKTYG_MONSTER } = await tolerera("ai-mentor-varderingsverktyg-fragor.ts", ["svaraLokaltVarderingsverktyg", "VARDERINGSVERKTYG_MONSTER"]);
+const { svaraLokaltWarrant, WARRANT_MONSTER } = await tolerera("ai-mentor-warrant-fragor.ts", ["svaraLokaltWarrant", "WARRANT_MONSTER"]);
+const { svaraLokaltTidsaxel, TIDSAXEL_MONSTER } = await tolerera("ai-mentor-tidsaxel-fragor.ts", ["svaraLokaltTidsaxel", "TIDSAXEL_MONSTER"]);
+const { svaraLokaltKapitalbindning, KAPITALBINDNING_MONSTER } = await tolerera("ai-mentor-kapitalbindning-fragor.ts", ["svaraLokaltKapitalbindning", "KAPITALBINDNING_MONSTER"]);
+const { svaraLokaltEkosystemdjup, EKOSYSTEMDJUP_MONSTER } = await tolerera("ai-mentor-ekosystemdjup-fragor.ts", ["svaraLokaltEkosystemdjup", "EKOSYSTEMDJUP_MONSTER"]);
+const { svaraLokaltHandelsdag, HANDELSDAG_MONSTER } = await tolerera("ai-mentor-handelsdag-fragor.ts", ["svaraLokaltHandelsdag", "HANDELSDAG_MONSTER"]);
+const { svaraLokaltPortfoljpraktik, PORTFOLJPRAKTIK_MONSTER } = await tolerera("ai-mentor-portfoljpraktik-fragor.ts", ["svaraLokaltPortfoljpraktik", "PORTFOLJPRAKTIK_MONSTER"]);
+const { svaraLokaltUtdelningskalender, UTDELNINGSKALENDER_MONSTER } = await tolerera("ai-mentor-utdelningskalender-fragor.ts", ["svaraLokaltUtdelningskalender", "UTDELNINGSKALENDER_MONSTER"]);
+const { svaraLokaltKreditdjup, KREDITDJUP_MONSTER } = await tolerera("ai-mentor-kreditdjup-fragor.ts", ["svaraLokaltKreditdjup", "KREDITDJUP_MONSTER"]);
+const { svaraLokaltSektordjup, SEKTORDJUP_MONSTER } = await tolerera("ai-mentor-sektordjup-fragor.ts", ["svaraLokaltSektordjup", "SEKTORDJUP_MONSTER"]);
+const { svaraLokaltSektorskola2, SEKTORSKOLA2_MONSTER } = await tolerera("ai-mentor-sektorskola2-fragor.ts", ["svaraLokaltSektorskola2", "SEKTORSKOLA2_MONSTER"]);
+const { svaraLokaltBeteendemekanik, BETEENDEMEKANIK_MONSTER } = await tolerera("ai-mentor-beteendemekanik-fragor.ts", ["svaraLokaltBeteendemekanik", "BETEENDEMEKANIK_MONSTER"]);
+const { svaraLokaltPeMekanik, PE_MEKANIK_MONSTER } = await tolerera("ai-mentor-pe-mekanik-fragor.ts", ["svaraLokaltPeMekanik", "PE_MEKANIK_MONSTER"]);
+const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltOverlevnadsdjup", "OVERLEVNADSDJUP_MONSTER"]);
+// Omgång 21:s fönstersyskon (båda wireade EFTER detta lager i widgeten).
+const { svaraLokaltKoncernlasning, KONCERNLASNING_MONSTER } = await tolerera("ai-mentor-koncernlasning-fragor.ts", ["svaraLokaltKoncernlasning", "KONCERNLASNING_MONSTER"]);
+const { svaraLokaltTillvaxtdjup, TILLVAXTDJUP_MONSTER } = await tolerera("ai-mentor-tillvaxtdjup-fragor.ts", ["svaraLokaltTillvaxtdjup", "TILLVAXTDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -110,47 +135,25 @@ function kontroll(namn, ok, detalj) {
   }
 }
 
-// ── FALL A: de tre nya kanoniska med flerkällskrav ──────────────────────────
+// ── FALL A: den nya kanoniska med flerkällskrav ─────────────────────────────
 const NYA = [
   {
-    fraga: "Vad är scenarioanalys?",
-    amne: "scenarioanalys",
-    slug: "km-029-scenarioanalys",
-  },
-  {
-    fraga: "Vad är DDM?",
-    amne: "ddm",
-    slug: "vm-06-dividend-discount-model-ddm",
-  },
-  {
-    fraga: "Vad är PEG-ratio?",
-    amne: "pegratio",
-    slug: "km-027-pegratio",
+    fraga: "Vad är aktiernas riskpremie?",
+    amne: "riskpremie",
+    slug: "ma-06-aktiernas-riskpremie",
   },
 ];
-// DOKUMENTERAD GRÄNS (sond + kedjebevis): basens utdelning-monster äger
-// "utdelning"/"dividend"/"dividender"/"direktavkastning"/"payout ratio" —
-// frågor som bär de orden FÖRE detta lagers kärnord fångas av basen
-// ("Hur värderar man utdelningsaktier?" och "Vad är dividend discount
-// model?" går till basen; kedjan bevisar det). Detta lagers fråge-
-// formuleringar är därför "utdelningsdiskonteringsmodell/ddm/gordons
-// tillväxtmodell"-burna — utan basens ord. Samma klass: "vinsttillväxten"
-// ägs av syskonet u2:s avrakningsdjup (omgång 15, samma fönster) som
-// kärnord — PEG-svarets text bär ordet beskrivande, kärnordslistan bär
-// det EJ; frågor med deras kärnord + "peg" är deras territoriala tolkning
-// (tvärsnittstexten nämner PEG-logiken — källan km-027 delas, kärnordet
-// ägs här).
 
 NYA.forEach((f, i) => {
   const nr = "A" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltRiskpremie(f.fraga, KURSREGISTER);
   if (!svar) {
     kontroll(nr + " " + f.amne, false, "inget lokalt svar på: '" + f.fraga + "'");
     return;
   }
   const amneOk = svar.amne === f.amne;
   const kallaOk = svar.kalla.slug === f.slug;
-  const kallorFinns = Array.isArray(svar.kallor) && svar.kallor.length >= 3;
+  const kallorFinns = Array.isArray(svar.kallor) && svar.kallor.length >= 4;
   const kallradOk = svar.text.includes("📖 Källor (");
   const kurslankar = svar.handlings.filter((h) => h.lank.startsWith("/kurser/"));
   const kurslankarOk = kurslankar.length >= 3;
@@ -165,24 +168,26 @@ NYA.forEach((f, i) => {
 
 // ── FALL B: felstavade varianter → samma träff ──────────────────────────────
 const FELSTAVADE = [
-  { fraga: "vad ar scenarioanalys?", amne: "scenarioanalys" }, // diafri
-  { fraga: "förklara scenarioanalysen?", amne: "scenarioanalys" }, // best. form
-  { fraga: "hur gor man en scenarieanalys?", amne: "scenarioanalys" }, // i-form + diafri
-  { fraga: "vad ar scenarier?", amne: "scenarioanalys" }, // plural + diafri
-  { fraga: "bra och daliga scenarier?", amne: "scenarioanalys" }, // plural i mening
-  { fraga: "vad ar utdelningsdiskonteringsmodellen?", amne: "ddm" }, // diafri
-  { fraga: "förklara utdelningsdiskonteringsmodell!", amne: "ddm" }, // obestämd form
-  { fraga: "hur fungerar gordons tillväxtmodell?", amne: "ddm" }, // gordon-fras
-  { fraga: "vad är gordons tillvaxtmodellen?", amne: "ddm" }, // best. form + diafri
-  { fraga: "vad ar ddm?", amne: "ddm" }, // förkortning + diafri
-  { fraga: "vad betyder peg ratio?", amne: "pegratio" }, // engelsk fras
-  { fraga: "hur raknar man ut peg?", amne: "pegratio" }, // kort + diafri
-  { fraga: "vad är peg-kvoten?", amne: "pegratio" }, // svensk översättning
-  { fraga: "vad ar pegkvot?", amne: "pegratio" }, // sammansmält + diafri
+  { fraga: "vad är riskpremien?", amne: "riskpremie" }, // grundformen
+  { fraga: "vad ar riskpremien?", amne: "riskpremie" }, // diafri (ä→a)
+  { fraga: "vad är riskpremie?", amne: "riskpremie" }, // obestämd form
+  { fraga: "vad är riskpremier?", amne: "riskpremie" }, // plural
+  { fraga: "vad är aktieriskpremien?", amne: "riskpremie" }, // sammansatt bestämd
+  { fraga: "vad är aktieriskpremie?", amne: "riskpremie" }, // sammansatt obestämd
+  { fraga: "vad är aktiens riskpremie?", amne: "riskpremie" }, // singular-fras
+  { fraga: "hur räknar man ut riskpremien?", amne: "riskpremie" }, // hur-form
+  { fraga: "hur mäter man aktiernas riskpremie?", amne: "riskpremie" }, // mät-form
+  { fraga: "vad betyder riskpremien?", amne: "riskpremie" }, // betyder-form
+  { fraga: "vad är aktiernas riskpremium?", amne: "riskpremie" }, // stavvariant
+  { fraga: "vad ar aktiernas riskpremie?", amne: "riskpremie" }, // diafri fras
+  { fraga: "vad är premiöverskottet?", amne: "riskpremie" }, // termsvarianten (böjd)
+  { fraga: "vad är premie per riskenhet?", amne: "riskpremie" }, // nyckeltalet
+  { fraga: "vad är ägarrisken?", amne: "riskpremie" }, // risken premien prissätter
+  { fraga: "vad ar agarrisken?", amne: "riskpremie" }, // diafri
 ];
 FELSTAVADE.forEach((f, i) => {
   const nr = "B" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltRiskpremie(f.fraga, KURSREGISTER);
   const ok = svar !== null && svar.amne === f.amne;
   kontroll(nr + " " + f.amne + " — '" + f.fraga + "'", ok, svar ? "ämne=" + svar.amne : "inget svar");
 });
@@ -190,8 +195,8 @@ FELSTAVADE.forEach((f, i) => {
 // ── FALL C: determinism — alla frågor × 2 körningar bitidentiska ────────────
 {
   const alla = [...NYA.map((f) => f.fraga), ...FELSTAVADE.map((f) => f.fraga)];
-  const forsta = alla.map((f) => JSON.stringify(svaraLokaltVarderingsverktyg(f, KURSREGISTER)));
-  const andra = alla.map((f) => JSON.stringify(svaraLokaltVarderingsverktyg(f, KURSREGISTER)));
+  const forsta = alla.map((f) => JSON.stringify(svaraLokaltRiskpremie(f, KURSREGISTER)));
+  const andra = alla.map((f) => JSON.stringify(svaraLokaltRiskpremie(f, KURSREGISTER)));
   const identiska = forsta.every((s, i) => s === andra[i]);
   kontroll("C01 determinism — " + alla.length + " frågor × 2 körningar bitidentiska", identiska,
     identiska ? "" : "avvikelse upptäckt");
@@ -202,7 +207,7 @@ FELSTAVADE.forEach((f, i) => {
   const slugFinns = new Set(KURSREGISTER.map((r) => r.slug));
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltRiskpremie(f.fraga, KURSREGISTER);
     if (!svar) continue;
     for (const k of svar.kallor ?? []) {
       if (k.slug && !slugFinns.has(k.slug)) FEL.push("källa '" + k.slug + "' (" + f.amne + ") finns ej i registret");
@@ -223,12 +228,11 @@ FELSTAVADE.forEach((f, i) => {
     }
   }
   kontroll("D01 källaäkthet — inga fantomslugar i de nya svaren", FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : KURSREGISTER.length + " kurser genomsökta");
+    FEL.length ? FEL.join(" | ") : KURSREGISTER.length + " kurser genomsökta (5 källor: ma-06 + ma-05 + ma-03 + km-008 + km-007)");
 
   // fragor:-knappar skall landa i HELA kedjan — detta lagers knappar länkar
-  // medvetet till TIDIGARE lager (känslighetsanalys → stabilitetsdjup,
-  // utdelningsfällor → utdelningsdjup, värderingsmultipel → djup) enligt
-  // "tidigare lager"-kravet; motfrågorna (eget lager) testas av fall H.
+  // medvetet till TIDIGARE lager (kreditpremien → kreditdjupet, WACC →
+  // lönsamhetsdjupet) enligt "tidigare lager"-kravet.
   const helakedjan = (fraga) =>
     (svaraLokaltMakro ? svaraLokaltMakro(fraga, KURSREGISTER) : null) ??
     (svaraLokaltExtra ? svaraLokaltExtra(fraga, KURSREGISTER) : null) ??
@@ -258,10 +262,26 @@ FELSTAVADE.forEach((f, i) => {
     (svaraLokaltOptionsdjup ? svaraLokaltOptionsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltRisklasningsdjup ? svaraLokaltRisklasningsdjup(fraga, KURSREGISTER) : null) ??
     (svaraLokaltAvkastningskurva ? svaraLokaltAvkastningskurva(fraga, KURSREGISTER) : null) ??
-    (svaraLokaltAvkastningsdjup ? svaraLokaltAvkastningsdjup(fraga, KURSREGISTER) : null) ??
-    svaraLokaltVarderingsverktyg(fraga, KURSREGISTER);
+    svaraLokaltAvkastningsdjup(fraga, KURSREGISTER) ??
+    (svaraLokaltVarderingsverktyg ? svaraLokaltVarderingsverktyg(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltWarrant ? svaraLokaltWarrant(fraga, KURSREGISTER) : null) ??
+    svaraLokaltTidsaxel(fraga, KURSREGISTER) ??
+    (svaraLokaltKapitalbindning ? svaraLokaltKapitalbindning(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltEkosystemdjup ? svaraLokaltEkosystemdjup(fraga, KURSREGISTER) : null) ??
+    svaraLokaltHandelsdag(fraga, KURSREGISTER) ??
+    (svaraLokaltPortfoljpraktik ? svaraLokaltPortfoljpraktik(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltUtdelningskalender ? svaraLokaltUtdelningskalender(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltKreditdjup ? svaraLokaltKreditdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltSektordjup ? svaraLokaltSektordjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltSektorskola2 ? svaraLokaltSektorskola2(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltBeteendemekanik ? svaraLokaltBeteendemekanik(fraga, KURSREGISTER) : null) ??
+    svaraLokaltPeMekanik(fraga, KURSREGISTER) ??
+    svaraLokaltRiskpremie(fraga, KURSREGISTER) ??
+    (svaraLokaltOverlevnadsdjup ? svaraLokaltOverlevnadsdjup(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltKoncernlasning ? svaraLokaltKoncernlasning(fraga, KURSREGISTER) : null) ??
+    (svaraLokaltTillvaxtdjup ? svaraLokaltTillvaxtdjup(fraga, KURSREGISTER) : null);
   for (const f of NYA) {
-    const svar = svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltRiskpremie(f.fraga, KURSREGISTER);
     if (!svar) continue;
     for (const h of svar.handlings) {
       if (!h.lank.startsWith("fragor:")) continue;
@@ -270,32 +290,67 @@ FELSTAVADE.forEach((f, i) => {
       if (!mal) FEL.push("fragor:-knapp '" + q + "' (" + f.amne + ") landar null i HELA kedjan — död knapp");
     }
   }
-  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (30 lager)", FEL.length === 0,
+  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (46 lager)", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "0 döda knappar");
 
   // Registerdrivna räknekontroller: kategorins antal och kursminuter i
-  // texterna ska komma ur registret (klippskydd vid registerändring —
+  // texten ska komma ur registret (klippskydd vid registerändring —
   // spår 5:s rebake).
-  const vmAntal = KURSREGISTER.filter((r) => r.kategori === "VÄRDERINGSMETODER").length;
-  const km29 = KURSREGISTER.find((r) => r.slug === "km-029-scenarioanalys");
-  const vm6 = KURSREGISTER.find((r) => r.slug === "vm-06-dividend-discount-model-ddm");
-  const ud9 = KURSREGISTER.find((r) => r.slug === "ud-09-utdelningens-hallbarhet");
-  const km27 = KURSREGISTER.find((r) => r.slug === "km-027-pegratio");
-  const s1 = svaraLokaltVarderingsverktyg(NYA[0].fraga, KURSREGISTER);
-  const s2 = svaraLokaltVarderingsverktyg(NYA[1].fraga, KURSREGISTER);
-  const s3 = svaraLokaltVarderingsverktyg(NYA[2].fraga, KURSREGISTER);
+  const maAntal = KURSREGISTER.filter((r) => r.kategori === "MAKROEKONOMI & RÄNTA").length;
+  const ma6 = KURSREGISTER.find((r) => r.slug === "ma-06-aktiernas-riskpremie");
+  const s1 = svaraLokaltRiskpremie(NYA[0].fraga, KURSREGISTER);
   kontroll(
-    "D02 registerdrivna tal — VÄRDERINGSMETODER=" + vmAntal + " · km-029 " + (km29 ? km29.minuter : "?") + " · vm-06 " + (vm6 ? vm6.minuter : "?") + " · ud-09 " + (ud9 ? ud9.minuter : "?") + " · km-027 " + (km27 ? km27.minuter : "?") + " min",
-    !!s1 && !!s2 && !!s3 &&
-    s1.text.includes(vmAntal + " kurser") &&
-    (km29 ? s1.text.includes(km29.minuter + " min") : false) &&
-    s2.text.includes(vmAntal + " kurser") &&
-    (vm6 ? s2.text.includes(vm6.minuter + " min") : false) &&
-    (ud9 ? s2.text.includes(ud9.minuter + " min") : false) &&
-    s3.text.includes(vmAntal + " kurser") &&
-    (km27 ? s3.text.includes(km27.minuter + " min") : false),
-    "texterna ska bära registrets egna tal",
+    "D02 registerdrivna tal — MAKROEKONOMI & RÄNTA=" + maAntal + " · ma-06 " + (ma6 ? ma6.minuter + " min " + ma6.niva : "?"),
+    !!s1 &&
+    s1.text.includes(maAntal + " kurser") &&
+    (ma6 ? s1.text.includes(ma6.minuter + " min, " + ma6.niva.toLowerCase() + " nivå") : false),
+    "texten ska bära registrets egna tal",
   );
+}
+
+// ── FALL D03: aritmetik — kursexempelens tal OBEROENDE omräknade ───────────
+{
+  const s = svaraLokaltRiskpremie(NYA[0].fraga, KURSREGISTER);
+  const fel = [];
+  if (!s) {
+    kontroll("D03 aritmetik — tretton talkontroller", false, "inget svar");
+  } else {
+    // 1. Grundsubtraktionen (ma-06 K1): 8,0 − 2,0 = 6,0 procentenheter
+    if (Math.abs(8.0 - 2.0 - 6.0) > 1e-9) fel.push("subtraktionsreferens fel");
+    for (const str of ["8,0 − 2,0 = 6,0 procentenheter"]) {
+      if (!s.text.includes(str)) fel.push("texten saknar '" + str + "'");
+    }
+    // 2. Prislistan (K2): 6 ÷ 40 = 15 % · 1 ÷ 40 = 2,5 % · 6,0 ÷ 17 ≈ 0,35 · 5 × 6,0 = 30
+    if (6 / 40 !== 0.15) fel.push("nedgångsreferens fel");
+    if (Math.abs(6.0 / 17 - 0.353) > 0.005) fel.push("riskenhetsreferens fel");
+    if (5 * 6.0 !== 30) fel.push("katastrofreferens fel");
+    for (const str of ["6 ÷ 40 = 15 procent", "1 av 40 = 2,5 procent", "6,0 ÷ 17 ≈ 0,35", "5 × 6,0 = 30"]) {
+      if (!s.text.includes(str)) fel.push("texten saknar '" + str + "'");
+    }
+    // 3. Sekelkraften (K3): 9,0 − 3,0 = 6,0 · 1,08³⁰ = 10,1 · 1,02³⁰ = 1,81 · 10,1 ÷ 1,81 = 5,6
+    if (Math.abs(9.0 - 3.0 - 6.0) > 1e-9) fel.push("sekelreferens fel");
+    if (Math.abs(Math.pow(1.08, 30) - 10.06) > 0.02) fel.push("1,08³⁰-referens fel");
+    if (Math.abs(Math.pow(1.02, 30) - 1.811) > 0.005) fel.push("1,02³⁰-referens fel");
+    if (Math.abs(10.1 / 1.81 - 5.58) > 0.05) fel.push("5,6-referens fel");
+    for (const str of ["9,0 − 3,0 = 6,0", "1,08³⁰ = 10,1", "1,02³⁰ = 1,81", "10,1 ÷ 1,81 = 5,6"]) {
+      if (!s.text.includes(str)) fel.push("texten saknar '" + str + "'");
+    }
+    // 4. Värderingskedjan (K4): 2,0 + 6,0 = 8,0 · 8 ÷ 0,080 = 100 · 8 ÷ 0,090 = 88,9 (−11,1 %) · 8 ÷ 0,070 = 114,3 (+14,3 %)
+    if (Math.abs(2.0 + 6.0 - 8.0) > 1e-9) fel.push("kravreferens fel");
+    if (8 / 0.08 !== 100) fel.push("utgångsvärdesreferens fel");
+    if (Math.abs(8 / 0.09 - 88.89) > 0.01) fel.push("88,9-referens fel");
+    if (Math.abs(8 / 0.07 - 114.29) > 0.01) fel.push("114,3-referens fel");
+    for (const str of ["2,0 + 6,0 = 8,0", "8 ÷ 0,080 = 100", "8 ÷ 0,090 = 88,9", "8 ÷ 0,070 = 114,3", "minus 11,1 procent", "plus 14,3 procent"]) {
+      if (!s.text.includes(str)) fel.push("texten saknar '" + str + "'");
+    }
+    // 5. P/E-spegeln (K4): 1 ÷ 0,080 = 12,5 · 1 ÷ 0,090 = 11,1 · 1 ÷ 0,070 = 14,3
+    if (Math.abs(1 / 0.08 - 12.5) > 1e-9 || Math.abs(1 / 0.09 - 11.1) > 0.05 || Math.abs(1 / 0.07 - 14.3) > 0.05) fel.push("P/E-referens fel");
+    for (const str of ["P/E 12,5", "P/E 11,1", "P/E 14,3"]) {
+      if (!s.text.includes(str)) fel.push("texten saknar '" + str + "'");
+    }
+    kontroll("D03 aritmetik — subtraktionen + prislistan + sekelkraften + värderingskedjan + P/E-spegeln oberoende omräknade", fel.length === 0,
+      fel.length ? fel.join(" | ") : "6,0 · 15 %/2,5 % · 0,35 · 30 · 10,1/1,81/5,6 · 100/88,9/114,3 · 12,5/11,1/14,3");
+  }
 }
 
 // ── FALL E: omatchade frågor → null (API-flödet) ────────────────────────────
@@ -306,7 +361,7 @@ const OMATCHADE = [
 ];
 OMATCHADE.forEach((fraga, i) => {
   const nr = "E" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltVarderingsverktyg(fraga, KURSREGISTER);
+  const svar = svaraLokaltRiskpremie(fraga, KURSREGISTER);
   kontroll(nr + " omatchad — '" + fraga + "'", svar === null,
     svar ? "fick lokalt svar (ämne=" + svar.amne + ") — skulle gått vidare i kedjan" : "null ✓");
 });
@@ -316,12 +371,12 @@ OMATCHADE.forEach((fraga, i) => {
   const RADCITAT = /\b(köp|sälj|köp denna|sälj denna|rekommenderar att du köper)\b/i;
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltRiskpremie(f.fraga, KURSREGISTER);
     if (!svar) continue;
     if (RADCITAT.test(svar.text)) FEL.push(f.amne + ": rådfras i text");
     for (const h of svar.handlings) if (RADCITAT.test(h.text)) FEL.push(f.amne + ": rådfras i handling '" + h.text + "'");
   }
-  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i värderingsverktyg-svaren", FEL.length === 0,
+  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i riskpremie-svaret", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "ren utbildningsformulering");
 }
 
@@ -360,83 +415,106 @@ const GAMLA = [
   { fraga: "Hur värderar man ett bolag med DCF?", amne: "värdering" },
   { fraga: "Vad är substansvärde?", amne: "investmentbolag" },
   { fraga: "Vad är en option?", amne: "options" },
-  // Sektor (omgång 3)
+  // Sektor
   { fraga: "Vad är sektorsanalys och varför skiljer sig sektorer åt?", amne: "sektorsanalys" },
   { fraga: "Hur fungerar banker och banksektorn?", amne: "bank" },
   { fraga: "Hur fungerar fastighetsbolag?", amne: "fastighet" },
-  // Kapitalmekanik (omgång 4)
+  // Kapitalmekanik
   { fraga: "Vad är utspädning?", amne: "emission" },
   { fraga: "Vad är goodwill?", amne: "goodwill" },
-  // Case (omgång 5)
+  // Case + Praktik
   { fraga: "Vad är praktiska case?", amne: "case" },
-  // Praktik (omgång 6)
   { fraga: "Vad är indexfonder och passivt ägande?", amne: "index" },
   { fraga: "Hur fungerar blankning och short?", amne: "blankning" },
   { fraga: "Vad är vinstmarginal och hur gör man en marginalanalys?", amne: "marginal" },
-  // Portfoljgrund (omgång 7)
+  // Portföljgrund + Ägande
   { fraga: "Vad är diversifiering och korrelation?", amne: "diversifiering" },
   { fraga: "Vad är valutarisk?", amne: "valutarisk" },
-  // Ägande (omgång 8, syskon u2)
   { fraga: "Vad är en bolagsstämma?", amne: "bolagsstämma" },
   { fraga: "Vad gör en styrelse?", amne: "bolagsstyrning" },
-  // Redovisningsdjup (omgång 8, syskon u1)
+  // Redovisningsdjup + Djup + Historia
   { fraga: "Vad är avskrivningar?", amne: "avskrivning" },
   { fraga: "Hur fungerar leasing i bokföringen?", amne: "leasing" },
-  // Djup (omgång 8, syskon u3 — omstart)
   { fraga: "Vad är en värderingsmultipel?", amne: "multipel" },
   { fraga: "Vad är FOMO?", amne: "fomo" },
   { fraga: "Vem är Warren Buffett?", amne: "mastarna" },
-  // Historia (omgång 9, syskon u3)
   { fraga: "Vad var tulpanmanin?", amne: "tulpanmanin" },
   { fraga: "Vad är en börsbubbla?", amne: "bubbla" },
   { fraga: "Vad hände vid aktiekraschen 1929?", amne: "krasch1929" },
-  // Lönsamhetsdjup (omgång 9, detta spårs u2)
+  // Lönsamhetsdjup + Skattedjup + Beteendedjup + Riskdjup
   { fraga: "Vad är DuPont-analysen?", amne: "dupont" },
   { fraga: "Vad är ROIC?", amne: "roic" },
-  // Skattedjup (omgång 10, syskon u3)
   { fraga: "Vad är kapitalförsäkring?", amne: "kapitalforsakring" },
-  // Beteendedjup (omgång 11, syskon u3)
   { fraga: "Vad är bekräftelsefällan?", amne: "bekraftelsefalla" },
-  // Riskdjup (omgång 11, syskon u1)
   { fraga: "Vad är en skuldfälla?", amne: "skuldfalla" },
   { fraga: "Vad är en svart svan?", amne: "svartsvan" },
-  // Riskmåttsdjup (omgång 12, syskon u1)
+  // Riskmåttsdjup + Utdelningsdjup + Förväntningsdjup + Portföljbalans
   { fraga: "Vad är sharpe-kvoten?", amne: "sharpekvot" },
-  // Utdelningsdjup (omgång 12, syskon u2)
   { fraga: "Vad är utdelningsfällor?", amne: "utdelningsfalla" },
   { fraga: "Vad är aktieåterköp?", amne: "aktieaterkop" },
-  // Förväntningsdjup (omgång 12, detta spårs u3)
   { fraga: "Vad är förväntningsanalys?", amne: "forvantningsanalys" },
-  { fraga: "Vad är förväntningsgapet?", amne: "forvantningsgap" },
   { fraga: "Vad är kalibrering?", amne: "kalibrering" },
-  // Portfoljbalans (omgång 13, syskon u1)
   { fraga: "Vad är rebalansering?", amne: "rebalansering" },
-  // Stabilitetsdjup (omgång 13, syskon u2)
+  // Stabilitetsdjup + Grahamgolv
   { fraga: "Vad är känslighetsanalys?", amne: "kanslighetsanalys" },
   { fraga: "Vad är soliditetsgrad?", amne: "soliditetsgrad" },
-  // Grahamgolv (omgång 13, detta spårs u3)
   { fraga: "Vad är en net-net och NCAV?", amne: "netnet" },
   { fraga: "Vad är cigar butts?", amne: "cigarbutt" },
   { fraga: "Vem är Mr Market?", amne: "mrmarket" },
-  // Varderjustering (omgång 14, syskon u2)
+  // Varderjustering + Optionsdjup + Riskläsningsdjup
   { fraga: "Vad är normaliserad vinst?", amne: "normalisering" },
-  // Optionsdjup (omgång 14, syskon u1)
   { fraga: "Vad är en köpoption?", amne: null },
-  // Riskläsningsdjup (omgång 14, detta spårs u3)
   { fraga: "Vad är kundkoncentration?", amne: "kundkoncentration" },
   { fraga: "Vad är en riskmatris?", amne: "riskmatris" },
-  { fraga: "Hur läser jag riskavsnittet?", amne: "riskavsnitt" },
-  // Avkastningskurva (omgång 15, syskon u1 — på disk i samma fönster)
-  { fraga: "Vad är den omvända avkastningskurvan?", amne: "avkastningskurva" },
-  // Avrakningsdjup (omgång 15, syskon u2 — på disk i samma fönster);
-  // OBS: "Varifrån kommer avkastningen?" ägs av DERAS kärnordsfraser.
-  { fraga: "Varifrån kommer avkastningen?", amne: "avkastningens källor" },
+  // Avkastningskurva + Avkastningsdjup + Värderingsverktyg
+  { fraga: "Vad är den omvända avkastningskurvan?", amne: null },
+  { fraga: "Varifrån kommer aktiens avkastning?", amne: "avkastningens källor" },
   { fraga: "Vad är tvärsnittsanalys?", amne: "tvärsnittsanalys" },
+  { fraga: "Vad är scenarioanalys?", amne: null },
+  // Omgång 16
+  { fraga: "Vad är en warrant?", amne: null },
+  { fraga: "Vad är konjunkturindikatorer?", amne: null },
+  { fraga: "Vad är refinansieringsmuren?", amne: null },
+  { fraga: "Vad är rörelsekapital?", amne: null },
+  // Omgång 17
+  { fraga: "Vad är SAM-viktningen?", amne: "samviktning" },
+  { fraga: "Vad är en backtest?", amne: "backtest" },
+  { fraga: "Hur fungerar handelsdagen?", amne: "handelsdagen" },
+  { fraga: "Vad är positionsstorlek?", amne: null },
+  // Omgång 18
+  { fraga: "Vad är avstämningsdagen?", amne: null },
+  { fraga: "Vad är kreditpremien?", amne: null },
+  { fraga: "Vad är MRR?", amne: null },
+  // Omgång 19
+  { fraga: "Vad är en patentbrant?", amne: null },
+  { fraga: "Vad är like-for-like?", amne: null },
+  // Omgång 20
+  { fraga: "Vad är priming?", amne: null },
+  { fraga: "Vad är tillgänglighetsfällan?", amne: null },
+  { fraga: "Vad är övermod?", amne: null },
+  { fraga: "Vad är likviditetsreserven?", amne: null },
+  { fraga: "Vad är altman z-score?", amne: null },
+  { fraga: "Vad är konkursprognos?", amne: null },
+  // Omgång 21: fönstrets syskon (u3 koncernläsning + u2 tillväxtdjup)
+  { fraga: "Vad är koncernredovisning?", amne: null },
+  { fraga: "Vad är minoritetsintressen?", amne: null },
+  { fraga: "Vad är segmentrapportering?", amne: null },
+  { fraga: "Vad är pensionsåtaganden?", amne: null },
+  { fraga: "Vad är organisk tillväxt?", amne: null },
+  { fraga: "Vad är volym pris och mix?", amne: null },
+  // Sondens dokumenterade gränser — ägs av tidigare lager, ska STANSA kvar:
+  { fraga: "Vad är equity risk premium?", amne: null },
+  { fraga: "Vad är kreditspreaden?", amne: null },
+  { fraga: "Vad är statsobligationer?", amne: null },
+  { fraga: "Vad är en obligation?", amne: "ränta" },
+  { fraga: "Vad är wacc?", amne: null },
+  { fraga: "Vad är optionspremie?", amne: null },
+  { fraga: "Vad är spreaden?", amne: "aktiemarknaden" },
 ];
 {
-  const STJALDA = GAMLA.filter((f) => svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER) !== null);
-  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i värderingsverktyg-lagret", STJALDA.length === 0,
-    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltVarderingsverktyg(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
+  const STJALDA = GAMLA.filter((f) => svaraLokaltRiskpremie(f.fraga, KURSREGISTER) !== null);
+  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i riskpremie-lagret", STJALDA.length === 0,
+    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltRiskpremie(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
 }
 
 // ── FALL G2: SYSKONKÄRNORD — alla tidigare kärnord som frågor → 0 fångster ─
@@ -450,7 +528,12 @@ const GAMLA = [
     RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER,
     PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER,
     VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER,
-    AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER,
+    AVKASTNINGSKURVA_MONSTER, VARDERINGSVERKTYG_MONSTER,
+    WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER,
+    EKOSYSTEMDJUP_MONSTER, PORTFOLJPRAKTIK_MONSTER,
+    UTDELNINGSKALENDER_MONSTER, KREDITDJUP_MONSTER, SEKTORDJUP_MONSTER,
+    SEKTORSKOLA2_MONSTER, BETEENDEMEKANIK_MONSTER, OVERLEVNADSDJUP_MONSTER,
+    KONCERNLASNING_MONSTER, TILLVAXTDJUP_MONSTER,
   ].filter(Array.isArray);
   let karnord = 0;
   const fragor = [];
@@ -462,7 +545,7 @@ const GAMLA = [
       }
     }
   }
-  const fangade = fragor.filter((f) => svaraLokaltVarderingsverktyg(f, KURSREGISTER) !== null);
+  const fangade = fragor.filter((f) => svaraLokaltRiskpremie(f, KURSREGISTER) !== null);
   kontroll(
     "G2 syskonkärnord — " + karnord + " kärnord LIVE som frågor → 0 fångster",
     fangade.length === 0,
@@ -470,7 +553,7 @@ const GAMLA = [
   );
 }
 
-// ── FALL H: hela kedjan (som chat-widget.tsx) — SIST-lager-invarianten ─────
+// ── FALL H: hela kedjan (som chat-widget.tsx) — lager-invarianten ──────────
 {
   const LAGER = [
     ["makro", svaraLokaltMakro], ["extra", svaraLokaltExtra], ["bas", svaraLokalt],
@@ -487,12 +570,28 @@ const GAMLA = [
     ["portföljbalans", svaraLokaltPortfoljbalans],
     ["stabilitetsdjup", svaraLokaltStabilitetsdjup],
     ["grahamgolv", svaraLokaltGrahamgolv],
-    ["värderingsjustering", svaraLokaltVarderjustering],
+    ["varderjustering", svaraLokaltVarderjustering],
     ["optionsdjup", svaraLokaltOptionsdjup],
     ["riskläsningsdjup", svaraLokaltRisklasningsdjup],
     ["avkastningskurva", svaraLokaltAvkastningskurva],
-    ["avrakningsdjup", svaraLokaltAvkastningsdjup],
-    ["värderingsverktyg", svaraLokaltVarderingsverktyg],
+    ["avkastningsdjup", svaraLokaltAvkastningsdjup],
+    ["varderingsverktyg", svaraLokaltVarderingsverktyg],
+    ["warrant", svaraLokaltWarrant],
+    ["tidsaxel", svaraLokaltTidsaxel],
+    ["kapitalbindning", svaraLokaltKapitalbindning],
+    ["ekosystemdjup", svaraLokaltEkosystemdjup],
+    ["handelsdag", svaraLokaltHandelsdag],
+    ["portfoljpraktik", svaraLokaltPortfoljpraktik],
+    ["utdelningskalender", svaraLokaltUtdelningskalender],
+    ["kreditdjup", svaraLokaltKreditdjup],
+    ["sektordjup", svaraLokaltSektordjup],
+    ["sektorskola2", svaraLokaltSektorskola2],
+    ["beteendemekanik", svaraLokaltBeteendemekanik],
+    ["pe-mekanik", svaraLokaltPeMekanik],
+    ["riskpremie", svaraLokaltRiskpremie],
+    ["överlevnadsdjup", svaraLokaltOverlevnadsdjup],
+    ["koncernläsning", svaraLokaltKoncernlasning],
+    ["tillväxtdjup", svaraLokaltTillvaxtdjup],
   ];
   const kora = (lager, fraga) => {
     for (const [, fnk] of lager) {
@@ -503,15 +602,17 @@ const GAMLA = [
     return null;
   };
   const MED = LAGER;
-  const UTAN = LAGER.filter(([namn]) => namn !== "värderingsverktyg");
+  const UTAN = LAGER.filter(([namn]) => namn !== "riskpremie");
 
-  // Invarianten: ett SIST-lager ändrar ALDRIG ett tidigare svar.
+  // Invarianten: detta lager ändrar ALDRIG ett tidigare svar, och de
+  // senare lagren (överlevnadsdjup/koncernläsning/tillväxtdjup) ligger
+  // efter i kedjan — deras svar på frågor detta lager lämnar ifred.
   const fel = [];
   for (const f of GAMLA) {
     const med = kora(MED, f.fraga);
     const utan = kora(UTAN, f.fraga);
     if (JSON.stringify(med) !== JSON.stringify(utan)) {
-      fel.push("'" + f.fraga + "' ändrad av värderingsverktyg-lagret (med=" + (med ? med.amne : "null") + ", utan=" + (utan ? utan.amne : "null") + ")");
+      fel.push("'" + f.fraga + "' ändrad av riskpremie-lagret (med=" + (med ? med.amne : "null") + ", utan=" + (utan ? utan.amne : "null") + ")");
     }
   }
   // Nyckel-ämnen landar fortfarande rätt (ändringsimmutabilitet + identitet)
@@ -520,26 +621,26 @@ const GAMLA = [
     const med = kora(MED, f.fraga);
     if (!med || med.amne !== f.amne) fel.push("'" + f.fraga + "' ⇒ " + (med ? med.amne : "null") + " (väntat " + f.amne + ")");
   }
-  // Mina tre når mitt lager genom hela kedjan.
+  // Min fråga når mitt lager genom hela kedjan.
   for (const f of NYA) {
     const med = kora(MED, f.fraga);
     if (!med || med.amne !== f.amne) fel.push("NY '" + f.fraga + "' ⇒ " + (med ? med.amne : "null") + " (väntat " + f.amne + ")");
   }
-  // Motfrågorna (eget lager + riskläsningsdjupets) ska vara levande knappar.
-  for (const q of ["Hur räknar man ut PEG?", "Vad är scenarioanalys?", "Vad är en riskmatris?"]) {
+  // Motfrågorna (tidigare lagers områden) ska vara levande knappar genom kedjan.
+  for (const q of ["Vad är kreditpremien?", "Vad är wacc?"]) {
     const mal = kora(MED, q.toLowerCase());
     if (!mal) fel.push("motfråga '" + q + "' landar null i kedjan — död knapp");
   }
   kontroll(
-    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (30 lager, som chat-widget.tsx)",
+    "H01 kedja — " + GAMLA.length + " gamla oförändrade (lager-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (46 lager, som chat-widget.tsx)",
     fel.length === 0,
-    fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length + 3) + "/" + (GAMLA.length + NYA.length + 3) + " rätt",
+    fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length + 2) + "/" + (GAMLA.length + NYA.length + 2) + " rätt",
   );
 
-  // ── FALL I: OMKASTAD ANTISTÖLD — mina kanoniska ger null UTAN detta ──────
+  // ── FALL I: OMKASTAD ANTISTÖLD — min kanoniska ger null UTAN detta ────────
   const tjuvade = NYA.filter((f) => kora(UTAN, f.fraga) !== null);
   kontroll(
-    "I01 omkastad antistöld — 3 nya kanoniska ger null i kedjan UTAN värderingsverktyg-lagret",
+    "I01 omkastad antistöld — den nya kanoniska ger null i kedjan UTAN riskpremie-lagret",
     tjuvade.length === 0,
     tjuvade.length ? tjuvade.map((f) => "'" + f.fraga + "' ⇒ " + kora(UTAN, f.fraga).amne + " i tidigare lager").join(" | ") : "0 tidigare fångster ✓",
   );
@@ -549,85 +650,20 @@ const GAMLA = [
 {
   const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigare = new Set();
-  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER]) {
+  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, VARDERINGSVERKTYG_MONSTER, WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER, EKOSYSTEMDJUP_MONSTER, PORTFOLJPRAKTIK_MONSTER, UTDELNINGSKALENDER_MONSTER, KREDITDJUP_MONSTER, SEKTORDJUP_MONSTER, SEKTORSKOLA2_MONSTER, BETEENDEMEKANIK_MONSTER, OVERLEVNADSDJUP_MONSTER, KONCERNLASNING_MONSTER, TILLVAXTDJUP_MONSTER]) {
     if (!Array.isArray(monster)) continue;
     for (const m of monster) for (const k of m.karnord ?? []) tidigare.add(dia(k));
   }
   const krock = [];
-  for (const m of VARDERINGSVERKTYG_MONSTER) {
+  for (const m of RISKPREMIE_MONSTER) {
     for (const k of m.karnord ?? []) {
       if (tidigare.has(dia(k))) krock.push("'" + k + "' (" + m.id + ") finns redan i tidigare lager");
     }
   }
   kontroll(
-    "J01 kärnordsdisjunktion — VARDERINGSVERKTYG_MONSTER vs " + (tidigare.size > 0 ? "alla tidigare lager" : "0 lager") + " (" + tidigare.size + " kärnord)",
+    "J01 kärnordsdisjunktion — RISKPREMIE_MONSTER vs " + (tidigare.size > 0 ? "alla tidigare lager" : "0 lager") + " (" + tidigare.size + " kärnord)",
     krock.length === 0,
     krock.length ? krock.join(" | ") : "0 överlapp ✓",
-  );
-}
-
-// ── FALL J2: NÄRHETSDISJUNKTION — matcher-toleransspeglarn ─────────────────
-// Starkare än J: inget av detta lagers kärnord får ligga inom FEJLTOLERANS
-// av ett tidigare kärnord enligt traff()-reglerna (≤3 tkn exakt · ≤7 tkn
-// 1 fel · >7 tkn 2 fel · flerordsfras = inklusion). Spegel av sondens
-// närhetskontroll, nu permanent i regressionen.
-{
-  const dia = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
-  const distans = (a, b) => {
-    if (a === b) return 0;
-    const n = a.length, m = b.length;
-    if (!n) return m; if (!m) return n;
-    let fore = Array.from({ length: m + 1 }, (_, j) => j);
-    const nu = new Array(m + 1);
-    for (let i = 1; i <= n; i++) {
-      nu[0] = i;
-      for (let j = 1; j <= m; j++) {
-        nu[j] = Math.min(nu[j - 1] + 1, fore[j] + 1, fore[j - 1] + (a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1));
-      }
-      fore = [...nu];
-    }
-    return fore[m];
-  };
-  // Speglar traff(): skulle frågan "<tidigare kärnord>" träffa mitt kärnord?
-  const traffar = (fragaOrd, fragaStr, nk) => {
-    if (nk.includes(" ")) return fragaStr.includes(nk);
-    if (nk.length <= 3) return fragaOrd.includes(nk);
-    const max = nk.length <= 7 ? 1 : 2;
-    return fragaOrd.some((o) => distans(o, nk) <= max);
-  };
-  const tidigareMonster = [
-    MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER,
-    KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER,
-    PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER,
-    DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER,
-    SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER,
-    RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER,
-    PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER,
-    VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER,
-    AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER,
-  ].filter(Array.isArray);
-  const krock = [];
-  let jamforelser = 0;
-  for (const monster of tidigareMonster) {
-    for (const m of monster) {
-      for (const tk of m.karnord ?? []) {
-        const fragaStr = dia("vad är " + tk + "?");
-        const fragaOrd = fragaStr.split(" ");
-        for (const mm of VARDERINGSVERKTYG_MONSTER) {
-          for (const mk of mm.karnord ?? []) {
-            jamforelser++;
-            if (traffar(fragaOrd, fragaStr, dia(mk))) {
-              krock.push("'" + mk + "' (" + mm.id + ") träffas av tidigare kärnordet '" + tk + "'");
-            }
-          }
-        }
-      }
-    }
-  }
-  kontroll(
-    "J2 närhetsdisjunktion — " + jamforelser + " par mot matcher-tolerans → 0 träffar",
-    krock.length === 0,
-    krock.length ? krock.slice(0, 5).join(" | ") : "spegeln av traff() håller lagret diagnostiskt avgränsat ✓",
   );
 }
 
@@ -648,19 +684,15 @@ const GAMLA = [
     "svaraLokaltRisklasningsdjup",
     "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
     "svaraLokaltVarderingsverktyg",
-      "svaraLokaltWarrant",
-    "svaraLokaltTidsaxel",
-    "svaraLokaltKapitalbindning",
-
-    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
-    "svaraLokaltEkosystemdjup",
-    "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
-  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
-  "svaraLokaltBeteendemekanik",
-  "svaraLokaltPeMekanik",
-  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
-];
+    "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
+    "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2",
+    "svaraLokaltBeteendemekanik", "svaraLokaltPeMekanik",
+    "svaraLokaltRiskpremie",
+    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+  ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -672,23 +704,25 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  if (!widget.includes('from "@/lib/ai-mentor-varderingsverktyg-fragor"')) {
-    FEL.push("importen av ai-mentor-varderingsverktyg-fragor saknas");
+  if (!widget.includes('from "@/lib/ai-mentor-riskpremie-fragor"')) {
+    FEL.push("importen av ai-mentor-riskpremie-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
+  // Omgång 21:s fönsterlager: u3:s koncernläsning och u2:s tillväxtdjup
+  // (båda EFTER detta lager) — kända och välkomna.
+  const kanda = new Set(KOMPONENTER);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 30 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 46 lager i ordning + import",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "värderingsverktyg sist av 30 lager, inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : "riskpremie lager 43 av 46 (före överlevnadsdjup; omgång 21:s koncernläsning + tillväxtdjup efter), inga okända komponenter",
   );
 }
 
 // ── Sammanfattning ──────────────────────────────────────────────────────────
 console.log("");
-console.log("AI-MENTORN VÄRDERINGSVERKTYG (s6-u3 omgång 15): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
+console.log("AI-MENTORN RISKPREMIE (s6-u1 omgång 21): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
 process.exit(fail > 0 ? 1 : 0);

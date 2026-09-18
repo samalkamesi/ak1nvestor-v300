@@ -34,7 +34,7 @@
  *      warrant-lagret: inget tidigare lager fångar den
  *   J  kärnordsdisjunktion MEKANISKT — WARRANT_MONSTER:s kärnord är
  *      disjunkta mot samtliga tidigare lagers kärnord, lästa LIVE
- *   K  register-läge — 426 kurser (spår 5:s omgång-16-rebake; basotestet
+ *   K  register-läge — 432 kurser (spår 5:s omgång-17-rebake; basotestet
  *      E01 är grinden som fångar glömda rebakar)
  *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA 31 lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b kan inte
@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 426 kurser (spår 5:s omgång-16-rebake 2026-09-18; basotestet E01 grönt)",
-    KURSREGISTER.length === 426,
+    "K03 register-läge — 432 kurser (spår 5:s omgång-17-rebake 2026-09-18; basotestet E01 grönt)",
+    KURSREGISTER.length === 432,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -644,7 +644,7 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

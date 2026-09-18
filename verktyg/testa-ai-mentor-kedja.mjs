@@ -253,10 +253,17 @@ const MOTORDEFS = [
   // _s6u3-sond{,2,3}-omg21.mjs: familjerna NULL genom kedjans 43 motorer /
   // 1 317 kärnord, 0 grannar, 0 främmande i prototyp-stöldprovet).
   { namn: "koncernläsning", fil: "ai-mentor-koncernlasning-fragor.ts", fn: "svaraLokaltKoncernlasning", arr: "KONCERNLASNING_MONSTER", antal: 3 },
-  // 2026-09-18 omgång 21: tillväxtdjup (s6-u2, samma manifest — organisk mot
-  // förvärvad tillväxt + volym-pris-mix, tx-familjen; wiread SIST i fönstrets
-  // dokumenterade ordning; motordef här för G-fallets widget-spegling —
-  // kanoniska rader bärs av deras eget leveranstest).
+  // 2026-09-18 omgång 21: tillväxtdjup (s6-u2, samma manifest — S-kurvan/
+  // mättnaden med utrymmesräkningen baklänges + prismix/mixeffekten med
+  // intäkten dekompilerad i volym, pris och sammanhang; aktiverar HELA
+  // TILLVÄXT-kategorien 1/8 → 8/8 — tx-04, tx-02 primära + tx-01, tx-05,
+  // v01, v02, v03 källor; SONDENS LÄXA: rund 1–2 saknade basmotorn (import
+  // med två namn föll utanför kartrapporten) — rund 3 DÖDADE «organisk
+  // tillväxt»/«förvärvad tillväxt» (basens tillvaxt-monster äger EXAKT,
+  // tx-01 här KÄLLA enligt V19) och «volym pris och mix» (basens kostnad-
+  // monster äger naket «pris»), «skurvan» sammansatt (avkastningskurvans
+  // kurvan-frågor, tavstånd 1); rund 4 GRÖN: 0 grannar, 0 stölder — deras
+  // frågor bärs som knappar; wiread SIST i fönstrets dokumenterade ordning).
   { namn: "tillväxtdjup", fil: "ai-mentor-tillvaxtdjup-fragor.ts", fn: "svaraLokaltTillvaxtdjup", arr: "TILLVAXTDJUP_MONSTER", antal: 2 },
 ];
 
@@ -432,6 +439,19 @@ const KANONISKA = [
   { fraga: "vad är affärsområden?", motor: 44 },
   { fraga: "vad är pensionsåtaganden?", motor: 44 },
   { fraga: "vad är pensionsskulden?", motor: 44 },
+  // Omgång 21: tillväxtdjup (s6-u2) — kanoniska ur lagrets egna rubriker
+  // («vad är organisk tillväxt?»/«vad är volym pris och mix?» landar hos
+  // BAS-motorn — deras monster [tillvaxt]/[kostnad]; se motordef-kommentaren).
+  { fraga: "vad är s-kurvan?", motor: 45 },
+  { fraga: "vad är mättnad?", motor: 45 },
+  { fraga: "vad är marknadsmättnad?", motor: 45 },
+  { fraga: "vad är utrymmesräkning?", motor: 45 },
+  { fraga: "vad är prismix?", motor: 45 },
+  { fraga: "vad är mixeffekten?", motor: 45 },
+  { fraga: "vad är prisvolym?", motor: 45 },
+  { fraga: "vad är produktmix?", motor: 45 },
+  { fraga: "vad är tillväxtmotorer?", motor: 45 },
+  { fraga: "vad är intäktsmotorer?", motor: 45 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);

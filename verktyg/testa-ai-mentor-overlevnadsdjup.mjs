@@ -627,7 +627,7 @@ const GAMLA = [
     // Omgång 20:s trefönster: syskonens lager + detta lager.
     "svaraLokaltBeteendemekanik",
     "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

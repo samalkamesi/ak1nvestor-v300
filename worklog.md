@@ -13225,3 +13225,29 @@ Leverans: data/forskning/SYSTEMKARTAN.md, data/vakten/auto-s9-1789691129810-u1-a
 ## SPÅR 9 s9-u2 (manifest auto-s9-1789691129810, 2/3) — 2026-09-18 ~02:5x lokal: SYSTEMKARTAN dokvåg — A3 + B12 diffade mot verkligheten; E27-kollision med u3 hanterad [fabrik]
 
 Leverans: A3 AI-Mentorn LEVER 8→9 — E01-kontraktet STÄNGT ("408 kurser fält-för-fält — identisk med getCourses()-källan", egen körning efter tre röda mätningar 358/375→358/390) + hela sviten röda-fri: 38 sviter · 38 gröna · 0 FAIL med sanna exitkoder (bassviten 555/0 · kedjan 70/0 med 33 motorer/98 unika monster-id · warrant 39/0) + larvag-synk EGEN GRÖN 408=408=408 · 21 profiler · 0 fantomer (exit 0) + siffror.json 408/8 223 + warrant-lagret ai-mentor-warrant-fragor.ts (09-18 00:31, DI-mönstret, 32 frågelagerfiler); rebake-disciplinen bevisat hållen genom kursvågorna 398→401→408 (atomär --baka, c3e46af9-mönstret) — omgång 8:s köpost 1 INLÖST. B12 LEVER 7 kvar: FOMO-kuren LEVER i prod ("Sista chansen att justera" → "Efter detta steg låses dina val" superanalys.tsx:467, 1f43c167 09-17 00:55; deploybevis egen grep: prod-chunk 1wv5cn_5misik.js bär nya strängen, gamla BORTA) + PRECISERINGSFYND: /superanalys + /kalkylator SAKNAS i gränsnittsvaktens FALLBACK_SIDOR (granssnittsvakt.mjs:68, 6 sidor; 0 vaktrapporter med sidorna) = ytan rutinmäts ej — kö till huvudagenten; radtal oförändrade 2 670; gap 1 lever (0 egna sviter); båda sidorna 200 live. KOLLISIONSHANTERING: E27 (andra valet, anspråk 02:28) togs av syskon u3:s commit 2301ed2e 02:32 (E34+E26+E27) — AVSTÅTT enligt disk-först-presedensen, deras sektion orörd; mina E27-mätningar bokförda som OBEROENDE KORSVALIDERING (transport 10 481 r mot kartans 8 316; tre skickaV4-metoder ×3 lager; kommandorutt 209 r; egna live-sonder /studio 200 · stream 401 · usage-v4 401 · kommando 405 — bekräftar deras bild exakt). u1:s A6-anspråk (02:31) respekterat. Snitt 7,5 → 7,6 (287→288/38; A3 +1). Kö: (1) B12-sidorna i vaktens sidrotation; (2) B12-klientsviter; (3) A3:s mjuka gap (dataset-medianer, assistent-panel). Metod: anspråk FÖRE mätstart (omg 13:s lärdom infriad), en-träff-ersättningar med abort-grind, EN skrivning + omedelbar commit; endast data/forskning/SYSTEMKARTAN.md + worklog + anspråksfil + verktyg/_s9u2-0918-* berörda = INGET bygge; src/ orörd (tsc 0 via grinden); R2 orörd; data/blogg/ orörd. [fabrik]
+
+
+## SPÅR 10 s10-u2 (manifest auto-s10-1789692929837, 2/3) — 2026-09-18 02:57–03:0x lokal: NATT-FÖDELSEBEVIS — blad 8 restore-bevisat i sin födelsetimme (SERIEREKORD 28,0 min; förra rekordet ~5 h) + RPO-kurvans yngsta punkt + WAL-stabilitetsbevis [fabrik]
+
+DR-övning (vakt): db-2026-09-18 (född 02:30:40, 32 192 241 B) GRÖN via
+dr-ovning.mjs — markörer 1 327 830 · RTO 10,9 s · 788 kända/0 okända fel ·
+public 60/1 306 119 · alla scheman 99/1 306 515 · skrap-DB raderad · PG17
+stoppad. RACE nr 4 mot syskon (flock-kö, 18 s bakom mig): deras AUTO-2
+RTO 10,2 s = NYTT SERIEMINIMUM, identiska radtal = replikkorsbevis nr 3 —
+symmetriskt bokfört, deras fil orörd/okommittad av mig. RPO-punkt på
+bladålder 28 min (yngst någonsin, isolerat efter-dump-fönster): +17 rader
+≈ 36 r/h (organ_health_logs +9, board_decisions +8, snapshots +0) —
+nattlugnet ~32–36 r/h DIREKT bevisat, DR-fönstrets exponering ≈ noll hela
+02:30→07:40; kurvan fem ben. Födelsetillväxt steg 6: +19 791 (serien
+19 805·19 797·19 797·19 800·19 800·19 791 — konstant takt). Städ egenmätt:
+base endast OID 1/4/5 · WAL 529 MB OFÖRÄNDRAD efter två restores
+(stabilitetsbevis: restores växer ej WAL; serie 497×3→529→529) · ren
+avstängning i loggen · 8 blad, äldsta 09-11 (7 dygn) överlevde natten =
+retentionens beteendepunkt 2, ingen beskärning (förenligt 30 dagar) ·
+disk 72 GB. src/ orörd = INGET bygge (tsc ej aktuellt, baslinje orörd);
+R2 orörd (.pgpass endast PGPASSFILE-pekare, värde aldrig läst);
+data/blogg/ orörd; syskonens ytor orörda. Kö: födelsebevis i
+födelsetimmen som ny norm · RPO 08:1x-punkt · WAL-kvartal 2026-12 ·
+retention ~2026-10-11. Leverans: DR-FODELSEBEVIS-2026-09-18-NATT-BLAD8.md
++ DR-PROV-2026-09-18-AUTO.md + DR-RPO-DIFF-2026-09-18-NATT-BLAD8.json +
+DRIFTSBOKEN S10-U2 + denna rad. [fabrik]

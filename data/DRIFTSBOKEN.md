@@ -1825,3 +1825,37 @@ får ALDRIG krascha sattMal/rensaMal.
   disk 72 GB · låsfilerna flock-viloläge. Kö: TOTAL i kvartalssviten senast
   2026-12-17 · WAL per kvartal med aktivitetsnotis · COMMIT-NORMEN standing.
   Protokoll: DR-OVNING-2026-09-17-KVALL-TOTAL.md + 7 maskinella protokoll.
+
+
+## S10-U2 — NATT-FÖDELSEBEVIS: blad 8 bevisat i sin födelsetimme + RPO-kurvans yngsta punkt (2026-09-18 02:57–03:0x, GODKÄNT)
+
+- **Födelsebevis SERIEREKORD:** db-2026-09-18.sql.gz (född 02:30:40,
+  32 192 241 B) restore-bevisad **28,0 min efter födelse** — första
+  bladet någonsin bevisat inom sin födelsetimme (föregående rekord ~5 h).
+  `node verktyg/dr-ovning.mjs --fil …` GRÖN: markörer 1 327 830 rader ·
+  RTO 10,9 s · fel 788 kända/0 okända · public 60 tabeller/1 306 119
+  rader · samtliga scheman 99/1 306 515 · skrap-DB raderad · PG17 stoppad.
+- **RACE (fjärde i spåret, symmetriskt bokfört):** syskon körde SAMMA blad
+  18 s efter mig via flock-kön (DR-PROV-2026-09-18-AUTO-2.md, pid
+  1872083, RTO **10,2 s = NYTT SERIEMINIMUM**); identiska radtal på alla
+  nivåer = replikkorsbevis tredje gången. Två agenter, ett lås, noll
+  förlorat arbete.
+- **RPO yngsta punkt någonsin** (bladålder 28 min, isolerat fönster
+  02:30→02:58): **+17 rader ≈ 36 r/h** — organ_health_logs +9 ·
+  board_decisions +8 · snapshots +0. Nattlugnet ~32–36 r/h nu DIREKT
+  mätt i efter-dump-fönstret: DR-fönstrets exponering ≈ noll hela
+  02:30→07:40. Kurvan har fem ben.
+- **Födelsetillväxt steg 6:** 1 286 328 → 1 306 119 = **+19 791**
+  (serien 19 805 · 19 797 · 19 797 · 19 800 · 19 800 · 19 791) —
+  konstant dagstakt håller sjätte dagen.
+- **Städ eigenmätt:** PG17 down · base endast OID 1/4/5 + tom pgsql_tmp ·
+  **WAL 529 MB OFÖRÄNDRAD efter två restores** (serien 497×3 → 529 →
+  529; stabilitetsbevis: restore-läsning växer ej WAL) · ren avstängning
+  i loggen · **8 blad — äldsta (09-11, 7 dygn) överlevde = retentionens
+  beteendepunkt 2, ingen beskärning, förenligt med 30 dagar** · disk
+  72 GB ledig.
+- Kö: födelsebevis i födelsetimmen som ny norm (recept: första vaktronden
+  efter 02:30 kör dr-ovning på dagens blad) · RPO 08:1x-punkt binder
+  dagmaskinens start · WAL-kvartal 2026-12 · retention nästa punkt
+  ~2026-10-11. Protokoll: DR-FODELSEBEVIS-2026-09-18-NATT-BLAD8.md +
+  DR-PROV-2026-09-18-AUTO.md + DR-RPO-DIFF-2026-09-18-NATT-BLAD8.json.

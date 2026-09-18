@@ -202624,6 +202624,178 @@
       }
     ]
   },
+  "st-06-likviditetsreserven": {
+    "slug": "st-06-likviditetsreserven",
+    "category": "STABILITET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Likviditetsreserven — kassan, faciliteten och överlevnadstiden",
+    "summary": "Stabilitet avgörs inte bara av skuldens storlek utan av reservens djup: kassan, de obeskattade reserverna och den outnyttjade kreditfaciliteten — räknat som överlevnadstid i månader vid kraftigt fallande intäkter. st-familjens sjätte steg: fredens motstycke till krisläsningen.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Skilja på skuldens tyngd och reservens djup — två sidor av stabiliteten som mäts olika · Räkna fram reservens tre ben: kassa och bank, obeskattade reserver efter skatt, outnyttjad kreditfacilitet · Nettoberäkna de obeskattade reserverna — andelen som blir kvar när skatteskulden räknas av · Räkna överlevnadstiden i månader: reserven dividerat med månadsförbrukningen · Läsa ut reserven ur redovisningen: balansräkningens kassarad, facilitetsuppgiften i förvaltningsberättelsen, de obeskattade i det egna kapitalet · Ställa reservens fem frågor mot en verklig balansräkning och gränserna mot grannkurserna (rk-04 krisläsningen, st-01 soliditeten, v11 nyckletalet).",
+    "why": "St-familyens fem första kurser mäter skuldens och känslighetens sidor: soliditeten, stresstesten, poängmodellerna, kreditcykeln och refinansieringsmuren. Men en balansräkning har en annan sida som ofta läses i förbigående: det bolaget gör med det som inte är skuld — kassan, reserverna och de outnyttjade kreditlöftena. En kris testar inte skulden först; den testar reserven. Bolaget som bär sju månaders förbrukning i reserv förhandlar, omprötar och väntar ut sitt läge; bolaget med sex veckor måste förhandla med ryggen mot väggen, och då är det köparen av tid som bestämmer priset. Kursen gör reserven till egen läsning: tre ben, en nettoberäkning och en enda riktigt bra fråga — hur länge lever bolaget om intäkterna tystnar? Frågan är enkel att ställa, kräver tre uppgifter ur redovisningen och förändrar läsningen av varje balansräkning som har en kassarad.",
+    "history": {
+      "origin": "Reserven som försvar är äldre än aktiemarknaden: gårdsbon som lade undan ett årspann i logen, handelshusen som höll kassakistor för dåliga år, bankerna som lärde sig skillnaden mellan betalningsdugig och likvid i sina egna kriser. När industrialiseringens bolag växte blev frågan institutionell — konjunkturens svängningar kunde slå ut tekniskt lönsamma verk om löne- och leverantörsskulder föll förfallna innan kunderna betalat. De gamla finansfamiljerna, med banker och industri i samma händer, vägde ofta reserven tungt av just denna anledning: de hade själva suttit med obetalda fakturor i svåra år och visste att tid är det enda som inte kan köpas när den redan tagit slut.",
+      "evolution": "Under 1900-talet formaliserades reservläsningen från två håll. Kassaflödesanalysen — att läsa bolagets in- och utflöden som en egen berättelse — gjorde förbrukningstakten mätbar, och kommentatorer började räkna fram hur många månader ett bolag med negativt kassaflöde kunde bära innan nytt kapital krävdes. Samtidigt utvecklades kreditvärderarnas perspektiv: för dem som lånar ut pengar är reserven det som avgör om bolaget betalar räntan genom ett svagt år, och faciliteten — den outnyttjade kreditlöftet — blev en del av motsvarigheten. Företagskrisernas historia skrevs ofta som reservens historia: bolag som tekniskt sett var lönsamma men som stannade av bränsle.",
+      "modern": "I dag står reservläsningen i skärningspunkten mellan tre moderna fenomen. Ränteläget gör det kostsamt att bära stora kassar — ledningen måste förklara varför pengarna ligger stilla, och kapitalmarknaden frågar sig om de inte hör hemma hos aktieägarna i stället. ratinginstitut och bankavtal mäter likviditeten strukturerat: kassan och faciliteterna redovisas allt oftare som en samlad likviditetsreserv i förvaltningsberättelserna. Och de senaste årens chocker — pandemier, energikriser, leveransstörningar — har flyttat frågan från teori till praktik för hela branscher: bolag med dokumenterad överlevnadstid kunde vänta, medan de med tunn reserv tvingades till emissioner och utförsäljningar i precis det ögonblick priset var som sämst. För aktiestudenten är reserven därför inte en fotnot i stabilitetsarbetet utan dess tidsaxel."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — fredens reserv",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — reservens tre ben",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — att läsa ut reserven ur redovisningen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — överlevnadstiden i månader",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — reservens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch tittade alltid på balansräkningen före resultatet, och kassaraden var en av de första han sökte: ett bolag med liten skuld och gedigen kassa har tid att lösa sina problem, medan ett bolag utan reserv har problem som löser bolaget. Hans tes att kassan i ett svagt bolag kan vara värd mer än hela börsvärdet — att marknaden ibland glömmer att räkna in det som redan ligger på banken — är reservläsningens raka föregångare. Lynch påminde också om det enkla: banker lånar hellst till den som inte behöver låna, och faciliteten tecknas i goda år för att användas i dåliga — den som väntar med att fråga banken tills pengar behövs har frågat för sent.",
+    "grahamSection": "Benjamin Graham byggde hela sin defensiva filtrering på reservens släktskap: net current assets — närvärden av omsättningstillgångar minus kortfristiga skulder — var hans sätt att köpa bolag där marknaden prissatte verksamheten under det som redan fanns i kassan och lagret. Hans kärnbudskap till ägaren var att finansmassan är trygghet: bolaget som bär reserv kan falla djupt i resultat utan att falla i betalningsinställelse, och marginalen mellan pris och värde fungerar bara om bolaget lever tills marknaden rättar sig. Grahams elever har i efterhand räknat om hans kassatunga korgar och funnit det som kursen formulerar: tiden köper förhandlingsposition, och förhandlingsposition är avkastning.",
+    "ak1Section": "I AK1A:s metodik kompletterar denna kurs st-familjens tidigare steg med tidsaxeln: st-01 mäter soliditeten, st-02 känsligheten, st-03 varningens poängmodell, st-04 cykeluthålligheten och st-05 skuldens förfallanden — st-06 mäter hur länge bolaget klarar sig när intäkterna tystnar. I AKM1:s bolagsläsning blir reserven en egen kontrollstation före varje stabilitetsvägd slutsats: skuldkvoten säger hur tungt lastat bolaget är, överlevnadstiden hur länge det orkar gå uppför. I AKM2:s ram övar kursen sambandet mellan tidshorisonter och kapitalrisk: en reserv på åtta månader betyder att analysen och omvärlden får åtta månader på sig att ändra sig innan kapitalet tvingas röra sig, och det är precis den tiden som långa tidshorisonter kräver. Gränsen mot rk-04 är avsiktlig: denna kurs äger fredens reserv, den kursen äger krisens förlopp.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — fredens reserv",
+        "intro": "Stabilitetsläsningen börjar oftast vid skulden. Kursen börjar vid motsatsen — det bolaget har satt åt sidan för den dagen intäkterna tystnar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En balansräkning har två sidor som talar om olika saker. Skuldsidan — som st-familjens tidigare kurser läst — berättar vad bolaget är skyldigt och när det ska betala. Assetsidan berättar vad bolaget håller i handen, och där finns en post som ofta läses i förbigående: kassan och bankmedel, tillsammans med uppgifter som inte syns i balansräkningen alls — de obeskattade reserverna och den outnyttjade kreditfaciliteten. Tillsammans bildar de likviditetsreserven: det bolaget kan betala med utan att låna, sälja eller be aktieägarna om något. Varför förtjänar reserven egen läsning? Därför att en kris inte testar skulden först — den testar reserven. Intäkterna faller, löner och leverantörsskulder förfaller varje månad, och frågan blir inte hur mycket bolaget är skyldigt utan hur länge det kan andas. Bolaget med sju månaders reserv förhandlar med banken i stark position; bolaget med sex veckor förhandlar med ryggen mot väggen. Reserven är alltså inte passiv kapitalparkering — den är förhandlingsposition, och förhandlingsposition är i sin tur avkastning: den som inte måste sälja får bättre priser när bolaget så småningom köper något."
+          },
+          {
+            "type": "definition",
+            "content": "LIKVIDITETSRESERVEN — TRE BEN: (1) KASSA OCH BANK — likvida medel i balansräkningen · (2) ODESKATTADE RESERVER EFTER SKATT — del av eget kapital som beskattas först när den realiseras; nettoandelen efter framtida skatt är den brukbara delen · (3) OUTNYTTJAD KREDITFACILITET — tecknad men ej utnyttjad kredit i bank · ÖVERLEVNADSTIDEN: reserven dividerat med månadsförbrukningen — hur länge bolaget lever om intäkterna tystnar · GRÄNS: rk-04 äger själva krisläsningen, st-01 soliditeten, v11 likviditetsnyckeltalet — denna kurs äger fredens reserv."
+          },
+          {
+            "type": "insight",
+            "content": "En kris testar inte skulden först — den testar reserven. Tid är det enda som inte kan köpas när den redan tagit slut."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — reservens tre ben",
+        "intro": "Reserven är tre poster från tre olika ställen i redovisningen. Kapitlet bygger varje ben och nettoberäknar det som behöver det.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första benet är kassan och bankmedlen: mestadels rakt av vad balansräkningen visar — likvida medel, kortfristiga placeringar som lätt kan realiseras. Andra benet är de obeskattade reserverna, och de kräver en nettoberäkning: posten ligger i det egna kapitalet men en framtida skatteskuld vilar på den. Skulle reserven realiseras betalar bolaget skatt på vinsten, och bara resten kan användas till löner och leverantörer. Räkna därför: obeskattade reserver 260,0 miljoner kronor gånger (1 minus 0,206) med dagens bolagsskattesats — netto 260,0 × 0,794 = 206,4 miljoner. Bolagsskattesatsen och dess mekanik ägs av km-049; här används den som räknefakta. Tredje benet är den outnyttjade kreditfaciliteten: en tecknad överenskommelse med bank om kredit som inte utnyttjats. Faciliteten är verkligen en del av reserven — men villkorad (mer i fällkapitlet). Sätt ihop benen i tur och ordning: kassa och bank 840,0 plus facilitet 630,0 ger en reserv av 1 470,0 miljoner. Lägg till de obeskattade nettoreserverna 206,4 och den breda reserven blir 1 676,4 miljoner. Båda talen behålls i läsningen: den smala reserven visar vad som kan betalas i morgon utan att röra skattemassan, den breda vad som finns om realisering och beskattning hinner ske."
+          },
+          {
+            "type": "definition",
+            "content": "RESERVENS TRE BEN — RÄKNEEXEMPLET: KASSA OCH BANK 840,0 Mkr · ODESKATTADE RESERVER 260,0 × (1 − 0,206) = 206,4 Mkr i netto (skattesatsens mekanik: km-049) · OUTNYTTJAD FACILITET 630,0 Mkr · SMAL RESERV: 840,0 + 630,0 = 1 470,0 Mkr · BRED RESERV: 1 470,0 + 206,4 = 1 676,4 Mkr · bägge talen redovisas — de svarar på olika frågor."
+          },
+          {
+            "type": "insight",
+            "content": "De obeskattade reserverna är en isbit: 260,0 på pappret, 206,4 i handen — skatten smälter av först när isen används. Räkna alltid reserven i netto."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — att läsa ut reserven ur redovisningen",
+        "intro": "Reserven syns inte på ett ställe i årsredovisningen utan på tre. Kapitlet visar var varje ben står och vilka uppgifter som krävs.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kassan hittas i balansräkningen: raden kassa och bank, ofta tillsammans med kortfristiga placeringar som är avsedda att kunna realiseras snabbt — läs noten om placeringarnas löptid, ty en placeringsportfölj med års löptid är reserv bara i vid mening. De obeskattade reserverna står i det egna kapitalet eller dess bilaga: posten är svensk redovisningstradition, och den åtföljs ofta av en not som redovisar vilken skattesats som ligger på den — använd notens tal om det finns, annars bolagsskattesatsen. Faciliteten syns sällan i balansräkningen alls — den är ju inte en tillgång utan ett avtal. Uppgiften finns i förvaltningsberättelsen eller noterna, ofta under likviditet eller finansiella åtaganden: tecknad kredit, utnyttjad del, outnyttjad del. Läs också villkoren: löper faciliteten över rullande tolvmånadersperioder, finns uppsägningsrätter för banken, är den kopplad till nyckeltalsvillkor — covenanter, vars mekanik ks-05 äger? En facilitet som banken får säga upp med omedelbar verkan är inte samma reserv som en utanförlöpande. Samla slutligen förbrukningstalet från kassaflödesanalysen som km-003 lär ut: driftskostnaderna exklusive investeringar, gärna som medeltal av fyra kvartal för att jämna säsong. Tre uppgifter, tre platser i årsredovisningen — och tio minuters läsning som förändrar hela stabilitetsbilden."
+          },
+          {
+            "type": "definition",
+            "content": "VAR BENEN STÅR: KASSA — balansräkningens kassarad + not om placeringarnas löptid · ODESKATTADE RESERVER — eget kapital eller bilaga, med notens skattesats · FACILITET — förvaltningsberättelsens likviditetsavsnitt eller not om finansiella åtaganden: tecknad minus utnyttjad · FÖRBRUKNINGSTALET — kassaflödesanalysens driftskostnader (km-003), medeltal av fyra kvartal · VILLKORSKOLLEN: löptid, uppsägningsrätt, covenantkoppling (ks-05)."
+          },
+          {
+            "type": "insight",
+            "content": "Reserven är tre poster på tre ställen: kassaraden, kapitalbilagan och förvaltningsberättelsens tredje sista stycke. Bolaget som saknar facilitetsuppgift har svarat på en annan fråga — fråga igen."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — överlevnadstiden i månader",
+        "intro": "Reserven blir först tal när den ställs mot förbrukningen. Kapitlet räknar överlevnadstiden i månader och visar spegelbolagets motsats.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt förbrukningen till 210,0 miljoner kronor per månad — driftskostnadernas medelvärde ur fyra kvartal. Smala reserven 1 470,0 dividerat med 210,0 ger 7,0 månader: så länge lever bolaget om intäkterna tystnar helt och förbrukningen står oförändrad. Breda reserven 1 676,4 dividerat med 210,0 ger 8,0 månader — realiseringen av reserverna och skatten inräknad. Båda talen är tänkta undre gränser: i verkligheten skär ledningen kostnader, och varje sparad miljon per månad förlänger tiden. Spegelbolaget visar motsatsen: kassa 95,0 miljoner, ingen facilitet, förbrukning 80,0 per månad — 95,0 dividerat med 80,0 ger 1,2 månader. Det bolaget måste inom veckor antingen låna, emittera eller sälja något, och det är bäraren av det pris som nödläge betalar. Räkna också med kvartalsmåttet när månadsförbrukningen svänger: 210,0 gånger tre = 630,0 per kvartal gör det lätt att rätta reserven mot delårsrapporternas rytm. Slutligen en tredje läsning: överlevnadstidens relation till kalendern i st-05 — refinansieringsmuren säger när skulden förfaller, överlevnadstiden hur länge bolaget orkar vänta; bolag där muren ligger inom överlevnadstiden är beroende av att banken vill förnya, bolag där muren ligger långt efter har råd att låta den förhandla."
+          },
+          {
+            "type": "tabell",
+            "content": "ÖVERLEVNADSTID — RÄKNESTYCKET: förbrukning 210,0 Mkr per månad · SMAL RESERV 1 470,0 / 210,0 = 7,0 månader · BRED RESERV 1 676,4 / 210,0 = 8,0 månader · KVARTALSMÅTTET 210,0 × 3 = 630,0 per kvartal · SPEGELBOLAGET: kassa 95,0 / förbrukning 80,0 = 1,2 månader — ingen facilitet · KOPPLINGEN: muren (st-05) inom överlevnadstiden = förnyelsekrav; muren efter = förhandlingsutrymme."
+          },
+          {
+            "type": "insight",
+            "content": "7,0 månader är inte bara ett tal — det är antal månader som ledningen får tänka i innan någon annan börjar tänka åt den. Överlevnadstid är förhandlingsutrymme, och förhandlingsutrymme är avkastning."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Reserven kan räknas för generöst, läsas för snällt och jämföras för ytligt. Kapitlet går igenom de sex vanligaste fällorna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är facilitetens villkor: en kredit som banken får säga upp vid covenantbrott — nyckeltalsvillkoren i ks-05 — är reserv bara tills den behövs som mest, eftersom samma chock som tömmer kassan ofta bryter villkoret. Andra fällan är kassan som inte är bolagets: i koncerner kan kassan sitta i dotterbolag där moderbolaget inte fritt kan förfoga över den — utdelningskedjor, minoritetsintressen och valutarestriktioner står i vägen, och koncernredovisningens mekanik ägs av bk-04. Tredje fällan är obeskattade som kassa: att räkna 260,0 i stället för 206,4 netto överdriver reserven med allt som skatten tar. Fjärde fällan är säsongen: förbrukningstalet från ett starkt kvartal underskattar den annualiserade förbrukningen, och en kassapost som är periodens moms- eller skatteinbetalning tillhör staten mer än bolaget — kvartalsmedelvärdet och noterna skyddar. Femte fällan är reservens läckage: räntan. Av förbrukningen 210,0 per månad kan 42,0 vara ränta, och räntan fortsätter att löpa även den månad intäkterna tystnar — exekveringsordningen mellan löner, leverantörer och ränta är därför inte en detalj. Sjätte fällan är jämförelsen mellan bolag utan justering för storlek och bransch: ett moget verkstadsbolag med jämn förbrukning bär mindre behov av reserv än ett projektbolag med klumpiga inbetalningar — överlevnadstiden ska jämföras med grenens rytm, inte med genomsnittet av hela börsen. Och minns spegeln: kassan kan också vara för stor — en reserv som växer år efter år utan plan är kapital som ledningen inte vet vad den ska göra med, och då hör frågan hemma hos ägarna, inte hos banken."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam rot: reserven är ett löfte om tid, och löften har villkor — uppsägning, skatt, dotterbolag, säsong, ränta och grenens rytm. Läs villkoren före tiden."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — reservens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga avläsningen av bolagets fredsförsvar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur stor är den smala reserven — kassa plus outnyttjad facilitet, med facilitetens villkor dokumenterade? Fråga två: hur stor blir den breda reserven — med obeskattade reserver i netto efter skatt? Fråga tre: vad är månadsförbrukningen — driftskostnadernas medel av fyra kvartal, räntan särskilt redovisad? Fråga fyra: hur många månader lever bolaget — smal och bred överlevnadstid, räknad och avrundad försiktigt? Fråga fem: var ligger muren — förfaller refinansieringsmuren från st-05 inom överlevnadstiden eller efter den? Den som besvarar de fem frågorna vet något som varken skuldkvoten eller resultatet säger: hur länge bolaget får vara sig självt utan att be någon om lov. Detta är utbildning i att läsa reservens byggstenar, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj två noterade bolag i olika branscher och hämta deras senaste årsredovisningar. Leta upp kassaraden, de obeskattade reserverna med not och facilitetsuppgiften i förvaltningsberättelsen. Räkna fram smal och bred reserv, nettoberäkna reserverna med bolagsskattesatsen, och läs ut månadsförbrukningen ur kassaflödesanalysen — medel av minst två kvartal om delårsrapporter finns. Räkna överlevnadstiden för båda bolagen och ställ den mot refinansieringsmuren från deras skuldtabeller. Avsluta med en halvsida per bolag: hur länge lever bolaget om intäkterna tystnar, och vad är den största osäkerheten i din egen räkning? Upprepa om ett år och se hur reserven rörde sig — reservens historia är bolagets finanspolitik i sammanfattning."
+          },
+          {
+            "type": "insight",
+            "content": "st-familjens karta har nu sex steg: soliditet, känslighet, poängen, cykeln, muren — och tiden. Reserven är stabilitetens sista svar: hur länge orkar bolaget vänta?"
+          }
+        ]
+      }
+    ]
+  },
   "tx-01-organisk-mot-forvarvad-tillvaxt": {
     "slug": "tx-01-organisk-mot-forvarvad-tillvaxt",
     "category": "TILLVÄXT",

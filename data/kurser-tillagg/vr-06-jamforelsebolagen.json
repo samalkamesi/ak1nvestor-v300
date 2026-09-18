@@ -1,0 +1,148 @@
+{
+  "slug": "vr-06-jamforelsebolagen",
+  "category": "VÄRDERING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Jämförelsebolagen — urvalet bakom varje multipel",
+  "summary": "En multipel är aldrig ett tal — den är en fråga till andra bolag, och svaret blir bara så bra som urvalet av dem som får svara. Kursen bygger jämförelsekretsen: de fem portarna, källorna i årsredovisningen, medianens och spannets läsning, och fällorna som gör att talsamlingar ser jämförbara ut utan att vara det.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå att varje multipel vilar på ett urval — och att urvalet är analysens dolda halva · Tillämpa de fem portarna: verksamhetsmix, storlek, tillväxt, lönsamhet och geografi vid val av jämförelsebolag · Hitta källorna till kretsen i bolagets egen konkurrentlista, branschorgan och indexlistor · Räkna median, medelvärde och spann — och se vad en enda avvikare gör med medeltalet · Sortera bland fällorna: branschglidning, överlevande bolag, segmentmix och valutaglidning · Ställa kretsens fem frågor mot en verklig värderingssituation.",
+  "why": "vr-05 lärde ut den första multipeln och frågan varför två bolag handlas till olika pris per intjänad krona. Men frågan förutsätter ett svar på något tidigare: vilka bolag överhuvudtaget får jämföras? En värdering som säger att ett bolag handlas under branschens medeltal vilar alltid på ett urval som någon gjort — och urvalet kan vara gjort med omsorg, slarv eller intresse. Medianen av sju utvalda bolag kan flyttas från 16 till 21 i medeltal av en enda avvikare, och på en vinst på 5 miljoner kronor är det skillnaden mellan 80 och 105 miljoner i värde. Kursen ger aktiestudenten urvalsarbetet som egen hantverkscykel: portarna som avgör vem som släpps in, källorna som visar vilka bolagen är, och de vanliga misstagen som får talsamlingar att se ut som jämförelser fast de är slumpen. Att välja jämförelsebolag är den mest underskattade bedömningen i hela värderingsarbetet.",
+  "history": {
+    "origin": "Jämförelsen är värderingskonstens äldsta redskap: köpmän som prissatte ett skepp såg på vad liknande skepp sålts för, och fastighetsköpare på grannfastigheternas priser. När börserna växte fram på 1800-talet blev jämförelsen kurslistans egen logik — bolag grupperades efter bransch i listorna, och investerare pratade snart om att ett bolag handlades över eller under sin grupp. Men grupptillhörigheten var länge en redaktörs beslut på börsen, inte analytikerns: ingen frågade systematiskt om gruppen verkligen var en jämförelse.",
+    "evolution": "Den moderna värderingslitteraturen formaliserade frågan under 1900-talets senare hälft: relativ värdering definierades som metod — priset sätts i förhållande till nyckeltal hos jämförbara bolag — och med den definitionen följde kravet på att definiera jämförbart. Analytiker började publicera sina jämförelsekretsar med motiveringar, och empirin visade snart vad kurserna anar i dag: kretsar med färre, noggrant valda bolag ger stabilare signaler än stora talsamlingar, och medeltal är känsligare för avvikare än medianer. Samtidigt växte indexens makt — när en bransch definieras av ett index blir urvalet en fråga om inkluderingsregler snarare än analys.",
+    "modern": "I dag automatiseras urvalet allt oftare: sökverktyg sorterar tusentals bolag på branschkod, storlek och nyckeltal på sekunder, och databaser erbjuder färdiga kretsar vid knapptryck. Men automationen flyttar bara bedömningen — den som väljer silar och villkor gör urvalet, nu utan att synas. Aktiestudentens uppgift är därför dubbelt praktisk: dels bygga sin egen krets med de fem portarna, dels granska andras — fråga alltid vilka som togs med, vilka som lämnades utanför och varför. I en värld av färdiga listor är frågan om urvalet den sista analoga bedömningen, och den bär fortfarande halva värderingsarbetet."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — varje multipel jämför", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — de fem portarna", "minutes": 4 },
+    { "num": 3, "title": "Praktisk tillämpning — källorna till kretsen", "minutes": 4 },
+    { "num": 4, "title": "Mätning — medianen, medlet och spannet", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — kretsens fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch jämförde alltid bolag mot dem som var enkla att förstå och svåra att förväxla: butikskedjan mot butikskedjan, inte mot teknikkonglomeratet med en butiksrörelse i botten. Hans arbete byggde på att en multipel bara betyder något mellan bolag vars affärer en människa kan berätta likadant — och hans varning för bolag som definierar sig med jämna mellanrum gäller kretsen också: en branschgräns som måste förklaras om och om igen är ingen jämförelse. Lynch metod var att börja i det egna kvarteret och stiga uppåt — samma väg går urvalet av jämförelsebolag: börja med dem som säljer samma sak till samma kunder.",
+  "grahamSection": "Benjamin Graham var övertygad om att pris är vad du betalar och värde vad du får — och att jämförelser bara hjälper om de grundas i noggrann analys av varje bolags underlag. Han ogillade ytliga regler som en multipel under branschens medeltal är automatiskt billig: hans kännetecken på ett verkligt underpris var att talen normaliserats och att jämförelsen vilade på dokumenterade förhållanden, inte på gruppnamn. I kursens språk skulle Graham ha ställt de fem portarna först och talsamlingen sedan — urvalet är analys, och analyser kan inte köpas färdiga i en databaslista.",
+  "ak1Section": "I AK1A:s metodik fördjupar denna kurs vr-familjens praktiska sida: vr-05 gav den första multipeln, vr-01 gapet mellan två bolag, vr-02 normaliseringen av talen och vr-03 multipelns anatomi — denna kurs äger själva urvalsarbetet som gör resten läsbara. I AKM1:s bolagsläsning blir kretsen en kontrollstation: varje multiplicerad läsning vägs mot vem som egentligen jämförs. I AKM2:s ram övar den osäkerhetshanteringen — spannet mellan kretsens lägsta och högsta multipel är ett direkt mått på analysens osäkerhet, och en bredare krets är inte samma sak som en säkrare slutsats. Syskonen i km-011 äger metodens formalia; här ägs hantverket fram till den.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — varje multipel jämför",
+      "intro": "Ingen multipel står ensam. Bakom varje tal om dyrt eller billigt finns ett urval av andra bolag — och kursen börjar med att syna den dolda halvan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Säg att ett bolag handlas till 16 gånger vinsten. Är det dyrt eller billigt? Frågan kan bara besvaras med hjälp av andra bolag: 16 är högt mot en grupp som handlas till 11 och lågt mot en grupp som handlas till 24. Multipeln är alltså aldrig ett eget tal — den är en position i en samling, och samlingen är någon persons val. vr-05 lärde ut fyra jämförelsefrågor: samma vinstdefinition, samma räkneår, samma valuta, samma tillväxtförväntan. Denna kurs tar steget före dem: vilka bolag ska överhuvudtaget finnas i samlingen som frågarna ställs mot? Ett bra svar kräver arbete, och arbetet är värt det — för urvalet avgör svaret mer än själva uträkningen. En krets som släpper in fel bolag ger precision åt fel fråga: medianen kan räknas felfritt och ändå leda vilse."
+        },
+        {
+          "type": "definition",
+          "content": "JÄMFÖRELSEKRETSEN — BEGREPPET: den grupp bolag som en relativ värdering väger mot (metodens grunder ägs av km-011) · KRETSENS TVÅ HALVOR: urvalet — vilka som släpps in — och tolkningen — vad deras tal sedan betyder · KURSENS YTA: urvalsidan · SYSKONENS YTOR: vr-02 äger normaliseringen av varje bols tal, vr-03 multipelns inre, vr-01 gapet mellan två multipler."
+        },
+        {
+          "type": "insight",
+          "content": "Multipeln är position i en samling — och samlingen är någons val. Innan talet får betyda något måste valet kunna försvaras."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — de fem portarna",
+      "intro": "Urvalet behöver regler, inte tycke. Här byggs de fem portar som varje kandidatbolag måste passera innan det får svara på värderingsfrågan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första porten är verksamhetsmixen: bolaget ska tjäna pengar på samma sätt — samma kunder, samma produkter, samma värdekedja. Ett bolag med flera ben ska bara jämföras på det ben som liknar ditt läsobjekt, och då behövs segmentredovisningen som km-024 lär ut att läsa. Andra porten är storleken: ett bolag med 90 000 miljoner kronor i omsättning och ett med 800 miljoner kan sälja samma sak — men deras multipler bär olika riskspridning, finansiell muskler och tillväxtutrymme, och jämförelsen blir glidande. Tredje porten är tillväxten: en multipel är ett pris för framtida vinst, och bolag med olika tillväxt har olika pris per kronor nu — förhållandet mellan pris och tillväxt har sin egen kurs i km-027. Fjärde porten är lönsamheten: marginaler och avkastning på kapital skiljer multipler åt även vid samma tillväxt — ett bolag som förtjänar 20 procent på kapitalet förtjänar en annan multipel än ett som förtjänar 8. Femte porten är geografin och valutan: bolag i olika länder bär olika räntelägen, ägarstrukturer och valutor — och en multipel i kronor mot en i euro är bara samma tal om växelkursen och räntan räknas in. Ett bolag som passerar fyra av fem portar är ett gränsfall: ta med det, men dokumentera att det är gräns och varför — gränsfallen är ofta de som lär en mest om var gränsen egentligen går."
+        },
+        {
+          "type": "definition",
+          "content": "DE FEM PORTARNA — KANDIDATEN PRÖVAS MOT: (1) VERKSAMHETSMIX — samma sätt att tjäna pengar (segmentläsning: km-024) · (2) STORLEK — exempel 90 000 Mkr mot 800 Mkr i omsättning är olika världar trots samma produkt · (3) TILLVÄXT — multipeln prissätter framtiden (km-027 äger pris-mot-tillväxt-läsningen) · (4) LÖNSAMHET — marginaler och kapitalavkastning skiljer multipler åt · (5) GEOGRAFI OCH VALUTA — ränteläge och valuta måste räknas in · FYRA AV FEM = GRÄNSFALL: tas med, dokumenteras som gräns."
+        },
+        {
+          "type": "insight",
+          "content": "Portarna gör urvalet till metod i stället för tycke: varje medlem i kretsen ska kunna försvaras port för port — och varje avvisning också."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — källorna till kretsen",
+      "intro": "Var finns bolagen som ska prövas mot portarna? Kapitlet går igenom de tre källorna och hur de kompletterar varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första källan är bolaget själv: i års- och delårsrapporter finns nästan alltid en konkurrentlista — i förvaltningsberättelsen, i marknadsbeskrivningen eller i riskavsnittet. Listan är skriven av bolaget och har en vinkel: konkurrenter nämns gärna där de gör bolaget litet och mäktigt, och nämns sällan där bolaget är störst. Läs den som ett första spår, inte som en färdig krets. Andra källan är branschens egna organ: branschorganisationer, tidskrifter och prislistor som rangordnar aktörer efter omsättning — de ger storlek och verksamhetsbeskrivning på en gång, ofta med noterade och onoterade bolag sida vid sida. Tredje källan är index och branschindelningar: datoriserade listor över alla bolag med en viss branschkod, smidiga att sålja men grova i kanterna — branschkoden samlar ofta bolag som egentligen säljer olika saker till olika kunder, och indexets inkluderingsregler är en redaktörs val. Kombinationen är det som arbetar: börja i bolagets egen lista, komplettera med branschorganens rangordning, såll genom indexlistan — och pröva sedan samtliga kandidater genom de fem portarna. En praktisk krets landar oftast på fem till åtta bolag: färre ger skör median, fler börjar samla in brus och gränsfall. Skriv alltid ner källan bredvid varje medlem — kretsen ska kunna granskas av någon annan, bland annat av dig själv om ett år."
+        },
+        {
+          "type": "definition",
+          "content": "DE TRE KÄLLORNA — HUR DE LÄSES: BOLAGETS EGEN KONKURRENTLISTA — spår med vinkel (bolaget väljer sina motståndare) · BRANSCHORGANENS RANGORDNING — storlek och verksamhet i samma tabell, noterat och onoterat sida vid sida · INDEX OCH BRANSCHKOD — brett såll, grövt i kanterna (inkluderingsregler är någon annans urval) · ARBETSGÅNG: egen lista → branschorgan → index → fem portarna → 5 till 8 bolag med källrad."
+        },
+        {
+          "type": "insight",
+          "content": "Bolagets konkurrentlista är en självbiografi: den berättar mer om hur bolaget ser sig självt än om hur marknaden ser bolaget. Läs den som spår — aldrig som krets."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — medianen, medlet och spannet",
+      "intro": "Kretsen är vald — nu ska dess tal läsas. Kapitlet räknar median, medelvärde och spann på sju jämförelsebolag och visar vad en avvikare gör.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sju verktygsbolag har passerat portarna, och deras vinstmultiplar ser ut så: 14 · 16 · 15 · 22 · 17 · 15 · 48. Medianen är det fjärde talet i storleksordning: 14, 15, 15, 16, 17, 22, 48 — medianen 16. Medelvärdet är summan 147 dividerat med sju: 21,0. Skillnaden mellan 16 och 21,0 är en enda bolagsverk: talet 48 drar medlet nästan fem hela multipelenheter uppåt, medan medianen knappt rycker. Ta bort avvikaren och räkna om: medlet av de sex återstående blir 99 dividerat med 6 = 16,5 — nära medianen igen. Skillnaden är ingen teori utan ett värde: mot en vinst på 5 miljoner kronor ger medianen 16 värdet 5 × 16 = 80 miljoner, medlet 21,0 ger 5 × 21 = 105 miljoner och det omräknade medlet 16,5 ger 5 × 16,5 = 82,5 — skillnaden mellan första och andra alternativet är 25 miljoner, eller 31,3 procent högre värde, skapat av ett enda bolags tal. Spannet är det tredje måttet: här 14 till 48, och dess bredd är information — en krets vars multipler ligger tätt säger att marknaden prissätter grenen likartat; en krets med brett spann säger att grenen är heterogen och att medeltal av den anledningen säger mindre. Rapportera därför alltid alla tre: median som huvudtal, medel som känslighetsmått, spann som osäkerhetens bredd."
+        },
+        {
+          "type": "tabell",
+          "content": "SJU BOLAGS VINSTMULTIPLAR — DE TRE MÅTTEN: talen 14 · 16 · 15 · 22 · 17 · 15 · 48 · sorterat: 14, 15, 15, 16, 17, 22, 48 · MEDIAN (fjärde talet): 16 · MEDEL (147/7): 21,0 · MEDEL UTAN AVVIKAREN 48 (99/6): 16,5 · SPANN: 14 till 48 · VÄRDESKILLNAD VID VINST 5 Mkr: 5 × 16 = 80 mot 5 × 21 = 105 — 31,3 procent skillnad av ett enda bolag."
+        },
+        {
+          "type": "insight",
+          "content": "En avvikare kan förflytta ett medelvärde med fem multipelenheter — på fem miljons vinst är det 25 miljoner i värde. Medianen är kretsens minnesrobusta huvudtal; spannet är dess ärlighet."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Talsamlingar ser jämförbara ut lättare än de är. Kapitlet går igenom fällorna som får en krets att ljuga med siffror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är branschglidningen: gränsen mellan kärna och kant suddas ut tills kretsen innehåller bolag som bara delvis gör samma sak — verktygsbolaget med en tjänsteben på hälften av vinsten jämförs mot helbolag, och multipeln säger inget om någon av delarna. Rätt läsning: segmentera först (km-024), jämför grenen, inte gardinen. Andra fällan är överlevande bolag: kretsen byggs av bolag som lever och handlas i dag — de som klarade sig. Deras multipler speglar överlevnadens optimism, medan grenen som helhet också innehöll de som slogs ut; som metodfråga hör överlevnadsperspektivet hemma hos rs-familjens riskläsning. Tredje fällan är segmentmixen i spegelbild: ditt eget läsobjekt är konglomeratiskt men kretsen är ren — då jämförs ett medeltal av allt mot ett medeltal av en sak. Fjärde fällan är valutaglidningen: multiplar från olika valutor och räntelägen blandas utan justering, och skillnaden i multipel är då kanske inte värdering utan ränta. Femte fällan är normaliseringsglömskan: kretsens tal är råa — engångsposter, cykeltopp och bottennivåer sitter kvar; vr-02 äger arbetet att rensera varje bols tal innan jämförelsen, och km-027 påminner om att tillväxtskillnader aldrig får glömmas bakom multipeln. Sjätte fällan är den egna önskan: kretsen som byggs för att bevisa att ett bolag är billigt släpper tyst in lågt värderade gränsfall och stänger dörren för de dyra. Testet är enkelt — bygg kretsen innan du tittat på objektets egen multipel, och låt den sedan få överraska dig åt båda håll."
+        },
+        {
+          "type": "insight",
+          "content": "Sex fällor, en gemensam mekanism: kretsten verkar oskyldig som data — men den är val, och val kan glida mot det man vill se. Bygg kretsen före slutsatsen, aldrig efter."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — kretsens fem frågor",
+      "intro": "Kursen samlas i fem frågor — den fullständiga granskningen av varje relativ värderings underlag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vilka är med — namnge kretsens medlemmar och deras källa? Fråga två: varför just de — vilket svar ger de fem portarna för varje medlem, och vilket gränsfall är med på dokumenterad grund? Fråga tre: vem lämnades utanför — och varför; avvisningarna definierar kretsen lika mycket som medlemskapen? Fråga fyra: hur läses talen — är varje bols multipel normaliserad (vr-02), och redovisas median, medel och spann tillsammans? Fråga fem: vad skulle förändra kretsen — vilken ny verksamhet, förvärv eller branschförskjutning flyttar antingen objektet eller medlemmarna genom portarna? Den som kan svara på de fem frågorna har inte en multipel utan en värderingsposition — och vet exakt hur stadig den är. Detta är utbildning i att granska jämförelseunderlag, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en bransch du kan berätta om i en mening och leta rätt på dess noterade bolag — börja i ett bolags egen konkurrentlista, komplettera med branschorgan eller indexlista. Pröva alla kandidater genom de fem portarna och skriv ner kretsen på fem till åtta namn med källa och portmotivering per namn. Hämta vinstmultiplarna, räkna median, medelvärde och spann för hand. Leta sedan efter avvikaren: räkna om medlet utan den och notera skillnaden i procent. Avsluta med en halvsida: vad säger kretsen om grenen — är den homogen eller heterogen, och vad betyder spannets bredd för hur starkt medeltal du vågar lita på? Spara arbetet och upprepa om ett halvår: kretsar lever."
+        },
+        {
+          "type": "insight",
+          "content": "vr-familjens karta är nu hel från första multipeln till kretsens fem frågor: pris mot värde, gapet, normaliseringen, anatomin — och nu urvalet. Värderingen är ett samtal mellan bolag, och du väljer samtalspartners."
+        }
+      ]
+    }
+  ]
+}

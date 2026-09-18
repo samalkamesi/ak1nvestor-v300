@@ -182,6 +182,18 @@ const MOTORDEFS = [
   // _s6u2-sond-omg18.mjs: hela kreditpris-familjen NULL genom kedjans
   // 36 motorer / 104 monsters).
   { namn: "kreditdjup", fil: "ai-mentor-kreditdjup-fragor.ts", fn: "svaraLokaltKreditdjup", arr: "KREDITDJUP_MONSTER", antal: 2 },
+  // 2026-09-18 omgång 18: sektordjup (s6-u3 — tre sektorspecifika frågor:
+  // SaaS-bolag MRR/churn/NRR/Rule of 40 + halvledarbolag cykeln/foundry/
+  // fabless + försvarsbolag orderstockens beläggning/anslagscykler;
+  // aktiverar se-01/se-02/se-03 — SEKTORANALYS var omgångens största
+  // mentorväglösa block, 21/27 kurser — och länkar se-13/se-16/km-038/
+  // km-041/km-045/vm-08/pc-07 som källor; sektormotorn äger "-sektorn"-
+  // fraserna, basen "arr" (V02-uppslaget), tidsaxeln orderstock/backlog,
+  // varderjustering normalisering — deras frågor bärs som knappar; rond 1
+  // av sonden _s6u3-sond-omg18.mjs DÖDADE indikatordjup-idén (basen äger
+  // candlestick/rsi/macd/moving average-orden — 10 kedjefångster); rond 2:
+  // 11 frågor NULL, 0 grannar mot 1 202 kärnord, 0 omvända stölder).
+  { namn: "sektordjup", fil: "ai-mentor-sektordjup-fragor.ts", fn: "svaraLokaltSektordjup", arr: "SEKTORDJUP_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -190,7 +202,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 107 (2026-09-18 omgång 18: utdelningskalender +1, kreditdjup +2 — 38-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 110 (2026-09-18 omgång 18: utdelningskalender +1, kreditdjup +2, sektordjup +3 — 39-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -303,6 +315,14 @@ const KANONISKA = [
   // Omgång 18: kreditdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
   { fraga: "vad är kreditpremien?", motor: 37 },
   { fraga: "vad är kreditrating?", motor: 37 },
+  // Omgång 18: sektordjup (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "hur analyserar jag SaaS-bolag?", motor: 38 },
+  { fraga: "hur analyserar jag halvledarbolag?", motor: 38 },
+  { fraga: "hur analyserar jag försvarsbolag?", motor: 38 },
+  { fraga: "vad är churn?", motor: 38 },
+  { fraga: "vad är net revenue retention?", motor: 38 },
+  { fraga: "vad är en foundry?", motor: 38 },
+  { fraga: "vad är krigsmateriel?", motor: 38 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -430,7 +450,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla trettioåtta motorer",
+    "H: disjunkta monster-id:n över alla " + MOTORER.length + " motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

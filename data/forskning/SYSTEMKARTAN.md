@@ -1773,6 +1773,74 @@ rank-läcka på /api/topplista (huvudagenten); (2) A1/A2-ÖVERSIKT-radernas
 kurstal 396 föråldrat (414 mätt 09-18 — A1:s yta, lämnad orörd här);
 (3) quiz-tillväxt för nya kurser (A1/s5-spåret).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u3 3/3, manifest auto-s9-1789709700201 — E26 + C15 + E34 diffade mot verkligheten; kollisionspivot från E35+E37)
+
+Objektval: anspråk FÖRE mätning (data/vakten/auto-s9-1789709700201-u3-ansprak.md,
+05:36Z — E35+E26+E37, störst rörelse). KOLLISION: syskon u2:s commit 58cc326e
+07:44:59 levererade E35+E37 medan mätningarna pågick — deras sektioner orörda
+(disk-först-presedensen); mina oberoende tal bokförs som KORSVALIDERING nedan.
+PIVOT: E26 (egen anspråkspost, orörd av syskonen) + C15 + E34 (båda med
+verifierbar rörelse EFTER senaste passning). Varje rad MÄTT i arbetsytan
+2026-09-18 ~07:3x–07:5x lokal — svitkörningar med sanna exitkoder, egen full
+vaktkörning, wc/ls/grep/git, curl mot loopback, processlistor; protokoll-
+korsläsning ENDAST som sekundärkälla.
+
+### E26 — godkännandehärdningen KODVERIFIERAD (levererad 07:18, EFTER 02:3x-passningen)
+
+| Mått | Kartan (02:3x) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| Härdningstak | outtalt (våg 91 A2:s KÖRS DIREKT-post öppen) | **KODAD OCH EGENLÄST** (a20f15fa, protokoll o64-godkannande-hardningstak-s8.md): publicera-ruttens SKYDDSLAGER steg 1b — 6 authade försök/minut, sittande EFTER requireAdmin (anonym trafik kan aldrig förbruka fönstret och DoS:a kundens R2-knapp); val-ytan (route.ts:25) — 20 authade POST:er/minut, GET takfritt; 429 bär Retry-After 60 och pushar aldrig (takUppnaatt :61) |
+| Audit-åtgärden | 8 åtgärdstyper | **+ "publicera-avvisad"** (skrivAudit "kund" :91) — append-only kvitto per avvisat publiceringsförsök (429/404/409/400); **0 förekomster ännu** (egen grep — flödet kodbevisat, ej driftbevisat: R2-knappen förblir kundens) |
+| Audit-loggen | 312 884 B / 1 199 r | **336 540 B / 1 281 r** (egen wc; sista raden = DETTA barns uppgift_start — fabrikens driftlogg lever; 452 start + 430 klar + 206 katalogsynk + 181 deploy) |
+| Svit + live | 14/14 · 401 ×2 (02:3x) | **14/14 exit 0 igen** (egen körning) · requireAdmin **401** på /api/admin/variabler + /api/studio/godkannande (egna sonder) |
+| Granskningsköns mått | FLYTTKLAR 63 utkast (gap 5 brittare) | **FLYTTKLAR 0** — mätetalet DÖTT: utkastmappen omorganiserad till GRANSKNINGSKO-SAMMANSTALLNING.md (förnyad 05:22Z) + JSON-uppladdningsformat (52 json + 2 md i roten, s3-vågorna) |
+| Juridik-FP | 17 VARNINGAR | **22 VARNINGAR** (larmfil 05:37Z, 0 FEL — kön växer vidare, nu på .json-utkast via tvärfall-regeln) |
+
+| E26 | LEVER 8 → **LEVER 8** | Härdningstaket = belastningsrobusthet på kodbevisnivå (0 driftfall ännu — R2); kärn-gapen orörda (manuell spegling, publicera-E2E, IP-block, Elliott-test); FLYTTKLAR-mätetalet ersatt av kö-struktur-census. Ingen poängrörelse (E33/B14) |
+
+### C15 — kön 175 → 199 filer med FÖRNYAD kundvy; publiceringsstocken orörd (R2)
+
+| Mått | Kartan (09-17) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| Utkastköten | 175 filer (rot 48 · m9-ko 7 · granskning 77 · kvartal 43) | **199 filer** (rot 54 · m9-ko 7 · granskning 89 · kvartal/2026-q3 49 — egen find-census; +24 på ett dygn: s4-läspaketen 37–39 + s1-mx + s3-översättningarna) |
+| Kundens kö-vy | sammanställningen förnyad 09-17 16:58 | **FÖRNYAD IGEN 05:22Z idag** (mtime) — "åldrande vy"-gapet hålls stängt av leverantörerna själva |
+| Publicerat | 55 (sedan 09-14) | **55 orörda** (egen ls; R2 — kundens beslut) · /blogg 200 (egen sond) · B2-rutten metodbevakad (GET /api/admin/blogg/publicera = 405, ej 404 — egen sond) |
+
+| C15 | LEVER 8 → **LEVER 8** | Kö-växten + förnyade kundvyn är processhälsa; flaskhalsen förblir publiceringsuttaget (kundens klick, R2) och B2-E2E saknas fortfarande — ingen score-rörelse (B13) |
+
+### E34 — nattens DR-födelsebevisövningar + dagens gröna deployfönster; driftminnet maskinellt i feljakt-ledgern
+
+| Mått | Kartan (02:3x) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| DR-övningar | s10-köposter bokade | **S10-U1 + S10-U2 LEVERERADE I NATT** (DRIFTSBOKEN :1830 + :1863): blad 8 bevisat i sin födelsetimme, RPO-kurvans yngsta punkt, dagsteget dekomponerat — pump-noll STÄNGD, kvartsklocke-förutsägelse infriad EXAKT, WAL-platå; protokoll DR-OVNING-2026-09-18-FODELSEBEVIS.md + 2 maskinella |
+| Deployfönstret | prod@5d5bbd1f 00:10Z | **prod@e5eca448 05:29:45Z** ("4 commits — HTTPS 200 verifierat", audit-kvitto egen grep) · BUILD_ID BBrkvx9Vkuq56S_7jW9CF (egen läsning) · next-server 16.3.5 i processlistan (egen ps) · pm2-omstart i fönstrets spår · 12 deploy-events idag |
+| Patch-kön | [] + 2 ok-kvitton | **OFÖRÄNDRAT** ([] + 2 rader next/eslint 16.3.5 i data/vakten/patch-kvitton.jsonl, egen wc) |
+| Driftminnet | kraschvakten + DRIFTSBOKEN | **+ feljakt-ledgern** (o65): 69 salvor ur 5 källloggar dom-kodifierade (18 kraschvakt-trigg · 15 ram-/byggfönster · 24 agentträd · 6 deploybygg · 5 deployfönster · 1 okänd), bygg-OOM ×3 (04:23/16:30/17:30 09-16–17) dokumenterade |
+
+| E34 | LEVER 9 → **LEVER 9** | DR-övningarna fördjupar bevisen (födelsebeviset stående praxis — nästa blad 02:30 09-19) utan nytt rot-gap; deployfönstret grönt; kvar-listan oförändrad (ISR 12/44, hybrid-sync, Storage-restore, MIGRERING-lösenordet, idempotensgrinden) |
+
+### KORSVALIDERING E35 + E37 (syskon u2:s 58cc326e — oberoende tal, identiska domar)
+
+Egen full vaktkörning **12/12 PASS · 0 fel · 0 manuella · GRÖN 05:41:29Z**
+(2 min efter u2:s 05:39:43Z — samma dom) · motorvalidering **107/0/0 (5,7 s)**
+· testsviter **90** (egen ls) · stormar-sviten **20/0** (egen körning, domklasser 4)
+· feljakt-ledgern **245 rader / 42 767 B** (egen wc) · SSR500-sviten **25/0/0**
+(egen) · o56-koden prefetch={false} på home-section.tsx:313+324 med
+o17/o41/o49-rotkommentar (egengrep) + hem-HTML:n bär 0 prefetch-linktaggar
+(egen sond) · live / /en /ar /kurser 200 på 11–17 ms (egna sonder).
+METODFYND (transparens): mätfönstergrindens pgrep FICK inte bära mönstertexten
+okammad i eget argv — första grindsvaret var SJÄLVMATCHNING ("bygget aktivt"
+medan processlistan visade vilande prod; kuren parentes-form `next[ ]build`
++ fullsekvens-kontroll i processlistan) — o55 §5:s klass lever hos varje ny
+mätare; bokas som perpetuell metodregel.
+
+Snitt **7,6 / 288 / 38 OFÖRÄNDRAT** (tre preciseringsdokvågar utan poäng).
+Kö till huvudagenten: (1) o63-köposten (E37, u2 bokade — herons TREDJE länk);
+(2) juridikgrindens citat-vs-råd-kur hastas (22 VARNINGAR på köns nya
+JSON-format); (3) feljakt-ledgerns nyckelkollisions-härdning (verktygsägaren);
+(4) B2-E2E förblir kundens första knapptryckning (R2); (5) E34:s kvar-lista
+(ISR 12/44 främst).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -1791,7 +1859,7 @@ kurstal 396 föråldrat (414 mätt 09-18 — A1:s yta, lämnad orörd här);
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (mätt 09-18: lever); FOMO-kuren live i prod (chunk-bevis 09-18); ytan UTANFÖR vaktens FALLBACK_SIDOR — rutinmäts ej (nytt, mätt) |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
-| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
+| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, 09-07); B2-knappen lever metodbevakad (GET 405, ej 404 — egen sond 09-18); kön 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal 49; +24/dygn) med FÖRNYAD kundvy (GRKO 05:22Z); 55 publicerade orörda (R2); kvar: B2-E2E (kundens knapp), OG default tills deploy |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp lever (v82); kön 175 filer (+51/dygn: rot 48 · m9-ko 7 · granskning 77 · kvartal 43, mätt 09-17) med sammanställningen FÖRNYAD 16:58 + 3 oberoende kontrollgranskningar/dygn (maskinella paket); flaskhals = publiceringsuttaget (55 frysta, kundens klick R2); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Aspektsystemet (v150) i kod men saknat i kartan; kvartalsserien v152: kalendrar+bolagspaket i granskningskön, /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
@@ -1803,7 +1871,7 @@ kurstal 396 föråldrat (414 mätt 09-18 — A1:s yta, lämnad orörd här);
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA i kod (mätt 09-16, underlag 369 kurser); aktivering EN medlem/anrop men sido-kön starkare än kartan (system_events + VBOUT-lead); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (nytt, mätt) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-leverantör OKONFIGURERAD (mätt 09-16: 0 env-variabler + /etc/crontab saknar email-raden = inga brev kan skickas från prod); VBOUT-lead-leden SATT (saknades i kartan); validering + rate-limit kodade (400 mätt i prod); notis-tak 100 ej 50; referral-adminvy delvis (antal, ej identitet — GDPR); 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
-| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); audit-loggen 312 884 B / 1 199 r (+21 %/dygn); sviten 14/14 + requireAdmin 401 live (egen mätning 09-18); juridik-FP-kön + FLYTTKLAR växer (gap 5 brittare); kvar: manuell spegling, publicera-E2E (R2-knapp orörd — val-filen finns ej), IP-block |
+| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 116 klara manifest av 117 (mätt 09-17 kväll; kön bär 1 pågående = spår-9-manifestet) · 387 utdatologgar som leveransbevis · beslutsminne 62 poster (6 idag, senast 17:43:30Z — rondkadansen lever) · pumpor-daemon online 25 h ↺19 · kunduppdragsfilerna vilar korrekt (ingen order i flykt); CLOBBER-GAPET ÅTERKOM MITT I 09-17:S DOKVÅG: syskonets E34-rad byttes under fönstret, abort-grinden VÄGRADE skriva = clobber-kuren BEVISAD I SKARPT LÄGE från förlorarsidan (men anspråk måste FÖRE mätstart — mitt kom minuter för sent, disk-först-presedensen tillämpad, E34 avstått); NYTT FYND: evighetsmotorns mål-sond 2× OSVARBAR under kvällens patchfönster (18:38:39Z + 18:48:39Z — samma driftfönsterklass som prod-synkens "mål-återarmning FEL 502"); svitgapet preciserat: pumpor + styrelse HAR sviter, agentfabrik/evighetsmotor/uppdrag saknar; CRON_SECRET fortfarande 0 namnträff |
@@ -1811,7 +1879,7 @@ kurstal 396 föråldrat (414 mätt 09-18 — A1:s yta, lämnad orörd här);
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | "PROD-TÖMT 09-16" MOTBEVISAT (mätt 09-17): 163 039 rader levande i appens projekt (aufr) — 13:46-mätningen föll i tväprojektfällan (rkaq-dumpar saknar tabellen, kedja 6); arkiv-cron grön OBEVAKAT 02:40, 0 dublett-id; kvar: ALTER V1 på disk/HEAD (v2 endast i index-provsprotokollet), composite-index ej installerat, schema-drift, inventory 25 d; kedja 2 = enda system_events-kopian |
-| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Rot-gapet STÄNGT (omgång 9: artefaktverifiering i deploy+kraschvakt); 09-18: patch-kön SLUTLEVERERAD (kön `[]` + ok-kvitton next/eslint 16.3.5 med hela beviskedjan, 6 spurious-rader arkiverade — falsk-grund-stängningen kurad; lasPatchKo läser tom fil); DRIFTSBOKEN 2px-rättad (150 982 B 02:22); prod 200 ×4 egen (/, /kurser, /blogg, /studio); pm2 online; kvar: ISR 12/44 (fem nätter fast), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
+| E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Rot-gapet STÄNGT (omgång 9: artefaktverifiering i deploy+kraschvakt); 09-18: patch-kön SLUTLEVERERAD (kön `[]` + ok-kvitton next/eslint 16.3.5 med hela beviskedjan, 6 spurious-rader arkiverade — falsk-grund-stängningen kurad; lasPatchKo läser tom fil); DRIFTSBOKEN 2px-rättad (150 982 B 02:22); prod 200 ×4 egen (/, /kurser, /blogg, /studio); 09-18 DAG: deploy prod@e5eca448 05:29:45Z HTTPS-200-kvitto + BUILD_ID BBrkvx9 + next-server 16.3.5 live (egna mätningar) + nattens S10-födelsebevisövningar (blad 8 i födelsetimmen, pump-noll STÄNGD, WAL-platå) + driftminnet maskinellt i feljakt-ledgern (o65: 69 salvor, bygg-OOM ×3); pm2 online; kvar: ISR 12/44 (fem nätter fast), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 12 kontroller (KONTROLL 12 SSR-livssonden 09-18: o47:s blindhet botad — sentinellrutter provar LEVANDE SSR i varje vaktkörning) + 12/12 PASS · 0 manuella · GRÖN egen vaktkörning 09-18 05:39Z; feljakt-stormtriagen LEVER (o65: backlog 245/245 bedömda, stormar-grind allt-eller-inget, svit 20/20 egen); tmp-läckeklassen STÄNGD i BÅDA ändarna (o44+s8-u2, svit 15/15+12/12); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (90 sviter = provtagning, mätt 09-18), motorregister fruset 09-03, vaktrapports-stopp i deploy (mätt: 0 träffar i prod-synk) |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | Prestandaserien o45–o62 LEVER i prod (tolv kurer med EFTER-bevis: / _rsc 5→3 · requests 45→38 · transfer −42,3 KiB · /logga-in ×2 borta · PalettVakt-defern ur TBT-fönstret; band / P61 · TBT 675, /kurser TBT 1 074) + SPA-/StudioChat-koddelning (o27+o31) + mobil-mätverktyget METROLOGISKT HÄRDAT (o62: 19 fantomer bevisade, 52-px-ronden SLUT för barnägda ytor — 6 fynd = ShortSeller-knappens dokumenterade 44×44-undantag, 0 zoomfällor); kvar: o63-köposten (herons TREDJE länk home.slutTitta, 36,0 KiB spill), 2 designbeslut (prosa-länkar + 44-korset = huvudagent), inga egna sviter, språkresolvens-CLS intermittent, sökindex-cadans |
@@ -2514,7 +2582,15 @@ kvarstår (mätt). Score 6 orörd — kunskap tillförd, inga gap stängda.*
 
 # C. INNEHÅLL & TILLVÄXT
 
-## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u3 3/3, manifest auto-s9-1789709700201):
+kö-census 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal/2026-q3 49 —
++24 på ett dygn: s4-läspaketen + s1-mx + s3-översättningarna; egen find);
+GRANSKNINGSKO-SAMMANSTALLNING.md förnyad 05:22Z idag (kundens kö-vy lever);
+publiceringsstocken 55 orörd (R2); /blogg 200 + B2-rutten metodbevakad
+(GET = 405, ej 404) — egna sonder. Flaskhalsen förblir uttaget (kundens
+klick) + B2-E2E. Score 8 kvar (B13-precedensen).*
 
 *Uppdatering 2026-09-15 (dokvåg s9-u2:2): LÄGE B ÄR BESLUTAT —
 ordförandebeslut 2026-09-07 (STYRELSE-BLOGG-LAGE-B.md): Läge A består som
@@ -2537,7 +2613,7 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
 - **Nyckelfiler:** src/lib/blogg-{utkast,speglar}.ts, src/app/(huvud)/blogg/
   **, src/app/{en|ar}/blogg/**, src/app/api/admin/blogg{,/publicera},
   src/components/ak1a/admin/blogg-panel.tsx, data/blogg/ (55) +
-  data/blogg-utkast/ (11 JSON + m9-ko/ 3 + kvartal/2026-q3/ 22 = 12 bolagspaket + 10 kalendrar, mätt 09-16 + granskning/),
+  data/blogg-utkast/ (199 filer: rot 54 · m9-ko/ 7 · granskning/ 89 · kvartal/2026-q3/ 49, mätt 09-18),
   src/lib/varumarke.ts (kontrolleraText).
 - **Observation:** Hård grindslogik dokumenterad + protokollförd (våg 80b);
   vakten bekräftar 55 poster i prod oförändrade efter utkast-separeringen
@@ -2937,7 +3013,7 @@ kunskap tillförd, inga gap stängda).*
 
 # E. STYRNING, VERKTYG & GRUND
 
-## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-18)*
 
 *Uppdatering 2026-09-15 (s9-u2 omgång 3): MEGA-BESLUTETS SPÅR 1–2 SAKNADES I
 KARTAN och lever nu (allt mätt i arbetsytan): godkännandeytan
@@ -2968,6 +3044,18 @@ fortfarande ej (flödet kodbevisat, ej körbevisat); paneler 16 +
 admin-auth.ts 245 r oförändrade; sessionStorage-resterna lever (77
 träffar x-admin-password i src/); rate-limit på 8 av 25 rutter, IP-block
 0 träffar; GDPR-DATAKARTA.md lever (24 026 B). Score 8 kvar.*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u3 3/3, manifest auto-s9-1789709700201):
+s8-u1:s godkännandehärdning (a20f15fa 07:18, EFTER 02:3x-passningen)
+KODVERIFIERAD eigenhändigt: härdningstak EFTER requireAdmin — publicera
+6 authade försök/minut · val-ytan 20 authade POST:er/minut · GET takfri ·
+429 med Retry-After 60 som pushar aldrig; NY audit-åtgärd "publicera-avvisad"
+(skrivAudit :91 — kvitto per avvisat försök; 0 driftfall ännu, R2-knappen
+kundens); audit-loggen 336 540 B / 1 281 r (egen wc); sviten 14/14 exit 0;
+requireAdmin 401 live ×2; rutter 25 + sessionresterna 77 orörda. MÄTEALSBYTE:
+FLYTTKLAR-stocken 63 → 0 (utkastkön omorganiserad till GRANSKNINGSKO-
+SAMMANSTALLNING + JSON-format, se C15) — gamla talet dött; juridik-FP
+17 → 22 VARNINGAR (05:37Z, 0 FEL). Score 8 kvar (E33/B14-precedensen).*
 
 - **Vad:** "WordPress på långt håll": 15+ flikar (översikt, medlemmar,
   variabler, blogg-publicering, översättning/termbank, kurser-metadata,
@@ -3343,7 +3431,19 @@ publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.
   cadansen ojämn (lucka 09-10→09-14; senaste arkiv 09-16 07:24) —
   verifiera cron-kedjan.
 
-## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u3 3/3, manifest auto-s9-1789709700201):
+S10-U1 + S10-U2:s nattdokvåg LEVERERADE (DRIFTSBOKEN :1830/:1863): blad 8
+bevisat i födelsetimmen, RPO-kurvans yngsta punkt, dagsteget dekomponerat
+(pump-noll STÄNGD), kvartsklocke-förutsägelse infriad EXAKT, WAL-platå —
+födelsebeviset stående praxis (nästa blad 02:30 09-19). Dagens deployfönster
+grönt: prod@e5eca448 05:29:45Z med HTTPS-200-kvitto, BUILD_ID BBrkvx9 (egen
+läsning), next-server 16.3.5 i processlistan (egen ps), 12 deploy-events
+idag; patch-kön fortfarande [] + 2 ok-kvitton. Feljakt-ledgern (o65)
+kodifierar driftminnet maskinellt — 69 salvor ur 5 källloggar, bygg-OOM ×3
+dokumenterade. Score 9 orörd; kvar-listan oförändrad (ISR 12/44, hybrid-sync,
+Storage-restore, MIGRERING-lösenordet, idempotensgrinden).*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u3 3/3, passning utan score-rörelse): natt-backupkedjan OBEVAKAT GRÖN (blad 7 fött 02:30 + moln-JSON 02:40, ingen agent i kedjan); 19 DR-protokoll på ett dygn — FÖDELSEBEVIS (N=0-bladet 2× oberoende), RPO-instrumentet dr-rpo-diff.mjs (per-tabell skuld; natt +19 767 rader/23,3 h, 3/60 tabeller), falsk RÖT-dom kurerad (relativ väg → dumpresolvering; beteendeprov 14,1 s); patch-kön mekaniserad + reaktiverad (next ^16.3.5 låst, kvittoarkiv 18Z, pm2-vakt + artefakt-manifest i prod-synken) med prod 200 egen sond EFTER u2:s 502-patchfönster; ISR 12/44 fem nätter i rad (gap lever). NYTT GAP: data/infra/MIGRERING-NY-DATOR.md bär studions lösenord i klartext i repot (speglas mot GitHub) — huvudagenten äger filen. Se diff-tabellen i UPPDATERING-sektionen.*
 

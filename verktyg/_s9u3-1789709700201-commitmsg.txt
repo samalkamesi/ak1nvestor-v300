@@ -1,0 +1,39 @@
+studio: auto s9-u3 SYSTEMKARTAN-dokvåg 3/3 (manifest auto-s9-1789709700201) — E26+C15+E34 diffade mot verkligheten; kollisionspivot från E35+E37 med oberoende korsvalidering
+
+Objektval: anspråk FÖRE mätning (05:36Z: E35+E26+E37). KOLLISION: syskon u2:s
+58cc326e 07:44:59 levererade E35+E37 under mitt mätfönster — deras sektioner
+orörda (disk-först-presedensen); mina oberoende tal bokförda som KORSVALIDERING:
+vakt 12/12 PASS GRÖN 05:41:29Z (2 min efter deras 05:39:43Z, samma dom) ·
+motorvalidering 107/0/0 (5,7 s) · 90 sviter · stormar-svit 20/0 · ledgern 245
+r/42 767 B · SSR500-svit 25/0/0 · o56-kod home-section.tsx:313+324 + hem-HTML
+0 prefetch-linkar (egna sonder). METODFYND: mätfönstergrindens pgrep med
+okammad mönstertext i argv = SJÄLVMATCHNING (första svaret "bygget aktivt"
+mot vilande prod) — kuren parentes-form next[ ]build + processlistekontroll
+(o55 §5:s klass lever hos varje ny mätare; bokad som perpetuell metodregel).
+
+PIVOT-leveranser (varje rad EGENMÄTT 07:3x–07:5x lokal):
+- E26: s8-u1:s godkännandehärdning (a20f15fa, o64) KODVERIFIERAD — tak EFTER
+  requireAdmin (publicera 6 authade/min · val-ytan 20 POST/min · GET takfri ·
+  429 Retry-After 60) + audit-åtgärd "publicera-avvisad" (0 driftfall ännu =
+  R2-knappen kundens); audit 336 540 B / 1 281 r; svit 14/14 exit 0;
+  requireAdmin 401 live ×2; FLYTTKLAR 63→0 (mätetalet dött, se C15) +
+  juridik-FP 17→22 VARNINGAR. Score 8 orörd (E33/B14).
+- C15: kön 175→199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal/2026-q3
+  49; +24/dygn); GRANSKNINGSKO-SAMMANSTALLNING förnyad 05:22Z; 55 publicerade
+  orörda (R2); /blogg 200 + B2-rutt metodbevakad (GET 405 ej 404).
+  Score 8 orörd (B13).
+- E34: S10-nattdokvågen bokförd (blad 8 i födelsetimmen, pump-noll STÄNGD,
+  kvartsklocka infriad EXAKT, WAL-platå — DRIFTSBOKEN :1830/:1863); deploy
+  prod@e5eca448 05:29:45Z HTTPS-200-kvitto + BUILD_ID BBrkvx9 + next-server
+  16.3.5 live + 12 deploy-events; patch-kön [] + 2 ok-kvitton; feljakt-
+  ledgern (o65) kodifierar driftminnet (69 salvor, bygg-OOM ×3). Score 9 orörd.
+
+KVD: src/ orörd (tsc 0 via grinden; vaktens kontroll 11 PASS i egen körning)
+· INGET bygge · R2 orörd · data/blogg/ orörd · syskonsektioner orörda ·
+snitt 7,6/288/38 oförändrat. Redigering via node-kanal med 9 en-träff-byten
++ EN skrivning (clobber-kuren).
+
+LEVERANS: data/forskning/SYSTEMKARTAN.md, worklog.md,
+data/vakten/auto-s9-1789709700201-u3-ansprak.md,
+verktyg/_s9u3-1789709700201-kartuppdatering.mjs,
+verktyg/_s9u3-1789709700201-worklog.txt, verktyg/_s9u3-1789709700201-appenda.mjs [fabrik]

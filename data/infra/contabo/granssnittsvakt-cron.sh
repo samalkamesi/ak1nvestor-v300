@@ -16,7 +16,9 @@ ROT="/home/ak1a/AK1"
 cd "$ROT" || exit 2
 
 STAMP="$(date +%Y-%m-%dT%H%M)"
-RAPPORTKATALOG="data/vakten"
+# GRANSSNITT_KATALOG: test-överridning av rapportkatalogen (sviten kör mot
+# tmp-katalog — skarp cron använder default data/vakten).
+RAPPORTKATALOG="${GRANSSNITT_KATALOG:-data/vakten}"
 LOGG="$RAPPORTKATALOG/cron.log"
 mkdir -p "$RAPPORTKATALOG"
 
@@ -25,10 +27,44 @@ mkdir -p "$RAPPORTKATALOG"
 # + bygg + pm2-omstart sammanföll → prod osvarar). Vakten kan vänta 5 min;
 # fortfarande tomt = SKIPPAD med loggrad (cron ropar igen om 6 h — ärligare
 # än en vaktkrasch som larmar falska sidfel).
-node verktyg/ram-grind.mjs --min 1100 --tak 300
-if [ $? -ne 0 ]; then
+#
+# o72 (s8-vakt): 6-timmarsblindheten kurerad. Bevis 2026-09-18T1317: svepet
+# SKIPPADES av grinden (fabrikens dagbarn under 1 100 MB) och nästa rop är
+# först 19:17 — dagtid, när kunden är vaken, blev sajten mätblind i 6 h.
+# Fabriksomgångar lever ~25 min, så minnet öppnar ofta inom timmen: vid stängd
+# grind pollas nu igen (var POLL_SEK sekund, sammanlagt VANTA_MIN minuter)
+# INNAN svepet ge upp. Varje rond går genom samma fail-safe-grind — öppnas
+# minnet ALDRIG är beteendet oförändrat (SKIP-logg + exit 75). Överridningar
+# ägs av sviten: GRANSSNITT_RAM_MIN · GRANSSNITT_POLL_SEK · GRANSSNITT_VANTA_MIN
+# · GRANSSNITT_GRIND_TAK · GRANSSNITT_TORRKORNING=ja (ekar beslutet, mäter ALDRIG).
+RAM_MIN="${GRANSSNITT_RAM_MIN:-1100}"
+POLL_SEK="${GRANSSNITT_POLL_SEK:-300}"
+VANTA_MIN="${GRANSSNITT_VANTA_MIN:-60}"
+GRIND_TAK="${GRANSSNITT_GRIND_TAK:-60}"
+RONDER="$(( VANTA_MIN * 60 / (POLL_SEK + GRIND_TAK) ))"
+[ "$RONDER" -lt 1 ] && RONDER=1
+GRIND_OPPEN=0
+for ROND in $(seq 1 "$RONDER"); do
+  if node verktyg/ram-grind.mjs --min "$RAM_MIN" --tak "$GRIND_TAK"; then
+    GRIND_OPPEN=1
+    [ "$ROND" -gt 1 ] && echo "$STAMP RAM-fönster öppnade sig på rond $ROND/$RONDER — mäter nu" >> "$LOGG"
+    break
+  fi
+  echo "$STAMP RAM-grind stängd (rond $ROND/$RONDER av ${VANTA_MIN} min) — väntar ${POLL_SEK}s på fabrikens fönster" >> "$LOGG"
+  [ "${GRANSSNITT_TORRKORNING:-}" = "ja" ] && break
+  sleep "$POLL_SEK"
+done
+if [ $GRIND_OPPEN -eq 0 ]; then
+  if [ "${GRANSSNITT_TORRKORNING:-}" = "ja" ]; then
+    echo "TORR: SKIP efter $RONDER rond(er) — exit 75, ingen mätning"
+    exit 75
+  fi
   echo "$STAMP SKIPPAD — RAM-grind stängd (minnet för tomt för mätning)" >> "$LOGG"
   exit 75
+fi
+if [ "${GRANSSNITT_TORRKORNING:-}" = "ja" ]; then
+  echo "TORR: grind öppen på rond 1 — skulle köra fullvakten (ingen mätning i torrläge)"
+  exit 0
 fi
 
 # Vakten: båda teman × mobil + dator mot LOCALHOST (egen loopback).

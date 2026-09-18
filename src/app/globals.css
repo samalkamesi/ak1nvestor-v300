@@ -461,6 +461,28 @@ html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~
 html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .marin-unscope .text-gold {
   color: var(--gold, #785c13);
 }
+/* ══ NÄSTLADE LJUSA TOKEN-YTOR — AUTOMATISK GOLD-AVPINNING (våg 195,
+   gränsnittsvakten 2026-09-19) ══
+   ROT-ORSAK: pinningen ovan gäller HELA marin-subträdet — även nästlade
+   LJUSA ytar (bg-card #fffdf7 / bg-paper #f5f1e8) fick alltså löst guld
+   #c9a84c = 2.0–2.3:1 (portfolj-forskning: riskval-panel + korstabell,
+   7 fynd i light). Samma återställning som .marin-unscope, men AUTOMATISK
+   för token-ytorna — framtida komponenter skyddas utan att känna till
+   verktygslådan. Exakta klass-ord (~=) skyddar tints/hover-varianter;
+   .dark opåverkad (reglerna är html:not(.dark)-scope:ade — där är
+   bg-card/bg-paper mörka och #c9a84c redan AA). En ännu djupare marin-
+   yta (bg-[#0E1B2E]) inuti den ljusa matchar flippen på eget element
+   och får tillbaka ljusguldet — arv slås av egen deklaration. */
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) :is([class~="bg-card"], [class~="bg-paper"]) {
+  --gold: #785c13;
+  --gold-text: #7A5E14;
+  --gold-soft: #c9a84c;
+  --guld-djup: #7A5E14;
+  --gold-deep: #7A5E14;
+}
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) :is([class~="bg-card"], [class~="bg-paper"]) .text-gold {
+  color: var(--gold, #785c13);
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MEGA OPTIMIZATION — prevent horizontal scroll on ALL pages

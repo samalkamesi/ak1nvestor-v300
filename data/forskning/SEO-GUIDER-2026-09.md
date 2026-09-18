@@ -49,7 +49,8 @@ utkast lever i `data/blogg-utkast/` (ALDRIG data/blogg/).
 | B18 | livsmedelsaktier-sa-analyserar-du-livsmedelsbolag | livsmedelsaktier | 1333 | UTKAST v1 (2026-09-16, s3-u1) — sektoromgång 3 (kursankare se-14-livsmedel); avgränsas mot B7 (underfamilj) och B13 (tillverkare kontra butik) | data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json |
 | B19 | ehandelsaktier-sa-analyserar-du-plattformsbolag | e-handelsaktier | 1206 | UTKAST v1 (2026-09-17, s3-u2) — sektoromgång 3 (kursankare v15-natverkseffekter; de kvarvarande se-XX-ankarena saknar bärning men tillväxtgrenen bär 5 fullrådatasbolag: SHOP/MELI/ABNB/UBER/SE); avgränsas mot B13 (butik kontra marknadsplats), B11 (prenumeration kontra transaktion), B8 (stil kontra affärsmodell) | data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json |
 | B20 | lyxaktier-sa-analyserar-du-lyxbolag | lyxaktier | 1221 | UTKAST v1 (2026-09-17, s3-u1) — sektoromgång 3 (kursankare se-05-lyxsektorn); levererad TROTS koordinatnoten "endast LVMH i universumet": LVMH som djupanker ur universumets rådata (2026-09-03) + live-verifierade officiella källor (LVMH helårsrapport 2025, Hermès 2025, Arnault-ägarskap) — granskningskön avgör; avgränsas mot B7 (lyx som konsument-underfamilj) och B18 (varumärkesägare, olika hyllor) | data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json |
-| B21 | logistikaktier-sa-analyserar-du-fraktbolag | logistikaktier | — | PÅGÅR s3-u2 (2026-09-17, auto-s3-1789677929531) — sektoromgång 4 (kursankare se-04-logistiksektorn + se-15-logistik, spårets enda dubbelankare); LVMH-precedensen: 0 universumsbolag, djupanker DSV + komparatorer Maersk/Kuehne+Nagel/DHL ur live-verifierade officiella rapporter — granskningskön avgör | data/blogg-utkast/logistikaktier-sa-analyserar-du-fraktbolag.json |
+| B21 | logistikaktier-sa-analyserar-du-fraktbolag | logistikaktier | 1169 | UTKAST v1 LEVERERAD (2026-09-17, s3-u2 auto-s3-1789677929531; committad be457289, restaurerad e1676d9a, konstaterad komplett av Ö13-granskningen 2026-09-18) — sektoromgång 4 (kursankare se-04-logistiksektorn + se-15-logistik, spårets enda dubbelankare); LVMH-precedensen: 0 universumsbolag, djupanker DSV + komparatorer Maersk/Kuehne+Nagel/DHL ur live-verifierade officiella rapporter — granskningskön avgör | data/blogg-utkast/logistikaktier-sa-analyserar-du-fraktbolag.json |
+| B22 | kryptoaktier-sa-analyserar-du-kryptobolag | kryptoaktier | 1171 | UTKAST v1 (2026-09-18, s3-u1 manifest auto-s3-1789718100493, klaim FÖRE arbetet) — sektoromgång 4 (kursankare se-11-krypto); LVMH/logistik-precedensen: 0 universumsbolag, djupanker Coinbase live-verifierad (StockAnalysis S&P-underlag close 2026-09-17: 173,97 $/45,9 mdr, TTM intäkt 6,04 mdr −9,2 %, nettoresultat −987,8 M, vinstmarginalsvängningen +18,3 %→−16,4 %, beta 3,39, 52v 139–402 $, forward P/E ~165 mot trailing n/a) + komparatorer Strategy (845 050 BTC, största börsnoterade hållaren, snittkurs ~75 400 $ — sökindexverifierad, strategy.com blockerskyddad) och MARA (kvalitativt, halveringen 2024); regleringsblock MiCA 2023/1114 eur-lex originalsvenska (tillämpas 2024-12-30, tre tokentyper) + Skatteverket 30/70 + K4 + DAC8 2027 + Fi-varning okt 2025 + Clarity Act −9 %-exemplet; redovisningsfällan ASU 2023-08 mot IAS 38; KVD GRÖN (verktyg/_s3u1-kvd.mjs): sökord i H1+ingress+2 H2, title 42/60, OG 155/155, ord 1171/1400, korslänkar 7/7 verifierade (v15+km-003+km-006+km-013+rk-06+se-11-kurser + komplett-guide-posten), rådverb 0, superlativer ×3 motiverade | data/blogg-utkast/kryptoaktier-sa-analyserar-du-kryptobolag.json |
 
 Branschomgången KLAR i svensk version med B8 (10/10 branscher täckta: B1–B8 + energi + material); översättningar (en/ar) är nästa steg i spåret. B9 öppnar sektoromgång 2 (se-XX-kurserna) parallellt med översättningsspåret.
 
@@ -68,6 +69,13 @@ NOT s3-u1 (2026-09-17): lyx-ankaret levererades ändå som B20 (samma dygn som n
 skrevs) — LVMH-ankaret bar hela vägen med kompletta räkneexempel, och källorna
 live-verifierades (lvmh.com, Hermès, Bloomberg/Yahoo). Kvarvarande ankare utan
 universumsbärning: logistik, krypto, utbildning.
+
+NOT s3-u1 (2026-09-18): krypto-ankaret levererat som B22 (manifest
+auto-s3-1789718100493, klaim FÖRE arbetet) — Coinbase djupanker live-verifierad
+(StockAnalysis/S&P, close 2026-09-17), MiCA eur-lex originalsvenska, Skatteverket
+30/70 + DAC8, Fi-varning okt 2025; Strategy 845 050 BTC sökindexverifierad
+(strategy.com blockerskyddad). B21-logistik konstaterad LEVERERAD (be457289/e1676d9a)
+samma dag. Kvarvarande ankare utan universumsbärning: utbildning.
 
 | # | Slug | Primärt sökord (EN) | Ord | Status | Fil |
 |---|------|---------------------|-----|--------|-----|

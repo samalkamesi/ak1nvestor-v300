@@ -1,0 +1,328 @@
+{
+  "vh": 823,
+  "lankar": [
+    {
+      "i": 0,
+      "href": "/logga-in",
+      "text": "Sign in",
+      "top": 2,
+      "bottom": 54,
+      "iViewport": true
+    },
+    {
+      "i": 1,
+      "href": "/en/logga-in",
+      "text": "Become a member — free →",
+      "top": 586,
+      "bottom": 642,
+      "iViewport": true
+    },
+    {
+      "i": 2,
+      "href": "/kurser",
+      "text": "Explore the courses",
+      "top": 654,
+      "bottom": 712,
+      "iViewport": true
+    },
+    {
+      "i": 3,
+      "href": "/kurser",
+      "text": "432coursesFrom the basics of bookk",
+      "top": 1093,
+      "bottom": 1258,
+      "iViewport": false
+    },
+    {
+      "i": 4,
+      "href": "/kurser",
+      "text": "8,223quiz questionsEvery course en",
+      "top": 1093,
+      "bottom": 1258,
+      "iViewport": false
+    },
+    {
+      "i": 5,
+      "href": "/kurser",
+      "text": "103canon booksFrom Security Analys",
+      "top": 1282,
+      "bottom": 1447,
+      "iViewport": false
+    },
+    {
+      "i": 6,
+      "href": "/kurser",
+      "text": "All Courses",
+      "top": 2224,
+      "bottom": 2240,
+      "iViewport": false
+    },
+    {
+      "i": 7,
+      "href": "/en/logga-in",
+      "text": "Become a member — free →",
+      "top": 3420,
+      "bottom": 3476,
+      "iViewport": false
+    },
+    {
+      "i": 8,
+      "href": "/kurser",
+      "text": "Browse the courses first",
+      "top": 3513,
+      "bottom": 3527,
+      "iViewport": false
+    },
+    {
+      "i": 9,
+      "href": "/kurser",
+      "text": "All courses",
+      "top": 3995,
+      "bottom": 4047,
+      "iViewport": false
+    },
+    {
+      "i": 10,
+      "href": "/nyheter",
+      "text": "The News Center",
+      "top": 4527,
+      "bottom": 4579,
+      "iViewport": false
+    },
+    {
+      "i": 11,
+      "href": "/analyser",
+      "text": "Analyses",
+      "top": 4647,
+      "bottom": 4699,
+      "iViewport": false
+    },
+    {
+      "i": 12,
+      "href": "/blogg",
+      "text": "The Blog",
+      "top": 5531,
+      "bottom": 5583,
+      "iViewport": false
+    },
+    {
+      "i": 13,
+      "href": "/logga-in",
+      "text": "Sign in",
+      "top": 5711,
+      "bottom": 5763,
+      "iViewport": false
+    }
+  ],
+  "rsc": [
+    {
+      "url": "http://localhost:3000/en/logga-in",
+      "start": 885,
+      "storlek": 663
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 885,
+      "storlek": 657
+    },
+    {
+      "url": "http://localhost:3000/en/logga-in",
+      "start": 948,
+      "storlek": 8875
+    },
+    {
+      "url": "http://localhost:3000/en/logga-in",
+      "start": 949,
+      "storlek": 2610
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 956,
+      "storlek": 8891
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 958,
+      "storlek": 27472
+    }
+  ],
+  "ioLog": [
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/en/logga-in",
+      "top": 586
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kurser",
+      "top": 654
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kurser",
+      "top": 1093
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kurser",
+      "top": 1093
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kurser",
+      "top": 1282
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/en/medlemskap",
+      "top": 1282
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/en/medlemskap",
+      "top": 1870
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/laroplan",
+      "top": 2172
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kurser",
+      "top": 2224
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/bibliotek",
+      "top": 2275
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/labb",
+      "top": 2327
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/certifikat",
+      "top": 2378
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/kalkylator",
+      "top": 2528
+    },
+    {
+      "typ": "observe",
+      "t": 863,
+      "href": "/vagfundament",
+      "top": 2579
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/konfluens",
+      "top": 2631
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/netnet",
+      "top": 2682
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/superanalys",
+      "top": 2734
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/portfoljbyggare",
+      "top": 2785
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/dagens-pass",
+      "top": 2935
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/topplista",
+      "top": 2986
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/badges",
+      "top": 3038
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/fas3",
+      "top": 3089
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/en/logga-in",
+      "top": 3420
+    },
+    {
+      "typ": "observe",
+      "t": 864,
+      "href": "/kurser",
+      "top": 3513
+    },
+    {
+      "typ": "trigg",
+      "t": 873,
+      "lank": [
+        {
+          "href": "/en/logga-in",
+          "top": 586
+        },
+        {
+          "href": "/kurser",
+          "top": 654
+        }
+      ]
+    },
+    {
+      "typ": "observe",
+      "t": 892,
+      "href": "/dagens-pass",
+      "top": 3659
+    },
+    {
+      "typ": "observe",
+      "t": 908,
+      "href": "/laroplan",
+      "top": 3725
+    },
+    {
+      "typ": "trigg",
+      "t": 915,
+      "lank": []
+    }
+  ],
+  "scrollY": 0,
+  "docH": 5977
+}

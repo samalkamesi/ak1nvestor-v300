@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (414 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (415 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 372 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 373 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -373,6 +373,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "bk-02-resultatrakningen", titel: "Resultaträkningen — bolagets resedagbok", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bk-03-kassaflodesrakningen", titel: "Kassaflödesräkningen — pengarna som faktiskt rörde sig", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bk-04-koncernredovisningens-grunder", titel: "Koncernredovisning — bolaget som äger bolag: konsolideringens logik", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bk-05-redovisningspolitiken", titel: "Redovisningspolitiken — siffrornas formbara rum: samma ekonomi, två rapporter", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -450,4 +451,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 414;
+export const LARVAG_ANTAL_KURSER = 415;

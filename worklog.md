@@ -13480,3 +13480,60 @@ OBJEKT (anspråk FÖRE ingreppet 08:09, data/vakten/auto-s10-1789711500221-u1-an
 OBJEKT (anspråk FÖRE mätstart 08:07, data/vakten/auto-s10-1789704300078-u2-ansprak.md med prediktionstabell): duplikatkontroll mot worklogs s10-sektioner + DRIFTSBOKEN DR-rad + data/forskning/DR-* visade blad 8 restore-bevisat ×3 (natt/morgon) och pump-noll ENDAST retrospektivt (blad-diff) + sond-baserat (captured_at EN ts) — ingen hade mätt 08:00-fönstret LEVANDE samma morgon batchen landar. VINKEL: realtids-diff med förhandsregistrerade prediktioner (u1:s natt-metod portad till dagsläget) + fjärde restore-punkten (seriens första post-pump).
 
 LEVERANS: (A) PGPASSFILE-pekare + node verktyg/dr-rpo-diff.mjs --json kl 08:09:16 lokal (9 min 16 s efter pumpen): blad 1 306 119 / levande 1 325 291 / **RPO +19 172** på 5,64 h i 3 av 60 tabeller — PREDIKTIONER 5/5 INFRIADE: snapshots **+18 984 EXAKT** (intervallet ±100; == gårdagens batch = pump-noll LEVANDE, tredje oberoende vägen) · board_decisions **+176 EXAKT** (±24; 22 kvart × 8, 0 missade kvartsbatchar) · organ_health_logs +12 (0–18) · övriga 57 +0 (≤10) · totalt +19 172 (19 140–19 260, mitt i). JSON DR-RPO-DIFF-2026-09-18-MORGON-PUMP.json. (B) node verktyg/dr-ovning.mjs --fil db-2026-09-18 GRÖN exit 0: markörer GRÖN 1 327 830 rader/CREATE 99/COPY 101 (5,5 s) · **RTO 13,5 s** (bonusprediktion 10–18 s; blad 8:s fyra punkter 10,2/10,9/17,4/13,5) · fel 788 kända/0 okända · public 60/1 306 119 == dump-COPY == nattens tre restores. Maskinellt DR-PROV-2026-09-18-AUTO-4.md. (C) RACE-BOKFÖRING (symmetrisk): syskon s10-u1 (manifest auto-s10-1789711500221, commit 930c2097 DAGPULS-DR) valde oberoende samma fönster — mitt flock-barn (pid 1991162) höll DR-låset, deras barn (pid 1991343) tog flocken **90 ms** efter mitt AUTO-4-skrivande (08:10:05.600 → .690): seriens snappaste generationsskifte, noll dödtid, båda GRÖNA; deras RPO-mätning 08:10:47 == mina tal exakt (90 s isär, board 8/kvart förklarar oförändradhet) = DUBBEL oberoende instrumentering av pumpens landning; deras ytor orörda, deras captured_at-sond korroborerar min realtids-diff. (D) STÄDNING med ärlighetsnotis: min första "oberoende" mätning 08:11 fångade deras AKTIVA PG-fönster (PG17 online + färsk OID 193869 = deras skrap-DB) — jag rörde deras fönster ej, väntade ut deras exit och mätte om 08:12:4x: PG17 down (pg_lsclusters) · psql-vägran (skrap-DB:s frånvaro bevisad) · base ENDAST OID 1/4/5 (noll skrap-svans) · pg_wal 529 MB SJÄTTE punkten i serien (497×3→529→529→529→529: två restores till rörde ej) · disk 72 GB · låsfil flock-viloläge. FYND (lågt, köpost till verktygsägaren): dr-ovning.mjs:s fellogg namnges per DATUM — två agenter samma dag skriver SAMMA /tmp-fil (min + u1:s 788-radersloggar kolliderade idag, identiskt innehåll denna gång; pid-/sekundsuffix önskas — verktyget orört, COMMIT-NORMEN gäller vid kur). KVD: src/ orörd = INGET bygge (node node_modules/typescript/bin/tsc --noEmit egenmätt 0 rader; pre-commit-grinden verifierar baslinjen) · R2 orörd (.pgpass ENDAST PGPASSFILE-pekare till psql, aldrig inläst; prod endast LÄST — GDPR-rent: antal + tidsstämplar) · data/blogg/ orörd · data/backups/ endast lästa · syskonens ytor orörda. Protokoll: DR-OVNING-2026-09-18-MORGON-PUMP.md + JSON + AUTO-4 + DRIFTSBOKEN (DR-radens lead + fillista) + denna sektion. Kö: retentionstriggern ~2026-10-11 · TOTAL i kvartalssviten senast 2026-12-18 · födelsebevis 09-19 02:30 · felloggs-kuren åt verktygsägaren. [fabrik]
+
+## SPÅR 10 s10-u3 (manifest auto-s10-1789711500221, vakt 3/3) — 2026-09-18 08:14–08:21 lokal: ARKIVSVEP — helarkivet restore-bevisat i EN sekvens (8/8 blad GRÖNA) + vault-fyndet: radräkningsformeln saknade sitt tredje undantag [fabrik]
+
+Leverans (anspråk FÖRE mätstart ~08:10, data/vakten/auto-s10-1789711500221-u3-ansprak.md):
+NYTT familjeverktyg verktyg/dr-arkivsvep.mjs (familjekontraktet ordagrant: flock
+på /tmp/ak1a-dr-prov.lock, RAM-/diskgrind före VARJE blad, kolla-dump-markorer per
+blad, blockräknare med självtest 2/2 + trunkeringsvägran, färsk skrap-DB ak1a_dr_arkiv
+per blad, restore med RTO + felkategorisering, mellanblads-dropdb, finally-städning,
+maskinellt protokoll med AUTO-numrering) + KÖRNING 2 GRÖN exit 0: 8/8 blad
+(db-09-11…db-09-18, äldst→yngst) — RTO 11,0–16,8 s/blad, 106,2 s totalt ·
+PER-TABELL-RADKONTRAKT EXAKT på samtliga blad (dumpens COPY-räkning == psql
+count(*); 94 tab → 98 tab) · markörer GRÖN 8/8 · fel 780→788 kända/0 okända.
+MASKINELLA PROTOKOLL: DR-PROV-2026-09-18-AUTO-7.md (GRÖN-kvittot) + AUTO-6.md
+(RÖT-beviset från körning 1 — bevarat som intyg).
+
+FYND 1 — vault.secrets = formelns TREDJE undantag: körning 1 vägrade GRÖN på
+alla blad ("vault.secrets SAKNAS i skrap-DB, dumpen bar 0 rader") — verifiering:
+dumpen kräver CREATE EXTENSION supabase_vault (finns ej lokalt ⇒ schemat skapas
+aldrig; COPY-blocket är TOMT, dumprad 1 320 724 + direkt \.) — samma klass som
+cron men 0 rader. Inattens radräkningsformel (u3 MORGON-RETENTION) synt den
+inte (schemanivå-instrument); kodifierad i KANDA_SCHEMA_UNDANTAG = {cron, vault}
+med motivering i källan; protokollmallens notering rättad efteråt (AUTO-7:s
+"utom cron" är ofullständig — dokumenterat i agentprotokollet).
+
+FYND 2 — +4 tabeller mellan blad 09-15→09-16 är Supabases auth-utbyggnad
+(auth.mfa_recovery_codes, auth.mfa_recovery_code_sets, auth.scim_tokens,
+auth.scim_users; blockdiff 97→101, kända fel +8) — plattformens, ej kundens;
+vid äkta DR återskapas de av målmiljön.
+
+FYND 3 — tillväxttrappan daterar pumpens födelsedygn: 09-11→09-12 +439 rader,
+därefter +19 79x/dag mekaniskt (section_data_snapshots +18 984/dag exakt ==
+pump-u2:s realtidsdiff 08:09, tredje oberoende vägen) — pumpstarten = dygnet
+09-12→09-13; vaktpost: avvikande blad-par = pumpstopp-slarm.
+
+FYND 4 — felloggar per BLAD-namn (/tmp/dr-arkivsvep-fel-db-<datum>.log) =
+krockimmun mot pump-u2:s fynd (dr-ovning.mjs namnger per DATUM, två agenter
+samma dag krockar) — deras köpost till verktygsägaren kvarstår.
+
+ÄRLIGHETSRÄTTELSE (bokförd i anspråk + agentprotokoll §1): premissen "mitten
+aldrig restore-bevisad" var delvis fel — O7:s kontinuitetsövning 09-17
+(db-09-12/13/14) och 09-15:s kvartalsövning (db-09-15) hade bevisat bladen var
+för sig; genuint nya = en-sekvens-svepet + per-tabell-kontraktet + verktyget +
+vault-fyndet. Maskingenererade AUTO-6/7 orörda (doktrin).
+
+Städning (uppdragets fjärde led, oberoende mätt): PG17 down (pg_lsclusters +
+psql-socketvägran) · skrap-DB borta · låsfil flock-viloläge · fixtures borta ·
+disk 72 G oförändrad · 8 felloggor medvetet kvar (bevis).
+
+KVD: src/ orörd = INGET bygge (rent node-verktyg; pre-commit-grinden verifierar
+baslinjen) · R2 orörd (prod rördes aldrig) · data/blogg/ orörd · syskonytor
+orörda (pump-u2:s AUTO-4-respekt, flock-ordning efter deras fönster 08:09–08:13;
+u1:s DAGPULS AUTO-5 orört). Kö: (1) dr-ovning-fellogg per datum → per
+blad/agent (pump-u2:s, bekräftat); (2) formelrevision cron+vault; (3)
+kvartalssviten = dr-total + dr-arkivsvep senast 2026-12-17; (4) pumpsignaturen
+som vaktpost. Protokoll: data/forskning/DR-ARKIVSVEP-2026-09-18.md +
+AUTO-6/AUTO-7 + DRIFTSBOKEN (DR-radens lead + protokollförteckningen) + denna
+sektion. [fabrik]

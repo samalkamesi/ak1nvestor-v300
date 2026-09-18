@@ -4192,6 +4192,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** VÅG 108: kundens "bubblor stör mig" — chip-radan ovanför skrivfältet
    *  går att stänga med × (kvarstår sessionen ut; 📎-knappen återöppnar). */
   const [chipsDolda, setChipsDolda] = React.useState(false);
+  /** VÅG 186 (registerpost 35): skicka-knappens styrväg — v4-kommandobussen
+   *  bakom feature-avvägning (V4-LAGRET §11.4 STEGVIS). AV = dagens styrväg
+   *  (rollback-vägen förblir orörd kod), PÅ = prompten går via
+   *  kommandobussen med startNow (§11.5: tar lease + pausar mål-loopen —
+   *  ytas i UI:t). Per webbläsare, aldrig server-tvingad. */
+  const [v4SendVag, setV4SendVag] = React.useState(false);
+  React.useEffect(() => {
+    try {
+      setV4SendVag(window.localStorage.getItem("ak1a-v4-sendvag") === "1");
+    } catch {}
+  }, []);
+  const toglaV4SendVag = React.useCallback(() => {
+    setV4SendVag((nu) => {
+      const ny = !nu;
+      try {
+        window.localStorage.setItem("ak1a-v4-sendvag", ny ? "1" : "0");
+      } catch {}
+      return ny;
+    });
+  }, []);
   React.useEffect(() => {
     try { setChipsDolda(sessionStorage.getItem("ak1a-studio-chips-dolda") === "1"); } catch {}
   }, []);
@@ -8702,6 +8722,167 @@ export function StudioChat({ hem }: { hem: () => void }) {
     [live, visaToast, mottagenPermission, rörTabb, loggaNotis],
   );
 
+  // ── VÅG 186 (registerpost 35): skicka via v4-kommandobussen — feature-
+  // avvägning enligt V4-LAGRET §11.4 (STEGVIS). STEG 1: HUVUDTABBENS prompt
+  // ⇄ POST /api/studio/tjanster/kommando {text, delivery:"startNow"}; svaret
+  // (sessionens nya poster) dras in via ?sessionId-poll. Ack-statusunionen
+  // (§11.5.1: accepted/rejected/stale/duplicate/noop/failed) är protokollets
+  // domslut och visas; §11.5:s målpaus-bieffekt vid startNow YTAS (toast +
+  // målpanelens tillstånd speglas). Gränserna (bilagor, sidotabbar, kall
+  // transport) rullar ÄRLIGT tillbaka på dagens styrväg — rollback-vägen.
+  const skickaPromptV4 = React.useCallback(
+    async (tabbId: string, text: string, bilder?: string[]) => {
+      const tabb = tabbarRef.current.tabbar.find((t) => t.id === tabbId);
+      if (!tabb || tabb.strömmar) return;
+      // v4-envelopen (§11.1) bär ingen bild-last och kommandorutten binder
+      // till huvudtransportens session — sidotabbar/bilagor = STEG 1:s
+      // gränser, synliga för användaren via toasten, aldrig tyst byte.
+      if (bilder && bilder.length > 0) {
+        visaToast("Bilagor går ännu inte via kommandobussen — skickar som vanligt.");
+        await skickaPrompt(tabbId, text, bilder);
+        return;
+      }
+      if (!tabb.huvud || !tabb.sessionId) {
+        visaToast("Kommandobussen kräver huvudchatten med en levande session — skickar som vanligt.");
+        await skickaPrompt(tabbId, text, bilder);
+        return;
+      }
+      const sid = tabb.sessionId;
+
+      // Baslinje FÖRE sändningen: sessionens historiklängd — de nya
+      // posterna (vår prompt + svaret) ligger deterministiskt efter denna.
+      let bas = -1;
+      try {
+        const r0 = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(sid)}`, {
+          headers: adminHeaders(),
+        });
+        if (r0.ok) {
+          const d0 = (await r0.json()) as { historik?: unknown[] };
+          bas = Array.isArray(d0.historik) ? d0.historik.length : -1;
+        }
+      } catch {
+        /* bas förblir -1 — pollen sätter den vid första varvet */
+      }
+
+      const userMsgId = nyttId();
+      rörTabb(tabbId, (t) => ({
+        ...t,
+        status: "Skickar via kommandobussen…",
+        strömmar: true,
+        uppdaterad: Date.now(),
+        meddelanden: [...t.meddelanden, { id: userMsgId, roll: "user" as const, text }],
+      }));
+      const abort = new AbortController();
+      tabbAbortRef.current.set(tabbId, abort);
+      try {
+        const res = await fetch("/api/studio/tjanster/kommando", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ text, delivery: "startNow" }),
+          signal: abort.signal,
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          skickat?: boolean;
+          status?: string;
+          fel?: string;
+        };
+        if (!res.ok || !data.skickat) {
+          // Kommandot nådde ALDRIG sessionen (nätverk/kall transport) —
+          // prompten är oskickad: rollback till dagens styrväg.
+          rörTabb(tabbId, (t) => ({
+            ...t,
+            strömmar: false,
+            status: "",
+            uppdaterad: Date.now(),
+            meddelanden: t.meddelanden.filter((m) => m.id !== userMsgId),
+          }));
+          visaToast(data.fel || "Kommandobussen nådde inte sessionen — skickar som vanligt.");
+          await skickaPrompt(tabbId, text);
+          return;
+        }
+        // Ack togs vägen in — statusfältet (§11.5.1) är protokollets
+        // domslut; endast "accepted" startar svans-pollen.
+        const ackStatus = data.status ?? "unknown";
+        // §11.5:s målpaus-bieffekt vid startNow MÅSTE synas i UI:t:
+        // lease + preempt + målpaus — toast + målpanelen speglar läget.
+        if (ackStatus === "accepted" && (malStatus?.aktiv || malKör)) {
+          setMalStatus((s) => ({ aktiv: false, pausad: true, iteration: s?.iteration ?? 0 }));
+          visaToast("Kommandobussen pausar mål-loopen medan svaret körs — återuppta i målpanelen efteråt.");
+        }
+        if (ackStatus !== "accepted") {
+          rörTabb(tabbId, (t) => ({
+            ...t,
+            strömmar: false,
+            status: `Kommandobussens domslut: ${ackStatus}`,
+            uppdaterad: Date.now(),
+          }));
+          visaToast(`Kommandobussen svarade "${ackStatus}" — protokollets domslut, prompten togs inte om hand.`);
+          return;
+        }
+        rörTabb(tabbId, (t) => ({ ...t, status: "Kommandot accepterat — väntar på svaret…" }));
+
+        // Svans-poll: dra in sessionens nya poster tills en assistant-post
+        // landat och flödet stabiliserats (max ~160 s; Stop-knappen avbryter).
+        let applied = bas;
+        let stabila = 0;
+        let klar = false;
+        for (let i = 0; i < 40 && !klar && !abort.signal.aborted; i++) {
+          await new Promise((r) => setTimeout(r, 4000));
+          if (abort.signal.aborted) break;
+          try {
+            const r = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(sid)}`, {
+              headers: adminHeaders(),
+            });
+            if (!r.ok) continue;
+            const d = (await r.json()) as { historik?: HistorikPost[] };
+            const hist = Array.isArray(d.historik) ? d.historik : [];
+            if (applied < 0) applied = hist.length; // baslinjen missades — börja här
+            if (hist.length > applied) {
+              const nya = hist.slice(applied);
+              applied = hist.length;
+              stabila = 0;
+              // Historiens EGEN user-post ersätter den optimistiska (bara
+              // när det applicerade snittet verkligen bär den).
+              const harUser = nya.some((n) => n.roll === "user");
+              rörTabb(tabbId, (t) => ({
+                ...t,
+                uppdaterad: Date.now(),
+                meddelanden: [
+                  ...t.meddelanden.filter((m) => !(harUser && m.id === userMsgId)),
+                  ...nya.map(meddelandeUrHistorik),
+                ],
+              }));
+            } else {
+              stabila += 1;
+            }
+            const sista = applied > 0 ? hist[applied - 1] : undefined;
+            if (
+              sista &&
+              sista.roll === "assistant" &&
+              String(sista.text ?? "").trim() !== "" &&
+              stabila >= 2
+            ) {
+              klar = true;
+            }
+            rörTabb(tabbId, (t) => ({
+              ...t,
+              status: klar ? "" : `Kommandot accepterat — väntar på svaret (${(i + 1) * 4} s)…`,
+            }));
+          } catch {
+            /* nätverkshicka — nästa varv */
+          }
+        }
+        rörTabb(tabbId, (t) => ({ ...t, strömmar: false, status: "", uppdaterad: Date.now() }));
+        if (!klar) {
+          visaToast("Svaret dröjde — historiken synkas vid nästa uppdatering, inget förloras.");
+        }
+      } finally {
+        tabbAbortRef.current.delete(tabbId);
+      }
+    },
+    [skickaPrompt, rörTabb, visaToast, malStatus, malKör, setMalStatus],
+  );
+
   /** Skicka från skrivfältet — kommandon först, sedan prompten i AKTIVA tabben. */
   const skicka = React.useCallback(async () => {
     const skriven = prompt.trim();
@@ -8742,8 +8923,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
     // VÅG 91 A3a: bildbilagorna följer med prompten och rensas ur fältet.
     const bilder = valdaBilder;
     if (bilder.length > 0) setValdaBilder([]);
-    await skickaPrompt(aktivTabbIdRef.current, text, bilder);
-  }, [prompt, klistrade, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder, live, visaToast]);
+    // VÅG 186 (post 35): styrvägs-val per användare — kommandobussen bakom
+    // feature-avvägning (skickaPromptV4 rullar själv tillbaka vid gränser).
+    if (v4SendVag) {
+      await skickaPromptV4(aktivTabbIdRef.current, text, bilder);
+    } else {
+      await skickaPrompt(aktivTabbIdRef.current, text, bilder);
+    }
+  }, [prompt, klistrade, strömmar, korKommando, skickaPrompt, skickaPromptV4, v4SendVag, malKör, pushaHistorik, valdaBilder, live, visaToast]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -11083,6 +11270,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   className="flex h-[52px] w-11 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#D29922] hover:text-[#D29922]"
                 >
                   <Star className="h-4 w-4" />
+                </button>
+                {/* VÅG 186 (registerpost 35): styrvägs-val — kommandobussen
+                    bakom feature-avvägning. PÅ = blå; AV = neutral.
+                    Rollback = ett klick (dagens styrväg orörd i koden). */}
+                <button
+                  type="button"
+                  onClick={toglaV4SendVag}
+                  aria-pressed={v4SendVag}
+                  aria-label="Kommandobussen"
+                  title={
+                    v4SendVag
+                      ? "Skickar via den nya kommandobussen (experiment) — klicka för att skicka som vanligt igen"
+                      : "Skickar som vanligt — klicka för att skicka via kommandobussen (experiment; mål-loopen pausas medan svaret körs)"
+                  }
+                  className={`flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md border transition-colors sm:h-11 sm:w-11 ${
+                    v4SendVag
+                      ? "border-[#58A6FF] bg-[#58A6FF]/10 text-[#58A6FF]"
+                      : "border-[#30363D] text-[#8B949E] hover:border-[#58A6FF] hover:text-[#58A6FF]"
+                  }`}
+                >
+                  <Zap className="h-4 w-4" />
                 </button>
                 {strömmar ? (
                   <button

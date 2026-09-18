@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * TESTA FELJÄKT-STORMAR (spår 8, o34; kollisionslager o67) — offline scenariotest
+ * TESTA FELJÄKT-STORMAR (spår 8, o34; kollisionslager o69) — offline scenariotest
  * Körs: node verktyg/testa-feljakt-stormar.mjs  (exit 0 = alla PASS)
  * Testar kärnorna i feljakt-stormar.mjs: klustrings-, kontext-,
  * familje- och valideringslogiken mot syntetiska data i tempkatalog —
  * aldrig mot den levande journalen. Sektion 6–7: nyckelkontraktet
- * (o67) — kollisionsgrupper, precis dom via bevisHash, legacy bas-dom.
+ * (o69) — kollisionsgrupper, precis dom via bevisHash, legacy bas-dom.
  */
 import fs from "node:fs";
 import os from "node:os";
@@ -110,7 +110,7 @@ function kontroll(namn, villkor, detalj = "") {
   fs.rmSync(tmp, { recursive: true, force: true });
 }
 
-// ── 6. nyckelkontraktet (o67): kollisionsgrupper + precis dom ──────────────
+// ── 6. nyckelkontraktet (o69): kollisionsgrupper + precis dom ──────────────
 // Speglar o65 §5 F1:s bevisade fall: två fyndrader, identisk (ts, spår,
 // fynd), olikt bevis (olika matchrad i bevisfältet).
 {
@@ -124,7 +124,7 @@ function kontroll(namn, villkor, detalj = "") {
 
   const oppnaEffektiva = new Set([nyckel(A), `${nyckel(A)}#${bevisHash(A)}`, `${nyckel(A)}#${bevisHash(B)}`]);
   const ledgerEffektiva = new Set();
-  const bas = { ...A, dom: "rotkurad", rotorsaka: "r", bevis: "b", protokoll: "o67", domdAv: "test" };
+  const bas = { ...A, dom: "rotkurad", rotorsaka: "r", bevis: "b", protokoll: "o69", domdAv: "test" };
   const precis = { ...bas, bevisHash: bevisHash(A) };
   kontroll("kollision: bas-dom (legacy, utan bevisHash) godtas fortfarande",
     valideraBedomning(bas, oppnaEffektiva, ledgerEffektiva).length === 0);
@@ -161,8 +161,8 @@ function kontroll(namn, villkor, detalj = "") {
   // precis dom av BÅDA raderna i paret (olika domklasser — kollisionens poäng)
   const bedFil = path.join(tmp, "krock.jsonl");
   fs.writeFileSync(bedFil, [
-    { ...X1, dom: "rotkurad", rotorsaka: "patch-köns kedja", bevis: "o50", protokoll: "o67", domdAv: "test", bevisHash: bevisHash(X1) },
-    { ...X2, dom: "transient-design", rotorsaka: "deployfönster", bevis: "NY KOD 11:42", protokoll: "o67", domdAv: "test", bevisHash: bevisHash(X2) },
+    { ...X1, dom: "rotkurad", rotorsaka: "patch-köns kedja", bevis: "o50", protokoll: "o69", domdAv: "test", bevisHash: bevisHash(X1) },
+    { ...X2, dom: "transient-design", rotorsaka: "deployfönster", bevis: "NY KOD 11:42", protokoll: "o69", domdAv: "test", bevisHash: bevisHash(X2) },
   ].map((r) => JSON.stringify(r)).join("\n") + "\n");
 
   const torr = kör([`--vaktkatalog=${VAKT}`, "--torr", `--bekrafta=${bedFil}`]);
@@ -180,7 +180,7 @@ function kontroll(namn, villkor, detalj = "") {
   fs.writeFileSync(path.join(VAKT2, "feljakt-fynd.jsonl"), [X1, X2].map((f) => JSON.stringify(f)).join("\n") + "\n");
   fs.writeFileSync(path.join(VAKT2, "feljakt-bedomningar.jsonl"), "");
   const basFil = path.join(tmp, "bas.jsonl");
-  fs.writeFileSync(basFil, JSON.stringify({ ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o67", domdAv: "test" }) + "\n");
+  fs.writeFileSync(basFil, JSON.stringify({ ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o69", domdAv: "test" }) + "\n");
   const basKör = kör([`--vaktkatalog=${VAKT2}`, `--bekrafta=${basFil}`]);
   kontroll("krock-bekrafta: bas-dom utan bevisHash godtas och täcker hela paret (läge 0)",
     basKör.kod === 0 && basKör.ut.includes("nytt öppet läge: 0"));

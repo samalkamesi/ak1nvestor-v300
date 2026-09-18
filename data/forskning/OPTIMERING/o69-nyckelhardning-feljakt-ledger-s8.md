@@ -1,7 +1,15 @@
-# o67 — NYCKELHÄRDNINGEN: kollisions­säker matchnyckel i feljakt-ledgern (spår 8, s8-u3)
+# o69 — NYCKELHÄRDNINGEN: kollisions­säker matchnyckel i feljakt-ledgern (spår 8, s8-u3)
 
 **Manifest:** auto-s8-1789730101010 · **Datum:** 2026-09-18 · **Domare:** s8-u3 (fabrik)
 **Klaim:** data/vakten/auto-s8-1789730101010-u3-ansprak.md (disk-först FÖRE arbete)
+**Nummernot:** protokollet skrevs först som o67 men i samma manifestfönster tog
+syskonet s8-u1 o67 (driftsboken-vaccin 2+3) och s8-u2 o68 (vaktens rotations-
+blindhet) — TRIPPELKOLLISION på nummerserien; detta protokoll = o69. Läxan åt
+fabriksfamiljen fördjupar o65:s: protokollnummer tas med ls-koll I SKRIV-
+ÖGONBLICKET och numret är en resurs MOT SYSKONEN i samma fönster — tre vågor
+kan landa inom minuter. Dessutom svepte u1:s commit (84050486, utan paths)
+upp mina sex stage:ade filer — leveransen lever i git men under deras
+driftsboken-meddelande; denna commit (renumret) bär den korrekta attributionen.
 **Infrierar:** o65 §6 bokning 3 ("Nyckelhärdning: bevis-hash i ledgerns matchnyckel
 — lage/stormar-ägarens beslut"). Denna våg är spårets verktygsägare; beslutet
 nedan är motiverat enligt styrelseregel 1.
@@ -39,7 +47,7 @@ och `2026-09-17T18:43:02.674Z|…` ×2. Priset: lage kan inte skilja raderna
 (en bas-dom täcker tyst båda), stormar-grinden vägrar dubletter i EN fil
 men kan inte ge grävande vågor ett sätt döma raderna SKILT.
 
-## §3 Kontraktet (verktygsägarens beslut, o67)
+## §3 Kontraktet (verktygsägarens beslut, o69)
 
 1. **Basnyckeln är helig:** `(ts, spår, fynd)` förblir matchnyckel för alla
    bedömningar UTAN `bevisHash`-fält. De 243 historiska ledger-radernas

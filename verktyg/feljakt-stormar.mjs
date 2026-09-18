@@ -29,7 +29,7 @@
  *     rotorsaka+bevis+protokoll+domdAv obligatoriska; domdTs sätts av
  *     verktyget. Valideringsfel ⇒ INGEN rad appendas (allt-eller-inget).
  *
- * NYCKELKONTRAKTET (o67, 2026-09-18 — härdning av o65 §5 F1):
+ * NYCKELKONTRAKTET (o69, 2026-09-18 — härdning av o65 §5 F1):
  *     Basnyckeln (ts, spår, fynd) kan kollidera när F5:s generiska
  *     fyndtext matchar två loggrader i samma millisekunds-skanning —
  *     bevisat ×2 09-17. Effektiv nyckel utökas därför med bevis-hash
@@ -85,7 +85,7 @@ export function lasJsonl(fil) {
 
 export const nyckel = (f) => `${f.ts}|${f["spår"] ?? f.spar ?? ""}|${f.fynd ?? ""}`;
 
-// ── nyckelkontraktet (o67): bevis-hash för kollisionsgrupper ───────────────
+// ── nyckelkontraktet (o69): bevis-hash för kollisionsgrupper ───────────────
 // sha256(fyndradens bevis), 10 hex — kort nog att läsas, långt nog att
 // skilja de bevisade kollisionsparen (olika matchrad i bevisfältet).
 export function bevisHash(f) {
@@ -219,7 +219,7 @@ const UNDERLAG = path.join(VAKT, "feljakt-stormar-SENASTE.json");
 const fynd = lasJsonl(FYNDLOGG);
 const ledger = lasJsonl(BEDOMNINGAR);
 
-// ── öppna rader enligt nyckelkontraktet (o67): precis > grov, bas-fallback ──
+// ── öppna rader enligt nyckelkontraktet (o69): precis > grov, bas-fallback ──
 // delad form med feljakt-lage.mjs (där dokumenterad; duplicerad av skäl:
 // lage är ett renodlat skript utan importbar kärna — IMPORT SKULLE KÖRA DET)
 function byggaBedomningskarta(rader) {
@@ -265,7 +265,7 @@ if (bekraftaArg) {
     console.error("[feljakt-stormar] bedömningsfil tom eller ogiltig JSONL");
     process.exit(1);
   }
-  // effektiva nycklar (o67): bas för alla öppna rader + bas#hash för rader
+  // effektiva nycklar (o69): bas för alla öppna rader + bas#hash för rader
   // i kollisionsgrupper — precis dom är bara möjlig där kollisionen finns
   const oppnaNycklar = new Set();
   for (const f of oppna) {
@@ -327,7 +327,7 @@ const salvor = klustra(oppna).map((s) => {
     familj: forslagFamilj(s, Object.values(kontext).flat()),
     fynd: s.rader.map((r) => ({
       ts: r.ts, spår: r["spår"] ?? r.spar, allvar: r.allvar, fynd: r.fynd,
-      // o67: kollisionsradens identitet — precis dom kräver detta värde
+      // o69: kollisionsradens identitet — precis dom kräver detta värde
       ...(krock.has(nyckel(r)) ? { bevisHash: bevisHash(r) } : {}),
     })),
     kontext,

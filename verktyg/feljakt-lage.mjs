@@ -23,7 +23,7 @@
  * domdTs vinner. Bedömning utan matchande fynd varnas (änkla) så att
  * en roterad fyndlogg aldrig döljer sanning.
  *
- * NYCKELKONTRAKTET (o67, 2026-09-18 — härdning av o65 §5 F1):
+ * NYCKELKONTRAKTET (o69, 2026-09-18 — härdning av o65 §5 F1):
  * basnyckeln kan KOLLIDERA när F5:s generiska fyndtext matchar två
  * loggrader i samma millisekunds-skanning (bevisat ×2 09-17). Därför:
  * kollisionsgrupp = flera fyndrader med samma basnyckel; en bedömning
@@ -72,7 +72,7 @@ function lasJsonl(fil, etikett) {
 
 const nyckel = (f) => `${f.ts}|${f["spår"] ?? f.spar ?? ""}|${f.fynd ?? ""}`;
 
-// o67-nyckelkontraktet: se filhuvudet. Samma härledning som verktyg/
+// o69-nyckelkontraktet: se filhuvudet. Samma härledning som verktyg/
 // feljakt-stormar.mjs (duplicerad med avsikt — detta är ett renodlat
 // skript utan importbar kärna, och IMPORT AV DETTA SKRIPTET SKULLE KÖRA DET)
 const bevisHash = (f) => createHash("sha256").update(String(f?.bevis ?? "")).digest("hex").slice(0, 10);
@@ -153,7 +153,7 @@ if (anklade.length) {
   for (const b of anklade.slice(0, 5)) console.log(`    änkel: ${b.ts} ${b.dom} — ${b.fynd}`);
 }
 if (krock.size) {
-  console.log(`[FELJAKT-LAGE NOT] ${krock.size} nyckelkollision(er) — basnyckeln täcker ${[...krock.values()].reduce((a, n) => a + n, 0)} fyndrader (${krock.size} nycklar); precis dom = bevisHash-fält (o67):`);
+  console.log(`[FELJAKT-LAGE NOT] ${krock.size} nyckelkollision(er) — basnyckeln täcker ${[...krock.values()].reduce((a, n) => a + n, 0)} fyndrader (${krock.size} nycklar); precis dom = bevisHash-fält (o69):`);
   for (const [b, n] of [...krock.entries()].slice(0, 5)) {
     const tacker = klassade["falskt-pos"].concat(klassade.rotkurad, klassade.pagaende, klassade["transient-design"])
       .filter(({ fynd: f }) => nyckel(f) === b).length;

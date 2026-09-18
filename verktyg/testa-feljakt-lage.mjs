@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * testa-feljakt-lage.mjs (o22; kollisionslager o67) — offline scenariotest för feljakt-lage.mjs
+ * testa-feljakt-lage.mjs (o22; kollisionslager o69) — offline scenariotest för feljakt-lage.mjs
  *
  * Åtta fall mot en fejkad vakt-katalog i /tmp (aldrig äkta data/vakten):
  *   1. bedömt fynd (falskt-pos) lämnar det öppna och hamnar i perDom
@@ -75,7 +75,7 @@ fs.writeFileSync(path.join(TMP2, "feljakt-fynd.jsonl"), JSON.stringify(F2) + "\n
 const r2 = kora(TMP2);
 kontroll(6, "saknad ledger ⇒ alla öppna + ogiltig rad hoppas över", r2.resultat?.totalt === 1 && r2.resultat?.oppna === 1 && r2.resultat?.oppnaHogaKritiska === 1 && r2.ut.includes("bedömningsledger saknas") && r2.ut.includes("ogiltig JSON hoppas över"), JSON.stringify(r2.resultat));
 
-// ── test 7–8: nyckelkollisioner (o65 §5 F1 / o67-kontraktet) ───────────────
+// ── test 7–8: nyckelkollisioner (o65 §5 F1 / o69-kontraktet) ───────────────
 const X1 = { ts: "2026-09-17T11:43:04.406Z", "spår": "F5-logg", allvar: "MEDEL", fynd: "prod-synk.log: felmönster på ny rad", bevis: "/misslyckades/i → PATCH-KÖ: lock-commit MISSLYCKADES" };
 const X2 = { ...X1, bevis: "/FEL[: ]/ → mål-återarmning FEL 502" };
 const hash10 = (f) => createHash("sha256").update(String(f.bevis ?? "")).digest("hex").slice(0, 10);
@@ -83,7 +83,7 @@ const hash10 = (f) => createHash("sha256").update(String(f.bevis ?? "")).digest(
 // test 7: precis dom (bevisHash) täcker EN rad i paret — systern förblir öppen
 const TMP3 = fs.mkdtempSync(path.join(os.tmpdir(), "feljakt-lage-krock-"));
 fs.writeFileSync(path.join(TMP3, "feljakt-fynd.jsonl"), [F1, F2, F3, X1, X2].map((f) => JSON.stringify(f)).join("\n") + "\n");
-fs.writeFileSync(path.join(TMP3, "feljakt-bedomningar.jsonl"), [B1, { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) }].map((b) => JSON.stringify(b)).join("\n") + "\n");
+fs.writeFileSync(path.join(TMP3, "feljakt-bedomningar.jsonl"), [B1, { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o69", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) }].map((b) => JSON.stringify(b)).join("\n") + "\n");
 const r3 = kora(TMP3);
 kontroll(7, "kollision: precis dom täcker EN rad (X1 bedömd, X2 öppen) + gruppen rapporteras",
   r3.resultat?.totalt === 5 && r3.resultat?.bedomda === 2 && r3.resultat?.oppna === 3 &&
@@ -94,8 +94,8 @@ kontroll(7, "kollision: precis dom täcker EN rad (X1 bedömd, X2 öppen) + grup
 // test 8: legacy bas-dom täcker paret; nyare precis dom vinner på sin rad
 fs.writeFileSync(path.join(TMP3, "feljakt-bedomningar.jsonl"), [
   B1,
-  { ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T04:00:00.000Z" },
-  { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o67", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) },
+  { ...X1, dom: "rotkurad", rotorsaka: "samma klass båda raderna", bevis: "o65", protokoll: "o69", domdAv: "test", domdTs: "2026-09-18T04:00:00.000Z" },
+  { ...X1, dom: "falskt-pos", rotorsaka: "grep-fälla", bevis: "protokoll X", protokoll: "o69", domdAv: "test", domdTs: "2026-09-18T05:00:00.000Z", bevisHash: hash10(X1) },
 ].map((b) => JSON.stringify(b)).join("\n") + "\n");
 const r4 = kora(TMP3);
 kontroll(8, "kollision: bas-dom täcker paret (3 bedömda) och nyare precis dom vinner på X1 (falskt-pos: 2 · rotkurad: 1)",

@@ -73,6 +73,54 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // VÅG s7 o66 (cache rond 3 — public/-assets): Next-default för public/ är
+      // "public, max-age=0" = noll browsercache. Drabbat enligt HEAD-sond
+      // 2026-09-18: favicon.svg + PWA-ikoner (ikon-192/512 via manifest.json),
+      // varumärkesfilerna i /ak1a/logo/, og/-socialbilderna (8,1 MB — hämtas av
+      // delnings-botar vid varje omdelning) och llms-full.txt (294 kB, AI-botar).
+      // o10/o13 täckte HTML-vägar + data-json — public/-assets var okartlagt.
+      // Ikoner/logotyper byts endast vid designdeploy: 1 d + swr 1 vecka är
+      // försiktigt (swr-fönstret täcker övergången vid byte, etag kvarstår).
+      {
+        source: "/ak1a/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      // og/-bilderna är per-slug innehållsstabila (build-genererade, kontrakt
+      // AC4): sociala botar och delningspreview får veckocache + swr-dag.
+      {
+        source: "/og/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      // manifest.json (PWA) och llms-full.txt (AI-crawler-text) kan evolvera
+      // vid deploy: samma 1 h + swr-dag-hybrid som deep-courses.json ovan.
+      {
+        source: "/manifest.json",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/llms-full.txt",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
     ];
   },
   async redirects() {

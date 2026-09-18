@@ -13710,3 +13710,34 @@ LANDAT: denna bokföringscommit [organ:Φ] — register post 29 STÄNGD + pipeli
 PIPELINE: 186 + 187 + 188 bokade = ≥3-regeln uppfylld.
 MINNE: beslutsminne rond 51 bokförs efter push (se nedan).
 o66 EFTER-KVITTERING (s7-u2, 11:41–11:5xZ): DEPLOYAD 11:41:07Z av prod-synken (6 commits varav 4d5dd5e1; VÄNTAR-RAM 11:17+11:27 medan syskonen höll minnet — kuren åkte med i deras deployfönster). Curl-grind GRÖN ×6 på nya bygget (ak1a 86400+swr604800 · og 604800+swr86400 · manifest+llms 3600+swr86400) · prod 200 ×3 (https). Lighthouse-EFTER (s7u2-o66efter): P42/P46/P56 med TBT 3 548 på / = o54-precedensens kontamineringsfönster (deploy + syskon-barn aktiva) — obrukbart som kur-facit och bokfört som sådant; kurens mekanism kan per konstruktion inte röra kallstartens LCP/TBT. UPPDAGAT under EFTER-kontrollen (protokoll §5, ärligt bokförd svaghet i min FÖRE-sond): nginx har EGET cache-lager (expires 30d på /ak1a/+/og/, 24h på llms) — prod-hålet var i praktiken ENDAST /manifest.json (numera 3600+swr på prod-nivå, verifierat), och /ak1a/+/og/ bär nu DUBBELA Cache-Control-rader (nginx+Next) = drift-rest §6: proxy_hide_header-städning bokas som egen rond (nginx-ytan ägs av drift-ops, ej min). [fabrik]
+
+## SPÅR 9 s9-u2 (manifest auto-s9-1789731901131, 2/3) — 2026-09-18 ~12:0x–12:3x lokal: SYSTEMKARTAN-dokvåg — A2 + C17 diffade mot verkligheten; s5:s kursrekord + s2:s universumtilväxt bokförda [fabrik]
+
+Objektval mot duplikat: A2 (sektionskropp 09-17, registret 396) bar s5-spårets
+BÅDA manifestomgångar samma dag och C17 (kropp 09-17, universum 171) bar s2
+omgång 14 + s4:s kvartalskö — störst rörelse sedan senaste passning; syskonens
+val (u1 = E29, u3 = B10+B11+B14, disk-först) respekterade, A1 lämnad orörd som
+s9-u1:s bokade kö. Anspråk FÖRE mätstart (auto-s9-1789731901131-u2-ansprak.md,
+gitignorerad väg). ALLT EGENMÄTT: A2 — registret 396→**420** (deep-courses.json
++ siffror.json + LARVAG_ANTAL_KURSER i larvag-karta.ts:459, 459 r), larvag.ts
+458 r OFÖRÄNDRAD sedan våg 99 (git 2a566cfd 09-11), larvag-synk EGEN KÖRNING
+GRÖN 420=420=420 · 21 profiler · 0 fantomer (exit 0), /laroplan 200 HTTPS+
+loopback · /api/larvag 200, LarvagKort lever (min-sida:857), front-B-sonder
+16→28; gap 1+3 lever. C17 — universum 171→**177** (node-räkning
+bolagsunivers.json; FCX, Klarna, Boozt, Genmab, Lundbeck, Ambu), landaspekt
+**danmark** FÖDD (land.ts:261, första utanför se/us; /dataset/halso/danmark
+200 HTTPS+loopback), Kön-filer 40→**52** (42 paket + 10 kalendrar), 09-17:s
+dataset-500-driftfynd LÄKT (/dataset, /energi, /material, /danmark ALLA 200),
+läckagevakt v98 GRÖN 177+177 i 1 538 utdatafiler, llms.txt LIVE 177-bolag
+(rådata 09-18, totalt P/E 21,2 n=167, 0 bolagsnamn = kontraktet håller);
+gap 0 TREDJE passningen trasig (exit 1, ERR_MODULE_NOT_FOUND './ordlista') —
+Nytt: svitens huvud lovar per-modul-felisolering men toppnivå-importen dödar
+hela testet. Scores: A2 LEVER 7 + C17 LEVER 9 orörda (E33/B14/B13-precedenserna
+— tillväxt utan gap-rörelse); snitt 7,6 / 288 / 38 oförändrat. Kö: gap
+0-importbro (växer i vikt), A1:s kurstal 396→420 + quiz-frysningen, H3-rutan
+(52 Kön-filer utan src). Ingen kod, inget bygge, src/ orörd, R2 orörd,
+data/blogg/ orörd. LEVERANS: data/forskning/SYSTEMKARTAN.md + denna
+worklog-sektion. [fabrik]
+
+
+VÅG s9-u1 1/3 (2026-09-18, fabrik auto-s9-1789731901131 1/3) — DOKVÅG: E29 AUTONOMA ORGANET + CRON-PIPELINE ÅTERDIFFAD (tredje varvet; anspråk på disk FÖRE mätstart — disk-först-presedensen — och KUR-BEVIS I EGNA FÖNSTRET: syskonet u2:s sektion bokför självt "syskonens val respekterade (u1 = E29, u3 = B10+B11+B14 — disk-först vid båda)", noll kollision): fabriken 146 klara manifest av 147 (+30 sedan 09-17-kvällsmätningen; 22 auto-manifest startade idag, 21 klara) · 475 utdataloggar (387→475) · beslutsminnet 68 poster, senast rond 51 kl 11:43:03Z (4 idag — rondkadansen lever) · pumpor-daemonen pm2 online 42 h ↺19 + FABRIKSPROCESSEN FÅNGAD LEVANDE i mätfönstret (pid 2140015, startad 13:45 — matade detta manifests barn) · evighetsmotorn 614 kontroller (senaste 11:48:03Z) + målet återarmat 11:41Z (24/7-STANDBY) · svitgapet oförändrat återmätt (testa-pumpor-scheman + testa-styrelse på disk; 0 för agentfabrik/evighetsmotor/uppdrag) · CRON_SECRET 0 env-namnträff (endast namnreferenser i src: 5 cron-rutter + nyheter/scan + ekosystem-panel) · kunduppdragsfilerna fortsatt frånvarande (senaste UPPDRAG KLART 09-14 = ingen order i flykt) · crontab fortfarande utan rond-/fabriksrad (pm2 äger daemonen). VIKTIGASTE FYNDET: KOLLISIONSKLASSEN ÅTERKOM 09-18 I NY SKEPNAD (s8-fönstret 13:30–13:36 — protokollnumret o67 trippelkolliderade OCH 057f8446:s commit utan paths tog u3:s staggade namnbyte; allt ärligt bokfört i 6e44422c/dcd3e279 + två disknotiser 13:32/13:34) = klassen nu bevisad i TRE fönster i TRE skepnader (kartfil 09-16 · kartrad 09-17 · nummerserie+git-index 09-18); kuren är DISCIPLIN inte mekanism — men disciplinen FUNGERADE i detta fönster. Score LEVER 8 kvar (E33/B14-precedensen: kunskap tillförd, inget gap stängt); kur-kö bokförd i kartan till fabriksägaren: per-uppgift isolerad protokollnummerserie + commit med EXPLICITA paths i fabriks-prefixet. Snitt 7,6/288/38 oförändrat. Leverans: data/forskning/SYSTEMKARTAN.md (ny UPPDATERING-sektion + ÖVERSIKT-rad E29 + E29-detailblock med stampel 2026-09-18 och skärpt gap 0) + worklog denna rad.

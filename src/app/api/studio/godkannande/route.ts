@@ -22,7 +22,9 @@
  *     och loggar till audit-loggen. Andra val än "behall" avvisas här.
  *
  * SKYDD: requireAdmin på ALLA metoder (samma admin-session som övriga
- * studio-rutter). Svaret bär aldrig innehåll utanför listans kontrakt.
+ * studio-rutter) + härdningstak 20 authade POST:er/minut (o64; GET är
+ * takfritt — panelens läsning påverkas aldrig). Svaret bär aldrig
+ * innehåll utanför listans kontrakt.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -37,11 +39,29 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /** JSON-svar utan caching — studio-ytan får aldrig cachas. */
-function jsonSvar(kropp: unknown, status = 200): Response {
+function jsonSvar(kropp: unknown, status = 200, extraHeaders: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(kropp), {
     status,
-    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...extraHeaders },
   });
+}
+
+/**
+ * HÄRDNING (styrelsens KÖRS DIREKT-post "härdning av godkännandeytans
+ * rutter"): in-memory tak på AUTHADE POST:er — 20/minut räcker för en
+ * människa som markerar "behåll" längs hela väntelistan men stoppar
+ * maskinella sviter (o64). Taket sitter MEDVETET EFTER requireAdmin:
+ * anonym trafik får aldrig kunna förbruka fönstret och låsa kundens yta.
+ * Mönstret är admin-auth:s tidsfönster-array (pm2 fork = en process);
+ * 429-svaret pushar ALDRIG — fönstret återhämtar sig när stormen tystnar.
+ */
+const postTider: number[] = [];
+const MAX_POST_PER_MIN = 20;
+
+function takUppnaatt(): boolean {
+  const nu = Date.now();
+  while (postTider.length && nu - postTider[0] > 60_000) postTider.shift();
+  return postTider.length >= MAX_POST_PER_MIN;
 }
 
 // ── GET — väntelistan ────────────────────────────────────────────────────────
@@ -71,6 +91,11 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
+
+  if (takUppnaatt()) {
+    return jsonSvar({ fel: "För många försök — vänta en minut." }, 429, { "Retry-After": "60" });
+  }
+  postTider.push(Date.now());
 
   let kropp: { sokvag?: unknown; val?: unknown };
   try {

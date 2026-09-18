@@ -28,8 +28,10 @@
  *  - PalettVakt: ⌘K/Ctrl+K-, "/"- och "ak1a:oppna-sok"-lyssnarna är vägerlätta
  *    och registreras direkt vid hydratisering, medan själva paletten (React.lazy)
  *    laddas först vid första öppningen — tangentbordslyssnaren tappas aldrig.
- *    En tyst idle-montering (4 s) återställer palettens automatiska besöks-
- *    registrering (navigationsminnet) även utan öppning, precis som före.
+ *    En tyst tvåstegs-återhämtning (o61: 8 s + äkta idle) återställer
+ *    palettens automatiska besöksregistrering (navigationsminnet) även
+ *    utan öppning — aldrig mitt i blocking-fönstret (det gamla direkta
+ *    rIC-taket 4 s landade på första idle ≈1 s; o57 §6).
  *
  * CookieConsent lämnas orörd i layout.tsx — den kräver omedelbar synlighet.
  */
@@ -265,9 +267,11 @@ export function LasyNotisCenter() {
  * 1. De vägerlätta globala lyssnarna registreras vid hydratisering — ⌘K svarar
  *    alltså direkt, precis som tidigare.
  * 2. Paletten (React.lazy) hämtas först när den faktiskt öppnas första gången.
- * 3. Tyst idle-montering efter 4 s: palettens automatiska besöksregistrering
- *    (navigationsminnet, "senast besökta") fungerar som förut även för den
- *    som aldrig öppnar paletten.
+ * 3. Tyst återhämtning i två steg (o61: 8 s + äkta idle med generöst tak):
+ *    palettens automatiska besöksregistrering (navigationsminnet, "senast
+ *    besökta") fungerar som förut även för den som aldrig öppnar paletten —
+ *    men chunkfamiljen hämtas aldrig mitt i blocking-fönstret (det gamla
+ *    direkta rIC-taket 4 s monterade vid första idle ≈1 s; o57 §6).
  *
  * När paletten har monterats sköter den själv ⌘K-toggle, "/" och eventet —
  * vakten tiger (monterad-flaggan sätts av PalettSignal efter palettens egna
@@ -313,13 +317,22 @@ export function PalettVakt() {
     document.addEventListener("keydown", tang);
     window.addEventListener("ak1a:oppna-sok", viaEvent);
 
-    // Tyst återhämtning: besöksregistreringen lever igen efter idle.
-    const plan = schemalaggIdle(() => setLaddad(true), 4000);
+    // Tyst återhämtning (o61 — o53/o57:s tvåstegsmönster): först efter 8 s,
+    // därefter äkta idle med generöst tak. ⌘K-, "/"- och sökknapps-svaren bor
+    // i vakten ovan och är omedelbara; besöksregistreringen tål att vänta.
+    // (Förr: schemalaggIdle direkt med 4 000 ms-tak ⇒ montering vid första
+    // idle ~1 s in på drosslad mobil — palett-familjen mitt i TBT-fönstret.)
+    let plan: IdlePlan | null = null;
+    const efter8s = () => {
+      plan = schemalaggIdle(() => setLaddad(true), 2500);
+    };
+    const t = window.setTimeout(efter8s, 8000);
 
     return () => {
       document.removeEventListener("keydown", tang);
       window.removeEventListener("ak1a:oppna-sok", viaEvent);
-      plan.avbryt();
+      window.clearTimeout(t);
+      plan?.avbryt();
     };
   }, []);
 

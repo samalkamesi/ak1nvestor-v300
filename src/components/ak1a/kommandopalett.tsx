@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { sokIIndex, type SokPost } from "@/lib/sokindex";
-import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import Image from "next/image";
 import { SIFFROR } from "@/lib/siffror";
 import { besok, registreraBesok, titelFranSida } from "@/lib/navigationsminne";
 import { GAST_KONTEXT, lasMenyKontext, type MenyKontext } from "@/lib/meny-register";
@@ -218,7 +218,29 @@ export function Kommandopalett() {
         {/* bottentrad */}
         <div className="flex items-center justify-between border-t border-gold/20 bg-gold/5 px-4 py-1.5 text-[10px] text-muted-foreground">
           <span className="flex items-center gap-1.5">
-            <VarumarkesLogo storlek="sm" medText={false} klass="scale-[0.6] origin-left" />
+            {/* Logomark inline (o76): importerades VarumarkesLogo-modulen
+                här höll Turbopack den kvar i palett-chunken, och React
+                emitterade då hela klumpen (~17,7 KiB, bl.a. navigationsminnet
+                och streak/badges-koden) som script-tagg i flighten på ALLA
+                SeoPageShell-sidor — @~240 ms, mitt i LCP-fönstret, trots
+                PalettVaktens 8 s-defer (o61 §6.1:s öppna rest). Inline-marken
+                = samma bild och klasser som VarumarkesLogo sm/medText={false},
+                men utan den delade modulen i grafen. */}
+            <span className="flex scale-[0.6] origin-left">
+              <span
+                aria-hidden
+                className="relative block shrink-0 overflow-hidden bg-[#FDFBF7] ring-1 ring-[#0E1B2E]/15 dark:ring-white/10 shadow-[0_1px_3px_rgba(14,27,46,0.12)] h-8 w-8 rounded-md"
+              >
+                <Image
+                  src="/ak1a/logo/skulptur-mark.jpg"
+                  alt="AK1A Research Lab — trådskulptur med krona"
+                  width={32}
+                  height={32}
+                  sizes="32px"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+            </span>
             {t("ui.kurserIndexerade", { antal: SIFFROR.kurser })}
           </span> {/* ur src/lib/siffror.ts */}
           <span className="font-mono">esc</span>

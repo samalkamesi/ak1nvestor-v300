@@ -185,3 +185,16 @@ s2-u2; BUD/NUE/SHW/CF = syskonen (BASF-precedensen). Universumfils-diff:
 - verktyg/_s2u2o15-llms-regen.mjs (kodvägs-regen, o13-kroppen återanvänd ordagrant)
 - data/vakten/auto-s2-1789737901251-s2-u2-ansprak.md (anspråk + pivot v2, FÖRE arbetet)
 - worklog.md (rad)
+
+## CLOBBER-EPILOG (post-commit-tillägg, commit e29733ed)
+
+Leveransens sekvens fick a2cc52d7-klassens tredje instans: prod-synkens git-fas
+wipade mina ocommittade tracked-ändringar (universum+llms till HEAD-181) när
+commiten försenats av hook-väntan på prod-synkens npm ci (tsc-blocket "Cannot
+find module next" = byggfönstret). Untracked protokoll+skript+anspråk ospolade.
+u3:s c712c9c6 bar protokoll+skript+worklog-rad med universum 181; deras notis
+"MT/FMX = s2-u2:s re-append" infriad: append omkörd (28/28 GRÖNA, idempotent
+bit-identisk) + llms-regen + läckagevakt 0 (1 545 filer) + commit i EN sekvens =
+e29733ed. Slutinvariant: universum == llms == HEAD == 183. Klassen tre
+instanser — systemnotis åt driftspåret: kandidatkur = commit-steget omedelbart
+efter skrivsteget i samma node-sekvens (verkställt här).

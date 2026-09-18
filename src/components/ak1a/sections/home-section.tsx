@@ -364,6 +364,12 @@ export function HomeSection() {
               <Link
                 key={s.etikett}
                 href={s.href}
+                prefetch={false}
+                // prefetch={false} (o63): bandet ligger direkt under vecket —
+                // Next:s länk-observer med ~200 px rootMargin räknar kort 1–2
+                // (/kurser) som synliga vid kall entré på mobil, vilket drog
+                // 3 auto-prefetch-flighter (~36 KiB) ~0,9 s efter load
+                // (CDP-IO-audit 2026-09-18). Hover-prefetch lever.
                 className="group rounded-lg border border-border bg-card p-5 transition-all hover:border-gold/50 hover:shadow-md"
               >
                 <p className="font-serif text-4xl font-bold leading-none text-foreground sm:text-5xl">

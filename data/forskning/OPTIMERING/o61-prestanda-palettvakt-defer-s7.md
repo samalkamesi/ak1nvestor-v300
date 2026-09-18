@@ -182,6 +182,64 @@ Slutsats §5.2: §5.1:s dom håller vid oberoande om mätning — rotorsaken
 (Link-prefetch, o63-ägd) och kurens kärnbevis (monteringen ur fönstret) är
 dubbelverkade. o63-EFTER-sonden bör även kvittera paret (§6.5 lever).
 
+### §5.3 SOLO-RONDEN 2026-09-18 18:46:35–18:48:03 lokal (s7-u3, byggare 3/3 — §6.4:s rest INFRIAD)
+
+Anspråk disk-först 18:33 (data/vakten/s7-solorond-u3-ansprak-2026-09-18.md,
+FÖRE mätstart). Fönster: bygg **-udydQnIf-pUcE4iU5sqV** på HEAD ff8eff94
+(kraschvaktens räddningsbygg 18:40–18:42 lokal efter OOM-dödat synkbygg 18:28 —
+prod 502 18:31–18:42, räddad inom vaktparametern) · **start-last 0,98**
+(fallande; FÖRE-referensen 0,54) · EJ nattsolo: swap 4 091/4 095 MB full under
+hela fönstret (deklarerat) · INGEN parallell Lighthouse-svärm (pgrep 0 före och
+efter) · INGEN build under trion — nästa synkbygg start **18:48:11**, åtta
+sekunder EFTER trions sista sida (18:48:03; ps lstart-bevisat) · ISR-trigga
+×2+8 s FÖRE mätning. Rådata: `lighthouse/{start,kurser,blogg}-s7u3-solo.json`
++ `s7u3-solo-sammanfattning.json`. Efter-last 4,85 = eget instrument (Lighthouse-
+chrome, samma verktyg som FÖRE-mätningen).
+
+| Sida | Poäng | LCP ms | TBT ms | CLS | mot FÖRE §1 (0,54/stE6SStz) |
+|------|-------|--------|--------|-----|------------------------------|
+| /    | P68   | 4 116  | 768    | 0   | P+4 · LCP **−1 125** · TBT +298 |
+| /kurser | P54 | 5 501  | 951    | 0   | P−2 · LCP −91 · TBT **−130** |
+| /blogg | P56 | 5 150  | 1 041  | 0   | P−9 · LCP +346 · TBT +358 |
+
+Dom per §5-kriterierna:
+
+- **(b) RÖTT på bokstaven — med dubbel attribuering**: TBT / 768 > FÖRE 470 och
+  /blogg +358 > regressionstaketet +150; /kurser däremot **under** FÖRE
+  (951 < 1 081 ✓). Två dokumenterade kostnadskällor skiljer fönstret från FÖRE:
+  (1) **byggdrift** — ff8eff94 bär sedan stE6SStz hela s6-generationen (omgång
+  18–20: 43 mentorlager + chatt-lazy-omstrukturering; worklog-rad 11910
+  dokumenterade exakt denna klass: "TBT +165 … globala bunt-tillväxten äter CPU
+  i realtid, KÖ: lager-lazy per yta"); (2) **fönsterkostnad** — start-last 0,98
+  mot 0,54 OCH full swap (nattläget saknar det). Separering ej möjlig i en rond;
+  kurens egen bidragsslut är mekaniskt ren (nedan).
+- **(c) DELAT**: CLS **0 ×3 ✓** (femte ronden i rad — CLS 0,106-signaturen från
+  o66efter dyker INTE upp i rent fönster = lastartefakt-kandidat, bokförs i
+  kölistan). LCP: / **−1 125 ms** (klart utanför och bättre än ±170-bandet —
+  **bästa LCP och bästa poäng på / i spårets mäthistorik**: P68 mot vila-1849:s
+  P60 och FÖRE:s P64; o63:s prefetch-stängning + o66:s cache-rond syns i
+  verkligheten) · /kurser −91 ✓ i band · /blogg +346 ✗ utanför band (samma
+  driftklass som TBT-raden).
+- **(a)(d) mekaniskt återverifierade på MÄTBYGGET** (sond
+  `_s7u3-o61efter-sond.mjs` på solo-rapporten): vakt-chunk `2qnjvou52dgsk.js`
+  9 218 B @135 ms bär `ak1a:oppna-sok · requestIdleCallback · 8e3` = tvåstegs-
+  kuren live; **paret `3-bylxy1ipbmj`+`0rlekqdvsvonw` finns inte bland de 18
+  _next-JS-requests** (största signaturlösa chunk 13 339 B) och INGET hämtas i
+  det gamla problembandet 1,4–2,2 s — monteringskaskad + prefetch-spill borta.
+- **Strukturtal (lastokänsliga)**: totalvikt 513/523/490 KiB — **identiskt med
+  o66efter** (byggdrift utan vikt-tillägg sedan ff8eff94) · unused-JS 49/48/49
+  KiB · bootup 1,4/1,5/1,6 s (o66efter:s 4,8/2,4/1,7 i smutsigt fönster —
+  fönsterkvalitets-index).
+
+Slutsats §5.3: o61:s EFTER-komplex är **fullt bokfört** — (a)(d) gröna sedan
+§5.1–§5.2, (b)(c) nu dömda i generationens renaste fönster: kurens mekanik
+oskadd och startsidans LCP/poäng på historisk topp, TBT-driften ägs av s6-lagren
++ fönstret, inte av vakten. s7u3-solo (bygg -udydQnIf, 18:46 lokal) ersätter
+o66efter som **spårets nya referensfönster** för nästa generationsjämförelse
+(vila-1849-mönstret). Kö: lager-lazy per yta (s6-buntens CPU-kostnad —
+största enskilda TBT-spåret), react-trädbantning (o45 §1), §6.1 SSR-preload,
+/blogg drift-sondering, /ar-resten, CLS 0,106 lastartefakt-hypotes.
+
 ## §6 Kvarstående observationer (kö till nästa omgång)
 
 1. SSR-preload-fyndet: på /kurser + /blogg preloadas palett-chunken redan i HTML

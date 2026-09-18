@@ -205748,6 +205748,178 @@
     "grahamSection": "Benjamin Grahams uppdelning mellan permanenta förlustmöjligheter och tillfälliga kursvisslingar är taxonomin i sin äldsta skepnad: de fyra adresserna är hans permanenta risker, strukturerade. Hans marginal of safety (km-030) är också adressernas gemensamma bot — mot resultatrisken ger marginalen utrymme när cykeln vänder, mot balansräkningsrisken spelrum före nöd, mot värderingsrisken avståndet som gör att inte ens ett mänskligt utfall behöver bli en förlust. Graham byggde ingen lista på fyra punkter, men allt han mätte bor på någon av adresserna.",
     "ak1Section": "I AK1A:s metodik är den här kursen RISK-familjens takblad: rs-familjens begrepp, källor och matriser får här sin gemensamma struktur — fyra adresser, fyra rader, högst två bärande — och AKM1:s riskdimension får sin skrivordning. Tillsammans med STABILITET-familjens mått (st-01, st-03) och vr-01:s multipelgap blir riskbilden läsbar i båda riktningarna: ner i bolaget, ut mot priset."
   },
+  "rs-07-leverantorsrisken": {
+    "slug": "rs-07-leverantorsrisken",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Leverantörsrisken — inköpens koncentration och maktbalansen",
+    "summary": "Riskfamiljens sjunde steg: spegeln till kundkoncentrationen. Där rs-02 mäter hur få kunder bär intäkterna mäter denna kurs hur få leverantörer bär inköpen — inköpsandelar, maktbalansen i två riktningar, påslagets genomsläpp i rörelseresultatet och dubbelkällans pris som försäkring.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Mäta inköpskoncentrationen: största leverantörens andel av inköpen och de tre största tillsammans · Räkna maktbalanskvoten i två riktningar — bolagets andel av leverantörens försäljning avgör om beroendet är ömsesidigt eller ensidigt · Räkna ett prispåslags genomsläpp: vad åtta procent hos ensamkällan kostar i rörelseresultat och marginal · Räkna leveransstoppets pris: förlorad produktion, förlorad täckning och andelen av årsresultatet · Värdera dubbelkällan som försäkring: kvalificeringens ledtid och kostnad mot den löpande premien och den förväntade stoppkostnaden · Läsa ut inköpssidan ur redovisningen — inköpsvolymen, leverantörsskulderna, riskavsnittets formuleringar och noterna — och känna igen de sex fällorna.",
+    "why": "Riskfamiljen har lärt skilja svängningar från förlust (rs-01), läst koncentrationen på kundsidan (rs-02), dold samvariation (rs-03), matrisen som rangordnar (rs-04) och bolagets egen riskredovisning (rs-05) — men beroendet har en andra sida som ingen kurs äger: inköpssidan. Ett bolag vars intäkter är spridda över hundra kunder men vars viktigaste komponent kommer från en enda leverantör är inte diversifierat; det är en kedja med en länk. Kursserien har systematiskt mätt vad som kan gå fel på intäktssidan och lämnat kostnadssidans beroenden åt förmodan — denna kurs stänger glipan. Föremålet är inte råvarupriser eller valutor (de ägs av grannkurserna) utan strukturen: hur stor del av inköpen som står hos en leverantör, vem som behöver vem, vad ett påslag kostar, vad ett stopp kostar och vad en andra källa kostar att bygga. Frågan som kursen lämnar hos läsaren är enkel och underskattad: om din viktigaste leverantör försvinner i morgon — hur länge lever verksamheten och vad kostar vägen ut? Svaret står sällan i årsredovisningens siffror, men spåren finns — och kursen lär läsa dem.",
+    "history": {
+      "origin": "Beroendet på enskilda källor är äldre än börsen. Gårdsbon som satade hela årets försörjning på en gröda visste vad koncentration heter när missväxten kom; köpmannen som bara kunde köpa sitt salt från en enda hamn visste att fredens pris sattes av den som ägde hamnen. Handelsfamiljerna löste det som kursen lär: dubbla källor, buffertar i logen, kontrakt som skrevs om innan de löpte ut. De företag som byggde epoker — gruvor, bruk, handelshus — känns igen på att de sällan var beroende av en enda leverantör av något som verksamheten inte kunde klara sig utan. Erfarenheten av krigens blockader, då hela branscher stannade när en sjöväg stängdes, skrev in lärdomen i generationernas minne: kedjan är bara så stark som sin trängsta länk.",
+      "evolution": "Tjugonde århundradet tog två motriktade svar på leverantörsberoendet. Det första var vertikal integration: bolaget äger sin egen kedja från råvara till färdig vara, och beroendet av andra ersätts av stora kostnader för att hålla allt i egen hand. Det andra, som vann mark under seklets slut och framåt, var det omvända: produktionssystem som räknade lager som slöseri och köpte det mesta utifrån, i exakt den mängd som behövdes. Systemet gjorde leveranskedjan till en prestationskonst — men också till ett beroende konstruerat med avsikt. Ju effektivare kedjan blev, desto färre länkar tillät den sig, och koncentrationen på leverantörssidan växte i takt med effektiviteten på lagersidan. För den som läser bolag blev frågan ny: ett smalt, lätt och snabbt bolag är billigt i drift — men vad händer den dag en länk bryter?",
+      "modern": "I dag har leverantörsrisken flyttats från inköpsavdelningens bord till styrelsens agenda. De senaste årens globala chocker — en pandemi som stängde fabriker, en brist på kretsar som satte hela branscher i kö, energipriser som rusade, avbrott på världens farleder — har visat att leverantörsstörningar inte är en fotnot utan en risk som kan äta årsresultat i en hastighet som ingen kassaflödesprognos fångar. Svaret från bolagssidan har fått ett eget språkbruk: dubbelkällor, säkerhetslager och närhet i geografin har blivit strategiska ord. För aktiestudenten är det här en läsläxa i två delar: att fråga hur koncentrerade inköpen är — och att minna sig själv att varje år av effektivisering som sparar en kostnad samtidigt kan ha köpt en koncentration. Kursen gör den avvägningen mätbar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — beroendets andra sida",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — inköpsandelar och maktbalansen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — att läsa ut inköpssidan ur redovisningen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — påslagets och stoppets aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — leverantörsriskens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade sina läsare att kunna förklara bolaget de äger i en mening — och meningen innehåller ofta en leverantör. Hans genomgångar av tillverkande och växande bolag visar samma mönster som denna kurs mäter: bolaget som berättar stolt om sin effektiva kedja har ofta också köpt ett beroende, och bolaget som har en andra källa till det viktigaste har köpt en trygghet som inte syns i en marginalprocent. Lynch såg dessutom med egna ögon hur en hel bransch kan sättas i kö av brist på en enda komponent — och hur bolag med reservkapacitet då kan ta marknadsandelar medan konkurrenterna står stilla. Hans praktiska läsning av verksamheten — vad bolaget gör och vad som kan gå sönder i det — är leverantörsriskens raka föregångare.",
+    "grahamSection": "Benjamin Graham tänkte på aktien som en andel i en affär, och en affär har leverantörer som den måste leva med. Hans säkerhetsmarginal — mellanskillnaden mellan pris och värde — vilar på att verksamheten får finnas kvar tills marknaden rättar sig, och en affär som kan stoppas av en enda motpart har en kortare väg från att finnas till att inte finnas än omsättningssiffran antyder. Grahams temperament ger därför berggrund åt det som kursen formulerar: spridning i det ett bolag är beroende av — kunder, leverantörer, geografier — är inte feghet utan robusthet, och den som betalar ett pris som kräver att allt går bra har ingen marginal för den dag en länk brister. Tryggheten i kedjan är i hans anda en del av värdet, inte en kostnad att skära bort.",
+    "ak1Section": "I AK1A:s metodik stänger denna kurs riskfamiljens sista stora glänta: rs-familjen har mätningar för kundsidan (rs-02), samvariationen (rs-03), matrisen (rs-04) och den egna riskredovisningen (rs-05) — men inköpssidan har saknat egen kurs. I AKM1:s bolagsläsning blir leverantörsrisken en kontrollstation i riskdimensionen bredvid kundkoncentrationen: samma koncentrationstänkande, spegelvänt mot kostnadssidan. I AKM2:s ram övar kursen två scenarioaxlar som ofta blandas ihop: påslaget (volymen levereras men till högre pris) och stoppet (volymen uteblir en tid) har olika aritmetik och olika motåtgärder — och dubbelkällans värde visar sig först när de hålls isär. Gränserna mot grannkurserna är avsiktliga: mt-05 äger byteskostnaderna som moat på säljarsidan, mt-06 kostnadsövertaget som konkurrensfördel, km-026 de relaterade parterna, rk-09 portföljens koncentration — denna kurs äger inköpssidans beroende som risk.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — beroendets andra sida",
+        "intro": "Koncentrationsläsningen börjar oftast hos kunderna. Kursen börjar på andra sidan resultaträkningen — hos dem bolaget köper av.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett bolag och dess omvärld är utbyten i två riktningar. Utriktningen mättes av rs-02: hur stor del av intäkterna som bärs av en eller några kunder. Inriktningen mäts av denna kurs: hur stor del av inköpen som bärs av en eller några leverantörer. Spegling är inte likhet — koncentrationen på de två sidorna uppstår av olika skäl, mäts mot olika talmängder och hanteras med olika verktyg. Ett bolag kan ha hundra kunder och ändå vara ett kedjebolag: om den enda komponent som verksamheten inte kan leva utan kommer från en enda leverantör, vilar hela kundspridningen på en enda länk. Inköpsvolymen är dessutom ett tal som sällan får sin egen rad — den står gömd i kostnadsposternas massor, och koncentrationen bland leverantörerna nämns i förbifarten om alls. Därför förtjänar den andra sidan egen mätning: inköpsandelar hos de största, maktbalansen mellan köpare och säljare, och de två händelser som gör beroendet kännbart — prispåslaget och leveransstoppet. Kursens genomgående exempel är ett påhittat bolag, Vega Komponenter AB, och alla dess tal är uppbyggda för räkneleden; verkliga bolag läses med samma frågor, men med egna siffror."
+          },
+          {
+            "type": "definition",
+            "content": "LEVERANTÖRSRISKEN — TRE FRÅGOR: (1) KONCENTRATIONEN — hur stor del av inköpen bär den största leverantören och de tre största tillsammans · (2) MAKTBALANSEN — hur stor är bolagets andel av leverantörens försäljning; beroendet mäts i båda riktningarna · (3) KONSEKVENSERNA — vad kostar ett prispåslag i rörelseresultat och vad kostar ett leveransstopp i förlorad täckning · GRÄNS: rs-02 äger kundsidan, mt-05 byteskostnaderna som moat, rk-09 portföljens koncentration — denna kurs äger inköpssidans beroende."
+          },
+          {
+            "type": "insight",
+            "content": "Ett bolag är inte diversifierat förrän båda sidor av resultaträkningen är det. Hundra kunder och en enda leverantör av det viktigaste är en kedja med en länk."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — inköpsandelar och maktbalansen",
+        "intro": "Mätningen har två steg: först koncentrationen bland leverantörerna, sedan maktbalansen — vem av de två behöver vem mest.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Vega Komponenter AB omsätter 1 200,0 miljoner kronor med ett rörelseresultat på 96,0 miljoner — en rörelsemarginal på 8,0 procent. Inköpen av material och komponenter uppgår till 780,0 miljoner, det vill säga 65,0 procent av omsättningen. Bland leverantörerna står en enda — tillverkaren av kretsen som sitter i varje produkt — för 405,6 miljoner. Räkna den första mätningen: 405,6 dividerat med 780,0 ger 52,0 procent av inköpen hos en enda leverantör. Nästa två leverantörer bär 156,0 och 78,0 miljoner, det vill säga 20,0 och 10,0 procent. De tre största tillsammans: 405,6 plus 156,0 plus 78,0 är 639,6 miljoner — 82,0 procent av inköpen. Talet talar sitt tydliga språk: alla övriga leverantörer tillsammans bär 18,0 procent, och kretsleverantören är mer än dubbelt så stor som samtliga övriga tillsammans. Andra steget är kursens signaturidé, maktbalansen: koncentrationens vikt avgörs av vem som behöver vem. Räkna bolagets andel av leverantörens försäljning — maktbalanskvoten. Är leverantören en liten specialist med en omsättning på 675,0 miljoner bär Vega 405,6 av 675,0, det vill säga 60,1 procent av dess försäljning: de två är ömsesidigt låsta, och leverantören har lika mycket att förlora som Vega. Är leverantören i stället en global jätte med 13 500,0 miljoner i omsättning bär Vega 405,6 av 13 500,0 — 3,0 procent: beroendet är ensidigt, och Vegas förhandlingsposition är i princip noll. Samma inköpsandel, två helt olika risklägen."
+          },
+          {
+            "type": "tabell",
+            "content": "INKÖPSKONCENTRATIONEN — VEGA KOMPONENTER AB (PÅHITTADE TAL): omsättning 1 200,0 Mkr · rörelseresultat 96,0 Mkr (marginal 8,0 %) · inköp 780,0 Mkr (65,0 % av omsättningen) · LEVERANTÖR 1 (kretsen, ensam källa): 405,6 Mkr = 52,0 % av inköpen · LEVERANTÖR 2: 156,0 Mkr = 20,0 % · LEVERANTÖR 3: 78,0 Mkr = 10,0 % · TRE STÖRSTA: 639,6 Mkr = 82,0 % · MAKTBALANSKVOTEN — bolagets andel av leverantörens försäljning: specialist 405,6 / 675,0 = 60,1 % (ömsesidigt låsta) · global jätte 405,6 / 13 500,0 = 3,0 % (ensidigt beroende)."
+          },
+          {
+            "type": "insight",
+            "content": "Koncentration är inte ett tal utan ett förhållande: 52,0 procent hos en leverantör som behöver dig lika mycket är partnerskap; 52,0 procent hos en jätte som knappt noterar dig är ett lån på verksamheten som kan sägas upp."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — att läsa ut inköpssidan ur redovisningen",
+        "intro": "Ingen not heter leverantörskoncentration. Uppgifterna byggs från fyra indirekta spår i årsredovisningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första spåret är inköpsvolymen själv: kostnadssidan av resultaträkningen och kassaflödesanalysen som km-003 lär ut ger de rörliga inköpen — ofta som kostnader för material tillsammans med förändringar i lager och leverantörsskulder. Andra spåret är riskavsnittet i förvaltningsberättelsen, som rs-05 lär läsa mellan raderna: formuleringar om enskilda leverantörer, viktiga komponenter eller beroenden av tredje part är ledtrådar, och formuleringarnas värsta variant är frånvaron — ett bolag som inte nämner inköpssidan alls har oftast ett att nämna. Tredje spåret är noterna om leverantörsskulder och åtaganden: långa kontraktstider, take-or-pay-åtaganden och beställda belopp avslöjar både volym och bindningstid. Fjärde spåret är andras berättelser: branschöversikter, konkurrenternas riskavsnitt och ibland leverantörens egen rapport — enligt samma maktbalanslogik är nämligen en liten leverantörs kundkoncentration samma beroende sett från andra hållet. km-026 om relaterade parter hör hit när leverantören är ägarrelaterad. Samla spåren till en egen tabell: leverantör, andel av inköpen, maktbalanskvot, kontraktstid och om mätningen är möjlig — omställningstid till en ny källa. Tabellen bygger läsaren själv; årsredovisningen levererar byggstenarna utspridda på fyra ställen."
+          },
+          {
+            "type": "definition",
+            "content": "DE FYRA SPÅREN: (1) INKÖPSVOLYMEN — resultaträkningens kostnadssida och kassaflödesanalysen (km-003) · (2) RISKAVSNITTET — formuleringar om leverantörer och beroenden mellan raderna (rs-05) · (3) NOTERNA — leverantörsskulder, åtaganden, kontraktstider och take-or-pay · (4) ANDRAS BERÄTTELSER — branschöversikter, konkurrenters och leverantörens egna redovisningar (km-026 vid ägarrelation) · EGEN TABELL: leverantör, inköpsandel, maktbalanskvot, bindningstid, omställningstid."
+          },
+          {
+            "type": "insight",
+            "content": "Frånvaron av leverantörstal är själv ett tal: en bransch där alla köper av samma ensamkälla har redan berättat vem som bär kedjan — läs konkurrentens riskavsnitt om din bolags tiger."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — påslagets och stoppets aritmetik",
+        "intro": "Beroendet blir tal i två händelser: priset höjs, eller volymen uteblir. Kapitlet räknar båda — och dubbelkällans pris som försäkring.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Påslagsexemplet: leverantören — ensam källan — höjer priset med 8,0 procent. Kostnadsökningen blir 405,6 gånger 0,080, det vill säga 32,4 miljoner kronor — och med ett rörelseresultat på 96,0 miljoner är det 33,8 procent av resultatet som försvinner av en enda leverantörs prisbeslut. Kan priserna inte höjas mot kunderna sjunker rörelseresultatet till 96,0 minus 32,4, det vill säga 63,6 miljoner — marginalen faller från 8,0 till 5,3 procent. Stoppexemplet: produktionen löper 48 veckor om året och ett avbrott hos ensamkällan stoppar allt i sex veckor — sex av fyrtioåtta är 12,5 procent av årsproduktionen, och på omsättningen 1 200,0 blir den förlorade intäkten 150,0 miljoner. Med en bidragsgrad på 30 procent försvinner täckning om 150,0 gånger 0,30, det vill säga 45,0 miljoner — 46,9 procent av årsresultatet, förlorat på sex veckor. Dubbelkällan som försäkring: att kvalificera en andra källa tar i exemplet 24 månader och 38,0 miljoner i engångskostnad; att driva den löpande kostar 3,0 procent mer på halva volymen — 202,8 gånger 0,030, det vill säga 6,1 miljoner per år. Ställ premien mot den förväntade stoppkostnaden: med en uppskattad sannolikhet på tio procent per år för ett sexveckorsstopp blir den förväntade kostnaden 0,10 gånger 45,0, det vill säga 4,5 miljoner per år. Premien 6,1 är alltså högre än det förväntade utfallet 4,5 — och ändå rimlig, av samma skäl som alla försäkringar: den förväntade kostnaden är ett genomsnitt, men stoppet träffar inte i genomsnitt utan vid ett enda tillfälle, och för bolag med tunn marginal kan det tillfället vara existentiellt. Detta är rs-01:s gamla läxa i ny skepnad: svängningen är inte förlusten — men den ensidiga koncentrationen gör svängningen till förlust."
+          },
+          {
+            "type": "tabell",
+            "content": "PÅSLAGET: 405,6 × 0,080 = 32,4 Mkr = 33,8 % av rörelseresultatet 96,0 · resultat efter påslag 96,0 − 32,4 = 63,6 Mkr, marginal 8,0 → 5,3 % · STOPPET: 6 av 48 veckor = 12,5 % av produktionen · förlorad intäkt 1 200,0 × 0,125 = 150,0 Mkr · förlorad täckning 150,0 × 0,30 = 45,0 Mkr = 46,9 % av årsresultatet · DUBBELKÄLLAN: kvalificering 38,0 Mkr engångs + 24 månader · löpande premie 202,8 × 0,030 = 6,1 Mkr per år · förväntad stoppkostnad 0,10 × 45,0 = 4,5 Mkr per år · slutsats: premien överstiger det förväntade utfallet — och köper ändå bort det existentiella."
+          },
+          {
+            "type": "insight",
+            "content": "Påslaget äter marginalen gradvis; stoppet äter årets resultat på sex veckor. Två olika fiender — och dubbelkällan är svaret på båda, prissatt som en försäkring: dyrare än det förväntade fallet, billigare än det värsta."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Leverantörsrisken kan räknas för snällt, spåras för ytligt och tryggas för tvärsäkert. Kapitlet går igenom de sex vanligaste fällorna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är den nominella dubbelkällan: två leverantörer på pappret som båda köper sin viktigaste insats från samma fabrik uppströms — koncentrationen står kvar, en rad längre bort. Fråga alltid var andra källans källa finns. Andra fällan är kvalificeringstidens underskattning: kontraktet kan ha sex månaders uppsägningstid medan en ny källa tar 24 månader att kvalificera — arton månader av glappet är oskyddade, och för dem finns ingen försäkring i exemplet. Tredje fällan är volymrabatten som lockbete: att samla allt hos en leverantör kan ge tre procent rabatt — på Vegas volym hos leverantören blir det 12,2 miljoner per år — men rabatten köper 52,0 procents koncentration; ställ alltid rabatten mot påslags- och stoppkostnaden från kapitel fyra. Fjärde fällan är att glömma leverantörens egen hälsa: leverantörsrisken är en kreditrisk uppströms — en leverantör med tunn balansräkning, hög skuld eller själv hög kundkoncentration kan försvinna av skäl som aldrig syns i Vegas rapport; läs leverantörens årsredovisning med st-01:s lins. Femte fällan är kontraktets konstruktion: ett indexkopplat leveransavtal flyttar prisrisken mellan köparen och säljaren, men skyddar bara om indexet matchar den faktiska kostnaden; valutasidan ägs av km-058 och rk-07 och ska bara flaggas här, inte mätas. Sjätte fällan är talet som saknas: eftersom ingen uppgiftsplikt kräver leverantörskoncentration på siffernivå lockas läsaren att tolka tystnad som spridning — tolka den i stället som en fråga till bolaget, och räkna med att svaret, när det kommer, är formulerat av den som har mest att vinna på en snäll läsning."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam rot: leverantörsrisken bor inte i det som redovisas utan i det som bara kan rekonstrueras. Dubbelkällans källa, kvalificeringens tid, rabattens pris, motpartens balansräkning, indexets matchning, tystnadens tolkning."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — leverantörsriskens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga avläsningen av inköpssidans beroende.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur stor del av inköpen bär den största leverantören — och de tre största tillsammans? Fråga två: hur stor är bolagets andel av leverantörens försäljning — är beroendet ömsesidigt låst eller ensidigt utsatt? Fråga tre: hur lång tid och vilken kostnad kräver en ny källa — kvalificering, verktyg, certifiering — och hur stort är glappet mot kontraktets uppsägningstid? Fråga fyra: vad kostar ett påslag på åtta procent i rörelseresultatet, vad kostar ett sexveckorsstopp i förlorad täckning — och vad kostar dubbelkällan per år som försäkring mot båda? Fråga fem: var står uppgifterna — riskavsnittet, noterna, kassaflödet — och vad tiger bolaget om? Den som besvarar de fem frågorna vet något som intäktsanalysen aldrig visar: hur lång kedjan är mellan bolaget och ett stopp. Detta är utbildning i att läsa och mäta beroendets struktur, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj två noterade tillverkande bolag och hämta deras senaste årsredovisningar. Bygg inköpsvolymen ur kostnadssidan och kassaflödet, läs riskavsnittets formuleringar om leverantörer med rs-05:s lins och samla noternas åtaganden. Uppskatta största leverantörens andel av inköpen — även som intervall — och sök leverantörens eller branschens uppgifter för en maktbalanskvot. Räkna påslagsexemplet med bolagets egna marginaler: vad kostar åtta procent hos den största leverantören i rörelseresultat? Räkna stoppkostnaden för sex veckors avbrott och ställ den mot en uppskattad dubbelkällapremie. Avsluta med en halvsida per bolag: är beroendet ömsesidigt eller ensidigt, och vilken av de sex fällorna är läsarens största osäkerhet? Upprepa om ett år — leverantörsstrukturen ändras långsamt, och förändringen är i sig en strategiavläsning."
+          },
+          {
+            "type": "insight",
+            "content": "rs-familjens karta har nu sju steg: svängningen, kunderna, samvariationen, matrisen, riskredovisningen, anatomin — och inköpssidan. Beroendet har två riktningar; den som bara mäter en läser halva bolaget."
+          }
+        ]
+      }
+    ]
+  },
   "mt-01-vad-ar-en-moat": {
     "slug": "mt-01-vad-ar-en-moat",
     "category": "MOAT",

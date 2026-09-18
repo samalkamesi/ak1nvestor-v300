@@ -1,0 +1,26 @@
+studio: auto s5-u1 rs-07 leverantörsrisken — RISK-familjens sjunde steg (omgång 17)
+
+Lärvägsdjup +1 kurs: rs-07-leverantorsrisken (Intermediär) — rs-02:s spegel:
+inköpskoncentrationen (52,0 % hos ensamkällan, tre största 82,0 %) och
+signaturidén maktbalanskvoten (beroendet i båda riktningarna: 60,1 %
+ömsesidigt låst mot 3,0 % ensidigt), påslagets genomsläpp (33,8 % av
+rörelseresultatet), stoppets täckningsförlust (46,9 % av årsresultatet på
+sex veckor) och dubbelkällan som försäkring (premie 6,1 mot förväntad
+kostnad 4,5 Mkr/år). Register 426→427 atomärt: karta, sökindex, speglar,
+siffror, llms ×2 (6+4), ai-mentor-register rebake med antal-vakten
+(408-trunkeringen fångad i försök 1, GRÖN i försök 2 — o16-fyndet lever),
+larvag-synk GRÖN 427=427=427.
+
+Front B GRÖN 14 PASS (nominering 90p med genererad varför-rad för fulläst
+RISK-läsare, växande nivåmatch +4). KVD GRÖN 47 PASS (round-trip, aritmetik
+20 kontroller oberoende omräknade + 31 signaturtal, 14 korslänkar
+registeräkta, juridikgrind 0 rådgivningsfraser + 0 lagrum + utbildnings-
+framing, språkgrind parsad text 0 fynd). tsc 0 via projektbinär. R2 orörd
+(kraverFas 0); data/blogg/ orörd; inget bygge (prod-synken äger).
+
+Kollisionsrace mot u2 (deras preliminära rs-07-anspråk landade under mitt
+fönster) löst enligt o16-presedens: min leverans var fullt verkställd —
+kollisionsnotis i data/vakten/ (gitignorad); deras modellrisk-pivotfil
+deras ägo, orörd och ej i denna commit.
+
+[fabrik]

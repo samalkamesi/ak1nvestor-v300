@@ -203272,6 +203272,174 @@
       }
     ]
   },
+  "tx-05-tillvaxtens-forsta-lasning": {
+    "slug": "tx-05-tillvaxtens-forsta-lasning",
+    "category": "TILLVÄXT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Tillväxtens första läsning — årtal, procent och tjocka filtar",
+    "summary": "TILLVÄXT-familjens startsteg i fördjupningsserien: vad tillväxt är, hur den räknas år mot år, och de tre första fällorna i läsningen. Kursens grundräkning är en enda intäktsrad: 100 miljoner kronor som växer till 110 är tio procents tillväxt, och nästa år till 121 är åter tio procent — men den sammanlagda tvåårsväxten är 21 procent, inte 20, för att andra årets procent räknas på ett större tal. Därpå sammansättningens aritmetik (roten ur 1,21 är 1,10 — samma tio procent per år bakvägen), volym- och prisdelarens separata vägar in i samma intäkt (110 enheter till 11 kronor ger 1 210: tio procents volym gånger tio procents pris), den nominella mot den reella läsningen där inflationens två procent gör att tio procent på papper är knappt åtta i köpkraft (1,10 delat med 1,02 lika med 1,078), och jämförelsekonsten — tillväxt mot bransch, mot inflation, mot sig själv år från år. Genomgående utbildning i att läsa och räkna, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Räkna tillväxt som procentuell förändring i intäkter år mot år: (110 minus 100) delat med 100 lika med 10 procent, och inse att två år à tio procent ger 21 procent sammanlagt — procent på olika baser går inte att addera. Räkna den årliga takten baklänges med roten (roten ur 1,21 är 1,10), dela en intäktsökning i volym och pris (1,10 gånger 1,10 lika med 1,21), räkna om nominell tillväxt till real med inflationen (1,10 delat med 1,02 lika med 1,078), och ställa de fyra jämförelsefrågorna — mot branschen, mot inflationen, mot bolaget själv, mot vinsten. Kursen är tx-seriens ingång: organisk mot förvärvad tillväxt, volym-pris-mix, tillväxtens värdeskapande och S-kurvan bygger vidare på grunderna.",
+    "why": "TILLVÄXT-familjens tx-serie bär fyra steg — organisk mot förvärvad tillväxt, volym-pris-mix (båda Intermediär), när skapar tillväxt värde och tillväxtens gränser (båda Avancerad) — men inget startsteg: serien börjar på mellannivå och förutsätter att den årliga procenten, bas-fallen och den reala läsningen redan sitter. Sond mot registrets 415 kurser: grundläggande tillväxträkning som eget ämne ger inga träffar — procenträkningen förekommer i varje kurs som verktyg men ingen kurs lär den, och familjens fyra befintliga kurser förutsätter den alla. Ämnet är familjens naturliga nybörjarbrygga av samma skäl som pris-och-värde är det för värderingen: det kräver bara en intäktsrad och de fyra räknesätten, och det förbereder exakt de frågor de övriga stegen fördjupar — var tillväxten kom ifrån (tx-01), vad den består av (tx-02), om den skapar värde (tx-03) och var den tar slut (tx-04). Inflationen som filtrikare har sin egen granne i grundserien (km-055) och realräntan i makron (ma-03), vilket gör kursen till samlingspunkten där tillväxtens tal möter pengarnas tidsvärde.",
+    "history": {
+      "origin": "Att mäta verksamhet i år mot år är lika gammalt som handeln själv: venetianska handelshus jämförde resornas utbyte år från år, och skatteböcker i medeltidens städer lät myndigheter se vilka rörelser som växte. Procentbegreppet gjorde jämförelsen portabel — en tillväxt på en tiondel kunde jämföras mellan en holländsk handelsman och en spansk, oavsett valör och storlek.",
+      "evolution": "När aktiemarknader växte fram blev tillväxttakt bolagens mest citerade egenskap, och järnvägsbolagens trafikrapporter på artonhundratalet gjorde årsserier till allmän läsning: antal resande, ton gods, intäkt per mil. Sammansatt tillväxt blev ett eget begrepp när analytiker började jämföra flerårsperioder — upptäckten att samma procentsats på växande bas ger en krökta kurva var lika mycket matematik som finans. Inflationsepoken under nittonhundratalet tillförde den sista delen: insikten att nominella procentsatser inte kan jämföras över decennier med olika penningvärde.",
+      "modern": "I dag publiceras tillväxttakter kvartalsvis och läsningen har blivit snabbare men inte enklare: valutaeffekter, förvärv och engångsposter gömmer sig i varje procentsiffra, och bolag presenterar gärna den version som ser bäst ut. Den som behärskar grundaritmetiken — bas, period, sammansättning, inflation — har ett skeptiskt verktyg som fungerar mot varje presentation."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Vad tillväxt är — mer sålt, räknat i kronor",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "År mot år — den enkla procenten och bas-fällan",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Två år eller tio — sammansättningens aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Nominellt mot reellt — inflationens tjocka filt",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — tillväxtens fyra frågor",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — tillväxt mot vad?",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Vad tillväxt är — mer sålt, räknat i kronor",
+        "minutes": 4,
+        "intro": "Familjens alla kurser handlar om tillväxt. Denna börjar med det enklaste: vad talet mäter och var det bor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tillväxt är att bolaget säljer mer — mätt i kronor. Förra året sålde bolaget för 100 miljoner kronor, i år för 110: det är tillväxt, och resten av kursen handlar om att läsa sådana tal rätt. Observera ordet kronor: en intäktsökning kan komma från fler sålda enheter, högre priser eller båda — kapitel i seriens fortsättning (tx-02) plockar isär det. Här räknas kronorna som de kommer, i resultaträkningens topp (bk-02). Tillväxt är också ettårs- eller flerårstal: en kvartalsvist publicerad procent är bara en växande del av en helårssiffra, och ju kortare period, desto mer säsong och brus i talet — kvartalssiffrorna äger nyheterna, men tillväxtläsningen bor i hela år."
+          },
+          {
+            "type": "definition",
+            "content": "Tillväxt (intäktstillväxt) — den procentuella förändringen i bolagets intäkter mellan två perioder, räknad som skillnaden dividerat med den äldre perioden. Grundmåttet för hur verksamheten expanderar, åtskilt från hur lönsam expansionen är."
+          },
+          {
+            "type": "insight",
+            "content": "Intäktstillväxt säger bara att bolaget sålde mer — inte att det tjänade mer, och inte var ökningen kom ifrån. De två frågorna (lönsamhet och källa) är exakt vad seriens senare steg äger; första läsningens konst är att inte tro mer än talet säger."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "År mot år — den enkla procenten och bas-fällan",
+        "minutes": 4,
+        "intro": "Grundräkningen tar tio sekunder. Fällan tar längre tid att lära: procenten beror på basen den räknas på.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räkningen: intäkterna gick från 100 till 110 miljoner kronor. Skillnaden är 10, dividerat med basen 100 ger 10 procent — årets tillväxt. Nästa år: från 110 till 121. Skillnaden 11, dividerat med 110, ger åter 10 procent. Men observera vad som hänt med de årliga beloppen: första året var tillväxten 10 miljoner, andra året 11 miljoner — samma procentsats, större kronor, för att basen växt. Detta är bas-fällan, första läsningens vanligaste misstag: att addera procentsatser från olika baser. Tio procent ett år och tio procent nästa är inte tjugo procent sammanlagt — det är 21, vilket är nästa kapitel. Omvända fällan gäller vid nedgång: från 121 till 110 är minus 9,1 procent (11 dividerat med 121) — inte minus 10, fast beloppet är samma elva miljoner."
+          },
+          {
+            "type": "tabell",
+            "content": "Övergång | Belopp (Mkr) | Räkning | Procent\n100 → 110 | +10 | 10 av 100 | +10,0 procent\n110 → 121 | +11 | 11 av 110 | +10,0 procent\n100 → 121 | +21 | 21 av 100 | +21,0 procent\n121 → 110 | −11 | −11 av 121 | −9,1 procent"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens sista rad är den som överraskar flest: vägen ner från 121 till 110 är inte tio procent nedgång utan 9,1 — procentsatser är alltid para procent av något, och det något är det äldre av de två talen. Fråga alltid: av vilken bas?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Två år eller tio — sammansättningens aritmetik",
+        "minutes": 4,
+        "intro": "När åren blir fler än två växer kurvan. Sammansatt tillväxt är konsten att räkna takten rakt genom kröken.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Två år à tio procent: 100 växer till 110, sedan till 121 — sammanlagt 21 procent. Om någon avväger hellre den årliga takten ur ett ändtal räknas den bakvägen med en rot: 121 dividerat med 100 är 1,21; roten ur 1,21 är 1,10; alltså tio procent per år. Tiotalet fungerar likadant: en bolagsbeskrivning som säger att intäkterna fördubblades på sju år bär en årlig takt på sjunde roten ur 2 — ungefär 1,104, alltså knappt tio och en halv procent per år. Sammansättningens mekanik är alltså dubbelriktad: multiplicera takten framåt för att se sluttalet, dra roten bakåt för att se takten. Volym och pris följer samma multiplikationsregel inuti ett och samma år: säljs 110 enheter i stället för 100 till 11 kronor i stället för 10, blir intäkten 1 210 mot 1 000 — 1,10 gånger 1,10 lika med 1,21, alltså tio procents volymtillväxt och tio procents prisökning som tillsammans ger 21 procent, exakt som två års ensam tillväxt."
+          },
+          {
+            "type": "text",
+            "content": "Ännu en följd av aritmetiken: sammansatt tillväxt är känslig i ändarna. Ett enda dåligt år lägger sig som en tung sten i serien — 100, 110, 99, 109 visar tre tillväxtår och ett fall, men sluttalet 109 mot starttalet 100 är knappt nio procent på tre år, omkring tre procent per år. Det är skälet till att flerårstakter alltid ska läsas tillsammans med själva serien, inte bara som ett tal."
+          },
+          {
+            "type": "insight",
+            "content": "Sammansättningens budskap är ödmjukhet i båda riktningarna: höga takter blir orimliga snabbt om de extrapoleras (tio procent i tio år fördubblar intäkterna; i tjugo år fyrdubblas de), och medeltakt över perioder med kraftiga svängar säger föga om något enskilt år. Takten är en sammanfattning, serien är historien."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Nominellt mot reellt — inflationens tjocka filt",
+        "minutes": 4,
+        "intro": "Alla hittills räknade procent står i dåtidens och nuets kronor. Mellan dem ligger inflationen som ett filter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolaget växer tio procent, och inflationen är två procent. Hur mycket växte verksamheten egentligen? Räkningen: de nya kronorna delas med prisnivåns förändring — 1,10 dividerat med 1,02 är 1,078, alltså knappt sju komma åtta procent i köpkraft. Filten är tjock på långa serier: vid tio procent nominell tillväxt och två procents inflation under ett decennium blir den reala takten omkring sju komma åtta procent per år, vilket i sluttalet betyder att av den fördubblade intäkten (1,10 upphöjt till tio är omkring 2,59) bara drygt fördubblingen i köpkraft återstår (1,078 upphöjt till tio är omkring 2,12). Lägg märke till att prisökningar kan sitta inuti intäktstillväxten: ett bolag som höjer priserna med inflationen och inte säljer en enda enhet mer växer nominellt — men inte alls i volym. Det är skiljelinjen mellan de två motorerna i tx-02, och skälet till att den första läsningen alltid ska ställa frågan hur mycket av procenten som är pengar och hur mycket som är verksamhet."
+          },
+          {
+            "type": "text",
+            "content": "Praktiken: jämför aldrig tioårsperioder med olika inflation utan att räkna om — sjuttiotalets högsta nominella tillväxttal är delvis pengarnas försvagning, inte näringslivets. För den som vill gå djupare i pengars tidsvärde finns realräntekursen (ma-03) och inflationens egen grundkurs (km-055); här räcker divisionen och medvetenheten om var filtret sitter."
+          },
+          {
+            "type": "insight",
+            "content": "Nominell tillväxt är vad redovisningen visar, real tillväxt vad verksamheten gjorde. Skillnaden är aldrig akademisk på decennier — den är skillnaden mellan att fördubbla kronor och att fördubbla vad kronorna köper."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — tillväxtens fyra frågor",
+        "minutes": 4,
+        "intro": "Grundaritmetiken sätter sig genom att räknas på riktiga tal. Uppgiften är ett papper, en årsredovisning och fyra frågor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "De fyra frågorna: (1) Hur mycket? — räkna intäktsprocenten år mot år för tre år i rad. (2) Varifrån? — läs i förvaltningsberättelsen om ökningen var organisk eller kommit genom förvärv, och om den syns i volym eller pris om det framgår. (3) Mot vad? — ställ procentsiffran mot inflationen (real läsning) och mot branschens eller indexets tillväxt om den publiceras. (4) I vilken takt? — dra roten ur totalförändringen för att få den årliga takten, och jämför den med de enskilda årens procent: avviker takten mycket från åren, beror serien på ett exceptionellt år. Frågorna är medvetet desamma som seriens fortsättningskurser fördjupar — tx-01 äger varifrån-frågans hela teknik, tx-02 volym-pris-mix, tx-04 takternas gränser — så övningen är samtidigt en karta över vad nästa steg ger."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj ett bolag du följer och hämta intäktsraden för fyra räkneår ur årsredovisningarna (bk-02 bär raden). Räkna procenten för vart och ett av de tre övergångarna, sedan totalen och den årliga takten (roten ur totalfaktorn). Räkna om sista årets procent till real tillväxt med årets inflation. Avsluta med en mening per fråga: hur mycket, varifrån, mot vad, i vilken takt. Spara pappret — om ett år kan övningen göras om och de fyra svaren jämföras år mot år, vilket är början på en tillväxthistoria i stället för en tillväxtbild."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — tillväxt mot vad?",
+        "minutes": 4,
+        "intro": "En procentsiffra i sig är inget betyg. Den blir information först i jämförelsen — och valet av jämförelse är läsningens konst.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre jämförelser hör ihop. Mot inflationen: tillväxt under prisökningstakten betyder att verksamheten krympte i köpkraft även om kronorna blev fler — real läsning, kapitel fyra. Mot branschen: en låg procentsiffra ser stark ut om grenen som helhet växte långsammare, och en hög ser svag om grenen växte fortare — sektorkursens tre frågor (se-16) bygger vidare på precis den jämförelsen. Mot bolaget själv: seriens egna tidigare år är den ärligaste baslinjen, för den frågar om något förändrats i verksamheten snarare än om nivån är hög eller låg. Och den fjärde, avgörande frågan som serien slutar hos: växte vinsten med intäkterna? En intäktsökning utan vinstspår är volym utan marginal — värdemåttens kurs (tx-03) äger hela den frågan, och fram till dess räcker konstaterandet: tillväxt är ett mått på rörelsens storlek, inte dess värde."
+          },
+          {
+            "type": "insight",
+            "content": "Första läsningens hela konst är att byta fråga från hur mycket till mot vad — och att veta att svaret alltid består av två delar: procentsiffran och basen den räknades på. Den som bär med sig de två delarna genom alla seriens kurser har startsteget där det ska sitta."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om tillväxt som berättelsen om bolag som blir större i något de är bra på — och hans varning för berättelser vars procentsiffror växer snabbare än verksamheten bakom dem är kursens fjärde fråga i förväg. Lynch påminde också om att en stadig måttlig takt som får pågå i decennier slår en dramatisk som tar slut om två år — sammansättningens aritmetik i berättad form.",
+    "grahamSection": "Benjamin Graham var skeptisk mot att betala för tillväxt som extrapolerad kurva: han påpekade att prognoser om framtida takter är det osäkraste tal en analys kan bära, och att medeltakter över långa perioder döljer båda ändarna. Hans inställning att tillväxt har värde bara i den mån den blir kassaflöde pekar mot kursens sista konst — frågan om vinsten följde intäkten.",
+    "ak1Section": "I AK1A:s metodik är intäktsserierna med årliga steg och CAGR-fält centrala i bolagsdata: kursens bas- och rot-räkning är exakt de första stegen i den läsningen. I AKM2-traditionen kan tillväxttakter föras som scenariovariabler mellan grenarna — en lägre takt pressar de långa horisonterna — och den reala omräkningen speglar husets krav på att tal från olika prisnivåer aldrig jämförs utan omräkning, vilket dokumenteras i vidarekurserna om realräntan och sektoranalysen."
+  },
   "ks-01-kapitalstruktur-grunder": {
     "slug": "ks-01-kapitalstruktur-grunder",
     "category": "KAPITALSTRUKTUR",
@@ -208292,6 +208460,174 @@
       }
     ]
   },
+  "vr-05-pris-och-varde": {
+    "slug": "vr-05-pris-och-varde",
+    "category": "VÄRDERING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Pris och värde — aktiens två tal och första jämförelsen",
+    "summary": "VÄRDERING-familjens startsteg i fördjupningsserien: skillnaden mellan vad en aktie kostar och vad den kan vara värd, och den första enkla jämförelsen mellan dem. Kursen lär de två talen — marknadspriset som noteras varje sekund och det uppskattade värdet som räknas fram med papper och penna — och visar hur ett enda nyckeltal, priset per intjänad krona, gör fyra bolag jämförbara på en rad: kurs 100 med vinst 5 kronor per aktie kostar 20 kronor per intjänad krona, kurs 50 med samma vinst kostar 10. Därpå de tre vanligaste förklaringarna till varför kursen lämnar det uppskattade värdet, säkerhetsmarginalens grundtanke som räknas i procent av värdet (uppskattat värde 80 mot kurs 50 ger marginal 37,5 procent), och mästarskapets fyra frågor som måste besvaras innan någon jämförelse är meningsfull. Genomgående utbildning i att förstå mekanismen, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Skilja aktiens två tal åt — kursen (ett faktum som noteras) och värdet (en uppskattning som räknas) — och använda det första verktyget som binder dem: priset per intjänad krona. Räkna fyra bolags nyckeltal på en rad (kurs delat med vinst per aktie), förklara varför samma bolag kan handlas till olika pris per krona, uppskatta ett grovt värde med en multipel (vinst 5 gånger multipel 12 ger 60) och räkna säkerhetsmarginalen som procent av det uppskattade värdet. Känna igen de fyra frågorna — samma definition, samma räkneår, samma valuta, samma tillväxtförväntan — som avgör om en jämförelse över huvud taget håller. Detta är vr-seriens ingång: multipelns anatomi och avkastningens tre källor fortsätter där kursen slutar.",
+    "why": "VÄRDERING-familjens vr-serie bär fyra steg — multipelgapet (Avancerad), normaliserade multipler (Avancerad), multipelns anatomi (Intermediär) och avkastningens tre källor (Intermediär) — men inget startsteg: den som vill börja på familjens egen stege möter direkt kedjor som förutsätter att skillnaden mellan kurs och värde redan sitter i ryggmärgen. Sond mot registrets 414 kurser: kurs-och-värde-jämförelsen som första verktyg finns i närliggande form i multipelkurserna men alltid på högre nivå, och grundseriens bokföringskurser äger vinsten som begrepp utan att någonsin ställa den mot kursen. Pris mot värde är dessutom familjens mest handgripliga nybörjarämne: det kräver bara division och tanken på två bolag, och det binder samman resultaträkningens vinst (bk-02), aktiesidans tal (am-03) och beteendefinansens humör (bf-01) till ett enda jämförelsebord — grunden som vr-01 till vr-04 bygger vidare på.",
+    "history": {
+      "origin": "Skillnaden mellan vad en tillgång kostar och vad den är värd är äldre än någon värderingsteori: på Amsterdams börs på sextonhundratalet noterades aktier till priser som svängde kraftigt medan bolagens verksamheter stod stilla, och köpmän lärde sig genom förluster att noteringen och värdet inte är samma tal. Grunderna till den skrivna distinktionen lades i tiden kring sekelskiftet 1900, när finanskrascher väckte frågan om vad en aktie egentligen borde kosta.",
+      "evolution": "Benjamin Graham och David Dodds lärobok om värdepappersanalys från 1934 formaliserade hantverket: det inneboende värdet som en uppskattning, marginalen mellan värde och pris som skydd mot fel, och jämförelsen mellan lika bolag som metod. Efterkrigstidens fondväsende och den elektroniska börsens kurser gjorde priserna alltmer tillgängliga medan värderingen förblev handarbete — en asymmetri som gjort kurserna högljudda och uppskattningarna tysta ända sedan dess.",
+      "modern": "I dag nås kurser i realtid på varje telefon medan värdet fortfarande räknas för hand: den som lär sig divisionen kurs delat med vinst per aktie har ett första verktyg som fungerade 1934 och fungerar nu. Indexfondernas era har dessutom gjort jämförelsen extra lärerik — där köps hela korgar till samlade kursen, vilket gör pris mot värde till en fråga på både aktie- och marknadsnivå."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Två tal för en aktie — kursen och värdet",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Priset per intjänad krona — första jämförelsen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Varför kursen lämnar värdet — humöret och nyheterna",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Säkerhetsmarginalen — rummet för att ha fel",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — fem minuter med två bolag",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — frågorna innan jämförelsen",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Två tal för en aktie — kursen och värdet",
+        "minutes": 4,
+        "intro": "Varje aktie bär två tal som lätt förväxlas: vad den kostar just nu och vad den kan vara värd. Kursen handlar om marknaden, värdet om bolaget.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Öppna en aktiesida och det första du ser är kursen — till exempel 100 kronor. Det talet är ett faktum: så mycket betalades för aktien i den senaste handeln. Bredvid den lever ett helt annat slags tal: värdet, en uppskattning av vad bolagets framtida pengar kan vara värde idag. Kursen noteras av marknaden, värdet räknas av den som analyserar — och hela värderingsämnet börjar i att hålla de två isär. Säg dem högt för varje aktie du möter: vad kostar den, och vad kan den vara värd. Frågan är studieobjekt, inte handlingsinstruktion."
+          },
+          {
+            "type": "definition",
+            "content": "Marknadspris (kurs) — det senaste priset som betalades för aktien i handeln. Ett observerat faktum som ändras varje handelsdag. Värde (uppskattat) — analysens egen beräkning av vad bolagets framtida kassaflöden motiverar för pris idag. En uppskattning som skiljer sig från person till person."
+          },
+          {
+            "type": "insight",
+            "content": "Kursen är ett kollektivt faktum, värdet en enskild uppskattning. Blanda ihop dem och varje sväng i kursen känns som ny information om bolaget — men en del svängar är bara marknadens humör på väg mellan två uppskattningar."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Priset per intjänad krona — första jämförelsen",
+        "minutes": 4,
+        "intro": "För att jämföra pris mot värde behövs ett gemensamt mått. Det första och enklaste: vad kostar en krona av bolagets vinst?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta bolag A med kurs 100 kronor och vinst 5 kronor per aktie: divisionen 100 delat med 5 ger 20, vilket läses som att varje intjänad krona kostar 20 kronor i kurs. Bolag B har kurs 50 kronor och samma vinst 5 kronor per aktie: 50 delat med 5 ger 10 — här kostar en intjänad krona 10 kronor. Samma valuta, samma mått, två olika priser per vinstkrona. Tabellen nedan gör fyra bolag jämförbara på en enda rad, och det är vr-seriens första verktyg: kursen översatt till pris per enhet något."
+          },
+          {
+            "type": "tabell",
+            "content": "Bolag | Kurs (kr) | Vinst per aktie (kr) | Pris per intjänad krona\nA | 100 | 5 | 20\nB | 50 | 5 | 10\nC | 40 | 2 | 20\nD | 90 | 6 | 15"
+          },
+          {
+            "type": "insight",
+            "content": "Talet 20 för A och C visar verktygets begränsning direkt: två bolag med olika kurs och olika vinst kan bära exakt samma pris per krona. Jämförelsen blir en fråga, inte en dom — varför handlas B till hälften av A per vinstkrona? Svaret finns aldrig i talet själv, utan i skillnaderna mellan bolagen."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Varför kursen lämnar värdet — humöret och nyheterna",
+        "minutes": 4,
+        "intro": "Om kursen och det uppskattade värdet alltid följdes vore värdering enkel. De gör de inte — och skälen är lärerika i sig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolag B handlas till 10 kronor per vinstkrona medan A handlas till 20, trots likadana vinst per aktie. Tre vanliga förklaringar: För det första tillväxtförväntan — marknaden kan tro att A:s vinst växer snabbare än B:s, och betalar idag för morgondagens kronor. För det andra risk — B kan bära mer skuld, ojämnare intäkter eller en osäker orderbok, vilket gör varje krona mindre trygg. För det tredje humör och nyheter — en nyligen svart rubrik om B kan pressa kursen utan att något i räkenskaperna ändrats. Betrakta det som olika hypoteser att pröva i bolagens rapporter, inte som ledtrådar om vad du ska göra med dina pengar."
+          },
+          {
+            "type": "text",
+            "content": "Att skilja förklaringarna åt är analytikerhantverk: tillväxt syns i historiens tillväxttakt och prognoser, risk i balansräkning och bred intäktsbas, humör i hur länge kursavvikelsen levt och vad marknaden skrivit om den. Djupare analys av varje spår finns i seriens fortsättning — multipelgapet rör just skillnaden mellan lika bolag, och beteendefinansen äger humörets mekanik."
+          },
+          {
+            "type": "insight",
+            "content": "Kursens avstånd till det egna värdet är inte ett fel som väntar på att rättas — det är information om marknadens samlade gissning. Uppgiften är att förstå vilken gissning kursen gör, inte att gissa bättre om marknadens nästa humör."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Säkerhetsmarginalen — rummet för att ha fel",
+        "minutes": 4,
+        "intro": "Eftersom värdet är en uppskattning blir den viktigaste frågan: hur mycket får jag ha fel? Svaret räknas som marginal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Säg att du uppskattar bolag B:s värde med en enkel regel: vinst per aktie 5 kronor gånger en multipel som du motiverat ur branschens historia — 12. Värdet blir 5 gånger 12 lika med 60 kronor. Kursen är 50. Marginalen är skillnaden i procent av värdet: 60 minus 50 lika med 10, delat med 60, lika med 16,7 procent. Byt multipeln till 16 och värdet blir 80, marginalen 30 delat med 80 lika med 37,5 procent. Tanken är lika gammal som värderingslitteraturen: eftersom uppskattningen aldrig är exakt vill den som analyserar ha avstånd mellan sitt tal och kursen — inte för att kursen ska stiga, utan för att analysens felmarginal ska rymmas inom avståndet."
+          },
+          {
+            "type": "tabell",
+            "content": "Multipel-antagande | Uppskattat värde (kr) | Kurs (kr) | Marginal mot värdet\n10 | 50 | 50 | 0,0 procent\n12 | 60 | 50 | 16,7 procent\n14 | 70 | 50 | 28,6 procent\n16 | 80 | 50 | 37,5 procent"
+          },
+          {
+            "type": "insight",
+            "content": "Notera tabellens första rad: multipel 10 ger värde exakt lika med kursen — marginal noll. Varje rad i tabellen är samma bolag med samma vinst; det enda som rör sig är antagandet. Marginalen mäter inte bolaget, den mäter analysens utsatthet för antagandet."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — fem minuter med två bolag",
+        "minutes": 4,
+        "intro": "Verktyget sätter sig när du räknar på riktiga tal. Uppgiften tar fem minuter och kräver två aktiesidor och en miniräknare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Välj två bolag i samma bransch — det gör jämförelsen rättvisare eftersom risk och tillväxt ligger närmare varandra. Hämta tre tal per bolag: senaste kurs, senaste helårs vinst per aktie, och bolagets eget kapital per aktie om du vill gå ett steg längre. Räkna först pris per intjänad krona för båda. Räkna sedan ett grovt värde för vardera bolaget: vinst per aktie gånger din motiverade multipel. Jämför till sist marginalerna mot kursen."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör tabellen från kapitel 2 med dina två bolag: kurs, vinst per aktie, pris per intjänad krona. Uppskatta sedan ett värde med två olika multiplar — en försiktig och en generös — och räkna marginalen mot kursen för båda. Avsluta med att skriva en mening per bolag om varför priserna per vinstkrona skiljer sig: tillväxt, risk eller humör. Spara pappret; när nästa årsredovisning kommer kan du göra om övningen och se vad som rörde sig — det är första steget mot multipelns anatomi i vr-03."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — frågorna innan jämförelsen",
+        "minutes": 4,
+        "intro": "En jämförelse mellan tal som inte mäter samma sak är värre än ingen jämförelse. Fyra frågor avgör om verktyget får användas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: samma definition av vinst? Bolag kan redovisa vinst med olika mått — rapporterad, justerad, före engångsposter — och blandas måtten blir divisionen meningslös. Fråga två: samma räkneår? En kurs från idag delad med en vinst från fyra år tillbaka jämför två olika bolagsepoker. Fråga tre: samma valuta? En vinst i dollar mot en kurs i kronor ger ett tal utan enhet. Fråga fyra: samma tillväxtförväntan? Priset per vinstkrona säger inget om vinstens väntade väg — två likadana tal kan bära helt olika framtid. Frågarna kan alla besvaras ur bolagens egna rapporter, och det är också halva poängen: värderingen börjar i bokföringen, inte i kursgrafen."
+          },
+          {
+            "type": "insight",
+            "content": "De fyra frågorna är kursens egentliga examination: den som ställer dem före varje jämförelse har redan lämnat nybörjarstadiets vanligaste fallgrop — att läsa ett nyckeltal som en siffra i stället för en påståendesats om två bolag. Seriens nästa steg, multipelns anatomi, plockar isär exakt vad satsen innehåller."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch skrev om aktier som bolag man förstår innan man räknar, och hans ständiga jämförelser — vad bolaget tjänar mot vad det kostar — är kursens division i berättad form. Lynch påminde också om att kursens svängar oftast säger mer om marknadens humör än om bolagets verksamhet, vilket är kapitel tre i en mening: skilj nyheten om bolaget från rörelsen i kursen.",
+    "grahamSection": "Benjamin Grahams marginal mellan pris och värde är kapitel fyra nästan ordagrant: uppskatta värdet grovt, kräv avstånd till kursen, och låt avståndet bära felet i uppskattningen. Grahams ståndpunkt att marknaden är en partner som erbjuder priser dagligen — som man kan tacka nej till — gör de två talen till två roller: marknadens bud och analysens svar.",
+    "ak1Section": "I AK1A:s metodik möter kursen motorerna tidigt: pris per intjänad krona är ett av de första tal som läses av i bolagsuniversumsdata, och kursens fyra frågor motsvarar husets krav på källtalsparitet innan något nyckeltal jämförs. I AKM2-traditionen används multipelantaganden som scenariokolumner — kursens två multiplar (försiktig och generös) är samma tankesätt i miniatyr, vilket dokumenteras i vidarekurserna om multipelns anatomi (vr-03) och normaliserade multipler (vr-02)."
+  },
   "ib-01-vad-ar-ett-investmentbolag": {
     "slug": "ib-01-vad-ar-ett-investmentbolag",
     "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
@@ -208455,6 +208791,182 @@
     "lynchSection": "Peter Lynch gillade att tala om asset plays — bolag där tillgångarna i en vaknande marknad blev värda mer än hela bolaget handlades till. Investmentbolaget är asset play i ren form: en lista med prislappar under en enda kurs. Lynchen varnade samtidigt för att vara för tidig — värdet kan ligga och vänta — och menade att den som inte förstår varför rabatten finns heller inte vet vad som skulle få den att försvinna. Kursens rabattfrågor är hans frågor, omformulerade för nybörjaren.",
     "grahamSection": "Benjamin Graham byggde sitt hantverk på att köpa tillgångar billigare än marknadens pris — net-nets, bolag under likvidationsvärdet av sina tillgångar, var hans mest extrema form. Investmentbolagets substansrabatt är samma tankegång institutionaliserad: en mätbar differens mellan pris och tillgångsvärde. Men Graham krävde också en säkerhetsmarginal som inte beror av att någon annan vaknar — rabatten måste vara så bred att den bär tålamodet. En rabatt utan förståelse är i Grahams ögon ingen marginal alls.",
     "ak1Section": "I AK1A:s metodik är den här kursen PRIVATE EQUITY & INVESTMENTBOLAG-familjens grund: km-067 fördjupar NAV-rabatten och holding company discount, km-068 Wallenberg-sfären och det aktiva ägandet. Kursen ger nybörjartrappans första steg — substansräkningen i ren aritmetik och innehavsförteckningens läsplatser — som de båda nästa steg bygger på. I AKM2:s dimensioner övar den värderings- och stabilitetsblicken: var sitter värdet, vilken struktur bär det, och vad prissätter kursens avstånd till substansen."
+  },
+  "ib-02-substansens-kvalitet": {
+    "slug": "ib-02-substansens-kvalitet",
+    "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Substansens kvalitet — att granska vad substanssiffran innehåller",
+    "summary": "Två investmentbolag med samma substanssiffra kan bära olika säkerhet i den siffran: noterat mot onoterat, värdets ålder, ägandelinjer, latent skatt och nettoskuld — granskningen som gör substansen läsbar på riktigt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Skilja på substansens poster efter prissättningsmaskin: noterade innehav prissätts varje sekund, onoterade vid transaktioner och beslut · Räkna fram förvaltarvärdets andel av substansen — hur stor del av siffran som vilar på egna värderingar · Fråga efter värdets ålder: när prissattes de onoterade posterna senast, och av utomstående eller internt · Räkna på ägandelinjernas bråkaritmetik — substansposten är alltid andel gånger värde · Justera bruttosubstansen med latent skatt och nettoskuld · Ställa substanskvalitetens fem frågor mot en verklig delårsrapport och gränsen mot grannkurserna (km-067 rabattläsningen, km-012 summan av delarna).",
+    "why": "Substansvärdesräkningen från ib-01 ser ut att ge ett exakt svar: summorna är tal, talen står i rapporten, och kvartalsredovisningen trycker en siffra per aktie. Men två investmentbolag med identisk substans kan bära helt olika säkerhet i den siffran. Skillnaden sitter inte i siffrans storlek utan i posternas kvalitet: hur mycket som prissatts av en levande marknad, hur färska de egna värderingarna är, vilka ägandelinjer som står bakom raderna och vilka tysta poster — latent skatt, kontant, skuld — som skiljer brutto från netto. Den som inte kan granska substansen inifrån har bara halva verktyget: rabatten mot substansen (km-067) säger ingenting om vad substansen själv är värd. Kursen ger granskningen: fyra frågor till posterna och en nettoräkning — samma aritmetik som ib-01, men riktad inåt mot underlaget i stället för utåt mot kursen.",
+    "history": {
+      "origin": "När investmentbolagen växte fram som egna börsföretag blev substansräkningen deras redovisningssjälvklara kärna: innehaven listades, skulderna drogs ifrån, och summan delades på aktierna. Under svenskt traditionellt regelverk värderades onoterade innehav ofta till anskaffningsvärden — substansen blev stabil men trög, och läsarna lärde sig att en siffra kunde vara både ärlig och gammal.",
+      "evolution": "Med internationella redovisningsprinciper och en växande transaktionsmarknad för onoterade bolag försköts praxis mot markerade värden: senaste genomförda transaktion, nedskrivningar vid bestående värdefall, multiplar på underliggande resultat. Värderingsåldern blev därmed en mätbar storhet — en post kan dateras, och gapet mellan två avläsningar kan räknas. Samtidigt visade forskningen kring noterade holdingbolag att marknadens förtroende för substansen samvarierade med hur mycket av den som gick att kontrollera utifrån.",
+      "modern": "I dag redovisar de flesta svenska investmentbolag substans kvartalsvis, med noterade innehav till aktuellt börsvärde och onoterade enligt angivna värderingsprinciper. Efter svagare transaktionsår syns mekaniken tydligt: äldre värden ligger kvar i rapporten medan världen utanför har rört sig, och frågan om värdets ålder har gått från kuriosa till rutin. Den moderna läsningen är därför tvådelad: vad står det i substansen, och hur väl står det sig?"
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Från siffra till underlag — de två systrarna",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Noterat i substansen — börsens prisättare inuti NAV",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Onoterat i substansen — värdet utan kurs och dess ålder",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Ägandelinjer och minoritet — bråkets aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "De tysta posterna — latent skatt, kontant och skuld",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — substanskvalitetens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Från siffra till underlag — de två systrarna",
+        "intro": "Två påhittade investmentbolag, samma substanssiffra — och två helt olika underlag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Möt de två systrarna i kursens genomgående exempel, båda påhittade. Svea Holding AB redovisar substansen 100 miljoner kronor: noterade innehav till börsvärde 70, onoterade innehav 25, kontanter 15, skulder minus 10 — summeringen 70 + 25 + 15 − 10 = 100 är exakt den räkning ib-01 kapitel två lär ut. Norr Holding AB redovisar samma substans 100: noterat 20, onoterat 75, kontant 15, skuld minus 10 — samma summa, samma aritmetik.\n\nSkillnaden sitter i vad summorna är gjorda av. Sveas tal domineras av noterade innehav: poster som börsen prissätter varje sekund med tusentals köpare och säljare. Norrs domineras av onoterade: poster som förvaltaren själv har värderat vid transaktioner, beslut eller genom nedskrivningsprövningar. Kalla andelen av substansen som vilar på egna värderingar för förvaltarvärdet: Svea bär 25 av 100 — 25 procent — medan Norr bär 75 av 100 — 75 procent. Samma siffra, tre gånger så mycket omdöme i den ena.\n\nDetta är kursens arbetsredskap: substanskvalitet. Frågan till en substanssiffra är aldrig bara hur stor den är, utan av vad den är sammansatt — hur mycket som är prissatt av en marknad med många deltagare, hur mycket som är uppskattat i efterhand av få. De kommande kapitlen går igenom posterna en i taget: det noterade, det onoterade, ägandelinjerna och de tysta posterna."
+          },
+          {
+            "type": "definition",
+            "content": "Substanskvalitet: hur stor andel av ett investmentbolags substansvärde som är prissatt av en levande marknad (noterade innehav, kontanter) respektive uppskattat genom egna värderingar (onoterade innehav) — och hur färska de senare värderingarna är."
+          },
+          {
+            "type": "tabell",
+            "content": "SYSTRARNA — SAMMA SUBSTANS, OLIKA UNDERLAG: | Post | Svea Holding | Norr Holding | — | Noterade innehav (börsvärde) | 70 | 20 | — | Onoterade innehav (värderade) | 25 | 75 | — | Kontanter | 15 | 15 | — | Skulder | −10 | −10 | — | Substansvärde | 100 | 100 | — | Varav förvaltarvärderat | 25 (25 procent) | 75 (75 procent) |"
+          },
+          {
+            "type": "insight",
+            "content": "70 + 25 + 15 − 10 = 100 och 20 + 75 + 15 − 10 = 100: identiska substanser i storlek, olika i bärighet. Sveas siffra förnyas av börsen varje sekund; Norrs till tre fjärdedelar av egna värderingar. Frågan till substansen är av vad — inte bara hur mycket."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Noterat i substansen — börsens prisättare inuti NAV",
+        "intro": "Noterade innehav gör substansen levande: kursrörelserna passerar rakt igenom den.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sveas största post är 30 procent av det noterade Verkstadsbolaget AB, som börsen värderar till totalt 40 miljoner. Substansposten blir ägandelinjen gånger börsvärdet: 30 procent av 40 = 12. Nästa kvartal har underliggande aktie stigit 10 procent, bolaget värderas nu till 44 — och posten har blivit 44 gånger 0,30 = 13,2. Substansen har vuxit med 1,2 miljoner utan att förvaltaren gjort ett enda aktivt beslut: mekaniken är en genomströmningskanal från börsen in i redovisningen.\n\nDet har tre konsekvenser för läsningen. För det första svänger kvartalssubstansen med börsen — en fallande substans i en fallande marknad är inte detsamma som förstört värde, och en stigande i en stigande är inte bevis på skicklighet. För det andra ska avkastningen i det noterade lagret läsas mot sin indexbild: vad gjorde marknaden i stort under perioden? För det tredje är posten reellt realiserbar i princip till siffran — det finns en orderbok bakom varje krona — även om stora ägarblock i praktiken handlas med hänsyn till likviditet och prisverkningar (am-01 äger spreadens mekanik, am-03 läsningen av kurssidan).\n\nGränsen mot värderingsfamiljen: att avgöra om underliggande bolag är bra prissatt — om multipeln 40-delat på vinsten är hög eller låg — ägs av vr-01 och v05. Här räcker insikten att posten är börsens, inte förvaltarens: priset förnyas av andra, och det är just därför posten bär hög substanskvalitet."
+          },
+          {
+            "type": "insight",
+            "content": "30 procent av 40 = 12; underliggande plus 10 procent ger 44 gånger 0,30 = 13,2. Noterade innehav gör substansen levande — börsens rörelser passerar rakt igenom, och äran eller skulden för det lagret tillhör marknaden, inte förvaltaren."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Onoterat i substansen — värdet utan kurs och dess ålder",
+        "intro": "Onoterade poster prissätts vid transaktioner och beslut — och mellan dem åldras värdet i tysthet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Norr har 75 i onoterade innehav — substansens största och känsligaste block. Ett onoterat bolag har ingen orderbok som prissätter det varje sekund. Värdet sätts vid verkliga händelser: när en utomstående köper en andel till ett visst pris, när en ny finansieringsrunda görs, när förvaltaren gör en nedskrivningsprövning. Mellan händelserna står siffran still — men inte världen.\n\nSignaturfallet, med påhittade tal. Ett portföljbolag bokförs till 180 miljoner, prissatt som rörelseresultatet före avskrivningar 20 gånger multipeln 9 — 20 gånger 9 = 180. Två år passerar. Bolaget har sviktat försiktigt till resultatet 18, och marknadens multiplar för liknande bolag har fallit till 6. Samma bolag bär i dag 18 gånger 6 = 108. Gapet mellan bokförd substans och omdömet om idag är 180 − 108 = 72 — fyra tiondelar av posten — trots att ingen rad i rapporten har flyttats. Om värderingen inte har förnyats visar substansen 180 medan världen har rört sig.\n\nDärav rutinfrågorna: när prissattes posten senast? Av vem — en transaktion mellan utomstående parter väger tyngre än en intern omvärdering, eftersom utomstående hade eget intresse av priset. Och åt vilket håll får värderingar gå? Här gäller en asymmetri: nedskrivningar görs när värdet fallit bestående, men motsvarande uppskrivningar sker sällan mekaniskt — posten trappas ner för hand men uppåt krävs ofta en transaktion. Onoterat i substansen är därför varken gömt värde eller gömd risk i sig — det är ett omdöme som åldras, och åldern kan och bör mätas."
+          },
+          {
+            "type": "insight",
+            "content": "20 gånger 9 = 180 bokfört; två år senare 18 gånger 6 = 108. Gapet 72 är 40,0 procent av posten — värdets ålder är substansens klocka. Fråga alltid: när prissattes posten senast, och av utomstående eller av den egna förvaltningen?"
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Ägandelinjer och minoritet — bråkets aritmetik",
+        "intro": "En substanspost är alltid andel gånger värde — och andelen bestämmer mer än siffran.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Norr har 75 i onoterat, och nu syns bråket bakom: det är 40 procent av ett privat bolag som vid senaste transaktion värderades till 187,5 miljoner — 0,40 gånger 187,5 = 75. De återstående 60 procenten ägs av andra: en grundarfamilj och en medägande industri. Siffran 75 är exakt, men vad de 75 är värda i en verklig situering avgörs också av de andra — styrelseplatser, utdelningsbeslut, kommersiella avtal mellan ägarna. Hade andelen varit 20 procent hade samma bolag bidragit med 187,5 gånger 0,20 = 37,5 — substansräkningen böjer sig för bråket, men inflytandet gör det i högre grad: samma krona är olika starkt placerad vid 5 procent (finansiellt), 30 till 40 procent (block med förhandlingsvikt) och över hälften (kontroll)."
+          },
+          {
+            "type": "text",
+            "content": "Spegelfallet är minoriteten i eget hus: äger bolaget i stället 80 procent av ett dotterbolag, lämnas 20 procent till minoritetsägare — redovisningsmässigt hanterar koncernen det genom bokslutsaggregation (bk-04 äger den mekaniken), men substansläsningen stannar vid det enkla: posten bär 80 procent av värdet och bolaget har 100 procent av besluten om utdelning och riktning. Två spegelfall att minnas: minoritetsposten i andras bolag ger värde utan kontroll — vid blocköverlåtelser prissätches sådana poster ofta under sin andel av börsvärdet; majoritetsposten med minoritet ger kontroll med delat värde — en skillnad som syns först den dagen posten ska realiseras. Ägarandelens längd är alltså kvalitetens fjärde fråga: inte bara vad innehavet är värt, utan vad andelen förmår."
+          },
+          {
+            "type": "definition",
+            "content": "Ägandelinje: den andel av ett innehavsbolags värde som tillhör investmentbolaget. Substansposten är alltid andel gånger värde — andelen styr både substansrätten och inflytandet över vad posten faktiskt kan förverkliga."
+          },
+          {
+            "type": "insight",
+            "content": "0,40 gånger 187,5 = 75 i substansen — men de andra 60 procentna äger besluten om utdelning och riktning. Bråket är substansens aritmetik och dess politik samtidigt: siffran är exakt, mandatet är förhandlat."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "De tysta posterna — latent skatt, kontant och skuld",
+        "intro": "Mellan bruttosubstans och nettosubstans står tre poster som sällan får rubriker — men alltid får betalas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Först den latent skatten. Norrs onoterade poster har ett samlat anskaffningsvärde på 15 miljoner och bokförs till 75. Skulle innehaven realiseras till bokförd nivå uppstår en realisationsvinst på 75 − 15 = 60 — och på vinsten väntar en skatt. Räkneexemplet antar en skattesats på 25 procent: 60 gånger 0,25 = 15 i framtida skatt. Bruttosubstansen 100 blir netto 100 − 15 = 85. Antagandet är ett studieexempel — den verkliga skatten beror på ägarled, holdingstruktur, karensregler och tidpunkten, och den delen av juridiken ägs av skattekurserna (km-051 kapitalvinstskatten). Poängen lever ändå: mellan varje substanssiffra och dess realiserbara värde står en post som inte syns i sammanställningen men som existerar så snart innehaven någon dag säljs.\n\nSedan kontanten och skulden. Kontanten, 15 i båda systrarna, är substansens enda oomtvistade post — inget omdöme krävs för vad en sedel är värd. Men den är också passiv: den är ett väntande på kapitalallokeringens beslut (ks-02 äger det hantverket) och den drar ingen avkastning i väntan. Skulden, minus 10, drar av rakt i räkningen men bär egna frågor: löptid och räntebindning avgör hur mycket av framtiden som redan är utlånad (st-05 äger förfallostrukturens mekanik). Tillsammans ger de nettoposten: 15 − 10 = 5 i nettokontant — portföljen bär sig själv mellan affärerna, och substansens svängningar kommer från innehaven, inte från finansieringen."
+          },
+          {
+            "type": "tabell",
+            "content": "NORR HOLDING — FRÅN BRUTTO TILL NETTO (RAKNEEXEMPEL): | Rad | Belopp | — | Bokförd substans | 100 | — | Latent skatt: (75 − 15) gånger 25 procent | −15 | — | Nettosubstans efter skatteantagandet | 85 | — | Kontant emot skuld: 15 − 10 | +5 nettokontant | —"
+          },
+          {
+            "type": "insight",
+            "content": "Brutto 100, netto 85: den latenta skatten är ingen hypotes utan en bokförd framtid — den väntar bara på realisation. Kontantens 15 mot skuldens 10 avgör om portföljen bär sig själv mellan affärerna. Tre tysta poster, en nettoräkning."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — substanskvalitetens fem frågor",
+        "intro": "PRIVATE EQUITY & INVESTMENTBOLAG-familjen läses numera inifrån och ut: ib-01 äger räkningen, denna kurs granskningen — rabattens varför förblir km-067:s.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Samla kursen i fem frågor att bära till varje substansrapport. Ett: hur stor andel av substansen är noterat — och hur stor del vilar därmed på förvaltarens egna värderingar? Två: när prissattes de onoterade posterna senast, och av utomstående parter eller av den egna förvaltningen? Tre: vilka ägandelinjer bär posterna — minoritetsblock, kontrollposter, delade beslut? Fyra: vilken latent skatt och nettoskuld står mellan brutto och netto? Fem: hur har sammansättningen rört sig över åren — växer det förvaltarvärderade eller det noterade, blir substansen äldre eller färskare? Fem frågor, och substansen har blivit ett underlag i stället för en siffra.\n\nGränsdragningen mot grannkurserna är kursens sista lektion i noggrannhet. km-067 äger rabattläsningen — varför kursen står mot substansen; denna kurs äger substansens inre. km-012 äger summan-av-delarna-metoden som värderingsteknik; bk-04 äger koncernredovisningens mekanik; v05 äger förhållandet mellan pris och bokfört värde; pe-04 äger den onoterade världens aktörer utanför börsen. Case-kurserna pc-04 och pc-18 visar läsningen på två verkliga svenska investmentbolag — samma frågor, riktiga rapporter. Familjens inre ordning är därmed komplett för grunderna: ib-01 räkningen, ib-02 granskningen, och vidare mot pe-serien för dem som vill följa kapitalet ett steg till."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta fram två investmentbolags senaste delårsrapporter. Räkna för varje bolag fram: andelen noterat av substansen (post för post om listan ger det), den äldsta stora onoterade postens ålder — om rapporten anger värderingsdatum eller princip — samt kontanter minus skuld. Ställ de två substansernas kvalitet mot varandra och formulera en mening om vilken siffra du litar mer på, och varför. Upprepa vid nästa rapport: flyttade sig sammansättningen, och blev de onoterade posterna äldre eller förnyade?"
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor gör substansen läsbar: andelen noterat, värdets ålder, ägandelinjerna, nettot av skatt och skuld, sammansättningens rörelse. Rabatten mot substansen är en fråga om kursen — kvaliteten i substansen är frågan om siffran. Två verktyg, en hel läsning."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch lärde ut att det finns en bolagsverklighet bakom varje aktie — för investmentbolaget gäller det två gånger: bakom aktien ligger innehaven, bakom innehaven ligger värderingarna. Hans krav att man ska kunna förklara vad man äger, utan att behöva luta sig mot en högre makts kurslista, är exakt substanskvalitetens test: den som inte kan redogöra för hur en onoterad post prissatts äger en berättelse, inte ett underlag. Lynch sökte också bolag där framgången inte behövde förklas med finansiella konstruktioner — hans skepsis mot värden som ingen kan realisera är kursens nettoräkning i förkortning: räkna först vad som faktiskt kan betalas ut, sedan vad aktien kostar.",
+    "grahamSection": "Benjamin Graham byggde sin analys på substans och nedre gränser — net-nets i originalets anda — men han var samtidigt den förste att varna för att bokförda tal kan vara ärligt fel: ärliga eftersom de följer regelverket, fel eftersom underlaget åldrats eller aldrig prövats av en köpare. Hans marginal skulle därför inte bara ligga i rabatten mot substansen utan i själva substansens hållbarhet: en nettosubstans där tre fjärdedelar vilar på interna värderingar av onoterade innehav kräver större marginal än en där de flesta kronor har en orderbok. Grahams egen bana — att köpa hela eller stora andelar av undervärderade bolag och sedan verka för att frigöra värdet — är också kursens levande exempel på varför ägandelinjen spelar roll: minoritetsposten och kontrollposten är två olika investeringar i samma bolag.",
+    "ak1Section": "I AK1A:s metodik är denna kurs det andra steget i ib-serien och PRIVATE EQUITY & INVESTMENTBOLAG-familjens granskningslager: ib-01 äger substansräkningen, denna kurs äger frågan om vad siffran bär — och km-067 behåller rabattläsningen som sin yta. I AKM1:s bolagsläsning ger kursen underlagsfrågorna till substansdata: hur mycket av det redovisade värdet som är marknadsprissatt, hur gammalt det onoterade är, vilka ägarandelar som gäller. I AKM2:s ram övar den osäkerhetsdimensionen: förvaltarvärdets andel är ett mått på omdömets vikt i totalen, och värdets ålder ett mått på informationsföråldring — båda räknebara, båda input i riskprofilen. Kursens paritet med ak1ts-kurserna är metodikens ideal: samma fråga ställs till motorns data som till rapportens rader."
   },
   "pe-01-private-equity-fonder": {
     "slug": "pe-01-private-equity-fonder",
@@ -208932,6 +209444,174 @@
     "grahamSection": "Benjamin Graham innebar marginalen som varje platserings huvudbegrepp: priset ska lämna utrymme för att det går sämre än beräknat. I hävstångsköpet är marginalen omvänd till mekanik: skulden äter just det utrymme som marginalen skulle ligga i. Grahams läsning av kursens exempel vore därför rak — räkna på det fall där EBITDA sjunker en femtedel (kapitel fyra) och fråga om bolaget står kvar efter räntan — och hans vägran att låta redovisade tal målas med pensel lever vidare i fallkapitlets varning för justerade resultat. Att han själv tog positioner där värde kunde frigöras gör honom inte till hävstångens anhängare utan till dess motsats: befrielsen skulle komma från tillgången, inte från lånet.",
     "ak1Section": "I AK1A:s metodik är denna kurs PRIVATE EQUITY & INVESTMENTBOLAG-familiens mellansteg och samtidigt en brygga till kapitalstrukturstudierna (ks-familjen): förvärvsmaskinen visar ks-01:s och ks-03:s teori i sin mest koncentrerade form — skuld som placeras där kassaflödet finns, med covenant (ks-05) som skyddsräcke och räntetäckningen (st-01) som mätare. I AKM1:s bolagsläsning ger kursen frågeformulär för ägarstruktur och belåning: vem äger, med hur mycket skuld, och vad kostar den i dåligt år? I AKM2:s ram övar den riskdimensionen: hävstången är definitionen av förstärkt känslighet, och kursens uppgifter — trappan, motorerna, nedsidan — är samtliga räknebara utan andra antaganden än de som står i texten, vilket är metodikens ideal: mekanik före åsikt."
   },
+  "pe-04-den-privata-agarsidan": {
+    "slug": "pe-04-den-privata-agarsidan",
+    "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Den privata ägarsidan — bolagens värld utanför börsen",
+    "summary": "De flesta bolag finns inte på börsen: den onoterade världen, ägarlivscykeln från grundare till fond, och vad private equity egentligen är — familjens nybörjaringång under fondmekaniken i pe-01.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Förstå att börsen är en liten del av bolagsvärlden — och vad det innebär för synen på aktier · Känna igen den onoterade världens aktörer: grundare, familjer, fonder, institutioner och statliga förvaltare · Följa ägarlivscykeln — hur bolag växlar ägare genom nyemissioner, generationsskiften och kontrollköp · Räkna på ägarandelstrappan: 100, sedan 80, sedan 32 procent · Förstå private equity i tre rörelser: köpa, utveckla, lämna ifrån sig · Se mötena med börsen — noteringsbeslut, bud och avlistningar — och varför notiser om förvärv är gratis lektioner i värdering.",
+    "why": "Aktiespararens karta har en vit fläck. Börsen visar hundratals bolag med kurser som tickar — men bakom dem står tusentals bolag som aldrig kommer att finnas i en aktielista: familjeföretaget som söker efterträdare, verkstaden som ägs av en fond, mjukvarubolaget som växer på privat kapital. Den världen är inte en kuriosa i utkanten av ekonomin — den är majoriteten av den, och den handlar med börsen varje vecka: bolag noterars, bolag tas av börsen, ägare byts bakom rubrikerna. Private equity, som kursen ger nyckeln till, är namnet på kapitalet som arbetar där. Utan den privata ägarsidans karta förstår aktiestudenten bara en minoritet av bolagsvärlden — och läser notiser om förvärv och bud utanför deras sammanhang. Kursen ritar kartan: vilka aktörerna är, hur ägandet vandrar mellan dem, och vad det betyder att äga något som inte har en kurs varje dag.",
+    "history": {
+      "origin": "Bolagsformen spred sig under 1800-talet, men börsen blev från början en finansieringsväg för de största — järnvägar, banker, gruvor. För de allra flesta bolag var ägandet privat från starten: grundaren, familjen, ortens kretsar av kapital. I Sverige byggdes dessutom en särskild tradition av långsiktiga ägarfamiljer och sfärer, där kontrollen över industribolag hölls samman i generationer medan börsen bara fick ta del av en del av kapitalet.",
+      "evolution": "Efter krigstiden professionaliserades den privata sidan. Riskkapitalet organiserades i fonder för att finansiera unga tillväxtbolag, och från 1980-talet växte en köpsidobransch fram: fonder som förvärvade etablerade bolag, utvecklade dem under ett aktivt ägarskap och sålde dem vidare. Institutionskapitalet — pensionsfonder och försäkringar med långa förpliktelser — sökte avsättning också utanför börsen, och samlingsbegreppet private equity etablerades för kapital som arbetar i onoterade bolag.",
+      "modern": "I dag är den privata ägarsidan en bransch i världsskala: majoriteten av alla företagsöverlåtelser sker utan att en börs involveras, och fonderna är ständiga motparter till börsen — som köpare vid bud, som säljare vid introduktioner, som ägare bakom noterade bolag. Samtidigt har börsens egna investmentbolag (ib-01) blivit en av läsarens vägar in i onoterat ägande. Den moderna bilden är därför inte två åtskilda världar utan två sidor av samma ekonomi: kapital som söker avkastning byter fritt mellan dem, och gränsen passerar varje dag."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Börsen och allt annat — den onoterade världen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Vad private equity är — köpa, utveckla, lämna ifrån sig",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Ägarlivscykeln — bolagets väg mellan ägare",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Ägandet utan kurs — priset av att inte kunna sälja i morgon",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Mötet med börsen — två världar som handlar med varandra",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Nybörjarens karta — fem frågor och två fällor",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Börsen och allt annat — den onoterade världen",
+        "intro": "Börskurserna är priser på en minoritet av bolagsvärlden — resten har ägare, värden och historia utanför listan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tänk dig en ö med precis 1 000 aktiebolag: bageriet, verkstaden, bygghandeln, konsultbyrån, mjukvaruföretaget, gården. Alla har ägare. Alla har intäkter, kostnader och ett värde som skulle kunna diskuteras om någon erbjöd sig att köpa. Hur många av dem finns på börsen? På en typisk svensk näringslivsbild är andelen noterade en bråkdel — på öns räkneexempel är tolv av tusen noterade, det vill säga 1,2 procent. De övriga 988 bolagen utgör den onoterade världen: bolag vars andelar inte handlas på någon börs, utan byter ägare genom direkt uppköp, emissioner, arv och generationsskiften.\n\nVarför spelar det roll för den som studerar aktier? Av tre skäl. För det första är börsen inte bolagsvärldens karta utan dess topp: de bolag som nått listan har ofta gjort det efter år av privat ägande, och de bär den historien med sig — ägarstrukturer, avtal, kvarvarande storägare. För det andra sänder den privata sidan ständigt prisinformation: när ett privat bolag säljs till ett visst pris i förhållande till sitt resultat är det en värderingsmarknadsreferens för liknande verksamheter — även noterade. För det tredje rör kapitalet sig mellan världarna: fonderna bakom onoterade bolag är samma institut som lägger bud på noterade bolag och säljer bolag till börsen. Den som vill förstå aktiemarknadens aktörer behöver den privata ägarsidans karta."
+          },
+          {
+            "type": "definition",
+            "content": "Onoterat bolag: ett bolag vars andelar inte handlas på en börs. Ägandet byter händer genom direkt uppköp, nya emissioner och arv — inte genom löpande handel i en orderbok."
+          },
+          {
+            "type": "insight",
+            "content": "12 av 1 000 = 1,2 procent: börsen är bolagsvärldens topp, inte dess karta. Alla bolag har ägare — frågan är bara vilka, hur många och hur ägandet en gång byts."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Vad private equity är — köpa, utveckla, lämna ifrån sig",
+        "intro": "Private equity är inte en produkt utan ett arbetsätt i tre rörelser — och bakom det står en hel värld av aktörer.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Begreppet private equity betyder ordagrant privat kapital — aktiekapital som arbetar i bolag utanför börsen. Yrket bakom begreppet låter sig sammanfattas i tre rörelser. Köpa: kapital samlas och används till att förvärva andelar i — ibland hela — onoterade bolag. Utveckla: under ägarskapet arbetar ägaren aktivt med bolaget — växa försäljningen, effektivisera, förvärva grannar, stärka ledningen — det är där ägarskapet förtjänar sitt namn, och verktygen varierar från rådgivande till absolut kontroll. Lämna ifrån sig: efter en planerad period, ofta fyra till sju år, realiseras värdet genom att bolaget säljs vidare, introduceras på börsen eller slås samman med annat — utfasningens mekanik ägs av pe-02, och hur ett enskilt förvärv byggs och belastas ägs av pe-03.\n\nVilka står bakom kapitalet? Aktörskartan har fyra hörn. Fonderna — förvaltare som samlar kapital från andra och placerar det i bolag (hur fonden själv är byggd, med sina partners, avgifter och livscykel, ägs av pe-01). Kapitalgivarna — institutioner som pensionsfonder, försäkringsbolag och familjekontor, som äger fonderna; i Sverige även statliga förvaltare av allmänt pensionskapital. Familjeägarna — hushåll och släkter som äger bolag direkt, i generationer eller i väntan på efterträdare. Och bolagen själva — med sina grundare, styrelser och anställda, vars ägarsituation är utgångspunkten för allt. För nybörjaren räcker kartan: kapital som arbetar i onoterade bolag, samlat av förvaltare från institutioner, möter familjeägare och grundare — och rör sig mot nya ägare."
+          },
+          {
+            "type": "insight",
+            "content": "Köpa, utveckla, lämna ifrån sig — tre rörelser som rymmer hela yrket. Fonden är redskapet, institutionen är kapitalet, grundaren och familjen är motparten, och bolaget är platsen där allt måste fungera."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Ägarlivscykeln — bolagets väg mellan ägare",
+        "intro": "Ett bolags ägare byts i takt med dess liv: emissioner späder, generationsskiften säljer, fonder köper — och ibland tar börsen vid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Följ ett påhittat bolag genom ägarlivscykeln. Grundaren startar med 100 procent. Tillväxten kräver kapital: en nyemission där nya ägare tecknar andelar motsvarande 20 procent av det utökade bolaget — grundaren späds till 80 procent (emissionens mekanik, teckningsrätter och utspädning ägs av ks-04). Åren går; grundaren närmar sig pension och ingen i familjen kan eller vill ta över. En fond köper 60 procent av bolagets aktier, jämnt av samtliga ägare: grundarens 80 procent blir 80 gånger 40 procent = 32 procent, tillväxtägarnas 20 procent blir 20 gånger 40 procent = 8 procent, fonden äger 60 — och kontrollen har flyttat. Ett antal år senare kanske bolaget introduceras på börsen: fonden realiserar successivt, ägarspridningen börjar om cykeln, och bolaget blir en av öns tolv noterade.\n\nVägarna in i privat ägarskap är flera: arv och gåvor, nyemissioner till tillväxtkapital, avlistning av tidigare noterade bolag (kapitel fem), och ledningsköp — där bolagets egen ledning, med fondkapital bakom sig, köper ägarskapet. Vägarna ut: försäljning till en ny ägare — en strategisk köpare i samma bransch eller en annan fond — börsintroduktion, eller successiva utdelningar till ägarna över tiden. Ägarlivscykeln är ingen rak linje utan en trappa med avgångar: bolag kan stanna privat i generationer, börsnoteras och avlistas, och varje steg har sin aritmetik — men nästan varje steg kan räknas i ägarandelar."
+          },
+          {
+            "type": "tabell",
+            "content": "ÄGARANDELSTRAPPAN — ETT BOLAGS ÄGARE GENOM LIVET (PAHITTAT EXEMPEL): | Etapp | Grundare | Tillväxtägare | Fond | — | Start | 100 procent | — | — | — | Nyemission: 20 procent nytt | 80 procent | 20 procent | — | — | Kontrollköp: fonden köper 60 procent | 32 procent | 8 procent | 60 procent | — | Kontroll | — | — | — | — | Summa efter varje etapp | 100 | 100 | 100 | —"
+          },
+          {
+            "type": "insight",
+            "content": "100, sedan 80, sedan 32: emissioner späder utan att någon säljer (80 kvar när 20 procent är nytt), kontrollköp multiplicerar (80 procent av 40 procent = 32). Ägarandelstrappan är aritmetik — men trappans avgångar är livsöden: pension, arv, utfasning."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Ägandet utan kurs — priset av att inte kunna sälja i morgon",
+        "intro": "Den privata ägaren kan inte trycka sälj — och det formerar hela ägarskapet: horisonten, informationen och besluten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Skillnaden som genomsyrar den privata ägarsidan finns i en enda mening: det finns ingen kurs att sälja till i morgon. Värdet av ett onoterat ägarskap syns bara vid gränssnitten — när kapital sätts in, vid rapporter och värderingar, och när ägandet en dag lämnas ifrån sig. Mellan gränssnitten räcker inte marknaden upp ett pris varje sekund; där finns arbete, beslut och tid.\n\nTvå femårsresor som räkneexempel, båda påhittade. Resa ett: ett bolag som utvecklas med 12 procent per år — 100 blir 112, sedan 125,4, 140,5, 157,4 och slutligen 176,2. Resa två: ett slött bolag på 2 procent per år — 100 blir 102, 104,0, 106,1, 108,2 och 110,4. Under resans fem år syns inte en enda kurssiffra för någon av dem — skillnaden på 176,2 mot 110,4 visar sig först när någon köper andelen eller bolaget värderas i ett skifte. Detta formerar det privata ägarskapet tre gånger. Tidshorisonten mäts i år, inte dagar: ägaren kan inte reagera på veckovis och tvingas — eller får — tänka i hela cykler. Informationsspridningen mäter i förtroende: i stället för orderbokens pris får ägaren rapporter, styrelsearbete och insyn i besluten. Och besluten fattas utan kursens bejakelse: att bygga vidare i ett år där ingen kurs applåderar är det privata ägarskapets normaltillstånd — tålamodet är strukturellt, inte en personlig dygd.\n\nSpegeln mot börsen skärper bilden. Börsens dagliga kurs är en tjänst — möjligheten att kunna sälja när som helst — och samtidigt ett pris: frestelsen att reagera på bruset. Den privata ägaren har bytt tjänsten mot ett arbetsresultat och frestelsen mot ett tvång. Ingen av formerna är överlägsen i sig; de är två kontrakt med olika villkor, och att se dem som val är början på att förstå båda."
+          },
+          {
+            "type": "tabell",
+            "content": "TVÅ FEMÅRSRESOR UTAN KURS (PAHITTAT EXEMPEL): | År | Resa ett: plus 12 procent per år | Resa två: plus 2 procent per år | — | 0 | 100,0 | 100,0 | — | 1 | 112,0 | 102,0 | — | 2 | 125,4 | 104,0 | — | 3 | 140,5 | 106,1 | — | 4 | 157,4 | 108,2 | — | 5 | 176,2 | 110,4 | —"
+          },
+          {
+            "type": "insight",
+            "content": "176,2 mot 110,4 efter fem år — och inte en kurssiffra på vägen. Det privata ägarskapet mäts vid grindarna: vad som sätts in, vad som kommer ut, och vad som görs däremellan."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Mötet med börsen — två världar som handlar med varandra",
+        "intro": "Gränsen mellan börsen och den privata sidan är tunn och trafikerad: bolag passerar den i båda riktningarna, varje vecka.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det första mötet är noteringsbeslutet. Ett privat bolag — ofta med en fond som storägare efter några års utveckling — säljer nya andelar på börsen och blir en av de tolv noterade på ön. För bolaget innebär det kapital och en handelbar aktie; för de tidigare ägarna en väg att successivt realisera (hur fonden fördelar en utfasning ägs av pe-02). Det andra mötet är spegelbilden: avlistningen. Ett börsbolag som börsen värderar till 10 miljarder får ett bud på 20 procent över — 12 miljarder — från en köpare, ofta en fond. Aktieägarna får en enda kursdag med sitt pris; budgivaren får fem år utan kurs att arbeta i. Mekaniken i budpremien — varför budet måste ligga över marknaden och vad som redan är prissatt — ägs av förväntningsläsningen i kt-02.\n\nDet tredje mötet sker bakom rubrikerna: den sekundära marknaden, där fonder köper och säljer onoterade bolag av varandra, och där börsens egna investmentbolag kan vara part — ib-01 visar hur ett noterat bolag kan ge läsaren exponering mot onoterat ägande. För aktiestudenten är mötena en fri lärosal. En notis om att ett bolag sålts till tolv gånger sitt resultat, eller att ett bud lagts tjugo procent över kurs, är en prisbildning som någon gjort på allvar — med eget kapital och egna konsekvenser. Att samla och läsa sådana notiser är den enklaste övningen i värdering som finns: verkliga tal, verkliga beslut, ingen teori."
+          },
+          {
+            "type": "insight",
+            "content": "Noteringen säljer bolaget till börsen, budet köper bolaget från börsen, den sekundära marknaden handlar det däremellan. Vid varje möte syns två sätt att äga samma sak: flytbart och förankrat — och budpremien är kurvan mellan dem."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Nybörjarens karta — fem frågor och två fällor",
+        "intro": "PRIVATE EQUITY & INVESTMENTBOLAG-familjen har nu sin ingång: denna kurs äger kartan, pe-01 fondmekaniken, pe-03 förvärvsåren, pe-02 utfasningen, ib-01 börsens skalet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bär med dig fem frågor till varje bolag du studerar. Ett: vem äger bolaget — och hur stora andelar? Två: är ägandet privat, börsnoterat eller blandat — och vad står den privata delen för? Tre: vad säger den senaste ägarbytesnotisen — vem köpte, vem sålde, till vilket pris i förhållande till resultatet? Fyra: var i ägarlivscykeln står bolaget — grundare, tillväxtägare, fond, spritt? Fem: vad skulle hända med ägandet vid ett generationsskifte eller ett bud — vilka intressen är i rörelse? Frågorna öppnar en läsning av aktielistan som de flesta nybörjare aldrig får: bakom varje kurs står en ägarstruktur, och ägarstrukturen är en historia.\n\nOch två fällor, spegelvända. Fälla ett: den privata ägarsidan är hemlig och därför misstänkt. Insynen är lägre, men ekonomin är densamma — kassaflöden, skulder, marginaler och ägarincitament styr precis som i noterade bolag; lägre insyn är ett faktum att hantera, inte ett omdöme om värde. Fälla två: onoterat är spännande och döljer garanterat värde. Avsaknad av en kurs är varken rabatt eller premie — den är frånvaro av en kurs, och värdet avgörs av bolaget, inte av tystnaden kring det. Vägen vidare i familjen: pe-01 för fondens inre mekanik — avgifter, livscykel, J-kurvan — pe-03 för hur ett förvärv byggs, pe-02 för utfasningarnas vägar, och ib-01 för den noterade vägen in i onoterat ägande. Fem kurser, en hel värld."
+          },
+          {
+            "type": "utmaning",
+            "content": "Samla en veckas notiser om företagsförvärv, ägarbyten och budgivningar — minst tre. Räkna för varje notis fram: vem köpte, vem sålde, och — om priset och bolagets resultat finns angivet — vilken multipel som betalades. Sortera sedan dina tre notiser efter ägarlivscykeln: är det grundare som säljer, fonder som byter ägare sinsemellan, eller börsen som möter det privata vid ett bud? Spara listan och upprepa nästa månad — mönstren börjar upprepa sig, och du bygger ditt eget prisminne."
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor, två fällor, en karta: börsen är den privata ägarsidans förlängda arm. Varje budnotis är en gratis lektion i vad ett bolag kostar när någon menar det — och varje ägarstruktur är en berättelse som aktielistan tiger med."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade läsaren att börja i vardagen — och vardagen är i högsta grad den privata ägarsidan: bageriet, verkstaden, grannföretaget med en ägare och en plan. Hans register av bolagskunskap byggdes genom att förstå verksamheter före kurserna, och hans instinkt att fråga vem som driver bolaget och varför de bryr sig är nybörjarkartans kärna: ägarskap med eget kapital och eget ansvar är samma sak oavsett om andelen handlas dagligen eller aldrig. Lynch såg också budnotisernas värde — att en köpare med pengar på bordet säger mer om ett bolags pris än en månads kurser.",
+    "grahamSection": "Benjamin Graham formade sin analys i en tid då de flesta bolag var just privata eller tunnhandlade: substansvärden, kassaflöden och säkerhetsmarginaler räknades för ägare som inte kunde lämna positionen i morgon. Hans arbete i Graham-Newman — att köpa hela eller stora andelar av undervärderade bolag och verka för att frigöra värdet — gör honom till en av den privata ägarsidans tidiga praktiker: värde skapas i bolaget och förhandlas fram mellan ägare, inte bara observeras i en kurs. Grahams budskap till nybörjaren här är rent: priset på en andel och värdet av en andel är två olika storheter, och den skillnaden är som tydligast just där ingen kurs ritar marknaden varje dag.",
+    "ak1Section": "I AK1A:s metodik är denna kurs PRIVATE EQUITY & INVESTMENTBOLAG-familjens nybörjaringång och grundplåt under pe-01, pe-03 och pe-02 — kartan före mekanikerna, aktörerna före strukturerna. I AKM1:s bolagsläsning ger kursen ägarfrågorna: vem äger, hur mycket, i vilken livscykel — data som modellen väger in bakom varje fundamental läsning. I AKM2:s ram övar den tidshorisontdimensionen: ägande utan daglig kurs tvingar fram det långa perspektiv som metodikens alla tidshorisonter bygger på. Pariteten med ib-01 är avsiktlig: den kursen äger det noterade skalet, denna äger den privata sidan — tillsammans ritar de familjens hela kartblad."
+  },
   "roic-01-avkastning-pa-investerat-kapital": {
     "slug": "roic-01-avkastning-pa-investerat-kapital",
     "category": "LÖNSAMHET",
@@ -209243,6 +209923,174 @@
         ]
       }
     ]
+  },
+  "roic-03-inkrementell-roic": {
+    "slug": "roic-03-inkrementell-roic",
+    "category": "LÖNSAMHET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Inkrementell ROIC — nästa kronas avkastning och medeltalets blindhet",
+    "summary": "LÖNSAMHET-familjens tredje steg i fördjupningsserien: den inkrementella avkastningen, ROIC beräknad på bara de nya kronorna, och de tre tillstånd där det vanliga medeltalet slutar bära information. Kursens grundräkning: ett bolag med kapital 1 000 miljoner kronor och vinst 150 bär bokförd ROIC på 15,0 procent — men nästa stora satsning, 200 miljoner kapital som tillför 16 miljoner i vinst, bär inkrementell ROIC på exakt 8,0 procent, och det kombinerade bolaget landar på 166 dividerat med 1 200 lika med 13,8 procent. Fyra satsningsår i samma mönster senare har medeltalet vandrat ner till 214 dividerat med 1 800 lika med 11,9 procent — medeltalet rör sig alltid mot marginalen, aldrig omvänt. Därpå inflationens minne: en maskin bokförd till 100 mot en ersättningskostnad på 250 gör att samma vinst 40 miljoner ser ut som 40 procent i bokförda kronor men 16 procent i nya. Tredje fallet är det negativa egna kapitalet, där hela formeln går i sönder och kassaflödets avkastning tar vid — FCF 80 mot ett börsvärde 800 ger 10 procent. Genomgående utbildning i att räkna och läsa, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna den inkrementella ROIC som förändringstal: vinsttillskott dividerat med kapitaltillskott, och skilja den från det bokförda medeltalet. Grundräkningen: bas 1 000 och vinst 150 ger 15,0 procent, satsningen 200 mot 16 ger 8,0 procent inkrementellt, kombinerat 166 mot 1 200 ger 13,8 procent — och efter fyra likadana satsningsår 214 mot 1 800 ger 11,9 procent. Förstå medeltalets vandring mot marginalen, räkna om inflationens effekt på gamla anläggningar (vinst 40 på bokförd 100 mot ersättningskostnad 250 ger 40 mot 16 procent), känna igen det negativa egna kapitalets fall där ROIC-formeln mister sitt tecken och ersätta den med kassaflödesavkastning. Tillämpa förändringstal på två verkliga räkneår: skillnaden i vinst dividerat med skillnaden i kapital. Kursen bygger på ROIC:s grund (roic-01) och avkastningstrappan (roic-02) och förväntar att båda sitter.",
+    "why": "LÖNSAMHET-familjens roic-serie bär två steg — ROIC utan hävstångens makeup och avkastningstrappan (båda Intermediär) — men inget tredje: serien saknar både nybörjar- och avanceradsteget, och det avancerade rummet är det som bär familjens viktigaste fråga vidare: vad händer med medeltalet när bolaget växer? Sond mot registrets 414 kurser: inkrementell avkastning som begrepp ger inga träffar bland kurserna — förändringstalen förekommer i förbigående i återinvesteringens matematik (tx-03) men aldrig som huvudämne med egen räknelära för ROIC. Ämnet är dessutom seriens naturliga krön: den som kan trappans två vägar (marginal och kapitalomsättning) möter förr eller senare bolaget där 15 procent bokförd avkastning döljer att nya kronor tjänar 8 — och utan detta steg stannar serien halvvägs. Fallet knyter dessutom an till tre grannfamiljer samtidigt: inflationens gamla anläggningar (bokföring), återinvesteringens värdeskapande (tillväxt) och resultatkvalitetens misstro (gränsen mellan beteende och bokföring).",
+    "history": {
+      "origin": "Skillnaden mellan gamla och nya satsningars avkastning upptäcktes i praktiken innan den formulerades: järnvägsbolagen på artonhundratalet byggde sina första sträckor genom de lönsammaste korridorerna och de sista genom tunnlar av tvivel — och aktieägare som räknade på genomsnittet lärde sig att nästa mil betalades sämre än den förra. Gruvbolagens utmattade fyndigheter hade lärt samma läxa tidigare: medeltalet över hela gruvan sade föga om nästa schakt.",
+      "evolution": "När kapitalbudgeteringens teknik växte fram under nittonhundratalet formaliserades just skillnaden: interna räntor beräknades på marginella projekt, inte på verksamheten i genomsnitt, och företag lärde sig rangordna satsningar efter nästa kronas avkastning. Inflationsepokens erfarenheter under nittonhundrasjuttiotalet tillförde den andra halvan: bokförda anläggningar från lågpristider blåste upp bokföringsmässiga avkastningar medan ersättningskostnaderna steg — vilket gjorde medeltalet till ett delvis historiskt tal om vad kapitalet en gång kostade.",
+      "modern": "I dag lever frågan i varje tillväxtbolag som balanserar kärnverksamhetens mogna avkastning mot expansionens tunnare — och i varje återköpsmaskin vars negativa eget kapital gör ROIC-formeln oduglig som jämförelsetal. Dataåtkomsten har gjort förändningstalen lättillgängliga för den som vill räkna själv: två årsredovisningar räcker för skillnaden i vinst över skillnaden i kapital, vilket är kursens praktiska kärna."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Medeltalets blindhet — när 15 procent döljer 8",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Räkna korridoren — bas, marginal och det vandrande medeltalet",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Inflationen i gamla anläggningar — bokförd ROIC och nya kronor",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Negativt eget kapital — fallet där formeln går sönder",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — förändringstalen mellan två år",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — när medeltalet räcker och när det ljuger",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Medeltalets blindhet — när 15 procent döljer 8",
+        "minutes": 4,
+        "intro": "Bokförd ROIC svarar på hur hela kapitalmassan historiskt presterat. Frågan som avgör framtiden är en annan: vad tjänar nästa tillförda krona?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grundräkningen. Ett bolag bär investerat kapital på 1 000 miljoner kronor och vinst på 150 miljoner — bokförd ROIC blir 150 dividerat med 1 000 lika med 15,0 procent, ett tal som ser friskt ut i vilken jämförelse som helst. Bolaget satsar nu 200 miljoner i en ny anläggning som tillför 16 miljoner i årlig vinst. Satsningens egen avkastning: 16 dividerat med 200 lika med 8,0 procent — hälften av vad kärnverksamheten bär. Det kombinerade bolaget redovisar efter satsningen 166 miljoner i vinst på 1 200 miljoner kapital: 13,8 procent. Medeltalet föll alltså med över en procentenhet i ett enda steg, trots att ingen del av verksamheten försämrades. Om 15-procenttalet används som väntavärde på framtida satsningar överskattas systematiskt vad nya kronor tjänar — det är medeltalets blindhet: det beskriver kapitalets förflutna, inte dess nästa tillfälle."
+          },
+          {
+            "type": "definition",
+            "content": "Inkrementell ROIC — avkastningen på endast det tillförda kapitalet: vinstökningen dividerat med kapitalökningen. Ett förändringstal som mäter nästa kronas avkastning, till skillnad från bokförd ROIC som är ett medeltal över hela det installerade kapitalet."
+          },
+          {
+            "type": "insight",
+            "content": "Medeltalet och marginalen bär samma relation som genomsnittet och sista mätningen: när bolaget växer blir medeltalet alltmer en beskrivning av historien och allt mindre en prognos. Frågan varje bolagsägare vill besvarad — vad tjänar nästa krona — står bara i marginaltalet."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Räkna korridoren — bas, marginal och det vandrande medeltalet",
+        "minutes": 4,
+        "intro": "Ett års satsning är ett datapunkt. Ritar man ut flera år visar sig korridoren — och medeltalets obevekliga vandring mot marginalen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fortsätt mönstret: varje år tillförs 200 miljoner kapital som ger 16 miljoner ny vinst. Efter år ett: kapital 1 200, vinst 166, ROIC 13,8 procent. Efter år fyra: kapital 1 800, vinst 214, ROIC 214 dividerat med 1 800 lika med 11,9 procent. Varken basens 15 eller marginalens 8 ändras — ändå sjunker det redovisade talet år från år, för att den lågavkastande andelen växer i viktblandningen. Detta är medeltalets vandring: det rör sig alltid mot den senaste tillförda kronans avkastning. Omvänt gäller spegelfallet — ett bolag vars nya satsningar tjänar mer än medeltalet ser sitt bokförda tal stiga år från år, vilket är just den mekanik som gör unga högavkastande tillväxtbolag så värdefulla enligt återinvesteringens matematik (tx-03): när marginalen ligger över medeltalet blir tillväxt en avkastningsmotor i sig."
+          },
+          {
+            "type": "tabell",
+            "content": "År | Kapital (Mkr) | Vinst (Mkr) | Bokförd ROIC | Årets satsning | Inkrementell ROIC\nBas | 1 000 | 150 | 15,0 procent | — | —\n1 | 1 200 | 166 | 13,8 procent | 200 mot 16 | 8,0 procent\n2 | 1 400 | 182 | 13,0 procent | 200 mot 16 | 8,0 procent\n3 | 1 600 | 198 | 12,4 procent | 200 mot 16 | 8,0 procent\n4 | 1 800 | 214 | 11,9 procent | 200 mot 16 | 8,0 procent"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens fem rader bär kursens kärnsats: en fallande ROIC-kurva betyder inte automatiskt att verksamheten försämras — den kan betyda att bolaget bygger ut sig mot en sämre marginal. Omvändningen gäller också: stigande ROIC utan förändrad kärna avslöjar att nya kronor tjänar mer än gamla."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Inflationen i gamla anläggningar — bokförd ROIC och nya kronor",
+        "minutes": 4,
+        "intro": "Medeltalet kan ljuga inte bara om framtiden utan om själva kronorna: anläggningar bokförda till gamla priser gör avkastningen till ett delvis historiskt tal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En maskin köptes för tjugo år sedan för 100 miljoner kronor och driver fortfarande en verksamhet som gör 40 miljoner i vinst. Bokförd ROIC på maskinen: 40 dividerat med 100 lika med 40 procent — ett lysande tal. Men maskinen närmar sig slutet av sitt liv, och att bygga en motsvarande idag kostar 250 miljoner. Räknas vinsten mot ersättningskostnaden i stället för det bokförda värdet: 40 dividerat med 250 lika med 16 procent. Samma verksamhet, samma vinst — två tal som ligger en bra bit ifrån varandra, och skillnaden är inflationens och prisutvecklingens arbete under tjugo år. Det bokförda medeltalet svarar alltså på frågan hur väl bolagets kapital betalade sig historiskt; frågan hur väl verksamheten står sig när kapitalet ska bytas ut besvaras först i nya kronor. För kapitaltunga och gamla industrier kan skillnaden mellan de två läsningarna utgöra hela skillnaden mellan en verksamhet som ser självbärande ut och en som i förlängningen äter av sitt eget kapital vid varje förnyelse."
+          },
+          {
+            "type": "text",
+            "content": "Praktiken för läsaren: notera anläggningars ålder och förvärvspriser i balansräkningen (bk-01), och ställ frågan vad som händer med vinsten om anläggningarna prissätts om till dagens kostnad. Full räkning kräver ersättningsvärden som bolaget sällan redovisar — men självbedömningens räckvidd räcker långt: maskiner med boken värde 100 och förnyelsekalkyl 250 är inte ett hypotetiskt fall utan en vanlig konstruktion i mogna industrier."
+          },
+          {
+            "type": "insight",
+            "content": "Bokförd ROIC har ett minne — den bär med sig vad kapitalet kostade när det köptes. Ju äldre anläggningarna och ju högre inflationen under åren, desto mer talar talet om dåtidens prisnivå och desto mindre om dagens lönsamhet."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Negativt eget kapital — fallet där formeln går sönder",
+        "minutes": 4,
+        "intro": "Vissa bolag köper tillbaka egna aktier tills det egna kapitalet blir negativt. Då mister ROIC-formeln sitt tecken — och en annan avkastning måste ta vid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett moget bolag med stora återköp kan komma att redovisa eget kapital på minus 200 miljoner kronor medan vinsten är 100 miljoner. ROIC-beräkning på investerat kapital ger då en negativ nämnare — men ingen menar att avkastningen är negativ, och formuleringen blir oanvändbar som jämförelsetal. Fallet är inte exotiskt utan ett resultat av återköpsmaskinen som strategi: bolaget skickar ut kapital snabbare än vinster bygger det, och balansräkningens eget kapital slutar beskriva verksamhetens storlek. Läsningen byter då redskap, från balansräkningens stocktal till kassaflödets ström: det fria kassaflödet. Ett bolag med FCF på 80 miljoner mot ett börsvärde på 800 miljoner bär en kassaflödesavkastning på 10 procent — ett tal som fungerar oavsett tecknet på det egna kapitalet, därför att det jämför två tal som inte påverkas av återköpsbokföringen på samma sätt. Observera att detta är en beskrivning av hur talen fungerar, inte en bedömning av återköp som strategi — återköpens villkor och hållbarhet analyseras i utdelnings- och kapitalstrukturkurserna."
+          },
+          {
+            "type": "tabell",
+            "content": "Mått | Räkning | Fallbolaget | Kommentar\nROIC (bokförd) | vinst dividerat med investerat kapital | negativ nämnare | formeln oduglig som jämförelse\nROE | vinst dividerat med eget kapital | negativt tal | säger inget om lönsamheten\nKassaflödesavkastning | FCF dividerat med börsvärde | 80 av 800 lika med 10 procent | fungerar oberoende av tecknet\nVinstavkastning | vinst dividerat med börsvärde | 100 av 800 lika med 12,5 procent | komplement ur resultatsidan"
+          },
+          {
+            "type": "insight",
+            "content": "Tre av fyra rader i tabellen misslyckas eller talar förbi fallet — bara de börsvärdesbaserade måtten lever kvar. Lärdomen är allmän: när en formels nämnare förstörs av finansieringshistorik, byt till mått som jämför verksamhetens prestation mot dess pris."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Räkna själv — förändringstalen mellan två år",
+        "minutes": 4,
+        "intro": "Den inkrementella ROIC kräver ingen prognos: den kan hämtas ur två årsredovisningar som skillnadstal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Metoden: välj två räkneår med någorlunda jämn verksamhet, hämta investerat kapital och rörelsevinst efter skatt för båda, och räkna differenserna. Kapitalet växte från 900 till 1 200 miljoner — skillnaden 300. Vinsten växte från 120 till 144 — skillnaden 24. Den inkrementella ROIC: 24 dividerat med 300 lika med 8,0 procent. Två varningar. För det första engångsposter: en avyttrad enhet eller en nedskrivning i endera året gör skillnadstalet till brus — justera först, i enlighet med bokföringens ventil-kurs. För det andra årsrytm: ett jämfört år bör inte vara pandemiåret eller strejkåret; korridoren mellan två normala år säger mer än spannet mellan två extrema. Notera att metoden mäter genomsnittet av årens satsningar, inte varje enskild satsning — men det är precis det som efterfrågas: hur bolaget som helhet konverterar nya kronor till vinst."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj ett bolag du följer och hämta investerat kapital och rörelsevinst efter skatt för två räkneår med minst tre års mellanrum (balansräkningen och resultaträkningen, bk-01 och bk-02, bär grunden; kassaflödesräkningen, bk-03, ger kontrolltalet som resultatet ska förhålla sig till). Räkna differenserna och den inkrementella ROIC. Jämför med den bokförda ROIC i båda åren: ligger marginalen över eller under medeltalet, och vandrar medeltalet i förutsagd riktning? Avsluta med att notera vilka engångsposter som kan störa skillnadstalet — och hur du justerade för dem. Spara räkningen: mätmönstret är detsamma som i avkastningstrappans DuPont, fast här på förändringar i stället för nivåer."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — när medeltalet räcker och när det ljuger",
+        "minutes": 4,
+        "intro": "Kursens sista konst är avgörandet: inte kasta medeltalet, utan veta när det bär information och när det bär minne.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Medeltalet räcker när tre villkor håller. För det första när bolaget är stabilt i sin sammansättning: samma verksamhet, ingen pågående expansion ut från kärnan, inga stora förvärv som blandar kapital från olika prisnivåer. För det andra när anläggningarna är unga eller priserna lugna: inflationseffekten mellan bokfört och ersättningsvärde begränsad. För det tredje när det egna kapitalet är positivt och finansieringen ordinär: formelns nämnare intakt. Sviker något av villkoren ljuger medeltalet på tre kända sätt: det överskattar framtiden när expansionen tjänar under medeltalet (grundfallet 15 mot 8), det överskattar lönsamheten när gamla anläggningar bokförts i lågpristiders kronor (40 mot 16), och det mister helt sitt tecken när återköpen vänt det egna kapitalet negativt. I varje fall är botemedlet detsamma: byt perspektiv från stock till förändring, eller från balansräkning till pris — förändringstal, ersättningskronor, kassaflödesavkastning. Och ställ alltid den avslutande kontrollen mot resultatkvaliteten (ln-02): är vinsten som förändringstalen bygger på av det slag som blir kontanter? Den som behärskar båda läsningarna — medeltal och marginal, med tillägget av ett sunt tvivel om vinstens beskaffenhet — har roic-seriens hela trappa."
+          },
+          {
+            "type": "insight",
+            "content": "Bolagets ROIC-kurva är två berättelser överlagrade: vad kapitalet en gång tjänade och vad det senaste kapitalet tjänar nu. Den avancerade läsaren skiljer berättelserna åt innan någon av dem används — för att veta om bolaget är en avkastningsmaskin som mattas, en som mogna, eller en vars tal bara är historia som talar."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch berättade om bolag som växte sig rika på att multiplicera en lyckad formel — och om bolag som växte sig fattiga på att multiplicera en felaktig. Kursens marginaltal är precis den skiljelinjen: formeln som fungerade i de första butikerna men inte i de tjugonde. Lynch påminde också om att de bästa tillväxtberättelserna är de där expansionen fortfarande möter kapital som tjänar som kärnan — vilket är marginal över medeltal, kursens mekanik i en mening.",
+    "grahamSection": "Benjamin Grahams skepticism mot bokförda tal fick sin tydligaste form i inflationens epok: han påpekade att vinster räknade på historiskt bokförda anläggningar överdriver den verkliga avkastningen när priserna stigit, och han föredrog att se verksamheten prövas mot vad den skulle kosta att bygga om. Kursens ersättningskronor är den läran i räkneform: 40 dividerat med 250, inte 100.",
+    "ak1Section": "I AK1A:s metodik används den inkrementella läsningen som djupkontroll i lönsamhetsmotorerna: universumsdata kan kompletteras med förändringstal enligt kursens differensmetod, och i AKM2-traditionen kan marginalen mot medeltalet föras som en scenariovariabel — ett bolag som expanderar under sitt medeltal pressar de långsiktiga grenarna, ett över medeltalet ljusar dem. Arbetet att hålla isär bokförd och real avkastning vid inflation dokumenteras i vidarekurserna om balansräkningen och resultatkvaliteten."
   },
   "ma-01-transmissionsmekaniken": {
     "slug": "ma-01-transmissionsmekaniken",

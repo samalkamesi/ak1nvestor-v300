@@ -1,0 +1,96 @@
+{
+  "slug": "vr-05-pris-och-varde",
+  "category": "VÄRDERING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Pris och värde — aktiens två tal och första jämförelsen",
+  "summary": "VÄRDERING-familjens startsteg i fördjupningsserien: skillnaden mellan vad en aktie kostar och vad den kan vara värd, och den första enkla jämförelsen mellan dem. Kursen lär de två talen — marknadspriset som noteras varje sekund och det uppskattade värdet som räknas fram med papper och penna — och visar hur ett enda nyckeltal, priset per intjänad krona, gör fyra bolag jämförbara på en rad: kurs 100 med vinst 5 kronor per aktie kostar 20 kronor per intjänad krona, kurs 50 med samma vinst kostar 10. Därpå de tre vanligaste förklaringarna till varför kursen lämnar det uppskattade värdet, säkerhetsmarginalens grundtanke som räknas i procent av värdet (uppskattat värde 80 mot kurs 50 ger marginal 37,5 procent), och mästarskapets fyra frågor som måste besvaras innan någon jämförelse är meningsfull. Genomgående utbildning i att förstå mekanismen, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Skilja aktiens två tal åt — kursen (ett faktum som noteras) och värdet (en uppskattning som räknas) — och använda det första verktyget som binder dem: priset per intjänad krona. Räkna fyra bolags nyckeltal på en rad (kurs delat med vinst per aktie), förklara varför samma bolag kan handlas till olika pris per krona, uppskatta ett grovt värde med en multipel (vinst 5 gånger multipel 12 ger 60) och räkna säkerhetsmarginalen som procent av det uppskattade värdet. Känna igen de fyra frågorna — samma definition, samma räkneår, samma valuta, samma tillväxtförväntan — som avgör om en jämförelse över huvud taget håller. Detta är vr-seriens ingång: multipelns anatomi och avkastningens tre källor fortsätter där kursen slutar.",
+  "why": "VÄRDERING-familjens vr-serie bär fyra steg — multipelgapet (Avancerad), normaliserade multipler (Avancerad), multipelns anatomi (Intermediär) och avkastningens tre källor (Intermediär) — men inget startsteg: den som vill börja på familjens egen stege möter direkt kedjor som förutsätter att skillnaden mellan kurs och värde redan sitter i ryggmärgen. Sond mot registrets 414 kurser: kurs-och-värde-jämförelsen som första verktyg finns i närliggande form i multipelkurserna men alltid på högre nivå, och grundseriens bokföringskurser äger vinsten som begrepp utan att någonsin ställa den mot kursen. Pris mot värde är dessutom familjens mest handgripliga nybörjarämne: det kräver bara division och tanken på två bolag, och det binder samman resultaträkningens vinst (bk-02), aktiesidans tal (am-03) och beteendefinansens humör (bf-01) till ett enda jämförelsebord — grunden som vr-01 till vr-04 bygger vidare på.",
+  "history": {
+    "origin": "Skillnaden mellan vad en tillgång kostar och vad den är värd är äldre än någon värderingsteori: på Amsterdams börs på sextonhundratalet noterades aktier till priser som svängde kraftigt medan bolagens verksamheter stod stilla, och köpmän lärde sig genom förluster att noteringen och värdet inte är samma tal. Grunderna till den skrivna distinktionen lades i tiden kring sekelskiftet 1900, när finanskrascher väckte frågan om vad en aktie egentligen borde kosta.",
+    "evolution": "Benjamin Graham och David Dodds lärobok om värdepappersanalys från 1934 formaliserade hantverket: det inneboende värdet som en uppskattning, marginalen mellan värde och pris som skydd mot fel, och jämförelsen mellan lika bolag som metod. Efterkrigstidens fondväsende och den elektroniska börsens kurser gjorde priserna alltmer tillgängliga medan värderingen förblev handarbete — en asymmetri som gjort kurserna högljudda och uppskattningarna tysta ända sedan dess.",
+    "modern": "I dag nås kurser i realtid på varje telefon medan värdet fortfarande räknas för hand: den som lär sig divisionen kurs delat med vinst per aktie har ett första verktyg som fungerade 1934 och fungerar nu. Indexfondernas era har dessutom gjort jämförelsen extra lärerik — där köps hela korgar till samlade kursen, vilket gör pris mot värde till en fråga på både aktie- och marknadsnivå."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Två tal för en aktie — kursen och värdet", "minutes": 4 },
+    { "num": 2, "title": "Priset per intjänad krona — första jämförelsen", "minutes": 4 },
+    { "num": 3, "title": "Varför kursen lämnar värdet — humöret och nyheterna", "minutes": 4 },
+    { "num": 4, "title": "Säkerhetsmarginalen — rummet för att ha fel", "minutes": 4 },
+    { "num": 5, "title": "Räkna själv — fem minuter med två bolag", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — frågorna innan jämförelsen", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Två tal för en aktie — kursen och värdet",
+      "minutes": 4,
+      "intro": "Varje aktie bär två tal som lätt förväxlas: vad den kostar just nu och vad den kan vara värd. Kursen handlar om marknaden, värdet om bolaget.",
+      "blocks": [
+        { "type": "text", "content": "Öppna en aktiesida och det första du ser är kursen — till exempel 100 kronor. Det talet är ett faktum: så mycket betalades för aktien i den senaste handeln. Bredvid den lever ett helt annat slags tal: värdet, en uppskattning av vad bolagets framtida pengar kan vara värde idag. Kursen noteras av marknaden, värdet räknas av den som analyserar — och hela värderingsämnet börjar i att hålla de två isär. Säg dem högt för varje aktie du möter: vad kostar den, och vad kan den vara värd. Frågan är studieobjekt, inte handlingsinstruktion." },
+        { "type": "definition", "content": "Marknadspris (kurs) — det senaste priset som betalades för aktien i handeln. Ett observerat faktum som ändras varje handelsdag. Värde (uppskattat) — analysens egen beräkning av vad bolagets framtida kassaflöden motiverar för pris idag. En uppskattning som skiljer sig från person till person." },
+        { "type": "insight", "content": "Kursen är ett kollektivt faktum, värdet en enskild uppskattning. Blanda ihop dem och varje sväng i kursen känns som ny information om bolaget — men en del svängar är bara marknadens humör på väg mellan två uppskattningar." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Priset per intjänad krona — första jämförelsen",
+      "minutes": 4,
+      "intro": "För att jämföra pris mot värde behövs ett gemensamt mått. Det första och enklaste: vad kostar en krona av bolagets vinst?",
+      "blocks": [
+        { "type": "text", "content": "Ta bolag A med kurs 100 kronor och vinst 5 kronor per aktie: divisionen 100 delat med 5 ger 20, vilket läses som att varje intjänad krona kostar 20 kronor i kurs. Bolag B har kurs 50 kronor och samma vinst 5 kronor per aktie: 50 delat med 5 ger 10 — här kostar en intjänad krona 10 kronor. Samma valuta, samma mått, två olika priser per vinstkrona. Tabellen nedan gör fyra bolag jämförbara på en enda rad, och det är vr-seriens första verktyg: kursen översatt till pris per enhet något." },
+        { "type": "tabell", "content": "Bolag | Kurs (kr) | Vinst per aktie (kr) | Pris per intjänad krona\nA | 100 | 5 | 20\nB | 50 | 5 | 10\nC | 40 | 2 | 20\nD | 90 | 6 | 15" },
+        { "type": "insight", "content": "Talet 20 för A och C visar verktygets begränsning direkt: två bolag med olika kurs och olika vinst kan bära exakt samma pris per krona. Jämförelsen blir en fråga, inte en dom — varför handlas B till hälften av A per vinstkrona? Svaret finns aldrig i talet själv, utan i skillnaderna mellan bolagen." }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Varför kursen lämnar värdet — humöret och nyheterna",
+      "minutes": 4,
+      "intro": "Om kursen och det uppskattade värdet alltid följdes vore värdering enkel. De gör de inte — och skälen är lärerika i sig.",
+      "blocks": [
+        { "type": "text", "content": "Bolag B handlas till 10 kronor per vinstkrona medan A handlas till 20, trots likadana vinst per aktie. Tre vanliga förklaringar: För det första tillväxtförväntan — marknaden kan tro att A:s vinst växer snabbare än B:s, och betalar idag för morgondagens kronor. För det andra risk — B kan bära mer skuld, ojämnare intäkter eller en osäker orderbok, vilket gör varje krona mindre trygg. För det tredje humör och nyheter — en nyligen svart rubrik om B kan pressa kursen utan att något i räkenskaperna ändrats. Betrakta det som olika hypoteser att pröva i bolagens rapporter, inte som ledtrådar om vad du ska göra med dina pengar." },
+        { "type": "text", "content": "Att skilja förklaringarna åt är analytikerhantverk: tillväxt syns i historiens tillväxttakt och prognoser, risk i balansräkning och bred intäktsbas, humör i hur länge kursavvikelsen levt och vad marknaden skrivit om den. Djupare analys av varje spår finns i seriens fortsättning — multipelgapet rör just skillnaden mellan lika bolag, och beteendefinansen äger humörets mekanik." },
+        { "type": "insight", "content": "Kursens avstånd till det egna värdet är inte ett fel som väntar på att rättas — det är information om marknadens samlade gissning. Uppgiften är att förstå vilken gissning kursen gör, inte att gissa bättre om marknadens nästa humör." }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Säkerhetsmarginalen — rummet för att ha fel",
+      "minutes": 4,
+      "intro": "Eftersom värdet är en uppskattning blir den viktigaste frågan: hur mycket får jag ha fel? Svaret räknas som marginal.",
+      "blocks": [
+        { "type": "text", "content": "Säg att du uppskattar bolag B:s värde med en enkel regel: vinst per aktie 5 kronor gånger en multipel som du motiverat ur branschens historia — 12. Värdet blir 5 gånger 12 lika med 60 kronor. Kursen är 50. Marginalen är skillnaden i procent av värdet: 60 minus 50 lika med 10, delat med 60, lika med 16,7 procent. Byt multipeln till 16 och värdet blir 80, marginalen 30 delat med 80 lika med 37,5 procent. Tanken är lika gammal som värderingslitteraturen: eftersom uppskattningen aldrig är exakt vill den som analyserar ha avstånd mellan sitt tal och kursen — inte för att kursen ska stiga, utan för att analysens felmarginal ska rymmas inom avståndet." },
+        { "type": "tabell", "content": "Multipel-antagande | Uppskattat värde (kr) | Kurs (kr) | Marginal mot värdet\n10 | 50 | 50 | 0,0 procent\n12 | 60 | 50 | 16,7 procent\n14 | 70 | 50 | 28,6 procent\n16 | 80 | 50 | 37,5 procent" },
+        { "type": "insight", "content": "Notera tabellens första rad: multipel 10 ger värde exakt lika med kursen — marginal noll. Varje rad i tabellen är samma bolag med samma vinst; det enda som rör sig är antagandet. Marginalen mäter inte bolaget, den mäter analysens utsatthet för antagandet." }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Räkna själv — fem minuter med två bolag",
+      "minutes": 4,
+      "intro": "Verktyget sätter sig när du räknar på riktiga tal. Uppgiften tar fem minuter och kräver två aktiesidor och en miniräknare.",
+      "blocks": [
+        { "type": "text", "content": "Välj två bolag i samma bransch — det gör jämförelsen rättvisare eftersom risk och tillväxt ligger närmare varandra. Hämta tre tal per bolag: senaste kurs, senaste helårs vinst per aktie, och bolagets eget kapital per aktie om du vill gå ett steg längre. Räkna först pris per intjänad krona för båda. Räkna sedan ett grovt värde för vardera bolaget: vinst per aktie gånger din motiverade multipel. Jämför till sist marginalerna mot kursen." },
+        { "type": "utmaning", "content": "Gör tabellen från kapitel 2 med dina två bolag: kurs, vinst per aktie, pris per intjänad krona. Uppskatta sedan ett värde med två olika multiplar — en försiktig och en generös — och räkna marginalen mot kursen för båda. Avsluta med att skriva en mening per bolag om varför priserna per vinstkrona skiljer sig: tillväxt, risk eller humör. Spara pappret; när nästa årsredovisning kommer kan du göra om övningen och se vad som rörde sig — det är första steget mot multipelns anatomi i vr-03." }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — frågorna innan jämförelsen",
+      "minutes": 4,
+      "intro": "En jämförelse mellan tal som inte mäter samma sak är värre än ingen jämförelse. Fyra frågor avgör om verktyget får användas.",
+      "blocks": [
+        { "type": "text", "content": "Fråga ett: samma definition av vinst? Bolag kan redovisa vinst med olika mått — rapporterad, justerad, före engångsposter — och blandas måtten blir divisionen meningslös. Fråga två: samma räkneår? En kurs från idag delad med en vinst från fyra år tillbaka jämför två olika bolagsepoker. Fråga tre: samma valuta? En vinst i dollar mot en kurs i kronor ger ett tal utan enhet. Fråga fyra: samma tillväxtförväntan? Priset per vinstkrona säger inget om vinstens väntade väg — två likadana tal kan bära helt olika framtid. Frågarna kan alla besvaras ur bolagens egna rapporter, och det är också halva poängen: värderingen börjar i bokföringen, inte i kursgrafen." },
+        { "type": "insight", "content": "De fyra frågorna är kursens egentliga examination: den som ställer dem före varje jämförelse har redan lämnat nybörjarstadiets vanligaste fallgrop — att läsa ett nyckeltal som en siffra i stället för en påståendesats om två bolag. Seriens nästa steg, multipelns anatomi, plockar isär exakt vad satsen innehåller." }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch skrev om aktier som bolag man förstår innan man räknar, och hans ständiga jämförelser — vad bolaget tjänar mot vad det kostar — är kursens division i berättad form. Lynch påminde också om att kursens svängar oftast säger mer om marknadens humör än om bolagets verksamhet, vilket är kapitel tre i en mening: skilj nyheten om bolaget från rörelsen i kursen.",
+  "grahamSection": "Benjamin Grahams marginal mellan pris och värde är kapitel fyra nästan ordagrant: uppskatta värdet grovt, kräv avstånd till kursen, och låt avståndet bära felet i uppskattningen. Grahams ståndpunkt att marknaden är en partner som erbjuder priser dagligen — som man kan tacka nej till — gör de två talen till två roller: marknadens bud och analysens svar.",
+  "ak1Section": "I AK1A:s metodik möter kursen motorerna tidigt: pris per intjänad krona är ett av de första tal som läses av i bolagsuniversumsdata, och kursens fyra frågor motsvarar husets krav på källtalsparitet innan något nyckeltal jämförs. I AKM2-traditionen används multipelantaganden som scenariokolumner — kursens två multiplar (försiktig och generös) är samma tankesätt i miniatyr, vilket dokumenteras i vidarekurserna om multipelns anatomi (vr-03) och normaliserade multipler (vr-02)."
+}

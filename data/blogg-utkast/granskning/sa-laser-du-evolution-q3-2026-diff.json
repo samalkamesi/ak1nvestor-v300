@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-evolution-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-18, manifest auto-s1-1789713300301, anspråk med pivot-notis)",
+  "rapport": "sa-laser-du-evolution-q3-2026-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER FYRA RÄTTNINGAR — seriepåståendet 'den första negativa tolvmånadssiffran' falskt (NIKE-paketet 09-16 noterade minus 1,1 först, samma branschgren), superlativet 'seriens högsta marginaler' falskt på EBIT (NP3 74,9 över EVO 57,8; netto även Wallenstam 80,8) och sant endast på FCF-marginalen 59,2, identitetsgraderingen 'håller/nära' överdriver (gap drygt tio procent, över Essitys nio-procentsreservation — rätt gradering är tidsmetrik), readingMinutes 7→4 (1 911 ord, kvartalsfamiljens ~450 ord/min; AZN-granskningens förutsägelse 'delat med EVO' infriad). Samtliga 19+ nyckeltalsfält ordagrant exakta mot vintage 09ebc188; 10/10 konsumentmedianer egna omräkningar EXAKTA; universum-P/E 20,2 med exakt n=106 av 115; PEG-fältet seriens första helt replikerade (källan dokumenterar konventionen: 15,15 ÷ 11,4 = 1,33); motor 5/5 vågklasser + 8/4/13-matris + σ 34 + pos52 52; scenarioruta 9/9 celler + hävarmar exakta; juridiken ren med tvångsnekat budsammanhang; 911 ren; 15/15 interna länkar 200",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga strängar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av paketets ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "body (Nyckeltalen — Tillväxt)",
+      "gammalt": "den första negativa tolvmånadssiffran i seriens paket",
+      "nytt": "seriens andra negativa tolvmånadssiffra — Nikes minus 1,1 var först, i samma branschgren",
+      "orsak": "NIKE-paketet (levererat 2026-09-16, FLYTTKLAR) redovisar ordagrant 'Intäktstillväxt senaste tolvmånadersperioden: minus 1,1 procent' — samma mått, tidigare paket. Rättningen följer seriens superlativ-precedens: rangen rättas, kraften behålls (att seriens båda negativa TTM-siffror är konsumentbolag är i sig lärorikt)"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "body (Den pedagogiskt viktigaste läsningen)",
+      "gammalt": "Evolution kombinerar seriens högsta marginaler (EBIT 57,8 mot medianens 14,6; kassaflödesmarginal 59,2 mot 9,3)",
+      "nytt": "Evolution kombinerar marginaler i seriens toppskikt (EBIT 57,8 mot medianens 14,6 — i serien slaget endast av fastighetsbolaget NP3:s 74,9; kassaflödesmarginal 59,2 mot 9,3 är den högsta något paket redovisat)",
+      "orsak": "Superlativen falsk på EBIT: NP3-paketet (09-16) räknar scenariorutan på '2 274 mkr × 74,88 %' — fastighetens marginal över EVO:s 57,8; på netto ligger även Wallenstam 80,8 över. Sant och behållet är FCF-marginalens topposition (59,2 högst bland paket med fältet; närmast Telia 25,71). Samma fyndklass som mx1-seriens finans/hälsa/konsument-superlativer"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "body (Nyckeltalen — kontrollräkningsstycket)",
+      "gammalt": "och för en gångs skull håller den: 3,62 delat med 0,267 ger 13,6, nära det redovisade P/E 15,2; skillnaden förklaras av att kurs och bokfört kapital kommer från olika tidpunkter.",
+      "nytt": "och här håller den måttet: 3,62 delat med 0,267 ger 13,6 mot det redovisade P/E 15,2 — ett gap på drygt tio procent, i seriens graderingslära tidsmetrik (kurs och bokfört kapital från olika tidpunkter), inte valutabrott.",
+      "orsak": "Graderingsärlighet enligt seriens egen skala: 13,57 mot 15,15 = gap 10,4–11,6 procent ligger ÖVER Essitys nio-procentsreservration ('godkännande med reservation') — 'nära' och rent 'håller' överdriver. Mekaniken i påståendet är korrekt (ingen valutablandning, kontrasten ABB/AZN i nästa mening är sann och behålls); det är graderingsordet som rättas. Öppen sifferredovisning är seriens doktrin"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": 7,
+      "nytt": 4,
+      "orsak": "1 911 ord. Kvartalsfamiljens praxis ~430–470 ord/min (AZN-granskningens C3-mätning 09-18: JNJ/Novo/SAP/AT&T — paket av samma längd — samtliga readingMinutes 4): 1 911/450 ≈ 4,2 → 4. AZN-granskaren förutsade exakt detta: 'rm 7 bara mx2-byggarens mönster, delat med EVO; byt'"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-10-20",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Framtidsdatum satt nära rappdagen. Vid flytt till data/blogg/ sätts datumet till publiceringsdagen (publicering = kundens beslut, R2; AZN C4-precedensen)"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "sa-laser-du-evolution-q3-2026.json",
+      "falt": "description + body (kalenderrader)",
+      "gammalt": "kalenderkällor pekar på fredagen 23 oktober, ej bolagsbekräftat",
+      "nytt": "bolagets kalender listar 23 oktober (klockslag återstår)",
+      "orsak": "AKTUALISERING vid granskningstillfället 2026-09-18: evolution.com/investors listar nu '23 October '26 — Interim report January – September 2026' — datumet är bolagsbekräftat i dagsläget (utkastets reservation var korrekt för sitt avläsningsdatum 2026-09-15 och hedgad med 'det är alltid IR-kalendern som gäller'; samma sida bekräftar Q2 = 17/07 07:30). Utkastet är inte fel — reservationen är åldrad av händelser och kan aktualiseras vid verkställighet för att inte publiceras inaktuell"
+    }
+  ]
+}

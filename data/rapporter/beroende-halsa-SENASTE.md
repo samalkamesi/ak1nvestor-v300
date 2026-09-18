@@ -1,14 +1,11 @@
-# Beroendehälsa — 2026-09-15T09:14:42.526Z
+# Beroendehälsa — 2026-09-18T17:11:28.577Z
 
-**9 sårbarheter (critical 1 · high 2 · moderate 6 · low 0) · 15 uppdateringar inom deklarerat intervall · 12 major-steg.**
+**8 sårbarheter (critical 0 · high 2 · moderate 6 · low 0) · 13 uppdateringar inom deklarerat intervall · 12 major-steg.**
 
 Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
 ## Sårbarheter
 
-- **[critical] next** (direkt beroende) — **fix inom intervall** (prod-synk: `npm install <paket>` räcker)
-  - Next.js: Unauthenticated Remote Code Execution on windows-hosted servers (>=16.0.0 <16.3.3) — https://github.com/advisories/GHSA-p293-qw3h-jr36
-  - Next.js: Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used (>=16.0.0 <16.3.3) — https://github.com/advisories/GHSA-2xp9-vwfh-vxw4
 - **[high] js-yaml** — fix kräver major: @mdxeditor/editor@4.2.5
   - JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases (>=4.0.0 <=4.1.1) — https://github.com/advisories/GHSA-h67p-54hq-rp68
   - js-yaml: YAML merge-key chains can force quadratic CPU consumption (>=4.0.0 <4.3.0) — https://github.com/advisories/GHSA-52cp-r559-cp3m
@@ -28,14 +25,12 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
 ## Uppdateringar inom deklarerat intervall (låg risk)
 
-- @reactuses/core: 6.5.5 → 6.5.8 (patch) — latest 6.5.8
+- @reactuses/core: 6.5.5 → 6.5.9 (patch) — latest 6.5.9
 - @supabase/supabase-js: 2.112.3 → 2.116.0 (minor) — latest 2.116.0
-- @tanstack/react-query: 5.102.0 → 5.102.8 (patch) — latest 5.102.8
+- @tanstack/react-query: 5.102.0 → 5.103.1 (minor) — latest 5.103.1
 - @types/react: 19.2.18 → 19.3.0 (minor) — latest 19.3.0
 - @types/react-dom: 19.2.4 → 19.3.0 (minor) — latest 19.3.0
 - bun-types: 1.4.0 → 1.4.2 (patch) — latest 1.4.2
-- eslint-config-next: 16.3.2 → 16.3.5 (patch) — latest 16.3.5
-- next: 16.3.2 → 16.3.5 (patch) — latest 16.3.5
 - next-intl: 4.13.7 → 4.14.5 (minor) — latest 4.14.5
 - puppeteer-core: 25.10.0 → 25.11.0 (minor) — latest 25.11.0
 - react: 19.2.8 → 19.3.0 (minor) — latest 19.3.0
@@ -49,8 +44,8 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 - @mdxeditor/editor: 3.55.0 → latest 4.2.5 (major)
 - @tanstack/react-table: 8.21.3 → latest 9.2.4 (major)
 - eslint: 9.39.5 → latest 10.10.0 (major)
-- framer-motion: 12.43.0 → latest 13.3.0 (major)
-- lucide-react: 0.563.0 → latest 1.46.0 (major)
+- framer-motion: 12.43.0 → latest 13.4.0 (major)
+- lucide-react: 0.563.0 → latest 1.47.0 (major)
 - react-day-picker: 9.14.0 → latest 10.0.1 (major)
 - react-resizable-panels: 3.0.6 → latest 4.12.4 (major)
 - react-syntax-highlighter: 15.6.6 → latest 16.1.1 (major)
@@ -60,14 +55,3 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 - uuid: 11.1.1 → latest 14.0.2 (major)
 
 _Genererad av `verktyg/beroende-vakt.mjs` (spår 8). Stdut-slutraden RESULTAT_JSON är maskinläsbar; avslutskod 1 vid critical/high = cron-larm._
-
----
-
-## UPPDATERING 2026-09-15 18:20 (s8-vaktpost — mätning, ej installation)
-
-**next är fortfarande 16.3.2 INSTALLERAT i prod-trädet** (node_modules/next
-mätt 18:17) — CRITICAL-advisorierna lever alltså ~9 h efter rapports
-mätning. Patchen (16.3.5, inom ^16.1.1, `npm install next
-eslint-config-next`) ägs av prod-synken under deploylåset — fabriksbarn är
-förbjudna installation. **LARM till huvudagenten: inkludera patchen i nästa
-deploy; beroende-vakten larmar (exit 1) tills dess.**

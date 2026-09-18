@@ -22,13 +22,13 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TMP_NAMN = "tmp_uppfoljning_test.ts";
-const TMP = path.join(REPO, TMP_NAMN);
+const TMP = path.join(REPO, ".tmp", TMP_NAMN);
 const MARK_START = "===UPPFOLJNING_JSON_START===";
 const MARK_END = "===UPPFOLJNING_JSON_END===";
 
@@ -41,10 +41,10 @@ const TS_KOD = String.raw`
 import {
   skapaSnapshot, jamforDåNu, raknaNotisTexter, beslutaIntervall,
   AKM1_STOR_DELTA, PRIS_MAN_TROSKEL, INTERVALL_DAGAR, MAX_NOTISTEXTER,
-} from "./src/lib/portfolj-forskning/uppfoljning";
+} from "../src/lib/portfolj-forskning/uppfoljning";
 import type {
   Bransch, Horisont, KorstabbellRad, UppfoljningSnapshot, VagKlass,
-} from "./src/lib/portfolj-forskning/typer";
+} from "../src/lib/portfolj-forskning/typer";
 
 const MARK_START = "===UPPFOLJNING_JSON_START===";
 const MARK_END = "===UPPFOLJNING_JSON_END===";
@@ -242,8 +242,9 @@ console.log(MARK_END);
 // ── Kör tmp-filen via tsx och tolka JSON-blocket ─────────────────────────────
 let resultat = null;
 try {
+    mkdirSync(path.dirname(TMP), { recursive: true }); // o44: engångszonen finns alltid
   writeFileSync(TMP, TS_KOD, "utf8");
-  const proc = spawnSync("npx", ["--yes", "tsx", TMP_NAMN], {
+  const proc = spawnSync("npx", ["--yes", "tsx", ".tmp/" + TMP_NAMN], {
     cwd: REPO,
     shell: true,
     encoding: "utf8",

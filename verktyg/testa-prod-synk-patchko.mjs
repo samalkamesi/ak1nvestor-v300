@@ -144,9 +144,13 @@ const bevarMapp = path.join(TMP, "patch-byggfel");
 const sparade1 = bevaraByggLoggar(bevarMapp, [[kalla1, "npmci.log"], [kalla2, "build.log"]]);
 kolla("båda loggfilerna bevarade", sparade1.length === 2 && sparade1.includes("npmci.log") && sparade1.includes("build.log"));
 const bevarFiler = readdirSync(bevarMapp).filter((f) => f.endsWith(".log"));
-kolla("tidsstämpel-prefix i filnamnen (ISO med : och . utbytta)", bevarFiler.every((f) => /^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d+Z-(npmci|build)\.log$/.test(f)));
+kolla("tidsstämpel-prefix i filnamnen (ISO med : och . utbytta)", bevarFiler.every((f) => /^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d+Z-\d+-(npmci|build)\.log$/.test(f)));
 kolla("innehållet kopierat ordagrant", bevarFiler.some((f) => readFileSync(path.join(bevarMapp, f), "utf8") === "npm ci körd 09-17\n"));
 kolla("idempotens: ny anrop sparar NY uppsättning (raderingar sker aldrig)", (() => { const fore = readdirSync(bevarMapp).length; bevaraByggLoggar(bevarMapp, [[kalla1, "npmci.log"], [kalla2, "build.log"]]); return readdirSync(bevarMapp).length === fore + 2; })());
+// o73: mikro-repro av roten — tight loop utan konstgjord vänting; FÖRE kuren
+// krockade 171/200 anropspar (samma ms ⇒ samma filnamn ⇒ copyFileSync
+// överskrev). Med monoton sekvens är namnen unika oavsett ms-lott.
+kolla("o73 unika filnamn även i tight loop (samma millisekund)", (() => { const unikMapp = path.join(TMP, "patch-byggfel-unik"); const fore = (() => { try { return readdirSync(unikMapp).length; } catch { return 0; } })(); for (let i = 0; i < 30; i++) bevaraByggLoggar(unikMapp, [[kalla1, "npmci.log"]]); const efter = readdirSync(unikMapp); return efter.length === fore + 30 && new Set(efter).size === efter.length; })());
 const sparade2 = bevaraByggLoggar(bevarMapp, [[path.join(TMP, "finns-ej.log"), "spok.log"], [kalla1, "npmci.log"]]);
 kolla("saknad källa skippas utan att döda anropet", sparade2.length === 1 && !sparade2.includes("spok.log"));
 // OBS (o49-doktrinär lärdom): målet här är ENOTDIR (katalog under en FIL) —

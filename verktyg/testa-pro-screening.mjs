@@ -5,7 +5,7 @@
  * våg 61 bygg-3). Mönster som verktyg/testa-morgonrond-data.mjs:
  *   1. Genererar tmp_pro_screening_koll.ts i repots rot — importerar
  *      komponentmodulns EXPORTERADE rena hjälpare (inget DOM/render behövs).
- *   2. Kör den med: npx --yes tsx tmp_pro_screening_koll.ts
+ *   2. Kör den med: npx --yes tsx .tmp/tmp_pro_screening_koll.ts
  *   3. Skriver ut en svensk rapport på stdout och städar tmp-filen.
  *
  * Kontroller:
@@ -23,19 +23,19 @@
  * Avslutskod:  0 om inga FAIL, 1 annars.
  */
 import { spawnSync } from "node:child_process";
-import { unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TMP_TS = path.join(REPO, "tmp_pro_screening_koll.ts");
+const TMP_TS = path.join(REPO, ".tmp", "tmp_pro_screening_koll.ts");
 const TIMEOUT_MS = 240_000; // tsx kan behöva laddas ner första gången
 
 // ── 1) Genererad tmp-testfil (TS — körs via npx tsx, raderas efteråt) ───────
 // Obs: ingen backticks/${} inuti denna String.raw-literal.
 const TS_KOD = String.raw`// tmp_pro_screening_koll.ts — GENERERAD av verktyg/testa-pro-screening.mjs. Raderas efter körning.
-import { byggCsv, lasTalInput, sortVarde } from "./src/components/ak1a/pro/pro-screening";
-import type { KorstabbellRad } from "./src/lib/portfolj-forskning/typer";
+import { byggCsv, lasTalInput, sortVarde } from "../src/components/ak1a/pro/pro-screening";
+import type { KorstabbellRad } from "../src/lib/portfolj-forskning/typer";
 
 function rad(andel: Partial<KorstabbellRad>): KorstabbellRad {
   return {
@@ -140,9 +140,11 @@ console.log("SUMMA: " + ok + " PASS, " + fail + " FAIL");
 process.exit(fail === 0 ? 0 : 1);
 `;
 
-writeFileSync(TMP_TS, TS_KOD, "utf8");
+  mkdirSync(path.dirname(TMP_TS), { recursive: true }); // o44: engångszonen finns alltid
+  writeFileSync(TMP_TS, TS_KOD, "utf8");
 
 // ── 2) Kör tmp-filen ─────────────────────────────────────────────────────────
+let exitkod = 1; // o44 R2: exit EFTER finally — annars mossas unlink vid varje körning
 try {
   // Windows + mellanslag i sökvägen: EN citerad kommandosträng (se
   // testa-morgonrond-data.mjs).
@@ -156,10 +158,11 @@ try {
   const slutkod = res.status ?? 1;
   if (slutkod !== 0) {
     console.error("testa-pro-screening: FAIL (avslutskod " + slutkod + ")");
-    process.exit(1);
+    exitkod = 1;
+  } else {
+    console.log("testa-pro-screening: ALLT PASS");
+    exitkod = 0;
   }
-  console.log("testa-pro-screening: ALLT PASS");
-  process.exit(0);
 } finally {
   try {
     unlinkSync(TMP_TS);
@@ -167,3 +170,4 @@ try {
     // tmp-filen fanns inte — inget att städa
   }
 }
+process.exit(exitkod);

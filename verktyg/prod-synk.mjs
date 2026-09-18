@@ -197,15 +197,22 @@ export function headRorByggyta(filer) {
  * Bevara bygg-loggar före de skrivs över (o49 Kur B): kopiera källfilerna
  * in i en målmapp med tidsstämpel-prefix. Returnerar de sparade namnen
  * (tom lista = inget gick att bevara — kallas ALDRIG kritiskt).
+ *
+ * o73: filnamnet bär monoton sekvens efter tidsstämpeln — millisekunden är
+ * INTE en unik nyckel (mikro-repro 2026-09-18: 171/200 anropspar inom samma
+ * ms skrev över varandras diagnoser; svitens idempotenstest föll intermit-
+ * tent av samma rot). Sekvensen är per-process: omstart landar ny stampel.
  */
+let bevarSekvens = 0;
 export function bevaraByggLoggar(mapp, kallor) {
   try {
     fs.mkdirSync(mapp, { recursive: true });
     const stampel = new Date().toISOString().replace(/[:.]/g, "-");
+    const sekvens = String(++bevarSekvens).padStart(3, "0");
     const sparade = [];
     for (const [kalla, namn] of kallor) {
       try {
-        fs.copyFileSync(kalla, path.join(mapp, `${stampel}-${namn}`));
+        fs.copyFileSync(kalla, path.join(mapp, `${stampel}-${sekvens}-${namn}`));
         sparade.push(namn);
       } catch { /* källan borta — inget att bevara */ }
     }

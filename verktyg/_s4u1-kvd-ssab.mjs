@@ -5,7 +5,7 @@
 // Grupper: struktur, källtalsparitet, aritmetik, medianer/rang, scenarioruta,
 // juridikgrind, interna länkar, ordräkning.
 import { readFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const PAKET = '/home/ak1a/AK1/data/blogg-utkast/kvartal/2026-q3/sa-laser-du-ssab-q3-2026.json';
 const UNI = '/home/ak1a/AK1/data/portfolj-system/bolagsunivers.json';
@@ -171,7 +171,10 @@ ok(hrefs.length > 0 && hrefs.every(h => !h.includes('utkast')), '0 länkar till 
 const unika = [...new Set(hrefs)];
 let lankOK = 0, lankFel = 0;
 for (const h of unika) {
-  const code = execSync(`curl -s -o /dev/null -w '%{http_code}' --max-time 15 'http://localhost:3000${h}'`).toString().trim();
+  // o73 (s8-u3): href kommer ur BLOGINNEHÅLLET — execFileSync med array-argument
+  // tar bort skalformen helt (mimosa CHILD_PROC_INTERP: data-styrd sträng i
+  // execSync-template = injektionsyta; array = per definition utan skal).
+  const code = execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '--max-time', '15', 'http://localhost:3000' + h]).toString().trim();
   if (code === '200') lankOK++; else { lankFel++; console.log('LÄNK-FEL ' + code + ': ' + h); }
 }
 ok(unika.length >= 20, 'minst 20 unika interna länkar (' + unika.length + ')');

@@ -1,0 +1,96 @@
+{
+  "slug": "tx-05-tillvaxtens-forsta-lasning",
+  "category": "TILLVÄXT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Tillväxtens första läsning — årtal, procent och tjocka filtar",
+  "summary": "TILLVÄXT-familjens startsteg i fördjupningsserien: vad tillväxt är, hur den räknas år mot år, och de tre första fällorna i läsningen. Kursens grundräkning är en enda intäktsrad: 100 miljoner kronor som växer till 110 är tio procents tillväxt, och nästa år till 121 är åter tio procent — men den sammanlagda tvåårsväxten är 21 procent, inte 20, för att andra årets procent räknas på ett större tal. Därpå sammansättningens aritmetik (roten ur 1,21 är 1,10 — samma tio procent per år bakvägen), volym- och prisdelarens separata vägar in i samma intäkt (110 enheter till 11 kronor ger 1 210: tio procents volym gånger tio procents pris), den nominella mot den reella läsningen där inflationens två procent gör att tio procent på papper är knappt åtta i köpkraft (1,10 delat med 1,02 lika med 1,078), och jämförelsekonsten — tillväxt mot bransch, mot inflation, mot sig själv år från år. Genomgående utbildning i att läsa och räkna, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Räkna tillväxt som procentuell förändring i intäkter år mot år: (110 minus 100) delat med 100 lika med 10 procent, och inse att två år à tio procent ger 21 procent sammanlagt — procent på olika baser går inte att addera. Räkna den årliga takten baklänges med roten (roten ur 1,21 är 1,10), dela en intäktsökning i volym och pris (1,10 gånger 1,10 lika med 1,21), räkna om nominell tillväxt till real med inflationen (1,10 delat med 1,02 lika med 1,078), och ställa de fyra jämförelsefrågorna — mot branschen, mot inflationen, mot bolaget själv, mot vinsten. Kursen är tx-seriens ingång: organisk mot förvärvad tillväxt, volym-pris-mix, tillväxtens värdeskapande och S-kurvan bygger vidare på grunderna.",
+  "why": "TILLVÄXT-familjens tx-serie bär fyra steg — organisk mot förvärvad tillväxt, volym-pris-mix (båda Intermediär), när skapar tillväxt värde och tillväxtens gränser (båda Avancerad) — men inget startsteg: serien börjar på mellannivå och förutsätter att den årliga procenten, bas-fallen och den reala läsningen redan sitter. Sond mot registrets 415 kurser: grundläggande tillväxträkning som eget ämne ger inga träffar — procenträkningen förekommer i varje kurs som verktyg men ingen kurs lär den, och familjens fyra befintliga kurser förutsätter den alla. Ämnet är familjens naturliga nybörjarbrygga av samma skäl som pris-och-värde är det för värderingen: det kräver bara en intäktsrad och de fyra räknesätten, och det förbereder exakt de frågor de övriga stegen fördjupar — var tillväxten kom ifrån (tx-01), vad den består av (tx-02), om den skapar värde (tx-03) och var den tar slut (tx-04). Inflationen som filtrikare har sin egen granne i grundserien (km-055) och realräntan i makron (ma-03), vilket gör kursen till samlingspunkten där tillväxtens tal möter pengarnas tidsvärde.",
+  "history": {
+    "origin": "Att mäta verksamhet i år mot år är lika gammalt som handeln själv: venetianska handelshus jämförde resornas utbyte år från år, och skatteböcker i medeltidens städer lät myndigheter se vilka rörelser som växte. Procentbegreppet gjorde jämförelsen portabel — en tillväxt på en tiondel kunde jämföras mellan en holländsk handelsman och en spansk, oavsett valör och storlek.",
+    "evolution": "När aktiemarknader växte fram blev tillväxttakt bolagens mest citerade egenskap, och järnvägsbolagens trafikrapporter på artonhundratalet gjorde årsserier till allmän läsning: antal resande, ton gods, intäkt per mil. Sammansatt tillväxt blev ett eget begrepp när analytiker började jämföra flerårsperioder — upptäckten att samma procentsats på växande bas ger en krökta kurva var lika mycket matematik som finans. Inflationsepoken under nittonhundratalet tillförde den sista delen: insikten att nominella procentsatser inte kan jämföras över decennier med olika penningvärde.",
+    "modern": "I dag publiceras tillväxttakter kvartalsvis och läsningen har blivit snabbare men inte enklare: valutaeffekter, förvärv och engångsposter gömmer sig i varje procentsiffra, och bolag presenterar gärna den version som ser bäst ut. Den som behärskar grundaritmetiken — bas, period, sammansättning, inflation — har ett skeptiskt verktyg som fungerar mot varje presentation."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Vad tillväxt är — mer sålt, räknat i kronor", "minutes": 4 },
+    { "num": 2, "title": "År mot år — den enkla procenten och bas-fällan", "minutes": 4 },
+    { "num": 3, "title": "Två år eller tio — sammansättningens aritmetik", "minutes": 4 },
+    { "num": 4, "title": "Nominellt mot reellt — inflationens tjocka filt", "minutes": 4 },
+    { "num": 5, "title": "Räkna själv — tillväxtens fyra frågor", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — tillväxt mot vad?", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Vad tillväxt är — mer sålt, räknat i kronor",
+      "minutes": 4,
+      "intro": "Familjens alla kurser handlar om tillväxt. Denna börjar med det enklaste: vad talet mäter och var det bor.",
+      "blocks": [
+        { "type": "text", "content": "Tillväxt är att bolaget säljer mer — mätt i kronor. Förra året sålde bolaget för 100 miljoner kronor, i år för 110: det är tillväxt, och resten av kursen handlar om att läsa sådana tal rätt. Observera ordet kronor: en intäktsökning kan komma från fler sålda enheter, högre priser eller båda — kapitel i seriens fortsättning (tx-02) plockar isär det. Här räknas kronorna som de kommer, i resultaträkningens topp (bk-02). Tillväxt är också ettårs- eller flerårstal: en kvartalsvist publicerad procent är bara en växande del av en helårssiffra, och ju kortare period, desto mer säsong och brus i talet — kvartalssiffrorna äger nyheterna, men tillväxtläsningen bor i hela år." },
+        { "type": "definition", "content": "Tillväxt (intäktstillväxt) — den procentuella förändringen i bolagets intäkter mellan två perioder, räknad som skillnaden dividerat med den äldre perioden. Grundmåttet för hur verksamheten expanderar, åtskilt från hur lönsam expansionen är." },
+        { "type": "insight", "content": "Intäktstillväxt säger bara att bolaget sålde mer — inte att det tjänade mer, och inte var ökningen kom ifrån. De två frågorna (lönsamhet och källa) är exakt vad seriens senare steg äger; första läsningens konst är att inte tro mer än talet säger." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "År mot år — den enkla procenten och bas-fällan",
+      "minutes": 4,
+      "intro": "Grundräkningen tar tio sekunder. Fällan tar längre tid att lära: procenten beror på basen den räknas på.",
+      "blocks": [
+        { "type": "text", "content": "Räkningen: intäkterna gick från 100 till 110 miljoner kronor. Skillnaden är 10, dividerat med basen 100 ger 10 procent — årets tillväxt. Nästa år: från 110 till 121. Skillnaden 11, dividerat med 110, ger åter 10 procent. Men observera vad som hänt med de årliga beloppen: första året var tillväxten 10 miljoner, andra året 11 miljoner — samma procentsats, större kronor, för att basen växt. Detta är bas-fällan, första läsningens vanligaste misstag: att addera procentsatser från olika baser. Tio procent ett år och tio procent nästa är inte tjugo procent sammanlagt — det är 21, vilket är nästa kapitel. Omvända fällan gäller vid nedgång: från 121 till 110 är minus 9,1 procent (11 dividerat med 121) — inte minus 10, fast beloppet är samma elva miljoner." },
+        { "type": "tabell", "content": "Övergång | Belopp (Mkr) | Räkning | Procent\n100 → 110 | +10 | 10 av 100 | +10,0 procent\n110 → 121 | +11 | 11 av 110 | +10,0 procent\n100 → 121 | +21 | 21 av 100 | +21,0 procent\n121 → 110 | −11 | −11 av 121 | −9,1 procent" },
+        { "type": "insight", "content": "Tabellens sista rad är den som överraskar flest: vägen ner från 121 till 110 är inte tio procent nedgång utan 9,1 — procentsatser är alltid para procent av något, och det något är det äldre av de två talen. Fråga alltid: av vilken bas?" }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Två år eller tio — sammansättningens aritmetik",
+      "minutes": 4,
+      "intro": "När åren blir fler än två växer kurvan. Sammansatt tillväxt är konsten att räkna takten rakt genom kröken.",
+      "blocks": [
+        { "type": "text", "content": "Två år à tio procent: 100 växer till 110, sedan till 121 — sammanlagt 21 procent. Om någon avväger hellre den årliga takten ur ett ändtal räknas den bakvägen med en rot: 121 dividerat med 100 är 1,21; roten ur 1,21 är 1,10; alltså tio procent per år. Tiotalet fungerar likadant: en bolagsbeskrivning som säger att intäkterna fördubblades på sju år bär en årlig takt på sjunde roten ur 2 — ungefär 1,104, alltså knappt tio och en halv procent per år. Sammansättningens mekanik är alltså dubbelriktad: multiplicera takten framåt för att se sluttalet, dra roten bakåt för att se takten. Volym och pris följer samma multiplikationsregel inuti ett och samma år: säljs 110 enheter i stället för 100 till 11 kronor i stället för 10, blir intäkten 1 210 mot 1 000 — 1,10 gånger 1,10 lika med 1,21, alltså tio procents volymtillväxt och tio procents prisökning som tillsammans ger 21 procent, exakt som två års ensam tillväxt." },
+        { "type": "text", "content": "Ännu en följd av aritmetiken: sammansatt tillväxt är känslig i ändarna. Ett enda dåligt år lägger sig som en tung sten i serien — 100, 110, 99, 109 visar tre tillväxtår och ett fall, men sluttalet 109 mot starttalet 100 är knappt nio procent på tre år, omkring tre procent per år. Det är skälet till att flerårstakter alltid ska läsas tillsammans med själva serien, inte bara som ett tal." },
+        { "type": "insight", "content": "Sammansättningens budskap är ödmjukhet i båda riktningarna: höga takter blir orimliga snabbt om de extrapoleras (tio procent i tio år fördubblar intäkterna; i tjugo år fyrdubblas de), och medeltakt över perioder med kraftiga svängar säger föga om något enskilt år. Takten är en sammanfattning, serien är historien." }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Nominellt mot reellt — inflationens tjocka filt",
+      "minutes": 4,
+      "intro": "Alla hittills räknade procent står i dåtidens och nuets kronor. Mellan dem ligger inflationen som ett filter.",
+      "blocks": [
+        { "type": "text", "content": "Bolaget växer tio procent, och inflationen är två procent. Hur mycket växte verksamheten egentligen? Räkningen: de nya kronorna delas med prisnivåns förändring — 1,10 dividerat med 1,02 är 1,078, alltså knappt sju komma åtta procent i köpkraft. Filten är tjock på långa serier: vid tio procent nominell tillväxt och två procents inflation under ett decennium blir den reala takten omkring sju komma åtta procent per år, vilket i sluttalet betyder att av den fördubblade intäkten (1,10 upphöjt till tio är omkring 2,59) bara drygt fördubblingen i köpkraft återstår (1,078 upphöjt till tio är omkring 2,12). Lägg märke till att prisökningar kan sitta inuti intäktstillväxten: ett bolag som höjer priserna med inflationen och inte säljer en enda enhet mer växer nominellt — men inte alls i volym. Det är skiljelinjen mellan de två motorerna i tx-02, och skälet till att den första läsningen alltid ska ställa frågan hur mycket av procenten som är pengar och hur mycket som är verksamhet." },
+        { "type": "text", "content": "Praktiken: jämför aldrig tioårsperioder med olika inflation utan att räkna om — sjuttiotalets högsta nominella tillväxttal är delvis pengarnas försvagning, inte näringslivets. För den som vill gå djupare i pengars tidsvärde finns realräntekursen (ma-03) och inflationens egen grundkurs (km-055); här räcker divisionen och medvetenheten om var filtret sitter." },
+        { "type": "insight", "content": "Nominell tillväxt är vad redovisningen visar, real tillväxt vad verksamheten gjorde. Skillnaden är aldrig akademisk på decennier — den är skillnaden mellan att fördubbla kronor och att fördubbla vad kronorna köper." }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Räkna själv — tillväxtens fyra frågor",
+      "minutes": 4,
+      "intro": "Grundaritmetiken sätter sig genom att räknas på riktiga tal. Uppgiften är ett papper, en årsredovisning och fyra frågor.",
+      "blocks": [
+        { "type": "text", "content": "De fyra frågorna: (1) Hur mycket? — räkna intäktsprocenten år mot år för tre år i rad. (2) Varifrån? — läs i förvaltningsberättelsen om ökningen var organisk eller kommit genom förvärv, och om den syns i volym eller pris om det framgår. (3) Mot vad? — ställ procentsiffran mot inflationen (real läsning) och mot branschens eller indexets tillväxt om den publiceras. (4) I vilken takt? — dra roten ur totalförändringen för att få den årliga takten, och jämför den med de enskilda årens procent: avviker takten mycket från åren, beror serien på ett exceptionellt år. Frågorna är medvetet desamma som seriens fortsättningskurser fördjupar — tx-01 äger varifrån-frågans hela teknik, tx-02 volym-pris-mix, tx-04 takternas gränser — så övningen är samtidigt en karta över vad nästa steg ger." },
+        { "type": "utmaning", "content": "Välj ett bolag du följer och hämta intäktsraden för fyra räkneår ur årsredovisningarna (bk-02 bär raden). Räkna procenten för vart och ett av de tre övergångarna, sedan totalen och den årliga takten (roten ur totalfaktorn). Räkna om sista årets procent till real tillväxt med årets inflation. Avsluta med en mening per fråga: hur mycket, varifrån, mot vad, i vilken takt. Spara pappret — om ett år kan övningen göras om och de fyra svaren jämföras år mot år, vilket är början på en tillväxthistoria i stället för en tillväxtbild." }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — tillväxt mot vad?",
+      "minutes": 4,
+      "intro": "En procentsiffra i sig är inget betyg. Den blir information först i jämförelsen — och valet av jämförelse är läsningens konst.",
+      "blocks": [
+        { "type": "text", "content": "Tre jämförelser hör ihop. Mot inflationen: tillväxt under prisökningstakten betyder att verksamheten krympte i köpkraft även om kronorna blev fler — real läsning, kapitel fyra. Mot branschen: en låg procentsiffra ser stark ut om grenen som helhet växte långsammare, och en hög ser svag om grenen växte fortare — sektorkursens tre frågor (se-16) bygger vidare på precis den jämförelsen. Mot bolaget själv: seriens egna tidigare år är den ärligaste baslinjen, för den frågar om något förändrats i verksamheten snarare än om nivån är hög eller låg. Och den fjärde, avgörande frågan som serien slutar hos: växte vinsten med intäkterna? En intäktsökning utan vinstspår är volym utan marginal — värdemåttens kurs (tx-03) äger hela den frågan, och fram till dess räcker konstaterandet: tillväxt är ett mått på rörelsens storlek, inte dess värde." },
+        { "type": "insight", "content": "Första läsningens hela konst är att byta fråga från hur mycket till mot vad — och att veta att svaret alltid består av två delar: procentsiffran och basen den räknades på. Den som bär med sig de två delarna genom alla seriens kurser har startsteget där det ska sitta." }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch talade om tillväxt som berättelsen om bolag som blir större i något de är bra på — och hans varning för berättelser vars procentsiffror växer snabbare än verksamheten bakom dem är kursens fjärde fråga i förväg. Lynch påminde också om att en stadig måttlig takt som får pågå i decennier slår en dramatisk som tar slut om två år — sammansättningens aritmetik i berättad form.",
+  "grahamSection": "Benjamin Graham var skeptisk mot att betala för tillväxt som extrapolerad kurva: han påpekade att prognoser om framtida takter är det osäkraste tal en analys kan bära, och att medeltakter över långa perioder döljer båda ändarna. Hans inställning att tillväxt har värde bara i den mån den blir kassaflöde pekar mot kursens sista konst — frågan om vinsten följde intäkten.",
+  "ak1Section": "I AK1A:s metodik är intäktsserierna med årliga steg och CAGR-fält centrala i bolagsdata: kursens bas- och rot-räkning är exakt de första stegen i den läsningen. I AKM2-traditionen kan tillväxttakter föras som scenariovariabler mellan grenarna — en lägre takt pressar de långa horisonterna — och den reala omräkningen speglar husets krav på att tal från olika prisnivåer aldrig jämförs utan omräkning, vilket dokumenteras i vidarekurserna om realräntan och sektoranalysen."
+}

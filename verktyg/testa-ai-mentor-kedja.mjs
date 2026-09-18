@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (119 i fyrtiotre motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (125 i fyrtiosex motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -226,12 +226,45 @@ const MOTORDEFS = [
   // (bärs som fragor:-knapp), redovisningsdjupet exit-familjen, djup-lagret
   // multipel-orden: exit och onoterat nämns ENDAST i text).
   { namn: "pe-mekanik", fil: "ai-mentor-pe-mekanik-fragor.ts", fn: "svaraLokaltPeMekanik", arr: "PE_MEKANIK_MONSTER", antal: 1 },
+  // 2026-09-18 omgång 21: riskpremie (s6-u1, manifest auto-s6-1789768506578 —
+  // aktiernas riskpremie, ma-06 MAKROEKONOMI & RÄNTA:S enda mentorväglösa
+  // kurs; wiread FÖRE överlevnadsdjup; motordef här för G-fallets widget-
+  // spegling — kanoniska rader bärs av deras eget leveranstest; kärnorden
+  // sonderade fria av s6-u3:s rond 2).
+  { namn: "riskpremie", fil: "ai-mentor-riskpremie-fragor.ts", fn: "svaraLokaltRiskpremie", arr: "RISKPREMIE_MONSTER", antal: 1 },
   // 2026-09-18 omgång 20 (samma trefönster): överlevnadsdjup (s6-u2 —
   // likviditetsreserven st-06 + konkursprognos/Altman Z-score st-03, STABI-
   // LITETs två mentorväglösa djupkurser; sond _s6u2-sond-omg20.mjs: hela
   // överlevnads-familjen NULL genom kedjan; motordef här för G-fallets
   // widget-spegling — kanoniska rader bärs av deras eget leveranstest).
   { namn: "överlevnadsdjup", fil: "ai-mentor-overlevnadsdjup-fragor.ts", fn: "svaraLokaltOverlevnadsdjup", arr: "OVERLEVNADSDJUP_MONSTER", antal: 2 },
+  // 2026-09-18 omgång 21: koncernläsning (s6-u3, manifest auto-s6-
+  // 1789768506578 — att läsa en KONCERN:s redovisning: koncernredovisningen
+  // med konsolidering/eliminering/minoritetsintressen + segmentrapporteringen
+  // med affärsområdenas nedbrytning + pensionsåtagandena som beräknad skuld;
+  // aktiverar 6 mentorväglösa kurser — bk-04, km-024, km-025 primära + km-001,
+  // bk-02, bk-05 källor — BOKFÖRING & ÅRSREDOVISNING 8/17 → 2/17 lösa; basens
+  // rapport-monster äger resultaträkningen/bokslutet/balansräkningen/
+  // årsredovisningen (bk-02 här KÄLLA enligt V19), portföljpraktiken
+  // pension-sparandet ("pension"-grundordet — detta lager bär endast
+  // sammansättningarna pensionsåtagande/pensionsskuld/pensionsförpliktelse,
+  // deras fråga bärs som knapp), kapitalmekaniken goodwill, lönsamhetsdjupet
+  // WACC/kapitalkostnad — samtliga nämns endast i text; sonderna
+  // _s6u3-sond{,2,3}-omg21.mjs: familjerna NULL genom kedjans 43 motorer /
+  // 1 317 kärnord, 0 grannar, 0 främmande i prototyp-stöldprovet).
+  { namn: "koncernläsning", fil: "ai-mentor-koncernlasning-fragor.ts", fn: "svaraLokaltKoncernlasning", arr: "KONCERNLASNING_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 21: tillväxtdjup (s6-u2, samma manifest — S-kurvan/
+  // mättnaden med utrymmesräkningen baklänges + prismix/mixeffekten med
+  // intäkten dekompilerad i volym, pris och sammanhang; aktiverar HELA
+  // TILLVÄXT-kategorien 1/8 → 8/8 — tx-04, tx-02 primära + tx-01, tx-05,
+  // v01, v02, v03 källor; SONDENS LÄXA: rund 1–2 saknade basmotorn (import
+  // med två namn föll utanför kartrapporten) — rund 3 DÖDADE «organisk
+  // tillväxt»/«förvärvad tillväxt» (basens tillvaxt-monster äger EXAKT,
+  // tx-01 här KÄLLA enligt V19) och «volym pris och mix» (basens kostnad-
+  // monster äger naket «pris»), «skurvan» sammansatt (avkastningskurvans
+  // kurvan-frågor, tavstånd 1); rund 4 GRÖN: 0 grannar, 0 stölder — deras
+  // frågor bärs som knappar; wiread SIST i fönstrets dokumenterade ordning).
+  { namn: "tillväxtdjup", fil: "ai-mentor-tillvaxtdjup-fragor.ts", fn: "svaraLokaltTillvaxtdjup", arr: "TILLVAXTDJUP_MONSTER", antal: 2 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -240,7 +273,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 119 (2026-09-18 omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2 — 43-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 125 (2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2 — 46-läget; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -383,15 +416,42 @@ const KANONISKA = [
   { fraga: "vad är utfasningar?", motor: 41 },
   { fraga: "vad är vattenfallet?", motor: 41 },
   { fraga: "vad är carried interest?", motor: 41 },
+  // Omgång 21: riskpremie (s6-u1) — kanoniska ur lagrets egna formuleringar.
+  { fraga: "vad är aktiernas riskpremie?", motor: 42 },
+  { fraga: "vad är riskpremien?", motor: 42 },
+  { fraga: "vad är aktieriskpremien?", motor: 42 },
+  { fraga: "hur räknar man ut riskpremien?", motor: 42 },
+  { fraga: "vad är premie per riskenhet?", motor: 42 },
   // Omgång 20: överlevnadsdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är likviditetsreserven?", motor: 42 },
-  { fraga: "vad är överlevnadstid?", motor: 42 },
-  { fraga: "hur länge räcker kassan?", motor: 42 },
-  { fraga: "vad är kassaräckvidd?", motor: 42 },
-  { fraga: "vad är altman z-score?", motor: 42 },
-  { fraga: "vad är z-score?", motor: 42 },
-  { fraga: "vad är konkursprognos?", motor: 42 },
-  { fraga: "vad är konkursrisk?", motor: 42 },
+  { fraga: "vad är likviditetsreserven?", motor: 43 },
+  { fraga: "vad är överlevnadstid?", motor: 43 },
+  { fraga: "hur länge räcker kassan?", motor: 43 },
+  { fraga: "vad är kassaräckvidd?", motor: 43 },
+  { fraga: "vad är altman z-score?", motor: 43 },
+  { fraga: "vad är z-score?", motor: 43 },
+  { fraga: "vad är konkursprognos?", motor: 43 },
+  { fraga: "vad är konkursrisk?", motor: 43 },
+  // Omgång 21: koncernläsning (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är koncernredovisning?", motor: 44 },
+  { fraga: "vad är minoritetsintressen?", motor: 44 },
+  { fraga: "vad är moderbolag?", motor: 44 },
+  { fraga: "vad är segmentrapportering?", motor: 44 },
+  { fraga: "vad är affärsområden?", motor: 44 },
+  { fraga: "vad är pensionsåtaganden?", motor: 44 },
+  { fraga: "vad är pensionsskulden?", motor: 44 },
+  // Omgång 21: tillväxtdjup (s6-u2) — kanoniska ur lagrets egna rubriker
+  // («vad är organisk tillväxt?»/«vad är volym pris och mix?» landar hos
+  // BAS-motorn — deras monster [tillvaxt]/[kostnad]; se motordef-kommentaren).
+  { fraga: "vad är s-kurvan?", motor: 45 },
+  { fraga: "vad är mättnad?", motor: 45 },
+  { fraga: "vad är marknadsmättnad?", motor: 45 },
+  { fraga: "vad är utrymmesräkning?", motor: 45 },
+  { fraga: "vad är prismix?", motor: 45 },
+  { fraga: "vad är mixeffekten?", motor: 45 },
+  { fraga: "vad är prisvolym?", motor: 45 },
+  { fraga: "vad är produktmix?", motor: 45 },
+  { fraga: "vad är tillväxtmotorer?", motor: 45 },
+  { fraga: "vad är intäktsmotorer?", motor: 45 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -436,7 +496,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "fyrtiotre motorer lämnar frågan ifred",
+  "fyrtiosex motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

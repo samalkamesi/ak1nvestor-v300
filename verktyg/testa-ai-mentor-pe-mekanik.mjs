@@ -119,7 +119,7 @@ const { svaraLokaltSektorskola2, SEKTORSKOLA2_MONSTER } = await tolerera("ai-men
 // Omgång 20:s fönstersyskon: u3:s beteendemekanik (FÖRE detta lager i
 // widgeten) + u2:s överlevnadsdjup (EFTER detta lager).
 const { svaraLokaltBeteendemekanik, BETEENDEMEKANIK_MONSTER } = await tolerera("ai-mentor-beteendemekanik-fragor.ts", ["svaraLokaltBeteendemekanik", "BETEENDEMEKANIK_MONSTER"]);
-const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltOverlevnadsdjup", "OVERLEVNADSDJUP_MONSTER"]);
+const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup", "OVERLEVNADSDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -687,7 +687,7 @@ const GAMLA = [
     "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
     "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2",
     "svaraLokaltBeteendemekanik", "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

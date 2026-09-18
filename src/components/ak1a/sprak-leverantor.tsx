@@ -18,7 +18,9 @@ import type { OrdlistaNyckel } from "@/lib/ordlista";
  * SPRÄK-LEVERANTÖREN — rot-kontexten för sv | en | ar (fas 1, SPRAK-PLAN.md).
  *
  * Klientside-språk UTAN routing-omläggning: SSG-oförändrad (servern renderar
- * alltid svenska), hydreringen resolverar sparat val ⇒ navigator ⇒ svenska.
+ * alltid svenska), hydreringen resolverar sparat val ⇒ svenska (o75 —
+ * navigator-leden borttagen ur auto-init: den bytte texter vid hydratisering
+ * och gav CLS 0,106 på /; se src/lib/sprak.ts detekteraSprak).
  *
  * MGTM (minimal graceful textnodsmutation): språket läses via
  * useSyncExternalStore med SERVER-SNAPSHOT "sv" — serverrendering och
@@ -32,7 +34,7 @@ import type { OrdlistaNyckel } from "@/lib/ordlista";
  * sparat UI-val ser annars spegelns innehåll med svensk meny/footer.
  * Serverrenderingen är fortfarande alltid svenska; regeln slås på först
  * efter montering (monteringsgrind) så hydreringen förblir identisk.
- * Utanför speglarna följs UI-valet (localStorage ⇒ navigator ⇒ sv) som förr.
+ * Utanför speglarna följs UI-valet (localStorage ⇒ sv, o75) som förr.
  *
  * useSprak() fungerar ÄVEN utan leverantör (fallback-kontexten = svenska)
  * — en komponent kan aldrig krascha på grund av ett saknat omslag.
@@ -72,7 +74,7 @@ function prenumerera(cb: () => void): () => void {
   return () => lyssnare.delete(cb);
 }
 
-/** Klientsnapshot: explicit val ⇒ localStorage ⇒ navigator ⇒ sv. */
+/** Klientsnapshot: explicit val ⇒ localStorage ⇒ sv (o75). */
 function lasKlientSprak(): SprakId {
   return lagerSprak ?? hamtaSprak();
 }

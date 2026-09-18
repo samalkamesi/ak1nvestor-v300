@@ -579,15 +579,15 @@ const GAMLA = [
   );
 }
 
-// ── FALL K: register-läge — 426 kurser (spår 5:s omgång-16-rebake) ──────────
+// ── FALL K: register-läge — 432 kurser (spår 5:s omgång-17-rebake) ──────────
 {
   // 2026-09-18: 402 → 408 av spår 5 omgång 13 (st-05, ma-04, roic-02, mt-05,
   // ma-03-realrantan, od-04) — harmoniskt uppdaterat av s6-u1 omgång 16:s
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 426 kurser (spår 5:s omgång-16-rebake 2026-09-18; basotestet E01 grönt)",
-    KURSREGISTER.length === 426,
+    "K03 register-läge — 432 kurser (spår 5:s omgång-17-rebake 2026-09-18; basotestet E01 grönt)",
+    KURSREGISTER.length === 432,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -619,7 +619,7 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

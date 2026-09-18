@@ -1,0 +1,336 @@
+{
+  "vh": 823,
+  "lankar": [
+    {
+      "i": 0,
+      "href": "/logga-in",
+      "text": "تسجيل الدخول",
+      "top": 2,
+      "bottom": 54,
+      "iViewport": true
+    },
+    {
+      "i": 1,
+      "href": "/ar/logga-in",
+      "text": "← انضم — مجانًا",
+      "top": 524,
+      "bottom": 580,
+      "iViewport": true
+    },
+    {
+      "i": 2,
+      "href": "/kurser",
+      "text": "استكشف الدورات",
+      "top": 592,
+      "bottom": 650,
+      "iViewport": true
+    },
+    {
+      "i": 3,
+      "href": "/kurser",
+      "text": "٤٣٢دورة تدريبيةمن أساسيات المحاسبة",
+      "top": 989,
+      "bottom": 1134,
+      "iViewport": false
+    },
+    {
+      "i": 4,
+      "href": "/kurser",
+      "text": "٨٬٢٢٣سؤال اختباركل دورة تُختتم باخ",
+      "top": 989,
+      "bottom": 1134,
+      "iViewport": false
+    },
+    {
+      "i": 5,
+      "href": "/kurser",
+      "text": "١٠٣كتاب مرجعيمن Security Analysis ",
+      "top": 1158,
+      "bottom": 1304,
+      "iViewport": false
+    },
+    {
+      "i": 6,
+      "href": "/kurser",
+      "text": "جميع الدورات",
+      "top": 2006,
+      "bottom": 2022,
+      "iViewport": false
+    },
+    {
+      "i": 7,
+      "href": "/ar/logga-in",
+      "text": "← انضم — مجانًا",
+      "top": 3173,
+      "bottom": 3229,
+      "iViewport": false
+    },
+    {
+      "i": 8,
+      "href": "/kurser",
+      "text": "تصفّح الدورات أولًا",
+      "top": 3266,
+      "bottom": 3280,
+      "iViewport": false
+    },
+    {
+      "i": 9,
+      "href": "/kurser",
+      "text": "جميع الدورات",
+      "top": 3748,
+      "bottom": 3800,
+      "iViewport": false
+    },
+    {
+      "i": 10,
+      "href": "/nyheter",
+      "text": "مركز الأخبار",
+      "top": 4280,
+      "bottom": 4332,
+      "iViewport": false
+    },
+    {
+      "i": 11,
+      "href": "/analyser",
+      "text": "التحليلات",
+      "top": 4400,
+      "bottom": 4452,
+      "iViewport": false
+    },
+    {
+      "i": 12,
+      "href": "/blogg",
+      "text": "المدونة",
+      "top": 5284,
+      "bottom": 5336,
+      "iViewport": false
+    },
+    {
+      "i": 13,
+      "href": "/logga-in",
+      "text": "تسجيل الدخول",
+      "top": 5464,
+      "bottom": 5516,
+      "iViewport": false
+    }
+  ],
+  "rsc": [
+    {
+      "url": "http://localhost:3000/ar/logga-in",
+      "start": 934,
+      "storlek": 663
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 935,
+      "storlek": 657
+    },
+    {
+      "url": "http://localhost:3000/ar/logga-in",
+      "start": 1049,
+      "storlek": 9162
+    },
+    {
+      "url": "http://localhost:3000/ar/logga-in",
+      "start": 1050,
+      "storlek": 2860
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 1056,
+      "storlek": 8891
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "start": 1056,
+      "storlek": 27472
+    }
+  ],
+  "ioLog": [
+    {
+      "typ": "observe",
+      "t": 917,
+      "href": "/ar/logga-in",
+      "top": 524
+    },
+    {
+      "typ": "observe",
+      "t": 917,
+      "href": "/kurser",
+      "top": 592
+    },
+    {
+      "typ": "observe",
+      "t": 917,
+      "href": "/kurser",
+      "top": 989
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/kurser",
+      "top": 989
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/kurser",
+      "top": 1158
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/ar/medlemskap",
+      "top": 1158
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/ar/medlemskap",
+      "top": 1672
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/laroplan",
+      "top": 1954
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/kurser",
+      "top": 2006
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/bibliotek",
+      "top": 2057
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/labb",
+      "top": 2109
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/certifikat",
+      "top": 2160
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/kalkylator",
+      "top": 2310
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/vagfundament",
+      "top": 2361
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/konfluens",
+      "top": 2413
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/netnet",
+      "top": 2464
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/superanalys",
+      "top": 2516
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/portfoljbyggare",
+      "top": 2567
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/dagens-pass",
+      "top": 2717
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/topplista",
+      "top": 2768
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/badges",
+      "top": 2820
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/fas3",
+      "top": 2871
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/ar/logga-in",
+      "top": 3173
+    },
+    {
+      "typ": "observe",
+      "t": 918,
+      "href": "/kurser",
+      "top": 3266
+    },
+    {
+      "typ": "trigg",
+      "t": 928,
+      "lank": [
+        {
+          "href": "/ar/logga-in",
+          "top": 524
+        },
+        {
+          "href": "/kurser",
+          "top": 592
+        },
+        {
+          "href": "/kurser",
+          "top": 989
+        },
+        {
+          "href": "/kurser",
+          "top": 989
+        }
+      ]
+    },
+    {
+      "typ": "observe",
+      "t": 945,
+      "href": "/dagens-pass",
+      "top": 3412
+    },
+    {
+      "typ": "observe",
+      "t": 952,
+      "href": "/laroplan",
+      "top": 3478
+    },
+    {
+      "typ": "trigg",
+      "t": 958,
+      "lank": []
+    }
+  ],
+  "scrollY": 0,
+  "docH": 5730
+}

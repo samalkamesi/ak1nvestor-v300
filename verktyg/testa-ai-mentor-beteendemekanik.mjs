@@ -118,7 +118,7 @@ const { svaraLokaltSektorskola2, SEKTORSKOLA2_MONSTER } = await tolerera("ai-men
 // ömsesidig enligt omgång 18-precedensen; deras lager ingår i min
 // helakedjan/L1/G2/J som VERKLIGA kedjeled efter mitt):
 const { svaraLokaltPeMekanik, PE_MEKANIK_MONSTER } = await tolerera("ai-mentor-pe-mekanik-fragor.ts", ["svaraLokaltPeMekanik", "PE_MEKANIK_MONSTER"]);
-const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltOverlevnadsdjup", "OVERLEVNADSDJUP_MONSTER"]);
+const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup", "OVERLEVNADSDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -615,7 +615,7 @@ const GAMLA = [
     // min SIST-position (harmoniserade kedjetestet med min rad, jag deras).
     "svaraLokaltBeteendemekanik",
     "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

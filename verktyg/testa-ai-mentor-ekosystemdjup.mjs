@@ -615,7 +615,7 @@ const GAMLA = [
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
     "svaraLokaltBeteendemekanik",
     "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

@@ -205748,6 +205748,350 @@
     "grahamSection": "Benjamin Grahams uppdelning mellan permanenta förlustmöjligheter och tillfälliga kursvisslingar är taxonomin i sin äldsta skepnad: de fyra adresserna är hans permanenta risker, strukturerade. Hans marginal of safety (km-030) är också adressernas gemensamma bot — mot resultatrisken ger marginalen utrymme när cykeln vänder, mot balansräkningsrisken spelrum före nöd, mot värderingsrisken avståndet som gör att inte ens ett mänskligt utfall behöver bli en förlust. Graham byggde ingen lista på fyra punkter, men allt han mätte bor på någon av adresserna.",
     "ak1Section": "I AK1A:s metodik är den här kursen RISK-familjens takblad: rs-familjens begrepp, källor och matriser får här sin gemensamma struktur — fyra adresser, fyra rader, högst två bärande — och AKM1:s riskdimension får sin skrivordning. Tillsammans med STABILITET-familjens mått (st-01, st-03) och vr-01:s multipelgap blir riskbilden läsbar i båda riktningarna: ner i bolaget, ut mot priset."
   },
+  "rs-07-leverantorsrisken": {
+    "slug": "rs-07-leverantorsrisken",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Leverantörsrisken — inköpens koncentration och maktbalansen",
+    "summary": "Riskfamiljens sjunde steg: spegeln till kundkoncentrationen. Där rs-02 mäter hur få kunder bär intäkterna mäter denna kurs hur få leverantörer bär inköpen — inköpsandelar, maktbalansen i två riktningar, påslagets genomsläpp i rörelseresultatet och dubbelkällans pris som försäkring.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Mäta inköpskoncentrationen: största leverantörens andel av inköpen och de tre största tillsammans · Räkna maktbalanskvoten i två riktningar — bolagets andel av leverantörens försäljning avgör om beroendet är ömsesidigt eller ensidigt · Räkna ett prispåslags genomsläpp: vad åtta procent hos ensamkällan kostar i rörelseresultat och marginal · Räkna leveransstoppets pris: förlorad produktion, förlorad täckning och andelen av årsresultatet · Värdera dubbelkällan som försäkring: kvalificeringens ledtid och kostnad mot den löpande premien och den förväntade stoppkostnaden · Läsa ut inköpssidan ur redovisningen — inköpsvolymen, leverantörsskulderna, riskavsnittets formuleringar och noterna — och känna igen de sex fällorna.",
+    "why": "Riskfamiljen har lärt skilja svängningar från förlust (rs-01), läst koncentrationen på kundsidan (rs-02), dold samvariation (rs-03), matrisen som rangordnar (rs-04) och bolagets egen riskredovisning (rs-05) — men beroendet har en andra sida som ingen kurs äger: inköpssidan. Ett bolag vars intäkter är spridda över hundra kunder men vars viktigaste komponent kommer från en enda leverantör är inte diversifierat; det är en kedja med en länk. Kursserien har systematiskt mätt vad som kan gå fel på intäktssidan och lämnat kostnadssidans beroenden åt förmodan — denna kurs stänger glipan. Föremålet är inte råvarupriser eller valutor (de ägs av grannkurserna) utan strukturen: hur stor del av inköpen som står hos en leverantör, vem som behöver vem, vad ett påslag kostar, vad ett stopp kostar och vad en andra källa kostar att bygga. Frågan som kursen lämnar hos läsaren är enkel och underskattad: om din viktigaste leverantör försvinner i morgon — hur länge lever verksamheten och vad kostar vägen ut? Svaret står sällan i årsredovisningens siffror, men spåren finns — och kursen lär läsa dem.",
+    "history": {
+      "origin": "Beroendet på enskilda källor är äldre än börsen. Gårdsbon som satade hela årets försörjning på en gröda visste vad koncentration heter när missväxten kom; köpmannen som bara kunde köpa sitt salt från en enda hamn visste att fredens pris sattes av den som ägde hamnen. Handelsfamiljerna löste det som kursen lär: dubbla källor, buffertar i logen, kontrakt som skrevs om innan de löpte ut. De företag som byggde epoker — gruvor, bruk, handelshus — känns igen på att de sällan var beroende av en enda leverantör av något som verksamheten inte kunde klara sig utan. Erfarenheten av krigens blockader, då hela branscher stannade när en sjöväg stängdes, skrev in lärdomen i generationernas minne: kedjan är bara så stark som sin trängsta länk.",
+      "evolution": "Tjugonde århundradet tog två motriktade svar på leverantörsberoendet. Det första var vertikal integration: bolaget äger sin egen kedja från råvara till färdig vara, och beroendet av andra ersätts av stora kostnader för att hålla allt i egen hand. Det andra, som vann mark under seklets slut och framåt, var det omvända: produktionssystem som räknade lager som slöseri och köpte det mesta utifrån, i exakt den mängd som behövdes. Systemet gjorde leveranskedjan till en prestationskonst — men också till ett beroende konstruerat med avsikt. Ju effektivare kedjan blev, desto färre länkar tillät den sig, och koncentrationen på leverantörssidan växte i takt med effektiviteten på lagersidan. För den som läser bolag blev frågan ny: ett smalt, lätt och snabbt bolag är billigt i drift — men vad händer den dag en länk bryter?",
+      "modern": "I dag har leverantörsrisken flyttats från inköpsavdelningens bord till styrelsens agenda. De senaste årens globala chocker — en pandemi som stängde fabriker, en brist på kretsar som satte hela branscher i kö, energipriser som rusade, avbrott på världens farleder — har visat att leverantörsstörningar inte är en fotnot utan en risk som kan äta årsresultat i en hastighet som ingen kassaflödesprognos fångar. Svaret från bolagssidan har fått ett eget språkbruk: dubbelkällor, säkerhetslager och närhet i geografin har blivit strategiska ord. För aktiestudenten är det här en läsläxa i två delar: att fråga hur koncentrerade inköpen är — och att minna sig själv att varje år av effektivisering som sparar en kostnad samtidigt kan ha köpt en koncentration. Kursen gör den avvägningen mätbar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — beroendets andra sida",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — inköpsandelar och maktbalansen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — att läsa ut inköpssidan ur redovisningen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — påslagets och stoppets aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — leverantörsriskens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade sina läsare att kunna förklara bolaget de äger i en mening — och meningen innehåller ofta en leverantör. Hans genomgångar av tillverkande och växande bolag visar samma mönster som denna kurs mäter: bolaget som berättar stolt om sin effektiva kedja har ofta också köpt ett beroende, och bolaget som har en andra källa till det viktigaste har köpt en trygghet som inte syns i en marginalprocent. Lynch såg dessutom med egna ögon hur en hel bransch kan sättas i kö av brist på en enda komponent — och hur bolag med reservkapacitet då kan ta marknadsandelar medan konkurrenterna står stilla. Hans praktiska läsning av verksamheten — vad bolaget gör och vad som kan gå sönder i det — är leverantörsriskens raka föregångare.",
+    "grahamSection": "Benjamin Graham tänkte på aktien som en andel i en affär, och en affär har leverantörer som den måste leva med. Hans säkerhetsmarginal — mellanskillnaden mellan pris och värde — vilar på att verksamheten får finnas kvar tills marknaden rättar sig, och en affär som kan stoppas av en enda motpart har en kortare väg från att finnas till att inte finnas än omsättningssiffran antyder. Grahams temperament ger därför berggrund åt det som kursen formulerar: spridning i det ett bolag är beroende av — kunder, leverantörer, geografier — är inte feghet utan robusthet, och den som betalar ett pris som kräver att allt går bra har ingen marginal för den dag en länk brister. Tryggheten i kedjan är i hans anda en del av värdet, inte en kostnad att skära bort.",
+    "ak1Section": "I AK1A:s metodik stänger denna kurs riskfamiljens sista stora glänta: rs-familjen har mätningar för kundsidan (rs-02), samvariationen (rs-03), matrisen (rs-04) och den egna riskredovisningen (rs-05) — men inköpssidan har saknat egen kurs. I AKM1:s bolagsläsning blir leverantörsrisken en kontrollstation i riskdimensionen bredvid kundkoncentrationen: samma koncentrationstänkande, spegelvänt mot kostnadssidan. I AKM2:s ram övar kursen två scenarioaxlar som ofta blandas ihop: påslaget (volymen levereras men till högre pris) och stoppet (volymen uteblir en tid) har olika aritmetik och olika motåtgärder — och dubbelkällans värde visar sig först när de hålls isär. Gränserna mot grannkurserna är avsiktliga: mt-05 äger byteskostnaderna som moat på säljarsidan, mt-06 kostnadsövertaget som konkurrensfördel, km-026 de relaterade parterna, rk-09 portföljens koncentration — denna kurs äger inköpssidans beroende som risk.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — beroendets andra sida",
+        "intro": "Koncentrationsläsningen börjar oftast hos kunderna. Kursen börjar på andra sidan resultaträkningen — hos dem bolaget köper av.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett bolag och dess omvärld är utbyten i två riktningar. Utriktningen mättes av rs-02: hur stor del av intäkterna som bärs av en eller några kunder. Inriktningen mäts av denna kurs: hur stor del av inköpen som bärs av en eller några leverantörer. Spegling är inte likhet — koncentrationen på de två sidorna uppstår av olika skäl, mäts mot olika talmängder och hanteras med olika verktyg. Ett bolag kan ha hundra kunder och ändå vara ett kedjebolag: om den enda komponent som verksamheten inte kan leva utan kommer från en enda leverantör, vilar hela kundspridningen på en enda länk. Inköpsvolymen är dessutom ett tal som sällan får sin egen rad — den står gömd i kostnadsposternas massor, och koncentrationen bland leverantörerna nämns i förbifarten om alls. Därför förtjänar den andra sidan egen mätning: inköpsandelar hos de största, maktbalansen mellan köpare och säljare, och de två händelser som gör beroendet kännbart — prispåslaget och leveransstoppet. Kursens genomgående exempel är ett påhittat bolag, Vega Komponenter AB, och alla dess tal är uppbyggda för räkneleden; verkliga bolag läses med samma frågor, men med egna siffror."
+          },
+          {
+            "type": "definition",
+            "content": "LEVERANTÖRSRISKEN — TRE FRÅGOR: (1) KONCENTRATIONEN — hur stor del av inköpen bär den största leverantören och de tre största tillsammans · (2) MAKTBALANSEN — hur stor är bolagets andel av leverantörens försäljning; beroendet mäts i båda riktningarna · (3) KONSEKVENSERNA — vad kostar ett prispåslag i rörelseresultat och vad kostar ett leveransstopp i förlorad täckning · GRÄNS: rs-02 äger kundsidan, mt-05 byteskostnaderna som moat, rk-09 portföljens koncentration — denna kurs äger inköpssidans beroende."
+          },
+          {
+            "type": "insight",
+            "content": "Ett bolag är inte diversifierat förrän båda sidor av resultaträkningen är det. Hundra kunder och en enda leverantör av det viktigaste är en kedja med en länk."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — inköpsandelar och maktbalansen",
+        "intro": "Mätningen har två steg: först koncentrationen bland leverantörerna, sedan maktbalansen — vem av de två behöver vem mest.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Vega Komponenter AB omsätter 1 200,0 miljoner kronor med ett rörelseresultat på 96,0 miljoner — en rörelsemarginal på 8,0 procent. Inköpen av material och komponenter uppgår till 780,0 miljoner, det vill säga 65,0 procent av omsättningen. Bland leverantörerna står en enda — tillverkaren av kretsen som sitter i varje produkt — för 405,6 miljoner. Räkna den första mätningen: 405,6 dividerat med 780,0 ger 52,0 procent av inköpen hos en enda leverantör. Nästa två leverantörer bär 156,0 och 78,0 miljoner, det vill säga 20,0 och 10,0 procent. De tre största tillsammans: 405,6 plus 156,0 plus 78,0 är 639,6 miljoner — 82,0 procent av inköpen. Talet talar sitt tydliga språk: alla övriga leverantörer tillsammans bär 18,0 procent, och kretsleverantören är mer än dubbelt så stor som samtliga övriga tillsammans. Andra steget är kursens signaturidé, maktbalansen: koncentrationens vikt avgörs av vem som behöver vem. Räkna bolagets andel av leverantörens försäljning — maktbalanskvoten. Är leverantören en liten specialist med en omsättning på 675,0 miljoner bär Vega 405,6 av 675,0, det vill säga 60,1 procent av dess försäljning: de två är ömsesidigt låsta, och leverantören har lika mycket att förlora som Vega. Är leverantören i stället en global jätte med 13 500,0 miljoner i omsättning bär Vega 405,6 av 13 500,0 — 3,0 procent: beroendet är ensidigt, och Vegas förhandlingsposition är i princip noll. Samma inköpsandel, två helt olika risklägen."
+          },
+          {
+            "type": "tabell",
+            "content": "INKÖPSKONCENTRATIONEN — VEGA KOMPONENTER AB (PÅHITTADE TAL): omsättning 1 200,0 Mkr · rörelseresultat 96,0 Mkr (marginal 8,0 %) · inköp 780,0 Mkr (65,0 % av omsättningen) · LEVERANTÖR 1 (kretsen, ensam källa): 405,6 Mkr = 52,0 % av inköpen · LEVERANTÖR 2: 156,0 Mkr = 20,0 % · LEVERANTÖR 3: 78,0 Mkr = 10,0 % · TRE STÖRSTA: 639,6 Mkr = 82,0 % · MAKTBALANSKVOTEN — bolagets andel av leverantörens försäljning: specialist 405,6 / 675,0 = 60,1 % (ömsesidigt låsta) · global jätte 405,6 / 13 500,0 = 3,0 % (ensidigt beroende)."
+          },
+          {
+            "type": "insight",
+            "content": "Koncentration är inte ett tal utan ett förhållande: 52,0 procent hos en leverantör som behöver dig lika mycket är partnerskap; 52,0 procent hos en jätte som knappt noterar dig är ett lån på verksamheten som kan sägas upp."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — att läsa ut inköpssidan ur redovisningen",
+        "intro": "Ingen not heter leverantörskoncentration. Uppgifterna byggs från fyra indirekta spår i årsredovisningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första spåret är inköpsvolymen själv: kostnadssidan av resultaträkningen och kassaflödesanalysen som km-003 lär ut ger de rörliga inköpen — ofta som kostnader för material tillsammans med förändringar i lager och leverantörsskulder. Andra spåret är riskavsnittet i förvaltningsberättelsen, som rs-05 lär läsa mellan raderna: formuleringar om enskilda leverantörer, viktiga komponenter eller beroenden av tredje part är ledtrådar, och formuleringarnas värsta variant är frånvaron — ett bolag som inte nämner inköpssidan alls har oftast ett att nämna. Tredje spåret är noterna om leverantörsskulder och åtaganden: långa kontraktstider, take-or-pay-åtaganden och beställda belopp avslöjar både volym och bindningstid. Fjärde spåret är andras berättelser: branschöversikter, konkurrenternas riskavsnitt och ibland leverantörens egen rapport — enligt samma maktbalanslogik är nämligen en liten leverantörs kundkoncentration samma beroende sett från andra hållet. km-026 om relaterade parter hör hit när leverantören är ägarrelaterad. Samla spåren till en egen tabell: leverantör, andel av inköpen, maktbalanskvot, kontraktstid och om mätningen är möjlig — omställningstid till en ny källa. Tabellen bygger läsaren själv; årsredovisningen levererar byggstenarna utspridda på fyra ställen."
+          },
+          {
+            "type": "definition",
+            "content": "DE FYRA SPÅREN: (1) INKÖPSVOLYMEN — resultaträkningens kostnadssida och kassaflödesanalysen (km-003) · (2) RISKAVSNITTET — formuleringar om leverantörer och beroenden mellan raderna (rs-05) · (3) NOTERNA — leverantörsskulder, åtaganden, kontraktstider och take-or-pay · (4) ANDRAS BERÄTTELSER — branschöversikter, konkurrenters och leverantörens egna redovisningar (km-026 vid ägarrelation) · EGEN TABELL: leverantör, inköpsandel, maktbalanskvot, bindningstid, omställningstid."
+          },
+          {
+            "type": "insight",
+            "content": "Frånvaron av leverantörstal är själv ett tal: en bransch där alla köper av samma ensamkälla har redan berättat vem som bär kedjan — läs konkurrentens riskavsnitt om din bolags tiger."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — påslagets och stoppets aritmetik",
+        "intro": "Beroendet blir tal i två händelser: priset höjs, eller volymen uteblir. Kapitlet räknar båda — och dubbelkällans pris som försäkring.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Påslagsexemplet: leverantören — ensam källan — höjer priset med 8,0 procent. Kostnadsökningen blir 405,6 gånger 0,080, det vill säga 32,4 miljoner kronor — och med ett rörelseresultat på 96,0 miljoner är det 33,8 procent av resultatet som försvinner av en enda leverantörs prisbeslut. Kan priserna inte höjas mot kunderna sjunker rörelseresultatet till 96,0 minus 32,4, det vill säga 63,6 miljoner — marginalen faller från 8,0 till 5,3 procent. Stoppexemplet: produktionen löper 48 veckor om året och ett avbrott hos ensamkällan stoppar allt i sex veckor — sex av fyrtioåtta är 12,5 procent av årsproduktionen, och på omsättningen 1 200,0 blir den förlorade intäkten 150,0 miljoner. Med en bidragsgrad på 30 procent försvinner täckning om 150,0 gånger 0,30, det vill säga 45,0 miljoner — 46,9 procent av årsresultatet, förlorat på sex veckor. Dubbelkällan som försäkring: att kvalificera en andra källa tar i exemplet 24 månader och 38,0 miljoner i engångskostnad; att driva den löpande kostar 3,0 procent mer på halva volymen — 202,8 gånger 0,030, det vill säga 6,1 miljoner per år. Ställ premien mot den förväntade stoppkostnaden: med en uppskattad sannolikhet på tio procent per år för ett sexveckorsstopp blir den förväntade kostnaden 0,10 gånger 45,0, det vill säga 4,5 miljoner per år. Premien 6,1 är alltså högre än det förväntade utfallet 4,5 — och ändå rimlig, av samma skäl som alla försäkringar: den förväntade kostnaden är ett genomsnitt, men stoppet träffar inte i genomsnitt utan vid ett enda tillfälle, och för bolag med tunn marginal kan det tillfället vara existentiellt. Detta är rs-01:s gamla läxa i ny skepnad: svängningen är inte förlusten — men den ensidiga koncentrationen gör svängningen till förlust."
+          },
+          {
+            "type": "tabell",
+            "content": "PÅSLAGET: 405,6 × 0,080 = 32,4 Mkr = 33,8 % av rörelseresultatet 96,0 · resultat efter påslag 96,0 − 32,4 = 63,6 Mkr, marginal 8,0 → 5,3 % · STOPPET: 6 av 48 veckor = 12,5 % av produktionen · förlorad intäkt 1 200,0 × 0,125 = 150,0 Mkr · förlorad täckning 150,0 × 0,30 = 45,0 Mkr = 46,9 % av årsresultatet · DUBBELKÄLLAN: kvalificering 38,0 Mkr engångs + 24 månader · löpande premie 202,8 × 0,030 = 6,1 Mkr per år · förväntad stoppkostnad 0,10 × 45,0 = 4,5 Mkr per år · slutsats: premien överstiger det förväntade utfallet — och köper ändå bort det existentiella."
+          },
+          {
+            "type": "insight",
+            "content": "Påslaget äter marginalen gradvis; stoppet äter årets resultat på sex veckor. Två olika fiender — och dubbelkällan är svaret på båda, prissatt som en försäkring: dyrare än det förväntade fallet, billigare än det värsta."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Leverantörsrisken kan räknas för snällt, spåras för ytligt och tryggas för tvärsäkert. Kapitlet går igenom de sex vanligaste fällorna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är den nominella dubbelkällan: två leverantörer på pappret som båda köper sin viktigaste insats från samma fabrik uppströms — koncentrationen står kvar, en rad längre bort. Fråga alltid var andra källans källa finns. Andra fällan är kvalificeringstidens underskattning: kontraktet kan ha sex månaders uppsägningstid medan en ny källa tar 24 månader att kvalificera — arton månader av glappet är oskyddade, och för dem finns ingen försäkring i exemplet. Tredje fällan är volymrabatten som lockbete: att samla allt hos en leverantör kan ge tre procent rabatt — på Vegas volym hos leverantören blir det 12,2 miljoner per år — men rabatten köper 52,0 procents koncentration; ställ alltid rabatten mot påslags- och stoppkostnaden från kapitel fyra. Fjärde fällan är att glömma leverantörens egen hälsa: leverantörsrisken är en kreditrisk uppströms — en leverantör med tunn balansräkning, hög skuld eller själv hög kundkoncentration kan försvinna av skäl som aldrig syns i Vegas rapport; läs leverantörens årsredovisning med st-01:s lins. Femte fällan är kontraktets konstruktion: ett indexkopplat leveransavtal flyttar prisrisken mellan köparen och säljaren, men skyddar bara om indexet matchar den faktiska kostnaden; valutasidan ägs av km-058 och rk-07 och ska bara flaggas här, inte mätas. Sjätte fällan är talet som saknas: eftersom ingen uppgiftsplikt kräver leverantörskoncentration på siffernivå lockas läsaren att tolka tystnad som spridning — tolka den i stället som en fråga till bolaget, och räkna med att svaret, när det kommer, är formulerat av den som har mest att vinna på en snäll läsning."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam rot: leverantörsrisken bor inte i det som redovisas utan i det som bara kan rekonstrueras. Dubbelkällans källa, kvalificeringens tid, rabattens pris, motpartens balansräkning, indexets matchning, tystnadens tolkning."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — leverantörsriskens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga avläsningen av inköpssidans beroende.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur stor del av inköpen bär den största leverantören — och de tre största tillsammans? Fråga två: hur stor är bolagets andel av leverantörens försäljning — är beroendet ömsesidigt låst eller ensidigt utsatt? Fråga tre: hur lång tid och vilken kostnad kräver en ny källa — kvalificering, verktyg, certifiering — och hur stort är glappet mot kontraktets uppsägningstid? Fråga fyra: vad kostar ett påslag på åtta procent i rörelseresultatet, vad kostar ett sexveckorsstopp i förlorad täckning — och vad kostar dubbelkällan per år som försäkring mot båda? Fråga fem: var står uppgifterna — riskavsnittet, noterna, kassaflödet — och vad tiger bolaget om? Den som besvarar de fem frågorna vet något som intäktsanalysen aldrig visar: hur lång kedjan är mellan bolaget och ett stopp. Detta är utbildning i att läsa och mäta beroendets struktur, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj två noterade tillverkande bolag och hämta deras senaste årsredovisningar. Bygg inköpsvolymen ur kostnadssidan och kassaflödet, läs riskavsnittets formuleringar om leverantörer med rs-05:s lins och samla noternas åtaganden. Uppskatta största leverantörens andel av inköpen — även som intervall — och sök leverantörens eller branschens uppgifter för en maktbalanskvot. Räkna påslagsexemplet med bolagets egna marginaler: vad kostar åtta procent hos den största leverantören i rörelseresultat? Räkna stoppkostnaden för sex veckors avbrott och ställ den mot en uppskattad dubbelkällapremie. Avsluta med en halvsida per bolag: är beroendet ömsesidigt eller ensidigt, och vilken av de sex fällorna är läsarens största osäkerhet? Upprepa om ett år — leverantörsstrukturen ändras långsamt, och förändringen är i sig en strategiavläsning."
+          },
+          {
+            "type": "insight",
+            "content": "rs-familjens karta har nu sju steg: svängningen, kunderna, samvariationen, matrisen, riskredovisningen, anatomin — och inköpssidan. Beroendet har två riktningar; den som bara mäter en läser halva bolaget."
+          }
+        ]
+      }
+    ]
+  },
+  "rs-08-modellrisken": {
+    "slug": "rs-08-modellrisken",
+    "category": "RISK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Modellrisken — den femte adressen: antagandena, felmarginalen och det egna felet",
+    "summary": "Riskfamiljens åttonde steg vänder spegeln: efter bolagets fyra riskadresser står den femte — analysen själv. Kursen lär antagandeinventering, känslighetsräkning och felbudgeten baklänges: hur lite antagandena behöver ha fel, samtidigt, för att radera marginalen till kursen. Utan den räkningen är säkerhetsmarginalen en siffra, inte ett skydd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Skilja på marknadsrisk och modellrisk — risken att bolaget slår fel mot risken att analysen slår fel · Rita antagandeinventeringen: varje tal i en värdering är ett antagande med källa, klass och slaglängd · Räkna känsligheten en variabel i taget — värdets svar på blygsamma förändringar i marginal, tillväxt och multipel · Se interaktionseffekten — antagandefel adderas inte, de multipliceras · Räkna felbudgeten baklänges från kursen — de minsta samverkande justeringarna som raderar marginalen · Dokumentera en pre-mortem av den egna analysen — de fem frågorna före varje slutsats, med gränserna mot grannkurserna (rs-06 riskens anatomi, kt-02 kalibreringen, ek-05 fördelningarna, km-030 marginalbegreppet).",
+    "why": "Riskfamiljens sju första kurser letade risken i bolaget: svängningarna skildes från förlusten (rs-01), enskilda källor kartlades (rs-02, rs-03), matrisen rangordnade osäkerheten (rs-04), årsredovisningens eget riskavsnitt lästes (rs-05) och rs-06 satade namn på de fyra adresser där risken bor — resultatet, balansräkningen, ägandet och värderingen — medan rs-07 lärde ut inköpssidan: leverantörskoncentrationen som kundkoncentrationens spegel. Men de adresserna ligger alla i bolaget. Den femte adressen ligger i läsaren: analysen själv. En värdering är ett hopp av antaganden, och varje antagande kan vara fel på ett sätt som spelar roll för slutsatsen. Det obekväma faktum är att en marginal på åtta procent till kursen kan raderas av två blygsamma samverkande fel — en halv procentenhet på vinstmarginalen och en halv multipelenhet — som vart och ett för sig är helt ofarligt. Kursen gör därför det arbete som Grahams säkerhetsmarginal alltid var avsett att bli men sällan får: en räkning av hur fel analysen fick ha fel. Det är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget.",
+    "history": {
+      "origin": "Kartläggarens fel är äldre än finansmarknaden: sjökortens marginaler, landmätarnas dubbelmätningar, ingenjörernas säkerhetsfaktorer — alla yrken som räknar på en framtid har fått lära sig att själva räkningen är en riskkälla. Finansen ärvde läxan tidigt. Benjamin Graham byggde hela sin konst på insikten att framtiden inte kan förutsägas, och att den enda hederliga hanteringen av det problemet är marginalen: köp så billigt att analysen får ha fel och ändå lämna ägaren hel. Säkerhetsmarginalen var från början inte ett mått på hur mycket marknaden hade fel — den var ett mått på hur mycket analytikern fick ha fel.",
+      "evolution": "Under 1900-talet blev modellfelet ett eget forskningsfält. Känslighetsanalysen — att flytta ett antagande i taget och se hur slutsatsen svarar — blev standard i allt från byggnadsstatik till prospektering, och värderingslitteraturen anammade tabellerna. Scenarioanalysen lät flera antaganden röra sig tillsammans, och när beräkningskraften blev billig gjorde Monte Carlo-metoderna punktestimat till fördelningar — en utveckling laboratoriet övar i egen kurs (ek-05). Samtidigt dokumenterade psykologin hur modellen smickrar sin ägare: bekräftelsefällan letar antaganden som passar slutsatsen, och överkonfidensen gör intervallen för trånga. Modellrisken visade sig bo i två rum — antagandenas matematik och analytikerns psykologi — och kurserna fick lära ut båda.",
+      "modern": "I dag är modellrisken svårare än någonsin just för att verktygen är så bra. Kalkylbladet svarar med två decimaler oavsett om input är en årsredovisning eller en gissning, och precisionen i utdata bär lätt över som förtroende för input — falsk precision är kalkylbladets defaultläge. Samtidigt har kalibreringsforskningen gett motgift: den som loggar sina egna utfall lär sig skillnaden mellan sjuttioprocentig säkerhet och känslan av sjuttioprocentig säkerhet. Backtestens hantverk (ek-04) gör samma sak baklänges — hur hade metoden svarat förr? För aktiestudenten landar allt detta i en disciplin: att räkna vändpunktskorgen, de minsta samverkande antagandefel som raderar marginalen, före varje slutsats — och att skriva ner den tillsammans med analysen, så att framtiden kan granska den mot verkligheten."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — den femte adressen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — antagandeinventeringen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätning — känsligheten och interaktionen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Felbudgeten — att räkna baklänges",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — de fem frågorna och pre-mortemen",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch hyllade grova tal som fångar verksamheten framför precisa tal som fångar kalkylbladet: det räcker att vara ungefärligt rätt på ett bolag man förstår, medan exakt fel är den dyraste kombinationen av alla. Hans varning för sexmånadersmål och decimalknivar i prognoser är modellriskens raka föregångare — han såg att precisionen i utdata lätt köps som trygghet i antagandena. Lynchs andra bidrag är ödmjukheten inför det egna spåren: den som loggar vad man trodde och varför får med tiden två portföljer, den man äger och den man lärde känna — och den andra är minst lika värdefull. Kursens felbudget är den övningen i räkneform.",
+    "grahamSection": "Benjamin Graham formulerade modellrisken innan ordet fanns: framtiden är ett intervall, inte en punkt, och analytikern som agerar som om punkten vore känd har inte analyserat bort osäkerheten utan bara dolt den. Säkerhetsmarginalen var hans försäkring mot det egna felet — köp med så stort avstånd mellan pris och värde att antagandena får ha fel och slutsatsen ändå håller. Hans andra regel är lika viktig: marginalen skyddar bara mot fel i antagandena, inte mot fel i omdömet — den som behöver marginalen minst är den som har störst nytta av den. Grahams elever har burit räkningen vidare: marginalen är inte en egenskap hos bolaget utan en egenskap hos analysen, och den mäts i hur fel antagandena samlat fick ha.",
+    "ak1Section": "I AK1A:s metodik stänger denna kurs riskfamiljens yttersta ring: rs-01 till rs-07 letade risken i bolaget — rs-07 senast på inköpssidan — och rs-08 vänder den: risken i analysen. I AKM1:s bolagsläsning blir vändpunktskorgen en kontrollstation före varje stabilitetsvägd slutsats: innan slutsatsen skrivs räknas den minsta korgen av samverkande antagandefel som välter den — en slutsats som kräver att alla antaganden håller exakt är inte en slutsats utan ett vad. I AKM2:s ram kompletterar kursen fördelningstänkandet från ek-05:s Monte Carlo: fördelningen beskriver bredden på vägarna, felbudgeten beskriver avståndet till avgrunden. Gränserna är avsiktliga — rs-06 äger bolagets fyra adresser, kt-02 äger kalibreringen mot marknadens förväntningar, ek-04 backtestens hantverk, km-030 marginalbegreppet och km-019 och km-036 psykologin — denna kurs äger analysens eget fel.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — den femte adressen",
+        "intro": "Riskkursen har hittills letat i bolaget. Nu vänder den spegeln — mot läsarens egen räkning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "rs-06 gav riskarbetet en karta: risken bor på fyra adresser i bolaget — resultatet, balansräkningen, ägandet och värderingen. Varje adress kan granskas, mätas och vägas. Men kartan har en tyst förutsättning: att den som granskar har rätt. En analys som granskar alla fyra adresserna med felaktiga antaganden är inte fyra gånger säkrare — den är fyra gånger mer övertygande och lika fel. Detta är den femte adressen: modellen själv, med dess antaganden, dess känslighet och dess benägenhet att smickra sin ägare. Skilj noga på två risker som ofta förväxlas. Marknadsrisken är att bolaget utvecklas sämre än väntat — analysen var rätt, framtiden var sämre. Modellrisken är att analysen hade fel från början: antagandena om marginal, tillväxt eller multipel bar inte, och slutsatsen vilade på dem ändå. De två kräver olika botemedel — marknadsrisken hanteras med positionens storlek och tiden, modellrisken med inventering, känslighet och felbudget. En förlorad position kan vara det ena eller det andra, och skillnaden avgör om erfartenheten blir en lärdom eller en falsk. Kursens exempelbolag Nora Industri är påhittat, och siffrorna är valda för räkneövningens skull — detta är utbildning i metod, inte kommentar till något noterat bolag."
+          },
+          {
+            "type": "definition",
+            "content": "MODELLRISK — risken att en slutsats vilar på antaganden som är fel på ett sätt som spelar roll för slutsatsen · FEMTE ADRESSEN — rs-06:s fyra adresser ligger i bolaget; den femte ligger i analysen · MARKNADSRISK mot MODELLRISK — bolaget slog fel mot analysen slog fel; olika risker, olika botemedel · FELBUDGET — hur mycket antagandena samlat får ha fel innan slutsatsen vänder · GRÄNS: rs-06 äger bolagets adresser, kt-02 kalibreringen mot marknaden, km-019 och km-036 psykologin, km-030 marginalbegreppet — denna kurs äger analysens eget fel."
+          },
+          {
+            "type": "insight",
+            "content": "Bolaget har ingen aning om din värdering. Att kursen föll bevisar inte att du hade fel, och att kursen steg bevisar inte att du hade rätt — utfallet prövar aldrig antagandena, bara tålamodet. Endast inventeringen prövar antagandena."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — antagandeinventeringen",
+        "intro": "En värdering är en maskin av tal. Inventeringen sorterar talen efter var de kommer ifrån — och efter vad som händer när de drar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Varje tal i en värdering tillhör en av tre klasser. Rapporttal står i årsredovisningen: gårdagens intäkt, årets marginal — kända, men kända för förra året. Härledda tal räknas ur rapporten: marginalens trend, kapitalomsättningen, nyckeltalens följd — säkra som aritmetik, osäkra som tolkning. Framtidsantaganden är den tredje klassen: tillväxttakten, marginalen om fem år, multipeln vid horisonten — här vilar ingenting på papper, och här står värderingens tyngsta bärare. Inventeringen är enkel att göra och sällan gjord: skriv varje tal i en kolumn med sin klass och sin källa, och markera vilka tal som kan röras utan att det syns. Nora Industri, kursens påhittade exempel: intäkt per aktie år fem antas till 135 kronor, vinstmarginalen till 12 procent och multipeln till 14. Räkningen blir 135 gånger 0,12 ger vinst 16,2 kronor, och 16,2 gånger 14 ger ett värde av 226,8 kronor per aktie. Tre av fyra tal i den kedjan är framtidsantaganden — det enda som är härlett är produkten. Det är inventeringens viktigaste fynd: värderingar har oftast färre rapporttal än de ser ut att ha, och den som kan peka ut vilka tal som bär slutsatsen kan också räkna vad de får ha fel."
+          },
+          {
+            "type": "tabell",
+            "content": "ANTAGANDEINVENTERING — NORA INDUSTRI (PÅHITTADE TAL): INTÄKT PER AKTJE ÅR 5: 135 kr — framtidsantagande (tillväxten redan inbakad) · VINSTMARGINAL: 12,0 procent — framtidsantagande · MULTIPEL ÅR 5: 14 — framtidsantagande · VINST PER AKTJE: 135 × 0,12 = 16,2 kr — härlett · VÄRDE PER AKTJE: 16,2 × 14 = 226,8 kr — härlett · KLASSFÖRDELNINGEN: 3 framtidsantaganden, 0 rapporttal, 2 härledda — kedjan vilar på antagandena."
+          },
+          {
+            "type": "insight",
+            "content": "Inventeringens fråga är inte om antagandena är rimliga — den frågan svarar alltid ja. Frågan är vilka tre tal som bär hela slutsatsen, och vad som händer när de rör sig."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätning — känsligheten och interaktionen",
+        "intro": "Känslighetsräkningen flyttar ett antagande i taget. Sedan flyttar den alla — och skillnaden mellan de två svaren är kursens kärna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med blygsamma slag, inte extrema: en procentenhet på marginalen, två enheter på multipeln, fem kronor på intäkten. Marginalen 13 procent i stället för 12: 135 gånger 0,13 ger 17,55, gånger 14 ger 245,7 — värdet stiger 18,9 kronor eller 8,3 procent. Multipeln 16 i stället för 14: 16,2 gånger 16 ger 259,2 — uppgången 32,4 kronor eller 14,3 procent, den största av de enskilda. Intäkten 140 i stället för 135: 140 gånger 0,12 ger 16,8, gånger 14 ger 235,2 — 8,4 kronor eller 3,7 procent. Notera ordningen: multipeln slår hårdast, marginalen därefter, intäkten mjukast — känslighetstabellen visar var analysen är sårbar, och sårbarheten sällan där uppmärksamheten ligger. Nu interaktionen, som är räkningens egentliga poäng. Flytta alla tre samtidigt i samma riktning: 140 gånger 0,13 ger 18,2, gånger 16 ger 291,2 — en ökning med 64,4 kronor. Summan av de tre enskilda slagen är 18,9 plus 32,4 plus 8,4, alltså 59,7 kronor. Skillnaden — 4,7 kronor — är interaktionseffekten: den uppstår för att slagen verkar på varandras produkter, inte bredvid varandra. Effekten är liten vid blygsamma slag och våldsam vid stora, och den är alltid starkast när slagen går åt samma håll — det vill säga när alla antaganden felar samtidigt, vilket är exakt det scenario den som älskar sin analys aldrig räknar på."
+          },
+          {
+            "type": "tabell",
+            "content": "KÄNSLIGHETSTABELLEN — ETT SLAG I TAGET MOT BAS 226,8: MARGINAL 12 till 13 procent: 135 × 0,13 = 17,55 × 14 = 245,7 (+18,9 kr, +8,3 procent) · MULTIPEL 14 till 16: 16,2 × 16 = 259,2 (+32,4 kr, +14,3 procent) · INTÄKT 135 till 140: 140 × 0,12 = 16,8 × 14 = 235,2 (+8,4 kr, +3,7 procent) · SAMTIDIGT: 140 × 0,13 = 18,2 × 16 = 291,2 (+64,4 kr, +28,4 procent) · INTERAKTIONEN: 64,4 − 59,7 = 4,7 kr ovanpå summan — felen förlåter inte varandra."
+          },
+          {
+            "type": "insight",
+            "content": "Antagandefel adderas inte — de multipliceras. Tre blygsamma fel på raken bär mer än summan av sina delar, och interaktionen växer med felen. Den som bara räknar ett slag i taget underskattar alltid det värsta fallet."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Felbudgeten — att räkna baklänges",
+        "intro": "Känsligheten frågar vad som händer om antagandena rör sig. Felbudgeten frågar det omvända och nyttigare: hur lite behöver de röra sig för att välta slutsatsen?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt en kurs under värdet: Nora Industri noterad till 210 kronor. Basvärdet 226,8 ger en marginal av 16,8 dividerat med 210 — hela 8,0 procent. En marginal på 8,0 procent ser trygg ut, och här gör modellrisken sin entré: pröva två blygsamma samverkande fel. Håll intäkten oförändrad, sänk vinstmarginalen en halv procentenhet — till 11,5 — och multipeln en halv enhet — till 13,5. Räkningen: 135 gånger 0,115 ger 15,525, gånger 13,5 ger 209,6 kronor. Marginalen till kursen 210 är borta; slutsatsen har vänt på två fel som vart och ett är för litet att oroa någon. Kontrollera att inget av felen ensamt bröt slaget: marginalen 11,5 procent med oförändrad multipel ger 15,5 gånger 14, alltså 217,4 kronor — strax över kursen; multipeln 13,5 med oförändrad marginal ger 16,2 gånger 13,5, alltså 218,7 kronor — också över. Det är först tillsammans som slagen välter, och det är precis så verkliga analysfel ser ut: inte ett grovt misstag utan tre försiktiga som går åt samma håll. Felbudgeten är alltså korgen av minsta samverkande justeringar som raderar marginalen — vändpunktsantagandena. En analys vars vändpunktskorg är smal — där en halv procentenhet här och en halv enhet där räcker — kräver mer av framtiden än den som tål grova slag. Jämför därför analyser efter korgens bredd, inte efter marginalens siffra: åtta procent på tre sköra antaganden är mindre marginal än fem procent på ett antagande som är förankrat i rapporten."
+          },
+          {
+            "type": "definition",
+            "content": "FELBUDGETEN — den minsta korgen av samverkande antagandefel som raderar marginalen till kursen · RÄKNINGEN BAKLÄNGES: från kursen mot värdet, inte från värdet mot kursen · NORA-EXEMPLET: kurs 210 mot värde 226,8 — marginal 8,0 procent — raderas av marginal 12 till 11,5 procent och multipel 14 till 13,5 tillsammans (209,6 kronor), där inget fel ensammast välter (217,4 respektive 218,7) · TVÅ FRÅGOR: hur brett tål analysen att antagandena felar — och vad kräver den av framtiden för att hålla?"
+          },
+          {
+            "type": "insight",
+            "content": "Fråga inte vad bolaget måste göra för att du ska ha rätt. Fråga hur lite det kan göra — hur små de samverkande felen får vara — och ändå lämna analysen hel. Svaret är felbudgeten, och den är en egenskap hos analysen, inte hos bolaget."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Modellrisken har sina favoritställen. Sex fällor täcker de flesta sätt som en välräknad analys ändå går fel på.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är precisionens lockelse: kalkylbladet svarar med två decimaler oavsett om input är revisionssäkra rapporttal eller ren gissning, och precisionen i utdata köps lätt som trygghet i antagandena — en värdering som redovisar 226,82 kronor känns tryggare än en som redovisar ungefär 225, trots att skillnaden är skräp. Andra fällan är bekräftelsefällan, vars psykologi km-019 äger: antagandena väljs för att nå den slutsats som redan dragits, och känslighetstabellen byggs smal — fyra oskyldiga slag men aldrig de två som välter. Tredje fällan är överkonfidensen, km-036:s område: intervallen blir för trånga, sannolikheten att alla antaganden håller samtidigt överskattas, och kalibreringen mot egna historiska utfall uteblir. Fjärde fällan är punktestimat: ett tal per antagande i stället för intervall eller scenarier — ek-05:s fördelningar är botemedlet, felbudgeten är dess fattiga kusin som fungerar utan motor. Femte fällan är förankringen i det egna: den första modellen blir ankaret, och varje revidering dras mot den gamla siffran i stället för mot rapporten — vr-05:s gap mellan pris och värde gäller även mellan gammalt och nytt värde. Sjätte fällan är spegelfällan: att tro att säkerhetsmarginalen är en egenskap hos bolaget — köpt en gång, ägd för alltid. Marginalen är en egenskap hos analysen: samma bolag kan köpas med marginal eller utan, samma kurs kan bära en robust eller en skör läsning, och skillnaden sitter i antagandenas korg, inte i tickern. Gemensam rot för alla sex: modellen är ett verktyg som gärna smickrar sin ägare, och motgången ligger i att räkna det som smickrar minst — de samverkande slagen."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en rot: den som älskar sin analys räknar inte på dess död. Pre-mortemen — att skriva analysens fyra mest sannolika dödsorsaker innan slutsatsen signeras — är därför inte pessimism utan hygien."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — de fem frågorna och pre-mortemen",
+        "intro": "Kursen samlas i fem frågor — inventeringen, känsligheten, korgen, marginalens pris och pre-mortemen — den fullständiga läsningen av den femte adressen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vilka tal i min analys är rapport, vilka är härledda och vilka är framtidsantaganden — och vilka tre bär slutsatsen? Fråga två: hur mycket rör sig värdet när varje bärartal flyttas ett blygsamt slag — och vilket slår hårdast? Fråga tre: vad är vändpunktskorgen — de minsta samverkande justeringarna som raderar marginalen till kursen, räknade baklänges från noteringen? Fråga fyra: vad kräver analysen av framtiden för att hålla — en marginal på åtta procent som viker för en halv procentenhet plus en halv multipelenhet är ett lån på mycket kort tid? Fråga fem: vad skulle jag tro om en utomstående visade mig samma siffror med motsatt slutsats — och vilka fyra skäl är mest sannolika för att min analys visar sig fel om ett år? De två sista frågorna är pre-mortemen: skriv svaren ned, datera dem och lagra dem med analysen — de är den enda mätningen av modellrisk som inte kan smickras i efterhand. Detta är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget, och kursens påhittade bolag Nora existerar bara för räkningens skull."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj en analys du själv gjort — eller bygg en på ett påhittat bolag med Naras tre bärare: intäkt, marginal, multipel. Inventera alla tal med klass och källa. Räkna känslighetstabellen med ett blygsamt slag per bärare, och sedan samtliga slag samtidigt — notera interaktionseffekten mot summan av de enskilda. Räkna felbudgeten baklänges mot en kurs du väljer: hitta den smalaste korgen av samverkande justeringar som raderar marginalen, och kontrollera att inget enskilt fel välter slutsatsen. Avsluta med en daterad pre-mortem: de fyra mest sannolika skälen till att analysen visar sig fel om ett år. Upprepa övningen varje kvartal på samma bolag — korgens rörelse över tiden är den ärligaste mätningen av hur din modellrisk utvecklas."
+          },
+          {
+            "type": "insight",
+            "content": "rs-familjens karta har nu åtta steg — och den femte adressen är den enda av dem du kan bättra på i morgon: bolagets adresser måste granskas om och om igen, men antagandenas korg kan alltid räknas bredare redan före nästa slutsats."
+          }
+        ]
+      }
+    ]
+  },
   "mt-01-vad-ar-en-moat": {
     "slug": "mt-01-vad-ar-en-moat",
     "category": "MOAT",
@@ -211944,6 +212288,174 @@
     "grahamSection": "Benjamin Grahams analysemp att räkna på räntetäckningen innan någon aktie bedöms trygg är kursens kronkedja i tidig tappning: hans kärntal svarade på hur stor del av vinsten som gick åt att bära skulden. Grahams försiktighet med bolag vars överlevnad vilar på fortsatt billiga lån pekar mot samma sak som spreadens termometerläsning — priset på risk förändras, även när bolaget gör det inte.",
     "ak1Section": "I AK1A:s metodik ingår kreditpremieläsning som bakgrundstakt i bolagsanalyserna: motorernas kostnadssidor kan berikas med bolagets implicita spread enligt kursens tvåstegsräkning (genomsnittsränta minus matchande statsränta), och scenarioramar i AKM2-traditionen låter spreadläget variera mellan grenarna — ett bredare läge trycker de skuldtungas vinst, ett smalare ljusar den — vilket dokumenteras i arbetsflödet (ek-03-traditionen) så att antagandena kan granskas och bytas när marknadens termometer flyttar sig."
   },
+  "ma-06-aktiernas-riskpremie": {
+    "slug": "ma-06-aktiernas-riskpremie",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Aktiernas riskpremie — varför börsen betalar mer än statsobligationen",
+    "summary": "MAKROEKONOMI & RÄNTA-familjens sjätte steg: aktiernas riskpremie, skillnaden mellan vad börsen förväntas avkasta och vad statsobligationen betalar — den premie som betalar ägandets osäkerhet. Kursen lär grundräkningen med två tillgångar (aktier 8,0 procent mot obligation 2,0 procent ger premien 6,0 procentenheter), vad premien betalar för (svängningarna: aktierna rör sig 17 procent mot obligationernas 6, och faller mer än 20 procent i 6 av 40 år mot obligationernas 1), historiemätningen baklänges (exempelserien aktier 9,0 procent mot obligation 3,0 procent i ett helt sekel, och 30-årskraften 1,08 upphöjt till 30 lika med 10,1 mot 1,02 upphöjt till 30 lika med 1,81 — skillnaden 5,6 gånger), och kopplingen till värderingen: aktiens avkastningskrav är riskfri ränta plus premie (2,0 plus 6,0 lika med 8,0 procent), och när premien stiger till 7,0 sjunker värdet av ett kassaflöde 8 kronor från 100 till 88,9 kronor (minus 11,1 procent), när den faller till 5,0 stiger det till 114,3 kronor (plus 14,3 procent). Genomgående utbildning i att räkna och läsa mekanismen, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna aktiernas riskpremie som skillnaden mellan två förväntade avkastningar: aktier 8,0 procent minus statsobligation 2,0 procent lika med 6,0 procentenheter — och veta att båda talen måste bära samma valuta, samma period och samma skattenivå för att subtraktionen ska betyda ägandets risk och inte måttstockens skillnader. Förklara vad premien betalar för: aktiemarknadens svängningar (17 procent mot 6 i exempeltalen) och nedgångsårens frekvens (6 av 40 år med fall över 20 procent mot obligationernas 1 av 40) — premien är priset på att bära den ojämna resan, inte ett löfte om gratis avkastning. Mäta premien baklänges med historien: exempelseklets 9,0 procent för aktier mot 3,0 för obligationer ger samma 6,0 procentenheter, och ränta-på-ränta gör skillnaden till 10,1 mot 1,8 på trettio år (1,08 upphöjt till 30 lika med 10,1; 1,02 upphöjt till 30 lika med 1,81). Räkna premien in i värderingen: avkastningskravet är riskfri ränta plus premie (2,0 plus 6,0 lika med 8,0 procent), och ett kassaflöde 8 kronor är värt 100 kronor vid 8,0 procents krav men 88,9 vid 9,0 (minus 11,1 procent) och 114,3 vid 7,0 (plus 14,3 procent) — premiens rörelse är värderingens motor. Läsa P/E-spegeln: avkastningskrav 8,0 procent motsvarar P/E 12,5 (1 delat med 0,080), krav 9,0 motsvarar 11,1 och krav 7,0 motsvarar 14,3. Ställa de fem läsningsfrågorna till varje premiesiffra — mot vilket alternativ, vilket fönster, vad ingår i aktiens tal, vad är prissattjust nu, vad skulle flytta premien.",
+    "why": "MAKROEKONOMI & RÄNTA-familjen har fem egna steg — transmissionsmekaniken (ma-01), lönebildningen (ma-02), realräntan (ma-03), konjunkturindikatorerna (ma-04) och kreditpremien (ma-05) — men ingen av dem äger den premie som binder samman familjen med börsen själv: aktiernas riskpremie, avkastningen över statsobligationen. Kreditpremien (ma-05) jämför bolagets LÅN mot statens; denna kurs jämför AKTIEÄGANDET mot utlåningen — samma subtraktion, andra instrument, och tillsammans täcker de två premiens hela familj. Sond mot registrets 426 kurser: fraserna aktiernas riskpremie och equity risk ger noll träffar bland kurserna — ordet riskpremien förekommer endast i ma-05:s dekomposition av kreditspreaden (bolagets lån) och i förbifarten i od-02 — medan varje värderingskurs (km-007 DCF, km-008 WACC) vilar på talet som premiekursen skulle lära ut: avkastningskravet är riskfri ränta plus premie. Realräntan (ma-03) äger inflationens avdrag och kreditpremien (ma-05) låntagarrisken — men ägarriskens pris saknar sin egen kurs, trots att det är det enda tal som förklarar varför samma bolag är värt 100 vid en premie och 89 vid en annan. Kursen kräver bara addition, division och tålamod med långa serier — och ger den enskilt starkaste bryggan mellan familjens räntekurser (km-054) och värderingsfamiljens multiplar (vr-04).",
+    "history": {
+      "origin": "Idén att aktier måste avkasta mer än säkra papper är äldre än några indexserier: i det tidiga nittonhundratalets USA noterade ekonomer att industriaktier gav högre utdelningsavkastning än obligationer just för att allmänheten misstrodde aktien som tillgång — utdelningen skulle gottgöra risken. Den moderna frågan väcktes när de första långa avkastningsserierna sammanställdes i USA under mellankrigstiden: plötsligt gick det att RÄKNA vad ägandet historiskt betalat över utlåningen, och talet blev ett eget studieobjekt.",
+      "evolution": "Efter andra världskriget växte premien till akademiens mest analyserade finansiella tal: de stora avkastningsdatabaserna som byggdes i USA från 1926 och framåt gjorde «hur mycket betalade aktier över obligationer» till en räkbar fråga för varje sekelhalva, och finansteorins genombrott på femtiotalet gav förklaringen — premien är kompensationen för svängningarna, priset på en resa vars utfall är osäkert. Samtidigt växte den historiska paradoxen fram: den uppmätta premien visade sig större än vad rimlig riskaversion förmådde förklara, en gåta som genererade en hel forskningslitteratur och gjorde talet till en ständigt omdebatterad storhet snarare än ett fakta.",
+      "modern": "I dag är premien den tysta variabeln i varje värdering: när en analytiker rabattar framtida kassaflöden med 8 i stället för 9 procent har premien rört sig en procentenhet, och när börsen faller utan att någon nyhet förändrat bolagen är det ofta premien som breddats — samma bolag, högre krav. Centralbankernas årtionden av låga räntor (km-056) pressade också diskussionen om premiens normalnivå: är 6 procentenheter historiens lag eller historiens ärftlighet? Kursens svar är metodiskt, inte profetiskt: läs fönstret, läs förklaringarna, och räkna alltid konsekvensen i värdering — för det är där premien slår."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Två tillgångar, två priser — ägandets premie som subtraktion",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Vad premien betalar för — svängningarnas prislista",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Historiens siffra — att mäta premien baklänges",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Premien i värderingen — från procentenheter till aktievärde",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Var talen finns — serier, krav och den egna räkningen",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje premie",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Två tillgångar, två priser — ägandets premie som subtraktion",
+        "minutes": 4,
+        "intro": "Familjens tidigare kurser har subtraherat räntor mot varandra; här är den sista och största subtraktionen: vad aktieägandet förväntas ge över vad utlåningen ger.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ställ två tillgångar bredvid varandra. Den ena är ett index av börsens aktier, som i exemplen förväntas avkasta 8,0 procent per år över lång tid — prisökning och utdelning tillsammans. Det andra är statsobligationen, som ger 2,0 procent per år med nästan full säkerhet att beloppet betalas tillbaka. Subtraktionen ger 8,0 minus 2,0 lika med 6,0 procentenheter: det är aktiernas riskpremie — den extra avkastning som ägandet måste bjuda över utlåningen för att någon ska välja den ojämna resan före den jämna. Kursen använder samma läseregel som kreditpremien (ma-05) och med samma skärpa: en premie är bara ett tal om båda sidor mäts på samma sätt — samma valuta, samma periodlängd, samma behandling av skatt och kostnader. En aktieavkastning före courtage mot en obligationsränta efter är ingen premie utan ett måttfel. Notera också vad subtraktionen INTE säger: den säger inte att aktier ÄR bättre, bara att marknaden historiskt betalat för deras osäkerhet — om den kommande trettioårsperioden blir obligationens, är premien ingen garanti. Det är hela kursens första och viktigaste budskap: premien är ett pris, inte ett löfte, och priser förändras med det de prissätter."
+          },
+          {
+            "type": "definition",
+            "content": "Aktiernas riskpremie — skillnaden mellan börsens förväntade totalavkastning och statsobligationens avkastning med matchande horisont, mätt i procentenheter per år. Talet är marknadens pris på att bära aktiernas osäkerhet: en högre premie betyder högre krav på ägandet, inte sämre bolag."
+          },
+          {
+            "type": "insight",
+            "content": "Familjen har nu tre subtraktioner som tillsammans plockar isär räntan och avkastningen: realräntan (ma-03) drar bort inflationen och lämnar tidens pris, kreditpremien (ma-05) drar bort statens ränta från bolagets lån och lämnar låntagarrisken, och aktiernas riskpremie drar bort obligationsräntan från börsen och lämnar ägarrisken. Tre frågor, tre subtraktioner, en och samma disciplin: jämför lika med lika."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Vad premien betalar för — svängningarnas prislista",
+        "minutes": 4,
+        "intro": "Varför ska ägandet betala 6,0 procentenheter mer? Svaret finns inte i bolagens kvalitet utan i resans karaktär: samma årsgenomsnitt nås på helt olika vägar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Låt exempeltalen måla de två resorna. Aktiemarknaden som helhet svänger med en standardavvikelse kring 17 procent på årsbasis (rs-01 äger volatilitetens hela mätning) — det innebär att ett normalår kan avvika många procentenheter från väntat, och att extremiteterna är talrika. Statsobligationen svänger kring 6 procent. Ännu tydligare är nedgångsåren: i en exempelserie av 40 år föll aktierna mer än 20 procent i 6 av åren — 6 delat med 40 lika med 15 procent av åren, ett år av sju — medan obligationerna gjorde detsamma i 1 av 40, alltså 2,5 procent. Det är detta premien köper: inte en sämre tillgång utan en krångligare väg till samma mål. Räkna premiens pris per riskenhet: 6,0 procentenheter delat med 17 procent svängning ger ungefär 0,35 procentenheter premie för varje procentenhet svängning — en krångelvräkning som gör de två tillgångarna jämförbara i en enda siffra. Men notera listans sista rad också: premien betalar för SVÄNGNINGARNA, inte för katastrof. Ett år då aktierna faller 35 procent utplånar mer än fem års premie (5 gånger 6,0 lika med 30 procentenheter — och utfallet slår till i ett enda år), vilket är förklaringen till att premien måste vara just flera procentenheter: den ska bära inte bara de många små svängningarna utan de få stora fallen. Kursen levererar mekaniken; hur mycket osäkerhet en enskild läsare bör bära är portföljens fråga (pf-familjen) och aldrig en kursrekommendation."
+          },
+          {
+            "type": "tabell",
+            "content": "Mått | Aktier (exempel) | Statsobligation (exempel) | Läsning\nFörväntad avkastning | 8,0 procent per år | 2,0 procent per år | Premien 6,0 procentenheter\nÅrssvängning | 17 procent | 6 procent | Aktiernas väg är tre gånger krokigare\nÅr med fall över 20 procent | 6 av 40 | 1 av 40 | 15 procent av åren mot 2,5 procent\nPremie per riskenhet | 6,0 ÷ 17 ≈ 0,35 procentenheter per procent svängning | — | Krånglets pris i en siffra"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens tal är exempeltal, valda för räkbarhet — men deras storleksordning är sekelseriernas: aktiers svängning i nivå kring en sjundedel av kapitalet på årsbasis, och nedgångar över en femtedel i genomsnitt ett av sex till åtta år. Premien är ingen gåva; den är priset på att sitta kvar genom åren som tabellens tredje rad räknar."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Historiens siffra — att mäta premien baklänges",
+        "minutes": 4,
+        "intro": "Den mest citerade premien är den som redan hänt: vad gav aktier över obligationerna, år för år, sekel ut? Men historien är ett instrument som måste läsas med sin bruksanvisning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Baklängesmätningen är enkel att beskriva: ta en lång serie av börsens totalavkastning (prisförändring plus återinvesterad utdelning — vr-04 äger avkastningens tre källor), ta motsvarande serie för statsobligationer, och räkna skillnaden. I kursens exempelsekel gav aktierna 9,0 procent per år och obligationerna 3,0 — skillnaden 6,0 procentenheter, samma tal som framåtblickande exempel. Sedan kommer ränta-på-ränta, premiens egna bevis: en krona växer till 1,08 upphöjt till 30 efter trettio år med 8,0 procent — det är 10,1 kronor — medan obligationens krona växer till 1,02 upphöjt till 30 lika med 1,81. Förhållandet 10,1 delat med 1,81 är 5,6: efter ett halvt sekel ägande bär den ena kronan mer än fem av den andra. Men historien har tre bruksanvisningsvarningar. Den första är fönstret: välj de senaste tjugo åren i stället för ett sekel, och samma marknad kan visa en premie på 2 procentenheter — eller 10 — utan att något fundamentalt förändrats; korta fönster mäter periodens tur, inte ägandets pris. Den andra är överlevnaden: de långa serierna kommer från marknader som inte dog — den som mäter premien bara på historiens vinnare får ett tal som är för vackert för att vara sant. Den tredje är riktningen: historien mäter vad som HÄNDE, och frågan i värderingen gäller vad som KRÄVS — baklängespremien och kravpremien är släkt men inte identiska, och kapitel fyra visar skillnaden i kronor. Med de tre varningarna läsna är historien ändå osannolikt värdefull: den är den enda långa serie premien har."
+          },
+          {
+            "type": "tabell",
+            "content": "Mätning | Exempeltal | Räkning | Läsning\nBaklänges, sekel | Aktier 9,0 · obligation 3,0 | 9,0 − 3,0 = 6,0 procentenheter | Samma nivå som framåtblickande exempel\nTrettio år med skillnaden | Aktier 8,0 · obligation 2,0 | 1,08³⁰ = 10,1 · 1,02³⁰ = 1,81 | Ägandets krona bär 5,6 gånger mer\nKort fönster | Senaste 20 åren | — | Kan visa 2 eller 10 utan ny grund\nÖverlevnad | Vinnarmarknadernas serie | — | Talet är vinkat uppåt"
+          },
+          {
+            "type": "insight",
+            "content": "1,08 upphöjt till 30 lika med 10,1 och 1,02 upphöjt till 30 lika med 1,81 — två exponenter och en division är hela beviset för att 6,0 procentenheter, som låter abstrakt på ett år, är en förmögenhet på ett yrkesliv. Premiens största egenskap är att den är lång: den betalas ut i små årliga tillskott som bara blir en bergskedja i termer av år, inte månader."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Premien i värderingen — från procentenheter till aktievärde",
+        "minutes": 4,
+        "intro": "Premiens verkliga makt visar sig inte i historieboken utan i varje värdering: avkastningskravet är riskfri ränta plus premie, och kravet är det tal som delar framtiden i värde.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bygg avkastningskravet som en summa: riskfri ränta 2,0 procent (km-054 äger räntans grunder) plus aktiernas riskpremie 6,0 procentenheter ger aktiens avkastningskrav 8,0 procent — det tal som i en DCF-värdering (km-007) delar framtida kassaflöden till dagens värde, och som i WACC (km-008) möter skuldens billigare krav. Ta ett bolag med ett bestående kassaflöde 8 kronor per aktie och aktien: vid krav 8,0 procent är värdet 8 delat med 0,080 lika med 100 kronor. Flytta nu premien en enda procentenhet. Stiger den till 7,0 — marknaden kräver mera för ägandets osäkerhet, kanske efter en kris (ma-05:s termometerläsning är släkten) — blir kravet 9,0 procent och värdet 8 delat med 0,090 lika med 88,9 kronor: minus 11,1 procent, utan att bolaget förändrats en krona. Faller premien till 5,0 blir kravet 7,0 procent och värdet 8 delat med 0,070 lika med 114,3 kronor: plus 14,3 procent. Detta är kursens kärntabell: premiens procentenhet är värderingens procenttal, och börsens svåra år utan bolagsnyheter är ofta just en premievidgning. Spegeln heter P/E: ett avkastningskrav 8,0 procent motsvarar en vinstavkastning på samma 8,0 procent, alltså P/E 12,5 (1 delat med 0,080); krav 9,0 motsvarar P/E 11,1 (1 delat med 0,090) och krav 7,0 motsvarar P/E 14,3 (1 delat med 0,070). Multiplarnas resa (vr-04:s tredje källa) och premiens rörelse är samma fenomen i två språk — och den som kan översätta ser att en börs som blivit dyrare utan att vinsten växte nästan alltid bär en premie som smalnat."
+          },
+          {
+            "type": "tabell",
+            "content": "Premie | Avkastningskrav (2,0 + premie) | Värde av 8 kr kassaflöde | Ändring | P/E-spegel (1 ÷ krav)\n5,0 procentenheter | 7,0 procent | 8 ÷ 0,070 = 114,3 kr | +14,3 procent | 14,3\n6,0 procentenheter | 8,0 procent | 8 ÷ 0,080 = 100 kr | utgångsläge | 12,5\n7,0 procentenheter | 9,0 procent | 8 ÷ 0,090 = 88,9 kr | −11,1 procent | 11,1"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellen förklarar finansens mest förvirrande fall: börsen sjunker 11 procent och ingen nyhet förklarar varför. Svaret står i tredje raden — premien vidgades en procentenhet. Samma bolag, samma kassaflöde, högre pris på osäkerheten. Omvänt gäller att en smalnande premie kan göra börsen «dyr» i P/E samtidigt som den är neutralt prissatt i krav — de två språken måste läsas tillsammans."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Var talen finns — serier, krav och den egna räkningen",
+        "minutes": 4,
+        "intro": "Premien är inte ett publicerat dagsiffra utan en storhet som måste byggas — ur historiska serier, ur analytikers krav eller ur den egna värderingen. Kapitlet visar de tre vägarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första vägen är historiens: de långa totalavkastningsindex som publiceras för svenska och utländska marknader bär både aktiens och obligationens serie, och en subtraktion år för år (med kapitel tre:s varningar om fönster och överlevnad) ger den baklängesmäta premien. Den andra vägen går genom avkastningskravet: analyshus och värderingsmodeller publicerar sina krav, och differensen mot den matchande statsräntan (ma-05:s paritetsregel — samma löptid, i praktiken långa serier för en lång tillgång) ger deras premie; skillnader mellan husen är i sig information, för de visar hur olika marknaden definierar ägandets pris. Den tredje vägen är den egna: den som själv värderar bolag (km-007:s kassaflödesmodell) bär redan en premie i sitt rabattsats — veta vilket, och talet är räknebart ur varje publicerad värdering: en DCF till 100 kronor för ett bestående kassaflöde 8 kronor avslöjar kravet 8,0 procent, och minus den aktuella räntan 2,0 står premien där: 6,0 procentenheter. Tre praktiska vakthållningar hör hemma på alla tre vägar. Håll realtalen i schack: realräntan (ma-03) och inflationen (km-055) kan förvränga en nominellt mätt premie om den ena serien är real och den andra nominell. Håll totalavkastningen hel: en aktieserie utan utdelning är ingen aktieserie (vr-04). Och håll perioden ärlig: en premie mätt under tio gyllene år säger ingenting om ägandets pris — bara om periodens. Den som bygger en egen liten premiebok — en rad per kvartal med tre tal: aktieserie, matchande obligationsränta, differens — får efter några år något som ingen kurs kan ge: ett eget minne av hur talet andas med sin tid, och ett läsminne till nästa gång börsen flyttar sig utan nyheter."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räk en egen premie i fyra steg: (1) Hämta börsens totalavkastning för det senaste året (indexet med utdelningar återinvesterade) och den långa statsräntans utfall — båda är offentliga tal. (2) Räkna differensen i procentenheter och skriv ned den med datum. (3) Välj ett bolag du följer och hitta (eller räkna fram) kassaflöde per aktie i en publik värdering; dividera värde med kassaflöde för att få dess avkastningskrav, och dra ifrån dagens långa statsränta — det är värderarens premie just nu. (4) Jämför dina två tal och notera skillnaden: är historiens premie bredare eller smalare än kravets? Upprepa nästa kvartal — efter fyra omgångar börjar serien andas, och kapitel fyrs tabell blir läsbar på riktiga tal."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje premie",
+        "minutes": 4,
+        "intro": "Kursens sista kapitel för samman subtraktionen, svängningarna, historien och värderingen till ett förhörsmönster: fem frågor som gör varje premiesiffra läsbar — och som håller metoden öppen för omprövning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sammanförelsen i fem frågor. Fråga ett: mot vilket alternativ? — premien kräver sin statsobligation, och utan matchande horisont och valuta är talet ett måttfel (kapitel ett). Fråga två: vilket fönster? — ett sekel bär ägandets pris, ett decennium bär periodens tur (kapitel tre). Fråga tre: vad ingår i aktiens tal? — totalavkastning med återinvesterad utdelning, före eller efter kostnad på BÅDA sidor (kapitel ett och fem). Fråga fyra: vad är prissatt just nu? — den framåtblickande premien, alltså kravet minus räntan, och därmed P/E-spegeln (kapitel fyra): en börs till P/E 14,3 vid ränta 2,0 bär en premie kring 5,0 procentenheter — räkna det själv och talet slutar vara en hemlighet. Fråga fem: vad skulle flytta den? — svängningarnas pris (kapitel två) förändras med kronorna: en kris breddar premien (kravet stiger, värdet faller — ofta utan bolagsnyheter), ett lugnt decennium smalnar den, och realräntans och kreditpremiens rörelser (ma-03, ma-05) är premiens närmaste släkt i familjens ekvation. Fem frågor, fyra kapitel verktyg, en subtraktion. Kursens plats i familjen är därmed satt: ma-01 äger kedjan från styrränta till bolaget, ma-02 kostnadsspiralen, ma-03 inflationens avdrag, ma-04 månadens signaler, ma-05 låntagarens risk — och denna kurs ägarriskens pris, den premie som binder räntefamiljen till värderingsfamiljens multiplar. Avslutningshållningen är kursens hela väsen: detta är utbildning i att räkna och läsa en mekanism, inte uppmaningar i någon riktning — valet mellan den jämna och den krokiga vägen, och priset läsaren är beredd att bära för osäkerheten, är alltid läsarens eget beslut på egen analys, och de fem frågorna är byggda för att ställas igen nästa kvartal, nästa kris, nästa gång börsen rör sig utan att någon sagt varför."
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor och en subtraktion — det är hela kursen. Resten är träning: en premie mätt per kvartal, en P/E-spegel räknad på riktiga tal, och med åren ett eget minne av hur ägandets pris andas — från lågkonjunkturernas 9 procentenheter till lugnperiodens 4 — är skillnaden mellan att läsa en kurs och att kunna ett hantverk."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch formulerade premiens vardag med sin förmåga att göra stora tal till vardagskunskap: aktier som faller 35 procent har fallit förr och faller igen, och den som inte tål resan ska inte räkna med premien. Hans berättelser om bolag som köpts i panik och sålts i eufori är i kursens språk premiens svängningar i aktion — samma bolag, olika pris på osäkerheten — och hans råd att veta varför man äger är premiens spegelvända sida: den som vet varför bär svängningarna, den som inte vet bär bara dem.",
+    "grahamSection": "Benjamin Grahams margin of safety är premien tillämpad i förväg: köp med rabatt så att kravet sjunker i värderingen medan kassaflödet står still. Grahams egen tids varning — att obligationer och aktier byter plats som billigast i olika epoker — är kursens subtraktion i berättad form, och hans krav på att veta sitt avkastningskrav före köpet gör premien till en förhandsräkning snarare än en efterkonstruktion.",
+    "ak1Section": "I AK1A:s metodik bär premien två roller: i AKM2-traditionens scenarioramar är premien en av de variabler som får röra sig mellan grenarna (en bredare premie pressar samtliga värden, en smalare lyfter dem — ek-05:s simuleringar gör kopplingen mätbar), och i portföljernas riskmått (rs-01:s volatilitet) är premien det tal som förklarar VARFÖR osäkerheten betalas. Arbetsflödet (ek-03) loggar vilket premieval varje analys bär, så att antagandet kan granskas och bytas — premien är en modells variabel, inte en sanning."
+  },
   "od-01-optionens-greker": {
     "slug": "od-01-optionens-greker",
     "category": "OPTIONS & DERIVAT",
@@ -212823,6 +213335,350 @@
     "lynchSection": "Peter Lynch rekommenderade utdelningsaktier med samma förankring som tillväxtaktier — bolaget som delar ut är bolag som tjänar — och hans syn på optionsmarknadens löftesrikedom var känd skeptisk: det som ser ut som inkomst är ofta ett avstående av uppsida. Kursens covered call-räkning är hans poäng i siffror: premin på 4 är verklig i två av tre världar, men uppgångens 11 tillhör den som höll aktien — och Lynch-historyns bästa decennier byggde på att inte sälja uppsidan för smör.",
     "grahamSection": "Benjamin Graham såg utdelningen som ägarens mest pålitliga kvitto på att vinsten är verklig, och hans försiktighet med instrument vars värde bygger på motparters aktivitet säger sig själv i optionsvärlden: pariteten är ekvation, men strategin är kontext. Grahams tanke om att varje värdepapper ska förstås från sitt kassaflöde lever i kursens grundmur — optionen äger rörelsen, aktien äger kassaflödet, och den som inte vet vilken av de två hon köpt har inte gjort hemarbetet.",
     "ak1Section": "I AK1A:s metodik ingår utdelningsmekaniken som bakgrundskontroll i optionsrelaterade analyser: motorernas scenarioarbete kan låta en utdelningsändring verka i både aktiespåret (ud-familjens utrymme) och instrumentprisernas spår (paritetsledet), och arbetsflödet (ek-03-traditionen) dokumenterar avstämningsdatum i de fall en analys rör positioner över ett sådant — så att mekaniska kursjusteringar inte misstolkas som värderingsrörelser när loggen läses i efterhand."
+  },
+  "od-06-positionen-efter-bygget": {
+    "slug": "od-06-positionen-efter-bygget",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Positionen efter bygget — delta, band och förfallodagen",
+    "summary": "Optionsfamiljens sjätte steg äger livet efter köpet: deltat som levande exponering som förändras utan ägarens beslut, gammans omskrivning av positionen för varje krona, thetan som daglig hyra — och förfallodagens mekanik med automatisk lösen, tilldelning och pinningsrisken. Kursen lär förvaltningens räknelära: hur många aktier positionen egentligen bär, när omhedgingen hör hemma i beslutet och när förfallodagen börjar bestämma i stället för ägaren.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Läsa positionens aktuella exponering i aktieekvivalenter — deltat gånger antal kontrakt gånger kontraktstorlek · Förstå att positionen förändras utan beslut — gamman flyttar deltat och karaktären med det · Räkna dagens break-even-rörelse — förhållandet mellan theta och gamma som roten ur två gånger thetan dividerat med gamman · Praktisera omhedging med band — justera när exponeringen lämnar beslutet, inte vid varje kurssteg · Hantera förfallodagens mekanik — automatisk lösen, tilldelning, pinningsrisken vid lösenpriset och kapitalbehovet i aktier · Vägleda stängningen i tid — restvärdeslogiken och gränserna mot grannkurserna (od-01 grekerna, od-04 byggena, od-05 lösningen, km-060 tilldelningen, am-01 likviditeten, sj-04 beskattningen).",
+    "why": "Optionsfamiljen har byggt och prissatt positioner: grunderna och skyddet (km-059, km-061), grekerna som mått (od-01), volen som pris (od-02), emissionens instrument (od-03), kombinationerna (od-04) och utdelningens möte (od-05). Gemensam tystnad: livet efter köpet. En aktieposition är i grunden oföränderlig — ägandet består till dess att ägaren säljer. En optionsposition är ett annat slags åtagande: varje handelsdag betalas thetan, varje krona aktien rör sig skriver gamman om deltat, och hela åtagandet har ett slutdatum som ägaren inte kan förhandla bort. Siffrorna i kursen gör problemet konkret: en position som vid köpet bär fyrtio aktiers exponering bär tvåhundrasextio efter en åtta kronors rörelse — utan att ägaren rört ett finger. Den som lärde sig bygga positioner men inte förvalta dem har lärt sig hälften av hantverket, och det är oftast den hälften som avgör utfallet. Kursen gör förvaltningen till eget område: exponeringens bokföring, bandet, hyran och slutdatumet. Det är utbildning i mekanik med påhittade exempel — inte uppmaningar att köpa eller sälja något värdepapper; avgörandet är alltid läsarens eget.",
+    "history": {
+      "origin": "Konsten att hålla en bok i balans är äldre än de listade optionerna: handelshusen som säkrade spannmålstransporter och valutor visste att en säkring som lämnas ensam slutar vara en säkring — den blir en vadslagning med annat namn. Marknadsgaranten (market maker), den som ställer priser i optioner åt andra, har alltid levt med kursens kärnproblem från motsatt håll: varje dag måste hela boken vägas, deltat får inte växa okontrollerat, och hyran — skillnaden mellan såld och köpt tid — måste täcka rörelsen som boken bär. Förvaltningens räknelära föddes ur det yrket, länge före detaljhandlarens tillträde till samma marknader.",
+      "evolution": "När optionsprissättningen formaliserades på 1970-talet — modellen i km-062 och de listade marknaderna i Chicago samma år — fick räkneläran sitt språk: grekerna blev riskbron mellan en formel och en positionsbok. Bandbaserad omhedging växte fram som hantverk: att hedgea vid trösklar i stället för vid varje prissteg, för varje justering kostar spread och glidning. Portföljförsäkringens era på 1980-talet gav läxan i sin renaste form: när många följer samma band åt samma håll förstärker banden själva rörelsen de ska skydda mot — omhedging är ett beslut i en marknad av andra som fattar samma beslut.",
+      "modern": "I dag sköter clearing och system mycket av mekaniken: optioner som är in the money vid förfallo löses ofta automatiskt, tilldelning meddelas via bank och broker, och kontraktens storlekar är standardiserade. Det har inte tagit bort kunskapskravet — det har flyttat det. Den som inte kan räkna kapitalbehovet vid automatisk lösen får sin utbildning av clearingmeddelandet en fredag, och den som inte vet att gamman växer sista veckorna förstår inte varför positionen känns annorlunda fast aktien står stilla. För aktiestudenten är detta optionshantverkets andra hälft: bygget är en handling, förvaltningen är en vana — en position läses en gång per dag tills förfallodagen bestämmer resten."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — positionen som åtagande",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — deltat som levande exponering",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätning — gammans skörd och thetans hyra",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk tillämpning — band, order och restvärde",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — förfallodagen och de tysta glidningarna",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — förvaltarens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch var öppet skeptisk till att privatpersoner handlar optioner: han menade att den som köper kort tid betalar varje dag för något som smälter — säljaren av tiden samlar hyran medan köparen sällan behåller oddsen. Hans varning är kursens bärande bjälke, formulerad som hantverkskrav: den som inte kan räkna på deltat, thetan och förfallodagen äger inte positionen — positionen äger den som inte räknar. Lynch älskade däremot instrument när mekaniken var förstådd från insidan: hans eget arbete med teckningsoptioner och utspädningar (od-03:s värld) visar att skeptiken aldrig gällde instrumentet utan köparens okunnighet om dess klocka.",
+    "grahamSection": "Benjamin Graham ägnade teckningsoptionerna egna kapitel i Security Analysis och hans slutsats var mekanisk snarare än moralisk: optionen är en fordran på framtida utspädning, och den som inte räknar dess värde har inte ett instrument utan en lucka i balansräkningen. Överfört till dagens börsoptioner är budskapet detsamma som kursens: instrumentets värde är en funktion av tid och villkor, och analysen av dem hör till ägandet — det finns ingen passiv optionsposition, bara en obemannad position. Grahams försäkringstänkande fullbordar bilden: en option är i grunden en försäkring, och försäkring förutsätter att köparen förstår både risken som täcks och priset som betalas — thetan — innan kontraktet skrivs.",
+    "ak1Section": "I AK1A:s metodik kompletterar denna kurs optionsfamiljen med dess tidsliga sida: od-01 gav grekerna som mått, od-02 volen som pris, od-03 emissionens instrument, od-04 byggena och od-05 utdelningens möte — od-06 äger tiden däremellan: exponeringens dagliga bokföring, bandets beslut och förfallodagens mekanik. I AKM1:s ram är aktieekvivalenter en kontrollstation: en portföljs verkliga aktieexponering inkluderar optionernas delta, annars är riskbilden ofullständig. I AKM2:s ram kompletterar kursen ek-05:s fördelningar: Monte Carlo visar bredden på vägarna, förfallodagen gör varje väg ändlig — en optionsposition är en tidsserie med sista datapunkt utsatt i förväg. Gränserna är avsiktliga: pf-02 äger positionens storlek i portföljen och pf-04 portföljens balansering — denna kurs äger den enskilda positionens liv från köp till förfall.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — positionen som åtagande",
+        "intro": "Byggkurserna slutade där förvaltningen börjar: vid orderbekräftelsen. Här börjar positionens liv.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En aktieposition är en stilla sak. Köp hundra aktier och exponeringen är hundra aktier i dag, i morgon och om ett år — ägandet förändras bara när ägaren handlar. En optionsposition är en levande sak: exponeringen står inte i orderbekräftelsen utan skrivs om varje handelsdag av kursrörelser, volatilitet och tidens gång, och hela åtagandet har ett sista datum. Tre mekanismer bär livet efter bygget. Deltat översätter optionen till aktieexponering — det är positionens aktuella språk, och det ändras. Gamman är deltats hastighet: för varje krona aktien rör sig skrivs deltat om, och positionen blir snabbt en annan än den som köptes. Thetan är hyran: tidsvärdet smälter varje dag, och för den köpta positionen är smältningen en kostnad som betalas i förväg. Kursens exempel är en köpt straddle — kombinationen som od-04 bygger — med tio kontrakt, lösenpris 150 kronor och kontraktstorlek hundra aktier per kontrakt, alltså tusen aktieenheter sammanlagt. Alla tal är påhittade för räkneövningens skull. Detta är utbildning i mekanik, inte råd om positioner — men mekaniken är densamma för den som en dag står med en egen orderbekräftelse och undrar vad den egentligen köpt."
+          },
+          {
+            "type": "definition",
+            "content": "AKTIEEKVIVALENTER — positionens deltat gånger antal kontrakt gånger kontraktstorleken: optionens exponering uttryckt som antal aktier · GAMMA — deltats förändring per krona i aktien: positionens omskrivningshastighet · THETA — tidsvärdets dagliga smältning: den köpta positionens hyra · FÖRFALLODAGEN — det datum då optionen upphör och mekaniken bestäms av lösen, utlöpande eller tilldelning · GRÄNS: od-04 äger byggena, od-01 grekerna som mått, od-05 lösningens tumregel, km-060 tilldelningen på skrivna optioner — denna kurs äger livet däremellan."
+          },
+          {
+            "type": "insight",
+            "content": "En aktie äger du tills du säljer den. En option lånar du av tiden — och hyran börjar löpa samma dag."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — deltat som levande exponering",
+        "intro": "Positionens första sanning är exponeringen i aktieekvivalenter — och dess andra sanning är att den inte står stilla.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Översättningen är en rad: deltat gånger antal kontrakt gånger hundra. Vid köpet är straddeln nästan neutral: köpoptionen med deltat plus 0,52 och säljoptionen med deltat minus 0,48 ger nettodelta plus 0,04 per straddle — tio kontrakt gånger hundra aktier gånger 0,04 är fyrtio aktiers exponering. Så gott som balanserad, kan ägaren tro. Sedan rör sig aktien: åtta kronor upp, till 158. Grekerna svarar — köpoptionens delta växer till plus 0,63, säljoptionens krymper till minus 0,37, nettodelta blir plus 0,26. Samma rad igen: tio gånger hundra gånger 0,26 är tvåhundrasextio aktier. Positionen har mer än sexdubblat sin aktieexponering utan att ägaren fattat ett enda beslut — den som var neutral i måndags är bara neutral i måndags. Detta är förvaltningens första arbete: att läsa positionens aktuella exponering varje handelsdag, inte den som orderbekräftelsen visade. Notera också vad som händer på köpsidan av lösenpriset: om aktien i stället fallit åtta kronor hade säljoptionens delta vuxit och nettodelta blivit negativt — glidningen går åt båda håll, och den som bara räknar på det ena händer har lärt sig hälften av bokföringen"
+          },
+          {
+            "type": "tabell",
+            "content": "AKTIEEKVIVALENTER — STRADDLE 10 KONTRAKT, LÖSENPRIS 150, PÅHITTADE TAL: VID KÖPET: köpoption +0,52, säljoption −0,48, nettodelta +0,04 → 10 × 100 × 0,04 = 40 aktier · EFTER RÖRELSEN TILL 158: köpoption +0,63, säljoption −0,37, nettodelta +0,26 → 10 × 100 × 0,26 = 260 aktier · FÖRÄNDRINGEN: +220 aktier utan ett beslut — positionen är en annan · MORGONRUTINEN: räkna exponeringen på dagens kurser, inte på köpdagens."
+          },
+          {
+            "type": "insight",
+            "content": "Frågan varje morgon är inte vad köpte jag — den är hur många aktier bär jag i dag. Svaret står inte i orderbekräftelsen, och det är aldrig samma två dagar i rad."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätning — gammans skörd och thetans hyra",
+        "intro": "Den köpta positionen betalar en daglig hyra för att få rätt till rörelse. Räkneläran mellan hyran och skörden är positionens puls.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt siffror på mekaniken: gamman 0,02 per aktie och krona, thetan minus 0,50 kronor per aktie och handelsdag — på tusen aktieenheter är hyran femhundra kronor per dag. En dag med åtta kronors rörelse skördar gammans vinst: hälften av gamman gånger rörelsens kvadrat, alltså 0,5 gånger 0,02 gånger 8 gånger 8, är 0,64 kronor per aktie — sexhundrafyrtio kronor på positionen, och netto för dagen efter thetan blir sexhundrafyrtio minus femhundra, plus hundrafyrtio kronor. En dag utan rörelse kostar femhundra. Därav break-even-rörelsen, den rörelse per dag som exakt betalar hyran: roten ur två gånger thetan dividerat med gamman — roten ur två gånger 0,50 delat med 0,02, alltså roten ur femtio, ungefär 7,1 kronor, knappt 4,7 procent av lösenpriset 150. Förhållandet är positionens ekonomi i ett tal: stort i förhållande till kursens vanliga dagliga rörelse och hyran är dyr i förhållande till skörden; litet och positionen betalar sig själv på rörelsen ensam. Notera att räkningen är förenklad — verklighetens delta och gamma är kurvor, inte konstanter, och volatilitetens inverkan (od-02:s värld) lämnas därhän — men pulstalet är ändå förvaltarens viktigaste enkla mått: det översätter grekerna till en enda fråga, hur mycket måste aktien röra sig i dag för att dagen ska betala sig?"
+          },
+          {
+            "type": "tabell",
+            "content": "GAMMA-THETA-RÄKNESTYCKET — PÅHITTADE TAL, 10 KONTRAKT = 1 000 AKTIEENHETER: THETAN −0,50 kr per aktie och handelsdag → hyra 500 kr/dag · DAG MED 8 KR RÖRELSE: 0,5 × 0,02 × 8 × 8 = 0,64 kr per aktie → 640 kr · NETTO FÖR DAGEN: 640 − 500 = +140 kr · STILLASTÅENDE DAG: −500 kr · BREAK-EVEN-RÖRELSEN: roten ur (2 × 0,50 / 0,02) = roten ur 50 ≈ 7,1 kr ≈ 4,7 procent av 150 · RÄKNINGEN FÖRENKLAD: delta och gamma är kurvor i verkligheten — pulstalet är en första översättning, inte en prissättning."
+          },
+          {
+            "type": "insight",
+            "content": "Thetan är hyran och gamman är det hyran köper: rörelse. Den stillastående dagen kostar femhundra kronor — och samma mekanik gör att åtta kronors rörelse betalar mer än en dags hyra. Förvaltningen är att veta vilket av lägena positionen lever i."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — band, order och restvärde",
+        "intro": "Omhedging kan aldrig vara varje prissteg — beslutet måste ha en tröskel. Bandet är den tröskeln, och restvärdeslogiken styr när positionen alls ska leva vidare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bandet är en skriven regel för omhedging: nettodelta får röra sig fritt inom ett intervall, och först när det lämnar intervallet justeras exponeringen. Kursens exempelband är plus och minus 0,10 nettodelta per straddle — på tio kontrakt plus och minus hundra aktier. Vid nettodelta plus 0,26, alltså tvåhundrasextio aktier, är bandet passerat: justeringen säljer hundrasextio aktier och lämnar positionen vid plus 0,10, alltså hundra aktier — inne i bandet igen, men inte noll. Det är avsiktligt: bandet låter positionen behålla en liten exponering åt det håll den redan rört sig, så att inte varje prissteg blir en affär. Bandets bredd är en avvägning mellan två kostnader: smalt band ger många justeringar och sprider transaktionskostnaden — spreaden, som am-01 lär läsa — medan brett band ger långa perioder med obalanserad exponering. Marknadsgaranten som lever av att hedgea gör avvägningen varje dag; privatpersonen gör den sällan, och då är det hellre ett brett band än inget. Vid ordern gäller verktygen från am-familjen: begränsade order i aktien, aldrig marknadsorder i en tunn bok. Och stängningsfrågan — restvärdeslogiken: den sista veckans tidsvärde är litet i kronor, men gamman är som störst just där; positionens risk är som högst när dess pris är som lägst. Restvärdet ska alltså inte samlas in av slöhet — en position som inte längre betalar sin risk stängs eller rullas medvetet, medan den som gör det får leva. Beskattningen av varje gren av beslutet ägs av sj-04."
+          },
+          {
+            "type": "definition",
+            "content": "HEDGEBAND — skriven tröskel för omhedging: exponeringen får glida inom bandet, justeras först utanför · EXEMPLET: band ±0,10 nettodelta per straddle = ±100 aktier på 10 kontrakt; vid +0,26 säljs 160 aktier till +0,10 · BANDBREDDENS AVVÄGNING: smalt band = många order och spreadkostnad (am-01), brett band = längre obalans · RESTVÄRDESLOGIKEN — sista veckans tidsvärde är litet i kronor men gamman är som störst: risken är högst när priset är lägst · GRÄNS: sj-04 äger beskattningen av varje beslutsgren."
+          },
+          {
+            "type": "insight",
+            "content": "Ett band är en överenskommelse med sig själv om när beslutet får vänta. Utan band blir omhedgingen ett humör; med band blir den en metod — och humöret är alltid dyrare."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — förfallodagen och de tysta glidningarna",
+        "intro": "Förvaltningens fel är sällan dramatiska — de är glidningar som ingen lyfter på. Sex fällor täcker de flesta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är glidningen själv: positionen blir en annan utan beslut, och den som läser orderbekräftelsens exponering i stället för dagens lever marknadsrisk den aldrig valde — fyrtio aktier i måndags var tvåhundrasextio på fredag. Andra fällan är pinningsrisken: står aktien vid 150,05 på förfallodagen — femtio öre från lösenpriset — vet ingen i förväg vilka optioner som löses; ägaren kan öppna nästa handelsdag med eller utan tusen aktier, och planen måste rymma båda utfallen. Tredje fällan är gammans tysta tillväxt: sista veckorna växer gamman kraftigt även om aktien står stilla — positionen förändras i karaktär utan en enda notis i kurslisten, och den som sover till förfallo vaknar i en annan position. Fjärde fällan är likviditeten: yttersta lösenpriser och sista dagar har täta böcker, och spreaden — am-01:s läsning — kan äta ett restvärde som såg rimligt ut på skärmen. Femte fällan är kapitalbehovet: automatisk lösen av tusen aktier à 150 kronor kräver 150 000 kronor — tusen gånger hundrafemtio — i kontanter eller marginalutrymme, och kapitalet måste stå klart på förfallodagen, inte dagen efter, medan tilldelningen på den skrivna sidan är km-060:s värld. Sjätte fällan är kalendern: thetan ränsas även över helgen medan gamman bara arbetar när börsen är öppen — den som köper på fredag betalar för tre kalenderdagar som inte kan producera någon rörelse alls. Gemensam rot: en optionsposition har en inbyggd klocka, och alla sex fällorna är sätt att låtsas att den inte finns."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam rot: klockan. Positionen åldras varje dag, och förfallodagen är ingen händelse att oroa sig för i sista veckan — den är positionens sista datapunkt, utsatt sedan första dagen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — förvaltarens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga dagliga läsningen av en position som lever.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur många aktieekvivalenter bär positionen i dag — deltat på dagens kurser, inte på köpets? Fråga två: hur mycket skrivs exponeringen om per krona — vilken är gamman, och växer den mot förfallo? Fråga tre: vad kostar dagen — thetan i kronor, och vad är break-even-rörelsen den ska betala? Fråga fyra: var står bandet, och var står deltat mot det — är justeringen ett beslut i dag eller en regel som redan slagit till? Fråga fem: vad händer på förfallodagen i tre lägen — aktien vid 140, 150 och 160 — i lösta kontrakt, aktier, kapitalbehov och skatt (sj-04)? Den som svarar på de fem frågorna har positionen under uppsikt i stället för tvärtom, och svaren tar fem minuter när rutinen satt. Detta är utbildning i mekanik med påhittade exempel — inte uppmaningar att köpa, sälja eller skriva något värdepapper; avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Förvalta en position på papper till dess förfall: välj en noterad aktie, ett lösenpris och en förfallodag minst en månad bort, och anteckna en köpt straddles pris från dag ett — påhittade kontraktsantal räcker. Logga varje handelsdag: aktiekurs, positionens nettodelta i aktieekvivalenter, thetan i kronor och break-even-rörelsen. Skriv bandet före första loggraden, notera varje dag bandet slår till och vilken justering regeln ger. På förfallodagen: räkna utfallet i tre lägen — aktien under, vid och över lösenpriset — inklusive kapitalbehov och beskattning enligt sj-04:s läsning. Jämför till sist loggen med det faktiska förloppet: vad kostade hyran sammanlagt, vad skördade rörelsen, och var stod bandet mot humöret? Upprepa en gång till med ny förfallodag — förvaltning är en vana, inte en insikt."
+          },
+          {
+            "type": "insight",
+            "content": "Optionsfamiljens karta har nu sex djupsteg: grunderna, volen, emissionens instrument, kombinationerna, utdelningen — och förvaltningen. Bygget avgör vad du har rätt till; förvaltningen avgör vad du har kvar när klockan slagit."
+          }
+        ]
+      }
+    ]
+  },
+  "od-07-terminskontraktet": {
+    "slug": "od-07-terminskontraktet",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Terminskontraktet — priset idag, leveransen sedan",
+    "summary": "OPTIONS & DERIVAT-familjens sjunde steg: terminskontraktet, derivatfamiljens andra hälft — där optionen (km-059) bär en RÄTT är terminen en SKYLDIGHET: två parter binder sig idag till pris och leverans på ett framtida datum. Kursen lär det rättvisa priset som en carry-räkning: spot 100 kronor, sex månaders riskfri ränta 3,0 procent per år ger halvårsräntan 1,5 procent och finansieringskostnaden 100 gånger 1,015 lika med 101,5, minus utdelningen under perioden 1,0 krona ger terminen 100,5 — basen plus 0,5. Speglarna: höjs utdelningen till 2,0 blir terminen 101,5 minus 2,0 lika med 99,5 och basen minus 0,5, och noteras terminen 102,0 mot det rättvisa 100,5 låser köp-korg-sälj-termin 1,5 per aktie — arbitragen (am-04, bf-13) som håller bandet. Vidare spelets hushåll: kontrakt på index 2 000 med multiplikator 100 ger kontraktsvärdet 200 000 kronor, börsens marginal 8 procent lika med 16 000, och en indexrörelse minus 2 procent kostar 4 000 — en fjärdedel av marginalen — med daglig stickning. Kröningen är säkringsräkningen: fond 100 miljoner kronor, beta 1, säkras med 500 korta kontrakt, och när index faller från 2 000 till 1 800 ger terminen plus 10,0 miljoner mot fondförlustens minus 10,0 — netto noll, exakt avsikten. Genomgående utbildning i kontraktets mekanik, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Skilja terminen från optionen på tre sätt: optionen bär rättigheten att köpa eller sälja (km-059), terminen skyldigheten att fullfölja — den som står kort i optionen kan tvingas, den som står i en termin SKALL fullfölja, och priset på den skillnaden syns i att terminen varken har premie eller valfrihet. Räkna terminens rättvisa pris som en carry-kedja: spot 100 gånger (1 plus halvårsräntan 0,015) lika med 101,5, minus utdelningen under löptiden 1,0, ger terminen 100,5 — och förklara varje led: räntan är kostnaden att bära positionen, utdelningen är avkastningen som bäraren går miste om. Läsa basen (termin minus spot): plus 0,5 när räntan överstiger utdelningen (kontango), minus 0,5 när utdelningen 2,0 överstiger räntans 1,5 (backwardation) — och därmed varför utdelningstätare index bär lägre terminer. Köra arbitrage-vakten: noteras terminen 102,0 mot rättvisa 100,5 låser köp av korg och försäljning av termin 1,5 per aktie, noteras 99,0 låser spegelhandeln lika mycket — mekaniken som håller basen vid carry (am-04:s indexarbitrage, bf-13:s gränser). Räkna marginal och stickning: kontrakt på index 2 000 med multiplikator 100 ger kontraktsvärdet 200 000, marginalen 8 procent lika med 16 000, och index minus 2 procent kostar 4 000 — 25 procent av marginalen — med förlusterna dragna dagligen. Sätta ihop säkringen: fond 100 miljoner kronor med beta 1 behöver 500 korta kontrakt (100 000 000 delat med 200 000), och index 2 000 till 1 800 ger terminsvinsten 20 000 per kontrakt gånger 500 lika med 10,0 miljoner som neutraliserar fondförlustens 10,0. Ställa de fem läsningsfrågorna till varje termin: mot vilket spot, vilken carry, vilken bas, vilken marginal, vilken motpart.",
+    "why": "OPTIONS & DERIVAT-familjen har elva kurser men bara en av derivatens två grundfamiljer: optionen i alla sina skepnader — grunderna (km-059), grekerna (od-01), den implicita volatiliteten (od-02), emissionens instrument (od-03), strategierna (km-060, km-061, od-04), matematiken (km-062), utdelningsmötet (od-05) och positionen efter bygget (od-06) — tio optionskurser, medan TERMINEN, kontraktet utan valfrihet, fram till denna kurs saknade sin egen plats. Sond mot registrets 426 kurser: fraserna terminskontrakt, terminsmarknad och forwardkontrakt ger noll ägande-träffar bland kurserna — km-033 nämner terminer som skyddsverktyg i förbifarten, rk-07 definierar valutaterminen i en enda mening, och am-04 talar om indexarbitrage utan att visa räkningen — instrumentet som bär halva derivatvärlden (ränte-, valuta- och råvaruterminer) har ingen kurs som äger mekaniken. Luckan är inte perifer: utan terminen fattar varken arbitragens band (bf-13), indexomläggningens flöden (am-07) eller nyemissionens prissättning (od-03:s teckningskurs sätts med terminslogik) — och carry-räkningen är familjens enda plats där räntan (km-054), utdelningen (od-05) och priset möts i EN ekvation som läsaren kan räkna hem på fyra tal. Kursen kräver multiplikation och subtraktion men ger derivatens andra ben — den som gör resten av familjen läslig som system, inte som kuriosa.",
+    "history": {
+      "origin": "Terminen är handelns äldsta standardiserade form: i de medeltida handelsstädernas varumässor köptes och såldes vara som ännu inte fanns — bondens skörd vid Mickaels, vävnaden vid vårfrimässan — och avtalet skrevs med leveransdag och pris från dag ett. Dessa tidsbundna kontrakt löste handelns grundproblem: köparen säkrade sin råvara och säljaren sitt pris, länge före något optionspapper existerade; Amsterdam på sjuttonhundratalet förde formen till börsens notationer.",
+      "evolution": "Nittonhundratalet institutionaliserade det gamla avtalet: Chicagos råvarubörser standardiserade kontrakten — underliggande, storlek, leveransmånader — och införde clearinghuset som motpart åt alla, vilket födde marginalsystemet och den dagliga stickningen av vinster och förluster. Samtidigt växte de finansiella terminerna fram: valuta- och ränteterminer från sjuttiotalet och aktieindexterminer från åttiotalet gjorde kontraktet till kapitalmarknadens standardverktyg — hedgefonders säkringar, fonders exponeringar och bankernas balanser vreds i storlek genom terminsböckerna, idag en av världens största handelsytor.",
+      "modern": "I dag hanteras det mesta av terminsvärlden utan fysisk leverans: de finansiella kontrakten kvittas mot kontant skillnad mot indexet — kontraktets logik kvarstår men leveransen ersatts av avräkning, och majoriteten av positioner stängs före förfallodag. Spot-marknadens kod är densamma som för fyrahundra år sedan: priset idag för varan sedan, marginal som bär risken, clearinghuset som håller orden — och det rättvisa priset är förblivande carry-räkningen. För den som vill förstå börsens undercurrent — varför indexet kan röra sig utan nyheter (am-07:s flöden) och vad en säkrad fond egentligen äger — är terminen nyckeln som låser upp."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Det bindande avtalet — optionens syskon utan valfrihet",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Det rättvisa priset — räntan, utdelningen och carry-räkningen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Basen och arbitragen — vem som håller priset vid carry",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Marginal och stickning — spelets hushåll",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Terminen som verktyg — säkra, flytta och läsa flöden",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje termin",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Det bindande avtalet — optionens syskon utan valfrihet",
+        "minutes": 4,
+        "intro": "Familjen har lärt optionen i åtta kurser; här kommer dess syskon — samma släkt, motsatt själ: där optionen ger en rättighet ger terminen en skyldighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett terminskontrakt är fyra rader: en underliggande tillgång (ett index, en aktiekorg, en valuta, en ränta), en storlek (kontraktets multiplikator), en löptid (förfallodagen) och ett pris — priset som köpare och säljare binder sig vid idag för en fullgörelse som sker sedan. Jämför med optionen (km-059 äger grunderna): köparen av en köpoption BETALAR en premie för RÄTTEN att köpa till strikepriset — och kan låta bli om priset gått henne emot. Terminen har ingen premie och ingen tärande valfrihet: båda parter SKALL fullfölja vid förfallodagen, köparen till det idag bestämda priset, säljaren med leverans eller avräkning. Skillnaden är inte juridisk hårklyveri utan ekonomin: optionens värde kan aldrig bli lägre än noll för köparen (hon stryker premien, aldrig mer), medan terminens utfall för båda parter är öppet i båda riktningarna — köparen tjänar krona för krona om underliggande stiger, förlorar krona för krona om den sjunker, och säljaren spegelvänt. Detta gör terminen till derivatens raka instrument: ingen krökning (od-01:s greker lever inte här — terminens delta är exakt ett, dess theta noll), ingen volatilitetsprissättning (od-02:s värld är optionens), bara pris, tid och carry. Kontrakten är standardiserade och börsnoterade: en motpart — clearinghuset — står emot alla, och varje position marginalsäkras och stäcks av dagligen (kapitel fyra), vilket skiljer börsens termin från bankens skräddarsydda forward — samma ekonomi, annan infrastruktur. Terminens fyra rader ska läsas som ett löfte med prislapp: det kostar ingenting att ingå (ingen premie), men det kostar allt att ha fel — och det är därför kapitel fyra heter spelets hushåll."
+          },
+          {
+            "type": "definition",
+            "content": "Terminskontrakt — ett standardiserat, bindande avtal att köpa (lång position) respektive sälja (kort position) en underliggande tillgång till ett idag bestämt pris vid en bestämd framtida förfallodag. Ingen premie betalas vid ingående; båda parter är skyldiga att fullfölja, och löftena bärs av marginal hos clearinghuset."
+          },
+          {
+            "type": "insight",
+            "content": "Minnesregeln för syskonskillnaden: optionen är ett VAL (och val kostar premie), terminen är ett LÖFTE (och löften ges gratis men bärs till fullgörelse). Av den skillnaden följer allt annat: optionens krökta utdelningsprofil och greker, terminens raka linje och delta ett; optionens premie, terminens marginal."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Det rättvisa priset — räntan, utdelningen och carry-räkningen",
+        "minutes": 4,
+        "intro": "Vad SKA sex månaders termin på en aktiekorg kosta när spot står 100? Svaret är ingen prognos utan en bokföring: vad det kostar att bära korgen fram till leveransen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Antag att du själv ska leverera korgen om sex månader och därför köper den idag. Du binder 100 kronor per aktie — pengar som annars kunnat placeras till riskfri ränta, säg 3,0 procent per år, alltså 1,5 procent på halvåret: 100 gånger 1,015 lika med 101,5, bärkostnaden 1,5 per aktie. Men under väntan betalar korgen utdelning — i exemplena 1,0 krona per aktie under perioden — och den tillfaller bäraren, inte terminsköparen: den räknas av. Terminens rättvisa pris blir därför 101,5 minus 1,0 lika med 100,5, och basen — terminen minus spot — blir 100,5 minus 100 lika med plus 0,5. Detta är carry-ekvationen i en rad: termin är spot gånger (1 plus räntan för perioden) minus utdelningen under perioden, och den kallas rättvis inte för att den är moralisk utan för att allt annat låser sig själv i arbitrage (kapitel tre). Notera ekvationens två hävstänger. Räntan: stiger den riskfria räntan till 4,0 procent per år (2,0 på halvåret) blir terminen 100 gånger 1,020 minus 1,0 lika med 101,0 — hög ränta lyfter terminen, och därför är centralbankernas ränteläge (km-054, km-056) en del av terminsbilden. Utdelningen: höjs den förväntade utdelningen till 2,0 blir terminen 101,5 minus 2,0 lika med 99,5 med basen minus 0,5 — utdelningstidpunkter (od-05:s ex-dagar) syns i terminen som trappsteg nedåt, och index med hög utdelning bär lägre terminer än utdelningstomma tillväxtindex. Och den vanligaste feltolkningen av alla: terminen är INTE en prognos. Att sexmånadsterminen står 100,5 betyder inte att marknaden tror index plus 0,5 procent — den betyder att räntan minus utdelningen är plus 0,5 procent. Terminen bär carry, inte förväntan; viljan att veta vad marknaden TROR får sökas i optionerna (od-02:s implicita volatilitet) — och förväxlingen mellan de två är en av derivatundervisningens klassiska fällor."
+          },
+          {
+            "type": "tabell",
+            "content": "Steg | Räkning | Tal per aktie\nSpot (indexkorgen idag) | — | 100,0\nHalvårsränta (riskfri 3,0 % per år) | 100 × 0,015 | 1,5\nBärkostnad inklusive spot | 100 × 1,015 | 101,5\nUtdelning under perioden (avräknad) | − | 1,0\nRättvis termin | 101,5 − 1,0 | 100,5\nBas (termin − spot) | 100,5 − 100 | +0,5 (kontango)\nSpegel: utdelning 2,0 | 101,5 − 2,0 | 99,5 · bas −0,5 (backwardation)"
+          },
+          {
+            "type": "insight",
+            "content": "Ekvationens pedagogiska kraft ligger i dess tre tider: räntan är priset på ATT VÄNTA, utdelningen är priset som VÄNTANEN betalar tillbaka, och basen är skillnaden — inte ett ord om framtiden, allt om bärkostnaden. Den som memorerar bara en rad från denna kurs: terminen är inte en prognos, den är en bokföring av väntan."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Basen och arbitragen — vem som håller priset vid carry",
+        "minutes": 4,
+        "intro": "Varför står terminen inte var den vill? För att varje avvikelse från carry bjuder ut en vinst utan risk — och marknadens snabbaste bär hem den.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Säg att sexmånadsterminen noteras 102,0 medan carry-räkningen ger 100,5. Handla nu båda håll: köp underliggande korg på spotmarknaden (100 per aktie), sälj terminen (102,0), bära korgen sex månader (kostnad 1,5 i ränta, inkomst 1,0 i utdelning) och leverera vid förfallodag till 102,0. Resultatet räknas i två led: vid leverans återbetalar finansieringen 101,5 och utdelningen 1,0 har tillfallit bäraren — den sammanräknade bärkostnaden blir 101,5 minus 1,0 lika med 100,5 — och intäkten 102,0 från terminsförsäljningen minus 100,5 ger låsningen 1,5 per aktie, exakt spegeln av att terminen noteras 1,5 över sitt rättvisa pris. Ingen kursrisk finns i paketet — terminen tvingar fullgörelse till 102,0 vad än spot gör under vägen; risken är boren av den som betalade för mycket. Spegelhandeln gäller när terminen noteras 99,0 under det rättvisa: sälj korgen kort (am-06 äger kortlägans mekanik), köp terminen, och lås 100,5 minus 99,0 lika med 1,5 per aktie på samma sätt. Denna handel — indexarbitrage (am-04:s marknadsstruktur förklarar dess plats i flödet) — är skälet till att basen håller sig nära carry: avvikelser bjuds ut och äts. Men bandet är inte ett hårstrå; det har bredd (bf-13 äger arbitragens gränser på djupet): transaktionskostnader, utlåningsavgifter för korta korgar (am-06), osäkerheten i exakta utdelningar och kapitalbindningen gör att terminen kan noteras några tiondelar eller mer från det teoretiska värdet utan att någon kan låsa riskfritt — och därför är små basavvikelser information om KOSTNADER, medan stora avvikelser (när de historiskt förekommit i stressade lägen) varit information om RÄDSLAN: en termin långt under carry är ett tecken på att någon betalar för att slippa bära underliggande — short squeezens släkting (am-06:s utlåningssvält). Läsregeln från detta kapitel: basen bär tre lager — carry (mekaniskt), kostnader (smalt band) och stress (tillfälligt breda utbrott) — och det är först det tredje lagret som är nyheter värd namnet."
+          },
+          {
+            "type": "tabell",
+            "content": "Situation | Termin | Rättvis (carry) | Handeln | Låsning per aktie\nTermin övervärderad | 102,0 | 100,5 | köp korg · sälj termin · bära till leverans | 102,0 − 100,5 = 1,5\nTermin undervärderad | 99,0 | 100,5 | sälj korg kort · köp termin | 100,5 − 99,0 = 1,5\nBas vid carry | 100,5 | 100,5 | ingen handel — ingen vinst att låsa | 0"
+          },
+          {
+            "type": "insight",
+            "content": "Arbitragens båda låsningar — 1,5 per aktie i varje riktning — är mekanikens tempo: samma absoluta belopp, spegelvända vägar. Notera också att handeln kräver motpartens fel: utan någon som noterar fel finns ingen vinst, och med många som patrullerar bandet blir avvikelserna små — arbitragen är marknadens städare."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Marginal och stickning — spelets hushåll",
+        "minutes": 4,
+        "intro": "Terminen kostar ingenting att ingå men allt att ha fel — och därför kräver börsen en deposition som visar att löftena bärs: marginalen, dragen dag för dag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kontraktets ekonomi i tal. Ett indexterminskontrakt skrivs på indexnivån med en multiplikator — exemplet: index 2 000 gånger 100 kronor per indexpoäng ger kontraktsvärdet 200 000 kronor. För att ingå kontraktet krävs ingen betalning av kontraktsvärdet utan en marginal — en deposition — en pant — hos clearinghuset, i exemplet 8 procent av kontraktsvärdet: 200 000 gånger 0,08 lika med 16 000 kronor. Marginalen är inte en kostnad utan en pant — den binds, och den räknas om varje dag i stickningen: när indexet faller 2 procent till 1 960 sjunker kontraktets värde med 2 000 gånger 0,02 lika med 4 000 kronor, och den som står LANGT har en förlust på exakt 4 000 som DRAS samma dag — 4 000 delat med 16 000 lika med 25 procent av marginalen på en enda dagsrörelse. Om marginalen sinar måste den fyllas på (marginalkrav), och den som inte fyller på stängs — clearinghusets järnregel som håller systemets motpartsrisk nära noll. Här bor terminens verkliga våldskillnad mot optionen: optionens köpare riskerar som mest premien, medan terminens båda parter bär full linjär exponering från första dagen — en indexrörelse på 8 procent åt fel håll äter hela marginalen i exemplet, och rörelser därutöver skapar skuld. Därför hör även hävstångens mekanik hemma här: med 16 000 bundet bär positionen 200 000 kronor exponering — tolv och en halv gånger — och samma procentuella indexrörelse blir tolv och en halv gånger så stor i avkastning på det bundna kapitalet. Hävstången är inbyggd i kontraktets struktur (inte något som väljas till), vilket gör terminen till familjens mest krävande instrument: rätt hanterad ett verktyg för exakt exponering (kapitel fem), felhanterad ett snabbt sätt att glida omkull. Kursens hållning är den pedagogiska: mekaniken levereras för att förstås — ingenting här är en uppmaning att bruka hävstång."
+          },
+          {
+            "type": "tabell",
+            "content": "Post | Räkning | Kronor\nKontraktsvärde | index 2 000 × multiplikator 100 | 200 000\nMarginal (8 procent) | 200 000 × 0,08 | 16 000\nDaglig stickning vid index −2 % | 200 000 × 0,02 | 4 000 dragna samma dag\nAndel av marginalen | 4 000 ÷ 16 000 | 25 procent\nHävstång på bundet kapital | 200 000 ÷ 16 000 | 12,5 gånger"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens sista två rader hänger ihop som fråga och svar: 25 procent av marginalen på en dagsrörelse är samma sak som 12,5 gånger hävstång — bara uttryckt i tid (per dag) i stället för i kapital. Stickningens dagliga rytm gör terminens risk OMEDELBAR: förluster bokförs inte vid förfallodagen utan var kväll, och marginalen är den klockan som aldrig slutar gå."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Terminen som verktyg — säkra, flytta och läsa flöden",
+        "minutes": 4,
+        "intro": "Varför bär världen terminer? Tre användningar dominerar — att säkra det man äger, att flytta exponering utan röra spot-marknaden, och att läsa flödenas riktning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Säkringsräkningen är terminens äldsta och största användning — bondens skörd i kapitel historien, fondens korg idag. Exemplet: en fond bär aktier till värdet 100 miljoner kronor med beta 1 (rör sig som indexet), och förvaltaren vill under ett känt riskfönster — säg en beslutande vecka före en stor makrohändelse — neutralisera marknadsrisken UTAN att sälja en enda aktie (skatteskäl (km-051:s värld) eller enkelhet). Räkna antalet kontrakt: fondvärde delat med kontraktsvärde, 100 000 000 delat med 200 000 lika med 500 kontrakt — och eftersom risken ska BORT säljs de 500 kontrakten kort (fonden står med 500 löften att leverera indexets värde vid förfallodagen). Sedan händer händelsen: indexet faller från 2 000 till 1 800, alltså minus 10 procent. Fonden förlorar 100 miljoner gånger 0,10 lika med 10,0 miljoner på sina aktier — men den korta terminen STIGER i takt med fallet: 200 indexpoäng gånger 100 kronor lika med 20 000 kronor per kontrakt, gånger 500 kontrakt lika med 10,0 miljoner i vinst. Netto: minus 10,0 plus 10,0 lika med noll — marknadsrisken var borta under fönstret, och när fonden tar av säkringen står portföljen kvar med sina aktier och sin ursprungliga exponering. Detta är terminens kärnverktyg: exakt, linjärt, billigt i transaktion — och samma mekanik används av indexomläggningens flöden (am-07: passiva fonder flyttar exponering i terminer runt rebalanseringsdatum), av portföljens svansskydd i kombination med optioner (km-033), och av valutahanteringen i utlandsbolag (rk-07:s valutatermin samma ekvation med annan carry). Den tredje användningen är läsningen: terminsböckernas öppna positioner och basens utbrott (kapitel tre) bär information om hur marknadens tunga sidor är placerade — och i kombination med optionernas implicita volatilitet (od-02:s termstruktur) ger derivatmarknadens båda halvor en helhetsbild av risk och positionering som spot-marknaden ensam aldrig visar. Terminen är alltså tre saker på en gång — försäkring, hiss och mätinstrument — och vilken roll den spelar avgörs inte av kontraktet utan av bäraren."
+          },
+          {
+            "type": "tabell",
+            "content": "Steg | Räkning | Resultat\nAntal kontrakt för full säkring | 100 000 000 ÷ 200 000 | 500 korta terminer\nIndex fall 2 000 → 1 800 | −200 poäng × 100 kr | −20 000 per kontrakt i indexvärde\nFondens aktieförlust | 100 Mkr × 0,10 | −10,0 miljoner\nTerminens vinst (kort) | 20 000 × 500 | +10,0 miljoner\nNetto | −10,0 + 10,0 | 0 — marknadsrisken neutraliserad"
+          },
+          {
+            "type": "insight",
+            "content": "Säkringsräkningens skönhet ligger i symmetrin: samma 500 kontrakt som ger plus 10,0 i ett fall hade gett minus 10,0 om indexet stigit — säkringen är inget gratis skydd utan ett tillfälligt avstående från båda riktningarna. Den som förstår det förstår också varför säkrade fonder kan underprestera i uppgångar: terminen skär bort nedsmutsningen OCH uppstigningen, och priset för ro är avkastningen som lämnas på bordet."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje termin",
+        "minutes": 4,
+        "intro": "Kursens sista kapitel för samman avtalet, carry-räkningen, arbitragen, marginalen och säkringen till ett förhörsmönster: fem frågor som gör varje terminspost läsbar — på skärm, i rapport eller i nyhetsflödet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sammanförelsen i fem frågor. Fråga ett: mot vilket spot? — en termin utan sin spotnotering är ett pris utan referens; para dem alltid, och räkna basen (kapitel två). Fråga två: vilken carry? — räntan för perioden och utdelningen under den: båda talen är offentliga (km-054:s kurvor, bolagens utdelningskalendrar, od-05:s ex-dagar) och deras skillnad ÄR det rättvisa priset — ingen fantasi krävs, fyra rader räcker. Fråga tre: vilken bas? — är terminen vid carry (mekanik), i bandet (kostnader, bf-13) eller utanför (stress — information värd namnet)? Fråga fyra: vilken marginal? — kontraktets värde, procentsatsen och dagens stickning: hävstången 12,5 i exemplet är terminens tempo, och den som inte kan räkna den klarar inte positionen. Fråga fem: vilken motpart och vilket syfte? — clearinghuset bär tekniskt risken, men den ekonomiska motparten är alltid någon med ett syfte: en säkrare (kapitel fem), en arbitragör (kapitel tre) eller en spekulant — och i flödets stora bild (am-04, am-07) är terminens volym ett språk som berättar vilka som flyttar sig. Fem frågor, fem kapitel, en ekvation. Kursens plats i familjen är därmed familjens andra hälft fullbordad: optionerna äger VALFRIHETEN (km-059 genom od-05) och denna kurs äger SKYLDIGHETEN — tillsammans är derivatens båda grundfamiljer lästa, och deras kombinationer (od-04:s strategier med termin under, km-033:s skydd med termin som ben) blir tillgängliga som byggstenar i stället för förbjudna rum. Avslutningshållningen är familjens hela: detta är utbildning i en instruments mekanik — ingenting i kursen är en uppmaning att ingå, inneha eller undvika några positioner; exemplens tal är räkneövningar på påhittade marknadsdata, verkliga kontrakt bär verklig risk, och alla beslut om sådana hör hemma hos läsaren själv på egen analys — med de fem frågorna som förhörsmönster, nästa terminsnotering, nästa rapport, nästa basutbrott."
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor och en ekvation — spot gånger (1 plus räntan) minus utdelning — är hela kursen. Resten är rytm: basen varje dag, stickningen varje kväll, och med åren en vana att läsa terminsböckerna som vad de är — marknadens husplats för löften, prissatta med carry, bevakade med marginal, och mer talande om sitt skepp än någon prognos."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch höll sig helst borta från instrument han inte behövde — hans filosofi var att äga bolaget, inte kontraktet — men hans berättelser om bolag som säkrade sin råvara eller valutor innehåller terminens mekanik i praktiken: lås priset idag, sov bättre ikväll. Lynch varnade också för instrument vars risk den egna bäraren inte räknat: hans tumregel — köp aldrig något du inte kan förklara på en minut — är terminens kapitel fyra i en mening: marginalen är förklarad eller obehaglig.",
+    "grahamSection": "Benjamin Grahams analysemp var beräkning före åtagande: först värdet, sedan marginalen — och terminens carry-räkning är samma anda tillämpad på ett löfte: det rättvisa priset är räknbart FÖRE handeln, och den som handlar utan räkningen har varken marginal of safety eller marginal i clearinghuset. Hans varning för spekulationens frestelser är särskilt skarp mot instrument med inbyggd hävstång: riskens storlek står inte i kontraktet utan i bärarens hushåll.",
+    "ak1Section": "I AK1A:s metodik läser derivatmarknadens båda halvor tillsammans som riskbarometer: optionernas implicita volatilitet (od-02) ger oroens prisnivå och terminernas bas och volym ger positionernas tyngd — i kombination ett tvärsnitt som spot-marknaden inte bär. Portföljmotorerna använder terminsekvationen i utlandsexponeringars valutaomräkning (rk-07:s territorium) och i scenarioramar (ek-05, km-029) där en säkrad gren beräknas med terminens linjära delta — och varje sådan användning loggas i arbetsflödet (ek-03) så att antagandena kan granskas. Kursen dokumenterar mekaniken; tillämpningen på enskilda positioner är alltid läsarens egen analys, aldrig en rekommendation."
   },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",
@@ -213779,6 +214635,174 @@
     "lynchSection": "Peter Lynch arbetade med berättelser och tumregler snarare än fördelningar, men hans metod att tänka i flera utfall samtidigt — vad som händer om planen lyckas, halvlyckas, misslyckas — är simuleringens berättade släkting. Lynch påminde också om kursens fjärde kapitel utan formler: variabler i ett bolag hänger ihop, och den som räknar dem var för sig räknar ett bolag som inte finns.",
     "grahamSection": "Benjamin Grahams säkerhetsmarginal är kursens svar i förväg: skillnaden mellan pris och värde ska bära utfallens spridning, inte bara basfallets punkt. Grahams egen praktik — att arbeta med intervall och nedre gränser i stället för exakta värden — är percentiltänkande före percentilierna, och hans krav på att varje antagande ska kunna motiveras separat lever vidare i de dokumenterade fördelningsparametrarna.",
     "ak1Section": "I AK1A:s metodik är Monte Carlo ett av motorverkstadens beräkningsstöd: AKM2-traditionens scenarioarbete låter grenarnas antaganden bära fördelningar, sammanvägningen räknar band i stället punkter, och arbetsflödet (ek-03-traditionen) dokumenterar frö, antaganden och percentiler vid varje körning — så att varje band kan köras om, granskas och hållas ansvarigt, i linje med ek-04:s principer för provning och husets determinism-doktrin."
+  },
+  "ek-06-bayesianska-omviktningen": {
+    "slug": "ek-06-bayesianska-omviktningen",
+    "category": "EKOSYSTEM",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Bayesianska omviktningen — hur rösterna lär sig av träffar och missar",
+    "summary": "EKOSYSTEM-familjens sjätte steg: den bayesianska omviktningen, mekanismen som gör labbets röstlängd levande — fasta vikter (ek-01) blir växande vikter som lär av varje kvartals bevis. Kursen lär Bayes sats i klartext med labbets tal: hypotesens prior 0,40 möter ett starkt bevis (sannolikhet 0,90 om hypotesen stämmer, 0,10 om den inte gör det) och posterior blir 0,40 gånger 0,90 delat med 0,36 plus 0,06 lika med 0,36 delat med 0,42 lika med 0,86 — medan ett svagt bevis (0,55 mot 0,45) bara flyttar en stark prior från 0,80 till 0,83. Därefter mekaniken: mikro-profilens vikter VOL 30, FIB 25, EW 20, GANN 15, LUC 10 uppdateras med multiplikatorn 1,2 vid träff och 0,75 vid miss — ett kvartal med träffarna VOL, EW, LUC och missarna FIB, GANN ger 36, 18,75, 24, 11,25 och 12, summa 102, som renormaliseras till 35,3 + 18,4 + 23,5 + 11,0 + 11,8 lika med 100,0 — och återhämtningens hastighet: en missad teori behöver två träffar för att återgå (0,75 gånger 1,2 gånger 1,2 lika med 1,08). Genomgående utbildning i bevisens definition före rapporten, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna Bayes sats med sannolikheter i klartext: posterior är priorn gånger bevisets styrka delat med samma produkt plus närmaste alternativs motsvarande — 0,40 gånger 0,90 delat med 0,36 plus 0,06 ger 0,36 delat med 0,42 lika med 0,86 — och förklara varför ett svagt bevis (0,55 mot 0,45) knappt flyttar en stark prior (0,80 till 0,83) medan samma svaga bevis flyttar en svag mer. Köra den mekaniska omviktningen: vikterna VOL 30, FIB 25, EW 20, GANN 15, LUC 10 (ek-01:s mikro-profil) multipliceras med 1,2 vid träff och 0,75 vid miss, och den nya summan (i exempelkvartalet 102) renormaliseras till 100 — 35,3 + 18,4 + 23,5 + 11,0 + 11,8. Räkna återhämtningens takt: en miss kostar 0,75 och en träff ger 1,2, alltså återställer två träffar mer än hela missen (0,75 gånger 1,2 gånger 1,2 lika med 1,08) medan en enda inte räcker (0,90). Definiera bevis FÖRE rapporten: vilka trösklar som gör en träff till en träff (kvartalets siffra mot förväntningen, definierad i förväg enligt ek-03:s arbetsflöde) — och vad som aldrig får vara bevis: kursreaktionen, magkänslan, nyhetsflödets. Läsa konvergensen: träffkvoterna efter tolv kvartal (VOL 8 av 12 lika med 67 procent, FIB 5 av 12 lika med 42, EW 7 av 12 lika med 58, GANN 4 av 12 lika med 33, LUC 6 av 12 lika med 50) förklarar varför vikterna vandrar långsamt — nollpunkten ligger vid knappt 61 procent träffkvot, för sju träffar av tolv ger växlingsfaktorn 0,85 (sjunker långsamt) och åtta ger 1,36 (växer). Ställa de fem vakthållningsfrågorna vid varje omviktning — vilket bevis, vilken tröskel, vilken multiplikator, vilken summa, vilket loggat datum.",
+    "why": "EKOSYSTEM-familjen har lärt ut husets statik: kartan (ek-02), arbetsflödet (ek-03), röstlängdningen med fasta vikter (ek-01), prövningen mot historien (ek-04) och simuleringen av framtiden (ek-05) — men ingen kurs äger dess inlärning: vad som händer MED vikterna när en teori träffar och missar, kvartal efter kvartal. Sond mot registrets 426 kurser: ordet bayes förekommer i kurserna endast i ek-01:s fjärde skyddsvägg — uppdatering bara på fördefinierade bevis, kallad bayes-disciplin — vilket är en VAKT, inte en mekanism: prior, posterior, multiplikator och renormalisering ägs av ingen kurs. Luckan är metodens kärna, inte dess detalj: fasta vikter (ek-01) gör labbet till en omröstning som aldrig lär; omviktningen gör det till ett instrument som kalibreras — och skillnaden är precis den mellan att HA ett system och att DRIVA ett. Kursen kräver endast multiplikation och division men ger familjens slutverktyg: den som kan ek-01:s röstbudget och denna kursens uppdateringsmekanik kan köra hela kedjan — från kvartalsbevis (kt-02:s kalibrering) via ny viktprofil till ny SAM-signal — och läsa i loggen exakt när och varför systemet ändrade sig.",
+    "history": {
+      "origin": "Uppdateringens idé är äldre än dess formel: tidigt artonhundrtals England ställde Thomas Bayes frågan om omvänd sannolikhet — givet att något inträffat, hur sann var orsaken? — och formeln som bär hans namn publicerades efter hans död. Under artonhundratalet byggde Pierre-Simon Laplace samma matematik oberoende och använde den på allt från domsluts till astronomi: sannolikheten uppfattades som en grad av tilltro som skulle revideras allteftersom bevisen samlades.",
+      "evolution": "Tjugonde seklets statistik delde sig om formelns själ: den frekventistiska skolan ville mäta världen med långa serier och förbjöd priorer som subjektiva, medan bayesianarna höll fast vid att all kunskap börjar i ett utgångsläge och uppdateras — tvisten gjorde ordet prior laddat i ett halvsekel. Samtidigt växte de praktiska tillämpningarna: signalfiltrering under andra världskriget (där fiendebanor uppskattades och omuppskattades för varje ny radarmätning) blev metodikens största framgång, och från sjuttiotalet gjorde billig beräkning bayesiansk uppdatering till motorrummet i allt från skräppostfilter till väderprognoser.",
+      "modern": "I dag är bayesiansk uppdatering standardverktyget där signaler är brusiga och bevisen trillar in en i taget: maskininlärningens språkmodeller, kreditbedömningars betyg och algoritmiska handelssystem kalibrerar om för varje ny datapunkt. I investeringsvärlden är kopplingen till labbet rak: en kvartalsrapport är exakt ett nytt bevis mot en stående hypotes, och frågan om aktieanalytiker bör vara snabba eller tröga i sina revideringar är i bayesianska termer en fråga om priorernas styrka och bevisens vikter — kursens mekanik, i varje analytiködes väsen."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Från fasta röster till lärande röster — omviktningens plats",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Bayes sats i klartext — prior, bevis, posterior",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mekaniken — multiplikatorer, summa och renormalisering",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Bevisens definition — trösklarna före rapporten",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Konvergens och gränser — hur snabbt systemet får lära",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor vid varje omviktning",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Från fasta röster till lärande röster — omviktningens plats",
+        "minutes": 4,
+        "intro": "ek-01 byggde röstlängdningen med fasta vikter; denna kurs gör det som måste hända därnäst — låter vikterna bära historien.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Påminn dig först om vad som redan står: labbets fem teorier — volym, Fibonacci, Elliott, Gann och Lucas (ek-02:s karta över fem motorer) — röstar i varje analys, och SAM-viktningen (ek-01) summerar rösterna med en fast viktprofil: i mikro-profilen VOL 30, FIB 25, EW 20, GANN 15 och LUC 10, röstbudgeten alltid 100. Systemet är bestämt nog att följas (ek-01:s första skyddsvägg) — men det har en tyst egenskap: det lär sig ingenting. Om volymteorien träffar åtta kvartal i rad och Gann missar åtta får de ändå samma röster som första dagen. Det är denna tysta egenskap kursen bygger bort, och konstruktionen är den minsta tänkbara: vikterna får FLYTTA men inte ersättas. Ett kvartals bevis räknas, en träff lyfter teoriens vikt, en miss sänker den, och inför nästa SAM-räkning (ek-03:s femte station) används de uppdaterade vikterna. Två saker förändras alltså aldrig: röstbudgeten 100 (den renormaliseras efter varje omgång, kapitel tre) och teorierna själva (ingen röstar ut någon — omviktningen flyttar röster, den avlivar inte rösträtter). Målet är inte att hitta en vinnande teori utan att hålla en orkester där de som spelar rent höras mer. Det är hela idén i en mening: ek-01 äger rösternas SUMMA, denna kurs äger rösternas HISTORIK — och tillsammans blir labbet inte bara ett system utan ett instrument som kalibreras."
+          },
+          {
+            "type": "definition",
+            "content": "Bayesiansk omviktning — uppdatering av teoriernas röstvikter efter fördefinierade bevis: en träff multiplicerar vikten med en faktor över ett, en miss med en faktor under ett, varefter summan renormaliseras till röstbudgeten 100. Omviktningen ändrar ALDRIG teorierna eller budgeten — endast fördelningen mellan rösterna."
+          },
+          {
+            "type": "insight",
+            "content": "Skillnaden mellan fasta och växande vikter är skillnaden mellan ett system man HAR och ett system man DRIVER. Det fasta systemet kan beskrivas på en rad och dör aldrig — men det talar med samma röst i alla väder. Det växande kräver logg och disciplin (kapitel fyra) men talar med erfarenhetens röst: de teorier som burit huset hörs tydligare, och de som vilselett det viskas."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Bayes sats i klartext — prior, bevis, posterior",
+        "minutes": 4,
+        "intro": "Innan mekaniken kommer matematikens kärna: sannolikheten är inte ett tillstånd utan en vandring — från utgångsläge till uppdaterat läge, steg för bevis.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Låt en hypotes bära utgångsläget: teorin om att ett visst mönster förutsäger kvartalets rapport. Priorn sätts till 0,40 — av historiens skäl kanske, eller av försiktighet; talet är utgångslägets tilltro, ingen sanning. Sedan landar beviset: rapportens siffra. Bevisets styrka mäts i två led: hur sannolikt är detta bevis OM hypotesen stämmer — säg 0,90 — och hur sannolikt är samma bevis om den INTE stämmer — säg 0,10 (det kan hända av tur, eller av att ett annat mönster bar). Bayes sats är nu en enda division: priorn gånger bevisets styrka, delat med samma produkt plus alternativets. Räkna: 0,40 gånger 0,90 lika med 0,36; alternativet är resten av priorn, 0,60, gånger dess bevis-sannolikhet 0,10 lika med 0,06; nämnaren 0,36 plus 0,06 lika med 0,42; och posteriorn 0,36 delat med 0,42 lika med 0,86. Ett enda starkt bevis tog hypotesen från 0,40 till 0,86 — men notera vad som gjorde kraften: inte bevisets storhet utan dess SKILLNAD mellan världarna (0,90 mot 0,10). Kontrasten är allt: ett bevis som är lika sannolikt i båda världarna flyttar ingenting. Prova samma räkning med ett svagt bevis: styrka 0,55 om hypotesen stämmer, 0,45 om inte, mot en stark prior 0,80 — nämnaren 0,80 gånger 0,55 lika med 0,44 plus 0,20 gånger 0,45 lika med 0,09, posteriorn 0,44 delat med 0,53 lika med 0,83. Prior 0,80 blev 0,83: ett bevis som knappt skiljer världarna åt knappt flyttar tron — och det är lika viktigt att veta när man INTE ska flyttas som när man ska. Kursens läseregel från detta kapitel: uppdateringens storlek styrs av tre tal — priorns läge, bevisets sannolikhet i hypotesens värld, och densamma i alternativets. Alla tre ska stå i loggen; inget av dem får väljas efteråt."
+          },
+          {
+            "type": "tabell",
+            "content": "Steg | Räkning | Tal\nPrior — utgångslägets tilltro | hypotesen H | 0,40\nBevisets styrka om H stämmer | P(bevis givet H) | 0,90\nBevisets styrka om H inte stämmer | P(bevis givet icke-H) | 0,10\nTäljare | 0,40 × 0,90 | 0,36\nAlternativets bidrag | 0,60 × 0,10 | 0,06\nNämnare | 0,36 + 0,06 | 0,42\nPosterior | 0,36 ÷ 0,42 | 0,86"
+          },
+          {
+            "type": "insight",
+            "content": "0,36 delat med 0,42 lika med 0,86 — divisionen är hela formeln, och de två nämnarleden är dess samvete: den som bara räknar sitt eget bidrag (0,36) och glömmer alternativets (0,06) överdriver alltid sin uppdatering. Bayes sats är i lika hög grad ett bromsverk som en motor: den säger lika ofta håll kvar som flytta."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Mekaniken — multiplikatorer, summa och renormalisering",
+        "minutes": 4,
+        "intro": "Från sats till system: labbet översätter Bayes till något en logg kan bära — en multiplikator per utfall och en division som återställer röstbudgeten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sannolikheter är abstrakta; röstvikter är hanterbara. Översättningen är två multiplikatorer, beslutade en gång och aldrig ändrade per kvartal: en träff multiplicerar teorins vikt med 1,2, en miss med 0,75. Kör ett exempelkvartal på mikro-profilen. Utgångsläget är ek-01:s vikter: VOL 30, FIB 25, EW 20, GANN 15, LUC 10. Kvartalets bevis (definierade i förväg, kapitel fyra) ger träffar för VOL, EW och LUC samt missar för FIB och GANN. Multiplicera: VOL 30 gånger 1,2 lika med 36; FIB 25 gånger 0,75 lika med 18,75; EW 20 gånger 1,2 lika med 24; GANN 15 gånger 0,75 lika med 11,25; LUC 10 gånger 1,2 lika med 12. Summan är 36 plus 18,75 plus 24 plus 11,25 plus 12 lika med 102 — och här träffar mekanikens andra lag: röstbudgeten är alltid 100, så varje vikt delas med summan: 36 delat med 102 lika med 35,3 procent; 18,75 delat med 102 lika med 18,4; 24 delat med 102 lika med 23,5; 11,25 delat med 102 lika med 11,0; 12 delat med 102 lika med 11,8. Kontrollen: 35,3 plus 18,4 plus 23,5 plus 11,0 plus 11,8 lika med 100,0 — budgeten hel, profilen förflyttad. VOL har vuxit från 30 till 35,3 och GANN krympt från 15 till 11,0 — ett kvartals bevis, en mätbar förskjutning, allt dividerat med samma summa så att ingen extra röst föds. Tänk också på tiden bakåt: vad kostar en miss? Missen multiplicerar med 0,75, men återvägen kräver två träffar — 0,75 gånger 1,2 lika med 0,90 (ännu under start), 0,75 gånger 1,2 gånger 1,2 lika med 1,08 (över start) — medan tre träffar i rad ger 1,73 (1,2 upphöjt till 3) och fyra missar i rad 0,32 (0,75 upphöjt till 4). Systemet är alltså asymmetriskt trögt: snabbt att tappa, långsamt att återfå — en medveten egenskap, för den som vill att en teori ska återfå förtroende ska behöva visa mer än ett lyckat kvartal. Nästa SAM-räkning (ek-03:s femte station) körs sedan med de nya vikterna, och hela kedjan — bevis, multiplikatorer, summa, nya vikter — loggas med datum: omviktningen är ett protokoll, inte en åsikt."
+          },
+          {
+            "type": "tabell",
+            "content": "Teori | Vikt före | Utfall | Multiplikator | Vikt efter | Renormaliserad (÷ 102 × 100)\nVOL | 30 | träff | ×1,2 | 36,00 | 35,3 procent\nFIB | 25 | miss | ×0,75 | 18,75 | 18,4 procent\nEW | 20 | träff | ×1,2 | 24,00 | 23,5 procent\nGANN | 15 | miss | ×0,75 | 11,25 | 11,0 procent\nLUC | 10 | träff | ×1,2 | 12,00 | 11,8 procent\nSumma | 100 | — | — | 102,00 | 100,0 procent"
+          },
+          {
+            "type": "insight",
+            "content": "Renormaliseringen är mekanikens egalitära hjärta: när VOL växer till 36 måste någon annans röst minska, för budgeten är och förblir 100. Omviktningen skapar inga nya röster — den flyttar befintliga. Därmed kan systemet aldrig bli MER säkert än sina hundra röster, bara bättre fördelat; det är en viktskalibrering, inte en sanningsmaskin."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Bevisens definition — trösklarna före rapporten",
+        "minutes": 4,
+        "intro": "Omviktningens akilleshäl är inte räkningen utan beviset: en träff måste vara en träff FÖRE den inträffar, annars är systemet bara åsikter med extra steg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ek-01:s fjärde skyddsvägg heter uppdatering bara på fördefinierade bevis — denna kurs är den vaktens mekanik. Ett bevis är en tröskel, skriven före rapporten och aldrig efter: teorin sade att kvartalets omsättning skulle landa över indexets förväntan med minst två procentenheter, och landade den där är träffen ett faktum oavsett om kursen steg eller föll. Regeln har tre ben. Första: trösklarna skrivs i ek-03:s arbetsflöde FÖRE rapportdatumet och loggas med tid — en tröskel som inte finns i loggen före datumet är ingen tröskel. Andra: multiplikatorerna (1,2 och 0,75) bestäms en gång för hela systemet och ändras aldrig per teori eller per humör — samma regel för alla röster är vad som gör jämförelsen mellan dem meningsfull. Tredje: inget manuellt mellanläge. En träff är en träff och en miss en miss; det finns inga nästan-träffar i mekaniken, däremot i lärdomens marginaler — reflektera gärna över en nästan-träff i anteckningen, men vikten rör sig aldrig för den. Vad får ALDRIG vara bevis? Kursreaktionen (den bär tusen orsaker utöver teorin — am-familjens mikrovärld), nyhetsflödets ton, magkänslan morgonen efter. Beviset är en siffra mot en tröskel, och det gäller strängt: samma siffra mot samma tröskel för varje teori, kvartal efter kvartal. Här finns också kalibreringens koppling (kt-02 äger förväntningsanalysen): trösklarnas nivåer ska granskas med samma disciplin som vikterna — ett system vars trösklar aldrig träffas lär ingenting (alla missar, vikterna smyger sig mot jämlikhetens bottenvåning), och ett vars trösklar alltid träffas lär lika lite (alla träffar). Det kalibrerade systemet missar och träffar i bland — och det är precis blandningen som gör röstflyttningen informativ. Bästa praxis från labbets loggkultur (ek-03): en rad per teori och kvartal — tröskel, faktiskt utfall, träff eller miss, ny vikt — och raden skrivs vid läsning av rapporten, inte vid nästa SAM-räkning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Bygg en egen omviktningslogg i fyra steg: (1) Skriv ned ek-01:s mikro-profil (VOL 30, FIB 25, EW 20, GANN 15, LUC 10) som utgångsläge med dagens datum. (2) Formulera för varje teori EN tröskel mot nästa kvartals offentliga siffra — konkret, mätbar och skriven FÖRE rapporten. (3) Läs rapporten, döm varje teori mot sin tröskel, multiplicera vikterna (träff ×1,2, miss ×0,75) och renormalisera summan till 100. (4) Jämför din nya profil med utgångsläget och notera vilken röst som förskjutits mest — och om förskjutningen är större än en multiplikator förklarar (den får aldrig vara det). Upprepa fyra kvartal: då har du en vandringshistoria, och kapitel fems konvergensläsning blir möjlig på egna tal."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Konvergens och gränser — hur snabbt systemet får lära",
+        "minutes": 4,
+        "intro": "En omviktning är ett steg; systemets karaktär ligger i sekvensen. Kapitlet räknar på tolv kvartal och frågar hur snabbt vikterna FÅR vandra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt siffror på längdtålamodet. Efter tolv kvartal av loggade utfall bär exemplet dessa träffkvoter: VOL 8 av 12 — det är 67 procent — FIB 5 av 12 lika med 42 procent, EW 7 av 12 lika med 58 procent, GANN 4 av 12 lika med 33 procent och LUC 6 av 12 lika med 50 procent. Räkna varje teoris växlingsfaktor som 1,2 upphöjt till antalet träffar gånger 0,75 upphöjt till antalet missar. VOL: 1,2 upphöjt till 8 lika med 4,30 och 0,75 upphöjt till 4 lika med 0,32, produkten 4,30 gånger 0,32 lika med 1,36 — växer. GANN: 1,2 upphöjt till 4 lika med 2,07 och 0,75 upphöjt till 8 lika med 0,10, produkten 0,21 — vikt 15 gånger 0,21 lika med 3,2, och renormaliseringen skulle lämna GANN väl under systemets golv: ingen teoris vikt får renormaliserat falla under 5 procentenheter och ingen får stiga över 40 — vakterna finns för att omviktningen ska förbli kalibrering och aldrig bli avlivning eller konungskröning. Var ligger nollpunkten, kvoten där en teori exakt håller sin vikt? Sju träffar av tolv ger 1,2 upphöjt till 7 lika med 3,58 gånger 0,75 upphöjt till 5 lika med 0,24, produkten 0,85 — sjunker långsamt; åtta träffar ger 1,36 — växer: brytpunkten ligger alltså mellan sju och åtta träffar av tolv, knappt 61 procent. Först en träffkvot över ungefär sex av tio växer vikten, och det är ingen olycka utan kalibrering: rösterna ska flyttas för påtagliga skillnader i träffkvot, inte för tur och motgång. Slutläget i exemplet, med tak och golv tillämpade: VOL:s råvikt 30 gånger 1,36 lika med 40,8 når taket 40, GANN når golvet 5, och de tre övriga bär resten 55 i förhållande till sina råvikter — EW (råvikt 17,0 av fria poolen 30,6) ger 30,6, FIB (8,3) ger 14,9 och LUC (5,3) ger 9,5; summan 40 plus 5 plus 30,6 plus 14,9 plus 9,5 lika med 100,0. Ett år har flyttat VOL från 30 till 40 och tystat GANN från 15 till 5: en mätbar vandring, men ingen revolution — och om nästa år vänder (konjunkturer gör det, ma-04:s indikatorer) återtar mekaniken GANN:s röster med samma långsamhet som den tog dem. Ett system som lär långsamt glömmer också långsamt — och i ett hus byggt på fem teoriers samspel (ek-01) är det minnet en dygd, inte ett fel."
+          },
+          {
+            "type": "tabell",
+            "content": "Teori | Träffar av 12 | Träffkvot | Växlingsfaktor (1,2^träff × 0,75^miss) | Viktens vandring\nVOL | 8 | 67 procent | 4,30 × 0,32 = 1,36 | växer mot taket 40\nFIB | 5 | 42 procent | 2,49 × 0,13 = 0,33 | sjunker stadigt\nEW | 7 | 58 procent | 3,58 × 0,24 = 0,85 | sjunker långsamt\nGANN | 4 | 33 procent | 2,07 × 0,10 = 0,21 | tystnar mot golvet 5\nLUC | 6 | 50 procent | 2,99 × 0,18 = 0,53 | sjunker måttligt"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens kolumn växlingsfaktor är kursens kompass: värdet 1,0 är nollpunkten — en teori vars tolvkvartalsfaktor står över 1,0 växer, under 1,0 krymper. Att 7 av 12 träffar bara når 0,85 medan 8 ger 1,36 visar systemets tröskel: nollpunkten ligger vid knappt 61 procent, och rösterna ska flytta för PÅTAGLIGA skillnader i träffkvot — inte för tur och motgång, och aldrig för ett enda kvartals vädjan."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor vid varje omviktning",
+        "minutes": 4,
+        "intro": "Kursens sista kapitel för samman satsen, mekaniken, bevisen och konvergensen till ett förhörsmönster: fem frågor som varje omviktning ska stå emot — innan nästa SAM-räkning får köras.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sammanförelsen i fem frågor. Fråga ett: vilket bevis? — varje viktändring ska kunna pekas på en tröskel i loggen, skriven före rapporten (kapitel fyra); en omviktning utan bevisrad är en åsikt med siffror. Fråga två: vilken tröskel? — tröskelns nivå granskas som bevisets kvalitet: var den nåbar, var den strikt, var den densamma som förra kvartalet (kalibreringens fråga, kt-02). Fråga tre: vilken multiplikator? — alltid systemets 1,2 och 0,75, aldrig en specialregels undantag — samma regel för alla röster är hela jämförelsens mening. Fråga fyra: vilken summa? — de fem råa vikternas summa (i exemplet 102) ska stå i protokollet och divisionen mot 100 vara efterräknad; en budget som inte stämmer är en röst som fötts ur tomma luften. Fråga fem: vilket datum? — omviktningen loggas vid rapportens läsning, före nästa analys, så att ingen senare SAM-signal kan ha formats av vikter valda efteråt. Fem frågor, och bakom dem kursens plats i huset: ek-02 ritade kartan, ek-03 arbetsflödet, ek-01 röstbudgeten, ek-04 prövningen, ek-05 simuleringen — och denna kurs lärde huset det sista: att minnas. Från här är kedjan hel: bevis (premierade trösklar) → omviktning (multiplikatorer och renormalisering) → SAM-signaler på nya vikter (ek-01) → prövning mot historien (ek-04) och scenariovidder (ek-05, km-029) — en slinga som varje kvartal går ett varv, loggat och reproducerbart. Avslutningshållningen är Familjens hela: detta är utbildning i en metodiks mekanik — ingenting i kursen är en uppmaning att handla, inneha eller undvika något värdepapper; talen är exemplens räkneövningar, valen är alltid läsarens egna på egen analys, och de fem frågorna är byggda för att göras till egna — i den egna loggen, mot de egna trösklarna, kvartal efter kvartal."
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor, två multiplikatorer och en division — det är hela kursen. Resten är loggkultur: en rad per kvartal, skriven vid rapporten, aldrig efteråt; och efter några år bär profilen ett minne som ingen enstaka analys kan födas med — husets egna erfarenheter, vägda just lagom tungt för att läsas och aldrig så tungt att de glömmer hur världen kan vända."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om att uppdatera sina berättelser när fakta förändras — hålla favoritbolagen när tesen lever och släppa dem när den dör, utan att gifta sig med vare sig bolaget eller sin egen föreställning. I kursens språk är det en manuell bayesiansk omviktning: hans vikt på en tes flöt med bevisen, och hans varning för ankaret (km-020:s beteendelära) är precis den prior som vägrar flyttas — fastvuxen vid sitt utgångsläge oavsett nästa kvartals siffra.",
+    "grahamSection": "Benjamin Grahams marknadsmetafor — mr Market, som varje dag bjuder priser i skiftande sinneslag — är omviktningens spegel från andra hållet: Grahams råd är att inte låta marknadens dagliga bevis flytta ens värderingsvikt nämnvärt, för de flesta bud är just svaga bevis som inte skiljer världarna åt. Hans marginal of safety är i bayesianska terider en prior byggd så stark att den kräver ovanligt tydliga bevis för att rubbas — trögheten som dygd.",
+    "ak1Section": "I AK1A:s metodik är omviktningen den mekanik som håller SAM-viktningen (ek-01) ärlig över tid: motorernas träffkvoter loggas per kvartal i arbetsflödet (ek-03), multiplikatorerna är fasta i konfigurationen, och varje AKM2-analys bärs av den viktprofil som stod gällande vid körningen — så att en signal alltid kan spåras tillbaka till de bevis som format dess röster. Monte Carlo-motorerna (ek-05) läser samma vikter, och kalibreringsgranskningen (kt-02:s tradition) kontrollerar att trösklarna varken alltid eller aldrig träffar. Kursen dokumenterar mekanismen; dess tillämpning på enskilda värdepapper är alltid läsarens egen analys, aldrig en rekommendation."
   },
   "rp-01-riskmattens-karta": {
     "slug": "rp-01-riskmattens-karta",

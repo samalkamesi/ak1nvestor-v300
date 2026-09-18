@@ -461,7 +461,7 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
 ];
   // Syskon-pågående lager (u2:s riskdjup, wirad SIST i widgeten under detta
   // fönster): KÄND men krävs ej — deras commit äger modulen. Vakten underkänner

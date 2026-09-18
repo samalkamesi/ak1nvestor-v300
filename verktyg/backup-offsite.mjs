@@ -42,7 +42,7 @@ function main() {
 
   // Rensa gamla (behåll senaste 7 dagarna)
   try {
-    const filer = fs.readdirSync(BACKUP_KAT).filter((f) => f.endsWith(".zip")).sort();
+    const filer = fs.readdirSync(BACKUP_KAT).filter((f) => f.endsWith(".tar.gz")).sort();
     for (const f of filer.slice(0, -7)) {
       fs.unlinkSync(path.join(BACKUP_KAT, f));
       logga(`rensade gamla: ${f}`);
@@ -78,11 +78,12 @@ function main() {
 
   const args = delar.map((d) => JSON.stringify(d)).join(" ");
   try {
-    execSync(`cd ${JSON.stringify(ROT)} && zip -q -r ${JSON.stringify(sökväg)} ${args}`, {
+    // tar.gz i stället för zip (zip saknas på Contabo Ubuntu 24.04)
+    execSync(`cd ${JSON.stringify(ROT)} && tar -czf ${JSON.stringify(sökväg + ".tar.gz")} ${args}`, {
       timeout: 120_000,
       stdio: "pipe",
     });
-    const storlek = Math.round(fs.statSync(sökväg).size / 1024);
+    const storlek = Math.round(fs.statSync(sökväg + ".tar.gz").size / 1024);
     logga(`OFFSITE-BACKUP SKAPAD: ${filnamn} (${storlek} kB, ${delar.length} delar)`);
 
     // Pusha till GitHub om SSH-nyckeln fungerar

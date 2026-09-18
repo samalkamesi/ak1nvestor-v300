@@ -52,7 +52,20 @@ export const dynamic = "force-dynamic";
  * 85/169 → bytModell) förblir den funktionella styrvägen; drawerns
  * övergång hit är feature-avvägning enligt §11.4.
  *
- * Övriga typer (createSession-familjen, fakta-typerna) senare enligt
+ * POST 33 (V6/A6 — våg 187): POST {typ: "createSession" | "createSelectionSideSession",
+ * text?, runtimeModel?} → transport.skickaV4SessionsFodelse — sessionsfödelse
+ * via kommandobussen (§11.2 rad 232–234): createSession bär envelope-
+ * sessionId NULL (§11.1 rad 214) med firstInput {text} + runtimeModel som
+ * enda exponerade last (workspaceId/config/attachments/mcpServers utelämnas
+ * — app-servern process-äger workspacen, dokumenterad tolkning);
+ * createSelectionSideSession tolkas mot AKTIV session (markeringssidessionen
+ * föds ur pågående samtal). readyFlights-ko (§11.3) sker app-server-sidigt.
+ * Protokollets egna domslut (ack-status/reasonCode, §11.5.2 — bl.a.
+ * proto.invalidPayload, fault.command.notImplemented) passerar som
+ * 200-svar. Dagens sessions-rutt (våg 149+) förblir funktionell styrväg;
+ * övergången är feature-avvägning enligt §11.4.
+ *
+ * Övriga typer (fakta-typerna) senare enligt
  * §11.4:s migreringsordning. Att ersätta dagens styrväg helt är
  * feature-avvägning enligt §11.4.
  *
@@ -91,6 +104,7 @@ export async function POST(req: NextRequest) {
     beforeQueueItemId?: unknown;
     optionId?: unknown;
     modellId?: unknown;
+    runtimeModel?: unknown;
   };
   try {
     kropp = (await req.json()) as typeof kropp;
@@ -169,6 +183,44 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // POST 33 (våg 187): sessions-grenen — createSession/createSelectionSideSession
+  // (§11.2 rad 232–234). text = firstInput.text (valfri), runtimeModel valfri.
+  // 400 ENDAST ogiltig kropp; protokollets egna domslut (ack-status/
+  // reasonCode, §11.5.2) passerar som 200-svar.
+  if (kropp.typ === "createSession" || kropp.typ === "createSelectionSideSession") {
+    const t = typeof kropp.text === "string" ? kropp.text.trim() : "";
+    if (kropp.text !== undefined && t === "") {
+      return jsonSvar({ skickat: false, fel: "text måste vara icke-tom string eller utelämnas (firstInput.text)." }, 400);
+    }
+    if (t.length > 4000) {
+      return jsonSvar({ skickat: false, fel: "text överskrider 4 000 tecken (firstInput.text)." }, 400);
+    }
+    const rm = typeof kropp.runtimeModel === "string" ? kropp.runtimeModel.trim() : "";
+    if (kropp.runtimeModel !== undefined && rm === "") {
+      return jsonSvar({ skickat: false, fel: "runtimeModel måste vara icke-tom string eller utelämnas." }, 400);
+    }
+    if (rm.length > 200) {
+      return jsonSvar({ skickat: false, fel: "runtimeModel överskrider 200 tecken." }, 400);
+    }
+    const transport: StudioTransport = hamtaStudioTransport();
+    try {
+      const svar = await transport.skickaV4SessionsFodelse(
+        kropp.typ,
+        t === "" ? undefined : t,
+        rm === "" ? undefined : rm,
+      );
+      return jsonSvar({ ...svar, transport: transport.namn });
+    } catch (fel) {
+      return jsonSvar({
+        skickat: false,
+        commandId: null,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+        transport: transport.namn,
+      });
+    }
+  }
+
   // POST 31+32 (våg 182): kö-grenen — setAutoDrain + köoperationer (§11.2
   // rad 239–242). 400 ENDAST ogiltig kropp; protokollets egna domslut
   // (ack-status/reasonCode) passerar som 200-svar.
@@ -204,7 +256,7 @@ export async function POST(req: NextRequest) {
       return jsonSvar(
         {
           skickat: false,
-          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, switchModelConfig, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
+          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, switchModelConfig, createSession, createSelectionSideSession, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
         },
         400,
       );

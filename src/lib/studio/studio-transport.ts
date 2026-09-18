@@ -1830,6 +1830,36 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POST 33 (V6/A6 — våg 187): v4/command createSession +
+   * createSelectionSideSession (V4-LAGRET §11.2 rad 232–234 —
+   * sessionsfödelse med config+i första kommandot; readyFlights-ko
+   * §11.3 sker app-server-sidigt i handleCommand — transporten bär
+   * bara envelope). createSession: payload {firstInput?: {text},
+   * runtimeModel?} där workspaceId/config/attachments/mcpServers
+   * utelämnas med dokumenterad tolkning (app-servern process-ägger
+   * workspacen; frånvaro = protokollets tolkning) och envelope-
+   * sessionId är NULL (§11.1 rad 214 — sessionsfödelse har ingen
+   * mål-session). createSelectionSideSession: payload {firstInput?:
+   * {text}} med tolkningen envelope-sessionId = AKTIV session
+   * (markeringssidessionen föds ur pågående samtal — §11.2 bär inget
+   * explicit envelope-krav; protokollets egen domslutsväg
+   * (proto.invalidPayload, fault.command — §11.5.2) är slutdomare).
+   * Ack-statusunionen (§11.5.1): samtliga domslut passerar som svar.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -6077,6 +6107,72 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POST 33 (§11.2 rad 232–234): createSession + createSelectionSideSession
+   * — sessionsfödelse via kommandobussen. createSession bär sessionId NULL
+   * (§11.1 rad 214) med firstInput/runtimeModel som enda exponerade last
+   * (workspaceId utelämnas — app-servern process-äger workspacen; frånvaro
+   * = protokollets tolkning). createSelectionSideSession tolkas mot AKTIV
+   * session (markeringssidessionen föds ur pågående samtal) — kräver
+   * levande session, annars fel-tolerant avvis. readyFlights-ko (§11.3)
+   * sker app-server-sidigt i handleCommand. Protokollets domslut
+   * (ack-status/reasonCode, §11.5.2) är slutdomare.
+   */
+  async skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    if (typ !== "createSession" && typ !== "createSelectionSideSession") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig sessionstyp." };
+    }
+    const t = typeof firstInputText === "string" ? firstInputText.trim() : "";
+    if (t.length > 4000) {
+      return { skickat: false, commandId: null, ack: null, fel: "firstInput-text överskrider 4 000 tecken." };
+    }
+    const rm = typeof runtimeModel === "string" ? runtimeModel.trim() : "";
+    if (rm.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "runtimeModel överskrider 200 tecken." };
+    }
+    let wire: Record<string, unknown>;
+    let malSession: string | null;
+    if (typ === "createSession") {
+      wire = { ...(t ? { firstInput: { text: t } } : {}), ...(rm ? { runtimeModel: rm } : {}) };
+      malSession = null;
+    } else {
+      if (!this.sid) {
+        return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — createSelectionSideSession föds ur pågående samtal." };
+      }
+      wire = t ? { firstInput: { text: t } } : {};
+      malSession = this.sid;
+    }
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: malSession,
+      type: typ,
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8887,6 +8983,42 @@ class MockTransport implements StudioTransport {
       commandId,
       status: this.mockV4ModellbyteStatus,
       typ: "switchModelConfig",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 33 (§11.2 rad 232–234) (mock): deterministisk "noop"-ack — mocken
+   * föder ingen app-server-session, "noop" är ÄKTA domslut enligt §11.5.1,
+   * INGEN påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E), inklusive sid-sessionens levande-session-
+   * krav. Överridbar via mockV4SessionsFodelseStatus.
+   */
+  mockV4SessionsFodelseStatus: string = "noop";
+
+  async skickaV4SessionsFodelse(
+    typ: "createSession" | "createSelectionSideSession",
+    firstInputText?: string,
+    runtimeModel?: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    if (typ !== "createSession" && typ !== "createSelectionSideSession") {
+      return { skickat: false, commandId: null, ack: null, fel: "Ogiltig sessionstyp." };
+    }
+    const t = typeof firstInputText === "string" ? firstInputText.trim() : "";
+    if (t.length > 4000) {
+      return { skickat: false, commandId: null, ack: null, fel: "firstInput-text överskrider 4 000 tecken." };
+    }
+    const rm = typeof runtimeModel === "string" ? runtimeModel.trim() : "";
+    if (rm.length > 200) {
+      return { skickat: false, commandId: null, ack: null, fel: "runtimeModel överskrider 200 tecken." };
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4SessionsFodelseStatus,
+      typ,
       source: "mock",
     };
     return { skickat: true, commandId, status: ack.status, ack, rått: ack };

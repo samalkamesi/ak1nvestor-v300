@@ -1671,13 +1671,49 @@ för bokmaster-JSON i pre-commit (gap 1, öppen sedan 09-16); (3) siffror-
 rebake 103→105 (A1:s kosmetik-köpost, bokförd 09-17); (4) universumfrågan
 22↔11 (gap 2, frusen sedan 09-10 — inget nytt underlag tillkommit).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u2 manifest auto-s9-1789691129810 — A3 + B12 diffade; E27-kollision med syskon u3 hanterad)
+
+Objektval: A3 + E27 (anspråk FÖRE mätning 02:28). KOLLISION under fönstret:
+syskon u3:s commit 2301ed2e 02:32 (E34+E26+E27) — E27 AVSTÅTT enligt
+disk-först-presedensen (s9-u1 omg 13-mönstret), deras sektion orörd;
+KORSVALIDERING nedan. PIVOT: B12 — enda fria systemet med faktisk
+src-rörelse sedan senaste passningen (FOMO-kuren 1f43c167 09-17 00:55,
+oläst i kartan). u1:s A6-anspråk (02:31) respekterat. Varje rad MÄTT i
+arbetsytan 09-18 ~02:3x–02:5x lokal (38 svitkörningar med sanna exitkoder,
+egen larvag-synk, git show, grep i prod-chunks, live-sonder loopback):
+
+| Mått | Kartan (förra passningen) | Verkligheten 2026-09-18 (mätning) |
+|---|---|---|
+| Lagerkedjan (A3, omg 8) | 24 lager (chat-widget.tsx:986) | **33 motorer** — kedjesvitens domslut "disjunkta monster-id:n över alla trettiotre motorer" (egen körning); kedjeraden chat-widget.tsx:1138 (32 ??-led) |
+| Frågemonster (A3) | 80 (25 bas + 55 i 23 filer) | **98 unika id** (kedjesvitens id-räkning) — +18 på nio nya lager (optionsdjup, värderingsverktyg ×3, konjunkturindikatorer, kapitalbindning, rörelsekapital/KCC, warrant m.fl.; s6 omg 14–16) |
+| Testsviter (A3) | 30 sviter / 781 kontroller: 780/1 | **38 sviter · 38 gröna · 0 FAIL** (samtliga egna körningar med sanna exitkoder: bassviten 555/0 · kedjan 70/0 · warrant 39/0 · alla lagerfiler gröna) |
+| E01 registeräkthet (A3) | RÖD 358/390 (gap 32, tre mätningar i rad) | **GRÖN — "408 kurser fält-för-fält — identisk med getCourses()-källan"** (egen körning) — gap 5 STÄNGT |
+| Register/larvag (A3) | gapet växer | larvag-synk EGEN körning GRÖN **408=408=408 · 21 profiler · 0 fantomer** exit 0; siffror.json 408 kurser · 8 223 quiz; warrant-lagret ai-mentor-warrant-fragor.ts (09-18 00:31, DI-mönstret) + 32 frågelagerfiler |
+| Granskningsstegets text (B12, omg 6) | "Sista chansen att justera…" (FOMO-formulering, outtalt i kartan) | **FOMO-kuren LEVER i prod**: "Efter detta steg låses dina val och resultatet visas" (superanalys.tsx:467; deploybevis: prod-chunk 1wv5cn_5misik.js bär nya strängen, gamla BORTA ur samtliga chunks — egen grep) |
+| Kodbas (B12) | 2 670 r (507/752/1 411) | OFÖRÄNDRADE radtal (wc -l) — kuren var 1:1-radsbyte |
+| Egna sviter (B12) | gap 1: 0 sviter | **0 sviter fortfarande** (ls: inga testa-superanalys/kalkylator/akm1-filer) — gap 1 lever |
+| Vakttäckning (B12) | outtalt | **PRECISERINGSFYND**: /superanalys + /kalkylator finns EJ i gränsnittsvaktens FALLBACK_SIDOR (granssnittsvakt.mjs:68 bär 6 sidor; 0 vaktrapporter i data/vakten med superanalys-träff, egen sökning) — ytan rutinmäts ej; /superanalys + /kalkylator 200 live (egna sonder) |
+| E27 (KORSVALIDERING) | u3:s 02:32-commit: v181/182/184 + tre skickaV4-metoder + live-sonder | **OBEROENDE BEKRÄFTAT**: transporten 10 481 r (karta senast bar 8 316); skickaV4InteraktionSvar/KoStyrning/MalStyrning på :1800/:1774/:1752 interface + :5978/:5911/:5871 AppServer + :8788/:8741/:8715 Mock (grep); kommandorutten 209 r dokumenterar POST 28+30; egna live-sonder: /studio 200 · stream 401 · usage-v4 401 · kommando GET 405 |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A3 | LEVER 8 → **LEVER 9** | E01-kontraktet (SKÄLET att hålla 8 vid omgång 7+8 — "enda röda kontrollen är själva kontraktbrottet") STÄNGT mätbart: 408/408 fält-för-fält grönt efter tre röda mätningar; disciplinen bevisat hållen genom två efterföljande kursvågor (398→401→408, atomär rebake); 38/38 sviter gröna = kodbasens bredaste testyta HELT röda-fri för första gången. Kvarvarande gap mjuka: dataset-medianer = produktbeslut, E2E kräver levande inloggning, assistent-panel 0 sviter |
+| B12 | LEVER 7 → **LEVER 7** | En textkur (beteendeekonomiskt värdefull, ingen kapabilitet) + preciseringsfynd (vakttäckning); kärn-gapen 1 (0 sviter) och 2 (E2E-rendering) orörda (E33/B14-precedensen) |
+
+Snittscore **7,6** (287 → **288** poäng / 38 system; A3 +1 vid denna dokvåg).
+
+Kö till huvudagenten: (1) /superanalys + /kalkylator in i gränsnittsvaktens
+sidrotation (FALLBACK_SIDOR bär 6 sidor — B12:s publik yta rutinmäts ej);
+(2) B12 klientfilens egna sviter (gap 1, tredje mätningen); (3) A3:s mjuka
+gap: dataset-medianer-beslut + assistent-panel (0 sviter kvar).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
 | A1 | Kursplattformen (396 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | Registret 396 (rebake stängde E01); synk EGEN GRÖN 396=396=396 · 21 profiler (09-17); kärnan larvag.ts orörd sedan v99; 16 front-B-sonder; regressionssvit för rekommendationsreglerna + E2E-inloggning saknas |
-| A3 | AI-Mentorn (24 deterministiska svarslager + modellager) | Utbildning | LEVER | 8 | 780/1-testbevis över 30 sviter (mätt 09-17; E01 registeräkthet RÖD 358/390 — rebake väntar, gapet växer 17→23→32); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
+| A3 | AI-Mentorn (33 deterministiska svarslager + modellager) | Utbildning | LEVER | 9 | 38 sviter ALLA GRÖNA 0 FAIL (mätt 09-18; E01 STÄNGD: 408/408 fält-för-fält, rebaken höll genom 398→401→408-vågorna); kedjan 98 monsters/33 motorer; dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter; SKÄRPT (mätt 09-16): /api/topplista POST utan sessionsvakt (e-post ur klient-body, senaste-vinner); certId kollisionsbart (AK1A-år-XP, ingen medlemshash) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr — gap 1 öppen, mätt 09-18); läspaketkön 36 paket varav 25 utan AKM2-underlag (klass, mätt 09-18); universum 22 vs 11 tickers (2 gemensamma, frusen sedan 09-10) |
@@ -1686,7 +1722,7 @@ rebake 103→105 (A1:s kosmetik-köpost, bokförd 09-17); (4) universumfrågan
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-16, datakällor per rad); motorvalidering 107/0/0 egen körning; kvar: 0 egen svit, historik/utfall lagras ej (mätt), korstabell-kopplingen konceptuell ej kodad |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-16 + /api/netnet färsk live-sond); universum fast 25 (mätt); egen testsvit saknas fortfarande |
-| B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen superanalys-2026 svit-testad (kontroll 22) men klientfilen 0 sviter; länk-gap MOTBEVISAT (MODUL_KURS_LANK lever); klientens vikter oberoende kopia av kärnans (mätt 09-16) |
+| B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (mätt 09-18: lever); FOMO-kuren live i prod (chunk-bevis 09-18); ytan UTANFÖR vaktens FALLBACK_SIDOR — rutinmäts ej (nytt, mätt) |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
@@ -1714,7 +1750,7 @@ rebake 103→105 (A1:s kosmetik-köpost, bokförd 09-17); (4) universumfrågan
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | + SPA-/StudioChat-koddelning (o27+o31) + blogg-prefetch-kur ×3 språklistrar (o37/o41: /blogg 52→62, LCP −1,3 s) + /studio-EFTER LANDAD 71 poäng/LCP 4 168 (serien 55→63→71) + nattfacit / 66 poäng (o38); kvar: inga egna tester, språkresolvens-CLS intermittent, /kurser-TBT 1 636, sökindex-cadans |
 
-Snittscore: **7,5/10** (287 poäng / 38 system; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,6/10** (288 poäng / 38 system; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -1859,7 +1895,12 @@ UPPDATERING-sektionen.*
   (våg 99, dokumentbevis); (3) lärvägens synlighet på min-sida KODAD
   (LarvagKort renderad) men E2E med levande inloggning overifierad.
 
-## A3. AI-Mentorn — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## A3. AI-Mentorn — LEVER — 9/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9, tredje varvet):
+E01 STÄNGT + hela sviten röda-fri — 38 sviter ALLA GRÖNA 0 FAIL (sanna
+exitkoder), 33 motorer/98 monsters, register 408=408=408 — se diff-tabellen
+i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 7, återdiff): spår 6:s
 fabriksomgångar byggde vidare efter u1:4:s mätning — kedjan är nu 18 lager
@@ -1875,8 +1916,8 @@ upp i filen.*
 - **Vad:** Chatt-widget som känner eleven (nivå, XP, platssammanhang),
   redigerar behovet med klarliggande motfråga, ger handlingar och AKM1/
   AK1TS-referenser — ALDRIG köp/sälj (rådgivningsgrind kodad OCH
-  maskintestad). Sedan våg 158 + spår 6:s omgångar: 68 deterministiska
-  frågemonster i 18 lager (makro ?? extra ?? bas ?? nästa ?? kapitalmekanik
+  maskintestad). Sedan våg 158 + spår 6:s omgångar: 98 deterministiska
+  frågemonster i 33 lager (09-18) (makro ?? extra ?? bas ?? nästa ?? kapitalmekanik
   ?? sektor ?? case ?? praktik ?? portfoljgrund ?? agande ?? redovisningsdjup
   ?? djup ?? historia ?? lonsamhetsdjup ?? tsdjup ?? skattedjup ??
   beteendedjup ?? riskdjup — DCF-inre värde, investmentbolags-NAV, options,
@@ -1885,7 +1926,7 @@ upp i filen.*
   skuldfällan, svarta svanar m.m.) + medlemens modellager /api/mentor/fraga
   (generateText, dagstak 429, felväg 503 + fallback, rollback) + Z.ai
   GLM-läge i den publika rutten — svaren källmärks med kurslänkar ur det
-  inbakade registret (358 kurser; källan bär 375 — se gap 5), utan
+  inbakade registret (408 kurser = källan, E01 grön 09-18), utan
   API-kostnad.
 - **Nyckelfiler:** src/lib/ai-mentor-{register,svar}.ts + 17 frågelager-filer
   (ai-mentor-{extra,makro,nasta,kapitalmekanik,sektor,case,praktik,
@@ -1896,9 +1937,9 @@ upp i filen.*
   src/lib/chatbot-nlu.ts (259 r), src/lib/chat-minne.ts, src/lib/assistent.ts,
   src/components/ak1a/{chat-widget,assistent-panel}.tsx,
   verktyg/testa-ai-mentor*.mjs (23 sviter) + testa-mentor-modell.mjs.
-- **Observation:** Testtäckningen är nu bland de bredaste i kodbasen: 598
-  kontroller i 24 sviter (597 gröna vid 2026-09-16-mätningen — enda röda:
-  E01 registeräkthet, se gap 5; kanoniska/felstavade/omatchade frågor,
+- **Observation:** Testtäckningen är kodbasens bredaste: 38 sviter ALLA GRÖNA
+  vid 2026-09-18-mätningen (0 FAIL, sanna exitkoder; bassviten 555 PASS med
+  E01 GRÖN 408/408; kedjan 70 PASS/98 monsters/33 motorer; kanoniska/felstavade/omatchade frågor,
   determinism, registeräkthet, källmärkning, kursläkthet, antistöld mellan
   lager via kärnordsdisjunktion — riskdjup-lagrets sond bär 720 kärnord
   LIVE) + modellagrets 38 kontroller. Registerrebaken vid kurstillägg har
@@ -1911,10 +1952,10 @@ upp i filen.*
   LEVANDE medlems-API kräver riktig inloggning (modellsvitens mock-kakor
   täcker logiken, inte nätverket); (3) felstavs-djupet är 5 kanoniska
   varianter i bassviten — bredare fuzz saknas; (4) assistent-panelens egna
-  vägar (assistent.ts) har fortfarande 0 testsviter (mätt); (5) NY 09-16:
-  registerrebaken BRÖTS — inbakat 358 mot källans 375 (17 nya kurser),
-  bassvitens E01 RÖD (exit 1) tills --baka + Write/Edit-inklistring; kurser
-  levererade utan E01-grön rebake är oregistrerade för mentorns källmärken.
+  vägar (assistent.ts) har fortfarande 0 testsviter (mätt); (5)~~NY 09-16: registerrebaken BRÖTS~~ STÄNGD 09-18: E01
+  GRÖN — 408 kurser fält-för-fält identiska med getCourses(); rebaken höll
+  genom två efterföljande kursvågor (398→401→408, atomär --baka i
+  s5/s6-leveranserna); larvag-synk grön 408=408=408 · 21 profiler · 0 fantomer.
 
 ## A4. Daglig träning — LEVER — 7/10 *(uppdaterad 2026-09-17)*
 
@@ -2265,7 +2306,18 @@ UPPDATERING-sektionen.*
   beslutas (listan mätt oförändrad 2026-09-16); (3) egen testsvit saknas
   (mätt 2026-09-16).
 
-## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9): FOMO-kuren LEVER
+i prod — granskningsstegets "Sista chansen att justera innan resultatet" →
+"Efter detta steg låses dina val och resultatet visas" (superanalys.tsx:467,
+1f43c167 09-17 00:55; deploybevis: prod-chunk 1wv5cn_5misik.js bär nya
+strängen, gamla BORTA ur samtliga chunks — egen grep). Radtal oförändrade
+(507/752/1 411). PRECISERINGSFYND: /superanalys + /kalkylator finns EJ i
+gränsnittsvaktens FALLBACK_SIDOR (granssnittsvakt.mjs:68, 6 sidor; 0
+vaktrapporter med sidorna, egen sökning) — ytan rutinmäts ej. Båda sidorna
+200 live. Gap 1 lever (fortfarande 0 egna sviter). Score 7 kvar —
+textkur + preciseringsfynd, ingen kapabilitetsrörelse (E33/B14).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): gap 3 MOTBEVISAT,
 kärnobservationen nyanserad, testbilden preciserad. (1) Kalkylatorn HAR länkar

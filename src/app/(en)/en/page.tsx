@@ -186,12 +186,22 @@ export default function EnStartPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/en/logga-in"
+              prefetch={false}
+              // prefetch={false} (o75, o17/o41/o49-familjen): hero-CTA:n
+              // ligger i viewport på spegelns entré ⇒ varje kall mobil-
+              // besökare prefetchar /en/logga-in ×3 (~12,1 KiB, mätt
+              // viewportsond 2026-09-19) innan något klickats.
+              // Hover-prefetch lever kvar.
               className="btn-guld-signatur inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
             >
               Become a member — free <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/kurser"
+              prefetch={false}
+              // Samma kur som grannknappen: /kurser-flighten är ~37 KiB i
+              // tre omgångar (multiomgångs-prefetch, o50 §2-mönstret) —
+              // hero + band-kort triggade @870 ms vid kall entré.
               className="inline-flex items-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
             >
               Explore the courses
@@ -232,6 +242,10 @@ export default function EnStartPage() {
             <Link
               key={s.etikett}
               href={s.href}
+              prefetch={false}
+              // prefetch={false} (o63-bandmönstret, o75): kort 1–2 ligger
+              // inom Next:s ~200 px rootMargin vid kall entré på mobil —
+              // bandet ägde 2 av 3 /kurser-omgångar i FÖRE-sonden.
               className="group rounded-lg border border-border bg-card p-5 transition-all hover:border-gold/50 hover:shadow-md"
             >
               <p className="font-serif text-4xl font-bold leading-none text-foreground sm:text-5xl">
@@ -265,6 +279,10 @@ export default function EnStartPage() {
         </p>
         <Link
           href="/en/medlemskap"
+          prefetch={false}
+          // prefetch={false} (o75): SSR-spegel — länken observeras av
+          // Next:s länk-IO vid scroll; medlemskapsöversikten behövs
+          // först vid aktiv läsning. Hover-prefetch lever.
           className="mt-5 inline-block rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
         >
           Read the full membership overview →
@@ -298,6 +316,11 @@ export default function EnStartPage() {
                   <li key={p.href + p.text}>
                     <Link
                       href={p.href}
+                      prefetch={false}
+                      // prefetch={false} (o75): 15 djuplänkar till tunga
+                      // verktygsrutter (kalkylator, superanalys,
+                      // portfoljbyggare …) — vid scrollning prefetchar
+                      // varje kort hela ruttbuntar som få läser.
                       className="font-semibold text-foreground underline decoration-gold/40 underline-offset-2 hover:decoration-gold"
                     >
                       {p.text}
@@ -330,6 +353,9 @@ export default function EnStartPage() {
             </p>
             <Link
               href="/en/logga-in"
+              prefetch={false}
+              // prefetch={false} (o75): sidans botten — prefetch vid
+              // scroll är ren spill för den som läst klart; hover lever.
               className="btn-guld-signatur mt-8 inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
             >
               Become a member — free <span aria-hidden="true">→</span>
@@ -343,6 +369,10 @@ export default function EnStartPage() {
                 Unsure?{" "}
                 <Link
                   href="/kurser"
+                  prefetch={false}
+                  // prefetch={false} (o75, o63-mikro-raden): tveksam-
+                  // länken i slut-CTA:n — samma /kurser-bunt redan
+                  // servad av hover vid verklig intent.
                   className="font-semibold text-[#E8C766] hover:underline"
                 >
                   Browse the courses first

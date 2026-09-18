@@ -162,6 +162,12 @@ const nextConfig: NextConfig = {
         destination: "/kurser/konfluens-varde-moter-vagor",
         permanent: true,
       },
+      // Våg 194 (brandgenomgången P1): /pris och /kontakt är naturliga
+      // besöksvägar men gav 404 (aldrig egna sidor). Priserna bor på
+      // /medlemskap; kontaktuppgifterna i om-oss kontakt-sektion
+      // (id="kontakt" tillagt samma våg — scroll-mt enligt #fas2-mönstret).
+      { source: "/pris", destination: "/medlemskap", permanent: true },
+      { source: "/kontakt", destination: "/om-oss#kontakt", permanent: true },
     ];
   },
   // Vercel-bundla datafilerna som läses dynamiskt med readFileSync i routes —

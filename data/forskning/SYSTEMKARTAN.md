@@ -1999,6 +1999,37 @@ Snitt **7,6 / 288 / 38 OFÖRÄNDRAT** (kunskapsdokvåg). Kö till huvudagenten:
 data/backups/ — stänger DR-gapet mekaniskt); (2) OG-kopplingen förblir manuell
 (0 träffar återmätt; disciplinen bevisad sedan 09-09-leveransen).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789752906622 — E28 Styrelsemotorn återdiffad; fjärde varvet)
+
+VAL (anspråk data/vakten/auto-s9-1789752906622-s9-u1-ansprak.md på disk
+FÖRE mätstart, gitignorerad väg): E28 — enda FLAGGA-systemet som inte är
+R2-väntande, senast diffad 09-17 (s9-u3 omgång 10), med mätbar rörelse
+(beslutsminnet växte idag). Syskonen oberoende (dagens tidigare ytor:
+E29/E36/A2/C17/B10/B11/B14).
+
+| Mått | Kartan (09-17-passningen) | Verkligheten 2026-09-18 (egenmätt ~17:38Z) |
+|---|---|---|
+| Mötet | "stilla sedan 09-15 07:55 (senaste 05:17 FULL DELEGATION)" | **OFÖRÄNDRAT bekräftat** — STYRELSE-BESLUT.md mtime 2026-09-15 07:55 lokal; senaste mötes-id styrelse-mu27v0zl-lqp458; 3,6 dygn stillhet = fortfarande "inga sammanträden krävts" under full delegation (ej motorfel) |
+| Gap 1 (JSON-fallback) | "lever i senaste mötet" | **KVARSTÅR + FÖRDJUPAT** — senaste mötets beslut bär "Automatisk syntes (ordförandens svar kunde ej tolkas som JSON)" OCH 2 av 5 organ ute på tidsgränser (ordförande 50 s, juridik 90 s — "rollen redovisas som ute") = dubbel svagpunkt i SAMMA möte: syntes + rolltidsgränser |
+| Koden | styrelse.ts 864 r | **KODSTILLA 3,5 dygn** — senaste commit f2589675 2026-09-15 01:13 (mega g3: audit-megasystemet); API-rutterna senast våg 91 (660cc440); gap 1-kuren (JSON-reparatur/schemavalidation) har ALDRIG påbörjats |
+| Ronder | "lever via pumpor-daemonen (min 43, timme%3==1)" | **ÅTERBEVISAD LEVANDE, PUNKTLIG** — 15 senaste loggraderna exakt var 3:e timme (xx:43), senaste 14:43:04Z idag; 17:43Z-ronden lå 6 min i framtiden vid mätningen 17:37:57Z (ärligt: inget gap); pumpor pm2 online ↺19 (E29:s tal håller) |
+| Beslutsminnet | 68 poster (rond 51 11:43Z, 4 idag) | **70 poster** — dagsserie 09-13:4 · 09-14:16 · 09-15:19 · 09-16:17 · 09-17:8 · 09-18:6; senaste post 14:47:17Z = 4 min 14 s efter rondsändningen (organet svarar INOM rondfönstret) |
+| Rondernas innehåll | ej mätt ("skickad OK"-klass) | **NY FYNDKLASS: RONDerna BESLUTAR** — senaste posten ("ROND 66 [Φ]") är ett fullständigt organbeslut: våg 186 stängd på live-bevis (25133bff ancestor i prod-HEAD + flagga ak1a-v4-sendvag i byggd chunk + rutt 405/401), hälso-GUL diagnostiserad som falslarm (vakten frisk — hälsonäret läser gitignorad katalog), nästa vågar 187/188 bokade ⇒ ROND-VÄGEN levererar den faktiska styrningen; MÖTES-VÄGEN (5 rolls + ordförandesyntes) är den fallbördiga |
+| API-ytan | 8 rutter /api/styrelse/** + studio-huvudrutt | **LEVER i prod (egna sonder localhost:3000)**: /api/styrelse/protokoll **200** · /api/styrelse/mote **405** (vägrar GET korrekt — POST äger mötet) · /api/studio/styrelse **401** (vaktad); notering: protokoll/mote bor under /api/styrelse/**, EJ under /api/studio/styrelse/** (sond mot gissad sökväg gav 404 — kartans nyckelfilsrader är korrekta) |
+| Svit (testa-styrelse.mjs) | "på disk" (våg 91, 6/6 mock) | **DEV-LÅST + SKRIVANDE** — kräver NODE_ENV=development + admin-devfallback (standardlösenord 'AK1A-2026' i klartext i skriptet; dev-endast), startar EGEN dev-server (npm run dev) och APPEND:AR verkligt protokoll (K6: STYRELSE-BESLUT.md) ⇒ EJ KÖRBAR i prod-fönstret; 8 dagar gammal, mock-transporten har aldrig haft chansen fånga JSON-fallback-klassen; gap 3 (E2E som kräver åtgärder>0) kvarstår |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E28 | FLAGGA 6 → **FLAGGA 6** | Kunskapsdokvåg (E33/B14-precedensen): rondvägen bevisad som det faktiska beslutsorganet + svitens dev-lås + dubbel svagpunkt preciserade — men inget gap stängdes, ingen kur levererades, inget kartpåstående motbevisades |
+
+Snitt **7,6 / 287 / 38 OFÖRÄNDRAT** (E28 rör inga poäng). Kö till
+huvudagenten: (1) gap 1-kur i styrelse.ts — ordförande-JSON-reparatur
+ELLER strukturell prompt med schemavalidation + retry (kodleveransvåg);
+(2) rolltidsgränserna 50/90 s — 2/5 organ ute i senaste mötet antyder att
+gränserna är för snäva för produktionssvarstiden; (3) prod-körbar
+mötessyntes-sond (autentiserad, icke-protokollskrivande) så fallbördan
+upptäcks innan nästa riktiga sammanträde krävs.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2031,7 +2062,7 @@ data/backups/ — stänger DR-gapet mekaniskt); (2) OG-kopplingen förblir manue
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
-| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (FULL DELEGATION — inga sammanträden krävts, ej motorfel); RONDERNA lever via pumpor-daemonen (min 43, timme%3==1 — crontab bär ingen rond-rad, mätt 09-17); JSON-fallbacken kvar i senaste mötet: gap 1 öppet |
+| E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (3,6 dygn; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-18: beslutsminne 70 poster, senaste "ROND 66 [Φ]" 14:47Z stänger våg 186 på live-bevis + falslarmdiagnos; ronder var 3:e timme punktliga, organet svarar 4 min in i rondfönstret); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 146 klara manifest av 147 (mätt 09-18 ~14:00; +30 sedan 09-17 kväll, 22 startade idag) · 475 utdataloggar · beslutsminne 68 poster (rond 51 11:43:03Z, 4 idag) · pumpor 42 h ↺19 + FABRIKSPROCESSEN FÅNGAD LEVANDE i mätfönstret (pid 2140015) · evighetsmotorn 614 kontroller (11:48:03Z) + målet återarmat 11:41Z · kunduppdragsfilerna fortsatt frånvarande (ingen order i flykt) · svitgapet oförändrat (fabrik/evighet/uppdrag 0) · CRON_SECRET 0 env · KOLLISIONSKLASSEN ÅTERKOM 09-18 i ny skepnad (s8-fönstret: o67-trippelkollision + git-index-kollision, ärligt bokförd med disknotiser) = bevisad i 3 fönster/3 skepnader, kuren disciplin ej mekanism — MEN disk-först-disciplinen bevisad i eget fönster (u2 läste anspråket, valde A2+C17, 0 kollision); kur-kö: fabrikinstruktion med isolerade nummerserier + explicita paths per commit |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
@@ -3393,7 +3424,28 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
   teknisk kur (återkommer tills app-servern fixar det underliggande).
 
-## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-17)*
+## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-18)*
+
+*Uppdatering 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789752906622;
+fjärde varvet): ROND-VÄGEN bevisad som det faktiska beslutsorganet —
+beslutsminnet 70 poster (68 vid 14:00-mätningen; dagsserie 4/16/19/17/8/6
+för 09-13→09-18), senaste posten "ROND 66 [Φ]" 14:47:17Z = fullständigt
+organbeslut på live-bevis (våg 186 stängd: 25133bff ancestor i prod-HEAD +
+flagga i byggd chunk + rutt 405/401; hälso-GUL diagnostiserad som falslarm;
+våg 187/188 bokade) med svaret 4 min 14 s in i rondfönstret; rondloggen
+punktlig var 3:e timme (15/15 senaste, senaste 14:43:04Z; 17:43-ronden lå
+6 min i framtiden vid mätningen 17:37:57Z — inget gap); pumpor online ↺19.
+MÖTES-VÄGEN fortfarande stilla (09-15 05:17, 3,6 dygn — inga sammanträden
+krävts) och gap 1 FÖRDJUPAT: senaste mötet bär JSON-fallbacken OCH 2/5
+organ ute på tidsgränserna (ordförande 50 s, juridik 90 s) = dubbel
+svagpunkt; koden stilla sedan f2589675 09-15 01:13 (gap 1-kuren aldrig
+påbörjad). API-ytan lever i prod (egna sonder: /api/styrelse/protokoll
+200 · /api/styrelse/mote 405 · /api/studio/styrelse 401). Svitens
+dev-lås preciserat: testa-styrelse.mjs kräver development-läge (fallback-
+lösenord i klartext, dev-endast), startar EGEN dev-server och APPEND:AR
+verkligt protokoll — ej körbar i prod-fönstret; mock-transporten har
+aldrig haft chansen fånga fallback-klassen. FLAGGA 6 kvar — se
+UPPDATERING-sektionen och köposterna till huvudagenten.*
 
 *Uppdatering 2026-09-17 (s9-u3 omgång 10): RONDERNA lever — drivs av
 PUMPOR-DAEMONEN (min 43, timme%3==1; ps-bevis), senaste beslutsminnespost

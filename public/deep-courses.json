@@ -209724,6 +209724,174 @@
     "grahamSection": "Benjamin Grahams relation till indikatorer var dubbel: han avfärdade prognoser — hans marknadsmetafor mr Market handlar om att priset är en sinnesstämd motpart, inte en sanningsägare — men han respekterade mätningar. En indikator är i hans anda ett faktum att känna, inte en signal att handla på: hans marginal of safety (km-030) byggdes för att klara också den kvartalets överraskning som panelen missade. Graham läste statistiken som kontext och priset som utmaning — aldrig tvärtom.",
     "lynchSection": "Peter Lynch retades med makroprognoser — hans hållning var att ekonomens totalprognoser säger föga om det enskilda bolagets framtid — men han läste orderböcker. Hans råd att besöka bolag och fråga efter beläggning, orderläge och ledtider är exakt denna kurs i praktikernas form: den ledande informationen sitter närmare verksamheten än till statistikbyråns publiceringskalender. Lynchs lärdom för indikatorläsningen är nivån: mätningen som bäst görs på det ställe där ordern faktiskt skrivs."
   },
+  "ma-05-kreditpremien": {
+    "slug": "ma-05-kreditpremien",
+    "category": "MAKROEKONOMI & RÄNTA",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Kreditpremien — varför bolagets lån kostar mer än statens",
+    "summary": "MAKROEKONOMI & RÄNTA-familjens nybörjarkurs i fördjypningsserien: kreditpremien, skillnaden mellan vad ett bolag betalar för att låna och vad staten betalar för samma löptid. Kursen lär grundräkningen med två låntagare — staten lånar fem år till 2,0 procent och bolaget till 3,5 procent, spreaden 1,5 procentenheter är priset på risken att inte få alla pengar tillbaka — och dekompositionen: med fallissemangssannolikhet 2 procent och återbetalning 40 procent vid betalningsstopp är den förväntade förlusten 2 procent gånger 60 procent lika med 1,2 procentenheter av spreaden, och resten 0,3 är kompensation för att bära risken och för att obligationen är svårare att sälja. Därpå läsningen av spreaden som marknadens termometer (0,8 procentenheter i expansiva år mot 3,5 i förträngda, i exempletal) och vad den kostar bolaget: bolaget med lån 2 000 miljoner kronor betalar 30 miljoner per år mer än statsalternativet, och mot rörelsevinst 150 miljoner är det 20 procent av vinsten som går till premien. Genomgående utbildning i att läsa och räkna mekanismen, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Räkna kreditpremien som skillnaden mellan två räntor med samma löptid: bolagets 3,5 procent minus statens 2,0 procent lika med 1,5 procentenheter — och veta varför löptiden måste vara samma för att jämförelsen ska gälla risken och inte tiden. Dekomponera spreaden i sina tre delar med den förväntade förlusten: fallissemangssannolikhet 2 procent gånger förlustgrad 60 procent (100 procent minus återbetalning 40 procent) lika med 1,2 procentenheter, medan resten 0,3 bär riskpremien och likviditeten. Läsa spreadens läge som marknadens riskaptit: smala spreader (kring 0,8 i exemplena) hör hemma i expansiva lägen och breda (kring 3,5) i förträngda — samma bolag, olika pris på samma risk. Räkna vad spreaden kostar bolaget: lån 2 000 miljoner kronor gånger 0,015 lika med 30 miljoner kronor per år, och 30 delat med rörelsevinst 150 miljoner lika med 20 procent. Hitta råtalen i verkligheten: statsräntor per löptid, företagsobligationers kuponger och bolagets egen genomsnittliga låneränta i årsredovisningen (räntekostnad delat med genomsnittlig räntebärande skuld). Ställa de fem läsningsfrågorna till en ny spreadsiffra — mot vem, mot vilken löptid, mot vilken historia, vad förväntas, vad saknas.",
+    "why": "MAKROEKONOMI & RÄNTA-familjens fördjupningsserie bär fyra steg — transmissionsmekaniken (Avancerad), lönebildningen (Intermediär), realräntan (Avancerad) och konjunkturindikatorerna (Intermediär) — men inget startsteg: den som vill börja på familjens egen stege måste redan behärska kedjor som ma-01 bygger vidare på, och grundseriens km-054 och km-055 äger räntan och inflationen som begrepp men inte låneprissättningen mellan olika låntagare. Sond mot registrets 411 kurser: kreditpremie, företagsobligation och upplåningskostnad ger noll träffar bland kurserna — talen finns överallt i finansens vardag (varje bolåneränta, varje företagsutlåning, varje obligationskurs) men ingen kurs lär läsningen. Kreditpremien är också familjens mest handgripliga nybörjarämne: det kräver bara subtraktion och en tanke på två låntagare, och det binder samman de tre ytterkurserna — räntan (km-054), kreditcykeln (st-04) och bolagets kostnadssida (ma-01:s kedjas sista led) — till ett enda tal som går att hämta och räkna hem första dagen.",
+    "history": {
+      "origin": "Skillnaden mellan kungars och köpmäns lånekostnader är äldre än någon ränteteori: i renässansens italienska stadsstater lånade statsmakterna billigare än enskilda handelshus, och i prislistor från Amsterdams börs på sextonhundratalet noterades olika låntagares obligationer till olika avkastningar — spreaden fanns i praktiken innan någon skrev ned den som begrepp. Grunderna till förståelsen lades av kreditanalytiker vid sekelskiftet 1900, när järnvägsbolagens obligationer gav allt högre avkastning än statspapper och marknaden lärde sig skilja bolag från bolag.",
+      "evolution": "När obligationsmarknaderna växte fram på artonhundratalet blev spreaderna ett eget studieobjekt: kreditvärderare vid de stora bankhusen lärde sig skilja järnvägsbolag från statsfinanser, och betygsskalorna som gradvis standardiserades i USA på tidigt nittonhundratal formaliserade det marknaden redan gjorde — att sortera låntagare efter förväntad förlust. Rättsinstitutionerna följde efter: konkurshanteringen återbetalningsgraden avgjorde hur mycket av skulden som överlevde ett betalningsstopp, och därmed blev spreadens första del räknebar. Kriserna blev ämnets repetitionsräkningar: efter varje nedgång kunde analytiker gå tillbaka och se hur väl premierna täckt de verkliga förlusterna — och lära sig att de sällan gjorde det fullt ut i de värsta åren.",
+      "modern": "I dag är kreditpremien en av marknadens mest bevakade termometrar: obligationsfonder, bankers utlåningspriser och bolagens emissionsbeslut hänger alla på spreaden, och centralbankernas krisåtgärder har vid upprepade tillfällen handlat just om att trycka ned den när den steg för snabbt — köp av företagsobligationer under pandemiåret 2020 är det mest citerade exemplet. För den enskilde läsaren är spreaden dessutom det makrotal som sitter närmast bolaget: den syns i bolagets räntekostnad, i bankens marginal och i varje nyemission, vilket gör den till en naturlig brygga mellan familjens makrokurser och bolagsanalysens eget fält."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Två låntagare, två priser — skillnaden som är en kurs",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Vad premien skyddar mot — den förväntade förlusten",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Termometern — att läsa spreadens läge och rörelse",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Vad spreaden kostar bolaget — från procent till miljoner",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Var talen finns — kurvor, kuponger och årsredovisningen",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje spread",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Två låntagare, två priser — skillnaden som är en kurs",
+        "minutes": 4,
+        "intro": "Allt börjar med en subtraktion. Två låntagare vill låna lika länge — marknaden ger dem två olika räntor, och skillnaden mellan dem är denna kurs ämne.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt två räntor bredvid varandra: staten lånar fem år till 2,0 procent och ett industrbolag lånar fem år till 3,5 procent. Båda får pengar idag och betalar ränta varje år — men bolaget betalar 1,5 procentenheter mer. Den skillnaden kallas kreditpremie (i vardagstal ofta spread, och kursen använder båda orden som synonymer). Varför finns den? Inte för att tiden är olika — båda lånar i fem år, så skillnaden kan inte handla om tidens pris, som km-054 lär ut. Anledningen är att staten nästan alltid betalar tillbaka, medan bolaget kan hamna i betalningsstopp: den som lånar ut till bolaget tar en risk som statsutlånaren inte tar, och räntan måste betala för den risken. Här är kursens första och viktigaste läseregel, som återkommer i varje kapitel: räntan har (minst) två delar — tidens pris och risken att inte få pengarna tillbaka. Grundkursens räntelära (km-054) äger första delen; denna kurs äger den andra. Regel nummer två är jämförelseregeln: en spread är bara meningsfull mellan räntor med samma löptid, för femårig risk ska jämföras med femårig tid och tioårig med tioårig — att subtrahera en femårig statsränta från en tioårig bolagsränta blandar ihop två saker (löptidens och riskens pris) och ger ett tal utan mening. Håll dig därför alltid till par med matchande löptid, så bär subtraktionen exakt det budskapet: vad marknaden just nu tar betalt för att låna ut till just detta bolag, bortsett från vad tiden kostar."
+          },
+          {
+            "type": "definition",
+            "content": "Kreditpremie (spread) — skillnaden mellan en låntagares ränta och en statsränta med samma löptid, mätt i procentenheter. Talet är marknadens pris på risken att låntagaren inte betalar tillbaka allt: en högre spread betyder högre prissatt risk, inte dyrare tid."
+          },
+          {
+            "type": "insight",
+            "content": "Subtraktionen är enkel — 3,5 minus 2,0 lika med 1,5 — men den förutsätter parighet: samma löptid, samma valuta, samma datum. En spread utan sin jämförelseregel är som en temperatur utan termometer: ett tal som ser nyttigt ut och säger ingenting."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Vad premien skyddar mot — den förväntade förlusten",
+        "minutes": 4,
+        "intro": "Varför är spreaden 1,5 procentenheter och inte 0,3 eller 8? Resan från risk till pris går genom en enkel räkning: sannolikheten för betalningsstopp gånger hur mycket som då går förlorat.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tänk på obligationsköparens situation med konkreta tal. En femårig bolagsobligation på 1 000 kronor betalar 3,5 procent per år — 35 kronor — medan motsvarande statsobligation betalar 20 kronor. De extra 15 kronorna per år är premien, och de ska täcka två saker. Den första är den förväntade förlusten, som räknas i två steg: antag att marknaden bedömer risken för betalningsstopp till 2 procent under obligationens liv, och att ett betalningsstopp i genomsnitt lämnar återbetalning 40 procent av skulden (fyrtio kronor av hundra — återstoden går förlorad i rekonstruktion eller konkurs). Förlustgraden blir 100 minus 40 lika med 60 procent, och den förväntade förlusten 2 procent gånger 60 procent lika med 1,2 procent per lånenhet: på 1 000 kronor är det 12 kronor om året i förväntad förlust. Räkna vidare: av premiens 15 kronor går alltså 12 kronor till att täcka det som statistiskt förväntas gå förlorat — och de sista 3 kronorna (0,3 procentenheter av spreaden) är den andra delen: kompensationen för att överhuvudtaget bära osäkerheten, även i år då betalningsstoppet uteblir, plus en slant för att bolagsobligationen är svårare att sälja snabbt än statspapper. Denna tredelning — förväntad förlust, riskkompensation, likviditet — är spreadens anatomi, och den förklarar direkt varför samma bolag kan få olika spread i olika tider: sannolikheten (2 procent) är en bedömning som ändras med konjunkturen, återbetalningsgraden (40 procent) ändras med vad bolaget äger, och riskkompensationen ändras med marknadens samlade aptit. Notera också vad räkningen INTE säger: den säger inte att premien är rätt — bara hur den byggs. Om marknaden prissätter 2 procent och verkligheten visar 6 har obligationens köpare betalats för lite, och tvärtom; att diskutera den skillnaden är analysens kärna, och den återkommer i kapitel tre."
+          },
+          {
+            "type": "tabell",
+            "content": "Del av spreaden | Exempeltalet | Vad den täcker | Vad som rör den\nFörväntad förlust | 1,2 procentenheter | Statistiskt förväntade förluster: 2 % × 60 % | Konjunktur, bransch, bolagetssoliditet\nRiskkompensation | 0,2 procentenheter | Priset på att bära osäkerheten | Marknadens samlade riskaptit\nLikviditet | 0,1 procentenheter | Svårigheten att sälja snabbt | Marknadens djup för just papperet\nHela spreaden | 1,5 procentenheter | Summan av de tre | Allt ovan — samtidigt"
+          },
+          {
+            "type": "insight",
+            "content": "Exempeltalens tredelning (1,2 plus 0,2 plus 0,1 lika med 1,5) är en schablon — verkliga fördelningar skiljer sig — men strukturen är alltid densamma: spreaden är aldrig ett tal utan en summa. Den som minns delarna kan ställa frågan bakom frågan: är den nya spreaden högre för att risken växt, eller för att marknaden blivit räddare?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Termometern — att läsa spreadens läge och rörelse",
+        "minutes": 4,
+        "intro": "Enskilda tal betyder lite; lägen och rörelser betyder mycket. Spreaden är marknadens mest direkta termometer på kreditklimatet — och kursens tredje kapitel lär läsningen av den.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kreditpremier andas med ekonomin, och det i en regelbunden rytm som st-04 lär ut som kreditcykeln: i expansiva år är sannolikheterna låga, aptiten stor och spreaderna smala — ett stabilt industrbolag kan låna till 0,8 procentenheter över staten i exemplena — och i förträngda år stiger både sannolikheterna och riskkompensationen samtidigt, varvid spreaden kan multipliceras flera gånger utan att något enskilt bolag förändrats: 3,5 procentenheter är inte ovanligt i historiens ansträngda lägen. Därmed blir spreadserien en av marknadens tidigaste signaler: den breder ut sig ofta före aktiemarknadens nedgångar (där kreditmarknadens deltagare rör sig först) och smalnar av före vändningar uppåt, vilket gör den till en naturlig granne till konjunkturindikatorerna i ma-04 — där ma-04 läser statistikens månadssiffror, läser spreaden marknadens egna pengar. Läsningen har tre nivåer. Nivå ett är läget: var är spreaden mot sin egen historia (smal, normal, bred)? Nivå två är rörelsen: breddar den eller smalnar den, och hur snabbt — en stilla 1,5 och en snabbt stigande 1,5 är två olika budskap. Nivå tre är skillnaderna: breder en bransch ut sig mer än andra, ett bolag merän sina grannar? Skillnadsnivån är där bolagsanalysen börjar, för en bolagsspread som stiger mer än branschens bär information om just det bolaget — och samma läsning återfinns hos kreditbetygens granskare (ks-05 äger betygens värld) och i räntetäckningens avståndsräknare (rs-06 äger den mätningen). En varning hör hemma här också: termometern mäter prissatt risk, inte verklig risk — en lugn spread kan återspegla en frånvaro av oro likaväl som en frånvaro av problem, och historien är full av spreadutbrott som kom sent. Kursens disciplin är därför dubbel: läs termometern, men fråga alltid vad den reagerade på — och vad den ännu inte har märkt."
+          },
+          {
+            "type": "tabell",
+            "content": "Läge i cykeln | Spread, stabilt industriföretag (exempel) | Typisk läsning | Naturlig granne bland kurser\nExpansion, god tillit | 0,8 procentenheter | Smal — risk aptiten stor | ma-04:s indikatorer uppåt\nSen expansion | 1,5 procentenheter | Normal — priset börjar vägas | st-04:s kreditcykel mitt\nFörträngning | 2,5–3,5 procentenheter | Bred — sannolikhet och rädsla stiger | st-04:s nedfas, ma-04 nedåt\nKris, återskapad tillit | 3,5 och däröver, sedan fallande | Brott och normalization | rk-familjens riskmått"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens tal är exempletal, inte historik — men mönstret är historiens: spreaden rör sig i trappsteg, inte linjer, och det största steget kommer oftast när konjunkturen redan vänt. Den som vill veta var i trappan vi står läser rörelsen, inte nivån."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Vad spreaden kostar bolaget — från procent till miljoner",
+        "minutes": 4,
+        "intro": "Procentenheter låter små. Kapitlet visar kedjan från spread till bolagets vinst — en kedja som varje läsare kan räkna efter på vilket bolag som helst.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tag ett exempelföretag med räntebärande lån 2 000 miljoner kronor och en genomsnittlig låneränta 3,5 procent — alltså 2 000 gånger 0,035 lika med 70 miljoner kronor i räntekostnad per år. Om statsräntan med matchande löptid är 2,0 procent skulle samma lån, utfärdat av staten, kosta 2 000 gånger 0,020 lika med 40 miljoner — skillnaden 30 miljoner kronor per år är bolagets faktiska kreditpremie i kronor räknade: 2 000 gånger 0,015 lika med 30. Sedan kommer kedjans andra steg, andelen av vinsten: med rörelsevinst 150 miljoner kronor går 30 delat med 150 lika med 20 procent av vinsten åt att betala risken — en femtedel, år efter år, i fred och kris. Kedjan fortsätter naturligt in i värderingen: samma 30 miljoner som är 20 procent av vinsten idag blir en annan andel i nästa konjunkturläge, och när spreaden i ett ansträngt år stiger från 1,5 till 3,0 procentenheter fördubblas premiekostnaden till 60 miljoner — 40 procent av samma vinst — även om bolagets verksamhet är oförändrad. Det är detta som gör kreditpremien till en makvariabel med bolagsadress (ma-01 äger transmissionskedjan i helhet): räntans nivå flyttar ALLA bolags kostnader, men spreadens rörelse flyttar de skuldtungas resultat mest — och därmed också deras spelrum för investeringar och utdelningar (ud-familjen äger utdelningsutrymmets kalkyl). Räknekedjan är dessutom en tvåvägsgata: från bolagets räntekostnad i årsredovisningen kan läsaren räkna BAKLÄNGES till bolagets implicita spread, vilket kapitel fem visar steg för steg. Alla tal i detta kapitel är påhittade och valda för räkbarhet — metoden, inte siffrorna, är leveransen, och varje verkligt bolag bär sin egen kedja att räkna hem."
+          },
+          {
+            "type": "tabell",
+            "content": "Steg | Räkning | Resultat\nBolagets räntekostnad | 2 000 × 0,035 | 70 miljoner kr per år\nStatsalternativet | 2 000 × 0,020 | 40 miljoner kr per år\nKreditpremien i kronor | 70 − 40 (eller 2 000 × 0,015) | 30 miljoner kr per år\nAndel av rörelsevinsten | 30 ÷ 150 | 20 procent\nOm spreaden stiger till 3,0 pp | 2 000 × 0,030 | 60 miljoner — 40 procent av vinsten"
+          },
+          {
+            "type": "insight",
+            "content": "Kedjans starkaste led är den sista raden: från 1,5 till 3,0 procentenheter låter som en detalj i makroskala, men i bolagsskala är det skillnaden mellan en femtedel och två femtedelar av vinsten. Små procentenheter är stora kronor — det är kreditpremiens hela väsen."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Var talen finns — kurvor, kuponger och årsredovisningen",
+        "minutes": 4,
+        "intro": "Kursens räkningar lever på rådata, och rådata finns närmare än många tror: i statsräntekurvor, i obligationsköners kuponger och — för de flesta läsare närmast — i bolagets egen årsredovisning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre källor täcker kursens behov. Den första är statsräntekurvan: riksgäldens utbud av statsobligationer ger räntor per löptid (mk-04 äger kurvans hela lära), och för spreadräkningen behövs bara det tal som matchar den jämförda obligationens löptid. Den andra är företagsobligationsmarknaden: noterade bolagsobligationer bär sina kuponger offentligt, och deras ränta mot statsräntan med samma löptid är en färdig spread — banker och kreditinstitut publicerar dagligen sammanställningar av sådana tal, och för de större bolagen på de nordiska marknaderna finns serier med historik som gör kapitel tres läsning möjlig. Den tredje källan är den som flest läsare har närmast: bolagets egen årsredovisning, där räntekostnaden och den räntebärande skulden redovisas. Där blir den egna spreadräkningen två steg: först bolagets genomsnittsla ränta som räntekostnad delat med genomsnittlig räntebärande skuld (med samma försiktighet som all genomsnittsräkning — se km-familjens redovisningskurser om noternas djup, km-004 och km-002); sedan spreaden som skillnaden mot en statsränta med rimlig löptid (bolagets skuld har ofta blandade löptider, så talet blir en schablon — men en schablon med riktning). Redovisningskursernas varning är värd att bära med: räntekostnaden i resultaträkningen innehåller ibland poster som inte är ränta (omvärderingar, derivat, arrangemangsavgifter), och noterna är platsen att rensa bort dem — km-003 äger kassaflödets sida av samma försiktighet. Med de tre källorna i hand kan läsaren bygga en egen liten spreadhistorik för ett bolag eller en bransch: en rad per kvartal, tre kolumner (bolagets ränta, matchande statsränta, skillnaden) — och efter ett år finns en egen termometer att läsa mot kapitel tres mönster. Det är kursens mest bestående redskap: inte minnesgoda siffror utan en hämtning som kan upprepas, granskas och korrigeras — vilket är hela skillnaden mellan att kunna en kurs och att kunna ett hantverk."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räk en egen kreditpremie i fyra steg: (1) Välj ett bolag du följer och hitta i senaste årsredovisningen räntekostnaden och den räntebärande skulden (noterna om du hittar dem där). (2) Räkna bolagets genomsnittliga ränta: räntekostnad delat med genomsnittlig räntebärande skuld — notera att genomsnittet av årets början och slut är bättre än en enda punkt. (3) Hämta en statsränta med rimlig löptid och räkna skillnaden i procentenheter. (4) Räkna vidare i kronor och i andel av vinsten med kapitel fyras kedja, och skriv ned samtliga fyra svar med datum. Upprepa nästa år — då har du din första egna spreadserie, och kapitel tres läsning blir möjlig på egen hand."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor till varje spread",
+        "minutes": 4,
+        "intro": "Kursens sista kapitel för samman verktygen till ett förhörsmönster: fem frågor som förvandlar varje ny spreadtabell till läsning — och som håller metoden öppen för omprövning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sammanförelsen i fem frågor. Fråga ett: mot vem? — varje spread behöver sin statsränta, och jämförelsen ska vara samma valuta och samma marknad som låntagarens egen. Fråga två: mot vilken löptid? — paritetsregeln från kapitel ett, utan den är talet blandat. Fråga tre: var mot historien? — läget mot bolagets och branschens egna serier (kapitel tre), för en spread utan historia är bara ett pris. Fråga fyra: vad är den byggd av? — tredelningen från kapitel två: hur mycket är förväntad förlust, hur mycket är rädsla, hur mycket är svårförsåldhet? Fråga fem: vad kostar den bolaget? — kronkedjan från kapitel fyra, först i kronor, sedan i andel av vinsten. Fem frågor, fyra kapitel verktyg, en hel läsning. Kursens plats i familjen är därefter naturlig: med spreaden i hand växer nästa steg mot ma-01:s transmissionskedja (hur ränteläget når bolagets resultat och värdering) och ma-03:s realränta (vilken del av räntan som är inflationens förväntningar — spreaden är den tredje byggstenen vid sidan av dem); mot st-04:s kreditcykel (var i rytmens trappsteg termometern står) och ma-04:s indikatorer (statistikens eget klockslag). Grundserien km-054 och km-055 bär räntans och inflationens begrepp som spreaden vilar på. Och en avslutande hållning: kreditpremien är ett av finansens mest demokratiska tal — det kräver två räntor, en subtraktion och en tanke på vem som betalar tillbaka — men dess disciplin är ovillkorlig: jämför lika med lika, fråga alltid vad siffran är byggd av, och läs rörelser framför nivåer. Detta är utbildning i läsning, inte uppmaningar i någon riktning; valen och omprövningarna är alltid läsarens egna, på egen analys, och de fem frågorna är byggda för att ställas igen — nästa kvartal, nästa räntebeslut, nästa kris."
+          },
+          {
+            "type": "insight",
+            "content": "Fem frågor, fyra kapitel och en subtraktion — det är hela kursen. Resten är träning: en spread läst per kvartal, en egen serie byggd över ett år, och termometerns mönster som successivt blir läsarens eget minne i stället för kursens."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade sina läsare att titta på bolagets skuldsida med samma nyfikenhet som produktsidan, och hans berättelser om bolag som lastades med dyra lån under förvärvsboomen är kreditpremielogik i berättad form: räntekostnadens andel av vinsten avgör hur mycket som återstår till ägaren. Lynch lärde också respekt för att låga räntor kan vara en fälla — det är spreaden, inte nivån, som skiljer prissatt risk från dyr tid.",
+    "grahamSection": "Benjamin Grahams analysemp att räkna på räntetäckningen innan någon aktie bedöms trygg är kursens kronkedja i tidig tappning: hans kärntal svarade på hur stor del av vinsten som gick åt att bära skulden. Grahams försiktighet med bolag vars överlevnad vilar på fortsatt billiga lån pekar mot samma sak som spreadens termometerläsning — priset på risk förändras, även när bolaget gör det inte.",
+    "ak1Section": "I AK1A:s metodik ingår kreditpremieläsning som bakgrundstakt i bolagsanalyserna: motorernas kostnadssidor kan berikas med bolagets implicita spread enligt kursens tvåstegsräkning (genomsnittsränta minus matchande statsränta), och scenarioramar i AKM2-traditionen låter spreadläget variera mellan grenarna — ett bredare läge trycker de skuldtungas vinst, ett smalare ljusar den — vilket dokumenteras i arbetsflödet (ek-03-traditionen) så att antagandena kan granskas och bytas när marknadens termometer flyttar sig."
+  },
   "od-01-optionens-greker": {
     "slug": "od-01-optionens-greker",
     "category": "OPTIONS & DERIVAT",
@@ -210431,6 +210599,178 @@
     "lynchSection": "Peter Lynch var öppet skeptisk mot optioner som placeringsverktyg för den som inte är fulltidsinvesterare — hans linje var att aktieforskningens avkastning inte behöver hävstångsbyggen för att bära. Men hans princip att förstå varje instruments mekanik innan det rörs är kombinationernas bästa försäkring: payoff-diagrammet är instrumentets historia berättad i förväg, och den som kan läsa den behöver inte lita på någon annans konstruktion.",
     "grahamSection": "Benjamin Graham mötte knappast standardiserade optionsbörser i sin aktiva period, men hans princip om att varje position ska bäras av ett beräknat säkerhetsöverskott översätts direkt: en kombinerad positions maxförlust är dess självrisk, och konstruktionen ska ha ett utfallsrum som motiverar den förlusten. Collarns definierade gränser är i Grahams bemärkelse den mest disciplinerade av kursens konstruktioner — den som vet sin värsta dag på förhand.",
     "ak1Section": "I AK1A:s metodik hör kombinerade positioner hemma i verktygslådan för den avancerade läsaren, undervisade som mekanik med full aritmetik: AKM2:s riskkolumner (rs-familjens matris) kan bära en positions maxförlust som definierad nedsida, och arbetsflödet (ek-03-traditionen) dokumenterar konstruktionens tre tal — maxvinst, maxförlust, break-even — innan någon position alls förekommer i analysen. Kursens juridiska grundhållning är familjens: instrumentens mekanik är utbildning, och ingenting i konstruktionsläran är en rekommendation att inta en position."
+  },
+  "od-05-utdelningen-och-optionen": {
+    "slug": "od-05-utdelningen-och-optionen",
+    "category": "OPTIONS & DERIVAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Utdelningen och optionen — ex-dagen, pariteten och det glömda kassaflödet",
+    "summary": "OPTIONS & DERIVAT-familjens femte steg: utdelningens möte med optionen, det kassaflöde som tillhör aktien men aldrig optionen. Kursen bygger put-call-pariteten — köpoption minus säljoption lika med aktie minus diskonterat lösenpris, med aktie 100, lösenpris 100 och ränta 5 procent blir det 100 minus 95,24 lika med 4,76 — och visar hur en utdelning på 3 kronor flyttar hela ekvationen: pariteten faller till 100 minus 3 minus 95,24 lika med 1,76, och med säljoptionen oförändrad på 7,24 sjunker köpoptionen från 12,00 till 9,00 — tre kronor försvinner ur ett värde som aldrig innehöll utdelningen från början. Därpå ex-dagens mekanik (aktien 100 med utdelning 3 öppnar teoretiskt på 97 — den som äger optionen men inte aktien får inget), tumregeln för tidig lösning av amerikanska köpoptioner (lös när utdelningen överstiger det kvarvarande tidsvärdet: 3 mot 2 ger lös, 1 mot 2 ger behåll), covered call-spelet runt avstämningsdagen (aktieägaren 97 plus 3 lika med 100 mot callförsäljarens 100 plus 4 lika med 104 — men om kursen når 112 blir samma uppgörelse 104 mot 115) och säljoptionens tysta vinst. Genomgående utbildning i mekanismen, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna put-call-pariteten i båda riktningarna: utan utdelning är köpoption minus säljoption lika med aktie minus diskonterat lösenpris (100 minus 100 delat med 1,05 lika med 4,76; köpoption 12 ger säljoption 7,24), och med utdelning D införs ett nytt led (100 minus 3 minus 95,24 lika med 1,76; säljoptionen 7,24 oförändrad ger köpoptionen 9,00). Förklara ex-dagsmekaniken: aktien öppnar teoretiskt ned med utdelningen (100 med D lika med 3 ger 97) och optionens ägare står utanför kassaflödet — att äga en köpoption är att äga aktiens rörelse, inte dess utdelning. Använda tumregeln för tidig lösning av amerikanska köpoptioner: lös dagen före avstämningsdagen när utdelningen överstiger det kvarvarande tidsvärdet (3 mot 2: lös; 1 mot 2: behåll), och veta att europeiska optioner aldrig kan lösas tidigt — valet finns bara i den amerikanska stilen. Räkna covered call-uppgörelsens båda utfall kring utdelningen: aktieägaren 97 plus 3 lika med 100 mot callförsäljaren 100 plus 4 lika med 104 vid lösning på lösenpriset, och 115 mot 104 om kursen når 112. Läsa avstämningskalendern kopplad till optionens förfallodag (ud-07 äger kalendern) och veta var beskattningen bor (sj-04 äger den ytan). Ställa de fem läsningsfrågorna till varje position med utdelning i sikte: när är avstämningsdagen, hur stor är utdelningen, vad säger tidsvärdet, vilken lösenstil gäller, vad händer med pariteten.",
+    "why": "OPTIONS & DERIVAT-familjens fyra första steg täcker prisbildningens och konstruktionens hantverk — grekerna (od-01), den implicita volatiliteten (od-02), warranter och emissioner (od-03), kombinerade positioner (od-04) — men instrumentets möte med aktiens eget kassaflöde har ingen kurs: utdelningen är den enda vardagshändelse som flyttar optionspriser utan att röka varken volatilitet eller tid, och den träffar optionsägaren där han minst väntar (en köpoption på en aktie som betalar 3 kronor tappar i praktiken ungefär de 3 kronorna i värde redan före ex-dagen). Sond mot registrets 411 kurser: put-call-pariteten ger noll träffar, tidig lösning noll, utdelningens koppling till optioner noll bland kurser (endast grannskap: ud-07 äger utdelningskalendern på aktiesidan, km-060 äger covered calls som strategi, ks-06 konvertibelns utdelningsfråga) — mekaniken som binder samman familjens instrument med utdelningsstrategiernas familje/granne saknar sin kurs. Kursen är därmed seriens femte steg och den som öppnar optionsfamiljen mot kassaflödesanalysens värld: efter fem kurser kan läsaren prisläsa, konstruera och nu också föra optionen samman med bolagets pengar.",
+    "history": {
+      "origin": "Sambandet mellan köp- och säljoptioner noterades långt före någon ekvation: på de tidiga optionsmarknaderna visste handlarna att fyra pris — aktie, köpoption, säljoption och ränta — inte kunde röra sig hur som helst i förhållande till varandra, och arbitragörerna höll dem samman med köp och försäljning i alla fyra hörnen samtidigt. Den formella identiteten, put-call-pariteten, skrevs ned i det tidiga nittonhundratalets ekonomiska litteratur och blev med optionsbörsernas framväxt på sjuttiotalet en av finansens mest citerade ekvationer — inte för att den är svår, utan för att den är oundviklig: den som gäller i varje prisblad som lever, annars finns fria pengar att plocka.",
+      "evolution": "Utdelningens roll i ekvationen växte fram i takt med optionsmarknadernas mognad: när stora, utdelningsbetalande bolag fick sina optionsserier blev avstämningsdagarna kalenderhändelser som flyttade hela prisblad — köpoptioner förlorade värde dagar före ex-dagen, säljoptioner vann, och den som förbisåg kalendern betalade undervisningen. Amerikanska optioners rätt att lösas tidigare gav upphov till den klassiska utdelningslösen-mekaniken, där register över kommande avstämningsdatum blev lika viktiga som volatilitetsestimmaten. Marknadens uppfinningsrike ande tog också tempet på uppgiften: strategier som försökte skörda utdelningar med optioner visade återkommande att marknaden hunnit prissätta det mesta — premien innehöll redan utdelningen, och det som såg ut som fria pengar visade sig vara en positionsbyte mot okänd motpart med annan information.",
+      "modern": "I dag hanterar optionssystem kalendrarna automatiskt: priser justeras för kända utdelningar, tidiga lösenprioriteringar flaggas, och handlare möter utdelningssäsongsstarten (vårens stora europeiska avstämningsveckor är det klassiska exemplet) med laddade magasin. För den som lär sig hantverket är utdelningskopplingen samtidigt den mest tacksamma ingången till paritetstänkandet: mekanismen kräver bara fyra pris, en subtraktion och en kalender, och den ger direkt en känsla för hur optionsmarknaden bygger broar mellan alla sina hörn. Kursen håller sig till den mekaniska läsningen och lämnar strategivärderingen åt varje läsares eget omdöme — utbildning i hur instrumenten fungerar, inte uppmaningar om hur de ska brukas."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Det glömda kassaflödet — vem som äger utdelningen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Pariteten — fyra pris och en ekvation",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Ex-dagen — teoretiskt fall och verklig öppning",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Tidig lösning — tumregeln och det tysta valet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Strategierna kring utdelning — callens fall, puttens vinst",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor före varje avstämningsdag",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Det glömda kassaflödet — vem som äger utdelningen",
+        "minutes": 4,
+        "intro": "En aktie är två saker i en: en rörelse och ett kassaflöde. Optionen köper den första — och detta kapitel visar vad som händer den dag den andra betalas ut.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med en fråga som många optionsintresserade ställer först vid sin första utdelningssituation: om jag äger en köpoption på aktien, får jag då utdelningen? Svaret är nej, och skälet är avgörandets mekanik. Utdelningen betalas till den som står som ägare av aktien på avstämningsdagen (km-005 äger eget kapital och utdelningars redovisningssida; ud-07 äger kalenderns svenska datum — avstämningsdagen ligger en arbetsdag före betalningsdagen sedan det nya systemet infördes). Optionen ger rätt att KÖPA aktien till lösenpriset — men rättigheten utövas inte förrän optionen löses, och tills dess står optionens ägare utanför aktieägarens lista. Följden är kursens grundmur: att äga en köpoption är att äga aktiens RÖRELSE, inte dess UTDELNING. Marknaden kompenserar dock inte genom gåvor utan genom pris. Eftersom aktien öppnar ned med ungefär utdelningens belopp på ex-dagen (kapitel tre räknar på det) är köpoptionen på en utdelningsbärande aktie värd mindre än på en identisk aktie utan utdelning — det framtida kursfallet ligger inbakat i hennes pris redan när kalendern är känd. Säljoptionen är spegelbilden: den som har rätt att SÄLJA till lösenpriset gynnas av att aktien förväntas falla med utdelningen, och säljoptioner på utdelningsrika aktier bär ett högre pris av samma skäl. Därmed är utdelningen det kassaflöde som skiljer aktien från optionen i båda riktningarna — och den som lär sig läsa den mekaniken har nyckeln till hela kursens fortsättning: pariteten (kapitel två), ex-dagens avläsning (kapitel tre), lösenbeslutet (kapitel fyra) och strategierna (kapitel fem). En notis om terminologi innan dess: denna kurs talar om ex-dagen och avstämningsdagen i mån av behov — avstämningsdagen är dagen som avgör äganderätten, och den gamla benämningen ex-dag lever kvar i litteraturen; kursen använder båda och lär skillnaden i kapitel tre."
+          },
+          {
+            "type": "definition",
+            "content": "Avstämningsdag (ex-dag) — dagen då ägandet av aktien avgörs för rätt till kommande utdelning: den som står som ägare då får utdelningen, den som bara äger optioner får den inte. Aktiekursen justeras vid börsöppning ned med ungefär utdelningens belopp — en mekanisk kompensation för att bolagets värda minskat med det utbetalda beloppet."
+          },
+          {
+            "type": "insight",
+            "content": "Formuleringen att lära utantill: optionen äger rörelsen, aktien äger kassaflödet. Alla kursens räkningar är varianter på den meningen — när utdelningen betalas flyttas värde från den ena världen till den andra, och priserna anpassar sig före, inte efter."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Pariteten — fyra pris och en ekvation",
+        "minutes": 4,
+        "intro": "Köpoption, säljoption, aktie och ränta är inte fyra fria pris utan fyra hörn i en ekvation. Pariteten binder dem — och utdelningen är det led som gör ekvationen levande.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Put-call-pariteten för en europeisk option (den som bara kan lösas på förfallodagen) med lösenpris K, tid ett år och ränta r lyder: köpoptionens pris minus säljoptionens pris lika med aktiepriset minus dagens värde av lösenpriset. Med aktie 100, lösenpris 100 och ränta 5 procent blir det diskonterade lösenpriset 100 delat med 1,05 lika med 95,24, och pariteten säger att C minus P lika med 100 minus 95,24 lika med 4,76. Är köpoptionen prissatt till 12,00 borde säljoptionen kosta 12,00 minus 4,76 lika med 7,24 — fyra pris, en ekvation, och den som bryter den erbjuder marknaden en uppgörelse den inte kan avstå från (köp det billiga hörnet, sälj det dyra, låna det som fattas — vilket är arbitragens mekanik, bf-13 äger dess gränser). Nu utdelningen. Antag att bolaget oväntat utlyser 3 kronor i utdelning, betald före förfallodagen. Aktieägaren får sina 3 kronor; aktiepriset vid börsöppning på avstämningsdagen faller med samma belopp (kapitel tre). Pariteten får därmed ett nytt led — utdelningen som aktieägaren får och optionsägaren inte får: C minus P lika med S minus D minus K delat med (1 plus r). Med talen: 100 minus 3 minus 95,24 lika med 1,76. Räkna vidare på vad som händer med priserna: säljoptionens värde rörs knappt av utdelningen (aktien faller som förväntat, strejken består — kapitel fem utvecklar hennes lilla vinst), så om P står kvar på 7,24 blir det nya paritetsrimliga köpoptionspriset 1,76 plus 7,24 lika med 9,00. Köpoptionen föll 3,00 — från 12,00 till 9,00 — på en aktie som inte gjort något annat än att LOVA betala 3 kronor. Ingen volatilitet förändrades, ingen tid förångades (od-01 och od-02 äger de rörelsernas lära); det som flyttade var ett kassaflöde som bytte ägare. Detta är kursens kärnerbjudande: pariteten gör utdelningens effekt RÄKNEBAR i stället för gissad — och ekvationen är oundviklig nog att marknaden följer den grovt, vilket varje läsare kan kontrollera mot verkliga prisblad: leta fyra tal, subtrahera, jämför."
+          },
+          {
+            "type": "tabell",
+            "content": "Situation | Ekvation | Tal | Paritet C − P\nUtan utdelning | C − P = S − K/(1+r) | 100 − 95,24 | 4,76\nMed utdelning D = 3 | C − P = S − D − K/(1+r) | 100 − 3 − 95,24 | 1,76\nKöpoption med P = 7,24 (med D) | C = paritet + P | 1,76 + 7,24 | C = 9,00\nKöpoption utan D med P = 7,24 | C = paritet + P | 4,76 + 7,24 | C = 12,00"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens två sista rader är samma säljoptionspris med två olika utdelningsvärldar: köpoptionen skiljer 3,00 kronor mellan raderna — exakt utdelningens belopp. Pariteten är därmed utdelningens prisräknare: ekvationen säger inte om aktien är köpvärd, men den säger till kronan vad ett utdelningsbyte flyttar i optionsvärlden."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Ex-dagen — teoretiskt fall och verklig öppning",
+        "minutes": 4,
+        "intro": "Pappersteoretiskt öppnar aktien ned med exakt utdelningen. Verklighetens öppning är annorlunda — och skillnaden är kursens tredje läsning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mekaniken bakom det teoretiska fallet är ren värdebokföring: när 3 kronor lämnar bolaget till aktieägarna är bolaget 3 kronor fattigare, och aktien borde öppna på 100 minus 3 lika med 97. Så ser också börsens system ut: handeln på avstämningsdagen sker i en aktie som inte längre bär rätt till utdelningen, och kurserna noteras därefter (detta är kursjusteringen; i äldre litteratur kallas fenomenet ofta märket, och termen lever kvar i finansspråket trots förväxlingsrisken med varumärkesordet). Men den verkliga öppningen är sällan exakt 97 — och skillnaderna är informationsläsning, inte brus. Tre krafter driver ifrån det exakta talet. Den första är skatten: många ägare betalar skatt på utdelningen (sj-familjen äger reglernas värld), och deras värdering av 3 kronor i handen är lägre än 3 kronor i bolaget — trycket nedåt blir oftast lite starkare än teorin. Den andra är efterfrågeflytten: vissa investerare köper aktien FÖRE avstämningsdagen just för utdelningen och säljer efter — ett mönster som mjukar upp kurvan kring datumet (ud-07:s kalenderläsning fångar säsongens rytm). Den tredje är signalen: en oväntat höjd utdelning läses som styrka och kan driva kursen upp MER än utdelningen väger — medan en sänkt utdelning fäller både det mekaniska och det signalskapade (utdelningsstrategins familj, ud-kurserna, äger signalernas hela fält). För optionsläsaren följer en praktisk disciplin: den som äger en köpoption över avstämningsdagen ska räkna med kursfallet men inte räkna FELET — förlusten av utdelningen är känd och inbakad i priset (kapitel två); det okända är hur mycket övriga krafter flyttar öppningen, och det är samma marknadsrisk som annars. En övningsläsning som kursen rekommenderar i kapitel sex: välj en stor utdelningsaktie, notera kurs, utdelning och öppning på avstämningsdagen — och räkna skillnaden mot det teoretiska fallet. Efter tio avläsningar har läsaren sin egen känsla för hur nära 97 verklighetens 100-minus-3 ligger — och den känslan är mer värd än någon schablon, för den bär både mekaniken och avvikelsen."
+          },
+          {
+            "type": "tabell",
+            "content": "Utdelning | Kurs före | Teoretisk öppning | Verklig öppning (exempeltal) | Skillnad\n1 | 100 | 99 | 98,90 | −0,10\n2 | 100 | 98 | 97,85 | −0,15\n3 | 100 | 97 | 96,95 | −0,05\n5 | 100 | 95 | 95,40 | +0,40"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens verkliga öppningar är exempeltal som visar mönstret, inte historia: avvikelserna är små och riktninglösa i lugna lägen — men de växer när signal och skatt spelar in. Det teoretiska fallet är kartan; öppningen är terrängen; och optionspriset lever i båda."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Tidig lösning — tumregeln och det tysta valet",
+        "minutes": 4,
+        "intro": "Europeiska optioner väntar till förfallodagen; amerikanska får lösas när som helst — och strax före avstämningsdagen föds ett beslut som många optioner aldrig får ta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lösenstilen avgör först allt: en europeisk köpoption kan INTE lösas i förtid, och dess ägare bär utdelningsfallet i priset (kapitel två) utan valmöjlighet — mekaniken är ren. En amerikansk option däremot får lösas vilken handelsdag som helst, och strax före avstämningsdagen blir frågan levande: är det bättre att lösa IDAG — realisera det inre värdet och bli aktieägare i tid för utdelningen — eller att behålla optionen? Tumregeln har två ben. Ben ett: att lösa förlorar tidsvärdet (det pris som betalats för rörligheten fram till förfallodaget — od-01:s theta äger smältningen). Ben två: att inte lösa förlorar utdelningen (aktien öppnar ned med D, optionen följer ned). Beslutet står alltså mellan tidsvärde och utdelning: lös när utdelningen överstiger det kvarvarande tidsvärdet, behåll när tidsvärdet är större. Med tal: aktie 105, lösenpris 100, köpoption med inre värde 5 och kvarvarande tidsvärde 2; bolaget betalar imorgon 3 kronor med avstämningsdag imorgon. Att lösa idag: aktieägare ikväll, utdelning 3 i handen imorgon, tidsvärdet 2 uppoffrat — nettobytets kärna 3 mot 2, alltså lös. Vore utdelningen istället 1: 1 mot 2 — behåll optionen, tidsvärdet väger mer. Regeln är grov (den förenklar bort räntan på realiserat belopp och dagarnas exakthet) men den bär mekanikens hela poäng: tidig lösning av köpoptioner på utdelningsaktier är i praktiken ett UTDELNINGSPHÄNOMEN — utan utdelning är det nästan aldrig värt att avstå tidsvärdet, med utdelning kan det vara det, och marknadens prissättare vet båda delarna (varför de facto tidiga lösen knappast ger spelrum: priset anpassar sig, kapitel fem). För säljoptioner gäller spegelvända logik med ett viktigt undantag: anledningen att lösa en säljoption tidigt är oftast INTE utdelningen (den hjälper ju säljoptionens ägare) utan räntan på det realiserade — en historia som hör hemma i räntekursernas värld (ma-familjen) snarare än här. Kursen lämnar strategivalet där: tumregeln är ett räkneverktyg för att FÖRSTÅ mekaniken, inte en handlingsregel — beslutet i en verklig position bärs av positionens hela kontext, och den kontexten är alltid läsarens egen."
+          },
+          {
+            "type": "tabell",
+            "content": "Läge | Inre värde | Tidsvärde kvar | Utdelning imorgon | Tumregeln | Beslut\nA | 5 | 2 | 3 | 3 större än 2 | Lös — bli aktieägare före avstämning\nB | 5 | 2 | 1 | 1 mindre än 2 | Behåll — tidsvärdet väger mer\nC | 5 | 0,5 | 1 | 1 större än 0,5 | Lös — nästan inget tidsvärde kvar\nD | 5 | 2 | 0 | 0 mindre än 2 | Behåll — ingen utdelning att hämta"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens rad C är tumregelns randzon: när förfallodaget nalkas smälter tidsvärdet (theta igen), och då räcker en liten utdelning för att vippen ska slå över mot lösning. Tidig lösning är därför framför allt ett SENFÖreteende — sista veckans mekanik, inte första månadens."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Strategierna kring utdelning — callens fall, puttens vinst",
+        "minutes": 4,
+        "intro": "När mekaniken är klar börjar strategierna synas för vad de är: positionsbyten med kända båda sidor. Kapitlet räknar covered call-spelet och puttens tysta vinst till rätta tal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den mest omskrivna utdelningsstrategin på optionsidan är covered call kring avstämningsdagen (km-060 äger strategins grundkonstruktion — här ägs utdelningsfallet i den). Tanken låter enkel: äg aktien, sälj en köpoption på den, ta utdelningen OCH premin. Men räkna hela regnestycket med kursens mekanik. Exempel: aktie 100, såld köpoption med lösenpris 100 till premien 4, utdelning 3 med avstämningsdag nära. Fallet ett — optionen löses FÖRE avstämningsdagen (tidsvärdet smält under 3, kapitel fyra): aktien levereras till 100, premin 4 behålls, utdelningen går till den nya ägaren; uppgörelsens värde 100 plus 4 lika med 104. Jämför den som bara höll aktien: 97 plus 3 lika med 100. Skillnaden 4 — exakt premin; utdelningen bytte bara ägare på vägen (en punkt som gör att strategins utdelningsdel i detta fall är en chimär: man tog premin, inte utdelningen). Fallet två — marknaden stiger istället till 112: optionen löses djupt, aktien lämnad för 100, uppgörelsen fortfarande 104; den som höll aktien har 112 plus 3 lika med 115; skillnaden 11 mot säljaren. Fallet tre — marknaden faller till 90: optionen utlöper värdelös, säljaren har 90 plus 3 lika med 93 plus premin 4 lika med 97 mot aktieägarens 93. Samma position, tre världar, inga hemligheter efter mekaniken — vilket är hela kapitlets budskap: utdelningskopplade optionsstrategier är inte vapen mot marknaden utan positionsbyten med kända båda sidor, och deras facit står att räkna före. Säljoptionens roll är tystare: en utdelning som trycker ned aktien med 3 hjälper den som sålt PUT — strejken består medan aktien faller — varför säljoptioner på utdelningsaktier bär lite högre pris (kapitel två) och glädjen över utdelningsfallet för puttköpare är... kortvarig och redan betald. Strategier som SÄLJER volatilitet strax före avstämningsdag (straddar och strangles i od-04:s vokabulär) möter samma sanning: utdelningsfallet är KÄNT och inbakat — den implicita volatiliteten (od-02) lägger det i priset, och spelet mot marknaden gäller bara det okända runt omkring. Beskattningens sista ord tillhör inte denna kurs: optioner beskattas efter egna regler (sj-04 äger dem), och utdelningens skatt sitter hos mottagaren — vid verkliga beslut är det en del av kontexten, inte av mekaniken."
+          },
+          {
+            "type": "tabell",
+            "content": "Värld | Aktieägaren | Covered call-säljaren | Skillnad\nLösning före avstämning (kurs 100 kvar) | 97 + 3 = 100 | 100 + 4 = 104 | +4 till säljaren (premin)\nUppgång till 112 | 112 + 3 = 115 | 100 + 4 = 104 | +11 till ägaren\nNedgång till 90 | 90 + 3 = 93 | 90 + 3 + 4 = 97 | +4 till säljaren (premin)"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens mönster: premin är säljarens i två av tre världar, uppgångens 11 är ägarens i den tredje. Ingen rad innehåller utdelningsvinster för säljaren i första fallet — den togs av optionens löpare. Detta är strategianalysens kärna: räkna VÄRLDAR, inte önsketänkande, och notera vem som faktiskt fick utdelningen i varje rad."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — fem frågor före varje avstämningsdag",
+        "minutes": 4,
+        "intro": "Kursens verktyg samlas till ett förhörsmönster: fem frågor som varje optionsposition förtjänar före en avstämningsdag — och som håller läsningen levande mellan kalendern och prisbladet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: NÄR är avstämningsdagen? — kalendern är mekanikens första data (ud-07:s svenska datumläsning; utan datum ingen räkning). Fråga två: HUR stor är utdelningen? — beloppet driver alla kursens ekvationer: paritetens D-led, det teoretiska fallet, tumregelns ena vågskål. Fråga tre: VAD säger tidsvärdet? — för den som äger amerikanska köpoptioner är tumregeln D mot tidsvärde beslutets kärna (kapitel fyra); för alla andra är tidsvärdet priset på att stå kvar över datumet. Fråga fyra: VILKEN lösenstil gäller? — europeisk stil väntar, amerikansk väljer; hela kapitel fyra lever bara i den skillnaden. Fråga fem: VAD säger pariteten? — fyra pris och en subtraktion (kapitel två) är marknadens egen kontrollräkning, och avvikelsen mellan eget räknat paritetsvärde och prisbladets tal är information — om skillnaden är större än transaktionskostnader bär den en fråga värd att ställa (bf-13 äger svarens gränser). Fem frågor, fem kapitel — och bakom dem kursens plats i familjen: km-059 gav grunderna, od-01 grekerna, od-02 volatilitetens pris, od-03 emissionernas instrument, od-04 konstruktionerna; denna kurs har fört optionen till aktiens kassaflöde och därmed till grannskapet av utdelningsstrategiernas familj (ud-kurserna) och bolagets eget kapital (km-005). Vidare kopplar kalenderläsningen till konfluens-traditionens timingfrågor och paritetsdisciplinen till alla kurser som lär ekvationer som håller: räkna, jämför, fråga varför. En avslutande hållning: utdelningen är finansens mest vardagliga kassaflöde, och optionen är finansens mest exakta instrument — deras möte är därmed den perfekte latmansprovan på om mekaniken sitter: fem frågor, fyra pris, tre rader räkning. Detta är utbildningens slut och hantverkets början — ingen uppmaning, ingen position, utan ett räkneverk som fungerar likadant nästa avstämningsdag och varje avstämningsdag därefter, på läsarens egen hand och eget ansvar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör en egen avstämningsläsning i fyra steg: (1) Välj en aktie med en kommande utdelning (ud-07:s kalender eller bolagets investerar-sida) och notera belopp, avstämningsdag och betalningsdag. (2) Hämta prisbladet för en köp- och en säljoption med samma lösenpris och nära förfallodag, och räkna pariteten C minus P mot aktiepris minus diskonterat lösenpris (enklast: dela lösenpriset med 1 plus räntan i decimaler för tiden som återstår) — hur nära håller ekvationen? (3) Notera aktiekursen dagen före och öppningen på avstämningsdagen, och räkna skillnaden mot det teoretiska fallet — var det mer, mindre eller exakt? (4) Upprepa vid nästa utdelning och samla dina avvikelser i en liten tabell — efter fem avläsningar har du eget material om hur din marknad hanterar utdelningarna, och kapitel tres krafter (skatt, efterfrågeflyttning, signal) kan sökas i dina egna tal. Spara alla svar med datum."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch rekommenderade utdelningsaktier med samma förankring som tillväxtaktier — bolaget som delar ut är bolag som tjänar — och hans syn på optionsmarknadens löftesrikedom var känd skeptisk: det som ser ut som inkomst är ofta ett avstående av uppsida. Kursens covered call-räkning är hans poäng i siffror: premin på 4 är verklig i två av tre världar, men uppgångens 11 tillhör den som höll aktien — och Lynch-historyns bästa decennier byggde på att inte sälja uppsidan för smör.",
+    "grahamSection": "Benjamin Graham såg utdelningen som ägarens mest pålitliga kvitto på att vinsten är verklig, och hans försiktighet med instrument vars värde bygger på motparters aktivitet säger sig själv i optionsvärlden: pariteten är ekvation, men strategin är kontext. Grahams tanke om att varje värdepapper ska förstås från sitt kassaflöde lever i kursens grundmur — optionen äger rörelsen, aktien äger kassaflödet, och den som inte vet vilken av de två hon köpt har inte gjort hemarbetet.",
+    "ak1Section": "I AK1A:s metodik ingår utdelningsmekaniken som bakgrundskontroll i optionsrelaterade analyser: motorernas scenarioarbete kan låta en utdelningsändring verka i både aktiespåret (ud-familjens utrymme) och instrumentprisernas spår (paritetsledet), och arbetsflödet (ek-03-traditionen) dokumenterar avstämningsdatum i de fall en analys rör positioner över ett sådant — så att mekaniska kursjusteringar inte misstolkas som värderingsrörelser när loggen läses i efterhand."
   },
   "ek-01-sam-viktningen": {
     "slug": "ek-01-sam-viktningen",
@@ -211219,6 +211559,174 @@
     "lynchSection": "Peter Lynch uttalade sig sällan om backtests men utövade deras kärna dagligen: hans regel — förstå verksamheten FÖRE siffrorna, och berättelsen måste hålla mot verkligheten du kan se — är en i förhand definierad prövning av varje investment-tes, och hans fältresearch var prövningen på oberoende material (konkurrentens omdöme om konkurrenten: konfluens i arbetskläder). Lynch varnade också för berättelsens makt — historien som låter för bra för att vara sann — vilket i denna kursens termer är överanpassningens psykologi: kurvan (eller berättelsen) som passar materialet för väl är inte förståelse utan memorering, och memoreringen håller inte i nästa decennium. Hans extraordinära resultat vägrar dessutom backtestas helt — vilket är kursens sista påminnelse: en persons omdöme är en regel med miljarder parametrar, och det är JUST därför den varken kan skrivas ner eller kopieras.",
     "grahamSection": "Benjamin Graham arbetade i en tid före datoriserade backtests men med deras väsentligaste dygd fulländad: definitionen i förhand. Hans net-net-regel (köp under två tredjedelar av nettotillgångsvärde) var exakt vad denna kurs kräver — en regel formulerad FÖRE materialet sågs, möjlig att pröva av vem som helst på vilken börs som helst, vid vilken tid som helst. Grahams empiri — decennier av prövningar i den verkliga portföljen — redovisades med hans karakteristiska återhållsamhet: regeln håller I GENOMSNITT och ÖVER TID, aldrig alltid och aldrig nu; snittet-tänkandet är prövningens andning. Och mr Market är kursens ramberättelse i annan dräkt: marknadens humör erbjuder priser varje dag, och den som backtestar sin regel på humörets data utan att skilja humör från värde prövar fel variabel — Grahams analys började alltid med frågan VAD ÄR VÄRDET, och först därefter vad priset sade om det.",
     "ak1Section": "I AK1A:s metodik är denna kurs EKOSYSTEM-familjens provbänk — det fjärde steget i ek-serien (efter ek-01:s röstlängdning, ek-02:s labbkarta och ek-03:s arbetsflöde): arbetsflödet äger analysens fem stationer från rådata till logg, och provbänken äger nästa fråga — hur en färdig regel prövas mot historien utan att historien luras. Kursen binder ekosystemet till labbets praktik: AKM1:s tjugo variabler är regler vars historiska hållbarhet prövas (akm1-kursen), AK1TS:s vågsystem är regler vars material är kurserna själva (ak1ts-kursen och vågfundament-kursens tidsserier), SAM-viktningen är en regel om regler (ek-01) — och konfluens-kursens oberoendekrav är backtestens sista grind (oberoende material, annan period, annat mått). Grannfamiljerna fördjupar verktygen: rs-01 och km-013 (volatilitetens klustring — autokorrelationen bakom månadsfällan), am-01 och am-02 (spread och index — kostnadernas och jämförelsebasens hemvist), km-065 (dogs of the dow — historiens store regeltest), rk-12 (svansarna materialet knappt bär) och pc-21/pc-22 (laborationsrapportens form). Efter kursen är ekosystemets övriga kurser inte ritningar att beundra utan system att pröva — vilket är hela skillnaden mellan ett skåp med instrument och ett laboratorium."
+  },
+  "ek-05-monte-carlo-i-motorn": {
+    "slug": "ek-05-monte-carlo-i-motorn",
+    "category": "EKOSYSTEM",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Monte Carlo i motorn — tusen framtider ur en kassaflödesprognos",
+    "summary": "EKOSYSTEM-familjens femte steg: Monte Carlo-metoden, konsten att byta en enda prognos mot en fördelning av möjliga. Kursen bygger simuleringen från grunden med tre variabler — tillväxt trekantig (2, 6, 10 procent), rörelsemarginal normalfördelad (12,0 med standardavvikelse 1,5) och kalkylränta trekantig (7, 9, 11 procent) — och visar deterministiska basfallets värde 152 kronor per aktie mot simuleringens percentiler P5 92, P50 150 och P95 230 efter tiotusen drag: ett band från nittiotvå till tvåhundratrettio kronor där punkten 152 låg och låtsas vara säker. Därpå korrelationens roll genom den gemensamma drivfaktorn (z lika med minus ett ger tillväxt 3 procent och marginal 10,5; z lika med ett ger 9 procent och 13,5 — par som hör ihop i verkligheten men aldrig i oberoende drag), svansarnas diktatur (P5 som styrvariabel och dess släktskap med förlustpercentilerna), den falska precisionens fälla och determinismens roll (samma frö ger samma percentiler — granskbarheten som princip). Genomgående utbildning i metodens hantverk, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Bygga en simulering från tre fördelningar: tillväxt trekantig med läge 2, typvärde 6 och tak 10 procent, marginal normalfördelad med väntevärde 12,0 och standardavvikelse 1,5, kalkylränta trekantig mellan 7 och 11 med typvärde 9 — och veta varför trekantig är schablonvalet när bara min-, typ- och maxvärde är kända. Läsa utfallet i percentiler i stället punkter: P5 92, P50 150, P95 230 kronor mot basfallets 152, bandbredd 138 kronor, och medianens lilla avstånd till basfallet som ett mått på modellens snedsteg. Konstruera korrelation genom en gemensam drivfaktor: konjunkturtalet z flyttar tillväxt (6 plus 3z) och marginal (12,0 plus 1,5z) samtidigt, så z lika med minus ett ger paret 3 procent och 10,5 — och förklara varför oberoende drag tillåter omöjliga kombinationer som hög tillväxt med kollapsad marginal. Känna de tre klassiska fällorna: skräp in ger skräp ut (fördelningar ur tunn luft), falsk precision (tiotusen desimaler är inte kunskap) och svanstyrning (P5 får inte bli hela sanningen). Använda determinismen som granskningsverktyg: fast frö ger bitidentiska percentiler, så varje simulering kan köras om, ifrågasättas och förbättras — samma princip som ek-04 lär för historieprovningen.",
+    "why": "EKOSYSTEM-familjens fyra steg täcker husets grundläggande hantverk — SAM-viktningen (ek-01), labbets karta (ek-02), arbetsflödet (ek-03) och backtestens historieprovning (ek-04) — men framtidssidan har ingen kurs: hela ekosystemets poäng är att kombinera fem teoriers röster till en sammanvägd bild med osäkerhet, och den enda metod som räknar osäkerheten rakt igenom en kassaflödesprognos är simuleringen. Sond mot registrets 411 kurser: monte carlo bland kurserna ger noll träffar (endast bokträff i princip-boken om företagsfinans, som ka-kriteriet tillåter), percentil och simulering ger noll — metodens hem i utbudet är tomt. Kursen är också familjens naturliga nästa Avancerad-steg: den bygger direkt på ek-01:s viktdiscussion (osäkerhet som något att väga, inte att fly), ek-03:s dokumentationsdisciplin (varje antagande skrivet och utbytbart) och ek-04:s varningar (historien kalibrerar, men överanpassar) — och den ger AKM2-traditionens scenarioarbete dess beräkningsgrund: grenarna är fördelningar, sammanvägningen är en simulering.",
+    "history": {
+      "origin": "Metoden fick sitt namn efter spelbordet i Monte Carlo, men föddes vid kärnvapenlaboratoriet i Los Alamos: fysikerna Stanislaw Ulam och John von Neumann behövde räkna på neutroners vandringar genom material där varje steg var ett slumpdrag, och lösningen blev att låta slumpen arbeta — tusen simulerade banor i stället för en olösbar ekvation. Insikten var generell: när ett system har många osäkra ingångar blir den ärliga uträkningen en fördelning, och fördelningar kan byggas mekaniskt genom upprepade drag. Finansen mötte metoden via projektvärdering på sextiotalet, då oljebolagen simulerade prospekteringens utfall i stället för att rapportera ett enda väntevärde.",
+      "evolution": "Datorernas tillväxt förvandlade metoden från dyrt specialverktyg till vardagsredskap: det som krävde dataplatser på sextiotalet kan en bärbar dator göra tiotusen gånger på en eftermiddag. Finansanalytikerna anammade den i vågor — kassaflödesmodeller med osäkra tillväxtantaganden, räntesimuleringar för bankernas böcker och de riskmått (kursens granne km-031) som bygger på percentiler av förlust. Parallellt växte kritiken: simulationer som gömde sina antaganden bakom decimalprakt, korrelationsmodeller som brast i kriser och den eviga frestelsen att låta tiotusen drag framstå som vetskap i stället för som organiserad okunnighet.",
+      "modern": "I dag är simulering en del av analysvärldens grundutrustning: investerare möter den som scenariorutor med procenttal, bankerna som kapitalkravsberäkningar och projektvärderare som beslutsträd med förgreningar. Husets egen tradition är en av metodens renaste tappningar: motorerna kör deterministiskt med fasta frön — samma indata ger samma utfall, varje percentil kan spåras till sina drag — vilket gör simulationen granskningsbar på samma sätt som en bokföring. Kursen bygger på den traditionen: simuleringen är inte en spådom utan en skriven berättelse om antaganden, och dess värde ligger i att antagandena syns, kan bytas och kan hållas ansvariga mot verkligheten."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Från punkt till band — varför en prognos inte räcker",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Byggstenarna — tre fördelningar och ett drag",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Läsa utfallet — percentiler, median och bandet",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Korrelationen — den gemensamma drivfaktorn z",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Tre fällor — skräp, precision och svansstyrning",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — determinism, dokumentation och omprövning",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Från punkt till band — varför en prognos inte räcker",
+        "minutes": 4,
+        "intro": "Varje värdering slutar traditionellt i ett tal: aktien är värd 152 kronor. Kursens första steg är att fråga vad det talet döljer — och att ersätta det med något ärligare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Betrakta en enkel schablonvärdering med tre antaganden: omsättningstillväxt 6 procent per år, rörelsemarginal 12,0 procent och kalkylränta 9 procent. Skjuts de tre talen genom en diskonteringsmodell kommer svaret 152 kronor per aktie — och med det talet på bordet ser beslutet rationellt ut: kursen 120 är under värdet, kursen 180 över. Men varje antagande är en gissning med osäkerhet kring sig, och det är kursens hela utgångspunkt: tillväxten kan bli 3 eller 9 procent, marginalen 10,5 eller 13,5, kalkylräntan 8 eller 10 — och varje kombination ger sitt eget värde. Räknas alla kombinationer igenom blir resultatet inte ett tal utan en fördelning, och frågan flyttar sig från vad är aktien värd till hur bred är kunskapen: simuleringen i kapitel tre ger percentiler från 92 till 230 kronor — ett band där punkten 152 ligger och låtsas vara säker. Detta är Monte Carlo-metodens grundtanke, döpt efter spelbordet och född i kärnfysikens beräkningar: i stället för att lösa osäkerheten analytiskt (ofta omöjligt när många variabler samverkar) låter man slumpen arbeta — drag en osäker variabel i taget ur sin fördelning, räkna färdigt, upprepa tiotusen gånger, läs av utfallet som frekvenser. Metoden flyttar alltså inte osäkerheten bort — den flyttar osäkerheten FRAM, från fotnoten (antaganden i en bilaga) till resultatet (ett band i stället en punkt). För ekosystemets del är steget naturligt: ek-01 lär vikten av att låta fem teorier röstas med osäkerhet, ek-04 lär provningen mot historien — denna kurs lär den tredje benet, beräkningen av framtiden som fördelning. Och en sak är värd att säga direkt: metoden dömer inte basfallets 152 kronor till fel — medianen i exemplet landar på 150, nästan träff — den dömer dess FALSKA SÄKERHET, vilket är något helt annat."
+          },
+          {
+            "type": "definition",
+            "content": "Monte Carlo-metoden — beräkningsförfarandet som ersätter en deterministisk kalkyl med upprepade slumptalsdrag: varje osäker ingång får en fördelning i stället för ett fast tal, modellen räknas färdigt för varje drag, och de många utfallen läs av som frekvenser, percentiler och band. Namnet anspelar på spelbordets slump; metoden är allt annat än spel — den är osäkerhetens bokföring."
+          },
+          {
+            "type": "insight",
+            "content": "Basfallets 152 och simulated median 150 är nästan samma tal — det är inte metoden mot kalkylen, utan bandet mot punkten som är budskapet. Den som bara bär med sig ett tal från en analys bär en siffra; den som bär ett band bär en hållning."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Byggstenarna — tre fördelningar och ett drag",
+        "minutes": 4,
+        "intro": "En simulering är bara så ärlig som sina ingångar. Kapitlet bygger de tre fördelningarna i exemplet — och visar valet av fördelningstyp som ett eget analystyg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre variabler bär exempelsimuleringen. Tillväxten får en trekantig fördelning med golv 2 procent, typvärde 6 procent och tak 10 procent: trekantig är schablonvalet när analysen känner ett minne, ett mest-sannolikt värde och ett tak men inte hela formen — den bygger en enkel topp av tre tal och kräver inget mer. Marginalen får en normalfördelning med väntevärde 12,0 procent och standardavvikelse 1,5: historikens svängningar kring ett stabilt mittläge är klassisk normalfördelningsmark, och standardavvikelsen 1,5 säger att omkring två tredjedelar av åren hamnar mellan 10,5 och 13,5 (km-013 äger standardavvikelsens hela måttslära). Kalkylräntan får åter trekantig, mellan 7 och 11 procent med typvärde 9 — räntans framtid har ingen form som någon känner i förväg, och trekanten erkänner det. Ett drag i simuleringen är sedan enkelt: slumpa ett värde ur varje fördelning, räkna hela värderingsmodellen färdigt med de tre värdena, notera aktievärdet; upprepa tiotusen gånger. Två konstruktionsval förtjänar ljus. Det första är sammanhanget mellan variablerna: i det enkla utförandet dras de tre oberoende, vilket kapitel fyra visar är en halvsanning som måste hanteras. Det andra är antalet drag: tiotusen räcker för att percentilerna i P5-P95-området ska bli stabila (dubbleras antalet till tjugo tusen flyttar de sig inte märkbart), medan extremstatistik som P0,1 kräver betydligt fler — en praktisk avvägning mellan beräkningskostnad och svansnoggrannhet. Slutligen fodringen av fördelningarna: varje tal — golvet 2, toppen 6, taket 10, avvikelsen 1,5 — är ett antagande som ska kunna försvaras med historia (ek-04:s kalibrering) eller förstånd (branschens fysik, konkurrensläget, mt-familjens vallgravs-linser), och som ska skrivas ned tillsammans med resultatet. En fördelning utan dokumenterad härstamning är inte analys utan dekoration."
+          },
+          {
+            "type": "tabell",
+            "content": "Variabel | Fördelning | Parametrar | Valets motivering\nOmsättningstillväxt | Trekantig | golv 2, typ 6, tak 10 procent | Tre kända lägen (golv, typ, tak), ingen djupare formkunskap\nRörelsemarginal | Normal | väntevärde 12,0, avvikelse 1,5 procent | Stabilt mittläge, historisk spridning kring det\nKalkylränta | Trekantig | golv 7, typ 9, tak 11 procent | Räntans framtid känner ingen form i förväg\nAktievärde | Resultat | P5 92, P50 150, P95 230 kronor | Utfallet av tiotusen fulla värderingsdrag"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens sista rad är ingångarnas summa — och metoden ärlighet: aktievärdet är inte en variabel man antar något om, utan det som flyter ut när de tre andra fått arbete. Fördelningsvalet är därmed det nya analystyget: den som kan motivera golv, typ och tak kan simulera; den som bara kan motivera punkten kan räkna."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Läsa utfallet — percentiler, median och bandet",
+        "minutes": 4,
+        "intro": "Tiotusen värden är ingen läsning förrän de ordnats. Percentilerna är simuleringens grammatik — och kapitlet lär den, från median till svans.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Efter tiotusen drag ligger tiotusen aktievärden på bordet; sorteras de från lägst till högst blir läsningen percentilernas. Medianen P50 är det mittersta värdet, 150 kronor i exemplet — hälften av framtidsvärldarna ligger under, hälften över, och den är simuleringens svar på basfallets 152 (skillnaden 2 kronor är modellens lilla snedsteg, här från den trekantiga räntans asymmetri). P5 är värdet som fem procent av världarna understiger, 92 kronor; P95 är värdet som fem procent överstiger, 230 kronor. Bandet mellan dem — 138 kronor brett, från 92 till 230 — är simuleringens huvudresultat: med nittio procens täckning ligger aktiens värde i detta spann, givet antagandena. Det villkorat är hela konsten: bandet säger INTE att aktien med nittio procents säkerhet är värd 92 till 230 — den formuleringen glömmer att fördelningarna själva var gissningar. Bandet säger att OM antagandena om tillväxt, marginal och ränta är rimliga, DÅ är värdeosäkerheten denna bredd — två olika påståenden, och förväxlingen av dem är kapitel fems falska precision. Percentilerna ger också beslutsformerna: den försiktige läser P5 92 (finns det en värld där detta blir utfallet, och är den hanterbar?), den neutrale medianen 150 (vad är det väntade, rent av mekaniskt?), den optimistiske P95 230 (vad krävs för att världen ska bli den — och vem andra prissätter den?). Notera att P5-läsningen är släkt med förlustpercentiler i riskmåttens tradition (km-031 äger den släktingens fulla lära) — skillnaden är att VaR mäter förlust på en position medan P5 här mäter värde på en bedömning; samma procentlogik, olika objekt. Slutligen medianens och väntevärdets skillnad: medianen är robust mot enstaka extremvärden (den kan inte dras av en ensam svansvärld), väntevärdet väger in alla — i snedställda utfall som detta är medianen den ärligare mittpunkten, och skillnaden dem emellan ett mått på snedheten själv."
+          },
+          {
+            "type": "tabell",
+            "content": "Percentil | Värde (kr/aktie) | Andel världar under | Naturlig läsning\nP5 | 92 | 5 procent | Dalsidan: värsta rimliga, givet antagandena\nP25 | 121 | 25 procent | Nedre kvartilen: var fjärde värld sämre\nP50 | 150 | 50 procent | Medianen: basfallets 152 nästan träffat\nP75 | 183 | 75 procent | Övre kvartilen: var fjärde värld bättre\nP95 | 230 | 95 procent | Taksidan: bästa rimliga, givet antagandena"
+          },
+          {
+            "type": "insight",
+            "content": "Kvartilerna (P25 121 och P75 183) är bandets mittfemtio procent — där bor halva framtiden. Kvartilavståndet 62 kronor mot hela bandet 138 visar att utfallet inte är jämnt utspritt: det kantar sig, och kantarna är där besluten egentligen fattas."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Korrelationen — den gemensamma drivfaktorn z",
+        "minutes": 4,
+        "intro": "Den dyraste lögnen i en simulering är inte fel tal utan falsk oberoende: variabler som i verkligheten går hand i hand dras var för sig. Kapitlet bygger kopplingen med ett enda verktyg — drivfaktorn.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "I exempelsimuleringen dras tillväxt och marginal oberoende — och därmed kan samma drag ge tillväxt 9 procent SAMTIDIGT som marginal 10,5: en värld där bolaget växer femtio procent snabbare än toppantagandet men samtidigt pressar marginalen till botten. Sådana världar existerar (omställningsskedet: volymen köps till priset av lönsamheten), men de är sällsynta — och en simulering full av dem har fel andelar av framtiden. Lösningen är konstruktionens vackraste enkla verktyg: en gemensam drivfaktor, kalla den z, som representerar konjunkturen och rör flera variabler samtidigt. I exemplet: tillväxt lika med 6 plus 3z plus brus, marginal lika med 12,0 plus 1,5z plus brus. När z dras lika med minus ett (svag konjunktur) hamnar tillväxten kring 3 procent och marginalen kring 10,5 — båda lägre tillsammans, som i en verklig nedgång; när z dras lika med plus ett blir paret 9 procent och 13,5 — båda högre tillsammans, som i ett kraftigt uppgångsläge. Drag som hör ihop i verkligheten hamnar nu ihop i simuleringen. Två konsekvenser är kursens viktigaste korrelationsläxa. Den första: korrelationen VIDGAR utfallet — när dåligt kommer samman blir dalvärldarna värre (P5 sjunker) och när bra kommer samman blir takvärldarna högre (P95 stiger), varför den oberoende simuleringen UNDERSKATTAR bandet för variabler som i grunden andas samma konjunktur. Den andra: tecknet spelar roll i motsats riktning också — variabler som rör sig EMOT varandra (oljepriset för en transportör är en kostnadssida som faller när efterfrågan stiger) kan på samma sätt smalna av bandet, och konstruktören måste välja tecken med förstånd. Verktyget skalas också: två drivfaktorer (en konjunktur, en bransch) ger rikare mönster; fulla korrelationsmatriser (rp-03 och km-014 äger matrisernas hantverk) ger den precisa formen. Men principen är densamma på alla nivåer: kopplingen ska INTE byggas in i slumptalen i efterhand — den bor i modellens struktur, där den kan ses, ifrågasättas och skrivas ned. Historiens varning är alltid närvarande (rk-10 äger den): korrelationer som var lugna i fredstid konvergerar i kriser, så den gemensamma drivfaktorn är ett krigsantagande om fred — rimligt men inte heligt, och ett av de första att ompröva när omvärlden vänder."
+          },
+          {
+            "type": "tabell",
+            "content": "Drivfaktorn z | Tillväxt = 6 + 3z (procent) | Marginal = 12,0 + 1,5z (procent) | Världsbeskrivning\nz = −1 | 3 | 10,5 | Nedgång: båda svaga tillsammans\nz = 0 | 6 | 12,0 | Basläge: mittpar, som basfallet\nz = +1 | 9 | 13,5 | Uppgång: båda starka tillsammans\nOberoende drag | kan ge 9 med 10,5 | kan ge 3 med 13,5 | Omöjliga blandvärldar — falskt antagande"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens sista rad är korrelationsläxans hela kärna i fyra kolumner: utan drivfaktorn blir simuleringen en maskin för att blanda världar som inte finns. Med den blir blandningarna färre — och utfallets bredd ett santare mått på verklighetens sammanhang."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Tre fällor — skräp, precision och svansstyrning",
+        "minutes": 4,
+        "intro": "Metodens tre klassiska fallgropar har alla samma rot: simulationen ser ut att veta mer än den gör. Kapitlet lär igenkänningen av var och en.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: skräp in, skräp ut — med stil. Slumpmekaniken döljer snarare än avslöjar ingångarnas kvalitet: en fördelning med golv 2, typ 6, tak 10 ser exakt lika självsäker ut vare sig talen kom från tjugo års historia och en branschgranskning eller från en kaffepaus. Metodens eget botemedel är dokumentationen: varje parameter med sin härstamning (ek-03:s disciplin — antagandena skrivna, utbytbara, sökbara), och en känslighetsövning som standard: flytta golvet till 0 och taket till 12, kör igen, se hur bandet rör sig — om svaret är okänsligt för det som är osäkert är det stabilt; om det är känsligt är KÄNSLIGHETEN resultatet, inte bandet. Fälla två: falsk precision. Tiotusen drag ger percentiler med två decimaler och en känsla av vetskap som inget antagande i bygget bär. Minns vad bandet är: en konsekvens AV antagandena, inte ett mått PÅ verkligheten; formuleringen aktien är värd 92 till 230 kronor med nittio procens säkerhet är därför dubbel fel (bandet är villkorat, och täckningen gäller modellens världar, inte världen). Det ärliga språket är villkorssatser: givet dessa antaganden blir osäkerheten denna bredd — sedan diskuteras antagandena, inte decimalerna. Fälla tre: svansstyrning. Det är frestande att låta P5 bli hela sanningen — ett beslutsystem som bara handlar när P5 överstiger kursen blir konservativt och sover genom det mesta, och ett som styrs av P95 blir ett verktyg för hoppet. Percentilerna är LÄSNINGS-redskap, inte beslutsregler; valet av läsning (P5, P50, något däremellan) är en riskhållning som hör till beslutaren, inte till modellen — och den ska formuleras som princip i förväg, inte väljas i efterhand efter vilket tal som behagade. Bakom alla tre fällor står samma princip som ek-04 lärde om historieprovning: modellen är ett förhör av antaganden, inte en auktoritet — och den som glömmer det har bytt en okunnighet (ett tal utan osäkerhet) mot en värre (en osäkerhet som låtsas vara kunskap)."
+          },
+          {
+            "type": "insight",
+            "content": "Tre fällor, ett gemensamt kännetecken: alla tre låter simuleringen tala i första person — jag VET att värdet är mellan 92 och 230. Den sunda simuleringen talar i villkorlig form: OM antagandena, DÅ bandet. Grammatiken är hela skillnaden mellan verktyg och självbedrägeri."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskapet — determinism, dokumentation och omprövning",
+        "minutes": 4,
+        "intro": "Kursens sista kapitel för samman hantverket till tre hållningar — och knyter det till ekosystemets övriga kurser och husets egen motor-tradition.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första hållningen är determinismen. Slumpen i en simulering ska vara en fast slumptalskedja med ett noterat frö: samma frö på samma modell ger bitidentiska percentiler, varje band kan köras om, granskas och jämföras rad för rad. Det är inte en teknisk detalj utan metodens trovärdighetsgrund — en simulering som ger olika svar varje körning kan inte granskas, och en som inte kan granskas är ingen analys utan en åsikt med siffror (hela husets tradition bygger på samma princip: motorerna kör deterministiskt, svaret kan spåras till sina rötter). Den andra hållningen är dokumentationen: fördelarnas parametrar med härstamning, drivfaktorernas tecken med motivering, antal drag, frö, och resultatets percentiler — allt skrivet vid sidan av bandet, så att nästa läsare (nästa års du) kan byta ut ett antagande i taget och se vad som händer. Den tredje hållningen är omprövningen: antagandena ska ha utgångsdatum — marginalhistoriken skrivs om varje rapport, räntefördelningen varje räntevändning, och korrelationsantagandena först i varje kris; simuleringen som inte körts om på ett år är inte längre en analys utan ett minne. Koppla till familjen: ek-02 gav kartan över husets motorer, ek-03 arbetsflödet som dokumenterar varje analys, ek-01 SAM-viktningen som väger fem teoriers röster — simuleringen är det beräkningsmaskineri som gör sådana vikningar räknebara när rösterna bär osäkerhet, och scenario-traditionens grenar (bra, bas, dal) är i sin natur tre utvalda drag ur det band denna kurs lär bygga. Fem frågor att stå kvar vid: Vilka variabler bär min osäkerhet, och vilka fördelningar förtjänar de? Vilka variabler andas samma luft — och åt vilket håll? Hur brett är bandet, och vad gör det med min fråga? Vilken läsning (P5, P50, P75) är min princip — och varför? När ska modellen köras om? Med de fem på plats är hantverket komplett: metoden räknebar, antagandena synliga, omprövningen inbyggd — utbildning i konstruktion, aldrig en uppmaning att handla på bandet eller utanför det; valen är läsarens egna, på egen analys, och bandet är en beskrivning av kunskapens gränser, inte en presentation av kunskapens omfattning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Bygg en egen minisimulering i fyra steg, gärna i ett kalkylblad: (1) Definiera tre variabler för ett bolag du följer — tillväxt, marginal och kalkylränta — och sätt trekantiga golv/typ/tak för två av dem och en marginal med väntevärde och standardavvikelse för den tredje; skriv ner varför du valde varje tal. (2) Simulera genom att slumpa (kalkylbladets slumpfunktion räcker) femhundra rader med varsin kombination och räkna en enkel värdering per rad — vid behov en förenklad flerårsregel. (3) Sortera utfallen och läs P5, P25, P50, P75 och P95; jämför medianen med ditt bestämda basfall — hur stort är snedsteget? (4) Lägg till en gemensam drivfaktor: låt tillväxt och marginal delvis styras av samma slumptal (som kapitel fyrs z) och kör femhundra nya rader — bredare eller smalare band, och varför? Spara alla fyra svar med datum, frö och antagandelista; upprepa om ett kvartal med färsk historia."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch arbetade med berättelser och tumregler snarare än fördelningar, men hans metod att tänka i flera utfall samtidigt — vad som händer om planen lyckas, halvlyckas, misslyckas — är simuleringens berättade släkting. Lynch påminde också om kursens fjärde kapitel utan formler: variabler i ett bolag hänger ihop, och den som räknar dem var för sig räknar ett bolag som inte finns.",
+    "grahamSection": "Benjamin Grahams säkerhetsmarginal är kursens svar i förväg: skillnaden mellan pris och värde ska bära utfallens spridning, inte bara basfallets punkt. Grahams egen praktik — att arbeta med intervall och nedre gränser i stället för exakta värden — är percentiltänkande före percentilierna, och hans krav på att varje antagande ska kunna motiveras separat lever vidare i de dokumenterade fördelningsparametrarna.",
+    "ak1Section": "I AK1A:s metodik är Monte Carlo ett av motorverkstadens beräkningsstöd: AKM2-traditionens scenarioarbete låter grenarnas antaganden bära fördelningar, sammanvägningen räknar band i stället punkter, och arbetsflödet (ek-03-traditionen) dokumenterar frö, antaganden och percentiler vid varje körning — så att varje band kan köras om, granskas och hållas ansvarigt, i linje med ek-04:s principer för provning och husets determinism-doktrin."
   },
   "rp-01-riskmattens-karta": {
     "slug": "rp-01-riskmattens-karta",

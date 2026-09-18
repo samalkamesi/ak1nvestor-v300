@@ -1,0 +1,144 @@
+{
+  "slug": "ek-05-monte-carlo-i-motorn",
+  "category": "EKOSYSTEM",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Monte Carlo i motorn — tusen framtider ur en kassaflödesprognos",
+  "summary": "EKOSYSTEM-familjens femte steg: Monte Carlo-metoden, konsten att byta en enda prognos mot en fördelning av möjliga. Kursen bygger simuleringen från grunden med tre variabler — tillväxt trekantig (2, 6, 10 procent), rörelsemarginal normalfördelad (12,0 med standardavvikelse 1,5) och kalkylränta trekantig (7, 9, 11 procent) — och visar deterministiska basfallets värde 152 kronor per aktie mot simuleringens percentiler P5 92, P50 150 och P95 230 efter tiotusen drag: ett band från nittiotvå till tvåhundratrettio kronor där punkten 152 låg och låtsas vara säker. Därpå korrelationens roll genom den gemensamma drivfaktorn (z lika med minus ett ger tillväxt 3 procent och marginal 10,5; z lika med ett ger 9 procent och 13,5 — par som hör ihop i verkligheten men aldrig i oberoende drag), svansarnas diktatur (P5 som styrvariabel och dess släktskap med förlustpercentilerna), den falska precisionens fälla och determinismens roll (samma frö ger samma percentiler — granskbarheten som princip). Genomgående utbildning i metodens hantverk, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Bygga en simulering från tre fördelningar: tillväxt trekantig med läge 2, typvärde 6 och tak 10 procent, marginal normalfördelad med väntevärde 12,0 och standardavvikelse 1,5, kalkylränta trekantig mellan 7 och 11 med typvärde 9 — och veta varför trekantig är schablonvalet när bara min-, typ- och maxvärde är kända. Läsa utfallet i percentiler i stället punkter: P5 92, P50 150, P95 230 kronor mot basfallets 152, bandbredd 138 kronor, och medianens lilla avstånd till basfallet som ett mått på modellens snedsteg. Konstruera korrelation genom en gemensam drivfaktor: konjunkturtalet z flyttar tillväxt (6 plus 3z) och marginal (12,0 plus 1,5z) samtidigt, så z lika med minus ett ger paret 3 procent och 10,5 — och förklara varför oberoende drag tillåter omöjliga kombinationer som hög tillväxt med kollapsad marginal. Känna de tre klassiska fällorna: skräp in ger skräp ut (fördelningar ur tunn luft), falsk precision (tiotusen desimaler är inte kunskap) och svanstyrning (P5 får inte bli hela sanningen). Använda determinismen som granskningsverktyg: fast frö ger bitidentiska percentiler, så varje simulering kan köras om, ifrågasättas och förbättras — samma princip som ek-04 lär för historieprovningen.",
+  "why": "EKOSYSTEM-familjens fyra steg täcker husets grundläggande hantverk — SAM-viktningen (ek-01), labbets karta (ek-02), arbetsflödet (ek-03) och backtestens historieprovning (ek-04) — men framtidssidan har ingen kurs: hela ekosystemets poäng är att kombinera fem teoriers röster till en sammanvägd bild med osäkerhet, och den enda metod som räknar osäkerheten rakt igenom en kassaflödesprognos är simuleringen. Sond mot registrets 411 kurser: monte carlo bland kurserna ger noll träffar (endast bokträff i princip-boken om företagsfinans, som ka-kriteriet tillåter), percentil och simulering ger noll — metodens hem i utbudet är tomt. Kursen är också familjens naturliga nästa Avancerad-steg: den bygger direkt på ek-01:s viktdiscussion (osäkerhet som något att väga, inte att fly), ek-03:s dokumentationsdisciplin (varje antagande skrivet och utbytbart) och ek-04:s varningar (historien kalibrerar, men överanpassar) — och den ger AKM2-traditionens scenarioarbete dess beräkningsgrund: grenarna är fördelningar, sammanvägningen är en simulering.",
+  "history": {
+    "origin": "Metoden fick sitt namn efter spelbordet i Monte Carlo, men föddes vid kärnvapenlaboratoriet i Los Alamos: fysikerna Stanislaw Ulam och John von Neumann behövde räkna på neutroners vandringar genom material där varje steg var ett slumpdrag, och lösningen blev att låta slumpen arbeta — tusen simulerade banor i stället för en olösbar ekvation. Insikten var generell: när ett system har många osäkra ingångar blir den ärliga uträkningen en fördelning, och fördelningar kan byggas mekaniskt genom upprepade drag. Finansen mötte metoden via projektvärdering på sextiotalet, då oljebolagen simulerade prospekteringens utfall i stället för att rapportera ett enda väntevärde.",
+    "evolution": "Datorernas tillväxt förvandlade metoden från dyrt specialverktyg till vardagsredskap: det som krävde dataplatser på sextiotalet kan en bärbar dator göra tiotusen gånger på en eftermiddag. Finansanalytikerna anammade den i vågor — kassaflödesmodeller med osäkra tillväxtantaganden, räntesimuleringar för bankernas böcker och de riskmått (kursens granne km-031) som bygger på percentiler av förlust. Parallellt växte kritiken: simulationer som gömde sina antaganden bakom decimalprakt, korrelationsmodeller som brast i kriser och den eviga frestelsen att låta tiotusen drag framstå som vetskap i stället för som organiserad okunnighet.",
+    "modern": "I dag är simulering en del av analysvärldens grundutrustning: investerare möter den som scenariorutor med procenttal, bankerna som kapitalkravsberäkningar och projektvärderare som beslutsträd med förgreningar. Husets egen tradition är en av metodens renaste tappningar: motorerna kör deterministiskt med fasta frön — samma indata ger samma utfall, varje percentil kan spåras till sina drag — vilket gör simulationen granskningsbar på samma sätt som en bokföring. Kursen bygger på den traditionen: simuleringen är inte en spådom utan en skriven berättelse om antaganden, och dess värde ligger i att antagandena syns, kan bytas och kan hållas ansvariga mot verkligheten."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Från punkt till band — varför en prognos inte räcker", "minutes": 4 },
+    { "num": 2, "title": "Byggstenarna — tre fördelningar och ett drag", "minutes": 4 },
+    { "num": 3, "title": "Läsa utfallet — percentiler, median och bandet", "minutes": 4 },
+    { "num": 4, "title": "Korrelationen — den gemensamma drivfaktorn z", "minutes": 4 },
+    { "num": 5, "title": "Tre fällor — skräp, precision och svansstyrning", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — determinism, dokumentation och omprövning", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Från punkt till band — varför en prognos inte räcker",
+      "minutes": 4,
+      "intro": "Varje värdering slutar traditionellt i ett tal: aktien är värd 152 kronor. Kursens första steg är att fråga vad det talet döljer — och att ersätta det med något ärligare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Betrakta en enkel schablonvärdering med tre antaganden: omsättningstillväxt 6 procent per år, rörelsemarginal 12,0 procent och kalkylränta 9 procent. Skjuts de tre talen genom en diskonteringsmodell kommer svaret 152 kronor per aktie — och med det talet på bordet ser beslutet rationellt ut: kursen 120 är under värdet, kursen 180 över. Men varje antagande är en gissning med osäkerhet kring sig, och det är kursens hela utgångspunkt: tillväxten kan bli 3 eller 9 procent, marginalen 10,5 eller 13,5, kalkylräntan 8 eller 10 — och varje kombination ger sitt eget värde. Räknas alla kombinationer igenom blir resultatet inte ett tal utan en fördelning, och frågan flyttar sig från vad är aktien värd till hur bred är kunskapen: simuleringen i kapitel tre ger percentiler från 92 till 230 kronor — ett band där punkten 152 ligger och låtsas vara säker. Detta är Monte Carlo-metodens grundtanke, döpt efter spelbordet och född i kärnfysikens beräkningar: i stället för att lösa osäkerheten analytiskt (ofta omöjligt när många variabler samverkar) låter man slumpen arbeta — drag en osäker variabel i taget ur sin fördelning, räkna färdigt, upprepa tiotusen gånger, läs av utfallet som frekvenser. Metoden flyttar alltså inte osäkerheten bort — den flyttar osäkerheten FRAM, från fotnoten (antaganden i en bilaga) till resultatet (ett band i stället en punkt). För ekosystemets del är steget naturligt: ek-01 lär vikten av att låta fem teorier röstas med osäkerhet, ek-04 lär provningen mot historien — denna kurs lär den tredje benet, beräkningen av framtiden som fördelning. Och en sak är värd att säga direkt: metoden dömer inte basfallets 152 kronor till fel — medianen i exemplet landar på 150, nästan träff — den dömer dess FALSKA SÄKERHET, vilket är något helt annat."
+        },
+        {
+          "type": "definition",
+          "content": "Monte Carlo-metoden — beräkningsförfarandet som ersätter en deterministisk kalkyl med upprepade slumptalsdrag: varje osäker ingång får en fördelning i stället för ett fast tal, modellen räknas färdigt för varje drag, och de många utfallen läs av som frekvenser, percentiler och band. Namnet anspelar på spelbordets slump; metoden är allt annat än spel — den är osäkerhetens bokföring."
+        },
+        {
+          "type": "insight",
+          "content": "Basfallets 152 och simulated median 150 är nästan samma tal — det är inte metoden mot kalkylen, utan bandet mot punkten som är budskapet. Den som bara bär med sig ett tal från en analys bär en siffra; den som bär ett band bär en hållning."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Byggstenarna — tre fördelningar och ett drag",
+      "minutes": 4,
+      "intro": "En simulering är bara så ärlig som sina ingångar. Kapitlet bygger de tre fördelningarna i exemplet — och visar valet av fördelningstyp som ett eget analystyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre variabler bär exempelsimuleringen. Tillväxten får en trekantig fördelning med golv 2 procent, typvärde 6 procent och tak 10 procent: trekantig är schablonvalet när analysen känner ett minne, ett mest-sannolikt värde och ett tak men inte hela formen — den bygger en enkel topp av tre tal och kräver inget mer. Marginalen får en normalfördelning med väntevärde 12,0 procent och standardavvikelse 1,5: historikens svängningar kring ett stabilt mittläge är klassisk normalfördelningsmark, och standardavvikelsen 1,5 säger att omkring två tredjedelar av åren hamnar mellan 10,5 och 13,5 (km-013 äger standardavvikelsens hela måttslära). Kalkylräntan får åter trekantig, mellan 7 och 11 procent med typvärde 9 — räntans framtid har ingen form som någon känner i förväg, och trekanten erkänner det. Ett drag i simuleringen är sedan enkelt: slumpa ett värde ur varje fördelning, räkna hela värderingsmodellen färdigt med de tre värdena, notera aktievärdet; upprepa tiotusen gånger. Två konstruktionsval förtjänar ljus. Det första är sammanhanget mellan variablerna: i det enkla utförandet dras de tre oberoende, vilket kapitel fyra visar är en halvsanning som måste hanteras. Det andra är antalet drag: tiotusen räcker för att percentilerna i P5-P95-området ska bli stabila (dubbleras antalet till tjugo tusen flyttar de sig inte märkbart), medan extremstatistik som P0,1 kräver betydligt fler — en praktisk avvägning mellan beräkningskostnad och svansnoggrannhet. Slutligen fodringen av fördelningarna: varje tal — golvet 2, toppen 6, taket 10, avvikelsen 1,5 — är ett antagande som ska kunna försvaras med historia (ek-04:s kalibrering) eller förstånd (branschens fysik, konkurrensläget, mt-familjens vallgravs-linser), och som ska skrivas ned tillsammans med resultatet. En fördelning utan dokumenterad härstamning är inte analys utan dekoration."
+        },
+        {
+          "type": "tabell",
+          "content": "Variabel | Fördelning | Parametrar | Valets motivering\nOmsättningstillväxt | Trekantig | golv 2, typ 6, tak 10 procent | Tre kända lägen (golv, typ, tak), ingen djupare formkunskap\nRörelsemarginal | Normal | väntevärde 12,0, avvikelse 1,5 procent | Stabilt mittläge, historisk spridning kring det\nKalkylränta | Trekantig | golv 7, typ 9, tak 11 procent | Räntans framtid känner ingen form i förväg\nAktievärde | Resultat | P5 92, P50 150, P95 230 kronor | Utfallet av tiotusen fulla värderingsdrag"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens sista rad är ingångarnas summa — och metoden ärlighet: aktievärdet är inte en variabel man antar något om, utan det som flyter ut när de tre andra fått arbete. Fördelningsvalet är därmed det nya analystyget: den som kan motivera golv, typ och tak kan simulera; den som bara kan motivera punkten kan räkna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Läsa utfallet — percentiler, median och bandet",
+      "minutes": 4,
+      "intro": "Tiotusen värden är ingen läsning förrän de ordnats. Percentilerna är simuleringens grammatik — och kapitlet lär den, från median till svans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Efter tiotusen drag ligger tiotusen aktievärden på bordet; sorteras de från lägst till högst blir läsningen percentilernas. Medianen P50 är det mittersta värdet, 150 kronor i exemplet — hälften av framtidsvärldarna ligger under, hälften över, och den är simuleringens svar på basfallets 152 (skillnaden 2 kronor är modellens lilla snedsteg, här från den trekantiga räntans asymmetri). P5 är värdet som fem procent av världarna understiger, 92 kronor; P95 är värdet som fem procent överstiger, 230 kronor. Bandet mellan dem — 138 kronor brett, från 92 till 230 — är simuleringens huvudresultat: med nittio procens täckning ligger aktiens värde i detta spann, givet antagandena. Det villkorat är hela konsten: bandet säger INTE att aktien med nittio procents säkerhet är värd 92 till 230 — den formuleringen glömmer att fördelningarna själva var gissningar. Bandet säger att OM antagandena om tillväxt, marginal och ränta är rimliga, DÅ är värdeosäkerheten denna bredd — två olika påståenden, och förväxlingen av dem är kapitel fems falska precision. Percentilerna ger också beslutsformerna: den försiktige läser P5 92 (finns det en värld där detta blir utfallet, och är den hanterbar?), den neutrale medianen 150 (vad är det väntade, rent av mekaniskt?), den optimistiske P95 230 (vad krävs för att världen ska bli den — och vem andra prissätter den?). Notera att P5-läsningen är släkt med förlustpercentiler i riskmåttens tradition (km-031 äger den släktingens fulla lära) — skillnaden är att VaR mäter förlust på en position medan P5 här mäter värde på en bedömning; samma procentlogik, olika objekt. Slutligen medianens och väntevärdets skillnad: medianen är robust mot enstaka extremvärden (den kan inte dras av en ensam svansvärld), väntevärdet väger in alla — i snedställda utfall som detta är medianen den ärligare mittpunkten, och skillnaden dem emellan ett mått på snedheten själv."
+        },
+        {
+          "type": "tabell",
+          "content": "Percentil | Värde (kr/aktie) | Andel världar under | Naturlig läsning\nP5 | 92 | 5 procent | Dalsidan: värsta rimliga, givet antagandena\nP25 | 121 | 25 procent | Nedre kvartilen: var fjärde värld sämre\nP50 | 150 | 50 procent | Medianen: basfallets 152 nästan träffat\nP75 | 183 | 75 procent | Övre kvartilen: var fjärde värld bättre\nP95 | 230 | 95 procent | Taksidan: bästa rimliga, givet antagandena"
+        },
+        {
+          "type": "insight",
+          "content": "Kvartilerna (P25 121 och P75 183) är bandets mittfemtio procent — där bor halva framtiden. Kvartilavståndet 62 kronor mot hela bandet 138 visar att utfallet inte är jämnt utspritt: det kantar sig, och kantarna är där besluten egentligen fattas."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Korrelationen — den gemensamma drivfaktorn z",
+      "minutes": 4,
+      "intro": "Den dyraste lögnen i en simulering är inte fel tal utan falsk oberoende: variabler som i verkligheten går hand i hand dras var för sig. Kapitlet bygger kopplingen med ett enda verktyg — drivfaktorn.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I exempelsimuleringen dras tillväxt och marginal oberoende — och därmed kan samma drag ge tillväxt 9 procent SAMTIDIGT som marginal 10,5: en värld där bolaget växer femtio procent snabbare än toppantagandet men samtidigt pressar marginalen till botten. Sådana världar existerar (omställningsskedet: volymen köps till priset av lönsamheten), men de är sällsynta — och en simulering full av dem har fel andelar av framtiden. Lösningen är konstruktionens vackraste enkla verktyg: en gemensam drivfaktor, kalla den z, som representerar konjunkturen och rör flera variabler samtidigt. I exemplet: tillväxt lika med 6 plus 3z plus brus, marginal lika med 12,0 plus 1,5z plus brus. När z dras lika med minus ett (svag konjunktur) hamnar tillväxten kring 3 procent och marginalen kring 10,5 — båda lägre tillsammans, som i en verklig nedgång; när z dras lika med plus ett blir paret 9 procent och 13,5 — båda högre tillsammans, som i ett kraftigt uppgångsläge. Drag som hör ihop i verkligheten hamnar nu ihop i simuleringen. Två konsekvenser är kursens viktigaste korrelationsläxa. Den första: korrelationen VIDGAR utfallet — när dåligt kommer samman blir dalvärldarna värre (P5 sjunker) och när bra kommer samman blir takvärldarna högre (P95 stiger), varför den oberoende simuleringen UNDERSKATTAR bandet för variabler som i grunden andas samma konjunktur. Den andra: tecknet spelar roll i motsats riktning också — variabler som rör sig EMOT varandra (oljepriset för en transportör är en kostnadssida som faller när efterfrågan stiger) kan på samma sätt smalna av bandet, och konstruktören måste välja tecken med förstånd. Verktyget skalas också: två drivfaktorer (en konjunktur, en bransch) ger rikare mönster; fulla korrelationsmatriser (rp-03 och km-014 äger matrisernas hantverk) ger den precisa formen. Men principen är densamma på alla nivåer: kopplingen ska INTE byggas in i slumptalen i efterhand — den bor i modellens struktur, där den kan ses, ifrågasättas och skrivas ned. Historiens varning är alltid närvarande (rk-10 äger den): korrelationer som var lugna i fredstid konvergerar i kriser, så den gemensamma drivfaktorn är ett krigsantagande om fred — rimligt men inte heligt, och ett av de första att ompröva när omvärlden vänder."
+        },
+        {
+          "type": "tabell",
+          "content": "Drivfaktorn z | Tillväxt = 6 + 3z (procent) | Marginal = 12,0 + 1,5z (procent) | Världsbeskrivning\nz = −1 | 3 | 10,5 | Nedgång: båda svaga tillsammans\nz = 0 | 6 | 12,0 | Basläge: mittpar, som basfallet\nz = +1 | 9 | 13,5 | Uppgång: båda starka tillsammans\nOberoende drag | kan ge 9 med 10,5 | kan ge 3 med 13,5 | Omöjliga blandvärldar — falskt antagande"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens sista rad är korrelationsläxans hela kärna i fyra kolumner: utan drivfaktorn blir simuleringen en maskin för att blanda världar som inte finns. Med den blir blandningarna färre — och utfallets bredd ett santare mått på verklighetens sammanhang."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Tre fällor — skräp, precision och svansstyrning",
+      "minutes": 4,
+      "intro": "Metodens tre klassiska fallgropar har alla samma rot: simulationen ser ut att veta mer än den gör. Kapitlet lär igenkänningen av var och en.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: skräp in, skräp ut — med stil. Slumpmekaniken döljer snarare än avslöjar ingångarnas kvalitet: en fördelning med golv 2, typ 6, tak 10 ser exakt lika självsäker ut vare sig talen kom från tjugo års historia och en branschgranskning eller från en kaffepaus. Metodens eget botemedel är dokumentationen: varje parameter med sin härstamning (ek-03:s disciplin — antagandena skrivna, utbytbara, sökbara), och en känslighetsövning som standard: flytta golvet till 0 och taket till 12, kör igen, se hur bandet rör sig — om svaret är okänsligt för det som är osäkert är det stabilt; om det är känsligt är KÄNSLIGHETEN resultatet, inte bandet. Fälla två: falsk precision. Tiotusen drag ger percentiler med två decimaler och en känsla av vetskap som inget antagande i bygget bär. Minns vad bandet är: en konsekvens AV antagandena, inte ett mått PÅ verkligheten; formuleringen aktien är värd 92 till 230 kronor med nittio procens säkerhet är därför dubbel fel (bandet är villkorat, och täckningen gäller modellens världar, inte världen). Det ärliga språket är villkorssatser: givet dessa antaganden blir osäkerheten denna bredd — sedan diskuteras antagandena, inte decimalerna. Fälla tre: svansstyrning. Det är frestande att låta P5 bli hela sanningen — ett beslutsystem som bara handlar när P5 överstiger kursen blir konservativt och sover genom det mesta, och ett som styrs av P95 blir ett verktyg för hoppet. Percentilerna är LÄSNINGS-redskap, inte beslutsregler; valet av läsning (P5, P50, något däremellan) är en riskhållning som hör till beslutaren, inte till modellen — och den ska formuleras som princip i förväg, inte väljas i efterhand efter vilket tal som behagade. Bakom alla tre fällor står samma princip som ek-04 lärde om historieprovning: modellen är ett förhör av antaganden, inte en auktoritet — och den som glömmer det har bytt en okunnighet (ett tal utan osäkerhet) mot en värre (en osäkerhet som låtsas vara kunskap)."
+        },
+        {
+          "type": "insight",
+          "content": "Tre fällor, ett gemensamt kännetecken: alla tre låter simuleringen tala i första person — jag VET att värdet är mellan 92 och 230. Den sunda simuleringen talar i villkorlig form: OM antagandena, DÅ bandet. Grammatiken är hela skillnaden mellan verktyg och självbedrägeri."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — determinism, dokumentation och omprövning",
+      "minutes": 4,
+      "intro": "Kursens sista kapitel för samman hantverket till tre hållningar — och knyter det till ekosystemets övriga kurser och husets egen motor-tradition.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första hållningen är determinismen. Slumpen i en simulering ska vara en fast slumptalskedja med ett noterat frö: samma frö på samma modell ger bitidentiska percentiler, varje band kan köras om, granskas och jämföras rad för rad. Det är inte en teknisk detalj utan metodens trovärdighetsgrund — en simulering som ger olika svar varje körning kan inte granskas, och en som inte kan granskas är ingen analys utan en åsikt med siffror (hela husets tradition bygger på samma princip: motorerna kör deterministiskt, svaret kan spåras till sina rötter). Den andra hållningen är dokumentationen: fördelarnas parametrar med härstamning, drivfaktorernas tecken med motivering, antal drag, frö, och resultatets percentiler — allt skrivet vid sidan av bandet, så att nästa läsare (nästa års du) kan byta ut ett antagande i taget och se vad som händer. Den tredje hållningen är omprövningen: antagandena ska ha utgångsdatum — marginalhistoriken skrivs om varje rapport, räntefördelningen varje räntevändning, och korrelationsantagandena först i varje kris; simuleringen som inte körts om på ett år är inte längre en analys utan ett minne. Koppla till familjen: ek-02 gav kartan över husets motorer, ek-03 arbetsflödet som dokumenterar varje analys, ek-01 SAM-viktningen som väger fem teoriers röster — simuleringen är det beräkningsmaskineri som gör sådana vikningar räknebara när rösterna bär osäkerhet, och scenario-traditionens grenar (bra, bas, dal) är i sin natur tre utvalda drag ur det band denna kurs lär bygga. Fem frågor att stå kvar vid: Vilka variabler bär min osäkerhet, och vilka fördelningar förtjänar de? Vilka variabler andas samma luft — och åt vilket håll? Hur brett är bandet, och vad gör det med min fråga? Vilken läsning (P5, P50, P75) är min princip — och varför? När ska modellen köras om? Med de fem på plats är hantverket komplett: metoden räknebar, antagandena synliga, omprövningen inbyggd — utbildning i konstruktion, aldrig en uppmaning att handla på bandet eller utanför det; valen är läsarens egna, på egen analys, och bandet är en beskrivning av kunskapens gränser, inte en presentation av kunskapens omfattning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen minisimulering i fyra steg, gärna i ett kalkylblad: (1) Definiera tre variabler för ett bolag du följer — tillväxt, marginal och kalkylränta — och sätt trekantiga golv/typ/tak för två av dem och en marginal med väntevärde och standardavvikelse för den tredje; skriv ner varför du valde varje tal. (2) Simulera genom att slumpa (kalkylbladets slumpfunktion räcker) femhundra rader med varsin kombination och räkna en enkel värdering per rad — vid behov en förenklad flerårsregel. (3) Sortera utfallen och läs P5, P25, P50, P75 och P95; jämför medianen med ditt bestämda basfall — hur stort är snedsteget? (4) Lägg till en gemensam drivfaktor: låt tillväxt och marginal delvis styras av samma slumptal (som kapitel fyrs z) och kör femhundra nya rader — bredare eller smalare band, och varför? Spara alla fyra svar med datum, frö och antagandelista; upprepa om ett kvartal med färsk historia."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch arbetade med berättelser och tumregler snarare än fördelningar, men hans metod att tänka i flera utfall samtidigt — vad som händer om planen lyckas, halvlyckas, misslyckas — är simuleringens berättade släkting. Lynch påminde också om kursens fjärde kapitel utan formler: variabler i ett bolag hänger ihop, och den som räknar dem var för sig räknar ett bolag som inte finns.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal är kursens svar i förväg: skillnaden mellan pris och värde ska bära utfallens spridning, inte bara basfallets punkt. Grahams egen praktik — att arbeta med intervall och nedre gränser i stället för exakta värden — är percentiltänkande före percentilierna, och hans krav på att varje antagande ska kunna motiveras separat lever vidare i de dokumenterade fördelningsparametrarna.",
+  "ak1Section": "I AK1A:s metodik är Monte Carlo ett av motorverkstadens beräkningsstöd: AKM2-traditionens scenarioarbete låter grenarnas antaganden bära fördelningar, sammanvägningen räknar band i stället punkter, och arbetsflödet (ek-03-traditionen) dokumenterar frö, antaganden och percentiler vid varje körning — så att varje band kan köras om, granskas och hållas ansvarigt, i linje med ek-04:s principer för provning och husets determinism-doktrin."
+}

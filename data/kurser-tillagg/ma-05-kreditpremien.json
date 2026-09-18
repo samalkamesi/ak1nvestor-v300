@@ -1,0 +1,144 @@
+{
+  "slug": "ma-05-kreditpremien",
+  "category": "MAKROEKONOMI & RÄNTA",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kreditpremien — varför bolagets lån kostar mer än statens",
+  "summary": "MAKROEKONOMI & RÄNTA-familjens nybörjarkurs i fördjypningsserien: kreditpremien, skillnaden mellan vad ett bolag betalar för att låna och vad staten betalar för samma löptid. Kursen lär grundräkningen med två låntagare — staten lånar fem år till 2,0 procent och bolaget till 3,5 procent, spreaden 1,5 procentenheter är priset på risken att inte få alla pengar tillbaka — och dekompositionen: med fallissemangssannolikhet 2 procent och återbetalning 40 procent vid betalningsstopp är den förväntade förlusten 2 procent gånger 60 procent lika med 1,2 procentenheter av spreaden, och resten 0,3 är kompensation för att bära risken och för att obligationen är svårare att sälja. Därpå läsningen av spreaden som marknadens termometer (0,8 procentenheter i expansiva år mot 3,5 i förträngda, i exempletal) och vad den kostar bolaget: bolaget med lån 2 000 miljoner kronor betalar 30 miljoner per år mer än statsalternativet, och mot rörelsevinst 150 miljoner är det 20 procent av vinsten som går till premien. Genomgående utbildning i att läsa och räkna mekanismen, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Räkna kreditpremien som skillnaden mellan två räntor med samma löptid: bolagets 3,5 procent minus statens 2,0 procent lika med 1,5 procentenheter — och veta varför löptiden måste vara samma för att jämförelsen ska gälla risken och inte tiden. Dekomponera spreaden i sina tre delar med den förväntade förlusten: fallissemangssannolikhet 2 procent gånger förlustgrad 60 procent (100 procent minus återbetalning 40 procent) lika med 1,2 procentenheter, medan resten 0,3 bär riskpremien och likviditeten. Läsa spreadens läge som marknadens riskaptit: smala spreader (kring 0,8 i exemplena) hör hemma i expansiva lägen och breda (kring 3,5) i förträngda — samma bolag, olika pris på samma risk. Räkna vad spreaden kostar bolaget: lån 2 000 miljoner kronor gånger 0,015 lika med 30 miljoner kronor per år, och 30 delat med rörelsevinst 150 miljoner lika med 20 procent. Hitta råtalen i verkligheten: statsräntor per löptid, företagsobligationers kuponger och bolagets egen genomsnittliga låneränta i årsredovisningen (räntekostnad delat med genomsnittlig räntebärande skuld). Ställa de fem läsningsfrågorna till en ny spreadsiffra — mot vem, mot vilken löptid, mot vilken historia, vad förväntas, vad saknas.",
+  "why": "MAKROEKONOMI & RÄNTA-familjens fördjupningsserie bär fyra steg — transmissionsmekaniken (Avancerad), lönebildningen (Intermediär), realräntan (Avancerad) och konjunkturindikatorerna (Intermediär) — men inget startsteg: den som vill börja på familjens egen stege måste redan behärska kedjor som ma-01 bygger vidare på, och grundseriens km-054 och km-055 äger räntan och inflationen som begrepp men inte låneprissättningen mellan olika låntagare. Sond mot registrets 411 kurser: kreditpremie, företagsobligation och upplåningskostnad ger noll träffar bland kurserna — talen finns överallt i finansens vardag (varje bolåneränta, varje företagsutlåning, varje obligationskurs) men ingen kurs lär läsningen. Kreditpremien är också familjens mest handgripliga nybörjarämne: det kräver bara subtraktion och en tanke på två låntagare, och det binder samman de tre ytterkurserna — räntan (km-054), kreditcykeln (st-04) och bolagets kostnadssida (ma-01:s kedjas sista led) — till ett enda tal som går att hämta och räkna hem första dagen.",
+  "history": {
+    "origin": "Skillnaden mellan kungars och köpmäns lånekostnader är äldre än någon ränteteori: i renässansens italienska stadsstater lånade statsmakterna billigare än enskilda handelshus, och i prislistor från Amsterdams börs på sextonhundratalet noterades olika låntagares obligationer till olika avkastningar — spreaden fanns i praktiken innan någon skrev ned den som begrepp. Grunderna till förståelsen lades av kreditanalytiker vid sekelskiftet 1900, när järnvägsbolagens obligationer gav allt högre avkastning än statspapper och marknaden lärde sig skilja bolag från bolag.",
+    "evolution": "När obligationsmarknaderna växte fram på artonhundratalet blev spreaderna ett eget studieobjekt: kreditvärderare vid de stora bankhusen lärde sig skilja järnvägsbolag från statsfinanser, och betygsskalorna som gradvis standardiserades i USA på tidigt nittonhundratal formaliserade det marknaden redan gjorde — att sortera låntagare efter förväntad förlust. Rättsinstitutionerna följde efter: konkurshanteringen återbetalningsgraden avgjorde hur mycket av skulden som överlevde ett betalningsstopp, och därmed blev spreadens första del räknebar. Kriserna blev ämnets repetitionsräkningar: efter varje nedgång kunde analytiker gå tillbaka och se hur väl premierna täckt de verkliga förlusterna — och lära sig att de sällan gjorde det fullt ut i de värsta åren.",
+    "modern": "I dag är kreditpremien en av marknadens mest bevakade termometrar: obligationsfonder, bankers utlåningspriser och bolagens emissionsbeslut hänger alla på spreaden, och centralbankernas krisåtgärder har vid upprepade tillfällen handlat just om att trycka ned den när den steg för snabbt — köp av företagsobligationer under pandemiåret 2020 är det mest citerade exemplet. För den enskilde läsaren är spreaden dessutom det makrotal som sitter närmast bolaget: den syns i bolagets räntekostnad, i bankens marginal och i varje nyemission, vilket gör den till en naturlig brygga mellan familjens makrokurser och bolagsanalysens eget fält."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Två låntagare, två priser — skillnaden som är en kurs", "minutes": 4 },
+    { "num": 2, "title": "Vad premien skyddar mot — den förväntade förlusten", "minutes": 4 },
+    { "num": 3, "title": "Termometern — att läsa spreadens läge och rörelse", "minutes": 4 },
+    { "num": 4, "title": "Vad spreaden kostar bolaget — från procent till miljoner", "minutes": 4 },
+    { "num": 5, "title": "Var talen finns — kurvor, kuponger och årsredovisningen", "minutes": 4 },
+    { "num": 6, "title": "Mästerskapet — fem frågor till varje spread", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Två låntagare, två priser — skillnaden som är en kurs",
+      "minutes": 4,
+      "intro": "Allt börjar med en subtraktion. Två låntagare vill låna lika länge — marknaden ger dem två olika räntor, och skillnaden mellan dem är denna kurs ämne.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sätt två räntor bredvid varandra: staten lånar fem år till 2,0 procent och ett industrbolag lånar fem år till 3,5 procent. Båda får pengar idag och betalar ränta varje år — men bolaget betalar 1,5 procentenheter mer. Den skillnaden kallas kreditpremie (i vardagstal ofta spread, och kursen använder båda orden som synonymer). Varför finns den? Inte för att tiden är olika — båda lånar i fem år, så skillnaden kan inte handla om tidens pris, som km-054 lär ut. Anledningen är att staten nästan alltid betalar tillbaka, medan bolaget kan hamna i betalningsstopp: den som lånar ut till bolaget tar en risk som statsutlånaren inte tar, och räntan måste betala för den risken. Här är kursens första och viktigaste läseregel, som återkommer i varje kapitel: räntan har (minst) två delar — tidens pris och risken att inte få pengarna tillbaka. Grundkursens räntelära (km-054) äger första delen; denna kurs äger den andra. Regel nummer två är jämförelseregeln: en spread är bara meningsfull mellan räntor med samma löptid, för femårig risk ska jämföras med femårig tid och tioårig med tioårig — att subtrahera en femårig statsränta från en tioårig bolagsränta blandar ihop två saker (löptidens och riskens pris) och ger ett tal utan mening. Håll dig därför alltid till par med matchande löptid, så bär subtraktionen exakt det budskapet: vad marknaden just nu tar betalt för att låna ut till just detta bolag, bortsett från vad tiden kostar."
+        },
+        {
+          "type": "definition",
+          "content": "Kreditpremie (spread) — skillnaden mellan en låntagares ränta och en statsränta med samma löptid, mätt i procentenheter. Talet är marknadens pris på risken att låntagaren inte betalar tillbaka allt: en högre spread betyder högre prissatt risk, inte dyrare tid."
+        },
+        {
+          "type": "insight",
+          "content": "Subtraktionen är enkel — 3,5 minus 2,0 lika med 1,5 — men den förutsätter parighet: samma löptid, samma valuta, samma datum. En spread utan sin jämförelseregel är som en temperatur utan termometer: ett tal som ser nyttigt ut och säger ingenting."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Vad premien skyddar mot — den förväntade förlusten",
+      "minutes": 4,
+      "intro": "Varför är spreaden 1,5 procentenheter och inte 0,3 eller 8? Resan från risk till pris går genom en enkel räkning: sannolikheten för betalningsstopp gånger hur mycket som då går förlorat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tänk på obligationsköparens situation med konkreta tal. En femårig bolagsobligation på 1 000 kronor betalar 3,5 procent per år — 35 kronor — medan motsvarande statsobligation betalar 20 kronor. De extra 15 kronorna per år är premien, och de ska täcka två saker. Den första är den förväntade förlusten, som räknas i två steg: antag att marknaden bedömer risken för betalningsstopp till 2 procent under obligationens liv, och att ett betalningsstopp i genomsnitt lämnar återbetalning 40 procent av skulden (fyrtio kronor av hundra — återstoden går förlorad i rekonstruktion eller konkurs). Förlustgraden blir 100 minus 40 lika med 60 procent, och den förväntade förlusten 2 procent gånger 60 procent lika med 1,2 procent per lånenhet: på 1 000 kronor är det 12 kronor om året i förväntad förlust. Räkna vidare: av premiens 15 kronor går alltså 12 kronor till att täcka det som statistiskt förväntas gå förlorat — och de sista 3 kronorna (0,3 procentenheter av spreaden) är den andra delen: kompensationen för att överhuvudtaget bära osäkerheten, även i år då betalningsstoppet uteblir, plus en slant för att bolagsobligationen är svårare att sälja snabbt än statspapper. Denna tredelning — förväntad förlust, riskkompensation, likviditet — är spreadens anatomi, och den förklarar direkt varför samma bolag kan få olika spread i olika tider: sannolikheten (2 procent) är en bedömning som ändras med konjunkturen, återbetalningsgraden (40 procent) ändras med vad bolaget äger, och riskkompensationen ändras med marknadens samlade aptit. Notera också vad räkningen INTE säger: den säger inte att premien är rätt — bara hur den byggs. Om marknaden prissätter 2 procent och verkligheten visar 6 har obligationens köpare betalats för lite, och tvärtom; att diskutera den skillnaden är analysens kärna, och den återkommer i kapitel tre."
+        },
+        {
+          "type": "tabell",
+          "content": "Del av spreaden | Exempeltalet | Vad den täcker | Vad som rör den\nFörväntad förlust | 1,2 procentenheter | Statistiskt förväntade förluster: 2 % × 60 % | Konjunktur, bransch, bolagetssoliditet\nRiskkompensation | 0,2 procentenheter | Priset på att bära osäkerheten | Marknadens samlade riskaptit\nLikviditet | 0,1 procentenheter | Svårigheten att sälja snabbt | Marknadens djup för just papperet\nHela spreaden | 1,5 procentenheter | Summan av de tre | Allt ovan — samtidigt"
+        },
+        {
+          "type": "insight",
+          "content": "Exempeltalens tredelning (1,2 plus 0,2 plus 0,1 lika med 1,5) är en schablon — verkliga fördelningar skiljer sig — men strukturen är alltid densamma: spreaden är aldrig ett tal utan en summa. Den som minns delarna kan ställa frågan bakom frågan: är den nya spreaden högre för att risken växt, eller för att marknaden blivit räddare?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Termometern — att läsa spreadens läge och rörelse",
+      "minutes": 4,
+      "intro": "Enskilda tal betyder lite; lägen och rörelser betyder mycket. Spreaden är marknadens mest direkta termometer på kreditklimatet — och kursens tredje kapitel lär läsningen av den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kreditpremier andas med ekonomin, och det i en regelbunden rytm som st-04 lär ut som kreditcykeln: i expansiva år är sannolikheterna låga, aptiten stor och spreaderna smala — ett stabilt industrbolag kan låna till 0,8 procentenheter över staten i exemplena — och i förträngda år stiger både sannolikheterna och riskkompensationen samtidigt, varvid spreaden kan multipliceras flera gånger utan att något enskilt bolag förändrats: 3,5 procentenheter är inte ovanligt i historiens ansträngda lägen. Därmed blir spreadserien en av marknadens tidigaste signaler: den breder ut sig ofta före aktiemarknadens nedgångar (där kreditmarknadens deltagare rör sig först) och smalnar av före vändningar uppåt, vilket gör den till en naturlig granne till konjunkturindikatorerna i ma-04 — där ma-04 läser statistikens månadssiffror, läser spreaden marknadens egna pengar. Läsningen har tre nivåer. Nivå ett är läget: var är spreaden mot sin egen historia (smal, normal, bred)? Nivå två är rörelsen: breddar den eller smalnar den, och hur snabbt — en stilla 1,5 och en snabbt stigande 1,5 är två olika budskap. Nivå tre är skillnaderna: breder en bransch ut sig mer än andra, ett bolag merän sina grannar? Skillnadsnivån är där bolagsanalysen börjar, för en bolagsspread som stiger mer än branschens bär information om just det bolaget — och samma läsning återfinns hos kreditbetygens granskare (ks-05 äger betygens värld) och i räntetäckningens avståndsräknare (rs-06 äger den mätningen). En varning hör hemma här också: termometern mäter prissatt risk, inte verklig risk — en lugn spread kan återspegla en frånvaro av oro likaväl som en frånvaro av problem, och historien är full av spreadutbrott som kom sent. Kursens disciplin är därför dubbel: läs termometern, men fråga alltid vad den reagerade på — och vad den ännu inte har märkt."
+        },
+        {
+          "type": "tabell",
+          "content": "Läge i cykeln | Spread, stabilt industriföretag (exempel) | Typisk läsning | Naturlig granne bland kurser\nExpansion, god tillit | 0,8 procentenheter | Smal — risk aptiten stor | ma-04:s indikatorer uppåt\nSen expansion | 1,5 procentenheter | Normal — priset börjar vägas | st-04:s kreditcykel mitt\nFörträngning | 2,5–3,5 procentenheter | Bred — sannolikhet och rädsla stiger | st-04:s nedfas, ma-04 nedåt\nKris, återskapad tillit | 3,5 och däröver, sedan fallande | Brott och normalization | rk-familjens riskmått"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens tal är exempletal, inte historik — men mönstret är historiens: spreaden rör sig i trappsteg, inte linjer, och det största steget kommer oftast när konjunkturen redan vänt. Den som vill veta var i trappan vi står läser rörelsen, inte nivån."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Vad spreaden kostar bolaget — från procent till miljoner",
+      "minutes": 4,
+      "intro": "Procentenheter låter små. Kapitlet visar kedjan från spread till bolagets vinst — en kedja som varje läsare kan räkna efter på vilket bolag som helst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tag ett exempelföretag med räntebärande lån 2 000 miljoner kronor och en genomsnittlig låneränta 3,5 procent — alltså 2 000 gånger 0,035 lika med 70 miljoner kronor i räntekostnad per år. Om statsräntan med matchande löptid är 2,0 procent skulle samma lån, utfärdat av staten, kosta 2 000 gånger 0,020 lika med 40 miljoner — skillnaden 30 miljoner kronor per år är bolagets faktiska kreditpremie i kronor räknade: 2 000 gånger 0,015 lika med 30. Sedan kommer kedjans andra steg, andelen av vinsten: med rörelsevinst 150 miljoner kronor går 30 delat med 150 lika med 20 procent av vinsten åt att betala risken — en femtedel, år efter år, i fred och kris. Kedjan fortsätter naturligt in i värderingen: samma 30 miljoner som är 20 procent av vinsten idag blir en annan andel i nästa konjunkturläge, och när spreaden i ett ansträngt år stiger från 1,5 till 3,0 procentenheter fördubblas premiekostnaden till 60 miljoner — 40 procent av samma vinst — även om bolagets verksamhet är oförändrad. Det är detta som gör kreditpremien till en makvariabel med bolagsadress (ma-01 äger transmissionskedjan i helhet): räntans nivå flyttar ALLA bolags kostnader, men spreadens rörelse flyttar de skuldtungas resultat mest — och därmed också deras spelrum för investeringar och utdelningar (ud-familjen äger utdelningsutrymmets kalkyl). Räknekedjan är dessutom en tvåvägsgata: från bolagets räntekostnad i årsredovisningen kan läsaren räkna BAKLÄNGES till bolagets implicita spread, vilket kapitel fem visar steg för steg. Alla tal i detta kapitel är påhittade och valda för räkbarhet — metoden, inte siffrorna, är leveransen, och varje verkligt bolag bär sin egen kedja att räkna hem."
+        },
+        {
+          "type": "tabell",
+          "content": "Steg | Räkning | Resultat\nBolagets räntekostnad | 2 000 × 0,035 | 70 miljoner kr per år\nStatsalternativet | 2 000 × 0,020 | 40 miljoner kr per år\nKreditpremien i kronor | 70 − 40 (eller 2 000 × 0,015) | 30 miljoner kr per år\nAndel av rörelsevinsten | 30 ÷ 150 | 20 procent\nOm spreaden stiger till 3,0 pp | 2 000 × 0,030 | 60 miljoner — 40 procent av vinsten"
+        },
+        {
+          "type": "insight",
+          "content": "Kedjans starkaste led är den sista raden: från 1,5 till 3,0 procentenheter låter som en detalj i makroskala, men i bolagsskala är det skillnaden mellan en femtedel och två femtedelar av vinsten. Små procentenheter är stora kronor — det är kreditpremiens hela väsen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Var talen finns — kurvor, kuponger och årsredovisningen",
+      "minutes": 4,
+      "intro": "Kursens räkningar lever på rådata, och rådata finns närmare än många tror: i statsräntekurvor, i obligationsköners kuponger och — för de flesta läsare närmast — i bolagets egen årsredovisning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre källor täcker kursens behov. Den första är statsräntekurvan: riksgäldens utbud av statsobligationer ger räntor per löptid (mk-04 äger kurvans hela lära), och för spreadräkningen behövs bara det tal som matchar den jämförda obligationens löptid. Den andra är företagsobligationsmarknaden: noterade bolagsobligationer bär sina kuponger offentligt, och deras ränta mot statsräntan med samma löptid är en färdig spread — banker och kreditinstitut publicerar dagligen sammanställningar av sådana tal, och för de större bolagen på de nordiska marknaderna finns serier med historik som gör kapitel tres läsning möjlig. Den tredje källan är den som flest läsare har närmast: bolagets egen årsredovisning, där räntekostnaden och den räntebärande skulden redovisas. Där blir den egna spreadräkningen två steg: först bolagets genomsnittsla ränta som räntekostnad delat med genomsnittlig räntebärande skuld (med samma försiktighet som all genomsnittsräkning — se km-familjens redovisningskurser om noternas djup, km-004 och km-002); sedan spreaden som skillnaden mot en statsränta med rimlig löptid (bolagets skuld har ofta blandade löptider, så talet blir en schablon — men en schablon med riktning). Redovisningskursernas varning är värd att bära med: räntekostnaden i resultaträkningen innehåller ibland poster som inte är ränta (omvärderingar, derivat, arrangemangsavgifter), och noterna är platsen att rensa bort dem — km-003 äger kassaflödets sida av samma försiktighet. Med de tre källorna i hand kan läsaren bygga en egen liten spreadhistorik för ett bolag eller en bransch: en rad per kvartal, tre kolumner (bolagets ränta, matchande statsränta, skillnaden) — och efter ett år finns en egen termometer att läsa mot kapitel tres mönster. Det är kursens mest bestående redskap: inte minnesgoda siffror utan en hämtning som kan upprepas, granskas och korrigeras — vilket är hela skillnaden mellan att kunna en kurs och att kunna ett hantverk."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räk en egen kreditpremie i fyra steg: (1) Välj ett bolag du följer och hitta i senaste årsredovisningen räntekostnaden och den räntebärande skulden (noterna om du hittar dem där). (2) Räkna bolagets genomsnittliga ränta: räntekostnad delat med genomsnittlig räntebärande skuld — notera att genomsnittet av årets början och slut är bättre än en enda punkt. (3) Hämta en statsränta med rimlig löptid och räkna skillnaden i procentenheter. (4) Räkna vidare i kronor och i andel av vinsten med kapitel fyras kedja, och skriv ned samtliga fyra svar med datum. Upprepa nästa år — då har du din första egna spreadserie, och kapitel tres läsning blir möjlig på egen hand."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor till varje spread",
+      "minutes": 4,
+      "intro": "Kursens sista kapitel för samman verktygen till ett förhörsmönster: fem frågor som förvandlar varje ny spreadtabell till läsning — och som håller metoden öppen för omprövning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sammanförelsen i fem frågor. Fråga ett: mot vem? — varje spread behöver sin statsränta, och jämförelsen ska vara samma valuta och samma marknad som låntagarens egen. Fråga två: mot vilken löptid? — paritetsregeln från kapitel ett, utan den är talet blandat. Fråga tre: var mot historien? — läget mot bolagets och branschens egna serier (kapitel tre), för en spread utan historia är bara ett pris. Fråga fyra: vad är den byggd av? — tredelningen från kapitel två: hur mycket är förväntad förlust, hur mycket är rädsla, hur mycket är svårförsåldhet? Fråga fem: vad kostar den bolaget? — kronkedjan från kapitel fyra, först i kronor, sedan i andel av vinsten. Fem frågor, fyra kapitel verktyg, en hel läsning. Kursens plats i familjen är därefter naturlig: med spreaden i hand växer nästa steg mot ma-01:s transmissionskedja (hur ränteläget når bolagets resultat och värdering) och ma-03:s realränta (vilken del av räntan som är inflationens förväntningar — spreaden är den tredje byggstenen vid sidan av dem); mot st-04:s kreditcykel (var i rytmens trappsteg termometern står) och ma-04:s indikatorer (statistikens eget klockslag). Grundserien km-054 och km-055 bär räntans och inflationens begrepp som spreaden vilar på. Och en avslutande hållning: kreditpremien är ett av finansens mest demokratiska tal — det kräver två räntor, en subtraktion och en tanke på vem som betalar tillbaka — men dess disciplin är ovillkorlig: jämför lika med lika, fråga alltid vad siffran är byggd av, och läs rörelser framför nivåer. Detta är utbildning i läsning, inte uppmaningar i någon riktning; valen och omprövningarna är alltid läsarens egna, på egen analys, och de fem frågorna är byggda för att ställas igen — nästa kvartal, nästa räntebeslut, nästa kris."
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor, fyra kapitel och en subtraktion — det är hela kursen. Resten är träning: en spread läst per kvartal, en egen serie byggd över ett år, och termometerns mönster som successivt blir läsarens eget minne i stället för kursens."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch uppmanade sina läsare att titta på bolagets skuldsida med samma nyfikenhet som produktsidan, och hans berättelser om bolag som lastades med dyra lån under förvärvsboomen är kreditpremielogik i berättad form: räntekostnadens andel av vinsten avgör hur mycket som återstår till ägaren. Lynch lärde också respekt för att låga räntor kan vara en fälla — det är spreaden, inte nivån, som skiljer prissatt risk från dyr tid.",
+  "grahamSection": "Benjamin Grahams analysemp att räkna på räntetäckningen innan någon aktie bedöms trygg är kursens kronkedja i tidig tappning: hans kärntal svarade på hur stor del av vinsten som gick åt att bära skulden. Grahams försiktighet med bolag vars överlevnad vilar på fortsatt billiga lån pekar mot samma sak som spreadens termometerläsning — priset på risk förändras, även när bolaget gör det inte.",
+  "ak1Section": "I AK1A:s metodik ingår kreditpremieläsning som bakgrundstakt i bolagsanalyserna: motorernas kostnadssidor kan berikas med bolagets implicita spread enligt kursens tvåstegsräkning (genomsnittsränta minus matchande statsränta), och scenarioramar i AKM2-traditionen låter spreadläget variera mellan grenarna — ett bredare läge trycker de skuldtungas vinst, ett smalare ljusar den — vilket dokumenteras i arbetsflödet (ek-03-traditionen) så att antagandena kan granskas och bytas när marknadens termometer flyttar sig."
+}

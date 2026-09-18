@@ -1,0 +1,141 @@
+{
+  "verktyg": "verktyg/mobil-lasbarhet.mjs",
+  "datum": "2026-09-18T04:55:21.809Z",
+  "mal": "http://localhost:3000",
+  "visport": "390×844, DSF 2, iPhone-UA",
+  "target": "52 px tryckyta (husstandard våg 93 C3); input ≥16 px mot iOS-zoom",
+  "sidor": [
+    {
+      "sokvag": "/",
+      "antalInteraktiva": 61,
+      "prosaLankarUndantagna": 4,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    },
+    {
+      "sokvag": "/kurser",
+      "antalInteraktiva": 139,
+      "prosaLankarUndantagna": 6,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    },
+    {
+      "sokvag": "/blogg",
+      "antalInteraktiva": 146,
+      "prosaLankarUndantagna": 6,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    },
+    {
+      "sokvag": "/portfolj-forskning",
+      "antalInteraktiva": 69,
+      "prosaLankarUndantagna": 8,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    },
+    {
+      "sokvag": "/forskningsbiblioteket",
+      "antalInteraktiva": 65,
+      "prosaLankarUndantagna": 12,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    },
+    {
+      "sokvag": "/kurser/the-intelligent-investor",
+      "antalInteraktiva": 104,
+      "prosaLankarUndantagna": 7,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": [],
+      "ostabilMatning": false
+    }
+  ]
+}

@@ -14,6 +14,11 @@
  * Ingen installation: node >=22 global WebSocket + /usr/bin/google-chrome.
  * RAM-vakt: vägrar starta under 700 MB tillgängligt (prod bor på servern).
  *
+ * o62 (2026-09-18): stil/font-settle + stabilitetspass — den fasta 4,5 s-
+ *   väntan gav fantomfynd (element mättes 44 px som i settlat läge mäter
+ *   52) när servern bar samtidig mät-/bygglast; bevis i
+ *   data/forskning/OPTIMERING/o62-mobil-lasbarhet-metrologi-s7.md.
+ *
  * Användning:
  *   node verktyg/mobil-lasbarhet.mjs [bas-url] [utfil.json] [sidor…]
  *   node verktyg/mobil-lasbarhet.mjs https://lab.ak1nvestor.com /tmp/före.json
@@ -122,7 +127,21 @@ const MAT_UTTRYCK = `(() => {
 
 async function mataSida(send, sokvag) {
   await send("Page.navigate", { url: `${BAS}${sokvag}` });
-  await SLEEP(4500); // ladda + hydratisera (widgetar monteras vid idle)
+  // o62: vänta på riktigt settle — readyState complete + ALLA stylesheet-
+  // länkar laddade (link.sheet !== null) + webfonterna klara — innan mätning.
+  // Fast väntetid räcker inte under samtidig serverlast (fantomfyndens rot).
+  const REDO_UTTRYCK = `(() => ({
+    klar: document.readyState === "complete",
+    css: [...document.querySelectorAll('link[rel="stylesheet"]')].every((l) => l.sheet !== null),
+    font: document.fonts.status,
+  }))()`;
+  for (let i = 0; i < 40; i++) {
+    const redo = await send("Runtime.evaluate", { expression: REDO_UTTRYCK, returnByValue: true });
+    const v = redo?.result?.value ?? {};
+    if (v.klar && v.css && v.font === "loaded") break;
+    await SLEEP(300);
+  }
+  await SLEEP(1000); // omflöde efter sista resursen (layout settle)
   // CDP-svaret är {id, result: {result: <RemoteObject>, exceptionDetails?}}
   const lasDom = async () => {
     const svar = await send("Runtime.evaluate", {
@@ -145,6 +164,18 @@ async function mataSida(send, sokvag) {
   if (element.length === 0) {
     return { sokvag, fel: "tom DOM efter två försök (kraschad flik?)" };
   }
+  // o62-stabilitetspass: mät igen efter 1,5 s — geometrin ska vara identisk
+  // när layouten settleat; skiljer sig två gånger = fortfarande i rörelse →
+  // sista passet gäller och raden flaggas ostabil (ärlighet över siffror).
+  let ostabil = false;
+  for (let i = 0; i < 2; i++) {
+    await SLEEP(1500);
+    const ny = await lasDom();
+    const tal = (ls) => JSON.stringify(ls.map((e) => `${e.tag}:${e.w}x${e.h}`));
+    if (tal(ny) === tal(element)) break;
+    element = ny;
+    ostabil = i === 1;
+  }
   // Prosa-länkar (display:inline i löpande text) är berättigade undantag —
   // WCAG 2.5.8 räknar inte textförlöpande länkar som tryckmål.
   const prosa = element.filter((e) => e.tag === "a" && e.visning === "inline");
@@ -164,6 +195,7 @@ async function mataSida(send, sokvag) {
     varsta: tryckmal.slice(0, 25),
     inputZoom: inputZoom.length,
     inputZoomVarsta: inputZoom.slice(0, 10),
+    ostabilMatning: ostabil,
   };
 }
 

@@ -2071,6 +2071,36 @@ leverantören sätts; (2) CRON_SECRET-klassen får en skrivande exponent
 (öppen POST med Supabase-skrivning) står sig sedan 09-16 — kurformen finns
 i /api/email (10 IP/min).
 
+## UPPDATERING 2026-09-18 (dokvåg s9-u3 manifest auto-s9-1789752906622 — D21 + C19 + D38 diffade mot verkligheten; D24-pivot efter kollision)
+
+Anspråk på disk FÖRE mätstart (data/vakten/auto-s9-1789752906622-u3-ansprak.md,
+19:38) med D21+D24+C19 valda; under mätfönstret landade syskonens anspråk —
+u1 tog E28, u2 tog D24+D25 (deras filer 19:37; mitt namnmönster utan
+"s9-"-prefix syntes ej i deras lista) ⇒ D24 AVSTÅTT till u2 (deras sektion
+levererad i 73cc0c0d, orörd här), ersatt av D38 (fri, stämplad 09-16, aldrig
+återdiffad). u2:s commit VÄNTADES UT före kart-skrivningen (clobber-kuren).
+Mina D24-mätningar (fas-set 18+24 elementräknade · underlag 426 · ytor 200
+×4 · 8×400 utan 429) bekräftar u2:s bild oberoende — bokfört som
+korsvalidering UTAN skrivning i deras sektion. Allt övrigt EGENMÄTT
+19:4x–20:2x lokal:
+
+| System | Före (senaste passning) | Efter (mätt 09-18) |
+|---|---|---|
+| D21 | sviter 13/13+17/17 (09-16); GDPR-gap öppet; "GET 200 {inloggad:false}" | sviter GRÖNA EGENA igen (13/13 + 17/17, exit 0); {inloggad:false} = PROGRESS-rutten, /api/medlem POST-only (GET 405 korrekt kontrakt, POST ogiltig → 400); GDPR-export fortfarande 0 träffar i UI; SKÄRPNING: kurser +30 (426) medan quiz/XP frusna (8 223/82 230) — s5 levererar kurser utan quiz-underlag, progress-värdet per kurs tunnas (samma rot når D38:s KursNavet) |
+| C19 | beacon i globalt-skal + "kopian i layout.tsx"; gap 3 beacon före samtycke; 0 sviter | KOPIAN BORTA: 0 beacon-träffar i samtliga 3 layouter ⇒ EN beacon; gap 3 KVARSTÅR exakt (0 lasCookieSamtycke i globalt-skal.tsx; ak1a-session rad 257, sendBeacon/fetch 269/271); trafik-API levande: besokareIdag 29 + blockerat24h 9; /api/konvertering GET 404 (endast POST); 0 sviter kvar |
+| D38 | "tre språk fullt via useSprak + speglarna" (09-13); sviter 0; mätt 09-16 | MOTBEVISNING: useSprak 0-träffar i portal + 4 navet, spegelsidor saknas, /ar+/en/min-sida 404 live — enbart fortsatt-panelen (6 träffar) flerspråkig; kärnan enspråkig sedan födseln (kodstilla 09-13) = formuleringsoptimism i kartan, ej fall; 1 093 r exakt oförändrad; sidor 200; revalidate 3600 lever; gäst-kontrakt tyst (401/429-texter i kod 84/91/108/115); gap 5 NYTT |
+
+Poäng: D21 8 · C19 7 · D38 8 — samtliga oförändrade (E33/B14-precedensen:
+kunskap tillförd, inget gap stängt; D38:s motbevisning avslöjar kartfel,
+funktionen föll ej). Snitt **7,6 / 287 / 38 OFÖRÄNDRAT** (inga poäng
+rörda). Kö till huvudagenten: (1) quiz-tillväxt för de +30 kurserna
+(D21+D38, samma rot — sammanfaller med u2:s A2-kö); (2) PageViewBeacon-
+samtyckeslåsning (C19 gap 3, GDPR-läget); (3) D38 tre-språksbeslut:
+spegla navet ELLER kartformulering permanentas; (4) rate-limit på
+/api/fas2-ansok (u2:s D24-kö, bekräftad av 8×400-sonden); (5) anspråks-
+filernas namnmönster i fabriks-prefixet (kollisionen föddes av två
+mönster — disk-först räcker ej om namnen skiljer).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2093,14 +2123,14 @@ i /api/email (10 IP/min).
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp lever (v82); kön 175 filer (+51/dygn: rot 48 · m9-ko 7 · granskning 77 · kvartal 43, mätt 09-17) med sammanställningen FÖRNYAD 16:58 + 3 oberoende kontrollgranskningar/dygn (maskinella paket); flaskhals = publiceringsuttaget (55 frysta, kundens klick R2); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Universum 177 (10 branscher) + landaspekt danmark (09-18); 52 Kön-filer men /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG tredje passningen (importbro saknas) |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
-| C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (mätt 09-16); GDPR-gatingen KODAD för trafik-rapportören men PageViewBeacon sänder före samtycke (mätt 09-16 — spår till Supabase + sessions-localStorage före varje val, mot kakmodalens eget 2022:482-citat); P6 även koddokumenterad |
+| C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (återmätt 09-18); PageViewBeacon sänder fortfarande före samtycke (gap 3 oförändrat 09-18) men layout-KOPIAN är BORTA (0 träffar i 3 layouter = EN beacon); trafik-API lever med färsk data (besokareIdag 29 + blockerat24h 9, mätt 09-18); P6 koddokumenterad |
 | D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
-| D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas i UI (mätt 09-16); replay-skyddet MOTBEVISAT (importtak + engångs-import, kodat sedan våg 87); 4 rutter ALLA vaktade (mätt 09-16); sviter 13/13 + 17/17 grön egen mätning |
+| D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas fortfarande i UI (återmätt 09-18); sviter 13/13 + 17/17 GRÖNA EGENA igen (09-18); /api/medlem är POST-only (GET 405 = korrekt, {inloggad:false} kommer från progress-rutten); NYTT: kurser +30 (426) medan quiz/XP frusna (8 223/82 230) — progress-underlaget tunnas av s5:s kursvågor |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy + rate-limit, inget brev); kundens 8 beslut; intentioner bor i E33:s flaggade tabell |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env (mätt 09-17); grinden MÄTT I PROD (robots/sitemap = 0 tier-URL:er); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA återmätta (09-18; kurs-access.ts orörd sedan 09-07) mot underlag **426** kurser (+57/dygn-par, s5-vågorna); ytor 200 ×5 + valideringsgren 400 + admin-grind 401 (återmätta — SSR-läkningen håller); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (återmätt öppen 09-18) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-pipelinen VILANDE I BÅDA ÄNDARNA (mätt 09-18): rutten fungerar fullt ut (200, 3 brev KÖADE i system_events, supabaseSparad) MEN ingen bevisad driver (/etc/crontab saknar email-raden återmätt + Vercel passiv enligt B14-fyndet) + leverantör okonfigurerad (0 env-namn); CRON_SECRET osatt ⇒ skrivande rutt öppen (200 utan auth); vagkarta-gapet STÄNGT (notis-underlaget lever, 05:05Z + syslog-bevis); notis-tak 100 + 30 d-golv återmätta i kod; referral 405 POST-only; VBOUT SATT; 0 sviter |
-| D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester (mätt 09-16); pass.namn-API-texter fortfarande svenska i alla grenar (mätt); förhandsfyllnad lever ej; gäst-flödet enklare; prod /min-sida 200 |
+| D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | "Tre språk fullt" MOTBEVISAT 09-18: useSprak 0-träffar i portal+4 navet, speglar saknas (404 live), enbart fortsatt-panelen flerspråkig; sviter 0; sidor 200; 1 093 r kodstilla; KursNavets quiz-yta frusen medan kurserna 396→426 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (3,6 dygn; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-18: beslutsminne 70 poster, senaste "ROND 66 [Φ]" 14:47Z stänger våg 186 på live-bevis + falslarmdiagnos; ronder var 3:e timme punktliga, organet svarar 4 min in i rondfönstret); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
@@ -3063,7 +3093,24 @@ Score 9 kvar — felen är drift, inte systemets kod; gap-listan oförändrad.*
   mellan deploys — mjukare i praktiken: verktyget körs vid kurstillägg
   (sok-index.json committad färsk 2026-09-15) men ingen mekanisk tvingan.
 
-## C19. Trafik, spår & konvertering — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+## C19. Trafik, spår & konvertering — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+*Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):
+återdiffad — allt EGENMÄTT ~19:5x lokal. LIVE: POST /api/track {} → 400 ·
+GET /api/trafik → 200 {ok:true, skyddad:true, besokareIdag:29, blockerat24h:9}
+— ytan lever med färsk data (DNA-blockeringen räknar) · GET /api/tracer
+405 + POST tom 400 (POST-only = frivillig delning, oförändrat) · POST
+/api/konvertering/intention {} → 400 · GET /api/konvertering → 404 (endast
+POST — ny precision). FYND A (precisering): 09-16-kartans "PageViewBeacon
+(globalt-skal.tsx:243–276 + KOPIAN i layout.tsx)" — KOPIAN är BORTA: 0
+beacon-/api/track-träffar i samtliga tre layouter ((huvud)/(en)/(ar); en
+rot-layout.tsx existerar ej) ⇒ EN beacon (globalt-skal.tsx 395 r, rad
+245–271) — dubbelräkningsklassen försvunnit. FYND B: gap 3 KVARSTÅR
+oförändrat — beaconen skapar ak1a-session (rad 257) + beaconar/fetchar
+/api/track (269/271) med 0 lasCookieSamtycke-träffar i filen;
+trafik-rapportorns gating orörd (import rad 5, lasCookieSamtycke 97/153).
+Sviter fortfarande 0 (gap 1); alarm-trösklar saknas fortfarande (gap 2).
+Score 7 orörd (E33/B14-precedensen).*
+
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 7): gap 3 BESVARAT med delat
 utfall — trafik-rapportören ÄR samtyckesgated i kod (lasCookieSamtycke i
@@ -3141,7 +3188,23 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   konfig, avsändardomän) overifierad — kodvägen grön, mejlvägen omätbar
   från arbetsytan.
 
-## D21. Medlemsdata & progress — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## D21. Medlemsdata & progress — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+*Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):
+återdiffad — allt EGENMÄTT. Sviter GRÖNA EGENA: progress 13/13 + auth
+17/17 (båda exit 0). PRECISERING av 09-16-radens "GET 200 {inloggad:
+false}": det är PROGRESS-rutten (GET /api/medlem/progress 200 mätt igen);
+/api/medlem är POST-only i kod (186 r, endast POST rad 68) — GET → 405 är
+korrekt kontrakt; POST ogiltig action → 400 {fel:"Ogiltigt action."}
+(validering före sessionslogik). lasMedlemSession 4/4 rutter återmätt ·
+medlem-progress.ts 478 r orörd. GAP: migrering fortfarande enkelriktad
+(migrera-progress.tsx 110 r, ingen återgång) · GDPR-export/radering i UI
+fortfarande 0 träffar (bred sökning) = tyngsta gapet öppet. NY SKÄRPNING
+(data-rörelse): kurser 396→426 (+30 på ett dygn, siffror.json 09-18
+17:39) medan quiz 8 223 / quizXp 82 230 FRUSNA — s5:s kursvågor
+levererar kurser UTAN quiz-underlag ⇒ progress-ytans mätbara värde per
+kurs tunnas (quizXp = exakt quiz×10, planen deterministisk); samma rot
+når D38:s KursNavet. Score 8 orörd (E33/B14).*
+
 
 - **Vad:** Medlemsprogress (kurssteg, quiz-XP, flashcards) i Supabase med
   lokal member-local-fallback, min-sida (nästa steg, streaks, lärväg),
@@ -3322,7 +3385,25 @@ UPPDATERING-sektionen.*
   mejlrondan saknar bevisad driver, och CRON_SECRET-gapet träffar här en
   SKRIVANDE rutt (200 utan auth, mätt).
 
-## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13 · mätt 2026-09-16)
+## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13 · mätt 2026-09-16 · återdiffad 2026-09-18)
+*Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):
+återdiffad — allt EGENMÄTT ~20:0x lokal. STABILT GRÖNT: /min-sida +
+/profil 200 loopback · min-sida.tsx 1 093 r EXAKT oförändrad ·
+kodstilla sedan 09-16 (git tomt) · revalidate=3600 lever (page.tsx:11) ·
+gäst-kontraktet tyst igen: GET bevakning + portfolj → {inloggad:false}
+medan 401/429-texterna lever i kod (bevakning 84/91 · portfolj 108/115).
+STORFYND (motbevisning): 09-13-formuleringen "Tre språk fullt via
+useSprak + speglarna (våg 113)" gäller INTE navet — 0 useSprak/sprak-
+träffar i portal.tsx + alla fyra navet-komponenterna (analys/kurs/
+portfolj/larvag), spegelsidor för min-sida SAKNAS helt i (en)/(ar) och
+/ar|/en/min-sida → 404 live; ENBART fortsatt-panel.tsx (6 träffar) bär
+språket ⇒ nav-kärnan är enspråkig sedan födseln (kodstilla 09-13) —
+kartans "fullt" var formuleringsoptimism, ej funktion som fallit.
+Sviter fortfarande 0 (gap 1). NY SKÄRPNING: KursNavets "kurser med
+quiz-rätt" står stilla medan universum växer 396→426 (quiz frusna —
+samma rot som D21-skärpningen). Score 8 orörd (kunskapsdokvåg; nytt
+gap 5 nedan).*
+
 
 *Uppdatering 2026-09-16 (dokvåg s9-u2 omgång 5): diffad mot verkligheten —
 INGEN funktionsrörelse sedan 09-13 (endast LarvagKort-läsbarhetsrader 3d25e4f5
@@ -3357,7 +3438,7 @@ kunskap tillförd, inga gap stängda).*
   fortfarande svenska (motorpipelinen översätts separat); (3) portföljens
   djupanalys-yta reserverad som tier-yta (R2 — väntar kundens prisbeslut);
   (4) antal/kurs-fält vid one-click-bevakning→portfölj valfria att fylla
-  i efteråt (kunna förhandsfyllas ur senaste analys).
+  i efteråt (kunna förhandsfyllas ur senaste analys); (5) tre-språk på nav-ytan: useSprak 0-träffar i portal + 4 navet-komponenter, spegelsidor saknas (404 live), enbart fortsatt-panelen flerspråkig (motbevisat 09-18 — se uppdatering; designbeslut eller spegling till styrelsen).
 
 ---
 

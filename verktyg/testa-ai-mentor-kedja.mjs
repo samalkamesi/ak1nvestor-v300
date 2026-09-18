@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (86 i tjugosju motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (104 i trettiosex motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -135,6 +135,31 @@ const MOTORDEFS = [
   // kassakonverteringscykeln + lageromsättning, lönsamhetens andra halva;
   // aktiverar ln-04/bk-01/bk-03/km-003).
   { namn: "kapitalbindning", fil: "ai-mentor-kapitalbindning-fragor.ts", fn: "svaraLokaltKapitalbindning", arr: "KAPITALBINDNING_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 17: ekosystemdjup (s6-u2 — SAM-viktningen/röstlängd-
+  // ningen + backtestens hantverk med Monte Carlo-systern; aktiverar
+  // ek-01..ek-05 — HELA EKOSYSTEM-kategorien var mentorväglös enligt
+  // sondens genomräkning av 207/414 nådda kurser; basen äger kvar
+  // helhetsorden konfluens/vågfundamentet/ak1ts, detta lager bär
+  // röstlängdnings- och provbänks-orden).
+  { namn: "ekosystemdjup", fil: "ai-mentor-ekosystemdjup-fragor.ts", fn: "svaraLokaltEkosystemdjup", arr: "EKOSYSTEMDJUP_MONSTER", antal: 2 },
+  // 2026-09-18 omgång 17: handelsdag (s6-u1 — marknadsstrukturen, auktionerna
+  // och kortläget; aktiverar am-03..am-06 — KATEGORIN AKTIEMARKNADEN I
+  // PRAKTIKEN fullt länkad 4/8 → 8/8 + flash-boys som femte källa; basen äger
+  // kvar orderbok/likviditet/spread/nätmäklare, praktik blankningsstrategin
+  // och kortpositions-orden, redovisningsdjupet leasing — clearing kasserat
+  // som kärnord, nämns endast i text; sond _s6u1-sond-omg17.mjs: hela
+  // familjen NULL, kärnorden renta mot 1 032 syskonord).
+  { namn: "handelsdag", fil: "ai-mentor-handelsdag-fragor.ts", fn: "svaraLokaltHandelsdag", arr: "HANDELSDAG_MONSTER", antal: 1 },
+  // 2026-09-18 omgång 17 (tredje i fönstret — tre-agenter-precedensen):
+  // portföljpraktik (s6-u3 — positionsstorlek + tax-loss harvesting +
+  // pensionssparande, PORTFÖLJHANTERING:s praktiska beslutsfrågor;
+  // aktiverar pf-02/pf-09/pf-14 + källorna pf-11/rk-01/pf-03/km-051/
+  // km-052/pf-08/pf-06/km-055/ma-03; basen äger formuleringen "position
+  // sizing" och skatt-/ISK-grubben (V19: pf-02 här KÄLLA), skattedjupet
+  // kapitalförsäkringsfamiljen, portföljbalans rebalansering, portföljgrund
+  // diversifiering/valutarisk, makro inflationsorden; sond
+  // _s6u3-sond-omg17.mjs: familjerna NULL genom kedjan, 0 grannar).
+  { namn: "portföljpraktik", fil: "ai-mentor-portfoljpraktik-fragor.ts", fn: "svaraLokaltPortfoljpraktik", arr: "PORTFOLJPRAKTIK_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -143,7 +168,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 98 (2026-09-18 omgång 16: warrant +1, tidsaxel +2, kapitalbindning +3 — 33-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 104 (2026-09-18 omgång 17: ekosystemdjup +2, handelsdag +1, portföljpraktik +3 — 36-läget)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -240,6 +265,17 @@ const KANONISKA = [
   { fraga: "vad är rörelsekapital?", motor: 32 },
   { fraga: "vad är kassakonverteringscykeln?", motor: 32 },
   { fraga: "vad är lageromsättning?", motor: 32 },
+  // Omgång 17: ekosystemdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är SAM-viktningen?", motor: 33 },
+  { fraga: "vad är röstlängdningen?", motor: 33 },
+  { fraga: "vad är en backtest?", motor: 33 },
+  { fraga: "vad är monte carlo-simulering?", motor: 33 },
+  // Omgång 17: handelsdag (s6-u1) — kanonisk ur lagrets egen rubrik.
+  { fraga: "hur fungerar handelsdagen?", motor: 34 },
+  // Omgång 17: portföljpraktik (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "hur stor ska en aktieposition vara?", motor: 35 },
+  { fraga: "vad är tax-loss harvesting?", motor: 35 },
+  { fraga: "vad är pensionssparande?", motor: 35 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -284,7 +320,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "trettiotre motorer lämnar frågan ifred",
+  "trettiosex motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");
@@ -367,7 +403,7 @@ kontroll(
   const idn = MOTORER.flatMap((m) => m.monster.map((x) => x.id));
   const dubletter = idn.filter((id, i) => idn.indexOf(id) !== i);
   kontroll(
-    "H: disjunkta monster-id:n över alla trettiotre motorer",
+    "H: disjunkta monster-id:n över alla trettiosex motorer",
     new Set(idn).size === idn.length,
     dubletter.length ? "dubletter: " + [...new Set(dubletter)].join(", ") : idn.length + " unika id",
   );

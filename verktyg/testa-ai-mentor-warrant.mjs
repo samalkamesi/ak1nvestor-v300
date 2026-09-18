@@ -34,7 +34,7 @@
  *      warrant-lagret: inget tidigare lager fångar den
  *   J  kärnordsdisjunktion MEKANISKT — WARRANT_MONSTER:s kärnord är
  *      disjunkta mot samtliga tidigare lagers kärnord, lästa LIVE
- *   K  register-läge — 408 kurser (spår 5:s omgång-13-rebake; basotestet
+ *   K  register-läge — 414 kurser (spår 5:s omgång-14-rebake; basotestet
  *      E01 är grinden som fångar glömda rebakar)
  *   L  WIDGET-SYNK — chat-widget.tsx:s kedjerad bär ALLA 31 lager i
  *      rätt ordning + importen finns (dödkodsmissen c363ec8b kan inte
@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 408 kurser (spår 5:s omgång-13-rebake införd; basotestet E01 grönt)",
-    KURSREGISTER.length === 408,
+    "K03 register-läge — 414 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
+    KURSREGISTER.length === 414,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -636,7 +636,11 @@ const GAMLA = [
     // Syskon i samma omgång-16-fönster (harmoniskt medtagna, deras wire
     // landade EFTER min warrant — vakt-designen kräver dokumentation här):
     "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
-  ];
+  
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -652,7 +656,7 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-warrant-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

@@ -568,7 +568,11 @@ function kedjaGenomAllt(fraga) {
       "svaraLokaltWarrant",
     "svaraLokaltTidsaxel",
     "svaraLokaltKapitalbindning",
-];
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -584,7 +588,7 @@ function kedjaGenomAllt(fraga) {
     FEL.push("importen av ai-mentor-stabilitetsdjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

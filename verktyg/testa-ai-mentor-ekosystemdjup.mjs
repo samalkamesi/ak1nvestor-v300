@@ -1,37 +1,30 @@
 /**
- * TESTA AI-MENTORN — KAPITALBINDNING-LAGRET (spår 6 omgång 16, s6-u3), 0 beroenden.
+ * TESTA AI-MENTORN — EKOSYSTEMDJUP-LAGRET (spår 6, omgång 17, s6-u2), 0 beroenden.
  *
- * Kör:  node verktyg/testa-ai-mentor-kapitalbindning.mjs
+ * Kör:  node verktyg/testa-ai-mentor-ekosystemdjup.mjs
  * Krav: Node >= 22.18 (type stripping default; annars
  *       --experimental-strip-types på Node 22.6–22.17).
  *
- * Vakar detta lagers tre monsters (rörelsekapital, kassakonverteringscykeln,
- * lageromsättning):
- *   A  kanoniska   — 3 frågor: lokalt svar, rätt ämne, flerkällsrad
- *                    (📖 Källor (), ≥3 källor), ≥3 registeräkta kurslänkar
- *   A2 wiring     — importen + kedjeraden i chat-widget.tsx bär detta lager
- *                    EFTER syskonen (SIST av 33)
- *   B  felstavning — varierade/dia-fria/böjda formuleringar → samma monster
+ * Vakar lagrets två monsters (SAM-viktningen + backtestens hantverk):
+ *   A  kanoniska   — ämne, primärkälla, ≥3 källor, numrerad Källor-rad,
+ *                    ≥3 kurslänkar per svar
+ *   A2 wiring      — import + kedjerad i chat-widget.tsx, SIST av 34
+ *   B  felstavat   — varianter (diafri, engelska termer, böjningar)
  *   C  determinism — alla frågor × 2 körningar bitidentiska
- *   D01 källaäkthet — källor + kurslänkar FINNS i registret (0 fantomslugar)
- *   D01b knappar   — fragor:-knappar levande mot HELA kedjan (33 motorer)
- *   D02 register   — kategoriantal + kursminuter i texterna ur registret
- *   E  genomström  — omatchade frågor → null (API-flödet)
- *   F  juridik     — inga köp/sälj-rådfraser (lagen 2007:528 — utbildning)
- *   G  antistöld   — tidigare kanoniska → null i detta lager
- *   G2 syskonkärnord — ALLA tidigare lagers kärnord LIVE som frågor → 0
- *   H  kedja       — SIST-lager-invarianten: gamla svar bitidentiska
- *                    med/utan detta lager + ämneskontroller + nya rätt
- *   I  omkastad    — de 3 nya kanoniska → null i kedjan UTAN detta lager
- *   J  disjunktion — kärnorden överlappar inget tidigare lagers (mekaniskt)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 33 kända lager
- *                    i ordning + import + inga okända komponenter
- *
- * Syskonimporter är TOLERANTA (syskon skriver just nu): warrant (u1, lager
- * 31) och tidsaxel (u2, lager 32) finns på disk i samma fönster.
+ *   D  äkthet      — källor/kurslänkar/fragor:-knappar mot registret +
+ *                    registerdrivna tal + aritmetiken oberoende omräknad
+ *   E  omatchade   — frågor utanför familjen → null (API-flödet)
+ *   F  juridik     — inga köp/sälj-rådfraser (lagen 2007:528)
+ *   G  antistöld   — tidigare lagers kanoniska → null här
+ *   G2 syskonkärn  — ALLA tidigare kärnord LIVE som frågor → 0 fångster
+ *   H  kedja       — SIST-invarianten: 34 motorer, gamla svar oförändrade
+ *   I  omkastad    — mina kanoniska → null i kedjan UTAN mitt lager
+ *   J  disjunktion — kärnorden mekaniskt unika mot alla tidigare lager
+ *   L  widget-synk — kedjeraden bär samtliga 34 komponenter i ordning
  *
  * ── JURIDIKGRINDEN (2007:528) ─────────────────────────────────────────
- * Fall F vaktar ren utbildningsformulering — inga placeringstips.
+ * Fall F vaktar att svaren förblir pedagogisk utbildning — SAM-värdet
+ * +0,25 och percentilbandet är räkneövningar, aldrig signaler.
  */
 
 import { readFileSync } from "node:fs";
@@ -41,28 +34,30 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HÄR, "..");
 
+// Node >= 22.18 kör .ts-importer direkt; 22.6–22.17 behöver flaggan.
 const [major, minor] = process.versions.node.split(".").map(Number);
 const stodStrip = major > 22 || (major === 22 && minor >= 18);
 if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
   console.error(
     "FEL: Node " + process.versions.node + " saknar type stripping. " +
-    "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-kapitalbindning.mjs (eller uppgradera Node >= 22.18).",
+    "Kör med: node --experimental-strip-types verktyg/testa-ai-mentor-ekosystemdjup.mjs (eller uppgradera Node >= 22.18).",
   );
   process.exit(1);
 }
 
-// Den RIKTIGA koden ur src/ (ingen duplikation i testet).
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
 const { MONSTER, svaraLokalt } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-svar.ts")).href);
-const { svaraLokaltKapitalbindning, KAPITALBINDNING_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-kapitalbindning-fragor.ts")).href);
+const { svaraLokaltEkosystemdjup, EKOSYSTEMDJUP_MONSTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-ekosystemdjup-fragor.ts")).href);
 
-// Syskonlager — toleranta importer (syskon kan skriva just nu).
+// Syskonlagren importeras tolererande (äldre testfilers mönster): ett lager
+// som inte finns ännu ska inte krascha detta test — men SIST-invarianten i
+// fall H vaktar att samtliga som FINNS är med i kedjan.
 function tolerera(fil, exports) {
   try {
-    return import(pathToFileURL(join(ROT, "src/lib", fil)).href);
+    const m = import(pathToFileURL(join(ROT, "src/lib/" + fil)).href);
+    return m.then((mod) => exports.reduce((acc, e) => ({ ...acc, [e]: mod[e] }), {}));
   } catch {
-    console.log("NOT  syskonfil ej importbar just nu: " + fil);
-    return Object.fromEntries(exports.map((e) => [e, null]));
+    return Promise.resolve(exports.reduce((acc, e) => ({ ...acc, [e]: undefined }), {}));
   }
 }
 const { svaraLokaltExtra, EXTRA_MONSTER } = await tolerera("ai-mentor-extra-fragor.ts", ["svaraLokaltExtra", "EXTRA_MONSTER"]);
@@ -94,10 +89,9 @@ const { svaraLokaltRisklasningsdjup, RISKLÄSNINGSDJUP_MONSTER } = await tolerer
 const { svaraLokaltAvkastningskurva, AVKASTNINGSKURVA_MONSTER } = await tolerera("ai-mentor-avkastningskurva-fragor.ts", ["svaraLokaltAvkastningskurva", "AVKASTNINGSKURVA_MONSTER"]);
 const { svaraLokaltAvkastningsdjup, AVKASTNINGSDJUP_MONSTER } = await tolerera("ai-mentor-avrakningsdjup-fragor.ts", ["svaraLokaltAvkastningsdjup", "AVKASTNINGSDJUP_MONSTER"]);
 const { svaraLokaltVarderingsverktyg, VARDERINGSVERKTYG_MONSTER } = await tolerera("ai-mentor-varderingsverktyg-fragor.ts", ["svaraLokaltVarderingsverktyg", "VARDERINGSVERKTYG_MONSTER"]);
-// Syskonens omgång 16-lager — på disk i samma fönster (disk-läge-presedensen);
-// deras tester äger deras djupkontroller.
 const { svaraLokaltWarrant, WARRANT_MONSTER } = await tolerera("ai-mentor-warrant-fragor.ts", ["svaraLokaltWarrant", "WARRANT_MONSTER"]);
 const { svaraLokaltTidsaxel, TIDSAXEL_MONSTER } = await tolerera("ai-mentor-tidsaxel-fragor.ts", ["svaraLokaltTidsaxel", "TIDSAXEL_MONSTER"]);
+const { svaraLokaltKapitalbindning, KAPITALBINDNING_MONSTER } = await tolerera("ai-mentor-kapitalbindning-fragor.ts", ["svaraLokaltKapitalbindning", "KAPITALBINDNING_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -112,28 +106,23 @@ function kontroll(namn, ok, detalj) {
   }
 }
 
-// ── FALL A: de tre nya kanoniska med flerkällskrav ──────────────────────────
+// ── FALL A: de två nya kanoniska med flerkällskrav ──────────────────────────
 const NYA = [
   {
-    fraga: "Vad är rörelsekapital?",
-    amne: "rorelsekapital",
-    slug: "ln-04-kapitalbindning-och-rorelsekapital",
+    fraga: "Vad är SAM-viktningen?",
+    amne: "samviktning",
+    slug: "ek-01-sam-viktningen",
   },
   {
-    fraga: "Vad är kassakonverteringscykeln?",
-    amne: "kassakonvertering",
-    slug: "ln-04-kapitalbindning-och-rorelsekapital",
-  },
-  {
-    fraga: "Vad är lageromsättning?",
-    amne: "lageromsattning",
-    slug: "ln-04-kapitalbindning-och-rorelsekapital",
+    fraga: "Vad är en backtest?",
+    amne: "backtest",
+    slug: "ek-04-backtestens-hantverk",
   },
 ];
 
 NYA.forEach((f, i) => {
   const nr = "A" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltKapitalbindning(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER);
   if (!svar) {
     kontroll(nr + " " + f.amne, false, "inget lokalt svar på: '" + f.fraga + "'");
     return;
@@ -153,42 +142,41 @@ NYA.forEach((f, i) => {
   );
 });
 
-// ── FALL A2: wiring — import + kedjerad i chat-widget.tsx, SIST av 33 ───────
+// ── FALL A2: wiring — import + kedjerad i chat-widget.tsx, SIST av 34 ───────
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
-  const importOk = widget.includes('from "@/lib/ai-mentor-kapitalbindning-fragor"');
+  const importOk = widget.includes('from "@/lib/ai-mentor-ekosystemdjup-fragor"');
   const rad = widget.split("\n").find((r) => r.includes("svaraLokaltMakro(q, KURSREGISTER)")) ?? "";
-  const minPos = rad.indexOf("svaraLokaltKapitalbindning(");
-  const fore = ["svaraLokaltVarderingsverktyg(", "svaraLokaltWarrant(", "svaraLokaltTidsaxel("];
+  const minPos = rad.indexOf("svaraLokaltEkosystemdjup(");
+  const fore = ["svaraLokaltWarrant(", "svaraLokaltTidsaxel(", "svaraLokaltKapitalbindning("];
   const ordningOk = fore.every((k) => rad.indexOf(k) !== -1 && rad.indexOf(k) < minPos);
   kontroll(
-    "A2 wiring — import + kedjerad i chat-widget.tsx (kapitalbindning SIST av 33, efter warrant + tidsaxel)",
+    "A2 wiring — import + kedjerad i chat-widget.tsx (ekosystemdjup SIST av 34, efter warrant + tidsaxel + kapitalbindning)",
     importOk && minPos !== -1 && ordningOk,
     importOk && minPos !== -1
-      ? ordningOk ? "import ✓ · SIST efter båda syskonen ✓" : "import ✓ men ordning fel"
+      ? ordningOk ? "import ✓ · SIST efter omgång 16-trion ✓" : "import ✓ men ordning fel"
       : "import/kedjerad saknas — kopplingen bruten",
   );
 }
 
 // ── FALL B: felstavade varianter → samma träff ──────────────────────────────
 const FELSTAVADE = [
-  { fraga: "vad ar rorelsekapital for nagot?", amne: "rorelsekapital" }, // diafri
-  { fraga: "vad är working capital?", amne: "rorelsekapital" }, // engelsk term
-  { fraga: "vad menas med arbetande kapital?", amne: "rorelsekapital" }, // svenska paret
-  { fraga: "förklara kapitalbindningen?", amne: "rorelsekapital" }, // umbrellaordet
-  { fraga: "vad är rörelsekapitalet?", amne: "rorelsekapital" }, // best. form
-  { fraga: "vad ar kassakonverteringscykeln?", amne: "kassakonvertering" }, // diafri
-  { fraga: "vad är ccc?", amne: "kassakonvertering" }, // förkortningen
-  { fraga: "vad är dso?", amne: "kassakonvertering" }, // ford ringsdagarna
-  { fraga: "vad är dpo?", amne: "kassakonvertering" }, // leverantörsdagarna
-  { fraga: "vad är kassacykeln?", amne: "kassakonvertering" }, // kortformen
-  { fraga: "vad är lageromsättningshastigheten?", amne: "lageromsattning" }, // fulla måttet
-  { fraga: "vad är dio?", amne: "lageromsattning" }, // lagerdagarna
-  { fraga: "hur räknar man lageromsättning?", amne: "lageromsattning" }, // räkneform
+  { fraga: "vad ar samviktningen for nagot?", amne: "samviktning" }, // diafri
+  { fraga: "vad är sam-viktningen?", amne: "samviktning" }, // bindestreck-formen
+  { fraga: "hur fungerar röstlängdningen?", amne: "samviktning" }, // mekanikordet
+  { fraga: "vad är röstbudgeten?", amne: "samviktning" }, // signaturmomentet
+  { fraga: "förklara samvägningen?", amne: "samviktning" }, // svenska paret
+  { fraga: "vad ar backtest for nagot?", amne: "backtest" }, // diafri
+  { fraga: "vad är backtesting?", amne: "backtest" }, // engelsk form
+  { fraga: "hur backtestar jag en strategi?", amne: "backtest" }, // verbform
+  { fraga: "vad är monte carlo?", amne: "backtest" }, // systern
+  { fraga: "vad är monte carlo-simulering?", amne: "backtest" }, // fulla namnet
+  { fraga: "vad är tusen framtider?", amne: "backtest" }, // kursens bild
+  { fraga: "hur simulerar jag en kassaflödesprognos?", amne: "backtest" }, // tillämpningen
 ];
 FELSTAVADE.forEach((f, i) => {
   const nr = "B" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltKapitalbindning(f.fraga, KURSREGISTER);
+  const svar = svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER);
   const ok = svar !== null && svar.amne === f.amne;
   kontroll(nr + " " + f.amne + " — '" + f.fraga + "'", ok, svar ? "ämne=" + svar.amne : "inget svar");
 });
@@ -196,8 +184,8 @@ FELSTAVADE.forEach((f, i) => {
 // ── FALL C: determinism — alla frågor × 2 körningar bitidentiska ────────────
 {
   const alla = [...NYA.map((f) => f.fraga), ...FELSTAVADE.map((f) => f.fraga)];
-  const forsta = alla.map((f) => JSON.stringify(svaraLokaltKapitalbindning(f, KURSREGISTER)));
-  const andra = alla.map((f) => JSON.stringify(svaraLokaltKapitalbindning(f, KURSREGISTER)));
+  const forsta = alla.map((f) => JSON.stringify(svaraLokaltEkosystemdjup(f, KURSREGISTER)));
+  const andra = alla.map((f) => JSON.stringify(svaraLokaltEkosystemdjup(f, KURSREGISTER)));
   const identiska = forsta.every((s, i) => s === andra[i]);
   kontroll("C01 determinism — " + alla.length + " frågor × 2 körningar bitidentiska", identiska,
     identiska ? "" : "avvikelse upptäckt");
@@ -208,7 +196,7 @@ FELSTAVADE.forEach((f, i) => {
   const slugFinns = new Set(KURSREGISTER.map((r) => r.slug));
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltKapitalbindning(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER);
     if (!svar) continue;
     for (const k of svar.kallor ?? []) {
       if (k.slug && !slugFinns.has(k.slug)) FEL.push("källa '" + k.slug + "' (" + f.amne + ") finns ej i registret");
@@ -232,8 +220,8 @@ FELSTAVADE.forEach((f, i) => {
     FEL.length ? FEL.join(" | ") : KURSREGISTER.length + " kurser genomsökta");
 
   // fragor:-knappar skall landa i HELA kedjan — detta lagers knappar länkar
-  // medvetet INOM det egna lagret (rörelsekapital ↔ cykel ↔ lager, trion
-  // som en vandring) enligt konventionen "knappen landar aldrig null".
+  // medvetet INOM det egna lagret (SAM ↔ backtest, ekosystemets två rum)
+  // enligt konventionen "knappen landar aldrig null".
   const helakedjan = (fraga) =>
     (svaraLokaltMakro ? svaraLokaltMakro(fraga, KURSREGISTER) : null) ??
     (svaraLokaltExtra ? svaraLokaltExtra(fraga, KURSREGISTER) : null) ??
@@ -267,9 +255,10 @@ FELSTAVADE.forEach((f, i) => {
     (svaraLokaltVarderingsverktyg ? svaraLokaltVarderingsverktyg(fraga, KURSREGISTER) : null) ??
     (svaraLokaltWarrant ? svaraLokaltWarrant(fraga, KURSREGISTER) : null) ??
     (svaraLokaltTidsaxel ? svaraLokaltTidsaxel(fraga, KURSREGISTER) : null) ??
-    svaraLokaltKapitalbindning(fraga, KURSREGISTER);
+    (svaraLokaltKapitalbindning ? svaraLokaltKapitalbindning(fraga, KURSREGISTER) : null) ??
+    svaraLokaltEkosystemdjup(fraga, KURSREGISTER);
   for (const f of NYA) {
-    const svar = svaraLokaltKapitalbindning(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER);
     if (!svar) continue;
     for (const h of svar.handlings) {
       if (!h.lank.startsWith("fragor:")) continue;
@@ -278,47 +267,50 @@ FELSTAVADE.forEach((f, i) => {
       if (!mal) FEL.push("fragor:-knapp '" + q + "' (" + f.amne + ") landar null i HELA kedjan — död knapp");
     }
   }
-  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (33 motorer)", FEL.length === 0,
+  kontroll("D01b fragor:-knappar — levande mot HELA kedjan (34 motorer)", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "0 döda knappar");
 
-  // Registerdrivna räknekontroller: kategorins antal och kursminuter i
+  // Registerdrivna räknekontroller: kategorins antal och kursfakta i
   // texterna ska komma ur registret (klippskydd vid registerändring —
   // spår 5:s rebake).
-  const lnAntal = KURSREGISTER.filter((r) => r.kategori === "LÖNSAMHET").length;
-  const bkAntal = KURSREGISTER.filter((r) => r.kategori === "BOKFÖRING & ÅRSREDOVISNING").length;
-  const ln04 = KURSREGISTER.find((r) => r.slug === "ln-04-kapitalbindning-och-rorelsekapital");
-  const s1 = svaraLokaltKapitalbindning(NYA[0].fraga, KURSREGISTER);
-  const s2 = svaraLokaltKapitalbindning(NYA[1].fraga, KURSREGISTER);
-  const s3 = svaraLokaltKapitalbindning(NYA[2].fraga, KURSREGISTER);
+  const ekAntal = KURSREGISTER.filter((r) => r.kategori === "EKOSYSTEM").length;
+  const ek01 = KURSREGISTER.find((r) => r.slug === "ek-01-sam-viktningen");
+  const ek04 = KURSREGISTER.find((r) => r.slug === "ek-04-backtestens-hantverk");
+  const ek05 = KURSREGISTER.find((r) => r.slug === "ek-05-monte-carlo-i-motorn");
+  const s1 = svaraLokaltEkosystemdjup(NYA[0].fraga, KURSREGISTER);
+  const s2 = svaraLokaltEkosystemdjup(NYA[1].fraga, KURSREGISTER);
   kontroll(
-    "D02 registerdrivna tal — LÖNSAMHET=" + lnAntal + " · BOKFÖRING=" + bkAntal + " · ln-04 " + (ln04 ? ln04.minuter : "?") + " min",
-    !!s1 && !!s2 && !!s3 &&
-      s1.text.includes("I lönsamhetsfamiljen finns " + lnAntal + " kurser") &&
-      s1.text.includes("bokföringens och redovisningens " + bkAntal) &&
-      s2.text.includes("I lönsamhetsfamiljen finns " + lnAntal + " kurser") &&
-      s3.text.includes("I lönsamhetsfamiljen finns " + lnAntal + " kurser") &&
-      s3.text.includes("bokföringens och redovisningens " + bkAntal) &&
-      (ln04 ? s1.text.includes(ln04.minuter + " min") && s2.text.includes(ln04.minuter + " min") && s3.text.includes(ln04.minuter + " min") : false),
+    "D02 registerdrivna tal — EKOSYSTEM=" + ekAntal + " · ek-01 " + (ek01 ? ek01.minuter : "?") + " min · ek-04 " + (ek04 ? ek04.minuter : "?") + " min · ek-05 " + (ek05 ? ek05.minuter : "?") + " min",
+    !!s1 && !!s2 &&
+      s1.text.includes("Ekosystem-familjen har " + ekAntal + " kurser") &&
+      s2.text.includes("Ekosystem-familjen har " + ekAntal + " kurser") &&
+      (ek01 ? s1.text.includes(ek01.kapitel + " kapitel · " + ek01.minuter + " min · nivå " + ek01.niva.toLowerCase()) : false) &&
+      (ek04 ? s2.text.includes(ek04.kapitel + " kapitel · " + ek04.minuter + " min · nivå " + ek04.niva.toLowerCase()) : false) &&
+      (ek05 ? s2.text.includes(ek05.minuter + " min · nivå " + ek05.niva.toLowerCase()) : false),
     "texterna ska bära registrets egna tal",
   );
 
-  // Aritmetik — oberoende omräkning av exempelbolagets alla tal (samma
-  // fingerade bolag genom alla tre svaren).
+  // Aritmetik — oberoende omräkning av ek-kursernas publicerade räkningar.
+  const roster = [0.6 * 30, 0.4 * 25, -0.2 * 20, 0 * 15, 0.1 * 10];
+  const summaRoster = roster.reduce((a, b) => a + b, 0); // 25,0
+  const budget = [26.0, 25.75, 23.25, 15.0, 10.0].reduce((a, b) => a + b, 0); // 100
+  const overlevnad = (20 * 11.0 + 3 * -40.0) / 23; // ≈ 4,3
   const ARIT = [
-    ["RK 46-16=30", /rörelsekapital = 46 − 16 = 30/i.test(s1.text)],
-    ["bindningspris 30×8 %=2,4", /30 miljoner bundna[^]*?2,4 miljoner per år/.test(s1.text) && Math.abs(30 * 0.08 - 2.4) < 1e-9],
-    ["DIO 50,0", /20 [^]*?146[^]*?365 = 50,0 dagar/.test(s2.text) && Math.abs(20 * 365 / 146 - 50) < 1e-9],
-    ["DSO 35,0", /21[^]*?219[^]*?365 = 35,0 dagar/.test(s2.text) && Math.abs(21 * 365 / 219 - 35) < 1e-9],
-    ["DPO 30,0", /12[^]*?146[^]*?365 = 30,0 dagar/.test(s2.text) && Math.abs(12 * 365 / 146 - 30) < 1e-9],
-    ["CCC 55", /50 \+ 35 − 30 = 55 dagar/.test(s2.text)],
-    ["känslighet 10×0,6=6", /10 × 0,6 = 6 miljoner/.test(s2.text) && Math.abs(10 * 0.6 - 6) < 1e-9],
-    ["daglig 219/365=0,6", /219[^]*?365[^]*?0,6 miljoner per dag/.test(s2.text) && Math.abs(219 / 365 - 0.6) < 1e-9],
-    ["hastighet 146/20=7,3", /146 ÷ 20 = 7,3/.test(s3.text) && Math.abs(146 / 20 - 7.3) < 1e-9],
-    ["DIO ur hastighet 365/7,3=50", /365 ÷ 7,3 = 50 dagar/.test(s3.text) && Math.abs(365 / 7.3 - 50) < 1e-9],
+    ["SAM-röster 5 st exakta", roster.every((r) => Math.abs(r - [18.0, 10.0, -4.0, 0.0, 1.0][roster.indexOf(r)]) < 1e-9)],
+    ["summa röster = 25,0", Math.abs(summaRoster - 25.0) < 1e-9 && s1.text.includes("summa 25,0")],
+    ["SAM(mikro) = +0,25", Math.abs(summaRoster / 100 - 0.25) < 1e-9 && s1.text.includes("SAM(mikro) = +0,25")],
+    ["röstnämnare = 100", Math.abs(30 + 25 + 20 + 15 + 10 - 100) < 1e-9 && s1.text.includes("summan exakt 100")],
+    ["röstbudgeten summerar 100", Math.abs(budget - 100) < 1e-9 && s1.text.includes("26,00") && s1.text.includes("25,75") && s1.text.includes("23,25") && s1.text.includes("15,00") && s1.text.includes("10,00")],
+    ["överlevnad 100/23 ≈ 4,3", Math.abs(overlevnad - 100 / 23) < 1e-9 && Math.abs(overlevnad - 4.3478) < 0.001 && s2.text.includes("100 ÷ 23 ≈ 4,3")],
+    ["gap 11,0 − 4,3 = 6,7", Math.abs(11.0 - overlevnad - 6.652) < 0.01 && s2.text.includes("11,0 − 4,3 = 6,7")],
+    ["percentiler ordnade", [92, 121, 150, 183, 230].every((v) => v > 0) && [92, 121, 150, 183, 230].every((v, i, a) => i === 0 || a[i - 1] < v) && s2.text.includes("P5 92") && s2.text.includes("P50 150") && s2.text.includes("P95 230")],
+    ["kvartilavstånd 183−121=62", Math.abs(183 - 121 - 62) < 1e-9 && s2.text.includes("183 − 121 = 62")],
+    ["bandet 230−92=138", Math.abs(230 - 92 - 138) < 1e-9 && s2.text.includes("230 − 92 = 138")],
+    ["bas 152 mot median 150", s2.text.includes("152") && s2.text.includes("Medianen 150") && Math.abs(152 - 150 - 2) < 1e-9],
   ];
   const aritFel = ARIT.filter(([, ok]) => !ok).map(([n]) => n);
-  kontroll("D03 aritmetik — exempelbolagets 10 tal exakta och nämnda", aritFel.length === 0,
-    aritFel.length ? "saknas/fel: " + aritFel.join(", ") : "46−16=30 · 2,4 · 50,0/35,0/30,0 · 55 · 6 · 0,6 · 7,3 · 50 ✓");
+  kontroll("D03 aritmetik — ek-kursernas 11 tal exakta och nämnda", aritFel.length === 0,
+    aritFel.length ? "saknas/fel: " + aritFel.join(", ") : "25,0 · +0,25 · 100 · 100 · 4,3 · 6,7 · 92→230 · 62 · 138 · 152/150 ✓");
 }
 
 // ── FALL E: omatchade frågor → null (API-flödet) ────────────────────────────
@@ -329,7 +321,7 @@ const OMATCHADE = [
 ];
 OMATCHADE.forEach((fraga, i) => {
   const nr = "E" + String(i + 1).padStart(2, "0");
-  const svar = svaraLokaltKapitalbindning(fraga, KURSREGISTER);
+  const svar = svaraLokaltEkosystemdjup(fraga, KURSREGISTER);
   kontroll(nr + " omatchad — '" + fraga + "'", svar === null,
     svar ? "fick lokalt svar (ämne=" + svar.amne + ") — skulle gått vidare i kedjan" : "null ✓");
 });
@@ -339,12 +331,12 @@ OMATCHADE.forEach((fraga, i) => {
   const RADCITAT = /\b(köp|sälj|köp denna|sälj denna|rekommenderar att du köper)\b/i;
   const FEL = [];
   for (const f of NYA) {
-    const svar = svaraLokaltKapitalbindning(f.fraga, KURSREGISTER);
+    const svar = svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER);
     if (!svar) continue;
     if (RADCITAT.test(svar.text)) FEL.push(f.amne + ": rådfras i text");
     for (const h of svar.handlings) if (RADCITAT.test(h.text)) FEL.push(f.amne + ": rådfras i handling '" + h.text + "'");
   }
-  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i kapitalbindning-svaren", FEL.length === 0,
+  kontroll("F01 juridikgrind — inga köp/sälj-rådfraser i ekosystemdjup-svaren", FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "ren utbildningsformulering");
 }
 
@@ -451,16 +443,19 @@ const GAMLA = [
   { fraga: "Vad är avkastningskällor?" },
   { fraga: "Vad är tvärsnittsanalys?" },
   { fraga: "Vad är scenarioanalys?" },
-  // Omgång 16: warrant (u1) + tidsaxel (u2) — samma fönster, disk-läge
+  // Omgång 16: warrant (u1) + tidsaxel (u2) + kapitalbindning (u3)
   { fraga: "Vad är en warrant?", amne: "warranter" },
   { fraga: "Vad är teckningsoptioner?", amne: "warranter" },
   { fraga: "Vad är konjunkturindikatorer?", amne: "konjunkturindikatorerna" },
   { fraga: "Vad är refinansieringsmuren?", amne: "refinansieringsmuren" },
+  { fraga: "Vad är rörelsekapital?", amne: "rorelsekapital" },
+  { fraga: "Vad är kassakonverteringscykeln?", amne: "kassakonvertering" },
+  { fraga: "Vad är lageromsättning?", amne: "lageromsattning" },
 ];
 {
-  const STJALDA = GAMLA.filter((f) => svaraLokaltKapitalbindning(f.fraga, KURSREGISTER) !== null);
-  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i kapitalbindning-lagret", STJALDA.length === 0,
-    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltKapitalbindning(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
+  const STJALDA = GAMLA.filter((f) => svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER) !== null);
+  kontroll("G01 antistöld — " + GAMLA.length + " tidigare kanoniska ger null i ekosystemdjup-lagret", STJALDA.length === 0,
+    STJALDA.length ? STJALDA.map((f) => "'" + f.fraga + "' ⇒ " + svaraLokaltEkosystemdjup(f.fraga, KURSREGISTER).amne).join(" | ") : "0 stölder ✓");
 }
 
 // ── FALL G2: SYSKONKÄRNORD — alla tidigare kärnord som frågor → 0 fångster ─
@@ -475,7 +470,7 @@ const GAMLA = [
     PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER,
     VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER,
     AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER, VARDERINGSVERKTYG_MONSTER,
-    WARRANT_MONSTER, TIDSAXEL_MONSTER,
+    WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER,
   ].filter(Array.isArray);
   let karnord = 0;
   const fragor = [];
@@ -487,7 +482,7 @@ const GAMLA = [
       }
     }
   }
-  const fangade = fragor.filter((f) => svaraLokaltKapitalbindning(f, KURSREGISTER) !== null);
+  const fangade = fragor.filter((f) => svaraLokaltEkosystemdjup(f, KURSREGISTER) !== null);
   kontroll(
     "G2 syskonkärnord — " + karnord + " kärnord LIVE som frågor → 0 fångster",
     fangade.length === 0,
@@ -521,6 +516,7 @@ const GAMLA = [
     ["warrant", svaraLokaltWarrant],
     ["tidsaxel", svaraLokaltTidsaxel],
     ["kapitalbindning", svaraLokaltKapitalbindning],
+    ["ekosystemdjup", svaraLokaltEkosystemdjup],
   ];
   const kora = (lager, fraga) => {
     for (const [, fnk] of lager) {
@@ -531,7 +527,7 @@ const GAMLA = [
     return null;
   };
   const MED = LAGER;
-  const UTAN = LAGER.filter(([namn]) => namn !== "kapitalbindning");
+  const UTAN = LAGER.filter(([namn]) => namn !== "ekosystemdjup");
 
   // Invarianten: ett SIST-lager ändrar ALDRIG ett tidigare svar.
   const fel = [];
@@ -539,7 +535,7 @@ const GAMLA = [
     const med = kora(MED, f.fraga);
     const utan = kora(UTAN, f.fraga);
     if (JSON.stringify(med) !== JSON.stringify(utan)) {
-      fel.push("'" + f.fraga + "' ändrad av kapitalbindning-lagret (med=" + (med ? med.amne : "null") + ", utan=" + (utan ? utan.amne : "null") + ")");
+      fel.push("'" + f.fraga + "' ändrad av ekosystemdjup-lagret (med=" + (med ? med.amne : "null") + ", utan=" + (utan ? utan.amne : "null") + ")");
     }
   }
   // Nyckel-ämnen landar fortfarande rätt (ändringsimmutabilitet + identitet)
@@ -548,13 +544,13 @@ const GAMLA = [
     const med = kora(MED, f.fraga);
     if (!med || med.amne !== f.amne) fel.push("'" + f.fraga + "' ⇒ " + (med ? med.amne : "null") + " (väntat " + f.amne + ")");
   }
-  // Mina tre når mitt lager genom hela kedjan.
+  // Mina två når mitt lager genom hela kedjan.
   for (const f of NYA) {
     const med = kora(MED, f.fraga);
     if (!med || med.amne !== f.amne) fel.push("NY '" + f.fraga + "' ⇒ " + (med ? med.amne : "null") + " (väntat " + f.amne + ")");
   }
   kontroll(
-    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (33 motorer, som chat-widget.tsx)",
+    "H01 kedja — " + GAMLA.length + " gamla oförändrade (SIST-invarianten) + " + GAMLA.filter((x) => x.amne).length + " ämneskontroller + " + NYA.length + " nya når rätt lager (lagrets 34 motorer; syskonens fönsterlager efter — omgång 17)",
     fel.length === 0,
     fel.length ? fel.join(" | ") : (GAMLA.length + NYA.length) + "/" + (GAMLA.length + NYA.length) + " rätt",
   );
@@ -562,7 +558,7 @@ const GAMLA = [
   // ── FALL I: OMKASTAD ANTISTÖLD — mina kanoniska ger null UTAN detta ──────
   const tjuvade = NYA.filter((f) => kora(UTAN, f.fraga) !== null);
   kontroll(
-    "I01 omkastad antistöld — 3 nya kanoniska ger null i kedjan UTAN kapitalbindning-lagret",
+    "I01 omkastad antistöld — 2 nya kanoniska ger null i kedjan UTAN ekosystemdjup-lagret",
     tjuvade.length === 0,
     tjuvade.length ? tjuvade.map((f) => "'" + f.fraga + "' ⇒ " + kora(UTAN, f.fraga).amne + " i tidigare lager").join(" | ") : "0 tidigare fångster ✓",
   );
@@ -572,18 +568,18 @@ const GAMLA = [
 {
   const dia = (s) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
   const tidigare = new Set();
-  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER, VARDERINGSVERKTYG_MONSTER, WARRANT_MONSTER, TIDSAXEL_MONSTER]) {
+  for (const monster of [MONSTER, EXTRA_MONSTER, MAKRO_MONSTER, NASTA_MONSTER, KAPITALMEKANIK_MONSTER, SEKTOR_MONSTER, CASE_MONSTER, PRAKTIK_MONSTER, PORTFOLJGRUND_MONSTER, AGANDE_MONSTER, REDOVISNINGSDJUP_MONSTER, DJUP_MONSTER, HISTORIA_MONSTER, LONSAMHETSDJUP_MONSTER, TSDJUP_MONSTER, SKATTEDJUP_MONSTER, BETEENDEDJUP_MONSTER, RISKDJUP_MONSTER, RISKMATTSDJUP_MONSTER, UTDELNINGSDJUP_MONSTER, FÖRVÄNTNINGSDJUP_MONSTER, PORTFOLJBALANS_MONSTER, STABILITETSDJUP_MONSTER, GRAHAMGOLV_MONSTER, VARDERJUSTERING_MONSTER, OPTIONS_DJUP_MONSTER, RISKLÄSNINGSDJUP_MONSTER, AVKASTNINGSKURVA_MONSTER, AVKASTNINGSDJUP_MONSTER, VARDERINGSVERKTYG_MONSTER, WARRANT_MONSTER, TIDSAXEL_MONSTER, KAPITALBINDNING_MONSTER]) {
     if (!Array.isArray(monster)) continue;
     for (const m of monster) for (const k of m.karnord ?? []) tidigare.add(dia(k));
   }
   const krock = [];
-  for (const m of KAPITALBINDNING_MONSTER) {
+  for (const m of EKOSYSTEMDJUP_MONSTER) {
     for (const k of m.karnord ?? []) {
       if (tidigare.has(dia(k))) krock.push("'" + k + "' (" + m.id + ") finns redan i tidigare lager");
     }
   }
   kontroll(
-    "J01 kärnordsdisjunktion — KAPITALBINDNING_MONSTER vs " + (tidigare.size > 0 ? "alla tidigare lager" : "0 lager") + " (" + tidigare.size + " kärnord)",
+    "J01 kärnordsdisjunktion — EKOSYSTEMDJUP_MONSTER vs " + (tidigare.size > 0 ? "alla tidigare lager" : "0 lager") + " (" + tidigare.size + " kärnord)",
     krock.length === 0,
     krock.length ? krock.join(" | ") : "0 överlapp ✓",
   );
@@ -608,14 +604,13 @@ const GAMLA = [
     "svaraLokaltAvkastningskurva",
     "svaraLokaltAvkastningsdjup",
     "svaraLokaltVarderingsverktyg",
-    // Omgång 16:s fönsterlager (disk-läge-presedensen): u1 warrant +
-    // u2 tidsaxel + detta lager kapitalbindning — SIST av 33.
     "svaraLokaltWarrant",
     "svaraLokaltTidsaxel",
     "svaraLokaltKapitalbindning",
-  
-    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    // Omgång 17: detta lager — SIST av 34.
     "svaraLokaltEkosystemdjup",
+  
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u1 handelsdag + u3 portföljpraktik.
     "svaraLokaltHandelsdag",
     "svaraLokaltPortfoljpraktik",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
@@ -629,23 +624,13 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  if (!widget.includes('from "@/lib/ai-mentor-kapitalbindning-fragor"')) {
-    FEL.push("importen av ai-mentor-kapitalbindning-fragor saknas");
-  }
-  // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
-  for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
-    const namn = match[0].slice(0, -1);
-    if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
-  }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
+    "L01 widget-synk — kedjeraden bär samtliga " + KOMPONENTER.length + " motorer i ordning",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "kapitalbindning sist av 33 lager, inga okända komponenter",
+    FEL.length ? FEL.join(" | ") : KOMPONENTER.length + " komponenter ✓ (ekosystemdjup sist)",
   );
 }
 
 // ── Sammanfattning ──────────────────────────────────────────────────────────
-console.log("");
-console.log("AI-MENTORN KAPITALBINDNING (s6-u3 omgång 16): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
+console.log("AI-MENTORN EKOSYSTEMDJUP (omgång 17): " + pass + " PASS · " + fail + " FAIL av " + (pass + fail));
 process.exit(fail > 0 ? 1 : 0);

@@ -431,6 +431,76 @@ import { svaraLokaltTidsaxel } from "@/lib/ai-mentor-tidsaxel-fragor";
 // ren metodutbildning med påhittade exempeltal — inga placeringstips.
 import { svaraLokaltKapitalbindning } from "@/lib/ai-mentor-kapitalbindning-fragor";
 
+// AI-MENTORN lager 34 (spår 6, omgång 17, s6-u2): ekosystemdjup-lagret —
+// kundens egen metodik får sina första förhandsfrågor. Två källmärkta mönster:
+// (1) SAM-viktningen/röstlängdningen (ek-01 primär + ek-02 + ek-03 +
+// konfluens-kursen — fem teorier viktas till en signal: mikro-profilen VOL
+// 30/FIB 25/EW 20/GANN 15/LUC 10, räkningen 0,6×30 + 0,4×25 + −0,2×20 +
+// 0×15 + 0,1×10 = 25,0 → SAM(mikro) = +0,25, röstbudgeten 26,00 + 25,75 +
+// 23,25 + 15,00 + 10,00 = 100 och de fyra skyddväggarna) och (2) backtestens
+// hantverk (ek-04 primär + ek-05 + ek-01 + am-02 — överlevnadsfällans 6,7
+// procentenheter: (20×11,0 + 3×(−40,0)) ÷ 23 ≈ 4,3 mot 11,0, träna-pröva-
+// disciplinen på skilda decennier + Monte Carlo-simuleringen som systermetod:
+// percentilbandet P5 92 · P50 150 · P95 230 mot basfallets 152).
+// Aktiverar ek-01..ek-05 — HELA EKOSYSTEM-kategorien var mentorväglös
+// (sondens genomräkning: 0 av 5 nåddes av 207/414). Sond verktyg/
+// _s6u2-sond-omg17.mjs: 33 motorer / 98 monsters / 1 060 kärnord LIVE —
+// sam-viktnings-, röstlängdnings-, backtest-, monte-carlo- och simulering-
+// familjerna NULL genom kedjan, 0 grannar inom tolerans, 0 omvända stölder
+// mot 50 kanoniska frågor. Ansvarsfördelning (dokumentationsplikten): basen
+// äger ekosystemets HELHETSORD (konfluens/vågfundamentet/ak1ts — konfluens-
+// kursen är här KÄLLA), nästa äger DCF/inre-värde-orden (ek-05:s 152-kronors-
+// schablon nämns som mekanik i text, aldrig kärnord), historia äger krascherna
+// (historien här bara MATERIAL), stabilitetsdjupet äger stresstest (↔backtest
+// tavstånd > 4, mekaniskt verifierat). Juridikgrind: ren metodutbildning med
+// kursernas egna publicerade räkneexempel — inga placeringstips, SAM-värdet
+// +0,25 är en övning i normalisering, inte en signal.
+import { svaraLokaltEkosystemdjup } from "@/lib/ai-mentor-ekosystemdjup-fragor";
+
+// AI-MENTORN lager 35 (spår 6, omgång 17, s6-u1): handelsdag-lagret —
+// kedjans VAR-fråga för allt mellan tangenttrycket och avräkningen. Ett
+// källmärkt monster: HANDELSDAGEN — marknadsstrukturen, auktionerna och
+// kortläget (am-05 primär + am-03 + am-04 + am-06 + Flash Boys — 5 källor,
+// 4 kurslänkar + 1 tidigare-lager-knapp). Aktiverar fyra mentorväglösa
+// kurser och gör KATEGORIN AKTIEMARKNADEN I PRAKTIKEN fullt länkad
+// (4/8 → 8/8). Sond verktyg/_s6u1-sond-omg17.mjs (+ sond2/sond3): hela
+// familjen NULL genom kedjan, samtliga kärnord renta mot 1 032 syskonord.
+// Ansvarsfördelning: basen äger orderbok/likviditet/spread/nätmäklare,
+// praktik äger blankningsstrategin och kortpositions-orden, nästa äger
+// optionerna (auktionen tavstånd 3 — disjunkta), redovisningsdjupet äger
+// leasing (clearing kasserat som kärnord, nämns endast i text).
+// Juridikgrind: mekanismerna som utbildning med kursernas egna räkne-
+// exempel — inga placeringstips, kortlägets ram är förståelse, aldrig
+// uppmuntran. Ligger SIST: fångar bara frågor alla lager före lämnar null.
+import { svaraLokaltHandelsdag } from "@/lib/ai-mentor-handelsdag-fragor";
+
+// AI-MENTORN lager 36 (spår 6, omgång 17, s6-u3): portföljpraktik-lagret —
+// PORTFÖLJHANTERING:s praktiska beslutsfrågor. Tre källmärkta mönster:
+// (1) positionsstorleken ("hur stor ska en aktieposition vara?" — räknad
+// baklänges från risken: 100 000 × 1 % = 1 000 kr; stoppavstånd 50 − 45 =
+// 5 kr/aktie ⇒ 200 aktier = 10 000 kr = 10 % av portföljen, stopp 48 ⇒
+// 500 aktier = 25 %; pf-02 primär + pf-11 + rk-01 + pf-03), (2) tax-loss
+// harvesting (att skörda en realiserad förlust mot en vinst i aktiedepån:
+// 100 000 − 40 000 = 60 000, skatt 30 % × 60 000 = 18 000 mot 30 000 —
+// en räntefri KREDIT, inte en gåva; pf-09 primär + km-051 + km-052 +
+// pf-08) och (3) pensionssparande (tidshorisontens aritmetik: 1 000 kr/
+// månaden i 360 månader vid 0,5 %/månad ≈ 1 004 500 kronor, realt efter
+// 2 % inflation i 30 år ≈ 554 500; pf-14 primär + pf-06 + km-055 +
+// ma-03). Ansvarsfördelning (V19-precedensen): basen äger FORMULERINGEN
+// "position sizing" och skatt-/ISK-grubben (pf-02 är här KÄLLA, aldrig
+// kärnord — detta lager bär positionstorleks-/aktieposition-sammansätt-
+// ningarna), skattedjupet äger kapitalförsäkringsfamiljen (detta lager
+// bär endast förlustrealiseringsorden), portföljbalans äger rebalansering,
+// portföljgrund äger diversifiering/valutarisk, makro äger inflations-
+// orden (här stärkord). Sond verktyg/_s6u3-sond-omg17.mjs: 33 motorer /
+// 98 monsters / 1 032 kärnord LIVE — positionstorleks-, skörde- och
+// pension-familjerna NULL genom kedjan, 0 grannar inom tolerans, G2-prov
+// 0 omvända stölder. Juridikgrind: ren metodutbildning med påhittade
+// exempeltal — inga placeringstips, inga skatte-/pensionsråd (Skatte-
+// verket-hänvisningen är den ärliga utgången). Ligger SIST: fångar bara
+// frågor alla 35 lagren före lämnar null.
+import { svaraLokaltPortfoljpraktik } from "@/lib/ai-mentor-portfoljpraktik-fragor";
+
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
  *
@@ -1135,7 +1205,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

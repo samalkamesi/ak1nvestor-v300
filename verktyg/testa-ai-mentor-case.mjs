@@ -391,6 +391,9 @@ const kedjekomponenter = [
   "svaraLokaltWarrant(q, KURSREGISTER)",
   "svaraLokaltTidsaxel(q, KURSREGISTER)",
   "svaraLokaltKapitalbindning(q, KURSREGISTER)",
+  "svaraLokaltEkosystemdjup(q, KURSREGISTER)",
+  "svaraLokaltHandelsdag(q, KURSREGISTER)",
+  "svaraLokaltPortfoljpraktik(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";

@@ -579,15 +579,15 @@ const GAMLA = [
   );
 }
 
-// ── FALL K: register-läge — 408 kurser (spår 5:s omgång-13-rebake) ──────────
+// ── FALL K: register-läge — 414 kurser (spår 5:s omgång-14-rebake) ──────────
 {
   // 2026-09-18: 402 → 408 av spår 5 omgång 13 (st-05, ma-04, roic-02, mt-05,
   // ma-03-realrantan, od-04) — harmoniskt uppdaterat av s6-u1 omgång 16:s
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 408 kurser (spår 5:s omgång-13-rebake införd; basotestet E01 grönt)",
-    KURSREGISTER.length === 408,
+    "K03 register-läge — 414 kurser (spår 5:s omgång-14-rebake införd; basotestet E01 grönt)",
+    KURSREGISTER.length === 414,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -611,7 +611,11 @@ const GAMLA = [
       "svaraLokaltWarrant",
     "svaraLokaltTidsaxel",
     "svaraLokaltKapitalbindning",
-];
+
+    // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
+    "svaraLokaltEkosystemdjup",
+    "svaraLokaltHandelsdag",
+    "svaraLokaltPortfoljpraktik",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -627,7 +631,7 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-avkastningskurva-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

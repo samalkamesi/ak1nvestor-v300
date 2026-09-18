@@ -41,9 +41,20 @@ export const dynamic = "force-dynamic";
  * äkta domslut, ej fel (§11.5.1). UI-koppling (dialog-kortens övergång)
  * är feature-avvägning enligt §11.4 — API-vägen först.
  *
- * Övriga typer (switchModelConfig, createSession-familjen, fakta-typerna)
- * senare enligt §11.4:s migreringsordning. Att ersätta dagens styrväg
- * helt är feature-avvägning enligt §11.4.
+ * POST 29 (V6/A4 — våg 183): POST {typ: "switchModelConfig", modellId} →
+ * transport.skickaV4Modellbyte — modellbytardrawerns kommando (§11.2 rad
+ * 237, §11.4:s migreringssteg 3): modellbyte på den levande sessionen
+ * via kommandobussen. §11.2 bär inget explicit payload-schema för typen
+ * — lasten {modelId} är vår tolkning av modellkatalogens id-kultur
+ * (våg 82), protokollets egen domslutsväg (proto.invalidPayload,
+ * fault.command.notImplemented/capabilityUnsupported — §11.5.2) är
+ * slutdomare och passerar som 200-svar. Modell-katalogens rutt (våg
+ * 85/169 → bytModell) förblir den funktionella styrvägen; drawerns
+ * övergång hit är feature-avvägning enligt §11.4.
+ *
+ * Övriga typer (createSession-familjen, fakta-typerna) senare enligt
+ * §11.4:s migreringsordning. Att ersätta dagens styrväg helt är
+ * feature-avvägning enligt §11.4.
  *
  * Validering: text 1–4 000 tecken (chatt-promptkultur), delivery ∈
  * {startNow, queue} ("guide" väntar A6-insatsen — flight-timeout och
@@ -79,6 +90,7 @@ export async function POST(req: NextRequest) {
     newText?: unknown;
     beforeQueueItemId?: unknown;
     optionId?: unknown;
+    modellId?: unknown;
   };
   try {
     kropp = (await req.json()) as typeof kropp;
@@ -130,6 +142,33 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // POST 29 (våg 183): modell-grenen — switchModelConfig (§11.2 rad 237).
+  // modellId: katalogens id-kultur (våg 82), trimmad icke-tom. 400 ENDAST
+  // ogiltig kropp; protokollets egna domslut (ack-status/reasonCode,
+  // §11.5.2) passerar som 200-svar.
+  if (kropp.typ === "switchModelConfig") {
+    const m = typeof kropp.modellId === "string" ? kropp.modellId.trim() : "";
+    if (!m) {
+      return jsonSvar({ skickat: false, fel: "switchModelConfig kräver modellId." }, 400);
+    }
+    if (m.length > 200) {
+      return jsonSvar({ skickat: false, fel: "modellId överskrider 200 tecken." }, 400);
+    }
+    const transport: StudioTransport = hamtaStudioTransport();
+    try {
+      const svar = await transport.skickaV4Modellbyte(m);
+      return jsonSvar({ ...svar, transport: transport.namn });
+    } catch (fel) {
+      return jsonSvar({
+        skickat: false,
+        commandId: null,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+        transport: transport.namn,
+      });
+    }
+  }
+
   // POST 31+32 (våg 182): kö-grenen — setAutoDrain + köoperationer (§11.2
   // rad 239–242). 400 ENDAST ogiltig kropp; protokollets egna domslut
   // (ack-status/reasonCode) passerar som 200-svar.
@@ -165,7 +204,7 @@ export async function POST(req: NextRequest) {
       return jsonSvar(
         {
           skickat: false,
-          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
+          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, switchModelConfig, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
         },
         400,
       );

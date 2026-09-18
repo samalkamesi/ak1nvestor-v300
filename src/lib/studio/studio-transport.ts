@@ -1807,6 +1807,29 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POST 29 (V6/A4 — våg 183): v4/command switchModelConfig
+   * (V4-LAGRET §11.2 rad 237 — modellbytardrawerns kommando, §11.4:s
+   * migreringssteg 3 jämte pause/resumeGoal): modellbyte på den LEVANDE
+   * sessionen via kommandobussen. §11.2 bär inget explicit payload-schema
+   * för typen — lasten {modelId} är vår tolkning av modellkatalogens
+   * id-kultur (våg 82), och protokollets egen domslutsväg (ack rejected +
+   * proto.invalidPayload, alternativt fault.command.notImplemented /
+   * capabilityUnsupported — §11.5.2) är slutdomare. Dagens funktionella
+   * styrväg (modell-katalogens rutt → bytModell) förblir styrväg;
+   * UI-övergången är feature-avvägning enligt §11.4.
+   * Fel-tolerant: {skickat:false, fel} (ALDRIG kast).
+   */
+  skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -6013,6 +6036,47 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POST 29 (§11.2 rad 237): switchModelConfig — modellbyte via
+   * kommandobussen på den levande sessionen. Payload-formen {modelId} är
+   * vår tolkning (§11.2 bär inget schema för typen) — protokollets egen
+   * payload-grind (proto.invalidPayload) är slutdomare.
+   */
+  async skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    const m = typeof modellId === "string" ? modellId.trim() : "";
+    if (!m) return { skickat: false, commandId: null, ack: null, fel: "switchModelConfig kräver modellId." };
+    if (m.length > 200) return { skickat: false, commandId: null, ack: null, fel: "modellId överskrider 200 tecken." };
+    const wire = { modelId: m };
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: "switchModelConfig",
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -8798,6 +8862,31 @@ class MockTransport implements StudioTransport {
       commandId,
       status: this.mockV4InteraktionStatus,
       typ: "resolveInteraction",
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 29 (§11.2 rad 237) (mock): deterministisk "noop"-ack — mocken
+   * bär ingen modellväxling, "noop" är ÄKTA domslut enligt §11.5.1, INGEN
+   * påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E). Överridbar via mockV4ModellbyteStatus.
+   */
+  mockV4ModellbyteStatus: string = "noop";
+
+  async skickaV4Modellbyte(
+    modellId: string,
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    const m = typeof modellId === "string" ? modellId.trim() : "";
+    if (!m) return { skickat: false, commandId: null, ack: null, fel: "switchModelConfig kräver modellId." };
+    if (m.length > 200) return { skickat: false, commandId: null, ack: null, fel: "modellId överskrider 200 tecken." };
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4ModellbyteStatus,
+      typ: "switchModelConfig",
       source: "mock",
     };
     return { skickat: true, commandId, status: ack.status, ack, rått: ack };

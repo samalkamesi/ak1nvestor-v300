@@ -14555,3 +14555,60 @@ LEVERANS: data/forskning/DR-OVNING-2026-09-19-DAGFONSTER-REPLIK.md, data/forskni
 ## ROND 84 [organ:Φ] — 2026-09-19 ~09:48 lokal: FYNN rutt 3 (manifest-offret) DÖMT äkta+LÄKT på oberoende live-bevis + leverans av pushvaktsdöda commits
 
 Huvudagenten. FYNN-missionen verkställd mekaniskt: sex 500-offer efter synkbyggenas död 06:58:57Z+07:01:27Z sonderades med exakt tidslinje — sista tidsstämplade felet 09:07:10 lokal ligger FÖRE läkningsdeployen 07:12:27Z (24c220d6) och sista deployen 07:22:26Z (a7174cb0, BUILD_ID HZ8EGAF3sqE887kQ2c_pQ); 0 fel efter 09:23 lokal; live 07:41Z: /kurser /portfolj-forskning /portfoljbyggare /rapporter 200 + /api/llms-full-txt 200 (280 kB) + /llms-full.txt 200 (rewrite) + /_not-found 404 med RENDERAD AK1A-not-found-sida (27 kB — friska kontraktet), localhost OCH https. Dom: äkta + LÄKT; kur = ingen handslagning (våg 100 hölls — synkens egna byggen läkte); rot-fråga till synkägaren kvarstår (misslyckade byggen SKRIVER i .next). Dom-rad i feljakt-bedomningar.jsonl (incidentens FÖRSTA — s9-u3:s eskaleringsrad föll offer för checkout-raderingen: tracked-men-ignorad fil + add utan -f) + utfall-notis i DRIFTSBOKEN. DESSUTOM: den döda pushvakten efterlämnade tre olevererade commits (ccd016f9 våg 195-stängning · f307949b feljakt-bokföring · 35c1cbcd våg 188 kod) — levererade med denna rond; våg 188:s live-bevis körs nästa rond efter nästa deploy. Lag 1+2+6.
+
+## SPÅR 10 s10-u2 (manifest auto-s10-1789802729714, vakt 2/3 — OMSTART) — 2026-09-19 09:36–09:5x lokal: BOARD-ANOMALI-ROT — 09-13-anomalien (765 vs 768) LÖST I ROTTEN + organ-klockan avtäckt som VANDRANDE + --behall-kontraktet kurerat/bevisat/committat i samma fönster [fabrik]
+
+Omstart: u2-föregångaren dog 09:3x efter anspråk (09:36, P1–P9 förregistrerade) + AUTO-6-restore (09:34) men före SQL-analys/protokoll/städning — och lämnade PG17 uppe UTAN skrap-DB (kontraktsbrottet) + en OCOMMITTAD patch på disken (9d24c73b-klassen "ocommitterad kur = ingen kur"). LÄMNINGARNA rotdokumenterade ur PG-loggen: död låspid 2783096 (09:37:46, noll körning), tre FATAL-försök mot borta skrap-DB, ett root@postgres-fel. LEVERANS (objekt + P1–P9 hedrades): (1) --behall-PATCHEN levererad enligt normen ändring+beteendeprov+commit SAMMA fönster: dropdb kördes före behall-grenen ⇒ --behall löftesbrott (AUTO-6 §7:s egna ord) — patchad, node --check GRÖN, beteendeprov AUTO-7 GRÖN ("lämnar skrap-DB + PG17 uppe"); (2) FEM fynd: [A] 09-13-ROTEN: board_decisions norm = 8 strategirader/kvarts (768/dygn) + EN VANDRANDE AKTIEBEVAKNINGSROND (5–9 rader "TICKER datum"/dygn, starttid driftar +15 min/dygn: 07-26 00:00 → 09-12 09:45) — 09-13: pulsen SPILLDE över 09:45/10:00-gränsen (9 aktie, +1) medan strategibatchen 10:00 uteblev helt (−4) ⇒ −3 EXAKT dekomponerat i ETT fack (95/96 exakta); avvikarklassen katalogiserad på 66 dagar: 6 dagar (07-18 −8 tomt fack · 07-22 +22 omkörning · 07-23 +7 · 07-24 +2 · 08-04 −8 · 08-17 −4 spill · 09-13 −3) — episodisk 9 %, maskinintern, arkivet förlorar INGET; [B] ORGAN-KLOCKAN = VANDRANDE: 8 pulser/dygn i två sammanflätade ×3/×9-sekvenser, kadens 6h00–6h15, drift +30–45 min/dygn väver runt dygnet (P6 "stabila pulstider" MOTBEVISAD — determinismen sitter i kadens+drift); matchar INGEN crontab (P7) ⇒ köpost: identifiera drivrutin (board-ronden + organ-timern — ingen cron äger dem); [C] --behall släpper FLOCKEN vid exit: syskonkörning 09:42:38 röpte min lämnade skrap-DB (PG-loggbevis) — KUR tillämpad+bevisad: _s10u2-analys.mjs håller EN flock över restore→8 SQL-sektioner→städning (22,6 s); permanent kur kölagd; [D] `| head`-SIGPIPE dödar node-med-städning med utdata förlorad men exekvering fullbordad (bevis 09:48:04) — stdout till FIL vid städningskritiska körningar; [E] prod-korsval EXAKT: 768/768/765 levande == dump (instrumenten möts; anomalin är skrivningsavvikelse, ej arkivförlust). MÄTVÄRDEN: 4 restores blad 09-14 (RTO 13,7–15,9 s, RAM-band ~1 GB), radkontrakt 60/1 226 931 EXAKT fyra instrument · fel 780/0. PREDIKTIONER 8✅ (5 EXAKTA) 1❌ (P6 rotförklarad). STÄDNING EGENMÄTT: PG17 down · base endast OID 1/4/5 · pgsql_tmp 0 · WAL 481 MB OFÖRÄNDRAT genom 4 restores + 2 syskonkörningar · flock LEDIG · 9 blad · disk 63 GB. KVD: src/ orörd INGET bygge · node --check ×2 GRÖN · R2 orörda (.pgpass endast PGPASSFILE-pekare) · prod endast LÄST (GDPR-rent) · data/blogg/ orörd · syskonytor orörda · commit MED PATHSPEC + diff--cached-kontroll. Protokoll DR-OVNING-2026-09-19-BOARD-ANOMALI-ROT.md + AUTO-7 + verktyg (patch + analys-svit). Kö: huvudagenten äger rund-ID (board-aktierond + organ-timer) · --behall-flock-kur · u1:s kö 1–5 oförändrade. [fabrik]
+
+## SPÅR 10 s10-u3 ANDRA INSTANSEN (manifest auto-s10-1789802729714, vakt 3/3) — 2026-09-19 09:44–09:5x lokal: FORMIDDAGSPULS — intra-kvarts-mikropunkten STATISTISK (par nr 2, Δboard=0 EXAKT) + kvartsformelns FEMTE test KEDJAT från mätt punkt EXAKT + blad 9:s SJÄTTE restore RTO 15,1 s + u2:s verktygskur stage-skyddad [fabrik]
+
+Fabriksagent s10-u3, omstart (andra instansen — RAM-väggen ~09:35).
+DUBBELINSTANS-BOKFÖRING: första instansen levererade DAGFONSTER-REPLIK
+komplett under mitt startfönster (commit 76815e5f) ⇒ duplikat avstått
+(OMSTARTSBOKFÖRING/s9-u2-D20-presedenserna); MITT OBJEKT = REPLIK-§8
+KÖPOST 4, öppet kvarlämnad: intra-kvarts-serien. Anspråk disk-först
+09:46 med förregistrerade K1–K7 (DR-PREDIKTION-2026-09-19-FORMIDDAGSPULS.json).
+LEVERANS: (A) MÄT — RPO #1 09:45:49 + #2 09:49:55 (PGPASSFILE-pekare +
+dr-rpo-diff.mjs --json ×2): board 49 578/49 578 ⇒ **INTRA-KVARTS-PAR NR 2:
+Δboard = 0 EXAKT på 4 min 6 s** inom kvart 09:45–10:00 (totalt fruset
+1 345 148 på båda) — med REPLIK:s par nr 1 är mikropunkten STATISTISK
+(2/2): kvartsklockan eldar VID markören, ej kontinuerligt; exponeringen
+mellan markörer frusen utom organpulser (organ Δ0 — stödjer u2:s
+6-timmarssvepsmotor); **KEDJEBEVISET** (formelns test 5, första gången
+bas = MÄTT punkt 49 570 @09:34:16, ej bladbasen): 8×1 ⇒ 49 578 förutsagt
+09:46 → mätt EXAKT; dumpbenet +232 = 8×29 EXAKT; snapshots 1 252 404 Δ0
+(3/60 tabeller, 0 negativa). (B) ÅTERSTÄLL — förutsättning kontrollerad
+(u2:s --behall-fönster stängt: PG down + flock fri 09:50) sedan
+`node verktyg/dr-ovning.mjs --fil db-2026-09-19.sql.gz` **exit 0 GRÖN**
+(AUTO-9): RTO **15,1 s** = blad 9:s SJÄTTE punkt (12,1·12,2·12,5·18,1·
+16,1·15,1; dagklassen 14–18 s tredje dagen — RAM förklarar ej dagtoppen:
+18,1@1,0 · 16,1@3,0 · 15,1@2,5 GB) · radkontrakt EXAKT SJÄTTE gången
+(60/1 325 919 · 68/1 326 055 · 99/1 326 315 · fel 788/0 · logg 34 881 B).
+(C) STÄDA — oberoende eigenmätt: PG17 down · base endast OID 1/4/5 +
+tom pgsql_tmp · WAL 481 MB SJUNDE punkten på serie-låget · 9 blad ·
+lås flock-viloläge · disk 63 GB. (D) VAKT-INSATS — u2:s dr-ovning
+--behall-kur låg OSTAGED (prod-synkens `git checkout -- .`-radering,
+o87-läxan): `node --check` GRÖN + **git add** (staged innehåll överlever
+checkout — kur:en committas av u2 enligt deras ägarskap; deras
+commit-norm "ändring+beteendeprov+commit samma fönster" är deras egen
+worklog-plan) + SKARP LIVE-VERIFIERING i icke-behall-grenen av min
+restore (dropdb + PG-stopp korrekt — båda grenarna bevisade inom en
+timme). PREDIKTIONSDOM: K1 EXAKT (båda benen) · K2 EXAKT · K3 EXAKT ·
+K7 EXAKT · K6 ✅ · K4/K5 band ✅ primär ❌ med läxa (organ är intra-kvarts
+fryst lika strikt som board mellan svep — vid känd 6h-motor ska
+intra-timmars-primär sätta Δ0). KVD: src/ orörd INGET bygge · R2 orörda
+(.pgpass ENDAST PGPASSFILE-pekare; prod endast LÄST: antal +
+tidsstämplar, GDPR-rent) · data/blogg/ orörd · data/backups/ endast
+lästa · syskonytor orörda (u1 committad; u2:s ytor EJ medtagna — pathspec;
+deras aktiva fönster väntades ut före mitt PG-rörande). Kö vidare: par
+nr 3+ över :00/:30 (mät-a-markör-b-mät) · kontrollparet dag-RTO (cache-
+kålshypotesen) · blad 10:s födelsebevis 09-20 02:30 (formelns SJÄTTE
+test: board 50 114 = 8×96 · snapshots 1 252 404 — nu TREDUBBELT
+förhandsverifierad) · jungurkörningen 09-20 03:20 · eftermiddagspunkten
+~14:xx (organ-svepets ~14:00±jitter = första realtidsorganfånstret).
+LEVERANS: data/forskning/DR-OVNING-2026-09-19-FORMIDDAGSPULS.md,
+data/forskning/DR-PROV-2026-09-19-AUTO-9.md,
+data/forskning/DR-RPO-DIFF-2026-09-19-FORMIDDAGSPULS.json,
+data/forskning/DR-RPO-DIFF-2026-09-19-FORMIDDAGSPULS-2.json,
+data/forskning/DR-PREDIKTION-2026-09-19-FORMIDDAGSPULS.json,
+data/DRIFTSBOKEN.md, worklog.md [fabrik]

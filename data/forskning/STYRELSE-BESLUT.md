@@ -212,3 +212,51 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Lazy-ladda grafer och tabeller under vecket på datatungytor (AKM2-analyser, kurssidor) via next/dynamic och ISR-värm varje ny -en/-ar-sida från dag ett
   10. Kör varje ny kontroll först icke-blockerande tills baslinjen är känd; bygg sökords-basladan med mobilvolym vägd in för nästa guideomgångar
 - **Mötes-id:** styrelse-mu8y2kqk-iaxmoj
+
+## 2026-09-19 22:31 — Vad bör prioriteras för mobilupplevelsen?
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Gränssnittsvakten byggs ut från strukturmätning till full mobilförsäkring: Core Web Vitals, tryckytor, RTL-rendering och juridisk synlighet (disclaimer, kakmedgivande, ångerrätt) blir mekanisk lag, parallellt med säkerhetshärdning av sessioner, inloggnings-API och köpflödets felvägar. Allt körs som mätning och härdning av befintlig rendering enligt leveransprotokollet (tsc 0, bygg under flock-lås, prod 200 verifierad) — juridiktexter, priser och övriga R2-ytor ändras inte.
+- **Motivering:** Alla fyra organ konvergerar: kunden är telefon-först och den bevisade vaktkanalen (176 kombinationer 0 fynd, ISR 44/44) mäter struktur men inte tid, touch, RTL, säkerhet eller juridisk synlighet. Utökningen förenar plattformens hetaste hotyta (sessioner, kakor, etiketter) med största tillväxtytan (mobile-first-indexering, arabisk RTL) och körs enligt vaktens bevisade mönster — icke-blockerande tills baslinjen är känd.
+- **Roller:**
+  - ORDFORANDE: {"beslut":"Gränssnittsvakten byggs ut från strukturmätning till full mobilförsäkring: Core Web Vitals, tryckytor, RTL-rendering och juridisk synlighet (disclai…
+  - TEKNIK: Vakten mäter struktur men inte tid och touch — CWV med throttling, tryckytor enligt WCAG 2.5.8 och lazy-laddning av tunga ytor, med våg 212 mot 125/125 parallellt.
+  - SAKERHET: MINNE LADDAT — tråden står i ROND 107: våg 212 löper (testaggregatorn visade 117 gröna/8 röda sviter, tsx-rotmisstanken diagnostiseras); här lämnar Säkerhet (C…
+  - JURIDIK: Text som klipps bort på mobil är juridiskt obefintlig: disclaimer-synlighet, symmetriskt kakmedgivande och ångerrättslänkar blir mekanisk vaktlag — R2-ytor rörs ej.
+  - TILLVAXT: MINNE LADDAT — tråden står i ROND 107: våg 212 löper (testaggregatorns 8 röda sviter under diagnos, tsx-beroende identifierat), fabriken kör v211:s översättnin…
+- **Åtgärder:**
+  1. Utöka gränssnittsvakten med Core Web Vitals-mätning (LCP/INP/CLS via PerformanceObserver) i mobil-viewport med CPU- och nätverksthrottling, larm vid LCP > 2,5 s — icke-blockerande tills baslinjen är känd
+  2. Lägg tryckytskontroll i vakten enligt WCAG 2.5.8 — minimum 24 px, målbild 44 px — så att kundens krav på stora tryckytor blir mekanisk lag
+  3. Lägg RTL-mobilrendering som egen vaktkontroll som ska vara GRÖN innan v211:s arabiska sidor publiceras — oläslig juridisk text är obefintlig text
+  4. Lägg disclaimer-synlighet som mekanisk kontroll: utbildningsetiketten (2007:528) fullt synlig på mobil i sv/en/ar — aldrig klippt, nedskalad eller gömd i dragspel
+  5. Audittra kakmedgivandet på mobil (LEK 2022:482): symmetriska acceptera/avvisa-knappar, lika enkel återkallelse som accept, samt GDPR art 13-integritetsinformation läsbar i mobilvy vid varje insamlingspunkt
+  6. Verifiera ångerrätts- och villkorslänkar (2005:59, 2 kap 10–11 §§) fullt klickbara i hela mobil-köpflödet — ingen känslig data i URL:er, inga stackspår i felmeddelanden
+  7. Härdna Supabase-Auth-sessioner som mekanisk kontroll: Secure/HttpOnly/SameSite-flaggor, förnyelsetakter och 'logga ut alla enheter'
+  8. Lägg rate-limiting och progressiva fördröjningar på inloggnings-API:et med larm vid fel-mönster per IP och yta
+  9. Lazy-ladda tunga komponenter (grafer, tabeller) på AKM2- och kurssidor med next/dynamic samt gör ISR-värmning av varje ny publicerad sida till regel i publiceringsprotokollet
+  10. Håll våg 212 (testaggregatorn) mot 125/125 gröna sviter parallellt — en röd testsvit är teknisk skuld som smyger sig in i mobilleveranser
+- **Mötes-id:** styrelse-mu8yl33j-fe94zm
+
+## 2026-09-19 22:46 — Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?
+
+- **Status:** KÖRS DIREKT (existential=false)
+- **Beslut:** Nästa kvalitetssvep körs i fasordning från billigast/mest isolerat till dyrast/mest delat tillstånd: (0) tsc-typnoll + snabba deterministiska enhetssviter, (1) isoleringsgrind som verifierar dev-port och NODE_ENV innan någon API-anropande svit startar — röd grind avbryter hela svepet — följt av säkerhets-/R2-sviter och publik-yte-sviter fail-fast, (2) miljöberoende sviter (tsx-transport) mot ett delat dev-serverfönster, (3) prod-nära sviter först efter landad deploy, (4) tunga tillståndsskrivande sviter (styrelsemötet) sist med timeout och logg. Varje rött resultat klassas med rotorsaksklass direkt i aggregatorsrapporten.
+- **Motivering:** Alla tre närvarande organ konvergerar: tid-till-signal (CTO), kontroll och isolering så röda tal alltid betyder kodfel och svepet aldrig skriver i prod (CISO), samt bevisvärde om den sajt Google faktiskt ser med publika ytor tidigt och RTL-grind före v211 (Tillväxt). Veckans 8 röda med tre olika rotorsaker (transport, miljö, tillstånd) bevisar kostnaden med fel ordning; faserna förenar dem utan att röra några R2-ytor.
+- **Roller:**
+  - ORDFORANDE: {"beslut": "Nästa kvalitetssvep körs i fasordning från billigast/mest isolerat till dyrast/mest delat tillstånd: (0) tsc-typnoll + snabba deterministiska enhet…
+  - TEKNIK: Fasordning efter kostnad, miljöberoende och delat tillstånd: tsc → snabba enhetssviter → tsx/dev-fönster → prod-nära → tunga tillståndssviter, med delat dev-fönster och rotorsaksklass per rött.
+  - SAKERHET: Isoleringsgrind (dev-port, NODE_ENV, aldrig prod 3000) FÖR svepet, säkerhets-/R2-sviter tidigt fail-fast, tillståndsskrivande sviter sist med uppstädning och kvitto per svit — tyst död är kontrollför…
+  - JURIDIK: Rollen kunde ej redovisa: tidsgräns (90 s) — rollen redovisas som ute
+  - TILLVAXT: Deterministiska snabbsviter och publik-yte-sviter (route-200, ISR-värme, sitemap, hreflang) först, RTL-grind före v211:s arabiska publicering, prod-nära efter deploy och 200-kontroll av alla språkrot…
+- **Åtgärder:**
+  1. Fas 0 fail-fast: kör tsc-typnoll + snabba deterministiska enhetssviter (syntax, beräkning, motorvalidering 107/0/0) före allt annat
+  2. Bygg isoleringsgrinden i aggregatorn: verifiera dev-port + NODE_ENV för alla API-anropande sviter (aldrig prod 3000) — röd grind avbryter hela svepet innan någon svit körs
+  3. Kör säkerhets- och R2-sviterna (401-autentisering, sessioner, existentialklassning) direkt efter fas 0 med fail-fast och ren logg
+  4. Lägg publik-yte-sviterna (route-200, ISR-värme 44/44, sitemap-färskhet, canonical/hreflang) i tidig fas; RTL-kontrollen är en GRÖN-grind som måste passera FÖRE v211:s arabiska sidor publiceras
+  5. Starta dev-serverfönstret en gång per miljöfas, dela det mellan sviterna i fasgruppen och städa idempotent — aldrig per-svit-tillstånd
+  6. Kör prod-nära sviter (tradspermanens, prod-synk-tidsstampel) endast efter landad deploy så de mäter aktuellt träd, inte gårdagens prod
+  7. Kör tillståndsskrivande sviter (styrelsemötet ~5 min) sist, med timeout och loggade döda barn enligt fabrikens mönster — de ska aldrig blockera snabbare signal
+  8. Klassa varje rött resultat med rotorsaksklass (transport, miljö, data, tillstånd) direkt i aggregatorsrapporten så nästa svep börjar på diagnos
+  9. Kvittera varje svit med exit-kod + loggadress vid slut eller timeout — tyst död i kvalitetssvepet är en kontrollförlust
+  10. Avsluta svepet med 200-kontroll av alla språkrotvägar (sv/en/ar) och rapportera per svit med rotorsaksklass
+- **Mötes-id:** styrelse-mu8z4oyz-j763a1

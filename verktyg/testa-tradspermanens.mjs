@@ -30,7 +30,10 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const ROTA = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const ENV_SOKVAG = path.join(ROTA, ".env.production.local");
+// Nyckelfil: arbetsytan först, sedan PROD-trädet (servern kör mot :3000 =
+// prod — scenarion-svitens mönster). Läsning endast; filen rörs ALDRIG (R2).
+const ENV_SOKVAGAR = [path.join(ROTA, ".env.production.local"), "/home/ak1a/AK1/.env.production.local"];
+const ENV_SOKVAG = ENV_SOKVAGAR.find((p) => existsSync(p)) ?? ENV_SOKVAGAR[0];
 const MAL_STATE_SOKVAG = path.join(ROTA, "data", "vakten", "mal-state.json");
 
 const BAS_ARG = process.argv.find((a) => a.startsWith("--bas="));

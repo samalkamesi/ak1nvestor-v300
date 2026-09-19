@@ -11,9 +11,12 @@
  * Flöde:
  *   1. Startar `npm run dev` i bakgrunden OM :port inte svarar (beredskaps-
  *      sond: öppna GET /api/studio/halsa).
- *   2. POST /api/studio/styrelse {fraga: "Vad bör prioriteras för
- *      mobilupplevelsen?"} (harmlös fråga — inga existentiella domäner i
- *      närheten) → {id}.
+ *   2. POST /api/studio/styrelse {fraga: "Vilken ordning bör de interna
+ *      testsviterna köras i nästa kvalitetssvep?"} (harmlös fråga — inga
+ *      existentiella domäner i närheten; R107-lärdom: frågor om ytor som
+ *      bjuder in kakor/juridik i svaret klassas VÄNTAR KUND av R2-klassaren,
+ *      vilket är MOTORN rätt men K4 omöjligt — frågan måste hålla sig till
+ *      rent interna mekanik) → {id}.
  *   3. Pollar GET ?id=&senast=N inkrementellt (mötets händelselogg live).
  *   4. Bevisar:
  *      K1  Mötet slutar status=klart med beslut.
@@ -46,7 +49,7 @@ const JSON_HEADERS = { ...HEADERS, "Content-Type": "application/json" };
 
 const SKRIPT_SOKVAG = fileURLToPath(import.meta.url);
 const ROT = path.resolve(path.dirname(SKRIPT_SOKVAG), "..");
-const FRAGA = "Vad bör prioriteras för mobilupplevelsen?";
+const FRAGA = "Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?";
 
 const kontroll = (namn, ok, detalj) => {
   const ikon = ok ? "PASS" : "FAIL";

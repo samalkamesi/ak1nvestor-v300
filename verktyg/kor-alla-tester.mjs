@@ -17,6 +17,13 @@
  *     ett hängande barn kan aldrig frysa hela svepet
  *   · klassificering: exit 0 = GRÖN · exit ≠0 = RÖD · timeout = RÖD(timeout)
  *     · spawn-fel = RÖD — ofullständig mätning är ALDRIG grönt (vakt-doktrin)
+ *   · tsx-återfall (R107): svit som dör med ERR_MODULE_NOT_FOUND under ren
+ *     node (ändelselösa TS-imports) körs om via `npx --yes tsx` — grönt
+ *     kräver fortfarande att SVITEN själv passerar
+ *   · dev-serverfönster (R107): sviter som mäter mot dev+mock-transport
+ *     (testa-studio-ttfb/tabbar/rewind) får en EGNA dev-server på port
+ *     AK1A_TEST_DEV_PORT (default 3117, STUDIO_TRANSPORT=mock) med värmnings-
+ *     POST före första mätningen — port 3000 (prod) rörs ALDRIG av fönstret
  *   · kvitto-rad: sista stdout-rad som ser ut som ett resultat (PASS/FAIL/
  *     RESULTAT/GRÖN…) — sviternas egna utdata är sanningen, aggregatorn
  *     hittar bara på INGA tal
@@ -44,6 +51,14 @@ const VERKTYG = path.join(REPO, "verktyg");
 const RAM_TRSKEL_MB = 900;     // fabrikens princip: aldrig starta tungt barn under detta
 const RAM_VANTA_TAK_S = 20 * 60; // per svit: vänta högst 20 min på minne
 const TERM_TOLERANS_S = 5;     // SIGTERM ⇒ 5 s ⇒ SIGKILL
+
+// ── dev-serverfönstret (ROND 107) ───────────────────────────────────────────
+// Sviter som mäter MOT en dev-instans med mock-transport (våg 95/144:s
+// dev-baslinjer: mockens permission-dialoger besvaras direkt). Port 3000 är
+// PROD på servern och får aldrig mixas in i dev-mätningen — aggregatorn
+// föder en egen dev-server på egen port medan dessa sviter kör.
+const DEV_SVITER = /^(testa-studio-(ttfb|tabbar|rewind))\.mjs$/;
+const DEV_PORT = process.env.AK1A_TEST_DEV_PORT || "3117";
 
 // ── argument ────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -94,10 +109,87 @@ async function vantaRam() {
   }
 }
 
-/** Kör EN svit med timeout + gradvis avlivning. */
-function korSvit(fil, takS) {
+// ── dev-servern (ROND 107): föds på behov, dödas efter sista dev-sviten ─────
+let devServer = null; // { pid } | null
+let devMisslyckades = false;
+
+async function startaDevServer() {
+  const logg = [];
+  // Test-instansens lösenord sätts EXPLICIT till dev-värdet: ärvt ADMIN_PASSWORD
+  // (OS-env eller .env.local) slår annars AV dev-fallbacken och trion (hårdkodad
+  // AK1A-2026) dör i 401 (R107-fynd). Instansen binds ENDAST till loopback och
+  // kör mock-transport — inga riktiga hemligheter, ingen extern yta.
+  const barn = spawn("npm", ["run", "dev", "--", "-p", DEV_PORT, "-H", "127.0.0.1"], {
+    cwd: REPO,
+    detached: true, // egen processgrupp ⇒ gruppdöd nedan får hela trädet
+    env: { ...process.env, NO_COLOR: "1", STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  barn.stdout?.on("data", (d) => logg.push(String(d)));
+  barn.stderr?.on("data", (d) => logg.push(String(d)));
+  const BAS = `http://127.0.0.1:${DEV_PORT}`;
+  const svarar = async () => {
+    try {
+      const r = await fetch(`${BAS}/api/studio/halsa`, { signal: AbortSignal.timeout(3_000) });
+      return r.ok;
+    } catch {
+      return false;
+    }
+  };
+  console.log(`  dev-server startar (port ${DEV_PORT}, STUDIO_TRANSPORT=mock) …`);
+  let uppe = false;
+  for (let t = 0; t < 90 && !uppe; t++) {
+    await new Promise((r) => setTimeout(r, 2_000));
+    uppe = await svarar();
+  }
+  if (!uppe) {
+    console.log(`  dev-server kom ej upp inom 180 s — senaste logg: ${logg.join("").slice(-400)}`);
+    await dodaDevServer(barn);
+    return null;
+  }
+  // Värm studio-rutten: första POST triggar kompilering (10–60 s) som annars
+  // äter trions egna 30 s-tidsgränser. Läs till första händelsen, avbryt sedan.
+  try {
+    const ac = new AbortController();
+    const res = await fetch(`${BAS}/api/studio/stream`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-password": "AK1A-2026" }, // dev-fallback (NODE_ENV=development)
+      body: JSON.stringify({ prompt: " aggregatorvärmning — svara inte" }),
+      signal: ac.signal,
+    });
+    const lasare = res.body?.getReader();
+    if (lasare) await lasare.read(); // första SSE-chunken = rutten kompilerad + svarar
+    ac.abort();
+  } catch {
+    /* värmningen är bästa-ansträngning — sviten får visa sitt eget svar */
+  }
+  console.log(`  dev-server uppe + värmnings-POST klar (${BAS})`);
+  return { pid: barn.pid };
+}
+
+async function dodaDevServer(barn) {
+  try {
+    process.kill(-barn.pid, "SIGTERM"); // gruppen: npm + next-dev-trädet
+  } catch {
+    /* redan borta */
+  }
+  setTimeout(() => {
+    try {
+      process.kill(-barn.pid, "SIGKILL");
+    } catch {
+      /* redan borta */
+    }
+  }, 5_000);
+}
+
+/** Kör EN svit med timeout + gradvis avlivning.
+ * viaTsx: kör genom `npx --yes tsx` — återfall när sviten importerar TS-moduler
+ * med ändelselösa imports (node-ESM löser dem ej; tsx gör det). */
+function korSvit(fil, takS, args = [], viaTsx = false) {
   return new Promise((res) => {
-    const barn = spawn(process.execPath, [fil], {
+    const cmd = viaTsx ? "npx" : process.execPath;
+    const argv = viaTsx ? ["--yes", "tsx", fil, ...args] : [fil, ...args];
+    const barn = spawn(cmd, argv, {
       cwd: REPO,
       env: { ...process.env, NO_COLOR: "1" },
       stdio: ["ignore", "pipe", "pipe"],
@@ -196,18 +288,56 @@ for (const fil of sviter) {
     console.log(`AVBRYTER-RAM före ${fil} — ${resultatLista.length}/${sviter.length} mätta; kör om med --fortsatt`);
     break;
   }
+  // dev-serverfönstret: föds före första dev-sviten, lever till sista
+  if (DEV_SVITER.test(fil) && !devServer && !devMisslyckades) {
+    if (!(await vantaRam())) {
+      avbrutenRam = true;
+      console.log(`AVBRYTER-RAM före dev-servern (${fil}) — kör om med --fortsatt`);
+      break;
+    }
+    devServer = await startaDevServer();
+    if (!devServer) devMisslyckades = true;
+  }
   process.stdout.write(`  ${fil} … `);
-  const r = await korSvit(path.join(VERKTYG, fil), takSek);
-  const post = {
-    fil,
-    status: r.status,
-    orsak: r.orsak,
-    sekunder: r.sekunder,
-    kvitto: kvittoRad(r),
-    sistaFel: r.status === "RÖD" ? sistaFelRad(r) : null,
-  };
+  let post;
+  if (DEV_SVITER.test(fil) && !devServer) {
+    post = { fil, status: "RÖD", orsak: "dev-server kom ej upp (mock-baslinjen omöjlig)", sekunder: 0, kvitto: "(tyst utdata)", sistaFel: null };
+  } else {
+    const args = DEV_SVITER.test(fil) ? [DEV_PORT] : [];
+    let r = await korSvit(path.join(VERKTYG, fil), takSek, args);
+    // tsx-återfall (ROND 107): sviter som importerar TS-moduler med
+    // ändelselösa imports dör under ren node (ERR_MODULE_NOT_FOUND) —
+    // sviten förblir sanningen: grönt kräver att den PASSERAR under tsx.
+    if (r.status === "RÖD" && /ERR_MODULE_NOT_FOUND/.test(String(r.fel))) {
+      process.stdout.write("(tsx-återfall) ");
+      r = await korSvit(path.join(VERKTYG, fil), takSek, args, true);
+    }
+    post = {
+      fil,
+      status: r.status,
+      orsak: r.orsak,
+      sekunder: r.sekunder,
+      kvitto: kvittoRad(r),
+      sistaFel: r.status === "RÖD" ? sistaFelRad(r) : null,
+    };
+  }
   resultatLista.push(post);
-  console.log(`${r.status} (${r.sekunder} s) — ${post.kvitto}`);
+  console.log(`${post.status} (${post.sekunder} s) — ${post.kvitto}`);
+}
+
+// dev-servern dör ALWAYS — även efter avbrott (aldrig läckande next-dev)
+if (devServer) {
+  console.log("  dev-servern stängs …");
+  const dodare = devServer;
+  await new Promise((r) => setTimeout(r, 500));
+  try {
+    process.kill(-dodare.pid, "SIGTERM");
+    setTimeout(() => {
+      try { process.kill(-dodare.pid, "SIGKILL"); } catch { /* borta */ }
+    }, 5_000);
+  } catch {
+    /* redan borta */
+  }
 }
 
 // ── summering + rapport ─────────────────────────────────────────────────────

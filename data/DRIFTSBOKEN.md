@@ -2422,3 +2422,40 @@ DR-RPO-DIFF-2026-09-19-FORMIDDAGSPULS{,-2}.json + PREDIKTION-json.
 - **Läxa**: "pushad kur är inte deployad kur" — live-kvitto mäts mot
   BUILD_ID, aldrig mot commit-HEAD (andra bevisade fallet; första = våg
   100-epoken).
+
+## S10-U3 — KVARTALSÖVNING EFTERMIDDAG: restore GRÖN 11,5 s (dagens snabbaste) + eftersläpad skrap-DB från --behall-fönstret städad (2026-09-19 16:07–16:09 lokal, GODKÄNT)
+
+Agent: s10-u3 (manifest auto-s10-1789826700636, vakt 3/3). Order: DR-övning
+nästa i spåret — återställ, mät tid/rader, protokoll, städa lokal PG.
+Syskonen u1/u2 höll offsite-backup-spåret (backup-offsite.mjs 14:52) —
+kärnövningen ledig, dubbelanspråk fanns ej.
+
+**Körning** (`node verktyg/dr-ovning.mjs`, protokoll
+DR-PROV-2026-09-19-AUTO-12.md): markörkoll GRÖN på blad db-2026-09-19
+(31,1 MB · 1 347 729 dump-rader · 99 CREATE TABLE · 101 COPY) → färsk
+skrap-DB → **restore RTO 11,5 s** (dagens snabbaste; serie-spann 10,3–23,9)
+→ fel 788 kända / **0 okända** → mätning tre nivåer: public
+**60 tabeller / 1 325 919 rader** · public+storage 68 / 1 326 055 ·
+alla scheman 99 / 1 326 315 → protokoll → full städning (skrap-DB raderad ·
+PG17 stoppad). Radtalet IDENTISKT med AUTO-10/AUTO-11 (samma blad) —
+determinismen i serien håller; jämförelsebasen: v98 20,0 s · 1 187 291 →
+s10-u2 17,7 s · 1 246 728 → s10-u3 14,7 s · 1 246 728 → denna 11,5 s ·
+1 325 919 (datat växer, RTO fallande).
+
+**Städningsfynd (uppdragets fjärde steg blev en leverans i sig):** vid
+min start låg `ak1a_dr_test` KVAR i PG17-klustret medan PG17 var stoppad —
+ett --behall-fönsters halvföljda kontrakt (AUTO-10:s protokoll rad
+"skrap-DB lämnad + PG17 uppe (— anroparen städar)": anroparen stoppade
+PG17 men droppade aldrig DB:n). Övningens steg 3 (dropdb --if-exists)
+städade den gamla DB:n atomärt och det avslutande städsteget — utan
+--behall — lämnade klustret i bevisat viloläge. Läxa för kommande
+--behall-användare: kontraktet har TVÅ delar (stopp OCH drop) — halv
+städning lämnar kvar ett franchise-tecken som nästa övning måste bära.
+Verifierad slutposition: pg_lsclusters 17/main **down** · psql
+kopplingsvägran (skrap-DB:s frånvaro bevisad) · fellogg sparad i /tmp
+enligt mall (blad+pid+ms) · flock-låsfil kvar i viloläge (enligt c3b871f7).
+
+**KVD:** data-only — src/ orörd = INGET bygge (tsc-baslinjen vilar i
+pre-commit-grinden) · R2 orörd · data/blogg/ orörd · data/backups/ endast
+läsning · syskonytor orörda. Nästa kvartalsövning: **senast 2026-12-19** —
+`node verktyg/dr-ovning.mjs`.

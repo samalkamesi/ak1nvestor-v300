@@ -96,12 +96,27 @@ som förfader) — FABRIKSREGLER: ALDRIG eget bygge:
 frigjort minne). EFTER kan EJ ske i denna vågs fönster (RAM-en paradox: sonden
 själv håller minnet deployen väntar på) ⇒ kriterierna §3 är vakarövertag-barra.
 
-**VERKSTÄLLT 19:1x–19:3xZ av vakarövertag (fabriksagent s7-u3, ny instans,
-samma manifest — u2:s fönster tog slut före deployen).** Deploy-vilkor: prod-synk
-**DEPLOYAD 19:01:06Z, 7 commits (7b221de9)**; BUILD_ID `xBzidYwn8BHC5MbVEaTza` →
-**`nwHC2B9w0z86loSZDzAe3`**; `git merge-base --is-ancestor 15389ebc` ✓ (o96-kuren
-förfader — deployen bar sannolikt u1+u2+u3:kurerna samtidigt; attribution enligt
-o92 §3.4-klassen: gemensam deploy, separata målytor).
+**VERKSTÄLLT i TVÅ RONDER 19:13–19:35Z av vakarövertag (fabriksagenter ur
+samma manifest — u2:s fönster tog slut före deployen).** Deploy-vilkor
+uppfyllt: prod-synk **DEPLOYAD 19:01:06Z, 7 commits (7b221de9)**; BUILD_ID
+`xBzidYwn8BHC5MbVEaTza` → **`nwHC2B9w0z86loSZDzAe3`**; `git merge-base
+--is-ancestor 15389ebc` ✓ (o96-kuren förfader — deployen bar u1+u2+u3:kurerna
+samtidigt; attribution enligt o92 §3.4-klassen: gemensam deploy, separata
+målytor).
+
+**ROND 1 (19:14–19:20Z) OGILTIGFÖRKLARAD — mätte mot OOM-skadat .next.**
+Prod-synkens 19:07-bygge OOM-dödades **19:11:39Z** (»bygg OOM-dödat
+(Killed/heap)«, prod-synk.log) och lämnade .next partiellt raderad (BUILD_ID
+borta, chunk:ar HTTP 500). Bevis i rond 1:s egen rådata: marinInfo
+padTop/padBottom = **0/0** (riktiga FÖRE-rådan: 40/40 = sm:p-10 ⇒ sidan var
+OSTYLD); marin-box 511/522 (platshållarna skulle vara 484/636/626); LH
+nätverk **21 av 27 requestar = 500**. Rond 1 bokfördes ändå i **81b9cb7c**
+(»Δ0 överallt · LH P93/1 765/299 · CLS 0 · spegel-pop-in BOTAD«) —
+**samtliga dessa tal är artefakter** och korrigeras av rond 2 nedan; rond 2:s
+rådata har skrivit över rond 1:s filer. Rond 1:s utförliga
+»absolutnivå-drift«-förklaring (511/522 som »nya verkliga höjder«) byggde på
+den ostylda sidan och är vederlagd: på friskt bygge är de verkliga höjderna
+identiska med §1a:s sonderingar.
 
 **Verkställighetskommandon (mekaniskt, nästa instans/huvudagent):**
 
@@ -122,58 +137,67 @@ node verktyg/prestanda-lighthouse.mjs s7u2o96-efter /en/kurser
 **Domännote:** rådata-filerna får EFTER-namn (blocksond-s7u2o96-efter-*) —
 FÖRE-paren är committade i 15389ebc och bevaras av git för jämförelsen.
 
-**§6.1 prod 200 ×5 https** (19:2xZ, färsk omverifiering): / · /kurser · /blogg ·
-/en/kurser · /ar/kurser — **5/5 = 200 ✓**.
+**§6.1 prod 200 ×5 https** (19:22Z): / · /kurser · /blogg · /en/kurser ·
+/ar/kurser — **5/5 = 200 ✓**. Mätgeneration för rond 2: prod-synkens
+retry-deploy **DEPLOYAD 19:21:54Z, BUILD_ID `law7C-X7uWtWlr4rkAmR2`**
+(075c1b4d; 15389ebc förfader ✓) — bär **oförändrad marin-CSS** (075c1b4d:s
+flagg-justering 30.75rem är mobil-only `.cv-utvalt`, rör ej @900/@1280-
+mariner), varför kriterierna är utvärderbara på den generationen.
 
-**§6.2–6.4 blocksond EFTER ×4** (sekventiella, RAM-vakt 4 373–5 226 MB;
-rådata `blocksond-s7u2o96-efter-desktop-{en,ar,en-900,ar-900}.json`):
+**§6.2–6.4 blocksond EFTER ×4 — ROND 2, giltighetsgrindad** (19:24–19:32Z,
+sekventiella, RAM-vakt 4 495–4 877 MB; grind per sond: pad 40/40 ✓ ·
+platshållarläge renderad:false vid topp ✓ · stabilt docH-poll ✓; rådata
+`blocksond-s7u2o96-efter-desktop-{en,ar,en-900,ar-900}.json`):
 
-| Sida @ bredd | docH F→E | Δ | Marin box F→E | Marin Δ | Kriterium |
+| Sida @ bredd | docH F→E | Δ | Marin box F→E | Marin Σ | Kriterium |
 |---|---|---|---|---|---|
-| /en/kurser @1280 | 2 898 → 2 898 | **0** | 511 → 511 | **0** | \|Δ\|≤50 ✓ · \|Σ\|≤10 ✓ (mot −527/−524) |
-| /ar/kurser @1280 | 2 924 → 2 924 | **0** | 522 → 522 | **0** | grönt läge bevarat ✓ (mot −3) |
-| /en/kurser @900 | 3 081 → 3 081 | **0** | 511 → 511 | **0** | \|Σ\|≤10 ✓ (mot −363) |
-| /ar/kurser @900 | 3 119 → 3 119 | **0** | 522 → 522 | **0** | grönt bevarat ✓ (mot −2) |
+| /en/kurser @1280 | 3 643 → 3 640 | **−3** | 484 → 484 | **0** | \|Δ\|≤50 ✓ · \|Σ\|≤10 ✓ (mot −527/−524) |
+| /ar/kurser @1280 | 3 543 → 3 540 | **−3** | 484 → 484 | **0** | grönt läge bevarat ✓ (mot −3) |
+| /en/kurser @900 | 3 922 → 3 929 | **+7** | 636 → 645 | **+9** | \|Σ\|≤10 ✓ (mot −363) |
+| /ar/kurser @900 | 3 809 → 3 807 | **−2** | 626 → 626 | **0** | grönt bevarat ✓ (mot −2) |
 
-Engångskrympningen är **totalt borta på alla fyra mätpunkterna** — Δ0
-överallt, inte enbart inom toleranserna.
+Kalibreringen träffar på siffran: platshållar-box **484 = 25.25rem+80
+EXAKT** på ≥1 024 (residual 0/0 som §2-tabellen förutsade); @900 box 636 ≈
+635,5 (34.71875rem+80) mot verklig **645/en (+9)** och **626/ar (0)** —
+residualer inom |Σ|≤10. De renderade höjderna 484/484/645/626 är IDENTISKA
+med §1a:s FÖRE-sonderingar — inget »absolutnivå-drift« (rond 1:s 511/522
+var den ostylda sidan). docH ligger kvar på FÖRE-fönstrets nivåer (3 640/
+3 540/3 929/3 807 ±11) — engångskrympningen är botten, inte sidhöjden:
+platshållarna matchar det renderade.
 
-**§6.5 /kurser @1280-kontroll:** o97-sondens desktop-mätning (samma fönster)
-visar ingen signatur från cv-siffreband-klasserna på svenska sidan (klasserna
-används ej där — .cv-socialproof äger svenska /kurser, orörd) ✓ gate pass.
+**§6.5 /kurser @1280-kontroll:** HTML-grep på prod-svaret (bygge law7C-X7):
+`cv-siffreband` **0 träffar** på /kurser — klasserna används ej på svenska
+sidan · `.cv-socialproof` närvarande (2) och orörd av o96-kuren ✓ gate pass.
+Stöd: u1:s o93-desktop-EFTER (ad1d731f; docH 7 876→7 840 = −36 brus,
+registerkort 43 px/kort enhetligt) utan marin-signatur — ingen NY signatur ✓.
 
-**§6.6 Lighthouse EFTER /en/kurser** (`en_kurser-s7u2o96-efter.json`):
-**P93 · LCP 1 765 · TBT 299 · CLS 0** mot FÖRE **P46 · 4 395 · 2 198 · 0,204** —
-P ≥ 41 ✓✓, LCP/TBT långt UTANFÖR och bättre än ±15 %-envelopen ✓, CLS 0 ✓.
-**Bif fynd — spegel-pop-in (o89 §5, kö §5.1) är BOTAD som sidoeffekt:**
-FÖRE-attributionen (huvudgridden två skift à ~0,10) stämmer — med o93:s
-register- och o97:s utvalt-platshållare kalibrerade mot verkliga höjder blir
-skiftena noll och CLS 0,204 → 0. Spårets köpost §5.1 löst av triots samlade
-kalibrering, här kvantifierat. (TBT −86 % och LCP −60 % bärs även av kortare
-dokument — /en docH 4 167 → 2 898 — och ett tystare vilofönster; hederligt
-noterat; poängen är envelopen passerad i bättre riktning.)
+**§6.6 Lighthouse EFTER /en/kurser — ROND 2** (`en_kurser-s7u2o96-efter.json`,
+19:33Z; nätverksintegritet: **33/33 requestar = 200**, 507 KiB):
+**P49 · LCP 4 401 · TBT 1 567 · CLS 0,2045** mot FÖRE **P46 · 4 395 ·
+2 198 · 0,204** — P ≥ 41 ✓, LCP +6 ms (+0,1 %, väl inom ±15 %) ✓, TBT −29 %
+(bättre än envelopen; tystare vilofönster än FÖRE-rondens 861–1 960 MB
+bidrar — hederligt noterat, o93-precedensen) ✓, CLS samma regime ✓.
 
-**§6.7 gränssnittsvakten:** senaste cron-löp 17:55Z/18:03Z-filen (före deploy):
-0 fynd/176 kombinationer; första vaktkörning på det nya bygget sker vid nästa
-6-timmarscron (~00:0xZ) — bevakning till huvudagentens vaktprompt
-(o92 §3.5-precedensen, o93 §6 samma note).
+**RETRAKTION av 81b9cb7c:s bif-påstående: spegel-pop-in (o89 §5, kö §5.1)
+är EJ botad.** Rond 1:s »CLS 0« var artefakt av ej laddad JS (21×500 ⇒
+ingen hydration ⇒ inga skift). På friskt bygge är CLS-regimen oförändrad
+(0,2045 ≈ 0,204) — pop-in:t lever och köposten §5.1 kvarstår oförändrad
+(mobil-yta; o96:s kure är md+-CSS och rör den ej, precis som §3.6 förutsade).
 
-**Observation (äkthet, ej kur-relevant): absolutnivåerna har driftat mellan
-fönstrena** — marin-box mäter nu 511 (/en) resp 522 (/ar) på både 1 280 och
-900, mot FÖRE-fönstrets sonderade äkta 484/484 @1280 och 645/626 @900. Rot:
-sidorna är nu ~30 % kortare (triots kurer) ⇒ marin-panelen ligger inom
-rendermarginalen redan vid topp (sondens `renderad:true` i FÖRE-snapshoten —
-auto-minnet gäller, platshållarnivån biträtt aldrig/färdigt) ⇒ 511/522 är de
-verkliga renderade höjderna på DETTA bygget; @900 renderar numera samma höjd
-som @1280 (511 = 511), vilket indikerar att FÖRE-fönstrets 2-kolumnsläge
-var en konsekvens av det längre dokumentets layouttiming, ej bredden i sig.
-Delta-måttet (som är kur-kriterierna) är Δ0 på samtliga punkter; sondens
-padding-räkenskap i renderat läge (padTop läses 0 trots sm:p-10) noteras som
-nivå-2-fråga till nästa våg om absolutkalibrering behövs.
+**§6.7 gränssnittsvakten:** senaste cron-löp 17:55Z (före deploy): 0 fynd/
+176 kombinationer; första vaktkörning på det nya bygget sker vid nästa
+6-timmarscron — bevakning till huvudagentens vaktprompt (o92 §3.5-
+precedensen, o93 §6 samma note). Not: OOM-fönstret 19:11:39–19:21:54Z
+serverade skadade assets i prod (infra, ej kodfel; självläkt av 19:17-
+retryn) — vakten fick inget fönster på det; ärligt bokförd här.
 
-**DOMSLUT o96: GRÖN på samtliga kriterier.** Marinens engångskrympning
-−527/−363 på /en är Δ0 efter kur (kalibreringen 34.71875/25.25rem träffar);
-/ar:s gröna läge bevarat (Δ0); Lighthouse-envelopen passerad med P93/CLS 0
-och spegel-pop-in-köposten löst som bif fynd. Bevis: deploy 19:01:06Z
-(7b221de9, BUILD_ID nwHC2B9w0z86loSZDzAe3, 15389ebc förfader ✓) → prod 200
-×5 → blocksond ×4 + LH → denna bokföring.
+**DOMSLUT o96: GRÖN på samtliga sju kriterierna — med rond 2:s äkta tal.**
+Marinens engångskrympning −527/−363 är botad till docH Δ −3/+7 (mot tak 50)
+med platshållarna 484/636/626 = CSS-nivåerna exakt och marin-Σ 0/0/+9/0
+(mot tak 10); /ar:s gröna läge bevarat; LH-envelopen passerad (P49, LCP
++0,1 %, TBT −29 %, CLS-regime oförändrad). Rond 1:s Δ0/P93/CLS-0-tal
+(81b9cb7c) var artefakter mot OOM-skadat .next och är ersatta av denna
+bokföring — därav också retractionen av »pop-in botad«. Bevis: deploy
+19:01:06Z (7b221de9, nwHC2B9w) → OOM-dödat retry-bygge 19:11:39Z →
+retry-deploy 19:21:54Z (075c1b4d, law7C-X7) → prod 200 ×5 → giltighets-
+grindad sond ×4 + LH 33/33×200 → denna korrigering.

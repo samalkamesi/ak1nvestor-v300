@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743 s1-u3 ANDRA INSTANSEN (sent omstarts-dispatch av en avslutad uppgift; oberoende komplement till primärpaketet i 05ed8ad8, 2026-09-19)",
+  "rapport": "lyxaktier-sa-analyserar-du-lyxbolag-KONTROLL-2026-09-19.md (PRIMÄR, orörd)",
+  "bedomning": "PRIMÄRENS DOM KVARSTÅR OFÖRÄNDRAD: FLYTTKLAR EFTER RÄTTNING (B1-B4, C1/C2, D1). Detta komplement tillför: (1) oberoende webbkonfirmering av B1 Hermès 41,0 % via tre separata källor (rörelseresultat 6,6 mdr € +7 % på 16,0 mdr € = 41 %, FT Markets/Yahoo/LuxuryTribune 2026-02-12) — primärens IR-fotnotsförklaring (30,3 = justerad NETTOMARGINAL för FY2025) är den rätta källförankringen; omstartsinstansens alternativa matchning (FY2024-nettomarginal 4 602/15 166 = 30,34 %) är ett sammanträffande med stöd i data men ersätter inte IR-läsningen — båda vägarna leder till samma kur: rörelsemarginal 41,0 procent. (2) Alternativ kur till primär-C1 (EBIT-meningen) som ger en icke-triviell jämförelse. (3) Konfirmering av nettofallet −13,3 % på råserien och Agache-talen inklusive tröskeltiming. (4) Sonden rättad och omkörd 42/0.",
+  "anvandning": "Poster av typ 'konfirmeration' kräver INGEN åtgärd — de stärker primärens fynd med oberoende metod och lämnar primärens söksträngar orörda. Posten 'alternativ' (ALT1) är ett Kurval åt ägaren: primär-C1:s kur och ALT1 är båda verkbara, de utesluter varandra. Posten 'verktyg' (V1) dokumenterar sondförbättringen på u3:s egen yta. Primärens KONTROLL + diff lämnade HELT ifred.",
+  "poster": [
+    {
+      "id": "ALT1",
+      "typ": "alternativ",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Cykeln — från boom till normalisering, tredje stycket)",
+      "gammalt": "rörelseresultatet 17,8 miljarder euro och rörelsemarginalen 22 procent, i nivå med universumets EBIT-marginal på 22,5 procent",
+      "nytt": "rörelseresultatet 17,8 miljarder euro och rörelsemarginalen 22 procent, i nivå med universumets EBIT-median (21,2 procent vid datahämtningen 2026-09-03)",
+      "orsak": "KURVAL åt ägaren, alternativ till primär-C1 (som behåller talet 22,5 men ändrar etiketten till 'bolagets EBIT-marginal i universumet'). Skillnaden i princip: primär-kuren gör jämförelsen explicit självrefererande (LVMH mot sitt eget fält — sann men trivial), ALT1 ger en faktisk jämförelse mot universumet (22,0 mot medianen 21,2 i byggvintagen 795fe396, n=143; dagens median 20,71, n=200 — 'i nivå med' håller i båda). ALT1 tillför ett nytt tal i texten men är den enda av de två som ger läsaren ny information. Kompromiss möjlighet: 'i nivå med såväl sitt eget trailing-fält (22,5) som universumets median (21,2)'. Båda kurer löser cirkulariteten — dom påverkas ej."
+    },
+    {
+      "id": "K1",
+      "typ": "konfirmeration",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "B1 Hermès rörelsemarginal (primär-diff B1)",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "OBEROENDE KONFIRMATION av primär-B1: omstartsinstansens egen webbverkifiering (2026-09-19) ger Hermès FY2025 rörelseresultat 6,6 mdr € (+7 %) på 16,0 mdr € omsättning = 41 % rörelsemarginal — samtliga tre tallägen (16 mdr rekord, +9 % fasta, +5,5 % rapporterat) dessutom exakta. Två agenter, skilda sökningar, samma slutsats: '30,3' är fel metrik och 41,0 är korrekt kur. Detailhandelsfallets tysta validering — fyndklassen är systematisk."
+    },
+    {
+      "id": "K2",
+      "typ": "konfirmeration",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "Aritmetik: nettofallet och CAGR (primär-KONTROLL §3)",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "Nettofallet −13,3 % bekräftat på RÅSERIEN (10 878/12 550 = −13,32 %; de avrundade talen 10,9/12,6 ger −13,49 — texten bär rådataprecision, GRÖNT). CAGR (10 878/14 084)^(1/3)−1 = −8,22 % mot källfältet −8,25 → '−8,2' ✓. Primärens bedömning exakt."
+    },
+    {
+      "id": "K3",
+      "typ": "konfirmeration",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "Kontrollsektionen: Agache-ägarskapet",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "50,01 % kapital / 65,94 % röster (februari 2026) oberoende konfirmerat (WWD/Bloomberg/LuxuryTribune). TIDSLINJE-tillägg utan krav på ändring: siffrorna är inte ett godtyckligt datumvärde — familjen KORSADE 50 %-tröskeln just i februari 2026 (köp för €407 M; 49,77 % vid utgången av 2025 → 50,01 %), vilket gör textens '(februari 2026)' till tröskelögonblicket. Om ägaren vill stärka meningen: 'sedan februari 2026 majoritetsägare' — frivilligt."
+    },
+    {
+      "id": "K4",
+      "typ": "konfirmeration",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "Externa påståenden utan primär-täckning",
+      "gammalt": "",
+      "nytt": "",
+      "orsak": "Två påståenden primären inte uttryckligen verifierade, gröna vid kontroll: (a) 'dubbla röster för långtidigt ägande enligt fransk aktierätt' = korrekt princip (fransk lagstiftning ger dubbel röst efter minst två års registrerat innehav — Florange-systematiken); (b) 'fler än 75 hus' = LVMH:s egna etablerade formulering (75+ maisons). Inga ändringar."
+    },
+    {
+      "id": "V1",
+      "typ": "verktyg",
+      "fil": "verktyg/_s1u3-lyxaktier-verify.mjs",
+      "falt": "sondens två artefakt-rader (primär-KONTROLL §8)",
+      "gammalt": "nettofall-kontroll på avrundade tal + H2-förväntan 5",
+      "nytt": "nettofall-kontroll på RÅSERIEN (dokumenterad i radtexten) + H2-förväntan 6 (serien 5-8)",
+      "orsak": "Omstartsinstansens rättning på u3:s EGEN verktygsyta (samma agentidentitet, ej syskonyta): primärens §8 dokumenterar de båda artefakternas ursprungsläge och förblir sann; sonden omkörd efter rättning = 42 PASS · 0 FEL · 0 VARN. Uppföljningssond verktyg/_s1u3-lyxaktier-diffcheck.mjs (råvärden, EBIT-medianer per vintage och gren, -en-speglar, Hermès-närvarokontroll — läser, skriver aldrig)."
+    }
+  ]
+}

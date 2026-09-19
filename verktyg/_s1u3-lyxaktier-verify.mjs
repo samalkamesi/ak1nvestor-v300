@@ -82,7 +82,7 @@ na(1.06 * 0.92 - 1, '1,06 × 0,92 → −2,5 %', -0.0248, 0.0005); // 0,9752 →
 na(lvmh.vardering.pe / (1 + lvmh.tillvaxt.prognosTillvaxt), 'forward-P/E 19,713/1,1232 ≈ 17,6', 17.6, 0.10);
 na((oms[3] / oms[2] - 1) * 100, 'omsättning 2025 −4,6 %', -4.6, 0.05);
 na((oms[2] / oms[1] - 1) * 100, 'omsättning 2024 −1,7 %', -1.7, 0.05);
-na((res[3] / res[2] - 1) * 100, 'nettoresultat 2025 −13,3 %', -13.3, 0.05);
+na((lvmh.serier.resultat[3] / lvmh.serier.resultat[2] - 1) * 100, 'nettoresultat 2025 −13,3 % (RÅVÄRDEN — avrundade 10,9/12,6 ger −13,5, texten följer råserien)', -13.3, 0.05);
 na((res[3] / res[0]) ** (1 / 3) * 100 - 100, 'CAGR 2022→2025 = källfältet −8,2', lvmh.tillvaxt.resultatCAGR5ar * 100, 0.05);
 na(17.8 / 80.8, 'officiell rörelsemarginal 22 %', 0.220, 0.005);
 
@@ -142,7 +142,7 @@ console.log(`INFO ord textrensat ${ord}, readingMinutes=${ut.readingMinutes}, gr
 rad(ut.readingMinutes !== rmRatt, `B5-kandidat rm ${ut.readingMinutes}→${rmRatt} (ord/200-praxis)`, `${ord} ord`);
 const h2 = [...body.matchAll(/^## (.+)$/gm)].map(m => m[1]);
 console.log(`INFO ${h2.length} H2: ${h2.join(' | ')}`);
-rad(h2.length === 5, '5 H2-sektioner', h2.join(' | '));
+rad(h2.length === 6, '6 H2-sektioner (serien 5–8)', h2.join(' | '));
 rad(!/‑|\u00AD/.test(body), '0 mjuka bindestreck', 'grönt');
 rad(!body.includes('\n\n\n'), '0 trippelradbrytningar', 'grönt');
 

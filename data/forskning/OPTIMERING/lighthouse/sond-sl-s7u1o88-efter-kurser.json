@@ -1,0 +1,275 @@
+[
+  {
+    "url": "http://localhost:3000/kurser",
+    "vaggtidS": 7,
+    "traceEvents": 3547,
+    "sammanfattning": [
+      {
+        "namn": "FunctionCall",
+        "antal": 591,
+        "totalMs": 628,
+        "maxMs": 154
+      },
+      {
+        "namn": "BackgroundJSStreamManager::RunScriptStreamingTask",
+        "antal": 16,
+        "totalMs": 213,
+        "maxMs": 73
+      },
+      {
+        "namn": "v8.parseOnBackground",
+        "antal": 16,
+        "totalMs": 212,
+        "maxMs": 73
+      },
+      {
+        "namn": "Layout",
+        "antal": 8,
+        "totalMs": 158,
+        "maxMs": 47
+      },
+      {
+        "namn": "EvaluateScript",
+        "antal": 25,
+        "totalMs": 117,
+        "maxMs": 79
+      },
+      {
+        "namn": "v8.parseOnBackgroundWaiting",
+        "antal": 14,
+        "totalMs": 113,
+        "maxMs": 29
+      },
+      {
+        "namn": "FireAnimationFrame",
+        "antal": 136,
+        "totalMs": 99,
+        "maxMs": 20
+      },
+      {
+        "namn": "v8.parseOnBackgroundParsing",
+        "antal": 30,
+        "totalMs": 99,
+        "maxMs": 15
+      },
+      {
+        "namn": "ParseHTML",
+        "antal": 8,
+        "totalMs": 46,
+        "maxMs": 21
+      },
+      {
+        "namn": "UpdateLayoutTree",
+        "antal": 15,
+        "totalMs": 39,
+        "maxMs": 18
+      },
+      {
+        "namn": "ParseAuthorStyleSheet",
+        "antal": 2,
+        "totalMs": 22,
+        "maxMs": 20
+      },
+      {
+        "namn": "v8.compile",
+        "antal": 25,
+        "totalMs": 19,
+        "maxMs": 10
+      },
+      {
+        "namn": "MinorGC",
+        "antal": 5,
+        "totalMs": 17,
+        "maxMs": 6
+      },
+      {
+        "namn": "V8.GC_SCAVENGER",
+        "antal": 5,
+        "totalMs": 16,
+        "maxMs": 5
+      },
+      {
+        "namn": "IntersectionObserverController::computeIntersections",
+        "antal": 282,
+        "totalMs": 16,
+        "maxMs": 5
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE",
+        "antal": 5,
+        "totalMs": 15,
+        "maxMs": 5
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+        "antal": 8,
+        "totalMs": 15,
+        "maxMs": 5
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+        "antal": 5,
+        "totalMs": 12,
+        "maxMs": 5
+      },
+      {
+        "namn": "PrePaint",
+        "antal": 150,
+        "totalMs": 8,
+        "maxMs": 1
+      },
+      {
+        "namn": "BackgroundProcessor::MaybeStartProcessingResponse",
+        "antal": 16,
+        "totalMs": 7,
+        "maxMs": 4
+      },
+      {
+        "namn": "EventDispatch",
+        "antal": 100,
+        "totalMs": 6,
+        "maxMs": 3
+      },
+      {
+        "namn": "TimerFire",
+        "antal": 3,
+        "totalMs": 6,
+        "maxMs": 3
+      },
+      {
+        "namn": "Paint",
+        "antal": 9,
+        "totalMs": 5,
+        "maxMs": 3
+      },
+      {
+        "namn": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+        "antal": 1,
+        "totalMs": 3,
+        "maxMs": 3
+      },
+      {
+        "namn": "Layerize",
+        "antal": 147,
+        "totalMs": 3,
+        "maxMs": 1
+      },
+      {
+        "namn": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+        "antal": 3,
+        "totalMs": 3,
+        "maxMs": 2
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnFinishStreaming",
+        "antal": 16,
+        "totalMs": 2,
+        "maxMs": 2
+      },
+      {
+        "namn": "HitTest",
+        "antal": 10,
+        "totalMs": 2,
+        "maxMs": 1
+      },
+      {
+        "namn": "BackgroundJSStreamManager::TryStartStreamingTask",
+        "antal": 16,
+        "totalMs": 1,
+        "maxMs": 0
+      },
+      {
+        "namn": "BackgroundJSStreamManager::OnDataPipeReadable",
+        "antal": 9,
+        "totalMs": 1,
+        "maxMs": 0
+      }
+    ],
+    "slTotalMs": 197,
+    "slAntal": 23,
+    "slPerUtlosare": [
+      {
+        "utlosare": "(ingen — eget task)",
+        "antal": 23,
+        "totalMs": 197
+      }
+    ],
+    "storSLOchLayout": [
+      {
+        "event": "Layout",
+        "atMs": 554,
+        "durMs": 47,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 453,
+        "durMs": 37,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 515,
+        "durMs": 33,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "Layout",
+        "atMs": 175,
+        "durMs": 27,
+        "elements": null,
+        "partialLayout": false,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 497,
+        "durMs": 18,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      },
+      {
+        "event": "UpdateLayoutTree",
+        "atMs": 167,
+        "durMs": 8,
+        "elements": null,
+        "partialLayout": null,
+        "utlosare": null,
+        "utlosareDurMs": null,
+        "utlosareStack": null,
+        "utlosareDataUrl": null
+      }
+    ],
+    "elementTopp": [],
+    "tungaFunctionCalls": [
+      {
+        "atMs": 6021,
+        "durMs": 154,
+        "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+        "stack": null
+      }
+    ]
+  }
+]

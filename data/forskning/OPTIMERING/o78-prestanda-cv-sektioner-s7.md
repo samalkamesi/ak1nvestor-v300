@@ -136,6 +136,50 @@ scriptEvaluation ±1 ms isolerat) och mätfönstret var jämförbart rent
 (1 zcode-barn enligt prod-synkens räkning). **Kuren döms LEVERERAD med
 rest-scroll-sond.**
 
+## §5c REST-DOM (2026-09-19 ~13:2x lokal, förd av s7-u1 i rond o88 — o84 §6.1:s bokade omprövning, mot läkt träd + vilofönster)
+
+Träd: prod-bygge `hZjYd72rzYIjfWnbt1oc8` (deployat 10:30:50Z med 7d690be6;
+CV-kuren 10081b9a förfader via 06:01Z-kedjan d694ae81 — BUILD_ID
+verifierad OFÖRÄNDRAD före/efter varje mätning, o83:s guard-metod).
+
+**Kriterium 3 (scroll-sond) — GRÖNT på alla sonderade ytor.** Nytt verktyg
+`verktyg/_s7u1o88-scroll-sond.mjs` (CDP, 390×844 mobil, kall cache,
+400-px-steg till botten; två protokollfynd inbygggda: ordinalidentitet
+efter dokumentväxten + dom vid synlighet eftersom cv:auto släpper
+renderingen när sektionen lämnar viewporten men behåller inlärd höjd):
+/kurser 5/5 GRÖNA (renderad text i sikte @steg 22–53, domText 82–876,
+inga fastbrända platshållare, auto-nyckeln håller höjderna) · /en/kurser
+3/3 · /ar/kurser 3/3 (speglarna utan cv-kurstips = §6:s kända lucka,
+kategoriväggen täcker) · /blogg 2/2 (shell-komponenterna nasta-steg +
+sidfooter) · / har INGA cv-klasser i HTML (startsidan ingen shell-sida —
+sondens 0-träffar är korrekta). Råda: `lighthouse/scroll-s7u1o88.json`.
+Gränssnittsvakten GRÖN mot SAMMA bygge: `data/vakten/granssnitt-2026-09-
+19T1125.json` (status ok, 0 fynd, körd 13:16–13:25 lokal).
+
+**Kriterium 2 omprövning (o84 §3) — u2:s 463 ms döms FÄRSK FÖNSTERARTEFAKT
+I BEKRÄFTAD RIKTNING; kuren döms STÅENDE på fyra ben:**
+
+| Mätning | Fönster | styleLayout |
+|---|---|---|
+| FÖRE (§1) | solo, load 0,53 | 783 ms |
+| u2:s EFTER (§5b) | chunk-500-perioden, JS-död sida | 463 ms (omvärderad av o84 §3) |
+| o88 omg 1 | load ~1,3–1,8, 3 barn | 896 ms |
+| o88 omg 2 | load 1,79 fallande | **661 ms** |
+| o88 trace-sond (othrotad, lastokänsligare) | — | **197 ms / 23 event mot FÖRE-tracens 636 ms / 95 event (−69 %/−76 %)** |
+
+1. Proxy-A/B-isolatet (§3): −288 ms med scriptEvaluation ±1 ms — orept.
+2. Omg 2: 661 ms < FÖRE 783 trots 26+ commits TJOCKARE träd (AI-Mentorn-
+   motorer, H1-lyft, GAP-34) och högre last än FÖRE:s solo-fönster.
+3. Trace-sonden: Layout-antalet kollapsat 71→23 — strukturell, inte
+   timingmässig, vinst.
+4. Helheten P69/P73 · LCP 4 816/4 570 · TBT 412/265 · CLS 0 ×2 =
+   generationens bästa friska /kurser-tal (o61-ref: P56/5 458/1 194).
+
+Omg 1:s 896 ms deklareras som lastfenomen (o78 §1:s egen klass 783–1 215);
+u2:s 463 kan inte uppkomma på en hydratande sida och DÖMS artefakt —
+§5b:s tabellrad skall läsas med denna dom. **Båda resterna (§5 kriterium
+2-omprövning + 3) är härmed STÄNGDA.**
+
 ## §6 Rest + läxor
 
 - Palettbuketten @6,7–8 s (UpdateLayoutTree 74 + Layout 36 + småbuskage)

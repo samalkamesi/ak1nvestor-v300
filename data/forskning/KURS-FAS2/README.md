@@ -40,9 +40,15 @@ RIKTIGA bolag. INGA böcker/författare (gör kunden utanför plattformen).
 **Alla 20 underlag levererade (våg 192 + 197 + 198 + 199).** Kvalitetsgranskning
 SKETT 2026-09-19 (GRANSKNING-2026-09-19.md: NO-GO med 8 rättningar — samtliga
 verkställda samma dag; substansen stark: trösklar och tal paritetsverifierade
-mot kärnan och bolagsunivers.json). Nästa steg i spåret: kodintegration i
-deep-courses-strukturen (slugToVariableId-mappningen finns i
-src/lib/ak1a/deep-courses-data.ts) — bokas som egen våg (våg 200).
+mot kärnan och bolagsunivers.json).
+
+**KODINTEGRATION LEVERERAD (våg 200, rond 89, commit b1fe517b):** 100 kapitel
+(20 kurser × 5 sektioner) in i public/deep-courses.json via slugToVariableId-
+mappningen — md-rensning + tabell→listor enligt renderingskontraktet, hela
+genererade kedjan ombyggd atomärt, LARVAG-SYNK GRÖN 440 (0 fantomer),
+gränssnittsvakten 0 fynd efteråt. **Utmaning-block PÅGÅR (våg 203):**
+fabrikmanifest v203-utmaning levererar självkontrollfrågor per kapitel
+(fragment i utmaning/) — integration atomärt av huvudagenten.
 
 **Vikternas betydelse:** vikt-kolumnen (8 %/6 %/KRITISK) är den pedagogiska
 etikettskalan — i akm1-klassisk profil väger alla 20 indikatorer LIKA (uniform
@@ -59,7 +65,5 @@ där de sammanfaller.
 modellen" — och innehåller ALDRIG investeringsråd (lagen 2007:528, 2 kap 5 §:
 utbildning är tillåtet, rådgivning kräver tillstånd).
 
-**Nästa steg i spåret:** underlagen flyttas in i deep-courses-strukturen
-(slugToVariableId-mappningen finns i src/lib/ak1a/deep-courses-data.ts) när
-kvalitetsgranskning skett — innehållsleverans först (denna våg), kodintegration
-senare.
+**Nästa steg i spåret:** utmaning-blocken (våg 203) — därefter är biblioteket
+slutlevererat i både underlag, granskning, kodintegration och interaktivitet.

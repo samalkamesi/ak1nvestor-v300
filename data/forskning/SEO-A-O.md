@@ -219,10 +219,22 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 ## Kvar-lista nästa ronder (sammanfattning)
 
-1. **Sökordsinventering sv/en/ar** (▶ NÄSTA): styrelsens beslut 2026-09-13 20:19, åtgärd 3 — full inventering mappad mot de 333 kurserna + analysbiblioteket; identifiera täckningsglapp som plan för programmatiska long-tail-landningssidor.
-2. **F — Blogg-FAQ-utökning**: 41/55 poster har frömaterial (≥2 naturliga frågor i body); nya par läggs inkrementellt, prioriterat efter söktryck.
-3. **E — E-E-A-T-mätning**: manuell spot-check av citattecken i AI-svar (månadsvis).
-4. **V — Search Console-täckning**: R2, väntar kundens API-nyckel.
-5. Säkerhetsföljdåtgärder från rond N (ej SEO men bokförda): schema-filter i blogg-renderare; https-validering av meetingLink.
+1. **F — Blogg-FAQ-utökning**: 41/55 poster har frömaterial (≥2 naturliga frågor i body); nya par läggs inkrementellt, prioriterat efter söktryck.
+2. **E — E-E-A-T-mätning**: manuell spot-check av citattecken i AI-svar (månadsvis).
+3. **V — Search Console-täckning**: R2, väntar kundens API-nyckel.
+4. Säkerhetsföljdåtgärder från rond N (ej SEO men bokförda): schema-filter i blogg-renderare; https-validering av meetingLink.
+5. **Programmatiska dataset-teman (S7)**: ~240–253 long-tail-sidor — planen lever i PIPELINE-KO; kräver styrelsebeslut om omfattning.
 
-Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129), A-Alt-texter+korpusen (våg 133), J-JSON-LD-migration+pensionering (våg 134), V-Verifiering Article-sond+dateModified (våg 135), B-Brödsmulor verifierade + soft-404-fix (våg 136), N-nofollow-inventering (våg 136), D-analys-speglar avgjort: nej (våg 136), F-Blogg-FAQ top-10 levererad + prod-verifierad (våg 137/137-b).
+## Rondlogg-eftersläpning 2026-09-14 → 09-19 (våg 206 — hygien; 137-b-lärdomen: dokumentation skall följa kod)
+
+| Leverans | Våg/rond | SEO-relevans |
+|---|---|---|
+| Sökordsinventering sv/en/ar (9 block + syntes SOKORDSINVENTERING-2026.md) | våg 138, 2026-09-14 | long-tail-underlaget (gamla punkt 1 — KLAR) |
+| FAQ 42 nya poster + 10 översättningar (13 commits, import + speglar) | våg 140+148, 2026-09-14 | F-spårets storleverans |
+| /bolag/{slug} — 100 bolagssidor + register + sitemap | våg 149, 2026-09-14 | 100 nya indexbara URL:er |
+| Dataset-aspekter fas A — 130 aspekt-URL:er + sitemap + vit-test | våg 150, 2026-09-14 | 130 nya indexbara URL:er |
+| Redirects /pris → /medlemskap + /kontakt → /om-oss#kontakt (308 permanent) | våg 194, rond 71–72 | soft-404 bort + länkekviditet bevarad |
+| H1-lyft blogg + dataset (löftesbärande), kursväggs-H2-separation, hem-logotyp ur <p>-flödet, 0-kurser SSR-renderad | våg 195, rond 73+81 | rubrikrelevans + crawler-första-intryck |
+| Primära CTA:er dataset + blogg ×3 språk | våg 201, rond 91 | intern länkning + nästa-steg |
+
+Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129), A-Alt-texter+korpusen (våg 133), J-JSON-LD-migration+pensionering (våg 134), V-Verifiering Article-sond+dateModified (våg 135), B-Brödsmulor verifierade + soft-404-fix (våg 136), N-nofollow-inventering (våg 136), D-analys-speglar avgjort: nej (våg 136), F-Blogg-FAQ top-10 levererad + prod-verifierad (våg 137/137-b) — samt eftersläpningstabellen ovan (våg 206).

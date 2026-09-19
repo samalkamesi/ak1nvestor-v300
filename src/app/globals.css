@@ -1201,6 +1201,29 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 134rem;
 }
 
+/* ── PRESTANDA (o92): DESKTOP-NIVÅER för o78-sektionerna — spegelproblemet
+   kurat (o91 §5:s köpost): o78 kalibrerade reservationerna mot MOBILA
+   sluthöjder men desktopens sektioner är 3–4× kortare ⇒ dokumentet KRYMPE
+   −3 363 px på /kurser och −1 590/−1 591 px på speglarna vid första fulla
+   scroll — scrollbar-längden ljög vid första desktopbesöket. Blocksond
+   2026-09-19 (1280×800, _s7u3o91-blocksond.mjs på tre sidor, BUILD_ID
+   hZjYd72, paritet med o91 §1c): verkliga desktop-sluthöjder sidfooter
+   688 px (identisk alla tre språken) · kategorivägg 306 · marin-panel/
+   socialproof 918 · nästa-steg 132 · kurstips 248. md+-nivåerna = sond-
+   höjd minus sektionens fasta padding/border-tillägg (sidfooter +2,
+   kategorivägg +50, marin +80, nästa-steg +40 pt-10): 43 / 16 / 52.5 /
+   15.5 / 5.75rem ⇒ platshållare ≈ sluthöjd, Σ-residual +4 px på /kurser.
+   MOBILNIVÅERNA orörda (o90 bevisade ±46 px) — endast md+-brytning
+   tilläggs; speglarna delar sidfooter/nästa-steg-klasserna ⇒ kuren verkar
+   på tre språk. "auto"-nyckeln minns verklig höjd per sektion efteråt. */
+@media (min-width: 768px) {
+  .cv-kategorivagg { contain-intrinsic-size: auto 16rem; }
+  .cv-socialproof { contain-intrinsic-size: auto 52.5rem; }
+  .cv-kurstips { contain-intrinsic-size: auto 15.5rem; }
+  .cv-nasta-steg { contain-intrinsic-size: auto 5.75rem; }
+  .cv-sidfooter { contain-intrinsic-size: auto 43rem; }
+}
+
 /* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
    o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
    läxa — komponentroten delas med min-sida/laroplan, därför vävs

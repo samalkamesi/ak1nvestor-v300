@@ -1121,26 +1121,26 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 21rem;
 }
 
-/* ── PRESTANDA (o19, reservationer omkalibrerade o91): CONTENT-VISIBILITY
+/* ── PRESTANDA (o19, reservationer omkalibrerade o91→o93): CONTENT-VISIBILITY
    på /kurser — registret (24 kort per sida) och de tre utvalda sektionerna
    (18 kort). Sond-bevis 2026-09-16 (verktyg/prestanda-sond-sl.mjs + lokal
    SSR-A/B): registrets kort kostar LINJÄRT ~3 ms layout styck (24 kort ≈
    70–140 ms othrottad) och optional-webfontens dubbla layoutpass layoutar
    om hela listan; med CV sjönk SSR-layouten 119 → 60 ms i minst störda
-   omgång. RESERVATIONERNA o91 (blocksond 2026-09-19, mobil 412 px × full
-   scroll): o19 kalibrerade mot SKELETT-läget — men registrets kort växer
-   144 → ~446 px när /api-kurs-hämtningen fyller learn-texten (Σ +4 213 px
-   över 24 kort) och de utvalda korten 192 → ~414 px i genomsnitt
-   (Σ +2 571 px över 18 kort; SSR-text, spridning 178–739 px) ⇒ dokumentet
-   växte +6,6k px vid första scrollen (o90 §3:s köpost). Ny nivå = sonderad
-   MEDEL-verklig höjd (Σ-delta → ≈0): mobil registerkort 28rem (448 px,
-   medel 446), utvalt 26rem (416 px, medel 414); md+-kompaktraden är
-   enhetlig 43 px sonderat ⇒ 2.75rem (3rem gav −120 px Σ). "auto"-nyckeln
-   minns därefter verklig höjd per kort. Samma mekanik och oförändrade
-   DOM/SEO/hydrering som .cv-kort ovan. */
+   omgång. RESERVATIONERNA o93 (blocksond 2026-09-19, mobil 412 px × full
+   scroll + retur-scroll-sond): o91:s mobilnivå 28rem kalibrerades mot
+   fram-scrollens fönster-bias (14 fyllda kort, medel 446) — retur-scrollen
+   (ALLA 24 kort mäts renderade nära viewport) ger äkta medel 320 px
+   (median 266, min 142, max 715; Σ-äkta 7 680 == Σ-EFTER 7 669 ± 11).
+   28rem överreserverade ~2,8–3,1k px ⇒ dokumentet krympte −3,1k px vid
+   första scrollen (o92 §3.3:s fynd). Ny mobilnivå = 20rem (320 px,
+   Σ-optimal = äkta medel); utvalt 26rem står (o91: medel 414, Σ-delta
+   +114/18 ≈ noll); md+-kompaktraden 2.75rem orörd (43 px enhetlig).
+   "auto"-nyckeln minns därefter verklig höjd per kort. Samma mekanik och
+   oförändrade DOM/SEO/hydrering som .cv-kort ovan. */
 .cv-registerkort {
   content-visibility: auto;
-  contain-intrinsic-size: auto 28rem;
+  contain-intrinsic-size: auto 20rem;
 }
 @media (min-width: 768px) {
   .cv-registerkort {

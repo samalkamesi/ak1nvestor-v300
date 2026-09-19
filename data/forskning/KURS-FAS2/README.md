@@ -31,7 +31,16 @@ RIKTIGA bolag. INGA böcker/författare (gör kunden utanför plattformen).
 | underlag-v13-patent-ip.md | V13 Patent & IP | Moat | 6 % | LEVERERAT 2026-09-19 |
 | underlag-v14-varumarke.md | V14 Varumärke | Moat | 6 % | LEVERERAT 2026-09-19 |
 | underlag-v15-natverkseffekter.md | V15 Nätverkseffekter | Moat | 6 % | LEVERERAT 2026-09-19 |
-| underlag-v16 … v20 | Katalysator (V16–V18) · Risk (V19 KRITISK) · Kapitalstruktur (V20) | — | — | BOKADE (våg 199) |
+| underlag-v16-produktlanseringar.md | V16 Produktlanseringar | Katalysator | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v17-avtal-partnerskap.md | V17 Avtal & Partnerskap | Katalysator | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v18-regulatoriska.md | V18 Regulatoriska | Katalysator | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v19-kassatackning.md | V19 Kassatäckning — nyemissionsrisk | Risk | KRITISK | LEVERERAT 2026-09-19 |
+| underlag-v20-aterekop.md | V20 Återköp av egna aktier | Kapitalstruktur | 6 % | LEVERERAT 2026-09-19 |
+
+**Alla 20 underlag levererade (våg 192 + 197 + 198 + 199).** Nästa steg i
+spåret: kvalitetsgranskning + kodintegration i deep-courses-strukturen
+(slugToVariableId-mappningen finns i src/lib/ak1a/deep-courses-data.ts)
+— bokas som egen våg.
 
 **Datakälla:** data/portfolj-system/bolagsunivers.json — 189 noterade bolag,
 10 branscher × 10, hämtat 2026-09-03 (Volvo 2026-09-15), källor Yahoo Finance

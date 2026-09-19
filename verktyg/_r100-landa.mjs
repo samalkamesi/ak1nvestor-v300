@@ -51,7 +51,7 @@ const ersatt = (namn, fran, till) => {
   if (n !== 1) { console.error(`[r100] ✗ PIPELINE-ankar "${namn}": ${n} träffar (väntat 1) — hoppar`); return false; }
   t = t.replace(fran, till); ok(`PIPELINE: ${namn}`); return true;
 };
-ersatt('våg 189 LIVE-STÄNGD',
+if (!t.includes('LIVE-STÄNGD rond 100')) ersatt('våg 189 LIVE-STÄNGD',
   'svit 40/40 + kedjevakt 193/193, tsc 0. Live-kvitto (widget-chunk + 200) vid prod-synkens byggfönster.',
   'svit 40/40 + kedjevakt 193/193, tsc 0. Live-kvitto (widget-chunk + 200) vid prod-synkens byggfönster. — LIVE-STÄNGD rond 100 [Φ]: prod-bygge 17:39:46Z (BUILD_ID jGE19bmKpKXuSn3inM5_q, prod-HEAD 50638947 ⊇ 612994a5) bär lagret i client-chunk 1-izz7ywbi6pz.js · chunk 200 + hem 200 · kvitto data/vakten/v189-live-kvitto.json. LÄXA: bundeln escapar å/ä/ö som \\xNN-hex — live-sonder mot byggda chunks använder ASCII-fragment (rå UTF-8-probe ser dem ej).');
 ersatt('våg 204 STÄNGD prefix',
@@ -60,14 +60,15 @@ ersatt('våg 204 STÄNGD prefix',
 ersatt('våg 204 STÄNGD svans',
   'gränssnittsvaktkörning mot localhost dispatchad (0-fynd-mål) — vågen stängs på vaktkvitto. NÄSTA VÅG I KÖ: OG-rerun (s9-u3:s storfynd — 113 kursers OG-bilder 404 live, E36 9→8; byggklass: node scripts/og-generate.mjs + deploy).',
   'gränssnittsvaktkvitto inlöst: granssnitt-2026-09-19T1731.json = 0 fynd bland 176 kombinationer (mäter 14:19Z-trädet: 201+202+203) · OG-rerun redan levererad som våg 207 · ny vaktkörning mot 17:39Z-bygget (våg 189 i trädet) dispatchad i rond 100.');
-const r2Ankar = t.split('\n').findIndex((l) => l.includes('⚠ R2-PAKET (väntar kund'));
-if (r2Ankar < 0) fail('R2-PAKET-ankaret hittades inte');
+const r2Ankar = t.includes('VÅG 208 BOKAD') ? -2 : t.split('\n').findIndex((l) => l.includes('⚠ R2-PAKET (väntar kund'));
+if (r2Ankar === -2) ok('PIPELINE: 208–210 redan bokade — hoppar');
+else if (r2Ankar < 0) fail('R2-PAKET-ankaret hittades inte');
 const nyaVagor = [
   '- · VÅG 208 BOKAD (granskningskön — evighetsspår 1, förstahandsval): m9-utkastens granskning — kön 7 m9-utkast får oberoende KVD-kontroll + kö-vy-sektion i GRANSKNINGSKO-SAMMANSTALLNING.md (AR1–AR5-mönstret från rond 99); publicering förblir kundens (R2).',
   '- · VÅG 209 BOKAD (dataset-djup — evighetsspår 2): nästa omgång riktiga bolag i datasetdjupet via agentfabriks-manifest (mönster auto-s2: nordiska + internationella; KVD: tal-paritet, ALDRIG råd 2007:528).',
   '- · VÅG 210 BOKAD (AI-Mentorn — evighetsspår 6): elfte förhandsfrågelagret — nästa frågefamilj, kollisionskontroll mot 53 lager, källmärkning + kurslänkar per svar, utan API-kostnad (mönster våg 189); regressionstest + kedjevakt utökas.',
 ];
-t = t.split('\n').slice(0, r2Ankar).concat(nyaVagor, t.split('\n').slice(r2Ankar)).join('\n');
+if (r2Ankar >= 0) t = t.split('\n').slice(0, r2Ankar).concat(nyaVagor, t.split('\n').slice(r2Ankar)).join('\n');
 ok('PIPELINE: våg 208–210 bokade (spår 1/2/6 — roterade)');
 writeFileSync(pk, t);
 
@@ -129,7 +130,7 @@ if (scannad2.split('\n').some((l) => l.startsWith('A ') || l.startsWith('M ') ||
 // ── 7. Push med fetch/merge-retry (r98-mönstret, riktig felkontroll)
 let pushad = false;
 for (let i = 1; i <= 6 && !pushad; i++) {
-  try { const ut = cd(['git', ['push', 'prod', 'develop'], { stdio: ['ignore', 'pipe', 'pipe'] }]); pushad = true; ok(`push GRÖN (försök ${i})`); }
+  try { cd(['git', ['push', 'prod', 'develop']]); pushad = true; ok(`push GRÖN (försök ${i})`); }
   catch (e) {
     steg(`push försök ${i} refuserad — fetch+merge och om igen`);
     try { cd(['git', ['fetch', 'prod', 'develop']]); cd(['git', ['merge', 'FETCH_HEAD', '-m', `Merge prod/develop (ROND 100 push-loop)`]]); }

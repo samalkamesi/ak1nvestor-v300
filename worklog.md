@@ -14506,3 +14506,42 @@ LEVERANS: data/forskning/DR-OVNING-2026-09-19-DAGPULS-KLOCKFORMEL.md, data/forsk
 Fabriksagent s10-u3. VAL (anspråk disk-först 09:29:30 med P1–P10 låsta FÖRE mätning, data/vakten/auto-s10-1789802729714-s10-u3-ansprak.md + DR-PREDIKTION-2026-09-19-DAGFONSTER.json): GRYNINGSPULS §8 köpost 3 — DUBBELDISPATCH mot u1 (samma val inom 3 min; deras läsning 09:27 före mitt anspråk, deras leverans 09:27–09:32 commit 0cd74805 under min RAM-vänta) — presedens s9-u2-D20: primäranspråk avstått, mina mätningar = OBEROENDE KORSVALIDERING. Fynd 1 (genuint nytt): dr-ovning.mjs SKIPPADE 09:31 vid MemAvailable 845 MB < 1 000 (fabrikens omgång om 3 + syskon-PG) — RAM-grindens första dokumenterade skip; KUR levererad: verktyg/_s10u3-dagfonster-vanta-ram.mjs (pollar ≥1 050 MB var 20:e s, tak 14 min, atomär start, full tidsstämpling) — fabriksläxa: DR-övning i 3-omgångar på 8 GB behöver vänteloop; kö till verktygsägaren: --vanta-ram internt. Restore GRÖN 09:33:13–09:33:41 (AUTO-5): RTO 16,1 s · radkontrakt EXAKT FEMTE gången (60/1 325 919 · 68/1 326 055 · 99/1 326 315 · fel 788/0 · 34 881 B femte identiska). RPO 09:34:16 (M=28) reproducerar u1:s 09:30:35 EXAKT ×4 mått: board +224 = 8×28 · snapshots +18 984 = 1 252 404 (u3:s blad-10-prediktion DUBBELT förhandsverifierad levande) · organ +13 · totalt +19 221 · 3/60 · 0 negativa. Fynd 2: INTRA-KVARTS-MIKROPUNKTEN — board Δ = 0 mellan u1:s och min mätning (3 min 41 s, ingen markör): klockan eldar VID markören, ej kontinuerligt (första parobservationen). Fynd 3: u1:s RTO-läxa "≥2 GB ⇒ 10–14 s" BRUTEN (16,1 s vid 3,0 GB) — dagklassen 14–18 s oavsett RAM; cache-kyla/I/O-kö öppna, kontrollpar kölagt. Prediktioner: P1/P3/P6/P8 EXAKTA · P5/P10 band · P4/P5-primär (organ: dagepisoden +12 skulle vägt tyngre än nattens +1 — läxa bokförd) · P7-primär · P9 delvis (min städning bevisad; slutläge online = u2:s dokumenterade --behall, EJ min svans). PG-städning eigenmätt: AUTO-5 [7/7] stoppade PG 09:33:41 · OID 1/4/5 · pgsql_tmp tom · skrap-DB borta · WAL 481 MB (sjätte punkten) · tre-agent-flockkedja kartlagd (u1 09:29:34 → jag 09:33:13 → u2 09:33:45 --behall/AUTO-6) · u2:s aktiva fönster lämnat ifred. KVD: tsc 0 via projektbinär (beviskörning) · INGET bygge · src/ orörd · R2 orörda · prod endast LÄST (GDPR-rent) · data/blogg/ orörd · syskonytor orörda · commit MED pathspec. Kö vidare: blad 10:s födelsebevis 09-20 02:30 (fjärde formeltestet) · jungur 09-20 03:20 · intra-kvarts-serien · dag-RTO-kontrollparet · u2:s öppna rötter (09-13-anomalien, organ-klockan) · retention ~10-11 · kvartalssviten ≤2026-12-17/18 · --vanta-ram-adoption.
 
 LEVERANS: data/forskning/DR-OVNING-2026-09-19-DAGFONSTER-REPLIK.md, data/forskning/DR-PREDIKTION-2026-09-19-DAGFONSTER.json, data/forskning/DR-RPO-DIFF-2026-09-19-DAGFONSTER.json, data/forskning/DR-PROV-2026-09-19-AUTO-5.md, data/DRIFTSBOKEN.md, worklog.md, verktyg/_s10u3-dagfonster-vanta-ram.mjs, verktyg/_s10u3-dagfonster-bokfor.mjs
+
+## SPÅR 10 s10-u2 (manifest auto-s10-1789802729714, vakt 2/3) — 2026-09-19 09:25–09:5x lokal: DR-ÖVNING KOPOST3+4 — 09-13-ANOMALIEN LOKALISERAD TILL EN KVARTS (5 av 8 rader, arkiv==live på tidsstämpelnivå ⇒ aldrig skrivna, servern frisk ⇒ transient skrivförlust 0,04 %) + ORGAN-KLOCKAN KARTLAGD (intern 6-h-svepmotor med jitter, cron utesluten; split-svep- och kodningsdriftfynd) + VERKTYGSKUR: dr-ovning.mjs --behall droppade skrap-DB:n trots löftet (bevis AUTO-6) — kurerad + fältverifierad (AUTO-8) [fabrik]
+
+- **Objektval:** u1 (09:30) OCH u3 (09:29) tog båda dagpunkts-RPO:t —
+  dubbelanspråk neutralt bokfört, deras ytor orörda; mitt objekt = s10-u3:s
+  öppna köposter 3+4 (5b5e9e60). Anspråk disk-först 09:36 med P1–P9 FÖRE
+  mätning; 8 ✅ varav P5-primärhypotesen EXAKT (en kvarts med 5 rader).
+- **Restore blad 09-14** (täcker dag 09-13) GRÖN ×2: AUTO-6 RTO 14,9 s +
+  AUTO-8 15,7 s · public 60/1 226 931 EXAKT == ARKIVSVEP (tre instrument) ·
+  fel 780/0 · RAM-grindskip 548 MB mellan körningarna (u1/u3:s
+  fabrikstrafik) — levande sidan mättes först (inget PG-behov), dump-sidan
+  när minnet frigjorts.
+- **Köpost 3 STÄNGD:** EN avvikande kvarts i 09-12→09-14 — 09-13 10:00 = 5
+  rader (10:00:01.181–.503), arkiv == live på dag/kvarts/tidsstämpel ⇒ de 3
+  raderna skrevs aldrig, fanns frånvarande i dumpen född 09-14 02:30 (ingen
+  efterhandstampering — annan klass än B9:s raderare); syslog ren (ISO-
+  formatläxa: "Sep 13"-grep = falskt logggap), pumpor normalt, ingen OOM ⇒
+  dom: transient skrivförlust i batchen, 0,04 % på elva dagar, RPO-modellen
+  opåverkad.
+- **Köpost 4 KARTLAGD:** organ_health_logs = intern 6-h-svepmotor MED
+  ±1–2 h jitter (cron utesluten, inget schema matchar); fas 1 →08-10
+  12-organ sharp, fas 2 9+3-par ~02/04·08/10·14/16·20/22; FYND A:
+  split-svep under morgonbelastning 09-18 (1@08+8@09, 1@14+8@15) + 09-19
+  (1@09); FYND B: organ_name-kodningsdrift (Hjarta/Hjärta m.fl. — gruppera
+  på organ_id). Ny köpost: svepets schemaägare (huvudagenten).
+- **Verktygskur enligt COMMIT-NORMEN:** --behall-kontraktet bröts av egen
+  dropdb (bevis: AUTO-6-rad "skrap-DB raderad · PG17 lämnad uppe" emot
+  konsolens löfte); kurerad i tre punkter + fältverifierad i AUTO-8
+  (skrap-DB lev kvar). u3:s RAM-grind-kur (_s10u3-wrapper) orörd.
+- **Städning manuell bevisad:** PG17 down · psql-vägran · base OID 1/4/5 ·
+  pgsql_tmp tom · WAL 481 MB femte punkten · disk 63 GB · lås viloläge.
+- **Bonus-gåva:** board levande 49 570 = 49 346+8×28 EXAKT (tredje
+  instrumentet på klockformeln, == u1:s 09:30) · organ 3 037 = 3 024+13.
+- **KVD:** tsc 0 via projektbinären · src/ orörd = INGET bygge · R2 orörd
+  (.pgpass endast pekare, prod endast läsande aggregat, GDPR-rent) ·
+  data/blogg/ orörd · syskonytor orörda · commit med pathspec.
+  LEVERANS: DR-OVNING-2026-09-19-KOPOST3-4-ANOMALI-ORGAN.md ·
+  DR-KOPOST-ANOMALI-ORGAN-2026-09-19{,-LIVE}.json · dr-ovning.mjs (kur) ·
+  _s10u2-kopost3-4-analys.mjs · DRIFTSBOKEN · worklog.

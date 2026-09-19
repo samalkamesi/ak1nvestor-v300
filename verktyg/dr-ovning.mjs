@@ -246,6 +246,20 @@ function startaPg17(dom) {
 
 function stadaPg17(dom) {
   console.log('[7/7] Städning: skrap-DB + PG17 …');
+  // --behall-kontraktet (hjälptexten): skrap-DB OCH PG17 lämnas till
+  // anroparen för manuell efterundersökning — ingen dropdb här. (Kur
+  // 2026-09-19 s10-u2: dropdb kördes tidigare före behall-grenen och
+  // raderade skrap-DB:n trots löftet — kontraktbrottet bevisat i
+  // DR-PROV-2026-09-19-AUTO-6: "skrap-DB raderad · PG17 lämnad uppe".)
+  if (dom.behall) {
+    dom.stadning = {
+      skrapDbBort: false,
+      pgStoppad: false,
+      meddelande: '--behall givet: skrap-DB/PG17 lämnas för manuell undersökning (viloläget brutet — anroparen städar: dropdb + pg_ctlcluster stop).',
+    };
+    console.log('      --behall: lämnar skrap-DB + PG17 uppe (viloläget brutet — städa manuellt).');
+    return;
+  }
   const drop = sudo(['-u', 'postgres', 'dropdb', '--if-exists', SKRAP_DB]);
   dom.stadning = {
     skrapDbBort: drop.ok,
@@ -253,17 +267,11 @@ function stadaPg17(dom) {
     meddelande: '',
   };
   if (!drop.ok) dom.stadning.meddelande += `dropdb misslyckades: ${drop.stderr} `;
-  if (dom.behall) {
-    dom.stadning.meddelande += '--behall givet: skrap-DB/PG17 lämnas för manuell undersökning (viloläget brutet).';
-    dom.stadning.pgStoppad = false;
-    console.log('      --behall: lämnar skrap-DB + PG17 uppe (viloläget brutet — städa manuellt).');
-  } else {
-    const stop = sudo(['pg_ctlcluster', ...PG_KLUSTER, 'stop']);
-    dom.stadning.pgStoppad = stop.ok || !pgUpp();
-    if (!dom.stadning.pgStoppad) dom.stadning.meddelande += `pg_ctlcluster stop misslyckades: ${stop.stderr} `;
-    console.log(`      skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'KUNDE EJ RADERAS'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad' : 'KUNDE EJ STOPPAS'}.`);
-  }
-  if (dom.stadning.meddelande && !dom.behall) {
+  const stop = sudo(['pg_ctlcluster', ...PG_KLUSTER, 'stop']);
+  dom.stadning.pgStoppad = stop.ok || !pgUpp();
+  if (!dom.stadning.pgStoppad) dom.stadning.meddelande += `pg_ctlcluster stop misslyckades: ${stop.stderr} `;
+  console.log(`      skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'KUNDE EJ RADERAS'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad' : 'KUNDE EJ STOPPAS'}.`);
+  if (dom.stadning.meddelande) {
     console.error(`      STÄDNINGSFYND: ${dom.stadning.meddelande.trim()}`);
   }
 }
@@ -442,8 +450,8 @@ function skrivProtokoll(dom) {
   const scheman = Object.entries(dom.mat.perSchema).sort((a, b) => b[1].rader - a[1].rader)
     .map(([s, m]) => `| ${s} | ${m.tabeller} | ${m.rader.toLocaleString('sv-SE')} |`).join('\n');
   const topp = dom.mat.topp.map(([t, n]) => `| ${t} | ${n.toLocaleString('sv-SE')} |`).join('\n');
-  const gron = dom.restoreOk && dom.fel.okanda.length === 0 && dom.stadning.skrapDbBort
-    && (dom.behall || dom.stadning.pgStoppad);
+  const gron = dom.restoreOk && dom.fel.okanda.length === 0
+    && (dom.behall || (dom.stadning.skrapDbBort && dom.stadning.pgStoppad));
   // Ärlighetskontrakt: avbrot FÖRE restore får aldrig rendera mätetal som ser
   // ut att komma från en genomförd återställning (NaN s / 0 rader-lögner).
   const foreRestore = Boolean(dom.avbrots) && dom.restoreOk !== true;
@@ -487,7 +495,7 @@ u3:s låsfilskur implementerad.
 | 4. **Återställning (RTO)** | ${foreRestore ? 'nåddes ej' : `**${dom.rto.sek.toFixed(1)} s** (${(statSync(dom.dumpVag).size / 1048576).toFixed(1)} MB gz) · fellogg ${dom.fel.antalRader} rader → ${dom.rto.felFil}`} |
 | 5. Mätning | ${foreRestore ? 'nåddes ej' : 'se §3'} |
 | 6. Protokoll | denna fil |
-| 7. Städning | ${foreRestore ? 'PG17/skrap-DB rördes ej (avbrot före start)' : `skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'EJ raderad'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad (redo)' : dom.behall ? 'lämnad uppe (--behall)' : 'EJ stoppad — FYND'}`} |
+| 7. Städning | ${foreRestore ? 'PG17/skrap-DB rördes ej (avbrot före start)' : dom.behall ? 'skrap-DB lämnad + PG17 uppe (--behall — anroparen städar)' : `skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'EJ raderad'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad (redo)' : 'EJ stoppad — FYND'}`} |
 
 ## 3. Mätning (tre nivåer — u3:s kontrakt)
 

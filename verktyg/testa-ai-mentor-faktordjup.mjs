@@ -729,7 +729,15 @@ const GAMLA = [
   ];
   // Konvertibel (fönstrets syskon, modul på disk) förväntas wireas efter
   // bokmastar — TOLERERAD om frånvarande just nu (syskonet skriver).
-  const KANSKE = ["svaraLokaltKonvertibel"];
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1
+  // realekonomi — svitharmonisering (dokumentationsplikten); lagad av u3
+  // (parallell harmonisering bröt kommat efter konvertibeln — syntaxfel).
+  const KANSKE = [
+    "svaraLokaltKonvertibel",
+    "svaraLokaltSektorlasning",
+    "svaraLokaltVardegrund",
+    "svaraLokaltRealekonomi",
+  ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

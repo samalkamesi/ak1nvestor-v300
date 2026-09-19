@@ -1,0 +1,277 @@
+{
+  "url": "http://localhost:3000/kurser",
+  "namn": "s7u2o88v3",
+  "ts": "2026-09-19T11:31:59.668Z",
+  "fore": {
+    "scrollY": 0,
+    "docH": 16571,
+    "sektioner": [
+      {
+        "sel": ".cv-kategorivagg",
+        "finns": true,
+        "top": 11303,
+        "hojd": 1258,
+        "barn": 59,
+        "renderadeBarn": 59,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-socialproof",
+        "finns": true,
+        "top": 12609,
+        "hojd": 1520,
+        "barn": 55,
+        "renderadeBarn": 55,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-kurstips",
+        "finns": true,
+        "top": 6488,
+        "hojd": 368,
+        "barn": 24,
+        "renderadeBarn": 24,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-nasta-steg",
+        "finns": true,
+        "top": 14129,
+        "hojd": 264,
+        "barn": 16,
+        "renderadeBarn": 16,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-sidfooter",
+        "finns": true,
+        "top": 14425,
+        "hojd": 2146,
+        "barn": 81,
+        "renderadeBarn": 81,
+        "textLangd": 0,
+        "iViewport": false
+      }
+    ]
+  },
+  "besok": [
+    {
+      "sel": ".cv-kategorivagg",
+      "scrollY": 9889,
+      "docH": 19421,
+      "finns": true,
+      "top": 14153,
+      "hojd": 1258,
+      "barn": 59,
+      "renderadeBarn": 59,
+      "textLangd": 0,
+      "iViewport": false
+    },
+    {
+      "sel": ".cv-socialproof",
+      "scrollY": 14835,
+      "docH": 20050,
+      "finns": true,
+      "top": 16133,
+      "hojd": 1474,
+      "barn": 55,
+      "renderadeBarn": 55,
+      "textLangd": 895,
+      "iViewport": false
+    },
+    {
+      "sel": ".cv-kurstips",
+      "scrollY": 9866,
+      "docH": 22059,
+      "finns": true,
+      "top": 9054,
+      "hojd": 364,
+      "barn": 24,
+      "renderadeBarn": 24,
+      "textLangd": 435,
+      "iViewport": false
+    },
+    {
+      "sel": ".cv-nasta-steg",
+      "scrollY": 18403,
+      "docH": 23178,
+      "finns": true,
+      "top": 20736,
+      "hojd": 264,
+      "barn": 16,
+      "renderadeBarn": 16,
+      "textLangd": 0,
+      "iViewport": false
+    },
+    {
+      "sel": ".cv-sidfooter",
+      "scrollY": 20732,
+      "docH": 23143,
+      "finns": true,
+      "top": 20998,
+      "hojd": 2145,
+      "barn": 81,
+      "renderadeBarn": 81,
+      "textLangd": 635,
+      "iViewport": true
+    }
+  ],
+  "efter": {
+    "scrollY": 6342,
+    "docH": 23143,
+    "sektioner": [
+      {
+        "sel": ".cv-kategorivagg",
+        "finns": true,
+        "top": 18075,
+        "hojd": 1138,
+        "barn": 59,
+        "renderadeBarn": 59,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-socialproof",
+        "finns": true,
+        "top": 19261,
+        "hojd": 1474,
+        "barn": 55,
+        "renderadeBarn": 55,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-kurstips",
+        "finns": true,
+        "top": 9054,
+        "hojd": 364,
+        "barn": 24,
+        "renderadeBarn": 24,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-nasta-steg",
+        "finns": true,
+        "top": 20736,
+        "hojd": 230,
+        "barn": 16,
+        "renderadeBarn": 16,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-sidfooter",
+        "finns": true,
+        "top": 20998,
+        "hojd": 2145,
+        "barn": 81,
+        "renderadeBarn": 81,
+        "textLangd": 0,
+        "iViewport": false
+      }
+    ]
+  },
+  "rond2": {
+    "scrollY": 5948,
+    "docH": 23143,
+    "sektioner": [
+      {
+        "sel": ".cv-kategorivagg",
+        "finns": true,
+        "top": 18075,
+        "hojd": 1138,
+        "barn": 59,
+        "renderadeBarn": 59,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-socialproof",
+        "finns": true,
+        "top": 19261,
+        "hojd": 1474,
+        "barn": 55,
+        "renderadeBarn": 55,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-kurstips",
+        "finns": true,
+        "top": 9054,
+        "hojd": 364,
+        "barn": 24,
+        "renderadeBarn": 24,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-nasta-steg",
+        "finns": true,
+        "top": 20736,
+        "hojd": 230,
+        "barn": 16,
+        "renderadeBarn": 16,
+        "textLangd": 0,
+        "iViewport": false
+      },
+      {
+        "sel": ".cv-sidfooter",
+        "finns": true,
+        "top": 20998,
+        "hojd": 2145,
+        "barn": 81,
+        "renderadeBarn": 81,
+        "textLangd": 0,
+        "iViewport": false
+      }
+    ]
+  },
+  "dom": {
+    "allaFemHittade": true,
+    "perSektion": [
+      {
+        "sel": ".cv-kategorivagg",
+        "renderadVidBesok": false,
+        "fastbrandPlatshallare": false,
+        "hojdflytt": 0
+      },
+      {
+        "sel": ".cv-socialproof",
+        "renderadVidBesok": true,
+        "fastbrandPlatshallare": false,
+        "hojdflytt": -46
+      },
+      {
+        "sel": ".cv-kurstips",
+        "renderadVidBesok": true,
+        "fastbrandPlatshallare": false,
+        "hojdflytt": -4
+      },
+      {
+        "sel": ".cv-nasta-steg",
+        "renderadVidBesok": false,
+        "fastbrandPlatshallare": false,
+        "hojdflytt": 0
+      },
+      {
+        "sel": ".cv-sidfooter",
+        "renderadVidBesok": true,
+        "fastbrandPlatshallare": false,
+        "hojdflytt": -1
+      }
+    ],
+    "stavhoppTotaltPx": 6572,
+    "stavhoppGodkant": false,
+    "ingenFastbrand": true,
+    "femSektionerStabila": true,
+    "rond2DocH": 23143,
+    "rond2Stabilt": true,
+    "HELA": true
+  }
+}

@@ -144,10 +144,12 @@ const MINA_KANONISKA = [
 
 // ── FALL A2: wiring — SIST i widgetens kedja ────────────────────────────────
 {
-  const sist = widgetOrdning[widgetOrdning.length - 1] === "svaraLokaltKonvertibel";
   const bmPos = widgetOrdning.indexOf("svaraLokaltBokmastar");
   const minPos = widgetOrdning.indexOf("svaraLokaltKonvertibel");
-  kontroll("A2: svaraLokaltKonvertibel står SIST i kedjan",
+  // SIST vid omgång 22-leveransen; omgång 23:s lager wireade efter —
+  // trefönster-tolerant (riskbudget-precedensen: "wiread efter bokmastar").
+  const sist = minPos > bmPos;
+  kontroll("A2: svaraLokaltKonvertibel wiread efter bokmastar (SIST vid omgång 22)",
     sist && minPos > bmPos,
     "position " + (minPos + 1) + " av " + widgetOrdning.length + " (bokmastar " + (bmPos + 1) + ")");
   kontroll("A2: importrad finns",

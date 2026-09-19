@@ -1193,3 +1193,21 @@ h1, h2, h3, h4, h5, h6 {
   content-visibility: auto;
   contain-intrinsic-size: auto 134rem;
 }
+
+/* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
+   o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
+   läxa — komponentroten delas med min-sida/laroplan, därför vävs
+   klassen på SPEGELNIVÅ) och siffrebandet (SocialProof-ekvivalenten,
+   ~7 100–7 300 px under vecket, 25 element) stod helt oskyddat medan
+   svenska /kurser fått .cv-socialproof. Spegelbandet är KORTARE än det
+   svenska (sond 2026-09-19, mobil 412 px: en 958 px · ar 909 px mot
+   Swedish 1 474 px) — därför egen kalibrerad reservation 58rem (928 px,
+   maxavvikelse 30 px) i stället för 92rem: svensk reservation på
+   speglarna vore +500 px överskott = stavhopp vid första renderingen.
+   Kurstips-delningen (23rem) återanvänds — speglarnas verkliga höjd
+   364/344 px ligger nära. "auto"-nyckeln minns verklig höjd efter första
+   renderingen. DOM/SEO/hydrering orörda, samma garanti som o78. */
+.cv-siffreband-spegel {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 58rem;
+}

@@ -421,6 +421,11 @@ const kedjekomponenter = [
   // Omgång 22:s fönster: bokmastar + riskbudget + konvertibel (dokumentationsplikten).
   "svaraLokaltRiskbudget(q, KURSREGISTER)",
   "svaraLokaltKonvertibel(q, KURSREGISTER)",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1
+  // realekonomi (svitharmoniseringens dokumentationsplikt).
+  "svaraLokaltSektorlasning(q, KURSREGISTER)",
+  "svaraLokaltVardegrund(q, KURSREGISTER)",
+  "svaraLokaltRealekonomi(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -464,7 +469,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 47 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 50 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

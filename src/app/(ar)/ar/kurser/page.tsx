@@ -118,8 +118,9 @@ export default async function KurserPageAr() {
           </p>
         </div>
 
-        {/* اقتراحات لك — شخصية، دعوة لا إلزام */}
-        <div className="mt-6">
+        {/* اقتراحات لك — شخصية، دعوة لا إلزام.
+            cv-kurstips (o89): تكافؤ المرايا مع /kurser، انظر globals.css */}
+        <div className="mt-6 cv-kurstips">
           <KurstipsKort antal={3} rubrik="اقتراحات لك" />
         </div>
 
@@ -143,10 +144,13 @@ export default async function KurserPageAr() {
         </div>
 
         {/* شريط الأرقام — من المصدر الوحيد للأرقام (src/lib/siffror)،
-            مرآة عربية لشريط الإثبات الاجتماعي في الصفحة السويدية */}
+            مرآة عربية لشريط الإثبات الاجتماعي في الصفحة السويدية.
+            cv-siffreband-spegel (o89): عميق تحت الطية (~7 100 px)، حجز
+            معاير للمرايا — ليس 92rem السويدية (شريط المرآة أقصر)،
+            انظر globals.css. */}
         <section
           aria-label="AK1A Research Lab بالأرقام"
-          className="marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10"
+          className="marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10 cv-siffreband-spegel"
         >
           <div className="pointer-events-none absolute inset-0" aria-hidden="true">
             <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />

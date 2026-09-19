@@ -328,6 +328,80 @@ const MOTORDEFS = [
   // 125 monsters. Wiread SIST i fönstrets ordning: bokmastar → riskbudget
   // → detta lager.)
   { namn: "konvertibel", fil: "ai-mentor-konvertibel-fragor.ts", fn: "svaraLokaltKonvertibel", arr: "KONVERTIBEL_MONSTER", antal: 1 },
+  // 2026-09-19 omgång 23: sektorläsning (s6-u2, manifest auto-s6-
+  // 1789814130065 — sektorläsningens energi- och telekom-sidor, SEKTOR-
+  // ANALYS-blockets första mentorväg in i km-043 + km-046; aktiverar 8 av
+  // sondens 9 oådda sektorkurser: energi (cykeln: −182,5 · +912,5 ·
+  // +2 372,5 M USD mot brytpris 45, svängen 2 555,0; reserverna 547,5 ÷
+  // 36,5 = 15,0 år; elprisspegeln 1,0 → 5,0 mdr = femdubblad) + telekom
+  // (abonnemangskassan 2,0 M × 350 × 12 = 8,4 mdr; churn 288 000/år; capex
+  // 1 400 ÷ 8 400 = 16,7 %; spektrum 2 200 ÷ 20 = 110 M/år; utdelning 3,50
+  // ÷ 70,00 = 5,0 %, payout 70,0 %). Källor: skog + rederi + bil (energi)
+  // och media + flyg + spel (telekom). Sondens dokumenterade gränser:
+  // «kraftbolag» struket (fraktbolag-granne, tavstånd 2 — prototypen stal
+  // «vad är fraktbolag?»), «oljepris» = makro-familjens (endast stärkord
+  // här), «tänker»-formuleringar ägs av sektor-bank («banker» tavstånd 1
+  // från «tänker»). Sond _s6u2-sond-omg23.mjs + -sond2- + -sond3-: 50
+  // motorer / 1 453 kärnord, familjen NULL genom hela kedjan. Wiread SIST
+  // i fönstrets ordning: … → konvertibel (49) → detta lager (50:e index).)
+  { namn: "sektorlasning", fil: "ai-mentor-sektorlasning-fragor.ts", fn: "svaraLokaltSektorlasning", arr: "SEKTORLASNING_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 23: vardegrund (s6-u3, manifest auto-s6-1789814130065
+  // — värderingsfamiljens grundvåning; aktiverar HELA det fria värderings-
+  // blocket, 10 kurser: VÄRDERINGSMETODER 7/7 mentorväglösa (vm-02/05/07
+  // primära + vm-09/10/11 + km-028 källor) + VÄRDERING:s vr-05/06/07 källor.
+  // Tre monsters: intrinsic value/motiverat värde — DCF-miniräknaren
+  // 10,00 → 184,6 kr (nuvärden 9,72 + 9,45 + 9,19 = 28,36; TV 196,80 →
+  // 156,22; terminalandelen 84,6 %; kurs 150 = 0,81 = 19 % under värdet;
+  // WACC-läxan 8→9 % = 158,1 = −14 %) + realoptionerna — gruvträdet (idag
+  // 100 − 120 = −20 mot vänta 0,5×30 + 0,5×0 = +15; flexibilitetens värde
+  // 15 − (−20) = 35 mkr) + kassaflödesavkastningen — yield-familjen
+  // (4 ÷ 100 = 4,0 % · P/FCF 100 ÷ 4 = 25 · P/CF 100 ÷ 6 = 16,7 ·
+  // P/B 100 ÷ 80 = 1,25). Sondens dokumenterade gränser: Nästa äger
+  // DCF-familjen («reverse dcf» FÅNGAD av dem — km-028 här KÄLLA enligt
+  // V19), «inre värde», substans-/tillgångs-orden och option-familjen
+  // («verkliga optioner»/«real option» med mellanslag = deras; sammanskrivna
+  // «realoption(er)» = detta lagers), Extra «fcf yield»/«free cash flow
+  // yield»/«price to cash flow», Lönsamhetsdjupet «wacc», Basen «pris och
+  // värde», Djup «jämförelsebolag» — deras frågor bärs som knappar; «p/cf»
+  // STRYKS som kärnord (8 grannar: fcf/p/e/dcf/put/etf/kf/peg/pmi). Sond
+  // _s6u3-sond{,2,3}-omg23.mjs: 50 motorer / 132 monsters / 1 453 kärnord,
+  // kvarvarande kärnord NULL + 0 grannar. Wiread SIST i fönstrets ordning:
+  // … → konvertibel (50) → sektorlasning (51) → detta lager (52:a motorn).)
+  { namn: "vardegrund", fil: "ai-mentor-vardegrund-fragor.ts", fn: "svaraLokaltVardegrund", arr: "VARDEGRUND_MONSTER", antal: 3 },
+  // 2026-09-19 omgång 23: realekonomi (s6-u1, manifest auto-s6-1789814130065
+  // — ekonomins verkliga sida i sex fönster; aktiverar HELA det fria
+  // MAKROEKONOMI-blocket: mk-02 arbetslöshet primär + mk-03 handelsbalans +
+  // mk-05 geopolitik + mk-07 finanspolitik + mk-10 oljepris + mk-11
+  // kinaekonomin = 6 mentorväglösa kurser i ett svar). Ett monster:
+  // realekonomin — AKU:s stickprov 30 000 (15–74 år) och klyftan 1–2
+  // procentenheter mot registret · deltagandet 79 − 72 = 7 procentenheter
+  // (1990→1999) med 2005:s sjukskrivningsfälla 11 % · Phillips platt sedan
+  // 2015 (<20 % av inflationssvängningarna) och platser 3–6 månader före ·
+  // bytesbalansens undertal −3 + 5 = +2 % av BNP med 2022:s −2 % ·
+  // J-kurvan 12–18 månader mot 1982:s 16-procentare · REER −21 % ·
+  // fatet 159 liter, skiffern 1 → 9 (9 − 1 = 8) miljoner fat/dag,
+  // brytkostnad 40–60 mot 20–40 dollar, oljechockens 4 procentenheter,
+  // valutadubbeln 65 % dollar/80 % krona = 15 · budgeten 1,2 biljoner =
+  // 50 % av BNP, multiplikatorn 10 × 0,7 = 7 till 10 × 1,2 = 12,
+  // 27 utgiftsområden, anslagsavvikelsen 5–10 % · Kinas 9,5 % → 5–6 %,
+  // 17 biljoner ≈ 70 % av USA:s, statliga 30 % + fastighet 25 % av BNP,
+  // börsens 8 % Kina-intäkter, Evergrande −25 %, statistikfällan 1–2
+  // procentenheter, Caixin < 48 · GPR 2018 (elva tidningar), +50 % olja
+  // på en dag/−10 % krona, OMXSPI 3 månader, tumregeln 5–10 dagar.
+  // Sondens dokumenterade gränser: Makro äger ränte-/inflations-/
+  // penningpolitik-orden (endast starkord + knapp här), tidsaxeln
+  // konjunkturindikator-familjen (naket «indikator» aldrig kärnord),
+  // handelsdagen «sanktioner» (deras «auktioner» fångar live), tillväxt-
+  // djupet «phillips-kurvan» bindestrecksform (substring «s kurvan»),
+  // u2 sektorlasning energibolag/oljebolag («oljepris» enligt deras not
+  // endast starkord — oljepris-ORTEN är detta lagers), u3 vardegrund
+  // värderingsorden, basen «hur påverkar X aktier/börsen?»-formerna.
+  // Sond _s6u1-sond{,2,3}-omg23.mjs (fyra ronder; rond 2 dödade första-
+  // valet indikatorfamiljen — basen äger hela paraplyet): 51 motorer /
+  // 1 490 kärnord inkl. disk, kvarvarande kärnord NULL + funk-säkra.
+  // INGEN SIST-anspråk — 53:e motorn: … → konvertibel (50) →
+  // sektorlasning (51) → vardegrund (52) → detta lager.)
+  { namn: "realekonomi", fil: "ai-mentor-realekonomi-fragor.ts", fn: "svaraLokaltRealekonomi", arr: "REALEKONOMI_MONSTER", antal: 1 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -336,7 +410,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 132 (2026-09-19 omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 138 (2026-09-19 omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -578,6 +652,33 @@ const KANONISKA = [
   { fraga: "vad är additional tier 1?", motor: 49 },
   { fraga: "vad är en nollskrivning?", motor: 49 },
   { fraga: "vad är evighetsräntan?", motor: 49 },
+  // Omgång 23: sektorläsning (s6-u2) — kanoniska ur lagrets egna
+  // rubriker («vad är oljepriset?» = ingen ägare i kedjan — makro-
+  // familjens blomma, dokumenterad gräns i modulens kommentar; «vad är
+  // en moat?» = extra-lagrets, bärs som knapp ur svaren).
+  { fraga: "hur analyserar jag ett energibolag?", motor: 50 },
+  { fraga: "hur analyserar jag ett telekombolag?", motor: 50 },
+  // Omgång 23: vardegrund (s6-u3) — kanoniska ur lagrets egna kärnord
+  // («vad är DCF?»/«vad är inre värde?»/«vad är substansvärde?» = nästas,
+  // «vad är fcf yield?»/«vad är price to cash flow?» = extras, «vad är
+  // wacc?» = lönsamhetsdjupets — deras frågor, dokumenterade gränser;
+  // bärs som fragor:-knappar; se motordef-kommentaren).
+  { fraga: "vad är motiverat värde?", motor: 51 },
+  { fraga: "vad är intrinsic value?", motor: 51 },
+  { fraga: "hur räknar man ut motiverat värde?", motor: 51 },
+  { fraga: "vad är fair value?", motor: 51 },
+  { fraga: "vad är verkligt värde?", motor: 51 },
+  { fraga: "vad är realoptioner?", motor: 51 },
+  { fraga: "vad är en realoption?", motor: 51 },
+  { fraga: "vad är kassaflödesavkastning?", motor: 51 },
+  { fraga: "hur räknar man ut kassaflödesavkastning?", motor: 51 },
+  { fraga: "vad är asset based valuation?", motor: 51 },
+  // Omgång 23: realekonomi (s6-u1) — kanonisk ur lagrets paraplyfråga
+  // («vad är rsi?»-familjen = basens teknisk-analys-monster, rond 2:s
+  // dödade förstavalet — dokumenterad gräns i modulens kommentar;
+  // «vad är inflation och KPI?» = makro-lagrets och «vad är
+  // konjunkturindikatorer?» = tidsaxelns, bärs som knappar ur svaret).
+  { fraga: "vad är realekonomin?", motor: 52 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -622,7 +723,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "femtio motorer lämnar frågan ifred",
+  "femtiotre motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

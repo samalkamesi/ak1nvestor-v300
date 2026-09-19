@@ -589,8 +589,8 @@ const GAMLA = [
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 440 kurser (spår 5:s omgång-18-rebake 2026-09-19; basotestet E01 grönt)",
-    KURSREGISTER.length === 440,
+    "K03 register-läge — 446 kurser (spår 5:s omgång-19-rebake 2026-09-19; basotestet E01 grönt)",
+    KURSREGISTER.length === 446,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -629,6 +629,10 @@ const GAMLA = [
     "svaraLokaltBokmastar",
     "svaraLokaltRiskbudget",
     "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -651,7 +655,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 36 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "avkastningskurva efter riskläsningsdjup; syskonet s6-u2:s avkastningsdjup (omgång 15, parallellt fönster — kärnorden disjunkta, deras lager efter mitt) harmoniskt medtaget",
   );

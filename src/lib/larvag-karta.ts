@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (443 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (446 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 401 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 404 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -225,6 +225,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-15-logistik", titel: "Logistik — nätverk", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-16-sektoranalysens-metod", titel: "Sektoranalysens metod — tre frågor till vilken sektor som helst", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-17-skogssektorn", titel: "Skog — massans cykel och ägd råvara", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-18-rederi-och-shipping", titel: "Rederi och shipping — fraktens cykel och fartyget som kapital", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "sj-06-arv-gava-och-ingaende-varde", titel: "Arv, gåva och aktiernas ingående värde", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
@@ -416,6 +417,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "mt-05-byteskostnader-och-inlasning", titel: "Byteskostnader och inlåsning — moaten som håller kunden kvar", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-06-kostnadsoverlagsenhet", titel: "Kostnadsöverlägsenhet — moaten ingen ser", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-07-prisfullmakten", titel: "Prisfullmakten — moatens ultimata test", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "mt-08-kvalitetspremien", titel: "Kvalitetspremien — moatens pris och framtiden som redan betalats", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-01-vad-ar-en-katalysator", titel: "Vad är en katalysator? — händelsen som kan flytta en aktie", kategori: "KATALYSATOR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -454,6 +456,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ma-04-konjunkturindikatorerna", titel: "Konjunkturindikatorerna — månadens siffror och bolagets nästa rapport", kategori: "MAKROEKONOMI & RÄNTA", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-05-kreditpremien", titel: "Kreditpremien — varför bolagets lån kostar mer än statens", kategori: "MAKROEKONOMI & RÄNTA", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-06-aktiernas-riskpremie", titel: "Aktiernas riskpremie — varför börsen betalar mer än statsobligationen", kategori: "MAKROEKONOMI & RÄNTA", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ma-07-valutakursens-mekanik", titel: "Valutakursens mekanik — PPP, ränteparitet och exportörens vind", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-01-optionens-greker", titel: "Optionens greker — delta, gamma, theta och vega", kategori: "OPTIONS & DERIVAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-02-implicit-volatilitet", titel: "Implicit volatilitet — marknadens pris på framtiden", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-03-warranter-och-teckningsoptioner", titel: "Warranter och teckningsoptioner — optionen möter den svenska emissionen", kategori: "OPTIONS & DERIVAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -479,4 +482,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 443;
+export const LARVAG_ANTAL_KURSER = 446;

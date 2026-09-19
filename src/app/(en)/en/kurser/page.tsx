@@ -116,8 +116,9 @@ export default async function KurserPageEn() {
         </p>
       </div>
 
-      {/* Tips for you — personal, an invitation never a demand */}
-      <div className="mt-6">
+      {/* Tips for you — personal, an invitation never a demand.
+          cv-kurstips (o89): mirror parity with /kurser, se globals.css */}
+      <div className="mt-6 cv-kurstips">
         <KurstipsKort antal={3} rubrik="Tips for you" />
       </div>
 
@@ -142,10 +143,13 @@ export default async function KurserPageEn() {
 
       {/* NUMBERS BAND — figures from the single source of truth
           (src/lib/siffror, data/siffror.json). English mirror of the social
-          proof band on the Swedish page. */}
+          proof band on the Swedish page.
+          cv-siffreband-spegel (o89): deep under the fold (~7 300 px), mirror-
+          calibrated reservation — NOT the Swedish 92rem (the mirror band is
+          shorter), se globals.css. */}
       <section
         aria-label="AK1A Research Lab in numbers"
-        className="marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10"
+        className="marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10 cv-siffreband-spegel"
       >
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />

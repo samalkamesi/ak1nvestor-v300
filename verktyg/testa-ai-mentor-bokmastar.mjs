@@ -25,7 +25,7 @@
  *                     med mig ⇒ samma svar; kedjan UTAN mig ⇒ null
  *   I   omvänd antistöld — syskonens kanoniska fångas inte av min funktion
  *   J   disjunktion — lagrets tre monsters kärnord är inbördes disjunkta
- *   L01 widget-synk — kedjeraden bär alla 47 lager i ordning + import
+ *   L01 widget-synk — kedjeraden bär alla 50 lager i ordning + import
  *
  * Sondestensläxan (omgång 21–22): funktionskartan läser importlistor med
  * FLERA namn (basens "svaraLokalt, fallbackSvar") — annars tappas basen
@@ -424,7 +424,11 @@ const MINA_KANONISKA = [
     "svaraLokaltBokmastar",
     "svaraLokaltRiskbudget",
     "svaraLokaltKonvertibel",
-  ];
+    // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
+];
   const kedjerader = widgetKalla.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

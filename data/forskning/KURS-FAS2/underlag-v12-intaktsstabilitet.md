@@ -21,7 +21,8 @@ för Volvos drygt 500 mdr. Källraden i modellen: "5 års nettoomsättning i
 1. **Nettoomsättningen per år:** resultaträkningens topp per bokfört år +
    jämförelseåret — femårsöversikten står ofta sist i årsredovisningen.
 2. Räkna medelvärdet, sedan standardavvikelsen, sedan kvoten
-   (kalkylblad: `=STDAV.S(...)/MEDEL(...)`).
+   (kalkylblad: `=STDAV.P(...)/MEDEL(...)` — populationens standardavvikelse,
+   samma sätt som modellen räknar; STDAV.S delar med n−1 och ger för hög CV).
 3. **Segmentnoten** avgör VILKEN del av bolaget som svänger — koncernens
    total-CV kan vara låg medan ett segment dansar.
 4. Kontrollera **jämförbarheten**: förvärv, avyttringar och
@@ -66,14 +67,14 @@ absoluta tal exploderar CV.
 - **Förvärv böjer serien:** organisk 60 + köpt 40 ser ut som tillväxt-
   svängning. Noten om förvärv avgör.
 - **Valuta:** utlandsintäkter i annan valuta svänger kurvan utan att
-  affären gjort det — note om valutaeffekter.
+  affären gjort det — not om valutaeffekter.
 - **Osatt-grenar:** saknas serier, eller är medelvärdet noll eller
   negativt, lämnar kärnan V12 osatt (CV är då meningslöst).
 - **Koncern-CV döljer segmentdans:** alltid segmentnoten före slutsats.
 
 ## 5. Koppling till AKM1 — modellens trösklar
 
-Ur kärnan (karna.ts, `raknaV12` — dokumenterad rak tröskel på CV för
+Ur kärnan (karna.ts, `scorV12` — dokumenterad rak tröskel på CV för
 `serier.omsattning`):
 
 | CV (omsättningen) | Poäng |

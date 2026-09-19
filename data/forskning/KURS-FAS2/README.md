@@ -8,7 +8,7 @@ RIKTIGA bolag. INGA böcker/författare (gör kunden utanför plattformen).
 
 1. **Vad indikatorn innebär i praktiken** — affärsförklaring utan jargon
 2. **Läsa det i en faktisk årsredovisning** — vilken rad/not, kontraster
-3. **Räkneexempel på riktiga bolag** — ur AK1A:s 189-bolagsuniversum
+3. **Räkneexempel på riktiga bolag** — ur AK1A:s 195-bolagsuniversum
 4. **Kritiskt tänkande** — fällor och misstolkningar
 5. **Koppling till AKM1** — modellens poängtrösklar (0–5 p)
 
@@ -37,15 +37,23 @@ RIKTIGA bolag. INGA böcker/författare (gör kunden utanför plattformen).
 | underlag-v19-kassatackning.md | V19 Kassatäckning — nyemissionsrisk | Risk | KRITISK | LEVERERAT 2026-09-19 |
 | underlag-v20-aterekop.md | V20 Återköp av egna aktier | Kapitalstruktur | 6 % | LEVERERAT 2026-09-19 |
 
-**Alla 20 underlag levererade (våg 192 + 197 + 198 + 199).** Nästa steg i
-spåret: kvalitetsgranskning + kodintegration i deep-courses-strukturen
-(slugToVariableId-mappningen finns i src/lib/ak1a/deep-courses-data.ts)
-— bokas som egen våg.
+**Alla 20 underlag levererade (våg 192 + 197 + 198 + 199).** Kvalitetsgranskning
+SKETT 2026-09-19 (GRANSKNING-2026-09-19.md: NO-GO med 8 rättningar — samtliga
+verkställda samma dag; substansen stark: trösklar och tal paritetsverifierade
+mot kärnan och bolagsunivers.json). Nästa steg i spåret: kodintegration i
+deep-courses-strukturen (slugToVariableId-mappningen finns i
+src/lib/ak1a/deep-courses-data.ts) — bokas som egen våg (våg 200).
 
-**Datakälla:** data/portfolj-system/bolagsunivers.json — 189 noterade bolag,
-10 branscher × 10, hämtat 2026-09-03 (Volvo 2026-09-15), källor Yahoo Finance
-+ MarketStack (dubbelkollade slutkurser). Poängtrösklar citerade ur
-src/components/ak1a/akm1-calculator.tsx (RAKNARE) — modellens egna regler.
+**Vikternas betydelse:** vikt-kolumnen (8 %/6 %/KRITISK) är den pedagogiska
+etikettskalan — i akm1-klassisk profil väger alla 20 indikatorer LIKA (uniform
+1/20); procenttabellen 5×8 % + 12×6 % är ÖVERGIVEN (R2 §2). Källa:
+src/lib/akm2/vikter.ts.
+
+**Datakälla:** data/portfolj-system/bolagsunivers.json — 195 noterade bolag,
+10 branscher (15–27 bolag per bransch), hämtat 2026-09-03 (Volvo 2026-09-15),
+källor Yahoo Finance + MarketStack (dubbelkollade slutkurser). Poängtrösklar
+citerade ur modellkärnan (src/lib/akm2/karna.ts) samt kalkylatorn (RAKNARE)
+där de sammanfaller.
 
 **Juridikgrind:** allt material är utbildningsform — "så läser du", "så räknar
 modellen" — och innehåller ALDRIG investeringsråd (lagen 2007:528, 2 kap 5 §:

@@ -33,7 +33,7 @@ säljer växer, står stilla eller krymper. Tre saker gör den kritisk i AKM1:
 5. För 5-årskurvan: använd de fem senaste rapporternas intäktsrader (eller
    nyckeltalssidan sist i redovisningen).
 
-## 3. Räkneexempel på riktiga bolag (ur universumets 189)
+## 3. Räkneexempel på riktiga bolag (ur universumets 195)
 
 Nettoomsättning i Mkr, koncernen (källa: bolagsunivers.json, Yahoo/MarketStack,
 hämtat 2026-09-03):
@@ -77,20 +77,29 @@ annars — och dokumenterar vilket.
 
 ## 5. Koppling till AKM1 — modellens trösklar
 
-Ur kalkylatorn (RAKNARE, V01): formel (året − förra) ÷ |förra| × 100 %,
+Kärnans goldilocks-kurva (karna.ts, `scorV01` — formel (året − förra) ÷
+|förra| × 100 % på TTM-värdet): tillväxten ska varken saknas eller överhettas —
 
 | Tillväxt (TTM) | Poäng |
 |---|---|
-| ≥ 30 % | 5 |
-| ≥ 20 % | 4 |
-| ≥ 10 % | 3 |
-| ≥ 0 % | 2 |
-| < 0 % | 1 |
+| < −10 % | 0 |
+| −10 % – 0 % | 1 |
+| 0 – 10 % | 2 |
+| 10 – 20 % | 3 |
+| 20 – 30 % | 4 |
+| 30 – 45 % | 5 — ENDAST med bruttomarginal ≥ 30 %, annars 4 |
+| 45 – 60 % samt > 60 % | 4 (hållbarhetsrabatt) |
 
-Exempel med universumets bolag: Volvo TTM −5,7 % → 1 p · Alfa Laval TTM
-+7,7 % → 2 p · Atlas Copco TTM +9,1 % → 2 p · Sandvik TTM +23,7 % → 4 p ·
-Kambi TTM +13,5 % → 3 p. Vikten är KRITISK — V01 bär tyngst i Tillväxt-kategorin
-och modellen kräver därför källrad (resultaträkningen) för full poäng.
+Kalkylatorns AKM1-läge (RAKNARE, V01) använder en enklare rak trappa —
+≥ 30 % ⇒ 5, ≥ 20 % ⇒ 4, ≥ 10 % ⇒ 3, ≥ 0 % ⇒ 2, < 0 % ⇒ 1 — praktisk vid
+handräkning; kärnans kurva är den som poängsätter.
+
+Exempel med universumets bolag (samma poäng i båda kurvorna): Volvo TTM
+−5,7 % → 1 p · Alfa Laval TTM +7,7 % → 2 p · Atlas Copco TTM +9,1 % → 2 p ·
+Sandvik TTM +23,7 % → 4 p · Kambi TTM +13,5 % → 3 p. Etiketten är KRITISK —
+en pedagogisk etikett (akm1-klassisk profil väger alla 20 indikatorer lika,
+se src/lib/akm2/vikter.ts) — och modellen kräver källrad (resultaträkningen)
+för full poäng.
 
 *Utbildningsmaterial — beskriver hur metoden läser och räknar; inga
 investeringsråd (2007:528).*

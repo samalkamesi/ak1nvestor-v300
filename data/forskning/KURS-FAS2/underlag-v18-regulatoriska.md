@@ -19,8 +19,8 @@ sidor, och den som läser bara ena sidan missar prissättningen.
 
 ## 2. Läsa det i en faktisk årsredovisning
 
-1. **Riskavsnittet i förvaltningsberättelsen:** rubriker om
-   regulatorik, licenser, myndighetsprocesser — väntande beslut står
+1. **Riskavsnittet i förvaltningsberättelsen:** rubriker om regelverk,
+   licenser, myndighetsprocesser — väntande beslut står
    ofta här före de når pressmeddelandena.
 2. **Not om väsentliga osäkerheter** och eventualförpliktelser:
    pågående processer, böter, återbetalningskrav.
@@ -47,7 +47,7 @@ sidor, och den som läser bara ena sidan missar prissättningen.
   affärsnivå, redovisad i riskavsnittet.
 
 **Träningssekvens:** tre regulatoriska arter — godkännande (binärt:
-AZN, Evolution), kapitalregel (gradvis: banker), saknation/export
+AZN, Evolution), kapitalregel (gradvis: banker), sanktion/export
 (existentiell risk: Ericsson). Poängen skall spegla både det väntande
 beslutets storlek och bolagets exponering om det går fel.
 
@@ -60,7 +60,7 @@ beslutets storlek och bolagets exponering om det går fel.
 - **Regulatorisk eftersläpning:** regler som redan annonserats men
   ej trätt i kraft (övergångsperioder) — läs ikraftträdandedatum, inte
   beslutsdatum.
-- **Flagga-allt-fällan:** riskavsnitten listar allt lagliga; skilj de
+- **Flagga-allt-fällan:** riskavsnitten listar allt som är lagligt; skilj de
   väsentliga (licensförlust, godkännanden) från de rutinmässiga
   (allmän lagändring).
 - **Dubbelräkning:** ett godkännande som redan gett intäkt är inte en

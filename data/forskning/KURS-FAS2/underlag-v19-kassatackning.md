@@ -22,7 +22,7 @@ slår nedåt, och ägarna betalar notan genom utspädning.
 1. **Balansräkningen:** Kassa och bank + kortfristiga placeringar.
 2. **Kassaflödesanalysen:** "Kassaflöde från den löpande verksamheten"
    — den löpande förbrukningen (negativt löpande kassaflöde ÷ 12 =
-   månadsburn).
+   månadsförbrukning).
 3. Räkna: kassa ÷ månadsförbrukning = antal månader. (Modellens fält:
    `stabilitet.kassaManaderBurnRate`.)
 4. **Not om kredittillgångar:** outnyttjade kassakrediter förlänger
@@ -88,7 +88,7 @@ Ur kärnan (`scorV19`, R2 §6 klippkurva, BESLUT §4–§5):
 
 Motiveringstexten anger månader + kurva + källa. Porten är modellens
  enda absoluta stopp: alla andra indikatorer är 0–5 i samspel, V19
-under tolv månader sätter taket för allas summa. Det är juridiken i
+under tolv månader sätter taket för allas summa. Det är logiken i
 modellform: överlevnaden är inte en egenskap bland andra — den är
 förutsättningen för att de andra skall få räknas.
 

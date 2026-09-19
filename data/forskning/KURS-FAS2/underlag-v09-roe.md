@@ -66,7 +66,7 @@ fälla domslutet.
 - **Hävstångens optik:** ROE stiger med skulden tills den gör det —
   sedan kommer cykeln. Läs ALDRIG ROE utan skuld/EK (V10) vid sidan;
   modellen beräknar dem i par (V10 först, som hävstångskontroll).
-- **Närmaren till 9 %:** en ROE på 8,5 % är inte "nästan bra" — den är
+- **Nära nog räcker inte:** en ROE på 8,5 % är inte "nästan bra" — den är
   under kapitalkostnaden och alltså värdeförstöring (0 p i modellen).
   Tröskeln är en klippa, inte en backe.
 - **Emissionstämda nämnare:** nytt eget kapital sent på året sänker ROE
@@ -76,7 +76,7 @@ fälla domslutet.
   och blåser upp ROE aritmetiskt — kolla noten om förändringar i eget
   kapital.
 - **Bankers ROE** är fungerande men med annan hävstångslogik (balans-
- räkningen är MEGET skuldfylld per definition) — bank-ROE jämförs med
+  räkningen är MYCKET skuldfylld per definition) — bank-ROE jämförs med
   banker, inte med industrier.
 
 ## 5. Koppling till AKM1 — modellens trösklar

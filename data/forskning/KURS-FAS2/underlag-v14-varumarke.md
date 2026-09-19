@@ -28,7 +28,7 @@ branschens är varumärkets kvitto.
    år har bevisat sin kraft.
 5. **Marknadsföringskostnaden:** stor och växande reklambudget med
    sjunkande marginal är ett varumärke som hyr sin plats, inte äger den.
-6. **IFRS-notis igen:** internt byggt varumärke bokförs ALDRIG —
+6. **IFRS-noten igen:** internt byggt varumärke bokförs ALDRIG —
    varumärkesposter i noten är köpta. Det organiska varumärket läses i
    marginalen och i kundnoten, inte i balansräkningen.
 

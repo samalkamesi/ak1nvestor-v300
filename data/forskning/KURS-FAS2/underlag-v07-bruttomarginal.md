@@ -70,13 +70,13 @@ därför läser modellen nivån men kräver sammanhang.
   och dokumenterar det; ett medvetet och återanvänt designval.)
 - **Banker och förvaltningsbolag: 0 % är SAKNAD-data, inte dålig affär.**
   Swedbank, Nordea och Handelsbanken visar 0,0 % i tabellen ovan — deras
-  resultaträkningar har ingen KSVT. Industrivärden/Kinnevik-visar 100/0 %
+  resultaträkningar har ingen KSVT. Industrivärden/Kinnevik visar 100/0 %
   av samma skäl. Lär dig se strukturen FÖRE siffran.
 - **Uthållighet bevisas inte av ett år.** Platt topp i kurvan: över 70 %
   ger 5 p bara om 5-årssnittet håller — en ensam lyckoåring räcker inte.
 - **Redovisningsval:** klassificering av personalkostnader och "övriga
   rörelsekostnader" kan flytta marginalen flera enheter mellan bolag —
-  noterna är din friend.
+  noterna är din vän.
 - **Mix-effekter:** säljer bolaget en lågmarginalvolym vid sidan av
   högmarginalkärnan kan totalsiffran dölja att kärnan krymper — leta
   segmentuppdelningar i noterna.

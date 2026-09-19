@@ -7,7 +7,7 @@ Kursreferens: slug `v17-avtal-partnerskap` · Modell: AKM1 V17
 
 Avtal och partnerskap mäter **bindande intäktsvägar som redan skrivits
 under men ännu inte fullt betalat ut**: kundavtal, ramavtal,
-samarbeten, licentieringsavtal. Skillnaden mot V16 är avgörande — en
+samarbeten, licensieringsavtal. Skillnaden mot V16 är avgörande — en
 lansering är en chans, ett undertecknat avtal är en förpliktelse från
 motparten. Katalysatorn ligger i att intäkten finns i kontraktet innan
 den finns i resultaträkningen.

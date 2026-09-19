@@ -16,10 +16,10 @@ fem år kan värderas (och planeras) på ett annat sätt än ett som måste vinn
 varje krona på nytt varje kvartal. ARR-tillväxt mäter alltså inte bara
 hur mycket som växer, utan **vilken sorts** tillväxt det är.
 
-Viktigt ärlighetsmål: **vårt 189-bolagsuniversum redovisar inte ARR** —
+Viktigt ärlighetsmål: **vårt 195-bolagsuniversum redovisar inte ARR** —
 det är ett nyckeltal bara prenumerationsliknande bolag rapporterar (SaaS,
 plattformar, teleoperatörer). Universumets fält `omsattningTillvaxtTTM` är
-vanlig intäktstillväxt. Det är itself en lärdom: **vilka bolag ens kan
+vanlig intäktstillväxt. Det är i sig en lärdom: **vilka bolag ens kan
 poängsättas på V02, och vilka som faller tillbaka på V01.**
 
 ## 2. Läsa det i en faktisk årsredovisning
@@ -36,7 +36,7 @@ poängsättas på V02, och vilka som faller tillbaka på V01.**
    intäktsstabilitet (V12) får bära tillväxtbilden — så hanterar AKM1
    ärligt saknad data i stället för att gissa.
 
-## 3. Räkneexempel på riktiga bolag (ur universumets 189)
+## 3. Räkneexempel på riktiga bolag (ur universumets 195)
 
 Universumet saknar ARR-fält (se ovan) — exemplen visar principen med
 intäktsdata som FINNS, märkt vad som är ARR-kunskap och vad som är gissning:
@@ -54,8 +54,9 @@ intäktsdata som FINNS, märkt vad som är ARR-kunskap och vad som är gissning:
   TTM +3,8 %.
 
 **Räkneövning när ARR väl finns i en rapport:** ARR-tillväxt = (ARR i år −
-ARR förra året) ÷ ARR förra året. Net new ARR = förändringen i kronor —
-possum-tillväxten (ARR är positiv räkning; engångsprojekt räknas aldrig in).
+ARR förra året) ÷ ARR förra året. Net new ARR = förändringen i kronor — en ren
+tillväxträkning (ARR är per definition återkommande intäkt; engångsprojekt
+räknas aldrig in).
 
 ## 4. Kritiskt tänkande — fällor
 
@@ -68,16 +69,19 @@ possum-tillväxten (ARR är positiv räkning; engångsprojekt räknas aldrig in)
   Kvalitetsmåttet: net revenue retention — finns hos de bästa rapportörerna.
 - **Valuta och prisindex.** Många bolag justerar ARR för valutor ("constant
   currency") — jämför alltid samma definition år mot år.
-- **Baklog ≠ ARR.** Att ha tecknade avtal som inte gått live än (backlog/
+- **Backlog ≠ ARR.** Att ha tecknade avtal som inte gått live än (backlog/
   RPO) är framtida ARR, inte nuvarande — blanda inte terminologierna.
 - **Sinch-fällan:** användarbaserade volymintäkter kan se återkommande ut
   men svänger med kundernas eget försäljningsläge — "recurring" i namnet,
   cyklisk i verkligheten.
 
-## 5. Koppling till AKM1 — modellens trösklar
+## 5. Koppling till AKM1 — riktlinje vid manuell poängsättning
 
-Källan är kvalitativ per konstruktion (Förvaltningsberättelsen/presentationen,
-8 % vikt). Poängsättning sker på tillväxttakt och andel av intäkterna:
+Kärnans `scorV02` är OSATT i kod (ARR redovisas inte i P1:s
+datakontrakt) — tabellen nedan är utbildningens riktlinje, inte
+kodverklighet. Källan är kvalitativ per konstruktion
+(Förvaltningsberättelsen/presentationen, 8 % vikt). Poängsättning sker på
+tillväxttakt och andel av intäkterna:
 
 | ARR-bild | Poäng (riktlinje) |
 |---|---|

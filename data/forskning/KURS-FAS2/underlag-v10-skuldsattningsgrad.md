@@ -16,7 +16,7 @@ i båda riktningarna**:
 - I uppgång: lånad krona som tjänar mer än räntan lyfter ROE (se V09 —
   därför beräknas V10 FÖRE V09 i modellen, som hävstångskontroll).
 - I nedgång: samma lån är en fast kostnad som måste betalas även när
-  affären sviker — skulden bestämmer hur djårt ett bolag kan falla.
+  affären sviker — skulden bestämmer hur djupt ett bolag kan falla.
 - Skuldsättningsgraden är alltså inte "bra lågt, dumt högt" utan ett
   **riskmått**: hur stor del av bolagets struktur som är okänslig för
   hur affären går (banken får betalt före ägaren, alltid).
@@ -28,12 +28,12 @@ i båda riktningarna**:
 2. **Skulder och övriga förpliktelser:** "Summa skulder och övriga
    förpliktelser" — hela posten, inte bara de räntebärande (graden mäter
    balansstrukturen; för EV-räkningar används de räntebärande, se V06 —
-   olika frågor, olika snitt av skuldorna).
+   olika frågor, olika delar av skulderna).
 3. Räkna: Summa skulder ÷ Summa eget kapital.
-4. Kolla **räntetäckningsgraden** i noten om finansiella poster (rörande
+4. Kolla **räntetäckningsgraden** i noten om finansiella poster (rörelse-
    resultat ÷ finansiella kostnader) — graden säger hur mycket lån,
-   ränttäckningen hur lätt de bärs.
-5. Kontrollfråga i **förvaltningsberättelsen:** finns kýnda
+   räntetäckningen hur lätt de bärs.
+5. Kontrollfråga i **förvaltningsberättelsen:** finns kända
    återbetalningsprofiler/refinansieringsdatum de närmaste åren?
 
 ## 3. Räkneexempel på riktiga bolag (ur universumets 195)
@@ -48,13 +48,14 @@ medianen 0,52×):
 | Evolution | 0,02 | 5 | utdelar överskottet |
 | Industrivärden | 0,03 | 5 | förvaltning med kassabuffert |
 | Alfa Laval | 0,46 | 5 | konservativ industri |
-| Volvo B | 1,47 | 3 | finansierings­bolag i gruppen |
+| Volvo B | 1,47 | 3 | finansieringsbolag i gruppen |
 | Boeing | 7,91 | 1 | krisbelånat |
 | Simon Property | 5,04 | 1 | fastighets-/REIT-struktur |
 | Mastercard | 4,40 | 1 | medveten belåning |
 
-**Träningssekvens:** femborgarna Nintendo/Evolution/Beiersdorf (0,00–0,01×)
-har EN struktur som tål vad som helst — men fråga alltid vad skuldfriheten
+**Träningssekvens:** skuldfria kassamaskiner som Nintendo/Evolution/
+Beiersdorf (0,00–0,01×) har EN struktur som tål vad som helst — men fråga
+alltid vad skuldfriheten
 KOSTAR (outnyttjad hävstång är avkastning som lämnas på bordet när
 affären är starkare än räntan). Volvo 1,47×: lastbilsgruppen bär en
 finansieringsrörelse (kundkrediter) som mekaniskt lyfter graden — inte
@@ -76,9 +77,9 @@ noterna avgör.
 - **Räntan på skulden avgör bärigheten:** 3× till 2 % ränta kan vara
   lugnare än 1,5× till 8 % — komplettera alltid med räntetäckning och
   löptid.
-- **Skuldfrihet är inte gratis i alla lägen:** ett högrofitabelt bolag
-  som vägrar låna när räntan ligger under dess avkastning underwater-
-  presterar sitt eget kapital — därför är V10 ett riskmått (0,5×-gränsens
+- **Skuldfrihet är inte gratis i alla lägen:** ett starkt lönsamt bolag
+  som vägrar låna när räntan ligger under dess avkastning underpresterar
+  mot sin potential — därför är V10 ett riskmått (0,5×-gränsens
   5-poäng) och inte en dygdens medalj.
 
 ## 5. Koppling till AKM1 — modellens trösklar

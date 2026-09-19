@@ -14,13 +14,13 @@ och daterad.
 Viktig avgränsning direkt: katalysatorn är **inte** en moat (V13–V15
 frågar vad som håller konkurrenter borta) och **inte** tillväxten själv
 (V01 mäter det som redan hänt). V16 frågar: finns det namngivna,
-kollektionsbara händelser framåt som marknaden kan prissätta?
+daterbara händelser framåt som marknaden kan prissätta?
 
 ## 2. Läsa det i en faktisk årsredovisning
 
 1. **Förvaltningsberättelsens kommande-event-avsnitt:** många bolag
    listar kommande lanseringar, milestone-planer eller pipelines med
-   kvartals- eller årstdatum — det är indikators råmaterial.
+   kvartals- eller årsdatum — det är indikatorns råmaterial.
 2. **Läkemedels-/teknikbolag:** pipelinetabeller (fas, indikation,
    förväntat beslutsdatum) — källraden i modellen lyder "kommande
    lanseringar/pipeline".
@@ -38,13 +38,13 @@ kollektionsbara händelser framåt som marknaden kan prissätta?
 | Bolag | Lanseringsläsning (kvalitativ) | Vad noterna ger |
 |---|---|---|
 | AstraZeneca | Pipeline med fas/indikation — katalysatorerna är daterade beslutsdatum | pipelinetabell i förvaltningsberättelsen |
-| Nintendo | Produktcykler: nya generationer/kända serier driver året | säljarstal per titel i delårsrapporter |
+| Nintendo | Produktcykler: nya generationer/kända serier driver året | säljtal per titel i delårsrapporter |
 | Volvo | Produktprogram (nya modeller, eldrivna linjer) med kommunikerade fönster | orderläge + modellprogram i rapporterna |
 | Truecaller | Funktioner/premium-planer — mjuka lanseringar utan datum | produktsektion i förvaltningsberättelsen |
 
 **Träningssekvens:** AstraZeneca är den rena läroboken — katalysatorer
 som kan bokföras i kalendern. Nintendo visar volymsvängningarna kring en
-lansering (V12:s CV slår till). Volvo visarprogram med långa
+lansering (V12:s CV slår till). Volvo visar program med långa
 beslutsled. Truecaller visar gränsfallet: kontinuerlig
 produktutveckling utan datum är *förbättring*, inte katalysator.
 
@@ -59,7 +59,7 @@ produktutveckling utan datum är *förbättring*, inte katalysator.
 - **Prissatt redan?** En välkommunicerad lansering kan redan ligga i
   kursen — katalysatorn är värd mest när den är oväntad.
 - **Cykelförväxling:** lastbils-/halvledarcykelns svängningar är
-  efterfrågekatylyser (V12), inte produktkatalysatorer.
+  efterfrågekatalysatorer (V12), inte produktkatalysatorer.
 
 ## 5. Koppling till AKM1 — modellens läge
 

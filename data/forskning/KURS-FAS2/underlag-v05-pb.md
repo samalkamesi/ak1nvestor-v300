@@ -12,7 +12,7 @@ det som aktieägarna har kvar av allt bolaget äger minus allt det är skyldigt
 
 P/B är värderingens äldsta mått och fungerar bäst där balansräkningen
 speglar affären: banker, försäkring, kapitaltunga industrier, fastigheter.
- För kunskapsbolag är det svagare — det viktigaste (varumärke, kod, kunnigor)
+För kunskapsbolag är det svagare — det viktigaste (varumärke, kod, kunnande)
 står inte i balansräkningen. Därför denna varning redan i rubriken av
 utbildningen: **P/B kräver att du förstår VAD det egna kapitalet består av.**
 
@@ -29,15 +29,15 @@ utbildningen: **P/B kräver att du förstår VAD det egna kapitalet består av.*
 5. Räkna och jämför inom bransch — teknikbolag mot teknikbolag, banker
    mot banker, aldrig blandat.
 
-## 3. Räkneexempel på riktiga bolag (ur universumets 189)
+## 3. Räkneexempel på riktiga bolag (ur universumets 195)
 
 Ur bolagsunivers.json (hämtat 2026-09-03), fält `vardering.pb`:
 
-| Bolag | P/B | ROE | Skuld/EK | Les |
+| Bolag | P/B | ROE | Skuld/EK | Läs |
 |---|---|---|---|---|
 | Sinch | **1,38** | 1,9 % | 0,35 | eget kapital rensat av nedskrivningar (2024: −6,4 mdr resultat) |
 | Ericsson B | **3,09** | 26,1 % | 0,38 | normal industriell teknikkonsultstruktur |
-| Atlas Copco A | **9,26** | 25,7 % | 0,34 | högt ROE-driver multippel |
+| Atlas Copco A | **9,26** | 25,7 % | 0,34 | högt ROE driver multipeln |
 | Kambi | **29,18** | 7,0 % | 0,05 | litet bokfört kapital, 98,9 % bruttomarginal |
 | Apple | **44,15** | 148,8 % | 0,78 | återköpen har krympt nämnaren (EK är en restpost) |
 
@@ -57,11 +57,11 @@ balansräkningen.
   lägre. Kontrollera alltid goodwill/totala tillgångar och
   nedskrivningshistoriken. Efter nedskrivningen är P/B 1,38 "ärligare" —
   men speglar då det förflutna, inte framtiden.
-- **Negativt eget kapital.** Vissa välutfodrade bolag (tunga återköp/
-  utdelning) har EK under noll → P/B oläsligt (negativt). Det är inte en
+- **Negativt eget kapital.** Bolag med tunga återköp och utdelningar kan
+  driva EK under noll → P/B oläsligt (negativt). Det är inte en
   "gratis" aktie — måttet är bara ej applicerbart; byt till P/E, EV/EBIT.
 - **Bank-specifikt:** för banker är P/B huvudmåttet (balansräkningen ÄR
-  affären) men tolkas motsubstansvärde/ROE-mål i redovisningen.
+  affären) men tolkas mot substansvärde och ROE-mål i redovisningen.
 - **Omvärderingsreserver** (fastigheter) kan göra EK känsligt för
   värderingsantaganden — notens fotnoter bär sanningen.
 - **Märk: modellen ger aldrig P/B ensam sista ordet** — 6 % vikt, läses
@@ -82,7 +82,7 @@ Ur kalkylatorn (RAKNARE, V05): formel Börsvärde ÷ Eget kapital,
 Universumexempel: Sinch 1,38 → 4 p · Ericsson 3,09 → 2 p · Atlas Copco
 9,26 → 1 p · Kambi 29,18 → 1 p · Apple 44,15 → 1 p. Och här visar
 utbildningen sin poäng om mekanismens gräns: Apple får 1 p trots att
-bolaget gör 148,7 % ROE — modellen straffar alltså återköpsdriven
+bolaget gör 148,8 % ROE — modellen straffar alltså återköpsdriven
 kapitalkrympning om man läser V05 blint. AKM1:s lösning: tolka V05 alltid
 tillsammans med V09 (ROE) och goodwill-noten — det är modellens sätt att
 säga samma sak som fällorna ovan. Så fungerar metoden; plattformen lär

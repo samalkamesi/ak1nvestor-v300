@@ -63,15 +63,16 @@ affärsmodeller i en kolumn (universummedian 20,8 %):
 
 **Gapövningen:** Atlas Copco brutto 42,2 % → EBIT 20,6 %: organisationen
 äter hälften av varans makt — normalt för industri. Evolution brutto
-100 % → EBITDA-drift 57,8 %: varan kostar noll, hela slaget står om
+100 % → EBIT 57,8 %: varan kostar noll, hela slaget står om
 kundanskaffning och drift. Läs alltid V07 och V08 TILLSAMMANS.
 
 ## 4. Kritiskt tänkande — fällor
 
 - **EBITDA målar "före slitage" — men slitage är verkligt.** Kapital-
-  intensiva bolag (gruvor, rederier, stål) ser Arsenal-lönsamma ut i
+  intensiva bolag (gruvor, rederier, stål) ser extra lönsamma ut i
   EBITDA just för att ersättningsinvesteringarna är osynliga. En hög
-  EBITDA-marginal med evigt stort CAPEX-behov är ingen kornett.
+  EBITDA-marginal med evigt stort CAPEX-behov är därför ingen sann
+  lönsamhet.
 - **EBIT ≠ EBITDA — knappast värt att säga, men modellen tar det på allvar:**
   att lägga EBIT-marginaler på EBITDA-trösklar underskattar systematiskt
   (därför är V08 osatt i kärnan, se nedan).
@@ -93,11 +94,11 @@ har `lonksamhet.ebitMarginal` (EBIT), inte EBITDA. Kärnan vägrar lägga
 EBIT på EBITDA-trösklar: systematisk underskattning av alla kapital-
 intensiva bolag vore resultatet. Precis som V06 aktiveras indikatorn när
 kontraktet utökas additivt (avskrivningar/omsättning i källa = fältet som
-saknas). Tröskelfamiljen som väntar är lönsamhetsstegen i lönsamhets-
-kategoriens konkava mönster (som V07/V09: låg nivå hårt straffad, topp
-endast med uthållighetsbevis).
+saknas). Tröskelfamiljen som väntar är LINJÄRA steg, inte konkava: kärnan
+dokumenterar ≥ 25 % ⇒ 5 p · ≥ 15 % ⇒ 4 p · ≥ 10 % ⇒ 3 p · ≥ 5 % ⇒ 2 p ·
+annars 1 p — samma trappa som kalkylatorns RAKNARE.
 
-Detta är Fas 2:s kanske renaste exempel på **modellens datoheder**: hellre
+Detta är Fas 2:s kanske renaste exempel på **modellens dataheder**: hellre
 en tom rad med förklaring än en snygg siffra som ljuger om vad den mäter.
 
 *Utbildningsmaterial — beskriver hur metoden läser och räknar; inga

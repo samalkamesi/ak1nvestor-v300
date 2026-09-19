@@ -29,7 +29,7 @@ risken är annan, och modellen ska se den.
 5. Tänk: **diversifiering på tre axlar** — kunder, produkter, geografier.
    En axel kan vara koncentrerad utan att bolaget är det (om de andra bär).
 
-## 3. Räkneexempel på riktiga bolag (ur universumets 189)
+## 3. Räkneexempel på riktiga bolag (ur universumets 195)
 
 Universumets data visar strukturen indirekt — segmentdata finns i
 redovisningarna, inte i datasettet; det är läsövningens poäng. Vad datasettet
@@ -51,7 +51,7 @@ VISAR är kontrasten i affärsmodell:
 **Räkneövning med storkundsnot (princip):** största kund 28 % av intäkterna
 → koncentrationsmått 28 % (hög). Fem största 55 % → mycket hög. Jämför:
 även en "bredd" på 40 länder kan dölja att 60 % av intäkterna egentligen
-beroende av två slutkunder i värdekedjan — läs kundnot OCH geografinot
+är beroende av två slutkunder i värdekedjan — läs kundnot OCH geografinot
 tillsammans, aldrig var för sig.
 
 ## 4. Kritiskt tänkande — fällor
@@ -60,7 +60,7 @@ tillsammans, aldrig var för sig.
   slutmarknad (t.ex. biltillverkare) diversifierar inte — de svänger
   tillsammans. Fråga: vem betalar i slutändan, i varje segment?
 - **Diversifiering genom uppköp.** åtta produktlinjer från åtta förvärv kan
-  vara åtta*sinat integrationsrisk snarare än balans. Förvärvshistoriken i
+  vara åtta separata integrationsrisker snarare än balans. Förvärvshistoriken i
   förvaltningsberättelsen avgör.
 - **Storkundsnotens tröskeldämpning.** Många bolag redovisar koncentration
   bara om den överstiger t.ex. 10 % — "inget att redovisa" betyder inte
@@ -74,9 +74,10 @@ tillsammans, aldrig var för sig.
   riskform, inte kvalitet. Poängen ska tolkas ihop med kassaflöde och
   avtalstyper, aldrig ensam.
 
-## 5. Koppling till AKM1 — modellens trösklar
+## 5. Koppling till AKM1 — riktlinje vid manuell poängsättning
 
-Källan är kvalitativ (segmentnot + storkundsnot, 6 % vikt). Riktlinje:
+Källan är kvalitativ (segmentnot + storkundsnot, 6 % vikt). Kärnans
+`scorV03` är osatt i kod — tabellen är utbildningens riktlinje:
 
 | Intäktsstruktur | Poäng |
 |---|---|

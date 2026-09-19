@@ -21,7 +21,7 @@ ränta och skatt?** Tre byggstenar:
 
 Varför inte bara P/E? P/E straffar hårt belånade bolag (räntan äter
 resultatet) och belönar skuldfria — EV/EBITDA jämför själva affären på
-lika villkor. Det är därför köpare av hela bolag (och deras bankers)
+lika villkor. Det är därför köpare av hela bolag (och deras banker)
 pratar i EV/EBITDA.
 
 ## 2. Läsa det i en faktisk årsredovisning
@@ -48,14 +48,15 @@ Ett bolag med börsvärde 100 mdr, räntebärande skulder 20 mdr, kassa 5 mdr:
   driftkassa.
 
 Samma räkning på två verkliga strukturer ur universumet (komponenterna
-ur respektive årsredovisning, multipliceln illustrativ): ett kraftigt
+ur respektive årsredovisning, multiplikatorn illustrativ): ett kraftigt
 belånat bolag kan ha lägre P/E-rekommendation men HÖGRE EV/EBITDA än ett
 skuldfritt — för att skulderna syns i EV men inte i aktiekursen. Det är
 hela poängen: multipeln som inte kan luras av balansräkningsstrukturen.
 
 **Värdefallehålet — modellens viktigaste lekktion här:** EV/EBITDA under
-4× ser ut som ett kap. Men kurvan ger 5 poäng ENDAST om V19 (kvalitet på
-kassaflödet/fonden) också är minst 3 — annars max 3 poäng. Ett bolag som
+4× ser billigt ut. Men kurvan ger 5 poäng ENDAST om V19 (kassatäckningen)
+också är minst 3 poäng — det vill säga minst 30 månaders kassatäckning
+enligt V19:s trappsteg — annars max 3 poäng. Ett bolag som
 är "billigt" kan vara billigt av ett skäl: skrumpande affär, föråldrad
 maskinpark (lågt EV för att ingen vill ha den), eller bransch i struktur-
 nedgång. Billighet utan kvalitet är en fälla — modellen bygger in den
@@ -93,9 +94,10 @@ Ur kärnan (`poangEvEbitda`, R2 §6 konvex kurva):
 **Ärlighetslektionen — V06 är OSATT i kärnan idag:** datakontraktet
 (P1) saknar fältet `evEbitda` (endast `evEbit` finns, se V28 Earnings
 yield). Kärnan vägrar gissa: att lägga EV på EBIT i stället för EBITDA
-skulle systematiskt övervärdera kapitalintensiva bolag — så indikatorn
-lämnas osatt tills kontraktet utökas additivt. Kurvan ovan är imple-
-menterad och aktiveras direkt då. Så bygger man en modell som inte ljuger
+skulle systematiskt missgynna kapitalintensiva bolag — EBIT är lägre än
+EBITDA, multipeln ser dyrare ut än den är och poängen blir för låg — så
+indikatorn lämnas osatt tills kontraktet utökas additivt. Kurvan ovan är
+implementerad och aktiveras direkt då. Så bygger man en modell som inte ljuger
 om sin data — en design som är värd att lära sig lika mycket som själva
 multipeln.
 

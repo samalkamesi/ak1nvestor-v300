@@ -3,7 +3,7 @@
 Underlag till Fas 2-fördjupningen · våg 192 · 2026-09-18
 Kursreferens: slug `v04-ps` · Modell: AKM1 V04
 
-## 1. Vad indikatorn innebör i praktiken
+## 1. Vad indikatorn innebär i praktiken
 
 P/S svarar på: **hur många kronor betalar marknaden per krona intäkt?**
 Börsvärde ÷ nettoomsättning (senaste 12 mån). P/S är värderingsfamiljens
@@ -29,7 +29,7 @@ modellen hanterar det genom att V04 alltid läses tillsammans med V07/V08.
 4. Jämför inom bransch: universumets branschmedianer (teknik, industri
    m.fl.) ger referensramen — P/S utan bransch jämförs mot ingenting.
 
-## 3. Räkneexempel på riktiga bolag (ur universumets 189)
+## 3. Räkneexempel på riktiga bolag (ur universumets 195)
 
 Egen uträkning ur bolagsunivers.json (börsvärde ÷ senaste årets
 nettoomsättning, hämtat 2026-09-03):
@@ -41,7 +41,7 @@ nettoomsättning, hämtat 2026-09-03):
 | Atlas Copco | 984 018 | 168 343 | **5,85** | 20,6 % |
 | Microsoft | 3 689 160 (MUSD) | 331 839 | **11,12** | 45,1 % |
 
-**Hela lektionen finns i tabellen:** Sinch är " billigast" på P/S — och har
+**Hela lektionen finns i tabellen:** Sinch är "billigast" på P/S — och har
 sämst marginal (2,5 %); Microsoft är "dyrast" — och gör 45 öre EBIT per
 intäktskrona. Multipeln speglar marginalstrukturen: marknaden betalar mer
 per krona intäkt när fler öre blir vinst. Räkna själv med kolumnerna —
@@ -81,7 +81,7 @@ Universumexempel med egna siffror: Sinch 1,17 → 4 p · Alfa Laval 3,32 →
 2 p · Atlas Copco 5,85 → 1 p · Microsoft 11,12 → 1 p. OBS modellens
 byggnad: låg multipel ger hög poäng MEN tolkas alltid mot marginalerna
 (V07/V08) och tillväxten (V01) — ett 5 p i V04 med 1 p i V07 är ett mönster
-att förstå (tradarens lågmarginalbolag), inte en gratis pojke. Så säger
+att förstå (tradarens lågmarginalbolag), inte en gratis lunch. Så säger
 metoden; vad du sedan gör är ditt beslut — vi ger utbildning, inte råd.
 
 *Utbildningsmaterial — beskriver hur metoden läser och räknar; inga

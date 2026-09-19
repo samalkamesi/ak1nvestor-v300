@@ -1,0 +1,34 @@
+studio: auto s1-u2 DETAILHANDEL B13 KOMPLEMENT — dubbelgranskningsfallet: K2 systerformuleringen i sammanfattningen (primär-B1 rättar bara bodyn) + K1 PEG-värdedomen (divergens mot u3:s "ren" öppet redovisad)
+
+KOLLISIONEN: s1-u2 och s1-u3 valde oberoende samma objekt (identisk auto-malltext +
+deterministisk FIFO: detailhandel = äldsta oreviderade rotutkast); bägge anspråken 09:58,
+u3 hann leverera primärpaketet (387c357d) under min granskningsfas — deras ytor orörda,
+min leverans = KOMPLEMENT enligt bilaktier-precedensen. Fabrikskur noterad i filen:
+nästa auto-manifest bör ange objekt per uppgift eller lottningsprefix.
+
+MIN LEVERANS — detailhandelsaktier-...-KOMPLEMENT-s1u2-diff.json (2 poster, söksträngar
+maskinverifierade unika 1 träff / nytt 0 träff):
+- K2 (BYT, i samma omgång som primär-B1): sammanfattningens "H&M tredubblade resultatet
+  på fallande omsättning" bär samma fönsterblandning som primär-B1 rättar i bodyn — netto
+  2022→2025 är STIGANDE +2,1 % (223,6→236,0→234,5→228,3); utan K2 blir bodyn rätt och
+  sammanfattningen fel = intern inkonsistens; "backade från sin topp 2023" bevarar
+  komprimeringen sann; -en-systersträngen "more than tripled profit on falling sales"
+  verifierad, speglas vid verkställning.
+- K1 (FÖRSLAG, ton 2007:528): PEG-meningens "snarare än en dyr värdering" = värdedom om
+  namngivet bolag; grinden enig med u3 (0/26 fraser, "inköp" = substantiv, disclaimer
+  negerad sist, 0 lagrum) men genomläsningssteget pekar på metod-form; förslaget flyttar
+  domen till talet utan informationsförlust; DIVERGENSEN mot u3:s "juridik ren" redovasad
+  öppet i bägge riktningarna — kunden/ägaren avgör (R2).
+
+KORSVALIDERING (39 egna sifferkontroller, 38 gröna): bekräftar u3:s hela källtalsparitet
++ fyra kontroller primären saknar (ingressens 2,7-kr/över-30-%-ROE · P/B-spannet 7,5–9,3 ·
+"tre renodlade butiksbolag" mot konsumentbranschens 27 rader · källdatumens splittring
+09-03/09-15). B1-fyndet hittat av BÅDA oberoende — systematisk fyndklass, ej slump.
+u3:s C2 (Inditex "i lönsamhet" obelagt) saknades av mig: instämmer, hedras. Länkar
+oberoende på FILNIVÅ 13/13 (metodkors mot u3:s HTTP 200). 911: 0/6 enigt.
+
+KVD: src/ orörd = INGET bygge · data/blogg/ orörd · utkast-JSON:n orörd · R2 orörd ·
+syskonytor orörda · worklog appandad efter u3:s sektion (konvergens, 0 rader förlorade).
+
+LEVERANS: granskning/detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag-KOMPLEMENT-s1u2-diff.json,
+data/vakten/auto-s1-1789804529817-s1-u2-ansprak.md, worklog.md, verktyg/_s1u2-detailhandel-komplement-worklog-append.txt [fabrik]

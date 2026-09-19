@@ -1,0 +1,26 @@
+{
+  "prediktion": "DR-PREDIKTION-2026-09-19-KVALL-APP",
+  "agent": "s10-u3 (manifest auto-s10-1789849506241, vakt 3/3)",
+  "låstTs": "2026-09-19T20:32:30Z",
+  "låstFöreKörning": true,
+  "objekt": "Kvällspunkt 2 för appens databas (aufr): dr-appdump.mjs full övning — KEDJA-0-instrumentets andra körning någonsin",
+  "bas": {
+    "kalla": "DR-APPDUMP-2026-09-19-KEDJA0.json (s10-u2, körning startad 14:33:44Z ≈ 16:33 lokal, dump klar ≈ 16:39 lokal)",
+    "kedja2_0240": { "fil": "system-events-full-2026-09-19.json.gz", "rader": 166067 },
+    "kedja0_1639": { "system_events": 167219, "publicTotal": 178493, "rtoSek": 22.2, "dumptidSek": 339.8, "fel": "109 kända/0 okända", "tabeller": "372/380/417", "createCopy": "418/420", "authUsers": 45, "members": 3, "boardDecisions": 77 },
+    "tillvaxtmodell": "system_events ≈ 83 r/h (1 152 rader / ~13,9 h sedan 02:40)"
+  },
+  "prediktioner": {
+    "P1_system_events": { "punktvärde": 167710, "band": [167550, 167900], "motivering": "167 219 + 83 r/h × ~5,9 h sedan KEDJA-0-dumpen" },
+    "P2_publicTotal": { "punktvärde": 179000, "band": [178950, 179450], "motivering": "P1 + user_activities/övrig kvällstillväxt" },
+    "P3_radkontrakt": { "väntat": "372/380/417 tabeller · CREATE 418 · COPY 420 EXAKT", "motivering": "schemat statiskt inom dygnet" },
+    "P4_RTO_s": { "band": [20, 30], "motivering": "u2:s kodifierade band — 372 tabellers DDL driver RTO" },
+    "P5_dumptid_s": { "band": [105, 420], "motivering": "KEDJA-0:s WAN/IPv6-variansband ×3" },
+    "P6_fel": { "väntat": "109 kända / 0 okända EXAKT", "motivering": "deterministisk felbild (--no-owner/--no-privileges)" },
+    "P7_kedja2gap": { "punktvärde": 1640, "band": [1480, 1840], "motivering": "restore minus kedja-2:ns 166 067 — ≈20 h sedan 02:40" },
+    "P8_stadning": { "väntat": "skrap-DB borta · PG17 down · dumpfil raderad (GDPR) — EGEN eftermätning" },
+    "P9_nyckeltabeller": { "väntat": "auth.users 45 · members 3 · board_decisions 77 stabila" },
+    "P10_protokollnamn": { "väntat": "DR-APPDUMP-2026-09-19-KEDJA0-2.md/.json (unikVag-kollision)" }
+  },
+  "domRegler": "EXAKT = identiskt tal · ✅ = inom band · ❌ = utanför; dom förs ärligt i agentprotokollet med rotorsak vid miss."
+}

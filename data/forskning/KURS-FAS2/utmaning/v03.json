@@ -1,0 +1,25 @@
+{
+  "kurs": "v03",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Formulera V03:s kärnfråga: om EN kund, EN produkt eller EN marknad försvinner — hur stor del av intäkterna står kvar?\n2. Jämför kapitlets två bolagstyper: tusen kunder i tio branscher på fyra kontinenter mot tre största kunder som bär halva omsättningen. Vilken motståndskraft har varje typ?\n3. Kapitlet kallar diversifiering tillväxtkategorins försäkring: förklara hur den gör tillväxten (V01) mer hållbar och de återkommande strukturerna (V02) mer pålitliga.\n4. Koncentration är inte alltid fel — ett nischbolag kan vara excellent. Vad är det modellen ska se enligt kapitlet, och varför är risken ändå annorlunda?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka tre axlar mäter intäktsdiversifiering på? Förklara också hur en axel kan vara koncentrerad utan att bolaget som helhet är det.\n2. Vilken rad kallas V03:s viktigaste — där största kunds andel av intäkterna eller de fem största kunderna redovisas? I vilka branscher finns den ofta?\n3. Var hittar du intäkter per verksamhetsgren och per land/region? Beskriv segmentnoten och geografinoten.\n4. Produktgruppsuppdelningen finns på två ställen i redovisningen enligt kapitlet — vilka? Och vad bör du tänka om diversifieringen ser bra ut på bara en axel?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Ericsson: omsättningstillväxt TTM −6,1 % men bred struktur. Vilka tre verksamhetsgrenar nämner kapitlet — och varför kan en svag region eller kund inte fälla helheten? Notera bruttomarginalen 48,1 %.\n2. Kambi: bruttomarginal 98,9 % och P/B 29,2. Vad betalar marknaden för enligt kapitlet — och vad är motvikten?\n3. Atlas Copco: fyra affärsområden, globalt, omsättning 168 mdr SEK. Vad betyder det att bolaget redovisar koncentration under tröskeln?\n4. Övning med storkundsnoten: största kund 28 % (hög) och fem största 55 % (mycket hög). Förklara också hur 40 länder kan dölja att 60 % av intäkterna beror av två slutkunder."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Fyra segment som alla säljer till samma slutmarknad (t.ex. biltillverkare) diversifierar inte. Varför? Öva kontrollfrågan: vem betalar i slutändan, i varje segment?\n2. Åtta produktlinjer från åtta förvärv — när är det balans och när är det åtta integrationsrisker? Var läser du förvärvshistoriken?\n3. Förklara storkundsnotens tröskeldämpning: många bolag redovisar koncentration först om den överstiger exempelvis 10 %. Vad betyder inget att redovisa — och vad säger det INTE?\n4. Geografinot efter faktureringsland: förklara Irland/Luxemburg-exemplet och varför fotnoten om hur geografi mäts är avgörande. Avsluta med Kambi-paradoxen: vad mäter indikatorn — riskform eller kvalitet?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Vilken intäktsstruktur ger 5 poäng enligt riktlinjen — bred på minst två axlar utan dominans? Räkna upp axlarna och förklara kravet.\n2. Varför ger största kund/produkt på 15–25 % (medelkoncentration) 3 poäng, medan hög koncentration på en axel (över 25 %) bara ger 2?\n3. Träna: motivera Atlas Copco i 5 p-landskapet, Ericsson 4 p och Kambi 2 p på kundaxeln — trots produktens styrka — med riktlinjetabellen.\n4. V03:s källa är kvalitativ (segmentnot och storkundsnot, 6 % vikt) och kärnans scorV03 är osatt i kod. Vad måste du dokumentera när du poängsätter manuellt — och varför är spårbarheten del av utbildningen?"
+    }
+  ]
+}

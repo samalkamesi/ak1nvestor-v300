@@ -1,0 +1,25 @@
+{
+  "kurs": "v04",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Skriv P/S-formeln (börsvärde ÷ nettoomsättning, senaste tolv månader) och formulera frågan måttet svarar på: hur många kronor betalar marknaden per krona intäkt?\n2. Varför kallas P/S värderingsfamiljens robustaste medlem när vinsten sviker — vilket vanligt måltal kan bli negativt eller meningslöst i vändning, kris eller under tung avskrivning?\n3. En intäktskrona är inte värd lika mycket i alla branscher: jämför mjukvarubolagets 80–90 öre bruttovinst per intäktskrona med distributörens 5–15 öre.\n4. Vilka indikatorer ska V04 alltid läsas tillsammans med (V07/V08) — och vad missar du om du bara ser multipeln?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Hur räknar du börsvärdet? Vilken not i årsredovisningen visar antalet aktier — och vad hämtar du från marknaden utanför rapporten?\n2. Nettoomsättningen står först i koncernens resultaträkning. När använder du rullande tolv månader (senaste fyra kvartalens summa) i stället för senaste räkenskapsåret — och vad ska du alltid dokumentera?\n3. Universumets värderingsfält saknar P/S: vilka två fält räcker för att räkna fram multipeln själv?\n4. Varför är P/S utan branschjämförelse värd nästan ingenting? Vilken referensram ger universumets branschmedianer?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Räkna efter Sinch: 31 757 ÷ 27 080 = 1,17. Stäm resultatet mot tabellen — och vilken EBIT-marginal (2,5 %) står i samma rad?\n2. Alfa Laval: börsvärdet 231 545 Mkr mot omsättningen 69 674 Mkr ger P/S 3,32. Kontrollera — och jämför EBIT-marginalen 16,2 % med Sinch.\n3. Microsoft är dyrast (11,12) men gör 45,1 % EBIT-marginal. Förklara kapitlets slutsats: marknaden betalar mer per intäktskrona när fler öre blir vinst.\n4. Atlas Copco (P/S 5,85, EBIT-marginal 20,6 %): förklara varför billig och dyr på P/S inte säger något om affären utan marginalerna bredvid."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Distributörer och handelsbolag handlas strukturellt kring 0,1–0,5 i P/S. Varför är en sådan låg multipel sällan en fyndkarta — vad bär intäktskronan i den branschen?\n2. Förklara cykeltoppens spegel med universumets Volvo-exempel (TTM-intäkter ned −5,7 % efter toppår): varför ser P/S som lägst ut just när marginalerna riskerar fall?\n3. Två sätt att svälla upp nämnaren: förvärvsuppblåst omsättning och engångsintäkter. Var kontrollerar du den organiska tillväxten — och vad betyder det att normalisera före jämförelse?\n4. P/S ignorerar skulder: två bolag med P/S 2 — det ena nettokassa, det andra högt belånat — är inte samma affär. Vilket mått tar skulderna enligt kapitlet?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Repetera kalkylatorns trappa: vilka P/S-nivåer ger 5 poäng och vilka ger 1 poäng — och varför är riktningen omvänd mot vad man först kan tro?\n2. Träna med kapitlets egna siffror: Sinch 1,17, Alfa Laval 3,32, Atlas Copco 5,85 och Microsoft 11,12 — vilka poäng ger trappan? Kontrollera mot universumexemplen.\n3. Låg multipel ger hög poäng men tolkas alltid mot marginalerna (V07/V08) och tillväxten (V01). Förklara mönstret 5 p i V04 med 1 p i V07 — tradarens lågmarginalbolag — och varför det inte är en gratis lunch.\n4. Kapitlet avslutar: metoden beskriver hur den läser — vad du sedan gör är ditt beslut. Förklara skillnaden mellan utbildning och råd."
+    }
+  ]
+}

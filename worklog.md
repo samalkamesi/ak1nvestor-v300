@@ -14637,3 +14637,51 @@ Granskningsagenten (omstartad ROND 85 efter tyst död; 80 verktygsanrop, egen om
 ## SPÅR 1 s1-u2 (manifest auto-s1-1789804748544, 2/3) — 2026-09-19 ~12:1x lokal: FLYGAKTIER B14 KONTROLLGRANSKAD — flyttklar efter 6 rättningar; universumglidningens första rent INNEHÅLLSdrivna fynd [fabrik]
 
 Fabriksagent s1-u2 (granskare). PIVOT (anspråk disk-först, data/vakten/auto-s1-1789804748544-u2-ansprak.md): uppdragets ordagranda m9-utkast #2 (branschmedianer v2) komplett sedan 09-16 (m9-serien 6/6 kl 14:35, 8448ef77; KONTROLLen täckte exakt uppdragets fyra punkter) — tolfte pivot-fallet; syskon u1 tog kvartalsspåret (ABB, deras leverans konstaterad i gransning/-mappen FÖRE mitt val). VAL: flyg = det enliga kvarvarande rotutkastet av 09-16-generationen (worklog 14626: "endast flyg kvar" efter u3:s detailhandel; 0 granskningsartefakter, 0 syskonanspråk). LEVERANS: granskning/flygaktier-sa-analyserar-du-flygplansindustrin-KONTROLL-2026-09-19.md + -diff.json (nya filer; utkast-JSON:en orörd; sond verktyg/_s1u2-flygaktier-verify.mjs 58 OK/1 FEL-rad/1 VARN). GRANSKNING: källtalsparitet 21/21 EXAKTA mot bolagsunivers.json (Airbus Stockholm… nej — StockAnalysis-vintage 09-16: brutto 16,3/EBIT 8,7/ROIC 20,5/PE 25,9 fwd 24,4/EV-EBIT 22,0/PB 5,9/PEG 4,0/skuld-EK 0,55/FCF-marg 6,1/prognos 6,5 + not-bärda kassa 13,1/skuld 14,3 mdr €; GE Yahoo-vintage 09-03: brutto 31,1/EBIT 20,6/ROIC 27,5/PE 39,0/EV-EBIT 33,8/PB 19,4/PEG 4,2/prognos 14,7 — GE-noteringen belägger "konsensus EPS-tillväxt +1 år" ⇒ textens "konsensusprognos" KORREKT, spelaktier-B2:s fälla finns ej här) · serier+aritmetik 17/17 (oms 58 763→65 446→69 230→73 420 M€ = +11,4/+6,1 EXAKT; res 4 247→3 789→4 232→5 221 = −10,8/+23,4 EXAKT; FCF-serien 3 824→3 204→3 733→4 031 ordagrant, 4/4 positiv; 8 000÷800=10; "nästan dubbelt"=1,90×; Airbus-PEG = spårkonventionen 25,94÷6,53=3,97 notbelagt). FYND B1–B6 (samtliga söksträngar maskinverifierade unika ×1): B1 VÄSENTLIGT "universum bär sektorn två bolag" MOTBEVISAT — dagens universum bär FYRA flygplansindustri-bolag klassade industri (Airbus+Boeing+Embraer plansidan, GE motorsidan; Saab försvarsklassad; Safran/MTU/Rolls=0) medan duopolstycket i samma text namner Boeing — tidslinjen git-återkallad: byggtiden 15:38 läste 14-industri-vintagen UTAN Boeing (3d9a5e89 21:44 samma kväll; Boeing i c256c659 efter, Embraer senare) = sann mot byggtiden, falsk mot dagens — B-seriens FÖRSTA rent innehållsdrivna glidningsfynd (halvledar-C1 var talklass); B2 medianerna föråldrade "P/E 26,9/EV-EBIT 21,8 (14 bolag)" = exakt byggtidens vintagen 26,85/21,794 n=14, dagens 28,0 (n=18)/21,5 (n=17, Boeing saknar EV/EBIT) — "på samma data" är dateringskänsligt; B3 PEG-etiketten "på ettårsprognoser" gäller ENDAST Airbus (GE 4,23 ej härledbart ur ettårslongen: 39,04÷14,68=2,66, källans eget tal) — beläggsblandningens släkt med spelaktier-B2; B4 "båda PEG-talen över 4" FALSKT (Airbus 3,97<4); B5 rm 2→7 (1 371 ord; 686 ord/min mot publicerades max 240 — åttonde fallet i klassen); B6 stavfel "multipelar"→"multipler" (bilaktier-A1:s felklass, här i body; -en stavar rätt). GRÖNT DÄRUTÖVER: juridik 2007:528 ren (26 varumärkesmönster × 3 ytor = 0/0; sondens 4 rådgloss-träffar samtliga deskriptiva företagsbeskrivningar — "linjebolag säljer transporter" m.fl., noll imperativ, spelaktier-precedensen; 0 lagrum; disclaimer exakt sista rad; utbildningsram i ingress) · 911 = 0/6 mönster · 16/16 interna länkar HTTP 200 localhost (kursankaret se-10-flyg lever; km-003 länkad 2× = 16 unika) · struktur grön (8 H2, title 47/60, desc 145/155, 0 mjuka bindestreck). FLAGGOR: F1 rm-konventionen fortfarande bara i granskarlaget (åtta+ fall); F2 universumglidningen SYSTEMATISK — "på samma data (N bolag)"-citat förfaller när universumet växer (135→195 sedan 09-16), förslag as-of-datering eller motorisk omräkning vid flytt; F3 -en-spegeln (09-18) bär B1–B5:s systrar ("two companies"/26.9/21.8/14 companies/"one-year forecasts"/"above 4"/rm 2 vid 1 392 ord⇒7; B6 gäller ej) — speglas vid verkställning. Dom: FLYTTKLAR EFTER RÄTTNING (B1–B6, spegling enligt F3; C2 "arbetfinansiera"→"medfinansiera" + C3 "skimrar"→"skummar på ytan" beslutas av ägaren; D1 publishedAt vid export, R2). KVD: endast data/ + verktyg/ + worklog = INGET bygge; src/ orörd (tsc-baslinjen bärs av pre-commit-grinden); R2 orörd; data/blogg/ orörd; utkast-JSON:en orörd (granskaren skriver ej om andras filer); syskonytor orörda (u1:s ABB-paket läst/konstaterat, ej modifierat); commit MED PATHSPEC. LEVERANS: granskning/flygaktier-sa-analyserar-du-flygplansindustrin-KONTROLL-2026-09-19.md + granskning/flygaktier-sa-analyserar-du-flygplansindustrin-diff.json + verktyg/_s1u2-flygaktier-verify.mjs + anspråksfil (data/vakten) + denna sektion. [fabrik]
+
+## SPÅR 1 s1-u3 ANDRA INSTANS (manifest auto-s1-1789804529817, 3/3) — 2026-09-19 ~10:2x lokal: FÖRSÄKRINGSAKTIER B16 KONTROLLGRANSKAD — flyttklar efter 3 rättningar; universummedianens drift vintage-bevisad
+
+Fabriksagent s1-u3, andra instans (OMSTARTSBOKFÖRING s9-u2-D20/s10-u3-presedansen: första
+instansen levererade detailhandel-KONTROLLEN och är bokförd klar i status — denna leverans
+är nästa objekt, inte duplikat). PIVOT (anspråk disk-först,
+data/vakten/auto-s1-1789804529817-u3-ansprak-2-instans.md): uppdragets ordagranda m9-utkast
+#3 (forskningslaget) komplett sedan 09-16 14:29 — m9-serien 6/6 sedan 14:35 (8448ef77);
+detailhandel levererat av första instansen (14626), flyg anspråkat + sedan levererat av
+syskonomgången (d72d12c0), ABB levererat ⇒ FIFO-valet försäkring B16 (09-16 20:16, äldsta
+rotguide utan granskningsartefakt; medie+livsmedel återstår av kvällsgenerationen).
+
+Leverans: granskning/forsakringsaktier-sa-analyserar-du-forsakringsbolag-KONTROLL-2026-09-19.md
++ granskning/forsakringsaktier-sa-analyserar-du-forsakringsbolag-diff.json (nya filer;
+utkast-JSON:en orörd; sond verktyg/_s1u3-forsakring-verify.mjs + diffcheck
+verktyg/_s1u3-forsakring-diffcheck.cjs). DOM: FLYTTKLAR EFTER RÄTTNING — B1 (BYT, väsentligt):
+"2025 var koncernens bästa år med nettoresultatet 1 998 miljoner euro" binder rekordet till
+nettoresultatet men universumets egen serie är 2 107 (2022, bär Nordea-exittens
+realisationsvinster) → 1 323 → 1 154 → 1 998 — 2022 är HÖGRE; kvalificeraren "sedan
+Nordea-gångarna" bevarar hela normaliseringsargumentet (forward 16,2 > trailing 14,7 sant);
+noteringens interna spänning ("rekordår" + "2022 bär gångar" i samma not) är källan — flagga
+F4 till dataägaren. B2 (BYT): finansmedianen driven — "median 2,47 och 15,3" var VINTAGE-SANT
+(byggarens KVD rad 103–104 assertade exakt dessa mot 09-16-filen och passerade) men dagens
+universum (finans n=20 av 195) ger 2,57/15,5; "båda avkastar klart över mittläget" håller
+ändå (24,1/19,6 > 15,5) — OBEROENDE KONFIRMERAD av syskonets flygaktier-leverans d72d12c0
+("universumglidningens första rent innehållsdrivna fynd") = samma fenomenfamilj, två objekt
+samma dag ⇒ flagga F3 till universumägaren (medianer beräknas om vid verkställning).
+B3 (BYT): readingMinutes 2→7 (1 379 ord textrensat = 690 ord/min mot publicerade max 240;
+sjunde fallet i klassen, byggd 09-16 före 09-17-domen). C1 (FÖRSLAG): If P&C-etiketten —
+83,6/−0,7/1 485/+12 är SAMPO-KONCERNENS tal enligt FSR ("Sampo Group … 83.6 (84.3)"), If
+P&C-segmentet 83,4 enligt Ifs SFCR (0,2 pp delta); "Sampokoncernen" föreslås bära siffrorna.
+-en-spegeln Ö16 bär samtliga systerformuleringar (5 strängar maskinverifierade unika) och
+speglas vid verkställning. GRÖNT: källtalsparitet 28/28 mot bolagsunivers.json (Sampo
+24,1/3,38/14,7/16,2/0,35/1 998/+73 %/0,36 €/3,7 %/18,16/2,55/β 0,24; Allianz
+19,6/2,47/14,6/0,51/16,7 %/136,0/33,7/17,10 €/3,8 %/55 %/11,40→17,10 = +14,5 %/år/EBT-gap
+2,1 mdr; Berkshire 12,6 + serien −22,8/96,2/89,0/67,0 exakt; KO β 0,34), aritmetik 14/14,
+externa källor KORSBELAGDA 2026-09-19 via oberoende webbsökning utöver byggarens
+live-kontroll (Allianz CR 92,2 (93,4) + solvens 218 % — allianz.com:s egen Q2-2026-release
+"+7 pp mot helåret 2025 (218 %)"; Sampo FSR 83,6 (84,3)/1 485 M€/+12 %; allianz.com-releasen
+svarar 403 mot maskinell hämtning = bot-skydd, ej död länk — noterat), juridik 2007:528 ren
+(26 varumärkesmönster × 3 ytor = 0 FEL, rådglossor 0, disclaimer exakt sista raden,
+utbildningsgrunden i ingressen), 911 = 0/6 mönster båda språken, 17/17 interna länkar HTTP
+200 mot levande sajten (kursankaret se-06-finanssektorn lever; -en länkar multiset-identiska),
+struktur grön (8 H2, title 52/60, desc 154/155, 0 mjuka bindestreck). Sond: 73 OK / 0 FEL /
+2 VARN (S8 readingMinutes + X1 allianz-403, båda dokumenterade). KVD: src/ orörd INGET
+bygge · R2 orörd (data/blogg/ orörd; publicering = kundens beslut) · utkast-JSON:en orörd ·
+syskonytor orörda (flyg-meddelandet d72d12c0 + detailhandel-KOMPLEMENTet b72daf08 lästa,
+respekterade) · commit med explicit pathspec. [fabrik]

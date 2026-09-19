@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // _s1u1b-np3-kontroll.mjs — granskningskontroller för NP3 Q3-läspaketet (s1-u1 instans 2)
 // Läser ENDAST (utkast, källor, syskonpaket); skriver ingenting i data/.
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const R = "/home/ak1a/AK1";
@@ -80,10 +80,10 @@ k("D5 marginalvikt", nra(1/(3*0.7488),2)===0.45 && nra((2274*1.03*0.7488-1702.77
 function median(v) { const r = v.filter(x => typeof x === "number" && Number.isFinite(x)); if (!r.length) return null; const s = [...r].sort((a,b)=>a-b); const m = Math.floor(s.length/2); return s.length%2===1 ? s[m] : (s[m-1]+s[m])/2; }
 let vintage = null, vcommit = null;
 try {
-  const commits = execSync(`git -C ${R} log --format="%h %ad" --date=format:"%Y-%m-%d %H:%M" --until="2026-09-16T16:21" -- data/portfolj-system/bolagsunivers.json`, { encoding: "utf8" }).trim().split("\n").filter(Boolean);
+  const commits = execFileSync("git", ["-C", R, "log", "--format=%h %ad", "--date=format:%Y-%m-%d %H:%M", "--until=2026-09-16T16:21", "--", "data/portfolj-system/bolagsunivers.json"], { encoding: "utf8" }).trim().split("\n").filter(Boolean);
   if (commits.length) {
     vcommit = commits[0];
-    vintage = JSON.parse(execSync(`git -C ${R} show ${vcommit.split(" ")[0]}:data/portfolj-system/bolagsunivers.json`, { encoding: "utf8", maxBuffer: 64*1024*1024 }));
+    vintage = JSON.parse(execFileSync("git", ["-C", R, "show", vcommit.split(" ")[0] + ":data/portfolj-system/bolagsunivers.json"], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }));
   }
 } catch (e) { console.log("  vintage-fel: " + e.message.slice(0, 120)); }
 if (vintage) {

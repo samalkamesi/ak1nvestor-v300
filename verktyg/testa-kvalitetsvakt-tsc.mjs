@@ -77,8 +77,9 @@ kontroll(
   "grönt träd ⇒ tsc 0 via projektbinären",
 );
 kontroll(
-  "sammanfattningen räknar 11 sektioner",
-  (rap.match(/^\| \d+\. /gm) ?? []).length === 11,
+  "sammanfattningen räknar 13 sektioner",
+  (rap.match(/^\| \d+\. /gm) ?? []).length === 13,
+  "12 sedan SSR-livssonden tillkom, 13 sedan mimosa-full-scan (o94)",
 );
 kontroll(
   "RESULTAT_JSON-maskinraden parsar och är GRÖN",

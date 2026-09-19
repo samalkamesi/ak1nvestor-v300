@@ -2332,3 +2332,19 @@ frekvensmätning en vecka; (3) organ_name-kodningskur hos organ-ägaren;
 retention ~10-11 · TOTAL senast 12-19.
 
 SLUT — sektion S10-U2 KOPOST3+4-ANOMALI-ORGAN, inlagd av s10-u2 2026-09-19.
+
+
+---
+
+## 2026-09-19 07:48Z — manifest-offer rutt 3 STÄNGD: dom äkta + LÄKT (FYNN; huvudagenten ROND 84)
+
+Oberoende eftermätning 07:41Z: samtliga offer gröna — /kurser /portfolj-forskning /portfoljbyggare
+/rapporter 200, /api/llms-full-txt 200 (280 363 B), /api/llms-txt 200, /llms-full.txt 200 (rewrite)
+och /_not-found 404 med RENDERAD AK1A-not-found-sida (27 454 B, text/html — det friska kontraktet
+för den interna rutten); localhost OCH https. pm2-felloggen (exakta tidsstämplar): SISTA felet
+09:07:10 lokal — FÖRE läkningsdeployen 07:12:27Z (24c220d6) och sista deployen 07:22:26Z (a7174cb0,
+BUILD_ID HZ8EGAF3sqE887kQ2c_pQ, mtime 07:20:58Z); 0 fel-rader efter 09:23 lokal. KUR = ingen
+handslagning (våg 100 hölls): prod-synkens egna gröna byggen läkte. Rot-frågan till synkägaren
+kvarstår oförändrad: misslyckade byggen SKRIVER i .next. Not: eskalerings-ledgerraden från
+07:15Z-notisen föll offer för synkens checkout-radering (tracked-men-ignorad fil + add utan -f) —
+dom-raden i feljakt-bedomningar.jsonl är därför incidentens första ledger-rad.

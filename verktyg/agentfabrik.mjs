@@ -105,7 +105,11 @@ const RAM_TAK_MB = 1500; // vägra ny omgång under detta MemAvailable
 const RAM_KEDJA_MB = 2200; // (c) auto-kedjning: nästa omgång direkt ÖVER detta
 const AUTO_TAK_MS = 30 * 60_000; // (a) max ett auto-manifest per 30 min
 const AUTO_UPPGIFTER = 3; // (a) ett auto-manifest = en omgång
-const TIMEOUT_MS = 25 * 60_000; // 25 min per uppgift
+// ROND 72 (F3/F6, Lag 6): 25→90 min — mätt verklighet (s7-vågen 2026-09-18:
+// LEVERERANDE uppgifter 34–84 min) gjorde 25-min-gränsen till sugrör: wrappern
+// dog men zcode-cli fortsatte okontrollerat (PPID=1) och höll RAM genom ett
+// deploy-bygge (MemAvailable 274 MB). 90 min = verkligt STOPP med gruppdöd.
+const TIMEOUT_MS = 90 * 60_000; // 90 min per uppgift (HELA processgruppen)
 const LOGG_TAK = 256 * 1024; // utdata-logg kapas här (disk-takt)
 
 // (d) Mekanisk kvalitetsgrind (mega g7 — styrelsens beslut punkt 8, 2026-09-15)
@@ -172,6 +176,52 @@ function gitTopp() {
   } catch {
     return "?";
   }
+}
+
+/**
+ * ROND 72 (F3/F6, Lag 6): städa föräldralösa zcode-processer varje rop.
+ * Rot 2026-09-18 23:50Z: övergivna/timeout-dödade barn lämnade zcode-cli +
+ * node-repl-mcp kvar med PPID=1 (349 MB) som pressade MemAvailable till
+ * 274 MB under ett deploy-bygge — studio-API:t föll transient. Regler:
+ * bara ÄKTA föräldralösa (PPID=1) ≥5 min gamla; ALDRIG ttyd/tmux (kundens
+ * /chat-terminal); ALDRIG tyst — varje städning loggas och auditeras.
+ */
+function städaFöräldralösaZcode() {
+  const läsPs = () => {
+    try {
+      return execSync("ps -eo pid=,ppid=,etimes=,args=", { timeout: 10_000 })
+        .toString()
+        .split("\n")
+        .map((r) => r.trim().match(/^(\d+)\s+(\d+)\s+(\d+)\s+(.+)$/))
+        .filter(Boolean)
+        .map((m) => ({ pid: Number(m[1]), ppid: Number(m[2]), ålder: Number(m[3]), args: m[4] }));
+    } catch {
+      return [];
+    }
+  };
+  const ärLäcktZcode = (p) =>
+    p.ppid === 1 && p.pid !== process.pid && !/ttyd|tmux/.test(p.args) && /zcode/i.test(p.args) && p.ålder >= 300;
+  const dödade = [];
+  for (const p of läsPs().filter(ärLäcktZcode)) {
+    try {
+      process.kill(p.pid, "SIGTERM");
+      dödade.push(`${p.pid}(${Math.round(p.ålder / 60)}min)`);
+    } catch {
+      /* redan borta */
+    }
+  }
+  if (dödade.length === 0) return dödade;
+  execSync("sleep 2", { timeout: 5_000 }); // ge TERM tid att verka
+  for (const p of läsPs().filter(ärLäcktZcode)) {
+    try {
+      process.kill(p.pid, "SIGKILL");
+    } catch {
+      /* redan borta */
+    }
+  }
+  logga(`orphan-städning (rond 72): ${dödade.join(", ")} — SIGTERM + KILL`);
+  loggrad({ händelse: "orphan-städning", dödade });
+  return dödade;
 }
 
 // ── FABRIK 2.0 (d): mekanisk kvalitetsgrind (mega g7) ─────────────────────────
@@ -532,11 +582,28 @@ function korUppgift(manifestId, uppgift, vidKlar) {
     const barn = spawn(
       ZCODE,
       ["-p", `${prefix(uppgift.titel, uppgift.roll)}\n\nUPPGIFT:\n${uppgift.prompt}`],
-      { cwd: ROT, env: { ...process.env, HOME: process.env.HOME }, stdio: ["ignore", "pipe", "pipe"] },
+      // rond 72: detached → egen processgrupp så timeouten kan döda HELA
+      // trädet (zcode-cli + node-repl-mcp), inte bara wrappern (Lag 6).
+      { cwd: ROT, env: { ...process.env, HOME: process.env.HOME }, stdio: ["ignore", "pipe", "pipe"], detached: true },
     );
+    // rond 72 (F3/F6): döda hela GRUPPEN vid timeout — SIGKILL enbart på
+    // wrappern lämnade zcode-cli föräldralös medan den vidarejobbade
+    // okontrollerat (bevis 2026-09-18: 34–84 min, MemAvailable 274 MB).
+    let gruppdödare = null;
+    const gruppdöda = (signal) => {
+      try {
+        process.kill(-barn.pid, signal);
+        return true;
+      } catch {
+        return false;
+      }
+    };
     const timeout = setTimeout(() => {
-      barn.kill("SIGKILL");
-      buffer += `\n[FABRIKEN: TIMEOUT efter ${TIMEOUT_MS / 60000} min — barnet dödades]`;
+      if (!gruppdöda("SIGTERM")) barn.kill("SIGKILL");
+      gruppdödare = setTimeout(() => {
+        if (!gruppdöda("SIGKILL")) barn.kill("SIGKILL");
+      }, 30_000);
+      buffer += `\n[FABRIKEN: TIMEOUT efter ${TIMEOUT_MS / 60000} min — gruppen TERM:d (KILL om 30 s)]`;
     }, TIMEOUT_MS);
 
     const samla = (chunk) => {
@@ -550,6 +617,21 @@ function korUppgift(manifestId, uppgift, vidKlar) {
     });
     barn.on("close", (kod) => {
       clearTimeout(timeout);
+      if (gruppdödare) clearTimeout(gruppdödare);
+      // rond 72: säkra att hela gruppen följt med (repl-mcp kan dröja) OCH
+      // förstör strömmarna — barnbarns öppna pipor höll close-händelsen
+      // hängande i timmar (s7-vågen) och lät fabriken leva kvar osynligt.
+      try {
+        if (barn.pid) process.kill(-barn.pid, "SIGKILL");
+      } catch {
+        /* trädet redan borta */
+      }
+      try {
+        barn.stdout?.destroy();
+        barn.stderr?.destroy();
+      } catch {
+        /* redan stängda */
+      }
       try {
         writeFileSync(loggSökväg, buffer.slice(-LOGG_TAK), "utf8");
       } catch {
@@ -657,6 +739,7 @@ function släppLås() {
 
 async function huvud() {
   for (const mapp of [KO, KLARA, STATUS, UTDATA]) mkdirSync(mapp, { recursive: true });
+  städaFöräldralösaZcode(); // rond 72: läckta/övergivna barn äter aldrig RAM ostraffat igen
   let manifestFiler = readdirSync(KO)
     .filter((f) => f.endsWith(".json"))
     .sort();
@@ -881,7 +964,14 @@ async function huvud() {
   status.gitFore = gitFore;
   status.gitEfter = gitTopp();
   skrivStatus(manifest, status);
-  renameSync(manifestSökväg, path.join(KLARA, `${manifest.id}.json`));
+  // rond 72: ko-flytten får aldrig krascha bokföringen — en konkurrerande
+  // fabrik (lås-stöld efter 35 min) kan ha flyttat filen först (bevisat
+  // 23:59:08Z: ENOENT-krasch efter att stulna låset procesat vidare).
+  try {
+    if (existsSync(manifestSökväg)) renameSync(manifestSökväg, path.join(KLARA, `${manifest.id}.json`));
+  } catch (e) {
+    logga(`ko-flytt föll (${String(e).slice(0, 90)}) — bokföringen består`);
+  }
   const underkändaAntal = status.underkända.filter((u) => !u.omstart).length;
   loggrad({
     händelse: "manifest-klar",

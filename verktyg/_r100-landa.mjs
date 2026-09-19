@@ -86,11 +86,16 @@ cd(['git', ['add', 'data/blogg-utkast/GRANSKNINGSKO-SAMMANSTALLNING.md',
   'data/blogg-utkast/granskning/ar-spegling-ar1-ar5-KONTROLL-2026-09-19.md',
   'verktyg/_r99-ar12-kvd-ar1-ar2.mjs',
   'data/forskning/PIPELINE-KO.md']]);
-cd(['git', ['commit', '-F', '/tmp/ak1a-r100-msg1.txt']]);
-const h1 = cd(['git', ['rev-parse', '--short', 'HEAD']]);
-ok(`commit 1 landad: ${h1} (genom tsc-grinden)`);
+let h1;
+const scannad1 = cd(['git', ['status', '--porcelain']]);
+if (scannad1.split('\n').some((l) => l.startsWith('A ') || l.startsWith('M ') || l.startsWith('D '))) {
+  cd(['git', ['commit', '-F', '/tmp/ak1a-r100-msg1.txt']]);
+  h1 = cd(['git', ['rev-parse', '--short', 'HEAD']]);
+  ok(`commit 1 landad: ${h1} (genom tsc-grinden)`);
+} else { h1 = cd(['git', ['rev-parse', '--short', 'HEAD']]); ok(`commit 1 redan landad: ${h1} (idempotent omkörning)`); }
 
-// ── 6. Bokföring: worklog + beslutsminne (refererar h1)
+// ── 6. Bokföring: worklog + beslutsminne (refererar h1) — idempotenta
+if (!readFileSync(`${ROT}/worklog.md`, 'utf-8').includes('ROND 100 [organ:Φ]')) {
 appendFileSync(`${ROT}/worklog.md`, `
 
 ## ROND 100 [organ:Φ] — AR-familjen granskad + två vågor live-stängda (2026-09-19)
@@ -101,18 +106,25 @@ appendFileSync(`${ROT}/worklog.md`, `
 - Evighetsmotorn: våg 208 (m9-granskning, spår 1) · 209 (dataset-djup, spår 2) · 210 (AI-Mentor lager 11, spår 6) bokade i PIPELINE-KO — roterade spår, kön aldrig tom.
 - Commits ${h1} (innehåll) + bokföring; push prod develop med retry. Skript: verktyg/_r100-landa.mjs.
 `);
+}
 const minnesrad = JSON.stringify({
   ts: new Date().toISOString(), rond: 100,
   beslut: 'AR1–AR5 oberoende granskade 5/5 GRÖN FLYTTKLAR (kö-vy kurerad — AR-familjen var osynlig); våg 189+204 live-stängda; rot-fynd: bundeln escapar å/ä/ö som \\xNN-hex ⇒ live-sonder mot chunks använder ASCII-fragment; våg 208–210 bokade (spår 1/2/6)',
   landat: h1,
 }) + '\n';
-appendFileSync(`${ROT}/data/vakten/beslutsminne.jsonl`, minnesrad);
-appendFileSync(`${PROD}/data/vakten/beslutsminne.jsonl`, minnesrad);
+if (!readFileSync(`${ROT}/data/vakten/beslutsminne.jsonl`, 'utf-8').split('\n').some((l) => l.includes('"rond":100,'))) {
+  appendFileSync(`${ROT}/data/vakten/beslutsminne.jsonl`, minnesrad);
+  appendFileSync(`${PROD}/data/vakten/beslutsminne.jsonl`, minnesrad);
+}
 writeFileSync('/tmp/ak1a-r100-msg2.txt', `studio: ROND 100 bokföring — worklog + beslutsminne (landat ${h1})\n`);
-cd(['git', ['add', 'worklog.md', 'data/vakten/beslutsminne.jsonl', 'verktyg/_r100-landa.mjs']]);
-cd(['git', ['commit', '-F', '/tmp/ak1a-r100-msg2.txt']]);
-const h2 = cd(['git', ['rev-parse', '--short', 'HEAD']]);
-ok(`commit 2 (bokföring) landad: ${h2}`);
+cd(['git', ['add', 'worklog.md', 'verktyg/_r100-landa.mjs']]);
+let h2;
+const scannad2 = cd(['git', ['status', '--porcelain']]);
+if (scannad2.split('\n').some((l) => l.startsWith('A ') || l.startsWith('M ') || l.startsWith('D '))) {
+  cd(['git', ['commit', '-F', '/tmp/ak1a-r100-msg2.txt']]);
+  h2 = cd(['git', ['rev-parse', '--short', 'HEAD']]);
+  ok(`commit 2 (bokföring) landad: ${h2}`);
+} else { h2 = cd(['git', ['rev-parse', '--short', 'HEAD']]); ok(`commit 2 redan landad: ${h2} (idempotent omkörning)`); }
 
 // ── 7. Push med fetch/merge-retry (r98-mönstret, riktig felkontroll)
 let pushad = false;

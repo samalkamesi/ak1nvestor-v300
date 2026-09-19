@@ -410,6 +410,71 @@ const MOTORDEFS = [
   // INGEN SIST-anspråk — 53:e motorn: … → konvertibel (50) →
   // sektorlasning (51) → vardegrund (52) → detta lager.)
   { namn: "realekonomi", fil: "ai-mentor-realekonomi-fragor.ts", fn: "svaraLokaltRealekonomi", arr: "REALEKONOMI_MONSTER", antal: 1 },
+  // 2026-09-19 omgång 24: försäkring + krypto (s6-u1, manifest auto-s6-
+  // 1789839901194 — sektorfamiljens sista fria block; aktiverar se-19 +
+  // se-11 primärt ⇒ KATEGORIN SEKTORANALYS FULLT LÄNKAD 30/30 + källorna
+  // poor-charlies-almanack, ib-03, sj-02, rs-01 = 6 kurser nya mentorvägar).
+  // Två monsters: combined ratio/floaten — teckningsmotorn (690 + 260) ÷
+  // 1 000 = 95 % (stormåret 105 %) mot kapitalmotorn floaten 4 000 Mkr ×
+  // 4 % = 160 Mkr (bra år 210, stormår 110; effektiv ränta 1,25 %) +
+  // krypto som extrem risk — blockkedjan och svängningsaritmetiken
+  // 10 000 → 2 500 = −75 % ⇒ +300 % tillbaka. Sondens dokumenterade
+  // gränser: naket «försäkring» = beteendedjupets («förankring», tav 2 —
+  // sammansättningarna är detta lagers), «float»↔«moat» tav 2 hålls isär
+  // av längdtoleransen, «termin/terminer» = nästas, «price to sales/book»
+  // = basens — od-07 och v04/v05 bärs INTE. Sond _s6u1-sond{,2,3}-omg24:
+  // familjerna NULL genom kedjans 54 motorer / 148 monsters, 0 grannar.
+  // Wiread SIST — 55:e motorn. Anspråk FÖRE byggstart.
+  { namn: "försäkring", fil: "ai-mentor-forsakring-fragor.ts", fn: "svaraLokaltForsakring", arr: "FORSKRING_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 24: moatdjup (s6-u2, manifest auto-s6-1789839901194
+  // — moatens två mekanisker i siffror: prisfullmakten med hävstången
+  // (100 − 60) × 100 000 = 4,0 Mkr mot (105 − 60) × 100 000 = 4,5 Mkr
+  // = +12,5 % vinst på 5 % pris, spegeln (95 − 60) × 100 000 = 3,5 Mkr
+  // = −12,5 %, brytpunkten 4,0 Mkr ÷ 45 = 88 888,9 enheter ⇒ bolaget
+  // tål 11,1 % kundbortfall + byteskostnaderna med churn-spegeln —
+  // marginal 8 000 kr/år; churn 2 % ⇒ 1 ÷ 0,02 = 50 år ⇒ 8 000 × 50
+  // = 400 000 kr mot churn 20 % ⇒ 5 år ⇒ 40 000 kr; kvoten 10 × =
+  // tiofalt kundvärde på oförändrad marginal (de tre benen: lärandet,
+  // integrationen, risken). Aktiverar MT-blockets 7 mentorväglösa
+  // kurser ⇒ KATEGORIN MOAT fullt länkad 4/11 → 11/11: mt-07 + mt-05
+  // primära + mt-01, mt-03, mt-04, mt-06, mt-08 källor. Sondens
+  // dokumenterade gränser: «moat»/«moats»/«moaten»/«vallgrav»/«vallgraven»
+  // = extra-lagrets kärnord (rond 1-bevis: 4 formuleringar → extra — här
+  // ENDAST stärkord, deras frågor bärs som knappar), «kostnadsöverlägsenhet»/
+  // «kvalitetspremien»/«inlåsningseffekten» NULL men medvetet ej kärnord
+  // (2 frågor = uppdraget; kurserna bärs som källor). Sond
+  // _s6u2-sond-omg24.mjs + _s6u2-sond2-omg24.mjs: hela familjen NULL
+  // genom kedjans 54 motorer / 148 monsters / 1 570 kärnord, kärnorden
+  // RENTA. Anspråk data/vakten/auto-s6-1789839901194-s6-u2-ansprak.md
+  // FÖRE byggstart. Wiread sist i fönstrets löpande ordning — 56:e
+  // motorn: … → realekonomi (53) → försäkring (55) → detta lager.)
+  { namn: "moatdjup", fil: "ai-mentor-moatdjup-fragor.ts", fn: "svaraLokaltMoatdjup", arr: "MOATDJUP_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 24: nya territorier (s6-u3, manifest auto-s6-
+  // 1789839901194 — TRE monsters: aktivisten, guidningen, bostadsmekaniken +
+  // demografin; aktiverar 7 mentorväglösa kurser: kt-07 + ib-04 + kt-06 +
+  // kt-04 + kt-05 + ma-08 + mk-12 — fyra av spår 5:s sex nyaste). DEKONFLIKT
+  // mot fönstrets syskon, ärligt bokfört: ursprungsplanens försäkringsmonster
+  // överläts åt u1 (deras anspråk 16:25 UTC FÖRE detta lagers 17:53; deras
+  // modul lästes på disk) — ersättaren aktivisten sondbekräftad NULL genom
+  // kedjan ÄVEN med syskonens lager wireade, grannkontroll omkörd mot deras
+  // kärnord: 0 överlapp. Aktivisten: substans 178,0 mot kurs 124,0 = gap
+  // 54,0 = 43,5 %, flaggtröskeln 5 %, röstlängden 20,0 A + 80,0 B = 28,0 M
+  // röster med stiftelsens 51,4 % röster på 14,4 % kapital, prisbanan
+  // 124,0 → 146,0. Guidningen: det dubbla slaget 0,90 × 0,90 = 0,81 (kurs
+  // 180,0 → 145,8 = −19,0 %), kalibreringsserien 12,00 → 10,50 mot väntan
+  // 9,00 (+20 % över). Bostaden: lånekraften 144 000 ÷ 0,040 = 3 600 000
+  // mot 7 200 000 (kvot 2,0), bolånetaket 85 % av 4 000 000, tjänstegraden
+  // 216 000 = 27,0 %, hävstången 37,5 ÷ 15 = 2,5, beroendekvoten 0,84 →
+  // 1,00, pensionen 41,7 → 25,0 (−40 %). Sondens dokumenterade gränser:
+  // basen äger naked «katalysator», nästas substansvärde-orden, ägande
+  // bolagsstämma/rösträtt, makro ränte-orden, basen «hur påverkar X
+  // börsen?»-formerna — samtliga bärs som knappar ur svaren. Sond
+  // _s6u3-sond{,2,3}-omg24.mjs: familjerna NULL genom kedjan, 0 grannar.
+  // Wiread sist i fönstrets löpande ordning — 57:e motorn: … →
+  // realekonomi (53) → försäkring (55) → moatdjup (56) → detta lager.
+  // INGEN SIST-anspråk. Anspråk data/vakten/auto-s6-1789840407-u3-ansprak.md
+  // FÖRE byggstart.
+  { namn: "nyaterritorier", fil: "ai-mentor-nya-territorier-fragor.ts", fn: "svaraLokaltNyaTerritorier", arr: "NYA_TERRITORIER_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -418,7 +483,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 138 (2026-09-19 omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 155 (2026-09-19 omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -687,6 +752,56 @@ const KANONISKA = [
   // «vad är inflation och KPI?» = makro-lagrets och «vad är
   // konjunkturindikatorer?» = tidsaxelns, bärs som knappar ur svaret).
   { fraga: "vad är realekonomin?", motor: 53 },
+  // Omgång 24: försäkring + krypto (s6-u1) — kanoniska ur lagrets egna
+  // kärnord («vad är försäkring?» naket = beteendedjupets «förankring»,
+  // tav 2 inom 10-bokstaversordens tolerans — dokumenterad gräns i
+  // modulens kommentar; «vad är en moat?» = extras, «vad är
+  // volatilitet?» = basens risk-monster, «vad är terminer?» = nästas —
+  // deras frågor, dokumenterade gränser; bärs som fragor:-knappar).
+  { fraga: "vad är combined ratio?", motor: 54 },
+  { fraga: "vad är en combined ratio?", motor: 54 },
+  { fraga: "hur räknar man ut combined ratio?", motor: 54 },
+  { fraga: "vad är floaten?", motor: 54 },
+  { fraga: "vad är float?", motor: 54 },
+  { fraga: "vad är försäkringssektorn?", motor: 54 },
+  { fraga: "hur analyserar jag försäkringsbolag?", motor: 54 },
+  { fraga: "vad är premieinkomster?", motor: 54 },
+  { fraga: "vad är underwriting?", motor: 54 },
+  { fraga: "vad är teckningsresultat?", motor: 54 },
+  { fraga: "vad är krypto?", motor: 54 },
+  { fraga: "vad är kryptovalutor?", motor: 54 },
+  { fraga: "vad är bitcoin?", motor: 54 },
+  { fraga: "vad är blockchain?", motor: 54 },
+  { fraga: "vad är blockkedjan?", motor: 54 },
+  { fraga: "vad är ethereum?", motor: 54 },
+  // Omgång 24: moatdjup (s6-u2) — kanoniska ur lagrets egna kärnord
+  // («vad är en moat?»/«vallgraven i siffror?» = extra-lagrets,
+  // «vad är kostnadsöverlägsenhet?»/«vad är kvalitetspremien?» NULL
+  // men medvetet ej kärnord — dokumenterade gränser i modulens
+  // kommentar; bärs som knappar/källor, aldrig kärnord).
+  { fraga: "vad är prisfullmakten?", motor: 55 },
+  { fraga: "vad är prisfullmakt?", motor: 55 },
+  { fraga: "hur testar man prisfullmakten?", motor: 55 },
+  { fraga: "vad är byteskostnader?", motor: 55 },
+  { fraga: "vad är byteskostnad?", motor: 55 },
+  { fraga: "vad är inlåsningseffekten?", motor: 55 },
+  // Omgång 24: nya territorier (s6-u3) — kanoniska ur lagrets egna kärnord
+  // («vad är en tillverkad katalysator?» = basens (naked katalysator),
+  // «vad är substansvärde?» = nästas, «vad är en bolagsstämma?» = ägandes,
+  // «vad är räntan?» = makros, «hur påverkar bostadsmarknaden börsen?» =
+  // basens påverkar-form — deras frågor, dokumenterade gränser i modulens
+  // kommentar; bärs som knappar ur svaren).
+  { fraga: "vad är en aktivist?", motor: 56 },
+  { fraga: "vad är aktivism?", motor: 56 },
+  { fraga: "vad är ett kravbrev?", motor: 56 },
+  { fraga: "vad är en aktiekampanj?", motor: 56 },
+  { fraga: "vad är guidningen?", motor: 56 },
+  { fraga: "vad är guidning?", motor: 56 },
+  { fraga: "vad är bolagets prognos?", motor: 56 },
+  { fraga: "hur fungerar bostadsmarknaden?", motor: 56 },
+  { fraga: "vad är lånekraft?", motor: 56 },
+  { fraga: "vad är demografi?", motor: 56 },
+  { fraga: "vad är befolkningspyramiden?", motor: 56 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -731,7 +846,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "femtiotre motorer lämnar frågan ifred",
+  "femtiosex motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

@@ -2165,3 +2165,10 @@ var död. KUR (o86, spår 8 s8-u3): basens tillgångshälsa (HTML 200 + första 
 i pre-gaten + drift-tak EFTER svepet (≥ 30 % infra-klass på ≥ 3 sidor ⇒ svepet kasserat
 som driftartefakt, exit 0, inget fynd-larm). Äkta enstaka siddefekter larmar som förut
 (svitsbevisat). Protokoll: data/forskning/OPTIMERING/o86-granssnitt-driftblindhet-s8.md.
+
+
+---
+
+## 2026-09-19 07:15Z — manifest-offer rutt 3, Upptäckt-och-läkt-med-bevis (s9-u3; o83-klassen tredje fönstret idag)
+
+Två misslyckade synkbyggen (06:58:57Z bygg MISSLYCKADES 4 icke-byggfiler, revert avstås o72; 07:01:27Z ombygg misslyckades, reset avstås o79) halvrev .next (mtime 07:00:21Z) UTAN pm2-omstart ⇒ klient-manifest saknades för växande uppsättning rutter: /_not-found, /portfolj-forskning, /portfoljbyggare, /rapporter, /llms-full-txt, /kurser (500-loopback 07:04Z; 4 380 felloggrader; / /blogg /ar /min-portfolj /sitemap /llms.txt /robots gröna — o86:s basHalsa-blindhetSyns igen: bas-200 maskerade). LÄKT 07:12:37Z av 07:07:29-pollens framgångsrika bygg (deploy + MÅL återarmat); åter-sonder 07:14:52Z: samtliga drabbade rutter 200. Rot-fråga kvarstår åt synkägaren: misslyckade byggen SKRIVER i .next (06:41-gröna träd skrevs över av 07:00-halvbygget utan omstart) — överväg omstart-på-misslyckat-byggkvitto eller .next-skrivskydd under bygg. Sido-fynd: npm ci under bygg tog tillfälligt bort node_modules/typescript ⇒ pre-commit-grinden (tsc) blockerade commits i fönstret; sidoeffekt av samma rot.

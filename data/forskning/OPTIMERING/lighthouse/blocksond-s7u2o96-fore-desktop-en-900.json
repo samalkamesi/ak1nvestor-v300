@@ -1,0 +1,1340 @@
+{
+  "url": "http://localhost:3000/en/kurser",
+  "viewport": {
+    "w": 900,
+    "h": 800,
+    "dpr": 1,
+    "mobile": false
+  },
+  "ts": "2026-09-19T18:33:11.229Z",
+  "fore": {
+    "docH": 4295,
+    "scrollY": 0,
+    "lang": "en",
+    "agg": [
+      {
+        "sig": "div.paper-texture.min-h-screen",
+        "n": 1,
+        "sum": 4295
+      },
+      {
+        "sig": "div.mx-auto.max-w-6xl.px-4.sm:px-6.py-12",
+        "n": 1,
+        "sum": 3548
+      },
+      {
+        "sig": "main",
+        "n": 1,
+        "sum": 3268
+      },
+      {
+        "sig": "div.mt-6.grid.gap-6.lg:grid-cols-[1fr_260px]",
+        "n": 1,
+        "sum": 1704
+      },
+      {
+        "sig": "nav.flex.flex-col.gap-3",
+        "n": 4,
+        "sum": 1616
+      },
+      {
+        "sig": "div",
+        "n": 3,
+        "sum": 1590
+      },
+      {
+        "sig": "li.cv-registerkort",
+        "n": 24,
+        "sum": 1008
+      },
+      {
+        "sig": "a.block.rounded-lg.border.p-4.transition-all.md:flex.md:items-center.md:",
+        "n": 24,
+        "sum": 1008
+      },
+      {
+        "sig": "section.marin-panel.relative.overflow-hidden.rounded-3xl.p-6.sm:p-10.cv-siffre",
+        "n": 1,
+        "sum": 1008
+      },
+      {
+        "sig": "div.pointer-events-none.absolute.inset-0",
+        "n": 1,
+        "sum": 1008
+      },
+      {
+        "sig": "div.absolute.inset-3.rounded-2xl.border.border-gold/20",
+        "n": 1,
+        "sum": 984
+      },
+      {
+        "sig": "div.mt-12",
+        "n": 1,
+        "sum": 911
+      },
+      {
+        "sig": "section.scroll-mt-24",
+        "n": 1,
+        "sum": 911
+      },
+      {
+        "sig": "li",
+        "n": 32,
+        "sum": 882
+      },
+      {
+        "sig": "ul.flex.flex-col.gap-2",
+        "n": 4,
+        "sum": 868
+      },
+      {
+        "sig": "button.rounded-full.px-3.py-1.5.text-[11px].font-bold.tabular-nums.transition",
+        "n": 27,
+        "sum": 824
+      },
+      {
+        "sig": "footer.cv-sidfooter.border-t-2.border-gold/40.bg-card",
+        "n": 1,
+        "sum": 690
+      },
+      {
+        "sig": "div.mx-auto.max-w-6xl.px-4.py-12.sm:px-6",
+        "n": 1,
+        "sum": 686
+      },
+      {
+        "sig": "span.min-w-0.flex-1",
+        "n": 29,
+        "sum": 660
+      },
+      {
+        "sig": "div.relative",
+        "n": 7,
+        "sum": 655
+      },
+      {
+        "sig": "div.rounded-2xl.border.border-gold/25.bg-black/20.p-5",
+        "n": 4,
+        "sum": 644
+      },
+      {
+        "sig": "ul.grid.gap-3.md:grid-cols-2",
+        "n": 1,
+        "sum": 636
+      },
+      {
+        "sig": "span.flex.items-start.justify-between.gap-2",
+        "n": 24,
+        "sum": 480
+      },
+      {
+        "sig": "span.font-serif.font-semibold.md:truncate.md:text-sm.md:font-semibold",
+        "n": 24,
+        "sum": 480
+      },
+      {
+        "sig": "a.text-sm.text-muted-foreground.hover:text-foreground.max-md:flex.max-md",
+        "n": 27,
+        "sum": 432
+      },
+      {
+        "sig": "div.grid.grid-cols-2.gap-8.md:grid-cols-4",
+        "n": 1,
+        "sum": 404
+      },
+      {
+        "sig": "span.hidden.shrink-0.items-center.gap-2.md:flex",
+        "n": 24,
+        "sum": 396
+      },
+      {
+        "sig": "span.whitespace-nowrap.text-[11px].tabular-nums.text-muted-foreground",
+        "n": 24,
+        "sum": 396
+      },
+      {
+        "sig": "section.mt-12.cv-kategorivagg.rounded-2xl.border.border-gold/20.bg-card.p-5.sm",
+        "n": 1,
+        "sum": 345
+      },
+      {
+        "sig": "div.mt-8.grid.gap-5.sm:grid-cols-2.lg:grid-cols-4",
+        "n": 1,
+        "sum": 342
+      },
+      {
+        "sig": "span.opacity-60",
+        "n": 27,
+        "sum": 324
+      },
+      {
+        "sig": "div.absolute.-top-24.right-0.h-72.w-72.rounded-full.bg-gold/10.blur-3xl",
+        "n": 1,
+        "sum": 288
+      },
+      {
+        "sig": "button.rounded-full.px-3.py-1.5.text-[11px].font-bold.transition-colors.max-m",
+        "n": 9,
+        "sum": 275
+      },
+      {
+        "sig": "div.mt-6.cv-kurstips",
+        "n": 1,
+        "sum": 248
+      },
+      {
+        "sig": "section.rounded-xl.border.border-gold/30.bg-card.p-4",
+        "n": 1,
+        "sum": 248
+      },
+      {
+        "sig": "div.mt-4.flex.flex-wrap.gap-2",
+        "n": 1,
+        "sum": 223
+      },
+      {
+        "sig": "ul.mt-2.space-y-1.5",
+        "n": 2,
+        "sum": 218
+      },
+      {
+        "sig": "section.mt-8",
+        "n": 1,
+        "sum": 206
+      },
+      {
+        "sig": "div.mx-auto.max-w-2xl",
+        "n": 1,
+        "sum": 206
+      },
+      {
+        "sig": "div.fixed.inset-x-0.bottom-0.z-[60].px-3.pb-[calc(0.75rem+env(safe-area-in",
+        "n": 1,
+        "sum": 195
+      },
+      {
+        "sig": "div.marin-panel.mx-auto.max-w-3xl.rounded-2xl.border.border-gold/40.p-4.sh",
+        "n": 1,
+        "sum": 175
+      },
+      {
+        "sig": "a.flex.items-center.gap-3.rounded-lg.border.border-gold/10.px-3.py-2.5.h",
+        "n": 3,
+        "sum": 174
+      },
+      {
+        "sig": "span.text-xl",
+        "n": 6,
+        "sum": 168
+      },
+      {
+        "sig": "p.font-serif.text-4xl.font-black.tabular-nums.text-gold",
+        "n": 4,
+        "sum": 160
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.opacity-70",
+        "n": 4,
+        "sum": 156
+      },
+      {
+        "sig": "div.flex.items-start.gap-3",
+        "n": 1,
+        "sum": 133
+      },
+      {
+        "sig": "div.min-w-0.flex-1",
+        "n": 1,
+        "sum": 133
+      },
+      {
+        "sig": "div.pt-10.cv-nasta-steg",
+        "n": 1,
+        "sum": 132
+      },
+      {
+        "sig": "button.min-w-9.rounded-lg.px-2.5.py-1.5.text-[11px].font-bold.tabular-nums.tr",
+        "n": 4,
+        "sum": 120
+      },
+      {
+        "sig": "span",
+        "n": 7,
+        "sum": 117
+      },
+      {
+        "sig": "a.flex.flex-1.items-center.gap-3.rounded-lg.border.border-gold/10.px-3.p",
+        "n": 2,
+        "sum": 116
+      },
+      {
+        "sig": "p.mt-2.font-serif.text-lg.font-semibold",
+        "n": 4,
+        "sum": 112
+      },
+      {
+        "sig": "div.mt-4.flex.flex-wrap.justify-center.gap-2",
+        "n": 1,
+        "sum": 108
+      },
+      {
+        "sig": "div.mt-5.rounded-xl.border.border-gold/40.bg-gold/[0.06].p-4.text-sm.leadi",
+        "n": 1,
+        "sum": 106
+      },
+      {
+        "sig": "div.marin-panel.mt-10.rounded-xl.border.border-gold/25.px-5.py-5.text-xs.t",
+        "n": 1,
+        "sum": 105
+      },
+      {
+        "sig": "span.block.text-sm.font-bold.text-foreground",
+        "n": 5,
+        "sum": 100
+      },
+      {
+        "sig": "section.rounded-xl.border.border-gold/20.bg-card.p-4",
+        "n": 1,
+        "sum": 92
+      },
+      {
+        "sig": "aside.h-fit",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "div.rounded-xl.border.border-gold/30.bg-card.p-4",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "h2.mt-3.max-w-2xl.font-serif.text-3xl.font-bold.leading-tight.sm:text-4xl",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "p.mb-6.flex.flex-wrap.items-center.gap-1.5.text-[11px].leading-relaxed.t",
+        "n": 1,
+        "sum": 84
+      },
+      {
+        "sig": "a.underline.hover:text-[#E8C766]",
+        "n": 6,
+        "sum": 84
+      },
+      {
+        "sig": "span.block.text-xs.text-muted-foreground",
+        "n": 5,
+        "sum": 80
+      },
+      {
+        "sig": "p.mt-4.text-muted-foreground.leading-relaxed",
+        "n": 1,
+        "sum": 78
+      },
+      {
+        "sig": "span.text-gold",
+        "n": 3,
+        "sum": 70
+      },
+      {
+        "sig": "div.flex.flex-wrap.items-baseline.gap-x-2",
+        "n": 2,
+        "sum": 64
+      },
+      {
+        "sig": "h2.font-serif.text-2xl.font-bold",
+        "n": 2,
+        "sum": 64
+      },
+      {
+        "sig": "h2.font-serif.text-xs.font-bold.tracking-widest.text-gold",
+        "n": 4,
+        "sum": 64
+      },
+      {
+        "sig": "button.rounded-lg.border.border-gold/30.px-3.py-1.5.text-[11px].font-bold.tex",
+        "n": 2,
+        "sum": 61
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.text-[#EDE6D6]/85",
+        "n": 1,
+        "sum": 59
+      },
+      {
+        "sig": "input.w-full.rounded-2xl.border.border-gold/40.bg-card.py-4.pl-12.pr-4.text-",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "div.flex.flex-col.gap-3.sm:flex-row.sm:items-center",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "div.flex.flex-1.flex-col.gap-2.sm:flex-row",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "header.sticky.top-0.z-30.w-full.border-b.border-gold/20.bg-background/95.back",
+        "n": 1,
+        "sum": 57
+      },
+      {
+        "sig": "div.sticky.top-14.z-20.-mx-1.mb-4.flex.flex-wrap.items-center.gap-x-4.gap-",
+        "n": 1,
+        "sum": 57
+      },
+      {
+        "sig": "div.mx-auto.flex.h-14.max-w-6xl.items-center.gap-3.px-4.sm:px-6",
+        "n": 1,
+        "sum": 56
+      },
+      {
+        "sig": "nav.flex.flex-wrap.items-center.gap-3.pb-8.text-sm",
+        "n": 1,
+        "sum": 52
+      },
+      {
+        "sig": "p.mt-6.rounded-xl.border.border-gold/20.bg-black/20.px-4.py-3.text-cente",
+        "n": 1,
+        "sum": 50
+      },
+      {
+        "sig": "span.shrink-0.text-xs.font-semibold.text-gold",
+        "n": 3,
+        "sum": 48
+      },
+      {
+        "sig": "p.mt-1.text-muted-foreground",
+        "n": 1,
+        "sum": 46
+      },
+      {
+        "sig": "h1.font-serif.text-4xl.font-bold",
+        "n": 1,
+        "sum": 40
+      },
+      {
+        "sig": "p.text-sm.font-normal.tabular-nums.text-muted-foreground",
+        "n": 2,
+        "sum": 40
+      },
+      {
+        "sig": "span.shrink-0.rounded-full.px-2.py-0.5.text-[10px].font-bold.bg-[#0E1B2E].t",
+        "n": 2,
+        "sum": 38
+      },
+      {
+        "sig": "button.flex.h-9.w-9.shrink-0.flex-col.items-center.justify-center.gap-[5px].r",
+        "n": 1,
+        "sum": 36
+      },
+      {
+        "sig": "a.underline.decoration-gold/50.underline-offset-2.hover:text-foreground.",
+        "n": 2,
+        "sum": 36
+      },
+      {
+        "sig": "div.mt-3.flex.flex-wrap.items-center.gap-2",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "button.btn-marin.px-3.py-2.text-xs.max-md:min-h-[52px]!",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "button.rounded-lg.border.border-gold/50.px-3.py-2.text-xs.font-semibold.text-",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "a.group.flex.items-center.gap-2.5.select-none.max-md:min-h-[52px].ml-1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "span.relative.block.shrink-0.overflow-hidden.bg-[#FDFBF7].ring-1.ring-[#0E1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "img.h-full.w-full.object-cover",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "div.ml-auto.flex.items-center.gap-2.text-sm",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.flex.h-8.items-center.justify-center.gap-1.rounded-full.border.border-",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.flex.h-8.w-8.shrink-0.items-center.justify-center.rounded-full.border.",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "a.flex.items-center.gap-2.rounded-md.px-2.py-1.5.text-sm.hover:bg-gold/1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "ol.fixed.top-0.z-[100].flex.max-h-screen.w-full.flex-col-reverse.p-4.sm:b",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.rounded-lg.px-3.py-2.text-xs.font-semibold.text-[#EDE6D6]/75.underline",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "nav.mt-8.flex.flex-wrap.items-center.justify-center.gap-1.5",
+        "n": 1,
+        "sum": 31
+      },
+      {
+        "sig": "span.items-center.rounded-full.border.border-gold/40.bg-gold/5.p-0.5.hidden",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "label.ml-auto.flex.items-center.gap-2.text-xs.font-semibold.text-muted-foreg",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "select.rounded-lg.border.border-gold/30.bg-card.px-2.py-1.5.text-xs.font-semi",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "span.flex.min-w-0.flex-col.items-start.leading-none",
+        "n": 1,
+        "sum": 29
+      },
+      {
+        "sig": "a.rounded-md.bg-gold.px-3.py-1.5.text-xs.font-bold.text-primary-foregrou",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "span.pointer-events-none.absolute.left-4.top-1/2.-translate-y-1/2.text-lg.t",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "a.inline-block.rounded-md.bg-gold.px-3.py-1.5.text-xs.font-bold.text-pri",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "span.rounded-full.font-bold.px-2.5.py-1.text-[11px].marin-panel.text-[#E8C7",
+        "n": 1,
+        "sum": 24
+      },
+      {
+        "sig": "h2.font-serif.text-base.font-bold.text-[#E8C766]",
+        "n": 1,
+        "sum": 24
+      },
+      {
+        "sig": "p.font-semibold.text-foreground",
+        "n": 1,
+        "sum": 23
+      },
+      {
+        "sig": "span.dark:hidden",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.flex.items-center.gap-3",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.text-foreground",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "h2.font-serif.text-sm.font-bold.tracking-wide.text-gold",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.text-muted-foreground",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.min-w-0.flex-1.truncate",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "h2.shrink-0.font-serif.text-sm.font-bold.tracking-wide.text-gold",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.shrink-0.rounded-full.px-2.py-0.5.text-[10px].font-bold.bg-[#8C5A2B].t",
+        "n": 1,
+        "sum": 19
+      },
+      {
+        "sig": "span.font-bold.text-gold",
+        "n": 1,
+        "sum": 18
+      },
+      {
+        "sig": "p.mt-2.text-center.text-[11px].tabular-nums.text-muted-foreground",
+        "n": 1,
+        "sum": 17
+      },
+      {
+        "sig": "span.font-semibold.text-gold",
+        "n": 1,
+        "sum": 17
+      },
+      {
+        "sig": "span.font-serif.font-bold.tracking-tight.text-ink.dark:text-foreground",
+        "n": 1,
+        "sum": 16
+      }
+    ],
+    "marinInfo": {
+      "klass": "marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10 cv-siffreband-spegel",
+      "boxH": 1008,
+      "padTop": 40,
+      "padBottom": 40,
+      "borTop": 0,
+      "borBottom": 0,
+      "renderad": false,
+      "textLen": 0,
+      "barn": 2
+    }
+  },
+  "efter": {
+    "docH": 3929,
+    "scrollY": 3129,
+    "lang": "en",
+    "agg": [
+      {
+        "sig": "div.paper-texture.min-h-screen",
+        "n": 1,
+        "sum": 3929
+      },
+      {
+        "sig": "div.mx-auto.max-w-6xl.px-4.sm:px-6.py-12",
+        "n": 1,
+        "sum": 3185
+      },
+      {
+        "sig": "main",
+        "n": 1,
+        "sum": 2905
+      },
+      {
+        "sig": "div.mt-6.grid.gap-6.lg:grid-cols-[1fr_260px]",
+        "n": 1,
+        "sum": 1704
+      },
+      {
+        "sig": "nav.flex.flex-col.gap-3",
+        "n": 4,
+        "sum": 1616
+      },
+      {
+        "sig": "div",
+        "n": 3,
+        "sum": 1590
+      },
+      {
+        "sig": "li.cv-registerkort",
+        "n": 24,
+        "sum": 1008
+      },
+      {
+        "sig": "a.block.rounded-lg.border.p-4.transition-all.md:flex.md:items-center.md:",
+        "n": 24,
+        "sum": 1008
+      },
+      {
+        "sig": "div.mt-12",
+        "n": 1,
+        "sum": 911
+      },
+      {
+        "sig": "section.scroll-mt-24",
+        "n": 1,
+        "sum": 911
+      },
+      {
+        "sig": "li",
+        "n": 32,
+        "sum": 882
+      },
+      {
+        "sig": "ul.flex.flex-col.gap-2",
+        "n": 4,
+        "sum": 868
+      },
+      {
+        "sig": "button.rounded-full.px-3.py-1.5.text-[11px].font-bold.tabular-nums.transition",
+        "n": 27,
+        "sum": 824
+      },
+      {
+        "sig": "footer.cv-sidfooter.border-t-2.border-gold/40.bg-card",
+        "n": 1,
+        "sum": 688
+      },
+      {
+        "sig": "div.mx-auto.max-w-6xl.px-4.py-12.sm:px-6",
+        "n": 1,
+        "sum": 686
+      },
+      {
+        "sig": "span.min-w-0.flex-1",
+        "n": 29,
+        "sum": 660
+      },
+      {
+        "sig": "div.relative",
+        "n": 7,
+        "sum": 655
+      },
+      {
+        "sig": "section.marin-panel.relative.overflow-hidden.rounded-3xl.p-6.sm:p-10.cv-siffre",
+        "n": 1,
+        "sum": 645
+      },
+      {
+        "sig": "div.pointer-events-none.absolute.inset-0",
+        "n": 1,
+        "sum": 645
+      },
+      {
+        "sig": "div.rounded-2xl.border.border-gold/25.bg-black/20.p-5",
+        "n": 4,
+        "sum": 644
+      },
+      {
+        "sig": "ul.grid.gap-3.md:grid-cols-2",
+        "n": 1,
+        "sum": 636
+      },
+      {
+        "sig": "div.absolute.inset-3.rounded-2xl.border.border-gold/20",
+        "n": 1,
+        "sum": 621
+      },
+      {
+        "sig": "span.flex.items-start.justify-between.gap-2",
+        "n": 24,
+        "sum": 480
+      },
+      {
+        "sig": "span.font-serif.font-semibold.md:truncate.md:text-sm.md:font-semibold",
+        "n": 24,
+        "sum": 480
+      },
+      {
+        "sig": "a.text-sm.text-muted-foreground.hover:text-foreground.max-md:flex.max-md",
+        "n": 27,
+        "sum": 432
+      },
+      {
+        "sig": "div.grid.grid-cols-2.gap-8.md:grid-cols-4",
+        "n": 1,
+        "sum": 404
+      },
+      {
+        "sig": "span.hidden.shrink-0.items-center.gap-2.md:flex",
+        "n": 24,
+        "sum": 396
+      },
+      {
+        "sig": "span.whitespace-nowrap.text-[11px].tabular-nums.text-muted-foreground",
+        "n": 24,
+        "sum": 396
+      },
+      {
+        "sig": "section.mt-12.cv-kategorivagg.rounded-2xl.border.border-gold/20.bg-card.p-5.sm",
+        "n": 1,
+        "sum": 345
+      },
+      {
+        "sig": "div.mt-8.grid.gap-5.sm:grid-cols-2.lg:grid-cols-4",
+        "n": 1,
+        "sum": 342
+      },
+      {
+        "sig": "span.opacity-60",
+        "n": 27,
+        "sum": 324
+      },
+      {
+        "sig": "div.absolute.-top-24.right-0.h-72.w-72.rounded-full.bg-gold/10.blur-3xl",
+        "n": 1,
+        "sum": 288
+      },
+      {
+        "sig": "button.rounded-full.px-3.py-1.5.text-[11px].font-bold.transition-colors.max-m",
+        "n": 9,
+        "sum": 275
+      },
+      {
+        "sig": "div.mt-6.cv-kurstips",
+        "n": 1,
+        "sum": 248
+      },
+      {
+        "sig": "section.rounded-xl.border.border-gold/30.bg-card.p-4",
+        "n": 1,
+        "sum": 248
+      },
+      {
+        "sig": "div.mt-4.flex.flex-wrap.gap-2",
+        "n": 1,
+        "sum": 223
+      },
+      {
+        "sig": "ul.mt-2.space-y-1.5",
+        "n": 2,
+        "sum": 218
+      },
+      {
+        "sig": "section.mt-8",
+        "n": 1,
+        "sum": 206
+      },
+      {
+        "sig": "div.mx-auto.max-w-2xl",
+        "n": 1,
+        "sum": 206
+      },
+      {
+        "sig": "div.fixed.inset-x-0.bottom-0.z-[60].px-3.pb-[calc(0.75rem+env(safe-area-in",
+        "n": 1,
+        "sum": 195
+      },
+      {
+        "sig": "div.marin-panel.mx-auto.max-w-3xl.rounded-2xl.border.border-gold/40.p-4.sh",
+        "n": 1,
+        "sum": 175
+      },
+      {
+        "sig": "a.flex.items-center.gap-3.rounded-lg.border.border-gold/10.px-3.py-2.5.h",
+        "n": 3,
+        "sum": 174
+      },
+      {
+        "sig": "span.text-xl",
+        "n": 6,
+        "sum": 168
+      },
+      {
+        "sig": "p.font-serif.text-4xl.font-black.tabular-nums.text-gold",
+        "n": 4,
+        "sum": 160
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.opacity-70",
+        "n": 4,
+        "sum": 156
+      },
+      {
+        "sig": "div.flex.items-start.gap-3",
+        "n": 1,
+        "sum": 133
+      },
+      {
+        "sig": "div.min-w-0.flex-1",
+        "n": 1,
+        "sum": 133
+      },
+      {
+        "sig": "div.pt-10.cv-nasta-steg",
+        "n": 1,
+        "sum": 132
+      },
+      {
+        "sig": "button.min-w-9.rounded-lg.px-2.5.py-1.5.text-[11px].font-bold.tabular-nums.tr",
+        "n": 4,
+        "sum": 120
+      },
+      {
+        "sig": "span",
+        "n": 7,
+        "sum": 117
+      },
+      {
+        "sig": "a.flex.flex-1.items-center.gap-3.rounded-lg.border.border-gold/10.px-3.p",
+        "n": 2,
+        "sum": 116
+      },
+      {
+        "sig": "p.mt-2.font-serif.text-lg.font-semibold",
+        "n": 4,
+        "sum": 112
+      },
+      {
+        "sig": "div.mt-4.flex.flex-wrap.justify-center.gap-2",
+        "n": 1,
+        "sum": 108
+      },
+      {
+        "sig": "div.mt-5.rounded-xl.border.border-gold/40.bg-gold/[0.06].p-4.text-sm.leadi",
+        "n": 1,
+        "sum": 106
+      },
+      {
+        "sig": "div.marin-panel.mt-10.rounded-xl.border.border-gold/25.px-5.py-5.text-xs.t",
+        "n": 1,
+        "sum": 105
+      },
+      {
+        "sig": "span.block.text-sm.font-bold.text-foreground",
+        "n": 5,
+        "sum": 100
+      },
+      {
+        "sig": "section.rounded-xl.border.border-gold/20.bg-card.p-4",
+        "n": 1,
+        "sum": 92
+      },
+      {
+        "sig": "aside.h-fit",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "div.rounded-xl.border.border-gold/30.bg-card.p-4",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "h2.mt-3.max-w-2xl.font-serif.text-3xl.font-bold.leading-tight.sm:text-4xl",
+        "n": 1,
+        "sum": 90
+      },
+      {
+        "sig": "p.mb-6.flex.flex-wrap.items-center.gap-1.5.text-[11px].leading-relaxed.t",
+        "n": 1,
+        "sum": 84
+      },
+      {
+        "sig": "a.underline.hover:text-[#E8C766]",
+        "n": 6,
+        "sum": 84
+      },
+      {
+        "sig": "span.block.text-xs.text-muted-foreground",
+        "n": 5,
+        "sum": 80
+      },
+      {
+        "sig": "p.mt-4.text-muted-foreground.leading-relaxed",
+        "n": 1,
+        "sum": 78
+      },
+      {
+        "sig": "span.text-gold",
+        "n": 3,
+        "sum": 70
+      },
+      {
+        "sig": "div.flex.flex-wrap.items-baseline.gap-x-2",
+        "n": 2,
+        "sum": 64
+      },
+      {
+        "sig": "h2.font-serif.text-2xl.font-bold",
+        "n": 2,
+        "sum": 64
+      },
+      {
+        "sig": "h2.font-serif.text-xs.font-bold.tracking-widest.text-gold",
+        "n": 4,
+        "sum": 64
+      },
+      {
+        "sig": "button.rounded-lg.border.border-gold/30.px-3.py-1.5.text-[11px].font-bold.tex",
+        "n": 2,
+        "sum": 61
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.text-[#EDE6D6]/85",
+        "n": 1,
+        "sum": 59
+      },
+      {
+        "sig": "input.w-full.rounded-2xl.border.border-gold/40.bg-card.py-4.pl-12.pr-4.text-",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "div.flex.flex-col.gap-3.sm:flex-row.sm:items-center",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "div.flex.flex-1.flex-col.gap-2.sm:flex-row",
+        "n": 1,
+        "sum": 58
+      },
+      {
+        "sig": "header.sticky.top-0.z-30.w-full.border-b.border-gold/20.bg-background/95.back",
+        "n": 1,
+        "sum": 57
+      },
+      {
+        "sig": "div.sticky.top-14.z-20.-mx-1.mb-4.flex.flex-wrap.items-center.gap-x-4.gap-",
+        "n": 1,
+        "sum": 57
+      },
+      {
+        "sig": "div.mx-auto.flex.h-14.max-w-6xl.items-center.gap-3.px-4.sm:px-6",
+        "n": 1,
+        "sum": 56
+      },
+      {
+        "sig": "button.fixed.bottom-[calc(1rem_+_env(safe-area-inset-bottom))].right-4.z-40.f",
+        "n": 1,
+        "sum": 56
+      },
+      {
+        "sig": "span.fixed.bottom-[calc(5.25rem_+_env(safe-area-inset-bottom))].right-4.z-4",
+        "n": 1,
+        "sum": 56
+      },
+      {
+        "sig": "button.flex.h-14.w-14.items-center.justify-center.rounded-full.border-2.borde",
+        "n": 1,
+        "sum": 56
+      },
+      {
+        "sig": "nav.flex.flex-wrap.items-center.gap-3.pb-8.text-sm",
+        "n": 1,
+        "sum": 52
+      },
+      {
+        "sig": "p.mt-6.rounded-xl.border.border-gold/20.bg-black/20.px-4.py-3.text-cente",
+        "n": 1,
+        "sum": 50
+      },
+      {
+        "sig": "span.shrink-0.text-xs.font-semibold.text-gold",
+        "n": 3,
+        "sum": 48
+      },
+      {
+        "sig": "div.fixed.bottom-[calc(1rem_+_env(safe-area-inset-bottom))].left-4.z-40",
+        "n": 1,
+        "sum": 48
+      },
+      {
+        "sig": "button.relative.flex.h-10.w-10.items-center.justify-center.rounded-full.borde",
+        "n": 1,
+        "sum": 48
+      },
+      {
+        "sig": "p.mt-1.text-muted-foreground",
+        "n": 1,
+        "sum": 46
+      },
+      {
+        "sig": "h1.font-serif.text-4xl.font-bold",
+        "n": 1,
+        "sum": 40
+      },
+      {
+        "sig": "p.text-sm.font-normal.tabular-nums.text-muted-foreground",
+        "n": 2,
+        "sum": 40
+      },
+      {
+        "sig": "span.shrink-0.rounded-full.px-2.py-0.5.text-[10px].font-bold.bg-[#0E1B2E].t",
+        "n": 2,
+        "sum": 38
+      },
+      {
+        "sig": "button.flex.h-9.w-9.shrink-0.flex-col.items-center.justify-center.gap-[5px].r",
+        "n": 1,
+        "sum": 36
+      },
+      {
+        "sig": "a.underline.decoration-gold/50.underline-offset-2.hover:text-foreground.",
+        "n": 2,
+        "sum": 36
+      },
+      {
+        "sig": "svg",
+        "n": 2,
+        "sum": 34
+      },
+      {
+        "sig": "div.mt-3.flex.flex-wrap.items-center.gap-2",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "button.btn-marin.px-3.py-2.text-xs.max-md:min-h-[52px]!",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "button.rounded-lg.border.border-gold/50.px-3.py-2.text-xs.font-semibold.text-",
+        "n": 1,
+        "sum": 34
+      },
+      {
+        "sig": "a.group.flex.items-center.gap-2.5.select-none.max-md:min-h-[52px].ml-1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "span.relative.block.shrink-0.overflow-hidden.bg-[#FDFBF7].ring-1.ring-[#0E1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "img.h-full.w-full.object-cover",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "div.ml-auto.flex.items-center.gap-2.text-sm",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.flex.h-8.items-center.justify-center.gap-1.rounded-full.border.border-",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.flex.h-8.w-8.shrink-0.items-center.justify-center.rounded-full.border.",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "a.flex.items-center.gap-2.rounded-md.px-2.py-1.5.text-sm.hover:bg-gold/1",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "ol.fixed.top-0.z-[100].flex.max-h-screen.w-full.flex-col-reverse.p-4.sm:b",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "button.rounded-lg.px-3.py-2.text-xs.font-semibold.text-[#EDE6D6]/75.underline",
+        "n": 1,
+        "sum": 32
+      },
+      {
+        "sig": "nav.mt-8.flex.flex-wrap.items-center.justify-center.gap-1.5",
+        "n": 1,
+        "sum": 31
+      },
+      {
+        "sig": "span.items-center.rounded-full.border.border-gold/40.bg-gold/5.p-0.5.hidden",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "label.ml-auto.flex.items-center.gap-2.text-xs.font-semibold.text-muted-foreg",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "select.rounded-lg.border.border-gold/30.bg-card.px-2.py-1.5.text-xs.font-semi",
+        "n": 1,
+        "sum": 30
+      },
+      {
+        "sig": "span.flex.min-w-0.flex-col.items-start.leading-none",
+        "n": 1,
+        "sum": 29
+      },
+      {
+        "sig": "a.rounded-md.bg-gold.px-3.py-1.5.text-xs.font-bold.text-primary-foregrou",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "span.pointer-events-none.absolute.left-4.top-1/2.-translate-y-1/2.text-lg.t",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "a.inline-block.rounded-md.bg-gold.px-3.py-1.5.text-xs.font-bold.text-pri",
+        "n": 1,
+        "sum": 28
+      },
+      {
+        "sig": "path",
+        "n": 4,
+        "sum": 25
+      },
+      {
+        "sig": "span.rounded-full.font-bold.px-2.5.py-1.text-[11px].marin-panel.text-[#E8C7",
+        "n": 1,
+        "sum": 24
+      },
+      {
+        "sig": "h2.font-serif.text-base.font-bold.text-[#E8C766]",
+        "n": 1,
+        "sum": 24
+      },
+      {
+        "sig": "p.font-semibold.text-foreground",
+        "n": 1,
+        "sum": 23
+      },
+      {
+        "sig": "span.dark:hidden",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.flex.items-center.gap-3",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "span.text-foreground",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "h2.font-serif.text-sm.font-bold.tracking-wide.text-gold",
+        "n": 1,
+        "sum": 20
+      },
+      {
+        "sig": "p.mt-1.text-xs.leading-relaxed.text-muted-foreground",
+        "n": 1,
+        "sum": 20
+      }
+    ],
+    "marinInfo": {
+      "klass": "marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10 cv-siffreband-spegel",
+      "boxH": 645,
+      "padTop": 40,
+      "padBottom": 40,
+      "borTop": 0,
+      "borBottom": 0,
+      "renderad": true,
+      "textLen": 607,
+      "barn": 2
+    }
+  },
+  "docHDelta": -366,
+  "attribution": [
+    {
+      "sig": "div.paper-texture.min-h-screen",
+      "n": 1,
+      "foreSum": 4295,
+      "efterSum": 3929,
+      "delta": -366
+    },
+    {
+      "sig": "div.mx-auto.max-w-6xl.px-4.sm:px-6.py-12",
+      "n": 1,
+      "foreSum": 3548,
+      "efterSum": 3185,
+      "delta": -363
+    },
+    {
+      "sig": "main",
+      "n": 1,
+      "foreSum": 3268,
+      "efterSum": 2905,
+      "delta": -363
+    },
+    {
+      "sig": "section.marin-panel.relative.overflow-hidden.rounded-3xl.p-6.sm:p-10.cv-siffre",
+      "n": 1,
+      "foreSum": 1008,
+      "efterSum": 645,
+      "delta": -363
+    },
+    {
+      "sig": "div.pointer-events-none.absolute.inset-0",
+      "n": 1,
+      "foreSum": 1008,
+      "efterSum": 645,
+      "delta": -363
+    },
+    {
+      "sig": "div.absolute.inset-3.rounded-2xl.border.border-gold/20",
+      "n": 1,
+      "foreSum": 984,
+      "efterSum": 621,
+      "delta": -363
+    },
+    {
+      "sig": "button.fixed.bottom-[calc(1rem_+_env(safe-area-inset-bottom))].right-4.z-40.f",
+      "n": 1,
+      "foreSum": 0,
+      "efterSum": 56,
+      "delta": 56
+    },
+    {
+      "sig": "span.fixed.bottom-[calc(5.25rem_+_env(safe-area-inset-bottom))].right-4.z-4",
+      "n": 1,
+      "foreSum": 0,
+      "efterSum": 56,
+      "delta": 56
+    },
+    {
+      "sig": "button.flex.h-14.w-14.items-center.justify-center.rounded-full.border-2.borde",
+      "n": 1,
+      "foreSum": 0,
+      "efterSum": 56,
+      "delta": 56
+    },
+    {
+      "sig": "div.fixed.bottom-[calc(1rem_+_env(safe-area-inset-bottom))].left-4.z-40",
+      "n": 1,
+      "foreSum": 0,
+      "efterSum": 48,
+      "delta": 48
+    },
+    {
+      "sig": "button.relative.flex.h-10.w-10.items-center.justify-center.rounded-full.borde",
+      "n": 1,
+      "foreSum": 0,
+      "efterSum": 48,
+      "delta": 48
+    },
+    {
+      "sig": "svg",
+      "n": 2,
+      "foreSum": 0,
+      "efterSum": 34,
+      "delta": 34
+    },
+    {
+      "sig": "path",
+      "n": 4,
+      "foreSum": 0,
+      "efterSum": 25,
+      "delta": 25
+    }
+  ]
+}

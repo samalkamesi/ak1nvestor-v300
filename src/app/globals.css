@@ -1241,3 +1241,25 @@ h1, h2, h3, h4, h5, h6 {
   content-visibility: auto;
   contain-intrinsic-size: auto 58rem;
 }
+
+/* ── PRESTANDA (o96): SPEGELBANDETS md/lg-NIVÅER — marinens verkliga
+   sluthöjd är BREDD- och språkberoende (o92 §3.2:s fyndrot: /en-kurser
+   marin-panel 1 008→484 = −524 px av dokumentets engångs-Δ −527 vid
+   första fulla scrollen på desktop). o89 kalibrerade 58rem (928 px
+   intrinsic + 80 px sm:p-10-padding = 1 008 box) mot MOBILA höjder;
+   desktopbandet är hälften så högt. Blocksond 2026-09-19
+   (_s7u2o96-blocksond.mjs, BUILD_ID xBzidYw): verkliga sluthöjder
+   ≥1 024 px (4-kolumnsläge): en 484 · ar 484 ⇒ 25.25rem (404+80=484,
+   exakt på båda språken); 768–1 023 px (2-kolumnsläge): en 645 ·
+   ar 626 ⇒ gemensam 34.71875rem (555,5+80=635,5 box — residual
+   ±9,5 px per språk, inom sektionskravet |Σ|≤10). MOBILNIVÅN orörd
+   (o89:s kalibrering, o90:s bevis); svenska /kurser berörs ej (eget
+   block .cv-socialproof, o92). "auto"-nyckeln minns verklig höjd per
+   sektion efter första renderingen — platshållare ≈ sluthöjd ⇒ inget
+   stavhopp. DOM/SEO/hydrering orörda, samma garanti som o78/o89/o92. */
+@media (min-width: 768px) {
+  .cv-siffreband-spegel { contain-intrinsic-size: auto 34.71875rem; }
+}
+@media (min-width: 1024px) {
+  .cv-siffreband-spegel { contain-intrinsic-size: auto 25.25rem; }
+}

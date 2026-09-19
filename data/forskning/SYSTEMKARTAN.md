@@ -2500,6 +2500,22 @@ mandat); (b) media_fil-grenen avgörs av E33/B9:s raderarutredning (samma
 rot-ID, Supabase-dashboard); (c) kursregistret 432→446 under MÄTFÖNSTRET
 (siffror.json) — s5-vågorna levererar fortfarande, A1/E32-talen åldras dagligen.
 
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789847706174 — E30 B2B/AK1A PRO återdiffad; fjärde passningen + förra manifestets köade /pro-mätning verkställd)
+
+Fabriksagent s9-u1 (1 system; anspråk disk-först data/vakten/auto-s9-1789847706174-s9-u1-ansprak.md). VAL: E30 = äldsta fria stämpeln (sektion 09-17; samtliga övriga 37 system bär 09-18/09-19) OCH s9-u2 (manifest …824900585) bokförde uttryckligen "/pro-mätningen" som kö åt E30-revisionen. READ-ONLY-doktrin (R2: E30 väntar jurist + kund — ingen flagga, inget pris, ingen publicering ändrad; endast mätning). Allt EGENMÄTT 21:5x–21:59 lokal.
+
+U2:S /pro 500 LÄKT — ROTEN STYRKT SOM BYGGKLASS: /pro 200 (text/html, "Under uppbyggnad"-substitutet + noindex) · /pro/ → 308 → /pro (normal slash-normalisering) · samtliga 5 undersidor (admin/analys/klienter/priser/rapporter) 200 — mot u2:s 500 (text/plain 21 byte) kl 15:3x lokal. Körande .next/BUILD_ID fWWGyYiwzun6sDzUoWoVO mtime 21:50:05 lokal tidsstyr läkningen till ett färskt bygg; x-nextjs-cache HIT + x-nextjs-prerender 1 + s-maxage 300 = ISR-serverad, SAMMA serveringsklass som D23:s tier-sidor ⇒ /pro-toppytan hållbar men känslig för halvskrivna .next-träd (o97-läkeklassen täcker: prod-synkens nästa gröna bygg). KODSTILLA bevisad: 0 commits på E30-vägarna sedan 09-17 (b2b-status.ts · lib/pro · (huvud)/pro · api/pro · komponenter) + B2B-datamappen 7 filer frusna 09-10.
+
+STÄNGNINGSDOKTRINEN HEL I SEX LÄGEN (allt mätt): (1) flaggan AV i tre lägen — NEXT_PUBLIC_B2B_AKTIV 0 namnträffar i .env/.env.local/.env.production + 0 pm2-variabler + koden kräver ==="1" (b2b-status.ts:16; Vercel passiv backup, prod-sanning = Contabo); (2) robots stänger /pro/admin i SAMTLIGA 16 block (User-Agent: * + 15 AI-bots: GPTBot · OAI-SearchBot · ChatGPT-User · ClaudeBot · Claude-User · Claude-SearchBot · Claude-Web · PerplexityBot · Perplexity-Searchbot · Google-Extended · Applebot-Extended · meta-externalagent · Amazonbot · CCBot — metodnotis: de 15 "lika" Disallow-raderna är ETT per botblock = AI-SEO-design, INTE dubblettfel); (3) sitemap 0 äkta /pro-URL:er (11 substring-träffar = /profil + 10 × /dataset/*/prognos-tillvaxt — falska positiver, metodnotis åt framtida dokvågare); (4) /pro + /pro/admin båda noindex,nofollow live; (5) sidkroppen NULL vid flaggav (page.tsx:122) — layouten är hela /pro-trädets robots-källa (layout.tsx:56) och renderar substitutet; (6) ingen toppväljare på /pro i SSR ("Privatperson" 1 träff på / men 0 på /pro — kroppen null, inget B2B-innehåll läcker).
+
+GRINDARNA LIVE: /api/pro/admin 401 (auth-vakten lever) · /api/pro/analys 405 (POST-only-kontraktet intakt) · /api/pro/dpa-mall 200 = AVSIKTLIGT (våg 66 G2: publicerar DPA-mallen som dokument); mallen bär själv "UTKAST — under juristgranskning (K-B2B:1)" — utkast-statusen ÄR R2-väntan, inget skarpt avtal läckt.
+
+SVITER EGENA: testa-b2b-grind exit 0 grön · testa-pro-screening 26/0 · testa-demoklient-data 16/1 — G1 kvarstår exakt ("minst ett fullständigt AKM2Resultat — 0 st"; gap 4 oförändrad sedan 09-15).
+
+TALRÄTTNING: kartans "src/app/api/pro/** (4 rutter)" = 3 route.ts i verkligheten (admin/analys/dpa-mall; git --diff-filter=D: ingen fjärde någonsin). Sidantal 6 + komponenter 13 + V86-filen bär — alla bekräftade. SIDOFYND: arProYta-regern LEVER i verktyg/kvalitetsvakt.mjs:346 (PRO_YTA_RE + gruppnormalisering) — kartans 09-16-påstående håller; preciseringsnotis: regeln bor i kvalitetsvakt.mjs, ej granssnitt-urval.mjs.
+
+POÄNG: E30 6/10 OFÖRÄNDRAD (INAKTIV per R2; allt mätbart grönt/stängt; G1 känd öppen; 500:t var byggklass, ej E30-fel, nu läkt). Snitt 7,5/284/38 orört. Kö oförändrad: juristbeslut K-B2B + kundens aktivering (R2); teknisk köpost: G1-fix (fixture/testkontrakt) innan B2B-aktiveringspaketet hämtas fram.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2534,7 +2550,7 @@ rot-ID, Supabase-dashboard); (c) kursregistret 432→446 under MÄTFÖNSTRET
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | GAP-REGISTER 36/36 UTTÖMT (rond 90 09-19 — kommandobussen komplett v181–188: målpaus · kö · modellbyte · resolveInteraction · fakta-typer · sessionsfödelse · sendText-UI post 35 bakom Zap-toggle ak1a-v4-sendvag med rollback); transport 10 866 r (+31 % på 2 dygn) · 35 rutter (+11) · 8 paneler · 7 skickaV4-metoder; /studio 200 + stream 401 + kommando 405 live; STORFYND 09-19: binären halkat efter — npm 3.12.3-26 vs KÖRANDE 3.11.2-24 (bevakningen fallerat, paritetstak 39/91 mätt mot föråldrad binär, v92-e2e = AKTUELL KÖ); -32031 + skal-kvot-häng kvar |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (3,6 dygn; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-18: beslutsminne 70 poster, senaste "ROND 66 [Φ]" 14:47Z stänger våg 186 på live-bevis + falslarmdiagnos; ronder var 3:e timme punktliga, organet svarar 4 min in i rondfönstret); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 187 klara/188 manifest (mätt 09-19 15:37; +41/dygn, takten ökande) · 600 utdataloggar · LEVERANSKONTRAKTET korpusmätt första gången: 599/599 klara uppgifter med kvitto, 0 tyst döda (123 exit≠0 men samtliga med leveransrad) · beslutsminne 77 poster (rond 59, 4 idag) · evighetsmotorn 762 kontroller FÅNGAD LEVANDE 13:38Z · pumpor uppe sedan 09-18 20:09 · kunduppdragsfiler fortsatt frånvarande · CRON_SECRET 0 env · svitgapet oförändrat (fabrik/evighet/uppdrag 0) |
-| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
+| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); ÅTERDIFFAD 09-19: /pro 500 LÄKT (byggklass; 200 + noindex + ISR-serverad som tier-ytorna), stängningsdoktrinen HEL (flagga AV ×3 · robots /pro/admin 16 block · sitemap 0 äkta /pro-URL · grindar 401/405/200-avsiktligt), sviter grön/grön/16-1 (G1 kvarstår), 3 API-rutter (talrättning), arProYta lever; G1-fix = teknisk köpost före aktivering |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt fjärde gången (107/0/0 egen 09-19); kärnan kodstilla; kön 320 låst; o75 prefetch-kur deployad (48,5 KiB/entré stängd); tier-speglar: portfölj-ytorna saknas fortfarande; I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | kurser 432 (s5-vågorna; 381→432 på 2 dygn) men quiz/XP frusna sedan 09-15 (8 223/82 230); källöverensstämmelse bevisad i båda ändar 09-19 (deep-courses = siffror.json = live-HTML) men larmande divergensvakt saknas; speglingsfönstret 12 dygn = längsta sedan mätstart; priser.json orörd sedan v78 |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 7 | OIDENTIFIERAD DAGLIG RADERARE i system_events (mätt 09-19: vagscan/signal/organ lever bara samma dag — id-diff bevisar radering, ej skrivfel; repo-genomgång 0 raderare, rot misstänks pg_cron/trigger/extern nyckel) + arkivkedjans TVÅ blinda fält (exporterna bevarar ej de typerna; 4 odeducerade dubletter i 09-16-filen — v3-kontraktet dömer bara trunkering); 4 nätter kadansgröna; ALTER V1 kvar; inventory 27 d; kärnbestånd 166k stabigt |
@@ -4316,7 +4332,26 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
   syns ej i admin-utvecklingsradarn live.
 
-## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-17)*
+## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789847706174):
+återdiffad fjärde passningen + u2:s köade /pro-mätning verkställd (allt
+EGENMÄTT 21:5x lokal): /pro 500 LÄKT — 200 med "Under uppbyggnad"-
+substitut + noindex, samtliga 5 undersidor 200, /pro/ → 308 → /pro;
+x-nextjs-cache HIT/prerender 1/s-maxage 300 = ISR-klass (samma
+servering som D23:s tier-sidor); körande BUILD_ID fWWGyYiw… mtime 21:50
+lokal styr läkningen som BYGGKLASS (kodstilla sedan 09-17 bevisad).
+Stängningsdoktrinen HEL: flaggan AV ×3 (0 env-namn + 0 pm2 + koden
+kräver ==="1") · robots /pro/admin i samtliga 16 block (15 AI-bots + * —
+"dubbletterna" = AI-SEO-design, ej fel) · sitemap 0 äkta /pro-URL:er ·
+/pro + /pro/admin noindex · page.tsx:122 null-kropp vid flaggav
+(layouten = hela trädets robots-källa). Grindarna: admin 401 · analys
+405 · dpa-mall 200 AVSIKTLIGT (våg 66 G2; mallen själv UTKAST under
+juristgranskning = R2-väntan). Sviter: grind exit 0 + screening 26/0 +
+demoklient 16/1 (G1 kvarstår). Talrättning: 3 API-rutter (ej 4; ingen
+raderad). arProYta lever (kvalitetsvakt.mjs:346). Score 6 orött —
+INAKTIV väntar jurist (K-B2B) + kund (R2). Se UPPDATERING-sektionen
+för samtliga bevis.*
 
 *Uppdatering 2026-09-17 (s9-u3 omgång 10): INAKTIV-läget bekräftat live
 (/pro 200 "Under uppbyggnad" + noindex; robots stänger /pro/admin);
@@ -4341,7 +4376,7 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   toppväljaren visar bara "Privatperson", /pro = noindex "Under uppbyggnad",
   robots stänger).
 - **Nyckelfiler:** src/lib/b2b-status.ts, src/lib/pro/tenant.ts,
-  src/app/(huvud)/pro/** (6 sidor), src/app/api/pro/** (4 rutter),
+  src/app/(huvud)/pro/** (6 sidor), src/app/api/pro/** (3 rutter; talrättning 09-19),
   src/components/ak1a/pro/ (13 filer), verktyg/{testa-pro-screening,
   testa-b2b-grind,testa-demoklient-data}.mjs, data/forskning/B2B/ +
   V86-B2B-AKTIVERING.md.

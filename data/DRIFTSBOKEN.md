@@ -2505,3 +2505,32 @@ patchko 52 · pm2vakt 35 · ramvakt 17 · revertgrid 34 · tidsstampel 12) + Mim
 verktygsdomän 292/0 GRÖN (fixtures exkluderade enligt full-scan-basens konvention) + tsc 0.
 Kvarvarande lucka (medveten): "startade-aldrig"-grenen rör inget (bygget startade ej);
 ombygg-kedjan river .next på nytt per försök — terminalerna läker efter varje fallitet.
+
+## S10-U2 — OFFSITE-DR KVALL: 3-2-1-kedjans led 3 första gången återställningsbevisat + ROTFYND GitHub-push-benet NERE (2026-09-19 22:29–22:3x lokal, GODKÄNT)
+
+Första återställningsövningen UR offsite-arkivet (blad-restores bevisade 12× samma dag, men
+led 3 var obevisat): ak1a-offsite-2026-09-19.tar.gz.tar.gz (479 554 465 B, sha256 377e2c41…,
+10/10 kontrakterade delar, 1 503,9 MB okomprimerat) extraherat till skrap-yta RTO 23,8 s ·
+den ÅTERSTÄLLDA db-snapshot.sqlite (1 379 422 208 B) PRAGMA integrity_check = "ok" på 40,4 s ·
+byte-identisk med server-snapshotten (cmp 9,1 s) · **katastrof-RTO till verifierbar tråd-DB
+≈ 64 s** · radtal i återställd session-DB: part 222 960 · message 53 089 · tool_usage 56 737 ·
+session 1 234 — TRÅDENS PERMANENS kan återfödas från offsite-kopian (kundens största smärta
+har bevisat motmedel i led 3). Snapshot-semantik: 0 negativa skillnader på 8 ytor (audit
+1 851→1 880 · forskning 855→873 = väntad tillväxt; övriga identiska). SÄKERHETSSCAN: 0
+hemlighetsträffar i arkivet — docstring-rutnan KURERAD (headern påstod felaktigt att
+.env.production.local ingick; Edit i verktyg/backup-offsite.mjs, svit 12/0, node --check OK).
+
+ROTFYND (öppet, väntar kund): GitHub-push-benet (led 3:s fjärrkopia) NERE — loggen "push OK"
+senast 12:53:23Z, "väntar (SSH-nyckel ej aktiv än)" från 18:53:21Z; läsande diagnos
+git ls-remote origin: **Permission denied (publickey)** exit 128. Arkivet skapas fortsatt
+var 6:e timme på servern men GitHub-kopian fryser på 12:53Z-läget tills kunden återregistrerar
+serverns publika nyckel (~/.ssh/id_ed25519.pub, förnyad 09-18 20:07 lokal) hos GitHub
+NewUserAK/AK1 — nyckelfiler = stoppregel, GitHub-spegling ägs av arbetsstationen (R2/KÖPOST).
+
+Städning: skrap 1,5 GB bortad, bevisfiler kvar i /tmp enligt mall, data/backups/ endast läst
+(SHA oförändrad), PG17 viloläge bevisat 20:32:41Z UNDER övningen (därefter öppnade ett syskon
+sitt aktiva PG-fönster = deras städning, DAGFONSTER-precedensen). KVD: INGET bygge · src/
+orörd · tsc 0 exit 0 · R2 orörda · data/blogg/ orörd · prod rörddes aldrig. Protokoll:
+data/forskning/DR-OFFSITE-ATERSTALLNING-2026-09-19-KVALL.md + JSON + instrument
+_s10u2-offsite-steg1/2.mjs. Kö: kund/R2-nyckel → vakten bekräftar "push OK"-rad; offsite-
+restore repeteras med kvartalsövningen (mall finns, nästa ≤2026-12-19).

@@ -15044,3 +15044,51 @@ fullfil-skrivning (ababafb4) klippte mina redan applicerade karteredigeringar
 — verifierat mot HEAD (0 träffar på mina markörer, trädet ren), allt
 omapplikerat och commit:tat omedelbart efter deras commit. KVD: data-only —
 src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda.
+
+## SPÅR 10 s10-u2 (manifest auto-s10-1789849506241, vakt 2/3) — 2026-09-19 22:29–22:3x lokal: OFFSITE-DR KVALL — 3-2-1-kedjans led 3 FÖRSTA GÅNGEN återställningsbevisat + ROTFYND GitHub-push-benet NERE [fabrik]
+
+Fabriksagent s10-u2. VAL (anspråk disk-först 22:30 lokal, prediktioner P1–P7 låsta FÖRE
+mätning: data/vakten/auto-s10-1789849506241-s10-u2-ansprak.md): duplikatkontroll visade
+blad-9-restore 12×, kvartalsövning (022ebeb1), KEDJA-0 app-DB (90a58f89), offsite-VERKTYG
+härdat (o93) — men INGEN återställning UR offsite-arkivet fanns i spåret: 3-2-1:s sista led
+obevisat. LEVERANS (allt EGENMÄTT, node-kanalen): arkiv ak1a-offsite-2026-09-19.tar.gz.tar.gz
+(479 554 465 B · sha256 377e2c41… · 10/10 kontrakterade delar · 1 503,9 MB okomprimerat ·
+snapshot 18:52Z) extraherat till skrap-yta RTO 23,8 s · den ÅTERSTÄLLDA db-snapshot.sqlite
+(1 379 422 208 B) PRAGMA integrity_check "ok" på 40,4 s + byte-identisk med server-snapshotten
+(cmp 9,1 s) ⇒ KATASTROF-RTO TILL VERIFIERBAR TRÅD-DB ≈ 64 S · radtal i återställd session-DB:
+part 222 960 · message 53 089 · tool_usage 56 737 · model_usage 46 523 · session_entry 12 033 ·
+session 1 234 · todo 3 980 — TRÅDENS PERMANENS ÅTERFÖDDS BARA från offsite-kopian (kundens
+största dokumenterade smärta har bevisat motmedel i led 3) · snapshot-semantik 0 negativa
+skillnader på 8 ytor (audit 1 851 arkiv vs 1 880 levande · forskning 855 vs 873 = väntad
+tillväxt efter 18:52Z; huvudtrad/mal-state/uppdragslogg/blogg-utkast/kurser-tillagg identiska;
+levande db.sqlite 1 407 389 696 ≥ snapshot) · SÄKERHETSSCAN 0 hemlighetsträffar (.env*/nycklar/
+.pgass/pem/rsa/authorized_keys) med DOCSTRING-RUTNAN KURERAD: verktyg/backup-offsite.mjs:s
+header påstod sedan våg 172 att .env.production.local ingår i arkivet — motbevisat av både kod
+och scan (säkerhetsrelevant desinformation i ett arkiv kunden hämtar till sin dator); kur =
+Endast Edit (tar.gz ej "ZIP", .env ALDRIG med, motbevis-hänvisning), noll beteendeförändring,
+bevis node --check + testa-backup-offsite.mjs 12 PASS 0 FAIL. ROTFYND (öppet, väntar kund):
+GITHUB-PUSH-BENET (led 3:s fjärrkopia) NERE — loggen "push OK" senast 12:53:23Z, "väntar
+(SSH-nyckel ej aktiv än)" från 18:53:21Z; läsande diagnos git ls-remote origin = Permission
+denied (publickey) exit 128; arkivet skapas fortsatt var 6:e timme på servern men GitHub-kopian
+fryser på 12:53Z-läget tills KUNDEN återregistrerar serverns publika nyckel
+(~/.ssh/id_ed25519.pub, förnyad 09-18 20:07 lokal) hos GitHub NewUserAK/AK1 — nyckelfiler =
+stoppregel, GitHub-spegling ägs av arbetsstationen ⇒ KÖPOST/R2, vakten bekräftar med nästa
+"push OK"-rad. STÄDNING: skrap 1,5 GB bortad (bevis existsSync false) · bevisfiler kvar i /tmp
+enligt mall (tarlista 136 047 B + steg1/steg2-utdata) · data/backups/ ENDAST LÄST (SHA/size
+oförändrad efteråt) · PG17 viloläge bevisat 20:32:41Z UNDER övningen (pg_lsclusters down +
+psql-vägran i steg2-utdata) — vid slutverifikationen 22:3x var PG online = SYSKONS aktiva
+DR-fönster öppnade EFTER mitt bevis (DAGFONSTER-REPLIK-precedensen: deras fönster, deras
+städning; jag rörde inte deras flock) · disk 62G fri. PREDIKTIONER 7/7 (P1 EXAKT 10/10 delar ·
+P2 23,8 s · P3 EXAKT integrity ok · P4 rader rikliga + levande ≥ snapshot · P5 0 träffar +
+kur · P6 rot bevisad · P7 viloläge bevisat). KVD: INGET bygge — src/ orörd ·
+node node_modules/typescript/bin/tsc --noEmit = 0 exit 0 (beviskörning) · R2 orörda
+(priser/tier/publicering · nyckelfiler orörda · ingen push, endast läsande ls-remote · prod
+RÖRDES ALDRIG) · data/blogg/ orörd · syskonytor orörda. Protokoll:
+data/forskning/DR-OFFSITE-ATERSTALLNING-2026-09-19-KVALL.md + JSON + instrument
+verktyg/_s10u2-offsite-steg1.mjs + _s10u2-offsite-steg2.mjs + DRIFTSBOK-sektion S10-U2.
+KÖ: kund/R2-nyckeln → "push OK"-bekräftelse · offsite-restore repeteras med kvartalsövningen
+(mall, nästa ≤2026-12-19) · observationarv bokförda (loggfilnamn utan dubbelsuffix enligt
+o93-preserve · retention räknar filer ej dagar). LEVERANS: data/forskning/DR-OFFSITE-
+ATERSTALLNING-2026-09-19-KVALL.md, data/forskning/DR-OFFSITE-2026-09-19-KVALL.json,
+verktyg/backup-offsite.mjs, verktyg/_s10u2-offsite-steg1.mjs, verktyg/_s10u2-offsite-steg2.mjs,
+data/DRIFTSBOKEN.md, worklog.md. [fabrik]

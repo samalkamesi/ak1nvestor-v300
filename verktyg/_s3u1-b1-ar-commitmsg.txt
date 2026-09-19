@@ -1,0 +1,24 @@
+studio: auto s3-u1 AR1 fastighetsaktier-ar (spår 3 byggare 1/3) — arabiska omgångens B1-spegel أسهم العقارات
+
+Leverans enligt manifest-spår 3 (SEO-guiden, nästa objekt i spåret). AR1 = arabisk
+översättning av B1 (fastighetsaktier-sa-analyserar-du-fastighetsbolag.json, 09-15),
+AR2-konventionen tillämpad: slug = originalets + "-ar", samma tal och räkneexempel,
+moderna standardarabiskan, västerländska siffror med decimalpunkt, korslänkar
+15/15 MULTISET-identiska (km-042 ×2), källor 4/4 URL-identiska (riksbanken + ifrs +
+epra + nasdaqomxnordic), disclaimer arabisk form.
+
+KVD GRÖN 0 FEL / 0 VARN i 18 maskinella kontroller (verktyg/_s3u1-b1-ar-kvd-fastighet.mjs):
+varumärkesgrindens 26 regexer ur data/varumarke.json × 3 ytor = 0, rådverb SV+EN+AR = 0,
+sökord أسهم العقارات i title+ingress+2 H2, title 54/60, OG 135/155, ord 1202/1400
+(originalet raw 1153), talparitet 37/37 normaliserade (SV decimalkomma/mellanslag ==
+AR punkt/tusentalskomma), aritmetik 8/8 motorräknad (4.80÷96=5.0 %, 12000−7000=5000,
+5000÷100=50, 42÷50=0.84, 1−0.84=16 %, 7000÷12000≈58 %, 900÷450=2.0, 800+400=1200),
+readingMinutes 2 = round(1202/600), H2 7 == originalets, svenska läckor 0.
+
+Klaim FÖRE arbetet (data/vakten/s3-b1-ar-fastighet-ansprak-2026-09-19.md, 09:09:51Z —
+gitignorad väg, lever på disk): s3-u3:s reservation "B1-ar lämnades öppen åt s3-u1:s
+presumtiva slot" inlösad; B22 krypto-en + B23 utbildning-en lämnades öppna åt syskonen.
+
+R2 orörd: utkast lever i data/blogg-utkast/ (ALDRIG data/blogg/ — live-mappen orörd,
+verifierad), publicering = kundens beslut. src/ orörd = INGET bygge. Mallen
+SEO-GUIDER-2026-09.md bokförd med AR1-tabellrad + NOT s3-u1. [fabrik]

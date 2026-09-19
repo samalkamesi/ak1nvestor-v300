@@ -354,6 +354,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "pf-12-arsrapportering", titel: "Årsrapportering — portfölj-review", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 22, niva: "Intermediär" },
   { slug: "pf-13-esgportfolj", titel: "ESG-portfölj", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 18, minuter: 24, niva: "Intermediär" },
   { slug: "pf-14-pensionssparande", titel: "Pensionssparande", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 12, minuter: 20, niva: "Nybörjare" },
+  { slug: "pf-15-faktorpremierna", titel: "Faktorpremierna — värde, storlek, momentum och det tysta betat", kategori: "PORTFÖLJHANTERING", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "poor-charlies-almanack", titel: "Poor Charlie's Almanack — Munger: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 140, niva: "Alla" },
   { slug: "portfolj-ekosystemet", titel: "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken", kategori: "PRAKTISKA CASE", variabel: undefined, kapitel: 6, quiz: 17, minuter: 55, niva: "Intermediär" },
   { slug: "principles-of-corporate-finance", titel: "Principles of Corporate Finance — Brealey, Myers & Allen: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 51, minuter: 215, niva: "Alla" },

@@ -1,0 +1,30 @@
+studio: auto s3-u2 Ö22 kryptoaktier-en (byggare 2/3) — engelsk spegel av B22: -en-omgången KOMPLETT (Ö1–Ö23) [fabrik]
+
+Spår 3 SEO-guiders översättningsomgång, manifest auto-s3-1789808729921.
+Val: klaimfil data/vakten/s3-o22-krypto-en-ansprak-2026-09-19.md FÖRE arbetet
+09:09:18Z (disk-först: målfilen verifierad saknad); Ö1–Ö21 + AR2 tagna, AR1
+reserverad åt u1 ⇒ Ö22 = första lediga -en-lucka i B-ordning. Omgången föll
+rent: u1→AR1, u2→Ö22, u3→Ö23 (deras klaim uttryckligen "Ö22 åt u2:s
+B-ordningsval") — ingen duplikat.
+
+Leverans: data/blogg-utkast/kryptoaktier-sa-analyserar-du-kryptobolag-en.json
+— trogen spegel av B22 med samma 8 H2, tal och räkneexempel: Coinbase-ankaret
+(beta 3,39, TTM 6,04 mdr −9,2 % / −987,8 M mot FY2025 6,88 mdr +9,4 % /
++1,26 mdr, marginalsvängen +18,3 → −16,4 ≈ 35 pp, spannet 139–402 med ~57 %
+under toppen, forward P/E ~165), Strategy 845 000 BTC/21 M/~75 400 $,
+halveringen 3,125 BTC/block, ASU 2023-08 mot IAS 38, MiCA 2023/1114,
+30/70-skatten + K4 + DAC8 2027, Clarity Act −9 %, nästa rapport 29 oktober 2026.
+
+KVD GRÖN 22/22 (verktyg/_s3u2-o22-kvd-krypto-en.mjs): varumärkesgrind
+26 regexer × 3 ytor = 0, rådverb EN+SV 0, sökord "crypto stocks" i
+title+ingress+2 H2, title 46/60, OG 154/155, ord 1399/1400 efter tre
+trimomgångar 1543→1496→1428→1399, korslänkar 7/7 MULTISET-identiska med B22,
+externa URL:er 5/5 identiska, H2 8=8, talparitet 65/65 tusentalsnormaliserad
+(normaliseringen utökad NBSP→U+0020), aritmetik 7/7 motorräknad, svenska
+läckor 0 (institutionsvitlista Finansinspektionen/Skatteverket — AR2-klass),
+rm 2 = round(1399/600), disclaimer engelsk form.
+
+Mallen bokförd: Ö22-raden mellan Ö21/Ö23 + NOT s3-u2 — -en-omgången KOMPLETT
+(B1–B23 = Ö1–Ö23); spårets nästa = AR3 läkemedels-ar i B-ordning.
+KVD: endast data/ + verktyg/ = INGET bygge; src/ orörd; R2 orörd (utkast i
+data/blogg-utkast/ ALDRIG data/blogg/ — granskningskön avgör publicering).

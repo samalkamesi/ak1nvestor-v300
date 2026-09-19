@@ -2360,7 +2360,57 @@ Kö till huvudagenten: (1) Supabase-dashboard: pg_cron/trigger/externa nycklar
 organ.ts FÖRST efter att raderaren identifierats (annars maskeras roten);
 (3) arkivexporten: markera antal>totaltFranApi som dublettfynd; (4) bära
 vagklass-galleriet utanför system_events (datacache/fil) tills historiken
-består; (5) B8-notis: kalibreringens steg 6-7 läser ett tomt galleri.
+består; (5) B8-notis: kalibreringens steg 6–7 läser ett tomt galleri.
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789824900585 — E27 Studio återdiffad, tredje varvet: kommandobussregistret UTTÖMT 36/36 + STORFYND: binären halkat efter — 3.12-familjen släppt obemärkt)
+
+Anspråk disk-först (data/vakten/auto-s9-1789824900585-s9-u1-ansprak.md):
+E27 = äldsta fria passningen (09-17; jämnårig med E30 men med störst
+rörelse — studion är kundens chattväg), R2-ytorna D22/D23 orörda. Samtliga
+mätningar EGENMÄTTA 2026-09-19 ~15:0x lokal.
+
+KVANTITATIV DIFF (09-17 → 09-19, egenmätt): studio-transport.ts 8 316 →
+10 866 rader (+2 550, +31 %; lib/studio totalt 13 039 r) · API-rutter
+24 → 35 route.ts-filer (+11, bl.a. tjanster/kommando [v175], usage-v4
+[v169], automation+pausa, bakgrund+avbryt, commands, generera, resync,
+webblasare, godkannande+publicera, mal/status+stream) · studio-komponenter
+5 → 8 namngivna (nytt: forbrukning-panel [v169], godkannande-panel [g1],
+maskin-panel) · live /studio 200 · stream 401 · kommando 405.
+
+KVALITATIV: kommandobussen FÄRDIGBYGGD 09-18/19 — våg 181 (pauseGoal/
+resumeGoal) + 182 (kösystemet, poster 31+32) + 183 (modellbyte, 29) + 184
+(resolveInteraction, 28) + 186 (UI-koppling sendText, post 35: Zap-toggle
+ak1a-v4-sendvag per webbläsare, gamla styrvägen kvar som rollback) + 187
+(sessionsfödelse, 33) + 188 (fakta-typerna, 34) ⇒ ZCODE-GAP-REGISTER 36/36
+STÄNGDA på live-bevis (rond 90: "REGISTRET UTTÖMT — nästa evolution föds ur
+ny forskning"). skickaV4-familjen: 7 transportmetoder (SessionsFodelse,
+SendText, MalStyrning, KoStyrning, Modellbyte, InteraktionSvar,
+FaktaKommando). Därtill godkännandehärdningen (s8-u1 a20f15fa: tak 6/min
+publicera · 20/min val-ytan SITTANDE efter auth, audit publicera-avvisad —
+nekanden lämnar append-only kvitto), ROND 87:s F3-500-kur (c7e8be1d),
+scenariotest 7/7 PASS mot prod (våg 174).
+
+STORFYND — BINÄREN HALKAT EFTER (kartans gap 1 TRIGGAT): npm latest =
+3.12.3-26 (egenmätt npm view) men servern KÖR zcode-app-cli@3.11.2-24
+(npm ls -g, egenmätt) — en HEL minor-familj (3.12.x) har släppts obemärkt.
+Gap-registrets källrubrik "npm latest = 3.11.2-24 — vi KÖR senaste" är
+FALSK sedan 3.12-releasen: binärbevakningen per våg har fallerat minst en
+vågcykel. Konsekvenser: (a) paritetstaket 39/91 mättes mot 3.11.x — våg 93:s
+dom "automation/webbläsare ej exponerade i NÅGON version" gällde
+3.11-familjen och måste omprövas mot 3.12.x; (b) kartens egen regel "vid
+version > 3.11.2-22 körs v92-e2e direkt" är en AKTUELL KÖ; (c) registrets
+regel 3 har nytt bränsle: 3.12.x-releasenoteringarna = nästa evolutionskälla.
+Kö till ronden/huvudagenten: npm view-koll per våg (återuppliva gap 1),
+v92-e2e-omkörning, registerforskning mot 3.12.x.
+
+Poäng: 9/10 KVARSTÅR — paritetens DJUP bevisat starkare än någonsin
+(registret uttömt, koden +31 % på två dygn) samtidigt som den YTTRE
+gränsen (binären) flyttats under organismens fötter: nu gäller först
+eftersläpningen, sedan omprövningen av taket.
+
+KVD: data-only — src/ orörd, INGET bygge (deploy ägs av prod-synken); R2
+orörd; data/blogg/ orörd; syskon-ytor orörda. Leverans: SYSTEMKARTAN.md
+(UPPDATERING-sektion + E27-sektion + E27-översiktsraden), worklog-rad. [fabrik]
 
 ## ÖVERSIKT — 38 system
 
@@ -2393,7 +2443,7 @@ består; (5) B8-notis: kalibreringens steg 6-7 läser ett tomt galleri.
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-pipelinen VILANDE I BÅDA ÄNDARNA (mätt 09-18): rutten fungerar fullt ut (200, 3 brev KÖADE i system_events, supabaseSparad) MEN ingen bevisad driver (/etc/crontab saknar email-raden återmätt + Vercel passiv enligt B14-fyndet) + leverantör okonfigurerad (0 env-namn); CRON_SECRET osatt ⇒ skrivande rutt öppen (200 utan auth); vagkarta-gapet STÄNGT (notis-underlaget lever, 05:05Z + syslog-bevis); notis-tak 100 + 30 d-golv återmätta i kod; referral 405 POST-only; VBOUT SATT; 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | "Tre språk fullt" MOTBEVISAT 09-18: useSprak 0-träffar i portal+4 navet, speglar saknas (404 live), enbart fortsatt-panelen flerspråkig; sviter 0; sidor 200; 1 093 r kodstilla; KursNavets quiz-yta frusen medan kurserna 396→426 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
-| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
+| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | GAP-REGISTER 36/36 UTTÖMT (rond 90 09-19 — kommandobussen komplett v181–188: målpaus · kö · modellbyte · resolveInteraction · fakta-typer · sessionsfödelse · sendText-UI post 35 bakom Zap-toggle ak1a-v4-sendvag med rollback); transport 10 866 r (+31 % på 2 dygn) · 35 rutter (+11) · 8 paneler · 7 skickaV4-metoder; /studio 200 + stream 401 + kommando 405 live; STORFYND 09-19: binären halkat efter — npm 3.12.3-26 vs KÖRANDE 3.11.2-24 (bevakningen fallerat, paritetstak 39/91 mätt mot föråldrad binär, v92-e2e = AKTUELL KÖ); -32031 + skal-kvot-häng kvar |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (3,6 dygn; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-18: beslutsminne 70 poster, senaste "ROND 66 [Φ]" 14:47Z stänger våg 186 på live-bevis + falslarmdiagnos; ronder var 3:e timme punktliga, organet svarar 4 min in i rondfönstret); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 146 klara manifest av 147 (mätt 09-18 ~14:00; +30 sedan 09-17 kväll, 22 startade idag) · 475 utdataloggar · beslutsminne 68 poster (rond 51 11:43:03Z, 4 idag) · pumpor 42 h ↺19 + FABRIKSPROCESSEN FÅNGAD LEVANDE i mätfönstret (pid 2140015) · evighetsmotorn 614 kontroller (11:48:03Z) + målet återarmat 11:41Z · kunduppdragsfilerna fortsatt frånvarande (ingen order i flykt) · svitgapet oförändrat (fabrik/evighet/uppdrag 0) · CRON_SECRET 0 env · KOLLISIONSKLASSEN ÅTERKOM 09-18 i ny skepnad (s8-fönstret: o67-trippelkollision + git-index-kollision, ärligt bokförd med disknotiser) = bevisad i 3 fönster/3 skepnader, kuren disciplin ej mekanism — MEN disk-först-disciplinen bevisad i eget fönster (u2 läste anspråket, valde A2+C17, 0 kollision); kur-kö: fabrikinstruktion med isolerade nummerserier + explicita paths per commit |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
@@ -3946,7 +3996,18 @@ SAMMANSTALLNING + JSON-format, se C15) — gamla talet dött; juridik-FP
   knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
 
 
-## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (s9-u1, manifest auto-s9-1789824900585): KOMMANDO-
+BUSSEN FÄRDIG — ZCODE-GAP-REGISTER 36/36 STÄNGT på live-bevis (rond 90:
+v188:s fakta-typer var sista öppna posten; v186:s sendText-UI lever bakom
+Zap-toggle ak1a-v4-sendvag med gamla styrvägen som rollback). Transporten
+10 866 r (+31 % sedan 09-17), 35 API-rutter (+11), 8 studio-komponenter,
+7 skickaV4-metoder. STORFYND: binärbevakningen fallerat — npm latest
+3.12.3-26 medan servern KÖR 3.11.2-24; paritetstaket 39/91 är mätt mot en
+binär som inte längre är senaste och våg 93:s "ej exponerade i NÅGON
+version"-dom gällde 3.11-familjen; v92-e2e-omkörning + registerforskning
+mot 3.12.x = AKTUELL KÖ (diff-tabell i UPPDATERING-sektionen).*
 
 *Uppdatering 2026-09-17 (s9-u3 omgång 10): gap 4 MOTBEVISAT — våg 169
 (a77bb1a3, 09-16) levererade lasV4Anvandning + /api/studio/tjanster/usage-v4
@@ -3974,12 +4035,13 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   SER bilder), rewind (turn-fork), kommandopalett, modell/läge/tanke-val,
   server-persistenta inställningar, plugin-drift, styrelseregel-yta,
   uppladdningar, hälsa, admin-verktygslåda — våg 81-93 allt levande.
-- **Nyckelfiler:** src/lib/studio/{studio-transport.ts (8 316 r!),
-  permissions-policy.ts (381 r, 63/63), styrelse.ts (864 r), kommandon.ts},
+- **Nyckelfiler:** src/lib/studio/{studio-transport.ts (10 866 r!),
+  permissions-policy.ts (390 r, 63/63), styrelse.ts (873 r), kommandon.ts},
   src/components/ak1a/{studio-chat,studio-admin-panel,
-  studio-fardigheter-panel,studio-minne-panel,studio-html-export}.tsx*,
-  src/app/(huvud)/studio, src/app/api/studio/** (24 rutter), data/forskning/
-  V91-Z-PARITET-KARTA.md.
+  studio-fardigheter-panel,studio-minne-panel,studio-html-export,
+  studio-forbrukning-panel,studio-godkannande-panel,studio-maskin-panel}.tsx*,
+  src/app/(huvud)/studio, src/app/api/studio/** (35 rutter), data/forskning/
+  V91-Z-PARITET-KARTA.md + ZCODE-GAP-REGISTER.md (36/36 STÄNGDA).
 - **Observation:** Kodbasens tyngsta och mest härdade system:
   barnprocess-overlevnad (auto-restart 3 försök backoff 2/8/32 s, race-skydd),
   MAX_AKTIVA_BARN=3 + idle-städning, SSE-hjärtslag 15 s, disk-persistens av
@@ -3988,14 +4050,17 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   binären saknar. E2E: 7 PASS / 0 FAIL / 2 SKIP (våg 92, prod). Paritet
   ~39/91 tjänster — taket satt av binären 3.11.2-22 (=npm latest; utredning
   stängd våg 93: automation/webbläsare ej exponerade i NÅGON version).
-- **GAP:** (1) binärbevakning per våg (`npm view zcode-app-cli version`,
-  dokumenterad rutin) — vid version > 3.11.2-22 körs v92-e2e direkt;
-  (2) -32031 vid första meddelandet efter omstart (självläker på sekunder,
-  engångskostnad — obevakad bugg); (3) äkta v4-attachment-väg implementerad
-  men ej live-bevisad (referensvägen bär bilder idag); (4) usage/cost-panel
-  per dag (F3) tunn i UI; (5) skal-kvotens ~30 s-häng är karaktäriserat men
-  EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
-  teknisk kur (återkommer tills app-servern fixar det underliggande).
+- **GAP:** (1) binärbevakning per våg (`npm view zcode-app-cli version`)
+  TRIGGAD 09-19: npm latest 3.12.3-26 medan servern KÖR 3.11.2-24 —
+  minor-familjen 3.12.x släppt obemärkt, rutinen "vid version > 3.11.2-22
+  körs v92-e2e direkt" är en AKTUELL KÖ + registerforskning enligt
+  registrets regel 3; (2) -32031 vid första meddelandet efter omstart
+  (självläker på sekunder, engångskostnad — obevakad bugg); (3) äkta
+  v4-attachment-väg implementerad men ej live-bevisad (referensvägen bär
+  bilder idag); (4) usage/cost-panel per dag (F3) tunn i UI; (5)
+  skal-kvotens ~30 s-häng är karaktäriserat men EJ botat i binären —
+  node-wrapper-disciplinen är en process-kur, ingen teknisk kur
+  (återkommer tills app-servern fixar det underliggande).
 
 ## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-18)*
 

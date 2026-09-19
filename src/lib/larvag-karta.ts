@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (432 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (435 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 390 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 393 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -224,6 +224,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-14-livsmedel", titel: "Livsmedel — staplar och varumärke", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "se-15-logistik", titel: "Logistik — nätverk", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-16-sektoranalysens-metod", titel: "Sektoranalysens metod — tre frågor till vilken sektor som helst", kategori: "SEKTORANALYS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-17-skogssektorn", titel: "Skog — massans cykel och ägd råvara", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-05-ankareffekt", titel: "Ankareffekt — snitt irrelevant", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
@@ -415,6 +416,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "kt-02-forvantningsanalys-och-kalibrering", titel: "Förväntningsanalys — vad står redan i kursen?", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-03-katalysatorkedjor", titel: "Katalysatorkedjor — andra ordningens effekter när en händelse utlöser nästa", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-04-den-uteblivna-katalysatorn", titel: "Den uteblivna katalysatorn — när händelsen kommer och ingenting händer", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "kt-05-katalysatorernas-kalender", titel: "Katalysatorernas kalender — att bygga händelsekartan och läsa klustren", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-03-lasa-aktiesidan", titel: "Läsa aktiesidan — siffrorna på skärmen före metoderna", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -460,6 +462,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "rp-01-riskmattens-karta", titel: "Riskmåttens karta — fem mått, fem frågor, innan formlerna", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-02-tre-matt-tre-fragor", titel: "Tre mått, tre frågor — Sharpe, Sortino och Calmar i samma portfölj", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-03-riskparitet", titel: "Riskparitet — att viktta portföljen efter risk, inte kronor", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rp-04-volatilitetsbudgeten", titel: "Volatilitetsbudgeten — portföljens risk satt i ett tal och fördelad i kronor", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -468,4 +471,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 432;
+export const LARVAG_ANTAL_KURSER = 435;

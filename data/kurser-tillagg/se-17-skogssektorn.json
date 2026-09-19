@@ -1,0 +1,148 @@
+{
+  "slug": "se-17-skogssektorn",
+  "category": "SEKTORANALYS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Skog — massans cykel och ägd råvara",
+  "summary": "Sektorfamiljens sjunde sektorsteg: skogsindustrin, Nordens äldsta exportgren. Kursen mäter de tre mekanismer som gör sektorn unik — massaprisets cykel och dess hävstång i resultaträkningen, den ägda skogsmarken som råvara och substans under fabrikerna, och valutabärningen när priserna sätts i dollar och euro medan kostnaderna betalas i kronor.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Läsa skogssektorn som en kedja från rot till förpackning — skog, sågverk, massa och papper med olika cykler och marginaler · Räkna massaprisets genomsläpp: vad ett prisfall från 620 till 480 dollar per ton gör med segmentets rörelseresultat när volymen och de fasta kostnaderna står still · Räkna cykelns hävstång: varför prisfallet 22,6 procent vrider segmentet från plus 248,0 till minus 144,0 miljoner kronor · Bygga substansen: skogsmark, industri och nettoskuld till ett eget nettobokfört värde, och sätta aktiekursen mot det i en P-till-NAV-kvot · Räkna skogens tysta värdestegring: skillnaden mellan tillväxt och avverkning som växer vidare i skogen, år efter år, utan att synas i resultaträkningen · Mäta valutabärningen när massan prissätts i dollar och papperet i euro, och känna igen de sex fällorna — samvariationen främst.",
+  "why": "Sektorfamiljen har gått igenom sexton sektorer — från mjukvara och halvledare till livsmedel och lyx — men aldrig in i den sektor som byggt den nordiska börsen: skogen. Sektorn är tung i kundens eget bolagsuniversum på råvarusidan — fem noterade skogsbolag — och den mest mekaniskt särpräglade av dem alla: en bransch där råvaran växer om sig själv, där priset på massan cyklar med världsekonomin medan priserna betalas i främmande valuta, och där balansräkningens största post ofta är mark som bolaget äger och aldrig säljer. Andra kurser äger delarna — km-045 materialets metaller och gruvor, vr-02 normaliseringen av cykliska tal, km-058 valutamekaniken, km-067 substansen hos investmentbolag — men ingen äger hur delarna spelar ihop i en och samma sektor. Det gör denna kurs, med se-16:s tre metodfrågor tillämpade på ett genomgående exempel: en sektor där cykeln, råvaran och valutan är samma berättelse. Frågan kursen lämnar hos läsaren är sektorfamiljens i renare form än i de flesta: vad är det för bolag man betalar för — en fabrik på en priscykel, eller en skog med en fabrik på?",
+  "history": {
+    "origin": "Skogens ekonomi är äldre än aktiemarknaden. Sågverksepoken byggde de första nordiska förmögenheterna på ett enkelt faktum: träd som växer av sig självt, sågas till bräder och skeppas ut. Sågverksägarna lärde tidigt den läxa som kursen mäter: virkespriset cyklar med byggnation och sjöfart, och den som har skulder när priset faller förlorar skogen. Pappersmassekravet under artonhundratalet fördjupade kedjan — från sågverk till massafabrik — och med den kom fasta kostnader som inte kan stängas av när priset vänder. Bruken och senare bolagen som växte fram lärde också räkna på det som gör sektorn unik än i dag: ägd skogsmark är en råvara som varken förbrukas eller skattas bort, utan växer vidare mellan avverkningarna.",
+    "evolution": "Tjugonde århundradet formade den skogsindustri som läses i dag: integrationen där bolaget äger skog, sågverk, massafabrik och pappersmaskin i samma koncern; kemiska massaprocesser som gjorde papper till en ingenjörsprodukt; och exportorganisationer som bar nordisk massa till världens priser. Cyklerna kom att sätta sektorns rytm — efterkrigens expansiva år, strukturomvandlingarna när tryckpapperet mötte skärmen, konsolideringen till allt större enheter. Samtidigt växte insikten som kursen övar: den integrerade kedjan är en hävstång. När massapriset stiger tar segmenten ut svängningarna tillsammans, och när det faller gör de samma sak åt andra hållet — medan skogsmarken under hela svängningen fortsätter att växa.",
+    "modern": "I dag läses skogssektorn mot tre samtidiga skiften. Förpackningens tillväxt — handel som flyttar från butik till låda — har riktat industrien mot förpackningspapper och kartong medan tryckpapperet krympt år för år. Energin har blivit en dubbel post: massafabrikens svartlut säljs som förnybar energi i stället för att kosta pengar, och flis och sågspån har blivit intäkter i en sektor där de en gång var avfall. Och ägandet har fått en valuta- och räntesida: när priserna sätts i dollar och euro medan kostnaderna betalas i kronor, och när skogsmarken värderas mot ränteläget, blir skogsbolaget både en råvaruposition och en fastighetsposition. För aktiestudenten är sektorn därmed ett övningsrum i att hålla isär tre saker som gärna blandas samman: en priscykel, en växande substans och en valutabärning — tre mekanismer som denna kurs mäter var för sig och tillsammans."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — kedjan från rot till förpackning", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — segment, substans och P-till-NAV", "minutes": 4 },
+    { "num": 3, "title": "Praktisk tillämpning — läsa skogsbolagets rapport", "minutes": 4 },
+    { "num": 4, "title": "Mätning — cykelns och valutans aritmetik", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — skogssektorns fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch placerade cykelbolagen i en egen kategori med en egen varning: de ser billigast ut precis när de är som dyrast, för när resultatet står i topp ser multipeln låg ut och cykeln står inför sitt väntal. Skogssektorn är hans klassiska studieobjekt — massapriset rör sig med världsekonomin, och Lynchs läxa att räkna på var i cykeln ett bolag befinner sig, inte bara på årets resultat, är denna kurs fjärde kapitel i klartext. Hans andra läsregel — att förstå vad bolaget äger — får här en praktisk bortglömd sida: ett skogsbolag äger en växande råvaruresurs som bokföringen aldrig räknar som intäkt förrän trädet avverkas, och det som växer i skogen mellan avverkningarna är en del av det läsaren betalar för, även om det aldrig syns i resultaträkningen.",
+  "grahamSection": "Benjamin Graham köpte hellre tillgångar än berättelser, och skogssektorn är hans hemmaplan: skogsmark är en real tillgång med ett värde som inte beror av en årsbudget, och nettot av skog, fabriker och skuld kan räknas fram av läsaren själv — kursens andra kapitel gör exakt det, i Grahams anda. Hans säkerhetsmarginal får här en egen twist: när aktien handlas under substansen köper läsaren den växande skogen med rabatt, och marginalen växer i takt med träden även om börsen intet noterar. Samtidigt är hans varning lika aktuell: en substans som beräknas med ett gynnsamt hektarpris är ingen marginal utan en förhoppning — kursens femte kapitel visar hur substansen själv kan cykla.",
+  "ak1Section": "I AK1A:s metodik fyller denna kurs sektorfamiljens största nordiska glänta: sexton sektorer har analyserats, men inte den råvarusektor som bär fem bolag i det egna universumet. I AKM1:s bolagsläsning blir skogskursen samlingspunkten för tre mekanikspår som annars löper var för sig: riskdimensionens cykelaxel (massaprisets svängningar mäts med samma ett-slag-i-taget-disciplin som rs-08 lär), värderingsdimensionens normaliseringskrav (multipeln på ett toppresultat är en fälla — vr-02:s normaliserade multipler tillämpas här på en hel sektor) och substansaxeln (P-till-NAV-linsen lånad från km-067 men vänd mot växande skog). I AKM2:s ram övar kursen scenarioräkning på sektornivå: samma volym, samma kostnadsbas, tre pris- och valutalägen ger tre olika koncernresultat — och skillnaden mellan dem är den riskportföljens bygglur som kursen lämnar åt läsaren. Gränserna mot grannkurserna är avsiktliga: km-045 äger material som metaller och gruvor, mk-10 energimarknadens oljepris, km-058 valutamekaniken, st-04 kreditcykeln — denna kurs äger skogens kedja.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — kedjan från rot till förpackning",
+      "intro": "Skogssektorn är inte en industri utan en trappa: skogen, sågverket, massafabriken och pappersmaskinen — varje steg med sin egen cykel och sin egen marginal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med bilden. Ett skogsbolag äger eller förvaltar skog, avverkar den, och förädlar virket i steg: sågverket tar tjocktimmer till bräder, massafabriken kokar cellulosan till massa, pappersmaskinen formar massa till förpackningspapper eller tryckpapper. Varje steg har sin egen prissättning och sin egen cykel — sågtimmer följer byggkonjunkturen, massa följer världshandeln, förpackningspapper följer konsumtionen och e-handeln. Kursens genomgående exempel är ett påhittat bolag, Norrskog Industri AB, och alla dess tal är uppbyggda för räkneleden; verkliga skogsbolag läses med samma frågor, men med egna siffror. Tre egenskaper skiljer sektorn från alla andra i serien. För det första äger bolaget sin råvara: skogsmarken är inte en inköpspost utan en tillgång på balansräkningen, och skogen växer om sig mellan avverkningarna — en råvara som förökar sig. För det andra cyklar slutmarknaderna i takt med världsekonomin, och eftersom maskinerna är dyra och fasta blir prisrörelserna hävstång i resultaträkningen. För det tredje sätts priserna i andra valutor än kostnaderna: massa noteras i dollar, förpackningspapper i euro, medan löner, virke och ränta betalas i kronor. Sektofamiljens metodfrågor från se-16 — hur tjänar sektorn pengar, vad cyklar, vad äger bolaget — får här sina tydligaste svar."
+        },
+        {
+          "type": "definition",
+          "content": "SKOGSSEKTORNS TRE FRÅGOR: (1) CYKELN — var i massaprisets svängning står sektorn, och vad gör hävstången i resultaträkningen · (2) RÅVARAN — hur stor är den ägda skogen, hur mycket växer den och hur mycket avverkas · (3) VALUTAN — i vilken valuta sätts priserna, i vilken betalas kostnaderna, och vad bär kursrörelsen · GRÄNS: km-045 äger metaller och gruvor, mk-10 oljepriset, km-058 valutamekaniken, vr-02 normaliseringen — denna kurs äger skogens kedja."
+        },
+        {
+          "type": "insight",
+          "content": "Tre mekanismer, en sektor: en råvara som växer om sig själv, en priscykel med fast kostnadsbas och en valuta som skiljer intäkt från kostnad. Den som kan hålla dem isär kan läsa skogsbolag; den som blandar ihop dem läser speglingar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — segment, substans och P-till-NAV",
+      "intro": "Mätningen börjar i två ytterändar av rapporten: segmenttabellen som visar var pengarna tjänas, och balansräkningen som visar vad bolaget äger.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norrskog Industri AB omsätter 7 460,0 miljoner kronor fördelat på fyra segment: skogsfastigheterna 900,0, sågverket 2 400,0, massafabriken 2 480,0 och förpackningspappret 1 680,0. Rörelseresultatet vid goda massapriser är 948,0 miljoner — skog 310,0, såg 170,0, massa 248,0 och papper 220,0 — en koncernmarginal på 12,7 procent. Lägg märke till spridningen i marginaler: skogsbolagets skogssegment bär 34,4 procent marginal på förvaltning av egen råvara, massafabriken 10,0 procent på en kapitaltung process. Det är därför segmentrapporten är skogsläsningens första sida — km-024 lär ut var den finns. Balansräkningen ger andra halvan. Norrskog äger 900 000 hektar produktiv skogsmark, värderad till 36 000,0 miljoner; industribyggnader och maskiner efter avskrivningar bär 12 400,0 miljoner; netto skuld är 8 000,0 miljoner. Substansen — nettobokfört eget värde — blir 36 000,0 plus 12 400,0 minus 8 000,0, det vill säga 40 400,0 miljoner kronor. Börsvärdet står i 32 320,0 miljoner. Kvoten mellan börsvärde och substans — P-till-NAV, lånat från investmentbolagsläsningen men vänd mot växande skog — blir 32 320,0 delat med 40 400,0, exakt 0,800: marknaden prissätter bolaget till en femtedel under den egna substansräkningen, en substansrabatt på 20,0 procent, eller 8 080,0 miljoner kronor. Hur den rabatten ska bedömas — som marginal eller som spegling av cykelläge — är kursens kvarvarande fråga, och den avgörs inte här utan i kapitel fyra och fem."
+        },
+        {
+          "type": "tabell",
+          "content": "NORRSKOG INDUSTRI AB (PÅHITTADE TAL): SEGMENTINTÄKTER — skog 900,0 · sågverk 2 400,0 · massa 2 480,0 · förpackningspapper 1 680,0 · koncern 7 460,0 Mkr · RÖRELSERESULTAT VID GODA PRISER — skog 310,0 · såg 170,0 · massa 248,0 · papper 220,0 · koncern 948,0 Mkr (marginal 12,7 %) · SUBSTANSEN — skogsmark 900 000 hektar × 40 000 kronor per hektar = 36 000,0 · industri 12 400,0 · netto skuld −8 000,0 · NAV 40 400,0 Mkr · BÖRSVÄRDE 32 320,0 Mkr · P-TILL-NAV = 32 320,0 / 40 400,0 = 0,800 (substansrabatt 20,0 % = 8 080,0 Mkr)."
+        },
+        {
+          "type": "insight",
+          "content": "Segmenttabellen visar var resultatet föds; balansräkningen visar vad som finns kvar när cykeln vänder. P-till-NAV 0,800 betyder inte att skogen är billig — det betyder att marknaden tror på ett lägre substansvärde eller ett sämre cykelläge än bolagets egna siffror. Vilket av delarna som styr är läsarens uppgift."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — läsa skogsbolagets rapport",
+      "intro": "Skogsbolagets årsredovisning bär sina svar på tre särskilda ställen: segmentnoten, skogsstatistiken och prisuppgifterna. Kursen samlar dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första spåret är segmentnoten: skogsbolag redovisar nästan alltid segment med i princip samma indelning som kursens exempel — skog och fastighet, sågverk, massa, papper — och noten ger intäkt, resultat och ibland kapital per segment. Läs marginalerna, inte bara resultaten: en massafabrik på 10,0 procents marginal och en skogsrörelse på 34,4 procent svarar på helt olika sätt när priserna vänder. Andra spåret är skogsstatistiken, som oftast ligger i hållbarhets- eller förvaltningsdelen i stället för i siffrorna: ägd areal, virkesförråd, årlig tillväxt och avverkning i miljoner kubikmeter. Norrskogs exempel: 900 000 hektar med en tillväxt på 5,0 kubikmeter per hektar och år — 4,5 miljoner kubikmeter årligen — och en avverkning på 3,6 miljoner, det vill säga 80,0 procent av tillväxten. Skillnaden, 0,9 miljoner kubikmeter, växer vidare i skogen: vid ett virkesvärde på 250 kronor per kubikmeter lägger den 225,0 miljoner kronor per år till virkesförrådet utan att en enda rad hamnar i resultaträkningen. Det är sektorns mest tysta post, och skälet till att ett skogsbolag kan vara värdemässigt levande även ett år med dåligt resultat. Tredje spåret är priserna: bolagens rapporter anger massa- och papperspriser per ton, och branschindex följer samma serier månadsvis; komplettera med valutakurserna — massan i dollar, pappret i euro — för varje pris är en valuta multiplicerat med en enhet. Tre spår, fyra frågor per segment: marginal, cykelläge, valuta och tillgång."
+        },
+        {
+          "type": "definition",
+          "content": "DE TRE SPÅREN I ÅRSREDOVISNINGEN: (1) SEGMENTNOTEN — intäkt, resultat och marginal per segment (km-024) · (2) SKOGSSTATISTIKEN — areal, virkesförråd, tillväxt och avverkning i hållbarhetsdelen; tillväxt minus avverkning = årets tysta värdestegring · (3) PRISUPPGIFTERNA — massa- och papperspriser per ton i dollar och euro, lästa tillsammans med valutakurserna (km-058) · EGEN TABELL: segment, marginal, cykelläge, valuta, substanspost."
+        },
+        {
+          "type": "insight",
+          "content": "Avverkning 3,6 av tillväxt 4,5 miljoner kubikmeter: 80,0 procent plockas som intäkt, 0,9 miljoner växer vidare som substans. Skogen betalar utdelning till sig själv — och resultaträkningen visar bara halva ekvationen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — cykelns och valutans aritmetik",
+      "intro": "Beroendet blir tal i två slag: priset faller, eller valutan rör sig. Kapitlet räknar dem ett i taget — grannedisciplinen från rs-08 — och visar hävstången.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cykelslaget, isolerat. Massafabriken säljer 400 000 ton per år till 620 dollar per ton; med kursen 10,00 kronor per dollar blir intäkten 400 000 gånger 620 gånger 10,00, det vill säga 2 480,0 miljoner kronor — segmentets intäkt i tabellen. Kostnaderna: virke till massakoket 840,0 miljoner, som rör sig med virkespriset, och energi, kemikalier, löner och underhåll 1 392,0 miljoner, som är i princip fasta i års perspektiv. Resultatet: 2 480,0 minus 840,0 minus 1 392,0 är 248,0 miljoner — marginalen 10,0 procent. Nu cykeln: massapriset faller till 480 dollar per ton, en nedgång på 22,6 procent. Intäkten blir 400 000 gånger 480 gånger 10,00, det vill säga 1 920,0 miljoner — 560,0 miljoner lägre. Virkeskostnaden följer delvis med ner, 20,0 procent, till 672,0 miljoner; de fasta 1 392,0 står kvar. Resultatet: 1 920,0 minus 672,0 minus 1 392,0 är minus 144,0 miljoner. Prisfallet 22,6 procent har alltså vrider segmentet från plus 248,0 till minus 144,0 — en svängning på 392,0 miljoner kronor, från tioprocentig marginal till förlust, utan att en enda maskin stannat eller en enda anställd sagt upp sig. Detta är cykelns hävstång, och den förklarar varför skogsbolagens resultat svänger många gånger starkare än massapriset. Koncernen isolerat: övriga segment orörda ger koncernresultatet 948,0 minus 392,0, det vill säga 556,0 miljoner på en intäkt som fallit till 6 900,0 — marginalen 12,7 blir 8,1 procent. Valutaslaget, samma disciplin: priserna i dollar oförändrade, kronan försvagas från 10,00 till 11,00. Massaintäkten i dollar är 248,0 miljoner dollar per år; varje krona i kursen är alltså värd 248,0 miljoner kronor i intäkt, och omprissättningen ger plus 248,0 miljoner — exakt massasegmentets hela toppresultat, tio procent värt i en enda valutaförändring. Papperssegmentet speglar samma mekanik i euro: 1 680,0 miljoner kronor vid kursen 10,50 är 160,0 miljoner euro. Kostnadssidan ligger kvar i kronor — men virket prissätts i kronor som följer samma virkesmarknad, så valutavinsten skvätter ut delvis i högre virkespriser; den räkningen tillhör fällorna."
+        },
+        {
+          "type": "tabell",
+          "content": "CYKELRÄKNINGEN — MASSASEGMENTET (PÅHITTADE TAL): topp: 400 000 ton × 620 dollar × 10,00 = 2 480,0 Mkr − virke 840,0 − övrigt 1 392,0 = +248,0 Mkr (10,0 %) · botten: 400 000 × 480 × 10,00 = 1 920,0 Mkr − virke 672,0 (−20,0 %) − övrigt 1 392,0 = −144,0 Mkr · prisfall 22,6 % ⇒ resultatsvängning 392,0 Mkr · KONCERNEN ISOLERAT: 948,0 − 392,0 = 556,0 Mkr på 6 900,0 (marginal 8,1 %) · VALUTASLAGET: 248,0 miljoner dollar × (11,00 − 10,00) = +248,0 Mkr intäkt · PAPPER: 1 680,0 Mkr / 10,50 = 160,0 miljoner euro."
+        },
+        {
+          "type": "insight",
+          "content": "Ett prisfall på 22,6 procent räcker för att vrida segmentet från plus 248,0 till minus 144,0 — och en kronas försvagning är värd exakt segmentets toppresultat. Cykel och valuta är två olika fiender, men de biter i samma resultaträkning."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Skogsläsningens sex fällor har en gemensam rot: var och en blandar ihop två av sektorns tre mekanismer — cykeln, substansen och valutan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är samvariationen: kapitel fyra räknade ett slag i taget, men i verkligheten rör sig allt tillsammans. När massapriset faller 22,6 procent faller också virkespriserna — skogssegmentets resultat sjunker i exemplet från 310,0 till 262,0 — sågverket från 170,0 till 119,0 och papperet från 220,0 till 198,0; med massasegmentets minus 144,0 landar koncernen på 435,0 miljoner i stället för de isolerade 556,0 — ett fall på 54,1 procent från cykelresultatet, mer än hälften borta i ett enda slag. Samma prisfall, två olika koncernresultat — skillnaden är korrelationen mellan segmenten, och den är skogssektorns sanna riskportfölj. Andra fällan är genomsnittet: att multipeln på ett toppresultat ser låg ut är cykelbolagets klassiska lockelse — Lynch-varningen — och normaliseringen över en hel cykel ägs av vr-02; räkna på femårsmedel av massapriset, inte på årets. Tredje fällan är substansens egen cykel: P-till-NAV 0,800 räknades med 40 000 kronor per hektar, men skogsmarkens pris följer räntor och skogspriser; en substans upprättad i cykelns topp är en förhoppning, inte en marginal — Grahams varning. Fjärde fällan är underhållets förklädnad: avverkning under tillväxt kan snygga upp årets resultat men äter virkesförrådet, och underhållskostnader som skjuts upp i toppår brukar återkomma med ränta i bottenår — skilj vård från avkastning. Femte fällan är energins dubbelroll: svartlut, flis och sågspån är intäkter i dagens sektor, men energipriserna cyklar också — mk-10 äger energimarknaden, och ett bolag som ser ut som en skogsrörelse kan delvis vara en energiposition. Sjätte fällan är den omtalade valutasäkringen: ett bolag som säkrar hela dollarintäkten har köpt ro i kronor men också avsagt sig uppsidan — och säkringsresultatet syns på en egen rad som gör att segmentmarginalerna inte längre är jämförbara mellan bolag; läs noterna innan du jämför (km-058)."
+        },
+        {
+          "type": "insight",
+          "content": "Sex fällor, en rot: sammanblandning. Samvariationen gör isolerade slag till fiktion, genomsnittet gör toppår till fällor, substansen cyklar med räntan, underhållet förkläds till resultat, energin är halv sektor, säkringen döljer marginalen. Håll de tre mekanismerna isär — cykeln, substansen, valutan — och fällorna faller."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — skogssektorns fem frågor",
+      "intro": "Kursen samlas i fem frågor — den fullständiga avläsningen av en sektor där råvaran växer, priserna cyklar och valutan bär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: var i cykeln står massapriset — mot femårsmedel, och vad ger ett isolerat prisfall på tjugo procent i segmentresultatet med bolagets egna kostnader? Fråga två: vad äger bolaget — areal, tillväxt, avverkning och virkesförråd — och hur stor är den tysta värdestegringen per år vid gällande virkespris? Fråga tre: vad säger substansen — skogsmark till vilket hektarpris, industri till vilken bokförd värdering, netto skuld — och står aktien över eller under den egna räkningen? Fråga fyra: i vilka valutor sätts intäkterna och betalas kostnaderna, hur mycket är säkrat, och vad är en kronas rörelse värd i intäkt? Fråga fem: hur samvarierar segmenten — om massapriset faller, vilka andra segment följer med, och vad blir koncernresultatet när allt rör sig tillsammans? Den som besvarar de fem frågorna har delat upp skogsbolaget i sina tre mekanismer och kan prata om det i termer som inte blandar cykel med substans eller valuta med marginal. Detta är utbildning i att läsa och mäta en sektor, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett noterat skogsbolag i det egna universumet — kandidaterna står i bolagslistan — och hämta senaste årsredovisningen. Bygg segmenttabellen med marginaler ur segmentnoten, och skogsstatistiken — areal, tillväxt, avverkning — ur hållbarhetsdelen; räkna den tysta värdestegringen som skillnaden mellan tillväxt och avverkning gånger virkespriset. Räkna därefter cykelisoleringen: vad gör ett massaprisfall på tjugo procent i massasegmentets resultat med bolagets egna kostnadsposter? Uppskatta substansen — skogsmark, industri, nettoskuld — och ställ börsvärdet mot den. Avsluta med en halvsida: är bolaget mest en fabrik på en priscykel eller en skog med en fabrik på, och vilken av de sex fällorna är läsarens största osäkerhet? Upprepa när nästa rapport kommer — cykeln flyttar svaret."
+        },
+        {
+          "type": "insight",
+          "content": "Sektorfamiljens karta har nu sjutton steg. Skogen lär familjens äldsta läxa i ren form: tillgångar som växer, priser som cyklar och valutor som bär — samma bolag, tre verkligheter, en enda resultaträkning att lära sig läsa rätt."
+        }
+      ]
+    }
+  ]
+}

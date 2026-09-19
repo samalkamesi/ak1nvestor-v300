@@ -12,6 +12,7 @@ import {
   BRANSCH_NAMN,
   DYNAMIK_TEXT,
   DynamikPil,
+  GULD_TEXT,
   HZ_VISNING,
   KATEGORIER,
   STATUS_TEXT,
@@ -99,7 +100,7 @@ function PeerCell({ rad }: { rad: KorstabbellRad }) {
   return (
     <span className="tabular inline-flex items-baseline justify-end gap-1.5 leading-none" title={titel}>
       <span className="font-mono text-sm font-bold">{p.peerPercentil}</span>
-      <span className="rounded-full border border-gold/30 bg-gold/10 px-1.5 py-0.5 font-mono text-[9px] font-bold text-gold">
+      <span className={`rounded-full border border-gold/30 bg-gold/10 px-1.5 py-0.5 font-mono text-[9px] font-bold ${GULD_TEXT}`}>
         {peerRankText(p)}
       </span>
       <span className="sr-only">{` — peer-percentil ${p.peerPercentil} av 100, rank ${peerRankText(p)} i ${branschNamn}`}</span>
@@ -341,7 +342,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                 <span className="rounded-full border border-bull/30 bg-bull/10 px-2 py-0.5 text-bull">
                   {statusRakning.gron} gröna
                 </span>
-                <span className="rounded-full border border-gold/40 bg-gold/15 px-2 py-0.5 text-gold">
+                <span className={`rounded-full border border-gold/40 bg-gold/15 px-2 py-0.5 ${GULD_TEXT}`}>
                   {statusRakning.gul} gula
                 </span>
                 <span className="rounded-full border border-bear/30 bg-bear/10 px-2 py-0.5 text-bear">
@@ -413,7 +414,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                     <button
                       type="button"
                       onClick={() => valjSort("akm1")}
-                      className="inline-flex items-center gap-1 font-semibold hover:text-gold"
+                      className="inline-flex items-center gap-1 font-semibold hover:text-[#7a5f18] dark:hover:text-gold"
                       title="Sortera bolagen på AKM1-total inom varje bransch"
                     >
                       AKM1 {sortNyckel === "akm1" && sort === "desc" ? "▾" : sortNyckel === "akm1" && sort === "asc" ? "▴" : "↕"}
@@ -428,7 +429,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                     <button
                       type="button"
                       onClick={() => valjSort("peer")}
-                      className="inline-flex items-center gap-1 font-semibold hover:text-gold"
+                      className="inline-flex items-center gap-1 font-semibold hover:text-[#7a5f18] dark:hover:text-gold"
                       title="Sortera bolagen på peer-percentil inom varje bransch (osatt sorterar sist)"
                     >
                       Peer {sortNyckel === "peer" && sort === "desc" ? "▾" : sortNyckel === "peer" && sort === "asc" ? "▴" : "↕"}
@@ -443,7 +444,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                     <button
                       type="button"
                       onClick={() => valjSort("akm2")}
-                      className="inline-flex items-center gap-1 font-semibold hover:text-gold"
+                      className="inline-flex items-center gap-1 font-semibold hover:text-[#7a5f18] dark:hover:text-gold"
                       title="Sortera bolagen på AKM2-komposit inom varje bransch"
                     >
                       AKM2 {sortNyckel === "akm2" && sort === "desc" ? "▾" : sortNyckel === "akm2" && sort === "asc" ? "▴" : "↕"}
@@ -516,7 +517,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                               onClick={() => vaxlaBransch(grupp.bransch)}
                               aria-expanded={oppet}
                               title={oppet ? "Fäll ihop branschens bolagsrader" : "Veckla ut branschens bolagsrader"}
-                              className="inline-flex cursor-pointer items-baseline gap-1.5 font-serif text-xs font-bold uppercase tracking-[0.14em] text-gold hover:underline"
+                              className={`inline-flex cursor-pointer items-baseline gap-1.5 font-serif text-xs font-bold uppercase tracking-[0.14em] ${GULD_TEXT} hover:underline`}
                             >
                               <span aria-hidden className="text-[10px] not-italic">{oppet ? "▾" : "▸"}</span>
                               {BRANSCH_NAMN[grupp.bransch] ?? grupp.bransch}
@@ -527,7 +528,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
                               {grupp.rader.length} bolag
                             </span>
-                            <span className="rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold">
+                            <span className={`rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold ${GULD_TEXT}`}>
                               Snitt AKM1 {poangText(Math.round(snitt * 10) / 10)}
                             </span>
                             {typeof gruppMedian === "number" && (
@@ -663,7 +664,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
             <span className="flex items-center gap-1.5"><span className="font-bold text-muted-foreground">·</span> osatt</span>
             <span className="flex items-center gap-1.5 text-muted-foreground">|</span>
             <span className="flex items-center gap-1.5"><span className="font-bold text-bull">↑</span> förbättras</span>
-            <span className="flex items-center gap-1.5"><span className="font-bold text-gold">→</span> stabilt</span>
+            <span className="flex items-center gap-1.5"><span className={`font-bold ${GULD_TEXT}`}>→</span> stabilt</span>
             <span className="flex items-center gap-1.5"><span className="font-bold text-bear">↓</span> försvagas</span>
             <span className="flex items-center gap-1.5 text-muted-foreground">|</span>
             <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
@@ -725,10 +726,10 @@ function BranschRubrikMob({
       title={oppen ? "Fäll ihop branschens bolagskort" : "Veckla ut branschens bolagskort"}
       className="flex w-full flex-wrap items-baseline gap-x-2 border-b border-gold/20 pb-1 pt-2 text-left max-md:min-h-[52px]!"
     >
-      <span aria-hidden className="text-[10px] font-bold text-gold">
+      <span aria-hidden className={`text-[10px] font-bold ${GULD_TEXT}`}>
         {oppen ? "▾" : "▸"}
       </span>
-      <span className="font-serif text-xs font-bold uppercase tracking-[0.14em] text-gold">
+      <span className={`font-serif text-xs font-bold uppercase tracking-[0.14em] ${GULD_TEXT}`}>
         {BRANSCH_NAMN[bransch] ?? bransch}
       </span>
       <span className="text-[10px] uppercase tracking-wider text-muted-foreground">

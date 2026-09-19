@@ -27,6 +27,11 @@ import { intervallPlusText, spannText } from "@/lib/akm3/osakerhet";
 // Dynamik: förbättras ↑ bull · stabilt → guld · försvagas ↓ bear.
 // ═══════════════════════════════════════════════════════════
 
+// Guldtext som håller WCAG AA i båda teman (s8-u2 2026-09-19): text-gold
+// ger kontrastkvot 2,25 mot ljusa kort (bg-card/bg-paper) i light-temat —
+// mörkare guld i light, originalets guld i dark (akm1-calculator-konventionen).
+export const GULD_TEXT = "text-[#7a5f18] dark:text-gold";
+
 // ── Horisontetiketter (visningsordning = typkontraktets) ────────────────────
 
 export const HZ_VISNING: Array<{ id: Horisont; namn: string; hjalp: string }> = [
@@ -120,7 +125,7 @@ export const DYNAMIK_IKON: Record<Dynamik, string> = {
 
 const DYNAMIK_FARG: Record<Dynamik, string> = {
   forbattras: "text-bull",
-  stabilt: "text-gold",
+  stabilt: GULD_TEXT,
   forsvamras: "text-bear",
   osatt: "text-muted-foreground",
 };
@@ -361,7 +366,7 @@ export function tatKlass(t: number | null | undefined): string {
     return "border-border bg-muted/40 text-muted-foreground";
   }
   if (t >= 0.8) return "border-bull/30 bg-bull/10 text-bull";
-  if (t >= 0.5) return "border-gold/40 bg-gold/15 text-gold";
+  if (t >= 0.5) return `border-gold/40 bg-gold/15 ${GULD_TEXT}`;
   return "border-border bg-muted/40 text-muted-foreground";
 }
 
@@ -418,7 +423,7 @@ export const STATUS_TEXT: Record<StatusMarkering, { kort: string; lang: string }
 
 const STATUS_STIL: Record<StatusMarkering, string> = {
   gron: "border-bull/30 bg-bull/10 text-bull",
-  gul: "border-gold/40 bg-gold/15 text-gold",
+  gul: `border-gold/40 bg-gold/15 ${GULD_TEXT}`,
   rod: "border-bear/30 bg-bear/10 text-bear",
   osatt: "border-border bg-muted/40 text-muted-foreground",
 };

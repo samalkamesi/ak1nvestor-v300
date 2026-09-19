@@ -194,6 +194,21 @@ export function headRorByggyta(filer) {
 }
 
 /**
+ * O79 (o72:s köpost "goodHead-fallbackens destruktivitet"): avgör om
+ * felgrenens sista utväg — `git reset --hard goodHead` — ska AVSTÅS.
+ * Fallet: HEAD rör enbart icke-byggyta (o72-vakten avstod redan revert)
+ * OCH hela kedjan goodHead..HEAD rör enbart icke-byggyta. Då skiljer sig
+ * goodHead och HEAD ÅTENBARAST i data/verktyg/docs — goodHead-bygget möter
+ * exakt samma kod och faller av samma skäl (infra) — reset vore bevisat
+ * lönlös OCH destruktiv (oskyldiga leveranser kastas ur trädet,
+ * 10X-klassen). Kedjan smutsig (äldre byggyta-commit bakom en oskyldig
+ * HEAD) ⇒ reset behålls: den läker prod till bevisat deploybar kod.
+ */
+export function bordeAvstaGoodHeadReset({ rorByggyta, kedjaRorByggyta }) {
+  return rorByggyta === false && kedjaRorByggyta === false;
+}
+
+/**
  * Bevara bygg-loggar före de skrivs över (o49 Kur B): kopiera källfilerna
  * in i en målmapp med tidsstämpel-prefix. Returnerar de sparade namnen
  * (tom lista = inget gick att bevara — kallas ALDRIG kritiskt).
@@ -842,48 +857,73 @@ async function korSynk() {
         skrivAudit("prod-synk", "deploy_avbruten", "ombygge-god-lock", "patch-mode utan ny kod: även ombygget på god lock misslyckades — manuell granskning krävs");
         return;
       }
-    }
-    // O72 blind-revert-vakten: HEAD som ENBART rör icke-byggyta (verktyg/,
-    // data/, docs) kan aldrig vara gärningsmanet till ett Next-byggfel —
-    // revert avstås, ombygg på orörd HEAD skyddar både leveransen och .next.
-    let headFiler = null;
-    try {
-      headFiler = git(["show", "--name-only", "--format=", "HEAD"]).split("\n").map((s) => s.trim()).filter(Boolean);
-    } catch { /* obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }
-    const rorByggyta = headRorByggyta(headFiler);
-    logga(
-      "bygg MISSLYCKADES (se /tmp/synk-*.log) — " +
-        (rorByggyta
-          ? "HEAD rör byggyta: revert + ombygge"
-          : `HEAD rör ENBART icke-byggyta (${headFiler.length} filer) — revert AVSTÅS (o72), ombygg på orörd HEAD`)
-    );
-    try {
-      if (!rorByggyta) {
-        if (await korBygg()) {
-          ok = true;
-          logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
-          skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
-        } else throw new Error("ombygg-utan-revert failade");
-      } else {
-        git(["revert", "HEAD", "--no-edit"]);
-        if (await korBygg()) {
-          ok = true;
-          logga("revert+ombygge OK — prod bygger på föregående commit");
-          skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
-        } else throw new Error("revert-bygget failade");
-      }
-    } catch {
-      logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
+      // O79: patch-lägets lyckade ombygg lämnar felgrenen HÄR — blocket
+      // nedan (o72-vakten + revert/ombygg) förutsätter ett fortfarande
+      // FALLIT läge: genomfallning loggade "bygg MISSLYCKADES" om läkt
+      // prod och kunde `git revert HEAD` på senaste deployade src-commit
+      // = revert av duglig kod (10X-klassen). Lyckat ombygg går direkt
+      // till steg 7 (restart mot det återställda .next).
+    } else {
+      // O72 blind-revert-vakten: HEAD som ENBART rör icke-byggyta (verktyg/,
+      // data/, docs) kan aldrig vara gärningsmanet till ett Next-byggfel —
+      // revert avstås, ombygg på orörd HEAD skyddar både leveransen och .next.
+      let headFiler = null;
       try {
-        git(["reset", "--hard", goodHead]);
-        if (await korBygg()) {
-          ok = true;
-          logga("good-HEAD återställd + ombyggd");
-        } else throw new Error("good-HEAD-bygget failade");
+        headFiler = git(["show", "--name-only", "--format=", "HEAD"]).split("\n").map((s) => s.trim()).filter(Boolean);
+      } catch { /* obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }
+      const rorByggyta = headRorByggyta(headFiler);
+      logga(
+        "bygg MISSLYCKADES (se /tmp/synk-*.log) — " +
+          (rorByggyta
+            ? "HEAD rör byggyta: revert + ombygge"
+            : `HEAD rör ENBART icke-byggyta (${headFiler.length} filer) — revert AVSTÅS (o72), ombygg på orörd HEAD`)
+      );
+      try {
+        if (!rorByggyta) {
+          if (await korBygg()) {
+            ok = true;
+            logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
+            skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
+          } else throw new Error("ombygg-utan-revert failade");
+        } else {
+          git(["revert", "HEAD", "--no-edit"]);
+          if (await korBygg()) {
+            ok = true;
+            logga("revert+ombygge OK — prod bygger på föregående commit");
+            skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
+          } else throw new Error("revert-bygget failade");
+        }
       } catch {
-        logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
-        skrivAudit("prod-synk", "deploy_avbruten", "good-HEAD", "även good-HEAD-bygget misslyckades — pm2 orörd, manuell granskning krävs");
-        return;
+        // O79 (o72:s köpost "goodHead-fallbackens destruktivitet"): innan
+        // sista utvägen `reset --hard goodHead` mäts HELA kedjan
+        // goodHead..HEAD. HEAD oskyldig + kedjan ren ⇒ goodHead-bygget
+        // möter EXAKT samma kod (skillnaden är data/verktyg/docs) och
+        // faller av samma skäl — reset vore bevisat lönlös OCH destruktiv
+        // (osskyldiga leveranser kastas ur trädet, 10X-klassen). Då:
+        // avstå, HEAD orörd, nytt försök nästa poll (RAM-vakten gäller).
+        // Kedjan smutsig (äldre byggyta-commit bakom oskyldig HEAD) ⇒
+        // reset behålls: den läker prod till bevisat deploybar kod.
+        let kedjaFiler = null;
+        try {
+          kedjaFiler = git(["diff", "--name-only", `${goodHead}..HEAD`]).split("\n").map((s) => s.trim()).filter(Boolean);
+        } catch { /* obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }
+        if (bordeAvstaGoodHeadReset({ rorByggyta, kedjaRorByggyta: headRorByggyta(kedjaFiler) })) {
+          logga("ombygg på orörd HEAD misslyckades och KEDJAN goodHead..HEAD rör enbart icke-byggyta — goodHead-ombygg vore identiskt: reset AVSTÅS (o79), HEAD orörd, nytt försök nästa poll");
+          skrivAudit("prod-synk", "deploy_avstar_goodhead_reset", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "HEAD+kedja rör enbart icke-byggyta och ombygget föll: goodHead-reset bevisat lönlös (samma bygg) — avstås, HEAD orörd, nytt försök nästa poll");
+          return;
+        }
+        logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
+        try {
+          git(["reset", "--hard", goodHead]);
+          if (await korBygg()) {
+            ok = true;
+            logga("good-HEAD återställd + ombyggd");
+          } else throw new Error("good-HEAD-bygget failade");
+        } catch {
+          logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
+          skrivAudit("prod-synk", "deploy_avbruten", "good-HEAD", "även good-HEAD-bygget misslyckades — pm2 orörd, manuell granskning krävs");
+          return;
+        }
       }
     }
   }

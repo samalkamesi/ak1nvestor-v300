@@ -16,6 +16,7 @@ import { VagkurvaGraf } from "../vagkurva-graf";
 import {
   Akm1Chip,
   BRANSCH_NAMN,
+  GULD_TEXT,
   HZ_VISNING,
   RISKNIVA_TEXT,
   StatusChip,
@@ -148,7 +149,7 @@ function SnapshotSida({
     >
       <div className="flex items-center justify-between gap-2">
         <span
-          className={`text-[10px] font-bold uppercase tracking-widest ${arNu ? "text-gold" : "text-muted-foreground"}`}
+          className={`text-[10px] font-bold uppercase tracking-widest ${arNu ? GULD_TEXT : "text-muted-foreground"}`}
         >
           {etikett}
         </span>
@@ -182,7 +183,7 @@ function SnapshotSida({
       <Vagrader snapshot={snapshot} />
 
       {arNu && snapshot.notisText && (
-        <p className="mt-2 border-t border-gold/20 pt-2 text-[11px] italic leading-snug text-gold">
+        <p className={`mt-2 border-t border-gold/20 pt-2 text-[11px] italic leading-snug ${GULD_TEXT}`}>
           {snapshot.notisText}
         </p>
       )}
@@ -194,7 +195,7 @@ function SnapshotSida({
 
 const KRAV_STIL: Record<KravKontroll["status"], { punkt: string; text: string }> = {
   OK: { punkt: "bg-bull", text: "text-bull" },
-  VARNING: { punkt: "bg-gold", text: "text-gold" },
+  VARNING: { punkt: "bg-gold", text: GULD_TEXT },
   BROTT: { punkt: "bg-bear", text: "text-bear" },
 };
 
@@ -242,7 +243,7 @@ function InnehavKort({
           </span>
         </span>
         <span className="flex shrink-0 flex-col items-end gap-1">
-          <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold">
+          <span className={`rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-bold ${GULD_TEXT}`}>
             Vikt {talText(innehav.vikt * 100, 0)} %
           </span>
           {rad && <StatusChip status={rad.status} />}
@@ -304,7 +305,7 @@ function VagkurvorSektion({ innehav }: { innehav: InnehavForslag[] }) {
     <div className="rounded-xl border border-gold/30 bg-paper p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+          <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>
             Vågkurvor per horisont
           </p>
           <p className="mt-1 max-w-xl text-[11px] italic leading-relaxed text-muted-foreground">
@@ -353,7 +354,7 @@ function vagprofilMening(profil: Record<Horisont, VagKlass>): string {
 function VagprofilRad({ profil }: { profil: Record<Horisont, VagKlass> }) {
   return (
     <div className="rounded-xl border border-border bg-card p-4">
-      <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+      <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>
         Portföljens vågprofil — fem tidshorisonter
       </p>
       <div className="mt-2 grid grid-cols-5 gap-1.5">
@@ -390,7 +391,7 @@ function Tidsaxel({ datumLista, historik }: { datumLista: string[]; historik: Ar
   if (datumLista.length === 0) return null;
   return (
     <div className="rounded-xl border border-border bg-card p-4">
-      <p className="text-[10px] font-bold uppercase tracking-widest text-gold">Uppföljningens tidsaxel</p>
+      <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>Uppföljningens tidsaxel</p>
       <p className="mt-1 text-[11px] text-muted-foreground">
         Varje punkt är ett snapshot-tillfälle — månads-etikett under, kvartalsmarkör ovan.
       </p>
@@ -403,7 +404,7 @@ function Tidsaxel({ datumLista, historik }: { datumLista: string[]; historik: Ar
             return (
               <li key={d} className="flex w-16 flex-col items-center gap-1">
                 {q ? (
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-gold">{q}</span>
+                  <span className={`text-[9px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>{q}</span>
                 ) : (
                   <span className="text-[9px]">&nbsp;</span>
                 )}
@@ -487,10 +488,10 @@ export function PortfoljDjupvy({
       <div className="bg-card p-4 sm:p-6">
         {/* Riskprofil-sammanfattning */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold">
+          <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${GULD_TEXT}`}>
             Nivå: {RISKNIVA_TEXT[profil.niva] ?? profil.niva}
           </span>
-          <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold">
+          <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${GULD_TEXT}`}>
             Takt: {TAKT_TEXT[profil.takt] ?? profil.takt}
           </span>
           <span className="text-[10px] text-muted-foreground">
@@ -509,7 +510,7 @@ export function PortfoljDjupvy({
 
           {/* AK1A-not — forskningens eget ord, aldrig råd */}
           <div className="rounded-xl border border-gold/50 bg-gold/5 p-4">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gold">AK1A-not</p>
+            <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>AK1A-not</p>
             <p className="mt-1.5 text-sm leading-relaxed">{forslag.ak1aNot}</p>
           </div>
 
@@ -536,7 +537,7 @@ export function PortfoljDjupvy({
           {/* Ersättnings-panelen — ersatta aktier och kandidater med motiv */}
           {(forslag.ersattningar ?? []).length > 0 && (
             <div className="rounded-xl border border-gold/30 bg-paper p-4">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+              <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>
                 Ersättningar i forskningen
               </p>
               <p className="mt-1 text-[11px] italic text-muted-foreground">

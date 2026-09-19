@@ -2,6 +2,18 @@
 
 **Publicering = kundens beslut (R2).** Denna fil är kön som kunden ser den: varje rad är ett utkast som väntar granskning. SEO-guiderna 1–8 redovisas med fullständiga detaljer i `data/forskning/SEO-GUIDER-2026-09.md` (oförändrade där); kvartalsrapportsserien redovisas här.
 
+## Arabiska speglingar AR1–AR5 (oberoende granskade 2026-09-19 — samtliga FLYTTKLARA)
+
+| # | Fil | Originalet | KVD-dom (oberoende, rond 99) | Not |
+|---|---|---|---|---|
+| AR1 | [fastighetsaktier-…-ar.json](./fastighetsaktier-sa-analyserar-du-fastighetsbolag-ar.json) | B1 fastighetsaktier | GRÖN — 13 PASS, 0 FEL (konsoliderad kontroll) | ord 1 202 (orig 1 153), H2 7=7, korslänkar 15 identiska, sifferparitet 52/52 |
+| AR2 | [sa-analyserar-du-bankaktier-ar.json](./sa-analyserar-du-bankaktier-ar.json) | B2 bankaktier | GRÖN — 13 PASS, 0 FEL, 2 tolkade talforms-NOT | ord 1 298 (orig 1 304), H2 9=9, korslänkar 14 identiska, siffror 89/92 (diff = 1990-talet-ordform + en 14-token, vitlisteklass) |
+| AR3 | [lakemedelsaktier-…-ar.json](./lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-ar.json) | B3 läkemedelsaktier | GRÖN — 21 OK, 0 FEL (KVD-återkörning) | ord 1 212 (orig 1 197), H2 8=8, talparitet 37/37, rådverb SV+EN+AR 0 |
+| AR4 | [teknikaktier-…-ar.json](./teknikaktier-sa-analyserar-du-teknikbolag-ar.json) | B4 teknikaktier | GRÖN — 14/14 (KVD-återkörning) | ord 1 207 (orig 1 218), H2 7=7, talparitet 83/84 (vitlistad), aritmetik 7/7 |
+| AR5 | [telekomaktier-…-ar.json](./telekomaktier-sa-analyserar-du-telekom-och-mediabolag-ar.json) | B5 telekomaktier | GRÖN — 30 PASS, 0 FEL, 0 VARN (KVD-återkörning) | ord 1 307 (orig 1 273), H2 9=9, talparitet 63/63 frekvensidentiska, aritmetik 9/9, varumärkesgrind 26×3 ytor 0/0 |
+
+Fullständig rapport med NOT-tolkningar: [granskning/ar-spegling-ar1-ar5-KONTROLL-2026-09-19.md](./granskning/ar-spegling-ar1-ar5-KONTROLL-2026-09-19.md). **Publicering = kundens beslut (R2)** — fem nya arabiska guider klara att publiceras som grupp eller styckvis.
+
 ## Kvartalsrapportsserien
 
 | Kvartal | Fil | Status | Genererad av | Källtäckning | Not |

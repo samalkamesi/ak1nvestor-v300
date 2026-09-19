@@ -2,12 +2,12 @@
   "v01-forsaljningstillvaxt": {
     "slug": "v01-forsaljningstillvaxt",
     "category": "TILLVÄXT",
-    "weight": "8%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "KRITISK",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "Försäljningstillväxt",
     "summary": "Omsättningstillväxt jämfört med föregående år — den viktigaste tillväxtindikatorn.",
-    "minutes": 15,
+    "minutes": 44,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Omsättningstillväxt jämfört med föregående år — den viktigaste tillväxtindikatorn.",
@@ -27,6 +27,31 @@
         "num": 5,
         "title": "Branschjämförelse — tillväxt i kontext",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -310,6 +335,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Försäljningstillväxt mäter hur bolagets nettoomsättning rör sig mellan två\nperioder — det mest grundläggande tecknet på om efterfrågan på det bolaget\nsäljer väx",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Försäljningstillväxt mäter hur bolagets nettoomsättning rör sig mellan två\nperioder — det mest grundläggande tecknet på om efterfrågan på det bolaget\nsäljer växer, står stilla eller krymper. Tre saker gör den kritisk i AKM1:\n\n- Intäkterna är föräldern till allt annat. Vinst, utdelning och eget\n  kapital är alla barn av intäktsraden — en tillväxt som stannar av trycker\n  förr eller senare på alla andra nyckeltal.\n- Den avslöjar historien bokstavligt. I resultaträkningen står årets och\n  förra årets siffra bredvid varandra — ingen annan indikator är enklare att\n  verifiera själv.\n- Men den säger inget om kvalitet. Tillväxt kan köpas (förvärv), lånas\n  (prissänkningar) eller bokföras (engångsintäkter). Därför kräver V01 alltid\n  sällskap av marginaler (V07/V08) och diversifiering (V03) — det är så\n  modellen tänker, inte så en enskild siffra avgör."
+          },
+          {
+            "type": "insikt",
+            "content": "Intäkterna är föräldern till allt annat."
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Öppna koncernens resultaträkning (alltså inte moderbolagets — den\n   publikation som heter \"Årsredovisning\" och börjar med Förvaltningsberättelsen).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Öppna koncernens resultaträkning (alltså inte moderbolagets — den\n   publikation som heter \"Årsredovisning\" och börjar med Förvaltningsberättelsen).\n- första raden under rubriken: \"Nettoomsättning\". Två kolumner — året och\n   föregående år. Räkna: (året − förra) ÷ |förra| × 100 %.\n- Gå sedan till noten till intäkterna (ofta not 1–3, \"Nettoomsättning\"):\n   där delas intäkterna upp på Sverige/outside Sweden och ibland produktgrupper.\n- Titta sist i Förvaltningsberättelsen på \"väsentliga händelser\" — såg du\n   att tillväxten var ett förvärv? Där står det.\n- För 5-årskurvan: använd de fem senaste rapporternas intäktsrader (eller\n   nyckeltalssidan sist i redovisningen)."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Nettoomsättning i Mkr, koncernen (källa: bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Nettoomsättning i Mkr, koncernen (källa: bolagsunivers.json, Yahoo/MarketStack,\nhämtat 2026-09-03):\n\nBolag · 2022 · 2023 · 2024 · 2025 · Årstillväxt 2025:\n- Alfa Laval · 52 135 · 63 598 · 66 954 · 69 674 · +4,1 %\n- Volvo B · 473 479 · 552 252 · 526 816 · 479 183 · −9,0 %\n- Sinch · 27 722 · 28 745 · 28 712 · 27 080 · −5,7 %\n\nSkillnaden räkenskapsår vs senaste 12 mån (TTM): modellen poängsätter\ndet rullande året. Apple hade räkenskapsåren −2,8/+2,0/+6,4 % men TTM\n+16,4 % (återacceleration sent i perioden) — poängen blir olika beroende på\nvilket fönster du mäter. AKM1 använder TTM när det finns, räkenskapsåret\nannars — och dokumenterar vilket."
+          },
+          {
+            "type": "insikt",
+            "content": "Skillnaden räkenskapsår vs senaste 12 mån (TTM):"
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: kontrollera själv med kolumnerna — Alfa Laval 2023:\n(63 598 − 52 135) ÷ 52 135 = +22,0 %; 2024: (66 954 − 63 598) ÷ 63 598 =\n+5,3 %; 2025: +4,1 %. Kurvan planar ut — det är ett mönster, inte en siffra,\nsom är lärdomen. Volvo visar cykeln: +16,6 % (2023) → −4,6 % → −9,0 % —\nlastbilsbranschens svängningar syns direkt i intäktsraden. Sinch visar\nstagnationen: tre år kring 27–29 mdr."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Förvärvstillväxt ≠ organisk tillväxt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Förvärvstillväxt ≠ organisk tillväxt. Om ett bolag köper sig till 20 %\n  tillväxt har ingen affär blivit bättre — noterna om \"förvärv\" i\n  förvaltningsberättelsen avslöjar det. Fråga alltid: hur mycket växte de\n  delar som fanns förra året också?\n- Pris eller volym? +10 % kan vara 10 % fler sålda enheter (efterfrågan)\n  eller 10 % högre priser (inflation/prismakt). Noterna om volymutveckling\n  eller \"pris/mix\" skiljer dem åt — olika hållbarhet, samma siffra.\n- Valuta. Svenska exportörers intäkter i USD/EUR svänger med kurserna;\n  en \"tillväxt\" kan vara en sjunkande krona. Noten om valutafördelning visar\n  exponeringen.\n- Cykeltoppar. Volvos +16,6 % 2023 kom i toppen av en lastbilscykel —\n  hög tillväxt är som sämst som köptillfälle-indikation när den är\n  cykeldriven (utbildningsexempel på varför EN variabel aldrig räcker).\n- Engångsintäkter och IFRIC-tolkningar kan blåsa upp en enstaka radsiffra;\n  noten \"övriga intäkter\" är stället att kontrollera."
+          },
+          {
+            "type": "insikt",
+            "content": "Förvärvstillväxt ≠ organisk tillväxt."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Kärnans goldilocks-kurva (karna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kärnans goldilocks-kurva (karna.ts, scorV01 — formel (året − förra) ÷\nförra · × 100 % på TTM-värdet): tillväxten ska varken saknas eller överhettas —:\n\nTillväxt (TTM) · Poäng:\n- < −10 % · 0\n- −10 % – 0 % · 1\n- 0 – 10 % · 2\n- 10 – 20 % · 3\n- 20 – 30 % · 4\n- 30 – 45 % · 5 — ENDAST med bruttomarginal ≥ 30 %, annars 4\n- 45 – 60 % samt > 60 % · 4 (hållbarhetsrabatt)\n\nKalkylatorns AKM1-läge (RAKNARE, V01) använder en enklare rak trappa —\n≥ 30 % ⇒ 5, ≥ 20 % ⇒ 4, ≥ 10 % ⇒ 3, ≥ 0 % ⇒ 2, < 0 % ⇒ 1 — praktisk vid\nhandräkning; kärnans kurva är den som poängsätter.\n\nExempel med universumets bolag (samma poäng i båda kurvorna): Volvo TTM\n−5,7 % → 1 p · Alfa Laval TTM +7,7 % → 2 p · Atlas Copco TTM +9,1 % → 2 p ·\nSandvik TTM +23,7 % → 4 p · Kambi TTM +13,5 % → 3 p. Etiketten är KRITISK —\nen pedagogisk etikett (akm1-klassisk profil väger alla 20 indikatorer lika,\nse src/lib/akm2/vikter.ts) — och modellen kräver källrad (resultaträkningen)\nför full poäng.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch älskade 'story-stocks' med stark tillväxt. I 'One Up On Wall Street' (1989) menade han att om du kan beskriva varför ett bolag växer på en mening ('de säljer kaffe billigare'), så är det en bra tillväxthistoria. Han varnade för 'di-worsification' — tillväxt genom uppköp i okända branscher. Lynchs 'fast grower'-kriterium: 20-25% årlig tillväxt över 5+ år.",
@@ -320,11 +421,11 @@
     "slug": "v02-arr-tillvaxt",
     "category": "TILLVÄXT",
     "weight": "8%",
-    "chapterCount": 6,
-    "totalMinutes": 31,
+    "chapterCount": 11,
+    "totalMinutes": 46,
     "title": "ARR-tillväxt (återkommande intäkter)",
     "summary": "Tillväxt i Annual Recurring Revenue — intäkter som kommer tillbaka varje år automatiskt (prenumerationer, licenser, serviceavtal).",
-    "minutes": 18,
+    "minutes": 46,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Tillväxt i Annual Recurring Revenue — intäkter som kommer tillbaka varje år automatiskt (prenumerationer, licenser, serviceavtal).",
@@ -344,6 +445,31 @@
         "num": 5,
         "title": "Mästerskap — ARR som värderingsdrivare",
         "minutes": 6
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — riktlinje vid manuell poängsättning",
+        "minutes": 3
       }
     ],
     "history": {
@@ -616,6 +742,78 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "ARR (Annual Recurring Revenue) = den årliga intäkt som är kontrakterad att\nåterkomma — prenumerationer, licenser med löptid, plattformsavgifter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ARR (Annual Recurring Revenue) = den årliga intäkt som är kontrakterad att\nåterkomma — prenumerationer, licenser med löptid, plattformsavgifter. En\nkunds månadsprenumeration på 1 000 kr är 12 000 kr ARR; ett engångsförsäljt\nprojekt på 50 000 kr är noll ARR.\n\nVarför modellen bryr sig: återkommande intäkter är mer förutsägbara än\nengångsintäkter. Ett bolag där 90 % av intäkterna har förnyats varje år i\nfem år kan värderas (och planeras) på ett annat sätt än ett som måste vinna\nvarje krona på nytt varje kvartal. ARR-tillväxt mäter alltså inte bara\nhur mycket som växer, utan vilken sorts tillväxt det är.\n\nViktigt ärlighetsmål: vårt 195-bolagsuniversum redovisar inte ARR —\ndet är ett nyckeltal bara prenumerationsliknande bolag rapporterar (SaaS,\nplattformar, teleoperatörer). Universumets fält omsattningTillvaxtTTM är\nvanlig intäktstillväxt. Det är i sig en lärdom: vilka bolag ens kan\npoängsättas på V02, och vilka som faller tillbaka på V01."
+          },
+          {
+            "type": "insikt",
+            "content": "Kontrakterad att återkomma"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Förvaltningsberättelsen — sök \"ARR\", \"återkommande intäkter\",\n   \"recurring revenue\", \"prenumerationsintäkter\".",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Förvaltningsberättelsen — sök \"ARR\", \"återkommande intäkter\",\n   \"recurring revenue\", \"prenumerationsintäkter\". Svenska SaaS-bolag\n   redovisar det ofta som nyckeltal med avstämning mot nettoomsättningen.\n- Nyckeltalsavsnittet sist i årsredovisningen (eller i presentations-\n   materialet): bolagen avstämmar ARR → intäkter så du ser hur stor andel\n   av omsättningen som är återkommande.\n- Not om intäkters art — vissa bolag delar \"subskription\" vs\n   \"professional services\" redan i intäktsnoten; det är ARR:s syskonuppgift.\n- Finns inte ARR alls? Då poängsätts V02 försiktigt i modellen och V01 +\n   intäktsstabilitet (V12) får bära tillväxtbilden — så hanterar AKM1\n   ärligt saknad data i stället för att gissa."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Universumet saknar ARR-fält (se ovan) — exemplen visar principen med\nintäktsdata som FINNS, märkt vad som är ARR-kunskap och vad som är gissning:\n\n- Microsoft (",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Universumet saknar ARR-fält (se ovan) — exemplen visar principen med\nintäktsdata som FINNS, märkt vad som är ARR-kunskap och vad som är gissning:\n\n- Microsoft (MSFT): omsättning 211 915 → 245 122 → 281 724 → 331 839\n  MUSD (FY2023–2026), +17,7 % TTM. Större delen är prenumerations-\n  strukturer (företagsavtal, moln) — men exakt ARR-del redovisar inte\n  koncernen som ett tal. Övning: hittar du \"commercial recurring revenue\"\n  i deras avstämningar? Det är startpunkten.\n- Kambi (KAMBI.ST): plattformsintäkter per kundavtal — återkommande\n  till sin natur, men kundkoncentrationen gör att \"återkommande\" inte\n  betyder \"säker\" (se V03). Omsättningstillväxt TTM +13,5 %.\n- Sinch (SINCH.ST): messaging-volymer är användningsbaserade —\n  återkommande kundrelationer men INTE kontrakterad ARR i SaaS-meningen.\n  TTM +3,8 %.\n\nRäkneövning när ARR väl finns i en rapport: ARR-tillväxt = (ARR i år −\nARR förra året) ÷ ARR förra året. Net new ARR = förändringen i kronor — en ren\ntillväxträkning (ARR är per definition återkommande intäkt; engångsprojekt\nräknas aldrig in)."
+          },
+          {
+            "type": "insikt",
+            "content": "Räkneövning när ARR väl finns i en rapport:"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Att annualisera fel.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Att annualisera fel. ARR är redan årligt; multiplicera aldrig en\n  månatlig siffra med 12 om den redan är annualiserad (och tvärtom).\n- Annual consulting = inte ARR. Konsultintäkter som upprepas varje år är\n  inte kontrakterade — förnyelseombud ≠ avtal.\n- Organisk vs förvärvad ARR. En ARR som växer genom uppköp är inte\n  samma kvalitet som en som växer i befintliga kunder (net expansion).\n  Kvalitetsmåttet: net revenue retention — finns hos de bästa rapportörerna.\n- Valuta och prisindex. Många bolag justerar ARR för valutor (\"constant\n  currency\") — jämför alltid samma definition år mot år.\n- Backlog ≠ ARR. Att ha tecknade avtal som inte gått live än (backlog/\n  RPO) är framtida ARR, inte nuvarande — blanda inte terminologierna.\n- Sinch-fällan: användarbaserade volymintäkter kan se återkommande ut\n  men svänger med kundernas eget försäljningsläge — \"recurring\" i namnet,\n  cyklisk i verkligheten."
+          },
+          {
+            "type": "insikt",
+            "content": "Annual consulting = inte ARR."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — riktlinje vid manuell poängsättning",
+        "intro": "Kärnans scorV02 är OSATT i kod (ARR redovisas inte i P1:s\ndatakontrakt) — tabellen nedan är utbildningens riktlinje, inte\nkodverklighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kärnans scorV02 är OSATT i kod (ARR redovisas inte i P1:s\ndatakontrakt) — tabellen nedan är utbildningens riktlinje, inte\nkodverklighet. Källan är kvalitativ per konstruktion\n(Förvaltningsberättelsen/presentationen, 8 % vikt). Poängsättning sker på\ntillväxttakt och andel av intäkterna:\n\nARR-bild · Poäng (riktlinje):\n- ARR växer ≥ 30 % och är huvuddelen av intäkterna · 5\n- ARR växer 15–30 %, tydlig andel · 4\n- ARR växer 5–15 % · 3\n- ARR finns men står stilla / liten andel · 2\n- ARR redovisas inte / obefintlig · 1\n\nUniversumexempel: Microsoft → 3–4 p-landskapet (tillväxt hög, ARR-del inte\noffentlig som enskilt tal) · Kambi → 3 p (avtalsbaserat, koncentrerat) ·\nSinch → 2 p (användningsbaserat, ej kontrakterat). Dokumentera alltid vad\nsom står i källan — modellen belönar spårbarhet, inte gissningar.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch föredrog bolag med 'recurring revenue' — han kallade det 'shovel-ware' (programvara som gräver pengar varje år). I 'Beating the Street' (1993) beskrev han hur SaaS-bolag med 90%+ förnyelsegrad var 'license to print money'. Han jämförde ARR-tillväxt med 'same-store sales' i detaljhandel — båda mäter organisk tillväxt i existerande kundbas.",
@@ -625,12 +823,12 @@
   "v03-intaktsdiversifiering": {
     "slug": "v03-intaktsdiversifiering",
     "category": "TILLVÄXT",
-    "weight": "7%",
-    "chapterCount": 6,
-    "totalMinutes": 28,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 43,
     "title": "Intäktsdiversifiering",
     "summary": "Hur bred intäktsbasen är — beroende av en kund, en produkt, eller en marknad är riskfaktorer.",
-    "minutes": 12,
+    "minutes": 43,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Hur bred intäktsbasen är — beroende av en kund, en produkt, eller en marknad är riskfaktorer.",
@@ -650,6 +848,31 @@
         "num": 5,
         "title": "Mästerskap — koncentration som moat",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — riktlinje vid manuell poängsättning",
+        "minutes": 3
       }
     ],
     "history": {
@@ -933,6 +1156,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Intäktsdiversifiering matar på frågan: om EN kund, EN produkt eller EN\nmarknad försvinner — hur stor del av intäkterna står kvar?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Intäktsdiversifiering matar på frågan: om EN kund, EN produkt eller EN\nmarknad försvinner — hur stor del av intäkterna står kvar? Ett bolag med\ntusen kunder i tio branscher på fyra kontinenter har en helt annan\nmotståndskraft än ett bolag vars tre största kunder bär halva omsättningen.\n\nDet är tillväxtkategorins försäkring: diversifierade intäkter gör tillväxten\nmer hållbar (V01) och återkommande strukturerna mer pålitliga (V02).\nKoncentration är inte alltid fel — ett nischbolag KAN vara excellent — men\nrisken är annan, och modellen ska se den."
+          },
+          {
+            "type": "insikt",
+            "content": "Om EN kund, EN produkt eller EN marknad försvinner — hur stor del av intäkterna står kvar?"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Segmentnoten (i svenska årsredovisningar ofta not med \"Segment\" i\n   titeln): verksamhetsgrenar med intäkter per segment — börja där.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Segmentnoten (i svenska årsredovisningar ofta not med \"Segment\" i\n   titeln): verksamhetsgrenar med intäkter per segment — börja där.\n- Geografinot (ofta intill): intäkter per land/region — svensk andel\n   vs utlandet.\n- Storkundsnot / kundkoncentration: vissa branscher (försvar,\n   underleverantörer, plattformar) redovisar \"största kund andel av\n   intäkterna\" eller \"fem största kunderna\" — det är V03:s viktigaste rad.\n- Produktgruppsuppdelning i intäktsnoten eller förvaltningsberättelsens\n   avsnitt per affärsområde.\n- Tänk: diversifiering på tre axlar — kunder, produkter, geografier.\n   En axel kan vara koncentrerad utan att bolaget är det (om de andra bär)."
+          },
+          {
+            "type": "insikt",
+            "content": "Storkundsnot / kundkoncentration"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Universumets data visar strukturen indirekt — segmentdata finns i\nredovisningarna, inte i datasettet; det är läsövningens poäng.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Universumets data visar strukturen indirekt — segmentdata finns i\nredovisningarna, inte i datasettet; det är läsövningens poäng. Vad datasettet\nVISAR är kontrasten i affärsmodell:\n\n- Ericsson (ERIC-B.ST): omsättningstillväxt TTM −6,1 % men bred\n  struktur — nätverk/molnprogramvara/företagstjänster över samtliga\n  världsdelar. En svag region eller kund kan inte fälla helheten.\n  Bruttomarginal 48,1 %, P/B 3,1.\n- Kambi (KAMBI.ST): en plattform (sportsbook-motor), ett begränsat\n  antal operatörskunder — hög koncentration på båda axlarna. Samma bransch-\n  etikett (\"teknik\") som Ericsson men helt annan riskform. Bruttomarginal\n  98,9 % (rena mjukvaruintäkter), P/B 29,2 — marknaden betalar för\n  kontraktskassan, koncentrationen är motvikten.\n- Atlas Copco (ATCO-A.ST): fyra affärsområden, globalt, tusentals\n  distributörer — omsättning 168 mdr SEK med ingen enskild kund i närheten\n  av dominans (redovisar koncentration under tröskeln).\n\nRäkneövning med storkundsnot (princip): största kund 28 % av intäkterna\n→ koncentrationsmått 28 % (hög). Fem största 55 % → mycket hög. Jämför:\näven en \"bredd\" på 40 länder kan dölja att 60 % av intäkterna egentligen\när beroende av två slutkunder i värdekedjan — läs kundnot OCH geografinot\ntillsammans, aldrig var för sig."
+          },
+          {
+            "type": "insikt",
+            "content": "Räkneövning med storkundsnot (princip):"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Korrelerade segment.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Korrelerade segment. Fyra segment som alla säljer till samma\n  slutmarknad (t.ex. biltillverkare) diversifierar inte — de svänger\n  tillsammans. Fråga: vem betalar i slutändan, i varje segment?\n- Diversifiering genom uppköp. åtta produktlinjer från åtta förvärv kan\n  vara åtta separata integrationsrisker snarare än balans. Förvärvshistoriken i\n  förvaltningsberättelsen avgör.\n- Storkundsnotens tröskeldämpning. Många bolag redovisar koncentration\n  bara om den överstiger t.ex. 10 % — \"inget att redovisa\" betyder inte\n  \"fin fördelning\", bara \"under tröskeln\". (Utbildningsexempel på att läsa\n  vad en NOT INTE säger.)\n- Geografisk redovisning efter faktureringsland. Irland/Luxemburg-\n  bolag kan visa \"Irland 40 %\" som är skattevägar, inte kunder — notens\n  fotnot om hur geografi mäts är avgörande.\n- Kambi-paradoxen: hög koncentration kan vara en medveten strategi\n  (få, djupa partnerskap) med stark kontraktsbindning — indikatorn mäter\n  riskform, inte kvalitet. Poängen ska tolkas ihop med kassaflöde och\n  avtalstyper, aldrig ensam."
+          },
+          {
+            "type": "insikt",
+            "content": "Diversifiering genom uppköp."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — riktlinje vid manuell poängsättning",
+        "intro": "Källan är kvalitativ (segmentnot + storkundsnot, 6 % vikt).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Källan är kvalitativ (segmentnot + storkundsnot, 6 % vikt). Kärnans\nscorV03 är osatt i kod — tabellen är utbildningens riktlinje:\n\nIntäktsstruktur · Poäng:\n- Bred på ≥ 2 axlar (kunder, produkter, länder) utan dominans · 5\n- Bred på en axel, måttlig på en till · 4\n- Medelkoncentration (största kund/produkt 15–25 %) · 3\n- Hög koncentration på en axel (>25 %) · 2\n- Extrem koncentration (en kund/produkt bär helheten) · 1\n\nUniversumexempel: Atlas Copco → 5 p-landskapet · Ericsson → 4 p ·\nKambi → 2 p (kundaxeln, trots produktens styrka). Dokumentera vilken not\nsom bar poängen — spårbarhet är del av utbildningen.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch varnade för 'di-worsification' — bolag som växer genom att köpa upp okända verksamheter. 'Ett bolag som köper ett film-bolag när de egentligen gör stål, förstör värde.' Han föredrog 'pure plays' — bolag med en tydlig affärsidé. Lynchs regel: 'Om du inte kan beskriva bolagets affär på en mening, är det för diversifierat.'",
@@ -942,12 +1241,12 @@
   "v04-ps": {
     "slug": "v04-ps",
     "category": "VÄRDERING",
-    "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "8%",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "P/S (Price-to-Sales)",
     "summary": "Pris-till-omsättning. Hur mycket betalar du per krona försäljning? Enkel värdering för bolag som inte går med vinst.",
-    "minutes": 14,
+    "minutes": 44,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Pris-till-omsättning. Hur mycket betalar du per krona försäljning? Enkel värdering för bolag som inte går med vinst.",
@@ -967,6 +1266,31 @@
         "num": 5,
         "title": "Branschjämförelse — P/S i kontext",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -1250,6 +1574,78 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "P/S svarar på: hur många kronor betalar marknaden per krona intäkt?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "P/S svarar på: hur många kronor betalar marknaden per krona intäkt?\nBörsvärde ÷ nettoomsättning (senaste 12 mån). P/S är värderingsfamiljens\nrobustaste medlem när vinsten sviker — bolag i vändning, kris eller\ntung avskrivning kan ha negativ eller meningslös P/E men alltid en P/S.\n\nMen P/S har en inbyggd fälla som gör utbildningen viktig: en intäktskrona\när inte värd lika mycket i alla branscher. Hos ett mjukvarubolag kan 80–90\nöra av intäktskronan bli bruttovinst; hos en distributör blir det 5–15 öre.\nSamma P/S är alltså radikalt olika \"dyr\" beroende på marginalstruktur —\nmodellen hanterar det genom att V04 alltid läses tillsammans med V07/V08."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur många kronor betalar marknaden per krona intäkt?"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Börsvärde: aktiekurs × antal aktier efter rapportdagen (aktieägares\n   not i årsredovisningen visar antalet; kursen utanför rapporten).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Börsvärde: aktiekurs × antal aktier efter rapportdagen (aktieägares\n   not i årsredovisningen visar antalet; kursen utanför rapporten).\n- Nettoomsättning: koncernresultaträkningens första rad — rullande\n   tolv månader om kvartalsdata finns (senaste fyra kvartalens summa),\n   annars senaste räkenskapsåret (dokumentera vilket).\n- Dividera. Kontrollera gärna mot universumets fält (vardering saknar\n   P/S — men marknadsKapitalMdr och serier.omsattning räcker för egen\n   uträkning — det är övningen nedan).\n- Jämför inom bransch: universumets branschmedianer (teknik, industri\n   m.fl.) ger referensramen — P/S utan bransch jämförs mot ingenting."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Egen uträkning ur bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Egen uträkning ur bolagsunivers.json (börsvärde ÷ senaste årets\nnettoomsättning, hämtat 2026-09-03):\n\nBolag · Börsvärde (Mkr) · Omsättning (Mkr) · P/S · EBIT-marginal:\n- Sinch · 31 757 · 27 080 · 1,17 · 2,5 %\n- Alfa Laval · 231 545 · 69 674 · 3,32 · 16,2 %\n- Atlas Copco · 984 018 · 168 343 · 5,85 · 20,6 %\n- Microsoft · 3 689 160 (MUSD) · 331 839 · 11,12 · 45,1 %\n\nHela lektionen finns i tabellen: Sinch är \"billigast\" på P/S — och har\nsämst marginal (2,5 %); Microsoft är \"dyrast\" — och gör 45 öre EBIT per\nintäktskrona. Multipeln speglar marginalstrukturen: marknaden betalar mer\nper krona intäkt när fler öre blir vinst. Räkna själv med kolumnerna —\n31 757 ÷ 27 080 = 1,17 och vidare nedåt i tabellen."
+          },
+          {
+            "type": "insikt",
+            "content": "Hela lektionen finns i tabellen:"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Låg P/S på lågmarginalverksamhet är sällan en fyndkarta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Låg P/S på lågmarginalverksamhet är sällan en fyndkarta.\n  Distributörer/handelsbolag handlas strukturellt kring 0,1–0,5 — inte för\n  att de är glömda utan för att intäktskronan bär så lite vinst.\n- Cykeltoppens spegel. Vid konjunkturtopp är intäkterna rekordhöga och\n  P/S ser låg ut precis när marginalerna står inför fall (lastbilar,\n  byggmaterial, halvledarcyklar) — universumets Volvo-exempel (TTM-intäkter\n  ned −5,7 % efter toppår) illustrerar fönstret.\n- Förvärvsuppblåsta nämnare. Uppköpt omsättning gör nämnaren större utan\n  att aktien blev billigare per organisk krona — kontrollera organisk\n  tillväxt i förvaltningsberättelsen.\n- Engångsintäkter i nämnaren. Sålda tillgångar/engångsprojekt sväller\n  intäktsraden en gång — normalisera före jämförelse.\n- P/S ignorerar skulder. Två bolag med P/S 2 där det ena är nettokassa\n  och det andra högt belånat är inte samma affär — det är EV-måttens jobb\n  (V06 EV/EBITDA tar det)."
+          },
+          {
+            "type": "insikt",
+            "content": "Låg P/S på lågmarginalverksamhet är sällan en fyndkarta."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kalkylatorn (RAKNARE, V04): formel Börsvärde ÷ Nettoomsättning,\n\nP/S · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel med egna si",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kalkylatorn (RAKNARE, V04): formel Börsvärde ÷ Nettoomsättning,\n\nP/S · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel med egna siffror: Sinch 1,17 → 4 p · Alfa Laval 3,32 →\n2 p · Atlas Copco 5,85 → 1 p · Microsoft 11,12 → 1 p. OBS modellens\nbyggnad: låg multipel ger hög poäng MEN tolkas alltid mot marginalerna\n(V07/V08) och tillväxten (V01) — ett 5 p i V04 med 1 p i V07 är ett mönster\natt förstå (tradarens lågmarginalbolag), inte en gratis lunch. Så säger\nmetoden; vad du sedan gör är ditt beslut — vi ger utbildning, inte råd.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch använde P/S flitigt för att hitta 'fast growers' som ännu inte går med vinst. Han jämförde P/S med historiskt snitt och bransch — en P/S under 1x för ett bolag med 20% tillväxt var en röd flagga (för bra för att vara sant) eller en möjlighet. Lynchs 'PEG-ratio' (P/E / tillväxt) var en vidareutveckling av P/S-tänkandet.",
@@ -1260,11 +1656,11 @@
     "slug": "v05-pb",
     "category": "VÄRDERING",
     "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "P/B (Price-to-Book)",
     "summary": "Pris-till-bokfört värde. Hur mycket betalar du per krona av bolagets nettoförmögenhet?",
-    "minutes": 12,
+    "minutes": 44,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Pris-till-bokfört värde. Hur mycket betalar du per krona av bolagets nettoförmögenhet?",
@@ -1284,6 +1680,31 @@
         "num": 5,
         "title": "Branschjämförelse — P/B i kontext",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -1567,6 +1988,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "P/B svarar på: vad betalar marknaden per krona av bokfört eget kapital?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "P/B svarar på: vad betalar marknaden per krona av bokfört eget kapital?\nBörsvärde ÷ eget kapital (balansräkningens nedre del). Det egna kapitalet är\ndet som aktieägarna har kvar av allt bolaget äger minus allt det är skyldigt\n— bokföringens \"återstående värde\".\n\nP/B är värderingens äldsta mått och fungerar bäst där balansräkningen\nspeglar affären: banker, försäkring, kapitaltunga industrier, fastigheter.\nFör kunskapsbolag är det svagare — det viktigaste (varumärke, kod, kunnande)\nstår inte i balansräkningen. Därför denna varning redan i rubriken av\nutbildningen: P/B kräver att du förstår VAD det egna kapitalet består av."
+          },
+          {
+            "type": "insikt",
+            "content": "Vad betalar marknaden per krona av bokfört eget kapital?"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Balansräkningens eget kapital — ta koncernens summa (med\n   minoriteter om redovisat), inte moderbolagets.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Balansräkningens eget kapital — ta koncernens summa (med\n   minoriteter om redovisat), inte moderbolagets.\n- Noten om eget kapital (förändringsanalys): visar årets rörelser —\n   vinst, utdelning, återköp, omvärderingar. Här ser du OM kapitalet växer\n   organiskt eller krymper genom återköp.\n- Goodwill-andelen: noten om immateriella tillgångar — hur stor del av\n   eget kapital är goodwill? (Avgörande för tolkningen, se fällor.)\n- Börsvärde som i V04 (kurs × antal aktier).\n- Räkna och jämför inom bransch — teknikbolag mot teknikbolag, banker\n   mot banker, aldrig blandat."
+          },
+          {
+            "type": "insikt",
+            "content": "Balansräkningens eget kapital"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Ur bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur bolagsunivers.json (hämtat 2026-09-03), fält vardering.pb:\n\nBolag · P/B · ROE · Skuld/EK · Läs:\n- Sinch · 1,38 · 1,9 % · 0,35 · eget kapital rensat av nedskrivningar (2024: −6,4 mdr resultat)\n- Ericsson B · 3,09 · 26,1 % · 0,38 · normal industriell teknikkonsultstruktur\n- Atlas Copco A · 9,26 · 25,7 % · 0,34 · högt ROE driver multipeln\n- Kambi · 29,18 · 7,0 % · 0,05 · litet bokfört kapital, 98,9 % bruttomarginal\n- Apple · 44,15 · 148,8 % · 0,78 · återköpen har krympt nämnaren (EK är en restpost)\n\nTabellen är genomgången i sin helhet: fem \"P/B-tal\" som betyder fem\nolika saker. Sinch låg efter nedskrivningar (kapitalet ärligt rensat);\nApple 44 ser extremt ut tills du ser ROE 149 % — återköpsmaskinen gör\nnämnaren konstgjort liten; Kambi 29 speglar att mjukvaruvärde inte bor i\nbalansräkningen."
+          },
+          {
+            "type": "insikt",
+            "content": "Tabellen är genomgången i sin helhet:"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Återköpsfällan (Apple-fallet).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Återköpsfällan (Apple-fallet). Eget kapital krymper av återköp →\n  P/B och ROE stiger mekaniskt utan att affären förändrats. Hög P/B på\n  återköpsmaskin är INTE samma som dyr aktie; låg är inte billig.\n- Goodwillfällan (Sinch-fallet före 2024). Eget kapital uppblåst av\n  aldrig-testad köpeskilling → P/B ser rimlig ut medan reella värden var\n  lägre. Kontrollera alltid goodwill/totala tillgångar och\n  nedskrivningshistoriken. Efter nedskrivningen är P/B 1,38 \"ärligare\" —\n  men speglar då det förflutna, inte framtiden.\n- Negativt eget kapital. Bolag med tunga återköp och utdelningar kan\n  driva EK under noll → P/B oläsligt (negativt). Det är inte en\n  \"gratis\" aktie — måttet är bara ej applicerbart; byt till P/E, EV/EBIT.\n- Bank-specifikt: för banker är P/B huvudmåttet (balansräkningen ÄR\n  affären) men tolkas mot substansvärde och ROE-mål i redovisningen.\n- Omvärderingsreserver (fastigheter) kan göra EK känsligt för\n  värderingsantaganden — notens fotnoter bär sanningen.\n- Märk: modellen ger aldrig P/B ensam sista ordet — 6 % vikt, läses\n  med V04 och lönsamhet (V09 ROE kopplar direkt: P/B = P/E × ROE-algebra)."
+          },
+          {
+            "type": "insikt",
+            "content": "Återköpsfällan (Apple-fallet)."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kalkylatorn (RAKNARE, V05): formel Börsvärde ÷ Eget kapital,\n\nP/B · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel: Sinch 1,38 → ",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kalkylatorn (RAKNARE, V05): formel Börsvärde ÷ Eget kapital,\n\nP/B · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel: Sinch 1,38 → 4 p · Ericsson 3,09 → 2 p · Atlas Copco\n9,26 → 1 p · Kambi 29,18 → 1 p · Apple 44,15 → 1 p. Och här visar\nutbildningen sin poäng om mekanismens gräns: Apple får 1 p trots att\nbolaget gör 148,8 % ROE — modellen straffar alltså återköpsdriven\nkapitalkrympning om man läser V05 blint. AKM1:s lösning: tolka V05 alltid\ntillsammans med V09 (ROE) och goodwill-noten — det är modellens sätt att\nsäga samma sak som fällorna ovan. Så fungerar metoden; plattformen lär\nut metoden, den ger aldrig råd om vad du ska göra (2007:528).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch använde P/B sällan — han menade att moderna tjänste- och teknikbolag har litet bokfört värde. 'P/B fungerar för banker och försäkringsbolag, men inte för mjukvara.' Han föredrog P/E och tillväxt. För finansbolag använde Lynch P/B < 2x som en grov screen.",
@@ -1576,12 +2073,12 @@
   "v06-ev-ebitda": {
     "slug": "v06-ev-ebitda",
     "category": "VÄRDERING",
-    "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "8%",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "EV/EBITDA",
     "summary": "Företagsvärde-till-EBITDA. Den mest kompletta värderingsmultiplen — justerar för skulder, kassa och kapitalstruktur.",
-    "minutes": 16,
+    "minutes": 44,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Företagsvärde-till-EBITDA. Den mest kompletta värderingsmultiplen — justerar för skulder, kassa och kapitalstruktur.",
@@ -1601,6 +2098,31 @@
         "num": 5,
         "title": "Branschjämförelse — EV/EBITDA i kontext",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel — genomräknat (pedagogiskt exempel, tydligt konstruerat)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -1884,6 +2406,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "EV/EBITDA svarar på frågan: vad kostar hela företaget — inte bara aktierna —\ni förhållande till den kassa verksamheten genererar före avskrivningar,\nränta och s",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "EV/EBITDA svarar på frågan: vad kostar hela företaget — inte bara aktierna —\ni förhållande till den kassa verksamheten genererar före avskrivningar,\nränta och skatt? Tre byggstenar:\n\n- EV (Enterprise Value) = börsvärde + räntebärande skulder − kassa.\n  Tänk att du köper hela bolaget: du betalar för alla aktier OCH tar över\n  alla lån — men kassan i kassaskåpet får du behålla. EV är priset för\n  hela maskinen, aktiekursen är bara priset för ratten.\n- EBITDA = rörelseresultat + avskrivningar. Kassan verksamheten spyr\n  ur före bokföringsmässiga kostnader. Därför kan man jämföra bolag med\n  olika skuldnivåer (räntan är borta), olika skattesituationer (skatten\n  är borta) och olika åldrar på maskinparken (avskrivningarna är borta).\n- Multipeln = EV ÷ EBITDA. \"Maskinen kostar X års kassaflöde.\"\n\nVarför inte bara P/E? P/E straffar hårt belånade bolag (räntan äter\nresultatet) och belönar skuldfria — EV/EBITDA jämför själva affären på\nlika villkor. Det är därför köpare av hela bolag (och deras banker)\npratar i EV/EBITDA."
+          },
+          {
+            "type": "insikt",
+            "content": "Vad kostar hela företaget — inte bara aktierna — i förhållande till den kassa verksamheten genererar före avskrivningar, ränta och skatt?"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Börsvärde: antal aktier (noten om eget kapital, sista sidan) ×\n   aktiekurs (börsen, samma datum som resten av hämtningen).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Börsvärde: antal aktier (noten om eget kapital, sista sidan) ×\n   aktiekurs (börsen, samma datum som resten av hämtningen).\n- Räntebärande skulder: balansräkningen — leta efter \"Lånekostnads-\n   förande/långfristiga skulder\" + kortfristiga till banker. OBS: inte\n   leverantörsskulder (de är verksamhet, inte finansiering).\n- Kassa: \"Kassa och bank + kortfristiga placeringar\" i omsättnings-\n   tillgångarna.\n- Rörelseresultat: resultaträkningens rad före finansiella poster.\n- Avskivningar: kassaflödesanalysens rad \"Avskrivningar\" (den posten\n   adderas tillbaka — därav \"DA\" i namnet).\n- Räkna: (1 + 2 − 3) ÷ (4 + 5)."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel — genomräknat (pedagogiskt exempel, tydligt konstruerat)",
+        "intro": "Ett bolag med börsvärde 100 mdr, räntebärande skulder 20 mdr, kassa 5 mdr:\n\n- EV = 100 + 20 − 5 = 115 mdr\n- Rörelseresultat 12 mdr + avskrivningar 8 mdr = EBITD",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett bolag med börsvärde 100 mdr, räntebärande skulder 20 mdr, kassa 5 mdr:\n\n- EV = 100 + 20 − 5 = 115 mdr\n- Rörelseresultat 12 mdr + avskrivningar 8 mdr = EBITDA 20 mdr\n- EV/EBITDA = 115 ÷ 20 = 5,75× — bolaget kostar knappt sex års\n  driftkassa.\n\nSamma räkning på två verkliga strukturer ur universumet (komponenterna\nur respektive årsredovisning, multiplikatorn illustrativ): ett kraftigt\nbelånat bolag kan ha lägre P/E-rekommendation men HÖGRE EV/EBITDA än ett\nskuldfritt — för att skulderna syns i EV men inte i aktiekursen. Det är\nhela poängen: multipeln som inte kan luras av balansräkningsstrukturen.\n\nVärdefallehålet — modellens viktigaste lekktion här: EV/EBITDA under\n4× ser billigt ut. Men kurvan ger 5 poäng ENDAST om V19 (kassatäckningen)\nockså är minst 3 poäng — det vill säga minst 30 månaders kassatäckning\nenligt V19:s trappsteg — annars max 3 poäng. Ett bolag som\när \"billigt\" kan vara billigt av ett skäl: skrumpande affär, föråldrad\nmaskinpark (lågt EV för att ingen vill ha den), eller bransch i struktur-\nnedgång. Billighet utan kvalitet är en fälla — modellen bygger in den\nkontrollen."
+          },
+          {
+            "type": "insikt",
+            "content": "EV = 100 + 20 − 5 = 115 mdr"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- EBITDA är inte kassaflöde.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- EBITDA är inte kassaflöde. Den ignorerar att maskiner slits och\n  måste ersättas. Ett kapitalintensivt bolag (stål, sjöfart) ser billigt\n  ut i EV/EBITDA just för att avskrivningarna — den verkliga kostnaden —\n  är borträknade. Jämför alltid med kapitalbehovet.\n- Negativ EBITDA ⇒ multipeln meningslös (modellen ger 0 p) — en\n  förlustverksamhet kan inte prissättas i \"års kassa\".\n- Skuldfällan i EV: kontrollera alltid vad som räknas som räntebärande\n  — leasing (IFRS 16) flyttar in stora poster i skulderna och kan förstöra\n  jämförbarheten mellan år och bolag.\n- Dataskrap: multipeln är känslig för fel i kassa/skuld-hämtningen —\n  ett tecken fel i kassan flyttar hela värdet. Verifiera alltid komponent-\n  ernas summa mot bolagets egen presentation av \"netto skuldsättning\"."
+          },
+          {
+            "type": "insikt",
+            "content": "EBITDA är inte kassaflöde."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (poangEvEbitda, R2 §6 konvex kurva):\n\nEV/EBITDA · Poäng:\n- negativ EBITDA · 0\n- > 20× · 1\n- 14–20× · 2\n- 10–14× · 3\n- 6–10× · 4\n- 4–6× · 5\n- < 4× · 5 ",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (poangEvEbitda, R2 §6 konvex kurva):\n\nEV/EBITDA · Poäng:\n- negativ EBITDA · 0\n- > 20× · 1\n- 14–20× · 2\n- 10–14× · 3\n- 6–10× · 4\n- 4–6× · 5\n- < 4× · 5 ENDAST om V19 ≥ 3 — annars max 3 (värdefallehålet)\n\nÄrlighetslektionen — V06 är OSATT i kärnan idag: datakontraktet\n(P1) saknar fältet evEbitda (endast evEbit finns, se V28 Earnings\nyield). Kärnan vägrar gissa: att lägga EV på EBIT i stället för EBITDA\nskulle systematiskt missgynna kapitalintensiva bolag — EBIT är lägre än\nEBITDA, multipeln ser dyrare ut än den är och poängen blir för låg — så\nindikatorn lämnas osatt tills kontraktet utökas additivt. Kurvan ovan är\nimplementerad och aktiveras direkt då. Så bygger man en modell som inte ljuger\nom sin data — en design som är värd att lära sig lika mycket som själva\nmultipeln.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "Ärlighetslektionen — V06 är OSATT i kärnan idag:"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch använde EV/EBITDA sällan — han föredrog P/E och fri kassaflöde. Han varnade för att EBITDA döljer kapitalintensitet: 'Ett bolag som måste investera halva EBITDA i maskiner varje år är inte värt samma som ett bolag som inte behöver det.' Lynch föredrog 'owner earnings' (Buffetts term) = fri kassaflöde.",
@@ -1893,12 +2491,12 @@
   "v07-bruttomarginal": {
     "slug": "v07-bruttomarginal",
     "category": "LÖNSAMHET",
-    "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "KRITISK",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "Bruttomarginal",
     "summary": "Bruttovinst / omsättning. Hur mycket finns kvar efter att bolaget betalat för det sålda?",
-    "minutes": 13,
+    "minutes": 44,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Bruttovinst / omsättning. Hur mycket finns kvar efter att bolaget betalat för det sålda?",
@@ -1918,6 +2516,31 @@
         "num": 5,
         "title": "Branschjämförelse — bruttomarginal i kontext",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -2201,6 +2824,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Bruttomarginalen är det som blir kvar av varje hundralapp i försäljning\nnär varan/tjänsten är levererad — före personal, marknadsföring, kontor\noch finansiellt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bruttomarginalen är det som blir kvar av varje hundralapp i försäljning\nnär varan/tjänsten är levererad — före personal, marknadsföring, kontor\noch finansiellt. Formellt: (Nettoomsättning − rörelsens kostnader exkl.\npersonalkostnader) ÷ nettoomsättning.\n\nVarför är den KRITISK i AKM1? För att den är prisets och varans makt\ni en enda siffra:\n\n- Hög bruttomarginal = kunden betalar mycket mer än varan kostar att\n  producera — varumärke, teknik eller switch-kostnad ger prutmån.\n- Låg bruttomarginal = produkten är en råvara i kundens ögon; konkurrensen\n  sker på pris, och varje kostnadssvängning slår rakt igenom.\n- Marginalen är starten på ALL lönsamhet: en hög bruttomarginal kan\n  förvaltas bort av dålig organisation, men en låg kan ALDRIG förvaltas\n  fram till hög netto. Taket sätts i första raden."
+          },
+          {
+            "type": "insikt",
+            "content": "Det som blir kvar av varje hundralapp i försäljning när varan/tjänsten är levererad"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- I koncernens resultaträkning: posterna \"Nettoomsättning\" och\n   \"Kostnad sålda varor och tjänster\" (KSVT) — eller \"Rörelsens kostnader\"\n   där personalkostnad",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- I koncernens resultaträkning: posterna \"Nettoomsättning\" och\n   \"Kostnad sålda varor och tjänster\" (KSVT) — eller \"Rörelsens kostnader\"\n   där personalkostnader redovisas separat i not.\n- Räkna: (Nettoomsättning − KSVT) ÷ Nettoomsättning.\n- Noten till rörelsekostnaderna delar upp: material, personalkostnad,\n   övriga rörelsekostnader — använd den för att se vad som verkligen är\n   varukostnad.\n- VARNING för banker, förvaltnings- och fastighetsbolag: deras\n   resultaträkningar har ingen KSVT-struktur alls — bruttomarginal är ett\n   okänt begrepp (se fällorna).\n- För trenden: nyckeltalssidan (5 år) eller fem årsredovisningar."
+          },
+          {
+            "type": "insikt",
+            "content": "Koncernens resultaträkning"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Bruttomarginal, koncernen (källa: bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bruttomarginal, koncernen (källa: bolagsunivers.json, Yahoo/MarketStack,\nhämtat 2026-09-03; universummedianen 47,8 %):\n\nBolag · Bruttomarginal · AKM1-poäng:\n- Evolution · 100,0 % · 4*\n- Kambi · 98,9 % · 4*\n- Atlas Copco · 42,2 % · 3\n- Assa Abloy · 43,1 % · 3\n- Alfa Laval · 36,3 % · 3\n- Volvo B · 24,4 % · 1\n- Sinch · 18,4 % · 1\n- Swedbank · 0,0 % · — (branschfälla, se nedan)\n\n\\* Över 70 % ger 5 p ENDAST om 5-årigt snitt också överstiger 70 % —\nse trösklarna."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: Evolution och Kambi är mjukvara/plattform — varan\nkostar nästan noll att leverera en gång byggd (100 % resp. 98,9 %).\nAtlas Copco och Assa Abloy är premium-industri (42–43 %): ingen 100-%-vara,\nmen prutmån genom teknik och varumärke. Volvo (24,4 %) och Sinch (18,4 %)\nvisar volym och hård prispress. Samma siffra, tre olika affärsmodeller —\ndärför läser modellen nivån men kräver sammanhang."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Jämför ALDRIG bruttomarginal mellan branscher som vore det en ranking.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Jämför ALDRIG bruttomarginal mellan branscher som vore det en ranking.\n  En handelskedja på 25 % kan vara magnifik och en programvara på 85 %\n  medioker — marginalens mening avgörs av branschens struktur. (Universumet\n  saknar branschmedian i datakontraktet — modellen använder absolut nivå\n  och dokumenterar det; ett medvetet och återanvänt designval.)\n- Banker och förvaltningsbolag: 0 % är SAKNAD-data, inte dålig affär.\n  Swedbank, Nordea och Handelsbanken visar 0,0 % i tabellen ovan — deras\n  resultaträkningar har ingen KSVT. Industrivärden/Kinnevik visar 100/0 %\n  av samma skäl. Lär dig se strukturen FÖRE siffran.\n- Uthållighet bevisas inte av ett år. Platt topp i kurvan: över 70 %\n  ger 5 p bara om 5-årssnittet håller — en ensam lyckoåring räcker inte.\n- Redovisningsval: klassificering av personalkostnader och \"övriga\n  rörelsekostnader\" kan flytta marginalen flera enheter mellan bolag —\n  noterna är din vän.\n- Mix-effekter: säljer bolaget en lågmarginalvolym vid sidan av\n  högmarginalkärnan kan totalsiffran dölja att kärnan krymper — leta\n  segmentuppdelningar i noterna."
+          },
+          {
+            "type": "insikt",
+            "content": "Jämför ALDRIG bruttomarginal mellan branscher som vore det en ranking."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (scorV07, R2 §6 konkav kurva med platt topp):\n\nBruttomarginal · Poäng:\n- < 15 % · 0\n- 15–25 % · 1\n- 25–35 % · 2\n- 35–50 % · 3\n- 50–70 % · 4\n- > 70 % ·",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (scorV07, R2 §6 konkav kurva med platt topp):\n\nBruttomarginal · Poäng:\n- < 15 % · 0\n- 15–25 % · 1\n- 25–35 % · 2\n- 35–50 % · 3\n- 50–70 % · 4\n- > 70 % · 5 ENDAST om 5-årigt snitt > 70 % — annars 4\n\nExempel ur tablån: Sinch 18,4 % → 1 p · Volvo 24,4 % → 1 p · Alfa Laval\n36,3 % → 3 p · Atlas Copco 42,2 % → 3 p · Kambi 98,9 % → 4 p (5 kräver\nbevisat 5-årssnitt). Vikten KRITISK — V07 är Lönsamhets-kategorins\ntyngsta variabel och modellens tidigaste moat-indikator (V13-väggens\ngrundmaterial).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch älskade hög bruttomarginal. I 'One Up On Wall Street' menade han att bruttomarginal >50% indikerar ett bolag med prissättningsmakt — 'de kan höja priset utan att förlora kunder'. Han jämförde bruttomarginaler inom branschen: 'Om alla andra har 20% och detta bolag har 60%, har de en moat.'",
@@ -2210,12 +2909,12 @@
   "v08-ebitda-marginal": {
     "slug": "v08-ebitda-marginal",
     "category": "LÖNSAMHET",
-    "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "8%",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "EBITDA-marginal",
     "summary": "EBITDA / omsättning. Hur mycket finns kvar efter driftskostnader (men före ränta, skatt, avskrivningar)?",
-    "minutes": 14,
+    "minutes": 44,
     "xp": 100,
     "level": "Intermediär",
     "learn": "EBITDA / omsättning. Hur mycket finns kvar efter driftskostnader (men före ränta, skatt, avskrivningar)?",
@@ -2235,6 +2934,31 @@
         "num": 5,
         "title": "Operativ hävstång — den dolda motorn",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel — genomräkning på universumtal",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -2518,6 +3242,86 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "EBITDA-marginalen mäter hur stor del av varje hundralapp i försäljning\nsom blir rörelsekassa — rörelseresultatet plus avskrivningar, delat med\nnettoomsättningen",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "EBITDA-marginalen mäter hur stor del av varje hundralapp i försäljning\nsom blir rörelsekassa — rörelseresultatet plus avskrivningar, delat med\nnettoomsättningen. Den svarar på: hur bra är affären på att omvandla\nintäkter till drift, när vi stängar ögonen för finansiering (ränta),\nskatt och bokföringsmässigt slitage (avskrivningar)?\n\nTre användningar:\n\n- Jämföra driftens lönsamhet mellan bolag med olika kapitalstruktur —\n  samma neutralitet som EV/EBITDA men från resultat-sidan.\n- Se driftens andel av strukturen: bruttomarginalen visar varans makt,\n  EBITDA-marginalen visar hur mycket organisationen (personal, marknad,\n  lokal) kostar av den makten. Gapet mellan V07 och V08 är\n  organisationskostnaden i procent av omsättningen.\n- Bro mot kassaflödet: EBITDA närmar sig verklig kassa före arbetande\n  kapital och investeringar — men kommer aldrig fram helt (se fällorna)."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur stor del av varje hundralapp i försäljning som blir rörelsekassa"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Rörelseresultat (EBIT): resultaträkningen, raden \"Rörelseresultat\"\n   — efter rörelsekostnader, före finansiella poster och skatt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Rörelseresultat (EBIT): resultaträkningen, raden \"Rörelseresultat\"\n   — efter rörelsekostnader, före finansiella poster och skatt.\n- Avskrivningar: kassaflödesanalysen, posten \"Avskrivningar/\n   nedskrivningar\" (ibland delad i flera rader — summera dem).\n- Räkna: (Rörelseresultat + Avskrivningar) ÷ Nettoomsättning.\n- Notera att noten till rörelsekostnaderna ofta redovisar\n   avskrivningarna också (personalkostnad/avskrivning/övrigt) — bra\n   korskälla.\n- IFRS 16-läsning: leasingavskrivningar och leasingräntor ligger i\n   olika rader — bestäm en princip och håll den konsekvent mellan bolagen\n   du jämför."
+          },
+          {
+            "type": "insikt",
+            "content": "Noten till rörelsekostnaderna"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel — genomräkning på universumtal",
+        "intro": "Universumet redovisar EBIT-marginal (rörelseresultat/omsättning);\nEBITDA-steget läggs till ovanpå med avskrivningarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Universumet redovisar EBIT-marginal (rörelseresultat/omsättning);\nEBITDA-steget läggs till ovanpå med avskrivningarna. Genomräkning för\nAlfa Laval: EBIT-marginal 16,2 % + avskrivningar (maskinpark och\n goodwill, typiskt 4–5 %-enheter av omsättningen för processindustri) ⇒\nEBITDA-marginal ≈ 20–21 % (komponenten avskrivningar ur årsredovis-\nningens kassaflödesanalys — ta alltid bolagets egen post, inte ett antagande).\n\nEBIT-marginaler ur universumet (hämtat 2026-09-03) — avståndet mellan\naffärsmodeller i en kolumn (universummedian 20,8 %):\n\nBolag · EBIT-marginal · Bild:\n- Industrivärden · 99,9 % · förvaltning (fälla, se nedan)\n- Evolution · 57,8 % · mjukvara/kasino — extrem drift\n- Swedbank · 51,4 % · bank (fälla — EBIT säger lite)\n- Atlas Copco · 20,6 % · premium-industri på medianen\n- Sandvik · 19,7 % · samma klass\n- Alfa Laval · 16,2 % · + D&A ⇒ ~20–21 % EBITDA\n- Assa Abloy · 16,9 % · + D&A ⇒ ~18–19 % EBITDA\n- Volvo B · 10,4 % · volym-industri\n- Ericsson · 12,5 % · projekt/tjänster\n- Sinch · 2,5 % · prispressad plattform\n\nGapövningen: Atlas Copco brutto 42,2 % → EBIT 20,6 %: organisationen\näter hälften av varans makt — normalt för industri. Evolution brutto\n100 % → EBIT 57,8 %: varan kostar noll, hela slaget står om\nkundanskaffning och drift. Läs alltid V07 och V08 TILLSAMMANS."
+          },
+          {
+            "type": "insikt",
+            "content": "EBITDA-marginal ≈ 20–21 %"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- EBITDA målar \"före slitage\" — men slitage är verkligt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- EBITDA målar \"före slitage\" — men slitage är verkligt. Kapital-\n  intensiva bolag (gruvor, rederier, stål) ser extra lönsamma ut i\n  EBITDA just för att ersättningsinvesteringarna är osynliga. En hög\n  EBITDA-marginal med evigt stort CAPEX-behov är därför ingen sann\n  lönsamhet.\n- EBIT ≠ EBITDA — knappast värt att säga, men modellen tar det på allvar:\n  att lägga EBIT-marginaler på EBITDA-trösklar underskattar systematiskt\n  (därför är V08 osatt i kärnan, se nedan).\n- IFRS 16 (leasing): flyttar leasing från kostnad till avskrivning+\n  ränta — EBITDA-marginalen steg \"gratis\" vid övergången 2019 utan att\n  en enda affär förbättrats. Jämför aldrig tvärs över övergången utan att\n  justera.\n- Banker/förvaltningsbolag: Swedbanks \"51,4 %\" och Industrivärdens\n  \"99,9 %\" är inte lönsamhet utan resultaträkningens struktur — samma\n  branschfälla som V07.\n- Engångsposter: restruktureringskostnader och företagsförvärvsvinster\n  kan båda ligga kvar i EBIT — noten om jämförelsestörande poster är\n  skyldigheten att läsa."
+          },
+          {
+            "type": "insikt",
+            "content": "EBITDA målar \"före slitage\" — men slitage är verkligt."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "V08 är OSATT i kärnan idag — med dokumenterad orsak: datakontraktet\nhar lonksamhet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V08 är OSATT i kärnan idag — med dokumenterad orsak: datakontraktet\nhar lonksamhet.ebitMarginal (EBIT), inte EBITDA. Kärnan vägrar lägga\nEBIT på EBITDA-trösklar: systematisk underskattning av alla kapital-\nintensiva bolag vore resultatet. Precis som V06 aktiveras indikatorn när\nkontraktet utökas additivt (avskrivningar/omsättning i källa = fältet som\nsaknas). Tröskelfamiljen som väntar är LINJÄRA steg, inte konkava: kärnan\ndokumenterar ≥ 25 % ⇒ 5 p · ≥ 15 % ⇒ 4 p · ≥ 10 % ⇒ 3 p · ≥ 5 % ⇒ 2 p ·\nannars 1 p — samma trappa som kalkylatorns RAKNARE.\n\nDetta är Fas 2:s kanske renaste exempel på modellens dataheder: hellre\nen tom rad med förklaring än en snygg siffra som ljuger om vad den mäter.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "V08 är OSATT i kärnan idag — med dokumenterad orsak:"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch föredrog bolag med EBITDA-marginal >20% — 'de tjänar pengar på att andas'. Han varnade för bolag där EBITDA-marginal är nära 0% men som 'snart blir lönsamma'. 'Ett bolag som inte är lönsamt idag kommer förmodligen inte vara det imorgon heller.'",
@@ -2527,12 +3331,12 @@
   "v09-roe": {
     "slug": "v09-roe",
     "category": "LÖNSAMHET",
-    "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 29,
+    "weight": "8%",
+    "chapterCount": 11,
+    "totalMinutes": 44,
     "title": "ROE (Return on Equity)",
     "summary": "Avkastning på eget kapital. Hur mycket vinst skapar bolaget per krona eget kapital?",
-    "minutes": 15,
+    "minutes": 44,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Avkastning på eget kapital. Hur mycket vinst skapar bolaget per krona eget kapital?",
@@ -2552,6 +3356,31 @@
         "num": 5,
         "title": "Hållbar ROE — över tid och genom cykeln",
         "minutes": 4
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -2835,6 +3664,78 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "ROE (Return On Equity) mäter hur mycket vinst bolaget skapar per krona\nsom ägarna har satt in: resultat efter skatt ÷ snittet av eget kapital\n(årets början + sl",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ROE (Return On Equity) mäter hur mycket vinst bolaget skapar per krona\nsom ägarna har satt in: resultat efter skatt ÷ snittet av eget kapital\n(årets början + slut / 2). Det är ägarens egen ränta på pengarna — den\nenda siffra som i slutänden betalar utdelningar och kursutveckling.\n\nMen ROE har en inbyggd hävstångsmöjlighet som gör den farlig att läsa ensam:\n\n- Samma affär kan visa 10 % eller 25 % ROE beroende på hur mycket av\n  den finansierats med lån — vinsten delas på ett mindre eget kapital.\n- Därför kräver AKM1:s V09 en hävstångskontroll (via V10) och\n  uthållighetsbevis (5-årssnitt) innan toppoäng: ROE skall komma från\n  affären, inte från banken.\n- Kurvans nollpunkt ligger vid kapitalkostnaden (≈ 9 % i modellen): en\n  ROE under vad kapitalet kostar är värdeförstöring — bolaget hade lika\n  gärna kunnat lämna pengarna på banken."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur mycket vinst bolaget skapar per krona som ägarna har satt in"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Resultat efter skatt: resultaträkningens näst sista rad (\"Årets\n   resultat\", koncernen).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Resultat efter skatt: resultaträkningens näst sista rad (\"Årets\n   resultat\", koncernen).\n- Eget kapital: balansräkningen, \"Summa eget kapital\" — TA FRÅN BÅDA\n   åren (modellen använder snittet; nyemissioner och utdelningar för-\n   ändrar posten under året, snittet ger rätt nämnare).\n- Räkna: Resultat ÷ ((EK förra året + EK året) ÷ 2).\n- Kontrollera i noten till eget kapital hur posten rörde sig:\n   vinst, utdelning, emission, omvärdering — en ROE på emissionstämd\n   nämnare är inte samma prestation.\n- 5-årssnitt: nyckeltalssidan eller fem redovisningar."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "ROE, koncernen (källa: bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ROE, koncernen (källa: bolagsunivers.json, hämtat 2026-09-03; universum-\nmedianen 15,3 %):\n\nBolag · ROE · Skuld/EK · AKM1-poäng:\n- Mastercard · 241,2 % · 4,40 · 4 — ej 5: hävstången\n- Boeing · 173,5 % · 7,91 · 4 — samma mönster\n- Apple · 148,8 % · 0,78 · 4 — 5-årsbevis saknas i källan\n- Ericsson · 26,1 % · 0,38 · 4\n- Atlas Copco · 25,7 % · 0,34 · 4\n- Volvo B · 20,9 % · 1,47 · 3\n- Alfa Laval · 19,1 % · 0,46 · 3\n- Handelsbanken · 12,8 % · — · 2\n- Sinch · 1,9 % · 0,35 · 0 — värdeförstöring\n- Kinnevik · −21,6 % · 0,07 · 0"
+          },
+          {
+            "type": "insikt",
+            "content": "Träningssekvens — hävstångens tre ansikten:"
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens — hävstångens tre ansikten: Mastercard 241 % ROE är\nen magnifik affär OCH en kraftigt belånad sådan (skuld/EK 4,40): modellen\nger 4, inte 5 — toppoäng kräver skuld/EK ≤ 2. Apples 148,8 % med låg\nskuld (0,78) ändå \"bara\" 4: källan saknar bevisat 5-årssnitt över 35 %\n(uthållighetsvillkoret). Och Kinneviks −21,6 %: negativ avkastning på\nägarnas kapital = 0 poäng oavsett allt annat. Tre bolag, tre olika\nskäl till samma poäng — så läser en modell som vägrar låta en siffra\nfälla domslutet."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Hävstångens optik: ROE stiger med skulden tills den gör det —\n  sedan kommer cykeln.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Hävstångens optik: ROE stiger med skulden tills den gör det —\n  sedan kommer cykeln. Läs ALDRIG ROE utan skuld/EK (V10) vid sidan;\n  modellen beräknar dem i par (V10 först, som hävstångskontroll).\n- Nära nog räcker inte: en ROE på 8,5 % är inte \"nästan bra\" — den är\n  under kapitalkostnaden och alltså värdeförstöring (0 p i modellen).\n  Tröskeln är en klippa, inte en backe.\n- Emissionstämda nämnare: nytt eget kapital sent på året sänker ROE\n  mekaniskt utan att affären förändrats — därför SNITTET av årets början\n  och slut.\n- Återköpsmaskin: bolag som köper tillbaka aktier krymper eget kapital\n  och blåser upp ROE aritmetiskt — kolla noten om förändringar i eget\n  kapital.\n- Bankers ROE är fungerande men med annan hävstångslogik (balans-\n  räkningen är MYCKET skuldfylld per definition) — bank-ROE jämförs med\n  banker, inte med industrier."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (scorV09, R2 §6 konkav kurva med hävstångskontroll):\n\nROE · Poäng:\n- < 9 % · 0 (värdeförstöring oavsett nivå)\n- 9–12 % · 1\n- 12–18 % · 2\n- 18–25 % · 3",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (scorV09, R2 §6 konkav kurva med hävstångskontroll):\n\nROE · Poäng:\n- < 9 % · 0 (värdeförstöring oavsett nivå)\n- 9–12 % · 1\n- 12–18 % · 2\n- 18–25 % · 3\n- 25–35 % · 4\n- > 35 % · 5 ENDAST om 5-årssnitt > 35 % OCH skuld/EK ≤ 2 — annars 4\n\nExempel ur tablån: Sinch 1,9 % → 0 · Handelsbanken 12,8 % → 2 ·\nAlfa Laval 19,1 % → 3 · Ericsson 26,1 % → 4 · Mastercard 241 % → 4\n(hävstång 4,40 > 2). Källfält: lonksamhet.roe + moat.roeMedel5ar +\nstabilitet.skuldEgenkapital — tre tabeller, en dom.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch föredrog bolag med stabil hög ROE (>15%) men varnade för extremt hög ROE uppnådd genom skulder. 'Ett bolag med 30% ROE och 200% skuldsättning är inte bättre än ett med 15% ROE och 0% skuld.' Lynch kombinerade ROE med skuldsättningsgrad — 'Du kan inte förstå ROE utan att veta hur den finansieras.'",
@@ -2844,12 +3745,12 @@
   "v10-skuldsattningsgrad": {
     "slug": "v10-skuldsattningsgrad",
     "category": "STABILITET",
-    "weight": "5%",
-    "chapterCount": 6,
-    "totalMinutes": 28,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 43,
     "title": "Skuldsättningsgrad",
     "summary": "Hur mycket skuld bolaget har jämfört med eget kapital. Hög skuld = hög risk i kriser.",
-    "minutes": 12,
+    "minutes": 43,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Hur mycket skuld bolaget har jämfört med eget kapital. Hög skuld = hög risk i kriser.",
@@ -2869,6 +3770,31 @@
         "num": 5,
         "title": "Nettokassa som moat",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -3152,6 +4078,86 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Skuldsättningsgraden mäter balansen mellan lånade och ägarpengar i\nbolaget: skulder och övriga förpliktelser ÷ eget kapital.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Skuldsättningsgraden mäter balansen mellan lånade och ägarpengar i\nbolaget: skulder och övriga förpliktelser ÷ eget kapital. 1,0× betyder\natt banken och ägarna finansierar hälften var; 0,5× att ägarna står för\ntvå tredjedelar.\n\nVarför en hel indikator för det? För att skulden är cykelns förstärkare\ni båda riktningarna:\n\n- I uppgång: lånad krona som tjänar mer än räntan lyfter ROE (se V09 —\n  därför beräknas V10 FÖRE V09 i modellen, som hävstångskontroll).\n- I nedgång: samma lån är en fast kostnad som måste betalas även när\n  affären sviker — skulden bestämmer hur djupt ett bolag kan falla.\n- Skuldsättningsgraden är alltså inte \"bra lågt, dumt högt\" utan ett\n  riskmått: hur stor del av bolagets struktur som är okänslig för\n  hur affären går (banken får betalt före ägaren, alltid)."
+          },
+          {
+            "type": "insikt",
+            "content": "Balansen mellan lånade och ägarpengar i bolaget"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Eget kapital: balansräkningens \"Summa eget kapital\" (inkl.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Eget kapital: balansräkningens \"Summa eget kapital\" (inkl.\n   minoritetsintresse i koncernen — annars blir graden missvisande).\n- Skulder och övriga förpliktelser: \"Summa skulder och övriga\n   förpliktelser\" — hela posten, inte bara de räntebärande (graden mäter\n   balansstrukturen; för EV-räkningar används de räntebärande, se V06 —\n   olika frågor, olika delar av skulderna).\n- Räkna: Summa skulder ÷ Summa eget kapital.\n- Kolla räntetäckningsgraden i noten om finansiella poster (rörelse-\n   resultat ÷ finansiella kostnader) — graden säger hur mycket lån,\n   räntetäckningen hur lätt de bärs.\n- Kontrollfråga i förvaltningsberättelsen: finns kända\n   återbetalningsprofiler/refinansieringsdatum de närmaste åren?"
+          },
+          {
+            "type": "insikt",
+            "content": "Skulder och övriga förpliktelser:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Skuld/EK (källa: bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Skuld/EK (källa: bolagsunivers.json, hämtat 2026-09-03; universum-\nmedianen 0,52×):\n\nBolag · Skuld/EK · AKM1-poäng · Bild:\n- Nintendo · 0,00 · 5 · skuldfri kassamaskin\n- Beiersdorf · 0,01 · 5 · i princip skuldfri\n- Evolution · 0,02 · 5 · utdelar överskottet\n- Industrivärden · 0,03 · 5 · förvaltning med kassabuffert\n- Alfa Laval · 0,46 · 5 · konservativ industri\n- Volvo B · 1,47 · 3 · finansieringsbolag i gruppen\n- Boeing · 7,91 · 1 · krisbelånat\n- Simon Property · 5,04 · 1 · fastighets-/REIT-struktur\n- Mastercard · 4,40 · 1 · medveten belåning"
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: skuldfria kassamaskiner som Nintendo/Evolution/\nBeiersdorf (0,00–0,01×) har EN struktur som tål vad som helst — men fråga\nalltid vad skuldfriheten\nKOSTAR (outnyttjad hävstång är avkastning som lämnas på bordet när\naffären är starkare än räntan). Volvo 1,47×: lastbilsgruppen bär en\nfinansieringsrörelse (kundkrediter) som mekaniskt lyfter graden — inte\nsamma risk som 1,47× ren driftsskuld. Boeing 7,91×: det som händer när\ncykeln och krisen träffar samman. Samma siffra betyder olika saker —\nnoterna avgör."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Negativt eget kapital ⇒ osatt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Negativt eget kapital ⇒ osatt. Är EK under noll saknar graden\n  mening (modellen sätter osatt, inte 0 — ett dokumenterat val: negativ\n  nämnare ger ingen ranking). Kolla alltid EK-tecknet FÖRE du delar.\n- Banker och finansbolag: deras balansräkning ÄR skulder (inlåning)\n  — graden blir 8–15× av struktur, inte av misstag. Universumet lämnar\n  dem osatta; jämför banker med kapitaltäckningsmått istället.\n- IFRS 16: leasingåtaganden är numera skuld i balansräkningen —\n  bolag med stora butiks-/flygplansleasingar \"förvärrades\" mekaniskt\n  2019. Jämför aldrig över övergången utan not.\n- Räntan på skulden avgör bärigheten: 3× till 2 % ränta kan vara\n  lugnare än 1,5× till 8 % — komplettera alltid med räntetäckning och\n  löptid.\n- Skuldfrihet är inte gratis i alla lägen: ett starkt lönsamt bolag\n  som vägrar låna när räntan ligger under dess avkastning underpresterar\n  mot sin potential — därför är V10 ett riskmått (0,5×-gränsens\n  5-poäng) och inte en dygdens medalj."
+          },
+          {
+            "type": "insikt",
+            "content": "Negativt eget kapital ⇒ osatt."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (raknaV10, rak linjär tröskel ur kalkylatorn):\n\nSkuld/EK · Poäng:\n- < 0,5× · 5\n- 0,5–1× · 4\n- 1–2× · 3\n- 2–3× · 2\n- ≥ 3× · 1\n- negativt EK · osatt\n\nEx",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (raknaV10, rak linjär tröskel ur kalkylatorn):\n\nSkuld/EK · Poäng:\n- < 0,5× · 5\n- 0,5–1× · 4\n- 1–2× · 3\n- 2–3× · 2\n- ≥ 3× · 1\n- negativt EK · osatt\n\nExempel ur tablån: Evolution 0,02× → 5 · Alfa Laval 0,46× → 5 (medianen\n0,52× hamnar alltså precis under 4-poängsstrecket) · Volvo 1,47× → 3 ·\nMastercard 4,40× → 1 · Boeing 7,91× → 1. Och nyckelkopplingen: V10\nberäknas FÖRST i kärnan — dess värde är hävstångskontrollen som avgör\nom V09:s ROE får ge toppoäng (skuld/EK ≤ 2 krävs för 5 p). Två\nindikatorer, en dom — det är modellens sätt att lära ut att avkastning\noch risk aldrig läses var för sig.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "V10 beräknas FÖRST i kärnan"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch undvek bolag med skuldsättningsgrad >100% (mer skuld än eget kapital). 'Skuld är som en svänghjul — det förstärker vinsten i goda tider och förlusten i dåliga.' Han föredrog bolag med net cash (mer kassa än skuld). Lynchs regel: 'Om du måste välja mellan två bolag med samma ROE, välj det med mindre skuld.'",
@@ -3161,12 +4167,12 @@
   "v11-likviditet": {
     "slug": "v11-likviditet",
     "category": "STABILITET",
-    "weight": "5%",
-    "chapterCount": 6,
-    "totalMinutes": 28,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 43,
     "title": "Likviditet (Kvick)",
     "summary": "Kan bolaget betala sina kortfristiga skulder? Kvickkvot = (omsättningstillgångar − varulager) / kortfristiga skulder.",
-    "minutes": 11,
+    "minutes": 43,
     "xp": 100,
     "level": "Nybörjare",
     "learn": "Kan bolaget betala sina kortfristiga skulder? Kvickkvot = (omsättningstillgångar − varulager) / kortfristiga skulder.",
@@ -3186,6 +4192,31 @@
         "num": 5,
         "title": "Arbetskapital och kapitalomsättningshastighet",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel — övningstal och verkliga strukturer",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -3469,6 +4500,78 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Likviditeten mäter luftgapet mellan vad bolaget har inom räckhåll och vad\ndet måste betala inom ett år: omsättningstillgångar ÷ kortfristiga\nskulder.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Likviditeten mäter luftgapet mellan vad bolaget har inom räckhåll och vad\ndet måste betala inom ett år: omsättningstillgångar ÷ kortfristiga\nskulder. Kan bolaget betala leverantörer, löner och korta lån som förfaller\n— utan att själv tvingas sälja något i hast?\n\nDen klassiska formen är kvickkvoten, där varulagret räknas bort eller\nned: i en kris säljs lager långsamt och med rabatt, medan kassa, bank och\nkundfordringar är det som är kvickt nära pengar. Kvoten 1,0 betyder\njämna svar; 1,5 betyder buffert; 0,7 betyder att korten måste skötas\naktivt varje vecka.\n\nSkillnaden mot grannindikatorerna — tre frågor, tre svar:\n- V10 Skuldsättningsgrad: hur är strukturen finansierad på lång sikt?\n- V11 Likviditet: klarar bolaget året som kommer?\n- V19 Kassatäckning: bränner bolaget kassan — finns nyemissionsrisk?"
+          },
+          {
+            "type": "insikt",
+            "content": "Luftgapet mellan vad bolaget har inom räckhåll och vad det måste betala inom ett år"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Omsättningstillgångar i balansräkningen: varulager + kundfordringar\n   + kassa och bank + kortfristiga placeringar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Omsättningstillgångar i balansräkningen: varulager + kundfordringar\n   + kassa och bank + kortfristiga placeringar.\n- Kortfristiga skulder: leverantörsskulder + kortfristig del av lån +\n   obetalda kostnader och skatter. (Posten heter \"Kortfristiga skulder och\n   övriga förpliktelser\" i många svenska redovisningar.)\n- Räkna kvickkvoten: (omsättningstillgångar − varulager) ÷ kortfristiga\n   skulder. Kalkylatorns källrad lyder \"både åren\" — jämför även förra\n   året: en stigande kortfristig låneandel är en tidig signal.\n- Not om kundfordringar: äldresalden och individuell värdering —\n   fordringar som är gamla eller osäkra är inte riktiga pengar.\n- Förvaltningsberättelsen: bekräftade kassakreditlinjer — outnyttjad\n   kredit är likviditetens andra hälft och står inte i balansräkningen."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel — övningstal och verkliga strukturer",
+        "intro": "Universumets datakontrakt saknar balansräkningsdetaljer (därför är V11\nosatt i modellen, se sektion 5) — exemplen blir träningsräkning:\n\nÖvningstal A (industrib",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Universumets datakontrakt saknar balansräkningsdetaljer (därför är V11\nosatt i modellen, se sektion 5) — exemplen blir träningsräkning:\n\nÖvningstal A (industribolag, mdr): kassa 4,2 + kundfordringar 8,1 +\nkortfristiga placeringar 1,3 = 13,6; varulager 6,0; kortfristiga skulder\n9,8. Kvick = 13,6 ÷ 9,8 = 1,39. Med lagret (kassakvoten) = 19,6 ÷ 9,8\n= 2,0 — skillnaden mellan kvoterna är lagrets andel: 31 %.\n\nÖvningstal B (projektbolag, mdr): kassa 1,1 + certifierade fordringar\n4,9 = 6,0; kortfristiga skulder 8,7. Kvick = 0,69 — men noten visar\natt 3,4 av fordringarna är pågående projekt med fakturering vid milstolpar:\ngapet är timing, inte förlust. Likviditet läses alltid tillsammans med\nnoterna.\n\nVerkliga strukturer att känna igen (kvalitativ läsning):\n- Dagligvaruhandel (Axfood-klassen i universumet): kunderna betalar i\n  hyllan innan leverantörerna betalas — negativt rörelsekapital är en\n  styrka, inte en kris.\n- Förskottsmodeller (prenumerationsaffärer): kassan kommer först,\n  kvicken ser god ut även med tunn marginal."
+          },
+          {
+            "type": "insikt",
+            "content": "Övningstal A (industribolag, mdr):"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Kvick under 1,0 är inte automatisk nöd — dagligvaruhandel och\n  förskottsaffärer driver den medvetet lågt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Kvick under 1,0 är inte automatisk nöd — dagligvaruhandel och\n  förskottsaffärer driver den medvetet lågt. Fråga alltid varför gapet\n  ser ut som det gör.\n- Kvick över 1,0 är inte automatisk hälsa — svällande, osäkra\n  kundfordringar räknas med i nämnarens motpost: notens äldstanalys är\n  sanningen, inte balansraden.\n- Säsong och balansdagen: detaljhandeln efter julhelgen har kassatopp;\n  projektbolag före milstolpe har botten. En dag gör inte ett år.\n- Banker och finansbolag: deras balansräkning är in- och utlåning —\n  kvickkvoten är meningslös där (samma undantag som V10).\n- IFRS 16: leasingåtaganden finns bland de kortfristiga skulderna —\n  butiks- och flygbolag ser trängre ut än före 2019."
+          },
+          {
+            "type": "insikt",
+            "content": "Kvick under 1,0 är inte automatisk nöd"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V11 bär 6 % vikt i kategorin Stabilitet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V11 bär 6 % vikt i kategorin Stabilitet. Kärnan (karna.ts rad 304)\ndokumenterar sitt eget val: *\"V11 Likviditet (kvickkvot) — saknas i\ndatakontraktet: osatt\"* — scorV11() lämnar osatt eftersom universumets\ndatafält inte bär balansräkningsdetaljer. Poängsättningen är manuell:\n läs balansräkningen och sätt poängen själv.\n\nFörslagstrappa vid manuell poängsättning (ett resonemangsmönster att\nutgå ifrån — inte modellens kod): kvick ≥ 2,0 ⇒ 5 · 1,5–2,0 ⇒ 4 ·\n1,0–1,5 ⇒ 3 · 0,5–1,0 ⇒ 2 · < 0,5 ⇒ 1 — och justera för branschens\narbetskapitalstruktur (handel vs projekt) innan poängen sätts.\n\nSyskopplingen: V10 äger den långsiktiga strukturen, V19 äger\nvarningslampan — V11 är skillnaden mellan att överleva ett halvår och att\nbara se bra ut på pappret.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch kontrollerade alltid likviditeten — 'Ett bolag kan vara lönsamt på papperet men dö om det inte kan betala sina räkningar.' Han föredrog kvickkvot > 1.5. Lynch varnade för bolag med kvickkvot < 1.0: 'De lever farligt nära kanten.'",
@@ -3478,12 +4581,12 @@
   "v12-intaktsstabilitet": {
     "slug": "v12-intaktsstabilitet",
     "category": "STABILITET",
-    "weight": "5%",
-    "chapterCount": 6,
-    "totalMinutes": 28,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 43,
     "title": "Intäktsstabilitet",
     "summary": "Hur förutsägbara intäkterna är. Återkommande (ARR) > kontrakt > engångs.",
-    "minutes": 13,
+    "minutes": 43,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Hur förutsägbara intäkterna är. Återkommande (ARR) > kontrakt > engångs.",
@@ -3503,6 +4606,31 @@
         "num": 5,
         "title": "Stabilitet som moat",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -3786,6 +4914,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Intäktsstabiliteten mäter hur jämnt intäkterna ruller år från år —\nräknat som variationskoefficienten (CV): standardavvikelsen ÷ medelvärdet\nför nettoomsättning",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Intäktsstabiliteten mäter hur jämnt intäkterna ruller år från år —\nräknat som variationskoefficienten (CV): standardavvikelsen ÷ medelvärdet\nför nettoomsättningen över åren. Låg CV är en förutsägbar affär: budgeten\nhåller, banken sover gott, utdelningen planeras. Hög CV är cykel,\nprojektberoende eller affär i omvandling.\n\nCV är skalfri — samma mått fungerar för Truecallers drygt 2 mdr som\nför Volvos drygt 500 mdr. Källraden i modellen: \"5 års nettoomsättning i\nårsredovisningen — hur jämn kurvan?\" (universumet bär fyra bokförda år,\n2022–2025 — beräkningen använder de år som finns)."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur jämnt intäkterna ruller år från år"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Nettoomsättningen per år: resultaträkningens topp per bokfört år +\n   jämförelseåret — femårsöversikten står ofta sist i årsredovisningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Nettoomsättningen per år: resultaträkningens topp per bokfört år +\n   jämförelseåret — femårsöversikten står ofta sist i årsredovisningen.\n- Räkna medelvärdet, sedan standardavvikelsen, sedan kvoten\n   (kalkylblad: =STDAV.P(...)/MEDEL(...) — populationens standardavvikelse,\n   samma sätt som modellen räknar; STDAV.S delar med n−1 och ger för hög CV).\n- Segmentnoten avgör VILKEN del av bolaget som svänger — koncernens\n   total-CV kan vara låg medan ett segment dansar.\n- Kontrollera jämförbarheten: förvärv, avyttringar och\n   räkenskapsårslutbyten böjer serien (se fällorna).\n- Kontrollfrågan: är kurvan jämn och pekar någonstans? CV ser inte\n   riktning — en jämn nedåtlutande kurva får också låg CV."
+          },
+          {
+            "type": "insikt",
+            "content": "Nettoomsättningen per år:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "CV egna beräkningar på bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "CV egna beräkningar på bolagsunivers.json-serierna (hämtat 2026-09-03;\nintäkter i mdr kr avrundat; poäng enligt kärnans trösklar, sektion 5):\n\nBolag · Intäkter 2022–2025 · CV · AKM1-poäng:\n- H&M · 224 / 236 / 234 / 228 · 2,2 % · 5\n- Sinch · 28 / 29 / 29 / 27 · 2,5 % · 5\n- Truecaller · 2 / 2 / 2 / 2 · 4,0 % · 5\n- Nordea · 10 / 12 / 12 / 12 · 5,9 % · 4\n- Volvo B · 473 / 552 / 527 / 479 · 6,5 % · 4\n- Axfood · 73 / 81 / 84 / 89 · 6,9 % · 4\n- Atlas Copco · 141 / 173 / 177 / 168 · 8,4 % · 4\n- Handelsbanken · 50 / 62 / 62 / 57 · 8,6 % · 4\n- Alfa Laval · 52 / 64 / 67 / 70 · 10,6 % · 3\n- SSAB B · 129 / 119 / 103 / 96 · 11,5 % · 3\n- AstraZeneca · 44 / 46 / 54 / 59 · 11,7 % · 3\n- Kinnevik B · 0 / 1 / 0 / 0 · 167,7 % · 1"
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: H&M och Sinch är platta kurvor (mode i volym,\nmeddelanden i volym). Volvo visar lastbilscykeln — 2023-toppen syns i\ntalet. SSAB är läran: monotont nedåt fyra år och ändå poäng 3 — CV\nser inte riktning, bara svängning. AstraZeneca är motsatsen: stegig\nuppgång straffas lika hårt som stegig nedgång. Kinnevik är\nförvaltningsbolagsfallet — \"intäkten\" är dotterbolagsflöden, och på små\nabsoluta tal exploderar CV."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- CV är blind för riktning: en jämnt sjunkande affär får fin poäng.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- CV är blind för riktning: en jämnt sjunkande affär får fin poäng.\n  Läs alltid CV tillsammans med V01 Försäljningstillväxt.\n- Små absoluta tal ger extrem CV: 0/1/0/0 är ingen volatilitet på\n   riktigt — det är ett holdingbolags bokföring.\n- Förvärv böjer serien: organisk 60 + köpt 40 ser ut som tillväxt-\n  svängning. Noten om förvärv avgör.\n- Valuta: utlandsintäkter i annan valuta svänger kurvan utan att\n  affären gjort det — not om valutaeffekter.\n- Osatt-grenar: saknas serier, eller är medelvärdet noll eller\n  negativt, lämnar kärnan V12 osatt (CV är då meningslöst).\n- Koncern-CV döljer segmentdans: alltid segmentnoten före slutsats."
+          },
+          {
+            "type": "insikt",
+            "content": "CV är blind för riktning:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (karna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (karna.ts, scorV12 — dokumenterad rak tröskel på CV för\nserier.omsattning):\n\nCV (omsättningen) · Poäng:\n- ≤ 5 % · 5\n- ≤ 10 % · 4\n- ≤ 20 % · 3\n- ≤ 35 % · 2\n- > 35 % · 1\n- inga serier / icke-positiv medel · osatt\n\nMotiveringstexten anger CV i procent och antal år — \"Omsättningens\nvariationskoefficient X % över N år\". Syskopplingen: V12 är\nStabilitetsparets andra halva mot V10 — V10 frågar hur finansieringen\nbär en svacka, V12 hur sannolikt svackan är.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch älskade bolag med 'predictable earnings' — stabil intäktsbas. Han menade att förutsägbarhet är värd en premie. 'Ett bolag där du vet vad nästa kvartal ger är värt mer än ett där du gissar.' Lynch föredrog konsumentvaror och läkemedel (stabila) över cykliska (volatila).",
@@ -3796,11 +5000,11 @@
     "slug": "v13-patent-ip",
     "category": "MOAT",
     "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Patent & Immateriella rättigheter",
     "summary": "Patent, varumärken, licenser, know-how — juridiskt skydd mot konkurrenter.",
-    "minutes": 14,
+    "minutes": 48,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Patent, varumärken, licenser, know-how — juridiskt skydd mot konkurrenter.",
@@ -3820,6 +5024,31 @@
         "num": 5,
         "title": "Bransch-jämförelse — IP-moatens olika ansikten",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Exempel — fyra sorters IP-läsning (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -4103,6 +5332,86 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Patent och immateriella rättigheter är en vallgrav byggd av tid: en\nperiod av exklusivitet där konkurrenterna hålls borta från tekniken,\nkunskapen eller uttryck",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Patent och immateriella rättigheter är en vallgrav byggd av tid: en\nperiod av exklusivitet där konkurrenterna hålls borta från tekniken,\nkunskapen eller uttrycket — och där FoU-kostnaden får tid att tjänas in.\n\nMoat-kategorins fråga är aldrig \"finns innovation här?\" — det gör den\nnästan överallt. Frågan är: hur länge hålls konkurrenterna borta, och\nvad kostar det dem att ta sig över? Ett starkt patent är ett svar. En\nfabrik är inte det (kan byggas), och goodwill är definitivt inte det\n(det är ett bokfört förvärvspris, se fällorna)."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur länge hålls konkurrenterna borta, och vad kostar det dem att ta sig över?"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Not om immateriella anläggningstillgångar — läs POSTERNA, inte\n   summan: patent, licenser, utvecklingskostnader i programvara,\n   rättsverkliga avgifter — oc",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Not om immateriella anläggningstillgångar — läs POSTERNA, inte\n   summan: patent, licenser, utvecklingskostnader i programvara,\n   rättsverkliga avgifter — och goodwill som separat rad.\n- Förvaltningsberättelsens FoU-avsnitt: inriktning, antal patent\n   (bolagets egna uppgift — källkritik!), pipeline om läkemedel/biotech.\n- Resultaträkningens FoU-kostnad per år — inputen. Moat är vad\n   inputen producerar, inte kostnaden i sig.\n- Licens- och royaltyintäkter: hos vissa bolag är IP hela affären —\n   intäktsraden \"royalties/IPR licensing\" är det renaste beviset som\n   finns (se Ericsson-exemplet nedan).\n- IFRS-regeln som gör noten sned: internt skapade patent och\n   varumärken får INTE bokföras som tillgång — noten visar bara\n   förvärvad och (i vissa IFRS-länder) aktivt utvecklad IP. Den organiska\n   IP-ytan är osynlig i balansräkningen och måste läsas i berättelsen."
+          },
+          {
+            "type": "insikt",
+            "content": "Not om immateriella anläggningstillgångar"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Exempel — fyra sorters IP-läsning (ur universumets 195)",
+        "intro": "- Ericsson — IP som intäktsrad: standardpatent (SEP) i mobilteknik\n  licensieras till hela branschen; noterna om IPR-royalties visar en\n  affär där patentportfö",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Ericsson — IP som intäktsrad: standardpatent (SEP) i mobilteknik\n  licensieras till hela branschen; noterna om IPR-royalties visar en\n  affär där patentportföljen själv säljs. Lärdomen: IP kan vara\n  produkt, inte bara skydd.\n- AstraZeneca — IP som klocka: läkemedelspatent löper mot ett\n  slut, utlöpningen öppnar för generika, och pipelinen i\n  förvaltningsberättelsen är bolagets framtid. Här läses V13 alltid med\n  kalender — och gränsar till V18 Regulatoriska.\n- Atlas Copco — IP som teknikportfölj: patent på kompressorteknik\n  kombinerat med tjänste- och reservdelsflöden gör vallgraven bredare\n  än patenttiden själv.\n- Nintendo — IP som figuruniversum: rättigheterna till karaktärer\n  och världar är upphovsrätt + varumärke (övergång till V14) — moat som\n  aldrig \"löper ut\" som ett patent gör."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvensen: samma indikator, fyra mekanismer — licensierat\n(Ericsson), utlöpningstyrt (AstraZeneca), teknikportfölj (Atlas Copco),\nevig rättighet (Nintendo). Poängen sätts efter mekanismens hållbarhet,\ninte efter IP-summans storlek."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Patentantal är inte skydd: kvalitet, patentfamiljens storlek och\n  vilka jurisdiktioner som täcks avgör — ett amerikanskt patent skyddar\n  inte Europa.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Patentantal är inte skydd: kvalitet, patentfamiljens storlek och\n  vilka jurisdiktioner som täcks avgör — ett amerikanskt patent skyddar\n  inte Europa.\n- Patent utlöper: grovt 20 år från ansökan (läkemedel har\n  förlängningsvägar) — räkna alltid kvarvarande tid, inte bestånd.\n- Goodwill liknar IP i noten men är inget skydd: det är köpepriset\n  på förvärvade bolag — en goodwill-tyngd balansräkning säger att\n  moaten köpts, inte att den finns.\n- FoU-kostnad är input; marginalen är output: bolag som lägger\n  enorma belopp på FoU utan marginalförbättring bygger ingen vallgrav\n  (koppla V07 Bruttomarginal).\n- \"Patent pending\" är noll skydd — ansökan ger ingen exklusivitet\n  förrän den beviljats."
+          },
+          {
+            "type": "insikt",
+            "content": "Patentantal är inte skydd:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V13 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt\nur noten om immateriella tillgångar + förvaltningsberättelsen (källraden\ni kalkylatorn).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V13 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt\nur noten om immateriella tillgångar + förvaltningsberättelsen (källraden\ni kalkylatorn). Universumets moat-proxyfält (bruttoMarginalMedel5ar,\nbruttoMarginalSpread5ar, roeMedel5ar — ifyllda hos 51 av 195 bolag)\nfångar moatens ekonomiska signatur: en hög och stabil bruttomarginal\növer fem år är vad en fungerande IP-vallgrav ser ut i siffror.\n\nIndelningslogiken: V07 Bruttomarginal är beviset, V13 är förklaringen\n— när marginalen är stark OCH noten visar varför (patent, licenser,\ndata), då bär poängen. Utan förklaring kan marginalen vara cykel\n(se V12) eller pristäkt tillfällighet.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "V07 Bruttomarginal är beviset, V13 är förklaringen"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch såg patent som en moat men varnade för att förlita sig enbart på dem. 'Patent löper ut — moats ska vara eviga.' Han föredrog varumärken och nätverkseffekter över patent. Lynch menade att patent är värdefulla i pharma (7-year exklusivitet) men mindre värdefulla i tech (snabb innovation).",
@@ -4112,12 +5421,12 @@
   "v14-varumarke": {
     "slug": "v14-varumarke",
     "category": "MOAT",
-    "weight": "5%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Varumärke & Kundlojalitet",
     "summary": "Styrkan i varumärket — kan bolaget ta högre pris än konkurrenterna?",
-    "minutes": 12,
+    "minutes": 48,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Styrkan i varumärket — kan bolaget ta högre pris än konkurrenterna?",
@@ -4137,6 +5446,31 @@
         "num": 5,
         "title": "Bransch-jämförelse — svenska varumärkes-moats",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Exempel — starkt namn, olika styrka (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -4409,6 +5743,78 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Ett varumärke är en moat bara om det får betalt: kunderna betalar\nmer, kommer tillbaka oftare eller förlåter fel snabbare hos detta bolag\nän hos nästa.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett varumärke är en moat bara om det får betalt: kunderna betalar\nmer, kommer tillbaka oftare eller förlåter fel snabbare hos detta bolag\nän hos nästa. Det som kan mätas är inte namnet utan prissättnings-\nkraften — skillnaden mellan vad kunden betalar här och vad hen hade\nbetalt hos en namnlös konkurrent med samma produkt.\n\nDärför är V14 den enda moat-indikatorn där svaret delvis står i\nresultaträkningen: en bruttomarginal (V07) som ligger varaktigt över\nbranschens är varumärkets kvitto."
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Förvaltningsberättelsen: positioneringsorden (\"premium\",\n   \"ledande\", \"första valet\") — påståenden att pröva, inte tro.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Förvaltningsberättelsen: positioneringsorden (\"premium\",\n   \"ledande\", \"första valet\") — påståenden att pröva, inte tro.\n- Kundnoten: koncentration (koppla V03 Intäktsdiversifiering) och\n   hur stor del av intäkterna som är återkommande.\n- Marknadsandelar: bolagets egna uppgifter + branschorganisationer;\n   andelen säger hur starkt namnet står i köpögonblicket.\n- Marginalen mot branschmedianen: datasetets nyckeltalssidor —\n   varumärket som håller bruttomarginalen över branschmedianen år efter\n   år har bevisat sin kraft.\n- Marknadsföringskostnaden: stor och växande reklambudget med\n   sjunkande marginal är ett varumärke som hyr sin plats, inte äger den.\n- IFRS-noten igen: internt byggt varumärke bokförs ALDRIG —\n   varumärkesposter i noten är köpta. Det organiska varumärket läses i\n   marginalen och i kundnoten, inte i balansräkningen."
+          },
+          {
+            "type": "insikt",
+            "content": "Marginalen mot branschmedianen:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Exempel — starkt namn, olika styrka (ur universumets 195)",
+        "intro": "- H&M — det kända varumärket utan premiumpris: enorm\n  varumärkesmedvetenhet, men mode-prissättning där marginalen pressas\n  av konkurrens.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- H&M — det kända varumärket utan premiumpris: enorm\n  varumärkesmedvetenhet, men mode-prissättning där marginalen pressas\n  av konkurrens. Lärdomen: känt ≠ starkt; varumärket bär trycket, inte\n  prissättningen.\n- Nintendo — figuruniversum som återkommande systemvara: marginaler\n  som bevisar att kunden betalar för namnet på asken, inte bara\n  innehållet.\n- Beiersdorf (Nivea) — konsumentvaru-varumärke i generationer: lugn,\n  stabil bruttomarginal är moatens bruksform, generation efter generation.\n- Mastercard — B2B-varumärket: förtroendet (\"det här kortet\n  fungerar överallt\") är produkten; nätverkets styrka förstärker namnet\n  (gränssnittet mot V15).\n- Volvo — säkerhetspositioneringen i lastbilar: flottkundernas\n  lojalitet syns i retention, inte i rabatter."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: fråga samma sak till varje bolag — *vad bevisar att\nvarumärket lönar sig?* H&M:s svar är volym, Nintendos marginal, Volvos\nåterkommande flottkontrakt. Utan bevis är varumärket bara en logo."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Känd ≠ starkt: medvetenhet utan prissättningskraft är reklam,\n  inte moat (H&M-läsningen ovan).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Känd ≠ starkt: medvetenhet utan prissättningskraft är reklam,\n  inte moat (H&M-läsningen ovan).\n- Andel köpt med rabatt: marknadsandel som växt genom kampanjer och\n  promor kan sjunka lika snabbt — kolla pris-/promo-noter.\n- Mode och cykel varumärken förslits: positionering som måste\n  förnyas varje säsong är en hyrd moat.\n- Köpt varumärke i noten är historik, inte framtid — det säger att\n  moaten betalats för en gång, inte att den förvaltas.\n- Varumärkesrisker syns inte i noterna: en kontrovers eller\n  kvalitetskris kan tömma en moat i veckor — läs riskavsnittet i\n  förvaltningsberättelsen (gränssnitt mot V18)."
+          },
+          {
+            "type": "insikt",
+            "content": "Mode och cykel varumärken förslits:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V14 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt ur\nförvaltningsberättelse, kundnot och marknadsdata (källraden i\nkalkylatorn).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V14 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt ur\nförvaltningsberättelse, kundnot och marknadsdata (källraden i\nkalkylatorn). Den ekonomiska beviskedjan går via universumets\nmoat-proxyfält: en bruttomarginal som är hög och stabil över fem år\n(bruttoMarginalMedel5ar/Spread5ar) är ett varumärke som fungerar i\nsiffror — spreaden liten betyder att kraften hållit genom konjunkturer.\n\nKompletterande läsning: V07 Bruttomarginal ger nivån, V12\nIntäktsstabilitet ger uthålligheten, V14 ger förklaringen —\ntillsammans skiljer de ett varumärke från en tillfällig pristäkt\nposition.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch älskade varumärkes-moats. I 'One Up On Wall Street' menade han att 'ett varumärke folk älskar är värt mer än en fabrik'. Han nämnde Coca-Cola, McDonald's och Johnson & Johnson som exemplen. Lynchs regel: 'Om folk betalar 30% mer för ditt varumärke än för en generisk kopia, har du en moat.'",
@@ -4419,11 +5825,11 @@
     "slug": "v15-natverkseffekter",
     "category": "MOAT",
     "weight": "6%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Nätverkseffekter",
     "summary": "Betydelsen av bolaget ökar när fler använder det. (Meta, LinkedIn, betalningsnätverk.)",
-    "minutes": 14,
+    "minutes": 48,
     "xp": 100,
     "level": "Avancerad",
     "learn": "Betydelsen av bolaget ökar när fler använder det. (Meta, LinkedIn, betalningsnätverk.)",
@@ -4443,6 +5849,31 @@
         "num": 5,
         "title": "Bransch-jämförelse — svenska nätverks-moats",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Exempel — gränsdragningsövningen (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -4726,6 +6157,86 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "En nätverkseffekt finns när varje ny användare gör tjänsten mer\nvärdefull för alla som redan är där — värdet växer snabbare än\nanvändarantalet (Metcalfes tumreg",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En nätverkseffekt finns när varje ny användare gör tjänsten mer\nvärdefull för alla som redan är där — värdet växer snabbare än\nanvändarantalet (Metcalfes tumregel: värde proportionellt mot n², i\npraktiken oftast långsammare men ändå överlinjärt). Det är den enda moat\nsom förstärker sig själv: konkurrenten måste inte bara bygga en bättre\nprodukt, den måste flytta hela skaran samtidigt.\n\nTre sorter att skilja på:\n- Direkta: användarna skapar värde åt varandra (sociala nätverk,\n  meddelandetjänster).\n- Tvåsidiga: marknadsplatser — fler köpare lockar fler säljare som\n  lockar fler köpare.\n- Data-nätverk: varje användning genererar data som gör produkten\n  bättre för nästa användning (spamfilter, sök, rekommendationer).\n\nKällraden i modellen: \"kundantal över tid\" — kurvan på användare är\nindikatorns puls."
+          },
+          {
+            "type": "insikt",
+            "content": "Varje ny användare gör tjänsten mer värdefull för alla som redan är där"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- KPI-sektionen i förvaltningsberättelsen: användare, MAU,\n   abonnenter, handelsvolym — flera år bakåt, inte bara senaste året.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- KPI-sektionen i förvaltningsberättelsen: användare, MAU,\n   abonnenter, handelsvolym — flera år bakåt, inte bara senaste året.\n- Intäkt per kund/brukare: nätverket växer — men monetiseras det?\n   (koppla V02 ARR-tillväxt).\n- Take rate på marknadsplatser: andelen av handelsvolymen som blir\n   intäkt — en sjunkande take rate med växande volym kan vara köpt\n   tillväxt.\n- Båda sidorna på tvåsidiga plattformar: tillväxttakten per sida —\n   en tom sida är ingen marknadsplats.\n- Retention/churn om det redovisas: nätverkets hållfasthet visar\n   sig i hur många som stannar, inte hur många som provat."
+          },
+          {
+            "type": "insikt",
+            "content": "KPI-sektionen i förvaltningsberättelsen:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Exempel — gränsdragningsövningen (ur universumets 195)",
+        "intro": "- Truecaller — äkta data-nätverk: användarna rapporterar in\n  spamnummer, databasen blir bättre för alla, fler använder appen, ännu\n  mer data rapporteras in.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Truecaller — äkta data-nätverk: användarna rapporterar in\n  spamnummer, databasen blir bättre för alla, fler använder appen, ännu\n  mer data rapporteras in. Cirkeln är sluten och självförstärkande —\n  nykomlingen börjar med en tom databas.\n- Microsoft / Apple — ekosystem, inte nätverk: värdet för dig\n  beror på switchkostnaden (filer, appar, arbetsflöden), inte på hur\n  många andra användare som finns. Klassisk förväxling: ekosystem-moat\n  är stark, men den mäts i låsning — hos nätverk mäts den i\n  deltagarantal.\n- Sinch — infrastruktur-skala, inte nätverk: meddelandena flyger\n  genom Sinchs plattform, men användarna skapar inget värde för\n  varandra — moaten är driftsäkerhet, leverantörsdjup och skalfördelar\n  (bra, men det är inte V15).\n- Evolution — varumärke + licensierad skala: live-casinobordet\n  upplevs inte bättre av att fler spelar (gränssnitt mot V14); moaten\n  är licenser, croupierutbildning och kapacitet.\n\nTräningsfrågan att ställa till varje bolag: *Gör användare nummer\nN+1 tjänsten bättre för användare 1 till N?* Om svaret är nej är moaten\nskala, varumärke eller switchkostnad — alldeles utmärkta vallgravar, men\nde hör hemma i andra indikatorer, och poängen på V15 skall sällan bli\nhög."
+          },
+          {
+            "type": "insikt",
+            "content": "Träningsfrågan att ställa till varje bolag:"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Buzzword-fällan: alla plattformar kallar sig nätverk — bevisa\n  kausaliteten (användare → bättre produkt) innan du godtar ordet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Buzzword-fällan: alla plattformar kallar sig nätverk — bevisa\n  kausaliteten (användare → bättre produkt) innan du godtar ordet.\n- Tom sida: en marknadsplats utan säljare är ingen marknadsplats;\n  kolla båda sidorna var för sig.\n- Betalda användare: subsidierade anslutningar (rabatter, bonusar)\n  bygger ingen självgående cirkel — churnen kommer när subventionen\n  slutar.\n- Nätverk kan vända: samma mekanism som bygger snabbt kan tömma\n  snabbt när värdet faller — retention är nätverkets säkerhetsräcke.\n- Metcalfe i praktiken: n²-ökningen gäller sällan fullt ut — värde\n  per användare tilltar oftast log-linjärt; dra inte överdrivna\n  värderingsslutsatser av användartal.\n- Nätverks-moat ≠ intäkts-moat: utan monetisering (intäkt per\n  användare, take rate) är nätverket en kostnad med publik."
+          },
+          {
+            "type": "insikt",
+            "content": "Nätverks-moat ≠ intäkts-moat:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V15 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt\nmed källraden \"Förvaltningsberättelsen; kundantal över tid\" — serien\nsom skall växa organiskt (icke",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V15 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt\nmed källraden \"Förvaltningsberättelsen; kundantal över tid\" — serien\nsom skall växa organiskt (icke-subsidierat) för att bära toppoäng.\nUniversumets moat-proxyfält (marginalens medelvärde och spridning över\nfem år) fångar det ekonomiska utfallet; V15 förklarar mekanismen —\nett nätverk som mognat ska synas i stabil marginal och växande intäkt\nper användare.\n\nKompletterande kopplingar: V02 ARR (nätverkens naturliga\nintäktsform), V03 Intäktsdiversifiering (många kunder = tunn\nnätlösning), V13 Patent & IP (data-nätverkets innehåll är ofta\nskyddat som IP).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "V03 Intäktsdiversifiering"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch menade att nätverkseffekter är den starkaste moaten. Han nämnde Visa, American Express och H&R Block som exempel. 'När fler använder nätverket, blir det värdefullare för alla — det är en oslagbar spiral.' Lynch varnade dock för att nätverk kan kollapsa (MySpace → Facebook).",
@@ -4735,12 +6246,12 @@
   "v16-produktlanseringar": {
     "slug": "v16-produktlanseringar",
     "category": "KATALYSATOR",
-    "weight": "7%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Produktlanseringar",
     "summary": "Kommande produktlanseringar som kan driva intäkter — nya produkter, nya marknader, nya versioner.",
-    "minutes": 13,
+    "minutes": 48,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Kommande produktlanseringar som kan driva intäkter — nya produkter, nya marknader, nya versioner.",
@@ -4760,6 +6271,31 @@
         "num": 5,
         "title": "Branschmönster — olika lanseringar, olika dynamik",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel och läsningar (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -5043,6 +6579,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Produktlanseringar mäter vad bolaget har på väg in som kan förändra\nintäktskurvan: nya produkter, nästa generation, pipeline.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Produktlanseringar mäter vad bolaget har på väg in som kan förändra\nintäktskurvan: nya produkter, nästa generation, pipeline. Det är\nkatalysatorkategorins kärntanke — skillnaden mellan ett bolag som lever\npå det som redan lanserats och ett som har nästa intäktsvåg dokumenterad\noch daterad.\n\nViktig avgränsning direkt: katalysatorn är inte en moat (V13–V15\nfrågar vad som håller konkurrenter borta) och inte tillväxten själv\n(V01 mäter det som redan hänt). V16 frågar: finns det namngivna,\ndaterbara händelser framåt som marknaden kan prissätta?"
+          },
+          {
+            "type": "insikt",
+            "content": "Vad bolaget har på väg in som kan förändra intäktskurvan"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Förvaltningsberättelsens kommande-event-avsnitt: många bolag\n   listar kommande lanseringar, milestone-planer eller pipelines med\n   kvartals- eller årsdatum ",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Förvaltningsberättelsens kommande-event-avsnitt: många bolag\n   listar kommande lanseringar, milestone-planer eller pipelines med\n   kvartals- eller årsdatum — det är indikatorns råmaterial.\n- Läkemedels-/teknikbolag: pipelinetabeller (fas, indikation,\n   förväntat beslutsdatum) — källraden i modellen lyder \"kommande\n   lanseringar/pipeline\".\n- Not om segment (V03): vilken del av bolaget som lanseringen\n   berör — en stor lansering i ett litet segment väger mindre.\n- Kapitaliserade utvecklingskostnader i noten om immateriella\n   tillgångar: pågående projekt som ännu inte lanserats (balanserad\n   FoU = arbete på väg).\n- Kontrollfråga: är lanseringen daterad och specifik (\"Q2\",\n   namngiven produkt) eller vag (\"fortsatt innovation\")? Bara det\n   första är katalysator; det andra är stämningsläge."
+          },
+          {
+            "type": "insikt",
+            "content": "Förvaltningsberättelsens kommande-event-avsnitt:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel och läsningar (ur universumets 195)",
+        "intro": "",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bolag · Lanseringsläsning (kvalitativ) · Vad noterna ger:\n- AstraZeneca · Pipeline med fas/indikation — katalysatorerna är daterade beslutsdatum · pipelinetabell i förvaltningsberättelsen\n- Nintendo · Produktcykler: nya generationer/kända serier driver året · säljtal per titel i delårsrapporter\n- Volvo · Produktprogram (nya modeller, eldrivna linjer) med kommunikerade fönster · orderläge + modellprogram i rapporterna\n- Truecaller · Funktioner/premium-planer — mjuka lanseringar utan datum · produktsektion i förvaltningsberättelsen"
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: AstraZeneca är den rena läroboken — katalysatorer\nsom kan bokföras i kalendern. Nintendo visar volymsvängningarna kring en\nlansering (V12:s CV slår till). Volvo visar program med långa\nbeslutsled. Truecaller visar gränsfallet: kontinuerlig\nproduktutveckling utan datum är förbättring, inte katalysator."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Lansering ≠ framgång: historiens träffsäkerhet för\n  produktlanseringar är låg — katalysatorn säger att något KOMMER, inte\n  att det SÄLJER.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Lansering ≠ framgång: historiens träffsäkerhet för\n  produktlanseringar är låg — katalysatorn säger att något KOMMER, inte\n  att det SÄLJER.\n- Bolagets egna ord om pipelinen är säljande till sin natur —\n  leta alltid efter vad som är regulatoriskt förankrat (V18) versus\n  marknadsföring.\n- Prissatt redan? En välkommunicerad lansering kan redan ligga i\n  kursen — katalysatorn är värd mest när den är oväntad.\n- Cykelförväxling: lastbils-/halvledarcykelns svängningar är\n  efterfrågekatalysatorer (V12), inte produktkatalysatorer."
+          },
+          {
+            "type": "insikt",
+            "content": "Bolagets egna ord om pipelinen"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V16 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nkärnans gemensamma gren (scorKvalitativ) dokumenterar exakt: *\"Osatt —\nProduktlanseringar är kvalita",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V16 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nkärnans gemensamma gren (scorKvalitativ) dokumenterar exakt: *\"Osatt —\nProduktlanseringar är kvalitativ och bedöms ur förvaltningsberättelsen\n(kommande lanseringar/pipeline), som inte ingår i P1:s\nnyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via\nmodul.\"* Poängen sätts av analytikern efter läsningen — modellen ger\nstrukturen (0 = inget namngivet framåt, 5 = daterad pipeline i\nkärnsegmentet).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch älskade produktlanseringar som katalysatorer. I 'One Up On Wall Street' beskrev han hur nya produkter (Apple Macintosh 1984, Chrysler minivan 1983) kunde fördubbla en aktie. Han letade efter 'the next big thing' — men varnade för att katalysatorer kan utebli. 'Ett bolag med en bra pipeline är värt mer än ett utan.'",
@@ -5052,12 +6664,12 @@
   "v17-avtal-partnerskap": {
     "slug": "v17-avtal-partnerskap",
     "category": "KATALYSATOR",
-    "weight": "7%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Avtal & Partnerskap",
     "summary": "Stora kundavtal, partner-avtal, distribution-deals som kan driva intäkter.",
-    "minutes": 12,
+    "minutes": 48,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Stora kundavtal, partner-avtal, distribution-deals som kan driva intäkter.",
@@ -5077,6 +6689,31 @@
         "num": 5,
         "title": "Branschmönster — olika M&A, olika dynamik",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Exempel — avtalsstrukturer att känna igen (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -5339,6 +6976,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Avtal och partnerskap mäter bindande intäktsvägar som redan skrivits\nunder men ännu inte fullt betalat ut: kundavtal, ramavtal,\nsamarbeten, licensieringsavtal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Avtal och partnerskap mäter bindande intäktsvägar som redan skrivits\nunder men ännu inte fullt betalat ut: kundavtal, ramavtal,\nsamarbeten, licensieringsavtal. Skillnaden mot V16 är avgörande — en\nlansering är en chans, ett undertecknat avtal är en förpliktelse från\nmotparten. Katalysatorn ligger i att intäkten finns i kontraktet innan\nden finns i resultaträkningen.\n\nKällraden i modellen: \"Pressmeddelanden + förvaltningsberättelse:\n'viktiga avtal'\" — två källor med olika trovärdighet, se fällorna."
+          },
+          {
+            "type": "insikt",
+            "content": "Bindande intäktsvägar som redan skrivits under men ännu inte fullt betalat ut"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Förvaltningsberättelsens avtals-/orderrubriker: \"viktiga avtal\n   under året\", orderintagning, backlog — med namngivna motparter när\n   avtalen får nämnas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Förvaltningsberättelsens avtals-/orderrubriker: \"viktiga avtal\n   under året\", orderintagning, backlog — med namngivna motparter när\n   avtalen får nämnas.\n- Not om intäkter/segment: avtalsstock, upparbetade intäkter\n   (förskottsbetalda intäkter som växer = kunderna betalat i förskott) och\n   ordervärde om det redovisas.\n- Kundnoten (V03): storkundsandel — ett jätteavtal med en kund\n   är både katalysator och riskkoncentration i samma rad.\n- Bindningstid och termineringsrätter i avtalsbeskrivningar: ett\n   avtal som motparten kan säga upp med tre månaders varsel är inte en\n   intäktsväg, det är ett rabattkvitto.\n- Kontrollfråga: avsiktsförklaring eller kontrakt? LoI/MoU i\n   pressmeddelandet, saknas avtalet i rapporten — då finns ingen\n   katalysator att poängsätta ännu."
+          },
+          {
+            "type": "insikt",
+            "content": "Förvaltningsberättelsens avtals-/orderrubriker:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Exempel — avtalsstrukturer att känna igen (ur universumets 195)",
+        "intro": "- Ericsson — operatörsavtal (ramavtal med teleoperatörer):\n  fleråriga, volymer styrs av operatörens investeringstakt; katalysator\n  vid undertecknande, intäkt ",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Ericsson — operatörsavtal (ramavtal med teleoperatörer):\n  fleråriga, volymer styrs av operatörens investeringstakt; katalysator\n  vid undertecknande, intäkt över år.\n- Sinch — carrier-/plattformsavtal i meddelandeinfrastruktur:\n  volymbaserade, terminsvis förnybara; noteras i\n  förvaltningsberättelsen.\n- Kambi — sportsbook-avtal med operatörer: intäktsdelning per\n  spelvolym, fleråriga — avtalsteckningen är katalysatorn, volymen är\n  utfallet.\n- Volvo — flott-/styckkundsavtal: orderstock i\n  mellanrapporterna, avtalen syns som orderläge snarare än\n  pressmeddelanden."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: skilj de tre avtalsarterna — ramavtal (Ericsson:\ntak, inte golv), volymsavtal (Sinch: intäkt per enhet, svänger med\ntrafiken), intäktsdelningsavtal (Kambi: delad risk). Poängen på V17\nskall spegla avtalets bindning och storlek, inte rubrikens volym."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Pressmeddelandets vs redovisningens språk: \"strategiskt\n  partnerskap\" i pressreleasen kan vara en avsiktsförklaring utan\n  ekonomiskt innehåll — redovisninge",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Pressmeddelandets vs redovisningens språk: \"strategiskt\n  partnerskap\" i pressreleasen kan vara en avsiktsförklaring utan\n  ekonomiskt innehåll — redovisningen är sanningsägaren.\n- Orderstock ≠ intäkt: order som kan ställas upp eller\n  omförhandlas är mjukare än de ser ut.\n- Termineringsrätter och prisrevisioner gör långa avtal korta i\n  praktiken — läs avtalsvillkoren i noterna, inte löptiden i rubriken.\n- Relaterade parter / interna avtal i koncerner blåser upp\n  \"viktiga avtal\" utan marknadsvärde.\n- Kundkoncentration: avtalets katalysator och V03:s\n  diversifieringsrisk är samma händelse — poängsätt aldrig V17 högt\n  utan att läsa V03."
+          },
+          {
+            "type": "insikt",
+            "content": "Pressmeddelandets vs redovisningens språk:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V17 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nsamma dokumenterade gren som V16 (scorKvalitativ) — osatt i\nnyckeltalskontraktet, poängsatt manuellt",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V17 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nsamma dokumenterade gren som V16 (scorKvalitativ) — osatt i\nnyckeltalskontraktet, poängsatt manuellt ur pressmeddelanden +\nförvaltningsberättelse. Guiden för poängen: 0 = inga namngivna avtal,\n3 = avtal av betydelse med oklar bindning, 5 = undertecknade\nfleråriga avtal i kärnsegmentet med belopp eller volym synlig i\nredovisningen.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch såg stora avtal som katalysatorer. Han nämnde hur ett enda stort kontrakt (Boeing 737-beställning, Walmart-leverantörsavtal) kunde förändra ett bolag. 'Ett avtal värt 10% av årsomsättningen är en game-changer.' Lynch varnade dock för att beroendet av ett avtal kan bli en fälla om avtalet löper ut.",
@@ -5348,12 +7061,12 @@
   "v18-regulatoriska": {
     "slug": "v18-regulatoriska",
     "category": "KATALYSATOR",
-    "weight": "7%",
-    "chapterCount": 6,
-    "totalMinutes": 33,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 48,
     "title": "Regulatoriska katalysatorer",
     "summary": "Kommande lagändringar, godkännanden, eller regleringar som påverkar bolaget positivt eller negativt.",
-    "minutes": 12,
+    "minutes": 48,
     "xp": 100,
     "level": "Avancerad",
     "learn": "Kommande lagändringar, godkännanden, eller regleringar som påverkar bolaget positivt eller negativt.",
@@ -5373,6 +7086,31 @@
         "num": 5,
         "title": "Branschmönster — olika regulatorik, olika dynamik",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Exempel — regulatoriska yttringar (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "minutes": 3
       }
     ],
     "history": {
@@ -5634,6 +7372,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Regulatoriska katalysatorer är beslut hos myndigheter som kan flytta\nbolagets värde utan att bolaget själv kan påverka takten:\ngodkännanden, licenser, kapitalkr",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Regulatoriska katalysatorer är beslut hos myndigheter som kan flytta\nbolagets värde utan att bolaget själv kan påverka takten:\ngodkännanden, licenser, kapitalkrav, skatteregler, sanktionslistor.\nDe är de mest binära katalysatorerna som finns — ett godkännande öppnar\nen marknad, ett avslag stänger den, och klockan ägs av\nmyndigheten, inte av bolaget.\n\nKällraden i modellen: \"Riskavsnittet i förvaltningsberättelsen;\nmyndighetsbeslut\" — notera att källan är riskavsnittet: regulatorisk\nkatalysator och regulatorisk risk är samma händelse sedd från två\nsidor, och den som läser bara ena sidan missar prissättningen."
+          },
+          {
+            "type": "insikt",
+            "content": "Beslut hos myndigheter som kan flytta bolagets värde utan att bolaget själv kan påverka takten"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Riskavsnittet i förvaltningsberättelsen: rubriker om regelverk,\n   licenser, myndighetsprocesser — väntande beslut står\n   ofta här före de når pressmeddeland",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Riskavsnittet i förvaltningsberättelsen: rubriker om regelverk,\n   licenser, myndighetsprocesser — väntande beslut står\n   ofta här före de når pressmeddelandena.\n- Not om väsentliga osäkerheter och eventualförpliktelser:\n   pågående processer, böter, återbetalningskrav.\n- Läkemedels-/medtechbolag: godkännandeprocesser (fas III →\n   ansökan → beslut) med myndighetsnamn och förväntade datum — den\n   mest strukturerade regulatoriska kalendern som finns (koppla V16).\n- Finansbolag: kapitaltäckningskrav och tillsynsbeslut —\n   en annan art: icke-binär, men kapitalbindande.\n- Kontrollfråga: vem äger tidpunkten? Bolaget (ansökan lagd,\n   myndighet svarar) eller myndigheten (egen agenda)? Detta avgör hur\n   säkert katalysatordatumet är."
+          },
+          {
+            "type": "insikt",
+            "content": "Riskavsnittet i förvaltningsberättelsen:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Exempel — regulatoriska yttringar (ur universumets 195)",
+        "intro": "- AstraZeneca — läkemedelsgodkännanden: varje beslutsdatum är en\n  katalysator; avslag i fas III är spegelbilden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- AstraZeneca — läkemedelsgodkännanden: varje beslutsdatum är en\n  katalysator; avslag i fas III är spegelbilden. Gränsen mot V16 är\n  pipelinen, gränsen mot V13 är patentet.\n- Nordea / Handelsbanken — kapitalkrav och tillsyn: regulatoriken\n  binder kapital och sätter utrymmet för utdelning/återköp (koppla\n  V20) — långsamt men kraftfullt.\n- Evolution — spellicenser per jurisdiktion: licensportföljen ÄR\n  affären; nya marknader öppnas genom myndighetsbeslut.\n- Ericsson — exportkontroll/sanktioner: regulatorisk risk på\n  affärsnivå, redovisad i riskavsnittet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: tre regulatoriska arter — godkännande (binärt:\nAZN, Evolution), kapitalregel (gradvis: banker), sanktion/export\n(existentiell risk: Ericsson). Poängen skall spegla både det väntande\nbeslutets storlek och bolagets exponering om det går fel."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Binära beslut har inget halvläge: poängsätt inte \"delvis\n  sannolikt\" — beskriv utfallsrummet (godkänt/avslag/villkor) i stället.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Binära beslut har inget halvläge: poängsätt inte \"delvis\n  sannolikt\" — beskriv utfallsrummet (godkänt/avslag/villkor) i stället.\n- Myndighetstakt är opåverkbar: förseningar är normalfallet —\n  katalysatordatum från bolaget är önsketänkande, inte kalender.\n- Regulatorisk eftersläpning: regler som redan annonserats men\n  ej trätt i kraft (övergångsperioder) — läs ikraftträdandedatum, inte\n  beslutsdatum.\n- Flagga-allt-fällan: riskavsnitten listar allt som är lagligt; skilj de\n  väsentliga (licensförlust, godkännanden) från de rutinmässiga\n  (allmän lagändring).\n- Dubbelräkning: ett godkännande som redan gett intäkt är inte en\n  katalysator längre — katalysatorn lever bara i väntan."
+          },
+          {
+            "type": "insikt",
+            "content": "Binära beslut har inget halvläge:"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens läge",
+        "intro": "V18 bär 6 % vikt i kategorin Katalysator och är kvalitativ\n(scorKvalitativ, samma dokumenterade gren): osatt i\nnyckeltalskontraktet, poängsatt manuellt ur riska",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V18 bär 6 % vikt i kategorin Katalysator och är kvalitativ\n(scorKvalitativ, samma dokumenterade gren): osatt i\nnyckeltalskontraktet, poängsatt manuellt ur riskavsnitt och\nmyndighetskalender. Modellens poängguide: 0 = inga väntande beslut av\nbetydelse, 3 = väntande beslut med dubbelriktat utfall i kärnaffären,\n5 = namngivna myndighetsbeslut med datum som kan öppna\nintäktsvägar (eller helt avvärja väsentlig risk).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch såg regulatoriska katalysatorer som oförutsägbara. Han undvek bolag där reglering var huvudtesen. 'Du kan inte förutspå vad politiker gör — investera inte baserat på det.' Lynch föredrog bolag där reglering var en tailwind, inte en förutsättning.",
@@ -5644,11 +7458,11 @@
     "slug": "v19-kapitalforbranning",
     "category": "RISK",
     "weight": "KRITISK",
-    "chapterCount": 8,
-    "totalMinutes": 52,
+    "chapterCount": 13,
+    "totalMinutes": 67,
     "title": "Kapitalförbränning & Emission-risk",
     "summary": "Hur snabbt bolaget bränner pengar — och risken för nyemission som utspäddar dina aktier.",
-    "minutes": 20,
+    "minutes": 67,
     "xp": 100,
     "level": "Avancerad",
     "learn": "Hur snabbt bolaget bränner pengar — och risken för nyemission som utspäddar dina aktier.",
@@ -5673,6 +7487,31 @@
         "num": 7,
         "title": "Bolag som överlevt trots åratal av förluster",
         "minutes": 7
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 12,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 13,
+        "title": "Fas 2 — Koppling till AKM1 — modellens klippkurva + hård port",
+        "minutes": 3
       }
     ],
     "history": {
@@ -6048,6 +7887,82 @@
             "tips": "Varje koncept bygger mot målet: oberoende analys."
           }
         ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Kassatäckningen mäter hur många månader bolaget överlever på kassan\nden har, om inget förändras: kassa ÷ månadsförbrukning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kassatäckningen mäter hur många månader bolaget överlever på kassan\nden har, om inget förändras: kassa ÷ månadsförbrukning. Det är hela\nindikatorns brutalitet — den ignorerar tillgångar, orderböcker och\nlöften och svarar på en enda fråga: hur länge räcker pengarna?\n\nV19 är den enda KRITISKA riskindikatorn i AKM1, och den är den\nenda med en hård port: sjunker kassatäckningen under tolv månader\nkapas hela modellens kompositpoäng — se sektion 5. Varför så hårt?\nDärför att nyemissionsrisken inte är en poäng bland andra: ett bolag\nsom måste emittera har inte en \"svag egenskap\", det har en klocka som\nslår nedåt, och ägarna betalar notan genom utspädning."
+          },
+          {
+            "type": "insikt",
+            "content": "Hur många månader bolaget överlever på kassan den har, om inget förändras"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Balansräkningen: Kassa och bank + kortfristiga placeringar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Balansräkningen: Kassa och bank + kortfristiga placeringar.\n- Kassaflödesanalysen: \"Kassaflöde från den löpande verksamheten\"\n   — den löpande förbrukningen (negativt löpande kassaflöde ÷ 12 =\n   månadsförbrukning).\n- Räkna: kassa ÷ månadsförbrukning = antal månader. (Modellens fält:\n   stabilitet.kassaManaderBurnRate.)\n- Not om kredittillgångar: outnyttjade kassakrediter förlänger\n   täckningen — men krediten är andras pengar, räkna den separat.\n- Kontrollfråga: är förbrukningen struktur (lön, lokal,\n   utveckling) eller engång ( juridisk process, omstrukturering)?\n   Porten lyssnar på strukturen."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Fältet är ifyllt hos fyra bolag — de fyra läroboksexemplen (källa:\nbolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fältet är ifyllt hos fyra bolag — de fyra läroboksexemplen (källa:\nbolagsunivers.json, hämtat 2026-09-03; poäng enligt klippkurvan i\nsektion 5):\n\nBolag · Kassatäckning (mån) · AKM1-poäng · Bild:\n- VPLAY B · 6,8 · 0 + hård port · under ett år — kompositen kapas\n- PSNY · 15,2 · 1 · drygt ett år\n- PCELL · 16 · 1 · drygt ett år\n- Kinnevik B · 813,5 · 4 · holding-art: säljer innehav, inte produkter\n\nÖvriga 191 bolag: fältet tomt — för lönsamma bolag är burn-rate\nmeningslöst (de tillför kassa varje månad), och kärnan använder då\nsin proxy: positivt kassaflöde 5 av 5 år ⇒ 5 (\"själfinansierande\",\ndokumenterat i kärnans motiveringstext)."
+          },
+          {
+            "type": "utmaning",
+            "content": "Träningssekvens: VPLAY är portens barn — 6,8 månader betyder att\nfinansieringsfrågan inte är \"om\" utan \"när och till vilket pris\", och\nmodellen svarar genom att takera hela kompositen till högst 45/100\n(§5-beslutet). PSNY/PCELL i 12–18-månaders bandet: klart ovan\nporten men fortfarande beroende av kapitalmarknadens välvilja.\nKinnevik är tolkningsvarningen: 813 \"månader\" är vad som händer när\nett holdingbolags \"förbrukning\" är administrationsnivå medan kassan\nbär realiserade avkastningar — siffran är sann och ändå meningslös som\növerlevnadsmått. Läs alltid vad som brinner innan du tror på talet."
+          }
+        ]
+      },
+      {
+        "num": 12,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Ögonblicksbild: brinntakten i dag säger inget om nästa beslut —\n  ett bolag kan halvera burn på ett styrelsemöte.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Ögonblicksbild: brinntakten i dag säger inget om nästa beslut —\n  ett bolag kan halvera burn på ett styrelsemöte.\n- Kassakredit är inte kassa: den förlänger överlevnaden men\n  tillför skuld — räkna den som separat rad, aldrig in i kvoten.\n- \"Positivt kassaflöde runt hörnet\": löftet är värt noll i\n  kassaräkningen — porten lyssnar på bokförda månader, inte på\n  prognoser.\n- Holdingbolagsartikeln: Kinnevik-fallet — mekaniskt mått på en\n  icke-mekanisk verksamhet.\n- Porten är port: under 12 månader hjälper inga andra starka\n  egenskaper — moat, marginaler och tillväxt kapas med samma slag."
+          },
+          {
+            "type": "insikt",
+            "content": "Kassakredit är inte kassa:"
+          }
+        ]
+      },
+      {
+        "num": 13,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens klippkurva + hård port",
+        "intro": "Ur kärnan (scorV19, R2 §6 klippkurva, BESLUT §4–§5):\n\nKassatäckning · Poäng:\n- positivt kassaflöde 5/5 år (proxy) · 5\n- > 48 mån · 4\n- 30–48 mån · 3\n- 18–30 mån",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (scorV19, R2 §6 klippkurva, BESLUT §4–§5):\n\nKassatäckning · Poäng:\n- positivt kassaflöde 5/5 år (proxy) · 5\n- > 48 mån · 4\n- 30–48 mån · 3\n- 18–30 mån · 2\n- 12–18 mån · 1\n- < 12 mån · 0 — OCH hård port: AKM2-kompositen takas till 45/100\n\nMotiveringstexten anger månader + kurva + källa. Porten är modellens\n enda absoluta stopp: alla andra indikatorer är 0–5 i samspel, V19\nunder tolv månader sätter taket för allas summa. Det är logiken i\nmodellform: överlevnaden är inte en egenskap bland andra — den är\nförutsättningen för att de andra skall få räknas.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "0 — OCH hård port: AKM2-kompositen takas till 45/100"
+          }
+        ]
       }
     ],
     "lynchSection": "Lynch undvek bolag som brände pengar. 'Om ett bolag behöver emissionera vart tredje år, äger du inte bolaget — bolaget äger dig.' Han föredrog bolag med positivt kassaflöde som kunde finansiera sin egen tillväxt. Lynchs regel: 'Ett bolag som inte kan generera kassa från sin verksamhet är en teori, inte en investering.'",
@@ -6057,12 +7972,12 @@
   "v20-aterekop-egna-aktier": {
     "slug": "v20-aterekop-egna-aktier",
     "category": "KAPITALSTRUKTUR",
-    "weight": "5%",
-    "chapterCount": 6,
-    "totalMinutes": 32,
+    "weight": "6%",
+    "chapterCount": 11,
+    "totalMinutes": 47,
     "title": "Återköp av egna aktier",
     "summary": "Buybacks = bolaget köper tillbaka egna aktier. Signal: ledning tror aktien är undervärderad. Minskar antal aktier → höjer EPS. AKM1:s 20:e indikator — tillagd i mega-projektet 2026.",
-    "minutes": 20,
+    "minutes": 47,
     "xp": 100,
     "level": "Intermediär",
     "learn": "Hur du bedömer om återköp av egna aktier skapar värde eller förstör det — och varför V20 är AKM1:s 20:e indikator.",
@@ -6097,6 +8012,31 @@
         "num": 6,
         "title": "Mästerskap — buybacks som system",
         "minutes": 5
+      },
+      {
+        "num": 7,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "minutes": 3
+      },
+      {
+        "num": 8,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "minutes": 3
+      },
+      {
+        "num": 9,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "minutes": 3
+      },
+      {
+        "num": 10,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "minutes": 3
+      },
+      {
+        "num": 11,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "minutes": 3
       }
     ],
     "history": {
@@ -6420,6 +8360,86 @@
             ],
             "ratt": 0,
             "tips": "Varje koncept bygger mot målet: oberoende analys."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "minutes": 3,
+        "title": "Fas 2 — Vad indikatorn innebär i praktiken",
+        "intro": "Återköpen mäter om bolaget köper tillbaka sina egna aktier — och med\nvilken kraft: aktieantalets förändring.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Återköpen mäter om bolaget köper tillbaka sina egna aktier — och med\nvilken kraft: aktieantalets förändring. Återköp och nyemissioner är\nsamma mynts två sidor: köper bolaget tillbaka ägs mer av kvarvarande\nägare per aktie (alla nyckeltal per aktie stiger mekaniskt); emitterar\ndet, späds ägarna ut. Indikatorn ligger i kategorin Kapitalstruktur —\nden handlar om hur vinsten förs tillbaka till ägarna."
+          },
+          {
+            "type": "insikt",
+            "content": "Om bolaget köper tillbaka sina egna aktier — och med vilken kraft"
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 3,
+        "title": "Fas 2 — Läsa det i en faktisk årsredovisning",
+        "intro": "- Not om eget kapital / antal aktier: aktieantalet vid årets\n   början och slut — differensen ÄR indikatorn (modellens fält:\n   aterkop.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Not om eget kapital / antal aktier: aktieantalet vid årets\n   början och slut — differensen ÄR indikatorn (modellens fält:\n   aterkop.andelUtestande, minskning som decimal, 0,02 = 2 %).\n- Not/kommentar om återköp: belopp, programmandat, genomfört under\n   året (modellens reservfält aterkop.senasteArMdr).\n- Insiderköp: VD/styrelseköp redovisas hos\n   Finansinspektionen/aktieägartjänster — kompletterande observation\n   (aterkop.insiderkopSenaste6man).\n- Optioner och personalprogram i egenkapitalnoten: utspädning\n   från program kan äta upp återköpen — nettoändringen i\n   aktieantalet är det enda ärliga talet.\n- Kontrollfråga: återköpsbeloppet är volym — andelen av\n   aktieantalet är verkning. Poängen kräver verkan."
+          },
+          {
+            "type": "insikt",
+            "content": "Not om eget kapital / antal aktier:"
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 3,
+        "title": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+        "intro": "Datakontraktets läge (källa: bolagsunivers.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Datakontraktets läge (källa: bolagsunivers.json, hämtat 2026-09-03):\nandelUtestande och återköpsbelopp är tomma hos samtliga —\ninsiderkopSenaste6man är ifyllt hos 108 bolag, flest:\n\nBolag · Insiderköp 6 mån · AKM1-poäng (reservgren) · Not:\n- Apple · 10 · 2 · återköper i verkligheten stort — fältet saknar andelen\n- Microsoft · 6 · 2 · dito\n- övriga 106 · 0 · osatt · ingen gren träffar\n\nDatavaktens läxa i praktiken: Apple och Microsoft hör till\nmarknadens största återköpare, men eftersom kontraktet saknar\naktieantalsändringen träffar reservgrenen \"insiderköp ≥ 3 ⇒ 2\" —\npoängen underdriver det verkliga återköpsvärdet. Det är inte\nmodellens fel; det är kontraktets gräns, och det är precis därför\nmodellen dokumenterar sina reservgrenar i motiveringstexterna. För\nhandläggning: läs aktieantalsdiffen direkt ur egenkapitalnoten när\nårsredovisningen finns — då sätts huvudkurvan, inte reserven."
+          },
+          {
+            "type": "insikt",
+            "content": "Datavaktens läxa i praktiken:"
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 3,
+        "title": "Fas 2 — Kritiskt tänkande — fällor",
+        "intro": "- Återköp till vilken kurs?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "- Återköp till vilken kurs? Att köpa tillbaka över inre värde\n  överför värde från kvarvarande ägare till såljare — återköp är\n  värdeskapande endast under värderingen (koppla V04/V05).\n- Optionsutspädning äter återköp: bruttoåterköp kan vara netto\n  noll — nettoändringen i aktieantalet är domstolen.\n- Insiderköp är en svagare signal: små absoluta belopp, och\n  insiderköp \"≥ 3\" kan vara schablonmässiga planpjässer — kolla\n  belopp per köp.\n- Cykel-återköp (toppens överskott) köper dyrt; de bästa\n  återköpen sker när kursen är pressad och bolaget har kassan —\n  modellens poäng säger hur mycket, inte hur klokt.\n- Skuldfinansierade återköp höjer V10:s skuldsättningsgrad —\n  läs V20 alltid tillsammans med V10 och V19 (kassatäckningen)."
+          },
+          {
+            "type": "insikt",
+            "content": "Återköp till vilken kurs?"
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 3,
+        "title": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+        "intro": "Ur kärnan (scorV20 — rak, dokumenterad tröskel på aktieantalets\nändring):\n\nAktieantalets ändring/år · Poäng:\n- minskning ≥ 5 % · 5\n- minskning ≥ 3 % · 4\n- minsk",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ur kärnan (scorV20 — rak, dokumenterad tröskel på aktieantalets\nändring):\n\nAktieantalets ändring/år · Poäng:\n- minskning ≥ 5 % · 5\n- minskning ≥ 3 % · 4\n- minskning ≥ 1,5 % · 3\n- minskning > 0 men < 1,5 % · 2\n- 0 % (inget av det) · 1\n- ökning (utspädning) · 0\n\nReservgrenar när andelen saknas (dokumenterade i kärnan):\nåterköpsbelopp > 0 utan andel ⇒ 3 (mittskikt) · insiderköp ≥ 3 ⇒ 2\n(kompletterande observation) · nyemissioner utan återköp ⇒ 0\n(utspädning) · inget av detta ⇒ osatt. Andel > 1 (procent i stället\nför decimal) vägras som utom intervall — osatt, inte fel.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "insikt",
+            "content": "Reservgrenar när andelen saknas"
           }
         ]
       }

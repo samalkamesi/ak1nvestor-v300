@@ -85,9 +85,6 @@ const { svaraLokaltNasta, NASTA_MONSTER } = await tolerera("ai-mentor-nasta-frag
 const { svaraLokaltKapitalmekanik, KAPITALMEKANIK_MONSTER } = await tolerera("ai-mentor-kapitalmekanik-fragor.ts", ["svaraLokaltKapitalmekanik", "KAPITALMEKANIK_MONSTER"]);
 const { svaraLokaltSektor, SEKTOR_MONSTER } = await tolerera("ai-mentor-sektor-fragor.ts", ["svaraLokaltSektor", "SEKTOR_MONSTER"]);
 const { svaraLokaltCase, CASE_MONSTER } = await tolerera("ai-mentor-case-fragor.ts", ["svaraLokaltCase", "CASE_MONSTER"]);
-// Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
-// harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
-"svaraLokaltMarknadsmekanik",
 const { svaraLokaltPraktik, PRAKTIK_MONSTER } = await tolerera("ai-mentor-praktik-fragor.ts", ["svaraLokaltPraktik", "PRAKTIK_MONSTER"]);
 const { svaraLokaltPortfoljgrund, PORTFOLJGRUND_MONSTER } = await tolerera("ai-mentor-portfoljgrund-fragor.ts", ["svaraLokaltPortfoljgrund", "PORTFOLJGRUND_MONSTER"]);
 const { svaraLokaltAgande, AGANDE_MONSTER } = await tolerera("ai-mentor-agande-fragor.ts", ["svaraLokaltAgande", "AGANDE_MONSTER"]);
@@ -704,6 +701,9 @@ const GAMLA = [
   const KOMPONENTER = [
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+    // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
+    "svaraLokaltMarknadsmekanik",
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
@@ -729,23 +729,18 @@ const GAMLA = [
     "svaraLokaltBokmastar",
     // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
     "svaraLokaltRiskbudget",
-    // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
-    // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
-    // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
-    "svaraLokaltForsakring",
-    "svaraLokaltMoatdjup",
-    "svaraLokaltNyaTerritorier",
-  ];
-  // Konvertibel (fönstrets syskon, modul på disk) förväntas wireas efter
-  // bokmastar — TOLERERAD om frånvarande just nu (syskonet skriver).
-  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1
-  // realekonomi — svitharmonisering (dokumentationsplikten); lagad av u3
-  // (parallell harmonisering bröt kommat efter konvertibeln — syntaxfel).
-  const KANSKE = [
+    // Omgång 23 (2026-09-19): u1 konvertibel + u2 sektorlasning + u3
+    // vardegrund + u1 realekonomi — s8-u2 (o98) viker in dem ur den
+    // förlegade KANSKE-toleransen (de är permanent wireade nu) på sin
+    // dokumenterade plats efter riskbudget, före omgång 24:s fönster.
     "svaraLokaltKonvertibel",
     "svaraLokaltSektorlasning",
     "svaraLokaltVardegrund",
     "svaraLokaltRealekonomi",
+    // Omgång 24 (2026-09-19): u1 försäkring · u2 moatdjup · u3 nya territorier.
+    "svaraLokaltForsakring",
+    "svaraLokaltMoatdjup",
+    "svaraLokaltNyaTerritorier",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -758,15 +753,11 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  for (const komp of KANSKE) {
-    const pos = rad.indexOf(komp + "(");
-    if (pos !== -1 && pos < senaste) FEL.push(komp + " wiread FÖRE bokmastar — bryter fönstrets ordning");
-  }
   if (!widget.includes('from "@/lib/ai-mentor-faktordjup-fragor"')) {
     FEL.push("importen av ai-mentor-faktordjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, ...KANSKE]);
+  const kanda = new Set(KOMPONENTER);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

@@ -80,9 +80,6 @@ const { svaraLokaltNasta, NASTA_MONSTER } = await tolerera("ai-mentor-nasta-frag
 const { svaraLokaltKapitalmekanik, KAPITALMEKANIK_MONSTER } = await tolerera("ai-mentor-kapitalmekanik-fragor.ts", ["svaraLokaltKapitalmekanik", "KAPITALMEKANIK_MONSTER"]);
 const { svaraLokaltSektor, SEKTOR_MONSTER } = await tolerera("ai-mentor-sektor-fragor.ts", ["svaraLokaltSektor", "SEKTOR_MONSTER"]);
 const { svaraLokaltCase, CASE_MONSTER } = await tolerera("ai-mentor-case-fragor.ts", ["svaraLokaltCase", "CASE_MONSTER"]);
-// Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
-// harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
-"svaraLokaltMarknadsmekanik",
 const { svaraLokaltPraktik, PRAKTIK_MONSTER } = await tolerera("ai-mentor-praktik-fragor.ts", ["svaraLokaltPraktik", "PRAKTIK_MONSTER"]);
 const { svaraLokaltPortfoljgrund, PORTFOLJGRUND_MONSTER } = await tolerera("ai-mentor-portfoljgrund-fragor.ts", ["svaraLokaltPortfoljgrund", "PORTFOLJGRUND_MONSTER"]);
 const { svaraLokaltAgande, AGANDE_MONSTER } = await tolerera("ai-mentor-agande-fragor.ts", ["svaraLokaltAgande", "AGANDE_MONSTER"]);
@@ -510,6 +507,9 @@ const GAMLA = [
   const KOMPONENTER = [
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+    // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
+    "svaraLokaltMarknadsmekanik",
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",

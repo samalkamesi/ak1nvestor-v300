@@ -740,6 +740,69 @@ import { svaraLokaltVardegrund } from "@/lib/ai-mentor-vardegrund-fragor";
 // INGEN SIST-anspråk — 53:e motorn, fönstrets dokumenterade ordning: … →
 // konvertibel (50) → sektorlasning (51) → vardegrund (52) → detta lager.
 import { svaraLokaltRealekonomi } from "@/lib/ai-mentor-realekonomi-fragor";
+// 2026-09-19 omgång 24: försäkring + krypto (s6-u1, manifest auto-s6-
+// 1789839901194 — sektorfamiljens sista fria block; aktiverar se-19 +
+// se-11 ⇒ KATEGORIN SEKTORANALYS FULLT LÄNKAD 30/30, plus källaktiveringar
+// poor-charlies-almanack + ib-03 (försäkringsmonstret) och sj-02 +
+// rs-01 (kryptomonstret). Två monsters: combined ratio/floaten —
+// teckningsmotorn (690 + 260) ÷ 1 000 = 95 % med stormårets 105 %, mot
+// kapitalmotorn 1 000 × 4 år = 4 000 Mkr float × 4 % = 160 Mkr (bra år
+// 50 + 160 = 210, stormår −50 + 160 = 110; effektiv låneränta 50 ÷ 4 000
+// = 1,25 %) + krypto som extrem risk — blockkedjan (block ≈ var 10:e
+// minut, halvering ≈ vart fjärde år) och svängningsaritmetiken 10 000 →
+// 2 500 = −75 % som kräver +300 % tillbaka (−50 % → +100 %, −90 % →
+// +900 %). Sondens dokumenterade gränser: naket «försäkring» är
+// beteendedjupets («förankring», tav 2) — detta lager bär ENDAST
+// sammansättningarna; «float»↔«moat» tav 2 hålls isär av längdtoleransen
+// (≤ 7 tecken tål 1 fel); «termin/terminer» nästas, «price to sales/
+// book» basens — od-07 och v04/v05 bärs INTE. Sond _s6u1-sond{,2,3}-
+// omg24.mjs: familjerna NULL genom kedjans 54 motorer / 148 monsters,
+// 0 grannar. SIST i kedjan — 55:e motorn: … → vardegrund (52) →
+// realekonomi (53) → detta lager. Anspråk data/vakten/
+// auto-s6-1789839901194-s6-u1-ansprak.md FÖRE byggstart.
+import { svaraLokaltForsakring } from "@/lib/ai-mentor-forsakring-fragor";
+// 2026-09-19 omgång 24: moatdjup (s6-u2, manifest auto-s6-1789839901194 —
+// moatens två mekanisker i siffror: prisfullmakten + byteskostnaderna;
+// aktiverar MT-blockets 7 mentorväglösa kurser ⇒ KATEGORIN MOAT fullt
+// länkad 4/11 → 11/11 — mt-07 + mt-05 primära, mt-01/mt-03/mt-04/mt-06/
+// mt-08 källor). Prisfullmaktens hävstång (105 − 60) × 100 000 = 4,5 Mkr
+// = +12,5 % på 5 % höjning, brytpunkten 4,0 Mkr ÷ 45 = 88 888,9 ⇒ tål
+// 11,1 % kundbortfall; byteskostnadens tiofalt (churn 2 % ⇒ 8 000 × 50
+// = 400 000 mot churn 20 % ⇒ 8 000 × 5 = 40 000; 400 000 ÷ 40 000 = 10).
+// Sondens dokumenterade gränser: «moat»/«moats»/«moaten»/«vallgrav»/
+// «vallgraven» = extra-lagrets kärnord (här ENDAST stärkord, deras frågor
+// bärs som knappar); «kostnadsöverlägsenhet»/«kvalitetspremien»/«inlåsning-
+// effekten» NULL men medvetet ej kärnord (mt-06/mt-08 bärs som källor).
+// Sond _s6u2-sond-omg24.mjs + _s6u2-sond2-omg24.mjs: familjen NULL genom
+// kedjans 54 motorer / 1 570 kärnord, kärnorden RENTA (0 grannar inom
+// motorns tolerans). Wiread sist i fönstrets löpande ordning — 56:e
+// motorn: … → realekonomi (53) → försäkring (55) → detta lager. Anspråk
+// data/vakten/auto-s6-1789839901194-s6-u2-ansprak.md FÖRE byggstart.
+import { svaraLokaltMoatdjup } from "@/lib/ai-mentor-moatdjup-fragor";
+// 2026-09-19 omgång 24: nya territorier (s6-u3, manifest auto-s6-
+// 1789839901194 — TRE monsters: aktivisten, guidningen, bostadsmekaniken +
+// demografin; aktiverar 7 mentorväglösa kurser: kt-07 + ib-04 + kt-06 +
+// kt-04 + kt-05 + ma-08 + mk-12). DEKONFLIKT mot fönstrets syskon, ärligt
+// bokfört: ursprungsplanens försäkringsmonster överläts åt u1 (deras anspråk
+// 16:25 UTC FÖRE detta lagers 17:53; deras ai-mentor-forsakring-fragor
+// lästes på disk) — ersättaren aktivisten sondbekräftad NULL genom kedjan
+// ÄVEN med syskonens nya lager wireade. Aktivisten: substans 178,0 mot
+// kurs 124,0 = gap 54,0 = 43,5 %, flaggtröskeln 5 %, röstlängden 20,0 A +
+// 80,0 B = 28,0 M röster med stiftelsens 51,4 % röster på 14,4 % kapital,
+// prisbanan 124,0 → 146,0. Guidningen: det dubbla slaget 0,90 × 0,90 =
+// 0,81 (kurs 180,0 → 145,8), kalibreringsserien 12,00 → 10,50 mot väntan
+// 9,00. Bostaden: lånekraften 144 000 ÷ 0,040 = 3 600 000 mot 7 200 000,
+// bolånetaket 85 % av 4 000 000, tjänstegraden 216 000 = 27,0 %, hävstången
+// 37,5 ÷ 15 = 2,5, beroendekvoten 0,84 → 1,00, pensionen 41,7 → 25,0.
+// Sondens dokumenterade gränser: basen äger naked «katalysator», nästas
+// substansvärde-orden, ägande bolagsstämma/rösträtt, makro ränte-orden,
+// basen «hur påverkar X börsen?»-formerna — alla bärs som knappar här.
+// Sond _s6u3-sond{,2,3}-omg24.mjs: familjerna NULL genom kedjan, 0
+// grannar (även mot syskonens nya kärnord, omverifierat efter dekonflikten).
+// Wiread sist i fönstrets löpande ordning — 57:e motorn: … → realekonomi
+// (53) → försäkring (55) → moatdjup (56) → detta lager. INGEN SIST-anspråk.
+// Anspråk data/vakten/auto-s6-1789840407-u3-ansprak.md FÖRE byggstart.
+import { svaraLokaltNyaTerritorier } from "@/lib/ai-mentor-nya-territorier-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -1445,7 +1508,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltMarknadsmekanik(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltMarknadsmekanik(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER) ?? svaraLokaltForsakring(q, KURSREGISTER) ?? svaraLokaltMoatdjup(q, KURSREGISTER) ?? svaraLokaltNyaTerritorier(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

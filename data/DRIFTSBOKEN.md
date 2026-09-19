@@ -2586,3 +2586,50 @@ Kö: blad 10:s födelsebevis 09-20 02:30 + jungur 03:20 · 02:40-prognosen verif
 · kvällspunkt APP imorgon = kvällsfasens tvåpunktsbas · huvudagentens
 DUBBELPROJEKT-kur (db-app-crontab + .pgpass, R2-nära) består.
 Protokoll: data/forskning/DR-OVNING-2026-09-19-KVALL-APP-2.md.
+
+## S10-U1 — KVALLSKONTROLLPAR: kontrollparet stänger cache-hypotesen · par 3 +8 EXAKT över 23:00 · pumpen är DAGLIG batch (2026-09-19 22:29–23:02, GODKÄNT)
+
+Agent: s10-u1 (manifest auto-s10-1789849506241, vakt 1/3). Fullständigt
+protokoll: data/forskning/DR-OVNING-2026-09-19-KVALLSKONTROLLPAR.md. Order:
+DR-övning nästa i spåret — återställ, mät tid/rader, protokoll, städa lokal
+PG. Anspråk disk-först 22:29:30 med P1–P10 FÖRE mätning (u2:s anspråk 22:31,
+u3:s 22:31 — tre vakter, tre skilda ytor; flocken serialiserade PG17: u2:s
+offsite-övning såg viloläge 20:32:41Z mellan mina två fönster).
+
+- **Två öppna köposter tagna:** kontrollparet dag-RTO (DAGFONSTER-REPLIK/
+  FORMIDDAGSPULS) + intra-kvarts par 3 över :00/:30. Restore-kärnan var
+  levererad (AUTO-10/11/12) — inget duplikat.
+- **KONTROLLPARET (AUTO-13 + AUTO-14, blad db-2026-09-19):** två FULLA
+  cykler fem minuter isär — RTO **12,9 s** (1 222 MB) resp **15,7 s**
+  (4 470 MB). B hade varmare cache OCH 3,7× mer RAM och blev ändå 2,8 s
+  långsammare ⇒ **cache-kylan utesluten som RTO-förklaring; korttidsbrus
+  ±3 s dominerar.** DAGFONSTER-REPLIK:s "dagklass 14–18 s oavsett RAM"
+  MOTBEVISAD (12,9 på kvällen). NY DOKTRIN: RTO-prediktion = spann 11–19 s
+  (9 punkter, medel 14,0 s); avvikelse är parmätning värd, inte fynd.
+  Radkontrakt/felbild fullt deterministiska: EXAKT identiska i A och B,
+  felloggarna byte-identiska 34 881 B (sjunde/åttonde repetitionerna).
+  Kontextfynd: 3,2 GB RAM frigjordes mellan körningarna (extern händelse).
+- **PAR 3 ÖVER MARKÖR:** 22:58:43 → 23:01:31 — Δboard = **+8 EXAKT**
+  (49 994 → 50 002), snapshots/organ frusna i paret. Kedjeprediktionen
+  **50 002** (49 578 + 8×53) träffade siffra för siffra 13,3 h i förväg —
+  kvartsformeln lever oavbruten även kvällstid (tredje parbeläggningen:
+  2×Δ0 inom kvart + 1×+8 över markör; klockan eldar VID markören).
+- **KVÄLLS-RPO (M=82):** totalt **+19 685** oskyddade · board +656 = 8×82
+  EXAKT · snapshots +18 984 · organ +45 · 3 av 60 tabeller i rörelse.
+  **Driftfynd: snapshots fruset på 1 252 404 sedan 09:30 (13,5 h) — pumpen
+  är en DAGLIG batch (skriver mellan 02:30 och 09:30), inte kontinuerlig.**
+  Blad-10-prediktionen (snapshots 1 252 404) kvällsverifierad på exakt talet
+  ~3 h före bladets födelse; blad-10 board 50 114 (8×96) stärkt.
+- **Prediktionsdom 7 ✅ · 2 ❌** (P2 primär: B>A i stället för B<A — data
+  ger starkare uteslutning än decisionregeln; P3: RAM-bandet brutet av
+  extern frigörelse). Städning EGENMÄTT: PG17 down · base OID 1/4/5 + tom
+  pgsql_tmp · skrap-DB borta · WAL 481 MB (nionde punkten på serie-låget) ·
+  felloggar i /tmp enligt mall · lås flock-viloläge.
+- **KVD:** src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · prod
+  ENDAST läst (psql COUNT, GDPR-rent) · syskonytor orörda (u2:s offsite ·
+  u3:s app-DB) · commit med pathspec + commitmsg i /tmp.
+
+Kö: blad 10:s födelsebevis 09-20 02:30 (formelns sjätte test: board 50 114 ·
+snapshots 1 252 404 — nu kvällsförankrad) · jungurkörningen 09-20 03:20 ·
+pump-batchens exakta tidpunkt (02:30–09:30-fönstret) · retention ~10-11 ·
+kvartalssviten senast 12-19.

@@ -1167,9 +1167,13 @@ h1, h2, h3, h4, h5, h6 {
    nya 628 / börja 184 · desktop flagg 727 / nya 729 / börja 204);
    sektionerna bär klasserna via UtvaltSektions sektionsKlass-prop i
    page.tsx (cv-utvalt-flagg/nya/borja). Basregeln ovan står kvar som
-   fallback för framtida sektioner. "auto"-nyckeln minns därefter
-   verklig höjd per kort — samma garanti som kort-familjen. */
-.cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 27rem; }
+   fallback för framtida sektioner. EFTER-rond 1 (bygge nwHC2B9, 19:0xZ):
+   desktop Σspan −17 px (mot −1 037) och nya +6/borja ±0 kirurgiskt;
+   mobilens flagg-post +183 px över 150-taket ⇒ mobil flagg 27→30.75rem —
+   rad2 (den del platshållaren styr; rad1 renderas alltid i dokumenttoppen)
+   har verkligt medel 493 px, inte sektionens 429. "auto"-nyckeln minns
+   därefter verklig höjd per kort — samma garanti som kort-familjen. */
+.cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 30.75rem; }
 .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 39.25rem; }
 .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 11.5rem; }
 @media (min-width: 768px) {

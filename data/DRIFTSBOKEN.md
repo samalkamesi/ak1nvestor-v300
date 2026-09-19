@@ -340,9 +340,15 @@ EnvironmentFile med chmod 600).
 - Återställningskommando: zcat db-DATUM.sql.gz | psql -d MALDB
 - Lokal PG17 lämnad INSTALLERAD men stoppad (sudo pg_ctlcluster 17
   main start vid nästa prov). Skrap-DB ak1a_dr_test raderad efter provet.
-- F1 ISR-uppvärmare: cron 10 3 * * * bash data/infra/contabo/ak1a-varm.sh
-  (versionerad i repot; logg /tmp/ak1a-varm.log; testkörning 12/44 —
-  sökvägslistan finslipas).
+- F1 ISR-uppvärmare: pumpor-daemonen kl 03:10 kör bash data/infra/contabo/ak1a-varm.sh
+  (versionerad i repot — inte crontab; logg /tmp/ak1a-varm.log). ROND 104-ROTKUR
+  2026-09-19: sitemap-grepet levererar sluggar med eget /blogg/-prefix — gamla
+  loopen prependede igen ⇒ /blogg//blogg/slug 404, alla 30 bloggvägar värmdes
+  ALDRIG sedan våg 98 (loggen 12/44 = enbart statiska 200:or; s9-u2:s fynd
+  "glider nedåt" var samma rot + transienta natt-timeout). Kurerad + bevisad:
+  torrkörning 2026-09-19 23:08 lokal = 44/44 (även /en + /ar utan trailing
+  slash — svarade 308 förr); nytt försök per väg vid timeout; missade vägar
+  loggas namngivet.
 
 ## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
 

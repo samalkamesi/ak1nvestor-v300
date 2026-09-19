@@ -1,0 +1,25 @@
+{
+  "kurs": "v07",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara med egna ord: brutomarginalen är det som blir kvar av varje hundralapp i försäljning när varan eller tjänsten är levererad — före vilka kostnader? 2. Skriv formeln: (nettoomsättning − rörelsens kostnader exkl. personalkostnader) ÷ nettoomsättning. 3. Hög brutomarginal = kunden betalar mycket mer än varan kostar att producera. Vilka tre källor till prutmån nämner kapitlet (varumärke, teknik, switch-kostnad)? Och vad innebär en låg marginal (råvara, konkurrens på pris)? 4. Förklara satsen 'taket sätts i första raden': en hög bruttomarginal kan förvaltas bort av dålig organisation, men en låg kan ALDRIG förvaltas fram till hög netto. Varför stämmer det?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka två poster i koncernens resultaträkning behöver du för räkningen — 'Nettoomsättning' och 'Kostnad sålda varor och tjänster' (KSVT)? Förklara alternativet när 'Rörelsens kostnader' redovisas med personalkostnader separat i not. 2. Noten till rörelsekostnaderna delar upp material, personalkostnad och övriga rörelsekostnader — varför vill du veta vad som verkligen är varukostnad? 3. VARNINGEN: för vilka tre bolagstyper saknas KSVT-strukturen helt (banker, förvaltningsbolag, fastighetsbolag)? Vad betyder det för att läsa bruttomarginal där? 4. Var hittar du femårstrenden — nämn båda källorna kapitlet ger: nyckeltalssidan (5 år) eller fem årsredovisningar."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Universummedianen är 47,8 %. Gruppera bolagen efter affärsmodell: mjukvara/plattform (Evolution 100,0 %, Kambi 98,9 %), premium-industri (Atlas Copco 42,2 %, Assa Abloy 43,1 %) och volym med hård prispress (Volvo B 24,4 %, Sinch 18,4 %). Förklara varför samma siffra betyder tre olika affärsmodeller. 2. Evolution och Kambi har stjärna vid poängen 4 — förklara fotnoten: över 70 % ger 5 p ENDAST om 5-årigt snitt också överstiger 70 %. 3. Alfa Laval ligger på 36,3 % — vilken poäng och vilken bild ger kapitlet? 4. Swedbank visar 0,0 %: förklara varför det är saknad-data (branschfälla) i stället för dålig affär."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Varför ska du ALDRIG jämföra bruttomarginal mellan branscher som vore det en ranking? Förklara med kapitlets exempel: en handelskedja på 25 % kan vara magnifik och en programvara på 85 % medioker. 2. Swedbank, Nordea och Handelsbanken visar 0,0 % — Industrivärden/Kinnevik 100/0 % av samma skäl. Förklara strukturen bakom och lär dig läsa den FÖRE siffran. 3. Uthållighet bevisas inte av ett år: vad kräver den platta toppen över 70 % (5-årigt snitt)? Varför räcker inte en ensam lyckoåring? 4. Mix-effekter: hur kan en lågmarginalvolym vid sidan av högmarginalkärnan dölja att kärnan krymper — och var letar du efter segmentuppdelningar (i noterna)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Räkna efter med trappan: vilka poäng får Atlas Copco 42,2 %, Alfa Laval 36,3 % och Kambi 98,9 %? Kontrollera mot kapitlets exempel: 3, 3 och 4 p. 2. Varför får Kambi bara 4 p trots 98,9 %? Förklara regeln om 5-årssnittet över 70 %. 3. Sinch 18,4 % och Volvo B 24,4 % hamnar båda på 1 p — förklara med trappsteget 15–25 % och vad siffrorna säger om volym och hård prispress. 4. V07 har KRITISK vikt och kallas modellens tidigaste moat-indikator (V13-väggens grundmaterial). Förklara för dig själv varför bruttomarginalen visar prisets och varans makt tidigt."
+    }
+  ]
+}

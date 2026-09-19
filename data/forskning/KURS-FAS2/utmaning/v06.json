@@ -1,0 +1,25 @@
+{
+  "kurs": "v06",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara med egna ord vad EV (Enterprise Value) mäter: vad kostar hela företaget — inte bara aktierna? Beskriv kapitlets bild: EV är priset för hela maskinen, aktiekursen bara priset för ratten. 2. Skriv upp formeln: EV = börsvärde + räntebärande skulder − kassa. Varför får du behålla kassan i kassaskåpet när du tar över bolagets lån? 3. EBITDA = rörelseresultat + avskrivningar. Vilka tre poster är borträknade, och vad gör det för jämförelser mellan bolag med olika skuldnivåer, skattesituationer och ålder på maskinparken? 4. Varför pratar köpare av hela bolag (och deras banker) i EV/EBITDA i stället för P/E? Förklara hur P/E straffar hårt belånade bolag och belönar skuldfria."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Börsvärdet behöver antal aktier × aktiekurs. I vilken not hittar du antalet aktier enligt kapitlet, och varför ska kursen ha samma datum som resten av hämtningen? 2. Vilka poster letar du upp för räntebärande skulder — och varför räknas leverantörsskulder INTE med (de är verksamhet, inte finansiering)? 3. Var hittar du kassan, och vilka två rader ger EBITDA: var i resultaträkningen ligger rörelseresultatet (raden före finansiella poster) och vilken rad i kassaflödesanalysen adderas tillbaka? 4. Räkna med kapitlets nummer: (1 + 2 − 3) ÷ (4 + 5). Kontrollera att varje komponent har en given plats i årsredovisningen innan du räknar."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Räkna efter genomräkningen: börsvärde 100 mdr, räntebärande skulder 20 mdr, kassa 5 mdr — hur stor blir EV? 2. Fortsätt: rörelseresultat 12 mdr + avskrivningar 8 mdr ger EBITDA 20 mdr. Vilken multipel blir EV ÷ EBITDA? Kontrollera mot kapitlets 5,75× — bolaget kostar knappt sex års driftkassa. 3. Förklara varför ett kraftigt belånat bolag kan ha lägre P/E men HÖGRE EV/EBITDA än ett skuldfritt — var syns skulderna? 4. Beskriv värdefallehålet: multipel under 4× ger 5 poäng ENDAST om V19 (kassatäckningen) också är minst 3 poäng (minst 30 månader), annars max 3. Nämn de tre skälen till falsk billighet."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Varför är EBITDA inte kassaflöde? Förklara med de kapitalintensiva branscherna stål och sjöfart: maskiner slits och måste ersättas — vilken verklig kostnad är borträknad, och varför ser bolagen billiga ut? 2. Vad händer med poängen vid negativ EBITDA (0 p), och varför kan en förlustverksamhet inte prissättas i års kassa? 3. Skuldfällan i EV: hur kan leasing enligt IFRS 16 flytta in stora poster i skulderna och förstöra jämförbarheten mellan år och bolag? 4. Dataskrap-fällan: multipeln är känslig för fel i kassa- och skuldhämtningen — ett tecken fel i kassan flyttar hela värdet. Mot vilken av bolagets egna presentationer ('netto skuldsättning') ska du verifiera komponenternas summa?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Träna på kurvan: multipeln 5,75× hamnar i intervallet 4–6× — vilket poäng? Och vad gäller för multipel över 20×? 2. Ärlighetslektionen: V06 är OSATT i kärnan idag. Vilket fält saknas i datakontraktet P1 (evEbitda), och vilket fält finns i stället (evEbit — se V28 Earnings yield)? 3. Förklara varför kärnan vägrar lägga EV på EBIT: vad händer med multipeln (ser dyrare ut än den är) och poängen (för låg) för kapitalintensiva bolag? 4. Värdefallehålet igen: under 4× krävs V19 på minst 3 poäng. Förklara med kapitlets ord varför billighet utan kvalitet är en fälla — och att modellen bygger in den kontrollen."
+    }
+  ]
+}

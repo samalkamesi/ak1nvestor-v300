@@ -1,0 +1,25 @@
+{
+  "kurs": "v08",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara vad EBITDA-marginalen mäter: hur stor del av varje hundralapp i försäljning som blir rörelsekassa. Vilka tre saker stänger du ögonen för — finansiering (ränta), skatt och bokföringsmässigt slitage (avskrivningar)? 2. Skriv formeln: (rörelseresultat + avskrivningar) ÷ nettoomsättning. 3. Förklara gap-tanken: bruttomarginalen (V07) visar varans makt, EBITDA-marginalen (V08) visar hur mycket organisationen — personal, marknad, lokal — kostar av den makten. Vad är gapet mellan V07 och V08? 4. Kapitlet kallar EBITDA en bro mot kassaflödet, men den kommer aldrig fram helt. Vilka två saker saknas (arbetande kapital och investeringar)?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Var i resultaträkningen hittar du rörelseresultatet (EBIT) — vilka rader kommer före och efter (efter rörelsekostnader, före finansiella poster och skatt)? 2. Avskrivningarna hämtas ur kassaflödesanalysen, posten 'Avskrivningar/nedskrivningar'. Vad gör du när posten är delad i flera rader (summera dem)? 3. Noten till rörelsekostnaderna redovisar ofta avskivningarna också (personalkostnad/avskrivning/övrigt) — förklara hur du använder den som korskälla. 4. IFRS 16-läsning: leasingavskrivningar och leasingräntor ligger i olika rader. Vilken princip ska du bestämma — och varför måste den hållas konsekvent mellan bolagen du jämför?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Räkna efter Alfa Laval-steget: EBIT-marginal 16,2 % + avskrivningar (typiskt 4–5 %-enheter av omsättningen för processindustri) ⇒ vilken EBITDA-marginal? Varför ska du alltid ta bolagets egen avskrivningspost ur kassaflödesanalysen — aldrig ett antagande? 2. Gapövningen: Atlas Copco brutto 42,2 % → EBIT 20,6 %. Vad har organisationen ätit av varans makt — och är det normalt för industri? 3. Evolution: brutto 100 % → EBIT 57,8 %. Var står hela slaget enligt kapitlet? 4. Industrivärden 99,9 % och Swedbank 51,4 % — förklara varför det är resultaträkningens struktur, inte lönsamhet. Universummedianen för EBIT var 20,8 %."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. EBITDA målar 'före slitage' — men slitage är verkligt. Förklara med gruvor, rederier och stål: varför är en hög EBITDA-marginal med evigt stort CAPEX-behov ingen sann lönsamhet? 2. IFRS 16 flyttade leasing från kostnad till avskrivning + ränta. Förklara hur EBITDA-marginalen steg 'gratis' vid övergången 2019 utan att en enda affär förbättrats — och varför jämförelse tvärs över övergången kräver justering. 3. Engångsposter: nämn de två exemplen (restruktureringskostnader, företagsförvärvsvinster) — vilken not är skyldigheten att läsa? 4. Förklara varför modellen vägrar lägga EBIT-marginaler på EBITDA-trösklar: vad skulle systematisk underskattning betyda för kapitalintensiva bolag?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. V08 är OSATT i kärnan idag — med dokumenterad orsak. Vilket fält finns i datakontraktet (lonksamhet.ebitMarginal) och vilket saknas (avskrivningar/omsättning)? 2. Träna på den väntande linjära trappan: vilka fem nivåer ger 5, 4, 3, 2 respektive 1 poäng? 3. Kapitlet kallar detta Fas 2:s kanske renaste exempel på modellens dataheder: hellre en tom rad med förklaring än en snygg siffra som ljuger om vad den mäter. Förklara för dig själv vad dataheder betyder. 4. Jämför med V06: båda väntar på att kontraktet utökas additivt. Vad är skillnaden mellan linjära steg och V07:s konkava kurva med platt topp?"
+    }
+  ]
+}

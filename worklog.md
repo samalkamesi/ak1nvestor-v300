@@ -14339,3 +14339,96 @@ ytor: ekosystemdjup-listans omgång-22-tria (bokmastar+riskbudget+konvertibel �
 svitharmoniseringens dokumentationsplikt) + de två K03-läkningarna 432→440
 (avkastningskurva + warrant, diskbevisade gröna). R2 orörd; data/blogg/ orörd;
 INGET bygge (prod-synken äger).
+
+## SPÅR 6 s6-u1 (omgång 22, omstartsfullbordan) — 2026-09-19: AI-MENTORN +1 FÖRHANDSFRÅGA — KONVERTIBLER OCH HYBRIDKAPITAL, konvertibel-lagret SIST i kedjan (125 → 126 monsters i mitt lager; fönstrets slutläge med syskonen: 50 motorer / 132 monsters — fjärde modulen faktordjup i samma fönster) [fabrik]
+
+OMSTARTSFULLBORDAN: ursprungsinstansen byggde modulen + anspråk (data/vakten/s6-omg22-u1-ansprak.md, gitignorat diskbevis) men avslutades utan LEVERANS-rad (fabrikens underkänn "(a) kvitto-raden saknas"); omstarten (denna) fullbordade regressionstestet + wiringen + kedjetestet + svitharmoniseringarna. BASF-BOKFÖRING: kodfilerna bars av syskonet s6-u3:s fönstercommit 18bf0c6a (konvertibel-modulen 240 r + modultestet + widget-wiringen + kedjetestets motordef/kanoniska — ärligt bokfört i deras worklog-rad) och s6-u2:s 16d90db9 (tillväxtdjup-A2:ans SIST→positionskontroll); detta är worklog-kvitto i omgång 20-u1:s precedentform — mina filer, mitt test, mitt kvitto.
+
+VAL (sond _s6u1-sond-omg22.mjs, otrackad; anspråk FÖRE byggstart): hela konvertibel-familjen NULL genom kedjans 46 motorer / 125 monsters («vad är en konvertibel?» · «vad är hybridkapital?» · «vad är en konverteringskurs?» · «vad är paritetsvärdet?» · «vad är en preferensaktie?» · «vad är stämpelordningen?» · «vad är at1-kapital?») och 16 kärnord RENTA (0 grannar inom tavstånd 4); naket «konvertering» bärs INTE (avkastningskurvans «kurvinvertering», tavstånd 4), «at1» kort-exakt; dokumenterade gränser: basen kapitalstruktur-helhetsfrågan + konkurs-orden, makro obligation/epi, optionsdjupet optionens premie, kapitalmekaniken emission/utspädning, kreditdjupet kreditpris-familjen — ägarnas frågor bärs som knappar.
+
+LEVERANSINNEHÅLL: Ett monster, tre sektioner — (1️⃣) KONVERTIBELN (lösen 1 000 · kupong 2,0 % mot 5,0 = priset för optionen · konverteringskurs 125 → 1 000 ÷ 125 = 8 aktier · aktie 160 → 1 280 = +28,0 % · aktie 100 → lånet tillbaka, golvet · paritetspunkten 8 × 125 = 1 000); (2️⃣) PREFERENSAKTIEN/EVIGHETSRÄNTAN (fast utdelning 6,50 · 6,50 ÷ 0,065 = 100,0 mot 6,50 ÷ 0,078 = 83,3 = −16,7 % utan ändrad utdelningskrona — durationstanken); (3️⃣) STÄMPELORDNINGEN (70/60/25/40 → 100 %/40 %/0 % · trappans kronkostnad 50/20/65 · Basel III + AT1/Credit Suisse 16 mdr francs). AKTIVERAR 2 mentorväglösa kurser: ks-06 primär + ks-07 — KAPITALSTRUKTUR fullt mentorlänkad 6/8 → 8/8; källor dessutom rk-02 + rk-08 + ma-05 = 📖 Källor (5) per svar, 3 kurslänkar + 3 fragor:-knappar.
+
+KVD (omstartens egen körning, efter fönstrets alla fyra moduler landat): modultest 21/21 (A flerkälls 5 källor · A2 SIST position 50 av 50 · B 12/12 varianter · D01 0 fantomslugar av 440 · D02 registerdrivna tal KAPITALSTRUKTUR=8 · D03 11 aritmetikkontroller oberoende omräknade · E 6/6 stärkordsfrågor → null — kärnordskravet håller gränserna mot makro/optionsdjup/kapitalmekanik · G/G2 0 stölder mot 1 398 kedjefrågor, 0 av 48 syskonmotorer (faktordjup inkluderat) fångar mina 20 kanoniska · H SIST-invarianten) · MENTORSVITEN 55 filer 1 357 PASS 0 FAIL · KEDJAN 180/0 (50 motorer / 132 monsters, konvertibels 13 kanoniska utan skuggning) · tsc 0 via projektbinär. SVITHARMONISERING (kända-bördan): warrant + avkastningskurva KOMPONENTER-listor fick fönstrets fyra lager i widgetordning (faktordjup FÖRE bokmastar — ordningsvakten bevisar rätt position); tillväxtdjup-A2 SIST→positionskontroll (omgång 22:s fönster wireade fyra lager efter deras 45:e position). R2 orörd; data/blogg/ orörd; INGET bygge (prod-synken äger).
+
+## SPÅR 6 s6-u1 (omgång 22, kvitto — tredje instansen) — 2026-09-19: AI-MENTORN +1 FÖRHANDSFRÅGA — FAKTORPREMIERNA (avkastningens bucklor under CAPM-linjen), FAKTORDJUP-LAGRET kedjans 48:e motor av 50 (131 → 132 monsters; fönstrets slutläge: 50 motorer / 132) — mina filer bars av syskonet u3:s commit 18bf0c6a + u2:s harmoniserings-commit 16d90db9, detta är worklog-kvitto [fabrik]
+
+MIN LEVERANS (s6-u1, manifest auto-s6-1789791914561, omgång 22, tredje instansen —
+föregående instans byggde konvertibel-modulen, dess utdata förlorades utan
+kvitto-rad; denna instans valde FRITT ämne enligt uppdraget och lämnade
+konvertibeln åt sin bärare):
+
+- src/lib/ai-mentor-faktordjup-fragor.ts — 1 monster [faktorpremier], aktiv
+  på pf-15-faktorpremierna (PORTFÖLJHANTERING:s teorikröningskurs — spår 5:s
+  färska tillägg 2026-09-18, mentorväglös sedan födelsen) + rp-02-tre-matt-
+  tre-fragor (också mentorväglös → AKTIVERAD): 2 nya mentorvägar. Källpaket
+  pf-15 primär + rp-02 + ma-06-aktiernas-riskpremie + km-015-beta-capm.
+  Innehåll = kursens egna sex kapitel med dess egna övningstal: CAPM-linjen
+  2,0 + 1,2 × 4,0 = 6,8 procent och bucklorna · de fyra klassiska faktorerna
+  (värde: billigaste tredjedelen lång/dyraste kort · storlek: Banz 1981 ·
+  momentum: Carhart 1997, tolv månaders vinnare mot förlorare ·
+  lågvolatilitet: Sharpe-paret (8,0 − 2,0) ÷ 22 = 0,27 mot (7,5 − 2,0) ÷ 13
+  = 0,42) + femfaktormodellens 2015-tillägg · regressionens laddningar
+  (portfölj A 1,00/0,05/0,10/0,02 = ren marknad mot B 0,70/0,45/0,30/0,15 =
+  buckelbärare; blandningen 0,5 × 6,0 + 0,5 × 9,0 = 7,5 procent;
+  momentum-nettot 6,0 − 2,5 = 3,5 procent) · tre skolor (riskkompensation/
+  beteende/struktur med sina konsekvenser) · fyra fällor (varningshistorien
+  0,982¹³ ≈ 0,79 = drygt tjugo procents utfall · faktorzoo · kostnadernas
+  tystnad · berättelsens förklädnad) · kursens fem slutfrågor. KÄLLMÄRKNING
+  (spårets mål): flerkällsrad 📖 Källor (4 källor numrerade), 4 kurslänkar
+  + 2 fragor:-knappar + fordjupa per svar, registerdrivna tal VID SVARSTID
+  (PORTFÖLJHANTERING-antalet, pf-15: 6 kapitel/24 min/avancerad nivå, rp-02:
+  24 min) — utan API-kostnad. JURIDIKGRIND: ren utbildning — «aldrig en
+  rekommendation att bära någon faktor alls» bärs i texten.
+- verktyg/testa-ai-mentor-faktordjup.mjs — regressionstest 35 PASS 0 FAIL:
+  A kanonisk flerkälls · B 20 varianter (dia-fria, böjda, premie-former,
+  befallningsform) · C determinism ×2 bitidentisk · D01 0 fantomslugar av
+  440 · D01b knappar levande mot HELA kedjan (49 lager) · D02 registerdrivna
+  tal · D03 6 aritmetikkontroller oberoende omräknade (6,8 · 0,27/0,42 · 7,5
+  · 3,5 · 0,79 · 8 laddningar) · E null-genomströmning · F juridikgrind ·
+  G 115 antistöld · G2 1 309 syskonkärnord → 0 · H lager-invarianten 118/118
+  · I omkastad antistöld · J kärnordsdisjunktion (1 283 kärnord, 0 överlapp)
+  · L widget-synk (position 48 av 50: efter tillväxtdjup, före bokmastar).
+- WIRING: chat-widget.tsx (import + kedjeposition efter tillväxtdjup, FÖRE
+  bokmastar — INGEN SIST-anspråk, syskonens ordning bokmastar → riskbudget →
+  konvertibel består) + kedjetestet (motordef med dokumenterade gränser,
+  10 kanoniska A-rader, total 131 → 132 i 50-läget, C-fallens femtio-motorer,
+  syskonens motorindex 46/47/48 → 47/48/49 flyttade medvetet).
+- KADA-HARMONISERING (dokumentationsplikten): svaraLokaltFaktordjup tillagd
+  i 35 modultesters widget-synk-listor (34 via _s6u1-kanda-faktordjup.mjs +
+  case manuellt — dess anropssträngsformat) — hela sviten 57 filer GRÖN
+  sekventiellt.
+
+ÄMNESVAL EFTER SOND (_s6u1-sond-omg22.mjs — lämnad av den tidigare u1-
+instansen, körd av mig mot LIVE disk; anspråk publicerat FÖRE byggstart i
+data/vakten/auto-s6-1789791914561-u1-ansprak.md): hela faktor-familjen NULL
+genom kedjans dåvarande 47 motorer / 128 monsters och kärnorden RENTA mot
+1 350 syskonkärnord; moat (extra), reverse-DCF (nästa), VaR/Kelly (bas),
+riskparitet (portföljbalans) REDAN tagna och lämnades ifred. DOKUMENTERADE
+GRÄNSER: riskmåttsdjupet äger beta/CAPM/smart beta (km-015 här ENDAST källa
++ knapp; naket «beta» ej kärnord) · riskpremielagret äger premie-orden i
+risk-sammanhang · «faktorer» plural STRYKS (granne «sektorer», tavstånd 2
+inom tolerans för åttabokstavsord — G01-doktrinen) · KEDJETEST-FÅNGA
+BOTAD: «det tysta betat» STRYKS som kärnord (riskmåttsdjupets «beta»,
+tolerans 1, fångar böjningen «betat» genom hela kedjan — kursens
+signaturfras bärs i SVARSTEXTEN i stället).
+
+BASF-BOKFÖRING (omvänd BASF, omgång 20/21-presedensen): mina filer (modul +
+test + widget-wiring + kedjerader + 35 harmoniseringar) landade i syskonet
+u3:s commit 18bf0c6a och u2:s 16d90db9 — fönstret konvergerade på disken
+före min commit; disk == HEAD verifierad (modulens minuter-fält, 1 monster,
+wiring ×2, kedjerader ×5 i HEAD). FAKTARÄTTNING av u3:s worklog-rader:
+faktordjup bär 1 monster (ej 3 — inventarie H: faktordjup=1, totalt 132)
+och de två minuten→minuter-felen satt i MITT TEST (rättade av mig själv
+06:52, före deras commit) — modulen bar .minuter från födelsen; tsc-blockadet
+deras commit mötte orsakades av testets fältstavning i det då aktuellast
+sparade läget. Ingen konflikt i sak: deras commit BÄR mina filer korrekt.
+
+KVD (mot HEAD, oberoende omkörd): MENTORSVITEN 57/57 FILER GRÖNA (modultest
+35/35 · kedjetestet 180 PASS 0 FAIL — 50 motorer / 132 monsters, källmärkning
++ kursläkthet på samtliga, 132 disjunkta id · bastestet 26/26 med E01
+registeräkthet 440/440 · syskonen bokmastar 25/25, riskbudget 21/21,
+konvertibel 21/21) · tsc 0 FEL via projektbinär (node node_modules/typescript/
+bin/tsc --noEmit, exit 0). R2 orörd; data/blogg/ orörd; data/vakten/ är
+gitignore:ad (anspråket = diskbevis enligt konvention); INGET bygge
+(prod-synken äger). Denna commit är WORKLOG-KVITTO ENDAST — inga nya
+kodfiler. [fabrik]

@@ -2152,3 +2152,16 @@ räkna med 500 på /en|/ar-speglar; gränssnittsvaktens nästa rop (cron 01/07/1
 flagga — denna not är rotförklaringen att hävisa till. DRIFTSBOKEN § våg 100-precedensen
 (parallella byggen raderade .next) ligger nära: ett bygge startat UTAN flock, eller avbrutet
 mitt i, är den sannolika mekanismen; vem som triggar lämnas åt audit-loggen.
+
+
+---
+**2026-09-19 06:2xZ — gränsnittsvaktens 07:17-larm var 100 % artefakt + klassen kurerad (o86).**
+Föregående not förutsåg "gränssnittsvaktens nästa rop kommer flagga" — det gjorde det:
+07:17-lokalsvepet (05:17–05:20Z) larmade 100+ fynd (88 stil-lös + 8 http-500 på /studio
+/admin) mitt i chunk-500-fönstret, 27 min före 05:44Z-läkningen. Rådata: rapporten visar
+samma CSS-chunk 500 som efter läkningen svarar 200/246 kB. ROT: vaktens bas-koll mätte
+endast bassidans HTTP-kod — pm2 serverade gamla HTML-skal (200) medan tillgångsserveringen
+var död. KUR (o86, spår 8 s8-u3): basens tillgångshälsa (HTML 200 + första CSS-länken 200)
+i pre-gaten + drift-tak EFTER svepet (≥ 30 % infra-klass på ≥ 3 sidor ⇒ svepet kasserat
+som driftartefakt, exit 0, inget fynd-larm). Äkta enstaka siddefekter larmar som förut
+(svitsbevisat). Protokoll: data/forskning/OPTIMERING/o86-granssnitt-driftblindhet-s8.md.

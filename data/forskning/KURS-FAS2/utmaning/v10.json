@@ -1,0 +1,25 @@
+{
+  "kurs": "v10",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Skuldsättningsgraden 1,0× betyder att banken och ägarna finansierar bolaget hälften var; 0,5× att ägarna står för två tredjedelar. Förklara för dig själv vad kvoten mäter. 2. Skulden kallas cykelns förstärkare i båda riktningarna. Beskriv mekanismen i uppgången (lyfter ROE) och i nedgången (fast kostnad även när affären sviker). 3. Varför beräknas V10 FÖRE V09 i modellen? Förklara rollen som hävstångskontroll. 4. Gradens poäng är ett riskmått — inte bra lågt, dumt högt. Vad mäter den egentligen om bolagets struktur, och vem får alltid betalt före ägaren?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka två summarader i balansräkningen använder du — och varför tas hela posten Summa skulder och övriga förpliktelser, inte bara de räntebärande? (För EV-räkningar används de räntebärande, se V06.) 2. Varför skall minoritetsintresset sitta kvar i Summa eget kapital i koncernen — vad blir missvisande annars? 3. Räkna efter: summa skulder ÷ summa eget kapital. Förklara för dig själv vad kvoten säger om balansstrukturen. 4. Två kontroller vid sidan: vad mäter räntetäckningsgraden i noten om finansiella poster (rörelseresultat ÷ finansiella kostnader) — och vilken återbetalningsfråga ställer du i förvaltningsberättelsen?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Volvo B ligger på 1,47× men bär en finansieringsrörelse med kundkrediter som mekaniskt lyfter graden. Förklara varför det inte är samma risk som 1,47× ren driftsskuld. 2. Nintendo, Beiersdorf och Evolution ligger på 0,00–0,01×. Förklara frågan du alltid ställer om skuldfrihet: vad kostar outnyttjad hävstång när affären är starkare än räntan? 3. Boeing 7,91×, Simon Property 5,04× och Mastercard 4,40× fick alla 1 poäng. Beskriv de tre strukturer som förklarar siffrorna (krisbelånat, fastighets-/REIT, medveten belåning). 4. Universum-medianen är 0,52×. Kontrollera i tablån vilka bolag som ligger under — och vilken poäng de delar."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Vad gör modellen när eget kapital är negativt — och varför sätts graden osatt i stället för 0? Förklara dokumenteringsvalet: en negativ nämnare ger ingen ranking. 2. Bankers och finansbolags grader blir 8–15× av struktur, inte av misstag. Förklara varför — och vilket slags mått banker jämförs med i stället. 3. IFRS 16: leasingåtaganden är numera skuld i balansräkningen. Förklara hur butiks- och flygplansleasingar förvärrade grader mekaniskt 2019 — och varför du aldrig jämför över övergången utan not. 4. Räntan avgör bärigheten: förklara varför 3× till 2 % ränta kan vara lugnare än 1,5× till 8 % — och vilka två mått du kompletterar med."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Träna trappan: vilken poäng ger Alfa Laval 0,46×, medianen 0,52×, Volvo 1,47× och Boeing 7,91×? Kontrollera mot kapitlets tabell (5, 4, 3 och 1). 2. Alfa Laval får 5 poäng medan medianen 0,52× hamnar precis under 4-poängsstrecket. Förklara med trappan varför så liten skillnad ger olika poäng. 3. Nyckelkopplingen: V10 beräknas FÖRST i kärnan. Förklara hur dess hävstångskontroll avgör om V09:s ROE får ge toppoäng — vilket gränsvärde krävs? 4. Vad händer med poängen vid negativt eget kapital — och varför är det viktigt att kolla EK-tecknet FÖRE du delar?"
+    }
+  ]
+}

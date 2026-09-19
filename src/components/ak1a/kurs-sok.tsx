@@ -351,12 +351,15 @@ export function KursSok({
     <section ref={registerRef} id="registret" aria-label={t("ksok.ariaRegister")} className="scroll-mt-24">
       {/* Registerverktyg — sticky medan registret bläddras */}
       <div className="sticky top-14 z-20 -mx-1 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-gold/20 bg-background/95 px-1 py-3 backdrop-blur-md">
-        <h2 className="font-serif text-2xl font-bold">
-          {t("ksok.register")}
-          <span className="ml-2 align-middle text-sm font-normal tabular-nums text-muted-foreground">
+        {/* Brandgenomgång P3 (våg 195): rubrik + undertext som SKILDA
+            element — textvyn klistrade ihop dem ("Registrethela
+            biblioteket") och H2:t bar undertexten. */}
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <h2 className="font-serif text-2xl font-bold">{t("ksok.register")}</h2>
+          <p className="text-sm font-normal tabular-nums text-muted-foreground">
             {filterAktivt ? t("ksok.traffar", { antal: sorterade.length }) : t("ksok.helaBiblioteket")}
-          </span>
-        </h2>
+          </p>
+        </div>
         {filterAktivt && (
           <button
             onClick={() => {
@@ -545,12 +548,14 @@ export function KursSok({
           cv-kategorivagg (o78): väggen ligger långt under vecket på mobil —
           content-visibility hoppar style/layout tills den närmas. */}
       <section aria-label={t("ksok.allaKategorierAria")} className="mt-12 cv-kategorivagg rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
-        <h2 className="font-serif text-2xl font-bold">
-          {t("ksok.kategorivagg")}
-          <span className="ml-2 text-sm font-normal tabular-nums text-muted-foreground">
+        {/* Brandgenomgång P3 (våg 195): samma separation som registret —
+            H2 ren, stat-texten eget p-element. */}
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <h2 className="font-serif text-2xl font-bold">{t("ksok.kategorivagg")}</h2>
+          <p className="text-sm font-normal tabular-nums text-muted-foreground">
             {t("ksok.kategorivaggStat", { kategorier: kategorier.length, kurser: kurser.length })}
-          </span>
-        </h2>
+          </p>
+        </div>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
           {t("ksok.kategorivaggText")}
         </p>

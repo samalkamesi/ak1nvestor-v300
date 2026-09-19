@@ -47,10 +47,15 @@ export default function BloggPage() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Blogg" }]} wide>
-      <h1 className="font-serif text-4xl font-bold">AK1A Blogg</h1>
+      {/* Brandgenomgång P2 (våg 195): H1 bär löftet, namnet är eyebrow —
+          ingressens egen bästa mening blev rubriken. */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Blogg</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">
+        Institutionell metodik, förklarad för privatpersoner
+      </h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
-        Institutionell metodik, förklarad för privatpersoner. Pelare: {pillars.join(" · ")}.
-        Nytt innehåll löpande — djupanalyser och variabelfördjupningar.
+        Pelare: {pillars.join(" · ")}. Nytt innehåll löpande — djupanalyser
+        och variabelfördjupningar.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

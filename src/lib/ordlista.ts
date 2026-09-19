@@ -1739,6 +1739,19 @@ export const ORDLISTA = {
     en: "Dataset — industry medians for key ratios",
     ar: "مجموعة البيانات — وسيطات القطاع للمؤشرات المالية",
   },
+  // Våg 195 (brandgenomgång P2): H1 som löfte i stället för filnamn +
+  // underrubrik med omfång och juridikgrund; nBolag ur samma källa som
+  // ingressen (guldkälleregeln).
+  "dataset.h1": {
+    sv: "Jämför nyckeltal med branschens median",
+    en: "Compare key ratios with the industry median",
+    ar: "قارن المؤشرات المالية بوسيط القطاع",
+  },
+  "dataset.underrubrik": {
+    sv: "{nBolag} bolag · 10 branscher · observerat och daterat — pedagogiskt riktmärke, inte råd",
+    en: "{nBolag} companies · 10 industries · observed and dated — an educational benchmark, not advice",
+    ar: "{nBolag} شركة · 10 قطاعات · مرصودة ومؤرّخة — مرجع تعليمي لا نصيحة استثمارية",
+  },
   "dataset.ingress": {
     sv: "AK1A:s publika referensdataset: medianvärden för nyckeltal per bransch, räknade ur vårt fasta universum av {nBolag} noterade bolag — 10 branscher × 10 bolag. Aggregat av offentliga marknadsdata, redovisade med observationsantal och hämtdatum. Pedagogisk analys — aldrig investeringsråd.",
     en: "AK1A's public reference dataset: median values for key ratios per industry, computed from our fixed universe of {nBolag} listed companies — 10 industries × 10 companies. Aggregates of public market data, reported with observation counts and a retrieval date. Educational analysis — never investment advice.",

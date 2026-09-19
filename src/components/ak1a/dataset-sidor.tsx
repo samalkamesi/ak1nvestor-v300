@@ -356,7 +356,12 @@ export function DatasetIndexVy({
     <SeoPageShell breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
       <StrukturData data={datasetJsonLd(lang, medianer)} id="jsonld-dataset" />
 
-      <h1 className="font-serif text-4xl font-bold">{t("dataset.titel")}</h1>
+      {/* Brandgenomgång P2 (våg 195): H1 som löfte i stället för filnamn,
+          underrubriken bär omfånget + juridikgrunden. */}
+      <h1 className="font-serif text-4xl font-bold">{t("dataset.h1")}</h1>
+      <p className="mt-2 text-muted-foreground">
+        {t("dataset.underrubrik", { nBolag: medianer.totalt.nBolag })}
+      </p>
       <p className="mt-2 text-sm text-muted-foreground">
         {t("dataset.datering", { hamtat: medianer.hamtat ?? "—" })}
       </p>

@@ -225,7 +225,10 @@ const STIG: {
 /* ---------- Animerad räknare (count-up vid scroll-in, respekterar reduced motion) ---------- */
 
 function AnimeraTal({ mal, suffix }: { mal: number; suffix?: string }) {
-  const [varde, setVarde] = React.useState(0);
+  // Initieras på MÅLET (våg 195, brandgenomgång P3): SSR-/no-JS-vyn bär
+  // det äkta talet i stället för "0 kurser" för förcrawlers; count-up:en
+  // börjar först i starta() nedan och syns bara för JS-användare.
+  const [varde, setVarde] = React.useState(mal);
   const ref = React.useRef<HTMLSpanElement>(null);
   const startad = React.useRef(false);
 
@@ -243,6 +246,7 @@ function AnimeraTal({ mal, suffix }: { mal: number; suffix?: string }) {
     const starta = () => {
       if (startad.current) return;
       startad.current = true;
+      setVarde(0); // från SSR-slutvärdet ner till noll — count-up börjar här
       const t0 = performance.now();
       const varaktighet = 1400;
       const steg = (nu: number) => {

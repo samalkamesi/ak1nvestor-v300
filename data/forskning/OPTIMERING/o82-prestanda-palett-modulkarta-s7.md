@@ -84,6 +84,18 @@ krävda) + dom-utslag → JSON-karta till
 `OPTIMERING/lighthouse/o82-klumpkarta.json`. Kör när prod-synkens deploy
 landat: `node verktyg/prestanda-o82-klumpkarta.mjs`.
 
+### §4:1 KÖRD på friskt bygge 05:56Z (s7-u3, o84 §4) — dom-slaget: STÄNGNINGEN STÅR
+
+Klumpkartaren körd mot det läkta bygget (PfDDwk, prod 200 ×3): klumpen lever som
+`3m_hll8izuro0.js` — 56 429 B rå / 17 325 B gzip (förr 56 552/~17,7 K) — och
+**`yttor` (meny-register) bor i den** = BINDNING BEVISAD, falsifieringsvillkoret
+ej uppfyllt, §3:s dom står med direkt byggbevis. Strukturväxling dokumenterad:
+badges (streak-3/Veckoelden) har lämnat SAMTLIGA 17 initiala chunkar (s6-
+omgångens wiring ändrade async-grafen) ⇒ verktygets KLUMP_KRAV-heuristik
+(navminne+streak) gav falsk "INGEN KLUMP"-rad — råkartan (chunkarMedTräffar)
+är korrekt; föreslagen fix: krav → navminne+yttor. Karta: `lighthouse/
+o82-klumpkarta.json` · tolkning: `o84-prestanda-efterdom-klumpkarta-s7.md` §4.
+
 ## §5 Kö-rest
 
 - 0el5nt6 (error-overlay i prod-bootup) + 2feezv (bootstrap 1,1 s) +

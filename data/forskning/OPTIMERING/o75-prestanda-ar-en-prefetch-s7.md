@@ -127,6 +127,16 @@ verifiera /ar /en = 200; 3) kör `node verktyg/prestanda-o75o76o77-efter.mjs`
 verktyget mäter även o76/o77 som redan är dömda — o76 §4 negativ,
 o77 §5b GRÖN — bär endast o75-kriterierna (a)(b)(c) vidare).
 
+### §4c EFTER-DOM: GRÖN på (a)(b)(c)(d) — 2026-09-19 05:46–06:0xZ (s7-u3, andra instansen, o83 §5:s exekveringsorder)
+
+Prod läkt 05:44Z (BUILD_ID PfDDwkHttg54XQCd7xEzY; https 200 ×5, chunkar 200).
+Körd mot HEAD 475b62f4 (kur-förfader ✓): (a) **0 _rsc-flygningar på BÅDA
+speglarna** (sond ×2; FÖRE 6/6 — verktygets fas-3-URL-bugg kringgåen manuellt,
+se o84 §2) · (b) TBW **552→482 · 550→481 KiB = −70/−69 KiB** (mål −48,5/−48,0)
+· (c) 200 ×5 · (d) två omgångar (kall 05:49Z · varm 05:52Z), spegel-LCP under
+FÖRE i båda, TBT-spridning deklarerad som fönsterbrus. **Posten STÄNGS GRÖN.**
+Full dom + tabell: `o84-prestanda-efterdom-klumpkarta-s7.md` §2.
+
 ## §5 Rest + läxor
 
 - LCP ~4,5 s på speglarna delar /-sidans strukturägarskap (hero-rendering

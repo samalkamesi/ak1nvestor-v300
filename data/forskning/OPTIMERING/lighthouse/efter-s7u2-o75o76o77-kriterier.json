@@ -1,0 +1,115 @@
+{
+  "startad": "2026-09-19T05:49:08.243Z",
+  "faser": {
+    "preflight": {
+      "head": "475b62f4",
+      "buildId": "PfDDwkHttg54XQCd7xEzY",
+      "prodKoder": {
+        "/": "200",
+        "/kurser": "200",
+        "/blogg": "200"
+      },
+      "farfader": {
+        "6f7482da": true,
+        "295ce77c": true,
+        "dea2d366": true
+      }
+    },
+    "struktur": {
+      "/kurser": {
+        "antalChunks": 17,
+        "palettChunks": [
+          {
+            "chunk": "2qnjvou52dgsk.js",
+            "kantecken": [
+              "oppna-sok"
+            ]
+          },
+          {
+            "chunk": "078x5p1cy5c59.js",
+            "kantecken": [
+              "streak"
+            ]
+          },
+          {
+            "chunk": "200fc-x1sezcz.js",
+            "kantecken": [
+              "streak"
+            ]
+          },
+          {
+            "chunk": "3m_hll8izuro0.js",
+            "kantecken": [
+              "navigationsminne",
+              "oppna-sok",
+              "streak"
+            ]
+          }
+        ]
+      },
+      "/blogg": {
+        "antalChunks": 16,
+        "palettChunks": [
+          {
+            "chunk": "2qnjvou52dgsk.js",
+            "kantecken": [
+              "oppna-sok"
+            ]
+          },
+          {
+            "chunk": "078x5p1cy5c59.js",
+            "kantecken": [
+              "streak"
+            ]
+          },
+          {
+            "chunk": "3m_hll8izuro0.js",
+            "kantecken": [
+              "navigationsminne",
+              "oppna-sok",
+              "streak"
+            ]
+          }
+        ]
+      },
+      "/om-oss": {
+        "antalChunks": 16,
+        "palettChunks": [
+          {
+            "chunk": "2qnjvou52dgsk.js",
+            "kantecken": [
+              "oppna-sok"
+            ]
+          },
+          {
+            "chunk": "078x5p1cy5c59.js",
+            "kantecken": [
+              "streak"
+            ]
+          },
+          {
+            "chunk": "3m_hll8izuro0.js",
+            "kantecken": [
+              "navigationsminne",
+              "oppna-sok",
+              "streak"
+            ]
+          }
+        ]
+      }
+    },
+    "lighthouse": {
+      "exit": 0
+    },
+    "skiftsond": {
+      "exit": 0
+    }
+  },
+  "kriterier": {
+    "o76a-palett-chunk-borta": false,
+    "o77-ssr-lang-sv": true,
+    "o77-ssr-svenskt-citat": true,
+    "o77-cls-start-noll": true
+  },
+  "slutad": "2026-09-19T05:51:41.230Z"
+}

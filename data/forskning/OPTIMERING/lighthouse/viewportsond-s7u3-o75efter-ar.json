@@ -1,0 +1,139 @@
+{
+  "vh": 823,
+  "lankar": [
+    {
+      "i": 0,
+      "href": "/logga-in",
+      "text": "تسجيل الدخول",
+      "top": 2,
+      "bottom": 54,
+      "iViewport": true
+    },
+    {
+      "i": 1,
+      "href": "/ar/logga-in",
+      "text": "← انضم — مجانًا",
+      "top": 524,
+      "bottom": 580,
+      "iViewport": true
+    },
+    {
+      "i": 2,
+      "href": "/kurser",
+      "text": "استكشف الدورات",
+      "top": 592,
+      "bottom": 650,
+      "iViewport": true
+    },
+    {
+      "i": 3,
+      "href": "/kurser",
+      "text": "٤٤٠دورة تدريبيةمن أساسيات المحاسبة",
+      "top": 989,
+      "bottom": 1134,
+      "iViewport": false
+    },
+    {
+      "i": 4,
+      "href": "/kurser",
+      "text": "٨٬٢٢٣سؤال اختباركل دورة تُختتم باخ",
+      "top": 989,
+      "bottom": 1134,
+      "iViewport": false
+    },
+    {
+      "i": 5,
+      "href": "/kurser",
+      "text": "١٠٣كتاب مرجعيمن Security Analysis ",
+      "top": 1158,
+      "bottom": 1304,
+      "iViewport": false
+    },
+    {
+      "i": 6,
+      "href": "/kurser",
+      "text": "جميع الدورات",
+      "top": 2006,
+      "bottom": 2022,
+      "iViewport": false
+    },
+    {
+      "i": 7,
+      "href": "/ar/logga-in",
+      "text": "← انضم — مجانًا",
+      "top": 3173,
+      "bottom": 3229,
+      "iViewport": false
+    },
+    {
+      "i": 8,
+      "href": "/kurser",
+      "text": "تصفّح الدورات أولًا",
+      "top": 3266,
+      "bottom": 3280,
+      "iViewport": false
+    },
+    {
+      "i": 9,
+      "href": "/kurser",
+      "text": "جميع الدورات",
+      "top": 3782,
+      "bottom": 3834,
+      "iViewport": false
+    },
+    {
+      "i": 10,
+      "href": "/nyheter",
+      "text": "مركز الأخبار",
+      "top": 4314,
+      "bottom": 4366,
+      "iViewport": false
+    },
+    {
+      "i": 11,
+      "href": "/analyser",
+      "text": "التحليلات",
+      "top": 4434,
+      "bottom": 4486,
+      "iViewport": false
+    },
+    {
+      "i": 12,
+      "href": "/blogg",
+      "text": "المدونة",
+      "top": 5318,
+      "bottom": 5370,
+      "iViewport": false
+    },
+    {
+      "i": 13,
+      "href": "/logga-in",
+      "text": "تسجيل الدخول",
+      "top": 5498,
+      "bottom": 5550,
+      "iViewport": false
+    }
+  ],
+  "rsc": [],
+  "ioLog": [
+    {
+      "typ": "observe",
+      "t": 867,
+      "href": "/dagens-pass",
+      "top": 3412
+    },
+    {
+      "typ": "observe",
+      "t": 904,
+      "href": "/laroplan",
+      "top": 3478
+    },
+    {
+      "typ": "trigg",
+      "t": 909,
+      "lank": []
+    }
+  ],
+  "scrollY": 0,
+  "docH": 5765
+}

@@ -1,0 +1,81 @@
+{
+  "granskat": "data/blogg-utkast/livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743-s1-u2 (2026-09-19)",
+  "rapport": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1 readingMinutes 2 → 6 (1 167 ord textrensat; 584 ord/min vid nuvarande; nionde fallet i klassen). B2 kassaflödesetikett: universumets serie är FRITT kassaflöde (fcf-fält), inte kassaflöde från verksamheten — talen paritetsrätta men etiketten pekar på fel nyckeltal; KO-noten förklarar fcf-fallet med IRS-skadeståndet 6,0 mdr USD. B3 universumglidning: 'median 20,4 (kvartiler 17,9–22,4 i universumets 14 bolag)' är git-bevisat EXAKT sant mot byggtidens vintage c256c659 (09-16: n=14, median 20,45, kv 17,9–22,4) men dagens 201-posters-universum bär 28 konsument-P/E med median 18,21 och kvartiler 15,2–22,3 — datera eller räkna om. B4 stavfel 'Raknat' → 'Räknat'. B5 stavfel 'räntkänsliga' → 'räntekänsliga'. I övrigt GRÖNT: källtalsparitet 38/38 mot bolagsunivers.json (fyra bolag, fyra källvintager), ingressens källspann 2026-09-03–16 EXAKT mot hamtat-fälten, aritmetik 9/9 (tre sond-FEL var verktygstoleransfel — textens avrundningar alla korrekta), juridik 2007:528 ren (0/26 varumärkesmönster × 3 ytor, 3 rådglossor samtliga deskriptiva, 0 lagrum, disclaimer exakt sist, utbildningsram i ingress), 911 = 0/6, 13/13 interna länkar HTTP 200 (kursankaret se-14-livsmedel lever), struktur grön (8 H2, title 50/60, desc 151/155, 0 mjuka bindestreck).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga söksträngar maskinverifierade unika = 1 träff i utkastet). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, 09-18, ogranskad) bär B1+B3:s systrar ('14 companies', '20.4' ×2, kvartiler 17.9–22.4, rm 2 vid 1 243 ord ⇒ 6); B4/B5 är svenskstavfel och gäller ej spegeln — speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "readingMinutes (JSON-fält, rad 8)",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 6",
+      "orsak": "1 167 ord textrensat mot ord/200-praxisen (detaljhandels- och flyg-domarna 09-19; publicerades max 240 ord/min, detta fält ger 584). NIONDE fallet i klassen — byggd 09-16 före första domen 09-17. Söksträngen unik i filen. Spegling -en: rm 2 vid 1 243 ord ⇒ 6."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Rapportläsningens fem punkter, femte bulleten)",
+      "gammalt": "Coca-Cola redovisade 2022 kassaflöde från verksamheten i nivå med resultatet (9,5 mot 9,5 miljarder dollar); 2025 är källans serie 5,3 mot ett resultat på 13,1.",
+      "nytt": "Coca-Cola redovisade 2022 fritt kassaflöde i nivå med resultatet (9,5 mot 9,5 miljarder dollar); 2025 är källans serie 5,3 mot ett resultat på 13,1 — universums not förklarar gapet med IRS-skadeståndet 6,0 mdr USD, som betalades i kashtäthet medan intäkterna bokfördes löpande.",
+      "orsak": "FEL NYCKELTALS-etikett: universumets serie (9 534/9 747/4 741/5 296 M$) är fcf-fältet — FRITT kassaflöde, inte kassaflöde från verksamheten (KO:s driftskassa 2022 låg över resultatet; likvillkoret 9,5=9,5 gäller bara fcf). Källans not: 'FCF-SERIENS FALLGROPPA: 2024–2025 visar 4 741/5 296 M$ … IRS-skadeståndet 6,0 mdr USD … betalades i kashtäthet medan intäkterna bokförs löpande'. Textens öppna fråga är pedagogiskt stark; notens förklaring läggs som tillägg så läsaren får båda. Söksträngen unik (1 träff). Spegling -en: 'cash flow from operations' → 'free cash flow' + motsvarande not-tillägg."
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Multipeln på hyllan, första stycket)",
+      "gammalt": "mot konsumentgrenens median på 20,4 (kvartiler 17,9–22,4 i universumets 14 bolag)",
+      "nytt": "mot konsumentgrenens median på 20,4 (kvartiler 17,9–22,4 i universumets då 14 konsumentbolag — vintage 2026-09-16; se branschmedianerna för dagsläget)",
+      "orsak": "UNIVERSUMGLIDNING, TREDJE FALLET (efter halvledar-C1, flyg-B1/B2): citatet är EXAKT sant mot byggtidens vintage — git-bevis: c256c659 (commit före byggandet 09-16 22:17) ger n=14, median 20,45, kvartiler 17,9–22,4 — men universumet har vuxit 138→201 och konsumentgrenen 14→28 med P/E: dagens median 18,21, kvartiler 15,2–22,3. Alternativ för ägaren: RÄKNA OM mot dags-vintage (median 18,2, kv 15,2–22,3, n=28) — men då krymper kontrasten (Carlsbergs 18,2 = medianen). Dateringsvarianten bevarar byggtidens tal ärligt. Söksträngen unik (1 träff). Spegling -en: 'the consumer branch's median of 20.4 (quartiles 17.9–22.4 across the universe's 14 companies)' motsvarande."
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Livsmedelsaktier och den plana volymen, andra stycket)",
+      "gammalt": "Raknat på ett exempel",
+      "nytt": "Räknat på ett exempel",
+      "orsak": "STAVFEL (saknar diaeresis): 'Raknat' → 'Räknat' — bilaktier-A1/flyg-B6:s felklass, här i brödtext. Söksträngen unik (1 träff). Gäller ej -en-spegeln."
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Multipeln på hyllan, sista stycket)",
+      "gammalt": "deras multipler är därför räntkänsliga",
+      "nytt": "deras multipler är därför räntekänsliga",
+      "orsak": "STAVFEL: korrekt svenska är 'räntekänsliga' (ränta + känslig). Söksträngen unik (1 träff). Gäller ej -en-spegeln (engelskan skriver 'interest-rate sensitive' rätt)."
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Multipeln på hyllan, sista stycket)",
+      "gammalt": "livsmedelsbolag är försvaraktiva kassaflödesmaskiner",
+      "nytt": "livsmedelsbolag är defensiva kassaflödesmaskiner",
+      "orsak": "ORVAL: 'försvaraktiga' är inte etablerat ord (blandning av 'försvars-' och 'defensiv'); branschterminologin är 'defensiva'. Ej blockerande — ägaren avgör."
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "body (Multipeln på hyllan, PEG-meningen)",
+      "gammalt": "Coca-Cola får PEG 12,6 (dyrt på en svag vinstprognos om 2,1 procent), Nestlé 0,45 (billigt på en deprimerad bas)",
+      "nytt": "Coca-Cola får PEG 12,6 (talet signalerar dyrhet på en svag vinstprognos om 2,1 procent), Nestlé 0,45 (billighet på en deprimerad bas)",
+      "orsak": "TON/2007:528 GRÅZON (detaljhandel-K1:s klass): 'dyrt'/'billigt' om NAMNGIVNA bolag. Granskarens bedömning: GRÖNT i sak — parentesen förklarar PEG-talet enligt måttets egen terminologi (>1 dyrt, <1 billigt relativt tillväxt), ingen handlingsuppmaning, grinden 0/26. Förslag på tal-centrerad form finns om ägaren vill höja marginalen ytterligare. Ej blockerande."
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "livsmedelsaktier-sa-analyserar-du-livsmedelsbolag.json",
+      "falt": "publishedAt (JSON-fält)",
+      "gammalt": "2026-09-16",
+      "nytt": "(vid export: publiceringsdatum)",
+      "orsak": "SERIEKONVENTION: publishedAt = skapandedatum i utkast-stadiet; sätts till faktiskt publiceringsdatum vid ev. flytt till data/blogg/ (kundens beslut, R2)."
+    }
+  ]
+}

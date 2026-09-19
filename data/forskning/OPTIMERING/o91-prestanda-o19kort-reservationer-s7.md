@@ -120,3 +120,22 @@ desktop-besöket — bokas ärligt, döms av nästa fönster.
    learn-rad (h-[3.25rem]) är 52 px mot fyllld ~190 px — synlig skelett→text-
    växling pågår dock OAVSETT denna kur; eventuell framtidskur = SSR-registret
    (o19 §3.1:s produktrefaktor, huvudagentens bord).
+
+## §7 Fönstrets slutläge (12:45Z) — EFTER = VAKARÖVERTAG (o89-precedensen)
+
+Prod-synken nådde ALDRIG RAM-fönstret under detta s7-fönster (pollerna
+12:07–12:37Z samtliga VÄNTAR-RAM; 12:37: 1 240 MB mot tröskel 2 800 med 2
+zcode-barn — syskonaktivitet steg i slutet). Commit **53722ce7** står i
+trädet som förfader till HEAD (efter mig: ROND 92 c57157e9 + ROND 93
+052af1c3 — deploy-kön bär allt). Prod 200 ×5 https verifierad 12:23Z OCH
+12:44Z (bygget hZjYd72rzYIjfWnbt1oc8 lever rent under hela fönstret —
+INGET obevisat mellanläge). §3:s kriterier är vakarövertag-barra: nästa
+s7-fönster/styrelserond mäter EFTER när BUILD_ID lämnar hZjYd72… och
+dömmer mot tabellen (|ΔdocH| ≤ 100 px mot FÖRE +6 652 är huvudkriteriet;
+Σ-residualerna följer medel-kalibreringens teori: register −48, utvalt
+−39, kategorivägg −120 ⇒ förväntat slutvärde ≈ −200 px — om EFTER landar
+där är 97 % av engångstillväxten borta och dom GRÖN med ärlig not).
+
+Hygien-efterräkning: min dödade o89-chrome sänkte prod-synkens tröskel
+3 524 → 2 800 MB (12:07-pollen) — deploy-kön kortades med ~700 MB krav;
+bygget landar nästa RAM-lucka (syskonens mät-fönster slipar av).

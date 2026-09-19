@@ -583,6 +583,9 @@ const GAMLA = [
   const KOMPONENTER = [
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+    // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
+    "svaraLokaltMarknadsmekanik",
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
@@ -613,6 +616,12 @@ const GAMLA = [
     // Omgång 23 (s6-u1, samma fönster): realekonomi — EFTER vardegrund
     // (53:e motorn), fönstrets dokumenterade ordning.
     "svaraLokaltRealekonomi",
+    // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+    // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+    // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+    "svaraLokaltForsakring",
+    "svaraLokaltMoatdjup",
+    "svaraLokaltNyaTerritorier",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

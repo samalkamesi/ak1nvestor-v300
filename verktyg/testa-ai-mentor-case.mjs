@@ -360,6 +360,9 @@ const kedjekomponenter = [
   "svaraLokaltKapitalmekanik(q, KURSREGISTER)",
   "svaraLokaltSektor(q, KURSREGISTER)",
   "svaraLokaltCase(q, KURSREGISTER)",
+  // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik — kedje-
+  // ordning efter case, FÖRE praktik (kedjetestets G-fall äger ordningen).
+  "svaraLokaltMarknadsmekanik(q, KURSREGISTER)",
   "svaraLokaltPraktik(q, KURSREGISTER)",
   "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
   "svaraLokaltAgande(q, KURSREGISTER)",
@@ -426,6 +429,12 @@ const kedjekomponenter = [
   "svaraLokaltSektorlasning(q, KURSREGISTER)",
   "svaraLokaltVardegrund(q, KURSREGISTER)",
   "svaraLokaltRealekonomi(q, KURSREGISTER)",
+  // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+  // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+  // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+  "svaraLokaltForsakring(q, KURSREGISTER)",
+  "svaraLokaltMoatdjup(q, KURSREGISTER)",
+  "svaraLokaltNyaTerritorier(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -469,7 +478,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 50 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 57 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

@@ -601,6 +601,11 @@ const GAMLA = [
     // ENDAST på senare positioner — framåtkompatibel dokumentationsplikt
     // (deras tester äger sin anmälan).
     "svaraLokaltForsakring",
+    // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+    // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+    // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+    "svaraLokaltMoatdjup",
+    "svaraLokaltNyaTerritorier",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

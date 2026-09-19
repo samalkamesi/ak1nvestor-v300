@@ -76,6 +76,9 @@ const { svaraLokaltNasta, NASTA_MONSTER } = await tolerera("ai-mentor-nasta-frag
 const { svaraLokaltKapitalmekanik, KAPITALMEKANIK_MONSTER } = await tolerera("ai-mentor-kapitalmekanik-fragor.ts", ["svaraLokaltKapitalmekanik", "KAPITALMEKANIK_MONSTER"]);
 const { svaraLokaltSektor, SEKTOR_MONSTER } = await tolerera("ai-mentor-sektor-fragor.ts", ["svaraLokaltSektor", "SEKTOR_MONSTER"]);
 const { svaraLokaltCase, CASE_MONSTER } = await tolerera("ai-mentor-case-fragor.ts", ["svaraLokaltCase", "CASE_MONSTER"]);
+// Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+// harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
+"svaraLokaltMarknadsmekanik",
 const { svaraLokaltPraktik, PRAKTIK_MONSTER } = await tolerera("ai-mentor-praktik-fragor.ts", ["svaraLokaltPraktik", "PRAKTIK_MONSTER"]);
 const { svaraLokaltPortfoljgrund, PORTFOLJGRUND_MONSTER } = await tolerera("ai-mentor-portfoljgrund-fragor.ts", ["svaraLokaltPortfoljgrund", "PORTFOLJGRUND_MONSTER"]);
 const { svaraLokaltAgande, AGANDE_MONSTER } = await tolerera("ai-mentor-agande-fragor.ts", ["svaraLokaltAgande", "AGANDE_MONSTER"]);
@@ -461,6 +464,12 @@ const GAMLA = [
   "svaraLokaltSektorlasning",
   "svaraLokaltVardegrund",
   "svaraLokaltRealekonomi",
+  // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+  // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+  // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+  "svaraLokaltForsakring",
+  "svaraLokaltMoatdjup",
+  "svaraLokaltNyaTerritorier",
 ];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här

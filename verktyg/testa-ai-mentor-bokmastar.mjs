@@ -399,6 +399,9 @@ const MINA_KANONISKA = [
   const KOMPONENTER = [
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+    // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
+    "svaraLokaltMarknadsmekanik",
     "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
@@ -428,6 +431,12 @@ const MINA_KANONISKA = [
   "svaraLokaltSektorlasning",
   "svaraLokaltVardegrund",
   "svaraLokaltRealekonomi",
+  // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+  // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+  // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+  "svaraLokaltForsakring",
+  "svaraLokaltMoatdjup",
+  "svaraLokaltNyaTerritorier",
 ];
   const kedjerader = widgetKalla.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

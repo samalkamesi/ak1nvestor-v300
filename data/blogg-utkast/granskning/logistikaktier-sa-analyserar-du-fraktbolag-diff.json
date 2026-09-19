@@ -1,0 +1,36 @@
+{
+  "granskat": "data/blogg-utkast/logistikaktier-sa-analyserar-du-fraktbolag.json",
+  "granskadAv": "agentfabrik spår 1 granskare 3/3 — auto s1-u3 (2026-09-19)",
+  "rapport": "granskning/logistikaktier-sa-analyserar-du-fraktbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR — 59 maskinella kontroller 0 FEL 0 VARNING (sond verktyg/_s1u3-b21-kontroll.mjs); juridikgrind 2007:528 REN (rådglossor 0/6, disclaimer sista rad, varumärkesgrind 26 regexer × 3 ytor = 0); 911-mönster 0/5; aritmetik 14/14 motorgrön; externa källor 16 EXAKTA + 2 avrundningsklass (Maersk FY2025 EBIT 3,5 mdr USD/intäkt 54,0 + jämförelseåret 6,5; DSV 247 331/66 859/19 611 MDKK, vinst fortsatt verksamhet 8 463 mot 10 175, adj. utspädd EPS 50,9 mot 51,6, adj. FCF 16 335, guidans 23 000–25 500, synergier 800 M/9,0 mdr-2027; K+N 24 476/1 242/8 800 MCHF); interna länkar 14/14 HTTP 200 (dubbelankaren se-04+se-15 levande); 0 ändringar krävs — diff innehåller endast NOT-poster. Publicering = kundens beslut (R2).",
+  "andringar": [],
+  "noter": [
+    {
+      "id": "NOT-1",
+      "text": "DSV EBIT-förbättring +21,8 % (19 611÷16 096−1) korrekt på redovisade råtal; tredjepartssammanfattningar divergerar sinsemellan (Quartr +24,8 %, Loadstar ~14,8 %) — sannolikt restaterad jämförelsebas i källorna. Textens transparenta uträkning behålls.",
+      "allvar": "NOT"
+    },
+    {
+      "id": "NOT-2",
+      "text": "Synergitrappan 2026: textens 'sammanlagd EBIT-effekt omkring 5 miljarder' mot källans 'at least DKK 4bn incremental synergies' 2026 — konsistent (0,8 realiserade + ≥4 nya ≈ 5), olika måttklass (stock/flow); formuleringen 'sammanlagd'+'omkring' korrekt försiktig.",
+      "allvar": "NOT"
+    },
+    {
+      "id": "NOT-3",
+      "text": "K+N EBIT-fall −24,9 %: motor på offentliga deltal ger −24,82 % (1 242 mot 1 652 MCHF) — avrundningsklass, bär bolagets eget jämförelsetal; WSJ:s '17 % drop' gäller recurring-EBIT (annan definition), texten använder redovisad EBIT-rad.",
+      "allvar": "NOT"
+    },
+    {
+      "id": "NOT-4",
+      "text": "Ej radnivåverifierade i denna kontroll: DSV-segmentvikter 13,0/2,7/3,8, integrationsgrad 30 %, slutdatum slutet av 2026, FCF-2024 5,6 mdr, jsp-serien 0,9→4,5 — internt konsistenta + belagda i Ö21-spegelns talparitet 63/63; ingen felindikation.",
+      "allvar": "NOT"
+    }
+  ],
+  "kallor": [
+    "https://www.maersk.com (FY2025-rapport 2026-02-05: EBIT 3,5 mdr USD, intäkt 54,0 mdr; jämförelseår 2024 EBIT 6,5 mdr)",
+    "https://investor.maersk.com",
+    "https://investor.dsv.com/news-releases/news-release-details/dsv-1164-2025-annual-report (2026-02-04: intäkt 247 331, bruttovinst 66 859, EBIT före jsp 19 611 MDKK; vinst fortsatt verksamhet 8 463 mot 10 175; adj. EPS 50,9 mot 51,6; adj. FCF 16 335; guidans 23 000–25 500; synergier 800 M realiserade, 9,0 mdr full effekt 2027)",
+    "https://newsroom.kuehne-nagel.com (2026-03-03: nettoomsättning 24,5 mdr CHF) + årsredovisning 2025 (24 476 / 1 242 / 8 800 MCHF)",
+    "Tredjepart: FreightWaves, FreshPlaza, Maritime Professional (Maersk), Quartr/Loadstar (DSV-divergens, NOT-1), WSJ (K+N recurring, NOT-3)"
+  ]
+}

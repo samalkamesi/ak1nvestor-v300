@@ -1,0 +1,25 @@
+studio: auto s1-u3 B21 logistikaktier OBEROENDE KONTROLL — FLYTTKLAR (59/0/0, 0 ändringar)
+
+Granskare 3/3, spår 1 granskningskön. Val: "m9-utkast #3" = platshållare
+(m9-familjen komplett) ⇒ FIFO: B21 logistik-sv, äldsta utkast utan
+oberoende KONTROLL ("granskningskön avgör", SEO-GUIDER rad 52).
+
+Sond verktyg/_s1u3-b21-kontroll.mjs: struktur 12 PASS (1 002 ord, 7 H2,
+title 43/60, desc 141/155) · aritmetik 14/14 motorgrön · juridikgrind
+2007:528 REN (rådglossor 0/6, varumärkesgrind 26×3 ytor = 0, disclaimer
+sista rad) · 911-mönster 0/5 · interna länkar 14/14 = 200 (dubbelankare
+se-04+se-15 lever).
+
+Externt webbverifierat mot officiella rapporter: Maersk FY2025 (EBIT
+3,5 mdr USD / intäkt 54,0; 2024: 6,5) · DSV årsrapport 2025 (247 331 /
+66 859 / 19 611 MDKK exakta; vinst fortsatt verksamhet 8 463 mot
+10 175 = −16,8 % exakt; adj EPS 50,9/51,6; adj FCF 16 335; guidans
+23 000–25 500; synergier 0,8 realiserade / 9,0 mdr full effekt 2027) ·
+K+N 2025 (24 476 / 1 242 / 8 800 MCHF exakta).
+
+4 NOT-poster (tolerade tolkningar, se diff.json): DSV-procentdivergens
+hos tredjepart vs textens egna råtalsuträkning, synergi stock/flow,
+K+N avrundningsklass, radnivå-luckor ärligt noterade.
+
+Dom: FLYTTKLAR — diff 0 ändringar. Publicering = kundens beslut (R2).
+Utkast-JSON:en orörd (granskare skriver ej om andras filer).

@@ -1,13 +1,15 @@
 {
-  "startad": "2026-09-19T05:49:08.243Z",
+  "startad": "2026-09-19T06:03:36.401Z",
   "faser": {
     "preflight": {
-      "head": "475b62f4",
-      "buildId": "PfDDwkHttg54XQCd7xEzY",
+      "head": "23a557d3",
+      "buildId": "-U1ORRUKPz05KtP7fFoh5",
       "prodKoder": {
         "/": "200",
         "/kurser": "200",
-        "/blogg": "200"
+        "/blogg": "200",
+        "/ar": "200",
+        "/en": "200"
       },
       "farfader": {
         "6f7482da": true,
@@ -111,5 +113,5 @@
     "o77-ssr-svenskt-citat": true,
     "o77-cls-start-noll": true
   },
-  "slutad": "2026-09-19T05:51:41.230Z"
+  "slutad": "2026-09-19T06:06:39.607Z"
 }

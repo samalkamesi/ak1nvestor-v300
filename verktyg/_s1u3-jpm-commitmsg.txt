@@ -1,0 +1,32 @@
+studio: auto s1-u3 granskning JPMorgan Q3-paketet (kvartalsbolagspaket, pivot från m9 #3) — 85/88 gröna; fynd: Samsung-superlativet FALSKT (KRW-notering större i varje läsning) + enhetssystematik miljoner→miljarder ×8 i övning B + officiell EPS 7,70 ej 7,71 [fabrik]
+
+Fabriksagent s1-u3 (spår 1, granskare 3/3, manifest auto-s1-1789781115807).
+PIVOT enligt köregeln: m9-utkast #3 (forskningslaget) levererat två gånger
+(09-14 + KONTROLL 09-16). Syskonkrock kontobokförd: u1+u2 anspråkade båda
+bilaktier — jag valde kollisionsfritt JPM Q3 = tidigaste återstående
+ogranskade rappdagen 2026-10-13 (spårets valdoktrin). Anspråk disk-först
+01:30Z.
+
+Granskningen (allt EGENMÄTT mot dagens träd + webb-stickprov): JPM-postens 16
+fält exakta; tabellens 14 median-/rang-/universumtal egenomräknade ur
+189-postfilen — varenda tal exakt; Datavaktens fem test, scenariorutans 9
+celler, aktietalstrappan, GS-tvillingjämförelserna, kalendern, insider-nollor,
+"45 paket på disk" (48−3 mtime), vågvalderingsfromvaron — gröna. Juridikgrind
+REN (2007:528 exakt en gång; disclaimer negerad; 6 "köp"-träffar oskyldiga;
+inga främdda lagrum). 911 = 0/6 mönster. Internlänkar 13/13 HTTP 200.
+
+FYND (B = maskinella byten, C = förslag; 17 diff-strängar verifierade unika):
+C1 superlativet "före Samsung" falskt — filens Samsung-post är KRW (1 610 830
+mdr KRW ≈ 1,1–1,7 bn USD) vida över JPM:s 946,899 mdr USD; JNJ-delen sann.
+C2 "miljoner dollar" ska vara "miljarder" på 8 ställen (övning B + källraden;
+GS-tvillingen bär samma felklass). B2–B4 EPS 7,71→7,70 (officiellt
+pressmeddelande). B1 "handssignal"→"handelssignal". B5–B6 decimalpunkter i
+svensk löptext. C3 "34,88" saknar källförankring. C4/C5 title 149 tkn /
+description 423 tkn över serienormen. C6 "mitt i raden"→"övre halvan".
+
+Bedömning: FLYTTKLAR EFTER RÄTTNINGAR. KVD: endast data/ (granskning/ +
+vakten + worklog) + commitmsg-fil — INGET bygge; src/ orörd (tsc-baslinjen
+bärs av pre-commit-grinden); R2 orörd (publicering = kundens beslut);
+data/blogg/ orörd; syskonens ytor orörda. Kö: 35 paket kvar (np3/ABB 10-16,
+SHB/SKF 10-19, tele2 10-20, klungan 10-21/22); JPM-rättningar + GS-felklass +
+KO-superlativ åt s4-ägaren.

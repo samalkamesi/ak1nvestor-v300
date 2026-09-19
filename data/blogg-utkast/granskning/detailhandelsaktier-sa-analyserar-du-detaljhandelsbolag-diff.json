@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789804529817-s1-u3 (2026-09-19)",
+  "rapport": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: H&M-omsättningens tidsfönster förskjutet: texten binder 'serien 2022–2025' till 'föll från 236,0 till 228,3', men universumets serie är 223,6 (2022) → 236,0 (2023) → 234,5 (2024) → 228,3 (2025) — endpoint 2022→2025 är STIGANDE (+2,1 %); fallet kräver 2023-topp som start, medan samma menings resultatled (3,6→12,2) är sant för 2022→2025 — meningen blandar två fönster (klass: siffrorna rätta, tidsramen fel). B2: readingMinutes 2 → 7 (1 313 ord textrensat = 657 ord/min mot de 55 publicerades max 240, median 171; round(1313/200); sjätte fallet i klassen: substansrabatt 09-17, halvledar-B1, hälsa-B4, konsumentaktier-B4, försvar-B2). I övrigt GRÖNT: källtalsparitet 27/27 mot bolagsunivers.json (hämtat 2026-09-03), aritmetik 14/14 egna omräkningar (EK/kapitalomsättning/rea-exempel 97−46=51, EBIT −27,3 %, tripling 3,41×, CAGR 6,66 %, PEG 2,61, EBIT-gap 9,07, brutto-gap 2,36), juridik 2007:528 ren (26 varumärkesmönster × 3 ytor = 0; rådglossor med ordgräns 0 — 'inköp' är inte rådverb; inga lagrum = ingen blandrisk; disclaimer exakt sist), 911 = 0/6 mönster, 13/13 interna länkar HTTP 200 mot localhost (kursankaret se-07-detailhandel lever), struktur grön (8 H2, title 56/60, desc 154/155, 0 mjuka bindestreck).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; B1:s söksträng maskinverifierad unik = 1 träff). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, Ö13, ogranskad) bär B1:s systerformulering ('sales fell from 236.0 to 228.3' i '2022–2025 series') och B2 (rm 2, 1 398 ord ⇒ 7) — speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+      "falt": "body (Like-for-like — tillväxtens två källor)",
+      "gammalt": "H&Ms serie 2022–2025 visar den omvända resan: omsättningen föll från 236,0 till 228,3 miljarder kronor, men resultatet steg från 3,6 till 12,2 miljarder — mer än en tredubbling på fallande försäljning.",
+      "nytt": "H&Ms serie 2022–2025 visar den omvända resan: resultatet steg från 3,6 till 12,2 miljarder — mer än en tredubbling — medan omsättningen efter 2023 års topp 236,0 föll tillbaka till 228,3 miljarder kronor.",
+      "orsak": "TIDSFÖNSTRET ÄR FORSKJUTET: 236,0 är 2023 års omsättning (universumet: 2022 = 223,6); från 2022 är serien stigande (+2,1 %), från 2023-topp fallande (−7,8 mdr). Resultatledet 3,6→12,2 är 2022→2025 och sant — meningen får inte låta som att båda leden mäts samma fönster. Berättelsen (vändningen i marginalen på mattan försäljning) bevaras intakt med korrekt tidsbindning. Söksträngen unik (1 träff). Speglas i -en.json: 'sales fell from 236.0 to 228.3 … 2022–2025 series' → 'after the 2023 peak of 236.0, sales fell back to 228.3 billion'."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "7",
+      "orsak": "1 313 ord textrensat / 2 min = 657 ord/min — samtliga 55 publicerade max 240 (median 171). Bloggfamiljens konvention round(ord/200) = 7. Sjätte dokumenterade fallet i klassen (byggd 09-16, före substansrabatt-domen 09-17). Spegeln -en: 1 398 ord, rm 2 (699 ord/min) → 7"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+      "falt": "body (Marginalen och volymen — avkastningens två hjul, H&M-radet)",
+      "gammalt": "5,6 % × 6,7 ≈ 37. Två fungerande affärer med nästan spegelvänd mekanik.",
+      "nytt": "5,6 % × 6,7 ≈ 37 — grovt mot ROE-talet 34,7; gapet är tidsmetriken, rullande marginal mot bokfört årsresultat. Två fungerande affärer med nästan spegelvänd mekanik.",
+      "orsak": "Approximationen överskrider det verkliga ROE-talet (37,5 mot 34,7 = 108 %) medan Axfood-radet anknyts explicit ('huvuddelen av ROE-talet 36,3', 94 %). Texten bär ≈ och påstår ingen identitet — ingen siffra är fel — men spegelanknytningen ger läsaren samma hållbarhetskoll som Axfood-radet. FRIVILLIGT förtydligande"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+      "falt": "body (Like-for-like — tillväxtens två källor, Inditex-meningen)",
+      "gammalt": "Inditex slutligen växde både i omsättning (+5,8 procent senaste tolvmånadersperioden) och i lönsamhet.",
+      "nytt": "Inditex slutligen växte i omsättning (+5,8 procent senaste tolvmånadersperioden).",
+      "orsak": "'Och i lönsamhet' saknar belägg i universumet (ITX.serier tomma; TTM-värdet +5,8 är enda tillväxtfältet) — byggarens eget kontrakt är 'externa tal = endast universumts'. Alternativ till strykning: belägg med aktuellt lönsamhetsfält vid verkställning. FRIVILLIGT"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "detailhandelsaktier-sa-analyserar-du-detaljhandelsbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

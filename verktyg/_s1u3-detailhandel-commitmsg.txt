@@ -1,0 +1,39 @@
+studio: auto s1-u3 (auto-s1-1789804529817) DETAILHANDELSAKTIER B13 — oberoende granskningspaket: flyttklar efter B1+B2
+
+Pivot enligt köregeln: uppdragstitelns "m9-utkast #3" (forskningslaget) komplett sedan
+09-16 14:29 (s1-u2 + korskonfirmation; m9-serien 6/6, 8448ef77) — tionde platshållar-fallet
+⇒ FIFO-valet ur telekom-granskarens rotkö 09-16: av 15 guider återstår detailhandel + flyg;
+detailhandel äldst (B13 09-16 15:36). Klaim FÖRE arbetet (auto-s1-1789804529817-u3-ansprak.md,
+0 syskonanspråk på objektet).
+
+GRANSKNING — sond verktyg/_s1u3-detailhandel-verify.mjs: 62 kontroller, 0 FEL:
+källtalsparitet 27/27 EXAKTA mot bolagsunivers.json (brutto/ROE/EBIT/netto/skuld-EK/P-B/
+mcap/PEG-triaden/serierna; PEG 2,6 == universumts eget fält 2,63); aritmetik 14/14 egna
+omräkningar (EK 7,1/34; kapitalomsättning 12,6/6,7; rea-exemplet 97−46=51 med EBIT −27,3 %;
+tripling 3,41×; CAGR 6,66 %; EBIT-gap 9,07 pp); juridik 2007:528 REN (26 mönster × 3 ytor
+= 0; rådglossor med ordgräns 0 — "inköp" är substantiv; inga lagrum = ingen blandrisk;
+disclaimern exakt sist); 911 = 0/6 mönster; 13/13 interna länkar HTTP 200 mot localhost
+(kursankaret se-07-detailhandel lever); struktur grön (8 H2, title 56/60, desc 154/155,
+0 mjuka bindestreck, 1 313 ord textrensat).
+
+FYND (diff 5 poster, söksträngar maskinverifierade unika):
+- B1 VÄSENTLIGT: H&M-omsättningens TIDSFÖNSTER FORSKJUTET — "serien 2022–2025 … föll från
+  236,0 till 228,3" men universumet: 223,6 (2022) → 236,0 (2023) → 234,5 (2024) → 228,3
+  (2025); endpoint 2022→2025 STIGANDE +2,1 % — fallet kräver 2023-topp som start, medan
+  resultatledet 3,6→12,2 ÄR 2022→2025-sant: meningen blandar två fönster (siffrorna rätta,
+  tidsramen fel; rättningen bevarar vändningsberättelsen).
+- B2: readingMinutes 2 → 7 (657 ord/min mot 55 publicerades max 240, median 171; round(1313/200);
+  SJÄTTE fallet i klassen — byggd 09-16 före substansrabatt-domen 09-17).
+- C1 förslag: "5,6 % × 6,7 ≈ 37" överskrider ROE 34,7 (108 %) utan den anknytning Axfood-radet
+  bär — spegla "grovt mot ROE-talet 34,7".
+- C2 förslag: "Inditex växte … i lönsamhet" obelagt (ITX.serier tomma) — stryk eller belägg.
+- D1 R2: publishedAt = skapandedatum; exportvägen stämplar publiceringsdagen.
+- -en-spegeln (Ö13) bår B1:s systerformulering + B2 (1 398 ord, rm 2 ⇒ 7) — speglas vid
+  verkställning.
+
+FLAGGOR: F1 ord/200-konventionen saknas i byggarnas KVD-mall (verktygsägaren; samma
+eftersläpning som försvar-B2); F2 rotkön: av 09-16-generationen återstår endast flyg
+(sammanställningsägaren). Dom: FLYTTKLAR EFTER RÄTTNING; publicering = kundens beslut (R2).
+
+Endast data/ + verktyg/ + worklog = INGET bygge; src/ orörd (tsc-baslinjen orörd —
+pre-commit-grinden verifierar); utkast-JSON:en orörd; data/blogg/ orörd. [fabrik]

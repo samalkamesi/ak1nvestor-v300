@@ -212872,6 +212872,178 @@
       }
     ]
   },
+  "vr-07-terminalvardet": {
+    "slug": "vr-07-terminalvardet",
+    "category": "VÄRDERING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Terminalvärdet — DCF:s andra halva: det som händer efter prognosisperioden",
+    "summary": "Värderingsfamiljens sjunde steg: terminalvärdet. Kursen visar att merparten av ett kassaflödesvärde läggs i det som händer efter prognosisperioden — på ett genomgående exempel bär terminalen 54,0 procent av det totala värdet — och att nämnaren (WACC minus evig tillväxt) är hela spelet: två procentsenheters ränteförändring raderar en kvarts terminalvärde, och ett halverat gap fördubblar multipleln. Två vägar till samma svar jämförs steg för steg: Gordon-formelns eviga tillväxt mot exit-multiplens marknadspris, med skillnaden redovisad som två åsikter snarare än ett facit.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Bygga ett tvåstegs-DCF där prognosisperiodens tio år och terminalen redovisars var för sig — och se att terminalen ofta bär merparten av dagens värde · Räkna terminalvärdet på Gordon-vägen: år-elva-flödet dividerat med gapet mellan diskonteringsränta och evig tillväxt · Förstå nämnarens geometri: multipleln är ett delat med gapet, så ett halverat gap fördubblar multipleln och ett nollgap ger ett oändligt värde · Korsa Gordon-terminalen mot exit-multiplens väg och läsa skillnaden som två åsikter om ränta mot multiplar — inte som rätt mot fel · Sätta taket för den eviga tillväxten mot ekonomins långsiktiga tillväxt och förstå varför övertillväxt i evighet är en matematisk omöjlighet · Känna igen terminalens typiska fällor: gap-noll, den glidande basen, periodens längd som dold åsikt och ränteläget inbyggt i gapet.",
+    "why": "Värderingsfamiljen har sina sex steg — multipelgapet, normaliseringen, multiplens anatomi, avkastningens källor, pris mot värde, jämförelsebolagen — men ingen av dem går in i den post som bär merparten av varje kassaflödesvärde: terminalen. DCF-maskineriet har sina egna kurser (km-007, km-008, km-028), men de äger beräkningens arbete, inte terminalens frihetsgrader. Det är där analysens största hävstång bor: en prognos kan arbetas i månader och ändå flyttas värdet mest av en tiondels procentenhet i nämnaren. Kursen fyller hålet genom att göra terminalen till ett eget objekt — med sin geometri, sina två vägar, sitt tak och sina fällor — så att läsaren som möter ett DCF-värde kan fråga inte bara vad prognosen säger utan var tyngden ligger och vilka två rattar som faktiskt styr den.",
+    "history": {
+      "origin": "Idén att värdera en tillgång genom att förlänga flödena in i evigheten är äldre än själva ordet terminalvärde. John Burr Williams lade 1938 grunden i The Theory of Investment Value med insikten att en akties värde är summan av alla framtida utdelningar diskonterade till i dag — och han såg själv att summan måste fortsätta förbi varje horisont en analytiker rimligen kan prognostisera. Myron Gordon formaliserade 1956 tillväxtdelen med den formel som bär hans namn, och frågan flyttade från om det eviga finns till hur det ska räknas.",
+      "evolution": "När diskonterade kassaflöden blev bolagsvärderingens standardverktyg på sjuttio- och åttatalet växte terminalen från teknisk restpost till värdets tyngdpunkt. Praktiker upptäckte att den explicita prognosen sällan bar mer än hälften av svaret, och att två analytiker med identiska prognoser kunde landa tiotals procent isär genom olika antaganden om evig tillväxt och ränta. Konsultbranschen utvecklade därför korskontrollen — att räkna terminalen både med formel och med exit-multipel och behandla skillnaden som ett mått på osäkerhet snarare än ett räknefel att eliminera.",
+      "modern": "I dag är terminalen förstasidesstoff när ränteläget rör sig. Varje ränteförändring skriver om nämnaren i varje DCF-värde på börsen, vilket förklarar varför tillväxtbolag svänger hårdare än räntebolag i räntecykler: deras kassaflöden ligger längre fram och bär mer av sitt värde i terminalen. Samtidigt har standarden hårdnat mot evig övertillväxt — bolagssektorn som helhet kan inte växa fortare än ekonomin i evighet — och gränsen mellan ingenjörskonst och fantasi dras numera med hjälp av just det tak kursen mäter."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — bron mellan tio år och evigheten",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — Gordon-vägen och nämnaren",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — exit-multipeln som den andra vägen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — gapets geometri",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — terminalens sex grottor",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — terminalens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch höll sig medvetet på säkra avstånd från falsk precision: hans poäng var att en beräkning som visar sex decimaler inte är mer sann för det, och terminalen är där frestelsen är som störst. Hans eget hantverk — att fråga vad som redan står i kursen och hur länge en tillväxt kan pågå innan den växer igenom sitt tak — är rakt av terminalläsning: en tillväxt som inte kan fortsätta i evighet hör inte hemma i evighetsposten. Lynchs varning för att förväxla noggrannhet med rättvisa fångar kursens kärna: den som kan rangerar gapets osäkerhet, den som inte kan rangerar decimalerna.",
+    "grahamSection": "Benjamin Graham byggde sin säkerhetsmarginal just för de poster som inte kan beräknas exakt, och terminalen är deras moderna arvtagare. Hans syn på mr Market — att priset är en åsikt och värdet en bedömning — översätts direkt till kursens två vägar: Gordon-formeln är bedömningen, exit-multipleln är marknadens åsikt, och differensen mellan dem är ingen sanning utan ett mått på hur mycket som står på spel. Grahams varning för att låta en enda framtidskalkyl bära hela beslutet är i DCF:s världen en uppmaning att stressa gapet och räkna värdet i band, inte i punkter.",
+    "ak1Section": "I AK1A:s metodik fyller kursen värderingsdimensionens sista stora lucka: där vr-02 normaliserar inflödet till terminalen, vm-06 bär formeln för utdelningsströmmar och km-008 bygger diskonteringsräntan, äger den här kursen själva evighetsposten — dess vikt, geometri och gränser. I AKM1:s bolagsläsning blir terminalfrågan ett separationsverktyg: två bolag med identiska tioårsprognoser kan bära helt olika risk om det ena har sitt värde först i terminalen och det andra i perioden. Kurserna km-007, km-028 och roic-04 står närmast maskineriet, ma-03 och ma-06 bakom räntan i gapet, och tillsammans med den här kursen sluter de ringen kring kassaflödesvärderingens tyngdpunkt.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — bron mellan tio år och evigheten",
+        "intro": "Aktien är ett evigt ägande men prognosen är tio år kort — terminalvärdet är bron mellan dem, och på den bron står merparten av värdet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med den grundläggande identiteten. Ett tvåstegs-DCF delar bolagets värde i två poster: summan av de diskonterade kassaflödena under prognosisperioden, och nuvärdet av allt som händer efter den. Posten efter kallas terminalvärdet. Det genomgående exemplet är Nordanverk AB med påhittade tal: fri kassa 100,0 per år i tio år, diskonteringsränta 8,0 procent och evig tillväxt i terminalen 2,0 procent. Periodens del blir 100,0 gånger annuitetsfaktorn 6,7101, alltså 671,0. Terminalvärdet blir 1 700,0 som räknas fram i nästa kapitel, och dess nuvärde efter diskontering tio år blir 787,4. Totalt 1 458,4 — varav terminalen bär 787,4 av 1 458,4, det vill säga 54,0 procent. Det är kursens första och viktigaste tal: med en försiktig evig tillväxt ligger mer än hälften av värdet efter prognosisperioden."
+          },
+          {
+            "type": "definition",
+            "content": "TERMINALVÄRDETS TRE FRÅGOR: (1) BASFLÖDET — vilket kassaflöde år elva som terminalen byggs på, normaliserat enligt vr-02:s hantverk · (2) GAPET — skillnaden mellan diskonteringsränta och evig tillväxt, nämnaren som styr hela posten · (3) VÄGEN — Gordon-formelns räntans geometri eller exit-multiplens marknadspris; två vägar som sällan möts och vars skillnad är information."
+          },
+          {
+            "type": "insight",
+            "content": "Femtiofyra procent av värdet ligger efter år tio — och det är med en tillväxt på två procent som knappt täcker inflationen. Terminalens andel är inte en teknisk detalj utan kursens budbärare: den som flyttar brytpunkten mellan period och terminal flyttar bara kanter, men den som rör gapet flyttar hela värdets tyngdpunkt."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — Gordon-vägen och nämnaren",
+        "intro": "Terminalvärdet räknas i två steg: en evig ström formas vid periodens slut, och strömmen diskonteras till dagens penningvärde.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Gordon-vägen börjar med att lyfta periodens sista kassaflöde ett år i evigheten: Nordanverks 100,0 växer med 2,0 procent till 102,0 för år elva. Den eviga strömmen som börjar där är värd 102,0 dividerat med gapet 0,08 minus 0,02, alltså 102,0 delat med 0,06, vilket ger terminalvärdet 1 700,0 vid periodens slut år tio. För att få dagens värde diskonteras beloppet tio år med 1,08 i tiopotens — faktorn 2,1589 — och 1 700,0 delat med 2,1589 blir 787,4. Lagt till periodens 671,0 ger det totala värdet 1 458,4. Notera arbetsfördelningen: perioden kräver tio rader med flöden, terminalen en enda division — och ändå bär divisionen mer än hälften av svaret. Det är därför kursen ägnar nämnaren ett eget kapitel."
+          },
+          {
+            "type": "tabell",
+            "content": "NORDANVERK AB (PÅHITTADE TAL): STEG 1 PERIODEN — fri kassa 100,0 per år i tio år · diskonterad summa 100,0 × 6,7101 = 671,0 · STEG 2 TERMINALEN — år elva 100,0 × 1,02 = 102,0 · gap 0,08 − 0,02 = 0,06 · terminalvärde 102,0/0,06 = 1 700,0 · diskonterat 1 700,0/2,1589 = 787,4 · STEG 3 SVARET — 671,0 + 787,4 = 1 458,4 · TERMINALDEL 787,4/1 458,4 = 54,0 procent."
+          },
+          {
+            "type": "insight",
+            "content": "Formeln ser oskyldig ut för att den är kort. Men nämnaren 0,06 är satt av två storheter som var och en bär hela sin egen osäkerhet — räntan och den eviga tillväxten — och divisionen förvandlar varje brus i dem till full värdeförskjutning. Terminalen är DCF:s enda post där en hundradel i nämnaren väger mer än ett helt år i perioden."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — exit-multipeln som den andra vägen",
+        "intro": "Praktikens korskontroll: räkna terminalen också som om bolaget såldes vid periodens slut — och läs skillnaden mellan vägarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den andra vägen frågar inte vad evigheten är värd utan vad bolaget skulle säljas för år tio. Nordanverks rörelseresultat det året antas vara 130,0 och branschens multiplar 8,0 gånger rörelseresultatet. Exit-terminalen blir 8,0 gånger 130,0, alltså 1 040,0, och diskonterad med samma faktor 2,1589 blir nuvärdet 481,7. Lagt till periodens 671,0 ger exit-vägen totalt 1 152,7. Skillnaden mot Gordon-vägen är 305,7, det vill säga 21,0 procent lägre. Skillnaden ska inte elimineras utan läsas: exit-multiplens bär marknadens sammanvägda åsikt om ränta, tillväxt och risk vid förvärvstidpunkten, Gordon-vägen bär analytikerns egna antaganden. När de två möts är det ett tecken på att antagandena hänger ihop; när de skiljer står utfallet för hur mycket räntans geometri och marknadens multiplar kan olika om samma bolag."
+          },
+          {
+            "type": "tabell",
+            "content": "TVÅ VÄGAR SAMMA BOLAG (PÅHITTADE TAL): VÄG A GORDON — år-elva-flöde 102,0 · gap 0,06 · terminal 1 700,0 · nuvärde 787,4 · VÄG B EXIT — rörelseresultat år tio 130,0 · multiplar 8,0 · terminal 1 040,0 · nuvärde 481,7 · JÄMFÖRELSE — exit bär 1 040,0/1 700,0 = 61,2 procent av Gordon · totalt 1 152,7 mot 1 458,4 = minus 21,0 procent · LÄSNING — differensen 305,7 är ingen felmarginal utan två åsikter: räntans geometri mot marknadens multiplar."
+          },
+          {
+            "type": "insight",
+            "content": "En exit-multipel är en dold DCF. Marknadens 8,0 gånger bär redan ett implicit gap mellan ränta och tillväxt — den som använder multiplar utan att fråga vilket gap de döljer har inte valt bort evighetsantagandet, bara lånat någon annans. Kursens korskontroll är just frågan: vilket gap står i marknadens multiplar i dag?"
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — gapets geometri",
+        "intro": "Nämnaren har en egen matematik: multipleln är ett delat med gapet, och det förhållandet styr allt från rimlighetskontroller till räntkänslighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Gordon-multipleln — terminalvärdet delat på basflödet — är exakt ett delat med gapet. Vid gapet 0,06 blir den 16,7 gånger; smalnar gapet till 0,04 blir den 25,0; vid 0,02 är den 50,0 och vid 0,01 hela 100,0. Mönstret är en hyperbel: halveras gapet fördubblas multipleln. Räntekänsligheten mäts på samma sätt i rå form — höjs diskonteringsräntan från 8,0 till 10,0 procent med oförändrad tillväxt faller Nordanverks terminal från 102,0 delat med 0,06 till 102,0 delat med 0,08, alltså från 1 700,0 till 1 275,0: minus 25,0 procent på hela posten före diskontering. Inget annat enskilt tal i en DCF-kalkyl har den hävstången. Tabellen är kursens mätinstrument: om en terminalmultiplar hamnar över dem som gapet motiverar är det inte värde utan gap-närhet som betalats."
+          },
+          {
+            "type": "tabell",
+            "content": "NÄMNARENS GEOMETRI (GORDON-MULTIPLER = 1/GAP): gap 0,06 ger 16,7 · gap 0,05 ger 20,0 · gap 0,04 ger 25,0 · gap 0,03 ger 33,3 · gap 0,02 ger 50,0 · gap 0,01 ger 100,0 · HALVERAT GAP — 0,04 mot 0,02: 25,0 mot 50,0, exakt fördubbling · RÄNTSTEG PÅ TERMINALEN — ränta 8,0 mot 10,0 procent med oförändrad tillväxt: 102,0/0,06 = 1 700,0 mot 102,0/0,08 = 1 275,0 = minus 25,0 procent före diskonteringen."
+          },
+          {
+            "type": "insight",
+            "content": "Hyperbelen förklarar två vardagsfenomen samtidigt: varför räntebolag faller måttligt och tillväxtbolag hårt när räntan stiger — de bär olika mycket av sitt värde nära gap-noll — och varför terminaler med multiplar över femtio nästan alltid bär ett gap som är smalare än sitt eget informationsunderlag. Multipleln är gapet i förklädning."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — terminalens sex grottor",
+        "intro": "Sex klassiska fallgropar, alla med samma rot: en frihetsgrad som får spela evigheten utan motkrav.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första grottan är taket: en evig tillväxt över ekonomins långsiktiga tillväxt är en matematisk omöjlighet. Fem procent i femtio år ger faktorn 11,467 mot ekonomins två procent som ger 2,6916 — kvoten 4,26 innebär att bolagssektorn skulle vara över fyra gånger större än ekonomin som helhet. Andra grottan är gap-noll: när ränta och tillväxt möts blir värdet oändligt, och varje terminal i närheten är fantasi. Tredje är tvåvägsskillnaden: att redovisa Gordon-vägen utan exit-korset och kalla resultatet ett värde. Fjärde är den glidande basen: ett ovanligt högkonjunktursår elva ger en evighet av toppår — normaliseringen enligt vr-02 är terminalens ingångsfilter. Femte är periodens längd: att förlänga prognosen utan att ändra mellanårens tillväxt smyger in en åsikt genom att flytta flöden mellan period och terminal. Sjätte är räntan i gapet: diskonteringsräntan är inte en konstant utan bär dagens ränteläge — ma-03:s realränta och ma-06:s riskpremie bor i nämnaren, och ett DCF-värde från en lågräntetid är ett barn av sin tid."
+          },
+          {
+            "type": "insight",
+            "content": "Sex grottor, en rot: frihetsgrader utan motkrav. Terminalen är den enda post i värderingen där en åsikt får multipliceras med evigheten — därför är dess hantverk inte att räkna rätt utan att kedja varje antagande till något utanför själva kalkylen: ekonomin, marknadens multiplar, räntans historia."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — terminalens fem frågor",
+        "intro": "När de sex grottorna är kartlagda återstår handslaget: fem frågor som förvandlar terminalen från svart låda till redovisad bedömning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: var ligger tyngdpunkten — hur många procent av värdet bär terminalen, och är andelen rimlig för bolagets ålder? Fråga två: vilket gap står bakom svaret — ränta och tillväxt var för sig, och vad gör ett räntsteg? Fråga tre: vad säger den andra vägen — exit-multiplens värde mot Gordon-vägens, och vad bär differensen? Fråga fyra: vilket tak har tillväxten — är den under ekonomins långsiktiga tillväxt, och om inte: när växer bolaget igenom det taket? Fråga fem: vems ränta står i nämnaren — är den dagens eller normaliserad, och vad heter skillnaden i värde? Fem svar ger en terminal som kan försvaras rad för rad; utan dem är den en siffra med evighetens adress."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj ett bolag i det egna universumet med minst fem års stabil fri kassa och bygg en tvåvägs-terminal med påhittade eller offentligt rapporterade tal: en tioårsperiod, Gordon-vägen med egen ränta och evig tillväxt under ekonomins tak, och exit-vägen med en motiverad multiplar. Redovisa terminaldel, gap, räntkänslighet och skillnaden mellan vägarna som fyra tal. Kursen är utbildning i att hantera terminalens frihetsgrader — inte uppmaningar att köpa eller sälja något."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens sjunde steg ger kassaflödesvärderingen sin tyngdpunktskala: perioden och terminalen, två vägar, ett gap och ett tak. Den som kan läsa den skalan ser på ett enda DCF-värde var det kan bäras och var det kan brista — och vet att frågan aldrig är om evigheten är medräknad, utan till vilket pris."
+          }
+        ]
+      }
+    ]
+  },
   "ib-01-vad-ar-ett-investmentbolag": {
     "slug": "ib-01-vad-ar-ett-investmentbolag",
     "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
@@ -214207,6 +214379,178 @@
     "lynchSection": "Peter Lynch uppmanade läsaren att börja i vardagen — och vardagen är i högsta grad den privata ägarsidan: bageriet, verkstaden, grannföretaget med en ägare och en plan. Hans register av bolagskunskap byggdes genom att förstå verksamheter före kurserna, och hans instinkt att fråga vem som driver bolaget och varför de bryr sig är nybörjarkartans kärna: ägarskap med eget kapital och eget ansvar är samma sak oavsett om andelen handlas dagligen eller aldrig. Lynch såg också budnotisernas värde — att en köpare med pengar på bordet säger mer om ett bolags pris än en månads kurser.",
     "grahamSection": "Benjamin Graham formade sin analys i en tid då de flesta bolag var just privata eller tunnhandlade: substansvärden, kassaflöden och säkerhetsmarginaler räknades för ägare som inte kunde lämna positionen i morgon. Hans arbete i Graham-Newman — att köpa hela eller stora andelar av undervärderade bolag och verka för att frigöra värdet — gör honom till en av den privata ägarsidans tidiga praktiker: värde skapas i bolaget och förhandlas fram mellan ägare, inte bara observeras i en kurs. Grahams budskap till nybörjaren här är rent: priset på en andel och värdet av en andel är två olika storheter, och den skillnaden är som tydligast just där ingen kurs ritar marknaden varje dag.",
     "ak1Section": "I AK1A:s metodik är denna kurs PRIVATE EQUITY & INVESTMENTBOLAG-familjens nybörjaringång och grundplåt under pe-01, pe-03 och pe-02 — kartan före mekanikerna, aktörerna före strukturerna. I AKM1:s bolagsläsning ger kursen ägarfrågorna: vem äger, hur mycket, i vilken livscykel — data som modellen väger in bakom varje fundamental läsning. I AKM2:s ram övar den tidshorisontdimensionen: ägande utan daglig kurs tvingar fram det långa perspektiv som metodikens alla tidshorisonter bygger på. Pariteten med ib-01 är avsiktlig: den kursen äger det noterade skalet, denna äger den privata sidan — tillsammans ritar de familjens hela kartblad."
+  },
+  "pe-05-andrahandsmarknaden": {
+    "slug": "pe-05-andrahandsmarknaden",
+    "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Andrahandsmarknaden — LP-andelens pris när fonden inte får vänta",
+    "summary": "Private equity-familjens femte steg: andrahandsmarknaden, där LP-andelar i pågående fonder byter ägare före fondens slut. Kursen bygger priset från sina tre beståndsdelar — rabatten mot kvarvarande substans, de ofinansierade åtagandena som följer med andelen och den återstående löptiden — och visar på ett genomgående exempel hur en courtagefri rabatt på 15 procent i erbjudandet tunnas ut till 11,25 procent när åtagandena räknas hem. Mognadens pris, NAV-diligencens fråga och rabattens omvandling till årsränta ger läsaren marknadens egen logik för onoterat kapital — spegelbilden av börsens investmentbolagsrabatt.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Förstå varför andrahandsmarknaden finns: fondens tioåriga liv gör LP-andelen till en lång poste, och likviditetsbehov skapar säljare oavsett fondens läge i livscykeln · Räkna den sanna rabatten: priset mot kvarvarande substans justerat för att de ofinansierade åtagandena följer med andelen och betalas till hundra procent av nominellt värde · Se hur mognaden prissätts: en ung fond nära J-kurvans botten handlas med djupare rabatt än en mogen fond med synlig portfölj och kortare återstående löptid · Omvandla rabatt till årsränta: 15 procent realiserat på tre år är 5,6 procent per år, på fem år 3,3 procent — löptiden bestämmer rabattens årsverkan · Ställa NAV-diligencens frågor: hur gamla värderingarna är, vilken andel av substansen som är betrodda värden och vad marknadsnyckerna redan har räknat in i priset · Känna igen marknadens fem fallgropar: det gamla NAV:et, den osynliga blind pool-biten, åtagandenas timing, informationsasymmetrin och flaskhalsen när många säljer samtidigt.",
+    "why": "Private equity-familjen har fyra steg — fondens struktur, utfasningarnas IRR-mekanik, förvärvsmaskinen och den onoterade världen — men de beskriver alla marknaden sedd inifrån fonden. Andrahandsmarknaden är den vy som saknas: vad LP-andelen är värd när den handlas, vilket är den enda punkt där det onoterade kapitalet får ett observerbart pris före fondens slut. Där börsen rabatterar investmentbolag dagligen (ib-01 till ib-04, km-067) sker samma prissättning på PE-sidan genom förhandlade transaktioner — och mekanismen är lärorikt annorlunda: åtagandena som följer med andelen äter rabatten, J-kurvans läge styr priset och löptiden förvandlar rabatten till ränta. Kursen ger läsaren de fyra tal som gör en andrahandsnotering läsbar — och samtidigt den djupare förståelsen av varför likviditet har ett pris, på vilken marknad den än handlas.",
+    "history": {
+      "origin": "Andrahandshandeln med fondandelar är nästan lika gammal som fonderna själva. När de första amerikanska private equity-fonderna tog in kapital för tio år i taget upptäckte institutionella ägare snart att livet inte håller fondens takt: pensionsscheman måste rebalansera, försäkringsbolag får nya regelverk och stiftelser får utgiftsbehov som inte väntar på en utfasning. De första överlåtelserna skedde som enskilda förhandlingar mellan kunniga parter, ofta med diskreta rabatter och en motpart som krävde insyn i portföljen för att våga betala.",
+      "evolution": "Från ad hoc-affärer växte på tvåtusentalet en strukturerad marknad: mäklare som samlade portföljer av andelar, köpare som specialiserade sig på mogna fonder och auktionsliknande processer med ett fåtal runder bud. Marknadens logik professionaliserades samtidigt: priset började noteras som rabatt eller premie mot kvarvarande substans, med återstående åtaganden och löptid som systematiska prisfaktorer. Erfarenheten från kriser — där säljarna kommit i klungor och rabatterna öppnats hastigt — gjorde också motpartens frågor skarpare: hur aktuella är värderingarna, och vad händer med åtagandena om kapitalmarknaden stänger?",
+      "modern": "I dag är andrahandsmarknaden en egen tillgångsklass med institutionella aktörer, dedikerade fonder och volym som räknas i hundratals miljarder dollar världen över. Den fyller en funktion i ekosystemet som kursen gör läsbar: den ger onoterat kapital ett strukturerat pris mellan teckning och utfasning, och den gör likviditet till en vara med egen kurva — djupare rabatt för unga fonder och osäkra värden, trängre rabatt för mogna. För den som läser börsens investmentbolag är marknaden dessutom en levande jämförelse: samma substans, samma rabattfenomen, två helt olika handelsmekanismer."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — fondens två livslingor",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — priset och den sanna rabatten",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — mognaden och NAV-diligencen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — rabattens årsverkan",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — marknadens fem fallgropar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — andrahands fyra frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch fattade tidigt poängen med att prissätta en portfölj inuti en förvaltningsstruktur: hans förvåning över slutna fonder som handlades till rabatt mot sitt innehåll gäller rakt av andrahandsmarknaden — rabatten är inte en dekoration utan en post med egen avkastning och egen risk. Lynchs praktiska varning, att den som betalar fullt pris för förvaltning får räkna dubbla kostnader, översätts till LP-andelens värld: priset mot substans måste väga både förvaltningsavgiften som löper vidare och åtagandena som ännu inte betalats. Hans hantverk — att fråga vad som redan står i priset och vad som måste hända för att resten ska komma — är andrahandsköparens arbetsdag.",
+    "grahamSection": "Benjamin Grahams kärna — att pris och värde är två olika storheter som ibland möts — får på andrahandsmarknaden sin renaste onoterade illustration. Där börsens mr Market ropar varje dag kräver förhandlingen här en aktiv motpart, men mekanismen är densamma: en säljare med tidsnöd möter en köpare med kalkyl, och priset som formas bär information om substansens kvalitet, likviditetens värde och marknadens humör. Grahams säkerhetsmarginal översätts direkt: rabatten mot kvarvarande substans är marginalen som skyddar när värderingar visar sig för gamla eller utfasningar dröjer — och hans varning för att förväxla en tillfällig press med en permanent värdeförlust är skillnaden mellan att läsa rabatten och att bara mäta den.",
+    "ak1Section": "I AK1A:s metodik stänger kursen private equity-familjens prissida: där pe-01 bygger fondstrukturen, pe-02 utfasningarnas mekanik och pe-03 till pe-04 portföljbolagens och ägarsidans arbete, äger den här kursen själva överlåtelsen — det enda tillfället då LP-perspektivet får ett marknadspris. I AKM1:s ram blir andrahandslogiken ett vederläggande och ett bekräftande på en gång: investmentbolagskursen (ib-01 till ib-04, km-067, km-068) visar börsens version av samma fenomen, och skillnaden — daglig handel mot förhandlad process, noterad likviditet mot åtaganden — mäter själva likviditetens pris. Kurserna rp-04 och rk-familjens koncentrationstänkande står närmast på risksidan: den som kan räkna en volatilitetsbudget kan också räkna vad en olåst position i en tioårig fond kostar i verklig risk.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — fondens två livslingor",
+        "intro": "En fondandel har två sätt att byta ägare: tecknas vid fondens början eller överlåtas mitt i livet — den andra vägen är kursens hela ämne.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med vad som överlåts. En LP-andel i en private equity-fond är ett åtagandepaket: rätten till fondens återstående värde och skyldigheten att betala de kapitalbud som ännu inte fallit. Fondens liv är tio till tolv år, och under den tiden är andelen i princip låst — utfasningarna (pe-02) betalar ut efter hand allteftersom portföljbolagen säljs. Men LP:ns liv är inte fondens liv: pensionsschemat rebalanserar, stiftelsen behöver likvida medel, regelverket ändras. Då uppstår andrahandsmarknaden: säljaren överlåter andelen med allt den innehåller — kvarvarande substans, ofinansierade åtaganden och återstående löptid — till en köpare som betalar ett förhandlat pris. Genomgående exempel är andelen i Nordkärnanfond 2018 med påhittade tal: kvarvarande substans 60,0 miljoner kronor, ofinansierat åtagande 20,0 och fyra år kvar av fondens tio. Priset på andelen sätts i nästa kapitel — men grunden läggs här: tre beståndsdelar, inte ett tal."
+          },
+          {
+            "type": "definition",
+            "content": "ANDRAHANDSHANDELNS FYRA BEGREPP: (1) KVARVARANDE SUBSTANS — fondens rapporterade värde av det som ännu inte sålts, i marknadens språk NAV · (2) OFINANSIERAT ÅTAGANDE — den del av tecknat kapital som LP:n ännu måste betala när kapitalbuden faller · (3) ÅTERSTÅENDE LÖPTID — år kvar till fondens slut; den tid över vilken resten av historien ska hända · (4) PRISKVOTEN — överlåtelsepriset mot kvarvarande substans, rabatt eller premie, efter att åtagandena räknats hem."
+          },
+          {
+            "type": "insight",
+            "content": "Det som gör andrahandsmarknaden läsvärd är att den prissätter tre saker samtidigt: substansen i fondens bolag, likviditetens värde för säljaren och tiden kvar tills historien är slut. En börsnotering bär bara den första öppet — här får alla tre sina egna rader i räkningen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — priset och den sanna rabatten",
+        "intro": "Rabatten i erbjudandet är inte rabatten i räkningen: åtagandena som följer med andelen betalas till hundra procent och tunnar därmed ut prisgläntan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konstruktionen börjar i erbjudandet: andelen i Nordkärnanfond 2018 prissätts till 85 procent av kvarvarande substans, alltså 0,85 gånger 60,0, vilket ger 51,0. Men köparens kalkyl slutar inte där. Åtagandet på 20,0 följer med andelen och måste betalas i sin helhet — varje krona kapitalbud betalas till nominellt värde, inte till rabatten. Köparens totala utlägg blir därmed 51,0 plus 20,0, alltså 71,0, och den exponering som köps är substansen 60,0 plus framtida bud 20,0, alltså 80,0. Priset per exponerad kronor blir 71,0 delat med 80,0, det vill säga 0,8875 — den sanna rabatten är 11,25 procent, inte de utropade 15. Åtagandena äter alltså en del av gläntan: utan åtagande alls blir kvoten 51,0 på 60,0, det vill säga rabatten 15,0 procent; med 40,0 i åtaganden blir kalkylen 91,0 på 100,0 och rabatten 9,0 procent. Ju mer av fonden som ännu bara är ett löfte, desto mindre är rabatten värd i handen."
+          },
+          {
+            "type": "tabell",
+            "content": "NORDKÄRNANFOND 2018 (PÅHITTADE TAL): ERBJUDANDET — kvarvarande substans 60,0 · pris 0,85 × 60,0 = 51,0 · KÖPARENS KALKYL — utlägg 51,0 + 20,0 åtagande = 71,0 · exponering 60,0 + 20,0 = 80,0 · priskvot 71,0/80,0 = 0,8875 · sann rabatt 11,25 procent · KÄNSLIGHET — åtagande 0: 51,0/60,0 = 0,850, rabatt 15,0 procent · åtagande 20,0: rabatt 11,25 procent · åtagande 40,0: 91,0/100,0 = 0,910, rabatt 9,0 procent · LÄSNING — varje åtagandekrona betalas till hundra procent och glider därmed in i exponeringen till fullt pris."
+          },
+          {
+            "type": "insight",
+            "content": "Rabatten är inte ett tal utan en funktion av fondens ålder. En ung fond — stor åtagandepost, liten substans — erbjuder en rabatt som mest rabatterar löften; en mogen fond erbjuder en rabatt på synliga bolag. Att jämföra två andrahandspriser utan att räkna hem åtagandena är att jämföra prislappar på två olika varor."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — mognaden och NAV-diligencen",
+        "intro": "Priserna på andrahandsmarknaden sorterar fonderna efter var de står i livet — och den skickliga köparen granskar siffran som priset räknas mot.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mognaden syns i kvoterna. En ung fond i år två, med substans 80,0 och J-kurvan (pe-01) fortfarande vid sin botten — avgifter betalas, värden hålls konservativa, resultaten ligger framför — handlas i exemplen till 78 procent: 0,78 gånger 80,0 ger 62,4. En mogen fond i år sju med substans 60,0, synliga portföljbolag och kortare väg till utfasningar handlas till 90 procent: 0,90 gånger 60,0 ger 54,0. Skillnaden är mognadspremien, och den är inte sentiment utan kalkyl: den mogna fondens värden är färskare, dess åtaganden färre och dess historia kortare att vänta ut. Den andra sidan av praktiken är NAV-diligencen: att granska själva substanssiffran. Ett NAV från fyra månader tillbaka, byggt på betrodda värden från sista finansieringsrundan, är inte samma vara som ett NAV från i går med nyliga utfasningar som markörer. Frågorna är tre: hur gamla är värderingarna, vilken andel av substansen som har en transaktion bakom sig — och vad som händer med priset om världen mellan värdering och i dag har rört sig."
+          },
+          {
+            "type": "tabell",
+            "content": "MOGNADENS PRIS (PÅHITTADE TAL): UNG FOND ÅR 2 — substans 80,0 · kvot 0,78 · pris 62,4 · J-kurvan vid botten, åtaganden stora, värden konservativa · MOGEN FOND ÅR 7 — substans 60,0 · kvot 0,90 · pris 54,0 · portföljen synlig, utfasningar nära, löptiden kort · NAV-DILIGENCENS TRE FRÅGOR — värderingarnas ålder · andel av substansen med transaktionsmarkör · känslighet om världen rört sig sedan mätningen."
+          },
+          {
+            "type": "insight",
+            "content": "Andrahandspriset är den enda offentliga prisposten på onoterat kapital mellan teckning och slut — men det märker bara så mycket som diligensen täcker. Rapporterat NAV är en lämnad uppgift; andrahandspriset är en slagen uppgift. Skillnaden mellan dem, tolkat med gott omdöme, är själva informationsinnehållet i marknaden."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — rabattens årsverkan",
+        "intro": "En rabatt är ett belopp, men dess värde beror på hur länge den får arbeta: löptiden förvandlar gläntan till ränta.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Antag att en andel köps till 85 och att den underliggande exponeringen sen realiseras till 100 — alltså en vinst på 15 procent av fullt värde. Om realiseringen tar tre år blir den årliga avkastningen av rabatten själv roten ur 100 delat med 85, tre gånger om, minus ett: 5,6 procent per år. Tar den fem år blir samma rabatt 3,3 procent per år. Sambandet är rakt: ju längre pengarna ligger, desto mer späds gläntan ut över tiden. Detta är andrahandsmarknadens räntelogik — pe-02:s IRR-mekanik i miniatyr — och den förklarar varför mogna fonder kan bära trängre rabatter utan att bli dyra: deras rabatt hinner arbetssätta färre år men betalas ut snabbare. För säljaren är samma myntets baksida: den som säljer en ung andel med djup rabatt avstår inte bara en differens utan en differens med många år att växa på — och den som säljer en mogen andel med träng rabatt avstår kort arbete som snart ändå hade betalats ut."
+          },
+          {
+            "type": "tabell",
+            "content": "RABATTENS ÅRSVERKAN (KÖPT 85, REALISERAT 100): LÖPT 3 ÅR — (100/85) upphöjt till en tredjedel minus ett = 5,6 procent per år · LÖPT 5 ÅR — (100/85) upphöjt till en femtedel minus ett = 3,3 procent per år · SKILLNADEN — 2,3 procentenheter per år på identisk rabatt · LÄSNING — löptiden bestämmer rabattens pris i tid: samma glänta är två olika räntor beroende på hur snabbt vägen till realisering är."
+          },
+          {
+            "type": "insight",
+            "content": "Här möts kapitel två och fyra: åtagandena tunnar rabatten i rummet — exponeringen växer med varje bud — och löptiden tunnar den i tiden. En andrahandsnotering är därför aldrig läsbar som endast en procentsats; den är läsbar som fyra tal: kvot, åtagande, år och ränta."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — marknadens fem fallgropar",
+        "intro": "Fallgroparna har en gemensam rot: att läsa priset som om det vore noteringens hela sanning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första gropen är det gamla NAV:et — en rabatt räknad mot en substanssiffra som värderats i en annan värld, vilket gör att gläntan är skenbar om värdena varit för höga eller för låga. Den andra är blind pool-biten: den del av exponeringen som ännu bara är åtaganden köps i praktiken till fullt pris utan att veta vilka bolag den kommer att bära — kursens kapitel två räknar mekaniken, gropen är att glömma den. Den tredje är åtagandenas timing: kapitalbudet kommer när fonden hittar sitt nästa förvärv, inte när det passar köparens kassa — en andel kan kräva likviditet just när marknaden är som trångast. Den fjärde är informationsasymmetrin: säljaren känner sin fond, köparen får diligence-material, och skillnaden mellan dem är ett pris som ska förhandlas, inte förutsättas. Den femte är flaskhalsen: när många säljer samtidigt — som i kriser — öppnas rabatterna hastigt därför att köparkapitalet inte räcker till, och den som måste sälja i det läget betalar likviditetens högsta pris."
+          },
+          {
+            "type": "insight",
+            "content": "Fem gropar, en gemensam kur: läs de fyra talen — kvot, åtagande, år och ränta — mot ett granskat NAV, och minns att priset på andrahandsmarknaden alltid är förhandlat mellan två parter som vet olika mycket. Rabatten är slutsatsen av en process, inte en egenskap hos fonden."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — andrahands fyra frågor",
+        "intro": "När mekanismerna sitter ihop återstår handslaget: fyra frågor som gör varje andrahandsnotering till en kalkyl som kan försvaras.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vad är den sanna kvoten — pris mot substans med åtagandena räknade hem, och hur förändras den om NAV justeras en diligence-turn? Fråga två: var står fonden i livet — J-kurvans läge, andelen kvarvarande åtaganden, åren till slut. Fråga tre: vad är rabattens årsverkan — vilken ränta motsvarar gläntan på återstående löptid, och är den rimlig mot risk att vänta på onoterade utfasningar? Fråga fyra: vem är motparten och varför säljer — likviditetsbehov, regelverk eller kunskap om portföljen som diligence-materialet inte når? Fyra svar ger en position i marknadens egen logik; utan dem är en andrahandsaffär ett pris utan kalkyl. Och spegeln står alltid bredvid: börsens investmentbolag bär samma fenomen med daglig notering — den som kan läsa den ena marknaden kan läsa den andra, skillnaden är bara hastigheten på priset."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj två noterade investmentbolag i det egna universumet och läs deras rabatt mot substans med kursens fyra tal som raster: kvot, åtagandemotsvarighet i form av exempelvis outlagt kapital eller obeskattade reserver, år och förväntad realiseringstakt. Jämför sedan med en publicerad andrahandsaffär i en private equity-fond om sådan finns att läsa i offentligt material. Kursen är utbildning i att läsa andrahandsmarknadens mekanik — inte uppmaningar att köpa eller sälja något."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens femte steg ger det onoterade kapitalet dess prisfråga: vad är likviditeten värd, vem bär den och vad kostar tiden. Börsen svarar dagligen med investmentbolagsrabatten — andrahandsmarknaden svarar i förhandlade processer — och den som kan båda svaren vet att rabatten aldrig är ett tal, utan en hel liten kalkyl om substans, löften och tid."
+          }
+        ]
+      }
+    ]
   },
   "roic-01-avkastning-pa-investerat-kapital": {
     "slug": "roic-01-avkastning-pa-investerat-kapital",

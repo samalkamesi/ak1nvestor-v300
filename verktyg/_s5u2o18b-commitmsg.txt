@@ -1,0 +1,69 @@
+studio: auto s5-u2 IB-04 AVKASTNINGSRÄKNINGEN + ROIC-04 VÄRDEEKVATIONEN — lärvägsdjup +2 kurser, register 438→440 (manifest auto-s5-1789789514860, instans 2/omgång 18b)
+
+ib-04 (PRIVATE EQUITY & INVESTMENTBOLAG, Intermediär — familjens fjärde steg):
+investmentbolagets avkastningsdekomposering, ekvationen ΔKurs+Utd =
+NAV₀·Δq + T·q₁ + U·(1−q₁) härledd och stängd på öret i två riktningar —
+Silvervik Invest AB (påhittade tal): NAV 200,0 / kurs 150,0 / P-NAV 0,750;
+året: substans +8,0 %, utdelning 6,0; rabattdragning 25→15 % ger total
++23,0 % = rabattmotor 20,00 + substansmotor 13,60 + utdelningsmotor 0,90;
+rabattöppning → 35 % ger −5,0 % på samma substanstillväxt; utdelningens
+dolda bonus 6,0 × 0,150 (varje krona ur rabattköpt substans frigör 1−q);
+dubbla slaget NAV −20 % + rabattöppning 10 pp = −30,7 % mot börsens −20,0;
+stängningspotentialen 1/q − 1 = +33,3 % / +42,9 %.
+
+roic-04 (LÖNSAMHET, Avancerad — familjens fjärde steg): värdeekvationen,
+lönsamhetens bro till värde och multipel — värdemultiplikatorn ROIC/WACC
+per återinvesterad krona i fyra hörn (3,75 / 1,50 / 1,00 / 0,67 med netto
++2,75 / +0,50 / 0 / −0,33); tvillingbolagen med IDENTISK vinst 100,0 och
+tillväxt 6,0 % men olika kapitalbehov (b 20 % × ROIC 30 mot b 60 % × ROIC 10
+⇒ utdelning 80,0 mot 40,0); multipelns pris på spridningen via Gordon:
+P/E 21,2 mot 10,6 = kvot exakt 2,0 på identisk vinst+tillväxt; räntkänslig-
+heten k 10→12 %: −7,1 mot −3,5 multipelpoäng. GRÄNS: tx-03 äger tillväxtens
+villkor, km-008 WACC, vr-03 multipelns anatomi, vr-04 dekomposeringen för
+aktier — ib-04 äger ekvationen i investmentbolagsdräkt, roic-04 äger
+kopplingen lönsamhet→värde→multipel.
+
+REDISPATCH bokförd ärligt: instans 1 av s5-u2 i samma manifest levererade
+redan rp-04+kt-05 (9570a46d) — deras yta orörd och respekterad; denna omgång
+är +2 NYA kurser utan duplikat. Anspråksfilens redispatch-sektion på disk
+FÖRE byggstart (data/vakten/, gitignorerad väg); syskonen klara: u1 se-17
++ bk-06/sj-06, u3 bk-06/sj-06/pf-15 (8dd9bd6d + a9045640).
+
+REGISTER 438→440 atomärt race-dynamiskt i EN process (lagg-till-kurs ×2
+med serieordning ib-03→ib-04 och roic-03→roic-04; bygg-larvag-karta 440 —
+gratis 397 · Fas 2 18 · Fas 3 24 · V-spår 20/20; kor-sokindex; kor-speglar;
+rakna-siffror 440; llms ×2 mönstersträngt 6+4; ai-mentor-register rebakat
+440 rader på försök 1 — antalvakten med retry ×3 buren; larvag-synk GRÖN
+440=440=440 · 21 profiler · 0 fantomer).
+
+FRONT B 12 PASS 0 FEL (läsreplik av larvag.ts): båda kurserna nominerade
+90p+4 nivåmatch = 94 med genererade varför-rader (svagheten-regeln); ib-04
+86 kategori-fortsättning utan nivåmatch efter kategoritömning km-067/068 +
+ib-01..03; kartordning #407<#408 och #415<#416; syskonfreden bevisad —
+se-17/kt-05/rp-04/bk-06/sj-06/pf-15 på plats och nominerbara; determinism
+bitidentisk.
+
+KVD 54 PASS 0 FEL 0 VARNING: struktur 18 fält ×2 (6 kap, block 3/3/3/3/2/3,
+24 min, xp 50), register↔kursfil round-trip 18/18 ×2, 38 aritmetikkontroller
+oberoende omräknade (alla summor stängda, avrundningar dokumenterade),
+juridikgrind 0 rådgivningsfraser + utbildningsframing + skyddsrad ×2,
+språkgrind 0 CJK/0 typografiska citat/0 tabbar/mjuka bindestreck, 20
+korslänkar registeräkta, syskonskydd 0 clobbrar och exakt +2 nya mot HEAD.
+
+AI-Mentorn 26 PASS 0 FAIL (E01 registeräkthet 440/440 fält-för-fält).
+tsc 0 via projektbinär (node_modules/typescript/bin/tsc — ALDRIG npx,
+ALDRIG bygge: prod-synken äger).
+
+EGEN FEL RÄTTADE FÖRE COMMIT (grinden är också kod): roic-04 bar ett
+JSON-trailing comma som bröt parsningen plus 15 språkfel — svengelskan
+»meanar«, sammansmältningarna kravetextra/baraänden/ochfasta, stavelserna
+ROCC/mätet/hårdväxare/multiipel, meningslösa orden ståelse/kvarvaror/
+stilepiket, värderneutral→värderingsneutral; ib-04 fyra — than-läckan,
+ur play, kjärna, tvåtusentalet. Alla fångade av egen sond FÖRE insert.
+
+R2 orörd (kraverFas 0 ×2 — inga pris-/fas-/publiceringsytor rörda);
+data/blogg/ orörd (R2); syskonytor orörda (u1:s M-fil _s5u1o18-commitmsg.txt
+obevärd); INGET bygge. Kö till nästa omgång: seriens tunnaste familjer nu
+ib 4 + roic 4 — nästa tröskel 441+ (vm 11, mk 11 nästa).
+
+[fabrik]

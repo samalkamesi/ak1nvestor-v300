@@ -211200,6 +211200,178 @@
     "grahamSection": "Benjamin Graham visade tidigt att passivt ägande lämnar värde på bordet: hans egen praktik omfattade köp av minoritetsblock i bolag där värdet satt fast under en oengagerad majoritet, för att sedan bruka rösträtten och driva igenom beslut som frigjorde det — röstandelen använd som analysens sista verktyg, inte som bisak. Det är kursens kärna i Grahams belysning: skillnaden mellan att äga en fordran på substans och att äga en del av besluten om den. Hans marginal blev därmed också en ägarversion — minoritetens marginal ligger inte bara i rabatten mot substansen (km-067) utan i frågan om minoritetens ställning överhuvudtaget kan förverkliga något: en blockeringströskel, en nominering, ett bud. Kursen lär ut mekaniken i läsning — utbildningens mark, inte metoder i aktieägaraktivism.",
     "ak1Section": "I AK1A:s metodik är denna kurs det tredje steget i ib-serien och PRIVATE EQUITY & INVESTMENTBOLAG-familjens förvaltarskapslager: ib-01 äger substansräkningen, ib-02 granskningen av det inre, denna kurs ägarsidans makt — och km-067 behåller rabattläsningen som sin yta. I AKM1:s bolagsläsning ger kursen ägarinputen: huvudägare, kapital- och röstandel, innehavstid — data som matar samma bolagsbedömning som fundamentaldata. I AKM2:s ram övar den osäkerhetsdimensionen: successionens spädning och riskasymmetrin är båda mätbara riskfaktorer som kan vägas in i scenarier, och blockeringsminoritetens ställning är en fråga om positioner som avgör vilka utfall som alls kan passera. Pariteten med ak1ts-kurserna är metodikens ideal: röstandelen behandlas som vilken annan variabel som helst — ett tal med historia och framtid, inte en företeelse."
   },
+  "ib-04-avkastningsrakningen": {
+    "slug": "ib-04-avkastningsrakningen",
+    "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Avkastningsräkningen — substans, rabatt och utdelning: varje krona har en adress",
+    "summary": "Investmentbolagssfamiljens fjärde steg: avkastningsräkningen. Kursen delar investmentbolagets årsavkastning i sina tre exakta delar — substansens värdeutveckling, rabattens rörelse och utdelningen — och visar hur de tre motornerna samverkar, motverkar och skapar den dubbla slagkraft som gör att investmentbolagets kurs faller djupare än börsen i nedgång och stiger starkare i vändning.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Dela upp investmentbolagets totalavkastning i tre exakta poster — substansmotorn, rabattmotorn och utdelningsmotorn — med den additiva ekvation som kursen härleder steg för steg · Räkna rabattens two roller: motorn som kan värdera om hela substansen utan att en enda post rör sig, och stängningspotentialen 1 delat med P-till-NAV minus ett · Se utdelningens dolda bonus: varje krona som delas ut ur substans köpt till rabatt frigör en krona som bara var värd rabattpriset på börsen · Förstå varför investmentbolag med börsubstans andas med börsen — och slås med dubbla slaget när både substansen faller och rabatten öppnas · Läsa rabattens historia som ett band med läge, vidd och median i stället för ett enda tal · Känna igen de sex fällorna — från rabatten som värdeanledning till den gamla substanssiffran som prissätts som färsk.",
+    "why": "Investmentbolagssfamiljen har tre steg — vad ett investmentbolag är, vad substanssiffran innehåller, hur ägarskapet ser ut — men inget av dem svarar på den fråga läsaren står med efter köpet: varifrån kommer avkastningen? Kursen fyller det hålet med en ekvation istället för en känsla. Andra kurser äger delarna: km-067 äger investmentbolagets grundläsning och rabattbegreppet, vr-04 äger avkastningens källor för aktier i allmänhet, ib-02 äger substansens kvalitet — men ingen äger räkningen som binder ihop dem för just investmentbolaget, där en av posterna, rabatten, har egen historia, egen vid och egen förmåga att äta en hel års substanstillväxt. Det gör denna kurs, med ett genomgående exempel som räknas tre gånger i tre olika riktningar. Frågan kursen lämnar hos läsaren är familjens mest praktiska: när aktien steg eller föll ett år — vilken motor bar, och betalade den eller tog den?",
+    "history": {
+      "origin": "Rabatten är äldre än indexfonder och betydligt äldre än modern portföljteori. Redan när de första slutna fonderna noterades i Amerika på artonhundratalets slut och mellankrigstiden upptäckte marknaden två saker som kursen fortfarande mäter: att en portföljs marknadsvärde kan räknas varje dag, och att aktien som äger portföljen ändå handlas till ett annat pris. Skillnaden fick ett eget namn och en egen förklarningshistoria — förvaltningskostnader, skattepåslag i substansen, ovisshet om förvaltarens skicklighet. De svenska investmentbolagen, med Wallenbergsfärens bolag i spetsen, lärde samma läxa på egen botten: substansen kunde räknas, aktien handlades under den, och ibland i åratal.",
+      "evolution": "Tjugonde århundradet gav rabatten sina båda klassiska mekaniker. Den första var arvtagarens och aktivistens: i Amerikas åttiotal visade uppköpsintressen att en rabatt kan stängas med tvång — den som köpte till riklig rabatt kunde tvinga fram utdelningar, återköp eller upplösning, och en bransch växte fram om just den möjligheten. Den andra var marknadens egen: rabatter andas med riskaptiten, öppnar i oro och drar ihop sig i lugn, utan att förvaltaren rör ett finger. Sveriges egen historia bär båda spåren — investmentbolag som under decennier handlades under substans fick på 2000-talet lära sig utdelningen och återköpet som rabattverktyg, och läsaren av dagens rapporter möter samma tre poster som kursen räknar med: substansens värdeutveckling, rabattens rörelse och utdelningens flöde.",
+      "modern": "I dag är räkningen både lättare att göra och svårare att lita på. Lättare för att många investmentbolag redovisar substansvärde per aktie kvartalsvis, med innehållsförteckning och valuta, så att kursen kan ställas mot siffran samma dag. Svårare för att substansen i ökad utsträckning är onoterad — privata bolagsvärderingar som uppdateras i kliver och med eftersläpning, medan aktien prissätts varje sekund. Därmed får avkastningsräkningen en tredje dimension som kursens femte kapitel fångar: avståndet mellan substansens redovisningsdag och kursens handelsdag. För aktiestudenten är ekvationen ändå densamma som den alltid varit — tre poster, inga andra — och den som kan räkna dem isär kan skilja ett år då investmentbolaget skapade värde från ett år då marknaden bara flyttade priset på samma värde."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — kursens tre adresser",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — ekvationen och de tre motornerna",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — läsa rabattens historia",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — dubbla slaget och stängningspotentialen",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — avkastningsräkningens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch ägnade de slutna fonderna ett eget stycke i sin praktiska tid: hans förvåning var att investerare betalade fullt pris för en förvaltare de kunde få till rabatt i fondandras motsvarighet, och hans poäng är kursens kärna i klartext — rabatten är inte en dekoration utan en post med egen avkastning och egen risk. Lynchs andra läsregel, att räkna på vad som måste hända i stället för att hoppas, blir här räkningen av stängningspotentialen: vad kursen skulle ges om rabatten en dag går mot noll, och vad som händer om den i stället öppnar. Hans varning för att förväxla ett år av marknadens prisändring med skapat värde är exakt den skillnad kursens ekvation mäter mellan substansmotorn och rabattmotorn.",
+    "grahamSection": "Benjamin Graham köpte gärna tillgångar under deras räkenskapsvärde, och investmentbolaget till rabatt är den mest bokstavliga formen av den idén: substansen redovisas, kursen står under den, marginalen syns i ett tal. Kursens ekvation ger Grahams marginal en praktisk adress — den visar att marginalen bara blir läsarens om den en dag frigörs, genom utdelning, återköp eller omläggning, och att varje utdelad krona ur rabattköpt substans bär sin lilla bonus med sig. Hans motivering till skepticism är samma varning som kursens femte kapitel: en substans som aldrig betalas ut och aldrig stänger sin rabatt är en marginal på pappret, och mellan pappret och fickan ligger tid och förvaltare — två poster Graham aldrig lät räknas bort.",
+    "ak1Section": "I AK1A:s metodik fyller denna kurs den ekvation som investmentbolagsfamiljen saknat sedan ib-01: en länk mellan substansarbetet i ib-02 och ägarfrågorna i ib-03 — vart varje krona avkastning kommer ifrån, och vem som styr rabattposten. I AKM1:s bolagsläsning blir dekomposeringen ett separationsverktyg i värderingsdimensionen: samma kursrörelse kan vara substansskapande eller prisrörlig, och skillnaden avgör om en jämförelse mellan investmentbolag och vanliga aktier ens är meningsfull. I AKM2:s ram övar kursen scenariotänkandet på de tre posterna: ett grundscenario där rabatten står still, ett där den drar ihop sig, ett där den öppnar — samma substans, tre totalutfall. Gränserna mot grannkurserna är avsiktliga: km-067 äger grundläsningen av investmentbolaget, vr-04 äger avkastningens källor för aktier i allmänhet, km-012 äger summeringen av delvärden, ib-02 äger substansens kvalitet — denna kurs äger räkningen av de tre motornerna.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — kursens tre adresser",
+        "intro": "Ett investmentbolags kurs kan bara röra sig av tre skäl, och kursen ger varje skäl sin egen adress: substansen, rabatten och utdelningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med den grundläggande identiteten. Ett investmentbolags substansvärde per aktie, kallat NAV i rapporterna, är summan av dess innehåll minus skulder delat på antal aktier. Kursen står i ett förhållande till substansen, kvoten P-till-NAV; står den under ett är avståndet rabatten. Därmed gäller åt båda hållen: kursen är substansen gånger priskvoten, och varje förändring i kursen kommer antingen från substansen, från priskvoten eller från pengar som lämnar bolaget som utdelning — det finns ingen fjärde adress. Det låter enkelt, och det är det också, men konsekvensen är stor: två investmentbolag med identisk substansförrvaltning kan ge sina ägare helt olika årsbörsrörelser, och en och samma substansutveckling kan ge vinst ena året och förlust nästa. Skillnaden bor i vilken motor som kör. Kursens genomgående exempel är ett påhittat bolag, Silvervik Invest AB, och alla dess tal är uppbyggda för räkneleden; verkliga investmentbolag läses med samma frågor men med egna siffror. Tre egenskaper gör motornerna värda sitt eget kapitel. Substansmotorn är det arbete förvaltaren gör — värdeutvecklingen i innehavet. Rabattmotorn är marknadens prissättning av samma arbete — den kan ge och ta tiotals procent utan att en enda post i substansen rör sig. Utdelningsmotorn är den minsta men mest försummade: pengar som lämnar bolaget bär med sig en liten värdeskillnad just för att de lämnar en rabattprissatt substans."
+          },
+          {
+            "type": "definition",
+            "content": "AVKASTNINGSRÄKNINGENS TRE POSTER: (1) SUBSTANSMOTORN — substansvärdets förändring, förvaltarens eget arbete · (2) RABATTMOTORN — förändringen i P-till-NAV, marknadens omprissättning av hela substansen · (3) UTDELNINGSMOTORN — utdelningen justerad för att den lämnar substans som bara var prissatt till rabattkvoten · GRÄNS: km-067 äger grundläsningen, vr-04 avkastningens källor för aktier, ib-02 substansens kvalitet — denna kurs äger räkningen av de tre motornerna."
+          },
+          {
+            "type": "insight",
+            "content": "Tre adresser, inga fler: substansen, rabatten och utdelningen. Den som kan skilja dem åt vet efter ett års kursrörelse om investmentbolaget skapade värde — eller om marknaden bara flyttade priset på oförändrat värde."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — ekvationen och de tre motornerna",
+        "intro": "Kapitlet bygger den additiva ekvation som delar ett års totalavkastning i exakt tre poster, och räknar den på Silvervik Invest AB i två riktningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Silvervik Invest AB har ett substansvärde per aktie på 200,0 kronor och noteras till 150,0 kronor. P-till-NAV är 150,0 delat med 200,0, det vill säga 0,750 — en rabatt på 25,0 procent. Året därpå utvecklas substansen från 200,0 till 216,0 kronor före utdelning, en tillväxt på 16,0 kronor eller 8,0 procent; bolaget delar ut 6,0 kronor, som lämnar substansen, som efter utdelning står i 210,0 kronor. Antag först att rabatten drar ihop sig från 25,0 till 15,0 procent — att priskvoten stiger från 0,750 till 0,850. Kursen blir 210,0 gånger 0,850, det vill säga 178,50 kronor, och totalavkastningen med utdelning blir 178,50 plus 6,00 minus 150,0, alltså 34,50 kronor — 23,0 procent på köpkursen. Här kommer ekvationens poäng: de 34,50 kronorna kan räknas isär exakt. Rabattmotorn bidrar med substansen vid årets början gånger priskvotens förändring: 200,0 gånger 0,100 är 20,00 kronor. Substansmotorn bidrar med tillväxten gånger årets slutliga priskvot: 16,0 gånger 0,850 är 13,60 kronor. Utdelningsmotorn bidrar med utdelningen gånger skillnaden mellan ett och slutkvoten: 6,0 gånger 0,150 är 0,90 kronor. Summa: 20,00 plus 13,60 plus 0,90 är 34,50 kronor — ekvationen stänger på öret. Räkna samma år åt andra hållet, med en rabatt som öppnar från 25,0 till 35,0 procent. Kursen blir 210,0 gånger 0,650, det vill säga 136,50 kronor, och totalen med utdelning blir minus 7,50 kronor, minus 5,0 procent. Dekomposeringen: rabattmotorn 200,0 gånger minus 0,100 är minus 20,00 kronor, substansmotorn 16,0 gånger 0,650 är 10,40 kronor, utdelningsmotorn 6,0 gånger 0,350 är 2,10 kronor — summa minus 7,50, exakt. Substansen växte alltså åtta procent och ägaren förlorade fem — skillnaden är rabattens tio procentenheter. Det är denna adressbarhet ekvationen ger: varje krona får en förklaring."
+          },
+          {
+            "type": "tabell",
+            "content": "SILVERVIK INVEST AB (PÅHITTADE TAL): START — NAV 200,0 · kurs 150,0 · P/NAV 0,750 (rabatt 25,0 %) · ÅRET — substans före utdelning 216,0 (+8,0 %) · utdelning 6,0 · NAV efter utdelning 210,0 · FALL A rabatt 15,0 %: kurs 210,0 × 0,850 = 178,50 · total +34,50 kr = +23,0 % · varav rabattmotor 200,0 × 0,100 = 20,00 · substansmotor 16,0 × 0,850 = 13,60 · utdelningsmotor 6,0 × 0,150 = 0,90 · FALL B rabatt 35,0 %: kurs 210,0 × 0,650 = 136,50 · total −7,50 kr = −5,0 % · varav rabattmotor −20,00 · substansmotor 16,0 × 0,650 = 10,40 · utdelningsmotor 6,0 × 0,350 = 2,10."
+          },
+          {
+            "type": "insight",
+            "content": "Utdelningsmotorn är ekvationens minsta och mest lärorika post: sex kronor som lämnar bolaget är sex kronor i handen, men de lämnade en substanspost som börsen bara prissatte till 0,850 gånger sitt värde — bonusen 0,90 kronor är verklig och kommer ur rabatten. Utdelning ur rabattköpt substans skapar värde; utdelning ur substans köpt till premie förstör det."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — läsa rabattens historia",
+        "intro": "Ekvationen kräver bara två tidsserier — substansvärde per aktie och kurs — och kapitlet visar var de finns och hur rabattens historia läses som ett band, inte ett tal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första spåret är rapporterna: investmentbolag med noterade innehav redovisar substansvärde per aktie kvartalsvis eller minst halvårsvis, och seriehandlingens första jobb är att skriva upp navet och kursen på samma datum, rapport för rapport, minst fem år bakåt. Andra spåret är kvoten: dela kursen med navet för varje datum och serien blir en rabatthistoria — och den historia som först ser ut som ett tal visar sig vara ett band. Ett tänkt exempel ur Silverviks bransch: rabatten har under fem år rört sig mellan 12,0 och 28,0 procent med ett medianläge kring 18,0 — det bandet är läsarens referens, och dagens läge får sin mening först där: 25,0 procent ligger i bandets övre halva, vilket betyder att marknaden historiskt betalat mera för just denna substans. Tredje spåret är dekomposeringen själv: för vart och ett av åren i serien räknas ekvationen från kapitel två, och åren staplas till en motorhistoria — kanske visar det sig att tre av fem års sammanlagda kursrörelse kom från rabatten och inte från substansen, vilket är en uppgift om bolaget som ingen multipel ger. Frågorna per läsning är fyra: var ligger rabatten i sitt band, har bandet förskjutits, vilken motor bar senaste år, och har utdelningsandelen ändrats. En femte fråga hör till onoterade innehåll: hur gammal är den senaste substanssiffran — en navräkning från förra kvartalet prissätts av dagens kurs, och avståndet mellan datumen är i sig en post i osäkerheten, vilket kapitel fem återkommer till."
+          },
+          {
+            "type": "definition",
+            "content": "DE TRE SPÅREN I RAPPORTLÄSNINGEN: (1) TIDSSERIEN — substansvärde per aktie och kurs på samma datum, fem år bakåt · (2) RABATTBANDET — kvotseriens låg, hög och median; dagens läge läses mot bandet, aldrig mot noll · (3) MOTORHISTORIEN — dekomposering per år: vilken post bar · FYRA FRÅGOR PER LÄSNING — läge i band · bandets förskjutning · bärande motor · utdelningsandel (+ en femte: substanssiffrens ålder)."
+          },
+          {
+            "type": "insight",
+            "content": "Rabatten är inte ett tal utan ett band med historia. Medianen 18,0 procent säger vad marknaden vanligen betalar; dagens 25,0 procent säger att den i dag betalar mindre — och skillnaden är en uppgift, inte en köpgrund."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — dubbla slaget och stängningspotentialen",
+        "intro": "Två räkningar sammanfattar motornernas kraft: vad som händer när allt rör sig nedåt samtidigt, och vad rabatten skulle ge om den en dag slöts.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första räkningen är dubbla slaget, och den förklarar varför investmentbolag med börsubstans upplevs som tyngre än börsen i nedgång. Utgå igen från Silverviks startläge: nav 200,0, kurs 150,0, priskvot 0,750. Ett börsår där substansen faller tjugo procent drar navet till 160,0 kronor; det är första slaget och det är exakt börsens eget fall. Men i samma oro tenderar rabatten att öppna — antag att den går från 25,0 till 35,0 procent, priskvoten från 0,750 till 0,650. Kursen blir 160,0 gånger 0,650, det vill säga 104,0 kronor, och förlusten på köpkursen 150,0 är 46,0 kronor eller 30,7 procent — mot börsens tjugo. Ekvationens dekomposering, detta år utan utdelning för tydlighetens skull: rabattmotorn 200,0 gånger minus 0,100 är minus 20,0 kronor, substansmotorn minus 40,0 gånger 0,650 är minus 26,0 kronor, summa minus 46,0 — posterna är lika stora var för sig, samvariationen gör slaget dubbelt. Spegelbilden gäller i vändning: när börsen vänder och rabatten drar ihop sig kan samma mekanik ge ett år bättre än substansen. Andra räkningen är stängningspotentialen, rabattens andra roll. Vid priskvoten 0,750 är en fullständig slutenhet av rabatten värd 1 delat med 0,750 minus ett, det vill säga 33,3 procent på kursen — utan att substansen behöver växa en enda krona. Vid en djupare kvot, 0,700, är samma potential 42,9 procent. Det är en potential, inte en prognos: kursen gör ingen skyldighet att stänga, och kapitel fem tar varningen. Men tillsammans med utdelningsmotorn ger den rabatten en kraft som kursens läsare ska kunna räkna: ju djupare rabatten, desto större är det värde som varje utdelad kronor eller återköpt aktie frigör — mekaniken bakom hela den aktivisthistoria som kursens bakgrund berättar."
+          },
+          {
+            "type": "tabell",
+            "content": "DUBBLA SLAGET (PÅHITTADE TAL): NAV 200,0 → 160,0 (−20,0 %) · priskvot 0,750 → 0,650 (rabatt 25,0 → 35,0 %) · kurs 150,0 → 160,0 × 0,650 = 104,0 · förlust −46,0 kr = −30,7 % mot börsens −20,0 % · dekomposering: rabattmotor 200,0 × (−0,100) = −20,0 · substansmotor (−40,0) × 0,650 = −26,0 · STÄNGNINGSPOTENTIAL: vid kvot 0,750 ⇒ 1/0,750 − 1 = +33,3 % · vid kvot 0,700 ⇒ 1/0,700 − 1 = +42,9 % · UTDELNINGSBONUS PER KRONA: 1 − kvoten (vid 0,850: 0,150 kr)."
+          },
+          {
+            "type": "insight",
+            "content": "Samvariationen är investmentbolagets outtalade hävstång: i nedgången slår substansfallet och rabattöppningen lika hårt var för sig — minus tjugo procent från börsen blir minus trettio på aktien. I uppgången arbetar samma mekanik åt andra hållet, och den som bara räknar substansen förstår varken fallet eller vändningen."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Avkastningsräkningens sex fällor har en gemensam rot: en av de tre posterna ges en roll den inte har — rabatten som värdebevis, utdelningen som avkastning, substansen som färsk.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är rabatten som värdeanledning: en rabatt kan vara priset på verkliga kostnader — förvaltningsavgifter som år efter år äter substansen, en skuggskatt i innehavet som ib-02 lär skilja ut, eller en substans av sådan kvalitet att marknaden rationellt betalar under den. Rabatten är en post att räkna, aldrig ett köpskäl i sig. Andra fällan är medeltalsfällan i bandet: dagens rabatt jämförd med ett femårsmedian är information, men bandet kan ha förskjutits — ett bolag som fått en ny ägarstruktur eller tappat sitt noteringsskäl kan ha flyttat hela bandet, och gamla lägen är då ur spel. Tredje fällan är den gamla substanssiffran: kursen prissätter dagens förväntningar medan den senaste navräkningen kan vara månader gammal, särskilt när innehavet är onoterat; en kraftig börsrörelse mellan rapportdag och läsdag gör kvoten missvisande åt båda håll. Fjärde fällan är utdelningsmotorns illusion: bonusen per krona är verklig men liten — 0,90 kronor på sex utdelade — och den som väljer investmentbolag för utdelningens skull har valt bolagets minsta motor; utdelningens verkliga roll i sammanhanget är rabattverktyget från bakgrundshistorien, och den rollen hör hemma i ägarfrågorna i ib-03. Femte fällan är tidens roll i stängningen: potentialen plus 33,3 procent har ingen utlösare och ingen klocka — rabatter har stått öppna i decennier, och avkastningsräkningen som glömmer att rabattmotorn kan vara negativ i åratal räknar med en tillgång som kanske aldrig betalas. Sjätte fällan är premiens spegel: allt som sagts om rabatten gäller omvänt för investmentbolag som handlas över substansen — där blir utdelningsmotorn en utgiftspost och priskvotens fall en risk, och dekomponeringskonsten är densamma men tecknen byts."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en rot: en post får fel roll. Rabatten är ett räkneämne, inte en anledning; bandet kan flytta; substansen har ålder; utdelningen är minsta motorn; stängningen har ingen klocka; och över substansen vänder alla tecken. Håll posterna på sina adresser — då står sig räkningen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — avkastningsräkningens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga dekomposeringen av ett års ägande och av ett läge i rabattens historia.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: senaste året — hur mycket av kursförändringen kom från substansmotorn, hur mycket från rabattmotorn, och vad bidrog utdelningen med justerad för kvoten? Fråga två: var ligger dagens rabatt i sitt eget femårsband, och har bandet förskjutits av något som hänt bolaget? Fråga tre: hur gammal är substanssiffran som kursen ställs mot, och vad har börsen gjort sedan dess — vad blir kvoten om navet uppdateras till dagens noteringar? Fråga fyra: vad är stängningspotentialen på dagens kvot, och finns det ägarverktyg — utdelning, återköp, omläggning — som historiskt använts för att aktivera den? Fråga fem: samvarierar bolagets rabatt med börsen så att dubbla slaget gäller, eller har rabatten eget liv — och vad betyder det för hur aktien bör mätas mot ett vanligt index? Den som besvarar de fem frågorna kan redogöra för varenda krona ett investmentbolag givet eller tagit — och kan skilja förvaltarens år från marknadens. Detta är utbildning i att räkna och läsa, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj ett noterat investmentbolag med minst fem års substansrapportering i det egna universumet — kandidaterna står i bolagslistan. Bygg tidsserien: substansvärde per aktie och kurs på samma datum per rapport. Räkna kvotserien och bestäm bandets låg, hög och median. Dekomponera senaste året enligt kapitel två: rabattmotor, substansmotor, utdelningsmotor — och kontrollera att summorna stänger mot den faktiska totalavkastningen. Uppskatta stängningspotentialen och skriv en halvsida: vilken motor har burit historiken, och vilken av de sex fällorna är närmast för att vilseleda just denna läsning? Upprepa när nästa substansrapport kommer — och notera om bandet lever."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens fjärde steg ger ägandet dess bokföring: substansen, rabatten och utdelningen — tre adresser för varje krona. Den som räknar dem isär varje år vet skillnaden mellan ett bolag som bygger värde och en aktie som bara fick sällskap av marknadens humör."
+          }
+        ]
+      }
+    ]
+  },
   "pe-01-private-equity-fonder": {
     "slug": "pe-01-private-equity-fonder",
     "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
@@ -212323,6 +212495,178 @@
     "lynchSection": "Peter Lynch berättade om bolag som växte sig rika på att multiplicera en lyckad formel — och om bolag som växte sig fattiga på att multiplicera en felaktig. Kursens marginaltal är precis den skiljelinjen: formeln som fungerade i de första butikerna men inte i de tjugonde. Lynch påminde också om att de bästa tillväxtberättelserna är de där expansionen fortfarande möter kapital som tjänar som kärnan — vilket är marginal över medeltal, kursens mekanik i en mening.",
     "grahamSection": "Benjamin Grahams skepticism mot bokförda tal fick sin tydligaste form i inflationens epok: han påpekade att vinster räknade på historiskt bokförda anläggningar överdriver den verkliga avkastningen när priserna stigit, och han föredrog att se verksamheten prövas mot vad den skulle kosta att bygga om. Kursens ersättningskronor är den läran i räkneform: 40 dividerat med 250, inte 100.",
     "ak1Section": "I AK1A:s metodik används den inkrementella läsningen som djupkontroll i lönsamhetsmotorerna: universumsdata kan kompletteras med förändringstal enligt kursens differensmetod, och i AKM2-traditionen kan marginalen mot medeltalet föras som en scenariovariabel — ett bolag som expanderar under sitt medeltal pressar de långsiktiga grenarna, ett över medeltalet ljusar dem. Arbetet att hålla isär bokförd och real avkastning vid inflation dokumenteras i vidarekurserna om balansräkningen och resultatkvaliteten."
+  },
+  "roic-04-vardeekvationen": {
+    "slug": "roic-04-vardeekvationen",
+    "category": "LÖNSAMHET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Värdeekvationen — ROIC, återinvestering och multipelns pris",
+    "summary": "Lönsamhetsfamiljens fjärde steg: värdeekvationen. Kursen binder ihop ROIC med kapitalkostnaden och återinvesteringsandelen till en enda räkning — värdemultiplikatorn per återinvesterad krona, tillväxtens tvillingar med olika kapitalbehov, och multipelns pris på spridningen — och visar varför två bolag med identisk vinst och identisk tillväxt förtjänar olika mycket per intjänad krona.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna spridningen — ROIC minus kapitalkostnad — som lönsamhetens enda värdebärande tal · Räkna värdemultiplikatorn per återinvesterad krona: ROIC delat med kapitalkostnaden, med nettovärdet per krona som skillnaden mot ett · Skilja tillväxtens tvillingar: samma sexprocentiga tillväxt byggd med tjugo procents återinvestering till ROIC trettio mot sextio procents återinvestering till ROIC tio — och se vad kvarvaran blir i fritt kassaflöde · Räkna multipelns pris på spridningen: varför de två tvillingarna motiverar multiplar i förhållandet två mot ett på identisk vinst och tillväxt · Mäta räntkänsligheten i multipeln — två procentenheters högre avkastningskrav och vad det gör med priset på samma spridning · Känna igen de sex fällorna — från bakåtblickande ROIC som värdebevis till utdelningsklippning som skapar tillväxt men förstör kassa.",
+    "why": "Lönsamhetsfamiljen har mätt ROIC, plockat isär det i marginal och kapitalomsättning, och lärt den inkrementella kronans väsen — men ingen av kurserna svarar på frågan som gör lönsamhet intressant: vad är hög ROIC VÄRD? Kursen fyller steget mellan måttet och priset. Andra kurser äger grannskapet: tx-03 äger tillväxtens villkor — att tillväxt skapar värde bara när avkastningen överstiger kapitalkostnaden — vr-03 äger multipelns anatomi och km-008 själva kapitalkostnaden, men ingen äger ekvationen som binder dem: värdemultiplikatorn per återinvesterad krona, återinvesteringsandelen som volymreglaget, och multipeln som marknadens pris på spridningen. Det gör denna kurs, med två genomgående bolag som visar kursens kärna: identisk vinst, identisk tillväxt, dubbelt så mycket kvar i kassa hos det ena. Frågan kursen lämnar hos läsaren är lönsamhetsfamiljens slutfråga: när bolaget behåller en krona — till vilket pris säljer den kronan värde tillbaka?",
+    "history": {
+      "origin": "Idén att lönsamhet först blir värde i jämförelse med ett avkastningskrav är lika gammal som själva kapitalräkningen. De första bolagsägarna som lade eget kapital i industri stattes inför samma fråga som kursen ställer: skall vinsten behållas och arbetas vidare, eller betalas ut och läggas någon annanstans? Räntan på statspapper blev tidigt mätstocken — kapital som inte förtjänade mer än räntan kunde lika gott ligga i obligationer — och därmed var spridningen född som begrepp, även innan den hade sitt moderna namn. Beräkningskonsten att värdera en evig avkastningsström mot ett avkastningskrav växte fram i försäkringsmatematiken och fäste i den finansiella litteraturen kring mellankrigstiden, när Gordons formel fick sin föregångare.",
+      "evolution": "Tjugonde århundradet gav ekvationen dess moderna form i två steg. Det första var kapitalkostnadens teori: att även eget kapital har en kostnad — den avkastning ägaren kunde få någon annanstans vid samma risk — vilket gjorde spridningen till ett krav snarare än en artighet. Det andra var återinvesteringens matematik, som tog fasta på att behållen vinst bara är värdeskapande om den återinvesteras till spridning: en insikt som förfinades i den fundamentala analysens guldålder och sammanfattades i regeln att värdestillväxten per år ungefärligen är återinvesteringsanden gånger avkastningen på det återinvesterade kapitalet. Modererna värderingsläror — från kassaflödesmodellerna till de empiriska multipelstudierna — bygger alla på samma två ben: avkastningen på nytt kapital och priset på att vänta på det.",
+      "modern": "I dag står ekvationen i centrum för hur marknaden prissätter kvalitet. De bolag som under decennier kombinerat hög avkastning på investerat kapital med verkliga återinvesteringsmöjligheter har handlats i fortsatt höga multiplar, och hela stilen kvalitetsinvestering är i grunden en satsning på att spridningen är varaktig — en varaktighet som moat-kurserna mäter och denna kurs prissätter. Samtidigt har ränteläget återigen visat ekvationens känsliga sida: när avkastningskravet stiger faller multipeln på varje spridning, och bolag vars tillväxt bygger på tät återinvestering vid måttlig spridning känner det först. För aktiestudenten är kursens ekvation därmed både värderingsverktyg och riskmätare: samma tal som säger vad lönsamheten är värd i dag säger också hur mycket av det värdet som står på avkastningskravets lånade ben."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — spridningen: ROIC mot vad?",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — värdemultiplikatorn per krona",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — läsa ekvationen i rapporten",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — multipelns pris på spridningen",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — värdeekvationens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch sorterade bolag efter tillväxttakt och hade sin tydligaste respekt för dem som kombinerar tillväxt med behållen vinst: hans bilder av bolag som år efter år behåller vinster och återinvesterar dem i expansionskraft är kursens tvillingräkning i berättelseform. Lynchs varning är lika användbar: tillväxt köpt till vilket pris som helst — högt återinvesterat kapital mot kännbar osäkerhet om framtida avkastning — är en av hans klassiska förlusthistorier, och hans regel att räkna på vad återinvesterat kapital faktiskt förtjänar är spridningsräkningen före spridningsbegreppet. Hans blick för att en lugn växare med rik utdelning kan slå en snabbväxare med mager kassa är ekvationen körad åt båda hållen.",
+    "grahamSection": "Benjamin Graham lärde att aktiens värde bor i bolagets förmåga att tjäna och förtjäna vidare — earnings power, inte enbart årets siffra — och han var tidig med att behållen vinst är ägarens kapital i bolagets händer: den skall jämföras med vad ägaren själv kunde göra med pengarna. Kursens värdemultiplikator är den jämförelsen räknad: en behållen krona som förtjänar tre och sjuttiofem nya värdekronor är god förvaltning; en som förtjänar sjuttio procent av sig själv är kapital som borde ha fått resa. Grahams varning om att tillväxt i bokstaven inte är värde i sig — att en siffra som stiger kan gömma kapital som förångas — är exakt det som ekvationens negativa spridning fångar, och hans krav på marginal lever här som kravet att spridningen skall vara både positiv och beständig nog att bära multipeln.",
+    "ak1Section": "I AK1A:s metodik fulländar denna kurs lönsamhetsdimensionens bro till värderingsdimensionen: där roic-01 mätte, roic-02 plockade isär och roic-03 följde nästa krona, prissätter roic-04 hela maskineriet. I AKM1:s bolagsläsning blir ekvationen sambandet mellan lönsamhets- och värderingsblocket: samma vinst och tillväxt får olika värde beroende på kapitalets pris, vilket gör att två bolag med lika framtidshistorik kan motivera multiplar i förhållandet två mot en. I AKM2:s ram övar kursen scenarioräkning på avkastningskravet: en och samma spridning värderas vid två kravnivåer, och skillnaden är ränterisken i aktien mätt i multipel. Gränserna mot grannkurserna är avsiktliga: tx-03 äger tillväxtens villkor, km-008 kapitalkostnaden, vr-03 multipelns anatomi, roic-03 den inkrementella kronan — denna kurs äger ekvationen som binder lönsamhet till värde och multipel.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — spridningen: ROIC mot vad?",
+        "intro": "ROIC är ett tal; värde blir det först mot ett andra tal: avkastningskravet. Kapitlet definierar spridningen och dess två förutsättningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja med frågan som måttet inte svarar på. En avkastning på tolv procent på investerat kapital är hög eller låg beroende på vad kapitalet alternativt kunde förtjäna: mot ett avkastningskrav på åtta procent är den en spridning på fyra procentenheter; mot tolv är den noll; mot fjorton är den ett underskott. Spridningen — ROIC minus kapitalkostnaden — är alltså lönsamhetens enda värdebärande tal, och kapitalkostnaden är inte bokföringens ränta på lån utan hela kapitalets pris, det egna inbegripet; grannkursen km-008 äger dess beräkning och kursen lånar den färdig. Värde skapas sedan av spridningen först under två villkor som kursen håller isär genomgående. Det första är riktning: spridningen skall vara positiv — återinvestering i negativ spridning bygger tillväxt som förstör värde, vilket tx-03 äger som tillväxtens villkor. Det andra är volym: spridningen skall finnas på kapital som faktiskt kan återinvesteras — en högrörlig avkastning på en liten kärna skapar mindre värde än en godtagbar avkastning som kan svälja nya miljoner år efter år. Återinvesteringsanden — andelen av resultatet som behålls och arbetas vidare — är volymreglaget. Kursens genomgående exempel är två påhittade bolag, Virvelverk Industri AB och Standardmekanik AB, med identisk vinst och identisk tillväxt men olika ekvationer; alla tal är uppbyggda för räkneleden, och verkliga bolag läses med samma frågor."
+          },
+          {
+            "type": "definition",
+            "content": "VÄRDEEKVATIONENS DELAR: (1) SPRIDNINGEN — ROIC minus kapitalkostnad; positiv riktning är villkoret, volymen är multiplikatorn · (2) VÄRDEMULTIPLIKATORN — varje återinvesterad krona är i permanent värde värd ROIC delat med kapitalkostnaden · (3) MULTIPelen — marknadens pris på spridningen, med återinvesteringsanden som volym · GRÄNS: tx-03 äger tillväxtens villkor, km-008 kapitalkostnaden, vr-03 multipelns anatomi — denna kurs äger ekvationen lönsamhet till värde."
+          },
+          {
+            "type": "insight",
+            "content": "ROIC förstår sig själv först mot sitt andra tal: kapitalkostnaden. Spridningen är lönsamhetens värdebärande form — och den skall vara både positiv och återinvesternasbar för att bli värde."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — värdemultiplikatorn per krona",
+        "intro": "Kapitlet räknar vad en enda återinvesterad krona är värd vid olika spridningar, och bygger kursens kärntabell från fyra hörn.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En krona behålls i bolaget och återinvesteras i rörelsen. Den förtjänar därefter ROIC kronor per år, i princip under överskådlig tid, och värdet av ett sådant beständigt resultatflöde är avkastningen delat med avkastningskravet — samma beräkning som en evig obligation. Vid ROIC trettio procent och kapitalkostnad åtta procent blir värdet per krona noll komma trettio delat med noll komma noll åtta, det vill säga 3,75 kronor; eftersom kronan redan är betald ur ägarens ficka är nettovärdet av beslutet att behålla den 2,75 kronor. Fortsätt längs tabellen. Vid ROIC tolv mot kostnad åtta: värdet 1,50, nettovinsten 0,50 per krona — beskedet bra men blygsamt. Vid ROIC åtta mot kostnad åtta: värdet exakt 1,00, nettovinsten noll — bolaget ger ägaren tillbaka vad denne lade in, varken mer eller mindre; tillväxten är här värderingsneutral och varje procent byggd så är tom räkning. Vid ROIC åtta mot kostnad tolv: värdet 0,67 kronor, det vill säga en förlust på 0,33 per behållen krona — bolaget behåller pengar som förtjänar mindre än sitt pris, och resultatet blir tillväxt i omsättning och substans samtidigt som värdet sjunker. Denna tabell är kursens kärna: den översätter abstrakta procenttal i beslutvärda kronor per krona. Märk också asymmetrin i tiden: en krona återinvesterad i dag till spridning fortsätter skapa värde varje år framåt, medan en utdelad krona skapar värde först i ägarens nästa beslut — därför väger marknaden rikliga återinvesteringsmöjligheter med positiv spridning så högt, vilket kapitel fyra prissätter."
+          },
+          {
+            "type": "tabell",
+            "content": "VÄRDEMULTIPLIKATORN PER ÅTERINVESTERAD KRONA (BESTÄNDIGT RESULTAT, VÄRDE = ROIC / KAPITALKOSTNAD): ROIC 30 % / kostnad 8 % ⇒ värde 3,75 · netto +2,75 · ROIC 12 % / kostnad 8 % ⇒ värde 1,50 · netto +0,50 · ROIC 8 % / kostnad 8 % ⇒ värde 1,00 · netto 0 (värderingsneutral tillväxt) · ROIC 8 % / kostnad 12 % ⇒ värde 0,67 · netto −0,33 (tillväxt som förstör värde) · TOLKNING: spridningens storlek avgör vad varje behållen krona säljer värde för — noll spridning säljer den för exakt ett."
+          },
+          {
+            "type": "insight",
+            "content": "Fyra hörn, en läxa: samma krona är värd 3,75, 1,50, 1,00 eller 0,67 beroende på ingående två tal. Lönsamhet utan kapitalkostnaden är inte bara ofullständig — den kan läsas precis fel."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — läsa ekvationen i rapporten",
+        "intro": "Ekvationens tre indata finns i varje årsredovisning och dess närmaste noter: resultat, utdelning och kapitalbas. Kapitlet samlar läsordningen med tvillingbolagen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Virvelverk Industri AB och Standardmekanik AB tjänar båda 100,0 miljoner kronor efter skatt. Virvelverk behåller 20,0 procent av resultatet och återinvesterar i rörelsen; Standardmekanik behåller 60,0 procent. Läsordningen börjar i resultat- och förvaltningsberättelsen: utdelningen ger den behållna andelen — Virvelverk 20,0, Standardmekanik 60,0. Andra steget är balansräkningen och kapitalbasen — rörelsekapital plus anläggningstillgångar minus räntebärande skulder, den bas roic-01 lär räkna — och relationen mellan nytt investerat kapital och resultatet det avkastar: Virvelverks återinvesterade kapital avkastar 30,0 procent, Standardmekaniks 10,0. Tredje steget ger tillväxten: behållen andel gånger avkastning — Virvelverk 0,20 gånger 30,0 är 6,0 procent, Standardmekanik 0,60 gånger 10,0 likaså 6,0 procent. Här står kursens poäng i klartext: tvillingarna växer identiskt sex procent om året, men Virvelverk behöver behålla tjugo kronor per hundralapp för att bygga tillväxten medan Standardmekanik behåller sextio — kvar till utdelning och fritt kassaflöde blir 80,0 mot 40,0 miljoner. Samma tillväxt, olika pris i kassa. Fjärde steget är avkastningskravet: med kapitalkostnaden åtta procent är Virvelverks spridning 22,0 procentenheter och Standardmekaniks 2,0 — värdet per återinvesterad krona blir 3,75 mot 1,25. Notera noter som ger mer: avskrivningstakter,leasingposter och förvärvskostnader kan flytta både kapitalbas och avkastning, och roic-02:s truppuppdelning och roic-03:s inkrementella läsning ger djupet när medeltal inte räcker. Avsluta läsorden med frågan om varaktighet: hur många år framåt finns Virvelverks tillfälle att återinvestera till 30 procent — moat-kursernas mt-02 mäter erosionen, ekvationen prissätter den."
+          },
+          {
+            "type": "definition",
+            "content": "LÄSORDNING I FEM STEG: (1) UTDDELNINGEN ⇒ behållen andel b (resultat minus utdelning över resultat) · (2) KAPITALBASEN ⇒ ROIC på återinvesterat kapital (roic-01) · (3) TILLVÄXTEN g = b × ROIC · (4) SPRIDNINGEN = ROIC − kapitalkostnad (km-008) och värdet per krona ROIC / kostnad · (5) VARAKTIGHETEN ⇒ hur länge kan b och ROIC behållas (mt-02 erosionen)."
+          },
+          {
+            "type": "insight",
+            "content": "Tvillingbolagen: 100,0 miljoners vinst, 6,0 procents tillväxt — men Virvelverk betalar 20,0 i återinvestering för sin tillväxt och Standardmekanik 60,0. Kvar för ägaren: 80,0 mot 40,0. Tillväxtens pris är ekvationens tredje tal."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — multipelns pris på spridningen",
+        "intro": "Vad är marknaden beredd att betala per intjänad krona i tvillingarna? Kapitlet räknar multipeln ur ekvationen och mäter dess känslighet för avkastningskravet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "För en bolagsström som växer med g och där avkastningskravet är k ger Gordons formel rättvis värdering som nästa års utdelning delat med skillnaden k minus g — och skriven i utdelningsandelar blir den en prisräkning per intjänad krona. Räkna på tvillingarna med avkastningskravet 10,0 procent och tillväxten 6,0 procent, båda gemensamma. Virvelverk delar ut 80,0 procent av vinsten: priset per krona blir 0,80 gånger 1,06 delat med 0,04, det vill säga 0,848 delat med 0,04 — en motiverad vinstmultipel på 21,2. Standardmekanik delar ut 40,0 procent: 0,40 gånger 1,06 är 0,424, delat med samma 0,04 ger 10,6. Identisk vinst, identisk tillväxt, identiskt krav — och ändå multipel i förhållandet exakt två mot ett, därför att Virvelverk bygger sin tillväxt med en tredjedel av kapitalet och lämnar dubbelt så mycket kvar till ägaren. Detta är multipelns pris på spridningen: marknaden betalar inte för tillväxt, den betalar för tillväxt som är billig att bygga. Räkna därefter känsligheten — ekvationens riskmätare. Höjs avkastningskravet två procentenheter, till 12,0 procent, faller nämnaren från 0,04 till 0,06: Virvelverks multipel 0,848 delat med 0,06 är 14,1, en tredjedels nedgång, och Standardmekaniks 0,424 delat med 0,06 är 7,1, likaså en tredjedels nedgång. Procentuellt slår räntan lika hårt mot båda — multipeln är omvänt proportionell mot k minus g — men i multipelpoäng tappar Virvelverk 7,1 mot Standardmekaniks 3,5, och i kronor på en fast vinst gör det skillnaden mellan en djup och en grund korrigering. Avsluta med geometrin: eftersom multipeln står i omvänd proportion till avståndet mellan krav och tillväxt blir alla bolag vars tillväxt ligger nära avkastningskravet extra räntekänsliga — en fond av högspreadare med lång varaktighet är i matte menad mening en lång ränta, och kursens sista kapitel tar vad det betyder när varaktigheten ifrågasätts."
+          },
+          {
+            "type": "tabell",
+            "content": "TVILLINGARNA I MULTIPEL (PÅHITTADE TAL): gemensamt — vinst 100,0 Mkr · tillväxt 6,0 % · avkastningskrav 10,0 % · VIRVELVERK — utdelningsandel 80,0 % · P/E = 0,80 × 1,06 / (0,10 − 0,06) = 21,2 · STANDARDMEKANIK — utdelningsandel 40,0 % · P/E = 0,40 × 1,06 / 0,04 = 10,6 · förhållande 2,0:1 på identisk vinst och tillväxt · KÄNSLIGHET vid krav 12,0 %: Virvelverk 0,848 / 0,06 = 14,1 (−7,1) · Standardmekanik 0,424 / 0,06 = 7,1 (−3,5) · procentuellt −33 % för båda — multipeln ~ 1/(k − g)."
+          },
+          {
+            "type": "insight",
+            "content": "Marknaden betalar inte för tillväxt — den betalar för tillväxt som är billig att bygga. Två multiplar, 21,2 mot 10,6, samma vinst, samma tillväxt: hela skillnaden är kapitalets pris i ekvationen, och räntan står i nämnaren."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Värdeekvationens sex fällor har en gemensam rot: ett av ekvationens tal ges vikt eller beständighet det inte har.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är bakåtblickande ROIC som värdebevis: historiens avkastning på redan investerat kapital säger inget om nästa krona — konkurrensen, mättnaden och kapitalbehovet rör sig, roic-03 äger den läsningen, och multipeln skall prissätta framtidens spridning, inte minnesbilden av den. Andra fällan är spridning utan volym: en bolagskärna som avkastar fyrtio procent på hundra miljoner men bara kan svälja tio nya per år skapar mindre värde än spridning hälften så bred på tiofaldig volym — återinvesteringsbarheten är halva ekvationen och den syns inte i ROIC-talet. Tredje fällan är utdelningsklippningens drömspel: att hugga utdelningen och återinvestera till ROIC nio mot kostnad åtta ger värdet 1,125 per krona — en nettovinst på 0,125 — men till priset av en real utdelning som försvann; kalkylen kan vara rätt men den skall bära sin bevisbörda, inte bara sin tillväxtsiffra. Fjärde fällan är kapitalkostnadens skend precision: en WACC på 8,4 mot 8,0 är två olika multiplar i slutänden av räkningen; ekvationens slutsatser skall hålla inom ett band av plus minus en procentenhet eller de håller inte. Femte fällan är den mogna högfågeln: ett bolag med stabil hög spridning men fullvuxen marknad har ingen återinvesteringsvolym, och multipeln skall då vara utdelningsmaskinens — ud-09 äger den läsningen — inte tillväxtbolagets; spridning utan volym är värdefull men inte evig. Sjätte fällan är cyklens förklädnad: ROIC uppmätt i toppen av en cykel bärs av priser som vänder tillbaka mot sitt medeltal, vr-02 äger normaliseringen, och en multipel satt på toppspridning står på samma sluttning som cykelbolagens låga toppmultipel — bara åt motsatt håll."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en rot: vikt eller beständighet som inte finns. Historiens avkastning är inte framtidens; spridning utan volym är en pytt; klippt utdelning skall bära bevis; kapitalkostnaden är ett band; mogna bolag förtjänar sin multipel; och cykeln toppar ROIC som allt annat. Räkna ekvationen — men räkna den på rätt sida av tiden."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — värdeekvationens fem frågor",
+        "intro": "Kursen samlas i fem frågor — den fullständiga kedjan från mätet till multipeln och dess riskben.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vad är bolagets spridning — ROIC på återinvesterat kapital mot en kapitalkostnad satt som ett band, inte en siffra? Fråga två: hur stor är den behållna andelen, och vilken tillväxt bygger den — räknat som andel gånger avkastning? Fråga tre: vad blir värdet per återinvesterad krona, och hur många sådana kronor finns det att återinvestera i framtiden — volymen, inte bara procenten? Fråga fyra: vad motiverar ekvationen för multipel på dagens vinst, och hur förhåller sig marknadens pris till den — premie eller rabatt på spridningen? Fråga fem: hur varaktig är spridningen — vilka moat-mekanismer bär den, hur ser erosionen ut, och vad händer med multipeln om avkastningskravet stiger två procentenheter? Den som besvarar de fem frågorna har bundit lönsamhetsfamiljens mått till värderingsfamiljens pris och kan förklara varför två bolag med samma vinst och tillväxt är olika mycket värda. Detta är utbildning i att räkna och resonera, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj två bolag i samma sektor i det egna universumet — gärna ett som återinvesterar rikligt och ett som delar ut rikligt. Hämta senaste tre årsredovisningarna och räkna per bolag: behållen andel, ROIC på återinvestearat kapital, tillväxten som produkt av de två, och spridningen mot ett kapitalkostnadsband. Räkna värdemultiplikatorn per behållen krona och en motiverad vinstmultipel enligt kapitel fyra, med en känslighetsrad för avkastningskravet två procentenheter högre. Avsluta med en halvsida: vilket av bolagen säljer sin tillväxt billigast per krona kassa, och vilken av de sex fällorna står närmast läsarens egen analys? Upprepa när nästa rapporter kommer — ekvationens tal lever med verkligheten."
+          },
+          {
+            "type": "insight",
+            "content": "Lönsamhetsfamiljens fjärde steg stänger cirkeln: ROIC mot kapitalkostnaden, multiplicerat med återinvesteringens volym, prissatt i multipeln. Måttet blev värde — och frågan varje behållen krona nu får svara på är till vilket pris den säljer värde tillbaka."
+          }
+        ]
+      }
+    ]
   },
   "ma-01-transmissionsmekaniken": {
     "slug": "ma-01-transmissionsmekaniken",

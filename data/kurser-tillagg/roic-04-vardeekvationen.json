@@ -1,0 +1,148 @@
+{
+  "slug": "roic-04-vardeekvationen",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Värdeekvationen — ROIC, återinvestering och multipelns pris",
+  "summary": "Lönsamhetsfamiljens fjärde steg: värdeekvationen. Kursen binder ihop ROIC med kapitalkostnaden och återinvesteringsandelen till en enda räkning — värdemultiplikatorn per återinvesterad krona, tillväxtens tvillingar med olika kapitalbehov, och multipelns pris på spridningen — och visar varför två bolag med identisk vinst och identisk tillväxt förtjänar olika mycket per intjänad krona.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna spridningen — ROIC minus kapitalkostnad — som lönsamhetens enda värdebärande tal · Räkna värdemultiplikatorn per återinvesterad krona: ROIC delat med kapitalkostnaden, med nettovärdet per krona som skillnaden mot ett · Skilja tillväxtens tvillingar: samma sexprocentiga tillväxt byggd med tjugo procents återinvestering till ROIC trettio mot sextio procents återinvestering till ROIC tio — och se vad kvarvaran blir i fritt kassaflöde · Räkna multipelns pris på spridningen: varför de två tvillingarna motiverar multiplar i förhållandet två mot ett på identisk vinst och tillväxt · Mäta räntkänsligheten i multipeln — två procentenheters högre avkastningskrav och vad det gör med priset på samma spridning · Känna igen de sex fällorna — från bakåtblickande ROIC som värdebevis till utdelningsklippning som skapar tillväxt men förstör kassa.",
+  "why": "Lönsamhetsfamiljen har mätt ROIC, plockat isär det i marginal och kapitalomsättning, och lärt den inkrementella kronans väsen — men ingen av kurserna svarar på frågan som gör lönsamhet intressant: vad är hög ROIC VÄRD? Kursen fyller steget mellan måttet och priset. Andra kurser äger grannskapet: tx-03 äger tillväxtens villkor — att tillväxt skapar värde bara när avkastningen överstiger kapitalkostnaden — vr-03 äger multipelns anatomi och km-008 själva kapitalkostnaden, men ingen äger ekvationen som binder dem: värdemultiplikatorn per återinvesterad krona, återinvesteringsandelen som volymreglaget, och multipeln som marknadens pris på spridningen. Det gör denna kurs, med två genomgående bolag som visar kursens kärna: identisk vinst, identisk tillväxt, dubbelt så mycket kvar i kassa hos det ena. Frågan kursen lämnar hos läsaren är lönsamhetsfamiljens slutfråga: när bolaget behåller en krona — till vilket pris säljer den kronan värde tillbaka?",
+  "history": {
+    "origin": "Idén att lönsamhet först blir värde i jämförelse med ett avkastningskrav är lika gammal som själva kapitalräkningen. De första bolagsägarna som lade eget kapital i industri stattes inför samma fråga som kursen ställer: skall vinsten behållas och arbetas vidare, eller betalas ut och läggas någon annanstans? Räntan på statspapper blev tidigt mätstocken — kapital som inte förtjänade mer än räntan kunde lika gott ligga i obligationer — och därmed var spridningen född som begrepp, även innan den hade sitt moderna namn. Beräkningskonsten att värdera en evig avkastningsström mot ett avkastningskrav växte fram i försäkringsmatematiken och fäste i den finansiella litteraturen kring mellankrigstiden, när Gordons formel fick sin föregångare.",
+    "evolution": "Tjugonde århundradet gav ekvationen dess moderna form i två steg. Det första var kapitalkostnadens teori: att även eget kapital har en kostnad — den avkastning ägaren kunde få någon annanstans vid samma risk — vilket gjorde spridningen till ett krav snarare än en artighet. Det andra var återinvesteringens matematik, som tog fasta på att behållen vinst bara är värdeskapande om den återinvesteras till spridning: en insikt som förfinades i den fundamentala analysens guldålder och sammanfattades i regeln att värdestillväxten per år ungefärligen är återinvesteringsanden gånger avkastningen på det återinvesterade kapitalet. Modererna värderingsläror — från kassaflödesmodellerna till de empiriska multipelstudierna — bygger alla på samma två ben: avkastningen på nytt kapital och priset på att vänta på det.",
+    "modern": "I dag står ekvationen i centrum för hur marknaden prissätter kvalitet. De bolag som under decennier kombinerat hög avkastning på investerat kapital med verkliga återinvesteringsmöjligheter har handlats i fortsatt höga multiplar, och hela stilen kvalitetsinvestering är i grunden en satsning på att spridningen är varaktig — en varaktighet som moat-kurserna mäter och denna kurs prissätter. Samtidigt har ränteläget återigen visat ekvationens känsliga sida: när avkastningskravet stiger faller multipeln på varje spridning, och bolag vars tillväxt bygger på tät återinvestering vid måttlig spridning känner det först. För aktiestudenten är kursens ekvation därmed både värderingsverktyg och riskmätare: samma tal som säger vad lönsamheten är värd i dag säger också hur mycket av det värdet som står på avkastningskravets lånade ben."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — spridningen: ROIC mot vad?", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — värdemultiplikatorn per krona", "minutes": 4 },
+    { "num": 3, "title": "Praktisk tillämpning — läsa ekvationen i rapporten", "minutes": 4 },
+    { "num": 4, "title": "Mätning — multipelns pris på spridningen", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — värdeekvationens fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch sorterade bolag efter tillväxttakt och hade sin tydligaste respekt för dem som kombinerar tillväxt med behållen vinst: hans bilder av bolag som år efter år behåller vinster och återinvesterar dem i expansionskraft är kursens tvillingräkning i berättelseform. Lynchs varning är lika användbar: tillväxt köpt till vilket pris som helst — högt återinvesterat kapital mot kännbar osäkerhet om framtida avkastning — är en av hans klassiska förlusthistorier, och hans regel att räkna på vad återinvesterat kapital faktiskt förtjänar är spridningsräkningen före spridningsbegreppet. Hans blick för att en lugn växare med rik utdelning kan slå en snabbväxare med mager kassa är ekvationen körad åt båda hållen.",
+  "grahamSection": "Benjamin Graham lärde att aktiens värde bor i bolagets förmåga att tjäna och förtjäna vidare — earnings power, inte enbart årets siffra — och han var tidig med att behållen vinst är ägarens kapital i bolagets händer: den skall jämföras med vad ägaren själv kunde göra med pengarna. Kursens värdemultiplikator är den jämförelsen räknad: en behållen krona som förtjänar tre och sjuttiofem nya värdekronor är god förvaltning; en som förtjänar sjuttio procent av sig själv är kapital som borde ha fått resa. Grahams varning om att tillväxt i bokstaven inte är värde i sig — att en siffra som stiger kan gömma kapital som förångas — är exakt det som ekvationens negativa spridning fångar, och hans krav på marginal lever här som kravet att spridningen skall vara både positiv och beständig nog att bära multipeln.",
+  "ak1Section": "I AK1A:s metodik fulländar denna kurs lönsamhetsdimensionens bro till värderingsdimensionen: där roic-01 mätte, roic-02 plockade isär och roic-03 följde nästa krona, prissätter roic-04 hela maskineriet. I AKM1:s bolagsläsning blir ekvationen sambandet mellan lönsamhets- och värderingsblocket: samma vinst och tillväxt får olika värde beroende på kapitalets pris, vilket gör att två bolag med lika framtidshistorik kan motivera multiplar i förhållandet två mot en. I AKM2:s ram övar kursen scenarioräkning på avkastningskravet: en och samma spridning värderas vid två kravnivåer, och skillnaden är ränterisken i aktien mätt i multipel. Gränserna mot grannkurserna är avsiktliga: tx-03 äger tillväxtens villkor, km-008 kapitalkostnaden, vr-03 multipelns anatomi, roic-03 den inkrementella kronan — denna kurs äger ekvationen som binder lönsamhet till värde och multipel.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — spridningen: ROIC mot vad?",
+      "intro": "ROIC är ett tal; värde blir det först mot ett andra tal: avkastningskravet. Kapitlet definierar spridningen och dess två förutsättningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med frågan som måttet inte svarar på. En avkastning på tolv procent på investerat kapital är hög eller låg beroende på vad kapitalet alternativt kunde förtjäna: mot ett avkastningskrav på åtta procent är den en spridning på fyra procentenheter; mot tolv är den noll; mot fjorton är den ett underskott. Spridningen — ROIC minus kapitalkostnaden — är alltså lönsamhetens enda värdebärande tal, och kapitalkostnaden är inte bokföringens ränta på lån utan hela kapitalets pris, det egna inbegripet; grannkursen km-008 äger dess beräkning och kursen lånar den färdig. Värde skapas sedan av spridningen först under två villkor som kursen håller isär genomgående. Det första är riktning: spridningen skall vara positiv — återinvestering i negativ spridning bygger tillväxt som förstör värde, vilket tx-03 äger som tillväxtens villkor. Det andra är volym: spridningen skall finnas på kapital som faktiskt kan återinvesteras — en högrörlig avkastning på en liten kärna skapar mindre värde än en godtagbar avkastning som kan svälja nya miljoner år efter år. Återinvesteringsanden — andelen av resultatet som behålls och arbetas vidare — är volymreglaget. Kursens genomgående exempel är två påhittade bolag, Virvelverk Industri AB och Standardmekanik AB, med identisk vinst och identisk tillväxt men olika ekvationer; alla tal är uppbyggda för räkneleden, och verkliga bolag läses med samma frågor."
+        },
+        {
+          "type": "definition",
+          "content": "VÄRDEEKVATIONENS DELAR: (1) SPRIDNINGEN — ROIC minus kapitalkostnad; positiv riktning är villkoret, volymen är multiplikatorn · (2) VÄRDEMULTIPLIKATORN — varje återinvesterad krona är i permanent värde värd ROIC delat med kapitalkostnaden · (3) MULTIPelen — marknadens pris på spridningen, med återinvesteringsanden som volym · GRÄNS: tx-03 äger tillväxtens villkor, km-008 kapitalkostnaden, vr-03 multipelns anatomi — denna kurs äger ekvationen lönsamhet till värde."
+        },
+        {
+          "type": "insight",
+          "content": "ROIC förstår sig själv först mot sitt andra tal: kapitalkostnaden. Spridningen är lönsamhetens värdebärande form — och den skall vara både positiv och återinvesternasbar för att bli värde."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — värdemultiplikatorn per krona",
+      "intro": "Kapitlet räknar vad en enda återinvesterad krona är värd vid olika spridningar, och bygger kursens kärntabell från fyra hörn.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En krona behålls i bolaget och återinvesteras i rörelsen. Den förtjänar därefter ROIC kronor per år, i princip under överskådlig tid, och värdet av ett sådant beständigt resultatflöde är avkastningen delat med avkastningskravet — samma beräkning som en evig obligation. Vid ROIC trettio procent och kapitalkostnad åtta procent blir värdet per krona noll komma trettio delat med noll komma noll åtta, det vill säga 3,75 kronor; eftersom kronan redan är betald ur ägarens ficka är nettovärdet av beslutet att behålla den 2,75 kronor. Fortsätt längs tabellen. Vid ROIC tolv mot kostnad åtta: värdet 1,50, nettovinsten 0,50 per krona — beskedet bra men blygsamt. Vid ROIC åtta mot kostnad åtta: värdet exakt 1,00, nettovinsten noll — bolaget ger ägaren tillbaka vad denne lade in, varken mer eller mindre; tillväxten är här värderingsneutral och varje procent byggd så är tom räkning. Vid ROIC åtta mot kostnad tolv: värdet 0,67 kronor, det vill säga en förlust på 0,33 per behållen krona — bolaget behåller pengar som förtjänar mindre än sitt pris, och resultatet blir tillväxt i omsättning och substans samtidigt som värdet sjunker. Denna tabell är kursens kärna: den översätter abstrakta procenttal i beslutvärda kronor per krona. Märk också asymmetrin i tiden: en krona återinvesterad i dag till spridning fortsätter skapa värde varje år framåt, medan en utdelad krona skapar värde först i ägarens nästa beslut — därför väger marknaden rikliga återinvesteringsmöjligheter med positiv spridning så högt, vilket kapitel fyra prissätter."
+        },
+        {
+          "type": "tabell",
+          "content": "VÄRDEMULTIPLIKATORN PER ÅTERINVESTERAD KRONA (BESTÄNDIGT RESULTAT, VÄRDE = ROIC / KAPITALKOSTNAD): ROIC 30 % / kostnad 8 % ⇒ värde 3,75 · netto +2,75 · ROIC 12 % / kostnad 8 % ⇒ värde 1,50 · netto +0,50 · ROIC 8 % / kostnad 8 % ⇒ värde 1,00 · netto 0 (värderingsneutral tillväxt) · ROIC 8 % / kostnad 12 % ⇒ värde 0,67 · netto −0,33 (tillväxt som förstör värde) · TOLKNING: spridningens storlek avgör vad varje behållen krona säljer värde för — noll spridning säljer den för exakt ett."
+        },
+        {
+          "type": "insight",
+          "content": "Fyra hörn, en läxa: samma krona är värd 3,75, 1,50, 1,00 eller 0,67 beroende på ingående två tal. Lönsamhet utan kapitalkostnaden är inte bara ofullständig — den kan läsas precis fel."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — läsa ekvationen i rapporten",
+      "intro": "Ekvationens tre indata finns i varje årsredovisning och dess närmaste noter: resultat, utdelning och kapitalbas. Kapitlet samlar läsordningen med tvillingbolagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Virvelverk Industri AB och Standardmekanik AB tjänar båda 100,0 miljoner kronor efter skatt. Virvelverk behåller 20,0 procent av resultatet och återinvesterar i rörelsen; Standardmekanik behåller 60,0 procent. Läsordningen börjar i resultat- och förvaltningsberättelsen: utdelningen ger den behållna andelen — Virvelverk 20,0, Standardmekanik 60,0. Andra steget är balansräkningen och kapitalbasen — rörelsekapital plus anläggningstillgångar minus räntebärande skulder, den bas roic-01 lär räkna — och relationen mellan nytt investerat kapital och resultatet det avkastar: Virvelverks återinvesterade kapital avkastar 30,0 procent, Standardmekaniks 10,0. Tredje steget ger tillväxten: behållen andel gånger avkastning — Virvelverk 0,20 gånger 30,0 är 6,0 procent, Standardmekanik 0,60 gånger 10,0 likaså 6,0 procent. Här står kursens poäng i klartext: tvillingarna växer identiskt sex procent om året, men Virvelverk behöver behålla tjugo kronor per hundralapp för att bygga tillväxten medan Standardmekanik behåller sextio — kvar till utdelning och fritt kassaflöde blir 80,0 mot 40,0 miljoner. Samma tillväxt, olika pris i kassa. Fjärde steget är avkastningskravet: med kapitalkostnaden åtta procent är Virvelverks spridning 22,0 procentenheter och Standardmekaniks 2,0 — värdet per återinvesterad krona blir 3,75 mot 1,25. Notera noter som ger mer: avskrivningstakter,leasingposter och förvärvskostnader kan flytta både kapitalbas och avkastning, och roic-02:s truppuppdelning och roic-03:s inkrementella läsning ger djupet när medeltal inte räcker. Avsluta läsorden med frågan om varaktighet: hur många år framåt finns Virvelverks tillfälle att återinvestera till 30 procent — moat-kursernas mt-02 mäter erosionen, ekvationen prissätter den."
+        },
+        {
+          "type": "definition",
+          "content": "LÄSORDNING I FEM STEG: (1) UTDDELNINGEN ⇒ behållen andel b (resultat minus utdelning över resultat) · (2) KAPITALBASEN ⇒ ROIC på återinvesterat kapital (roic-01) · (3) TILLVÄXTEN g = b × ROIC · (4) SPRIDNINGEN = ROIC − kapitalkostnad (km-008) och värdet per krona ROIC / kostnad · (5) VARAKTIGHETEN ⇒ hur länge kan b och ROIC behållas (mt-02 erosionen)."
+        },
+        {
+          "type": "insight",
+          "content": "Tvillingbolagen: 100,0 miljoners vinst, 6,0 procents tillväxt — men Virvelverk betalar 20,0 i återinvestering för sin tillväxt och Standardmekanik 60,0. Kvar för ägaren: 80,0 mot 40,0. Tillväxtens pris är ekvationens tredje tal."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — multipelns pris på spridningen",
+      "intro": "Vad är marknaden beredd att betala per intjänad krona i tvillingarna? Kapitlet räknar multipeln ur ekvationen och mäter dess känslighet för avkastningskravet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "För en bolagsström som växer med g och där avkastningskravet är k ger Gordons formel rättvis värdering som nästa års utdelning delat med skillnaden k minus g — och skriven i utdelningsandelar blir den en prisräkning per intjänad krona. Räkna på tvillingarna med avkastningskravet 10,0 procent och tillväxten 6,0 procent, båda gemensamma. Virvelverk delar ut 80,0 procent av vinsten: priset per krona blir 0,80 gånger 1,06 delat med 0,04, det vill säga 0,848 delat med 0,04 — en motiverad vinstmultipel på 21,2. Standardmekanik delar ut 40,0 procent: 0,40 gånger 1,06 är 0,424, delat med samma 0,04 ger 10,6. Identisk vinst, identisk tillväxt, identiskt krav — och ändå multipel i förhållandet exakt två mot ett, därför att Virvelverk bygger sin tillväxt med en tredjedel av kapitalet och lämnar dubbelt så mycket kvar till ägaren. Detta är multipelns pris på spridningen: marknaden betalar inte för tillväxt, den betalar för tillväxt som är billig att bygga. Räkna därefter känsligheten — ekvationens riskmätare. Höjs avkastningskravet två procentenheter, till 12,0 procent, faller nämnaren från 0,04 till 0,06: Virvelverks multipel 0,848 delat med 0,06 är 14,1, en tredjedels nedgång, och Standardmekaniks 0,424 delat med 0,06 är 7,1, likaså en tredjedels nedgång. Procentuellt slår räntan lika hårt mot båda — multipeln är omvänt proportionell mot k minus g — men i multipelpoäng tappar Virvelverk 7,1 mot Standardmekaniks 3,5, och i kronor på en fast vinst gör det skillnaden mellan en djup och en grund korrigering. Avsluta med geometrin: eftersom multipeln står i omvänd proportion till avståndet mellan krav och tillväxt blir alla bolag vars tillväxt ligger nära avkastningskravet extra räntekänsliga — en fond av högspreadare med lång varaktighet är i matte menad mening en lång ränta, och kursens sista kapitel tar vad det betyder när varaktigheten ifrågasätts."
+        },
+        {
+          "type": "tabell",
+          "content": "TVILLINGARNA I MULTIPEL (PÅHITTADE TAL): gemensamt — vinst 100,0 Mkr · tillväxt 6,0 % · avkastningskrav 10,0 % · VIRVELVERK — utdelningsandel 80,0 % · P/E = 0,80 × 1,06 / (0,10 − 0,06) = 21,2 · STANDARDMEKANIK — utdelningsandel 40,0 % · P/E = 0,40 × 1,06 / 0,04 = 10,6 · förhållande 2,0:1 på identisk vinst och tillväxt · KÄNSLIGHET vid krav 12,0 %: Virvelverk 0,848 / 0,06 = 14,1 (−7,1) · Standardmekanik 0,424 / 0,06 = 7,1 (−3,5) · procentuellt −33 % för båda — multipeln ~ 1/(k − g)."
+        },
+        {
+          "type": "insight",
+          "content": "Marknaden betalar inte för tillväxt — den betalar för tillväxt som är billig att bygga. Två multiplar, 21,2 mot 10,6, samma vinst, samma tillväxt: hela skillnaden är kapitalets pris i ekvationen, och räntan står i nämnaren."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Värdeekvationens sex fällor har en gemensam rot: ett av ekvationens tal ges vikt eller beständighet det inte har.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är bakåtblickande ROIC som värdebevis: historiens avkastning på redan investerat kapital säger inget om nästa krona — konkurrensen, mättnaden och kapitalbehovet rör sig, roic-03 äger den läsningen, och multipeln skall prissätta framtidens spridning, inte minnesbilden av den. Andra fällan är spridning utan volym: en bolagskärna som avkastar fyrtio procent på hundra miljoner men bara kan svälja tio nya per år skapar mindre värde än spridning hälften så bred på tiofaldig volym — återinvesteringsbarheten är halva ekvationen och den syns inte i ROIC-talet. Tredje fällan är utdelningsklippningens drömspel: att hugga utdelningen och återinvestera till ROIC nio mot kostnad åtta ger värdet 1,125 per krona — en nettovinst på 0,125 — men till priset av en real utdelning som försvann; kalkylen kan vara rätt men den skall bära sin bevisbörda, inte bara sin tillväxtsiffra. Fjärde fällan är kapitalkostnadens skend precision: en WACC på 8,4 mot 8,0 är två olika multiplar i slutänden av räkningen; ekvationens slutsatser skall hålla inom ett band av plus minus en procentenhet eller de håller inte. Femte fällan är den mogna högfågeln: ett bolag med stabil hög spridning men fullvuxen marknad har ingen återinvesteringsvolym, och multipeln skall då vara utdelningsmaskinens — ud-09 äger den läsningen — inte tillväxtbolagets; spridning utan volym är värdefull men inte evig. Sjätte fällan är cyklens förklädnad: ROIC uppmätt i toppen av en cykel bärs av priser som vänder tillbaka mot sitt medeltal, vr-02 äger normaliseringen, och en multipel satt på toppspridning står på samma sluttning som cykelbolagens låga toppmultipel — bara åt motsatt håll."
+        },
+        {
+          "type": "insight",
+          "content": "Sex fällor, en rot: vikt eller beständighet som inte finns. Historiens avkastning är inte framtidens; spridning utan volym är en pytt; klippt utdelning skall bära bevis; kapitalkostnaden är ett band; mogna bolag förtjänar sin multipel; och cykeln toppar ROIC som allt annat. Räkna ekvationen — men räkna den på rätt sida av tiden."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — värdeekvationens fem frågor",
+      "intro": "Kursen samlas i fem frågor — den fullständiga kedjan från mätet till multipeln och dess riskben.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vad är bolagets spridning — ROIC på återinvesterat kapital mot en kapitalkostnad satt som ett band, inte en siffra? Fråga två: hur stor är den behållna andelen, och vilken tillväxt bygger den — räknat som andel gånger avkastning? Fråga tre: vad blir värdet per återinvesterad krona, och hur många sådana kronor finns det att återinvestera i framtiden — volymen, inte bara procenten? Fråga fyra: vad motiverar ekvationen för multipel på dagens vinst, och hur förhåller sig marknadens pris till den — premie eller rabatt på spridningen? Fråga fem: hur varaktig är spridningen — vilka moat-mekanismer bär den, hur ser erosionen ut, och vad händer med multipeln om avkastningskravet stiger två procentenheter? Den som besvarar de fem frågorna har bundit lönsamhetsfamiljens mått till värderingsfamiljens pris och kan förklara varför två bolag med samma vinst och tillväxt är olika mycket värda. Detta är utbildning i att räkna och resonera, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj två bolag i samma sektor i det egna universumet — gärna ett som återinvesterar rikligt och ett som delar ut rikligt. Hämta senaste tre årsredovisningarna och räkna per bolag: behållen andel, ROIC på återinvestearat kapital, tillväxten som produkt av de två, och spridningen mot ett kapitalkostnadsband. Räkna värdemultiplikatorn per behållen krona och en motiverad vinstmultipel enligt kapitel fyra, med en känslighetsrad för avkastningskravet två procentenheter högre. Avsluta med en halvsida: vilket av bolagen säljer sin tillväxt billigast per krona kassa, och vilken av de sex fällorna står närmast läsarens egen analys? Upprepa när nästa rapporter kommer — ekvationens tal lever med verkligheten."
+        },
+        {
+          "type": "insight",
+          "content": "Lönsamhetsfamiljens fjärde steg stänger cirkeln: ROIC mot kapitalkostnaden, multiplicerat med återinvesteringens volym, prissatt i multipeln. Måttet blev värde — och frågan varje behållen krona nu får svara på är till vilket pris den säljer värde tillbaka."
+        }
+      ]
+    }
+  ]
+}

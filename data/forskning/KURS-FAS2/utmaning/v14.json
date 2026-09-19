@@ -1,0 +1,25 @@
+{
+  "kurs": "v14",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv villkoret \"ett varumärke är en moat bara om det får betalt\": på vilka tre sätt nämner kapitlet att betalningen syns (kunderna betalar mer, kommer tillbaka oftare, förlåter fel snabbare)?\n2. Det som kan mätas är inte namnet utan prissättningskraften — hur definierar kapitlet den (skillnaden mot en namnlös konkurrent med samma produkt)?\n3. Varför är V14 den enda moat-indikatorn där svaret delvis står i resultaträkningen? Vilket nyckeltal är \"varumärkets kvitto\" och under vilket villkor (varaktigt över branschens)?\n4. Kontrollera skillnaden mellan ett känt och ett starkt varumärke: vilket krav ställer metoden på bruttomarginalen (V07) innan namnet räknas som moat?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Förvaltningsberättelsens positioneringsord (\"premium\", \"ledande\", \"första valet\") är påståenden att pröva, inte tro — mot vilka uppgifter i årsredovisningen prövar du dem?\n2. Vad letar du efter i kundnoten: vad säger koncentrationen (koppla V03 Intäktsdiversifiering) och andelen återkommande intäkter om varumärket?\n3. Hur ställer du marginalen mot branschmedianen i datasetets nyckeltalssidor — vad bevisar en bruttomarginal över medianen år efter år?\n4. Två varningar till sist: varför bokförs aldrig ett internt byggt varumärke (notens varumärkesposter är köpta), och vad betyder en stor och växande reklambudget med sjunkande marginal (varumärket hyr sin plats)?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Ställ träningsfrågan \"vad bevisar att varumärket lönar sig?\" till varje bolag: vad blir svaret för H&M (volym), Nintendo (marginal) och Volvo (återkommande flottkontrakt)?\n2. H&M är det kända varumärket utan premiumpris: förklara skillnaden mellan känt och starkt, och vad som pressar marginalen i mode-prissättning.\n3. Nintendo beskrivs som figuruniversum som återkommande systemvara — vad bevisar marginalerna om vad kunden betalar för (namnet på asken, inte bara innehållet)?\n4. Beskriv B2B-varumärket Mastercard (\"det här kortet fungerar överallt\") och Volvos säkerhetspositionering i lastbilar: var syns flottkundernas lojalitet (retention, inte rabatter), och vilken gränsyta mot V15 nämns?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Förklara fällan \"känt ≠ starkt\": varför är medvetenhet utan prissättningskraft bara reklam, inte moat (H&M-läsningen)?\n2. En marknadsandel som växt genom kampanjer och promor kan sjunka lika snabbt — vilka noter kontrollerar du (pris-/promo-noter)?\n3. Varför kallas en positionering som måste förnyas varje säsong en hyrd moat? Koppla till hur mode- och cykelvarumärken förslits.\n4. Två notblindheter: ett köpt varumärke i noten är historik, inte framtid — och varför kan en kontrovers eller kvalitetskris tömma en varumärkesmoat i veckor? Var läser du riskerna (riskavsnittet, gränssnitt mot V18)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Hur stor vikt bär V14 i kategorin Moat, och ur vilka tre källor poängsätts indikatorn kvalitativt (förvaltningsberättelse, kundnot och marknadsdata)?\n2. Följ den ekonomiska beviskedjan via moat-proxyfälten: vad betyder en bruttomarginal som är hög och stabil över fem år (bruttoMarginalMedel5ar/Spread5ar) — och vad signalerar en liten spread genom konjunkturer?\n3. Förklara rollfördelningen: V07 Bruttomarginal ger nivån, V12 Intäktsstabilitet ger uthålligheten, V14 ger förklaringen. Vad missar du om du läser bara en av de tre?\n4. Kontrollera med egna ord: hur skiljer de tre indikatorerna tillsammans ett äkta varumärke från en tillfällig pristäkt position?"
+    }
+  ]
+}

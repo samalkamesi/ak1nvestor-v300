@@ -1,0 +1,25 @@
+{
+  "kurs": "v20",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv vad V20 mäter: om bolaget köper tillbaka sina egna aktier — och med vilken kraft. Vilken storhet är själva indikatorn (aktieantalets förändring)?\n2. Återköp och nyemissioner är samma mynts två sidor: vad händer mekaniskt med nyckeltalen per aktie när antalet aktier minskar — och vad kallas effekten när bolaget emitterar (utspädning)?\n3. V20 ligger i kategorin Kapitalstruktur: vilken fråga handlar kategorin om (hur vinsten förs tillbaka till ägarna)?\n4. Återköpsbeloppet är volym, andelen av aktieantalet är verkan — varför kräver poängen verkan?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Not om eget kapital och antal aktier: vilka två tal plockar du ut (aktieantalet vid årets början och slut) och varför är differensen själva indikatorn?\n2. Modellens fält aterkop.andelUtestande tar minskningen som decimal: vad betyder 0,02?\n3. Var redovisas VD:s och styrelsens insiderköp (Finansinspektionen/aktieägartjänster) och vilket fält kompletterar de (insiderkopSenaste6man)?\n4. Optioner och personalprogram i egenkapitalnoten kan äta upp återköpen — vilket tal är det enda ärliga (nettoändringen i aktieantalet)?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Läget i datakontraktet: andelUtestande och återköpsbelopp är tomma hos samtliga bolag — hos hur många är insiderköp ifyllt (108)?\n2. Apple har 10 insiderköp på 6 månader och Microsoft 6: vilken reservgren ger båda poängen 2 (insiderköp ≥ 3 ⇒ 2)?\n3. Apple och Microsoft hör till marknadens största återköpare — varför underdriver poängen det verkliga återköpsvärdet, och vems gräns är det (kontraktets, inte modellens)?\n4. Vilken handläggning rekommenderas när årsredovisningen finns: läs aktieantalsdiffen direkt ur egenkapitalnoten — vilken kurva sätts då (huvudkurvan, inte reserven)?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Återköp till vilken kurs? Förklara varför återköp över inre värde överför värde från kvarvarande ägare till såljare — och när återköp är värdeskapande (under värderingen, koppla V04/V05).\n2. Optionsutspädning äter återköp: bruttoåterköp kan vara netto noll — vilket tal är domstolen (nettoändringen i aktieantalet)?\n3. Insiderköp är en svagare signal: varför skall du kolla belopp per köp när insiderköp '≥ 3' kan vara schablonmässiga planpjässer?\n4. Cykel-återköp köper dyrt i toppens överskott — modellens poäng säger hur mycket, inte hur klokt. Och skuldfinansierade återköp: vilka två kurser skall du läsa tillsammans med V20 (V10 och V19)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Repetera huvudkurvan: minskning ≥ 5 % = 5, ≥ 3 % = 4, ≥ 1,5 % = 3 och > 0 men < 1,5 % = 2. Vad ger 0 % (inget av det) och vad ger ökning (utspädning)?\n2. Reservgrenarna när andelen saknas: återköpsbelopp > 0 utan andel ⇒ 3, insiderköp ≥ 3 ⇒ 2 och nyemissioner utan återköp ⇒ 0. Vad händer om ingen gren träffar (osatt)?\n3. Varför vägras andel > 1 (procent i stället för decimal) som utom intervall — osatt, inte fel?\n4. Räkna efter: ett bolag minskar aktieantalet med 2 % under året — vilken poäng ger huvudkurvan (3), och vilken gren gäller om andelen saknas men återköpsbelopp > 0 (mittskiktet 3)?"
+    }
+  ]
+}

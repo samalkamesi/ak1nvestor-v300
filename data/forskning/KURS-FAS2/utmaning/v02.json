@@ -1,0 +1,25 @@
+{
+  "kurs": "v02",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Definiera ARR med kapitlets ord: intäkt som är kontrakterad att återkomma. Räkna efter exemplen: vad blir en månadsprenumeration på 1 000 kr i ARR — och hur mycket ARR ger ett engångsprojekt på 50 000 kr?\n2. Förklara varför ett bolag där 90 % av intäkterna har förnyats varje år i fem år kan planeras och värderas på ett annat sätt än ett som måste vinna varje krona på nytt varje kvartal.\n3. Vilka sorts bolag redovisar ARR? Nämn de tre typerna kapitlet listar — och vad har de gemensamt.\n4. Universumets 195 bolag redovisar inte ARR: vilket fält (omsattningTillvaxtTTM) används i stället, och vad är lärdomen om vilka bolag som ens kan poängsättas på V02 — och vilka som faller tillbaka på V01?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. I vilka delar av årsredovisningen söker du ARR? Nämn sökorden kapitlet ger (ARR, återkommande intäkter, recurring revenue, prenumerationsintäkter) och varför förvaltningsberättelsen är första stopp.\n2. Vad gör svenska SaaS-bolag i nyckeltalsavsnittet sist i årsredovisningen — och vad lär du dig av avstämningen mellan ARR och nettoomsättningen?\n3. Vilken not är ARR:s syskonuppgift när den delar upp intäkternas art (subskription mot professional services)?\n4. Finns ARR inte alls: hur hanterar modellen saknad data ärligt — vilken indikator poängsätts försiktigt och vilka två (V01 och V12) får bära tillväxtbilden i stället?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Microsofts omsättning gick 211 915 → 245 122 → 281 724 → 331 839 MUSD (FY2023–2026). Kontrollera uppgiften +17,7 % TTM — och förklara varför exakt ARR-del ändå inte redovisas som ett enskilt tal.\n2. Kambi har TTM +13,5 %: vad gör plattformsintäkterna återkommande till sin natur — och vilken kundrisk gör att återkommande inte betyder säker?\n3. Sinch har TTM +3,8 %: förklara skillnaden mellan återkommande kundrelationer och kontrakterad ARR i SaaS-meningen.\n4. Skriv formeln: ARR-tillväxt = (ARR i år − ARR förra året) ÷ ARR förra året. Vad är net new ARR — och vilka intäkter räknas aldrig in?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. En kollega multiplicerar en redan annualiserad ARR med 12. Förklara felet — och hur du känner igen om en siffra är månatlig eller redan annualiserad.\n2. Återkommande konsultintäkter är inte ARR, skriver kapitlet. Vad saknas — och vad menas med att förnyelseombud inte är ett avtal?\n3. ARR som växer genom uppköp är inte samma kvalitet som tillväxt i befintliga kunder: vilket kvalitetsmått nämner kapitlet hos de bästa rapportörerna?\n4. Redogör för tre terminologifällor: constant currency (jämför alltid samma definition år mot år), backlog/RPO (framtida ARR, inte nuvarande) och Sinch-fällan (recurring i namnet, cyklisk i verkligheten)."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Kärnans scorV02 är osatt i kod. Vad betyder det att poängtabellen är utbildningens riktlinje — inte kodverklighet? Vilken vikt har V02 (8 %)?\n2. Vilket ARR-läge ger 5 poäng enligt riktlinjen? Nämn de två villkoren: tillväxttakten (≥ 30 %) och andelen av intäkterna (huvuddelen).\n3. Träna med universumexemplen: motivera Microsoft i 3–4 p-landskapet, Kambi 3 p och Sinch 2 p — vad i källan bär varje poängsättning?\n4. Vad belönar modellen enligt kapitlets avslutning — spårbarhet eller gissningar? Förklara vad du måste dokumentera när du poängsätter manuellt."
+    }
+  ]
+}

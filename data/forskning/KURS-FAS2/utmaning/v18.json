@@ -1,0 +1,25 @@
+{
+  "kurs": "v18",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv vad som gör regulatoriska katalysatorer de mest binära som finns: vad händer med en marknad vid ett godkännande respektive ett avslag?\n2. Varför sägs det att klockan ägs av myndigheten och inte av bolaget? Räkna upp beslutstyperna: godkännanden, licenser, kapitalkrav, skatteregler, sanktionslistor.\n3. Modellen hämtar V18 ur riskavsnittet i förvaltningsberättelsen. Förklara resonemanget: regulatorisk katalysator och regulatorisk risk är samma händelse sedd från två sidor.\n4. Övning: vad missar den som bara läser ena sidan — endast chansen eller endast risken — när ett väntande beslut skall poängsättas?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Var i årsredovisningen hittar du väntande myndighetsbeslut tidigast — och varför når de riskavsnittet i förvaltningsberättelsen före pressmeddelandena?\n2. Not om väsentliga osäkerheter och eventualförpliktelser: vilka slags poster (pågående processer, böter, återbetalningskrav) signalerar regulatorisk exponering?\n3. Läkemedels- och medtechbolag har den mest strukturerade regulatoriska kalendern. Redogör för kedjan fas III → ansökan → beslut och varför den kopplas till V16.\n4. Finansbolagen är en annan art: kapitaltäckningskrav och tillsynsbeslut kallas icke-binära men kapitalbindande. Förklara skillnaden mot ett godkännande — och kontrollfrågan: vem äger tidpunkten?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Träna de tre regulatoriska arterna — godkännande (binärt), kapitalregel (gradvis) och sanktion/export (existentiell risk). Placera AstraZeneca, Nordea/Handelsbanken och Ericsson i rätt art.\n2. AstraZeneca: varje beslutsdatum är en katalysator och avslag i fas III är spegelbilden. Förklara också gränserna — vad hör till V16 (pipelinen) och vad till V13 (patentet)?\n3. Evolution: licensportföljen ÄR affären. Förklara hur nya marknader öppnas genom myndighetsbeslut per jurisdiktion.\n4. Nordea/Handelsbanken: hur binder kapitalkrav och tillsyn kapital och sätter utrymmet för utdelning och återköp (koppla V20)? Beskriv varför kraften är långsam men stor."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Binära beslut har inget halvläge. Varför skall du beskriva utfallsrummet (godkänt/avslag/villkor) i stället för att poängsätta 'delvis sannolikt'?\n2. Myndighetstakt är opåverkbar: varför är katalysatordatum från bolaget önsketänkande, inte kalender?\n3. Regulatorisk eftersläpning: regler kan vara annonserade men ej i kraft (övergångsperioder). Vilket datum läser du — ikraftträdandedatumet eller beslutsdatumet?\n4. Två fällor till: skilj väsentliga poster (licensförlust, godkännanden) från rutinmässiga (allmän lagändring) i 'flagga-allt'-riskavsnittet — och förklara dubbelräkningen: ett godkännande som redan gett intäkt är ingen katalysator längre, katalysatorn lever bara i väntan."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. V18 bär 6 % vikt i kategorin Katalysator och är kvalitativ (scorKvalitativ). Förklara varför den står osatt i nyckeltalskontraktet och poängsätts manuellt.\n2. Vilka underlag läser du inför poängen — riskavsnitt och myndighetskalender — och varför räcker inte bolagets tidtabell?\n3. Repetera poängguiden: 0 = inga väntande beslut av betydelse; 3 = väntande beslut med dubbelriktat utfall i kärnaffären; 5 = namngivna myndighetsbeslut med datum som kan öppna intäktsvägar eller helt avvärja väsentlig risk.\n4. Övning: motivera en poäng för ett tillsynsbeslut hos ett finansbolag. Kontrollera att din poäng speglar både det väntande beslutets storlek och bolagets exponering om det går fel."
+    }
+  ]
+}

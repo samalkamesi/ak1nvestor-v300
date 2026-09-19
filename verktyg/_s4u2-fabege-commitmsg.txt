@@ -1,0 +1,33 @@
+studio: auto s4-u2 Fabege Q3-läspaket (byggare 2/3) — fastighetsgrenens fjärde paket, seriens 53:e
+
+data/blogg-utkast/kvartal/2026-q3/sa-laser-du-fabege-q3-2026.json (ny, 3 368 ord, SEK):
+- Rappdag 2026-10-21 kl 07:30 OFFICIELL via MFN:s bolagskalender (sökverifierad
+  2026-09-19; uppgraderar kalender-fastighet.json:s Inderes-not) + telefonkonferens
+  samma förmiddag; bokslutskommuniké 2027-02-05; utdelnings-X-dag 2026-10-12.
+- TREGÅNGSMÄTAREN: P/B 0,614 näst lägst av 16 i grenen (Vonovia under) SAMTIDIGT
+  som P/E 53,139 näst högst (Equinix över) SAMTIDIGT som EV/EBIT 24,894 på
+  medianen 24,589 (+1,2 %) — DuPont-stängning P/E×ROE=0,6111 mot P/B 0,614
+  (−0,47 %) + golvstängning EK/aktie 118,57 mot 118,56 (0,01 %): seriens renaste
+  dubbelstängning.
+- DE TVÅ SUBSTANSERNA: bokförd EK/aktie 118,56 mot EPRA NRV 144 kr (gap 21,4 %);
+  rabatt 38,6 % mot böckerna men 49,4 % mot EPRA-substansen.
+- RESULTATET=VÄRDEFÖRÄNDRINGARNAS ECHO: intäkter monotona 3 032→3 480 Mkr
+  (+4,7 %/år) medan resultatet +2 376→−5 518→−213→−348 Mkr; TTM-detektiven tre
+  vinstläsningar 431/378/−348 Mkr (sväng 779).
+- PEG-trippeln (5,07×5,01=25,4 mot 53,139; prog −5,01 % — pensionerad), FCF-par
+  +14 % gap (båda gröna), utdelningstrappa 4,00→2,20 kr/år, scenarioruta 9/9 på
+  EPRA (mittcell 72,81 mot kurs 72,80), överföringsgrad r/(1−r)=0,976.
+- Källor: MFN-kalender + bolagets Q2-2026/bokslut-2025 sökverifierade 2026-09-19,
+  universumpost FABG.ST 2026-09-03, medianer omräknade ur 201-postfilen.
+
+KVD verktyg/_s4u2-kvd-fabege.mjs: 60+ kontroller 0 FEL 0 VARNING (GRÖN) —
+processen rättade egna fel FÖRE commit (prognos-rang "ett av sju negativa",
+tre skrivfel, KVD-enhetsbugg).
+
+Granskningskö: 2 kirurgiska rader i GRANSKNINGSKO-SAMMANSTALLNING.md (huvud-
+tabell + rapportdags-tabell). Worklog bokförd. Klaim 09:40:39Z FÖRE byggstart;
+syskon-u1:s FABG-klaim 09:43:09Z i blinda fönstret — Yara/SAAB-precedensen
+först-till-filen; leveransfil på disk före syskonfil; u3 Hexagon 09:39.
+
+Utkast — publicering = kundens beslut (R2). Endast data/- och verktyg/-filer;
+src/ orörd, data/blogg/ (live) orörd [fabrik]

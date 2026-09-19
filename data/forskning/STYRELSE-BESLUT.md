@@ -260,3 +260,41 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Kvittera varje svit med exit-kod + loggadress vid slut eller timeout — tyst död i kvalitetssvepet är en kontrollförlust
   10. Avsluta svepet med 200-kontroll av alla språkrotvägar (sv/en/ar) och rapportera per svit med rotorsaksklass
 - **Mötes-id:** styrelse-mu8z4oyz-j763a1
+
+## 2026-09-19 23:00 — Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Nästa kvalitetssvep körs i fasordning från billigast/mest isolerat till dyrast/mest delat tillstånd: fas 0 = tsc-typnoll, snabba deterministiska enhetssviter och juridikgrinden fail-fast; fas 1 = isoleringsgrind (loopback-dev-port, NODE_ENV, explicit dev-lösenord) som MÅSTE passera innan någon API-anropande svit startar — röd grind avbryter hela svepet — följt av säkerhets-/R2-sviterna och de publika ytorna; fas 2 = miljöberoende sviter (tsx-transport) mot ett delat dev-serverfönster; fas 3 = prod-nära sviter först efter landad deploy; fas 4 = tunga tillståndsskrivande sviter (styrelsemötet) sist och ensamma, med timeout, logg och idempotent nedrivning av dev-fönstret.
+- **Motivering:** Alla organ konvergerar — CTO:n (redovisad tidigare i ronden): tid-till-signal via kostnads-, miljö- och tillståndsaxlarna; CISO: kontroll så röda tal alltid betyder kodfel och svepet aldrig skriver i prod; Jurist: bevisvärde — portarna före innehållet, determinism före tillstånd; Tillväxt: publika ytor tidigt och RTL-grind före v211. Veckans 8 röda sviter med tre olika rotorsaker (transport, miljö, tillstånd) plus testmötet som verkställdes mot prod-porten bevisar kostnaden med fel ordning; faserna förenar alla ståndpunkter utan att röra några R2-ytor.
+- **Roller:**
+  - ORDFORANDE: {"beslut":"Nästa kvalitetssvep körs i fasordning från billigast/mest isolerat till dyrast/mest delat tillstånd: fas 0 = tsc-typnoll, snabba deterministiska enh…
+  - TEKNIK: Tid-till-signal: billigast/mest isolerat först (tsc + enhetssviter), miljöberoende i mitten, delat tillstånd sist — varje verkligt fel ska synas innan arbete byggs på fel ground.
+  - SAKERHET: MINNE LADDAT — tråden står i ROND 107: våg 212:s kurerade aggregator kör det fulla svepet (125 sviter) efter att de åtta röda sviternas tre rotorsaker botats (…
+  - JURIDIK: MINNE LADDAT — tråden står i ROND 107: våg 212:s fulla test svep löper (alla 125 sviter genom den kurerade aggregatorn, 8 röda rättade); här svarar Juridik & C…
+  - TILLVAXT: MINNE LADDAT — tråden står i ROND 107: våg 212:s fulla 125-sviterssvep löper genom den kurerade aggregatorn (de åtta röda sviternas tre rotorsaker — tsx-transp…
+- **Åtgärder:**
+  1. Fas 0 fail-fast: kör tsc-typnoll + snabba deterministiska enhetssviter (syntax, beräkning, motorvalidering) + juridikgrinden (utbildningsframing 2007:528, disclaimrar, GDPR art 13, kakmedgivande, ångerrätt) före allt annat
+  2. Bygg isoleringsgrinden i aggregatorn: verifiera loopback-dev-port + NODE_ENV + explicit dev-lösenord för alla API-anropande sviter (aldrig prod 3000) — röd grind avbryter hela svepet innan någon svit körs
+  3. Kör säkerhets- och R2-sviterna (401-autentisering, sessioner, existentialklassning) direkt efter grinden, fail-fast, så regressioner syns med ren logg
+  4. Lägg publikt-yte-sviterna (route-200, sitemap-färskhet, ISR-värme, hreflang) direkt efter säkerhetsfasen — rankningskritiska ytor först
+  5. Gör RTL-/hreflang-kontrollen till GRÖN-grind FÖRE v211:s arabiska publicering, inte ett efterskal
+  6. Kör miljöberoende sviter (tsx-transport) mot ett delat dev-serverfönster som startas en gång, delas av gruppen och städas idempotent
+  7. Kör prod-nära sviter (tradspermanens, prod-synk-tidsstampel) först efter landad deploy — annars mäter de gårdagens prod
+  8. Kör tunga tillståndsskrivande sviter (styrelsemötet) sist och ensamma utan parallelllast (K2-juristtimeouten bevisar lastkollisionsrisken), med timeout och logg
+  9. Klassa varje rött resultat med rotorsaksklass (kodfel/miljö/tillstånd) direkt i aggregatorsrapporten — röda tal ska alltid betyda kodfel
+  10. Riv dev-serverfönstret (process och lösenord) idempotent efter svepet — en lyssnande dev-instans får aldrig överleva körningen
+- **Mötes-id:** styrelse-mu8zlrfn-an0taz
+
+## 2026-09-19 23:48 — Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?
+
+- **Status:** KÖRS DIREKT (existential=false)
+- **Beslut:** Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de 5 inkomna organanalyserna.
+- **Motivering:** 5 av 5 organ redovisade analys; 0 var inte tillgängliga inom tidsgränsen. Fråga: Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?
+- **Roller:**
+  - ORDFORANDE: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
+  - TEKNIK: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
+  - SAKERHET: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
+  - JURIDIK: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
+  - TILLVAXT: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
+- **Åtgärder:** (inga)
+- **Mötes-id:** styrelse-mu91gor5-ld4hwa

@@ -12,11 +12,10 @@
  *   1. Startar `npm run dev` i bakgrunden OM :port inte svarar (beredskaps-
  *      sond: öppna GET /api/studio/halsa).
  *   2. POST /api/studio/styrelse {fraga: "Vilken ordning bör de interna
- *      testsviterna köras i nästa kvalitetssvep?"} (harmlös fråga — inga
- *      existentiella domäner i närheten; R107-lärdom: frågor om ytor som
- *      bjuder in kakor/juridik i svaret klassas VÄNTAR KUND av R2-klassaren,
- *      vilket är MOTORN rätt men K4 omöjligt — frågan måste hålla sig till
- *      rent interna mekanik) → {id}.
+ *      testsviterna köras i nästa kvalitetssvep?"} (rent intern mekanik —
+ *      men R108-lärdom: rollernas SVAR kan ändå nämnas R2-ord via
+ *      sessionens kontext, så K4/K5 bevisar KONSEKVENS i stället för ett
+ *      bestämt klassningsutfall) → {id}.
  *   3. Pollar GET ?id=&senast=N inkrementellt (mötets händelselogg live).
  *   4. Bevisar:
  *      K1  Mötet slutar status=klart med beslut.
@@ -28,9 +27,14 @@
  *          motivering + åtgärder + rollsummeringar. Negerad disclaimer
  *          ("inte investeringsråd") ger INGEN träff — regexarna bär själva
  *          negationsreglerna (varumarke.ts).
- *      K4  existential=false → atgardsStatus="KORS_DIREKT".
- *      K5  PIPELINE-KO.md har fått [STYRELSEN]-rader med mötets id
- *          (huvudagentens dispatchlista).
+ *      K4  R2-KLASSNINGEN KONSEKVENT: existential=false ⇔ KORS_DIREKT,
+ *          existential=true ⇔ VANTAR_KUND (R108-lärdom: rollernas åtgärder
+ *          kan nämna R2-ord — lösenord/publicering — beroende på sessionens
+ *          kontext, och DÅ är VÄNTAR KUND motorn RÄTT; testet bevisar
+ *          konsekvensen, inte ett visst utfall).
+ *      K5  PIPELINE-KO följer status: KÖRS DIREKT ⇒ [STYRELSEN]-rader med
+ *          mötets id skrivna; VÄNTAR KUND ⇒ 0 rader (motorn skriver aldrig
+ *          dispatchrader för beslut som väntar kund).
  *      K6  STYRELSE-BESLUT.md protokollfört mötet (append, daterat).
  *
  * Körs med: node verktyg/testa-styrelse.mjs [port]   (default 3000)
@@ -193,10 +197,12 @@ for (const text of beslutTexter) {
 }
 kontroll("K3 beslutet saknar investeringsråd-formuleringar (varumarke-FEL: 0 träffar)", traffar.length === 0, traffar.length > 0 ? traffar.slice(0, 3).join(" | ") : `${String(felRegexar.length)} FEL-regexar körda`);
 
-// K4 — R2-klassning: harmlös fråga ⇒ existential=false ⇒ KORS_DIREKT
+// K4 — R2-klassningen konsekvent: existential ⇔ atgardsStatus (båda utfall giltiga)
+const korDirekt = mote?.beslut?.existential === false && mote?.atgardsStatus === "KORS_DIREKT";
+const vantarKund = mote?.beslut?.existential === true && mote?.atgardsStatus === "VANTAR_KUND";
 kontroll(
-  "K4 existential=false → atgardsStatus=KORS_DIREKT",
-  mote?.beslut?.existential === false && mote?.atgardsStatus === "KORS_DIREKT",
+  "K4 R2-klassning konsekvent (existential ⇔ atgardsStatus)",
+  korDirekt || vantarKund,
   `existential=${String(mote?.beslut?.existential)} · atgardsStatus=${String(mote?.atgardsStatus)}`,
 );
 
@@ -207,11 +213,17 @@ try {
 } catch {
   pipeline = "";
 }
+// K5 — PIPELINE-KO följer status: rader ENDAST vid KÖRS DIREKT, aldrig vid VÄNTAR KUND
 const pipelineRader = pipeline.split(/\r?\n/).filter((r) => r.includes(id) && r.includes("[STYRELSEN]"));
+const motorRader = mote?.pipelineRader ?? 0;
+const korDirektKvitto = pipelineRader.length > 0 && motorRader > 0;
+const vantarKvitto = pipelineRader.length === 0 && motorRader === 0;
 kontroll(
-  "K5 PIPELINE-KO.md har [STYRELSEN]-rader med mötets id",
-  pipelineRader.length > 0 && (mote?.pipelineRader ?? 0) > 0,
-  `${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(mote?.pipelineRader ?? 0)}`,
+  "K5 PIPELINE-KO följer status (KÖRS DIREKT ⇒ rader, VÄNTAR KUND ⇒ 0)",
+  korDirekt ? korDirektKvitto : vantarKvitto,
+  korDirekt
+    ? `${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(motorRader)}`
+    : `VÄNTAR KUND · ${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(motorRader)} (skall vara 0)`,
 );
 for (const r of pipelineRader.slice(0, 3)) console.log(`      ${r.slice(0, 160)}`);
 

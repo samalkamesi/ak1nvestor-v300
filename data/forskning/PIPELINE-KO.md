@@ -285,3 +285,4 @@ Agent-anrop, 4+ via fabriksmanifest.
 - [STYRELSEN] 2026-09-19T22:46:56.439Z | styrelse-mu8z4oyz-j763a1 | Klassa varje rött resultat med rotorsaksklass (transport, miljö, data, tillstånd) direkt i aggregatorsrapporten så nästa svep börjar på diagnos
 - [STYRELSEN] 2026-09-19T22:46:56.439Z | styrelse-mu8z4oyz-j763a1 | Kvittera varje svit med exit-kod + loggadress vid slut eller timeout — tyst död i kvalitetssvepet är en kontrollförlust
 - [STYRELSEN] 2026-09-19T22:46:56.439Z | styrelse-mu8z4oyz-j763a1 | Avsluta svepet med 200-kontroll av alla språkrotvägar (sv/en/ar) och rapportera per svit med rotorsaksklass
+- [STYRELSEN] 2026-09-19T23:48:58.177Z | styrelse-mu91gor5-ld4hwa | (inga konkreta åtgärder — beslutet) Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de 5 inkomna organanalyserna.

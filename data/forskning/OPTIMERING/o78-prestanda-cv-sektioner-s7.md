@@ -106,6 +106,36 @@ RAM-grinden öppnar — o76+o77+våg194+o78 landar tillsammans). EFTER-kriterier
 3. Scroll-sond: kategoriväggen/socialproof/sidfooter renderar korrekt vid
    scroll (inga fastbrända platshållare), gränsnittsvakten GRÖN.
 
+## §5b EFTER-DOM (2026-09-19, förd av s7-u3 i rond o83 — ur syskonrådata)
+
+Käll-attribution: s7-u2:s fn2-fönster mätte /kurser 05:0xZ mot
+pm2-minnets 139b24c1-träd (CV-kuren 10081b9a verifierad förfader —
+`git merge-base --is-ancestor` 05:49Z); deras fulla rapport
+`lighthouse/kurser-s7u2-o75o76o77-efter.json` lästes för
+mainthread-work-breakdown. Domen förs i o83 §3 (rond-filen);
+siffrorna här:
+
+| §5-kriterium | FÖRE (§1) | EFTER (u2:s rådata) | Dom |
+|---|---|---|---|
+| 1. prod 200 ×3 https | — | 200 ×3 vid mättillfället | GRÖNT (då; se notis) |
+| 2. styleLayout väsentligt < 783 ms | 783 ms | **463 ms (−320 ms / −41 %)** | **GRÖNT** (proxy-A/B:s −288 ms bekräftat på riktigt träd) |
+| 2. CLS 0 | 0 | 0 | GRÖNT |
+| 2. poäng ≥ P54 | P54 | **P95** (LCP 1839 · TBT 187) | GRÖNT |
+| 3. scroll-sond + vakten | — | EJ MÄTT | REST (se nedan) |
+
+Notis till kriterium 1: efter 05:42:55Z-deployen (475b62f4) svarar
+/blogg + /ar + /en 500 (client-reference-manifest saknas — bygg-OOM-
+seriens förgiftade .next/cache, dokumenterat i o83 §4); /kurser och /
+lever 200. Scroll-sonden (kriterium 3) kan inte köras meningsfullt mot
+trasiga speglar → BOKAS som rest i första vilofönstret efter prod-
+läkningen (o83 §5); gränsnittsvaktens nästa cron-löp mäter själv.
+
+Delad kredit ärligt: trädet bar även o75+o76+o77-kurerna vid
+mättillfället, men styleLayout är CV-kurens eget mått (§0: A/B höll
+scriptEvaluation ±1 ms isolerat) och mätfönstret var jämförbart rent
+(1 zcode-barn enligt prod-synkens räkning). **Kuren döms LEVERERAD med
+rest-scroll-sond.**
+
 ## §6 Rest + läxor
 
 - Palettbuketten @6,7–8 s (UpdateLayoutTree 74 + Layout 36 + småbuskage)

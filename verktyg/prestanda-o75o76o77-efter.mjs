@@ -59,9 +59,20 @@ function curlKod(url) {
 // ── Fas 0: preflight ────────────────────────────────────────────────
 log("Fas 0: preflight");
 const head = execFileSync("git", ["rev-parse", "--short", "HEAD"], { cwd: ROTT, encoding: "utf8" }).trim();
+// BUILD_ID-guard (2026-09-19, s7-u3): halvbyggt .next (OOM-dödat synkbygge)
+// saknar BUILD_ID — rå readFileSync kraschade då; tydlig exit 2 i stället.
+if (!existsSync(join(ROTT, ".next/BUILD_ID"))) {
+  resultat.fel = ".next/BUILD_ID saknas — .next är halvbyggt (synkbygge OOM-dödat eller pågående); vägrar mäta";
+  writeFileSync(UT, JSON.stringify(resultat, null, 2));
+  console.error(`[efter] VÄGRAR MÄTA: ${resultat.fel}`);
+  process.exit(2);
+}
 const buildId = readFileSync(join(ROTT, ".next/BUILD_ID"), "utf8").trim();
 const prodKoder = {};
-for (const s of ["/", "/kurser", "/blogg"]) prodKoder[s] = curlKod(`${HTTPS}${s}`);
+// Spegelrytterna /ar + /en med i prod-grinden (2026-09-19, s7-u3): de bär
+// o75-kuren och var 500 under halvbyggs-incidenten — mätning på trasiga
+// speglar är spökmät även när / /kurser /blogg svarar 200.
+for (const s of ["/", "/kurser", "/blogg", "/ar", "/en"]) prodKoder[s] = curlKod(`${HTTPS}${s}`);
 const farfader = Object.fromEntries(KUR_COMMITS.map((c) => [c, arFarfader(c)]));
 resultat.faser.preflight = { head, buildId, prodKoder, farfader };
 log(`HEAD=${head} BUILD_ID=${buildId} prod=${JSON.stringify(prodKoder)} kur-förfäder=${JSON.stringify(farfader)}`);

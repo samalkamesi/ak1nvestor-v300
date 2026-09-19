@@ -273,6 +273,20 @@ export const ORDLISTA = {
     en: "Phase 3 includes all future developments — the dashboard, the AI connection and reports. After the training the ecosystem can continue to be used via a monthly plan.",
     ar: "تشمل المرحلة 3 جميع التطورات المستقبلية — لوحة المعلومات والربط بالذكاء الاصطناعي والتقارير. بعد إتمام التدريب يمكن الاستمرار في استخدام المنظومة عبر خطة شهرية.",
   },
+  // Våg 202 (skiftet 2026-09-18 — Fas 3-förberedelse): låsvyns statusrad.
+  // Positioneringen ur skiftets tabell ("under byggnation — kommer snart" +
+  // "bygg din analysförmåga steg för steg") — ALDRIG resultatlöften, ALDRIG
+  // datum; priser/garanti berörs ej (R2 väntar kund).
+  "fas3.statusEtikett": {
+    sv: "Under byggnation — kommer snart",
+    en: "Under construction — coming soon",
+    ar: "قيد الإنشاء — قريبًا",
+  },
+  "fas3.statusText": {
+    sv: "Ekosystemets verktyg — dashboard, AI-kopplingen och rapporterna — är under byggnation. Vi lovar inga datum, bara riktningen. Förbered dig under tiden: bygg din analysförmåga steg för steg, från bokslut till omdöme.",
+    en: "The ecosystem's tools — the dashboard, the AI connection and the reports — are under construction. We promise no dates, only the direction. Prepare in the meantime: build your analysis ability step by step, from financial statements to judgment.",
+    ar: "أدوات المنظومة — لوحة المعلومات والربط بالذكاء الاصطناعي والتقارير — قيد الإنشاء. لا نَعِد بتواريخ، بل بالاتجاه فقط. استعد في هذه الأثناء: ابنِ قدرتك التحليلية خطوة بخطوة، من القوائم المالية إلى الحكم.",
+  },
   "fas.fas1Gratis": {
     sv: "Fas 1 förblir gratis — alltid.",
     en: "Phase 1 stays free — always.",

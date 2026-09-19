@@ -98,9 +98,48 @@ min kur. Attribution: mina kriterier (§5) är CLS + hero-geometri (deras yta
 4. Väntar deploy utöver fönstret: väntestatus i worklog (o71-precedensen),
    mätning tas av nästa omgång.
 
+## §5b EFTER-DOM — BOKFÖRD GRÖN 2026-09-19 05:12–05:21Z (s7-u2 fn2)
+
+Mätt mot prod-trädet som bär kuren: deploy 23:43Z (69d926ef-familjen,
+prod-HTML /kurser bär nya palett-hashen 28yatov-wk1vf.js ×17, gamla
+3-bylxy borta — samma träd som o76 §4 mätte; `.next/BUILD_ID` saknas
+p.g.a. OOM-byggen se §5b.2, därför bärs bygge-beviset av HTML-hashen).
+Namnrymd `s7u2-o75o76o77-efter`, localhost = prod-träd, SEQ.
+
+1. **/ CLS = 0 ✓ + sond 0 skevt ✓** — Lighthouse: CLS 0, P98, LCP
+   1 836 ms, TBT 121 ms, FCP 1 090 ms, SI 2 244. Skiftsond 15 s:
+   `0 skift, CLS-summa 0,00000`. FÖRE: 0,10641 → EFTER: 0 (dubbel-
+   bevisat: Lighthouse + oberoende PerformanceObserver-sond).
+2. **/kurser CLS 0 ✓ · /blogg CLS 0 ✓** — P95 (LCP 1 839 · TBT 187 ·
+   FCP 1 239) resp. P98 (LCP 1 731 · TBT 147 · FCP 1 077); båda
+   sidornas kärnmättärgård bevarad. (Requests/transfer-tal = o75-
+   syskonets kriterier, se deras §4b-väntestatus.)
+3. **Prod 200 ×3 ✓ (https /, /kurser, /blogg) + SSR-svenska ✓**
+   (lang="sv" + «Lär dig läsa bolag» i curl-HTML).
+
+**DOM: o77 KURERAD OCH PROD-BEVISAD — alla §5-kriterier GRÖNA.**
+
+### §5b.2 Ärlighet + fönstrets metodfynd
+
+- Lastfönstret var INTE solo: chrome-cron (gränsnittsvakten) körde
+  parallellt + syskon-fabriksbarn. CLS 0 reproduceras ändå i två
+  oberoende instrument (Lighthouse-trace + CDP-PerformanceObserver) —
+  o56-r4b2-lastband-talen (P/LCP/TBT) bokförs med denna deklaration.
+- **METODFYND (fälla, F2-klassen):** `pkill -f <mönster>` där mönstret
+  finns i den egna kommandoraden dödar DET EGNA skalet — två körningar
+  försvann spårlöst (fil skrevs aldrig). Kur: `pgrep -f "[a]k1a-…"`
+  -klammertricket eller PID-lista. Bokförs för nästa våg.
+- Verktygsläxa: `prestanda-lighthouse.mjs` skriver OM sammanfattningen
+  vid retry med delmängd sidor (förra körningens sidor försvinner ur
+  sammanfattningen — per-sid-filerna lever). Återskapad sammanfattning
+  ur sidfilerna commitas med denna våg.
+- INGET eget bygge (våg 100-regeln hölls); R2 orörd; data/blogg/ orörd.
+
 ## §6 Filer
 
 - Protokoll: denna fil.
 - Rådata FÖRE: `lighthouse/{start,kurser,blogg}-s7u3o77-fore.json` +
   `s7u3o77-fore-sammanfattning.json` (namnrymd o77).
+- Rådata EFTER: `lighthouse/{start,kurser,blogg}-s7u2-o75o76o77-efter.json`
+  + `s7u2-o75o76o77-efter-sammanfattning.json` (återskapad ur sidfiler).
 - Kur: commit dea2d366 (2 filer, +25/−6).

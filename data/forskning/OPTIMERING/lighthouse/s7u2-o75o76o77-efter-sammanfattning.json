@@ -1,0 +1,77 @@
+{
+ "datum": "2026-09-19T05:21:57.181Z",
+ "bas": "http://localhost:3000",
+ "namn": "s7u2-o75o76o77-efter",
+ "sidor": [
+  {
+   "sokvag": "/",
+   "poang": {
+    "prestanda": 0.98,
+    "tillganglighet": 0.94,
+    "bastaPraxis": 0.96,
+    "seo": 1
+   },
+   "karnmattMs": {
+    "FCP": 1090,
+    "LCP": 1836,
+    "TBT": 121,
+    "CLS": 0,
+    "TTI": 1840,
+    "SI": 2244
+   },
+   "nyckelauditer": {
+    "total-byte-weight": {
+     "poang": 1,
+     "visar": "Total size was 46 KiB"
+    }
+   }
+  },
+  {
+   "sokvag": "/kurser",
+   "poang": {
+    "prestanda": 0.95,
+    "tillganglighet": 0.96,
+    "bastaPraxis": 0.96,
+    "seo": 1
+   },
+   "karnmattMs": {
+    "FCP": 1239,
+    "LCP": 1839,
+    "TBT": 187,
+    "CLS": 0,
+    "TTI": 1839,
+    "SI": 3634
+   },
+   "nyckelauditer": {
+    "total-byte-weight": {
+     "poang": 1,
+     "visar": "Total size was 78 KiB"
+    }
+   }
+  },
+  {
+   "sokvag": "/blogg",
+   "poang": {
+    "prestanda": 0.98,
+    "tillganglighet": 0.96,
+    "bastaPraxis": 0.96,
+    "seo": 1
+   },
+   "karnmattMs": {
+    "FCP": 1077,
+    "LCP": 1731,
+    "TBT": 147,
+    "CLS": 0,
+    "TTI": 1731,
+    "SI": 2246
+   },
+   "nyckelauditer": {
+    "total-byte-weight": {
+     "poang": 1,
+     "visar": "Total size was 55 KiB"
+    }
+   }
+  }
+ ],
+ "anteckning": "Återskapad ur per-sid-filer 2026-09-19: retry-körning med endast /ar (sidan 500:ade, se o75 §4b) skrev över verktygets sammanfattning; /ar + /en saknas avsiktligt — ej mätbara medan speglarna 500:ar."
+}

@@ -97,6 +97,36 @@ synkens loggrad bär datumet 2026-09-18 vid realtid 2026-09-19 —
 tidsstämpelbugg i prod-synk.mjs (dagens rader är oskiljbara från gårdagens
 i grep; rad-ordning + innehåll skiljer dem).
 
+## §4b EFTER-VÄNTESTATUS + PROD-500-FYND — 2026-09-19 05:12–05:2xZ (s7-u2 fn2)
+
+**FYND ÄN VIKTIGARE ÄN KRITERIET: /ar + /en svarar 500 på prod** (https
++ localhost, verifierat ×4 curl 05:12–05:16Z). Rot: `ChunkLoadError:
+Failed to load chunk server/chunks/ssr/_0802uae._.js — Cannot find
+module` (pm2 fellogg; stack via app/(ar)/ar/blogg/[slug]/page.js →
+turbopack-runtime lazy-chunk). **Orsak: prod-synkens fyra OOM-döda
+byggen 03:19–05:09Z har lämnat .next halvtrasigt** (BUILD_ID raderad,
+en del SSR-chunkar borta; flertalet sidor lever — deras chunkar finns
+kvar — men ar-familjens lazy-chunkar saknas → 500). Kuren = prod-
+synkens nästa FULLT genomförda bygg + pm2-restart; ALDRIG eget bygge
+(våg 100). Eskalering: worklog-rad + detta protokoll; gränsnitts-
+vakten/chrome-cron + fabriksbarn tryckte RAM hela fönstret (grunder
+2 500–4 124 MB, tillgängligt 350–2 961 MB, poll 05:17Z vägrade vid
+2 961 < 3 524).
+
+Kriterierna (a) _rsc→0 (sond) och (b) transfer −48 KiB kan INTE mätas
+mot sidor som 500:ar; (c) prod 200 ×2 på speglarna = just nu FAIL av
+ovanstående infraorsak, ej av kuren (kuren lever i trädet — se o76 §4:s
+deploy 23:43Z som bar 6f7482da till prod; prod-HTML-hash-bevis 28yatov).
+(d) jämförbart fönster: Lighthouse SEQ kördes men speglarna gav
+"Runtime error: … (Status code: 500)".
+
+**NÄSTA VÅG (exekveringsorder):** 1) vänta in prod-synkens lyckade
+bygg (RAM-fönster öppnar när chrome-cron/fabriksbarn avslutar); 2)
+verifiera /ar /en = 200; 3) kör `node verktyg/prestanda-o75o76o77-efter.mjs`
+(fas 0 kräver `.next/BUILD_ID` — återskapad av lyckat bygg; OBS
+verktyget mäter även o76/o77 som redan är dömda — o76 §4 negativ,
+o77 §5b GRÖN — bär endast o75-kriterierna (a)(b)(c) vidare).
+
 ## §5 Rest + läxor
 
 - LCP ~4,5 s på speglarna delar /-sidans strukturägarskap (hero-rendering

@@ -26,7 +26,12 @@ RIKTIGA bolag. INGA böcker/författare (gör kunden utanför plattformen).
 | underlag-v08-ebitda-marginal.md | V08 EBITDA-marginal | Lönsamhet | 8 % | LEVERERAT 2026-09-19 |
 | underlag-v09-roe.md | V09 ROE | Lönsamhet | 8 % | LEVERERAT 2026-09-19 |
 | underlag-v10-skuldsattningsgrad.md | V10 Skuldsättningsgrad | Stabilitet | 6 % | LEVERERAT 2026-09-19 |
-| underlag-v11 … v20 | resten av registret | — | — | BOKADE (våg 198+: 11–15, 16–20) |
+| underlag-v11-likviditet.md | V11 Likviditet | Stabilitet | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v12-intaktsstabilitet.md | V12 Intäktsstabilitet | Stabilitet | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v13-patent-ip.md | V13 Patent & IP | Moat | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v14-varumarke.md | V14 Varumärke | Moat | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v15-natverkseffekter.md | V15 Nätverkseffekter | Moat | 6 % | LEVERERAT 2026-09-19 |
+| underlag-v16 … v20 | Katalysator (V16–V18) · Risk (V19 KRITISK) · Kapitalstruktur (V20) | — | — | BOKADE (våg 199) |
 
 **Datakälla:** data/portfolj-system/bolagsunivers.json — 189 noterade bolag,
 10 branscher × 10, hämtat 2026-09-03 (Volvo 2026-09-15), källor Yahoo Finance

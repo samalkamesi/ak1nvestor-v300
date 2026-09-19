@@ -76,7 +76,56 @@ function deployPagar() {
 }
 
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
-function jagaKod() {
+// Loopkärnan exporterad (o80, kraschvaktens planeraAtguard-mönster) — ren och
+// testbar via injicerade beroenden: kontroll(fil) kastar vid fel, sov()
+// väntar vid fynd, bokför/grön är rapportvägarna. Returnerar antal BESTÅENDE
+// syntaxfel.
+// AKTIVT-SKRIVFÖNSTER-KLASSEN (o80): repot är en levande fabrik — syskon
+// skriver om verktygsfiler medan jakten provar, och en halvskriven fil ger
+// ett KORREKT node --check-fel just då men ett FALSKT fynd på träd-nivån.
+// Bevis: 25-fyndssalvan mot testa-ai-mentor-*.mjs 2026-09-18T10:12Z exakt
+// under spår 6:s svitharmonisering av samma svit (samtliga 25 gröna vid
+// ommätning, fynden aldrig återkomna) + _s2u2o16-append 19:57Z mitt i
+// s2-u2:s skrivfönster. Kur = filens egna precedenser tillämpade på syntax:
+// F3:s omtest (rond 50) och tsc:s andra chans (r39-vaccinet) — vid fel
+// återmäts filen EN gång efter vänta; bestående fel bokförs, självläkt fil
+// tigger (stdout-not, ingen journalrad — halvskriven fil har ingen
+// kundpåverkan att bokföra, till skillnad från F3:s nere-endpoint).
+export async function jagaVerktygSyntax(filer, beroenden) {
+  const {
+    kontroll,
+    sov,
+    bokfor: rapportera = bokfor,
+    gron: gronRapport = gron,
+  } = beroenden;
+  let trasiga = 0;
+  for (const f of filer) {
+    let fel = null;
+    try { await kontroll(f); } catch (e) { fel = e; }
+    if (!fel) continue;
+    // Diagnosåtskillnad (o21): timeout vid systemlast är INTE syntaxfel —
+    // första alltid-på-körningen felmärkte en lasttimeout som syntaxfel
+    // (filen ren vid omkolla, fyndet aldrig reproducerat).
+    const timeout = Boolean(fel && (fel.killed || fel.signal === "SIGTERM" || fel.code === "ETIMEDOUT"));
+    if (timeout) {
+      rapportera("F1-kod", "MEDEL", `okontrollerad (timeout): ${f}`, "node --check hann inte inom 10 s — lastrelaterat, omkollas nästa jakt");
+      continue;
+    }
+    await sov();
+    let kvarstar = true;
+    try { await kontroll(f); kvarstar = false; } catch { kvarstar = true; }
+    if (kvarstar) {
+      trasiga++;
+      rapportera("F1-kod", "MEDEL", `syntaxfel: ${f}`, "node --check misslyckades även vid återmätning");
+    } else {
+      gronRapport("F1-kod", `${f}: transient syntax — återhämtad vid återmätning (aktivt skrivfönster, inget fynd)`);
+    }
+  }
+  if (trasiga === 0) gronRapport("F1-kod", `${filer.length} verktyg syntax-OK`);
+  return trasiga;
+}
+
+async function jagaKod() {
   // tsc är tungt (2+ min) — kör ENDAST om src/ ändrats sedan senaste jakt
   const tscMarkor = path.join(VAKT, ".feljakt-tsc-stamp");
   const senaste = fs.existsSync(tscMarkor) ? fs.readFileSync(tscMarkor, "utf8").trim() : "";
@@ -93,23 +142,10 @@ function jagaKod() {
   // lurade "40 syntax-OK".
   try {
     const filer = execFileSync("find", ["verktyg", "-name", "*.mjs"], { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim().split("\n").filter(Boolean);
-    let trasiga = 0;
-    for (const f of filer) {
-      try { execFileSync(process.execPath, ["--check", f], { cwd: ROT, timeout: 10_000, stdio: "pipe" }); }
-      catch (e) {
-        // Diagnosåtskillnad (o21): timeout vid systemlast är INTE syntaxfel —
-        // första alltid-på-körningen felmärkte en lasttimeout som syntaxfel
-        // (filen ren vid omkolla, fyndet aldrig reproducerat).
-        const timeout = Boolean(e && (e.killed || e.signal === "SIGTERM" || e.code === "ETIMEDOUT"));
-        if (timeout) {
-          bokfor("F1-kod", "MEDEL", `okontrollerad (timeout): ${f}`, "node --check hann inte inom 10 s — lastrelaterat, omkollas nästa jakt");
-        } else {
-          trasiga++;
-          bokfor("F1-kod", "MEDEL", `syntaxfel: ${f}`, "node --check misslyckades");
-        }
-      }
-    }
-    if (trasiga === 0) gron("F1-kod", `${filer.length} verktyg syntax-OK`);
+    await jagaVerktygSyntax(filer, {
+      kontroll: (f) => execFileSync(process.execPath, ["--check", f], { cwd: ROT, timeout: 10_000, stdio: "pipe" }),
+      sov: () => new Promise((uppl) => setTimeout(uppl, 15_000)),
+    });
   } catch { /* finder misslyckades */}
   if (!srcAndrad) { gron("F1-kod", "src/ oändrad sedan senaste tsc — hoppar"); return; }
   // r39-vaccin (2026-09-15): mät ALDRIG tsc under deployfönstret — npm ci
@@ -419,7 +455,7 @@ async function main() {
   const pass = lasPass();
   if (!pass) { console.log("[FELJÄGAREN] PASS SAKNAS — sover"); return; }
   console.log(`[FELJÄGAREN] startar ${new Date().toISOString().slice(11, 19)} — 7 spår`);
-  jagaKod();
+  await jagaKod();
   jagaProcesser();
   await jagaApi(pass);
   jagaData();
@@ -429,4 +465,10 @@ async function main() {
   console.log("[FELJÄGAREN] klar — fynd i " + FYND);
 }
 
-main().catch((fel) => { bokfor("FELJÄGAREN", "HÖG", "krasch", String(fel).slice(0, 120)); });
+// Huvudmodulvakt (o80): pumporna kör `node verktyg/feljagaren.mjs` (argv[1]
+// = denna fil ⇒ main körs); testverktygen importerar kärnorna utan att
+// jakten startar.
+const arHuvudmodul = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (arHuvudmodul) {
+  main().catch((fel) => { bokfor("FELJÄGAREN", "HÖG", "krasch", String(fel).slice(0, 120)); });
+}

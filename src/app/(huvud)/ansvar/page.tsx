@@ -29,11 +29,20 @@ export default function AnsvarPage() {
   const sektion = (rubrik: string, stycken: React.ReactNode[]) => (
     <section className="mt-8">
       <h2 className="font-serif text-2xl font-bold">{rubrik}</h2>
-      {stycken.map((p, i) => (
-        <p key={i} className="mt-3 leading-relaxed text-muted-foreground">
-          {p}
-        </p>
-      ))}
+      {/* Strängar blir <p>; element (t.ex. sektion 9:s <ul>) wrappas i <div> —
+          block-element inuti <p> är ogiltig HTML och bröt hydratiseringen
+          (React #418 ×4 teman/skärmar, vaktsvep 2026-09-18T1730). */}
+      {stycken.map((p, i) =>
+        typeof p === "string" ? (
+          <p key={i} className="mt-3 leading-relaxed text-muted-foreground">
+            {p}
+          </p>
+        ) : (
+          <div key={i} className="mt-3 leading-relaxed text-muted-foreground">
+            {p}
+          </div>
+        ),
+      )}
     </section>
   );
 

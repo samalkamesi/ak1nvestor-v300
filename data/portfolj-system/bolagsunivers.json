@@ -18885,5 +18885,308 @@
       ]
     },
     "notering": "FRANKRIKE/FINANS-CELLENS ANDRA RAD (Frankrike 5→6: BNP.PA banken + CS.PA försäkringen — eurozons andra ekonomi får sitt andra finansben; infriar omg19-u1:s könotis 'AXA lediga (u2:notis)') och VÄRLDENS STÖRSTA SKADEFÖRSÄKRARE-KLASS I UNIVERSUMET: mcap 90,5 mdr EUR mot TRYG.CO:S pocket-format — försäkringspedagogiken får sin europeiska fullskala bredvid de nordiska ankarna (TRYG/SAMPO). MULTI-EPS-PEDAGOGEN (cellens kärnfynd): källpaketet bär TRE EPS-VARIANTER — justerad 4,79 EUR, P/E-implicit 3,705 (rapporterat), payout-implicit 4,49 — och multipeln 12,07 står på den RAPPORTERADE: läs alltid vilken EPS en multipel står på innan du jämför mellan bolag (P/E 12,07 mot repliken 9,34 på justerad = 29 %-skillnad i samma bolag samma dag). IFRS 17/9-BROTTET: intäktsraden 122,2 (FY2021, pre-IFRS17) → 86,8 (FY2022, restaterat) = OM RäKNNING, inte kollaps — 5-års omsCAGR −6,17 %/år är baseffekten (Holcim/GSK-scope-klassen) medan den konsekventa IFRS17-basen FY2022→FY2025 = +2,95 %/år som dokumenterad not; nettoresultatet växer genom brottet: 7,1→4,9→7,0→7,7→9,6 mdr EUR (+7,90 %/år) med TTM 9,88 mdr (+29,0 %). UTDDELNINGEN SOM KÄRNA: 2,32 EUR (5,19 % EXAKT replik 2,32/44,73 = 5,187 %) payout 51,67 % — EU-försäkringens utdelningslokal med fem procent-klassens yield mot TRYG:s nordiska motsvarighet; FCF 14,5 mdr TTM (yield 16,02 %) med ALV/BRK-reservationen: premieflöden intas före skadeutbetalning — ej utdelningsbar kassa (TRYG-konventionens dokumentation). BALANSEN: nettokassa −42,59 mdr EUR (kassa 99,86 − skuld 61,11) — EV meningslöst, bank-ordlistan; ROE 14,88 % mot TRYG 12,15 % och ROIC 7,47 % mot WACC 4,83 % (+2,6 pp — försäkringens smalare moat-spridning än bankens); segmenten FY2025: P&C 58,0 · Life 37,5 · Health 19,0 mdr — tre ben över 19 mdr (diversifieringen TRYG saknar). Beta 0,58; 52v 36,55–45,66 (−2,0 % från toppen); institutioner 33,60 %; analytiker Buy 18 st PT 52,01 (+16,28 %); ex-div 2026-05-11, nästa rapp 2026-10-29; anställda 107 756. UTBILDNINGSDOKTRIN: nyckeltalen visar hur en europeisk försäkringskoncern räknas — ALDRIG köp-/säljsignaler."
+  },
+  {
+    "ticker": "WMT",
+    "namn": "Walmart Inc.",
+    "bransch": "konsument",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-19",
+        "url": "https://stockanalysis.com/stocks/wmt/",
+        "paranoid": "översikt + statistics + financials (inkl. balance-sheet + cash-flow-statement; underlag S&P Global Market Intelligence; sid-as-of 2026-09-18 close, hämtat 2026-09-19): kurs, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, räntetäckning, FCF, 5 räkenskapsår (jan-bokslut)"
+      },
+      {
+        "namn": "Yahoo Finance",
+        "hamtat": "2026-09-19",
+        "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/WMT",
+        "paranoid": "quoteSummary-moduler (crumb-flöde): price, summaryDetail, defaultKeyStatistics, financialData, incomeStatementHistory, earningsTrend — dubbelkoll av kurs/PE/PB/ROE/marginaler/CAGR-tal (net sales-bas)"
+      }
+    ],
+    "hamtat": "2026-09-19",
+    "pris": 106.73,
+    "marknadsKapitalMdr": 846.769,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0563,
+      "resultatCAGR5ar": 0.1249,
+      "omsattningTillvaxtTTM": 0.0616,
+      "prognosTillvaxt": 0.0869
+    },
+    "lonksamhet": {
+      "roe": 0.22314,
+      "roic": 0.13312,
+      "bruttoMarginal": 0.24837,
+      "ebitMarginal": 0.03938,
+      "nettoMarginal": 0.03,
+      "fcfMarginal": 0.01836
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.7165,
+      "rantaTackning": 12.306,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 7.507,
+      "andelUtestande": 0.0093,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 24.68,
+      "bruttoMarginalSpread5ar": 0.96,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 38.676,
+      "pb": 9.008,
+      "evEbit": 31.41,
+      "peg": 4.45,
+      "fcfYield": 0.016,
+      "egenKapitalMultipl": 9.008
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        572754000000,
+        611289000000,
+        648125000000,
+        680985000000,
+        713163000000
+      ],
+      "resultat": [
+        13673000000,
+        11680000000,
+        15511000000,
+        19436000000,
+        21893000000
+      ],
+      "egetKapital": [
+        83253000000,
+        76693000000,
+        83861000000,
+        91013000000,
+        99617000000
+      ],
+      "fcf": [
+        11075000000,
+        11984000000,
+        15120000000,
+        12660000000,
+        14923000000
+      ]
+    },
+    "notering": "Feb–jan-bokföringsår (universumets andra brutna året efter BHP; årsetikett = slutår, FY2026 slutar 31 jan 2026); låg marginal × enorm volym-modellen: bruttomarginal 24,8 % och EBIT-marginal 3,9 % är diskonterdetails-nivåer — jämförs bäst mot konsumentbranschens varumärkesbolag, aldrig som tecken på svaghet i sig; omsättningsserierna är TOTALA intäkter inkl. medlemskap (S&P/StockAnalysis 611 289 M USD FY2023) medan Yahoo redovisar net sales (605 881 M USD FY2023) — skillnaden = medlemsintäkter; utdelningstillväxt 53 år i rad (StockAnalysis Years of Dividend Growth 53) + återköp (buyback-yield 0,70 %); prognosTillvaxt härledd ur trailing/forward-P/E (38,68/35,58 ⇒ +8,7 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent enligt universumets konvention = 4,45 (källans 3-års-PEG 3,46 som not); fcfYield = fritt kassaflöde 13 509 M USD/börsvärde 846 769 M USD; skuld/EK 0,72 inkl. IFRS-16 butiks- och lastbilsleasing; P/B 9,01 per aktie (Yahoo kurs/bokfört 11,85 USD; StockAnalysis 8,63 mot senaste kvartalsbok — not), ROE 22,3 % på den tunna EK-marginalen (bokfört EK 105 mdr USD mot 847 mdr USD börsvärde)."
+  },
+  {
+    "ticker": "MAERSK-B.CO",
+    "namn": "A.P. Møller - Mærsk A/S",
+    "bransch": "industri",
+    "land": "Danmark",
+    "valuta": "DKK",
+    "kallor": [
+      {
+        "namn": "Yahoo Finance",
+        "hamtat": "2026-09-19",
+        "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/MAERSK-B.CO",
+        "paranoid": "quoteSummary-moduler (crumb-flöde): price, summaryDetail, defaultKeyStatistics, financialData, incomeStatementHistory, earningsTrend — Köpenhamnsnoterad B-aktie i DKK; räkenskapsår FY2022–FY2025 i USD (bolagets rapportvaluta)"
+      },
+      {
+        "namn": "StockAnalysis (ADR-vyn)",
+        "hamtat": "2026-09-19",
+        "url": "https://stockanalysis.com/quote/otc/AMKBY/",
+        "paranoid": "översikt AMKBY (OTC-ADR): P/E 21,29, P/B 0,907, EPS 154,49 USD, marknadsvärde 48,82 mdr USD — paranoid dubbelkoll av nivåer; ADR-sidans financials/djupsidor 404 (OTC-utspärrning), därför endast översikt"
+      }
+    ],
+    "hamtat": "2026-09-19",
+    "pris": 22590,
+    "marknadsKapitalMdr": 325.63,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.1284,
+      "resultatCAGR5ar": -0.5464,
+      "omsattningTillvaxtTTM": -0.01,
+      "prognosTillvaxt": -0.2015
+    },
+    "lonksamhet": {
+      "roe": 0.04374,
+      "roic": null,
+      "bruttoMarginal": 0.20996,
+      "ebitMarginal": 0.09101,
+      "nettoMarginal": 0.04075,
+      "fcfMarginal": null
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.31,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": 0.0212,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 22.222,
+      "pb": 0.9213,
+      "evEbit": 9.29,
+      "peg": null,
+      "fcfYield": null,
+      "egenKapitalMultipl": 0.9213
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        81529000000,
+        51065000000,
+        55482000000,
+        53988000000
+      ],
+      "resultat": [
+        29198000000,
+        3822000000,
+        6109000000,
+        2725000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "Universumets FÖRSTA sjöfarts-/containerlogistik-bolag (global handels proxy — containerfrakt, hamnar och logistik i en koncern); rapportvaluta USD trots dansk notering (serier i USD, kurs och P/B i DKK per aktie — ADR-utspärrning: StockAnalysis djupsidor 404 för OTC-ADR:n, därför Yahoo som primär och ADR-översikt som paranoid); marknadsvärde 325,63 mdr DKK enligt Yahoo med ADR-paritet (AMKBY 49,90 mdr USD enligt Yahoo v7; StockAnalysis 48,82 mdr USD) — Google Finance-snapshot (dec 2025: kurs 11 690 DKK, 185,4 mdr DKK) är äldre och avviker, bokförd i protokollet; dual-class A/B med familjen och stiftelsernas A-aktier (insiderandel 31,1 % enligt Yahoo); FRACHTCYKELN DOMINERAR: endpoint-CAGRerna är negativa (omsättning −12,8 %/år, resultat −54,6 %/år FY2022→FY2025) därför att FY2022 var containerfraktens HISTORISKA rekordår (Röda havet + eftersläpning) — samma 'från cykeltoppen'-mätning som BHP-precedensen, talen är måttstockar på cykelns amplitud, inte trender; prognosTillvaxt −20,1 % (trailing/fwd-P/E 22,22/27,83 — marknaden prissätter EPS-fall nästa år när frakttakterna normaliseras; Yahoo earningsTrend +1y −74 % i samma riktning) ⇒ peg osatt (negativ nämnare); evEbit 9,3 egenderivat (EV = MC − nettokassa 1,0 mdr USD; EBIT TTM 5,1 mdr USD ur marginal 9,101 % × omsättning 56,3 mdr USD — härledning i protokollet); bruttomarginal 21,0 % och EBIT-marginal 9,1 % (TTM) medan netto hamnar på 4,1 % — flottans kapitalkostnad och leasing trycker; skuld/EK 0,31 inklusive IFRS-16 fartygsleasing (Yahoo debtToEquity 31,0 %); utdelning 480 DKK/aktie (direktavkastning 2,12 %, payout 47,2 % — cykelutdelning, inte trygghetsutdelning); insiderägande 31,1 % (A.P. Møller-familjen och stiftelser); fcfYield osatt — operativt kassaflöde TTM 8,4 mdr USD finns (Yahoo financialData) men capex-serien saknas i båda källorna."
+  },
+  {
+    "ticker": "ADYEN.AS",
+    "namn": "Adyen N.V.",
+    "bransch": "tillvaxt",
+    "land": "Nederländerna",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-19",
+        "url": "https://stockanalysis.com/quote/ams/ADYEN/",
+        "paranoid": "översikt + statistics + financials (inkl. balance-sheet + cash-flow-statement; underlag S&P Global Market Intelligence; Amsterdam-notering, sid-as-of 2026-09-18 close, hämtat 2026-09-19): kurs, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, räntetäckning, FCF, 5 räkenskapsår"
+      },
+      {
+        "namn": "Yahoo Finance",
+        "hamtat": "2026-09-19",
+        "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/ADYEN.AS",
+        "paranoid": "quoteSummary-moduler (crumb-flöde): price, summaryDetail, defaultKeyStatistics, financialData, incomeStatementHistory, earningsTrend — dubbelkoll av kurs/PE/PB/ROE/marginaler/serier (Yahoo redovisar net revenue FY2024 1 996 M€ mot SA totala 2 015 M€)"
+      }
+    ],
+    "hamtat": "2026-09-19",
+    "pris": 879.1,
+    "marknadsKapitalMdr": 27.75,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.2409,
+      "resultatCAGR5ar": 0.2265,
+      "omsattningTillvaxtTTM": 0.0875,
+      "prognosTillvaxt": 0.201
+    },
+    "lonksamhet": {
+      "roe": 0.21271,
+      "roic": 0.13375,
+      "bruttoMarginal": 0.68535,
+      "ebitMarginal": 0.4654,
+      "nettoMarginal": 0.43555,
+      "fcfMarginal": -0.0588
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.0693,
+      "rantaTackning": 61.536,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 68.55,
+      "bruttoMarginalSpread5ar": 14,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 24.716,
+      "pb": 4.696,
+      "evEbit": 13.1,
+      "peg": 1.23,
+      "fcfYield": -0.0055,
+      "egenKapitalMultipl": 4.696
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1002000000,
+        1330000000,
+        1626000000,
+        2015000000,
+        2376000000
+      ],
+      "resultat": [
+        469720000,
+        564140000,
+        698320000,
+        925160000,
+        1063000000
+      ],
+      "egetKapital": [
+        1810000000,
+        2416000000,
+        3151000000,
+        4232000000,
+        5285000000
+      ],
+      "fcf": [
+        1769000000,
+        1926000000,
+        1804000000,
+        1607000000,
+        906760000
+      ]
+    },
+    "notering": "Tillväxtbranschens första betalinfrastruktur-bolag och första europeiska aktie utanför USA-listan (nederländsk Amsterdam-notering i EUR); intäktsserierna är TOTALA intäkter enligt S&P/StockAnalysis (FY2024 2 015 M€) medan Yahoo redovisar net revenue (1 996 M€) — skillnaden är transaktionskostnads-netto/FX, noterad; bruttomarginal 68,5 % är tjänstemarginal (intäkter minus transaktionskostnader — SA-definition), inte fysisk vara; moat-spridningen 14,0 pp bär 2022-dippen 61,9 % (priskonkurrens efter investeringsåret) med återhämtning till 68,1 % FY2025; KASSAFLÖDESCYKELN ÄR FYNDERT: fcfYield −0,55 % och fcfMarginal −5,9 % (TTM) trots 43,6 % nettomarginal — capex-stöten 801,5 M€ TTM (mot 123,7 M€ FY2025, Amsterdam-HQ-bygget) plus settlements-working-capital-svängen (Change in Other Net Operating Assets −622 M€ TTM) trycker OCF till 649,5 M€; FY2025-FCF var +906,8 M€ (38,2 % marginal) — betalplattformens kassaflöde svänger med settlement-saldon och byggnadsinvesteringar, pedagogisk kontrast mot vinstmarginalen; fcfPositivaSenaste5 = 4 av 5 mätta år (FY2021–FY2025 + alla fyra helåren före TTM-fönstret); nettokassa 12,0 mdr EUR (kassa 12,4 minus skuld 0,4) gör skuld/EK 0,07 och räntetäckning 61,5 — balansräkningens absoluta trygghetsläge; ingen utdelning (all vinst återinvesteras); prognosTillvaxt +20,1 % (trailing/fwd-P/E 24,72/20,58); peg 1,23 enligt universumets konvention (källans 3-års-PEG 1,13 som not)."
   }
 ]

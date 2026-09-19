@@ -21,16 +21,48 @@
 //   OUPPNABAR   DNS-fel/anslutningsvägran/timeout — domänfel är stark
 //               dödsignal, långsamhet är det inte (felkod redovisas)
 //
+// MÄTFÖNSTER-GRIND + DRIFT-TAK (o87 2026-09-19, o55 §2-doktrinen bärd hit —
+// samma kontrakt som verktyg/doda-lankar.mjs): FÖRE crawlen verifieras
+// (a) att ingen process ÄGER deploy-låset (fuser = öppna fd:n, ALDRIV
+// låsfilens existens — flock lämnar filen kvar), (b) ingen bygg/install-
+// process (kommaseparerade HELA mönster: "next build" finns bara i ett äkta
+// bygg — pm2:s "next start" bär aldrig sekvensen; "npm ci" ensamt matchar
+// fabrikorsagtersas prompt-cmdlines), (c) basen frisk (/ och /kurser = 200).
+// Missar ⇒ avbrott INNAN något mätvärde producerats (exit 1). EFTER crawlen:
+// landar > 5 % av LOKALA sidor på 5xx/nätfel ⇒ driftfönster — rapporten
+// kasseras (exit 2), ingen fyndfil (artefaktdoktrinen, o47:s 1 616×500-
+// klass). Insamlings-mellanlagret sparas märkt driftfonster=true och kan
+// ALDRIG återupptas till mätvärde (bakdörren stängd) — endast --tvinga
+// diagnostik. Externa måls SERVERFEL räknas INTE i taket: det är externa
+// värdars fel, redan egen klass. Rapport- och mellanlagerfiler skrivs ALDRIG
+// över (klockslagssuffix vid samma-dag-kollision).
+//
+// --tvinga = diagnostikläge: hoppar grunderna och taket, märker ALLA
+// utdatafiler "diagnostik" — resultatet är ALDRIG ett mätvärde.
+//
+// Miljövariabler (testbarhet; standardvärden = skarpt läge):
+//   AK1A_DEPLOY_LAS    sökväg till deploy-låset (standard /tmp/ak1a-deploy.lock)
+//   AK1A_BYGG_MONSTER  kommaseparerade HELA pgrep-mönster (standard
+//                      "next build,npm ci --no-audit")
+//
 // 0 npm-beroenden. Körning:
 //   node verktyg/doda-lankar-externa.mjs [--bas=http://localhost:3000] [--djup=3]
-//   node verktyg/doda-lankar-externa.mjs --sjalvtest        (offline, inga nätanrop utåt)
+//   node verktyg/doda-lankar-externa.mjs --tvinga             (diagnostik, ej mätvärde)
+//   node verktyg/doda-lankar-externa.mjs --sjalvtest          (offline, inga nätanrop utåt)
 //   node verktyg/doda-lankar-externa.mjs --validera-fran <insamlingsfil>
+// Avslutskoder: 0 = mätvärde (eller diagnostik med --tvinga) levererat ·
+//   1 = grind/fel (fönstret var ej mätbart) · 2 = driftfönster, rapport
+//   kasserad (inget mätvärde).
 // Lämnar: data/vakten/doda-lankar-externa-<datum>.json + sammanfattning på
 // stdout. Insamlingen sparas FÖRE validering så en krasch inte kostar omcrawl.
 
 import fs from "node:fs";
 import path from "node:path";
 import http from "node:http";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+
+const koraKommando = promisify(execFile);
 
 const args = process.argv.slice(2);
 function argument(namn, standard) {
@@ -41,6 +73,13 @@ const SJALVTEST = args.includes("--sjalvtest");
 const BAS = argument("bas", "http://localhost:3000").replace(/\/$/, "");
 const DJUP = parseInt(argument("djup", "3"), 10);
 const VALIDERA_FRAN = argument("validera-fran", null);
+const TVINGAD = args.includes("--tvinga");
+const DRIFT_TAK = 0.05; // > 5 % LOKALA sidor på 5xx/nätfel = driftfönster
+const DEPLOY_LAS = process.env.AK1A_DEPLOY_LAS || "/tmp/ak1a-deploy.lock";
+const BYGG_MONSTER = (process.env.AK1A_BYGG_MONSTER || "next build,npm ci --no-audit")
+  .split(",")
+  .map((m) => m.trim())
+  .filter(Boolean);
 
 // Skonsamhet mot externa värdar: aldrig mer än en pågående förfrågan per
 // domän, högst DOMANER_PARALLELLT domäner samtidigt, aldrig fler än så många
@@ -98,6 +137,53 @@ async function hamta(sokvag) {
   }
 }
 
+// --- mätfönster-grind (o87, o55 §2:s kontrakt) -------------------------------
+
+async function lasHollare() {
+  // fuser listar processer med filen ÖPPNAD — en flock-hållare bär en öppen
+  // fd under hela byggfönstret. Filens existens säger inget (flock städar ej).
+  try {
+    const { stdout } = await koraKommando("fuser", [DEPLOY_LAS]);
+    const pids = stdout.split(/\s+/).filter(Boolean);
+    return pids.length > 0 ? pids.join(",") : null;
+  } catch {
+    return null; // exit 1 = ingen hållare; verktyg saknas = samma bedömning
+  }
+}
+
+async function lasByggprocess() {
+  for (const monster of BYGG_MONSTER) {
+    try {
+      await koraKommando("pgrep", ["-f", monster]);
+      return monster; // exit 0 = matchande process lever
+    } catch {
+      // ej hittad — nästa mönster
+    }
+  }
+  return null;
+}
+
+async function verifyeraMatfonster() {
+  const hollare = await lasHollare();
+  if (hollare) {
+    console.error(`GRIND: deployfönster aktivt — låset ägs av PID ${hollare}; mätning avbryten (o55 §2).`);
+    process.exit(1);
+  }
+  const bygg = await lasByggprocess();
+  if (bygg) {
+    console.error(`GRIND: bygg/install-process pågår ("${bygg}"); mätning avbryten (o55 §2).`);
+    process.exit(1);
+  }
+  for (const sond of ["/", "/kurser"]) {
+    const { status } = await hamta(sond);
+    if (status !== 200) {
+      console.error(`GRIND: basen ej frisk — ${sond} svarade ${status || "inget svar"}; mätning avbryten (o55 §2).`);
+      process.exit(1);
+    }
+  }
+  logg("matfonster", { grunder: "gröna", las: DEPLOY_LAS });
+}
+
 async function lasSitemap() {
   const { status, text } = await hamta("/sitemap.xml");
   if (status !== 200) {
@@ -122,6 +208,8 @@ async function lasSitemap() {
 async function samlaExterna() {
   const sett = new Map(); // url → Set<källsökväg>
   const besokta = new Set();
+  let driftfel = 0; // LOKALA sidor på 5xx/nätfel (status 0 eller ≥ 500)
+  const felSidor = []; // stickprov för loggen (tak 25)
   const ko = (await lasSitemap()).map((s) => ({ sokvag: s, niva: 0 }));
   let aktiva = 0;
 
@@ -133,6 +221,10 @@ async function samlaExterna() {
         besokta.add(sokvag);
         aktiva++;
         hamta(sokvag).then(({ status, text }) => {
+          if (status === 0 || status >= 500) {
+            driftfel++;
+            if (felSidor.length < 25) felSidor.push({ sokvag, status: status || "FEL" });
+          }
           if (status >= 200 && status < 400) {
             for (const maltal of extraheraExterna(text)) {
               const s = sett.get(maltal) || new Set();
@@ -161,7 +253,8 @@ async function samlaExterna() {
     }
     pumpa();
   });
-  return { besokta: besokta.size, mal: sett };
+  logg("crawlstat", { sidor: besokta.size, driftfel, stickprov: felSidor });
+  return { besokta: besokta.size, mal: sett, driftfel, felSidor };
 }
 
 // --- extern validering -------------------------------------------------------
@@ -337,37 +430,96 @@ async function sjalvtest() {
 // --- huvudspår ----------------------------------------------------------------
 
 const dagensDatum = new Date().toISOString().slice(0, 10);
-const utFil = path.join(process.cwd(), "data", "vakten", `doda-lankar-externa-${dagensDatum}.json`);
 
 if (SJALVTEST) {
   await sjalvtest();
 }
 
+// Filskydd: en fil skrivs ALDRIG över — samma dags tidigare mätning (t.ex.
+// ett driftfynds bevisfil) bevaras och klockslagssuffix skiljer nästa.
+function skyddadFil(namn) {
+  let fil = path.join(process.cwd(), "data", "vakten", namn);
+  if (fs.existsSync(fil)) {
+    fil = path.join(
+      process.cwd(),
+      "data",
+      "vakten",
+      namn.replace(/\.json$/, `-${new Date().toISOString().slice(11, 19).replace(/:/g, "")}.json`),
+    );
+  }
+  return fil;
+}
+
+const prefix = TVINGAD ? "doda-lankar-externa-diagnostik-" : "doda-lankar-externa-";
+const rapportNamn = `${prefix}${dagensDatum}.json`;
+const mellanNamn = `${prefix}${dagensDatum}-insamling.json`;
+
+// MÄTFÖNSTER-GRIND FÖRE allt mätvärde (o87/o55 §2): gäller även återupptagning
+// — ett mätvärde levererat mitt i ett byggfönster är ett spökmätvärde.
+if (!TVINGAD) await verifyeraMatfonster();
+
 const t0 = Date.now();
 let besokta;
 let sett;
+let driftAndel = null;
+let aterupptagen = false;
 
 if (VALIDERA_FRAN) {
   const mellanlager = JSON.parse(fs.readFileSync(VALIDERA_FRAN, "utf8"));
+  // Bakdörrs-stängning (artefaktdoktrinen): ett driftfönsters insamling kan
+  // ALDRIG återupptas till mätvärde — endast --tvinga ger diagnostik.
+  if (mellanlager.driftfonster && !TVINGAD) {
+    console.error(
+      `GRIND: mellanlagret är insamlat i ett driftfönster (${((mellanlager.driftAndel || 0) * 100).toFixed(1)} % sidfel) — kan ALDRIG bli mätvärde (o47 §2); diagnostik kräver --tvinga.`,
+    );
+    process.exit(1);
+  }
   besokta = mellanlager.besoktaSidor;
   sett = new Map(mellanlager.mal.map((m) => [m.url, new Set(m.kallor)]));
+  driftAndel = typeof mellanlager.driftAndel === "number" ? mellanlager.driftAndel : null;
+  aterupptagen = true;
   logg("aterupptar", { fran: VALIDERA_FRAN, mal: sett.size });
 } else {
   const insamling = await samlaExterna();
   besokta = insamling.besokta;
   sett = insamling.mal;
-  // spara mellanlager FÖRE externa nätanrop: en krasch kostar inte en omcrawl
-  const mellanFil = utFil.replace(/\.json$/, "-insamling.json");
+  driftAndel = besokta > 0 ? insamling.driftfel / besokta : 0;
+  // mellanlager FÖRE externa nätanrop: en krasch kostar inte en omcrawl.
+  // Märks med drift-tal + driftfonster-dom så en driftfönster-insamling
+  // aldrig kan återupptas till mätvärde (märkningen är grinden, se ovan).
+  const mellanFil = skyddadFil(mellanNamn);
   fs.mkdirSync(path.dirname(mellanFil), { recursive: true });
   fs.writeFileSync(
     mellanFil,
     JSON.stringify(
-      { bas: BAS, tid: new Date().toISOString(), besoktaSidor: besokta, mal: [...sett.entries()].map(([url, k]) => ({ url, kallor: [...k] })) },
+      {
+        bas: BAS,
+        tid: new Date().toISOString(),
+        besoktaSidor: besokta,
+        driftAndel,
+        driftfonster: driftAndel > DRIFT_TAK,
+        tvingad: TVINGAD,
+        felSidor: insamling.felSidor,
+        mal: [...sett.entries()].map(([url, k]) => ({ url, kallor: [...k] })),
+      },
       null,
       2,
     ) + "\n",
   );
-  logg("insamling", { sidor: besokta, mal: sett.size, sparad: mellanFil });
+  logg("insamling", { sidor: besokta, mal: sett.size, driftAndel, sparad: mellanFil });
+
+  // DRIFT-TAK EFTER crawl (artefaktdoktrinen): ett byggfönster som öppnar
+  // MITT I mätningen ger massiva 5xx/nätfel på LOKALA sidor — det är drift,
+  // inte länkgraf, och får aldrig bokföras som mätvärde (o47: 1 616×500).
+  // Mellanlagret finns kvar som märkt diagnostikunderlag; fyndfil skrivs ej.
+  if (!TVINGAD && driftAndel > DRIFT_TAK) {
+    console.error(
+      `DRIFTFÖNSTER: ${(driftAndel * 100).toFixed(1)} % av ${besokta} sidor svarade 5xx/nätfel ` +
+        `(tak ${(DRIFT_TAK * 100).toFixed(0)} %) — rapporten kasseras, ingen fyndfil skrivs (o47 §2). ` +
+        `Diagnostik vid driftfynd: kör om med --tvinga (utdata märks diagnostik, är ALDRIG mätvärde).`,
+    );
+    process.exit(2);
+  }
 }
 
 if (sett.size > TAK_URL) {
@@ -388,6 +540,10 @@ const rapport = {
   tid: new Date().toISOString(),
   sekunder: Math.round((Date.now() - t0) / 1000),
   djup: DJUP,
+  tvingad: TVINGAD,
+  matfonster: TVINGAD ? "diagnostik" : "grönt",
+  aterupptagen,
+  driftAndel,
   crawlideSidor: besokta,
   unikaExternaMal: resultat.length,
   perKlass,
@@ -401,10 +557,11 @@ const rapport = {
   alla: resultat,
 };
 
+const utFil = skyddadFil(rapportNamn);
 fs.mkdirSync(path.dirname(utFil), { recursive: true });
 fs.writeFileSync(utFil, JSON.stringify(rapport, null, 2) + "\n");
 
-console.log(`Crawlade ${besokta} sidor, validerade ${resultat.length} unika externa mål på ${rapport.sekunder} s`);
+console.log(`Crawlade ${besokta} sidor, validerade ${resultat.length} unika externa mål på ${rapport.sekunder} s${TVINGAD ? " [DIAGNOSTIK — ej mätvärde]" : ""}`);
 console.log(`Klasser: ${JSON.stringify(perKlass)}`);
 console.log(`DÖDA (4xx): ${rapport.fynd.doda.length}`);
 for (const d of rapport.fynd.doda) console.log(`  ${d.status} ${d.mal}  ← ${d.kallor.slice(0, 3).join(", ") || "(sitemap)"}`);

@@ -135,13 +135,14 @@ const MINA_KANONISKA = [
     se([s1?.kallor?.[0]?.slug, s2?.kallor?.[0]?.slug]));
 }
 
-// ── FALL A2: wiring — SIST i widgetens kedja ────────────────────────────────
+// ── FALL A2: wiring — position i widgetens kedja ────────────────────────────
+// (Omgång 22 wireade tre lager efter detta i fönstrets ordning — bokmastar,
+// riskbudget, konvertibel — SIST-kravet harmoniserades till positionskontroll.)
 {
-  const sist = widgetOrdning[widgetOrdning.length - 1] === "svaraLokaltTillvaxtdjup";
-  const koncernPos = widgetOrdning.indexOf("svaraLokaltRiskpremie", "svaraLokaltKoncernlasning");
+  const koncernPos = widgetOrdning.indexOf("svaraLokaltKoncernlasning");
   const minPos = widgetOrdning.indexOf("svaraLokaltTillvaxtdjup");
-  kontroll("A2: svaraLokaltTillvaxtdjup står SIST i kedjan",
-    sist && minPos > koncernPos,
+  kontroll("A2: svaraLokaltTillvaxtdjup wiread efter koncernläsning",
+    minPos > koncernPos,
     "position " + (minPos + 1) + " av " + widgetOrdning.length + " (koncernläsning " + (koncernPos + 1) + ")");
   kontroll("A2: importrad finns",
     widgetKalla.includes('import { svaraLokaltTillvaxtdjup } from "@/lib/ai-mentor-tillvaxtdjup-fragor";'),

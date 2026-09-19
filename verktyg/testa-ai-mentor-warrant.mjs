@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 432 kurser (spår 5:s omgång-17-rebake 2026-09-18; basotestet E01 grönt)",
-    KURSREGISTER.length === 432,
+    "K03 register-läge — 440 kurser (spår 5:s omgång-18-rebake 2026-09-19; basotestet E01 grönt)",
+    KURSREGISTER.length === 440,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -645,6 +645,12 @@ const GAMLA = [
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
   "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22:s fönster (dubbeldispatchad u1-instans faktordjup FÖRE bokmastar,
+    // sedan s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

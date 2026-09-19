@@ -14297,3 +14297,20 @@ TREFÖNSTRET + BASF-BÖRDAN (denna commit bär hela fönstrets koherenta kärna 
 
 KVM: MITT MODULTEST testa-ai-mentor-bokmastar.mjs 25 PASS 0 FAIL (A flerkälls 5/7/5 + numrerad · A2 wiring 47:a motor efter tillväxtdjup, syskon efter — trefönstret · B 15 varianter · C determinism · D01 0 fantomslugar av 440 · D01b knappar levande mot 50-motorskedjan · D02 registertal BOKMASTER=103 + kapitel/quiz + 0 undefined · D03 18 aritmetikkontroller oberoende omräknade · E null-genomströmning · F juridikgrind + främmande tecken-vakt · G/G2/I antistöld båda riktningar · H SIST-invariant · J kärnordsdisjunktion · L01 widget-synk 49 kända komponenter). tsc 0 via projektbinär (exit 0 — ALDRIG npx, ALDRIG bygge, prod-synken äger). Kvar på disk för nästa verifierare: ~30 äldre modultesters L01-harmonisering till 50-läget (kanda-bördan) + u1:s skugga. R2 orörd · data/blogg/ orörd · INGET bygge. [fabrik]
 
+
+## Våg spår 6 omgång 22 — s6-u2 RISKBUDGET-LAGRET (manifest auto-s6-1789791914561, 2026-09-19)
+
+AI-Mentorn +2 förhandsfrågor, RISKHANTERING & PORTFÖLJTEORI fullt länkad
+7/13 → 13/13: volatilitetsbudgeten (rp-04 primär — risken som BESLUT:
+12 %-budgeten ⇒ 65,7/34,3-kronor, riskkronorna 97/3 via kvadratlagen,
+driftssvängen 18→24 % ⇒ 15,90 % ⇒ återförd 48,3/51,7) + sortino/calmar
+(rp-02 primär — tretalet 1,00/1,43/0,80 mot spegeln 1,00/1,17/1,13: tre
+divisioner, tre vinnare). Sex mentorväglösa kurser aktiverade (rp-01..04,
+km-017, km-031); källmärkningen bär kursernas egna övningstal. Regressionstest
+21/21, kedjan 180/0, huvudtest 26/26 (E01 440), tsc 0, inget bygge.
+Dokumenterad gräns: «riskbudgeten» (bestämd form) är ekosystemdjupets
+fuzziga territorium («röstbudgeten», tavstånd 2) — kärnordet bärs endast
+obestämt. BASF-bokföring: commit:n bär syskonens konvertibel (u1, 21/21),
+faktordjup (u1, 36/36) och bokmastar (u3, 25/25) — widgetens import kräver
+dem för tsc-korherens; fönstrets harmonisering (komponentlistor + K03
+432→440 + tillväxtdjup A2) betalades gemensamt på disken.

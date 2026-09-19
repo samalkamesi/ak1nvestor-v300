@@ -579,15 +579,18 @@ const GAMLA = [
   );
 }
 
-// ── FALL K: register-läge — 432 kurser (spår 5:s omgång-17-rebake) ──────────
+// ── FALL K: register-läge — 440 kurser (spår 5:s omgång-18-rebake) ──────────
 {
+  // 2026-09-19: 432 → 440 av spår 5 omgång 18 (ib-04, roic-04) — s6-u3
+  // omgång 22:s fönster bär botet (KVD-fyndet kvarstår: hårdkodade register-
+  // lägen åldras med varje spår-5-rebake; basotestet E01 förblir grinden).
   // 2026-09-18: 402 → 408 av spår 5 omgång 13 (st-05, ma-04, roic-02, mt-05,
   // ma-03-realrantan, od-04) — harmoniskt uppdaterat av s6-u1 omgång 16:s
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 432 kurser (spår 5:s omgång-17-rebake 2026-09-18; basotestet E01 grönt)",
-    KURSREGISTER.length === 432,
+    "K03 register-läge — 440 kurser (spår 5:s omgång-18-rebake 2026-09-19; basotestet E01 grönt)",
+    KURSREGISTER.length === 440,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -620,6 +623,12 @@ const GAMLA = [
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
   "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22:s fönster (dubbeldispatchad u1-instans faktordjup FÖRE bokmastar,
+    // sedan s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

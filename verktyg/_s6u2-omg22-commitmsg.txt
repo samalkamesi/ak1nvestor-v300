@@ -1,0 +1,50 @@
+studio: auto s6-u2 RISKBUDGET — AI-Mentorn +2 förhandsfrågor (volatilitetsbudgeten + sortino/calmar), RISKHANTERING & PORTFÖLJTEORI fullt länkad 7/13 → 13/13 [fabrik]
+
+MIN LEVERANS (s6-u2, manifest auto-s6-1789791914561, omgång 22):
+- src/lib/ai-mentor-riskbudget-fragor.ts — kedjans 49:e motor, 2 monsters:
+  1) VOLATILITETSBUDGETEN (rp-04 primär, Intermediär 24 min; källor rp-03
+  riskparitet + rp-01 riskmåttens karta + km-017 position sizing) — risken
+  som BESLUT: budgettalet 12 % i fredstid, ekvationen 10w² − 2w − 3 = 0 ⇒
+  roten 0,6568 ⇒ 65,7/34,3 i kronor med kontrollen 139,76 + 4,24 = 144,00;
+  kvadratlagen 3:1-vol ⇒ 9:1-varians ⇒ riskkronorna 97/3; driften 18 → 24 %
+  pressar till 15,90 = 32,5 % över taket ⇒ återförd vikt 17w² − 2w − 3 = 0
+  ⇒ 48,3/51,7 (kontroll 134,38 + 9,62 = 144,00).
+  2) SORTINO OCH CALMAR (rp-02 primär; källor rp-01 + km-031 VaR) — kursens
+  exempelportfölj 12,0/2,0/10,0/7,0/15,0 ⇒ Sharpe 1,00 · Sortino 1,43 ·
+  Calmar 0,80; spegelportföljen 9,0/7,0/6,0/8,0 ⇒ 1,00/1,17/1,13 — tre
+  divisioner, tre vinnare på samma två portföljer; √12 ≈ 3,46 årsband.
+  KÄLLMÄRKNING: kursernas EGNA övningstal (rp-04/rp-02 i data/kurser-tillagg/),
+  flerkällsformat 📖 Källor (4)/(3), 3 kurslänkar + fordjupa per svar.
+- AKTIVERAR 6 mentorväglösa kurser — kategorins hela lösa block: rp-04, rp-02
+  primära + rp-01, rp-03, km-017, km-031 källor ⇒ RISKHANTERING & PORTFÖLJTEORI
+  13/13 (register 440 kurser, sonden räknade 273 nådda/167 lösa före).
+- verktyg/testa-ai-mentor-riskbudget.mjs — regressionstest 21 PASS 0 FAIL:
+  A/A2/B/C/D01/D02/D03 (18 oberoende aritmetikkontroller)/E/F/G/G2/H/J/L.
+- SOND (två ronder, _s6u2-sond-omg22.mjs + kand/kand2/ord-JSON, otrackade):
+  kandidatfrågorna NULL genom kedjan; kärnordsgrannar 0 — DÖDADE som kärnord:
+  kelly/position sizing/value at risk (basens), riskparitet (portföljbalansens),
+  sharpe-kvoten (riskmåttsdjupets), naket volatilitet/risk (basens) — deras
+  kurser bärs ENDAST som källor enligt V19, deras frågor som knappar.
+  DOKUMENTERAD GRÄNS: «riskbudgeten» (bestämd form) fångas fuzzigt av
+  ekosystemdjupets «röstbudgeten» (tavstånd 2, de ligger FÖRE i kedjan) —
+  kärnordet bärs ENDAST som «riskbudget» (tavstånd 4, säkert båda vägar);
+  testfallen G/G2 vakar gränsen.
+- KADA-BÖRDAN: svaraLokaltRiskbudget i modultesternas komponentlistor +
+  K03-registerlägena 432→440 (warrant, avkastningskurva — spår 5:s
+  omgång-18-rebake) + tillväxtdjup A2-positionens omankring.
+
+BASF-BOKFÖRING (fönstret konvergerade i arbetsytan före min commit —
+widgetens kedj import kräver syskonmodulerna för tsc-korherens, därför
+bär denna commit deras filer; deras leveranskvitton bärs av deras egna
+tester som alla körs GRÖNA här): u1 konvertibel (ai-mentor-konvertibel-
+fragor.ts + test, 21/21; lager 48) + u1 faktordjup (ai-mentor-faktordjup-
+fragor.ts + test, 36/36; lager 50) + u3 bokmastar (ai-mentor-bokmastar-
+fragor.ts + test, 25/25; lager 47) — harmoniseringen av deras komponenter
+i modultestlistorna utfördes av fönstrets agenter gemensamt på disken.
+
+SLUTLÄGE: hela mentorsviten GRÖN (riskbudget 21/21 · kedjan 180/0 ·
+huvudtest 26/26 med E01 registeräkthet 440 · samtliga modultester 0 FAIL),
+tsc 0 (projektbinär), INGET bygge (prod-synken äger), R2 orörd, inga
+priser/tier/publicering, data/blogg/ orörd.
+
+LEVERANS: src/lib/ai-mentor-riskbudget-fragor.ts, verktyg/testa-ai-mentor-riskbudget.mjs, verktyg/_s6u2-sond-omg22.mjs, data/vakten/auto-s6-1789791914561-s6-u2-ansprak.md

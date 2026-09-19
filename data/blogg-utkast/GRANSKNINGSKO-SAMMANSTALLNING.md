@@ -14,18 +14,18 @@
 
 Fullständig rapport med NOT-tolkningar: [granskning/ar-spegling-ar1-ar5-KONTROLL-2026-09-19.md](./granskning/ar-spegling-ar1-ar5-KONTROLL-2026-09-19.md). **Publicering = kundens beslut (R2)** — fem nya arabiska guider klara att publiceras som grupp eller styckvis.
 
-## m9 evergreen-serien (6 utkast — 3 granskade FLYTTKLARA, 3 väntar granskning)
+## m9 evergreen-serien (6 utkast — SAMTLIGA granskade FLYTTKLARA, familjen komplett 2026-09-19)
 
 | # | Fil (m9-ko/) | Serie | KVD-dom | Not |
 |---|---|---|---|---|
 | m9-2 | utdelningar-101-v1.json | Utdelningar 101 | **FLYTTKLAR** (KONTROLL 2026-09-16, fabrik auto-s1-u1) | 74 kontroller 0 fel · dubbelriktat determinismbevis · F1-rättningen verifierad |
 | m9-6 | vagkartan-traffprocent-v1.json | Vågkartan — träffprocent 52 % | **FLYTTKLAR** (KONTROLL 2026-09-16) | 0 nya rättningar |
 | m9-3 | kassaflodesanalys-101-v1.json | Kassaflödesanalys 101 | **GRÖN — FLYTTKLAR** (oberoende, rond 101) | 26 kontroller 0 fel: samtliga tal omräknade mot md5-exakt original (f3f56268) · juridikgrind 0 träffar — [KONTROLL](./granskning/kassaflodesanalys-101-KONTROLL-2026-09-19.md) |
-| m9-1 | boerspsykologi-fallstugor-v1.json | Börspsykologi: fallstudier | väntar granskning | våg 208 del 2 |
-| m9-4 | branschmedianer-akm2-v2.json | Branschmedianer — AKM2-profil | väntar granskning | version 2 · våg 208 del 2 |
-| m9-5 | forskningslaget-grona-av-100-v1.json | Forskningsläget — gröna av 100 | väntar granskning | våg 208 del 2 |
+| m9-1 | boerspsykologi-fallstugor-v1.json | Börspsykologi: fallstudier | **GRÖN — FLYTTKLAR** (oberoende, rond 102) | 11 kontroller 0 fel: totalt-block 52 %/48/20 exakt · vågklasser exakta · sannolikhetsaritmetik 25 %/0,02 % verifierad · protokollcitat ordagrant i källan |
+| m9-4 | branschmedianer-akm2-v2.json | Branschmedianer — AKM2-profil | **GRÖN — FLYTTKLAR** (oberoende, rond 102) | 25 kontroller 0 fel: tio branscher median+spridning (20 värden) samtliga exakta mot korstabellen · v2 (v1 supersederad) |
+| m9-5 | forskningslaget-grona-av-100-v1.json | Forskningsläget — gröna av 100 | **GRÖN — FLYTTKLAR** (oberoende, rond 102) | 13 kontroller 0 fel: statusfördelning 7/76/17/0 exakt · tre gröna toppbolag verifierade · regimslutet internt konsistent — [KONTROLL](./granskning/boerspsykologi-branschmedianer-forskningslaget-KONTROLL-2026-09-19.md) |
 
-Källunderlaget (bolagsunivers 100 bolag, hämtat 2026-09-03) är md5-låst i respektive kvitto och återvinnbart ur git — utkasten redovisar urvalsberoendet öppet i texterna. **Publicering = kundens beslut (R2)** — de tre FLYTTKLARA kan publiceras styckvis eller som grupp.
+Källunderlaget (bolagsunivers 100 bolag, hämtat 2026-09-03) är md5-låst i respektive kvitto och återvinnbart ur git — utkasten redovisar urvalsberoendet öppet i texterna. **Publicering = kundens beslut (R2)** — samtliga sex FLYTTKLARA, styckvis eller som grupp. Fullständiga rapporter: [kassaflödesanalys-KONTROLL](./granskning/kassaflodesanalys-101-KONTROLL-2026-09-19.md) · [trippel-KONTROLL](./granskning/boerspsykologi-branschmedianer-forskningslaget-KONTROLL-2026-09-19.md).
 
 ## Kvartalsrapportsserien
 

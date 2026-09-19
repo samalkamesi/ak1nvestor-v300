@@ -68,7 +68,11 @@ if [ "${GRANSSNITT_TORRKORNING:-}" = "ja" ]; then
 fi
 
 # Vakten: båda teman × mobil + dator mot LOCALHOST (egen loopback).
-node verktyg/granssnittsvakt.mjs \
+# o85 (s8-vakt): GRANSSNITT_VAKT_KOMMANDO — svit-ägd överridning av själva
+# vaktkörningen (o72 §5.2:s krav på testbar vaktkörningsväg: sviten mochar
+# vaktens UTdata och påstår wrapperns loggklass); skarp cron använder default.
+VAKT_KOMMANDO="${GRANSSNITT_VAKT_KOMMANDO:-node verktyg/granssnittsvakt.mjs}"
+$VAKT_KOMMANDO \
   --bas="http://localhost:3000" \
   --tema=bada \
   --skarmvagnar=390x844,1280x800 \
@@ -81,7 +85,29 @@ ls -1t "$RAPPORTKATALOG"/vaktkrasch-*.txt 2>/dev/null | tail -n +31 | xargs -r r
 tail -200 "$LOGG" > "$LOGG.tmp" 2>/dev/null && mv "$LOGG.tmp" "$LOGG"
 
 if [ $KOD -eq 0 ]; then
-  echo "$STAMP GRÖN — 0 fynd" >> "$LOGG"
+  # o85 (s8-vakt): ärlig loggklass — exit 0 betyder INTE alltid mätt.
+  # Vakten har tre exit-0-lägen (våg 142: driftavbrott larmar ej): fullt
+  # svep, UPPSKJUTEN (deploy höll låset 12 min — INGET mätt) och AVBRUTEN
+  # (deploy startade mitt i svepet — PARTIELLT mätt + journalfört). Före
+  # denna kur loggades alla tre som "GRÖN — 0 fynd" (bevis 2026-09-18T0717
+  # i cron.log: GRÖN-rad utan rapport/journal) — driftsläsaren trodde
+  # sajten mätverifierad när skyddet var av. Klassen läses ur vaktens EGEN
+  # utdata (senaste-korning.txt), aldrig ur gissade tidsfönster.
+  if grep -q 'GRÄNSSNITTSVAKTEN: UPPSKJUTEN' "$RAPPORTKATALOG/senaste-korning.txt" 2>/dev/null; then
+    echo "$STAMP UPPSKJUTEN — deploy pågår, inget mätt (exit 0; nästa cron-körning mäter)" >> "$LOGG"
+    exit 0
+  fi
+  if grep -q 'GRÄNSSNITTSVAKTEN: AVBRUTEN' "$RAPPORTKATALOG/senaste-korning.txt" 2>/dev/null; then
+    echo "$STAMP AVBRUTEN — deploy startade mitt i svepet, partiellt mätt + journalfört (exit 0; nästa cron-körning mäter klart)" >> "$LOGG"
+    exit 0
+  fi
+  if ! grep -q 'GRÄNSSNITTSVAKTEN:' "$RAPPORTKATALOG/senaste-korning.txt" 2>/dev/null; then
+    # Aldrig sedd i vilt läge (07:17-fallets klass): exit 0 UTAN vaktsvar är
+    # ett vakt-hälsoanomali — loggas ärligt, larmar ej (våg 142-doktrinen).
+    echo "$STAMP OVÄNTAD EXIT 0 utan vaktsvar — inget mätt, granska senaste-korning.txt (vakt-hälsa)" >> "$LOGG"
+    exit 0
+  fi
+  echo "$STAMP GRÖN — 0 fynd (fullt svep)" >> "$LOGG"
   exit 0
 fi
 
@@ -90,7 +116,11 @@ fi
 # env-filen (chmod 600) till en lokal variabel och loggas/ekkas ALDRIG.
 # (Nyckelnamnet sätts ihop i delar så ingen skanner ser ett värde i koden.)
 NYCKELN="ADMIN""_PASSWORD"
-ADMIN_PASS="$(grep -E "^${NYCKELN}=" /home/ak1a/AK1/.env.production.local 2>/dev/null | head -1 | cut -d= -f2- | tr -d '\"'"'"'')"
+# o85 (s8-vakt): GRANSSNITT_ENV_FIL — svit-ägd överridning (dummy-fil i tmp
+# ⇒ larmvägen testas utan att kunna nå skarp studio-stream); skarp cron
+# använder default.
+ENV_FIL="${GRANSSNITT_ENV_FIL:-/home/ak1a/AK1/.env.production.local}"
+ADMIN_PASS="$(grep -E "^${NYCKELN}=" "$ENV_FIL" 2>/dev/null | head -1 | cut -d= -f2- | tr -d '\"'"'"'')"
 SAMMANFATTNING="$(grep -A40 'GRÄNSSNITTSVAKTEN:' "$RAPPORTKATALOG/senaste-korning.txt" | head -45)"
 SESSION="$(curl -s -H "x-admin-password: $ADMIN_PASS" http://localhost:3000/api/studio/mal/status | sed -n 's/.*"sessionId":"\([^"]*\)".*/\1/p' | head -1)"
 

@@ -2404,3 +2404,21 @@ blad 10 födelsebevis 09-20 02:30 (formelns sjätte test, board 50 114) ·
 jungurkörningen 09-20 03:20. Protokoll:
 DR-OVNING-2026-09-19-FORMIDDAGSPULS.md + maskinellt AUTO-9 + JSON
 DR-RPO-DIFF-2026-09-19-FORMIDDAGSPULS{,-2}.json + PREDIKTION-json.
+
+
+## ROND 88 — FYNN F3-api dom: KURERAD-LIVE (2026-09-19 11:03–11:10 lokal, UTFALL: GRÖNT)
+
+- **Symptom** (FYNN): /api/studio/godkannande 500 två gånger + nätverksfel
+  på /api/studio/mal/status, /api/studio/session, /api/studio/tjanster/bakgrund.
+- **Mätning**: prod 200 båda baser; samtliga fyra rutter 401 o-auth (friskt
+  kontrakt) och 200 AUTHAT efter deploy 09:01:27Z (BUILD_ID
+  x1966Je1fB4eouYckWHNh, .next 09:01:22Z). Bygget bär ROND 87-kuren
+  bevisat: godkannande.ts blob ac447b98, rad 263 = (kandidater[0] ?? "").
+- **Dom**: symptomen äkta men tidsbestämda till FÖRE deployen. 500:an =
+  pushad-men-OBEYGGD kur (gap 10:28 lokal push → 11:01 lokal bygge,
+  bevisat i förrondens sond). Nätverksfelen = deployfönstrets transienter.
+- **Åtgärd**: ingen ny kur — deploy-kvittot som ROND 87 skrev ut på sig är
+  levererat; dom bokförd i feljakt-ledgern.
+- **Läxa**: "pushad kur är inte deployad kur" — live-kvitto mäts mot
+  BUILD_ID, aldrig mot commit-HEAD (andra bevisade fallet; första = våg
+  100-epoken).

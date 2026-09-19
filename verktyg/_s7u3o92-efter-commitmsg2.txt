@@ -1,0 +1,21 @@
+studio: auto s7-u3 prestandavåg o92 EFTER slutläge — speglarna + mobil + Lighthouse bokförda: /ar Δ−3 HELT GRÖN, /en marin = ny språkberoende rot, Lighthouse P57/LCP 5 034/TBT 860 (−50 %)/CLS 0, worklog + §5.5–§5.7 koposter
+
+Fullföljer dfea5391 (kärnbeviset /kurser −3 363 → −138 px, se där):
+- /ar/kurser desktop: Δ −3 px (mot −1 591 FÖRE kur) — dokumentkriteriet
+  |Δ| ≤ 50 UPPFYLLT; sidfooter −2, övriga ±0
+- /en/kurser desktop: Δ −527 px (mot −1 590); marin-panelen 1 008→484 =
+  −524 — NY FYNDROT: marinens verkliga sluthöjd SPRÅKBEROENDE
+  (/kurser 918 px vs /en 484 px) ⇒ kopost per-språk-kalibrering (§5.6)
+- mobil /kurser: kurens md+-block orör ej mobil-CSS; mätningen belyste
+  o91:s registerreservation 28rem/kort — överreserverar ~2,8k px på mobil
+  (verklig ~20,5rem/kort) ⇒ kopost (§5.7)
+- Lighthouse /kurser mobil: P57 · LCP 5 034 (+13,8 %, inom envelopen) ·
+  TBT 860 (−50 % mot FÖRE 1 712 — förbättring) · CLS 0 — ingen regression
+- gränssnittsvakten 11:25Z-löp: 0 fynd; nya byggets första vaktkörning
+  18:xxZ = bevakningspost till huvudagenten
+
+Protokoll: OPTIMERING/o92-prestanda-o78desktop-sektioner-s7.md §6 + §5.5–5.7;
+vittnen: blocksond-s7u3o92-efter-{desktop,-en,-ar,-mobil}.json +
+kurser-s7u3o92-efter.json + s7u3o92-efter-sammanfattning.json; worklog-rad.
+KVD: src/ orörd = inget bygge · R2 orörd · data/blogg/ orörd · tsc-grind
+passerad (baslinje 0) · syskons stageda ytor lämnade (explicit pathspec).

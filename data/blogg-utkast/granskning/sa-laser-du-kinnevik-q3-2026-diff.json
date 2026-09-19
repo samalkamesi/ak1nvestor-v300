@@ -1,0 +1,85 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-kinnevik-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-19, omgång auto-s1-1789854906402)",
+  "rapport": "sa-laser-du-kinnevik-q3-2026-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 123 maskinella kontroller gröna (universumfält 22 exakta mot både byggvintage 368b518c md5 800373ff (195 poster) och dagens 213-fil; medianer 18/18 EXAKTA mot vintagen med projektets mediankonvention + n-spann 162–195 precist; rang 8/8 inkl 'enda bolaget under boken' SANT och Nvidias 66,24 näst högst; aritmetik 50+ gröna inkl substansdetektiv 29,62/105,18/−1,7 %, rabatt två vägar 40,2/41,2, ROE-fönster −6,41 med gap 91,6/2,5 % i konsekvent konvention, PEG 7,83, FCF −5,29, kvoter 1,0139/0,9924/1,0100, NAV-trappans per-aktie-konsistens 5/5, scenarioruta 9/9, överföringsgrad 0,70, multipelövning båda vägar; kalender torsdag 15/10 med ordagrant bevis + syskonköns alla fem datumbärande; korsreferenser Telia/NP3/JPM-Visa/Iberdrola verifierade; juridikgrind REN enligt 2007:528 (1 lagrum, 10 kontexter nekande/neutrala); 911 = 0/6; länkar 20/20 interna 200 med FRITT deploylås + 2 externa 200 live; readingMinutes 5 = round(2 946/600)). Två B-fynd: antalsfelet 'grenens 14 övriga mätta' (vintagen mäter P/B för 14 TOTALT — PSNY null — alltså 13 övriga; rangkolumnens 'lägst av 14 mätta' är korrekt och motsäger radikalerna) och räknefelet '48 paket på disk'/'48 tidigare paket' (paketet är självt nummer 50, git-låst 50 filer i 368b518c; Getinge 49:e landade 5 minuter före — parallellfönstret). C-poster beslut/notiser.",
+  "anvandning": "Verkställ B-posterna exakt (sök/ersätt i angivet fält — samtliga gammalt-strängar maskinellt verifierade UNIKA i filen 2026-09-19). C1 är ett precisionsförslag; C2–C4 är notiser utan ändring (vintage-metoden: rätt inte till dagens universumfil). Originalet ändras av paketets ägare (s4) eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "description",
+      "gammalt": "medan grenens 14 övriga mätta bolag står över böckerna",
+      "nytt": "medan grenens 13 övriga mätta bolag står över böckerna",
+      "orsak": "Antalsfel (sondens enda röda): byggvintagen (195 poster) mäter P/B för 14 bolag TOTALT i tillväxtgrenen — PSNY/Polestar saknar fältet — alltså Kinnevik + 13 mätta kollegor. Paketets egen rangkolumn 'lägst av 14 mätta' är korrekt; antalsradikalen i urvalsretoriken krockar med den. Strängen verifierad unik"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "body (Urvalet, sista stycket)",
+      "gammalt": "tillväxtgrenens fjorton kollegor med mätt multipl står samtliga ÖVER bokfört eget kapital",
+      "nytt": "tillväxtgrenens kollegor med mätt multipl — tretton bolag, alla över 1:an — står samtliga ÖVER bokfört eget kapital",
+      "orsak": "Samma antalsfel i bodyn: fjorton kollegor finns i grenen (15 bolag) men bara 13 av dem har mätt multipl (PSNY null). Omskrivningen behåller kontrastens kraft med sann siffra. Strängen verifierad unik"
+    },
+    {
+      "id": "B2a",
+      "typ": "byt",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "body (Urvalet, första stycket)",
+      "gammalt": "Med 48 paket på disk gallrades fältet enligt etablerade precedenser",
+      "nytt": "Med 49 paket på disk gallrades fältet enligt etablerade precedenser",
+      "orsak": "Räknefel (parallellbyggandets blinda fönster, NP3 B3-klassen): paketet är självt 'seriens nummer 50' (ingressen; git-låst 50 sa-laser-du-filer i commit 368b518c) och Getinge (49:e) committades 05:14:44 — fem minuter före Kinneviks 05:19:36. Vid skrivandet fanns 49 paket på disk; 48:an är ett föråldrat räknetillfälle från underlagssamlingen. Byggarens egen worklog: 'Getinge-ordningen 49:e respekterad, detta = 50:e på disk'. Strängen verifierad unik"
+    },
+    {
+      "id": "B2b",
+      "typ": "byt",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "body (Datavakten, inledande rad)",
+      "gammalt": "med samma verktygslåda som i seriens 48 tidigare paket",
+      "nytt": "med samma verktygslåda som i seriens 49 tidigare paket",
+      "orsak": "Samma räknefel: nummer 50 i serien har 49 föregångare, inte 48. Gör ingressens 'nummer 50' konsekvent med resten av paketet. Strängen verifierad unik"
+    },
+    {
+      "id": "C1",
+      "typ": "forlag",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "body (Datavakten, test 5)",
+      "gammalt": "och talen bekräftar det inom en procent, tre gånger om",
+      "nytt": "och talen bekräftar det inom en och en halv procent, tre gånger om",
+      "orsak": "Precision: årskvotens underlagsavvikelse är 1,39 % (3 346 Mkr mot substansfallet 3 300 Mkr); kvoten 1,0139 avrundas till 1,01 men avvikelsen överskrider en procent. Halåret (0,76 %) och Q2 (1,00 %) håller. Titeln bär samma formulering som sammanfattning — kan lämnas om ägaren föredrar det; bodyn bör mäta sant. Strängen verifierad unik"
+    },
+    {
+      "id": "C2",
+      "typ": "beslut",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "Median-tabellen (Så står sig bolaget mot branschen)",
+      "notis": "Medianerna är korrekt daterade 'omräknade 2026-09-19 ur samma fil (195 poster)' men filen har vuxit till 213 poster efter bygget (v209-u3: ADYEN i tillväxt ⇒ grenens P/E-median 43,6 → 40,8, EBIT 12,1 → 14,7 enligt deras protokoll). Rättas INTE till dagens fil — Nordea-vintage-metoden: texten var sann mot sin vintage och låser sig via dateringen; aspektsidorna speglar nya medianer automatiskt. Dataägarens notis: nästa tillväxtspaket räknas på 213+-vindan",
+      "orsak": "Vintage-drift är dokumenterat, ej fel"
+    },
+    {
+      "id": "C3",
+      "typ": "beslut",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "body (Urvalet + Praktiskt: 'tillväxtgrenens första')",
+      "notis": "'Tillväxtgrenen har haft noll paket' var sant vid bygget 2026-09-19 morgon; Truecaller-paketet (TRUE-B.ST, grenens andra universumbolag) byggdes senare samma dag. Kinnevik förblir grenens FÖRSTA men inte ende — påståendet är tidsindexerat och lämnas orört (EVO/NP3-presedensen)",
+      "orsak": "Åldrande serieanspråk, korrekt vid leverans"
+    },
+    {
+      "id": "C4",
+      "typ": "beslut",
+      "fil": "sa-laser-du-kinnevik-q3-2026.json",
+      "falt": "title",
+      "notis": "313 tkn av kvartalsfamiljens tak 314 (NP3-mätningen 77–314) — grönt men ett steg under taket; nästa familjepaket bör inte pressa titellängden längre",
+      "orsak": "Inom praxis; taknotis"
+    }
+  ],
+  "konotiser": [
+    "Räknefönstret är en systemlucka: NP3 (ordinalklustret, tre syskon samma kväll) och Kinnevik ('48 paket' medan Getinge landade 5 minuter före) räknade serien ur underlagsfasen i stället för skrivögonblicket — byggprompten bör kräva diskräkning (ls + mtime) vid skrivning eller förbjuda seriekonventionella antal i parallella omgångar",
+    "Antalspåståenden ('N övriga mätta') ska härledas maskinellt ur vintagen — samma kur som superlativtestet (≥10 fynd i serien); denna sond mäter klassen, byggarnas KVD bör låna mätaren",
+    "Vintage-låsning är bolest: Kinnevik-redovisningen ('195 poster' + datering i källförteckningen) är rätt mönster — den gjorde B1 fällbar med exakt underlag",
+    "PEG-fältets fjärde tillstånd dokumenterat: Kinnevik 4,76 mot P/E null = seriens renaste multipel-utan-nämnare (efter NP3:s tre tillstånd) — dataägarens fältdokumentation bör föras med fallet",
+    "ADYEN-tillskottet ändrar tillväxtmedianerna (P/E 43,6→40,8, EBIT 12,1→14,7): Truecaller-paketet (tillväxt, byggt senare samma dag) bör granskas mot 213-vindan — nästa granskares notis"
+  ]
+}

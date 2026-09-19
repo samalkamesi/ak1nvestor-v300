@@ -209760,6 +209760,178 @@
     "grahamSection": "Benjamin Grahams krav på marginal genom räkning snarare än genom berättelse är kostnadsmoatens närmaste släktskap i den klassiska litteraturen: en kostnadsfördel som inte kan visas i tal var för Graham ingen fördel alls. Kursens fem mätfrågor är den tillämpade formen av den hållningen.",
     "ak1Section": "I AK1A:s metodik läses kostnadsöverlägsenheten som en av moatfamiljens källor vid sidan av de immateriella och nätverksbaserade: cykelprovet och botten-spridningen används som bakgrundstakt när bruttomarginalserier jämförs med branschens. Kursen bygger vidare på mt-01-vad-ar-en-moat till mt-05-byteskostnader-och-inlasning och möter mätningarna i v07-bruttomarginal och mt-03-vallgraven-i-siffror. Detta är utbildning, aldrig råd om placeringar."
   },
+  "mt-07-prisfullmakten": {
+    "slug": "mt-07-prisfullmakten",
+    "category": "MOAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Prisfullmakten — moatens ultimata test",
+    "summary": "MOAT-familjens sjunde steg och tredje Avancerad-kurs: moatens domslut. Familjens sex första steg mätte muren — begreppet, erosionen, siffrorna, födelsen, byteskostnaderna, kostnadsövertaget — men varje moatkälla är bara en väg till samma slutliga fråga: kan bolaget höja priset utan att förlora kunden? Kursens första verktyg är elasticitetstrappan: samma prishöjning 4 procent på tre bolag ger med noll volymrespons intäkten 1,04 × 1,00 = 1,0400, med volymrespons minus 1,5 procent intäkten 1,04 × 0,985 = 1,0244 och med minus 6 procent intäkten 1,04 × 0,94 = 0,9776 — och gränsfallet 1,04 × 0,96 = 0,9984 visar var varje priskrona börjar kosta mer än en volymkrona. Det andra verktyget är inflationsskärmningen: vid en kostnadskrock 10 procent på kostnadsbasen 60 kronor (intäkt 100, bruttomarginal 0,400) håller full genomsläppling marginalen 44/110 = 0,400, sjuttio procent ger 41/107 = 0,383 och noll ger 34/100 = 0,340 — inflationen blir moatens röntgen, chock för chock avslöjar vem som får betala notan, konkurrensen eller kunden. Signaturföretaget är påhittade Svea Kullager AB: lagret kostar 40 kronor och stoppar maskinen till 8 000 kronor per timme — 40/8 000 = 0,005, komponenten är en halv procent av felets timkostnad — vilket bär pristrappan 100 → 104 → 108 kronor utan volymförlust och marginalbandet 41–43 procent mot branschens 34–39 (bandbredd 43 − 41 = 2 mot 39 − 34 = 5). Fem falska prisfullmakter fälls: konjunkturtoppen, valutans falska prishöjning, kommoditeten, den långsamma smältan och engångsefterfrågan. Kursen kröns med sex mätfrågor som ersätter tyckandet. Genomgående utbildning i moatläsningens fullbordan, aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna elasticitetstrappan: prishöjningen 4 procent på tre bolag ger intäkten 1,04 × 1,00 = 1,0400 vid noll volymrespons, 1,04 × 0,985 = 1,0244 vid minus 1,5 procent och 1,04 × 0,94 = 0,9776 vid minus 6 procent — medan gränsfallet 1,04 × 0,96 = 0,9984 visar brytpunkten där priskronan kostar mer än volymkronan. Räkna elasticiteten som volymrespons delat med prisrespons: moat-bolaget bär 0/4 = 0, mellanbolaget 1,5/4 = 0,375 och det utsatta 6/4 = 1,5 — ett ställningstal som bara betyder något mätt över hela år, för volymen svarar långsammare än priset. Räkna inflationsskärmningen: kostnadskrocken 10 procent på basen 60 (intäkt 100, bruttomarginal 0,400) ger med full genomsläppling marginalen 44/110 = 0,400, med sjuttio procent 41/107 = 0,383 och utan genomsläppling 34/100 = 0,340, med genomsläpplingskvoten (107 − 100)/(110 − 100) = 0,7 — inflationen som moatens röntgen, i anslutning till km-055-inflation och mk-09-deflation-vs-inflation. Skilja källorna åt i hållbarhet: den kritiska komponenten (Svea Kullager AB: priset 40 kronor mot driftstoppets 8 000 kronor per timme, 40/8 000 = 0,005), varumärket och nätverket är tåliga, den exklusiva rättigheten har utgångsdatum enligt mt-02-moat-erosion-och-vallgravstest, och kostnadsövertaget enligt mt-06-kostnadsoverlagsenhet är en försvarsrörelse — förmågan att inte förlora kunder på pris, inte rätten att höja. Fälla de fem falska prisfullmakterna: konjunkturtoppen, valutan, kommoditeten, den långsamma smältan och engångsefterfrågan — alla visar marginalförbättring utan makt, och motgifvet är detsamma: volymrespons över en hel cykel, i fast valuta, mot branschens median enligt v07-bruttomarginal och ln-03-marginaltrappan-och-operativ-havstavng. Ställa de sex mätfrågorna till varje påstådd makt: prishöjningshistoriken, genomsläpplingsgraden, marginalbandets bredd, källan och dess utgångsdatum, byteskostnaden hos kunden samt det sökta motbeviset.",
+    "why": "MOAT-familjen bär sex steg — vad en moat är, hur den nöts, hur den mäts, hur den föds, hur byteskostnaderna håller kunden och hur kostnadsövertaget håller priset nere — men ingen fördjupning av den förmåga som hela familjen slutar i: prisfullmakten, Buffetts enklaste väg att väga ett bolag (höj priset och se vad som händer) och den enda moatvariabel där alla källor möts i ett enda test. Registret bär noll kursägande träffar på prisfullmakten eller prissättningsmakten; grannarna äger delarna — v13-patent-ip, v14-varumarke och v15-natverkseffekter källorna, mt-05-byteskostnader-och-inlasning gränsen, mt-06-kostnadsoverlagsenhet försvarssidan, v07-bruttomarginal måttet, tx-02-volym-pris-och-mix dekompositionen — men ingen äger mekaniken som helhet: elasticitetsmätningen, genomsläpplingsgraden och inflationsskärmningen. Familjen bär två Avancerad-steg och behöver det tredje som kröner trappan N1 I3 A3, precis som rp-04 krönte riskfamiljen och roic-04 lönsamhetsfamiljen. Prisfullmakten är moatläsningens fullbordan: den som kan väga den kan väga samtliga källor i samma vågskål — det är här den mest förbisedda muren syns: inte på produkten, bara i kundens fortsatta köp.",
+    "history": {
+      "origin": "Prisfullmaktens historia är äldre än ordet: skråtidens handelsmän visste att vissa varor kunde prissättas högre utan att köpmännen vände om, och järnhandlarna som ägde rätta verktygen och rätta kontakterna tog sitt pris. I den tidiga värdepappersanalysen fångades fenomenet indirekt som förmåga att bibehålla marginaler, men utan eget mått — orden position och rykte fick bära det som senare skulle kräva aritmetik.",
+      "evolution": "När konkurrensstrategin systematiserades på nittonhundratalets senare hälft fick prisfrågan sin ekonomiska form: priselasticiteten — volymens respons i procent på prisets rörelse i procent — blev det mätbara uttrycket för hur mycket marknaden tål, och mikroekonomin skilde prissättaren som möter hela efterfrågekurvan från pristagaren som möter sin egen lilla bit av den. Värdeinvesterarnas tradition förenklade mätningen till ett enda tanketest: höj priset i tanken och räkna kunderna som blir kvar — det som i praktiken blev familjens mest citerade nålsöga.",
+      "modern": "Idag läses prisfullmakten som moatanalysens sammanfattande dom: varje källa — immateriella rättigheter, varumärke, nätverk, byteskostnader, kostnadsläge — bedöms slutligen genom sitt bidrag till prissättningsutrymmet, och inflationsepoker blir dess naturliga laboratorium eftersom kostnadskrockarna tvingar fram svaret på vem som bär notan. För den som utbildar sig i bolagsanalys är kursen den disciplinerande slutstenen: den ersätter moat-impressioner med tre mätbara ställningstal — elasticiteten, genomsläpplingsgraden och marginalbandet — och lär det viktigaste av allt: att prövningen hör hemma i historik och räkning, inte i önskan om vad bolaget borde klara."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Domslutet — varje moat slutar i samma fråga",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Elasticitetstrappan — att mäta hur mycket priset tål",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Inflationsskärmningen — vem som betalar kostnadskrocken",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Källorna till makt — och deras olika hållbarhet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fem falska prisfullmakter",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mätinstrumentet — sex frågor som ersätter tyckandet",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Domslutet — varje moat slutar i samma fråga",
+        "minutes": 4,
+        "intro": "Familjens sex första steg har mött muren från var sitt håll: mt-01-vad-ar-en-moat ritade begreppet, mt-03-vallgraven-i-siffror mätte den, mt-05-byteskostnader-och-inlasning och mt-06-kostnadsoverlagsenhet visade två av dess klassiska källor. Detta steg ställer frågan som väger dem alla på en gång.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Börja i tanketestet som blivit familjens mest citerade nålsöga: föreställ att bolaget höjde sitt pris tio procent imorgon. Stannar kunderna? Om svaret är ja med bred marginal — då bär bolaget något av det värdefullaste en affär kan bära; om svaret är att hälften försvinner — då var murarna målade. Frågan är ett domslut därför att ingen moatkälla klarar sig undan den: patentet ger rätten att höja bara om kunden inte kan vänta ut skyddstiden, varumärket bara om betalningsviljan är äkta, nätverket bara om värdet växer för varje användare som i v15-natverkseffekter, byteskostnaden bara om friktionen vid byte överstiger prisskillnaden, och kostnadsövertaget bara om det ger utrymme i priset snarare än en plikt att sänka. Två konventioner håller testet ärligt. För det första är prisfullmakten en förmåga, inte en handling: bolaget som höjer girigt i varje kvartal sliter på kundlojaliteten och gräver sin egen erosion, se mt-02-moat-erosion-och-vallgravstest. För det andra är förmågan kollektiv snarare än obegränsad: även moat-bolag tävlar med varandra, och mätningen gäller marginalen mot konkurrenterna, inte segern över kunden för alltid. Kursens uppgift är att göra domslutet räkneligt: tre ställningstal — elasticiteten, genomsläpplingsgraden och marginalbandet — samt en katalog över förklaringarna som förkläder talet."
+          },
+          {
+            "type": "definition",
+            "content": "Prisfullmakt: förmågan att sätta priser något snabbare än kostnaderna stiger — och ändå behålla kunderna i volym. Moatens slutgiltiga test, eftersom varje enskild moatkälla bara är en väg till denna förmåga: immateriella rättigheter och varumärke skapar betalningsvilja, nätverk skaper beroende, byteskostnader skapar friktion, kostnadsövertag skapar utrymme. Mäts bäst i historik, inte i löften: prishöjningarnas antal, volymens respons och marginalens band mot branschens median över en hel cykel."
+          },
+          {
+            "type": "insight",
+            "content": "Priset är den enda variabel där hela moatkomplexet möts i ett enda experiment. Fem källor, en fråga — och det är just därför kursen ligger sist i familjen: den som kan väga prissättningsutrymmet behöver inte väga källorna var för sig, ty deras sammanlagda verkan visar sig redan i svaret. Den omvända vägen är också den mest ekonomiska analysresan som finns: ett enda välvalt prismönster i historiken ersätter timmar av produktbedömning."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Elasticitetstrappan — att mäta hur mycket priset tål",
+        "minutes": 4,
+        "intro": "Prisfullmakten har sitt eget ställningstal: elasticiteten, volymens respons i procent på prisets rörelse i procent. Trappan nedan låter tre bolag göra samma prishöjning — fyra procent — och visar hur skilt utfallen blir.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre bolag, samma prishöjning: fyra procent. Moat-bolaget förlorar ingen volym alls — intäkten blir 1,04 × 1,00 = 1,0400, hela höjningen faller igenom till intäkten. Mellanbolaget tappar 1,5 procent av volymen — intäkten 1,04 × 0,985 = 1,0244, fortfarande en vinst på prishöjningen men med en tyst avgift till konkurrenterna. Det utsatta bolaget tappar 6 procent — intäkten 1,04 × 0,94 = 0,9776, prishöjningen blev en förlustaffär. Och gränsfallet: den som tappar exakt 4 procent av volymen bär intäkten 1,04 × 0,96 = 0,9984 — minus 0,16 procent — den exakta brytpunkten där varje priskrona börjar kosta mer än en volymkrona. Elasticiteten sammanfattar trappan i ett tal: volymresponsen delat med prisresponsen. Moat-bolaget: 0/4 = 0. Mellanbolaget: 1,5/4 = 0,375. Det utsatta: 6/4 = 1,5 — och talet ett är alltså skiljelinjen mellan makt och utsatthet, motsvarande gränsfallets 0,9984 ovan. Konsten ligger i mätningen, inte i divisionen: volymen svarar långsammare än priset. En prishöjning kan se lysande ut i två kvartal medan kontrakt löper ut och inköpare byter leverantör i tysthet — därför mäts elasticiteten över hela år, gärna tre, och aldrig på säsongsdata. Detta kapitel är kursens första ställningstal; de två följande ger det dess tidsaxel och dess bandbredd."
+          },
+          {
+            "type": "tabell",
+            "content": "Bolag | Prishöjning | Volymrespons | Ny intäkt | Elasticitet\nMoat-bolaget | +4 procent | 0 procent | 1,04 × 1,00 = 1,0400 | 0/4 = 0\nMellanbolaget | +4 procent | −1,5 procent | 1,04 × 0,985 = 1,0244 | 1,5/4 = 0,375\nUtsatt bolag | +4 procent | −6 procent | 1,04 × 0,94 = 0,9776 | 6/4 = 1,5\nGränsfallet | +4 procent | −4 procent | 1,04 × 0,96 = 0,9984 | 1"
+          },
+          {
+            "type": "insight",
+            "content": "Tabellens dolda rad är tid: elasticiteten är ett läge, inte en ögonblicksbild. Det bolag som idag svarar 0 kan efter tre års höjningar börja svara 0,3 — kunderna bygger sina alternativ i bakgrunden, vilket är skälet till att pristrappor alltid ska läsas tillsammans med kundomsättningen. Omvänt kan ett utsatt läge bära sår från en äldre ordning: efter ett byte av leverantör eller en förnyad produkt kan samma bolag plötsligt svara 0,3. Mätningen belönar den som väntar ut svarsformen, inte den som läser första kvartalet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Inflationsskärmningen — vem som betalar kostnadskrocken",
+        "minutes": 4,
+        "intro": "Kostnadskrocken är prisfullmaktens tidsaxel: när kostnaderna på insatsvaror stiger tvingas varje bolag att svara, och svaret avslöjar maktens storlek. Kapitlet bygger det andra ställningstalet — genomsläpplingsgraden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta ett bolag med intäkt 100 kronor och kostnad 60 kronor — bruttomarginalen 40/100 = 0,400. Sedan kommer kostnadskrocken: tio procent på kostnadsbasen, det vill säga 60 + 0,10 × 60 = 66 kronor. Tre svar är möjliga. Full genomsläppling: priset till 110 kronor, marginalen blir 110 − 66 = 44 kronor och 44/110 = 0,400 — oförändrad, kunden bar hela notan. Delvis genomsläppling, sjuttio procent: priset till 107 kronor, marginalen 107 − 66 = 41 kronor och 41/107 = 0,383 — bolaget svalde en bit men behöll det mesta; genomsläpplingskvoten är (107 − 100)/(110 − 100) = 0,7. Noll genomsläppling: priset kvar på 100, marginalen 100 − 66 = 34 kronor och 34/100 = 0,340 — sex procentenheter av marginalen försvann på en enda krock, och konkurrensen åt notan. Här möter kursen penningvärdets grannar km-055-inflation och mk-09-deflation-vs-inflation: inflationsepoken är prisfullmaktens laboratorium, ty den återkommer — och en marginal som pressas sex procentenheter per krock överlever inte många krockar. Skärmningens räkneliga sanning är alltså tvång: bolag utan genomsläppling tvingas antingen hitta kostnadsbesparingar av mt-06-kostnadsoverlagsenhet-kaliber eller se marginalerna smälta. Den som vill läsa vidare i marginalernas anatomi möter v07-bruttomarginal och ln-03-marginaltrappan-och-operativ-havstavng; detta kapitel bidrar med själva skärmningsmåttet och dess spektrum i tre lägen."
+          },
+          {
+            "type": "tabell",
+            "content": "Svar på krocken +10 procent | Nytt pris | Ny marginal | Genomsläppling\nFull prisfullmakt | 110 kronor | 44/110 = 0,400 | 1,0\nDelvis makt | 107 kronor | 41/107 = 0,383 | 0,7\nUtan makt | 100 kronor | 34/100 = 0,340 | 0,0"
+          },
+          {
+            "type": "insight",
+            "content": "Genomsläpplingsgraden är den mest ärliga av moatmätningarna eftersom den inte kan väljas i efterhand: kostnadskrocken kommer när den kommer, bolagets svar blir historik, och historiken kan läsas. Läsningen sker parvis — samma krock, samma bransch, olika svar — och skillnaden mellan 1,0 och 0,0 på en tioprocentig krock är skillnaden mellan en moat och en prisbonde. Vänta dock ut två krockar: den första kan överraska ett annars starkt bolag med föråldrade prislistor, den andra visar om lärdomen satt."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Källorna till makt — och deras olika hållbarhet",
+        "minutes": 4,
+        "intro": "Varför svarar vissa kunder 0 på en prishöjning som andra svarar −6 på? Kursens signaturföretag — påhittade Svea Kullager AB — bär den vanligaste och mest förbisedda av förklaringarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Svea Kullager AB sätter sina kullager till 40 kronor styck. Lagret sitter i maskiner vars driftstopp kostar 8 000 kronor per timme — och därmed är 40/8 000 = 0,005: lagrets pris är en halv procent av felets timkostnad. Köparen som förhandlar hårt om 4 kronor lägger en timmes godkännandearbete på att spara en bråkdel av det en enda timmes stopp kostar. Detta är den kritiska komponentens logik: liten kostnad, stor konsekvens vid fel — släkt med byteskostnadens friktion i mt-05-byteskostnader-och-inlasning, men driven av konsekvens snarare än av omställning. Där ligger också grunden till bolagets pristrappa: 100 → 104 → 108 kronor under tre år (104/100 = 1,04 första året; 108/104 = 1,038 andra året) med obefintlig volymrespons — och i spegeln ligger marginalbandet: bruttomarginal 41–43 procent genom tio år medan branschmedianen svänger mellan 34 och 39 (bandbredden 43 − 41 = 2 mot 39 − 34 = 5). Katalogen fortsätter: varumärket enligt v14-varumarke skapar betalningsvilja som inte behöver förklaras; nätverket enligt v15-natverkseffekter gör produktens värde större för varje användare som tillkommer, vilket ger priset en kollektiv ryggrad; den exklusiva rättigheten enligt v13-patent-ip ger makt med utgångsdatum — när skyddet löper ut står priset naket mot kopiatorerna, se mt-02-moat-erosion-och-vallgravstest. Och en särskild varning för den vanligaste förväxlingen: kostnadsövertaget enligt mt-06-kostnadsoverlagsenhet är inte prisfullmakt. Det är en försvarsrörelse — förmågan att hålla priset nere och ändå tjäna, vilket ger överlevnad i priskrig men inte rätten att höja i lugnt väder. De båda möts först i den fulla bilden: det bästa läget är att bära båda, det vanliga är att bära en."
+          },
+          {
+            "type": "definition",
+            "content": "Prisfullmaktens källkatalog med hållbarhetsordning: den kritiska komponenten (litet pris mot stor felkonsekvens — tålig så länge produkten förblir kritisk), varumärket (betalningsvilja byggs under årtionden — tåligt men slits av girighet), nätverket (värdet växer med antalet användare — självförstärkande men sårbart för paradigmskiften), den exklusiva rättigheten (patent, licens, kvot — makt med utgångsdatum) och kostnadsövertaget (utrymme snarare än rätt — försvarsformen). Prisfullmakten själv är summan av källorna, inte någon av dem."
+          },
+          {
+            "type": "insight",
+            "content": "Kullagrets läxa generaliserar: fråga inte vad produkten kostar, utan vad den kostar när den felar eller byts. Komponenter under någon procent av kundens totala kostnad — men med kritisk funktion, lång godkännandeprocess eller djup inbakning — bär prissättningsutrymme som ingen produktbroschyr visar. Omvänt: den produkt som utgör kundens största kostnadspost kommer alltid att förhandlas hårt, vad än marknadsföringen säger. Priset är en andel, inte ett belopp — det är källkatalogens viktigaste ord."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Fem falska prisfullmakter",
+        "minutes": 4,
+        "intro": "Ingen moatyta förkläds så lätt som prisfullmakten, för marginalförbättringar ser alla ut som makt i backspegeln. Fem vanliga förklädnader, och deras gemensamma motgift.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första: konjunkturtoppen. Efterfrågeöverskott låter även prisbonde-bolag höja priserna — men det är bristens makt, inte bolagets, och den försvinner när cykeln vänder, se mk-056-konjunkturcykler. Den andra: valutan. Ett bolag som prissätter i dollar och rapporterar i kronor får en rapport där svag krona målas upp som prishöjning — men det är valutamarknadens gåva, ombytesbar till förlust när kronan stärks, se km-058-valutor och rk-07-valutarisk. Den tredje: kommoditeten. Vetepriset stiger — men veteåkern har aldrig bestämt vetets pris; bolaget ÄR priset, och dess enda väg till förtjänst är kostnadssidan, vilket är mt-06-kostnadsoverlagsenhet hela territorium, inte detta. Den fjärde och listigaste: den långsamma smältan. Prishöjningen genomförs, volymen svarar inte — i ett år, i två. På år tre börjar stora kunder följa avtalen ut, och först då syns den sanna elasticiteten: volymresponsen kom med eftersläpning, och den som mätte på ett år mätte på tystnad. Detta är den kokande grodans mekanik på köpsidan. Den femte: engångsefterfrågan. Trängsel, brist, paniklager — perioden då alla tackar ja till alla priser, och som försvinner när läget normaliseras. Gemensam nämnare: alla fem visar marginalförbättring utan makt — notan betalades av omständigheterna, inte av bolagets ställning. Motgifvet är detsamma för alla fem: läs volymresponsen över en hel cykel, räkna i fast valuta och jämför med branschens median — v07-bruttomarginal ger marginalernas linjal, ln-03-marginaltrappan-och-operativ-havstavng trappans hantverk, tx-02-volym-pris-och-mix dekomponerar intäkten så att priset kan läsas rent från valutan och volymen."
+          },
+          {
+            "type": "insight",
+            "content": "De fem förklädnaderna har en systematik: de förväxlar ATT marginalen steg med VARFÖR den steg. Moatanget är en fråga om orsak — kundens fortsatta köp vid högre pris, från eget val — medan de fem falska svarar med omständigheters tillfälliga gåvor. Därmed blir den bästa enskilda filtreringen en motfråga: skulle marginalförbättringen finnas kvar om priset måste bäras av kunden ensam, i normala tider, i fast valuta, i konkurrens? Det som överlever den frågan är makt; det som inte gör det är väder."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mätinstrumentet — sex frågor som ersätter tyckandet",
+        "minutes": 4,
+        "intro": "Kursens verktyg samlas i sex frågor — tillräckligt få att minnas, tillräckligt skarpa att skilja makt från väder.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur många gånger har bolaget höjt sina priser de senaste tio åren — och vad hände med volymen efter varje höjning? Fråga två: när kostnadskrockarna kom, hur stor del släpptes igenom till kunden — vad blev genomsläpplingsgraden, mätt som i kapitel tre? Fråga tre: hur brett är bruttomarginalbandet mot branschens median — ett band på några procentenheter genom en hel cykel vittnar om ställning, ett som svänger med konjunkturen vittnar om dess frånvaro. Fråga fyra: vilken källa bär makten — den kritiska komponenten, varumärket, nätverket, rättigheten eller kostnadsläget — och har källan utgångsdatum? Fråga fem: vad kostar det kunden att byta, i pengar och omställning, enligt mt-05-byteskostnader-och-inlasning? Fråga sex — den som skiljer analytikern från anhängaren: vad skulle få kunden att ändå gå? Om svaret är ett konkret alternativ som väntar på att bli billigare eller bättre är makten lutande; om svaret måste uppfinnas för att frågan ska tystas är den sannolikt starkare än berättelsen om den. Sex frågor, tre ställningstal, en källkatalog och fem förklädnader — det är instrumentet. Kursen därmed kröner familjens trappa: från mt-01-vad-ar-en-moat begreppet, via mt-03-vallgraven-i-siffror mätningen, till det test där samtliga källor möts. Detta är utbildning i att läsa bolag, aldrig råd om placeringar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Din utmaning bär hem kursen till vardagen: välj en produkt du själv köper varje vecka och spåra dess pris i tre år — i butikshyllan, inte i index. Notera när priset rörde sig, vad som hände med paketets storlek, innehåll och hyllplats, och hur ditt eget köp svarade. Frågan du bär med dig är kursens hela kärna: när priset steg — vem betalade, vem förhandlade, vem bytte? Svaret talar om vem som bar prisfullmakten i den lilla värld du kan observera bättre än någon analytiker: din egen. Metoden är densamma som för ett börsnoterat bolag — bara skalan är mindre."
+          },
+          {
+            "type": "insight",
+            "content": "Prisfullmakten är moatläsningens fullbordan av ett skäl som är värt att bära med sig: den är den enda moatvariabel som varje människa redan har en intuitiv förståelse för, ty alla har varit kunden som stannade — eller gick. Kursens gåva är att flytta den intuitionen från hyllan till årsredovisningen: att se köparens eget val i en marginalvands bandbredd. Den som behärskar det översättandet har familjens alla steg i en enda fråga — och det är moatens slutliga domslut."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch höll tidens enklaste moattest nära hjärtat: gå in i butiken, köp det du alltid köper, och lägg märke till priset — de bolag som tyst höjde sina priser utan att köarna försvann var, i hans värld, bättre affärer än alla berättelser om nya produkter. Hans förkärlek för tråkiga bolag med trogna kunder är prisfullmaktens födelsehem i praktiken: makten bor ofta i det ingen notifierar.",
+    "grahamSection": "Benjamin Graham skulle ha tvekat inför ordet makt men inte inför mätningen: hans krav var att varje påstådd fördel skulle visa sig i tal som kunde granskas oberoende. Kursens tre ställningstal — elasticiteten, genomsläpplingsgraden och marginalbandet — är i den bemärkelsen Graham-arbeten: var och en ersätter en berättelse med en kurva, och ingen av dem kan önskas fram.",
+    "ak1Section": "I AK1A:s metodik läses prisfullmakten som moatfamiljens samlande test: vid sidan av källkurserna v13-patent-ip, v14-varumarke och v15-natverkseffekter samt familjens egna steg mt-01 till mt-06 används genomsläpplingsgraden som bakgrundsmått när marginalserier tolkas mot branschens. Kursen bygger vidare på mt-03-vallgraven-i-siffror och möter mätningarna i v07-bruttomarginal samt dekompositionen i tx-02-volym-pris-och-mix. Detta är utbildning, aldrig råd om placeringar."
+  },
   "kt-01-vad-ar-en-katalysator": {
     "slug": "kt-01-vad-ar-en-katalysator",
     "category": "KATALYSATOR",

@@ -2461,3 +2461,26 @@ enligt mall (blad+pid+ms) · flock-låsfil kvar i viloläge (enligt c3b871f7).
 pre-commit-grinden) · R2 orörd · data/blogg/ orörd · data/backups/ endast
 läsning · syskonytor orörda. Nästa kvartalsövning: **senast 2026-12-19** —
 `node verktyg/dr-ovning.mjs`.
+
+
+## S10-U2 — SKRAPFILTERGAP: ROND 96:s "prod-yta ren" korrigerad — 748 trackade fabriks-skrap arkiverade ur trädet (2026-09-19 16:48–17:0x lokal, GODKÄNT)
+
+Sent omstarts-dispatch av vakt 2/3 (orderns restore-kärna var 3× levererad:
+AUTO-11/12 + KEDJA-0 commit 90a58f89 — duplikat avstått, se
+DR-ARKIVSVEP-2026-09-19-TRACKADE-VERKTYG.md §1). Vaktmätnigen fann istället
+ett mätbart fel i städ-kedjan: ROND 96 arkiverade 456 **ospårade** (untracked)
+skrapfiler och claimade "prod-yta REN" — men **748 trackade** fabriks-skrap
+(committade in av barnen) + 1 ny låg kvar i verktyg/ (vissa föregick svepet
+med dagar; git ls-files är beviset). Rotorsaka: ren-yta-grinden läser
+git-status-vyn (ser bara untracked) medan barnen commitar in sina commitmsg-/
+sond-filer skrivna i repot. KUR (reversibel, ROND 96:s arkivmönster): git rm
+--cached 748 (51 748 rader ur indexet, historiken orörd) + node-flytt av
+samtliga 749 till data/vakten/skrap-arkiv/2026-09-19-trackade-verktyg-post-r96/
++ manifestpost i manifest.jsonl — verktyg/ nu 0 _-filer; inga beroenden
+(inget levande skript/cron ropar _-filer; offsite-taren berörs ej). Oberoende
+PG-eftermätning: 17/main **down** · base endast OID 1/4/5 · pgsql_tmp tom ·
+felloggar enligt mall (6× blad + 3× appdump) · flock-låsfil viloläge. Köpost
+till ROND 97+: ren-yta-grinden måste räkna TRACKADE _*-skrap (git ls-files),
+och fabrikens commitmeddelandefiler hör hemma i /tmp — annars föds gapet om.
+KVD: src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonleveranser
+orörda. Protokoll: data/forskning/DR-ARKIVSVEP-2026-09-19-TRACKADE-VERKTYG.md.

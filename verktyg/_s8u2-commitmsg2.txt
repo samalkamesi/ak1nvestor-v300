@@ -1,1 +1,0 @@
-studio: auto s8-u2 o47-tillägg: läkningsförloppets status — trigger-commit 6a1744fe landad men synkens rop 11:57:28Z köade bak VÄNTAR-RAM (872 MB < 2200; fabrikens barn ~2,5-3 GB enligt 0,8 GB/agent-kalkylen), bygget startar automatiskt när omgångens syskon frigör minne; nästa vakt: verifiera DEPLOYAD-rad + /kurser 200 (o47 §3 statusavsnitt) [fabrik]

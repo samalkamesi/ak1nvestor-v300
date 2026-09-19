@@ -1,9 +1,0 @@
-studio: auto s7-u1 o71 EFTER-kvitto — trädbantningen prod-bevisad: strukturkriterier GRÖNA (deploy 17:00:17Z, BUILD_ID GGTtGZ…, prod 200 ×3)
-
-DEPLOY: prod-synken "DEPLOYAD automatiskt: 2 commits (18c2d747)" kl 17:00:17Z; BUILD_ID lUhACo→GGTtGZAGF7NvpxDI9_1Zk; prod 200 ×3 (/, /kurser, /blogg) egen-verifierad 17:02:20Z.
-
-EFTER (Lighthouse /, SEQ-grind chrome=0, load 0,77 = nästan solo): P58 · FCP 1,6 s · LCP 5 370 · TBT 791 · CLS 0. STRUKTURFACIT lastokänsligt + grep-bevisat: (a) SektionVidarebefodran i egen chunk 1kjhlplguxcaa.js — EJ i initial load; spa-hem-chunken bantad 13,0→12,4 KiB; (b) RefMottagare = egen chunk 1xqabq2g6iaq4.js (saneraRefKod + "väns tips"), hämtas vid 564 ms — EFTER det kritiska fönstret (sista kritiska chunken slut 335 ms), mount-tidpunkt exakt enligt design (SSR=null-kontraktet bevarat); requests 18→19, total transfer 274→275 KiB.
-
-ÄRLIGHET: FÖRE mätt i load 3,7–4,1 (syskonkull) vs EFTER 0,77 — CPU-tal icke-attribuerbara: TBT 7 893→791 bär lasten + omgångens tidigare kuror; mikrokurens EGEN vinst är strukturplanet (~1,9 KiB ur kritisk bunt). ScriptEval 6 656→2 197 med samma band; solo-TBT 792 mot o54-referensens 1 397 noteras som omgångens samlade effekt.
-
-Protokoll OPTIMERING/o71 §4 = BOKFÖRD; o54 §6-köposten STÄNGD (sondens negativa resultat: inga fler SearchModal-kandidater i spa-hem-kedjan — allt återstående är SSR-/ramverks-/designbundet). R2 orörd; data/blogg/ orörd. [fabrik]

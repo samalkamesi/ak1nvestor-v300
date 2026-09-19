@@ -1,0 +1,57 @@
+{
+  "typ": "DR-prediktion (förregistrerad FÖRE mätning)",
+  "ovning": "DR-OVNING-2026-09-19-DAGFONSTER",
+  "agent": "s10-u3 (manifest auto-s10-1789802729714, spår 10 vakt 3/3)",
+  "låst": "2026-09-19T07:29:30Z (09:29:30 lokal)",
+  "ansprakDiskForst": "data/vakten/auto-s10-1789802729714-s10-u3-ansprak.md",
+  "objekt": "u1:s köpost 3 från GRYNINGSPULS: dagpunkts-RPO med klockformeln som prediktor — första dagtidsfönstret med förregistrerad formelprediktion",
+  "bas": {
+    "blad": "db-2026-09-19.sql.gz (dump 2026-09-19 02:30 lokal)",
+    "publicTotal": 1325919,
+    "board_decisions": 49346,
+    "section_data_snapshots": 1233420,
+    "organ_health_logs": 3024,
+    "kalla": ["GRYNINGSPULS §3-5", "DR-PROV-2026-09-19-AUTO-3"]
+  },
+  "prediktioner": {
+    "P1": {
+      "text": "board_delta = 8 × antal kvarsmarkörer i fönstret 02:30→mät-T; mät-T ≤09:45 ⇒ 28 markörer (02:45…09:30) ⇒ +224; 09:45–10:00 ⇒ +232",
+      "grund": "klockformeln board_delta = 8 × kvarsmarkörer (GRYNINGSPULS §5), aldrig dagtestad",
+      "primar": 224
+    },
+    "P2": {
+      "text": "klockformeln håller också på dagtid — dagtakt ≈ nattakt 32 r/h; u1:s 'snabbare på dagen' förkastas om delta = 8×markörer",
+      "grund": "DAGPULS 31,0 r/h ≈ 32 r/h natt; om överskott: leta styrelserond-koppling"
+    },
+    "P3": {
+      "text": "section_data_snapshots levande = 1 252 404 (+18 984 exakt — 08:00-pumpen DAG 4). Alternativ: +0 om pumpen är nattlig 02:30",
+      "grund": "pumpkontraktet +18 984/dygn kl 08:00 (DAGPULS §2); testar u1:s blad-10-prediktion en dag tidigt",
+      "primar": 1252404
+    },
+    "P4": {
+      "text": "organ_health_logs +1…+15 (dagpuls; DAGPULS-episoden +12), primär +3 → 3 027",
+      "primar": 3027
+    },
+    "P5": {
+      "text": "totalt RPO-delta primär +19 211 (+224 +18 984 +3); band 19 209–19 223",
+      "primar": 19211
+    },
+    "P6": {
+      "text": "restore-radkontrakt EXAKT fjärde gången: public 60/1 325 919 · +storage 68/1 326 055 · alla scheman 99/1 326 315"
+    },
+    "P7": {
+      "text": "RTO dagläge 10–18 s, primär 12,5 s",
+      "grund": "DAGPULS 12,9 s dagläge; blad 9-serien 12,1/12,2/12,5 natt"
+    },
+    "P8": {
+      "text": "fellogg 788 kända/0 okända · ~34 881 B byte-identisk fjärde gången"
+    },
+    "P9": {
+      "text": "PG efter: 17 main down · base ENDAST OID 1/4/5 · WAL pg_wal 481 MB (serie-låget)"
+    },
+    "P10": {
+      "text": "2–4 tabeller i rörelse av 60, inga negativa delta, inga tillkomna/borttappade"
+    }
+  },
+  "lagsAttBryta": "Prediktionerna FÅR EJ justeras efter mätning — misses bokförs ärligt med rotorsak (u1:s P1/P2-läxa)."
+}

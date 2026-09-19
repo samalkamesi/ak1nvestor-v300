@@ -1,0 +1,25 @@
+{
+  "kurs": "v19",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Kassatäckningen räknas som kassa ÷ månadsförbrukning. Förklara för dig själv frågan indikatorn svarar på: hur länge räcker pengarna om inget förändras?\n2. Indikatorn kallas brutal: den ignorerar tillgångar, orderböcker och löften. Varför är det en styrka i just detta mått — och vad är ett löfte värt i kassaräkningen?\n3. V19 är den enda KRITISKA riskindikatorn i AKM1 och den enda med en hård port. Beskriv med egna ord vad som händer när kassatäckningen sjunker under tolv månader.\n4. Varför beskrivs nyemissionsrisken som en klocka som slår nedåt snarare än en svag egenskap — och vem betalar notan genom utspädningen?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka rader behöver du i balansräkningen (kassa och bank + kortfristiga placeringar) — och vilken post i kassaflödesanalysen visar den löpande förbrukningen?\n2. Räkna efter metoden: negativt kassaflöde från den löpande verksamheten ÷ 12 = månadsförbrukning; sedan kassa ÷ månadsförbrukning = antal månader. Modellen sparar resultatet i fältet kassaManaderBurnRate.\n3. Not om kredittillgångar: outnyttjade kassakrediter förlänger täckningen. Varför skall krediten räknas som en separat rad — aldrig in i kvoten?\n4. Kontrollfrågan: är förbrukningen struktur (lön, lokal, utveckling) eller engång (juridisk process, omstrukturering)? Förklara varför porten lyssnar på strukturen."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Kontrollera läroboksexemplen: VPLAY B 6,8 månader, PSNY 15,2, PCELL 16 och Kinnevik B 813,5. Vilka av dem hamnar under den hårda porten vid tolv månader?\n2. VPLAY kallas portens barn: förklara varför finansieringsfrågan inte är 'om' utan 'när och till vilket pris' — och vad modellen gör med kompositen (takas till högst 45/100).\n3. PSNY och PCELL ligger i 12–18-månadersbandet med poäng 1. Beskriv läget: klart ovan porten men fortfarande beroende av kapitalmarknadens välvilja.\n4. Kinnevik-fallet är tolkningsvarningen: varför är 813 'månader' sant men meningslöst som överlevnadsmått för ett holdingbolag — och vad är kärnans proxy för lönsamma bolag (positivt kassaflöde 5 av 5 år ⇒ 5)?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Ögonblicksbild: brinntakten i dag säger inget om nästa beslut. Vad menas med att ett bolag kan halvera burn på ett styrelsemöte?\n2. Kassakredit är inte kassa: den förlänger överlevnaden men tillför skuld. Räkna efter varför den hör hemma som separat rad — aldrig i kvoten.\n3. Löftet om 'positivt kassaflöde runt hörnet' är värt noll i kassaräkningen. Varför lyssnar porten på bokförda månader i stället för prognoser?\n4. Två sista fällor: förklara holdingbolagsartikeln (Kinnevik — mekaniskt mått på en icke-mekanisk verksamhet) och regeln 'porten är port': varför hjälper inga starka egenskaper — moat, marginaler, tillväxt — när täckningen är under tolv månader?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Repetera klippkurvan: positivt kassaflöde 5 av 5 år ⇒ 5 poäng; över 48 månader ⇒ 4; 30–48 ⇒ 3; 18–30 ⇒ 2; 12–18 ⇒ 1. Öva: var landar PSNY:s 15,2 och PCELL:s 16?\n2. Vad händer under tolv månader? Beskriv hårda porten: poängen blir 0 — OCH hela AKM2-kompositen takas till 45/100.\n3. Varför är porten modellens enda absoluta stopp? Förklara logiken: överlevnaden är inte en egenskap bland andra — den är förutsättningen för att de andra skall få räknas.\n4. Övning: motiveringstexten anger månader, kurva och källa. Formulera för dig själv hur den borde låta för VPLAY:s 6,8 månader."
+    }
+  ]
+}

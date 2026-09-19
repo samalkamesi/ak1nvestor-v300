@@ -1,0 +1,25 @@
+{
+  "kurs": "v17",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv skillnaden mellan V16 och V17: varför är en lansering bara en chans, medan ett undertecknat avtal är en förpliktelse från motparten?\n2. Vad menas med att katalysatorn ligger i att intäkten finns i kontraktet innan den finns i resultaträkningen? Beskriv med egna ord.\n3. Modellen läser V17 från två källor: pressmeddelanden och förvaltningsberättelsens rad om 'viktiga avtal'. Förklara varför de två källorna har olika trovärdighet.\n4. Räkna upp avtalstyperna som indikatorn fångar — kundavtal, ramavtal, samarbeten och licensieringsavtal — och förklara för dig själv hur en av dem binder intäkter som ännu inte betalats ut."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka ställen i årsredovisningen söker du igenom först — och vilka rubriker (orderintagning, backlog, 'viktiga avtal under året') signalerar undertecknade avtal med namngivna motparter?\n2. I noten om intäkter/segment: vad betyder upparbetade intäkter när de förskottsbetalda intäkterna växer? Kontrollera drivkraften.\n3. Ett jätteavtal med en kund syns samtidigt i V17 och i kundnoten (V03). Förklara varför samma händelse är både katalysator och riskkoncentration.\n4. Läs avtalsbeskrivningarna i noterna: varför kallas ett avtal som motparten kan säga upp med tre månaders varsel ett rabattkvitto snarare än en intäktsväg — och varför räcker en LoI/MoU i pressmeddelandet inte för poängsättning?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Placera Ericsson (ramavtal med teleoperatörer), Sinch (volymbaserade carrier-/plattformsavtal) och Kambi (intäktsdelning per spelvolym) — vilken struktur bär varje bolag?\n2. Ericssons ramavtal beskrivs som 'tak, inte golv'. Förklara vad det betyder för intäkten när volymerna styrs av operatörens investeringstakt.\n3. Volvo syns med orderstock i mellanrapporterna snarare än i pressmeddelanden. Varför passar den vägen bättre för flott-/styckkundsavtal?\n4. Kambis avtal kallas delad risk: avtalsteckningen är katalysatorn och spelvolymen är utfallet. Kontrollera skillnaden mellan bindning och utfall — poängen speglar bindning och storlek, inte rubrikens volym."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. En pressrelease talar om 'strategiskt partnerskap'. Vilken kontroll gör du innan du räknar det som avtal — och varför är redovisningen sanningsägaren?\n2. Förklara varför orderstock inte är intäkt: vilka egenskaper hos order (kan ställas upp, omförhandlas) gör dem mjukare än de ser ut?\n3. Övning i källkritik: hur kan relaterade parter och interna avtal i en koncern blåsa upp 'viktiga avtal' utan marknadsvärde?\n4. Varför skall du aldrig poängsätta V17 högt utan att först läsa V03? Förklara kopplingen mellan kundkoncentration och avtalets katalysator — och minns att termineringsrätter och prisrevisioner gör långa avtal korta i praktiken."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. V17 bär 6 % vikt i kategorin Katalysator och är kvalitativ. Förklara för dig själv vad det innebär — varför står indikatorn osatt i nyckeltalskontraktet?\n2. V17 delar dokumenterad gren med V16 (scorKvalitativ) och poängsätts manuellt. Vilka två underlag läser du för att motivera poängen?\n3. Repetera poängguiden: 0 = inga namngivna avtal; 3 = avtal av betydelse med oklar bindning; 5 = undertecknade fleråriga avtal i kärnsegmentet med belopp eller volym synlig i redovisningen. Testa dig själv: vilken poäng ger en avsiktsförklaring utan kontrakt?\n4. Kontrollera slutligen att din poäng speglar avtalets bindning och storlek — inte rubrikens volym."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "granskat": "data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743 s1-u1 instans 2 (2026-09-19)",
+  "rapport": "ehandelsaktier-sa-analyserar-du-plattformsbolag-KOMPLEMENT-s1u1-KONTROLL-2026-09-19.md",
+  "relation": "KOMPLEMENT till s1-u2:s huvudgranskning (…-KONTROLL-2026-09-19.md, om-dispatch 17:20) — bilaktier-/detailhandels-KOMPLEMENT-presedensen: u2:s B1–B3 gäller, detta paket tillför K1–K2 + seriebeslut K3; huvudfilerna orörda.",
+  "bedomning": "KOMPLEMENT GRÖNT: oberoende sond 61 kontroller (58 OK/3 FEL, källa låst till universum @ 795fe396 09-17 03:04, 144 poster, talidentisk med u2:s d27b727b) bekräftar huvudgranskningens dom FLYTTKLAR EFTER RÄTTNING och tillför två verkställningsbara fynd huvudgranskningen saknar: K1 FCF-yield-spannets undre ända är Sea 0,10 % inte Shopifys 0,9 ('spänner från 13,4 (Mercado Libre) till 0,9 (Shopify)' motbevisat av kvintettens verkliga ordning SE 0,10 < SHOP 0,86 < ABNB 4,90 < UBER 6,98 < MELI 13,40) och K2 spann-systern i sammanfattningen. K3 = rm-gränsfallet 5 mot 6 (u2: 1 074 ord; triangulering 1 118–1 160 ord på fyra metoder, 3/4 ger 6) — seriebeslut åt fabriksägaren, förslag 6 i linje med samtliga nio föregående /200-fallen och medieaktier-C3. Tre bekräftande överlapp: superlativ-fyndet dubbelbekräftat (samma topp-8-motbevisning), u2-B3 Amazon-mekanismen (AI-capex 173 mot OCF 161,4) verifierad korrekt med min C3-lucka ärligt bokförd, modekedje-population H&M 54,1 + Inditex 56,5 stödjer u2-C1:s '54–57'-nyans.",
+  "anvandning": "K1–K2 är 'byt' — verkställs av guidens ägare (eller nästa våg) före flytt, tillsammans med u2:s B1–B3; K3 är 'seriebeslut' (fabriksägaren). Söksträngarna maskinverifierade unika (exakt 1 träff vardera i filen). Utkastet bär INTE determinismkvitto (ej m9-fabrikat) — sök/ersätt bryter inget kvitto. Originalet ändras av guidens ägare — inte av granskaren. Engelska spegeln (…-en.json, 09-19) bär K1/K2:s systrar och speglas vid verkställning (kompletterar u2:s N1). Flaggor: N3 dispatch-lärdom (om-dispatch av klar slot bör kolla anspråksfiler i data/vakten/ FÖRE objektval — detta race kostade ett komplement-pass) · N2 rm-konventionen bör kodas i KVD-mallen (tionde fallet, första med splittrad räkning).",
+  "poster": [
+    {
+      "id": "K1",
+      "typ": "byt",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "body (Värderingen — från 15,6 till 94,6 i samma bransch, reservationstycket)",
+      "gammalt": "FCF-yielden spänner från 13,4 procent (Mercado Libre) till 0,9 (Shopify), men i det första fallet",
+      "nytt": "FCF-yielden spänner från 13,4 procent (Mercado Libre) till 0,1 (Sea), men i det första fallet",
+      "orsak": "FALSK SPANN-ÄNDPUNKT: kvintettens verkliga undre ända är Sea 0,10 % (universum fcfYield 0,001), en decimal under Shopifys 0,86 % — 'spänner från … till …' pekar ut fel bolag och osynliggör det bolag vars FCF-svaghet texten annars betonar (Seas FCF-marginal 0,2 procent i rapportpunkterna). Talet 0,9 är i sig korrekt avrundat; MELI-reservationen ('det första fallet') berörs inte. Söksträngen maskinellt unik (1 träff)."
+    },
+    {
+      "id": "K2",
+      "typ": "byt",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "body (Sammanfattningen, sista bulleten)",
+      "gammalt": "kundmedel gör 13,4 och 0,9 procent till olika saker",
+      "nytt": "kundmedel gör 13,4 och 0,1 procent till olika saker",
+      "orsak": "K1:s syster i sammanfattningen — paret MELI/Shopify speglar värderingssektionens spann och följer rättningen för att sammanfattningen inte ska motsäga brödtexten (bilaktier-A1/flyg-B6:s 'samma felklass i två ytor'-mönster). Söksträngen maskinellt unik (1 träff)."
+    },
+    {
+      "id": "K3",
+      "typ": "seriebeslut",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "readingMinutes (JSON-fält)",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 6",
+      "orsak": "GRÄNSFALL 5 ELLER 6 (fabriksägaren beslutar): huvudgranskningens B1 ger 5 (1 074 ord), denna granskning triangulerar 1 118–1 160 ord på fyra metoder (rå 1 152 · länktext behållen 1 152 · länkar bortrensa 1 118 · teckenstrippning 1 160) varav tre av fyra ⇒ 6 vid halv-upp på /200. Seriepresedens: samtliga nio föregående fallen i klassen sattes till 6 och medieaktier-C3 lämnade konventionen öppen (/600-majoriteten mot bilaktier-/200). Förslag: 6. Bokför även mätdokumentationen när KVD-mallens ord/200-kontroll slutligen kodas (N2). Söksträngen unik i råfilen (grep -F ×1)."
+    }
+  ]
+}

@@ -135,7 +135,8 @@ if (startSida) resultat.kriterier["o77-cls-start-noll"] = Number(startSida.karnm
 // ── Fas 3: viewportsond /ar + /en (o75 _rsc) ────────────────────────
 log("Fas 3: viewportsond /ar + /en");
 for (const [namn, sida] of [["ar", "/ar"], ["en", "/en"]]) {
-  const r = spawnSync("node", ["verktyg/prestanda-viewportsond.mjs", `s7u2-o75o76o77-efter-${namn}`, sida], {
+  // o84 §2 verktygsfynd 1: sondens argv[3] är URL — sökväg gav "invalid URL"
+  const r = spawnSync("node", ["verktyg/prestanda-viewportsond.mjs", `s7u2-o75o76o77-efter-${namn}`, `http://localhost:3000${sida}`], {
     cwd: ROTT, stdio: "inherit", timeout: 4 * 60 * 1000,
   });
   const p = join(ROTT, `data/forskning/OPTIMERING/lighthouse/viewportsond-s7u2-o75o76o77-efter-${namn}.json`);

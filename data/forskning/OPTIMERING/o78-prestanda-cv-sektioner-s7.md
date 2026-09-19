@@ -180,6 +180,21 @@ u2:s 463 kan inte uppkomma på en hydratande sida och DÖMS artefakt —
 §5b:s tabellrad skall läsas med denna dom. **Båda resterna (§5 kriterium
 2-omprövning + 3) är härmed STÄNGDA.**
 
+## §5d Andra instansens dubbelbevis (2026-09-19 13:4x lokal, s7-u2 rond o90 — hänvisande)
+
+Samma objekt togs oberoende av s7-u2 (anspråk ~13:12, FÖRE mätstart;
+dubbeldispatch-precedensen o83/o84 — u1:s dom ovan står ORÖRD).
+Bekräftelse-data i o90-protokollet: **styleLayout 516 ms** i vilofönstret
+EFTER vakt-cronens slut (tredje friska omgången; hydratande sida — justerar
+§5c:s "463 omöjlig hydratande" till "lastfönster", huvuddomen oberörd) ·
+scroll-sond per sektion: fem fem håller reservationerna (flytt +0/−46/−4/
++0/−1 px, text renderas vid besök) · **rond 2 docH Δ0** (auto-nyckelns
+minne) · **NY KÖPOST: dokumentets +6 572 px-engångstillväxt vid första
+scrollen ägs av o19:s kort-cv-familj** (koordinatbevis: kurstips
+dokumentposition +7 433 vid konstant egen höjd) — ej kurens yta.
+Verktygsfix åkte med: prestanda-o75o76o77-efter.mjs fas-3-URL (o84 §2
+verktygsfynd 1). Protokoll: `o90-prestanda-o78rest-dubbelbevis-o19-kopost-s7.md`.
+
 ## §6 Rest + läxor
 
 - Palettbuketten @6,7–8 s (UpdateLayoutTree 74 + Layout 36 + småbuskage)

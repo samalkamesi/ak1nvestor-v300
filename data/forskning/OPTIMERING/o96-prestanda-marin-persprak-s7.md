@@ -96,6 +96,13 @@ som förfader) — FABRIKSREGLER: ALDRIG eget bygge:
 frigjort minne). EFTER kan EJ ske i denna vågs fönster (RAM-en paradox: sonden
 själv håller minnet deployen väntar på) ⇒ kriterierna §3 är vakarövertag-barra.
 
+**VERKSTÄLLT 19:1x–19:3xZ av vakarövertag (fabriksagent s7-u3, ny instans,
+samma manifest — u2:s fönster tog slut före deployen).** Deploy-vilkor: prod-synk
+**DEPLOYAD 19:01:06Z, 7 commits (7b221de9)**; BUILD_ID `xBzidYwn8BHC5MbVEaTza` →
+**`nwHC2B9w0z86loSZDzAe3`**; `git merge-base --is-ancestor 15389ebc` ✓ (o96-kuren
+förfader — deployen bar sannolikt u1+u2+u3:kurerna samtidigt; attribution enligt
+o92 §3.4-klassen: gemensam deploy, separata målytor).
+
 **Verkställighetskommandon (mekaniskt, nästa instans/huvudagent):**
 
 ```bash
@@ -115,4 +122,58 @@ node verktyg/prestanda-lighthouse.mjs s7u2o96-efter /en/kurser
 **Domännote:** rådata-filerna får EFTER-namn (blocksond-s7u2o96-efter-*) —
 FÖRE-paren är committade i 15389ebc och bevaras av git för jämförelsen.
 
-*(resultat bokförs här av den som verkställer)*
+**§6.1 prod 200 ×5 https** (19:2xZ, färsk omverifiering): / · /kurser · /blogg ·
+/en/kurser · /ar/kurser — **5/5 = 200 ✓**.
+
+**§6.2–6.4 blocksond EFTER ×4** (sekventiella, RAM-vakt 4 373–5 226 MB;
+rådata `blocksond-s7u2o96-efter-desktop-{en,ar,en-900,ar-900}.json`):
+
+| Sida @ bredd | docH F→E | Δ | Marin box F→E | Marin Δ | Kriterium |
+|---|---|---|---|---|---|
+| /en/kurser @1280 | 2 898 → 2 898 | **0** | 511 → 511 | **0** | \|Δ\|≤50 ✓ · \|Σ\|≤10 ✓ (mot −527/−524) |
+| /ar/kurser @1280 | 2 924 → 2 924 | **0** | 522 → 522 | **0** | grönt läge bevarat ✓ (mot −3) |
+| /en/kurser @900 | 3 081 → 3 081 | **0** | 511 → 511 | **0** | \|Σ\|≤10 ✓ (mot −363) |
+| /ar/kurser @900 | 3 119 → 3 119 | **0** | 522 → 522 | **0** | grönt bevarat ✓ (mot −2) |
+
+Engångskrympningen är **totalt borta på alla fyra mätpunkterna** — Δ0
+överallt, inte enbart inom toleranserna.
+
+**§6.5 /kurser @1280-kontroll:** o97-sondens desktop-mätning (samma fönster)
+visar ingen signatur från cv-siffreband-klasserna på svenska sidan (klasserna
+används ej där — .cv-socialproof äger svenska /kurser, orörd) ✓ gate pass.
+
+**§6.6 Lighthouse EFTER /en/kurser** (`en_kurser-s7u2o96-efter.json`):
+**P93 · LCP 1 765 · TBT 299 · CLS 0** mot FÖRE **P46 · 4 395 · 2 198 · 0,204** —
+P ≥ 41 ✓✓, LCP/TBT långt UTANFÖR och bättre än ±15 %-envelopen ✓, CLS 0 ✓.
+**Bif fynd — spegel-pop-in (o89 §5, kö §5.1) är BOTAD som sidoeffekt:**
+FÖRE-attributionen (huvudgridden två skift à ~0,10) stämmer — med o93:s
+register- och o97:s utvalt-platshållare kalibrerade mot verkliga höjder blir
+skiftena noll och CLS 0,204 → 0. Spårets köpost §5.1 löst av triots samlade
+kalibrering, här kvantifierat. (TBT −86 % och LCP −60 % bärs även av kortare
+dokument — /en docH 4 167 → 2 898 — och ett tystare vilofönster; hederligt
+noterat; poängen är envelopen passerad i bättre riktning.)
+
+**§6.7 gränssnittsvakten:** senaste cron-löp 17:55Z/18:03Z-filen (före deploy):
+0 fynd/176 kombinationer; första vaktkörning på det nya bygget sker vid nästa
+6-timmarscron (~00:0xZ) — bevakning till huvudagentens vaktprompt
+(o92 §3.5-precedensen, o93 §6 samma note).
+
+**Observation (äkthet, ej kur-relevant): absolutnivåerna har driftat mellan
+fönstrena** — marin-box mäter nu 511 (/en) resp 522 (/ar) på både 1 280 och
+900, mot FÖRE-fönstrets sonderade äkta 484/484 @1280 och 645/626 @900. Rot:
+sidorna är nu ~30 % kortare (triots kurer) ⇒ marin-panelen ligger inom
+rendermarginalen redan vid topp (sondens `renderad:true` i FÖRE-snapshoten —
+auto-minnet gäller, platshållarnivån biträtt aldrig/färdigt) ⇒ 511/522 är de
+verkliga renderade höjderna på DETTA bygget; @900 renderar numera samma höjd
+som @1280 (511 = 511), vilket indikerar att FÖRE-fönstrets 2-kolumnsläge
+var en konsekvens av det längre dokumentets layouttiming, ej bredden i sig.
+Delta-måttet (som är kur-kriterierna) är Δ0 på samtliga punkter; sondens
+padding-räkenskap i renderat läge (padTop läses 0 trots sm:p-10) noteras som
+nivå-2-fråga till nästa våg om absolutkalibrering behövs.
+
+**DOMSLUT o96: GRÖN på samtliga kriterier.** Marinens engångskrympning
+−527/−363 på /en är Δ0 efter kur (kalibreringen 34.71875/25.25rem träffar);
+/ar:s gröna läge bevarat (Δ0); Lighthouse-envelopen passerad med P93/CLS 0
+och spegel-pop-in-köposten löst som bif fynd. Bevis: deploy 19:01:06Z
+(7b221de9, BUILD_ID nwHC2B9w0z86loSZDzAe3, 15389ebc förfader ✓) → prod 200
+×5 → blocksond ×4 + LH → denna bokföring.

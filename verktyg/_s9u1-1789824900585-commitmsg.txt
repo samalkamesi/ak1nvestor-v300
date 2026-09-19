@@ -1,0 +1,1 @@
+studio: auto s9-u1 (manifest auto-s9-1789824900585) SYSTEMKARTAN-dokvåg — E27 Studio återdiffad (3:e varvet): gap-registret UTTÖMT 36/36 (kommandobussen komplett v181–188) + STORFYND binär-eftersläpning: npm 3.12.3-26 vs KÖRANDE 3.11.2-24 — transport 10 866 r (+31 %), 35 rutter (+11), 8 paneler; v92-e2e + 3.12-registerforskning = kö till ronden; poäng 9/10 kvarstår [fabrik]

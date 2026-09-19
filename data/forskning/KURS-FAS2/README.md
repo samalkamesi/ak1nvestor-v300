@@ -46,9 +46,9 @@ mot kärnan och bolagsunivers.json).
 (20 kurser × 5 sektioner) in i public/deep-courses.json via slugToVariableId-
 mappningen — md-rensning + tabell→listor enligt renderingskontraktet, hela
 genererade kedjan ombyggd atomärt, LARVAG-SYNK GRÖN 440 (0 fantomer),
-gränssnittsvakten 0 fynd efteråt. **Utmaning-block PÅGÅR (våg 203):**
-fabrikmanifest v203-utmaning levererar självkontrollfrågor per kapitel
-(fragment i utmaning/) — integration atomärt av huvudagenten.
+gränssnittsvakten 0 fynd efteråt. **Utmaning-block LEVERERADE (våg 203, rond 96):** samtliga 100 Fas 2-kapitel
+bär exakt ett utmaning-block (89 tillfogade från fabrikens 20 fragmentfiler,
+11 fanns sedan våg 200) — LARVÄGSSYNK GRÖN 446.
 
 **Vikternas betydelse:** vikt-kolumnen (8 %/6 %/KRITISK) är den pedagogiska
 etikettskalan — i akm1-klassisk profil väger alla 20 indikatorer LIKA (uniform
@@ -65,5 +65,5 @@ där de sammanfaller.
 modellen" — och innehåller ALDRIG investeringsråd (lagen 2007:528, 2 kap 5 §:
 utbildning är tillåtet, rådgivning kräver tillstånd).
 
-**Nästa steg i spåret:** utmaning-blocken (våg 203) — därefter är biblioteket
+**Nästa steg i spåret:** klart — biblioteket
 slutlevererat i både underlag, granskning, kodintegration och interaktivitet.

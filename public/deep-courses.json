@@ -349,6 +349,10 @@
           {
             "type": "insikt",
             "content": "Intäkterna är föräldern till allt annat."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv varför intäktsraden kallas föräldern till allt annat: vilka tre barn till intäktsraden nämner kapitlet (vinst, utdelning, eget kapital)?\n2. Kapitlet sammanfattar tre sätt att skaffa tillväxt utan att affären blev bättre: tillväxt kan köpas, lånas eller bokföras. Vad motsvarar varje sätt i praktiken (förvärv, prissänkningar, engångsintäkter)?\n3. V01 kräver alltid sällskap enligt kapitlet — av vilka två håll (marginaler, diversifiering), och vad riskerar en ensam tillväxtsiffra att dölja?\n4. Varför är försäljningstillväxten den enklaste indikatorn att verifiera själv i resultaträkningen? Förklara hur årets och förra årets siffra står i förhållande till varandra."
           }
         ]
       },
@@ -361,6 +365,10 @@
           {
             "type": "text",
             "content": "- Öppna koncernens resultaträkning (alltså inte moderbolagets — den\n   publikation som heter \"Årsredovisning\" och börjar med Förvaltningsberättelsen).\n- första raden under rubriken: \"Nettoomsättning\". Två kolumner — året och\n   föregående år. Räkna: (året − förra) ÷ |förra| × 100 %.\n- Gå sedan till noten till intäkterna (ofta not 1–3, \"Nettoomsättning\"):\n   där delas intäkterna upp på Sverige/outside Sweden och ibland produktgrupper.\n- Titta sist i Förvaltningsberättelsen på \"väsentliga händelser\" — såg du\n   att tillväxten var ett förvärv? Där står det.\n- För 5-årskurvan: använd de fem senaste rapporternas intäktsrader (eller\n   nyckeltalssidan sist i redovisningen)."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Öppna rätt resultaträkning: koncernens eller moderbolagets? Förklara varför kapitlet insisterar på koncernen — och vad publikationen Årsredovisningen börjar med.\n2. Skriv upp formeln för årstillväxten: (året − förra) ÷ |förra| × 100 %. Varför står absolutbeloppet kring förra året i nämnaren?\n3. Noten till intäkterna (ofta not 1–3) delar upp intäkterna på Sverige och utlandet — vad kan du läsa ut där om tillväxtens karaktär?\n4. Två sista kontroller: var avslöjar årsredovisningen att tillväxten var ett förvärv — och var hittar du siffrorna till en 5-årskurva?"
           }
         ]
       },
@@ -397,6 +405,10 @@
           {
             "type": "insikt",
             "content": "Förvärvstillväxt ≠ organisk tillväxt."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Ett bolag visar +20 % tillväxt efter ett stort uppköp. Vilken fråga ställer kapitlet för att skilja förvärvstillväxt från organisk — och var i förvaltningsberättelsen hittar du svaret?\n2. +10 % kan vara 10 % fler sålda enheter eller 10 % högre priser. Förklara för dig själv varför de två har olika hållbarhet trots samma siffra — och vilken not som skiljer dem åt.\n3. Volvos +16,6 % 2023 används som cykeltoppsexempel: vad ville kapitlet visa om hög tillväxt vid cykeltoppar — och varför räcker aldrig en enda variabel?\n4. Namnge de övriga fällorna i kapitlet (valuta, engångsintäkter och IFRIC-tolkningar) och var i noterna du kontrollerar var och en."
           }
         ]
       },
@@ -409,6 +421,10 @@
           {
             "type": "text",
             "content": "Kärnans goldilocks-kurva (karna.ts, scorV01 — formel (året − förra) ÷\nförra · × 100 % på TTM-värdet): tillväxten ska varken saknas eller överhettas —:\n\nTillväxt (TTM) · Poäng:\n- < −10 % · 0\n- −10 % – 0 % · 1\n- 0 – 10 % · 2\n- 10 – 20 % · 3\n- 20 – 30 % · 4\n- 30 – 45 % · 5 — ENDAST med bruttomarginal ≥ 30 %, annars 4\n- 45 – 60 % samt > 60 % · 4 (hållbarhetsrabatt)\n\nKalkylatorns AKM1-läge (RAKNARE, V01) använder en enklare rak trappa —\n≥ 30 % ⇒ 5, ≥ 20 % ⇒ 4, ≥ 10 % ⇒ 3, ≥ 0 % ⇒ 2, < 0 % ⇒ 1 — praktisk vid\nhandräkning; kärnans kurva är den som poängsätter.\n\nExempel med universumets bolag (samma poäng i båda kurvorna): Volvo TTM\n−5,7 % → 1 p · Alfa Laval TTM +7,7 % → 2 p · Atlas Copco TTM +9,1 % → 2 p ·\nSandvik TTM +23,7 % → 4 p · Kambi TTM +13,5 % → 3 p. Etiketten är KRITISK —\nen pedagogisk etikett (akm1-klassisk profil väger alla 20 indikatorer lika,\nse src/lib/akm2/vikter.ts) — och modellen kräver källrad (resultaträkningen)\nför full poäng.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilken tillväxtzon ger 5 poäng i kärnans goldilocks-kurva — och vilket villkor på bruttomarginalen (≥ 30 %) måste dessutom vara uppfyllt annars blir det 4 poäng?\n2. Varför ger tillväxt över 45 % bara 4 poäng i kärnans kurva? Förklara hållbarhetsrabatten med egna ord.\n3. Träna på trappan: Sandvik TTM +23,7 % och Kambi TTM +13,5 % — vilka poäng ger kärnans kurva? Kontrollera mot tabellen.\n4. Kalkylatorns enklare trappa (≥ 30 % ger 5 p) skiljer sig från kärnans kurva — vilken av dem är det som poängsätter? Och vilken källrad kräver modellen dessutom för full poäng?"
           }
         ]
       }
@@ -756,6 +772,10 @@
           {
             "type": "insikt",
             "content": "Kontrakterad att återkomma"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Definiera ARR med kapitlets ord: intäkt som är kontrakterad att återkomma. Räkna efter exemplen: vad blir en månadsprenumeration på 1 000 kr i ARR — och hur mycket ARR ger ett engångsprojekt på 50 000 kr?\n2. Förklara varför ett bolag där 90 % av intäkterna har förnyats varje år i fem år kan planeras och värderas på ett annat sätt än ett som måste vinna varje krona på nytt varje kvartal.\n3. Vilka sorts bolag redovisar ARR? Nämn de tre typerna kapitlet listar — och vad har de gemensamt.\n4. Universumets 195 bolag redovisar inte ARR: vilket fält (omsattningTillvaxtTTM) används i stället, och vad är lärdomen om vilka bolag som ens kan poängsättas på V02 — och vilka som faller tillbaka på V01?"
           }
         ]
       },
@@ -768,6 +788,10 @@
           {
             "type": "text",
             "content": "- Förvaltningsberättelsen — sök \"ARR\", \"återkommande intäkter\",\n   \"recurring revenue\", \"prenumerationsintäkter\". Svenska SaaS-bolag\n   redovisar det ofta som nyckeltal med avstämning mot nettoomsättningen.\n- Nyckeltalsavsnittet sist i årsredovisningen (eller i presentations-\n   materialet): bolagen avstämmar ARR → intäkter så du ser hur stor andel\n   av omsättningen som är återkommande.\n- Not om intäkters art — vissa bolag delar \"subskription\" vs\n   \"professional services\" redan i intäktsnoten; det är ARR:s syskonuppgift.\n- Finns inte ARR alls? Då poängsätts V02 försiktigt i modellen och V01 +\n   intäktsstabilitet (V12) får bära tillväxtbilden — så hanterar AKM1\n   ärligt saknad data i stället för att gissa."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. I vilka delar av årsredovisningen söker du ARR? Nämn sökorden kapitlet ger (ARR, återkommande intäkter, recurring revenue, prenumerationsintäkter) och varför förvaltningsberättelsen är första stopp.\n2. Vad gör svenska SaaS-bolag i nyckeltalsavsnittet sist i årsredovisningen — och vad lär du dig av avstämningen mellan ARR och nettoomsättningen?\n3. Vilken not är ARR:s syskonuppgift när den delar upp intäkternas art (subskription mot professional services)?\n4. Finns ARR inte alls: hur hanterar modellen saknad data ärligt — vilken indikator poängsätts försiktigt och vilka två (V01 och V12) får bära tillväxtbilden i stället?"
           }
         ]
       },
@@ -784,6 +808,10 @@
           {
             "type": "insikt",
             "content": "Räkneövning när ARR väl finns i en rapport:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Microsofts omsättning gick 211 915 → 245 122 → 281 724 → 331 839 MUSD (FY2023–2026). Kontrollera uppgiften +17,7 % TTM — och förklara varför exakt ARR-del ändå inte redovisas som ett enskilt tal.\n2. Kambi har TTM +13,5 %: vad gör plattformsintäkterna återkommande till sin natur — och vilken kundrisk gör att återkommande inte betyder säker?\n3. Sinch har TTM +3,8 %: förklara skillnaden mellan återkommande kundrelationer och kontrakterad ARR i SaaS-meningen.\n4. Skriv formeln: ARR-tillväxt = (ARR i år − ARR förra året) ÷ ARR förra året. Vad är net new ARR — och vilka intäkter räknas aldrig in?"
           }
         ]
       },
@@ -800,6 +828,10 @@
           {
             "type": "insikt",
             "content": "Annual consulting = inte ARR."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. En kollega multiplicerar en redan annualiserad ARR med 12. Förklara felet — och hur du känner igen om en siffra är månatlig eller redan annualiserad.\n2. Återkommande konsultintäkter är inte ARR, skriver kapitlet. Vad saknas — och vad menas med att förnyelseombud inte är ett avtal?\n3. ARR som växer genom uppköp är inte samma kvalitet som tillväxt i befintliga kunder: vilket kvalitetsmått nämner kapitlet hos de bästa rapportörerna?\n4. Redogör för tre terminologifällor: constant currency (jämför alltid samma definition år mot år), backlog/RPO (framtida ARR, inte nuvarande) och Sinch-fällan (recurring i namnet, cyklisk i verkligheten)."
           }
         ]
       },
@@ -812,6 +844,10 @@
           {
             "type": "text",
             "content": "Kärnans scorV02 är OSATT i kod (ARR redovisas inte i P1:s\ndatakontrakt) — tabellen nedan är utbildningens riktlinje, inte\nkodverklighet. Källan är kvalitativ per konstruktion\n(Förvaltningsberättelsen/presentationen, 8 % vikt). Poängsättning sker på\ntillväxttakt och andel av intäkterna:\n\nARR-bild · Poäng (riktlinje):\n- ARR växer ≥ 30 % och är huvuddelen av intäkterna · 5\n- ARR växer 15–30 %, tydlig andel · 4\n- ARR växer 5–15 % · 3\n- ARR finns men står stilla / liten andel · 2\n- ARR redovisas inte / obefintlig · 1\n\nUniversumexempel: Microsoft → 3–4 p-landskapet (tillväxt hög, ARR-del inte\noffentlig som enskilt tal) · Kambi → 3 p (avtalsbaserat, koncentrerat) ·\nSinch → 2 p (användningsbaserat, ej kontrakterat). Dokumentera alltid vad\nsom står i källan — modellen belönar spårbarhet, inte gissningar.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Kärnans scorV02 är osatt i kod. Vad betyder det att poängtabellen är utbildningens riktlinje — inte kodverklighet? Vilken vikt har V02 (8 %)?\n2. Vilket ARR-läge ger 5 poäng enligt riktlinjen? Nämn de två villkoren: tillväxttakten (≥ 30 %) och andelen av intäkterna (huvuddelen).\n3. Träna med universumexemplen: motivera Microsoft i 3–4 p-landskapet, Kambi 3 p och Sinch 2 p — vad i källan bär varje poängsättning?\n4. Vad belönar modellen enligt kapitlets avslutning — spårbarhet eller gissningar? Förklara vad du måste dokumentera när du poängsätter manuellt."
           }
         ]
       }
@@ -1170,6 +1206,10 @@
           {
             "type": "insikt",
             "content": "Om EN kund, EN produkt eller EN marknad försvinner — hur stor del av intäkterna står kvar?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Formulera V03:s kärnfråga: om EN kund, EN produkt eller EN marknad försvinner — hur stor del av intäkterna står kvar?\n2. Jämför kapitlets två bolagstyper: tusen kunder i tio branscher på fyra kontinenter mot tre största kunder som bär halva omsättningen. Vilken motståndskraft har varje typ?\n3. Kapitlet kallar diversifiering tillväxtkategorins försäkring: förklara hur den gör tillväxten (V01) mer hållbar och de återkommande strukturerna (V02) mer pålitliga.\n4. Koncentration är inte alltid fel — ett nischbolag kan vara excellent. Vad är det modellen ska se enligt kapitlet, och varför är risken ändå annorlunda?"
           }
         ]
       },
@@ -1186,6 +1226,10 @@
           {
             "type": "insikt",
             "content": "Storkundsnot / kundkoncentration"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka tre axlar mäter intäktsdiversifiering på? Förklara också hur en axel kan vara koncentrerad utan att bolaget som helhet är det.\n2. Vilken rad kallas V03:s viktigaste — där största kunds andel av intäkterna eller de fem största kunderna redovisas? I vilka branscher finns den ofta?\n3. Var hittar du intäkter per verksamhetsgren och per land/region? Beskriv segmentnoten och geografinoten.\n4. Produktgruppsuppdelningen finns på två ställen i redovisningen enligt kapitlet — vilka? Och vad bör du tänka om diversifieringen ser bra ut på bara en axel?"
           }
         ]
       },
@@ -1202,6 +1246,10 @@
           {
             "type": "insikt",
             "content": "Räkneövning med storkundsnot (princip):"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Ericsson: omsättningstillväxt TTM −6,1 % men bred struktur. Vilka tre verksamhetsgrenar nämner kapitlet — och varför kan en svag region eller kund inte fälla helheten? Notera bruttomarginalen 48,1 %.\n2. Kambi: bruttomarginal 98,9 % och P/B 29,2. Vad betalar marknaden för enligt kapitlet — och vad är motvikten?\n3. Atlas Copco: fyra affärsområden, globalt, omsättning 168 mdr SEK. Vad betyder det att bolaget redovisar koncentration under tröskeln?\n4. Övning med storkundsnoten: största kund 28 % (hög) och fem största 55 % (mycket hög). Förklara också hur 40 länder kan dölja att 60 % av intäkterna beror av två slutkunder."
           }
         ]
       },
@@ -1218,6 +1266,10 @@
           {
             "type": "insikt",
             "content": "Diversifiering genom uppköp."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Fyra segment som alla säljer till samma slutmarknad (t.ex. biltillverkare) diversifierar inte. Varför? Öva kontrollfrågan: vem betalar i slutändan, i varje segment?\n2. Åtta produktlinjer från åtta förvärv — när är det balans och när är det åtta integrationsrisker? Var läser du förvärvshistoriken?\n3. Förklara storkundsnotens tröskeldämpning: många bolag redovisar koncentration först om den överstiger exempelvis 10 %. Vad betyder inget att redovisa — och vad säger det INTE?\n4. Geografinot efter faktureringsland: förklara Irland/Luxemburg-exemplet och varför fotnoten om hur geografi mäts är avgörande. Avsluta med Kambi-paradoxen: vad mäter indikatorn — riskform eller kvalitet?"
           }
         ]
       },
@@ -1230,6 +1282,10 @@
           {
             "type": "text",
             "content": "Källan är kvalitativ (segmentnot + storkundsnot, 6 % vikt). Kärnans\nscorV03 är osatt i kod — tabellen är utbildningens riktlinje:\n\nIntäktsstruktur · Poäng:\n- Bred på ≥ 2 axlar (kunder, produkter, länder) utan dominans · 5\n- Bred på en axel, måttlig på en till · 4\n- Medelkoncentration (största kund/produkt 15–25 %) · 3\n- Hög koncentration på en axel (>25 %) · 2\n- Extrem koncentration (en kund/produkt bär helheten) · 1\n\nUniversumexempel: Atlas Copco → 5 p-landskapet · Ericsson → 4 p ·\nKambi → 2 p (kundaxeln, trots produktens styrka). Dokumentera vilken not\nsom bar poängen — spårbarhet är del av utbildningen.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilken intäktsstruktur ger 5 poäng enligt riktlinjen — bred på minst två axlar utan dominans? Räkna upp axlarna och förklara kravet.\n2. Varför ger största kund/produkt på 15–25 % (medelkoncentration) 3 poäng, medan hög koncentration på en axel (över 25 %) bara ger 2?\n3. Träna: motivera Atlas Copco i 5 p-landskapet, Ericsson 4 p och Kambi 2 p på kundaxeln — trots produktens styrka — med riktlinjetabellen.\n4. V03:s källa är kvalitativ (segmentnot och storkundsnot, 6 % vikt) och kärnans scorV03 är osatt i kod. Vad måste du dokumentera när du poängsätter manuellt — och varför är spårbarheten del av utbildningen?"
           }
         ]
       }
@@ -1588,6 +1644,10 @@
           {
             "type": "insikt",
             "content": "Hur många kronor betalar marknaden per krona intäkt?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Skriv P/S-formeln (börsvärde ÷ nettoomsättning, senaste tolv månader) och formulera frågan måttet svarar på: hur många kronor betalar marknaden per krona intäkt?\n2. Varför kallas P/S värderingsfamiljens robustaste medlem när vinsten sviker — vilket vanligt måltal kan bli negativt eller meningslöst i vändning, kris eller under tung avskrivning?\n3. En intäktskrona är inte värd lika mycket i alla branscher: jämför mjukvarubolagets 80–90 öre bruttovinst per intäktskrona med distributörens 5–15 öre.\n4. Vilka indikatorer ska V04 alltid läsas tillsammans med (V07/V08) — och vad missar du om du bara ser multipeln?"
           }
         ]
       },
@@ -1600,6 +1660,10 @@
           {
             "type": "text",
             "content": "- Börsvärde: aktiekurs × antal aktier efter rapportdagen (aktieägares\n   not i årsredovisningen visar antalet; kursen utanför rapporten).\n- Nettoomsättning: koncernresultaträkningens första rad — rullande\n   tolv månader om kvartalsdata finns (senaste fyra kvartalens summa),\n   annars senaste räkenskapsåret (dokumentera vilket).\n- Dividera. Kontrollera gärna mot universumets fält (vardering saknar\n   P/S — men marknadsKapitalMdr och serier.omsattning räcker för egen\n   uträkning — det är övningen nedan).\n- Jämför inom bransch: universumets branschmedianer (teknik, industri\n   m.fl.) ger referensramen — P/S utan bransch jämförs mot ingenting."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur räknar du börsvärdet? Vilken not i årsredovisningen visar antalet aktier — och vad hämtar du från marknaden utanför rapporten?\n2. Nettoomsättningen står först i koncernens resultaträkning. När använder du rullande tolv månader (senaste fyra kvartalens summa) i stället för senaste räkenskapsåret — och vad ska du alltid dokumentera?\n3. Universumets värderingsfält saknar P/S: vilka två fält räcker för att räkna fram multipeln själv?\n4. Varför är P/S utan branschjämförelse värd nästan ingenting? Vilken referensram ger universumets branschmedianer?"
           }
         ]
       },
@@ -1616,6 +1680,10 @@
           {
             "type": "insikt",
             "content": "Hela lektionen finns i tabellen:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter Sinch: 31 757 ÷ 27 080 = 1,17. Stäm resultatet mot tabellen — och vilken EBIT-marginal (2,5 %) står i samma rad?\n2. Alfa Laval: börsvärdet 231 545 Mkr mot omsättningen 69 674 Mkr ger P/S 3,32. Kontrollera — och jämför EBIT-marginalen 16,2 % med Sinch.\n3. Microsoft är dyrast (11,12) men gör 45,1 % EBIT-marginal. Förklara kapitlets slutsats: marknaden betalar mer per intäktskrona när fler öre blir vinst.\n4. Atlas Copco (P/S 5,85, EBIT-marginal 20,6 %): förklara varför billig och dyr på P/S inte säger något om affären utan marginalerna bredvid."
           }
         ]
       },
@@ -1632,6 +1700,10 @@
           {
             "type": "insikt",
             "content": "Låg P/S på lågmarginalverksamhet är sällan en fyndkarta."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Distributörer och handelsbolag handlas strukturellt kring 0,1–0,5 i P/S. Varför är en sådan låg multipel sällan en fyndkarta — vad bär intäktskronan i den branschen?\n2. Förklara cykeltoppens spegel med universumets Volvo-exempel (TTM-intäkter ned −5,7 % efter toppår): varför ser P/S som lägst ut just när marginalerna riskerar fall?\n3. Två sätt att svälla upp nämnaren: förvärvsuppblåst omsättning och engångsintäkter. Var kontrollerar du den organiska tillväxten — och vad betyder det att normalisera före jämförelse?\n4. P/S ignorerar skulder: två bolag med P/S 2 — det ena nettokassa, det andra högt belånat — är inte samma affär. Vilket mått tar skulderna enligt kapitlet?"
           }
         ]
       },
@@ -1644,6 +1716,10 @@
           {
             "type": "text",
             "content": "Ur kalkylatorn (RAKNARE, V04): formel Börsvärde ÷ Nettoomsättning,\n\nP/S · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel med egna siffror: Sinch 1,17 → 4 p · Alfa Laval 3,32 →\n2 p · Atlas Copco 5,85 → 1 p · Microsoft 11,12 → 1 p. OBS modellens\nbyggnad: låg multipel ger hög poäng MEN tolkas alltid mot marginalerna\n(V07/V08) och tillväxten (V01) — ett 5 p i V04 med 1 p i V07 är ett mönster\natt förstå (tradarens lågmarginalbolag), inte en gratis lunch. Så säger\nmetoden; vad du sedan gör är ditt beslut — vi ger utbildning, inte råd.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Repetera kalkylatorns trappa: vilka P/S-nivåer ger 5 poäng och vilka ger 1 poäng — och varför är riktningen omvänd mot vad man först kan tro?\n2. Träna med kapitlets egna siffror: Sinch 1,17, Alfa Laval 3,32, Atlas Copco 5,85 och Microsoft 11,12 — vilka poäng ger trappan? Kontrollera mot universumexemplen.\n3. Låg multipel ger hög poäng men tolkas alltid mot marginalerna (V07/V08) och tillväxten (V01). Förklara mönstret 5 p i V04 med 1 p i V07 — tradarens lågmarginalbolag — och varför det inte är en gratis lunch.\n4. Kapitlet avslutar: metoden beskriver hur den läser — vad du sedan gör är ditt beslut. Förklara skillnaden mellan utbildning och råd."
           }
         ]
       }
@@ -2002,6 +2078,10 @@
           {
             "type": "insikt",
             "content": "Vad betalar marknaden per krona av bokfört eget kapital?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv med egna ord vad P/B svarar på: vad betalar marknaden per krona av bokfört eget kapital? 2. Skriv upp räkningen: börsvärde ÷ eget kapital. Beskriv också vad det egna kapitalet är — det som aktieägarna har kvar av allt bolaget äger minus allt det är skyldigt, bokföringens återstående värde. 3. P/B fungerar bäst där balansräkningen speglar affären. Räkna upp de fyra verksamhetstyperna kapitlet nämner: banker, försäkring, kapitaltunga industrier och fastigheter. 4. Förklara varför måttet är svagare för kunskapsbolag — vilket är det viktigaste som inte står i balansräkningen? Kontrollera att du kan ge exemplen varumärke, kod och kunnande."
           }
         ]
       },
@@ -2018,6 +2098,10 @@
           {
             "type": "insikt",
             "content": "Balansräkningens eget kapital"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilket eget kapital ska användas i nämnaren — koncernens summa eller moderbolagets? Förklara hur minoriteter ska hanteras om de redovisas. 2. Noten om eget kapital (förändringsanalysen) visar årets rörelser. Nämn de fyra posterna — vinst, utdelning, återköp och omvärderingar — och förklara hur noten avslöjar om kapitalet växer organiskt eller krymper genom återköp. 3. I vilken not kontrollerar du hur stor del av det egna kapitalet som är goodwill, och varför är den andelen avgörande för tolkningen? 4. Förklara varför jämförelsen ska göras inom bransch — teknikbolag mot teknikbolag, banker mot banker, aldrig blandat — och hur börsvärdet räknas (kurs × antal aktier)."
           }
         ]
       },
@@ -2034,6 +2118,10 @@
           {
             "type": "insikt",
             "content": "Tabellen är genomgången i sin helhet:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Kapitlet går igenom fem P/B-tal som betyder fem olika saker. Förklara skillnaden mellan Sinch 1,38 och Apple 44,15 — vad har återköpen gjort med Apples eget kapital (EK är en restpost)? 2. Kambi står på 29,18. Förklara med kapitlets bild varför mjukvaruvärde inte bor i balansräkningen. 3. Kontrollera kopplingen till lönsamheten: vilket bolag har ROE 26,1 % och vilket har ROE 148,8 %? 4. Sinch kapital rensades av nedskrivningar (2024: −6,4 mdr resultat). Förklara varför P/B 1,38 efter nedskrivningen kallas ärligare — men speglar det förflutna, inte framtiden."
           }
         ]
       },
@@ -2050,6 +2138,10 @@
           {
             "type": "insikt",
             "content": "Återköpsfällan (Apple-fallet)."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara återköpsfällan (Apple-fallet): varför krymper det egna kapitalet av återköp, och varför stiger då P/B och ROE mekaniskt utan att affären förändrats? 2. Goodwillfällan (Sinch-fallet före 2024): eget kapital uppblåst av aldrig-testad köpeskilling. Vilka två kontroller kräver kapitlet — goodwill/totala tillgångar och nedskrivningshistoriken? 3. Vad händer när tunga återköp och utdelningar driver EK under noll? Förklara varför negativ P/B inte är en gratis aktie utan ett oläsligt mått — och vilka två mått du byter till. 4. Förklara varför P/B är huvudmåttet för banker (balansräkningen ÄR affären) men ska tolkas mot substansvärde och ROE-mål i redovisningen."
           }
         ]
       },
@@ -2062,6 +2154,10 @@
           {
             "type": "text",
             "content": "Ur kalkylatorn (RAKNARE, V05): formel Börsvärde ÷ Eget kapital,\n\nP/B · Poäng:\n- < 1 · 5\n- < 2 · 4\n- < 3 · 3\n- < 5 · 2\n- ≥ 5 · 1\n\nUniversumexempel: Sinch 1,38 → 4 p · Ericsson 3,09 → 2 p · Atlas Copco\n9,26 → 1 p · Kambi 29,18 → 1 p · Apple 44,15 → 1 p. Och här visar\nutbildningen sin poäng om mekanismens gräns: Apple får 1 p trots att\nbolaget gör 148,8 % ROE — modellen straffar alltså återköpsdriven\nkapitalkrympning om man läser V05 blint. AKM1:s lösning: tolka V05 alltid\ntillsammans med V09 (ROE) och goodwill-noten — det är modellens sätt att\nsäga samma sak som fällorna ovan. Så fungerar metoden; plattformen lär\nut metoden, den ger aldrig råd om vad du ska göra (2007:528).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter med trappstegen ur kalkylatorn: vilket poäng ger P/B 1,38 och vilket ger 3,09? Kontrollera mot kapitlets exempel: 4 p respektive 2 p. 2. Apple får 1 p trots ROE 148,8 %. Förklara hur modellen straffar återköpsdriven kapitalkrympning om man läser V05 blint. 3. Vilken är AKM1:s lösning på den gränsen — vilken variabel ska V05 alltid tolkas tillsammans med (V09, ROE), och vilken not ska läsas (goodwill-noten)? 4. Kapitlet nämner sambandet P/B = P/E × ROE-algebra. Förklara för dig själv hur måtten hänger ihop — och kom ihåg: modellen ger aldrig P/B ensamt sista ordet (vikten är 6 %)."
           }
         ]
       }
@@ -2420,6 +2516,10 @@
           {
             "type": "insikt",
             "content": "Vad kostar hela företaget — inte bara aktierna — i förhållande till den kassa verksamheten genererar före avskrivningar, ränta och skatt?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara med egna ord vad EV (Enterprise Value) mäter: vad kostar hela företaget — inte bara aktierna? Beskriv kapitlets bild: EV är priset för hela maskinen, aktiekursen bara priset för ratten. 2. Skriv upp formeln: EV = börsvärde + räntebärande skulder − kassa. Varför får du behålla kassan i kassaskåpet när du tar över bolagets lån? 3. EBITDA = rörelseresultat + avskrivningar. Vilka tre poster är borträknade, och vad gör det för jämförelser mellan bolag med olika skuldnivåer, skattesituationer och ålder på maskinparken? 4. Varför pratar köpare av hela bolag (och deras banker) i EV/EBITDA i stället för P/E? Förklara hur P/E straffar hårt belånade bolag och belönar skuldfria."
           }
         ]
       },
@@ -2432,6 +2532,10 @@
           {
             "type": "text",
             "content": "- Börsvärde: antal aktier (noten om eget kapital, sista sidan) ×\n   aktiekurs (börsen, samma datum som resten av hämtningen).\n- Räntebärande skulder: balansräkningen — leta efter \"Lånekostnads-\n   förande/långfristiga skulder\" + kortfristiga till banker. OBS: inte\n   leverantörsskulder (de är verksamhet, inte finansiering).\n- Kassa: \"Kassa och bank + kortfristiga placeringar\" i omsättnings-\n   tillgångarna.\n- Rörelseresultat: resultaträkningens rad före finansiella poster.\n- Avskivningar: kassaflödesanalysens rad \"Avskrivningar\" (den posten\n   adderas tillbaka — därav \"DA\" i namnet).\n- Räkna: (1 + 2 − 3) ÷ (4 + 5)."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Börsvärdet behöver antal aktier × aktiekurs. I vilken not hittar du antalet aktier enligt kapitlet, och varför ska kursen ha samma datum som resten av hämtningen? 2. Vilka poster letar du upp för räntebärande skulder — och varför räknas leverantörsskulder INTE med (de är verksamhet, inte finansiering)? 3. Var hittar du kassan, och vilka två rader ger EBITDA: var i resultaträkningen ligger rörelseresultatet (raden före finansiella poster) och vilken rad i kassaflödesanalysen adderas tillbaka? 4. Räkna med kapitlets nummer: (1 + 2 − 3) ÷ (4 + 5). Kontrollera att varje komponent har en given plats i årsredovisningen innan du räknar."
           }
         ]
       },
@@ -2448,6 +2552,10 @@
           {
             "type": "insikt",
             "content": "EV = 100 + 20 − 5 = 115 mdr"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter genomräkningen: börsvärde 100 mdr, räntebärande skulder 20 mdr, kassa 5 mdr — hur stor blir EV? 2. Fortsätt: rörelseresultat 12 mdr + avskrivningar 8 mdr ger EBITDA 20 mdr. Vilken multipel blir EV ÷ EBITDA? Kontrollera mot kapitlets 5,75× — bolaget kostar knappt sex års driftkassa. 3. Förklara varför ett kraftigt belånat bolag kan ha lägre P/E men HÖGRE EV/EBITDA än ett skuldfritt — var syns skulderna? 4. Beskriv värdefallehålet: multipel under 4× ger 5 poäng ENDAST om V19 (kassatäckningen) också är minst 3 poäng (minst 30 månader), annars max 3. Nämn de tre skälen till falsk billighet."
           }
         ]
       },
@@ -2464,6 +2572,10 @@
           {
             "type": "insikt",
             "content": "EBITDA är inte kassaflöde."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Varför är EBITDA inte kassaflöde? Förklara med de kapitalintensiva branscherna stål och sjöfart: maskiner slits och måste ersättas — vilken verklig kostnad är borträknad, och varför ser bolagen billiga ut? 2. Vad händer med poängen vid negativ EBITDA (0 p), och varför kan en förlustverksamhet inte prissättas i års kassa? 3. Skuldfällan i EV: hur kan leasing enligt IFRS 16 flytta in stora poster i skulderna och förstöra jämförbarheten mellan år och bolag? 4. Dataskrap-fällan: multipeln är känslig för fel i kassa- och skuldhämtningen — ett tecken fel i kassan flyttar hela värdet. Mot vilken av bolagets egna presentationer ('netto skuldsättning') ska du verifiera komponenternas summa?"
           }
         ]
       },
@@ -2480,6 +2592,10 @@
           {
             "type": "insikt",
             "content": "Ärlighetslektionen — V06 är OSATT i kärnan idag:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Träna på kurvan: multipeln 5,75× hamnar i intervallet 4–6× — vilket poäng? Och vad gäller för multipel över 20×? 2. Ärlighetslektionen: V06 är OSATT i kärnan idag. Vilket fält saknas i datakontraktet P1 (evEbitda), och vilket fält finns i stället (evEbit — se V28 Earnings yield)? 3. Förklara varför kärnan vägrar lägga EV på EBIT: vad händer med multipeln (ser dyrare ut än den är) och poängen (för låg) för kapitalintensiva bolag? 4. Värdefallehålet igen: under 4× krävs V19 på minst 3 poäng. Förklara med kapitlets ord varför billighet utan kvalitet är en fälla — och att modellen bygger in den kontrollen."
           }
         ]
       }
@@ -2838,6 +2954,10 @@
           {
             "type": "insikt",
             "content": "Det som blir kvar av varje hundralapp i försäljning när varan/tjänsten är levererad"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara med egna ord: brutomarginalen är det som blir kvar av varje hundralapp i försäljning när varan eller tjänsten är levererad — före vilka kostnader? 2. Skriv formeln: (nettoomsättning − rörelsens kostnader exkl. personalkostnader) ÷ nettoomsättning. 3. Hög brutomarginal = kunden betalar mycket mer än varan kostar att producera. Vilka tre källor till prutmån nämner kapitlet (varumärke, teknik, switch-kostnad)? Och vad innebär en låg marginal (råvara, konkurrens på pris)? 4. Förklara satsen 'taket sätts i första raden': en hög bruttomarginal kan förvaltas bort av dålig organisation, men en låg kan ALDRIG förvaltas fram till hög netto. Varför stämmer det?"
           }
         ]
       },
@@ -2854,6 +2974,10 @@
           {
             "type": "insikt",
             "content": "Koncernens resultaträkning"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka två poster i koncernens resultaträkning behöver du för räkningen — 'Nettoomsättning' och 'Kostnad sålda varor och tjänster' (KSVT)? Förklara alternativet när 'Rörelsens kostnader' redovisas med personalkostnader separat i not. 2. Noten till rörelsekostnaderna delar upp material, personalkostnad och övriga rörelsekostnader — varför vill du veta vad som verkligen är varukostnad? 3. VARNINGEN: för vilka tre bolagstyper saknas KSVT-strukturen helt (banker, förvaltningsbolag, fastighetsbolag)? Vad betyder det för att läsa bruttomarginal där? 4. Var hittar du femårstrenden — nämn båda källorna kapitlet ger: nyckeltalssidan (5 år) eller fem årsredovisningar."
           }
         ]
       },
@@ -2886,6 +3010,10 @@
           {
             "type": "insikt",
             "content": "Jämför ALDRIG bruttomarginal mellan branscher som vore det en ranking."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Varför ska du ALDRIG jämföra bruttomarginal mellan branscher som vore det en ranking? Förklara med kapitlets exempel: en handelskedja på 25 % kan vara magnifik och en programvara på 85 % medioker. 2. Swedbank, Nordea och Handelsbanken visar 0,0 % — Industrivärden/Kinnevik 100/0 % av samma skäl. Förklara strukturen bakom och lär dig läsa den FÖRE siffran. 3. Uthållighet bevisas inte av ett år: vad kräver den platta toppen över 70 % (5-årigt snitt)? Varför räcker inte en ensam lyckoåring? 4. Mix-effekter: hur kan en lågmarginalvolym vid sidan av högmarginalkärnan dölja att kärnan krymper — och var letar du efter segmentuppdelningar (i noterna)?"
           }
         ]
       },
@@ -2898,6 +3026,10 @@
           {
             "type": "text",
             "content": "Ur kärnan (scorV07, R2 §6 konkav kurva med platt topp):\n\nBruttomarginal · Poäng:\n- < 15 % · 0\n- 15–25 % · 1\n- 25–35 % · 2\n- 35–50 % · 3\n- 50–70 % · 4\n- > 70 % · 5 ENDAST om 5-årigt snitt > 70 % — annars 4\n\nExempel ur tablån: Sinch 18,4 % → 1 p · Volvo 24,4 % → 1 p · Alfa Laval\n36,3 % → 3 p · Atlas Copco 42,2 % → 3 p · Kambi 98,9 % → 4 p (5 kräver\nbevisat 5-årssnitt). Vikten KRITISK — V07 är Lönsamhets-kategorins\ntyngsta variabel och modellens tidigaste moat-indikator (V13-väggens\ngrundmaterial).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter med trappan: vilka poäng får Atlas Copco 42,2 %, Alfa Laval 36,3 % och Kambi 98,9 %? Kontrollera mot kapitlets exempel: 3, 3 och 4 p. 2. Varför får Kambi bara 4 p trots 98,9 %? Förklara regeln om 5-årssnittet över 70 %. 3. Sinch 18,4 % och Volvo B 24,4 % hamnar båda på 1 p — förklara med trappsteget 15–25 % och vad siffrorna säger om volym och hård prispress. 4. V07 har KRITISK vikt och kallas modellens tidigaste moat-indikator (V13-väggens grundmaterial). Förklara för dig själv varför bruttomarginalen visar prisets och varans makt tidigt."
           }
         ]
       }
@@ -3256,6 +3388,10 @@
           {
             "type": "insikt",
             "content": "Hur stor del av varje hundralapp i försäljning som blir rörelsekassa"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara vad EBITDA-marginalen mäter: hur stor del av varje hundralapp i försäljning som blir rörelsekassa. Vilka tre saker stänger du ögonen för — finansiering (ränta), skatt och bokföringsmässigt slitage (avskrivningar)? 2. Skriv formeln: (rörelseresultat + avskrivningar) ÷ nettoomsättning. 3. Förklara gap-tanken: bruttomarginalen (V07) visar varans makt, EBITDA-marginalen (V08) visar hur mycket organisationen — personal, marknad, lokal — kostar av den makten. Vad är gapet mellan V07 och V08? 4. Kapitlet kallar EBITDA en bro mot kassaflödet, men den kommer aldrig fram helt. Vilka två saker saknas (arbetande kapital och investeringar)?"
           }
         ]
       },
@@ -3272,6 +3408,10 @@
           {
             "type": "insikt",
             "content": "Noten till rörelsekostnaderna"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Var i resultaträkningen hittar du rörelseresultatet (EBIT) — vilka rader kommer före och efter (efter rörelsekostnader, före finansiella poster och skatt)? 2. Avskrivningarna hämtas ur kassaflödesanalysen, posten 'Avskrivningar/nedskrivningar'. Vad gör du när posten är delad i flera rader (summera dem)? 3. Noten till rörelsekostnaderna redovisar ofta avskivningarna också (personalkostnad/avskrivning/övrigt) — förklara hur du använder den som korskälla. 4. IFRS 16-läsning: leasingavskrivningar och leasingräntor ligger i olika rader. Vilken princip ska du bestämma — och varför måste den hållas konsekvent mellan bolagen du jämför?"
           }
         ]
       },
@@ -3288,6 +3428,10 @@
           {
             "type": "insikt",
             "content": "EBITDA-marginal ≈ 20–21 %"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter Alfa Laval-steget: EBIT-marginal 16,2 % + avskrivningar (typiskt 4–5 %-enheter av omsättningen för processindustri) ⇒ vilken EBITDA-marginal? Varför ska du alltid ta bolagets egen avskrivningspost ur kassaflödesanalysen — aldrig ett antagande? 2. Gapövningen: Atlas Copco brutto 42,2 % → EBIT 20,6 %. Vad har organisationen ätit av varans makt — och är det normalt för industri? 3. Evolution: brutto 100 % → EBIT 57,8 %. Var står hela slaget enligt kapitlet? 4. Industrivärden 99,9 % och Swedbank 51,4 % — förklara varför det är resultaträkningens struktur, inte lönsamhet. Universummedianen för EBIT var 20,8 %."
           }
         ]
       },
@@ -3304,6 +3448,10 @@
           {
             "type": "insikt",
             "content": "EBITDA målar \"före slitage\" — men slitage är verkligt."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. EBITDA målar 'före slitage' — men slitage är verkligt. Förklara med gruvor, rederier och stål: varför är en hög EBITDA-marginal med evigt stort CAPEX-behov ingen sann lönsamhet? 2. IFRS 16 flyttade leasing från kostnad till avskrivning + ränta. Förklara hur EBITDA-marginalen steg 'gratis' vid övergången 2019 utan att en enda affär förbättrats — och varför jämförelse tvärs över övergången kräver justering. 3. Engångsposter: nämn de två exemplen (restruktureringskostnader, företagsförvärvsvinster) — vilken not är skyldigheten att läsa? 4. Förklara varför modellen vägrar lägga EBIT-marginaler på EBITDA-trösklar: vad skulle systematisk underskattning betyda för kapitalintensiva bolag?"
           }
         ]
       },
@@ -3320,6 +3468,10 @@
           {
             "type": "insikt",
             "content": "V08 är OSATT i kärnan idag — med dokumenterad orsak:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. V08 är OSATT i kärnan idag — med dokumenterad orsak. Vilket fält finns i datakontraktet (lonksamhet.ebitMarginal) och vilket saknas (avskrivningar/omsättning)? 2. Träna på den väntande linjära trappan: vilka fem nivåer ger 5, 4, 3, 2 respektive 1 poäng? 3. Kapitlet kallar detta Fas 2:s kanske renaste exempel på modellens dataheder: hellre en tom rad med förklaring än en snygg siffra som ljuger om vad den mäter. Förklara för dig själv vad dataheder betyder. 4. Jämför med V06: båda väntar på att kontraktet utökas additivt. Vad är skillnaden mellan linjära steg och V07:s konkava kurva med platt topp?"
           }
         ]
       }
@@ -3678,6 +3830,10 @@
           {
             "type": "insikt",
             "content": "Hur mycket vinst bolaget skapar per krona som ägarna har satt in"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv vad ROE mäter: vilken täljare och vilken nämnare ingår, och varför kallas resultatet ägarens egen ränta på pengarna? 2. Samma affär kan visa 10 % eller 25 % ROE beroende på finansieringen. Förklara mekanismen — och vilka två kontroller (hävstång via V10 och uthållighetsbevis) AKM1:s V09 därför kräver innan toppoäng. 3. Kurvans nollpunkt ligger vid kapitalkostnaden (≈ 9 % i modellen). Förklara varför en ROE under den nivån kallas värdeförstöring. 4. Modellen säger att ROE skall komma från affären, inte från banken. Testa dig själv: vad skiljer två bolag med samma ROE men olika ursprung bakom talet?"
           }
         ]
       },
@@ -3690,6 +3846,10 @@
           {
             "type": "text",
             "content": "- Resultat efter skatt: resultaträkningens näst sista rad (\"Årets\n   resultat\", koncernen).\n- Eget kapital: balansräkningen, \"Summa eget kapital\" — TA FRÅN BÅDA\n   åren (modellen använder snittet; nyemissioner och utdelningar för-\n   ändrar posten under året, snittet ger rätt nämnare).\n- Räkna: Resultat ÷ ((EK förra året + EK året) ÷ 2).\n- Kontrollera i noten till eget kapital hur posten rörde sig:\n   vinst, utdelning, emission, omvärdering — en ROE på emissionstämd\n   nämnare är inte samma prestation.\n- 5-årssnitt: nyckeltalssidan eller fem redovisningar."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Var i resultaträkningen hittar du täljaren — och exakt vad heter raden? Kontrollera att du läser koncernen. 2. Eget kapital skall hämtas från båda åren i balansräkningen (Summa eget kapital). Förklara varför snittet av årets början och slut ger rätt nämnare. 3. Räkna efter formeln: resultat ÷ ((EK förra året + EK året) ÷ 2). Vad händer med nämnaren vid en nyemission sent på året? 4. I noten till eget kapital följer du postens rörelser: vinst, utdelning, emission, omvärdering. Förklara varför en ROE på en emissionstämd nämnare inte är samma prestation — och var du hittar 5-årssnittet."
           }
         ]
       },
@@ -3722,6 +3882,10 @@
           {
             "type": "text",
             "content": "- Hävstångens optik: ROE stiger med skulden tills den gör det —\n  sedan kommer cykeln. Läs ALDRIG ROE utan skuld/EK (V10) vid sidan;\n  modellen beräknar dem i par (V10 först, som hävstångskontroll).\n- Nära nog räcker inte: en ROE på 8,5 % är inte \"nästan bra\" — den är\n  under kapitalkostnaden och alltså värdeförstöring (0 p i modellen).\n  Tröskeln är en klippa, inte en backe.\n- Emissionstämda nämnare: nytt eget kapital sent på året sänker ROE\n  mekaniskt utan att affären förändrats — därför SNITTET av årets början\n  och slut.\n- Återköpsmaskin: bolag som köper tillbaka aktier krymper eget kapital\n  och blåser upp ROE aritmetiskt — kolla noten om förändringar i eget\n  kapital.\n- Bankers ROE är fungerande men med annan hävstångslogik (balans-\n  räkningen är MYCKET skuldfylld per definition) — bank-ROE jämförs med\n  banker, inte med industrier."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Regeln: läs ALDRIG ROE utan skuld/EK (V10) vid sidan. Förklara varför modellen beräknar dem i par — och vem som går först. 2. En blogg kallar ROE 8,5 % för nästan bra. Argumentera mot: varför är talet i stället värdeförstöring, och vad menas med att tröskeln är en klippa, inte en backe? 3. Bolag som köper tillbaka aktier krymper det egna kapitalet. Förklara hur återköpsmaskinen blåser upp ROE aritmetiskt — och vilken not du kollar. 4. Bankers balansräkningar är skuldfyllda per definition. Varför skall en banks ROE jämföras med banker — och aldrig med industrier?"
           }
         ]
       },
@@ -3734,6 +3898,10 @@
           {
             "type": "text",
             "content": "Ur kärnan (scorV09, R2 §6 konkav kurva med hävstångskontroll):\n\nROE · Poäng:\n- < 9 % · 0 (värdeförstöring oavsett nivå)\n- 9–12 % · 1\n- 12–18 % · 2\n- 18–25 % · 3\n- 25–35 % · 4\n- > 35 % · 5 ENDAST om 5-årssnitt > 35 % OCH skuld/EK ≤ 2 — annars 4\n\nExempel ur tablån: Sinch 1,9 % → 0 · Handelsbanken 12,8 % → 2 ·\nAlfa Laval 19,1 % → 3 · Ericsson 26,1 % → 4 · Mastercard 241 % → 4\n(hävstång 4,40 > 2). Källfält: lonksamhet.roe + moat.roeMedel5ar +\nstabilitet.skuldEgenkapital — tre tabeller, en dom.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Träna tröskeltabellen: vilken poäng ger ROE 8,5 %, 15,3 % och 20,9 %? Kontrollera mot kapitlets tabell (0, 2 och 3). 2. Toppoängen 5 kräver tre villkor samtidigt: räkna upp dem och förklara varför Mastercards 241,2 % ändå inte räcker. 3. Följ tablån: Sinch 1,9 %, Handelsbanken 12,8 %, Alfa Laval 19,1 % och Ericsson 26,1 %. Kontrollera att du får poängen 0, 2, 3 och 4. 4. Kärnan hämtar tre källfält: lonksamhet.roe, moat.roeMedel5ar och stabilhet.skuldEgenkapital. Förklara för dig själv vad varje fält bidrar med i domen."
           }
         ]
       }
@@ -4092,6 +4260,10 @@
           {
             "type": "insikt",
             "content": "Balansen mellan lånade och ägarpengar i bolaget"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Skuldsättningsgraden 1,0× betyder att banken och ägarna finansierar bolaget hälften var; 0,5× att ägarna står för två tredjedelar. Förklara för dig själv vad kvoten mäter. 2. Skulden kallas cykelns förstärkare i båda riktningarna. Beskriv mekanismen i uppgången (lyfter ROE) och i nedgången (fast kostnad även när affären sviker). 3. Varför beräknas V10 FÖRE V09 i modellen? Förklara rollen som hävstångskontroll. 4. Gradens poäng är ett riskmått — inte bra lågt, dumt högt. Vad mäter den egentligen om bolagets struktur, och vem får alltid betalt före ägaren?"
           }
         ]
       },
@@ -4108,6 +4280,10 @@
           {
             "type": "insikt",
             "content": "Skulder och övriga förpliktelser:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka två summarader i balansräkningen använder du — och varför tas hela posten Summa skulder och övriga förpliktelser, inte bara de räntebärande? (För EV-räkningar används de räntebärande, se V06.) 2. Varför skall minoritetsintresset sitta kvar i Summa eget kapital i koncernen — vad blir missvisande annars? 3. Räkna efter: summa skulder ÷ summa eget kapital. Förklara för dig själv vad kvoten säger om balansstrukturen. 4. Två kontroller vid sidan: vad mäter räntetäckningsgraden i noten om finansiella poster (rörelseresultat ÷ finansiella kostnader) — och vilken återbetalningsfråga ställer du i förvaltningsberättelsen?"
           }
         ]
       },
@@ -4140,6 +4316,10 @@
           {
             "type": "insikt",
             "content": "Negativt eget kapital ⇒ osatt."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vad gör modellen när eget kapital är negativt — och varför sätts graden osatt i stället för 0? Förklara dokumenteringsvalet: en negativ nämnare ger ingen ranking. 2. Bankers och finansbolags grader blir 8–15× av struktur, inte av misstag. Förklara varför — och vilket slags mått banker jämförs med i stället. 3. IFRS 16: leasingåtaganden är numera skuld i balansräkningen. Förklara hur butiks- och flygplansleasingar förvärrade grader mekaniskt 2019 — och varför du aldrig jämför över övergången utan not. 4. Räntan avgör bärigheten: förklara varför 3× till 2 % ränta kan vara lugnare än 1,5× till 8 % — och vilka två mått du kompletterar med."
           }
         ]
       },
@@ -4156,6 +4336,10 @@
           {
             "type": "insikt",
             "content": "V10 beräknas FÖRST i kärnan"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Träna trappan: vilken poäng ger Alfa Laval 0,46×, medianen 0,52×, Volvo 1,47× och Boeing 7,91×? Kontrollera mot kapitlets tabell (5, 4, 3 och 1). 2. Alfa Laval får 5 poäng medan medianen 0,52× hamnar precis under 4-poängsstrecket. Förklara med trappan varför så liten skillnad ger olika poäng. 3. Nyckelkopplingen: V10 beräknas FÖRST i kärnan. Förklara hur dess hävstångskontroll avgör om V09:s ROE får ge toppoäng — vilket gränsvärde krävs? 4. Vad händer med poängen vid negativt eget kapital — och varför är det viktigt att kolla EK-tecknet FÖRE du delar?"
           }
         ]
       }
@@ -4514,6 +4698,10 @@
           {
             "type": "insikt",
             "content": "Luftgapet mellan vad bolaget har inom räckhåll och vad det måste betala inom ett år"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Likviditeten mäter luftgapet mellan vad bolaget har inom räckhåll och vad det måste betala inom ett år. Förklara för dig själv vilka två balansposter som ställs mot varandra. 2. Varför räknas varulagret bort — eller ned — i kvickkvoten? Vad är kvickt nära pengar i en kris? 3. Kvoten 1,0 betyder jämna svar, 1,5 betyder buffert och 0,7 betyder att korten måste skötas aktivt varje vecka. Testa dig själv: tolka de tre nivåerna med egna ord. 4. Grannindikatorerna ställer tre frågor: V10 hur strukturen är finansierad på lång sikt, V11 om bolaget klarar året som kommer, V19 om kassan bränns och nyemissionsrisk finns. Förklara skillnaden mellan dem."
           }
         ]
       },
@@ -4526,6 +4714,10 @@
           {
             "type": "text",
             "content": "- Omsättningstillgångar i balansräkningen: varulager + kundfordringar\n   + kassa och bank + kortfristiga placeringar.\n- Kortfristiga skulder: leverantörsskulder + kortfristig del av lån +\n   obetalda kostnader och skatter. (Posten heter \"Kortfristiga skulder och\n   övriga förpliktelser\" i många svenska redovisningar.)\n- Räkna kvickkvoten: (omsättningstillgångar − varulager) ÷ kortfristiga\n   skulder. Kalkylatorns källrad lyder \"både åren\" — jämför även förra\n   året: en stigande kortfristig låneandel är en tidig signal.\n- Not om kundfordringar: äldresalden och individuell värdering —\n   fordringar som är gamla eller osäkra är inte riktiga pengar.\n- Förvaltningsberättelsen: bekräftade kassakreditlinjer — outnyttjad\n   kredit är likviditetens andra hälft och står inte i balansräkningen."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna upp komponenterna: vad ingår i omsättningstillgångarna — och vad ingår i de kortfristiga skulderna (posten Kortfristiga skulder och övriga förpliktelser i många svenska redovisningar)? 2. Räkna efter kvickkvoten: (omsättningstillgångar − varulager) ÷ kortfristiga skulder. Varför skall du jämföra med förra året — vilken tidig signal letar du efter? 3. I noten om kundfordringar läser du äldresaldon och den individuella värderingen. Förklara varför gamla eller osäkra fordringar inte är riktiga pengar. 4. Var hittar du bekräftade kassakreditlinjer — och varför kallas outnyttjad kredit likviditetens andra hälft, som inte står i balansräkningen?"
           }
         ]
       },
@@ -4542,6 +4734,10 @@
           {
             "type": "insikt",
             "content": "Övningstal A (industribolag, mdr):"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Räkna efter övningstal A: kassa 4,2 + kundfordringar 8,1 + kortfristiga placeringar 1,3 = 13,6. Kontrollera att 13,6 ÷ kortfristiga skulder 9,8 ger kvickkvoten 1,39. 2. Med lagret medräknat blir kassakvoten 2,0 (19,6 ÷ 9,8). Förklara vad skillnaden mellan kvoterna visar — lagrets andel är 31 %. 3. Övningstal B ger kvick 0,69. Noten visar att 3,4 av fordringarna är pågående projekt med fakturering vid milstolpar — förklara varför gapet är timing, inte förlust. 4. I dagligvaruhandel (Axfood-klassen i universumet) är negativt rörelsekapital en styrka, inte en kris. Förklara mekanismen: vem betalar vem först?"
           }
         ]
       },
@@ -4558,6 +4754,10 @@
           {
             "type": "insikt",
             "content": "Kvick under 1,0 är inte automatisk nöd"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Kvick under 1,0 är inte automatisk nöd. Nämn två affärstyper som driver den medvetet lågt — och frågan du alltid ställer om varför gapet ser ut som det gör. 2. Kvick över 1,0 är inte automatisk hälsa. Förklara hur svällande, osäkra kundfordringar kan smyga in i talet — och varför notens äldstanalys är sanningen, inte balansraden. 3. Säsong och balansdagen: detaljhandeln efter julhelgen har kassatopp, projektbolaget före milstolpe har botten. Förklara vad som menas med att en dag gör inte ett år. 4. Två strukturfällor till: varför är kvickkvoten meningslös för banker och finansbolag (samma undantag som V10) — och varför ser butiks- och flygbolag trängre ut än före 2019 (IFRS 16)?"
           }
         ]
       },
@@ -4570,6 +4770,10 @@
           {
             "type": "text",
             "content": "V11 bär 6 % vikt i kategorin Stabilitet. Kärnan (karna.ts rad 304)\ndokumenterar sitt eget val: *\"V11 Likviditet (kvickkvot) — saknas i\ndatakontraktet: osatt\"* — scorV11() lämnar osatt eftersom universumets\ndatafält inte bär balansräkningsdetaljer. Poängsättningen är manuell:\n läs balansräkningen och sätt poängen själv.\n\nFörslagstrappa vid manuell poängsättning (ett resonemangsmönster att\nutgå ifrån — inte modellens kod): kvick ≥ 2,0 ⇒ 5 · 1,5–2,0 ⇒ 4 ·\n1,0–1,5 ⇒ 3 · 0,5–1,0 ⇒ 2 · < 0,5 ⇒ 1 — och justera för branschens\narbetskapitalstruktur (handel vs projekt) innan poängen sätts.\n\nSyskopplingen: V10 äger den långsiktiga strukturen, V19 äger\nvarningslampan — V11 är skillnaden mellan att överleva ett halvår och att\nbara se bra ut på pappret.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Kärnan dokumenterar sitt val: V11 Likviditet (kvickkvot) — saknas i datakontraktet: osatt. Förklara varför scorV11() aldrig räknar automatiskt. 2. Poängsättningen är manuell: läs balansräkningen och sätt poängen själv. Vad kräver det av dig som gör läsningen? 3. Förslagstrappan (ett resonemangsmönster, inte modellens kod): kvick ≥ 2,0 ger 5, 1,5–2,0 ger 4, 1,0–1,5 ger 3, 0,5–1,0 ger 2 och under 0,5 ger 1. Öva: vilken utgångspoäng ger övningstalen 1,39 och 0,69 — och vad justerar du för innan poängen sätts? 4. Syskopplingen: V10 äger den långsiktiga strukturen och V19 varningslampan. Förklara V11:s roll — skillnaden mellan att överleva ett halvår och att bara se bra ut på pappret."
           }
         ]
       }
@@ -4928,6 +5132,10 @@
           {
             "type": "insikt",
             "content": "Hur jämnt intäkterna ruller år från år"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Intäktsstabiliteten räknas som variationskoefficienten (CV): standardavvikelsen ÷ medelvärdet för nettoomsättningen över åren. Förklara för dig själv vad låg och hög CV säger om affären. 2. CV är skalfri — samma mått fungerar för Truecallers drygt 2 mdr som för Volvos drygt 500 mdr. Förklara varför kurvans form, inte storleken, är det som mäts. 3. Källraden frågar efter 5 års nettoomsättning — men universumet bär fyra bokförda år (2022–2025). Hur hanterar beräkningen det? 4. Vilka tre drag kännetecknar en affär med hög CV: cykel, projektberoende eller affär i omvandling? Förklara hur de visar sig i en intäktskurva."
           }
         ]
       },
@@ -4944,6 +5152,10 @@
           {
             "type": "insikt",
             "content": "Nettoomsättningen per år:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Var i årsredovisningen hittar du nettoomsättningen per år — och var står femårsöversikten oftast? 2. Kalkylbladet: räkna medelvärdet, sedan standardavvikelsen, sedan kvoten med =STDAV.P(...)/MEDEL(...). Förklara varför STDAV.S, som delar med n−1, ger för hög CV. 3. Segmentnoten avgör vilken del av bolaget som svänger. Beskriv hur koncernens total-CV kan vara låg medan ett segment dansar. 4. Kontrollfrågan: är kurvan jämn och pekar den någonstans? Förklara varför CV är blind för riktning — en jämnt nedåtlutande kurva får också låg CV."
           }
         ]
       },
@@ -4976,6 +5188,10 @@
           {
             "type": "insikt",
             "content": "CV är blind för riktning:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. CV är blind för riktning — en jämnt sjunkande affär får fin poäng. Vilken granne läser du alltid tillsammans med V12 (V01 Försäljningstillväxt)? 2. Små absoluta tal ger extrem CV: förklara varför 0/1/0/0 är holdingbolagsbokföring, inte riktig volatilitet. 3. Förvärv böjer serien: organisk 60 plus köpt 40 kan se ut som tillväxtsvängning. Var kontrollerar du det? 4. Två till: varför kan utlandsintäkter i annan valuta böja kurvan utan att affären gjort det — och när lämnar kärnan V12 osatt (saknade serier, eller medelvärdet noll eller negativt)?"
           }
         ]
       },
@@ -4988,6 +5204,10 @@
           {
             "type": "text",
             "content": "Ur kärnan (karna.ts, scorV12 — dokumenterad rak tröskel på CV för\nserier.omsattning):\n\nCV (omsättningen) · Poäng:\n- ≤ 5 % · 5\n- ≤ 10 % · 4\n- ≤ 20 % · 3\n- ≤ 35 % · 2\n- > 35 % · 1\n- inga serier / icke-positiv medel · osatt\n\nMotiveringstexten anger CV i procent och antal år — \"Omsättningens\nvariationskoefficient X % över N år\". Syskopplingen: V12 är\nStabilitetsparets andra halva mot V10 — V10 frågar hur finansieringen\nbär en svacka, V12 hur sannolikt svackan är.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Träna trösklarna: vilken poäng ger CV 2,2 %, 6,5 %, 11,5 % och 167,7 %? Kontrollera mot tabellen (5, 4, 3 och 1). 2. Motiveringstexten anger CV i procent och antal år — Omsättningens variationskoefficient X % över N år. Förklara varför antalet år spelar roll för tolkningen. 3. Stabilitetsparet: V10 frågar hur finansieringen bär en svacka, V12 hur sannolikt svackan är. Förklara kopplingen med egna ord. 4. Träna gränserna: Atlas Copco 8,4 % och Handelsbanken 8,6 % — vilken poäng ger trösklarna, och vilket CV-tal krävs för högsta poängen?"
           }
         ]
       }
@@ -5346,6 +5566,10 @@
           {
             "type": "insikt",
             "content": "Hur länge hålls konkurrenterna borta, och vad kostar det dem att ta sig över?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv vad som menas med att patent är \"en vallgrav byggd av tid\": vad är det som ska hinna tjänas in medan konkurrenterna hålls borta?\n2. Kapitlet säger att moat-frågan aldrig är \"finns innovation här?\" — vilka två frågor om konkurrenterna och tiden ska du ställa i stället?\n3. Varför är en fabrik inget svar enligt kapitlet (den kan byggas), och varför är goodwill det ännu sämre exemplet? Beskriv goodwill med kapitlets egna ord som bokfört förvärvspris.\n4. Kontrollera förståelsen: vad kostar det konkurrenterna att ta sig över vallgraven — och varför räcker innovationskraft ensam aldrig som moat-bevis?"
           }
         ]
       },
@@ -5362,6 +5586,10 @@
           {
             "type": "insikt",
             "content": "Not om immateriella anläggningstillgångar"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. I noten om immateriella anläggningstillgångar ska du läsa posterna, inte summan — räkna upp posterna kapitlet listar (patent, licenser, utvecklingskostnader i programvara, rättsverkliga avgifter) — och varför står goodwill som separat rad?\n2. Förvaltningsberättelsens FoU-avsnitt ger inriktning, antal patent och pipeline för läkemedel/biotech — varför kräver kapitlet källkritik på bolagets egna uppgifter om patentantalet?\n3. Resultaträkningens FoU-kostnad per år kallas inputen — vad är det moaten ska visa att kostnaden producerar?\n4. Förklara IFRS-regeln som gör noten sned: vad händer med internt skapade patent och varumärken, och var läser du den organiska IP-ytan i stället?"
           }
         ]
       },
@@ -5394,6 +5622,10 @@
           {
             "type": "insikt",
             "content": "Patentantal är inte skydd:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Varför är patentantal i sig inget skydd? Räkna upp de tre faktorer kapitlet listar — kvalitet, patentfamiljens storlek och vilka jurisdiktioner som täcks — och förklara varför ett amerikanskt patent inte skyddar Europa.\n2. Kontrollera tiden: grovt hur många år från ansökan löper ett patent, vilken bransch har förlängningsvägar, och varför ska du räkna kvarvarande tid i stället för bestånd?\n3. En balansräkning tyngd av goodwill säger enligt kapitlet att moaten köpts — varför är goodwill ändå inget skydd, utan köpepriset på förvärvade bolag?\n4. Skilj på input och output: vad är FoU-kostnadens output i marginalen (koppla V07 Bruttomarginal), och varför är \"patent pending\" noll skydd?"
           }
         ]
       },
@@ -5410,6 +5642,10 @@
           {
             "type": "insikt",
             "content": "V07 Bruttomarginal är beviset, V13 är förklaringen"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur stor vikt bär V13 i kategorin Moat, och ur vilka två källor poängsätts indikatorn kvalitativt (noten om immateriella tillgångar och förvaltningsberättelsen)?\n2. Universumets moat-proxyfält — bruttoMarginalMedel5ar, bruttoMarginalSpread5ar och roeMedel5ar — är ifyllda hos hur många av de 195 bolagen, och vad är moatens ekonomiska signatur i siffror?\n3. Förklara indelningslogiken \"V07 Bruttomarginal är beviset, V13 är förklaringen\": när bär poängen enligt kapitlet?\n4. Utan förklaring i noten kan en hög bruttomarginal vara två andra saker — vilka (cykel eller pristäkt tillfällighet), och vilken indikator fångar cykeln (V12)?"
           }
         ]
       }
@@ -5753,6 +5989,10 @@
           {
             "type": "text",
             "content": "Ett varumärke är en moat bara om det får betalt: kunderna betalar\nmer, kommer tillbaka oftare eller förlåter fel snabbare hos detta bolag\nän hos nästa. Det som kan mätas är inte namnet utan prissättnings-\nkraften — skillnaden mellan vad kunden betalar här och vad hen hade\nbetalt hos en namnlös konkurrent med samma produkt.\n\nDärför är V14 den enda moat-indikatorn där svaret delvis står i\nresultaträkningen: en bruttomarginal (V07) som ligger varaktigt över\nbranschens är varumärkets kvitto."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv villkoret \"ett varumärke är en moat bara om det får betalt\": på vilka tre sätt nämner kapitlet att betalningen syns (kunderna betalar mer, kommer tillbaka oftare, förlåter fel snabbare)?\n2. Det som kan mätas är inte namnet utan prissättningskraften — hur definierar kapitlet den (skillnaden mot en namnlös konkurrent med samma produkt)?\n3. Varför är V14 den enda moat-indikatorn där svaret delvis står i resultaträkningen? Vilket nyckeltal är \"varumärkets kvitto\" och under vilket villkor (varaktigt över branschens)?\n4. Kontrollera skillnaden mellan ett känt och ett starkt varumärke: vilket krav ställer metoden på bruttomarginalen (V07) innan namnet räknas som moat?"
           }
         ]
       },
@@ -5769,6 +6009,10 @@
           {
             "type": "insikt",
             "content": "Marginalen mot branschmedianen:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förvaltningsberättelsens positioneringsord (\"premium\", \"ledande\", \"första valet\") är påståenden att pröva, inte tro — mot vilka uppgifter i årsredovisningen prövar du dem?\n2. Vad letar du efter i kundnoten: vad säger koncentrationen (koppla V03 Intäktsdiversifiering) och andelen återkommande intäkter om varumärket?\n3. Hur ställer du marginalen mot branschmedianen i datasetets nyckeltalssidor — vad bevisar en bruttomarginal över medianen år efter år?\n4. Två varningar till sist: varför bokförs aldrig ett internt byggt varumärke (notens varumärkesposter är köpta), och vad betyder en stor och växande reklambudget med sjunkande marginal (varumärket hyr sin plats)?"
           }
         ]
       },
@@ -5784,7 +6028,7 @@
           },
           {
             "type": "utmaning",
-            "content": "Träningssekvens: fråga samma sak till varje bolag — *vad bevisar att\nvarumärket lönar sig?* H&M:s svar är volym, Nintendos marginal, Volvos\nåterkommande flottkontrakt. Utan bevis är varumärket bara en logo."
+            "content": "Träningssekvens: fråga samma sak till varje bolag — vad bevisar att\nvarumärket lönar sig? H&M:s svar är volym, Nintendos marginal, Volvos\nåterkommande flottkontrakt. Utan bevis är varumärket bara en logo."
           }
         ]
       },
@@ -5801,6 +6045,10 @@
           {
             "type": "insikt",
             "content": "Mode och cykel varumärken förslits:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara fällan \"känt ≠ starkt\": varför är medvetenhet utan prissättningskraft bara reklam, inte moat (H&M-läsningen)?\n2. En marknadsandel som växt genom kampanjer och promor kan sjunka lika snabbt — vilka noter kontrollerar du (pris-/promo-noter)?\n3. Varför kallas en positionering som måste förnyas varje säsong en hyrd moat? Koppla till hur mode- och cykelvarumärken förslits.\n4. Två notblindheter: ett köpt varumärke i noten är historik, inte framtid — och varför kan en kontrovers eller kvalitetskris tömma en varumärkesmoat i veckor? Var läser du riskerna (riskavsnittet, gränssnitt mot V18)?"
           }
         ]
       },
@@ -5813,6 +6061,10 @@
           {
             "type": "text",
             "content": "V14 bär 6 % vikt i kategorin Moat och poängsätts kvalitativt ur\nförvaltningsberättelse, kundnot och marknadsdata (källraden i\nkalkylatorn). Den ekonomiska beviskedjan går via universumets\nmoat-proxyfält: en bruttomarginal som är hög och stabil över fem år\n(bruttoMarginalMedel5ar/Spread5ar) är ett varumärke som fungerar i\nsiffror — spreaden liten betyder att kraften hållit genom konjunkturer.\n\nKompletterande läsning: V07 Bruttomarginal ger nivån, V12\nIntäktsstabilitet ger uthålligheten, V14 ger förklaringen —\ntillsammans skiljer de ett varumärke från en tillfällig pristäkt\nposition.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur stor vikt bär V14 i kategorin Moat, och ur vilka tre källor poängsätts indikatorn kvalitativt (förvaltningsberättelse, kundnot och marknadsdata)?\n2. Följ den ekonomiska beviskedjan via moat-proxyfälten: vad betyder en bruttomarginal som är hög och stabil över fem år (bruttoMarginalMedel5ar/Spread5ar) — och vad signalerar en liten spread genom konjunkturer?\n3. Förklara rollfördelningen: V07 Bruttomarginal ger nivån, V12 Intäktsstabilitet ger uthålligheten, V14 ger förklaringen. Vad missar du om du läser bara en av de tre?\n4. Kontrollera med egna ord: hur skiljer de tre indikatorerna tillsammans ett äkta varumärke från en tillfällig pristäkt position?"
           }
         ]
       }
@@ -6171,6 +6423,10 @@
           {
             "type": "insikt",
             "content": "Varje ny användare gör tjänsten mer värdefull för alla som redan är där"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv definitionen: när finns en nätverkseffekt — vad gör varje ny användare för alla som redan är där, och hur växer värdet i förhållande till användarantalet?\n2. Vad säger Metcalfes tumregel (värdet proportionellt mot n²), och vilken justering gör kapitlet för praktiken (oftast långsammare, men ändå överlinjärt)?\n3. Varför kallas nätverkseffekten den enda moat som förstärker sig själv — vad måste konkurrenten göra som är svårare än att bygga en bättre produkt (flytta hela skaran samtidigt)?\n4. Räkna upp de tre sorterna med kapitlets exempel: direkta, tvåsidiga och data-nätverk — och minns modellens källrad: kundantal över tid."
           }
         ]
       },
@@ -6187,6 +6443,10 @@
           {
             "type": "insikt",
             "content": "KPI-sektionen i förvaltningsberättelsen:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka KPI:er letar du efter i förvaltningsberättelsens KPI-sektion (användare, MAU, abonnenter, handelsvolym) — och varför ska serien läsas flera år bakåt, inte bara senaste året?\n2. Nätverket växer, men monetiseras det? Koppla intäkt per kund/brukare till V02 ARR-tillväxt och förklara vad kontrollen avslöjar.\n3. Vad är take rate på en marknadsplats (andelen av handelsvolymen som blir intäkt), och vad kan en sjunkande take rate med växande volym betyda enligt kapitlet (köpt tillväxt)?\n4. Varför kontrollerar du båda sidorna på en tvåsidig plattform var för sig (en tom sida är ingen marknadsplats), och varför visar retention/churn nätverkets hållfasthet bättre än hur många som provat?"
           }
         ]
       },
@@ -6203,6 +6463,10 @@
           {
             "type": "insikt",
             "content": "Träningsfrågan att ställa till varje bolag:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Ställ träningsfrågan till varje bolag: \"Gör användare nummer N+1 tjänsten bättre för användare 1 till N?\" — hur faller Truecaller, Microsoft/Apple, Sinch och Evolution ut?\n2. Beskriv Truecallers slutna, självförstärkande krets: vad rapporterar användarna in (spamnummer), och varför börjar nykomlingen med en tom databas?\n3. Förklara förväxlingen ekosystem mot nätverk med Microsoft/Apple: varför handlar deras moat om switchkostnad (filer, appar, arbetsflöden), och hur mäts de två moat-sorterna olika (låsning mot deltagarantal)?\n4. Sinch har infrastruktur-skala (driftsäkerhet, leverantörsdjup) och Evolution licenser, croupierutbildning och kapacitet — varför ger de ändå inte hög V15-poäng?"
           }
         ]
       },
@@ -6219,6 +6483,10 @@
           {
             "type": "insikt",
             "content": "Nätverks-moat ≠ intäkts-moat:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur tar du dig ur buzzword-fällan? Vilken kausalitet måste bevisas (användare → bättre produkt) innan du godtar ordet?\n2. Varför bygger subsidierade anslutningar (rabatter, bonusar) ingen självgående cirkel — och vad händer med churnen när subventionen slutar?\n3. Nätverk kan vända: varför kan samma mekanism som bygger snabbt också tömma snabbt när värdet faller, och vilket mått kallas nätverkets säkerhetsräcke (retention)?\n4. Förklara skillnaden nätverks-moat mot intäkts-moat: vad är ett nätverk utan intäkt per användare och take rate (en kostnad med publik), och varför gäller sällan n² fullt ut i värderingen (värde per användare tilltar oftast log-linjärt)?"
           }
         ]
       },
@@ -6235,6 +6503,10 @@
           {
             "type": "insikt",
             "content": "V03 Intäktsdiversifiering"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur stor vikt bär V15 i kategorin Moat, och vilken källrad poängsätts den ur (\"Förvaltningsberättelsen; kundantal över tid\")? Vilket krav ställs på kundantalsserien för toppoäng (organisk, icke-subsidierad)?\n2. Vad ska ett mognat nätverk synas i enligt modellen (stabil marginal och växande intäkt per användare), och vad fångar moat-proxyfälten (marginalens medelvärde och spridning över fem år)?\n3. Förklara kopplingarna: varför är V02 ARR nätverkens naturliga intäktsform, och vad menas med att många kunder ger en tunn nätlösning (V03)?\n4. Varför är data-nätverkets innehåll ofta skyddat som IP (V13 Patent & IP)? Förklara hur mekanism och utfall hänger ihop i poängsättningen."
           }
         ]
       }
@@ -6593,6 +6865,10 @@
           {
             "type": "insikt",
             "content": "Vad bolaget har på väg in som kan förändra intäktskurvan"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv vad V16 mäter: vad ska produktlanseringar kunna förändra (intäktskurvan), och vilka tre former nämner kapitlet (nya produkter, nästa generation, pipeline)?\n2. Avgränsa indikatorn: varför är katalysatorn inte en moat (V13–V15 frågar vad som håller konkurrenter borta) och inte tillväxten själv (V01 mäter det som redan hänt)?\n3. Vad är kärntanken i katalysatorkategorin — skillnaden mellan ett bolag som lever på det som redan lanserats och ett som har nästa intäktsvåg dokumenterad och daterad?\n4. Kontrollera förståelsen: vilka två egenskaper hos framtida händelser kräver indikatorn för att marknaden ska kunna prissätta dem (namngivna, daterbara)?"
           }
         ]
       },
@@ -6609,6 +6885,10 @@
           {
             "type": "insikt",
             "content": "Förvaltningsberättelsens kommande-event-avsnitt:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Var finns indikatorns råmaterial (kommande-event-avsnittet i förvaltningsberättelsen) — och vilken typ av datum gör händelserna användbara (kvartals- eller årsdatum)?\n2. Vad listar en pipelinetabell hos läkemedels- och teknikbolag (fas, indikation, förväntat beslutsdatum) — och vad lyder källraden (\"kommande lanseringar/pipeline\")?\n3. Varför väger en stor lansering i ett litet segment mindre — vilken not ger segmentbilden (V03), och vad visar kapitaliserade utvecklingskostnader (balanserad FoU = arbete på väg)?\n4. Träna kontrollfrågan: när är en lansering daterad och specifik (\"Q2\", namngiven produkt) och när är den vag? Vilket är katalysator och vilket är stämningsläge?"
           }
         ]
       },
@@ -6641,6 +6921,10 @@
           {
             "type": "insikt",
             "content": "Bolagets egna ord om pipelinen"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara fällan \"lansering ≠ framgång\": vad säger katalysatorn (att något KOMMER) — och vad säger den inte (att det SÄLJER), med tanke på historiens låga träffsäkerhet?\n2. Bolagets egna ord om pipelinen är säljande till sin natur: hur skiljer du regulatoriskt förankrat material (V18) från marknadsföring?\n3. Vad menas med kontrollen \"prissatt redan?\" — varför är en välkommunicerad lansering som redan ligger i kursen mindre värdefull, och när är katalysatorn värd mest (när den är oväntad)?\n4. Cykelförväxling: varför är lastbils- och halvledarcykelns svängningar efterfrågekatalysatorer (V12) — inte produktkatalysatorer? Förklara skillnaden med egna ord."
           }
         ]
       },
@@ -6653,6 +6937,10 @@
           {
             "type": "text",
             "content": "V16 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nkärnans gemensamma gren (scorKvalitativ) dokumenterar exakt: *\"Osatt —\nProduktlanseringar är kvalitativ och bedöms ur förvaltningsberättelsen\n(kommande lanseringar/pipeline), som inte ingår i P1:s\nnyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via\nmodul.\"* Poängen sätts av analytikern efter läsningen — modellen ger\nstrukturen (0 = inget namngivet framåt, 5 = daterad pipeline i\nkärnsegmentet).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Hur stor vikt bär V16 och i vilken kategori (Katalysator)? Varför blir poängen \"Osatt\" i kärnans gemensamma gren (scorKvalitativ) — vad ingår inte i P1:s nyckeltalskontrakt?\n2. Vem sätter poängen enligt modellen (analytikern efter läsningen)? Förklara vad modellen ger (strukturen) och vilka två sätt nämns för manuell poängsättning (kalkylatorn eller via modul).\n3. Träna poängskalan: vad kännetecknar 0 (inget namngivet framåt) och vad krävs för 5 (daterad pipeline i kärnsegmentet)?\n4. Kontrollera att du kan återge dokumentationen: hur motiverar kärnan att indikatorn är kvalitativ (bedöms ur förvaltningsberättelsens kommande lanseringar/pipeline, inte ur nyckeltalskontraktet)?"
           }
         ]
       }
@@ -6990,6 +7278,10 @@
           {
             "type": "insikt",
             "content": "Bindande intäktsvägar som redan skrivits under men ännu inte fullt betalat ut"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv skillnaden mellan V16 och V17: varför är en lansering bara en chans, medan ett undertecknat avtal är en förpliktelse från motparten?\n2. Vad menas med att katalysatorn ligger i att intäkten finns i kontraktet innan den finns i resultaträkningen? Beskriv med egna ord.\n3. Modellen läser V17 från två källor: pressmeddelanden och förvaltningsberättelsens rad om 'viktiga avtal'. Förklara varför de två källorna har olika trovärdighet.\n4. Räkna upp avtalstyperna som indikatorn fångar — kundavtal, ramavtal, samarbeten och licensieringsavtal — och förklara för dig själv hur en av dem binder intäkter som ännu inte betalats ut."
           }
         ]
       },
@@ -7006,6 +7298,10 @@
           {
             "type": "insikt",
             "content": "Förvaltningsberättelsens avtals-/orderrubriker:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka ställen i årsredovisningen söker du igenom först — och vilka rubriker (orderintagning, backlog, 'viktiga avtal under året') signalerar undertecknade avtal med namngivna motparter?\n2. I noten om intäkter/segment: vad betyder upparbetade intäkter när de förskottsbetalda intäkterna växer? Kontrollera drivkraften.\n3. Ett jätteavtal med en kund syns samtidigt i V17 och i kundnoten (V03). Förklara varför samma händelse är både katalysator och riskkoncentration.\n4. Läs avtalsbeskrivningarna i noterna: varför kallas ett avtal som motparten kan säga upp med tre månaders varsel ett rabattkvitto snarare än en intäktsväg — och varför räcker en LoI/MoU i pressmeddelandet inte för poängsättning?"
           }
         ]
       },
@@ -7038,6 +7334,10 @@
           {
             "type": "insikt",
             "content": "Pressmeddelandets vs redovisningens språk:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. En pressrelease talar om 'strategiskt partnerskap'. Vilken kontroll gör du innan du räknar det som avtal — och varför är redovisningen sanningsägaren?\n2. Förklara varför orderstock inte är intäkt: vilka egenskaper hos order (kan ställas upp, omförhandlas) gör dem mjukare än de ser ut?\n3. Övning i källkritik: hur kan relaterade parter och interna avtal i en koncern blåsa upp 'viktiga avtal' utan marknadsvärde?\n4. Varför skall du aldrig poängsätta V17 högt utan att först läsa V03? Förklara kopplingen mellan kundkoncentration och avtalets katalysator — och minns att termineringsrätter och prisrevisioner gör långa avtal korta i praktiken."
           }
         ]
       },
@@ -7050,6 +7350,10 @@
           {
             "type": "text",
             "content": "V17 bär 6 % vikt i kategorin Katalysator och är kvalitativ:\nsamma dokumenterade gren som V16 (scorKvalitativ) — osatt i\nnyckeltalskontraktet, poängsatt manuellt ur pressmeddelanden +\nförvaltningsberättelse. Guiden för poängen: 0 = inga namngivna avtal,\n3 = avtal av betydelse med oklar bindning, 5 = undertecknade\nfleråriga avtal i kärnsegmentet med belopp eller volym synlig i\nredovisningen.\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. V17 bär 6 % vikt i kategorin Katalysator och är kvalitativ. Förklara för dig själv vad det innebär — varför står indikatorn osatt i nyckeltalskontraktet?\n2. V17 delar dokumenterad gren med V16 (scorKvalitativ) och poängsätts manuellt. Vilka två underlag läser du för att motivera poängen?\n3. Repetera poängguiden: 0 = inga namngivna avtal; 3 = avtal av betydelse med oklar bindning; 5 = undertecknade fleråriga avtal i kärnsegmentet med belopp eller volym synlig i redovisningen. Testa dig själv: vilken poäng ger en avsiktsförklaring utan kontrakt?\n4. Kontrollera slutligen att din poäng speglar avtalets bindning och storlek — inte rubrikens volym."
           }
         ]
       }
@@ -7386,6 +7690,10 @@
           {
             "type": "insikt",
             "content": "Beslut hos myndigheter som kan flytta bolagets värde utan att bolaget själv kan påverka takten"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv vad som gör regulatoriska katalysatorer de mest binära som finns: vad händer med en marknad vid ett godkännande respektive ett avslag?\n2. Varför sägs det att klockan ägs av myndigheten och inte av bolaget? Räkna upp beslutstyperna: godkännanden, licenser, kapitalkrav, skatteregler, sanktionslistor.\n3. Modellen hämtar V18 ur riskavsnittet i förvaltningsberättelsen. Förklara resonemanget: regulatorisk katalysator och regulatorisk risk är samma händelse sedd från två sidor.\n4. Övning: vad missar den som bara läser ena sidan — endast chansen eller endast risken — när ett väntande beslut skall poängsättas?"
           }
         ]
       },
@@ -7402,6 +7710,10 @@
           {
             "type": "insikt",
             "content": "Riskavsnittet i förvaltningsberättelsen:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Var i årsredovisningen hittar du väntande myndighetsbeslut tidigast — och varför når de riskavsnittet i förvaltningsberättelsen före pressmeddelandena?\n2. Not om väsentliga osäkerheter och eventualförpliktelser: vilka slags poster (pågående processer, böter, återbetalningskrav) signalerar regulatorisk exponering?\n3. Läkemedels- och medtechbolag har den mest strukturerade regulatoriska kalendern. Redogör för kedjan fas III → ansökan → beslut och varför den kopplas till V16.\n4. Finansbolagen är en annan art: kapitaltäckningskrav och tillsynsbeslut kallas icke-binära men kapitalbindande. Förklara skillnaden mot ett godkännande — och kontrollfrågan: vem äger tidpunkten?"
           }
         ]
       },
@@ -7434,6 +7746,10 @@
           {
             "type": "insikt",
             "content": "Binära beslut har inget halvläge:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Binära beslut har inget halvläge. Varför skall du beskriva utfallsrummet (godkänt/avslag/villkor) i stället för att poängsätta 'delvis sannolikt'?\n2. Myndighetstakt är opåverkbar: varför är katalysatordatum från bolaget önsketänkande, inte kalender?\n3. Regulatorisk eftersläpning: regler kan vara annonserade men ej i kraft (övergångsperioder). Vilket datum läser du — ikraftträdandedatumet eller beslutsdatumet?\n4. Två fällor till: skilj väsentliga poster (licensförlust, godkännanden) från rutinmässiga (allmän lagändring) i 'flagga-allt'-riskavsnittet — och förklara dubbelräkningen: ett godkännande som redan gett intäkt är ingen katalysator längre, katalysatorn lever bara i väntan."
           }
         ]
       },
@@ -7446,6 +7762,10 @@
           {
             "type": "text",
             "content": "V18 bär 6 % vikt i kategorin Katalysator och är kvalitativ\n(scorKvalitativ, samma dokumenterade gren): osatt i\nnyckeltalskontraktet, poängsatt manuellt ur riskavsnitt och\nmyndighetskalender. Modellens poängguide: 0 = inga väntande beslut av\nbetydelse, 3 = väntande beslut med dubbelriktat utfall i kärnaffären,\n5 = namngivna myndighetsbeslut med datum som kan öppna\nintäktsvägar (eller helt avvärja väsentlig risk).\n\n*Utbildningsmaterial — beskriver hur metoden läser och räknar; inga\ninvesteringsråd (2007:528).*"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. V18 bär 6 % vikt i kategorin Katalysator och är kvalitativ (scorKvalitativ). Förklara varför den står osatt i nyckeltalskontraktet och poängsätts manuellt.\n2. Vilka underlag läser du inför poängen — riskavsnitt och myndighetskalender — och varför räcker inte bolagets tidtabell?\n3. Repetera poängguiden: 0 = inga väntande beslut av betydelse; 3 = väntande beslut med dubbelriktat utfall i kärnaffären; 5 = namngivna myndighetsbeslut med datum som kan öppna intäktsvägar eller helt avvärja väsentlig risk.\n4. Övning: motivera en poäng för ett tillsynsbeslut hos ett finansbolag. Kontrollera att din poäng speglar både det väntande beslutets storlek och bolagets exponering om det går fel."
           }
         ]
       }
@@ -7901,6 +8221,10 @@
           {
             "type": "insikt",
             "content": "Hur många månader bolaget överlever på kassan den har, om inget förändras"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Kassatäckningen räknas som kassa ÷ månadsförbrukning. Förklara för dig själv frågan indikatorn svarar på: hur länge räcker pengarna om inget förändras?\n2. Indikatorn kallas brutal: den ignorerar tillgångar, orderböcker och löften. Varför är det en styrka i just detta mått — och vad är ett löfte värt i kassaräkningen?\n3. V19 är den enda KRITISKA riskindikatorn i AKM1 och den enda med en hård port. Beskriv med egna ord vad som händer när kassatäckningen sjunker under tolv månader.\n4. Varför beskrivs nyemissionsrisken som en klocka som slår nedåt snarare än en svag egenskap — och vem betalar notan genom utspädningen?"
           }
         ]
       },
@@ -7913,6 +8237,10 @@
           {
             "type": "text",
             "content": "- Balansräkningen: Kassa och bank + kortfristiga placeringar.\n- Kassaflödesanalysen: \"Kassaflöde från den löpande verksamheten\"\n   — den löpande förbrukningen (negativt löpande kassaflöde ÷ 12 =\n   månadsförbrukning).\n- Räkna: kassa ÷ månadsförbrukning = antal månader. (Modellens fält:\n   stabilitet.kassaManaderBurnRate.)\n- Not om kredittillgångar: outnyttjade kassakrediter förlänger\n   täckningen — men krediten är andras pengar, räkna den separat.\n- Kontrollfråga: är förbrukningen struktur (lön, lokal,\n   utveckling) eller engång ( juridisk process, omstrukturering)?\n   Porten lyssnar på strukturen."
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Vilka rader behöver du i balansräkningen (kassa och bank + kortfristiga placeringar) — och vilken post i kassaflödesanalysen visar den löpande förbrukningen?\n2. Räkna efter metoden: negativt kassaflöde från den löpande verksamheten ÷ 12 = månadsförbrukning; sedan kassa ÷ månadsförbrukning = antal månader. Modellen sparar resultatet i fältet kassaManaderBurnRate.\n3. Not om kredittillgångar: outnyttjade kassakrediter förlänger täckningen. Varför skall krediten räknas som en separat rad — aldrig in i kvoten?\n4. Kontrollfrågan: är förbrukningen struktur (lön, lokal, utveckling) eller engång (juridisk process, omstrukturering)? Förklara varför porten lyssnar på strukturen."
           }
         ]
       },
@@ -7945,6 +8273,10 @@
           {
             "type": "insikt",
             "content": "Kassakredit är inte kassa:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Ögonblicksbild: brinntakten i dag säger inget om nästa beslut. Vad menas med att ett bolag kan halvera burn på ett styrelsemöte?\n2. Kassakredit är inte kassa: den förlänger överlevnaden men tillför skuld. Räkna efter varför den hör hemma som separat rad — aldrig i kvoten.\n3. Löftet om 'positivt kassaflöde runt hörnet' är värt noll i kassaräkningen. Varför lyssnar porten på bokförda månader i stället för prognoser?\n4. Två sista fällor: förklara holdingbolagsartikeln (Kinnevik — mekaniskt mått på en icke-mekanisk verksamhet) och regeln 'porten är port': varför hjälper inga starka egenskaper — moat, marginaler, tillväxt — när täckningen är under tolv månader?"
           }
         ]
       },
@@ -7961,6 +8293,10 @@
           {
             "type": "insikt",
             "content": "0 — OCH hård port: AKM2-kompositen takas till 45/100"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Repetera klippkurvan: positivt kassaflöde 5 av 5 år ⇒ 5 poäng; över 48 månader ⇒ 4; 30–48 ⇒ 3; 18–30 ⇒ 2; 12–18 ⇒ 1. Öva: var landar PSNY:s 15,2 och PCELL:s 16?\n2. Vad händer under tolv månader? Beskriv hårda porten: poängen blir 0 — OCH hela AKM2-kompositen takas till 45/100.\n3. Varför är porten modellens enda absoluta stopp? Förklara logiken: överlevnaden är inte en egenskap bland andra — den är förutsättningen för att de andra skall få räknas.\n4. Övning: motiveringstexten anger månader, kurva och källa. Formulera för dig själv hur den borde låta för VPLAY:s 6,8 månader."
           }
         ]
       }
@@ -8376,6 +8712,10 @@
           {
             "type": "insikt",
             "content": "Om bolaget köper tillbaka sina egna aktier — och med vilken kraft"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Förklara för dig själv vad V20 mäter: om bolaget köper tillbaka sina egna aktier — och med vilken kraft. Vilken storhet är själva indikatorn (aktieantalets förändring)?\n2. Återköp och nyemissioner är samma mynts två sidor: vad händer mekaniskt med nyckeltalen per aktie när antalet aktier minskar — och vad kallas effekten när bolaget emitterar (utspädning)?\n3. V20 ligger i kategorin Kapitalstruktur: vilken fråga handlar kategorin om (hur vinsten förs tillbaka till ägarna)?\n4. Återköpsbeloppet är volym, andelen av aktieantalet är verkan — varför kräver poängen verkan?"
           }
         ]
       },
@@ -8392,6 +8732,10 @@
           {
             "type": "insikt",
             "content": "Not om eget kapital / antal aktier:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Not om eget kapital och antal aktier: vilka två tal plockar du ut (aktieantalet vid årets början och slut) och varför är differensen själva indikatorn?\n2. Modellens fält aterkop.andelUtestande tar minskningen som decimal: vad betyder 0,02?\n3. Var redovisas VD:s och styrelsens insiderköp (Finansinspektionen/aktieägartjänster) och vilket fält kompletterar de (insiderkopSenaste6man)?\n4. Optioner och personalprogram i egenkapitalnoten kan äta upp återköpen — vilket tal är det enda ärliga (nettoändringen i aktieantalet)?"
           }
         ]
       },
@@ -8408,6 +8752,10 @@
           {
             "type": "insikt",
             "content": "Datavaktens läxa i praktiken:"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Läget i datakontraktet: andelUtestande och återköpsbelopp är tomma hos samtliga bolag — hos hur många är insiderköp ifyllt (108)?\n2. Apple har 10 insiderköp på 6 månader och Microsoft 6: vilken reservgren ger båda poängen 2 (insiderköp ≥ 3 ⇒ 2)?\n3. Apple och Microsoft hör till marknadens största återköpare — varför underdriver poängen det verkliga återköpsvärdet, och vems gräns är det (kontraktets, inte modellens)?\n4. Vilken handläggning rekommenderas när årsredovisningen finns: läs aktieantalsdiffen direkt ur egenkapitalnoten — vilken kurva sätts då (huvudkurvan, inte reserven)?"
           }
         ]
       },
@@ -8424,6 +8772,10 @@
           {
             "type": "insikt",
             "content": "Återköp till vilken kurs?"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Återköp till vilken kurs? Förklara varför återköp över inre värde överför värde från kvarvarande ägare till såljare — och när återköp är värdeskapande (under värderingen, koppla V04/V05).\n2. Optionsutspädning äter återköp: bruttoåterköp kan vara netto noll — vilket tal är domstolen (nettoändringen i aktieantalet)?\n3. Insiderköp är en svagare signal: varför skall du kolla belopp per köp när insiderköp '≥ 3' kan vara schablonmässiga planpjässer?\n4. Cykel-återköp köper dyrt i toppens överskott — modellens poäng säger hur mycket, inte hur klokt. Och skuldfinansierade återköp: vilka två kurser skall du läsa tillsammans med V20 (V10 och V19)?"
           }
         ]
       },
@@ -8440,6 +8792,10 @@
           {
             "type": "insikt",
             "content": "Reservgrenar när andelen saknas"
+          },
+          {
+            "type": "utmaning",
+            "content": "1. Repetera huvudkurvan: minskning ≥ 5 % = 5, ≥ 3 % = 4, ≥ 1,5 % = 3 och > 0 men < 1,5 % = 2. Vad ger 0 % (inget av det) och vad ger ökning (utspädning)?\n2. Reservgrenarna när andelen saknas: återköpsbelopp > 0 utan andel ⇒ 3, insiderköp ≥ 3 ⇒ 2 och nyemissioner utan återköp ⇒ 0. Vad händer om ingen gren träffar (osatt)?\n3. Varför vägras andel > 1 (procent i stället för decimal) som utom intervall — osatt, inte fel?\n4. Räkna efter: ett bolag minskar aktieantalet med 2 % under året — vilken poäng ger huvudkurvan (3), och vilken gren gäller om andelen saknas men återköpsbelopp > 0 (mittskiktet 3)?"
           }
         ]
       }

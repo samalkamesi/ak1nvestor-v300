@@ -1,0 +1,104 @@
+Kinnevik — ticker KINV B på Nasdaq Stockholm — publicerar sin delårsrapport för januari–september 2026 torsdagen den **15 oktober**, med telefonkonferens samma förmiddag enligt bolagets finansiella kalender. Datumet är officiellt två gånger om: IR-kalendern listar "Interim Report 1 January – 30 September 2026" den 15 oktober, och bolaget brukar publicera på morgonen omkring kl 08:00 CET med presentation därefter. Det här är ett utbildningspaket i AK1A:s kvartalsrapportserie — och det öppnar seriens sista orörda gren: tillväxtgrenen har haft noll paket, Kinnevik blir seriens nummer 50. Allt här är utbildning i metod: inte en rekommendation att köpa, sälja eller behålla några värdepapper.
+
+## Urvalet: varför Kinnevik är nästa paket i serien
+
+Kvartalsrapportserien ger varje rapporterande bolag i universumet ett läspaket inför Q3 2026 — urval, nyckeltal, källkritik och övningar, allt byggt på den egna datainsamlingen. Urvalet följer seriens princip: tidigaste officiellt bekräftade rappdagen bland återstående kalenderbolag med bärande data. Med 48 paket på disk gallrades fältet enligt etablerade precedenser: Prologis diskat (tomma årsserier — datan måste bära), Investment AB Investor diskat (börsvärde null hos källan och rappdatum utan bolagets egen utlysning), Öresund diskat (estimerat datum). Kvar stod Kinnevik som tidigaste återstående officiellt bekräftade rappdag: den 15 oktober, utlyst i bolagets egen IR-kalender med fullständig rapprytm — Q1 2026 rapporterades 16 april och Q2 den 7 juli. Syskonen i omgången läste fältet olika: den ena gallrade bolaget med hänvisning till nollåren i intäktsserien och valde Getinge, den andra pivoterade från Kinnevik till Stora Enso — objektet stod fritt när paketet byggdes, och gallringsfrågan bemöts öppet i Datavaktens fjärde test: ett bolag utan intäktsrad är inte ett bolag utan data, det är en bolagstyp som kräver andra mått. Bärande data finns på plats: kurs, börsvärde, substansmultipl och lönsamhetsfält i universumposten, fyra års resultathistoria, och — från och med Q2 2026 — en svit officiellt rapporterade substansvärden att läsa direkt. Syskonen i omgången klaimade efter min anspråksfil; fältet var fritt. Och pedagogiskt är bolaget ett kantstensexemplar: tillväxtgrenens fjorton kollegor med mätt multipl står samtliga ÖVER bokfört eget kapital — Kinnevik står 40 procent under det. Där alla andra paket i serien börjat med vinstmultipeln börjar detta med dess gräns: vad gör en läsare när P/E inte finns?
+
+## Nyckeltalen att ha med sig — AKM2:s fyra dimensioner, substansutgåva
+
+Värdena nedan är senaste mätta tal ur bolagsuniversumets datainsamling (2026-09-03), med länkar till aspektsidor som lär ut hur talet räknas och tolkas.
+
+**Lönsamhet** — hur mycket värde skapas per insatt krona?
+
+- Avkastning på eget kapital (ROE): **minus 21,64 procent** — [så räknas ROE](/dataset/tillvaxt/roe). Hos de flesta bolag mäter ROE driftens effektivitet; hos ett investeringsbolag mäter den värdetävlingen mellan portföljen och börsen — och fyra års negativa tal betyder att portföljen skrivits ned snabbare än utdelningar och återköp förbrukat kapitalet. Jämför grenens median 15,13 procent.
+- Avkastning på investerat kapital (ROIC): **minus 27,85 procent** — samma varning som i samtliga bankpaket fast här med omvänd grund: när verksamheten är att äga bolag finns inget avgränsat rörelsekapital, och fältets approximation (rörelseresultat före skatt delat med skuld plus bokfört eget kapital) blir en nedskrivningsmätare snarare än en kapitalmätare.
+- Rörelsemarginal (EBIT): **95,5 procent**, bruttomarginal och nettomarginal: **0** — [brutomarginalen här](/dataset/tillvaxt/brutto-marginal), [så läses nettomarginalen](/dataset/tillvaxt/netto-marginal). Talet ser ut som en bragd — grenens högsta, högre än Nvidias 66,24 procent — men det är en marginal på en intäktsbas i praktiken noll: universumserien redovisar omsättningen 0, 936, 23 och 0 miljoner kronor för 2022–2025, och när nästan allt som kommer in saknar motposter blir kvoten vad som helst. En marginal på en nollintäkt är inte ett mått utan ett vapen: fältet säger bara att källan saknar en läsbar intäktsrad. Konglomeratets utgifter bärs av portföljen, inte av en försäljning.
+- Fri kassaflödesavkastning: **minus 29,88 procent** — [FCF-avkastningen](/dataset/tillvaxt/fcf-avkastning). Men källans eget marginalfält säger samtidigt plus 65,64 procent — två fält, två sanningar, som inte kan bo i samma kassaflödesanalys. Datavaktens fjärde test reder ut det.
+
+**Tillväxt** — vilket håll går rörelsen?
+
+- Intäktstillväxt senaste tolvmånadersperioden: källans fält anger **plus 164,4 procent** — [så läses TTM-tillväxten](/dataset/tillvaxt/omsattningstillvaxt-ttm). Läs det som en varning, inte en bragd: tillväxten räknas på en intäktsbas som nästa år är noll och året därpå 23 miljoner. På baser under en miljard blir procenttillväxt meningslös — grenens högsta TTM-tal av femton bär ingen verksamhet alls.
+- Universumets CAGR-fält är tomma och resultattillväxten osatt med filens egen notering: negativt basår. Fyraårsresultatet är ändå svaret: **minus 19 519, minus 4 766, minus 2 623 och minus 3 346 miljoner kronor** — fyra förlustår i rad, där förlusten krympte 75,6 procent sedan rekordåret 2022, krympte ytterligare 45,0 procent, och sedan VÄXTE 27,6 procent igen 2025.
+- Prognostillväxt: **osatt** — källan har ingen konsensussiffra för vinsttillväxt, vilket är konsekvent: det finns ingen vinstbas att prognostisera ifrån. [Om prognostillväxt](/dataset/tillvaxt/prognos-tillvaxt)
+
+**Värdering** — vad kostar rörelsen på börsen?
+
+- Pris per vinst (P/E): **osatt** — [P/E som begrepp](/dataset/tillvaxt/pe). Fältet är null eftersom nämnaren är negativ, och det är paketets kärna: P/E är en vinstmaskinens mått. Rör sig mellan grenens median 43,556 och universumets 21,153 — för bolag som har en vinst.
+- Pris per bokfört eget kapital (P/B): **0,598** — [så räknas P/B](/dataset/tillvaxt/pb). För ett investeringsbolag är detta huvudmåttet, eftersom det bokförda kapitalet är portföljen. 0,598 betyder: marknaden betalar 59,8 öre per bokförd substanskrona — en rabatt på 40,2 procent, [substansmultiplen förklaras här](/dataset/tillvaxt/egenkapitalmultipl).
+- Vid insamlingen var kursen **62,90 kronor** och börsvärdet **17,713 miljarder kronor**. Det implicita eget kapitalet — börsvärdet delat med P/B — blir 29,62 miljarder, eller 105,18 kronor per aktie på fältvägens 281,6 miljoner aktier.
+- PEG-talet: källan anger **4,76** — trots att P/E är null. En multipel som kräver en vinst den samtidigt förnekar; Datavaktens tredje test. [Värderingsöversikten](/dataset/tillvaxt/vardering)
+
+**Stabilitet och ägaraktivitet** — hur belånat är huset, och vem köper?
+
+- Skuld per eget kapital: **0,0694** — [skuldsättningsgraden](/dataset/tillvaxt/skuldsattning). Grenens lågskuldatade extrem: medianen i tillväxtgrenen är 0,1775 och i universumet 0,52. Balansräkningen bär i stället kassan: rapporterad nettkassa 7,5 miljarder vid Q1 2026 och 7,4 miljarder vid Q2 — 41,8 procent av hela börsvärdet ligger på bankkontot. Filens kassamått i "månaders burn rate" landar på 813,5 månader — nästan 68 år — på en drift som i Q2 åter tjänade pengar.
+- Utdelning: årsstämman 2026 beslutade ordinarie utdelning **0 kronor**. Återköpsbeslutet sköts upp med hänvisning till den nyligen tillträdde vd:n strategiska riktning — ägaraktiviteten är alltså just nu nollställd i väntan på ny regering inom bolaget, och det är själva bevakningspunkten framöver.
+- Insiderköp senaste sex månader: **0** observationer hos källan.
+
+## Datavakten — fem prov på ett bolag utan vinst
+
+Paketets bärande övning, med samma verktygslåda som i seriens 48 tidigare paket: pröva källans tal mot identiteter och konventioner innan de används.
+
+**Test 1 — substansdetektiven: fältet stänger mot rapporten på 1,7 procent.** Börsvärdet 17,713 miljarder delat med P/B 0,598 ger ett implicit eget kapital på 29,62 miljarder. Rapporterad substans vid Q2 2026: 29,6 miljarder — skillnaden 0,02 miljarder. Per aktie: fältvägen 105,18 kronor mot rapporterade 107, alltså minus 1,7 procent. Fältet lever alltså i Q2-fönstret, och rabatten kan räknas två vägar: 1 minus 0,598 ger 40,2 procent, kursen 62,90 mot rapporterade 107 ger 41,2 procent. Samma budskap, olika fönster — en procentenhet är avståndet mellan källans beräkning och bolagets.
+
+**Test 2 — ROE-fönstret: minus 21,64 procent lever i marskvartalet.** Fältets ROE gånger det implicita kapitalet ger en årsförlust på minus 6,41 miljarder. Bokförd helårsförlust 2025: minus 3,346 miljarder — gapet 91,6 procent, för stort för att vara avrundning. Men rulla fönstret framåt: Q1 2026 rapporterade minus 7 969 miljoner och Q2 plus 1 717 miljoner, halåret minus 6 252 miljoner — och nu stänger fältet på 2,5 procent. Slutsatsen är samma som i Telia- och NP3-paketen fast iupplyst: ROE-fältet är ett rullande tolvmånadersmått som fångat nedskrivningskvartalet, inte årsserien. Ett avkastningstal på ett investeringsbolag frågar alltid: vilket fönster mäter du?
+
+**Test 3 — PEG utan P/E: multipeln som postulerar en vinst som inte finns.** Källan anger PEG 4,76 samtidigt som P/E-fältet är null. Räkna baklänges med konventionen P/E delat med tillväxtprocent: 4,76 gånger 1,644 ger en implicit vinstmultipel på 7,83 — ett P/E som pe-fältet samma ögonblick förnekar, eftersom vinsten är negativ. Fältet har räknat på någon annan vinstdefinition än årets resultat; vilken framgår inte av källan. Sedan GS-paketets sex fall av PEG-motsägelser är detta det renaste: en multipel utan nämnare. PEG redovisas här som räknestorhet — inte som skattning.
+
+**Test 4 — FCF-parets inre motsägelse.** Fält ett: fri kassaflödesavkastning minus 29,88 procent av börsvärdet — gånger 17,713 miljarder ger ett fritt kassaflöde på minus 5,29 miljarder. Fält två: FCF-marginal plus 65,64 procent — ett positivt flöde. Båda kan inte beskriva samma bolag samma dag, och ingen av dem kan härledas ur serierna, där intäktsraden är noll och marginalens nämnare saknas. Detta är inte ett Kinnevik-fel utan en källtypens fel: när ett bolags ekonomi inte har en intäktsrad blir marginalfält vapen. Redovisas öppet som lucka och lämnas till granskningskön.
+
+**Test 5 — resultatraden ÄR substansrörelsen.** Investeringsbolagets bokföring gör resultatet till värdeförändringar, och talen bekräftar det inom en procent, tre gånger om: helåret 2025 bokförde minus 3 346 miljoner mot substansfallet 39,2 minus 35,9 miljarder — kvot 1,01. Halvåret 2026: minus 6 252 miljoner mot 35,9 minus 29,6 — kvot 0,99. Kvartalet Q2: plus 1 717 miljoner mot substanssteg plus 1,7 miljarder — kvot 1,01. Därför är fyra förlustår i rad inte "olönsam drift" utan nedskrivna portföljvärden, och därför är substansrapporten — inte resultaträkningen — rapportens huvudbord. Not till sist aktietalet: fältvägen 281,6 miljoner aktier mot rapporternas 276,6 miljoner (29,6 miljarder delat med 107 kronor) — gap plus 1,8 procent, troligen ett fönstersteg eller värderingsklass; redovisas som fråga, inte som facit.
+
+## Så står sig bolaget mot branschen
+
+Tillväxtgrenen i universumfilen mäter 15 bolag — halvledare, plattformar, elbilar och tillväxtbolagen på båda sidor Atlanten. Medianerna nedan är omräknade 2026-09-19 ur filens aktuella poster, kolumnvis där tal finns.
+
+| Nyckeltal | Kinnevik | Median tillväxt (15 bolag) | Median universumet | Rang i grenen |
+|---|---|---|---|---|
+| P/E | osatt (negativ vinst) | 43,556 | 21,153 | — |
+| P/B (substansläsning) | 0,598 | 9,155 | 2,807 | lägst av 14 mätta |
+| PEG (källans fält) | 4,76 | 1,575 | 1,375 | högst av 10 mätta |
+| Räntabilitet på eget kapital (ROE) | −21,64 % | 15,13 % | 15,34 % | näst lägst av 14 mätta |
+| Rörelsemarginal (EBIT) | 95,5 % | 12,13 % | 20,71 % | högst av 15 |
+| Prognostillväxt (konsensus) | osatt | 37,19 % | 13,6 % | — |
+| Nettomarginal | 0 | 5,91 % | 13,05 % | — |
+| TTM-tillväxt (källans fält) | 164,4 % | 34,1 % | 6,8 % | högst av 15 |
+| Skuld/EK | 0,0694 | 0,1775 | 0,5200 | femte lägsta av 14 mätta |
+
+Läsningen — inversen av en tillväxtgren: grenen är byggd på multiplar ovanför böckerna (median P/B 9,155, högsta i universumets samtliga grenmätningar den här filen bär), och Kinnevik står 93,5 procent under sin grens median och 78,7 procent under universumets — samtidigt som bolagets skuldkvot är grenens femte lägsta och kassan 41,8 procent av börsvärdet. Rabatten är alltså inte en belåningshistoria; den är en förtroendefråga om portföljens värden. Spegeln i fönstret: PEG-fältet 4,76 är högst bland grenens tio mätta — källan straffar avsaknaden av vinst med högsta tillväxtmultipl man kan räkna. Jämförelsen mot samtliga kollegor finns i [universumjämförelsen](/dataset/tillvaxt/universumjamforelse), hela datasetet i [översikten](/dataset/tillvaxt) och [indexet](/dataset), och bolagets sida i biblioteket finns [här](/bolag/kinv-b-st).
+
+## Tre sätt att läsa utfallet — övningar i metod
+
+Tre övningar i vad en rapportläsare vanligtvis tittar på för ett investeringsbolag — träning i metod och ren aritmetik, aldrig bedömningar av den 15 oktober.
+
+**Övning A — läs substansen först, resultatet sedan.** Hitta substansvärdet per aktie och dess kvartalssteg i rapportens ingress — Q2 2026 rapporterade 107 kronor, upp 1,7 miljarder eller 6 procent i kvartalet, medan portföljvärdet steg 8 procent. Läs sedan bakåt i trappan: 139 kronor vid årsskiftet 2024, 130 vid årsskiftet 2025, och 101 efter Q1 2026 — det kvartal då den privata portföljen värderades ned och substansen föll 8,0 miljarder, officiellt 22 procent, på tre månader; per aktie exakt är kvartalsstegen −4,4 procent (130 mot 136), −22,3 procent (101 mot 130) och +5,9 procent (107 mot 101). Q1-klippet är i sig 41 procent av hela 2022 års rekordförlust på minus 19 519 miljoner. Övningen när rapporten ligger framför dig: identifiera vad som driver kvartalssteget — börsnoterade innehav, privata nedskrivningar eller valuta — innan du jämför med gårdagens rubrik. Samma lektion som JPM-paketets Visa-engångspost, fast i spegelväg: en engångspost nedåt, och basen för nästa års jämförelse är satt.
+
+**Övning B — scenariorutan i ren aritmetik: kurs är substans gånger (ett minus rabatt).** Med rapporterad substans 107 kronor och rabatten 41,2 procent vid insamlingen blir rutan, i kronor:
+
+| Kurs, kronor | Rabatt 35,2 % | Rabatt 41,2 % | Rabatt 47,2 % |
+|---|---|---|---|
+| Substans 101 | 65,45 | 59,39 | 53,33 |
+| Substans 107 | 69,34 | 62,92 | 56,50 |
+| Substans 113 | 73,22 | 66,44 | 59,66 |
+
+Två räknesatser: sex kronors substantiell rörelse (101 till 107, ett typiskt kvartalssteg i år) flyttar kursen 3,53 kronor vid oförändrad rabatt, medan sex procentenheters rabattförändring flyttar den 6,42 kronor vid oförändrad substans — rabatten väger 1,8 gånger substansen per typiskt steg. Och överföringsgraden: vid en rabatt på 41,2 procent flyttar en tio procentig relativ rabattförändring (41,2 till 45,3) kursen minus 7,0 procent — faktorn r dividerat med (ett minus r) är 0,70. Alla nio celler är aritmetik på rapporterade substansvärden och mätt rabatt — inga skattningar.
+
+**Övning C — multipelövningen: två vägar till P/B ett.** Ren räkneövning med paketets tal: P/B 0,598 blir 1,0 antingen om kursen stiger till 105,18 kronor — plus 67,2 procent vid oförändrade böcker — eller om det bokförda kapitalet faller 40,2 procent, från 29,62 till 17,71 miljarder, vid oförändrad kurs. Samma multipl, två vägar: börsen kan röra sig mot böckerna eller böckerna mot börsen. Notera vad övningen INTE säger: vilken av vägarna som är sannolik är en skattning, och skattningar tillhör inte detta paket. [Värderingsaspekten](/dataset/tillvaxt/vardering) sätter multipln i grensammanhang.
+
+## Praktiskt inför 15 oktober
+
+- Rapportdagen torsdagen 15 oktober 2026 är officiell: [bolagets IR-kalender](https://www.kinnevik.com/investor-relations/calendar/) listar delårsrapporten januari–september, med publicering på morgonen omkring 08:00 CET och telefonkonferens samma förmiddag — [pressrummet](https://www.kinnevik.com/investor-relations/press-releases/) bekräftar rytm och dokument.
+- En valuta hela vägen: svensk redovisning i kronor, svensk notering i kronor — Swedbank-precedensen, rena kontroller utan valutamixning.
+- Bevakningslistan för rapporten: substansen per aktie och dess kvartalssteg (huvudtalet), nettoresultatet som dess spegel, nettkassans nivå (7,4 miljarder vid Q2), och styrelsens ställning till återköp och utdelning efter årsmötets nollbeslut — portföljens koncentration noteras sedan 2024, då andelen kärnbolag steg från 29 till 53 procent.
+- Vågvalideringsnot: Kinnevik står inte i seriens vågvalideringskarta — paketet vilar på universumdata och kalenderfakta enligt Iberdrola-precedensen, och säger det öppet.
+- Ordlista för alla begrepp finns i [kurserna](/kurser) — portföljteori och bokföring går igenom substansvärde och värdeförändringar, och [bloggen](/blogg) sätter talen i sammanhang. Metodtransparensen finns på [transparensidan](/transparens) och [källsidan](/kallor), forskningsdjupet på [portföljforskningssidan](/portfolj-forskning).
+- Efter rapporten uppdateras bolagsuniversumets nyckeltal vid nästa insamling, aspektsidorna speglar nya medianer — och tillväxtgrenens första paket är nu levererat; syskonen läser vidare i kön (Getinge 20–21 oktober, Fabege 21 oktober, Stora Enso 30 oktober, Kambi 4 november).
+
+## Källor
+
+- Rappdag 2026-10-15 (morgonpublicering omkring 08:00 CET, telefonkonferens samma förmiddag): Kinneviks finansiella kalender "Interim Report 1 January – 30 September 2026" och pressrummet, båda hämtade 2026-09-15 — internt underlag: data/blogg-utkast/kvartal/2026-q3/kalender-tillvaxt.json.
+- Nyckeltal, kurs och fältvärden: bolagsuniversumets datainsamling för KINV-B.ST 2026-09-03 (Yahoo Finance quoteSummary-moduler; källa B, MarketStack, saknade färsk kurs — ingen dubbelkoll, redovisas öppet) — internt: data/portfolj-system/bolagsunivers.json. Medianer och rangplatser omräknade 2026-09-19 ur samma fil (195 poster; tillväxtgrenen 15 bolag, universummedianerna 162–195 poster per mått, kolumnvis där tal finns).
+- Rapporterade substansvärden och resultat: Kinneviks egna rapporter — Year-End 2024 (substans 39,2 miljarder, 139 kronor per aktie, minus 5 procent på året; kärnbolagsandel 29 till 53 procent), Q3 2025 (37,5 miljarder, 136 kronor, plus 2 procent i kvartalet), Q4 och helår 2025 (35,9 miljarder, 130 kronor, minus 4 procent i kvartalet och minus 8 procent på året; publicerad 3 februari 2026), Q1 2026 (27,9 miljarder, 101 kronor, minus 8,0 miljarder eller minus 22 procent i kvartalet; nettoförlust minus 7 969 miljoner; nettkassa 7,5 miljarder; publicerad 16 april 2026) och Q2 2026 (29,6 miljarder, 107 kronor, plus 1,7 miljarder eller plus 6 procent i kvartalet med portföljvärde plus 8 procent; nettoresultat plus 1 717 miljoner mot 626 miljoner motsvarande kvartal; nettkassa 7,4 miljarder; publicerad 7 juli 2026) — samtliga sökverifierade 2026-09-19 via bolagets pressrum, nyhetsbyråar och konferenssammanställningar. Årsstämma 2026: ordinarie utdelning 0 kronor, återköpsbeslut uppskjutet.
+- Datavaktens fem test: egna beräkningar — substansdetektiven (17,713 ÷ 0,598 = 29,62 miljarder; 105,18 mot 107 kronor = minus 1,7 procent; rabatt 40,2 mot 41,2 procent), ROE-fönstret (minus 0,2164 × 29,62 = minus 6,41 miljarder; mot 2025 års minus 3,346 = 91,6 procent, mot halvårets minus 6,252 = 2,5 procent), PEG-anomalin (4,76 × 1,644 = 7,83 implicit vinstmultipel mot nullfältet), FCF-motsägelsen (minus 0,2988 × 17,713 = minus 5,29 miljarder mot marginalens plus 65,64 procent) och substanskopplingen (kvoter 1,01, 0,99 och 1,01; aktietalet 281,6 mot 276,6 miljoner = plus 1,8 procent) — samtliga steg redovisade i texten.
+- Scenarioruta, räknesatser och multipelövningar: aritmetik på rapporterade substansvärden (101, 107, 113 kronor), mätt rabatt (41,2 procent) och fältvägens implicita kapital (29,62 miljarder); samtliga nio celler och båda räknesatserna dubbeltkontrollerade vid tillverkningen 2026-09-19.
+
+*Detta är pedagogisk finansutbildning enligt lagen (2007:528) 2 kap 5 § — inte investeringsrådgivning. Alla siffror är hämtade ur AK1A:s egna datainsamlingar eller bolagets egna resultatmeddelanden med källa och datum angivna; där en källa saknar data står det explicit, och där ett källfält håller inte för kontrollräkning redovisas beräkningen i stället. Inga köp-, sälj- eller hållningsrekommendationer förekommer, och publiceringen av detta paket är kundens beslut.*

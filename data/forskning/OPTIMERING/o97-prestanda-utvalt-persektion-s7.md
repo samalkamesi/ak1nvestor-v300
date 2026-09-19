@@ -106,11 +106,48 @@ ALDRIG eget bygge.
   deploy via arbetsstationens GitHub-spegling + prod-synk (u1/u2-mönstret);
   deploy-kön dokumenteras i §5.
 
-## §5 EFTER-mätning (fylls vid deploy)
+## §5 EFTER-mätning (deployad 19:01:06Z — 7 commits 7b221de9, BUILD_ID
+xBzidYwn → nwHC2B9w; deployen bär u1:o93 + u2:o96 + denna vågs kur i samma
+bygge — attribution enligt o92 §3.4-klassen: gemensam deploy, separata målytor)
 
-VÄNTAR — deploy-kön vid commit: prod-synk.log 18:27Z VÄNTAR-RAM (391 MB <
-2 200) för 95ddaa2a-generationen; min commit + u1/u2:s landar i nästa
-fönster. (uppdateras av vakarövertag eller denna instans om fönstret räcker)
+**§5.1 prod 200 ×5 https** (o4:57-lokal): / · /kurser · /blogg · /en/kurser ·
+/ar/kurser = **5/5 200 ✓**.
+
+**§5.2 Sond EFTER mobil /kurser** (`o96sond-s7u3o97-efter-kurser-mobil.json`):
+docH 23 181 → 23 203 = **engångs-Δ +22 px** (FÖRE kur: −3 122 ⇒ **99,3 % av
+krympningen borta**; u1:s o93-EFTER såg samma +22 — tvärsnittsdeterminism).
+Sektionerna: nya 628×6 → 547–703 (**+1 Σ**) · borja 184×6 → 178–197
+(**+2 Σ**) — kirurgiskt gröna. flagg rad2 432×3 → 739/427/313 = +183 — över
+§3.2:s 150-tak ⇒ **justerad mobil flagg 27→30.75rem** (rad2:s sonderade
+verkliga medel 493 px — rad1 renderas alltid i dokumenttoppen och styr inte
+platshållarvalet; commit f8d1d847, EFTER-verifikation vid nästa deploy).
+Σspan 5 101 → 4 780 = **−321** (mot −1 498; 79 % borta; resten = nya-
+sektionens inom-sektionsspridning 547–703 mot 628-platshållaren).
+
+**§5.3 Sond EFTER desktop /kurser** (`o96sond-s7u3o97-efter-kurser-desktop.json`):
+docH 7 876 → 7 860 = **Δ −16 px** (FÖRE kur: −138). **Σspan 7 333 → 7 316 =
+−17 px mot FÖRE-kur −1 037 — 98,4 % borta, kriterium |Σ| ≤ 150 ✓.** nya
+728×6 → 739/739/739/719/719/719 (+6 Σ) · borja 204×6 → 214×3+194×3 (**±0**)
+· flagg (renderad i topp, oförändrad). Register desktop 44→43 ×24 orörd
+(u1:s md+-nivå verifierad i mitt tvärsnitt).
+
+**§5.4 Lighthouse EFTER /kurser** (`kurser-s7u3o97-efter.json`):
+**P94 · LCP 1 945 · TBT 253 · CLS 0** mot FÖRE P68 · 4 636 · 613 · 0 —
+poäng +26, LCP −58 %, TBT −59 %: ALLA kriterier passerade (förbättringar
+utträder ur ±15 %-envelopen som förbättring — o92 §3.4-precedensen).
+ATTRIBUTION ÄRLIGT: siffrorna bär HELA generationen (min+u1+u2:s
+CSS-platshållarkurer är initial-load-neutrala per doktrin — "LH scrollar
+ej") + s6-generationens 57-motor-commits (samma deploy-fönster) + varmare
+pm2/ISR än FÖRE (u1:s EFTER på samma bygge: P74/LCP 4 590 — fönsterkänslig-
+heten dokumenterad; deras dom deras). KVARSTÅENDE: P94/LCP 1 945/TBT 253 =
+spårets bästa /kurser-tal i mäthistoriken.
+
+**DOMSLUT o97:** o92 §5.5 STÄNGT — roten bevisad (platshållar-flex, ingen
+text/font/bild-byte), kuren lever i prod: desktop textspänn −1 037 → −17,
+borja/nya kirurgiska ±0/+6, mobil dokument +22. Flagg-justeringen (30.75rem)
+väntar nästa deploy-fönster för slutverifikation — posten är vakarövertag-
+bar med sonden (`node verktyg/_s7u3o96-sond.mjs flagg3075-efter-kurser-mobil
+http://localhost:3000/kurser mobil` — kriterium: flagg rad2 Σ |Δ| ≤ 50).
 
 ## §6 Kö vidare
 

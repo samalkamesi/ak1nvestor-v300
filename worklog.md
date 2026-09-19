@@ -15014,3 +15014,33 @@ Fabriksagent s9-u1. VAL (anspråk disk-först, gitignorerad väg data/vakten/aut
 ## SPÅR 9 s9-u3 (byggare 3/3, manifest auto-s9-1789847706174) — 2026-09-19 ~21:45–22:15 lokal: SYSTEMKARTAN-dokvåg — E35 + E37 + E28 diffade mot verkligheten; PIVOT efter u2:s tidigare anspråk (A3+E34 avstådda) [fabrik]
 
 Fabriksagent s9-u3. VAL: ursprung E35+E34+A3 — PIVOT 21:58 till E35+E37+E28 när u2:s anspråk (~20:0x, A3+E34) visade sig skrivet FÖRE mitt (först-till-disk; duplikat = förlorat arbete); u1 = E30 (deras leverans 273ec7a2 VÄNTADES UT före min kart-skrivning — clobber-kuren). DIFF (allt EGENMÄTT 21:45–22:00 lokal, ej worklog-tal): E35 — sviter 90→123 (ls; +33/dygn), skalfri-vaktens args-rotkur o98 (path.isAbsolute + jagaSkalfri-export; EGEN CLI: 291 filer/127 härdade/26 fasta/0 fynd/exit 0) + FÖRSTA SVITEN 22/0 EGEN, kvalitetsrapporten 19:35:51Z 13/13 PASS·0 fel·0 manuella·GRÖN, Mimosa 1 624/0 exit 0 @ 19:34:58Z = TRÄDETS FÖRSTA HELGRÖNA referens, feljakt-läge 19:42:44Z: 586 fynd/468 bedömda/118 öppna varav F1-kod 0 (181→0 bevarat), 252 bedömningar idag. E37 — s7:s ANDRA SERIE o89–o97 (a70a2f8d→f8d1d847 + 81b9cb7c/c9fdf4f4): reservationssystem per sektion×språk×bredd, desktop Σspan −1 037→−17 (98,4 %), mobil docH −3 122→+22 (99,3 %), retur-scroll-sonden 24/24, LH /kurser P94/1 945/253; VIKTIGAST: o96 EFTER-KORRIGERINGens RETRAKTION bokförd i kartan (»CLS 0/botad« = OOM-skadat-.next-artefakt; regimen 0,2045 KVAR — o89 §5/kö §5.1 lever); prod /·/kurser·/en/kurser 200 + BUILD_ID fWWGyYiw + 30.75rem i globals.css. E28 — beslutsminnet 70→82 poster, senaste ROND 102 @ 18:14:06Z MELLAN cron-ronderna (organvägen även direktanropad), rondlogg punktlig 08:43→17:43 OK + FYND-notis »MÅL återaktiverat (pm2-omstart?)« 14:43:02Z, mötesvägen stilla dag 5, API 200/405/401, koden stilla sedan f2589675. KORSVALIDERINGAR (u2:s ytor, endast läsande): testa-prod-synk-nextlaeke 29/0 · testa-ai-mentor-moatdjup 22/0 · bokmastar 25/0 · E01 registeräkthet 452 GRÖN. POÄNG: E35 9 · E37 8 · E28 FLAGGA 6 — alla oförändrade (kur/kunskap tillförd, inget namngivet restgap stängt; E33/B14-precedensen), snitt 7,5/284/38 (överensstämmer u1). KÖ/SIDOFYND: B14-rotfyndet består DAG 2 (cronen 404 mot mål som saknas i src, /nyheter 200 — F3:s ägo), aggregatorn 123 sviter utan kör-alla = nästa kvalitetsvågs objekt, registret 446→452 (A1/E32-tal åldras), pm2-omstarten äter målet (E29-korsref). KVD: data-only (karta + worklog + anspråk på gitignorerad väg) — src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (u1:s commit väntades ut; u2:s A3+E34-yta orörd, deras sektioner skrivs av dem). [fabrik]
+
+## SPÅR 9 s9-u2 (manifest auto-s9-1789847706174, byggare 2/3) — 2026-09-19 ~20:0x–22:4x lokal: SYSTEMKARTAN-dokvåg — A3 AI-Mentorn + E34 Drift/backup/DR diffade mot verkligheten; nattens s8-våg bokförd [fabrik]
+
+Fabriksagent s9-u2. VAL (anspråk disk-först ~20:0x FÖRE mätningen:
+data/vakten/auto-s9-1789847706174-s9-u2-ansprak.md): A3+E34 — båda stämplade
+09-18 men med bevisat störst rörelse sedan dess (nattens s8-våg: 6b530de3 i
+A3:s domän, d55ebaa1 i E34:s); E30 avstått (INAKTIV, togs av u1); u3:s
+urspragsval A3+E34 pivoterades bort till mig (först-till-disk-regeln).
+LEVERANS (allt EGENMÄTT i arbetsytan ~20:0x–20:2x, inget läst ur worklog):
+A3 — 62/62 mentorsviter GRÖNA på egen körning (61 strecksviter exit 0 +
+bassvit 26/0; s8-u2:s rotkur av s6-u3:s 38 syntaxdöda verifierad), node
+--check verktyg/ 292/0, 56 frågelager-filer (var 17), kedjan 57 motorer/155
+monsters med sviten 226/0 (våg 176), E01 registeräkthet 452/452 GRÖN (8 223
+quizfrågor = A4/A5/D21:s frusna tal), chat-widget 2 040 r, modellsviten 38
+kontroller gröna; gap 1 (dataset-medianer 0 träffar i route/svar/widget) +
+gap 4 (assistent-panelen 0 sviter) lever — score 9 orörd (kvantitativ växt
+utan ny kapabilitetsklass, rad-965-precedensen). E34 — .next-LÄKEBACKUPEN
+lever i kod+drift: prod-synk.mjs 22 läke-rader, svit 29/29 PASS egen körning,
+.gitignore rad 8, .next-laeke städad efter lyckad deploy (väntat) + BUILD_ID
+finns, DRIFTSBOKEN §22:1x; nattkedjan grön (dump db-2026-09-19 31,1 MB/1 347
+729 rader, markörvakt 1/1 på 5,9 s; moln 11 filer, system-events-full 166
+067/166 067 KOMPLETT); prod HTTPS 200 egen sond med läke-koden live
+(deployad 6b530de3); FYND: ISR-varmen GLIDER NEDÅT 12/44→11/44 (09-19 03:11 —
+en väg TAPPAD ur sökvägslistan); MIGRERING-lösenordet lever kvar (1 träff,
+huvudagentens fil) — score 9 orörd (rot-fönstret stängt men kvar-listan
+orörd). Snitt 7,5/284/38 orört. KOLLISIONSHANTERING: u3:s atomära
+fullfil-skrivning (ababafb4) klippte mina redan applicerade karteredigeringar
+— verifierat mot HEAD (0 träffar på mina markörer, trädet ren), allt
+omapplikerat och commit:tat omedelbart efter deras commit. KVD: data-only —
+src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda.

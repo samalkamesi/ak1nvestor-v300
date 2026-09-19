@@ -260,7 +260,7 @@ function lasForhandsvisning(j: Record<string, unknown>): string {
       .find((s) => s !== "" && !s.startsWith("#"));
     if (paragraf) kandidater.push(paragraf);
   }
-  return kandidater[0].replace(/\s+/g, " ").trim().slice(0, 300);
+  return (kandidater[0] ?? "").replace(/\s+/g, " ").trim().slice(0, 300);
 }
 
 // ── Listbyggaren ─────────────────────────────────────────────────────────────
@@ -311,6 +311,14 @@ export function lasGodkannandePoster(): { poster: GodkannandePost[]; redanLive: 
     } catch {
       continue; // oläsbart/ogiltigt utkast kan inte publiceras — hoppa tyst
     }
+    // F3-kur (FYNN 2026-09-19): endast publicerbara utkastformer hör hemma i
+    // kundens blogg-yta — datasetfiler ur andra spår (t.ex. kvartal/kalender-*.json
+    // med fält som bransch/metod/bolag) kan aldrig publiceras via publicera-rutten
+    // och skall aldrig heller listas som väntande.
+    const arPublicerbarForm =
+      (typeof j.title === "string" && typeof j.body === "string") ||
+      (typeof j.titel === "string" && typeof j.bodyMarkdown === "string");
+    if (!arPublicerbarForm) continue;
     const titel =
       typeof j.title === "string" && j.title.trim() !== ""
         ? j.title.trim()

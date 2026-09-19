@@ -1152,6 +1152,32 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 26rem;
 }
 
+/* ── PRESTANDA (o97): PER-SEKTIONSRESERVATIONER för de utvalda korten —
+   o92 §5.5:s textspänn-rot KURAD (sond _s7u3o96-sond.mjs 2026-09-19,
+   rådata o96sond-o96-fore-*.json, bygge xBzidYw). ROT-BEVIS: span.mt-2.
+   flex-1:s "krymp" (Σ −1 037 px desktop / −1 498 mobil vid full scroll)
+   är INTE text-, font- eller bildbyte — textLength och computed font
+   (-apple-system, lh 20) identiska FÖRE/EFTER på SAMTLIGA 18 kort — utan
+   platshållar-flex-mekanik: i cv-contained läge sträcker flex-1-spännet
+   sig till platshållarboxens rest (416 − 138 = 278 px i "Börja här"),
+   vid rendering tar texten sin verkliga höjd (39–79 px). Kuren = träffa
+   li-platshållaren per SEKTION — spridningen mellan sektioner är
+   mobil 184–628 px / desktop 194–739 px, en gemensam nivå kan inte
+   träffa. Nivåerna = sonderade sektionsgenomsnitt (mobil flagg 429 /
+   nya 628 / börja 184 · desktop flagg 727 / nya 729 / börja 204);
+   sektionerna bär klasserna via UtvaltSektions sektionsKlass-prop i
+   page.tsx (cv-utvalt-flagg/nya/borja). Basregeln ovan står kvar som
+   fallback för framtida sektioner. "auto"-nyckeln minns därefter
+   verklig höjd per kort — samma garanti som kort-familjen. */
+.cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 27rem; }
+.cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 39.25rem; }
+.cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 11.5rem; }
+@media (min-width: 768px) {
+  .cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 45.5rem; }
+  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 45.5rem; }
+  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
+}
+
 /* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
    55 inlägg renderas alla i initial HTML). r4b2-facit: styleLayout 835 ms
    är /blogg:s största mainthread-post; samma mekanik som .cv-kort och

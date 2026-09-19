@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-19T18:41:26.726Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u3o96-fore",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.68,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1400,
+        "LCP": 4636,
+        "TBT": 613,
+        "CLS": 0,
+        "TTI": 4867,
+        "SI": 1780
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 50 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 50 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 524 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 524 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.0 s",
+          "rad": "Reduce JavaScript execution time — 2.0 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.3 s",
+          "rad": "Minimize main-thread work — 4.3 s"
+        }
+      }
+    }
+  ]
+}

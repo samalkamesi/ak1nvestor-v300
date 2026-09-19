@@ -1,0 +1,216 @@
+{
+ "url": "http://localhost:3000/ar/kurser",
+ "namn": "o96-fore-ar-desktop",
+ "geo": "desktop",
+ "ts": 1789843120835,
+ "fore": {
+  "docH": 3543,
+  "fonts": "loaded",
+  "utvalda": [],
+  "register": [
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   }
+  ],
+  "marinH": 484,
+  "socialH": null
+ },
+ "efter": {
+  "docH": 3540,
+  "fonts": "loaded",
+  "utvalda": [],
+  "register": [
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   },
+   {
+    "h": 43,
+    "textLen": 0
+   }
+  ],
+  "marinH": 484,
+  "socialH": null
+ }
+}

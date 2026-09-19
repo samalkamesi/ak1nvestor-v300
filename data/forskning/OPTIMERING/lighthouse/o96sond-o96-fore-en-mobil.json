@@ -1,0 +1,216 @@
+{
+ "url": "http://localhost:3000/en/kurser",
+ "namn": "o96-fore-en-mobil",
+ "geo": "mobil",
+ "ts": 1789843172574,
+ "fore": {
+  "docH": 16676,
+  "fonts": "loaded",
+  "utvalda": [],
+  "register": [
+   {
+    "h": 142,
+    "textLen": 0
+   },
+   {
+    "h": 166,
+    "textLen": 0
+   },
+   {
+    "h": 142,
+    "textLen": 0
+   },
+   {
+    "h": 191,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   },
+   {
+    "h": 448,
+    "textLen": 0
+   }
+  ],
+  "marinH": 976,
+  "socialH": null
+ },
+ "efter": {
+  "docH": 14468,
+  "fonts": "loaded",
+  "utvalda": [],
+  "register": [
+   {
+    "h": 242,
+    "textLen": 459
+   },
+   {
+    "h": 266,
+    "textLen": 450
+   },
+   {
+    "h": 574,
+    "textLen": 1535
+   },
+   {
+    "h": 466,
+    "textLen": 1039
+   },
+   {
+    "h": 252,
+    "textLen": 339
+   },
+   {
+    "h": 520,
+    "textLen": 1296
+   },
+   {
+    "h": 266,
+    "textLen": 440
+   },
+   {
+    "h": 422,
+    "textLen": 959
+   },
+   {
+    "h": 364,
+    "textLen": 797
+   },
+   {
+    "h": 442,
+    "textLen": 984
+   },
+   {
+    "h": 461,
+    "textLen": 1090
+   },
+   {
+    "h": 715,
+    "textLen": 1884
+   },
+   {
+    "h": 598,
+    "textLen": 1547
+   },
+   {
+    "h": 661,
+    "textLen": 1613
+   },
+   {
+    "h": 142,
+    "textLen": 36
+   },
+   {
+    "h": 142,
+    "textLen": 43
+   },
+   {
+    "h": 142,
+    "textLen": 25
+   },
+   {
+    "h": 142,
+    "textLen": 29
+   },
+   {
+    "h": 142,
+    "textLen": 48
+   },
+   {
+    "h": 142,
+    "textLen": 41
+   },
+   {
+    "h": 142,
+    "textLen": 74
+   },
+   {
+    "h": 142,
+    "textLen": 50
+   },
+   {
+    "h": 142,
+    "textLen": 72
+   },
+   {
+    "h": 142,
+    "textLen": 66
+   }
+  ],
+  "marinH": 958,
+  "socialH": null
+ }
+}

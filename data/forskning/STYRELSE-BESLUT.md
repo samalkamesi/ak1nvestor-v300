@@ -140,3 +140,75 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Verifiera bildservern på port 3987 är död + dokumentera regeln: kunduppladdningar serveras endast via localhost
   10. Auditlogg-hook för fabriksbarns död/OOM så framtida nattkriser lämnar spår i spårbarheten
 - **Mötes-id:** styrelse-mu27v0zl-lqp458
+
+## 2026-09-19 21:54 — Vad bör prioriteras för mobilupplevelsen?
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Mobil är kundens primära yta och sökkanalen — gränssnittsvakten utökas därför från strukturmässning till full mobilförsäkring: Core Web Vitals, tryckytstorlekar, RTL-rendering och disclaimer-synlighet blir mekanisk lag, parallellt med auth-härdning och kakmedgivande-audit. Åtgärderna verifierar och härdar befintlig rendering — juridiktexter, priser och övriga R2-ytor ändras inte.
+- **Motivering:** Fyra organ konvergerar: vakten är rätt kanal men mäter struktur, inte tid, touch, RTL eller juridiksynlighet — och för en telefon-först-kund med mobile-first-indexering är mobil både hetaste hotytan (auth, kakor, etiketter) och största tillväxtytan.
+- **Roller:**
+  - ORDFORANDE: {"beslut": "Mobil är kundens primära yta och sökkanalen — gränssnittsvakten utökas därför från strukturmässning till full mobilförsäkring: Core Web Vitals, try…
+  - TEKNIK: Ge vakten ögon (CWV), fingertoppskänsla (tryckytor 24/44 px) och 4G-realism; lazy-ladda datatungt innehåll bakom RAM-vakt.
+  - SAKERHET: Härda mobila sessioner (sessionsutgång, cookie-flaggor, rate-limit), audittra kakdosan och säkra att caching aldrig rör autentiserat innehåll.
+  - JURIDIK: Utbildningsframingen (2007:528), kakmedgivandet (LEK 2022:482) och köpflödets villkor (2005:59) måste förbli fullt synliga och oskurna på mobil — lagrummen åtskilda.
+  - TILLVAXT: Mobil är sökkanalen: CWV som rankningssignal, RTL-kontroll för arabiska, och varje ny språksida mobil-leveransad och värmd från dag ett.
+- **Åtgärder:**
+  1. Utöka gränssnittsvakten med Core Web Vitals-mätning (LCP/INP/CLS via PerformanceObserver i mobil-viewport) med larm vid LCP > 2,5 s
+  2. Lägg tryckytskontroll i vakten: WCAG 2.5.8 minimum 24 px, målbild 44 px — kundens 'stora tryckytor' blir mekanisk lag
+  3. Lägg RTL-mobilrendering som egen kontroll för arabiska sidor i vakten
+  4. Utöka vakten med disclaimer-synlighet: utbildningsetiketten (2007:528) fullt synlig på mobil i sv/en/ar — aldrig klippt, nedskalad eller gömd i dragspel
+  5. Audittra kakmedgivandet på mobil (LEK 2022:482): symmetriska acceptera/avvisa-knappar med lika tryckyta, fullt återkalleligt, blockerar ej navigation
+  6. Lazy-ladda grafer och tabeller under vecket på datatungasidor (AKM2-analyser, kurssidor) via next/dynamic för lägre mobil LCP
+  7. Ge varje ny -en/-ar-sida ISR-värmning och mobilkontroll vid publicering (ROND 104-mönstret) — aldrig i efterhand
+  8. Härda Supabase Auth för mobil: mekanisk verifiering av sessionsutgång, cookie-flaggor (Secure/HttpOnly/SameSite) och rate-limit på inloggningsendpunkten
+  9. Kör vaktkontrollerna med simulerad 4G-strypning i stället för ren loopback för nätverksrealism
+  10. Verifiera att juridiktexter i köpflödet (ångerrätt 2005:59 2 kap 10–11 §§, GDPR art 13) aldrig klipps på mobilskärm och att klientcaching aldrig omfattar autentiserat innehåll
+- **Mötes-id:** styrelse-mu8xa3uy-qrioyc
+
+## 2026-09-19 22:04 — Vad bör prioriteras för mobilupplevelsen?
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Gränssnittsvakten byggs ut till full mobilförsäkring: Core Web Vitals, tryckytor (WCAG 24/44 px), RTL-rendering och disclaimer-synlighet blir mekanisk lag, parallellt med auth-härdning (sessionsflaggor, rate-limiting) samt kakmedgivande- och köpflödes-audit. Åtgärderna mäter och härdar befintlig rendering och infrastruktur — juridiktexter, priser och övriga R2-ytor ändras inte, och nya kontroller körs först icke-blockerande tills baslinjen är känd.
+- **Motivering:** Fyra organ konvergerar: kunden är telefon-först och mobil är både hetaste hotytan (sessioner, kakor, etiketter) och största tillväxtytan (mobile-first-indexering, arabisk RTL), men vakten mäter idag bara struktur — inte tid, touch, RTL eller juridisk synlighet. Den bevisade kanalen (176 kombinationer, 0 fynd; ISR 44/44) är rätt fundament att bygga vidare på.
+- **Roller:**
+  - ORDFORANDE: {"beslut":"Gränssnittsvakten byggs ut till full mobilförsäkring: Core Web Vitals, tryckytor (WCAG 24/44 px), RTL-rendering och disclaimer-synlighet blir mekani…
+  - TEKNIK: Vakten får ögon och fingertoppskänsla — CWV med throttling, tryckytskontroll 24/44 px och lazy-laddning av datatungytor; nya kontroller baslinjemäts icke-blockerande först.
+  - SAKERHET: MINNE LADDAT — tråden står i ROND 107 (våg 212: aggregatorns helsvep löper, motorregistret regenererat 42→102, vaktrapports-stoppet grönt; fabriken kör v211); …
+  - JURIDIK: Lagkrav ska nå mottagaren: disclaimer-synlighet (2007:528), symmetriskt kakmedgivande (LEK 2022:482) och ångerrätt (2005:59) klippfria på mobil mäts mekaniskt — lagrum hålls åtskilda, texter ändras e…
+  - TILLVAXT: MINNE LADDAT — tråden står i ROND 107: våg 212 (testaggregatorn) sveper, motorregistret regenererat 42→102, vaktrapports-stoppet levererat, fabriken kör v211:s…
+- **Åtgärder:**
+  1. Utöka gränssnittsvakten med Core Web Vitals-mätning (LCP/INP/CLS via PerformanceObserver i mobil-viewport med CPU- och nätverksthrottling), larm vid LCP > 2,5 s
+  2. Lägg tryckytskontroll i vakten — WCAG 2.5.8 minimum 24 px, målbild 44 px — så att kundens 'stora tryckytor' blir mekanisk lag
+  3. Lägg RTL-mobilrendering som egen vaktkontroll för arabiska sidor innan v211:s arabiska omgång publiceras
+  4. Lägg disclaimer-synlighet i vakten: utbildningsetiketten (2007:528) fullt synlig på mobil i sv/en/ar — aldrig klippt, nedskalad eller gömd i dragspel
+  5. Audittra kakmedgivandet på mobil (LEK 2022:482): symmetriska acceptera/avvisa-knappar, fullt återkalleligt samtycke, inga tredjepartsskript före medgivande — mätning först; ändringar av juridiktexter väntar kund (R2)
+  6. Härda mobila sessioner (Supabase Auth): mekanisk kontroll av Secure/HttpOnly/SameSite-flaggor, förnyelsetakter och 'logga ut alla enheter'
+  7. Rate-limiting och progressiva fördröjningar på inloggnings-API:et med larm vid fel-mönster som indikerar credential stuffing, plus övervakning av 401/403-anomalier per yta
+  8. Audittra köpflödet på mobil: ångerrättsinformation (2005:59) och villkor kompletta och klippfria före köpknappen, ingen känslig data i URL:er, inga stackspår i felmeddelanden
+  9. Lazy-ladda grafer och tabeller under vecket på datatungasidor (AKM2-analyser, kurssidor) via next/dynamic för lägre mobil LCP
+  10. Kör nya mobilkontroller 1–2 veckor icke-blockerande för baslinje innan de blir deploy-stopp, och ge varje ny -en/-ar-sida ISR-värmning vid publicering (ak1a-varm.sh-mönstret)
+- **Mötes-id:** styrelse-mu8xng3h-7lkb3n
+
+## 2026-09-19 22:16 — Vad bör prioriteras för mobilupplevelsen?
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Gränssnittsvakten byggs ut från strukturmätning till full mobilförsäkring: Core Web Vitals, tryckytor, RTL-rendering och juridisk synlighet (disclaimer, kakmedgivande, ångerrätt) blir mekanisk lag, parallellt med säkerhetshärdning av sessioner, inloggnings-API och köpflöde. Åtgärderna mäter och härdar befintlig rendering — juridiktexter, priser och övriga R2-ytor ändras inte.
+- **Motivering:** Alla fyra organ konvergerar: kunden är telefon-först och vakten (176 kombinationer 0 fynd, ISR 44/44) är den bevisade kanalen — men den mäter bara struktur, inte tid, touch, RTL, säkerhet eller juridisk synlighet. Utökningen förenar hotytan (sessioner, kakor, etiketter) med tillväxtytan (mobile-first-indexering, arabisk RTL) och körs enligt vaktens bevisade mönster: icke-blockerande tills baslinjen är känd.
+- **Roller:**
+  - ORDFORANDE: {"beslut":"Gränssnittsvakten byggs ut från strukturmätning till full mobilförsäkring: Core Web Vitals, tryckytor, RTL-rendering och juridisk synlighet (disclai…
+  - TEKNIK: Vakten mäter struktur men inte tid och touch — CWV-mätning, tryckytskontroll (24/44 px) och lazy-laddning av datatungytor är nästa systematiska steg på en bevisad kanal.
+  - SAKERHET: MINNE LADDAT — tråden står i ROND 107 (våg 212 löper: aggregatorn sveper sviterna, motorregistret regenererat 42→102, fabriken kör v211); här svarar jag som Sä…
+  - JURIDIK: Klippt text är aldrig lämnad information — disclaimer, kakmedgivande, GDPR art 13 och ångerrätt måste vara mekaniskt synliga i mobilvy och RTL, utan R2-ändringar.
+  - TILLVAXT: MINNE LADDAT — tråden står i ROND 107 (våg 212 löper: aggregatorn sveper sviterna, motorregistret regenererat, fabriken kör v211); här lämnar Tillväxt/SEO sitt…
+- **Åtgärder:**
+  1. Utöka gränssnittsvakten med Core Web Vitals-mätning (LCP/INP/CLS via PerformanceObserver i mobil-viewport med CPU-/nätverksthrottling), larm vid LCP > 2,5 s
+  2. Lägg tryckytskontroll i vakten — WCAG 2.5.8 minimum 24 px, målbild 44 px — så att kundens krav på stora tryckytor blir mekanisk lag
+  3. Lägg RTL-mobilrendering som egen vaktkontroll innan v211:s arabiska sidor publiceras — oläslig juridisk text är obefintlig text
+  4. Lägg disclaimer-synlighet som mekanisk kontroll: utbildningsetiketten (2007:528) fullt synlig på mobil i sv/en/ar, aldrig klippt, nedskalad eller gömd i dragspel
+  5. Audittra kakmedgivandet på mobil (LEK 2022:482): symmetriska acceptera/avvisa-knappar med lika tryckyta, lika enkel återkallelse, GDPR art 13 läsbar i mobilvy, inga trackers före aktivt samtycke
+  6. Audittra Supabase-Auth-sessioner mekaniskt: cookie-flaggor (Secure, HttpOnly, SameSite), förnyelsetakt och 'logga ut alla enheter'
+  7. Rate-limita inloggnings-API:et med progressiva fördröjningar och larm vid fel-mönster per IP och yta (credential stuffing-skydd)
+  8. Härda köpflödets mobilvy: ångerrätts- och villkorstexter fullt läsbara före köp (2005:59, 2 kap 10–11 §§), ingen känslig data i URL:er, inga stackspår i felmeddelanden, HSTS hela vägen
+  9. Lazy-ladda grafer och tabeller under vecket på datatungytor (AKM2-analyser, kurssidor) via next/dynamic och ISR-värm varje ny -en/-ar-sida från dag ett
+  10. Kör varje ny kontroll först icke-blockerande tills baslinjen är känd; bygg sökords-basladan med mobilvolym vägd in för nästa guideomgångar
+- **Mötes-id:** styrelse-mu8y2kqk-iaxmoj

@@ -82,6 +82,47 @@ a70a2f8d som förfader). FABRIKSREGLER: ALDRIG eget bygge.
    språkneutralt kortinnehåll men learn-textlängd kan variera) — nästa våg
    mäter vid tillfälle; ingen känd skada (samma komponent, samma klass).
 
-## §6 EFTER-mätning
+## §6 EFTER-mätning (deployad 19:01:06Z — komplett i fönstret)
 
-(pågår — deploy väntas; fylls när BUILD_ID lämnar xBzidY… med a70a2f8d som förfader)
+**Deploy:** prod-synkens 18:57-poll byggde (RAM-fönster öppnades när syskonens
+sonder stängts); **DEPLOYAD automatiskt 19:01:06Z, 7 commits (7b221de9)**,
+kuren **a70a2f8d verifierad förfader** (`git merge-base --is-ancestor` ✓);
+BUILD_ID `xBzidYwn8BHC5MbVEaTza` → **`nwHC2B9w0z86loSZDzAe3`**.
+
+**§3.1 prod 200 ×5 https:** / · /kurser · /blogg · /en/kurser · /ar/kurser —
+**5/5 = 200 ✓**.
+
+**§3.2 mobil-blocksond EFTER** (`blocksond-s7u1o93-efter-mobil.json`):
+docH 23 181 → 23 203 = **Δ +22 px** (FÖRE kur: −3 122 ⇒ **99,3 % av
+engångskrympningen borta**; kriterium |Δ| ≤ 150 ✓). `li.cv-registerkort`
+Σ 7 680 → 7 669 = **−11 px** (FÖRE kur: −3 086; ≤ 150 ✓). Toppläget Σ 7 680
+= 24 × 320 EXAKT — nya platshållaren 20rem i produktion bevisad; sluthöjden
+7 669 == FÖRE-fönstrets 7 669 (noll px drift mellan fönstrena — determinism).
+Äkta höjder retur-scroll: medel 320/median 266 (identiskt FÖRE — metodkors).
+FÖRE-scroll-docH 23 181 mot kur-före 26 325 = −3 144 ≈ 24 × (448−320) ✓ —
+scrollbaren slutar ljugas redan vid första besöket. Textspänn-attribution
+(+3 896, skelett→text) kvarstår som synlig växling men NETTO dokument +22.
+
+**§3.3 desktop-kontroll** (`blocksond-s7u1o93-efter-desktop.json`,
+1280×800): registerkort Σ 1 056 → 1 032 = **−24 px** (≤ 50 ✓); per-kort
+**43 px enhetligt 24/24** (md+ 2.75rem orörd — kuren verifierad mobil-exklusiv);
+docH 7 876 → 7 840 = −36 (brus).
+
+**§3.4 Lighthouse EFTER /kurser** (`kurser-s7u1o93-efter.json`):
+**P74 · LCP 4 590 · TBT 396 · CLS 0** mot FÖRE P67 · 4 600 · 646 · 0 —
+poäng **+7** ✓ (≥ 62), LCP −0,2 % ✓, TBT −39 % (förbättring utöver
+envelopen; tystare fönster än FÖRE kan bidra — hederligt noterat), CLS 0 ✓.
+
+**§3.5 gränssnittsvakten:** senaste cron-löp 17:55Z (före deploy):
+**0 fynd / 176 kombinationer** (`granssnitt-2026-09-19T1803.json`);
+första vaktkörning på det nya bygget sker vid nästa 6-timmarscron —
+bevakning till huvudagentens vaktprompt (o92 §3.5-precedensen).
+
+**DOMSLUT o93: GRÖN på samtliga fem kriterier.** Mobilens
+dokument-engångskrympning −3 122 px är botad till +22 px (99,3 %); kalibreringen
+bytte paradigm från fram-scroll-bias (o91: 446) till retur-scroll-äkta
+(medel 320 = 20rem exakt) med metodkors ±11 px. Deploy- och mätbevis:
+kur a70a2f8d → DEPLOYAD 19:01:06Z (7b221de9, BUILD_ID nwHC2B9w0z86loSZDzAe3)
+→ prod 200 ×5 → EFTER-sonder + Lighthouse → denna bokföring. Spårets kö
+oförändrad (§5); desktop/marin per språk ägs av u2:o96 parallellt.
+

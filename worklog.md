@@ -14314,3 +14314,28 @@ obestämt. BASF-bokföring: commit:n bär syskonens konvertibel (u1, 21/21),
 faktordjup (u1, 36/36) och bokmastar (u3, 25/25) — widgetens import kräver
 dem för tsc-korherens; fönstrets harmonisering (komponentlistor + K03
 432→440 + tillväxtdjup A2) betalades gemensamt på disken.
+
+## SPÅR 6 s6-u2 (omgång 22, kvitto) — 2026-09-19: AI-MENTORN +2 FÖRHANDSFRÅGOR — VOLATILITETSBUDGETEN + SORTINO/CALMAR, RISKBUDGET-LAGRET (128 → 130 monsters i mitt leveransläge; fönstrets slutläge med syskonen: 50 motorer / 132) [fabrik]
+
+RISKBUDGET-LAGRET (manifest auto-s6-1789791914561): rp-04-volatilitetsbudgeten primär
+(ekvationen 10w² − 2w − 3 = 0 ⇒ 65,7/34,3, kontrollen 139,76 + 4,24 = 144,00, svängen
+18→24 % ⇒ 15,90 = 32,5 % över taket, återförd vikt 17w² − 2w − 3 = 0 ⇒ 48,3/51,7)
++ rp-02-tre-matt-tre-fragor primär (exempelportföljen Sharpe 1,00 / Sortino 1,43 /
+Calmar 0,80 mot spegeln 1,00/1,17/1,13 — tre divisioner tre vinnare; √12 ≈ 3,46).
+AKTIVERAR HELA RISKHANTERING & PORTFÖLJTEORI 7/13 → 13/13 (rp-01, rp-03, km-017,
+km-031 som källor). SOND _s6u2-sond-omg22.mjs (otrackad; 46 motorer/125 monsters/
+440 kurser/1 359 kärnord LIVE, basen med — omgång 21:s import-fälla kontrollerad):
+kelly/riskparitet/roic/value-at-risk/volatilitet/risk nakta DÖDADE (ägda av basen/
+portföljbalansen/lönsamhetsdjupet — V19, knappar); G-FYNDET under regressionen:
+«riskbudgeten» granne (tavstånd 2) till ekosystemdjupets «röstbudgeten» — kärnordet
+bärs ENDAST obestämt, gränsen dokumenterad i modulen. KVM: modultest 21 PASS 0 FAIL
+(A–L enligt svitstandarden; D03 18 aritmetikkontroller oberoende omräknade),
+KEDJAN 180 PASS 0 FAIL, MENTORSVITEN 54/54 FILER GRÖNA, tsc 0 via projektbinär.
+OMKÖRNINGSKVITTO (BASF): mina filer (ai-mentor-riskbudget-fragor.ts 269 r +
+testa-ai-mentor-riskbudget.mjs 340 r + widget-wiring efter bokmastar + kedjetestets
+motorrad) bars av SYSKONET s6-u3:s fönstercommit 18bf0c6a (deras ämnesrad bokför
+bördan ärligt och namnger fönstrets kärna). Denna (min) commit bär fönstrets SISTA
+ytor: ekosystemdjup-listans omgång-22-tria (bokmastar+riskbudget+konvertibel —
+svitharmoniseringens dokumentationsplikt) + de två K03-läkningarna 432→440
+(avkastningskurva + warrant, diskbevisade gröna). R2 orörd; data/blogg/ orörd;
+INGET bygge (prod-synken äger).

@@ -400,6 +400,25 @@ export function DatasetIndexVy({
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
       </section>
 
+      {/* Brandgenomgångens CTA-gap (våg 201): dataset-ytan lämnade besökaren
+          utan nästa steg — primär kursväg med samma guldknapp som social
+          proof. Server-renderad på statisk sida (inget hydrerings-pop-in);
+          prefetch={false} enligt o17-precedensen (tunga kursrutter hämtas
+          vid klick, inte i initial last). */}
+      <section className="mt-10 rounded-lg border border-gold/20 bg-card p-6 text-center">
+        <h2 className="font-serif text-2xl font-bold">{t("dataset.cta.rubrik")}</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+          {t("dataset.cta.text")}
+        </p>
+        <Link
+          href={prefix + "/kurser"}
+          prefetch={false}
+          className="btn-guld-signatur mt-5 inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
+        >
+          {t("dataset.cta.knapp")}
+        </Link>
+      </section>
+
       <MetodOchDisclaimer lang={lang} />
     </SeoPageShell>
   );

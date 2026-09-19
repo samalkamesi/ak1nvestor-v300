@@ -235,7 +235,7 @@ export function raknaOlasta(): number {
  * Regler (alla med pedagogik-rösten — tips, aldrig tvingan):
  *   streak   — senaste aktivitet > 1 dag sedan → streaken väntar
  *   pass     — dagens quiz-lås olåst → Dagens Pass väntar med dagens aktie
- *   fas2     — nivå ≥ 25 → redo för Fas 2 (18 fundamentala mästarverk)
+ *   fas2     — nivå ≥ 25 → redo för Fas 2 (fördjupningen av de 20 indikatorerna)
  *   vagkarta — dagens autonom vågmätning finns → sammanfattningen är klar
  *   nyhet    — "ak1a-nyheter-top" (från Senaste nytt/Nyhetscentralen) har en
  *              nyhet från idag med paverkan ≥ 70 → "Värdefull nyhet" väntar
@@ -285,7 +285,9 @@ export function genereraAutomatiskaNotiser(underlag?: NotisUnderlag | null): Not
       typ: "fas2",
       ikon: "🎓",
       rubrik: "Nivå 25 nådd",
-      text: "Du är redo för Fas 2 — 18 fundamentala mästarverk väntar.",
+      // Våg 201 (brandgenomgången P2, skiftet djup>bredd): djupformulering
+      // i stället för antal — indikatorfördjupningen är vägen, böckerna stöd.
+      text: "Du är redo för Fas 2 — fördjupningen av de 20 fundamentalindikatorerna väntar.",
       lank: "/fas2-ansok",
     });
   }

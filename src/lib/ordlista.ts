@@ -1762,6 +1762,24 @@ export const ORDLISTA = {
     en: "Raw data retrieved {hamtat} · medians are recomputed when the universe is maintained · page refreshes daily",
     ar: "استُرجعت البيانات الخام {hamtat} · يُعاد حساب الوسيطات عند صيانة العالم · تتحدث الصفحة يوميًا",
   },
+  // Våg 201 (brandgenomgångens CTA-gap): dataset-ytans primära nästa steg —
+  // medianen är riktmärket, kurserna är hantverket. Utbildningsform, gratis-
+  // faktum ur Fas 1-modellen, inga löften.
+  "dataset.cta.rubrik": {
+    sv: "Från tabell till hantverk",
+    en: "From table to craft",
+    ar: "من الجدول إلى الصنعة",
+  },
+  "dataset.cta.text": {
+    sv: "Medianen visar var branschen står — kurserna lär dig läsa årsredovisningen bakom talen. Hela grundutbildningen är gratis.",
+    en: "The median shows where the industry stands — the courses teach you to read the annual report behind the numbers. The entire foundation track is free.",
+    ar: "الوسيط يبيّن أين يقف القطاع — والدروس تعلّمك قراءة التقرير السنوي الكامن وراء الأرقام. مسار التأسيس كامل مجانًا.",
+  },
+  "dataset.cta.knapp": {
+    sv: "Lär dig läsa nyckeltal — kursvägen →",
+    en: "Learn to read key ratios — the course path →",
+    ar: "تعلّم قراءة المؤشرات المالية — مسار الدروس ←",
+  },
   "dataset.tabell.rubrik": {
     sv: "Medianer per bransch",
     en: "Medians per industry",

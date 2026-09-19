@@ -101,6 +101,24 @@ export default async function BloggPageEn() {
           );
         })}
       </div>
+
+      {/* Brandgenomgångens CTA-gap (våg 201): the blog mirror's primary next
+          step — the free foundation track. Statically rendered (no
+          hydration pop-in); prefetch={false} per the o17 precedent. */}
+      <section className="mt-12 rounded-lg border border-gold/20 bg-card p-6 text-center">
+        <h2 className="font-serif text-2xl font-bold">Start with the fundamentals</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+          The articles show the method in practice — the courses build it step
+          by step. The entire foundation track is free, no card required.
+        </p>
+        <Link
+          href="/en/kurser"
+          prefetch={false}
+          className="btn-guld-signatur mt-5 inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
+        >
+          Start with the fundamentals — free →
+        </Link>
+      </section>
     </SeoPageShell>
   );
 }

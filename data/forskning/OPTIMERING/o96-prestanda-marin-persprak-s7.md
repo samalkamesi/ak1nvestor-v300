@@ -91,4 +91,28 @@ som förfader) — FABRIKSREGLER: ALDRIG eget bygge:
 
 ## §6 EFTER-mätning (fylls när prod-synken deployat — vakarövertag o83/o92-mönstret)
 
-*(väntar deploy)*
+**Status 18:40Z:** commit 15389ebc klar; prod-synken VÄNTAR-RAM (18:37Z-pollen:
+1 633 MB < 2 500 krav — 1 zcode-barn aktivt; bygget landar när fabriksbarnen
+frigjort minne). EFTER kan EJ ske i denna vågs fönster (RAM-en paradox: sonden
+själv håller minnet deployen väntar på) ⇒ kriterierna §3 är vakarövertag-barra.
+
+**Verkställighetskommandon (mekaniskt, nästa instans/huvudagent):**
+
+```bash
+# 1. deploy-vilkor: BUILD_ID lämnar xBzidYw med 15389ebc som förfader
+cat .next/BUILD_ID
+# 2. prod 200 ×5
+for u in / /kurser /blogg /en/kurser /ar/kurser; do curl -s -o /dev/null -w "%{http_code} $u\n" "https://lab.ak1nvestor.com$u"; done
+# 3. blocksond EFTER (sekventiellt; RAM-vakt styr — körs om vid exit 2)
+node verktyg/_s7u2o96-blocksond.mjs efter-desktop-en    http://localhost:3000/en/kurser 1280 800 1
+node verktyg/_s7u2o96-blocksond.mjs efter-desktop-ar    http://localhost:3000/ar/kurser 1280 800 1
+node verktyg/_s7u2o96-blocksond.mjs efter-desktop-en-900 http://localhost:3000/en/kurser  900 800 1
+node verktyg/_s7u2o96-blocksond.mjs efter-desktop-ar-900 http://localhost:3000/ar/kurser  900 800 1
+# 4. Lighthouse EFTER (envelopmärke mot P46/LCP 4395/TBT 2198/CLS 0.204)
+node verktyg/prestanda-lighthouse.mjs s7u2o96-efter /en/kurser
+```
+
+**Domännote:** rådata-filerna får EFTER-namn (blocksond-s7u2o96-efter-*) —
+FÖRE-paren är committade i 15389ebc och bevaras av git för jämförelsen.
+
+*(resultat bokförs här av den som verkställer)*

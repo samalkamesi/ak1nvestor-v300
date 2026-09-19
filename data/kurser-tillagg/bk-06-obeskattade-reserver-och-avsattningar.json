@@ -1,0 +1,148 @@
+{
+  "slug": "bk-06-obeskattade-reserver-och-avsattningar",
+  "category": "BOKFÖRING & ÅRSREDOVISNING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Obeskattade reserver och avsättningar — balansräkningens tvegift",
+  "summary": "Bokföringsfamiljens sjätte steg öppnar balansräkningens mest svenska skåp: den obeskattade reserven, posten som är eget kapital och skuld på samma gång, och avsättningarna — pensionen, garantin, omstruktureringen — vars värden är uppskattningar klädda i siffror. Kursen lär mekaniken bakom skatteuppskovet, det justerade egna kapitalet och P/B-läsningens största svenska fälla. Utbildning om hur posterna fungerar, inte råd om något bolag.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Läsa den obeskattade reservens dubbelnatur — eget kapital i drift, skuld när vinsten lämnar bolaget · Räkna skatteuppskovet: skillnaden mellan betald och bokförd skatt, och varför den blir statens räntefria lån · Följa en avsättnings rörelse: ingående värde, ränta, periodisering, utbetalning, utgående värde · Räkna det justerade egna kapitalet: rapporterat EK plus reserver minus latent skatt · Förstå varför svenska och internationella substansvärden inte talar samma språk utan justering · Ställa granskarens fem frågor till varje balansräkning med reserver",
+  "why": "Bokföringstrappans fem första steg byggde grunden: bk-01 balansräkningens byggnad, bk-02 resultaträkningens trappa, bk-03 kassaflödets tre kanaler, bk-04 koncernens sammanflätning och bk-05 ledningens lagliga valrum. Men balansräkningen har en svensk särart som trappan ännu inte öppnat: den obeskattade reserven — posten mellan skulder och eget kapital som får en hel substansläsning att vända in och ut, och som saknar motstycke i den internationella rapportering som vm-01..11-världen bygger på. Sonden mot registret bekräftar luckan: obeskattade reserver nämns endast i förbifarten (st-06 likviditetsreserven, v05 och ib-02 som P/B-justering) — ingen kurs äger posternas mekanik. bk-06 är familjens sjätte steg och bokföringsrummets sammanfogning: bk-01:s struktur, bk-02:s resultatkoppling och bk-05:s valrum möts i posten som förenar dem alla tre.",
+  "history": {
+    "origin": "Reserveringen är äldre än dubbel bokföring: handelshusens försiktiga buffertar mot skeppsförluster och osäkra fordringar var en informell skatt på optimism. När inkomstbeskattningen växte fram krockade två logiker — redovisningens matchning av kostnad mot intäkt och skattelagstiftningens egna tidsregler — och mellan dem föddes bestående skillnader mellan bokförd och taxerad vinst.",
+    "evolution": "Den svenska modellen valde att låta skillnaderna stanna kvar i balansräkningen som en egen post: differenserna mellan bokförd och beskattningsbar inkomst ackumuleras i reserven, som därmed bär historien om varje års skatteuppskov och tidigareläggning. De internationella reglerna valde motsatta riktningen: skillnaderna beräknas och redovisas explicit som uppskjuten skatt, post för post, vilket ger ett eget kapital som ser annorlunda ut fastän bolaget är detsamma.",
+    "modern": "I dagens svenska rapporter lever posten kraftigast i banker, försäkringsbolag och industrier med stora åtaganden: en balansräkning där en fjärdedel av omslutningen är obeskattade reserver är inte ett larm — den är en tidskapsel av skjuten upp skatt, en källa till substansjustering vid varje värdeberäkning och den första posten en svensk granskare lär sig räkna om. Att läsa posten utan att förstå dess dubbelnatur är den klassiska nybörjarfällan i svensk aktieanalys."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — posten som är två saker samtidigt", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — skatteuppskovet och reservens tillväxt", "minutes": 4 },
+    { "num": 3, "title": "Avsättningarna — pensionen, garantin, omstruktureringen", "minutes": 4 },
+    { "num": 4, "title": "Mätning — det justerade egna kapitalet och substansen", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — granskarens fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch talade om att läsa balansräkningen baklänges: börja med det som är svårt att fejka. Obeskattade reserver är den svenska motsvarigheten till hans dolda värden — ett kapital som syns i balansräkningen men som börskursen ofta räknar som vanliga kronor, fastän en femtedel av varje reserv är statens andel som väntar. Hans regel att leta värdet där ingen annan orkar räkna är reservläsningens beskrivning i en mening.",
+  "grahamSection": "Benjamin Graham arbetade i en rapportvärld utan svenska reserver, men hans substansberäkning ställer exakt den fråga denna kurs svarar på: vad är bokfört värde värt när en del av det är en skuld i förklädnad? Grahams krav på försiktighet i varje tillgångspost — att räkna ned det osäkra och fråga vad som återstår — är samma metod som det justerade egna kapitalet bygger på: först när latent skatt dras av är substanssiffran ärlig.",
+  "ak1Section": "I AK1A:s metodik kompletterar bk-06 bokföringstrappans topp: v05:s P/B-läsning och ib-02:s substanskvalitet kräver ett justerat eget kapital för svenska bolag, och bk-05:s valrum fick sin mest svenska post att öva på. I AKM1:s bolagsläsning blir reservens storlek och rörelse en strukturell ögonblicksbild av samma slag som avskrivningarna i km-021: en plats där skatteregler och redovisningsval flyttar rapportens resultat mellan år utan att en krona lämnar bolaget. Kursen är utbildning i mekanik — aldrig råd om köp eller försäljning.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — posten som är två saker samtidigt",
+      "intro": "Mellan skulderna och det egna kapitalet, på balansräkningens svenska våning, står en post som inte bestämt sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "bk-01 lärde balansräkningens byggnad: tillgångar vänster, kapital höger. Men den svenska högerväggen har tre skikt, inte två — skulder, obeskattade reserver och eget kapital. Reserven föds ur ett gränsvärde: bokföringen får periodisera en kostnad efter redovisningens matchningsprincip, medan skatten beskattar inkomsten efter sina egna tidsregler. När bokförd vinst och taxerad vinst skiljer sig åt år efter år samlas differensen i reserven. Det som gör posten svårläst är dess dubbelnatur: i löpande drift beter den sig som eget kapital — pengar som stannar i bolaget och kan arbetas med — men den är samtidigt en latent skatteskuld som realiseras när vinsten vill lämna bolaget, genom utdelning eller nedläggning. Grannkurserna äger varsin sida av rummet: km-049 äger skattesidans regler och bk-05 ledningens valrum — bk-06 äger själva posternas mekanik mellan dem."
+        },
+        {
+          "type": "definition",
+          "content": "OBE SKATTAD RESERV — ackumulerad skillnad mellan bokförd och taxerad vinst; kapital som ännu inte beskattats och som uppför sig som eget kapital i drift men beskattas när det lämnar bolaget · LATENT SKATT — den andel av reserven som vid upplösning blir skuld; i kursens övningsuniversum beräknas den till 20 procent · AVSÄTTNING — en skuld av osäker belopp eller tidpunkt, värderad till uppskattning: pension, garanti, omstrukturering · JUSTERAT EGET KAPITAL — rapporterat EK plus obeskattade reserver minus latent skatt; substansläsningens svenska grundtal"
+        },
+        {
+          "type": "insight",
+          "content": "Reserven är inte en hemlighet — den står tryckt i varje svensk balansräkning. Skillnaden mellan att se posten och att läsa den är en enda subtraktion: ta bort statens andel, och det som återstår är det kapital som verkligen tillhör ägarna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — skatteuppskovet och reservens tillväxt",
+      "intro": "En reserv växer av skillnader mellan två klockor: redovisningens och skattens. Räkneexemplet gör klockorna hörbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den klassiska källan är avskrivningstakten — km-021:s territorium i allmän form. Norra Kraft AB köper en maskin och skriver av den bokfört med 20,0 Mkr om året, men skattereglerna tillåter en accelererad avskrivning på 40,0 Mkr det första året. Året har intäkter 100,0 Mkr och kontanta kostnader 50,0 Mkr. Bokfört resultat före skatt blir 100,0 − 50,0 − 20,0 = 30,0 Mkr. Den taxerade inkomsten blir 100,0 − 50,0 − 40,0 = 10,0 Mkr. Skatten betalas på taxerad inkomst: 0,20 × 10,0 = 2,0 Mkr. I resultaträkningen bokförs skattekostnaden på det bokförda resultatet: 0,20 × 30,0 = 6,0 Mkr, och bokfört netto blir 30,0 − 6,0 = 24,0 Mkr. Kassaflödet — bk-03:s sanning — blir intäkter minus kontanta kostnader minus betald skatt: 100,0 − 50,0 − 2,0 = 48,0 Mkr. Jämförelsen är allt: utan den accelererade avskrivningen vore taxerad inkomst 30,0 Mkr, betald skatt 6,0 Mkr och kassaflödet 100,0 − 50,0 − 6,0 = 44,0 Mkr. Skillnaden 48,0 − 44,0 = 4,0 Mkr är exakt 0,20 × (40,0 − 20,0) — skatteuppskovet, statens räntefria lån till bolaget. Samma år växer den obeskattade reserven med skillnaden mellan bokförd och taxerad vinst, 30,0 − 10,0 = 20,0 Mkr, för i de senare åren när de skattemässiga avskrivningarna tar slut medan de bokförda fortsätter vänder klockorna och differensen beskattas tillbaka. Reserven är alltså en bokförd skuld till framtiden som ännu inte förfallit — och varje års rörelse syns i noterna."
+        },
+        {
+          "type": "tabell",
+          "content": "SKATTEUPPSKOVET HOS NORRA KRAFT AB, ÅR 1 (PÅHITTADE TAL): INTÄKT 100,0 · KONTANTA KOSTNADER 50,0 · BOKFÖRD AVSKRIVNING 20,0 · SKATTEMÄSSIGT TILLÅTEN AVSKRIVNING 40,0 · BOKFÖRT RESULTAT FÖRE SKATT: 100,0 − 50,0 − 20,0 = 30,0 · TAXERAD INKOMST: 100,0 − 50,0 − 40,0 = 10,0 · BETALD SKATT 20 PROCENT: 0,20 × 10,0 = 2,0 · BOKFÖRD SKATTEKOSTNAD: 0,20 × 30,0 = 6,0 · BOKFÖRT NETTO: 30,0 − 6,0 = 24,0 · KASSAFLÖDE: 100,0 − 50,0 − 2,0 = 48,0 · UTAN ACCELERATION: skatt 6,0 och kassaflöde 44,0 · UPPSKOV: 48,0 − 44,0 = 4,0 = 0,20 × (40,0 − 20,0) · RESERVÖKNING: 30,0 − 10,0 = 20,0 — differensen som beskattas tillbaka när klockorna vandrar ihop"
+        },
+        {
+          "type": "insight",
+          "content": "Två röster talar i samma årsredovisning: resultaträkningen visar bokförd skatt på bokförd vinst, kassflödet visar betald skatt på taxerad vinst. Skillnaden mellan rösters summor är reservens hjärtslag — och där bokförd skatt överstiger betald växer posten tyst."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Avsättningarna — pensionen, garantin, omstruktureringen",
+      "intro": "Avsättningarna är balansräkningens enda poster vars värde ingen faktura bestämmer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En avsättning är ett löfte som satts på siffror: pensionsåtagandet som km-025 äger i sin helhet, garantiåtagandet mot sålda produkter och omstruktureringsåtagandet vid nedläggningar är de tre klassikerna. Gemensam mekanik: posten rör sig som ett badkar — ingångsvärdet värderas upp med ränta, årets förvärvade åtaganden periodiseras in, utbetalningarna läcker ut. Pensionsavsättningen är mest regelstyrd: diskonteringsräntan följer regler och varje räntesteg rör posten direkt. Övningstalet är en enkel balans: avsättning 100,0 Mkr vid årets början, uppräkning med 4 procent = 4,0 Mkr, inperiodiserat arbete 10,0 Mkr, utbetald pension 8,0 Mkr — utgående värde 100,0 + 4,0 + 10,0 − 8,0 = 106,0 Mkr. Garantiavsättningen är granskarens favorit just för att den saknar fast regel: om posten står på 20,0 Mkr och de faktiska garantikostnaderna historiskt ligger på 12,0 Mkr per år täcker avsättningen 20,0 ÷ 12,0 = 1,7 års förbrukning — frågan är om den speglar ett åtagande eller ett buffertlager som kan släppas tillbaka till resultatet i goda år. Omstruktureringsavsättningen har sin egen tidsregel: den hör hemma i resultaträkningen först när ett detaljerat, bindande beslut finns — inte för att ett projekt känns troligt. bk-05:s valrum visar sig här i avsättningsdräkt: antagandena om livslängd, ränta och omfattning är ledningens egna, och ln-02:s resultatkvalitetsverktyg är byggda för att väga dem."
+        },
+        {
+          "type": "tabell",
+          "content": "AVSÄTTNINGARNAS RÖRELSE — TRE KURSER (PÅHITTADE TAL): PENSION: ingående 100,0 · ränta 4 procent = 4,0 · periodiserat arbete +10,0 · utbetalning −8,0 · utgående = 106,0 Mkr · GARANTI: post 20,0 · faktisk förbrukning 12,0 per år · täckning = 20,0 ÷ 12,0 = 1,7 år — granskas mot historik · OMSTRUKTURERING: får bokföras först vid detaljerat bindande beslut — en förväntan är inte en avsättning · GEMENSAM REGEL: alla tre är uppskattningar — noter och förändringsanalys är enda sättet att skilja åtagande från åsikt"
+        },
+        {
+          "type": "insight",
+          "content": "Avsättningsändringen är en signalkälla i sig: en garantiavsättning som växer snabbare än omsättningen bär bud om kvalitetsproblem eller om försiktighet — och noternas förklaringar avgör vilken av de två det är."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — det justerade egna kapitalet och substansen",
+      "intro": "När posterna väl är förstådda återstår analysens viktigaste svenska enkla räkning: att göra det egna kapitalet jämförbart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Substansvärderingen — v05:s P/B-mekanik och ib-02:s kvalitetsfrågor — börjar i det egna kapitalet, och för svenska bolag är det rapporterade talet inte räknbart rakt av. Norra Kraft AB igen som exempel: rapporterat eget kapital 180,0 Mkr, obeskattade reserver 250,0 Mkr — en fjärdedel av den totala balansomslutningen 1 000,0 Mkr. Den latenta skatten är 20 procent av reserven: 0,20 × 250,0 = 50,0 Mkr. Det justerade egna kapitalet blir 180,0 + 250,0 − 50,0 = 380,0 Mkr. På 10,0 miljoner aktier är det 38,0 kronor per aktie i justerat läge mot 18,0 kronor i rapporterat. Skillnaden i läsningen är dramatisk: med aktien noterad till 30,0 kronor blir P/B rapporterat 30,0 ÷ 18,0 = 1,67 — en substanspremie på två tredjedelar — medan P/B justerat blir 30,0 ÷ 38,0 = 0,79, en rabatt. Samma bolag, samma dag, samma kurs: den första läsningen visar dyrt, den andra billigt, och kvoten mellan dem 1,67 ÷ 0,79 = 2,1 gånger är ren reservgeometri. I internationella jämförelser — vr-06:s jämförelsebolag — är korrigeringen nödvändig: den utländska rapporten redovisar uppskjuten skatt öppet, och den svenska som inte justeras ser fattigare ut än den är. Det är mekanikens lag, inte en åsikt om någon aktie: kursen lär räkningen, beslutet är alltid läsarens eget."
+        },
+        {
+          "type": "definition",
+          "content": "JUSTERAT EGET KAPITAL = RAPPORTERAT EK + OBE SKATTADE RESERVER − LATENT SKATT · PER AKTIE: det justerade talet delat med antal aktier · P/B JUSTERAT: kurs delat med justerat EK per aktie · RESERVEFFEKTEN: förhållandet mellan rapporterat och justerat P/B — i övningsexemplet 1,67 mot 0,79, en faktor 2,1"
+        },
+        {
+          "type": "insight",
+          "content": "Regeln är enkel nog att minnas för alltid: lägg till reserven, dra bort en femtedel. Resten — vad substansen sedan är värd i marknadens ögon — tillhör v05:s och vr-05:s värderingsrum, inte bokföringens."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Postens dubbelnatur bjuder in till tre klassiska misstag — ett per natur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: att läsa reserven som skuld och bolaget som skuldsatt. Reserven betalar ingen ränta, kan inte sägas upp av någon bank och realiseras först vid utdelning eller nedläggning — att behandla den som lån i st-01:s soliditetsräkning ger en falskt mörk bild av tryggheten. Fälla två: att läsa reserven som fritt eget kapital. Vid en riktig belastning — rk-familjens territorium — är det just omstrukturering eller vinster som lämnar bolaget som tvingar fram beskattning, och 20 procent av posten försvinner i samma ögonblick den behövs som buffert; st-06:s likviditetsläsning möter just detta gränsfall. Fälla tre: jämförelsen över gränserna. Ett svenskt bolag med stora reserver och ett utländskt med uppskjuten skatt redovisad har samma ekonomi men olika bokstavsbild — den som jämför P/B utan justering rangordnar dem fel. Till det kommer avsättningarnas egen fälla: att läsa beloppet och aldrig åldern. En garantiavsättning som inte rört sig på fem år kan vara överdimensionerad — vinstpengar parkerade som kan släppas tillbaka i goda tider, bk-05:s redovisningspolitik i miniatyr — eller ett tecken på att produkten blivit säkrare än historiken. Noterna, inte balansraden, avgör skillnaden."
+        },
+        {
+          "type": "insight",
+          "content": "Alla tre fällorna har samma motgift: fråga vad posten gör vid ett konkret händelseförlopp — utdelning, belastning, försäljning — och lättnadens eller smärtans storlek avslöjar postens sanna natur."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — granskarens fem frågor",
+      "intro": "Den sista vormen är en frågekorg som fungerar på varje svensk balansräkning med reserver.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: hur stor är reserven i förhållande till balansomslutningen och det egna kapitalet — en post på 2 procent är notmaterial, en på 25 procent är huvudperson, som i Norra Kraft-exemplet. Fråga två: vilka antaganden bär avsättningarna — pensionspostens diskonteringsränta, garantins täckningsår, omstruktureringsbeslutens bindningsgrad. Fråga tre: hur rörde sig posterna under året — nybildning, upplösning, omvärdering — och vad förändringarna säger om verksamheten som ln-02 sedan får tolka. Fråga fyra: vad blir det justerade egna kapitalet per aktie, och hur ser P/B ut i båda läsningarna. Fråga fem: vad händer med posten i de tre fallen utdelning, belastning och försäljning — där visas skillnaden mellan 48,0 och 44,0 i kassaflöde från kapitel två, och mellan substans och beskattning från kapitel fyra. Den som kan svara på de fem har läst balansräkningen en våning djupare än den som bara såg två skikt. Detta är utbildning i läskonst — hur någon enskild aktie ska värderas är alltid läsarens egen fråga, aldrig kursens."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram en svensk årsredovisning du har tillgång till och hitta posterna: obeskattade reserver, avsättning för pension, avsättning för garanti eller liknande åtagande. Räkna det justerade egna kapitalet per aktie med 20 procents latent skatt, och jämför P/B i båda läsningarna mot börskursen. Åldersdatera sedan garantiavsättningen mot de faktiska kostnaderna i noterna. Minst en överraskning bjuder en sådan övning nästan alltid — och en överraskning är en fråga att ställa, inte en handling att utföra."
+        },
+        {
+          "type": "insight",
+          "content": "Bokföringstrappan är nu sex steg hög — och från sjätte steget syns något som de fem första inte kunde visa: hur rapportens delar sammanfogas. Balansradens tvegift är belöningen till den som orkar subtrahera en enda rad."
+        }
+      ]
+    }
+  ]
+}

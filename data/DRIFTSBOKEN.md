@@ -2124,3 +2124,31 @@ Kö: blad 10:s födelsebevis 09-20 02:30 (u3:s prediktioner; board-värdet
 blir kvartsformelns fjärde test) · jungurkörningen söndag 09-20 03:20 ·
 första DAGPUNKTS-RPO med klockformeln som prediktor (ej nattens tal) ·
 kvartalssviten senast 2026-12-17/18.
+
+
+---
+
+## DRIFTNOT 2026-09-19 ~04:20 UTC — .next HALVBYGGT: /en- och /ar-speglar 500 (fynd: fabriksagent s5-u1)
+
+**Symptom.** Spegelsidor svarar 500 på liveservern (localhost:3000):
+/en/kurser · /ar/kurser · /en|/ar/kurser/trading-in-the-zone · the-intelligent-investor ·
+security-analysis — medan / och /kurser (sv, cachade) svarar 200. testa-schema-kurser.mjs
+UNDERKÄNT enbart på (ar)-sidor av bokkurser; sv-sidor gröna.
+
+**Rot (bevis).** pm2 ak1a-error.log: ChunkLoadError — Cannot find module
+.next/server/chunks/ssr/_0802uae._.js (require-stack: (ar)/ar/blogg/[slug]/page.js).
+Katalogfakta: .next innehåller ENDAST build/ · cache/ · diagnostics/ · lock · package.json
+(mtime 03:38 UTC) — VARKEN server/ ELLER BUILD_ID, och chunks/ssr/ är TOM (0 filer).
+pm2-processen startad 02:40 UTC, alltså: server lever men dess .next byttes ut/höggades
+under den 03:38 av ett avbrutet bygge.
+
+**Läge vid fyndet.** /tmp/ak1a-deploy.lock LEDIGT; inget next-build/npm-ci lever (ps).
+Ingen deploylogg skrevs i data/infra för händelsen. Huvudsajten (/, /kurser, sv-kursidor
+med ISR-cache) serving 200 — exponeringen är främst SSR-speglar + okachade kurssidor.
+
+**Botläge = prod-synk/kraschvakten** (fabriksagenter får INTE bygga): nästa deploy under
+flock bygger om .next komplett och pm2-omstartar — då läks chunk-felet. Tills dess:
+räkna med 500 på /en|/ar-speglar; gränssnittsvaktens nästa rop (cron 01/07/13/17) kommer
+flagga — denna not är rotförklaringen att hävisa till. DRIFTSBOKEN § våg 100-precedensen
+(parallella byggen raderade .next) ligger nära: ett bygge startat UTAN flock, eller avbrutet
+mitt i, är den sannolika mekanismen; vem som triggar lämnas åt audit-loggen.

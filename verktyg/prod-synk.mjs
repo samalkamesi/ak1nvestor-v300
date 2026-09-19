@@ -28,6 +28,19 @@
  *      ombygge nästa poll (RAM-vakten gäller).
  *   8. pm2 restart ak1a + HTTPS-kontroll (4 försök) + version-stämpel
  *
+ *   NEXT-LÄKEBACKUP (o97, s8-u1 2026-09-19): next build skriver progressivt
+ *   direkt i prod-trädets .next — vid fallit/OOM-dödat bygg lämnas katalogen
+ *   halvskriven medan pm2 fortsätter servera den från disk (bevisat
+ *   2026-09-19: 06:58+07:01-fallna byggen ⇒ /kurser /portfolj* /rapporter
+ *   500 i ~14 min tills 07:07-pollens lyckade ombygge; nytt fönster efter
+ *   19:11-OOM:en — s9-u3:s rot-fråga "misslyckade byggen SKRIVER i .next").
+ *   Kuren: FÖRE byggstart säkras senast GRÖNA .next i .next-laeke (allt utom
+ *   den regenererbara ISR-cachen); i varje fallit utfall (oom · riktigt-fel ·
+ *   fallna ombyggen · artefakt-stopp) återställs .next ur backupen ⇒ pm2
+ *   serverar genast det gröna läget i stället för att blöda 500 till nästa
+ *   lyckade poll. Fail-open: varje backup-fel loggas och lämnar beteendet
+ *   som före kuren — deploy-kedjan får ALDRIG dö av läkevägen.
+ *
  * BEVISAT behov 2026-09-14 (10X-omgången): p4-p9-leveranscommitters
  * byggdes under minnestaket (7 zcode-barn + pm2 + npm ci ≈ 8 GB) →
  * "Killed" → den gamla kedjan revert → reset --hard goodHead raderade
@@ -234,6 +247,68 @@ export function bevaraByggLoggar(mapp, kallor) {
     return sparade;
   } catch {
     return [];
+  }
+}
+
+/**
+ * O97 (s9-u3:s rot-fråga "misslyckade byggen SKRIVER i .next"): säkra
+ * senast GRÖNA .next i en läkekatalog FÖRE byggstart. Kontrakt:
+ *   · LAEKE finns redan ⇒ "finns-sedan" och orörd — den speglar senast
+ *     gröna läget och får ALDRIG skrivas över av ett ev. halvskrivet
+ *     .next (fallet: föregående fönster föll, nästa poll backar inte skräp)
+ *   · grönhets-guard: BUILD_ID + build-manifest.json + prerender-manifest.json
+ *     måste finnas — next build tömmer .next FÖRST och skriver manifesten mot
+ *     slutet (bevisat 2026-09-17 11:39: .next/BUILD_ID borta i fallit läge);
+ *     ett halvskrivet träd backas ALDRIG ("icke-gron")
+ *   · `cache`-katalogen (~1 GB ISR-cache) exkluderas — regenererbar vid
+ *     första träffen; kopian blir billigare och race-ytan mot pm2:s
+ *     live-ISR-skrivare mindre
+ *   · allt fel ⇒ "fel: …" (fail-open — deploy-kedjan får aldrig dö här)
+ * Testas av verktyg/testa-prod-synk-nextlaeke.mjs.
+ */
+export function skapaNextLaekebackup({ nextKatalog, laekeKatalog }) {
+  try {
+    if (fs.existsSync(laekeKatalog)) {
+      // katalog-guard: en FIL på laeke-sökvägen är ett trasigt tillstånd,
+      // inte "finns-sedan" (cpSync hade tyst accepterat den som källa)
+      return fs.statSync(laekeKatalog).isDirectory() ? "finns-sedan" : "fel: läkekatalogen är ingen katalog";
+    }
+    if (!fs.existsSync(nextKatalog)) return "saknas-next";
+    const gron =
+      fs.existsSync(path.join(nextKatalog, "BUILD_ID")) &&
+      fs.existsSync(path.join(nextKatalog, "build-manifest.json")) &&
+      fs.existsSync(path.join(nextKatalog, "prerender-manifest.json"));
+    if (!gron) return "icke-gron";
+    fs.mkdirSync(laekeKatalog, { recursive: true });
+    for (const post of fs.readdirSync(nextKatalog)) {
+      if (post === "cache") continue;
+      fs.cpSync(path.join(nextKatalog, post), path.join(laekeKatalog, post), { recursive: true, force: true });
+    }
+    return "skapad";
+  } catch (e) {
+    return "fel: " + String(e && e.message ? e.message : e).slice(0, 120);
+  }
+}
+
+/**
+ * O97: återställ .next ur läkebackupen efter ett fallit bygg — pm2 serverar
+ * filerna från disk per request, så det återställda gröna läget slutar blöda
+ * 500/ostylat OMEDELBART (i stället för vid nästa lyckade poll, bevisat
+ * ~10-15 min senare). Ingen backup ⇒ "ingen-backup" (ärligt, första fönstret
+ * efter deploy av denna kur). Fail-open som ovan.
+ */
+export function aterstallNextUrLaeke({ nextKatalog, laekeKatalog }) {
+  try {
+    if (!fs.existsSync(laekeKatalog)) return "ingen-backup";
+    // katalog-guard: cpSync hade TYST kopierat en FIL på laeke-sökvägen och
+    // returnerat "aterstallt" med .next som fil — ett sådant tillstånd är
+    // ingen backup utan ett fel som ska loggas (fail-open, aldrig kast)
+    if (!fs.statSync(laekeKatalog).isDirectory()) return "fel: läkebackupen är ingen katalog";
+    fs.rmSync(nextKatalog, { recursive: true, force: true });
+    fs.cpSync(laekeKatalog, nextKatalog, { recursive: true, force: true });
+    return "aterstallt";
+  } catch (e) {
+    return "fel: " + String(e && e.message ? e.message : e).slice(0, 120);
   }
 }
 
@@ -792,6 +867,28 @@ async function korSynk() {
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
+  // O97 (NEXT-LÄKEBACKUP): säkra senast gröna .next FÖRE byggstart — LAEKE
+  // skrivs ENDAST när den saknas ("finns-sedan" = senast grönt bevaras; ett
+  // ev. halvskrivet .next från föregående fönster får ALDRIG ersätta den)
+  // och städas vid lyckad deploy. Fail-open: fel loggas, byggandet fortsätter.
+  const nextKatalog = path.join(ROT, ".next");
+  const laekeKatalog = path.join(ROT, ".next-laeke");
+  const lakaNext = (varde) => {
+    const lak = aterstallNextUrLaeke({ nextKatalog, laekeKatalog });
+    if (lak === "aterstallt") {
+      logga(`${varde}: .next ÅTERSTÄLLD ur läkebackup — pm2 serverar senast gröna läget direkt (ISR-cachen värms om vid träff; ombygge nästa poll som innan)`);
+      skrivAudit("prod-synk", "next_lakt_ur_backup", varde, "fallit bygg lämnade .next halvskrivet — senast gröna läget återställt ur .next-laeke");
+    } else if (lak !== "ingen-backup") {
+      logga(`VARNING: .next-läkeåterställning (${varde}) föll: ${lak} — beteendet som före o97-kuren`);
+    }
+    return lak;
+  };
+  {
+    const backup = skapaNextLaekebackup({ nextKatalog, laekeKatalog });
+    if (backup === "skapad") logga("NEXT-LÄKEBACKUP skapad (.next → .next-laeke, ISR-cache exkluderad) — senast gröna läget säkrat före bygget");
+    else if (backup.startsWith("fel:") || backup === "icke-gron") logga(`VARNING: NEXT-LÄKEBACKUP ej tagen (${backup}) — felutfall lämnas som före o97-kuren`);
+    // finns-sedan / saknas-next är tysta normalfall (fönsterföljd / första deployen)
+  }
   const korResultat = await korBygg();
   const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
   if (korResultat) {
@@ -810,7 +907,10 @@ async function korSynk() {
     // nästa poll när fabrikens barn frigjort minnet. ALDRIG revert/reset
     // av commits som aldrig fått ett ärligt byggtillfälle. Patchad lock
     // rivs (inget kvitto — OOM är inte patchens fel, nytt försök nästa poll).
+    // O97: men .next har rivits/halvskrivits av det dödade bygget —
+    // återställ senast gröna läget så pm2 slutar blöda under väntan.
     if (patchInstallerad) aterskapaPatchLas();
+    lakaNext("oom");
     logga("bygg OOM-dödat (Killed/heap i /tmp/synk-build.log) — infra, ej kodfel: HEAD orört, nytt försök nästa poll");
     return;
   } else {
@@ -836,6 +936,11 @@ async function korSynk() {
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "bygg misslyckades med patchad lock");
       patchInstallerad = false;
     }
+    // O97: pm2 serverar nu det rivna/halvskrivna .next som det fallna
+    // bygget lämnat — återställ gröna läget FÖRE ombyggs-kedjan så fönstret
+    // till (ev.) lyckat ombygg inte blöder; varje fallit ombygg river .next
+    // på nytt och läker igen i sin terminal nedan.
+    lakaNext("byggfel");
     if (!nya.trim()) {
       // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —
       // revert vore att reverta DIGLIG kod. MEN det fallna bygget har
@@ -855,6 +960,7 @@ async function korSynk() {
       } else {
         logga("ombygge på god lock MISSLYCKADES — pm2 orörd, manuell granskning krävs");
         skrivAudit("prod-synk", "deploy_avbruten", "ombygge-god-lock", "patch-mode utan ny kod: även ombygget på god lock misslyckades — manuell granskning krävs");
+        lakaNext("ombygge-god-lock-fall");
         return;
       }
       // O79: patch-lägets lyckade ombygg lämnar felgrenen HÄR — blocket
@@ -910,6 +1016,7 @@ async function korSynk() {
         if (bordeAvstaGoodHeadReset({ rorByggyta, kedjaRorByggyta: headRorByggyta(kedjaFiler) })) {
           logga("ombygg på orörd HEAD misslyckades och KEDJAN goodHead..HEAD rör enbart icke-byggyta — goodHead-ombygg vore identiskt: reset AVSTÅS (o79), HEAD orörd, nytt försök nästa poll");
           skrivAudit("prod-synk", "deploy_avstar_goodhead_reset", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "HEAD+kedja rör enbart icke-byggyta och ombygget föll: goodHead-reset bevisat lönlös (samma bygg) — avstås, HEAD orörd, nytt försök nästa poll");
+          lakaNext("o79-avsta");
           return;
         }
         logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
@@ -922,6 +1029,7 @@ async function korSynk() {
         } catch {
           logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
           skrivAudit("prod-synk", "deploy_avbruten", "good-HEAD", "även good-HEAD-bygget misslyckades — pm2 orörd, manuell granskning krävs");
+          lakaNext("goodhead-kritiskt");
           return;
         }
       }
@@ -945,6 +1053,11 @@ async function korSynk() {
         `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven; ombygge nästa poll (RAM-vakten gäller)`,
       );
       skrivAudit("prod-synk", "deploy_stoppad_artefakt", `artefakt-${artefakt.status}`, artefakt.meddelande);
+      // O97: bygget LYCKADES exit 0 men artefakten är internt inkonsistent —
+      // pm2 (ej omstartad) läser gamla chunk-referenser som nya .next saknar
+      // (E34-klassen: ostylat). Återställ gröna läget; ombygget nästa poll
+      // bygger ut det nya ändå (DEPLOYAD-markören orörd).
+      lakaNext("artefakt-stopp");
       return;
     }
     try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
@@ -981,6 +1094,11 @@ async function korSynk() {
       );
       // MEGA G3 — audit: varje autonom deploy är en spårbar händelse.
       skrivAudit("prod-synk", "deploy", `prod@${deployadHash.slice(0, 8)}`, antal ? `${antal} commits — HTTPS 200 verifierad` : `patch-kö ${patchPlan.map((p) => p.paket).join(", ")} — HTTPS 200 verifierad`);
+
+      // O97: deployen grön ⇒ .next på disk är det nya gröna läget —
+      // läkebackupen är inaktuell och städas (nästa byggstart tar färsk
+      // ur det nya .next; LAEKE speglar alltid senaste LYCKADE deploy).
+      try { fs.rmSync(laekeKatalog, { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills

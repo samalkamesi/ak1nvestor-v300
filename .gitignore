@@ -4,6 +4,8 @@ node_modules
 
 # next.js
 /.next/
+# Spår 8 (o97): prod-synkens .next-läkebackup — runtime-skydd, aldrig leverans
+/.next-laeke/
 /out/
 
 # production

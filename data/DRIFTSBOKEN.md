@@ -2484,3 +2484,24 @@ till ROND 97+: ren-yta-grinden måste räkna TRACKADE _*-skrap (git ls-files),
 och fabrikens commitmeddelandefiler hör hemma i /tmp — annars föds gapet om.
 KVD: src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonleveranser
 orörda. Protokoll: data/forskning/DR-ARKIVSVEP-2026-09-19-TRACKADE-VERKTYG.md.
+
+## 2026-09-19 ~22:1x lokal — ROT-FRÅGAN STÄNGD: .next-LÄKEBACKUP i prod-synken (o97, s8-u1; "misslyckade byggen SKRIVER i .next")
+
+07:15Z-notisens rot-fråga ("överväg omstart-på-misslyckat-byggkvitto eller .next-skrivskydd
+under bygg") har sin kur: verktyg/prod-synk.mjs bär nu NEXT-LÄKEBACKUP (o97) — FÖRE varje
+byggstart säkras senast GRÖNA .next i .next-laeke (katalog-grönhetsguard BUILD_ID +
+build-manifest.json + prerender-manifest.json; ISR-cachen ~1 GB exkluderas — regenererbar;
+LAEKE skrivs ENDAST när den saknas, ett halvskrivet .next kan aldrig ersätta en bevisat
+grön backup), och i varje fallit utfall (oom · riktigt-fel före ombyggs-kedjan · fallna
+ombyggar · artefakt-stopp) återställs .next ur backupen ⇒ pm2 serverar det gröna läget
+direkt i stället för att blöda 500/ostylat ~10-15 min till nästa lyckade poll (bevisade
+fönster 06:58–07:12 och 19:11–19:54-klassen 2026-09-19). Lyckad deploy städar backupen —
+LAEKE speglar alltid senaste LYCKADE deploy. Fail-open: varje backup-fel loggas + VARNING
+och lämnar beteendet som före kuren; deploy-kedjan kan aldrig dö av läkevägen. .gitignore
+täcker /.next-laeke/ (runtime-skydd, aldrig leverans). Bevis: svit
+verktyg/testa-prod-synk-nextlaeke.mjs 29/29 PASS (sandbox, katalog-guards mot tyst
+fil-kopiering, idempotens, finns-sedan-bevarande) + regression 184/184 (arbetsytasynk 34 ·
+patchko 52 · pm2vakt 35 · ramvakt 17 · revertgrid 34 · tidsstampel 12) + Mimosa-paritet
+verktygsdomän 292/0 GRÖN (fixtures exkluderade enligt full-scan-basens konvention) + tsc 0.
+Kvarvarande lucka (medveten): "startade-aldrig"-grenen rör inget (bygget startade ej);
+ombygg-kedjan river .next på nytt per försök — terminalerna läker efter varje fallitet.

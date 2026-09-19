@@ -300,4 +300,18 @@ export const aspekter: AspektModule[] = [
       "här medianen med tyska bolags median, och var varsam med att läsa den mot tal " +
       "från svensk- eller dollar-noterade bolag.",
   }),
+  byggLandAspekt({
+    slug: "australien",
+    land: "Australien",
+    forled: "Australiska",
+    landNamn: "Australien",
+    valutaMening:
+      "De australiska gruvbolagen är en valuta- och redovisningsblandning: en del redovisar i " +
+      "australiska dollar (AUD) medan andra — bland dem de största — redovisar i amerikanska " +
+      "dollar (USD) som koncernrapportvaluta, och land-fältet säger inget om rapportvalutan. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men råvarucyklerna (malm, guld, " +
+      "koppar) driver resultaten mer än valutan, och ASX-börsens gruvvikt gör gruppen känslig " +
+      "för Kina-efterfrågan — jämför därför den här medianen med australiska bolags median, " +
+      "och var varsam med att läsa den mot tal från svensk- eller euro-noterade bolag.",
+  }),
 ];

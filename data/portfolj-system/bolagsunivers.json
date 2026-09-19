@@ -19188,5 +19188,287 @@
       ]
     },
     "notering": "Tillväxtbranschens första betalinfrastruktur-bolag och första europeiska aktie utanför USA-listan (nederländsk Amsterdam-notering i EUR); intäktsserierna är TOTALA intäkter enligt S&P/StockAnalysis (FY2024 2 015 M€) medan Yahoo redovisar net revenue (1 996 M€) — skillnaden är transaktionskostnads-netto/FX, noterad; bruttomarginal 68,5 % är tjänstemarginal (intäkter minus transaktionskostnader — SA-definition), inte fysisk vara; moat-spridningen 14,0 pp bär 2022-dippen 61,9 % (priskonkurrens efter investeringsåret) med återhämtning till 68,1 % FY2025; KASSAFLÖDESCYKELN ÄR FYNDERT: fcfYield −0,55 % och fcfMarginal −5,9 % (TTM) trots 43,6 % nettomarginal — capex-stöten 801,5 M€ TTM (mot 123,7 M€ FY2025, Amsterdam-HQ-bygget) plus settlements-working-capital-svängen (Change in Other Net Operating Assets −622 M€ TTM) trycker OCF till 649,5 M€; FY2025-FCF var +906,8 M€ (38,2 % marginal) — betalplattformens kassaflöde svänger med settlement-saldon och byggnadsinvesteringar, pedagogisk kontrast mot vinstmarginalen; fcfPositivaSenaste5 = 4 av 5 mätta år (FY2021–FY2025 + alla fyra helåren före TTM-fönstret); nettokassa 12,0 mdr EUR (kassa 12,4 minus skuld 0,4) gör skuld/EK 0,07 och räntetäckning 61,5 — balansräkningens absoluta trygghetsläge; ingen utdelning (all vinst återinvesteras); prognosTillvaxt +20,1 % (trailing/fwd-P/E 24,72/20,58); peg 1,23 enligt universumets konvention (källans 3-års-PEG 1,13 som not)."
+  },
+  {
+    "ticker": "SAN.PA",
+    "namn": "Sanofi",
+    "bransch": "halso",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-18",
+        "url": "https://stockanalysis.com/quote/epa/SAN/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/ + /financials/balance-sheet/ + /dividend/)",
+        "paranoid": "EURONEXT-PARIS-PRIMÄRNOTING i EUR (TTE.PA/BNP.PA-precedensen; underlag S&P Global Market Intelligence + Fiscal.ai; close 2026-09-18, −1,61 % på dagen; statistics-ytan stämplad 2026-09-19): pris 74,05 EUR, mcap 88,72 mdr EUR (1,20 Mdr aktier), 52-v 71,25–91,15 (kursen −18,8 % under toppen; under båda MA 76,19/78,01; RSI 42,37), P/E 22,80 (financials-EPS 3,26 ⇒ 22,715 — BAS-SPLITTRA 0,4 %: källans fält bär bas 3,2478) forward 8,39, PEG 1,07 källans (på 3-års EPS-prognos +8,01 %; spårets TTE-PEG 0,13 på prognosTillväxt +171,8 % — EXTREMVÄRDET ÄR ARTEFAKTEN: nedskrivningsnedtryckt TTM-bas, se nedan), PS 1,81 (88,72/48,919), P/B 1,28 (BVPS-kvot 74,05/57,77 = 1,2818; mcap/equity-ytan 88,72/69,567 = 1,2747 — båda ytorna dokumenterade), P/FCF 8,84, P/OCF 7,49, EV/EBIT 10,51, EV/EBITDA 7,83; NETTSKULD 17 226 M EUR (kassa 6 350 − skuld 23 576; statistics-ytans −17,23 mdr = avrundning); TTM jun-26 (M EUR): rev 48 919 (+6,96 % källans TTM-growth), brutto 35 932 (73,45 %), operating 10 350 (21,16 % — INTAKT och växande), netto 3 958 (8,09 % — KOLLAPSEN: EPS −55,6 % YoY), FCF 10 039 (20,52 % marginal — VÄXTE +5,5 % medan netto föll 49 %); pretax-marginal 10,62 % mot operating 21,16 % ⇒ slaget ≈ 5,2 mdr EUR sitter UNDER drift: kassaflödets 'Asset Writedown & Restructuring' 231→−42→1 062→369→2 309 M (FY2021→FY2025) + 3 147 TTM som icke-kassa-addback = nedskrivningsvågen som tryckte netot; OCF 11 838 TTM med D&A 3 462; ROE 5,71 % (TTM-deprimerad), ROA 5,09 %, ROIC 9,12 %, ROCE 10,66 %, WACC 4,99 %; EBITDA-marginal 27,68 %; equity 69 567 M EUR (varav common 69 207), BVPS 57,77, arbetskapital −408 M, totala tillgångar 129 060 M; skuld/ek 0,34, räntetäckning 17,08, Altman n/a, Piotroski 6; effektiv skatt 23,16 %; utdelning 4,12 EUR (5,56 %, payout 124,38 % på källans EPS-bas 3,311 — BAS-SPLITTRAN mot financials-EPS 3,26/egen kvot 126,4 %; normaliserad payout på fwd-EPS ≈ 47 %), tillväxt +5,10 % YoY, STATISTICS-YTAN 25 RAKA TILLVÄXTÅR (dividend-sidan visar 6 synliga steg 3,20→4,12); ex-div 2026-05-05 (betald); återköpsyield 2,54 %, shareholder yield 8,10 %; beta 0,28 (5Y); institutioner 43,90 %, insiders 0,02 %; analytiker Buy PT 94,06 EUR (+27,0 %; 25 st; 3-års prognos rev +4,41 %/EPS +8,01 %); 74 846 anställda; grundat 1994 (fusionsspiran Synthélabo-Sanofi-Hoechst-Aventis); nästa rapp 2026-10-30 (Q3); FY-serier kalenderår (M EUR): rev 39 175→40 304→41 109→44 286→46 716 (FY2021→FY2025, +4,50 %/år), brutto 26 924→28 435→28 490→31 091→33 793, operating 8 565→10 381→8 121→8 869→9 650, netto 6 223→8 371→5 400→5 560→7 813 (+5,85 %/år med svängen 2022-topp/2023-dipp), EPS 4,95→6,67→4,31→4,44→6,37; DPS 3,20→3,33→3,56→3,76→3,92 med nuvarande 4,12; profit margin 15,88→20,77→13,14→12,55→16,72 % (TTM 8,09 — nedskrivningsåret); bruttomarginal 68,73→70,55→69,30→70,20→72,34 % (moat-serien); FCF-marginal 23,09→22,32→21,02→16,59→19,24 % (TTM 20,52); kassaflöde (M EUR): OCF 10 522→10 526→10 258→9 081→10 750 (TTM 11 838), capex −1 478→−1 529→−1 619→−1 733→−1 762, FCF 9 044→8 997→8 639→7 348→8 988 (TTM 10 039 — KASSA-MASKINEN OBERÖRD); utdelningar betalda −4 008→−4 168→−4 454→−4 704→−4 772, återköp −382→−497→−593→−302→−5 030 (FY2025 = återköpsvågen 5,0 mdr; TTM −2 036); kassaförvärv −5 594→−987→−2 535→−1 901→−9 394 (TTM −10 186 — M&A-MASKINEN: fyra år av pipelin-köp); 'Other Operating Activities' TTM −1 674; FY2025 Other Investing +10 322 mot Other Operating −5 287 (källans buckets bär omplaceringen av en divestering-yta — dokumenterat som oklassificerad i källan); balansräkning jun-26: kassa 6 350, skuld 23 576, equity 69 567, tillgångar 129 060, aktuella 31 522/31 930; Sector Healthcare Industry Drug Manufacturers—General källkonsekvent med hälsogrenen"
+      }
+    ],
+    "hamtat": "2026-09-18",
+    "pris": 74.05,
+    "marknadsKapitalMdr": 88.72,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.045,
+      "resultatCAGR5ar": 0.0585,
+      "omsattningTillvaxtTTM": 0.0696,
+      "prognosTillvaxt": 1.7175
+    },
+    "lonksamhet": {
+      "roe": 0.0571,
+      "roic": 0.0912,
+      "bruttoMarginal": 0.7345,
+      "ebitMarginal": 0.2116,
+      "nettoMarginal": 0.0809,
+      "fcfMarginal": 0.2052
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.34,
+      "rantaTackning": 17.08,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.7022,
+      "bruttoMarginalSpread5ar": 0.0361,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 22.8,
+      "pb": 1.28,
+      "evEbit": 10.51,
+      "peg": 0.13,
+      "fcfYield": 0.1132,
+      "egenKapitalMultipl": 1.28
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        39175000000,
+        40304000000,
+        41109000000,
+        44286000000,
+        46716000000
+      ],
+      "resultat": [
+        6223000000,
+        8371000000,
+        5400000000,
+        5560000000,
+        7813000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        9044000000,
+        8997000000,
+        8639000000,
+        7348000000,
+        8988000000
+      ]
+    },
+    "notering": "FRANKRIKE/HÄLSO-CELLENS FÖRSTA RAD (Frankrike 6→7 rader, SJÄTTE grenen: TTE.PA energi · URW.PA fastighet · AIR.PA industri · MC.PA konsument · BNP.PA+AXA finans · SAN.PA halso — eurozonens andra ekonomi fullbordar sex grenar) och PAPPER-FÖRLUSTENS MOT KASSA-MASKINENS LÄXA: TTM-netto 3 958 M EUR (8,09 % marginal, EPS −55,6 %) medan OPERATIVA RESULTATET ÄR INTAKT (21,16 % marginal, växande serie 8 565→9 650 FY2021→FY2025) och FCF VÄXTE till 10 039 M EUR (20,52 %) — slaget ≈ 5,2 mdr EUR sitter UNDER drift: kassaflödets nedskrivnings-addback 3 147 M EUR TTM (writedown-serien 369→2 309→3 147) = P/E 22,80 ÄR ARTEFAKTEN, forward 8,39 bär normaliserade basen (prognosTillväxt +171,8 % enligt TTE-konventionen — universumets mest extrema normaliseringsgap, dokumenterat; källans PEG 1,07 på 3-års +8,01 % som not; normaliserad payout ≈ 47 % mot TTM:s 124). PATENTMOATET I SIFFROR: bruttomarginal 68,73→72,34 % (medel 70,2 %, spread 3,6 pp — bredare än Novartis 2,7 pp), ROIC 9,12 % på WACC 4,99 %. M&A-MASKINEN: kassaförvärv −5 594→−9 394 M FY2025 (TTM −10 186) finansierad av nettskuld 17,2 mdr + kassaflödet — pipelin-byggandets stallningstakning; återköpsvågen FY2025 −5 030 M (shareholder yield 8,10 %). UTDELNINGEN SOM ARV: DPS 3,20→4,12 EUR (25 raka tillväxtår enligt statistics-ytan, 6 synliga steg på dividend-sidan; 5,56 % direktavkastning) — payout 124 % på TTM-basen är nedskrivningsårets artefakt, inte utdelningsrisken. PLACERINGAR (sonderade på 213-läget): TTE-PEG 0,13 = 5:e lägsta i universumet MELLAN Vale 0,12 och Pfizer 0,14 · FCF-marginal 20,5 % = 6:e i hälsogrenen (under Novartis 29,2/AbbVie 28,3/Swedish Orphan 25,6/Roche 25,0/Genmab 21,0) · FCF-yield 11,3 % utanför topp-8 · P/E 22,8 mellan Novartis 21,3 och Roche 23,6 = Hälsa-medianens grannskap. Kursen −18,8 % under 52-v-toppen under båda MA:na; PT 94,06 EUR (Buy, 25 st). Beta 0,28; 74 846 anställda; grundat 1994; ex-div betald 2026-05-05, nästa rapp 2026-10-30."
+  },
+  {
+    "ticker": "BA.L",
+    "namn": "BAE Systems plc",
+    "bransch": "industri",
+    "land": "Storbritannien",
+    "valuta": "GBX",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-18",
+        "url": "https://stockanalysis.com/quote/lon/BA/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/ + /financials/balance-sheet/ + /dividend/)",
+        "paranoid": "LSE-PRIMÄRNOTING i GBX (HSBA.L-precedensen; underlag S&P Global Market Intelligence; close 2026-09-18 16:54 GMT, −0,88 % på dagen): pris 2 025 GBX (= £20,25), mcap 57,28 mdr GBP (2,83 Mdr aktier på overview-ytan — AKTIEBAS-SPLITTRAN: filing-ytan bär 2 993-2 996 M aktier och BVPS 4,13 på den basen; overview-basen bär mcap/pris-kvoten 57 280/20,25 = 2 830 M — fältbärare = overview, dokumenterat öppet), 52-v 1 529–2 360 (kursen +32,4 % över botten, −14,2 % under toppen; under MA50 2 039,15, över MA200 2 005,05; RSI 50,48), P/E 29,01 (financials-EPS 0,70 ⇒ 28,93 — BAS-SPLITTRA 0,3 %: källans bas 0,6979) forward 22,52, PEG 1,67 källans (på 3-års EPS-prognos +12,71 %; spårets TTE-PEG 1,01 på prognosTillväxt +28,8 %), PS 1,95 (57,28/29,38), P/B 4,57 (mcap/equity 57 280/12 547 = 4,5652), P/FCF 12,19, P/OCF 10,23, EV/EBIT 19,98 (egen replik (57,28+4,95)/2,911 = 21,4 — källans EV-definition avviker, FÄLTBÄRARE = källan), EV/EBITDA 14,88; NETTSKULD 4 953 M GBP (kassa 4 200 − skuld 9 153; skulden inkluderar lease 1 573+193 enligt källans additional-metrics — dokumenterat); TTM jun-26 (M GBP): rev 29 380 (+3,68 % källans TTM-growth), brutto 3 912 (13,32 %), operating 2 911 (9,91 %), netto 2 113 (7,19 %), FCF 4 698 (15,99 % — TTM-BALLONGEN: OCF 5 601 med 'Change in Account Payables' +2 464 M = kundförskotten på orderboken, inte organisk marginal); ROE 18,63 %, ROA 4,79 %, ROIC 13,69 %, ROCE 11,10 %, WACC 4,00 %; EBITDA-marginal 12,77 %; equity 12 547 M GBP (varav common 12 375), BVPS 4,13 (filing-basen), arbetskapital +284 M, totala tillgångar 39 893 M; skuld/ek 0,73, räntetäckning 5,97, Altman 2,42, Piotroski 8 (universumets toppklass); effektiv skatt 17,70 % (UK:s patent-box/rabatter); utdelning 36,0p GBP (1,79 % källans yield-fält; egen kvot 0,36/20,25 = 1,778 % — avrundningsyta; kalender-2026-betalningarna 22,8p jun + 15,0p dec = 37,8p ger 1,87 % — tre ytor dokumenterade, fältbärare = headline 36,0p), payout 51,63 % (EPS-bas 0,6973), tillväxt +10,85 % YoY (bär FY-paret 34,1→37,8p), STATISTICS-YTAN 21 RAKA TILLVÄXTÅR (dividend-sidan visar 4 synliga kalenderår +halva 2026); semi-årlig frekvens; ex-div 2026-10-22 (kommande); återköpsyield 0,46 %, shareholder yield 2,25 %; beta −0,06 (5Y — NEGATIV: universumets TREDJE dokumenterade fall efter DNO och Petrobras); institutioner 83,70 % (statligt förankrad ägarbas: UK Golden Share-dokumenterad elsestans, källan visar bara andelen), insiders 0,14 %; analytiker Buy PT 2 330,65 GBX (+15,1 %; 20 st; 3-års prognos rev +11,38 %/EPS +12,71 %); 112 400 anställda; grundat 1979 (British Aerospace-Marconi-fusionen); nästa rapp 2026-11-06; FY-serier kalenderår (M GBP): rev 19 521→21 258→23 078→26 312→28 336 (FY2021→FY2025, +9,76 %/år — FYRA RAKA: +8,9/+8,6/+14,0/+7,7 %), brutto 2 503→2 774→2 999→3 426→3 744 (marginal 12,82→13,21 % — moat-serien medel 13,02 spread 0,39 pp = försvarprisingens tak), operating 1 844→2 082→2 361→2 473→2 750, netto 1 758→1 591→1 857→1 956→2 062 (+4,07 %/år med 2022-dippen), EPS 0,55→0,51→0,60→0,64→0,68; DPS 25,6p→28,1p→30,9p→34,1p (kalender 2022→2025) med 2026:e 37,8p; profit margin 9,01→7,48→8,05→7,43→7,28 % (TTM 7,19); kassaflöde (M GBP): OCF 2 447→2 839→3 760→3 925→3 432 (TTM 5 601), capex −516→−599→−826→−990→−920, FCF 1 931→2 240→2 934→2 935→2 512 (TTM 4 698 — FY2025-dippen −14,4 % på working capital −345, TTM +107,8 % på AP +2 464); utdelningar betalda −777→−802→−857→−937→−1 027, återköp −368→−788→−561→−555→−502; FY2024 = FÖRVÄRSÅRET: kassaförvärv −4 776 + LT-skuldutgivning 6 933 (skulden 6 699→10 316 i balansen — nettskuld 2 589→6 889) mot equity-tillväxten 10 723→11 777 (goodwill); balansräkning jun-26: kassa 4 200, skuld 9 153, equity 12 547, tillgångar 39 893, aktuella 13 957/13 673; Sector Industrials Industry Aerospace & Defense källkonsekvent med industrigrenen"
+      }
+    ],
+    "hamtat": "2026-09-18",
+    "pris": 2025,
+    "marknadsKapitalMdr": 57.28,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0976,
+      "resultatCAGR5ar": 0.0407,
+      "omsattningTillvaxtTTM": 0.0368,
+      "prognosTillvaxt": 0.2882
+    },
+    "lonksamhet": {
+      "roe": 0.1863,
+      "roic": 0.1369,
+      "bruttoMarginal": 0.1332,
+      "ebitMarginal": 0.0991,
+      "nettoMarginal": 0.0719,
+      "fcfMarginal": 0.1599
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.73,
+      "rantaTackning": 5.97,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.1302,
+      "bruttoMarginalSpread5ar": 0.0039,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 29.01,
+      "pb": 4.57,
+      "evEbit": 19.98,
+      "peg": 1.01,
+      "fcfYield": 0.082,
+      "egenKapitalMultipl": 4.57
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        19521000000,
+        21258000000,
+        23078000000,
+        26312000000,
+        28336000000
+      ],
+      "resultat": [
+        1758000000,
+        1591000000,
+        1857000000,
+        1956000000,
+        2062000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        1931000000,
+        2240000000,
+        2934000000,
+        2935000000,
+        2512000000
+      ]
+    },
+    "notering": "STORBRITANNIEN/INDUSTRI-CELLENS FÖRSTA RAD (UK 4→5 rader, femte grenen: HSBA.L finans · ARM teknik · GSK.L halso · ULVR konsument · BA.L industri — G5-ekonomins fem grenar; Shell SHEL noterad som USA/energi enligt NYSE-konventionen, UK-energicellen förblir öppen) och REARMAMENTS-MULTIPLENS LÄXA: P/E 29,0 med FYRA RAKA intäktsår +9,8 %/år (19,5→28,3 mdr GBP FY2021→FY2025, +8,9/+8,6/+14,0/+7,7 %) — marknaden betalar orderboken, inte marginalen: EBIT 9,9 %/netto 7,2 % i kostnads-plus-kontraktets fack (bruttomarginal 13,0 % med spridning 0,39 pp = universumets tightaste i sonden — statliga kunder prissätter vinsten, mot Novartis 2,7/Sanofi 3,6 pp patentmoat-spridningar). FÖRSKOTTSBALLONGEN: TTM-FCF 4 698 M GBP (+107,8 %) bärs av 'Change in Account Payables' +2 464 M — kunderna betalar orderboken i förskott (FCF-marginal 16,0 % = kassakällan, ej lönsamhetshöjning); FY2024 = FÖRVÄRSÅRET (kassaförvärv −4 776 + skuldutgivning 6 933 mot skuld 6 699→10 316: nettskuld 2 589→6 889→4 953 TTM). RESULTATETS HALVFAKTOR: netto +4,1 %/år mot intäkter +9,8 % — ramp-kostnaderna och amortiseringarna av förvärvet äter multipelunderlaget (2022-dippen 1 591 MGBP dokumenterad). KAPITALÅTERKOMSTEN: DPS 25,6p→37,8p (kalender 2022→2026; statistics-ytan 21 raka tillväxtår) med payout 51,6 % — låg direktavkastning 1,8 % men tio-procentig tillväxt = återinvesteringsmaskin; Piotroski 8 (universumets toppklass); beta −0,06 = TREDJE dokumenterade negativa betan i universumet (DNO + Petrobras före) — försvarsorder är makro-okorrelerade. PLACERINGAR (sonderade på 213-läget): P/E 29,0 mellan Sandvik 28,6 och Embraer 29,4 = industri-fältets mittplan · P/B 4,57 under Sandvik 4,8 · EV/EBIT 20,0 under Eaton/GE/CAT/Atlas-klassen · TTE-PEG 1,01 = multiple proportionell mot prognos (källans 1,67 på 3-årsbasen). Kursen −14,2 % under toppen 2 360, +32,4 % över botten; PT 2 330,65 GBX (Buy, 20 st). Skatt 17,7 % (patent-box); 112 400 anställda; grundat 1979; ex-div 2026-10-22, nästa rapp 2026-11-06."
+  },
+  {
+    "ticker": "8411.T",
+    "namn": "Mizuho Financial Group",
+    "bransch": "finans",
+    "land": "Japan",
+    "valuta": "JPY",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/quote/tyo/8411/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/ + /financials/balance-sheet/)",
+        "paranoid": "TYO-PRIMÄRNOTING i JPY (8306.T/8316.T-precedensen; underlag S&P Global Market Intelligence; close 2026-09-18 15:30 JST, −0,63 %): pris 8 495,00 JPY, mcap 20,56 T JPY (källans aktier 2,42 Mdr; replik 2 420 × 8 495 = 20 557,9 mdr — 0,01 %), 52-v 4 569–8 894 (+73,2 % på året; −4,5 % från toppen), P/E 15,17 (replik 8 495/560,16 = 15,164 — 0,03 %) forward 13,54, PEG 1,26 spårkonvention (15,17 på prognosTillväxt +12,04 % TTE: trailing/fwd-modellen, MUFG/8316-konventionen), PS 4,34, P/B 1,77 (mcap/EK 20 560/11 587 = 1,774; pris/BVPS 8 495/4 730,66 = 1,796 +1,2 % — vägt aktietal, HEN3/JNJ/8316-klassen), P/TBV 1,94; P/FCF och P/OCF meningslösa (bank), EV n/a (bankens balansräkning: kassa+korttidsinvesteringar 119,45 T mot skuld 75,30 T = NETTKASSA 44,15 T JPY — källans net cash-rad 44 152 642 replikerbar 119 450−75 297 = 44 153 mdr, 0,0004 %; BS-sidans bredare bas kassa+alla investeringar 173,59 T inkl. handelsportföljen 40,3 T dokumenterad som källspridning — MUFG:s 143,10 T-bas hade EN konsistent; EV-konceptet meningslöst på insättarnas pengar, ITUB/RY-ordlistan); TTM jun-26 (M JPY): rev 4 739 890 (+22,86 % källans growth-fält), operating 1,81 T, pretax 1,84 T, netto 1 381 020 (+55,8 %), EPS 560,16 (+59,3 %); marginaler TTM: operating 38,24 % (replik 1,81/4,74 = 38,19 % — källans rad avrundad T), pretax 38,75 % (replik 38,82 %), profit 29,14 % replikerbar EXAKT (1 381 020/4 739 890 = 29,136 %); brutto/EBITDA/FCF-marginal n/a (bank); OCF/FCF-serien svänger (kundmedelsflöden — depos/utlåning, dokumenterat i notering); ROE 12,49 % (egen TTM-slut-EK-replik 1 381/11 587 = 11,92 % — källan bär snitt-EK, 8306/8316-konventionen; TRIONS HÖGSTA: 8306.T 9,46 · 8316.T 8,57 · 8411.T 12,49), ROA 0,48 %, ROIC n/a, WACC 1,37 % (Japans lågränta — 8306.T:s 1,64/8316.T:s 1,93-klass; ROE−WACC +11,1 pp = trions bredaste spridning), ROCE n/a; equity 11 587,1 Mdr JPY (jun-26; EK-trappan 9 201→9 208→10 312→10 524→11 404 mdr FY2022→FY2026), BVPS 4 730,66, arbetskapital −126,6 T JPY (insättningsverksamheten); skuld/ek n/a, räntetäckning n/a, Altman n/a, Piotroski 2; effektiv skatt 24,48 % (betald TTM 449,6 mdr; CF-raden FY2026 317,4 mdr); utdelning 150,00 JPY (1,77 %; replik 150/8 495 = 1,766 %) payout 26,78 % EXAKT på TTM-EPS (trions lägsta: 8306.T 54,87 · 8316.T 54,61 · 8411.T 26,78 = RETENTIONSPROFILEN — EK växer snabbast i trion), DPS-tillväxt +3,45 % YoY, DPS-trappa 80→85→105→140→145 med nuvarande 150; ex-div 2026-09-29; återköpsyield 2,22 %, shareholder yield 3,99 %; aktiebas −2,22 % YoY (återköp FY2026 404,3 mdr JPY mot 8306.T:s 500,1 — trions näst största), FY2026-återköpen 102,9 mdr FY2025 → 404,3 FY2026 = fyrdubbling; beta 0,39 (5Y), institutioner 46,05 %, insiders 0,02 %; analytiker Buy PT 9 011,82 JPY (+6,08 %; 11 st); 52 427 anställda; grundat 1873 (källpaketet; NYSE-ADR noteras allmän faktakunskap, ej källpaketet); nästa rapp 2026-11-13 (H1 FY2027 — 8306.T/8316.T:s datum, sektorns gemensamma H1-rapp); FY april–mars med slutårsetikett (8306.T/S32.AX-konventionen: FY2026 = avslutad mars 2026); FY-serier (M JPY): rev 2 805 932→2 779 216→3 122 105→3 898 840→4 399 734 (FY2022→FY2026, omsCAGR +11,90 %/år), netto 530 479→555 527→678 993→885 433→1 248 632 (FEM RAKA VINSTÅR +18,9→+28,4 % marginaltrappa; nettoCAGR +23,87 %/år — trions enda mätbara FEMÅRSBAKADBANA: 8306.T null negativ bas, 8316.T +22,84 på FY2025-dipp), EPS 209,26→219,19→267,88→350,20→502,92 (+43,61 % FY2026), DPS 80→85→105→140→145; profit margin 18,91→19,99→21,75→22,71→28,38 % (TTM 29,14); P/E-historik 7,49→8,57→11,37→11,37→11,89 med nuvarande 15,17 — samma MONSTRET som 8306.T: multipeln expanderar med vinsten (re-rating utan komprimering per-vinst); kassaflöde (M JPY): OCF 2 322 381→2 261 835→−298 509→−5 748 181→−5 992 524, capex −42 297→−64 845→−63 123→−94 936→−96 688, FCF 2 280 084→2 196 990→−361 632→−5 843 117→−6 089 212 (bank-OCF = lånevolymens tidecken, ej driftskassa — 8306/8316-noten); utdelningar betalda −196 783→−209 457→−234 786→−304 425→−368 703, återköp −1 927→−2 314→−3 383→−102 921→−404 325 (utdelningsvägen tredubblad, återköpsvägen 200-faldig på fyra år); CF-mallens netto-rad avviker från resultaträden FY2025/26 (1 190,1/1 622,3 mot 885,4/1 248,6 mdr — S&P:s bankmall; resultaträden+EPS är kanon: 1 248 632/502,92 = 2 483 M vägt aktietal); balansräkning jun-26: kassa 52 124 + investeringar 121 470, skuld 75 297, totala tillgångar 304 283 Mdr JPY; aktietalet TRE baser dokumenterat (BS 2 434 M slut jun-26 · overview 2,42 Mdr · vägt 2 483 M FY2026-EPS-identiteten); branschfält Financials/Banks—Regional (källans klass mot 8306.T:s Diversified — källintern industrieskiljnad dokumenterad, universumets finans-gren källkonsekvent)"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 8495,
+    "marknadsKapitalMdr": 20560,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.119,
+      "resultatCAGR5ar": 0.2387,
+      "omsattningTillvaxtTTM": 0.2286,
+      "prognosTillvaxt": 0.1204
+    },
+    "lonksamhet": {
+      "roe": 0.1249,
+      "roic": null,
+      "bruttoMarginal": null,
+      "ebitMarginal": 0.3824,
+      "nettoMarginal": 0.2914,
+      "fcfMarginal": null
+    },
+    "stabilitet": {
+      "skuldEgenkapital": null,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 15.17,
+      "pb": 1.77,
+      "evEbit": null,
+      "peg": 1.26,
+      "fcfYield": null,
+      "egenKapitalMultipl": 1.77
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        2805932000000,
+        2779216000000,
+        3122105000000,
+        3898840000000,
+        4399734000000
+      ],
+      "resultat": [
+        530479000000,
+        555527000000,
+        678993000000,
+        885433000000,
+        1248632000000
+      ],
+      "egetKapital": [],
+      "fcf": [
+        2280084000000,
+        2196990000000,
+        -361632000000,
+        -5843117000000,
+        -6089212000000
+      ]
+    },
+    "notering": "JAPAN/FINANS-TRION KOMPLETT (Japan/finans 2→3: 8306.T MUFG + 8316.T SMFG + 8411.T — v209-u2:s kö-notis 'Mizuho fullbordar megabank-trion' infriad; Japan 9→10 rader i fyra grenar). TRIONS VÄRDERINGS-KAPITALÅTERKOMST-KONTRAST: Mizuho bär HÖGST ROE (12,49 % mot 9,46/8,57) på LÄGST P/E (15,17 mot 20,69/20,72) — bäst betald kapitalåterkomst i cellen, medan syskonen handlas på räntevändnings-narrativets premium (+53/+49 % prognosTillväxt mot Mizuhos +12,0: marknaden prissatt MUFG/SMFG:s INKOMSTLÄGE, Mizuhos STIGE); ROE−WACC +11,1 pp på WACC 1,37 % = trions bredaste spridning. FEM RAKA VINSTÅR: netto 530,5→555,5→679,0→885,4→1 248,6 mdr JPY (+135 % totalt, nettoCAGR +23,87 %/år — trions enda raka femårsbana: MUFG null negativ FY2022-bas, SMFG FY2025-dipp −45,3 %) med marginaltrappan 18,9→28,4 % och TTM 29,1; P/E-trappan 7,49→8,57→11,37→11,37→11,89 med nuvarande 15,17 = MONSTRET multipeln expanderar med vinsten (MUFG:s 26,11→20,69 samma mönster — japanska banker re-ratingas_med_ fundamentalen, ej mot). RETENTIONSPROFILEN: payout 26,78 % (trions lägsta: 54,87/54,61/26,78) på yield 1,77 % — Mizuho behåller tre fjärdedelar av vinsten och bygger EK snabbast (9,20→11,59 T JPY på fyra år, +26 %) medan återköpsvägen fyrdubblas 102,9→404,3 mdr FY2026 och DPS-trappan 80→85→105→140→145→150 sakta men utan avbrott. BANKENS REALIA: NETTKASSA 44,15 T JPY (kassa 119,45 − skuld 75,30; källspridningen mot BS-sidans bredare portföljbas 173,59 T dokumenterad i paranoid), arbetskapital −126,6 T (insättningarna), OCF −5,99 T FY2026 = lånevolymens tidecken ej driftskassa (8306/8316-noten), WACC 1,37 % (Japans räntenivå), skatt 24,48 %, Piotroski 2, beta 0,39. KÄLLORDNING: resultatråd+EPS kanon (CF-mallens netto-rad avviker 1 190/1 622 mot 885/1 249 FY2025/26 — S&P bankmall, dokumenterad); aktietalet tre baser (2 434 M slut · 2,42 Mdr overview · 2 483 M vägt EPS-identitet); källans industry 'Banks—Regional' mot 8306.T:s 'Diversified' = källintern klassning, universumets finans-gren oberoende av den. 52-v +73,2 %, −4,5 % från toppen 8 894; ex-div 2026-09-29; nästa rapp 2026-11-13 (trions gemensamma H1-datum). PT 9 011,82 JPY (Buy, 11 analytiker); 52 427 anställda; grundat 1873; NYSE-ADR (allmän faktakunskap)."
   }
 ]

@@ -1,0 +1,60 @@
+studio: auto s7-u3 prestandavåg o92 — o78-sektionernas DESKTOP-reservationer kurade: −3 363 px engångskrympning på /kurser (−1 590/−1 591 speglarna) mot förväntad +4/+2 px; mobilnivåerna orörda (o90 ±46 vidare)
+
+ROTen (o91 §5:s köpost): o78 kalibrerade sektionsreservationerna mot MOBILA
+sluthöjder men desktopens sektioner är 3–4× kortare — vid första fulla
+scroll KRYMPER dokumentet (scrollbar-längden ljuger vid första
+desktopbesöket). Färsk desktop-blocksond 1280×800 ×3 sidor
+(_s7u3o91-blocksond.mjs, BUILD_ID hZjYd72 — o91 ännu ej deployat ⇒ sektionerna
+i exakt samma läge) med FULL determinismparitet mot o91 §1c: /kurser docH
+11 223→7 860 (−3 363) · /en/kurser 5 230→3 640 (−1 590) · /ar/kurser
+5 131→3 540 (−1 591). Attribution: cv-sidfooter −1 458 (2 146→688 px verklig,
+IDENTISK på alla tre språken — samma komponent) · cv-kategorivägg −960
+(1 266→306) · marin-panel/socialproof −634 (1 552→918) · cv-nasta-steg −132
+(264→132) · cv-kurstips −120 (368→248); registerkortens −120 kuras av o91:s
+md+-rad (deploy väntar).
+
+KUR = nytt md+-block (min-width 768px) i globals.css, fem deklarationer,
+NOLL befintliga rader rörda: sidfooter 43rem (690 vs 688, +2) ·
+kategorivägg 16rem (306 vs 306, 0) · socialproof 52.5rem (920 vs 918, +2) ·
+kurstips 15.5rem (248 vs 248, 0) · nasta-steg 5.75rem (132 vs 132, 0) —
+kalibrering = sonderad desktop-sluthöjd minus sektionens fasta
+padding/border-tillägg (border-t-2/pt-10 m.fl.). Förväntad Σ-residual vid
+full desktop-scroll: +4 px på /kurser, +2 px på speglarna (mot −3 363/
+−1 590/−1 591). MOBILNIVÅERNA orörda — o90 bevisade mobilens sektioner
+±46 px; speglarna delar sidfooter/nästa-steg-klasserna (o89 vävde in dem i
+samma klasser) ⇒ kuren verkar på tre språk.
+
+BEVIS: blocksond ×3 (rådata i lighthouse/-mappen) + Lighthouse FÖRE
+/kurser P58 · LCP 4 424 · TBT 1 712 · CLS 0 (envelopmärke — kuren är
+md+-CSS, LH-mobil rör den ej) + iakttagelse: speglarnas
+cv-siffreband-spegel Σ0 på desktop (korta sidor, platshållaren oanvänd —
+ingen skada, ingen kur). EFTER-vakare bokad enligt o89/o91-precedensen:
+prod 200 ×5, desktop-blocksond ×3 |ΔdocH| ≤ 50 px, sektionssignaturer
+|Σ| ≤ 10 px, mobil-Σ oförändrad, LH i envelopen, gränssnittsvakten 0 —
+mäts när prod-synken deployat (BUILD_ID lämnar hZjYd72rzYIjfWnbt1oc8 med
+denna commit som förfader).
+
+KVD: tsc 0 via projektbinär · src/ ENDAST Edit (globals.css) · inget eget
+bygge (prod-synken äger — våg 100) · prod 200 ×5 https verifierat FÖRE
+commit · R2 orörd · data/blogg/ orörd · syskonytor orörda (o91:s
+sondverktyg KÖRDES men modifierades ej; u1/u2:s köposter lämnade) ·
+sonderna sekventiellt (RAM-tak ~1 GB available, en chrome i taget) ·
+pre-commit-grinden passeras utan --no-verify.
+
+FILER: src/app/globals.css ·
+data/forskning/OPTIMERING/o92-prestanda-o78desktop-sektioner-s7.md ·
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop.json ·
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop-en.json ·
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop-ar.json ·
+data/forskning/OPTIMERING/lighthouse/kurser-s7u3o92-fore.json ·
+data/forskning/OPTIMERING/lighthouse/s7u3o92-fore-sammanfattning.json ·
+worklog.md
+
+LEVERANS: src/app/globals.css,
+data/forskning/OPTIMERING/o92-prestanda-o78desktop-sektioner-s7.md,
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop.json,
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop-en.json,
+data/forskning/OPTIMERING/lighthouse/blocksond-s7u3o92-fore-desktop-ar.json,
+data/forskning/OPTIMERING/lighthouse/kurser-s7u3o92-fore.json,
+data/forskning/OPTIMERING/lighthouse/s7u3o92-fore-sammanfattning.json,
+verktyg/_s7u3o92-commitmsg.txt, worklog.md

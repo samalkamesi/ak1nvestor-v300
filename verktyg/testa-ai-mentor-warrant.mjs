@@ -611,8 +611,8 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 440 kurser (spår 5:s omgång-18-rebake 2026-09-19; basotestet E01 grönt)",
-    KURSREGISTER.length === 440,
+    "K03 register-läge — 446 kurser (spår 5:s omgång-19-rebake 2026-09-19; basotestet E01 grönt)",
+    KURSREGISTER.length === 446,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -651,6 +651,10 @@ const GAMLA = [
     "svaraLokaltBokmastar",
     "svaraLokaltRiskbudget",
     "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -673,7 +677,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 36 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 39 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "warrant efter värderingsverktyg; syskonens tidsaxel + kapitalbindning efter mitt lager (samma fönster) — kan aldrig stjäla en fråga",
   );

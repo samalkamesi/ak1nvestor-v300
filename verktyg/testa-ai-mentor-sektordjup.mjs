@@ -621,6 +621,10 @@ const GAMLA = [
     // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
     "svaraLokaltRiskbudget",
     "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -643,7 +647,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 43 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 46 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "sektordjup före sektorskola2, inga okända komponenter",
   );

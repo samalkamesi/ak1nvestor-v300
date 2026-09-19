@@ -2236,6 +2236,46 @@ divergensvakt siffror-live ↔ siffror.json (överens bevisat men obevakat);
 (4) A4: hashen kan upprepa bolag dagar i följd — om orepetition önskas krävs
 dags-lookup-tabell (designbeslut, ej fel).
 
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789800329491 — D20 Inloggning & konto återdiffad; felklass-fyndet i glomt-grenen + vakt-täckningsgapet)
+
+Anspråk på disk FÖRE mätstart (data/vakten/auto-s9-1789800329491-s9-u1-ansprak.md,
+gitignorerad väg; D20 = ÖVERSIKT:ns äldsta icke-återdiffade stämpel 09-16 OCH
+uttryckligen lämnad öppen av gårdagens u3 som "rimligaste enkel-pick"). Allt
+EGENMÄTT ~09:0x lokal (svitkörrning, kodläsning, git log, loopback-sonder):
+
+| Yta | Före (09-16-passningen) | Efter (mätt 09-19) |
+|---|---|---|
+| Svit | 17/17 grön (09-16) | 17/17 GRÖN EGEN igen (exit 0) — kärnan ren |
+| glomt-grenen i sviten | 0 träffar (gap 2) | 0 träffar ÅTERMÄTT — gap 2 kvarstår exakt |
+| medlem-auth.ts | 556 r | 556 r OFÖRÄNDRAD — senaste commit d83915fb 2026-09-11 (kodstilla 8 d) |
+| medlem-inloggning.tsx | "220 r + glomt-läge" | TALRÄTTNING: **301 r** — oförändrad i git sedan 10f7b75f 2026-09-12 (autoComplete W3C-tokens "email"/"new-"/"current-password" på plats :230/:241); 09-16-radens 220 var inaktuellt |
+| Live-ytor | /logga-in 200 (09-16) | /logga-in 200 + SPEGLARNA /en/logga-in + /ar/logga-in 200 (första D20-mätta spegelsonden — SSR-läkningen håller) |
+| API-kontrakt | (ej live-mätt i D20) | POST ogiltig action → 400 {"fel":"Ogiltigt action."} · GET → 405 (POST-only) · signin utan data → 401 generisk text (KRITA lever live) · rate-limit MAX_GLOMT_PER_MIN = 5 i kod (:60) + 429-gren med Retry-After (:137–141) · neutral talkart "Om kontot finns…" (:152–155) |
+
+FYND A — NYTT GAP 4 (felklassmappning, live-mätt): glomt med ogiltigt
+e-postformat svarar **HTTP 502 + {"fel":"Ogiltig e-postadress.","kod":"tjanst"}**
+— ett LOKALT valideringsfel mappas till "Bad Gateway"/tjänst-klassen. Roten är
+dubbel: medlem-auth.ts:389 returnerar kod "tjanst" ÄVEN för valideringsfelet,
+och route.ts:149 mappar ALLA !ok till 502 — mappningen kan inte skilja
+validering från transport. Säkerhetsmässigt ofarligt (ingen kontoexistens
+läcks; kontrast signin-tom → 401), men felklass-semantiken ljuger: 502
+signalerar "tjänsten nere" när sanningen är "klientformat fel". Kur kräver
+src/ (huvudagenten): separat kodvärde (t.ex. "validering") eller 400-förgren.
+
+FYND B — NYTT GAP 5 (vakt-täckning, B12:s klass): /logga-in (+ speglar) SAKNAS
+i gränssnittsvaktens FALLBACK_SIDOR (granssnitt-urval.mjs:31 — 8 sidor: /,
+/kurser, /labb, /blogg, /dataset, /superanalys, /kalkylator, /om-oss) —
+inloggningssidan, hela medlemstrupens entré, rutinmäts EJ (0 vaktrapporter med
+sidan). B12:s köpost lade till superanalys/kalkylator men logga-in glömdes.
+
+Gap 1 (E2E-svit) och gap 3 (återställningsmejlets leveransväg — GoTrue-konfig,
+avsändardomän) kvarstår oförändrade. Score 8 ORÖRD (E33/B14-precedensen:
+kunskap tillförd, inget gap stängt — båda fynden är preciseringsklass, ej
+kundsynligt brytt kontrakt). Snitt **7,6 / 287 / 38 OFÖRÄNDRAT**. Kö till
+huvudagenten: (1) felklass-kur i glomt-grenen (src/); (2) /logga-in i vaktens
+sidrotation (samma kur-post som B12:s); (3) glomt-grenen i sviten (gap 2 —
+neutral talkart + rate-limit är rena funktioner, sviten stubbar redan nätet).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -2259,7 +2299,7 @@ dags-lookup-tabell (designbeslut, ej fel).
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Universum 177 (10 branscher) + landaspekt danmark (09-18); 52 Kön-filer men /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG tredje passningen (importbro saknas) |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (återmätt 09-18); PageViewBeacon sänder fortfarande före samtycke (gap 3 oförändrat 09-18) men layout-KOPIAN är BORTA (0 träffar i 3 layouter = EN beacon); trafik-API lever med färsk data (besokareIdag 29 + blockerat24h 9, mätt 09-18); P6 koddokumenterad |
-| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
+| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Återdiffad 09-19: svit 17/17 grön egen, kärnan kodstilla 8 d, /logga-in + speglar 200, talrättning medlem-inloggning 301 r; TVÅ NYTTA GAP: glomt-valideringsfel → 502/tjanst (felklassmappning, live-mätt) + /logga-in saknas i vaktens FALLBACK_SIDOR (B12-klassen); kvar: E2E-svit + glomt-grenen otäckt av sviten |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas fortfarande i UI (återmätt 09-18); sviter 13/13 + 17/17 GRÖNA EGENA igen (09-18); /api/medlem är POST-only (GET 405 = korrekt, {inloggad:false} kommer från progress-rutten); NYTT: kurser +30 (426) medan quiz/XP frusna (8 223/82 230) — progress-underlaget tunnas av s5:s kursvågor |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy + rate-limit, inget brev); kundens 8 beslut; intentioner bor i E33:s flaggade tabell |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env (mätt 09-17); grinden MÄTT I PROD (robots/sitemap = 0 tier-URL:er); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
@@ -3350,7 +3390,7 @@ terad. Live mätt: track POST {} → 400 · trafik 200 · tracer 405 (POST-only
 
 # D. MEDLEM & KOMMERS
 
-## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-13: LOGIN-2.0 landat och E2E-verifierat på prod
 (specifika feltexter + live-räknare; STYRELSE-2026-09-11-V106 § 3 D1).
@@ -3366,6 +3406,18 @@ mappas till "ej_bekraftad" ENDAST vid korrekta uppgifter (medlem-auth.ts:204).
 medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
 (0 träffar). Score 7 → 8 (huvudgap mätbart stängt).*
 
+*Återdiff 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789800329491): sviten
+17/17 GRÖN EGEN igen (exit 0) · glomt-grenen OTÄCKT återmätt (0 svitträffar) ·
+kärnan KODSTILLA 8 d (medlem-auth.ts 556 r + route.ts 186 r, senaste commit
+d83915fb 09-11) · TALRÄTTNING medlem-inloggning.tsx 220 → 301 r (oförändrad
+sedan 10f7b75f 09-12, autoComplete W3C-tokens på plats) · live: /logga-in +
+båda speglar 200, POST-kontrakt 400/405/401 mätta, rate-limit 5/min +
+Retry-After + neutral talkart i kod · TVÅ NYTTA GAP: (4) glomt-valideringsfel
+mappas till 502/tjanst (live-mätt; medlem-auth.ts:389 + route.ts:149 — kur
+kräver src/), (5) /logga-in saknas i gränssnittsvaktens FALLBACK_SIDOR
+(B12-klassen). Score 8 orörd (E33/B14-precedensen). Se UPPDATERING-sektionen
+för diff-tabellen.*
+
 - **Vad:** Medlemsautentisering via Supabase Auth (GoTrue v2) genom server-
   proxy: signup/signin/signout/session/GLÖMT-LÖSENORD (recover, neutral
   talkart), tokens ENDAST i httpOnly-kakor (access 1 h + refresh 30 d med
@@ -3375,7 +3427,7 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   migreringsbanner.
 - **Nyckelfiler:** src/lib/medlem-auth.ts (556 r, 17/17 tester gröna mätta
   2026-09-16), src/app/api/medlem/route.ts (glomt-gren + glomtAnrop-rate-limit),
-  src/components/ak1a/medlem-inloggning.tsx (220 r + glomt-läge), src/
+  src/components/ak1a/medlem-inloggning.tsx (301 r + glomt-läge; talrättat 09-19 — oförändrad sedan 09-12), src/
   components/ak1a/{logga-in,inloggad-knapp,migrera-progress}.tsx, src/app/
   (huvud)/logga-in + speglar, verktyg/testa-medlem-auth.mjs.
 - **Observation:** KÄRNAN är ren och väldokumenterad (kontrakt i filhuvud,
@@ -3388,7 +3440,11 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   (0 träffar — mappning + neutral talkart är rena funktioner, sviten
   stubbar nätverket redan); (3) återställningsmejlets leveransväg (GoTrue-
   konfig, avsändardomän) overifierad — kodvägen grön, mejlvägen omätbar
-  från arbetsytan.
+  från arbetsytan; (4) felklassmappning i glomt-grenen: lokalt valideringsfel
+  sänder 502 {"kod":"tjanst"} i stället för 400 (live-mätt 09-19;
+  medlem-auth.ts:389 bär "tjanst" även för valideringsfel + route.ts:149
+  mappar allt !ok → 502) — kur kräver src/; (5) /logga-in (+ speglar) saknas
+  i gränssnittsvaktens FALLBACK_SIDOR — rutinmäts ej (B12-klassen, 09-19).
 
 ## D21. Medlemsdata & progress — LEVER — 8/10 *(uppdaterad 2026-09-18)*
 *Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):

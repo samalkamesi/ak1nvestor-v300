@@ -1,5 +1,5 @@
 /**
- * LANDASPEKTER — sverige + usa + danmark + schweiz för /dataset/[bransch]/[aspekt]
+ * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland för /dataset/[bransch]/[aspekt]
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) ──
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) ──
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -284,5 +284,20 @@ export const aspekter: AspektModule[] = [
       "bär många globala verksamheter där majoriteten av intäkterna tjänas utomlands — " +
       "jämför därför den här medianen med schweiziska bolags median, och var varsam med " +
       "att läsa den mot tal från svensk- eller euro-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "tyskland",
+    land: "Tyskland",
+    forled: "Tyska",
+    landNamn: "Tyskland",
+    valutaMening:
+      "De tyska bolagen redovisar i euro (EUR) — Europas största ekonomi och den " +
+      "referensvaluta som svenska kronor ofta vägs mot i handelsstatistiken. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men tysk börsstruktur " +
+      "bär både världsomspännande varumärkesjättar och familjeägda industritraditioner " +
+      "med långsiktiga ägarintressen, och DAX-bolagens stora andel intäkter utanför " +
+      "eurozonen gör att valutaeffekten slår olika mellan bolagen — jämför därför den " +
+      "här medianen med tyska bolags median, och var varsam med att läsa den mot tal " +
+      "från svensk- eller dollar-noterade bolag.",
   }),
 ];

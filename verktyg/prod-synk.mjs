@@ -57,7 +57,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { skrivAudit } from "./audit-logg.mjs";
 import { verifieraArtefakt } from "./artefakt-verifiering.mjs";
@@ -247,6 +247,123 @@ export function bevaraByggLoggar(mapp, kallor) {
     return sparade;
   } catch {
     return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// VAKTRAPPORTS-GRINDEN (VÅG 212 — E35 gap 3:s SISTA HALVA; SYSTEMKARTAN
+// 2026-09-16: "vaktrapports-stoppet (RÖD kvalitetsrapport ⇒ deploy-stopp)
+// saknas fortfarande" — .next-skadan 09-16 nådde prod utan att någon grind
+// stoppade vägen). Kontrakt:
+//   · data/rapporter/kvalitetsrapport-SENASTE.md skrivs 07:02 av pumporna I
+//     PROD-TRÄDET (gitignore:ad rad 76 ⇒ `git checkout -- .` rör den ALDRIG —
+//     rapporten överlever deploy-städningen)
+//   · STATUS RÖD (>9 fel eller ogiltig JSON i trädet) ⇒ deploy STOPPAS FÖRE
+//     byggstart: HEAD orörd, DEPLOYAD-markör orörd, .next orörd (bygget river
+//     .next — att inte bygga alls är den skonsammaste stoppen), audit-larm
+//   · DEADLOCK-SKYDD: stoppet triggar OMMÄTNING (detached kvalitetsvakt under
+//     lås) — rapporten mätte trädet vid 07:02 och de nya committerna kan bära
+//     själva fixen; nästa poll (10 min) läser FÄRSK rapport mot Nya trädet.
+//     Forfarande RÖD ⇒ stopp igen (ärligt: trasigt träd deployas inte)
+//   · GUL ⇒ deploy fortsätter (loggas)
+//   · saknas/otolkbar/gammal (>48 h) ⇒ deploy fortsätter med VARNING
+//     (fail-open — vaktpumpornas död ägs av pulsvakten/ronder och får ALDRIG
+//     frysa prod-koden i evighet; varningen syns i loggen + audit)
+// Kontraktstest: verktyg/testa-prod-synk-vaktrapport.mjs
+// ---------------------------------------------------------------------------
+const VAKTRAPPORT_FIL = path.join("data", "rapporter", "kvalitetsrapport-SENASTE.md");
+const VAKTRAPPORT_MAX_ALDER_H = 48;
+const VAKT_OMMATNING_LOCK = path.join(VAKT, ".vakt-ommatning.lock");
+const VAKT_OMMATNING_STAL_MIN = 15; // vakten tar ≤ ~10 min; kvarlämnat lås städas
+
+/** Tolka kvalitetsrapporten — {saknas}|{fel}|{status, felAntal, manuella, alderTimmar}. */
+export function lasVaktrapportStatus(filvag, nuMs = Date.now()) {
+  let text;
+  let stat;
+  try {
+    text = fs.readFileSync(filvag, "utf8");
+    stat = fs.statSync(filvag);
+  } catch (e) {
+    if (e && e.code === "ENOENT") return { saknas: true };
+    return { fel: "oläsbar: " + String(e && e.message ? e.message : e).slice(0, 80) };
+  }
+  // sista ANTAL FEL-raden är aktuell status (rapporten är överskrivande, men
+  // tolerera framtida append — samma "sista träffen"-regel som motorsektionen)
+  const rader = text.split("\n").filter((r) => /^## ANTAL FEL:/.test(r));
+  const m = rader[rader.length - 1]?.match(/^## ANTAL FEL:\s*(\d+)\s*\|\s*MANUELLA:\s*(\d+)\s*\|\s*STATUS:\s*(RÖD|GUL|GRÖN)\s*$/);
+  if (!m) return { fel: "ingen tolkbar ANTAL FEL/STATUS-rad" };
+  return {
+    status: m[3],
+    felAntal: Number(m[1]),
+    manuella: Number(m[2]),
+    // Math.max: en rapport skriven millisekunden EFTER nuMs (klockrapportens
+    // realtid) får aldrig bli -1 h — färsk rapport är 0 h
+    alderTimmar: Math.max(0, Math.floor((nuMs - stat.mtimeMs) / 3_600_000)),
+  };
+}
+
+/** Grinddom: {stopp, niva: stopp|varning|info, meddelande} — se kontraktet ovan. */
+export function bedomVaktrapportStopp(rapport) {
+  if (!rapport || typeof rapport !== "object") return { stopp: false, niva: "varning", meddelande: "vaktrapporten obestämbär — deploy fortsätter (fail-open), vakt-läget OMÄTT" };
+  if (rapport.saknas) return { stopp: false, niva: "varning", meddelande: "kvalitetsrapporten SAKNAS — deploy fortsätter (fail-open); vaktpumporna mäter inte (pulsvaktens ägo)" };
+  if (rapport.fel) return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten otolkbar (${rapport.fel}) — deploy fortsätter (fail-open), vakt-läget OMÄTT` };
+  if (rapport.alderTimmar > VAKTRAPPORT_MAX_ALDER_H) {
+    return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten ${rapport.alderTimmar} h gammal (> ${VAKTRAPPORT_MAX_ALDER_H} h) — deploy fortsätter; vaktpumpornas död ägs av pulsvakten, aldrig av deploy-grinden` };
+  }
+  if (rapport.status === "RÖD") {
+    return {
+      stopp: true,
+      niva: "stopp",
+      meddelande: `kvalitetsrapporten RÖD (${rapport.felAntal} fel, ${rapport.manuella} manuella, ${rapport.alderTimmar} h gammal) — deploy STOPPAD före byggstart (E35 gap 3 sista halvan); ommätning triggad, nytt försök nästa poll`,
+    };
+  }
+  if (rapport.status === "GUL") {
+    return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten GUL (${rapport.felAntal} fel) — deploy fortsätter (GUL stoppar aldrig)` };
+  }
+  return { stopp: false, niva: "info", meddelande: `kvalitetsrapporten GRÖN (${rapport.alderTimmar} h gammal)` };
+}
+
+/** Deadlock-skyddet: trigga färsk vaktkörning (detached, låst — aldrig stackad). */
+function triggaVaktOmmatning() {
+  try {
+    try {
+      fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      const s = fs.statSync(VAKT_OMMATNING_LOCK);
+      if (Date.now() - s.mtimeMs > VAKT_OMMATNING_STAL_MIN * 60_000) {
+        fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true });
+        fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      } else {
+        logga("VAKT-OMMÄTNING: pågår redan (låset lever) — ingen ny triggas");
+        return;
+      }
+    } catch (e) {
+      if (e && e.code === "EEXIST") {
+        // låset togs just av en samtidig poll — samma väg som ovan
+        const s = fs.statSync(VAKT_OMMATNING_LOCK);
+        if (Date.now() - s.mtimeMs <= VAKT_OMMATNING_STAL_MIN * 60_000) {
+          logga("VAKT-OMMÄTNING: pågår redan — ingen ny triggas");
+          return;
+        }
+        fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true });
+        fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      } else {
+        throw e;
+      }
+    }
+    const loggFil = path.join(VAKT, "vakt-ommatning.log");
+    const fd = fs.openSync(loggFil, "a");
+    const barn = spawn(process.execPath, ["verktyg/kvalitetsvakt.mjs"], {
+      cwd: ROT,
+      detached: true,
+      stdio: ["ignore", fd, fd],
+    });
+    barn.on("exit", () => {
+      try { fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true }); } catch { /* städas som övergivet */ }
+    });
+    barn.unref();
+    logga(`VAKT-OMMÄTNING triggad (pid ${barn.pid}) — färsk rapport mot aktuellt träd; nästa poll läser den`);
+  } catch (e) {
+    logga("VAKT-OMMÄTNING: kunde inte triggas (" + String(e && e.message ? e.message : e).slice(0, 80) + ") — vakten mäter vid 07:02 oavsett");
   }
 }
 
@@ -774,6 +891,19 @@ async function korSynk() {
     logga("PATCH-KÖ väcker synken utan ny kod (o46) — patch-install + ombygge + restart");
   } else {
     logga(`NY KOD: ${senaste.slice(0, 8) || "(första)"} → ${lokal.slice(0, 8)}`);
+  }
+
+  // 1c) VAKTRAPPORTS-GRINDEN (VÅG 212): RÖD kvalitetsrapport ⇒ deploy-stopp
+  // FÖRE byggstart — stoppar trasigt träd från att ens riva .next (bygget
+  // tömmer katalogen FÖRE ev. kompileringsfel). Fail-open för saknas/gammal
+  // (vaktpumpornas hälsa ägs av pulsvakten), deadlock-skydd via ommätning.
+  const vaktRapport = lasVaktrapportStatus(path.join(ROT, VAKTRAPPORT_FIL));
+  const vaktDom = bedomVaktrapportStopp(vaktRapport);
+  if (vaktDom.niva !== "info") logga(`VAKTRAPPORT: ${vaktDom.meddelande}`);
+  if (vaktDom.stopp) {
+    skrivAudit("prod-synk", "deploy_stoppad_vaktrapport", `rod-${vaktRapport.felAntal}fel-${vaktRapport.alderTimmar}h`, vaktDom.meddelande);
+    triggaVaktOmmatning();
+    return; // HEAD orörd · DEPLOYAD-markör orörd · .next orörd — nytt försök nästa poll mot färsk rapport
   }
 
   // 2) RAM-VAKT (10X-incidenten): under taket OOM-dödas next build av

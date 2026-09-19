@@ -369,7 +369,7 @@ const GAMLA = [
     // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
     // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
     "svaraLokaltMarknadsmekanik",
-    "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
+    "svaraLokaltPraktik", "svaraLokaltValutamekanik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
     "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
     "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
     "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",

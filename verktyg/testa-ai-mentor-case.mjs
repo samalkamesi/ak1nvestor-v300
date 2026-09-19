@@ -364,6 +364,7 @@ const kedjekomponenter = [
   // ordning efter case, FÖRE praktik (kedjetestets G-fall äger ordningen).
   "svaraLokaltMarknadsmekanik(q, KURSREGISTER)",
   "svaraLokaltPraktik(q, KURSREGISTER)",
+  "svaraLokaltValutamekanik(q, KURSREGISTER)",
   "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
   "svaraLokaltAgande(q, KURSREGISTER)",
   "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",

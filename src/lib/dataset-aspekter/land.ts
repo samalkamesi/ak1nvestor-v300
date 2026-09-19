@@ -1,5 +1,5 @@
 /**
- * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland för /dataset/[bransch]/[aspekt]
+ * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland + australien + japan för /dataset/[bransch]/[aspekt]
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) ──
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) + australien (omg18) + japan (omg20) ──
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -313,5 +313,18 @@ export const aspekter: AspektModule[] = [
       "koppar) driver resultaten mer än valutan, och ASX-börsens gruvvikt gör gruppen känslig " +
       "för Kina-efterfrågan — jämför därför den här medianen med australiska bolags median, " +
       "och var varsam med att läsa den mot tal från svensk- eller euro-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "japan",
+    land: "Japan",
+    forled: "Japanska",
+    landNamn: "Japan",
+    valutaMening:
+      "De japanska bolagen redovisar i yen (JPY) medan branschens amerikanska bolag " +
+      "redovisar i dollar (USD) och de svenska i svenska kronor (SEK). Multiplerna och " +
+      "marginalerna är i sig valutaneutrala tal, men Japans lågräntemiljö, yen-kursens " +
+      "svängningar och börskulturens korsäganden med stabila huvudägare skiljer från " +
+      "västerländska börser — jämför därför den här medianen med japanska bolags median, " +
+      "och var varsam med att läsa den mot tal från svensk- eller dollar-noterade bolag.",
   }),
 ];

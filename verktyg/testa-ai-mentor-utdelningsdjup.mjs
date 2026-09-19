@@ -534,7 +534,18 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22: bokmastar (s6-u3) — SIST av 47 (svitharmoniseringens dokumentationsplikt).
+    // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -557,7 +568,7 @@ const GAMLA = [
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);
   }
   kontroll(
-    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 33 lager i ordning + import",
+    "L01 widget-synk — kedjan i chat-widget.tsx bär alla 36 lager i ordning + import",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "utdelningsdjup tredje sist av 21 lager (förväntningsdjup efter — syskon u3:s omgång 12-leverans), inga okända komponenter",
   );

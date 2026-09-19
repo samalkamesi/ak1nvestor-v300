@@ -1,0 +1,25 @@
+{
+  "kurs": "v11",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Likviditeten mäter luftgapet mellan vad bolaget har inom räckhåll och vad det måste betala inom ett år. Förklara för dig själv vilka två balansposter som ställs mot varandra. 2. Varför räknas varulagret bort — eller ned — i kvickkvoten? Vad är kvickt nära pengar i en kris? 3. Kvoten 1,0 betyder jämna svar, 1,5 betyder buffert och 0,7 betyder att korten måste skötas aktivt varje vecka. Testa dig själv: tolka de tre nivåerna med egna ord. 4. Grannindikatorerna ställer tre frågor: V10 hur strukturen är finansierad på lång sikt, V11 om bolaget klarar året som kommer, V19 om kassan bränns och nyemissionsrisk finns. Förklara skillnaden mellan dem."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Räkna upp komponenterna: vad ingår i omsättningstillgångarna — och vad ingår i de kortfristiga skulderna (posten Kortfristiga skulder och övriga förpliktelser i många svenska redovisningar)? 2. Räkna efter kvickkvoten: (omsättningstillgångar − varulager) ÷ kortfristiga skulder. Varför skall du jämföra med förra året — vilken tidig signal letar du efter? 3. I noten om kundfordringar läser du äldresaldon och den individuella värderingen. Förklara varför gamla eller osäkra fordringar inte är riktiga pengar. 4. Var hittar du bekräftade kassakreditlinjer — och varför kallas outnyttjad kredit likviditetens andra hälft, som inte står i balansräkningen?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Räkna efter övningstal A: kassa 4,2 + kundfordringar 8,1 + kortfristiga placeringar 1,3 = 13,6. Kontrollera att 13,6 ÷ kortfristiga skulder 9,8 ger kvickkvoten 1,39. 2. Med lagret medräknat blir kassakvoten 2,0 (19,6 ÷ 9,8). Förklara vad skillnaden mellan kvoterna visar — lagrets andel är 31 %. 3. Övningstal B ger kvick 0,69. Noten visar att 3,4 av fordringarna är pågående projekt med fakturering vid milstolpar — förklara varför gapet är timing, inte förlust. 4. I dagligvaruhandel (Axfood-klassen i universumet) är negativt rörelsekapital en styrka, inte en kris. Förklara mekanismen: vem betalar vem först?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Kvick under 1,0 är inte automatisk nöd. Nämn två affärstyper som driver den medvetet lågt — och frågan du alltid ställer om varför gapet ser ut som det gör. 2. Kvick över 1,0 är inte automatisk hälsa. Förklara hur svällande, osäkra kundfordringar kan smyga in i talet — och varför notens äldstanalys är sanningen, inte balansraden. 3. Säsong och balansdagen: detaljhandeln efter julhelgen har kassatopp, projektbolaget före milstolpe har botten. Förklara vad som menas med att en dag gör inte ett år. 4. Två strukturfällor till: varför är kvickkvoten meningslös för banker och finansbolag (samma undantag som V10) — och varför ser butiks- och flygbolag trängre ut än före 2019 (IFRS 16)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Kärnan dokumenterar sitt val: V11 Likviditet (kvickkvot) — saknas i datakontraktet: osatt. Förklara varför scorV11() aldrig räknar automatiskt. 2. Poängsättningen är manuell: läs balansräkningen och sätt poängen själv. Vad kräver det av dig som gör läsningen? 3. Förslagstrappan (ett resonemangsmönster, inte modellens kod): kvick ≥ 2,0 ger 5, 1,5–2,0 ger 4, 1,0–1,5 ger 3, 0,5–1,0 ger 2 och under 0,5 ger 1. Öva: vilken utgångspoäng ger övningstalen 1,39 och 0,69 — och vad justerar du för innan poängen sätts? 4. Syskopplingen: V10 äger den långsiktiga strukturen och V19 varningslampan. Förklara V11:s roll — skillnaden mellan att överleva ett halvår och att bara se bra ut på pappret."
+    }
+  ]
+}

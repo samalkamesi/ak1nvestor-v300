@@ -14,7 +14,7 @@ import { lasMedlem, type Medlem } from "@/lib/member-local";
 import { RiskvalPanel } from "./riskval-panel";
 import { PortfoljDjupvy } from "./portfolj-djupvy";
 import { lasKorstabellRader } from "./korstabell-leverantor";
-import { RISKNIVA_TEXT, TAKT_TEXT, datumText, talText } from "./vag-stil";
+import { GULD_TEXT, RISKNIVA_TEXT, TAKT_TEXT, datumText, talText } from "./vag-stil";
 
 // ═══════════════════════════════════════════════════════════
 // BYGG PORTFÖLJ-KORT — P7:s byggflöde: Riskval-panel (P4) →
@@ -153,7 +153,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
 
       {/* Poängbas-väljare (våg 57 D2): AKM1 (öppet) | AKM2 (kräver Plus) */}
       <div className="rounded-2xl border border-gold/25 bg-paper p-4">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Poängbas</p>
+        <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>Poängbas</p>
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
           Motorns poängformel väger poängbasen 50 %, vågstatus 35 % och golv 15 %.
           Basen kan vara AKM1-totalen — eller AKM2-kompositen, där kärnans
@@ -200,12 +200,12 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
       {/* AKM2-låset — vald AKM2 utan Plus-nivå: låst chip + inbjudan, aldrig ett nej */}
       {akm2Last && (
         <div className="rounded-2xl border border-gold/40 bg-card p-5 sm:p-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+          <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>
             <span aria-hidden className="mr-1.5">🔒</span>Låst läge
           </p>
           <h3 className="mt-2 flex flex-wrap items-center gap-2 font-serif text-xl font-bold">
             AKM2-poängbasen ingår i Portföljforskning Plus
-            <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gold">
+            <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${GULD_TEXT}`}>
               Kräver Plus
             </span>
           </h3>
@@ -244,7 +244,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
       {/* Medlemsgaten — vald profil men ej inloggad: inbjudan, aldrig ett nej */}
       {valdProfil && !medlem && (
         <div className="rounded-2xl border border-gold/40 bg-card p-5 sm:p-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+          <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>
             Ett steg kvar
           </p>
           <h3 className="mt-2 font-serif text-xl font-bold">
@@ -295,7 +295,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
       {/* Datainsamlingen pågår — motorn gissar aldrig */}
       {lage === "pagaar" && (
         <div className="rounded-2xl border border-dashed border-gold/40 bg-paper p-5 sm:p-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+          <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>
             Datainsamlingen pågår
           </p>
           <h3 className="mt-2 font-serif text-xl font-bold">
@@ -320,7 +320,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
       {/* Övriga fel — vänligt, med retry */}
       {lage === "fel" && (
         <div className="rounded-2xl border border-gold/30 bg-card p-5 sm:p-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+          <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>
             Rapporten dröjer
           </p>
           <h3 className="mt-2 font-serif text-xl font-bold">
@@ -344,7 +344,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
       {lage === "klart" && forslag && (
         <div className="space-y-6">
           <div className="rounded-2xl border border-gold/40 bg-card p-5 sm:p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+            <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${GULD_TEXT}`}>
               Färskt forskningsförslag
             </p>
             <h3 className="mt-2 font-serif text-xl font-bold">
@@ -352,28 +352,28 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
               {TAKT_TEXT[forslag.riskProfil.takt]}
             </h3>
             <div className="mt-3 flex flex-wrap gap-1.5 text-[10px] font-bold">
-              <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold">
+              <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 ${GULD_TEXT}`}>
                 {forslag.innehav.length} innehav
               </span>
-              <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold">
+              <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 ${GULD_TEXT}`}>
                 Total vikt {talText(
                   forslag.innehav.reduce((summa, i) => summa + (Number.isFinite(i.vikt) ? i.vikt : 0), 0) * 100,
                   1,
                 )} %
               </span>
-              <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold">
+              <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 ${GULD_TEXT}`}>
                 Max {talText(forslag.riskProfil.maxPerAktie * 100, 0)} % per aktie
               </span>
-              <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold">
+              <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 ${GULD_TEXT}`}>
                 Underlag {datumText(forslag.skapad)}
               </span>
               {forslag.poangbas === "akm2" && (
-                <span className="rounded-full border border-gold/40 bg-gold/15 px-2.5 py-1 text-gold">
+                <span className={`rounded-full border border-gold/40 bg-gold/15 px-2.5 py-1 ${GULD_TEXT}`}>
                   Poängbas AKM2 (moduler V21+ · akm2-2026)
                 </span>
               )}
               {forslag.ersattningar.length > 0 && (
-                <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold">
+                <span className={`rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 ${GULD_TEXT}`}>
                   {forslag.ersattningar.length} ersättningsförslag
                 </span>
               )}

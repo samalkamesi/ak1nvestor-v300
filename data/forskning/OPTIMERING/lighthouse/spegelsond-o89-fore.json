@@ -1,0 +1,113 @@
+{
+  "fas": "fore",
+  "bas": "http://localhost:3000",
+  "datum": "2026-09-19T11:29:55.985Z",
+  "speglar": {
+    "en": {
+      "url": "http://localhost:3000/en/kurser",
+      "vidLast": {
+        "vyHojd": 844,
+        "dokHojd": 10682,
+        "kurstipsWrapper": {
+          "klass": "mt-6",
+          "topPx": 596,
+          "hojdPx": 364,
+          "underVeck": false,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 427,
+          "barn": 24
+        },
+        "kurstipsSektion": {
+          "klass": "rounded-xl border border-gold/30 bg-card p-4",
+          "topPx": 596,
+          "hojdPx": 364,
+          "underVeck": false,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 427,
+          "barn": 23
+        },
+        "siffreband": {
+          "klass": "marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10",
+          "topPx": 7282,
+          "hojdPx": 958,
+          "underVeck": true,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 593,
+          "barn": 25
+        }
+      },
+      "efterScroll": {
+        "kurstips": {
+          "hojdPx": 364,
+          "textLangd": 427,
+          "lankar": 3,
+          "kort": 3
+        },
+        "siffreband": {
+          "hojdPx": 958,
+          "textLangd": 593,
+          "lankar": 0,
+          "kort": 0
+        },
+        "dokHojdEfter": 10465
+      },
+      "hojdDriftPx": 217
+    },
+    "ar": {
+      "url": "http://localhost:3000/ar/kurser",
+      "vidLast": {
+        "vyHojd": 844,
+        "dokHojd": 10447,
+        "kurstipsWrapper": {
+          "klass": "mt-6",
+          "topPx": 524,
+          "hojdPx": 344,
+          "underVeck": false,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 426,
+          "barn": 24
+        },
+        "kurstipsSektion": {
+          "klass": "rounded-xl border border-gold/30 bg-card p-4",
+          "topPx": 524,
+          "hojdPx": 344,
+          "underVeck": false,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 426,
+          "barn": 23
+        },
+        "siffreband": {
+          "klass": "marin-panel relative overflow-hidden rounded-3xl p-6 sm:p-10",
+          "topPx": 7096,
+          "hojdPx": 909,
+          "underVeck": true,
+          "contentVisibility": "visible",
+          "containIntrinsicSize": "none",
+          "textLangd": 477,
+          "barn": 25
+        }
+      },
+      "efterScroll": {
+        "kurstips": {
+          "hojdPx": 344,
+          "textLangd": 426,
+          "lankar": 3,
+          "kort": 3
+        },
+        "siffreband": {
+          "hojdPx": 909,
+          "textLangd": 477,
+          "lankar": 0,
+          "kort": 0
+        },
+        "dokHojdEfter": 10547
+      },
+      "hojdDriftPx": 100
+    }
+  }
+}

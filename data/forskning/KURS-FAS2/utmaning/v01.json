@@ -1,0 +1,21 @@
+{
+  "kurs": "v01",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv varför intäktsraden kallas föräldern till allt annat: vilka tre barn till intäktsraden nämner kapitlet (vinst, utdelning, eget kapital)?\n2. Kapitlet sammanfattar tre sätt att skaffa tillväxt utan att affären blev bättre: tillväxt kan köpas, lånas eller bokföras. Vad motsvarar varje sätt i praktiken (förvärv, prissänkningar, engångsintäkter)?\n3. V01 kräver alltid sällskap enligt kapitlet — av vilka två håll (marginaler, diversifiering), och vad riskerar en ensam tillväxtsiffra att dölja?\n4. Varför är försäljningstillväxten den enklaste indikatorn att verifiera själv i resultaträkningen? Förklara hur årets och förra årets siffra står i förhållande till varandra."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Öppna rätt resultaträkning: koncernens eller moderbolagets? Förklara varför kapitlet insisterar på koncernen — och vad publikationen Årsredovisningen börjar med.\n2. Skriv upp formeln för årstillväxten: (året − förra) ÷ |förra| × 100 %. Varför står absolutbeloppet kring förra året i nämnaren?\n3. Noten till intäkterna (ofta not 1–3) delar upp intäkterna på Sverige och utlandet — vad kan du läsa ut där om tillväxtens karaktär?\n4. Två sista kontroller: var avslöjar årsredovisningen att tillväxten var ett förvärv — och var hittar du siffrorna till en 5-årskurva?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Ett bolag visar +20 % tillväxt efter ett stort uppköp. Vilken fråga ställer kapitlet för att skilja förvärvstillväxt från organisk — och var i förvaltningsberättelsen hittar du svaret?\n2. +10 % kan vara 10 % fler sålda enheter eller 10 % högre priser. Förklara för dig själv varför de två har olika hållbarhet trots samma siffra — och vilken not som skiljer dem åt.\n3. Volvos +16,6 % 2023 används som cykeltoppsexempel: vad ville kapitlet visa om hög tillväxt vid cykeltoppar — och varför räcker aldrig en enda variabel?\n4. Namnge de övriga fällorna i kapitlet (valuta, engångsintäkter och IFRIC-tolkningar) och var i noterna du kontrollerar var och en."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Vilken tillväxtzon ger 5 poäng i kärnans goldilocks-kurva — och vilket villkor på bruttomarginalen (≥ 30 %) måste dessutom vara uppfyllt annars blir det 4 poäng?\n2. Varför ger tillväxt över 45 % bara 4 poäng i kärnans kurva? Förklara hållbarhetsrabatten med egna ord.\n3. Träna på trappan: Sandvik TTM +23,7 % och Kambi TTM +13,5 % — vilka poäng ger kärnans kurva? Kontrollera mot tabellen.\n4. Kalkylatorns enklare trappa (≥ 30 % ger 5 p) skiljer sig från kärnans kurva — vilken av dem är det som poängsätter? Och vilken källrad kräver modellen dessutom för full poäng?"
+    }
+  ]
+}

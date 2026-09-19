@@ -1,0 +1,69 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-abb-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-19, omgång auto-s1-1789804748544)",
+  "rapport": "sa-laser-du-abb-q3-2026-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 67/71 maskinella kontroller gröna (rappdag + kalendergrannar + urvalslogik exakta; vågklasser 5/5; 25-cellersmatris 15/5/5 cell-för-cell; prisnivåer och nyckeltal 15/15 mot universumraden 2026-09-03; medianerna 10/10 EXAKTA mot byggtidens vintage 0e399f13 med projektets mediankonvention på n=12/n=106; datavaktens identitetstest och implicit EPS omräknade; övningsrutnätet 9/9 celler; samtliga ärlighetsrader om osatta fält korrekta), juridikgrind REN (2007:528 2 kap 5 § enda lagrum, alla verbträffar nekande/neutrala, ingen lagrumsblandning), 911 = 0 träffar/6 mönster/4 fält, internlänkar 12/12 HTTP 200 + extern IR-kalender 200. FYRA fynd: (F1) superlativet 'Sverigebörsens högsta resultattakt' falskt i filens egen vintage — fem svenska bolag högre (EQT 60,4 / H&M 50,5 / AZ 46,0 / Wallenstam 32,5 / Essity 31,5); ABB är dock HÖGST i industrigrenen (Alfa Laval 22,5 tvåa) ⇒ kirurgisk omskrivning till rätt population. (F2) volatilitet 25,9 % saknar källspår — ABB.ST.json redovisar σ 26 %/år. (F3) 'knappt hälften' aritmetiskt fel — 2,47/4,73 = 52,3 % är strax ÖVER hälften. (F4) readingMinutes 6 mot N5-kontraktet 2 023 ord/600 = 3. B1–B4 maskinella byten; C-poster förslag som kräver beslut.",
+  "anvandning": "Verkställ B-poster exakt (sök/ersätt i angivet fält — samtliga strängar maskinellt verifierade UNIKA i filen 2026-09-19; de två '25,9 kronor'-passagerna berörs INTE av B2). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare (s4) eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "body (Den pedagogiskt viktigaste läsningen)",
+      "gammalt": "ABB kombinerar **Sverigebörsens högsta resultattakt** (nettoresultat plus 24,1 procent per år under källans fönster, ROE 32,6 mot medianens 20,3)",
+      "nytt": "ABB kombinerar **industrigrenens högsta resultattakt i universumet** (nettoresultat plus 24,1 procent per år under källans fönster, ROE 32,6 mot medianens 20,3)",
+      "orsak": "Superlativfel (seriens systemläxa): i vintage 0e399f13 har fem svenska bolag högre resultatCAGR5ar än ABB:s +24,1 %/år — EQT 60,4, H&M 50,5, AstraZeneca 46,0, Wallenstam 32,5, Essity 31,5. ABB är däremot HÖGST i hela industrigrenen (alla länder; Alfa Laval 22,5 tvåa) — superlativen behålls men inom rätt population. Strängen verifierad unik"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "body (Vad motorn mäter just nu)",
+      "gammalt": "Volatiliteten mättes till **25,9 procent per år** med svagt avtagande trend",
+      "nytt": "Volatiliteten mättes till **26 procent per år** med svagt avtagande trend",
+      "orsak": "Källspårbarhet: ABB.ST.json redovisar 'σ 26 %/år' i såväl bullets som motivering; 25,9 har 0 träffar i det interna trädet. De båda '25,9 kronor'-passagerna (implicit EPS i datavakten och källblocket) berörs ej — strängen verifierad unik"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "body (Övning C)",
+      "gammalt": "2022 års resultatbas (2,47 miljarder) var knappt hälften av 2025 års (4,73)",
+      "nytt": "2022 års resultatbas (2,47 miljarder) var strax över hälften av 2025 års (4,73)",
+      "orsak": "Aritmetik: 2,47/4,73 = 52,3 % — strax ÖVER, inte under, hälften (hälften av 4,73 = 2,365). Strängen verifierad unik"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": "\"readingMinutes\": 6",
+      "nytt": "\"readingMinutes\": 3",
+      "orsak": "N5-systematiken (Nordea-precedensen B1): ord/600 avrundat = läsminuter. Bodyn 2 023 ord ⇒ 3. Strängen verifierad unik"
+    },
+    {
+      "id": "C1",
+      "typ": "beslut",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "publishedAt",
+      "notis": "2026-10-16 (rappdag −4 dagar) — rimligt publiceringsförslag, men seriekonventionen varierar (Volvo-paketet bär skapandedatumet 09-15). Ingen ändring föreslås; publiceringstidpunkten är kundens beslut (R2)",
+      "orsak": "Konventionsfråga, ej fel"
+    },
+    {
+      "id": "C2",
+      "typ": "beslut",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "body (börsvärdesmeningen)",
+      "notis": "'börsens tyngsta industriposter' är grönt mot byggtidens vintage (ABB 1 663 mdr industritopp; Atlas Copco 984 tvåa). Dagens fil (195 bolag) bär Embraer 13 200 mdr i grenen (09-18-tillskott, BRL/ADR-redovisning) — textens anknytning till insamlingen 09-03 gör påståendet korrekt i sitt sammanhang; noteras vid eventuell framtida uppdatering",
+      "orsak": "Tidsbestämt sant; ingen ändring"
+    },
+    {
+      "id": "C3",
+      "typ": "beslut",
+      "fil": "sa-laser-du-abb-q3-2026.json",
+      "falt": "body (medianblocket)",
+      "notis": "Universumet har vuxit 115 → 195 sedan byggtiden (industri 12 → 18). Textens datering '2026-09-15, tolv industriaktier' + '106 bolag med data' låser basen korrekt — vid nästa datainsamling bör medianer och n omräknas om paketet uppdateras",
+      "orsak": "Underhållsnotis till paketägaren; ingen ändring i nuläget"
+    }
+  ]
+}

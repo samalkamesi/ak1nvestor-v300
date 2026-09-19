@@ -1,0 +1,25 @@
+{
+  "kurs": "v13",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv vad som menas med att patent är \"en vallgrav byggd av tid\": vad är det som ska hinna tjänas in medan konkurrenterna hålls borta?\n2. Kapitlet säger att moat-frågan aldrig är \"finns innovation här?\" — vilka två frågor om konkurrenterna och tiden ska du ställa i stället?\n3. Varför är en fabrik inget svar enligt kapitlet (den kan byggas), och varför är goodwill det ännu sämre exemplet? Beskriv goodwill med kapitlets egna ord som bokfört förvärvspris.\n4. Kontrollera förståelsen: vad kostar det konkurrenterna att ta sig över vallgraven — och varför räcker innovationskraft ensam aldrig som moat-bevis?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. I noten om immateriella anläggningstillgångar ska du läsa posterna, inte summan — räkna upp posterna kapitlet listar (patent, licenser, utvecklingskostnader i programvara, rättsverkliga avgifter) — och varför står goodwill som separat rad?\n2. Förvaltningsberättelsens FoU-avsnitt ger inriktning, antal patent och pipeline för läkemedel/biotech — varför kräver kapitlet källkritik på bolagets egna uppgifter om patentantalet?\n3. Resultaträkningens FoU-kostnad per år kallas inputen — vad är det moaten ska visa att kostnaden producerar?\n4. Förklara IFRS-regeln som gör noten sned: vad händer med internt skapade patent och varumärken, och var läser du den organiska IP-ytan i stället?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Träna sekvensen: koppla varje bolag till sin mekanism — Ericsson (licensierat), AstraZeneca (utlöpningstyrt), Atlas Copco (teknikportfölj), Nintendo (evig rättighet) — och förklara etiketterna.\n2. Ericsson visar IP som intäktsrad: vad är standardpatent (SEP) i mobilteknik, och vad visar noterna om IPR-royalties om att patentportföljen själv säljs?\n3. Varför läses AstraZeneca alltid med kalender — vad händer när läkemedelspatentet löper ut (generika), och vilken roll spelar pipelinen i förvaltningsberättelsen?\n4. Hur gör Atlas Copcos tjänste- och reservdelsflöden vallgraven bredare än patenttiden själv — och varför löper Nintendos figuruniversum (upphovsrätt + varumärke) aldrig ut?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Varför är patentantal i sig inget skydd? Räkna upp de tre faktorer kapitlet listar — kvalitet, patentfamiljens storlek och vilka jurisdiktioner som täcks — och förklara varför ett amerikanskt patent inte skyddar Europa.\n2. Kontrollera tiden: grovt hur många år från ansökan löper ett patent, vilken bransch har förlängningsvägar, och varför ska du räkna kvarvarande tid i stället för bestånd?\n3. En balansräkning tyngd av goodwill säger enligt kapitlet att moaten köpts — varför är goodwill ändå inget skydd, utan köpepriset på förvärvade bolag?\n4. Skilj på input och output: vad är FoU-kostnadens output i marginalen (koppla V07 Bruttomarginal), och varför är \"patent pending\" noll skydd?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Hur stor vikt bär V13 i kategorin Moat, och ur vilka två källor poängsätts indikatorn kvalitativt (noten om immateriella tillgångar och förvaltningsberättelsen)?\n2. Universumets moat-proxyfält — bruttoMarginalMedel5ar, bruttoMarginalSpread5ar och roeMedel5ar — är ifyllda hos hur många av de 195 bolagen, och vad är moatens ekonomiska signatur i siffror?\n3. Förklara indelningslogiken \"V07 Bruttomarginal är beviset, V13 är förklaringen\": när bär poängen enligt kapitlet?\n4. Utan förklaring i noten kan en hög bruttomarginal vara två andra saker — vilka (cykel eller pristäkt tillfällighet), och vilken indikator fångar cykeln (V12)?"
+    }
+  ]
+}

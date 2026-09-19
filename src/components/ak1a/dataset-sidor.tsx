@@ -356,7 +356,12 @@ export function DatasetIndexVy({
     <SeoPageShell breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
       <StrukturData data={datasetJsonLd(lang, medianer)} id="jsonld-dataset" />
 
-      <h1 className="font-serif text-4xl font-bold">{t("dataset.titel")}</h1>
+      {/* Brandgenomgång P2 (våg 195): H1 som löfte i stället för filnamn,
+          underrubriken bär omfånget + juridikgrunden. */}
+      <h1 className="font-serif text-4xl font-bold">{t("dataset.h1")}</h1>
+      <p className="mt-2 text-muted-foreground">
+        {t("dataset.underrubrik", { nBolag: medianer.totalt.nBolag })}
+      </p>
       <p className="mt-2 text-sm text-muted-foreground">
         {t("dataset.datering", { hamtat: medianer.hamtat ?? "—" })}
       </p>
@@ -393,6 +398,25 @@ export function DatasetIndexVy({
         </div>
 
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
+      </section>
+
+      {/* Brandgenomgångens CTA-gap (våg 201): dataset-ytan lämnade besökaren
+          utan nästa steg — primär kursväg med samma guldknapp som social
+          proof. Server-renderad på statisk sida (inget hydrerings-pop-in);
+          prefetch={false} enligt o17-precedensen (tunga kursrutter hämtas
+          vid klick, inte i initial last). */}
+      <section className="mt-10 rounded-lg border border-gold/20 bg-card p-6 text-center">
+        <h2 className="font-serif text-2xl font-bold">{t("dataset.cta.rubrik")}</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+          {t("dataset.cta.text")}
+        </p>
+        <Link
+          href={prefix + "/kurser"}
+          prefetch={false}
+          className="btn-guld-signatur mt-5 inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
+        >
+          {t("dataset.cta.knapp")}
+        </Link>
       </section>
 
       <MetodOchDisclaimer lang={lang} />

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Horisont, RiskNiva, RiskProfil, TillvaxtTakt } from "@/lib/portfolj-forskning/typer";
-import { HZ_VISNING, RISKNIVA_TEXT, TAKT_TEXT, talText } from "./vag-stil";
+import { GULD_TEXT, HZ_VISNING, RISKNIVA_TEXT, TAKT_TEXT, talText } from "./vag-stil";
 
 // ═══════════════════════════════════════════════════════════
 // RISKVAL — steg 1: risknivå (konservativ/balanserad/tillväxt),
@@ -178,7 +178,7 @@ export function RiskvalPanel({
       <div className="bg-card p-4 sm:p-6">
         {/* ── Steg 1: Risknivå ── */}
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold">Steg 1 — Risknivå</p>
+          <p className={`text-[10px] font-bold uppercase tracking-[0.18em] ${GULD_TEXT}`}>Steg 1 — Risknivå</p>
           <div className="mt-2 grid gap-2 sm:grid-cols-3">
             {NIVA_KORT.map((k) => {
               const arVald = niva === k.id;
@@ -201,7 +201,7 @@ export function RiskvalPanel({
                     </span>
                     <span className="font-serif text-sm font-bold">
                       {RISKNIVA_TEXT[k.id]}
-                      {arVald && <span className="ml-1.5 text-gold" aria-hidden>✓</span>}
+                      {arVald && <span className={`ml-1.5 ${GULD_TEXT}`} aria-hidden>✓</span>}
                     </span>
                   </span>
                   <span className="mt-1.5 block text-xs leading-relaxed text-muted-foreground">
@@ -224,7 +224,7 @@ export function RiskvalPanel({
 
         {/* ── Steg 2: Tillväxttakt ── */}
         <div className="mt-5">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold">Steg 2 — Tillväxttakt</p>
+          <p className={`text-[10px] font-bold uppercase tracking-[0.18em] ${GULD_TEXT}`}>Steg 2 — Tillväxttakt</p>
           <div className="mt-2 grid gap-2 sm:grid-cols-3">
             {TAKT_VAL.map((t) => {
               const arVald = takt === t.id;
@@ -246,7 +246,7 @@ export function RiskvalPanel({
                     </span>
                     <span className="font-serif text-sm font-bold">
                       {TAKT_TEXT[t.id]}
-                      {arVald && <span className="ml-1.5 text-gold" aria-hidden>✓</span>}
+                      {arVald && <span className={`ml-1.5 ${GULD_TEXT}`} aria-hidden>✓</span>}
                     </span>
                   </span>
                   <span className="mt-1.5 block text-xs leading-relaxed text-muted-foreground">
@@ -261,7 +261,7 @@ export function RiskvalPanel({
         {/* ── Sammanfattning av vald profil ── */}
         {profil && (
           <div className="mt-5 rounded-xl border border-gold/30 bg-paper p-4">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+            <p className={`text-[10px] font-bold uppercase tracking-widest ${GULD_TEXT}`}>
               Vald profil: {RISKNIVA_TEXT[profil.niva]} · {TAKT_TEXT[profil.takt]}
             </p>
             <div className="mt-2 grid grid-cols-5 gap-1.5">
@@ -272,7 +272,7 @@ export function RiskvalPanel({
                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                       {h.namn}
                     </p>
-                    <p className="tabular font-mono text-xs font-bold text-gold">{talText(v * 100, 0)} %</p>
+                    <p className={`tabular font-mono text-xs font-bold ${GULD_TEXT}`}>{talText(v * 100, 0)} %</p>
                     <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-gold/15">
                       <div className="h-full rounded-full bg-gold" style={{ width: `${Math.min(100, v * 100)}%` }} />
                     </div>

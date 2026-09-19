@@ -449,7 +449,18 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22: bokmastar (s6-u3) — SIST av 47 (svitharmoniseringens dokumentationsplikt).
+    // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här

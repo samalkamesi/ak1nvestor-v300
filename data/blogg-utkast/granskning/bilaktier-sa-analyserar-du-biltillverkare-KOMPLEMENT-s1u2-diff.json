@@ -1,0 +1,37 @@
+{
+  "granskat": "data/blogg-utkast/bilaktier-sa-analyserar-du-biltillverkare.json",
+  "granskadAv": "agentfabrik auto-s1-1789781115807-s1-u2 (2026-09-19)",
+  "rapport": "bilaktier-sa-analyserar-du-biltillverkare-KONTROLL-2026-09-19.md",
+  "relation": "KOMPLEMENT till u1:s huvudpaket bilaktier-sa-analyserar-du-biltillverkare-diff.json (B1 LVMH-superlativ, B2 readingMinutes, C1 'det dubbla', C2 förlusttrend, D1 publishedAt) — u1:s fynd konfirmerade oberoende i KONTROLL-rapporten; denna fil bär ENBART de tre poster u1:s granskning saknade. Verkställ u1:s diff FÖRST, sedan denna (inga söksträngar överlappar).",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — tilläggsposter till u1:s paket: A1: felstavning 'multipelar' i description (skall vara 'multipler') — den mest sökarsynliga ytan guiden har, och enda fynd som u1:s parallella granskning missade; C3: grammatisk kongruens i sammanfattningens första bullet; C4: källprecision 'över 20 procent' mot IEA:s egna 'grew by 20 %'. Alla söksträngar maskinverifierade unika (exakt 1 träff i filen, sond verktyg/_s1u2-bilaktier-verify.mjs).",
+  "anvandning": "Verkställ 'byt'-posten A1 exakt (sök/ersätt i description-fältet). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, ogranskad): dess description är KORREKT ('multiples') — A1 gäller ej spegeln; C4:s spegelinstruktion ('above 20 percent growth' → 'around 20 percent growth') följer med i posten om verkställs.",
+  "poster": [
+    {
+      "id": "A1",
+      "typ": "byt",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "description",
+      "gammalt": "kassa och multipelar.",
+      "nytt": "kassa och multipler.",
+      "orsak": "FELSTAVNING I SEO-YTAN: 'multipelar' är inte ett ord — plural av 'multipel' är 'multipler' (body:n stavar rätt: 'jämför aldrig multipler mellan bolag'). Description är det sökmotorer, delningsförhandsvisningar och listvyer bär — det mest synliga felet i hela utkastet, och det enda fynd u1:s parallella huvudgranskning (01:35Z) missade. Efter rättning 150 tkn (fortfarande inom spannet 120–155)."
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "body (Sammanfattningen — första bulleten)",
+      "gammalt": "Marginalhävstången är kärnriskerna:",
+      "nytt": "Marginalhävstången driver kärnriskerna:",
+      "orsak": "GRAMMATISK KONGRUENS: singularsubjekt ('hävstången är') möter plural predikativ ('kärnriskerna'). 'Driver' löser kongruensen och behåller betydelsen (body:n egen linje: 'kärnrisk är de fasta kostnaderna'). FRIVILLIGT men sammanfattningen är guidens mest citerade yta — u1:s granskning berörde ej denna bullet."
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "body (El-omställningen — en revisionsfråga, inte en berättelse)",
+      "gammalt": "över 20 procent tillväxt på ett år",
+      "nytt": "omkring 20 procents tillväxt på ett år",
+      "orsak": "KÄLLPRECISION: IEA Global EV Outlook 2026:s egna rubriksiffra är 'grew by 20 % globally' — utkastets 'över 20 procent' påstår strikt mer än källans avrundade tal. 'omkring' är källtroget och lika starkt. FRIVILLIGT — ingen faktafelklass, marginalen är ett avrundningssteg. Speglingsinstruktion: -en.json bär samma formulering ('above 20 percent growth' → 'around 20 percent growth') om verkställs. Webbkällor för denna kontroll: iea.org (Global EV Outlook 2026 executive summary) + electrek.co 2026-05-19."
+    }
+  ]
+}

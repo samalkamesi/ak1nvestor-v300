@@ -1,0 +1,25 @@
+{
+  "kurs": "v12",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Intäktsstabiliteten räknas som variationskoefficienten (CV): standardavvikelsen ÷ medelvärdet för nettoomsättningen över åren. Förklara för dig själv vad låg och hög CV säger om affären. 2. CV är skalfri — samma mått fungerar för Truecallers drygt 2 mdr som för Volvos drygt 500 mdr. Förklara varför kurvans form, inte storleken, är det som mäts. 3. Källraden frågar efter 5 års nettoomsättning — men universumet bär fyra bokförda år (2022–2025). Hur hanterar beräkningen det? 4. Vilka tre drag kännetecknar en affär med hög CV: cykel, projektberoende eller affär i omvandling? Förklara hur de visar sig i en intäktskurva."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Var i årsredovisningen hittar du nettoomsättningen per år — och var står femårsöversikten oftast? 2. Kalkylbladet: räkna medelvärdet, sedan standardavvikelsen, sedan kvoten med =STDAV.P(...)/MEDEL(...). Förklara varför STDAV.S, som delar med n−1, ger för hög CV. 3. Segmentnoten avgör vilken del av bolaget som svänger. Beskriv hur koncernens total-CV kan vara låg medan ett segment dansar. 4. Kontrollfrågan: är kurvan jämn och pekar den någonstans? Förklara varför CV är blind för riktning — en jämnt nedåtlutande kurva får också låg CV."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. SSAB:s serie 129/119/103/96 sjunker monotont fyra år — ändå poäng 3. Förklara: CV ser inte riktning, bara svängning. 2. AstraZeneca stiger 44/46/54/59 men straffas ändå med CV 11,7 % och poäng 3. Förklara varför stegig uppgång behandlas som stegig nedgång. 3. Kinneviks serie 0/1/0/0 ger CV 167,7 %. Varför är det ingen volatilitet på riktigt — vad är intäkten i ett förvaltningsbolag med dotterbolagsflöden? 4. H&M (224/236/234/228) och Sinch (28/29/29/27) är platta kurvor med CV 2,2 % och 2,5 %. Kontrollera deras poäng — och förklara vad Volvos 6,5 % avslöjar om lastbilscykeln."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. CV är blind för riktning — en jämnt sjunkande affär får fin poäng. Vilken granne läser du alltid tillsammans med V12 (V01 Försäljningstillväxt)? 2. Små absoluta tal ger extrem CV: förklara varför 0/1/0/0 är holdingbolagsbokföring, inte riktig volatilitet. 3. Förvärv böjer serien: organisk 60 plus köpt 40 kan se ut som tillväxtsvängning. Var kontrollerar du det? 4. Två till: varför kan utlandsintäkter i annan valuta böja kurvan utan att affären gjort det — och när lämnar kärnan V12 osatt (saknade serier, eller medelvärdet noll eller negativt)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Träna trösklarna: vilken poäng ger CV 2,2 %, 6,5 %, 11,5 % och 167,7 %? Kontrollera mot tabellen (5, 4, 3 och 1). 2. Motiveringstexten anger CV i procent och antal år — Omsättningens variationskoefficient X % över N år. Förklara varför antalet år spelar roll för tolkningen. 3. Stabilitetsparet: V10 frågar hur finansieringen bär en svacka, V12 hur sannolikt svackan är. Förklara kopplingen med egna ord. 4. Träna gränserna: Atlas Copco 8,4 % och Handelsbanken 8,6 % — vilken poäng ger trösklarna, och vilket CV-tal krävs för högsta poängen?"
+    }
+  ]
+}

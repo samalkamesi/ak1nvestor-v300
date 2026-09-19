@@ -1,0 +1,25 @@
+{
+  "kurs": "v16",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv vad V16 mäter: vad ska produktlanseringar kunna förändra (intäktskurvan), och vilka tre former nämner kapitlet (nya produkter, nästa generation, pipeline)?\n2. Avgränsa indikatorn: varför är katalysatorn inte en moat (V13–V15 frågar vad som håller konkurrenter borta) och inte tillväxten själv (V01 mäter det som redan hänt)?\n3. Vad är kärntanken i katalysatorkategorin — skillnaden mellan ett bolag som lever på det som redan lanserats och ett som har nästa intäktsvåg dokumenterad och daterad?\n4. Kontrollera förståelsen: vilka två egenskaper hos framtida händelser kräver indikatorn för att marknaden ska kunna prissätta dem (namngivna, daterbara)?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Var finns indikatorns råmaterial (kommande-event-avsnittet i förvaltningsberättelsen) — och vilken typ av datum gör händelserna användbara (kvartals- eller årsdatum)?\n2. Vad listar en pipelinetabell hos läkemedels- och teknikbolag (fas, indikation, förväntat beslutsdatum) — och vad lyder källraden (\"kommande lanseringar/pipeline\")?\n3. Varför väger en stor lansering i ett litet segment mindre — vilken not ger segmentbilden (V03), och vad visar kapitaliserade utvecklingskostnader (balanserad FoU = arbete på väg)?\n4. Träna kontrollfrågan: när är en lansering daterad och specifik (\"Q2\", namngiven produkt) och när är den vag? Vilket är katalysator och vilket är stämningsläge?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. AstraZeneca kallas den rena läroboken: vad gör pipelinetabellen (daterade beslutsdatum i förvaltningsberättelsen) till katalysatorer som kan bokföras i kalendern?\n2. Nintendo visar volymsvängningarna kring en lansering (nya generationer, kända serier): var läser du säljtal per titel (delårsrapporter), och vilken V12-effekt (CV) slår till?\n3. Volvo kommunicerar produktprogram (nya modeller, eldrivna linjer) med långa beslutsled: vad ger rapporterna (orderläge, modellprogram) — och hur skiljer sig läsningen från Nintendos?\n4. Truecaller är gränsfallet: varför är kontinuerlig produktutveckling utan datum (funktioner/premium-planer, mjuka lanseringar) förbättring — inte katalysator?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Förklara fällan \"lansering ≠ framgång\": vad säger katalysatorn (att något KOMMER) — och vad säger den inte (att det SÄLJER), med tanke på historiens låga träffsäkerhet?\n2. Bolagets egna ord om pipelinen är säljande till sin natur: hur skiljer du regulatoriskt förankrat material (V18) från marknadsföring?\n3. Vad menas med kontrollen \"prissatt redan?\" — varför är en välkommunicerad lansering som redan ligger i kursen mindre värdefull, och när är katalysatorn värd mest (när den är oväntad)?\n4. Cykelförväxling: varför är lastbils- och halvledarcykelns svängningar efterfrågekatalysatorer (V12) — inte produktkatalysatorer? Förklara skillnaden med egna ord."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Hur stor vikt bär V16 och i vilken kategori (Katalysator)? Varför blir poängen \"Osatt\" i kärnans gemensamma gren (scorKvalitativ) — vad ingår inte i P1:s nyckeltalskontrakt?\n2. Vem sätter poängen enligt modellen (analytikern efter läsningen)? Förklara vad modellen ger (strukturen) och vilka två sätt nämns för manuell poängsättning (kalkylatorn eller via modul).\n3. Träna poängskalan: vad kännetecknar 0 (inget namngivet framåt) och vad krävs för 5 (daterad pipeline i kärnsegmentet)?\n4. Kontrollera att du kan återge dokumentationen: hur motiverar kärnan att indikatorn är kvalitativ (bedöms ur förvaltningsberättelsens kommande lanseringar/pipeline, inte ur nyckeltalskontraktet)?"
+    }
+  ]
+}

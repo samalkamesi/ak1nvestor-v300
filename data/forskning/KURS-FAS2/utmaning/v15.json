@@ -1,0 +1,25 @@
+{
+  "kurs": "v15",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv definitionen: när finns en nätverkseffekt — vad gör varje ny användare för alla som redan är där, och hur växer värdet i förhållande till användarantalet?\n2. Vad säger Metcalfes tumregel (värdet proportionellt mot n²), och vilken justering gör kapitlet för praktiken (oftast långsammare, men ändå överlinjärt)?\n3. Varför kallas nätverkseffekten den enda moat som förstärker sig själv — vad måste konkurrenten göra som är svårare än att bygga en bättre produkt (flytta hela skaran samtidigt)?\n4. Räkna upp de tre sorterna med kapitlets exempel: direkta, tvåsidiga och data-nätverk — och minns modellens källrad: kundantal över tid."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilka KPI:er letar du efter i förvaltningsberättelsens KPI-sektion (användare, MAU, abonnenter, handelsvolym) — och varför ska serien läsas flera år bakåt, inte bara senaste året?\n2. Nätverket växer, men monetiseras det? Koppla intäkt per kund/brukare till V02 ARR-tillväxt och förklara vad kontrollen avslöjar.\n3. Vad är take rate på en marknadsplats (andelen av handelsvolymen som blir intäkt), och vad kan en sjunkande take rate med växande volym betyda enligt kapitlet (köpt tillväxt)?\n4. Varför kontrollerar du båda sidorna på en tvåsidig plattform var för sig (en tom sida är ingen marknadsplats), och varför visar retention/churn nätverkets hållfasthet bättre än hur många som provat?"
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Ställ träningsfrågan till varje bolag: \"Gör användare nummer N+1 tjänsten bättre för användare 1 till N?\" — hur faller Truecaller, Microsoft/Apple, Sinch och Evolution ut?\n2. Beskriv Truecallers slutna, självförstärkande krets: vad rapporterar användarna in (spamnummer), och varför börjar nykomlingen med en tom databas?\n3. Förklara förväxlingen ekosystem mot nätverk med Microsoft/Apple: varför handlar deras moat om switchkostnad (filer, appar, arbetsflöden), och hur mäts de två moat-sorterna olika (låsning mot deltagarantal)?\n4. Sinch har infrastruktur-skala (driftsäkerhet, leverantörsdjup) och Evolution licenser, croupierutbildning och kapacitet — varför ger de ändå inte hög V15-poäng?"
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Hur tar du dig ur buzzword-fällan? Vilken kausalitet måste bevisas (användare → bättre produkt) innan du godtar ordet?\n2. Varför bygger subsidierade anslutningar (rabatter, bonusar) ingen självgående cirkel — och vad händer med churnen när subventionen slutar?\n3. Nätverk kan vända: varför kan samma mekanism som bygger snabbt också tömma snabbt när värdet faller, och vilket mått kallas nätverkets säkerhetsräcke (retention)?\n4. Förklara skillnaden nätverks-moat mot intäkts-moat: vad är ett nätverk utan intäkt per användare och take rate (en kostnad med publik), och varför gäller sällan n² fullt ut i värderingen (värde per användare tilltar oftast log-linjärt)?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Hur stor vikt bär V15 i kategorin Moat, och vilken källrad poängsätts den ur (\"Förvaltningsberättelsen; kundantal över tid\")? Vilket krav ställs på kundantalsserien för toppoäng (organisk, icke-subsidierad)?\n2. Vad ska ett mognat nätverk synas i enligt modellen (stabil marginal och växande intäkt per användare), och vad fångar moat-proxyfälten (marginalens medelvärde och spridning över fem år)?\n3. Förklara kopplingarna: varför är V02 ARR nätverkens naturliga intäktsform, och vad menas med att många kunder ger en tunn nätlösning (V03)?\n4. Varför är data-nätverkets innehåll ofta skyddat som IP (V13 Patent & IP)? Förklara hur mekanism och utfall hänger ihop i poängsättningen."
+    }
+  ]
+}

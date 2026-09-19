@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789804529817-s1-u3 ANDRA INSTANS (2026-09-19)",
+  "rapport": "forsakringsaktier-sa-analyserar-du-forsakringsbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: '2025 var koncernens bästa år med nettoresultatet 1 998 miljoner euro' binder rekordet till nettoresultatet, men universumets egen serie är 2 107 (2022, bär Nordea-exittens realisationsvinster) → 1 323 → 1 154 → 1 998 (2025) M€ — 2022 är högre; påståendet '73 procent upp' är sant (1 154→1 998). Rättningen bevarar hela normaliseringsargumentet (toppår ⇒ konsensen ned ⇒ forward 16,2 > trailing 14,7). B2: finansmedianen driven — textens 'median 2,47 och 15,3' var vintage-sant (byggarens KVD assertade exakt dessa mot 09-16-filen) men dagens universum (finans n=20) ger P/B 2,57 / ROE 15,5; 'båda koncernerna avkastar klart över mittläge' håller även med dagens tal. B3: readingMinutes 2 → 7 (1 379 ord textrensat = 690 ord/min mot 55 publicerades max 240, median 171; round(1379/200); sjunde fallet i klassen — byggd 09-16 före 09-17-domen). I övrigt GRÖNT: källtalsparitet 28/28 mot bolagsunivers.json (Sampo ROE 24,1/PB 3,38/PE 14,7/forward 16,2/skuld-EK 0,35/netto 1 998/+73 %/0,36 €/3,7 %/18,16/2,55/beta 0,24; Allianz ROE 19,6/PB 2,47/PE 14,6/0,51/FCF 16,7/136,0/33,7/17,10 €/3,8 %/55 %/11,40→17,10 +14,5 %/EBT-gap 2,1 mdr; Berkshire 12,6 + serien −22,8/96,2/89,0/67,0; KO beta 0,34), aritmetik 14/14, externa källor korsbelagda 2026-09-19 via oberoende webbsökning (Allianz CR 92,2 (93,4) och solvens 218 % bekräftade; Sampo FSR 83,6 (84,3)/1 485 M€/+12 % bekräftat; allianz.com svarar 403 mot maskinell hämtning = bot-skydd, ej död länk), juridik 2007:528 ren (26 mönster × 3 ytor = 0; rådglossor 0; disclaimer exakt sist), 911 = 0/6 mönster i båda språkversionerna, 17/17 interna länkar HTTP 200 mot localhost (kursankaret se-06-finanssektorn lever), struktur grön (8 H2, title 52/60, desc 154/155, 0 mjuka bindestreck).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga söksträngar maskinverifierade unika = 1 träff). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, Ö16) bär systerformuleringarna till B1 ('2025 was the group's best year (net result 1,998 million euro, up 73 percent)'), B2 ('against the finance branch median 2.47 and 15.3') och B3 (rm 2, 1 369 ord ⇒ 7) samt C1 ('If P&C landed 2025 at 83.6', 'If 83.6 against Allianz 92.2', källa-raden 'If combined ratio 83.6') — speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+      "falt": "body (Räntan, rekordåret och multipeln)",
+      "gammalt": "men 2025 var koncernens bästa år med nettoresultatet 1 998 miljoner euro, 73 procent upp, och konsensen normaliserar nedåt",
+      "nytt": "men 2025 var koncernens bästa år sedan Nordea-gångarna med nettoresultatet 1 998 miljoner euro, 73 procent upp, och konsensen normaliserar nedåt",
+      "orsak": "REKORDBINDNINGEN: universumets serie 2022–2025 är 2 107/1 323/1 154/1 998 M€ — 2022 (2 107) är HÖGRE än 2025 (1 998) och bär Nordea-exittens realisationsvinster (noteringens egna ord); 'bästa år med nettoresultatet 1 998' motsägs alltså av råa serien. Kvalificeraren binder rekordet rätt och bevarar hela argumentet (basåret är en topp ⇒ konsensen normaliserar ⇒ forward 16,2 över trailing 14,7 — allt sant och kvar). Alternativ minimal variant: 'ett toppår' i stället för 'koncernens bästa år'. Söksträngen unik (1 träff). Speglas i -en.json: 'but 2025 was the group's best year (net result 1,998 million euro, up 73 percent)' → 'but 2025 was the group's best year since the Nordea divestment gains (net result 1,998 million euro, up 73 percent)'."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+      "falt": "body (Reserverna — balansräkningens bedömningar)",
+      "gammalt": "mot finansgrenens median 2,47 och 15,3",
+      "nytt": "mot finansgrenens median 2,57 och 15,5",
+      "orsak": "AKTUALISERING: byggarens KVD (verktyg/_s3u2o6-kvd-forsakring.mjs rad 103–104) assertade 2,47/15,3 mot universumet SOM DET VAR 2026-09-16 och passerade — vintage-sant vid bygget. Universumet har vuxit (finans n=20 i dagens träd, 195 bolag totalt) och medianen drivit till P/B 2,57 / ROE 15,47. 'Båda koncernerna avkastar alltså klart över grenens mittläge' håller även med dagens tal (ROE 24,1/19,6 > 15,5); endast de två medianerna behöver uppdateras. Första dokumenterade fallet av aggregatdrift i ett publiceringsklart utkast (flagga F3 till universumägaren). Söksträngen unik (1 träff). Speglas i -en.json: 'against the finance branch median 2.47 and 15.3' → 'against the finance branch median 2.57 and 15.5'."
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "7",
+      "orsak": "1 379 ord textrensat / 2 min = 690 ord/min — samtliga 55 publicerade max 240 (median 171). Bloggfamiljens konvention round(ord/200) = 7. Sjunde dokumenterade fallet i klassen (byggd 09-16, före substansrabatt-domen 09-17): substansrabatt, halvledar-B1, hälsa-B4, konsumentaktier-B4, försvar-B2, detailhandel-B2. Spegeln -en: 1 369 ord, rm 2 (685 ord/min) → 7"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+      "falt": "body (Combined ratio — den tekniska termometern) + Sammanfattningen + Källor",
+      "gammalt": "If P&C landade 2025 på 83,6 — 0,7 procentenheter bättre än året innan — med tekniskt resultat 1 485 miljoner euro, tolv procent upp",
+      "nytt": "Sampokoncernen landade 2025 på 83,6 — 0,7 procentenheter bättre än året innan — med tekniskt resultat 1 485 miljoner euro, tolv procent upp",
+      "orsak": "ETIKETT: 83,6 (84,3), −0,7 pp, 1 485 M€ och +12 % är SAMPO-KONCERNENS tal enligt FSR ('Sampo Group … combined ratio … 83.6 per cent (84.3)'); If P&C-segmentets eget CR är 83,4 (från 84,8) enligt Ifs SFCR 2025 — 0,2 pp:s delta. Guiden definierar själv koncernen som 'If P&C, Topdanmark och Hastings'. Siffrorna är sanna på koncernnivå och berättelsen (16,4 mot 7,8 per hundra) oförändrad ⇒ förslag, ej fel. Sammanfattningen: 'If 83,6 mot Allianz 92,2' → 'Sampo 83,6 mot Allianz 92,2'. Källa-raden: 'If combined ratio 83,6' → 'koncernens combined ratio 83,6'. Speglas i -en ('If P&C landed 2025 at 83.6' → 'The Sampo Group landed 2025 at 83.6' m.m.). FRIVILLIGT — ägaren beslutar"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "forsakringsaktier-sa-analyserar-du-forsakringsbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { headRorByggyta } from "./prod-synk.mjs";
+import { headRorByggyta, bordeAvstaGoodHeadReset } from "./prod-synk.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let pass = 0;
@@ -76,6 +76,39 @@ kontroll("17. felgrenen anropar headRorByggyta", kalla.includes("const rorByggyt
 kontroll("18. revert-grenen är villkorad (AVSTÅS-väg finns)", kalla.includes("revert AVSTÅS"));
 kontroll("19. ombygg-utan-revert skriver audit", kalla.includes("deploy_ombygg_utan_revert"));
 kontroll("20. gamla revert-vägen bevarad för byggyta-HEAD", kalla.includes('git(["revert", "HEAD", "--no-edit"])'));
+
+// ── 4) O79: bordeAvstaGoodHeadReset — klassificering ─────────────────────
+// (importeras på rad 18 tillsammans med headRorByggyta) — o72:s köpost:
+// fallbacken `reset --hard goodHead` ska avstå när HELA kedjan är oskyldig.
+kontroll("21. O79: HEAD ren + kedja ren ⇒ AVSTÅ reset (köpostens kärna)", bordeAvstaGoodHeadReset({ rorByggyta: false, kedjaRorByggyta: false }) === true);
+kontroll("22. O79: HEAD ren + kedja smutsig ⇒ false (reset läker till goodHead)", bordeAvstaGoodHeadReset({ rorByggyta: false, kedjaRorByggyta: true }) === false);
+kontroll("23. O79: revert-vägen (HEAD rör byggyta) ⇒ false — oförändrat", bordeAvstaGoodHeadReset({ rorByggyta: true, kedjaRorByggyta: false }) === false);
+kontroll("24. O79: båda smutsiga ⇒ false — oförändrat", bordeAvstaGoodHeadReset({ rorByggyta: true, kedjaRorByggyta: true }) === false);
+
+// ── 5) O79: INTEGRATION — verkliga kedjor ur git-historiken ──────────────
+function kedjeFiler(fran, till) {
+  const ut = execFileSync("git", ["diff", "--name-only", `${fran}..${till}`], { cwd: REPO, encoding: "utf8" });
+  return ut.split("\n").map((s) => s.trim()).filter(Boolean);
+}
+// 3c78e03f (o47-migreringen) → 72682834 (dess revert): kedjans samlade
+// skillnad = enbart migreringens verktyg/+data/-filer = REN (19 filer).
+const renKedja = kedjeFiler("3c78e03f", "72682834");
+kontroll("25. O79: verklig ren kedja 3c78e03f..72682834 ⇒ avstå-beslut STYRKER (headFiler ren + kedja ren)", headRorByggyta(renKedja) === false && bordeAvstaGoodHeadReset({ rorByggyta: false, kedjaRorByggyta: headRorByggyta(renKedja) }) === true, `${renKedja.length} filer, alla utanför byggytan`);
+// 72682834 → 18c2d747 (s7-u1:s trädbantning): kedjan bär 40 src/-filer =
+// SMUTSIG — reset goodHead ska behållas (äldre gärningsman kan finnas).
+const smutsigKedja = kedjeFiler("72682834", "18c2d747");
+kontroll("26. O79: verklig smutsig kedja 72682834..18c2d747 ⇒ avstå-beslut EJ styrkt", bordeAvstaGoodHeadReset({ rorByggyta: false, kedjaRorByggyta: headRorByggyta(smutsigKedja) }) === false, `${smutsigKedja.filter((f) => f.startsWith("src/")).length} src-filer i kedjan`);
+// Kedjan med gärningsman + oskyldig HEAD: kombination som BEVISAR varför
+// HEAD-checken ensam inte räcker — kedje-mätet är det sanna oskulds-måttet.
+kontroll("27. O79: oskyldig HEAD (3c78e03f) på smutsig kedja ⇒ reset kvar (läker prod)", headRorByggyta(migreringsFiler) === false && bordeAvstaGoodHeadReset({ rorByggyta: false, kedjaRorByggyta: headRorByggyta(smutsigKedja) }) === false);
+
+// ── 6) O79: KÄLLKONTROLL — felgrenens guard + disjunktion ────────────────
+kontroll("28. O79: catch-grenen mäter kedjan (git diff --name-only)", kalla.includes('"diff", "--name-only"'));
+kontroll("29. O79: avstå-reset skriver audit deploy_avstar_goodhead_reset", kalla.includes("deploy_avstar_goodhead_reset"));
+kontroll("30. O79: reset-kommandot kvar för smutsig kedja", kalla.includes('git(["reset", "--hard", goodHead])'));
+kontroll("31. O79: patch-läge och o72-block DISJUNKTA (} else { före O72-vakten)", kalla.includes("} else {\n      // O72 blind-revert-vakten"));
+kontroll("32. O79: patch-lägets lyckade ombygg lämnar felgrenen (O79-kommentaren)", kalla.includes("patch-lägets lyckade ombygg lämnar felgrenen HÄR"));
+kontroll("33. O79: kedja obestämbar ⇒ gammalt beteende (catch-kommentaren)", kalla.includes("obestämbar ⇒ headRorByggyta(null) = true = gammalt beteende */ }"));
 
 // ── SVIT ─────────────────────────────────────────────────────────────────
 console.log(`\nSVIT testa-prod-synk-revertgrid: ${pass} PASS, ${fail} FAIL`);

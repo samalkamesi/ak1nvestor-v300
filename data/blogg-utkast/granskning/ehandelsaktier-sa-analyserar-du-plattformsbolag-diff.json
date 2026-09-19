@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743-s1-u2 OM-DISPATCH (2026-09-19)",
+  "rapport": "ehandelsaktier-sa-analyserar-du-plattformsbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1 readingMinutes 2 → 5 (1 074 ord textrensat; 537 ord/min vid nuvarande; TIONDE fallet i klassen). B2 FALSK UNIVERSUMS-SUPERLATIV: 'med universumets högsta tillväxttakt: 48,1 procent' — 8 bolag i byggtidens vintage (d27b727b) har högre TTM-tillväxt (INDU-C 1 198 %, KINV-B 164 %, INVE-B 117 %, NVDA 106 %, VAR.OL 103 %, PLTR 93 %, CVX 54 %, AMD 50 %), idag 11; livsmedel-B1–B3:s felklass, fjärde fallet. B3 AMAZONS FCF-ORSAK FEL MOT KÄLLAN: 'lager och logistik binder kapital' — universumnoten: 'FCF negativt TTM (−11,6 mdr USD: OCF 161,4 − capex 173,0 — AI-infrastrukturprogrammet)', alltså capex/AI-infrastruktur med STARKT positiv driftkassa, inte lager/logistik; talet −1,5 % och 'kapitaltungt' håller. I övrigt GRÖNT: källtalsparitet 42/42 mot byggtidens vintage, källspann 09-03–16 exakt mot hamtat-fälten, aritmetik 5/5, scoping grönt (UBER lägst av de fem, tillväxtordning Sea>MELI>SHOP>UBER), juridik 2007:528 ren (0/26 mönster × 3 ytor, 3 rådglossor samtliga deskriptiva, 0 lagrum, disclaimer exakt sist, utbildningsram i ingress), 911 = 0/6, 17/17 interna länkar HTTP 200 + 6/6 bloggmål live på disk, struktur grön (7 H2, title 49/60, desc 151/155, sökord 4/4 ytor), noll branschmedian-citat ⇒ ingen universumglidningsrisk, -en-spegel talparitet 44/44.",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga söksträngar maskinverifierade unika = 1 träff i filen med grep -F). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, 09-19, ogranskad) bär B1+B2+B3:s systrar verifierade ('the universe's highest growth rate: 48.1', 'inventory and logistics tie up capital', rm 2 vid 1 275 ord ⇒ 6) — speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "readingMinutes (JSON-fält, rad 8)",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 5",
+      "orsak": "1 074 ord textrensat mot ord/200-praxisen (detaljhandel/flyg/livsmedels-domarna 09-19; publicerades max 240 ord/min, detta fält ger 537). TIONDE fallet i klassen — byggd 09-17 03:31, dagens dom följde senare samma dag. Söksträngen unik i filen. Spegling -en: rm 2 vid 1 275 ord ⇒ 6."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "body (Fem affärsmodeller bakom samma etikett, Sea Limited-meningen)",
+      "gammalt": "med universumets högsta tillväxttakt: 48,1 procent senaste tolvmånadersperioden",
+      "nytt": "med högsta tillväxttakten av de fem: 48,1 procent senaste tolvmånadersperioden",
+      "orsak": "FALSK UNIVERSUMS-SUPERLATIV (livsmedel-B1–B3:s felklass, fjärde fallet): maskinkoll mot byggtidens vintage d27b727b (144-posters-universumet) ger 8 bolag med högre TTM (INDU-C.ST +1 198 %, KINV-B.ST +164 %, INVE-B.ST +117 %, NVDA +106 %, VAR.OL +103 %, PLTR +93 %, CVX +54 %, AMD +50 %); dagens träd: 11. Nyttexten är EXAKT sann: tillväxtordningen bland de fem är Sea 48,1 > MELI 46,0 > SHOP 33,7 > UBER 16,7 (sondverifierad). Söksträngen unik (1 träff). Spegling -en: 'with the universe's highest growth rate: 48.1' → 'with the highest growth rate of the five: 48.1'."
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "body (Fem affärsmodeller bakom samma etikett, Amazon-meningen sist i sektionen)",
+      "gammalt": "redovisar just därför en FCF-marginal på minus 1,5 procent — lager och logistik binder kapital som de lättare plattformarna slipper",
+      "nytt": "redovisar just därför en FCF-marginal på minus 1,5 procent — driftkassan är stark, men capexprogrammet (173 miljarder dollar, till stor del AI-infrastruktur, mot driftkassans 161) binder kapital som de lättare plattformarna slipper",
+      "orsak": "FEL ORSAKSMEKANISM MOT KÄLLAN: universumnoten (vintage d27b727b) anger 'FCF negativt TTM (−11,6 mdr USD: OCF 161,4 − capex 173,0 — AI-infrastrukturprogrammet)' — driftkassan är starkt POSITIV; det är AI-capex som väger över, inte 'lager och logistik' (klassisk retail-förklaring som stämmer dåligt 2025). Talet −1,5 % EXAKT, 'kapitaltungaste jätte' behålls; kontrasten mot plattformarna STYRKS av att driftsidan är stark. Söksträngen unik (1 träff). Spegling -en: 'inventory and logistics tie up capital the lighter platforms avoid' → 'the operating cash flow is strong, but the capex program (173 billion dollars, much of it AI infrastructure, against operating cash flow of 161) ties up capital the lighter platforms avoid'."
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "ehandelsaktier-sa-analyserar-du-plattformsbolag.json",
+      "falt": "body (Vad e-handelsaktier säljer, tredje stycket)",
+      "gammalt": "redovisar bruttomarginaler kring 54–56 procent",
+      "nytt": "redovisar bruttomarginaler kring 54–57 procent",
+      "orsak": "PRECISION, ej blockerande: universumets två modekedjor är H&M 54,1 % (i spannet) och Inditex 56,5 % (strax över övre gränsen 56). 'Kring' bär formuleringen; '54–57' vore exaktare. Ägaren beslutar. Spegling -en endast om verkställt ('around 54–56' → 'around 54–57')."
+    }
+  ]
+}

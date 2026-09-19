@@ -1,1 +1,0 @@
-studio: auto s8-u4 rättesnotis — prod-synk-pipelinen VERIFIERAD LEVANDE (10:37:13Z-ropet; "tyst sedan 10:27" = UTC/lokal-felläsning), .next-läkning automatisk vid nästa :x7-rop med RAM≥2200; kö-punkten kraschvakt-resurssond pekas på s8-u1:s statisk-sond.mjs + o29 §6 [fabrik]

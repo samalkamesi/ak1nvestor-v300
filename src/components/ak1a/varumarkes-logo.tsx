@@ -118,7 +118,9 @@ export function VarumarkesLogo({
         className={gemensamKlass}
         aria-label="AK1A Research Lab — till startsidan"
       >
-        {inre}
+        {/* Brandgenomgång P3 (våg 195): ordbilden är dekor — etiketten
+            bärs av aria-label, textextraktorer slipper menyskrapet. */}
+        <span aria-hidden className="contents">{inre}</span>
       </Link>
     );
   }
@@ -127,7 +129,7 @@ export function VarumarkesLogo({
   if (onClick) {
     return (
       <button type="button" onClick={onClick} className={gemensamKlass} aria-label="AK1A Research Lab — till startsidan">
-        {inre}
+        <span aria-hidden className="contents">{inre}</span>
       </button>
     );
   }

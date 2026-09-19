@@ -1,0 +1,113 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-np3-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 INSTANS 2 (2026-09-19, omgång auto-s1-1789804529817)",
+  "rapport": "sa-laser-du-np3-q3-2026-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 68 maskinella kontroller gröna (universumfält 25+ exakta; aritmetik 30+ inkl scenarioruta 9/9, identitet/tre vinstvägar/PEG/DuPont/marginalvikt; medianer 10/10 EXAKTA mot byggvintage 6b227943 = 132 poster med projektets mediankonvention; PEG-jämförelsetalens SAMTLIGA 7 kvoter omräknade exakta 1,30–8,0 + 0,76; kalenderfakta med officiella kalenderbevis; korsreferenser till Wallenstam/NIKE/Castellum verifierade; juridikgrind REN enligt 2007:528; 911 = 0/6; länkar 18/18 interna 200 + extern kalender 200; readingMinutes 5 = round(2 920/600)). Tre B-fynd: superlativet 'seriens första P/B där två oberoende vägar ger samma tal' FALSKT (Wallenstam-paketet förevisade 41,02÷51,40=0,798=fältet med orden 'samma läsning som P/B'); urvalsmeningen 'amerikanska mönsterdatum 13/10 = estimat' FALSK mot kalendrarnas egna 'Datumet är officiellt'-rader för JPM/GS/JNJ 13/10 (paketlösa vid byggtiden) — samma felklass som ABB-A2; ordinalen 'åttonde' ska vara 'nionde' på tre ställen (Volvo Group, samma omgång 15 min tidigare, är det åttonde testet och gör själv anspråk på det — tre syskon skrev alla 'åttonde'). C-poster beslut/förslag.",
+  "anvandning": "Verkställ B-posterna exakt (sök/ersätt i angivet fält — samtliga gamalt-strängar maskinellt verifierade UNIKA i filen 2026-09-19). C1 är ett förslag på harmonisering; C2–C4 kräver ägar-/kundbeslut (publishedAt = R2). Originalet ändras av paketets ägare (s4) eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "description",
+      "gammalt": "och P/B:n är seriens första där två oberoende vägar ger exakt samma tal",
+      "nytt": "och P/B:n är fastighetsduons andra konvergens där två oberoende vägar ger exakt samma tal — Wallenstams 0,798 var den första",
+      "orsak": "Superlativfel (seriens systemläxa, fynd nr 10 i klassen): Wallenstam-paketet (byggt 09-16 09:39, FÖRE NP3) redovisar kurs 41,02 ÷ golv 51,40 = 0,798 = P/B-fältets 0,798 med texten 'samma läsning som P/B'. Konvergensen är sann för NP3 (260 ÷ 182,88 = 1,4217 ≙ fältet 1,422) men inte först i serien. Rangen rättas, kraften behålls (finans-precedensen). Strängen verifierad unik"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (Värdering — balansräkningen först)",
+      "gammalt": "alltså exakt samma tal som P/B-fältet: seriens första P/B där två oberoende vägar (kurs ÷ golv och fältet) ger samma siffra",
+      "nytt": "alltså exakt samma tal som P/B-fältet — samma dubbelbekräftade konvergens som Wallenstam-paketet förevisade (41,02 ÷ 51,40 = 0,798 mot fältets 0,798)",
+      "orsak": "Samma superlativfel i bodyn; omskrivningen speglar duon och behåller pedagogiken. Strängen verifierad unik"
+    },
+    {
+      "id": "B2a",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "De amerikanska mönsterdatumen runt 13 oktober är estimat enligt kalendrarnas egen metodnot.",
+      "nytt": "De amerikanska rappdagarna runt 13 oktober (JPMorgan, Goldman Sachs, Johnson & Johnson) är officiellt bekräftade i kalendrarnas egna poster — deras paket byggdes dock av senare fabrikansomgångar i finans- och hälsospåren, inte av fastighetsspåret.",
+      "orsak": "Kalenderfaktafel (ABB-A2:s felklass, tredje fallet): kalender-finans (hämtad 09-15 05:46, före byggtiden) ger 'Datumet är officiellt' för JPM 13/10 och GS 13/10, kalender-halso för JNJ 13/10 — 'estimat' är direkt falskt mot de interna källorna, och JNJ/GS/JPM-paketen byggdes först 09-17/09-18. Strängen verifierad unik"
+    },
+    {
+      "id": "B2b",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (Urvalet)",
+      "gammalt": "Kvar står **NP3 16 oktober: tidigaste återstående officiellt bekräftade rappdagen bland kalenderbolagen med bärande universumdata**",
+      "nytt": "Kvar står i fastighetsspåret **NP3 16 oktober: nästa officiellt bekräftade rappdag med bärande universumdata efter det paketerade Wallenstam**",
+      "orsak": "Hörnpåståendet 'tidigaste återstående … bland kalenderbolagen' håller ej: tre tidigare officiella rappdagar med bärande data (JPM/GS/JNJ 13/10) var olevererade vid byggtiden. Den bärande motiveringen — Wallenstam-paketets utrop av NP3 som spårets nästa kandidat — står kvar i stycket före. Strängen verifierad unik"
+    },
+    {
+      "id": "B3a",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (rubrik källkritik)",
+      "gammalt": "## Källkritikens åttonde ronda: identiteten spänner — och tre vinstvägar ger tre P/E",
+      "nytt": "## Källkritikens nionde ronda: identiteten spänner — och tre vinstvägar ger tre P/E",
+      "orsak": "Ordinalfel: i byggordning är NP3 det NIONDE identitetstestet — Nordea, Handelsbanken, Swedbank, Essity, Alfa Laval, Wallenstam (self 'sjätte'), NIKE, Volvo Group (self 'åttonde runda', samma omgång 15 min före NP3), NP3. Tre syskon i omgången (Volvo Group 16:06, NP3 16:21, Tele2 16:24) skrev alla 'åttonde' i det parallella byggandets blinda fönster; mtime-ordningen ger Volvo Group rätten till åttonde. Strängen verifierad unik"
+    },
+    {
+      "id": "B3b",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (Praktiskt inför 16 oktober)",
+      "gammalt": "Med det åttonde identitetstestet i böcken har serien sett avvikelser från 0,3 till 14 procent",
+      "nytt": "Med det nionde identitetstestet i böcken har serien sett avvikelser från 0,3 till 14 procent",
+      "orsak": "Samma ordinalfel i sammanfattningen; avvikelse-spannet 0,3–14 % är korrekt och opåverkat. Strängen verifierad unik"
+    },
+    {
+      "id": "B3c",
+      "typ": "byt",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "description",
+      "gammalt": "identitetstestets åttonde rond ger seriens största avvikelse i en enda valuta (14 procent)",
+      "nytt": "identitetstestets nionde rond ger seriens största avvikelse i en enda valuta (14 procent)",
+      "orsak": "Samma ordinalfel i descriptionen; superlativet 'största i en enda valuta' är SANT (dokumenterade en-valuta-avvikelser före NP3: 0,3–11,6 %; Nordea/ABB = tiopotens-/valutaklass). Strängen verifierad unik"
+    },
+    {
+      "id": "C1",
+      "typ": "forlag",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (PEG-passagen)",
+      "gammalt": "NP3 ger det åttonde tillståndet: **källans fält är tomt",
+      "nytt": "NP3 är det åttonde paketet som prövar fältet — och ger dess fjärde tillstånd: **källans fält är tomt",
+      "orsak": "Terminologisk harmonisering: 'åttonde tillståndet' blandar paketnummer med tillståndsnummer; descriptionen räknar rätt ('PEG-fältets fjärde tillstånd'). Sju paket + NP3 = åttonde paketet; tillstånden är (1) källa över, (2) under, (3) fält satt på null-prognos, (4) fält tomt vid negativ tillväxt"
+    },
+    {
+      "id": "C2",
+      "typ": "beslut",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "publishedAt",
+      "notis": "2026-10-14 (rappdag −2 dagar) — rimligt publiceringsförslag, men seriekonventionen varierar (Volvo-paketet bär skapandedatumet; AZN C4-precedensen sätter publiceringsdag först vid flytt). Ingen ändring föreslås; publiceringstidpunkten är kundens beslut (R2)",
+      "orsak": "Konventionsfråga, ej fel"
+    },
+    {
+      "id": "C3",
+      "typ": "beslut",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "description",
+      "notis": "1 057 tkn = EXAKT kvartalsfamiljens takvärde (204–1 057, EVO-granskningens familjemätning) — grönt men på taket; nästa paket i familjen bör hålla marginal under",
+      "orsak": "Inom praxis; taknotis"
+    },
+    {
+      "id": "C4",
+      "typ": "forlag",
+      "fil": "sa-laser-du-np3-q3-2026.json",
+      "falt": "body (källkritik, omvänd identitet)",
+      "gammalt": "(16 procent åt andra hållet)",
+      "nytt": "(cirka 16 procent åt andra hållet)",
+      "orsak": "Beräkningen är 11,374 × 0,1453 = 1,6525 mot 1,422 = +16,22 % — övriga approximationer i texten förs med 'cirka'; valfri skärpning för konsekvens"
+    }
+  ],
+  "konotiser": [
+    "Ordinalklustret: Volvo Group (åttonde, korrekt) · NP3 (→nionde, denna diff) · Tele2 (åttonde, är tionde) · Castellum (nionde, är elfte) — seriens byggprompt bör förbjuda ordinala serieanspråk i parallella omgångar eller kräva syskonräkning på disk FÖRE skrivning",
+    "Superlativfelklassen ≥ 10 fynd i serien (mx1: finans 2 + hälsa 3 + konsument 1 · mx2/EVO 2 · JPM: Samsung · ABB B1 · NP3 B1) — mekaniskt superlativtest mot serien FÖRE bygg",
+    "'Estimat'-avfärdning av officiella amerikanska datum påvisad i minst tre paket (ABB A2, NP3 B2, JPM-not) — urvalsmallen behöver källfaktakoll: kalenderns egen notera-rad vinner över malltexten",
+    "EVO:s replikerade PEG (källa == konvention, 09-18) åldrar NP3:s 'sex över/en under'-räkning — sann vid byggtiden 09-16",
+    "Golv-härledning: P/B-fältet == kurs ÷ golv för tio av tolv golv-bärande rader; undantagen VNA.DE (fält 0,48 mot beräknat 0,56) och URW.PA (fält 0,62 mot beräknat 0,826) — dataägaren bör dokumentera fältkonventionen (golv-härledd P/B vs fristående) eftersom 'två oberoende vägar'-retoriken bärs av den"
+  ]
+}

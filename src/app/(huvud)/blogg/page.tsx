@@ -47,10 +47,15 @@ export default function BloggPage() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Blogg" }]} wide>
-      <h1 className="font-serif text-4xl font-bold">AK1A Blogg</h1>
+      {/* Brandgenomgång P2 (våg 195): H1 bär löftet, namnet är eyebrow —
+          ingressens egen bästa mening blev rubriken. */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Blogg</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">
+        Institutionell metodik, förklarad för privatpersoner
+      </h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
-        Institutionell metodik, förklarad för privatpersoner. Pelare: {pillars.join(" · ")}.
-        Nytt innehåll löpande — djupanalyser och variabelfördjupningar.
+        Pelare: {pillars.join(" · ")}. Nytt innehåll löpande — djupanalyser
+        och variabelfördjupningar.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -102,6 +107,24 @@ export default function BloggPage() {
           );
         })}
       </div>
+
+      {/* Brandgenomgångens CTA-gap (våg 201): bloggens primära nästa steg —
+          gratis-grunderna. Statiskt renderad (inget hydrerings-pop-in);
+          prefetch={false} enligt o17-precedensen. */}
+      <section className="mt-12 rounded-lg border border-gold/20 bg-card p-6 text-center">
+        <h2 className="font-serif text-2xl font-bold">Börja med grunderna</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+          Artiklarna visar metoden i praktiken — kurserna bygger den steg för
+          steg. Hela grundutbildningen är gratis, utan kort.
+        </p>
+        <Link
+          href="/kurser"
+          prefetch={false}
+          className="btn-guld-signatur mt-5 inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
+        >
+          Börja med grunderna — gratis →
+        </Link>
+      </section>
     </SeoPageShell>
   );
 }

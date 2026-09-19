@@ -1,0 +1,765 @@
+{
+  "url": "http://localhost:3000/kurser",
+  "namn": "s7u3o91-fore",
+  "ts": "2026-09-19T12:03:46.756Z",
+  "fore": {
+    "scrollY": 0,
+    "docH": 16571,
+    "familjer": [
+      {
+        "sel": ".cv-registerkort",
+        "antal": 24,
+        "summaHojd": 3456,
+        "medianHojd": 144,
+        "minHojd": 144,
+        "maxHojd": 144,
+        "textSumma": 0,
+        "forstaTop": 7247,
+        "sistaTop": 10835,
+        "kort": [
+          {
+            "top": 7247,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 7403,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 7559,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 7715,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 7871,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8027,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8183,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8339,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8495,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8651,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8807,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 8963,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9119,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9275,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9431,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9587,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9743,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 9899,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10055,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10211,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10367,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10523,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10679,
+            "hojd": 144,
+            "text": 0
+          },
+          {
+            "top": 10835,
+            "hojd": 144,
+            "text": 0
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt",
+        "antal": 18,
+        "summaHojd": 4878,
+        "medianHojd": 192,
+        "minHojd": 192,
+        "maxHojd": 739,
+        "textSumma": 2201,
+        "forstaTop": 951,
+        "sistaTop": 6256,
+        "kort": [
+          {
+            "top": 951,
+            "hojd": 196,
+            "text": 223
+          },
+          {
+            "top": 1163,
+            "hojd": 313,
+            "text": 558
+          },
+          {
+            "top": 1491,
+            "hojd": 586,
+            "text": 1420
+          },
+          {
+            "top": 2093,
+            "hojd": 739,
+            "text": 0
+          },
+          {
+            "top": 2848,
+            "hojd": 427,
+            "text": 0
+          },
+          {
+            "top": 3291,
+            "hojd": 313,
+            "text": 0
+          },
+          {
+            "top": 3782,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 3990,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 4198,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 4406,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 4614,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 4822,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 5216,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 5424,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 5632,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 5840,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 6048,
+            "hojd": 192,
+            "text": 0
+          },
+          {
+            "top": 6256,
+            "hojd": 192,
+            "text": 0
+          }
+        ]
+      }
+    ]
+  },
+  "efter": {
+    "scrollY": 16571,
+    "docH": 23223,
+    "familjer": [
+      {
+        "sel": ".cv-registerkort",
+        "antal": 24,
+        "summaHojd": 7669,
+        "medianHojd": 266,
+        "minHojd": 142,
+        "maxHojd": 715,
+        "textSumma": 4486,
+        "forstaTop": 9810,
+        "sistaTop": 17609,
+        "kort": [
+          {
+            "top": 9810,
+            "hojd": 242,
+            "text": 0
+          },
+          {
+            "top": 10064,
+            "hojd": 266,
+            "text": 0
+          },
+          {
+            "top": 10342,
+            "hojd": 574,
+            "text": 0
+          },
+          {
+            "top": 10927,
+            "hojd": 466,
+            "text": 0
+          },
+          {
+            "top": 11405,
+            "hojd": 252,
+            "text": 0
+          },
+          {
+            "top": 11669,
+            "hojd": 520,
+            "text": 0
+          },
+          {
+            "top": 12200,
+            "hojd": 266,
+            "text": 0
+          },
+          {
+            "top": 12478,
+            "hojd": 422,
+            "text": 0
+          },
+          {
+            "top": 12912,
+            "hojd": 364,
+            "text": 0
+          },
+          {
+            "top": 13288,
+            "hojd": 442,
+            "text": 0
+          },
+          {
+            "top": 13741,
+            "hojd": 461,
+            "text": 0
+          },
+          {
+            "top": 14214,
+            "hojd": 715,
+            "text": 0
+          },
+          {
+            "top": 14941,
+            "hojd": 598,
+            "text": 1648
+          },
+          {
+            "top": 15550,
+            "hojd": 661,
+            "text": 1772
+          },
+          {
+            "top": 16223,
+            "hojd": 142,
+            "text": 95
+          },
+          {
+            "top": 16377,
+            "hojd": 142,
+            "text": 91
+          },
+          {
+            "top": 16531,
+            "hojd": 142,
+            "text": 81
+          },
+          {
+            "top": 16685,
+            "hojd": 142,
+            "text": 90
+          },
+          {
+            "top": 16839,
+            "hojd": 142,
+            "text": 117
+          },
+          {
+            "top": 16993,
+            "hojd": 142,
+            "text": 104
+          },
+          {
+            "top": 17147,
+            "hojd": 142,
+            "text": 128
+          },
+          {
+            "top": 17301,
+            "hojd": 142,
+            "text": 119
+          },
+          {
+            "top": 17455,
+            "hojd": 142,
+            "text": 122
+          },
+          {
+            "top": 17609,
+            "hojd": 142,
+            "text": 119
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt",
+        "antal": 18,
+        "summaHojd": 7449,
+        "medianHojd": 427,
+        "minHojd": 178,
+        "maxHojd": 739,
+        "textSumma": 0,
+        "forstaTop": 951,
+        "sistaTop": 8817,
+        "kort": [
+          {
+            "top": 951,
+            "hojd": 196,
+            "text": 0
+          },
+          {
+            "top": 1163,
+            "hojd": 313,
+            "text": 0
+          },
+          {
+            "top": 1491,
+            "hojd": 586,
+            "text": 0
+          },
+          {
+            "top": 2093,
+            "hojd": 739,
+            "text": 0
+          },
+          {
+            "top": 2848,
+            "hojd": 427,
+            "text": 0
+          },
+          {
+            "top": 3291,
+            "hojd": 313,
+            "text": 0
+          },
+          {
+            "top": 3782,
+            "hojd": 586,
+            "text": 0
+          },
+          {
+            "top": 4384,
+            "hojd": 703,
+            "text": 0
+          },
+          {
+            "top": 5102,
+            "hojd": 664,
+            "text": 0
+          },
+          {
+            "top": 5782,
+            "hojd": 586,
+            "text": 0
+          },
+          {
+            "top": 6383,
+            "hojd": 683,
+            "text": 0
+          },
+          {
+            "top": 7082,
+            "hojd": 547,
+            "text": 0
+          },
+          {
+            "top": 7830,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8024,
+            "hojd": 197,
+            "text": 0
+          },
+          {
+            "top": 8237,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8430,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8624,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8817,
+            "hojd": 197,
+            "text": 0
+          }
+        ]
+      }
+    ]
+  },
+  "perFamilj": [
+    {
+      "sel": ".cv-registerkort",
+      "antal": 24,
+      "platshallarMedianPx": 144,
+      "verkligMedianPx": 142,
+      "verkligaRenderade": 12,
+      "perKortDeltaSummaPx": 951,
+      "foreslatReservationRem": 9
+    },
+    {
+      "sel": ".cv-utvalt",
+      "antal": 18,
+      "platshallarMedianPx": 192,
+      "verkligMedianPx": null,
+      "verkligaRenderade": 0,
+      "perKortDeltaSummaPx": null,
+      "foreslatReservationRem": null
+    }
+  ],
+  "rond2": {
+    "scrollY": 5603,
+    "docH": 23143,
+    "familjer": [
+      {
+        "sel": ".cv-registerkort",
+        "antal": 24,
+        "summaHojd": 7669,
+        "medianHojd": 266,
+        "minHojd": 142,
+        "maxHojd": 715,
+        "textSumma": 0,
+        "forstaTop": 9810,
+        "sistaTop": 17609,
+        "kort": [
+          {
+            "top": 9810,
+            "hojd": 242,
+            "text": 0
+          },
+          {
+            "top": 10064,
+            "hojd": 266,
+            "text": 0
+          },
+          {
+            "top": 10342,
+            "hojd": 574,
+            "text": 0
+          },
+          {
+            "top": 10927,
+            "hojd": 466,
+            "text": 0
+          },
+          {
+            "top": 11405,
+            "hojd": 252,
+            "text": 0
+          },
+          {
+            "top": 11669,
+            "hojd": 520,
+            "text": 0
+          },
+          {
+            "top": 12200,
+            "hojd": 266,
+            "text": 0
+          },
+          {
+            "top": 12478,
+            "hojd": 422,
+            "text": 0
+          },
+          {
+            "top": 12912,
+            "hojd": 364,
+            "text": 0
+          },
+          {
+            "top": 13288,
+            "hojd": 442,
+            "text": 0
+          },
+          {
+            "top": 13741,
+            "hojd": 461,
+            "text": 0
+          },
+          {
+            "top": 14214,
+            "hojd": 715,
+            "text": 0
+          },
+          {
+            "top": 14941,
+            "hojd": 598,
+            "text": 0
+          },
+          {
+            "top": 15550,
+            "hojd": 661,
+            "text": 0
+          },
+          {
+            "top": 16223,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 16377,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 16531,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 16685,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 16839,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 16993,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 17147,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 17301,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 17455,
+            "hojd": 142,
+            "text": 0
+          },
+          {
+            "top": 17609,
+            "hojd": 142,
+            "text": 0
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt",
+        "antal": 18,
+        "summaHojd": 7449,
+        "medianHojd": 427,
+        "minHojd": 178,
+        "maxHojd": 739,
+        "textSumma": 7977,
+        "forstaTop": 951,
+        "sistaTop": 8817,
+        "kort": [
+          {
+            "top": 951,
+            "hojd": 196,
+            "text": 0
+          },
+          {
+            "top": 1163,
+            "hojd": 313,
+            "text": 0
+          },
+          {
+            "top": 1491,
+            "hojd": 586,
+            "text": 0
+          },
+          {
+            "top": 2093,
+            "hojd": 739,
+            "text": 0
+          },
+          {
+            "top": 2848,
+            "hojd": 427,
+            "text": 0
+          },
+          {
+            "top": 3291,
+            "hojd": 313,
+            "text": 0
+          },
+          {
+            "top": 3782,
+            "hojd": 586,
+            "text": 0
+          },
+          {
+            "top": 4384,
+            "hojd": 703,
+            "text": 1748
+          },
+          {
+            "top": 5102,
+            "hojd": 664,
+            "text": 1634
+          },
+          {
+            "top": 5782,
+            "hojd": 586,
+            "text": 1423
+          },
+          {
+            "top": 6383,
+            "hojd": 683,
+            "text": 1714
+          },
+          {
+            "top": 7082,
+            "hojd": 547,
+            "text": 1313
+          },
+          {
+            "top": 7830,
+            "hojd": 178,
+            "text": 145
+          },
+          {
+            "top": 8024,
+            "hojd": 197,
+            "text": 0
+          },
+          {
+            "top": 8237,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8430,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8624,
+            "hojd": 178,
+            "text": 0
+          },
+          {
+            "top": 8817,
+            "hojd": 197,
+            "text": 0
+          }
+        ]
+      }
+    ]
+  },
+  "dom": {
+    "geo": "mobil",
+    "vp": {
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 2.627,
+      "mobile": true
+    },
+    "engangstillvaxtPx": 6652,
+    "godkat": false,
+    "rond2DocH": 23143,
+    "rond2Stabilt": false,
+    "HELA": false
+  }
+}

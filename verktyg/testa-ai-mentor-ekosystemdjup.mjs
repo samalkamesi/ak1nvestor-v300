@@ -615,7 +615,11 @@ const GAMLA = [
     "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
     "svaraLokaltBeteendemekanik",
     "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22:s fönster: bokmastar + riskbudget + konvertibel (svitharmoniseringens dokumentationsplikt).
+    // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar", "svaraLokaltRiskbudget", "svaraLokaltKonvertibel",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

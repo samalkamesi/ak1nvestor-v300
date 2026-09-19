@@ -1,0 +1,454 @@
+[
+  {
+    "url": "http://localhost:3000/kurser",
+    "fetchTid": "2026-09-19T11:30:35.460Z",
+    "rotpx": 16,
+    "dokHojdFore": 16845,
+    "dokHojdEfter": 24187,
+    "scrollsteg": 59,
+    "dokHistorik": [
+      {
+        "steg": 0,
+        "dokHojd": 16845,
+        "scrollY": 0
+      },
+      {
+        "steg": 5,
+        "dokHojd": 17258,
+        "scrollY": 2000
+      },
+      {
+        "steg": 10,
+        "dokHojd": 18731,
+        "scrollY": 4000
+      },
+      {
+        "steg": 15,
+        "dokHojd": 19635,
+        "scrollY": 6000
+      },
+      {
+        "steg": 20,
+        "dokHojd": 19623,
+        "scrollY": 8000
+      },
+      {
+        "steg": 25,
+        "dokHojd": 20787,
+        "scrollY": 10000
+      },
+      {
+        "steg": 30,
+        "dokHojd": 21499,
+        "scrollY": 12000
+      },
+      {
+        "steg": 35,
+        "dokHojd": 23220,
+        "scrollY": 14000
+      },
+      {
+        "steg": 40,
+        "dokHojd": 24211,
+        "scrollY": 16000
+      },
+      {
+        "steg": 45,
+        "dokHojd": 24227,
+        "scrollY": 18000
+      },
+      {
+        "steg": 50,
+        "dokHojd": 24187,
+        "scrollY": 20000
+      },
+      {
+        "steg": 55,
+        "dokHojd": 24187,
+        "scrollY": 22000
+      },
+      {
+        "steg": 59,
+        "dokHojd": 24187,
+        "scrollY": 23343
+      }
+    ],
+    "sektioner": [
+      {
+        "id": "cv-kategorivagg#0",
+        "reservPx": 1216,
+        "hojdForeScroll": 1258,
+        "hojdEfterScroll": 1278,
+        "maxHojdUnderScroll": 1278,
+        "domTextLangd": 604,
+        "renderadTextVidSteg": 46,
+        "sistSynligSteg": 50,
+        "dom": "GRÖN (renderad i sikte @steg 46; auto-nyckeln lärt verklig höjd)"
+      },
+      {
+        "id": "cv-socialproof#0",
+        "reservPx": 1472,
+        "hojdForeScroll": 1520,
+        "hojdEfterScroll": 1494,
+        "maxHojdUnderScroll": 1520,
+        "domTextLangd": 876,
+        "renderadTextVidSteg": 49,
+        "sistSynligSteg": 54,
+        "dom": "GRÖN (renderad i sikte @steg 49; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-kurstips#0",
+        "reservPx": 368,
+        "hojdForeScroll": 368,
+        "hojdEfterScroll": 364,
+        "maxHojdUnderScroll": 368,
+        "domTextLangd": 423,
+        "renderadTextVidSteg": 22,
+        "sistSynligSteg": 24,
+        "dom": "GRÖN (renderad i sikte @steg 22; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-nasta-steg#0",
+        "reservPx": 224,
+        "hojdForeScroll": 264,
+        "hojdEfterScroll": 230,
+        "maxHojdUnderScroll": 264,
+        "domTextLangd": 82,
+        "renderadTextVidSteg": 53,
+        "sistSynligSteg": 54,
+        "dom": "GRÖN (renderad i sikte @steg 53; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-sidfooter#0",
+        "reservPx": 2144,
+        "hojdForeScroll": 2146,
+        "hojdEfterScroll": 2165,
+        "maxHojdUnderScroll": 2165,
+        "domTextLangd": 599,
+        "renderadTextVidSteg": 53,
+        "sistSynligSteg": 59,
+        "dom": "GRÖN (renderad i sikte @steg 53; höjd ≈ reservation (innehållet råkar passa))"
+      }
+    ],
+    "allaGröna": true
+  },
+  {
+    "url": "http://localhost:3000/en/kurser",
+    "fetchTid": "2026-09-19T11:30:50.112Z",
+    "rotpx": 16,
+    "dokHojdFore": 10837,
+    "dokHojdEfter": 15159,
+    "scrollsteg": 36,
+    "dokHistorik": [
+      {
+        "steg": 0,
+        "dokHojd": 10837,
+        "scrollY": 0
+      },
+      {
+        "steg": 5,
+        "dokHojd": 11617,
+        "scrollY": 2000
+      },
+      {
+        "steg": 10,
+        "dokHojd": 12897,
+        "scrollY": 4000
+      },
+      {
+        "steg": 15,
+        "dokHojd": 14835,
+        "scrollY": 6000
+      },
+      {
+        "steg": 20,
+        "dokHojd": 15334,
+        "scrollY": 8000
+      },
+      {
+        "steg": 25,
+        "dokHojd": 15174,
+        "scrollY": 10000
+      },
+      {
+        "steg": 30,
+        "dokHojd": 15159,
+        "scrollY": 12000
+      },
+      {
+        "steg": 35,
+        "dokHojd": 15159,
+        "scrollY": 14000
+      },
+      {
+        "steg": 36,
+        "dokHojd": 15159,
+        "scrollY": 14315
+      }
+    ],
+    "sektioner": [
+      {
+        "id": "cv-kategorivagg#0",
+        "reservPx": 1216,
+        "hojdForeScroll": 1258,
+        "hojdEfterScroll": 1098,
+        "maxHojdUnderScroll": 1258,
+        "domTextLangd": 647,
+        "renderadTextVidSteg": 24,
+        "sistSynligSteg": 28,
+        "dom": "GRÖN (renderad i sikte @steg 24; auto-nyckeln lärt verklig höjd)"
+      },
+      {
+        "id": "cv-nasta-steg#0",
+        "reservPx": 224,
+        "hojdForeScroll": 264,
+        "hojdEfterScroll": 230,
+        "maxHojdUnderScroll": 264,
+        "domTextLangd": 82,
+        "renderadTextVidSteg": 30,
+        "sistSynligSteg": 32,
+        "dom": "GRÖN (renderad i sikte @steg 30; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-sidfooter#0",
+        "reservPx": 2144,
+        "hojdForeScroll": 2146,
+        "hojdEfterScroll": 2165,
+        "maxHojdUnderScroll": 2165,
+        "domTextLangd": 658,
+        "renderadTextVidSteg": 31,
+        "sistSynligSteg": 36,
+        "dom": "GRÖN (renderad i sikte @steg 31; höjd ≈ reservation (innehållet råkar passa))"
+      }
+    ],
+    "allaGröna": true
+  },
+  {
+    "url": "http://localhost:3000/ar/kurser",
+    "fetchTid": "2026-09-19T11:31:05.584Z",
+    "rotpx": 16,
+    "dokHojdFore": 10567,
+    "dokHojdEfter": 14684,
+    "scrollsteg": 35,
+    "dokHistorik": [
+      {
+        "steg": 0,
+        "dokHojd": 10567,
+        "scrollY": 0
+      },
+      {
+        "steg": 5,
+        "dokHojd": 11682,
+        "scrollY": 2000
+      },
+      {
+        "steg": 10,
+        "dokHojd": 12602,
+        "scrollY": 4000
+      },
+      {
+        "steg": 15,
+        "dokHojd": 14029,
+        "scrollY": 6000
+      },
+      {
+        "steg": 20,
+        "dokHojd": 15019,
+        "scrollY": 8000
+      },
+      {
+        "steg": 25,
+        "dokHojd": 14699,
+        "scrollY": 10000
+      },
+      {
+        "steg": 30,
+        "dokHojd": 14684,
+        "scrollY": 12000
+      },
+      {
+        "steg": 35,
+        "dokHojd": 14684,
+        "scrollY": 13840
+      }
+    ],
+    "sektioner": [
+      {
+        "id": "cv-kategorivagg#0",
+        "reservPx": 1216,
+        "hojdForeScroll": 1258,
+        "hojdEfterScroll": 939,
+        "maxHojdUnderScroll": 1258,
+        "domTextLangd": 575,
+        "renderadTextVidSteg": 24,
+        "sistSynligSteg": 27,
+        "dom": "GRÖN (renderad i sikte @steg 24; auto-nyckeln lärt verklig höjd)"
+      },
+      {
+        "id": "cv-nasta-steg#0",
+        "reservPx": 224,
+        "hojdForeScroll": 264,
+        "hojdEfterScroll": 230,
+        "maxHojdUnderScroll": 264,
+        "domTextLangd": 82,
+        "renderadTextVidSteg": 29,
+        "sistSynligSteg": 31,
+        "dom": "GRÖN (renderad i sikte @steg 29; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-sidfooter#0",
+        "reservPx": 2144,
+        "hojdForeScroll": 2146,
+        "hojdEfterScroll": 2165,
+        "maxHojdUnderScroll": 2165,
+        "domTextLangd": 548,
+        "renderadTextVidSteg": 30,
+        "sistSynligSteg": 35,
+        "dom": "GRÖN (renderad i sikte @steg 30; höjd ≈ reservation (innehållet råkar passa))"
+      }
+    ],
+    "allaGröna": true
+  },
+  {
+    "url": "http://localhost:3000/",
+    "fetchTid": "2026-09-19T11:31:14.176Z",
+    "rotpx": 16,
+    "dokHojdFore": 7103,
+    "dokHojdEfter": 7103,
+    "scrollsteg": 16,
+    "dokHistorik": [
+      {
+        "steg": 0,
+        "dokHojd": 7103,
+        "scrollY": 0
+      },
+      {
+        "steg": 5,
+        "dokHojd": 7103,
+        "scrollY": 2000
+      },
+      {
+        "steg": 10,
+        "dokHojd": 7103,
+        "scrollY": 4000
+      },
+      {
+        "steg": 15,
+        "dokHojd": 7103,
+        "scrollY": 6000
+      },
+      {
+        "steg": 16,
+        "dokHojd": 7103,
+        "scrollY": 6259
+      }
+    ],
+    "sektioner": [],
+    "allaGröna": true
+  },
+  {
+    "url": "http://localhost:3000/blogg",
+    "fetchTid": "2026-09-19T11:32:11.226Z",
+    "rotpx": 16,
+    "dokHojdFore": 26403,
+    "dokHojdEfter": 25269,
+    "scrollsteg": 62,
+    "dokHistorik": [
+      {
+        "steg": 0,
+        "dokHojd": 26403,
+        "scrollY": 0
+      },
+      {
+        "steg": 5,
+        "dokHojd": 26404,
+        "scrollY": 2000
+      },
+      {
+        "steg": 10,
+        "dokHojd": 26364,
+        "scrollY": 4000
+      },
+      {
+        "steg": 15,
+        "dokHojd": 26472,
+        "scrollY": 6000
+      },
+      {
+        "steg": 20,
+        "dokHojd": 26498,
+        "scrollY": 8000
+      },
+      {
+        "steg": 25,
+        "dokHojd": 26629,
+        "scrollY": 10000
+      },
+      {
+        "steg": 30,
+        "dokHojd": 26507,
+        "scrollY": 12000
+      },
+      {
+        "steg": 35,
+        "dokHojd": 26178,
+        "scrollY": 14000
+      },
+      {
+        "steg": 40,
+        "dokHojd": 25787,
+        "scrollY": 16000
+      },
+      {
+        "steg": 45,
+        "dokHojd": 25567,
+        "scrollY": 18000
+      },
+      {
+        "steg": 50,
+        "dokHojd": 25337,
+        "scrollY": 20000
+      },
+      {
+        "steg": 55,
+        "dokHojd": 25269,
+        "scrollY": 22000
+      },
+      {
+        "steg": 60,
+        "dokHojd": 25269,
+        "scrollY": 24000
+      },
+      {
+        "steg": 62,
+        "dokHojd": 25269,
+        "scrollY": 24425
+      }
+    ],
+    "sektioner": [
+      {
+        "id": "cv-nasta-steg#0",
+        "reservPx": 224,
+        "hojdForeScroll": 264,
+        "hojdEfterScroll": 230,
+        "maxHojdUnderScroll": 264,
+        "domTextLangd": 82,
+        "renderadTextVidSteg": 55,
+        "sistSynligSteg": 57,
+        "dom": "GRÖN (renderad i sikte @steg 55; höjd ≈ reservation (innehållet råkar passa))"
+      },
+      {
+        "id": "cv-sidfooter#0",
+        "reservPx": 2144,
+        "hojdForeScroll": 2146,
+        "hojdEfterScroll": 2165,
+        "maxHojdUnderScroll": 2165,
+        "domTextLangd": 599,
+        "renderadTextVidSteg": 56,
+        "sistSynligSteg": 62,
+        "dom": "GRÖN (renderad i sikte @steg 56; höjd ≈ reservation (innehållet råkar passa))"
+      }
+    ],
+    "allaGröna": true
+  }
+]

@@ -1029,6 +1029,103 @@ function sektionTsc() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// SEKTION 13 — Mimosa-paritet full-scan (spår 8, o94): baslinjeåtermätning mekaniserad
+// ════════════════════════════════════════════════════════════════════════════
+// Mimosa-paritetens trädbaslinje (våg 178: 906/0 på `--doman .`) återmättes
+// ENDAST när en spår 8-agent råkade köra verktyget manuellt — 2026-09-19 hade
+// sex ohärdade fynd (CHILD_PROC_INTERP/SSRF high i verktyg/ + .zcode) lever
+// osynliga sedan 09-17, och tre fabriksvakter kolliderade på samma manuella
+// återmätning. Denna sektion verkställer o29 §5.1 ("baslinjen SKAL återmätas
+// efter varje våg som tillför filer utanför src/"): HELA trädet (`--doman .`,
+// o29-kontraktet — standarddomänen ensam räcker inte, se o92:s
+// domänförväxling 725≠906), dagligen 07:02, med ENDAST det dokumenterade
+// fixture-undantaget (o15/o23: farliga mönster som strängdata i egen svit).
+function sektionMimosa() {
+  const namn = "Mimosa-paritet full-scan (hela trädet — ohärdad high/medium = baslinjebrott)";
+  const fel = [];
+  const manuella = [];
+  const info = [];
+  const mimosa = path.join(REPO, "verktyg", "mimosa-paritet.mjs");
+  const radata = path.join(REPO, "data", "vakten", "mimosa-fullscan-SENASTE.json"); // gitignorerad väg
+
+  if (!existsSync(mimosa)) {
+    manuella.push({
+      fil: "verktyg/mimosa-paritet.mjs",
+      plats: "-",
+      ord: "saknad fil",
+      kontext: "skannern finns inte på förväntad väg — baslinjen OMÄTT denna körning",
+    });
+    info.push("mimosa-paritet.mjs saknas — baslinjen OMÄTT (vakten ger aldrig tyst PASS)");
+    return { namn, fel, manuella, info };
+  }
+
+  const t0 = Date.now();
+  let sub;
+  try {
+    sub = spawnSync(process.execPath, [mimosa, "--doman", ".", "--hoppa-over", "testa-mimosa-paritet\\.mjs$", "--json", radata], {
+      cwd: REPO,
+      encoding: "utf8",
+      timeout: 240_000,
+      maxBuffer: 8 * 1024 * 1024,
+      env: { ...process.env, NO_COLOR: "1" },
+    });
+  } catch (e) {
+    manuella.push({
+      fil: "verktyg/kvalitetsvakt.mjs",
+      plats: "sektionMimosa",
+      ord: "spawn-fel",
+      kontext: String(e?.message || e).slice(0, 160),
+    });
+    info.push("mimosa-pariteten kunde inte startas (spawn-fel) — baslinjen OMÄTT denna körning");
+    return { namn, fel, manuella, info };
+  }
+
+  const sek = ((Date.now() - t0) / 1000).toFixed(1);
+  const utdata = `${sub.stdout || ""}${sub.stderr || ""}`;
+
+  if (sub.error && sub.error.code === "ETIMEDOUT") {
+    manuella.push({
+      fil: "verktyg/mimosa-paritet.mjs",
+      plats: "-",
+      ord: "timeout",
+      kontext: `full-scanen överskred 240 s (maskinlast?) — baslinjen OMÄTT; kör "node verktyg/mimosa-paritet.mjs --doman ." manuellt`,
+    });
+    info.push("mimosa full-scan överskred budgeten 240 s — OMÄTT, inte godkänt");
+    return { namn, fel, manuella, info };
+  }
+
+  if (sub.status === 2) {
+    manuella.push({
+      fil: "verktyg/mimosa-paritet.mjs",
+      plats: "-",
+      ord: "argumentfel",
+      kontext: `exit 2: ${utdata.trim().split("\n")[0]?.slice(0, 160) || "(tom utdata)"} — instrumentfel, inte kodfel`,
+    });
+    info.push("mimosa-pariteten refuserade argumenten (exit 2) — OMÄTT, instrumentfel att åtgärda");
+    return { namn, fel, manuella, info };
+  }
+
+  const samman = utdata.split("\n").find((r) => r.includes("filer skannade"))?.trim() || "";
+  if (sub.status === 0) {
+    info.push(`${samman || "full-scan klar"} på ${sek} s — 0 fynd, baslinjen lever (o29-kontraktet --doman .: hela trädet; rådata data/vakten/mimosa-fullscan-SENASTE.json)`);
+    return { namn, fel, manuella, info };
+  }
+
+  // exit 1 = fynd: varje FYND-rad blir ett sektionsfel (ohärdad high/medium i trädet)
+  const fyndRader = utdata.split("\n").filter((r) => r.includes("FYND "));
+  info.push(`${samman || "full-scan med fynd"} på ${sek} s — ${fyndRader.length} fynd ⇒ BASELINJEBROTT (kur enligt o59-doktrinen: execFileSync-array / fetch-härdning med valideringsvittne)`);
+  for (const r of fyndRader.slice(0, 40)) {
+    const m = r.match(/FYND (\S+):(\d+) \[(\w+)\] (\w+): (.*)/);
+    if (m) fel.push({ fil: m[1], plats: `rad ${m[2]}`, detalj: `${m[4]} (${m[3]}): ${m[5]}`.slice(0, 220) });
+    else fel.push({ fil: "mimosa-paritet", plats: "-", detalj: r.trim().slice(0, 220) });
+  }
+  if (fyndRader.length > 40) {
+    fel.push({ fil: "mimosa-paritet", plats: "-", detalj: `… och ${fyndRader.length - 40} fyndrader till` });
+  }
+  return { namn, fel, manuella, info };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 function statusForSektion(s) {
   if (s.status) return s.status; // SKIP-genväg
   if ((s.fel ?? []).length > 0) return "FAIL";
@@ -1092,6 +1189,7 @@ async function main() {
     sektionSiffror(),
     sektionTsc(),
     await sektionSsrLivssond(),
+    sektionMimosa(),
   ];
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);
@@ -1126,7 +1224,7 @@ async function main() {
   md.push("");
   md.push(`## ANTAL FEL: ${totalFel} | MANUELLA: ${totalMan} | STATUS: ${status}`);
   md.push("");
-  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering, typbaslinje, SSR-livssond)._");
+  md.push("_Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering, typbaslinje, SSR-livssond, mimosa-full-scan)._");
   md.push("");
 
   mkdirSync(path.dirname(RAPPORT_SOK), { recursive: true });

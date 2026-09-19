@@ -1,0 +1,25 @@
+{
+  "kurs": "v05",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv med egna ord vad P/B svarar på: vad betalar marknaden per krona av bokfört eget kapital? 2. Skriv upp räkningen: börsvärde ÷ eget kapital. Beskriv också vad det egna kapitalet är — det som aktieägarna har kvar av allt bolaget äger minus allt det är skyldigt, bokföringens återstående värde. 3. P/B fungerar bäst där balansräkningen speglar affären. Räkna upp de fyra verksamhetstyperna kapitlet nämner: banker, försäkring, kapitaltunga industrier och fastigheter. 4. Förklara varför måttet är svagare för kunskapsbolag — vilket är det viktigaste som inte står i balansräkningen? Kontrollera att du kan ge exemplen varumärke, kod och kunnande."
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Vilket eget kapital ska användas i nämnaren — koncernens summa eller moderbolagets? Förklara hur minoriteter ska hanteras om de redovisas. 2. Noten om eget kapital (förändringsanalysen) visar årets rörelser. Nämn de fyra posterna — vinst, utdelning, återköp och omvärderingar — och förklara hur noten avslöjar om kapitalet växer organiskt eller krymper genom återköp. 3. I vilken not kontrollerar du hur stor del av det egna kapitalet som är goodwill, och varför är den andelen avgörande för tolkningen? 4. Förklara varför jämförelsen ska göras inom bransch — teknikbolag mot teknikbolag, banker mot banker, aldrig blandat — och hur börsvärdet räknas (kurs × antal aktier)."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Kapitlet går igenom fem P/B-tal som betyder fem olika saker. Förklara skillnaden mellan Sinch 1,38 och Apple 44,15 — vad har återköpen gjort med Apples eget kapital (EK är en restpost)? 2. Kambi står på 29,18. Förklara med kapitlets bild varför mjukvaruvärde inte bor i balansräkningen. 3. Kontrollera kopplingen till lönsamheten: vilket bolag har ROE 26,1 % och vilket har ROE 148,8 %? 4. Sinch kapital rensades av nedskrivningar (2024: −6,4 mdr resultat). Förklara varför P/B 1,38 efter nedskrivningen kallas ärligare — men speglar det förflutna, inte framtiden."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Förklara återköpsfällan (Apple-fallet): varför krymper det egna kapitalet av återköp, och varför stiger då P/B och ROE mekaniskt utan att affären förändrats? 2. Goodwillfällan (Sinch-fallet före 2024): eget kapital uppblåst av aldrig-testad köpeskilling. Vilka två kontroller kräver kapitlet — goodwill/totala tillgångar och nedskrivningshistoriken? 3. Vad händer när tunga återköp och utdelningar driver EK under noll? Förklara varför negativ P/B inte är en gratis aktie utan ett oläsligt mått — och vilka två mått du byter till. 4. Förklara varför P/B är huvudmåttet för banker (balansräkningen ÄR affären) men ska tolkas mot substansvärde och ROE-mål i redovisningen."
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Räkna efter med trappstegen ur kalkylatorn: vilket poäng ger P/B 1,38 och vilket ger 3,09? Kontrollera mot kapitlets exempel: 4 p respektive 2 p. 2. Apple får 1 p trots ROE 148,8 %. Förklara hur modellen straffar återköpsdriven kapitalkrympning om man läser V05 blint. 3. Vilken är AKM1:s lösning på den gränsen — vilken variabel ska V05 alltid tolkas tillsammans med (V09, ROE), och vilken not ska läsas (goodwill-noten)? 4. Kapitlet nämner sambandet P/B = P/E × ROE-algebra. Förklara för dig själv hur måtten hänger ihop — och kom ihåg: modellen ger aldrig P/B ensamt sista ordet (vikten är 6 %)."
+    }
+  ]
+}

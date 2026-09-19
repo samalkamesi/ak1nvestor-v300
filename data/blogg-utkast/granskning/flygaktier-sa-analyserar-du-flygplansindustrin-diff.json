@@ -1,0 +1,90 @@
+{
+  "granskat": "data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin.json",
+  "granskadAv": "agentfabrik auto-s1-1789804748544-s1-u2 (2026-09-19)",
+  "rapport": "flygaktier-sa-analyserar-du-flygplansindustrin-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: 'I AK1A:s universum bär sektorn två bolag' är MOTBEVISAT: dagens universum bär FYRA flygplansindustri-bolag klassade industri (Airbus, Boeing, Embraer på plansidan + GE Aerospace på motorsidan; maskinell namnsökning Safran/MTU/Rolls/Saab m.fl. = 0 ytterligare, Saab är försvarsklassad). Tidslinjen git-återkallad: byggtiden 09-16 15:38 läste en 14-industri-vintagen UTAN Boeing (3d9a5e89 committad 21:44 samma kväll; Boeing i c256c659 därefter, Embraer senare) — meningen var sann mot byggtidens data, falsk mot det universum läsaren verifierar mot idag; B-seriens första rent innehållsdrivna universumglidningsfynd. B2: industri-medianerna föråldrade — 'P/E 26,9 och EV/EBIT 21,8 på samma data (14 bolag)' var exakt byggtidens vintagen (26,85/21,794 n=14); dagens träd ger P/E 28,0 (n=18) och EV/EBIT 21,5 (n=17 — Boeing saknar EV/EBIT-fält). B3: PEG-etiketten 'på ettårsprognoser' gäller bara Airbus (3,97 = 25,94÷6,53 spårkonventionen, notbelagt); GE:s 4,23 är inte härledbart ur ettårslongen (39,04÷14,68 = 2,66) — källans eget tal utan derivationsnot. B4: 'båda PEG-talen över 4' falskt för Airbus (3,97 < 4). B5: readingMinutes 2 → 7 (1 371 ord textrensat; round/200; åttonde fallet i klassen). B6: stavfelet 'multipelar' → 'multipler' (bilaktier-A1:s felklass, här i body). I övrigt GRÖNT: källtalsparitet 21/21 mot bolagsunivers.json (båda rader exakta; GE:s 'konsensusprognos +14,7' korrekt belagd av GE-noteringen 'konsensus EPS-tillväxt +1 år' — spelaktier-B2:s fälla finns ej här), serier+aritmetik 17/17 egna omräkningar (oms 58 763→65 446→69 230→73 420 M€: +11,4/+6,1 exakt; res 4 247→3 789→4 232→5 221: −10,8/+23,4 exakt; FCF-serien ordagrant, positiv 4/4; 8 000÷800=10 år; 'nästan dubbelt' = 1,90×), juridik 2007:528 ren (26 varumärkesmönster × 3 ytor = 0; 4 rådgloss-träffar samtliga deskriptiva företagsbeskrivningar, noll imperativ — spelaktier-precedensen; inga lagrum = ingen blandrisk; disclaimer exakt sist; utbildningsram i ingress), 911 = 0/6 mönster, 16/16 interna länkar HTTP 200 mot localhost (kursankaret se-10-flyg lever), struktur grön (8 H2, title 47/60, desc 145/155, 0 mjuka bindestreck).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga söksträngar maskinverifierade unika = 1 träff i body). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, 09-18, ogranskad) bär B1–B5:s systrar ('AK1A's universe carries two companies covering both halves' · 'P/E 26.9 … 21.8 … 14 companies' · 'one-year forecasts' · 'both PEG ratios above 4' · rm 2 vid 1 392 ord ⇒ 7); B6 gäller ej spegeln ('multiples' rättstavat) — speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Vad är flygaktier — leveranskedjans två halvor, ingressens tredje mening)",
+      "gammalt": "I AK1A:s universum bär sektorn två bolag som tillsammans täcker samma leveranskedjas båda halvor: Airbus bygger planhalvan och GE Aerospace motorhalvan.",
+      "nytt": "I AK1A:s universum finns fyra bolag i flygplansindustrin — Airbus, Boeing och Embraer på plansidan, GE Aerospace på motorsidan. Guiden följer ett bolag från varje halva: Airbus bygger planhalvan och GE Aerospace motorhalvan.",
+      "orsak": "UNIVERSUMINNEHÅLLET ÄR MOTBEVISAT: fyra flygplansindustri-bolag klassade industri idag (Boeing tillkom i universumet kvällen efter bygget — c256c659 — och Embraer senare; byggtidens 14-industri-vintagen utan Boeing gör meningen sann DÅ, falsk NU). Duopolstycket i samma text namnar själv Boeing — läsaren möter motsägelsen utan att lämna artikeln. Rättningen räknar upp alla fyra, behåller Airbus+GE som huvudexempel och lämnar alla efterföljande talversioner intakta. Söksträngen unik (1 träff). Spegling i -en.json: 'AK1A's universe carries two companies covering both halves of this supply chain: Airbus the airframe, GE Aerospace the engines.' → 'AK1A's universe holds four aircraft-industry companies — Airbus, Boeing and Embraer on the airframe side, GE Aerospace on the engine side. This guide follows one from each half: Airbus the airframe, GE Aerospace the engines.'"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Multipel och cykel — så läser du värderingen, första stycket)",
+      "gammalt": "P/E 26,9 och EV/EBIT 21,8 på samma data (14 bolag)",
+      "nytt": "P/E 28,0 och EV/EBIT 21,5 på samma data (18 bolag i branschen; EV/EBIT redovisas för 17 av dem)",
+      "orsak": "MEDIANERNA FÖRÅLDRADE AV UNIVERSUMGLIDNINGEN: citatet matchar exakt byggtidens vintagen (26,85/21,794, n=14 — 3d9a5e89 09-16), men universumet har vuxit 135→195 och industri-branschen 14→18. Dagens medianer maskinberäknade: P/E 28,005 (n=18), EV/EBIT 21,549 (n=17 — Boeing saknar EV/EBIT-fält). Meningens kontrast håller även mot nya tal (Airbus 25,9 under, GE 39,0 över medianen). Söksträngen unik (1 träff). Spegling -en: 'P/E 26.9 and EV/EBIT 21.8 on the same data (14 companies)' → 'P/E 28.0 and EV/EBIT 21.5 on the same data (18 companies in the sector; EV/EBIT is reported for 17 of them)'"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Multipel och cykel — så läser du värderingen, PEG-meningen)",
+      "gammalt": "(4,0 respektive 4,2 på ettårsprognoser)",
+      "nytt": "(4,0 respektive 4,2 — Airbus-talet på ettårsprognos enligt spårkonventionen, GE-talet källans egen PEG-beräkning)",
+      "orsak": "BELÄGGSBLANDNING: Airbus PEG 3,97 = P/E ÷ etårsprognos (25,94÷6,53, spårkonventionen — universums not dokumenterar derivationen); GE PEG 4,23 är INTE härledbart ur ettårslongen: 39,04÷14,68 = 2,66 — GE-noteringen saknar peg-derivationsnot (Yahoo-källans eget tal, traditionellt flerårsbasis). Läsaren som räknar efter får 2,7, inte 4,2. Alternativ för ägaren: byt GE-talet till spårkonventionens 2,7 (men då faller 'båda PEG-talen ligger högt'). Klass: beläggsblandning, släkt med spelaktier-B2. Söksträngen unik (1 träff). Spegling -en: '(4.0 and 4.2 on one-year forecasts)' → '(4.0 and 4.2 — Airbus on the one-year forecast per the track convention, GE per the source's own PEG calculation)'"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Sammanfattningen, multipel-bulleten)",
+      "gammalt": "men båda PEG-talen över 4",
+      "nytt": "men PEG-talen höga — 4,0 respektive 4,2",
+      "orsak": "FALSKT PÅSTÅENDE: Airbus PEG är 3,97 — under 4, inte över. Sammanfattningens precisering; kroppens '4,0' är korrekt avrundat men 'över 4' överdriver. Söksträngen unik (1 träff). Spegling -en: 'but both PEG ratios above 4' → 'but PEG ratios high — 4.0 and 4.2'"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "7",
+      "orsak": "1 371 ord textrensat / 2 min = 686 ord/min — samtliga 55 publicerade max 240 (median 171). Bloggfamiljens konvention round(ord/200) = 7. Åttonde dokumenterade fallet i klassen (byggd 09-16, före domens kodifiering 09-17). Spegeln -en: 1 392 ord, rm 2 (696 ord/min) → 7"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Multipel och cykel — så läser du värderingen, sektionens första mening)",
+      "gammalt": "Universumets multipelar för de två halvorna",
+      "nytt": "Universumets multipler för de två halvorna",
+      "orsak": "STAVFEL: 'multipelar' är ej svensk plural — serien skriver 'multipler' (bilaktier-A1:s felstavningsklass, där i description; här i body-sektionens ingressmening). Söksträngen unik (1 träff). Gäller ej -en-spegeln ('multiples' rättstavat)"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Kundförskotten — kundens kapital bygger flygplanet, första varningsstycket före)",
+      "gammalt": "men de är samtidigt kapital som får arbetafinansiera produktionen",
+      "nytt": "men de är samtidigt kapital som får medfinansiera produktionen",
+      "orsak": "'Arbetafinansiera' är ej ett ord — sammansatt verbstump utan belägg. 'Medfinansiera' fångar meningen (kundens kapital deltar i finansieringen under produktionen); alternativ 'arbetsfinansiera'. FRIVILLIG språkrättning"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "body (Multipel och cykel, P/B-stycket)",
+      "gammalt": "tillgångar som balansräkningen bara skimrar",
+      "nytt": "tillgångar som balansräkningen bara skummar på ytan",
+      "orsak": "'Skimrar' är en ovanlig formation (SAOB-förenligt men oklart i den här konstruktionen); idiomet för 'knappt spegla värdet av' är 'skumma på ytan'. Författarröst — FRIVILLIGT"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "flygaktier-sa-analyserar-du-flygplansindustrin.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

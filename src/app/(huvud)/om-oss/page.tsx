@@ -124,7 +124,7 @@ export default function OmOssPage() {
           </p>
         </section>
 
-        <section className="rounded-xl border border-gold/30 bg-card p-5">
+        <section id="kontakt" className="scroll-mt-24 rounded-xl border border-gold/30 bg-card p-5">
           <h2 className="font-serif text-xl font-bold">Kontakt</h2>
           <p className="mt-2 text-muted-foreground">
             Ak1 Apex Nexus · info@ak1nvestor.com

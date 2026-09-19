@@ -1,0 +1,189 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-jpmorgan-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-19, omgång auto-s1-1789781115807)",
+  "rapport": "kvartal-2026-q3-jpmorgan.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 85/88 sifferkontroller gröna mot dagens träd (JPM-posten 2026-09-03 exakt på samtliga 16 fält; tabellens 14 median-/rang-/universumtal EGENOMRÄKNADE ur 189-postfilen, alla exakta; Datavaktens fem test omräknade steg för steg; aktietrappan, tvillingjämförelserna, kalendern, insiderköpen och '45 paket på disk' verifierade), juridikgrind REN (2007:528 2 kap 5 § exakt en gång, disclaimer negerad, samtliga 6 'köp'-träffar oskyldiga, inga främmande lagrum), 911 = 0 träffar/6 mönster, internlänkar 13/13 HTTP 200 mot localhost. TRE fyndklasser: (1) superlativet 'före Samsung' falskt i filens egen data (Samsungs won-notering är större i varje läsning), (2) enhetssystematiken 'miljoner dollar' som ska vara 'miljarder dollar' på 6+2 ställen i övning B + källraden, (3) officiell EPS är 7,70 inte 7,71 (webb-stickprov mot bolagets eget pressmeddelande). B1–B6 maskinella byten; C-poster förslag som kräver beslut.",
+  "anvandning": "Verkställ B-poster exakt (sök/ersätt i angivet fält — samtliga strängar maskinellt verifierade UNIKA i filen 2026-09-19). C-poster kräver beslut före verkställning. Originalet ändras av paketets ägare (s4) eller nästa våg — inte av granskaren. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning A, sista meningen)",
+      "gammalt": "aldrig en handssignal",
+      "nytt": "aldrig en handelssignal",
+      "orsak": "Stavfel i juridiskt laddad mening ('handelssignal' är avsett;UTKASTET skriver 'handssignal'). Strängen verifierad unik"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Tillväxt-sektionen)",
+      "gammalt": "med vinst per aktie 7,71 dollar",
+      "nytt": "med vinst per aktie 7,70 dollar",
+      "orsak": "Officiell EPS Q2 2026 är $7,70 enligt bolagets eget pressmeddelande ('REPORTS SECOND-QUARTER 2026 NET INCOME OF $21.2 BILLION ($7.70 PER SHARE)') och Yahoo Finances rapportering; 7,71 är en härledning (21,2/2,75). Byggarens källrad bär samma fel"
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Datavakten test 5)",
+      "gammalt": "och i vinst per aktie 7,71 mot 5,25 — plus 47 procent",
+      "nytt": "och i vinst per aktie 7,70 mot 5,25 — plus 47 procent",
+      "orsak": "Samma officiella 7,70; procenten opåverkad (7,70/5,25 = +46,7 → +47)"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Så står sig bolaget, tvillingläsningen)",
+      "gammalt": "men vinst per aktie 7,71 mot 20,98 dollar",
+      "nytt": "men vinst per aktie 7,70 mot 20,98 dollar",
+      "orsak": "Samma officiella 7,70"
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Datavakten test 2)",
+      "gammalt": "net income 14.4 miljarder, Q4 2025 13 rapporterat",
+      "nytt": "net income 14,4 miljarder, Q4 2025 13,0 rapporterat",
+      "orsak": "Decimalpunkt i svensk löptext (14.4 → 14,4); '13' → '13,0' för konsistens med Tillväxt-sektionens decimaler. Tillväxt-sektionen skriver samma kvartal med komma — filen är idag inkonsekvent"
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Datavakten test 2)",
+      "gammalt": "Q1 2026 16.5 och Q2 2026 21.2",
+      "nytt": "Q1 2026 16,5 och Q2 2026 21,2",
+      "orsak": "Decimalpunkter i svensk löptext; samma tal står med komma i Tillväxt-sektionen"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Värdering-sektionen, börsvärdet)",
+      "gammalt": "seriens största paket på börsvärde, före Samsung och Johnson & Johnson, och mer än tre gånger tvillingen Goldman Sachs",
+      "nytt": "största amerikanska paketet i serien på börsvärde — före Johnson & Johnson och mer än tre gånger tvillingen Goldman Sachs; Samsungs sydkoreanska won-notering är i konverterad läsning ännu större",
+      "orsak": "VÄSENTLIGT — superlativet är FALSKT för Samsungs del: bolagsunivers.json bär Samsung 005930.KS med valuta KRW, mcap 1 610 830 mdr KRW och pris 252 500 KRW (internt konsistent: ≈6,4 mdr aktier × priset). Vid varje historisk USD/KRW-kurs (940–1 450 senaste 15 åren) är det ≈1,1–1,7 biljoner USD, vida över JPM:s 946,899 mdr USD; även råa filetalet är större än JPM:s. JNJ-delen är sann (663,228 mdr USD < 946,899). Samma superlativfelklass som finansbolagens-riskhantering-C1 ('universumets bredaste spann'). KO-not: byggarens worklog-rad och GRANSKNINGSKO-SAMMANSTALLNING-rad bär samma överdrift — rättas där också av ägaren"
+    },
+    {
+      "id": "C2a",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B, första meningen)",
+      "gammalt": "47,1, 46,8, 50,5 och 57,3 miljoner dollar på de baser",
+      "nytt": "47,1, 46,8, 50,5 och 57,3 miljarder dollar på de baser",
+      "orsak": "VÄSENTLIGT — enhetssystematik: JPM:s kvartalsintäkter är miljarder (Q2 2026 rapporterat 57,3 MILJARDER); 'miljoner' ger läsaren 1000× fel skala. C2a–C2f är samma systematik i hela övning B; C2g i källraden"
+    },
+    {
+      "id": "C2b",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B)",
+      "gammalt": "summerar till 201,7 miljoner dollar rullande",
+      "nytt": "summerar till 201,7 miljarder dollar rullande",
+      "orsak": "Samma enhetssystematik"
+    },
+    {
+      "id": "C2c",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B)",
+      "gammalt": "cirka 102 miljoner dollar",
+      "nytt": "cirka 102 miljarder dollar",
+      "orsak": "Samma enhetssystematik (201,7 × 0,5039 ≈ 101,6 ≈ 102 MILJARDER)"
+    },
+    {
+      "id": "C2d",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B, instruktionsraden)",
+      "gammalt": "blir rutan, i miljoner dollar",
+      "nytt": "blir rutan, i miljarder dollar",
+      "orsak": "Samma enhetssystematik"
+    },
+    {
+      "id": "C2e",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B, tabellrubrik)",
+      "gammalt": "| Rörelseresultat, miljoner dollar |",
+      "nytt": "| Rörelseresultat, miljarder dollar |",
+      "orsak": "Samma enhetssystematik"
+    },
+    {
+      "id": "C2f",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B, räknesatserna)",
+      "gammalt": "cirka 2,0 miljoner dollar vid oförändrade intäkter",
+      "nytt": "cirka 2,0 miljarder dollar vid oförändrade intäkter",
+      "orsak": "Samma enhetssystematik (1 pp av 201,7 miljarder = 2,0 miljarder)"
+    },
+    {
+      "id": "C2g",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Övning B, räknesatserna)",
+      "gammalt": "cirka 3,0 miljoner — intäktsratten",
+      "nytt": "cirka 3,0 miljarder — intäktsratten",
+      "orsak": "Samma enhetssystematik (3 % av 201,7 miljarder × marginal ≈ 3,0 miljarder)"
+    },
+    {
+      "id": "C2h",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Källor, scenarioradsraden)",
+      "gammalt": "intäktsbasen 201,7 miljoner dollar (fyra rapporterade kvartal",
+      "nytt": "intäktsbasen 201,7 miljarder dollar (fyra rapporterade kvartal",
+      "orsak": "Samma enhetssystematik i källredovisningen. KO-not: GS-tvillingen bär samma felklass (1 'miljoner'-träff i dess body) — spår-notis åt dess ägare"
+    },
+    {
+      "id": "C3",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Lönsamhet-sektionen, nettomarginalraden)",
+      "gammalt": "32,7 i Q1 2026 (mot rapporterad intäktsbas 34,88)",
+      "nytt": "32,7 i Q1 2026 (16,5 netto på 50,5 managed intäkter)",
+      "orsak": "Talet 34,88 saknar förankring: står inte i JPM-posten (nettoMarginal-fältet är 34,92), inte i kalender-finans.json och inte i byggarens logg — referensen är otydlig och overifierbar i trädets källor. Förslaget visar i stället den faktiska räkningen bakom 32,7"
+    },
+    {
+      "id": "C4",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "title",
+      "gammalt": "JPMorgan Q3-rapport 2026: så läser du den — tvillingdagen fullbordas: rekordvinstens bank med seriens tajtaste bankidentitet och största konsensusgap",
+      "nytt": "JPMorgan Q3-rapport 2026: så läser du den — rekordvinstens bank med tajtaste bankidentiteten",
+      "orsak": "Nuvarande 149 tkn = seriens längsta titel (syskonen: Ericsson 81, Nordea 110, GS 133) och klipps i mobila sökträffar (taket ~60, seriens egen norm 70–84 enligt mx1-beslutet). Förslaget 92 tkn behåller sökkärnan 'JPMorgan Q3-rapport 2026' intill datumet"
+    },
+    {
+      "id": "C5",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "description",
+      "gammalt": "JPMorgan Chase redovisar tredje kvartalet 2026 tisdagen den 13 oktober — samma dag som Goldman Sachs, och med historiens största amerikanska bankkvartal i bakspåret. Läspaketet: nyckeltalen mot finansgrenens medianer, identitetstestets tajtaste träff i bankfamiljen, teckenväxlaren i två fönster, bokvärdesdetektiven och konsensusgapet på 9,3 gånger. Scenariorutan är ren aritmetik i dollar, och varje siffra har sin källa.",
+      "nytt": "JPMorgan redovisar Q3 2026 tisdagen 13 oktober — samma dag som Goldman Sachs och med rekordkvartal i bakspåret. Läspaketet: nyckeltalen mot finansmedianerna, identitetstestet, bokvärdesdetektiven och konsensusgapet 9,3×. Scenariorutan är ren aritmetik och varje siffra har sin källa.",
+      "orsak": "Nuvarande 423 tkn (syskonen 204–368; SEO-fönstret ~155–160 enligt Ericsson-granskningens C2). Förslaget ~230 tkn ligger under Nordeas/GS:s accepterade nivå och behåller alla bärande begrepp"
+    },
+    {
+      "id": "C6",
+      "typ": "forslag",
+      "fil": "sa-laser-du-jpmorgan-q3-2026.json",
+      "falt": "body (Lönsamhet-sektionen, nettomarginalradens slut)",
+      "gammalt": "universumfältets 34,92 procent ligger mitt i raden",
+      "nytt": "universumfältets 34,92 procent ligger i radens övre halva",
+      "orsak": "Kvartalsraden är 30,6/32,7/32,8/37,0 (median 32,75) — 34,92 ligger mellan 32,8 och 37,0, närmare toppen. 'Mitt i raden' är generöst; lägst prioritet bland förslagen"
+    }
+  ],
+  "r2-noteringar": "publishedAt 2026-10-13 = rappdagen = seriens konsekventa norm (Ericsson/Nordea/GS samma) — publiceringstidpunkten är kundens beslut och rörs ej av granskaren. Utdelningsluckan (fält null) redovisas ärligt i utkastet.",
+  "kontroller": {
+    "siffrorMotTradet": "85 gröna: JPM-postens 16 fält (pris 356,22, mcap 946,899, ROE 0,1779, EBIT-marg 0,5039, netto-marg 0,3492, PE 15,269, PB 2,678, EV/EBIT 8,358, PEG 1,65, TTM 0,304, prognos 0,0328, insider 22, ROIC/skuld/räntetäckning null, serier tomma + noteringstexten) + tabellens 14 tal EGENOMRÄKNADE (median finans 14,9845→14,985/2,574/15,47 %/45,70/35,06/10,23/9,56; median universum 21,170/2,806/15,34/20,96/13,66/13,14/6,95; rang 11/20, 11/20, 14/20, 12/19, 10/20, 3/17, 18/20 — alla exakta) + Datavaktens fem test omräknade steg för steg (15,053/2,716/±1,4 %; 62,0/62,9/353,6/65,1/66,8/−2,3 %; 870,3/+8,8/994,0/−4,7; 4,66/9,25/0,35; +41/+47/+17/2,805/133,0/+4,7/9,4) + scenariorutans 9 celler + räknesatser (2,0/3,0/1,5×/0,66) + multiplövningar (14,78/14,5) + aktietrappan (57,0/20,02=2,847; 13,0/4,63=2,808; 21,2/7,71≈2,750; 946,899/356,22=2,658; −6,6 %) + tvillingen (GS PE 15,479/PB 2,774/ROE 16,9/insider 7; 3,2×; 2,8×; 9×; 9,27→9,3× mot 9,08→9,1) + nordiska insider 0 ×4 + JNJ 663,228 + kalender-finans.json (13/10, 08:30 ET, hämtat 09-15, officiell källa) + '45 paket på disk' (48 − 3 senaste = 45, mtime-ordning carlsberg/jpm/fortum) + vågvalidering-SENASTE.md 0 JPM-träffar ('står inte i kartan' sant) + nettomarginalkvartal 32,8/30,6/32,7/37,0 egenräknade",
+    "webbStickprov": "Q2 2026 bekräftat: netto 21,2 mdr (historiens största för JPM), Visa-vinst 4,6 mdr, rapportdag 2026-07-14 — källor: Yahoo Finance 'JPMorgan Chase Q2 2026 earnings: Record profit' (2026-07-14) + bolagets officiella 2Q26-pressmeddelande '($7.70 PER SHARE)' + StockTitan. DEVIATION: officiell EPS 7,70 mot utkastets 7,71 → B2–B4",
+    "juridik": "2007:528 åberopas exakt en gång (2 kap 5 §, korrekt för utbildningsundantaget); inga andra svenska lagrum (Basel/CET1/SEC = regelverk, ej lagrum — lagrumsblandning omöjlig); disclaimer negerad i ingressen ('inte en rekommendation att köpa, sälja eller behålla') och explicit i slutet; samtliga 6 'köp'-träffar oskyldiga ('att köpa' i negering, rubrikfråga 'vem köper?', insiderköp ×2, 'Återköp:' med kolon, 'Inga köp-, sälj-' i negering) — B8-precedensen; 'rekommendation' förekommer endast i negerande konstruktioner",
+    "911": "0 träffar på 6 mönster (911, 9/11, 11 september, September 11, 11/9, nine-eleven)",
+    "lankar": "13/13 unika interna länkar HTTP 200 mot localhost:3000 (9 × /dataset/finans/*, /bolag/jpm, /kurser, /transparens, /kallor)",
+    "ord": "3 191 ord → readingMinutes 5 korrekt mot plattformskontraktet (3191/600 = 5,3 → 5)"
+  }
+}

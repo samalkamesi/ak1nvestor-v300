@@ -1,0 +1,148 @@
+{
+  "slug": "sj-06-arv-gava-och-ingaende-varde",
+  "category": "SKATT & JURIDIK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 20,
+  "title": "Arv, gåva och aktiernas ingående värde",
+  "summary": "Skattefamiljens sjätte steg öppnar överlåtelsesidorna: vad som händer med vinstberäkningen när aktierna inte köps utan ärvs, ges bort, kvoteras i bodelning eller skiftas i dödsbo. Kursen lär ingående värdets tre födelseformer — köpt, ärvt till marknadsvärdet, övertaget från givaren — och den klassiska tidpunktsmekaniken hos dödsboet. Utbildning om hur reglerna fungerar, inte råd i något enskilt fall.",
+  "minutes": 20,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Skilja vinstberäkningens två sidor: försäljningspris och omkostnadsbelopp · Räkna ärvt ingående värde — marknadsvärdet vid dödsfallet, inte inköpspriset · Räkna övertaget ingående värde vid gåva — givarens omkostnadsbelopp följer aktierna · Kvotera ett blandat förvärv till underpris mellan närstående · Förstå dödsboets roll som eget skattesubjekt och tidpunktens mekanik · Veta vilka egenskaper som inte kan ärvas: outnyttjade förlustavdrag och schablonbeskattade konton",
+  "why": "Skatte- och juridikfamiljens fem första steg tog pulsen på gränserna: källskatten utland (sj-01), kryptovalutornas beskattning (sj-02), stämman och rösträtten (sj-03), optionernas skatteregler (sj-04) och kontots form — kapitalförsäkring mot ISK (sj-05). Men familjen saknar den sida som berör varje långsiktigt förvärv av aktier någon annanstans ifrån: överlåtelserna utan köpeskilling. Sonden mot registret bekräftar luckan: gåvoskatt 0 träffar, dödsbo endast sj-05 i en mening, ingående värde 0 kursägande träffar — medan km-051 äger kapitalvinstskattens grundregel och km-053 fåmansbolagets utdelningssida. Mellan dem ligger arvets, gåvans och bodelningens mekanik öppen. sj-06 är familjens sjätte steg: det som gör att en generationsportfölj kan flytta utan att varje steg blir en bonusbeskattning — och det som lär varför tidpunkten för en försäljning i dödsbo är en mekanikfråga, inte en känsla.",
+  "history": {
+    "origin": "Överlåtelse utan vinst är en gammal tankesedel: jord som gick i arv beskattades efter egendomens värde vid skiftet, inte efter vad en farmor en gång betalat. När värdepapperens tid kom flyttade frågan från fastighetsboken till depån — och fick ny mekanik: aktier har en kontinuerlig marknadspris, vilket gör överlåtelsetidpunkten till ett mätbart tal.",
+    "evolution": "Sverige bar länge både arvs- och gåvoskatt, vilket gjorde generationsskiften till en planeringsfråga med egna skikt. När dessa skatter avskaffades i början av 2005 förenklades själva överlåtelsen — men kapitalvinstsystemet blev samtidigt viktigare: eftersom gåvan blev skattefri blev den inkörsporten till portföljer vars omkostnadsbelopp ligger decennier bakåt i tiden, och bevisfrågan — vad som en gång betalades — flyttade till papperet.",
+    "modern": "I dag är mekaniken stabil: arv ger marknadsvärdet vid dödsfallet som ingående värde, gåva ger givarens omkostnadsbelopp, och dödsboet under bouppteckningstid är ett eget skattesubjekt med den avlidnes siffror. Det som växer är papperskravet: depåernas historik, kvitton och gåvoavtal avgör vad som får räknas, och digitala depåer utan historik blir kursernas varnande exempel. Reglerna är också det som gör att en och samma aktie kan bära tre helt olika latenta vinster i tre olika händer — mekanik väl värd att förstå före varje generationskliv."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — vinstens två förutsättningar", "minutes": 3 },
+    { "num": 2, "title": "Arvet — dödsbo, bouppteckning och bortgående värde", "minutes": 4 },
+    { "num": 3, "title": "Gåvan — att träda i givarens ställe", "minutes": 4 },
+    { "num": 4, "title": "Bodelning, arvskifte och egendom utan omkostnadsbelopp", "minutes": 3 },
+    { "num": 5, "title": "Fällor — papperet, avdragen, gränserna", "minutes": 3 },
+    { "num": 6, "title": "Mästerskap — dödsboets fem frågor", "minutes": 3 }
+  ],
+  "lynchSection": "Peter Lynch berättade i sina böcker om de ärvda portföljerna som slog de flesta förvaltare: orörda innehav som ärvts, glömts och lämnats i fred i decennier. Hans poäng var att tiden i marknaden gör jobbet — sj-06 lägger mekaniken under den berättelsen: just därför att arvet ger marknadsvärdet vid dödsfallet som ny ingång, kan den ärvda aktien bära en helt ny vinstberäkning från dagen efter bouppteckningen.",
+  "grahamSection": "Benjamin Graham skilde på investering och spekulation genom tidsaxeln och underlaget; överlåtelsemekaniken är en tredje axel av samma tänkande: samma värdepapper är inte samma investering för två personer med olika omkostnadsbelopp. Grahams krav på att räkna noga innan man handlar gäller lika mycket arvet och gåvan — prisstämpeln sattes för länge sedan, av någon annan.",
+  "ak1Section": "I AK1A:s metodik kompletterar sj-06 skattefamiljen med den mekanik som gör portföljens historia relevant: kursens fem tidshorisonter bygger på att avkastningen kan mätas från ett känt pris, och överlåtelserna bestämmer vilket pris som gäller för vem. I AKM1:s universum märks kursen som förståelse för att samma innehav kan bära olika latenta skatter i olika händer — en strukturell förklaring till varför ägarskiften kan förändra försäljningsbenägenheten utan att någon analys ändrats. Detta är utbildning om reglernas mekanik — aldrig råd om vad någon bör göra i sitt eget fall.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 3,
+      "title": "Grunderna — vinstens två förutsättningar",
+      "intro": "Kapitalvinsten är en subtraktion med två led. Det ena ledet alla talar om. Det andra bestäms av hur aktierna en gång kom till ägaren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "km-051 äger grundregeln: vid försäljning beskattas skillnaden mellan försäljningspris och omkostnadsbelopp. Det som den kursen lämnar öppet — och som denna kurs äger — är omkostnadsbeloppets tre födelseformer. Första: det köpta förvärvet, där beloppet är inköpspriset plus omkostnader. Andra: det ärvda förvärvet, där dödsboets förvärv sätter värdet till marknadspriset vid dödsfallet — den så kallade bortgående värde-regeln. Tredje: det övertagna förvärvet, där gåvans mottagare träder i givarens ställe och övertar dennes omkostnadsbelopp ord för ord. Tre händer, samma aktie, tre olika latenta vinster. En farmor som köpte för 12 kronor, ett dödsfall till 188 kronor och ett barnbarn som säljer till 205 kronor — barnbarnets vinst är inte 193 kronor utan 205 − 188 = 17 kronor per aktie, och skatten 30 procent av vinsten blir 0,30 × 17 = 5,10 kronor. Exemplet bär hela kursens kärna i en enda subtraktion, och de tre födelseformerna är allt som behövs för att räkna rätt i de flesta familjeportföljer. Mekaniken är utbildning; vad någon gör med den är läsarens eget val."
+        },
+        {
+          "type": "definition",
+          "content": "OMKOSTNADSBELOPP — det belopp vinsten räknas mot: inköpspris med omkostnader vid köp · BORTGÅENDE VÄRDE — marknadsvärdet vid dödsfallet; dödsboets ingående värde och arvingens vid arvskifte · ATT TRÄDA I GIVARENS STÄLLE — gåvomottagarens övertagande av givarens omkostnadsbelopp · KVOTERING — uppdelningen av ett blandat förvärv mellan köpandel och gåvoandel · DÖDSBO — eget skattesubjekt under bouppteckning och skifte, med den avlidnes omkostnadsbelopp"
+        },
+        {
+          "type": "insight",
+          "content": "Försäljningspriset står i kurstabellen för alla. Omkostnadsbeloppet står i varje ägares egen historia — därför är två identiska depåer sällan skattemässigt identiska."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Arvet — dödsbo, bouppteckning och bortgående värde",
+      "intro": "Dödsfallet fryser en kurs och gör den till ett nytt nollställe. Vem som sedan säljer avgör vilken subtraktion som gäller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När en ägare går bort blir dödsboet en egen skattesubjekt under bouppteckningstiden: det deklarerar, det kan sälja — och det räknar sina vinster med den avlidnes omkostnadsbelopp. Samtidigt sätts de tillgångar som inte säljs i boet till marknadsvärdet vid dödsfallet, och det värdet blir arvingarnas ingående vid arvskiftet. Mekaniken ger en tidpunktsexempel som är kursens signatur. Farmodern köpte 1972 till 12 kronor per aktie; hon avled 2026 med aktien värderad till 188 kronor. Väg ett: arvskifte först, arvingen säljer sedan till 190 kronor — vinsten blir 190 − 188 = 2 kronor per aktie, skatten 0,30 × 2 = 0,60 kronor. Väg två: dödsboet säljer samma aktie till samma pris innan skiftet — vinsten blir 190 − 12 = 178 kronor, skatten 0,30 × 178 = 53,40 kronor. Samma aktie, samma dag, samma köpare: 52,80 kronors skillnad i skatt per aktie, enbart driven av vem som var säljare när affären gjordes. Notera också bredden av mekaniken: utdelningar som landar i dödsboet beskattas i boet enligt km-050:s regler, och makes andel vid dödsfall följer samma värdestängning som arvingarnas. Detta är inte en handledning i vad ett bo bör göra — det är en förklaring av varför frågan om tidpunkt och subjekt alls finns, och varför den har ett rätt svar att leta fram i varje enskilt fall."
+        },
+        {
+          "type": "tabell",
+          "content": "ARVETS TIDPUNKTSMEKANIK (PÅHITTADE TAL, KRONOR PER AKTIE): INKÖP 1972: 12,0 · MARKNADSVÄRDE VID DÖDSFALL 2026: 188,0 — arvingens ingående värde · ARVSKIFTE FÖRST, SÄLJ TILL 190: vinst 190 − 188 = 2,0 · skatt 0,30 × 2,0 = 0,60 · DÖDSBO SÄLJER FÖRE SKIFTE TILL 190: vinst 190 − 12 = 178,0 · skatt 0,30 × 178,0 = 53,40 · SKILLNAD: 53,40 − 0,60 = 52,80 per aktie — mekanik, inte slump · BARNBARNET SÄLJER SENARE TILL 205: vinst 205 − 188 = 17,0 · skatt 0,30 × 17,0 = 5,10"
+        },
+        {
+          "type": "insight",
+          "content": "Dödsfallet är portföljens nollställe: allt som händer efter bouppteckningen mäts från 188-kronors-strecket, inte från 1972. Den som förstår det förstår också varför arv skiljer sig från gåvans tysta kontinuitet."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Gåvan — att träda i givarens ställe",
+      "intro": "Gåvan byter ägare men inte historia. Mottagaren får inte bara aktierna — den får givarens siffror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Eftersom gåvoskatten är avskaffad sedan början av 2005 är själva överlåtelsen fri — men kapitalvinstsystemet har en motvikt: den som mottar en gåva träder i givarens ställe och övertar omkostnadsbeloppet. Föräldern som köpte för 50 kronor per aktie och ger bort innehavet när kursen är 120 förmedlar alltså inte bara en tillgång på 120 kronor utan en latent vinst på 70 kronor per aktie. Säljer mottagaren till 130 blir vinsten 130 − 50 = 80 kronor — inte 130 − 120 = 10 — och skatten 0,30 × 80 = 24,0 kronor per aktie. Mera intrikat blir det vid det blandade förvärvet: en närstående som betalar under marknadsvärdet. Värde 200 kronor, betalt 80 kronor, givarens omkostnadsbelopp 90 kronor. Gåvoandelen är skillnaden 200 − 80 = 120 kronor, alltså andelen 120 ÷ 200 = 0,6 av värdet. Omkostnadsbeloppet för mottagaren blir det betalda plus gåvoandelens andel av givarens belopp: 80 + 0,6 × 90 = 80 + 54 = 134 kronor. Säljs aktien sedan för 200 blir vinsten 200 − 134 = 66 kronor och skatten 0,30 × 66 = 19,80 kronor. Kvoteringen — uppdelningen mellan köp och gåva — är hela mekaniken, och den visar dessutom sin spegelbild hos givaren: den del som är gåva är hos givaren ett avyttrande till underpris, vilket har sina egna konsekvenser för dennes beräkning. Här som överallt i kursen: mekaniken är undervisning, tillämpningen i ett verkligt fall är läsarens eget arbete — ofta tillsammans med en rådgivare."
+        },
+        {
+          "type": "tabell",
+          "content": "GÅVANS TVÅ FORMER (PÅHITTADE TAL, KRONOR PER AKTIE): REN GÅVA: givarens omkostnadsbelopp 50 · värde vid gåvan 120 · mottagare säljer 130 · vinst 130 − 50 = 80 · skatt 0,30 × 80 = 24,0 — historien följer aktierna · BLANDAT FÖRVÄRV: värde 200 · betalt 80 · gåvoandel 200 − 80 = 120, andel 120 ÷ 200 = 0,6 · givarens omkostnadsbelopp 90 · mottagarens belopp 80 + 0,6 × 90 = 134 · sälj 200 → vinst 200 − 134 = 66 · skatt 0,30 × 66 = 19,80"
+        },
+        {
+          "type": "insight",
+          "content": "Gåvan är tidsresan som inte sker: mottagaren räknas som om den stått i kön 1972. Det är gåvans gåva — och dess pris, eftersom den djupa historien också bär de djupa vinsterna."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 3,
+      "title": "Bodelning, arvskifte och egendom utan omkostnadsbelopp",
+      "intro": "Mellan arv och gåva ligger familjerättens tredje överlåtelse — och en hel klass egendom som aldrig får något omkostnadsbelopp alls.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vid skilsmässa eller dödsfall sker bodelning mellan makar: andelar byter ägare utan att någon affär göras, och den make som tar över aktier träder i den andres ställe — omkostnadsbeloppet följer precis som vid gåva. Arvskiftet, dödsboets upplösning, är motsatsen i mekanik: där stängs historien och värdet sätts nytt, till marknadsvärdet vid dödsfallet. Den tredje kategorien är egendom som aldrig får något omkostnadsbelopp: kapitalförsäkring och investeringssparkonto beskattas schablonmässigt — sj-05 äger hela den världen — och vid arv eller gåva av ett sådant konto finns ingen vinstberäkning att överta och ingen att stänga. Skillnaden blir påtaglig i praktiken: den ärvda aktiedepån och det ärvda schablonkontot är två helt olika mekaniska objekt, även om de kan bära exakt samma underliggande värdepapper. Även ISK — km-052:s område — saknar omkostnadsbelopp i denna mening: kontot beskattas efter värde och inbetalningar, inte efter vinst. För den som läser en familjs portföljkarta är frågan därför alltid dubbel: vad ägs — och i vilken kontextform ägs det, för kontexten avgör vilka av kursens tre födelseformer som ens är relevanta."
+        },
+        {
+          "type": "definition",
+          "content": "BODELNING — makars uppdelning av giftorättsgods vid skilsmässa eller dödsfall; övertagande make träder i den andres ställe · ARVSKIFTE — dödsboets upplösning bland dödsbodelägare; arv har då redan stängt värdet vid dödsfallet · SCHABLONKONTO — kapitalförsäkring eller ISK; beskattas utan omkostnadsbelopp och kan därför varken ärva eller förmedla ett sådant"
+        },
+        {
+          "type": "insight",
+          "content": "Tre rader att minnas: bodelning för historien vidare, arvskifte stänger den, schablonkontot har aldrig haft någon. Varje familjeportfölj är en mosaik av de tre."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 3,
+      "title": "Fällor — papperet, avdragen, gränserna",
+      "intro": "Reglernas logik är enkel. Verklighetens papper är det inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: beviset. Ett övertaget omkostnadsbelopp måste kunna styras — kvitto, bankutdrag, gåvoavtal, bouppteckningsakt. Gåvoavtalet är inte en formalia utan hela bevisbilden: utan det kan ett femtiotal år gammalt inköpspris bli omöjligt att föra in i beräkningen, och vinsten beräknas efter helt andra antaganden. Fälla två: förlustavdragen. Outnyttjat kapitalförlustavdrag är personligt — dödsboet kan använda den avlidnes avdrag i sina egna deklarationer under boets tid, men avdraget följer inte med arvingarna vid skiftet. Den som ärvt en aktie med liten latent vinst och tänkt sig att den ärvda förlusten från ett annat innehav skulle tas i samma vända har missat just detta. Fälla tre: gränserna. Utländska tillgångar i dödsbon kan möta källskatt och andra regler — sj-01:s territorium — och fåmansbolagsaktier har en helt egen utdelnings- och överlåtelsemekanik som km-053 äger; att blanda in dem här vore att blanda lagstiftningsområden. Sist: den mänskliga fällan. Samma mekanik som gör arvet skattevänlig kan fresta en generationsöverföring att göras för mekanikens skull allena — kursens uppgift är att förklara reglerna, inte att förespråka någon överföring; varje verkligt beslut bär sina egna värden, relationer och omständigheter som ingen kurs kan väga."
+        },
+        {
+          "type": "insight",
+          "content": "Papperet är mekanikens minne. Depåhistorik som kan rekonstrueras är i överlåtelsevärlden värt mer än någon kursspådom — det är hela skillnaden mellan ett känt och ett okänt omkostnadsbelopp."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 3,
+      "title": "Mästerskap — dödsboets fem frågor",
+      "intro": "Den som kan ställa de fem frågorna kan läsa vilken överlåtelse som helst — det är kursens slutform.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: hur kom aktierna till ägaren — köp, arv, gåva, bodelning eller apport; svaret väljer födelseform. Fråga två: vad är omkostnadsbeloppet och varifrån stammar det — dokumenterat i papper eller rekonstruerbart bara delvis. Fråga tre: om dödsbo är inblandat, var i processen står det — före bouppteckning, under boets tid eller efter skiftet; tidpunkten bestämmer både subjekt och subtraktion, som 178-mot-2-exemplet visade. Fråga fyra: finns blandade förvärv som behöver kvoteras — betalning under värde mellan närstående, med gåvoandel beräknad och dokumenterad. Fråga fem: vilka delar av portföljen saknar mekaniken helt — schablonkonton, utländska tillgångar, fåmansbolag — och bör därför hanteras med sina egna regler. Fem frågor, tre födelseformer, en subtraktion. Detta är en kurs i hur svenska överlåtelseregler fungerar som utbildning — hur de tillämpas i ett levande fall med relationer och valörer är en fråga för rådgivare och de berörda själva, och där slutar kursens mandat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita en fingerad familjeportföljkarta med fyra innehav: ett köpt 1998, ett ärvt 2014 via dödsbo, ett givet 2019 av en förälder som köpte 1985, och ett schablonkonto. Ange för varje innehav vilket omkostnadsbelopp som gäller för dagens ägare och vilken handling som styrker det. Lägg sist till ett femte innehav: 100 aktier förvärvade av ett syskon till hälften av marknadsvärdet — kvotera och räkna mottagarens omkostnadsbelopp. Övningen ger ingen att handla på; den ger den vana vid subtraktionen som allt hänger på."
+        },
+        {
+          "type": "insight",
+          "content": "Överlåtelsemekaniken är familjeportföljens tredje dimension: inte vad som ägs, inte vad det är värt — utan varifrån vinstberäkningen stammar. Den som ser tre dimensioner ser också varför två likadana depåer kan vara två olika världar."
+        }
+      ]
+    }
+  ]
+}

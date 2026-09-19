@@ -24,7 +24,7 @@
  *                    med/utan detta lager + ämneskontroller + nya rätt
  *   I  omkastad    — den nya kanoniska → null i kedjan UTAN detta lager
  *   J  disjunktion — kärnorden överlappar inget tidigare lagers (mekaniskt)
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 43 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 46 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 20:s
@@ -119,7 +119,7 @@ const { svaraLokaltSektorskola2, SEKTORSKOLA2_MONSTER } = await tolerera("ai-men
 // Omgång 20:s fönstersyskon: u3:s beteendemekanik (FÖRE detta lager i
 // widgeten) + u2:s överlevnadsdjup (EFTER detta lager).
 const { svaraLokaltBeteendemekanik, BETEENDEMEKANIK_MONSTER } = await tolerera("ai-mentor-beteendemekanik-fragor.ts", ["svaraLokaltBeteendemekanik", "BETEENDEMEKANIK_MONSTER"]);
-const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltOverlevnadsdjup", "OVERLEVNADSDJUP_MONSTER"]);
+const { svaraLokaltOverlevnadsdjup, OVERLEVNADSDJUP_MONSTER } = await tolerera("ai-mentor-overlevnadsdjup-fragor.ts", ["svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup", "OVERLEVNADSDJUP_MONSTER"]);
 
 // ── Testharness ─────────────────────────────────────────────────────────────
 let pass = 0;
@@ -687,8 +687,19 @@ const GAMLA = [
     "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
     "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2",
     "svaraLokaltBeteendemekanik", "svaraLokaltPeMekanik",
-    "svaraLokaltOverlevnadsdjup",
-  ];
+    "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22: bokmastar (s6-u3) — SIST av 47 (svitharmoniseringens dokumentationsplikt).
+    // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
+    // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
+];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

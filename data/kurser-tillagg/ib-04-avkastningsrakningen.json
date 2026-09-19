@@ -1,0 +1,148 @@
+{
+  "slug": "ib-04-avkastningsrakningen",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Avkastningsräkningen — substans, rabatt och utdelning: varje krona har en adress",
+  "summary": "Investmentbolagssfamiljens fjärde steg: avkastningsräkningen. Kursen delar investmentbolagets årsavkastning i sina tre exakta delar — substansens värdeutveckling, rabattens rörelse och utdelningen — och visar hur de tre motornerna samverkar, motverkar och skapar den dubbla slagkraft som gör att investmentbolagets kurs faller djupare än börsen i nedgång och stiger starkare i vändning.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Dela upp investmentbolagets totalavkastning i tre exakta poster — substansmotorn, rabattmotorn och utdelningsmotorn — med den additiva ekvation som kursen härleder steg för steg · Räkna rabattens two roller: motorn som kan värdera om hela substansen utan att en enda post rör sig, och stängningspotentialen 1 delat med P-till-NAV minus ett · Se utdelningens dolda bonus: varje krona som delas ut ur substans köpt till rabatt frigör en krona som bara var värd rabattpriset på börsen · Förstå varför investmentbolag med börsubstans andas med börsen — och slås med dubbla slaget när både substansen faller och rabatten öppnas · Läsa rabattens historia som ett band med läge, vidd och median i stället för ett enda tal · Känna igen de sex fällorna — från rabatten som värdeanledning till den gamla substanssiffran som prissätts som färsk.",
+  "why": "Investmentbolagssfamiljen har tre steg — vad ett investmentbolag är, vad substanssiffran innehåller, hur ägarskapet ser ut — men inget av dem svarar på den fråga läsaren står med efter köpet: varifrån kommer avkastningen? Kursen fyller det hålet med en ekvation istället för en känsla. Andra kurser äger delarna: km-067 äger investmentbolagets grundläsning och rabattbegreppet, vr-04 äger avkastningens källor för aktier i allmänhet, ib-02 äger substansens kvalitet — men ingen äger räkningen som binder ihop dem för just investmentbolaget, där en av posterna, rabatten, har egen historia, egen vid och egen förmåga att äta en hel års substanstillväxt. Det gör denna kurs, med ett genomgående exempel som räknas tre gånger i tre olika riktningar. Frågan kursen lämnar hos läsaren är familjens mest praktiska: när aktien steg eller föll ett år — vilken motor bar, och betalade den eller tog den?",
+  "history": {
+    "origin": "Rabatten är äldre än indexfonder och betydligt äldre än modern portföljteori. Redan när de första slutna fonderna noterades i Amerika på artonhundratalets slut och mellankrigstiden upptäckte marknaden två saker som kursen fortfarande mäter: att en portföljs marknadsvärde kan räknas varje dag, och att aktien som äger portföljen ändå handlas till ett annat pris. Skillnaden fick ett eget namn och en egen förklarningshistoria — förvaltningskostnader, skattepåslag i substansen, ovisshet om förvaltarens skicklighet. De svenska investmentbolagen, med Wallenbergsfärens bolag i spetsen, lärde samma läxa på egen botten: substansen kunde räknas, aktien handlades under den, och ibland i åratal.",
+    "evolution": "Tjugonde århundradet gav rabatten sina båda klassiska mekaniker. Den första var arvtagarens och aktivistens: i Amerikas åttiotal visade uppköpsintressen att en rabatt kan stängas med tvång — den som köpte till riklig rabatt kunde tvinga fram utdelningar, återköp eller upplösning, och en bransch växte fram om just den möjligheten. Den andra var marknadens egen: rabatter andas med riskaptiten, öppnar i oro och drar ihop sig i lugn, utan att förvaltaren rör ett finger. Sveriges egen historia bär båda spåren — investmentbolag som under decennier handlades under substans fick på 2000-talet lära sig utdelningen och återköpet som rabattverktyg, och läsaren av dagens rapporter möter samma tre poster som kursen räknar med: substansens värdeutveckling, rabattens rörelse och utdelningens flöde.",
+    "modern": "I dag är räkningen både lättare att göra och svårare att lita på. Lättare för att många investmentbolag redovisar substansvärde per aktie kvartalsvis, med innehållsförteckning och valuta, så att kursen kan ställas mot siffran samma dag. Svårare för att substansen i ökad utsträckning är onoterad — privata bolagsvärderingar som uppdateras i kliver och med eftersläpning, medan aktien prissätts varje sekund. Därmed får avkastningsräkningen en tredje dimension som kursens femte kapitel fångar: avståndet mellan substansens redovisningsdag och kursens handelsdag. För aktiestudenten är ekvationen ändå densamma som den alltid varit — tre poster, inga andra — och den som kan räkna dem isär kan skilja ett år då investmentbolaget skapade värde från ett år då marknaden bara flyttade priset på samma värde."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — kursens tre adresser", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — ekvationen och de tre motornerna", "minutes": 4 },
+    { "num": 3, "title": "Praktisk tillämpning — läsa rabattens historia", "minutes": 4 },
+    { "num": 4, "title": "Mätning — dubbla slaget och stängningspotentialen", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — avkastningsräkningens fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch ägnade de slutna fonderna ett eget stycke i sin praktiska tid: hans förvåning var att investerare betalade fullt pris för en förvaltare de kunde få till rabatt i fondandras motsvarighet, och hans poäng är kursens kärna i klartext — rabatten är inte en dekoration utan en post med egen avkastning och egen risk. Lynchs andra läsregel, att räkna på vad som måste hända i stället för att hoppas, blir här räkningen av stängningspotentialen: vad kursen skulle ges om rabatten en dag går mot noll, och vad som händer om den i stället öppnar. Hans varning för att förväxla ett år av marknadens prisändring med skapat värde är exakt den skillnad kursens ekvation mäter mellan substansmotorn och rabattmotorn.",
+  "grahamSection": "Benjamin Graham köpte gärna tillgångar under deras räkenskapsvärde, och investmentbolaget till rabatt är den mest bokstavliga formen av den idén: substansen redovisas, kursen står under den, marginalen syns i ett tal. Kursens ekvation ger Grahams marginal en praktisk adress — den visar att marginalen bara blir läsarens om den en dag frigörs, genom utdelning, återköp eller omläggning, och att varje utdelad krona ur rabattköpt substans bär sin lilla bonus med sig. Hans motivering till skepticism är samma varning som kursens femte kapitel: en substans som aldrig betalas ut och aldrig stänger sin rabatt är en marginal på pappret, och mellan pappret och fickan ligger tid och förvaltare — två poster Graham aldrig lät räknas bort.",
+  "ak1Section": "I AK1A:s metodik fyller denna kurs den ekvation som investmentbolagsfamiljen saknat sedan ib-01: en länk mellan substansarbetet i ib-02 och ägarfrågorna i ib-03 — vart varje krona avkastning kommer ifrån, och vem som styr rabattposten. I AKM1:s bolagsläsning blir dekomposeringen ett separationsverktyg i värderingsdimensionen: samma kursrörelse kan vara substansskapande eller prisrörlig, och skillnaden avgör om en jämförelse mellan investmentbolag och vanliga aktier ens är meningsfull. I AKM2:s ram övar kursen scenariotänkandet på de tre posterna: ett grundscenario där rabatten står still, ett där den drar ihop sig, ett där den öppnar — samma substans, tre totalutfall. Gränserna mot grannkurserna är avsiktliga: km-067 äger grundläsningen av investmentbolaget, vr-04 äger avkastningens källor för aktier i allmänhet, km-012 äger summeringen av delvärden, ib-02 äger substansens kvalitet — denna kurs äger räkningen av de tre motornerna.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — kursens tre adresser",
+      "intro": "Ett investmentbolags kurs kan bara röra sig av tre skäl, och kursen ger varje skäl sin egen adress: substansen, rabatten och utdelningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med den grundläggande identiteten. Ett investmentbolags substansvärde per aktie, kallat NAV i rapporterna, är summan av dess innehåll minus skulder delat på antal aktier. Kursen står i ett förhållande till substansen, kvoten P-till-NAV; står den under ett är avståndet rabatten. Därmed gäller åt båda hållen: kursen är substansen gånger priskvoten, och varje förändring i kursen kommer antingen från substansen, från priskvoten eller från pengar som lämnar bolaget som utdelning — det finns ingen fjärde adress. Det låter enkelt, och det är det också, men konsekvensen är stor: två investmentbolag med identisk substansförrvaltning kan ge sina ägare helt olika årsbörsrörelser, och en och samma substansutveckling kan ge vinst ena året och förlust nästa. Skillnaden bor i vilken motor som kör. Kursens genomgående exempel är ett påhittat bolag, Silvervik Invest AB, och alla dess tal är uppbyggda för räkneleden; verkliga investmentbolag läses med samma frågor men med egna siffror. Tre egenskaper gör motornerna värda sitt eget kapitel. Substansmotorn är det arbete förvaltaren gör — värdeutvecklingen i innehavet. Rabattmotorn är marknadens prissättning av samma arbete — den kan ge och ta tiotals procent utan att en enda post i substansen rör sig. Utdelningsmotorn är den minsta men mest försummade: pengar som lämnar bolaget bär med sig en liten värdeskillnad just för att de lämnar en rabattprissatt substans."
+        },
+        {
+          "type": "definition",
+          "content": "AVKASTNINGSRÄKNINGENS TRE POSTER: (1) SUBSTANSMOTORN — substansvärdets förändring, förvaltarens eget arbete · (2) RABATTMOTORN — förändringen i P-till-NAV, marknadens omprissättning av hela substansen · (3) UTDELNINGSMOTORN — utdelningen justerad för att den lämnar substans som bara var prissatt till rabattkvoten · GRÄNS: km-067 äger grundläsningen, vr-04 avkastningens källor för aktier, ib-02 substansens kvalitet — denna kurs äger räkningen av de tre motornerna."
+        },
+        {
+          "type": "insight",
+          "content": "Tre adresser, inga fler: substansen, rabatten och utdelningen. Den som kan skilja dem åt vet efter ett års kursrörelse om investmentbolaget skapade värde — eller om marknaden bara flyttade priset på oförändrat värde."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — ekvationen och de tre motornerna",
+      "intro": "Kapitlet bygger den additiva ekvation som delar ett års totalavkastning i exakt tre poster, och räknar den på Silvervik Invest AB i två riktningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Silvervik Invest AB har ett substansvärde per aktie på 200,0 kronor och noteras till 150,0 kronor. P-till-NAV är 150,0 delat med 200,0, det vill säga 0,750 — en rabatt på 25,0 procent. Året därpå utvecklas substansen från 200,0 till 216,0 kronor före utdelning, en tillväxt på 16,0 kronor eller 8,0 procent; bolaget delar ut 6,0 kronor, som lämnar substansen, som efter utdelning står i 210,0 kronor. Antag först att rabatten drar ihop sig från 25,0 till 15,0 procent — att priskvoten stiger från 0,750 till 0,850. Kursen blir 210,0 gånger 0,850, det vill säga 178,50 kronor, och totalavkastningen med utdelning blir 178,50 plus 6,00 minus 150,0, alltså 34,50 kronor — 23,0 procent på köpkursen. Här kommer ekvationens poäng: de 34,50 kronorna kan räknas isär exakt. Rabattmotorn bidrar med substansen vid årets början gånger priskvotens förändring: 200,0 gånger 0,100 är 20,00 kronor. Substansmotorn bidrar med tillväxten gånger årets slutliga priskvot: 16,0 gånger 0,850 är 13,60 kronor. Utdelningsmotorn bidrar med utdelningen gånger skillnaden mellan ett och slutkvoten: 6,0 gånger 0,150 är 0,90 kronor. Summa: 20,00 plus 13,60 plus 0,90 är 34,50 kronor — ekvationen stänger på öret. Räkna samma år åt andra hållet, med en rabatt som öppnar från 25,0 till 35,0 procent. Kursen blir 210,0 gånger 0,650, det vill säga 136,50 kronor, och totalen med utdelning blir minus 7,50 kronor, minus 5,0 procent. Dekomposeringen: rabattmotorn 200,0 gånger minus 0,100 är minus 20,00 kronor, substansmotorn 16,0 gånger 0,650 är 10,40 kronor, utdelningsmotorn 6,0 gånger 0,350 är 2,10 kronor — summa minus 7,50, exakt. Substansen växte alltså åtta procent och ägaren förlorade fem — skillnaden är rabattens tio procentenheter. Det är denna adressbarhet ekvationen ger: varje krona får en förklaring."
+        },
+        {
+          "type": "tabell",
+          "content": "SILVERVIK INVEST AB (PÅHITTADE TAL): START — NAV 200,0 · kurs 150,0 · P/NAV 0,750 (rabatt 25,0 %) · ÅRET — substans före utdelning 216,0 (+8,0 %) · utdelning 6,0 · NAV efter utdelning 210,0 · FALL A rabatt 15,0 %: kurs 210,0 × 0,850 = 178,50 · total +34,50 kr = +23,0 % · varav rabattmotor 200,0 × 0,100 = 20,00 · substansmotor 16,0 × 0,850 = 13,60 · utdelningsmotor 6,0 × 0,150 = 0,90 · FALL B rabatt 35,0 %: kurs 210,0 × 0,650 = 136,50 · total −7,50 kr = −5,0 % · varav rabattmotor −20,00 · substansmotor 16,0 × 0,650 = 10,40 · utdelningsmotor 6,0 × 0,350 = 2,10."
+        },
+        {
+          "type": "insight",
+          "content": "Utdelningsmotorn är ekvationens minsta och mest lärorika post: sex kronor som lämnar bolaget är sex kronor i handen, men de lämnade en substanspost som börsen bara prissatte till 0,850 gånger sitt värde — bonusen 0,90 kronor är verklig och kommer ur rabatten. Utdelning ur rabattköpt substans skapar värde; utdelning ur substans köpt till premie förstör det."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — läsa rabattens historia",
+      "intro": "Ekvationen kräver bara två tidsserier — substansvärde per aktie och kurs — och kapitlet visar var de finns och hur rabattens historia läses som ett band, inte ett tal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första spåret är rapporterna: investmentbolag med noterade innehav redovisar substansvärde per aktie kvartalsvis eller minst halvårsvis, och seriehandlingens första jobb är att skriva upp navet och kursen på samma datum, rapport för rapport, minst fem år bakåt. Andra spåret är kvoten: dela kursen med navet för varje datum och serien blir en rabatthistoria — och den historia som först ser ut som ett tal visar sig vara ett band. Ett tänkt exempel ur Silverviks bransch: rabatten har under fem år rört sig mellan 12,0 och 28,0 procent med ett medianläge kring 18,0 — det bandet är läsarens referens, och dagens läge får sin mening först där: 25,0 procent ligger i bandets övre halva, vilket betyder att marknaden historiskt betalat mera för just denna substans. Tredje spåret är dekomposeringen själv: för vart och ett av åren i serien räknas ekvationen från kapitel två, och åren staplas till en motorhistoria — kanske visar det sig att tre av fem års sammanlagda kursrörelse kom från rabatten och inte från substansen, vilket är en uppgift om bolaget som ingen multipel ger. Frågorna per läsning är fyra: var ligger rabatten i sitt band, har bandet förskjutits, vilken motor bar senaste år, och har utdelningsandelen ändrats. En femte fråga hör till onoterade innehåll: hur gammal är den senaste substanssiffran — en navräkning från förra kvartalet prissätts av dagens kurs, och avståndet mellan datumen är i sig en post i osäkerheten, vilket kapitel fem återkommer till."
+        },
+        {
+          "type": "definition",
+          "content": "DE TRE SPÅREN I RAPPORTLÄSNINGEN: (1) TIDSSERIEN — substansvärde per aktie och kurs på samma datum, fem år bakåt · (2) RABATTBANDET — kvotseriens låg, hög och median; dagens läge läses mot bandet, aldrig mot noll · (3) MOTORHISTORIEN — dekomposering per år: vilken post bar · FYRA FRÅGOR PER LÄSNING — läge i band · bandets förskjutning · bärande motor · utdelningsandel (+ en femte: substanssiffrens ålder)."
+        },
+        {
+          "type": "insight",
+          "content": "Rabatten är inte ett tal utan ett band med historia. Medianen 18,0 procent säger vad marknaden vanligen betalar; dagens 25,0 procent säger att den i dag betalar mindre — och skillnaden är en uppgift, inte en köpgrund."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — dubbla slaget och stängningspotentialen",
+      "intro": "Två räkningar sammanfattar motornernas kraft: vad som händer när allt rör sig nedåt samtidigt, och vad rabatten skulle ge om den en dag slöts.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första räkningen är dubbla slaget, och den förklarar varför investmentbolag med börsubstans upplevs som tyngre än börsen i nedgång. Utgå igen från Silverviks startläge: nav 200,0, kurs 150,0, priskvot 0,750. Ett börsår där substansen faller tjugo procent drar navet till 160,0 kronor; det är första slaget och det är exakt börsens eget fall. Men i samma oro tenderar rabatten att öppna — antag att den går från 25,0 till 35,0 procent, priskvoten från 0,750 till 0,650. Kursen blir 160,0 gånger 0,650, det vill säga 104,0 kronor, och förlusten på köpkursen 150,0 är 46,0 kronor eller 30,7 procent — mot börsens tjugo. Ekvationens dekomposering, detta år utan utdelning för tydlighetens skull: rabattmotorn 200,0 gånger minus 0,100 är minus 20,0 kronor, substansmotorn minus 40,0 gånger 0,650 är minus 26,0 kronor, summa minus 46,0 — posterna är lika stora var för sig, samvariationen gör slaget dubbelt. Spegelbilden gäller i vändning: när börsen vänder och rabatten drar ihop sig kan samma mekanik ge ett år bättre än substansen. Andra räkningen är stängningspotentialen, rabattens andra roll. Vid priskvoten 0,750 är en fullständig slutenhet av rabatten värd 1 delat med 0,750 minus ett, det vill säga 33,3 procent på kursen — utan att substansen behöver växa en enda krona. Vid en djupare kvot, 0,700, är samma potential 42,9 procent. Det är en potential, inte en prognos: kursen gör ingen skyldighet att stänga, och kapitel fem tar varningen. Men tillsammans med utdelningsmotorn ger den rabatten en kraft som kursens läsare ska kunna räkna: ju djupare rabatten, desto större är det värde som varje utdelad kronor eller återköpt aktie frigör — mekaniken bakom hela den aktivisthistoria som kursens bakgrund berättar."
+        },
+        {
+          "type": "tabell",
+          "content": "DUBBLA SLAGET (PÅHITTADE TAL): NAV 200,0 → 160,0 (−20,0 %) · priskvot 0,750 → 0,650 (rabatt 25,0 → 35,0 %) · kurs 150,0 → 160,0 × 0,650 = 104,0 · förlust −46,0 kr = −30,7 % mot börsens −20,0 % · dekomposering: rabattmotor 200,0 × (−0,100) = −20,0 · substansmotor (−40,0) × 0,650 = −26,0 · STÄNGNINGSPOTENTIAL: vid kvot 0,750 ⇒ 1/0,750 − 1 = +33,3 % · vid kvot 0,700 ⇒ 1/0,700 − 1 = +42,9 % · UTDELNINGSBONUS PER KRONA: 1 − kvoten (vid 0,850: 0,150 kr)."
+        },
+        {
+          "type": "insight",
+          "content": "Samvariationen är investmentbolagets outtalade hävstång: i nedgången slår substansfallet och rabattöppningen lika hårt var för sig — minus tjugo procent från börsen blir minus trettio på aktien. I uppgången arbetar samma mekanik åt andra hållet, och den som bara räknar substansen förstår varken fallet eller vändningen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Avkastningsräkningens sex fällor har en gemensam rot: en av de tre posterna ges en roll den inte har — rabatten som värdebevis, utdelningen som avkastning, substansen som färsk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är rabatten som värdeanledning: en rabatt kan vara priset på verkliga kostnader — förvaltningsavgifter som år efter år äter substansen, en skuggskatt i innehavet som ib-02 lär skilja ut, eller en substans av sådan kvalitet att marknaden rationellt betalar under den. Rabatten är en post att räkna, aldrig ett köpskäl i sig. Andra fällan är medeltalsfällan i bandet: dagens rabatt jämförd med ett femårsmedian är information, men bandet kan ha förskjutits — ett bolag som fått en ny ägarstruktur eller tappat sitt noteringsskäl kan ha flyttat hela bandet, och gamla lägen är då ur spel. Tredje fällan är den gamla substanssiffran: kursen prissätter dagens förväntningar medan den senaste navräkningen kan vara månader gammal, särskilt när innehavet är onoterat; en kraftig börsrörelse mellan rapportdag och läsdag gör kvoten missvisande åt båda håll. Fjärde fällan är utdelningsmotorns illusion: bonusen per krona är verklig men liten — 0,90 kronor på sex utdelade — och den som väljer investmentbolag för utdelningens skull har valt bolagets minsta motor; utdelningens verkliga roll i sammanhanget är rabattverktyget från bakgrundshistorien, och den rollen hör hemma i ägarfrågorna i ib-03. Femte fällan är tidens roll i stängningen: potentialen plus 33,3 procent har ingen utlösare och ingen klocka — rabatter har stått öppna i decennier, och avkastningsräkningen som glömmer att rabattmotorn kan vara negativ i åratal räknar med en tillgång som kanske aldrig betalas. Sjätte fällan är premiens spegel: allt som sagts om rabatten gäller omvänt för investmentbolag som handlas över substansen — där blir utdelningsmotorn en utgiftspost och priskvotens fall en risk, och dekomponeringskonsten är densamma men tecknen byts."
+        },
+        {
+          "type": "insight",
+          "content": "Sex fällor, en rot: en post får fel roll. Rabatten är ett räkneämne, inte en anledning; bandet kan flytta; substansen har ålder; utdelningen är minsta motorn; stängningen har ingen klocka; och över substansen vänder alla tecken. Håll posterna på sina adresser — då står sig räkningen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — avkastningsräkningens fem frågor",
+      "intro": "Kursen samlas i fem frågor — den fullständiga dekomposeringen av ett års ägande och av ett läge i rabattens historia.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: senaste året — hur mycket av kursförändringen kom från substansmotorn, hur mycket från rabattmotorn, och vad bidrog utdelningen med justerad för kvoten? Fråga två: var ligger dagens rabatt i sitt eget femårsband, och har bandet förskjutits av något som hänt bolaget? Fråga tre: hur gammal är substanssiffran som kursen ställs mot, och vad har börsen gjort sedan dess — vad blir kvoten om navet uppdateras till dagens noteringar? Fråga fyra: vad är stängningspotentialen på dagens kvot, och finns det ägarverktyg — utdelning, återköp, omläggning — som historiskt använts för att aktivera den? Fråga fem: samvarierar bolagets rabatt med börsen så att dubbla slaget gäller, eller har rabatten eget liv — och vad betyder det för hur aktien bör mätas mot ett vanligt index? Den som besvarar de fem frågorna kan redogöra för varenda krona ett investmentbolag givet eller tagit — och kan skilja förvaltarens år från marknadens. Detta är utbildning i att räkna och läsa, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett noterat investmentbolag med minst fem års substansrapportering i det egna universumet — kandidaterna står i bolagslistan. Bygg tidsserien: substansvärde per aktie och kurs på samma datum per rapport. Räkna kvotserien och bestäm bandets låg, hög och median. Dekomponera senaste året enligt kapitel två: rabattmotor, substansmotor, utdelningsmotor — och kontrollera att summorna stänger mot den faktiska totalavkastningen. Uppskatta stängningspotentialen och skriv en halvsida: vilken motor har burit historiken, och vilken av de sex fällorna är närmast för att vilseleda just denna läsning? Upprepa när nästa substansrapport kommer — och notera om bandet lever."
+        },
+        {
+          "type": "insight",
+          "content": "Familjens fjärde steg ger ägandet dess bokföring: substansen, rabatten och utdelningen — tre adresser för varje krona. Den som räknar dem isär varje år vet skillnaden mellan ett bolag som bygger värde och en aktie som bara fick sällskap av marknadens humör."
+        }
+      ]
+    }
+  ]
+}

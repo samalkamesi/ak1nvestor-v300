@@ -1,0 +1,172 @@
+{
+  "slug": "od-07-terminskontraktet",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Terminskontraktet — priset idag, leveransen sedan",
+  "summary": "OPTIONS & DERIVAT-familjens sjunde steg: terminskontraktet, derivatfamiljens andra hälft — där optionen (km-059) bär en RÄTT är terminen en SKYLDIGHET: två parter binder sig idag till pris och leverans på ett framtida datum. Kursen lär det rättvisa priset som en carry-räkning: spot 100 kronor, sex månaders riskfri ränta 3,0 procent per år ger halvårsräntan 1,5 procent och finansieringskostnaden 100 gånger 1,015 lika med 101,5, minus utdelningen under perioden 1,0 krona ger terminen 100,5 — basen plus 0,5. Speglarna: höjs utdelningen till 2,0 blir terminen 101,5 minus 2,0 lika med 99,5 och basen minus 0,5, och noteras terminen 102,0 mot det rättvisa 100,5 låser köp-korg-sälj-termin 1,5 per aktie — arbitragen (am-04, bf-13) som håller bandet. Vidare spelets hushåll: kontrakt på index 2 000 med multiplikator 100 ger kontraktsvärdet 200 000 kronor, börsens marginal 8 procent lika med 16 000, och en indexrörelse minus 2 procent kostar 4 000 — en fjärdedel av marginalen — med daglig stickning. Kröningen är säkringsräkningen: fond 100 miljoner kronor, beta 1, säkras med 500 korta kontrakt, och när index faller från 2 000 till 1 800 ger terminen plus 10,0 miljoner mot fondförlustens minus 10,0 — netto noll, exakt avsikten. Genomgående utbildning i kontraktets mekanik, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Skilja terminen från optionen på tre sätt: optionen bär rättigheten att köpa eller sälja (km-059), terminen skyldigheten att fullfölja — den som står kort i optionen kan tvingas, den som står i en termin SKALL fullfölja, och priset på den skillnaden syns i att terminen varken har premie eller valfrihet. Räkna terminens rättvisa pris som en carry-kedja: spot 100 gånger (1 plus halvårsräntan 0,015) lika med 101,5, minus utdelningen under löptiden 1,0, ger terminen 100,5 — och förklara varje led: räntan är kostnaden att bära positionen, utdelningen är avkastningen som bäraren går miste om. Läsa basen (termin minus spot): plus 0,5 när räntan överstiger utdelningen (kontango), minus 0,5 när utdelningen 2,0 överstiger räntans 1,5 (backwardation) — och därmed varför utdelningstätare index bär lägre terminer. Köra arbitrage-vakten: noteras terminen 102,0 mot rättvisa 100,5 låser köp av korg och försäljning av termin 1,5 per aktie, noteras 99,0 låser spegelhandeln lika mycket — mekaniken som håller basen vid carry (am-04:s indexarbitrage, bf-13:s gränser). Räkna marginal och stickning: kontrakt på index 2 000 med multiplikator 100 ger kontraktsvärdet 200 000, marginalen 8 procent lika med 16 000, och index minus 2 procent kostar 4 000 — 25 procent av marginalen — med förlusterna dragna dagligen. Sätta ihop säkringen: fond 100 miljoner kronor med beta 1 behöver 500 korta kontrakt (100 000 000 delat med 200 000), och index 2 000 till 1 800 ger terminsvinsten 20 000 per kontrakt gånger 500 lika med 10,0 miljoner som neutraliserar fondförlustens 10,0. Ställa de fem läsningsfrågorna till varje termin: mot vilket spot, vilken carry, vilken bas, vilken marginal, vilken motpart.",
+  "why": "OPTIONS & DERIVAT-familjen har elva kurser men bara en av derivatens två grundfamiljer: optionen i alla sina skepnader — grunderna (km-059), grekerna (od-01), den implicita volatiliteten (od-02), emissionens instrument (od-03), strategierna (km-060, km-061, od-04), matematiken (km-062), utdelningsmötet (od-05) och positionen efter bygget (od-06) — tio optionskurser, medan TERMINEN, kontraktet utan valfrihet, fram till denna kurs saknade sin egen plats. Sond mot registrets 426 kurser: fraserna terminskontrakt, terminsmarknad och forwardkontrakt ger noll ägande-träffar bland kurserna — km-033 nämner terminer som skyddsverktyg i förbifarten, rk-07 definierar valutaterminen i en enda mening, och am-04 talar om indexarbitrage utan att visa räkningen — instrumentet som bär halva derivatvärlden (ränte-, valuta- och råvaruterminer) har ingen kurs som äger mekaniken. Luckan är inte perifer: utan terminen fattar varken arbitragens band (bf-13), indexomläggningens flöden (am-07) eller nyemissionens prissättning (od-03:s teckningskurs sätts med terminslogik) — och carry-räkningen är familjens enda plats där räntan (km-054), utdelningen (od-05) och priset möts i EN ekvation som läsaren kan räkna hem på fyra tal. Kursen kräver multiplikation och subtraktion men ger derivatens andra ben — den som gör resten av familjen läslig som system, inte som kuriosa.",
+  "history": {
+    "origin": "Terminen är handelns äldsta standardiserade form: i de medeltida handelsstädernas varumässor köptes och såldes vara som ännu inte fanns — bondens skörd vid Mickaels, vävnaden vid vårfrimässan — och avtalet skrevs med leveransdag och pris från dag ett. Dessa tidsbundna kontrakt löste handelns grundproblem: köparen säkrade sin råvara och säljaren sitt pris, länge före något optionspapper existerade; Amsterdam på sjuttonhundratalet förde formen till börsens notationer.",
+    "evolution": "Nittonhundratalet institutionaliserade det gamla avtalet: Chicagos råvarubörser standardiserade kontrakten — underliggande, storlek, leveransmånader — och införde clearinghuset som motpart åt alla, vilket födde marginalsystemet och den dagliga stickningen av vinster och förluster. Samtidigt växte de finansiella terminerna fram: valuta- och ränteterminer från sjuttiotalet och aktieindexterminer från åttiotalet gjorde kontraktet till kapitalmarknadens standardverktyg — hedgefonders säkringar, fonders exponeringar och bankernas balanser vreds i storlek genom terminsböckerna, idag en av världens största handelsytor.",
+    "modern": "I dag hanteras det mesta av terminsvärlden utan fysisk leverans: de finansiella kontrakten kvittas mot kontant skillnad mot indexet — kontraktets logik kvarstår men leveransen ersatts av avräkning, och majoriteten av positioner stängs före förfallodag. Spot-marknadens kod är densamma som för fyrahundra år sedan: priset idag för varan sedan, marginal som bär risken, clearinghuset som håller orden — och det rättvisa priset är förblivande carry-räkningen. För den som vill förstå börsens undercurrent — varför indexet kan röra sig utan nyheter (am-07:s flöden) och vad en säkrad fond egentligen äger — är terminen nyckeln som låser upp."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Det bindande avtalet — optionens syskon utan valfrihet",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Det rättvisa priset — räntan, utdelningen och carry-räkningen",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Basen och arbitragen — vem som håller priset vid carry",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Marginal och stickning — spelets hushåll",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Terminen som verktyg — säkra, flytta och läsa flöden",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor till varje termin",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Det bindande avtalet — optionens syskon utan valfrihet",
+      "minutes": 4,
+      "intro": "Familjen har lärt optionen i åtta kurser; här kommer dess syskon — samma släkt, motsatt själ: där optionen ger en rättighet ger terminen en skyldighet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett terminskontrakt är fyra rader: en underliggande tillgång (ett index, en aktiekorg, en valuta, en ränta), en storlek (kontraktets multiplikator), en löptid (förfallodagen) och ett pris — priset som köpare och säljare binder sig vid idag för en fullgörelse som sker sedan. Jämför med optionen (km-059 äger grunderna): köparen av en köpoption BETALAR en premie för RÄTTEN att köpa till strikepriset — och kan låta bli om priset gått henne emot. Terminen har ingen premie och ingen tärande valfrihet: båda parter SKALL fullfölja vid förfallodagen, köparen till det idag bestämda priset, säljaren med leverans eller avräkning. Skillnaden är inte juridisk hårklyveri utan ekonomin: optionens värde kan aldrig bli lägre än noll för köparen (hon stryker premien, aldrig mer), medan terminens utfall för båda parter är öppet i båda riktningarna — köparen tjänar krona för krona om underliggande stiger, förlorar krona för krona om den sjunker, och säljaren spegelvänt. Detta gör terminen till derivatens raka instrument: ingen krökning (od-01:s greker lever inte här — terminens delta är exakt ett, dess theta noll), ingen volatilitetsprissättning (od-02:s värld är optionens), bara pris, tid och carry. Kontrakten är standardiserade och börsnoterade: en motpart — clearinghuset — står emot alla, och varje position marginalsäkras och stäcks av dagligen (kapitel fyra), vilket skiljer börsens termin från bankens skräddarsydda forward — samma ekonomi, annan infrastruktur. Terminens fyra rader ska läsas som ett löfte med prislapp: det kostar ingenting att ingå (ingen premie), men det kostar allt att ha fel — och det är därför kapitel fyra heter spelets hushåll."
+        },
+        {
+          "type": "definition",
+          "content": "Terminskontrakt — ett standardiserat, bindande avtal att köpa (lång position) respektive sälja (kort position) en underliggande tillgång till ett idag bestämt pris vid en bestämd framtida förfallodag. Ingen premie betalas vid ingående; båda parter är skyldiga att fullfölja, och löftena bärs av marginal hos clearinghuset."
+        },
+        {
+          "type": "insight",
+          "content": "Minnesregeln för syskonskillnaden: optionen är ett VAL (och val kostar premie), terminen är ett LÖFTE (och löften ges gratis men bärs till fullgörelse). Av den skillnaden följer allt annat: optionens krökta utdelningsprofil och greker, terminens raka linje och delta ett; optionens premie, terminens marginal."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Det rättvisa priset — räntan, utdelningen och carry-räkningen",
+      "minutes": 4,
+      "intro": "Vad SKA sex månaders termin på en aktiekorg kosta när spot står 100? Svaret är ingen prognos utan en bokföring: vad det kostar att bära korgen fram till leveransen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Antag att du själv ska leverera korgen om sex månader och därför köper den idag. Du binder 100 kronor per aktie — pengar som annars kunnat placeras till riskfri ränta, säg 3,0 procent per år, alltså 1,5 procent på halvåret: 100 gånger 1,015 lika med 101,5, bärkostnaden 1,5 per aktie. Men under väntan betalar korgen utdelning — i exemplena 1,0 krona per aktie under perioden — och den tillfaller bäraren, inte terminsköparen: den räknas av. Terminens rättvisa pris blir därför 101,5 minus 1,0 lika med 100,5, och basen — terminen minus spot — blir 100,5 minus 100 lika med plus 0,5. Detta är carry-ekvationen i en rad: termin är spot gånger (1 plus räntan för perioden) minus utdelningen under perioden, och den kallas rättvis inte för att den är moralisk utan för att allt annat låser sig själv i arbitrage (kapitel tre). Notera ekvationens två hävstänger. Räntan: stiger den riskfria räntan till 4,0 procent per år (2,0 på halvåret) blir terminen 100 gånger 1,020 minus 1,0 lika med 101,0 — hög ränta lyfter terminen, och därför är centralbankernas ränteläge (km-054, km-056) en del av terminsbilden. Utdelningen: höjs den förväntade utdelningen till 2,0 blir terminen 101,5 minus 2,0 lika med 99,5 med basen minus 0,5 — utdelningstidpunkter (od-05:s ex-dagar) syns i terminen som trappsteg nedåt, och index med hög utdelning bär lägre terminer än utdelningstomma tillväxtindex. Och den vanligaste feltolkningen av alla: terminen är INTE en prognos. Att sexmånadsterminen står 100,5 betyder inte att marknaden tror index plus 0,5 procent — den betyder att räntan minus utdelningen är plus 0,5 procent. Terminen bär carry, inte förväntan; viljan att veta vad marknaden TROR får sökas i optionerna (od-02:s implicita volatilitet) — och förväxlingen mellan de två är en av derivatundervisningens klassiska fällor."
+        },
+        {
+          "type": "tabell",
+          "content": "Steg | Räkning | Tal per aktie\nSpot (indexkorgen idag) | — | 100,0\nHalvårsränta (riskfri 3,0 % per år) | 100 × 0,015 | 1,5\nBärkostnad inklusive spot | 100 × 1,015 | 101,5\nUtdelning under perioden (avräknad) | − | 1,0\nRättvis termin | 101,5 − 1,0 | 100,5\nBas (termin − spot) | 100,5 − 100 | +0,5 (kontango)\nSpegel: utdelning 2,0 | 101,5 − 2,0 | 99,5 · bas −0,5 (backwardation)"
+        },
+        {
+          "type": "insight",
+          "content": "Ekvationens pedagogiska kraft ligger i dess tre tider: räntan är priset på ATT VÄNTA, utdelningen är priset som VÄNTANEN betalar tillbaka, och basen är skillnaden — inte ett ord om framtiden, allt om bärkostnaden. Den som memorerar bara en rad från denna kurs: terminen är inte en prognos, den är en bokföring av väntan."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Basen och arbitragen — vem som håller priset vid carry",
+      "minutes": 4,
+      "intro": "Varför står terminen inte var den vill? För att varje avvikelse från carry bjuder ut en vinst utan risk — och marknadens snabbaste bär hem den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Säg att sexmånadsterminen noteras 102,0 medan carry-räkningen ger 100,5. Handla nu båda håll: köp underliggande korg på spotmarknaden (100 per aktie), sälj terminen (102,0), bära korgen sex månader (kostnad 1,5 i ränta, inkomst 1,0 i utdelning) och leverera vid förfallodag till 102,0. Resultatet räknas i två led: vid leverans återbetalar finansieringen 101,5 och utdelningen 1,0 har tillfallit bäraren — den sammanräknade bärkostnaden blir 101,5 minus 1,0 lika med 100,5 — och intäkten 102,0 från terminsförsäljningen minus 100,5 ger låsningen 1,5 per aktie, exakt spegeln av att terminen noteras 1,5 över sitt rättvisa pris. Ingen kursrisk finns i paketet — terminen tvingar fullgörelse till 102,0 vad än spot gör under vägen; risken är boren av den som betalade för mycket. Spegelhandeln gäller när terminen noteras 99,0 under det rättvisa: sälj korgen kort (am-06 äger kortlägans mekanik), köp terminen, och lås 100,5 minus 99,0 lika med 1,5 per aktie på samma sätt. Denna handel — indexarbitrage (am-04:s marknadsstruktur förklarar dess plats i flödet) — är skälet till att basen håller sig nära carry: avvikelser bjuds ut och äts. Men bandet är inte ett hårstrå; det har bredd (bf-13 äger arbitragens gränser på djupet): transaktionskostnader, utlåningsavgifter för korta korgar (am-06), osäkerheten i exakta utdelningar och kapitalbindningen gör att terminen kan noteras några tiondelar eller mer från det teoretiska värdet utan att någon kan låsa riskfritt — och därför är små basavvikelser information om KOSTNADER, medan stora avvikelser (när de historiskt förekommit i stressade lägen) varit information om RÄDSLAN: en termin långt under carry är ett tecken på att någon betalar för att slippa bära underliggande — short squeezens släkting (am-06:s utlåningssvält). Läsregeln från detta kapitel: basen bär tre lager — carry (mekaniskt), kostnader (smalt band) och stress (tillfälligt breda utbrott) — och det är först det tredje lagret som är nyheter värd namnet."
+        },
+        {
+          "type": "tabell",
+          "content": "Situation | Termin | Rättvis (carry) | Handeln | Låsning per aktie\nTermin övervärderad | 102,0 | 100,5 | köp korg · sälj termin · bära till leverans | 102,0 − 100,5 = 1,5\nTermin undervärderad | 99,0 | 100,5 | sälj korg kort · köp termin | 100,5 − 99,0 = 1,5\nBas vid carry | 100,5 | 100,5 | ingen handel — ingen vinst att låsa | 0"
+        },
+        {
+          "type": "insight",
+          "content": "Arbitragens båda låsningar — 1,5 per aktie i varje riktning — är mekanikens tempo: samma absoluta belopp, spegelvända vägar. Notera också att handeln kräver motpartens fel: utan någon som noterar fel finns ingen vinst, och med många som patrullerar bandet blir avvikelserna små — arbitragen är marknadens städare."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Marginal och stickning — spelets hushåll",
+      "minutes": 4,
+      "intro": "Terminen kostar ingenting att ingå men allt att ha fel — och därför kräver börsen en deposition som visar att löftena bärs: marginalen, dragen dag för dag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontraktets ekonomi i tal. Ett indexterminskontrakt skrivs på indexnivån med en multiplikator — exemplet: index 2 000 gånger 100 kronor per indexpoäng ger kontraktsvärdet 200 000 kronor. För att ingå kontraktet krävs ingen betalning av kontraktsvärdet utan en marginal — en deposition — en pant — hos clearinghuset, i exemplet 8 procent av kontraktsvärdet: 200 000 gånger 0,08 lika med 16 000 kronor. Marginalen är inte en kostnad utan en pant — den binds, och den räknas om varje dag i stickningen: när indexet faller 2 procent till 1 960 sjunker kontraktets värde med 2 000 gånger 0,02 lika med 4 000 kronor, och den som står LANGT har en förlust på exakt 4 000 som DRAS samma dag — 4 000 delat med 16 000 lika med 25 procent av marginalen på en enda dagsrörelse. Om marginalen sinar måste den fyllas på (marginalkrav), och den som inte fyller på stängs — clearinghusets järnregel som håller systemets motpartsrisk nära noll. Här bor terminens verkliga våldskillnad mot optionen: optionens köpare riskerar som mest premien, medan terminens båda parter bär full linjär exponering från första dagen — en indexrörelse på 8 procent åt fel håll äter hela marginalen i exemplet, och rörelser därutöver skapar skuld. Därför hör även hävstångens mekanik hemma här: med 16 000 bundet bär positionen 200 000 kronor exponering — tolv och en halv gånger — och samma procentuella indexrörelse blir tolv och en halv gånger så stor i avkastning på det bundna kapitalet. Hävstången är inbyggd i kontraktets struktur (inte något som väljas till), vilket gör terminen till familjens mest krävande instrument: rätt hanterad ett verktyg för exakt exponering (kapitel fem), felhanterad ett snabbt sätt att glida omkull. Kursens hållning är den pedagogiska: mekaniken levereras för att förstås — ingenting här är en uppmaning att bruka hävstång."
+        },
+        {
+          "type": "tabell",
+          "content": "Post | Räkning | Kronor\nKontraktsvärde | index 2 000 × multiplikator 100 | 200 000\nMarginal (8 procent) | 200 000 × 0,08 | 16 000\nDaglig stickning vid index −2 % | 200 000 × 0,02 | 4 000 dragna samma dag\nAndel av marginalen | 4 000 ÷ 16 000 | 25 procent\nHävstång på bundet kapital | 200 000 ÷ 16 000 | 12,5 gånger"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens sista två rader hänger ihop som fråga och svar: 25 procent av marginalen på en dagsrörelse är samma sak som 12,5 gånger hävstång — bara uttryckt i tid (per dag) i stället för i kapital. Stickningens dagliga rytm gör terminens risk OMEDELBAR: förluster bokförs inte vid förfallodagen utan var kväll, och marginalen är den klockan som aldrig slutar gå."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Terminen som verktyg — säkra, flytta och läsa flöden",
+      "minutes": 4,
+      "intro": "Varför bär världen terminer? Tre användningar dominerar — att säkra det man äger, att flytta exponering utan röra spot-marknaden, och att läsa flödenas riktning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Säkringsräkningen är terminens äldsta och största användning — bondens skörd i kapitel historien, fondens korg idag. Exemplet: en fond bär aktier till värdet 100 miljoner kronor med beta 1 (rör sig som indexet), och förvaltaren vill under ett känt riskfönster — säg en beslutande vecka före en stor makrohändelse — neutralisera marknadsrisken UTAN att sälja en enda aktie (skatteskäl (km-051:s värld) eller enkelhet). Räkna antalet kontrakt: fondvärde delat med kontraktsvärde, 100 000 000 delat med 200 000 lika med 500 kontrakt — och eftersom risken ska BORT säljs de 500 kontrakten kort (fonden står med 500 löften att leverera indexets värde vid förfallodagen). Sedan händer händelsen: indexet faller från 2 000 till 1 800, alltså minus 10 procent. Fonden förlorar 100 miljoner gånger 0,10 lika med 10,0 miljoner på sina aktier — men den korta terminen STIGER i takt med fallet: 200 indexpoäng gånger 100 kronor lika med 20 000 kronor per kontrakt, gånger 500 kontrakt lika med 10,0 miljoner i vinst. Netto: minus 10,0 plus 10,0 lika med noll — marknadsrisken var borta under fönstret, och när fonden tar av säkringen står portföljen kvar med sina aktier och sin ursprungliga exponering. Detta är terminens kärnverktyg: exakt, linjärt, billigt i transaktion — och samma mekanik används av indexomläggningens flöden (am-07: passiva fonder flyttar exponering i terminer runt rebalanseringsdatum), av portföljens svansskydd i kombination med optioner (km-033), och av valutahanteringen i utlandsbolag (rk-07:s valutatermin samma ekvation med annan carry). Den tredje användningen är läsningen: terminsböckernas öppna positioner och basens utbrott (kapitel tre) bär information om hur marknadens tunga sidor är placerade — och i kombination med optionernas implicita volatilitet (od-02:s termstruktur) ger derivatmarknadens båda halvor en helhetsbild av risk och positionering som spot-marknaden ensam aldrig visar. Terminen är alltså tre saker på en gång — försäkring, hiss och mätinstrument — och vilken roll den spelar avgörs inte av kontraktet utan av bäraren."
+        },
+        {
+          "type": "tabell",
+          "content": "Steg | Räkning | Resultat\nAntal kontrakt för full säkring | 100 000 000 ÷ 200 000 | 500 korta terminer\nIndex fall 2 000 → 1 800 | −200 poäng × 100 kr | −20 000 per kontrakt i indexvärde\nFondens aktieförlust | 100 Mkr × 0,10 | −10,0 miljoner\nTerminens vinst (kort) | 20 000 × 500 | +10,0 miljoner\nNetto | −10,0 + 10,0 | 0 — marknadsrisken neutraliserad"
+        },
+        {
+          "type": "insight",
+          "content": "Säkringsräkningens skönhet ligger i symmetrin: samma 500 kontrakt som ger plus 10,0 i ett fall hade gett minus 10,0 om indexet stigit — säkringen är inget gratis skydd utan ett tillfälligt avstående från båda riktningarna. Den som förstår det förstår också varför säkrade fonder kan underprestera i uppgångar: terminen skär bort nedsmutsningen OCH uppstigningen, och priset för ro är avkastningen som lämnas på bordet."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor till varje termin",
+      "minutes": 4,
+      "intro": "Kursens sista kapitel för samman avtalet, carry-räkningen, arbitragen, marginalen och säkringen till ett förhörsmönster: fem frågor som gör varje terminspost läsbar — på skärm, i rapport eller i nyhetsflödet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sammanförelsen i fem frågor. Fråga ett: mot vilket spot? — en termin utan sin spotnotering är ett pris utan referens; para dem alltid, och räkna basen (kapitel två). Fråga två: vilken carry? — räntan för perioden och utdelningen under den: båda talen är offentliga (km-054:s kurvor, bolagens utdelningskalendrar, od-05:s ex-dagar) och deras skillnad ÄR det rättvisa priset — ingen fantasi krävs, fyra rader räcker. Fråga tre: vilken bas? — är terminen vid carry (mekanik), i bandet (kostnader, bf-13) eller utanför (stress — information värd namnet)? Fråga fyra: vilken marginal? — kontraktets värde, procentsatsen och dagens stickning: hävstången 12,5 i exemplet är terminens tempo, och den som inte kan räkna den klarar inte positionen. Fråga fem: vilken motpart och vilket syfte? — clearinghuset bär tekniskt risken, men den ekonomiska motparten är alltid någon med ett syfte: en säkrare (kapitel fem), en arbitragör (kapitel tre) eller en spekulant — och i flödets stora bild (am-04, am-07) är terminens volym ett språk som berättar vilka som flyttar sig. Fem frågor, fem kapitel, en ekvation. Kursens plats i familjen är därmed familjens andra hälft fullbordad: optionerna äger VALFRIHETEN (km-059 genom od-05) och denna kurs äger SKYLDIGHETEN — tillsammans är derivatens båda grundfamiljer lästa, och deras kombinationer (od-04:s strategier med termin under, km-033:s skydd med termin som ben) blir tillgängliga som byggstenar i stället för förbjudna rum. Avslutningshållningen är familjens hela: detta är utbildning i en instruments mekanik — ingenting i kursen är en uppmaning att ingå, inneha eller undvika några positioner; exemplens tal är räkneövningar på påhittade marknadsdata, verkliga kontrakt bär verklig risk, och alla beslut om sådana hör hemma hos läsaren själv på egen analys — med de fem frågorna som förhörsmönster, nästa terminsnotering, nästa rapport, nästa basutbrott."
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor och en ekvation — spot gånger (1 plus räntan) minus utdelning — är hela kursen. Resten är rytm: basen varje dag, stickningen varje kväll, och med åren en vana att läsa terminsböckerna som vad de är — marknadens husplats för löften, prissatta med carry, bevakade med marginal, och mer talande om sitt skepp än någon prognos."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch höll sig helst borta från instrument han inte behövde — hans filosofi var att äga bolaget, inte kontraktet — men hans berättelser om bolag som säkrade sin råvara eller valutor innehåller terminens mekanik i praktiken: lås priset idag, sov bättre ikväll. Lynch varnade också för instrument vars risk den egna bäraren inte räknat: hans tumregel — köp aldrig något du inte kan förklara på en minut — är terminens kapitel fyra i en mening: marginalen är förklarad eller obehaglig.",
+  "grahamSection": "Benjamin Grahams analysemp var beräkning före åtagande: först värdet, sedan marginalen — och terminens carry-räkning är samma anda tillämpad på ett löfte: det rättvisa priset är räknbart FÖRE handeln, och den som handlar utan räkningen har varken marginal of safety eller marginal i clearinghuset. Hans varning för spekulationens frestelser är särskilt skarp mot instrument med inbyggd hävstång: riskens storlek står inte i kontraktet utan i bärarens hushåll.",
+  "ak1Section": "I AK1A:s metodik läser derivatmarknadens båda halvor tillsammans som riskbarometer: optionernas implicita volatilitet (od-02) ger oroens prisnivå och terminernas bas och volym ger positionernas tyngd — i kombination ett tvärsnitt som spot-marknaden inte bär. Portföljmotorerna använder terminsekvationen i utlandsexponeringars valutaomräkning (rk-07:s territorium) och i scenarioramar (ek-05, km-029) där en säkrad gren beräknas med terminens linjära delta — och varje sådan användning loggas i arbetsflödet (ek-03) så att antagandena kan granskas. Kursen dokumenterar mekaniken; tillämpningen på enskilda positioner är alltid läsarens egen analys, aldrig en rekommendation."
+}

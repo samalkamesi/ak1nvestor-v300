@@ -1860,6 +1860,39 @@ export interface StudioTransport {
     rått?: unknown;
     fel?: string;
   }>;
+  /**
+   * GAP-REGISTER POST 34 (V6/A6 — våg 188): v4/command fakta-typerna —
+   * Vft-mängden (ZCODE-GAP-34-KARTLAGGNING §2: applyFileRewind /
+   * forkAssistant / editUserQuery / retryTurn / setAssistantFeedback) —
+   * de radmålade CAS-kommandona vars domslut persisteras i
+   * v4/command_fact (§4). Payload per typ ur bundelns KLr-karta (§3):
+   * applyFileRewind|forkAssistant|retryTurn {target};
+   * editUserQuery {target, newText, workspaceMode?} (attachments ej
+   * denna våg — protokollets attachments-form väntar A6-insatsen);
+   * setAssistantFeedback {target, feedback: "like"|"dislike"|null}.
+   * target = {rowId (heltal ≥ 0), entityId (trimmad icke-tom)} — samma
+   * identifierare som v4/conversation/rowsRange bär (§2.3:s Ty-schema,
+   * strict). NYTT mot våg 181–187: CAS-fälten — envelopen bär
+   * baseRevision (transportens live-spårda v4Revision) + baseLogEpoch
+   * (v4LogEpoch); §2.2: Vft-typer utan fälten avvisas
+   * proto.invalidPayload FÖRE exekvering, och fel epok/revision ⇒ ÄKTA
+   * "stale"-domslut (hämta färskt läge och låt kunden välja omtryck —
+   * ALDRIG tyst retry). Utan logEpoch-ankare ⇒ fel-tolerant avvis
+   * (inget lagligt CAS-skick finns). Fel-tolerant: {skickat:false, fel}
+   * (ALDRIG kast).
+   */
+  skickaV4FaktaKommando(
+    typ: "applyFileRewind" | "forkAssistant" | "editUserQuery" | "retryTurn" | "setAssistantFeedback",
+    target: { rowId: number; entityId: string },
+    extras?: { newText?: string; feedback?: "like" | "dislike" | null; workspaceMode?: "preserve" | "rewind" },
+  ): Promise<{
+    skickat: boolean;
+    commandId: string | null;
+    status?: string;
+    ack: unknown | null;
+    rått?: unknown;
+    fel?: string;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -6173,6 +6206,89 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * POST 34 (våg 188 — ZCODE-GAP-34-KARTLAGGNING): fakta-typerna (Vft-
+   * mängden §2). Payload byggs per typ ur KLr-kartan (§3) med Ty-target-
+   * grinden (§2.3: rowId heltal ≥ 0, entityId trimmad icke-tom — samma
+   * identifierare rowsRange bär); CAS-fälten (§2.2) bärs av envelopen:
+   * baseRevision = live-spårad v4Revision, baseLogEpoch = v4LogEpoch.
+   * "stale"-ack (proto.staleRevision/staleLogEpoch) är protokollets ÄKTA
+   * domslut — skickat=true och status bär domslutet; anroparen hämtar
+   * färskt läge vid ev. omtryck (ALDRIG tyst retry). Guard-/fault-
+   * domslut (guard.actionUnavailable, guard.latestQueryEditOnly,
+   * guard.latestAssistantRetryOnly, fault.command.assistantFeedbackUnsupported
+   * m.fl. §3) passerar som svar. Utan logEpoch-ankare finns inget lagligt
+   * CAS-skick ⇒ fel-tolerant avvis.
+   */
+  async skickaV4FaktaKommando(
+    typ: "applyFileRewind" | "forkAssistant" | "editUserQuery" | "retryTurn" | "setAssistantFeedback",
+    target: { rowId: number; entityId: string },
+    extras?: { newText?: string; feedback?: "like" | "dislike" | null; workspaceMode?: "preserve" | "rewind" },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    // Ty-grinden (§2.3, strict): target-validering FÖRE allt annat.
+    const eid = typeof target?.entityId === "string" ? target.entityId.trim() : "";
+    if (!target || !Number.isInteger(target.rowId) || target.rowId < 0 || !eid) {
+      return { skickat: false, commandId: null, ack: null, fel: "Fakta-kommandot kräver target {rowId (heltal ≥ 0), entityId (icke-tom)}." };
+    }
+    const mal = { rowId: target.rowId, entityId: eid };
+    let wire: Record<string, unknown>;
+    if (typ === "setAssistantFeedback") {
+      const fb = extras?.feedback ?? null;
+      if (fb !== "like" && fb !== "dislike" && fb !== null) {
+        return { skickat: false, commandId: null, ack: null, fel: 'setAssistantFeedback kräver feedback "like" | "dislike" | null.' };
+      }
+      wire = { target: mal, feedback: fb };
+    } else if (typ === "editUserQuery") {
+      const n = typeof extras?.newText === "string" ? extras.newText.trim() : "";
+      if (!n || n.length > 4000) {
+        return { skickat: false, commandId: null, ack: null, fel: "editUserQuery kräver newText (1–4 000 tecken) — attachments stöds ej denna våg." };
+      }
+      const wm = extras?.workspaceMode;
+      if (wm !== undefined && wm !== "preserve" && wm !== "rewind") {
+        return { skickat: false, commandId: null, ack: null, fel: 'workspaceMode måste vara "preserve" eller "rewind" (eller utelämnas).' };
+      }
+      wire = { target: mal, newText: n, ...(wm !== undefined ? { workspaceMode: wm } : {}) };
+    } else {
+      // applyFileRewind | forkAssistant | retryTurn — {target} (§3).
+      wire = { target: mal };
+    }
+    if (!this.sid) return { skickat: false, commandId: null, ack: null, fel: "Ingen levande session — v4/command kräver mål-session." };
+    if (!this.v4LogEpoch) {
+      // §2.2: Vft-typer utan baseLogEpoch avvisas FÖRE exekvering — utan
+      // prenumerationsflödets epok finns inget lagligt CAS-skick.
+      return { skickat: false, commandId: null, ack: null, fel: "Ingen CAS-ankartal (logEpoch) — fakta-kommandot kräver prenumerationsflödets epok." };
+    }
+    const commandId = `ak1a-cmd-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const envelope = {
+      commandId,
+      clientId: this.v4ConnectionId,
+      sessionId: this.sid,
+      type: typ,
+      payload: wire,
+      issuedAt: new Date().toISOString(),
+      // CAS-fälten (§2.2 — Vft-mängden kräver båda): protokollet jämför
+      // mot serverns revision/epok; fel tal = ÄKTA stale-domslut (ej fel).
+      baseRevision: this.v4Revision,
+      baseLogEpoch: this.v4LogEpoch,
+    };
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/command", envelope, 30_000)) as { status?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { skickat: false, commandId, ack: null, fel: "Varken ack eller settle från v4/command." };
+      }
+      const status = typeof svar.status === "string" ? svar.status : undefined;
+      return { skickat: true, commandId, ...(status !== undefined ? { status } : {}), ack: svar, rått: svar };
+    } catch (fel) {
+      return {
+        skickat: false,
+        commandId,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+      };
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -9019,6 +9135,54 @@ class MockTransport implements StudioTransport {
       commandId,
       status: this.mockV4SessionsFodelseStatus,
       typ,
+      source: "mock",
+    };
+    return { skickat: true, commandId, status: ack.status, ack, rått: ack };
+  }
+
+  /**
+   * POST 34 (våg 188) (mock): deterministisk "noop"-ack — mocken bär inga
+   * samtalsrader att styra, "noop" är ÄKTA domslut enligt §11.5.1, INGEN
+   * påhittad reasonCode. Samma payload-grind som AppServerTransport
+   * (kontraktstrogen dev-E2E) inklusive Ty-target och per-typ-extras;
+   * CAS-epoken kontrolleras EJ här (mocken bär ingen prenumeration —
+   * accepted/stale-vägarna provas via mockV4FaktaStatus i dev-E2E).
+   * Överridbar via mockV4FaktaStatus.
+   */
+  mockV4FaktaStatus: string = "noop";
+
+  async skickaV4FaktaKommando(
+    typ: "applyFileRewind" | "forkAssistant" | "editUserQuery" | "retryTurn" | "setAssistantFeedback",
+    target: { rowId: number; entityId: string },
+    extras?: { newText?: string; feedback?: "like" | "dislike" | null; workspaceMode?: "preserve" | "rewind" },
+  ): Promise<{ skickat: boolean; commandId: string | null; status?: string; ack: unknown | null; rått?: unknown; fel?: string }> {
+    await this.ensure();
+    // Samma Ty-grind + per-typ-extras som AppServer-grenen (§2.3/§3).
+    const eid = typeof target?.entityId === "string" ? target.entityId.trim() : "";
+    if (!target || !Number.isInteger(target.rowId) || target.rowId < 0 || !eid) {
+      return { skickat: false, commandId: null, ack: null, fel: "Fakta-kommandot kräver target {rowId (heltal ≥ 0), entityId (icke-tom)}." };
+    }
+    if (typ === "setAssistantFeedback") {
+      const fb = extras?.feedback ?? null;
+      if (fb !== "like" && fb !== "dislike" && fb !== null) {
+        return { skickat: false, commandId: null, ack: null, fel: 'setAssistantFeedback kräver feedback "like" | "dislike" | null.' };
+      }
+    } else if (typ === "editUserQuery") {
+      const n = typeof extras?.newText === "string" ? extras.newText.trim() : "";
+      if (!n || n.length > 4000) {
+        return { skickat: false, commandId: null, ack: null, fel: "editUserQuery kräver newText (1–4 000 tecken) — attachments stöds ej denna våg." };
+      }
+      const wm = extras?.workspaceMode;
+      if (wm !== undefined && wm !== "preserve" && wm !== "rewind") {
+        return { skickat: false, commandId: null, ack: null, fel: 'workspaceMode måste vara "preserve" eller "rewind" (eller utelämnas).' };
+      }
+    }
+    const commandId = `mock:cmd:${Date.now().toString(36)}`;
+    const ack = {
+      commandId,
+      status: this.mockV4FaktaStatus,
+      typ,
+      target: { rowId: target.rowId, entityId: eid },
       source: "mock",
     };
     return { skickat: true, commandId, status: ack.status, ack, rått: ack };

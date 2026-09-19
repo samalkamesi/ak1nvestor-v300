@@ -24,7 +24,7 @@
  *   J2 närhet      — kärnorden ligger utanför matcharens fel-tolerans mot
  *                    varje tidigare kärnord (≤3 tkn exakt · ≤7 tkn 1 fel ·
  *                    >7 tkn 2 fel · fras = inklusion — spegeln av traff())
- *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 33 lager i
+ *   L  widget-synk — kedjeraden i chat-widget.tsx bär alla 36 lager i
  *                    ordning + import + inga okända komponenter
  *
  * Syskonimporter är TOLERANTA (syskon kan skriva just nu): omgång 15:s
@@ -659,7 +659,18 @@ const GAMLA = [
   // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
   "svaraLokaltBeteendemekanik",
   "svaraLokaltPeMekanik",
-  "svaraLokaltOverlevnadsdjup",
+  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 22: bokmastar (s6-u3) — SIST av 47 (svitharmoniseringens dokumentationsplikt).
+    // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
+    "svaraLokaltFaktordjup",
+    "svaraLokaltBokmastar",
+    // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
+    "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel",
+  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+  "svaraLokaltSektorlasning",
+  "svaraLokaltVardegrund",
+  "svaraLokaltRealekonomi",
 ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

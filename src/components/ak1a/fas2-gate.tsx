@@ -267,6 +267,22 @@ export function Fas2Gate({
           </p>
         </div>
 
+        {/* Våg 202 (skiftet 2026-09-18 — Fas 3-förberedelse): statusraden —
+            ekosystemets verktyg är under byggnation. Positioneringen bär
+            riktning, aldrig datum eller resultatlöften; priser/garanti
+            berörs ej (R2 väntar kund). Endast Fas 3 — Fas 2-låset säljer
+            inget som är under byggnation. */}
+        {fas3 && (
+          <div className="mx-auto mt-6 max-w-2xl rounded-xl border border-[#B07A3C]/40 bg-[#081120]/60 p-4 text-left">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D9A066]">
+              {t("fas3.statusEtikett")}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-[#EDE6D6]/85">
+              {t("fas3.statusText")}
+            </p>
+          </div>
+        )}
+
         {/* CTA */}
         <div className="mt-8 flex flex-col items-center gap-3">
           <Link

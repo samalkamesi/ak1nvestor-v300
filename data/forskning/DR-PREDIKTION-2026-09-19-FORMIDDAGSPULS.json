@@ -1,0 +1,51 @@
+{
+  "typ": "DR-prediktion (förregistrerad FÖRE mätning)",
+  "ovning": "DR-OVNING-2026-09-19-FORMIDDAGSPULS",
+  "agent": "s10-u3 andra instansen (manifest auto-s10-1789802729714, spår 10 vakt 3/3)",
+  "last": "2026-09-19T07:46:30Z (09:46:30 lokal)",
+  "ansprakDiskForst": "data/vakten/auto-s10-1789802729714-s10-u3-ansprak-2.md",
+  "objekt": "REPLIK §8 köpost 4 — intra-kvarts-serien (par nr 2+3) + kvartsformelns femte test med KEDJEPREDIKTION från mätt punkt",
+  "bas": {
+    "kalla": "DR-RPO-DIFF-2026-09-19-DAGFONSTER.json (u3-instans 1, mätning 09:34:16 lokal)",
+    "board_decisions": 49570,
+    "section_data_snapshots": 1252404,
+    "organ_health_logs": 3037,
+    "totalt": 1345140,
+    "basTid": "2026-09-19T09:34:16 lokal"
+  },
+  "prediktioner": {
+    "K1": {
+      "text": "board = 49 570 + 8 × M (M = kvarsmarkörer sedan 09:34:16). Mät-T 09:45–10:00 ⇒ M=1 ⇒ 49 578; 10:00–10:15 ⇒ M=2 ⇒ 49 586",
+      "grund": "klockformeln board_delta = 8 × kvarsmarkörer (4 tidigare test: natt·gryning·dag·intra-kvarts)",
+      "primar": 49578
+    },
+    "K2": {
+      "text": "intra-kvarts-par: Δboard = 0 EXAKT mellan mätning #1 och #2 inom samma kvarts — klockan eldar VID markören, ej kontinuerligt",
+      "grund": "REPLIK fynd 2, par nr 1 (09:30:35→09:34:16, Δ0)",
+      "primar": 0
+    },
+    "K3": {
+      "text": "section_data_snapshots = 1 252 404 oförändrad på båda punkterna (Δ0)",
+      "grund": "pump-batch +18 984 landade 08:00 idag; nästa 09-20 08:00; två mätningar samma dag samma tal",
+      "primar": 1252404
+    },
+    "K4": {
+      "text": "organ_health_logs +0…+15 sedan 09:34 (dag-amplitud), primär +2 → 3 039",
+      "grund": "DAG-episoder +12/+13 vägs över natt +0/+1 (REPLIK P4-läxa)",
+      "primar": 3039
+    },
+    "K5": {
+      "text": "totalt = 1 345 140 + 8×M + organ; M=1 ⇒ primär 1 345 150, band 1 345 148–1 345 163",
+      "grund": "K1+K3+K4 dekomponerat",
+      "primar": 1345150
+    },
+    "K6": {
+      "text": "2–3 av 60 tabeller i rörelse · 0 negativa · 0 tillkomna/borttappade",
+      "grund": "serien 3/60 konstant sedan 09-17"
+    },
+    "K7": {
+      "text": "VILLKORAD (restore endast om u2:s --behall-fönster stängt): radkontrakt EXAKT sjätte gången (60/1 325 919 · 68/1 326 055 · 99/1 326 315) · fel 788/0 · logg 34 881 B · RTO dagklass 14–18 s",
+      "grund": "5 deterministiska föregångare samma blad"
+    }
+  }
+}

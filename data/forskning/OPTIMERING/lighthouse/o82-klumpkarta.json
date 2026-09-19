@@ -1,0 +1,62 @@
+{
+  "protokoll": "o82-prestanda-palett-modulkarta-s7.md",
+  "tid": "2026-09-19T05:56:02.445Z",
+  "bas": "https://lab.ak1nvestor.com",
+  "antalChunksIHtml": 17,
+  "klump": null,
+  "dom": "INGEN KLUMP — palettklumpen upplöst (framtida kur ätit den); ny lägeskarta krävs innan nya domar.",
+  "chunkarMedTräffar": [
+    {
+      "chunk": "3m_hll8izuro0.js",
+      "byte": 56429,
+      "transfer": 56429,
+      "moduler": [
+        "meny-register(yttor)",
+        "navigationsminne",
+        "member-local",
+        "oppna-sok-familj",
+        "logo-eller-inlinemark"
+      ],
+      "markor": [
+        "yttor",
+        "ak1a:navigationsminne",
+        "ak1a-klara-kurser",
+        "ak1a:oppna-sok",
+        "skulptur-mark.jpg"
+      ]
+    },
+    {
+      "chunk": "2qnjvou52dgsk.js",
+      "byte": 24768,
+      "transfer": 24768,
+      "moduler": [
+        "oppna-sok-familj"
+      ],
+      "markor": [
+        "ak1a:oppna-sok"
+      ]
+    },
+    {
+      "chunk": "264uyfejpsomd.js",
+      "byte": 21623,
+      "transfer": 21623,
+      "moduler": [
+        "logo-eller-inlinemark"
+      ],
+      "markor": [
+        "skulptur-mark.jpg"
+      ]
+    },
+    {
+      "chunk": "208qlhbwv45x6.js",
+      "byte": 19448,
+      "transfer": 19448,
+      "moduler": [
+        "logo-eller-inlinemark"
+      ],
+      "markor": [
+        "skulptur-mark.jpg"
+      ]
+    }
+  ]
+}

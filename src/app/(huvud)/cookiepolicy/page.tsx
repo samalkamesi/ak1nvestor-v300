@@ -124,7 +124,7 @@ export default function CookiePolicy() {
                         className={
                           k.kat.startsWith("Nödvändiga")
                             ? "rounded-full bg-muted px-2 py-0.5"
-                            : "rounded-full bg-gold/20 px-2 py-0.5 text-[#785c13]"
+                            : "rounded-full bg-gold/20 px-2 py-0.5 text-[#785c13] dark:text-gold"
                         }
                       >
                         {k.kat}

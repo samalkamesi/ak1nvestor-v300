@@ -65,9 +65,18 @@ export const dynamic = "force-dynamic";
  * 200-svar. Dagens sessions-rutt (våg 149+) förblir funktionell styrväg;
  * övergången är feature-avvägning enligt §11.4.
  *
- * Övriga typer (fakta-typerna) senare enligt
- * §11.4:s migreringsordning. Att ersätta dagens styrväg helt är
- * feature-avvägning enligt §11.4.
+ * POST 34 (V6/A6 — våg 188): POST {typ: "applyFileRewind"|"forkAssistant"|
+ * "editUserQuery"|"retryTurn"|"setAssistantFeedback", rowId, entityId,
+ * feedback?|newText?+workspaceMode?} → transport.skickaV4FaktaKommando —
+ * fakta-typerna (Vft-mängden, ZCODE-GAP-34-KARTLAGGNING): radmålade
+ * CAS-kommandon (envelope bär baseRevision + baseLogEpoch från
+ * transportens live-spårning, §2.2) vars domslut persisteras i
+ * v4/command_fact (§4). "stale" = läget hunnit gå vidare (ÄKTA domslut
+ * — hämta färskt läge vid omtryck); guard/fault-koder (§3) passerar som
+ * 200-svar. attachments (editUserQuery) väntar A6 — newText krävs.
+ *
+ * Övriga typer enligt §11.4:s migreringsordning följer i sina vågor.
+ * Att ersätta dagens styrväg helt är feature-avvägning enligt §11.4.
  *
  * Validering: text 1–4 000 tecken (chatt-promptkultur), delivery ∈
  * {startNow, queue} ("guide" väntar A6-insatsen — flight-timeout och
@@ -105,6 +114,10 @@ export async function POST(req: NextRequest) {
     optionId?: unknown;
     modellId?: unknown;
     runtimeModel?: unknown;
+    rowId?: unknown;
+    entityId?: unknown;
+    feedback?: unknown;
+    workspaceMode?: unknown;
   };
   try {
     kropp = (await req.json()) as typeof kropp;
@@ -221,6 +234,75 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // POST 34 (våg 188): fakta-grenen — Vft-mängden (ZCODE-GAP-34-KARTLAGGNING
+  // §2): applyFileRewind/forkAssistant/editUserQuery/retryTurn/
+  // setAssistantFeedback — de radmålade CAS-kommandona vars domslut
+  // persisteras i v4/command_fact (§4). target {rowId, entityId} =
+  // rowsRange-identifierarna (§2.3, strict — 400 ENDAST ogiltig kropp).
+  // CAS-fälten bärs av transporten (baseRevision + baseLogEpoch ur dess
+  // live-spårning, §2.2) — "stale"-ack är ÄKTA domslut (läget hunnit gå
+  // vidare; hämta färskt läge vid omtryck), liksom guard-koderna
+  // (guard.actionUnavailable, guard.latestQueryEditOnly,
+  // guard.latestAssistantRetryOnly, guard.forkTargetNotStable) och
+  // fault-koderna (fault.command.assistantFeedbackUnsupported m.fl. §3)
+  // — samtliga passerar som 200-svar. UI-koppling (tumme-upp/ner,
+  // kör-igen, filspolning) är feature-avvägning enligt §11.4 — API-vägen
+  // först.
+  if (
+    kropp.typ === "applyFileRewind" ||
+    kropp.typ === "forkAssistant" ||
+    kropp.typ === "editUserQuery" ||
+    kropp.typ === "retryTurn" ||
+    kropp.typ === "setAssistantFeedback"
+  ) {
+    if (typeof kropp.rowId !== "number" || !Number.isInteger(kropp.rowId) || kropp.rowId < 0) {
+      return jsonSvar({ skickat: false, fel: "Fakta-kommandot kräver rowId (heltal ≥ 0)." }, 400);
+    }
+    const eid = typeof kropp.entityId === "string" ? kropp.entityId.trim() : "";
+    if (!eid) {
+      return jsonSvar({ skickat: false, fel: "Fakta-kommandot kräver entityId (icke-tom)." }, 400);
+    }
+    if (eid.length > 200) {
+      return jsonSvar({ skickat: false, fel: "entityId överskrider 200 tecken." }, 400);
+    }
+    const extras: { newText?: string; feedback?: "like" | "dislike" | null; workspaceMode?: "preserve" | "rewind" } = {};
+    if (kropp.typ === "setAssistantFeedback") {
+      if (kropp.feedback !== undefined && kropp.feedback !== "like" && kropp.feedback !== "dislike" && kropp.feedback !== null) {
+        return jsonSvar({ skickat: false, fel: 'setAssistantFeedback kräver feedback "like" | "dislike" | null (eller utelämnat).' }, 400);
+      }
+      extras.feedback = kropp.feedback === undefined ? null : kropp.feedback;
+    } else if (kropp.typ === "editUserQuery") {
+      const n = typeof kropp.newText === "string" ? kropp.newText.trim() : "";
+      if (!n || n.length > 4000) {
+        return jsonSvar({ skickat: false, fel: "editUserQuery kräver newText (1–4 000 tecken)." }, 400);
+      }
+      if (kropp.workspaceMode !== undefined && kropp.workspaceMode !== "preserve" && kropp.workspaceMode !== "rewind") {
+        return jsonSvar({ skickat: false, fel: 'workspaceMode måste vara "preserve" eller "rewind" (eller utelämnas).' }, 400);
+      }
+      extras.newText = n;
+      if (kropp.workspaceMode === "preserve" || kropp.workspaceMode === "rewind") {
+        extras.workspaceMode = kropp.workspaceMode;
+      }
+    }
+    const transport: StudioTransport = hamtaStudioTransport();
+    try {
+      const svar = await transport.skickaV4FaktaKommando(
+        kropp.typ,
+        { rowId: kropp.rowId, entityId: eid },
+        extras,
+      );
+      return jsonSvar({ ...svar, transport: transport.namn });
+    } catch (fel) {
+      return jsonSvar({
+        skickat: false,
+        commandId: null,
+        ack: null,
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "v4/command kunde ej skickas.",
+        transport: transport.namn,
+      });
+    }
+  }
+
   // POST 31+32 (våg 182): kö-grenen — setAutoDrain + köoperationer (§11.2
   // rad 239–242). 400 ENDAST ogiltig kropp; protokollets egna domslut
   // (ack-status/reasonCode) passerar som 200-svar.
@@ -256,7 +338,7 @@ export async function POST(req: NextRequest) {
       return jsonSvar(
         {
           skickat: false,
-          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, switchModelConfig, createSession, createSelectionSideSession, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem eller deleteQueueItem.",
+          fel: "typ måste vara pauseGoal, resumeGoal, resolveInteraction, switchModelConfig, createSession, createSelectionSideSession, setAutoDrain, sendQueuedNow, editQueueItem, reorderQueueItem, deleteQueueItem, applyFileRewind, forkAssistant, editUserQuery, retryTurn eller setAssistantFeedback.",
         },
         400,
       );

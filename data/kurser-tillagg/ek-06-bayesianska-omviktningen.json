@@ -1,0 +1,168 @@
+{
+  "slug": "ek-06-bayesianska-omviktningen",
+  "category": "EKOSYSTEM",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Bayesianska omviktningen — hur rösterna lär sig av träffar och missar",
+  "summary": "EKOSYSTEM-familjens sjätte steg: den bayesianska omviktningen, mekanismen som gör labbets röstlängd levande — fasta vikter (ek-01) blir växande vikter som lär av varje kvartals bevis. Kursen lär Bayes sats i klartext med labbets tal: hypotesens prior 0,40 möter ett starkt bevis (sannolikhet 0,90 om hypotesen stämmer, 0,10 om den inte gör det) och posterior blir 0,40 gånger 0,90 delat med 0,36 plus 0,06 lika med 0,36 delat med 0,42 lika med 0,86 — medan ett svagt bevis (0,55 mot 0,45) bara flyttar en stark prior från 0,80 till 0,83. Därefter mekaniken: mikro-profilens vikter VOL 30, FIB 25, EW 20, GANN 15, LUC 10 uppdateras med multiplikatorn 1,2 vid träff och 0,75 vid miss — ett kvartal med träffarna VOL, EW, LUC och missarna FIB, GANN ger 36, 18,75, 24, 11,25 och 12, summa 102, som renormaliseras till 35,3 + 18,4 + 23,5 + 11,0 + 11,8 lika med 100,0 — och återhämtningens hastighet: en missad teori behöver två träffar för att återgå (0,75 gånger 1,2 gånger 1,2 lika med 1,08). Genomgående utbildning i bevisens definition före rapporten, aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna Bayes sats med sannolikheter i klartext: posterior är priorn gånger bevisets styrka delat med samma produkt plus närmaste alternativs motsvarande — 0,40 gånger 0,90 delat med 0,36 plus 0,06 ger 0,36 delat med 0,42 lika med 0,86 — och förklara varför ett svagt bevis (0,55 mot 0,45) knappt flyttar en stark prior (0,80 till 0,83) medan samma svaga bevis flyttar en svag mer. Köra den mekaniska omviktningen: vikterna VOL 30, FIB 25, EW 20, GANN 15, LUC 10 (ek-01:s mikro-profil) multipliceras med 1,2 vid träff och 0,75 vid miss, och den nya summan (i exempelkvartalet 102) renormaliseras till 100 — 35,3 + 18,4 + 23,5 + 11,0 + 11,8. Räkna återhämtningens takt: en miss kostar 0,75 och en träff ger 1,2, alltså återställer två träffar mer än hela missen (0,75 gånger 1,2 gånger 1,2 lika med 1,08) medan en enda inte räcker (0,90). Definiera bevis FÖRE rapporten: vilka trösklar som gör en träff till en träff (kvartalets siffra mot förväntningen, definierad i förväg enligt ek-03:s arbetsflöde) — och vad som aldrig får vara bevis: kursreaktionen, magkänslan, nyhetsflödets. Läsa konvergensen: träffkvoterna efter tolv kvartal (VOL 8 av 12 lika med 67 procent, FIB 5 av 12 lika med 42, EW 7 av 12 lika med 58, GANN 4 av 12 lika med 33, LUC 6 av 12 lika med 50) förklarar varför vikterna vandrar långsamt — nollpunkten ligger vid knappt 61 procent träffkvot, för sju träffar av tolv ger växlingsfaktorn 0,85 (sjunker långsamt) och åtta ger 1,36 (växer). Ställa de fem vakthållningsfrågorna vid varje omviktning — vilket bevis, vilken tröskel, vilken multiplikator, vilken summa, vilket loggat datum.",
+  "why": "EKOSYSTEM-familjen har lärt ut husets statik: kartan (ek-02), arbetsflödet (ek-03), röstlängdningen med fasta vikter (ek-01), prövningen mot historien (ek-04) och simuleringen av framtiden (ek-05) — men ingen kurs äger dess inlärning: vad som händer MED vikterna när en teori träffar och missar, kvartal efter kvartal. Sond mot registrets 426 kurser: ordet bayes förekommer i kurserna endast i ek-01:s fjärde skyddsvägg — uppdatering bara på fördefinierade bevis, kallad bayes-disciplin — vilket är en VAKT, inte en mekanism: prior, posterior, multiplikator och renormalisering ägs av ingen kurs. Luckan är metodens kärna, inte dess detalj: fasta vikter (ek-01) gör labbet till en omröstning som aldrig lär; omviktningen gör det till ett instrument som kalibreras — och skillnaden är precis den mellan att HA ett system och att DRIVA ett. Kursen kräver endast multiplikation och division men ger familjens slutverktyg: den som kan ek-01:s röstbudget och denna kursens uppdateringsmekanik kan köra hela kedjan — från kvartalsbevis (kt-02:s kalibrering) via ny viktprofil till ny SAM-signal — och läsa i loggen exakt när och varför systemet ändrade sig.",
+  "history": {
+    "origin": "Uppdateringens idé är äldre än dess formel: tidigt artonhundrtals England ställde Thomas Bayes frågan om omvänd sannolikhet — givet att något inträffat, hur sann var orsaken? — och formeln som bär hans namn publicerades efter hans död. Under artonhundratalet byggde Pierre-Simon Laplace samma matematik oberoende och använde den på allt från domsluts till astronomi: sannolikheten uppfattades som en grad av tilltro som skulle revideras allteftersom bevisen samlades.",
+    "evolution": "Tjugonde seklets statistik delde sig om formelns själ: den frekventistiska skolan ville mäta världen med långa serier och förbjöd priorer som subjektiva, medan bayesianarna höll fast vid att all kunskap börjar i ett utgångsläge och uppdateras — tvisten gjorde ordet prior laddat i ett halvsekel. Samtidigt växte de praktiska tillämpningarna: signalfiltrering under andra världskriget (där fiendebanor uppskattades och omuppskattades för varje ny radarmätning) blev metodikens största framgång, och från sjuttiotalet gjorde billig beräkning bayesiansk uppdatering till motorrummet i allt från skräppostfilter till väderprognoser.",
+    "modern": "I dag är bayesiansk uppdatering standardverktyget där signaler är brusiga och bevisen trillar in en i taget: maskininlärningens språkmodeller, kreditbedömningars betyg och algoritmiska handelssystem kalibrerar om för varje ny datapunkt. I investeringsvärlden är kopplingen till labbet rak: en kvartalsrapport är exakt ett nytt bevis mot en stående hypotes, och frågan om aktieanalytiker bör vara snabba eller tröga i sina revideringar är i bayesianska termer en fråga om priorernas styrka och bevisens vikter — kursens mekanik, i varje analytiködes väsen."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Från fasta röster till lärande röster — omviktningens plats",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Bayes sats i klartext — prior, bevis, posterior",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Mekaniken — multiplikatorer, summa och renormalisering",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Bevisens definition — trösklarna före rapporten",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Konvergens och gränser — hur snabbt systemet får lära",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor vid varje omviktning",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Från fasta röster till lärande röster — omviktningens plats",
+      "minutes": 4,
+      "intro": "ek-01 byggde röstlängdningen med fasta vikter; denna kurs gör det som måste hända därnäst — låter vikterna bära historien.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Påminn dig först om vad som redan står: labbets fem teorier — volym, Fibonacci, Elliott, Gann och Lucas (ek-02:s karta över fem motorer) — röstar i varje analys, och SAM-viktningen (ek-01) summerar rösterna med en fast viktprofil: i mikro-profilen VOL 30, FIB 25, EW 20, GANN 15 och LUC 10, röstbudgeten alltid 100. Systemet är bestämt nog att följas (ek-01:s första skyddsvägg) — men det har en tyst egenskap: det lär sig ingenting. Om volymteorien träffar åtta kvartal i rad och Gann missar åtta får de ändå samma röster som första dagen. Det är denna tysta egenskap kursen bygger bort, och konstruktionen är den minsta tänkbara: vikterna får FLYTTA men inte ersättas. Ett kvartals bevis räknas, en träff lyfter teoriens vikt, en miss sänker den, och inför nästa SAM-räkning (ek-03:s femte station) används de uppdaterade vikterna. Två saker förändras alltså aldrig: röstbudgeten 100 (den renormaliseras efter varje omgång, kapitel tre) och teorierna själva (ingen röstar ut någon — omviktningen flyttar röster, den avlivar inte rösträtter). Målet är inte att hitta en vinnande teori utan att hålla en orkester där de som spelar rent höras mer. Det är hela idén i en mening: ek-01 äger rösternas SUMMA, denna kurs äger rösternas HISTORIK — och tillsammans blir labbet inte bara ett system utan ett instrument som kalibreras."
+        },
+        {
+          "type": "definition",
+          "content": "Bayesiansk omviktning — uppdatering av teoriernas röstvikter efter fördefinierade bevis: en träff multiplicerar vikten med en faktor över ett, en miss med en faktor under ett, varefter summan renormaliseras till röstbudgeten 100. Omviktningen ändrar ALDRIG teorierna eller budgeten — endast fördelningen mellan rösterna."
+        },
+        {
+          "type": "insight",
+          "content": "Skillnaden mellan fasta och växande vikter är skillnaden mellan ett system man HAR och ett system man DRIVER. Det fasta systemet kan beskrivas på en rad och dör aldrig — men det talar med samma röst i alla väder. Det växande kräver logg och disciplin (kapitel fyra) men talar med erfarenhetens röst: de teorier som burit huset hörs tydligare, och de som vilselett det viskas."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Bayes sats i klartext — prior, bevis, posterior",
+      "minutes": 4,
+      "intro": "Innan mekaniken kommer matematikens kärna: sannolikheten är inte ett tillstånd utan en vandring — från utgångsläge till uppdaterat läge, steg för bevis.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Låt en hypotes bära utgångsläget: teorin om att ett visst mönster förutsäger kvartalets rapport. Priorn sätts till 0,40 — av historiens skäl kanske, eller av försiktighet; talet är utgångslägets tilltro, ingen sanning. Sedan landar beviset: rapportens siffra. Bevisets styrka mäts i två led: hur sannolikt är detta bevis OM hypotesen stämmer — säg 0,90 — och hur sannolikt är samma bevis om den INTE stämmer — säg 0,10 (det kan hända av tur, eller av att ett annat mönster bar). Bayes sats är nu en enda division: priorn gånger bevisets styrka, delat med samma produkt plus alternativets. Räkna: 0,40 gånger 0,90 lika med 0,36; alternativet är resten av priorn, 0,60, gånger dess bevis-sannolikhet 0,10 lika med 0,06; nämnaren 0,36 plus 0,06 lika med 0,42; och posteriorn 0,36 delat med 0,42 lika med 0,86. Ett enda starkt bevis tog hypotesen från 0,40 till 0,86 — men notera vad som gjorde kraften: inte bevisets storhet utan dess SKILLNAD mellan världarna (0,90 mot 0,10). Kontrasten är allt: ett bevis som är lika sannolikt i båda världarna flyttar ingenting. Prova samma räkning med ett svagt bevis: styrka 0,55 om hypotesen stämmer, 0,45 om inte, mot en stark prior 0,80 — nämnaren 0,80 gånger 0,55 lika med 0,44 plus 0,20 gånger 0,45 lika med 0,09, posteriorn 0,44 delat med 0,53 lika med 0,83. Prior 0,80 blev 0,83: ett bevis som knappt skiljer världarna åt knappt flyttar tron — och det är lika viktigt att veta när man INTE ska flyttas som när man ska. Kursens läseregel från detta kapitel: uppdateringens storlek styrs av tre tal — priorns läge, bevisets sannolikhet i hypotesens värld, och densamma i alternativets. Alla tre ska stå i loggen; inget av dem får väljas efteråt."
+        },
+        {
+          "type": "tabell",
+          "content": "Steg | Räkning | Tal\nPrior — utgångslägets tilltro | hypotesen H | 0,40\nBevisets styrka om H stämmer | P(bevis givet H) | 0,90\nBevisets styrka om H inte stämmer | P(bevis givet icke-H) | 0,10\nTäljare | 0,40 × 0,90 | 0,36\nAlternativets bidrag | 0,60 × 0,10 | 0,06\nNämnare | 0,36 + 0,06 | 0,42\nPosterior | 0,36 ÷ 0,42 | 0,86"
+        },
+        {
+          "type": "insight",
+          "content": "0,36 delat med 0,42 lika med 0,86 — divisionen är hela formeln, och de två nämnarleden är dess samvete: den som bara räknar sitt eget bidrag (0,36) och glömmer alternativets (0,06) överdriver alltid sin uppdatering. Bayes sats är i lika hög grad ett bromsverk som en motor: den säger lika ofta håll kvar som flytta."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Mekaniken — multiplikatorer, summa och renormalisering",
+      "minutes": 4,
+      "intro": "Från sats till system: labbet översätter Bayes till något en logg kan bära — en multiplikator per utfall och en division som återställer röstbudgeten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sannolikheter är abstrakta; röstvikter är hanterbara. Översättningen är två multiplikatorer, beslutade en gång och aldrig ändrade per kvartal: en träff multiplicerar teorins vikt med 1,2, en miss med 0,75. Kör ett exempelkvartal på mikro-profilen. Utgångsläget är ek-01:s vikter: VOL 30, FIB 25, EW 20, GANN 15, LUC 10. Kvartalets bevis (definierade i förväg, kapitel fyra) ger träffar för VOL, EW och LUC samt missar för FIB och GANN. Multiplicera: VOL 30 gånger 1,2 lika med 36; FIB 25 gånger 0,75 lika med 18,75; EW 20 gånger 1,2 lika med 24; GANN 15 gånger 0,75 lika med 11,25; LUC 10 gånger 1,2 lika med 12. Summan är 36 plus 18,75 plus 24 plus 11,25 plus 12 lika med 102 — och här träffar mekanikens andra lag: röstbudgeten är alltid 100, så varje vikt delas med summan: 36 delat med 102 lika med 35,3 procent; 18,75 delat med 102 lika med 18,4; 24 delat med 102 lika med 23,5; 11,25 delat med 102 lika med 11,0; 12 delat med 102 lika med 11,8. Kontrollen: 35,3 plus 18,4 plus 23,5 plus 11,0 plus 11,8 lika med 100,0 — budgeten hel, profilen förflyttad. VOL har vuxit från 30 till 35,3 och GANN krympt från 15 till 11,0 — ett kvartals bevis, en mätbar förskjutning, allt dividerat med samma summa så att ingen extra röst föds. Tänk också på tiden bakåt: vad kostar en miss? Missen multiplicerar med 0,75, men återvägen kräver två träffar — 0,75 gånger 1,2 lika med 0,90 (ännu under start), 0,75 gånger 1,2 gånger 1,2 lika med 1,08 (över start) — medan tre träffar i rad ger 1,73 (1,2 upphöjt till 3) och fyra missar i rad 0,32 (0,75 upphöjt till 4). Systemet är alltså asymmetriskt trögt: snabbt att tappa, långsamt att återfå — en medveten egenskap, för den som vill att en teori ska återfå förtroende ska behöva visa mer än ett lyckat kvartal. Nästa SAM-räkning (ek-03:s femte station) körs sedan med de nya vikterna, och hela kedjan — bevis, multiplikatorer, summa, nya vikter — loggas med datum: omviktningen är ett protokoll, inte en åsikt."
+        },
+        {
+          "type": "tabell",
+          "content": "Teori | Vikt före | Utfall | Multiplikator | Vikt efter | Renormaliserad (÷ 102 × 100)\nVOL | 30 | träff | ×1,2 | 36,00 | 35,3 procent\nFIB | 25 | miss | ×0,75 | 18,75 | 18,4 procent\nEW | 20 | träff | ×1,2 | 24,00 | 23,5 procent\nGANN | 15 | miss | ×0,75 | 11,25 | 11,0 procent\nLUC | 10 | träff | ×1,2 | 12,00 | 11,8 procent\nSumma | 100 | — | — | 102,00 | 100,0 procent"
+        },
+        {
+          "type": "insight",
+          "content": "Renormaliseringen är mekanikens egalitära hjärta: när VOL växer till 36 måste någon annans röst minska, för budgeten är och förblir 100. Omviktningen skapar inga nya röster — den flyttar befintliga. Därmed kan systemet aldrig bli MER säkert än sina hundra röster, bara bättre fördelat; det är en viktskalibrering, inte en sanningsmaskin."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Bevisens definition — trösklarna före rapporten",
+      "minutes": 4,
+      "intro": "Omviktningens akilleshäl är inte räkningen utan beviset: en träff måste vara en träff FÖRE den inträffar, annars är systemet bara åsikter med extra steg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "ek-01:s fjärde skyddsvägg heter uppdatering bara på fördefinierade bevis — denna kurs är den vaktens mekanik. Ett bevis är en tröskel, skriven före rapporten och aldrig efter: teorin sade att kvartalets omsättning skulle landa över indexets förväntan med minst två procentenheter, och landade den där är träffen ett faktum oavsett om kursen steg eller föll. Regeln har tre ben. Första: trösklarna skrivs i ek-03:s arbetsflöde FÖRE rapportdatumet och loggas med tid — en tröskel som inte finns i loggen före datumet är ingen tröskel. Andra: multiplikatorerna (1,2 och 0,75) bestäms en gång för hela systemet och ändras aldrig per teori eller per humör — samma regel för alla röster är vad som gör jämförelsen mellan dem meningsfull. Tredje: inget manuellt mellanläge. En träff är en träff och en miss en miss; det finns inga nästan-träffar i mekaniken, däremot i lärdomens marginaler — reflektera gärna över en nästan-träff i anteckningen, men vikten rör sig aldrig för den. Vad får ALDRIG vara bevis? Kursreaktionen (den bär tusen orsaker utöver teorin — am-familjens mikrovärld), nyhetsflödets ton, magkänslan morgonen efter. Beviset är en siffra mot en tröskel, och det gäller strängt: samma siffra mot samma tröskel för varje teori, kvartal efter kvartal. Här finns också kalibreringens koppling (kt-02 äger förväntningsanalysen): trösklarnas nivåer ska granskas med samma disciplin som vikterna — ett system vars trösklar aldrig träffas lär ingenting (alla missar, vikterna smyger sig mot jämlikhetens bottenvåning), och ett vars trösklar alltid träffas lär lika lite (alla träffar). Det kalibrerade systemet missar och träffar i bland — och det är precis blandningen som gör röstflyttningen informativ. Bästa praxis från labbets loggkultur (ek-03): en rad per teori och kvartal — tröskel, faktiskt utfall, träff eller miss, ny vikt — och raden skrivs vid läsning av rapporten, inte vid nästa SAM-räkning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen omviktningslogg i fyra steg: (1) Skriv ned ek-01:s mikro-profil (VOL 30, FIB 25, EW 20, GANN 15, LUC 10) som utgångsläge med dagens datum. (2) Formulera för varje teori EN tröskel mot nästa kvartals offentliga siffra — konkret, mätbar och skriven FÖRE rapporten. (3) Läs rapporten, döm varje teori mot sin tröskel, multiplicera vikterna (träff ×1,2, miss ×0,75) och renormalisera summan till 100. (4) Jämför din nya profil med utgångsläget och notera vilken röst som förskjutits mest — och om förskjutningen är större än en multiplikator förklarar (den får aldrig vara det). Upprepa fyra kvartal: då har du en vandringshistoria, och kapitel fems konvergensläsning blir möjlig på egna tal."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Konvergens och gränser — hur snabbt systemet får lära",
+      "minutes": 4,
+      "intro": "En omviktning är ett steg; systemets karaktär ligger i sekvensen. Kapitlet räknar på tolv kvartal och frågar hur snabbt vikterna FÅR vandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sätt siffror på längdtålamodet. Efter tolv kvartal av loggade utfall bär exemplet dessa träffkvoter: VOL 8 av 12 — det är 67 procent — FIB 5 av 12 lika med 42 procent, EW 7 av 12 lika med 58 procent, GANN 4 av 12 lika med 33 procent och LUC 6 av 12 lika med 50 procent. Räkna varje teoris växlingsfaktor som 1,2 upphöjt till antalet träffar gånger 0,75 upphöjt till antalet missar. VOL: 1,2 upphöjt till 8 lika med 4,30 och 0,75 upphöjt till 4 lika med 0,32, produkten 4,30 gånger 0,32 lika med 1,36 — växer. GANN: 1,2 upphöjt till 4 lika med 2,07 och 0,75 upphöjt till 8 lika med 0,10, produkten 0,21 — vikt 15 gånger 0,21 lika med 3,2, och renormaliseringen skulle lämna GANN väl under systemets golv: ingen teoris vikt får renormaliserat falla under 5 procentenheter och ingen får stiga över 40 — vakterna finns för att omviktningen ska förbli kalibrering och aldrig bli avlivning eller konungskröning. Var ligger nollpunkten, kvoten där en teori exakt håller sin vikt? Sju träffar av tolv ger 1,2 upphöjt till 7 lika med 3,58 gånger 0,75 upphöjt till 5 lika med 0,24, produkten 0,85 — sjunker långsamt; åtta träffar ger 1,36 — växer: brytpunkten ligger alltså mellan sju och åtta träffar av tolv, knappt 61 procent. Först en träffkvot över ungefär sex av tio växer vikten, och det är ingen olycka utan kalibrering: rösterna ska flyttas för påtagliga skillnader i träffkvot, inte för tur och motgång. Slutläget i exemplet, med tak och golv tillämpade: VOL:s råvikt 30 gånger 1,36 lika med 40,8 når taket 40, GANN når golvet 5, och de tre övriga bär resten 55 i förhållande till sina råvikter — EW (råvikt 17,0 av fria poolen 30,6) ger 30,6, FIB (8,3) ger 14,9 och LUC (5,3) ger 9,5; summan 40 plus 5 plus 30,6 plus 14,9 plus 9,5 lika med 100,0. Ett år har flyttat VOL från 30 till 40 och tystat GANN från 15 till 5: en mätbar vandring, men ingen revolution — och om nästa år vänder (konjunkturer gör det, ma-04:s indikatorer) återtar mekaniken GANN:s röster med samma långsamhet som den tog dem. Ett system som lär långsamt glömmer också långsamt — och i ett hus byggt på fem teoriers samspel (ek-01) är det minnet en dygd, inte ett fel."
+        },
+        {
+          "type": "tabell",
+          "content": "Teori | Träffar av 12 | Träffkvot | Växlingsfaktor (1,2^träff × 0,75^miss) | Viktens vandring\nVOL | 8 | 67 procent | 4,30 × 0,32 = 1,36 | växer mot taket 40\nFIB | 5 | 42 procent | 2,49 × 0,13 = 0,33 | sjunker stadigt\nEW | 7 | 58 procent | 3,58 × 0,24 = 0,85 | sjunker långsamt\nGANN | 4 | 33 procent | 2,07 × 0,10 = 0,21 | tystnar mot golvet 5\nLUC | 6 | 50 procent | 2,99 × 0,18 = 0,53 | sjunker måttligt"
+        },
+        {
+          "type": "insight",
+          "content": "Tabellens kolumn växlingsfaktor är kursens kompass: värdet 1,0 är nollpunkten — en teori vars tolvkvartalsfaktor står över 1,0 växer, under 1,0 krymper. Att 7 av 12 träffar bara når 0,85 medan 8 ger 1,36 visar systemets tröskel: nollpunkten ligger vid knappt 61 procent, och rösterna ska flytta för PÅTAGLIGA skillnader i träffkvot — inte för tur och motgång, och aldrig för ett enda kvartals vädjan."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Mästerskapet — fem frågor vid varje omviktning",
+      "minutes": 4,
+      "intro": "Kursens sista kapitel för samman satsen, mekaniken, bevisen och konvergensen till ett förhörsmönster: fem frågor som varje omviktning ska stå emot — innan nästa SAM-räkning får köras.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sammanförelsen i fem frågor. Fråga ett: vilket bevis? — varje viktändring ska kunna pekas på en tröskel i loggen, skriven före rapporten (kapitel fyra); en omviktning utan bevisrad är en åsikt med siffror. Fråga två: vilken tröskel? — tröskelns nivå granskas som bevisets kvalitet: var den nåbar, var den strikt, var den densamma som förra kvartalet (kalibreringens fråga, kt-02). Fråga tre: vilken multiplikator? — alltid systemets 1,2 och 0,75, aldrig en specialregels undantag — samma regel för alla röster är hela jämförelsens mening. Fråga fyra: vilken summa? — de fem råa vikternas summa (i exemplet 102) ska stå i protokollet och divisionen mot 100 vara efterräknad; en budget som inte stämmer är en röst som fötts ur tomma luften. Fråga fem: vilket datum? — omviktningen loggas vid rapportens läsning, före nästa analys, så att ingen senare SAM-signal kan ha formats av vikter valda efteråt. Fem frågor, och bakom dem kursens plats i huset: ek-02 ritade kartan, ek-03 arbetsflödet, ek-01 röstbudgeten, ek-04 prövningen, ek-05 simuleringen — och denna kurs lärde huset det sista: att minnas. Från här är kedjan hel: bevis (premierade trösklar) → omviktning (multiplikatorer och renormalisering) → SAM-signaler på nya vikter (ek-01) → prövning mot historien (ek-04) och scenariovidder (ek-05, km-029) — en slinga som varje kvartal går ett varv, loggat och reproducerbart. Avslutningshållningen är Familjens hela: detta är utbildning i en metodiks mekanik — ingenting i kursen är en uppmaning att handla, inneha eller undvika något värdepapper; talen är exemplens räkneövningar, valen är alltid läsarens egna på egen analys, och de fem frågorna är byggda för att göras till egna — i den egna loggen, mot de egna trösklarna, kvartal efter kvartal."
+        },
+        {
+          "type": "insight",
+          "content": "Fem frågor, två multiplikatorer och en division — det är hela kursen. Resten är loggkultur: en rad per kvartal, skriven vid rapporten, aldrig efteråt; och efter några år bär profilen ett minne som ingen enstaka analys kan födas med — husets egna erfarenheter, vägda just lagom tungt för att läsas och aldrig så tungt att de glömmer hur världen kan vända."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch talade om att uppdatera sina berättelser när fakta förändras — hålla favoritbolagen när tesen lever och släppa dem när den dör, utan att gifta sig med vare sig bolaget eller sin egen föreställning. I kursens språk är det en manuell bayesiansk omviktning: hans vikt på en tes flöt med bevisen, och hans varning för ankaret (km-020:s beteendelära) är precis den prior som vägrar flyttas — fastvuxen vid sitt utgångsläge oavsett nästa kvartals siffra.",
+  "grahamSection": "Benjamin Grahams marknadsmetafor — mr Market, som varje dag bjuder priser i skiftande sinneslag — är omviktningens spegel från andra hållet: Grahams råd är att inte låta marknadens dagliga bevis flytta ens värderingsvikt nämnvärt, för de flesta bud är just svaga bevis som inte skiljer världarna åt. Hans marginal of safety är i bayesianska terider en prior byggd så stark att den kräver ovanligt tydliga bevis för att rubbas — trögheten som dygd.",
+  "ak1Section": "I AK1A:s metodik är omviktningen den mekanik som håller SAM-viktningen (ek-01) ärlig över tid: motorernas träffkvoter loggas per kvartal i arbetsflödet (ek-03), multiplikatorerna är fasta i konfigurationen, och varje AKM2-analys bärs av den viktprofil som stod gällande vid körningen — så att en signal alltid kan spåras tillbaka till de bevis som format dess röster. Monte Carlo-motorerna (ek-05) läser samma vikter, och kalibreringsgranskningen (kt-02:s tradition) kontrollerar att trösklarna varken alltid eller aldrig träffar. Kursen dokumenterar mekanismen; dess tillämpning på enskilda värdepapper är alltid läsarens egen analys, aldrig en rekommendation."
+}

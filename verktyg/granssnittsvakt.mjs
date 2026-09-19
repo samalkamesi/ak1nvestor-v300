@@ -37,6 +37,17 @@ import {
   urvalMedJournal as urvalMedJournalRen,
   FALLBACK_SIDOR,
 } from "./granssnitt-urval.mjs";
+// Drift-logiken (o86, s8-u3 2026-09-19): basens TILLGÅNGSHÄLSA (HTML 200
+// räcker inte — gamla HTML-skal lever kvar när chunk-serveringen dött,
+// bevis 2026-09-19T05:17Z) + drift-tak EFTER svepet (o55:s artefaktdoktrin).
+// Ren modul av samma skäl som ovan — sviten kör DEN RIKTIGA koden offline.
+import {
+  urlForstaCss,
+  börAvstaMätning,
+  driftVerdiktor,
+  DRIFT_TAK_PROCENT_STANDARD,
+  DRIFT_MIN_SIDOR_STANDARD,
+} from "./granssnitt-drift.mjs";
 // OBS: puppeteer-core importeras MEDELTIDS (dynamiskt, se huvudloopen) — en
 // statisk toppimport kraschar vid node-start om ett deploy-fönster (npm ci)
 // pågår, FÖRE verktygets egen deployvänt-logik hinner köra (bevisat
@@ -152,23 +163,46 @@ function deployLasUpptaget() {
   }
 }
 async function basHalsa() {
+  // o86 (s8-u3): bassidans KOD räcker inte — under ett trasigt .next-fönster
+  // serverar pm2 gamla HTML-skal (200) medan alla chunkar svarar 500, och
+  // den blinda basen dömde då varje trasig sida till ÄKTA fynd (bevis
+  // 2026-09-19T05:17Z: bas-HTML 200 + CSS-chunk 500 ⇒ 100+ skenfynd).
+  // Hälsa = sidan OCH dess första CSS-tillgång. css = null när basen saknar
+  // CSS-markör (dömer aldrig blockerande), 0 när hämtningen kastade.
   try {
     const r = await fetch(BAS + "/", { headers: { "User-Agent": "AK1A-Granssnittsvakt/1.0" }, signal: AbortSignal.timeout(10000) });
-    return r.status;
+    const sida = r.status;
+    if (sida !== 200) return { sida, css: null };
+    const cssSokvag = urlForstaCss(await r.text());
+    if (!cssSokvag) return { sida, css: null };
+    try {
+      const rc = await fetch(cssSokvag.startsWith("http") ? cssSokvag : BAS + cssSokvag, {
+        headers: { "User-Agent": "AK1A-Granssnittsvakt/1.0" },
+        signal: AbortSignal.timeout(10000),
+      });
+      return { sida, css: rc.status };
+    } catch {
+      return { sida, css: 0 };
+    }
   } catch {
-    return 0;
+    return { sida: 0, css: null };
   }
 }
 async function deployPagar() {
-  return deployLasUpptaget() || (await basHalsa()) !== 200;
+  // o86: samma gamla semantik (lås ELLER sjuk bas) men med tillgångshälsan
+  // på plats — ett låsfritt fönster med CSS-död tillgångsservering är nu
+  // "deploy-tecken" för vaktens avbrottsskydd, inte ett fyndregister.
+  if (deployLasUpptaget()) return true;
+  const h = await basHalsa();
+  return börAvstaMätning({ lasUpptagen: false, basSida: h.sida, basCss: h.css }).avsta;
 }
 async function vantaPaFriskBas(maxMs = 12 * 60 * 1000) {
   const start = Date.now();
   while (Date.now() - start < maxMs) {
-    if (!deployLasUpptaget() && (await basHalsa()) === 200) return true;
+    if (!(await deployPagar())) return true;
     await new Promise((r) => setTimeout(r, 30000));
   }
-  return !deployLasUpptaget() && (await basHalsa()) === 200;
+  return !(await deployPagar());
 }
 
 // ── Chrome-sökvägar ──────────────────────────────────────────────────────────
@@ -410,14 +444,21 @@ const rapport = {
 let avbruten = false;
 
 // Deploy-medvetenhet A: mät ALDRIG inuti ett deploy-fönster — vänta ut det.
+// o86: "ej frisk" omfattar nu även tillgångssjuka baser (deploylås fritt +
+// CSS 500 = drift, inte deploy) — statusraden ärv nyckelordet UPPSKJUTEN så
+// cron-wrapperns klassläsning (o85) fungerar orörd.
 const friskFranStart = await vantaPaFriskBas();
 if (!friskFranStart) {
-  rapport.status = "uppskjuten — deploy pågår";
+  const h = await basHalsa();
+  const dom = börAvstaMätning({ lasUpptagen: deployLasUpptaget(), basSida: h.sida, basCss: h.css });
+  rapport.status = dom.orsak.startsWith("deploylås")
+    ? "uppskjuten — deploy pågår"
+    : `uppskjuten — drift (${dom.orsak})`;
   const katalog = path.join(ROT, "data", "vakten");
   fs.mkdirSync(katalog, { recursive: true });
   const fil = path.join(katalog, `granssnitt-${new Date().toISOString().slice(0, 16).replaceAll(":", "")}.json`);
   fs.writeFileSync(fil, JSON.stringify(rapport, null, 2));
-  console.log(`GRÄNSSNITTSVAKTEN: UPPSKJUTEN — deploy pågår efter 12 min väntan, inga fynd bokförda (nästa cron-körning mäter).`);
+  console.log(`GRÄNSSNITTSVAKTEN: UPPSKJUTEN — ${dom.orsak} efter 12 min väntan, inga fynd bokförda (nästa cron-körning mäter).`);
   console.log(`Rapport: ${fil}`);
   process.exit(0);
 }
@@ -694,7 +735,16 @@ try {
 } finally {
   await browser.close();
 }
-if (avbruten) rapport.status = "avbruten — deploy pågår";
+if (avbruten) {
+  // o86: ärlig orsak även här — avbrott kan vara drift (tillgångssjuka
+  // bas) utan att något deploylås hålls; nyckelordet AVBRUTEN bevaras för
+  // cron-wrapperns klassläsning (o85).
+  const h = await basHalsa();
+  const domAvbruten = börAvstaMätning({ lasUpptagen: deployLasUpptaget(), basSida: h.sida, basCss: h.css });
+  rapport.status = domAvbruten.orsak.startsWith("deploylås")
+    ? "avbruten — deploy pågår"
+    : `avbruten — drift (${domAvbruten.orsak})`;
+}
 
 // VÅG 157 (Θ): journalför mätta sidor (endast cron-läge — riktade --sidor-
 // svep roterar inte journalen). Sidor som hann mätas före ett deploy-
@@ -704,6 +754,30 @@ if (!SIDOR && matadeSidor.size) {
   const nu = Date.now();
   for (const s of matadeSidor) journal[s] = nu;
   fs.writeFileSync(JOURNAL_FIL, JSON.stringify(journal, null, 2));
+}
+
+// ── o86 (s8-u3): DRIFT-TAK EFTER svepet ──────────────────────────────────────
+// Dominerar infra-klassen (http 5xx / stil-lös / delresurs / nätbrott) över
+// tröskeln PÅ tillräckligt många OLIKA sidor är hela svepet en artefakt av
+// ett sjukt tillgångslager, inte ett gränsnittsfyndregister (bevis
+// 2026-09-19T0520: 87 % stil-lös/http-500 under det halvtrasiga .next-
+// fönstret larmade 100+ skenfynd). Sidglovet (≥ 3 sidor) skyddar ÄKTA
+// enstaka siddefekter — en trasig sida når aldrig tröskeln. Överridningar
+// ägs av sviten: GRANSSNITT_DRIFT_TAK (procent) · GRANSSNITT_DRIFT_MIN_SIDOR.
+// Rådata bevaras i kombinationer för driftsläsaren; fel räknas ej ⇒ exit 0
+// (våg 142-doktrinen: drift larmar inte som defekter).
+const driftTakProcent = Number(process.env.GRANSSNITT_DRIFT_TAK || DRIFT_TAK_PROCENT_STANDARD);
+const driftMinSidor = Number(process.env.GRANSSNITT_DRIFT_MIN_SIDOR || DRIFT_MIN_SIDOR_STANDARD);
+if (!avbruten && rapport.kombinationer.length) {
+  const domTak = driftVerdiktor({ kombinationer: rapport.kombinationer, takProcent: driftTakProcent, minSidor: driftMinSidor });
+  if (domTak.drift) {
+    rapport.status = `driftartefakt — ${domTak.andel} % infra-klass på ${domTak.sidor} sidor, mätvärden kasserade`;
+    rapport.drift = { ...domTak, takProcent: driftTakProcent, minSidor: driftMinSidor };
+    rapport.fel = 0; // skenfynden räknas ej; rådata står kvar i kombinationer
+    console.log(
+      `GRÄNSSNITTSVAKTEN: DRIFTARTEFAKT — ${domTak.infra}/${domTak.total} kombinationer i infra-klassen (${domTak.andel} %, ${domTak.sidor} olika sidor): svepet kasserat som artefakt (tillgångslagret sjukt — se DRIFTSBOKEN), inga fynd bokförda (nästa cron-körning mäter).`,
+    );
+  }
 }
 
 // ── Rapport ──────────────────────────────────────────────────────────────────
@@ -727,8 +801,9 @@ if (felrader.length) {
 console.log(`Rapport: ${fil}`);
 // VÅG 142 (Σ): uppskjuten/avbruten för deploy = driftavbrott, inte defekt —
 // exit 0 så cron inte larmar; nästa 6-timmarskörning mäter i lugnt läge.
+// o86: samma exit-0-doktrin gäller driftartefakt-svep (kasserade mätvärden).
 if (rapport.status !== "ok") {
-  console.log(`GRÄNSSNITTSVAKTEN: ${rapport.status.toUpperCase()} — transienta driftfel under deploy räknas ej som fynd (nästa körning mäter).`);
+  console.log(`GRÄNSSNITTSVAKTEN: ${rapport.status.toUpperCase()} — transienta driftfel (deploy/tillgångslager) räknas ej som fynd (nästa körning mäter).`);
   process.exit(0);
 }
 process.exit(rapport.fel > 0 ? 1 : 0);

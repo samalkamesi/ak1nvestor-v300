@@ -1,0 +1,21 @@
+studio: auto s1-u2 LIVSMEDELSAKTIER KONTROLLGRANSKAD — flyttklar efter 5 rättningar (granskare 2/3, manifest auto-s1-1789829700743)
+
+Pivot enligt köregeln: "m9-utkast #2" komplett sedan 09-16 (8448ef77) ⇒ FIFO: livsmedelsaktier
+(09-16 22:17, näst äldst; u1:s medieaktier-notis följd; anspråk disk-först).
+
+Sond verktyg/_s1u2-livsmedel-verify.mjs (65 kontroller): källtalsparitet 38/38 EXAKTA
+(PEP/KO/NESN/CARL-B mot bolagsunivers.json), aritmetik 9/9 (3 sond-FEL = egna
+toleransfel, textens avrundningar korrekta — ärligt bokförda), juridik 2007:528 REN
+(0/26 mönster × 3 ytor, 3 rådglossor alla deskriptiva, 0 lagrum, disclaimer sist),
+911 = 0/6, 13/13 länkar HTTP 200 (se-14-livsmedel lever), struktur grön.
+
+Fynd: B1 rm 2→6 (nionde fallet) · B2 kassaflödesetikett "från verksamheten"→"fritt
+kassaflöde" (universumets fält = fcf; KO-notens IRS-förklaring föreslagen) · B3
+universumglidningens tredje fall — "median 20,4 (kv 17,9–22,4, 14 bolag)" git-bevisat
+sant mot byggtiden (c256c659), dagens 201-posters-universum ger 18,21/15,2–22,3 ·
+B4–B5 stavfel Raknat/räntkänsliga. C1–C2 förslag, D1 publishedAt vid export.
+-en-spegeln bär B1+B3:s systrar — speglas vid verkställning.
+
+Leverans: granskning/livsmedelsaktier-…-KONTROLL-2026-09-19.md + -diff.json,
+verktyg/_s1u2-livsmedel-verify.mjs, worklog-rad. Data-only: inget bygge, src/ orörd,
+R2 orörd, data/blogg/ orörd, utkast-JSON:en orörd. [fabrik]

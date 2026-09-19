@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/forsvarsaktier-sa-analyserar-du-forsvarsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789758924831-s1-u3 (2026-09-18)",
+  "rapport": "forsvarsaktier-sa-analyserar-du-forsvarsbolag-KONTROLL-2026-09-18.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: räkneexempelts källkoppling motbevisad: 'orderstock kring 190 miljarder kronor … nivåer i linje med Saabs delårsrapportering 2026' mot Saabs verkliga 275 mdr SEK (Q4 2025) och 318 mdr (Q2 2026, efter det polska ubåtsavtalet) — verklig täckningsgrad ≈ 4,5 år, inte 2,9; 2 ställen (kärnmening + sammanfattning). B2: readingMinutes 2 → 6 (1 199 ord textrensat = 599,5 ord/min, snabbare än samtliga 55 publicerade; bloggfamiljens round(ord/200), substansrabatt-domen 09-17 — fjärde fallet i klassen: halvledar-B1, hälsa-B4, konsumentaktier-B4). C1: SIPRI:s 2025-slutsiffra (2 887 mdr USD, +2,9 %) publicerad — kompletteringsförslag; utkastets 2024-påstående är korrekt och källverifierat ordagrant. I övrigt GRÖNT: SIPRI 2024 + Nato Haag 2025 källverifierade exakt, aritmetiken i exemplena exakt (190÷65=2,92; 6,5÷65=10,0), juridik 2007:528 ren (0/8 rådglossor; varumärkesgrind 26 regexer 0 FEL, 3 A8-'kunder' med branschprecedent), 911 ren (0/6), 11/11 unika interna länkar HTTP 200, struktur grön (byggarens 1 199 ord = textrensat exakt).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga söksträngar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, ogranskad) bär identiska B1+B2-fel och speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "forsvarsaktier-sa-analyserar-du-forsvarsbolag.json",
+      "falt": "body (Orderstocken — försvarsanalysens viktigaste siffra)",
+      "gammalt": "Ett räkneexempel med tal i nivå med branschens svenska tyngdpunkt: ett bolag med orderstock kring 190 miljarder kronor och årsintäkter omkring 65 miljarder kronor — nivåer i linje med Saabs delårsrapportering 2026 — har en täckningsgrad på 190 ÷ 65 ≈ 2,9. Nära tre års produktion är alltså redan såld.",
+      "nytt": "Ett räkneexempel med tal i nivå med branschens svenska tyngdpunkt: ett bolag med orderstock kring 315 miljarder kronor och årsintäkter omkring 70 miljarder kronor — nivåer i linje med Saabs delårsrapportering för andra kvartalet 2026, där orderstocken efter bland annat det polska ubåtsavtalet nådde 318 miljarder kronor — har en täckningsgrad på 315 ÷ 70 ≈ 4,5. Nära fyra och ett halvt års produktion är alltså redan såld.",
+      "orsak": "KÄLLKOPPLINGEN MOTBEVISAD: Saabs orderstock per Q2 2026 = 318 mdr SEK (Saabs pressrelease + Q2-transkript: order intake 68 393 MSEK under kvartalet, Polens ubåtsorder ~47 mdr bokad) och per Q4 2025 ≈ 275 mdr (Morningstar; rekordorder intake 100 111 MSEK) — aldrig 'kring 190' vid någon 2026-rapporteringstillfälle. Årsintäktsnivån ~65 var rimlig; orderstocken underskattas med ~40 %. Verklig täckningsgrad 318/70 ≈ 4,5 år. Exempelaritmetiken var korrekt (190÷65=2,92) men exempelens kraft kommer av kopplingen till verkligheten — och upprustningens kvintessens (~4,5 års såld produktion) är MER lärorik än 2,9. Verifiera slutliga tal mot Saabs IR-PDF vid verkställning; spegla i -en.json."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "forsvarsaktier-sa-analyserar-du-forsvarsbolag.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "täckningsgrad 190 ÷ 65 ≈ 2,9 år i exemplet",
+      "nytt": "täckningsgrad 315 ÷ 70 ≈ 4,5 år i exemplet",
+      "orsak": "Spegel av B1 i sammanfattningens orderstocks-bullet — exemplet får inte tala emot sin egen källa. Söksträngen unik (kärnmeningens förekomst bär annan ordalydelse)"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "forsvarsaktier-sa-analyserar-du-forsvarsbolag.json",
+      "falt": "body (inledningen + Efterfrågan — SIPRI:s siffror och Natos mål)",
+      "gammalt": "en ökning med 9,4 procent — den största årliga ökningen sedan åtminstone kalla krigets slut — enligt SIPRI:s databas över militära utgifter, med de snabbaste ökningarna i Europa.",
+      "nytt": "en ökning med 9,4 procent — den största årliga ökningen sedan åtminstone kalla krigets slut — och till omkring 2 900 miljarder dollar 2025, enligt SIPRI:s databas över militära utgifter, med de snabbaste ökningarna i Europa och Mellanöstern.",
+      "orsak": "FRIVILLIGT STÄRKNDE: 2024-påståendet är korrekt och historiskt avgränsat (källverifierat ordagrant: $2 718 mdr, +9,4 %). SIPRI har sedan publicerat 2025-slutsiffran ($2 887 mdr, +2,9 %) — vid publicering av guiden (R2, kundens val) är aktuell basårsstatistik mer lärorik. Samma post preciserar 'Europa' → 'Europa och Mellanöstern': SIPRI:s pressreleas betonar båda regionerna ('European and Middle East spending surges'). Verifiera 2025-talet mot SIPRI:s 2026-faktablad vid verkställning"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "forsvarsaktier-sa-analyserar-du-forsvarsbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

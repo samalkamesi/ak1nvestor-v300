@@ -23,7 +23,7 @@
  *                     juridikfråga → basens juridikmonster svarar
  *      ning
  *   D  determinism  — samma fråga två gånger ⇒ bitidentiskt svar
- *   E  källmärkning — ALLA monsters (119 i fyrtiotre motorer) bygga() ger
+ *   E  källmärkning — ALLA monsters (132 i femtio motorer) bygga() ger
  *                     källrad i texten; varje kalla-slug och varje
  *                     fordjupa-/handlings-kurslänk pekar på en äkta slug
  *   F  kursläkthet  — varje monster har ≥2 handlings och ≥1 äkta
@@ -226,12 +226,182 @@ const MOTORDEFS = [
   // (bärs som fragor:-knapp), redovisningsdjupet exit-familjen, djup-lagret
   // multipel-orden: exit och onoterat nämns ENDAST i text).
   { namn: "pe-mekanik", fil: "ai-mentor-pe-mekanik-fragor.ts", fn: "svaraLokaltPeMekanik", arr: "PE_MEKANIK_MONSTER", antal: 1 },
+  // 2026-09-18 omgång 21: riskpremie (s6-u1, manifest auto-s6-1789768506578 —
+  // aktiernas riskpremie, ma-06 MAKROEKONOMI & RÄNTA:S enda mentorväglösa
+  // kurs; wiread FÖRE överlevnadsdjup; motordef här för G-fallets widget-
+  // spegling — kanoniska rader bärs av deras eget leveranstest; kärnorden
+  // sonderade fria av s6-u3:s rond 2).
+  { namn: "riskpremie", fil: "ai-mentor-riskpremie-fragor.ts", fn: "svaraLokaltRiskpremie", arr: "RISKPREMIE_MONSTER", antal: 1 },
   // 2026-09-18 omgång 20 (samma trefönster): överlevnadsdjup (s6-u2 —
   // likviditetsreserven st-06 + konkursprognos/Altman Z-score st-03, STABI-
   // LITETs två mentorväglösa djupkurser; sond _s6u2-sond-omg20.mjs: hela
   // överlevnads-familjen NULL genom kedjan; motordef här för G-fallets
   // widget-spegling — kanoniska rader bärs av deras eget leveranstest).
   { namn: "överlevnadsdjup", fil: "ai-mentor-overlevnadsdjup-fragor.ts", fn: "svaraLokaltOverlevnadsdjup", arr: "OVERLEVNADSDJUP_MONSTER", antal: 2 },
+  // 2026-09-18 omgång 21: koncernläsning (s6-u3, manifest auto-s6-
+  // 1789768506578 — att läsa en KONCERN:s redovisning: koncernredovisningen
+  // med konsolidering/eliminering/minoritetsintressen + segmentrapporteringen
+  // med affärsområdenas nedbrytning + pensionsåtagandena som beräknad skuld;
+  // aktiverar 6 mentorväglösa kurser — bk-04, km-024, km-025 primära + km-001,
+  // bk-02, bk-05 källor — BOKFÖRING & ÅRSREDOVISNING 8/17 → 2/17 lösa; basens
+  // rapport-monster äger resultaträkningen/bokslutet/balansräkningen/
+  // årsredovisningen (bk-02 här KÄLLA enligt V19), portföljpraktiken
+  // pension-sparandet ("pension"-grundordet — detta lager bär endast
+  // sammansättningarna pensionsåtagande/pensionsskuld/pensionsförpliktelse,
+  // deras fråga bärs som knapp), kapitalmekaniken goodwill, lönsamhetsdjupet
+  // WACC/kapitalkostnad — samtliga nämns endast i text; sonderna
+  // _s6u3-sond{,2,3}-omg21.mjs: familjerna NULL genom kedjans 43 motorer /
+  // 1 317 kärnord, 0 grannar, 0 främmande i prototyp-stöldprovet).
+  { namn: "koncernläsning", fil: "ai-mentor-koncernlasning-fragor.ts", fn: "svaraLokaltKoncernlasning", arr: "KONCERNLASNING_MONSTER", antal: 3 },
+  // 2026-09-18 omgång 21: tillväxtdjup (s6-u2, samma manifest — S-kurvan/
+  // mättnaden med utrymmesräkningen baklänges + prismix/mixeffekten med
+  // intäkten dekompilerad i volym, pris och sammanhang; aktiverar HELA
+  // TILLVÄXT-kategorien 1/8 → 8/8 — tx-04, tx-02 primära + tx-01, tx-05,
+  // v01, v02, v03 källor; SONDENS LÄXA: rund 1–2 saknade basmotorn (import
+  // med två namn föll utanför kartrapporten) — rund 3 DÖDADE «organisk
+  // tillväxt»/«förvärvad tillväxt» (basens tillvaxt-monster äger EXAKT,
+  // tx-01 här KÄLLA enligt V19) och «volym pris och mix» (basens kostnad-
+  // monster äger naket «pris»), «skurvan» sammansatt (avkastningskurvans
+  // kurvan-frågor, tavstånd 1); rund 4 GRÖN: 0 grannar, 0 stölder — deras
+  // frågor bärs som knappar; wiread SIST i fönstrets dokumenterade ordning).
+  { namn: "tillväxtdjup", fil: "ai-mentor-tillvaxtdjup-fragor.ts", fn: "svaraLokaltTillvaxtdjup", arr: "TILLVAXTDJUP_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 22 (tredje instansen): faktordjup (s6-u1, manifest
+  // auto-s6-1789791914561 — aktiernas bucklor under CAPM-linjen: linjen
+  // 2,0 + 1,2 × 4,0 = 6,8 och dess bucklor, de fyra klassiska faktorerna
+  // (värde: billigaste tredjedelen lång/dyraste kort · storlek: Banz 1981 ·
+  // momentum: Carhart 1997, tolv månaders vinnare mot förlorare ·
+  // lågvolatilitet: Sharpe-paret 0,27/0,42), regressionens laddningar
+  // (A 1,00/0,05/0,10/0,02 = ren marknad mot B 0,70/0,45/0,30/0,15 =
+  // buckelbärare), blandningen 0,5 × 6,0 + 0,5 × 9,0 = 7,5, momentum-
+  // nettot 6,0 − 2,5 = 3,5, tre skolor (riskkompensation/beteende/
+  // struktur) och fyra fällor (varningshistorien 0,982¹³ ≈ 0,79 ·
+  // faktorzoo · kostnadernas tystnad · berättelsens förklädnad).
+  // Aktiverar pf-15 (PORTFÖLJHANTERING:s teorikröning — spår 5:s färska
+  // kurs 2026-09-18, mentorväglös sedan födelsen) + rp-02; källor
+  // dessutom ma-06 + km-015. Sondens dokumenterade gränser:
+  // riskmåttsdjupet äger beta/CAPM/smart beta («vad är betat?» FÅNGAS
+  // av dem), riskpremielagret premie-orden i risk-sammanhang, «faktorer»
+  // plural STRYKS (granne «sektorer» på tavstånd 2 inom toleransen) —
+  // deras frågor bärs som knappar, aldrig kärnord. Sond
+  // _s6u1-sond-omg22.mjs: familjen NULL genom kedjans 47 motorer /
+  // 128 monsters; kärnorden RENTA mot 1 350 syskonkärnord. Anspråk
+  // data/vakten/auto-s6-1789791914561-u1-ansprak.md FÖRE byggstart.
+  // Wiread efter tillväxtdjup, FÖRE bokmastar — ingen SIST-anspråk.)
+  { namn: "faktordjup", fil: "ai-mentor-faktordjup-fragor.ts", fn: "svaraLokaltFaktordjup", arr: "FAKTORDJUP_MONSTER", antal: 1 },
+  // 2026-09-19 omgång 22: bokmastar (s6-u3 — BOKMASTER-blockets första
+  // mentorväg: redovisningsdetektiven + maniernas historia + specialsitua-
+  // tionerna; 17 mentorväglösa bokkurser aktiverade som källor. Sondens
+  // dokumenterade gränser: historia äger tulpanmanin, basen «hur ljuger
+  // en årsredovisning?», praktik blankningen, djup snowball/acquirers
+  // multiple, nästa what-works, riskdjup svarta svanen — alla bärs som
+  // knappar, aldrig kärnord. Bokkursernas minuten=undefined i registret:
+  // registerdrivna tal ur kapitel/quiz + kategorital. Wiread SIST).
+  { namn: "bokmastar", fil: "ai-mentor-bokmastar-fragor.ts", fn: "svaraLokaltBokmastar", arr: "BOKMASTAR_MONSTER", antal: 3 },
+  // 2026-09-19 omgång 22: riskbudget (s6-u2, manifest auto-s6-1789791914561 —
+  // volatilitetsbudgeten: risken som BESLUT, ekvationen 10w² − 2w − 3 = 0 ⇒
+  // 65,7/34,3 med kontrollen 139,76 + 4,24 = 144,00, svängen 18→24 ⇒ 15,90 =
+  // 32,5 % över taket, återförd vikt 48,3/51,7 + sortino/calmar: tre divisioner
+  // där exempelportföljen 1,00/1,43/0,80 möter spegeln 1,00/1,17/1,13 — tre
+  // mått tre vinnare; aktiverar HELA RISKHANTERING & PORTFÖLJTEORI-kategorin
+  // 7/13 → 13/13: rp-04, rp-02 primära + rp-01, rp-03, km-017, km-031 källor.
+  // Sondens dokumenterade gränser: basen äger naket risk/volatilitet/kelly/
+  // position sizing/value at risk, portföljbalansen riskparitet (rp-03 här
+  // KÄLLA enligt V19), riskmåttsdjupet sharpe-kvoten — ägarnas frågor bärs
+  // som knappar, aldrig kärnord. Wiread efter bokmastar i fönstrets ordning).
+  { namn: "riskbudget", fil: "ai-mentor-riskbudget-fragor.ts", fn: "svaraLokaltRiskbudget", arr: "RISKBUDGET_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 22 (omstartsfullbordan): konvertibel (s6-u1, manifest
+  // auto-s6-1789791914561 — mellanformerna skuld↔aktie: konvertibeln med
+  // valrätten (1 000 ÷ 125 = 8 aktier · pariteten 125 · golvet 1 000 vid
+  // aktie 100) + preferensaktien/evighetsräntan (6,50 ÷ 0,065 = 100,0 mot
+  // 6,50 ÷ 0,078 = 83,3 = −16,7 %) + stämpelordningen (70/60/25/40 →
+  // 100 %/40 %/0 %) med AT1/Credit Suisse-läxan 16 mdr francs; aktiverar
+  // ks-06 + ks-07 — KAPITALSTRUKTUR fullt mentorlänkad 6/8 → 8/8, källor
+  // ks-07 + rk-02 + rk-08 + ma-05. Ursprungsinstansen byggde modul + anspråk
+  // (s6-omg22-u1-ansprak.md) men avslutade utan kvitto-rad; omstarten
+  // fullbordade test + wiring + denna motordef. Sondens dokumenterade
+  // gränser: basen äger kapitalstruktur-helhetsfrågan och konkurs-orden,
+  // makro obligation/epi-orden, optionsdjupet optionens premie/order,
+  // kapitalmekaniken emission/utspädning, kreditdjupet kreditpris-familjen
+  // — deras frågor bärs som knappar; naket «konvertering» bärs INTE
+  // (avkastningskurvans «kurvinvertering», tavstånd 4), «at1» kort-exakt.
+  // Sond _s6u1-sond-omg22.mjs: familjen NULL genom kedjans 46 motorer /
+  // 125 monsters. Wiread SIST i fönstrets ordning: bokmastar → riskbudget
+  // → detta lager.)
+  { namn: "konvertibel", fil: "ai-mentor-konvertibel-fragor.ts", fn: "svaraLokaltKonvertibel", arr: "KONVERTIBEL_MONSTER", antal: 1 },
+  // 2026-09-19 omgång 23: sektorläsning (s6-u2, manifest auto-s6-
+  // 1789814130065 — sektorläsningens energi- och telekom-sidor, SEKTOR-
+  // ANALYS-blockets första mentorväg in i km-043 + km-046; aktiverar 8 av
+  // sondens 9 oådda sektorkurser: energi (cykeln: −182,5 · +912,5 ·
+  // +2 372,5 M USD mot brytpris 45, svängen 2 555,0; reserverna 547,5 ÷
+  // 36,5 = 15,0 år; elprisspegeln 1,0 → 5,0 mdr = femdubblad) + telekom
+  // (abonnemangskassan 2,0 M × 350 × 12 = 8,4 mdr; churn 288 000/år; capex
+  // 1 400 ÷ 8 400 = 16,7 %; spektrum 2 200 ÷ 20 = 110 M/år; utdelning 3,50
+  // ÷ 70,00 = 5,0 %, payout 70,0 %). Källor: skog + rederi + bil (energi)
+  // och media + flyg + spel (telekom). Sondens dokumenterade gränser:
+  // «kraftbolag» struket (fraktbolag-granne, tavstånd 2 — prototypen stal
+  // «vad är fraktbolag?»), «oljepris» = makro-familjens (endast stärkord
+  // här), «tänker»-formuleringar ägs av sektor-bank («banker» tavstånd 1
+  // från «tänker»). Sond _s6u2-sond-omg23.mjs + -sond2- + -sond3-: 50
+  // motorer / 1 453 kärnord, familjen NULL genom hela kedjan. Wiread SIST
+  // i fönstrets ordning: … → konvertibel (49) → detta lager (50:e index).)
+  { namn: "sektorlasning", fil: "ai-mentor-sektorlasning-fragor.ts", fn: "svaraLokaltSektorlasning", arr: "SEKTORLASNING_MONSTER", antal: 2 },
+  // 2026-09-19 omgång 23: vardegrund (s6-u3, manifest auto-s6-1789814130065
+  // — värderingsfamiljens grundvåning; aktiverar HELA det fria värderings-
+  // blocket, 10 kurser: VÄRDERINGSMETODER 7/7 mentorväglösa (vm-02/05/07
+  // primära + vm-09/10/11 + km-028 källor) + VÄRDERING:s vr-05/06/07 källor.
+  // Tre monsters: intrinsic value/motiverat värde — DCF-miniräknaren
+  // 10,00 → 184,6 kr (nuvärden 9,72 + 9,45 + 9,19 = 28,36; TV 196,80 →
+  // 156,22; terminalandelen 84,6 %; kurs 150 = 0,81 = 19 % under värdet;
+  // WACC-läxan 8→9 % = 158,1 = −14 %) + realoptionerna — gruvträdet (idag
+  // 100 − 120 = −20 mot vänta 0,5×30 + 0,5×0 = +15; flexibilitetens värde
+  // 15 − (−20) = 35 mkr) + kassaflödesavkastningen — yield-familjen
+  // (4 ÷ 100 = 4,0 % · P/FCF 100 ÷ 4 = 25 · P/CF 100 ÷ 6 = 16,7 ·
+  // P/B 100 ÷ 80 = 1,25). Sondens dokumenterade gränser: Nästa äger
+  // DCF-familjen («reverse dcf» FÅNGAD av dem — km-028 här KÄLLA enligt
+  // V19), «inre värde», substans-/tillgångs-orden och option-familjen
+  // («verkliga optioner»/«real option» med mellanslag = deras; sammanskrivna
+  // «realoption(er)» = detta lagers), Extra «fcf yield»/«free cash flow
+  // yield»/«price to cash flow», Lönsamhetsdjupet «wacc», Basen «pris och
+  // värde», Djup «jämförelsebolag» — deras frågor bärs som knappar; «p/cf»
+  // STRYKS som kärnord (8 grannar: fcf/p/e/dcf/put/etf/kf/peg/pmi). Sond
+  // _s6u3-sond{,2,3}-omg23.mjs: 50 motorer / 132 monsters / 1 453 kärnord,
+  // kvarvarande kärnord NULL + 0 grannar. Wiread SIST i fönstrets ordning:
+  // … → konvertibel (50) → sektorlasning (51) → detta lager (52:a motorn).)
+  { namn: "vardegrund", fil: "ai-mentor-vardegrund-fragor.ts", fn: "svaraLokaltVardegrund", arr: "VARDEGRUND_MONSTER", antal: 3 },
+  // 2026-09-19 omgång 23: realekonomi (s6-u1, manifest auto-s6-1789814130065
+  // — ekonomins verkliga sida i sex fönster; aktiverar HELA det fria
+  // MAKROEKONOMI-blocket: mk-02 arbetslöshet primär + mk-03 handelsbalans +
+  // mk-05 geopolitik + mk-07 finanspolitik + mk-10 oljepris + mk-11
+  // kinaekonomin = 6 mentorväglösa kurser i ett svar). Ett monster:
+  // realekonomin — AKU:s stickprov 30 000 (15–74 år) och klyftan 1–2
+  // procentenheter mot registret · deltagandet 79 − 72 = 7 procentenheter
+  // (1990→1999) med 2005:s sjukskrivningsfälla 11 % · Phillips platt sedan
+  // 2015 (<20 % av inflationssvängningarna) och platser 3–6 månader före ·
+  // bytesbalansens undertal −3 + 5 = +2 % av BNP med 2022:s −2 % ·
+  // J-kurvan 12–18 månader mot 1982:s 16-procentare · REER −21 % ·
+  // fatet 159 liter, skiffern 1 → 9 (9 − 1 = 8) miljoner fat/dag,
+  // brytkostnad 40–60 mot 20–40 dollar, oljechockens 4 procentenheter,
+  // valutadubbeln 65 % dollar/80 % krona = 15 · budgeten 1,2 biljoner =
+  // 50 % av BNP, multiplikatorn 10 × 0,7 = 7 till 10 × 1,2 = 12,
+  // 27 utgiftsområden, anslagsavvikelsen 5–10 % · Kinas 9,5 % → 5–6 %,
+  // 17 biljoner ≈ 70 % av USA:s, statliga 30 % + fastighet 25 % av BNP,
+  // börsens 8 % Kina-intäkter, Evergrande −25 %, statistikfällan 1–2
+  // procentenheter, Caixin < 48 · GPR 2018 (elva tidningar), +50 % olja
+  // på en dag/−10 % krona, OMXSPI 3 månader, tumregeln 5–10 dagar.
+  // Sondens dokumenterade gränser: Makro äger ränte-/inflations-/
+  // penningpolitik-orden (endast starkord + knapp här), tidsaxeln
+  // konjunkturindikator-familjen (naket «indikator» aldrig kärnord),
+  // handelsdagen «sanktioner» (deras «auktioner» fångar live), tillväxt-
+  // djupet «phillips-kurvan» bindestrecksform (substring «s kurvan»),
+  // u2 sektorlasning energibolag/oljebolag («oljepris» enligt deras not
+  // endast starkord — oljepris-ORTEN är detta lagers), u3 vardegrund
+  // värderingsorden, basen «hur påverkar X aktier/börsen?»-formerna.
+  // Sond _s6u1-sond{,2,3}-omg23.mjs (fyra ronder; rond 2 dödade första-
+  // valet indikatorfamiljen — basen äger hela paraplyet): 51 motorer /
+  // 1 490 kärnord inkl. disk, kvarvarande kärnord NULL + funk-säkra.
+  // INGEN SIST-anspråk — 53:e motorn: … → konvertibel (50) →
+  // sektorlasning (51) → vardegrund (52) → detta lager.)
+  { namn: "realekonomi", fil: "ai-mentor-realekonomi-fragor.ts", fn: "svaraLokaltRealekonomi", arr: "REALEKONOMI_MONSTER", antal: 1 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -240,7 +410,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 119 (2026-09-18 omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2 — 43-läget)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 138 (2026-09-19 omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -383,15 +553,132 @@ const KANONISKA = [
   { fraga: "vad är utfasningar?", motor: 41 },
   { fraga: "vad är vattenfallet?", motor: 41 },
   { fraga: "vad är carried interest?", motor: 41 },
+  // Omgång 21: riskpremie (s6-u1) — kanoniska ur lagrets egna formuleringar.
+  { fraga: "vad är aktiernas riskpremie?", motor: 42 },
+  { fraga: "vad är riskpremien?", motor: 42 },
+  { fraga: "vad är aktieriskpremien?", motor: 42 },
+  { fraga: "hur räknar man ut riskpremien?", motor: 42 },
+  { fraga: "vad är premie per riskenhet?", motor: 42 },
   // Omgång 20: överlevnadsdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är likviditetsreserven?", motor: 42 },
-  { fraga: "vad är överlevnadstid?", motor: 42 },
-  { fraga: "hur länge räcker kassan?", motor: 42 },
-  { fraga: "vad är kassaräckvidd?", motor: 42 },
-  { fraga: "vad är altman z-score?", motor: 42 },
-  { fraga: "vad är z-score?", motor: 42 },
-  { fraga: "vad är konkursprognos?", motor: 42 },
-  { fraga: "vad är konkursrisk?", motor: 42 },
+  { fraga: "vad är likviditetsreserven?", motor: 43 },
+  { fraga: "vad är överlevnadstid?", motor: 43 },
+  { fraga: "hur länge räcker kassan?", motor: 43 },
+  { fraga: "vad är kassaräckvidd?", motor: 43 },
+  { fraga: "vad är altman z-score?", motor: 43 },
+  { fraga: "vad är z-score?", motor: 43 },
+  { fraga: "vad är konkursprognos?", motor: 43 },
+  { fraga: "vad är konkursrisk?", motor: 43 },
+  // Omgång 21: koncernläsning (s6-u3) — kanoniska ur lagrets egna rubriker.
+  { fraga: "vad är koncernredovisning?", motor: 44 },
+  { fraga: "vad är minoritetsintressen?", motor: 44 },
+  { fraga: "vad är moderbolag?", motor: 44 },
+  { fraga: "vad är segmentrapportering?", motor: 44 },
+  { fraga: "vad är affärsområden?", motor: 44 },
+  { fraga: "vad är pensionsåtaganden?", motor: 44 },
+  { fraga: "vad är pensionsskulden?", motor: 44 },
+  // Omgång 21: tillväxtdjup (s6-u2) — kanoniska ur lagrets egna rubriker
+  // («vad är organisk tillväxt?»/«vad är volym pris och mix?» landar hos
+  // BAS-motorn — deras monster [tillvaxt]/[kostnad]; se motordef-kommentaren).
+  { fraga: "vad är s-kurvan?", motor: 45 },
+  { fraga: "vad är mättnad?", motor: 45 },
+  { fraga: "vad är marknadsmättnad?", motor: 45 },
+  { fraga: "vad är utrymmesräkning?", motor: 45 },
+  { fraga: "vad är prismix?", motor: 45 },
+  { fraga: "vad är mixeffekten?", motor: 45 },
+  { fraga: "vad är prisvolym?", motor: 45 },
+  { fraga: "vad är produktmix?", motor: 45 },
+  { fraga: "vad är tillväxtmotorer?", motor: 45 },
+  { fraga: "vad är intäktsmotorer?", motor: 45 },
+  // Omgång 22 (tredje instansen): faktordjup (s6-u1) — kanoniska ur
+  // lagrets egna rubriker («vad är betat?»/«vad är smart beta?» =
+  // riskmåttsdjupets, «vad är sharpe-kvoten?» dito, «vad är aktiernas
+  // riskpremie?» = riskpremielagrets, «vad är faktorer?» plural stryks
+  // («sektorer», tavstånd 2) — deras frågor, dokumenterade gränser; se
+  // motordef-kommentaren).
+  { fraga: "vad är faktorpremier?", motor: 46 },
+  { fraga: "vad är faktorpremierna?", motor: 46 },
+  { fraga: "vad är en faktor?", motor: 46 },
+  { fraga: "vad är momentum?", motor: 46 },
+  { fraga: "vad är värdefaktorn?", motor: 46 },
+  { fraga: "vad är storleksfaktorn?", motor: 46 },
+  { fraga: "vad är lågvolatilitetsanomalin?", motor: 46 },
+  { fraga: "vad är femfaktormodellen?", motor: 46 },
+  { fraga: "vad är faktorzoo?", motor: 46 },
+  // «vad är det tysta betat?» STRYKS (kedjetest-fånga): riskmåttsdjupets
+  // «beta» (tolerans 1) fångar böjningen «betat» — deras fråga; kursens
+  // signaturfras bärs i faktordjup-svarets TEXT, aldrig som kärnord.
+  // Omgång 22: bokmastar (s6-u3) — kanoniska ur lagrets egna rubriker
+  // («vad är tulpanmanin?» = historia, «vad är blankning?» = praktik och
+  // «hur ljuger en årsredovisning?» = basens rapportläsning — deras
+  // frågor, dokumenterade gränser; se motordef-kommentaren).
+  { fraga: "vad är financial shenanigans?", motor: 47 },
+  { fraga: "vad är redovisningstrick?", motor: 47 },
+  { fraga: "vad är resultatmassaging?", motor: 47 },
+  { fraga: "vad är quality of earnings?", motor: 47 },
+  { fraga: "vad är kreativ redovisning?", motor: 47 },
+  { fraga: "vad är manias panics and crashes?", motor: 47 },
+  { fraga: "vad är spekulativ mani?", motor: 47 },
+  { fraga: "vad är this time is different?", motor: 47 },
+  { fraga: "vad är krashhistoria?", motor: 47 },
+  { fraga: "vad är special situations?", motor: 47 },
+  { fraga: "vad är spin off?", motor: 47 },
+  { fraga: "vad är merger arbitrage?", motor: 47 },
+  { fraga: "vad är distress investing?", motor: 47 },
+  // Omgång 22: riskbudget (s6-u2) — kanoniska ur lagrets egna rubriker
+  // («vad är volatilitet?»/«vad är risk?» = basens risk-monster, «vad är
+  // riskparitet?» = portföljbalansen, «vad är sharpe-kvoten?» = riskmåtts-
+  // djupet — deras frågor, dokumenterade gränser; se motordef-kommentaren).
+  { fraga: "vad är volatilitetsbudgeten?", motor: 48 },
+  { fraga: "vad är volatilitetsbudget?", motor: 48 },
+  { fraga: "vad är riskbudget?", motor: 48 },
+  { fraga: "vad är sortino?", motor: 48 },
+  { fraga: "vad är sortino-kvoten?", motor: 48 },
+  { fraga: "vad är calmar?", motor: 48 },
+  { fraga: "vad är calmar-kvoten?", motor: 48 },
+  { fraga: "vad är tre mått tre frågor?", motor: 48 },
+  // Omgång 22 (omstart): konvertibel (s6-u1) — kanoniska ur lagrets egna
+  // kärnord («vad är kapitalstrukturen?» = basens monster — deras fråga,
+  // dokumenterad gräns; bärs som fragor:-knapp; se motordef-kommentaren).
+  { fraga: "vad är en konvertibel?", motor: 49 },
+  { fraga: "vad är konvertibler?", motor: 49 },
+  { fraga: "vad är hybridkapital?", motor: 49 },
+  { fraga: "vad är konverteringskursen?", motor: 49 },
+  { fraga: "vad är konverteringspremien?", motor: 49 },
+  { fraga: "vad är paritetsvärdet?", motor: 49 },
+  { fraga: "vad är en preferensaktie?", motor: 49 },
+  { fraga: "vad är stämpelordningen?", motor: 49 },
+  { fraga: "vad är kapitaltrappan?", motor: 49 },
+  { fraga: "vad är at1-kapital?", motor: 49 },
+  { fraga: "vad är additional tier 1?", motor: 49 },
+  { fraga: "vad är en nollskrivning?", motor: 49 },
+  { fraga: "vad är evighetsräntan?", motor: 49 },
+  // Omgång 23: sektorläsning (s6-u2) — kanoniska ur lagrets egna
+  // rubriker («vad är oljepriset?» = ingen ägare i kedjan — makro-
+  // familjens blomma, dokumenterad gräns i modulens kommentar; «vad är
+  // en moat?» = extra-lagrets, bärs som knapp ur svaren).
+  { fraga: "hur analyserar jag ett energibolag?", motor: 50 },
+  { fraga: "hur analyserar jag ett telekombolag?", motor: 50 },
+  // Omgång 23: vardegrund (s6-u3) — kanoniska ur lagrets egna kärnord
+  // («vad är DCF?»/«vad är inre värde?»/«vad är substansvärde?» = nästas,
+  // «vad är fcf yield?»/«vad är price to cash flow?» = extras, «vad är
+  // wacc?» = lönsamhetsdjupets — deras frågor, dokumenterade gränser;
+  // bärs som fragor:-knappar; se motordef-kommentaren).
+  { fraga: "vad är motiverat värde?", motor: 51 },
+  { fraga: "vad är intrinsic value?", motor: 51 },
+  { fraga: "hur räknar man ut motiverat värde?", motor: 51 },
+  { fraga: "vad är fair value?", motor: 51 },
+  { fraga: "vad är verkligt värde?", motor: 51 },
+  { fraga: "vad är realoptioner?", motor: 51 },
+  { fraga: "vad är en realoption?", motor: 51 },
+  { fraga: "vad är kassaflödesavkastning?", motor: 51 },
+  { fraga: "hur räknar man ut kassaflödesavkastning?", motor: 51 },
+  { fraga: "vad är asset based valuation?", motor: 51 },
+  // Omgång 23: realekonomi (s6-u1) — kanonisk ur lagrets paraplyfråga
+  // («vad är rsi?»-familjen = basens teknisk-analys-monster, rond 2:s
+  // dödade förstavalet — dokumenterad gräns i modulens kommentar;
+  // «vad är inflation och KPI?» = makro-lagrets och «vad är
+  // konjunkturindikatorer?» = tidsaxelns, bärs som knappar ur svaret).
+  { fraga: "vad är realekonomin?", motor: 52 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -436,7 +723,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "fyrtiotre motorer lämnar frågan ifred",
+  "femtiotre motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

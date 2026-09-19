@@ -15,11 +15,17 @@
  *
  * Körs: pumpor var 6:e timme (min === 52 && tim % 6 === 2).
  * Logg: data/vakten/backup-offsite.log
+ *
+ * o93 (spår 8 s8-u2, 2026-09-19): skalfri härdning — tar/git körs via
+ * execFileSync med ARGUMENT-ARRAY (cwd i options) i stället för
+ * interpolerad skalsträng; doktrin o15/o55 (Mimosa CHILD_PROC_INTERP
+ * high, bokat av o80 §sidofynd). main() körs endast som entry — sviten
+ * importerar byggTarArgv utan skarp backup/git-push.
  */
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BACKUP_KAT = path.join(ROT, "data", "backups", "offsite");
@@ -31,6 +37,17 @@ function logga(rad) {
     fs.appendFileSync(LOGG, `${new Date().toISOString().slice(0, 19)} ${rad}\n`);
   } catch { /* */ }
   console.log(`[backup-offsite] ${rad}`);
+}
+
+/**
+ * tar-argument för offsite-arkivet — ren funktion (svitens importyta).
+ * Dubbelsuffixet .tar.gz.tar.gz på målfilen är BEVARAT medvetet: samtliga
+ * arkiv på disk, rensningsfiltret (.endsWith(".tar.gz")) och kundens
+ * hämtningsflöde är konsekventa på formen sedan våg 172 — härdningskursen
+ * ändrar inte beteendet, bara angreppsytan.
+ */
+export function byggTarArgv(delar, malFil) {
+  return ["-czf", malFil, ...delar];
 }
 
 function main() {
@@ -76,10 +93,10 @@ function main() {
   // .env — ALDRIG i ZIP (den innehåller lösenord) men notera att den finns
   // (kunden har den på sin dator via migrationsguiden)
 
-  const args = delar.map((d) => JSON.stringify(d)).join(" ");
   try {
     // tar.gz i stället för zip (zip saknas på Contabo Ubuntu 24.04)
-    execSync(`cd ${JSON.stringify(ROT)} && tar -czf ${JSON.stringify(sökväg + ".tar.gz")} ${args}`, {
+    execFileSync("tar", byggTarArgv(delar, sökväg + ".tar.gz"), {
+      cwd: ROT,
       timeout: 120_000,
       stdio: "pipe",
     });
@@ -88,10 +105,9 @@ function main() {
 
     // Pusha till GitHub om SSH-nyckeln fungerar
     try {
-      execSync("git push origin develop 2>&1 | head -2", {
+      execFileSync("git", ["push", "origin", "develop"], {
         cwd: ROT,
         timeout: 60_000,
-        encoding: "utf8",
         stdio: "pipe",
       });
       logga("GitHub: push OK");
@@ -104,4 +120,8 @@ function main() {
   }
 }
 
-main();
+// Endast entry-körning startar driftsidan (pumporna ropar "node verktyg/
+// backup-offsite.mjs"); import — sviten — kör ALDRIG backup eller git push.
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  main();
+}

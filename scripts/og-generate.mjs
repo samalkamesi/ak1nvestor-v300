@@ -377,7 +377,9 @@ for (const f of bloggFiler) {
   const p = JSON.parse(readFileSync(path.join(ROOT, "data", "blogg", f), "utf8"));
   kontrollera(`blogg/${p.slug}.png`);
 }
-for (const a of analyser) kontrollera(`analys/${a.ticker}.png`);
+// V86 P1 #2-paritet: kontrollen skall använda samma gemen-normalisering som
+// skrivgrenen (rå ticker ABB.ST gav falska "saknas" på skiftlägeskänslig Linux).
+for (const a of analyser) kontrollera(`analys/${String(a.ticker).toLowerCase().replace(/\.st$/, ".st")}.png`);
 
 console.log(
   `Kontroll: ${1 + 1 + 3 + kurserAlla.length + bloggFiler.length + analyser.length} förväntade bilder — ${saknas.length} saknas`

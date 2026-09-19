@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-18)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-19)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -2101,50 +2101,449 @@ spegla navet ELLER kartformulering permanentas; (4) rate-limit på
 filernas namnmönster i fabriks-prefixet (kollisionen föddes av två
 mönster — disk-först räcker ej om namnen skiljer).
 
+## UPPDATERING 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789777515719 — A1 + E31 diffade mot verkligheten; nattens s7-prestandavåg bokförd)
+
+Objektval (anspråk disk-först 02:26 lokal): E31 + A1 — båda passade 09-17 och
+båda direkt rörliga av nattens s7-prestandavåg (o75 speglarnas prefetch-spill /
+o78 /kurser CV-kurer). Syskonen kollisionsfria: u1 B7 · u3 A4+C16+E32 (deras
+anspråk 02:27; deras sektioner orörda — u3:s E32-vinkel delar siffror.json-talen
+men äger guldkällesektionen).
+
+### A1 — 396 → 432 kurser (+36 på två dygn); quiz frusna; nattens prestandavåg landad med ÄRLIG DELVIS NEGATIV dom
+
+- TALEN (guldkällan data/siffror.json, mtime 09-18 21:52Z): **432 kurser**
+  (D21-passningen 09-18 såg 426 kl 17:39 → +6 på kvällen = s5 omgång 17:s sex
+  kurser rs-07, rs-08, od-06, ma-06, ek-06, od-07); quiz 8 223 / quizXp 82 230
+  FRUSNA; fas2 18 / fas3 24 oförändrade. deep-courses.json 432 nycklar /
+  19,7 MB / mtime 09-18 21:52 — disk = träd = guldkälla.
+- larvag-synk EGEN KÖRNING GRÖN: register 432 = karta 432 = konstant 432;
+  21 profiler; 0 fantomer; exit 0.
+- Underlagsglidningen fördjupad: +36 kurser sedan 09-17-passningen utan EN ny
+  quizfråga — D21:s tunnrot (progress-värdet per kurs) och A5:s bränslefrys
+  (quiz/XP) är samma rot, nu på 432-kursnivå.
+- /labb: 201 case EXAKT (data/export/case-studies.json, mtime 09-10 — fruset
+  9 dygn; gap 4 lever). Notis: metadatatiteln hårdkodar "201"
+  (src/app/(huvud)/labb/page.tsx:14) medan sidan renderar cases.length —
+  okopplad siffra om casen växer.
+- /kurser-500-fyndet (09-17, o47-klassen) är läkt sedan länge: live-sond
+  loopback 200 (13,9 ms); data/vakten/senaste-deployad.txt = HEAD 30850791
+  (00:20:41Z) = nattens hela vågkedja deployad.
+- NATTENS RÖRELSE (s7, bokförs här med korsnotis till spår 7:s protokoll):
+  o78 CV-kurer på /kurser — content-visibility:auto + höjdreservation på fem
+  under-vecks-sektioner (kategoriväggen 76rem träffar /en|/ar via kurs-sok);
+  o76 palett-klumpen ÄRLIGT DELVIS NEGATIV — klumpen lever under ny hash
+  28yatov (Turbopack binder VarumarkesLogo via delade lib-beroenden; s7:s
+  köpost: modul-karta → lib-brytning); Lighthouse EFTER /kurser P79 LCP 4364
+  TBT 150 mot FÖRE P61/4982/841 — kundens största kursyta väsentligt snabbare.
+- Gap-läge: (1) kurs-access-svit 0 träffar i verktyg/ (mätt igen — lever);
+  (2) kurs-CMS lever; (3) quiz-entropin omätare (samma rot som
+  underlagsglidningen); (4) labb-pipelinen frusen. Score LEVER 8 kvar
+  (E33/B14-precedensen: talrättning + prestandabokföring, inget gap stängt).
+
+### E31 — nattens spegel-prefetch-kur (o75) bokförd; MÖS FJÄRDE gröna; kärnan kodstilla; I1 fortfarande läget
+
+- Motorvalidering EGEN KÖRNING: 107 PASS / 0 FAIL / 0 SKIP (5,7 s) — MÖS-lagrets
+  FJÄRDE dokumenterade gröna (09-13, 09-15, 09-17, 09-19); tmp-skyddet höll
+  (tmp_motor_koll.ts raderad i egen körning — s9-u1:s kur verifierad live).
+- Rapportfilens FASTA namn lever: motorervalidering-2026-09-02.md (mtime
+  00:28:27Z idag = färskt innehåll i vilseledande namn) — köposten kvar.
+- Nyckelfiler OFÖRÄNDADE exakt: motor 820 · lager 890 · termbank 540 · kalla
+  346 · kontroller 342 · ordlista 2 745 r — översättningsskiktet kodstilla;
+  ytan enda rörelse är s7:s prestandakurer.
+- Fallback-kön 320 poster (filen uppdaterad 09-04 — låst); termbank-tillagg
+  0 poster (filen bär metadata + tom posterlista; Supabase type=termbank_tillagg
+  är sanningen enligt egen notering).
+- NATTENS o75 (deployad 00:20Z, E31:s kärnyta): prefetch={false} på 7
+  länkställen per spegelrot (/en + /ar: hero-CTA-paret, sifferbandet, vision,
+  sektionslistans djuplänkar, slut-CTA, mikro-raden) — s7-u1:s FÖRE-bevisning:
+  6 _rsc-flygningar ≈ 48,5 KiB per kall mobil entré per spegel, STÄNGD.
+  Mätning nu: 15 prefetch={false} per språk i 4 filer (bloggspegel-listornas
+  8 ställen från 8fa5f0ce + o75:s 7).
+- o77-klargörande med E31-relevans: hamtaSprak()s hydrat-språkbyte kurat —
+  detektteraSprak() kvar exporterad med vägledning: framtida auto-detekt
+  ENDAST SSR-konsistent (middleware Accept-Language → spegelredirect), aldrig
+  via klient-hydrat; speglar (prop-lang) + SprakVäxlaren opåverkade.
+- Tier-spegelgapet (gap 4) LEVER: prenumeration + medlemskap speglade,
+  portfölj-ytorna SAKNAS (find-mätt: 18 kataloger/språk, ingen portfolj).
+- I1-auditen OPÅBÖRJAD (0 artefakter; data/forskning/-auditräffarna tillhör
+  andra spår). Speglar LIVE: /en /ar /en/kurser /ar/kurser alla 200 (loopback
+  27–44 ms).
+- Score PÅGÅR (I1) 7 kvar — prefetch-kuren är prestanda på spegelytorna, ej
+  översättningskvalitet; auditen ÄR I1-läget.
+
+KVD: endast SYSTEMKARTAN + worklog + anspråksfil + detta skript — INGET
+bygge (deploy ägs av prod-synken); src/ orörd (tsc-baslinjen bärs av
+pre-commit-grinden); R2 orörd; data/blogg/ orörd; syskonens ytor orörda
+(u1 B7 · u3 A4/C16/E32). Snitt 7,6 / 288 / 38 oförändrat.
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789777515719 — B7 AKM2-analysmotorn återdiffad; tredje varvet)
+
+Objektval (anspråk disk-först 02:3x lokal, data/vakten/auto-s9-1789777515719-s9-u1-ansprak.md):
+B7 — stämplad 09-16 (äldsta icke-R2-klassen jämte B8/D20) med spårets rikaste
+mätbara kändafel-lista. Syskon kollisionsfria: u2 E31+A1 (sektionen ovan) ·
+u3 A4+C16+E32 (enligt u2:s notis). Varje rad MÄTT i arbetsytan 2026-09-19 —
+inte läst ur worklog:
+
+| Mått | Kartan 2026-09-16/17 | Verkligheten 2026-09-19 (mätning) |
+|---|---|---|
+| Fyra egna sviter | 156 kontroller gröna | **156 gröna igen** — kärna 25/25 exit 0 · dynamik 55/55 exit 0 · moduler 64/64 exit 0 · snapshot 12/12 exit 0 |
+| Motorvalidering | 107/0/0 (6,7 s) | **107 PASS / 0 FAIL / 0 SKIP (5,2 s, exit 0, tmp-filen städad)** |
+| Snapshot-svitens env-hermetik | 11/12 med ärvt Supabase-env (läcka, mätt 09-16/17) | **BOTAD 09-18 (s8-u2 o48: hermetik-pinn — spara+radera+finally-återställ av alla tre variablerna)** — verifierad i BÅDA grenarna nu: 12/12 med ärvt env (3 Supabase-variabler konstaterade i skalet) OCH 12/12 i ren env; nätfri AV KONSTRUKTION |
+| data/cache | 33 runtime-filer (netnet 25 · analys 7 · vagfundament 1); akm1/2/3/fundamental 0 | **36 runtime-JSON (netnet 25 · analys 10 · vagfundament 1) + 2 främmande skrapkataloger** (asml-omg16 · erj-omg16, Yahoo-HTML 09-18 21:49 — ej B7:s skrivare); akm1/2/3/fundamental fortfarande 0; on-demand-kedjan skrev TRE filer under mätfönstret (vagfundament-VOLV_B_ST 01:19 · analys-nyh 02:05 · analys-SWED_A_ST 02:27) — levande bevis |
+| kor-akm2-berika | stillastående sedan 09-04 (13 dagar) | **15 dagar** — inga cron-rader (varken användar-crontab eller /etc/crontab), ingen körnings-commit sedan 4b98cd15 |
+| AKM2-livlinan | 22/22 (09-17, eget svep) | **22/22 igen** — eget fullsvep /forskningsbiblioteket: 22 × kod 200 med AKM2-spår i HTML (metodnot: filnamnets sista `_` → `.` i URL:en) |
+| Premiumanalyser | 11 i data/analyses | **11, samtliga sidor 200** (metodnotis: PREC.ST punktform i URL trots filnamnets PREC-ST — 404:an i första sonden var mätartefakt, ej regression) |
+| Prod-snapshot-lagret | o48-fyndet 09-18: fixture-rad gällande för ABB.ST | **LEVER KVAR** — skrivskyddad REST-sond (GET /rest/v1/system_events, senaste-vinner-frågan ur lagringens egen kod): created_at 2026-09-15T22:07:31.119176+00:00 EXAKT matchande o48:s tidsstämpel, fortfarande senaste raden för ABB.ST; R2-radering/berika-omkörning har ej skett |
+| Kodyta | — | src/lib/akm2*/analys-motor.ts/analyser-sidor ORÖRDA sedan 09-17 (git-bevis: tom logg sedan dess) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B7 | LEVER 8 → **LEVER 8** | Kärnan lika grön som någonsin (156 kontroller + 107/0/0 + livlinan 22/22 + on-demand-kedjan skriver live) och env-läckan struken ur gaplistan (o48:s kur verifierad i båda env-grenarna). Men berika-stillaståendet fördjupas (13→15 dagar, fortfarande ingen cron), fixture-raden fortfarande gällande i prod (R2) och akm1/2/3/fundamental-cacherna fortfarande 0 — ingen score-rörelse |
+
+Snittscore **7,6 / 288 / 38 OFÖRÄNDRAT** (B7:s poäng orörd med motivering
+ovan; fixture-radens sanering är R2 — kundens veto — och belastar inte B7:s
+kodkvalitet).
+
+Köposter till nästa dokvåg/ägare: (a) fixture-raden ABB.ST i prod — R2-radering
+ELLER icke-destruktiv omkörning hos kor-akm2-berika-ägaren (o48:s bokning
+lever, återmätt 09-19); (b) berika-cadansen behöver cron-koppling eller
+åldersrop i vakten — gapet växer en dag i taget; (c) skrapkatalogerna asml-/
+erj-omg16 i data/cache saknar ägarpost i kartan (icke-B7-skrivare, okänd
+rensningspolicy — E35:s cache-hygienkategori).
+
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789777515719 — A4 + C16 + E32 diffade mot verkligheten)
+
+Anspråk på disk FÖRE mätstart (data/vakten/auto-s9-1789777515719-s9-u3-ansprak.md,
+00:27Z; syskonet u2:s anspråk E31 + A1 landade minuterna FÖRE och respekteras —
+deras sektioner orörda; u1 obestämd vid mätstart, D20 lämnades öppen som
+rimligaste enkel-pick, u2:s reserver B7/D20 orörda). Allt EGENMÄTT 00:27–00:5x
+lokal (loopback-sonder, node-räkningar, git log, filstat):
+
+| System | Före (senaste passning) | Efter (mätt 09-19) |
+|---|---|---|
+| A4 | determinism 2× verifierad (09-16 prod-dubbelanrop, 09-17 offline); 0 sviter; kodstilla | TREDJE verifieringen med exakt prod-match SAMMA DAG: offline FNV-1a ur äkta ROTATION ger 09-19 → SWED-A.ST = dagens API-svar (pris 396,7, pos52 0,994); historiken 09-16 SHB-B · 09-17 SAND står sig; NY PRECISION: 09-19 OCH 09-20 ger BÅDA SWED-A.ST — hash%12 repeterar närliggande dagar utan skydd ("rotation" = dagsurval, ej garanti); 0 commits på 9 nyckelfiler sedan 09-16; 0 sviter återmätt; lasStreak orörd (:69); dagens quiz betjänar frusna beståndet (8 223 sedan 09-15, kurser 396→432) |
+| C16 | kön 175 filer (09-17, +51/dygn); sammanställning förynad 09-17 16:58; m9-fabriken stilla sedan v96 | kön 235 (+60/2 dygn ≈ +30/dygn): rot 63 · m9-ko 7 · granskning 107 (11 sa-laser, KONTROLL-filer 09-18 ×5: spelaktier/försvar/tillväxt/SaaS/Goldman Sachs Q3) · kvartal/2026-q3 58 (10 kalendrar + 48 Q3-läspaket; serien 13→33→43→58); s4:s Q3-läspaket är kön nya tillväxtmotor (Carlsberg 1b85f722, JPMorgan "47:e") medan m9-fabriken stilla sedan v96 = ekosystem; sammanställningen FERSK 09-18 23:08 OCH trippelrad på 3 dygn (55 691 → 173 697 B; bor i data/blogg-utkast/-roten — lösa sökvägsreferenser preciserade); data/blogg 55 oförändrade (R2); gap 2+3 lever |
+| E32 | siffror 381 (09-17-stämpeln); ÖVERSIKT-raden bar E31-amnet "320 poster"; priser orörd sedan 09-07 | siffror.json 432 kurser (09-18 23:52; s5-vågorna, senaste 044d1f47 clobberläkt 429→432) medan quiz/XP FRUSNA (8 223/82 230 sedan 09-15); källöverensstämmelse bevisad i BÅDA ändar: deep-courses.json 432 objekt (node) = siffror.json = startsidans live-HTML ("432 kurser, 102 kanonböcker, 8 223 quiz") — gap 2 mjukat (runtime överens mätt) men larmande divergensvakt saknas; priser.json orörd sedan fbfb135f ⇒ speglingsfönstret 12 dygn = längsta sedan mätstart (mtime 09-10 = checkout-beröring, ej innehåll); /api/variabler 200 (14 fält); kodstilla sedan v82; E31-amnet i ÖVERSIKT-raden rätat till E32-egna fakta (E31 = u2:s yta, orörd) |
+
+Poäng: A4 7 · C16 8 · E32 8 — samtliga oförändrade (B13/E33-precedensen:
+kunskap tillförd, inget gap stängt). Snitt **7,6 / 287 / 38 OFÖRÄNDRAT**.
+Kö till huvudagenten: (1) quiz-tillväxten nu E32-mätt (432 kurser utan nya
+quiz — samma rot som A5/D21/D38-köposterna, fjärde oberoende observationen);
+(2) C16:s publiceringsuttag: kön +30/dygn mot 55 frysta publicerade (kundens
+R2-klick) — uttagsbeslut växer i aktualitet; (3) E32 gap 2: mekanisk
+divergensvakt siffror-live ↔ siffror.json (överens bevisat men obevakat);
+(4) A4: hashen kan upprepa bolag dagar i följd — om orepetition önskas krävs
+dags-lookup-tabell (designbeslut, ej fel).
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789800329491 — D20 Inloggning & konto återdiffad; felklass-fyndet i glomt-grenen + vakt-täckningsgapet)
+
+Anspråk på disk FÖRE mätstart (data/vakten/auto-s9-1789800329491-s9-u1-ansprak.md,
+gitignorerad väg; D20 = ÖVERSIKT:ns äldsta icke-återdiffade stämpel 09-16 OCH
+uttryckligen lämnad öppen av gårdagens u3 som "rimligaste enkel-pick"). Allt
+EGENMÄTT ~09:0x lokal (svitkörrning, kodläsning, git log, loopback-sonder):
+
+| Yta | Före (09-16-passningen) | Efter (mätt 09-19) |
+|---|---|---|
+| Svit | 17/17 grön (09-16) | 17/17 GRÖN EGEN igen (exit 0) — kärnan ren |
+| glomt-grenen i sviten | 0 träffar (gap 2) | 0 träffar ÅTERMÄTT — gap 2 kvarstår exakt |
+| medlem-auth.ts | 556 r | 556 r OFÖRÄNDRAD — senaste commit d83915fb 2026-09-11 (kodstilla 8 d) |
+| medlem-inloggning.tsx | "220 r + glomt-läge" | TALRÄTTNING: **301 r** — oförändrad i git sedan 10f7b75f 2026-09-12 (autoComplete W3C-tokens "email"/"new-"/"current-password" på plats :230/:241); 09-16-radens 220 var inaktuellt |
+| Live-ytor | /logga-in 200 (09-16) | /logga-in 200 + SPEGLARNA /en/logga-in + /ar/logga-in 200 (första D20-mätta spegelsonden — SSR-läkningen håller) |
+| API-kontrakt | (ej live-mätt i D20) | POST ogiltig action → 400 {"fel":"Ogiltigt action."} · GET → 405 (POST-only) · signin utan data → 401 generisk text (KRITA lever live) · rate-limit MAX_GLOMT_PER_MIN = 5 i kod (:60) + 429-gren med Retry-After (:137–141) · neutral talkart "Om kontot finns…" (:152–155) |
+
+FYND A — NYTT GAP 4 (felklassmappning, live-mätt): glomt med ogiltigt
+e-postformat svarar **HTTP 502 + {"fel":"Ogiltig e-postadress.","kod":"tjanst"}**
+— ett LOKALT valideringsfel mappas till "Bad Gateway"/tjänst-klassen. Roten är
+dubbel: medlem-auth.ts:389 returnerar kod "tjanst" ÄVEN för valideringsfelet,
+och route.ts:149 mappar ALLA !ok till 502 — mappningen kan inte skilja
+validering från transport. Säkerhetsmässigt ofarligt (ingen kontoexistens
+läcks; kontrast signin-tom → 401), men felklass-semantiken ljuger: 502
+signalerar "tjänsten nere" när sanningen är "klientformat fel". Kur kräver
+src/ (huvudagenten): separat kodvärde (t.ex. "validering") eller 400-förgren.
+
+FYND B — NYTT GAP 5 (vakt-täckning, B12:s klass): /logga-in (+ speglar) SAKNAS
+i gränssnittsvaktens FALLBACK_SIDOR (granssnitt-urval.mjs:31 — 8 sidor: /,
+/kurser, /labb, /blogg, /dataset, /superanalys, /kalkylator, /om-oss) —
+inloggningssidan, hela medlemstrupens entré, rutinmäts EJ (0 vaktrapporter med
+sidan). B12:s köpost lade till superanalys/kalkylator men logga-in glömdes.
+
+Gap 1 (E2E-svit) och gap 3 (återställningsmejlets leveransväg — GoTrue-konfig,
+avsändardomän) kvarstår oförändrade. Score 8 ORÖRD (E33/B14-precedensen:
+kunskap tillförd, inget gap stängt — båda fynden är preciseringsklass, ej
+kundsynligt brytt kontrakt). Snitt **7,6 / 287 / 38 OFÖRÄNDRAT**. Kö till
+huvudagenten: (1) felklass-kur i glomt-grenen (src/); (2) /logga-in i vaktens
+sidrotation (samma kur-post som B12:s); (3) glomt-grenen i sviten (gap 2 —
+neutral talkart + rate-limit är rena funktioner, sviten stubbar redan nätet).
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789800329491 — B8 + B13 + C18 diffade mot verkligheten; D24-PIVOT efter samma-minut-anspråk + AKUT DRIFTFYND under fönstret)
+
+Fabriksagent s9-u3 (byggare 3/3). Ursprungsval B8+D20+B9 (anspråk på disk
+08:47 lokal) landade SAMMA minut som syskonens (u1 D20 · u2 D20+B9) — u1
+LEVERERADE D20 under fönstret (deras sektion orörd, respekterad) och u2:s
+B9-mätning var igång ⇒ D24-pivot-precedensen: D20+B9 AVSTÅNDA; mina tagna
+värden för båda bokförs här som OBEROENDE KORSVALIDERING + B9-gåva på disk
+(data/vakten/auto-s9-1789800329491-s9-u3-b9-gava.md). Nyval enligt
+mogenhetsregeln: B8 (09-16, äldsta fria) + B13 + C18 (09-17-klassen, fria).
+Allt EGENMÄTT 06:50–07:05Z.
+
+KORSVALIDERING D20 (u1:s leverans bekräftad exakt): svit 17/17 grön ·
+medlem-auth.ts 556 r kodstilla sedan d83915fb 09-11 · medlem-inloggning.tsx
+301 r (10f7b75f 09-12 — kartans "220 r" var inaktuellt; u1 rättade samma tal)
+· speglarna /en/logga-in + /ar/logga-in 200 (korrekta lang/dir) · GET
+/api/medlem 405 + POST ogiltig action 400 {"fel":"Ogiltigt action."}.
+
+KORSVALIDERING B9 (u2:s sektion — talen deras att bokföra): skans genererad
+2026-09-19T05:05:21.478Z (12/12 tickers) · svit 57/57 · SENASTE-domar 09-04
+(filer 09-10) serveras live av /api/data/vagstatistik · STORFYND: natt-
+exporterna 09-17/18/19 saknar ALLA vagscan-rader (09-16-filen: rad
+05:05:24Z) trots fönster som täcker senare körningar — medan tabellen
+bevisat bär DAGENS rad (senaste-ruten läser system_events); två grenar
+(tysta Vercel-skrivfel 09-17+18 ELLER export-källan skiljer sig — E33:s
+tväprojektsklass); avgörs av nattens 09-20-export ⇒ KÖPOST E33.
+
+AKUT DRIFTFYND (mät-fönstret 07:0xZ, eskalerad HÖG i feljakt-ledgern +
+DRIFTSBOKEN-notis): två misslyckade synkbyggen (06:58:57Z + 07:01:27Z)
+halvrev .next (mtime 07:00:21Z) utan pm2-omstart ⇒ manifest-offerklassen
+(o83 §4) TREDJE fönstret idag: /_not-found + /portfolj-forskning +
+/portfoljbyggare + /rapporter + /llms-full-txt + /kurser 500 (växande)
+medan / /blogg /ar /min-portfolj /sitemap /llms.txt /robots gröna; bot =
+synkens nästa gröna bygg — SKEDDE 07:12:37Z (deploy + MÅL återarmat; egna åter-sonder 07:14:52Z: /kurser + /portfolj-forskning + /portfoljbyggare + /rapporter + /api/llms-full-txt + /api/llms-txt ALLA 200 = LÄKT) — ALDRIG eget (våg 100);
+rot-fråga bokförd hos synkägaren (misslyckade byggen SKRIVER i .next).
+Schema-sviten EJ körd under aktivt driftbrott (09-17-precedensen: drift,
+ej kod).
+
+| System | Kartans påstående | Verkligheten (mätt) | Dom |
+|---|---|---|---|
+| B8 | regimen frusen 09-03 (14 d); Contabo-crontab saknar rad; svit 55/55 | regime-logg 1 rad 09-03 + kalibrering-logg 1 rad 09-04 + /api/forskningslage EXAKT genesis-tal (100/7/76/17, 16 d); /etc/crontab (mtime 09-08) + tom användar-crontab: ingen akm3/vagvalidering-rad; vercel 10-02; 55/55 exit 0 EGEN; lib 2 113 r stilla 09-04 | KVARSTÅR (16 d) |
+| B13 | universum 153, glidning 53; sviter 32/50; member/portfolio utan vakt | universum 195 (+42 på 2 d; 09-19 02:09Z), korstabell FRUSEN 100 r (09-10) ⇒ glidning 95; 32/0 + 50/0 EGENA (fjärde); member/portfolio 0 lasMedlemSession (108 r); 0 fundamental/akm2/akm3-cacher (data/cache 40 f); lib stilla 09-09 | GLIDNINGEN 53→95 |
+| B13 | (publika ytor) | /portfolj-forskning + /portfoljbyggare + /rapporter 500 (manifest-offer, drift) · /min-portfolj 200 | DRIFT, ej kod |
+| C18 | sitemap 2 239; sok-index 396 (09-17); llms×2+robots 200 | sitemap 2 420 (+181); sok-index 440 kurser genererat 09-19 (FÄRSKAST); llms.txt 200 (205 kB) + robots 200 (6,2 kB) MEN llms-full-txt 500 (drift); seo.tsx 842 r (1245141e 09-15); schema-kurser.ts 193 r; og-generate 0 träffar i deploy-skriptet | TILLVÄXT; gap 2+3+G1 kvar |
+| C18 | schema-svit | EJ körbar under aktivt driftbrott (/kurser 500) — 09-17-precedensen | DRIFT-paus |
+
+Poäng: INGA poängrörelser (E33/B14-precedensen); snitt 7,6/287/38. Kö:
+(1) E33: nattexportens vagscan-skillnad (09-20-dumpen avgör) + 09-16-radens
+försvinnande ur 09-17-filen; (2) synkägaren: .next-skrivning vid misslyckat
+bygge (DRIFTSBOKEN-notisen); (3) B13: korstabell-cadans/rop vid universumsväxt
+(glidningen 95); (4) B8-cur: Contabo-rad för akm3-kalibrering/vagvalidering.
+KVD: endast SYSTEMKARTAN + worklog + anspråk + kartskript + DRIFTSBOKEN-notis
++ ledger-rad (data/vakten gitignorerad) — INGET bygge; src/ orörd; R2 orörd;
+data/blogg/ orörd; syskonens ytor orörda.
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789800329491 — B9 + E33 diffade mot verkligheten; STORFYND: vagscan-historiken raderas samma dag — kvartalsdeduben slagen; D20-pivot + B9-gåva bokförda)
+
+KOLLISIONSBOKFÖRING (disk-först-racen): mitt anspråk D20+B9 på disk 08:47:15;
+syskonet u1:s D20-anspråk 08:47:18 + LEVERANS (commit 08:55) ⇒ D20 AVSTÅTT
+enligt spårets duplikatregel, PIVOT till E33 (stämpel 09-17 = äldsta fria;
+R2-ytorna D22/D23/E30 orörda). Syskonet u3 (anspråk 09:01:32) respekterade
+mitt B9-val, valde B8+B13+C18 och lämnade B9-gåvan
+auto-s9-1789800329491-s9-u3-b9-gava.md — deras pivot-mätningar korsvaliderar
+mina nivåer exakt; deras två tolkningsgrenar MOTBEVISADE av mina sonder
+(id-diff + read-only tabellsond, se B9-blocket); deras sektioner orörda av mig.
+
+| System | Före → Efter | Skäl (bevis, egenmätt 06:47–09:10 lokal) |
+|---|---|---|
+| B9 | LEVER 8 → **LEVER 7** | Skanningen lever (05:05:21Z dagligen, 12/12, svit 57/57 EGEN, /vagfundament 200, kodstilla) MEN historiekontraktet brutet: levande tabellen bär TOTALT 1 vagscan-rad (dagens) — dagsrader raderas inom ett dygn; id-diff 09-16→09-17-export: exakt 4 rader försvann (raderna bevisligen skrivna); raderaren EJ i repot (samtliga DELETE-anrop genomgångna); KASKAD: 2026Q3-snapshot (1 200 r) regenereras DAGLIGEN på kvartalets dag 80 = deduben slagen, B8:s kalibreringsgalleri i praktiken tomt |
+| E33 | LEVER 8 → **LEVER 7** | Arkivkedjan kadansgrön (4 nätter, antal==totaltFranApi ×4, 0 dublett-id) MEN två blinda fält: exporterna bevarar EJ vagscan/signal/organ (0 rader sedan 09-17 trots fullständig dump) + 4 odeducerade dubletter i 09-16-filen (v3-kontraktet dömer bara trunkering); samma oidentifierade raderare verkar i kärntabellen; ALTER V1 kvar på disk/HEAD; inventory 27 d |
+
+KORSVALIDERING D20 (u1:s leverans, deras sektion orörd): mina mätningar
+bekräftar deras bild — svit 17/17 exit 0 EGEN · glomt/recover 0 träffar i
+sviten (gap 2 lever) · medlem-auth.ts 556 r exakt + kärnfiler kodstilla sedan
+09-11/12 · /logga-in 200 (115 ms) + /en/logga-in + /ar/logga-in 200 (speglarna
+lever) · GET /api/medlem 405 (POST-only, korrekt kontrakt) · GET
+/api/medlem/progress 200 {inloggad:false} (tyst gästkontrakt).
+
+KVD: data-only — src/ orörd = INGET bygge (deploy ägs av prod-synken);
+R2 orörd; data/blogg/ orörd; syskonens ytor orörda (u1 D20 · u3 B8/B13/C18).
+Kö till huvudagenten: (1) Supabase-dashboard: pg_cron/trigger/externa nycklar
+— VEM raderar vagscan/signal/organ dagligen? (2) retention-allowlist-kur i
+organ.ts FÖRST efter att raderaren identifierats (annars maskeras roten);
+(3) arkivexporten: markera antal>totaltFranApi som dublettfynd; (4) bära
+vagklass-galleriet utanför system_events (datacache/fil) tills historiken
+består; (5) B8-notis: kalibreringens steg 6–7 läser ett tomt galleri.
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789824900585 — E27 Studio återdiffad, tredje varvet: kommandobussregistret UTTÖMT 36/36 + STORFYND: binären halkat efter — 3.12-familjen släppt obemärkt)
+
+Anspråk disk-först (data/vakten/auto-s9-1789824900585-s9-u1-ansprak.md):
+E27 = äldsta fria passningen (09-17; jämnårig med E30 men med störst
+rörelse — studion är kundens chattväg), R2-ytorna D22/D23 orörda. Samtliga
+mätningar EGENMÄTTA 2026-09-19 ~15:0x lokal.
+
+KVANTITATIV DIFF (09-17 → 09-19, egenmätt): studio-transport.ts 8 316 →
+10 866 rader (+2 550, +31 %; lib/studio totalt 13 039 r) · API-rutter
+24 → 35 route.ts-filer (+11, bl.a. tjanster/kommando [v175], usage-v4
+[v169], automation+pausa, bakgrund+avbryt, commands, generera, resync,
+webblasare, godkannande+publicera, mal/status+stream) · studio-komponenter
+5 → 8 namngivna (nytt: forbrukning-panel [v169], godkannande-panel [g1],
+maskin-panel) · live /studio 200 · stream 401 · kommando 405.
+
+KVALITATIV: kommandobussen FÄRDIGBYGGD 09-18/19 — våg 181 (pauseGoal/
+resumeGoal) + 182 (kösystemet, poster 31+32) + 183 (modellbyte, 29) + 184
+(resolveInteraction, 28) + 186 (UI-koppling sendText, post 35: Zap-toggle
+ak1a-v4-sendvag per webbläsare, gamla styrvägen kvar som rollback) + 187
+(sessionsfödelse, 33) + 188 (fakta-typerna, 34) ⇒ ZCODE-GAP-REGISTER 36/36
+STÄNGDA på live-bevis (rond 90: "REGISTRET UTTÖMT — nästa evolution föds ur
+ny forskning"). skickaV4-familjen: 7 transportmetoder (SessionsFodelse,
+SendText, MalStyrning, KoStyrning, Modellbyte, InteraktionSvar,
+FaktaKommando). Därtill godkännandehärdningen (s8-u1 a20f15fa: tak 6/min
+publicera · 20/min val-ytan SITTANDE efter auth, audit publicera-avvisad —
+nekanden lämnar append-only kvitto), ROND 87:s F3-500-kur (c7e8be1d),
+scenariotest 7/7 PASS mot prod (våg 174).
+
+STORFYND — BINÄREN HALKAT EFTER (kartans gap 1 TRIGGAT): npm latest =
+3.12.3-26 (egenmätt npm view) men servern KÖR zcode-app-cli@3.11.2-24
+(npm ls -g, egenmätt) — en HEL minor-familj (3.12.x) har släppts obemärkt.
+Gap-registrets källrubrik "npm latest = 3.11.2-24 — vi KÖR senaste" är
+FALSK sedan 3.12-releasen: binärbevakningen per våg har fallerat minst en
+vågcykel. Konsekvenser: (a) paritetstaket 39/91 mättes mot 3.11.x — våg 93:s
+dom "automation/webbläsare ej exponerade i NÅGON version" gällde
+3.11-familjen och måste omprövas mot 3.12.x; (b) kartens egen regel "vid
+version > 3.11.2-22 körs v92-e2e direkt" är en AKTUELL KÖ; (c) registrets
+regel 3 har nytt bränsle: 3.12.x-releasenoteringarna = nästa evolutionskälla.
+Kö till ronden/huvudagenten: npm view-koll per våg (återuppliva gap 1),
+v92-e2e-omkörning, registerforskning mot 3.12.x.
+
+Poäng: 9/10 KVARSTÅR — paritetens DJUP bevisat starkare än någonsin
+(registret uttömt, koden +31 % på två dygn) samtidigt som den YTTRE
+gränsen (binären) flyttats under organismens fötter: nu gäller först
+eftersläpningen, sedan omprövningen av taket.
+
+KVD: data-only — src/ orörd, INGET bygge (deploy ägs av prod-synken); R2
+orörd; data/blogg/ orörd; syskon-ytor orörda. Leverans: SYSTEMKARTAN.md
+(UPPDATERING-sektion + E27-sektion + E27-översiktsraden), worklog-rad. [fabrik]
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u2 2/3, manifest auto-s9-1789824900585 — D22 + D23 återdiffade mot verkligheten; R2-ytorna + FÖRSTA prod-mätningen av tier-grinden)
+
+R2-ytorna återdiffade två dygn efter omgång 9 (09-17) — READ-ONLY som
+den gången: inget pris ändrat, ingen flagga satt, inga .env-värden lästa
+(endast namn-närvaro + pm2-variabelnamn). Koden är STILLA sedan senaste
+diff: **0 commits på samtliga D22/D23-vägar sedan 2026-09-17** (git-bevis)
+och working tree ren på dem (git status tomt) — allt nytt nedan är
+DRIFT-/PROD-mätning, inte kodrörelse. Syskonet u1 (samma manifest)
+levererade E27 ovan; deras "R2-ytorna D22/D23 orörda" respekteras.
+
+**D22 BETALNING & PRENUMERATIONSSTOMME — ytorna mätbara för första gången
+på två veckor (SSR-läkningen håller):**
+
+| Mått | Kartan 2026-09-17 | Verkligheten 2026-09-19 (mätning) |
+|---|---|---|
+| Prod-ytor | /prenumeration + /medlemskap 500 (globala SSR-driftfelet, o47) | **200 + 200** — läkningen (bokförd kvällen 09-17) håller; **speglarna lever med**: /en/{prenumeration,medlemskap} + /ar/{prenumeration,medlemskap} alla 200 (fyra nya mätvärden; speglarna bor i (en)/en/ + (ar)/ar/ — djupare nästning, kartans "6 ytor" håller) |
+| Admin-vyn | 401-vaktad (kodläsning) | **401 MÄTT LIVE** utan auth på /api/admin/konvertering |
+| Intention-rutten | 94 r, POST-only (kod) | **GET-prob → 405** — POST-only-kontraktet intakt i körande instans |
+| Intention-raderna (gap 4) | "delar E33:s förlustkänslighet" (hypotes) | **TOTALT 0 rader** i levande tabellen (read-only PostgREST-sond `verktyg/_s9u2-intentionsradar.mjs`, syskonkontraktet från b9-sonden: nycklar via loadEnvFile, loggas aldrig, enbart GET/HEAD) — kan EJ skilja "aldrig någon intention registrerats" från "raderade"; E33:s raderare är typspecifik (vagscan/signal/organ) och konvertering_intention är EJ belagd i dess målbild, men samma tabell bär dagens ensamma vagscan-rad = tabellen lever |
+| Stommen + priser | 202 r + 4 komponenter orörda sedan våg 77; 6 ytor | OFÖRÄNDRAT bevisat: 0 commits sedan 09-17; email-mallar.ts 274 r oförändrad (fortfarande ingen intentionsmall); priser.json 0 commits — **R2 orörd** |
+| Testsviter | 0 egna | **0 egna** fortfarande (mätt: inga testa-*prenum*/betal*/pris*/tier*) |
+
+**D23 PRISSTEGEN — grinden MÄTT I PROD FÖR FÖRSTA GÅNGEN (09-17 mättes
+bara robots/sitemap; sidorna var osonderbara): svaret är 200, inte 404.**
+
+| Mått | Kartan 2026-09-17 | Verkligheten 2026-09-19 (mätning) |
+|---|---|---|
+| Grinden | "404-grenen osonderbar (SSR-felet svarar 500 på allt dynamiskt)"; kartans 404-påstående härstammar från KODLÄSNING (notFound() ⇒ antaget 404) | **SOFT-404 KONSTATERAD**: /portfolj-grund svarar **200** men kroppen ÄR notfound-sidan ("Sidan hittades inte" + 5 st "404"-markörer), `<title>` = sajtens default, **NOLL säljinnehåll** (inga pristal, ingen CTA, inget mailto — R2 håller i SAK); headers: `x-nextjs-cache: HIT` + `x-nextjs-prerender: 1` + `s-maxage=300` — ISR-cachen serverar notfound-renderen med status 200; identiskt för bot- och browser-UA; /portfolj-plus + /portfolj-hyra samma mönster (200) |
+| Flagga | NEXT_PUBLIC_TIER_AKTIV i ingen .env-fil (namn-närvaro) | OFÖRÄNDRAD + **NYTT MÅTT: `pm2 env ak1a` bär ingen TIER-variabel alls** ⇒ flaggan AV i både fil- och processmiljö — aktivering fortfarande kundens (R2) |
+| robots/sitemap | 0 tier-rader + 0 tier-URL:er (prod-mätt) | **HÅLLER**: robots.txt 0 portfolj-rader; sitemap 0 tier-URL:er — portfolj-grund/plus/hyra frånvarande (sitemaps 24 övriga portfolj-rader är B13:s forskningssidor: portfolj-ekosystemet ×3 speglar + portfolj-forskning m.fl. — INGA tier-sidor) |
+| Sidorna | 61+64+61 r orörda sedan våg 99 (2a566cfd) | OFÖRÄNDRAT: 0 commits sedan 09-17, trädet rent; speglar en/ar SAKNAS fortfarande (find tomt); 0 egna testsviter |
+
+**Sidofynd (bokfört till rätt ägare, ej djupdykt):** /pro (E30:s yta):
+GET → **500** (text/plain, 21 byte; första anropet gav 308 trailing-slash
+→ 500 på /pro/) — INAKTIV-grinden svarar varken 404 eller 410. E30:s
+nästa revision får huvudet: de BÅDA grindarna (tier 200 / pro 500) är
+OENHETLIGA i statuskod trots samma aktivitetsmönster (b2bAktiv/tierAktiv)
+— beteendet ägs av ISR-/byggmekanik, ej av grindkoden (kodstilla bevisat).
+
+Poäng: D22 5 och D23 7 OFÖRÄNDRADE — preciseringsdokvåg utan poängrörelse
+(E26-precedensen): R2-lägena orörda, stommen och grinden gör sitt jobb i
+sak; soft-404:n är en statuskod-nuans (Google tolkar innehållsbaserade
+soft-404 som 404 — notisvärd för C18/E31, men EXISTENS-kontraktet
+"byggda, oåtkomliga, inget läcker" är uppfyllt).
+
+Kö till huvudagenten: (1) om 404-STATUS önskas på tier-sidorna: ISR +
+notFound() behöver särskild hantering (t.ex. dynamic-forcering eller
+middlewaresnitt) — ALDRIG autonom flaggaktivering (R2); (2) E30-revision:
+/pro 500-mätningen + grind-oenhetligheten ovan; (3) D22 gap 4 förtjänar
+en skarp intentionsklick-test i sandlåda när aktiveringsflödet rehearlas
+(0-raden kan då skiljas från raderarhypotesen). KVD: data-only — src orörd
+= INGET bygge (deploy ägs av prod-synken); R2 orörd; data/blogg/ orörd.
+
+## UPPDATERING 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789824900585 — E29 + C15 + E36 diffade mot verkligheten; FYND: 113 kursers OG-bilder 404 live i prod)
+
+Val mot duplikat via disk-anspråk (u1 = E27, läst ur deras anspråkfil; D22/D23
+= R2-ytor orörda; u2:s val lämnades öppet). Varje rad MÄTT i arbetsytan
+15:37–15:45 lokal 2026-09-19 — inte läst ur worklog.
+
+| Mått | Kartan 09-18 | Verkligheten 09-19 (mätning) |
+|---|---|---|
+| Fabriksmanifest (E29) | 146 klara av 147 · 475 utdataloggar | **187 klara av 188** (det pågående = detta manifest) · **600 utdataloggar** — +41 klara/dygn, TAKTEN ÖKAR (+30 föregående dygn) |
+| Leveranskontraktet (E29) | "leveransbevis per uppgift" (aldrig korpusmätt) | **FÖRSTA HEL-KORPUSMÄTNINGEN: 599 klara uppgifter, 599/599 med LEVERANS-kvitto, 0 tyst döda** (koden räknar alla statusfiler); 123 avslutade med exit≠0 MEN samtliga 123 med leveransrad — process-exit är inte leverans, kvittot är |
+| Beslutsminnet (E29) | 68 poster (rond 51) | **77 poster** (rond 59 @ 11:43:01Z, 4 idag, serien 55→59 sekventiell i filen) |
+| Evighetsmotorn (E29) | 614 kontroller (11:48:03Z 09-18) | **762 kontroller** + FÅNGAD LEVANDE i mätfönstret igen (13:38:02Z: "iteration 2 · ålder 27 min · turn pågår") — andra levandefångsten, driftbeviset förstärks |
+| Pumpor-daemonen (E29) | 42 h ↺19 | **uppe sedan 09-18 20:09 lokal** (pid 2320133, ~19,5 h, 5:01 CPU-min) — en omstart sedan förra mätningen |
+| Kunduppdrag + CRON_SECRET (E29) | filer frånvarande · 0 env | **oförändrat båda** (mätt utan värden, endast närvaro) |
+| Bloggkön (C15) | 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal 49) | **265 filer** (rot 67 · m9-ko 7 · granskning 124 · kvartal 65) — **+66/dygn, TAKTEN TREDUBLAD** (+24 föregående dygn); sammanställningen själv­förnyande TREDJE dagen (206 104 B, 09-19 11:59) |
+| Publicerat + B2 (C15) | 55 publicerade · B2 GET 405 | **55 ORÖRDA (R2)** · B2 GET **405 på både localhost och HTTPS** (metodbevakad, egen sond) · /blogg 200 · morgonens manifest-500:or (/kurser m.m., B13-radens driftbrott) **LÄKTA** — prod-synkens ombygge grönt |
+| Mediesviten (E36) | 18/18 | **18/18 GRÖN EGEN körning** (oförändrat; kontrakt A7 SSRF/2 MB/magic-byte/hermetik) |
+| media_fil-event (E36) | export antal=0 ×6 | **antal=0 ×7** (09-19 02:40) + **NY LIVE-SOND: 0 media_fil-rader i tabellen NU** — två grenar: biblioteket vantarkund (troligast) ELLER raderarklassen: min vagscan-sond visar EXAKT 1 rad = dagens 05:05 = gårdagens B9-storfynd PÅGÅR DAG 2 (korsvalidering B9/E33) |
+| OG-bilderna (E36) | "OG manuellt kvar" + "public/og 404 i git" (beståndet antaget komplett) | **FYND: beståndet fruset på 333 kursbilder** (generatorn orörd sedan 09-05, sista OG-commit 023e9f95) **medan registret nått 446 kurser = 113 kurser utan egen OG-bild**; korsning deep-courses × public/og/kurser: 113 saknade, 0 överblivna; LIVE-BEVIS: pc-21-ditt-forsta-case bär og:image → /og/kurser/pc-21-….png = **404 i prod** (originalkurs 200) — delningsbilderna trasiga för en fjärdedel av katalogen |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E29 | LEVER 8 → **LEVER 8** | E33/B14-precedensen: svitgapet (fabrik/evighet/uppdrag 0 sviter) + CRON_SECRET oförändrade — men leveranskvittot 599/599 + fabriken +41 manifest/dygn är organisationens starkaste driftbevis hittills; kollisionsklassen lugn i detta fönster (disk-anspråk skrivna och lästa, u1:s E27-yta respekterad). Ingen poängrörelse |
+| C15 | LEVER 8 → **LEVER 8** | Gapet "kön växer" skärps TREDJE gången (199→265, takten +66/dygn) men inget gap stängs och inget nytt öppnas (B13-precedensen); B2-knappen metodbevakad 405, 55 publicerade frysta (R2), sammanställningen lever — läget stabilt |
+| E36 | LEVER 9 → **LEVER 8** | B7-precedensen: OG-gapet var kartat som "manuellt kvar" men verkligheten mäter **113 trasiga og:image-URL:er LIVE** (nya kursernas delningsyta 404:ar) — dokumenterat bestånd föll ifrån i roten och nådde konsumentytan = inte 9-läge. Svit 18/18 + exportkadansen orörda |
+
+Snittscore **7,5** (285 → 284 poäng / 38 system; E36 −1 vid denna dokvåg).
+
+Kö/sidofynd: (a) **OG-generatorns rerun = BYGGKÖ** — 113 kursbilder + analys-ytan
+(11 bilder mot analysbeståndet) återställs av en generatoromkörning + commit +
+deploy; avstått här (binära filer + deployklassning utanför dokvågens data-only
+mandat); (b) media_fil-grenen avgörs av E33/B9:s raderarutredning (samma
+rot-ID, Supabase-dashboard); (c) kursregistret 432→446 under MÄTFÖNSTRET
+(siffror.json) — s5-vågorna levererar fortfarande, A1/E32-talen åldras dagligen.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (396 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A1 | Kursplattformen (432 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit (0 sviter, mätt 09-19); quiz frusna 8 223 under +36 kurser (09-19) |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | Registret 420 (+24/dygn, s5 omg 14+15); synk EGEN GRÖN 420=420=420 · 21 profiler (09-18); kärnan larvag.ts orörd sedan v99; 28 front-B-sonder; regressionssvit för rekommendationsreglerna + E2E-inloggning saknas |
 | A3 | AI-Mentorn (33 deterministiska svarslager + modellager) | Utbildning | LEVER | 9 | 38 sviter ALLA GRÖNA 0 FAIL (mätt 09-18; E01 STÄNGD: 408/408 fält-för-fält, rebaken höll genom 398→401→408-vågorna); kedjan 98 monsters/33 motorer; dataset-medianer okopplade; E2E mot levande medlems-API återstår |
-| A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter; streak/XP (member-local lasStreak) ej validerad — kartens determinism- och vagscan-gap MOTBEVISADE i kod+prod (mätt 09-16) |
+| A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter (återmätt 09-19); determinismen TREDJE verifieringen: offline-hash = prod-svar exakt samma dag (09-19 SWED-A.ST); hashen kan repetera dagar (09-19+09-20 båda SWED-A.ST — dagsurval, ej rotationsgaranti); kodstilla sedan 09-16; dagens quiz betjänar frusna quiz-beståndet (8 223 sedan 09-15) |
 | A5 | Gamification (badges 29 troféer, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter (mätt 09-18); gap 3 ÅTERMÄTT ÖPPEN 09-18: POST utan sessionsvakt + läcker {rank,total} till oautentiserad anropare (topplistan fortfarande tom = inget utnyttjat), GET-fönster 500 händelser; certId kollisionsbart (certifikat.tsx:57); bränslet fruset: quiz 8 223/XP 82 230 oförändrade medan kurserna växte 396→414 |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr — gap 1 öppen, mätt 09-18); läspaketkön 36 paket varav 25 utan AKM2-underlag (klass, mätt 09-18); universum 22 vs 11 tickers (2 gemensamma, frusen sedan 09-10) |
-| B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-17); berika-pipelinen stillastående 13 d (0 akm2-cacher; däremot 33 runtime-filer åter i data/cache — netnet/analys lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller), snapshot-svit env-känslig |
-| B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 ×3 återmätningar 09-17 + LÅST grind ΔΦ=0, hash-kedjor); men kalibreringen ENBART Vercel-cron-driven (nästa molnrond 2026-10-02; Contabo-crontab saknar fortfarande raden, mätt 09-17), regimen FROSEN på genesis 09-03 (14 d; genesis-talen lever live i /api/forskningslage), ensemble-vy 0/22; n_eff-målet 8–12 kvartal bort |
-| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
+| B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-19); berika-pipelinen stillastående 15 d (0 akm2-cacher; 36 runtime-filer i data/cache — netnet/analys/vagfundament lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller, eget svep 09-19), fixture-rad gällande för ABB.ST i prod (R2, återmätt 09-19), snapshot-svitens env-hermetik BOTAD 09-18 |
+| B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 egen 09-19, femte gröna; LÅST grind ΔΦ=0); fruset oförändrat: kalibrering-logg 1 rad 09-04 · regimen genesis 09-03 (16 d; /api/forskningslage bär EXAKT genesis-tal 7/100/17) · Contabo-crontab utan akm3/vagvalidering-rad · nästa molnrond 10-02; ensemble 0/22; kodstilla 15 d |
+| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 7 | Skanning dagligen färsk (05:05Z, 09-19) MEN HISTORIEKONTRAKTET BRUTET (mätt 09-19): dagliga vagscan/signal/organ-rader raderas ur tabellen inom ett dygn av oidentifierad aktör (repo-genomgång: 0 raderare) ⇒ kvartalsdeduben slagen (2026Q3-snapshot 1 200 r regenereras DAGLIGEN på kvartalets dag 80; B8:s galleri i praktiken tomt); SENASTE-rapport domar 09-04 (15 d); träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-18: 10 rader, 10/10 ≥3 källor; motorvalidering 107/0/0 fjärde gröna); kvar: 0 egen svit, historik/utfall lagras ej; kopplingen till B13 fördjupad 09-18: 0 import MEN namnkollision — portfolj-forsknings eget "konfluens"-begrepp (teorikonsensus per horisont) är ett annat mått än radarns datakällkonsensus |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-18 + /api/netnet färsk 09-18: 25 rader, VOLV-B 335,9 — live-flödet lever); universum fast 25; egen testsvit saknas fortfarande |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (mätt 09-18: lever); FOMO-kuren live i prod (chunk-bevis 09-18); ytan UTANFÖR vaktens FALLBACK_SIDOR — rutinmäts ej (nytt, mätt) |
-| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-17); korstabell-grund frusen 09-10 (100 r) mot bolagsunivers 153 — glidningen 53 bolag; member/portfolio utan sessionsvakt; universumet matar numera A3:s portföljlager |
+| B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Sviter 32/0 + 50/0 gröna (egen 09-19, fjärde); GLIDNINGEN FÖRDJUPAD: bolagsunivers 195 (+42/2 d) mot korstabell frusen 100 r = 95 bolag utan rad; member/portfolio utan sessionsvakt (återmätt); 0 fundamental/akm2/akm3-cacher; /portfolj*+/rapporter 500 = aktivt driftbrott (manifest-klass, ej kod) |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 5 | 0 sviter; "dubbel drivning" MOTBEVISAD 09-18: Contabo-cronens mål /api/cron/nyheter = 404 (rutten fanns aldrig i git-historien — scan heter /api/nyheter/scan) ⇒ enda drivning Vercel-cron på passiv backup; gap 2 REALISERAT live: tyst tom nyhetslista (ok:true + 0 nyheter, tomt svar disk-cachat 30 min) medan rik hämtning (40 nyheter) cacheats minuterna före; CRON_SECRET ej satt |
-| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, 09-07); B2-knappen lever metodbevakad (GET 405, ej 404 — egen sond 09-18); kön 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal 49; +24/dygn) med FÖRNYAD kundvy (GRKO 05:22Z); 55 publicerade orörda (R2); kvar: B2-E2E (kundens knapp), OG default tills deploy |
-| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp lever (v82); kön 175 filer (+51/dygn: rot 48 · m9-ko 7 · granskning 77 · kvartal 43, mätt 09-17) med sammanställningen FÖRNYAD 16:58 + 3 oberoende kontrollgranskningar/dygn (maskinella paket); flaskhals = publiceringsuttaget (55 frysta, kundens klick R2); schemalagd re-run saknas |
+| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (09-07); B2-knappen metodbevakad (GET 405 localhost+HTTPS, egen sond 09-19); kön 265 filer (+66/dygn, TAKTEN TREDUBLAD: rot 54→67 · granskning 89→124 · kvartal 49→65; mätt 09-19) med sammanställningen självförnyande tredje dagen (206 kB 11:59); 55 publicerade orörda (R2); morgonens manifest-500:or läkta (/blogg 200); kvar: B2-E2E (kundens knapp) |
+| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | kön 235 filer (+60 på 2 dygn, mätt 09-19: rot 63 · m9-ko 7 · granskning 107 · kvartal/2026-q3 58); kvartalshierarkin fullvuxen 13→33→43→58 och s4:s Q3-läspaket är nya tillväxtmotorn (m9-fabriken stilla sedan v96 = ekosystem av leverantörer); sammanställningen färsk 09-18 23:08 OCH trippelrad 55→174 kB (bor i blogg-utkast-roten); KONTROLL-filer 09-18 ×5; flaskhals = publiceringsuttaget (55 frysta, R2); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Universum 177 (10 branscher) + landaspekt danmark (09-18); 52 Kön-filer men /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG tredje passningen (importbro saknas) |
-| C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
+| C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | sitemap 2 420 (+181) + sok-index FÄRSKAST 440 kurser (09-19); llms.txt+robots 200 llms-sonden 500 i fönstret, LÄKT 07:12Z (manifest-klass, ej kod); G1-slutverifikation (Google rich-results live) återstår; OG-deploy-kopling 0 träffar |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (återmätt 09-18); PageViewBeacon sänder fortfarande före samtycke (gap 3 oförändrat 09-18) men layout-KOPIAN är BORTA (0 träffar i 3 layouter = EN beacon); trafik-API lever med färsk data (besokareIdag 29 + blockerat24h 9, mätt 09-18); P6 koddokumenterad |
-| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Glömt-lösenord-flödet LEVER (recover + neutral talkart + egen rate-limit, mätt 09-16); verifiering PÅ (ej_bekraftad-gren); kvar: E2E-svit + glomt-grenen otäckt av sviten |
+| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Återdiffad 09-19: svit 17/17 grön egen, kärnan kodstilla 8 d, /logga-in + speglar 200, talrättning medlem-inloggning 301 r; TVÅ NYTTA GAP: glomt-valideringsfel → 502/tjanst (felklassmappning, live-mätt) + /logga-in saknas i vaktens FALLBACK_SIDOR (B12-klassen); kvar: E2E-svit + glomt-grenen otäckt av sviten |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | GDPR-export/radering saknas fortfarande i UI (återmätt 09-18); sviter 13/13 + 17/17 GRÖNA EGENA igen (09-18); /api/medlem är POST-only (GET 405 = korrekt, {inloggad:false} kommer från progress-rutten); NYTT: kurser +30 (426) medan quiz/XP frusna (8 223/82 230) — progress-underlaget tunnas av s5:s kursvågor |
-| D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy + rate-limit, inget brev); kundens 8 beslut; intentioner bor i E33:s flaggade tabell |
-| D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env (mätt 09-17); grinden MÄTT I PROD (robots/sitemap = 0 tier-URL:er); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
+| D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy 401 MÄTT LIVE + rate-limit, inget brev); kundens 8 beslut; ytorna + speglar 200 (09-19, SSR-läkningen); intention-raderna TOTALT 0 (sond 09-19 — aldrig vs raderade okänt) |
+| D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env + ingen pm2-variabel (mätt 09-19); grinden SOFT-404 i prod: tier-sidor svarar 200 med notfound-kropp, NOLL läckage, robots/sitemap 0 tier-URL:er (09-19); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Fas-set 18+24 EXAKTA återmätta (09-18; kurs-access.ts orörd sedan 09-07) mot underlag **426** kurser (+57/dygn-par, s5-vågorna); ytor 200 ×5 + valideringsgren 400 + admin-grind 401 (återmätta — SSR-läkningen håller); elevstatus visas — ansökningsutfall saknas; cert-verifiering saknas; rate-limit i ansökningsrutten saknas (återmätt öppen 09-18) |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | Brev-pipelinen VILANDE I BÅDA ÄNDARNA (mätt 09-18): rutten fungerar fullt ut (200, 3 brev KÖADE i system_events, supabaseSparad) MEN ingen bevisad driver (/etc/crontab saknar email-raden återmätt + Vercel passiv enligt B14-fyndet) + leverantör okonfigurerad (0 env-namn); CRON_SECRET osatt ⇒ skrivande rutt öppen (200 utan auth); vagkarta-gapet STÄNGT (notis-underlaget lever, 05:05Z + syslog-bevis); notis-tak 100 + 30 d-golv återmätta i kod; referral 405 POST-only; VBOUT SATT; 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | "Tre språk fullt" MOTBEVISAT 09-18: useSprak 0-träffar i portal+4 navet, speglar saknas (404 live), enbart fortsatt-panelen flerspråkig; sviter 0; sidor 200; 1 093 r kodstilla; KursNavets quiz-yta frusen medan kurserna 396→426 |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
-| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md; usage-v4-panelen LEVER (v169); kommandobussen TRE vågor längre efter omgång 10 (mätt 09-18): v181 pauseGoal/resumeGoal + v182 KÖ-SYSTEMET (gap 31+32) + v184 resolveInteraction (post 28) — skickaV4InteraktionSvar kodbevisad på tre ställen (interface+AppServer+Mock); /studio 200 + stream 401 + kommando 401/405 live |
+| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | GAP-REGISTER 36/36 UTTÖMT (rond 90 09-19 — kommandobussen komplett v181–188: målpaus · kö · modellbyte · resolveInteraction · fakta-typer · sessionsfödelse · sendText-UI post 35 bakom Zap-toggle ak1a-v4-sendvag med rollback); transport 10 866 r (+31 % på 2 dygn) · 35 rutter (+11) · 8 paneler · 7 skickaV4-metoder; /studio 200 + stream 401 + kommando 405 live; STORFYND 09-19: binären halkat efter — npm 3.12.3-26 vs KÖRANDE 3.11.2-24 (bevakningen fallerat, paritetstak 39/91 mätt mot föråldrad binär, v92-e2e = AKTUELL KÖ); -32031 + skal-kvot-häng kvar |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (3,6 dygn; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-18: beslutsminne 70 poster, senaste "ROND 66 [Φ]" 14:47Z stänger våg 186 på live-bevis + falslarmdiagnos; ronder var 3:e timme punktliga, organet svarar 4 min in i rondfönstret); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 146 klara manifest av 147 (mätt 09-18 ~14:00; +30 sedan 09-17 kväll, 22 startade idag) · 475 utdataloggar · beslutsminne 68 poster (rond 51 11:43:03Z, 4 idag) · pumpor 42 h ↺19 + FABRIKSPROCESSEN FÅNGAD LEVANDE i mätfönstret (pid 2140015) · evighetsmotorn 614 kontroller (11:48:03Z) + målet återarmat 11:41Z · kunduppdragsfilerna fortsatt frånvarande (ingen order i flykt) · svitgapet oförändrat (fabrik/evighet/uppdrag 0) · CRON_SECRET 0 env · KOLLISIONSKLASSEN ÅTERKOM 09-18 i ny skepnad (s8-fönstret: o67-trippelkollision + git-index-kollision, ärligt bokförd med disknotiser) = bevisad i 3 fönster/3 skepnader, kuren disciplin ej mekanism — MEN disk-först-disciplinen bevisad i eget fönster (u2 läste anspråket, valde A2+C17, 0 kollision); kur-kö: fabrikinstruktion med isolerade nummerserier + explicita paths per commit |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik 187 klara/188 manifest (mätt 09-19 15:37; +41/dygn, takten ökande) · 600 utdataloggar · LEVERANSKONTRAKTET korpusmätt första gången: 599/599 klara uppgifter med kvitto, 0 tyst döda (123 exit≠0 men samtliga med leveransrad) · beslutsminne 77 poster (rond 59, 4 idag) · evighetsmotorn 762 kontroller FÅNGAD LEVANDE 13:38Z · pumpor uppe sedan 09-18 20:09 · kunduppdragsfiler fortsatt frånvarande · CRON_SECRET 0 env · svitgapet oförändrat (fabrik/evighet/uppdrag 0) |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind-grön i egen körning (sann exit 0, mätt 09-17); demoklient-G1 fortfarande röd (16/1); kvalitetsvaktens YTA-regel täcker (huvud)/pro/** sedan 09-16 (arProYta-kuren) |
-| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt tredje gången (107/0/0 egen 09-17); ordlista 2 154→2 745 r; kön 320 låst; tier-speglar preciserade (prenumeration/medlemskap finns, portfölj-ytorna saknas); I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
-| E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
-| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | "PROD-TÖMT 09-16" MOTBEVISAT (mätt 09-17): 163 039 rader levande i appens projekt (aufr) — 13:46-mätningen föll i tväprojektfällan (rkaq-dumpar saknar tabellen, kedja 6); arkiv-cron grön OBEVAKAT 02:40, 0 dublett-id; kvar: ALTER V1 på disk/HEAD (v2 endast i index-provsprotokollet), composite-index ej installerat, schema-drift, inventory 25 d; kedja 2 = enda system_events-kopian |
+| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS grönt fjärde gången (107/0/0 egen 09-19); kärnan kodstilla; kön 320 låst; o75 prefetch-kur deployad (48,5 KiB/entré stängd); tier-speglar: portfölj-ytorna saknas fortfarande; I1-audit opåbörjad; rapportnamn fast 2026-09-02 |
+| E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | kurser 432 (s5-vågorna; 381→432 på 2 dygn) men quiz/XP frusna sedan 09-15 (8 223/82 230); källöverensstämmelse bevisad i båda ändar 09-19 (deep-courses = siffror.json = live-HTML) men larmande divergensvakt saknas; speglingsfönstret 12 dygn = längsta sedan mätstart; priser.json orörd sedan v78 |
+| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 7 | OIDENTIFIERAD DAGLIG RADERARE i system_events (mätt 09-19: vagscan/signal/organ lever bara samma dag — id-diff bevisar radering, ej skrivfel; repo-genomgång 0 raderare, rot misstänks pg_cron/trigger/extern nyckel) + arkivkedjans TVÅ blinda fält (exporterna bevarar ej de typerna; 4 odeducerade dubletter i 09-16-filen — v3-kontraktet dömer bara trunkering); 4 nätter kadansgröna; ALTER V1 kvar; inventory 27 d; kärnbestånd 166k stabigt |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Rot-gapet STÄNGT (omgång 9: artefaktverifiering i deploy+kraschvakt); 09-18: patch-kön SLUTLEVERERAD (kön `[]` + ok-kvitton next/eslint 16.3.5 med hela beviskedjan, 6 spurious-rader arkiverade — falsk-grund-stängningen kurad; lasPatchKo läser tom fil); DRIFTSBOKEN 2px-rättad (150 982 B 02:22); prod 200 ×4 egen (/, /kurser, /blogg, /studio); 09-18 DAG: deploy prod@e5eca448 05:29:45Z HTTPS-200-kvitto + BUILD_ID BBrkvx9 + next-server 16.3.5 live (egna mätningar) + nattens S10-födelsebevisövningar (blad 8 i födelsetimmen, pump-noll STÄNGD, WAL-platå) + driftminnet maskinellt i feljakt-ledgern (o65: 69 salvor, bygg-OOM ×3); pm2 online; kvar: ISR 12/44 (fem nätter fast), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | 12 kontroller (KONTROLL 12 SSR-livssonden 09-18: o47:s blindhet botad — sentinellrutter provar LEVANDE SSR i varje vaktkörning) + 12/12 PASS · 0 manuella · GRÖN egen vaktkörning 09-18 05:39Z; feljakt-stormtriagen LEVER (o65: backlog 245/245 bedömda, stormar-grind allt-eller-inget, svit 20/20 egen); tmp-läckeklassen STÄNGD i BÅDA ändarna (o44+s8-u2, svit 15/15+12/12); artefakt-klassen av gap 3 stoppad i deployvägen; kvar: aggregator (90 sviter = provtagning, mätt 09-18), motorregister fruset 09-03, vaktrapports-stopp i deploy (mätt: 0 träffar i prod-synk) |
-| E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 GRÖN egen (09-18); OG manuellt kvar (0 träffar återmätt, public/og 404 i git); media-EVENT-exporten cronad 02:40 (s10-u1) men antal=0 ×6 OCH bucket-förteckningen backas av INGEN (gap skärpt) |
+| E36 | Mediebiblioteket | Grund | LEVER | 8 | FYND 09-19 (9→8, B7-precedensen): OG-beståndet fruset på 333 kursbilder sedan 09-05 medan registret nått 446 kurser ⇒ 113 kurser pekar på og:image-URL:er som 404:ar LIVE (pc-21 bevis, originalkurs 200) — delningsytan trasig för en fjärdedel av katalogen; OG-rerun = BYGGKÖ; svit 18/18 grön EGEN igen; media_fil-exporten antal=0 ×7 + 0 rader live (vantarkund ELLER raderarklassen — avgörs av E33/B9:s rotutredning); bucket-förteckningen backas fortfarande av ingen |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | Prestandaserien o45–o62 LEVER i prod (tolv kurer med EFTER-bevis: / _rsc 5→3 · requests 45→38 · transfer −42,3 KiB · /logga-in ×2 borta · PalettVakt-defern ur TBT-fönstret; band / P61 · TBT 675, /kurser TBT 1 074) + SPA-/StudioChat-koddelning (o27+o31) + mobil-mätverktyget METROLOGISKT HÄRDAT (o62: 19 fantomer bevisade, 52-px-ronden SLUT för barnägda ytor — 6 fynd = ShortSeller-knappens dokumenterade 44×44-undantag, 0 zoomfällor); kvar: o63-köposten (herons TREDJE länk home.slutTitta, 36,0 KiB spill), 2 designbeslut (prosa-länkar + 44-korset = huvudagent), inga egna sviter, språkresolvens-CLS intermittent, sökindex-cadans |
 
-Snittscore: **7,6/10** (287 poäng / 38 system; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,5/10** (284 poäng / 38 system; E36 −1 vid dokvåg s9-u3 09-19 — 113 kursers OG-bilder 404 live i prod (B7-precedensen); B9 −1 + E33 −1 vid dokvåg s9-u2 09-19 — B9:s historiekontrakt brutet (dagliga skans-rader raderas inom ett dygn av oidentifierad aktör; kvartalsdeduben slagen) och E33:s arkivkedja typblind + dublettblind med samma raderare verksamt i kärntabellen; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -2197,7 +2596,7 @@ Mediebibliotek (9).
 
 # A. UTBILDNINGENS KÄRNA
 
-## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-15 (s9-u3): talen rättade mot guldkällan — 337 kurser,
 8 223 quizfrågor (82 230 XP), fas2 18 / fas3 24 (data/siffror.json,
@@ -2207,6 +2606,14 @@ kurskartan; larvag-synk GRÖN 337=337=337). Score oförändrat — samma
 kontraktsbrott kvarstår i gaplistan. Senare samma dag (s9-u1:4-mätning):
 registerrebake 337 → **343 kurser** (siffror.json + commit 570c51ee +
 E01-äkthetstestet) — talen i Vad-raden gäller 343.* Ännu senare (s9-u2 2/3-mätning 2026-09-16): **352 kurser** (mx-vågorna kväll 09-15; quiz 8 223 oförändrad — nya kurser bär inga quiz). Senast (s9-u2 dokvåg 2026-09-17): **381 kurser** (s5:s kvällsvåg 09-16, 896c91ca; quiz 8 223 fortfarande oförändrad — larvag-synk GRÖN 381=381=381 · 0 fantomer, mätt). Senare samma morgon (s9-u2 omgång 8, 2026-09-17): **390 kurser** (s5:s morgonvåg; larvag-synk EGEN körning GRÖN 390=390=390 · 0 fantomer · 21 profiler; quiz 8 223 fortfarande oförändrat).
+
+*Återdiff 2026-09-19 (dokvåg s9-u2): **432 kurser** (siffror.json mtime 09-18
+21:52Z; +36 sedan 09-17-passningen; larvag-synk EGEN GRÖN 432=432=432 · 21
+profiler · 0 fantomer · exit 0); quiz 8 223 / XP 82 230 FRUSNA (underlagsglidning
+djupare — D21/A5:s rot); /labb 201 case exakt (fruset sedan 09-10); /kurser 200
+läkt (13,9 ms loopback; deployad = HEAD 00:20:41Z); nattens s7-våg bokförd (o78
+CV-kurer, o76 delvis negativ — se UPPDATERING-sektionen). Gap 1 återmätt lever:
+kurs-access-svit 0 träffar.*
 
 *Återdiff 2026-09-17 (s9-u3 omgång 12): talen 390 → **396 kurser** (siffror.json
 uppdaterad 2026-09-17 · deep-courses.json 396 nycklar/18,8 MB mtime 11:39 idag ·
@@ -2223,7 +2630,7 @@ o47:s felgren ÅTER, r58-kuren greppte ej) medan läkningen är RAM-blockerad
 onåbar för kunden tills synkens nästa bygge landar; statiskt / 200. Gap 1
 oförändrat (kurs-access-testsvit: 0 träffar i verktyg/, mätt).*
 
-- **Vad:** Plattformens ryggrad: 396 kurser × 3 språk (deep-courses.json,
+- **Vad:** Plattformens ryggrad: 432 kurser × 3 språk (deep-courses.json,
   103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP), 201 analyscase
   (/labb), kurs-access i tre nivåer (gratis-Fas 1 för alltid, 18 Fas 2- och
   24 Fas 3-kurser bakom ansökan), XP/stjärnor per kurssteg.
@@ -2364,7 +2771,7 @@ upp i filen.*
   genom två efterföljande kursvågor (398→401→408, atomär --baka i
   s5/s6-leveranserna); larvag-synk grön 408=408=408 · 21 profiler · 0 fantomer.
 
-## A4. Daglig träning — LEVER — 7/10 *(uppdaterad 2026-09-17)*
+## A4. Daglig träning — LEVER — 7/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): två av tre gap MOTBEVISADE i
 kod+prod. Determinismen (gap 2) är KODAD — FNV-1a-datumhash med salt ger
@@ -2391,6 +2798,25 @@ Alla 8 nyckelfiler orörda sedan 09-16 (git log); gap 1 lever: fortfarande
 0 sviter för streak/XP (lasStreak i member-local.ts:69 orörd). Score
 7 kvar.*
 
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789777515719 — tredje
+verifieringsvarvet): kodstilla men levande — 0 commits på samtliga 9 nyckelfiler
+sedan 09-16 (git log tom) medan /api/dagens-pass levererar färsk data: 09-19 →
+SWED-A.ST (Swedbank, pris 396,7 SEK, 52v-position 0,994). Rotationen
+oberoende verifierad för TREDJE gången, nu med exakt prod-match samma dag:
+FNV-1a (salt 1) ombereknad ur route.ts:s äkta ROTATION-array ger 09-19 →
+SWED-A.ST = dagens API-svar EXAKT; historiken står sig (09-16 SHB-B.ST ·
+09-17 SAND.ST). NY PRECISION: 09-19 OCH 09-20 ger BÅDA SWED-A.ST —
+datumhash % 12 kan repetera närliggande dagar; "roterande lista" är ett
+deterministiskt DAGSURVAL utan repetitions-skydd (ej fel, men värt veta när
+kunden frågar "samma bolag igen?" — kur = dags-lookup-tabell, designbeslut).
+Gap 1 lever oförändrat: 0 sviter (grep verktyg/ 09-19: 0 träffar på
+dagens/veckoplan/briefing/kunskap/streak/flashcard); lasStreak orörd
+(member-local.ts:69). Quiz-frusenheten når A4: dagens quiz (+10 XP)
+betjänar det gamla beståndet — quiz-totalen 8 223 frusen sedan 09-15 medan
+kurserna växt 396→432 (samma rot som A5/D21/D38-bokföringarna). Score
+7 kvar (kodstatis + verifierad determinism, inget gap rört — B13-precedensen).*
+
 - **Vad:** Dagens Pass (5-minutersritual: vågklassgissning på live-data,
   dagens quiz +10 XP, flashcards, streak), veckoplan, kunskapsflöde,
   morgonbriefing.
@@ -2400,7 +2826,7 @@ Alla 8 nyckelfiler orörda sedan 09-16 (git log); gap 1 lever: fortfarande
   src/components/ak1a/{dagens-pass,vecko-plan,kunskaps-flode,morgon-briefing}.tsx.
 - **Observation:** Väl dokumenterade små libs med pedagogisk copy; dagens
   pass är force-dynamic (live-data), övriga statiska. Inga tester (mätt igen
-  09-16: 0 träffar i verktyg/).
+  09-19: 0 träffar i verktyg/).
 - **GAP:** (1) streak-logik + XP-tildelning testas ej (lasStreak i
   member-local.ts — ren funktion, lätt svit); (2)~~dagens bolags determinism
   garanteras ej~~ MOTBEVISAT 09-16: datumhash kodad + prod-dubbelanrop
@@ -2477,7 +2903,7 @@ Score 7 kvar — yttillväxt utan gap-stängning. Se diff-tabellen i UPPDATERING
 
 # B. ANALYSMOTORERNA
 
-## B7. AKM2-analysmotorn + analysidorna — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## B7. AKM2-analysmotorn + analysidorna — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 5): score 9 → 8. Kärnan förblir
 kodbasens finaste — 156 kontroller gröna i egna körningar (kärna 25/25 ·
@@ -2504,6 +2930,21 @@ fundamental fortfarande 0 och berika-pipelinen stillastående 13 dagar
 (4b98cd15 09-04). Env-läckan lever (11/12 med ärvt env, egen körning).
 Score 8 kvar.*
 
+*Uppdatering 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789777515719,
+tredje varvet): ENV-LÄCKAN ÄR BORT — o48:s hermetik-pinn (09-18) verifierad
+med egna körningar i båda grenarna (12/12 med alla tre Supabase-variablerna
+ärvda OCH 12/12 i ren env — nätfri av konstruktion). Övrig driftbild: 156
+kontroller + motorvalidering 107/0/0 (5,2 s) gröna, livlinan 22/22 i eget
+fullsvep (22 × kod 200 med AKM2-spår i HTML), samtliga 11 premiumsidor 200,
+on-demand-kedjan skrev tre filer under mätfönstret (data/cache 36 runtime-
+JSON: netnet 25 · analys 10 · vagfundament 1; akm1/2/3/fundamental fortsatt
+0; + två främmande skrapkataloger asml-/erj-omg16 från 09-18 21:49),
+berika-pipelinen fortfarande stillastående — 15 dagar, ingen cron-rad — och
+o48:s fixture-rad (Fixtur AB, datum 2026-09-03) fortfarande GÄLLANDE
+ABB.ST-snapshot i prod (skrivskyddad sond, exakt tidsstämpelträff
+2026-09-15T22:07:31.119176+00:00). Score 8 kvar. Se diff-tabellen i
+UPPDATERING-sektionen.*
+
 - **Vad:** Plattformens vetenskapliga kärna: AKM1:s 20 fundamentalvariabler
   (V01–V20, 0–5 p med motivering), AKM2-lagersyntes (kärna + vikter +
   moduler + dynamik via injektion), förklaring per variabel med kurslänk,
@@ -2526,15 +2967,32 @@ Score 8 kvar.*
 - **GAP:** (1) kor-akm2-berika (AI-berikning) manuell OCH stillastående —
   senaste körning 2026-09-04, 0 cacher på disk, ingen cadans-vakt/påminnelse;
   behöver cron-koppling eller vakten ropar vid ålder; (2) snapshot-cadansen
-  fast (ingen ombestämning vid datakorrigering) + svitens env-hermetik
-  (kontroll 11 failar med ärvt Supabase-env); (3) motorregistret (2026-09-03)
+  fast (ingen ombestämning vid datakorrigering); ~~svitens env-hermetik
+  (kontroll 11 failar med ärvt Supabase-env)~~ BOTAD 09-18 (o48:s
+  hermetik-pinn — mätt 12/12 i BÅDA env-grenarna 09-19); **NY 09-19 —
+  prod-dataintegritet**: o48:s fixture-rad (Fixtur AB, komposit 62) fortfarande
+  GÄLLANDE ABB.ST-snapshot i prod-lagret (skrivskyddad sond 09-19, exakt
+  tidsstämpelträff) — sanering är R2-radering (kundens veto) eller
+  icke-destruktiv omkörning hos berika-ägaren, ingen av delarna ägd;
+  (3) motorregistret (2026-09-03)
   listar akm2-modulerna som "omonterade" i cron/autonomi-meningen —
   kopplingen till organ-pulsen saknas; (4) akm2-onsdemand steg 2+3 har ingen
   git-trackad livlina och ingen nät-branch — "accelerator, aldrig beroende"
   gäller bara datacache:s fyra typer; ett nytt cache-tömningstillfälle öppnar
   samma AKM3-tomrum (0/22) även för AKM2 om blockformatet ändras.
 
-## B8. AKM3 (regim, kalibrering, ensemble) — PÅGÅR — 7/10 *(uppdaterad 2026-09-16)*
+## B8. AKM3 (regim, kalibrering, ensemble) — PÅGÅR — 7/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789800329491, återdiff
+tredje varvet): fruset återmätt med egna mätningar — kalibrering-loggen 1 rad
+(09-04, ΔΦ=0, 0 episoder, alla faser "vantar-grind") · regime-loggen 1 rad
+(genesis 09-03, "magert", grön 7 %/röd 17 %) och /api/forskningslage levererar
+EXAKT genesis-talen live (100/7/76/17 — 16 d fruset; chipet åldrar osynligt för
+eleven) · /etc/crontab (mtime 09-08) + tom användar-crontab: fortfarande INGEN
+akm3-kalibrering/vagvalidering-rad (gap 4 orörd) · vercel.json "20 5 2 * *" ⇒
+nästa molnrond 2026-10-02 · sviten 55/55 PASS exit 0 EGEN (femte dokumenterade
+gröna; 09-17:s engångsfall visade sig ej) · lib 2 113 r EXAKTA (172/1 161/144/
+472/164), kodstilla sedan e9a75fab 09-04 (15 d). Score 7 kvar, PÅGÅR kvar.*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 6): allt MÄTT i arbetsytan —
 svit 55/55 PASS exit 0 (egen körning), lib 2 113 r orörda sedan 09-10.
@@ -2594,7 +3052,7 @@ roten) — instabilitetsnotis. Vagvalideringsrapporten 13 dagar gammal
   ytan tom (akm3=null mätt — återfyllningsvägen portfolj-uppfoljning finns
   som cron-rad men skrev 0 cacher vid 09-1-passagen, orsak outredd).
 
-## B9. Vågsystemet AK1TS — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## B9. Vågsystemet AK1TS — LEVER — 7/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): skanningen lever DAGLIGEN —
 senaste vågskans genererad 2026-09-15T05:05:22Z (mätt via
@@ -2654,7 +3112,46 @@ patch-byggfönstret. Score 8 kvar.*
   0 spår av 04:30Z-fönstret; curl till /dev/null utan logg); vagvalidering
   är fortfarande ENBART vercel-cron (båda Contabo-källor mätta) — körbevis
   + loggning krävs; (5) SENASTE-rapportens förnyelse är bruten (domar 09-04, filen kan
-  bara förnyas av agent/manuell körning med skrivåtkomst till repot).
+  bara förnyas av agent/manuell körning med skrivåtkomst till repot); (6) **NYTT
+  09-19 — HISTORIEKONTRAKTET BRUTET**: dagliga vagscan-rader (och signal/organ)
+  raderas ur system_events inom ett dygn av en aktör utanför repot — dagshistoriken
+  består ALDRIG, kvartalsdeduben är slagen (se återdiff-blocket ovan).
+
+*Återdiff 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789800329491;
+syskonet u3:s pivot-mätningar korsvaliderar nivåerna — deras B9-gåva på disk
+bokförd): skanningen lever dagligen — senaste rad genererad
+2026-09-19T05:05:21.478Z (Vercel-cronens minut; /api/vagscan/senaste läser
+type=eq.vagscan UR system_events), universum exakt 12/12 tickers, svit 57/57
+PASS exit 0 EGEN, /vagfundament 200 (41 ms), kärnan kodstilla sedan 09-17
+(motor 1 078 r exakt). MEN STORFYND — HISTORIEKONTRAKTET BRUTET (route.ts:23:
+"den dagliga vagscan-historiken (system_events) ÄR den fulla historiken"):
+read-only sond mot LEVANDE tabellen (verktyg/_s9u2-b9-vagscan-rader.mjs,
+Mimosa-mönstret — .env via loadEnvFile, nycklar aldrig loggade): TOTALT 1
+vagscan-rad (dagens), 2 signal-rader, 5 organ-rader — SAMTLIGA från idag;
+föregående dagars rader existerar ej kvar. BEVISKEJDA FÖR RADERING (motbevisar
+u3:s båda tolkningsgrenar): (1) id-diff 09-16→09-17-exporterna = exakt 4 rader
+försvann (vagscan 05:05:24 + signal 05:05:24 + organ 05:05:25 + organ 03:01:37,
+samtliga 09-16 — BEVISLIGEN skrivna, funna i 05:24Z-exporten, borta ur
+00:40Z-dumpen) medan 17→18 och 18→19 = 0 försvunna ⇒ gren (a) skrivfel
+motbevisad som huvudförklaring; (2) alla fyra nattexporterna är FULLSTÄNDIGA
+(truncerad:false, antal==totaltFranApi) ur SAMMA aufr-projekt som appen läser
+(appens URL ref-prefix aufr mätt; service-nyckel satt) ⇒ gren (b) tväprojekt
+motbevisad. RADERAREN EJ IDENTIFIERBAR I REPOT: samtliga DELETE-anrop
+genomgångna — organ.ts:s retention är typ-scopad (30/35 d; allowlisten SAKNAR
+vagscan/signal/organ men regeln raderar >30 d, ej <1 d), cleanup-rutten
+(7 d) har ingen cron-anropare, scan-rutten POSTar endast, pumpor/rond/
+evighetsmotor 0 DELETE ⇒ rot misstänks databas-sidan (pg_cron/trigger/extern
+nyckel) eller Vercel-byggets retention-version — kö till huvudagenten.
+KASKAD — KVARTALSDEDUBEN SLAGEN: dagens rad bär vagklassSnapshot 2026Q3
+protokoll 2 · 1 200 rader på kvartalets DAG 80 — dedube-läsningen (~120 dagars
+vagscan-rader) hittar inga tidigare snapshotter (raderna borta) ⇒ snapshoten
+REGENERERAS varje dygn och B8:s kalibreringsgalleri (steg 6-7) är i praktiken
+"endast senaste dygnet". Gap 4 orörd (/etc/crontab rad 24 kör 06:30 lokal till
+/dev/null 2>&1; 04:30Z-fönstret 0 spår i samtliga fyra exporter); gap 5 orörd
+(vagvalidering-SENASTE mtime 09-10 16:33, domar 09-04 = 15 dagar, serveras
+live av /api/data/vagstatistik; 0 UI-konsumenter kvar). Score 8 → 7
+(B14-precedensklassen: systemets egna dokumenterade dataflöde — daglig
+historik + kvartalsgalleri — faller ifrån i roten).*
 
 ## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-18)*
 
@@ -2797,7 +3294,22 @@ renderingen vid extrema värden förblir E2E-overifierad. Score 7 kvar
   säkert; (3)~~kalkylatorn utan länk per variabel~~ MOTBEVISAT 09-16:
   MODUL_KURS_LANK + forklaPoang-import lever i akm1-calculator.tsx.
 
-## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## B13. Portföljforskning — LEVER — 8/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789800329491):
+GLIDNINGEN FÖRDJUPAD — bolagsunivers.json 153 → 195 bolag (+42 på två dygn;
+621 502 B, skrivet 09-19 02:09Z) medan korstabell-grunden är FRUSEN på 100
+rader (83 582 B, 09-10 14:33Z) ⇒ 95 bolag utan korstabellrad (53→95) — gap 1
+akutare igen (cadans/rop vid universumsväxt). Sviter 32/0 + 50/0 GRÖNA EGENA
+(fjärde dokumenterade gången). member/portfolio-rutten fortfarande UTAN
+lasMedlemSession (0 träffar, 108 r — gap 3 lever). Uppföljnings-cronen
+dubbelt driven kvar (/etc/crontab "0 7 1 * *" + vercel.json) men 0
+fundamental/akm2/akm3-cacher på disk (data/cache 40 filer: netnet/analys/
+vagfundament-klasserna). Lib-kodstilla 023e9f95 09-09 (10 d). DRIFT I
+MÄT-FÖNSTRET: /portfolj-forskning + /portfoljbyggare + /rapporter 500
+(manifest-offerklassen — se UPPDATERING-sektionen; LÄKTA 07:12Z med åter-sonder
+200; /min-portfolj 200 hela tiden; ej kod).
+Score 8 kvar.*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD efter s2-spårets
 dataset-djup-vågor — bolagsunivers.json 120 → 153 bolag (+33; 458 144 B,
@@ -2955,7 +3467,7 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
   får default-OG tills deploy (AC4: force-static-DNA); (3) återkopplingsyta
   (läsarmätning per post) finns ej — kommentarer avsiktligt borta.
 
-## C16. M9-innehållsfabriken — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## C16. M9-innehållsfabriken — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u3 3/3, passning utan score-rörelse): Kön 124 → 175 filer på ett dygn (rot 48 · m9-ko 7 · granskning 77 · kvartal 43) medan data/blogg/ står på 55; GRANSKNINGSKO-SAMMANSTALLNING.md FÖRNYAD 16:58 samma dag (gapet "åldrande vy" stängt); granskningsmotorn i högvarv — 3 oberoende kontrollgranskningar (substansrabatt, rörelsekapital, industriaktier) med maskinella sifferkontroller, juridikgrind 0 fynd, diff-JSON-paket och anspråkskoordinering; §8-systemfyndet: BlogPost ~ord/200 vs SEO-GUIDER ≤2-min (fel släkts kontrakt påvisat, dom rättad). Flaskhalsen är nu publiceringsuttaget (kundens klick, R2), inte granskningen. Se diff-tabellen i UPPDATERING-sektionen.*
 
@@ -2966,6 +3478,25 @@ granskningsklar + branschguide-serien) · m9-ko 7 · granskning 53 · kvartal
 GRANSKNINGSKO-SAMMANSTALLNING.md åldras (09-14-vyn). Gapet "kön ej kopplad
 + växer" SKÄRPS; score 8 kvar (B13-precedensen). Kö: sammanställningen
 förnyas + publiceringsbeslut för kön.*
+
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789777515719 — andra
+varvet): kön 175 → 235 filer på två dygn (+60 ≈ +30/dygn — avmattning från
++51/dygn men stark tillväxt): rot 63 (61 JSON + 2 MD) · m9-ko 7 (oförändrad
+sedan 09-15) · granskning 107 (var 77; 11 sa-laser + färska KONTROLL-filer
+09-18: spelaktier, försvar, tillväxt, SaaS, Goldman Sachs Q3) · kvartal 58.
+Kvartalshierarkin kvartal/2026-q3/ är FULLVUXEN: 13 (09-15) → 33 (09-16) →
+43 (09-17) → 58 (09-19) = 10 kalendrar + 48 Q3-läspaket — s4-serien (Carlsberg
+senaste 1b85f722, JPMorgan "seriens 47:e", Fortum, SSAB, UPM) är kön nya
+tillväxtmotor medan m9-fabriken själv är kodstilla sedan våg 96 (bf9e06af):
+"C16-fabriken" är numera ett ekosystem av flera leverantörer. Sammanställningen
+FERSK igen: data/blogg-utkast/GRANSKNINGSKO-SAMMANSTALLNING.md (den bor i
+blogg-utkast-roten — kartans äldre lösa referens utan sökväg preciserad här)
+förynad 09-18 23:08 och TRIPPLERAD på tre dygn (55 691 B 09-16 22:58 →
+173 697 B) — "åldrande vy"-gapet hålls stängt mekaniskt av paketflödet självt.
+data/blogg/ står på 55 publicerade oförändrade (publiceringsuttaget = kundens
+R2-klick, fortfarande flaskhalsen). Gap 2 (hårdkodad serie-lista) och gap 3
+(schemalagd re-run saknas) lever. Score 8 kvar (B13-precedensen).*
 
 - **Vad:** Evergreen-utkastfabrik: deterministiska utkast (kassaflödes-
   analys-101, utdelningar-101, börspsykologi, branschmedianer ...) i kundens
@@ -3052,7 +3583,18 @@ omätbar grön tills läkningen. Score 9 kvar — fynden är drift + oförändra
   föregående utgåva saknas (kräver H3); (3) datasetens uppdateringscadans
   dokumenteras på sidan (n-redovisat finns, "nästa frysning" saknas).
 
-## C18. SEO/schema/llms.txt — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+## C18. SEO/schema/llms.txt — LEVER — 9/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789800329491):
+sitemap 2 239 → 2 420 loc (localhost 200, 443 810 B — speglarna med) ·
+sok-index FÄRSKAST: 440 kurser, genererat 2026-09-19 (public/sok-index.json,
+09-19 04:28Z — kopplingen lever men disciplinen förblir manuell: gap 3) ·
+llms.txt 200 (204 973 B) + robots.txt 200 (6 181 B) MEN /llms-full-txt-sonden felade 500 i mät-fönstret (LÄKT 07:12Z; /api/llms-full-txt + /api/llms-txt 200 à 280/218 kB efter läkning — manifest-offerklassen, se UPPDATERING; ej kod) ·
+seo.tsx 842 r (senaste ändring 1245141e 09-15, oförändrad sedan; kartans
+"841 r" var en rad fel) + schema-kurser.ts 193 r · OG-deploy-kopling
+fortfarande 0 träffar i deploya-contabo.sh (gap 2) · schema-sviten EJ körd
+under driftbrottet (09-17-precedensen: /kurser 500 = drift, ej schema-kod) ·
+G1-slutverifiering (Google rich-results live) återstår. Score 9 kvar.*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 2): schema-kurser OMÄTT GRÖN igen —
 444 kontroller / 0 fel (18 sidor, 6 kurser × 3 språk mot localhost).
@@ -3148,7 +3690,7 @@ terad. Live mätt: track POST {} → 400 · trafik 200 · tracer 405 (POST-only
 
 # D. MEDLEM & KOMMERS
 
-## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-13: LOGIN-2.0 landat och E2E-verifierat på prod
 (specifika feltexter + live-räknare; STYRELSE-2026-09-11-V106 § 3 D1).
@@ -3164,6 +3706,18 @@ mappas till "ej_bekraftad" ENDAST vid korrekta uppgifter (medlem-auth.ts:204).
 medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
 (0 träffar). Score 7 → 8 (huvudgap mätbart stängt).*
 
+*Återdiff 2026-09-19 (dokvåg s9-u1, manifest auto-s9-1789800329491): sviten
+17/17 GRÖN EGEN igen (exit 0) · glomt-grenen OTÄCKT återmätt (0 svitträffar) ·
+kärnan KODSTILLA 8 d (medlem-auth.ts 556 r + route.ts 186 r, senaste commit
+d83915fb 09-11) · TALRÄTTNING medlem-inloggning.tsx 220 → 301 r (oförändrad
+sedan 10f7b75f 09-12, autoComplete W3C-tokens på plats) · live: /logga-in +
+båda speglar 200, POST-kontrakt 400/405/401 mätta, rate-limit 5/min +
+Retry-After + neutral talkart i kod · TVÅ NYTTA GAP: (4) glomt-valideringsfel
+mappas till 502/tjanst (live-mätt; medlem-auth.ts:389 + route.ts:149 — kur
+kräver src/), (5) /logga-in saknas i gränssnittsvaktens FALLBACK_SIDOR
+(B12-klassen). Score 8 orörd (E33/B14-precedensen). Se UPPDATERING-sektionen
+för diff-tabellen.*
+
 - **Vad:** Medlemsautentisering via Supabase Auth (GoTrue v2) genom server-
   proxy: signup/signin/signout/session/GLÖMT-LÖSENORD (recover, neutral
   talkart), tokens ENDAST i httpOnly-kakor (access 1 h + refresh 30 d med
@@ -3173,7 +3727,7 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   migreringsbanner.
 - **Nyckelfiler:** src/lib/medlem-auth.ts (556 r, 17/17 tester gröna mätta
   2026-09-16), src/app/api/medlem/route.ts (glomt-gren + glomtAnrop-rate-limit),
-  src/components/ak1a/medlem-inloggning.tsx (220 r + glomt-läge), src/
+  src/components/ak1a/medlem-inloggning.tsx (301 r + glomt-läge; talrättat 09-19 — oförändrad sedan 09-12), src/
   components/ak1a/{logga-in,inloggad-knapp,migrera-progress}.tsx, src/app/
   (huvud)/logga-in + speglar, verktyg/testa-medlem-auth.mjs.
 - **Observation:** KÄRNAN är ren och väldokumenterad (kontrakt i filhuvud,
@@ -3186,7 +3740,11 @@ medlem-auth.ts nu 556 r; sviten 17/17 GRÖN körd nu men täcker EJ glomt-grenen
   (0 träffar — mappning + neutral talkart är rena funktioner, sviten
   stubbar nätverket redan); (3) återställningsmejlets leveransväg (GoTrue-
   konfig, avsändardomän) overifierad — kodvägen grön, mejlvägen omätbar
-  från arbetsytan.
+  från arbetsytan; (4) felklassmappning i glomt-grenen: lokalt valideringsfel
+  sänder 502 {"kod":"tjanst"} i stället för 400 (live-mätt 09-19;
+  medlem-auth.ts:389 bär "tjanst" även för valideringsfel + route.ts:149
+  mappar allt !ok → 502) — kur kräver src/; (5) /logga-in (+ speglar) saknas
+  i gränssnittsvaktens FALLBACK_SIDOR — rutinmäts ej (B12-klassen, 09-19).
 
 ## D21. Medlemsdata & progress — LEVER — 8/10 *(uppdaterad 2026-09-18)*
 *Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):
@@ -3227,18 +3785,23 @@ når D38:s KursNavet. Score 8 orörd (E33/B14).*
   (3) GDPR-export/radering av eget konto finns ej i UI (endast kontaktväg)
   — tyngsta kvarvarande gapet, GDPR-DATAKARTA lever men UI-ytan är obyggd.
 
-## D22. Betalning & prenumerationsstomme — VÄNTAR — 5/10 *(uppdaterad 2026-09-17)*
+## D22. Betalning & prenumerationsstomme — VÄNTAR — 5/10 *(uppdaterad 2026-09-19)*
 
-*Uppdatering 2026-09-17 (dokvåg s9-u2 omgång 9, read-only — inget pris
-rördes): stommen OFÖRÄNDRAD sedan våg 77 (202 r + 4 komponenter orörda
-sedan 09-10); "ingen PSP-kod" bekräftad (PSP-namnen endast R2-veto-ordlista
-i styrelsemotorn + substring-falskar); "e-postnotis till admin" MOTBEVISAD
-I FORMEN — intention-leden är starkare: anonymiserat A4-event →
-/api/konvertering/intention (system_events type=konvertering_intention,
-rate-limit 10/min, fälttak) + admin-VY /api/admin/konvertering (401-vaktad),
-inget brev; NYTT GAP 4: intentionerna bor i system_events (E33:s FLAGGA-
-tabell). Prod-ytor osonderbara pga det globala SSR-driftfelet (mätt: /
-200 medan /kurser 500 samma sekund).*
+*Uppdatering 2026-09-19 (dokvåg s9-u2 2/3, manifest auto-s9-1789824900585,
+read-only — inget pris rördes): koda STILLA sedan 09-17 (0 commits på alla
+D22-vägar, trädet rent) men ytorna mätbara för första gången på två
+veckor: /prenumeration + /medlemskap 200, speglarna /en/ + /ar/ × båda
+sidorna 200 (SSR-läkningen håller); admin-vyn 401 MÄTT LIVE; intention-
+rutten GET→405 (POST-only intakt); intention-raderna TOTALT 0 i levande
+tabellen (read-only sond — "aldrig registrerad" kan ej skiljas från
+"raderad", E33:s raderare är typspecifik och fri från denna typ); 0 egna
+testsviter fortfarande. Uppdatering 2026-09-17 (omgång 9): stommen
+OFÖRÄNDRAD sedan våg 77 (202 r + 4 komponenter); "ingen PSP-kod"
+bekräftad (PSP-namnen endast R2-veto-ordlista i styrelsemotorn);
+"e-postnotis till admin" MOTBEVISAD I FORMEN — intention-leden är
+starkare: anonymiserat A4-event → /api/konvertering/intention
+(system_events type=konvertering_intention, rate-limit 10/min, fälttak)
++ admin-VY /api/admin/konvertering (401-vaktad), inget brev.*
 
 - **Vad:** Prenumerationssidan med tre nivåer, fas-rabatt (0,2) travas i
   klienten, aktiveringsintention i localStorage (köpflödets minne tills
@@ -3255,22 +3818,33 @@ tabell). Prod-ytor osonderbara pga det globala SSR-driftfelet (mätt: /
 - **GAP:** (1) betalflöde (PSP-val + implementering) — blockerat på kundens
   beslut, förberett via G2-prisstegen; (2) transaktionspris MÅSTE läsas ur
   samma lager vid köp (kontrakt redan i variabler-lagring); (3) ångerrätt-
-  flödet (2005:59 2 kap 10-11 §§) endast text — ingen ångerknapp/kvitto.
+  flödet (2005:59 2 kap 10-11 §§) endast text — ingen ångerknapp/kvitto;
+  (4) intentionerna bor i system_events — E33:s tabell är NEDGRADERAD
+  (LEVER 7 sedan 09-19: typspecifik raderare på vagscan/signal/organ);
+  konvertering_intention är OBSERVERAD 0 rader (09-19-sonden) men "aldrig
+  skrivna" kan ej skiljas från "raderade" förrän en skarp klick-test
+  registrerats och överlevt ett dygn.
 
-## D23. Prisstegen (portfölj-tier) — VÄNTAR (bakom flagga) — 7/10 *(uppdaterad 2026-09-17)*
+## D23. Prisstegen (portfölj-tier) — VÄNTAR (bakom flagga) — 7/10 *(uppdaterad 2026-09-19)*
 
-*Uppdatering 2026-09-17 (dokvåg s9-u2 omgång 9, read-only — ingen flagga
-sattes): grinden MÄTT I PROD — robots.txt 0 tier-rader + sitemap 0 tier-
-URL:er ⇒ tierAktiv()=false i körande instans; NEXT_PUBLIC_TIER_AKTIV finns
-i ingen .env-fil (namn-närvaro mätt, värden aldrig lästa); priskällan
-preciserad två-lager (lasPriser struktur + lasPriserGallande pristal,
-Supabase-override senaste-vinner); speglar en/ar mätt SAKNAS; aktiveringen
-bär BYGGKRAV (NEXT_PUBLIC_* inlineras vid bygge). Sidorna orörda sedan
-våg 99 (2a566cfd). 0 egna testsviter.*
+*Uppdatering 2026-09-19 (dokvåg s9-u2 2/3, manifest auto-s9-1789824900585,
+read-only — ingen flagga sattes): FÖRSTA prod-mätningen av själva grinden
+(09-17 nåddes bara robots/sitemap): tier-sidorna svarar **200 med
+notfound-kropp — SOFT-404**, inte status 404 som kartan antog från
+kodläsning (ISR-cachen `x-nextjs-prerender: 1` serverar notFound-renderen
+som 200; identiskt för bot- och browser-UA); NOLL säljinnehåll läcker
+(defaulttitel, inga pristal/CTA/mailto — R2 håller i sak); flaggan AV i
+både fil- och processmiljö (nytt mått: pm2 env bär ingen TIER-variabel);
+robots 0 tier-rader + sitemap 0 tier-URL:er HÅLLER (sitemaps 24 övriga
+portfolj-rader = B13:s forskningssidor, ej tier); sidorna kodstilla sedan
+våg 99; speglar en/ar saknas fortfarande; 0 egna testsviter. Uppdatering
+2026-09-17 (omgång 9): priskällan preciserad två-lager (lasPriser
+struktur + lasPriserGallande pristal, Supabase-override senaste-vinner);
+aktiveringen bär BYGGKRAV (NEXT_PUBLIC_* inlineras vid bygge).*
 
 - **Vad:** Tre tier-sidor (portfolj-grund/plus/hyra = 249/449/799 kr/mån i
   registret) byggda KLARA men oåtkomliga tills kundens prisbeslut:
-  NEXT_PUBLIC_TIER_AKTIV=1 aktiverar (404-grind + robots + sitemap-gating).
+  NEXT_PUBLIC_TIER_AKTIV=1 aktiverar (grind + robots + sitemap-gating).
   Alla pristal ur lasPriserGallande() — ingen hårdkodad siffra.
 - **Nyckelfiler:** src/lib/tier-status.ts, src/components/ak1a/portfolj-tier/
   tier-sida.tsx, src/app/(huvud)/{portfolj-grund,portfolj-plus,portfolj-hyra}/
@@ -3278,6 +3852,12 @@ våg 99 (2a566cfd). 0 egna testsviter.*
 - **Observation:** EXISTS-kravet från G2 är uppfyllt i kod: sidorna bygger,
   grindas korrekt (robots.ts + sitemap.ts läser samma flagga), CTA går till
   ansökan/mailto (mänsklig aktivering — ingen betalmotor krävs för launch).
+  PROD-NYANS (mätt 09-19): grinden är en SOFT-404 — sidorna svarar 200 med
+  notfound-kropp (ISR-serverad) i stället för status 404; innehållet läcker
+  inget och Google tolkar soft-404 innehållsbaserat som 404, men
+  statuskodskontraktet i tier-status.ts:s dokumentation ("rutten svarar
+  404") håller EJ i körande instans — samma klass av oenhetlighet som
+  /pro:s 500 (E30-notis i sektionen ovan).
 - **GAP:** (1) kundens slutliga priser (R2: prissättning väntar kund);
   (2) när aktiverad: speglar en/ar för tier-sidorna saknas (svenska-only);
   (3) tier-CTA:n mot betalflödet (D22) när det finns.
@@ -3526,7 +4106,18 @@ SAMMANSTALLNING + JSON-format, se C15) — gamla talet dött; juridik-FP
   knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
 
 
-## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-17)*
+## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (s9-u1, manifest auto-s9-1789824900585): KOMMANDO-
+BUSSEN FÄRDIG — ZCODE-GAP-REGISTER 36/36 STÄNGT på live-bevis (rond 90:
+v188:s fakta-typer var sista öppna posten; v186:s sendText-UI lever bakom
+Zap-toggle ak1a-v4-sendvag med gamla styrvägen som rollback). Transporten
+10 866 r (+31 % sedan 09-17), 35 API-rutter (+11), 8 studio-komponenter,
+7 skickaV4-metoder. STORFYND: binärbevakningen fallerat — npm latest
+3.12.3-26 medan servern KÖR 3.11.2-24; paritetstaket 39/91 är mätt mot en
+binär som inte längre är senaste och våg 93:s "ej exponerade i NÅGON
+version"-dom gällde 3.11-familjen; v92-e2e-omkörning + registerforskning
+mot 3.12.x = AKTUELL KÖ (diff-tabell i UPPDATERING-sektionen).*
 
 *Uppdatering 2026-09-17 (s9-u3 omgång 10): gap 4 MOTBEVISAT — våg 169
 (a77bb1a3, 09-16) levererade lasV4Anvandning + /api/studio/tjanster/usage-v4
@@ -3554,12 +4145,13 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   SER bilder), rewind (turn-fork), kommandopalett, modell/läge/tanke-val,
   server-persistenta inställningar, plugin-drift, styrelseregel-yta,
   uppladdningar, hälsa, admin-verktygslåda — våg 81-93 allt levande.
-- **Nyckelfiler:** src/lib/studio/{studio-transport.ts (8 316 r!),
-  permissions-policy.ts (381 r, 63/63), styrelse.ts (864 r), kommandon.ts},
+- **Nyckelfiler:** src/lib/studio/{studio-transport.ts (10 866 r!),
+  permissions-policy.ts (390 r, 63/63), styrelse.ts (873 r), kommandon.ts},
   src/components/ak1a/{studio-chat,studio-admin-panel,
-  studio-fardigheter-panel,studio-minne-panel,studio-html-export}.tsx*,
-  src/app/(huvud)/studio, src/app/api/studio/** (24 rutter), data/forskning/
-  V91-Z-PARITET-KARTA.md.
+  studio-fardigheter-panel,studio-minne-panel,studio-html-export,
+  studio-forbrukning-panel,studio-godkannande-panel,studio-maskin-panel}.tsx*,
+  src/app/(huvud)/studio, src/app/api/studio/** (35 rutter), data/forskning/
+  V91-Z-PARITET-KARTA.md + ZCODE-GAP-REGISTER.md (36/36 STÄNGDA).
 - **Observation:** Kodbasens tyngsta och mest härdade system:
   barnprocess-overlevnad (auto-restart 3 försök backoff 2/8/32 s, race-skydd),
   MAX_AKTIVA_BARN=3 + idle-städning, SSE-hjärtslag 15 s, disk-persistens av
@@ -3568,14 +4160,17 @@ verifiera effekt efter häng, tunga körningar till subagent).*
   binären saknar. E2E: 7 PASS / 0 FAIL / 2 SKIP (våg 92, prod). Paritet
   ~39/91 tjänster — taket satt av binären 3.11.2-22 (=npm latest; utredning
   stängd våg 93: automation/webbläsare ej exponerade i NÅGON version).
-- **GAP:** (1) binärbevakning per våg (`npm view zcode-app-cli version`,
-  dokumenterad rutin) — vid version > 3.11.2-22 körs v92-e2e direkt;
-  (2) -32031 vid första meddelandet efter omstart (självläker på sekunder,
-  engångskostnad — obevakad bugg); (3) äkta v4-attachment-väg implementerad
-  men ej live-bevisad (referensvägen bär bilder idag); (4) usage/cost-panel
-  per dag (F3) tunn i UI; (5) skal-kvotens ~30 s-häng är karaktäriserat men
-  EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
-  teknisk kur (återkommer tills app-servern fixar det underliggande).
+- **GAP:** (1) binärbevakning per våg (`npm view zcode-app-cli version`)
+  TRIGGAD 09-19: npm latest 3.12.3-26 medan servern KÖR 3.11.2-24 —
+  minor-familjen 3.12.x släppt obemärkt, rutinen "vid version > 3.11.2-22
+  körs v92-e2e direkt" är en AKTUELL KÖ + registerforskning enligt
+  registrets regel 3; (2) -32031 vid första meddelandet efter omstart
+  (självläker på sekunder, engångskostnad — obevakad bugg); (3) äkta
+  v4-attachment-väg implementerad men ej live-bevisad (referensvägen bär
+  bilder idag); (4) usage/cost-panel per dag (F3) tunn i UI; (5)
+  skal-kvotens ~30 s-häng är karaktäriserat men EJ botat i binären —
+  node-wrapper-disciplinen är en process-kur, ingen teknisk kur
+  (återkommer tills app-servern fixar det underliggande).
 
 ## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10 *(uppdaterad 2026-09-18)*
 
@@ -3761,7 +4356,15 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   demoklient-G1 röd — demodatot saknar fullständigt AKM2Resultat; fixa
   fixture eller testkontrakt innan B2B-aktiveringspaketet hämtas fram.
 
-## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-17)*
+## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-19)*
+
+*Uppdatering 2026-09-19 (dokvåg s9-u2): nattens o75 bokförd — prefetch={false}
+7 ställe/spegelrot (6 _rsc-flygningar ≈ 48,5 KiB/kall entré/spegel STÄNGD; nu 15
+per språk i 4 filer med blogglistorna); o77:s språkdetekt-klargörande (auto-detekt
+endast SSR-konsistent); motorvalidering EGEN 107/0/0 (5,7 s) = FJÄRDE gröna;
+kärnan kodstilla exakt (820/890/540/346/342/2 745 r); kön 320 + termbank 0 poster
+oförändrade; tier-spegelgapet lever (portfölj-ytor saknas); I1 0 artefakter;
+speglar LIVE 200. Score PÅGÅR (I1) 7 kvar — prestandakur ändrar ej I1-läget.*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u3 omgång 13): ÅTERDIFFAD (kartans äldsta
 stämpel, 09-15). Motorvalidering EGEN KÖRNING: 107 PASS / 0 FAIL / 0 SKIP
@@ -3820,7 +4423,7 @@ tier-spegelgapet kvarstår (en/ar portfolj-grund saknas, ls mätt). Läge PÅGÅ
   mätt kvarstående 2026-09-15).
 
 
-## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-15 (s9-u3 omgång 2): siffror.json bekräftad mot
 guldkällan (337/8 223/82 230 + kanonSomKurs 96; uppdaterad 2026-09-15 i
@@ -3830,6 +4433,28 @@ dokumenterat kontrakt i filhuvudet (raknelogik speglar rakna-siffror
 EXAKT, per-fält-fallback, kastar aldrig, NEXT_PHASE-hermetik) men ingen
 aktiv divergensvakt; Supabase-vägens prisnormalisering har typade guards
 medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
+
+
+*Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789777515719 — andra
+varvet): guldkällan i rörelse — siffror.json 432 kurser (09-18 23:52;
+381→432 sedan 09-17-stämpeln via s5-vågornas register-tillväxt, senaste
+044d1f47 med clobberläkning 429→432) medan quiz/quizXp FORTFARANDE FRUSNA
+(8 223/82 230, oförändrade sedan 09-15) — +51 kurser utan nytt quiz-bränsle;
+E32 bär nu samma frusenhetstal som A5/D21/D38-klasserna. KÄLLÖVERENS-
+STÄMMELSEN BEVISAD I BÅDA ÄNDAR (09-19): public/deep-courses.json = 432
+objekt (node-räknat) = siffror.json = startsidans LEVERERADE live-HTML
+("432 kurser, 102 kanonböcker, 8 223 quiz") ⇒ siffror-live och siffror.json
+överensstämmer i runtime VID MÄTTILLFÄLLET — gap 2 mjukas ytterligare (vakten
+PASSAR fil-kontrollen + runtime överens mätt) men den mekaniska
+divergensvakt som SLÅR LARM saknas fortfarande (överens idag ≠ vakt).
+priser.json innehållsorörd sedan fbfb135f (våg 78) — speglingsfönstret 12
+dygn (09-07→09-19), det längsta sedan mätstart; fil-mtime 09-10 är
+git-checkout-beröring, ej innehåll (git log tom sedan fbfb135f).
+variabler/variabler-lagring/siffror/siffror-live kodstilla sedan våg 82
+(1be25f14); /api/variabler 200 live med samtliga 14 registefält (mätt).
+ÖVERSIKT-radens "320 poster i översättnings-fallback-kön" var ett E31/E33-
+ämne som fastnat i E32-raden — rätat här till E32-egna fakta (E31 är syskonet
+u2:s yta i samma manifest, deras sektion orörd). Score 8 kvar (B13-precedensen).*
 
 - **Vad:** Pris- och tal-sanningen: priser.json (ALLA priser + fas-rabatt +
   B2B + onboarding) med Supabase-override senaste-vinner via variabler-
@@ -3850,7 +4475,7 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
   (3) priser.json saknar schema-validering vid inläsning (ogiltig JSON =
   tasgren).
 
-## E33. Supabase-persistenslagret — LEVER — 8/10 *(uppdaterad 2026-09-17)*
+## E33. Supabase-persistenslagret — LEVER — 7/10 *(uppdaterad 2026-09-19)*
 
 *Uppdatering 2026-09-17 (dokvåg s9-u3 3/3): FLAGGA 7 → LEVER 8 — "prod-tömningen" MOTBEVISAD: 09-17-arkivet (cron 02:40, obevakat) bär 163 039 rader med kontinuerlig äkthetsdiff (+1 361 sedan 09-16 07:24) — appens projekt (aufr) var aldrig tomt; 13:46-mätningen föll i tväprojektfällan (pg_dump-lästa rkaq saknar tabellen helt; kedja 6:s fynd). Återimport-kön AVBOKAS; arkiv-cadensen grön utan agent; 0 dublett-id i nya arkivet. Kvar lever: V1 på disk/HEAD (v2 endast i DR-INDEX-PROV-2026-09-16-2.md:33-34), composite-indexet ej installerat, schema-drift, inventory 25 d. Se diff-tabellen i UPPDATERING-sektionen.*
 
@@ -3903,6 +4528,30 @@ publicerade rensas ej. Score oförändrad: kunskap tillförd, inga gap stängda.
   aterstall-system-events.mjs (4 dublett-id, bevisat); (5) NYTT: arkiv-
   cadansen ojämn (lucka 09-10→09-14; senaste arkiv 09-16 07:24) —
   verifiera cron-kedjan.
+
+*Återdiff 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789800329491):
+arkivkedjan grön på ytan — 4 konsekutiva nattexporter (09-16→09-19 02:40,
+obevakade), antal==totaltFranApi ×4, 0 dublett-id (id-diff 17→18 och 18→19 =
+0 försvunna) — MEN TVÅ BLINDA FÄLT + EN OIDENTIFIERAD RADERARE: (1)
+TYPSLÄPNING: nattexporterna bevarar EJ typerna vagscan/signal/organ (0 rader i
+09-17/18/19-filerna trots fullständig dump) — tabellens rader av dessa typer
+raderas samma dag (beviskedja: read-only sond TOTALT 1/2/5 rader alla från
+idag + id-diff 16→17 med exakt 4 försvunna; se B9:s block) ⇒ "kedja 2 = enda
+kopian" är för dem FALSK: varken tabell eller arkiv bär historiken. (2)
+DUBLETTLINDHET: 09-16-filen bar antal 161 678 > totaltFranApi 161 674 = 4
+odeducerade Range-skift-dubletter — v3-kontraktet dömer bara trunkering
+(antal < totalt), aldrig dubletter (fyndet upplöste även "oversattning −4"-
+skenet i min typjämförelse: ingen rad försvann, fyra räknades dubbelt).
+RADERAREN: repot genomgånget (samtliga DELETE-anrop: organ.ts typ-scopade
+30/35 d-regler, cleanup-rutt 7 d utan anropare, pumpor/rond/evighetsmotor
+0 DELETE) ⇒ rot misstänks DATABAS-SIDAN (pg_cron/trigger/extern nyckel) eller
+Vercel-byggets retention-version — kö till huvudagenten: dashboard-granskning
+FÖRE ev. allowlist-kur (annars maskeras roten). Dessutom återmätt: ALTER V1
+fortfarande på disk/HEAD (2a55da6e — gap 3 orörd) · supabase-inventory.json
+27 d (generatedAt 08-23) · kärnbeståndet stabigt (166 067 rader 09-19,
+oversattning/trafik/sakerhet/akm2_snapshot orörda av raderaren). Score 8 → 7:
+integritetsbilden sämre än kartan visste — oidentifierad daglig raderare i
+kärntabellen + fullständighetskontraktets två blinda fält.*
 
 ## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-18)*
 

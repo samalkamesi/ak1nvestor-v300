@@ -1,0 +1,99 @@
+{
+  "granskat": "data/blogg-utkast/lyxaktier-sa-analyserar-du-lyxbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743-s1-u3 (2026-09-19)",
+  "rapport": "lyxaktier-sa-analyserar-du-lyxbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1 VÄSENTLIGT: 'rörelsemarginal 30,3 procent' (Hermès) är METRIKFÖRVÄXLING: Hermès egen IR key figures visar recurring operating income 6 569 M€ = 41,0 % av 16 002 M€ FY2025; 30,3 % är IR-fotnotens JUSTERADE NETTOMARGINAL (restaterad för exceptionell fransk bolagsskatt) — webbkorsbelagt 2026-09-19 (finance.hermes.com + FT + Yahoo); rättningen FÖRSTÄRKER pyramid-argumentet (41,0 mot LVMH 22,0 = 1,86× i stället för 1,38×). B2 VÄSENTLIGT: resultatserien stryker startåret — universumet bär 14,1 (2022), 15,2 (2023), 12,6 (2024), 10,9 (2025); texten listar tre tal utan markering att raden börjar 2023, vilket gör CAGR-påståendet '−8,2 %/år över de fyra räkenskapsåren' ohärlebart ur textens egna tal (15,2-start ger −10,5 %/år; källvärdet −8,2 kräver 14,1-starten: (10,878/14,084)^(1/3)−1 = −8,22 %) — detailhandel-B1:s fönsterklass. B3 VÄSENTLIGT: konsumentmedianen gliden 48,3 % (n=16, byggvintagen 795fe396 09-17 03:04 — korrekt räknad DÅ) → 50,9 % (n=29, dagens 201-postfil) — seriens kraftigaste universumglidning; fyra ytor bär presensmeningen. B4: readingMinutes 2 → 6 (1 215 ord; round/200; nionde fallet i klassen). I övrigt GRÖNT: källtalsparitet 11/11 + hela omsättningsserien + resultattalen EXAKTA mot bolagsunivers.json (MC.PA, källvintage 09-03), nettofallet −13,3 % EXAKT mot råserien (10 878/12 550 = −13,32), superlativen 'endast Evolution högre' SANT i både vintagen och dagens universum (superlativfällan kontrollerad, grön här), KO 61,9 exakt, aritmetik 9/9 (1,06×0,92 = 0,9752 → 'minus 2,5'; forward-P/E 19,713/1,1232 = 17,55 → '≈ 17,6'; −1,74/−4,60 %-stegen; 17,8/80,8 = 22,03 % → '22 procent'), externa tal webbkorsbelagda 4/4 (LVMH 80,8 mdr €; Hermès 16,0 mdr/+9 % fasta/+5,5 % rapporterat; Arnault 50,01 %/65,94 % feb 2026 — WWD/Bloomberg/Yahoo/Luxury Tribune), juridik 2007:528 ren (26 varumärkesmönster × 3 ytor = 0; 0 lagrum; 0 rådverb; disclaimer exakt sist), 911 = 0/6 mönster, 12/12 interna länkar HTTP 200 mot localhost (se-05-lyxsektorn levande), struktur grön (6 H2, title 36/60, desc 148/155, 0 mjuka bindestreck, 1 215 ord i mallspannet).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; samtliga söksträngar maskinverifierade unika = 1 träff på sin yta). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, 09-18, ogranskad) bär B1–B4:s systrar ('operating margin 30.3 percent' ×1 · '48.3' ×3 · '15.2, 12.6' ×1 · 'sixteen' ×1 · rm 2 vid 1 393 ord ⇒ 7 · desc 'medianens 48') — speglas vid verkställling.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Pyramiden — aspirationskonsumenten försvinner först, Hermès-bevisets sista led)",
+      "gammalt": "rörelsemarginal 30,3 procent",
+      "nytt": "rörelsemarginal 41,0 procent",
+      "orsak": "METRIKFÖRVÄXLING MOT HERMÈS EGNA IR: key figures-sidan (finance.hermes.com, läst 2026-09-19) ger FY2025 recurring operating income 6 569 M€ = 41,0 % av 16 002 M€ (H1-25: 41,4 %, H1-26: 41,0 %); 30,3 % förekommer ENDAST i fotnoten 'net profit (group share) … 30.3% for full-year 2025' = justerad NETTOMARGINAL restaterad för den exceptionella franska bolagsskatten. Byggarens live-läsning 09-17 plockade fotnotstalet med rörelse-etiketten. Rättningen stärker pyramid-kontrasten: 41,0 mot LVMH:s 22,0 = 1,86× (tidigare 1,38×) — JPM/Samsung-precedensens klass. Söksträngen unik (1 träff). Spegling -en: 'operating margin 30.3 percent' → 'operating margin 41.0 percent'"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Cykeln — från boom till normalisering, genomräknad, resultatseriens inledning)",
+      "gammalt": "Resultatserien: 15,2, 12,6 och 10,9",
+      "nytt": "Resultatserien: 14,1, 15,2, 12,6 och 10,9",
+      "orsak": "TIDSFÖNSTER-FÖRSKJUTNING (detailhandel-B1:s klass): universumets serie är 14 084 → 15 174 → 12 550 → 10 878 M€ (2022–2025); texten listar tre tal under en fyraårig omsättningsserie utan markering att resultatraden börjar 2023. CAGR-påståendet '−8,2 procent per år över de fyra räkenskapsåren' är källfältet resultatCAGR5ar (−8,25) och kräver 14,1-starten: (10,878/14,084)^(1/3)−1 = −8,22 %; ur textens tre tal får läsaren −10,5 %/år. Infogning av 14,1 gör serien komplett, CAGR härledbar och berättelsen (2023-topp, fall −13,3 % 2025) orörd. Söksträngen unik (1 träff). Spegling -en: 'The earnings series: 15.2, 12.6 and 10.9' → 'The earnings series: 14.1, 15.2, 12.6 and 10.9'"
+    },
+    {
+      "id": "B3a",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Lyxaktier och prissättningsmakten — mekaniken, marginalmeningen)",
+      "gammalt": "I universumets sexton konsumentbolag är medianen 48,3 procent",
+      "nytt": "I universumets 29 konsumentbolag är medianen 50,9 procent",
+      "orsak": "UNIVERSUMGLIDNING (flygaktier-B2:s klass, seriens kraftigaste): 48,3 %/n=16 = byggvintagen 795fe396 (09-17 03:04, korrekt DÅ); dagens 201-postfil ger n=29 och median 50,87 % (Ferrari m.fl. tillkommit efter bygget). Huvudkur = omräkning — kontentan orörd (66,4 ligger 15,5 pp över; 'endast Evolution högre' förblir sant i dagens fil, superlativgrön). Alternativ kur åt ägaren: as-of-datering ('Vid guidens dataunderlag, 2026-09-03: sexton konsumentbolag, median 48,3 procent') om vintage-läsning föredras. Söksträngen unik (1 träff). Spegling -en: 'Among the universe's sixteen consumer companies the median is 48.3 percent' → '…twenty-nine consumer companies… 50.9 percent'"
+    },
+    {
+      "id": "B3b",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (ingressens andra stycke)",
+      "gammalt": "median på 48,3 procent i AK1A:s analysuniversum",
+      "nytt": "median på 50,9 procent i AK1A:s analysuniversum",
+      "orsak": "Samma glidning som B3a, ingressens presens-formulering. Daterings-kur om ägaren väljer den i B3a: 'median på 48,3 procent i AK1A:s analysuniversum vid guidens dataunderlag (2026-09-03)'. Söksträngen unik (1 träff)"
+    },
+    {
+      "id": "B3c",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Sammanfattningen, första bulleten)",
+      "gammalt": "mot konsumentmedianens 48,3",
+      "nytt": "mot konsumentmedianens 50,9",
+      "orsak": "Samma glidning som B3a, sammanfattningens presens-formulering. Söksträngen unik (1 träff). Spegling -en motsvarande bullet"
+    },
+    {
+      "id": "B3d",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "description",
+      "gammalt": "mot medianens 48 %",
+      "nytt": "mot medianens 51 %",
+      "orsak": "Samma glidning i OG-descriptionen (avrundad form av samma median). Söksträngen unik på ytan (1 träff i description). Daterings-kur: 'mot medianens 48 % (databasen 2026-09-03)' om vintage väljs — OBS teckenbudgeten (148/155 i dag). Spegling -en: 'against the median's 48%' → '51%'"
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "2",
+      "nytt": "6",
+      "orsak": "1 215 ord textrensat / 2 min = 608 ord/min — samtliga 55 publicerade max 240 (median 171). Bloggfamiljens konvention round(ord/200) = 6. NIONDE dokumenterade fallet i klassen (byggd 09-17 03:26, före substansrabatt-domens kodifiering samma dag 15:08). Spegeln -en: 1 393 ord, rm 2 → 7"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Cykeln — officiella helårsrapporten, EBIT-meningen)",
+      "gammalt": "i nivå med universumets EBIT-marginal på 22,5 procent",
+      "nytt": "i nivå med bolagets EBIT-marginal i universumet, 22,5 procent",
+      "orsak": "TVETYDIG ÄGARSKAPSLÄSNING: talet 22,52 % är LVMH:s EGET universumfält, men 'universumets EBIT-marginal' läses naturligt som universumets median (20,71 %, n=200, dagens fil). Rättningen flyttar ägandet till bolaget utan att röra talet. Söksträngen unik (1 träff)"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "body (Avkastningen, balansräkningen och kontrollen, skuld-meningen)",
+      "gammalt": "0,53 kronor skuld per krona eget kapital",
+      "nytt": "0,53 i skuld per krona eget kapital",
+      "orsak": "EUR-BOLAG MED KRONOR-ETIKETT: kvoten skuld/EK är valuta-neutral; 'kronor' i ett euro-avsnitt (marginalerna i euro styckevis ovan) är genrefras. Rättningen neutraliserar valutan. Söksträngen unik (1 träff)"
+    },
+    {
+      "id": "D1",
+      "typ": "export",
+      "fil": "lyxaktier-sa-analyserar-du-lyxbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "(kundens exportbeslut, R2)",
+      "orsak": "publishedAt = skapandedatum i utkastet; serienorm sätter publiceringsdatum vid export — kundens beslut enligt R2, granskaren rör den ej"
+    }
+  ]
+}

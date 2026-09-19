@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-18T23:41:58.475Z",
+  "bas": "http://localhost:9999",
+  "namn": "s7u3o78-kontroll-proxy",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "poang": {
+        "prestanda": 0.47,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 5689,
+        "LCP": 10784,
+        "TBT": 494,
+        "CLS": 0,
+        "TTI": 10847,
+        "SI": 6361
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 211 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 211 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 1,510 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 1,510 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 0,
+          "visar": "Est savings of 14 KiB",
+          "rad": "Reduce unused CSS — Est savings of 14 KiB"
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "1.3 s",
+          "rad": "Reduce JavaScript execution time — 1.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "3.3 s",
+          "rad": "Minimize main-thread work — 3.3 s"
+        }
+      }
+    }
+  ]
+}

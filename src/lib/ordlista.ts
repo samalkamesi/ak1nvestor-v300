@@ -273,6 +273,20 @@ export const ORDLISTA = {
     en: "Phase 3 includes all future developments — the dashboard, the AI connection and reports. After the training the ecosystem can continue to be used via a monthly plan.",
     ar: "تشمل المرحلة 3 جميع التطورات المستقبلية — لوحة المعلومات والربط بالذكاء الاصطناعي والتقارير. بعد إتمام التدريب يمكن الاستمرار في استخدام المنظومة عبر خطة شهرية.",
   },
+  // Våg 202 (skiftet 2026-09-18 — Fas 3-förberedelse): låsvyns statusrad.
+  // Positioneringen ur skiftets tabell ("under byggnation — kommer snart" +
+  // "bygg din analysförmåga steg för steg") — ALDRIG resultatlöften, ALDRIG
+  // datum; priser/garanti berörs ej (R2 väntar kund).
+  "fas3.statusEtikett": {
+    sv: "Under byggnation — kommer snart",
+    en: "Under construction — coming soon",
+    ar: "قيد الإنشاء — قريبًا",
+  },
+  "fas3.statusText": {
+    sv: "Ekosystemets verktyg — dashboard, AI-kopplingen och rapporterna — är under byggnation. Vi lovar inga datum, bara riktningen. Förbered dig under tiden: bygg din analysförmåga steg för steg, från bokslut till omdöme.",
+    en: "The ecosystem's tools — the dashboard, the AI connection and the reports — are under construction. We promise no dates, only the direction. Prepare in the meantime: build your analysis ability step by step, from financial statements to judgment.",
+    ar: "أدوات المنظومة — لوحة المعلومات والربط بالذكاء الاصطناعي والتقارير — قيد الإنشاء. لا نَعِد بتواريخ، بل بالاتجاه فقط. استعد في هذه الأثناء: ابنِ قدرتك التحليلية خطوة بخطوة، من القوائم المالية إلى الحكم.",
+  },
   "fas.fas1Gratis": {
     sv: "Fas 1 förblir gratis — alltid.",
     en: "Phase 1 stays free — always.",
@@ -1739,6 +1753,19 @@ export const ORDLISTA = {
     en: "Dataset — industry medians for key ratios",
     ar: "مجموعة البيانات — وسيطات القطاع للمؤشرات المالية",
   },
+  // Våg 195 (brandgenomgång P2): H1 som löfte i stället för filnamn +
+  // underrubrik med omfång och juridikgrund; nBolag ur samma källa som
+  // ingressen (guldkälleregeln).
+  "dataset.h1": {
+    sv: "Jämför nyckeltal med branschens median",
+    en: "Compare key ratios with the industry median",
+    ar: "قارن المؤشرات المالية بوسيط القطاع",
+  },
+  "dataset.underrubrik": {
+    sv: "{nBolag} bolag · 10 branscher · observerat och daterat — pedagogiskt riktmärke, inte råd",
+    en: "{nBolag} companies · 10 industries · observed and dated — an educational benchmark, not advice",
+    ar: "{nBolag} شركة · 10 قطاعات · مرصودة ومؤرّخة — مرجع تعليمي لا نصيحة استثمارية",
+  },
   "dataset.ingress": {
     sv: "AK1A:s publika referensdataset: medianvärden för nyckeltal per bransch, räknade ur vårt fasta universum av {nBolag} noterade bolag — 10 branscher × 10 bolag. Aggregat av offentliga marknadsdata, redovisade med observationsantal och hämtdatum. Pedagogisk analys — aldrig investeringsråd.",
     en: "AK1A's public reference dataset: median values for key ratios per industry, computed from our fixed universe of {nBolag} listed companies — 10 industries × 10 companies. Aggregates of public market data, reported with observation counts and a retrieval date. Educational analysis — never investment advice.",
@@ -1748,6 +1775,24 @@ export const ORDLISTA = {
     sv: "Rådata hämtad {hamtat} · medianerna räknas om när universumet underhålls · sidan uppdateras dagligen",
     en: "Raw data retrieved {hamtat} · medians are recomputed when the universe is maintained · page refreshes daily",
     ar: "استُرجعت البيانات الخام {hamtat} · يُعاد حساب الوسيطات عند صيانة العالم · تتحدث الصفحة يوميًا",
+  },
+  // Våg 201 (brandgenomgångens CTA-gap): dataset-ytans primära nästa steg —
+  // medianen är riktmärket, kurserna är hantverket. Utbildningsform, gratis-
+  // faktum ur Fas 1-modellen, inga löften.
+  "dataset.cta.rubrik": {
+    sv: "Från tabell till hantverk",
+    en: "From table to craft",
+    ar: "من الجدول إلى الصنعة",
+  },
+  "dataset.cta.text": {
+    sv: "Medianen visar var branschen står — kurserna lär dig läsa årsredovisningen bakom talen. Hela grundutbildningen är gratis.",
+    en: "The median shows where the industry stands — the courses teach you to read the annual report behind the numbers. The entire foundation track is free.",
+    ar: "الوسيط يبيّن أين يقف القطاع — والدروس تعلّمك قراءة التقرير السنوي الكامن وراء الأرقام. مسار التأسيس كامل مجانًا.",
+  },
+  "dataset.cta.knapp": {
+    sv: "Lär dig läsa nyckeltal — kursvägen →",
+    en: "Learn to read key ratios — the course path →",
+    ar: "تعلّم قراءة المؤشرات المالية — مسار الدروس ←",
   },
   "dataset.tabell.rubrik": {
     sv: "Medianer per bransch",

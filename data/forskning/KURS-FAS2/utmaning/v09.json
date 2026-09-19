@@ -1,0 +1,25 @@
+{
+  "kurs": "v09",
+  "utmaningar": [
+    {
+      "titel": "Fas 2 — Vad indikatorn innebär i praktiken",
+      "content": "1. Förklara för dig själv vad ROE mäter: vilken täljare och vilken nämnare ingår, och varför kallas resultatet ägarens egen ränta på pengarna? 2. Samma affär kan visa 10 % eller 25 % ROE beroende på finansieringen. Förklara mekanismen — och vilka två kontroller (hävstång via V10 och uthållighetsbevis) AKM1:s V09 därför kräver innan toppoäng. 3. Kurvans nollpunkt ligger vid kapitalkostnaden (≈ 9 % i modellen). Förklara varför en ROE under den nivån kallas värdeförstöring. 4. Modellen säger att ROE skall komma från affären, inte från banken. Testa dig själv: vad skiljer två bolag med samma ROE men olika ursprung bakom talet?"
+    },
+    {
+      "titel": "Fas 2 — Läsa det i en faktisk årsredovisning",
+      "content": "1. Var i resultaträkningen hittar du täljaren — och exakt vad heter raden? Kontrollera att du läser koncernen. 2. Eget kapital skall hämtas från båda åren i balansräkningen (Summa eget kapital). Förklara varför snittet av årets början och slut ger rätt nämnare. 3. Räkna efter formeln: resultat ÷ ((EK förra året + EK året) ÷ 2). Vad händer med nämnaren vid en nyemission sent på året? 4. I noten till eget kapital följer du postens rörelser: vinst, utdelning, emission, omvärdering. Förklara varför en ROE på en emissionstämd nämnare inte är samma prestation — och var du hittar 5-årssnittet."
+    },
+    {
+      "titel": "Fas 2 — Räkneexempel på riktiga bolag (ur universumets 195)",
+      "content": "1. Mastercard visar ROE 241,2 % men fick bara 4 poäng. Kontrollera i tablån vilken hävstångssiffra (skuld/EK 4,40) som stoppade toppoängen. 2. Apple ligger på 148,8 % med låg skuld (0,78) men också bara 4. Vilket uthållighetsbevis saknas i källan? 3. Sinch (1,9 %) och Kinnevik (−21,6 %) fick båda 0 poäng. Förklara för dig själv vad negativ eller nästan noll avkastning på ägarnas kapital betyder. 4. Universum-medianen är 15,3 %. Placera Ericsson (26,1 %), Atlas Copco (25,7 %) och Alfa Laval (19,1 %) mot medianen — och förklara varför de får olika poäng (4, 4 och 3)."
+    },
+    {
+      "titel": "Fas 2 — Kritiskt tänkande — fällor",
+      "content": "1. Regeln: läs ALDRIG ROE utan skuld/EK (V10) vid sidan. Förklara varför modellen beräknar dem i par — och vem som går först. 2. En blogg kallar ROE 8,5 % för nästan bra. Argumentera mot: varför är talet i stället värdeförstöring, och vad menas med att tröskeln är en klippa, inte en backe? 3. Bolag som köper tillbaka aktier krymper det egna kapitalet. Förklara hur återköpsmaskinen blåser upp ROE aritmetiskt — och vilken not du kollar. 4. Bankers balansräkningar är skuldfyllda per definition. Varför skall en banks ROE jämföras med banker — och aldrig med industrier?"
+    },
+    {
+      "titel": "Fas 2 — Koppling till AKM1 — modellens trösklar",
+      "content": "1. Träna tröskeltabellen: vilken poäng ger ROE 8,5 %, 15,3 % och 20,9 %? Kontrollera mot kapitlets tabell (0, 2 och 3). 2. Toppoängen 5 kräver tre villkor samtidigt: räkna upp dem och förklara varför Mastercards 241,2 % ändå inte räcker. 3. Följ tablån: Sinch 1,9 %, Handelsbanken 12,8 %, Alfa Laval 19,1 % och Ericsson 26,1 %. Kontrollera att du får poängen 0, 2, 3 och 4. 4. Kärnan hämtar tre källfält: lonksamhet.roe, moat.roeMedel5ar och stabilhet.skuldEgenkapital. Förklara för dig själv vad varje fält bidrar med i domen."
+    }
+  ]
+}

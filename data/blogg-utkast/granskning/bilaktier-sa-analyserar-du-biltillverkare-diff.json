@@ -1,0 +1,54 @@
+{
+  "granskat": "data/blogg-utkast/bilaktier-sa-analyserar-du-biltillverkare.json",
+  "granskadAv": "agentfabrik auto-s1-1789781115807 s1-u1 (2026-09-19)",
+  "rapport": "bilaktier-sa-analyserar-du-biltillverkare.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: 'universumets högsta bruttomarginal, LVMH:s 66 procent' motbevisad mekaniskt (LVMH = plats 52 av 186 i bolagsunivers.json; toppen INDU-C/ORES/EVO/MA = 100 %, KAMBI 98,9 %) — superlativen stryks, 3×-jämförelsen (66,4/18,9 = 3,5×; /15,6 = 4,3×) behålls. B2: readingMinutes 2 → 7 (1 376 textrensat ord, round(ord/200); sjätte fallet i klassen). I övrigt GRÖNT: 15 universumtal + 3 tidsserier (Volvo 15 401 Mkr 2024 → 174 Mkr 2025; Tesla 14 997/7 091/3 794 MUSD = −53/−46 %; Polestar −2 357 MUSD ≈ 200 M/mån; kassaManaderBurnRate 15,2 = 'cirka 15 månader' EXAKT; PowerCell 245→385 Mkr) + räkneexempelens aritmetik exakta; externa källor källverifierade (OICA 96,4 M/+3,9 %/Kina 34,53 M; IEA 21 M/>20 %/var fjärde/23 M 2026); juridik 2007:528 ren (juridikgrind-vakt 0 FEL/0 VARNING på filen; 'köp' endast substantiv; disclaimer tidig + sista rad; inget lagrum = ingen blandningsrisk); 911 ren (0/6 mönster); 13/13 interna länkar HTTP 200 mot localhost; struktur grön (7 rubriker, 10 019 tecken).",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt; samtliga söksträngar maskinverifierade unika = exakt 1 träff i filen). Utkastet bär INTE determinismkvitto (ej m9-fabrikat) — sök/ersätt bryter inget kvitto. 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln bilaktier-sa-analyserar-du-biltillverkare-en.json (09-18, ogranskad) bär sannolikt identiska B1+B2 och speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "body (Vad är bilaktier — en industri med två klockor)",
+      "gammalt": "Att jämföra: universumets högsta bruttomarginal, LVMH:s 66 procent, ligger mer än tre gånger högre.",
+      "nytt": "Att jämföra: lyxvarumärkeskoncernen LVMH:s bruttomarginal på 66 procent ligger mer än tre gånger högre.",
+      "orsak": "SUPERLATIVEN MOTBEVISAD: bolagsunivers.json (källan bakom 'rådata september 2026') rankar LVMH:s bruttomarginal 66,4 % på plats 52 av 186 — fyra bolag håller 100 % (Industrivärden, Oresund, Evolution, Mastercard), Kambi 98,9 %. Jämförelsens poäng (tunn biltillverkarmarginal mot varumärkesmargin) överlever utan superlativ; 3×-påståendet förblir sant (3,5×/4,3×)"
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "readingMinutes",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 7",
+      "orsak": "1 376 textrensat ord (länkar/markup rensade) → round(1376/200) = 7. Sjätte fallet i klassen: substansrabatt-domen 09-17, halvledar-B1, hälsa-B4, konsumentaktier-B4, försvar-B2"
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "body (Kassaklockan — förlusttillverkarnas andra klocka)",
+      "gammalt": "bruttomarginal 30,6 procent (det dubbla mot biltillverkarnas)",
+      "nytt": "bruttomarginal 30,6 procent — det dubbla mot Volvo Cars bruttomarginal",
+      "orsak": "OPRECISION: 30,55/15,62 = 1,96× mot Volvo (exakt 'det dubbla') men 30,55/18,85 = 1,62× mot Tesla; pluralen 'biltillverkarnas' gäller bara en av de två. Alternativ: 'mot biltillverkarnas 16–19 procent'"
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "body (Kassaklockan — PowerCell-paragrafen)",
+      "gammalt": "och en intäktsserie som vuxit från 245 till 385 miljoner kronor på fyra år, med förlusten minskande",
+      "nytt": "och en intäktsserie som vuxit från 245 till 385 miljoner kronor på fyra år, med förlusten mer än halverad det senaste räkenskapsåret (från −88 till −30 miljoner kronor)",
+      "orsak": "TRENDPÅSTÅENDE UTAN AVGRÄNSNING: universumserien visar att förlusten VÄXTE 2022→2024 (−58,2 → −63,0 → −88,0 Mkr) och minskade först 2025 (−29,5 Mkr, −66 %). Den okvalificerade formuleringen antyder en jämn förbättringstrend som datan inte visar; med årtalsavgränsning blir påståendet både sant och mer lärorikt"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-16",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell flytt till data/blogg/ sätt publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

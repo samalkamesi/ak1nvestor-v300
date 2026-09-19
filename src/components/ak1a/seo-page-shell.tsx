@@ -50,8 +50,10 @@ export function SeoPageShell({
         {/* Brödsmulor — klientkomponent: orden översätts via ordlistan (fas 1) */}
         <Brodkrumma breadcrumb={breadcrumb} />
         <main>{children}</main>
-        {/* Personlig mönsterigenkänning — nästa steg för just denna elev */}
-        <div className="pt-10">
+        {/* Personlig mönsterigenkänning — nästa steg för just denna elev.
+            cv-nasta-steg (o78): ligger under innehållet på alla shell-sidor —
+            content-visibility hoppar rendering tills den närmar sig vecket. */}
+        <div className="pt-10 cv-nasta-steg">
           <NastaSteg />
         </div>
       </div>

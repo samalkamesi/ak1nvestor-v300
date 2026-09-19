@@ -461,6 +461,28 @@ html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~
 html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .marin-unscope .text-gold {
   color: var(--gold, #785c13);
 }
+/* ══ NÄSTLADE LJUSA TOKEN-YTOR — AUTOMATISK GOLD-AVPINNING (våg 195,
+   gränsnittsvakten 2026-09-19) ══
+   ROT-ORSAK: pinningen ovan gäller HELA marin-subträdet — även nästlade
+   LJUSA ytar (bg-card #fffdf7 / bg-paper #f5f1e8) fick alltså löst guld
+   #c9a84c = 2.0–2.3:1 (portfolj-forskning: riskval-panel + korstabell,
+   7 fynd i light). Samma återställning som .marin-unscope, men AUTOMATISK
+   för token-ytorna — framtida komponenter skyddas utan att känna till
+   verktygslådan. Exakta klass-ord (~=) skyddar tints/hover-varianter;
+   .dark opåverkad (reglerna är html:not(.dark)-scope:ade — där är
+   bg-card/bg-paper mörka och #c9a84c redan AA). En ännu djupare marin-
+   yta (bg-[#0E1B2E]) inuti den ljusa matchar flippen på eget element
+   och får tillbaka ljusguldet — arv slås av egen deklaration. */
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) :is([class~="bg-card"], [class~="bg-paper"]) {
+  --gold: #785c13;
+  --gold-text: #7A5E14;
+  --gold-soft: #c9a84c;
+  --guld-djup: #7A5E14;
+  --gold-deep: #7A5E14;
+}
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) :is([class~="bg-card"], [class~="bg-paper"]) .text-gold {
+  color: var(--gold, #785c13);
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MEGA OPTIMIZATION — prevent horizontal scroll on ALL pages
@@ -1099,28 +1121,35 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 21rem;
 }
 
-/* ── PRESTANDA (o19): CONTENT-VISIBILITY på /kurser — registret (24 kort
-   per sida) och de tre utvalda sektionerna (18 kort). Sond-bevis
-   2026-09-16 (verktyg/prestanda-sond-sl.mjs + lokal SSR-A/B):
-   registrets kort kostar LINJÄRT ~3 ms layout styck (24 kort ≈ 70–140 ms
-   othrottat) och optional-webfontens dubbla layoutpass layoutar om hela
-   listan; med CV sjönk SSR-layouten 119 → 60 ms i minst störda omgång.
-   Höjdreservation per brytpunkt: mobil registerkort ≈ 9rem (p-4 + titel
-   + metadata + learn-min-h 3.5rem), md+ kompaktrad ≈ 3rem, utvalt kort
-   ≈ 12rem (p-5 + chiprad + titel + learn + meta). Samma mekanik och
-   oförändrade DOM/SEO/hydrering som .cv-kort ovan. */
+/* ── PRESTANDA (o19, reservationer omkalibrerade o91): CONTENT-VISIBILITY
+   på /kurser — registret (24 kort per sida) och de tre utvalda sektionerna
+   (18 kort). Sond-bevis 2026-09-16 (verktyg/prestanda-sond-sl.mjs + lokal
+   SSR-A/B): registrets kort kostar LINJÄRT ~3 ms layout styck (24 kort ≈
+   70–140 ms othrottad) och optional-webfontens dubbla layoutpass layoutar
+   om hela listan; med CV sjönk SSR-layouten 119 → 60 ms i minst störda
+   omgång. RESERVATIONERNA o91 (blocksond 2026-09-19, mobil 412 px × full
+   scroll): o19 kalibrerade mot SKELETT-läget — men registrets kort växer
+   144 → ~446 px när /api-kurs-hämtningen fyller learn-texten (Σ +4 213 px
+   över 24 kort) och de utvalda korten 192 → ~414 px i genomsnitt
+   (Σ +2 571 px över 18 kort; SSR-text, spridning 178–739 px) ⇒ dokumentet
+   växte +6,6k px vid första scrollen (o90 §3:s köpost). Ny nivå = sonderad
+   MEDEL-verklig höjd (Σ-delta → ≈0): mobil registerkort 28rem (448 px,
+   medel 446), utvalt 26rem (416 px, medel 414); md+-kompaktraden är
+   enhetlig 43 px sonderat ⇒ 2.75rem (3rem gav −120 px Σ). "auto"-nyckeln
+   minns därefter verklig höjd per kort. Samma mekanik och oförändrade
+   DOM/SEO/hydrering som .cv-kort ovan. */
 .cv-registerkort {
   content-visibility: auto;
-  contain-intrinsic-size: auto 9rem;
+  contain-intrinsic-size: auto 28rem;
 }
 @media (min-width: 768px) {
   .cv-registerkort {
-    contain-intrinsic-size: auto 3rem;
+    contain-intrinsic-size: auto 2.75rem;
   }
 }
 .cv-utvalt {
   content-visibility: auto;
-  contain-intrinsic-size: auto 12rem;
+  contain-intrinsic-size: auto 26rem;
 }
 
 /* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
@@ -1134,4 +1163,81 @@ h1, h2, h3, h4, h5, h6 {
 .cv-bloggkort {
   content-visibility: auto;
   contain-intrinsic-size: auto 22rem;
+}
+
+/* ── PRESTANDA (o78): CONTENT-VISIBILITY på under-vecks-SEKTIONER —
+   nästa steg efter kort-cv-familjen (o19/o28). Trace-bevis 2026-09-19
+   (o76 §5:s köpost "Style & Layout 1 215 ms på /kurser"; sond
+   _s7u3o78-sond-trace.mjs: UpdateLayoutTree 156 ms + Layout 158 ms i
+   första fullträds-passet, FCP 2 636 ms) — korten hade cv men de stora
+   SEKTIONERNA under vecket saknade det: DOM-karta (_s7u3o78-sond-dom.mjs,
+   mobil 412px): 284 oskyddade element under vecket. A/B-bevis med proxy-
+   metodik (_s7u3o78-proxy.mjs — Lighthouse genom identisk kanal med och
+   utan CSS): styleLayout 1 014 → 726 ms (−288 ms), CLS 0 kvar,
+   scriptEvaluation oförändrad (1 252/1 253 — ren kontroll).
+   Reservationerna = sonderade mobilhöjder: kategorivägg 1 223 px,
+   socialproof 1 474 px, kurstips 364 px, nästa-steg 230 px, sidfooter
+   2 145 px; "auto"-nyckeln minns verklig höjd efter första renderingen —
+   reservation ≈ mätt höjd ⇒ inga stavhopp vid scroll. DOM/SEO/hydrering
+   orörda, samma garanti som kort-cv-familjen. */
+.cv-kategorivagg {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 76rem;
+}
+.cv-socialproof {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 92rem;
+}
+.cv-kurstips {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 23rem;
+}
+.cv-nasta-steg {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 14rem;
+}
+.cv-sidfooter {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 134rem;
+}
+
+/* ── PRESTANDA (o92): DESKTOP-NIVÅER för o78-sektionerna — spegelproblemet
+   kurat (o91 §5:s köpost): o78 kalibrerade reservationerna mot MOBILA
+   sluthöjder men desktopens sektioner är 3–4× kortare ⇒ dokumentet KRYMPE
+   −3 363 px på /kurser och −1 590/−1 591 px på speglarna vid första fulla
+   scroll — scrollbar-längden ljög vid första desktopbesöket. Blocksond
+   2026-09-19 (1280×800, _s7u3o91-blocksond.mjs på tre sidor, BUILD_ID
+   hZjYd72, paritet med o91 §1c): verkliga desktop-sluthöjder sidfooter
+   688 px (identisk alla tre språken) · kategorivägg 306 · marin-panel/
+   socialproof 918 · nästa-steg 132 · kurstips 248. md+-nivåerna = sond-
+   höjd minus sektionens fasta padding/border-tillägg (sidfooter +2,
+   kategorivägg +50, marin +80, nästa-steg +40 pt-10): 43 / 16 / 52.5 /
+   15.5 / 5.75rem ⇒ platshållare ≈ sluthöjd, Σ-residual +4 px på /kurser.
+   MOBILNIVÅERNA orörda (o90 bevisade ±46 px) — endast md+-brytning
+   tilläggs; speglarna delar sidfooter/nästa-steg-klasserna ⇒ kuren verkar
+   på tre språk. "auto"-nyckeln minns verklig höjd per sektion efteråt. */
+@media (min-width: 768px) {
+  .cv-kategorivagg { contain-intrinsic-size: auto 16rem; }
+  .cv-socialproof { contain-intrinsic-size: auto 52.5rem; }
+  .cv-kurstips { contain-intrinsic-size: auto 15.5rem; }
+  .cv-nasta-steg { contain-intrinsic-size: auto 5.75rem; }
+  .cv-sidfooter { contain-intrinsic-size: auto 43rem; }
+}
+
+/* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
+   o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
+   läxa — komponentroten delas med min-sida/laroplan, därför vävs
+   klassen på SPEGELNIVÅ) och siffrebandet (SocialProof-ekvivalenten,
+   ~7 100–7 300 px under vecket, 25 element) stod helt oskyddat medan
+   svenska /kurser fått .cv-socialproof. Spegelbandet är KORTARE än det
+   svenska (sond 2026-09-19, mobil 412 px: en 958 px · ar 909 px mot
+   Swedish 1 474 px) — därför egen kalibrerad reservation 58rem (928 px,
+   maxavvikelse 30 px) i stället för 92rem: svensk reservation på
+   speglarna vore +500 px överskott = stavhopp vid första renderingen.
+   Kurstips-delningen (23rem) återanvänds — speglarnas verkliga höjd
+   364/344 px ligger nära. "auto"-nyckeln minns verklig höjd efter första
+   renderingen. DOM/SEO/hydrering orörda, samma garanti som o78. */
+.cv-siffreband-spegel {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 58rem;
 }

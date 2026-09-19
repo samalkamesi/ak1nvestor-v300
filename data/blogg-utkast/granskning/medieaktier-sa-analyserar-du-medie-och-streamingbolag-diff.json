@@ -1,0 +1,27 @@
+{
+  "granskat": "data/blogg-utkast/medieaktier-sa-analyserar-du-medie-och-streamingbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789829700743 s1-u1 (2026-09-19)",
+  "rapport": "medieaktier-sa-analyserar-du-medie-och-streamingbolag-KONTROLL-2026-09-19.md",
+  "bedomning": "FLYTTKLAR — 49 maskinella kontroller 0 FEL (källa låst till bolagsunivers.json @ c256c659, 138-posters-vintagen vid byggtiden 09-16 22:16): 36 universumtal egna omräkningar EXAKTA (Netflix 11 inkl CAGR 12,640 %; Spotify 4; Disney 3; Viaplay 7 inkl gränsfallet 14,95 % → halv-upp 15,0 enligt finansbolagspresedens; WBD 6; MTG 6), räkneexempelens aritmetik 5/5 (14,4 mdr; 2,4; 1,44; 3,84; +60 %), juridik 2007:528 REN (juridikgrind-vakt 0 fynd på filen; 0 rådgivningsglossor; disclaimer första+sista rad; inga lagrum = ingen blandningsrisk), 911 = 0/6 mönster, 20/20 interna länkar HTTP 200 mot levande sajten (första körningen 20×404 = deploy-transient under upptaget flock-lås, omkörning efter frigivning; släkt-läxa: kontrollera deploylåset FÖRE länkdom), 7/7 bloggmål LIVE + 13/13 kursmål i registret, 6 externa IR-domäner levande (3×200 + 3×403 bot-skydd B9), verklighetskontraster gröna (Viaplay 18,6/−9,7 mdr kr; MTG-engångsposten = ESL-avyttringen). Två icke blockerande förslag (C1 rekommenderas) + tre flaggor; inget tal motbevisat.",
+  "anvandning": "Båda posterna är 'forslag' — kräver beslut av guidens ägare (eller nästa våg) före verkställning; ingen 'byt'-post finns (inget tvingande fel). Söksträngarna maskinverifierade unika (exakt 1 träff vardera i filen). Utkastet bär INTE determinismkvitto (ej m9-fabrikat) — sök/ersätt bryter inget kvitto. Originalet ändras av guidens ägare — inte av granskaren. Engelska spegeln medieaktier-…-en.json (09-18, ogranskad) bär sannolikt identiska C1+C2 och speglas vid verkställning. Flaggor: D1 SPOT-valutaetikett (EUR-tal märkta USD i universumet — utkastets 'miljoner euro' är korrekt; dataägaren/spår 2) · D2 publishedAt = skapandedatum (R2, kunden) · C3 readingMinutes 2 mot /600-majoritetskonventionen (bilaktier-precedensens /200-tolkning ger 6 — seriebeslut åt fabriksägaren).",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "medieaktier-sa-analyserar-du-medie-och-streamingbolag.json",
+      "falt": "body (Abonnentekonomin — två rattar och en hävstång)",
+      "gammalt": "kom inte från drift utan från avyttringen av nöjesverksamheten",
+      "nytt": "kom inte från drift utan från avyttringen av esportbolaget ESL Gaming",
+      "orsak": "BENÄMNING OEXAKT (verklighetsbevisat): MTG:s 2022-engångspost är försäljningen av ESL Gaming till Savvy Gaming Group (USD 1 050 M, avslutad Q2 2022; MTG IR + Reuters). 'Nöjesverksamheten' är varken identifierbart eller sökbart för läsaren; MTG självt benämner verksamheten esport/gaming. Beloppet 6,5 mdr kr är exakt mot universumet (6 475 Mkr) — endast benämningen rättas. Söksträngen maskinellt unik (1 träff)."
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "medieaktier-sa-analyserar-du-medie-och-streamingbolag.json",
+      "falt": "body (ingressen)",
+      "gammalt": "I AK1A:s hundraaktieuniversum bär sektorn sex bolag",
+      "nytt": "I AK1A:s hundraaktieuniversum bär mediesektorn sex bolag",
+      "orsak": "OTYDLIG AVGRÄNSNING: universumets kommunikation-gren har 13 poster (6 medie + 6 telekom + Meta). Utkastet avgränsar mot telekom i ingressens föregående mening så läsningen är entydig i dag, men 'mediesektorn' gör påståendet självbärande och immun mot framtida gren-tillväxt. Kosmetisk förbättring — inget fel i dagens läsning. Söksträngen maskinellt unik (1 träff)."
+    }
+  ]
+}

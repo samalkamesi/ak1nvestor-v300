@@ -1,5 +1,5 @@
 /**
- * LANDASPEKTER — sverige + usa + danmark för /dataset/[bransch]/[aspekt] (VÅG 150 u3)
+ * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland + australien + japan för /dataset/[bransch]/[aspekt]
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14 s2-u3) ──────────────
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) + australien (omg18) + japan (omg20) ──
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -270,5 +270,61 @@ export const aspekter: AspektModule[] = [
       " (stiftelseägda ankare är vanliga på Köpenhamnsbörsen) skiljer från Stockholmsbörsen — jämför " +
       "därför den här medianen med danska bolags median, och var varsam med att läsa den mot tal " +
       "från svensk- eller dollarnotrade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "schweiz",
+    land: "Schweiz",
+    forled: "Schweiziska",
+    landNamn: "Schweiz",
+    valutaMening:
+      "De schweiziska bolagen redovisar i schweiziska franc (CHF) — en valuta med egen " +
+      "räntenivå och en historisk roll som säkerhetsvaluta, vilket trycker ned " +
+      "kapitalkostnaderna för schweiziska bolag jämfört med euro- och dollarmiljöer. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men SIX Swiss Exchange " +
+      "bär många globala verksamheter där majoriteten av intäkterna tjänas utomlands — " +
+      "jämför därför den här medianen med schweiziska bolags median, och var varsam med " +
+      "att läsa den mot tal från svensk- eller euro-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "tyskland",
+    land: "Tyskland",
+    forled: "Tyska",
+    landNamn: "Tyskland",
+    valutaMening:
+      "De tyska bolagen redovisar i euro (EUR) — Europas största ekonomi och den " +
+      "referensvaluta som svenska kronor ofta vägs mot i handelsstatistiken. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men tysk börsstruktur " +
+      "bär både världsomspännande varumärkesjättar och familjeägda industritraditioner " +
+      "med långsiktiga ägarintressen, och DAX-bolagens stora andel intäkter utanför " +
+      "eurozonen gör att valutaeffekten slår olika mellan bolagen — jämför därför den " +
+      "här medianen med tyska bolags median, och var varsam med att läsa den mot tal " +
+      "från svensk- eller dollar-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "australien",
+    land: "Australien",
+    forled: "Australiska",
+    landNamn: "Australien",
+    valutaMening:
+      "De australiska gruvbolagen är en valuta- och redovisningsblandning: en del redovisar i " +
+      "australiska dollar (AUD) medan andra — bland dem de största — redovisar i amerikanska " +
+      "dollar (USD) som koncernrapportvaluta, och land-fältet säger inget om rapportvalutan. " +
+      "Multiplerna och marginalerna är i sig valutaneutrala tal, men råvarucyklerna (malm, guld, " +
+      "koppar) driver resultaten mer än valutan, och ASX-börsens gruvvikt gör gruppen känslig " +
+      "för Kina-efterfrågan — jämför därför den här medianen med australiska bolags median, " +
+      "och var varsam med att läsa den mot tal från svensk- eller euro-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "japan",
+    land: "Japan",
+    forled: "Japanska",
+    landNamn: "Japan",
+    valutaMening:
+      "De japanska bolagen redovisar i yen (JPY) medan branschens amerikanska bolag " +
+      "redovisar i dollar (USD) och de svenska i svenska kronor (SEK). Multiplerna och " +
+      "marginalerna är i sig valutaneutrala tal, men Japans lågräntemiljö, yen-kursens " +
+      "svängningar och börskulturens korsäganden med stabila huvudägare skiljer från " +
+      "västerländska börser — jämför därför den här medianen med japanska bolags median, " +
+      "och var varsam med att läsa den mot tal från svensk- eller dollar-noterade bolag.",
   }),
 ];

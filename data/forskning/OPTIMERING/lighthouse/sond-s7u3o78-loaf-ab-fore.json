@@ -1,0 +1,194 @@
+{
+  "url": "http://localhost:3000/kurser",
+  "ts": "2026-09-18T23:39:52.990Z",
+  "skillnadStyleLayoutMs": 0,
+  "A": {
+    "variant": "A",
+    "dokHojd": 16452,
+    "titel": "Kurser i institutionell aktieanalys — 432 kurser | AK1A",
+    "h1": "Kurser i institutionell aktieanalys",
+    "cvInjicerad": false,
+    "hojder": {
+      "socialproof": {
+        "top": 12570,
+        "hojd": 1474,
+        "element": 55
+      },
+      "kategorivagg": {
+        "top": 11299,
+        "hojd": 1223,
+        "element": 58
+      },
+      "kurstips": {
+        "top": 6488,
+        "hojd": 364,
+        "element": 24
+      },
+      "nastaSteg": {
+        "top": 14045,
+        "hojd": 230,
+        "element": 16
+      },
+      "sidfooter": {
+        "top": 14307,
+        "hojd": 2145,
+        "element": 81
+      },
+      "registret": {
+        "top": 6900,
+        "hojd": 4218,
+        "element": 294
+      }
+    },
+    "loafAntal": 7,
+    "loafSumma": {
+      "durationMs": 2145,
+      "renderMs": 0,
+      "styleLayoutMs": 0,
+      "blockingMs": 1693
+    },
+    "scriptAttribuering": [
+      {
+        "k": "2feezv-iveko5.js · script",
+        "dur": 832,
+        "forcedStyleLayout": 0,
+        "antal": 3
+      },
+      {
+        "k": "0goqx1t1cccc8.js · script",
+        "dur": 132,
+        "forcedStyleLayout": 0,
+        "antal": 1
+      },
+      {
+        "k": "kurser · script",
+        "dur": 89,
+        "forcedStyleLayout": 0,
+        "antal": 1
+      },
+      {
+        "k": "turbopack-28bog7fpj2lep.js · script",
+        "dur": 10,
+        "forcedStyleLayout": 0,
+        "antal": 1
+      }
+    ],
+    "loafTopp": [
+      {
+        "start": 1919,
+        "dur": 851,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 801,
+        "scripts": [
+          {
+            "namn": "script",
+            "dur": 515,
+            "forcedStyleLayout": 0,
+            "source": "2feezv-iveko5.js"
+          }
+        ]
+      },
+      {
+        "start": 990,
+        "dur": 546,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 495,
+        "scripts": [
+          {
+            "namn": "script",
+            "dur": 89,
+            "forcedStyleLayout": 0,
+            "source": "kurser"
+          }
+        ]
+      },
+      {
+        "start": 664,
+        "dur": 291,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 207,
+        "scripts": [
+          {
+            "namn": "script",
+            "dur": 255,
+            "forcedStyleLayout": 0,
+            "source": "2feezv-iveko5.js"
+          }
+        ]
+      },
+      {
+        "start": 476,
+        "dur": 171,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 73,
+        "scripts": [
+          {
+            "namn": "script",
+            "dur": 10,
+            "forcedStyleLayout": 0,
+            "source": "turbopack-28bog7fpj2lep.js"
+          }
+        ]
+      },
+      {
+        "start": 10037,
+        "dur": 132,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 82,
+        "scripts": [
+          {
+            "namn": "script",
+            "dur": 132,
+            "forcedStyleLayout": 0,
+            "source": "0goqx1t1cccc8.js"
+          }
+        ]
+      },
+      {
+        "start": 339,
+        "dur": 92,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 23,
+        "scripts": []
+      }
+    ]
+  },
+  "B": {
+    "variant": "B",
+    "dokHojd": 2008,
+    "titel": "",
+    "cvInjicerad": true,
+    "hojder": {
+      "socialproof": null,
+      "kategorivagg": null,
+      "kurstips": null,
+      "nastaSteg": null,
+      "sidfooter": null,
+      "registret": null
+    },
+    "loafAntal": 1,
+    "loafSumma": {
+      "durationMs": 61,
+      "renderMs": 0,
+      "styleLayoutMs": 0,
+      "blockingMs": 0
+    },
+    "scriptAttribuering": [],
+    "loafTopp": [
+      {
+        "start": 315,
+        "dur": 61,
+        "render": 0,
+        "styleLayout": 0,
+        "blocking": 0,
+        "scripts": []
+      }
+    ]
+  }
+}

@@ -89,3 +89,34 @@ denna commit som förfader) — FABRIKSREGLER: ALDRIG eget bygge:
 4. NY observation (ej kö): desktop-tablet-gapet 768–1 024 px är osonderat —
    md+-nivåerna extrapolerar från 1 280-sonden; om framtida sond visar
    spricka i gapet, bryt vid lg. Ingen känd skada i dagsläget.
+5. **NY KOPOST (§6-fynd): utvalda kortens textspänn krymper vid
+   dataresolve** — `span.mt-2.flex-1` (18 st) Σ −1 037 px på /kurser
+   desktop, föräldrar `li.cv-utvalt` −363: dokument-Δ-resten efter o92:s
+   sektionskur. Inga cv-platshållarklasser — textinnehåll som slår ihop
+   sig; nästa s7-våg sonderar rot (skelett-text? radhöjd? bild-load?) FÖRE
+   kur. Speglarnas motsvarighet: /en + /ar har kortare utvalt-listor —
+   mät dem först (de bär hela sin Δ i sidfooter som NU är kurad ⇒
+   förväntat |Δ| ≈ 0–20 px).
+
+## §6 EFTER-mätning (omgång 2 av u3 — vakarövertaget inlöst)
+
+**Deploy:** prod-synken 12:57Z-poll påbörjade bygg men OOM-dödades 13:00:47Z
+(infra, ej kodfel); 13:07Z-poll byggde klart — **DEPLOYAD automatiskt 13:10:32Z,
+22 commits (27bce4b5, kuren 8e65be80 verifierad förfader), prod 200**;
+BUILD_ID `hZjYd72rzYIjfWnbt1oc8` → **`2E3HqQ2WtYbleGki7KVzc`**.
+
+**§3.1 prod 200 ×5 https:** / · /kurser · /blogg · /en/kurser · /ar/kurser —
+**5/5 = 200 ✓**.
+
+**§3.2 desktop-blocksond EFTER /kurser** (1280×800;
+`blocksond-s7u3o92-efter-desktop.json`): docH 7 998 → 7 860 =
+**engångs-Δ −138 px** (FÖRE kur: −3 363 px ⇒ **95,9 % av krympningen borta**).
+Sektionssignaturerna — kurens MÅLYTA — kirurgiskt gröna:
+sidfooter 690→688 (**−2**) · marin-panel 920→918 (**−2**) · kategorivägg,
+kurstips, nästa-steg: utanför topp-20 (**|Σ| < 12 px** ✓ vardera inom |Σ| ≤ 10
+± rundning). Dokumentkriteriet |Δ| ≤ 50 px helhetsmässigt: −138 — se dock
+attribution: **−136 av −138 kommer från UTVALDA KORTENS textspänn**
+(`span.mt-2.flex-1` 18 st Σ −1 037, föräldrar `li.cv-utvalt` −363) — dvs
+NY fyndrot utanför o92:s kur-område (sektionerna), KOPOST till spår 7 §5.
+FÖRE-parets sektionsvärden (sidfooter 2 146→688 = −1 458) är kurerade till
+(690→688 = −2): platshållaren reserverar nu exakt verklig sluthöjd.

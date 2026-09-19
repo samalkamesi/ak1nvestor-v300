@@ -69894,6 +69894,178 @@
     "grahamSection": "Graham skulle välja ISK för enkelheten — han ogillade komplexa skatteregler som distraherar från värderingsarbete. 'Skatt komplicerar, men skall aldrig driva investeringsbeslut,' skrev han i Security Analysis.",
     "ak1Section": "AKM1 analyserar skatteeffektivitet som en del av totalavkastning. ISK har lägst skatt för lågomsatt portfölj, KF för derivat och utländska aktier. Valet påverkar nettoavkastningen med 0,2–0,5 procentenheter årligen."
   },
+  "sj-06-arv-gava-och-ingaende-varde": {
+    "slug": "sj-06-arv-gava-och-ingaende-varde",
+    "category": "SKATT & JURIDIK",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 20,
+    "title": "Arv, gåva och aktiernas ingående värde",
+    "summary": "Skattefamiljens sjätte steg öppnar överlåtelsesidorna: vad som händer med vinstberäkningen när aktierna inte köps utan ärvs, ges bort, kvoteras i bodelning eller skiftas i dödsbo. Kursen lär ingående värdets tre födelseformer — köpt, ärvt till marknadsvärdet, övertaget från givaren — och den klassiska tidpunktsmekaniken hos dödsboet. Utbildning om hur reglerna fungerar, inte råd i något enskilt fall.",
+    "minutes": 20,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Skilja vinstberäkningens två sidor: försäljningspris och omkostnadsbelopp · Räkna ärvt ingående värde — marknadsvärdet vid dödsfallet, inte inköpspriset · Räkna övertaget ingående värde vid gåva — givarens omkostnadsbelopp följer aktierna · Kvotera ett blandat förvärv till underpris mellan närstående · Förstå dödsboets roll som eget skattesubjekt och tidpunktens mekanik · Veta vilka egenskaper som inte kan ärvas: outnyttjade förlustavdrag och schablonbeskattade konton",
+    "why": "Skatte- och juridikfamiljens fem första steg tog pulsen på gränserna: källskatten utland (sj-01), kryptovalutornas beskattning (sj-02), stämman och rösträtten (sj-03), optionernas skatteregler (sj-04) och kontots form — kapitalförsäkring mot ISK (sj-05). Men familjen saknar den sida som berör varje långsiktigt förvärv av aktier någon annanstans ifrån: överlåtelserna utan köpeskilling. Sonden mot registret bekräftar luckan: gåvoskatt 0 träffar, dödsbo endast sj-05 i en mening, ingående värde 0 kursägande träffar — medan km-051 äger kapitalvinstskattens grundregel och km-053 fåmansbolagets utdelningssida. Mellan dem ligger arvets, gåvans och bodelningens mekanik öppen. sj-06 är familjens sjätte steg: det som gör att en generationsportfölj kan flytta utan att varje steg blir en bonusbeskattning — och det som lär varför tidpunkten för en försäljning i dödsbo är en mekanikfråga, inte en känsla.",
+    "history": {
+      "origin": "Överlåtelse utan vinst är en gammal tankesedel: jord som gick i arv beskattades efter egendomens värde vid skiftet, inte efter vad en farmor en gång betalat. När värdepapperens tid kom flyttade frågan från fastighetsboken till depån — och fick ny mekanik: aktier har en kontinuerlig marknadspris, vilket gör överlåtelsetidpunkten till ett mätbart tal.",
+      "evolution": "Sverige bar länge både arvs- och gåvoskatt, vilket gjorde generationsskiften till en planeringsfråga med egna skikt. När dessa skatter avskaffades i början av 2005 förenklades själva överlåtelsen — men kapitalvinstsystemet blev samtidigt viktigare: eftersom gåvan blev skattefri blev den inkörsporten till portföljer vars omkostnadsbelopp ligger decennier bakåt i tiden, och bevisfrågan — vad som en gång betalades — flyttade till papperet.",
+      "modern": "I dag är mekaniken stabil: arv ger marknadsvärdet vid dödsfallet som ingående värde, gåva ger givarens omkostnadsbelopp, och dödsboet under bouppteckningstid är ett eget skattesubjekt med den avlidnes siffror. Det som växer är papperskravet: depåernas historik, kvitton och gåvoavtal avgör vad som får räknas, och digitala depåer utan historik blir kursernas varnande exempel. Reglerna är också det som gör att en och samma aktie kan bära tre helt olika latenta vinster i tre olika händer — mekanik väl värd att förstå före varje generationskliv."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — vinstens två förutsättningar",
+        "minutes": 3
+      },
+      {
+        "num": 2,
+        "title": "Arvet — dödsbo, bouppteckning och bortgående värde",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Gåvan — att träda i givarens ställe",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Bodelning, arvskifte och egendom utan omkostnadsbelopp",
+        "minutes": 3
+      },
+      {
+        "num": 5,
+        "title": "Fällor — papperet, avdragen, gränserna",
+        "minutes": 3
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — dödsboets fem frågor",
+        "minutes": 3
+      }
+    ],
+    "lynchSection": "Peter Lynch berättade i sina böcker om de ärvda portföljerna som slog de flesta förvaltare: orörda innehav som ärvts, glömts och lämnats i fred i decennier. Hans poäng var att tiden i marknaden gör jobbet — sj-06 lägger mekaniken under den berättelsen: just därför att arvet ger marknadsvärdet vid dödsfallet som ny ingång, kan den ärvda aktien bära en helt ny vinstberäkning från dagen efter bouppteckningen.",
+    "grahamSection": "Benjamin Graham skilde på investering och spekulation genom tidsaxeln och underlaget; överlåtelsemekaniken är en tredje axel av samma tänkande: samma värdepapper är inte samma investering för två personer med olika omkostnadsbelopp. Grahams krav på att räkna noga innan man handlar gäller lika mycket arvet och gåvan — prisstämpeln sattes för länge sedan, av någon annan.",
+    "ak1Section": "I AK1A:s metodik kompletterar sj-06 skattefamiljen med den mekanik som gör portföljens historia relevant: kursens fem tidshorisonter bygger på att avkastningen kan mätas från ett känt pris, och överlåtelserna bestämmer vilket pris som gäller för vem. I AKM1:s universum märks kursen som förståelse för att samma innehav kan bära olika latenta skatter i olika händer — en strukturell förklaring till varför ägarskiften kan förändra försäljningsbenägenheten utan att någon analys ändrats. Detta är utbildning om reglernas mekanik — aldrig råd om vad någon bör göra i sitt eget fall.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 3,
+        "title": "Grunderna — vinstens två förutsättningar",
+        "intro": "Kapitalvinsten är en subtraktion med två led. Det ena ledet alla talar om. Det andra bestäms av hur aktierna en gång kom till ägaren.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "km-051 äger grundregeln: vid försäljning beskattas skillnaden mellan försäljningspris och omkostnadsbelopp. Det som den kursen lämnar öppet — och som denna kurs äger — är omkostnadsbeloppets tre födelseformer. Första: det köpta förvärvet, där beloppet är inköpspriset plus omkostnader. Andra: det ärvda förvärvet, där dödsboets förvärv sätter värdet till marknadspriset vid dödsfallet — den så kallade bortgående värde-regeln. Tredje: det övertagna förvärvet, där gåvans mottagare träder i givarens ställe och övertar dennes omkostnadsbelopp ord för ord. Tre händer, samma aktie, tre olika latenta vinster. En farmor som köpte för 12 kronor, ett dödsfall till 188 kronor och ett barnbarn som säljer till 205 kronor — barnbarnets vinst är inte 193 kronor utan 205 − 188 = 17 kronor per aktie, och skatten 30 procent av vinsten blir 0,30 × 17 = 5,10 kronor. Exemplet bär hela kursens kärna i en enda subtraktion, och de tre födelseformerna är allt som behövs för att räkna rätt i de flesta familjeportföljer. Mekaniken är utbildning; vad någon gör med den är läsarens eget val."
+          },
+          {
+            "type": "definition",
+            "content": "OMKOSTNADSBELOPP — det belopp vinsten räknas mot: inköpspris med omkostnader vid köp · BORTGÅENDE VÄRDE — marknadsvärdet vid dödsfallet; dödsboets ingående värde och arvingens vid arvskifte · ATT TRÄDA I GIVARENS STÄLLE — gåvomottagarens övertagande av givarens omkostnadsbelopp · KVOTERING — uppdelningen av ett blandat förvärv mellan köpandel och gåvoandel · DÖDSBO — eget skattesubjekt under bouppteckning och skifte, med den avlidnes omkostnadsbelopp"
+          },
+          {
+            "type": "insight",
+            "content": "Försäljningspriset står i kurstabellen för alla. Omkostnadsbeloppet står i varje ägares egen historia — därför är två identiska depåer sällan skattemässigt identiska."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Arvet — dödsbo, bouppteckning och bortgående värde",
+        "intro": "Dödsfallet fryser en kurs och gör den till ett nytt nollställe. Vem som sedan säljer avgör vilken subtraktion som gäller.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "När en ägare går bort blir dödsboet en egen skattesubjekt under bouppteckningstiden: det deklarerar, det kan sälja — och det räknar sina vinster med den avlidnes omkostnadsbelopp. Samtidigt sätts de tillgångar som inte säljs i boet till marknadsvärdet vid dödsfallet, och det värdet blir arvingarnas ingående vid arvskiftet. Mekaniken ger en tidpunktsexempel som är kursens signatur. Farmodern köpte 1972 till 12 kronor per aktie; hon avled 2026 med aktien värderad till 188 kronor. Väg ett: arvskifte först, arvingen säljer sedan till 190 kronor — vinsten blir 190 − 188 = 2 kronor per aktie, skatten 0,30 × 2 = 0,60 kronor. Väg två: dödsboet säljer samma aktie till samma pris innan skiftet — vinsten blir 190 − 12 = 178 kronor, skatten 0,30 × 178 = 53,40 kronor. Samma aktie, samma dag, samma köpare: 52,80 kronors skillnad i skatt per aktie, enbart driven av vem som var säljare när affären gjordes. Notera också bredden av mekaniken: utdelningar som landar i dödsboet beskattas i boet enligt km-050:s regler, och makes andel vid dödsfall följer samma värdestängning som arvingarnas. Detta är inte en handledning i vad ett bo bör göra — det är en förklaring av varför frågan om tidpunkt och subjekt alls finns, och varför den har ett rätt svar att leta fram i varje enskilt fall."
+          },
+          {
+            "type": "tabell",
+            "content": "ARVETS TIDPUNKTSMEKANIK (PÅHITTADE TAL, KRONOR PER AKTIE): INKÖP 1972: 12,0 · MARKNADSVÄRDE VID DÖDSFALL 2026: 188,0 — arvingens ingående värde · ARVSKIFTE FÖRST, SÄLJ TILL 190: vinst 190 − 188 = 2,0 · skatt 0,30 × 2,0 = 0,60 · DÖDSBO SÄLJER FÖRE SKIFTE TILL 190: vinst 190 − 12 = 178,0 · skatt 0,30 × 178,0 = 53,40 · SKILLNAD: 53,40 − 0,60 = 52,80 per aktie — mekanik, inte slump · BARNBARNET SÄLJER SENARE TILL 205: vinst 205 − 188 = 17,0 · skatt 0,30 × 17,0 = 5,10"
+          },
+          {
+            "type": "insight",
+            "content": "Dödsfallet är portföljens nollställe: allt som händer efter bouppteckningen mäts från 188-kronors-strecket, inte från 1972. Den som förstår det förstår också varför arv skiljer sig från gåvans tysta kontinuitet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Gåvan — att träda i givarens ställe",
+        "intro": "Gåvan byter ägare men inte historia. Mottagaren får inte bara aktierna — den får givarens siffror.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Eftersom gåvoskatten är avskaffad sedan början av 2005 är själva överlåtelsen fri — men kapitalvinstsystemet har en motvikt: den som mottar en gåva träder i givarens ställe och övertar omkostnadsbeloppet. Föräldern som köpte för 50 kronor per aktie och ger bort innehavet när kursen är 120 förmedlar alltså inte bara en tillgång på 120 kronor utan en latent vinst på 70 kronor per aktie. Säljer mottagaren till 130 blir vinsten 130 − 50 = 80 kronor — inte 130 − 120 = 10 — och skatten 0,30 × 80 = 24,0 kronor per aktie. Mera intrikat blir det vid det blandade förvärvet: en närstående som betalar under marknadsvärdet. Värde 200 kronor, betalt 80 kronor, givarens omkostnadsbelopp 90 kronor. Gåvoandelen är skillnaden 200 − 80 = 120 kronor, alltså andelen 120 ÷ 200 = 0,6 av värdet. Omkostnadsbeloppet för mottagaren blir det betalda plus gåvoandelens andel av givarens belopp: 80 + 0,6 × 90 = 80 + 54 = 134 kronor. Säljs aktien sedan för 200 blir vinsten 200 − 134 = 66 kronor och skatten 0,30 × 66 = 19,80 kronor. Kvoteringen — uppdelningen mellan köp och gåva — är hela mekaniken, och den visar dessutom sin spegelbild hos givaren: den del som är gåva är hos givaren ett avyttrande till underpris, vilket har sina egna konsekvenser för dennes beräkning. Här som överallt i kursen: mekaniken är undervisning, tillämpningen i ett verkligt fall är läsarens eget arbete — ofta tillsammans med en rådgivare."
+          },
+          {
+            "type": "tabell",
+            "content": "GÅVANS TVÅ FORMER (PÅHITTADE TAL, KRONOR PER AKTIE): REN GÅVA: givarens omkostnadsbelopp 50 · värde vid gåvan 120 · mottagare säljer 130 · vinst 130 − 50 = 80 · skatt 0,30 × 80 = 24,0 — historien följer aktierna · BLANDAT FÖRVÄRV: värde 200 · betalt 80 · gåvoandel 200 − 80 = 120, andel 120 ÷ 200 = 0,6 · givarens omkostnadsbelopp 90 · mottagarens belopp 80 + 0,6 × 90 = 134 · sälj 200 → vinst 200 − 134 = 66 · skatt 0,30 × 66 = 19,80"
+          },
+          {
+            "type": "insight",
+            "content": "Gåvan är tidsresan som inte sker: mottagaren räknas som om den stått i kön 1972. Det är gåvans gåva — och dess pris, eftersom den djupa historien också bär de djupa vinsterna."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 3,
+        "title": "Bodelning, arvskifte och egendom utan omkostnadsbelopp",
+        "intro": "Mellan arv och gåva ligger familjerättens tredje överlåtelse — och en hel klass egendom som aldrig får något omkostnadsbelopp alls.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Vid skilsmässa eller dödsfall sker bodelning mellan makar: andelar byter ägare utan att någon affär göras, och den make som tar över aktier träder i den andres ställe — omkostnadsbeloppet följer precis som vid gåva. Arvskiftet, dödsboets upplösning, är motsatsen i mekanik: där stängs historien och värdet sätts nytt, till marknadsvärdet vid dödsfallet. Den tredje kategorien är egendom som aldrig får något omkostnadsbelopp: kapitalförsäkring och investeringssparkonto beskattas schablonmässigt — sj-05 äger hela den världen — och vid arv eller gåva av ett sådant konto finns ingen vinstberäkning att överta och ingen att stänga. Skillnaden blir påtaglig i praktiken: den ärvda aktiedepån och det ärvda schablonkontot är två helt olika mekaniska objekt, även om de kan bära exakt samma underliggande värdepapper. Även ISK — km-052:s område — saknar omkostnadsbelopp i denna mening: kontot beskattas efter värde och inbetalningar, inte efter vinst. För den som läser en familjs portföljkarta är frågan därför alltid dubbel: vad ägs — och i vilken kontextform ägs det, för kontexten avgör vilka av kursens tre födelseformer som ens är relevanta."
+          },
+          {
+            "type": "definition",
+            "content": "BODELNING — makars uppdelning av giftorättsgods vid skilsmässa eller dödsfall; övertagande make träder i den andres ställe · ARVSKIFTE — dödsboets upplösning bland dödsbodelägare; arv har då redan stängt värdet vid dödsfallet · SCHABLONKONTO — kapitalförsäkring eller ISK; beskattas utan omkostnadsbelopp och kan därför varken ärva eller förmedla ett sådant"
+          },
+          {
+            "type": "insight",
+            "content": "Tre rader att minnas: bodelning för historien vidare, arvskifte stänger den, schablonkontot har aldrig haft någon. Varje familjeportfölj är en mosaik av de tre."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 3,
+        "title": "Fällor — papperet, avdragen, gränserna",
+        "intro": "Reglernas logik är enkel. Verklighetens papper är det inte.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: beviset. Ett övertaget omkostnadsbelopp måste kunna styras — kvitto, bankutdrag, gåvoavtal, bouppteckningsakt. Gåvoavtalet är inte en formalia utan hela bevisbilden: utan det kan ett femtiotal år gammalt inköpspris bli omöjligt att föra in i beräkningen, och vinsten beräknas efter helt andra antaganden. Fälla två: förlustavdragen. Outnyttjat kapitalförlustavdrag är personligt — dödsboet kan använda den avlidnes avdrag i sina egna deklarationer under boets tid, men avdraget följer inte med arvingarna vid skiftet. Den som ärvt en aktie med liten latent vinst och tänkt sig att den ärvda förlusten från ett annat innehav skulle tas i samma vända har missat just detta. Fälla tre: gränserna. Utländska tillgångar i dödsbon kan möta källskatt och andra regler — sj-01:s territorium — och fåmansbolagsaktier har en helt egen utdelnings- och överlåtelsemekanik som km-053 äger; att blanda in dem här vore att blanda lagstiftningsområden. Sist: den mänskliga fällan. Samma mekanik som gör arvet skattevänlig kan fresta en generationsöverföring att göras för mekanikens skull allena — kursens uppgift är att förklara reglerna, inte att förespråka någon överföring; varje verkligt beslut bär sina egna värden, relationer och omständigheter som ingen kurs kan väga."
+          },
+          {
+            "type": "insight",
+            "content": "Papperet är mekanikens minne. Depåhistorik som kan rekonstrueras är i överlåtelsevärlden värt mer än någon kursspådom — det är hela skillnaden mellan ett känt och ett okänt omkostnadsbelopp."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 3,
+        "title": "Mästerskap — dödsboets fem frågor",
+        "intro": "Den som kan ställa de fem frågorna kan läsa vilken överlåtelse som helst — det är kursens slutform.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur kom aktierna till ägaren — köp, arv, gåva, bodelning eller apport; svaret väljer födelseform. Fråga två: vad är omkostnadsbeloppet och varifrån stammar det — dokumenterat i papper eller rekonstruerbart bara delvis. Fråga tre: om dödsbo är inblandat, var i processen står det — före bouppteckning, under boets tid eller efter skiftet; tidpunkten bestämmer både subjekt och subtraktion, som 178-mot-2-exemplet visade. Fråga fyra: finns blandade förvärv som behöver kvoteras — betalning under värde mellan närstående, med gåvoandel beräknad och dokumenterad. Fråga fem: vilka delar av portföljen saknar mekaniken helt — schablonkonton, utländska tillgångar, fåmansbolag — och bör därför hanteras med sina egna regler. Fem frågor, tre födelseformer, en subtraktion. Detta är en kurs i hur svenska överlåtelseregler fungerar som utbildning — hur de tillämpas i ett levande fall med relationer och valörer är en fråga för rådgivare och de berörda själva, och där slutar kursens mandat."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rita en fingerad familjeportföljkarta med fyra innehav: ett köpt 1998, ett ärvt 2014 via dödsbo, ett givet 2019 av en förälder som köpte 1985, och ett schablonkonto. Ange för varje innehav vilket omkostnadsbelopp som gäller för dagens ägare och vilken handling som styrker det. Lägg sist till ett femte innehav: 100 aktier förvärvade av ett syskon till hälften av marknadsvärdet — kvotera och räkna mottagarens omkostnadsbelopp. Övningen ger ingen att handla på; den ger den vana vid subtraktionen som allt hänger på."
+          },
+          {
+            "type": "insight",
+            "content": "Överlåtelsemekaniken är familjeportföljens tredje dimension: inte vad som ägs, inte vad det är värt — utan varifrån vinstberäkningen stammar. Den som ser tre dimensioner ser också varför två likadana depåer kan vara två olika världar."
+          }
+        ]
+      }
+    ]
+  },
   "bf-05-ankareffekt": {
     "slug": "bf-05-ankareffekt",
     "category": "BETEENDEFINANS",
@@ -201183,6 +201355,178 @@
     "lynchSection": "Peter Lynch älskade bolag som såg tråkigare ut än de var — och redovisningspolitiken är mekaniken bakom det skenet. Ett bolag som kostnadsför all utveckling (kapitel fyra) rapporterar sämre resultat än ett identiskt kapitaliserande grannbolag, och Lynchs öga för sådana gap var en del av hans fördel mot den som läste P/E rakt av: han kallade det att göra hemläxan, och hemläxan var i praktiken detta kapitels sex frågor. Tvillingarnas P/E 10,0 mot 9,1 är precis den sorts illusion hans tålamod gjorde begriplig — den billigare på pappret är inte billigare i kassan (120 lika med 120). Lynch skulle också ha varit den förste att påpeka att städningsåret (kapitel fem) är en gåva till den tålmodiga: ett års dålig rapport med alla nedskrivningar samlade gör nästa års trend renare än verkligheten — och den som förstår formationsrörelsen köper inte trenden okritiskt.",
     "grahamSection": "Benjamin Graham behandlade balansräkningen som faktamängd och kursen som åsikt — och redovisningspolitiken är precis gränsen där faktamängden blir påverkbar. Grahams försiktighet med uppskrivna poster och hans krav på marginal (km-030) översätts i denna kurs till konkreta vaktposter: en tillgångssida som växer av kapitaliserade utgifter (inte av kontanta investeringar), en soliditet (st-01) som beror på en antaganderänta, ett resultat som springer ifrån sitt kassaflöde. Hans berömda råd att köpa som om marknaden vore en pessimistisk motpart förutsätter att läsaren kan skilja rapportens VAL från bolagets VERKLIGHET — annars är motpartens pessimism eller optimism riktad mot en spegelbild. Graham läste noterna före siffrorna; denna kurs är den systematiska versionen av den ordningen.",
     "ak1Section": "I AK1A:s metodik är redovisningspolitiken det sista lagret i fundamental läsning: AKM1:s variabler och nyckeltalen (km-serien, v-raderna) är byggda på rapporttal — och rapporttal är VAL. Laborationens tvillingexempel (A och B) körs i AI-Mentorn på begäran: resultatgapet 100 mot 110, kassaflödets 120 lika med 120, jämkningsräkningen som stänger multipelgapet 10,0 mot 9,1 — alltid som mekanik och historiebeskrivning, aldrig som omdöme om en viss akties redovisning eller värde. BK-seriens trappa blir här helt: bk-01 till bk-03 öppnar statements, bk-04 fogar koncernen, bk-05 visar rummet där alla statements formas. Kursen lär ut frågetekniken — vilka val, vad hade grannens tal varit — och lämnar beslutet där den hör hemma: hos läsaren. Utbildning, aldrig investeringsråd."
+  },
+  "bk-06-obeskattade-reserver-och-avsattningar": {
+    "slug": "bk-06-obeskattade-reserver-och-avsattningar",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Obeskattade reserver och avsättningar — balansräkningens tvegift",
+    "summary": "Bokföringsfamiljens sjätte steg öppnar balansräkningens mest svenska skåp: den obeskattade reserven, posten som är eget kapital och skuld på samma gång, och avsättningarna — pensionen, garantin, omstruktureringen — vars värden är uppskattningar klädda i siffror. Kursen lär mekaniken bakom skatteuppskovet, det justerade egna kapitalet och P/B-läsningens största svenska fälla. Utbildning om hur posterna fungerar, inte råd om något bolag.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Läsa den obeskattade reservens dubbelnatur — eget kapital i drift, skuld när vinsten lämnar bolaget · Räkna skatteuppskovet: skillnaden mellan betald och bokförd skatt, och varför den blir statens räntefria lån · Följa en avsättnings rörelse: ingående värde, ränta, periodisering, utbetalning, utgående värde · Räkna det justerade egna kapitalet: rapporterat EK plus reserver minus latent skatt · Förstå varför svenska och internationella substansvärden inte talar samma språk utan justering · Ställa granskarens fem frågor till varje balansräkning med reserver",
+    "why": "Bokföringstrappans fem första steg byggde grunden: bk-01 balansräkningens byggnad, bk-02 resultaträkningens trappa, bk-03 kassaflödets tre kanaler, bk-04 koncernens sammanflätning och bk-05 ledningens lagliga valrum. Men balansräkningen har en svensk särart som trappan ännu inte öppnat: den obeskattade reserven — posten mellan skulder och eget kapital som får en hel substansläsning att vända in och ut, och som saknar motstycke i den internationella rapportering som vm-01..11-världen bygger på. Sonden mot registret bekräftar luckan: obeskattade reserver nämns endast i förbifarten (st-06 likviditetsreserven, v05 och ib-02 som P/B-justering) — ingen kurs äger posternas mekanik. bk-06 är familjens sjätte steg och bokföringsrummets sammanfogning: bk-01:s struktur, bk-02:s resultatkoppling och bk-05:s valrum möts i posten som förenar dem alla tre.",
+    "history": {
+      "origin": "Reserveringen är äldre än dubbel bokföring: handelshusens försiktiga buffertar mot skeppsförluster och osäkra fordringar var en informell skatt på optimism. När inkomstbeskattningen växte fram krockade två logiker — redovisningens matchning av kostnad mot intäkt och skattelagstiftningens egna tidsregler — och mellan dem föddes bestående skillnader mellan bokförd och taxerad vinst.",
+      "evolution": "Den svenska modellen valde att låta skillnaderna stanna kvar i balansräkningen som en egen post: differenserna mellan bokförd och beskattningsbar inkomst ackumuleras i reserven, som därmed bär historien om varje års skatteuppskov och tidigareläggning. De internationella reglerna valde motsatta riktningen: skillnaderna beräknas och redovisas explicit som uppskjuten skatt, post för post, vilket ger ett eget kapital som ser annorlunda ut fastän bolaget är detsamma.",
+      "modern": "I dagens svenska rapporter lever posten kraftigast i banker, försäkringsbolag och industrier med stora åtaganden: en balansräkning där en fjärdedel av omslutningen är obeskattade reserver är inte ett larm — den är en tidskapsel av skjuten upp skatt, en källa till substansjustering vid varje värdeberäkning och den första posten en svensk granskare lär sig räkna om. Att läsa posten utan att förstå dess dubbelnatur är den klassiska nybörjarfällan i svensk aktieanalys."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — posten som är två saker samtidigt",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — skatteuppskovet och reservens tillväxt",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Avsättningarna — pensionen, garantin, omstruktureringen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — det justerade egna kapitalet och substansen",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — granskarens fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om att läsa balansräkningen baklänges: börja med det som är svårt att fejka. Obeskattade reserver är den svenska motsvarigheten till hans dolda värden — ett kapital som syns i balansräkningen men som börskursen ofta räknar som vanliga kronor, fastän en femtedel av varje reserv är statens andel som väntar. Hans regel att leta värdet där ingen annan orkar räkna är reservläsningens beskrivning i en mening.",
+    "grahamSection": "Benjamin Graham arbetade i en rapportvärld utan svenska reserver, men hans substansberäkning ställer exakt den fråga denna kurs svarar på: vad är bokfört värde värt när en del av det är en skuld i förklädnad? Grahams krav på försiktighet i varje tillgångspost — att räkna ned det osäkra och fråga vad som återstår — är samma metod som det justerade egna kapitalet bygger på: först när latent skatt dras av är substanssiffran ärlig.",
+    "ak1Section": "I AK1A:s metodik kompletterar bk-06 bokföringstrappans topp: v05:s P/B-läsning och ib-02:s substanskvalitet kräver ett justerat eget kapital för svenska bolag, och bk-05:s valrum fick sin mest svenska post att öva på. I AKM1:s bolagsläsning blir reservens storlek och rörelse en strukturell ögonblicksbild av samma slag som avskrivningarna i km-021: en plats där skatteregler och redovisningsval flyttar rapportens resultat mellan år utan att en krona lämnar bolaget. Kursen är utbildning i mekanik — aldrig råd om köp eller försäljning.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — posten som är två saker samtidigt",
+        "intro": "Mellan skulderna och det egna kapitalet, på balansräkningens svenska våning, står en post som inte bestämt sig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "bk-01 lärde balansräkningens byggnad: tillgångar vänster, kapital höger. Men den svenska högerväggen har tre skikt, inte två — skulder, obeskattade reserver och eget kapital. Reserven föds ur ett gränsvärde: bokföringen får periodisera en kostnad efter redovisningens matchningsprincip, medan skatten beskattar inkomsten efter sina egna tidsregler. När bokförd vinst och taxerad vinst skiljer sig åt år efter år samlas differensen i reserven. Det som gör posten svårläst är dess dubbelnatur: i löpande drift beter den sig som eget kapital — pengar som stannar i bolaget och kan arbetas med — men den är samtidigt en latent skatteskuld som realiseras när vinsten vill lämna bolaget, genom utdelning eller nedläggning. Grannkurserna äger varsin sida av rummet: km-049 äger skattesidans regler och bk-05 ledningens valrum — bk-06 äger själva posternas mekanik mellan dem."
+          },
+          {
+            "type": "definition",
+            "content": "OBE SKATTAD RESERV — ackumulerad skillnad mellan bokförd och taxerad vinst; kapital som ännu inte beskattats och som uppför sig som eget kapital i drift men beskattas när det lämnar bolaget · LATENT SKATT — den andel av reserven som vid upplösning blir skuld; i kursens övningsuniversum beräknas den till 20 procent · AVSÄTTNING — en skuld av osäker belopp eller tidpunkt, värderad till uppskattning: pension, garanti, omstrukturering · JUSTERAT EGET KAPITAL — rapporterat EK plus obeskattade reserver minus latent skatt; substansläsningens svenska grundtal"
+          },
+          {
+            "type": "insight",
+            "content": "Reserven är inte en hemlighet — den står tryckt i varje svensk balansräkning. Skillnaden mellan att se posten och att läsa den är en enda subtraktion: ta bort statens andel, och det som återstår är det kapital som verkligen tillhör ägarna."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — skatteuppskovet och reservens tillväxt",
+        "intro": "En reserv växer av skillnader mellan två klockor: redovisningens och skattens. Räkneexemplet gör klockorna hörbara.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den klassiska källan är avskrivningstakten — km-021:s territorium i allmän form. Norra Kraft AB köper en maskin och skriver av den bokfört med 20,0 Mkr om året, men skattereglerna tillåter en accelererad avskrivning på 40,0 Mkr det första året. Året har intäkter 100,0 Mkr och kontanta kostnader 50,0 Mkr. Bokfört resultat före skatt blir 100,0 − 50,0 − 20,0 = 30,0 Mkr. Den taxerade inkomsten blir 100,0 − 50,0 − 40,0 = 10,0 Mkr. Skatten betalas på taxerad inkomst: 0,20 × 10,0 = 2,0 Mkr. I resultaträkningen bokförs skattekostnaden på det bokförda resultatet: 0,20 × 30,0 = 6,0 Mkr, och bokfört netto blir 30,0 − 6,0 = 24,0 Mkr. Kassaflödet — bk-03:s sanning — blir intäkter minus kontanta kostnader minus betald skatt: 100,0 − 50,0 − 2,0 = 48,0 Mkr. Jämförelsen är allt: utan den accelererade avskrivningen vore taxerad inkomst 30,0 Mkr, betald skatt 6,0 Mkr och kassaflödet 100,0 − 50,0 − 6,0 = 44,0 Mkr. Skillnaden 48,0 − 44,0 = 4,0 Mkr är exakt 0,20 × (40,0 − 20,0) — skatteuppskovet, statens räntefria lån till bolaget. Samma år växer den obeskattade reserven med skillnaden mellan bokförd och taxerad vinst, 30,0 − 10,0 = 20,0 Mkr, för i de senare åren när de skattemässiga avskrivningarna tar slut medan de bokförda fortsätter vänder klockorna och differensen beskattas tillbaka. Reserven är alltså en bokförd skuld till framtiden som ännu inte förfallit — och varje års rörelse syns i noterna."
+          },
+          {
+            "type": "tabell",
+            "content": "SKATTEUPPSKOVET HOS NORRA KRAFT AB, ÅR 1 (PÅHITTADE TAL): INTÄKT 100,0 · KONTANTA KOSTNADER 50,0 · BOKFÖRD AVSKRIVNING 20,0 · SKATTEMÄSSIGT TILLÅTEN AVSKRIVNING 40,0 · BOKFÖRT RESULTAT FÖRE SKATT: 100,0 − 50,0 − 20,0 = 30,0 · TAXERAD INKOMST: 100,0 − 50,0 − 40,0 = 10,0 · BETALD SKATT 20 PROCENT: 0,20 × 10,0 = 2,0 · BOKFÖRD SKATTEKOSTNAD: 0,20 × 30,0 = 6,0 · BOKFÖRT NETTO: 30,0 − 6,0 = 24,0 · KASSAFLÖDE: 100,0 − 50,0 − 2,0 = 48,0 · UTAN ACCELERATION: skatt 6,0 och kassaflöde 44,0 · UPPSKOV: 48,0 − 44,0 = 4,0 = 0,20 × (40,0 − 20,0) · RESERVÖKNING: 30,0 − 10,0 = 20,0 — differensen som beskattas tillbaka när klockorna vandrar ihop"
+          },
+          {
+            "type": "insight",
+            "content": "Två röster talar i samma årsredovisning: resultaträkningen visar bokförd skatt på bokförd vinst, kassflödet visar betald skatt på taxerad vinst. Skillnaden mellan rösters summor är reservens hjärtslag — och där bokförd skatt överstiger betald växer posten tyst."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Avsättningarna — pensionen, garantin, omstruktureringen",
+        "intro": "Avsättningarna är balansräkningens enda poster vars värde ingen faktura bestämmer.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En avsättning är ett löfte som satts på siffror: pensionsåtagandet som km-025 äger i sin helhet, garantiåtagandet mot sålda produkter och omstruktureringsåtagandet vid nedläggningar är de tre klassikerna. Gemensam mekanik: posten rör sig som ett badkar — ingångsvärdet värderas upp med ränta, årets förvärvade åtaganden periodiseras in, utbetalningarna läcker ut. Pensionsavsättningen är mest regelstyrd: diskonteringsräntan följer regler och varje räntesteg rör posten direkt. Övningstalet är en enkel balans: avsättning 100,0 Mkr vid årets början, uppräkning med 4 procent = 4,0 Mkr, inperiodiserat arbete 10,0 Mkr, utbetald pension 8,0 Mkr — utgående värde 100,0 + 4,0 + 10,0 − 8,0 = 106,0 Mkr. Garantiavsättningen är granskarens favorit just för att den saknar fast regel: om posten står på 20,0 Mkr och de faktiska garantikostnaderna historiskt ligger på 12,0 Mkr per år täcker avsättningen 20,0 ÷ 12,0 = 1,7 års förbrukning — frågan är om den speglar ett åtagande eller ett buffertlager som kan släppas tillbaka till resultatet i goda år. Omstruktureringsavsättningen har sin egen tidsregel: den hör hemma i resultaträkningen först när ett detaljerat, bindande beslut finns — inte för att ett projekt känns troligt. bk-05:s valrum visar sig här i avsättningsdräkt: antagandena om livslängd, ränta och omfattning är ledningens egna, och ln-02:s resultatkvalitetsverktyg är byggda för att väga dem."
+          },
+          {
+            "type": "tabell",
+            "content": "AVSÄTTNINGARNAS RÖRELSE — TRE KURSER (PÅHITTADE TAL): PENSION: ingående 100,0 · ränta 4 procent = 4,0 · periodiserat arbete +10,0 · utbetalning −8,0 · utgående = 106,0 Mkr · GARANTI: post 20,0 · faktisk förbrukning 12,0 per år · täckning = 20,0 ÷ 12,0 = 1,7 år — granskas mot historik · OMSTRUKTURERING: får bokföras först vid detaljerat bindande beslut — en förväntan är inte en avsättning · GEMENSAM REGEL: alla tre är uppskattningar — noter och förändringsanalys är enda sättet att skilja åtagande från åsikt"
+          },
+          {
+            "type": "insight",
+            "content": "Avsättningsändringen är en signalkälla i sig: en garantiavsättning som växer snabbare än omsättningen bär bud om kvalitetsproblem eller om försiktighet — och noternas förklaringar avgör vilken av de två det är."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — det justerade egna kapitalet och substansen",
+        "intro": "När posterna väl är förstådda återstår analysens viktigaste svenska enkla räkning: att göra det egna kapitalet jämförbart.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Substansvärderingen — v05:s P/B-mekanik och ib-02:s kvalitetsfrågor — börjar i det egna kapitalet, och för svenska bolag är det rapporterade talet inte räknbart rakt av. Norra Kraft AB igen som exempel: rapporterat eget kapital 180,0 Mkr, obeskattade reserver 250,0 Mkr — en fjärdedel av den totala balansomslutningen 1 000,0 Mkr. Den latenta skatten är 20 procent av reserven: 0,20 × 250,0 = 50,0 Mkr. Det justerade egna kapitalet blir 180,0 + 250,0 − 50,0 = 380,0 Mkr. På 10,0 miljoner aktier är det 38,0 kronor per aktie i justerat läge mot 18,0 kronor i rapporterat. Skillnaden i läsningen är dramatisk: med aktien noterad till 30,0 kronor blir P/B rapporterat 30,0 ÷ 18,0 = 1,67 — en substanspremie på två tredjedelar — medan P/B justerat blir 30,0 ÷ 38,0 = 0,79, en rabatt. Samma bolag, samma dag, samma kurs: den första läsningen visar dyrt, den andra billigt, och kvoten mellan dem 1,67 ÷ 0,79 = 2,1 gånger är ren reservgeometri. I internationella jämförelser — vr-06:s jämförelsebolag — är korrigeringen nödvändig: den utländska rapporten redovisar uppskjuten skatt öppet, och den svenska som inte justeras ser fattigare ut än den är. Det är mekanikens lag, inte en åsikt om någon aktie: kursen lär räkningen, beslutet är alltid läsarens eget."
+          },
+          {
+            "type": "definition",
+            "content": "JUSTERAT EGET KAPITAL = RAPPORTERAT EK + OBE SKATTADE RESERVER − LATENT SKATT · PER AKTIE: det justerade talet delat med antal aktier · P/B JUSTERAT: kurs delat med justerat EK per aktie · RESERVEFFEKTEN: förhållandet mellan rapporterat och justerat P/B — i övningsexemplet 1,67 mot 0,79, en faktor 2,1"
+          },
+          {
+            "type": "insight",
+            "content": "Regeln är enkel nog att minnas för alltid: lägg till reserven, dra bort en femtedel. Resten — vad substansen sedan är värd i marknadens ögon — tillhör v05:s och vr-05:s värderingsrum, inte bokföringens."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Postens dubbelnatur bjuder in till tre klassiska misstag — ett per natur.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: att läsa reserven som skuld och bolaget som skuldsatt. Reserven betalar ingen ränta, kan inte sägas upp av någon bank och realiseras först vid utdelning eller nedläggning — att behandla den som lån i st-01:s soliditetsräkning ger en falskt mörk bild av tryggheten. Fälla två: att läsa reserven som fritt eget kapital. Vid en riktig belastning — rk-familjens territorium — är det just omstrukturering eller vinster som lämnar bolaget som tvingar fram beskattning, och 20 procent av posten försvinner i samma ögonblick den behövs som buffert; st-06:s likviditetsläsning möter just detta gränsfall. Fälla tre: jämförelsen över gränserna. Ett svenskt bolag med stora reserver och ett utländskt med uppskjuten skatt redovisad har samma ekonomi men olika bokstavsbild — den som jämför P/B utan justering rangordnar dem fel. Till det kommer avsättningarnas egen fälla: att läsa beloppet och aldrig åldern. En garantiavsättning som inte rört sig på fem år kan vara överdimensionerad — vinstpengar parkerade som kan släppas tillbaka i goda tider, bk-05:s redovisningspolitik i miniatyr — eller ett tecken på att produkten blivit säkrare än historiken. Noterna, inte balansraden, avgör skillnaden."
+          },
+          {
+            "type": "insight",
+            "content": "Alla tre fällorna har samma motgift: fråga vad posten gör vid ett konkret händelseförlopp — utdelning, belastning, försäljning — och lättnadens eller smärtans storlek avslöjar postens sanna natur."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — granskarens fem frågor",
+        "intro": "Den sista vormen är en frågekorg som fungerar på varje svensk balansräkning med reserver.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: hur stor är reserven i förhållande till balansomslutningen och det egna kapitalet — en post på 2 procent är notmaterial, en på 25 procent är huvudperson, som i Norra Kraft-exemplet. Fråga två: vilka antaganden bär avsättningarna — pensionspostens diskonteringsränta, garantins täckningsår, omstruktureringsbeslutens bindningsgrad. Fråga tre: hur rörde sig posterna under året — nybildning, upplösning, omvärdering — och vad förändringarna säger om verksamheten som ln-02 sedan får tolka. Fråga fyra: vad blir det justerade egna kapitalet per aktie, och hur ser P/B ut i båda läsningarna. Fråga fem: vad händer med posten i de tre fallen utdelning, belastning och försäljning — där visas skillnaden mellan 48,0 och 44,0 i kassaflöde från kapitel två, och mellan substans och beskattning från kapitel fyra. Den som kan svara på de fem har läst balansräkningen en våning djupare än den som bara såg två skikt. Detta är utbildning i läskonst — hur någon enskild aktie ska värderas är alltid läsarens egen fråga, aldrig kursens."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta fram en svensk årsredovisning du har tillgång till och hitta posterna: obeskattade reserver, avsättning för pension, avsättning för garanti eller liknande åtagande. Räkna det justerade egna kapitalet per aktie med 20 procents latent skatt, och jämför P/B i båda läsningarna mot börskursen. Åldersdatera sedan garantiavsättningen mot de faktiska kostnaderna i noterna. Minst en överraskning bjuder en sådan övning nästan alltid — och en överraskning är en fråga att ställa, inte en handling att utföra."
+          },
+          {
+            "type": "insight",
+            "content": "Bokföringstrappan är nu sex steg hög — och från sjätte steget syns något som de fem första inte kunde visa: hur rapportens delar sammanfogas. Balansradens tvegift är belöningen till den som orkar subtrahera en enda rad."
+          }
+        ]
+      }
+    ]
   },
   "ln-01-dupont-analysen": {
     "slug": "ln-01-dupont-analysen",

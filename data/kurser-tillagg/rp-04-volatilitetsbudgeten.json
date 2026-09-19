@@ -1,0 +1,149 @@
+{
+  "slug": "rp-04-volatilitetsbudgeten",
+  "category": "RISKHANTERING & PORTFÖLJTEORI",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Volatilitetsbudgeten — portföljens risk satt i ett tal och fördelad i kronor",
+  "summary": "RISKHANTERING & PORTFÖLJTEORI-familjens fjärde steg: rp-01 ritade måttkartan, rp-02 lärde ratiofamiljen, rp-03 vände vikten efter riskbidrag — och denna kurs tar steget före alla tre: risken som BESLUT. En volatilitetsbudget är ett tal, valt i fredstid, för hur mycket portföljen får pendla per år — och kursen följer talet hela vägen genom maskineriet: vilka vikter det betyder (12 procents budget landar på 65,7/34,3 i kronor när aktier pendlar 18 procent och räntepapper 6), vem som får riskkronorna (bidragen fördelar sig 97/3 — kvadratlagen gör tre gånger högre volatilitet till nio gånger högre varians), och vad som händer i drift när volatiliteten rör sig (aktiependlingen 18 till 24 procent krymper aktieslanten 65,7 till 48,3 utan att budgeten rörts). Sond mot 432 kurser: volatilitetsbudget, riskbudgetering och målvolatilitet ger noll träffar — medan grannarna äger var sitt annex: rp-03 riskbidragens aritmetik, pf-04 rebalanseringen i kronor, km-013 själva måttet. Kursens tes: budgeten flyttar frågan från vad läsaren tror till vad portföljen tål — och det är utbildning i mekanik, aldrig råd om vilka tillgångar läsaren bör äga.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå vad en volatilitetsbudget är: ett tak för portföljens årliga pendling, valt FÖRE positionerna och uttryckt i risk-enheter i stället för kronor · Räkna portföljvolatiliteten ur vikter och enskilda volatiliteter: aktier 18 procent och räntepapper 6 procent med korrelation noll ger 60/40-portföljen variansen 116,64 + 5,76 = 122,4 och volatiliteten 11,06 procent, 70/30 ger 158,76 + 3,24 = 162,0 och volatiliteten 12,73 procent · Lösa budgetekvationen: tolv procents budget kräver aktievikten 65,7 procent (ekvationen 10w² − 2w − 3 = 0 har roten 0,6568) — talet som ser återhållsamt ut i vol kan se modigt ut i kronor · Räkna riskbidragens fördelning: vid 65,7/34,3 bidrar aktierna 11,65 procentenheter och räntepapperen 0,35 av de 12,0 — riskkronorna fördelar sig 97/3, och kvadratlagen förklarar varför · Föra budgeten i drift: när aktievolatiliteten stiger från 18 till 24 procent pressar den oförändrade vikten portföljen till 15,90 procent (överskott 3,90 procentenheter, 32,5 procent över budget) och återföringen till tolv procent kräver den nya vikten 48,3/51,7 · Känna igen de sex fällorna: volatilitetens egen pendling, normalfördelningens smala svansar, korrelationens svek i kriser, mekanikens tvång, falsk precision och budgeten utan herre — och ställa de tre frågor som hör till ett moget budgetbeslut.",
+  "why": "RISKHANTERING & PORTFÖLJTEORI-familjen står i trappan rp-01 Nybörjare (kartan över fem mått), rp-02 Intermediär (Sharpe, Sortino och Calmar), rp-03 Avancerad (riskparitetens lika bidrag) — och saknar det steg som ligger FÖRE alla verktygen: beslutet om hur mycket risk portföljen överhuvudtaget ska bära. Sond mot 432 kurser på volatilitetsbudget, riskbudgetering, målvolatilitet: noll träffar — ordet riskbudget dyker upp tolv gånger i förbifarten men ingen kurs äger talet som styrbeslut, trots att varje institutionell förvaltare börjar där och varje privatportfölj styrs av det också, medvetet eller ej. Grannarna håller avstånd: rp-03 äger riskbidragens aritmetik och paritetsregeln (kursen återanvänder beräkningen men äger BUDGETEN före regeln), pf-04 äger rebalanseringen i kronor (kursen äger återföringen i risk-enheter), km-013 äger volatiliteten som mått, km-014 korrelationens grund, rk-10 korrelationen i kriser, km-033 svansrisken, km-034 nedgångens anatomiska mått. Signaturnumret bär kursen hela vägen: en tolv procents budget — ett milt tal — visar sig bäras till 97 procent av aktiesidan, och när aktierna pendlar dubbelt så brett säljer mekaniken automatiskt ned på dem utan en enda åsikt om framtiden. Det är den rörelsen, från tyckande till mekanik, som är kursens gåva — och den formuleras som utbildning i hur metoden fungerar, aldrig som råd om läsarens egna pengar.",
+  "history": {
+    "origin": "Att sätta ett tak för risk innan man tar den är försäkringsmatematikens gamla hantverk: sjökassorna på Östersjöns handelshus visste vilken förlorstonnage de tålde innan skeppen lossades, och bankernas guldreserver hölls efter ett mått på uttagsrymning snarare än efter en förhoppning om lugna tider. Budgeten föddes ur behovet att överleva det värsta utfallet, inte att förutsäga det vanligaste.",
+    "evolution": "När portföljteorin på 1900-talet gav risken ett mått — variansen och hennes roten, volatiliteten — fick budgettanken en räknbar form. Riskhanteringsavdelningarna som växte fram på 1990-talet hos banker och institutionella förvaltare översatte försäkringskassans tak till tal per handelsbok: gränser uttryckta i volatilitet och värde-i-risk, överskridanden som krävde åtgärd samma dag. Privatplacerarens motsvarighet blev enklare men samma till formen: en andel aktier som inte får passeras, satt när marknaden var lugn.",
+    "modern": "I dag lever målvolatiliteten som strategi hos institutionella förvaltare och som tankefigur hos varje placerare som räknat ut vad en tjugoprocentnedgång gör med ens sömn: indexprodukter med volatilitetsmål justerar automatiskt sin aktieandel när marknadens pendling förändras, och erfarenheten från kriser — inte minst mars 2020, när volatilitetsstyrda portföljer tvingades sälja i fallet de var byggda att dämpa — har gjort mekanikens båda sidor till obligatorisk läsning: budgeten skyddar AND självförstärker. Kursens sex fällor bär den erfarenheten."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Budgeten — risken som beslut, inte som öde", "minutes": 4 },
+    { "num": 2, "title": "Fysiken — vilka vikter betyder talet", "minutes": 4 },
+    { "num": 3, "title": "Fördelningen — vem får riskkronorna", "minutes": 4 },
+    { "num": 4, "title": "Driften — när volatiliteten rör på sig", "minutes": 4 },
+    { "num": 5, "title": "Fällorna — sex gropar kring budgettalet", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — tre frågor före talet", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Budgeten — risken som beslut, inte som öde",
+      "intro": "Familjens tre första kurser mätte och vikade risken. Detta kapitel tar steget före mätandet: beslutet om hur mycket portföljen överhuvudtaget ska pendla — och varför ett sådant tal alls ska finnas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En portföljs risk har två vägar in i livet. Den första är ödets: läsaren köper det som känns rätt, portföljen pendlar som den pendlar, och först i nedgången upptäcks taket — genom att taket träffas. Den andra är beslutets: FÖRE positionerna väljs ett tal, hur mycket den totala portföljen får svänga per år, och sedan anpassas positionerna till talet i stället för tvärtom. Det talet är en volatilitetsbudget, och kursen följer den genom hela maskineriet: vilka vikter den betyder, vem som bär den, och vad som händer när marknaden rör på sig.\n\nExempelportföljen bärs genom hela kursen med oförändrade ingångstal: en aktiefond som pendlar 18 procent per år och en räntefond med korta statspapper som pendlar 6 procent, med korrelationen noll dem emellan (km-013 äger måttet volatilitet, km-014 äger korrelationen — kursen lånar båda som grunder). Budgeten sätts till 12 procent: portföljen som helhet får pendla tolv procentenheter om året, varken mer eller mindre.\n\nRedan här står kursens första överraskning beredd: tolv procent låter som en försiktig siffra, och aktier förknippas med det dubbla. Men nästa kapitel visar att tolv procents budget betyder 65,7 procent aktier — en aktieandel de flesta skulle kalla bestämd snarare än blygsam. Talet som ser återhållsamt ut i volatilitet kan se modigt ut i kronor, och omvänt: budgetens språk och kronornas språk är inte samma språk, och kursen översätter mellan dem."
+        },
+        {
+          "type": "definition",
+          "content": "VOLATILITETSBUDGET — det tal för portföljens årliga pendling som väljs FÖRE positionerna och som positionerna sedan anpassas till; en budget styrs i risk-enheter (procentenheter pendling) i stället för i kronor, och den sätts i lugn tider för att gälla i oroliga."
+        },
+        {
+          "type": "insight",
+          "content": "Budgeten flyttar den svåraste frågan i placerandet från marknaden till köksbordet: inte vad tror jag kommer att hända, utan vad tål portföljen att ha hänt. Frågan om tro har inget rätt svar; frågan om tolerans har ett svar per läsare, och det kan bäras i ett enda tal."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Fysiken — vilka vikter betyder talet",
+      "intro": "En budget utan räknelära är en förhoppning. Kapitlet visar hur tolv procents målvolatilitet översätts till kronvikter — genom portföljvolatilitetens formel och en ekvation med ett entydigt svar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Portföljvolatiliteten är ingen viktad medelvärdering av delarnas pendling — rp-03 visade varför: varianserna summeras, inte volatiliteterna. Med korrelationen noll blir formeln ren kvadratsumma: portföljvariansen är aktievikten i kvadrat gånger 324 (18 i kvadrat) plus räntevikten i kvadrat gånger 36 (6 i kvadrat), och portföljvolatiliteten är roten ur summan.\n\nTabellen visar spannet: hundra procent aktier ger 18,0 procent, hundra procent räntepapper 6,0. En 60/40-portfölj — världens vanligaste skiss — landar på variansen 116,64 + 5,76 = 122,4, alltså volatiliteten 11,06 procent: strax UNDER budgeten. En 70/30-portfölj landar på 158,76 + 3,24 = 162,0, alltså 12,73 procent: strax ÖVER. Budgetens tolv procent ligger alltså mellan två av portföljskissarnas standardval, och frågan blir exakt: vilken vikt ger precis tolv?\n\nSvaret finns med ekvationen w i kvadrat gånger 324 plus (1 minus w) i kvadrat gånger 36 lika med 144 (tolv i kvadrat). Utskriven och förenklad: 360w² − 72w − 108 = 0, dividerat med 36: 10w² − 2w − 3 = 0, med den positiva roten w = (2 + roten ur 124) delat med 20 = 0,6568. Budgetens tolv procent betyder aktievikten 65,7 procent och räntevikten 34,3 — kontrollräkningen ger variansen 139,76 + 4,24 = 144,00, roten 12,00. Talet är funnet, och med det börjar det verkliga arbetet: att fråga vem som bär de tolv procentenheterna."
+        },
+        {
+          "type": "tabell",
+          "content": "VIKTENS PRIS I PENDLING (AKTIER 18 PROCENT, RÄNTEPAPPER 6, KORRELATION NOLL): 100/0 → varians 324,0 · portföljvol 18,00 procent · 70/30 → 158,76 + 3,24 = 162,0 · 12,73 procent · 65,7/34,3 (BUDGETVIKTEN) → 139,76 + 4,24 = 144,00 · 12,00 procent = BUDGETEN · 60/40 → 116,64 + 5,76 = 122,4 · 11,06 procent · 0/100 → 36,0 · 6,00 procent · LÄRAN: tolv procents budget = 65,7 procent aktier i kronor"
+        },
+        {
+          "type": "insight",
+          "content": "Översättningstabellen mellan vol och kronor är budgetens bästa kompis: tolv procents pendling låter som halva aktiemarknadens, men i kronor är den två tredjedelar aktiefond. Den som pratar i det ena språket och handlar i det andra tar alltid fel beslut i det fel språket."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Fördelningen — vem får riskkronorna",
+      "intro": "Tolv procentenheter pendling är portföljens gemensamma projekt — men projektet har en ägare i nästan hela sin omfattning. Kapitlet räknar riskbidragen och möter kvadratlagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "rp-03 lärde räkna riskbidrag: hur stor del av portföljvolatiliteten varje tillgång svarar för. Med korrelationen noll blir bidraget en enkel division — positionens egen variansandel genom portföljvolatiliteten. För budgetportföljen 65,7/34,3: aktiefonden bidrar 139,76 delat med 12,0 = 11,65 procentenheter, räntefonden 4,24 delat med 12,0 = 0,35. Bidragen summerar till portföljvolatiliteten (11,65 + 0,35 = 12,00 — alltid, det är räkningens inbyggda kontroll), och andelarna blir 97,1 och 2,9 procent.\n\nSå ser alltså en balanserad portfölj ut i riskens bok: 66/34 i kronor, 97/3 i risk. En tredjedels räntepapper som tycks ta betydande plats i sparandet svarar för en trettiondels av pendlingen. Anledningen är matematikens mest underskattade lag i placerandet: volatiliteter förhåller sig i kvadrat. 18 mot 6 är tre gånger i pendling — men 324 mot 36 är NIO gånger i varians, och det är varianserna som delas ut riskkronorna efter.\n\nDetta är budgetens andra beslut, efter talet och före positionerna: FÖRDELNINGEN. Två portföljer med identisk totalvolatilitet — tolv procent båda — kan bära den helt olika: en med 97 procent av risken på en enda fond, en med 60/40 i riskkronor mellan många svagt korrelerade delar. Totaltalet säger hur mycket portföljen pendlar; fördelningen säger vad som krävs för att den SKA pendla så mycket — och vad som händer den dag en enda del slår sig lös. rp-03:s paritetsregel är det ena ytterligheten av fördelningsfrågan (lika bidrag från alla); kursens poäng är att frågan kommer FÖRE varje regel: budget först, sedan fördelning, sedan — först då — verktyg."
+        },
+        {
+          "type": "definition",
+          "content": "RISKBIDRAG — den del av portföljvolatiliteten som en enskild position räknas bidra med; bidragen från alla positioner summerar alltid exakt till portföljvolatiliteten, vilket gör varje bidragsräkning självkontrollerande."
+        },
+        {
+          "type": "tabell",
+          "content": "KVADRATLAGENS STEGA (VOLKVOT → VARIANSKVOT → RISKFÖRDELNING VID LIKA KRONVIKTER): 1 mot 1 → 1 mot 1 → 50/50 i risk · 2 mot 1 → 4 mot 1 → 80/20 i risk · 3 mot 1 (KURSENS PORTFÖLJ 18/6) → 9 mot 1 → 90/10 i risk vid lika kronvikter · LÄRAN: dubblad volatilitetsskillnad = fyrdubblad riskskillnad — koncentrationen växer i kvadrat på måttskillnaden"
+        },
+        {
+          "type": "insight",
+          "content": "Kvadratlagen gör små volskillnader till stora riskkoncentrationer: den lugna tillgången i portföljen är ofta nästan osynlig i riskens bok oavsett hur stor den är i kronornas. Den som vill veta vad en position EGENTLIGEN väger ska väga den i bidrag, inte i kronor."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Driften — när volatiliteten rör på sig",
+      "intro": "En budget sätts en gång men prövas varje dag. Kapitlet följer tolv procents budget genom en volatilitetssväng — och visar mekaniken som själv flyttar kronvikterna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Marknadens pendling är inte en konstant, och budgetens mest rörliga del är aktievolatiliteten. Antag att aktiefondens årliga pendling stiger från 18 till 24 procent — en ordinarie händelse i en orolig period, inte ett extremvärde. Vad händer med budgetportföljen 65,7/34,3 om inget görs?\n\nRäkningen är densamma som i kapitel två, med 576 (24 i kvadrat) i stället för 324: variansen blir 248,46 + 4,24 = 252,70, portföljvolatiliteten 15,90 procent. Budgeten på tolv är överskriden med 3,90 procentenheter — 32,5 procent över taket. Portföljen har inte förändrats en krona, men den har förändrats i risk: samma positioner bär nu en tredjedel mer pendling.\n\nÅterföringen är budgetens motorkapitel: lös ekvationen igen med det nya talet. w i kvadrat gånger 576 plus (1 minus w) i kvadrat gånger 36 lika med 144 ger 612w² − 72w − 108 = 0, förenklat 17w² − 2w − 3 = 0, med roten w = (2 + roten ur 208) delat med 34 = 0,4830. Kontroll: 134,38 + 9,62 = 144,00, roten 12,00. Budgeten är återställd — och aktieslanten har flyttats från 65,7 till 48,3 procent, sjutton och fyra tiondelar procentenheter, UTAN att någon ändrat åsikt om något bolag.\n\nDetta är mekanikens kärna, och den skiljer sig från pf-04:s rebalansering i ett avgörande avseende: kron-rebalanseringen återför VIKTER (aktieandeln tillbaka till målet), risk-återföringen återför BUDGETEN (pendlingen tillbaka till talet). De två kan peka åt samma håll — i ett fall säljs aktier för att de blivit en för stor andel kronor, i det andra för att de blivit en för stor källa pendling. I volatilitetssvängen är det alltid den senare mekanismen som slår först, för den triggar på marknadens beteende snarare än på portföljens."
+        },
+        {
+          "type": "tabell",
+          "content": "BUDGETEN GENOM EN VOLATILITETSSVÄNG (AKTIEVOL 18 → 24, RÄNTEVOL 6 OFÖRÄNDRAD): FREDEN (vol 18) · vikt 65,7/34,3 · portföljvol 12,00 = BUDGETEN · SVÄNGNINGEN (vol 24, oförändrad vikt) · 65,7/34,3 · 15,90 · ÖVERSKOTT 3,90 procentenheter = 32,5 procent över budget · ÅTERFÖRD (vol 24, ny vikt) · 48,3/51,7 · 12,00 = BUDGETEN ÅTER · AKTIESLANTENS FLYTT: 65,7 − 48,3 = 17,4 procentenheter — mekanikens eget beslut"
+        },
+        {
+          "type": "insight",
+          "content": "Budgeten med egen återföring är en portfölj som säljer av när det blir oroligt och köper tillbaka när lugnet återvänder — inte för att den har en åsikt om framtiden, utan för att tolv procents tak bara kan hållas med färre andel oroliga kronor. Mekaniken är åsiktslös; det är hela dess poäng och hela dess risk."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällorna — sex gropar kring budgettalet",
+      "intro": "Varje mekanik som lovar styrsel har en baksida. Kapitlet räknar de sex fällor som varje budgetbärare möter — de tre första i mätningen, de tre sista i beslutet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FÖRSTA FÄLLAN är volatilitetens egen pendling: talet 18 procent är inte ett faktum utan en uppskattning, och uppskattningen rör sig med fönstret den mäts över — trettio dagar av oroliga tider kan visa det dubbla av vad tvåhundrafemtio dagar visar. Budgeten bygger på ett mått som måste frågas VARIFRÅN det kom (km-013:s fönsterfråga), annars styrs portföljen av mätbruset i stället för av marknaden.\n\nANDRA FÄLLAN är normalfördelningens smala svansar: volatiliteten beskriver den vanliga pendlingen, men portföljens verkliga prövningar bor i utfall som är bredare än klockkurvan lovar — km-033 äger svansrisken och km-034 nedgångens anatomi. En budget på tolv procent utesluter inte en nedgång på tjugofem: den utesluter bara att en SÅDAN nedgång är ett vanligt årsverk.\n\nTREDJE FÄLLAN är korrelationens svek: kursens räkning bygger på nollkorrelationen mellan aktier och korta räntepapper, och i fredstid är den en god approximation — men rk-10:s kärna är att korrelationer rör sig mot varandra precis när det gör ont, och en budget räknad i fredens korrelationer är strax underbudgeterad i krisens. FJÄRDE FÄLLAN är mekanikens tvång: återföringen som kapitel fyra visade är en utförsäljningsmaskin i volatilitetstoppar — den säljer när oron är som störst, och mars 2020 visade hur volatilitetsstyrda portföljer förstärkte fallet de var byggda att dämpa (rp-03:s lärdom, även här aktuell). Regeln utan dämpning är en flopp i praktiken och en fälla i teorin.\n\nFEMTE FÄLLAN är falsk precision: skillnaden mellan 11,9 och 12,0 procent är brus från mätningen, inte information — men skillnaden mellan tolv och sexton är ett beslut. Budgetens tal förtjänar ett band snarare än en punkt: tolv plus minus ett, med tålamod innan mekaniken slår till. SJÄTTE FÄLLAN är budgeten utan herre: ett tolv som valdes för att det lät lagom är ingen budget utan en gissning med rigorös kostym. Talet måste komma ifrån något — en tidsvägg, ett uttagsbehov, ett sömntest av det slag Lynch formulerade i rp-02 — annars finns ingen anledning att hålla det när det kostar."
+        },
+        {
+          "type": "insight",
+          "content": "De tre första fällorna bor i mätningen och svarar på osäkerheten med ödmjukhet: mät fönstermedvetet, räkna med bredare svansar än klockan, och stressa korrelationen. De tre sista bor i beslutet och svarar med stadga: dämpa mekaniken, tolerera ett band, och skriv ner varifrån talet kom — samma dag som det valdes."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — tre frågor före talet",
+      "intro": "En budget är moget mättad när bäraren kan besvara tre frågor i tur och ordning — och vet varför just den ordningen. Kapitlet samlar kursen i övning och grannkarta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FRÅGA ETT — varifrån kommer talet? Tolv procent är inte rätt svar för alla och fel för ingen: det är ett exempel. Det egna talet växer ur omständigheter — hur länge kapitalet får arbetas, om uttag väntar, vad en tjugo procentnedgång gör med sömnen och handen på musen. Lynchregel från rp-02: portföljen ska tåla att läsaren förlorar jobbet samma år som marknaden faller; budgeten är den kvantifierade versionen av samma uthållighet.\n\nFRÅGA TVÅ — vem fick riskkronorna? Efter att talet satts och vikterna räknats återstår fördelningsläsningen: bidragsräkningen från kapitel tre, körd på den egna portföljen, med den inbyggda kontrollen att bidragen summerar till totalen. En portfölj som bär nittiosju procent av sin risk på en enda källa svarar inte på frågan vad som händer om KÄLLAN slår sig lös — den besvarar den i förväg, och ogillar svaret.\n\nFRÅGA TRE — vad händer när volatiliteten rör sig? Driftsplanen från kapitel fyra, skriven i fredstid: vilka volatilitetsförändringar som får mekaniken att vakna, hur stora flyttar som accepteras per omgång, och var dämpningen sitter. En budget utan driftsplan är ett löfte utan praxis — det håller tills första gången det kostar.\n\nÖVNINGEN: läsaren med två fonder — en bred aktiefond och en penningmarkfond — kan köra hela kursen på sina egna tal. Volatiliteterna står i faktabladens riskmått (standardavvikelsen, treårig eller femårig), korrelationsantagandet noll är försvarbart för korta räntepapper, och ekvationen från kapitel två löses med papper och penna eller studions export av kurshistorik (ek-03:s arbetsflöde) för den som vill mäta själv. AI-Mentorn räknar gärna med — mekaniken är kursens, exemplen är läsarens.\n\nGrannkartan samlar kursen: rp-01 måttkartan att börja i, rp-02 ratiofamiljen som mäter utdelningen av risk mot avkastning, rp-03 paritetsregeln som fördelar bidragen lika, pf-04 rebalanseringen som håller KRON-vikter där kursen håller RISK-taket, pf-03 diversifieringens grundläggande logik, km-013 och km-014 måttens och sambandens fundament, rk-10 korrelationens krisbeteende, km-033 och km-034 svansens och nedgångens anatomiska mått, st-06 den enskilda kroppens likviditetsreserv (enskilda bolagets släkting till portföljens risktak). Kursen står mellan dem som beslutssteget FÖRE verktygen — och avslutas som den börjar: metoden är utbildning, portföljen är läsarens.",
+          "type": "text"
+        },
+        {
+          "type": "utmaning",
+          "content": "RÄKNESTYCKET: läsaren sätter budgeten till 10,0 procent i stället för 12,0 — samma fondpar (aktier 18 procent, räntepapper 6, korrelation noll). Vilken aktievikt kräver ekvationen? Ledning: w i kvadrat gånger 324 plus (1 minus w) i kvadrat gånger 36 lika med 100, förenklat 45w² − 9w − 8 = 0, med roten (9 + 39) delat med 90. SVAR: w = 0,5333 — aktievikten 53,3 procent, räntevikten 46,7; kontrollen 92,16 + 7,84 = 100,00, roten 10,00. Två procentenheter lägre budget köper tolv och fyra tiondelar procentenheter lägre aktieandel: drygt sex procentenheter aktieandel per procentenhet tak i det här spannet."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch placerade efter vad han förstod och varnade för portföljer som krävde både rätt och snabbt — hans sömnregel, citerad i rp-02, är i budgetens språk ett krav på TAL: hur mycket pendling läsaren tål innan natten blir dålig, uppskattat i procentenheter i stället för i omdömen. Lynch själv behövde ingen ekvation — hans tal satt i magen efter två nedgångar av den grövre sorten — men hans varning översätts rakt: den som håller mer aktier än sömnen rår på kommer att sälja i botten, inte för att portföljen var fel utan för att ägaren var oförberedd på sin egen reaktion. Budgeten är det skrivna löftet om att den siffran räknas ut i förväg, i ljus, med familjens pennor — och att mekaniken, inte humöret, får göra flyttningarna efteråt.",
+  "grahamSection": "Benjamin Grahams andelstavla — mellan 25 och 75 procent aktier, aldrig mer, aldrig mindre, med mekanisk återställning vid gränserna — är historiens mest framgångsrika volatilitetsbudget i kronor: ett tak och ett golv, satta en gång för alla och prövade av två decennier av hans egen förvaltning. Kursen översätter hans konstruktion till riskens språk: hans fasta gränser är en budget med BAND — grova tal, medvetna trösklar, mekanik som bara slår vid ytterlighetsgränserna — och hans djupare arv är åtskillnaden mellan form och innehåll som rp-03 citerade: en portfölj kan SE ut att ligga inom Grahams andelstal och ändå bära nästan hela sin pendling i en enda källa. Budgeten i procentenheter löser det hans procentandelar inte kunde — han räknade kronor för att ingen räknade varians; idag finns formlerna, och hans fasta band är fortfarande det bästa första svaret på frågan hur mycket precision ett privat beslut förtjänar.",
+  "ak1Section": "I AK1A:s metodik är volatilitetsbudgeten portföljsidans motsvarighet till riskmatrisen i AKM2: modellen frågar vad ETT beslut bär, budgeten frågar vad HELA portföljen bär — och båda disciplinerar sig genom samma rörelse, från tyckande till mekanik. Monte Carlo-labbet (ek-05) gör budgetens utfall läsbara som fördelningar i stället för punkter: ett tolv procents tak betyder olika saker i olika simuleringar, och det är just fördelningens bredd — inte punktestimatet — som sömntestet ska jämföras mot. Studions kurshistorik-export (ek-03:s arbetsflöde) ger råmaterialet till den egna bidragsräkningen, och AI-Mentorn räknar exempelparen från kursen mot läsarens egna tal på begäran — mekaniken är metodikens, exemplen är alltid läsarens. Formuleringen förblir utbildningens: så fungerar budgetmekaniken — aldrig hur läsarens pengar bör stå."
+}

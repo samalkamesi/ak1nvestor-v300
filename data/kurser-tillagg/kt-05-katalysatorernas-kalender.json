@@ -1,0 +1,152 @@
+{
+  "slug": "kt-05-katalysatorernas-kalender",
+  "category": "KATALYSATOR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Katalysatorernas kalender — att bygga händelsekartan och läsa klustren",
+  "summary": "KATALYSATOR-familjens femte steg och andra Avancerade kurs: kt-01 definierade händelsen, kt-02 mätte förväntningen, kt-03 följde kedjorna, kt-04 förklarade den uteblivna — och denna kurs ger katalysatorn det den saknat i alla fyra: TIDSAXELN. En händelsekalender är förteckningen av en akties kommande, daterade beslut: rapporter, stämmor, domar och termer, regulatoriska bedömningar, indexombalanseringar. Kursen bygger kalendern för ett påhittat bolag, Nordvatten AB, och utläser tre mönster ur den: KLUSTREN (mars bär tre tunga beslut på tolv dagar — en per fjärde dag — medan sommarens nittiotvå dagar bär ett per trettio och en halv: tätheten skiljer drygt sju gånger), SANNOLIKHETSGEOMETRIN (priset rör sig när oddsen gör det: femton procentenheter högre sannolikhet vid en fullträff på tjugo procent är tre procent i pris — trappan före trappsteget) och TOMRUMMEN (kvartalet utan besked ger aktien indexets rörelse gånger betan — 1,1 mot plus 4,0 är plus 4,4 procent av ren drift). Sond mot 432 kurser: händelsekalender, väntans pris och beslutstäthet ger noll träffar — grannarna äger var sitt annex (v16 till v18 katalysatortyperna, am-07 omläggningsEVENTET, ek-06 oddsuppdateringen) men ingen äger verktyget som samlar tiden. Kursen är utbildning i läsning av offentliga datum — aldrig en uppmaning att time:a köp eller försäljning.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Bygga en akties händelsekalender: de sex postslag som ska in (kvartals- och årsredovisningar, stämmor och beslutsmöten, domsdatum och rättsliga termer, regulatoriska bedömningar, utdelningsdatum, indexombalanseringar) och de tre källorna att hämta dem ifrån (bolagets IR-sida, börsens kalender, domstolarnas och myndigheternas officiella spår) · Räkna beslutstätheten: antal tunga daterade beslut per tidsenhet — Nordvattens mars bär tre beslut på tolv dagar (ett per fjärde dag) mot sommarens tre på nittiotvå (ett per 30,7 dagar), en kvot på 7,7 gånger · Läsa klustret: när flera tunga beslut faller samman förstärks spridningen i utfallen — eller förlamas den, när två beslut talar åt olika håll samma vecka · Räkna sannolikhetsgeometrin: prissatt andel är sannolikheten gånger fullträffens storlek (0,60 gånger 20 procent är 12,0 procent), och prisrörelsen är FÖRÄNDRINGEN i sannolikheten gånger storleken (0,60 till 0,75 ger plus 3,0 procent) — utfallsdagen är ofta den tråkigaste · Räkna tomrummets drift: aktien utan väntande besked följer index gånger betan — beta 1,1 mot index plus 4,0 procent på ett kvartal ger plus 4,4 procent utan att bolaget ens nämnts · Känna igen kalenderns sex fällor: det redan prissatta datumet, datumsvepet, klustrets kollision, den självuppfyllande kalendern, historiens vikt och kalenderns plaster — och hålla hela verktyget på utbildningens sida av gränsen mot råd.",
+  "why": "KATALYSATOR-familjens fyra första kurser svarar på VAD (kt-01: händelsen som kan flytta en aktie), VAD SOM REDAN STÅR I KURSEN (kt-02: förväntningsanalysen), VAD HÄNDELSEN UTLÖSER (kt-03: kedjorna av andra ordningens effekter) och VAD SOM HÄNDER NÄR INGENTING HÄNDER (kt-04: den uteblivna katalysatorn) — men ingen av dem samlar axeln som genomlöper alla fyra: NÄR. Sond mot 432 kurser på händelsekalender, väntans pris, beslutstäthet, pre-event: noll träffar — kalendern, börsens äldsta och mest offentliga informationsyta, saknas som eget verktyg medan dess innehåll är väl ägt: v16 produktlanseringarna, v17 avtalen och v18 de regulatoriska händelserna äger KATALYSATORTYPERNA (kalenderns rader, inte dess läsning), am-07 äger indexomläggningens mekanik (en rad i kalendern, här länkad som granne), km-006 äger rapportens läsning, sj-03 stämmoformalian, ek-06 sannolikhetsuppdateringens mekanik, od-02 det pris optionen sätter på väntan. Kursens signaturnummer visar varför verktyget förtjänar eget steg: mars för Nordvatten bär tre tunga beslut på tolv dagar medan sommaren bär ett per månad — drygt sju gånger skillnad i beslutstäthet på ett och samma år, i samma bolag, med samma verksamhet. Katalysatorläsning utan kalender är ornitologi utan fältkarta: man ser fåglarna som råkar flyga förbi. Kursen bygger kartan — som utbildning i hur offentlig information hänger samman i tiden, aldrig som timingråd.",
+  "history": {
+    "origin": "Kalendern är börsens äldsta informationsteknologi: innan analytiker fanns fanns handelsdagarna, skeppens ankomsttider och höstens skörderapporter — datum som hela handelsstaden kunde utan och ställde in sina beslut efter. Att veta NÄR ett beslut skulle falla var länge den enda vägledning en placerare hade som var bättre än ryktet, och börskalendern hängde på mäklarkontorens väggar som kyrkoåret i en sockenbygd.",
+    "evolution": "När börsregleringen på 1900-talet stadgade offentliggöranden — rapportcykler, insiderregler, pliktsystem — föddes den moderna händelsekalendern som regelverkets biperiodiska rytm: fyra rapporter per år, stämma på våren, prospekt och bud med varsel. Investerarrelationerna blev en egen funktion vars främsta arbetsredskap var just kalendern — att hålla den förutsägbar för institutionerna och läsbar för pressen — och analytikerhusen började publicera kalendrar som produkt, med datum som innehåll.",
+    "modern": "I dag är kalendern maskinläst: algoritmiska handlare bevakar officiella datumflöden millisekund för millisekund, indexleverantörernas ombalanseringsdatum flyttar miljarder på bestämda kvällar (am-07:s värld), och domstolars förhandlingsscheman läses som marknadsinformation. Paradoxen är att ALLA har tillgång till samma kalender — vilket gör den halvt prissatt och därmed svårare, inte enklare: kursen lär läsa kalendern som struktur (täthet, kluster, tomrum) snarare än som en lista av överraskningar att jaga, vilket är skillnaden mellan utbildning och eventhandel."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Kalendern — tidens karta för en aktie", "minutes": 4 },
+    { "num": 2, "title": "Klustret — beslutstätheten och dess två utfall", "minutes": 4 },
+    { "num": 3, "title": "Sannolikhetsgeometrin — priset rör sig när oddsen gör det", "minutes": 4 },
+    { "num": 4, "title": "Tomrummet — de månader inget beslut väntar", "minutes": 4 },
+    { "num": 5, "title": "Fällorna — kalenderns sex gropar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — att bygga och läsa sin egen kalender", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kalendern — tidens karta för en aktie",
+      "intro": "Katalysatorfrågan har två axlar: VAD som kan hända och NÄR det står på tur. Familjens fyra första kurser har arbetat med den första axeln; detta kapitel bygger den andra — verktyget som samlar allt ett bolag har på agendan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En händelsekalender för en aktie är en enkel förteckning med tre kolumner: datum, händelse, och vilken typ av beslut det är. Simpelt — och ändå det mest underskattade underlaget i fundamental analys, för det förvandlar den diffusa frågan vad marknaden väntar på till en lista med svar. Sex postslag ska in: kvartals- och årsredovisningar (km-006 äger läsningen av innehållet), stämmor och beslutsmöten (sj-03 äger formalian), domsdatum och rättsliga termer i pågående processer, regulatoriska bedömningar och deras kungörelsefenster (v18 äger den typen som katalysator), utdelningsdatum (ud-familjen äger utdelningens ekonomi) samt indexombalanseringar och andra strukturella datum (am-07 äger omläggningsmekaniken).\n\nKällorna är offentliga och tre: bolagets IR-sida med sin finanskalender, börsens och utgivarnas kalendrar för datum, och domstolarnas samt myndigheternas officiella spår för processer och bedömningar. Exempelbolaget i kursen är påhittat — Nordvatten AB, ett kraft- och nätbolag — men dess kalender är ett helt normalt års verklighet, och tabellen nedan är arbetsbladet resten av kursen räknar på.\n\nTvå egenskaper gör kalendern till analysverktyg i stället för klippbok. För det första är varje rad DATERAD: tiden mellan dagens datum och händelsen är själv information (kapitel 3 visar varför priset sällan väntar till datumet). För det andra är varje rad KOLLEKTIVT KÄND: samma kalender ligger hos varje institution och varje algoritm — vilket inte gör den värdelös utan tvärtom läsbar, för en gemensamt känd framtida struktur präglar prisbilden på gemensamma sätt. Att läsa den präglingen är kursens rest."
+        },
+        {
+          "type": "definition",
+          "content": "HÄNDELSEKALENDER — förteckningen över en akties kommande, daterade beslut och offentliggöranden: rapporter, stämmor, domar och termer, regulatoriska bedömningar, utdelningsdatum och indexdatum; kalendern är kollektivt känd information, vilket gör dess struktur — täthet, kluster, tomrum — till marknadens gemensamma tidsbild."
+        },
+        {
+          "type": "tabell",
+          "content": "NORDVATTEN AB — KALENDERÅRET (PÅHITTADE DATUM, VERKLIGHETSTROGET RYTM-LÄGE): 10 FEBRUARI kvartalsrapport Q4/årsslut · 10 MARS årsredovisning · 18 MARS bolagsstämma · 22 MARS utdelningsdag · 7 MAJ kvartalsrapport Q1 · 5 JUNI regulatorisk bedömning nättariff (vartannat års cykel — detta året) · 14 AUGUSTI kvartalsrapport Q2 · 28 AUGUSTI huvudförhandling patentmål vattenturbin-reglering · 24 OKTOBER kvartalsrapport Q3 · 31 OKTOBER indexombalansering (bolaget tillförs större index) · 3 DECEMBER budgetkommuniké · TOLV RADER, ELVA DATUM, TRE KLUSTER — och kapitel två mäter dem"
+        },
+        {
+          "type": "insight",
+          "content": "Kalendern flyttar katalysatorarbetet från fågelskådning till fältkarta: istället för att hoppas på att något händer står redan årets alla beslut på rad, daterade av bolaget självt — frågan är inte längre om det kommer händelser, bara vilka de är och hur de ligger i tiden."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Klustret — beslutstätheten och dess två utfall",
+      "intro": "Elva datum är inte elva lika informationsbärare. Kapitlet mäter hur tätt besluten ligger — och visar att året har en inre geografi: kluster och slätter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Beslutstäthet är antalet tunga, daterade beslut per tidsenhet. För Nordvatten blir årets geografi tydlig vid en första mätning. VÅRKLUSTRET: årsredovisningen 10 mars, stämman 18 mars och utdelningsdagen 22 mars — tre tunga beslut inom tolv kalenderdagar, alltså ett per fjärde dag. SOMMAREN: 5 juni till 31 augusti är nittiotvå dagar som bär tre händelser (tariffbeslutet, Q2-rapporten, förhandlingen) — ett beslut per 30,7 dagar. KVOTEN: 30,7 delat med 4,0 är 7,7 — vårens beslutstäthet är drygt sju gånger sommarens, i samma bolag, med oförändrad verksamhet. Hösten bär ett andra kluster: Q3-rapporten 24 oktober och indexombalanseringen 31 oktober — två beslut på åtta dagar, ett per fjärde dag igen.\n\nKlustret har två utfall, och det är därför tätheten är värd att räcka. DET FÖRSTÄRKANDE klustret: besluten talar åt samma håll och sommarprissättningen hinner inte — en stark årsredovisning som följs av en generös stämma och en trygg utdelning kan veckla sig in i priset som ett samlat bud om bolagets tillstånd. DET FÖRLAMANDE klustret: besluten talar åt olika håll och tar ut varandra — en stark rapport veckan före en dyr stämmoposition (v16:s värld, fast i schemat) lämnar aktien nästan orörd trots dubbel mattäckning, eftersom varje köpare väntar på att se vilket beslut som bär. Kluster ökar alltså INTE mängden information — de ökar SPRIDNINGEN i vad informationen kan betyda.\n\nDetta är kalenderns första utdelning: att se på förhand var årets verkliga läsvänterminer ligger. För Nordvatten är mars och oktober sällskapets tyngsta veckor — vilken månad som helst kan en enskild rapport förvåna, men strukturen säger att mars bär tre chanser på tolv dagar och juli bär noll chanser på trettioen. Struktur är inte spådom — det är fördelning av uppmärksamhet."
+        },
+        {
+          "type": "definition",
+          "content": "BESLUTSTÄTHET — antalet tunga, daterade beslut per tidsenhet i en akties kalender; ett kluster är en period där tätheten är mångfalt högre än kalenderns genomsnitt, med förstärkande eller förlamande utfall beroende på hur beslutens innehåll samverkar."
+        },
+        {
+          "type": "tabell",
+          "content": "BESLUTSTÄTHETEN FÖR NORDVATTENS KALENDERÅR: VÅRKLUSTRET 10–22 MARS · 3 beslut · 12 dagar · 1 per 4,0 dagar · SOMMAREN 5 JUNI–31 AUGUSTI · 3 beslut · 92 dagar · 1 per 30,7 dagar · HÖSTKLUSTRET 24–31 OKTOBER · 2 beslut · 8 dagar · 1 per 4,0 dagar · KVOT VÅR MOT SOMMAR: 30,7 / 4,0 = 7,7 gånger · LÄRAN: årets information är inte jämnt fördelad i tiden — kalenderns geografi visar var spridningen bor"
+        },
+        {
+          "type": "insight",
+          "content": "Klustrets paradox: fler beslut samma vecka betyder inte mer visshet. Två tunga beslut som talar olika håll kan lämna aktien nästan orörd medan de fördelar sig mot varandra — den som läser varje händelse för sig ser två överraskningar, den som läser kalendern ser ett avväpningsstillestånd."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Sannolikhetsgeometrin — priset rör sig när oddsen gör det",
+      "intro": "Kalenderns rader är daterade, men priserna rör sig mellan datumen. Kapitlet visar geometrin: sannolikhet gånger storlek — och varför utfallsdagen ofta är årets tråkigaste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Patentmålet om vattenturbin-regleringen är Nordvattens största enskilda händelse: fullträff är värd plus 20 procent i kurs, nollutfall lämnar priset där det är. I den linjära läsningen prissätts andelen av fullträffen som sannolikheten anger: vid 45 procents sannolikhet står 9,0 procent i kursen, vid 60 procent står 12,0, vid 75 procent står 15,0, vid 90 procent står 18,0 — och först vid domen står hela 20,0. Tabellen är kursens andra signaturnummer: TRAPPAN före trappsteget.\n\nFöljden är kursens kärna: priset rör sig när SANNOLIKHETEN rör sig, inte när händelsen sker. När förhandlingens delseger i maj höger bedömningen från 0,60 till 0,75 flyttar priset (0,75 − 0,60) gånger 20 = plus 3,0 procent — utan att något avgörande fallit. När motsidan begär och beviljas en termins uppskov, och bedömningen sjunker tillbaka till 0,45, flyttar priset (0,45 − 0,60) gånger 20 = minus 3,0 procent — utan att målet förlorats. Väntevärdet hela vägen är sannolikheten gånger storleken: 0,60 gånger 20 = 12,0 procent av kursen är patentmålet, i det läget.\n\nHär förenas kalendern med ek-06:s bayesianska uppdatering: varje datum i kalendern är en möjlighet för marknaden att revidera sannolikheterna, och prisrörelsen mellan datumen är revisionernas krona-värde. Utfallsdagen blir ofta den tråkigaste — om trappan gått från 0,60 via 0,75 till 0,90 under processens gång återstår vid domen bara (1,00 − 0,90) gånger 20 = 2,0 procent att flytta. Det som känns som överraskningens dag är för det mesta kontraktets slutbetalning: tyngre prisrörelser sker vid de datum då SANNOLIKHETEN flyttar — delsegrar, terminer, nya dokument i målet — och den listan står också i kalendern, bara en rad lägre ner i upplösningen.",
+          "type": "text"
+        },
+        {
+          "type": "tabell",
+          "content": "SANNOLIKHETSTRAPPAN FÖR PATENTMÅLET (FULLTRÄFF +20 PROCENT, NOLLUTFALL 0, LINJÄR PRISSÄTTNING): sannolikhet 0,45 → prissatt 9,0 procent · 0,60 (LÄGET EFTER FÖREGÅENDE VECKORS DELSEGER) → 12,0 · 0,75 (EFTER MAJS DELSEGER) → 15,0 · 0,90 (EFTER SISTA RÄTTSMEDLEN) → 18,0 · 1,00 (DOMEN) → 20,0 · VARJE STEG PÅ 0,15 I SANNOLIKHET = 3,0 PROCENT I PRIS · VÄNTEVÄRDE VID 0,60: 0,60 × 20 = 12,0 PROCENT"
+        },
+        {
+          "type": "insight",
+          "content": "Den som vill förstå varför en aktie rasar på goda nyheter och stiger på inga alls har svaret i trappan: marknaden hade redan gått upp för trappsteg som nu togs bort eller bekräftades. Överraskningen bor inte i händelsen utan i skillnaden mellan marknadens sannolikhet och utfallets."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Tomrummet — de månader inget beslut väntar",
+      "intro": "Kalenderns mest tysta post är frånvaron av poster. Kapitlet läser tomrummen: den drift som fyller en aktie när inget beslut väntar — och vad den gör med tolkningen av prisrörelser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sommaren 5 juni till 31 augusti har tre händelser på nittiotvå dagar, men mellan dem ligger veckor där Nordvattens kalender är tom: inga rapporter, inga möten, inga domar. Vad gör en aktie när inget väntar? Den lånar sin rörelse av marknaden. Bolagets beta — fortsättningsvis 1,1 för Nordvatten, ett defensivt men inte okänsligt nätbolag — beskriver hur aktien rör sig när index rör sig och inget eget tillkommer. Stiger index 4,0 procent under sommarens tomveckor drar driften Nordvatten med 1,1 gånger 4,0 = plus 4,4 procent — utan att bolaget nämnts, rapporterat eller beslutat något.\n\nTomrummet har två viktiga tolkningar. DEN FÖRSTA är korrelationens: när den egna informationen tystnar stiger aktiens samrörelse med index — i klustret är aktien sig själv, i tomrummet är aktien indexet. En sommarrally i Nordvatten är därför nästan ingen information alls om bolaget; samma rally i marsveckan vore oviktat nyhetsläsning. DEN ANDRA är kalenderblindhetens fälla: den som glömmer kalendern förväxlar drift med besked — köper sommarens +4,4 procent som om marknaden visste något om nättariffen, eller säljer höstens konsolidering som om tystnad vore besked. kt-04:s uteblivna katalysator var händelsen som kom utan verkan; tomrummet är dess spegelbild — verkan utan händelse.\n\nPraktiskt blir tomrummet porten till tålamodets strategi: kalendern säger inte bara när något KOMMER att hända utan också när inget kommer att hända, och den informationen är lika användbar. Sommarens tomveckor är portföljens respit — semestern ur kalenderns perspektiv — medan mars och oktober är terminerna då aktens läsning lönar sig som bäst. Den som arbetar med begränsad tid läser kalendern som en schemafråga: varje timme i mars är värd sju sommartimmar, sade täthetsräkningen (7,7 gånger — kapitel två).",
+          "type": "text"
+        },
+        {
+          "type": "insight",
+          "content": "I tomrummet är aktien index; i klustret är aktien sig själv. Halva kalenderns värde ligger i att veta vilken av de två världarna priset just nu bor i — att döma en akties prisrörelse utan att först fråga om dess kalender är att läsa en text utan att veta om det är manus eller dagbok."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällorna — kalenderns sex gropar",
+      "intro": "Verktyget är offentligt, enkelt och därför systematiskt missbrukat. Kapitlet räknar de sex fällor som varje kalenderläsare möter — tre om datumen, tre om läsaren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FÖRSTA FÄLLAN är det redan prissatta datumet: kalendern är kollektivt känd, och kt-02:s förväntningsanalys gäller datum lika mycket som händelser — ett rapportdatum ALLA väntar är ett datum vars positiva överraskningströskel ligger högre. Kalenderns struktur är läsbar för alla; övertaget ligger inte i datumen utan i tolkningen av dem.\n\nANDRA FÄLLAN är datumsvepet: datum flyttas — rapporter skjuts fram, förhandlingsterminer beviljas uppskov, myndigheter drar ut sina bedömningar. En kalender som inte underhålls är inte neutral utan FEL, och skillnaden mellan ett framskjutet datum och ett uteblivet är just den sannolighetstrappa kapitel tre räknade på (minus 3,0 procent i exemplet, utan att något avgjorts). TREDJE FÄLLAN är klustrets kollision: kapitel två visade det förlamande klustret — två tunga beslut åt olika håll samma vecka kan nollställa varandra. Den som handlar på EN händelse i ett kluster bär den andras utfall utan att veta om det.\n\nFJÄRDE FÄLLAN är den självuppfyllande kalendern: när tillräckligt många bevakar samma datum rör sig priset på datumet AV ATT DET ÄR DATUM — volymen och volatiliteten stiger av kalendern själv, inte av beskedet (am-04:s marknadsstruktur; od-02 äger det pris optioner sätter på just denna rörelse). Rörelse är inte information. FEMTE FÄLLAN är historiens vikt: fjolårets kalender säger årets rytm men inte årets innehåll — cykliska beslut återkommer (tariffen vartannat år), engångsbeslut gör det inte (patentmålet avgörs en gång), och den som backcastar fjolårets reaktioner på årets datum räknar på andras krig. SJÄTTE FÄLLAN är den grövsta: kalendern som timingverktyg — att köpa FÖRE datumet och sälja EFTER, som om trappan vore en hiss. Kursens hela geometri säger emot: priset har i regel gått trappans väg före datumet, och det som finns att lära är strukturen, inte sekunden. Kalenderläsning är analysens förberedelse — den formuleras som utbildning om hur offentlig information är ordnad i tiden, aldrig som en uppmaning att handla på datumen.",
+          "type": "text"
+        },
+        {
+          "type": "insight",
+          "content": "Sex gropar, tre riktningar: mot datumen (det prissatta, svepet, kollisionen), mot marknaden (den självuppfyllande kalendern), mot läsaren själv (historiens vikt och timingfrestelsen). Den som memorerar listan har en checklista; den som börjat räkna tätheter och trappor har något bättre — vana att fråga kalendern, inte tro på den."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — att bygga och läsa sin egen kalender",
+      "intro": "Kursen slutar där den börjar: med tolv rader, elva datum och tre frågor. Kapitlet samlar övningen, grannkartan och gränsen mot det som kursen aldrig är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "ÖVNINGEN är kursens hela maskineri på ett ark: välj ett bolag ur den egna bevakningen, hämta finanskalendern från IR-sidan, komplettera med pågående processer (domstolar, myndigheter) och indexdatum, och skriv tolv rader — datum, händelse, typ. Mät sedan tre saker: TÄTHETEN (var ligger årets kluster, räknat per beslut och dagar), TRAPPAN (för årets tyngsta händelse: vilken sannolikhet står i kursen idag, och vilka datum kan flytta den) och TOMRUMMEN (vilka perioder är utan beslut, och vad är aktiens beta där). Tre frågor hör till ett moget kalenderarbete: Var i året bor spridningen? Vilka datum flyttar SANNOLIKHETEN i stället för att fälla beslut? Och när är aktien index och när är den sig själv?\n\nGRANNKARTAN samlar kursens plats i stugan: kt-01 att börja i (vad en katalysator är), kt-02 förväntningsanalysen som kalenderns prisfilters sida, kt-03 kedjorna som börjar där kalendern slutar (utfallets andra ordning), kt-04 den uteblivna som kalenderns minuspost, v16 till v18 katalysatortyperna som fyller kalenderns rader, am-07 indexdatumens mekanik, km-006 rapportens läsning, sj-03 stämmans formalia, ek-06 oddsuppdateringens mekanik, od-02 priset på väntan, ek-03 studions export av kurshistorik för den som vill mäta sin trappa själv. AKM2:s scenariovy ger kalendern sin sista roll: varje tungt datum är en dörr där en av modellens framtider kliver närmare — kalendern visar när dörrarna står, scenarierna vad som kan komma genom dem.\n\nOch gränsen: kursen har läst datum, tätheter, trappor och tomrum — offentlig information om hur informationen är ordnad. Den har inte sagt ett ord om vad läsaren bör göra med sina pengar, och kommer inte att börja nu. Kalendern är fältkartan; besluten är alltid läsarens egna.",
+          "type": "text"
+        },
+        {
+          "type": "utmaning",
+          "content": "RÄKNESTYCKET: antag att motsidans begäran om ytterligare en termin beviljas i maj i stället för att delseger höja sannolikheten — bedömningen faller från 0,60 till 0,30. Hur mycket flyttar priset, och vad står prissatt efter flytten? Ledning: prisrörelsen är förändringen i sannolikhet gånger fullträffens storlek; det prissatta är nya sannolikheten gånger storleken. SVAR: flytt (0,30 − 0,60) gånger 20 = minus 6,0 procent; prissatt efter flytten 0,30 gånger 20 = 6,0 procent. Notera asymmetrin mot kapitel tre: samma termins uppskov, men från ett lägre utgångsläge — trappan flyttar lika många steg nedåt som uppskovet kostar i procent, och kalendern har fortfarande inte avgjort något."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch jagade berättelser med en kalender i fickan: hans katalog av väntande händelser — expansioner, nytänk i gamla kategorier, återköp — var i praktiken en händelsekalender med berättande kolumner, och hans tålamod medan berättelserna mognade var tomrumsläsning av den sort kapitel fyra lär ut. Men hans styvaste varning hör hemma här: den mest uttjänta informationen är den alla väntar på — Lynch sågade de som köpte på själva rapportdagen och prisade de som förstått förväntningen i förväg (kt-02:s värld). Hans arv till kalenderläsaren är dubbelt: bygg kartan över när besluten faller, och lär dig trappan så att rapportdagen inte behöver överraska dig — för den som vet vad som står i kursen behöver färre överraskningar, inte fler.",
+  "grahamSection": "Benjamin Graham skulle ha strukturerat kalendern som förutsebar fakta bland oberäkneliga utfall: DATUMEN är kännbara och offentliga (rapportdagen kommer på rapportdagen), UTFALLEN är det inte — och hans prognosdoktrin, att placera på analys inte på spådom, översätts rakt till kursens geometri. Mellansegrarna och terminerna som flyttar trappan är just den gråzon han ville att placeraren skulle hålla isär från själva besluten: information om SANNOLIKHETEN, inte om utfallet. Hans marginal-krav får en kalendervariant: vänta inte ut datumet med en position som bara bär om trappan har fel — den som behöver att marknadens sannolikhet är fel har en spekulation, oavsett hur väl kalendern är byggd.",
+  "ak1Section": "I AK1A:s metodik är kalendern tidssidan av AKM2:s scenariovy: modellen frågar vilka framtider ett beslut kan öppna, kalendern frågar NÄR dörrarna står på glänt — scenariovikterna och sannolikhetsgeometrin delar samma mekanik (ek-06:s bayesianska uppdatering är motorrummet för båda). Studions export av kurshistorik (ek-03) gör trappan mätbar på läsarens egna objekt: händelsedatum mot prisrörelser före datumet, kluster mot spridning, tomrum mot beta — arbetsflödet som kursens övning beskriver. AI-Mentorn håller kalenderexempel som Nordvatten redo att räkna på, med samma gräns som hela metodiken: strukturen är kunskapen, besluten är läsarens. Formuleringen förblir utbildningens — så ordnar sig offentlig information i tiden; aldrig så bör läsaren handla."
+}

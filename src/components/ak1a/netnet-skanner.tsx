@@ -232,7 +232,7 @@ export function NetnetSkanner() {
         <button
           onClick={korSkanning}
           disabled={kör}
-          className="min-h-[44px] rounded-lg bg-gold px-4 py-2 text-xs font-bold text-primary-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-[44px] max-md:min-h-[52px] rounded-lg bg-gold px-4 py-2 text-xs font-bold text-primary-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {kör
             ? `Skannar… ${klara}/${UNIVERSUM.length}`

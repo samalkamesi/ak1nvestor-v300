@@ -1,0 +1,53 @@
+{
+  "status": "OK",
+  "buildId": "ELBcwg4THC_iP7BbnK9QJ",
+  "ts": 1789919060365,
+  "prodStatus": {
+    "/": 200,
+    "/blogg": 200,
+    "/en/blogg": 200,
+    "/ar/blogg": 200,
+    "/en": 200
+  },
+  "bärare": [
+    {
+      "chunk": "3c20dmqsqgcwk.js",
+      "byte": 1913,
+      "strargar": 5
+    }
+  ],
+  "sidinfo": {
+    "en_blogg": {
+      "status": 200,
+      "bytes": 210439,
+      "sha256": "99709dc6fdaaa8e8",
+      "widgetRefser": {
+        "3c20dmqsqgcwk.js": 0
+      },
+      "strargarIHtml": 0
+    },
+    "ar_blogg": {
+      "status": 200,
+      "bytes": 232337,
+      "sha256": "a16ca31483c8b4fc",
+      "widgetRefser": {
+        "3c20dmqsqgcwk.js": 0
+      },
+      "strargarIHtml": 0
+    },
+    "blogg": {
+      "status": 200,
+      "bytes": 215733,
+      "sha256": "51c5a134f965809f",
+      "widgetRefser": {
+        "3c20dmqsqgcwk.js": 0
+      },
+      "strargarIHtml": 0
+    }
+  },
+  "foreInitialref": {
+    "en_blogg": 12,
+    "ar_blogg": 12,
+    "blogg": 13
+  }
+}

@@ -111,8 +111,8 @@ export function DatasetSorteradLista({
             aria-current={sortering === v.id ? "true" : undefined}
             className={
               sortering === v.id
-                ? "rounded-full border border-gold/60 bg-gold/10 px-3 py-1 text-sm font-semibold text-foreground"
-                : "rounded-full border border-gold/30 px-3 py-1 text-sm text-muted-foreground hover:text-foreground"
+                ? "rounded-full border border-gold/60 bg-gold/10 px-3 py-1 text-sm font-semibold text-foreground max-md:flex max-md:min-h-[52px] max-md:items-center"
+                : "rounded-full border border-gold/30 px-3 py-1 text-sm text-muted-foreground hover:text-foreground max-md:flex max-md:min-h-[52px] max-md:items-center"
             }
           >
             {v.text}
@@ -128,7 +128,7 @@ export function DatasetSorteradLista({
             <span className="flex items-baseline justify-between">
               <Link
                 href={prefix + "/dataset/" + r.slug}
-                className="font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4"
+                className="font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-center"
               >
                 {r.namn}
               </Link>

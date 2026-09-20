@@ -95,10 +95,10 @@ kolla("främmande paket vägras + fel rapporteras", !ko1.poster.some((p) => p.pa
 kolla("injektionspost vägras utan att döda sviten", ko1.fel.some((f) => f.includes("ogiltig version")));
 kolla("2 giltiga poster kvar", ko1.poster.length === 2);
 kolla("null som känt-uppsättning = ingen paketfiltrering (explicit läge)", lasPatchKo(koFil, null).poster.length === 3);
-const manga = Array.from({ length: 12 }, (_, i) => ({ paket: `p${i}`, version: "1.0.0" }));
+const manga = Array.from({ length: 17 }, (_, i) => ({ paket: `p${i}`, version: "1.0.0" }));
 writeFileSync(koFil, JSON.stringify(manga));
 const ko2 = lasPatchKo(koFil, null);
-kolla("tak 10 poster + felpåminnelse", ko2.poster.length === 10 && ko2.fel.some((f) => f.includes("för många")));
+kolla("tak 15 poster (o124) + felpåminnelse", ko2.poster.length === 15 && ko2.fel.some((f) => f.includes("för många")));
 
 console.log("== kvitton: roundtrip + aktivPatchPlan ==");
 writeFileSync(koFil, JSON.stringify([

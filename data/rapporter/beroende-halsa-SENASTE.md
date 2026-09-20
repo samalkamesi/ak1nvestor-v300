@@ -1,6 +1,6 @@
-# Beroendehälsa — 2026-09-20T09:42:00.112Z
+# Beroendehälsa — 2026-09-20T16:10:40.765Z
 
-**7 sårbarheter (critical 0 · high 1 · moderate 6 · low 0) · 9 uppdateringar inom deklarerat intervall · 11 major-steg.**
+**7 sårbarheter (critical 0 · high 1 · moderate 6 · low 0) · 4 uppdateringar inom deklarerat intervall · 11 major-steg.**
 
 Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
@@ -23,14 +23,9 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 ## Uppdateringar inom deklarerat intervall (låg risk)
 
 - @reactuses/core: 6.5.5 → 6.5.9 (patch) — latest 6.5.9
-- @supabase/supabase-js: 2.112.3 → 2.116.0 (minor) — latest 2.116.0
-- @tanstack/react-query: 5.102.0 → 5.103.1 (minor) — latest 5.103.1
 - bun-types: 1.4.0 → 1.4.2 (patch) — latest 1.4.2
-- next-intl: 4.13.7 → 4.14.5 (minor) — latest 4.14.5
 - puppeteer-core: 25.10.0 → 25.11.0 (minor) — latest 25.11.0
-- react-hook-form: 7.86.0 → 7.88.0 (minor) — latest 7.88.0
 - tailwind-merge: 3.6.0 → 3.7.0 (minor) — latest 3.7.0
-- zod: 4.4.3 → 4.6.5 (minor) — latest 4.6.5
 
 ## Major-steg (köas, kräver beslut/test)
 

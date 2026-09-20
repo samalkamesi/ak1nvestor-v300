@@ -1,0 +1,76 @@
+{
+  "typ": "DR-KEDJA2-ATERSTALLNING",
+  "datum": "2026-09-20",
+  "pass": "kvall",
+  "agent": "s10-u2 (andra instansen)",
+  "manifest": "auto-s10-1789923906930",
+  "ansprak": "data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md",
+  "verktyg": ["verktyg/dr-kedja2.mjs (omodifierat)", "verktyg/aterstall-system-events.mjs (u3:2:s)"],
+  "autoProtokoll": "data/forskning/DR-KEDJA2-2026-09-20-AUTO.md",
+  "arkiv": {
+    "fil": "data/backups/system-events-full-2026-09-20.json.gz",
+    "bytes": 27792947,
+    "sha256": "c8735a87d39535d44d4b5463406c07336b53c921a95d3be1e5f2ef67c2e65f41",
+    "sha256Efter": "c8735a87d39535d44d4b5463406c07336b53c921a95d3be1e5f2ef67c2e65f41",
+    "mtimeFore": "2026-09-20 02:40:46.267232504 +0200",
+    "headerDatum": "2026-09-20T00:40:32.857Z",
+    "headerAntal": 168696,
+    "sidor": 34,
+    "truncerad": false
+  },
+  "resultat": {
+    "dom": "GRÖN",
+    "exit": 0,
+    "rtoSek": 34.3,
+    "copyFasSek": 34.2,
+    "raderPerSek": 4933,
+    "fyraSamma": { "header": 168696, "lasta": 168696, "copyN": 168696, "pgOberoende": 168696, "unikaId": 168696 },
+    "felaktigaRader": 0,
+    "dubblettId": 0,
+    "tidsfonster": { "min": "2026-09-03 22:43:12.603298+02", "max": "2026-09-20 02:38:45.830845+02" },
+    "severity": { "info": 167765, "warning": 931 },
+    "typer": {
+      "oversattning": 146190,
+      "trafik": 21361,
+      "sakerhet": 1031,
+      "akm2_snapshot": 101,
+      "blogg_utkast": 9,
+      "medlem": 3,
+      "blogg_publicerad": 1
+    },
+    "jsonbProvDag": 21361
+  },
+  "jamforelse": {
+    "foregaendeKedja2": "2026-09-17 (163039 rader, RTO 25,0 s)",
+    "tillvaxt3Dygn": 5657,
+    "dagsstegJson": 2629,
+    "dagsstegBand": [2400, 2950],
+    "dagsstegDom": "✅ stängd (första stängning: u2 morgon 06:4x via header; denna övning: via restore)"
+  },
+  "prediktionsdom": {
+    "gröna": ["P1", "P3", "P4", "P6", "P7d", "P8", "P9", "P10", "P2"],
+    "roda": ["P5", "P7a", "P7b", "P7c"],
+    "summa": "7 ✅ / 3 ❌ (P7 räknat som tre deldomar)",
+    "rotP5": "band satt runt dumpstart; sista event ligger 107 s före (molnexportens eftersläpning)",
+    "rotP7": "linjär skalning av 09-17-fördelningen; oversattning frusen + trafik kvällsväxer"
+  },
+  "fynd": [
+    "oversattning frusen exakt 146 190 sedan 09-17 (0 nya på 3 dygn) — troligen motorn klar (100 % översatt)",
+    "trafik +5 446 på 3 dygn (~1 815/dygn, kvällstyngt) — blockeringstrafiken lever",
+    "akm2_snapshot 101 oförändrad i aufr-events medan pumpen skriver +18 984/dygn i rkaq — entalsfönster, ej serie",
+    "molnexporten eftersläpar 107 s (header 00:40:32Z vs sista event 00:38:45Z)"
+  ],
+  "stadning": {
+    "skrapDb": "ak1a_dr_json raderad",
+    "pg17": "stoppad/nere (viloläge)",
+    "tmp": "ren",
+    "arkiv": "ENDAST LÄST (SHA+mtime bevis)"
+  },
+  "kvd": {
+    "src": "orörd = INGET bygge",
+    "r2": "orörd",
+    "dataBlogg": "orörd",
+    "syskonytor": "orörda",
+    "gdpr": "endast antal och typer redovisade"
+  }
+}

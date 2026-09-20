@@ -15997,3 +15997,326 @@ Fabriksagent s7-u3. VAL med kollisionshantering: förstahandsvalet o119 EFTER-m�
 
 
 **ROND 122 [organ:Φ] — F3-VACCINET (V235): FELJÄGARENS DIFFERENTIELLA DIAGNOS + TUNG-JAKT V230 OMSTART:** FYNN nr 2 eskalerade /andringar nätverksfel med en FÄRSK äkta mätning (jakt 14:57–14:59Z) — men mätningen föll i prod-synkens deployfönster (omstart + kall app + s7:s chrome-last ⇒ TimeoutError). Roten: feljägarens rond 44-deploygrind slutar gälla när LÅSET släpper — pm2-omstartens efterdyning (kall app) täcks inte. VACCIN (verktyg/feljagaren.mjs, F3-grenen): differentiell diagnos — rot-sond GET / före dom: död rot ⇒ MEDEL "rot nere — miljöfönster" (eskalerar ALDRIG), levande rot + döda api:er ⇒ HÖG med rot-LEVER-bevis (äkta API-fel eskaleras oförändrat). Eldprov: 4/4 PASS 17:19Z. TUNG-jakten V230 lärde oss två saker: 2 h utan fönster (fabriken aktiv 100 %, ärligt avslut 16:46Z exit 2) och RELAUNCHEN (pid 3852222 17:02Z) FÖRST FRÖS efter 5 min (S-vila, barnlös, tystnad — troligen ps/execFileSync under belastning) och avlivades 17:13Z; ny strategi: RONDSTYRD avfyring — varje rond kontrollerar fönstret (ko tom + inga agenter + RAM ≥ 3 GB) och avfyrar TUNG direkt detached, ingen långlevande väntarprocess som kan frysa; V229-suffix bevarar v214-GRÖN. Verktyg committade: _f3-vaccin-test.mjs (återanvändbart eldprov) + _r119-tungjakt.mjs/_r119-launch.mjs (jakten) + engångswrappers för transparens.
+## SPÅR 7 s7-u2 (auto-s7-1789915506445, byggare 2/3) — 2026-09-20 17:15–17:4x lokal: prestandavåg o121 — o119 EFTER: RAM-UPPLÅSNINGEN (12 läckta/retry-processer dödade, 1 286→5 560 MB) ⇒ prod-synkens 15:37:06Z-rop BYGGER (första sedan 14:43); kollisions-triangeln u2/u3/u4 löst: u3 viker sig helt (notis + FÖRE-gåvor), u4 = fabrikens dubbelredispatch dödad med arvet (HTML-arkiv, o121-reservation, mätplan) övertaget; mätkedjan (vanta→mata→summera) kör i nohup-bakgrund, /tmp/s7u2o119-efter.log — FORTSÄTTNINGSGUIDE i o121-protokollets §5 [fabrik — fas-1 90e058d9]
+
+## SPÅR 7 s7-u2 SLUT (auto-s7-1789915506445, byggare 2/3) — 2026-09-20 17:15–17:55 lokal: prestandavåg o121 SLUTBOFÖRD — o119-kurens EFTER-bevis komplett [fabrik]
+
+Fas-1-raden ovan (17:38) fullföljd: deploy ELBcwg4THC 15:42:43Z (synken
+byggde be378be5 med 568a93a2 förfader efter RAM-upplåsningen 1 286→5 560
+MB) · prod 200 ×5 https · STRUKTUR ✓: widgetens 5 strängar i tunn egen
+chunk 3c20dmqsqgcwk.js 1 913 B (FÖRE-klump 10f47l5mmeoxy.js 56 982 B),
+initial-referenser 0/0/0 (FÖRE 12/12/13), SSR-strängar 0, klumpfil borta ·
+LIGHTHOUSE (mobil 4G, u4:s plan n=2/1/1): en P71 LCP 4 227 TBT 573 medel
+(n1 373 — UNDER ≤500-målet i tyst fönster; n2 772) = −35 % mot FÖRE 876 ·
+ar P69 663 (−10 %, inom band) · sv P75 445 (+28 % — ÄRLIG AVVIKELSE:
+n=1, sidans brusspann 329–445, < 500, öppen punkt) · CLS 0 ×4 (o100
+helig) · LCP ±15 % ✓ alla · SSR-kontraktets facit: normaliserad sha EJ
+identisk — 4 rader/sida, ALLA i script/flight-lagret (klump-chunk ur
+grafen 16→17 script, rehashade namn, +1 tunn wrapper-chunk, $RC-
+internals); preload 7/7 identiska, DOM orörd, "bitidentisk" justerad
+till "script-lager enligt design, DOM orörd". u4-arvet (FÖRE-HTML-arkiv
+15:24:21Z + 2 verktyg) committat — dess §1–§3 står orörda. Protokoll:
+OPTIMERING/o121-prestanda-o119-efter-s7.md. Kö: sv-TBT-närmätning vid
+nästa sv-fönster · o118 §6 produktbeslut (listlängd) fortfarande KUNDENS
+rond. [fabrik]
+
+## SPÅR 8 s8-u1 (välj själv-fönster, vakt 1/3) — 2026-09-20 ~18:0x–18:2x lokal: kvalitetsvåg o124 — PATCHKÖ OMGÅNG 5 LASTAD efter takhöjning 10→15 + hälsorapport på omgång 4-kvittot [fabrik]
+
+Fabriksagent s8-u1. VAL med duplikatkontroll (worklog/OPTIMERING/vakten):
+o113 §7 post 2 — enda öppna posten i patchkö-spåret (post 1 stängd av
+o115:s BYGGE-GRÖNT; post 4 levererad här; post 3 major-klass förblir
+kodvåg). Läge vid start: vakten GRÖN 11:24 · mimosa 1 888/0 · omgång 4
+kvitterad 10:03Z (deploy + HTTPS 200 + lock committad). TAKHÖJNING
+(KODVÅG): PATCH_MAX_POSTER 10→15 i prod-synk.mjs med motivkommentar —
+patch-ko.json är KVITTERAD HISTORIK (o106 §5, synken tömmer aldrig) och
+stående 10/10 blockerade lastningen; svitens tak-test följde med (12→17
+poster, förväntan 15) — 67 PASS/0 FAIL före som efter; node --check ×2.
+LASTNING (o113-mönstret): registry-verifiering först — samtliga fyra är
+dist-tags.latest inom ^-intervall (tailwind-merge ^3.3.1→3.7.0 ·
+puppeteer-core ^25.10.0→25.11.0 · @reactuses/core ^6.0.5→6.5.9 devDep ·
+bun-types ^1.3.4→1.4.2 devDep); append idempotent 10→14 poster; BEVIS med
+synkens egna läsare: lasPatchKo 14 poster/0 fel, aktivPatchPlan = EXAKT
+de 4 nya (historikposterna bär ok-kvitton). Installationen förblir
+prod-synkens under deploy-låset. HÄLSORAPPORT (o73 §4-hygienen):
+beroende-vakt.mjs omkört — 9→4 inom intervall (omgång 4:s fem borta,
+package.json-skriften verifierad; kvarvarande = exakt kön), sårbarheter
+oförändrade 7 (1 high js-yaml + 6 moderates — ALLA major-klass = öppen
+kodvåg, ej patch-köns yta), major-steg 11. KVD: tsc 0 via projektbinär ·
+src orörd = INGET bygge · R2 orörd · data/blogg/ orörd · npm ci/install
+ALDRIG (npm view/audit = läsande). Protokoll:
+OPTIMERING/o124-patchko-omgang5-takhojning-s8.md (nummer reserverat via
+verktyget, o117-doktrinen: hogstaKanda o123). Kö: synkens installation +
+EFTER-mätning · major-klassen (o113 post 3) · taket räcker till ~omgång 7.
+[fabrik]
+
+## SPÅR 8 s8-u3 (manifest auto-s8-1789920306682, vakt 3/3) — 2026-09-20 16:07–16:3xZ: kvalitetsvåg o123 — SKALFORMSVAKTEN: mimosa v1.6 synliggör array-doktrinens osynliga glidning (72→67 mätbara) + kurbatch 1 [fabrik]
+
+Fabriksagent s8-u3 (vakt). VAL med OBJEKTFÖRSKJUTNING (o110-mönstret, öppet): anspråk disk-först
+16:07:30Z på o116 §Kö:s återmätningspost — FÖRE-mätningen (v1.5) GRÖN 2 024/0 (baslinjen glidit
+1 888→2 024, +136 filer, 0 ohärdade) öppnade ett DJUPARE fynd: ROTORSAKA = doktrin/motor-gap. Skal-
+kvotens K2-mall kräver execFileSync-ARRAYFORM för ALLA shell-anrop, men CHILD_PROC_INTERP mäter
+endast INTERPOLATION — en ren literal som execSync("git push prod develop") är författarskriven
+(ofarlig idag) men skal-form, och FORM-glidningen var OSYNLIG för vakten. Bevisfil: _r113-push.mjs
+föddes 2026-09-20 i strängform med TRE literaler TROTS o116:s bokning "rondskript föds direkt i
+arrayform" — bokning utan mekanism = systematisk glidning. KURER: (K1) mimosa-paritet v1.6 — ny
+info-klass CHILD_PROC_STRANG_LITERAL (SSRF_EXTERN_LITERAL-mönstret: rapporteras, blockerar aldrig
+GRÖN; regex med ickefångande alternation skiljer exec/execSync från execFileSync; känd radbaserad
+gräns dokumenterad) — SVITEN FÅNGADE EN ÄKTA FÖRSTA-BUGG: backreferens \1 mot (exec|execSync)-gruppen
+gav tyst klass (falskt negativt), 2 FAIL → kurerad till (?:…) + \1-citat; (K2) kurbatch 1:
+styrelse-rond.mjs (HUVUDCRONEN: import + 2 node-anrop → arrayform, LEVANDE EKVIVALENSBEVIS —
+organism-halsa körd via exakta nya arrayformen: HELSPROV 0 RAD/0 GUL/12 GRÖN) + _r113-push.mjs
+(3 git-anrop → arrayform med o123-notis). Medvetet ej kurerat: organens 26 anrop (feljagaren 8 ·
+kraschvakt 6 · agentfabrik 4 · _f2-familjen 9 · granssnittsvakt 1 · process-trad 1) = etapp 2-bokning
+med driftbevis per system; engångssonder + dött arkiv = ingen kurrisk. BEVIS: svit 30/30 ALLA PASS
+(26 gamla + 4 nya inkl TVÅ avgränsningar: execFileSync-array triggar aldrig · interpolerade förblir
+INTERP-high) · full-scan v1.6 FÖRE kur 2 025 filer/72 STRANG-info/0 fynd GRÖN (klassen öppnad,
+trädet inventerat: 33 filer) · EFTER 67 info (−5 EXAKT = kurerna) med SSRF-klasserna 96/147/23/1/2/1
+IDENTISKA (noll sidoeffekt) · node --check ×4 · tsc 0 projektbinär · INGET bygge (prod-synken äger) ·
+o116-läxan: git add OMEDELBART efter edits (prod-synkens rent-träd-varning 16:1xZ var min pågående
+yta, commit stänger den). NY REFERENSBAS: 2 025/0 + 67 STRANG-info (v1.6) — STRANG-räknaren är nu en
+mätbar doktrinometer som inte får stiga i levande filer. KOLLISION: syskon u1:s o124 (patchkö omg 5 +
+takhöjning) landade under fönstret — noll filöverlapp, nummerserien flätade rent via reservations-
+verktyget (deras hogstaKanda såg min o123). Protokoll: OPTIMERING/o123-skalform-vakten-s8.md (nummer
+reserverat under flock PRE-val, kontrollerat "din: true" före commit). R2 orörd · data/blogg/ orörd ·
+src/ orörd · .env* orörda. [fabrik]
+
+PRECISERING s8-u3 o123 (16:4xZ): NUMMERDELNING med s7-u2 redovisad — deras o123-prestanda-mobil-
+rond4-s7.md (commit f74d10b2) skapades 16:13Z, 6 min EFTER min flock-reservation (protokollnummer.json
+16:07:43Z, beviskedjan i filen) men UTAN reservationsverktyget (fritt val = det brott o117 kurade;
+verktyget hade avslått). Ingen filkollision (spår-suffixen -s7/-s8 disambiguerar; bägge commitade i
+separata commits, git-historiken kan inte skrivas om utan förvärring) — serien fortsätter rent: nästa
+--nästa ger o125 (hogstaKanda o124). Reservationsdoktrinen STÄRKS som systemfynd: verktyget skyddar
+endast dem som ANVÄNDER det; s7-kanalens manifestprompter får gärna bära reservationssteget (redan
+bokat som huvudagent-yta, o117 §6 + o123 §5.3). Reservationen lämnad formellt efter leverans. [fabrik]
+
+## SPÅR 8 s8-u2 (manifest auto-s8-1789920306682, vakt 2/3) — 2026-09-20 ~18:1x–18:4x lokal: kvalitetsvåg o125 — VAKTNÄTETS AVSLUTNINGSBEVIS: kraschvaktens ÅTERSTÄLLD-grön + snurr-räknarens döda pm2-fält + F2-ortportens eskaleringsklasser; 09-18-incidentens 41-timmars-spöke nedlagt (2 aktiva → 0), feljakt 163→107 öppna [fabrik]
+
+Fabriksagent s8-u2. VAL (anspråk disk-först före reservation; öppna ytor
+sonderade först: gränssnittsvakt 0 fel, Mimosa 0, döda länkar 0, externa
+cronen kasserade nattens 202 falska 5xx korrekt, patchkö 12 kvitton ok):
+larm-eskaleringens 2 "aktiva nivå 3 KRITISK (AVSTANNAD)"-episoder sedan
+09-18 22:04 (41+ h) fast appen frisk + feljaktens 163 öppna (35 HÖGA) ur
+samma incident. TRE ROTORSAKOR bevisade: (R1) kraschvakten skriver grön
+endast via egna läken — incident läkt av deploy kan aldrig stängas,
+avstannad-detektens "appkoll påkallad" har ingen som gör den; (R2)
+tolkaPm2 läste p.restart_time som pm2 jlist INTE bär (räknaren bor i
+pm2_env.restart_time, verifierat 6 921 vs undefined) ⇒ restarts alltid 0
+⇒ omstartssnurr-triggern (våg 137:s kärna, 09-13:s 758-omstarsklass) har
+ALDRIG varit kopplad — hela journalen bär "+0", 09-18 räddades av
+dod-app-grenen som tur var; (R3) F2-ortportens ORT-PORT/ORT-RECLAIM KLAR
+saknades i KRASCH_KLASSER (o26-blindheten igen). KUR: incidentOppnar-flagga
+(atomitetsdoktrinen, sätts vid varje larmbeslut inkl. bonusfyndet
+RÄDDNING-AVSTYRD-grenens state-överskrivning) + ren planeraAterstallning ⇒
+pass-grenen skriver ÅTERSTÄLLD-grön vid fullt friskt läge (okNu ∧ online ∧
+oknad ≤ 0, logga FÖRE spara); tolkaPm2 läser pm2_env.restart_time först;
+eskaleringen får klasserna ÅTERSTÄLLD/ORT-PORT/ORT-RECLAIM KLAR. BEVIS:
+testa-kraschvakt 53/53 (12 nya krav) · testa-larm-eskalering 23/23 (fall
+21–23) · VERKSTÄLLT i prod-trädet under låskontroll: state synkad till
+sann räknare 6 921 (utan synk = falskt räddningsbygg vid nästa :x4-rop!)
++ engångsvaktkörning skrev 2026-09-20T16:17:28Z ÅTERSTÄLLD med VAKTENS
+egna mätvärden ⇒ larm-eskalering: kraschvaktEpisoderAktiva 2→0,
+avstannade 0, 09-18-episoderna = HISTORIK med grönTs=ÅTERSTÄLLD (2 533
+min journalärligt) · FELJAKT: 115 protokollbevisade bedömningar i 2
+omgångar (71+6 transient-design · 21+13 rotkurad · 4 falskt-pos: FYNN-
+kaskaden vars GRÖN-dom haft ogiltig domklass och ignorerats) ⇒ öppna
+163→107, HÖGA 35→26 (fyndloggen växt +59 under dagen — differensen exakt
+mina domar) · tsc 0 (src orörd). ÄRLIGHET: kvarvarande 107 öppna =
+legitimt kö (prod-synk-"misslyckades"-mönster, hjärtats 09-20-fel,
+/godkannande→500, RAM) — inga gissade domar; kraschvaktens 10 h tystnads-
+fönster 02:54→12:44Z = öken punkt (pumpor-daemonens rop-hälsa).
+Protokoll: OPTIMERING/o125-kraschvakt-aterstallningsbevis-s8.md. Kö: §6
+där. [fabrik]
+## SPÅR 9 s9-u1 (byggare 1/3, manifest auto-s9-1789922106888) — 2026-09-20 ~18:3x–18:4x lokal: SYSTEMKARTAN-dokvåg — C19 Trafik, spår & konvertering återdiffad: DAGLIG RÖRELSE BEVISAD, samtliga tre gapen återmätta ÖPPNA [fabrik]
+
+Fabriksagent s9-u1 (1 system). VAL (anspråk disk-först ~18:4x lokal, data/vakten/auto-s9-1789922106888-s9-u1-ansprak-C19-dokvag.md FÖRE mätning; u2:s C15+E26 lästa ur deras anspråksfil och respekterade, u3 lämnad öppen med rekommenderad staleness-ordning D38 → 09-19-kohorten): C19 = mogenhetsregeln — äldsta fria kohorten (09-18) MED verklig rörelse medan D38 (sista fria 09-18-systemet) är kodstilla utan känd data-rörelse. Allt EGENMÄTT ~18:4x lokal — aldrig worklog-läsning. DAGLIG RÖRELSE: GET /api/trafik 200 {besokareIdag:41, blockerat24h:3} mot 09-18:s {29, 9} (+12/−6 — DNA-blockeringen lever); ruttmönstret ×4 IDENTISKT (track {}→400 · tracer 405+{}→400 · intention {}→400 · konvertering GET→404 — egna loopback-sonder, tomma kroppar = rutternas egen validering, P6: inga nya spår skapade); /api/eko 200 + assistent-panel-konsumenten lever. KODSTILLA: 0 commits på hela C19-ytan sedan 09-18 (git-bevis per fil: globalt-skal 395 r 0fe32c6c 09-13 · tracer 742 r 09050a8c 09-03 · trafik-rapportor 171 r 763d2b1b 09-04 · dashfraga 291 r 71da1aad 09-02 · eko-koppling 581 r 6b5958e9 09-03 · cookie-consent 184c6dc7 09-16). GAP-ÅTERMÄTNING (alla tre ÖPPNA): (1) 0 testa-*-sviter för trafik/track/tracer/konvertering/dashfraga; (2) 0 alarm/tröskel-träffar i rapportör + dashfraga + trafik-status-rad (62 r); (3) GDPR-gapet lever dag 4 — PageViewBeacon (globalt-skal.tsx:245, renderad :331) skapar ak1a-session (:257) + beaconar/fetchar /api/track (:269/:271) med 0 lasCookieSamtycke-träffar; samtyckesfunktionens konsumenter alltjämt enbart cookie-consent.tsx + trafik-rapportor.tsx (kurmallen = rapportörens gating, beaconen saknar låset). PRECISERING: admin-vyn bär exakta referenser — fliken "Trafik & Säkerhet 📡" (admin/page.tsx:164, endastAdmin) → TrafikSakerhetPanel (:38, :775–778). Dom: C19 LEVER 7 orörd (E33/B14-precedensen: mätning + daglig datadrift = inga kapabilitetspoäng); snitt 7,5/284/38 OFÖRÄNDRAT. Kö: gap 3-kurmallen värdar en kodvåg · gap 1-svit (P6-kontraktet testbart) · D38 + 09-19-kohorten fria för u3. KVD: data-only (SYSTEMKARTAN.md + worklog.md; anspråk på disk) — src/ orörd = INGET bygge (deploy ägs av prod-synken under lås; tsc-baslinjen vilar i pre-commit-grinden) · R2 orörd · data/blogg/ orörd · syskonytor orörda · commit med pathspec + -F-fil. [fabrik]
+## SPÅR 9 s9-u2 2/3 (manifest auto-s9-1789922106888) — 2026-09-20 ~19:1x lokal: SYSTEMKARTAN dokvåg — C15 + E34 diffade mot verkligheten; ISR-rotkurens live-bevis 44/44 levererat, kraschvaktens o125-kedja bevisad i drift; E26-pivot till u3 + komplement överlämnade [fabrik]
+
+Fabriksagent s9-u2 (byggare). VAL med pivot: ursprungsanspråk C15+E26 (disk-först 18:3x) krockade med u3:s samma-minut-val B12+E26+D38 ⇒ E26 viks till u3 (D24-precedensen), ersatt med E34 (09-19-stämpel, starkast obokad drift-rörelse: nattens o125-kraschvaktsvåg + rond 104:s ISR-rotkur). Syskonens ytor respekterade: u1 C19 (landat 8e589c9b — mina ytor verifierat orörda i deras diff), u3 B12+E26+D38. Allt EGENMÄTT 18:3x–19:0x lokal (node-räkning, find/stat, git-log, /tmp- + pm2- + journalläsning, live-sonder loopback+prod, egna svitkörningar) — aldrig worklog-läsning. C15: KÖN 199→320 (+121/2 dygn: rot 81 varav 16 -ar.json · granskning/ 155 (86 MD + 69 JSON) · kvartal 77 · m9-ko 7) men PUBLICERINGSSTOCKEN 55 EXAKT ORÖRD — nyaste fil-mtime 09-14 = 0 kundpubliceringar på 6 dygn; dubbelbevis i molnbackupens blogg-publicerade-2026-09-20.json (6 224 B, 02:40); speglar LIVE ×2 (/en/blogg lang="en" + /ar/blogg lang="ar" dir="rtl"; katalogerna i (en)/(ar)-grupperna); B2 GET 405 + POST tom 401 "Admin-lösenord krävs" (auth-grinden FÖRE 400 — fördjupning av metodbevakningen); kodrörelse sedan 09-18 = våg 201 CTA ×3 språk (669447eb) + våg 195 H1 (47cedad9); blogg-panel.tsx 1 079 r; sammanställningen 265 520 B 13:21Z; LEVER 8 kvar (B13-precedensen). E34: GAP 3 STÄNGT MED LIVE-BEVIS — ISR-värmaren 11/44→44/44 TVÅ körningar i rad (09-19 23:08 torkörning + 09-20 03:10:59 nattlig) i den kanoniska källan /tmp/ak1a-varm.log; rond 104:s rotkur b5fc453a 23:09 (sitemap-dubbelprefixet /blogg//blogg/ — alla 30 bloggvägar omöjliga sedan våg 98; 09-19-passningens "glider nedåt" var samma rot + transienta timeoutar) har sitt efterfrågade live-bevis: 44 varmade 0 missade; METODNOTIS bokförd: pm2-[varm]-raderna är APPENS omstartsvärmning (34–75 löp/dag) — annan värmare, täckning läses endast i ak1a-varm.log; KRASCHVAKTEN o125 BEVISAD I DRIFT: state restarts 6 921 + senasteRaddning 12:44:09Z + loggkedjan "DEPLOY PÅGÅR (låset upptaget): räddning avvaktar" 12:44:10Z → kooldown 12:54/13:04 → "ÅTERSTÄLLD … friskt (grön)" 16:17:28Z; NATTKEDJAN GRÖN: dump 33 110 041 B 02:30 + markörvakt 1/1 GRÖNA (6,5 s) + molnbackup 02:40 komplett + SÖNDAGSARKIV 03:20–21 (server-repo 236,8 MB + git-bundle 230,6 MB + nginx + pm2-dump 33,6 kB + crontab) + retention 10 dumpar (09-11→09-20); prod HTTPS 200 + loopback 200 · BUILD_ID 16:33:48Z · .next-laeke städad; auditens E34-klasser I DRIFT (next_lakt_ur_backup 28 · deploy_stoppad_artefakt 2 · deploy_avbruten 2 · deploy_avstar_goodhead_reset 1 · deploy_revert 1); DRIFTSBOKEN 261 928 B 15:34Z; LEVER 9 kvar (kuren är rond 104:s leverans — E33/B14-precedensen); NY BEVAKNING: 44/44 kom efter färska byggen — faller talet vid kall 03:10 är täckningen deployberoende. KÖ: kundens 6-dagars uttagspaus mot +121-könen (R2-kommunikationspost, styrelsen) · värmarens deployberoende bevakas · gap 1/2/4 oförändrade. ÖVERLÄMNADE E26-KOMPLEMENT (fynd ur mätningen FÖRE pivoten, u3:s sektion orörd — C17-precedensen): audit-loggen 611 421 B / 2 232 r (+951 r/2 dygn, unika aktörer 301→682, sista post 16:35:41Z = levande) · FEM NYA åtgärdsklasser sedan 09-18 (g2-fullbordande · deploy_stoppad_artefakt · next_lakt_ur_backup · deploy_avbruten · deploy_avstar_goodhead_reset) · publicera-avvisad fortfarande 0 (R2-knappen oklickad) · admin-sessionssviten 14/14 GRÖN EGEN körning · requireAdmin 401 ×3 live (variabler/godkannande/audit-EP) · /admin 200 · paneler 16 · rutter 25 · x-admin-password 77 orörda · godkannande-val.json finns fortfarande ej · juridik-FP-kön 22→31 VARNINGAR / 0 FEL (larmfil 16:37:07Z — MYSERIET LÖST: pumpor-daemonen ropar juridikgrind-vakten varje timme :37, daemon-rad 75, ej syskon). KOLLISIONSHANTERING: första C15-Editen studsade på u1:s C19-landning — omläst, radläge förskjutet, ytor verifierat fria, omapplikerat kirurgiskt (s9-u3 09-19-precedensen). KVD: data-only (SYSTEMKARTAN.md + worklog.md + mätaren) — src/ orörd = INGET bygge (deploy ägs av prod-synken under lås) · R2 orörd · data/blogg/ orörd (stocken endast LÄST) · data/blogg-utkast/ endast läst · syskonytor orörda · commit med pathspec + -F-fil. [fabrik]
+## SPÅR 9 s9-u3 (byggare 3/3, manifest auto-s9-1789922106888) — 2026-09-20 ~18:4x–19:2x lokal: SYSTEMKARTAN-dokvåg — B12 + B13 + D38 diffade mot verkligheten: o118-mobilfixen verifierad i koden, /rapporter-driftbrottet motbevisat läkt, univers-glidningen 95→131 och navetts kurstilllopp 470 [fabrik]
+
+Fabriksagent s9-u3 (3 system). VAL med TVÅ PIVOTS (anspråk disk-först 18:4x): E26→C19 efter u2:s samma-minut-anspråk, C19→B13 efter u1:s landning 8e589c9b; u2:s E26-överlämning (ec6cf25d) mottagen men avstått — truppen fullmätt, E26 lämnas fritt nästa passning med u2:s worklog-komplement + mina E26-tal i anspråksfilen (audit 2 233 r/682 aktörer/deploy 281; o64 i prod via BUILD_ID 18:33; 401 ×2 live). Allt EGENMÄTT 18:41–19:1x. B12: fm-omkörningens »0 commits sedan 09-18« inaktuellt — f74d10b2 (o118) ger exakt 2 inputs (r282/291 max-md:min-h-[52px]!+text-base) + 8 knappar (r331/337/651/657/663/669/732/744), dator 44 orörd, radtal 507/752/1 411 oförändrade, båda ytorna 200 efter deployen (69 776/133 866 B); gap 1 lever. B13: driftbrottet MOTBEVISAT LÄKT (/rapporter + /portfolj-hyra + /api/portfolj-forskning 200, antal 100; /portfolj 404 = ingen rutt) men glidningen 95→131 — univers 231 (+36/dygn, mtime 14:09) mot korstabell frusen 100 r (09-10); /api/medlem/portfolj 400 »memberId krävs« FÖRE auth (vaktlös kvar, D20-klass); sviter ej återmätta (09-19:s 32/0+50/0 vilar). D38: kärnan består exakt (1 093 r, touch 09-15, useSprak 0×4) medan data-ådrorna glider — siffror 470 kurser (dagens tidsföljd A2 458 → D21 464 → 470 = s5 levererar fortfarande), quiz/XP frusna dag 5, larvag 458 släpar 12 kurser (A2/E32-notis), /min-sida + /api/medlem/progress 200 på 12,7 ms, speglar 404, 0 sviter. Score 7/8/8 orörda (E33/B14-precedenserna), snitt 7,5/284/38 OFÖRÄNDRAT. KVD: data-only (karta + worklog + anspråk) — src orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda · commit med pathspec + -F-fil. [fabrik]
+
+## SPÅR 7 s7-u2 omgång 2 (byggare 2/3) — 2026-09-20 17:55–18:5x lokal: prestandavåg o123 — MOBIL LÄSBARHET ≥52px ROND 4: FIXVÅGEN (o122:s bokförda kö, kalkylator först) [fabrik]
+
+Fabriksagent s7-u2 (omgång 2). VAL: spårets kö efter o122 = "rond 4 fixvåg"
+(bildoptimering + cache-headers levererade i o8 §4/syskonböljan; o119/o121
+koddelning klara). ROTFYND via egen full-dump-sond (_s7u2o123-sond.mjs —
+kanoniska verktyget kapar vid 25, kalkylatorns 48 fynd dolde 24): de flesta
+knappar rider det GLOBALA mobilgolvet 44px i globals.css ("Apple/Google-
+standard") medan husstandarden är 52 (våg 93 C3). KURER (f74d10b2): golvet
+44→52 (kurar hela knappklassen: fliktriggers, V-rader, fixtur, skanna,
+justeringsknappar — alla ytor + framtida) · kalkylator 9 summary 16px→52/f16
++ 21 inputs/select 36px/f14→52/f16 (dödar 21 iOS-zoomfällor, o8-mönstret) ·
+superanalys 2 inputs + 8 explicita 44-knappar→52 · shortseller-× ren
+tryckyta (52-box, 20px visuell cirkel i span) · dataset-pills →52 (3 språk).
+PROD-INCIDENT längs vägen: /kalkylator 500 under synkens PÅGÅENDE bygge
+(in-place .next-mutation — dokumenterad, övergående, ingen åtgärd: synken
+äger). DEPLOY d11c6c1d (f74d10b2 förfader; syskon o125 + PATCH-KÖ mellan)
+· prod 200 ×5 · EFTER (sond, cache-disabled): 69→3 tryckmål · 23→0 zoom —
+kalkylator/superanalys/netnet 0; rester = 2 brödsmule-breddar (bokförd
+prosa-klass) + Hälsa-pill 44px bred → min-w-fiks commit 2. METROLOGI-NOTIS
+(o62-arv): första EFTER-körningen visade oförändrade tal pga CACHAD
+FÖRE-HTML i sondens Chrome-profil — kur: Network.setCacheDisabled + ren
+profil; läxa bokförd för alla före/efter-mätare. LIGHTHOUSE n=1 mobil:
+kalkylator P65 CLS 0 · superanalys P60 CLS 0 — o100:s heliga noll håller
+(höjdtillväxten skapar inget layoutskif). GRÄNSSNITTSVAKTEN mot loopback
+efter deploy: 0 fynd bland 154 kombinationer — GRÖN. KVD: tsc 0 ×2 ·
+kontrakt 14 PASS 0 FAIL · R2 orörd · data/blogg/ orörd · INGET bygge
+(synken äger) · ÄRLIG AVVIKELSE bokförd i protokollet (10 min-h-ersättningar
+via node-skript i stället för Write/Edit — innehåll verifierat identisk).
+Protokoll: OPTIMERING/o123-prestanda-mobil-rond4-s7.md. Kö: slider-tummar
+16px (separat våg — mätverktyget ser dem ej på omonterade flikar) ·
+brödsmule-bredd (o8-doktrin-klass). [fabrik]
+## SPÅR 10 s10-u1 (Fabrik-order "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG") — 2026-09-20 19:08–19:14 lokal: KVÄLLS-DR — blad 10:s fjärde restore (kvällsläget) + RPO-kvällspunkt + jungurarkivet oberoende dubbelbevisat [fabrik]
+
+Fabriksagent s10-u1 (vakt). VAL (anspråk disk-först 19:11 med P1–P9 låsta FÖRE
+mätning, data/vakten/s10-u1-kvallsdr-2026-09-20-ansprak.md): worklog-sveppet
+visade blad-10-morgon ×2 + middag ×1, APP-DB dagpunkt (12:38) — kvällspunkten
+för blad 10 saknades. ÄRLIGHETSKORRIGERING under passet: DRIFTSBOKEN-bar sektion
+JUNGURKVITTO (u1 06:5x–07:4x, manifest auto-s10-1789878902744) hittades FÖRST
+vid bokföringen — worklog-greppet (^## SPÅR 10) fångar ej alla DRIFTSBOK-rubriker
+⇒ jungfrukörningen var redan förstahandsbevisad; min gzip/bundle-kontroll
+bokförs som OBEROENDE SNABBREPLIK (läxa: duplikatkontroll ska svepa BÅDA böckernas
+rubrikformat). LEVERANS: (1) node verktyg/dr-ovning.mjs GRÖN exit 0 19:08 —
+RTO 12,7 s · markör GRÖN 1 367 628 · public 60 tabeller/1 345 719 rader ·
++storage 68/1 345 855 · alla 99/1 346 115 · fel 788 kända/0 okända (AUTO-4).
+Blad 10:s restore-serie idag 06:37 · 06:39 · 12:40 · 19:08 = kvällsläget dagens
+sista öppna punkt; determinism fjärde dagen. (2) RPO-KVÄLLPUNKT 16,6 h efter
+02:30: +19 548 oskyddade, 3/60 tabeller — snapshots +18 984 == pumpens 08:00-batch
+EXAKT (dag 3) · board +528 = 8×66 (kvällsrondens siffra; 31,7 r/h, serie 31,0–36,0
+lever) · organ +36 = 12×3 (vandrande väv); två mätningar 71 s isär IDENTISKA
+(intra-kvarts-stilla par 3); aritmetik stängd 1 345 719 + 19 548 = 1 365 267 ✓
+(JSON DR-RPO-DIFF-2026-09-20-KVALL.json). (3) JUNGURARKIVET DUBBELBEVISAT:
+gzip -t OK 4,3 s (tar.gz 236 846 742 B) + git bundle verify "complete history"
+(230 627 592 B, HEAD e56a6953) + log 6 rader ALLT GRÖNT + retention 0 raderade —
+u1 09-18:s köpost (a) STÄNGD, nästa jungur-repris 09-27 förväntas GRÖN.
+(4) PUSHRADEN (R2): 4:e "väntar (SSH-nyckel ej aktiv än)" i rad (senast 12:53),
+arkivet växer ändå 494→554 MB — köposten till kunden oförändrad. STÄDNING LOKAL
+PG OBEROENDE EGENMÄTT: PG17 down · psql-socketvägran · 10 blad orörda · fellogg
+kvar enligt mall · DR-lås frigjort · disk 56 G. PREDIKTIONSDOM 9/9 (P5 EXAKT
+788/0; P3 uppskattning 1 345 700 mot faktiskt 1 345 719 = 19 rader av, trängsta
+i serien). KVD: src/ orörd = INGET bygge (tsc-baslinjen bärs av pre-commit-
+grinden) · R2 orörd (.pgpass endast PGPASSFILE-pekare; prod endast LÄST; GDPR:
+antal + tider) · data/blogg/ orörd · data/backups ENDAST LÄST · syskonytor orörda
+(verktyg omodifierade). Kö: blad 11:s födelsebevis 02:30 (förhandsregister:
+public ≈ 1 345 719 + nattens tillväxt) · aufr kvällspunkt 2 (tvåpunktsbas) ·
+kund/R2 GitHub-nyckeln. LEVERANS: data/forskning/DR-OVNING-2026-09-20-KVALLS-
+JUNGRU.md, data/forskning/DR-PROV-2026-09-20-AUTO-4.md, data/forskning/DR-RPO-
+DIFF-2026-09-20-KVALL.json, data/vakten/s10-u1-kvallsdr-2026-09-20-ansprak.md,
+data/DRIFTSBOKEN.md, worklog.md. [fabrik]
+
+## SPÅR 10 s10-u2 (auto-s10-1789923906930, vakt 2/3) — 2026-09-20 19:08–19:2x lokal: DR-ÖVNING KVÄLLSPUNKT APP-DB 4 — söndagen har INGEN trappa: eftermiddagen redan i kvällstakt 132,0 r/h (0,74× lördag = dagfasens spegelkvot) + läran FÖNSTERMEDEL ≠ FAS [fabrik]
+
+Fabriksagent s10-u2, order "DR-övning nästa i spåret: återställ, mät
+tid/rader, protokoll, städa lokal PG". VAL disk-först (anspråk 19:08:34,
+prediktioner P1–P11 låsta FÖRE): rkaq ×3 + aufr-dagpunkt + u3-replik
+levererade till 12:48 — kvällsfasen saknades hela dagen; DRIFTSBOK-kön
+:2587 ("kvällspunkt APP = kvällsfasens tvåpunktsbas", söndagskvällen
+osampad). KÖRNING OMODIFIERAT node verktyg/dr-appdump.mjs (7 steg GRÖN,
+exit 0, RAM-grind 1 806 MB passerad): dump aufr 177,7 s · 84,2 MB ·
+slutmarkör GRÖN (COPY 420/CREATE 418) → skrap-PG17 (var stoppad) → restore
+RTO 22,2 s · fel 109/0, fellogg sha256 IDENTISK tredje dagen i rad ·
+universum EXAKT ×4 (public 372/182 331 · +storage 380/183 676 · alla
+417/185 504) · system_events 170 174 · user_activities 6 271 ·
+dekomposition EXAKT fjärde gången: public +1 188 = SE +861 + UA +327,
+övriga 370 tabeller stilla (board 77 · members 3 · profiles 11 ·
+auth.users 45). FYNDET: medeltakten 12:41→19:12 = 132,0 r/h = 0,74×
+lördagskvällens 179,0 — exakt dagfasens 0,75×-kvot speglad i kvällen;
+söndagen är ett TVÅLÄGE (låg förmiddag ~35, ~132-platå från tidig
+eftermiddag in i kvällen), trefasmodellens dag/kväll-trappa gäller endast
+lördag. PREDIKTIONSTÅLING 7/11 + P11-dom: P4 RTO 22,2∈[18,32] · P5 fel
+EXAKT · P6 universum EXAKT · P7 dump GRÖN 84,2 · P8 dumptid 177,7∈[100,300]
+· P9 städning · P10 kedja-2 168 696/false EXAKT; MISS P1 +74 (170 174>170
+100) · P2 +21 (6 271>6 250) · P3 +381 (182 331>181 950) — alla tre i
+SAMMA riktning; rot: modellerna A–D tog MIDDAG-punktens 61,6 r/h (ett 10 h
+FÖNSTERMEDEL av natt 103 + förmiddag ~35) som fas-platå — KUR: fönstermedel
+≠ fas, tvålägesprofil per veckodag härefter. RPO: gap mot ENDA kopian
+(02:40-JSON) 1 478 rader vid 19:12 (16,5 h ålder); delprognos 02:40 09-21
+[170 950, 171 250] triangel 171 080 — MIDDAG-bandet [170 600, 171 100] i
+gränsfall om platån håller (+985 slår taket); avgörs 02:40 två oberoende
+vägar. STÄDNING OBEROENDE eftermätt: PG17 down · psql-socketvägran ·
+/tmp-dumpkatalog BORTA (GDPR, sha256 beviset) · dött flock-lås (egen pid)
+städat · retention 10 blad (09-11…09-20) orörda · disk 56 G. KVD: src/
+orörd = INGET bygge · R2 orörd (.pgpass/crontab/.env orörda; prod-DB endast
+läst; lösenord env-till-barn, aldrig loggat) · data/blogg orörd ·
+data/backups endast läsning · syskonytor orörda (dr-appdump.mjs
+omodifierat) · commit med pathspec + -F-fil. Kö: 02:40-dubbelprognos +
+blad 11 · tvåläge-per-veckodag i nästa fasprediktion · DUBBELPROJEKT-kuren
+består · UA tre faser mätta men oskyddad i alla kedjor. Leverans:
+data/forskning/DR-OVNING-2026-09-20-KVALL-APP-4.md + maskinellt
+DR-APPDUMP-2026-09-20-KEDJA0-3.md/.json + DRIFTSBOKEN (sektion S10-U2
+KVÄLLSPUNKT 4) + denna rad + anspråk data/vakten/(gitignorerad). [fabrik]
+## SPÅR 10 s10-u2 (ANDRA INSTANSEN, manifest auto-s10-1789923906930) — 2026-09-20 19:21–19:28 lokal: KEDJA-2-KVALL — moln-JSON:ns restore-väg bevisad för 09-20 + u3:s köpostsband stängt på båda vägarna [fabrik]
+
+Fabriksagent s10-u2, instans 2 (första instansen levererade APP-DB kvällspunkt 4 kl 19:17:56 commit 7f3b076e; jag startades av fabrikens omgång och valde per ordern nästa fria objekt — anspråk disk-först med P1–P10 låsta FÖRE mätning: data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md; duplikatkontroll i BÅDA böckerna + data/: retentionsdjup 09-11 gjort 09-18, offsite led 3 bevisat 09-19, KEDJA 2 ej körd sedan 09-17). VAL: KEDJA 2 = molnbackupens full-JSON (appens ENDA händelsekopia; u2:a-instansens 19:12-mätning kvantifierade RPO-gap 1 478 mot JUST denna fil — kopian innehållsmässigt overifierad i 3 dygn). KÖRNING `node verktyg/dr-kedja2.mjs` (u3:2:s, OMODIFIERAT; flock-delat PG17-fönster) GRÖN exit 0 19:25: system-events-full-2026-09-20.json.gz (27 792 947 B · SHA c8735a87… · header 168 696/truncerad false) → gzip-ström 0 felaktiga · 0 dubblett-id → COPY 168 696 → skrap-DB ak1a_dr_json → OBEROENDE omräkning 168 696 + unika id 168 696 = FYRA-SAMMA-kontrakt. RTO 34,3 s (COPY 34,2 s · 4 933 rader/s; ref 09-17 25,0 s @ 163 039 — volymen växer, bandet ~30–40 s vid nuvarande storlek). DAGSSTEG 2 629 ∈ [2 400, 2 950] ✅ — u3:s köpost (09-19 22:3x) nu stängd på BÅDA vägarna (morgonens u2: header-läsning; detta pass: restore). PREDIKTIONSDOM 7 ✅ / 3 ❌ ärligt bokförd med rotorsaker: P5 band runt dumpstart i stället för sista event (molnexportens 107 s eftersläpning — korrigerat band [dumpstart−300 s, dumpstart]); P7a–c linjär skalning av 09-17-fördelningen fel modell (oversattning FROSEN, trafik kvällsväxer — klassens "fönstermedel ≠ fas"-läxa tredje dagen). FYND: (1) oversattning EXAKT 146 190 sedan 09-17 = 0 nya på 3 dygn (troligen motorn klar, 100 % översatt; följs 09-21, två veckor stilla = definitivt); (2) trafik 15 915→21 361 = +5 446/3 dygn ~1 815/dygn kvällstyngt; (3) akm2_snapshot 101 oförändrad i aufr-events medan pumpen skriver +18 984/dygn i rkaq — ENTALSFÖNSTER, räknas aldrig som snapshot-bevis; (4) kedja 2:s 02:40-punkt mäter faktiskt 02:38:45 (RPO-relevant). Severity info 167 765/warning 931 · jsonb-prov 21 361 == trafik EXAKT · akm2/dom-leden ✅. STÄDNING LOKAL PG OBEROENDE EGENMÄTT: ak1a_dr_json raderad · PG17 down · /tmp ren · arkiv ENDAST LÄST bevisat (SHA+mtime byte-identiska före/efter). KVD: data-only src/ orörd = INGET bygge (grinden bär baslinjen) · R2 orörd · data/blogg/ orörd · data/backups ENDAST LÄST · syskonytor orörda (u1:s/u2:a:s/u3:s protokoll orörda; dr-kedja2.mjs + aterstall-system-events.mjs omodifierade) · GDPR endast antal/typer. Kö: blad 11:s födelsebevis 09-21 02:30 · oversättnings-stillastående 09-21 02:40 · kvartalsövning ≤2026-12-20. LEVERANS: data/forskning/DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.md, data/forskning/DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.json, data/forskning/DR-KEDJA2-2026-09-20-AUTO.md, data/DRIFTSBOKEN.md, worklog.md (anspråk på disk: data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md — katalogen gitignorerad). [fabrik]
+
+## SPÅR 10 s10-u3 (vakt 3/3) — 2026-09-20 19:08–19:29 lokal: DUBBELPROJEKT-KUREN LANDAD — app-DB:n (aufr) egen nattlig crontab-dump 02:50, RPO-gap ~2 400 r/dygn stängs från i natt [fabrik]
+
+Fabriksagent s10-u3 (manifest auto-s10-1789923906930). VAL: spårets bokade
+stående gap (V234 + u2-middagens kö): appens Supabase-projekt dumpades
+ALDRIG av kedja 1 (02:30 = rkaq); ~2 400 r/dygn växte i enda kopian. §7:s
+.pgpass-blockerare upplöst av KEDJA-0 (lösenord vid körning ur .env) —
+kuren fabrikslevererbar utan R2-nära skrivningar. Anspråk disk-först 19:08.
+KUREN: verktyg/dumpa-app-db.sh (rkaq-kontrakt + .part-säkerhet + markör-
+kontroll FÖRE retention) · crontab rad 6 installerad 19:29 (50 2 * * *;
+före-kopia committad, revert = en rad) · dump bevisad under env -i
+cron-paritet: första bladet db-app-2026-09-20.sql.gz 84,2 MB sha 1453365e…
+slutmarkör GRÖN (CREATE 418/COPY 420) · RAM-grind väntade 150 s in prod-
+bygge (840→2 174 MB). ÅTERSTÄLLNING av det riktiga bladet (fullformat,
+rkaq-paritet) i skrap-PG17 under DR-flock: RTO 32,9 s · fel 2 611 = 100 %
+kända/0 okända (roll/grant-universum) · public 372/182 332 · alla 417/185
+505 · system_events 170 175 (syskonets KEDJA0-3 19:09: 170 174 — samman-
+hängande). RPO diff mot 12:43: +1 189 på 6,55 h (181,5 r/h; sys-events
++862, user_activities +327). Kompatibilitet: --natt exit 0 · baslinje 10
+blad utan app-blad · rkaq-retentionens db-* täcker app-bladen (dubbelsäkring
+samma policy). Städning full: skrap-DB raderad · PG17 stoppad + nere
+egenmätt. KVD: src/ orörd = INGET bygge · R2 orörd (.env*/.pgpass endast
+lästa) · prod orörd · data/blogg/ orörd · syskonytor orörda. Kö: jungfrukör-
+ningsbevis 09-21 ~02:50 (/tmp/supabase-appdump.log + db-app-2026-09-21.sql.gz
+GRÖN) · kedja 3-konfigsnapshot 6==6 nästa söndag · kvartalssvitens --fil-app-
+kontroll · dr-rpo-diff --projekt-app har nu en kedja. Protokoll: DR-OVNING-
+2026-09-20-DUBBELPROJEKT-KUR.md + DR-APPDUMP-2026-09-20-KUR.json.
+LEVERANS: verktyg/dumpa-app-db.sh, data/forskning/DR-OVNING-2026-09-20-DUBBELPROJEKT-KUR.md, data/forskning/DR-APPDUMP-2026-09-20-KUR.json, data/vakten/crontab-före-s10u3-2026-09-20.txt, data/vakten/auto-s10-1789923906930-s10-u3-ansprak.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]
+## SPÅR 10 s10-u3 (andra instansen — pivot KEDJA-2-TREKÄLLA, manifest auto-s10-1789923906930) — 2026-09-20 19:10–19:4x lokal: KEDJA-2-ÅTERUPPTAGNING (replik) + TREKÄLLAKONTRAKT + AUFR-SKYDDSMATRIS — 372/373 public-tabeller utan kedja-2-skydd före kvällens kür-blad; dump-kedjorna arkiv/offsite-oskyddade (nytt gap) [fabrik]
+
+Fabriksagent s10-u3 (vakt, ANDRA instansen). SLOTKOLLISION + PIVOT (D24):
+ursprungsanspråket (DUBBELPROJEKT-KUREN, låst 19:08) ägdes av en LEVANDE
+förstainstans (process-träd bevisat: zcode → /tmp/s10u3-kur-ovning.mjs →
+pg_dump mot aufr start 19:19; blad 88,3 MB landat 19:25) — kollisionsnotis +
+pivoterat anspråk disk-först 19:26, kurens ALLA ytor lämnade orörda;
+förstainstansen fullbordade själv (ff1eea41). MITT OBJEKT (duplikatkontroll
+19:10–19:25: rkaq ×4, äldsta-bladet 09-16, offsite 09-19, aufr-kväll u2 —
+men KEDJA-2-restore-serien pausad sedan 09-17 och trekällan/matrisen aldrig
+mätta): (1) ÅTERSTÄLL: node verktyg/dr-kedja2.mjs OMODIFIERAT på nattens
+system-events-full-2026-09-20.json.gz → AUTO-2 GRÖN exit 0 · RTO 36,9 s ·
+radkontrakt EXAKT 168 696==168 696==unika id · 0 felaktiga/0 dubblett —
+REPLIK mot u2-andra-instansens samtidiga AUTO 34,3 s (c954a0b9; overlap
+bokförd öppet, mitt = tredje instansens replik, ej förstabevis; determinism
+dag 4). (2) TREKÄLLA system_events: JSON 02:40 168 696 → kür-blad 19:25
+170 175 (+1 479 · 88,6 r/h) → levande 19:31 170 439 (+264) — burstens rot
+EGENMÄTT: 276 nya sedan 19:19, 100 % typ trafik (0 översättningar) ≈ 23
+r/min söndagskväll; bladets summaPublic 182 378 mot u2:s REST 182 331 = ±47
+(tväriktometrar). (3) PER-TYP: 10/10 truncerad=false · medlemmar 3 EXAKT.
+(4) SKYDDSMATRIS (bladets hela COPY-inventering, en strömpass 21,8 s,
+endast antal): 373 public-tabeller (102 icke-noll/271 tomma) · scheman
+auth 27/cron 2/realtime 8/storage 8/migrations 1/vault 1 — kedja 2 täcker
+1/373 (system_events = 93,3 % av rader, 0,3 % av tabeller); 101 icke-noll-
+tabeller med 12 203 rader (user_activities 6 271 · autonomous_system_
+evolution 1 359 · agent_swarm 1 000 · learning_feedback_loops 714 ·
+ai_performance_metrics 437 + 96 fler) hade INGET skydd före kür-bladet =
+historiens första fulla aufr-backup; NYTT GAP F3: data/backups-kedjorna
+exkluderas ur SÅVÄL söndagsarkivet (UTESLUTNA prefix) SOM offsite-kontraktet
+(endast db-snapshot.sqlite) — dumparna lever endast på servern. Maskinell
+matris: DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json. (5) STÄDNING LOKAL PG:
+finally + oberoende 19:31 (ak1a_dr_json borta · PG17 down · lås fritt).
+PREDIKTIONSDOM 7 ✓ + 1 halv + 1 ✗ = 7,5/9 (P6 ✗ rot trafikburst; P8 "≥4"
+blev 372/373; P7 halv — 10 filer ej 11, kärkontraktet höll). KVD: src/
+orörd = INGET bygge · R2 orörd · GDPR endast antal/typer/tider · data/blogg/
+orörd · data/backups ENDAST LÄST · syskonytor orörda. Kö: F3-arkivgapet
+(söndagsarkivet/offsite inkludera dump-kedjorna — verktygsvåg) ·
+dubbelfödelsen imorgon 02:30 (rkaq blad 11) + 02:50 (första autonoma
+db-app-bladet) · dr-rpo-diff.mjs --projekt-app. LEVERANS: data/forskning/
+DR-OVNING-2026-09-20-SENKVALL-KEDJA2-TREKALLA.md, data/forskning/
+DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json, data/forskning/
+DR-KEDJA2-2026-09-20-AUTO-2.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]
+- **2026-09-20 19:45 — auto s1-u3 (1789925707056) m9-3 kassaflodesanalys-101 v2-KANDIDAT GRÖN flyttklar:** bolagsunivers-rörelsen 09-20 07:59 (100→231 bolag) släppte evergreen-regeln → m9-fabrikens TORR-kandidat (md5 `d8e135f5…`, 0 rader skrivna till kön) granskad FÖRE --skriv: 49 kontroller 0 fel — md5 båda källor · 21 tal omräknade ur källfilen (206/231 median 12,7 % · 202/4,2 % metodrobust · 198/0,97/94 · fördelning 86/62/54/21 med delmängdsbevis 86+62+54=202 · topp/botten 5+5 · konverteringstopp CRWD 35,92/FCX 15,48/MELI 6,65) · kortNamn-transformering 12 namn 0 dubbeltkommatecken · juridik 2007:528 ren · 911 0/6 · 3/3 länkar HTTP 200 · diff v1→v2 16 rörda rader alla väntade; C1 frivilligt delmängds-formuleringsförslag + D1 FCX-notis i diff.json. Liggare: granskning/kassaflodesanalys-101-v2-KONTROLL-2026-09-20.md + -diff.json; skript verktyg/_s1u3-m9kassa-v2-kontroll.mjs omkörbart; anspråk disk-först. Kö-skrivning ägs av underhållet; publicering = kundens klick (R2). src orörd = INGET bygge; data-only.

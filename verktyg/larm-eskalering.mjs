@@ -179,14 +179,23 @@ export function bedomTysthet(senasteRadTs, nuMs, granser = STANDARD_GRANSER) {
 
 // Klassning i declarationsordning: första träff vinner (RÄCKTE INTE före
 // generell PM2-restart; LÄKTE är grön även om raden nämner PM2-RESTART).
+// o125 (2026-09-20): ÅTERSTÄLLD (grön) — kraschvaktens återställningsbevis
+// för incidenter som ANNAN kanal läkte (deploy/kund), klassen som stänger
+// 09-18:s 41-timmars "aktiva KRITISK"-spökepisoder; ORT-PORT (larm) +
+// ORT-RECLAIM KLAR (grön) — F2-ortporten (2026-09-20) loggade sina klasser
+// FÖRE deras mappning: hela faroklassen var osynlig för eskaleringen
+// (o26:s blindhetsklass: vaktnät som ingen läser).
 const KRASCH_KLASSER = [
   ["RÄDDNING KLAR", "raddning-klar", "gron"],
   ["PM2-RESTART LÄKTE", "pm2-restart-lakte", "gron"],
+  ["ÅTERSTÄLLD", "aterstalld", "gron"],
+  ["ORT-RECLAIM KLAR", "ort-reclaim-klar", "gron"],
   ["KRASCHLOOP-MISSTANKE", "kraschloop-misstanke", "larm"],
   ["RÄDDNINGSBYGG MISSLYCKADES", "raddningsbygg-misslyckades", "larm"],
   ["SVARAR INTE 2 GÅNGER", "svarar-inte-2-ganger", "larm"],
   ["PM2-RESTART RÄCKTE INTE", "pm2-restart-rackte-inte", "larm"],
   ["ARTEFAKT RÖD", "artefakt-rod", "larm"],
+  ["ORT-PORT", "ort-port", "larm"],
 ];
 
 /**

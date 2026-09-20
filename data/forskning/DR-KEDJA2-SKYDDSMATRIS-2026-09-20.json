@@ -1,0 +1,80 @@
+{
+  "matris": "DR-KEDJA2-SKYDDSMATRIS",
+  "datum": "2026-09-20T19:36:00+02:00",
+  "agent": "s10-u3 (manifest auto-s10-1789923906930, pivot KEDJA2-TREKÄLLA; se DR-OVNING-2026-09-20-SENKVALL-KEDJA2-TREKALLA.md)",
+  "objekt": "aufr (appens Supabase-projekt, ref suhvlsbp) × backup-kedjornas täckning",
+  "aufrLage": {
+    "kalla": "COPY-rad CRC-inventering av db-app-2026-09-20.sql.gz (88 324 083 B, kür-agentens beviskörning 19:19–19:25; EN strömpass 21,8 s, endast antal — inget radinnehåll läst)",
+    "scheman": { "auth": 27, "cron": 2, "public": 373, "realtime": 8, "storage": 8, "supabase_migrations": 1, "vault": 1 },
+    "copyBlockTotalt": 420,
+    "publicTabeller": 373,
+    "publicIckeNoll": 102,
+    "publicNoll": 271,
+    "publicRaderTotalt": 182378,
+    "topp5": [
+      { "tabell": "public.system_events", "rader": 170175 },
+      { "tabell": "public.user_activities", "rader": 6271 },
+      { "tabell": "public.autonomous_system_evolution", "rader": 1359 },
+      { "tabell": "public.agent_swarm", "rader": 1000 },
+      { "tabell": "public.learning_feedback_loops", "rader": 714 }
+    ],
+    "kundnaraReferenstabeller": { "public.members": 3, "public.profiles": 11, "public.courses": 3, "public.board_decisions": 77, "public.board_meetings": 58 }
+  },
+  "kedjor": {
+    "kedja1-rkaq-0230": {
+      "täckerAufr": false,
+      "bevis": "DR-OVNING-2026-09-19-DUBBELPROJEKT §2 (crontab hårdkodar db.rkaq…; .pgpass endast rkaq-posten)",
+      "not": "dumpar pump-universumet (senaste blad: 60 public-tabeller/1 345 719 rader i rkaq)"
+    },
+    "kedja1b-dbapp-0250": {
+      "täckerAufr": "ALLA 420 COPY-tabeller (auth/cron/public/realtime/storage/migrations/vault)",
+      "status": "FÖRSTA fullständiga aufr-backup:n i historien = db-app-2026-09-20.sql.gz (88 324 083 B) 2026-09-20 19:25",
+      "crontab": "rad 6 installerad 2026-09-20 ~19:2x av kür-agenten s10-u3 (första instansen; 50 2 * * * dumpa-app-db.sh) — autonom från 02:50 2026-09-21",
+      "restoreBevis": "kür-agentens eget protokoll DR-OVNING-2026-09-20-DUBBELPROJEKT-KUR.md: RTO 32,9 s · radkontrakt 372 public/182 332 · alla scheman 417/185 505 · system_events 170 175"
+    },
+    "kedja2-moln-0240": {
+      "täckerAufr": "ENDAST public.system_events — 1 av 373 public-tabeller (0,3 %; men 170 175/182 378 = 93,3 % av alla public-rader)",
+      "fullKontrakt2026-09-20": { "antal": 168696, "totaltFranApi": 168696, "sidor": 34, "truncerad": false, "datum": "2026-09-20T00:40:32.857Z" },
+      "perTyp2026-09-20": [
+        { "fil": "blogg-publicerade", "antal": 1, "truncerad": false },
+        { "fil": "blogg-utkast", "antal": 9, "truncerad": false },
+        { "fil": "kurs-metadata", "antal": 0, "truncerad": false },
+        { "fil": "kurs-metadata-andringar", "antal": 0, "truncerad": false },
+        { "fil": "media-filer", "antal": 0, "truncerad": false },
+        { "fil": "medlem-progress", "antal": 0, "truncerad": false },
+        { "fil": "medlemmar", "antal": 3, "truncerad": false },
+        { "fil": "termbank-tillagg", "antal": 0, "truncerad": false },
+        { "fil": "variabel-andringar", "antal": 0, "truncerad": false },
+        { "fil": "variabler", "antal": 0, "truncerad": false }
+      ],
+      "restoreBevis": {
+        "auto1": { "tid": "2026-09-20T17:25:05Z", "rto": "34,3 s", "rader": 168696, "agent": "u2 ANDRA instansen (commit c954a0b9; DR-KEDJA2-2026-09-20-AUTO.md) — stängde middags-u3:s bokade köpost" },
+        "auto2": { "tid": "2026-09-20 ~17:29 lokal", "rto": "36,9 s", "rader": 168696, "agent": "s10-u3 ANDRA instansen, oberoende replik (DR-KEDJA2-2026-09-20-AUTO-2.md, detta protokoll)" }
+      },
+      "serieNot": "restore-bevis-serien pausad sedan 2026-09-17 (09-18/19/20-artefakter obevisade vid dagens start); u2-andra-instansen och denna replik återupptog serien samma kväll med identiskt radkontrakt"
+    },
+    "sondagsarkiv-0320": {
+      "täckerDataBackups": false,
+      "bevis": "verktyg/arkivera-server.mjs UTESLUTNA prefix: 'data/backups/' (kommentar rad 9-10 + konstant rad 48)"
+    },
+    "offsite-daily": {
+      "täckerDataBackups": "endast data/backups/db-snapshot.sqlite",
+      "bevis": "verktyg/backup-offsite.mjs delar-lista rad 74-91 (tråd/läge/audit/forskning/utkast/kurser/db-snapshot) — INTE db-*.sql.gz, INTE db-app-*.sql.gz, INTE system-events-full-*.json.gz"
+    }
+  },
+  "trekallaSystemEvents": {
+    "kalla1Json0240": 168696,
+    "kalla2Blad1925": 170175,
+    "kalla3Levande1931": 170439,
+    "tillvaxt0240till1925": 1479,
+    "tillvaxt1925till1931": 264,
+    "burstAnalys": { "nyaSedan1919": 276, "varavOversattning": 0, "varavTrafik": 276, "varavSakerhet": 0, "dom": "söndagskvällens trafikbeaconer ≈ 23 r/min 19:19–19:31 — INTE agent-översättningar" }
+  },
+  "fynd": [
+    "F1 KEDJA-2-TÄCKNING: 1/373 public-tabeller (system_events). 101 icke-noll-tabeller med sammanlagt 12 203 rader (user_activities 6 271, autonomous_system_evolution 1 359, agent_swarm 1 000, learning_feedback_loops 714, ai_performance_metrics 437 + 96 till) hade INGET kedja-2-skydd före 2026-09-20 19:25 — kür-bladet är historiens första fullständiga aufr-backup.",
+    "F2 RADKONCENTRATION: system_events bär 93,3 % av alla public-rader — kedja 2:s smala täckning är samtidigt den djupaste (hela händelsehistoriken sedan 2026-09-03, tidsfönster 17 dagar i arkivet).",
+    "F3 ARKIV/OffSITE-GAP: data/backups-kedjorna (rkaq-blad, db-app-blad, moln-JSON) exkluderas ur SÅVÄL söndagsarkivet (UTESLUTNA prefix) SOM offsite-kontraktet (endast db-snapshot.sqlite) — dump-kedjorna lever endast på servern + i molnkällan; ett serverbortfall utan molnet = kedjorna borta. Kö-post till spåret.",
+    "F4 SERIEÅTERUPPTAGNING: dr-kedja2-restore-serien pausad sedan 09-17; samma kväll dubbelbevisad av två oberoende instanser (u2-andra 34,3 s + denna replik 36,9 s, identiskt radkontrakt 168 696/168 696/unika 168 696) — determinism dag 4.",
+    "F5 KVÄLLSBURST: +264 rader blad→levande på ~12 min förklaras helt av 276 trafik-rader (0 översättningar) — RPO-mätare som antar jämn tillväxt underskattar söndagskvällar; u2:s kvällsserie (179 r/h lördag) gäller dump-fönstret, inte toppminuter."
+  ]
+}

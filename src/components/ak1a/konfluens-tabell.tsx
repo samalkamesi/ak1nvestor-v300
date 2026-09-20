@@ -277,7 +277,7 @@ export function KonfluensTabell() {
           <button
             onClick={korSkanning}
             disabled={kör}
-            className="btn-marin min-h-[44px] px-5 py-2.5 text-xs"
+            className="btn-marin min-h-[44px] max-md:min-h-[52px] px-5 py-2.5 text-xs"
           >
             {kör ? "Skannar universum…" : harResultat ? "Skanna universum igen" : "Skanna universum"}
           </button>

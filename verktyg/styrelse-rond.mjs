@@ -13,7 +13,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -119,7 +119,7 @@ async function main() {
   // barn A-Ö. Commit-tagg [organ:X] = organets leveransbevis.)
   let organRapport = "(fabriken kunde inte köras)";
   try {
-    const ut = execSync("node verktyg/organ-fabrik.mjs --evolvera", {
+    const ut = execFileSync("node", ["verktyg/organ-fabrik.mjs", "--evolvera"], {
       cwd: ROT,
       encoding: "utf8",
       timeout: 30_000,
@@ -133,7 +133,7 @@ async function main() {
   // RAD-rader = rondens HÖGSTA prioritet (självläkningen självläker).
   let halsorad = "(hälsoprovet kunde inte köras)";
   try {
-    const ut = execSync("node verktyg/organism-halsa.mjs", {
+    const ut = execFileSync("node", ["verktyg/organism-halsa.mjs"], {
       cwd: ROT,
       encoding: "utf8",
       timeout: 45_000,

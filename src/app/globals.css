@@ -547,13 +547,15 @@ img, video, canvas, svg, iframe {
    MEGA MOBILE OPTIMIZATION — 100x better mobile UX
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Minimum touch target size — 44px (Apple/Google standard) */
+/* Minimum touch target size — 52px (husstandarden "52 px tryckyta", våg 93
+   C3; golvet låg tidigare på Apple/Googles 44px och var den mekanism som
+   höll kalkylatorns knappklass fast på 44 — o123 höjer golvet till huset) */
 @media (max-width: 640px) {
   button,
   a[role="button"],
   [data-touchable] {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 52px;
+    min-width: 52px;
   }
 
   /* Smaller padding on mobile to fit more content */

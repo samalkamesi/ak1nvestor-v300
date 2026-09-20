@@ -29,6 +29,9 @@
 //                                     sträng — s8-u1:s permissions-fynd)
 //   SSRF_EXTERN_LITERAL      info   fetch("https://...") fast literal —
 //                                     rapporteras, räknas ej som fynd
+//   CHILD_PROC_STRANG_LITERAL info  exec/execSync("…") ren literal =
+//                                     skal-form, array-doktrinsbrott (v1.6;
+//                                     rapporteras, räknas ej som fynd)
 //   LOSENORD_AUTOCOMPLETE    info   lösenords-placeholder + autoComplete
 //                                     (worklog 9325-9329-klassen)
 //
@@ -50,6 +53,19 @@
 // de kan aldrig byta host. Beviset som öppnade klassen: v85-e2e-skriptet
 // (11 falska HIGH) där `bas` var fast loopback-literal 17 rader från
 // användningen, utanför vittnesfönstret.
+//
+// v1.6 — CHILD_PROC_STRANG_LITERAL (o123, 2026-09-20): doktrinen (skal-
+// kvoten våg 137/148 + o15/o59:s K2-mall) kräver execFileSync-ARRAYFORM för
+// ALLA shell-anrop — men modellen mätte endast INTERPOLATION (CHILD_PROC_
+// INTERP). En ren literal som execSync("git push prod develop") är utan
+// runtime-injektion (författarskriven) men ÄNDÅ skal-form: /bin/sh tolkar
+// metatecken och doktrinbrottet var OSYNLIGT för vakten. Beviset som öppnade
+// klassen: _r113-push.mjs föddes 2026-09-20 i strängform TROTS o116:s
+// bokning "rondskript föds direkt i arrayform (K2-mall)" — glidningen var
+// systematisk (49 anrop i trädet, varav levande vaktsystem). Klassen är
+// INFO (rapporteras, blockerar ej — SSRF_EXTERN_LITERAL-mönstret): fynd-
+// nivån vore falsk larmkultur för författarskrivna literaler, men tystnad
+// dolde form-glidningen. Mätbar kur = arrayform, träffen försvinner.
 //
 // Användning:
 //   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--doman REGEX]
@@ -306,6 +322,17 @@ for (const fil of allaFiler) {
     if (/\b(exec|execSync)\s*\(\s*(?:`[^`]*\$\{|["'][^"']*\$\{|["'][^"']*["']\s*\+)/.test(rad)) {
       rapportera("CHILD_PROC_INTERP", "high", fil, i, rad, "oskyddad");
     }
+    // v1.6 — CHILD_PROC_STRANG_LITERAL: exec/execSync vars FÖRSTA argument är
+    // en REN strängliteral (citat-`"`/`'`, utan `${`-interpolat, ej sluten av
+    // `+`-konkat — dessa täcks av INTERP-grenen) = skal-form. Ordgränsen \b
+    // skiljer exec/execSync från execFileSync (doktrinens härdade form).
+    // Info: författarskriven literal injicerar inget, men formen bryter
+    // array-doktrinen och SKALL vara synlig (se v1.6-rubriken). Känd gräns:
+    // radbaserad motor — literal på EGEN rad under anropet ses inte (samma
+    // gräns som övriga klasser).
+    else if (/\b(?:exec|execSync)\s*\(\s*(["'])[^"']*\1\s*[,)]/.test(rad)) {
+      rapportera("CHILD_PROC_STRANG_LITERAL", "info", fil, i, rad, "skalform — doktrin: execFileSync-array");
+    }
 
     // PATH_API: filvägsoperationer som konsumerar request-härledda namn
     if (arApi && /(path\.(join|resolve)|readFile|writeFile|createReadStream|createWriteStream|readdir)\(/.test(rad)) {
@@ -338,7 +365,7 @@ for (const r of rapportRader) {
 
 const resultat = {
     verktyg: "mimosa-paritet",
-    version: "1.5",
+    version: "1.6",
     tid: new Date().toISOString(),
     katalog: rot,
     doman: domanArg ?? "standard (src/ + data/infra/)",

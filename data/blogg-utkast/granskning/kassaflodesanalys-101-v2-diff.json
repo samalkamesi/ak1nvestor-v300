@@ -1,0 +1,40 @@
+{
+  "granskat": "m9-fabrikens KANDIDAT kassaflodesanalys-101 v2 (TORR-läge, ännu ej skriven till Supabase-kön; lokalt ligger v1 i m9-ko/kassaflodesanalys-101-v1.json)",
+  "kandidatMd5": "d8e135f50c9aee6f84434f6ef3929adb",
+  "mallMd5": "e857b504be0bd05d836564ecf3d7b5ae",
+  "granskadAv": "agentfabrik auto-s1-1789925707056 s1-u3 (2026-09-20)",
+  "rapport": "kassaflodesanalys-101-v2-KONTROLL-2026-09-20.md",
+  "bedomning": "GRÖN — FLYTTKLAR (kandidatnivå). 49 kontroller 0 fel: md5 på båda källorna exakta · 21 talvärden omräknade oberoende ur bolagsunivers.json (206/231 median 12,7 % · 202 median 4,2 % metodrobust · 198/0,97/94 · fördelning 86/62/54/21 med delmängdsbevis 86+62+54=202 · topp/botten 5+5 · konverteringstopp 3) · kortNamn-transformering verifierad på 12 namn, 0 dubbeltkommatecken · juridik 2007:528 ren (0 rekommendationsmönster, 'inte en värdering', negerad disclaimer sist) · 911 ren 0/6 · 3/3 interna länkar HTTP 200 mot levande sajten · struktur grön. Diff v1→v2: 16 rörda rader, samtliga väntade (underlagsdatum 09-03→09-20, universum 100→231, alla statistiktal, ytterlighetsbolagen utbytta); mallprosa/rubriker/länkar/juridikram oförändrade.",
+  "anvandning": "Kandidaten är deterministisk: när kö-underhållet kör 'node verktyg/m9-fabrik.mjs --skriv' landar INNEHÅLLET SOM ÄR GRANSKAT HÄR (kandidat-md5 d8e135f5…) i Supabase-kön som v2, status 'utkast'. Kontrollera vid skrivningen att fabriken redovisar kandidat-md5 d8e135f5… och mall-md5 e857b504… — avviker någon ska granskningen omköras. C1 är ett FRIVILLIGT mallägarförslag (verktyg/m9-fabrik.mjs äger mallen; granskaren skriver ej om andras filer); kandidaten är flyttklar även utan det. Publicering förblir kundens klick (R2) enligt M9-GRANSKNING §1.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "verktyg/m9-fabrik.mjs (mall: kassaflodesanalys-101, rad för fcfYield-fördelningen)",
+      "falt": "body (FCF-avkastningens fördelning)",
+      "gammalt": "54 under 2 % — och 21 är negativa, det vill säga bolag som för närvarande förbrukar kassa",
+      "nytt": "54 under 2 % — varav 21 negativa, det vill säga bolag som för närvarande förbrukar kassa",
+      "orsak": "DELMÄNGDS-TYDLIGHET: 86+62+54 = 202 = n mätta bevisar att de 21 negativa är en delmängd av de 54 under 2 %, men 'och' kan feläsas additivt (→223). v1 formulerade 'varav 9 negativa' — samma konstruktion som fungerade. FRIVILLIGT: aritmetiken i texten stämmer som den står; ändring i mallen ändrar mall-md5 och kräver omgranskning av nästa kandidat."
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "—",
+      "falt": "body (Fria kassaflöden per bolag — spridningen)",
+      "gammalt": "—",
+      "nytt": "—",
+      "orsak": "FCX FCF-marginal 176,2 % (FCF > omsättning) är äkta ur källan (lonksamhet.fcfMarginal = 1.762, verifierad). Förekomsten är väntad för investmentbolagsliknande rador annorlunda omsättningsdefinitioner (jfr topp-listans KINV-B/ORES/INDU-C); textens 'Talen är urvalsberoende'-notis och 'kapitallätt/kapitaltung'-meningen täcker läsningen. Ingen åtgärd — notis för kunddialog om frågan dyker upp."
+    }
+  ],
+  "diffSammanfattning": {
+    "v1Rader": 41,
+    "v2Rader": 41,
+    "roradeRader": 16,
+    "kategorier": [
+      "underlagsdatum + universumstorlek (2 rader: 2026-09-03/100 → 2026-09-20/231)",
+      "statistiktal (medianer, n, fördelning — 92/10,8 → 206/12,7 · 87/3,0 → 202/4,2 · 84/0,78/29 → 198/0,97/94 · 26/28/33/9 → 86/62/54/21)",
+      "ytterlighetsbolag (topp: Prologis/Netflix/… → FCX/KINV-B/ORES/INDU-C/EVO · botten: Aker BP/Volvo Car/… → PSNY/O/ORCL/RWE/CAST · konverteringstopp: Telia/Fabege/Vår Energi → CRWD/FCX/MELI)"
+    ],
+    "oforandrat": "mallens förklarande prosa, alla rubriker, 'Fördjupa dig'-länkarna, juridik-ramen och disclaimern"
+  }
+}

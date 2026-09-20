@@ -1,0 +1,50 @@
+{
+  "objekt": "data/blogg-utkast/m9-ko/utdelningar-101-v1.json",
+  "granskad": "2026-09-20 19:4x CEST",
+  "granskare": "fabrik auto-s1-u2 (omgång auto-s1-1789925707056, spår 1 granskare 2/3)",
+  "pass": 3,
+  "bedomning": "FLYTTKLAR",
+  "kontroller": { "antal": 37, "fel": 0, "varningar": 0, "sond": "verktyg/_s1u2-utdelningar-kontroll.mjs (okommittad arbetsfil)" },
+  "poster": [],
+  "posterMotivering": "0 ändringsförslag i utkastet: samtliga tal exakta mot git-återfunnet original (md5 f4cee658…), juridik ren på både hel och renad body, 911 = 0 träffar, länkar 3/3 levande 2026-09-20. Innehållsändringar går via m9-fabrikens regenerering (evergreen-regeln), inte via granskningsdiff.",
+  "flaggor": [
+    {
+      "id": "F3",
+      "grad": "flagga-till-ägare",
+      "fil": "verktyg/m9-fabrik.mjs",
+      "rad": 1079,
+      "nu": "under 2 % och ${String(s.fyNegativa)} negativa",
+      "foreslat": "under 2 % — varav ${String(s.fyNegativa)} negativa",
+      "motiv": "Kategorioverlapp: skenbar summa 26+28+33+9 = 96 ≠ 87. Utkastsfilens 09-14-rättning (varav-formulering) finns bara i filen; fabriken återintroducerar felet vid nästa regenerering av utdelningar-serien.",
+      "ägare": "fabriksägaren (huvudagentens kö)",
+      "sekundär": "rad 987 (kassaflödesgrenen): 'under 2 % — och N är negativa, det vill säga…' — läsbar via förklaringsledet men samma varav-klass; uniformitet föreslås."
+    },
+    {
+      "id": "D1",
+      "grad": "notis-till-ägare",
+      "fil": "data/portfolj-system/bolagsunivers.json",
+      "läge": "2026-09-20 07:59 rörde sig källan; dagsfil 231 bolag (md5 cfa7a9f1…) mot kvittots 100-bolagsunderlag (md5 f4cee658…)",
+      "nastaSkrivForhandsvisning": {
+        "nMatta": 202,
+        "medianPct": "4.2",
+        "foerdelning": { "over5": 86, "tvaFem": 62, "under2": 54, "negativa": 21 },
+        "aterkopMatta": 9,
+        "insiderMatta": "108 av 231",
+        "topp5": ["DNO.OL 36.1", "CMCSA 25.3", "WBD 22.7", "DTE.DE 20.8", "MBG.DE 19.1"]
+      },
+      "motiv": "Två kärnpåståenden i serien ändrar status vid nästa regenerering: (1) 'återköp mätta 0/100' stämmer inte längre — källan har börjat leverera återköpsdata (9 rader); (2) 'insiderköp mätt (100 av 100 rader)' blir 108 av 231 = inte längre full täckning.",
+      "ägare": "fabriksägaren (huvudagentens kö)"
+    }
+  ],
+  "flyttklartPaket": {
+    "fil": "data/blogg-utkast/granskning/utdelningar-101-FLYTTKLART-PAKET-2026-09-20.json",
+    "bodyTeckenFore": 5269,
+    "bodyTeckenEfter": 3478,
+    "kvittoStrippet": true,
+    "disclaimerSist": true,
+    "kontrolleraTextRenBody": { "fel": 0, "varningar": 0 },
+    "publishedAt": null,
+    "not": "publishedAt = null medvetet: datum sätts vid kundens export/klick (R2). Metadata enligt våg 95-kontraktet (pillar Institutionell metodik, author AK1A Research Lab); våg 66-piloterna i data/blogg/ bar pillar AKM1 / author Ak1 Apex Nexus — kundens konventionsbeslut vid export."
+  },
+  "offGrans": "data/blogg/ orörd · databasen orörd · priser/tier/publicering (R2) orörda · utkastfilen själv EJ ändrad (git-bevisat orörd sedan def22bb3 2026-09-14)"
+}

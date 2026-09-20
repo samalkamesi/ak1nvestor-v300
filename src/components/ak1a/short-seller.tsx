@@ -456,9 +456,14 @@ export function ShortSeller() {
           }}
           aria-label="Dölj Short-Seller-bubblan i 24 timmar"
           title="Dölj i 24 h"
-          className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[#30363D] bg-[#0D1117] text-xs font-bold leading-none text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
+          className="absolute -right-1.5 -top-1.5 flex items-start justify-end rounded-full transition-colors"
         >
-          ×
+          {/* o123: tryckytor — knapprutan växer till husgolvet 52px (globals)
+              men den synliga cirkeln bor kvar på 20px i span:en, förankrad
+              i rutans övre högra hörn (= gamla läget). Datorn orörd (20×20). */}
+          <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[#30363D] bg-[#0D1117] text-xs font-bold leading-none text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]">
+            ×
+          </span>
         </button>
       </span>
     );

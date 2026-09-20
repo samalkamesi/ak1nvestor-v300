@@ -21,8 +21,16 @@ function supabaseProjektRef(): string {
 
 const nextConfig: NextConfig = {
   /* Vercel handles output automatically — no standalone needed */
+  // O108 (vakt-s8, 2026-09-20): typkontrollen i BYGGET är PÅ — baslinjen
+  // (tsc 0 sedan våg 133) är next builds eget villkor, inte bara pre-commit-
+  // och patch-köns (o106). Tidigare ignoreBuildErrors=true
+  // lämnade kod-vägen (git pull → npm ci → next build) typblind: sista
+  // försvarslinjen fanns inte om typerna bröts utanför de grindarna
+  // (låsfilsingrepp, cache-träd, framtida leveransvägar). tsconfig inkluderar
+  // .next/types/**/*.ts ⇒ projektbinärens tsc --noEmit typar samma
+  // route-kontrakt som bygget — grönt här är grönt där.
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   reactStrictMode: false,
   // VÅG 96 D1 (prestanda våg 3): skickar inte X-Powered-By: Next.js —

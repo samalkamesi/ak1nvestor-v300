@@ -757,16 +757,21 @@ export function skrivPatchKvitto(filvag, post, resultat, detalj) {
 
 /**
  * o106 (s8-u1, 2026-09-20): TSC-GRINDEN i patch-flödet. Rotorsakan den
- * stänger: next.config.ts kör typescript.ignoreBuildErrors = true —
- * next build är BLIND för typfel, så en patch som höjer @types/* eller
- * typescript kan bryta tsc-baslinjen 0 och deployas GRÖNT ändå. Därefter
- * kräver pre-commit-grinden 0 fel på repets sida medan prod ALDRIG mätte
- * = baslinjens dödsfälla (alla framtida commits blockerade i efterhand).
- * Kuren: installationsbarnet kedjar projektbinärens tsc --noEmit (ALDRIG
- * npx — deployfönstrets cachedummy-fälla) i SAMMA flock-fönster som
- * npm install; typfel ⇒ misslyckat kvitto + lock riven FÖRE byggsteget
- * ⇒ korBygg kör npm ci på god lock (patch-fel blockerar aldrig
- * kodleverans — samma semantik som fallerad install).
+ * stängde (före o108): next.config.ts körde typescript.ignoreBuildErrors =
+ * true — next build var BLIND för typfel, så en patch som höjde @types/*
+ * eller typescript kunde bryta tsc-baslinjen 0 och deployas GRÖNT ändå.
+ * Därefter krävde pre-commit-grinden 0 fel på repets sida medan prod
+ * ALDRIG mätte = baslinjens dödsfälla (alla framtida commits blockerade
+ * i efterhand). Kuren: installationsbarnet kedjar projektbinärens
+ * tsc --noEmit (ALDRIG npx — deployfönstrets cachedummy-fälla) i SAMMA
+ * flock-fönster som npm install; typfel ⇒ misslyckat kvitto + lock riven
+ * FÖRE byggsteget ⇒ korBygg kör npm ci på god lock (patch-fel blockerar
+ * aldrig kodleverans — samma semantik som fallerad install).
+ * LÄGE EFTER o108 (vakt-s8, 2026-09-20): ignoreBuildErrors är AV i
+ * next.config.ts — byggets egna typögon är sista försvarslinjen och den
+ * här patch-grinden är det första ledet i en TRESTEGSKEDJA (pre-commit →
+ * patch-install → next build). Grinden behålls: den stoppar typfel FÖRE
+ * byggsteget (billigare än ett dött bygge) och kvitterar felräkningen.
  */
 
 /** Inre kommandosträng för patch-barnet (ren funktion — testsviten kör den). */

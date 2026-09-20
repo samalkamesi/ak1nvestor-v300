@@ -294,3 +294,72 @@ Vad det betyder för dig:
 
 *Levande hållning: denna sektion uppdateras när köns storlek eller form
 ändras — nästa dokvåg mäter igen.*
+
+---
+
+## 9. Uppdatering 2026-09-20 (dokvåg s9-u2) — kön fördubblad på fyra dagar; m9-familjen grön; speglingsklassen född
+
+§8 ovan speglar 09-16-läget. Allt nedan MÄTT i arbetsytan 2026-09-20
+~12:4x lokal (ls/stat/wc per katalog + `m9-ko/index.json` — inget läst
+ur worklog):
+
+| Del | 09-16 (§8) | 09-20 (denna mätning) |
+|---|---|---|
+| Rot `data/blogg-utkast/*.json` | 28 | **78** — varav **13 arabiska speglingar** (`*-ar.json`, ny klass) |
+| `m9-ko/` | 6 utkast + index | **6 utkast + index** — oförändrad uppsättning (mtider 09-14 15:11 = dumpkonsolideringen, se nedan; själva produktionsskrivningarna är från 09-11 enligt `created_at`) |
+| `kvartal/2026-q3/` | 28 = 18 paket + 10 kalendrar | **74 = 64 bolagspaket + 10 kalendrar** (+46 paket) |
+| `granskning/` | 47 (31 MD · 14 diff.json) | **150** — 83 MD (varav 43 KONTROLL + 11 KOMPLEMENT) · 66 diff.json · 1 ren diff |
+| `GRANSKNINGSKO-SAMMANSTALLNING.md` | 38 kB, 09-16 | **252 kB, 09-20 09:07** (×6,6 — sammanställningen lever, uppdaterad samma morgon) |
+
+### Vad det betyder för dig
+
+1. **m9-familjen är komplett granskad på underlagssidan — sex av sex
+   FLYTTKLARA.** §8:2 redovisade kontrollrapporter för tre serier
+   (09-16); sedan dess har oberoende kontroller (09-19) grönmarkerat
+   även kassaflödesanalys, börspsykologi, branschmedianer och
+   forskningsläget — sammanställningens m9-sektion bär domarna med
+   länkar till respektive KONTROLL-rapport. Nästa steg i kedjan är
+   DITT: granskning + klick (R2 — publicering är och förblir ditt
+   beslag, styckvis eller som grupp).
+2. **Grundregeln är nu också mätt i databasen.** `m9-ko/index.json`
+   (read-only dump av Supabase-kön, 09-14 13:10Z): **7 rader, samtliga
+   `status="utkast"`** — branschmedianer bär v1+v2 (senaste-vinner), de
+   övriga fem v1. Att maskinella kontroller gett grönt ljus har alltså
+   INTE ändrat någon status: "granskad"/"publicerad" sätts aldrig av
+   maskinen, exakt som §"Grundregeln" lovar. Filernas mtider 09-14
+   15:11 är själva dump-konsolideringen (`index.json` → `dumpad`
+   13:10:36Z = 15:10:36 lokal), inte nya skrivningar.
+3. **Speglingarna är en ny klass i roten: 13 `*-ar.json`.** AR1–AR5
+   (bankaktier, fastighetsaktier, läkemedelsaktier, teknikaktier,
+   telekomaktier) är oberoende granskade 09-19 — samtliga FLYTTKLARA
+   med ord-/sifferparitet redovisad i sammanställningen. Åtta ytterligare
+   ar-speglingar (bilaktier, detaljhandelsaktier, halvledaraktier,
+   industriaktier, konsumentaktier, saasaktier, spelaktier,
+   tillväxtaktier) ligger i roten — deras domar redovisas allt eftersom
+   i sammanställningen. §1:s granskningssteg gäller oförändrat: kvitto
+   är kvitto, klick är klick.
+4. **Kvartalsserien växer mot rappdagarna:** 64 bolagspaket ("Så läser
+   du …") + 10 branschkalendrar mot 2026-10-01 → 10-10-27. Din väg in
+   är oförändrad: sammanställningens sektioner per rappdag.
+5. **Evergreen-notisen — korrigerad och aktuell:**
+   - korstabell-grund.json och vagvalidering-SENASTE.json rörde sig
+     **09-10 16:33** (inte "oförändrade sedan 09-03/09-04" som §8:4
+     sa) — rörelsen FÅNGADES av 09-11-körningen (branschmedianer v2;
+     medianerna identiska, ändringen var kortNamn-fixen i
+     ytterlighetsbolagen). Därefter stilla ⇒ inga oktoberutgåvor av
+     serierna 1–3 och börspsykologin ännu.
+   - **bolagsunivers.json rörde sig 09-20 07:59** (universumets
+     tillväxtvåg) — det är källa till serierna 4–6
+     (kassaflödesanalysen läser det). Nästa `--skriv`-körning av
+     m9-fabriken kan därför producera en ny version av
+     kassaflödesanalys-101 — utfallet styrs av fabrikens
+     evergreen-jämförelse vid körningen. Nytt utkast landar i kön som
+     alltid; publicering förblir ditt klick.
+
+*Kö-poster (maskinellt underhåll, ej publicering): m9-fabrikens nästa
+`--skriv` efter bolagsunivers-rörelsen 09-20; sammanställningens
+branschguide-sektion redovisar än så länge endast staging-rader —
+guidernas detaljer bor i `data/forskning/SEO-GUIDER-2026-09.md`.*
+
+*Levande hållning: §9 uppdateras när köns storlek eller form ändras —
+nästa dokvåg mäter igen.*

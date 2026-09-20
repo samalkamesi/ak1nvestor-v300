@@ -1,0 +1,37 @@
+studio: auto s9-u3 SYSTEMKARTAN-dokvåg — D21 + D25 + E31 diffade mot verkligheten + PIVOT C17→E31 (manifest auto-s9-1789898701601, byggare 3/3): u2:s C17+E29-landning (4798322b, samma C17-mätvärden) fångades av Edit-konflikten LEVANDE — 0 tecken skrivna i deras sektion, C17 avstått enligt D24-pivot-precedensen och ersatt med E31 (o110 785f3753 09-20 landade lang-serverbindningen DAGEN EFTER E31:s 09-19-diff = färskrörelse ingen dokvåg bokfört) [fabrik]
+
+D21: kurser 426→464 (+38/2 dygn; s5 levererar på mätdagen rs-09 09:37 +
+rp-05/pe-06 09:45) medan quiz/XP FRUSNA DAG 5 (8 223/82 230, git-bevis i
+samtliga siffror-commits) — larvag-synk EGEN GRÖN 464=464=464 · 0 fantomer
+· 21 profiler; svit 13/13 GRÖN EGEN; GET /api/medlem/progress 200 (36 ms);
+medlem-progress.ts 479 r kodstilla 7 d (metodnotis: split-räkning +1 utan
+avslutande nyrad); GDPR-export/radering i UI fortfarande 0 träffar =
+tyngsta gapet. D25: notiser.ts RÖRD 09-19 efter 13 d stilla (våg 201
+notis-djup — fas2-notisen bär "fördjupningen av de 20
+fundamentalindikatorerna", 366 r, egen kodläsning); underlag FÄRSKT:
+vagkarta genererad 2026-09-20T05:05:21Z ("206 impulsvågor · 90
+korrigeringar · 149 basbyggen") + dagens pass SWED-A.ST (/api/notiser
+200; raderaren = engångsingrepp 09-16→09-17 enligt
+VAGSCAN-RADERAREN-ROT-2026-09-19.md); referral (09-06) + cron/email
+(09-04) kodstilla ⇒ gap 4 (driver + CRON_SECRET på skrivande rutt)
+kvarstår; .env orörd (R2-nära). E31: o110:s lang="en"/"ar" serverbindning
+på 26 spegel-listsidor + dataset-byggarna — 4/4 egna sonder LIVE med rätt
+html-lang (/en/kurser · /ar/kurser · /en/blogg · /ar/fas3, alla 200; o77:s
+SSR-konsistenta språkdetekt har sin deterministiska fortsättning); NYTT
+KONTRAKTSTEST testa-s7-o105-footer-etiketter.mjs 46 PASS / 0 FAIL GRÖN
+EGEN KÖRNING (footer-/brodkrumna-etiketter ×3 språk, båda bindningarna
+samma källa, sv-default bevisat); ordlista 2 745→2 790 r; kön 320 poster
++ termbank 0 poster oförändrade (v211-översättningsspåret = s3/s4-innehåll,
+disjunkt från MÖS-kön). DOMAR: D21 LEVER 8 · D25 LEVER 6 · E31 PÅGÅR (I1)
+7 — samtliga orödda (E33/B14: datadrift = s5-skugga, textkur ≠
+kapabilitet, kontraktskur ändrar ej I1-läget); snitt 7,5/284/38
+OFÖRÄNDRAT. ÖVERLÄMNADE C17-KOMPLEMENT (fynd från mätningen FÖRE pivoten,
+saknas i u2:s sektion, deras yta orörd): CTA LIVE-bevisad ×2 språk ("Från
+tabell till hantverk" + guldknapp → /kurser i renderad HTML sv+en) +
+o110:s lang-bindning i dataset-byggarna. Kö: quiz-underlag för 38 nya
+kurser (s5-yta; u1:s kohortmätning gör glidningen mätbar per kurs) · E31
+I1-audit + tier-portföljspeglar · D25 CRON_SECRET + email-driver
+(huvudagentens serverkonfig-yta). KVD: data-only — src/ orörd = INGET
+bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (u1:s A5
+committad d25215b3 + u2:s C17/E29 4798322b orörda; anspråk + pivot
+gitignorerad väg data/vakten/) · PATHSPEC + -F.

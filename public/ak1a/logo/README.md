@@ -14,7 +14,12 @@ konsekvent på alla sidor — bestäm du").
 
 ## Original (råa, ej behandlade — arkiv)
 
-| Fil | Beskrivning |
+**O111 (2026-09-20):** originalen + de oreferenserade ikon-/logovarianterna
+flyttades ur den publika ytan till arkiv — `data/varumarke/` (register där:
+`data/varumarke/README.md`). Regeln "originalen raderas aldrig" består: de
+är arkiverade, inte raderade; git-historiken och arkivplatsen bär dem.
+
+| Fil (nu i `data/varumarke/original/`) | Beskrivning |
 |---|---|
 | `skulptur-1.jpg` | Vinkel 1 — gråskuggig bakgrund (ej lämplig som märke; arkiverad) |
 | `skulptur-2.jpg` | Vinkel 2 — ren vit bakgrund, KÄLLAN till mark + transparent |

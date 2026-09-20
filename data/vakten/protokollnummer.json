@@ -1,0 +1,29 @@
+{
+  "skapat": "2026-09-20T10:02:12.977Z",
+  "poster": [
+    {
+      "nummer": "o117",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1789896901533",
+      "titel": "nummerreservationsmekanik under flock — protokollnummerseriens race-kur (4 bevis: o106/o107/o108/o114)",
+      "ts": 1789898532977,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o118",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1789912510460-liknande",
+      "titel": "prestandavåg: /en/blogg TBT-anomali — longtask-sond CDP + widget-A/B (o110 §4.1 köpost)",
+      "ts": 1789915631230,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o119",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789916171548,
+      "status": "reserverat"
+    }
+  ]
+}

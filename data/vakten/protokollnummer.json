@@ -74,6 +74,30 @@
       "ts": 1789921129236,
       "status": "lamnat",
       "lamnatTs": 1789921133897
+    },
+    {
+      "nummer": "o127",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789937898663,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o128",
+      "agare": "s7-u2",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789938010929,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o129",
+      "agare": "s7-u2",
+      "manifest": "auto-s7 (byggare 2/3)",
+      "titel": "prestandavåg: /blogg CV-reservationskalibrering — sond av 110 kortens verkliga höjder mot o28:s 22rem (55-inläggs-epoken), ev. kur + Lighthouse FÖRE/EFTER + CLS-stavhoppverifiering (o97-precedensen)",
+      "ts": 1789950000000,
+      "status": "reserverat"
     }
   ]
 }

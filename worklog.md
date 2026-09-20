@@ -15974,9 +15974,11 @@ o118-rådata orörd). EFTER-KRITERIER vakarövertag-barra (o105 §4-
 precedensen): deploy med 568a93a2 som förfader · prod 200 ×5 ·
 kännetecken ur initial-chunkar + egen chunk efter kritiskt fönster ·
 Lighthouse n=2 /en/blogg TBT ↓ (mål ≤500 tyst), /ar/blogg+/blogg ±15 %,
-CLS 0, LCP/FCP ±15 %. Vid denna rads skrivande: RAM-fönstret öppet
-(2 504 MB 17:05) — 17:07-ropet bevittnas; landar deployen tas EFTER i
- Direkt anslutning (kvitto-rad följer). Protokoll:
+CLS 0, LCP/FCP ±15 %. SLUTSTATUS 17:10 lokal: synkens 15:07:06Z-rop ser
+koden (e4588c57 → 4069d692, 568a93a2 förfader ✓) men VÄNTAR-RAM
+(2 457 MB < 2 800 = 2 200 bygg + 600 reserv; 2 zcode-barn aktiva) —
+bygg vid nästa poll när minnet frigjorts; EFTER-mätningen lämnas till
+vakarövertag mot FÖRE-tabellen (kriterierna ovan). Protokoll:
 OPTIMERING/o119-prestanda-nastasteg-defer-s7.md. Kö: EFTER-mätningen ·
 o118 §6:s produktbeslut (listlängd 24–36 = kundens rond, ALDRIG
 fabriksautonomt). [fabrik]

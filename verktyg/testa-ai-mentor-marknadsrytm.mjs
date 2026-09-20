@@ -408,7 +408,9 @@ OMATCHADE.forEach((f, i) => {
             // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
             "svaraLokaltPengarstid",
             "svaraLokaltVolatilitetsmekanik",
-            "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",
+            "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor", "svaraLokaltMarknadsrytm",
+            // Fönster 29 (s6-u1, _s6u1o29-): kemisektor — 73:e motorn, FÖRE detta lager (SIST). Dokumentationsplikten.
+
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));
   if (!kedjRad) FEL.push("kedjeraden (const lokalt = …) hittades inte");

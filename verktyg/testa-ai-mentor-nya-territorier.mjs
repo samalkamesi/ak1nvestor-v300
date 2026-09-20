@@ -525,7 +525,9 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-nya-territorier-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set(KOMPONENTER);
+    // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
+  // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltKemisektor"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

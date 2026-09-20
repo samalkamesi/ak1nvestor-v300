@@ -1,0 +1,384 @@
+{
+ "url": "http://127.0.0.1:9378/kurser",
+ "namn": "ab2-800",
+ "geo": "800x1180",
+ "vp": {
+  "width": 800,
+  "height": 1180,
+  "deviceScaleFactor": 2,
+  "mobile": false
+ },
+ "ts": 1789870228183,
+ "fore": {
+  "docH": 11137,
+  "fonts": "loaded",
+  "utvalda": [
+   {
+    "sektion": "flaggskeppen",
+    "liH": 56,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 113,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 110,
+    "liW": 729,
+    "spanH": 89,
+    "textLen": 455,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 254,
+    "liW": 729,
+    "spanH": 251,
+    "textLen": 1323,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 344,
+    "liW": 729,
+    "spanH": 323,
+    "textLen": 1857,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 182,
+    "liW": 729,
+    "spanH": 161,
+    "textLen": 874,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 110,
+    "liW": 729,
+    "spanH": 89,
+    "textLen": 454,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 234,
+    "liW": 729,
+    "spanH": 233,
+    "textLen": 1321,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 288,
+    "liW": 729,
+    "spanH": 287,
+    "textLen": 1647,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 270,
+    "liW": 729,
+    "spanH": 269,
+    "textLen": 1526,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 252,
+    "liW": 729,
+    "spanH": 233,
+    "textLen": 1324,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 288,
+    "liW": 729,
+    "spanH": 287,
+    "textLen": 1603,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 216,
+    "liW": 729,
+    "spanH": 215,
+    "textLen": 1208,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 17,
+    "textLen": 82,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 130,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 93,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 116,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 17,
+    "textLen": 86,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 116,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   }
+  ]
+ },
+ "efter": {
+  "docH": 11137,
+  "fonts": "loaded",
+  "utvalda": [
+   {
+    "sektion": "flaggskeppen",
+    "liH": 56,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 113,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 110,
+    "liW": 729,
+    "spanH": 89,
+    "textLen": 455,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 254,
+    "liW": 729,
+    "spanH": 251,
+    "textLen": 1323,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 344,
+    "liW": 729,
+    "spanH": 323,
+    "textLen": 1857,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 182,
+    "liW": 729,
+    "spanH": 161,
+    "textLen": 874,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 110,
+    "liW": 729,
+    "spanH": 89,
+    "textLen": 454,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 234,
+    "liW": 729,
+    "spanH": 233,
+    "textLen": 1321,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 288,
+    "liW": 729,
+    "spanH": 287,
+    "textLen": 1647,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 270,
+    "liW": 729,
+    "spanH": 269,
+    "textLen": 1526,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 252,
+    "liW": 729,
+    "spanH": 233,
+    "textLen": 1324,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 288,
+    "liW": 729,
+    "spanH": 287,
+    "textLen": 1603,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 216,
+    "liW": 729,
+    "spanH": 215,
+    "textLen": 1208,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 17,
+    "textLen": 82,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 130,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 93,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 116,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 17,
+    "textLen": 86,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 788,
+    "liW": 729,
+    "spanH": 35,
+    "textLen": 116,
+    "font": "Times New Roman",
+    "lh": null,
+    "rader": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+studio: auto s7-u2 prestandavåg o104 — TABLET-BANDEN KURADE: utvalt-kortens reservationer 640–1 087 i sex sonderade band (o103:s «ingen kosmetisk kur» motbevisad av A/B; NYTT sm-bandfynd 640–767: Σspan −1 623/docH −4 573 @640) + ZOMBIE-RESET-LÄKNING (nio commits återförda) [fabrik]
+
+REDISPATCH (byggare 2/3 försök 2, manifest auto-s7-1789867506896): försök 1 =
+o100-kurstips-golvet (9da2912c — deras kvitto); detta är NYTT territorium med
+noll duplikat, men landade i ett omskrivet läge: under mitt mätfönster stängde
+u1:s o103 (1aa12ee5) tablet-gapet KARTLAGT utan kur («EN nivå per md-band kan
+inte träffa … delband = överanpassning på tre punkter»). MIN MOTBEVISNING:
+12 mätgeometrier (640·700·720·740·768·800·820·900·1024·1088·1152·1280) +
+TRE A/B-ronder via proxy-injicerad kandidat-CSS (o99-proxy-mönstret, EN process
+= skal-säkert; fontgrind: computed font = -apple-system i varje JSON — två
+race-skadade proxy-mätningar gallrades och omkördes) visar att korthöjden är
+en funktion av KORTBREDD via radbrytningskliv (kliv vid liW≈365 borja 3→2
+rader; liW≈345/354 nya 31→30; gridkliv 2→3 kol vid 1024) — bandgränserna
+sätts VID kliven, inte godtyckligt mellan mätpunkter.
+
+KUREN (REN CSS, globals.css ett nytt block, +44 rader): sex @media-band —
+640–699 (flagg 19.5/nya 26/borja 10.5 rem) · 700–735 (nya 51/borja 12.75) ·
+736–767 (nya 45.5/borja 12.75) · 800–899 (nya 43/borja 11.5) · 900–1023
+(nya 39/borja 11) · 1024–1087 (nya 52.25); 768–799 och ≥1088 ORÖRDA (o97:s
+nivåer mätt kirurgiska där: Σ−66/−17 — rond 1:s bandnivåer under-tär @768
+(+112) och togs bort); flaggskeppen orörda ≥700 (sektionen överst/över vecket,
+platshållaren aldrig aktiv — o103 §3.2:s egen not, mina FÖRE==EFTER bekräftar).
+
+A/B-KVITTO (bygge 9RBeu oförändrat, enda delta = injicerad CSS):
+640 −1623→−93 · 700 ~+1000(härlett ur mätta platshållare 628 vs verkliga
+800–836)→−61 · 720 →−136 · 740 →+10 · 768 −66 orörd ✓ · 800 →+45 ·
+820 −294→−45 · 900 −394→−18 · 1024 +335→−6 · kontroller 1152/1280 = −17
+bitidentiska med o97 (sondens validitet: 1280-kontrollen reproducerar o97:s
+kalibrering exakt Σspan −17, liW 357).
+
+NYTT FYND UTANFÖR o103:s OBJEKT (768–1024): sm-bandet 640–767 — @640
+(telefon-landscape 640×960) är layouten EN kolonn (scrollbar ⇒ content 625
+< Tailwind sm:640 ⇒ sm:tänder ej förrän ~656), korten 602 px breda, och
+mobilnivåerna (nya 39.25rem=628) mot verkliga 369–447 ger Σspan −1623 med
+docH-drift −4573 px; 700–767 kör 2 kol med liW 313–347 (= 1024-profilen,
+nya 800–836) under MOBILNIVÅER ⇒ uppsvällning ~+1000. o103:s kundpåverkans-
+kvantifiering («värsta fallet 126 px ≈ 1,5 %») täckte endast 768–1023.
+
+«Skörhet mot kurstillskott» gäller reservationer som KLASs (o93:s
+mobilregister + o97:s nivåer lever i prod med samma egenskap);
+contain-intrinsic-size:auto minns verklig höjd efter första pass — X:t är
+förstagångsvärdet, kurstillskott ändrar graden, inte klassen.
+
+ZOMBIE-RESET-LÄKNING: en främmande `git reset` till 65f9963d raderade NIO
+commits ur develop (s6: e56a6953+3d0b43c7+2d357315 · s7: 9da2912c+94eb8734+
+38eaa862+d9e14cca+5e6a9c0e+1aa12ee5) under 04:10–05:2x och --hard tog deras
+dokument från disk. Läkt med `git reset --hard 1aa12ee5` FÖRE egen commit
+(reflog intakt, inga ocommittade tracked-ändringar i fönstret — kollat innan
+åtgärd; mina untracked-filer överlevde; noll förlorat arbete). Andra fallet i
+02:27-klassen — zombie-jakten (vilken process ägde reseten) = huvudagentens
+bord. Nummerhygien: mitt o100-arbetsnamn kolliderade med försök 1:s leverans
+⇒ allt döpt om till o104 med NR-LÅS I ANSPRÅKSFILNAMNET (o103 §6.4:s förslag
+antaget sedan nummerflyt nu träffat två omgångar).
+
+KVD: tsc 0 FEL via projektbinär (exit 0) · src ENDAST Edit (globals.css)
+· INGET bygge (prod-synken äger deploy; EFTER-kriterier vakarövertag-barra:
+prod 200 ×5, sond ΣΔspan ≤150 på bandet, 1280-kontroll −17, vakten 0 fynd —
+protokoll o104 §6) · R2 orörd · data/blogg/ orörd · syskonleveranser orörda
+(o99–o103 i HEAD efter läkningen) · register-SSR/o19 huvudagentens bord RÖRTS EJ.
+
+Denna commits egna filer: globals.css-o104-blocket · _s7u2o104-{sond,band,ab}
+· o104sond-*.json (29) · o104-protokollet · o104-anspråket · worklog-appenden.
+LEVERANS: src/app/globals.css, verktyg/_s7u2o104-sond.mjs, verktyg/_s7u2o104-band.css, verktyg/_s7u2o104-ab.mjs, data/forskning/OPTIMERING/o104-prestanda-tabletband-kurad-s7.md, data/vakten/s7-o104-tabletband-kur-u2-ansprak-2026-09-20.md, data/forskning/OPTIMERING/lighthouse/o104sond-*.json (29 st), worklog.md

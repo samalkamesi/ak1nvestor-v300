@@ -1,0 +1,384 @@
+{
+ "url": "http://127.0.0.1:9378/kurser",
+ "namn": "ab3-720",
+ "geo": "720x1050",
+ "vp": {
+  "width": 720,
+  "height": 1050,
+  "deviceScaleFactor": 2,
+  "mobile": false
+ },
+ "ts": 1789870573107,
+ "fore": {
+  "docH": 20328,
+  "fonts": "loaded",
+  "utvalda": [
+   {
+    "sektion": "flaggskeppen",
+    "liH": 349,
+    "liW": 323,
+    "spanH": 195,
+    "textLen": 113,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 10
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 349,
+    "liW": 323,
+    "spanH": 195,
+    "textLen": 455,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 10
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 914,
+    "liW": 323,
+    "spanH": 761,
+    "textLen": 1323,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 39
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 914,
+    "liW": 323,
+    "spanH": 761,
+    "textLen": 1857,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 39
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 505,
+    "liW": 323,
+    "spanH": 351,
+    "textLen": 874,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 18
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 505,
+    "liW": 323,
+    "spanH": 351,
+    "textLen": 454,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 18
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 817,
+    "liW": 323,
+    "spanH": 641,
+    "textLen": 1321,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 33
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 817,
+    "liW": 323,
+    "spanH": 663,
+    "textLen": 1647,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 34
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 816,
+    "liW": 323,
+    "spanH": 641,
+    "textLen": 1526,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 33
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 816,
+    "liW": 323,
+    "spanH": 663,
+    "textLen": 1324,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 34
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 816,
+    "liW": 323,
+    "spanH": 641,
+    "textLen": 1603,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 33
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 816,
+    "liW": 323,
+    "spanH": 641,
+    "textLen": 1208,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 33
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 69,
+    "textLen": 82,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 130,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 69,
+    "textLen": 93,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 69,
+    "textLen": 116,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 69,
+    "textLen": 86,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 204,
+    "liW": 323,
+    "spanH": 69,
+    "textLen": 116,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   }
+  ]
+ },
+ "efter": {
+  "docH": 16280,
+  "fonts": "loaded",
+  "utvalda": [
+   {
+    "sektion": "flaggskeppen",
+    "liH": 349,
+    "liW": 323,
+    "spanH": 195,
+    "textLen": 113,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 10
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 349,
+    "liW": 323,
+    "spanH": 195,
+    "textLen": 455,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 10
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 914,
+    "liW": 323,
+    "spanH": 761,
+    "textLen": 1323,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 39
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 914,
+    "liW": 323,
+    "spanH": 761,
+    "textLen": 1857,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 39
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 505,
+    "liW": 323,
+    "spanH": 351,
+    "textLen": 874,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 18
+   },
+   {
+    "sektion": "flaggskeppen",
+    "liH": 505,
+    "liW": 323,
+    "spanH": 351,
+    "textLen": 454,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 18
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 817,
+    "liW": 323,
+    "spanH": 641,
+    "textLen": 1321,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 33
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 817,
+    "liW": 323,
+    "spanH": 663,
+    "textLen": 1647,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 34
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 780,
+    "liW": 323,
+    "spanH": 605,
+    "textLen": 1526,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 31
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 780,
+    "liW": 323,
+    "spanH": 627,
+    "textLen": 1324,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 32
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 800,
+    "liW": 323,
+    "spanH": 624,
+    "textLen": 1603,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 32
+   },
+   {
+    "sektion": "nya-i-biblioteket",
+    "liH": 800,
+    "liW": 323,
+    "spanH": 624,
+    "textLen": 1208,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 32
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 214,
+    "liW": 323,
+    "spanH": 79,
+    "textLen": 82,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 4
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 214,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 130,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 194,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 93,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 194,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 116,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 194,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 86,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   },
+   {
+    "sektion": "borja-har",
+    "liH": 194,
+    "liW": 323,
+    "spanH": 59,
+    "textLen": 116,
+    "font": "-apple-system",
+    "lh": 20,
+    "rader": 3
+   }
+  ]
+ }
+}

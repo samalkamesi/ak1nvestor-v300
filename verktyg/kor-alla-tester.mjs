@@ -58,8 +58,8 @@ import { fileURLToPath } from "node:url";
 import { hamtaPortagare, lasCmdline, lasPpid, hittaOrtRot, dodaDeltrad } from "./process-trad.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const RAPPORT_MD = path.join(REPO, "data", "vakten", "testaggregator-SENASTE.md");
-const RAPPORT_JSON = path.join(REPO, "data", "vakten", "testaggregator-SENASTE.json");
+let RAPPORT_MD = path.join(REPO, "data", "vakten", "testaggregator-SENASTE.md");
+let RAPPORT_JSON = path.join(REPO, "data", "vakten", "testaggregator-SENASTE.json");
 const VERKTYG = path.join(REPO, "verktyg");
 
 const RAM_TRSKEL_MB = 900;     // fabrikens princip: aldrig starta tungt barn under detta
@@ -124,6 +124,21 @@ for (const a of args) {
     console.error(`okänt argument: ${a}`);
     process.exit(2);
   }
+}
+
+// V229 (sond-överskrivningsgapet): en FILTRERAD körning (monster/klass) är
+// en sond — den skriver ALDRIG över huvudcheckpointen. Beviset som födde
+// regeln: fullsvep attempt 5 (154 mätta sviter) hade sin V228-checkpoint
+// raderad av tabbar-sonden mitt i TUNG-väntan — data fanns då BARA i loggen.
+if (monster || klassFilter) {
+  const tagg =
+    ((monster ? monster.source : klassFilter) || "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 24) || "sond";
+  RAPPORT_MD = RAPPORT_MD.replace(/\.md$/, `-${tagg}.md`);
+  RAPPORT_JSON = RAPPORT_JSON.replace(/\.json$/, `-${tagg}.json`);
+  console.log(`[kör-alla-tester] SOND-LÄGE: rapport skrivs till ${path.basename(RAPPORT_JSON)} (huvudcheckpointen orörd)`);
 }
 
 /** Tillgängligt RAM i MB ur /proc/meminfo — null vid fel (fail-open). */

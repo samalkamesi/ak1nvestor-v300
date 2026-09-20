@@ -175,13 +175,15 @@
         "nyhets-central (/nyheter)"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Min Sidas aktie-nyheter-komponent gör sin EGNA Yahoo-hämtning förbi motorn — eleven ser orankade nyheter utan påverkanspoäng och AK1A-not där.",
         "Scan-cronen skriver inte nyckeln 'ak1a-nyheter-top' som notis-motorn läser (den skrivs bara av Nyhetscentralen i klienten) — den dagliga toppnyheten når inte notisflödet automatiskt."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-nyhets-motor.mjs"
+      ]
     },
     {
       "namn": "datacache (datacentralen)",
@@ -192,12 +194,14 @@
         "lasEllerHamta i /api/dagens-pass, /api/netnet, /api/notiser, /api/vagfundament"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "/api/konfluens och /api/member/portfolio/djupanalys nyttjar inte lasEllerHamta — de två tyngsta analysytorna går förbi cachen."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-datacache.mjs"
+      ]
     },
     {
       "namn": "signal-bus",
@@ -208,12 +212,14 @@
         "läses av /api/signal — enda komponentkonsument: prenumerationsaktivera-panelen"
       ],
       "autonomi": "organ",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "NotisCenter och Min Sida läser aldrig /api/signal — hela signalströmmen (vågkarta, konfluens, kvalitet, portföljuppföljning) når aldrig eleven, trots att notiser är den naturliga kanalen."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-signal-bus.mjs"
+      ]
     },
     {
       "namn": "organ-event",
@@ -265,7 +271,9 @@
         "testa-ai-mentor-s6u3-omg4.mjs",
         "testa-akm2-snapshot.mjs",
         "testa-medlem-progress.mjs",
+        "testa-organ-bus.mjs",
         "testa-prod-synk-tidsstampel.mjs",
+        "testa-signal-bus.mjs",
         "testa-styrelse.mjs"
       ]
     },
@@ -277,12 +285,15 @@
         "/api/organ/runda"
       ],
       "autonomi": "organ",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Runda-routen ligger i ingen cron — bussen andas bara när någon anropar routen manuellt."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-organ-bus.mjs",
+        "testa-signal-bus.mjs"
+      ]
     },
     {
       "namn": "autonom/styrelse",
@@ -348,6 +359,7 @@
       "testverktygAlla": [
         "testa-akm2-karna.mjs",
         "testa-akm2-snapshot.mjs",
+        "testa-elevkarna.mjs",
         "testa-kraschvakt.mjs",
         "testa-mediabibliotek.mjs",
         "validera-motorer.mjs"
@@ -394,6 +406,7 @@
         "testa-ai-mentor-case.mjs",
         "testa-ai-mentor-djup.mjs",
         "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-etfmekanik.mjs",
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-forsakring.mjs",
         "testa-ai-mentor-forvantningsdjup.mjs",
@@ -403,11 +416,13 @@
         "testa-ai-mentor-kapitalbindning.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kontrahent.mjs",
         "testa-ai-mentor-konvertibel.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
         "testa-ai-mentor-marknadsmekanik.mjs",
         "testa-ai-mentor-moatdjup.mjs",
+        "testa-ai-mentor-multipel.mjs",
         "testa-ai-mentor-nya-territorier.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
@@ -477,6 +492,7 @@
         "testa-ai-mentor-portfoljbalans.mjs",
         "testa-akm2-karna.mjs",
         "testa-demoklient-data.mjs",
+        "testa-nyhets-motor.mjs",
         "testa-riskportfolj.mjs",
         "validera-motorer.mjs"
       ]
@@ -558,6 +574,8 @@
         "nasta-steg (spridd via seo-page-shell på SEO-sidor) räcker med egen dubblerande logik i stället för att återanvända motorn."
       ],
       "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-klientkontext.mjs",
         "validera-motorer.mjs"
       ]
     },
@@ -716,13 +734,15 @@
         "klientkontext (lasElevKarna)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Elevkärnans horisont/mål styr inte riskportfoljens risknivå-förslag och inte kurstipsen — 'varför' och 'vad' lever åtskilda.",
         "Fylls bara via Min Sida-formuläret; ingen progressiv ifyllning i kursflödet."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-elevkarna.mjs"
+      ]
     },
     {
       "namn": "klientkontext",
@@ -732,12 +752,15 @@
         "assistent-panel (+ assistent-motorn)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "ENDA konsumenten är assistenten — dashfraga, briefing och kurstips läser råkällorna själva, precis den spridda-gissningar-arkitektur filen säger att den ska avlösa."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-klientkontext.mjs"
+      ]
     },
     {
       "namn": "tracer",
@@ -757,6 +780,7 @@
         "/api/eko som läser tracern har i sin tur inga komponentkonsumenter (se eko-koppling)."
       ],
       "testverktygAlla": [
+        "testa-eko-koppling.mjs",
         "validera-motorer.mjs"
       ]
     },
@@ -770,12 +794,15 @@
         "aktie-nyheter, nyhets-central, min-portfolj-kort"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "fortsatt-panelen montas bara på två sidor — /blogg, /nyheter och /bibliotek saknar 'fortsatt där du var'."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-navigationsminne.mjs"
+      ]
     },
     {
       "namn": "chatbot-nlu",
@@ -820,12 +847,14 @@
         "/api/eko — men INGEN komponent hämtar /api/eko (grep: noll konsumenter i src/components)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "STÖRSTA GAPET I REGISTRET: motorn är byggd för admin beteende-panel + Min Sida assistent-panel (enligt egna kommentarer) men ingen vy konsumerar den — /api/eko är en död ände och kundens kärndirektiv ('alla system DELAR sin kunskap') når inte eleven."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs"
+      ]
     },
     {
       "namn": "shortseller-bank",
@@ -835,13 +864,15 @@
         "/api/shortseller + short-seller-komponenten (globalt via layout)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Försvars-streak och nivå syntes inte till badges/streak/veckoplan — motorn är en ödesfrån övriga meritsystem.",
         "kursRef-kopplingen (V01-V20) föreslås inte ur elevens faktiska klara kurser via klientkontext."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-shortseller-bank.mjs"
+      ]
     },
     {
       "namn": "pedagogik",
@@ -883,12 +914,14 @@
       "beskrivning": "Deterministisk kurskatalogsgenerator (2 896 rader): bygger/expanderar kursinnehåll urunderliggande data.",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "cron/expand-courses (dagligen 12:00 UTC) expanderar kurser via EGEN fil-logik i routen — dynamic-catalog-modulen importeras inte av route, komponent eller skript (grep: noll träffar utanför ak1a-katalogen)."
       ],
-      "testverktygAlla": []
+      "testverktygAlla": [
+        "testa-dynamic-catalog.mjs"
+      ]
     },
     {
       "namn": "ai-mentor-agande-fragor",
@@ -920,6 +953,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -969,6 +1003,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -1006,6 +1041,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -1047,6 +1083,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1087,6 +1124,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -1111,6 +1149,7 @@
         "testa-ai-mentor-bokmastar.mjs",
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs"
       ],
       "gap": [
@@ -1147,6 +1186,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1204,6 +1244,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1249,6 +1290,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -1297,6 +1339,8 @@
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
         "testa-ai-mentor-makro.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-multipel.mjs",
         "testa-ai-mentor-nasta.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
@@ -1345,6 +1389,7 @@
       "testverktygAlla": [
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs"
       ],
       "gap": [
@@ -1365,7 +1410,8 @@
       "testverktyg": "testa-ai-mentor-forsakring.mjs · testa-ai-mentor-kedja.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-forsakring.mjs",
-        "testa-ai-mentor-kedja.mjs"
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
       ],
       "gap": [
         "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
@@ -1395,6 +1441,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1440,6 +1487,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1479,6 +1527,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -1520,6 +1569,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1566,6 +1616,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -1611,6 +1662,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1657,6 +1709,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-riskpremie.mjs"
       ],
@@ -1679,6 +1732,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-konvertibel.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs"
       ],
       "gap": [
@@ -1702,6 +1756,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -1740,6 +1795,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -1799,6 +1855,7 @@
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
         "testa-ai-mentor-makro.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-nasta.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
@@ -1845,7 +1902,8 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsmekanik.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
-        "testa-ai-mentor-marknadsmekanik.mjs"
+        "testa-ai-mentor-marknadsmekanik.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
       ],
       "gap": [
         "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
@@ -1864,6 +1922,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-moatdjup.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-moatdjup.mjs"
       ],
       "gap": [
@@ -1902,6 +1961,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-nasta.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
@@ -1947,6 +2007,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-nya-territorier.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-nya-territorier.mjs"
       ],
       "gap": [
@@ -1975,6 +2036,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2010,6 +2072,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -2035,6 +2098,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -2067,6 +2131,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2118,6 +2183,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2164,6 +2230,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -2208,6 +2275,7 @@
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
         "testa-ai-mentor-marknadsmekanik.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2250,6 +2318,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs"
       ],
       "gap": [
@@ -2284,6 +2353,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2324,6 +2394,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-riskbudget.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-riskbudget.mjs"
       ],
@@ -2356,6 +2427,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2402,6 +2474,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2445,6 +2518,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2483,6 +2557,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-riskpremie.mjs"
       ],
@@ -2520,6 +2595,7 @@
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
         "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2566,6 +2642,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -2591,6 +2668,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-sektorlasning.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-sektorlasning.mjs"
       ],
@@ -2614,6 +2692,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -2649,6 +2728,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2698,6 +2778,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2739,6 +2820,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -2768,6 +2850,7 @@
         "testa-ai-mentor-faktordjup.mjs",
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-riskpremie.mjs",
         "testa-ai-mentor-tillvaxtdjup.mjs"
@@ -2801,6 +2884,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2851,6 +2935,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -2890,6 +2975,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-realekonomi.mjs",
@@ -2915,6 +3001,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-valutamekanik.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-valutamekanik.mjs"
       ],
       "gap": [
@@ -2934,6 +3021,7 @@
       "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-vardegrund.mjs",
       "testverktygAlla": [
         "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-realekonomi.mjs",
         "testa-ai-mentor-vardegrund.mjs"
       ],
@@ -2962,6 +3050,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -3000,6 +3089,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-optionsdjup.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
@@ -3039,6 +3129,7 @@
         "testa-ai-mentor-kedja.mjs",
         "testa-ai-mentor-koncernlasning.mjs",
         "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
         "testa-ai-mentor-overlevnadsdjup.mjs",
         "testa-ai-mentor-pe-mekanik.mjs",
         "testa-ai-mentor-portfoljpraktik.mjs",
@@ -3126,6 +3217,84 @@
       "gap": [
         "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
       ]
+    },
+    {
+      "namn": "ai-mentor-etfmekanik-fragor",
+      "fil": "src/lib/ai-mentor-etfmekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-etfmekanik.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-etfmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-kontrahent-fragor",
+      "fil": "src/lib/ai-mentor-kontrahent-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — KONTRAHENT-FÖRHÅSFRÅGOR (omgång 25, manifest auto-s6-1789864506792 — spår 6, byggare s6-u2, levererad 2026-09-20). Två källmärkta förhandsfrågor om KONTRAHENTRISKEN — vem som står på andra sidan när det blåser, och clearing",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-kontrahent.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-kontrahent.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-marknadsrytm-fragor",
+      "fil": "src/lib/ai-mentor-marknadsrytm-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-multipel-fragor",
+      "fil": "src/lib/ai-mentor-multipel-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-multipel.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-multipel.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
     }
   ],
   "infrastruktur": [
@@ -3200,11 +3369,11 @@
   "regen": {
     "vaccination": "våg 212 (E35 gap 2) 2026-09-19",
     "metod": "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep)",
-    "baseradPa": "3990aa38",
-    "befintliga": 42,
-    "nya": 60,
-    "totalt": 102,
-    "testtade": 92,
-    "otestade": 10
+    "baseradPa": "27cfd2d4",
+    "befintliga": 102,
+    "nya": 4,
+    "totalt": 106,
+    "testtade": 106,
+    "otestade": 0
   }
 }

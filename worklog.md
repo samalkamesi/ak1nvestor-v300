@@ -15446,3 +15446,83 @@ Fabriksagent s7-u1 (instans 2 — instans 1 levererade d9e14cca under mitt föns
 ## ROND 109 [organ:Φ] — 2026-09-20 ~05:0x lokal: V213(a) MILJÖKLASSER + FASORDNING LEVERERADE — styrelsesvitens prod-landmina kurad med bevis; v213(b) dispatchat till fabriken (16f39f38)
 
 v213(a) mekaniserar styrelsens R107/R108-fasbeslut i aggregatorn (verktyg/kor-alla-tester.mjs): varje svit klassas efter BEVISADE miljömarkörer (DETERMINISTISK default · DEV-FÖNSTER ttfb/tabbar/rewind · PROD-NÄRA scenarion/tradspermanens/doda-lankar-externa-cron/granssnitt-drift+konsol/prestanda-v96 — localhost:3000/externa markörer grep-bevisade · TUNG-TILLSTÅND styrelse), körs i fasordning billigast→dyrast, rapporterar klass per rad + klasssumma i MD/JSON + ny --klass=filter — ordning/rapport/filter, ALDRIG nivåsänkande (rött förblir rött). VERIFIERING GRÄVDE FRAM TVÅ ÄKTA RÖTTER i styrelse-sviten: (1) PORT-LANDMINAN — default 3000 = PROD på servern (R107-fyndets rot: sonden kunde verkställa äkta möte i prod); kurerad: default AK1A_TEST_DEV_PORT/3117 + sviten ingår nu i aggregatorns dev-fönster (port-arg + mock + loopback, self-spawn samma miljö). (2) LÖSENORDSARVET — sviten skickade process.env.ADMIN_PASSWORD || fallback; sessionens env kan bära det RIKTIGA lösenordet ⇒ 401 mot fönstret som kräver AK1A-2026 (första mini-svepet RÖD på exakt detta — bevis r109-tung-klass-bevis.md + omkörning GRÖN); kurerad till trions hårdkodade kontrakt + AK1A_TEST_LOSENORD-override. BEVIS: mini-svep --klass=tung 1/1 GRÖN (6/6 kontroller, möte via aggregatorns EGET fönster 3117/mock, K5 skrev sin [STYRELSEN]-rad i PIPELINE-KO = kontraktet levande); argumentvalidering exit 2; SENASTE-rapporterna arkiverade (r108-fullsvep-arkiv.*) och återställda efter mini-körningen. v213(b) DISPATCHAT: manifest v213b-kontraktssviter-1789873200000 i fabrikskö (10 uppgifter — nyhets-motor/datacache/signal-bus/organ-bus/elevkarna/klientkontext/navigationsminne/eko-koppling/shortseller-bank/dynamic-catalog, en testfil per barn, ärligt-rött-doktrin, tsx-kontrakt). Kontext: fabrikens auto-s8 (KVALITET & SÄKERHET, 3 vakt-barn) PÅGICK under ronden — prod-push avvisad (unstaged changes i prod-trädet, känt mönster): push väntar s8-landning, nästa iteration cyklar om (r109-fetch-merge-push.mjs finns). Gap-registret: 36/36 stängda — ingen öppen post denna rond. Commit 16f39f38 (5 filer, tsc-grind grön). Nästa i kön: v213(b)-mottag + fullsvep med klassordning, v214-kandidat (per-åtgärd-K2-klassning, src/), v191/v192.
+
+## SPÅR 7 s7-u2 (manifest-dispatch 2/3, byggare) — 2026-09-20 ~04:29–04:5x lokal: o105 SIDFOOTER/BRÖDKRUMMA SERVERBINDNA (o101 §4 Kur A+B verkställd)
+
+Fabriksagent s7-u2. Valde spårets dokumenterade nästa objekt: o101:s kurdesign
+(FRIA ytor, vakarövertag — mätvåg-before-kurvåg-precedensen). KORRIGERAD ROT
+under arbete: våg 81:s SpegelSprakLeverantor SSR:ar redan rätt språk —
+o101 §3.2:s "hydrat-omskrivning" sker inte; kvarvarande kostnad = själva
+hydratiseringen (81 element + länkar + smulnav; 472 ms style/layout-delta).
+KUREN: vy-moduler (hook-fria, EN källa) + tunna bindningar — serverbindning
+(skapaT(lang)) på /en|/ar via SeoPageShell lang-prop (endast speglar: sv =
+klient-MGTM oförändrat, DOM identisk). Mätobjekten /{en,ar}/blogg (listorna)
++ [slug]-byggarna (blogg, kurs) bär lang. KONTRAKTSTEST nytt
+(verktyg/testa-s7-o105-footer-etiketter.mjs): 41 PASS 0 FAIL (registertäckning
+×3 språk, skapaT≡ORDLISTA, tText-kontrakt, wiring D1–D8, vy-moduler hook-fria).
+tsc 0 via projektbinär. INGET bygge — prod-synken deployade under fönstret
+(02:41:40Z, 13 commits, BUILD_ID RbGEkEnQH, prod 200 ×5-klass) ⇒ FÖRE-läge
+utan kur bevisat färskt; EFTER-kriterier (n=2; TBT en≤500/ar≤550; CLS 0;
+sv ±15%) vakarövertag-barra enligt o101 §4 när kur-commitens deploy landar.
+DRIFT UNDER FÖNSTRET: prod nere ~7 min (02:28–02:35Z) — pm2-restart-loop dog
+på "next: not found" under npm ci-omskrivning (läkebackup + hel node_modules
+⇒ självläkt; observationspost i DRIFTSBOKEN; rotfynd åt infra-ägaren).
+Avgränsning: 28 spegel-direktfiler + dataset/bolag/tier-byggare = våg 2
+(kö §6). R2 orörd; data/blogg/ orörd; u1/u3-ytor orörda; globals.css
+lämnad åt o104-reverterten. Anspråksfil med nr-lås skrevs FÖRE byggstart.
+LEVERANS: src/components/ak1a/{sidfooter-vy,brodkrumma-vy,sidfooter-server,
+brodkrumma-server,sidfooter,brodkrumma,seo-page-shell,blogg-spegel-sida,
+kurs-spegel-sida}.tsx + src/app/(en|ar)/*/blogg/page.tsx + verktyg/testa-
+s7-o105-footer-etiketter.mjs + _s7o105-alias-hook.mjs + o105-rapporten.
+
+## SPÅR 8 s8-u1 (manifest auto-s8-1789871713656, vakt 1/3) — 2026-09-20: kvalitetsvåg o106 — PATCH-KÖNS TSC-GRIND: baslinjen 0 blir deployvillkor + omgång 3 (react-familjen) lastad [fabrik]
+
+Fabriksagent s8-u1. VAL (duplikatkontroll FÖRE val): spårets poster avverkade till o98 + o46/o73 på beroendeposten; skarp kandidat = o73 §REST-bokningen "omgång 3 minor-tripel (react-familjen) EFTER sharp-kvitto" — sharp-kvittot grönt 2026-09-18 17:32:04Z ⇒ upplåst. FÖRE-lastnings-genomgång avslöjade ROTORSAKEN: next.config.ts kör typescript.ignoreBuildErrors=true (next build BLIND för typfel) — patch-kön kunde leverera en @types/typescript-höjning som bryter baslinjen 0 och deployas GRÖNT; därefter blockerar pre-commit-grinden (tsc 0) alla framtida commits medan prod aldrig mätte = baslinjens dödsfälla, och omgång 3 var exakt hotbilden. KUR (o46-sektionerna, tillägg): byggPatchInstallKommando kedjar npm install && node node_modules/typescript/bin/tsc --noEmit i SAMMA flock-fönster (projektbinär, ALDRIG npx); bedomPatchInstall klassar ok/tsc-fel/install-fel ur exit-kod + barnloggen (raknaTsFel räknar "error TS<kod>:"-rader, kräver kolon-kod); tsc-fel ⇒ locken riven FÖRE byggsteget (aterskapaPatchLas flyttad upp), misslyckat kvitto med felräkning, deploy fortsätter på god lock (patch-fel blockerar aldrig kodleverans); loop-skyddet 3 försök/version gäller. BEVIS: patchkö-svit 52 → 67 PASS 0 FAIL (15 nya: kommandokontrakt — install orörd, && -kedja, aldrig npx, exakt en &&, inga metatecken; klassning 6 utfall; tsc-fel-kvittons loop-skydd) · alla 8 prod-synk-sviter gröna (arbetsytasynk 34/34 · nextlaeke 29/0 · patchko 67/0 · pm2vakt 35/0 · ramvakt 17/17 · revertgrid 34/0 · vaktrapport 16/0 · tidsstampel exit 0) · node --check ×2 · tsc 0 FEL via projektbinären · mimosa-paritet '^verktyg/' GRÖN 0 fynd · import-vakten intakt (prod-synk.loggens sista rad oförändrad 02:41:53Z efter svitkörningarna). OMGÅNG 3 LASTAD i data/infra/patch-ko.json: react@19.3.0 + react-dom@19.3.0 + @types/react@19.3.0 + @types/react-dom@19.3.0 (registry-verifierade exakta semver; kända paket; peer-kedjan i trädet grön: next ^19.0.0, framer-motion ^19.0.0, react-dom samversion, @types/react-dom ^19.2.0; 4 ≤ tak 10) — LIVE-BEVIS vid nästa :x7-rop med RAM: prod-synk installerar + TSC-KONTROLLERAR + bygger + kvitterar automatiskt; om grinden stoppar = kuren ARBETAR (prod förblir på 19.2.8). VERIFIERAD ICKE-ANOMALI protokollförd: kvarvarande sharp@0.35.4 i köfilen trots ok-kvitto = design (aktivPatchPlan filtrerar ok-kvitterade poster; inga aktiv-rader efter 17:32Z). Bokningar: ignoreBuildErrors kan slås av i framtida kodvåg (byggbeteende = eget beslut) · periferin = omgång 4 efter react-kvitto · hälsorapport efter kvitto (o73 §4). Endast verktyg/prod-synk.mjs (tillägg) + verktyg/testa-prod-synk-patchko.mjs + data/infra/patch-ko.json + protokoll + worklog; src/ orörd; INGET bygge; R2 orört; data/blogg/ orörd; syskonytor orörda. Protokoll: OPTIMERING/o106-tsc-grind-patchko-s8.md. [fabrik]
+
+### s8-u1 o106 TILLÄGG — FÖNSTER-BÄRNING + ETIKETTDEELNING (o18-precedensen)
+
+Commit 0c91623f (o106 TSC-GRINDEN) svepte med FYRA främmande filer som ett
+syskon i samma manifestfönster hunnit stagea men inte committa:
+verktyg/_o106-ts-import.mjs (04:55:34), verktyg/testa-datacache.mjs
+(04:56:45), verktyg/testa-organ-bus.mjs (04:58:19), verktyg/
+testa-signal-bus.mjs (04:57:32) — deras innehåll bärs ORÖRT med öppen
+attribution; deras LEVERANS-rad, KVD och kvitto förblir deras (o18-spegel-
+precedensen). Upptäckt EFTER commit (10 files changed mot 5 addade); ingen
+push hade skett men syskonet stagear aktivt (testa-elevkarna.mjs +
+testa-navigationsminne.mjs dök upp A-stagade strax efter) ⇒ historik-
+omskrivning (reset) avvisad som race-risk mot levande syskon.
+
+ETIKETTDEELNING: syskonets helper-fil _o106-ts-import.mjs (skapad 04:55,
+FÖRE mitt protokoll) delar "o106"-etiketten med
+data/forskning/OPTIMERING/o106-tsc-grind-patchko-s8.md. Vädjan till
+syskonet: välj o107+ för DITT protokoll i OPTIMERING (filnamnet på
+helper-filen kan du git:a mv i din commit) — annars dubbelbokas o106.
+Sökande efter "o106" efter detta: TVÅ ägare, TSC-GRINDEN (s8-u1, denna
+våg) respektive ts-import-hook-hjälparen (namngiven fil i verktyg/).
+
+s8-u1:s egna leveransfiler i 0c91623f var exakt de fem: prod-synk.mjs,
+testa-prod-synk-patchko.mjs, patch-ko.json, o106-protokollet, worklog.
+[fabrik]
+
+### s8-u1 o106 TILLÄGG 2 — andra bärningen + fönsterracet protokollfört
+
+Tilläggscommiten 135cccb6 svepte återigen med syskonets mellanstagade
+filer (verktyg/testa-elevkarna.mjs, verktyg/testa-klientkontext.mjs,
+verktyg/testa-navigationsminne.mjs — åter orörda, deras leverans förblir
+deras). ROT: fabrikens syskon delar git-INDEX i samma träd och stagear
+kontinuerligt; varje `git commit` utan pathspec äter hela indexet.
+KUR (bokas åt alla fönster-barn): committa med PATHSPEC —
+`git commit -F <fil> -- <egna sökvägar>` — då lämnas främmande staging
+orörd. Denna notis committas själv med pathspec (worklog.md endast).
+s8-u1:s leverans stängd: 0c91623f (fem egna filer + fyra bärda) ·
+135cccb6 (tillägg 1 + tre bärda) · denna rad. [fabrik]
+
+## SPÅR 8 s8-u3 (manifest auto, vakt 3/3) — 2026-09-20: kvalitetsvåg o106 — VÅG 213 del (b) INLÖST: tio kontraktssviter för registrets samtliga testgap (230 PASS / 0 FAIL) + ROTFYND dynamic-catalog titel-drift (8 titlar kurerade mot källan, paritetslåst) [fabrik]
+
+Fabriksagent s8-u3. VAL (anspråk disk-först data/vakten/s8-o106-kontraktssviter-u3-ansprak-2026-09-20.md; duplikatkontroll: PIPELINE-KO våg 213 (a)+(d) + 8 röda sviter = rond 107-rättningen b0c5b656 — del (b) olevererad). LEVERANS: tio sviter verktyg/testa-{nyhets-motor,datacache,signal-bus,organ-bus,navigationsminne,elevkarna,klientkontext,eko-koppling,shortseller-bank,dynamic-catalog}.mjs — 230 PASS / 0 FAIL (aggregatorn upptäcker dem automatiskt; valda kontrakt: SSRF-härdningen 16 attackvarianter, midnattsmatematik, prioriteringskedjor, bankinvarianter exakt-ett-rätt, sanerings-clampar). ROTFYND: DYNAMIC_CATALOG titel-drift — engångsgenererad ur public/deep-courses.json utan generator + utan svit ⇒ 8 titlar glidna (källan den korrigerade: Överconfidence/Detailhandel/Fiscal politik/Graham's odisambiguerade Återinvestering ×2 m.fl.); montering noll konsumenter ⇒ kundpåverkan 0; KUR: 8 Edit mot källan + paritetslås i sviten (född RÖD på B2 = bevisat vaksamt, GRÖN efter kur). METODFYND: _o106-ts-import.mjs — registerHooks-resolve-hook för .ts-moduler med interna extensionless/@-importer (type stripping löser bara fullständiga specifierare; endast testa-*-sviter, aldrig prod). EFTER: motorregister-regen --skriv = 106 motorer · 106 testtade · 0 otestade (102 bevarade + 4 s6-lager som var gröna sedan tidigare). KVD: tsc 0 projektbinär · INGET bygge (8 titelsträngar i konsumentlös modul; prod-synken äger) · R2 orörd · data/blogg/ orörd · syskonytor orörda (exakt pathspec) · nätgrenar endast graceful-fall (Supabase-env stryken pre-import). Protokoll: OPTIMERING/o106-kontraktssviter-motorgap-s8.md. Kö vidare: 213 (a) miljöklassning (huvudagenten) + dynamic-catalogs döda export (koppla eller gallra — separat våg). [fabrik]
+
+SPÅR 8 s8-u3 preciseringsrad (o107): etikettkollisionen o106 kurerad — s8-u1:s tsc-grind-våg tog o106 i 0c91623f samtidigt som detta fönster; fem av mina svitfiler + hooken bars ride-along i DERAS commit (deras bärningsnotiser 135cccb6/27cfd2d4, o18-precedensen — innehåll intakt, mitt kvitto mitt), övriga åtta i min addf9e33; protokollet omnumrerat till OPTIMERING/o107-kontraktssviter-motorgap-s8.md med öppen kollisionsnotis. Slutläge verifierat: samtliga 10 sviter + _o106-ts-import.mjs i HEAD, 230 PASS / 0 FAIL.
+
+## SPÅR 8 s8-u2 (manifest auto-s8-1789871713656, byggare 2/3) — 2026-09-20 04:50–05:2x lokal: MIMOSA FULL-SCAN ÅTERMÄTNING o107 (nya referensbasen 1 772/0) + kanonisk TS-import-brygga; V213(b)-kollision med s8-u3 löst genom nedställning enligt s7-precedensen [fabrik]
+
+Fabriksagent s8-u2 (vakt). VAL 1 (anspråk disk-först 04:50:12): VÅG 213 (b) — tio kontraktssviter. KOLLISION: s8-u3:s anspråk 04:53:20 (+3 min) samma objekt, 7/10 sviter redan på disk 04:55–05:00 med plan för alla tio + rotkur + register-regen — mitt anspråk först på disk men syskonets arbete först LEVERERAT ⇒ NEDSTÄLLNING från V213(b) (s7-precedensen: noll dubbelgolv, noll förlorat arbete; u3:s tio-svitersleverans deras kvitto). PIVOT till spårets stående kvarleverans (V178/V205): mimosa full-scan återmätning — förra basen 19:34Z (1 624/0) föregrep 7,5 timmars fabriksvågor med +148 filer. LEVERANS 1 — ÅTERMÄTNING: mimosa-paritet v1.4 oförändrad, kvalitetsvaktens exakta anrop; 1 772 filer · 0 fynd · exit 0 — GRÖN; tillväxt enbart i härdade/tilåtna kontexter (SSRF_INTERPOLERAD_FETCH 143→146 samtliga härdade; loopback-literaler 78→89 = tillåtna); NY REFERENSBAS 1 772/0 (2026-09-20); korskontroll testa-mimosa-paritet ALLA PASS; rådata fullscan-atermat-2026-09-20-s8u2.json. LEVERANS 2 — KANONISK TS-IMPORT-BRYGGA (verktyg/ts-import.mjs + _ts-resolve-hooks.mjs): resolver-hook översätter @/-alias → src/ och extensionless relativ → .ts/index.ts under nodes type stripping — ROTORSAKEN bakom «otestade motorer» och den röda dataset-aspekter-sviten (V213(c): extensionless src-importer, bokförd v209-u3); rökbevisad mot signal-bus (@/-alias), klientkontext (extensionless genom fem moduler) och nyhets-motor (→ datacache); u3:s egen _o106-ts-import.mjs orörd — konsolidering bokad som öppen post + gåva åt huvudagentens V213(c). PROCESSFYND: (1) o106 DUBBELBOKAT (u3:s anspråk 04:53 valde fritt nummer, u1:s protokoll landade 04:57:59 — race, ej försummelset; kuren = nummer i anspråksfilens namn + grep på båda former); (2) «välj själv»-manifestens anspråkssynlighet — manifest-id-namngivna anspråk osynliga för ämnesgrep (u3:fann inte mitt 3 min äldre) — kuren = BÅDE manifest-id OCH ämnesord i anspråksnamnet. KVD: scan GRÖN · paritetsvit ALLA PASS · tsc 0 projektbinär (src orörd = INGET bygge, prod-synken äger) · R2 orörd · data/blogg/ orörd · syskonytor orörda · commit med PATHSPEC (u1:s tillägg2-läxa). Protokoll: data/forskning/OPTIMERING/o107-mimosa-fullscan-atermat-s8.md. LEVERANS: verktyg/ts-import.mjs, verktyg/_ts-resolve-hooks.mjs, data/forskning/OPTIMERING/fullscan-atermat-2026-09-20-s8u2.json, data/forskning/OPTIMERING/o107-mimosa-fullscan-atermat-s8.md, worklog.md [fabrik]

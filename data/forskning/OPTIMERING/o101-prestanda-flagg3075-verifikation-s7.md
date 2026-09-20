@@ -85,6 +85,19 @@ u2:s FÖRE-fönster (o100) fångade 0,1028/0,1396. Baslinjen för o100:s EFTER-j
   från första layouten) + `node verktyg/prestanda-lighthouse.mjs efter-o100 /en/kurser /ar/kurser`
   (kriterium CLS ≤ 0,01) + /kurser CLS 0 kvar + vakten 0 fynd. FÖRE-paren: §2 + u2:s rådata.
 
+**§3.1 FÖNSTERETS SLUTLÄGE (02:4xZ) — deploy infra-blockerad + ZOMBIE-RESET-LÄKNING:**
+deployförsöken 02:07–02:32Z misslyckades alla på FS-nivå (OOM 02:10:50Z → ENOTEMPTY-race:
+rmdir .next/server/app/ar/kurser, Turbopack-rensning mot läkebackupens ISR-återvärmning —
+disk 59 G fri, RAM återhämtad; good-HEAD failar också 02:21:46Z ⇒ FS-tillstånd, EJ kod;
+diagnos + kur bokade åt infra-ägaren av u1, ded423cc). Synkens skyddslogik körde
+revert-av-o104 (07e44fef) + reset till känd-good 65f9963d (02:32:17Z) ⇒ generationens
+commits AVGRENADE (zombie, omgång 21-mönstret). **LÄKNING av detta fönster:**
+`git reset --hard 07e44fef` (synkens egen sista logiska punkt = generationens träd,
+o104 nettoreverterat enligt synkens dom — u2:s o104-innehåll bevarat i 6f2b0ed4 för
+omlandning när FS-racet kurats) — verifierat: generationsfilerna tillbaka på disk,
+tsc 0. Prod GRÖN på läke hela vägen (https 200 vid varje kontroll). EFTER-mätningen
+förblir vakarövertag-bar enligt §3 — första deploy som lämnar BUILD_ID 9RBeu.
+
 ## §4 Kö vidare
 
 1. **o100-golvets prod-EFTER** (vakarövertag-bar, §3 — första kommande deploy som lämnar

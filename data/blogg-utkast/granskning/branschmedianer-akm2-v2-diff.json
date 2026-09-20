@@ -1,0 +1,58 @@
+{
+  "granskat": "m9-fabrikens KANDIDAT branschmedianer-akm2 (TORR-läge GRANSKNINGSKLAR, ännu ej skriven till Supabase-kön; identisk body som kö-raden v2 i m9-ko/branschmedianer-akm2-v2.json från 09-14)",
+  "kandidatMd5": "0431dd6c885861fa3b03fc1c70f6eb8a",
+  "mallMd5": "7b4a313a35ac6fb77204db4e176eb1a9",
+  "granskadAv": "agentfabrik auto-s1-1789925707056 s1-u2 instans 2 (2026-09-20)",
+  "rapport": "branschmedianer-akm2-v2-KONTROLL-2026-09-20.md",
+  "bedomning": "GRÖN — FLYTTKLAR (kandidatnivå). 50 kontroller 0 fel: källor 3/3 md5-exakta (korstabell 33fe62a0 · varumarke 9b906e42 · vågvalidering b7194627) · 10/10 branschrader EXAKTA mot oberoende omräkning ur korstabell-grund.json (median två-mittersta-kontraktet · n=10/10 · spridning · 20 ytterlighetsnamn med kortNamn-transform) · sorteringsordning/ingress/topp-botten/PEER_MIN_GRUPP/investmentbolagsnot gröna · 'Ingen branschmedian rörde sig' SANT (10/10 medianer == publik utgåva) · GRANSKNINGSKLAR-rot = våg-95-kommafixen (äkta kosmetisk namnfix, ej nyckelordnings-artefakt — bevisad D3+D5) · kandidat-md5 reproducerad exakt ur egna komponenter (full determinism-kedja) · juridik 2007:528 ren (kontrolleraText 0/0 · rådglossor 0 · investeringsråd negerat sist · endast 2007:528) · 911 = 0/6 · länkar 3/3 HTTP 200 · struktur grön.",
+  "anvandning": "Kandidaten är deterministisk: om kö-underhållet kör 'node verktyg/m9-fabrik.mjs --skriv' och branschmedianer-akm2 skrivs landar INNEHÅLLET GRANSKAT HÄR (kandidat-md5 0431dd6c…). OBS: kroppen är byte-identisk med kö-raden v2 (09-14) — serien kan komma att hoppas av evergreen-regeln beroende på kö-logik; granskningsliggaren täcker innehållet oavsett. Kontrollera vid skrivning att fabriken redovisar kandidat-md5 0431dd6c… och mall-md5 7b4a313a… — avviker någon ska granskningen omköras. C1/C2 är FRIVILLIGA mallägarförslag (verktyg/m9-fabrik.mjs äger mallen; granskaren skriver ej om andras filer). Publicering förblir kundens klick (R2).",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "verktyg/m9-fabrik.mjs (mall: branschmedianer-akm2, rad ~630 — 'Ändringen sedan senaste publicerade utgåvan')",
+      "falt": "body (ändringsavsnittet)",
+      "gammalt": "Ingen branschmedian rörde sig sedan den publicerade utgåvan — oförändrat (att inget rörde sig är också ett utfall).",
+      "nytt": "Ingen branschmedian rörde sig sedan den publicerade utgåvan (att inget rörde sig är också ett utfall).",
+      "orsak": "TYDLIGHET: på median-nivå sant, men '— oförändrat' är missvisande eftersom två ytterlighetsnamn renodlas i samma vända (våg-95-kommafixen: publik bär 'Prologis,' och 'Warner Bros. Discovery,' — kandidaten bär rena namn; exakt 2 namnskillnader, inga andra fält). Söksträngen unik 1/1 i mallen. FRIVILLIGT: kandidaten är flyttklar utan; ändring i mallen ändrar mall-md5 och kräver omgranskning av nästa kandidat."
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "verktyg/m9-fabrik.mjs (mall: branschmedianer-akm2, rad ~618 — jämförbarhetsnoten)",
+      "falt": "body (jämförbarhetsnoten)",
+      "gammalt": "så finansgruppens median blandar två bolagsformer",
+      "nytt": "såväl industri- som finansgruppens median blandar två bolagsformer",
+      "orsak": "KORREKTHET: noten räknar upp Industrivärden (industri) och Investor (finans) som investmentbolag men hävdar sedan att endast finansgruppen blandar bolagsformer — Industrivärden ligger i industrigruppen, som alltså blandar likaså. Söksträngen unik 1/1 i mallen. FRIVILLIGT av samma skäl som C1."
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "data/blogg/branschmedianer-akm2.json (publik — dataägarens yta)",
+      "falt": "body + fabrik.statistik",
+      "gammalt": "—",
+      "nytt": "—",
+      "orsak": "Den PUBLICERADE bodyn bär 'Prologis,' och 'Warner Bros. Discovery,' med kvarlämnat komma (2 träffar i filen: body + statistik). Våg-95:s polsk-commit b375518 fixade 'de publicerade filerna' men täckte ej denna. Nästa publicering av serien får en synlig (kosmetisk) skillnad: kommat försvinner. Ingen åtgärd — notis för kunddialog."
+    },
+    {
+      "id": "D2",
+      "typ": "notis",
+      "fil": "verktyg/m9-fabrik.mjs (fabriksägarens yta)",
+      "falt": "oforandrad-jämförelsen",
+      "gammalt": "—",
+      "nytt": "—",
+      "orsak": "oforandrad = JSON.stringify(statistik) === JSON.stringify(publicerad) är NYCKELORDNINGSKÄNSLIG. Här var GRANSKNINGSKLAR-rot orsakad av en äkta förändring (kommafixen, bevisad: kommafixad publik == spegel), men en framtida omordning av perBransch-nycklar mellan fabrikversioner skulle ge falsk GRANSKNINGSKLAR (onödig om-publiceringscykel). Sondens D4/D5-kontroller skiljer dessa fall åt och kan återanvändas."
+    }
+  ],
+  "diffSammanfattning": {
+    "diffBas": "m9-ko/branschmedianer-akm2-v2.json (kö-raden, 2026-09-14) — NOTERA: v1-jämförelsen (09-16) täckte samma underlag; detta pass bevisar kandidat == kö-raden == PUBLICERAD-skillnaden",
+    "v2Rader": 52,
+    "kandidatRader": 52,
+    "roradeRader": 0,
+    "kategorier": [
+      "kandidat == kö-raden v2: byte-identisk body (4733 tecken), samma seed/källor/mall-md5",
+      "skillnad mot PUBLICERAD utgåva (2026-09-03): exakt 2 namn — 'Prologis,' → 'Prologis' och 'Warner Bros. Discovery,' → 'Warner Bros. Discovery' (våg-95-kommafixen; alla 10 medianer/matta/min/max identiska)"
+    ],
+    "oforandrat": "all prosa, alla rubriker, samtliga 10 medianer och spridningar, 'Fördjupa dig'-länkarna, juridik-ramen och disclaimern"
+  }
+}

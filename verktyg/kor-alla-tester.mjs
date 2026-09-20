@@ -24,6 +24,19 @@
  *     (testa-studio-ttfb/tabbar/rewind) får en EGNA dev-server på port
  *     AK1A_TEST_DEV_PORT (default 3117, STUDIO_TRANSPORT=mock) med värmnings-
  *     POST före första mätningen — port 3000 (prod) rörs ALDRIG av fönstret
+ *   · MILJÖKLASSER (V213a, R109 — styrelsens fasordning R107/R108): varje
+ *     svit klassas efter BEVISAT beroende och körs billigast/mest isolerat
+ *     först → dyrast/mest delat tillstånd sist:
+ *       DETERMINISTISK (fas 0) — offline/lokal data, default-klassen
+ *       DEV-FÖNSTER   (fas 2) — mäter mot dev-instans (aggregatorns fönster)
+ *       PROD-NÄRA     (fas 3) — mäter live prod/externa ytor (loopback 3000
+ *                       eller externa URL:er, bevisade markörer i sviten)
+ *       TUNG-TILLSTÅND(fas 4) — skriver verkligt tillstånd (protokoll/PIPELINE),
+ *                       körs SIST och ensam; styrelse-sviten får dev-fönstrets
+ *                       port+mock — aldrig prod (R107-fyndet: sond mot 3000
+ *                       kunde verkställa ett äkta möte i prod)
+ *     Klassning = ordning + rapportering + --klass-filter — ALDRIG
+ *     nivåsänkande: rött förblir rött i varje klass.
  *   · kvitto-rad: sista stdout-rad som ser ut som ett resultat (PASS/FAIL/
  *     RESULTAT/GRÖN…) — sviternas egna utdata är sanningen, aggregatorn
  *     hittar bara på INGA tal
@@ -35,7 +48,7 @@
  *   data/vakten/testaggregator-SENASTE.json — rådata + återupptagningsläge
  *
  * Användning:
- *   node verktyg/kor-alla-tester.mjs [--fortsatt] [--mönster=regex] [--tak=sek]
+ *   node verktyg/kor-alla-tester.mjs [--fortsatt] [--mönster=regex] [--klass=delsträng] [--tak=sek]
  * Avslutskod: 0 = komplett svep med 0 RÖDA · 1 = RÖDA/avbrutet · 2 = argumentfel
  */
 import { spawn } from "node:child_process";
@@ -52,12 +65,28 @@ const RAM_TRSKEL_MB = 900;     // fabrikens princip: aldrig starta tungt barn un
 const RAM_VANTA_TAK_S = 20 * 60; // per svit: vänta högst 20 min på minne
 const TERM_TOLERANS_S = 5;     // SIGTERM ⇒ 5 s ⇒ SIGKILL
 
-// ── dev-serverfönstret (ROND 107) ───────────────────────────────────────────
-// Sviter som mäter MOT en dev-instans med mock-transport (våg 95/144:s
+// ── miljöklasser (V213a) + dev-serverfönstret (ROND 107) ────────────────────
+// Klasserna åtskiljer sviternas miljöberoenden ÄRLIGT (bevisade markörer —
+// localhost:3000/externa URL:er i PROD-NÄRA; dev-transport-i-svit för
+// DEV-FÖNSTER; tillståndsskrivande API-båg för TUNG-TILLSTÅND). Allt annat
+// är DETERMINISTISK (default). Ordningen följer styrelsens fasbeslut.
+const KLASS_REGLER = [
+  { namn: "DETERMINISTISK", ordning: 0, monster: null },
+  { namn: "DEV-FÖNSTER", ordning: 1, monster: /^(testa-studio-(ttfb|tabbar|rewind))\.mjs$/ },
+  { namn: "PROD-NÄRA", ordning: 2, monster: /^(testa-(studio-scenarion|tradspermanens|doda-lankar-externa-cron|granssnitt-(drift|konsol)|prestanda-v96))\.mjs$/ },
+  { namn: "TUNG-TILLSTÅND", ordning: 3, monster: /^testa-styrelse\.mjs$/ },
+];
+function miljoKlass(fil) {
+  for (const r of KLASS_REGLER) if (r.monster?.test(fil)) return r;
+  return KLASS_REGLER[0];
+}
+// Sviter som mäter/kör MOT en dev-instans med mock-transport (våg 95/144:s
 // dev-baslinjer: mockens permission-dialoger besvaras direkt). Port 3000 är
 // PROD på servern och får aldrig mixas in i dev-mätningen — aggregatorn
-// föder en egen dev-server på egen port medan dessa sviter kör.
-const DEV_SVITER = /^(testa-studio-(ttfb|tabbar|rewind))\.mjs$/;
+// föder en egen dev-server på egen port medan dessa sviter kör. Sedan V213a
+// ingår styrelse-sviten (tung tillståndsskrivning) i fönstret: dess PROBE
+// får dev-porten, aldrig prod.
+const DEV_SVITER = /^(testa-studio-(ttfb|tabbar|rewind)|testa-styrelse)\.mjs$/;
 const DEV_PORT = process.env.AK1A_TEST_DEV_PORT || "3117";
 
 // ── argument ────────────────────────────────────────────────────────────────
@@ -66,6 +95,7 @@ const FORTSATT = args.includes("--fortsatt");
 const TAK_STANDARD = 900;
 let takSek = TAK_STANDARD;
 let monster = null;
+let klassFilter = null;
 for (const a of args) {
   if (a.startsWith("--tak=")) {
     const n = Number(a.slice(6));
@@ -79,6 +109,12 @@ for (const a of args) {
       monster = new RegExp(a.slice(a.indexOf("=") + 1), "u");
     } catch (e) {
       console.error(`ogiltigt mönster: ${e.message}`);
+      process.exit(2);
+    }
+  } else if (a.startsWith("--klass=")) {
+    klassFilter = a.slice(8).toLowerCase();
+    if (!KLASS_REGLER.some((r) => r.namn.toLowerCase().includes(klassFilter))) {
+      console.error(`ogiltig --klass (delsträng av: ${KLASS_REGLER.map((r) => r.namn).join(" · ")}): ${a}`);
       process.exit(2);
     }
   } else if (a !== "--fortsatt") {
@@ -259,9 +295,12 @@ function sistaFelRad(resultat) {
 // ── huvud ───────────────────────────────────────────────────────────────────
 const t0 = Date.now();
 let sviter = readdirSync(VERKTYG)
-  .filter((f) => f.startsWith("testa-") && f.endsWith(".mjs"))
-  .sort();
+  .filter((f) => f.startsWith("testa-") && f.endsWith(".mjs"));
 if (monster) sviter = sviter.filter((f) => monster.test(f));
+if (klassFilter) sviter = sviter.filter((f) => miljoKlass(f).namn.toLowerCase().includes(klassFilter));
+// KLASORDNINGEN (styrelsens fasbeslut): deterministiskt → dev-fönster →
+// prod-nära → tungt tillstånd; alfabetiskt inom klassen (deterministiskt).
+sviter.sort((a, b) => miljoKlass(a).ordning - miljoKlass(b).ordning || a.localeCompare(b));
 
 // återupptagning: färdigmätta sviter hoppas över (idempotens som fabriken)
 let tidigare = {};
@@ -298,10 +337,10 @@ for (const fil of sviter) {
     devServer = await startaDevServer();
     if (!devServer) devMisslyckades = true;
   }
-  process.stdout.write(`  ${fil} … `);
+  process.stdout.write(`  [${miljoKlass(fil).namn}] ${fil} … `);
   let post;
   if (DEV_SVITER.test(fil) && !devServer) {
-    post = { fil, status: "RÖD", orsak: "dev-server kom ej upp (mock-baslinjen omöjlig)", sekunder: 0, kvitto: "(tyst utdata)", sistaFel: null };
+    post = { fil, miljo: miljoKlass(fil).namn, status: "RÖD", orsak: "dev-server kom ej upp (mock-baslinjen omöjlig)", sekunder: 0, kvitto: "(tyst utdata)", sistaFel: null };
   } else {
     const args = DEV_SVITER.test(fil) ? [DEV_PORT] : [];
     let r = await korSvit(path.join(VERKTYG, fil), takSek, args);
@@ -314,6 +353,7 @@ for (const fil of sviter) {
     }
     post = {
       fil,
+      miljo: miljoKlass(fil).namn,
       status: r.status,
       orsak: r.orsak,
       sekunder: r.sekunder,
@@ -355,25 +395,40 @@ md.push(`- **Genererad:** ${startIso} · körtid ${Math.floor(korTidSek / 60)} m
 md.push(`- **Sviter:** ${sviter.length} upptäckta · ${resultatLista.length} mätta · ${Grona.length} GRÖNA · ${Roda.length} RÖDA · ${omatta} omätta`);
 md.push(`- **Läge:** ${FORTSATT ? "återupptagning" : "färskt svep"} · tak ${takSek} s/svit · sekventiellt (RAM-delning med pm2/fabrik/chrome-cron)`);
 md.push(`- **Klassregler:** exit 0 = GRÖN · exit ≠0 = RÖD · timeout = RÖD — ofullständig mätning är ALDRIG grönt`);
+md.push(`- **Miljöklasser (V213a):** körs i fasordning DETERMINISTISK → DEV-FÖNSTER → PROD-NÄRA → TUNG-TILLSTÅND — ordning/rapport/filter, aldrig nivåsänkande`);
+md.push("");
+// klasssammanfattning först — en rad per klass med grönt/rött (miljöberoende
+// fel ska synas som sin egen kategori, R107-lärdomen)
+md.push(`## Miljöklasser`);
+md.push("");
+md.push(`| Klass | GRÖNA | RÖDA | Omätta |`);
+md.push(`|---|---:|---:|---:|`);
+for (const r of KLASS_REGLER) {
+  const iKlass = sviter.filter((f) => miljoKlass(f).namn === r.namn);
+  const matta = resultatLista.filter((s) => s.miljo === r.namn);
+  const omattaKlass = iKlass.length - matta.length;
+  if (iKlass.length === 0) continue;
+  md.push(`| ${r.namn} | ${matta.filter((s) => s.status === "GRÖN").length} | ${matta.filter((s) => s.status === "RÖD").length} | ${omattaKlass} |`);
+}
 md.push("");
 md.push(`## RÖDA sviter (${Roda.length})`);
 md.push("");
 if (Roda.length === 0) {
   md.push("Inga.");
 } else {
-  md.push(`| Svit | Orsak | Kvitto/sista utdata |`);
-  md.push(`|---|---|---|`);
+  md.push(`| Svit | Klass | Orsak | Kvitto/sista utdata |`);
+  md.push(`|---|---|---|---|`);
   for (const s of Roda) {
-    md.push(`| ${s.fil} | ${s.orsak ?? "-"} | ${((s.sistaFel ?? s.kvitto) ?? "-").replaceAll("|", "\\|")} |`);
+    md.push(`| ${s.fil} | ${s.miljo ?? "-"} | ${s.orsak ?? "-"} | ${((s.sistaFel ?? s.kvitto) ?? "-").replaceAll("|", "\\|")} |`);
   }
 }
 md.push("");
 md.push(`## Alla sviter (${resultatLista.length})`);
 md.push("");
-md.push(`| Svit | Status | Sek | Kvitto |`);
-md.push(`|---|---|---:|---|`);
+md.push(`| Svit | Klass | Status | Sek | Kvitto |`);
+md.push(`|---|---|---|---:|---|`);
 for (const s of resultatLista) {
-  md.push(`| ${s.fil} | **${s.status}** | ${s.sekunder} | ${s.kvitto.replaceAll("|", "\\|")} |`);
+  md.push(`| ${s.fil} | ${s.miljo ?? "-"} | **${s.status}** | ${s.sekunder} | ${s.kvitto.replaceAll("|", "\\|")} |`);
 }
 md.push("");
 md.push(`## SUMMA: ${Grona.length} GRÖNA | ${Roda.length} RÖDA | ${omatta} OMÄTTA | STATUS: ${status}`);
@@ -396,6 +451,16 @@ writeFileSync(
       roda: Roda.length,
       omatta,
       status,
+      klassSumma: Object.fromEntries(
+        KLASS_REGLER.map((r) => [
+          r.namn,
+          {
+            upptackta: sviter.filter((f) => miljoKlass(f).namn === r.namn).length,
+            grona: resultatLista.filter((s) => s.miljo === r.namn && s.status === "GRÖN").length,
+            roda: resultatLista.filter((s) => s.miljo === r.namn && s.status === "RÖD").length,
+          },
+        ]),
+      ),
       sviter: resultatLista,
     },
     null,

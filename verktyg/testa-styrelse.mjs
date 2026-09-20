@@ -37,7 +37,9 @@
  *          dispatchrader för beslut som väntar kund).
  *      K6  STYRELSE-BESLUT.md protokollfört mötet (append, daterat).
  *
- * Körs med: node verktyg/testa-styrelse.mjs [port]   (default 3000)
+ * Körs med: node verktyg/testa-styrelse.mjs [port]
+ * Port default = AK1A_TEST_DEV_PORT eller 3117 — ALDRIG 3000 (prod på servern;
+ * V213a: sonden mot 3000 kunde verkställa ett ÄKTA möte i prod, R107-fyndet).
  * Kräver dev-läge (NODE_ENV=development ⇒ admin-devfallback gäller).
  */
 
@@ -46,9 +48,12 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-const PORT = process.argv[2] || "3000";
+const PORT = process.argv[2] || process.env.AK1A_TEST_DEV_PORT || "3117";
 const BAS = `http://127.0.0.1:${PORT}`;
-const HEADERS = { "x-admin-password": process.env.ADMIN_PASSWORD || "AK1A-2026" }; // dev-fallback (endast development)
+// Dev-fönstrets kontrakt (trions mönster): AK1A-2026 hårdkodat — ALDRIG arv av
+// ADMIN_PASSWORD (sessionens env kan bära det RIKTIGA lösenordet ⇒ 401 mot
+// fönstret som kräver dev-värdet; V213a-fyndet). Override via test-variabel.
+const HEADERS = { "x-admin-password": process.env.AK1A_TEST_LOSENORD || "AK1A-2026" };
 const JSON_HEADERS = { ...HEADERS, "Content-Type": "application/json" };
 
 const SKRIPT_SOKVAG = fileURLToPath(import.meta.url);
@@ -78,13 +83,15 @@ let startadDev = null;
 if (!(await svarar())) {
   console.log(`▸ Startar npm run dev i bakgrunden (port ${PORT}) …`);
   const logg = [];
-  // package.json:dev hårdkodar -p 3000 — annan port skickas som extra -p
-  // (testet sondar PORT; default 3000 matchar dev-skriptet).
+  // package.json:dev hårdkodar -p 3000 — egen port skickas som extra -p.
+  // Miljön sätts EXPLICIT (V213a, aggregatorns mönster): mock-transport +
+  // dev-lösenord så ärvda env-värden aldrig slår av dev-fallbacken, och
+  // loopback-bindning ger instansen ingen extern yta.
   const devArg = process.platform === "win32" ? ["/c", "npm run dev"] : ["run", "dev"];
-  if (PORT !== "3000") devArg.push("--", "-p", PORT);
+  devArg.push("--", "-p", PORT, "-H", "127.0.0.1");
   startadDev = spawn(process.platform === "win32" ? "cmd.exe" : "npm", devArg, {
     cwd: ROT,
-    env: { ...process.env },
+    env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
     shell: false,
     stdio: ["ignore", "pipe", "pipe"],
   });

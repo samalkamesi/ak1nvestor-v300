@@ -1,0 +1,52 @@
+{
+ "viewport": "390x844",
+ "fynd": [
+  {
+   "text": "Hälsa",
+   "tag": "A",
+   "rect": "44x52",
+   "href": "/dataset/halso",
+   "klassFull": "font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-center",
+   "harMinW52": true,
+   "computed": {
+    "display": "flex",
+    "minWidth": "0px",
+    "minHeight": "52px",
+    "width": "44.0781px"
+   },
+   "parentKedja": [
+    "SPAN.flex items-baseline justify-between 336x52",
+    "DIV.rounded-xl border border-gold/20 bg-card p-3 362x102",
+    "DIV.mt-3 space-y-3 md:hidden 362x1128",
+    "SECTION.mt-8 362x1560"
+   ]
+  },
+  {
+   "text": "Hälsa",
+   "tag": "A",
+   "rect": "0x0",
+   "href": "/dataset/halso",
+   "klassFull": "font-semibold text-foreground underline decoration-gold/40 underline-offset-4",
+   "harMinW52": false,
+   "computed": {
+    "display": "inline",
+    "minWidth": "0px",
+    "minHeight": "0px",
+    "width": "auto"
+   },
+   "parentKedja": [
+    "TD.py-1.5 pr-4 0x0",
+    "TR.border-t border-gold/10 0x0",
+    "TBODY. 0x0",
+    "TABLE.w-full border-collapse text-sm 0x0"
+   ]
+  }
+ ],
+ "smala": [
+  {
+   "text": "Hälsa",
+   "w": 44,
+   "klass": "font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-center"
+  }
+ ]
+}

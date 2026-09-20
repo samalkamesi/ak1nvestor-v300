@@ -20500,5 +20500,323 @@
       ]
     },
     "notering": "Kalenderårsbokslut (31 dec, USD-rapportvaluta; GBX-noting enl. HSBA.L/BA.L-precedensen); SUPERMAJOR-KVINTETTEN KOMPLETT: BP · CVX Chevron · XOM ExxonMobil · SHEL Shell · TTE TotalEnergies — världens fem klassiska supermajors nu alla i universumet (SHEL USA-klassad enl. NYSE-primärnoting-konventionen; BP.L bär Storbritannien/energi-cellen 0→1 = världens 6:e största börsekonomi fick energigrenen, UK 5→6 grenar); FYND 1 — VÄNDNINGSMULTIPLENS OLJE-UPPLAGA: netto-serien 7 563→−2 488→15 238→439→5→TTM 5 426 M USD (Rosneft-exiten 2022 · efterpandemi-toppen 2023 · raffinaderi-/nedskrivningsåren 2024-25 · TTM-återhämtningen) med P/E 21,51 mot forward 8,08 = prognosgap som bär lektionen: trailing-multipeln är DYRAST i kvintetten, framåtblickanden BILLIGASTE (8,08 under TTE 11,32 och SHEL 10,27) — vinstcykeln, inte värdefallen, är utbildningsfrågan (FCX/S32-klassen); FYND 2 — ÅTERKÖPSMASKINEN: aktiebasen 19 641→15 377 M (−21,7 % fyra år, −5,94 %/år) med buyback-bågen 3,2→10,0→7,9→7,1→4,5 mdr USD + DPS-trappan 18,6→26,0 p (5 raka år) = shareholder yield 7,89 %; FYND 3 — endpoint-fällans klassrum: resultatCAGR −84,0 % formell på FY2021-cykeltoppsbasen — energigrenens gemensamma läxa (EQNR −44,0 · Ørsted −50,9 · CVX −29,7 · SHEL −25,0 på samma basval), TTM 5 426 dokumenterar varför endpoint-CAGR inte är en prognos; FYND 4 — negativ beta −0,22 (5Y, källans fält): olje-/gasbalansen mot börsmarknadens svängningar — universumets uvanligaste betasignatur, pedagogiskt kontrastfall till ITUB 0,14; bruttomarginalens vågband 24,1→30,7 % (medel 27,3, spread 6,6 pp) = prissatt råvarumoat mot mjukvarumoatens 74,8/±2,0 (CRWD-kontrasten i samma leveransfamilj); fcf 5/5 positiva med varje års OCF−capex EXAKT; P/B 1,50 på total-EK (minoritet 20,9 mdr USD) med common-bas 2,16 dokumenterad (AMT-precedensen); skatt 59,06 % effektiv — olje-/gassektorns strukturella skattebas som marginałförklarare; nästa rapport 2026-10-30 (Q3)."
+  },
+  {
+    "ticker": "TMUS",
+    "namn": "T-Mobile US, Inc.",
+    "bransch": "kommunikation",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/stocks/tmus/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/ + /dividend/)",
+        "paranoid": "NASDAQ-noting i USD; S&P GMI-underlag, close 2026-09-18 (SA-statistics/financials uppdaterad 2026-09-19/20): pris 168,18 USD, mcap 180,40 mdr (aktiebas 168,18×1 072,6 M = 180,39 = tight), P/E 17,63 (aktiebas 168,18÷9,54 = 17,63 EXAKT) forward 13,43 ⇒ prognosTillväxt +31,3 % TTE, PEG 0,56 spårkonvention, P/B 3,21 (180,40÷56,265 TTM-EK = 3,21 — BPS 52,35), EV/EBIT 14,63 EV/EBITDA 8,66 med EV 298,0 mdr (nettoskuld 117,60 — spectrum+radioutrustning, D/E 2,14 skuld 120,43 mot EK 56,27, räntetäckning 5,06×, Altman 1,8 — telekombalansens signatur: branschens tre EV/EBIT 14,4–14,6 trots P/E 11–18), marginaler TTM: brutto 63,05 % EBIT 22,09 % netto 11,45 % FCF 19,96 % (OCF 28,833 − capex 10,434 = 18,399 mdr, fcfYield 10,20 %), ROE 17,99 % ROIC 8,93 % MOT WACC 4,66 % (spread +4,3 pp), Piotroski 5, institutions 47,51 %, insiders 0,36 %, beta 0,33, anställda 75 000, 52-v 164,02–242,37 (kursen −30,6 % från toppen — bandets botten, mobil-dippen 2026); TTM (M USD): rev 92 189 (+9,68 %) netto 10 560 EPS 9,54; FY-serier kalenderår (M USD): rev 80 118→79 571→78 558→81 400→88 309 (+2,5 %/år endpoint — 2021-pandemiåret är bas, TTM +9,7 % bår), netto 3 024→2 590→8 317→11 339→10 992 (+38,1 %/år endpoint — Sprint-mergerns synergibana 2022→2024 ×4,4), bruttomarginalserie 56,85→59,77→62,39→63,79→63,17 % (+6,3 pp bana), ek 69 102→69 656→64 715→61 741→59 203 (SJUNKANDE = återköpsmaskinen äter EK 69,7→59,2), fcf 1 591→2 811→8 758→13 453→17 995 (5/5 VÄXANDE, 11,3×); utdelning 4,08 USD (2,43 %) startad Q4 2023 — kvartalstrappa 0,65→0,88 (+35,4 %)→1,02 (+15,9 %), payout 42,78 %, återköp TTM 12,4 mdr (aktiebas −3,93 % YoY, buyback-yield 3,93 %), shareholder yield 6,35 %; nästa rapport 2026-10-22"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/TMUS",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal (curl-IP rate-limitad 429 enligt omg22-notisen): Yahoo 09-18 168,18 mot SA 168,18 = 0,00 % band (identisk close)"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 168.18,
+    "marknadsKapitalMdr": 180.4,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0246,
+      "resultatCAGR5ar": 0.3808,
+      "omsattningTillvaxtTTM": 0.0968,
+      "prognosTillvaxt": 0.3127
+    },
+    "lonksamhet": {
+      "roe": 0.1799,
+      "roic": 0.0893,
+      "bruttoMarginal": 0.6305,
+      "ebitMarginal": 0.2209,
+      "nettoMarginal": 0.1145,
+      "fcfMarginal": 0.1996
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.14,
+      "rantaTackning": 5.06,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 12.388,
+      "andelUtestande": 0.4751,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 61.19,
+      "bruttoMarginalSpread5ar": 6.94,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 17.63,
+      "pb": 3.21,
+      "evEbit": 14.63,
+      "peg": 0.56,
+      "fcfYield": 0.102,
+      "egenKapitalMultipl": 3.21
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        80118000000,
+        79571000000,
+        78558000000,
+        81400000000,
+        88309000000
+      ],
+      "resultat": [
+        3024000000,
+        2590000000,
+        8317000000,
+        11339000000,
+        10992000000
+      ],
+      "egetKapital": [
+        69102000000,
+        69656000000,
+        64715000000,
+        61741000000,
+        59203000000
+      ],
+      "fcf": [
+        1591000000,
+        2811000000,
+        8758000000,
+        13453000000,
+        17995000000
+      ]
+    },
+    "notering": "Kalenderårsbokslut (31 dec); 'Un-carrier'-arkitekturen: Sprint-mergern (april 2020) + frekvensauktioner = USA:s största abonnentbana — kommunikationscellens TILLVÄXT-TELEKOM: P/E 17,63 mot T 8,59 · VZ 8,9 · CMCSA 7,36 (avkastningspolen) är grenens värdepedagogik i en rad: samma sektor, två värderingsregimer; FYND 1 — synergibågen netto 2 590→11 339 (2022→2024 ×4,4, resultatCAGR +38,1 %/år = kommunikationens HÖGSTA) medan bruttomarginalbanan 56,9→63,8 % (+6,3 pp) visar att intjäningen kom KOSTNADSSYNERGIERNA, inte priset; FYND 2 — FCF-trappan 1 591→17 995 mdr (11,3× på fem år, 5/5 växande) finansierar BÅDA kapitalåterbörderna sedan 2023: utdelning 0 start→4,08 USD + återköp 12,4 mdr TTM (aktiebas −3,93 %/år) = shareholder yield 6,35 % — utdelningens FÖDELSE är dataseriens pedagogiska kärna; balansens sida: nettoskuld 117,6 mdr (D/E 2,14, Altman 1,8) med EK-serien SJUNKANDE 69,7→59,2 = återköpen äter balansen — kontrasten KDDI-nettokassa-klassen; prognosTillväxt +31,3 % implicit (trailing/fwd 17,63/13,43), PEG 0,56; ROIC−WACC +4,3 pp; EV/EBIT 14,63 — branschens gemensamma tak (KDDI 14,49 · ORA 14,37): tre P/E-politiker, ETT företagsvärde."
+  },
+  {
+    "ticker": "9433.T",
+    "namn": "KDDI Corporation",
+    "bransch": "kommunikation",
+    "land": "Japan",
+    "valuta": "JPY",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/quote/tyo/9433/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/ + /dividend/)",
+        "paranoid": "TSE-noting i JPY; S&P GMI-underlag, close 2026-09-18 (SA-statistics/financials uppdaterad 2026-09-19/20): pris 3 060 ¥, mcap 11,65 T¥ (aktiebas 3 060×3 806 M = 11,66 T tight), P/E 15,70 (aktiebas 3 060÷194,91 = 15,70 EXAKT) forward 15,58 ⇒ prognosTillväxt +0,77 % TTE — PLATT prognos, PEG formellt 20,4 (mogen duopol, måttet utan signalvärde), P/B 2,27 på COMMON EK 5 127 098 M¥ (källans BPS 1 346,64; totalt EK 5 646 278 med 519 180 M¥ minority ger 2,06 — minority-noten), EV/EBIT 14,49 EV/EBITDA 8,94 med EV 16,12 T¥ (nettoskuld 4 465,7 — skuldserien 1 651→2 394→4 438→5 375 mdr ¥ FY23→26 TREDUBLING, D/E 0,94 källans fält, räntetäckning 29,72× cellens högsta, Altman 1,06 — telekombalans), marginaler TTM: brutto 42,76 % EBIT 18,10 % netto 12,09 % FCF 15,38 % (OCF 1 344,2 − capex 399,6 = 944,6 mdr ¥ TTM), ROE 14,59 % ROIC 7,84 % MOT WACC 2,69 % (spread +5,2 pp — TOKYO-världens låga WACC), Piotroski 5, institutions 37,31 %, insiders 0,01 %, beta −0,10 (FJÄRDE dokumenterade negativa betan — BAE −0,06 · 3382.T 0,09 · föregångare), anställda 73 198, 52-v 2 307,5–3 121,0 (kursen −2,0 % från toppen, mcap +21,7 % YoY); TTM (M ¥): rev 6 143 497 (+3,0 %) netto 742 508 EPS 194,91; FY-serier mars-bokslut, årsetikett = slutår (M ¥): rev 5 446 708→5 630 024→5 699 724→5 835 525→6 071 915 (+2,75 %/år), netto 672 486→649 747→600 281→655 416→707 112 (+1,26 %/år — fyra av fem år 600-710: planyetten), bruttomarginalserie 45,20/42,67/42,55/42,70/42,67 % (fyra år inom 0,15 pp = cellens stabilaste moat), ek common 4 982 586→5 057 987→5 188 048→5 032 495→5 076 738 (TTM 5 127 098; totalt med minority ~5,6 T stabilt), fcf 1 042 848→684 217→1 182 558→848 095→1 384 025 (5/5 positiva men SÅGTAND — capex/spektrum-cykeln); utdelning 84 ¥ (2,75 %, payout 41,04 %) DPS-trappa 62,5→67,5→70→110→80→84E (FY24-årslutet 75 ¥ = förhöjd betalning 2,1× trenden — TTM-tillväxten −28,7 % är mekanisk baseffekt, dokumenterad), återköp TTM 650 mdr ¥ REKORD (aktiebas −4,86 % YoY, buyback-yield 4,86 %), shareholder yield 7,61 %; nästa rapport 2026-11-06"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/9433.T",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal: Yahoo 09-18 3 060 ¥ mot SA 3 060 = 0,00 % band (identisk close, JST-session 15:30)"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 3060,
+    "marknadsKapitalMdr": 11650,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0275,
+      "resultatCAGR5ar": 0.0126,
+      "omsattningTillvaxtTTM": 0.03,
+      "prognosTillvaxt": 0.0077
+    },
+    "lonksamhet": {
+      "roe": 0.1459,
+      "roic": 0.0784,
+      "bruttoMarginal": 0.4276,
+      "ebitMarginal": 0.181,
+      "nettoMarginal": 0.1209,
+      "fcfMarginal": 0.1538
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.94,
+      "rantaTackning": 29.72,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 650,
+      "andelUtestande": 0.3731,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 43.16,
+      "bruttoMarginalSpread5ar": 2.65,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 15.7,
+      "pb": 2.27,
+      "evEbit": 14.49,
+      "peg": 20.4,
+      "fcfYield": 0.0811,
+      "egenKapitalMultipl": 2.27
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        5446708000000,
+        5630024000000,
+        5699724000000,
+        5835525000000,
+        6071915000000
+      ],
+      "resultat": [
+        672486000000,
+        649747000000,
+        600281000000,
+        655416000000,
+        707112000000
+      ],
+      "egetKapital": [
+        4982586000000,
+        5057987000000,
+        5188048000000,
+        5032495000000,
+        5076738000000
+      ],
+      "fcf": [
+        1042848000000,
+        684217000000,
+        1182558000000,
+        848095000000,
+        1384025000000
+      ]
+    },
+    "notering": "Mars-bokslut (31 mars; årsetikett = slutår, 8035.T-konventionen); Japans telefonduopol (au-nätet ~30 M abonnenter + 'pau'IoT/'Lismo'förmögenhetstjänster + datacentergrenen) = kommunikation/Japans ANDRA rad vid sidan av Nintendo — Japan-mattan 12→13; FYND 1 — moatens PLANHET: bruttomarginal 42,55–45,20 % med FY2023-26 inom 0,15 pp (42,55/42,67/42,70/42,67) = cellens stabilaste — duopol utan prisskiljedomän (kontrasten TMUS +6,3 pp bana); FYND 2 — kapitalåterbördens TRAPPA: återköp 213,8→250,2→300,0→400,0→400,0 mdr ¥ (TTM 650 = rekord) + DPS 62,5→70→80-trenden = shareholder yield 7,61 % på +1,3 %/års resultatplan — mognadens matematik; FYND 3 — FCF-sågtanden 684→1 384 mdr (capex-cykeln) mot TMUS raka 11,3×-bana: två telefonmodeller av kapitaldisiplin; balansens not: skuldserien 1 651→5 375 mdr ¥ (FY23→26) driver Altman 1,06 men räntetäckning 29,72× = cellens högsta (skulden bär investeringar, inte betalningsnöd — dokumenterat läge, orsak utanför panelen); beta −0,10 = universumets FJÄRDE negativa; ROIC−WACC +5,2 pp i WACC 2,69 %-världen (Tokyo-jämförelsereglens klass); DPS FY2024-hopet 110 ¥ (årslut 75 = 2,1× trenden) förklarar källans −28,7 % TTM-tillväxt-artefakt."
+  },
+  {
+    "ticker": "ORA.PA",
+    "namn": "Orange S.A.",
+    "bransch": "kommunikation",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/quote/epa/ORA/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/ + /dividend/)",
+        "paranoid": "Euronext Paris i EUR; S&P GMI-underlag, close 2026-09-18 (SA-statistics/financials uppdaterad 2026-09-19/20): pris 15,03 € (dagen −5,83 %), mcap 39,95 mdr (aktiebas 15,03×2 660 M = 39,98 tight), P/E 11,35 på EPS 1,32 (aktiebas 15,03÷1,32 = 11,39 — källans fält 11,35 bär exakt EPS 1,3216; mcap÷TTM-netto 3 973 = 10,06 — skillnaden 0,46 mdr € = minoritetsandelen i TTM-nettot, Orange Polska/Belgien-klassen: BAS-SPLITTRA-noten) forward 11,63 ⇒ prognosTillväxt NEGATIV −2,4 % TTE (fwd>trailing — BUD/FMG/AMT-konventionen) ⇒ PEG null, P/B 1,26 på COMMON EK 31 824 M€ (källans BPS 11,97; totalt EK 35 145 med 3 321 M€ minority ger 1,14), EV/EBIT 14,37 EV/EBITDA 7,04 med EV 85,2 mdr (nettoskuld 45,29 — TTM-fönstret Jun-26 bär konsolideringssteget: goodwill 20,8→29,0 mdr, skuld 45,8→56,8, tillgångar 107,4→126,4 mot FY2025; källans balansbild, orsaksredogörelse utanför panelen — MasOrange-klassens steg), D/E 1,61, räntetäckning 3,51×, Altman 0,72 (lågt — telekom+goodwill-balansens signatur), marginaler TTM: brutto 41,11 % EBIT 14,29 % netto 9,98/9,58 % (stat/fin-panelernas TTM-fönster skiljer — not) FCF 12,13 % (OCF 12 345 BÄR 5 093 M€ TILLGÅNGSFÖRSÄLJNINGSVINST — källans not: organisk FCF lägre; FY-serien utan engångsposter 2,4-3,5 mdr), ROE 14,16 % ROIC 5,83 % MOT WACC 3,68 % (spread +2,2 pp), Piotroski 5, institutions 42,53 % (statens ~23 % block = JT 2 914.T-statens-block-precedensen), beta 0,24, anställda 121 242, 52-v 13,08–18,81 (kursen −20,1 % från toppen); TTM (M €): rev 41 491 (+3,0 %) netto 3 973 (+138 %) EPS 1,32; FY-serier kalenderår (M €): rev 42 522→39 127→39 678→40 260→40 396 (−1,27 %/år endpoint — 2021-basen inkluderar Spanien, avyttrat i MasOrange-JV 2024: strukturfall, ej driftfall; +0,34 % FY24→25 jämförbar bas), netto 8→1 946→2 265→2 174→369 (FY2021 8 M€ = Spanien-nedskrivningar; FY2025 369 = −83 % botten med EBIT-fall 6 276→4 326 — nedskrivningsbotten dokumenterad, TTM 3 973 bär återhämtningen), bruttomarginalserie 36,60/38,74/37,76/39,65/36,92 % (TTM 41,12), ek totalt 35 361→34 956→35 099→35 161→33 155 (common 32 341→29 739), fcf 2 487→2 458→4 225→3 485→3 458 (5/5 positiva); utdelning 0,79 € annualizerad (5,26 %, payout 52,37 %) DPS 0,70→0,70→0,72→0,75→0,75 betalda (halvårsbetalande: 0,30 interim + 0,45 final), återköp TTM 520 M€ (mot 12-15 M€ FY2023-24 — återupptagna); aktiebasfält +22,35 % YoY / −14,32 % QoQ = källartefakt (Orange har ej emitterat 22 %; fältet bärs ej vidare); nästa rapp 2026-10-27"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORA.PA",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal: Yahoo 09-18 15,03 € mot SA 15,03 = 0,00 % band (identisk close, Euronext-sessionen −5,83 % — dagen dokumenterad)"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 15.03,
+    "marknadsKapitalMdr": 39.95,
+    "tillvaxt": {
+      "omsattningCAGR5ar": -0.0127,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.03,
+      "prognosTillvaxt": -0.0241
+    },
+    "lonksamhet": {
+      "roe": 0.1416,
+      "roic": 0.0583,
+      "bruttoMarginal": 0.4111,
+      "ebitMarginal": 0.1429,
+      "nettoMarginal": 0.0998,
+      "fcfMarginal": 0.1213
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.61,
+      "rantaTackning": 3.51,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 0.52,
+      "andelUtestande": 0.4253,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 37.93,
+      "bruttoMarginalSpread5ar": 3.05,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 11.35,
+      "pb": 1.26,
+      "evEbit": 14.37,
+      "peg": null,
+      "fcfYield": 0.126,
+      "egenKapitalMultipl": 1.26
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        42522000000,
+        39127000000,
+        39678000000,
+        40260000000,
+        40396000000
+      ],
+      "resultat": [
+        8000000,
+        1946000000,
+        2265000000,
+        2174000000,
+        369000000
+      ],
+      "egetKapital": [
+        35361000000,
+        34956000000,
+        35099000000,
+        35161000000,
+        33155000000
+      ],
+      "fcf": [
+        2487000000,
+        2458000000,
+        4225000000,
+        3485000000,
+        3458000000
+      ]
+    },
+    "notering": "Kalenderårsbokslut (31 dec); FRANKRIKE/KOMMUNIKATION 0→1 = NY CELL — eurozonens näst största ekonomis telecom-incumbent (FDNs fibernät + 26 länder, varav Orange Middle East and Africa ~störst tillväxtbidrag); STATENS BLOCK ~23 % (fra nämnd: franska staten) = JT 2 914.T 'statens block'-precedensen i europeisk tappning — utdelningspolitiken 0,75-0,79 € (payout 52 %) är politisk valuta, inte ren avkastningsoptimering; FYND 1 — FY2025-BOTTEN netto 369 M€ (−83 %, EBIT-fall 6 276→4 326 = nedskrivningar) mot TTM 3 973 (+138 %): vändningsmultipelns telekom-upplaga (FCX/S32-klassen — MEN TTM bär engångsposter: OCF-fönstrets 5 093 M€ försäljningsvinst dokumenterad); FYND 2 — prognosgapet NEGATIVT −2,4 % (fwd 11,63 > trailing 11,35 på TTM-toppen) ⇒ PEG null enligt BUD/FMG/AMT-konventionen — cellens sjätte dokumenterade; FYND 3 — intäktsbasens STRUKTURFALL: oms 42,5→40,4 mdr € (−1,3 %/år endpoint) där 2021 inkluderar Spanien (avyttrat i MasOrange-JV 2024) — 'platt på jämförbar bas' (+0,34 % FY24→25) är den ärliga trenden, endpoint-måttet bår portföljstrukturen (2914.T-familjens mätstock-läxa); P/B 1,26 på common-EK med 3,3 mdr € minority (Orange Polska/Belgien); EV/EBIT 14,37 — branschens tak (TMUS 14,63 · KDDI 14,49 · ORA 14,37): olika P/E-politiker, samma företagsvärde — fcfYield TTM 12,6 % med engångsnot (organisk ~8,7 %); Altman 0,72 med räntetäckning 3,51× — goodwill- och concessionsbärande balans."
   }
 ]

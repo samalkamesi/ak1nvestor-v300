@@ -403,6 +403,10 @@ OMATCHADE.forEach((f, i) => {
             "svaraLokaltRiskadress",
             "svaraLokaltBalansdjup",
             "svaraLokaltOptionshantverk",
+            // Omgång 26 (manifest auto-s6-1789890903364, s6-u2 fönster 3):
+            // pengarstid — andrahandsmarknaden + sekvensrisken, 66:e motorn,
+            // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
+            "svaraLokaltPengarstid",
             "svaraLokaltMarknadsrytm",
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));
@@ -416,7 +420,7 @@ OMATCHADE.forEach((f, i) => {
     if (!kedjRad.trimEnd().endsWith("?? svaraLokaltMarknadsrytm(q, KURSREGISTER);")) FEL.push("svaraLokaltMarknadsrytm är inte SISTA ledet");
   }
   kontroll(
-    "L01 widget-synk — import + SIST i kedjan + inga okända komponenter (62 dokumenterade)",
+    "L01 widget-synk — import + SIST i kedjan + inga okända komponenter (63 dokumenterade)",
     FEL.length === 0,
     FEL.length ? FEL.join(" | ") : "SIST i kedjan (multipel 61:a före), samtliga komponenter kända",
   );

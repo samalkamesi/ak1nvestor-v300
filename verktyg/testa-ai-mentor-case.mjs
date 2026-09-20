@@ -451,6 +451,9 @@ const kedjekomponenter = [
     "svaraLokaltRiskadress(q, KURSREGISTER)",
     "svaraLokaltBalansdjup(q, KURSREGISTER)",
     "svaraLokaltOptionshantverk(q, KURSREGISTER)",
+    // Omgång 26 (manifest auto-s6-1789890903364, s6-u2 fönster 3): pengarstid —
+    // andrahandsmarknaden + sekvensrisken, 66:e motorn, FÖRE marknadsrytm.
+    "svaraLokaltPengarstid(q, KURSREGISTER)",
     "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);

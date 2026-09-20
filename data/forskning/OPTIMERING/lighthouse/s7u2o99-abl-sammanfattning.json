@@ -1,0 +1,95 @@
+{
+  "datum": "2026-09-20T01:43:51.469Z",
+  "bas": "http://127.0.0.1:9377",
+  "namn": "s7u2o99-abl",
+  "sidor": [
+    {
+      "sokvag": "/en/kurser",
+      "poang": {
+        "prestanda": 0.6,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 3398,
+        "LCP": 9963,
+        "TBT": 266,
+        "CLS": 0,
+        "TTI": 10376,
+        "SI": 4557
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 200 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 200 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 1,434 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 1,434 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 0,
+          "visar": "Est savings of 14 KiB",
+          "rad": "Reduce unused CSS — Est savings of 14 KiB"
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "1.4 s",
+          "rad": "Reduce JavaScript execution time — 1.4 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "3.8 s",
+          "rad": "Minimize main-thread work — 3.8 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/ar/kurser",
+      "poang": {
+        "prestanda": 0.65,
+        "tillganglighet": 0.97,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 3350,
+        "LCP": 10019,
+        "TBT": 197,
+        "CLS": 0,
+        "TTI": 10076,
+        "SI": 3350
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 200 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 200 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 1,446 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 1,446 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 0,
+          "visar": "Est savings of 14 KiB",
+          "rad": "Reduce unused CSS — Est savings of 14 KiB"
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "0.9 s",
+          "rad": "JavaScript execution time — 0.9 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "2.4 s",
+          "rad": "Minimize main-thread work — 2.4 s"
+        }
+      }
+    }
+  ]
+}

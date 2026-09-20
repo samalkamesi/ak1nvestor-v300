@@ -53,6 +53,7 @@ import { spawn } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { hamtaPortagare, lasCmdline, lasPpid, hittaOrtRot, dodaDeltrad } from "./process-trad.mjs";
 
 const PORT = process.argv[2] || process.env.AK1A_TEST_DEV_PORT || "3117";
 const BAS = `http://127.0.0.1:${PORT}`;
@@ -86,21 +87,49 @@ async function svarar() {
 }
 
 let startadDev = null;
+// F2-VACCINET (2026-09-20): sviten återanvänder TIDIGARE ett svarande
+// fönster på :port — legitimit när aggregatorns egna fönster lever, men
+// en LÄCKT instans (förälder död, PPid-kedjan slutar vid init) serverar
+// GAMLAL kod och sviterna mäter då gårdagens bygge i god tro (bevis: 5 h
+// gammal "next dev -p 3000 -p 3117" med PPid 1). Därför: svara-en-
+// process med ort-rot dödas FÖRRE återanvändning; samma svep tar
+// porttjuvar innan egen start. Linux-only (/proc) — Windows behåller
+// sitt gamla spur.
+if (process.platform === "linux") {
+  const agare = hamtaPortagare(Number(PORT));
+  if (!agare.okand && agare.finnas && agare.pid != null) {
+    const cmd = lasCmdline(agare.pid);
+    const rot = hittaOrtRot(agare.pid);
+    if (/next/.test(cmd) && lasPpid(rot) === 1) {
+      console.log(`▸ F2-svep: dödar läckt dev-server på :${PORT} (ort-rot pid ${rot}, ${cmd.slice(0, 60)}…)`);
+      await dodaDeltrad(rot);
+      await sov(1_000);
+    }
+  }
+}
 if (!(await svarar())) {
-  console.log(`▸ Startar npm run dev i bakgrunden (port ${PORT}) …`);
+  console.log(`▸ Startar next dev i bakgrunden (port ${PORT}) …`);
   const logg = [];
-  // package.json:dev hårdkodar -p 3000 — egen port skickas som extra -p.
-  // Miljön sätts EXPLICIT (V213a, aggregatorns mönster): mock-transport +
-  // dev-lösenord så ärvda env-värden aldrig slår av dev-fallbacken, och
-  // loopback-bindning ger instansen ingen extern yta.
-  const devArg = process.platform === "win32" ? ["/c", "npm run dev"] : ["run", "dev"];
-  devArg.push("--", "-p", PORT, "-H", "127.0.0.1");
-  startadDev = spawn(process.platform === "win32" ? "cmd.exe" : "npm", devArg, {
-    cwd: ROT,
-    env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
-    shell: false,
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+  // F2: next-binären spawnas DIREKT på Linux — "npm run dev -- -p …"
+  // arityade package.json:s "next dev -p 3000" till DUBBELA -p-flaggor
+  // (sista vann av tur). Miljön sätts EXPLICIT (V213a, aggregatorns
+  // mönster): mock-transport + dev-lösenord så ärvda env-värden aldrig
+  // slår av dev-fallbacken, och loopback-bindning ger instansen ingen
+  // extern yta.
+  const arWin = process.platform === "win32";
+  const nextBin = path.join(ROT, "node_modules", ".bin", "next");
+  startadDev = arWin
+    ? spawn("cmd.exe", ["/c", "npm run dev", "--", "-p", PORT], {
+        cwd: ROT,
+        env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
+        stdio: ["ignore", "pipe", "pipe"],
+      })
+    : spawn(process.execPath, [nextBin, "dev", "-p", PORT, "-H", "127.0.0.1"], {
+        cwd: ROT,
+        detached: true, // egen processgrupp ⇒ gruppdöd i stangaDev
+        env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
+        stdio: ["ignore", "pipe", "pipe"],
+      });
   startadDev.stdout?.on("data", (d) => logg.push(String(d)));
   startadDev.stderr?.on("data", (d) => logg.push(String(d)));
   let fardig = false;
@@ -111,14 +140,12 @@ if (!(await svarar())) {
   if (!fardig) {
     console.log("FAIL  dev-servern kom ej upp inom 180 s. Senaste logg:");
     console.log(logg.join("").slice(-2_000));
-    if (startadDev.pid && process.platform === "win32") {
-      spawn("taskkill", ["/pid", String(startadDev.pid), "/T", "/F"], { stdio: "ignore" });
-    } else {
-      startadDev.kill("SIGTERM");
-    }
+    await stangaDev();
     process.exit(1);
   }
   console.log("▸ Dev-servern är uppe.");
+} else {
+  console.log(`▸ Återanvänder svarande dev-fönster på :${PORT} (F2-svepat — ingen ort).`);
 }
 
 async function stangaDev() {
@@ -126,9 +153,16 @@ async function stangaDev() {
   if (process.platform === "win32" && startadDev.pid) {
     // Windows: npm -> cmd -> node är en processgrupp — taskkill /T dödar hela trädet.
     spawn("taskkill", ["/pid", String(startadDev.pid), "/T", "/F"], { stdio: "ignore" });
-  } else {
-    startadDev.kill("SIGTERM");
+    return;
   }
+  // F2: bara npm/skalet dödades tidigare — next-trädet orphanades (PPid 1,
+  // läckan). Gruppdöd (detached) + delträds-försäkring via process-trad.
+  try {
+    process.kill(-startadDev.pid, "SIGTERM");
+  } catch {
+    /* redan borta */
+  }
+  await dodaDeltrad(startadDev.pid);
 }
 
 // ── Steg 2: starta mötet ─────────────────────────────────────────────────────

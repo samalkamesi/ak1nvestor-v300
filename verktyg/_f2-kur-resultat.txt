@@ -1,0 +1,12 @@
+KUR START
+2026-09-20T04:37:25.955Z SIGTERM → 3410754 (sh -c next start)
+2026-09-20T04:37:25.956Z SIGTERM → 3410755 (rogue next-server)
+2026-09-20T04:37:30.000Z port efter kill: PORT-FRI
+2026-09-20T04:37:30.318Z pm2 restart OK: [32m[PM2] [39mApplying action restartProcessId on app [ak1a](ids: [ 0 ])
+[32m[PM2] [39m[ak1a](0) ✓
+┌────┬────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬─
+2026-09-20T04:37:42.457Z PROD=200
+2026-09-20T04:37:42.544Z CHUNK=404
+2026-09-20T04:37:42.777Z pm2 ak1a: status=online pid=3423650 restarts=undefined
+2026-09-20T04:37:42.813Z portägare nu: LISTEN 0      511                *:3000             *:*    users:(("next-server (v1",pid=3423663,fd=21))
+2026-09-20T04:37:42.813Z KUR SLUT

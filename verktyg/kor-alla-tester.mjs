@@ -55,6 +55,7 @@ import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { hamtaPortagare, lasCmdline, lasPpid, hittaOrtRot, dodaDeltrad } from "./process-trad.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RAPPORT_MD = path.join(REPO, "data", "vakten", "testaggregator-SENASTE.md");
@@ -151,11 +152,41 @@ let devMisslyckades = false;
 
 async function startaDevServer() {
   const logg = [];
+  // F2-VACCINET (2026-09-20): en tidigare körning kan ha läckt sin
+  // dev-server (bevis: 5 h gammal "next dev -p 3000 -p 3117" med PPid 1 —
+  // en SIGKILL-död aggregator hinner aldrig städa). En läckt instans är
+  // TVÅ fel: portkollision vid start — och värre: svarar den först mäter
+  // sviterna mot GAMLAL kod i god tro. Därför svep före start: en
+  // next-process på DEV_PORT med ort-rot (förälder död, PPid-kedjan
+  // slutar vid init) dödas; en process med LEVANDE förälder (någon annans
+  // pågående fönster) lämnas och fönstret avstår ärligt.
+  const agare = hamtaPortagare(Number(DEV_PORT));
+  if (!agare.okand && agare.finnas && agare.pid != null) {
+    const cmd = lasCmdline(agare.pid);
+    if (/next/.test(cmd)) {
+      const rot = hittaOrtRot(agare.pid);
+      if (lasPpid(rot) === 1) {
+        console.log(`  F2-svep: dödar läckt dev-server på :${DEV_PORT} (ort-rot pid ${rot}, ${cmd.slice(0, 60)}…)`);
+        await dodaDeltrad(rot);
+      } else {
+        console.log(`  VARNING: port ${DEV_PORT} hålls av levande next-process (pid ${agare.pid}) — dev-fönstret startar ej, dev-sviterna mäter INGET`);
+        devMisslyckades = true;
+        return null;
+      }
+    } else {
+      console.log(`  VARNING: port ${DEV_PORT} hålls av icke-next-process (pid ${agare.pid}: ${cmd.slice(0, 60)}) — dev-fönstret startar ej`);
+      devMisslyckades = true;
+      return null;
+    }
+  }
   // Test-instansens lösenord sätts EXPLICIT till dev-värdet: ärvt ADMIN_PASSWORD
   // (OS-env eller .env.local) slår annars AV dev-fallbacken och trion (hårdkodad
   // AK1A-2026) dör i 401 (R107-fynd). Instansen binds ENDAST till loopback och
   // kör mock-transport — inga riktiga hemligheter, ingen extern yta.
-  const barn = spawn("npm", ["run", "dev", "--", "-p", DEV_PORT, "-H", "127.0.0.1"], {
+  // F2: next-binären spawnas DIREKT (tidigare "npm run dev -- -p …" arityade
+  // package.json:s "next dev -p 3000" till dubbla -p-flaggor — sista vann av
+  // ren tur); enkel -p + loopback, samma miljö som tidigare.
+  const barn = spawn(process.execPath, [path.join(REPO, "node_modules", ".bin", "next"), "dev", "-p", DEV_PORT, "-H", "127.0.0.1"], {
     cwd: REPO,
     detached: true, // egen processgrupp ⇒ gruppdöd nedan får hela trädet
     env: { ...process.env, NO_COLOR: "1", STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },

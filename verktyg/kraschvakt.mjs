@@ -37,6 +37,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { verifieraArtefakt } from "./artefakt-verifiering.mjs";
+import { hamtaPortagare, arAttling, hittaOrtRot, dodaDeltrad } from "./process-trad.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KATALOG = path.join(ROT, "data", "vakten");
@@ -72,7 +73,12 @@ export function tolkaPm2(lista) {
 }
 function ak1aRad() {
   try {
-    return tolkaPm2(JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" })));
+    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    // pid läggs till HÄR (inte i tolkaPm2 — dess returform är ett testat
+    // kontrakt, testa-kraschvakt.mjs krav 11): F2-ort-vakten behöver
+    // ak1a-processens pid för ättlingskontrollen av portägaren.
+    const rad = Array.isArray(lista) ? lista.find((x) => x && x.name === "ak1a") : null;
+    return { ...tolkaPm2(lista), pid: rad?.pid ?? null };
   } catch {
     return { okand: true };
   }
@@ -152,6 +158,64 @@ export function planeraStartEfterMisslyckatBygg(artefaktStatus) {
     kooldownMin: 30,
     meddelande: `artefakt ${artefaktStatus} — pm2 lämnas STOPPAD (restart mot ofullständigt .next = kraschloop, 502-klassen 17:42); kooldown 30 ⇒ nästa poll bygger klart`,
   };
+}
+
+/** F2-ORT-PORTVAKTEN (2026-09-20, prodincident 06:10–06:37 lokal): pm2:s
+ * gamla app-träd kan överleva en deploy-omstart som föräldralös ort
+ * ("sh -c next start -p 3000" → next-server, PPid 1) och behålla port
+ * 3000 — pm2 errored i EADDRINUSE-slinga medan ORTEN svarade 200, så
+ * såväl prod-synkens HTTPS-kontroll som denna vakts okNu mätte grönt
+ * mot fel process (27 min kundsynlig risk: en omstart/OOM hade tyst
+ * dödat sajten). Räddningsbygget hade varit verkningslöst — pm2 restart
+ * krockar med orten igen. Rätt kur är PORT-RECLAIM: döda ort-trädet +
+ * pm2 restart (billigt, artefakten är orörd). Tabellen (ren — samma
+ * mönster som planeraAtguard, testas av testa-kraschvakt.mjs):
+ *   pass         — port fri/okänd ägare/ägaren ÄR pm2-ättling: övriga
+ *                  vaktlogiken styr (falska positiva får aldrig störa)
+ *   vantad-deploy — ort men deploy-låset upptaget: vik (samma doktrin
+ *                  som övriga grenar — deployn startar appen själv)
+ *   ort-port     — reclaim: döda ort-trädet + pm2 restart. */
+export function planeraOrtvard({ status, portFinns, agarePid, agareArPm2Attling, lasUpptagen: upptagen }) {
+  if (!portFinns) return { typ: "pass" };
+  if (agarePid == null) return { typ: "pass" };
+  if (agareArPm2Attling) return { typ: "pass" };
+  if (upptagen) {
+    return { typ: "vantad-deploy", meddelande: `ort pid ${agarePid} på port 3000 men deploy-låset upptaget (status=${status})` };
+  }
+  return {
+    typ: "ort-port",
+    meddelande: `port 3000 hålls av ort pid ${agarePid} — inte ättling till pm2:s ak1a (status=${status})`,
+  };
+}
+
+/** F2-reclaim: döda ort-trädet (cmdline-verifierat via process-trad),
+ * pm2 restart, verifiera att porten återtagits av pm2-ättling. ALDRIG
+ * bygg — roten är portkidnappningen, artefakten orörd. State sparas
+ * FÖRE första åtgärden (samma atomitetsdoktrin som räddningsbygget). */
+async function ortLakning(p, state, agarePid, meddelande) {
+  sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 20 });
+  logga(`ORT-PORT (F2): ${meddelande} ⇒ reclaim: döda ort-trädet + pm2 restart`);
+  const rot = hittaOrtRot(agarePid);
+  const dodade = await dodaDeltrad(rot);
+  logga(`ORT-PORT: ${dodade.length ? `SIGTERM→SIGKILL-trappa mot ${dodade.join(", ")}` : "ort-trädet redan borta"}`);
+  try {
+    execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+  } catch {
+    /* pm2 avgör — utfallet döms av verifieringen nedan */
+  }
+  const frisk = await varm();
+  const efter = hamtaPortagare(3000);
+  const p2 = ak1aRad();
+  const atlingEfter =
+    !efter.okand && efter.finnas && efter.pid != null && p2.pid != null && arAttling(efter.pid, p2.pid);
+  sparaState({
+    ...lasState(),
+    restarts: Number.isFinite(p2.restarts) ? p2.restarts : p.restarts,
+    senasteRaddning: Date.now(),
+    kooldownMin: frisk && atlingEfter ? 120 : 20,
+  });
+  logga(`ORT-RECLAIM KLAR: svarar=${frisk} portägare-är-pm2-ättling=${atlingEfter} (kooldown ${frisk && atlingEfter ? 120 : 20} min)`);
+  process.exit(frisk && atlingEfter ? 0 : 1);
 }
 
 /** Uppvärmning: nät mätningar à 20 s — första svaret vinner. Nybyggd
@@ -249,6 +313,30 @@ async function huvud() {
   if (p.saknas) {
     logga("ak1a finns inte i pm2 — lämnar över till daemonen");
     process.exit(0);
+  }
+
+  // F2-ORTPORTVAKTEN: körs FÖRE kooldown-grenen — ort-läget (prod
+  // betjänad av en process UTANFÖR pm2:s kontroll) är en egen faroklass;
+  // en 120-min kooldown från ett orelaterat räddningsbygg fick aldrig
+  // blinka igen (incidentens 27 min). Deploy-låset respekteras alltid —
+  // under deployn äger den portövertagandet (vantad-deploy-doktrinen).
+  const portagare = hamtaPortagare(3000);
+  if (!portagare.okand) {
+    const agareArPm2Attling =
+      portagare.finnas && portagare.pid != null && p.pid != null ? arAttling(portagare.pid, p.pid) : false;
+    const ortplan = planeraOrtvard({
+      status: p.status,
+      portFinns: portagare.finnas,
+      agarePid: portagare.pid ?? null,
+      agareArPm2Attling,
+      lasUpptagen: lasUpptagen(),
+    });
+    if (ortplan.typ === "vantad-deploy") {
+      logga(`ORT-VAKT: ${ortplan.meddelande} — vik, deployn startar appen`);
+      sparaState({ ...state, restarts: p.restarts, senasteRaddning: nu, kooldownMin: 20 });
+      process.exit(0);
+    }
+    if (ortplan.typ === "ort-port") await ortLakning(p, state, portagare.pid, ortplan.meddelande);
   }
 
   const okNu = await svarar();

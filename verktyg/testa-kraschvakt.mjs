@@ -12,7 +12,8 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { planeraAtguard, tolkaPm2, kooldownAktiv, planeraStartEfterMisslyckatBygg } from "./kraschvakt.mjs";
+import { planeraAtguard, tolkaPm2, kooldownAktiv, planeraStartEfterMisslyckatBygg, planeraOrtvard } from "./kraschvakt.mjs";
+import { arAttling } from "./process-trad.mjs";
 
 let pass = 0;
 const fel = [];
@@ -173,6 +174,86 @@ krav(
   krav(
     "26 felgrenen sparar kort kooldown (120-kvarvarande bussen botad)",
     felgren.includes("sparaState(") && felgren.includes("kooldownMin: start.kooldownMin")
+  );
+}
+
+// ── F2-ORT-PORTVAKTEN (2026-09-20, prodincident 06:10–06:37 lokal):
+//    deploy-omstarten orphande pm2:s gamla app-träd som behöll port 3000
+//    — pm2 errored i EADDRINUSE-slinga medan ORTEN svarade 200, såväl
+//    prod-synkens HTTPS-kontroll som vaktens okNu mätte grönt mot fel
+//    process. Nu: portägaren MÅSTE vara pm2-ättling ────────────────────
+krav(
+  "27 F2-fallet: ort på 3000 + errored + inget lås → ort-port (reclaim, ALDRIG bygg)",
+  planeraOrtvard({ status: "errored", portFinns: true, agarePid: 3410755, agareArPm2Attling: false, lasUpptagen: false }).typ === "ort-port"
+);
+krav(
+  "28 ort doms oavsett pm2-status (online + främman ägare = ändå ort)",
+  planeraOrtvard({ status: "online", portFinns: true, agarePid: 123, agareArPm2Attling: false, lasUpptagen: false }).typ === "ort-port"
+);
+krav(
+  "29 frisk: ägaren ÄR pm2-ättling → pass (falska positiva får aldrig störa)",
+  planeraOrtvard({ status: "online", portFinns: true, agarePid: 555, agareArPm2Attling: true, lasUpptagen: false }).typ === "pass"
+);
+krav(
+  "30 port fri → pass (övriga vaktlogiken styr)",
+  planeraOrtvard({ status: "errored", portFinns: false, agarePid: null, agareArPm2Attling: false, lasUpptagen: false }).typ === "pass"
+);
+krav(
+  "31 ss hemlighåller pid (agarePid null) → pass (försiktigt — omätbart ≠ ort)",
+  planeraOrtvard({ status: "errored", portFinns: true, agarePid: null, agareArPm2Attling: false, lasUpptagen: false }).typ === "pass"
+);
+krav(
+  "32 ort + deploy-lås upptaget → vantad-deploy (deployn äger portövertagandet)",
+  planeraOrtvard({ status: "errored", portFinns: true, agarePid: 123, agareArPm2Attling: false, lasUpptagen: true }).typ === "vantad-deploy"
+);
+
+// ── arAttling (process-trad): ättlingskedjan med injicerbar PPid-läsare ─
+const karta = new Map([
+  [101, 100], // next-server → sh
+  [100, 7],   // sh → pm2:s ak1a-app-pid
+  [7, 1],     // ak1a-app → init (pm2-daemonens fäste)
+]);
+const lasPpidFake = (pid) => (karta.has(pid) ? karta.get(pid) : null);
+krav(
+  "33 arAttling: next-server(101) är ättling till ak1a(7) via sh(100)",
+  arAttling(101, 7, lasPpidFake) === true
+);
+krav(
+  "34 arAttling: främmande process (99, PPid 1) är INTE ättling — F2-ortens signatur",
+  arAttling(99, 7, (pid) => (pid === 99 ? 1 : lasPpidFake(pid))) === false
+);
+krav(
+  "35 arAttling: cirkulär kedja (a→b→a) hänger ej (maxDjup bryter)",
+  arAttling(1, 999, (pid) => (pid === 1 ? 2 : 1)) === false
+);
+krav(
+  "36 arAttling: borta pid (null-läsning) → false, ej kast",
+  arAttling(50, 7, () => null) === false
+);
+
+// ── F2-strukturkontrakt (ordagranna, Vaccin-2-mönstret): reclaimen
+//    dödar ort-trädet FÖRE pm2-restart, state sparas FÖRE första
+//    åtgärden, huvudflödet konsulterar ort-vakten FÖRE kooldown ────────
+{
+  const kalla = readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "kraschvakt.mjs"), "utf8");
+  const ortStart = kalla.indexOf("async function ortLakning");
+  const ortgren = ortStart >= 0 ? kalla.slice(ortStart, kalla.indexOf("process.exit(frisk && atlingEfter", ortStart)) : "";
+  krav(
+    "37 ortLakning: state FÖRE åtgärd + döda ort FÖRE pm2-restart (atomitetsdoktrinen)",
+    ortgren.indexOf("sparaState(") >= 0 &&
+      ortgren.indexOf("dodaDeltrad(") >= 0 &&
+      ortgren.indexOf("dodaDeltrad(") < ortgren.indexOf('"pm2 restart ak1a --time"')
+  );
+  krav(
+    "38 huvudflödet: ort-vakten FÖRE kooldown-grenen (120-min kooldown får aldrig blinda ort-läget)",
+    (() => {
+      const huvudStart = kalla.indexOf("async function huvud()");
+      return (
+        huvudStart >= 0 &&
+        kalla.indexOf("F2-ORTPORTVAKTEN", huvudStart) >= 0 &&
+        kalla.indexOf("F2-ORTPORTVAKTEN", huvudStart) < kalla.indexOf("kooldownAktiv(state, nu)", huvudStart)
+      );
+    })()
   );
 }
 

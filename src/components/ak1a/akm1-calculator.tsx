@@ -772,14 +772,14 @@ export function Akm1Calculator() {
                               [r.id]: { ...p[r.id], [f.key]: e.target.value },
                             }))
                           }
-                          className="mt-1 h-9 text-sm"
+                          className="mt-1 h-9 text-sm max-md:min-h-[52px]! max-md:text-base"
                           placeholder={f.placeholder}
                         />
                       </label>
                     ))}
                   </div>
                   <details className="mt-3">
-                    <summary className={`cursor-pointer text-xs font-semibold ${GULD_TEXT}`}>
+                    <summary className={`max-md:flex max-md:min-h-[52px] max-md:items-center max-md:text-base cursor-pointer text-xs font-semibold ${GULD_TEXT}`}>
                       Var hittar jag siffrorna? (klicka för att visa)
                     </summary>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{r.kalla}</p>
@@ -971,7 +971,7 @@ export function Akm1Calculator() {
                       <select
                         value={bransch}
                         onChange={(e) => setBransch(e.target.value as Bransch)}
-                        className="mt-1 h-9 w-full max-w-xs rounded-md border border-input bg-background px-3 text-sm text-foreground"
+                        className="mt-1 h-9 w-full max-w-xs rounded-md border border-input bg-background px-3 text-sm text-foreground max-md:min-h-[52px]! max-md:text-base"
                       >
                         {BRANSCHER.map((b) => (
                           <option key={b} value={b}>

@@ -279,7 +279,7 @@ export function Superanalys() {
                 value={data.bolag}
                 onChange={(e) => setData((d) => ({ ...d, bolag: e.target.value }))}
                 placeholder="t.ex. Precise Biometrics"
-                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none max-md:min-h-[52px]! max-md:text-base"
               />
             </label>
             <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -288,7 +288,7 @@ export function Superanalys() {
                 value={data.ticker}
                 onChange={(e) => setData((d) => ({ ...d, ticker: e.target.value }))}
                 placeholder="t.ex. PREC"
-                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm uppercase text-foreground placeholder:normal-case placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm uppercase text-foreground placeholder:normal-case placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none max-md:min-h-[52px]! max-md:text-base"
               />
             </label>
           </div>
@@ -328,13 +328,13 @@ export function Superanalys() {
                       {/* DNA: primär "Visa"-knapp i marin med guldtext */}
                       <button
                         onClick={() => oppnaSparad(d)}
-                        className="btn-marin min-h-[44px] px-3 py-1.5 text-xs"
+                        className="btn-marin min-h-[44px] max-md:min-h-[52px] px-3 py-1.5 text-xs"
                       >
                         Visa
                       </button>
                       <button
                         onClick={() => tabortSparad(d.id)}
-                        className="min-h-[44px] rounded-md px-2 py-1.5 text-xs text-muted-foreground hover:text-bear"
+                        className="min-h-[44px] max-md:min-h-[52px] rounded-md px-2 py-1.5 text-xs text-muted-foreground hover:text-bear"
                         aria-label={`Radera analysen för ${d.bolag}`}
                       >
                         Radera
@@ -648,25 +648,25 @@ export function Superanalys() {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={spara}
-                className="btn-guld-signatur min-h-[44px] px-5 py-2.5 text-sm"
+                className="btn-guld-signatur min-h-[44px] max-md:min-h-[52px] px-5 py-2.5 text-sm"
               >
                 💾 Spara analysen
               </button>
               <button
                 onClick={dela}
-                className="min-h-[44px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-bold text-gold hover:bg-gold/10"
+                className="min-h-[44px] max-md:min-h-[52px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-bold text-gold hover:bg-gold/10"
               >
                 📤 Dela
               </button>
               <button
                 onClick={() => setSteg(STEG_GRANSKA)}
-                className="min-h-[44px] rounded-lg border border-gold/20 px-5 py-2.5 text-sm text-muted-foreground hover:border-gold/50 hover:text-foreground"
+                className="min-h-[44px] max-md:min-h-[52px] rounded-lg border border-gold/20 px-5 py-2.5 text-sm text-muted-foreground hover:border-gold/50 hover:text-foreground"
               >
                 Justera poängen
               </button>
               <button
                 onClick={borjaOm}
-                className="min-h-[44px] rounded-lg px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground"
+                className="min-h-[44px] max-md:min-h-[52px] rounded-lg px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground"
               >
                 Ny analys
               </button>
@@ -729,7 +729,7 @@ export function Superanalys() {
           <button
             onClick={() => setSteg((s) => Math.max(0, s - 1))}
             disabled={steg === 0}
-            className="min-h-[44px] rounded-lg border border-gold/30 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground disabled:opacity-30"
+            className="min-h-[44px] max-md:min-h-[52px] rounded-lg border border-gold/30 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground disabled:opacity-30"
           >
             ← Föregående
           </button>
@@ -741,7 +741,7 @@ export function Superanalys() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             disabled={!kanFramat}
-            className={`${steg === STEG_GRANSKA ? "btn-guld-signatur" : "btn-marin"} min-h-[44px] px-5 py-2 text-sm disabled:opacity-40`}
+            className={`${steg === STEG_GRANSKA ? "btn-guld-signatur" : "btn-marin"} min-h-[44px] max-md:min-h-[52px] px-5 py-2 text-sm disabled:opacity-40`}
           >
             {steg === STEG_GRANSKA ? "Kör analysen →" : "Nästa →"}
           </button>

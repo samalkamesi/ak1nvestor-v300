@@ -40,6 +40,30 @@
       "titel": "prestandavåg: mobil läsbarhet ≥52px ROND 3 — nya ytor sedan o8 (superanalys, kalkylator, konfluens, netnet, dataset, ny kurs): CDP-mätning + bokföring",
       "ts": 1789918048751,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o123",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789920446146,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o124",
+      "agare": "s8-u1",
+      "manifest": null,
+      "titel": "patchkö omgång 5 + takhöjning",
+      "ts": 1789920527453,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o125",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789920306682",
+      "titel": "kvalitetsvåg: kraschvaktens återställningsbevis (ÅTERSTÄLLD-grön) + eskaleringens F2-ortport-klasser + 09-18-incidentens protokollbaserade nedläggning (kraschvakt 2 aktiva → 0, feljakt 163 öppna → färre)",
+      "ts": 1789920639580,
+      "status": "reserverat"
     }
   ]
 }

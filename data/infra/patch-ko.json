@@ -38,5 +38,21 @@
   {
     "paket": "react-hook-form",
     "version": "7.88.0"
+  },
+  {
+    "paket": "tailwind-merge",
+    "version": "3.7.0"
+  },
+  {
+    "paket": "puppeteer-core",
+    "version": "25.11.0"
+  },
+  {
+    "paket": "@reactuses/core",
+    "version": "6.5.9"
+  },
+  {
+    "paket": "bun-types",
+    "version": "1.4.2"
   }
 ]

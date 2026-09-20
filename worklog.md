@@ -16017,3 +16017,32 @@ till "script-lager enligt design, DOM orörd". u4-arvet (FÖRE-HTML-arkiv
 OPTIMERING/o121-prestanda-o119-efter-s7.md. Kö: sv-TBT-närmätning vid
 nästa sv-fönster · o118 §6 produktbeslut (listlängd) fortfarande KUNDENS
 rond. [fabrik]
+
+## SPÅR 8 s8-u1 (välj själv-fönster, vakt 1/3) — 2026-09-20 ~18:0x–18:2x lokal: kvalitetsvåg o124 — PATCHKÖ OMGÅNG 5 LASTAD efter takhöjning 10→15 + hälsorapport på omgång 4-kvittot [fabrik]
+
+Fabriksagent s8-u1. VAL med duplikatkontroll (worklog/OPTIMERING/vakten):
+o113 §7 post 2 — enda öppna posten i patchkö-spåret (post 1 stängd av
+o115:s BYGGE-GRÖNT; post 4 levererad här; post 3 major-klass förblir
+kodvåg). Läge vid start: vakten GRÖN 11:24 · mimosa 1 888/0 · omgång 4
+kvitterad 10:03Z (deploy + HTTPS 200 + lock committad). TAKHÖJNING
+(KODVÅG): PATCH_MAX_POSTER 10→15 i prod-synk.mjs med motivkommentar —
+patch-ko.json är KVITTERAD HISTORIK (o106 §5, synken tömmer aldrig) och
+stående 10/10 blockerade lastningen; svitens tak-test följde med (12→17
+poster, förväntan 15) — 67 PASS/0 FAIL före som efter; node --check ×2.
+LASTNING (o113-mönstret): registry-verifiering först — samtliga fyra är
+dist-tags.latest inom ^-intervall (tailwind-merge ^3.3.1→3.7.0 ·
+puppeteer-core ^25.10.0→25.11.0 · @reactuses/core ^6.0.5→6.5.9 devDep ·
+bun-types ^1.3.4→1.4.2 devDep); append idempotent 10→14 poster; BEVIS med
+synkens egna läsare: lasPatchKo 14 poster/0 fel, aktivPatchPlan = EXAKT
+de 4 nya (historikposterna bär ok-kvitton). Installationen förblir
+prod-synkens under deploy-låset. HÄLSORAPPORT (o73 §4-hygienen):
+beroende-vakt.mjs omkört — 9→4 inom intervall (omgång 4:s fem borta,
+package.json-skriften verifierad; kvarvarande = exakt kön), sårbarheter
+oförändrade 7 (1 high js-yaml + 6 moderates — ALLA major-klass = öppen
+kodvåg, ej patch-köns yta), major-steg 11. KVD: tsc 0 via projektbinär ·
+src orörd = INGET bygge · R2 orörd · data/blogg/ orörd · npm ci/install
+ALDRIG (npm view/audit = läsande). Protokoll:
+OPTIMERING/o124-patchko-omgang5-takhojning-s8.md (nummer reserverat via
+verktyget, o117-doktrinen: hogstaKanda o123). Kö: synkens installation +
+EFTER-mätning · major-klassen (o113 post 3) · taket räcker till ~omgång 7.
+[fabrik]

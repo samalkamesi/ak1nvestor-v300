@@ -647,7 +647,10 @@ export function synkaArbetsyta(yta, rot) {
 //     lock ⇒ locken återställs FÖRE revert-vägen så ombygget sker på
 //     bevisat fungerande grund
 
-const PATCH_MAX_POSTER = 10;
+// Tak 15 sedan o124: filen är KVITTERAD HISTORIK (o106 §5 — synken tömmer
+// den aldrig) och växer en omgång per leverans; 10 strax efter omgång 4
+// blockerade omgång 5. 15 = 10 historik + hel nästa omgång på ~5 poster.
+const PATCH_MAX_POSTER = 15;
 const PATCH_MAX_FORSOK = 3;
 const RE_PATCH_PAKET = /^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-._~]+$/;
 const RE_PATCH_VERSION = /^\d+\.\d+\.\d+(-[a-z0-9.+-]+)?$/;

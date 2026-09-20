@@ -350,3 +350,75 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. GDPR art 13 vid första övningen — informera om prestationsprofilen, minimera data, retentionstak + automatisk radering vid avslutad prenumeration. ⚠ VÄNTAR KUND (R2: prenumeration, gdpr, radering)
   10. Prompt-injection-skydd + maskinellt rådsfilter (2007:528) i mentor-pipelinen, och kö/rategränser för intaget på rappdagar (RAM-taket är känt).
 - **Mötes-id:** styrelse-muacmgtw-qizth0
+
+## 2026-09-20 22:13 — KUNDENS DELEGATION (2026-09-21, ordagrant): "jag vill att alla rättsliga beslut ska du ta beslutat på lagar på ett lagligt sätt" — R2-punkterna i RAPPORTAKADEMIN beslutas nu LAGRUNDAT, inte efter kun…
+
+- **Status:** KÖRS DIREKT (existential=false)
+- **Beslut:** Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de 4 inkomna organanalyserna.
+- **Motivering:** 4 av 5 organ redovisade analys; 1 var inte tillgängliga inom tidsgränsen. Fråga: KUNDENS DELEGATION (2026-09-21, ordagrant): "jag vill att alla rättsliga beslut ska du ta beslutat på lagar på ett lagligt sätt" — R2-punkterna i RAPPORTAKADEMIN beslutas nu LAGRUNDAT, inte efter kundens bokstavssvar.  UNDERLAG på disk: data/forskning/RAPPORTAKADEMIN/laggrundade-beslut-2026-09-21.m…
+- **Roller:**
+  - ORDFORANDE: Rollen kunde ej redovisa: tidsgräns (65 s) — rollen redovisas som ute
+  - TEKNIK: MINNE LADDAT — tråden: rond 127 (RAM-spåret) levererad och standby löper; RAPPORTAKADEMIN:s R2-punkter ligger nu till beslut och båda underlagen är lästa på di…
+  - SAKERHET: Säkerhet (CISO) — jag har ingenting att invända; jag instämmer i beslut 1 och 2 och principen LAGGRUNDEN, med tre säkerhetsvillkor som gör papperet till maskin…
+  - JURIDIK: MINNE LADDAT — rond 127 (RAM-spåret) levererad och bokförd, RAPPORTAKADEMIN:s tio åtgärder löper; nu fattar jag som Juridik & Compliance de kunddelegerade R2-b…
+  - TILLVAXT: MINNE LADDAT — rond 127 (RAM-spåret) levererad och bokförd, standby löper; nu avger jag Tillväxt/SEO:s yttrande över RAPPORTAKADEMIN:s laggrundade R2-beslut.
+- **Åtgärder:**
+  1. Committa båda dokumenten (i dag ospårade i git — riskerar förloras vid prod-synk) med LAGRUND-ersättningen markerad och 12-månadersalternativet formellt avskrivet.
+  2. Implementera BESLUT 1 mekaniskt i Fas 1: minimeringsfältlistan som tabelldefinition, gallringsjobb kopplat till prenumerationsstatus, art 13-komponent vid första övningen samt export/radering-endpoint (art 15/17) i medlem-ytan. ⚠ VÄNTAR KUND (R2: prenumeration, radering)
+  3. Definiera backup-gallring så automatisk radering även når backup-kopiorna — dokumenterat i DRIFTSBOKEN med retentionstak. ⚠ VÄNTAR KUND (R2: radering)
+  4. Bygg citat-valideraren i rapport-intagets pipeline: hårt tak 200 ord/sektion + obligatoriska källa/länk-fält, failar hela leveransen vid överträff — nyckeltal/fakta passeras fritt enligt ÄL 1 §.
+  5. Uppgradera beslutsminne-verktyget till att kräva lagrum/tillämpning/källa-fält och neka registrering av rättsliga beslut utan dem — LAGGRUNDEN som körande kod. ⚠ VÄNTAR KUND (R2: radera)
+  6. Bygg raderingsjobbet mekaniskt (cron + kvittologg per elev, kaskad till Supabase, fel-loggar och cachar) och dokumentera backupens retentionstak för raderade personuppgifter. ⚠ VÄNTAR KUND (R2: radera, radering)
+  7. Implementera 200-ords-taket som validator i rapport-intaget med provenienslogg (källa, tidpunkt, hash) per rapport — refusera, trimma inte manuellt.
+  8. Rendera art 13-informationen i själva första övningsflödet (mekanisk yta, ej bara policytext) med export/radering som medlem-funktion enligt beslut 1 punkt 3–4. ⚠ VÄNTAR KUND (R2: radering)
+  9. Bokför kunddelegationen 2026-09-21 i beslutsminnet som LAGGRUNDEN:s legitimitetskälla, med notis att varje framtida R2-yta kräver eget uttryckligt beslutsgrund.
+  10. Avskriv formellt 12-månadersalternativet ur beslutsunderlaget och peka samtliga gallringshänvisningar till art 5.1 e-konfigurationen.
+- **Mötes-id:** styrelse-muadcvyf-cg1jm2
+
+## 2026-09-20 22:39 — KUNDORDER (delegerad "gör allt väsentligt" + frågan): systemet ska vara SPEL + lärande, eleven ska uppleva EVOLUTION som följer den var den än går, och kunddata ska bli MÖNSTER (siffror) som utveckla…
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Evolutionsspåret godkänns i sin helhet som RAPPORTAKADEMIN:s gällande design: spelet + följeslagaren som skikt på existerande XP-system (ingen parallellmotor), mönsterdatabasen i Supabase från dag ett som egen identifierarfri domän, och rappdagsRAIDEN som återkommande event-format. Rättskonstruktionen (art 6.1 f under prenumeration + maskinell anonymiseringsgrind ≥10 + skäl 26 för mönstren) fastställs som gällande med organens villkor — kundens egen order med design på disk är den uttryckliga grundvalen för just denna yta.
+- **Motivering:** Alla fyra organ saknar reservationer och samsas om samma nödvändighet: konstruktionen håller endast om anonymiseringen är en maskinell server-side-grind (inte policy) och mönstertabellerna aldrig får användar-FK eller individkoppling — då överlever mönstren art 5.1 e-gallringen per konstruktion (skäl 26), inte per undantag. Tavlorna mäter kalibrering och aldrig avkastning, vilket håller hela spelandet på utbildningssidan av 2007:528. Kundens direkta KUNDORDER med lagkärnan angiven utgör R2-grundningen; framtida nya rättsliga ytor kräver fortfarande varje sitt eget uttryckliga kundgrundval.
+- **Roller:**
+  - ORDFORANDE: {"beslut": "Evolutionsspåret godkänns i sin helhet som RAPPORTAKADEMIN:s gällande design: spelet + följeslagaren som skikt på existerande XP-system (ingen para…
+  - TEKNIK: Mönstertabeller i Supabase från dag ett som identifierarfri domän (RLS, inga användar-FK) med enbart statiska förberäknade aggregat mot differensattacker; spelet + följeslagaren som skikt på EN XP-le…
+  - SAKERHET: MINNE LADDAT — tråden står i LAGBESLUT-steg 2 (de laggrundade modulerna i src/lib/rapportakademin/); detta är Säkerhetens (CISO) yttrande över evolutionsspåret…
+  - JURIDIK: Art 6.1 f + skäl 26 håller med fyra villkor: levande tre-stegsavvägning, mekanisk art 21-invändningsrätt, WP29-test av anonymiseringen och art 13 vid insamlingen; kalibrering-aldrig-avkastning är en …
+  - TILLVAXT: MINNE LADDAT — tråden står i styrelsens behandling av evolutionsspåret; underlaget läst på disk, tre organ har yttrat, här kommer Tillväxt/SEO:s yttrande.
+- **Åtgärder:**
+  1. Supabase-migration från dag ett: mönstertabeller som egen anonym domän — inga användar-FK, RLS från första migrationen (service-role-only), verifierad med negativt test att anon-nyckeln inte kan läsa. ⚠ VÄNTAR KUND (R2: domän)
+  2. Bygg anonymiseringsgrinden som maskinell validator i intagspipelinen: undertryckning av grupper <10, kontroll av fältkombinationer mot singling-out/länkning/härledning (WP29 05/2014), ingen fritext, tryckning av småceller/ytterlighetsvärden — loggat för bevisbarhet.
+  3. Publicera endast förberäknade statiska aggregat (stänger differensattacker via upprepade A∩B-frågor); aggregeringen körs medan prenumerationen lever, av samma cron som äger art 5.1 e-gallringsbeslutet. ⚠ VÄNTAR KUND (R2: prenumeration)
+  4. Dokumentera tre-stegs-intresseavvägningen (intresse · nödvändighet · avvägning) som levande fil i data/forskning/RAPPORTAKADEMIN/ innan pipelinen startar — enligt LAGGRUNDEN med lagrum + tillämpning + källa.
+  5. Bygg invändningsrätt (art 21) i mönsterpipelinen: mekanisk exkludering ur aggregationen vid invändan, loggad.
+  6. Art 13-tillägg om mönsterändamålet visas i första övningens gränssnitt VID insamlingen, innan pipelinen startar — inte efter.
+  7. Verkställ spelet + följeslagaren som skikt: EN XP-ledger i existerande system (82 230-poäng, badges, certifikat), skilltrappor lästa ur V01–V20:s lagrade övningsresultat, XP- och bedömningsauktoritet enbart server-side — klienten kan aldrig post XP.
+  8. Analysprofilen (5×5×4) + mentorns minne server-side i medlem-progress med uid-scopad RLS, och med i gallrings-, export- och raderingsjobbet (art 5.1 e) inklusive backup-retentionen — två åtskilda tabellfamiljer så gallring aldrig kan röra mönstren. ⚠ VÄNTAR KUND (R2: radering)
+  9. RappdagsRAIDEN schemaläggs i befintlig cron med tavlan driven av kalibreringsmotorn: ALDRIG avkastning, anonymiserade visningsnamn som standard, rate limits på event-endpoints; boss-formuleringar alltid pedagogiska ('så läser en erfaren analytiker'), aldrig hållning i bolaget.
+  10. Boka kundens delegation och KUNDORDER 2026-09-21 som legitimitetskälla för denna yta i beslutsminnet enligt LAGGRUNDEN, med noteringen att varje framtida ny rättslig yta kräver sitt eget uttryckliga kundgrundval.
+- **Mötes-id:** styrelse-muaeaj3u-a16r4l
+
+## 2026-09-20 23:02 — KUNDORDER (återigen direkt till organen): varenda del av hemsidan ska följa EVOLUTION, vi ska vara JORDNÄRA, INTEGRATION och HARMONI högst på allt — organen ska jobba med (a) KVALITETEN, (b) KONTO-SY…
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Ekosystem-harmonin godkänns i sin helhet (A–D) som gällande designprincip för ALLA plattformens ytor — fasad som kontohus-fasningen gemensamma komponenter → min-sida som vardagsrum → harmoni-audit, med all generositet inom befintliga priser; kundens direkta KUNDORDER med design på disk är grundvalen och samtliga R2-ytor (priser, domän, betalning) förblir orörda.
+- **Motivering:** Alla fyra organ godkänner utan reservation och konvergerar på samma villkor: harmoni uppstår genom återanvändning av befintliga byggstenar (ingen parallellmotor), varje siffra föds maskinellt ur registret och renderas server-side så sanningen aldrig åldras till vilseledande marknadsföring, varje ny kontoyta kopplas in i de levererade LAGBESLUT-modulerna innan merge, och auditen byggs som utökning av gränssnittsvakten — en vakt, ett larmflöde. Evolutionsspråket mäter lärande och kalibrering, aldrig kronor eller avkastning, vilket håller hela ekosystemet tryggt på utbildningssidan av lagen (2007:528).
+- **Roller:**
+  - ORDFORANDE: {"beslut":"Ekosystem-harmonin godkänns i sin helhet (A–D) som gällande designprincip för ALLA plattformens ytor — fasad som kontohus-fasningen gemensamma kompo…
+  - TEKNIK: Godkänner A–D: harmoni = återanvändning — gemensamma komponenter som fas 0, min-sidan på dem, siffror maskinella, audit i gränssnittsvakten.
+  - SAKERHET: MINNE LADDAT — designunderlaget läst; här kommer Säkerhetens (CISO) yttrande över ekosystem-harmonin.
+  - JURIDIK: Godkänner med fyra bindande villkor: maskinella siffror, evolution mäter lärande aldrig avkastning, art 13 + samtycke × 3 språk, värdigrinden symmetrisk.
+  - TILLVAXT: MINNE LADDAT — tråden står i styrelsens behandling av ekosystem-harmoni-order; underlaget läst på disk, tre organ har yttrat, här kommer Tillväxt/SEO:s yttrand…
+- **Åtgärder:**
+  1. Fas 0 före min-sidan: lyft profilgestalt + progress-hook till gemensamma komponenter (EN källa, alla ytor) — skikt på befintligt, ingen parallellmotor.
+  2. Evolutionssiffror maskinellt ur registret (endpoint/byggtids-JSON), server-side renderade (ISR) på alla ytor och tre språk — inga handskrivna siffror kan åldras.
+  3. Bygg min-sidan som ekosystemets vardagsrum på de gemensamma komponenterna: lazy-loadade sektioner, server-side data, inga klientvattenfall, no-store på personliga API-svar.
+  4. Persondata-inventering innan varje merge: pass, notiser och mentorns minne kopplas in i gallring/art13/export-radering (LAGBESLUT-modulerna) — ingen ny kontoyta utan sina GDPR-rader. ⚠ VÄNTAR KUND (R2: gdpr, radering)
+  5. Harmoni-audit som utökning av gränssnittsvakten: konto-konsekvens × sv/en/ar + autentiseringsmätning (utloggad ser aldrig inloggat innehåll) + hreflang-/ton-konsistens + juridikcheck (art 13, kak-/notis-samtycke). ⚠ VÄNTAR KUND (R2: juridik)
+  6. Lansera ge-före-fråga-CTA:n först (gratis rapportpass + mentorns svar på en fråga) med throttling; paywall-preview visar endast metadata — betalt innehåll aldrig nåbart via gratis-endpoints.
+  7. Bygg rappdagskalendern som evergreen eventsida med kvartalsvis aktualitet ur kvartalskalendern — äg säsongsefterfrågan på alla tre språk.
+  8. Värdigrindens symmetri: avslut/utgång av konto och prenumeration minst lika lätt som registrering — dokumenteras på transparens-sidan. ⚠ VÄNTAR KUND (R2: prenumeration)
+  9. Granska paywall-texter mot 'gratis för alltid'-beslutet samt förbjud kronor/avkastning i profilens tillväxtspråk — evolution mäter kalibrering, streaks och passerade rapporter.
+  10. Publika evolutionssiffror hålls identifierarfria med smågruppsregeln (≥10) dokumenterad per yta.
+- **Mötes-id:** styrelse-muaf4odf-3bajj2

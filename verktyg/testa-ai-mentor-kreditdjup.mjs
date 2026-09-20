@@ -601,7 +601,7 @@ GAMLA.forEach((f) => {
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",];
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -617,7 +617,9 @@ GAMLA.forEach((f) => {
     FEL.push("importen av ai-mentor-kreditdjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
+    // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
+  // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltKemisektor", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

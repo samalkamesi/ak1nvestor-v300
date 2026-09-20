@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (470 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (476 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 428 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 434 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -233,6 +233,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "sj-06-arv-gava-och-ingaende-varde", titel: "Arv, gåva och aktiernas ingående värde", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
+  { slug: "sj-07-forlustavdrag-och-kvotering", titel: "Förlustavdrag och kvotering — förlustens skattemekanik", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bf-05-ankareffekt", titel: "Ankareffekt — snitt irrelevant", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
   { slug: "bf-06-tillganglighetsheuristik", titel: "Tillgänglighetsheuristik", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 16 },
   { slug: "bf-07-framstegseffekt", titel: "Framstegseffekt", kategori: "BETEENDEFINANS", niva: 1, kraverFas: 0, vIndex: -1, minuter: 14 },
@@ -402,6 +403,8 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "tx-03-nar-skapar-tillvaxt-varde", titel: "När skapar tillväxt värde? — återinvesteringens matematik", kategori: "TILLVÄXT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-04-tillvaxtens-granser", titel: "Tillväxtens gränser — S-kurvan, mättnaden och utrymmesräkningen", kategori: "TILLVÄXT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-05-tillvaxtens-forsta-lasning", titel: "Tillväxtens första läsning — årtal, procent och tjocka filtar", kategori: "TILLVÄXT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "tx-06-enhetsekonomin", titel: "Enhetsekonomin — nästa kunds hela räknelära", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "tx-07-fran-siffra-till-kassa", titel: "Från siffra till kassa — tillväxtens konverteringstest", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-01-kapitalstruktur-grunder", titel: "Kapitalstruktur — hur bolaget är finansierat", kategori: "KAPITALSTRUKTUR", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-02-kapitalallokering", titel: "Kapitalallokering — styrelsens fem vägar", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-03-skuldens-anatomi", titel: "Skuldens anatomi — löptider, bindning och covenants", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -458,6 +461,8 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ib-03-forvaltarskapet", titel: "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-04-avkastningsrakningen", titel: "Avkastningsräkningen — substans, rabatt och utdelning: varje krona har en adress", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-05-kostnadstrappan", titel: "Kostnadstrappan — vad som äts på vägen mellan vinsten och fickan", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ib-06-evighetskapitalet", titel: "Evighetskapitalet — ägandet utan slutdatum", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ib-07-family-officen", titel: "Familjekontoret — kapitalets tredje ägarform", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-01-private-equity-fonder", titel: "Private equity-fonder — hur onoterat kapital arbetar", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-02-utfasningar-och-irr-mekanik", titel: "Utfasningar och IRR-mekanik — hur fonder realiserar värde", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-03-forvarvsmaskinen", titel: "Förvärvsmaskinen — hur private equity bygger (och belastar) ett bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -498,6 +503,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "rp-04-volatilitetsbudgeten", titel: "Volatilitetsbudgeten — portföljens risk satt i ett tal och fördelad i kronor", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-05-sekvensrisken", titel: "Sekvensrisken — utfallsordningen som äger decenniet", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-06-volatilitetsdraget", titel: "Volatilitetsdraget — brusets avgift på tillväxten", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rp-07-vantan-i-svansen", titel: "Väntat fall i svansen — CVaR och måttet bakom tröskeln", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -506,4 +512,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 470;
+export const LARVAG_ANTAL_KURSER = 476;

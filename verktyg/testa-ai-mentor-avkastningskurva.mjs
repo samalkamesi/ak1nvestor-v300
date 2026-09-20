@@ -590,10 +590,16 @@ const GAMLA = [
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
     "K03 register-läge — 470 kurser (spår 5:s omgång-23-rebake 2026-09-20: +6 kurser am-09/rp-06/pe-07/kt-08/vr-09/ek-07; basotestet E01 grönt)",
+
+      // Fönster 29 (s6-u2, _s6u2o29-): K03 470→476 — spår 5:s omgång-24-rebake (2026-09-20:
+
+      // sj-07/tx-06/ib-06 + rp-07/ib-07/tx-07) växte registret utan svitpass; E01-grund (registrets
+
+      // äkthet) oförändrad — konstanten följer registret.
     // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): 464→470 — spår 5:s omgång 23
     // lämnade konstanten efterföljande (KVD-fyndet kvarstår: hårdkodade
     // registerlägen åldras med varje rebake; basotestet E01 förblir grinden).
-    KURSREGISTER.length === 470,
+    KURSREGISTER.length === 476,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -665,7 +671,7 @@ const GAMLA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",];
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -681,7 +687,9 @@ const GAMLA = [
     FEL.push("importen av ai-mentor-avkastningskurva-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
+    // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
+  // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltKemisektor", "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

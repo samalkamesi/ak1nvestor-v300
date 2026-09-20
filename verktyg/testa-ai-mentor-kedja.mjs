@@ -666,6 +666,68 @@ const MOTORDEFS = [
   // FÖRE byggstart. 70:e motorn (av 70), efter co-invest, FÖRE marknadsrytm
   // — deras SIST-deklaration + L01 (multipel-precedensen).
   { namn: "tvangsmekanik", fil: "ai-mentor-tvangsmekanik-fragor.ts", fn: "svaraLokaltTvangsmekanik", arr: "TVANGSMEKANIK_MONSTER", antal: 2 },
+  // 2026-09-20 fönster 29 (s6-u2, verktygsprefix _s6u2o29-): händelsemotor —
+  // KATALYSATOR-KATEGORISTÄNGNING 9/11 → 11/11 via AKM1:s två sista lösa
+  // variabelkurser: v16 PRODUKTLANSERINGAR (lanseringsdramat — tre faser:
+  // förväntan +37,5 % → eventvecka +8,2 % → månaden efter −5,0 %; rNPV
+  // 0,85 × 3,0 = 2,55 miljarder; IV-varningen 80/√12 ≈ 23 %; lanserings-
+  // nettot 275 − 180 = 95, kostnaden äter 65,5 %; SAAB:s tioårsdröm
+  // 6,1 %/år; Sinch-spegeln −95 %) + v17 AVTAL & PARTNERSKAP (avtals-
+  // mekaniken — LOI-trappan: avsiktsförklaringar leder till bindande avtal
+  // i 30–50 % av fallen; take-or-pay-trappan; TCV/ACV 500/10 = 50;
+  // budpremie-banden 20–40/40–60/0–15; budspreaden 0,90 × 13 − 0,10 × 17
+  // = 10,0; synergifällan 60–70 % förstör + Sinch 25/25-skulden; Geely-
+  // rabatten 72,3 %; Medimmune-avskrivningen 28,8 %). Källmärke 5+5
+  // numrerade 📖 Källor; registerdrivna tal VID SVARSTID (KATALYSATOR = 11
+  // LIVE). Sond _s6u2o29-sond.mjs (3 ronder, kedjan 70 motorer/189
+  // monsters): kärnorden RENTA; dokumenterade gränser — naket
+  // «produktlansering»/«partnerskap»/«katalysatorkalendern» → basen ·
+  // «s-kurvan» → tillväxtdjupet · «pipelinen» → sektorskola2 · «merger
+  // arbitrage» → bokmastaren — starkord/TEXT, aldrig kärnord. RÄTTELSE av
+  // fönster-28-raden: deras «1 (v17 kvar)» missade v16 — exakta slug-
+  // verifiering visar BÅDA lösa; detta lager stänger kategorin helt. Anspråk
+  // data/vakten/s6-u2-fonster29-ansprak.md FÖRE byggstart. 71:a motorn (av
+  // 71), efter tvångsmekanik, FÖRE marknadsrytm — deras SIST-deklaration +
+  // L01 (multipel-precedensen).
+  { namn: "handelsemotor", fil: "ai-mentor-handelsemotor-fragor.ts", fn: "svaraLokaltHandelsemotor", arr: "HANDELSEMOTOR_MONSTER", antal: 2 },
+  // 2026-09-20 fönster 30 (s6-u3, verktygsprefix _s6u3o29-): lönsamhetsgrund —
+  // KATEGORISTÄNGNING LÖNSAMHET 9/12 → 12/12 via familjens tre sista lösa
+  // kurser, TRE monsters: lönsamhetens grund (ln-05 primär, källor v07 +
+  // v09 + ln-04 + roic-01; bageriets trappa 60/25/20/13,5 post för post ·
+  // per styck 25 − 10 = 15 · kampanjen break-even +50 %, +20 % ⇒ 12) +
+  // nästa kronas avkastning (roic-03 primär, källor roic-01 + ln-01 + ln-02
+  // + mk-09; 15,0 döljer 8,0: 16/200, kombinerat 166/1 200 = 13,8, fyra år
+  // 214/1 800 = 11,9 · inflationens minne 40/100 = 40,0 mot 40/250 = 16,0 ·
+  // FCF 80/börsvärde 800 = 10,0) + värdeekvationen (roic-04 primär, källor
+  // roic-01 + km-008 + vr-03 + ib-04; värdemultiplikatorn 30/8 = 3,75 ·
+  // tvillingarna 0,2 × 30 = 0,6 × 10 = 6 % men FCF 80/40 · Gordon-P/E 21,2
+  // mot 10,6). Sondens dokumenterade gränser (_s6u3o29-sond{,2}.mjs,
+  // 48/53 NULL + 0 grannar + handelsemotor-grannkontroll 0): «hur mäts
+  // lönsamhet?» → extra · «inflationens minne» → makro · «tillväxtens
+  // tvillingar»/«multipelns pris på spridningen»/«negativt eget kapital»
+  // → basen · «nya kronor mot bokförda» → extra · naket «roic»/«dupont»/
+  // «wacc»/«nopat» → lonsamhetsdjupet · naket «multipel» → djup ·
+  // «marginaltrappan» → volatilitetsmekaniken · «bruttomarginal»/«roe»
+  // titelform → basens V-uppslag. Anspråk data/vakten/s6-u3-fonster30-
+  // ansprak.md FÖRE byggstart. 72:a motorn, efter handelsemotor, FÖRE
+  // marknadsrytm (deras SIST-deklaration + L01 — multipel-precedensen).
+  { namn: "lonsamhetsgrund", fil: "ai-mentor-lonsamhetsgrund-fragor.ts", fn: "svaraLokaltLonsamhetsgrund", arr: "LONSAMHETSGRUND_MONSTER", antal: 3 },
+  // 2026-09-20 fönster 29 (s6-u1): kemisektor — molekylens ekonomi (1 monster:
+  // kemisektorn — kväve ur luft, fosfor ur berg, balanspriset). se-21 primär
+  // (SEKTORANALYS:s sista lösa kurs ⇒ kategorin fullt mentorlänkad) +
+  // källor se-16 + km-029 + ln-03 + mt-07. Aritmetiken: Norden Bulk
+  // 12 000 × 18 % = 2 160 · Norden Special 3 000 × 38 % = 1 140 — 34,5 % av
+  // parets bruttovinst på 20 % av omsättningen · ammoniaken 33 energienheter/
+  // ton ⇒ gas 4/8/12 = 132/264/396 USD/ton · balanspriset: partnern 14/ton
+  // mot lågkostnadens 278 (nitton gånger), pris 500 ⇒ −46/218. Sond C
+  // (_s6u1o29c-sond.mjs): 20/20 kandidater NULL, 31 kärnord 0 grannar;
+  // gränser i TEXT (fosfatbrottet → se-20 · varukorgen → km-045 · gasen →
+  // km-043). TVIST-NOTIS: förstavalet v17 (anspråk 22:19:54) togs fysiskt
+  // av s6-u2 (handelsemotor 22:24–22:25, anspråk 22:22:10) — lämnat helt;
+  // v15-reserven död (basens nätverkseffekt-familj). Anspråk data/vakten/
+  // s6-u1-fonster29-ansprak.md FÖRE byggstart. 73:e motorn, efter
+  // lonsamhetsgrund, FÖRE marknadsrytm (deras SIST + L01).
+  { namn: "kemisektor", fil: "ai-mentor-kemisektor-fragor.ts", fn: "svaraLokaltKemisektor", arr: "KEMISEKTOR_MONSTER", antal: 1 },
   // 2026-09-20 omgång 25: marknadsrytm (s6-u3, manifest auto-s6-1789864506792
   // — korrelationsrisk/kapitalcykeln/bull-bear, 3 monsters). MOTORDEF BÄRS
   // HÄR av s6-u2 enligt riskpremie-precedensen (u1 omgång 21: «motordef här
@@ -687,7 +749,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 189 (2026-09-20 fönstret efter omgång 27: tvångsmekanik +2 — kontraktet som säljer åt dig och kalendern som flyttar kursen: marginalhandeln (am-09 primär, källor km-030 + mk-04 KÄLLAKTIVERING + bf-15 + am-01) + optionsförfallets dag (kt-08 primär, källor km-059 + am-05 + kt-03 KÄLLAKTIVERING + od-01) (s6-u2, verktygsprefix _s6u2o28-), aktiverar am-09 ⇒ AKTIEMARKNADEN I PRAKTIKEN fullt länkad (sista lösa kursen) + mk-04 ⇒ MAKROEKONOMI fullt länkad + kt-08/kt-03 ⇒ KATALYSATOR 3 lösa → 1 (v17 kvar), 70:e motorn efter co-invest FÖRE marknadsrytm som förblir SIST [70:e av 70]. Tidigare 187 (2026-09-20 manifest auto-s6-1789912510460: co-invest +1 — andelen bredvid fonden: två biljetter/urvalsasymmetrin/break-even 1,76x (s6-u1, v2 efter nedställning av v1 marginalhandeln till s6-u2), aktiverar pe-07 ⇒ PRIVATE EQUITY & INVESTMENTBOLAG fullt länkad 14/14 + pe-04 källaktivering, 69:e motorn efter volatilitetsmekanik FÖRE marknadsrytm som förblir SIST [69:e av 69]. Tidigare 186 (2026-09-20 manifest auto-s6-1789912510460: modernarisk +3 — regulatorisk risk + GDPR/datarisk + ESG-risk, s6-u3, TREDJE motorn FÖRE basen, 68-motorläget. Tidigare 183 (2026-09-20 omgång 27: volatilitetsmekanik +2 — varifrån bruset kommer och vad det kostar: volatilitetsdraget (rp-06 primär, källor rp-04 + rp-05) + marginaltrappan (ln-03 primär, källor ln-01 + v07) (s6-u2, manifest auto-s6-1789912510460), aktiverar rp-06 + ln-03, 66:e motorn efter pengarstid FÖRE marknadsrytm som förblir SIST [66:e av 67]; återapplicering efter syskons fullträdsåterställning). Tidigare 181 (2026-09-20 omgång 26: pengarstid +2 — pengarnas tid och ordning: andrahandsmarknaden (pe-05 primär, källor pe-06 J-kurvan + ib-05 kostnadstrappan) + sekvensrisken (rp-05 primär, källor rp-04 + ek-04) (s6-u2 fönster 3, manifest auto-s6-1789890903364), aktiverar pe-05/pe-06/ib-05 + rp-05 = PRIVATE EQUITY & INVESTMENTBOLAG 13/13 + RISKHANTERING & PORTFÖLJTEORI 14/14, 66:e motorn FÖRE marknadsrytm som förblir SIST [66:e av 66]; optionshantverk +3 — binomialträdet m.fl. (s6-u3), 64:e motorn FÖRE marknadsrytm som förblir SIST [65:e]; balansdjup +2 — lagervärderingen + obeskattade reserver (s6-u2, manifest auto-s6-1789890903364), aktiverar bk-07 + bk-06 = BOKFÖRING & ÅRSREDOVISNING fullt länkad 19/19, 63:e motorn FÖRE marknadsrytm som förblir SIST [64:e]; riskadress +1 — riskens adresser: leverantörsrisken + modellrisken + personalrisken ovanpå anatomi-kartan, aktiverar rs-06/07/08/09, 62:a motorn (s6-u1). Omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 195 (2026-09-20 fönster 29: kemisektor +1 — kategoristängning SEKTORANALYS 31/32 → 32/32: kemisektorn — molekylens ekonomi (se-21 primär — kväve ur luft, fosfor ur berg, balanspriset; källor se-16 + km-029 + ln-03 + mt-07) (s6-u1, verktygsprefix _s6u1o29-, efter tvist: v17 togs fysiskt av s6-u2, v15-reserven basens), 73:e motorn efter lonsamhetsgrund FÖRE marknadsrytm som förblir SIST [73:e av 73]. Tidigare 194 (2026-09-20 fönster 30: lönsamhetsgrund +3 — kategoristängning LÖNSAMHET 9/12 → 12/12: lönsamhetens grund (ln-05 primär, källor v07 + v09 + ln-04 + roic-01) + nästa kronas avkastning (roic-03 primär, källor roic-01 + ln-01 + ln-02 + mk-09) + värdeekvationen (roic-04 primär, källor roic-01 + km-008 + vr-03 + ib-04) (s6-u3, verktygsprefix _s6u3o29-), 72:a motorn efter handelsemotor FÖRE marknadsrytm som förblir SIST [72:a av 72]. Tidigare 191 (2026-09-20 fönster 29: händelsemotor +2 — lanseringsdramat (v16 primär, källor kt-04 + v13 + v01 + kt-05) + avtalsmekaniken (v17 primär, källor v03 + kt-07 + am-01 + v16) (s6-u2, verktygsprefix _s6u2o29-), aktiverar v16 + v17 ⇒ KATALYSATOR fullt länkad 11/11 (kategoristängning — fönster-28-radens «1 (v17 kvar)» rättad: BÅDA var lösa), 71:a motorn efter tvångsmekanik FÖRE marknadsrytm som förblir SIST [71:a av 71]. Tidigare 189 (2026-09-20 fönstret efter omgång 27: tvångsmekanik +2 — kontraktet som säljer åt dig och kalendern som flyttar kursen: marginalhandeln (am-09 primär, källor km-030 + mk-04 KÄLLAKTIVERING + bf-15 + am-01) + optionsförfallets dag (kt-08 primär, källor km-059 + am-05 + kt-03 KÄLLAKTIVERING + od-01) (s6-u2, verktygsprefix _s6u2o28-), aktiverar am-09 ⇒ AKTIEMARKNADEN I PRAKTIKEN fullt länkad (sista lösa kursen) + mk-04 ⇒ MAKROEKONOMI fullt länkad + kt-08/kt-03 ⇒ KATALYSATOR 3 lösa → 1 (v17 kvar), 70:e motorn efter co-invest FÖRE marknadsrytm som förblir SIST [70:e av 70]. Tidigare 187 (2026-09-20 manifest auto-s6-1789912510460: co-invest +1 — andelen bredvid fonden: två biljetter/urvalsasymmetrin/break-even 1,76x (s6-u1, v2 efter nedställning av v1 marginalhandeln till s6-u2), aktiverar pe-07 ⇒ PRIVATE EQUITY & INVESTMENTBOLAG fullt länkad 14/14 + pe-04 källaktivering, 69:e motorn efter volatilitetsmekanik FÖRE marknadsrytm som förblir SIST [69:e av 69]. Tidigare 186 (2026-09-20 manifest auto-s6-1789912510460: modernarisk +3 — regulatorisk risk + GDPR/datarisk + ESG-risk, s6-u3, TREDJE motorn FÖRE basen, 68-motorläget. Tidigare 183 (2026-09-20 omgång 27: volatilitetsmekanik +2 — varifrån bruset kommer och vad det kostar: volatilitetsdraget (rp-06 primär, källor rp-04 + rp-05) + marginaltrappan (ln-03 primär, källor ln-01 + v07) (s6-u2, manifest auto-s6-1789912510460), aktiverar rp-06 + ln-03, 66:e motorn efter pengarstid FÖRE marknadsrytm som förblir SIST [66:e av 67]; återapplicering efter syskons fullträdsåterställning). Tidigare 181 (2026-09-20 omgång 26: pengarstid +2 — pengarnas tid och ordning: andrahandsmarknaden (pe-05 primär, källor pe-06 J-kurvan + ib-05 kostnadstrappan) + sekvensrisken (rp-05 primär, källor rp-04 + ek-04) (s6-u2 fönster 3, manifest auto-s6-1789890903364), aktiverar pe-05/pe-06/ib-05 + rp-05 = PRIVATE EQUITY & INVESTMENTBOLAG 13/13 + RISKHANTERING & PORTFÖLJTEORI 14/14, 66:e motorn FÖRE marknadsrytm som förblir SIST [66:e av 66]; optionshantverk +3 — binomialträdet m.fl. (s6-u3), 64:e motorn FÖRE marknadsrytm som förblir SIST [65:e]; balansdjup +2 — lagervärderingen + obeskattade reserver (s6-u2, manifest auto-s6-1789890903364), aktiverar bk-07 + bk-06 = BOKFÖRING & ÅRSREDOVISNING fullt länkad 19/19, 63:e motorn FÖRE marknadsrytm som förblir SIST [64:e]; riskadress +1 — riskens adresser: leverantörsrisken + modellrisken + personalrisken ovanpå anatomi-kartan, aktiverar rs-06/07/08/09, 62:a motorn (s6-u1). Omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -1086,6 +1148,36 @@ const KANONISKA = [
   { fraga: "vad är optionsförfallet?", motor: 68 },
   { fraga: "vad är förfalloptron?", motor: 68 },
   { fraga: "vad är magnetkartan?", motor: 68 },
+  // 2026-09-20 fönster 29 (s6-u2): händelsemotor — kanoniska ur lagrets
+  // egna rubriker (motorindex 69, efter tvångsmekanik, FÖRE marknadsrytm;
+  // fall G verifierar widgetens ordning varje körning).
+  { fraga: "vad är sell the news?", motor: 69 },
+  { fraga: "vad är en avsiktsförklaring?", motor: 69 },
+  { fraga: "vad är rnpv?", motor: 69 },
+  { fraga: "vad är take or pay?", motor: 69 },
+  { fraga: "vad är budpremien?", motor: 69 },
+  // 2026-09-20 fönster 30 (s6-u3, _s6u3o29-): lönsamhetsgrund — kanoniska
+  // ur lagrets egna rubriker (motorindex 70, efter handelsemotor, FÖRE
+  // marknadsrytm; fall G verifierar widgetens ordning varje körning).
+  { fraga: "vad är lönsamhet?", motor: 70 },
+  { fraga: "vad är bageriets trappa?", motor: 70 },
+  { fraga: "vad är kampanjräkningen?", motor: 70 },
+  { fraga: "vad är inkrementell avkastning?", motor: 70 },
+  { fraga: "vad är medeltalets blindhet?", motor: 70 },
+  { fraga: "vad är nästa kronas avkastning?", motor: 70 },
+  { fraga: "vad är värdeekvationen?", motor: 70 },
+  { fraga: "vad är värdemultiplikatorn?", motor: 70 },
+  { fraga: "vad är återinvesteringsandelen?", motor: 70 },
+  { fraga: "vad är tvillingbolagen?", motor: 70 },
+  // 2026-09-20 fönster 29 (s6-u1, _s6u1o29-): kemisektor — kanoniska ur
+  // lagrets egna rubriker (motorindex 71 = 73:e motorn, efter
+  // lonsamhetsgrund, FÖRE marknadsrytm; fall G verifierar varje körning).
+  { fraga: "vad är kemisektorn?", motor: 71 },
+  { fraga: "vad är bulkkemin?", motor: 71 },
+  { fraga: "vad är specialkemin?", motor: 71 },
+  { fraga: "vad är ammoniaken?", motor: 71 },
+  { fraga: "vad är balanspriset?", motor: 71 },
+  { fraga: "vad är fosforn?", motor: 71 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);

@@ -130,14 +130,23 @@ NYA.forEach((f, i) => {
   const defs = [...kalla.matchAll(/\{ namn: "([^"]+)",\s*fil: "([^"]+)",\s*fn: "([^"]+)",\s*arr: "([^"]+)",\s*antal: (\d+) \}/g)]
     .map((m) => ({ namn: m[1], fil: m[2], antal: Number(m[5]) }));
   const ix = defs.findIndex((d) => d.namn === "tvangsmekanik");
+  const rytmIx = defs.findIndex((d) => d.namn === "marknadsrytm");
   kontroll(
+    // Fönster 29 (s6-u2, _s6u2o29-): syskon-tålig position — direkt efter
+    // co-invest med marknadsrytm NÅGONSTANS EFTER (fönster 29:s handelsemotor
+    // + fönster 30:s lönsamhetsgrund wireade lagligt däremellan, FÖRE
+    // marknadsrytm som förblir SIST).
     "A2 MOTORDEFS — tvångsmekanik wiread med antal 2, index " + ix,
-    ix !== -1 && defs[ix].antal === 2 && defs[ix - 1]?.namn === "co-invest" && defs[ix + 1]?.namn === "marknadsrytm",
-    "efter " + (defs[ix - 1]?.namn ?? "?") + ", före " + (defs[ix + 1]?.namn ?? "?") + " · motorer totalt " + defs.length,
+    ix !== -1 && defs[ix].antal === 2 && defs[ix - 1]?.namn === "co-invest" && rytmIx > ix,
+    "efter " + (defs[ix - 1]?.namn ?? "?") + ", marknadsrytm (SIST) på " + rytmIx + " · motorer totalt " + defs.length,
   );
   kontroll(
-    "A2b MONSTER-ANTAL — lagret bär exakt 2 monsters (TOTALT 189)",
-    TVANGSMEKANIK_MONSTER.length === 2 && defs.reduce((s, d) => s + d.antal, 0) === 189,
+    // Fönster 29 (s6-u2, _s6u2o29-): 189 → 191 (händelsemotor +2 EFTER detta
+    // lager — syskon-tålig: taket är MINST 191; senare fönsters motorer bärs
+    // av sina egna leveranser). Fönster 30 (s6-u3, _s6u3o29-): lönsamhetsgrund
+    // +3 ⇒ 194 i samma andetag — kedjetestets TOTALT-kommentar är sanningen.
+    "A2b MONSTER-ANTAL — lagret bär exakt 2 monsters (TOTALT ≥ 191)",
+    TVANGSMEKANIK_MONSTER.length === 2 && defs.reduce((s, d) => s + d.antal, 0) >= 191,
     "lager " + TVANGSMEKANIK_MONSTER.length + " · kedjan " + defs.reduce((s, d) => s + d.antal, 0),
   );
 }

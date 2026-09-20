@@ -542,6 +542,37 @@ const MOTORDEFS = [
   // auto-s6-1789864506792-s6-u2-ansprak2.md FÖRE byggstart. 61:a motorn
   // (av 62), FÖRE marknadsrytm — deras SIST-deklaration + L01 respekteras.
   { namn: "multipel", fil: "ai-mentor-multipel-fragor.ts", fn: "svaraLokaltMultipel", arr: "MULTIPEL_MONSTER", antal: 2 },
+  // 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): riskadress (s6-u1
+  // — riskens adresser i ett monster: leverantörsrisken + modellrisken +
+  // personalrisken ovanpå anatomi-kartan; aktiverar FYRA mentorväglösa
+  // kurser rs-06/07/08/09. Sond _s6u1-sond2-omg26.mjs: kärnordsfamiljerna
+  // NULL genom kedjan; basen äger naket «risk»/«risken», makro «ränte-
+  // täckning», marknadsmekanik «stopp», risklasningsdjup kundkoncentration.
+  // KANONISKA-poster bärs AV LAGRETS EGNA TEST (multipel-precedensen).
+  // 62:a motorn (av 63), FÖRE marknadsrytm — deras SIST-deklaration + L01
+  // respekteras. Anspråk data/vakten/auto-s6-1789890903364-s6-u1-ansprak.md
+  // FÖRE byggstart.)
+  { namn: "riskadress", fil: "ai-mentor-riskadress-fragor.ts", fn: "svaraLokaltRiskadress", arr: "RISKADRESS_MONSTER", antal: 1 },
+  // 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): balansdjup (s6-u2
+  // — lagervärderingen + obeskattade reserver, 2 monsters: (1) bk-07 varornas
+  // värde: lägsta-värde-principen, nettoförsäljningsvärdet, rullningen,
+  // grottan; (2) bk-06 uppskovet + det justerade egna kapitalet, P/B-fällan
+  // 1,67 mot 0,79. Aktiverar kategorins två SISTA mentorväglösa — BOKFÖRING
+  // & ÅRSREDOVISNING 17/19 → 19/19 FULLT MENTORLÄNKAD. Sond
+  // _s6u2-sond{,2}-omg26.mjs + rond 3: 18/18 kärnord RENTA mot samtliga
+  // lager; «lageromsättnings-» = kapitalbindningens, nakna «lagret»/«lager»
+  // ENDAST stärkord («laget»/«lagen» avstånd 1 — falskträfffaran dokumenterad).
+  // KANONISKA-poster bärs AV LAGRETS EGNA TEST (multipel-precedensen).
+  // 63:e motorn (av 64), FÖRE marknadsrytm — deras SIST-deklaration + L01
+  // respekteras. Anspråk data/vakten/auto-s6-1789890903364-s6-u2-ansprak.md
+  // FÖRE byggstart (10:00 — fönstrets första på disk).)
+  { namn: "balansdjup", fil: "ai-mentor-balansdjup-fragor.ts", fn: "svaraLokaltBalansdjup", arr: "BALANSDJUP_MONSTER", antal: 2 },
+  // 2026-09-20 omgång 26: optionshantverk (s6-u3 — binomialträdet och
+  // replikeringen + straddlen + deltat; aktiverar od-08 + od-04 + od-06).
+  // MOTORDEF HÄR för fall G:s widget-spegling (riskpremie-precedensen):
+  // deras modul, deras leverans — kanoniska rader bärs av deras eget
+  // leveranstest. 64:e motorn, efter balansdjup, FÖRE marknadsrytm (SIST).
+  { namn: "optionshantverk", fil: "ai-mentor-optionshantverk-fragor.ts", fn: "svaraLokaltOptionshantverk", arr: "OPTIONSHANTVERK_MONSTER", antal: 3 },
   // 2026-09-20 omgång 25: marknadsrytm (s6-u3, manifest auto-s6-1789864506792
   // — korrelationsrisk/kapitalcykeln/bull-bear, 3 monsters). MOTORDEF BÄRS
   // HÄR av s6-u2 enligt riskpremie-precedensen (u1 omgång 21: «motordef här
@@ -552,7 +583,8 @@ const MOTORDEFS = [
   // denna rad existerar bara för att fall G ska spegla widgetens faktiska
   // komponentordning. Om u3:s commit bär sin egen rad: behåll EN.
   // S6-u2-försök-2-not: multipel wireas FÖRE denna — marknadsrytm förblir
-  // SIST (62:a) enligt deras widget-deklaration + testfall L01.
+  // SIST (65:e sedan omgång 26:s optionshantverk) enligt deras widget-
+  // deklaration + testfall L01.
   { namn: "marknadsrytm", fil: "ai-mentor-marknadsrytm-fragor.ts", fn: "svaraLokaltMarknadsrytm", arr: "MARKNADSRYTM_MONSTER", antal: 3 },
 ];
 
@@ -562,7 +594,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 173 (2026-09-20 omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 179 (2026-09-20 omgång 26: optionshantverk +3 — binomialträdet m.fl. (s6-u3), 64:e motorn FÖRE marknadsrytm som förblir SIST [65:e]; balansdjup +2 — lagervärderingen + obeskattade reserver (s6-u2, manifest auto-s6-1789890903364), aktiverar bk-07 + bk-06 = BOKFÖRING & ÅRSREDOVISNING fullt länkad 19/19, 63:e motorn FÖRE marknadsrytm som förblir SIST [64:e]; riskadress +1 — riskens adresser: leverantörsrisken + modellrisken + personalrisken ovanpå anatomi-kartan, aktiverar rs-06/07/08/09, 62:a motorn (s6-u1). Omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -931,6 +963,12 @@ const KANONISKA = [
   { fraga: "vad är en haircut?", motor: 59 },
   { fraga: "vad är säkerhetskrav?", motor: 59 },
   { fraga: "vad är default-trappan?", motor: 59 },
+  // 2026-09-20 omgång 26: optionshantverk (s6-u3) — kanoniska ur lagrets
+  // egna rubriker (index 63 = LIVE-läget av _s6u3o26-kanoniska.mjs; värdet
+  // verifieras av fall G:s komponentordning varje körning).
+  { fraga: "vad är binomialträdet?", motor: 63 },
+  { fraga: "vad är en straddle?", motor: 63 },
+  { fraga: "vad är delta?", motor: 63 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -975,7 +1013,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "femtiosex motorer lämnar frågan ifred",
+  "sextiofem motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

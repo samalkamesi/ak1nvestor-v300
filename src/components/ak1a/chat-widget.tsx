@@ -910,6 +910,77 @@ import { svaraLokaltMarknadsrytm } from "@/lib/ai-mentor-marknadsrytm-fragor";
 // SIST-deklaration i widgeten + deras testfall L01 (SISTA ledet) respekteras.
 import { svaraLokaltMultipel } from "@/lib/ai-mentor-multipel-fragor";
 
+// 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): riskadress —
+// riskens adresser i ett monster: leverantörsrisken (påslaget + avbrottet)
+// + modellrisken (felbudgeten) + personalrisken (kärnkvoten) ovanpå
+// anatomi-kartans fyra adresser (rs-06 primär). Aktiverar FYRA mentorväglösa
+// kurser (rs-06/07/08/09 — personalrisken född samma dag av spår 5,
+// mentorväglös sedan födelsen). Sond _s6u1-sond2-omg26.mjs: samtliga
+// kärnordsfamiljer NULL genom kedjan; basen äger naket «risk»/«risken»
+// («vad är riskens anatomi?» FÅNGAS av dem — därför bär detta lager ENDAST
+// de sammansatta formerna + kartans egna ord), makro «räntetäckning»,
+// marknadsmekanik «stopp»-familjen, risklasningsdjup kundkoncentration/
+// riskmatris — deras frågor bärs som fragor:-knappar. Anspråk
+// data/vakten/auto-s6-1789890903364-s6-u1-ansprak.md FÖRE byggstart.
+// 62:a motorn (av 63), FÖRE marknadsrytm — deras SIST-deklaration +
+// testfall L01 (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltRiskadress } from "@/lib/ai-mentor-riskadress-fragor";
+// 2026-09-20 omgång 26: balansdjup — lagervärderingen + obeskattade reserver
+// (s6-u2, manifest auto-s6-1789890903364 — TVÅ monsters: (1) varornas värde
+// (bk-07 primär; källor bk-03 + ln-02; jackan 800 mot nettoförsäljningsvärde
+// 1 350/600, nedskrivning 200 × 10 000 = 2,0 Mkr, balansraden 8,0 → 6,0,
+// rullningen 1 800 ÷ 450 = 4,0 varv = 91 dagar, Norrull 6,0 varv = 61 dagar
+// med 150 Mkr mindre bundet, grottan 20 ÷ 5 = 4,0 mot tröskeln 2,0, ny
+// rullning 1 890 ÷ 540 = 3,5 ≈ 104 dagar, NFV-fall 5 % × 540 = 27 Mkr,
+// butiksspektrat 10/30/60 dagar → 2,0/6,0/12,0 Mkr) + (2) uppskovet och
+// det justerade kapitalet (bk-06 primär; källor km-049 + v05-pb; Norra
+// Kraft: betald skatt 0,20 × 10 = 2,0 mot bokförd 0,20 × 30 = 6,0,
+// kassaflöde 48,0 mot 44,0 = uppskovet 4,0 = 0,20 × (40 − 20), reserv-
+// ökningen 30 − 10 = 20,0; justerat EK 180 + 250 − 50 = 380 Mkr = 38,0
+// kr/aktie mot 18,0, P/B 1,67 mot 0,79 ≈ faktor 2,1 reservgeometri).
+// Aktiverar bk-07 + bk-06 — BOKFÖRING & ÅRSREDOVISNING-kategorins två
+// SISTA mentorväglösa: kategorin 17/19 → 19/19 FULLT MENTORLÄNKAD. Sond
+// _s6u2-sond{,2}-omg26.mjs + rond 3 (18/18 kärnord RENTA mot samtliga
+// lager; «lageromsättnings-»-familjen = kapitalbindningens, nakna «lagret»/
+// «lager» bärs ENDAST som stärkord — «laget»/«lagen» ligger redigerings-
+// avstånd 1 och skulle falskträffa; frågeformerna fångas av fraserna
+// «lagrets värde»/«lagret värt»). Anspråk data/vakten/
+// auto-s6-1789890903364-s6-u2-ansprak.md FÖRE byggstart (10:00 — fönstrets
+// första). 64:e motorn, FÖRE marknadsrytm — deras SIST-deklaration +
+// testfall L01 (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltBalansdjup } from "@/lib/ai-mentor-balansdjup-fragor";
+// 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): optionshantverk —
+// optionspositionens tre verkstadsgolv (s6-u3, TRE monsters): (1) BINOMIAL-
+// TRÄDET OCH REPLIKERINGEN (od-08 primär, FÖDD 2026-09-20 av spår 5 u3 —
+// mentorväglös sedan födelsen; källor od-05 pariteten + od-01; hedgekvoten
+// (20−0)÷(120−80) = 0,5 · lånet 40÷1,02 = 39,22 · priset 50 − 39,22 = 10,78
+// · räntespåret 4 % ⇒ 38,46 ⇒ 11,54 · q = (1,02−0,80)÷(1,20−0,80) = 0,55 ⇒
+// 11÷1,02 = 10,78 — två vägar samma svar, q är ingen prognos utan
+// viktsindelning ur arbitragekravet) + (2) STRADDLEN (od-04 primär; källor
+// od-06 + od-02; Straddle 100: premie 4+4 = 8, BE 92/108 · Strangle 90/110:
+// premie 2+2 = 4, BE 86/114 — dubbla zonen halva premien · vertikala
+// prisspridningens tre rader: maxförlust = nettokostnad, maxvinst =
+// strikskillnad − nettokostnad, BE = köpta striken + nettokostnad) + (3)
+// DELTAT (od-06 primär; källor od-01 + od-04; 10 kontrakt lösenpris 150:
+// nettodelta +0,04 → 40 aktier, efter 158: +0,26 → 260 — +220 utan ett
+// beslut · thetans hyra −0,50/aktie/dag = 500 kr · rörelsedag 8 kr:
+// 0,5 × 0,02 × 8 × 8 = 0,64/aktie = 640 ⇒ netto +140 · break-even-rörelsen
+// √50 ≈ 7,1 kr ≈ 4,7 % av 150). od-05 aktiveras som KÄLLA ⇒ OPTIONS &
+// DERIVAT FULLT MENTORLÄNKAD 8/8 (od-01/02 optionsdjupets, od-03 warrantens,
+// od-07 kontrahentens källor sedan tidigare). Sond _s6u3o26-sond.mjs:
+// hela familjen NULL med 0 grannar (binomialträdet · replikeringen ·
+// hedgekvoten · straddle/strangle · kombinerade optionspositioner · delta ·
+// aktieekvivalenter · förfallodagen · thetan · pariteten); dokumenterade
+// gränser: «collar» portföljgrundens (dollar tav 1), «prisspridning» basens
+// (riskspridning tav 2), «ex-dagen» utdelningskalenderns, «omhedging»
+// valutamekanikens (hedging tav 2), naket «option» nästa-lagrets — detta
+// lager bär ENDAST sammansättningarna. FÖRSTA valet (riskens adresser)
+// togs på disk av u1 (deras anspråk 100 s före; nedställning bokförd i
+// auto-s6-1789890903364-s6-u3-ansprak.md v2). Anspråk FÖRE byggstart.
+// 65:e motorn, FÖRE marknadsrytm — deras SIST-deklaration + testfall L01
+// (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltOptionshantverk } from "@/lib/ai-mentor-optionshantverk-fragor";
+
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
  *
@@ -1614,7 +1685,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltMarknadsmekanik(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltValutamekanik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER) ?? svaraLokaltForsakring(q, KURSREGISTER) ?? svaraLokaltMoatdjup(q, KURSREGISTER) ?? svaraLokaltNyaTerritorier(q, KURSREGISTER) ?? svaraLokaltEtfmekanik(q, KURSREGISTER) ?? svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltMarknadsmekanik(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltValutamekanik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER) ?? svaraLokaltForsakring(q, KURSREGISTER) ?? svaraLokaltMoatdjup(q, KURSREGISTER) ?? svaraLokaltNyaTerritorier(q, KURSREGISTER) ?? svaraLokaltEtfmekanik(q, KURSREGISTER) ?? svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

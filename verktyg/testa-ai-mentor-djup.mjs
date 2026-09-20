@@ -480,7 +480,10 @@ const GAMLA = [
   // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
   // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
   "svaraLokaltMultipel",
-  "svaraLokaltMarknadsrytm",];
+    // Omgång 26-tillägg (manifest auto-s6-1789890903364): fönstrets två motorer i
+  // kedjeordning — riskadress (s6-u1, 62:a) + balansdjup (s6-u2, 63:e) — FÖRE
+  // marknadsrytm (deras SIST-deklaration; bk-07 + bk-06, BOKFÖRING 19/19).
+      "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

@@ -614,7 +614,7 @@ const GAMLA = [
     // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
     // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
     "svaraLokaltMultipel",
-    "svaraLokaltMarknadsrytm",];
+      "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

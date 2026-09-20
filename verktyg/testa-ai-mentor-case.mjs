@@ -444,7 +444,14 @@ const kedjekomponenter = [
   // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): multipel — 61:a motorn,
   // FÖRE marknadsrytm (deras SIST-deklaration; dokumentationsplikten).
   "svaraLokaltMultipel(q, KURSREGISTER)",
-  "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
+    // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+    // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+    // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+    // — FÖRE marknadsrytm (deras SIST-deklaration).
+    "svaraLokaltRiskadress(q, KURSREGISTER)",
+    "svaraLokaltBalansdjup(q, KURSREGISTER)",
+    "svaraLokaltOptionshantverk(q, KURSREGISTER)",
+    "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";

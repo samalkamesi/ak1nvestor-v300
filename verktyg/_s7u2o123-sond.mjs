@@ -162,6 +162,10 @@ await new Promise((los) => { ws.onopen = los; });
 const send = cdpTill(ws);
 await send("Emulation.setUserAgentOverride", { userAgent: UA_IPHONE });
 await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
+// o123-läxa: EFTER-mätning mot samma profil gav cachad FÖRE-HTML (oförändrade
+// tal trots live-klasser) — HTTP-cachen avslagen + ruta om för varje sida.
+await send("Network.enable", {});
+await send("Network.setCacheDisabled", { cacheDisabled: true });
 
 const rapport = {
   verktyg: "verktyg/_s7u2o123-sond.mjs (full-dump-variant av mobil-lasbarhet.mjs)",

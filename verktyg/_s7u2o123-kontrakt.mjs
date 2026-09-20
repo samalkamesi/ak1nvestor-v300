@@ -33,8 +33,8 @@ kolla("D2 shortseller: span bär 20px-cirkeln med ×", /<span className="flex h-
 
 // E — dataset-sortering: pills (sort + bransch), alla språk via samma komponent
 const ds = las("src/components/ak1a/dataset-sortering.tsx");
-kolla("E1 dataset: sorteringslänkar ×2 varianter 52", (ds.match(/max-md:flex max-md:min-h-\[52px\] max-md:items-center/g) || []).length === 3);
-kolla("E2 dataset: branschlänk i mobilkort 52", /font-serif text-base font-bold text-foreground underline decoration-gold\/40 underline-offset-4 max-md:flex max-md:min-h-\[52px\] max-md:items-center/.test(ds));
+kolla("E1 dataset: sorteringslänkar ×2 varianter 52", (ds.match(/max-md:flex max-md:min-h-\[52px\] max-md:items-center/g) || []).length === 2);
+kolla("E2 dataset: branschlänk i mobilkort 52 hög + 52 bred (Hälsa-pillen 44px bred — EFTER-rond)", /font-serif text-base font-bold text-foreground underline decoration-gold\/40 underline-offset-4 max-md:flex max-md:min-h-\[52px\] max-md:min-w-\[52px\] max-md:items-center/.test(ds));
 
 // F — skanna-knappar
 kolla("F1 konfluens: skanna-knapp 52 mobil", las("src/components/ak1a/konfluens-tabell.tsx").includes("btn-marin min-h-[44px] max-md:min-h-[52px] px-5 py-2.5"));

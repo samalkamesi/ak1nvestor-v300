@@ -93,7 +93,57 @@ Desktop orörd överallt (max-md ≤767/640-skydd + golvet är mobil-media).
 - Syskonytor: u1/u3:s filer orörda; protokollnumrets register-append är
   den gemensamma ytan (o122-precedensen).
 
-## EFTER-kriterier (vakarövertag-barra)
+## EFTER-facit (deploy d11c6c1d, BUILD eqhFJ-i6rUioQrfyZFZDJ, 2026-09-20 18:35 lokal)
+
+Deploy: synkens 16:27Z-rop byggde 5 commits (d11c6c1d — f74d10b2 förfader ✓;
+syskonet s8-u2:o125 + PATCH-KÖ landade mellan; RAM-vänta 16:17→16:27) ·
+pm2 online · prod 200 ×5 (även ×5 i väntare — därav "falsk" trigger på
+BUILD_ID "(saknas)" mitt i bygget, rättad mot synkloggens DEPLOYAD-rad).
+
+**LÄSBARHET (sond, cache-disabled — se metrologi-notisen):**
+
+| Sida | FÖRE u52/zoom | EFTER u52/zoom | Dom |
+|---|---|---|---|
+| /superanalys | 4 / 2 | **0 / 0** | KURAT |
+| /kalkylator | 48 / 21 | **0 / 0** | HUVUDFÖRBRYSAREN KURAD |
+| /konfluens | 2 / 0 | 1 / 0 | rest = brödsmula «Hem» 30×52 (bredd, bokförd klass) |
+| /netnet | 1 / 0 | **0 / 0** | KURAT |
+| /dataset | 13 / 0 | 1 / 0 | rest = «Hälsa»-pill 44×52 BREDD → kurad i commit 2 (min-w 52) |
+| /kurser/pe-07 | 1 / 0 | 1 / 0 | rest = brödsmula «Kurser» 41×52 (bredd, bokförd klass) |
+
+**Totalt: 69 → 3 tryckmål · 23 → 0 zoomfällor.** Alla bokförda klasser
+kurerade; de 2 brödsmule-resterna är medvetna (prosa-adjacent navigation,
+o8-doktrin) — Hälsa-pillens bredd fixas i vågens andra commit.
+
+**METROLOGI-NOTIS (o62-arv):** första EFTER-körningen visade OFÖRÄNDRADE
+tal (48/21 …) trots att livewebbplatsen bar klasserna (curl-bevis:
+summary med max-md-kedja i SSR-HTML + CSS-chunk med
+`@media not all and (min-width:48rem)`-reglerna + golvet
+`@media (max-width:640px){button…min-height:52px}`). ROT: sondens
+återanvända Chrome-profil serverade CACHAD FÖRE-HTML (heuristisk
+friskhet, ingen Cache-Control på HTML). KUR: `Network.setCacheDisabled`
+i sonden + ren profil ⇒ siffrorna föll direkt till facit ovan.
+Läxa till alla kommande före/efter-mätare: cache-disable är OBLIGATORISK
+vid omvärdering av samma URL med bevarad profil.
+
+**LIGHTHOUSE (mobil 4G, n=1, CLS-kriteriet):** /kalkylator P65 LCP 4 728
+TBT 559 **CLS 0** · /superanalys P60 LCP 4 357 TBT 1 276 **CLS 0** —
+o100:s heliga noll håller efter höjdtillväxten (kriterium GRÖN ×2).
+Ärlighet: ingen LH-FÖRE-baslinje finns för dessa sidor (vågens FÖRE =
+läsbarhetssonden) — LCP/TBT redovisas som n=1-läge, ej band.
+
+**Verktygs FYND längs vägen:** lighthouse 13.5.0 i npx-cachen har main
+`core/index.js` + chrome-launcher som SYSKON (v12:s root-index.js-mönster
+gällde o119) — EFTER-verktyget provmotoriserar båda vägarna.
+
+## KVD (tillägg EFTER-ronden)
+
+- Kontraktstest 14 PASS 0 FAIL (E2 utvidgat: pillens min-w).
+- tsc 0 fel efter pill-breddfixen (projektbinär).
+- Gränssnittsvakt: körd mot loopback efter deploy (se protokoll-rad i
+  worklog/commit 2 för utfall).
+
+## EFTER-kriterier (uppfillda)
 
 1. Deploy med denna commit som förfader · prod 200 ×5.
 2. Sonden mot samma 6 sidor: kalkylator ≈ 0 kvarvarande (summary/inputs/

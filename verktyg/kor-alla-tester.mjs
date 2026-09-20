@@ -64,6 +64,7 @@ const VERKTYG = path.join(REPO, "verktyg");
 
 const RAM_TRSKEL_MB = 900;     // fabrikens princip: aldrig starta tungt barn under detta
 const RAM_VANTA_TAK_S = 20 * 60; // per svit: vänta högst 20 min på minne
+const RAM_KRIT_MB = Number(process.env.AK1A_RAM_KRIT_MB || 250); // V217: mitt-i-svit; överskridbar för beviskörningar
 const TERM_TOLERANS_S = 5;     // SIGTERM ⇒ 5 s ⇒ SIGKILL
 
 // ── miljöklasser (V213a) + dev-serverfönstret (ROND 107) ────────────────────
@@ -251,7 +252,14 @@ async function dodaDevServer(barn) {
 
 /** Kör EN svit med timeout + gradvis avlivning.
  * viaTsx: kör genom `npx --yes tsx` — återfall när sviten importerar TS-moduler
- * med ändelselösa imports (node-ESM löser dem ej; tsx gör det). */
+ * med ändelselösa imports (node-ESM löser dem ej; tsx gör det).
+ * VÅG 217 — MITT-I-SVIT-RAM-VAKT: startvakten (vantaRam) skyddar svitSTART,
+ * men bevisen 2026-09-20 (r112-fullsvepet dog 2× vid styrelsemötet, 127 MB
+ * fritt) visar att SVITENS EGEN tillväxt mitt i löpet dödar aggregATORN —
+ * OOM-offret blir fel process. Väktaren pollar var 10:e s; < 250 MB två
+ * poller i rad ⇒ svitTRÄDET avlivas (barnet dör, aldrig servern) och sviten
+ * markeras RÖD(ram-vakt) — ärligt synligt, aldrig tyst, aldrig grönt
+ * (ofullständig mätning är ALDRIG grönt, vakt-doktrinen). */
 function korSvit(fil, takS, args = [], viaTsx = false) {
   return new Promise((res) => {
     const cmd = viaTsx ? "npx" : process.execPath;
@@ -274,6 +282,7 @@ function korSvit(fil, takS, args = [], viaTsx = false) {
     const t0 = Date.now();
     const klar = (status) => {
       clearTimeout(tid);
+      clearInterval(ramVaktare);
       res({ ...status, sekunder: Math.round((Date.now() - t0) / 1000) });
     };
     const doda = (efter) => {
@@ -283,18 +292,39 @@ function korSvit(fil, takS, args = [], viaTsx = false) {
       }, efter * 1000);
     };
     let dodadAvTimeout = false;
+    let dodadAvRamvakt = false;
+    let ramTryck = 0;
     const tid = setTimeout(() => {
       dodadAvTimeout = true;
       doda(TERM_TOLERANS_S);
     }, takS * 1000);
+    const ramVaktare = setInterval(() => {
+      const ram = ramTillgangligtMB();
+      if (ram === null) return; // fail-open: mäter vi ej, vakar vi ej
+      if (ram >= RAM_KRIT_MB) {
+        ramTryck = 0;
+        return;
+      }
+      ramTryck++;
+      console.log(`  ram-vakt: ${ram} MB kvar (${ramTryck}:a poll) under ${fil} — gräns ${RAM_KRIT_MB} MB`);
+      if (ramTryck >= 2) {
+        dodadAvRamvakt = true;
+        // Hela trädet (svitens egna barn äter minnet): dodadeltrad är asynk-
+        // ron eldglömskning, doda() är synkron backstop på roten.
+        dodaDeltrad(barn.pid).catch(() => { /* backstopen täcker */ });
+        doda(TERM_TOLERANS_S);
+      }
+    }, 10_000);
     barn.on("error", (e) => klar({ status: "RÖD", orsak: `spawn-fel: ${String(e.message).slice(0, 120)}`, ut, fel }));
     barn.on("close", (kod) =>
       klar(
-        dodadAvTimeout
-          ? { status: "RÖD", orsak: `timeout efter ${takS} s (SIGTERM⇒SIGKILL)`, ut, fel }
-          : kod === 0
-            ? { status: "GRÖN", orsak: null, ut, fel }
-            : { status: "RÖD", orsak: `exit ${kod}`, ut, fel },
+        dodadAvRamvakt
+          ? { status: "RÖD", orsak: `ram-vakt: svitträdet avlivat vid ${ramTillgangligtMB()} MB fritt — serverns skydd går före mätningen (omkör vid ledigare minne)`, ut, fel }
+          : dodadAvTimeout
+            ? { status: "RÖD", orsak: `timeout efter ${takS} s (SIGTERM⇒SIGKILL)`, ut, fel }
+            : kod === 0
+              ? { status: "GRÖN", orsak: null, ut, fel }
+              : { status: "RÖD", orsak: `exit ${kod}`, ut, fel },
       ),
     );
   });

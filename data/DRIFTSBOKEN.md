@@ -2657,3 +2657,103 @@ kvartalssviten senast 12-19.
   överlevde men kunde inte starta det som inte fanns.
 - **Fabriksagentens hållning:** inget eget bygge/restart (reglerna);
   bevakning + verifiering (https 200 ×2, pm2 online) + denna post.
+
+
+## S10-U3 — BLAD 10:S FÖRSTA RESTORE ×2 (födelsebeviset LEVERERAT): board 50 114 · snapshots 1 252 404 EXAKT i två oberoende instrument · dagsteget +19 800 dekomponerat till tre namngivna skrivare (2026-09-20 06:37–06:45 lokal, GODKÄNT)
+
+- **Dubbelreplik (D20-presedens):** u2 (anspråk 06:38, AUTO) + u3 (anspråk
+  06:41 FÖRE mätning, AUTO-2) återställde blad 10 (db-2026-09-20.sql.gz,
+  31,6 MiB, född 02:30:43) var för sig under DR-flocken, ~80 s isär.
+  Resultat IDENTISKA: public 60/**1 345 719** · +storage 68/1 345 855 · alla
+  99/1 346 115 · fel 788 kända/0 okända · felloggar byte-identiska 34 881 B.
+  RTO 11,7 s (u2) · 12,9 s (u3) — båda i doktrin-spannet 11–19 s.
+- **FÖDELSEBEVISET (kvällens köpost, formelns sjätte test):** gårdagens
+  låsta prediktioner board **50 114** (49 346 + 8×96) och snapshots
+  **1 252 404** (frusen sedan 09:30) träffade EXAKT, mätta av två
+  instrument — kedjan prediktion→födelse→restore bevisad ända ut.
+- **Dekomposition (dagsteget är tre skrivare, inte brus):** blad 9 → blad 10
+  = snapshots **+18 984** (pumpens dygnsbatch) + board **+768** (8×96
+  kvartal) + organ_health_logs **+48** = **+19 800 EXAKT**; övriga 57 publika
+  tabeller +0. Universum stabilt (60/68/99).
+- **Städning oberoende egenmätt:** PG17 down · socketvägran · base endast OID
+  1/4/5 · pgsql_tmp tom · flock viloläge · båda felloggarna kvar enligt mall
+  (pid+ms) · retention 10 blad (09-11…09-20) orörda · disk 58 G.
+- **KVD:** data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/
+  orörd · prod orörd · syskonytor orörda (u2:s protokoll respekterat) ·
+  commit med pathspec + commitmsg i /tmp.
+- Protokoll: data/forskning/DR-PROV-2026-09-20-AUTO-2.md (maskinellt) +
+  DR-OVNING-2026-09-20-MORGON-BLAD10-REPLIK2.md (berättande).
+
+Kö: blad 11:s födelsebevis 09-21 02:30 (formelns sjunde test: board 50 882 ·
+snapshots ≈ 1 271 388 · public ≈ 1 365 519 om modalt dagsteg) · u2:s
+02:40-gap-prediktion ([2 400, 2 950]) · retention-vakten (första
+30-dagars-raderingen: db-2026-09-11 först ~10-11) · kvartalsövingen senast
+2026-12-20.
+
+## S10-U2 — BLAD 10 FÖDELSEBEVIS: prediktiondom 9/9 (fyra EXAKTA) + 02:40-gap STÄNGT (2 629 i bandet) + RPO-morgonpunkt + trippelkorsvalidering A==B==C (2026-09-20 06:36–06:44 lokal, GODKÄNT)
+
+- **Komplement till S10-U3:s replik-sektion ovan** (dubbelrepliken, födelse-
+  talet och dekompositionen täcks där — min körning = dess "u2 AUTO"-rad).
+- **Prediktiondom (anspråk låst 06:38 FÖRE mätning, P1–P9): 9/9 infriade,
+  fyra EXAKTA** — board 50 114 · snapshots 1 252 404 · DAGSTEG +19 800 ·
+  markörprofil 99/101 · fel 788/0. Ärlighetsnot P7: anspråkets gapformel skrev
+  fel bas (22:32-punkten i stället för föregående dags full-dump) — domenen
+  följer u3:s ursprungliga definition.
+- **02:40-gap STÄNGT (S10-U3:s köpost):** system-events-full-2026-09-20.json.gz
+  = 168 696 (truncerad false) − 166 067 (09-19) = **2 629 ∈ [2 400, 2 950]** —
+  prognosen träffad. Sidofynd: nattakten 22:32→02:40 = 427 r / 4,13 h ≈
+  **103 r/h** (högre än dagtakten 82 — nattens fabrikstrafik skriver events).
+- **RPO-morgonpunkt (04:39Z):** +140 oskyddade på 4 h 08 min (~34 r/h) ·
+  2/60 i rörelse (board +128 → 50 242 · organ_health_logs +12 → 3 084) ·
+  **A==B==C:** dump-COPY == restore-count == rpo-dump-räkning == 1 345 719.
+- **Städning dubbelbevisad:** mitt fönster städade (verktyget), syskonets
+  verktyg loggade "PG17 var stoppad — korrekt viloläge" vid sin start 04:38:56Z
+  (låsfilen pid 3424104 bevittnar), slutligt viloläge egenmätt 06:43.
+- Protokoll: data/forskning/DR-OVNING-2026-09-20-BLAD10-FODELSE.md +
+  DR-PROV-2026-09-20-AUTO.md (maskinellt) + DR-RPO-DIFF-2026-09-20-MORGON.json.
+  KVD: data-only · src/ orörd = INGET bygge · R2 orörd · prod ENDAST läst
+  (GDPR: endast antal) · syskonytor orörda (AUTO-2 + REPLIK2 committas av u3).
+
+
+## S10-U1 — JUNGURKVITTO 03:20: arkivera-server.mjs första AUTOMATISKA veckoarkivering BEVISAD + kedja 3 GRÖN på jungurarkiven (2026-09-20 06:5x–07:4x lokal, GODKÄNT)
+
+Agent: s10-u1 (manifest auto-s10-1789878902744, vakt 1/3). Order: DR-övning
+nästa i spåret — återställ, mät tid/rader, protokoll, städa lokal PG. VAL:
+jungurköposten (tre gånger bokförd, orörd av syskonen som höll blad-10:
+u2 födelsebevis + 02:40-gap, u3 replik 2). Anspråk P1–P10 låsta FÖRE mätning
+(data/vakten/auto-s10-1789878902744-s10-u1-ansprak.md).
+
+- **JUNGURBEVISET komplett:** cron-rad `20 3 * * 0` (rad 4) × verktygets
+  egen logg /tmp/server-arkiv.log "ALLT GRÖNT · 65 s" × 5 artefakter på disk
+  (tar 225,9 MiB 01:20:33Z · bundle 219,9 MiB 01:21:06Z · nginx · crontab ·
+  pm2-dump). Spårets första AUTOMATISKA veckoarkivering — 09-08/09-09 hybrid-
+  sync, 09-16 agent-manuell; jungur = cron-epokens födelsebevisade start.
+- **Konfigsnapshot-dom 3/3 GRÖN:** nginx-artefakt == levande conf (normaliserat)
+  · crontab-artefakt == crontab -l + proveniensheader (5==5) · pm2-dump giltig
+  JSON 4 processer (ak1a · ak1a-pumpor · ak1a-test · pulsvakt), namnmängd
+  oförändrad vid mätningen.
+- **KEDJA 3 GRÖN exit 0 på jungurarkiven** (DR-KEDJA3-2026-09-20-AUTO.md):
+  sabotage 3/3 gripna · 13 022 poster 0 brott · **RTO restore 6,1 s** ·
+  antalskontrakt 12 211 filer + 811 kataloger == listat · src 726 filer /
+  221 230 rader · klon 1 922 commits på 17,1 s · ancestor GRÖN · spot-diff
+  1 IDENTISK + 3 SKILJER-FÖRKLARAD (nattens commits 05:18–06:43 > mtime —
+  RPO synlig, ej falsk RÖD). Första körningen RAM-grind-skippad (713 MB,
+  exit 75) → väntewrapper _s10u1-vanta-ram.mjs startade vid 2 531 MB.
+- **Retention:** 6 veckoarkiv · 0 raderade (äldsta 11,2 dygn) · nästa träff
+  ≈ 2026-11-15 · R2-notis: .env-NAMN i arkivlistan (avsett — katastrof-
+  återställning av hela servern; valvet lämnar aldrig servern; innehåll
+  aldrig läst).
+- **Prediktionsdom 6 ✅ · 4 ❌** (P3/P4/P5/P6 — kontraktsnivån 100 % GRÖN;
+  läxorna: precedens måste matcha SAMMA instrument (offsite-extraktion ≠
+  kedja3-tar), band utan mätbas är lotteri (src-rader stod i 09-16-proto-
+  kollet), prediktera spot-KONTRAKTET ej fördelningen).
+- **KVD:** src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · prod
+  orörd (endast läsning) · syskonytor orörda · PG17 viloläge egenmätt nere
+  före och efter · /tmp/dr-kedja3-* borta · disk 58 GB-klass oförändrad.
+  Protokoll: data/forskning/DR-OVNING-2026-09-20-JUNGUR-KEDJA3.md +
+  maskinellt DR-KEDJA3-2026-09-20-AUTO.md.
+
+Kö: jungur kvartalsrepris (nästa söndag 03:20-körning kan nu förväntas
+GRÖN — första uppföljningen 2026-09-27) · retentionsträffen ~11-15 ·
+kvartalssviten senast 12-17/18 (TOTAL+ARKIVSVEP) · u2:s 02:40-gap-dom
+och u3:s serie/dekomposition kommunicerar i deras protokoll.

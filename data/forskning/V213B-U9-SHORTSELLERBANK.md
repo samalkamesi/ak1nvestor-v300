@@ -103,6 +103,11 @@ RESULTAT: 43/43 PASS
 
 ## Noteringar
 
+- **Commit-spår:** u9:s två filer sveptes av syskonet u10 in i dennes commit
+  `0ce39077` (parallell fabriksomgång; u10 commitade bredare än sina egna
+  filer). Verifierat: `git diff HEAD` för båda filerna är tom — committat
+  innehåll = levererad version, inget förlorat. Denna bokföringscommit (med
+  denna notering) är u9:s egen spårbarhet. u10:s commit rördes ej.
 - Ett testfel under utvecklingen (inventeringen skickade inte exkluderings-
   listan) gav 5 falska FAIL — fixat i sviten, inget motorfel. Ärligt rött
   tillämpat: felet var mitt, motorn höll måttet vid korrekt körning.

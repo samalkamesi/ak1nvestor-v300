@@ -98,6 +98,22 @@
       "titel": "prestandavåg: /blogg CV-reservationskalibrering — sond av 110 kortens verkliga höjder mot o28:s 22rem (55-inläggs-epoken), ev. kur + Lighthouse FÖRE/EFTER + CLS-stavhoppverifiering (o97-precedensen)",
       "ts": 1789950000000,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o131",
+      "agare": "s7-u3",
+      "manifest": "auto-s7 (byggare 3/3)",
+      "titel": "prestandavåg: EFTER-kvittering läsbarhetskurerna o126+o127+o128 — vakarövertag från o130 + proxy-EFTER (o129 §4-metodiken) + deploy-grind",
+      "ts": 1789943144657,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o132",
+      "agare": "s7-u2",
+      "manifest": "auto-s7 (byggare 2/3)",
+      "titel": "prestandavåg: o129 §6-§7 EFTER-kvittering av blogg-CV-kuren — deploy-grind (kraschvaktens räddningsbygg 22:24Z) + blocksond ×3 (/blogg /en/blogg /ar/blogg, dom |docHΔ|≤350) + Lighthouse CLS 0 ×3 + prod 200 ×3 + bokföring i §7",
+      "ts": 1789943364327,
+      "status": "reserverat"
     }
   ]
 }

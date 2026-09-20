@@ -204592,6 +204592,178 @@
       }
     ]
   },
+  "bk-07-lagret-och-lagervarderingen": {
+    "slug": "bk-07-lagret-och-lagervarderingen",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Lagret och lagervärderingen — balansräkningens termometer",
+    "summary": "BOKFÖRING & ÅRSREDOVISNING-familjens sjunde steg: balansräkningens mest talande rad — lagret, tillgången som rör sig och åldras. Kursens första verktyg är värderingsprincipen lägst av anskaffningsvärde och nettoförsäljningsvärde: påhittade Kavla Kläder AB bär 10 000 vinterjackor med anskaffningsvärdet 800 kronor per styck, butikspriset 1 500 och den kvarvarande säljkostnaden 150 — nettoförsäljningsvärdet 1 350 överstiger 800, och lagret bokförs till 800; men när säsongen misslyckas och reapriset blir 690 med säljkostnaden 90 faller nettoförsäljningsvärdet till 600, och nedskrivningen 800 − 600 = 200 kronor per jacka går som en direkt post i resultaträkningen — 10 000 jackor = 2,0 miljoner kronor, medan balansräkningens lagerrad sjunker från 8,0 till 6,0 miljoner. Det andra verktyget är lagerrullningen: Svea Ylle AB (påhittat bolag) med sålda varors kostnad 1 800 miljoner kronor per år och genomsnittslagret 450 miljoner (480 i januari, 420 i december) omsätter lagret 1 800 ÷ 450 = 4,0 varv per år — 365 ÷ 4,0 = 91 lagerdagar — medan konkurrenten Norrull Textil AB med lagret 300 miljoner snurrar 6,0 varv och 61 dagar: skillnaden 150 miljoner kronor är kapital som ligger stilla och binder kassa (ln-04:s kapitalbindning på radnivå). Det tredje verktyget är lagergrottans varningskvot: när Svea Ylles lager växer 20 procent på en försäljningstillväxt av 5 procent blir kvoten 20 ÷ 5 = 4,0 — väl över tröskeln 2,0 — och rullningen faller från 4,0 till 1 890 ÷ 540 = 3,5 varv (104 dagar), medan ett kommande nettoförsäljningsvärdesfall på 5 procent bär 540 × 0,05 = 27 miljoner kronor i nedskrivningar: lagret växer FÖRE marginalfallet syns i resultaträkningen, vilket gör raden till rapportens tidigaste termometer. Historievittnena (verkliga) är dubbel bokförings första varuräkningar i medeltidens handelshus, 1930-talskrisernas försiktighetsprincip som blev lägsta-värde-regeln, Toyotas just-in-time som vände lagret från fördel till slöseri, och leveranskedjekrisen 2020-2022 — först tomma hyllor, sedan överfulla lager och global utrensning; alla övningstal är PÅHITTADE TAL med påhittade bolag. Kursen kröns med en frågeordning i tre steg — hur många dagar, vilket värde, vilken riktning. Detta är utbildning i bokföringsmekanik — inte uppmaningar att köpa eller sälja något.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna nettoförsäljningsvärdet: jackan med butikspriset 1 500 kronor och kvarvarande säljkostnad 150 bär värdet 1 500 − 150 = 1 350 — mot anskaffningsvärdet 800 är lägstavärdet 800 och inget skrivs ned; när reapriset faller till 690 och säljkostnaden till 90 blir värdet 690 − 90 = 600 och nedskrivningen 800 − 600 = 200 kronor per jacka — 10 000 jackor = 2,0 miljoner kronor som träffar resultaträkningen direkt medan balansraden sjunker från 8,0 till 6,0 miljoner. Räkna lagerrullningen: Svea Ylle AB med sålda varors kostnad 1 800 miljoner kronor per år och genomsnittslagret (480 + 420) ÷ 2 = 450 miljoner omsätter 1 800 ÷ 450 = 4,0 varv per år, det vill säga 365 ÷ 4,0 = 91 lagerdagar — och dagsförbrukningen 1 800 ÷ 365 ≈ 4,9 miljoner ger samma svar som lager 450 ÷ 4,9 ≈ 91 dagar, två vägar till en sanning. Jämför konkurrenterna: Norrull Textil AB med lagret 300 miljoner på samma volym snurrar 6,0 varv (61 dagar) och frigör 450 − 300 = 150 miljoner kronor kapital — skillnaden mellan att bära och att binda. Räkna lagergrottans varningskvot: lagertillväxt 20 procent mot försäljningstillväxt 5 procent ger 20 ÷ 5 = 4,0 mot tröskeln 2,0 — och Svea Ylles nya rullning 1 890 ÷ 540 = 3,5 varv (365 ÷ 3,5 ≈ 104 dagar) visar mekanismen: varje dag av eftersläpning är en dag av prisrisk. Räkna nedskrivningens bärning: ett nettoförsäljningsvärdesfall av 5 procent på lagret 540 miljoner bär 540 × 0,05 = 27 miljoner kronor i kommande nedskrivningar — resultatposter som ingen konsolidering flyttar undan. Räkna kassabindningen: lagret som växer från 450 till 540 miljoner binder 90 miljoner kronor kassa (bk-03:s kassaflödeskedja: lagerökning är kontantutgång före resultateffekt) — rapportens vinst och rapportens kassa skiljs åt av exakt sådana rörelser. Räkna spektrat med dagsförbrukning 2 miljoner kronor: Butik A med lagret 20 miljoner bär 10 dagar (36,5 varv), Butik B med 60 miljoner bär 30 dagar (12,2 varv), Butik C med 120 miljoner bär 60 dagar (6,1 varv) — och vid ett nettoförsäljningsvärdesfall av 10 procent blir nedskrivningarna 2,0, 6,0 och 12,0 miljoner: samma kund, samma fall, sexfalt olika bördor. Lösläs återföringsförbudet: jackan nedskriven till 600 som nästa säsong säljs till 900 visar 300 kronor per styck i extra pappersvinst — inte för att affären blev bättre utan för att nedskrivningen låg kvar — vilket är ln-02:s resultatkvalitetsfråga i ren form.",
+    "why": "BOKFÖRING & ÅRSREDOVISNING-familjens sex första steg byggde stommen: bk-01 balansräkningen som karta, bk-02 resultaträkningen som resedagbok, bk-03 kassaflödesräkningen som sanningen om pengarna, bk-04 koncernernas konsolidering, bk-05 redovisningspolitikens formbara rum, bk-06 de obeskattade reserverna — men balansräkningens rörligaste tillgångsrader, lagret, nämns bara i förbifart och äger ingen kurs. Sonden mot 452 kurser bekräftar den vita fläcken: nettoförsäljningsvärde och lägsta-värde-principen bar fyra bokkurser och en förbifartsnämnde i bk-05 — noll kursägare; lagerdagar och lagerrullning tolv träffar men ingen i ämnesfamiljerna; lager som andel av omsättning noll träffar alls. Grannarna håller avstånd av hänsyn: ln-04 äger kapitalbindningen för rörelsekapitlet som helhet, ln-02 resultatkvaliteten i stort, pc-06 ett enstaka case — men värderingsprincipen, rullningsläsningen och grot-varningen saknar ägare, trots att lagerraden är den plats där bokfört värde och verkligt pris möts varje rapport. Kursen ger familjen sitt sjunde steg och aktieläsarens tidigaste varning: lagret växer FÖRE marginalfallet syns i resultaträkningen, nettoförsäljningsvärdes-nedskrivningen är dess bekräftelse, och kassaflödet (bk-03) skiljs från vinsten av exakt de rörelser som denna rad bär — därför termometern: den rörelse som först flyttar sig när handeln kyls av.",
+    "history": {
+      "origin": "Lagret var handelns första bokföringsobjekt. Medeltidens handelshus räknade sina varor fysiskt — säckar, balar, kistor — och venetianska och hansaiska köpmän förde listor över vad som fanns i magasin och på fartyg långt före någon tryckt lärobok; när Luca Pacioli kodifierade dubbel bokföring 1494 var varulagret en självklar post bredvid kassa och fordringar. Själva ordet inventera — att räkna upp och värdera det som finns — är lagerets eget verb: redovisningens årsrytm, inventeringen, föddes ur behovet att veta vad varorna var värda när marknaden rörde sig under årstidens seglats. Försiktighetsprincipen växte ur samma erfarenhet: en köpman som bokförde sitt tyg till inköpspriset medan marknadspriset fallit var inte försiktig utan ruinerad på pappret — därför togs vinsten bara när den var gjord, medan förlusten togs när den anades. Lägsta-värde-tanken är alltså äldre än sin kodifiering: den är handelns överlevnadsregel i redovisningsform.",
+      "evolution": "Industriella revolutionen förvandlade lagret från handelens buffering till produktionens pulsåra: råvaror, pågående arbeten och färdigvaror blev tre olika korgar i samma balansräkning, och järnvägarna lärde företagen vad avstånd kostar i bundet kapital. 1930-talskrisen gav principen sin moderna form: när priser och efterfrågan kollapsade världen runt skärptes kraven att tillgångar inte fick bära mer än de kunde realiseras för — conservatismen som blev lägsta-värde-regeln i lands efter lands standarder. Sedan kom motrörelsen från Nagoya: Taiichi Ohno och Toyotas produktionssystem, från 1950-talet och framåt, vände hela synen på lagret — varje pall med påståenden om trygghet var i stället slöseri som dolde problem i flödet, och just-in-time gjorde låga lagerdagar till en industriell dygd som spred sig från bilfabriker till affärskedjor. Streckkoden, distributionsdatorerna och skeppscontainern gjorde på 1980- och 1990-talen lagret synligt i realtid — och därmed mätbart, jämförbart och styrbart som en nyckeltal familj snarare än en gömma bakom bryggor.",
+      "modern": "Leveranskedjekrisen 2020-2022 blev lagrets moderna mästarprov och visade båda ansiktena inom två år: först tomma hyllor när pandemin och fraktbristen stoppade flödena och detaljhandeln lärde sig att noll lager är noll försäljning, sedan — när kedjan återfick fart och alla led överbeställde för att skydda sig — överfulla lager hos modehus och elektronikbolag med rabatterade utrensningar som följd: svallvågeffekten, där en liten ryckning i konsumtionen förstärks för varje steg uppströms i kedjan, bokförd i verkligheten. I dagens rapportläsning är lagerraden därmed en barometer framför resultaträkningen: lagerdagar mot historik, lageromsättning mot konkurrenter, lagertillväxt mot försäljningstillväxt — den digitala handelns dagsfärska försäljningsdata gör raden mera realtidsnära än någonsin, och redovisningsstandardernas återföringsförbud gör varje nedskrivning till en enkelriktad rörelse som inte får vändas hem. Den moderna läsordningen som kursen lär ut binder ihop det hela: fråga först hur många dagar lagret bär (rullningen), sedan vilket värde det bär (lägsta av anskaffningsvärde och nettoförsäljningsvärde), till sist vilken riktning rullningen rör sig (grott-kvoten) — tre frågor som kan ställas till varje balansräkning med en varuhandel i sina händer."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Radens plats — tre varukorgar och ett varv genom bokslutet",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Värderingsprincipen — lägsta värdet och nettoförsäljningsvärdet",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Rullningen — lagerdagar som nyckeltal och konkurrentmått",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Grottan — när lagret växer snabbare än försäljningen",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Aktieläsningen — handelsbolaget, tillverkaren och kvalitetsfällan",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — tre frågor, en läsordning",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Radens plats — tre varukorgar och ett varv genom bokslutet",
+        "minutes": 4,
+        "intro": "Familjens sex första steg byggde balansräkningens karta (bk-01), resultaträkningens dagbok (bk-02) och kassaflödets sanning (bk-03) — men en rad på tillgångssidan förtjänar sitt eget kapitel: lagret, den tillgång som rör sig, åldras och tappar värde medan rapporten ligger tryckt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lagret är allt som bolaget köpt eller tillverkat för att sälja men ännu inte sålt — och i en tillverkare delar det upp sig i tre korgar: råvaror och förbrukningsinventarier som väntar på produktion, pågående arbeten som halvfabrikat mellan stationerna, och färdigvaror som väntar på kunder. Följ ett klädbolags vinterjacka genom bokslutet: inköpt i vår och betalad i augusti — kassaflödet (bk-03) noterar utgången direkt medan resultaträkningen (bk-02) ännu inte sett något; balansräkningen (bk-01) bär jackan som lager till anskaffningsvärdet 800 kronor inklusive frakt och tull; när jackan säljs i januari byter hon plats en sista gång — ur lagret, genom sålda varors kostnad, in i intäkten — och skillnaden mellan intäkt och kostnad blir årets resultat. Där ligger kursens hela poäng: lagret är den post där balansräkning, resultat och kassa möts vid olika tidpunkter, och varje skruv i värderingen flyttar vinst mellan år. Bokförd vinst är en åsikt om varorna; kassan är ett faktum — och mellan dem står raden vi nu ska lära oss läsa."
+          },
+          {
+            "type": "definition",
+            "content": "LAGER — tillgångar som hålls för försäljning i ordinär verksamhet, i produktion för sådan försäljning eller som förbrukningsvaror i produktionen · TRE KORGAR — råvaror, pågående arbeten, färdigvaror · ANSKAFFNINGSVÄRDE — inköpspris plus kostnader till plats och skick (frakt, tull, inlagring) · SÅLDA VARORS KOSTNAD (SVK) — det värde som lämnar laget under året och träffar resultaträkningen · NETTOFÖRSÄLJNINGSVÄRDE — beräknat försäljningspris minus kvarvarande kostnader för försäljnen."
+          },
+          {
+            "type": "insight",
+            "content": "Lagret är den enda tillgångsraden där bokfört värde och marknadens pris möts varje rapport — kassa är kassa, byggnader värderas i decennier, men varorna har ett pris som noteras varje dag i butik. Det är därför kursen kallar raden balansräkningens termometer: när handeln kyls av sticker lagret ut i försäljningsstatistiken och i rullningstal månader innan nedskrivningen når resultaträkningen — och börsens handels- och tillverkningsbolag bär likavitt en post i sin rapport som mäts dagligen utanför den. Att läsa den raden före de andra är att läsa termometern före febern."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Värderingsprincipen — lägsta värdet och nettoförsäljningsvärdet",
+        "minutes": 4,
+        "intro": "Hur mycket är 10 000 vinterjackor värda i februari när säsongen dör? Svaret är en princip, inte ett pris — och principen är försiktighet: värdet är det lägre av vad de kostade och vad de kan säljas för.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningsbolaget är påhittade Kavla Kläder AB (alla tal PÅHITTADE TAL). Vinterjackan har anskaffningsvärdet 800 kronor per styck — inköp 760 plus frakt och tull 40 — och butikspriset 1 500 kronor. Vad är lagret värt? Principen ställer två kandidater mot varandra: anskaffningsvärdet 800 och nettoförsäljningsvärdet — beräknat försäljningspris 1 500 minus kvarvarande säljkostnad 150 (butik, personal, avgifter till betalkanaler) = 1 350 kronor. Lägsta värdet gäller: 800, och lagret bokförs oförändrat. Men våren kommer med ett kallt sanningens möte: säsongen misslyckades, och i slutet av februari står 10 000 jackor kvar med reapriset 690 kronor och säljkostnaden 90 — nettoförsäljningsvärdet 690 − 90 = 600 kronor, under anskaffningsvärdet. Nu slår försiktigheten till: lagret skrivs ned med 800 − 600 = 200 kronor per jacka — 10 000 × 200 = 2,0 miljoner kronor som bokförs som en direkt post i resultaträkningen, medan balansraden sjunker från 10 000 × 800 = 8,0 miljoner till 10 000 × 600 = 6,0 miljoner. Observera ordningen: förlusten togs när den anades — man visste ännu inte hur säsongen skulle sluta, men marknadens reapris hade redan svarat — inte när jackorna såldes; det är 1930-talskrisens arv i modern kodform."
+          },
+          {
+            "type": "tabell",
+            "content": "KAVLA KLÄDER AB — NETTOFÖRSÄLJNINGSVÄRDESÖVNINGEN (PÅHITTADE TAL): anskaffningsvärde 800 kronor per jacka (inköp 760 + frakt och tull 40) · scenario god säsong: butikspris 1 500, säljkostnad 150 → nettoförsäljningsvärde 1 350 ≥ 800 → bokfört värde 800 · scenario misslyckad säsong: reapris 690, säljkostnad 90 → nettoförsäljningsvärde 600 < 800 → nedskrivning 200 kronor per jacka · volym kvar: 10 000 jackor → nedskrivning 2,0 miljoner kronor i resultaträkningen · balansraden: 8,0 → 6,0 miljoner · nästa säsong: jackan bärs nu till 600 och säljs till 900 → pappersvinsten per jackan 300 kronor extra — återföringsförbudet gör nedskrivningen enkelriktad och nästa års resultat jämförbart sett bättre än affären var (ln-02:s resultatkvalitetsglasögon)."
+          },
+          {
+            "type": "insight",
+            "content": "Återföringsförbudet är principens andra halva och den minst sedda: en gjord nedskrivning får inte skrivas upp igen när priserna återkommer. Effekten är asymmetrin från ma-05-kreditpremiens värld i miniatyr — dåliga nyheter bokförs tidigt och helt, bra nyheter först när de är gjorda — och den skapar en mekanisk quality-of-arnings-vridning: året efter en stor lager nedskrivning ser marginalerna förbättrade av rent bokföringsmässiga skäl. Kursens läsregel: jämför alltid lagrets bärvärde mot aktuella reapriser, och läs nedskrivningarnas historia bakåt innan resultatet rörs — vinsten som återkommer från en nedskriven bas är inte verksamhetens förtjänst utan gårdagens försiktighet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Rullningen — lagerdagar som nyckeltal och konkurrentmått",
+        "minutes": 4,
+        "intro": "Värdet är en stillbild; handeln är en film. Lagerrullningen översätter raden till fart — hur många varv per år snurrar lagret, och hur många dagar står varan still?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningsbolaget är påhittade Svea Ylle AB (alla tal PÅHITTADE TAL): sålda varors kostnad 1 800 miljoner kronor per år, lager i januari 480 och i december 420 — genomsnittet (480 + 420) ÷ 2 = 450 miljoner. Omsättningshastigheten blir 1 800 ÷ 450 = 4,0 varv per år, och lagerdagarna 365 ÷ 4,0 = 91: varje krona i lagret ligger i snitt tre månader innan den lämnar byggnaden som såld vara. Samma svar kommer andra vägen — dagsförbrukningen 1 800 ÷ 365 ≈ 4,9 miljoner kronor ger lagret 450 ÷ 4,9 ≈ 91 dagar — och de två vägarnas överensstämmelse är kursens första kontrollfråga till varje nyckeltalstabell. Jämförelsen gör måttet levande: konkurrenten Norrull Textil AB med samma volym men lagret 300 miljoner snurrar 1 800 ÷ 300 = 6,0 varv — 365 ÷ 6,0 ≈ 61 dagar — och har därmed 450 − 300 = 150 miljoner kronor mindre kapital bundet i varor: kapital som kan bära ränta, utveckling eller utdelning i stället för damm (ln-04:s kapitalbindning på radnivå). Spektrat är branschens signatur: ett livsmedelsbolag med sålda varors kostnad 3 650 miljoner och lager 100 miljoner snurrar 36,5 varv — 10 dagar — medan tillverkaren med råvaror, halvfabrikat och färdigvaror i tre korgar ofta bär 90 dagar eller mer; ingen nivå är rätt i sig, men avvikelsen från branschens rytm är alltid en fråga värd att ställa."
+          },
+          {
+            "type": "definition",
+            "content": "OMSÄTTNINGSHASTIGHET — sålda varors kostnad ÷ genomsnittligt lager, antal varv per år · LAGERDAGAR — 365 ÷ omsättningshastigheten, eller lager ÷ dagsförbrukning: dagar av täckning · GENOMSNITTLIGER LAGER — (lager första dagen + lager sista dagen) ÷ 2 när månadsdata saknas · DAGSFÖRBRUKNING — sålda varors kostnad ÷ 365: vad som lämnar lagret en genomsnittsdag · BRANSCHRYTM — det intervall av lagerdagar som branschens inköps- och försäljningscyklar naturligt ger."
+          },
+          {
+            "type": "insight",
+            "content": "Lagerdagarna är samtidigt en riskmåttare i förklädnad: varje dag i lagret är en dag av prisrisk, modeväxling och kapitalrisk — jackan som står 91 dagar möter 91 dagars väder, tre månaders mod och en ränta på bundet kapital. Nyckeltalet förenar därför tre av familjens tidigare kurser i ett tal: bk-01:s balansräkning (vad står i lagret?), bk-03:s kassaflöde (vad binder det?) och ln-02:s resultatkvalitet (vad döljer det?) — och gör dem jämförbara mellan bolag, mellan år och mellan branscher. När rullningen långsamt förändras över några kvartal börjar det som en operativ fråga och slutar som en värderingsfråga — ingen annan balansrad flyttar sig så tyst."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Grottan — när lagret växer snabbare än försäljningen",
+        "minutes": 4,
+        "intro": "En enda division förvandlar årsredovisningens stillbild till varningssystem: lagrets tillväxt mot försäljningens. När kvoten passerar två börjar frågestunden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt siffror på varningen med Svea Ylle AB (PÅHITTADE TAL): mellan två räkenskapsår växer försäljningen 5 procent men lagret 20 procent — varningskvoten 20 ÷ 5 = 4,0, väl över tröskeln 2,0 som kursen föreslår som enkla läsregel. Följ mekaniken bakåt i bokföringen: lagret går från 450 till 450 × 1,20 = 540 miljoner medan sålda varors kostnad går från 1 800 till 1 800 × 1,05 = 1 890 — och rullningen faller från 1 800 ÷ 450 = 4,0 varv (91 dagar) till 1 890 ÷ 540 = 3,5 varv (365 ÷ 3,5 ≈ 104 dagar). Tretton dagar längre hylltid ser oskyldigt ut — men varje extra dag är en dag av prisrisk, och ridån faller när nettoförsäljningsvärdeskontrollen nästa rapport gör sitt arbete: ett fall på 5 procent mot bärvärdet bär 540 × 0,05 = 27 miljoner kronor i nedskrivningar, en direkt resultatpost som ingen konsolidering flyttar undan. Kedjan är alltid densamma och alltid i denna ordning: handeln kyls — lagret växer — rullningen faller — nedskrivningen träffar — marginalen syns i resultaträkningen sist av allt. Samtidigt binder växten kassa: lagret +90 miljoner kronor är en kontantutgång före någon resultateffekt (bk-03:s kedja), så grottan syns i kassaflödet före den syns i vinsten — och i leveranskedjor förstärks rörelsen uppströms: svallvågeffekten, där detaljhandelns lilla svängning blir partiledarens stora, för att varje led beställer med marginal mot osäkerhet."
+          },
+          {
+            "type": "insight",
+            "content": "Grott-kvoten är kursens bidrag till rs-08:s modellrisk-fråga: den enkla divisionen fångar inte orsaken — ett lager kan växa av förberedd lansering, av medvetet buffrande i en bristtid (leveranskedjekrisens första år) eller av sviktande försäljning — men den talar om VAR det är dags att fråga. Som termostat är den som bäst i tidsserien: samma kvot på tre års rad med stigande lagerdagar och bredare reor är ett mönster, en enda kvartalssiffra är ett väder. Den som kombinerar tre kvartaler av kvoten med rullningens riktning och butiksbesökets reahyllor har bk-07:s komplett tidigvarningssystem — och kan läsa handelsbolagets nästa årsresultat före det skrivs."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Aktieläsningen — handelsbolaget, tillverkaren och kvalitetsfällan",
+        "minutes": 4,
+        "intro": "Nu kommer övergångarna: där lagerraden träffar aktievärderingen. Tre bärare — handelsbolaget som köper och säljer färdigt, tillverkaren som bär tre korgar, och rapportläsaren som måste skilja bok från affär.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Handelsbolaget (Kavla Kläder, pc-06:s case-värld) lever på vändningar: dess lager är dess sortiment, dess rullning är dess modekänsla, och dess nettoförsäljningsvärdesrisk är reahyllans längd — en misslyckad säsong syns direkt som nedskrivning och som utdelningsutrymmets törn. Tillverkaren (Svea Ylle) bär i stället tre korgar med olika farter: råvarorna rullar långsamt och prissätts mot råvarumarknaden, de pågående arbetena binder arbete och marginal, färdigvarorna väntar på order — och grott-kvoten läses olika i varje korg, vilket är skälet till att segmentens nyckeltal aldrig blandas i en enda division. För aktieläsaren förenas vyerna i tre klassiska kopplingar: mot v01-försäljningstillväxten (lager som växer utan försäljning är framtidens marginalfall), mot ln-02-resultatkvaliteten (nedskrivningarnas historia och återföringsförbudets pappersvinster — jackan 600, såld 900, extra 300 per styck i resultat utan motsvarande affärsförbättring) och mot bk-05-redovisningspolitiken (lagret är formbart — men bara nedåt: här är det politiska rummet ensidigt). Slutligen bär raden en sektorläsning: mode och lyx (se-05) har säsongens klocka, logistik och detalj (se-04) har dagarnas rytm, och skogen (se-17) bär sitt virke under en helt annan värderingsregel — raden är densamma, bördorna olika."
+          },
+          {
+            "type": "tabell",
+            "content": "SVEA YLLE AB — GROTTANS KEDJA (PÅHITTADE TAL): år ett — sålda varors kostnad 1 800, genomsnittslager 450, rullning 4,0 varv, 91 dagar · år två — försäljningstillväxt 5 procent (1 890), lagertillväxt 20 procent (540), varningskvot 20 ÷ 5 = 4,0 mot tröskeln 2,0 · rullning år två: 1 890 ÷ 540 = 3,5 varv ≈ 104 dagar (+13 dagar) · kassabindning: 540 − 450 = 90 miljoner kronor kontant bundet i varor (bk-03) · nästa rapports nedskrivningsbörda vid nettoförsäljningsvärdesfall 5 procent: 540 × 0,05 = 27 miljoner kronor i resultaträkningen · konkurrentkontrollen Norrull Textil: 6,0 varv, 61 dagar, 150 miljoner mindre bundet kapital — samma bransch, olika termometrar."
+          },
+          {
+            "type": "insight",
+            "content": "Kvalitetsfällan har två ändar och aktieläsaren måste hålla båda: året med stora lagernedskrivningar ser SÄMRE ut än verksamheten var (försiktighet bokförd som förlust), och året efter ser BÄTTRE ut än affären är (återföringsförbudets pappersvinst). Mellan dem ligger den ärliga läsningen: justera marginalen för nedskrivningarnas storlek och räkna rullningen på konstant lagerprincip — först då jämförs verksamheten med sig själv. Det är samma hantverk som bk-05 lär ut för avskrivningar och bk-06 för timing i skatten, tillämpat på den rad där marknaden notereras varje dag: den som kan läsa lagret kan justera vinsten före den som läser nedskrivningsraden — och mellantiden är där läsövertaget bor."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — tre frågor, en läsordning",
+        "minutes": 4,
+        "intro": "Kursens sista form är inte en modell utan en frågeordning — tre frågor till varje balansräkning med en varuhandel i sina händer, användbara från livsmedelskedjan till verkstadsgolvet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett — hur många dagar? Räkna rullningen: sålda varors kostnad ÷ genomsnittligt lager, ta 365 ÷ svaret, och ställ dagarna mot bolagets egen historia och branschens rytm (Svea Ylles 91 dagar mot Norrulls 61 är mönstret). Fråga två — vilket värde? Ställ lagrets bärvärde mot det pris varorna faktiskt noteras till i dag — butiksreor, råvarubörs, orderbok — och läs nedskrivningshistoriken bakåt: återföringsförbudets pappersvinster (jackan 600 som säljs 900) och anade förluster (2,0 miljoners-posten som togs före vissheten) är båda kvalitetsjusteringar som ln-02 lärt oss göra före marginalen läses. Fråga tre — vilken riktning? Dividera lagertillväxten med försäljningstillväxten och läs kvoten mot tröskeln 2,0 tillsammans med kassaflödet: grotta över två med 90 miljoner nybundet kassa och fallande rullning är en berättelse om nästa års resultat — leveranskedjans svallvåga bokförd i realtid. Frågeordningen knyter samman familjens hela kedja — från bk-01:s karta till bk-03:s kassa och bk-05:s formbarhet — till en enda läsning av balansräkningens mest talande rad. Detta är utbildning i bokföringsmekanik — inte uppmaningar att köpa eller sälja något."
+          },
+          {
+            "type": "utmaning",
+            "content": "Bygg i tanken tre butiksbolag med samma sålda varors kostnad 730 miljoner kronor per år — det är 2 miljoner kronor per dag — men olika lager: Butik A 20 miljoner, Butik B 60 miljoner, Butik C 120 miljoner. Räkna rullning och dagar: A snurrar 730 ÷ 20 = 36,5 varv = 10 dagar, B 730 ÷ 60 ≈ 12,2 varv = 30 dagar, C 730 ÷ 120 ≈ 6,1 varv = 60 dagar. Låt sedan ett prisfall dra ned nettoförsäljningsvärdena med 10 procent: nedskrivningarna blir A 20 × 0,10 = 2,0, B 60 × 0,10 = 6,0 och C 120 × 0,10 = 12,0 miljoner kronor. Fråga dig: vilket av de tre bolagen märks minst av samma kundsvikt — och vilket bär sex gånger bördan av ett identiskt väder? Du har då räknat hela kursens koppling mellan lagerdagar och resultatrisk med egna siffror."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens sjunde steg i en mening: lagret är balansräkningens termometer — tillgången som rör sig med marknaden dagligen men bokförs kvartalsvis, vars värderingsprincip (lägsta av anskaffningsvärde och nettoförsäljningsvärde) gör nedskrivningen enkelriktad, vars rullning (varv per år, dagar i hyllan) mäter fart och bundet kapital, och vars tillväxt mot försäljningens (grott-kvoten) varnar före resultaträkningen gör det. Den som ställer de tre frågorna — hur många dagar, vilket värde, vilken riktning — till varje varubärande balansräkning har en tidigläsning som ingen vinstprognos bygger bättre."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynchs rådgivning att köpa det man ser får sin renaste bokföringstillämpning på lagerraden: butiksbesöket är en gratis inventering. Räk plagg på reahyllan och mät andelen reapriser — en butik där rea-karusellen växt sedan förra besöket bär samma information som en kommande nedskrivning, bara tre månader tidigare. Lynch läste kedjor precis som bk-07 läser korgar: det som inte säljs i butiken vandrar uppströms som beställningar som stannar, och varje steg i kedjan — detaljhandel, grossist, tillverkare, råvara — förstärker svängen (svallvågan), vilket är skälet till att en liten sviktning i konsumtionen kan bli en leverantörs kvartal. Hans käpphäst att gilla bolag vars produkt man förstår bygger här på ett tal: lagerdagarna — den butik vars kunder kommer tillbaka har korta dagar utan reor, den vars sortiment åldras bär dem i hyllan. Och Lynchs varning för berättelser utan siffror är gjord för modets värld: sortimentsberättelser bokförs inte — nettoförsäljningsvärdeskontrollen gör det, och den har aldrig läst en pressrelease.",
+    "grahamSection": "Benjamin Graham hade sett principen arbeta före sin tid: att inte bokföra vinsten förrän den är gjord men ta förlusten när den anas är lägsta-värde-regeln och Grahams conservatism i en och samma mening — marginalen för säkerhet börjar i balansräkningen, på raden där varorna ligger. Hans analyskrav — att en investerings värde skall bäras av beräkning, inte av marknadshumör — översätts direkt: när ett bolag bär sitt lager till anskaffningsvärdet 800 medan marknaden ropar 600, är skillnaden exakt den kvantifierade slutsiden som en noggrann läsare tar hem före optimisten; Graham kallade sådant arbete för analys, inte aktsamhet. Hans varning för glidande kvalitet i jämförelsetal passar nedskrivningarnas asymmetri: vinsten som återkommer från en nedskriven bas (jackan 600, såld 900) är verklig i rapporten men inte i affären — att justera för den innan multipeln sättas är marginal-tänkandet tillämpat på resultaträkningen. Slutligen hans regel att balansräkningen är analysens startpunkt: för varubärande bolag är lagerraden den post där den regeln lönar sig mest — den enda där noteringen görs om utanför rapporten, varje dag, av kunderna.",
+    "ak1Section": "I AK1A:s metodik är lagret ingen footnot utan en scenarioaxel bland motorerna: grottkvoten och lagerdagarna förs in i scenariorutan som drivkraft bakom tre utfall — handelsbolagets nedskrivningsbörda (Kavlas 2,0 miljoner på 10 000 jackor), tillverkarens kassabindning (Svea Ylles 90 miljoner) och marginalens kvalitetsvridning (återföringsförbudets 300 kronor per jacka). Monte Carlo-delen bär kursens viktigaste samvariationsläxa: lagercykel och efterfrågechock är inte två oberoende risker utan EN drivkraft med två kanaler — rs-03:s dolda samvariation får sin renaste demonstration i att handelsbolag, grossist och tillverkare delar samma svallvåga bakom sina svansar, och sam-viktningen lär därför ut att lageraxeln inte får dubbelräknas som tre separata riskposter. Bayesianska omviktningen hör hemma på raden också: en stigande grottkvot är ett bevis som förflyttar sannolikheten för kommande nedskrivningar innan konsensus rört sig — marknaden noterar reorna sent, bokföringen först vid rapport, men kvoten står i balansräkningen hela vägen. Backtestens hantverk-regeln (ek-04) knyter historievittnena till metoden: varje scenariosvit för varubärande bolag som inte testats mot ett lagerutrensningsfönster — 1930-talets principfödelse, just-in-time-vändningen, leveranskedjekrisen 2020-2022 — är inte ett scenario utan en önskan. Och känslighetsanalysen (st-02:s släkting) får här sitt renaste fall: fem procent på bärvärdet, 27 miljoner i resultaträkningen — ingen annan rad ger mer svar per procentenhet."
+  },
   "ln-01-dupont-analysen": {
     "slug": "ln-01-dupont-analysen",
     "category": "LÖNSAMHET",

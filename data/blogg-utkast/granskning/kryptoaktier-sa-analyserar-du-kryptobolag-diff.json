@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/kryptoaktier-sa-analyserar-du-kryptobolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789880830190-s1-u3 (2026-09-20)",
+  "rapport": "kryptoaktier-sa-analyserar-du-kryptobolag-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1: faktafel i RIKTNING: 'röstade ner kryptolagstiftningen Clarity Act föll Coinbase med cirka 9 procent på en dag' motbevisad av källbilden (senaten blockerade Clarity Act 49–50 vid cloture-omröstningen 15 september 2026; Coinbase STEG ~9 % sessionen före omröstningen och föll 4,5 % i förhandeln efter beskedet — Quartz/Amina Group). B2: DAC8-datum: 'Från och med 2027 ska leverantörer … rapportera' mot Skatteverket/EU 2023/2226: rapporteringsskyldighet från skatteåret 2026 (svensk rätt 1 januari 2026), första uppgifterna lämnas 2027. B3: readingMinutes 2 → 6 (1 171 ord; /200-konventionen; sjätte fallet i klassen). C1: 'mer än 3 procent' → 'mer än 4 procent' (845 050/21 M = 4,02 %). C2: Clarity Act-påståendet saknar källrad. I övrigt GRÖNT: samtliga Coinbase-tal EXAKTA mot StockAnalysis (kurs 173,97 aritmetiskt återvunnen 194,25 − 20,28; beta 3,39; TTM 6,04/−9,2 %/−987,8; FY2025 6,88/+9,4 %/1,26; 4 951 anställda; forward P/E ~165 och börsvärde 45,9 mdr kursexakt konsistenta via 18 sep-talen ÷ 1,1166), Strategy 845 050 BTC ~75 412 $ EXAKT, Skatteverket 30/70/K4 ordagrant, fi.se-nyhetens titel exakt (9 oktober 2025), MiCA:s tre tokentyper/auktorisering/riskvarningar/lämplighetsbedömning verifierade ur förordningstexten (recital 18/74–79/89), aritmetik 16/16, juridik 2007:528 ren (26 regexer 0 FEL, 1 A8-'kunder' = MiCA-citat med branschprecedent; 0 rådglossor; disclaimer negerad sist; 0 lagrum), 911 ren (0/6), 7/7 länkar registerfiler + HTTP 200, universum 0 kryptobolag i 219 poster.",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet; samtliga söksträngar maskinverifierade unika = exakt 1 träff i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Engelska spegeln (-en.json, ogranskad) bär identiska B1+B2+B3-fel (maskinellt konstaterat: 'voted down … fell around 9 percent in one day' + 'From 2027 … DAC8 rules' + readingMinutes 2) och speglas vid verkställning.",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "body (Regleringen: MiCA, Finansinspektionen och Skatteverket)",
+      "gammalt": "när den amerikanska senaten i september 2026 röstade ner kryptolagstiftningen Clarity Act föll Coinbase med cirka 9 procent på en dag.",
+      "nytt": "när den amerikanska senaten i september 2026 blockerade kryptolagstiftningen Clarity Act steg Coinbase cirka 9 procent dagarna före omröstningen och föll i förhandeln dagen efter beskedet.",
+      "orsak": "FAKTAFEL I RIKTNINGEN, motbevisad av källbilden: senaten blockerade Clarity Act med rösterna 49–50 vid cloture-omröstningen 15 september 2026 (Amina Group-analys; lagförslaget kan återkomma enligt IBD/Seeking Alpha — 'röstade ner' är dessutom starkare än verkligheten). Coinbase STEG ~9 % sessionen FÖRE omröstningen och FÖLL 4,5 % i förhandeln efter beskedet (Quartz: 'fell 4.5% in premarket after gaining 9% the prior session'). Utkastet flyttade nioprocentsrörelsen till fel sida av omröstningen. Den kvarvarande meningen ('en enskild omröstning … kan flytta börsvärdet med miljarder på en dag') förblir sann och opåverkad. Vid verkställning: verifiera citaten (sök 'Clarity Act cloture 49-50') och spegla i -en.json ('voted down … fell around 9 percent in one day')."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "body (Regleringen: MiCA, Finansinspektionen och Skatteverket)",
+      "gammalt": "Från och med 2027 ska dessutom leverantörer av kryptotjänster rapportera kundernas transaktioner till Skatteverket enligt DAC8-reglerna, vilket höjer transparensen i deklarationerna.",
+      "nytt": "Från och med skatteåret 2026 är dessutom leverantörer av kryptotjänster rapporteringsskyldiga till Skatteverket enligt DAC8-reglerna — de första uppgifterna lämnas 2027 — vilket höjer transparensen i deklarationerna.",
+      "orsak": "DATUMFEL: DAC8 (EU-direktiv 2023/2226, byggt på OECD:s CARF) införlivades i svensk rätt 1 januari 2026 — rapporteringsskyldiga leverantörer ska registrera sig hos Skatteverket och rapportera uppgifter om kunder, transaktioner och innehav FRÅN SKATTEÅRET 2026 (Skatteverket: 'Kryptotillgångar — rapportering och informationsutbyte'). De första uppgifterna lämnas 2027 (om 2026 års transaktioner). Utkastet satte skyldighetens start vid första lämnandeåret. Spegla i -en.json ('From 2027, crypto service providers must also report …')."
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "readingMinutes",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 6",
+      "orsak": "1 171 ord textrensat = 585,5 ord/min vid 2 minuter — snabbare än samtliga publicerade (max 240, konsumentaktier-mätningen 09-18). Bloggfamiljens kontrakt round(ord/200) (substansrabatt-domen 09-17): round(1 171/200) = 6. Sjätte dokumenterade fallet i klassen (halvledar-B1, hälsa-B4, konsumentaktier-B4, försvarsaktier-B2, logistik-K4). Konventionskonflikten mot byggarmallens /600 är seriebeslut åt fabriksägaren (se rapportens flagga 3). Spegla i -en.json."
+    },
+    {
+      "id": "C1",
+      "typ": "forslag",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "body (Tre affärsmodeller — holdingbolaget)",
+      "gammalt": "mer än 3 procent av de maximalt 21 miljoner bitcoin som någonsin kan skapas",
+      "nytt": "mer än 4 procent av de maximalt 21 miljoner bitcoin som någonsin kan skapas",
+      "orsak": "FRIVILLIG FÖRSTÄRKNING: 'mer än 3 procent' är sant men konservativt — 845 050/21 000 000 = 4,02 % (källverifierat). Holdingbolagspunktens pedagogiska kraft (var fjärtionde mynt som någonsin skapas) förloras av för-rounded undergräns. Spegla i -en.json."
+    },
+    {
+      "id": "C2",
+      "typ": "forslag",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- Finansinspektionen, Trots reglering fortsätter EU-myndigheter att varna för kryptotillgångar (oktober 2025): [fi.se](https://www.fi.se)",
+      "nytt": "- Finansinspektionen, Trots reglering fortsätter EU-myndigheter att varna för kryptotillgångar (oktober 2025): [fi.se](https://www.fi.se)\n- Quartz/TIKR (september 2026), Coinbase-kursrörelserna kring senatens blockerade Clarity Act-omröstning den 15 september 2026 — +9 % sessionen före, −4,5 % i förhandeln efter",
+      "orsak": "KÄLRTAD SAKNAS: Clarity Act-påståendet (B1) är det enda talbärande påståendet i guiden utan källrad. Vid B1-verkställning bör källblocket bära beskedet; URL väljs av verkställaren vid citatverifiering (sök: Clarity Act cloture 49–50 september 2026). Spegla i -en.json."
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "kryptoaktier-sa-analyserar-du-kryptobolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-18",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

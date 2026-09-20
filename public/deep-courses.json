@@ -66278,6 +66278,182 @@
     "grahamSection": "Graham visade att cykliska bolag har lägre P/E vid botten av cykeln (när vinsten är hög) och högre P/E vid toppen (när vinsten är låg). Detta är omvänt mot intuitionen — 'value traps' uppstår när investerare köper lågt P/E vid cykeltopp.",
     "ak1Section": "AKM1 bedömer cykelrisk via V12 (intäktsstabilitet) och V05 (P/B). Cykliska bolag får låga poäng på V12, och kräver därmed högre marginal of safety (lägre P/B) för att vara attraktiva."
   },
+  "rk-16-kontrahentrisken": {
+    "slug": "rk-16-kontrahentrisken",
+    "category": "RISKHANTERING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Kontrahentrisken — vem står på andra sidan när det blåser",
+    "summary": "RISKHANTERING-familjens sextonde steg öppnar riskens mest osynliga dimension: motparten. Varje kontrakt är två löften, och det egna löftets värde bestäms av den andras förmåga att hålla sitt. Sonden mot 452 kurser visar att kontrahent, kontrahentrisk och clearinghus har noll kursägare — motpart nämns i förbifart av trettio kurser, och ordet motpartsrisk bara av tre (se-19, am-04, od-07), alla som grannnotiser utan ägarskap. Kursens tes är trefaldig. Först: nettingen förvandlar exponeringen — tre positioner mot samma motpart på plus 8, minus 5 och plus 2 miljoner ger bruttobeloppet 15 men nettofordran 5, och vid default är det nettot som gäller: mekaniken som gör att en derivatbok med hundratals avtal ofta bär en bråkdel av sitt bruttovärde i verklig risk. Sedan: säkerheterna står i vägen — initial margin om fem procent av ett kontraktsvärde på 1 000 000 är 50 000 i pant hos motparten innan rörelsen ens börjat, variation margin flyttar kontanter dagligen när priset rör sig (minus 2 procent på kontraktet = 20 000 inbetalt), och haircuts värderar pappret: en statsobligation får kredit 98 per 100 (2 procent haircut), en aktieportfölj 80 (20 procent), kontanter 100 (noll). Tredje: clearinghuset står i mitten och bär en trappa — kursens default-exempel: exponering 40 miljoner möter säkerheter 28 (kvar 12), därefter medlemskapets garantifond 8 (kvar 4), och sist clearinghusets eget kapital sväljer de sista 4 — kontrahentrisk omvandlad till en honnörsordning av buffertar. Bilaterala världen utan trappan (kundfordran, återförsäkring: en utlämnad katastrofskada på 2 000 med 40 procent avlåten betyder 800 hos en motpart utan säkerhet) och Lehman-spegeln (15 september 2008, när en motparts fall blev systemets) kompletterar fältet. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "why": "RISKHANTERING-familjens femton första steg har kartlagt risker som bor i bolaget (kapitalförbränning, skuldfälla, bedrägeri) och i omvärlden (cykel, valuta, ränta, regulatorik, svarta svanar) — men inte risken som bor i själva kontraktet: att motparten inte betalar. Sonden mot 452 kurser bekräftar: kontrahent, kontrahentrisk, clearinghus, CCP och initial margin har noll kursägare; motpart nämns i förbifart av trettio kurser och motpartsrisk av tre (se-19 försäkringssektorn, am-04 marknadsstruktur, od-07 terminskontraktet) — alla grannar som pekar på fältet, ingen som äger det. Ändå är kontrahentrisken den risk som historiens största systemkriser burit: Lehman föll som MOTPART, inte som aktie, och clearing- och säkerhetsarkitekturen som byggdes efter 2008 är en av finansmarknadens största osynliga strukturer. Kursen binder familjen till sina yttersta kanter: od-07 äger terminen som kontrakt (här: vem som garanterar den), am-04 marknadsstrukturen (här: clearingledets maskineri), rk-08 ränterisken (här: swappositionens motpartssida), se-19 försäkringen (här: återförsäkraren som motpart utan säkerhet), rk-12 svarta svanar (här: när alla motparter sviktar samtidigt), och pf-07 krishantering (här: contagionens mekanik). Den som vill förstå varför finansmarknaden överhuvudtaget klarar sina löften finner svaret i denna kurs mekanik.",
+    "learn": "Förstå kontrahentriskens väsen: varje kontrakt är två löften, och det egna löftets värde beror på motpartens förmåga att infria sitt — risken som bor i motparten, inte i marknaden · Räkna nettingens effekt: positioner +8, −5 och +2 miljoner mot samma motpart ger brutto 15 men netto +5 — vid default är fordran 5, inte 10 med en separat skuld på 5 · Räkna initial och variation margin: kontraktsvärde 1 000 000 med initial margin 5 procent = 50 000 i pant; priset −2 procent = 20 000 i daglig variation margin · Förstå haircuts som prissättning av säkerheter: statsobligation 2 procent haircut ger kredit 98 per 100, aktieportfölj 20 procent ger 80, kontanter 0 procent ger 100 · Räkna clearinghusets default-trappa: exponering 40 miljoner — säkerheter 28 (kvar 12), garantifond 8 (kvar 4), eget kapital sväljer 4 — buffertarnas honnörsordning · Skilja clearing från bilateral exponering: börsderivat med clearinghus i mitten mot OTC-avtal med endast motpartens balansräkning · Känna igen kontrahentrisk utan säkerheter: kundfordran (rs-02:s koncentration), återförsäkring (skada 2 000 med 40 procent avlåten = 800 hos en motpart utan pant), bankinsatt med garantiplattformar · Förstå Lehman-lärdomen: 15 september 2008 — en motparts fall blev systemets, och därefter standardiserades derivat in i clearing (EU:s marknadsinfrastrukturförordning och dess amerikanska motsvarighet)",
+    "history": {
+      "origin": "Kontrahentrisken är äldre än finansmarknaden: köpmannen som skeppade gods mot betalning vid ankomst bar motpartens troskyldighet, och byteshandelns dubbla sammanträffande — den som har vad du vill ha måste också vilja ha vad du har — var ekonomins första clearingproblem. Börsens födelse löste hälften: handelsplatsen gjorde motparten synlig, men inte säker.",
+      "evolution": "Clearinghuset föddes ur kriser. 1800-talets råvarubörser utvecklade motpartsbyte — clearinghuset trädde in som köpare mot varje säljare och säljare mot varje köpare — efter att kedjor av fallande motparter dragit ned hela handelsplatser. 1900-talet formaliserade säkerheterna: initial margin som pant före handel, variation margin som daglig utjämning, och haircuts som värderade pantens kvalitet. 1980- och 90-talens derivatboom skapade samtidigt den bilaterala OTC-världen — swapavtal mot en banks namn, utan clearing — och ISDA-avtalens ramverk för vad som händer vid default: netting, avslut, ersättning.",
+      "modern": "I dag bär systemet båda arven. Efter Lehmans fall den 15 september 2008 — när en motparts obestånd spreds genom tusentals bilaterala avtal som ingen kunde överblicka — standardiserades räntederivat och andra standardavtal in i centrala motparter, reglerade genom EU:s marknadsinfrastrukturförordning och dess amerikanska motsvarighet. Kvar står den bilaterala världen där clearing inte når: företags obligationer, återförsäkring, kundfordringar, bankernas mellanhavanden — och den moderna frågan: när clearinghuset själv är systemets koncentration av kontrahentrisk, vem garanterar garanten? Kursens läsning är mekanisk: trappor, buffertar och exponeringar — mekanismerna, inte åsikterna om dem."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Kontraktets två löften — risken som bor hos den andra",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Nettingen — från brutto till netto",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Säkerheterna — margin, haircut och panten",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Clearinghuset — köpmannen i mitten och default-trappan",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Den bilaterala världen — utan trappan",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — kartlägga sin kontrahentrisk",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch ogillade investeringar där han inte förstod vem som stod på andra sidan, och hans råvara var bolag vars motparter var många, små och utbytbara — bolag som inte berodde av en enda kunds löfte. Koncentration av motparter är samma tes i kontraktsform: en nackdel som sällan syns i resultatet förrän den dag den syns överallt, och diversifiering — av kunder, banker, motparter — är billigt skydd som betalar sig just när allt annat är dyrt.",
+    "grahamSection": "Benjamin Grahams tankar om säkerhetsmarginal översätts till kontraktsvärlden som pantens övertäckning: att ställa säkerhet värd mer än fordran är margin of safety i dess renaste form — inte en åsikt om motpartens framtid utan ett mekaniskt övervärde som står kvar även om åsikten felar. Hans varning passar också: förtroende är ingen säkerhet, ty det som lånas på namn förloras på rykte.",
+    "ak1Section": "I AK1A:s metodik är rk-16 kontraktsriskens referenskurs: i AKM2:s riskmatris är kontrahentrisk den post som inte bor i bolagets verksamhet utan i dess avtalsstruktur, och den vägs mot koncentration (rs-02) och likviditet (am-01) — tre kurser som tillsammans läser exponeringens tre sidor. Monte Carlo-modulens svansscenarier låter motpartsdefault korrelera med marknadskris (kollapsen når alla samtidigt — rk-03:s dolda samvariation), och läsningen av en finansiell rapport frågar systematiskt: nettotablellernas storlek, säkerheternas haircut och motpartslistans koncentration. Kursen är utbildning i mekanismer — inga positioner, inga råd.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Kontraktets två löften — risken som bor hos den andra",
+        "intro": "Marknadsrisk är frågan vad kontraktet är värt i morgon. Kontrahentrisk är frågan vem som betalar det — riskens andra dimension, som bor i motpartens balansräkning, inte i prislistan.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Två exempel på samma konstruktion. En aktieposition: värdet rör sig med marknaden, men ägandet är ditt — ingen motpart står mellan dig och andelen. Ett terminsavtal: värdet rör sig med marknaden, MEN utbetalningen i framtiden kräver att någon håller sitt löfte — och det någon är motparten. Skillnaden är hela kursen: terminen är två ömsesidiga löften (du levererar, motparten betalar — eller omvänt), och det egna löftets värde beror på den andras förmåga att infria sitt. Kontrahentrisken har tre egenskaper som skiljer den från marknadsrisken. Den första: den är osymmetrisk i resultatet — motpartens svikte kostar dig den utlovade betalningen i sin helhet, medan dess heder aldrig kan ge dig mer än kontraktet lovar; utfallet är skevt nedåt. Den andra: den växer när marknadsrisken växer — exponeringen mot en motpart är som störst just när marknaden rört sig emot motparten (ditt kontrakt är i pengar när den andra sidan blöder), en inbyggd procyklisk koppling som rk-03:s dolda samvariation beskriver i allmän form. Den tredje: den är svårast att se utifrån — priserna citeras överallt, motpartslistorna nästan ingenstans i offentlig statistik. Historiens största lektion om fältet bär ett datum: den 15 september 2008, när Lehman Brothers ställde in betalningarna. Bolaget föll som aktie och som MOTPART — tusentals bilaterala avtal med banken som ena sidan blev samtidigt omtvistade fordringar, och krisen spreds inte genom priserna utan genom löftena. Det som byggdes efteråt — clearing för standardderivat, krav på säkerheter, exponeringsrapportering — är denna kurs mekanik, kapitel för kapitel: nettingen som krymper exponeringen, säkerheterna som täcker den, clearinghuset som står i mitten, och den bilaterala värld som fortfarande lever utan trappan."
+          },
+          {
+            "type": "definition",
+            "content": "KONTRAHENTRISK — risken att motparten inte infria sitt löfte i ett kontrakt · MARKNADSRISK — risken att kontraktets värde rör sig emot dig — en annan dimension · EXPOSERING — vad du har att fordra hos motparten, efter netting och säkerheter · MOTPARTSBYTE — clearinghuset träder in som motpart till båda sidor (kapitel fyra) · PROCYKLISK KOPPLING — exponeringen störst när motparten svagast"
+          },
+          {
+            "type": "insight",
+            "content": "Kontrahentriskens paradox: din exponering är som störst precis när motparten har sämst förmåga att betala — kontraktet är mest värt när den andra sidan blöder som mest. Risken och motpartens nöd är samma rörelse, inte två."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Nettingen — från brutto till netto",
+        "intro": "Mot en och samma motpart växer positioner i båda riktningar. Nettingen är avtalsmekaniken som låter motstående fordringar ta ut varandra — och den förvandlar riskbilden från brutto till netto.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räkneexemplet, kursens påhittade tal i miljoner. Din derivatbok mot Bank Ett innehåller tre avtal: swap A där du har plus 8 (banken ska betala dig 8), swap B där du har minus 5 (du ska betala banken 5), swap C där du har plus 2. Bruttoexponeringen — summan av alla positiva belopp — är 8 + 2 = 10, och bruttoskulden 5; sammanlagt omsatt 15. Utan nettingavtal, om banken faller: du förlorar fordringarna 8 och 2 (tio borta) och din egen skuld på 5 hanteras i konkursboet — du kan komma att betala 5 för att stänga en position vars motvärde aldrig kommer. Med nettingavtal (i praktiken ISDA-ramverkets avtalspara): alla tre avtalen slås samman till ETT fordransbelopp, plus 8 minus 5 plus 2 = plus 5 — vid default är din fordran 5, och din skuld har försvunnit in i nettingen. Netto i stället för brutto: exponeringen 5 i stället för 10 fordrade mot en osäker skuld på 5. Nettingens två praktiska lärdomar. Den första: koncentrationen av motpart betyder OMVÄNT vad intuitionen säger — tre avtal mot EN motpart (med netting) kan bära mindre risk än samma tre avtal mot TRE motparter (utan inbördes netting): i det senare fallet är fordringarna 8 och 2 hos varsin motpart utan att kunna nettas mot skulden 5 hos den tredje — brutto åter, men nu i tre korgar. Nettingen köps alltså med koncentration, och balansen mellan dem är portföljens strukturval. Den andra: netting kräver juridisk halt — avtalen som tillåter sammanläggning måste stå på plats FÖRE default, i rätt jurisdiktion; en netting som prövas först i konkurs räknas inte med samma säkerhet. Därmed hör nettingen hemma i samma familj som allt som krymper exponeringen innan den inträffar: den är inte en buffert (kapitel tre) utan en definition — risken som aldrig uppstår för att den strukits i avtalet."
+          },
+          {
+            "type": "tabell",
+            "content": "NETTINGENS ARITMETIK (PÅHITTADE TAL, MILJONER): swap A +8 · swap B −5 · swap C +2 · brutto fordran 10 mot skuld 5 (omsatt 15) · NETTO ETT AVTALVERK: +8 − 5 + 2 = +5 — fordran vid default 5 · UTAN NETTING: fordrar 8 och 2 i konkurs, skuld 5 kvar — brutto i två korgar · EN MOTPART MED NETTING kan bära mindre risk än TRE utan · NETTINGEN = DEFINITION, INTE BUFFERT — exponering som aldrig föds"
+          },
+          {
+            "type": "insight",
+            "content": "Nettingens gåva till systemet: en derivatbok med tusen avtal bär ofta en bråkdel av sitt bruttovärde i verklig exponering — men gåvan gäller bara per motpart och bara med avtal som står klara före fallet. Brutto är vad du ser; netto är vad du riskerar."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Säkerheterna — margin, haircut och panten",
+        "intro": "Nettingen krymper exponeringen; säkerheterna täcker det som blir kvar. Margin-systemet är pantens moderna form: kontanter och värdepapper som ställs och värderas med haircuts.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Två sorters margin. Initial margin: panten som ställs FÖRE handeln, som buffert mot framtida rörelser — kursens exempel: ett terminskontrakt med värde 1 000 000 och initial margin 5 procent kräver 50 000 i pantsatt säkerhet från båda sidor, innan priset rört sig en enda procent. Variation margin: den dagliga utjämningen av det som redan hänt — när kontraktet går minus 2 procent för din del flyttas 20 000 från ditt konto till motpartens (kontraktets värde rört sig, skillnaden betalas kontant, varje dag, utan dröjsmål). Mekanikens två sidor: den som ligger efter betalar INOM DAGEN, och den som ligger väl har sin vinst SÄKERSTÄLLD i kontanter — variation margin är därför inte bara säkerhet utan realisering, dag för dag. Haircuten värderar pappret. All säkerhet är inte lika: en statsobligation nominalt värd 100 får kredit 98 (haircut 2 procent — säkerheten får falla 2 procent innan den inte längre täcker), en aktieportfölj nominellt 100 får kredit 80 (haircut 20 procent), kontanter får kredit 100 (haircut noll). Haircuten är pantens prissättning av volatilitet och likviditet: hur mycket kan värdet falla innan exponeringen står naken, och hur snabbt kan panten säljas om den måste. Därför varierar haircuts med marknadsläget — i kris skärps de (aktiernet från 20 mot 35 i kursens exempelläge), och just då kräver systemet mer säkerhet från dem som har minst: procyklisk mekanik igen, samma koppling som kapitel ett beskrev. Säkerheternas sammanlagda läsning: nettot ur kapitel två, minus säkerheternas kreditvärde, är den obestämda exponeringen — och allt som kapitel fyra och fem handlar om är frågan vem som bär den: clearinghusets trappa eller ingen alls. En sista nyans: säkerhet har egen kontrahentrisk — panten förvaltas hos någon (truster, separata konton), och historien har exempel på pant som bokförts i motpartens egen balansräkning; att panten står rätt juridiskt är del av själva säkerheten."
+          },
+          {
+            "type": "tabell",
+            "content": "SÄKERHETERNAS ARITMETIK (PÅHITTADE TAL): kontrakt 1 000 000 · INITIAL MARGIN 5 % = 50 000 i pant före handel · VARIATION MARGIN: kontrakt −2 % = 20 000 inbetalt samma dag · HAIRCUTS: statsobligation 2 % → kredit 98 per 100 · aktieportfölj 20 % → kredit 80 · kontanter 0 % → kredit 100 · KRISLÄGE: haircuts skärps (aktier 20 → 35) — mer säkerhet krävs när den är sämst tillgänglig · OBESTÄMD EXPOSERING = NETTO − SÄKERHETERS KREDITVÄRDE"
+          },
+          {
+            "type": "insight",
+            "content": "Margin-systemets dubbla natur: initial margin är tiden — en buffert mot morgondagens rörelse, variation margin är rummet — dagens rörelse betald kontant. Tillsammans gör de förlusten till en ström i stället för en explosion: små belopp, varje dag, i stället för ett berg vid ett enda fall."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Clearinghuset — köpmannen i mitten och default-trappan",
+        "intro": "Clearinghusets trick är att byta ut motparten: det trädde in som säljare mot varje köpare och köpare mot varje säljare. Din kontrahent blir inte banken — det blir huset, och huset bär en trappa.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Motpartsbytet. Utan clearing: ditt terminsavtal med Bank Ett är precis det — en fordran på just den banken. Med clearing: avtalet kluvs, clearinghuset (CCP — central counterparty) blir motpart till båda — banken ser huset som motpart, du ser huset som motpart, och ingen av er bär risken för varandra. Kvar för huset: att inte själv bli den koncentration av kontrahentrisk som det avhjälper — och det är trappan som gör det. Default-trappan, kursens exempel med påhittade tal i miljoner. Ett medlems position kollapsar: husets exponering mot medlemmen är 40. Steg ett — netting (kapitel två): medlemmens avtal slås samman till ett belopp, 40. Steg två — säkerheterna: medlemmens initial margin och övrig pant täcker 28; kvar att bära 12. Steg tre — garantifonden: medlemmarna har sammantaget bidragit en obligatorisk fond (också den vägd mot risk); den täcker 8; kvar 4. Steg fyra — husets eget kapital: de sista 4 sväljs, verksamheten går vidare. (I verkliga regelverk finns ytterligare steg — återvinning av fallna medlemmars positioner, avgifter i efterhand — men trappans princip är buffertarnas ordning: först det som är medlemmens, därefter det som är medlemmarnas gemensamt, sist det som är husets eget.) Trappans ekonomi är kursens vackraste struktur: varje buffert har en ägare och en ordning, och risken förflyttas uppåt först när nedre ledet är förbrukat. De två återstående frågorna hör till systemets kant. Den första: vad händer när två stora medlemmar faller samma vecka — garantifonden är gemensam, och trappan som skyddar mot ett fall kan bli mekanismen som sprider det andra (pf-07:s krishantering och rk-12:s svarta svanar möts här). Den andra: vem garanterar garanten — clearinghuset är systemets största enskilda kontrahent, och dess egen kapitalnivå är systemets sista buffert. Historiens svar på båda är sammandraget samma som kursens: mekanismerna är starkare än förtroendet men inte starkare än koncentrationen — därför övervakas husen som systemkritiska, och därför slutar aldrig frågan vem som står på andra sidan."
+          },
+          {
+            "type": "tabell",
+            "content": "DEFAULT-TRAPPAN (PÅHITTADE TAL, MILJONER): exponering 40 · STEG 1 NETTING: avtal slås samman → 40 · STEG 2 SÄKERHETER: pant täcker 28 → kvar 12 · STEG 3 GARANTIFOND: medlemmarnas gemensamma fond täcker 8 → kvar 4 · STEG 4 HUSETS EGNA KAPITAL: sväljer 4 — trappan slut · VARJE BUFFERT HAR ÄGARE OCH ORDNING · SYSTEMFRÅGAN: två fall samma vecka — och vem garanterar garanten"
+          },
+          {
+            "type": "insight",
+            "content": "Clearinghusets gåva och pris i en och samma mekanik: motparten byts från en bank du kan välja till ett hus du inte kan undvika — kontrahentrisken försvinner inte, den trappas, fördelas och koncentreras; trappan gör den bärbart liten varje dag och teoretiskt stor en enda."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Den bilaterala världen — utan trappan",
+        "intro": "Clearing når bara standardavtal. Stora delar av ekonomin lever i den bilaterala världen — kontrakt mot en motparts namn, utan trappa — och där är kontrahentrisken som renast: osäkrad, koncentrerad, och ofta dold i en verksamhetsbeskrivning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre bilaterala fält, samma mekanik. Kundfordran: tillgångsposten kundfordringar är kontrahentrisk i sin helhet — varje faktura ett löfte, ingen initial margin, ingen haircut, ingen clearing; rs-02:s kundkoncentration är frågan hur många av löftena som bor hos en enda namngiven part, och noteringen är att koncentrationen ofta är större i bolag vars årsberättelser talar minst om den. Återförsäkring: ett försäkringsbolag som lämnar av 40 procent av en katastrofskada på 2 000 har 800 hos återförsäkraren — en fordran utan pant, vars värde beror av motpartens soliditet just när katastrofen slagit (alla återförsäkrares våta dröm är ingen katastrof, deras mardröm är att alla slår samtidigt — kontrahentrisken är störst i läget då alla behöver betala, se-19:s läsning av branschen). Bank och plattform: kontanter och värdepapper hos en bank eller handelsplattform är en fordran på just den institutionen — insättningsgarantier och segregationsregler är trappans kusiner, med tak och villkor (juridikens fält, kursen pekar men äger inte). Den bilaterala världens gemensamma grammatik: exponeringen bärs av namnet, säkerheten är kontraktuellt noll om inget annat avtalats, och skyddet är diversifiering — många motparter, få stora löften hos varje. Lehman-spegeln igen, från bilateral sida: krisen 2008 spreds inte genom clearinghusen (som stod) utan genom de bilaterala nät som ingen kunde se — motpartslistor som fanns överallt och sammanställdes ingenstans. Därav eftertidens två svar, vars mekanik kursen nu sammanfattar: standardavtal in i clearing (EU:s marknadsinfrastrukturförordning och dess amerikanska motsvarighet — ramverken bakom kapitel fyra trappa), och exponeringsrapportering till register — att synliggöra vad som bara bodde i namn. Kvar, alltid, det bilaterala som inte kan standardiseras: relationer, kunder, återförsäkring, lån — världen av löften utan trappa, lästa med kursens enda generella verktyg: räkna exponeringen per namn, kräv pant där det går, och diversifiera det som inte kan pantas."
+          },
+          {
+            "type": "definition",
+            "content": "BILATERALT AVTAL — kontrakt direkt mellan två parter, utan clearinghus i mitten · KUNDFORDRAN — bilateralt löfte utan säkerhet: tillgångsposten som är kontrahentrisk i sin helhet · ÅTERFÖRSÄKRING — försäkringsbolagets försäkring: en fordran på motparten utan pant, störst när katastrofen slagit · SEGREGATION — regeln att klientens tillgångar hålls åtskilda från institutionens egen balansräkning · DIVERSIFIERING AV MOTPARTER — det bilaterala världens huvudskydd: många namn, små löften"
+          },
+          {
+            "type": "insight",
+            "content": "Den bilaterala världens sanning: clearinghus skyddar standardiserade löften, men ekonomins mest verkliga löften — en faktura, en återbetalning, en återförsäkring — lever utan trappa. Där gäller nettingens och pantens anda utan deras maskineri: räkna per namn, och lita aldrig mer på ett löfte än dess bärare bär."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — kartlägga sin kontrahentrisk",
+        "intro": "Kursens redskap samlas till ett arbetsblad: exponeringens fyra frågor, som kan ställas till en portfölj, ett bolag eller en derivatbok — och alltid i samma ordning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett — VAD är exponeringen? Räkna brutto (alla positiva fordringar), netto per motpart (kapitel två), och det obestämda beloppet (netto minus säkerheternas kreditvärde, kapitel tre): kursexempelbokens 15 brutto blev 5 netto och, med 3 i säkerhetsvärde, 2 obestämt. Fråga två — HOS VEM? Lista motparterna per belopp: koncentrationen är exponeringens andra hälft — 5 hos en AAA-instans och 5 hos en enskild kund är två olika risker med samma siffra (rs-02:s verktyg tillämpat på löften i stället för intäkter). Fråga tre — MED VILKEN TRAPPA? Klassificera varje exponering: clearet (clearinghus — kapitel fyra trappa), bilateralt med pant (säkerheter ställda — kapitel tre), bilateralt utan pant (namnet bär allt — kapitel fem): trappans djup är skyddets djup. Fråga fyra — I VILKEN KORRELATION? Exponeringarna rör sig inte oberoende: krisen når motparter samtidigt (kapitel ett procykliska koppling, rk-03:s dolda samvariation), och det stressfall som spelar roll är inte en motparts fall utan det gemensamma läget då flera faller — pf-07:s scenarioövning med kontrahentrisk som variabel. Arbetsbladet appliceras på tre nivåer. Den privata portföljen: kontanter och värdepapper hos vilka institutioner, med vilka skydd — den fråga de flesta aldrig ställt och som tar en kvart att grovt besvara. Bolagsläsningen: kundfordringarnas koncentration, återförsäkringens andel, derivatbokens nettoer och säkerheter — noterna som bär svaren i årsredovisningen (bk-familjens läsordning möter rk-familjens fråga). Systemläsningen: clearingens andel, garantifondernas storlek, koncentrationen bland husen själva — den nivå kursen bara pekar ut: systemets kontrahentrisk försvinner aldrig, den flyttar bara uppför trappan. Kursens avslutning är dess tes i förstorad form: marknadsrisken frågar vad morgondagen kostar, kontrahentrisken frågar vem som håller ord — och den som alltid ställer den andra frågan har finansmarknadens mest ojämnt fördelade kunskap: den syns aldrig i prislistan och avgör ändå om priserna betalas."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övningen med kursens tal: en bok med tre avtal (+8, −5, +2) mot en motpart, initial margin sammanlagt 3 i kontanter — räkna brutto (10 fordran, 5 skuld), netto (5) och obestämd exponering (5 − 3 = 2). Lägg därefter till en fjärde position, plus 6, mot en NY motpart utan netting och utan säkerhet: vilken av de båda exponeringarna är störst, och vad heter den bakomliggande skillnaden? Övningen ger inget att placera i — den ger vanan att se löften som poster på en exponeringsbalans, med namn och trappa på varje rad."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens sextonde steg i en mening: kontrahentrisken är frågan vem som betalar när kontraktet förfaller — nettingen krymper den, säkerheterna täcker den, clearingens trappa fördelar den, och den bilaterala världen bär den — och den som alltid frågar vem som står på andra sidan har ställt finansens mest värdelasta fråga."
+          }
+        ]
+      }
+    ]
+  },
   "pf-09-taxloss-harvesting": {
     "slug": "pf-09-taxloss-harvesting",
     "category": "PORTFÖLJHANTERING",
@@ -71919,6 +72095,182 @@
           {
             "type": "insight",
             "content": "Familjens nittonde steg i en mening: försäkringsbolaget är börsens enda verksamhet där kunden betalar för att bolaget ska få låna — och där hela konsten är att prisa risken så att lånet förblir billigt, reserverna sanna och kapitalet tjockt nog för det år då vädret väljer att inte vara statistik."
+          }
+        ]
+      }
+    ]
+  },
+  "se-20-gruv-och-metallsektorn": {
+    "slug": "se-20-gruv-och-metallsektorn",
+    "category": "SEKTORANALYS",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Gruv- och metallsektorn — berget, kassamarginalen och den tröga cykeln",
+    "summary": "SEKTORANALYS-familjens tjugonde steg öppnar Nordens klassiska råvarusektor: gruvorna och metallerna. Sonden mot 452 kurser visar att gruvsektorn och metallsektorn saknar kursägare helt — Boliden finns som bolagscase (pc-11) och materialsektorn som övergripande övning (km-045), men sektorn som sådan är oskriven, samma läge rederisektorn hade före sitt steg. Kursens tes är trefaldig. Först: gruvans ekonomi är en kamp mellan berg och metall — malmhalten bestämmer hur många ton berg som måste brytas per ton metall, och halverad halt fördubblar kostnaden per metallton: kursens räkneexempel ger vid halt 1,0 procent hela 100 ton berg och 4 000 dollar per ton koppar i brytningskostnad, mot 50 ton och 2 000 dollar vid 2,0 procent. Sedan: kassamarginalens hävstång — kvoten pris dividerat med pris minus C1-kostnad — gör att samma prisrörelse slår olika hårt: en gruva med C1 1,60 dollar per pund på pris 4,00 har marginal 2,40 och hävstång 1,67, medan grannen med C1 2,80 har marginal 1,20 och hävstång 3,33 — tio procents prisrörelse blir sexton respektive trettiotre procents marginalrörelse. Tredje: utbudet är trögt — från fynd till produktion går fem till tio år, investeringsbesluten fattas vid cykelns topp och tonen landar i nästa botten; kursens cykelexempel visar pris som dubblas på sex år (+100 procent) medan utbudet hinner växa åtta procent, för att därefter falla fyrtiofem procent när nya ton möter vänd efterfrågan. Bi-metallerna (guldkrediten som bär nästan en fjärdedel av en koppargruvas intäkt) och reservationsaritmetiken (6,0 miljoner ton reserver vid 0,2 miljoner ton per år = trettio års livslängd) kompletterar sektorläsningen. Historien bär kopparns bronsålder, järnets industrietablering och 2000-talets Kina-bygge. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "why": "SEKTORANALYS-familjens nitton första steg har skrivit branscher vars produkter är tjänster, varor eller transporter — men inte den sektor vars produkt är ett grundämne som måste sprängas, krossas och smältas ur berg. Sonden mot 452 kurser bekräftar: gruvsektorn, metallsektorn, anrikningsverk och malmbanan har noll kursägare; gruv nämns i förbifart av tjugotre kurser som exempel, Boliden ägs som case av pc-11 och materialsektorn som övning av km-045 — precis det mönster (mycket förbifart, noll sektorägande) som motiverade se-17 skogssektorn och se-18 rederi och shipping. Ändå är gruvnäringen börsens renaste kostnads- och cykellaboratorium: kassamarginalens hävstång (kapitel tre) är samma mekanism som mt-familjens kostnadsoverlagsenhet men i sitt mest extrema villkor, utbudströgheten (kapitel fyra) är cykelteorin i sin långsammaste form, och malmhaltens aritmetik (kapitel två) är sektorns egen vallgravslära — moat-familjens fråga vem som överlever cykelbotten får här sitt konkreta svar: den med lägst C1. Kursen binder grannarna till en helhet: vr-02 normaliserar multiplern över just denna cykel, ma-04 läser Kina-bygget som konjunkturindikator, rk-06 äger tillstånds- och politisk risk, och se-16 har lärt metoden som här får sitt råvaruhårda material.",
+    "learn": "Förstå gruvas värdekedja: prospektering, brytning, anrikning, smältning och raffinering — varje steg med sin kostnadspost och sitt kapitalbehov · Räkna malmhaltens ekonomi: vid halt 1,0 procent krävs 100 ton berg per ton koppar och 4 000 dollar per ton metall i brytningskostnad, mot 50 ton och 2 000 dollar vid 2,0 procent — halverad halt, fördubblad kostnad · Räkna kassamarginalen: pris 4,00 dollar per pund med C1-kostnad 1,60 ger marginal 2,40; med C1 2,80 ger marginal 1,20 · Räkna hävstången: pris ÷ (pris − C1): 4,00 ÷ 2,40 = 1,67 mot 4,00 ÷ 1,20 = 3,33 — tio procents prisrörelse blir 16,7 respektive 33,3 procents marginalrörelse · Förstå bi-metallernas krediter: guldkrediten 0,5 gram per ton à 65 dollar per gram = 33 dollar per ton malm mot kopparets 106 dollar — guldet bär 33 av 139 dollar, nästan en fjärdedel av en koppargruvas råintäkt · Förstå utbudströgheten: fem till tio år från fynd till produktion gör investering vid topp till ton i nästa botten — cykelexemplet pris +100 procent på sex år medan utbudet växer åtta procent, därefter pris −45 procent på fyra år · Räkna reservationslivslängden: reserver 6,0 miljoner ton metall vid produktion 0,2 miljoner ton per år = 30 år · Läsa en gruvrapports kärntal: reserver och resurser, malmhalt, C1 och AISC, livslängsplan och landfördelning — sektorns egen läsordning",
+    "history": {
+      "origin": "Bergsbruket hör till de äldsta organiserade näringarna: kopparn gav bronsåldern sitt namn, järnet dess efterföljare, och medeltidens bergsprivilegier — Falu koppargruva i Sverige, Kongsberg i Norge — var statens första industripolitik. Gruvan var länge en lokal angelägenhet kring en fyndighet, med brytning i handkraft och långsam transport som begränsning.",
+      "evolution": "Industrialiseringen omvandlade bergsbruket till gruvnäring: ångkraften flyttade brytningen djupare, järnvägen öppnade inlandet — malmbanan som förband Norrbottens malmfält med isfria hamnar är sektorns kanske renaste infrastrukturmonument — och 1900-talets flottationsmetod gjorde fattig malm rik: anrikning av låghaltiga sulfidmalmar lade grunden för den moderna svenska gruvregionen. Samtidigt växte de stora diversifierade gruvbolagen fram, och sektorn globaliserades: priset på en metall blev ett världspris, satt på råvarubörser.",
+      "modern": "I dag läses sektorn genom två linser. Den ena är Kina-bygget: 2000-talets urbanisering av en miljard människor drog upp efterfrågan på stål, koppar och zink i en skala som dubblerade metallpriser — och lärde marknaden att råvarucykeln har en motor med egen politik. Den andra är omställningen: elektrifiering och förnybar energi gör koppar och litium till teknikmetaller med ny efterfrågegeometri, medan kol- och järnkedjan söker sina omvägar. Sektorns läsning är densamma genom alla skiften: malmhalten, kostnadstrappan och cykelns klocka."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Berget till metall — sektorns värdekedja",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Malmhalten — hur många ton berg per ton metall",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Kassamarginalen — C1 och hävstången",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Den tröga utbudssidan — cykelns motor",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Bi-metaller och reserver — intäkternas och livslängdens aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — läsa en gruvrapport",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om cykliska branscher där man räknar cykler, inte år — och gruvsektorn är mönstret i sin renaste form: högkonjunkturens utbyggnad blir bottensemesterns överkapacitet, om och om igen. Hans varning passar sektorn särdeles väl: en råvarucykel är ingen tillväxtberättelse, ty produkten kan inte differentieras eller förnyas — när marknaden prissätter gruvor som vore de tillväxtbolag har den förväxlat malmen med en moat den inte äger.",
+    "grahamSection": "Benjamin Grahams fråga — vad företaget är värt mot vad det kostar — får i gruvsektorn sin cykliska skärpa: ett årsresultat speglar priset just då, inte gruvans genomsnitt. Hans margin of safety översätts hit som kostnadsmarginalens marginal: den gruva vars C1 ligger under cykelns bottennivåer bär sin egen säkerhetsmarginal inbyggd i berget, medan den som behöver toppris för att täcka sina kostnader hyr sin överlevnad av cykeln.",
+    "ak1Section": "I AK1A:s metodik är se-20 råvarucykerns referenskurs: i AKM2:s scenariearbete hålls metallpriser på kort horisont som cykelvariabler (ma-04:s indikatorläsning) och på lång horisont som strukturförskjutningar (elektrifieringens efterfrågevägg), och att skilja de två åt är scenariots råvarudisciplin. Kassamarginalens hävstång matar mt-familjens vallgravstest med sektorns extrema fall, och vr-02:s normaliserade multipler får här sitt svåraste objekt. Kursen är utbildning i mekanismer — inga positioner, inga råd.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Berget till metall — sektorns värdekedja",
+        "intro": "En metall börjar sitt liv som berg. Värdekedjan från fyndighet till färdig metall bestämmer sektorns kostnadsstruktur — och därmed dess ekonomi.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kedjan har fem led. Prospektering: geologiska undersökningar som letar malmkroppar — år av kostnad utan intäkt, med slutsatsen att de flesta fyndigheter aldrig blir gruvor. Brytning: berget sprängs och fraktas ur gruvan, under jord eller i dagbrott — den kostnadspost som malmhalten (kapitel två) styr. Anrikning: berget krossas och mals, och värdemineralerna skiljs från gråberget i anrikningsverket till ett koncentrat — sektorns eget raffinaderi vid gruvan. Smältning och raffinering: koncentratet smälts till råmetall och renas till färdig produkt — kapitalintensiva anläggningar som ofta ligger långt från gruvan, vid energi och hamn. Logistik: malmanläggningar ligger där malmkroppen ligger — infrastrukturen (väg, järnväg, hamn, el) är därför en del av fyndighetens värde, inte bara en transportfråga. Varje led bär sin egen kapitalcykel: prospekteringsbolaget finansierar sig på emissioner, gruvbolaget på projektbanker, smältverken på långsiktiga kontrakt — och sektorns bolagslandskap följer kedjan. Sektorläsningens första läxa är att kostnaden i varje led delvis är fast mot tonnage: att bryta hälften så mycket kostar inte hälften, och det är denna tröghet som ger kapitel tre dess hävstång. Kursens genomgående exempel är två påhittade gruvor — Norrgruvan med C1-kostnad 1,60 dollar per pund koppar och Högfjällsgruvan med 2,80 — som får samma marknadspris och visar hur olika sektorn ser ut inifrån beroende på var i kostnadstrappan berget ligger."
+          },
+          {
+            "type": "definition",
+            "content": "MALMKROPP — en geologiskt avgränsad mängd berg med tillräcklig metallhalt för brytning · PROSPEKTERING — letandet efter malmkroppar; år av kostnad före eventuell intäkt · KONCENTRAT — anrikningsverkets produkt: uppgraderat mineralpulver klart för smältning · C1-KOSTNAD — kassakostnaden per pund färdig metall, efter kredit för bi-metaller · RESERVER — mängden metall som med teknik och pris är ekonomiskt brytbar — se kapitel fem"
+          },
+          {
+            "type": "insight",
+            "content": "Sektorns första läxa: metallpriset är ett världspris, men kostnaden är en lokal egenskap hos just det berget — samma kopparpris möter tusen olika kostnadskurvor, och hela sektoranalysen är frågan var i trappan ens gruva står."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Malmhalten — hur många ton berg per ton metall",
+        "intro": "Gruvans mest fundamentala tal är andelen metall i berget. Malmhalten bestämmer hur mycket berg som måste röras per ton färdig metall — och därmed kostnaden per metallton.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räkneexemplet med kursens avrundade tal. En kopparfyndighet med halt 1,0 procent: varje ton koppar kräver 100 ton berg — resten är gråberg som krossats, anrikats och transporterats bort för att inte vara värt att smälta. Brytning och anrikning kostar i exemplet 40 dollar per ton berg: 100 ton gånger 40 ger 4 000 dollar per ton koppar i brytningskostnad, innan smältning och administration alls är räknade. Grannen med halt 2,0 procent rör 50 ton berg per ton metall: 50 gånger 40 = 2 000 dollar — hälften. Aritmetiken är brutal i sin enkelhet: halverad halt, fördubblad kostnad per metallton, och därför är malmhalten den enda egenskap hos en fyndighet som ingen förvaltning kan förhandla bort — den är geologins gåva eller frånvaro. Halten styr också sektorns teknologihistoria: det berg som på 1800-talet var avfall kan på 2000-talet vara malm, ty flottationsmetoden och fallande brytningskostnader har flyttat den brytvärda gränsen nedåt — reservationerna växer inte bara genom nya fynd utan genom att teknik gör fattigt berg rikt. Två nyanser kompletterar bilden. Den första: halten i en malmkropp är aldrig enhetlig — rik kärna och fattigare kant betyder att genomsnittshalten under gruvans liv brukar sjunka när den rikaste malmen bryts först, en inneboende kostnadsvind som sällan syns i årsredovisningen men alltid i livslängsplanen. Den andra: gränsen mellan malm och gråberg är en prisfråga — vid högt pris blir låghaltigt berg brytvärt, vid lågt blir det berg igen; reservationen är en funktion av priset, inte bara av geologin, och kapitel fem räknar den aritmetiken."
+          },
+          {
+            "type": "tabell",
+            "content": "MALMHALTENS EKONOMI (KURSETS AVRUNDADE TAL): halt 1,0 procent → 100 ton berg per ton koppar · 100 × 40 dollar = 4 000 dollar per ton metall · halt 2,0 procent → 50 ton berg · 50 × 40 = 2 000 dollar — halverad halt, fördubblad kostnad · HALT-NYANS: genomsnittshalten sjunker ofta över gruvans liv (rik malm bryts först) · PRIS-NYANS: den brytvärda gränsen flyttar med metallpriset — reservationen är delvis en prisvariabel"
+          },
+          {
+            "type": "insight",
+            "content": "Malmhalten är sektorns vallgrav i sin renaste form: processkunskap kan kopieras och kostnadskurvor kan effektiviseras — men andelen koppar i berget äger inget möte ändra. Att fråga efter haltens utveckling över livslängdsplanen är gruvanalysens motsvarighet till att fråga efter moatens erosion."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Kassamarginalen — C1 och hävstången",
+        "intro": "Sektorns centrala resultatmått är kassamarginalen: priset per pund metall minus kassakostnaden C1. Hävstången på marginalen — hur många procent marginalen rör sig per procent pris — är sektorns känslighetsregister.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kursexemplet, påhittade tal i sektorns form. Marknadspriset på koppar: 4,00 dollar per pund. Norrgruvan med C1 1,60: kassamarginalen 4,00 − 1,60 = 2,40 dollar per pund. Högfjällsgruvan med C1 2,80: marginalen 1,20. Samma marknad, olika ekonomi. Hävstången är kvoten pris ÷ (pris − C1): Norrgruvan 4,00 ÷ 2,40 = 1,67; Högfjäll 4,00 ÷ 1,20 = 3,33. Konsekvensen, räknad på tio procents prisrörelse: priset 4,40 ger Norrgruvan marginal 2,80 — plus 16,7 procent — och Högfjäll 1,60 — plus 33,3 procent. Spegelfallet pris 3,60: Norrgruvan 2,00 (minus 16,7), Högfjäll 0,80 (minus 33,3). Mönstret är sektorns viktigaste: den högkostnadiga gruvan har den största uppsidén i boomen och den snabbaste kvävningen i botten — samma egenskap, läst i två riktningar. Notera också var marginalen är noll: Norrgruvan står vid pris 1,60, Högfjäll vid 2,80 — det är cykelbottens sorteringsmekanism, den som kapitel fyra tar till sin cykelteori. C1:s egen definition bär en läxa i sig: kassakostnaden räknas per pund färdig metall EFTER kredit för bi-metaller (kapitel fem) — guldet i kopparberget sänker alltså den synliga kostnaden, och två gruvor med identisk C1 kan ha olika underliggande ekonomi om den enas C1 är subventionerad av en guldkredit. Slutligen ramen kring måttet: C1 täcker brytning, anrikning och transport till dagens kostnader — inte avskrivningar på anläggningen, inte projektutbyggnad, inte skatt. Det fullare måttet AISC (all-in sustaining cost) lägger kostnaderna för att hålla produktionen vid liv ovanpå C1 och ligger alltid högre; kursens räkneexempel håller sig till C1 för renhet, men läsningen av en gruvrapport (kapitel sex) kräver båda — C1 för dagens kassamaskin, AISC för dommen om hur länge maskinen är hållbar."
+          },
+          {
+            "type": "tabell",
+            "content": "KASSAMARGINALENS HÄVSTÅNG (PÅHITTADE TAL): pris 4,00 dollar per pund · Norrgruvan C1 1,60 → marginal 2,40, hävstång 4,00 ÷ 2,40 = 1,67 · Högfjäll C1 2,80 → marginal 1,20, hävstång 4,00 ÷ 1,20 = 3,33 · PRIS +10 % TILL 4,40: marginal 2,80 (+16,7 %) mot 1,60 (+33,3 %) · PRIS −10 % TILL 3,60: marginal 2,00 (−16,7 %) mot 0,80 (−33,3 %) · NOLLSTÄLLENA: C1 = bottenpriset — 1,60 mot 2,80 · C1 RÄKNAS NETTO EFTER BI-METALLKREDIT · C1 MOT AISC — AISC LIGGER ALLTID ÖVER C1"
+          },
+          {
+            "type": "insight",
+            "content": "Hävstångens läxa i en mening: i gruvsektorn är kostnadsläget en position — den som ligger lägst i C1-trappan upplever samma prisvolatilitet som en annan hävstång, och cykelns botten är därför inte en åsikt om marknaden utan en sortering av kostnadskurvor."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Den tröga utbudssidan — cykelns motor",
+        "intro": "Varför rör sig metallpriser i multicykler? Svikten ligger i utbudet: en ny gruva beslutas vid bra priser men levererar ton först år senare — utbudet svarar sent, och svaret landar ofta i nästa fas.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tidsaxeln är sektorns motor. Från fynd till färdig prospektering: år av borrning och studier. Från byggnadsbeslut till första ton: oftast ytterligare tre till fem år — tillstånd, anläggande av gruva och anrikningsverk, infrastruktur. Sammanlagt fem till tio år mellan den prisbild som motiverar investeringen och det tonnage som möter marknaden. Under dessa år har efterfrågan hunnit vända: bostadsbyggandet som drog kopparpriset uppåt kan ha bytts mot recession, och tonen från gruvor som beslutades i eufori landar i efterdyningens prisläge. Cykelexemplet, kursens påhittade tal i historiens form: en efterfrågechock (i verkliga historien 2000-talets Kina-bygge) dubblerar priset på sex år — 2,00 till 4,00 dollar per pund, plus 100 procent — medan världens produktion under samma sex år växer sammanlagt åtta procent: utbudet svarar knappt alls på kort sikt. Det höga priset gör två saker: det rationerar efterfrågan (billigare substitut, effektivisering) och det finansierar utbyggnad (nya projekt, högre brytvärd gräns — kapitel två). Fyra år senare landar tonen: utbudet växer nu, efterfrågan har vänt, och priset faller fyrtiofem procent — 4,00 till 2,20 — tills de högkostnadiga gruvorna (kapitel tre: de med nollställe där) läggs ned, utbudet krymper och cykeln kan vända igen. Sektorläsningens tre redskap ur denna mekanik. Det första är normaliseringen: ett års resultat speglar priset det året — vr-02:s normaliserade multipler är för gruvor inte finess utan nödvändighet. Det andra är kapitalcykelns tecken: sektorns största investeringsprogram brukar ligga nära prisets topp (finansieringen är bäst där) — omvänt är investeringstorka vid botten ett cykeltecken i sig (ma-04:s indikatorläsning). Det tredje är kostnadstrappans geometri vid vändningen: när priset faller mot nollställena läggs högkostnadsgruvorna först — utbudet minskar stegvis uppåt i trappan, och varje nedläggning är en nyhet om var botten ligger."
+          },
+          {
+            "type": "definition",
+            "content": "UTBUDSTRÖGHET — svaret på pris kommer först år senare: fem till tio år fynd-till-produktion · KAPITALCYKELN — investeringarna kulminerar vid prisets topp; tonen landar i nästa fas · NORMALISERING — att läsa resultat över en hel cykel, inte ett år · NOLLSTÄLLESSORTERINGEN — när priset passerar C1 för gruvor uppåt i trappan läggs de successivt ned"
+          },
+          {
+            "type": "insight",
+            "content": "Cykelns väsen är inte att priserna svänger — det gör de överallt — utan att utbudet svarar i fel fas: gruvsektorns boomer bygger bottenens utbud, och bottenens nedläggningar bygger nästa bristsituation. Att läsa sektorn är att läsa denna förskjutning, inte att spå priset."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Bi-metaller och reserver — intäkternas och livslängdens aritmetik",
+        "intro": "Två aritmetiska verktyg kompletterar läsningen: bi-metallernas krediter, som gör en koppargruva delvis till en guldgruva, och reservationsräkningen, som sätter gruvans tidsaxel.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bi-metallkrediten. Sulfidmalmar är sällan renodlade: kopparberget bär guld, silver, zink, bly — och i anrikningsverket separeras de till egna produkter. Räkneexemplet per ton malm, kursens avrundade tal: kopparhalten 1,2 procent ger 12 kilo koppar, värt cirka 106 dollar (koppar omkring 8 800 dollar per ton, motsvarande kursexemplets 4,00 dollar per pund); guldet 0,5 gram per ton à 65 dollar per gram ger 33 dollar. Intäkten per ton malm: 106 + 33 = 139 dollar, och guldkrediten bär 33 av 139 — nästan en fjärdedel. Krediten arbetar på två ställen i räkenskapen: i intäkten (guldkassan) och i kostnaden (C1 räknas neto — bi-metallintäkterna dras av, kapitel tre), och därmed kan en koppargruva visas med imponerande låg C1 tack vare en guldkredit som i sig är en hel verksamhet. Läsningen: fråga alltid vad som bär C1 — en koppargruva med C1 1,60 utan krediter och en med 1,60 bärad av guld har olika ekonomi när guldkursen vänder. Reservationsaritmetiken. Reserverna — mängden metall som under dagens förutsättningar är ekonomiskt brytbar — delas i kategorier efter säkerhet (fastställda, fördelade, möjliga), och livslängden är den enkla kvoten: reserver 6,0 miljoner ton metall vid årsproduktion 0,2 miljoner ton ger 30 år. Nyanserna är tre. Priset flyttar reservationen (kapitel två): högt pris flyttar låghaltigt berg in i kategorin — en reservationsökning kan alltså vara en prisläsning, inte ett fynd. Tekniken flyttar den: nya metoder gör fattigt berg rikt. Och produktionen är ett val: att köra gruvan hårdare förkortar livslängden — reservationskonsumtionen är förvaltningens hastighetsmätare. Slutligen den strategiska läsningen: en gruva är en ändlig tillgång vars värde är diskonteringen av dess ton över dess liv — livslängdens aritmetik (30 år) mot kapitel fyra cykler (sex plus fyra år) ger också skalan: en gruva lever genom tre till fem priscykler, och den som värderar den vid en cykeltopp värderar en tillgång vars första decennium kan bli dess sämsta."
+          },
+          {
+            "type": "tabell",
+            "content": "BI-METALLER OCH RESERVER (KURSETS AVRUNDADE TAL): per ton malm — koppar 12 kilo ≈ 106 dollar + guld 0,5 gram × 65 dollar = 33 dollar · intäkt 139 dollar per ton, guldkrediten bär 33 av 139 ≈ en fjärdedel · C1 RÄKNAS NETTO EFTER KREDITER · LIVSLÄNGD = RESERVER ÷ PRODUKTION: 6,0 miljoner ton ÷ 0,2 per år = 30 år · PRIS OCH TEKNIK FLYTTAR RESERVATIONEN · EN GRUVA ≈ TRE TILL FEM PRISCYKLER"
+          },
+          {
+            "type": "insight",
+            "content": "Intäkts- och livslängdsaritmetikens gemensamma läxa: en gruva är inte en verksamhet i det oändliga utan en förteckning över ton som tar slut — bi-metallerna bestämmer vad varje ton är värt idag, reservationerna hur många ton som finns kvar, och förvaltningen väljer hur fort listan läses."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — läsa en gruvrapport",
+        "intro": "Kursens redskap samlas till en läsordning: de fem block som bär en gruvrapport, och den ordning de bör läsas i.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Läsordningen i fem steg. Steg ett: reservationerna och malmhalten — livslängden (reserver ÷ produktion), haltens utveckling över livslängdsplanen (rik kärna först, kapitel två), och reservkategorins säkerhet. Detta är bergets ekonomi, och den ändras långsamt. Steg två: kostnadstrappan — C1 och AISC i dag, men också trappans riktning (sjunkande halt = stigande kostnad) och vad som bär C1 (bi-metallkrediternas storlek, kapitel fem). Steg tre: läget i cykeln — var är priset mot historiens normalisering (vr-02:s verktyg), var är sektorns investeringstopp (kapitel fyra), och vad säger det om var i cykeln nästa års ton landar. Steg fyra: kedjans risker — land- och tillståndsfördelningen (rk-06:s politiska risk: en fyndighet i en jurisdiktion är en annan risk än samma fyndighet i en annan), infrastrukturens beroenden (väg, el, hamn — kapitel ett), och kontraktsstrukturen kring smältverk och kunder. Steg fem: huvudfrågan — ger gruvan kontanter över en hel normaliserad cykel, inte bara detta året: kassamarginalen vid cykelns normaliserade bottenpris (kapitel tre nollställena) är den fråga som skiljer gruva från berg. Kursens plats i familjen avslutar läsningen: se-20 har gett sektoranalysen dess råvaruterräng — halt, kostnad, cykel, reserver — och därmed de flesta branschernas mest extrema laboratorium för de verktyg övriga kurser byggt: mt-familjens vallgrav (kostnadsläget), ma-familjens cykler (Kina-bygget), vr-familjens normalisering (multicykelläsningen), rk-familjens jurisdiktioner. Sista meningen får bära sektorns särart: till skillnad från de flesta branscher kan gruvans produkt aldrig differentieras, aldrig förnyas, aldrig modebytas — allt som återstår att äga är bergets halt, kostnadens trappa och tålamodets cykel, och det är därför sektorns analyser är aritmetikens renaste form."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övningen med kursens tal: två gruvor, C1 1,60 och 2,80 på pris 4,00 — räkna först hävstången (1,67 mot 3,33) och marginalerna vid pris 3,00 (1,40 mot 0,20). Lägg därefter till en guldkredit som sänker den dyras C1 med 0,30 och räkna om: vad händer med nollstället, och vad händer med det om guldpriset faller så att krediten halveras? Övningen ger inget att placera i — den ger vanan att läsa en gruvrapport som en trappa av nollställen snarare än en berättelse om ett pris."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens tjugonde steg i en mening: gruvsektorn är börsens renaste aritmetik — malmhalten äger kostnaden, kostnadstrappan äger cykelns botten, och utbudets tröga svar äger cykeln själv; den som kan läsa de tre talen läser sektorn."
           }
         ]
       }
@@ -204592,6 +204944,178 @@
       }
     ]
   },
+  "bk-07-lagret-och-lagervarderingen": {
+    "slug": "bk-07-lagret-och-lagervarderingen",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Lagret och lagervärderingen — balansräkningens termometer",
+    "summary": "BOKFÖRING & ÅRSREDOVISNING-familjens sjunde steg: balansräkningens mest talande rad — lagret, tillgången som rör sig och åldras. Kursens första verktyg är värderingsprincipen lägst av anskaffningsvärde och nettoförsäljningsvärde: påhittade Kavla Kläder AB bär 10 000 vinterjackor med anskaffningsvärdet 800 kronor per styck, butikspriset 1 500 och den kvarvarande säljkostnaden 150 — nettoförsäljningsvärdet 1 350 överstiger 800, och lagret bokförs till 800; men när säsongen misslyckas och reapriset blir 690 med säljkostnaden 90 faller nettoförsäljningsvärdet till 600, och nedskrivningen 800 − 600 = 200 kronor per jacka går som en direkt post i resultaträkningen — 10 000 jackor = 2,0 miljoner kronor, medan balansräkningens lagerrad sjunker från 8,0 till 6,0 miljoner. Det andra verktyget är lagerrullningen: Svea Ylle AB (påhittat bolag) med sålda varors kostnad 1 800 miljoner kronor per år och genomsnittslagret 450 miljoner (480 i januari, 420 i december) omsätter lagret 1 800 ÷ 450 = 4,0 varv per år — 365 ÷ 4,0 = 91 lagerdagar — medan konkurrenten Norrull Textil AB med lagret 300 miljoner snurrar 6,0 varv och 61 dagar: skillnaden 150 miljoner kronor är kapital som ligger stilla och binder kassa (ln-04:s kapitalbindning på radnivå). Det tredje verktyget är lagergrottans varningskvot: när Svea Ylles lager växer 20 procent på en försäljningstillväxt av 5 procent blir kvoten 20 ÷ 5 = 4,0 — väl över tröskeln 2,0 — och rullningen faller från 4,0 till 1 890 ÷ 540 = 3,5 varv (104 dagar), medan ett kommande nettoförsäljningsvärdesfall på 5 procent bär 540 × 0,05 = 27 miljoner kronor i nedskrivningar: lagret växer FÖRE marginalfallet syns i resultaträkningen, vilket gör raden till rapportens tidigaste termometer. Historievittnena (verkliga) är dubbel bokförings första varuräkningar i medeltidens handelshus, 1930-talskrisernas försiktighetsprincip som blev lägsta-värde-regeln, Toyotas just-in-time som vände lagret från fördel till slöseri, och leveranskedjekrisen 2020-2022 — först tomma hyllor, sedan överfulla lager och global utrensning; alla övningstal är PÅHITTADE TAL med påhittade bolag. Kursen kröns med en frågeordning i tre steg — hur många dagar, vilket värde, vilken riktning. Detta är utbildning i bokföringsmekanik — inte uppmaningar att köpa eller sälja något.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna nettoförsäljningsvärdet: jackan med butikspriset 1 500 kronor och kvarvarande säljkostnad 150 bär värdet 1 500 − 150 = 1 350 — mot anskaffningsvärdet 800 är lägstavärdet 800 och inget skrivs ned; när reapriset faller till 690 och säljkostnaden till 90 blir värdet 690 − 90 = 600 och nedskrivningen 800 − 600 = 200 kronor per jacka — 10 000 jackor = 2,0 miljoner kronor som träffar resultaträkningen direkt medan balansraden sjunker från 8,0 till 6,0 miljoner. Räkna lagerrullningen: Svea Ylle AB med sålda varors kostnad 1 800 miljoner kronor per år och genomsnittslagret (480 + 420) ÷ 2 = 450 miljoner omsätter 1 800 ÷ 450 = 4,0 varv per år, det vill säga 365 ÷ 4,0 = 91 lagerdagar — och dagsförbrukningen 1 800 ÷ 365 ≈ 4,9 miljoner ger samma svar som lager 450 ÷ 4,9 ≈ 91 dagar, två vägar till en sanning. Jämför konkurrenterna: Norrull Textil AB med lagret 300 miljoner på samma volym snurrar 6,0 varv (61 dagar) och frigör 450 − 300 = 150 miljoner kronor kapital — skillnaden mellan att bära och att binda. Räkna lagergrottans varningskvot: lagertillväxt 20 procent mot försäljningstillväxt 5 procent ger 20 ÷ 5 = 4,0 mot tröskeln 2,0 — och Svea Ylles nya rullning 1 890 ÷ 540 = 3,5 varv (365 ÷ 3,5 ≈ 104 dagar) visar mekanismen: varje dag av eftersläpning är en dag av prisrisk. Räkna nedskrivningens bärning: ett nettoförsäljningsvärdesfall av 5 procent på lagret 540 miljoner bär 540 × 0,05 = 27 miljoner kronor i kommande nedskrivningar — resultatposter som ingen konsolidering flyttar undan. Räkna kassabindningen: lagret som växer från 450 till 540 miljoner binder 90 miljoner kronor kassa (bk-03:s kassaflödeskedja: lagerökning är kontantutgång före resultateffekt) — rapportens vinst och rapportens kassa skiljs åt av exakt sådana rörelser. Räkna spektrat med dagsförbrukning 2 miljoner kronor: Butik A med lagret 20 miljoner bär 10 dagar (36,5 varv), Butik B med 60 miljoner bär 30 dagar (12,2 varv), Butik C med 120 miljoner bär 60 dagar (6,1 varv) — och vid ett nettoförsäljningsvärdesfall av 10 procent blir nedskrivningarna 2,0, 6,0 och 12,0 miljoner: samma kund, samma fall, sexfalt olika bördor. Lösläs återföringsförbudet: jackan nedskriven till 600 som nästa säsong säljs till 900 visar 300 kronor per styck i extra pappersvinst — inte för att affären blev bättre utan för att nedskrivningen låg kvar — vilket är ln-02:s resultatkvalitetsfråga i ren form.",
+    "why": "BOKFÖRING & ÅRSREDOVISNING-familjens sex första steg byggde stommen: bk-01 balansräkningen som karta, bk-02 resultaträkningen som resedagbok, bk-03 kassaflödesräkningen som sanningen om pengarna, bk-04 koncernernas konsolidering, bk-05 redovisningspolitikens formbara rum, bk-06 de obeskattade reserverna — men balansräkningens rörligaste tillgångsrader, lagret, nämns bara i förbifart och äger ingen kurs. Sonden mot 452 kurser bekräftar den vita fläcken: nettoförsäljningsvärde och lägsta-värde-principen bar fyra bokkurser och en förbifartsnämnde i bk-05 — noll kursägare; lagerdagar och lagerrullning tolv träffar men ingen i ämnesfamiljerna; lager som andel av omsättning noll träffar alls. Grannarna håller avstånd av hänsyn: ln-04 äger kapitalbindningen för rörelsekapitlet som helhet, ln-02 resultatkvaliteten i stort, pc-06 ett enstaka case — men värderingsprincipen, rullningsläsningen och grot-varningen saknar ägare, trots att lagerraden är den plats där bokfört värde och verkligt pris möts varje rapport. Kursen ger familjen sitt sjunde steg och aktieläsarens tidigaste varning: lagret växer FÖRE marginalfallet syns i resultaträkningen, nettoförsäljningsvärdes-nedskrivningen är dess bekräftelse, och kassaflödet (bk-03) skiljs från vinsten av exakt de rörelser som denna rad bär — därför termometern: den rörelse som först flyttar sig när handeln kyls av.",
+    "history": {
+      "origin": "Lagret var handelns första bokföringsobjekt. Medeltidens handelshus räknade sina varor fysiskt — säckar, balar, kistor — och venetianska och hansaiska köpmän förde listor över vad som fanns i magasin och på fartyg långt före någon tryckt lärobok; när Luca Pacioli kodifierade dubbel bokföring 1494 var varulagret en självklar post bredvid kassa och fordringar. Själva ordet inventera — att räkna upp och värdera det som finns — är lagerets eget verb: redovisningens årsrytm, inventeringen, föddes ur behovet att veta vad varorna var värda när marknaden rörde sig under årstidens seglats. Försiktighetsprincipen växte ur samma erfarenhet: en köpman som bokförde sitt tyg till inköpspriset medan marknadspriset fallit var inte försiktig utan ruinerad på pappret — därför togs vinsten bara när den var gjord, medan förlusten togs när den anades. Lägsta-värde-tanken är alltså äldre än sin kodifiering: den är handelns överlevnadsregel i redovisningsform.",
+      "evolution": "Industriella revolutionen förvandlade lagret från handelens buffering till produktionens pulsåra: råvaror, pågående arbeten och färdigvaror blev tre olika korgar i samma balansräkning, och järnvägarna lärde företagen vad avstånd kostar i bundet kapital. 1930-talskrisen gav principen sin moderna form: när priser och efterfrågan kollapsade världen runt skärptes kraven att tillgångar inte fick bära mer än de kunde realiseras för — conservatismen som blev lägsta-värde-regeln i lands efter lands standarder. Sedan kom motrörelsen från Nagoya: Taiichi Ohno och Toyotas produktionssystem, från 1950-talet och framåt, vände hela synen på lagret — varje pall med påståenden om trygghet var i stället slöseri som dolde problem i flödet, och just-in-time gjorde låga lagerdagar till en industriell dygd som spred sig från bilfabriker till affärskedjor. Streckkoden, distributionsdatorerna och skeppscontainern gjorde på 1980- och 1990-talen lagret synligt i realtid — och därmed mätbart, jämförbart och styrbart som en nyckeltal familj snarare än en gömma bakom bryggor.",
+      "modern": "Leveranskedjekrisen 2020-2022 blev lagrets moderna mästarprov och visade båda ansiktena inom två år: först tomma hyllor när pandemin och fraktbristen stoppade flödena och detaljhandeln lärde sig att noll lager är noll försäljning, sedan — när kedjan återfick fart och alla led överbeställde för att skydda sig — överfulla lager hos modehus och elektronikbolag med rabatterade utrensningar som följd: svallvågeffekten, där en liten ryckning i konsumtionen förstärks för varje steg uppströms i kedjan, bokförd i verkligheten. I dagens rapportläsning är lagerraden därmed en barometer framför resultaträkningen: lagerdagar mot historik, lageromsättning mot konkurrenter, lagertillväxt mot försäljningstillväxt — den digitala handelns dagsfärska försäljningsdata gör raden mera realtidsnära än någonsin, och redovisningsstandardernas återföringsförbud gör varje nedskrivning till en enkelriktad rörelse som inte får vändas hem. Den moderna läsordningen som kursen lär ut binder ihop det hela: fråga först hur många dagar lagret bär (rullningen), sedan vilket värde det bär (lägsta av anskaffningsvärde och nettoförsäljningsvärde), till sist vilken riktning rullningen rör sig (grott-kvoten) — tre frågor som kan ställas till varje balansräkning med en varuhandel i sina händer."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Radens plats — tre varukorgar och ett varv genom bokslutet",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Värderingsprincipen — lägsta värdet och nettoförsäljningsvärdet",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Rullningen — lagerdagar som nyckeltal och konkurrentmått",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Grottan — när lagret växer snabbare än försäljningen",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Aktieläsningen — handelsbolaget, tillverkaren och kvalitetsfällan",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — tre frågor, en läsordning",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "title": "Radens plats — tre varukorgar och ett varv genom bokslutet",
+        "minutes": 4,
+        "intro": "Familjens sex första steg byggde balansräkningens karta (bk-01), resultaträkningens dagbok (bk-02) och kassaflödets sanning (bk-03) — men en rad på tillgångssidan förtjänar sitt eget kapitel: lagret, den tillgång som rör sig, åldras och tappar värde medan rapporten ligger tryckt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lagret är allt som bolaget köpt eller tillverkat för att sälja men ännu inte sålt — och i en tillverkare delar det upp sig i tre korgar: råvaror och förbrukningsinventarier som väntar på produktion, pågående arbeten som halvfabrikat mellan stationerna, och färdigvaror som väntar på kunder. Följ ett klädbolags vinterjacka genom bokslutet: inköpt i vår och betalad i augusti — kassaflödet (bk-03) noterar utgången direkt medan resultaträkningen (bk-02) ännu inte sett något; balansräkningen (bk-01) bär jackan som lager till anskaffningsvärdet 800 kronor inklusive frakt och tull; när jackan säljs i januari byter hon plats en sista gång — ur lagret, genom sålda varors kostnad, in i intäkten — och skillnaden mellan intäkt och kostnad blir årets resultat. Där ligger kursens hela poäng: lagret är den post där balansräkning, resultat och kassa möts vid olika tidpunkter, och varje skruv i värderingen flyttar vinst mellan år. Bokförd vinst är en åsikt om varorna; kassan är ett faktum — och mellan dem står raden vi nu ska lära oss läsa."
+          },
+          {
+            "type": "definition",
+            "content": "LAGER — tillgångar som hålls för försäljning i ordinär verksamhet, i produktion för sådan försäljning eller som förbrukningsvaror i produktionen · TRE KORGAR — råvaror, pågående arbeten, färdigvaror · ANSKAFFNINGSVÄRDE — inköpspris plus kostnader till plats och skick (frakt, tull, inlagring) · SÅLDA VARORS KOSTNAD (SVK) — det värde som lämnar laget under året och träffar resultaträkningen · NETTOFÖRSÄLJNINGSVÄRDE — beräknat försäljningspris minus kvarvarande kostnader för försäljnen."
+          },
+          {
+            "type": "insight",
+            "content": "Lagret är den enda tillgångsraden där bokfört värde och marknadens pris möts varje rapport — kassa är kassa, byggnader värderas i decennier, men varorna har ett pris som noteras varje dag i butik. Det är därför kursen kallar raden balansräkningens termometer: när handeln kyls av sticker lagret ut i försäljningsstatistiken och i rullningstal månader innan nedskrivningen når resultaträkningen — och börsens handels- och tillverkningsbolag bär likavitt en post i sin rapport som mäts dagligen utanför den. Att läsa den raden före de andra är att läsa termometern före febern."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Värderingsprincipen — lägsta värdet och nettoförsäljningsvärdet",
+        "minutes": 4,
+        "intro": "Hur mycket är 10 000 vinterjackor värda i februari när säsongen dör? Svaret är en princip, inte ett pris — och principen är försiktighet: värdet är det lägre av vad de kostade och vad de kan säljas för.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningsbolaget är påhittade Kavla Kläder AB (alla tal PÅHITTADE TAL). Vinterjackan har anskaffningsvärdet 800 kronor per styck — inköp 760 plus frakt och tull 40 — och butikspriset 1 500 kronor. Vad är lagret värt? Principen ställer två kandidater mot varandra: anskaffningsvärdet 800 och nettoförsäljningsvärdet — beräknat försäljningspris 1 500 minus kvarvarande säljkostnad 150 (butik, personal, avgifter till betalkanaler) = 1 350 kronor. Lägsta värdet gäller: 800, och lagret bokförs oförändrat. Men våren kommer med ett kallt sanningens möte: säsongen misslyckades, och i slutet av februari står 10 000 jackor kvar med reapriset 690 kronor och säljkostnaden 90 — nettoförsäljningsvärdet 690 − 90 = 600 kronor, under anskaffningsvärdet. Nu slår försiktigheten till: lagret skrivs ned med 800 − 600 = 200 kronor per jacka — 10 000 × 200 = 2,0 miljoner kronor som bokförs som en direkt post i resultaträkningen, medan balansraden sjunker från 10 000 × 800 = 8,0 miljoner till 10 000 × 600 = 6,0 miljoner. Observera ordningen: förlusten togs när den anades — man visste ännu inte hur säsongen skulle sluta, men marknadens reapris hade redan svarat — inte när jackorna såldes; det är 1930-talskrisens arv i modern kodform."
+          },
+          {
+            "type": "tabell",
+            "content": "KAVLA KLÄDER AB — NETTOFÖRSÄLJNINGSVÄRDESÖVNINGEN (PÅHITTADE TAL): anskaffningsvärde 800 kronor per jacka (inköp 760 + frakt och tull 40) · scenario god säsong: butikspris 1 500, säljkostnad 150 → nettoförsäljningsvärde 1 350 ≥ 800 → bokfört värde 800 · scenario misslyckad säsong: reapris 690, säljkostnad 90 → nettoförsäljningsvärde 600 < 800 → nedskrivning 200 kronor per jacka · volym kvar: 10 000 jackor → nedskrivning 2,0 miljoner kronor i resultaträkningen · balansraden: 8,0 → 6,0 miljoner · nästa säsong: jackan bärs nu till 600 och säljs till 900 → pappersvinsten per jackan 300 kronor extra — återföringsförbudet gör nedskrivningen enkelriktad och nästa års resultat jämförbart sett bättre än affären var (ln-02:s resultatkvalitetsglasögon)."
+          },
+          {
+            "type": "insight",
+            "content": "Återföringsförbudet är principens andra halva och den minst sedda: en gjord nedskrivning får inte skrivas upp igen när priserna återkommer. Effekten är asymmetrin från ma-05-kreditpremiens värld i miniatyr — dåliga nyheter bokförs tidigt och helt, bra nyheter först när de är gjorda — och den skapar en mekanisk quality-of-arnings-vridning: året efter en stor lager nedskrivning ser marginalerna förbättrade av rent bokföringsmässiga skäl. Kursens läsregel: jämför alltid lagrets bärvärde mot aktuella reapriser, och läs nedskrivningarnas historia bakåt innan resultatet rörs — vinsten som återkommer från en nedskriven bas är inte verksamhetens förtjänst utan gårdagens försiktighet."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Rullningen — lagerdagar som nyckeltal och konkurrentmått",
+        "minutes": 4,
+        "intro": "Värdet är en stillbild; handeln är en film. Lagerrullningen översätter raden till fart — hur många varv per år snurrar lagret, och hur många dagar står varan still?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övningsbolaget är påhittade Svea Ylle AB (alla tal PÅHITTADE TAL): sålda varors kostnad 1 800 miljoner kronor per år, lager i januari 480 och i december 420 — genomsnittet (480 + 420) ÷ 2 = 450 miljoner. Omsättningshastigheten blir 1 800 ÷ 450 = 4,0 varv per år, och lagerdagarna 365 ÷ 4,0 = 91: varje krona i lagret ligger i snitt tre månader innan den lämnar byggnaden som såld vara. Samma svar kommer andra vägen — dagsförbrukningen 1 800 ÷ 365 ≈ 4,9 miljoner kronor ger lagret 450 ÷ 4,9 ≈ 91 dagar — och de två vägarnas överensstämmelse är kursens första kontrollfråga till varje nyckeltalstabell. Jämförelsen gör måttet levande: konkurrenten Norrull Textil AB med samma volym men lagret 300 miljoner snurrar 1 800 ÷ 300 = 6,0 varv — 365 ÷ 6,0 ≈ 61 dagar — och har därmed 450 − 300 = 150 miljoner kronor mindre kapital bundet i varor: kapital som kan bära ränta, utveckling eller utdelning i stället för damm (ln-04:s kapitalbindning på radnivå). Spektrat är branschens signatur: ett livsmedelsbolag med sålda varors kostnad 3 650 miljoner och lager 100 miljoner snurrar 36,5 varv — 10 dagar — medan tillverkaren med råvaror, halvfabrikat och färdigvaror i tre korgar ofta bär 90 dagar eller mer; ingen nivå är rätt i sig, men avvikelsen från branschens rytm är alltid en fråga värd att ställa."
+          },
+          {
+            "type": "definition",
+            "content": "OMSÄTTNINGSHASTIGHET — sålda varors kostnad ÷ genomsnittligt lager, antal varv per år · LAGERDAGAR — 365 ÷ omsättningshastigheten, eller lager ÷ dagsförbrukning: dagar av täckning · GENOMSNITTLIGER LAGER — (lager första dagen + lager sista dagen) ÷ 2 när månadsdata saknas · DAGSFÖRBRUKNING — sålda varors kostnad ÷ 365: vad som lämnar lagret en genomsnittsdag · BRANSCHRYTM — det intervall av lagerdagar som branschens inköps- och försäljningscyklar naturligt ger."
+          },
+          {
+            "type": "insight",
+            "content": "Lagerdagarna är samtidigt en riskmåttare i förklädnad: varje dag i lagret är en dag av prisrisk, modeväxling och kapitalrisk — jackan som står 91 dagar möter 91 dagars väder, tre månaders mod och en ränta på bundet kapital. Nyckeltalet förenar därför tre av familjens tidigare kurser i ett tal: bk-01:s balansräkning (vad står i lagret?), bk-03:s kassaflöde (vad binder det?) och ln-02:s resultatkvalitet (vad döljer det?) — och gör dem jämförbara mellan bolag, mellan år och mellan branscher. När rullningen långsamt förändras över några kvartal börjar det som en operativ fråga och slutar som en värderingsfråga — ingen annan balansrad flyttar sig så tyst."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Grottan — när lagret växer snabbare än försäljningen",
+        "minutes": 4,
+        "intro": "En enda division förvandlar årsredovisningens stillbild till varningssystem: lagrets tillväxt mot försäljningens. När kvoten passerar två börjar frågestunden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Sätt siffror på varningen med Svea Ylle AB (PÅHITTADE TAL): mellan två räkenskapsår växer försäljningen 5 procent men lagret 20 procent — varningskvoten 20 ÷ 5 = 4,0, väl över tröskeln 2,0 som kursen föreslår som enkla läsregel. Följ mekaniken bakåt i bokföringen: lagret går från 450 till 450 × 1,20 = 540 miljoner medan sålda varors kostnad går från 1 800 till 1 800 × 1,05 = 1 890 — och rullningen faller från 1 800 ÷ 450 = 4,0 varv (91 dagar) till 1 890 ÷ 540 = 3,5 varv (365 ÷ 3,5 ≈ 104 dagar). Tretton dagar längre hylltid ser oskyldigt ut — men varje extra dag är en dag av prisrisk, och ridån faller när nettoförsäljningsvärdeskontrollen nästa rapport gör sitt arbete: ett fall på 5 procent mot bärvärdet bär 540 × 0,05 = 27 miljoner kronor i nedskrivningar, en direkt resultatpost som ingen konsolidering flyttar undan. Kedjan är alltid densamma och alltid i denna ordning: handeln kyls — lagret växer — rullningen faller — nedskrivningen träffar — marginalen syns i resultaträkningen sist av allt. Samtidigt binder växten kassa: lagret +90 miljoner kronor är en kontantutgång före någon resultateffekt (bk-03:s kedja), så grottan syns i kassaflödet före den syns i vinsten — och i leveranskedjor förstärks rörelsen uppströms: svallvågeffekten, där detaljhandelns lilla svängning blir partiledarens stora, för att varje led beställer med marginal mot osäkerhet."
+          },
+          {
+            "type": "insight",
+            "content": "Grott-kvoten är kursens bidrag till rs-08:s modellrisk-fråga: den enkla divisionen fångar inte orsaken — ett lager kan växa av förberedd lansering, av medvetet buffrande i en bristtid (leveranskedjekrisens första år) eller av sviktande försäljning — men den talar om VAR det är dags att fråga. Som termostat är den som bäst i tidsserien: samma kvot på tre års rad med stigande lagerdagar och bredare reor är ett mönster, en enda kvartalssiffra är ett väder. Den som kombinerar tre kvartaler av kvoten med rullningens riktning och butiksbesökets reahyllor har bk-07:s komplett tidigvarningssystem — och kan läsa handelsbolagets nästa årsresultat före det skrivs."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Aktieläsningen — handelsbolaget, tillverkaren och kvalitetsfällan",
+        "minutes": 4,
+        "intro": "Nu kommer övergångarna: där lagerraden träffar aktievärderingen. Tre bärare — handelsbolaget som köper och säljer färdigt, tillverkaren som bär tre korgar, och rapportläsaren som måste skilja bok från affär.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Handelsbolaget (Kavla Kläder, pc-06:s case-värld) lever på vändningar: dess lager är dess sortiment, dess rullning är dess modekänsla, och dess nettoförsäljningsvärdesrisk är reahyllans längd — en misslyckad säsong syns direkt som nedskrivning och som utdelningsutrymmets törn. Tillverkaren (Svea Ylle) bär i stället tre korgar med olika farter: råvarorna rullar långsamt och prissätts mot råvarumarknaden, de pågående arbetena binder arbete och marginal, färdigvarorna väntar på order — och grott-kvoten läses olika i varje korg, vilket är skälet till att segmentens nyckeltal aldrig blandas i en enda division. För aktieläsaren förenas vyerna i tre klassiska kopplingar: mot v01-försäljningstillväxten (lager som växer utan försäljning är framtidens marginalfall), mot ln-02-resultatkvaliteten (nedskrivningarnas historia och återföringsförbudets pappersvinster — jackan 600, såld 900, extra 300 per styck i resultat utan motsvarande affärsförbättring) och mot bk-05-redovisningspolitiken (lagret är formbart — men bara nedåt: här är det politiska rummet ensidigt). Slutligen bär raden en sektorläsning: mode och lyx (se-05) har säsongens klocka, logistik och detalj (se-04) har dagarnas rytm, och skogen (se-17) bär sitt virke under en helt annan värderingsregel — raden är densamma, bördorna olika."
+          },
+          {
+            "type": "tabell",
+            "content": "SVEA YLLE AB — GROTTANS KEDJA (PÅHITTADE TAL): år ett — sålda varors kostnad 1 800, genomsnittslager 450, rullning 4,0 varv, 91 dagar · år två — försäljningstillväxt 5 procent (1 890), lagertillväxt 20 procent (540), varningskvot 20 ÷ 5 = 4,0 mot tröskeln 2,0 · rullning år två: 1 890 ÷ 540 = 3,5 varv ≈ 104 dagar (+13 dagar) · kassabindning: 540 − 450 = 90 miljoner kronor kontant bundet i varor (bk-03) · nästa rapports nedskrivningsbörda vid nettoförsäljningsvärdesfall 5 procent: 540 × 0,05 = 27 miljoner kronor i resultaträkningen · konkurrentkontrollen Norrull Textil: 6,0 varv, 61 dagar, 150 miljoner mindre bundet kapital — samma bransch, olika termometrar."
+          },
+          {
+            "type": "insight",
+            "content": "Kvalitetsfällan har två ändar och aktieläsaren måste hålla båda: året med stora lagernedskrivningar ser SÄMRE ut än verksamheten var (försiktighet bokförd som förlust), och året efter ser BÄTTRE ut än affären är (återföringsförbudets pappersvinst). Mellan dem ligger den ärliga läsningen: justera marginalen för nedskrivningarnas storlek och räkna rullningen på konstant lagerprincip — först då jämförs verksamheten med sig själv. Det är samma hantverk som bk-05 lär ut för avskrivningar och bk-06 för timing i skatten, tillämpat på den rad där marknaden notereras varje dag: den som kan läsa lagret kan justera vinsten före den som läser nedskrivningsraden — och mellantiden är där läsövertaget bor."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — tre frågor, en läsordning",
+        "minutes": 4,
+        "intro": "Kursens sista form är inte en modell utan en frågeordning — tre frågor till varje balansräkning med en varuhandel i sina händer, användbara från livsmedelskedjan till verkstadsgolvet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett — hur många dagar? Räkna rullningen: sålda varors kostnad ÷ genomsnittligt lager, ta 365 ÷ svaret, och ställ dagarna mot bolagets egen historia och branschens rytm (Svea Ylles 91 dagar mot Norrulls 61 är mönstret). Fråga två — vilket värde? Ställ lagrets bärvärde mot det pris varorna faktiskt noteras till i dag — butiksreor, råvarubörs, orderbok — och läs nedskrivningshistoriken bakåt: återföringsförbudets pappersvinster (jackan 600 som säljs 900) och anade förluster (2,0 miljoners-posten som togs före vissheten) är båda kvalitetsjusteringar som ln-02 lärt oss göra före marginalen läses. Fråga tre — vilken riktning? Dividera lagertillväxten med försäljningstillväxten och läs kvoten mot tröskeln 2,0 tillsammans med kassaflödet: grotta över två med 90 miljoner nybundet kassa och fallande rullning är en berättelse om nästa års resultat — leveranskedjans svallvåga bokförd i realtid. Frågeordningen knyter samman familjens hela kedja — från bk-01:s karta till bk-03:s kassa och bk-05:s formbarhet — till en enda läsning av balansräkningens mest talande rad. Detta är utbildning i bokföringsmekanik — inte uppmaningar att köpa eller sälja något."
+          },
+          {
+            "type": "utmaning",
+            "content": "Bygg i tanken tre butiksbolag med samma sålda varors kostnad 730 miljoner kronor per år — det är 2 miljoner kronor per dag — men olika lager: Butik A 20 miljoner, Butik B 60 miljoner, Butik C 120 miljoner. Räkna rullning och dagar: A snurrar 730 ÷ 20 = 36,5 varv = 10 dagar, B 730 ÷ 60 ≈ 12,2 varv = 30 dagar, C 730 ÷ 120 ≈ 6,1 varv = 60 dagar. Låt sedan ett prisfall dra ned nettoförsäljningsvärdena med 10 procent: nedskrivningarna blir A 20 × 0,10 = 2,0, B 60 × 0,10 = 6,0 och C 120 × 0,10 = 12,0 miljoner kronor. Fråga dig: vilket av de tre bolagen märks minst av samma kundsvikt — och vilket bär sex gånger bördan av ett identiskt väder? Du har då räknat hela kursens koppling mellan lagerdagar och resultatrisk med egna siffror."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens sjunde steg i en mening: lagret är balansräkningens termometer — tillgången som rör sig med marknaden dagligen men bokförs kvartalsvis, vars värderingsprincip (lägsta av anskaffningsvärde och nettoförsäljningsvärde) gör nedskrivningen enkelriktad, vars rullning (varv per år, dagar i hyllan) mäter fart och bundet kapital, och vars tillväxt mot försäljningens (grott-kvoten) varnar före resultaträkningen gör det. Den som ställer de tre frågorna — hur många dagar, vilket värde, vilken riktning — till varje varubärande balansräkning har en tidigläsning som ingen vinstprognos bygger bättre."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynchs rådgivning att köpa det man ser får sin renaste bokföringstillämpning på lagerraden: butiksbesöket är en gratis inventering. Räk plagg på reahyllan och mät andelen reapriser — en butik där rea-karusellen växt sedan förra besöket bär samma information som en kommande nedskrivning, bara tre månader tidigare. Lynch läste kedjor precis som bk-07 läser korgar: det som inte säljs i butiken vandrar uppströms som beställningar som stannar, och varje steg i kedjan — detaljhandel, grossist, tillverkare, råvara — förstärker svängen (svallvågan), vilket är skälet till att en liten sviktning i konsumtionen kan bli en leverantörs kvartal. Hans käpphäst att gilla bolag vars produkt man förstår bygger här på ett tal: lagerdagarna — den butik vars kunder kommer tillbaka har korta dagar utan reor, den vars sortiment åldras bär dem i hyllan. Och Lynchs varning för berättelser utan siffror är gjord för modets värld: sortimentsberättelser bokförs inte — nettoförsäljningsvärdeskontrollen gör det, och den har aldrig läst en pressrelease.",
+    "grahamSection": "Benjamin Graham hade sett principen arbeta före sin tid: att inte bokföra vinsten förrän den är gjord men ta förlusten när den anas är lägsta-värde-regeln och Grahams conservatism i en och samma mening — marginalen för säkerhet börjar i balansräkningen, på raden där varorna ligger. Hans analyskrav — att en investerings värde skall bäras av beräkning, inte av marknadshumör — översätts direkt: när ett bolag bär sitt lager till anskaffningsvärdet 800 medan marknaden ropar 600, är skillnaden exakt den kvantifierade slutsiden som en noggrann läsare tar hem före optimisten; Graham kallade sådant arbete för analys, inte aktsamhet. Hans varning för glidande kvalitet i jämförelsetal passar nedskrivningarnas asymmetri: vinsten som återkommer från en nedskriven bas (jackan 600, såld 900) är verklig i rapporten men inte i affären — att justera för den innan multipeln sättas är marginal-tänkandet tillämpat på resultaträkningen. Slutligen hans regel att balansräkningen är analysens startpunkt: för varubärande bolag är lagerraden den post där den regeln lönar sig mest — den enda där noteringen görs om utanför rapporten, varje dag, av kunderna.",
+    "ak1Section": "I AK1A:s metodik är lagret ingen footnot utan en scenarioaxel bland motorerna: grottkvoten och lagerdagarna förs in i scenariorutan som drivkraft bakom tre utfall — handelsbolagets nedskrivningsbörda (Kavlas 2,0 miljoner på 10 000 jackor), tillverkarens kassabindning (Svea Ylles 90 miljoner) och marginalens kvalitetsvridning (återföringsförbudets 300 kronor per jacka). Monte Carlo-delen bär kursens viktigaste samvariationsläxa: lagercykel och efterfrågechock är inte två oberoende risker utan EN drivkraft med två kanaler — rs-03:s dolda samvariation får sin renaste demonstration i att handelsbolag, grossist och tillverkare delar samma svallvåga bakom sina svansar, och sam-viktningen lär därför ut att lageraxeln inte får dubbelräknas som tre separata riskposter. Bayesianska omviktningen hör hemma på raden också: en stigande grottkvot är ett bevis som förflyttar sannolikheten för kommande nedskrivningar innan konsensus rört sig — marknaden noterar reorna sent, bokföringen först vid rapport, men kvoten står i balansräkningen hela vägen. Backtestens hantverk-regeln (ek-04) knyter historievittnena till metoden: varje scenariosvit för varubärande bolag som inte testats mot ett lagerutrensningsfönster — 1930-talets principfödelse, just-in-time-vändningen, leveranskedjekrisen 2020-2022 — är inte ett scenario utan en önskan. Och känslighetsanalysen (st-02:s släkting) får här sitt renaste fall: fem procent på bärvärdet, 27 miljoner i resultaträkningen — ingen annan rad ger mer svar per procentenhet."
+  },
   "ln-01-dupont-analysen": {
     "slug": "ln-01-dupont-analysen",
     "category": "LÖNSAMHET",
@@ -208375,6 +208899,178 @@
     "lynchSection": "Peter Lynch berättade med värme om bolag utan skuld som sov gott i kriser, och med lika tydlig blick om skuldtunga förvärvsfall. Hans läsning var alltid kassaflödets karaktär först — kursens kapitel fem är den systematiserade formen av den instinkten: skulden ska vägas mot det den belånar.",
     "grahamSection": "Benjamin Grahams krav på räntetäckning och trygg balansräkning var en tidig, praktisk form av nöd kostnadens tänkande: marginalen mot betalningssvårigheter är värd att betala för i form av lägre sköld. Kursens kurva med topp är det teoretiska namnet på den gamla hantverksregeln.",
     "ak1Section": "I AK1A:s metodik läses kapitalstrukturen som en av analysens fasta dimensioner: teorikursens tre frågor — sköld, nödkostnad, hackordning — används som bakgrundstakt när bolagets finansiering jämförs med branschens bärighet. Kursen knyter samman praktikstegen ks-01-kapitalstruktur-grunder till ks-06-konvertibler-och-hybridkapital och är slussen mellan dem och riskmätningarna i st-spåret. Detta är utbildning, aldrig råd om placeringar."
+  },
+  "ks-08-valutasakringen": {
+    "slug": "ks-08-valutasakringen",
+    "category": "KAPITALSTRUKTUR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Valutasäkringen — terminen, swappen och kronan i rapporten",
+    "summary": "Kapitalstrukturfamiljens åttonde steg: valutasäkringen. Familjens alla tidigare kurser räknar i en valuta och antar att kronor är kronor — den här kursen äger frågan vad bolaget gör när intäkterna är i en valuta och kostnaderna i en annan. I det genomgående exemplet med påhittade tal exporterar verktygstillverkaren Norrsken Verktyg AB för 40 miljoner euro tolv månader framåt och äger ett tyskt dotterbolag med 300 miljoner euro i nettotillgångar: kursen lär ut kartläggningen av de två exponeringstyperna, instrumentens tre familjer, och terminspremiens aritmetik — vid spot 11,50 med svenska räntan 4,0 procent och euroräntan 2,5 procent ligger tolv månaders termin på 11,67, och de där 17 örena per euro är inte en kostnad och inte en prognos utan ränteskillnaden flyttad i tiden, bevisad av att låna-växla-placera själv ger exakt samma slutsumma. Kursen avslutar med rapportläsningen: säkringsgraden, de två bokföringsspåren och den osäkrade resten — som aldrig är glömd utan alltid vald.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Kartlägga bolagets två valutalexponeringar — bestämda framtida flöden (fakturor och kontrakt) och nettoinvesteringen i utländska dotterbolag — plus den naturliga matchning som finns innan något instrument behövs · Behärska instrumentens tre familjer och deras roller: terminen (förpliktande, kostnadsfri vid teckning), swappen (ett rullande program av terminer) och optionen (betalad rättighet till trygghet med deltagande kvar) · Räkna terminspremien ur räntepariteten och bevisa den med pengemarknadsvägen: låna i euro, växla till kronor, placera i kronor — samma slutsumma som terminen, därför är premien ränta flyttad i tiden, inte en kostnad och inte en väntad kursrörelse · Läsa valutanoten i en årsredovisning: säkringsgrad per objekt, medeltermin mot spot, vilken löptid, vilket instrument — och vilken av de två bokföringsspårna posten tillhör (resultatet eller eget kapital) · Förstå säkringsgraden som beslut: varje procent under hundra är en aktiv valutaposition, och premiens tecken vänder med räntecykeln, inte med bolagets skick · Känna igen de sex fällorna — från terminskursen-mot-prognos till överhedge och kostnadsautopiloten",
+    "why": "Kapitalstrukturfamiljen äger finansieringens hela axel — hur kapitalet är sammansatt (ks-01), skuldens anatomi (ks-03), emissionens mekanik (ks-04), teorin om skuldens rättvikt (ks-07) — men varje kurs räknar som om bolaget levde i en enda valuta. Ingen äger frågan vad bolaget GÖR när intäkterna är i euro och börsen vill läsa marginaler i kronor: valutasäkringen är kapitalstrukturens fjärde dimension, och den är dubbel kontrollförlorad i registret — rk-07-valutarisk och km-058-valutor äger investerarens portföljblick (svag krona, exportbolag), ma-07-valutakursens-mekanik äger räntepariteten som kursmodell, men ingen äger BOLAGETS sida: instrumentens hantverk, terminspremiens natur, säkringsredovisningens logik och beslutet om den osäkrade resten. Ytan saknar kursägare i registret: «valutasäkring» ger tre förbigående omnämnanden (se-17 och två bokkurser), «terminspremie», «säkringsredovisning» och «säkringsinstrument» ger 0 träffar. Kursen fyller hålet med den fråga varje läsare av en svensk exportörs rapport står inför: när marginalen rörde sig ett kvartal — var det verktygen, eller var det valutan, och vem av de två är det som är säkrad?",
+    "history": {
+      "origin": "Växelterminen är äldre än börsen: handelshus som säkrade framtida leveransers betalning i främmande mynt har funnits sedan hanseatisk och renässans tid — frågan om vad en krona ska vara värd om tolv månader är köpmannens äldsta derivat. Men under Bretton Woods-erans fasta kurser var frågan som insomnad: exponeringar fanns men de rörde sig i smyg. När systemet föll samman 1971–1973 och kurserna blev flytande vaknade bolagens valutaböcker över en natt från bokföringsdetalj till risk — och med dem föddes den moderna säkringsindustrin.",
+      "evolution": "Tjugotalets derivatrevolution byggde instrumenten: världens första stora valutaswap tecknades 1981 mellan IBM och Världsbanken (historievittne) och öppnade en marknad där företag kunde byta valutor på sina balansräkningar utan att flytta lånen själva; optioner standardiserades, bankerna byggde terminsböcker, och ränteparitetens mekanik blev en av världens mest arbitragerade ekvationer — därför håller den också. Parallellt växte säkringsredovisningen fram: när derivatet värderas till marknad i resultatet medan det säkrade flödet ligger i framtiden uppstår optisk volatilitet, och redovisningsreglerna för att para dem utvecklades till det system som idag kallas hedge accounting.",
+      "modern": "I dag är rullande säkringsprogram standard i svenska exportbolag — typiskt tolv månaders rullande termin, där varje månad en tolvte del förfaller och en ny träder in — och premiens tecken bestäms av centralbankernas räntebana, inte av bolagets skick: när svenska räntan ligger över euroländernas får exportören en slant på terminen, när den ligger under ser samma rad ut som en kostnad. Debatten har därmed flyttats från instrumenten till RESTEN: hur stor osäkrad valutaposition ett industriföretag ska bära när valutaspekulation inte är dess bransch — och svaret, som kursen lär ut, är en portföljfråga i portföljen och aldrig en teknikalitet."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — exponeringen och de två tiderna",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — instrumenten och terminspremiens aritmetik",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — rapportens valutanot",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — säkringsgraden och den osäkrade resten",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — sex sätt säkringen slår fel",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — säkringsprotokollets fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch läste valutan genom bolaget, inte genom terminalen. Hans genomgångar av detaljhandels- och industricases belönade systematiskt bolag vars kostnader ligger i samma valuta som intäketen — den naturliga säkring han föredrog framför varje derivatprogram, för att den aldrig förfaller och aldrig kostar premie. Och hans varning för bolag där finansresultatet börjar synas mer än rörelsen är kursens femte fälla i original: när terminsresultatet äter verktygsförsäljningen har kassan börjat äga bolaget, inte tvärtom. Lynchs fråga vid varje valutaexponerat bolag var inte vad management trodde om kronan — den var om affären fungerar i båda riktningarna. Det är också kursens sista fråga, ställd till verksamheten istället för växelkursen.",
+    "grahamSection": "Graham analyserade i en värld av i princip fasta kurser, och hans verktygskipp var balansräkningens — men hans grundkrav översätts rakt ner i valutanoten: den som äger en andel av ett bolag med fyrtio procent utländska flöden utan att känna säkringsgraden äger en okänd valutaposition, och det som inte är känt är inte heller prissatt i köpet. Säkerhetsmarginalen börjar i Grahams värld alltid med inventeriet av vad som faktiskt står i bokerna och vad det beror av — den här kursen är det inventariet för valutasidan: två exponeringar, tre instrumentfamiljer, två bokföringsspår och en osäkrad rest som ska kunna förklaras av ledningen på en enda mening innan analysen fortsätter in i marginalerna.",
+    "ak1Section": "I AK1A:s metodik kompletterar kursen ks-familjens finansieringsaxel med dess fjärde dimension — VALUTAN: ks-01 äger strukturen, ks-03 skuldens anatomi (där valutan är en av skuldens egenskaper), ks-04 emissionens mekanik, ks-07 teorin om avvägningen — den här kursen äger vad bolaget gör när kapitalets valutor inte matchar varandra. I AKM2:s bolagsläsning blir valutanoten en kvalitetsvariabel av samma rang som segmentnoten: utan känd säkringsgrad är kvartalens marginaler uppblandade i två valutor, och jämförbarheten — metodens ryggrad — börjar med kartan. Grannarna: ma-07 valutakursens mekanik äger räntepariteten som kursmodell — här är samma ekvation bolagets terminspris, makroteorin som drift; od-07 terminskontraktet äger instrumentet som kontrakt — här väljs löptid och syfte; rk-07 valutarisken äger portföljens sida; st-06 likviditetsreserven äger kassan (vars valuta är en exponering i sig); bk-04 koncernredovisningen äger översättningens mekanik som kursen läser resultat av; se-17 skogssektorn är branschfallet av exportören med råvara och krona.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — exponeringen och de två tiderna",
+        "intro": "Säkring börjar inte hos banken utan hos kartan: vad är exponerat, i vilken tid, och vad matchar redan sig självt?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det genomgående exemplet är Norrsken Verktyg AB med påhittade tal: en svensk verktygstillverkare med 1 800 miljoner kronor i omsättning — 40 procent faktureras i euro, 25 procent i dollar, resten i kronor — och ett tyskt dotterbolag, Norrsken Werkzeuge GmbH, med nettotillgångar om 300 miljoner euro som konsolideras in i svenska kronor vid varje bokslut. Där finns exponeringens två tider. FLÖDET: tolv månaders eurofakturor om sammanlagt 40 miljoner euro — bestämda belopp, bestämda datum, varje kronas rörelse från dagens kurs till betalningsdagen är en osäkrad vinst eller förlust som landar i marginalen. NETTOINVESTERINGEN: dotterbolagets balansräkning — inte ett flöde utan en beständig position som vid varje bokslut översätts till kronor och rör det egna kapitalet med kursens rörelse. Och före båda: den naturliga matchningen — GmbH:s kostnader är i euro, och varje eurokostnad som ligger mot eurointäkten minskar exponeringen innan något instrument beställts. Konstaterandet är kursens första lärdom: bolag som inte kan rita den här kartan säkrar inte — de gissar."
+          },
+          {
+            "type": "definition",
+            "content": "VALUTASÄKRINGENS TVÅ OBJEKT: (1) FLÖDET — bestämda framtida betalningar i främmande valuta (fakturor, kontrakt, inköp) — säkras med termin eller option med matchande löptid och belopp · (2) NETTOINVESTERINGEN — utländska dotterbolags nettotillgångar som översätts till kronor vid varje bokslut — säkras med lån i samma valuta som nettotillgången eller en lång termin · FÖRE INSTRUMENTEN: NATURLIG SÄKRING — kostnader i samma valuta som intäkterna minskar exponeringen internt, utan löptid, utan premie, utan motpart."
+          },
+          {
+            "type": "insight",
+            "content": "De två exponeringstyperna förväxlas aldrig ostraffat, för de lever i olika redovisningsspår och kräver olika instrument: att säkra ett tolv månaders flöde med ett flerårigt lån är att bygga ett staket runt gårdagens väder. Flödesrisken är ändlig och dör med sista fakturan; nettoinvesteringen lever så länge dotterbolaget gör det och rör det egna kapitalet, inte årets resultat. Säkringens första fråga är därför aldrig «termin eller option» — den är «flöde eller position», och svaret avgör allt som följer."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — instrumenten och terminspremiens aritmetik",
+        "intro": "Tre instrumentfamiljer, en ekvation — och en terminspremie som varken är kostnad eller prognos utan ränta flyttad i tiden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "TERMINEN: Norrsken säljer 40 miljoner euro tolv månader fram och får en kurs bindande låst — ingen premie betalas vid teckningen, kontraktet är en ömsesidig förpliktelse. Vad blir kursen? Räntepariteten styr: spot EUR/SEK står i 11,50, svenska tolv månaders räntan är 4,0 procent, euroländernas 2,5 — terminen blir 11,50 gånger 1,040 delat med 1,025, alltså 11,67. Beviset att de sjutton örena är aritmetik och inte åsikt är pengemarknadsvägen: låna idag 39,0 miljoner euro (40 delat med 1,025, ty euro-lånen förräntar sig till exakt fakturadagen), växla till 11,50 — 448,8 miljoner kronor — och placera till 4,0 procent: 466,7 miljoner kronor om tolv månader. Terminen ger 40 gånger 11,67 = 466,8. Samma slutsumma, öre för öre. SWAPPEN är samma arkitektur i serie — ett program av terminer som rullar, och därav dess hemvist i finansfunktionens kalender. OPTIONEN är den betalda rättigheten: en put på euro till strike 11,40 kostar omkring 0,35 kronor per euro i exempelvärlden — skydd om kursen faller under 11,40, fullt deltagande om den stiger — och premien, 14 miljoner kronor på 40 miljoner euro, är priset för att få behålla både tryggheten och hoppet."
+          },
+          {
+            "type": "tabell",
+            "content": "TERMINSPREMIENS ARITMETIK (PÅHITTADE TAL): SPOT EUR/SEK 11,50 · r-SEK 12 mån 4,0 % · r-EUR 12 mån 2,5 % · TERMIN = 11,50 × 1,040/1,025 = 11,67 · PREMIE +0,17 kr/euro = ränteskillnaden · BEVISET (PENGMARKNADSVÄGEN): låna 40/1,025 = 39,0 MEUR · växla till 11,50 = 448,8 MSEK · placera till 4,0 % = 466,7 MSEK om 12 mån · TERMINEN: 40 × 11,67 = 466,8 MSEK — samma summa, öre för öre · OPTIONEN ALTERNATIVET: put strike 11,40 · premie ≈ 0,35 kr/euro = 14,0 MSEK · skydd under 11,40, deltagande över."
+          },
+          {
+            "type": "insight",
+            "content": "Terminspremien är kursens vändpunkt: de sjutton örena ser ut som en gåva från banken (fakturorna säkras över spot!) men är exakt vad som krävs för att euro och krona ska bära samma avkastning — den som håller euro kan förränta den till 2,5 procent, den som växlar till krona till 4,0, och terminen utjämnar skillnaden mekaniskt. Därför är premien inte heller en prognos: ingen i kedjan behöver tro något om framtida kurser för att räkna fram 11,67. Och därför vänder premiens tecken med räntecykeln: när svenska räntan ligger under euroländernas hamnar terminen UNDER spot — 11,50 gånger 1,020/1,030 är 11,39 — och samma rad i rapporten som var ett tillskott nu ser ut som en kostnad. Samma bolag, samma säkring, samma mekanik — bara ränteläget har vänt."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — rapportens valutanot",
+        "intro": "Valutanoten är fem läsningar på en sida: andel, löptid, instrument, spår — och vad den osäkrade resten betyder.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Norrsken Verktygs bokslut bär en valutanot som är kursens övningsfält (påhittade tal): euroflödena tolv månader fram är 40 miljoner euro, varav 78 procent — 31 miljoner — är säkrade i det rullande terminsprogrammet till en medeltermin av 11,52 mot bokslutets spot 11,50; de resterande 9 miljonerna euro står osäkrade. Dollarflödena om 15 miljoner dollar är säkrade till noll procent — motiverat i noten av att ett dollarlån på 42 miljoner dollar i balansräkningen matcher intäktsströmmen: en naturlig position, dokumenterad. Dotterbolagets nettoinvestering om 300 miljoner euro är till hundra procent matchad — 280 miljoner genom ett eurolån, 20 miljoner genom en lång termin — och rör sig alltså inte i det egna kapitalet med kursen. Notens fem läsningar: VILKEN ANDEL av varje objekt (78, 0, 100 procent — tre olika beslut, inte tre slarv), VILKEN LÖPTID (rullande tolv månader, löptiderna matchar flödenas förfalloprofil), VILKET INSTRUMENT (termin för basflödet, lån för positionen — inga optioner i år), VILKET SPÅR posten tillhör (flödessäkringarnas effekter landar i resultatet samma period som fakturan; nettoinvesteringssäkringen rör det egna kapitalet parallellt med översättningen), och VAD RESTEN BETYDER — de nio osäkrade miljonerna euro är en aktiv valutaåsikt, bokförd som delaktighet."
+          },
+          {
+            "type": "tabell",
+            "content": "NORRSKENS VALUTANOT (PÅHITTADE TAL): EUR-FLÖDE 12 MÅN — 40 MEUR · säkrat 78 % (31 MEUR) till medeltermin 11,52 mot spot 11,50 · osäkrat 9 MEUR = aktiv position · USD-FLÖDE — 15 MUSD · säkrat 0 % · matchas naturligt av USD-lån 42 MUSD (dokumenterat i noten) · NETTOINVESTERING GmbH — 300 MEUR · 100 % matchad: EUR-lån 280 + lång termin 20 · SPÅREN: flödessäkring → resultatet, samma period som fakturan · nettoinvesteringsäkring → eget kapital, parallellt med översättningen."
+          },
+          {
+            "type": "insight",
+            "content": "Bokföringsspåren är notens dolda huvudinnehåll. Utan att veta vilken spår en post tillhör kan samma not läsas som vinst eller förlust: derivatets värdeförändring tas till marknadspris ofta redan i kvartalet, medan det säkrade flödet ligger i framtiden — läses de två isär uppstår optisk volatilitet som ser ut som att säkringen «slår fel», fast den gör precis vad den ska. Säkringsredovisningens hela uppgift är att para dem: flytta derivatets effekt till det säkrade objektets egen rad och period. Läsarens regel blir därför: leta alltid PARET — derivatet OCH det säkrade — och läs noten som en helhet; den som citerar en enskild säkringspost ur sitt sammanhang har inte funnit en sanning utan byggt en kuliss."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — säkringsgraden och den osäkrade resten",
+        "intro": "Noll till hundra procent är en skala av åsikter: vad varje läge köper, vad det kostar — och vilken valutaposition som bor i resten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Säkringsgraden tre lägen, tre avtal. HUNDRA PROCENT: marginalen låst, valutapositionen stängd — kvartalens jämförbarhet maximal, men bolaget har sålt all delaktighet i valutans rörelse och förväntas aldrig kunna förklara en valutavinst, bara en terminspremie. NORRSKENS SJUTTIOÅTTA: basflödet under budget är säkrat, volymen därutöver står osäkrad — en tvålagerlösning som låser planeringen men låter verksamhetens överskott leva med valutan. NOLL PROCENT: bolaget bär hela exponeringen — i grunden en valutaposition i verktygsdräkt, lämplig om och endast om ledningen har en dokumenterad valutaskicklighet som inte är dess bransch. Och vad «kostar» säkringen? I ränteläget från kapitel två: fyrtio miljoner euro gånger premien 0,17 kronor är 6,8 miljoner kronor i räntebetingad premie — inte en avgift till banken utan en flytt av avkastning mellan valutornas räntenivåer. Vänder ränteläget — svenska räntan 1,0 procentenhet under euroländernas — blir premien minus 0,12 kronor per euro, cirka 4,8 miljoner kronor per år, och samma rad som bar ett tillskott bär nu en belastning: mekaniken identisk, tecknet vänt av räntecykeln. Optionens kostnad är däremot alltid en premie — fjorton miljoner i exempeltal — och köper en asymmetri: golvet 11,40, taket öppet."
+          },
+          {
+            "type": "tabell",
+            "content": "SÄKRINGSGRADENS LÄGEN OCH PREMIENS CYKEL (PÅHITTADE TAL): 100 % — marginal låst, jämförbarhet maximal, delaktighet noll · 78 % (Norrsken) — basflödet låst, överskottet osäkrat: två lager · 0 % — full delaktighet: en valutaposition i verktygsdräkt · PREMIENS CYKEL: r-skillnad +1,5 procentenhet → premie +0,17 kr/euro ≈ +6,8 MSEK/år · r-skillnad −1,0 procentenhet → premie −0,12 kr/euro ≈ −4,8 MSEK/år · OPTIONEN: premie 14,0 MSEK — alltid en kostnad, köper asymmetrin (golv 11,40, tak öppet)."
+          },
+          {
+            "type": "insight",
+            "content": "Den osäkrade resten är kursens viktigaste procenttal, för den är aldrig glömd — den är vald. Varje procent under hundra är ett aktivt beslut att behålla valutapositionen hos ägarna: ett bolag som aldrig säkrar driver i sak en valutafond vid sidan av sin verkstad, och ett bolag som alltid säkrar hundra procent har avstått från all valutaskicklighet mot fullständig kvartalsjämförbarhet — inget av lägena är fel, men båda är åsikter och ska kunna förklaras av ledningen på en mening. Frågan till bolagsstämman är därför inte «varför inte hundra procent» utan «vilken åsikt bor i resten — och vad kostar den i dagens ränteläge?»"
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — sex sätt säkringen slår fel",
+        "intro": "De flesta säkringsmissar är inte marknadens fel utan konstruktionens: sex fällor som alla går att läsa i efterhand.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan: terminskursen som prognos — att läsa tolv månaders termin 11,67 som «banken tror att euron stiger» och styra säkringen efter den tron; terminen är räntepariteten, inte ett omdöme, och den som handlar efter den som om den vore en förväntan spekulerar i ränteskillnader utan att veta om det. Andra: överhedgen — att säkra mer än flödet, «för säkerhets skull»; allt därutöver är inte längre en säkring utan en öppen position med annan riktning, och den som säkrar femtio miljoner euro mot fyrtio i fakturor har byggt en naken valutaposition på tio miljoner euro. Tredje: spårförväxlingen — derivatet värderas till marknad i resultatet medan flödet ligger framåt i tiden; utan parning (eller utan förståelse för parningen) ser kvartalet falskt volatilt ut och välmenta beslut fattas på optik. Fjärde: säkringsgraden som fixpunkt — «vi säkrar alltid åttio procent» är en regel som är antingen för mycket eller för lite beroende på var i cykeln flödena ligger; graden är ett beslut per objekt, inte en inställning. Femte: kostnadsautopiloten — att läsa varje kvartals negativa terminspost som pengar som försvann; premiens tecken följer räntecykeln och säger ingenting om säkringens kvalitet, och den som styrs av den posten kommer att montera av sitt skydd precis när det är billigast att ha det. Sjätte: fel instrument för fel exponering — att säkra nettoinvesteringen med korta rullande terminer (positionen lever längre än programmet) eller flödet med långa lån (staketet står kvar efter att vädret slutat); löptiden ska matcha objektets tid, kapitel ett om igen."
+          },
+          {
+            "type": "insight",
+            "content": "Sex fällor, en gemensam mekanism: säkringen slår fel när den slutar vara en avbildning av exponeringen och börjar bli en position i sig själv — genom tro (prognosfällan), genom vikt (överhedgen), genom optik (spåret), genom slentrian (graden och autopiloten) eller genom form (fel instrument). Skyddet är protokollfrågorna från första kapitlet, ställda vid varje programrevision: vad är exponerat, i vilken tid, med vilken matchning — och är instrumentet fortfarande en spegel av svaret, eller har det börjat leva sitt eget liv?"
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — säkringsprotokollets fem frågor",
+        "intro": "När kartan, instrumenten, noten och graden sitter återstår handslaget: fem frågor som gör valutasidan läsbar i vilken rapport som helst.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vilka är exponeringarna — flöden, nettoinvesteringar, naturliga matchningar — och i vilka valutor och tider? Fråga två: hur mycket av varje objekt är säkrat — och är siffran ett beslut per objekt eller en slentriansiffra? Fråga tre: med vilka instrument och löptider — matchar terminens förfalloprofil flödets, och lånet nettoinvesteringens livslängd? Fråga fyra: var landar effekterna — resultat eller eget kapital, är paret helt i redovisningen, och kan ledningen visa derivatet bredvid det säkrade? Fråga fem: vilken åsikt bor i den osäkrade resten — hur stor är den i kronor, vad kostar den eller bär den i dagens ränteläge, och skulle den motiveras om den låg i en separat valutafond? Fem svar ger säkringsprotokollet: en karta, en grad, en verktygslåda, ett spår och en position — och med dem kan läsaren av Norrsken Verktygs nästa bokslut särskilja verktygens kvartal från valutans, vilket var kursens ursprungliga fråga."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta en årsredovisning med en valutanot — gärna en svensk exportör — och bygg säkringsprotokollet själv: exponeringarna per valuta och tid, säkringsgraderna, instrumenten och löptiderna, vilka poster som går till resultatet respektive eget kapital, och den osäkrade resten i kronor. Avsluta med att formulera den mening du skulle vilja höra ledningen säga om resten — och den fråga du skulle ställa om meningen uteblir. Kursen är utbildning i att läsa säkring — inte uppmaningar att handla valutor eller värdepapper."
+          },
+          {
+            "type": "insight",
+            "content": "Kursens vändning är att valutasäkring inte är en försäkring utan en portfölj i portföljen: den flyttar risken från valutan till ränteskillnaden och från vädret till beslutet — och den som förstår det slutar fråga «var det dyrt?» och börjar fråga «vilken risk valde vi, och till vilket pris?». Ett bolag vars valutasida är kartlagd, matchad och förklarad ger marginaler som går att läsa; ett bolag utan den kartan ger siffror som blandar verkstad och växelkurs i samma rad. Skillnaden mellan de två är inte valutaexpertis — det är redovisningens äldsta dygd: att veta vad man äger."
+          }
+        ]
+      }
+    ]
   },
   "rs-01-volatilitet-och-risk": {
     "slug": "rs-01-volatilitet-och-risk",
@@ -213276,6 +213972,182 @@
     "grahamSection": "Benjamin Grahams skilje mellan pris och värde får sin renaste illustrationsplats i omläggningen: flödet flyttar priset, men rör inte bolagets värde. Margin of safety-skolan läser därför mekaniska kursbågar som väder, inte som klimat — och kursens bågtänkande är en övning i just den distinktionen.",
     "ak1Section": "I AK1A:s metodik läses omläggningsmekaniken som en bakgrundstakt i bolagsanalyserna: när en kursrörelse sammanfaller med ett känt indexflöde, noteras flödet som förklaring innan några fundamental hypoteser byggs. Kursens flödesräkning och tidsaxel är verktyg i den utbildningen, och ämnet knyter an till spårets grannar — am-02 för indexens konstruktion, am-01 och km-069 för orderns möte med orderboken, kt-01 för katalysatorbegreppet."
   },
+  "am-08-etfens-inre-mekanik": {
+    "slug": "am-08-etfens-inre-mekanik",
+    "category": "AKTIEMARKNADEN I PRAKTIKEN",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "ETF:ens inre mekanik — korgen, skapelsen och arbitraget som håller priset",
+    "summary": "AKTIEMARKNADEN I PRAKTIKEN-familjens åttonde steg öppnar maskineriet under huven på den börshandlade fonden. Sonden mot 452 kurser visar att skapelse och inlösen, auktoriserade deltagare och ETF-arbitrage har noll kursägare — am-02 äger IDÉN index och passivt ägande, men inte MASKINEN som gör att en fond kan handlas som en aktie hela dagen till ett pris som nästan alltid ligger vid fondens värde. Kursens tes är trefaldig. Först: ETF:en är två saker på en gång — en portfölj (korgen) och en aktie (anden) — och båda har sitt eget pris: korgens värde per andel är NAV, kursens räkning är 10 000 000 i korgvärde fördelat på 1 000 000 andelar = 10,00 kronor. Sedan: skapelsen och inlösen är ventilerna — en auktoriserad deltagare (AP) som lämnar in en korg värd 5 000 000 kronor får 500 000 nya andelar; löser hon in andelar tillbaka får hon korgen — utbudet av andelar andas med efterfrågan, till skillnad från en slutenvårdfond. Tredje: NAV-låset är inte magi utan girighet — när andelen handlas till 10,04 (premie 0,4 procent) köper AP korgen för 5 000 000, skapar 500 000 andelar och säljer dem för 5 020 000: bruttovinst 20 000 kronor, kostnader 2 000, netto 18 000 — och varje sådan vinst trycker priset tillbaka mot NAV, ty arbitragören är motparten mot avvikelsen. Därtill gränsfallen: premiens risk när korgen är illikvid eller stängd, hävstångs-ETF:ens dagliga omstalning (index +5 procent följt av −4,76 procent lämnar index plant men 2x-andelen på 0,995 — minus 0,5 procent av ren volatilitet; tio sågtandsdagar lämnar minus 2,4 procent) och råvaru-ETF:ens terminsrulle i contango (närmaste termin 50,00 mot nästa 50,50 kostar 1 procent per rulle — 0,99 tolv gånger blir 0,886, minus 11,4 procent på ett år vid plant spotpris). Historien bär 1990-talets första börshandlade fond, 2000-talets explosion och 2010-talets mekaniska stressprov. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "why": "AKTIEMARKNADEN I PRAKTIKEN-familjens sju första steg har kartlagt marknadens yta — spreaden, indexet, aktiesidan, strukturen, auktionerna, kortlagen, indexomläggningen — men inte den konstruktion som förenat dem för en hel generation sparare: den börshandlade fonden, vars andel handlas tusentals gånger per dag medan dess korg rör sig tusentals prissteg. Sonden mot 452 kurser bekräftar: skapelse och inlösen, auktoriserade deltagare, ETF-arbitrage och hävstångs-ETF har noll kursägare; am-02 äger idén bakom (index, passivt, avgifternas roll) och nämner inte maskinen. Ändå är mekanismen en av marknadens mest pedagogiska: NAV-låset är densamma arbitragelogik som bf-13 äger i teorin (gränsen där pari råder), skapelsen är samma efterfrågeelasticitet som am-07 äger för indexet (omläggningens kusin: andelarna som tillverkas), hävstångsfallet är od-02:s volatilitet i kompoundform, och terminsrullen är od-07:s terminskurva som kostnadspost. Kursen passar familjens trappa exakt: den som lärt sig spreaden (am-01) och auktionerna (am-05) kan nu läsa vad som händer i glappet mellan korg och kurs — och den som en dag undrar varför hennes råvaru-andel förlorade elva procent på ett år med plant spotpris finner svaret i rullen denna kurs räknar.",
+    "learn": "Förstå ETF:ens dubbelnatur: en portfölj (korgen) och en aktie (anden) — två priser som ska hänga ihop · Räkna NAV: korgvärde 10 000 000 kronor fördelat på 1 000 000 andelar = 10,00 kronor per andel · Förstå skapelsen och inlösen: AP:n lämnar in en korg värd 5 000 000 och får 500 000 nya andelar — andelsantalet andas med efterfrågan, till skillnad från en sluten fond · Räkna arbitraget: kurs 10,04 mot NAV 10,00 (premie 0,4 procent) — AP köper korgen 5 000 000, skapar 500 000 andelar, säljer för 5 020 000: bruttovinst 20 000, kostnader 2 000, netto 18 000 · Förstå NAV-låset: varje arbitragevinst trycker kursen mot NAV — girigheten är det som håller priset ärligt · Förstå premiens risk: illikvid korg eller stängd marknad ger varaktiga avvikelser — maskinen stretar när underlaget saknar pris · Räkna hävstångs-förfallet: index +5 procent sedan −4,76 procent = plant, men 2x-andelen 1,10 × 0,9048 = 0,995 — minus 0,5 procent; tio sågandsdagar ger minus 2,4 procent av ren volatilitet · Räkna terminsrullans kostnad: contango 50,00 mot 50,50 kostar 1 procent per rulle — 0,99 tolv gånger = 0,886, minus 11,4 procent per år vid plant spotpris",
+    "history": {
+      "origin": "Idén att handla en portfölj som en enda aktie är äldre än sina verktyg: slutna fonderna och börsnoterade investmentbolag erbjöd länge en aktie, många tillgångar — men med fasta andelsantal (ib-kursens värld), där priset driver premien eller diskontet fritt från värdet. Det som saknades var ventilen: en mekanism som låter andelsantalet röra sig med efterfrågan och därmed band priset vid värdet.",
+      "evolution": "Ventilen kom med skapelse- och inlösenmekaniken i de första börshandlade fonderna på 1990-talet (i pionjärform redan Index Participation Shares i 1980-talets Toronto, stoppade i domstol — mekanismens födelse var omtvistad): auktoriserade deltagare mot korgen, NAV-låset genom arbitrage. 2000-talet skapade explosionen — breda index, sektorer, råvaror, obligationer, hävstång och invers — och med bredden kom gränsfallen: råvaru-andelar vars terminsrulle kostade årligen vad en avgift kostar per decennium, och hävstångsprodukter vars dagliga omstalning skiljde sig från det multitidshorisont-index köparen trodde sig ha.",
+      "modern": "I dag är börshandlade fonder en av marknadens största förmedlingsvägar — och mekaniken har fått sina stressprov: dagen i maj 2010 då enskilda andelar föll tiotals procent mot sina korgar på minuter (premiens risk i dess renaste form), och de tillfällen då illikvida underliggande fått fungera som prisfläck i en annars öppen andel. Utvecklingen har gått mot finare NAV-beräkningar (intradag i stället för dagligen), tydligare separering av likvida och illikvida korgar, och tillsynens intresse för just mekaniken denna kurs beskriver. Lärdomen från tre decennier är densamma som kursens tes: konstruktionen är stark — men den är en maskin, och maskiner visar sina gränser när underlaget de prissätter slutar röra sig."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Två saker på en gång — korgen och andelen",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Skapelsen och inlösen — andelarna som andas",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Arbitraget — girigheten som håller priset vid NAV",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Premiens risk — när maskinen stretar",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Hävstången och rullen — två mekaniska fallgropar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — läsa andelens egen rapport",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om att förstå vad man äger — och för en börshandlad andel blir frågan därför dubbel: vilket index eller vilken korg, och vilken maskin som förbinder den med priset. Hans skepsis mot produkter vars avgifter äter avkastningen översätts här till maskinens egna tullar: premie, spread, rulle och omstalning — kostnader som inte står i någon avgiftstabell men som betalas av den som inte vet att de finns.",
+    "grahamSection": "Benjamin Graham skilde mellan marknadens pris och tillgångens värde — och ETF-mekaniken är just denna skillnads styvmekanik: NAV är värdet (korgen, uppräkning), kursen är priset (orderboken, buden), och arbitraget den kraft som normalt håller dem samman. Hans varning om att priset kan lösgöra sig från värdet gäller även här — men med en Twist som är kursens kärna: mekanismen gör lösgörandet kortvarigt när underlaget fungerar, och varaktigt när det inte gör det.",
+    "ak1Section": "I AK1A:s metodik är am-08 instrumentmekanikens referenskurs: i AKM2:s scenariearbete hålls en börshandlad andels avvikelse (premie mot NAV) som en egen variabel — den kan vidga sig i stress även när underliggande värde är oförändrat — och hävstångs-andelars avkastning läses alltid som daglig omstämning, inte som linjär hävstång över horisonten. Kursen binder familjens verktyg: am-01:s spread (andelens yttre kostnad), am-05:s auktioner (prisbildningen i andelen), am-07:s omläggning (underliggande som byts i korgen), od-02:s volatilitet (hävstångsfallets bränsle) och rk-16:s kontrahentrisk (vid syntetiska konstruktioner bär andelen swap-motpartens namn). Utbildning i mekanismer — inga positioner, inga råd.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Två saker på en gång — korgen och andelen",
+        "intro": "En börshandlad fond är två konstruktioner i ett: en portfölj av tillgångar, och en aktie som äger den portföljen. Kursen börjar med de båda priserna — och räkningen som binder dem.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Korgen: portföljen av underliggande — i kursens exempel tolv aktier med sammanlagt värde 10 000 000 kronor, förvaltade mot ett index (am-02:s värld: reglerna, vikterna, avgiftens roll). Andelen: det börshandlade beviset på delägarskap i korgen — 1 000 000 andelar utestående. Räkningen som förenar dem är NAV, nettotillgångsvärdet per andel: 10 000 000 fördelat på 1 000 000 = 10,00 kronor. Detta tal — inte kursen — är andelens värde, och det räknas om varje gång korgen rör sig: stiger korgvärdet till 10 200 000 är NAV 10,20, oavsett vad orderboken tror. Dubbelnaturen är kursens hela ämne. En sluten fond har bara korgen: du handlar med fondbolaget till NAV, en gång per dag, till samma pris för alla. Ett börsnoterat investmentbolag har bara andelen: kurser bildas i orderboken, och premiern mot värdet kan bestå i år (ib-familjens studium). Den börshandlade fonden förenar: andelen handlas i orderboken hela dagen (aktiesidan), men en ventil — skapelsen och inlösen, kapitel två — gör att avvikelsen normalt hålls inom öret. Två frågor definierar därmed varje läsning av en börshandlad andel: vad är NAV (korgens räkning), och var är kursen (orderbokens bud) — skillnaden, premien eller diskontet, är maskinens temperaturmätare, och hela resten av kursen handlar om varför den nästan alltid står nära noll (kapitel tre) och när den inte gör det (kapitel fyra). En terminologi kvar att reda: i svenska sammanhang säljs många börshandlade konstruktioner som certifikat (ETC) snarare än fonder (ETF) — en juridisk skillnad i ägarform (fonden äger korgen, certifikatet är ett löfte om korgens avkastning) vars mekaniska konsekvens kursen noterar där den spelar roll (kapitel sex), men som inte rör grundmekaniken: korg, andel, ventil, arbitrage."
+          },
+          {
+            "type": "definition",
+            "content": "KORG — den underliggande portföljen som andelen äger eller speglar · NAV — nettotillgångsvärdet per andel: korgvärde ÷ antal andelar; kursens exempel 10 000 000 ÷ 1 000 000 = 10,00 · PREMIE OCH DISKONT — kursens avvikelse från NAV, i procent · AP — auktoriserad deltagare: den institution som får skapa och lösa in andelar mot korgen (kapitel två) · ETF/ETC — börshandlad fond respektive certifikat: juridisk ägarform, samma mekanik"
+          },
+          {
+            "type": "insight",
+            "content": "Dubbelnaturens läxa: en börshandlad andel har två prisbildare — korgen (värderingen) och orderboken (budgivningen) — och konstruktionens kvalitet avgörs inte av någon av dem, utan av hur väl ventilerna binder dem samman."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Skapelsen och inlösen — andelarna som andas",
+        "intro": "Hemligheten bakom NAV-låset är inte förvaltarens skicklighet utan en räkning: andelsantalet får röra sig. Skapelsen tillverkar andelar, inlösen förstör dem — och efterfrågan släpps in i systemet i stället för att trycka upp priset.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Skapelsen, kursens exempel. En auktoriserad deltagare — en institution med avtal med fonden, ofta en market maker eller storbank — vill skapa 500 000 andelar. Hon köper korgens tolv aktier i exakt indexvikter till sammanlagt 5 000 000 kronor, lämnar in korgen hos fonden (tillsammans med en liten skapelseavgift), och får 500 000 nyutfärdade andelar: 5 000 000 ÷ 10,00 = 500 000, räkningen ren. Antalet andelar i cirkulation stiger med 500 000 — och korgen är värd motsvarande mer: NAV förändras inte av skapelsen (båda sidor av bråket växer lika), men utbudet av andelar har växt. Inlösen är spegelväxlingen: andelar lämnas in, korgen lämnas ut — 500 000 andelar försvinner ur cirkulation, tolv aktier lämnar fonden, NAV står still, utbudet krymper. Mekanikens konsekvens är grundläggande: efterfrågan på andelen behöver aldrig driva kursen från värdet — den driver utbudet. Vill världen äga mer av indexet skapar AP:er nya andelar (och köper underliggande aktier, vilket lyfter korgen — den MEKANISKEN är verklig och am-07:s indexomläggning studerar den när korgen byter innehåll); vill världen äga mindre löses andelar in och underlaget säljs. Kursen hålls vid NAV inte därför att någon är ärlig utan därför att avståndet är en inkomst för den som tar sig över det — kapitel tre räknar den inkomsten. Tre nyanser kompletterar mekaniken. Den första: skapelsen kräver kapital och kroppsarbete — AP:n måste köpa tolv aktier, i rätt vikter, med initial margin som pant (rk-16:s margin-värld), och hon gör det bara när vinsten överstiger kostnaden: ventilerna öppnas av girighet, inte av plikt, och öppningar har trösklar (därav kvarvarande öre-avvikelser, kapitel tre). Den andra: fondens avgifter betalas inuti korgen (NAV minskar dagligen med avgiftens andel — am-02:s kostnadsräkning i maskinens form). Den tredje: jämförelsen som belyser allt — den slutna fonden (ingen ventil: tusentals köpare mot en NAV per dag) och investmentbolaget (ingen ventil: premiern lever i år). Den börshandlade fonden är marknadens tredje väg: aktiens handelbarhet, fondens värdeförankring, och emellan en fabrik av andelar som arbetar på girighetens marginaler."
+          },
+          {
+            "type": "tabell",
+            "content": "SKAPELSEN OCH INLÖSEN (PÅHITTADE TAL): korg tolv aktier värd 5 000 000 kronor · skapelse: korgen in → 5 000 000 ÷ 10,00 = 500 000 nya andelar ut · NAV OFÖRÄNDRAD — täljare och nämnare växer lika · inlösen: andelar in → korgen ut — utbudet krymper · EFTERFRÅGAN DRIVER UTBUDET, INTE KURSEN · VENTILENS TRÖSKEL: AP agerar bara när vinsten överstiger kostnaden · AVGIFTEN BETALAS INUTI KORGEN (NAV läcker långsamt nedåt)"
+          },
+          {
+            "type": "insight",
+            "content": "Ventilens paradox: andelsantalets flexibilitet, som ser ut som en detalj, är hela skillnaden mellan en aktie och en andel — aktien kan inte tillverkas (kursen bär efterfrågan), andelen kan (korgen bär den), och därav allt som resten av kursen räknar."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Arbitraget — girigheten som håller priset vid NAV",
+        "intro": "Varför handlar andelen till 10,01 när den är värd 10,00? Därför att avståndet är en lön. Kapitlet räknar arbitraget steg för steg — mekaniken bakom marknadens mest pålitliga prisband.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Scenen, kursens påhittade tal. Klockan är mitt på handelsdagen; NAV just nu 10,00 (korgen rör sig kontinuerligt), men andelen är het — kursen i orderboken 10,04, en premie på 0,4 procent. AP:n ser glappet och räknar: steg ett, köp korgen — tolv aktier i rätt vikter, 5 000 000 kronor. Steg två, skapa — korgen in hos fonden, 500 000 andelar ut. Steg tre, sälj — andelarna i orderboken till 10,04: inkomst 500 000 × 10,04 = 5 020 000 kronor. Resultatet: bruttovinst 5 020 000 − 5 000 000 = 20 000 kronor; kostnader (handelsavgifter, skapelseavgift, kapitalbindning, risk) i exemplet 2 000; netto 18 000 kronor — förtjänat på öre som fanns i glappet. Och nu mekanikens kärna, som gör vinsten självförstörande: AP:s försäljning av 500 000 andelar trycker KURSEN nedåt (utbudet växer i orderboken), hennes korgköp trycker NAV uppåt (underlaget stiger) — båda rörelserna minskar glappet. Nästa AP som räknar finner premiern 0,3, sedan 0,2 — tills glappet är mindre än kostnadströskeln och rationellt arbitrage upphör. Där står priset: inte VID NAV, men inom en marginal bestämd av kostnaderna — i väl fungerade andelar ett fåtal öre, i smalare underlag bredare (kapitel fyra). Spegelfallet, diskont: kurs 9,96 mot NAV 10,00 — AP:n köper 500 000 andelar billigt (4 980 000), löser in dem mot korgen (värd 5 000 000), säljer korgen: samma 20 000 brutto, samma mekanik uppåt. Notera vad arbitraget ÄR: bf-13 äger teorin (gränsen där pari råder — här i maskinform), am-01 äger spreaden (arbitragörens kostnad och konkurrensfält), och kursens poäng är att NAV-låset inte är en konstruktionens påstående utan ett ekvilibrium: en lön som försvinner när den tagits, en gravitation betald av girighet. Därav också mekanikens begränsning, som nästa kapitel visar: då lönen inte kan tas — därför att korgen inte kan köpas, eller inte har ett pris just nu — finns ingen kraft som håller samman de båda priserna, och premien är fri."
+          },
+          {
+            "type": "tabell",
+            "content": "ARBITRAGET (PÅHITTADE TAL): NAV 10,00 · kurs 10,04 — premie 0,4 % · STEG 1: köp korg 5 000 000 · STEG 2: skapa 500 000 andelar · STEG 3: sälj till 10,04 = 5 020 000 · BRUTTO 20 000 − KOSTNAD 2 000 = NETTO 18 000 · SJÄLVSTÄRKANDE: försäljningen pressar kursen, korgköpet lyfter NAV — glappet sluts · DISKONT-SPEGELN: kurs 9,96 — köp andelar 4 980 000, lös in mot korg 5 000 000 · JÄMVIKTMARGINAL: premien stannar där kostnadströskeln börjar"
+          },
+          {
+            "type": "insight",
+            "content": "NAV-låsets hemlighet i en mening: priset hålls vid värdet inte av ärlighet utan av konkurrens om öret — varje avvikelse är en lön någon tar, och lönen försvinner just genom att den tas; girigheten är prisättningens mest pålitliga tjänare."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Premiens risk — när maskinen stretar",
+        "intro": "Arbitraget kräver att korgen kan köpas och prissättas. När underlaget är illikvid, stängt eller utan pris släpper kraften — och premien blir en egen risk, värd att mäta och förstå.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre situationer där ventilerna hårt stängs. Den första: den illikvida korgen. En andel på tjugo småbolag, där hälften handlar en gång om dagen med breda spreadar, kan bara skapas dyrt — AP:s kostnadströskel (kapitel tre) stiger från öre till procent, och jämvikten lägger sig därefter: premiern kan bli dubbelt så bred och bestående, ty ingen lön täcker resan över glappet. I extrema fall — en korg av tillgångar som knappast handlas alls — blir det börshandlade priset ENDA kontinuerliga priset på underlaget: andelen bjuder hela dagen på tillgångar som i sig har ett pris i veckan, och budgivningen speglar då känslor om värdet snarare än värderingen av det. Den andra: den stängda marknaden. Vid tijdsskillnader handlas andel på en börs medan korgens aktier sover (Asien-fonder i Europa-kurstid, eller tvärt om): NAV är senaste korgstängning, kursen är nu — och glappet mellan dem är inte arbitragebart förrän båda sidor öppnar. Under nattens överraskningar kan premiern röra sig procent utan att någon kraft bär den tillbaka. Den tredje: stressen. Historiens signaturdag är den sjätte maj 2010 (den så kallade flashdagen), då enskilda andelar föll 20-30-50 procent mot korgar som knappt rört sig — orderbokens bud försvann (likviditetens luftficka, am-01:s studieområde), och utan bud finns inget pris att arbitrera mot; AP:er som stod redo kunde inte handla riskfritt mot ett pris som inte fanns. Senare mekanik (tätare NAV-beräkning, pausfunktioner, AP-åtaganden) har byggts just mot detta. Kursens sammanfattande läsning av premiern: den är inte en fejl i konstruktionen utan en mätare på underlagets hållbarhet — bred och bestående premie betyder att maskinen arbetar mot friktion (kostnad), frånvarande pris betyder att den arbetar mot tomrum (inget underlag). För läsaren av en andel följer två enkla hygienregler i utbildningsform: räkna premien mot senaste NAV före handel (den står i kurslistans egna fält), och skilj på andelens likviditet (orderbokens djup — ofta utmärkt) och underlagets (korgens handelbarhet — ibland sämre): en djupt handlad andel på grund av en grund korg är maskinens farligaste kombination, ty den ser säkrast ut och bär mest premi."
+          },
+          {
+            "type": "definition",
+            "content": "ILLIKVID KORG — underlag med breda spreadar och glest handel: arbitragerakens kostnad stiger, jämviktspremien vidgas · TIDSSKILLNAD — andel handlas medan korgen sover: NAV är stängningsvärde, kursen är nu · FLASHDAGEN — 6 augusti 2010: andelar föll tiotals procent mot i princip oförändrade korgar då orderböckerna tömdes · LUFTFICKA — när bud försvinner finns inget pris att arbitrera mot"
+          },
+          {
+            "type": "insight",
+            "content": "Premiens paradox: den börshandlade andelens styrka — kontinuerligt pris — blir dess svaghet när underlaget saknar ett, ty priset som alltid finns bär då bud på ett värde som inte kan kontrolleras; maskinen är stark som sin svagaste korg."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Hävstången och rullen — två mekaniska fallgropar",
+        "intro": "Två konstruktioner förlorar pengar av ren mekanik, utan att underlaget gjort fel: hävstångs-andelens dagliga omstalning och råvaru-andelens terminsrulle. Kapitlet räknar båda.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fallgrop ett: hävstångens tull. En 2x-andel lovar dubbelt av indexets DAGLIGA rörelse — inte dubbelt av indexet över en månad. Skillnaden är kompounderingens sönderfall över tid. Räkneexemplet, två dagar: index stiger 5 procent (dag ett) och faller 4,76 procent (dag två — exakt tillbaka till noll: 1,05 × 0,9524 = 1,00). Index över perioden: plant. 2x-andelen: 1,10 × 0,9048 = 0,995 — minus 0,5 procent. Underlaget står stilla, andelen har förlorat en halv procent av ingenting annat än volatilitet (od-02:s ämne i kompoundform). Upprepa mönstret i tio dagar (fem sågpar à plus 5 minus 4,76): index fortfarande plant — och andelen 0,995 upphöjt till fem ≈ 0,976, minus 2,4 procent. Över längre tid i röriga marknader blir tullen tung (särskilt när index också faller: 2x på en nedgång kräver +25 procent underlags återhämtning för att andelen ska återgå — 0,80 underlag × 1,25 = 1,00, men 0,60 andel × 1,25 = 0,75). Fallgrop två: rullens tull. En råvaru-andel som inte äger fysisk vara håller exponering via terminer (od-07:s instrument) — och terminen måste rullas före lösen: sälj närmaste, köp nästa. I contango (nästa termin dyrare: 50,00 mot 50,50) kostar varje rulle skillnaden — 1 procent i exemplet — oavsett vad spot gör. Spot plant i ett år, tolv rullar à 0,5 procent: andelen 0,99 tolv gånger = 0,886 — minus 11,4 procent på ett år, utan att råvaran rört sig en enda krona. I backwardation (nästa billigare) är rullen i stället en inkomst — mekaniken är samma, tecknet växlar med kurvans lutning. De båda groparnas gemensamma natur: de är inte avgifter (inget fält i faktabladet bär dem), inte bedrägerier (konstruktionen gör exakt vad den definierats göra) — de är mekaniska kostnader som betalas av den som håller positionen över tid, och som bara syns i avståndet mellan andelens kursutveckling och underlagets (spårningsavvikelsen, kapitel sex). Därav utbildningens kärna för båda fallen: läs konstruktionens definitionstal (daglig omstalning är definierande för hävstången; terminskurvan är definierande för råvaruexponeringen) — och veta att mekanikens kostnad växer med just det som lockar: volatiliteten hos hävstången, kurvans branthet hos rullen."
+          },
+          {
+            "type": "tabell",
+            "content": "MEKANISKA TULLAR (PÅHITTADE TAL): HÄVSTÅNG — index +5 % sedan −4,76 % = plant (1,05 × 0,9524 = 1,00) · 2x-andelen: 1,10 × 0,9048 = 0,995 — minus 0,5 % av ren volatilitet · tio sågtandsdagar: 0,995^5 ≈ 0,976 — minus 2,4 %, index plant · ÄVEN VID ÅTERHÄMTNING: 2x på −20 % ger 0,60 — underlaget behöver +25 % till 1,00, andelen når 0,75 · RULLEN — contango 50,00 mot 50,50 = 1 % per rulle · spot plant ett år: 0,99^12 = 0,886 — minus 11,4 % · backwardation: rullen är inkomst — tecknet följer kurvan · TULLARNA STÅR ALDRIG I AVGIFTSTABELLEN"
+          },
+          {
+            "type": "insight",
+            "content": "De mekaniska groparnas läxa: konstruktionens definitionstal är dess öde — daglig omstalning definierar hävstången och terminskurvan definierar råvaran; den som läser definitionen noga har redan räknat kostnaden, och den som inte gör det betalar den först i efterhand, i avståndet mellan kurs och underlag."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — läsa andelens egen rapport",
+        "intro": "Kursens redskap samlas till en läsordning för andelens egna tal — de fält varje börshandlad produkt bjuder, och den ordning de bör läsas i.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Läsordningen i sex steg. Steg ett: exponeringen — vilket index, vilken metod (pris- eller totalavkastning: utdelningens öde, se nedan), full replikering eller urval, och fysisk eller syntetisk konstruktion (den syntetiska når underlaget via swappar — och bär därmed motpartsrisk, rk-16:s fält, i stället för korgens förvaltningsrisk). Steg två: avgiften — förvaltningsavgiften per år (am-02:s kostnadsräkning), men också de dolda slitägena: handelskostnader i korgen vid omläggning (am-07) och — kapitel fem — mekanikens egna tullar. Steg tre: spårningsavvikelsen — det mätta avståndet mellan andel och underlag över tid; den är maskinens totala självräkning (avgift + handel + rulle + omstalning + premiens vindar) och det ärligaste enskilda talet konstruktionen bjuder. Steg fyra: likviditetens två lager — andelens handelsvolym och spread (am-01) mot korgens handelbarhet (kapitel fyra); djup andel på grund korg är varning, inte lugn. Steg fem: ventilernas hälsa — AP-antal, skapelse- och inlösenavgifter, och historiens premi-band (hur breda avvikelserna varit i stress): maskinens arbetsprov. Steg sex: utdelningens mekanik — totalavkastande index återinvesterar (NAV växer), prisindex gör det inte, utdelande andelar betalar ut kontant, ackumulerande behåller i korgen; i svensk beskattningsvärld har valet konsekvenser som sj-familjens kurser äger — kursen noterar mekaniken och hänvisar dit. Tillämpningen av ordningen är kursens slutbild: en börshandlad andel är den mest maskinerade produkten marknaden bjuder — värderingen automatiserad (indexregler), handeln kontinuerlig (orderboken), priset förankrat (arbitraget), utbudet flexibelt (skapelsen) — och just därför är dess analys en läsning av MASKINENS tal, inte av en förvaltares: spårningsavvikelsen är dess resultaträkning, premi-bandet dess riskmätare, korgen dess balansräkning. Sista meningen får bära kursen över till familjen: den som förstår spreaden (am-01), auktionerna (am-05), omläggningen (am-07) och ventilerna (detta steg) förstår den börshandlade andelen fullständigt — ty den är ingenting annat än marknadens mekanik, monterad i en produkt."
+          },
+          {
+            "type": "utmaning",
+            "content": "Övningen med kursens tal: en andel med NAV 10,00 handlas till 10,04; räkna premiern (0,4 procent) och AP:ens nettoarbitrage (brutto 20 000, kostnad 2 000, netto 18 000 på 500 000 andelar). Lägg därefter till en terminsrulle i contango om 0,5 procent per månad och ett underlag som står plant i ett år: vad är andelens totala avkastning (0,99^12 = 0,886, minus 11,4 procent)? Övningen ger inget att placera i — den ger vanan att läsa en börshandlad produkts mekanik som en kassaflödesberäkning: avgifter och tullar betalas alla, de syns bara olika tydligt."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens åttonde steg i en mening: den börshandlade andeln är marknadens mekanik monterad i en produkt — korgen dess värde, skapelsen dess andning, arbitraget dess tyngdlag, och de mekaniska tullarna dess pris för att vara allt detta på en gång; den som kan läsa maskinen läser produkten."
+          }
+        ]
+      }
+    ]
+  },
   "vr-01-multipelgapet": {
     "slug": "vr-01-multipelgapet",
     "category": "VÄRDERING",
@@ -214427,6 +215299,178 @@
           {
             "type": "insight",
             "content": "Familjens sjunde steg ger kassaflödesvärderingen sin tyngdpunktskala: perioden och terminalen, två vägar, ett gap och ett tak. Den som kan läsa den skalan ser på ett enda DCF-värde var det kan bäras och var det kan brista — och vet att frågan aldrig är om evigheten är medräknad, utan till vilket pris."
+          }
+        ]
+      }
+    ]
+  },
+  "vr-08-tobins-q": {
+    "slug": "vr-08-tobins-q",
+    "category": "VÄRDERING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Tobins Q — marknadsvärdet möter återanskaffningspriset",
+    "summary": "Värderingsfamiljens åttonde steg: Tobins Q. Alla familjens andra kurser värderar vinsten eller kassaflödet — den här jämför priset med själva kapitalet: vad skulle det kosta att bygga om bolaget från grunden? I det genomgående exemplet med påhittade tal värderar börsen stålverket Masverk Stål AB till 12,0 miljarder kronor medan en ingenjörskalkyl för att ersätta masugn, valsverk, hamn och rörelsekapital landar på 10,0 — Q blir 1,20, och i det lilla gapet mellan de två talen bor en hel kapitalcykel: över 1 lönar det sig att bygga nytt och utbudet växer, under 1 lönar det sig att köpa kapacitet på börsen istället för att skapa den. Kursen lär ut nämnarens tre beräkningsvägar — ingenjörskalkylen, inflationens spår och den justerade balansräkningen — och den siffra som gör Q till något större än en kuriosa: P/B på samma bolag är 2,0 medan Q är 1,20, och skillnaden mellan dem är en diagnos av vad bokföringen glömmer.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna Q-kvoten som ett bolags marknadsvärde dividerat med återanskaffningskostnaden för dess tillgångar — och förstå varför den frågan är annorlunda än alla multipel- och kassaflödesfrågor · bygga nämnaren på tre oberoende vägar: ingenjörskalkyl komponent för komponent, historisk byggkostnad upp Räknad med prisindex, och justerad balansräkning — och läsa intervallet mellan dem som information, inte brus · Skilja Q från P/B: bokfört eget kapital är historiska kostnader minus avskrivningar, återanskaffningskostnaden är dagens pris — och differensen mellan de två nämnarna förklarar varför samma bolag kan vara 2,0 i P/B och 1,2 i Q · Läsa kapitalcykeln genom Q: över 1 subventionerar marknaden kapitalbildning, under 1 belönar den återköp och fusioner — med USA:s aggregerade Q som historievittne på återgångens drift · Känna igen nämnarens blindhet: kunskapsbolagets osynliga kapital, goodwillens dubbelräkning och överkapacitetens meningslösa ersättningsvärde · Använda Q som krysskontroll när multipel och substans pekar olika — differensen är diagnosen, inte ett arbiträge",
+    "why": "Värderingsfamiljen har sju steg men samtliga värderar VINSTEN eller KASSAFLÖDET: multipelns anatomi (vr-03) paketerar vinsten, jämförelsebolagen (vr-06) avgör urvalet, terminalvärdet (vr-07) kröner kassaflödesmodellen — ingen ställer frågan vad KAPITALET SOM SÅDANT är värt: vad skulle det kosta att skapa om bolaget? Det är värderingens tredje träd, och det är det enda som varken behöver jämförelsebolag (multipelgrenens ömma häl, vr-06) eller prognos (DCF: egen, vr-07): två balansräkningsnära tal räcker. Tobins Q fyller hålet med en fråga som håller de andra två ödmjuka: när börsen betalar 1,2 kronor per krona återanskaffningskostnad betalar den för något som vinsten måste förtjäna, och när den betalar 0,85 kan ingen rationell aktör bygga nytt — kapitalcykeln som varken multipeln eller DCF ser. Ämnet har noll kursägare i hela registret — «tobin», «q-kvot» och «kapitalcykeln» ger alla 0 träffar. Kursen äger Q-ytan som familjens åttonde steg och kapitalcykelns kompass i AKM2:s verktygslåda.",
+    "history": {
+      "origin": "James Tobin formulerade q-kvoten 1969 i en artikel om penningpolitikens transmission: när börsen värderar installerat kapital över dess produktionskostnad lönar det sig att investera, och penningens kraft till verkligheten går just där. Idén var äldre än namnet — värderingslärans tillgångstradition hade sedan trettiotalet räknat på reproduktionsvärdet av anläggningar som en ankare för vad ett bolag kunde vara värt i händerna på en köpare som själv kunde bygga. Tobins bidrag var att lyfta kvoten från enskilda bolag till ekonomin som helhet: q som mätare på när marknaden som system bjuder över eller under kapitalets eget pris.",
+      "evolution": "Den empiriska epoken kom med finansräkenskaperna: när centralbankernas statistik gjorde nämnaren — bolagssektorns nettoersättningsvärde — standardiserad och mätbar kvartal för kvartal, kunde forskare som Smithers och Wright i Valuing Wall Street (2000) rita USA:s aggregerade Q genom ett sekel: ett långtidsmedel kring 0,7–0,8, toppar nära 2 vid 1929 och 1999, och en påfallande disciplinerad återgång mot medelvärdet. Q blev därmed en av de mest seglivade utmanarna till CAPE som marknadsbred värderingsmätare — med samma budskap i annan valuta: dyrt är dyrt, hur långt det än dröjer.",
+      "modern": "I dag lever Q i tre praktiker: kapitalcykelfondernas vokabular, där ett brett Q över 1 läses som marknadens subvention till ny kapitalbildning — och som en varning för att utbudet är på väg att växa; börsbolagens återköps- och emissionsbeslut, där aktier som handlas under återanskaffningskostnaden är att köpa kapital i rabatt och emissioner över den är att sälja dyrt; och aggregatmätningen bredvid CAPE i den eviga debatten om marknadens pris. För kunskapsbolagen förblir nämnaren olöst — organisationens, varumärkets och datans återanskaffningspris finns inte i någon kalkyl — och Q:s hemmaplan är därför medvetet samma som det alltid varit: de kapitaltunga branscherna där tillgångarna kan fotograferas och prissättas."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — två tal på samma kapital",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — nämnarens tre vägar",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — rapportens väg till Q",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — kapitalcykeln och de två halvorna",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — nämnarens blindhet",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — Q-protokollets fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch frågade aldrig vad ett bolag hade för Q — men hans cykelhantverk är Q:s mekanik i arbetskläderna. Hans regel att de bästa cykelköpen görs när kapacitet lämnar branschen — konkurser, nedskrotningar, investeringsstopp — är exakt speglingen av ett Q under 1: när börsen prissätter ett bruk under dess byggkostnad bygger ingen nytt, utbudet åldras och skrotas, och när efterfrågan så småningom vänder möter de kvarvarande en tom marknadssida. Och hans lika klassiska varning för bolag som säljer nya aktier billigt är Q:s andra halva: att emittera kapital under återanskaffningskostnaden är att förärta bort ägarnas förmögenhet åt den som köper emissionen. Lynch behövde inte kvoten — han behövde fysiken, och det är den fysiken kursen räknar.",
+    "grahamSection": "Grahams tillgångstradition är Q:s anfader. Att köpa ett bolag under rörelsekapitalets värde — netto-nätlaren — var den första systematiska övningen att prisa en balansräkning mot vad dess innehåll är värt oberoende av vinstens humör, och Security Analysis-traditionens fråga om vad en anläggning skulle kosta att reproducera är Q-frågan formulerad trettiofem år före Tobin. Skillnaden är inflationsmedvetenheten: Grahams närmare värld räknade historisk kostnad som en förnuftig proxy, medan Q:s tvingar dagens pris in i nämnaren — ett bokfört maskinverk från lågpristider kan ligga milsvida från vad maskinen kostar att bygga om. Säkerhetsmarginalen får här sin kapitalform: att köpa under återanskaffning är marginalen uttryckt i tillgångens egen valuta, den enda som inte kräver en enda prognos för att räknas.",
+    "ak1Section": "I AK1A:s metodik kompletterar kursen vr-familjens trappa på dess tredje ben: vr-03 och vr-06 äger multipeln och dess urval, vr-07 äger kassaflödet — den här kursen äger KAPITALET som värderingsankare, utan jämförelsebolag och utan prognos. I AKM2:s bolagsläsning blir Q en krysskontroll: när P/B och Q pekar olika är differensen själv diagnosen (2,0 mot 1,20 på samma bolag = inflation och avskrivningskonservatism i den ena nämnaren, inte en dyr aktie), och när Q ligger under 1 i en kapitaltung bransch ställs utbudsfrågan som varken multipeln eller DCF formulerar: vem skulle någonsin bygga nytt? Grannarna: roic-04-vardeekvationen äger värdeskapandet inifrån — när kapital återinvesteras över sin kostnad skapas värde, och Q läser priset på kapitalet utifrån; mt-02-moat-erosion-och-vallgravstest äger hur länge förtjänsten består, vilket är Q-cykelns mikromotor; ib-02-substansens-kvalitet äger investmentbolagets motsvarande nämnarskrutin; v05-pb är Q:s bokföringskusin; se-17-skogssektorn och se-18-rederi-och-shipping är branschfallen där Q är som mest hemma; och bk-06-obeskattade-reserver-och-avsattningar bär svenska balansräkningars särskilda nämnarproblem.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — två tal på samma kapital",
+        "intro": "Värderingens tredje träd: inte vinsten, inte kassaflödet — utan frågan vad tillgångarna skulle kosta att skapa om.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det genomgående exemplet är Masverk Stål AB med påhittade tal: ett integrerat stålverk vars börsvärde står i 12,0 miljarder kronor. Frågan multipeln aldrig ställer är: vad skulle det kosta att bygga ett likadant verk idag? Ingenjörskalkylen: masugn och blästerverk 3,2 miljarder, valsverklinje 2,6, hamn och logistikanläggning 1,1, kraft och infrastruktur 0,9, lager och rörelsekapital 1,1, bygglogistik och kostnadspåslag under byggtiden 1,1 — summa 10,0 miljarder. Q-kvoten är börsvärdet delat med återanskaffningskostnaden: 12,0 delat med 10,0 är 1,20. Börsen betalar alltså 1,20 kronor per krona kapital som går att skapa för 1,00 — och i det lilla påslaget bor en hel teori om när världen bygger och när världen köper."
+          },
+          {
+            "type": "definition",
+            "content": "TOBINS Q = MARKNADSVÄRDE / ÅTERANKAFFNINGSKOSTNAD. Tre egenskaper skiljer kvoten från familjens andra tal: SJÄLVREFERERANDE — inga jämförelsebolag behövs (vr-06:s ömma häl), det egna kapitalet är sin egen referens · PROGNOSFRI — ingen kassaflödesmodell, ingen tillväxtgissning (vr-07:s eget val), två balansräkningsnära tal räcker · CYKELBÄRANDE — Q över 1 gör kapitalbildning lönsam och utbudet växer, Q under 1 gör nybygge olönsamt och kapitalet köps istället för att skapas; kvoten är kapitalcykelns kompass."
+          },
+          {
+            "type": "insight",
+            "content": "Q är värderingens enda tal som ställer den ultimata jämförelsen: köparen som kan bygga själv. Multipeln frågar vad vinsten kostar, DCF frågar vad kassaflödet är värt — Q frågar vad ALTERNATIVET till att köpa bolaget kostar för den som inte är tvungen att köpa något alls. Därför säger kvoten inget om nästa kvartal och inget om en enskild akties prisvärdhet — den säger var marknaden som system placerar sig i förhållande till kapitalets eget produktionspris, och det är en annan och långsammare sanning än de flesta värderingstal bär."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — nämnarens tre vägar",
+        "intro": "Täljaren är trivial — aktiekurs gånger antal aktier. Hela hantverket bor i nämnaren, och den kan byggas på tre oberoende vägar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första vägen är ingenjörskalkylen: räkna komponent för komponent vad det kostar att resa verkets delar vid dagens pris — Masverk ger 10,0 miljarder. Andra vägen är inflationens spår: verket byggdes klart 2004 för 6,2 miljarder i maskiner och anläggningar, byggkostnadsindex för tung industri har stigit 43 procent sedan dess — 6,2 gånger 1,43 är 8,866 — kallat 8,9 i dagens pris, plus rörelsekapital 1,1: nämnaren 10,0. Ingenjörskalkylens fasta delar summerar till 8,9 med samma rörelsekapital — två helt skilda metoder som landar i samma tal är den starkaste validering en nämnare kan få. Tredje vägen är den justerade balansräkningen: bokfört eget kapital är 6,0 miljarder, men bokföringen bär historiska kostnader minus avskrivningar — med påslag för inflation i anläggningarna och kapitaliserad kunskap landar den justerade nämnaren kring 8,2, och Q blir 1,46. Samma bolag, samma fråga, tre svar: 1,20, 1,20 och 1,46."
+          },
+          {
+            "type": "tabell",
+            "content": "TRE NÄMNARE FÖR MASVERK (PÅHITTADE TAL): INGENJÖRSKALKYL — 3,2 masugn/bläster + 2,6 valsverk + 1,1 hamn + 0,9 kraft + 1,1 rörelsekapital + 1,1 byggpåslag = 10,0 → Q 1,20 · INFLATIONENS SPÅR — byggd 2004: 6,2 i anläggningar × index 1,43 ≈ 8,9 + rörelsekapital 1,1 = 10,0 → Q 1,20 (oberoende väg, samma svar) · JUSTERAD BALANSRÄKNING — bokfört EK 6,0 + inflationspåslag och kapitaliserad kunskap ≈ 8,2 → Q 1,46 · PÅ SAMMA BOLAG: P/B = 12,0/6,0 = 2,0 — skillnaden mot Q är nämnarens beskaffenhet, inte aktiens pris."
+          },
+          {
+            "type": "insight",
+            "content": "Nämnarens intervall är inte Q:s fel utan dess ärlighet: multipeln gömmer sina antaganden inuti ett enda färdigt tal, medan Q tvingar fram dem i en synlig kalkyl — vilka komponenter, vilket index, vilka justeringar. Tre vägar som ger 1,20 till 1,46 säger mer än ett tal som säger 1,3: konvergensen mellan ingenjörskalkyl och inflationsspår bär trovärdighet, och den justerade balansräkningens avvikelse bär information om vad bokföringen underskattar. Intervallet är analystyrket; punktsiffran är bara dess komprimering."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — rapportens väg till Q",
+        "intro": "Från årsredovisningen till en försvarlig nämnare: avskrivningsprofilen avslöjar åldern, indexet räknar upp priset, och branschens beskaffenhet avgör om frågan ens är meningsfull.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räkningens väg genom Masverks redovisning: maskiner och byggnader står bokförda till 4,1 miljarder efter avskrivningar, och den årliga avskrivningen är 0,25 miljarder på en plan som sträcker sig över 25 år — räknat bakåt motsvarar det en ursprunglig investeringsnivå kring 6,2 miljarder (0,25 gånger 25). Uppräknad med byggkostnadsindex 1,43 blir det 8,9 i dagens pris, plus rörelsekapitalet 1,1 — nämnaren 10,0 och Q 1,20: den tredje vägen landar där de två första landade, och konvergensen är poängen. Därmed kommer kursens viktigaste avgränsning: metoden fungerar därför att Masverks kapital är fotograferbart — maskiner, byggnader, hamn. För kunskapsbolaget är nämnaren nästan osynlig: organisationen, varumärket, kundrelationerna och datan står inte i balansräkningen och kan inte beställas från en entreprenör, och Q blir där antingen en gissning eller — värre — en falsk precision. Q:s hemmaplan är och förblir de kapitaltunga branscherna: stål, rederi, cement, massa, fastighet, infrastruktur."
+          },
+          {
+            "type": "tabell",
+            "content": "RAPPORTENS VÄG (MASVERK, PÅHITTADE TAL): bokfört maskin- och byggnadsbestånd 4,1 · årlig avskrivning 0,25 på 25 års plan → ursprunglig nivå 0,25 × 25 = 6,2 · × byggkostnadsindex 1,43 ≈ 8,9 · + rörelsekapital 1,1 → nämnare 10,0 · Q = 12,0/10,0 = 1,20 — tredje vägen, samma tal · TÄLJAREN: aktiekurs × antal aktier, kursen 60 kronor × 200 miljoner = 12,0 — den enkla halvan av ekvationen."
+          },
+          {
+            "type": "insight",
+            "content": "Praktikens poäng är att Q aldrig blir färdigt — det blir försvarligt. Avskrivningsplanen är en schablon, indexet är en genomsnittsbildning av tusen priser, och entreprenörskalkylen är ett perspektiv av flera. Det skiljer kursen från multiplens värld där talet ser objektivt ut för att antagandena är osynliga: Q:s hantverk syns i sitt arbete, och den som kan redogöra för tre vägar till nämnaren har gjort värderingens viktigaste arbete — att veta vad talet står på. Där bokföringen och ingenjören divergerar kraftigt står alltid en fråga värd att stiga ner i: vad har hänt med kapitalet som bokföringen och verkligheten minns olika?"
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — kapitalcykeln och de två halvorna",
+        "intro": "Q:s enda egentliga budskap handlar om utbud: över 1 subventionerar marknaden kapitalbildning, under 1 belönar den den som köper istället för att bygga.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Övre halvan: vid Q 1,20 kan en konkurrent resa ett identiskt verk för 10,0 och börsen prissätta det till 12,0 — bygget skapar 2,0 miljarder i värde av 10,0 i kostnad, och det är exakt då som orderböckerna på nya verk växer, emissioner finansierar expansion och branschens utbud står inför sin tillväxt. Vartefter den nya kapaciteten sätter igång pressas priset och marginalerna, vinsterna sjunker och Q vandrar neråt mot 1 — kapitalbildningen äter sin egen lönsamhet. Nedre halvan: i nästa recession står Masverk i 8,5 miljarder, Q 0,85 — ingen rationell aktör bygger då, eftersom 10,0 i kostnad köper 8,5 i värde; istället skrotas utgående linor, fusioner slår ihop kapacitet (att köpa hela verket på börsen kostar 8,5 mot 10,0 att skapa) och återköp av aktier blir kapitalets rationella användning: bolaget köper sitt eget kapital femton procent under produktionskostnad. Emission vid Q över 1 säljer nytt kapital dyrt — till gamla ägares fördel; emission vid Q under 1 säljer det billigt — till de nya köparnas. Historievittnet på aggregatnivå: USA:s aggregerade Q över ett sekel ligger kring 0,7–0,8 i långtidsmedel med toppar nära 2 vid 1929 och 1999 — och en påfallande disciplinerad återgång mot medelvärdet efteråt."
+          },
+          {
+            "type": "tabell",
+            "content": "CYKELNS TVÅ HALVOR (MASVERK, PÅHITTADE TAL): Q 1,20 → nybygge skapar 12,0 − 10,0 = 2,0 i värde → orderböcker, emissioner, utbyggnad → marginaltryck → Q mot 1 · Q 0,85 → nybygge förstör 1,5 → ingen bygger → skrotning, fusion (köp 8,5 mot bygg 10,0), återköp → utbudet åldras → Q uppåt · KAPITALHUSHÅLLNING: emission vid Q>1 gynnar gamla ägare · emission vid Q<1 skänker värde bort · AGGREGATET (HISTORIEVITTNE): USA:s Q-medel efter kriget ≈ 0,7–0,8 · toppar ≈ 2 (1929, 1999) · återgångens lag."
+          },
+          {
+            "type": "insight",
+            "content": "Q är kapitalcykelns hastighetsmätare, inte en köp- eller säljsignal. Kvoten talar om när marknaden som system subventionerar kapitalbildning — inte när en enskild aktie är felprisad, och inte när vändningen kommer; återgången från 1999 års topp tog över ett decennium. Kraften ligger i kombinationen: med mt-02:s läsning av hur länge en förtjänst över kapitalkostnaden består och se-familjens utbudsfråga om branschens kapacitet ger Q cykelns tredje ben — priset på att skapa den kapacitet som Hotar marginalerna. Den som bara vet att ett branschgenomsnitt handlas under återanskaffningskostnad vet något om utbudet som ingen multipel avslöjar."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — nämnarens blindhet",
+        "intro": "Q antar att kapitalet går att återskapa och att någon vill skapa det. Där antagandena bryts blir kvoten en nedre gräns — eller en slumpgenerator.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan: den immateriella nämnaren — för ett kunskapsbolag är Q:s beräkning till synes låg men meningslös, för bolaget går inte att återskapa för kalkylens summa: varumärket och organisationen kan inte beställas av en entreprenör, och nämnaren underskattar systematiskt. Andra: goodwill-dubbelräkningen — ett förvärvsbolag bär uppblåst bokförd substans där goodwill står för pris på gårdagens förvärv; en justerad nämnare som inte rensar goodwill räknar samma kapital två gånger. Tredje: överkapacitetens meningslösa ersättningsvärde — i en strukturett haltande bransch säger återanskaffningskostnaden ingenting, för ingen skulle bygga oavsett pris: ersättningsvärdet av ett förråd av det ingen vill ha är en siffra utan köpare, och Q under 1 kan förbli under 1 i en hel generation. Fjärde: timingtron — att läsa aggregerat Q som en marknadstimer; återgången kan dröja ett decennium, och kvoten bär ingen klocka. Femte: proxy-förväxlingen — att använda P/B som Q:s stand-in utan justering; de två nämnarna skiljer åt inflationen, avskrivningskonservatismen och det bokföringen aldrig tog upp, och den som blandar dem jämför två olika världar."
+          },
+          {
+            "type": "insight",
+            "content": "Fällornas gemensamma rot är att Q:s nämnare är en bedömning utgiven för att vara ett faktum. Multipeln är öppet en bedömning — av tillväxt, av risk — medan Q:s ingenjörskalkyl bär en auktoritet den inte äger: komponenterna är verkliga men sammanräkningen är ett perspektiv. Skyddet är konventionen från kapitel två: räkna alltid nämnaren på minst två vägar, behandla divergensen som diagnosen, och använd Q där det är hemma — kapitaltunga, fotograferbara, cykliska branscher — medan kunskapsbolaget lämnas till multiplar och kassaflöden som äger dess osynliga tillgångar bättre."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — Q-protokollets fem frågor",
+        "intro": "När kvoten, nämnaren och cykeln sitter återstår handslaget: fem frågor som gör Q till en levande del av bolagsläsningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: vad skulle det kosta att bygga om bolaget — på två oberoende vägar, och vad säger divergensen? Fråga två: vilken typ av kapital är det — fotograferbart som Masverks masugnar, eller osynligt som en programvaras organisation? I det senare fallet är Q inte verktyget, och insikten om VARFÖR den inte är det är själv analys. Fråga tre: var står kapitalcykeln — byggs det, skrotas det, emitteras eller återköps det, och vad gör bolaget självt med sitt kapital vid dagens Q? Fråga fyra: vad säger Q som multiplarna inte sa — P/B 2,0 mot Q 1,20 är inflationen och avskrivningarna i nämnaren, och den som kan förklara differensen på en mening förstår bolagets balansräkning bättre än den som kan multipeln på tre decimaler. Fråga fem: vems intresse tjänar dagens Q — köparens som kan skapa billigare, ägarens som kan emittera dyrt, eller ingen parts alls i en bransch där frågan är meningslös? Fem svar ger Q-protokollet: en kvot med intervall, en branschplacering, en cykelposition, en differensförklaring och en kapitalstrategisk läsning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta ett kapitaltungt bolag ur det egna materialet och bygg Q-protokollet: börsvärdet, nämnaren på två vägar (avskrivningsprofilen uppindexerad plus en egen komponentkalkyl där uppgifter finns), intervallet, P/B på samma dag — och en mening som förklarar differensen. Komplettera med cykelfrågan: vad gör branschens aktörer med sitt kapital just nu? Kursen är utbildning i att räkna och fråga — inte uppmaningar att köpa eller sälja något."
+          },
+          {
+            "type": "insight",
+            "content": "Q:s gåva är inte ännu ett tal utan en fråga som vänder på hela värderingen. Multipeln frågar vad vinsten kostar; DCF frågar vad kassaflödet är värt; Q frågar om tillgången går att skapa billigare — och därmed om marknadens pris är en subvention till kapitalbildning eller ett påskott på den. Den frågan håller de andra två ödmjuka: en multipel som ser billig ut över ett kapital vars återanskaffning ingen skulle betala är inte billig, bara först. Det är värderingens tredje träd — och det enda som växer ur marknadens egen mark."
           }
         ]
       }

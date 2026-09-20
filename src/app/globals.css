@@ -1293,3 +1293,36 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .cv-siffreband-spegel { contain-intrinsic-size: auto 25.25rem; }
 }
+
+/* ── PRESTANDA (o100): SPEGEL-KURSTIPS-GOLV — CLS-regimen 0,10–0,21 på
+   /en/kurser + /ar/kurser stängd (o89 §5:s köpost, lever efter o96:s
+   retraction 2026-09-19). ROT (o100-sond, CDP + PerformanceObserver,
+   BUILD_ID 9RBeu-wern): KurstipsKort är klientkomponent med tomt första
+   passt (SSR=null) — på SPEGLARNA sitter tipsen OVANFÖR vecket (tipsY
+   596/en · 524/ar mot svenska sidans ~2 700 px) där content-visibility:s
+   platshållare aldrig gäller (onscreen renderas normalt): hydratiseringen
+   fyller +364/+344 px och knuffar sökgridden (synliga rektangeln
+   823−548/620 = 275/203 px) utom synhåll = TVå skift à 0,1028/0,1017
+   (en) och 0,1396/0,1305 (ar); svenska /kurser = CLS 0 (gridden under
+   vecket hela vägen — kontrollmätt P59/0). KUR: min-höjds-golv på
+   kurstips-wrappern, enbart speglarna (html[lang]-scopat — våg 85 satte
+   lang="en"/"ar" direkt i SSR-HTML; svenska roten bär lang="sv" och
+   berörs ej): mobil en 22.75rem (364 px) · ar 21.5rem (344 px) — sond-
+   kalibrerade sluthöjder, tipsen deterministiska för förstagångsbesökare
+   (raknaKurstips källa 1: V01–V03 ur läroplansspåret, svenska titlar på
+   båda speglarna); md+ 15.5rem (248 px, o92:blocksonden, identisk alla
+   språken). A/B-BEVIS utan bygge (o100-proxy, identisk kanal + injicerad
+   golv-CSS): NOLL layout-shifts på båda speglarna — gridden landar under
+   vecket redan vid första layouten, också det tidiga parse-skiftet dör.
+   Nr o100 efter syskonkollision (u1:s anspråk 03:29:08 på samma köpost =
+   deras o99; kuren här färdigbevisad medan u1 väntade ut RAM-fönstret —
+   konvergens bokförd i protokollet, deras anspråk deras).
+   Komponentroten (kurstips-kort.tsx, delad med min-sida/larplan) RÖRS
+   EJ — o78:s avgränsning består; SSR-grenen förblir huvudagentens bord.
+   DOM/SEO/hydrering orörda, samma garanti som o78/o89/o92/o96. */
+html[lang="en"] .cv-kurstips { min-height: 22.75rem; }
+html[lang="ar"] .cv-kurstips { min-height: 21.5rem; }
+@media (min-width: 768px) {
+  html[lang="en"] .cv-kurstips,
+  html[lang="ar"] .cv-kurstips { min-height: 15.5rem; }
+}

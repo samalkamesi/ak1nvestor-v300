@@ -1,0 +1,10 @@
+/* o99 A/B-kandidat (proxy-test) — spegel-kurstips-golv.
+   Värden: en mobil 364 px (22.75rem, sond fore-en-mobil), ar mobil 344 px
+   (21.5rem, o89-sond — bekräftas av fore-ar-sond), md+ 248 px (15.5rem,
+   o92 blocksond desktop, alla språk). Skarpa värden efter ar-mätning. */
+html[lang="en"] .cv-kurstips { min-height: 22.75rem; }
+html[lang="ar"] .cv-kurstips { min-height: 21.5rem; }
+@media (min-width: 768px) {
+  html[lang="en"] .cv-kurstips,
+  html[lang="ar"] .cv-kurstips { min-height: 15.5rem; }
+}

@@ -482,7 +482,15 @@ const GAMLA = [
   "svaraLokaltForsakring",
   "svaraLokaltMoatdjup",
   "svaraLokaltNyaTerritorier",
-];
+
+  // Omgång 25-harmonisering (s6-u2, 2026-09-20): fönstrets tre nya komponenter i
+  // kedjeordning (u1 etfmekanik 59 · s6-u2 kontrahent 60 · u3 marknadsrytm 61).
+  "svaraLokaltEtfmekanik",
+  "svaraLokaltKontrahent",
+  // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
+  // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
+  "svaraLokaltMultipel",
+  "svaraLokaltMarknadsrytm",];
   // Syskon-pågående lager (u2:s riskdjup, wirad SIST i widgeten under detta
   // fönster): KÄND men krävs ej — deras commit äger modulen. Vakten underkänner
   // fortfarande OKÄNDA (odokumenterade) komponenter.

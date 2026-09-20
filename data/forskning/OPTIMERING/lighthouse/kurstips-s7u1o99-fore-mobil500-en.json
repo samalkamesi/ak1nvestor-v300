@@ -1,0 +1,104 @@
+{
+  "url": "http://localhost:3000/en/kurser",
+  "viewport": {
+    "w": 500,
+    "h": 800,
+    "dpr": 1
+  },
+  "ts": "2026-09-20T01:43:02.250Z",
+  "provpunkter": [
+    {
+      "t": 300,
+      "docH": 13726,
+      "wrap": {
+        "top": 547,
+        "h": 0
+      },
+      "sektion": null,
+      "rubrik": null,
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 500,
+      "docH": 13289,
+      "wrap": {
+        "top": 547,
+        "h": 0
+      },
+      "sektion": null,
+      "rubrik": null,
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 700,
+      "docH": 13695,
+      "wrap": {
+        "top": 547,
+        "h": 296
+      },
+      "sektion": {
+        "h": 296
+      },
+      "rubrik": "Tips for you",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 1500,
+      "docH": 13695,
+      "wrap": {
+        "top": 547,
+        "h": 296
+      },
+      "sektion": {
+        "h": 296
+      },
+      "rubrik": "Tips for you",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 2000,
+      "docH": 13695,
+      "wrap": {
+        "top": 547,
+        "h": 296
+      },
+      "sektion": {
+        "h": 296
+      },
+      "rubrik": "Tips for you",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 3000,
+      "docH": 13695,
+      "wrap": {
+        "top": 547,
+        "h": 296
+      },
+      "sektion": {
+        "h": 296
+      },
+      "rubrik": "Tips for you",
+      "shifts": [],
+      "clsSumma": 0
+    }
+  ],
+  "stabil": {
+    "docH": 13695,
+    "wrap": {
+      "top": 547,
+      "h": 296
+    },
+    "sektion": {
+      "h": 296
+    },
+    "rubrik": "Tips for you",
+    "shifts": [],
+    "clsSumma": 0
+  }
+}

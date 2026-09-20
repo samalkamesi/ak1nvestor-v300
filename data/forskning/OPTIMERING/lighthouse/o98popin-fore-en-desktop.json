@@ -1,0 +1,179 @@
+{
+ "url": "http://localhost:3000/en/kurser",
+ "namn": "fore-en-desktop",
+ "geo": "desktop",
+ "lage": "js",
+ "vp": {
+  "width": 1280,
+  "height": 800,
+  "deviceScaleFactor": 1,
+  "mobile": false
+ },
+ "ts": 1789868516130,
+ "lang": "en",
+ "docH": 3604,
+ "wrapper": {
+  "rect": {
+   "y": 415,
+   "h": 248
+  },
+  "li": 3,
+  "minHeight": "0px",
+  "rubrik": "Tips for you",
+  "sektionH": 248
+ },
+ "sokY": 719,
+ "tidslinje": [
+  {
+   "t": 888,
+   "h": 0,
+   "li": 0
+  },
+  {
+   "t": 1741,
+   "h": 248,
+   "li": 0
+  },
+  {
+   "t": 1946,
+   "h": 0,
+   "li": 0
+  },
+  {
+   "t": 3388,
+   "h": 248,
+   "li": 3
+  }
+ ],
+ "shifts": [
+  {
+   "varde": 0.07667,
+   "start": 1884,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 courses · 27 categories — the entir\"",
+     "fore": {
+      "y": 687,
+      "h": 113
+     },
+     "efter": {
+      "y": 439,
+      "h": 361
+     }
+    }
+   ]
+  },
+  {
+   "varde": 0.07667,
+   "start": 3396,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 courses · 27 categories — the entir\"",
+     "fore": {
+      "y": 439,
+      "h": 361
+     },
+     "efter": {
+      "y": 687,
+      "h": 113
+     }
+    }
+   ]
+  }
+ ],
+ "topp": [
+  {
+   "t": 466,
+   "h1": null,
+   "notis": null,
+   "wrapper": null,
+   "grid": null,
+   "docH": 800,
+   "scrollY": 0
+  },
+  {
+   "t": 888,
+   "h1": {
+    "y": 0,
+    "h": 0
+   },
+   "notis": {
+    "y": 0,
+    "h": 0
+   },
+   "wrapper": {
+    "y": 0,
+    "h": 0
+   },
+   "grid": {
+    "y": 0,
+    "h": 0
+   },
+   "docH": 800,
+   "scrollY": 0
+  },
+  {
+   "t": 1933,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 106
+   },
+   "wrapper": {
+    "y": 415,
+    "h": 0
+   },
+   "grid": {
+    "y": 439,
+    "h": 1563
+   },
+   "docH": 3356,
+   "scrollY": 0
+  },
+  {
+   "t": 3408,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 106
+   },
+   "wrapper": {
+    "y": 415,
+    "h": 248
+   },
+   "grid": {
+    "y": 687,
+    "h": 1563
+   },
+   "docH": 3604,
+   "scrollY": 0
+  },
+  {
+   "t": 15164,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 106
+   },
+   "wrapper": {
+    "y": 415,
+    "h": 248
+   },
+   "grid": {
+    "y": 687,
+    "h": 1563
+   },
+   "docH": 3604,
+   "scrollY": 0
+  }
+ ]
+}

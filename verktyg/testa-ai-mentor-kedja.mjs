@@ -483,6 +483,77 @@ const MOTORDEFS = [
   // INGEN SIST-anspråk. Anspråk data/vakten/auto-s6-1789840407-u3-ansprak.md
   // FÖRE byggstart.
   { namn: "nyaterritorier", fil: "ai-mentor-nya-territorier-fragor.ts", fn: "svaraLokaltNyaTerritorier", arr: "NYA_TERRITORIER_MONSTER", antal: 3 },
+  // 2026-09-20 omgång 25: etfmekanik (s6-u1, manifest auto-s6-1789864506792
+  // — den börshandlade fondens inre maskineri ETT monster; aktiverar am-08 +
+  // am-07 + od-07 som källa ⇒ KATEGORIN AKTIEMARKNADEN I PRAKTIKEN fullt
+  // länkad 8/10 → 10/10 (km-069/km-070 var nådda sedan tidigare): korgen/NAV 10 000 000 ÷ 1 000 000 = 10,00 med
+  // 10 200 000 → 10,20; skapelsen AP-korgen 5 000 000 ÷ 10,00 = 500 000
+  // andelar; arbitraget premie 0,4 % med 500 000 × 10,04 = 5 020 000 −
+  // 5 000 000 = 20 000 − 2 000 = 18 000 netto, självförstörande
+  // 0,4 → 0,3 → 0,2, diskontet 9,96 = 4 980 000; flashdagen 6 maj 2010
+  // (20-30-50 %); hävstångens tull 1,05 × 0,9524 = 1,00 mot 1,10 × 0,9048
+  // = 0,995 och 0,995^5 ≈ 0,976, nedgångsspegeln 0,80 × 1,25 = 1,00 mot
+  // 0,60 × 1,25 = 0,75; rullens contango 50,00/50,50 med 0,99^12 = 0,886 =
+  // −11,4 %; indexomläggningen 40 000 × 0,80 = 32 000, × 0,12 = 3 840 Mkr,
+  // fond-spegeln 50 000 × 0,012 = 600, bågen 42,00 → 44,52 = +6,0 % → 42,74,
+  // tidsaxeln 3 840 ÷ 60 = 64 handelsdagar, viktdriften 10 000 × 0,004 =
+  // 40. Sondens dokumenterade gränser: praktiken äger naket index/indexfond/
+  // etf (grundfrågorna — här stärkord + knapp; «etfens» träffas aldrig av
+  // deras exakta korta match), marknadsmekaniken spread/likviditet, nästas
+  // nav och naket «termin» (od-07 bärs som källa + länk), basen «hävstång»
+  // (endast sammansättningen «hävstångsetf» kärnord här), portfölj-
+  // praktiken «rebalansering» («ombalansering» KASTADES ur kärnorden —
+  // tavstånd 2 — förekommer endast i text), naket «arbitrage» lämnas
+  // ledigt (bf-13 mentorväglös — framtida lagers fett). Sond
+  // _s6u1-sond{,2}-omg25.mjs: familjerna NULL genom kedjans 58 motorer /
+  // 165 monsters / 1 688 kärnord, kärnorden RENTA. 59:e motorn — efter
+  // nyaterritorier, FÖRE fönstrets syskonlager kontrahent (s6-u2). Anspråk
+  // data/vakten/s6-omg25-u1-ansprak.md FÖRE byggstart.
+  { namn: "etfmekanik", fil: "ai-mentor-etfmekanik-fragor.ts", fn: "svaraLokaltEtfmekanik", arr: "ETFMEKANIK_MONSTER", antal: 1 },
+  // 2026-09-20 omgång 25: kontrahent (s6-u2, manifest auto-s6-1789864506792
+  // — kontrahentriskens två monsters: motparten + nettingen (+8, −5, +2 ⇒
+  // brutto 15 mot netto +5; den bilaterala världen med Lehman som MOTPART)
+  // och clearinghuset (trappan 28 + 8 + 4 = 40 ⇒ 70/20/10 %, haircutsen
+  // 100/98/80 per 100 ⇒ aktiepant 50 000 ÷ 0,80 = 62 500). Aktiverar rk-16
+  // — spår 5:s kurs född 2026-09-19, mentorväglös sedan födelsen — +
+  // källorna od-07, ma-05, am-04, ks-05. Sondens dokumenterade gränser:
+  // «ccp» STRYKS (granne «ccc» — kapitalbindningens — tavstånd 1, bärs i
+  // text), «lehman» historia-lagrets (historieförankring i text),
+  // «initial margin»/«variation margin» basens ([2 bas]), basens
+  // bank-formulering undviks («vem står på andra sidan» = kärnordsfrasen).
+  // Sond _s6u2-sond{,2}-omg25.mjs: familjen NULL genom kedjans 58 motorer
+  // / 165 monsters / 1 688 kärnord, 0 grannar, 0 stölder mot 117 kanoniska.
+  // Wiread sist EFTER syskonet u1:s etfmekanik (deras SIST-deklaration i
+  // widgeten respekterad — detta lager 60:e motorn). Anspråk
+  // data/vakten/auto-s6-1789864506792-s6-u2-ansprak.md FÖRE byggstart.
+  { namn: "kontrahent", fil: "ai-mentor-kontrahent-fragor.ts", fn: "svaraLokaltKontrahent", arr: "KONTRAHENT_MONSTER", antal: 2 },
+  // 2026-09-20 omgång 25: multipel — grundmultiplarna (s6-u2 försök 2,
+  // manifest auto-s6-1789864506792 — P/S-talet och P/B-talet, 2 monsters).
+  // Aktiverar v04-ps + v05-pb (VÄRDERING-kategorins mentorväglösa
+  // grundmultiplar; kategorins tredje vr-08 bärs som KÄLLA här). Sond
+  // _s6u2b-sond-omg25.mjs: PS-familjen TOTALT NULL genom kedjan,
+  // PB-familjen NULL med dokumenterade gränser («p/b för en bank» =
+  // sektorns, «substansvärde» = nästas investmentbolag), 0 kärnords-
+  // kollisioner, råa «p/s»/«p/b» substring-farliga (falsk träff på
+  // «köp svenska aktier») ⇒ korta exakta ord «ps»/«pb» bär. KANONISKA-
+  // poster bärs AV DETTA LAGERS EGNA TEST (marknadsrytm-precedensen:
+  // kontrahenttestets G2-Math.max skole gå sönder av nya motorindex —
+  // härleds LIVE ur kärnorden i stället). Anspråk data/vakten/
+  // auto-s6-1789864506792-s6-u2-ansprak2.md FÖRE byggstart. 61:a motorn
+  // (av 62), FÖRE marknadsrytm — deras SIST-deklaration + L01 respekteras.
+  { namn: "multipel", fil: "ai-mentor-multipel-fragor.ts", fn: "svaraLokaltMultipel", arr: "MULTIPEL_MONSTER", antal: 2 },
+  // 2026-09-20 omgång 25: marknadsrytm (s6-u3, manifest auto-s6-1789864506792
+  // — korrelationsrisk/kapitalcykeln/bull-bear, 3 monsters). MOTORDEF BÄRS
+  // HÄR av s6-u2 enligt riskpremie-precedensen (u1 omgång 21: «motordef här
+  // för G-fallets widget-spegling — kanoniska rader bärs av deras eget
+  // leveranstest»): u3:s parallellprocess wireade widgeten men deras
+  // MOTORDEFS-rad föll i fönstrets lost-update-race (deras skrivning av
+  // denna fil bar en äldre läsning). BASF: deras modul, deras leverans —
+  // denna rad existerar bara för att fall G ska spegla widgetens faktiska
+  // komponentordning. Om u3:s commit bär sin egen rad: behåll EN.
+  // S6-u2-försök-2-not: multipel wireas FÖRE denna — marknadsrytm förblir
+  // SIST (62:a) enligt deras widget-deklaration + testfall L01.
+  { namn: "marknadsrytm", fil: "ai-mentor-marknadsrytm-fragor.ts", fn: "svaraLokaltMarknadsrytm", arr: "MARKNADSRYTM_MONSTER", antal: 3 },
 ];
 
 const { KURSREGISTER } = await import(pathToFileURL(join(ROT, "src/lib/ai-mentor-register.ts")).href);
@@ -491,7 +562,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 165 (2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 173 (2026-09-20 omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -821,6 +892,45 @@ const KANONISKA = [
   { fraga: "vad är lånekraft?", motor: 57 },
   { fraga: "vad är demografi?", motor: 57 },
   { fraga: "vad är befolkningspyramiden?", motor: 57 },
+  // 2026-09-20 omgång 25 (s6-u1): etfmekanik — kanoniska ur lagrets egna
+  // rubriker; gränserna sondbekäftade: praktiken äger naket index/etf,
+  // nästas nav, basens hävstång, portfölj-praktikens rebalansering.
+  { fraga: "vad är en börshandlad fond?", motor: 58 },
+  { fraga: "vad är en auktoriserad deltagare?", motor: 58 },
+  // s6-u2-harmonisering (omg 25, dokumenterad): de två ursprungliga
+  // formuleringarna «hur skapas etf-andelar?»/«vad är etf-arbitrage?» var
+  // strukturellt skuggade — praktik äger naket «etf» (kort exakt match på
+  // ordet i frågan) och ligger FÖRE i kedjan, så etfmekanikens
+  // «etf-arbitrage»-fras kan aldrig nås av en fråga med naket etf-ord.
+  // Raderna bär i stället lagrets EGNA kärnordsformuleringar (sondverifierat:
+  // etfmekanik=true, praktik=false): «skapelse»+«inlösen» (am-08:s
+  // rubrikkärna) och «flashdagen» (6 maj 2010, lagrets signaturhändelse).
+  { fraga: "vad är skapelse och inlösen?", motor: 58 },
+  { fraga: "vad är flashdagen?", motor: 58 },
+  { fraga: "vad är contango?", motor: 58 },
+  { fraga: "vad är backwardation?", motor: 58 },
+  { fraga: "vad är en hävstångsetf?", motor: 58 },
+  { fraga: "vad är spårningsavvikelsen?", motor: 58 },
+  { fraga: "vad är indexomläggningen?", motor: 58 },
+  { fraga: "vad är effektdagen?", motor: 58 },
+  // 2026-09-20 omgång 25 (s6-u2): kontrahent — kanoniska ur lagrets egna
+  // rubriker; gränserna sondbekräftade: «ccp» stryket (granne «ccc»),
+  // «lehman» historiens, basens «initial margin»/«variation margin» och
+  // bank-formuleringen — deras frågor, dokumenterade gränser; bärs som
+  // knappar/text, aldrig kärnord.
+  { fraga: "vad är kontrahentrisk?", motor: 59 },
+  { fraga: "vad är en kontrahent?", motor: 59 },
+  { fraga: "vem är motparten?", motor: 59 },
+  { fraga: "vad är motpartsrisk?", motor: 59 },
+  { fraga: "vad är netting?", motor: 59 },
+  { fraga: "vem står på andra sidan när det blåser?", motor: 59 },
+  { fraga: "vad är ett clearinghus?", motor: 59 },
+  { fraga: "vad är en clearingcentral?", motor: 59 },
+  { fraga: "vad är collateral?", motor: 59 },
+  { fraga: "vad är en garantifond?", motor: 59 },
+  { fraga: "vad är en haircut?", motor: 59 },
+  { fraga: "vad är säkerhetskrav?", motor: 59 },
+  { fraga: "vad är default-trappan?", motor: 59 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);

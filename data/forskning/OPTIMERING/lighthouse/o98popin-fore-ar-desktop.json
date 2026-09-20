@@ -1,0 +1,186 @@
+{
+ "url": "http://localhost:3000/ar/kurser",
+ "namn": "fore-ar-desktop",
+ "geo": "desktop",
+ "lage": "js",
+ "vp": {
+  "width": 1280,
+  "height": 800,
+  "deviceScaleFactor": 1,
+  "mobile": false
+ },
+ "ts": 1789868532478,
+ "lang": "ar",
+ "docH": 3543,
+ "wrapper": {
+  "rect": {
+   "y": 393,
+   "h": 248
+  },
+  "li": 3,
+  "minHeight": "0px",
+  "rubrik": "اقتراحات لك",
+  "sektionH": 248
+ },
+ "sokY": 697,
+ "tidslinje": [
+  {
+   "t": 828,
+   "h": 0,
+   "li": 0
+  },
+  {
+   "t": 3256,
+   "h": 248,
+   "li": 3
+  }
+ ],
+ "shifts": [
+  {
+   "varde": 0.00787,
+   "start": 1810,
+   "kallor": [
+    {
+     "nod": "html.light \"دورات في التحليل المؤسسي للأسهم — 458 دو\"",
+     "fore": {
+      "y": 0,
+      "h": 800
+     },
+     "efter": {
+      "y": 0,
+      "h": 800
+     }
+    }
+   ]
+  },
+  {
+   "varde": 0.08134,
+   "start": 1957,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 دورة · 27 فئة — المكتبة كاملة، ونتا\"",
+     "fore": {
+      "y": 665,
+      "h": 136
+     },
+     "efter": {
+      "y": 417,
+      "h": 384
+     }
+    }
+   ]
+  },
+  {
+   "varde": 0.08134,
+   "start": 3192,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 دورة · 27 فئة — المكتبة كاملة، ونتا\"",
+     "fore": {
+      "y": 417,
+      "h": 384
+     },
+     "efter": {
+      "y": 665,
+      "h": 136
+     }
+    }
+   ]
+  }
+ ],
+ "topp": [
+  {
+   "t": 532,
+   "h1": null,
+   "notis": null,
+   "wrapper": null,
+   "grid": null,
+   "docH": 800,
+   "scrollY": 0
+  },
+  {
+   "t": 828,
+   "h1": {
+    "y": 0,
+    "h": 0
+   },
+   "notis": {
+    "y": 0,
+    "h": 0
+   },
+   "wrapper": {
+    "y": 0,
+    "h": 0
+   },
+   "grid": {
+    "y": 0,
+    "h": 0
+   },
+   "docH": 800,
+   "scrollY": 0
+  },
+  {
+   "t": 2114,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 84
+   },
+   "wrapper": {
+    "y": 393,
+    "h": 0
+   },
+   "grid": {
+    "y": 417,
+    "h": 1525
+   },
+   "docH": 3295,
+   "scrollY": 0
+  },
+  {
+   "t": 3117,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 84
+   },
+   "wrapper": {
+    "y": 393,
+    "h": 248
+   },
+   "grid": {
+    "y": 665,
+    "h": 1525
+   },
+   "docH": 3543,
+   "scrollY": 0
+  },
+  {
+   "t": 15133,
+   "h1": {
+    "y": 157,
+    "h": 40
+   },
+   "notis": {
+    "y": 285,
+    "h": 84
+   },
+   "wrapper": {
+    "y": 393,
+    "h": 248
+   },
+   "grid": {
+    "y": 665,
+    "h": 1525
+   },
+   "docH": 3543,
+   "scrollY": 0
+  }
+ ]
+}

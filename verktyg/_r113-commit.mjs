@@ -2,19 +2,22 @@
 // direkt). tsc-grinden i pre-commit tar minuter; skriptet loggar allt till
 // data/vakten/r113-commit.log och pushar med merge-vänteloop (fabriksbarn
  // committar i prod-trädet — updateInstead kräver rent träd).
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { appendFileSync } from "node:fs";
 
 const ROTA = "/home/ak1a/agent/ak1";
 const LOGG = `${ROTA}/data/vakten/r113-commit.log`;
 const rad = (s) => appendFileSync(LOGG, s + "\n", "utf8");
+// Arrayform utan skal (o116-kur): samtliga anrop nedan är mellanslagsseparerade
+// token-listor utan citat/jokertecken — split är förlustfri här.
 const kör = (args, tak = 300_000) => {
+  const delar = args.split(" ");
   try {
-    const ut = execSync(`git ${args}`, { cwd: ROTA, encoding: "utf8", timeout: tak, maxBuffer: 16 * 1024 * 1024 });
-    rad(`OK: git ${args.split(" ").slice(0, 3).join(" ")}\n${ut.slice(0, 800)}`);
+    const ut = execFileSync("git", delar, { cwd: ROTA, encoding: "utf8", timeout: tak, maxBuffer: 16 * 1024 * 1024 });
+    rad(`OK: git ${delar.slice(0, 3).join(" ")}\n${ut.slice(0, 800)}`);
     return { ok: true, ut };
   } catch (e) {
-    rad(`FEL: git ${args.split(" ").slice(0, 3).join(" ")} — ${String(e.message ?? e).slice(0, 400)}`);
+    rad(`FEL: git ${delar.slice(0, 3).join(" ")} — ${String(e.message ?? e).slice(0, 400)}`);
     return { ok: false, ut: String(e.stdout ?? "") };
   }
 };

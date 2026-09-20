@@ -62,12 +62,20 @@
 //   ENDAST testfixturer som medvetet innehåller farliga mönster som
 //   strängar (denna svits egna testa-mimosa-paritet.mjs; FYND i FÖRE-
 //   körningen 2026-09-16). Levande kod undantas ALDRIG.
+//   (v1.5, o116 2026-09-20): utelämnas flaggan gäller STANDARD-undantaget
+//   = den egna svitens fixtures (STANDARD_HOPPA_FIXTURE nedan) — undantaget
+//   bodde tidigare i körkunskapen och varje mätare som glömde flaggan
+//   fick 4 falska CHILD_PROC_INTERP. Explicit flagga ersätter standarden.
 // Exit: 0 = grönt (ingen ohärdad high/medium), 1 = fynd, 2 = argumentfel.
 
 import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 
 // ── Argument ────────────────────────────────────────────────────────────────
+// v1.5 (o116, 2026-09-20): fixture-undantaget bor I instrumentet — standard
+// hoppar enbart den egna svitens fixtures när --hoppa-over utelämnas.
+const STANDARD_HOPPA_FIXTURE = "testa-mimosa-paritet\\.mjs$";
+
 const args = process.argv.slice(2);
 function argVarde(flagga) {
   const i = args.indexOf(flagga);
@@ -112,7 +120,7 @@ let domanRegex;
 let hoppaRegex = null;
 try {
   domanRegex = domanArg ? new RegExp(domanArg) : /(^|\/)(src|data\/infra)\//;
-  hoppaRegex = hoppaArg ? new RegExp(hoppaArg) : null;
+  hoppaRegex = new RegExp(hoppaArg ?? STANDARD_HOPPA_FIXTURE);
 } catch {
   console.error(`Ogiltig regex: --doman "${domanArg}" / --hoppa-over "${hoppaArg}"`);
   process.exit(2);
@@ -330,11 +338,11 @@ for (const r of rapportRader) {
 
 const resultat = {
     verktyg: "mimosa-paritet",
-    version: "1.4",
+    version: "1.5",
     tid: new Date().toISOString(),
     katalog: rot,
     doman: domanArg ?? "standard (src/ + data/infra/)",
-    hoppaOver: hoppaArg ?? null,
+    hoppaOver: hoppaArg ?? `${STANDARD_HOPPA_FIXTURE} (standard, v1.5)`,
   skannadeFiler: allaFiler.length,
   perKlass,
   fynd: fynd.map((f) => `${f.fil}:${f.rad} ${f.klass} [${f.allvarlighetsgrad}] ${f.bevis}`),

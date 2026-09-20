@@ -2,7 +2,7 @@
 // F2-KUR (2026-09-20, Lag 2): döda rogue `sh -c next start -p 3000` som tagit
 // prod-porten, återta den åt pm2, verifiera. Resultat → verktyg/_f2-kur-resultat.txt
 // (arbetsytan är skrivbar; /tmp är spärrat för denna session).
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const R = "/home/ak1a/agent/ak1/verktyg/_f2-kur-resultat.txt";
@@ -43,7 +43,7 @@ for (const [namn, url] of [
   ["CHUNK", "https://lab.ak1nvestor.com/_next/static/chunks/11_yzmj8iqhn-.js"],
 ]) {
   try {
-    const kod = execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 "${url}"`, { encoding: "utf8", timeout: 30000 });
+    const kod = execFileSync("curl", ["-s", "-o", "/dev/null", "-w", "%{http_code}", "--max-time", "20", url], { encoding: "utf8", timeout: 30000 });
     log(`${namn}=${kod.trim()}`);
   } catch (e) {
     log(`${namn}-sond-fel: ${String(e.message).slice(0, 120)}`);

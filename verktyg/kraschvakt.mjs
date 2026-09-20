@@ -32,6 +32,21 @@
 //       appen död i 2 h trots "RÄDDNING KLAR: svarar=false", 14:24).
 // Beslutstabellen bor i ren funktion planeraAtguard() — exporteras och
 // testas av verktyg/testa-kraschvakt.mjs (import skyddas av AR_MAIN).
+//
+// S8-U2 ÅTERSTÄLLNINGSBEVIS (o125, 2026-09-20): larm-eskaleringen bar 2
+// "aktiva nivå 3"-episoder sedan 09-18 22:04 (kraschloop-misstanke +
+// raddningsbygg-misslyckades) fast appen var frisk — incidenten läktes
+// av prod-synkens deploy, men vakten skriver grön ENDAST via "RÄDDNING
+// KLAR"/"PM2-RESTART LÄKTE", dvs bara när VAKTEN själva läkt. En episod
+// som annan kanal läker kan aldrig stängas ⇒ eskaleringsskiktet ropar
+// "KRITISK (AVSTANNAD) — appkoll påkallad" i all oändlighet (41 h vid
+// upptäckten) utan att någon gör appkollen. KUR: state bär incidentOppnar
+// (sätts vid varje larmklass-gren, nollställs bara vid verifierat friskt
+// eget läke) — och pass-grenen SKRIVER då "ÅTERSTÄLLD: …" som grön-rad.
+// Appkollen markeraAvstannade ropar efter finns redan i pollen: den som
+// KAN mäta appen (denna vakt) skriver återställningsbeviset. Ärlighet:
+// ÅTERSTÄLLD kräver okNu+online+oknad ≤ 0 — stiger omstarter under
+// "läkt"-fönstret är läget INTE friskt och grön uteblir.
 import { execSync, execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
@@ -65,11 +80,19 @@ function sparaState(s) {
 
 /** pm2 jlist rådata → vaktrad. Särskiljer "saknas" från "pm2 svarade
  * inte" (jlist-timeout vid minnetopplast felrapporterades 2026-09-16
- * 04:04 som "ak1a finns inte i pm2" — vilseledande i felsökning). */
+ * 04:04 som "ak1a finns inte i pm2" — vilseledande i felsökning).
+ * o125-ROT FYND 2: omstarts Räknare bor i pm2_env.restart_time —
+ * pm2 jlist har INGET toppnivåfält (verifierat 2026-09-20: top-level
+ * undefined medan pm2_env bar 6 921). Våg 137 läste p.restart_time ⇒
+ * restarts blev ALLTID 0 ⇒ oknad alltid +0 ⇒ omstartssnurr-triggern
+ * (kärnan, byggd på 09-13:s 758-omstarsloop) har ALDRIG varit kopplad
+ * — hela journalen (18 rader) visar "+0", 09-18 räddades av dod-app-
+ * grenen (status=errored) som tur var. pm2_env först, toppnivå som
+ * fallback för äldre format — aldrig omvänt. */
 export function tolkaPm2(lista) {
   const p = (lista ?? []).find((x) => x && x.name === "ak1a");
   if (!p) return { saknas: true };
-  return { restarts: p.restart_time ?? 0, status: p.pm2_env?.status ?? "?" };
+  return { restarts: p.pm2_env?.restart_time ?? p.restart_time ?? 0, status: p.pm2_env?.status ?? "?" };
 }
 function ak1aRad() {
   try {
@@ -139,6 +162,25 @@ export function planeraAtguard({ okNu, status, oknad, lasUpptagen: upptagen, omk
   return { typ: "dod-app" };
 }
 
+/** o125-ÅTERSTÄLLNINGSBEVIS (ren — samma mönster som planeraAtguard, testas
+ * av testa-kraschvakt.mjs): pass-läge MED öppen incident i state ⇒ grön-rad.
+ *   pass       — ingen öppen incident (vakten tyst, våg 137-beteende) ELLER
+ *                läget inte helt friskt (svarar ej / ej online / omstarter
+ *                stiger) — grön utblir, incidenten får vänta på sitt bevis
+ *   aterstall  — incident i state + appen verifierat frisk: logga
+ *                "ÅTERSTÄLLD: …" (grön-klass i larm-eskaleringen) och
+ *                nollställ flaggan — episoden stängs med eget mätbevis. */
+export function planeraAterstallning({ okNu, status, oknad, incidentOppnar }) {
+  if (!incidentOppnar) return { typ: "pass" };
+  if (okNu && status === "online" && oknad <= 0) {
+    return {
+      typ: "aterstall",
+      meddelande: `ÅTERSTÄLLD: appen svarar=true status=online omstarter +${oknad} — tidigare incidentläke verifierat friskt (grön)`,
+    };
+  }
+  return { typ: "pass" };
+}
+
 /** VACCIN 2 (DRIFTSBOKEN 2026-09-17 17:42Z, o53 §4): beslutstabell för
  * misslyckat räddningsbygg. rm -rf .next skedde FÖRE npm ci+build ⇒ ett
  * misslyckat/avbrutet/OOM-dödat bygg lämnar artefakten saknad eller
@@ -193,7 +235,7 @@ export function planeraOrtvard({ status, portFinns, agarePid, agareArPm2Attling,
  * bygg — roten är portkidnappningen, artefakten orörd. State sparas
  * FÖRE första åtgärden (samma atomitetsdoktrin som räddningsbygget). */
 async function ortLakning(p, state, agarePid, meddelande) {
-  sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 20 });
+  sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 20, incidentOppnar: true });
   logga(`ORT-PORT (F2): ${meddelande} ⇒ reclaim: döda ort-trädet + pm2 restart`);
   const rot = hittaOrtRot(agarePid);
   const dodade = await dodaDeltrad(rot);
@@ -213,6 +255,7 @@ async function ortLakning(p, state, agarePid, meddelande) {
     restarts: Number.isFinite(p2.restarts) ? p2.restarts : p.restarts,
     senasteRaddning: Date.now(),
     kooldownMin: frisk && atlingEfter ? 120 : 20,
+    incidentOppnar: !(frisk && atlingEfter),
   });
   logga(`ORT-RECLAIM KLAR: svarar=${frisk} portägare-är-pm2-ättling=${atlingEfter} (kooldown ${frisk && atlingEfter ? 120 : 20} min)`);
   process.exit(frisk && atlingEfter ? 0 : 1);
@@ -234,10 +277,15 @@ export async function varm(forsok = 5) {
 async function raddningsbygg(p, state, oknadOrsak) {
   // (3) state-atomitet: kooldown gäller från BESLUTET — dör vakten hårt
   // mitt i (OOM 01:24/11:34-bevisen) kan nästa poll aldrig re-trigga.
-  sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 120 });
+  // o125: incidentOppnar sätts HÄR (samma atomitetsgaranti) — pass-grenens
+  // ÅTERSTÄLLD-grön blir skyldig från beslutets sekund.
+  sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 120, incidentOppnar: true });
   if (lasUpptagen()) {
     logga(`RÄDDNING AVSTYRD: deploy-låset upptaget (svarar=false status=${p.status} omstarter +${oknadOrsak}) — appen lämnas åt pågående deploy`);
-    sparaState({ ...state, restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 20 });
+    // o125: incidenten lever vidare (avstyrda beslut är inget läke) —
+    // lasState() plockar beslutssparningens flagga; deployns läke kräver
+    // fortfarande pass-grenens ÅTERSTÄLLD-bevis.
+    sparaState({ ...lasState(), restarts: p.restarts, senasteRaddning: Date.now(), kooldownMin: 20, incidentOppnar: true });
     process.exit(0);
   }
   logga(`KRASCHLOOP-MISSTANKE: svarar=false status=${p.status} omstarter +${oknadOrsak} ⇒ RÄDDNINGSBYGG`);
@@ -275,6 +323,7 @@ async function raddningsbygg(p, state, oknadOrsak) {
       restarts: (ak1aRad() ?? p).restarts ?? p.restarts,
       senasteRaddning: Date.now(),
       kooldownMin: start.kooldownMin,
+      incidentOppnar: true,
     });
     process.exit(1);
   }
@@ -297,7 +346,9 @@ async function raddningsbygg(p, state, oknadOrsak) {
   const friskEfter = (await varm()) && artefakt.status === "gron";
   // (4) osäkert läge = KORT kooldown: "RÄDDNING KLAR: svarar=false"
   // (14:24/21:34) lämnade appen oglad i 2 h — nu omprövar nästa poll.
-  sparaState({ ...lasState(), restarts: (ak1aRad() ?? p).restarts ?? p.restarts, senasteRaddning: Date.now(), kooldownMin: friskEfter ? 120 : 30 });
+  // o125: incidentOppnar nollställs ENDAST vid HELT läkt läge — annars
+  // blir pass-grenens ÅTERSTÄLLD skyldig vid nästa friska poll.
+  sparaState({ ...lasState(), restarts: (ak1aRad() ?? p).restarts ?? p.restarts, senasteRaddning: Date.now(), kooldownMin: friskEfter ? 120 : 30, incidentOppnar: !friskEfter });
   logga(`RÄDDNING KLAR: appen svarar=${friskEfter} (kooldown ${friskEfter ? 120 : 30} min; mål: kunden märker max ~10-15 min)`);
   process.exit(friskEfter ? 0 : 1);
 }
@@ -355,7 +406,17 @@ async function huvud() {
   const plan = planeraAtguard({ okNu, status: p.status, oknad, lasUpptagen: lasUpptagen() });
 
   if (plan.typ === "pass") {
-    sparaState({ restarts: p.restarts, senasteRaddning: state.senasteRaddning ?? null, kooldownMin: state.kooldownMin ?? null });
+    // o125: öppen incident i state + fullt friskt läge ⇒ ÅTERSTÄLLD-grön —
+    // appkollen som avstannad-detekten ropar efter, skriven av den som kan
+    // mäta appen. Logga FÖRE state-spara: dör vakten emellan blir nästa
+    // poll en (harmlös) extra ÅTERSTÄLLD — aldrig ett tappat bevis.
+    const aterstall = planeraAterstallning({ okNu, status: p.status, oknad, incidentOppnar: state.incidentOppnar === true });
+    if (aterstall.typ === "aterstall") {
+      logga(aterstall.meddelande);
+      sparaState({ restarts: p.restarts, senasteRaddning: state.senasteRaddning ?? null, kooldownMin: state.kooldownMin ?? null });
+      process.exit(0);
+    }
+    sparaState({ ...state, restarts: p.restarts });
     process.exit(0);
   }
   if (plan.typ === "vantad-deploy") {
@@ -369,12 +430,12 @@ async function huvud() {
     const plan2 = planeraAtguard({ okNu, status: p.status, oknad, lasUpptagen: false, omkollaSvarar: omkoll });
     if (plan2.typ === "transient") {
       logga(`TRANSIENT LAST: svarar=false vid 1:a koll, grön vid 2:a (status=${p.status} omstarter +${oknad}) — ingen åtgärd`);
-      sparaState({ restarts: p.restarts, senasteRaddning: state.senasteRaddning ?? null, kooldownMin: state.kooldownMin ?? null });
+      sparaState({ ...state, restarts: p.restarts });
       process.exit(0);
     }
     // plan2 = restart: processen lever men svarar två gånger — billig
     // läkning först, state sparat FÖRE åtgärd (atomitet).
-    sparaState({ ...state, restarts: p.restarts, senasteRaddning: nu, kooldownMin: 20 });
+    sparaState({ ...state, restarts: p.restarts, senasteRaddning: nu, kooldownMin: 20, incidentOppnar: true });
     logga(`SVARAR INTE 2 GÅNGER men status=online omstarter +${oknad} ⇒ PM2-RESTART (bygge ej motiverat ännu)`);
     try {
       execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
@@ -384,7 +445,7 @@ async function huvud() {
     const lakt = await varm();
     if (lakt) {
       logga("PM2-RESTART LÄKTE appen — räddningsbygge onödigt (våg 137-bygget sparat)");
-      sparaState({ ...lasState(), restarts: (ak1aRad() ?? p).restarts ?? p.restarts, senasteRaddning: Date.now(), kooldownMin: 20 });
+      sparaState({ ...lasState(), restarts: (ak1aRad() ?? p).restarts ?? p.restarts, senasteRaddning: Date.now(), kooldownMin: 20, incidentOppnar: false });
       process.exit(0);
     }
     logga("PM2-RESTART RÄCKTE INTE ⇒ räddningsbygg");

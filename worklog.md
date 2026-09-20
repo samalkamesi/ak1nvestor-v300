@@ -16086,3 +16086,41 @@ separata commits, git-historiken kan inte skrivas om utan förvärring) — seri
 --nästa ger o125 (hogstaKanda o124). Reservationsdoktrinen STÄRKS som systemfynd: verktyget skyddar
 endast dem som ANVÄNDER det; s7-kanalens manifestprompter får gärna bära reservationssteget (redan
 bokat som huvudagent-yta, o117 §6 + o123 §5.3). Reservationen lämnad formellt efter leverans. [fabrik]
+
+## SPÅR 8 s8-u2 (manifest auto-s8-1789920306682, vakt 2/3) — 2026-09-20 ~18:1x–18:4x lokal: kvalitetsvåg o125 — VAKTNÄTETS AVSLUTNINGSBEVIS: kraschvaktens ÅTERSTÄLLD-grön + snurr-räknarens döda pm2-fält + F2-ortportens eskaleringsklasser; 09-18-incidentens 41-timmars-spöke nedlagt (2 aktiva → 0), feljakt 163→107 öppna [fabrik]
+
+Fabriksagent s8-u2. VAL (anspråk disk-först före reservation; öppna ytor
+sonderade först: gränssnittsvakt 0 fel, Mimosa 0, döda länkar 0, externa
+cronen kasserade nattens 202 falska 5xx korrekt, patchkö 12 kvitton ok):
+larm-eskaleringens 2 "aktiva nivå 3 KRITISK (AVSTANNAD)"-episoder sedan
+09-18 22:04 (41+ h) fast appen frisk + feljaktens 163 öppna (35 HÖGA) ur
+samma incident. TRE ROTORSAKOR bevisade: (R1) kraschvakten skriver grön
+endast via egna läken — incident läkt av deploy kan aldrig stängas,
+avstannad-detektens "appkoll påkallad" har ingen som gör den; (R2)
+tolkaPm2 läste p.restart_time som pm2 jlist INTE bär (räknaren bor i
+pm2_env.restart_time, verifierat 6 921 vs undefined) ⇒ restarts alltid 0
+⇒ omstartssnurr-triggern (våg 137:s kärna, 09-13:s 758-omstarsklass) har
+ALDRIG varit kopplad — hela journalen bär "+0", 09-18 räddades av
+dod-app-grenen som tur var; (R3) F2-ortportens ORT-PORT/ORT-RECLAIM KLAR
+saknades i KRASCH_KLASSER (o26-blindheten igen). KUR: incidentOppnar-flagga
+(atomitetsdoktrinen, sätts vid varje larmbeslut inkl. bonusfyndet
+RÄDDNING-AVSTYRD-grenens state-överskrivning) + ren planeraAterstallning ⇒
+pass-grenen skriver ÅTERSTÄLLD-grön vid fullt friskt läge (okNu ∧ online ∧
+oknad ≤ 0, logga FÖRE spara); tolkaPm2 läser pm2_env.restart_time först;
+eskaleringen får klasserna ÅTERSTÄLLD/ORT-PORT/ORT-RECLAIM KLAR. BEVIS:
+testa-kraschvakt 53/53 (12 nya krav) · testa-larm-eskalering 23/23 (fall
+21–23) · VERKSTÄLLT i prod-trädet under låskontroll: state synkad till
+sann räknare 6 921 (utan synk = falskt räddningsbygg vid nästa :x4-rop!)
++ engångsvaktkörning skrev 2026-09-20T16:17:28Z ÅTERSTÄLLD med VAKTENS
+egna mätvärden ⇒ larm-eskalering: kraschvaktEpisoderAktiva 2→0,
+avstannade 0, 09-18-episoderna = HISTORIK med grönTs=ÅTERSTÄLLD (2 533
+min journalärligt) · FELJAKT: 115 protokollbevisade bedömningar i 2
+omgångar (71+6 transient-design · 21+13 rotkurad · 4 falskt-pos: FYNN-
+kaskaden vars GRÖN-dom haft ogiltig domklass och ignorerats) ⇒ öppna
+163→107, HÖGA 35→26 (fyndloggen växt +59 under dagen — differensen exakt
+mina domar) · tsc 0 (src orörd). ÄRLIGHET: kvarvarande 107 öppna =
+legitimt kö (prod-synk-"misslyckades"-mönster, hjärtats 09-20-fel,
+/godkannande→500, RAM) — inga gissade domar; kraschvaktens 10 h tystnads-
+fönster 02:54→12:44Z = öken punkt (pumpor-daemonens rop-hälsa).
+Protokoll: OPTIMERING/o125-kraschvakt-aterstallningsbevis-s8.md. Kö: §6
+där. [fabrik]

@@ -1,0 +1,659 @@
+{
+ "en_blogg-A": {
+  "tbt": 1125,
+  "fcp": 1256,
+  "lcp": 4406,
+  "domElement": null,
+  "byteVikt": 491026,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 1489,
+    "dur": 801
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 3890,
+    "dur": 255
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1267,
+    "dur": 127
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 923,
+    "dur": 110
+   },
+   {
+    "url": "Unattributable",
+    "start": 778,
+    "dur": 110
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4194,
+    "dur": 96
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4331,
+    "dur": 83
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1394,
+    "dur": 67
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1057,
+    "dur": 55
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1163,
+    "dur": 52
+   },
+   {
+    "url": "Unattributable",
+    "start": 1215,
+    "dur": 52
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1112,
+    "dur": 51
+   }
+  ],
+  "longTaskSumma": 1859,
+  "perUrl": {
+   "Unattributable": 963,
+   "2feezv-iveko5.js": 434,
+   "blogg": 462
+  },
+  "mainthread": {
+   "other": 1436,
+   "scriptEvaluation": 1051,
+   "styleLayout": 591,
+   "scriptParseCompile": 184,
+   "parseHTML": 123,
+   "paintCompositeRender": 40
+  },
+  "bootupTotal": 1103,
+  "bootupPerUrl": {
+   "Unattributable": {
+    "eval": 19,
+    "parse": 0
+   },
+   "2feezv-iveko5.js": {
+    "eval": 868,
+    "parse": 29
+   },
+   "blogg": {
+    "eval": 123,
+    "parse": 64
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "en_blogg-B": {
+  "tbt": 1133,
+  "fcp": 1238,
+  "lcp": 4367,
+  "domElement": null,
+  "byteVikt": 491026,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 1210,
+    "dur": 938
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0el5nt6-nk2y3.js",
+    "start": 3844,
+    "dur": 228
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1061,
+    "dur": 149
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4309,
+    "dur": 98
+   },
+   {
+    "url": "Unattributable",
+    "start": 769,
+    "dur": 95
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0-u1nw0ie6lq6.css",
+    "start": 2148,
+    "dur": 82
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4176,
+    "dur": 81
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 873,
+    "dur": 68
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4072,
+    "dur": 56
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 941,
+    "dur": 52
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4257,
+    "dur": 52
+   }
+  ],
+  "longTaskSumma": 1899,
+  "perUrl": {
+   "Unattributable": 1033,
+   "0el5nt6-nk2y3.js": 228,
+   "blogg": 269,
+   "2feezv-iveko5.js": 287,
+   "0-u1nw0ie6lq6.css": 82
+  },
+  "mainthread": {
+   "other": 1480,
+   "scriptEvaluation": 960,
+   "styleLayout": 490,
+   "scriptParseCompile": 169,
+   "parseHTML": 78,
+   "paintCompositeRender": 27
+  },
+  "bootupTotal": 998,
+  "bootupPerUrl": {
+   "Unattributable": {
+    "eval": 14,
+    "parse": 0
+   },
+   "blogg": {
+    "eval": 81,
+    "parse": 43
+   },
+   "2feezv-iveko5.js": {
+    "eval": 605,
+    "parse": 34
+   },
+   "0el5nt6-nk2y3.js": {
+    "eval": 220,
+    "parse": 2
+   },
+   "0-u1nw0ie6lq6.css": {
+    "eval": 0,
+    "parse": 0
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "en_blogg-C": {
+  "tbt": 1091,
+  "fcp": 1240,
+  "lcp": 4381,
+  "domElement": null,
+  "byteVikt": 491026,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 1265,
+    "dur": 822
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0el5nt6-nk2y3.js",
+    "start": 3851,
+    "dur": 270
+   },
+   {
+    "url": "http://localhost:3000/en/blogg",
+    "start": 1026,
+    "dur": 239
+   },
+   {
+    "url": "Unattributable",
+    "start": 770,
+    "dur": 96
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4181,
+    "dur": 90
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4271,
+    "dur": 90
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4121,
+    "dur": 60
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0-u1nw0ie6lq6.css",
+    "start": 2140,
+    "dur": 59
+   }
+  ],
+  "longTaskSumma": 1726,
+  "perUrl": {
+   "Unattributable": 918,
+   "0el5nt6-nk2y3.js": 270,
+   "blogg": 239,
+   "2feezv-iveko5.js": 240,
+   "0-u1nw0ie6lq6.css": 59
+  },
+  "mainthread": {
+   "other": 1290,
+   "scriptEvaluation": 1090,
+   "styleLayout": 592,
+   "scriptParseCompile": 159,
+   "parseHTML": 77,
+   "garbageCollection": 25,
+   "paintCompositeRender": 24
+  },
+  "bootupTotal": 1126,
+  "bootupPerUrl": {
+   "Unattributable": {
+    "eval": 12,
+    "parse": 0
+   },
+   "2feezv-iveko5.js": {
+    "eval": 711,
+    "parse": 28
+   },
+   "blogg": {
+    "eval": 70,
+    "parse": 41
+   },
+   "0el5nt6-nk2y3.js": {
+    "eval": 262,
+    "parse": 2
+   },
+   "0-u1nw0ie6lq6.css": {
+    "eval": 0,
+    "parse": 0
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "ar_blogg-A": {
+  "tbt": 441,
+  "fcp": 1731,
+  "lcp": 4319,
+  "domElement": null,
+  "byteVikt": 494435,
+  "longTasks": [
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 1195,
+    "dur": 435
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 3930,
+    "dur": 389
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4622,
+    "dur": 113
+   },
+   {
+    "url": "Unattributable",
+    "start": 786,
+    "dur": 104
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4522,
+    "dur": 100
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4364,
+    "dur": 91
+   },
+   {
+    "url": "Unattributable",
+    "start": 1112,
+    "dur": 83
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4455,
+    "dur": 67
+   },
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 901,
+    "dur": 61
+   },
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 962,
+    "dur": 57
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+    "start": 3516,
+    "dur": 55
+   }
+  ],
+  "longTaskSumma": 1555,
+  "perUrl": {
+   "blogg": 553,
+   "2feezv-iveko5.js": 760,
+   "Unattributable": 187,
+   "095w8h_fgc5q_.js": 55
+  },
+  "mainthread": {
+   "scriptEvaluation": 1199,
+   "styleLayout": 1075,
+   "other": 574,
+   "scriptParseCompile": 221,
+   "parseHTML": 97,
+   "paintCompositeRender": 29
+  },
+  "bootupTotal": 1308,
+  "bootupPerUrl": {
+   "blogg": {
+    "eval": 92,
+    "parse": 92
+   },
+   "2feezv-iveko5.js": {
+    "eval": 1036,
+    "parse": 42
+   },
+   "Unattributable": {
+    "eval": 19,
+    "parse": 0
+   },
+   "095w8h_fgc5q_.js": {
+    "eval": 4,
+    "parse": 22
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "ar_blogg-B": {
+  "tbt": 247,
+  "fcp": 1246,
+  "lcp": 4051,
+  "domElement": null,
+  "byteVikt": 494109,
+  "longTasks": [
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 1036,
+    "dur": 276
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0el5nt6-nk2y3.js",
+    "start": 3865,
+    "dur": 245
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4158,
+    "dur": 104
+   },
+   {
+    "url": "Unattributable",
+    "start": 773,
+    "dur": 74
+   },
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 912,
+    "dur": 70
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4262,
+    "dur": 68
+   },
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 982,
+    "dur": 54
+   },
+   {
+    "url": "http://localhost:3000/ar/blogg",
+    "start": 859,
+    "dur": 53
+   }
+  ],
+  "longTaskSumma": 944,
+  "perUrl": {
+   "blogg": 453,
+   "0el5nt6-nk2y3.js": 245,
+   "2feezv-iveko5.js": 172,
+   "Unattributable": 74
+  },
+  "mainthread": {
+   "scriptEvaluation": 1088,
+   "styleLayout": 685,
+   "other": 447,
+   "scriptParseCompile": 174,
+   "parseHTML": 71,
+   "paintCompositeRender": 32
+  },
+  "bootupTotal": 1118,
+  "bootupPerUrl": {
+   "blogg": {
+    "eval": 88,
+    "parse": 56
+   },
+   "2feezv-iveko5.js": {
+    "eval": 682,
+    "parse": 34
+   },
+   "Unattributable": {
+    "eval": 19,
+    "parse": 0
+   },
+   "0el5nt6-nk2y3.js": {
+    "eval": 237,
+    "parse": 3
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "blogg-sv-A": {
+  "tbt": 368,
+  "fcp": 1745,
+  "lcp": 4230,
+  "domElement": null,
+  "byteVikt": 490565,
+  "longTasks": [
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 3909,
+    "dur": 321
+   },
+   {
+    "url": "http://localhost:3000/blogg",
+    "start": 1182,
+    "dur": 253
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4317,
+    "dur": 153
+   },
+   {
+    "url": "Unattributable",
+    "start": 782,
+    "dur": 130
+   },
+   {
+    "url": "http://localhost:3000/blogg",
+    "start": 1029,
+    "dur": 114
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4230,
+    "dur": 87
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4470,
+    "dur": 57
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0-u1nw0ie6lq6.css",
+    "start": 2164,
+    "dur": 54
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+    "start": 3491,
+    "dur": 51
+   }
+  ],
+  "longTaskSumma": 1220,
+  "perUrl": {
+   "2feezv-iveko5.js": 618,
+   "blogg": 367,
+   "Unattributable": 130,
+   "0-u1nw0ie6lq6.css": 54,
+   "095w8h_fgc5q_.js": 51
+  },
+  "mainthread": {
+   "scriptEvaluation": 1153,
+   "styleLayout": 644,
+   "other": 568,
+   "scriptParseCompile": 230,
+   "parseHTML": 94,
+   "garbageCollection": 41,
+   "paintCompositeRender": 19
+  },
+  "bootupTotal": 1197,
+  "bootupPerUrl": {
+   "2feezv-iveko5.js": {
+    "eval": 957,
+    "parse": 32
+   },
+   "blogg": {
+    "eval": 89,
+    "parse": 103
+   },
+   "Unattributable": {
+    "eval": 15,
+    "parse": 0
+   },
+   "0-u1nw0ie6lq6.css": {
+    "eval": 0,
+    "parse": 0
+   }
+  },
+  "scriptEllerAnnat": {}
+ },
+ "blogg-sv-B": {
+  "tbt": 291,
+  "fcp": 1250,
+  "lcp": 4155,
+  "domElement": null,
+  "byteVikt": 490564,
+  "longTasks": [
+   {
+    "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+    "start": 3874,
+    "dur": 281
+   },
+   {
+    "url": "http://localhost:3000/blogg",
+    "start": 1072,
+    "dur": 176
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4244,
+    "dur": 104
+   },
+   {
+    "url": "Unattributable",
+    "start": 775,
+    "dur": 102
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+    "start": 4348,
+    "dur": 85
+   },
+   {
+    "url": "http://localhost:3000/_next/static/chunks/0-u1nw0ie6lq6.css",
+    "start": 2150,
+    "dur": 65
+   },
+   {
+    "url": "http://localhost:3000/blogg",
+    "start": 904,
+    "dur": 52
+   },
+   {
+    "url": "http://localhost:3000/blogg",
+    "start": 998,
+    "dur": 52
+   }
+  ],
+  "longTaskSumma": 917,
+  "perUrl": {
+   "095w8h_fgc5q_.js": 281,
+   "blogg": 280,
+   "2feezv-iveko5.js": 189,
+   "Unattributable": 102,
+   "0-u1nw0ie6lq6.css": 65
+  },
+  "mainthread": {
+   "scriptEvaluation": 1019,
+   "other": 572,
+   "styleLayout": 516,
+   "scriptParseCompile": 163,
+   "parseHTML": 79,
+   "paintCompositeRender": 19,
+   "garbageCollection": 17
+  },
+  "bootupTotal": 1060,
+  "bootupPerUrl": {
+   "2feezv-iveko5.js": {
+    "eval": 659,
+    "parse": 31
+   },
+   "blogg": {
+    "eval": 46,
+    "parse": 33
+   },
+   "Unattributable": {
+    "eval": 14,
+    "parse": 0
+   },
+   "095w8h_fgc5q_.js": {
+    "eval": 263,
+    "parse": 15
+   },
+   "0-u1nw0ie6lq6.css": {
+    "eval": 0,
+    "parse": 0
+   }
+  },
+  "scriptEllerAnnat": {}
+ }
+}

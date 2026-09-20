@@ -15882,3 +15882,59 @@ Fabriksagent s6-u3. VAL (anspråk disk-först, data/vakten/auto-s6-1789912510460
 Fabriksagent s6-u1. VAL I TVÅ AKTER (ärligt bokförd): v1 marginalhandeln (am-09) med komplett sond (_s6u1e-sond-omg27.mjs: 21 kandidater NULL, kontroller åt rätt ägare, 3 dokumenterade gränser — basen «margin call»+naket «hävstång»+«margin of safety», sektorn «utlåningsgrad» tav 2, handelsdagen «utlåningsräntan» tav 2) NEDSTÄLLD då s6-u2:s anspråk 16:03 landade FÖRE v1:s 16:04 med samma kurs och kärnordsfamilj (disk-först-konventionen, omgång 26-precedensen) — modul raderad, widget revertad; u2 bytte i sin tur monster 2 till ln-03 (marginaltrappan) varför am-09 FÖRBLIR mentorväglös — deras nästa fönster har fynden färdiga i min sond. v2 = pe-07 co-investeringen (u2:s eget förslag «passar u1:s +1»): ETT monster — två biljetter till samma konsert: LP-vägen 200 − 20 carry − 12 avgifter = 168 mot biljetten 200 (gap 32) · urvalsasymmetrin: tre skäl att dela (kapacitet neutralt/riskdelning mildt/tvivel ogynnsamt — erbjudandebrevet ser likadant ut i alla tre), helägda 2,10x → 176 mot erbjudna 1,70x → 170, gap 6 TROTS 34 enheter avgift+carry · mätningen: break-even 1,76x, speglingen 2,10 − 1,76 = 0,34x = 34 enheter — urvalet och avgiften i samma valuta, trappan +34/+14/0/−6, enskild affär i fonden 144 mot biljetten 170 = +26 = +18 % (sann men ofullständig) · fem krav (egen analys/beredskap/koncentration 4 % mot 100 %/likviditet/ägararbete) + fyra fällor + protokollets fem frågor. AKTIVERAR pe-07 (spår 5-kurs född 2026-09-20, mentorväglös sedan födelsen — rs-09-precedensen) ⇒ KATEGORIN FULLT LÄNKAD 13/14 → 14/14 + pe-04 källaktivering (källor pe-06 + km-014). SOND (_s6u1f-sond-omg27.mjs mot 68 motorer/186 monsters): 12 kandidater NULL · 9 kontroller åt rätt ägare (internräntan/vattenfallet/utfasningar→pe-mekanik, andrahandsmarknaden/sekvensrisken→pengarstid, capital call→nästa, diversifiering→portföljgrund, köpoption→optionsdjup, J-kurvan→realekonomi) · 0 grannar. DOKUMENTERADE GRÄNSER: djup äger «multipeln»-familjen («vad är break-even-multipeln?» FÅNGAS av dem — begreppet i TEXT), nästa «call», och SOLIDFORMEN «coinvestering» STRYKS som kärnord (tavstånd 2 till «investering» — hyphen-formerna blir flerordsfraser som kräver co-prefixet; «vad är en investering?» bevisas NULL i testfalls E — ingen stöld av framtida territorium). RACE-KRONOLOGI (tredje lost-update-cykeln i fönstret, pengarstid-sjukdomen): mina widget+kedjetest-ändringar raderades två gånger av syskonens återställningsskrivningar under harmoniseringsvågen — KUR: checksumme-stabilitetspoll (två identiska md5 med 25 s mellanrum) innan återapplicering, därefter KVD+commit i ett andetag. SVITER: co-invest 49/49 (A kanonisk flerkälla · B 8 felstavningar · C determinism · D01–D21 aritmetik omräknad maskinellt + registerdrivet + fantomslugar · E 8 gränser NULL · F juridikgrind · G antistöld 10 grannfrågor · H ägar-invariant LIVE-lästa motorlistor · J kärnordsdisjunktion · L widget-synk) · kedjan 270/270 GRÖN (fall G speglar 69 motorer; E/F källmärkning+kursläkthet på 187 monsters; H inventarie + unika id) · tsc 0 via projektbinär (node node_modules/typescript/bin/tsc --noEmit, exit 0). KEDJEPLATS: 69:e motorn efter volatilitetsmekanik, FÖRE marknadsrytm som förblir SIST (deras L01); kanoniska rader bärs av lagrets eget test (multipel-precedensen). KVD: kodändring src/ + widget — INGET bygge (prod-synken äger); R2 orörd; data/blogg/ orörd; juridikgrind pedagogisk. LEVERANS: src/lib/ai-mentor-coinvest-fragor.ts, src/components/ak1a/chat-widget.tsx, verktyg/testa-ai-mentor-kedja.mjs, verktyg/testa-ai-mentor-coinvest.mjs, verktyg/_s6u1d-mentorlosa.mjs, verktyg/_s6u1e-sond-omg27.mjs, verktyg/_s6u1f-sond-omg27.mjs, data/vakten/auto-s6-1789912510460-s6-u1-ansprak.md. [fabrik]
 
 **2026-09-20 omgång 27 — s6-u2 (manifest auto-s6-1789912510460, byggare 2/3): AI-MENTORN +2 FÖRHANDSFRÅGOR — VOLATILITETSMEKANIK.** Två källmärkta monsters (volatilitetsdraget [rp-06 primär, källor rp-04 + rp-05] + marginaltrappan [ln-03 primär, källor ln-01 + v07]) i src/lib/ai-mentor-volatilitetsmekanik-fragor.ts — tema "varifrån bruset kommer och vad det kostar"; rp-06 + ln-03 mentorlänkade (båda mentorväglösa i sonden; rp-06 född 2026-09-20 av spår 5). KOLLISION LÖST I ÖMSESIDIG VIKNING: första planen bar marginalhandeln (am-09) men u1:s parallella lager var komplett — jag viker mig (anspråk v2, monster 2 → ln-03, 0 överlapp kontrollerat); u1 applicerade disk-först-konventionen (mitt v1 16:03 < deras 16:04), nedställde sin marginalhandel och tog mitt förslag CO-INVESTERINGEN (pe-07) för sitt +1 — netto sex nya frågor i fönstret, am-09 dokumenterat öppet. TRE LOST-UPDATES överlevna (widget fullträdsåterställd → _s6u2o27-aterapplicera.mjs; kedjetest/sviter omstrukna av u3:s konvergens → korrekt indexshift 65→66; marknadsrytm-kända raderad) — botat i _s6u2o27-slutsvep.mjs som läser widgetens LEVANDE kedja som gemensam sanning (vaccinationen: aldrig cachade läsningar av delade filer). KVD: egen svit 78 PASS · 0 FAIL · kedjetest 270 PASS · 0 FAIL (68 motorer/186 monsters, mina kanoniska index 66, marknadsrytm SIST) · tsc 0 · 44 sviter harmoniserade; fem syskonsviter röda ENBART på i-flykt-syskonkomponenter (Coinvest/ModernaRisker — deras pass äger raderna, ModernaRisker redan dokumenterad i konvergens). Gränser sonderade och dokumenterade (konglomeratrabatt → varderjustering d0: mentorväglös ≠ fritt territorium). Anspråk: data/vakten/auto-s6-1789912510460-s6-u2-ansprak.md (v1+v2). Beviskedja: _s6u2o27-{sond,harmonisera,aterapplicera,slutsvep}.mjs.
+
+
+
+## SPÅR 7 s7-u3 (manifest auto-s7-1789915506445, byggare 3/3) — 2026-09-20 ~16:45–17:0x lokal: prestandavåg o120 — /en/blogg-sonden verkställd: anomalin ROTFÖRKLARAD (FCP-timing + eval-brus, ej payload), o110:s AI-Mentor-widget-hypotes MOTBEVISAD med tre oberoende bevis, o45-flightrenheten kvitterad, kvarvarande skuld = arkitekturnivå (110 kort + 117–128 KB flight + 254 KiB framework-JS) ⇒ köpost med produktbeslut-påslag [fabrik]
+
+Fabriksagent s7-u3. VAL (anspråk skrevs ~16:46 som s7-o118, omnumrerat till s7-o120 efter u2:s samtidiga o118-reservation + u1:s o119-kur 16:58:28 — kollision öppet bokförd i protokollets §0): o110 §4.1:s
+bokförade köpost — riktad longtask-sond /en/blogg + widget-A/B. SOND
+(o109-mönstret, mätvåg): o110:s monster-task (801/938 ms Unattributable)
+djupanalyserades först i BEFINTLIG rådata, sedan äkta Chrome-trace via
+--save-assets (en n=2 + ar n=1 kontroll, Lighthouse-gatherer-artefakter
+filtrade) + flight-sond (o45-mönstret). FYND: (1) widget-hypotesen
+MOTBEVISAD — nätverket identiskt mellan speglar (endast /api/medlem +
+/api/trafik), LasyChatWidget monteras tidigast 8 s+idle/interaktion,
+monster-tasken låg 1,2–1,5 s FÖRE hydrat-commit (2feezv ~3,9–4,6 s) ⇒
+A/B-delen meningslös, avställd med motiv; (2) anomalins mekanik = FCP-
+timing — en når FCP 1 241–1 665 ms mot ar 2 238 ms ⇒ FLER tidiga eval-
+tasks hamnar i TBT-fönstret (FCP→TTI); delat en−ar 786 ms (o110) är nu
+~90–140 ms på bygge IxcwwO (en 651/547 · ar 508 · CLS 0 ×3); (3) flight
+IDENTISK konstitution (117/128/116 KB, 110 kort; en bär 55 CTA-rader ≈
+3–5 KB = våg-201-designyta, orörd) och o45:not-found-kursläckan borta i
+alla tre (beständighetskvitto); script 15/254 KiB identiska (React 70 +
+i18n 47 + App-Router 42 KiB — allt framework, noll döda chunkar). KÖPOST
+§6: kurarna är slut i transportlagret — nästa våg: initial listlängd
+24–36 + visa-fler (flight −60–75 %,hydrat-proportionell) men ÄNDRAR
+kundupplevelse tre språk = öppet produktbeslut i nästa rond, ALDRIG
+fabriksautonomt; alt. content-visibility (CLS-risk mot o100:s heliga
+noll). KVD: src orörd (inget bygge) · R2 orörd · data/blogg/ orörd ·
+prod 200 ×5 https · BUILD_ID IxcwwO dokumenterat · råtrace 16 MB kvar
+på disk (oreviterat), committade summeringar är kvittot. Protokoll:
+OPTIMERING/o120-prestanda-enblogg-longtask-s7.md. [fabrik]
+
+Fabriksagent s7-u3. VAL (anspråk s7-o118 disk-först FÖRE val): o110 §4.1:s
+bokförade köpost — riktad longtask-sond /en/blogg + widget-A/B. SOND
+(o109-mönstret, mätvåg): o110:s monster-task (801/938 ms Unattributable)
+djupanalyserades först i BEFINTLIG rådata, sedan äkta Chrome-trace via
+--save-assets (en n=2 + ar n=1 kontroll, Lighthouse-gatherer-artefakter
+filtrade) + flight-sond (o45-mönstret). FYND: (1) widget-hypotesen
+MOTBEVISAD — nätverket identiskt mellan speglar (endast /api/medlem +
+/api/trafik), LasyChatWidget monteras tidigast 8 s+idle/interaktion,
+monster-tasken låg 1,2–1,5 s FÖRE hydrat-commit (2feezv ~3,9–4,6 s) ⇒
+A/B-delen meningslös, avställd med motiv; (2) anomalins mekanik = FCP-
+timing — en når FCP 1 241–1 665 ms mot ar 2 238 ms ⇒ FLER tidiga eval-
+tasks hamnar i TBT-fönstret (FCP→TTI); delat en−ar 786 ms (o110) är nu
+~90–140 ms på bygge IxcwwO (en 651/547 · ar 508 · CLS 0 ×3); (3) flight
+IDENTISK konstitution (117/128/116 KB, 110 kort; en bär 55 CTA-rader ≈
+3–5 KB = våg-201-designyta, orörd) och o45:not-found-kursläckan borta i
+alla tre (beständighetskvitto); script 15/254 KiB identiska (React 70 +
+i18n 47 + App-Router 42 KiB — allt framework, noll döda chunkar). KÖPOST
+§6: kurarna är slut i transportlagret — nästa våg: initial listlängd
+24–36 + visa-fler (flight −60–75 %,hydrat-proportionell) men ÄNDRAR
+kundupplevelse tre språk = öppet produktbeslut i nästa rond, ALDRIG
+fabriksautonomt; alt. content-visibility (CLS-risk mot o100:s heliga
+noll). KVD: src orörd (inget bygge) · R2 orörd · data/blogg/ orörd ·
+prod 200 ×5 https · BUILD_ID IxcwwO dokumenterat · råtrace 16 MB kvar
+på disk (oreviterat), committade summeringar är kvittot. Protokoll:
+OPTIMERING/o118-prestanda-enblogg-longtask-s7.md. [fabrik]

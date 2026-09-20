@@ -1,0 +1,153 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-skf-b-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-20, omgång auto-s1-1789902316443, pivot från mallens 'm9-utkast #1' enligt duplikatregeln — m9-serien 6/6 flyttklar sedan 2026-09-19; SKF B valt som äldsta ogranskade objekt i granskningskön, klaim 11:12 UTC FÖRE granskningen)",
+  "rapport": "sa-laser-du-skf-b-q3-2026-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — 123 maskinella kontroller (sond verktyg/_s1u1-skf-kontroll.mjs: 120 PASS/3 STILLAS = de tre förregistrerade byggfelen): vågdata 13/13 exakta mot data/analyses/SKF-B.ST.json (klasser 5/5, 15/5/5-matris, sigmaAr 28,74→28,7, pos52 93 %, alla fyra nivåer); vågvalidering 9/9 ordagrant mot rond 2026-09-04 (SKF-raden exakt incl −2,8/+228,1/+87,8/+87,8 och lång osatt); SKF:s egna 26 tal 26/26 exakta mot universumposten (oförändrad 09-03→idag) inkl ärlighetsradens tre null-noteringar; aritmetik 16/16 (rutnätets 9 celler, 0,92/0,26/3,5×/en tredjedel); kalender+urval 11/11 (21/10 onsdag, avstämningsdag före, ATCO/SAND 22/10, urvalsmängden analysbiblioteket∩vågvalideringen verifierad = SKF tidigast sann); juridik 9/9 REN (2007:528 2 kap 5 § ensamt lagrum, rådverb endast negerade, 0 främmande lagrum); 911 = 0/6 mönster; 13/13 interna länkar HTTP 200. FYND: B1-serien (rotorsak: övre median s[n/2] i stället för projektets kanoniska medianfunktion src/lib/dataset-nyckeltal.ts:72 vid JÄMNT observationsantal — fel redan på byggtidens vintage): B1a ROIC-median 17,7 ska vara 17,4 (kanonisk, n=10); B1b 'FCF-avkastning 2,6 % — exakt industrimedianen' är falskt (kanonisk median 2,3; SKF 2,56 = övre mittelementet, inte median); B1c universummedian P/E 20,1 ska vara 19,9 (n=100). B2-serien (drift enligt tele2/flygaktier-precedensen 'dagens tal + as-of-datering' — sajten servar dagens 225-bolagsfil, industri n=11→20, universum P/E-n 100→215): tio medianvärden + två n-utsagor + källraden uppdateras till 2026-09-20-läget; huvudpåståendet 'SKF under medianen i varenda lönsamhetsmått' och 'P/E i nivå med branschmedianen' ÖVERLEVER driften (sond F verifierad; brutto närmast: 28,6 < 30,4).",
+  "anvandning": "Verkställ B1a–B2k exakt (sök/ersätt i body — samtliga 16 gammalt-strängar maskinellt verifierade UNIKA i filen 2026-09-20). Därefter kör 'node verktyg/_s1u1-skf-kontroll.mjs' → väntat 0 STILLAS ('RÄTTNINGAR VERKSTÄLLDA'). Originalet ändras av paketets ägare (s4-spåret) eller nästa våg — inte av granskaren. SKF:s EGNA tal (insamling 2026-09-03) ska INTE röras — endast medianjämförelserna och n-utsagorna. Vid flytt till data/blogg/: kör paketets KVD. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1a",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — ROIC-raden)",
+      "gammalt": "(median 17,7)",
+      "nytt": "(median 16,7)",
+      "orsak": "DUBBEL RÄTTNING: byggfelet (övre median 17,71 i st f kanonisk 17,43→17,4 på byggtidens vintage n=10) + drift till dagens fil (kanonisk 16,7, n=18 av 20 industriposter)"
+    },
+    {
+      "id": "B1b",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Värdering-blocket — FCF-avkastningsraden)",
+      "gammalt": "**2,6 procent** — exakt industrimedianen",
+      "nytt": "**2,6 procent** (industrimedianen 2,8)",
+      "orsak": "DUBBEL RÄTTNING: likhetspåståendet 'exakt industrimedianen' var falskt redan på byggtidens vintage (kanonisk median 2,34→2,3; SKF:s 2,56 är det ÖVRE mittelementet, aldrig medianen) + drift (dagens kanoniska median 2,8, n=18)"
+    },
+    {
+      "id": "B1c",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Värdering-blocket — P/E-raden)",
+      "gammalt": "i nivå med industrimedianen 28,3, men tydligt över hela universumets median 20,1 (100 bolag)",
+      "nytt": "i nivå med industrimedianen 28,0, men tydligt över hela universumets median 20,5 (215 bolag)",
+      "orsak": "DUBBEL RÄTTNING: universummedianen 20,1 var övre-median-byggfel (kanonisk 19,92→19,9 på n=100) + drift (dagens kanoniska 20,52→20,5 på n=215; industrimedianen glidd 28,3→28,0)"
+    },
+    {
+      "id": "B2a",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — ROE-raden)",
+      "gammalt": "(industrimedian 19,7)",
+      "nytt": "(industrimedian 20,3)",
+      "orsak": "Drift: dagens industri-ROE-median 20,3 (n=20; byggtidens 19,7 var exakt på n=11)"
+    },
+    {
+      "id": "B2b",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — bruttomarginalraden)",
+      "gammalt": "(median 40,3)",
+      "nytt": "(median 30,4)",
+      "orsak": "Drift: dagens bruttomedian 30,4 (n=20; nio nya industriposter sedan 09-15 med lägre bruttomarginaler — SKF:s 28,6 ligger fortfarande under, men marginalen är snävast i paketet)"
+    },
+    {
+      "id": "B2c",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — EBIT-raden)",
+      "gammalt": "(median 16,9)",
+      "nytt": "(median 14,3)",
+      "orsak": "Drift: dagens EBIT-median 14,3 (n=20)"
+    },
+    {
+      "id": "B2d",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — nettomarginalraden)",
+      "gammalt": "(median 12,8)",
+      "nytt": "(median 9,9)",
+      "orsak": "Drift: dagens nettomedian 9,9 (n=20)"
+    },
+    {
+      "id": "B2e",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Lönsamhet — kassaflödesmarginalraden)",
+      "gammalt": "(median 11,2)",
+      "nytt": "(median 11,3)",
+      "orsak": "Drift: dagens FCF-marginalmedian 11,3 (n=19)"
+    },
+    {
+      "id": "B2f",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Tillväxt — TTM-raden)",
+      "gammalt": "(industrimedian +9,1)",
+      "nytt": "(industrimedian +8,4)",
+      "orsak": "Drift: dagens TTM-median +8,4 (n=20)"
+    },
+    {
+      "id": "B2g",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Värdering — EV/EBIT-raden)",
+      "gammalt": "(median 21,5)",
+      "nytt": "(median 20,0)",
+      "orsak": "Drift: dagens EV/EBIT-median 20,0 (n=19)"
+    },
+    {
+      "id": "B2h",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Värdering — P/B-raden)",
+      "gammalt": "(median 5,1)",
+      "nytt": "(median 4,9)",
+      "orsak": "Drift: dagens P/B-median 4,9 (n=20)"
+    },
+    {
+      "id": "B2i",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen, Stabilitet — skuldrad)",
+      "gammalt": "(median 0,46)",
+      "nytt": "(median 0,60)",
+      "orsak": "Drift: dagens skuld/EK-median 0,60 (n=20; SKF:s 0,34 fortfarande måttligt belånat relativt medianen)"
+    },
+    {
+      "id": "B2j",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen — ingressmeningen i sektionen)",
+      "gammalt": "(källa: bolagsuniversumets datainsamling 2026-09-03) mot industrins median (beräknad ur samma insamling den 2026-09-15, elva industriaktier)",
+      "nytt": "(källa: bolagsuniversumets datainsamling 2026-09-03) mot industrins median (beräknad 2026-09-20 ur 225-bolagsfilen, tjugo industriaktier)",
+      "orsak": "As-of-datering enligt tele2-precedensen: SKF:s egna tal förblir 09-03-insamlingens (rörs ej), medianerna bärs av dagens fil — n-dateringen i texten ska spegla det"
+    },
+    {
+      "id": "B2k",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Källor — tredje källraden)",
+      "gammalt": "Industrimedianer (n=11) och universummedian (P/E, n=100) beräknade ur samma insamling 2026-09-15.",
+      "nytt": "Industrimedianer (n=20; ROIC n=18, EV/EBIT n=19, FCF-marginal n=19, FCF-avkastning n=18) och universummedian (P/E, n=215) beräknade ur 225-bolagsfilen 2026-09-20.",
+      "orsak": "Källradens n-utsagor ska bära dagens fil + ärlighetsprincipen om varierande datatäckning per mått (seriens konvention)"
+    },
+    {
+      "id": "B2l",
+      "typ": "byt",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "body (Nyckeltalen — den pedagogiska sammanfattningen)",
+      "gammalt": "och i tillväxten (TTM +0,1 mot +9,1)",
+      "nytt": "och i tillväxten (TTM +0,1 mot +8,4)",
+      "orsak": "Narrativet speglar gamla TTM-medianen; påståendet 'under medianen i varenda lönsamhetsmått och i tillväxten' överlever (sond F grönt)"
+    },
+    {
+      "id": "N1",
+      "typ": "notis",
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "falt": "readingMinutes",
+      "gammalt": "6",
+      "nytt": "6 (oförändrat)",
+      "orsak": "ICKE-TVINGANDE vintage-not: 1 621 ord ger round(ord/600)=3 enligt seriens senare 600-ordskontrakt, men SAMTLIGA syskonpaket från samma byggtid (hm-b 1 548/7, volvo-car 1 386/6, ericsson 1 197/6, ABB 2 023/6) bär rm 6–7 — familjenormen vid byggtillfället. Lämnad orörd för seriekonsistens; ev. seriegenomgång av rm är huvudagentens beslut"
+    }
+  ]
+}

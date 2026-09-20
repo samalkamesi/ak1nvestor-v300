@@ -1,0 +1,152 @@
+{
+  "slug": "kt-08-optionsforfallets-dag",
+  "category": "KATALYSATOR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Optionsförfallets dag — kalenderns inbyggda katalysator",
+  "summary": "KATALYSATOR-familjens åttonde steg öppnar marknadens enda händelse vars datum är helt känt månader i förväg men vars verkan inte är det: optionsförfallets dag. Sonden mot 464 kurser visar att optionsförfall, förfalloptron, gamma-pinning och utestående kontrakt har noll kursägare — optionsfamiljen äger instrumentet och dess känslighetstal (od-01), auktionskursen äger handelsdagens rytm (am-05) och kalenderkursen äger raden i almanackan (kt-05) — men ingen äger själva dagen: vad som händer med KURSEN när tusentals positioner löper ut samtidigt. Kursens tes är trefaldig. Först: utestående kontrakt per lösenpris ritar en karta över magneter — 12 000 kontrakt vid lösenpris 100 med kontraktstorlek 100 aktier är 1 200 000 aktier, 15 procent av en dagomsättning på 8 000 000: där positionerna sitter finns dragningskraften. Sedan: gamma-hedgningen ger magneten sin motor — en handlare som köpt 1 000 kontrakt och hedgat med korta 50 000 aktier köper 12 000 aktier då kursen stiger till 101 (deltat växer från 0,50 till 0,62) och 12 000 till då kursen faller till 99 (deltat 0,38): köp åt båda hållen, rörelsen dämpas, kursen dras mot tyngdpunkten. Tredje: dagen har ett efterspel — kvartalens förfalloptron, då aktieoptioner, indexoptioner och indexterminer förfaller samtidigt, samlar volymen till stängningsauktionen, och veckorna runt förfallet bär volatilitetens torka och återkomst. Räkneexemplet med påhittade tal bär kursen: utan pin-kraft stängs aktien inom en krona från tyngdpunkten i 49,5 procent av dagarna vid daglig standardavvikelse 1,5 procent — med hedgflödet tillagt drar det mot magnetsidan. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "why": "KATALYSATOR-familjens sju första steg har lärt ut händelsens anatomi: vad en katalysator är (kt-01), hur förväntningar kalibreras (kt-02), hur händelser kedjas (kt-03) och hur kalendern läses (kt-05) — men familjens mest mekaniska medlem saknas: den enda marknadshändelse som står tryckt i almanackan månader i förväg. Sonden mot 464 kurser bekräftar: optionsförfall, förfalloptron, gamma-pinning, pin-risken och utestående kontrakt har noll kursägare. Gränserna är dokumenterade: od-01 äger gamma som känslighetstal och km-059 äger begreppet utestående kontrakt — den här kursen äger dagens MARKNADSSIDA, hedgflödets återverkan på kursen; am-05 äger auktionernas mekanik — här ägs datumet och dess positionsbild; skuldernas förfallodag (ks-03, rk-08) är lånevärldens datum och nämns enbart som namngiven granne; kortläget och aktieutlåningen (am-06) är blankningssidan — förfallodagen äger utlöpandet. Kursens värde för lärvägen: den skiljer rörelse från information — en kursförskjutning som är helt schemalagd bär ingen nyhet om bolagets värde, och den som kan läsa förfallodagens flöden slipper förväxla mekanik med mening.",
+  "learn": "Läsa förfallodagen som katalysator: datumet helt känt i förväg, verkan okänd — kalenderns enda garanterat daterade marknadshändelse, kt-05:s rad fördjupad · Rita magnetkartan: utestående kontrakt per lösenpris multiplicerat med kontraktstorleken — 12 000 kontrakt vid lösenpris 100 med 100 aktier per kontrakt är 1 200 000 aktier, 15 procent av dagomsättningen 8 000 000 · Räkna gamma-hedgen: 1 000 köpta kontrakt med delta 0,50 hedgas med korta 50 000 aktier — kurs 101 ger delta 0,62 och 12 000 köpta aktier, kurs 99 ger delta 0,38 och 12 000 köpta tillbaka: köp åt båda hållen · Skilja long och kort gamma: den köpta positionen dämpar (köper in i svaghet, säljer in i styrka), den sålda förstärker (köper högt, säljer lågt) — dagens karaktär avgörs av vilken sida som dominerar uteståendet · Räkna pin-kraftens grundplan: utan magnet stängs aktien inom en krona från tyngdpunkten i 49,5 procent av dagarna vid daglig standardavvikelse 1,5 procent — hedgflödet adderar dragningskraft · Känna igen förfalloptron: aktieoptioner, indexoptioner och indexterminer förfaller samtidigt kvartalsvis (tredje fredagen i mars, juni, september och december) och samlar volymen till stängningsauktionen · Läsa efterspelet: volatilitetens torka i veckorna före förfall, gamman som läcker ur systemet på dagen, nya serier och nya magneter efteråt · Tolka dagen i fem tidshorisonter: förfallodagen lever på minuter och timmar — den är aldrig en tes om värde, bara en källa till rörelse",
+  "history": {
+    "origin": "Den moderna förfallodagen föddes i april 1973, när Chicago Board Options Exchange öppnade den första listade optionshandeln: sexton aktier, enbart köpoptioner, och en standardiserad förfalloptron — tredje fredagen i månaden — som ersatte de över disk handlade optionernas individuellt förhandlade slutdatum. Clearinghuset Options Clearing Corporation ställde sig mellan parterna och gjorde förfallet till en maskinell rutin i stället för en förhandling. Samma vår publicerades prissättningsformeln som gjorde instrumentet beräknbart — teorin och kalendern föddes samma kvartal.",
+    "evolution": "Indexoptionerna kom 1983 och skapade kvartalsdubbelt: när aktieoptioner, indexoptioner och indexterminer förfaller samma dag uppstår förfalloptron — börsens volymtätaste stunder samlade kring stängningsauktionen. Kraschen 1987 visade mekanikens baksida: dynamisk hedging av stora positionsinnehav förstärkte rörelser åt fel håll, och forskningen började mäta hur optionernas hedgerörelser återverkar på de underliggande aktierna. Under 1990-talet dokumenterades pin-fenomenet i data: kurser dras mot lösenpriser med stort utestående just på förfallodagen.",
+    "modern": "2020-talets nolldagarsoptioner har flyttat förfallet in i varje handelsdag: en växande andel av optionerna köps och löper ut inom samma session, och gamman blir en daglig storlek i stället för en månadsritual. Analytiker publicerar skattningar av handlarnas samlade gammaexponering som förklaringsfaktor för dagens svängningar — mekaniken kursen lär ut har blivit en del av marknadens självbeskrivning. Läxan förblir densamma: kartan över utestående kontrakt och hedgens riktning."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Förfallodagen — händelsen som står i kalendern", "minutes": 4 },
+    { "num": 2, "title": "Utestående kontrakt — magnetkartan", "minutes": 4 },
+    { "num": 3, "title": "Gamman — hedgen som drar mot tyngdpunkten", "minutes": 4 },
+    { "num": 4, "title": "Förfalloptron — när allt löper ut samtidigt", "minutes": 4 },
+    { "num": 5, "title": "Efterspelet — volatilitetens torka och återkomst", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — förfalloläsarens arbetsblad", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch höll sig borta från optioner, men hans kärnläxa bär dagen: den kända händelsen är redan prissatt. En kursrörelse som är helt schemalagd — förfallodagens dragningskraft mot ett lösenpris — bär ingen information om bolagets värde; den som handlar på pin-rörelsen handlar med mekanikens rygg i stället för med en berättelse. Lynchs varning för att förväxla rörelse med mening är förfalloläsarens första skydd: kalendern flyttar priset, aldrig tesen.",
+  "grahamSection": "Benjamin Grahams Mr Market får sina kraftigaste ryck på schemalagda dagar: förfallodagens pris är mekanikens röst — positioner som löper ut och hedgar som måste justeras — inte värderingskalkylens. Grahams disciplin översätts rakt: priset från förfallodagen är ett citat att studera, aldrig ett underlag att agera på; substansen och rörelseresultatet har inte ändrats en krona av att optioner löpt ut. Den som mäter marginal mot värde (km-030) mäter den på grundtal, inte på förfallodagens slutkurs.",
+  "ak1Section": "I AK1A:s metodik hör förfallodagen hemma i den kortaste av fem tidshorisonter: minuter och timmar, aldrig en tes. AKM2-kalibreringen ignorerar pin-rörelser i grundtalen — en slutkurs som dragits mot ett lösenpris mäts om mot normala dagar eller mediankurser. Katalysatorkalendern (kt-05) får förfallodagen som en namngiven rad; kortlägeskopplingen går till am-06 (aktieutlåningens mekanik) och riskmatrisen (rk-05) noterar förfalloptron som en dagsrisk utan värdeinnehåll. Monte Carlo-labbet (ek-05) kan köra dagens volatilitetsregim mot hedgflödets riktning — mekanik som riskmätning, inte som signal.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Förfallodagen — händelsen som står i kalendern",
+      "intro": "Katalysatorfamiljens mest mekaniska medlem: en händelse vars datum är tryckt i almanackan månader i förväg. Kapitlet placerar dagen i katalysatorns grammatik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En option är en rätt, inte en plikt — och rätten har ett sista giltighetsdatum. På förfallodagen delar varje position upp sig i tre öden: lösenpriset är passerat med marginal (optionen är i pengarna) och rätten löses mot aktier; lösenpriset är opasserat och rätten blir värdelös; eller kursen ligger precis vid lösenpriset — och just då är osäkerheten som störst. Katalysatorns grammatik (kt-01) säger att en katalysator är en händelse som tvingar marknaden att ompröva — förfallodagen tvingar inte fram omprövning av VÄRDET men av POSITIONERNA: tusentals innehav måste avgöras, rullas eller realiseras samma dag. Därmed är dagen kalenderkursens (kt-05) särart: datumet är helt känt — tredje fredagen i seriens månad, kvartalsvis förstärkt — medan verkan är okänd: ingen vet i förväg hur stor andel som löses, hur hedgarna justeras eller var stängningsauktionen landar. Förväntningsanalysen (kt-02) får sitt renaste labb: förväntningen gäller inte budet utan flödet. Gränsen mot instrumentkurserna dras här: od-familjen äger optionens mekanik och prisbildning — den här kursen äger DAGEN, vad som händer med aktien och marknaden när kontrakten löper ut. Gränsen mot skuldens förfallodag (ks-03, rk-08) är namngiven: lån som förfaller är betalningsdatum, optioner som förfaller är rättigheter som upphör — två världar som delar ord men inte mekanik."
+        },
+        {
+          "type": "definition",
+          "content": "Förfallodag: den dag en optionsrätt upphör; positionen löses mot aktier om lösenpriset är passerat, blir värdelös om inte — eller hamnar i gränslandet vid lösenpriset där pin-risken bor. Förfalloptron: den återkommande (kvartalsvis förstärkta) dag då options- och terminsserier löper ut tillsammans."
+        },
+        {
+          "type": "insight",
+          "content": "Datum känt månader i förväg, verkan okänd till sista minuten: förfallodagen är katalysatorns enda helt daterade medlem — positionernas dag, inte värderingsdagen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Utestående kontrakt — magnetkartan",
+      "intro": "Före dagen finns kartan: utestående kontrakt per lösenpris visar var positionstyngden — och därmed dragningskraften — sitter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Begreppet utestående kontrakt (på marknadsspråket open interest) ägs av grundkursen (km-059): antalet kontrakt som existerar och ännu inte stängts. Förfalloläsarens vändning är kartografisk: sortera uteståendet per lösenpris och multiplicera med kontraktstorleken — 100 aktier per kontrakt i standardserien — så fås antalet aktier som dagens avgörelse rör. Räkneexemplet (påhittade tal): aktien handlas kring 101; uteståendet vid lösenpris 95 är 3 000 kontrakt (300 000 aktier), vid lösenpris 100 hela 12 000 kontrakt (1 200 000 aktier), vid lösenpris 105 5 000 kontrakt (500 000 aktier). Ställ 1 200 000 aktier mot en dagomsättning på 8 000 000: 15 procent — en positionstyngd att respektera när den ska avgöras inom några timmar. Kartan säger inte att kursen KOMMER stänga vid 100 — den säger var konsekvenserna är koncentrerade om den gör det: en lösen nära tyngdpunkten rör flest aktier, flest hedgar och störst volym i stängningsauktionen (vars mekanik ägs av am-05). Läsarten är katalysatorkedjan (kt-03) i miniatyr: kartan är förväntningsunderlaget (kt-02), dagen är händelsen, stängningsauktionen är utfallet — och varje led kan mätas i förväg utom det sista."
+        },
+        {
+          "type": "tabell",
+          "content": "Magnetkartan i exemplet: lösenpris 95: 3 000 kontrakt = 300 000 aktier · lösenpris 100: 12 000 kontrakt = 1 200 000 aktier (15 procent av dagomsättningen 8 000 000) · lösenpris 105: 5 000 kontrakt = 500 000 aktier · tyngdpunkt: lösenpris 100 — ett steg från dagens kurs 101"
+        },
+        {
+          "type": "insight",
+          "content": "Multiplicera uteståendet med kontraktstorleken och ställ mot omsättningen: magnetkartan är tre räkneövningar som visar var dagens avgörelse har mest att röra."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Gamman — hedgen som drar mot tyngdpunkten",
+      "intro": "Magneten har en motor: gamma-hedgningen. Kapitlet räknar flödet hos en enda handlare — och visar hur tusentals likadana gör dagen till dragningskraft.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En handlare (påhittat exempel) har köpt 1 000 kontrakts köpoptioner med lösenpris 100 och kontraktstorlek 100 — exponeringen är 100 000 aktier vid deltat 0,50. Handlaren vill inte bära aktierisk och hedgar: korta 50 000 aktier. Nu kommer mekaniken. Stiger kursen till 101 växer deltat till 0,62 — exponeringen 62 000 aktier — och för att förbli neutral köper handlaren 12 000 aktier in i styrkan. Faller kursen till 99 krymper deltat till 0,38 — exponeringen 38 000 aktier — och handlaren köper tillbaka 12 000 aktier in i svagheten. Köp åt båda hållen: rörelsen dämpas, och flödet pekar ständigt tillbaka mot lösenpriset 100 — det är pin-kraftens motor. Känslighetstalet som driver den (gamman, ägt som begrepp av od-01) läses här från MARKNADENS sida: inte vad optionen känner för, utan vad hedgen gör med aktien. Vänd bilden — handlaren har sålt optionerna och är kort gamma — och flödet vänder: stigande kurs tvingar fram köp av aktier högt upp, fallande kurs tvingar fram försäljning lågt ner: förstärkning i stället för dämpning. Dagens karaktär avgörs alltså av vilken sida som bär mest utestående: dominerar köpt gamma pressas kursen mot tyngdpunkten (där flest kontrakt sitter); dominerar såld gamma förstärks rörelser som redan pågår. Grundplanen utan magnet är ändå uträknad: med daglig standardavvikelse 1,5 procent stängs aktien inom en krona från 100 i 49,5 procent av dagarna under ren slump — hedgflödet lägger dragningskraft ovanpå slumptalet."
+        },
+        {
+          "type": "definition",
+          "content": "Long gamma (köpt position): hedgen köper när kursen faller och säljer när den stiger — dämpar rörelser, drar kursen mot tyngdpunkten. Kort gamma (såld position): hedgen köper högt och säljer lågt — förstärker rörelser. Pin-risken: läget där kursen vid stängning ligger så nära ett lösenpris att utfallet avgörs av sista affärerna."
+        },
+        {
+          "type": "insight",
+          "content": "50 000 sålda aktier vid delta 0,50 blir 62 000 vid 0,62 och 38 000 vid 0,38 — 12 000 köpta åt båda håll: en enda hedges köp är dagens minsta partikel, tusentals hedgar är magneten."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Förfalloptron — när allt löper ut samtidigt",
+      "intro": "En gång per månad, och hårdare varje kvartal, löper serierna ut tillsammans. Kapitlet läser tron: dagen då flest positioner avgörs på samma minuter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Standardserierna förfaller tredje fredagen i månaden — men kvartalsförfalloptron (mars, juni, september och december) är den täta: då löper aktieoptioner, indexoptioner och indexterminer ut samma dag, och volym som normalt sprids över veckor samlas på en enda eftermiddag. Konsekvensen är hierarkisk: hela kedjor av positioner — optioner på index, terminer på index, optioner på terminer — avgörs i beroendeförhållande till varandra, och den sista timmen före stängningen (handelns häxtimma) bär dagens största omsättning när sista justeringar tvingas fram. Stängningsauktionens mekanik ägs av auktionskursen (am-05) — här ägs DATUMET: förfalloptron är kalenderns (kt-05) volymtätaste rad, och den kan sammanfalla med indexomläggning (am-07) till en vecka då både positioner och portföljsammansättning byts i stor skala. Dagarna före tron rullar innehavarna: positioner som inte vill realiseras flyttas till nästa serie — den gamla serien säljs och nästa köps — vilket syns som svällande utestående i kommande månad samtidigt som den gamla serien töms. För läsaren av katalysatorkedjor (kt-03) är tron en kedja i kalendern: rullningsdagarna, själva förfallodagen och efterspelet är tre namngivna led — och varje led har sitt mätbara signum i volym och utestående."
+        },
+        {
+          "type": "definition",
+          "content": "Förfalloptron (kvartalsform): aktieoptioner, indexoptioner och indexterminer förfaller samma dag — tredje fredagen i mars, juni, september och december; årets volymtätaste schema. Rullning: flytt av positioner till nästa serie före förfallet — dagarnas största orderflöde utöver själva avgörelsen."
+        },
+        {
+          "type": "insight",
+          "content": "Kvartalsförfalloptron samlar veckors volym på en eftermiddag: kedjan rullningsdagar, häxtimma, stängningsauktion — datumet ägs här, auktionens mekanik av am-05."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Efterspelet — volatilitetens torka och återkomst",
+      "intro": "Dagen slutar inte när kontrakten dör: veckorna runt förfallet har sin egen volatilitetsform. Kapitlet läser före, under och efter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Volatiliteten har en kalender. I veckorna före ett stort förfall pressas den tid som optionerna representerar ned: serie efter serie löper ut, och säljare av optioner (som tjänar på oförändrade kurser) får medvind när det köpta hedgflödet dämpar rörelserna — volatilitetens torka, ett återkommande mönster i optionsmättade marknader. På själva förfallodagen läcker gamman ur systemet: de kontrakt som dör har ingen hedge kvar att justera, och flödet som dämpade försvinner. Därmed öppnas fönstret efteråt: utan det dämpande hedgflödet kan rörelser som sparats återkomma — den dokumenterade bilden är att volatiliteten ofta är lägre in i stora förfall och återvänder när serierna byggts om. Ombyggnaden är efterspelets motor: nya serier emitteras, utestående byggs upp vid nya lösenpriser — nästa månads magneter etableras inom några handelsdagar — och handlare som sålt volatilitet under torkan återköper den när rörelserna återkommer. För makroläsaren är komprimeringen huvudfyndet: en vecka där förfalloptron sammanfaller med räntebeslut och stora rapporter (kt-05:s kalender) bär mer sammanlagd rörelserisk än kalenderns rader var för sig antyder — inte därför att någon rad säger det, utan därför att positionerna som normalt dämpar rörelse just då är som tunnast."
+        },
+        {
+          "type": "definition",
+          "content": "Volatilitetens torka: mönster av sjunkande svängningar i veckorna före stora förfall — de utlöpande optionernas dämpande hedgflöde som säsong. Ombyggnad: dagarna efter ett förfall då nya serier emitteras och nästa månads magnetkarta ritas."
+        },
+        {
+          "type": "insight",
+          "content": "Före förfallet: dämpning. På dagen: gamman läcker ur. Efteråt: nya magneter och återvändande rörelse — volatilitetens kalender är tre akter, inte en dag."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — förfalloläsarens arbetsblad",
+      "intro": "Kursens redskap samlas till fem rader som kan ställas mot vilken aktie som helst före ett förfall — alltid i samma ordning, från kalendern till flödet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rad ett: kalendern — är nästa förfall månatligt eller kvartalsförfalloptron, och vilka andra rader (räntebeslut, rapporter) delar vecka? (kt-05:s register). Rad två: magnetkartan — vilket lösenpris bär störst utestående, hur många aktier blir det multiplicerat med kontraktstorleken, och hur många procent av dagomsättningen? (exemplet: 12 000 kontrakt, 1 200 000 aktier, 15 procent). Rad tre: avståndet — hur långt i procent sitter kursen från tyngdpunkten? (101 mot 100 är ett steg: gränslandet). Rad fyra: hedgriktning — dominerar köpt eller såld gamma i serien? (svår att veta exakt; ett dokumenterat antagande är bättre än inget). Rad fem: efterspelet — när ritas nästa karta om, och vilken volatilitetsform bär veckorna efter? Arbetsbladet genomlöper kursens verktyg: multiplikationen (kontrakt gånger kontraktstorlek), andelen (mot omsättningen), delta-räkningen (0,50 mot 0,62 och 0,38) och kalendern (tredje fredagen, kvartalsförfalloptron). Varje rad kan mätas med två sökningar och en division — och ingen rad säger något om värde: arbetsbladet läser mekanik, och värderingen läses bäst när mekanikens röst inte skriver kurran."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på dagen. Uppgift ett: en handlare har köpt 2 000 kontrakt med lösenpris 100 (kontraktstorlek 100) och hedgat med korta 100 000 aktier vid delta 0,50 — kursen stiger till 101 och deltat till 0,62: hur många aktier köper handlaren för att bli neutral (hedge 124 000 mot 100 000: 24 000)? Uppgift två: med daglig standardavvikelse 1,0 procent i stället för 1,5 — med vilken sannolikhet stängs aktien inom en krona från 100 om ingen magnet fanns (68,3 procent mot 49,5)? Uppgift tre: uteståendet vid tyngdpunkten är 12 000 kontrakt och dagomsättningen 8 000 000 aktier — vad händer med andelen om omsättningen faller till 5 000 000 (1 200 000 mot 5 000 000: från 15 till 24 procent — magneten växer när handeln tunnar)?"
+        },
+        {
+          "type": "insight",
+          "content": "Fem rader: kalender, magnetkarta, avstånd, hedgriktning, efterspel — förfallodagen är den mest mätbara av katalysatorer och den minst värdebärande: rörelse utan påstående om värde."
+        }
+      ]
+    }
+  ]
+}

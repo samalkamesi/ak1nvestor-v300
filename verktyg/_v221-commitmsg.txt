@@ -1,0 +1,12 @@
+studio: våg 221 [organ:Φ] — kanonvyns byte-budget: payload-taket själreglerande
+
+V215.1:s statiska trimmar (176 kB) åt upp av trådens linjära tillväxt
+— 230 poster => 213 kB, kontrakt 4 rött igen (v218-svepet).
+
+- studio-transport.ts lasTradHistorik: byte-budget 130k tecken, nyaste
+  posterna bevaras först, golv 40 poster — datadeterministisk, kontrakt
+  1b-stabilitet bevaras.
+- lasAterkoppling: senastAktivHistorik capad till 10 senaste (tredje
+  dubbellagringen; klienten trumfar alltid med kanonvyn, studio-chat
+  5669) — fallbacken lever.
+- Bevis: tsc 0 + bygg + prod 200 + payload <200 kB.

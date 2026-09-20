@@ -10158,7 +10158,11 @@ export async function lasAterkoppling(): Promise<{
     const m = malTransport.malStatus();
     if (m.mal !== null || m.aktiv) aktivtMal = m;
   }
-  return { senastAktivSessionId, senastAktivHistorik, aktivtMal };
+  // VÅG 221 — PAYLOAD-TAK: klienten (studio-chat 5669) renderar alltid den
+  // LÄNGRE av tradHistorik/senastAktivHistorik — huvudtrådens kanonvy är i
+  // prod alltid längre, så hela sessionens kopia här är död vikt (16 kB).
+  // Sista 10 posterna bär fallbacken (kanonvy tom ⇒ ändå levande vy).
+  return { senastAktivSessionId, senastAktivHistorik: senastAktivHistorik.slice(-10), aktivtMal };
 }
 
 /** Filnamnssäker nyckel för per-session-persistensfilen. */
@@ -10341,6 +10345,9 @@ function skrivMalStateTillDisk(mal: string): void {
 // E2E 2026-09-14: kick svarade "INGA MINNE" då rotationen skedde i skicka).
 const TRADSMINNE_POSTER = 60;
 const TRADSMINNE_TAK_TKN = 100_000;
+// V221: kanonvyns byte-budget (kontrakt 4) + golv — se lasTradHistorik.
+const TRAD_BUDGET_TKN = 130_000;
+const TRAD_GOLV_POSTER = 40;
 
 function lasTradSvansFil(sokvag: string, antalRader: number): string {
   try {
@@ -10405,7 +10412,23 @@ export function lasTradHistorik(
     }
     ut.push(...v148SessionFranDb(db, sid).slice(-120));
   }
-  return ut.slice(-500);
+  // VÅG 221 — BYTE-BUDGET (kontrakt 4: GET-payload < 200 kB): 500-posters-
+  // tacken växer linjärt (~0,75 kB/post i svensk fulltext) och sprängde
+  // taket igen på en eftermiddag (V215.1:s 176 kB → 213 kB vid 230 poster)
+  // — statiska trimmar äter upp av tillväxten. Kanonvyn hålls inom
+  // TRAD_BUDGET_TKN tecken text: nyaste posterna bevaras först (det
+  // kunden läser just nu), golvet TRAD_GOLV_POSTER garanterar sammanhang
+  // även för extremt långa poster. Kontrakt 1b (stabilitet mellan anrop)
+  // bevaras — budgeten är datadeterministisk: oförändrad db ⇒ identisk vy.
+  const behall: StudioHistorikPost[] = [];
+  let budget = TRAD_BUDGET_TKN;
+  for (let i = ut.length - 1; i >= 0; i--) {
+    const langd = ut[i].text.length;
+    if (behall.length >= TRAD_GOLV_POSTER && budget - langd < 0) break;
+    behall.unshift(ut[i]);
+    budget -= langd;
+  }
+  return behall;
 }
 
 // ── VÅG 148F u1 — SESSIONSLISTAN ur db.sqlite (desktop-Z:s sessionsvy) ──────

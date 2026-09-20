@@ -1,0 +1,176 @@
+{
+  "slug": "se-21-kemisektorn",
+  "category": "SEKTORANALYS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kemisektorn — kväve ur luft, fosfor ur berg",
+  "summary": "SEKTORANALYS-familjens tjugoförsta steg öppnar den kemiska industrin — finansens tredje halva efter banker och fastigheter, och den sektor där råvaran är molekylen och flaskhalsen är antingen energi eller geologi. Sonden mot 458 kurser visar att kemisektorn, kemisk industri, gödsel, kväve och fosfor har noll kursägare — gruvkursen äger malmen (se-20), materialkursen den breda varukorgen (km-045), energikursen priset på gasen (km-043), men ingen äger förädlingsledet där luften blir gödsel. Kursens tes är trefaldig. Först: sektorn är två världar — bulkkemin säljer molekyler i miljontal ton med råvaran som dominerande kostnad och bruttomarginaler kring 12 till 18 procent, specialkemin säljer formulan och godkännandet med marginaler kring 25 till 40 och FoU som andel av omsättningen tio gånger bulkens. Sedan: kvävet är energi — ammoniaksyntesen tar sin råvara ur luften (outtömlig) och sin flaskhals ur gasen: cirka 33 energienheter per ton ammoniak ger gaskostnaden 132 dollar per ton vid gaspris 4, 264 vid 8 och 396 vid 12 — samma fabrik, tre olika lönsamhetsvärldar. Tredje: fosforn är geologi — grundämnet kan inte tillverkas utan bryts, och merparten av världens produktion bärs av en handfull länder: där bulkkemins flaskhals är energiräkningen är gödningskemins ägande redan bestämt i berggrunden. Räkneexemplet med påhittade bolag bär kursen: Norden Bulk med 12 000 miljoner kronor omsättning och 18 procents bruttomarginal tjänar 2 160, Norden Special med 3 000 och 38 procent tjänar 1 140 — 34,5 procent av parets bruttovinst på 20 procent av omsättningen; balanspriset sätts av högkostnadspartnern (vid gas 12 och pris 560 tjänar partnern 14 per ton och lågkostnadsproducenten 278 — nitton gånger skillnad) och när priset faller till 500 stänger högkostnadspartnern (marginal minus 46) medan lågkostnaden lever vidare (218). Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "SEKTORANALYS-familjens tjugo första steg har kartlagt Nordens klassiska näringar — skogen (se-17), rederiet (se-18), försäkringen (se-19), gruvan (se-20) — men inte den industri som är deras nedströms granne och världens största översättning av energi till mat: kemisektorn. Sonden mot 458 kurser bekräftar: kemisektorn, kemisk industri, gödsel, kväve, fosfor och specialkemi har noll kursägare; Yara nämns en enda gång i förbifart (v03 — granne, inte ägare). Gränserna är dokumenterade: se-20 äger malmen och brytningen (fosfatbrottet berörs här som råvarusize, inte som gruvteknik), km-045 äger den breda materialvarukorgen, km-043 äger energipriset som makrofenomen — den här kursen äger förädlingsledet: molekylens ekonomi, energiräkningens dominans i bulk och formulans i special. Det är också sektorseriens metodkurs i praktik (se-16): tre frågor — vem sätter priset (högkostnadspartnern), vem äger flaskhalsen (energin eller geologin), och var i cykeln står lagret (jordbrukets beställningar). Kursen binder an mot marginaltrappan (ln-03) och råvarucykelns klocka (rk-05): bulkkemin är cykelrisk i fabriksdräkt, specialkemin är vallgrav i labbdräkt (mt-04) — och sektorns analysvärde ligger just i att skilja de två dräkterna åt inom samma etikett.",
+  "learn": "Skilja kemins två världar: bulkkemi säljer molekyler per miljontal ton med råvarukostnad som dominanter och bruttomarginal 12 till 18 procent, specialkemi säljer formulan och godkännandet med marginal 25 till 40 och FoU som andel av omsättningen omkring tio gånger bulkens · Räkna energi som råvara: ammoniaken kräver cirka 33 energienheter per ton — gas 4 ger 132 dollar per ton, gas 8 ger 264, gas 12 ger 396: samma fabrik, tre lönsamhetsvärldar · Förstå kvävets och fosforns olika flaskhalsar: kväve ur luft (outtömlig råvara, energin sätter gränsen) mot fosfor ur berg (brytning, geografin sätter gränsen) — två näringsämnen, två helt olika ägandelogiker · Räkna balanspriset: högkostnadspartnern (gas 12, övriga 150) har break-even 546 — vid pris 560 tjänas 14 per ton medan lågkostnadsproducenten (gas 4) tjänar 278: nitton gånger skillnad på samma pris · Räkna utbudets ventil: när priset faller till 500 stänger högkostnadspartnern (500 − 546 = minus 46) och produktionen söker sig till lågkostnadslägena (marginal 218) — utbudstrappan är sektorns prissättningsmotor · Räkna kontrastbolagen: Norden Bulk 12 000 miljoner kronor till 18 procent ger 2 160, Norden Special 3 000 till 38 procent ger 1 140 — specialkemidelen bär 34,5 procent av bruttovinsten på 20 procent av omsättningen · Läsa sektorns sju rader i rapporten: råvaruandel av kostnaden, energi per ton, balansprispartner, resursgeografi, FoU-andel, marginalband bulk mot special, och cykelindikatorn (jordbrukspriser och lager) · Tillämpa se-16:s tre frågor på kemin: vem sätter priset, vem äger flaskhalsen, var står cykeln",
+  "history": {
+    "origin": "Den moderna kemiska industrin föddes ur ett misstag med intentens färg: ett misslyckat kininförsök: William Perkin sökte syntetisera kinin mot malaria och fick 1856 i stället det första syntetiska färgämnet, mauvein, ur tjära — och grundade färgindustrin — kemins första affär var formulan som inte fanns i naturen och kunde patenteras. Skogsrikets kemi följde: massakokningens sulfit och sulfat gjorde skogen till kemisk industri ett sekel före ordet kluster.",
+    "evolution": "Fritz Habers demonstration 1909 och BASF:s industriella ammoniaksyntes 1913 (Carl Bosch) bröt världens beroende av chilensk salpeter: gödseln kunde tillverkas ur luft och energi. Konstgödseln räknas som förutsättningen för den fördubblade världsbefolkningen som följde — och processen förblir sektorns ekonomiska signum: råvaran gratis (luften), flaskhalsen betald (gasen). Under 1900-talet delade sig industrin i bulk och special, och petrokemins integrerade kluster (från rörledning till plast) blev sektorns skallogik.",
+    "modern": "Energikrisen 2021 till 2022 blev sektorns största praktexempel: när den europeiska gasen steg mot nivåer mångfaldigt över de amerikanska tvingades kvävefabriker att ställa in produktionen — och världsmarknadspriset på gödsel sökte sig till den marginal som återstod av högkostnadskapaciteten. Samtidigt växer nästa fråga: elektrolys och grön ammoniak utmanar energiräkningens teknik — medan fosforns geologi förblir densamma. Kursens läsning: energi är kemins valuta, geologin dess arv."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Kemins två världar — bulk mot special",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Kvävet ur luften — energin som enda flaskhals",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Fosforn ur berget — geologin som ägande",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Balanspriset — när högkostnadspartnern sätter tonen",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Specialkemins motvärld — formulan och marginalfältet",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — kemiläsarens sju rader",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch gillade industrier där en vanlig läsare kan se logiken på en servett: i bulkkemin är servetten en subtraktion (pris minus gaskostnad) och i specialkemin en fråga (vem godkänner leverantören och hur ofta byts den). Hans varning för cykliska bolag som ser billiga ut precis när cykeln vänder passar bulkkemins rapporttabell: lågt multipelt pris på högsta gasräkning är en fälla — vinsten är cykelns, inte bolagets. Kursens kontrastbolag (Norden Bulk mot Norden Special) är en Lynch-övning: två bolag i samma sektorsetikett med olika ekonomi — han lärde ut att sektorn sällan är berättelsen, affären är det.",
+  "grahamSection": "Benjamin Graham betonade balansräkningens vittnesmål i råvarutunga industrier: måste fabriken stänga varje gång gaspriset överstiger produktpriset är vinsten en hyra för bra tider, inte en äganderätt. Grahams räkneverk översätts till kemins två tester: marginalens uthållighet genom en hel gascykel (bulkens utsatta punkt) och omsättningens återkommande karaktär (specialkemins avtalsbok). Substansvärdet i en kvävefabrik är stål och tryckkärl — skrivet ner i sämsta läget, meningsfullt i bästa — medan specialkemins substans till stor del bor i formel och kundregister: kursen visar varför samma bokföringsbild får två olika ekonomiska betydelser.",
+  "ak1Section": "I AK1A:s metodik är kemisektorn standardexemplet på marginalens två ursprung: bruttomarginal som råvaruskäl (bulk — läses med ln-03:s marginaltrappa och v07:s bruttomarginal) och bruttomarginal som vallgrav (special — läses med mt-familjens prissättningsmakt). Scenariorutan (km-029) får sektorns renaste övning: gas 4, 8 och 12 är tre färdiga kolumner och marginalerna 278, 148 och 14 rader i rutorna — vartannat tal i kursen är en färdig scenariocell. Riskmatrisen (rk-05) bär cykelspåret: jordbrukspriser, lager och kapacitetsutbud är kemins klockor, och Monte Carlo-labbet (ek-05) kan köra gasprisets vandring genom trappan. Fem tidshorisonterna skiljer dräkterna: bulk läses på cykeln (kort), special på andelarna och formulans livslängd (långt).",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kemins två världar — bulk mot special",
+      "intro": "Sektorens viktigaste kurva är inte en kurskurva utan en indelning: samma etikett — kemi — täcker två affärer med olika råvara, differentiering och marginal. Kursen börjar med att skilja dem åt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bulkkemin säljer molekyler: ammoniak, urea, metanol, plastgranulat — miljontal ton av identiska produkter där köparen byter leverantör för en enkronas skillnad och priset sätts av världens utbudstrappa. Råvaran (gas, olja, malm, salt) bär den dominerande delen av kostnaden, anläggningarna är kapitaltunga och skrivs över decennier, och bruttomarginalerna rör sig i bandet ungefär 12 till 18 procent i normala lägen — med vippor åt båda håll när cykeln slår. Specialkemin säljer det som bulk inte kan: en exakt specifikation, ett godkännande i kundens process, en formula som tar år att utveckla och år att byta ut. Kunderna är bil-, läkemedels- och elektronikindustrins inköpsavdelningar som betalar för säkerhet och spårbarhet — bruttomarginalerna ligger omkring 25 till 40 procent, och FoU-andelen av omsättningen är omkring tio gånger bulkens. Kursens kontrastbolag (påhittade för räkningen) bär indelningen: Norden Bulk AB omsätter 12 000 miljoner kronor med bruttomarginal 18 procent — 2 160 miljoner i bruttovinst; Norden Special AB omsätter 3 000 med 38 procent — 1 140 miljoner. Specialbolaget bär 34,5 procent av parets bruttovinst på 20 procent av omsättningen. Indelningen är sektorseriens metodfråga (se-16) i kemins dräkt: innan någon multipel läses måste läsaren veta vilken av de två ekonomierna rapporten tillhör — samma P/E-tal betyder olika saker i en gasräknings- och en formulaffär."
+        },
+        {
+          "type": "definition",
+          "content": "Bulkkemi: produktion av stora volymer identiska kemiska produkter där priset sätts av utbudstrappan och kostnaden domineras av råvara och energi; marginalband cirka 12 till 18 procent. Specialkemi: kundanpassade produkter och formulor där differentiering, godkännanden och FoU bär priset; marginalband cirka 25 till 40 procent."
+        },
+        {
+          "type": "insight",
+          "content": "Sektorns första läsning är en indelning, inte en kurs: bulk och special delar etikett men inte ekonomi — och varje nyckeltal tolkas olika beroende på vilken värld rapporten bor i."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Kvävet ur luften — energin som enda flaskhals",
+      "intro": "Ammoniaksyntesen är världens största kemiska process och sektorns renaste affärsidé: råvaran är gratis, flaskhalsen är betald. Kapitlet räknar gasräkningens väg genom resultaträkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Luften är 78 procent kväve — råvaran till gödselns viktigaste byggsten kostar ingenting att ta. Det som kostar är energin: processen (Haber-Bosch, industrialiserad 1913) kräver högt tryck, höga temperaturer och vätgas från naturgas, i storleksordningen 33 energienheter per ton ammoniak. Räkneläran blir därmed en multiplikation: vid gaspris 4 dollar per enhet blir gaskostnaden 33 × 4 = 132 dollar per ton; vid 8 blir den 264; vid 12 blir den 396. Samma fabrik, samma maskiner, samma molekyl — tre helt olika lönsamhetsvärldar. Här ligger bulkkemins första insikt: kvävefabrikens ekonomi inte är en egenskap hos bolaget utan hos energimarknaden — en europeisk producent med gas 12 konkurrerar mot en nordamerikansk med gas 4 på en och samma gödselmarknad, och deras marginaler skiljer med hundratals dollar per ton medan produkten är identisk. Räkneexemplet (påhittade tal): övriga variabla kostnader 150 dollar per ton; lågkostnadsproducentens totalkostnad 132 + 150 = 282, högkostnadspartnerns 396 + 150 = 546. Vid ett världsmarknadspris på 560 tjänar partnern 560 − 546 = 14 dollar per ton och lågkostnadsproducenten 560 − 282 = 278 — nitton gånger skillnad, pur gasgeografi. Kvävets paradox står klar: den outtömliga råvaran gör produkt som helst billig att tillverka — det är energin som avgör vem som tillverkar den, och till vilket pris det lönar sig."
+        },
+        {
+          "type": "tabell",
+          "content": "Ammoniakens gaskostnad (33 energienheter per ton): gas 4 → 132 dollar/ton · gas 8 → 264 · gas 12 → 396 · övriga variabla: 150 · totalkostnad: 282 (låg) mot 546 (hög) · pris 560: marginal 278 mot 14 — kvot 278 delat med 14 = 19,9"
+        },
+        {
+          "type": "insight",
+          "content": "Kvävefabrikens marginal bor inte i fabriken utan i gasräkningen: 33 enheter per ton gör varje dollar i gaspris till 33 dollar per ton ammoniak — och energigeografin till sektorns enda strukturfråga."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Fosforn ur berget — geologin som ägande",
+      "intro": "Det andra huvudnäringsämnet har en helt annan historia: fosfor kan inte tillverkas, bara brytas. Kapitlet läser geologin som ägarstruktur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kväve, fosfor och kalium är gödselns tre huvudnäringsämnen — och de tre har tre olika ekonomier. Kvävet: råvaran gratis, energin flaskhals. Kalium: saltsediment som bryts under jord — gruvteknik och djupkostnad. Fosforn: fosfatmineral som bryts i dagbrott och sedan förädlas kemiskt till gödselfosfat — och till skillnad från kvävet finns ingen syntesväg: resursen är ändlig på mänsklig tidsskala och geografiskt koncentrerad, med en handfull länder som bär merparten av både produktion och reserver. För sektorläsaren följer två konsekvenser. Den första: fosforpriset har ett bottenläge som energi inte kan flytta — brytningskostnad och förädling är minimikostnaden oavsett gaspris — men ett tak som efterfrågan sätter (jordbruket kan inte välja bort näringsämnet, bara dosera). Den andra: ägandet av fyndigheterna blir affärens kärna — där kvävefabriken kan byggas var energin finns billig, följer fosforrörelsen berggrunden; den som äger fyndigheten med låg brytningskostnad bär en uthållighet som ingen gascykel kan koppla bort (gruvtekniken och malmen är se-20:s mark — här läses fosforn som kemin ägande av en oumbärlig råvara). Gränsdragningen mot gruvkursen är kursens metodpoäng: samma dagbrott kan läsas som gruva (resurs, malmhalt, livslängd) eller som kemisk råvara (förädlingsvärde, formulerbarhet) — och fosfatbrottet är bägge. Kursen läser det som det senare: vad berget blir i säcken — och vilken marginal förädlingen bär."
+        },
+        {
+          "type": "definition",
+          "content": "Huvudnäringsämnen (N-P-K): kväve (N), fosfor (P) och kalium (K) — gödselns tre basbyggstenar med tre olika ekonomier: kväve syntetiseras ur luft med energi, fosfor bryts ur fosfatberg och förädlas, kalium bryts ur saltsediment."
+        },
+        {
+          "type": "insight",
+          "content": "Kvävet är en energiräkning, fosforn en äganderätt: den första kan vändas av en gascykel, den andra står kvar i berget — sektorns två flaskhalsar, energi och geologi, delar redan gödselhyllan mellan sig."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Balanspriset — när högkostnadspartnern sätter tonen",
+      "intro": "Vem sätter priset på en identisk produkt? Kapitlet räknar utbudstrappan: priset letar sig till högkostnadspartnerns marginal — och när partnern stänger, söker sig produktionen nedåt i trappan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bulkkemins prissättning har en huvudperson: den producent som just klarar sig. I räkneexemplet kostar högkostnadspartnern 546 dollar per ton (gas 12 plus övriga 150) — och så länge efterfrågan bär ett pris över 546 producerar alla, och priset pressas mot partnerns marginal. Vid 560 tjänar partnern 14 och lågkostnadsproducenten 278: priset bär information om trappans högsta behövda steg, inte om någon enskild fabriks skicklighet. Vad händer när efterfrågan sviker — jordbrukspriserna faller, lagren bygger upp? Priset letar sig nedåt. Vid 500 är partnerns marginal 500 − 546 = minus 46: produktionen förlorar pengar per ton och ställs in — kapacitet lämnar marknaden tills utbudet åter möter efterfrågan, och priset stabiliseras vid den nya högkostnadspartnerns marginal (kanske en fabrik med gas 8: kostnad 414, marginal vid pris 500 nu 86). Lågkostnadsproducenten lever genom hela rörelsen: vid pris 500 tjänar den 500 − 282 = 218 per ton — mindre än vid 560, men positivt hela vägen ner till sitt eget golv 282. Detta är utbudets ventil och cykelns motor: eftersom kvävefabriker är dyra att starta och stoppa (ugnar och tryckkärl slits av temperaturväxlingar) sker anpassningen i steg och med eftersläpning — priscykeln blir synlig i resultaträkningen med några månaders fördröjning efter gas- och jordbruksprisernas rörelser. Sektorläsarens fråga (se-16) — vem sätter priset? — får sitt kemiska svar: den dyraste fabrik som just behövs, och ingen annan."
+        },
+        {
+          "type": "tabell",
+          "content": "Utbudstrappan i siffror (påhittade tal): pris 560 — partner (kostnad 546): marginal 14 · låg (kostnad 282): marginal 278 · pris 500 — partner: minus 46 → stopp · ny partner gas 8 (kostnad 414): marginal 86 · låg: marginal 218 · lågkostnadens golv: pris 282 = dess totalkostnad"
+        },
+        {
+          "type": "insight",
+          "content": "Priset är trappans högsta behövda steg: när partnern stänger sjunker priset till nästa partners marginal — och lågkostnadsproducenten lever genom hela dansen, för dess golv ligger där cykeln sällan når."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Specialkemins motvärld — formulan och marginalfältet",
+      "intro": "I specialkemin finns ingen utbudstrappa att läsa — där finns avtal, godkännanden och en formula som tar år att ersätta. Kapitlet läser marginalens andra ursprung.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "När en biltillverkare kvalificerar en kemileverantör för en ytbehandling, eller en läkemedelsfabrik för ett hjälpämne, sker mer än ett inköp: en process certifieras, en specifikation låses, en dokumentation byggs. Att byta leverantör betyder omkvalificering — tester, byråkrati och risk i kundens egen produktion. Därmed blir relationen en del av produktens värde: priset förhandlas inom band, inte på världsmarknadens trappa, och bruttomarginalen får ett tak av konkurrens men ett golv av omkostnaden att byta. Det är vallgravens (mt-04) kemiska form: ingen naturlag, men en tröskel som räcker i åratal. FoU bär fältet vidare: specialkemisten lägger omkring 5 procent av omsättningen på utveckling (Norden Special: 150 miljoner kronor av 3 000) mot bulkens decimalsiffror (Norden Bulk: 60 miljoner av 12 000, en halv procent) — och formulans livslängd blir den ekonomiska frågan: en molekyl under patentinnehav har en räknbar horisont, en processkemikalie med kundgodkännande har en väsentligt längre men svårare att pricka. Valuta- och energikänsligheten är lägre än bulkens (priserna sätts i avtal, inte på börs), men konjunkturkänsligheten lever i kundernas orderböcker (km-069:s nyckeltal återkommer här: orderstockens djup som indikator). Sektorläsarens utdelning av dräkterna: bulkens rapport läses med gaspris och trappa, specialens med FoU-andel, kundkoncentration och formulans ålder — och de båda bolagen i kursens exempel visar att samma etikett kan dölja en hyresgäst och en ägare."
+        },
+        {
+          "type": "definition",
+          "content": "Omkvalificeringskostnad: kundens kostnad (tester, certifiering, risk) att byta leverantör av en specifikationsbunden produkt — specialkemins prisgolv. Formulans livslängd: den tid en formula behåller sitt tekniska eller avtalsmässiga skydd — specialkemins skrivbordsfråga nummer ett."
+        },
+        {
+          "type": "insight",
+          "content": "Bulkens marginal är en hyra som betalas när trappan tillåter, specialens en äganderätt byggd av godkännanden och FoU — sektorns två dräkter kräver två läsarter, och multipeln följer dräkten."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — kemiläsarens sju rader",
+      "intro": "Kursens redskap samlas till ett arbetsblad: sju rader som kan ställas till vilken kemirapport som helst — och alltid i samma ordning, från råvaran till cykeln.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rad ett: råvaruandelen av kostnaden — bulk eller special? (dräkten avgör alla följande rader). Rad två: energiper- enhet — för kväve 33 energienheter per ton: vad händer med marginalen om gasen dubbler? (132 till 264 i exemplet — bruttomarginalens rörelse är uträknad, inte gissad). Rad tre: balansprispartnern — vilken produktionskostnad har världens dyraste behövda fabrik, och var står priset mot den? (546 och 560 i exemplet — marginalen 14 säger att cykeln är sen). Rad fyra: resursgeografin — fosfor och kalium i berget, kväve vid gasen: var bor flaskhalsen och vem äger den? Rad fem: FoU-andelen — 5 procent av omsättningen är special, en halv är bulk: formulan som andel av lönsamheten. Rad sex: marginalbandet — 12 till 18 mot 25 till 40: vilken del av rapporten tillhör vilket band? Rad sju: cykelindikatorn — jordbrukspriser, gödsellager, kapacitetsstängningar: var i trappan står marknaden just nu? Arbetsbladet genomlöper kursens alla verktyg: multiplikationen (gas × 33), subtraktionen (pris − kostnad), trappan (partner efter partner) och indelningen (bulk mot special) — och varje rad kan mätas i en rapport med två sökningar och en division. Kemisektorns gåva till sektorserien är metoden i renform: en sektors ekonomi kan alltid frågas tre saker (se-16) — vem sätter priset (trappan), vem äger flaskhalsen (energi eller geologi), var står cykeln (lager och stängningar) — och kemin svarar på alla tre med räkneexempel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på gaschocken. Uppgift ett: en producent med gas 4 ser gasen stiga till 8 — hur förändras marginalen vid oförändrat pris 560 (totalkostnad 282 till 414, marginal från 278 till 146)? Uppgift två: om gasen sedan stiger till 12 för samma producent (totalkostnad 546) och priset samtidigt faller till 500 — stänger fabriken (marginal minus 46), och vilken ny partner sätter priset (en fabrik med gas 8 har kostnad 414 och marginal 86 vid pris 500)? Uppgift tre: Norden Special höjer FoU-andelen från 5 till 6 procent av omsättningen (150 till 180 miljoner) — hur förändras rörelseresultatet före övriga kostnader om bruttovinsten är oförändrad 1 140, och vad säger siffran om specialkemins investeringslogik mot bulkens?"
+        },
+        {
+          "type": "insight",
+          "content": "Sju rader, tre frågor, två dräkter: kemisektorn visar sektoranalysens hantverk i sin renaste form — ekonomin härleds ur råvara, trappa och cykel, inte ur etiketten på omslaget."
+        }
+      ]
+    }
+  ]
+}

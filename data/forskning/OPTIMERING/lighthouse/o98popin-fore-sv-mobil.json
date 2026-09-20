@@ -1,0 +1,110 @@
+{
+ "url": "http://localhost:3000/kurser",
+ "namn": "fore-sv-mobil",
+ "geo": "mobil",
+ "lage": "js",
+ "vp": {
+  "width": 412,
+  "height": 823,
+  "deviceScaleFactor": 2.627,
+  "mobile": true
+ },
+ "ts": 1789868369534,
+ "lang": "sv",
+ "docH": 23361,
+ "wrapper": {
+  "rect": {
+   "y": 9053,
+   "h": 368
+  },
+  "li": 3,
+  "minHeight": "0px",
+  "rubrik": "Tips för just dig",
+  "sektionH": 364
+ },
+ "sokY": 357,
+ "tidslinje": [
+  {
+   "t": 1990,
+   "h": 0,
+   "li": 0
+  },
+  {
+   "t": 2787,
+   "h": 368,
+   "li": 0
+  }
+ ],
+ "shifts": [],
+ "topp": [
+  {
+   "t": 450,
+   "h1": null,
+   "notis": null,
+   "wrapper": null,
+   "grid": null,
+   "docH": 823,
+   "scrollY": 0
+  },
+  {
+   "t": 1863,
+   "h1": {
+    "y": 0,
+    "h": 0
+   },
+   "notis": null,
+   "wrapper": {
+    "y": 0,
+    "h": 0
+   },
+   "grid": null,
+   "docH": 823,
+   "scrollY": 0
+  },
+  {
+   "t": 2773,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": null,
+   "wrapper": {
+    "y": 9053,
+    "h": 368
+   },
+   "grid": null,
+   "docH": 23251,
+   "scrollY": 0
+  },
+  {
+   "t": 4249,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": null,
+   "wrapper": {
+    "y": 9053,
+    "h": 368
+   },
+   "grid": null,
+   "docH": 23361,
+   "scrollY": 0
+  },
+  {
+   "t": 15150,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": null,
+   "wrapper": {
+    "y": 9053,
+    "h": 368
+   },
+   "grid": null,
+   "docH": 23361,
+   "scrollY": 0
+  }
+ ]
+}

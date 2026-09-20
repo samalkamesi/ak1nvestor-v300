@@ -1,0 +1,190 @@
+{
+ "url": "http://localhost:3000/en/kurser",
+ "namn": "fore-en-mobil2",
+ "geo": "mobil",
+ "lage": "js",
+ "vp": {
+  "width": 412,
+  "height": 823,
+  "deviceScaleFactor": 2.627,
+  "mobile": true
+ },
+ "ts": 1789868255788,
+ "lang": "en",
+ "docH": 14056,
+ "wrapper": {
+  "rect": {
+   "y": 596,
+   "h": 364
+  },
+  "li": 3,
+  "minHeight": "0px",
+  "rubrik": "Tips for you",
+  "sektionH": 364
+ },
+ "sokY": 1016,
+ "tidslinje": [
+  {
+   "t": 709,
+   "h": 0,
+   "li": 0
+  },
+  {
+   "t": 2817,
+   "h": 364,
+   "li": 3
+  }
+ ],
+ "shifts": [
+  {
+   "varde": 0.1028,
+   "start": 1446,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 courses · 27 categories — the entir\"",
+     "fore": {
+      "y": 0,
+      "h": 0
+     },
+     "efter": {
+      "y": 620,
+      "h": 203
+     }
+    }
+   ]
+  },
+  {
+   "varde": 0.10168,
+   "start": 2777,
+   "kallor": [
+    {
+     "nod": "div.mt-6.grid.gap-6 \"⌕458 courses · 27 categories — the entir\"",
+     "fore": {
+      "y": 620,
+      "h": 203
+     },
+     "efter": {
+      "y": 0,
+      "h": 0
+     }
+    }
+   ]
+  }
+ ],
+ "topp": [
+  {
+   "t": 347,
+   "h1": null,
+   "notis": null,
+   "wrapper": null,
+   "grid": null,
+   "docH": 823,
+   "scrollY": 0
+  },
+  {
+   "t": 709,
+   "h1": {
+    "y": 0,
+    "h": 0
+   },
+   "notis": {
+    "y": 0,
+    "h": 0
+   },
+   "wrapper": {
+    "y": 0,
+    "h": 0
+   },
+   "grid": {
+    "y": 0,
+    "h": 0
+   },
+   "docH": 823,
+   "scrollY": 0
+  },
+  {
+   "t": 1513,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": {
+    "y": 397,
+    "h": 175
+   },
+   "wrapper": {
+    "y": 596,
+    "h": 0
+   },
+   "grid": {
+    "y": 620,
+    "h": 10006
+   },
+   "docH": 14043,
+   "scrollY": 0
+  },
+  {
+   "t": 1763,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": {
+    "y": 397,
+    "h": 175
+   },
+   "wrapper": {
+    "y": 596,
+    "h": 0
+   },
+   "grid": {
+    "y": 620,
+    "h": 9544
+   },
+   "docH": 13582,
+   "scrollY": 0
+  },
+  {
+   "t": 2817,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": {
+    "y": 397,
+    "h": 175
+   },
+   "wrapper": {
+    "y": 596,
+    "h": 364
+   },
+   "grid": {
+    "y": 984,
+    "h": 9654
+   },
+   "docH": 14056,
+   "scrollY": 0
+  },
+  {
+   "t": 15145,
+   "h1": {
+    "y": 141,
+    "h": 64
+   },
+   "notis": {
+    "y": 397,
+    "h": 175
+   },
+   "wrapper": {
+    "y": 596,
+    "h": 364
+   },
+   "grid": {
+    "y": 984,
+    "h": 9654
+   },
+   "docH": 14056,
+   "scrollY": 0
+  }
+ ]
+}

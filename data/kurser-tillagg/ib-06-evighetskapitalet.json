@@ -1,0 +1,152 @@
+{
+  "slug": "ib-06-evighetskapitalet",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Evighetskapitalet — ägandet utan slutdatum",
+  "summary": "Investmentbolagsfamiljens sjätte steg: evighetskapitalet — kapital som aldrig måste realiseras och aldrig kan lösas in av ägaren, och därför ensamt får lämna bud utan slutdatum. Kursen börjar i kapitalets två klockor: fondens tioårsklocka (pe-06) och ägarens utan klocka alls — och visar varför skillnaden inte är en teknikalitet utan rörelsens kärna. Räkneläran är tre exponenter (påhittade tal): samma portfölj, åtta procent per år i fyrtio år, ger 21,7 gångers kapital; uppdelad i fyra tioårscykler med tio procents realiseringskostnad per omläggning ger 14,3 gånger — evighetsstrukturen bär 52 procent mer; och tvingas ett decenniums försäljning ske i en nedgång med tjugo procents avslag landar utfallet på 16,1 gånger, 35 procent under evighetsägarens — medan evighetsägaren genom samma dip noterar den på papperet och inte i kronorna. Därpå de tre friheterna (realiseringsfrihet, inlösningsfrihet, tidpunktsfrihet) och deras spegel i tre ofriheter (utdelningen styrs internt, utgången sker på rabatt, makten är svår att återkalla), strukturförmågorna som bär dem — det listade investmentbolaget, den evergreen-vehikeln, familjekontoret och försäkringsrörelsens kapital — och gränssnittet mot grannarna: ib-03 förvaltarskapet, ib-04 avkastningsräkningen, ib-05 kostnadstrappan, km-067 NAV-rabatten. Fem fällor avslutar: evighetsromantiken, rabattens glömda pris, makten utan återkallelse, avkastningsmåttens tidsskevhet och likviditetsillusionen. Utbildning i ägarstrukturer — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Skilja kapitalets två klockor: fondens livslängd som tvingar fram realisering och ägandets obegränsade horisont som låter försäljning vara ett val — och se att skillnaden äger utfallet, inte bara terminologin · Räkna avbrottets pris: fyra tioårscykler med tio procents realiseringskostnad ger 14,3 mot 21,7 gånger vid oavbruten förvaltning — varje omläggning beskattar den sammansatta tillväxten · Räkna tidpunktens pris: realisering i en nedgång med tjugo procents avdrag ger 16,1 mot 21,7 — skillnaden mellan papperets och kronornas förlust i samma dip · Känna de tre friheterna och deras tre ofriheter: ingen realiseringstvång, ingen inlösen, fri tidpunktsval — mot internt styrd utdelning, rabatt vid utgång och maktposition som är svår att återkalla · Läsa strukturförmågorna: listat investmentbolag med självvald horisont, evergreen-vehikel utan slutdatum, familjekontor och försäkringsrörelsens kapital — var och en bär friheterna på olika sätt och till olika pris · Ställa de fem protokollfrågorna som skiljer äkta evighetskapital från evighetsretorik: vem kan kräva kapitalet, vem måste sälja i en dip, varifrån kommer utdelningen, var sitter makten och vad kostar evigheten i rabatt",
+  "why": "Investmentbolagsfamiljens fem steg beskriver maskinen — ib-01 vad ett investmentbolag är, ib-02 substansens kvalitet, ib-03 förvaltarskapet, ib-04 avkastningsräkningen och ib-05 kostnadstrappan — men ingen av dem äger tiden själv: varför samma portfölj bär olika värde beroende på kapitalets slutdatum. Sond mot 470-registret: permanent capital ger noll träffar, evighetskapital en enda träff — ett bokcitat i the-intelligent-asset-allocator som får stå som källa enligt bokkurspresedensen — och sluten ende noll. Fondsidan har sin spegel: pe-06 äger pengarnas tid i fondformatet (J-kurvan, capital calls) och pe-02 utfasningarnas mekanik, men ägarsidans motsvarande fråga — vad ett kapital utan fondliv kostar och köper — ägs av ingen. Grannarna dokumenteras: pe-05 äger andrahandsmarknaden som utväg för icke-evigt kapital, km-067 äger NAV-rabatten som begrepp och ib-04 dess källresultat — detta steg äger rabattens TIDSDEL: priset för att utgången saknar dead-line, pe-04 äger den privata ägarsidans värld och ma-familjen räntans transmission. Vit fläck: förhållandet mellan kapitalets horisont och dess förmåga att bära sammansatt tillväxt genom cykler — den strukturfråga som avgör vilka ägare som kan köpa i de paniker som andra måste sälja i.",
+  "history": {
+    "origin": "Idén om kapital utan slutdatum är äldre än aktiemarknaden. Stiftelser och kyrkans jordagods förvaltades i sekler med en självsklar princip: gården säljs inte, avkastningen återinvesteras eller används — ägandet var en evighetens tjänst, inte en position. Den engelska rätten utvecklade till och med en motsägelse till strukturen, regeln mot eviga bindningar, just för att domstolarna såg hur perpetuella ägarordningar låste kapital och makt generation efter generation. Begreppets båda sidor föddes alltså tillsammans: evighetskapitalets uthållighet och dess kostnad i låsning — en spänning kursen återkommer till i varje kapitel.",
+    "evolution": "Industriepoken gav evighetskapitalet bolagsform. Familjedynastier byggde holdingstrukturer där avkastningen rullade vidare inom bolaget i stället för att realiseras hos ägaren, och de svenska investmentbolagen blev skolan i ämnet: ett listat bolag vars portfölj förvaltas utan fondliv, med utdelning som beslutas internt och substans som växer oavbrutet genom cykler. Samtidigt byggde försäkringsrörelsen sin variant: premieflödet som förvaltas mellan insamling och utbetalning gav kapital utan förfallodag, och kombinationen med förvärv av hela bolag blev nittonhundratalets mest omtalade evighetsmaskin. Inom private equity stannade strukturen länge vid motsatsen — fondens livslängd var poängen, disciplinen i dead-line — men från tvåtusentalet växte evergreen-formerna fram också där: vehiklar utan slutdatum där kapitalet förvaltas i det oändliga i stället för att säljas av vid fondens slut.",
+    "modern": "I dag är evighetskapital en levande fråga på båda sidor av gränsen mellan noterat och onoterat. De stora förvaltarna lanserar evighetsformat bredvid de traditionella fonderna; familjekontoren växer som kapitalklass med uttryckligt obegränsad horisont; och debatten om skillnaden mellan klockad och oklockad kapital — dess förmåga att köpa i tvångsförsäljningar, dess tålamod med långa ombyggnader, men också dess benägenhet att sitta kvar i medelmåttigt kapital — förs av analytiker som ett eget perspektiv på värderingen. Kursen samlar tråden: evighetskapitalet är varken mystik eller fördel per automatik — det är en ägarstruktur med en aritmetik, en frihet och ett pris, och alla tre går att räkna, granska och prissätta."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — kapitalets två klockor", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — tre friheter, tre ofriheter", "minutes": 4 },
+    { "num": 3, "title": "Mätning — tidens tre utfall", "minutes": 4 },
+    { "num": 4, "title": "Praktik — när evigheten betalar", "minutes": 4 },
+    { "num": 5, "title": "Fällor — fem sätt evigheten missbrukas", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — evighetsprotokollets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynchs mest citerade hållning — att tiden i marknaden slår tajmingen — får i denna kurs sin strukturella baksida: rådet förutsätter en ägare som FÅR vänta, och evighetskapitalet är den strukturellt garanterade versionen av det tålamodet. Lynch letade bolag vars verksamhet kunde förstås och hållas medan berättelsen utvecklades; hans favoritpositioner förvaltades i åratal just för att ingen klocka tvingade fram realisering. Och hans aptit på att köpa när andra tvingas sälja — de tillfällen då rationella säljare möter strukturellt tvungna — är evighetsägarens hemmaplan: den som aldrig måste sälja är den ende som obetingat kan bjuda i ett panikrum. Kursen översätter hans praktik till struktur: tålamod är inte en karaktärsegenskap hos ägaren utan en egenskap hos kapitalet.",
+  "grahamSection": "Benjamin Grahams allegori om Mr Market — hysteriske delägaren som varje dag ropar ett pris — har en tyst förutsättning som denna kurs gör explicit: allegorin fungerar bara för den ägare som kan låta bli att lyssna, och det är en strukturell fråga, inte en psykologisk. Evighetskapitalet är den enda ägarform där Mr Market konsekvent reduceras till vad Graham menade: en tjänst som erbjuder priser, inte en domare som fattar beslut. Samtidigt bär Grahams varningar mot låsta positioner och hans krav på återkommande omvärdering kursens motbild: evighetskapitalet får aldrig bli en ursäkt för att sluta granska — ägandet utan slutdatum höjer kravet på internrevisionen, eftersom ingen yttre dead-line längre städar upp efter ett felslut. Margin of safety förblir kravet; evigheten ändrar bara hur länge ett fel får lov att pågå ostraffat.",
+  "ak1Section": "I AK1A:s metodik stänger kursen investmentbolagsfamiljens tidslucka: ib-01 till ib-05 beskriver maskinen (substans, röster, räknelära, kostnader) och pe-familjen fondformatet — ib-06 beskriver själva horisonten som struktur, och knyter därmed an till AKM2:s fem tidshorisonter: evighetskapitalet är den längsta horisontens strukturella hem, den där scenariernas utfall inte avläses vid ett fast datum utan löper vidare genom dem. I analysflödet läggs en fjärde fråga till NAV-rabattens läsning (km-067 bär begreppet, ib-04 källresultatet): hur mycket av rabatten är pris för att utgången saknar slutdatum — och hur mycket försvinner om strukturen en dag löses upp? Till J-kurvans tidsbild från pe-06 läggs spegelvändningen: fondens klocka skapar J, evighetsägarens frånvaro av klocka släcker den. Gränserna hålls: ib-03 äger förvaltarskapets maktfrågor, ib-05 äger kostnadstrappan, pe-05 äger andrahandsmarknaden — här ägs horisontens aritmetik: vad frånvaron av ett slutdatum köper, och vad den kostar.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — kapitalets två klockor",
+      "intro": "Två ägare, samma portfölj, olika resultat — inte för att de väljer olika bolag, utan för att deras kapital bär olika klockor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fondens värld (pe-01 till pe-06 bär den) är byggd på en livslängd: kapital förbinds för en period, förvaltas och ska vara realiserat när klockan ringer — därför finns tvånget från slutdatumet, J-kurvan och utfasningarnas hantverk. Ägarsidens värld saknar den klockan. Investmentbolagets kapital äger inget förfallodag: ägaren av aktien kan bytas hur ofta som helst, men bolagets kapital förblir där det är, och portföljen behöver aldrig säljas för att ägaren ska få sitt tillbaka. Definitionen står där: evighetskapital är kapital utan realiseringstvång och utan inlösenrätt — ingen kan tvinga fram försäljningen, och ingen ägare kan kräva insatsen utdelad. Det låter som en teknisk detalj i en prospektbilaga. Det är i stället en av de djupaste skillnaderna i finans: vad som kan köpas, när det kan köpas och hur länge fel får pågå — allt avgörs av kapitalets klocka, före första kursnoteringen."
+        },
+        {
+          "type": "definition",
+          "content": "EVIGHETSKAPITAL: kapital vars förvaltning saknar slutdatum — två kännetecken: (1) REALISERINGSFRIHET — inget externt slutdatum tvingar portföljen till försäljning, varje avyttring är ett val; (2) INLÖSNINGSFRIHET — ägaren kan inte kräva kapitalet utlöst, endast sälja sin andel till nästa ägare. Motsatsen är klockat kapital: fondens livslängd, kreditens löptid, mandatperioden."
+        },
+        {
+          "type": "insight",
+          "content": "Den som betalar för en aktie i ett investmentbolag köper två saker samtidigt: en andel av portföljen OCH en andel av horisonten. Kursen håller dem isär: samma innehav förvaltat av ett bolag med evighetshorisont och av en fond med åtta år kvar är två olika tillgångar med olika förmåga att bära volatilitet, olika rätt att vänta ut en nedgång och olika pris på sina fel. Substansen är synlig i rapporten; horisonten står i bolagsordningen och ägarstrukturen — och den senare är minst lika värd att läsa."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — tre friheter, tre ofriheter",
+      "intro": "Evighetskapitalets fördelar och kostnader är varandras speglar: varje frihet har en ofrihet som pris, och ingen struktur får den ena utan den andra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre friheter. För det första realiseringsfriheten: portföljen behöver aldrig säljas i en nedgång — värdefallet noteras på papperet utan att bli en kronförlust, och avyttring sker när priset är rätt, inte när kalendern säger. För det andra inlösningsfriheten: kapitalet kan inte rymma i en kris — där fondens investerare kan stå i kö för att lämna och bankens insättare kan lösas ut, står evighetsägarens kapital kvar av strukturella skäl, vilket gör kassaflödet stabilare än konkurrenternas i just de lägen då stabilitet är som mest värd. För det tredje tidpunktsfriheten: köpbeslut kan vänta i åratal på det rätta tillfället — evighetsägaren är den ende som obetingat kan låta kontanter ligga och vänta på ett panikrum. Tre ofriheter som pris. Utdelningen styrs internt: ägaren av andelen får vad bolaget beslutar, inte vad han behöver. Utgången sker på rabatt: den som vill lämna säljer sin andel till marknadspris — ofta under substansen (km-067 äger rabattens källresultat) — och kan inte kräva portföljen upplöst till fullt värde. Makten är svår att återkalla: utan inlösenrätt och med röstmajoriteter på plats (ib-03 äger röstdjupet) kan en misslyckad förvaltning sitta kvar länge — evigheten är också felens evighet. Strukturförmågorna: det listade investmentbolaget bär alla tre frihetarna med börsens utgångsrabatt; evergreen-vehikeln (fonden utan slutdatum) bär dem inom förvaltningsformatet; familjekontoret inom släktens; och försäkringsrörelsens kapital — premieflödet som förvaltas tills det betalas ut — är den klassiska varianten där evigheten är partiell men kärnan densamma."
+        },
+        {
+          "type": "tabell",
+          "content": "TRE FRIHETER OCH DERAS PRIS (STRUKTURÖVERSIKT): Realiseringsfrihet — ingen dead-line, papperet bär dippen — pris: utdelningen styrs internt · Inlösningsfrihet — kapitalet stannar i krisen, kassaflödet är stabilt — pris: utgången sker på andrahandspris, ofta med rabatt · Tidpunktsfrihet — kontanter får vänta i åratal på rätt läge — pris: makten utan återkallelse, felen får pågå · LÄSNING: varje frihet köps med sin spegel — evighetskapitalet är enbyteshandel, inte en gratislunch, och priset syns inte i avgiftsrutan utan i rabatten och styrrätten."
+        },
+        {
+          "type": "insight",
+          "content": "Jämförelsen med fonden (pe-06 bär pengarnas tid) gör skillnaden gripbar: fondens tioårsklocka är inte en nackdel utan en konstruktion — den tvingar fram disciplin, mätbarhet och återbäring. Evighetskapitalet väljer bort det tvånget och köper uthållighet istället. Frågan är aldrig vilken struktur som är bättre, utan vilken frihet ett givet kapital behöver och vad det är berett att betala i ofrihet för den — en fråga om ändamål, inte om rang."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mätning — tidens tre utfall",
+      "intro": "Samma portfölj, åtta procent per år, fyrtio år (påhittade tal). Tre strukturer ger tre utfall: 21,7x, 14,3x och 16,1x — och skillnaderna är ren tidsaritmetik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första utfallet: den oavbrutna förvaltningen. Ett kapital som får växa i fyrtio år till åtta procent per år utan avbrott når 1,08 upphöjt till 40 — alltså 21,7 gånger startkapitalet. Andra utfallet: den klockade förvaltningen. Samma portfölj, men strukturen kräver realisering var tionde år — fyra omläggningar, och varje omläggning kostar tio procent i övergång (spread, avgifter, ombyggnad; pe-02 och pe-05 äger mekanikerna): varje decennium blir 1,08 upphöjt till 10 multiplicerat med 0,90 — alltså 2,159 gånger 0,90 lika med 1,943 — och fyra decennier blir 1,943 upphöjt till 4, alltså 14,3 gånger. Evighetsstrukturen bär 21,7 mot 14,3 — 52 procent mer — och hela skillnaden är frånvaron av avbrott, inte en enda bättre aktieaffär. Tredje utfallet: den tidsstressade realiseringen. Om en av omläggningarna råkar ske i en nedgång — tjugo procents avslag mot inre värde, som för en tvungen säljare — faller det decenniets bidrag till 1,08 upphöjt till 9 gånger 0,80 lika med 1,60, och utfallet efter återinvesteringsdecennierna landar på omkring 16,1 gånger: 35 procent under evighetsägarens, som genom samma dip noterar minus tjugo på papperet och behåller samtliga andelar till återhämtning. Tre utfall, en portfölj — skillnaden är strukturen ensam."
+        },
+        {
+          "type": "tabell",
+          "content": "TIDENS TRE UTFALL (ÅTTA PROCENT PER ÅR I 40 ÅR, PÅHITTADE TAL): Oavbruten evighetsförvaltning — 1,08 upphöjt till 40 lika med 21,7x · Klockad förvaltning, fyra omläggningar med tio procents kostnad — 1,943 upphöjt till 4 lika med 14,3x, evighetsfördelen 52 procent · En realisering i nedgång med tjugo procents avslag — omkring 16,1x, evighetsfördelen 35 procent · LÄSNING: avbrottets kostnad är dubbelt sammanvägd — övergångspriset VARJE omläggning plus tidspunktsrisken NÄR omläggningen faller illa; evighetskapitalet slipper båda, och det är hela dess aritmetiska hemlighet."
+        },
+        {
+          "type": "insight",
+          "content": "Notera vad exemplen INTE säger: att evighetsägaren förvaltar bättre. Åtta procent är åtta procent i alla tre spalten — utfallen skiljer sig enbart i hur många gånger kedjan klipps och till vilket pris. Det är kursens kärninsikt: mellan två lika duktiga förvaltare avgör kapitalets klocka utfallet, och mellan två olika duktiga kan klockan väga tyngre än skickligheten. Därför börjar många institutionella bedömningar av långsiktiga ägare inte med portföljen utan med förpliktelserna: vem äger kapitalet, hur länge, och vad tvingar dem?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktik — när evigheten betalar",
+      "intro": "Friheterna är teoretiska tills de används. Evighetskapitalet betalar i tre specifika situationer — och alla tre handlar om att vara den ende som inte måste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första situationen: panikrummet. Varje kraftig nedgång skapar två sorters säljare — de som vill och de som måste. De som måste (fond med utlöpare, kredit med marginalkrav, ägare med likviditetsbehov) säljer till bud som ges av dem som FÅR vänta, och evighetsägaren är definitionsmässigt sist i kön av tvungna. Det är inte cynism utan mekanik: marknadens böjda priser i kriser är en omfördelning från klockat kapital till oklockat, och evighetsstrukturen är en platbiljett till rätt sida. Andra situationen: ombyggnaden. Vissa värden skapas bara på lång siffra — ett bolag som behöver fem år av förlusttyngd omställning, en bransch som måste konsolideras, en tillgång som är felprissatt så länge räntan är hög. Klockat kapital kan inte alltid äga sådana positioner (kalendern slut före utfallet); evighetsägaren kan — tidpunktsfriheten är här en utvidgning av investeringsuniversum, inte bara ett tålamod. Tredje situationen: utdelningens kalibrering. Eftersom utdelningen styrs internt kan den hållas låg i byggår och höjas i skördeår — substansens sammansatta tillväxt skyddas från utdelningstvång, och beslutet följs i ib-04:s avkastningsräkning. Sammanfattningsvis: evigheten betalar när marknaden är förstressad för att bära tålamod, när utfallet ligger bortom andras klockor och när utdelningen måste få vika för återinvesteringen. I alla andra lägen är den neutral — och då står kostnadssidan kvar (ib-05:s trappa plus rabatten), vilket är den ärliga balansen."
+        },
+        {
+          "type": "tabell",
+          "content": "EVIGHETENS TRE BETALNINGSTILLFÄLLEN (PÅHITTADE TAL I KAPITEL TRE:S EXEMPEL): Panikrummet — den tvungne säljer med tjugo procents avslag, evighetsägaren bjuder: skillnaden 35 procent på fyrtioårsutfallet · Ombyggnaden — positioner med utfallet bortom fondklockan kan bara ägas av oklockat kapital: investeringsuniversum vidgas · Utdelningskalibern — utdelning beslutas internt efter substansens behov, inte ägarens: den sammansatta tillväxten skyddas · LÄSNING: alla tre är varianter av samma sak — att vara den som inte måste — och ingen av dem syns i portföljlistan, bara i bolagsordningen."
+        },
+        {
+          "type": "definition",
+          "content": "EVIGHETSPROTOKOLLET I TRE LÄGEN: (1) I NEDGÅNGEN — räkna papperets minus och kronornas minus isär; fråga vilka ägare som MÅSTE sälja och vem som kan bjuda · (2) I OMSTÄLLNINGEN — fråga om utfallet ligger innanför eller bortom kapitalets klocka, och vem som alls KAN äga positionen · (3) I UTDELNINGEN — läs beslutet som en kapitalallokeringsfråga (återinvestering mot utbetalning) med ib-04:s räknelära, aldrig som löfte."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fem sätt evigheten missbrukas",
+      "intro": "En kraftfull struktur samlar också kraftfulla ursäkter. Fem konstruktioner förvandlar evighetskapitalets friheter till retorik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: evighetsromantiken — att läsa horisontens längd som värde i sig. Evighetskapital i en medelmåttig portfölj är medelmåttighet med längre livslängd: åtta procent i fyrtio år är en väldig siffra, men fyra procent i fyrtio år är bara trögt kapital, och friheten att vänta används då till att undvika beslut. Boten är kapitel tre:s räknelära: evigheten värderas som avståndet mellan med och utan avbrott vid en GIVEN avkastning — aldrig som ersättning för den. Fälla två: rabattens glömda pris — att räkna substansens tillväxt men inte andelens utgång. Den som köper evighetskapital till 100 och tror på 160 i substans om tio år, men måste lämna genom att sälja andelen till 70 procent av substansen, har förhandsbetalt en del av avkastningen; rabatten är likviditetens och oklockade utgångens pris och ska räknas in från första dagen (km-067 äger rabattläsningen). Fälla tre: makten utan återkallelse — att se inlösningsfriheten enbart som stabilitet. Samma struktur som skyddar kapitalet i en kris skyddar en förvaltning från ägarnas dom — röstmajoriteter, ägaravtal och generationsväxlingar avgör (ib-03 äger mekanismerna), och utvärderingen får ersättas av internt ansvar. Fälla fyra: avkastningsmåttens tidsskevhet — att jämföra evighetsägarens avkastning med fondens interna avkastning utan att notera att de mäter olika tider: IRR straffar långa innehav per konstruktion och belönar tidiga utbetalningar (pe-02 äger mekaniken), medan den sammansatta tillväxten belönar just det IRR missgynnar — jämförelsen mellan dem är en fråga om vars och ens klocka, inte om skicklighet. Fälla fem: likviditetsillusionen — att blanda två likviditeter. Ägaren av andelen kan oftast sälja den snabbt; bolaget kan INTE sälja hela portföljen snabbt till fullt värde. Personlig likviditet och strukturell likviditet är olika tal, och den som planerar efter den förra medan den senare bär portföljen har räknat med fel växel — särskilt när alla vill ut samtidigt och rabatten vidgas just då."
+        },
+        {
+          "type": "definition",
+          "content": "EVIGHETSROMANTIKEN (KURSENS EGNA): att läsa en lång horisont som ett värdebevis i sig — att tro att strukturens tålamod ersätter portföljens avkastning. Boten är en regel: evighetsvärdet beräknas alltid som SKILLNADEN mellan med och utan avbrott vid en given avkastning, och avkastningen måste stå för sin egen kvalitet innan horisonten får räknas som förtjänst."
+        },
+        {
+          "type": "insight",
+          "content": "Historiens äldsta invändning — regeln mot eviga bindningar, född när domstolar såg stiftelser låsa jord och makt i sekler — är inte en kuriosa utan kursens femte fälla i förmodern dräkt: samhället har i trehundra år vetat att kapital utan slutdatum samlar både uthållighet och låsning. Den moderna läsningen skiljer inte på det: evighetskapitalets granskning gäller båda sidorna, och den ärliga redovisningen rapporterar friheterna och ofriheterna i samma tabell."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — evighetsprotokollets fem frågor",
+      "intro": "Fem frågor till varje ägarstruktur — besvarade ur bolagsordning, ägarlista och kassaflöde, inte ur retoriken — och en avslutande utmaning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vem kan kräva kapitalet tillbaka — finns en inlösenrätt, en förfallodag, en fondklocka, eller är andelen den enda utgången? Fråga två: vad händer i en nedgång — vilka ägare MÅSTE sälja i denna struktur, och vem är det som kan bjuda när de gör det? Fråga tre: varifrån kommer utdelningen — internt beslut efter substansens behov, eller externt tvång som ägarens kassa trycker på, och hur har den kalibrerats historiskt? Fråga fyra: var sitter makten — vilka röstmajoriteter och förvaltarskap styr, och hur återkallas en misslyckad förvaltning i praktiken? Fråga fem: vad kostar evigheten — hur stor är rabatten mot substansen, och vad betyder den för den som en dag vill ut? Den som svarar på de fem vet inte bara vad bolaget äger utan vad ägandet äger: en struktur med kända friheter, kända kostnader och en känd klocka — eller frånvaron av en sådan. Familjen blir därmed hel: vad investmentbolaget är (ib-01), substansens kvalitet (ib-02), förvaltarskapet (ib-03), avkastningsräkningen (ib-04), kostnadstrappan (ib-05) — och nu horisonten själv: ägandet utan slutdatum, dess aritmetik och dess pris."
+        },
+        {
+          "type": "definition",
+          "content": "EVIGHETSPROTOKOLLET: (1) UTGÅNGEN — vem kan kräva kapitalet, och hur tar ägaren sina kronor · (2) DIPPEN — vem måste sälja, vem kan bjuda · (3) UTDELNINGEN — internt beslut eller externt tvång, kalibrerad hur · (4) MAKTEN — röstmajoriteter, återkallelse, generationsväxling · (5) PRISET — rabatten mot substans, räknad från första dagen. Fem rader — och retoriken om evighet är ersatt av en läsbar struktur."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en ägarstruktur du stött på — listat investmentbolag, evergreen-vehikel, familjekontor eller en vanlig fond — och besvara de fem frågorna ur offentliga handlingar: bolagsordning, ägarförteckning, utdelningshistorik. Räkna därefter kapitel tre:s aritmetik med dina egna antaganden: tio år till valfri avkastning, en realiseringskostnad du motiverar, en nedgång du väljer — och jämför utfallet för klockat och oklockat kapital. Avsluta med att vända på tavlan: vilken av de tre ofriheterna skulle smärta mest för just din situation? Kursen är utbildning i ägarstrukturer — inte uppmaningar att köpa eller sälja något."
+        }
+      ]
+    }
+  ]
+}

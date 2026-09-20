@@ -1,0 +1,152 @@
+{
+  "slug": "tx-06-enhetsekonomin",
+  "category": "TILLVÄXT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Enhetsekonomin — nästa kunds hela räknelära",
+  "summary": "Tillväxtfamiljens sjätte steg: enhetsekonomin — räkneläran för EN kund, från anskaffning till bortfall. Fem tal bär hela kursen: kundanskaffningskostnaden (CAC) 600 kronor, månadsintäkten per kund (ARPU) 100 kronor, kontributionen 70 kronor efter rörliga kostnader, kundbortfallet (churn) 3,5 procent per månad och återbetalningstiden (payback) 8,6 månader. Av dem faller kundens livstidsvärde (LTV) ur en enda division: 70 delat med 0,035 ger 2 000 kronor — och nyckeltalet LTV per CAC blir 3,33. Kursen bygger räkneläran steg för steg: varför livslängden är 1 delat med bortfallet (28,6 månader), varför diskonteringen kortar livstidsvärdet till omkring 1 630 kronor, och varför tre bolag med IDENTISK återbetalningstid ändå bär tre olika livstidsvärden — payback mäter risken på kapitalet, livstidsvärdet mäter priset på kunden. Därpå kassaflödets mekanik: ett bolag som köper 1 000 nya kunder per månad betalar 600 000 kronor i anskaffning medan kundstockens kontribution växer mot 2,0 miljoner per månad vid jämvikt — brytpunkten 8 571 kunder nås efter tio månader, och vid jämvikt går varenda ny kund till att ersätta bortfallet. Fem fällor avslutar: LTV-inflationen, bortfalsförnekelsen, genomsnittsfällan, payback-blindheten och den blandade anskaffningskostnaden. Utbildning i att läsa tillväxtens minsta byggsten — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Se de fem talen bakom varje kundrörelse: anskaffningskostnad, intäkt per period, kontribution per period, bortfall per period och återbetalningstid — och veta att allt annat i enhetsekonomin är härlett ur dem · Räkna livstidsvärdet som kontribution delat med bortfall: 70 delat med 0,035 ger 2 000 kronor, och livslängden som 1 delat med bortfall: 28,6 månader · Skilja payback från livstidsvärde: återbetalningstiden beror bara på anskaffningskostnad och kontribution (600 delat med 70 är 8,6 månader oavsett bortfall), livstidsvärdet bara på kontribution och bortfall — den ena mäter risken på kapitalet, den andra priset på kunden · Översätta mellan månads- och årstakt: 3,5 procent per månad är 34,8 procent per år (1 minus 0,965 upphöjt till 12), och en förkortad livslängd halverar livstidsvärdet varje gång den fördubblas · Läsa kassaflödets trappsteg: anskaffningen betalas i dag, kontributionen droppar in över tiden, och brytpunkten är anskaffningsflödet delat med kontributionen per kund · Känna igen de fem fällorna och deras kurer: antagandena bakom livstidsvärdet, netto- mot bruttobortfall, nästa kund mot genomsnittet, återbetalningstid mot bränntakt och kanalernas olika priser",
+  "why": "Tillväxtfamiljens fem steg beskriver tillväxtens källor och gränser — tx-01 spårar källan (organisk eller förvärvad), tx-02 motorerna (volym, pris, mix), tx-03 återinvesteringens matematik, tx-04 mättnaden och tx-05 den första läsningen — men ingen av dem stiger ned till den minsta byggstenen: vad EN kund kostar, betalar och lämnar. Sond mot 470-registret: enhetsekonomi ägs av ingen kurs (två omnämnanden — ln-05 och mt-03, båda i förbifarten), kontribution ger noll träffar och payback nämns endast i v02-arr-tillvaxt och i bokkursen zero-to-one som citat. V-spåret äger grannskapet ovanför: v01 försäljningstillväxten och v02 ARR-tillväxten bär sina egna ytor och är fulltecknat (20 av 20), men huvudregistrets tillväxtfamilj saknar mikrogrunden. Grannarna dokumenteras: roic-03 äger nästa kronans avkastning på kapitalnivå — detta steg äger nästa kunds räknelära på kundnivå; v19 äger kapitalförbränningens bränntakt och detta steg äger varför bränslet förbrukas; v02 äger ARR och nettointäktsretentionens vokabulär; ln-05 äger lönsamhetens första läsning på resultaträkningsnivå; mt-03 äger vallgravens mått och detta steg äger när kundräkneläran ÄR vallgraven. Vit fläck: räkneläran som avgör om nästa kund skapar eller förstör värde — före alla procentsatser om tillväxt.",
+  "history": {
+    "origin": "Räkneläran om enskilda kunder är äldre än både börsen och katalogerna. Handlaren som lärde sig en stamkunds namn visste vad kursen sedan formulerar: en kund som återkommer är värd mer än sin senaste köpnota, och en kund som bara kommer en gång har ett pris takterat efter det besöket. Prenumerationsrörelserna — tidningen, mejeriet, telefonabonnemanget — gjorde strukturen explicit: intäkten kom varje månad, kostnaden för att vinna kunden kom en gång, och mellanskillnaden var rörelsens hela ekonomi. Direktreklamens och kataloghandelns räknare utvecklade på nittonhundratalet svaret på den enda fråga som skiljde vinnare från förlorare: vad får en svarskostnad kosta?",
+    "evolution": "Måtten fick sina namn i telemätningen och kabel-tv:s abonnentekonomi, där kundens månadsavgift stod mot anskaffningskostnaden för installatören och kampanjen. När mjukvarubranschen på tvåtusentalet flyttade från licensförsäljning till prenumeration fick räkneläran sin nuvarande vokabulär: kundanskaffningskostnad, livstidsvärde, churn och payback blev branschens gemensamma språk, med tumregler — livstidsvärdet några gånger anskaffningskostnaden, återbetalning inom tolv månader — som hopsamlade erfarenheter snarare än lagar. Samma aritmetik visade sig sedan äga långt fler rörelser: streaming, gym, e-handelns prenumerationslådor, bankernas kortkunder och grossistens företagskunder — överallt där en engångskostnad köper en ström av kontribution.",
+    "modern": "I dag läser analytiker enhetsekonomi som en grundläggande del av tillväxtbedömningen: bolag redovisar nästa kunds marginalkostnad, netintäktsretention och payback öppet, och skillnaden mellan brutto- och nettobortfall har blivit en egen granskningsyta. Kursen samlar tråden: enhetsekonomin är inte en tech-specialitet utan tillväxtens kassaflödesgrammatik — den som kan läsa en kunds räknelära kan läsa vilken kundrörelse som helst, från appen till gruvans avtalskunder. Och varningen hör hemma i sammanhanget: räkneläran är exakt, men dess indata — hur länge kunden stannar — är alltid en satsning på framtiden."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — kunden som en liten investering", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — divisionerna som bär allt", "minutes": 4 },
+    { "num": 3, "title": "Mätning — samma payback, tre liv", "minutes": 4 },
+    { "num": 4, "title": "Praktik — kassatrappan och de två spakarna", "minutes": 4 },
+    { "num": 5, "title": "Fällor — fem sätt räkneläran försköns", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — enhetsprotokollets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch talade om att växa snabbt i en bransch som växer långsamt, och hans bäst affärer var bolag där kundrelationen var så enkel att den kunde räknas på ett kuvert. Enhetsekonomin är det kuvertet: Lynchs kataloghandlare och kedjerestauranger levde på exakt denna aritmetik — kostnaden att öppna och marknadsföra en butik mot kundernas livstidskonsumtion — långt innan någon skrev förkortningarna. Hans varning för long shots utan räknelära översätts rakt: en tillväxtberättelse där ingen kan svara på vad nästa kund kostar och betalar är en historia, inte en rörelse. Och hans tålamod med väl förankrade bolag är payback-logikens andra hälft: den som vet att kunden är tillbakabetald efter nio månader kan låta de följande tjugo arbeta i fred.",
+  "grahamSection": "Benjamin Graham skilde mellan spekulering och investering efter underlagets grundlighet — och enhetsekonomin är det grundligaste underlag en tillväxtantagande kan få: innan någon tror på en tillväxtprocent kan två divisioner visa om tillväxten skapar eller förstör kronor per kund. Grahams krav på margin of safety får här en konkret form: avståndet mellan livstidsvärde och anskaffningskostnad är tillväxtens säkerhetsmarginal, och återbetalningstiden är dess mätare i tid. Samtidigt bär hans försiktighet emot långa prognoser kursens viktigaste varning: livslängden i livstidsvärdet är alltid ett antagande — Grahams råd att inte bygga framtidsbilder på en enda utveckling gäller dubbelt för månadernas antal i en division.",
+  "ak1Section": "I AK1A:s metodik stänger kursen luckan mellan tillväxtens macro-sidor och lönsamhetens kapitalsida: tx-01 till tx-05 läser tillväxten uppifrån (källa, motorer, gränser) och roic-03 läser nästa kronans avkastning på kapitalnivå — tx-06 läser samma krona på kundnivå, där den föds. I analysflödet kopplar kursen till AKM2:s scenarieråkning: när tillväxtscenarierna vägs är enhetsekonomin det underlag som skiljer ett scenarium från en önskning — churn, payback och kontribution per kund är de tre rattarna som vrider scenariot. Till kapitalbindningsläran (ln-04) läggs kundkapitalet: anskaffningskostnaden är en investering i kundstocken, och återbetalningstiden är dess bindningstid. Gränserna hålls: v02 äger ARR och netintäktsretentionen, v19 äger bränntakten, mt-03 äger vallgravens mått — här ägs kundräkneläran: divisionerna före procentkurvorna.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — kunden som en liten investering",
+      "intro": "Varje kundrörelse, från appen till grossisten, bär samma fem tal. Kursens genomgående exempel är påhittat och avsiktligt rent: 600 kronor för att vinna kunden, 100 i månaden in, 70 kvar efter rörliga kostnader.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med synsättet: att köpa en kund är en investering (påhittade tal). Bolaget lägger ut 600 kronor — i annonser, säljtid eller rabatt — och får i utbyte en ström: 100 kronor i månadsintäkt (branschens ARPU), av vilken 70 kronor är kontribution, det som återstår när de kostnader som följer just denna kund är betalda: servern, frakten, kortavgiften, supporten. Den femte siffran är kundbortfallet (churn): varje månad lämnar 3,5 procent av kunderna. Av de fem talen kan allt annat härledas — livslängden, livstidsvärdet, återbetalningstiden, nyckeltalet — och det är därför kursen börjar där: den som kan de fem talen kan räkna om hela rörelsen på ett kuvert."
+        },
+        {
+          "type": "definition",
+          "content": "ENHETSEKONOMINS FEM TAL: (1) ANSKAFFNINGSKOSTNADEN — vad det kostar att vinna nästa kund; (2) INTÄKTEN PER PERIOD — vad kunden betalar per månad; (3) KONTRIBUTIONEN — intäkten minus de kostnader som följer kunden; (4) BORTFALLET — andel kunder som lämnar per period; (5) ÅTERBETALNINGSTIDEN — antal perioder tills kontributionen betalat tillbaka anskaffningen. Tre är observationer per kund, en är ett antagande om framtiden (bortfallet) och en är en division av de andra."
+        },
+        {
+          "type": "insight",
+          "content": "Kontributionen är inte vinsten. Den ska täcka anskaffningen, sedan rörelsens gemensamma kostnader — lokalen, utvecklingen, ledningen — och först därefter bli resultat. Misstron ligger i ordningen: kunden måste först betala tillbaka sin egen inköpsnota innan någon annan räkning kan betalas av honom. Det är också därför två bolag med samma omsättning kan bära helt olika ekonomi: skillnaden sitter inte i intäktsraden utan i de 70 kronorna — och i hur många månader de får rinna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — divisionerna som bär allt",
+      "intro": "Tre divisioner och en exponent bygger hela räkneläran: livslängden, livstidsvärdet, återbetalningstiden och årsöversättningen av bortfallet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första divisionen: livslängden. Om 3,5 procent av kunderna lämnar varje månad är den förväntade kundlivslängden 1 delat med 0,035 — alltså 28,6 månader. Andra divisionen: livstidsvärdet (LTV). Kontributionen 70 kronor per månad under 28,6 månader ger 70 delat med 0,035 lika med 2 000 kronor — samma division, vilket är poängen: livstidsvärdet är kontributionen delad med bortfallet, och livslängden är dess spegel. Tredje divisionen: återbetalningstiden (payback). Anskaffningen 600 delad med kontributionen 70 ger 8,6 månader — och nyckeltalet blir LTV per CAC: 2 000 delat med 600, alltså 3,33. Slå sedan om takt: 3,5 procent per månad är inte 42 procent per år utan 1 minus 0,965 upphöjt till 12 — alltså 34,8 procent — eftersom kvarvarandet rabatteras månad för månad, inte årsvis."
+        },
+        {
+          "type": "tabell",
+          "content": "RÄKNELÄRANS BYGGSTENAR (PÅHITTADE TAL): Anskaffning 600 kronor · Intäkt 100 per månad · Kontribution 70 per månad · Bortfall 3,5 procent per månad · Livslängd 1 delat med 0,035 lika med 28,6 månader · Livstidsvärde 70 delat med 0,035 lika med 2 000 kronor · Återbetalningstid 600 delat med 70 lika med 8,6 månader · LTV per CAC 2 000 delat med 600 lika med 3,33 · Årsviserat bortfall 1 minus 0,965 upphöjt till 12 lika med 34,8 procent · LÄSNING: varenda nyckeltal är en division av de fem grundtalen — ingen blackbox, ingen terminologi som inte faller ur aritmetiken själv."
+        },
+        {
+          "type": "insight",
+          "content": "Diskonteringen hör till hederligheten: livstidsvärdet 2 000 kronor räknar framtidens kontribution till fullt värde. Med en diskonteringsränta på 10 procent per år — omkring 0,80 procent per månad — faller livstidsvärdet till 70 delat med (0,035 plus 0,008), alltså omkring 1 630 kronor, och nyckeltalet till omkring 2,7. Kursen räknar i sina exempel med värdet utan diskontering, 2 000 kronor, och säger det rakt: ett livstidsvärde räknat utan diskontering är en övre gräns, inte en prognos. De relativa jämförelserna — vilken kanal, vilket pris, vilken retention — överlever diskonteringen; absolutbeloppen gör det inte."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mätning — samma payback, tre liv",
+      "intro": "Tre bolag med identisk anskaffning och kontribution — 600 kronor och 70 per månad — och identisk återbetalningstid 8,6 månader. Ändå är de tre helt olika affärer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skilj bolagen åt med ett enda tal: bortfallet (påhittade tal). Bolag A tappar 1,75 procent per månad — livslängden blir 57,1 månader, livstidsvärdet 70 delat med 0,0175 alltså 4 000 kronor, nyckeltalet 6,67. Bolag B är kursexemplet: 3,5 procent, 28,6 månader, 2 000 kronor, 3,33. Bolag C tappar 7,0 procent — livslängden 14,3 månader, livstidsvärdet 1 000 kronor, nyckeltalet 1,67. Återbetalningstiden är 8,6 månader i alla tre, för den beror bara på anskaffning och kontribution. Därav kursens skarpaste skiljelinje: payback mäter risken på det utlagda kapitalet — hur länge pengarna är exponerade — medan livstidsvärdet mäter priset på själva kunden. Ett bolag kan vara en utmärkt lånrörelse (snabb payback) och en dålig ägarrörelse (kort liv), och omvänt."
+        },
+        {
+          "type": "tabell",
+          "content": "SAMMA PAYBACK, TRE LIV (ANKAFFNING 600, KONTRIBUTION 70 PER MÅNAD, PÅHITTADE TAL): Bolag A — bortfall 1,75 procent, livslängd 57,1 månader, livstidsvärde 4 000 kronor, LTV per CAC 6,67 · Bolag B — bortfall 3,5 procent, livslängd 28,6 månader, livstidsvärde 2 000 kronor, LTV per CAC 3,33 · Bolag C — bortfall 7,0 procent, livslängd 14,3 månader, livstidsvärde 1 000 kronor, LTV per CAC 1,67 · Alla tre — återbetalningstid 8,6 månader · LÄSNING: halverat bortfall fördubblar livstidsvärdet — en förbättrad retention slår motsvarande nyförsäljning, krona för krona."
+        },
+        {
+          "type": "insight",
+          "content": "Nyckletalen 3,33 och 1,67 talar också om hur räkneläran växer till strategi: mellan B och C ligger hela skillnaden mellan att bygga och att underhålla. Bolag C:s kundstock är en läckande balansräkning — varje månad måste 7 procent av allt köpas om — och dess tillväxt är i realiteten en ersättningsmaskin tills retentionen förbättras. Kursens regel: jämför aldrig två kundrörelser på tillväxtprocent före dess bortfall är känt; samma tillväxt med olika retention är två olika rörelser med samma kuliss."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktik — kassatrappan och de två spakarna",
+      "intro": "Anskaffningen betalas i dag, kontributionen droppar in i månader. Mellan dem ligger en trappa av negativa månader — och dess längd är en strategifråga, inte en slump.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kassatrappan (påhittade tal): ett bolag vinner 1 000 nya kunder per månad till 600 kronor — anskaffningsflödet blir 600 000 kronor per månad, utbetalt omedelbart. Kundstockens kontribution växer för varje kohort: 70 kronor per kund och månad. Brytpunkten nås när stockens kontribution täcker anskaffningen — 600 000 delat med 70 är 8 571 kunder, och med 3,5 procent bortfall nås den efter omkring tio månader. Stabil jämvikt inträder vid 1 000 delat med 0,035 — 28 571 kunder — där kontributionen är omkring 2,0 miljoner kronor per månad och var och en av de 1 000 nya kunderna bara ersätter bortfallet. Två lärdomar: för det första är payback-tiden inte bara ett nyckeltal utan bolagets finansieringsbehov i miniatyr — de tio första månadernas underskott måste bäras av kapital; för det andra upphör tillväxt att skapa kassaflöde vid jämvikten om inte enhetsekonomin förbättras — maskinen arbetar då enbart för att stå stilla (v19 bär bränntaktens granskning)."
+        },
+        {
+          "type": "tabell",
+          "content": "KASSATRAPPAN (1 000 NYA KUNDER PER MÅNAD, PÅHITTADE TAL): Anskaffningsflöde 1 000 gånger 600 lika med 600 000 kronor per månad, ut · Kontribution 70 kronor per kund och månad, in · Brytpunkt 600 000 delat med 70 lika med 8 571 kunder — nås efter omkring tio månader · Jämviktsstock 1 000 delat med 0,035 lika med 28 571 kunder — kontribution omkring 2,0 miljoner per månad · LÄSNING: återbetalningstiden 8,6 månader och trappans längd hänger ihop — båda är samma väntan sedd från kunden respektive kassan."
+        },
+        {
+          "type": "definition",
+          "content": "ENHETSEKONOMINS TVÅ SPAKAR: (1) SÄNK ANSKAFFNINGEN — samma kund för färre kronor: organisk tillströmning, varumärke och rekommendation; priset per kanal skiljer kraftigt (i exemplet: organisk kanal 120 kronor ger 1,7 månaders payback, betald kanal 1 400 kronor ger 20,0) · (2) FÖRLÄNG OCH FÖRDJUPA KUNDEN — lägre bortfall och högre kontribution: produkt, pris och service; varaktigheten går att arbeta med, inte bara köpas. Ordningen är principen: först spaken som inte kräver mer kapital, sedan den som gör."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fem sätt räkneläran försköns",
+      "intro": "Divisionerna är exakta — det är insidan som gör sig förtjänt av misstro. Fem konstruktioner förvandlar en dålig enhetsekonomi till en snygg presentation.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: LTV-inflationen. Livstidsvärdet är en division vars nämnare är ett antagande — och vilken siffra som helst kan köpas med en tillräckligt lång livslängd. En presentation som räknar med 57 månaders kundliv bär ett påstående om framtiden värt granskning: varifrån kommer den siffran, och vad hände de kohorter som redan lämnat? Boten är att läsa livstidsvärdet som en prognos med egen risk, inte som en observation. Fälla två: bortfalsförnekelsen. Nettochurn — där expansion bland kvarvarande kunder räknas av mot bortfall — kan visa noll medan halva stocken byts ut; bruttobortfallet och netintäktsretentionen är två olika tal och båda behövs (v02 äger ARR-sidans vokabulär). Fälla tre: genomsnittsfällan. Livstidsvärdet på hela stocken gäller inte nästa kund — blandningen av gamla lågbortfallskunder och nya högbortfallskunder gör snittet till en historiebok; beslutet fattas om nästa kohort, och dess ekonomi är marginalens, inte medelvärdets. Fälla fyra: payback-blindheten. Ett livstidsvärde på tre gånger anskaffningen säger ingenting om kassan om återbetalningen tar 40 månader — bolaget kan förblöda innan värdet infinns sig; återbetalningstiden är broen mellan enhetsekonomin och bränntakten. Fälla fem: den blandade anskaffningen. Samlad CAC döljer att kanalerna har olika priser och att den sista kunden är den dyraste — marginal-anskaffningen stiger när de billiga kanalerna är mättade; en snittkostnad på 600 kan dölja att de sista hundra kunderna kostade 1 400 styck."
+        },
+        {
+          "type": "definition",
+          "content": "GENOMSNITTSFÄLLAN (KURSENS EGNA): att läsa en kundstockens medeltal — livstidsvärde, bortfall, anskaffningskostnad — som om det beskrev nästa kund. Boten är en regel: varje nyckeltal märks med sin kohort — historiens stock eller nästa kund — och jämförelser mellan kanaler, priser och kohorter förs alltid på marginalen, där beslutet faktiskt fattas."
+        },
+        {
+          "type": "insight",
+          "content": "Grannen mt-03 äger vallgravens mått — och här syns gränsdragningens vikt: en vallgrav som VISAR sig i enhetsekonomi (lägre anskaffning genom varumärke, lägre bortfall genom byteskostnad) är en mätbar sådan, inte en berättelse. Omvänt är mt-05:s byteskostnader retentionens mekanism: kunden stannar inte av lojalitet utan för att bytet kostar. De två kurserna möts i samma fråga — varför är vårt bortfall lägre än konkurrentens? — men äger varsin sida: den ena mekanismen, den andra räkneläran."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — enhetsprotokollets fem frågor",
+      "intro": "Fem frågor, besvarade med de fem talen, gör varje tillväxtberättelse till en räknelära — och en avslutande utmaning som låter läsaren räkna själv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vad kostar nästa kund — på marginalen, i den kanal som faktiskt måste användas när tillväxten skalas? Fråga två: vad betalar kunden per period i kontribution — inte i intäkt, utan efter de kostnader som följer just henne? Fråga tre: hur länge stannar kunden — brutto och netto, i månader översatta till år, med diskonteringen synlig? Fråga fyra: när är kronan tillbaka — och vem finansierar väntetiden mellan utlägg och återbetalning? Fråga fem: bär nästa kohort samma ekonomi som snittet — eller är tillväxten på väg in i en dyrare kanal med kortare kundliv? Den som svarar på de fem har konverterat en tillväxtprocent till en kapitalallokering: varje ny kund är en investering med känd kostnad, känd avkastningsprofil och känd tid — och tillväxtstrategin är en portfölj av sådana investeringar. Kursen därmed fullvärdig i familjen: källan (tx-01), motorerna (tx-02), återinvesteringen (tx-03), gränserna (tx-04), den första läsningen (tx-05) — och nu byggstenen själv."
+        },
+        {
+          "type": "definition",
+          "content": "ENHETSPROTOKOLLET: (1) MARGINALEN — anskaffningskostnaden för nästa kund, inte snittet · (2) KONTRIBUTIONEN — intäkten per period minus kundens rörliga kostnader · (3) VARAKTIGHETEN — bruttobortfall i månads- och årstakt, netintäktsretention som separat tal · (4) ÅTERBETALNINGEN — payback i perioder, och finansieringen av dem · (5) KOHORTEN — nästa kunds ekonomi mot stockens medeltal. Fem rader, ett kuvert — och ingen tillväxtprocent längre utan underlag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en kundrörelse du känner — verklig eller påhittad — och sätt tal på de fem: anskaffning, intäkt, kontribution, bortfall. Räkna livslängden, livstidsvärdet, återbetalningstiden och nyckeltalet. Räkna därefter kassatrappan: hur många månader står anskaffningsflödet över kontributionen, och hur stort är det sammanlagda finansieringsbehovet fram till brytpunkten? Avsluta med att halvera bortfallet och fördubbla anskaffningskostnaden — vilket av de två lägena bär den högre kassarisken, och vilket det högre ägarvärdet? Kursen är utbildning i att läsa tillväxtens minsta byggsten — inte uppmaningar att köpa eller sälja något."
+        }
+      ]
+    }
+  ]
+}

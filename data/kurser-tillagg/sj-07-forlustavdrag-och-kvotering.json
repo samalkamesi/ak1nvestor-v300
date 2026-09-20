@@ -1,0 +1,152 @@
+{
+  "slug": "sj-07-forlustavdrag-och-kvotering",
+  "category": "SKATT & JURIDIK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Förlustavdrag och kvotering — förlustens skattemekanik",
+  "summary": "Skattefamiljens sjunde steg öppnar den sida av kapitalbeskattningen som alla berörs av men få räknar på: förlustens. Kursen lär utjämningsordningens två skalor — aktiernas och övriga tillgångars — kvoteringens 70 och 100 procent, dagkvittningen, återförvärvsregelns fem-till-tio-dagarsfönster och medelvärdemetoden som gör partiella försäljningar valfria att välja lot. Utbildning om hur reglerna fungerar, inte råd i något enskilt fall.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna en realiserad förlust ur km-051:s subtraktion — försäljningspris minus omkostnadsbelopp · Skilja kapitalinkomsternas två skalor: marknadsnoterade delägarrätter med aktiefonder mot övriga tillgångar · Räkna utjämningsordningen steg för steg — förlust mot aktievinster och utdelningar först, resten som överskottsavdrag · Räkna kvoteringen — onoterade delägarrätter 70 procent, överskottsavdrag 70 procent · Förstå dagkvittningen, återförvärvsregelns fem-till-tio-dagarsfönster och medelvärdemetoden vid delavyttring · Veta var förlustavdraget inte finns: schablonkonton, och var det är personligt: dödsbo och arv",
+  "why": "Skatte- och juridikfamiljens sex första steg tog pulsen på systemets alla sidor utom en: källskatten utland (sj-01), kryptovalutornas beskattning (sj-02), stämman och rösträtten (sj-03), optionernas skatteregler (sj-04), kontots form — kapitalförsäkring mot ISK (sj-05) och överlåtelserna arv, gåva och ingående värde (sj-06). Men kapitalbeskattningens två lika stora halvor är vinsten och förlusten — och förlusthalvan ägs av ingen: sonden mot registret ger kvotering 0 kursägare, förlustavdrag 0, förlustutjämning 0, nämnandena endast i förbifart i sj-04 och sj-06. Samtidigt som km-051 äger vinstens subtraktion och km-050 utdelningens beskattning saknas den kurs som lär vad som händer när subtraktionen blir negativ: vilken förlust som får dras av, mot vad, till vilken andel och när. sj-07 är familjens sjunde steg: den mekanik som gör att ett förlustår inte bara är ett minus i depån utan ett tids- och ordningsberoende avdrag — och det som lär varför samma förlust är värd olika mycket i två olika konton och två olika år.",
+  "history": {
+    "origin": "Idén att beskatta netto är äldre än aktiemarknaden: jordbrukaren beskattades på skörden minus utsädet, handlaren på intäkten minus inköpen. När förlustsidan flyttade in i värdepappersvärlden föddes en ny fråga — vilka förluster får räknas, och mot vad — och med den en hel mekanik av skalor, kvoteringar och tidfönster.",
+    "evolution": "Sverige prövade under nittonhundratalets senare hälft en rad kvoteringsregler, där olika tillgångsklassor fick olika avdragsandelar i olika perioder — ett system som blev känt för sin svårbegriplighet. Nittonhundronittiotalets skattereformer och den följande differentieringen mellan marknadsnoterade och onoterade delägarrätter gav systemet dagens form: hundra procent inom aktiernas egen skala, sjuttio procent utanför den och på onoterade papper.",
+    "modern": "I dag sköter nätmäklarnas deklarationsunderlag det mesta av räknejobbet — men mekaniken under har inte blivit mindre viktig att förstå. Dagkvittningen slår ihop samma dags affärer, återförvärvsregeln flyttar avdrag i tiden när samma papper köps tillbaka inom fönstret, och medelvärdemetoden gör frågan vilken aktie i depån som såldes till en omöjlighet att ens ställa. Den som förstår reglerna kan läsa sin deklaration; den som inte gör det läser bara slutsiffror."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — när en förlust blir ett avdrag", "minutes": 4 },
+    { "num": 2, "title": "De två skalorna — utjämningsordningen", "minutes": 4 },
+    { "num": 3, "title": "Kvoteringen — 70 och 100 procent", "minutes": 4 },
+    { "num": 4, "title": "Tidfällorna — dagkvittning, återförvärv, medelvärde", "minutes": 4 },
+    { "num": 5, "title": "Förlustens plats — konton, makar och dödsbo", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — förlustårets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch skrev att den vanligaste bland småsparare är att sitta kvar i förlorarna i hopp om att de ska komma tillbaka, medan vinnarna säljs för tidigt — ett mönster han ansåg kosta mer än någon courtage. sj-07 lägger skattemekaniken under den iakttagelsen: en realiserad förlust är inte bara Lynchs slutsiffra på ett misstag, utan i det svenska systemet en tillgång med eget tidsberoende värde — vilket gör förmågan att hantera förluster, som Lynch förespråkade av helt andra skäl, dubbelt relevant även i deklarationsvärlden.",
+  "grahamSection": "Benjamin Grahams marginalen — att köpa med ett avstånd mellan pris och värde — är ett skydd som mäts i analysens värld, inte skattens. Men Grahams andra läxa hör hit: förluster ska erkännas när de är faktiska, och nettoresultatet är det enda som är verkligt. Kursens mekanik visar samma princip från systemets sida: skatten beskattar netto efter regler om ordning och tid — aldrig känslan av vad en position en gång var värd.",
+  "ak1Section": "I AK1A:s metodik kompletterar sj-07 skattefamiljen med förlustens mekanik: AKM2:s fem tidshorisonter mäter en portföljs utfall i marknadens tal, och denna kurs visar vad samma utfall betyder i skattens tal — två bokföringar av samma verklighet. Riskarbetet görs ex ante genom positionsstorlek och riskmatris (rs-04, v19); skattemekaniken är ex post-kunskapen som gör att ett förlustår inte slösas bort oavsiktligt. Detta är utbildning om reglernas funktion — aldrig råd om vad någon bör sälja eller behålla i sitt eget fall.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — när en förlust blir ett avdrag",
+      "intro": "Vinsten är det alla frågar efter. Förlusten är subtraktionens andra halva — och den halva som har egen reglering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "km-051 äger grundregeln: vid avyttring beskattas skillnaden mellan försäljningspris och omkostnadsbelopp. Denna kurs äger vad som händer när subtraktionen blir negativ. En pappersförlust — aktien står lägre än inköpet — är ingen förlust i skattehänseende; den varken kan dras av eller beskattas. Först avyttringen, den faktiska realisationen, föder den avdragsgilla kapitalförlusten. Ett enkelt räkneexempel: köpt för 80 000 kronor, sålt för 50 000 — förlusten är 80 000 − 50 000 = 30 000 kronor. Om hela beloppet får dras av mot kapitalinkomster är avdraget värt 30 procent i lägre skatt: 0,30 × 30 000 = 9 000 kronor. Men det är just där frågan börjar, för hela beloppet får inte alltid dras av — och mot vad det får dras är sin egen trappa. Det är kursens kärna: förlustavdraget är inte en knapp utan en mekanik, med ordning, andel och tid. Vad någon gör med den mekaniken är läsarens eget arbete; kursen lär hur den fungerar."
+        },
+        {
+          "type": "definition",
+          "content": "REALISERAD FÖRLUST — faktiskt avyttradt negativt utfall av subtraktionen försäljningspris minus omkostnadsbelopp; pappersförlusten är ingen · FÖRLUSTAVDRAG — avdrag från kapitalinkomster som förlusten ger rätt till enligt ordnings- och andelsreglerna · ÖVERSKOTTSAVDRAG — den del av en förlust som inte kunnat utjämnas och som får dras mot övriga kapitalinkomster till 70 procent · SPARAT AVDRAG — outnyttjat förlustavdrag som förs fram till kommande beskattningsår"
+        },
+        {
+          "type": "insight",
+          "content": "Vinsten är ett pris, förlusten är en tillgång — med eget värde (upp till 30 öre per krona), egen giltighetstid (i praktiken sparas den) och egna regler för vad den får mötas av. Att lära sig läsa den tillgången är halva kapitalbeskattningen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "De två skalorna — utjämningsordningen",
+      "intro": "Alla kapitalinkomster är inte jämlikar. Systemet håller två skalor — aktiernas och alltsammans annat — och förlustens väg går genom dem i fast ordning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kapitalinkomsterna är organiserade i grupper med egen utjämningsordning. Marknadsnoterade delägarrätter — aktier på handelsplats — och aktiefonder bildar sin egen grupp: en förlust på en noterad aktie får i första hand utjämnas mot kapitalvinster på marknadsnoterade delägarrätter och aktiefonder samt mot utdelning på marknadsnoterade aktier. Utdelningen spelar alltså dubbelroll: den är en kapitalinkomst enligt km-050:s regler och samtidigt ett utjämningsunderlag för aktieförluster. Räknestycket som bär hela kapitlet: en läsare har utdelningar 20 000 kronor och aktievinster 30 000 kronor, alla noterade, samt en aktieförlust 60 000 kronor på noterade aktier. Steg ett: förlusten utjämnas mot utdelningarna och vinster tillsammans — 20 000 + 30 000 = 50 000 kronor av förlusten tas fullt ut. Steg två: restförlusten 60 000 − 50 000 = 10 000 kronor får som överskottsavdrag dras till 70 procent: 0,70 × 10 000 = 7 000 kronor. Avdragets sammanlagda skattevärde: 50 000 × 0,30 = 15 000 kronor plus 7 000 × 0,30 = 2 100 kronor, totalt 17 100 kronor — mot 18 000 kronor om hela förlusten vore fullt avdragsgill direkt. Skillnaden 900 kronor är exakt 30 procent av de 3 000 kronor som kvoteringen stänger ute: 0,30 × (0,30 × 10 000) = 900. Ordningen är mekanik, inte val — och den gör utdelningar och vinster till mer än inkomster: de är nycklar som låser upp förlustens fulla värde."
+        },
+        {
+          "type": "tabell",
+          "content": "UTJÄMNINGSTRAPPAN (PÅHITTADE TAL, KRONOR): UTDDELNINGAR NOTERADE: 20 000 + AKTIEVINSTER NOTERADE: 30 000 = UTJÄMNINGSUNDERLAG 50 000 · FÖRLUST NOTERADE AKTIER: 60 000 — steg ett: 50 000 utjämnas FULLT ut · steg två: rest 10 000 → överskottsavdrag 0,70 × 10 000 = 7 000 · SKATTEVÄRDE: 50 000 × 0,30 = 15 000 samt 7 000 × 0,30 = 2 100 — TOTALT 17 100 · FULLT AVDRAG HADDE GIVIT: 60 000 × 0,30 = 18 000 · KVOTERINGENS PRIS: 18 000 − 17 100 = 900 = 0,30 × 3 000"
+        },
+        {
+          "type": "insight",
+          "content": "Kontrasten gör regeltypen synlig: ränteutgifter är fullt avdragsgilla mot alla kapitalinkomster, hundra procent utan skala. Aktieförlustens trappa — först skalans egna underlag, sedan sjuttio procent — är hela skillnaden mellan en kostnad och en förlust i systemets ögon."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Kvoteringen — 70 och 100 procent",
+      "intro": "Två siffror styr förlustens värde: hundra och sjuttio. Vilken som gäller avgörs av var förlusten föddes — och var den hamnar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kvoteringens huvudregel har två sidor. För marknadsnoterade delägarrätter och aktiefonder är förlusten till hundra procent avdragsgill — under förutsättning att den kan utjämnas inom skalans eget underlag, som kapitel två visade. Finner sig ingen utdelning eller aktievinst att utjämna mot blir vägen ut ur skalorna överskottsavdraget: sjuttio procent av förlusten dras mot övriga kapitalinkomster. För onoterade delägarrätter gäller sjuttio procent alltid — förlusten på ett onoterat innehav kvoteras till 0,70 oavsett underlag. Ett jämförande exempel med samma tal: förlust 100 000 kronor. Onoterad: avdraget blir 0,70 × 100 000 = 70 000 kronor, värt 70 000 × 0,30 = 21 000 i lägre skatt. Noterad utan utjämningsunderlag alls: överskottsavdraget blir samma 0,70 × 100 000 = 70 000 kronor och samma skattevärde 21 000 — men för den noterade finns det en väg upp till hundra procent: 100 000 kronor i aktievinster eller utdelningar samma år lyfter avdraget till 100 000 kronor och skattevärdet till 30 000 kronor. Skillnaden mellan de två världarna är alltså inte siffran sjuttio — den är dörren som bara den noterade skalans underlag kan öppna. Detta är också skälet till att outnyttjade avdrag inte är förlorade: ett avdrag som inte kunnat användas under året sparas och förs fram till kommande beskattningsår, där nya vinster och utdelningar kan bli det underlag som årets saknade."
+        },
+        {
+          "type": "tabell",
+          "content": "SAMMA FÖRLUST, TVÅ VÄRLDAR (PÅHITTADE TAL, KRONOR): FÖRLUST 100 000 — ONOTERAD AKTIE: avdrag 0,70 × 100 000 = 70 000 · skattevärde 70 000 × 0,30 = 21 000 · NOTERAD AKTIE UTAN UNDERLAG: överskottsavdrag 0,70 × 100 000 = 70 000 · skattevärde 21 000 · NOTERAD AKTIE MED UNDERLAG 100 000 (vinster och utdelningar): avdrag 100 000 · skattevärde 100 000 × 0,30 = 30 000 — skalans dörr · OUTNYTTJAT AVDRAG: sparas till kommande år och kan möta nytt underlag"
+        },
+        {
+          "type": "insight",
+          "content": "Sjuttio är systemets grundhyra för att lämna aktiernas värld; hundra är priset för att stanna i den. En förlusts fulla värde bestäms därför inte bara av hur stor den är, utan av vad den får mötas av — och vilket år."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Tidfällorna — dagkvittning, återförvärv, medelvärde",
+      "intro": "Förlustens värde beror inte bara på belopp och skala utan på dagar. Tre tidsregler flyttar avdrag i tiden — eller tar bort valet att välja.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regel ett: dagkvittningen. Affärer i samma värdepapper samma dag kvittas mot varandra före allt annat — vinst 400 kronor och förlust 600 kronor i samma papper samma dag blir ett enda netto: en förlust på 200 kronor. Poängen är inte räkneexemplet utan vad regeln stänger: samma dags affärer kan inte separeras till olika beskattningsår eller olika skalor — dagen är den minsta räkneenheten. Regel två: återförvärvsregeln, systemets klokaste villkor. Säljs en delägarrätt med förlust och väsentligen samma värdepapper förvärvas igen under en viss tid — räknat från och med den femte dagen före avyttringen till och med den tionde dagen efter — är förlusten inte avdragsgill det året. Den är inte borta: den bärs vidare till nästa avyttring av det nya innehavet. Räkneexempel: förlust 10 000 kronor vid en försäljning måndagen, återköp inom fönstret; när det nya innehavet senare avyttras med vinst 12 000 kronor kvittas den burna förlusten: 12 000 − 10 000 = 2 000 kronor blir beskattningsbart — skatt 0,30 × 2 000 = 600 kronor, mot 0,30 × 12 000 = 3 600 kronor om förlusten hade varit förverkad. Regeln hindrar att en förlust tas ut skattemässigt samtidigt som den ekonomiska exponeringen behålls — samma risk, samma papper, ingen realisation i praktiken. Regel tre: medelvärdemetoden. Vid delavyttring i en depå av likvida tillgångar räknas omkostnadsbeloppet som depåns medelvärde, inte som en vald post. Depå med 100 aktier köpta à 40 kronor och 100 aktier à 60 kronor i samma värdepapper: sammanlagt omkostnadsbelopp 100 × 40 + 100 × 60 = 10 000 kronor, medelvärde 10 000 ÷ 200 = 50 kronor per aktie. Säljs 100 aktier till 55 kronor blir vinsten 100 × (55 − 50) = 500 kronor — frågan vilka av aktierna som såldes, de billiga eller de dyra, går inte att ställa: depån har ett pris, inte två. Tillsammans gör de tre reglerna tiden till en del av avdragsmekaniken — lika bestämande som beloppet självt."
+        },
+        {
+          "type": "tabell",
+          "content": "TIDSREGLERNA (PÅHITTADE TAL): DAGKVITTNING: samma papper samma dag — vinst 400 och förlust 600 → NETTO förlust 200 (en affär, inte två) · ÅTERFÖRVÄRV: sälj med förlust 10 000, återköp inom fönstret femte dagen före till och med tionde dagen efter → avdraget BÄRS vidare · nästa försäljning vinst 12 000 − 10 000 = 2 000 beskattningsbart · skatt 0,30 × 2 000 = 600 (mot 3 600 utan bäring) · MEDELVÄRDE: 100 aktier à 40 + 100 à 60 = 10 000 ÷ 200 = 50 per aktie · sälj 100 till 55 → vinst 100 × (55 − 50) = 500 — lott-val finns inte"
+        },
+        {
+          "type": "insight",
+          "content": "Dagkvittningen sätter minsta räkneenheten, återförvärvsregeln flyttar avdraget i tiden tills risken verkligen lämnas, medelvärdet tar bort spelfältet. Tre regler, en gemensam poäng: systemet beskattar och avdrar verkliga affärer — inte konstruerade."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Förlustens plats — konton, makar och dödsbo",
+      "intro": "Samma kursrörelse, olika konton: förlustavdraget lever bara i en av kontotyperna — och dess liv är personligt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontots form avgör om förlustmekaniken ens finns. I en vanlig aktie- och fonddepå föds förlusten, lever avdraget och sparas det outnyttjade till framtida år — hela denna kurs är depåns värld. I ett schablonkonto — kapitalförsäkring eller investeringssparkonto, sj-05:s och km-052:s område — finns ingen vinstbeskattning och därför ingen förlustavdragsmekanik: kontot beskattas efter kapital och inbetalningar, och en förlust gör sitt avtryck endast genom att sjunka underlaget. Det betyder inte att schablonkontot är fel i varje läge — det betyder att dess förluster inte kan bäras vidare som avdrag, vilket är en mekanisk egenskap värd att känna innan kontot väljs. Utländska aktier följer samma utjämningsmekanik som svenska noterade, men utdelningens källskatt hanteras för sig med sin egen kreditlogik — sj-01:s territorium. Mellan makar gäller utjämning för vissa delar av kapitalinkomsterna — bland annat onoterade delägarrätter och tillgångar utanför aktieskalorna — men inte för marknadsnoterade aktier, vars förluster stannar hos sin ägare. Och i livets ändar är regeln hård men logisk: förlustavdraget är personligt. Ett dödsbo kan använda den avlidnes outnyttjade avdrag i sina egna deklarationer under boets tid — men vid arvskiftet följer avdraget inte med arvingarna, som sj-06 visade från överlåtelsesidan och denna kurs visar från förlustsidan. Optionernas förluster har sin egen beskattning som sj-04 äger; gränsen dras där denna kurs slutar."
+        },
+        {
+          "type": "definition",
+          "content": "DEPÅ (AKTIE- OCH FONDKONTO) — kontot där realisationer beskattas och förlustavdrag föds, sparas och bärs · SCHABLONKONTO — kapitalförsäkring eller ISK: beskattning efter värde och inbetalningar, utan vinst- och förlustmekanik · UTJÄMNING MELLAN MAKAR — tillåten för bland annat onoterade delägarrätter och övriga tillgångar, inte för marknadsnoterade aktier · PERSONLIGT AVDRAG — outnyttjat förlustavdrag följer inte med arv eller gåva; dödsboet använder det under boets tid"
+        },
+        {
+          "type": "insight",
+          "content": "Frågan om en förlust är värd något är alltid två frågor: hur stor är den — och i vilken kontotyp, vilket år och vems namn sitter den? Mekaniken gör samma minus till olika belopp."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — förlustårets fem frågor",
+      "intro": "Den som kan ställa de fem frågorna kan läsa vilket förlustår som helst — det är kursens slutform.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: är förlusten realiserad — är avyttringen gjord, eller är det fortfarande en pappersförlust utan skattemekanisk existens? Fråga två: i vilken skala föddes den — marknadsnoterad, med vägen till hundra procent genom utdelningar och vinster, eller onoterad, med sjuttio som tak? Fråga tre: finns utjämningsunderlag i år — utdelningar och aktievinster som öppnar skalans dörr — och om inte, vad säger det om årets överskottsavdrag och det sparade avdragets framtid? Fråga fyra: har tidreglerna spelat in — dagkvittning som slagit ihop affärer, återförvärv som burit ett avdrag vidare, medelvärde som satt depåns enda pris? Fråga fem: i vilken kontotyp och vems namn sitter förlusten — depå eller schablon, eget eller dödsbo? Fem frågor, två skalor, två tal — sjuttio och hundra. En sista nyans hör hemma i metoden snarare än i reglerna: all denna mekanik är efterhandskunskap. Riskarbetet — hur stor en position överhuvudtaget får vara — görs före köpet, med riskmatris (rs-04) och kapitalförbränningens matematik (v19) som verktyg. Förlustavdraget gör ett inträffat minus mindre onödigt; det gör det aldrig litet. Detta är en kurs i hur svenska regler fungerar som utbildning — hur de tillämpas i ett levande fall är en fråga för deklarationen, de berörda och i svåra fall en rådgivare, och där slutar kursens mandat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna en fingerad deklaration från dessa uppgifter: utdelningar på marknadsnoterade aktier 15 000 kronor; sålda noterade aktier med sammanlagd vinst 25 000 kronor; sålda noterade aktier med sammanlagd förlust 50 000 kronor; såld onoterad aktie med förlust 20 000 kronor. Gå utjämningsordningen steg för steg: hur mycket av den noterade förlusten utjämnas fullt mot underlaget, vad blir överskottsavdraget, vad blir den onoterade förlustens avdrag, och vad blir avdragens sammanlagda skattevärde i kronor? Kontrollera sist mot kapitel två och tre: stämmer trappan och kvoteringen? Övningen ger inget att handla på — den ger vana vid ordningen som allt hänger på."
+        },
+        {
+          "type": "insight",
+          "content": "Vinsten är en historia om en aktie; förlusten är en historia om ett system — skalor, andelar, dagar och kontotyper. Den som kan läsa båda berättelserna kan läsa sin deklaration som den är: en maskin med regler, möjlig att förstå."
+        }
+      ]
+    }
+  ]
+}

@@ -3973,7 +3973,27 @@ kundsynlig tyst-tom lista = dataflödesförsämring av B7-precedensklassen.*
 
 # C. INNEHÅLL & TILLVÄXT
 
-## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-20)*
+
+*Uppdatering 2026-09-20 (dokvåg s9-u2, manifest auto-s9-1789922106888):
+återdiffad — allt EGENMÄTT ~18:3x–19:0x lokal. KÖN 199→320 (+121 på 2 dygn,
+egen find): rot 81 *.json (varav 16 -ar.json — ar-klassen växte 13→16 under
+eftermiddagen), m9-ko/ 7, granskning/ 155 (86 MD + 69 JSON), kvartal/2026-q3
+77 — s3/s4/s5-spåren levererar i full takt. PUBLICERINGSSTOCKEN 55 EXAKT
+ORÖRD: nyaste fil-mtime 2026-09-14 = kunden har publicerat 0 poster på 6
+dygn medan kön vuxit +121; molnbackupens blogg-publicerade-2026-09-20.json
+(6 224 B, 02:40) speglar samma stock = dubbelbevis — flaskhalsen är helt
+uttaget (R2). Speglar LIVE ×2: /en/blogg (lang="en") + /ar/blogg (lang="ar"
+dir="rtl") båda 200; katalogerna bor i (en)/(ar)-grupperna (src/app/(en)/
+en/blogg/page.tsx — spegelytan lever). B2-rutten: GET 405 (metodbevakad,
+oförändrad) + POST tom → 401 "Admin-lösenord krävs" = auth-grinden står
+FÖRE 400-valideringen (fördjupning av 09-15:s metodbevakning). Kodrörelse
+sedan 09-18: våg 201 CTA-gapet på blogg ×3 språk (669447eb) + våg 195
+H1-lyft (47cedad9); blogg-panel.tsx 1 079 r. GRANSKNINGSKO-
+SAMMANSTALLNING.md 265 520 B mtime 13:21Z idag (kundens kö-vy lever).
+Score 8 kvar (mätning utan konsumentskada; B13-precedensen). Kö: kundens
+6-dagars uttagspaus mot +121-könen = kommunikationspost (R2-yta, styrelsen);
+B2-E2E fortfarande oklickad (väntar kundens första knapptryckning).*
 
 *Uppdatering 2026-09-18 (dokvåg s9-u3 3/3, manifest auto-s9-1789709700201):
 kö-census 199 filer (rot 54 · m9-ko 7 · granskning 89 · kvartal/2026-q3 49 —
@@ -4004,7 +4024,7 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
 - **Nyckelfiler:** src/lib/blogg-{utkast,speglar}.ts, src/app/(huvud)/blogg/
   **, src/app/{en|ar}/blogg/**, src/app/api/admin/blogg{,/publicera},
   src/components/ak1a/admin/blogg-panel.tsx, data/blogg/ (55) +
-  data/blogg-utkast/ (199 filer: rot 54 · m9-ko/ 7 · granskning/ 89 · kvartal/2026-q3/ 49, mätt 09-18),
+  data/blogg-utkast/ (320 filer: rot 81 · m9-ko/ 7 · granskning/ 155 · kvartal/2026-q3/ 77, mätt 09-20),
   src/lib/varumarke.ts (kontrolleraText).
 - **Observation:** Hård grindslogik dokumenterad + protokollförd (våg 80b);
   vakten bekräftar 55 poster i prod oförändrade efter utkast-separeringen
@@ -5262,7 +5282,36 @@ oversattning/trafik/sakerhet/akm2_snapshot orörda av raderaren). Score 8 → 7:
 integritetsbilden sämre än kartan visste — oidentifierad daglig raderare i
 kärntabellen + fullständighetskontraktets två blinda fält.*
 
-## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-19)*
+## E34. Drift, backup & DR (Contabo) — LEVER — 9/10 *(uppdaterad 2026-09-20)*
+
+*Uppdatering 2026-09-20 (dokvåg s9-u2, manifest auto-s9-1789922106888):
+återdiffad — allt EGENMÄTT ~18:4x–19:0x lokal. GAP 3 STÄNGT MED LIVE-BEVIS:
+ISR-värmaren 11/44 (09-19 03:11) → 44/44 TVÅ körningar i rad (09-19 23:08
+torkörning + 09-20 03:10:59 nattlig) i den kanoniska källan /tmp/ak1a-varm.log
+— rond 104:s rotkur (b5fc453a 23:09: sitemap-dubbelprefixet /blogg//blogg/
+gjorde ALLA 30 bloggvägar omöjliga att värma sedan våg 98; 09-19-passningens
+"glider nedåt"-fynd var samma rot + transienta natt-timeoutar) har sitt
+efterfrågade live-bevis: 44 varmade, 0 missade. METODNOTIS: pm2-loggens
+[varm]-rader är APPENS omstartsvärmning (34–75 löp/dag) — en annan värmare;
+täckningstalet läses endast i ak1a-varm.log. KRASCHVAKTENS o125-LÄGE BEVISAT
+I DRIFT: state restarts 6 921 · senasteRaddning 12:44:09Z med loggkedjan
+"DEPLOY PÅGÅR (låset upptaget): räddning avvaktar" 12:44:10Z → kooldown
+12:54/13:04 → "ÅTERSTÄLLD … tidigare incidentläke verifierat friskt (grön)"
+16:17:28Z = exakt verkställelseordningen. NATTKEDJAN GRÖN: dump
+33 110 041 B kl 02:30 + markörvakt "1/1 GRÖNA — alla dumpar kompletta
+(6,5 s)" + molnbackup 02:40 komplett (blogg-utkast 71 284 B · medlemmar ·
+termbank · variabel/kurs-metadata) + SÖNDAGSARKIVET 03:20–03:21 (server-repo
+236,8 MB + git-bundle 230,6 MB + nginx-conf + pm2-dump 33,6 kB + crontab);
+retention 10 dumpar (09-11→09-20). Prod HTTPS 200 + loopback 200 (egna
+sonder) · BUILD_ID 16:33:48Z (färsk deploy) · .next-laeke städad (väntat).
+Auditens E34-klasser i drift: next_lakt_ur_backup 28 · deploy_stoppad_
+artefakt 2 · deploy_avbruten 2 · deploy_avstar_goodhead_reset 1 ·
+deploy_revert 1 — läke- och stoppgrindarna instrumenterade OCH använda.
+DRIFTSBOKEN 261 928 B mtime 15:34Z (levande handbok). Score 9 kvar (kuren
+är rond 104:s leverans, ej passningens — E33/B14-precedensen). NY BEVAKNING:
+44/44 kom efter färska byggen — faller talet vid en kall 03:10 är täckningen
+deployberoende; gap 1 (hybrid-sync) + gap 2 (main-slack) + gap 4
+(Storage-restore) kvar som förr.*
 
 *Uppdatering 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789847706174): 07:15Z-rot-frågan
 STÄNGD I ROTTEN — .next-LÄKEBACKUPEN lever i prod-synken (o97/s8-u1): FÖRE
@@ -5370,9 +5419,9 @@ hybrid-sync, ISR 12/44, Storage-media-restore (DR-övningen täckte SQL).*
 - **GAP:** (1) datorns hybrid-sync overifierad (startmappens cmd = gammal
   3-stegsversion, timvis Schemaläggare ej påträffad — DRIFTSBOKEN känd
   brist #3); (2) main ligger efter develop — Vercel-reservens kodslack
-  synkas vid större driftstörningar (manuell rutin); (3) ISR-varmarens
-  täckning 11/44 (09-19 03:11, GLIDER NEDÅT — var 12/44 fem nätter) → 44/44
-  (sökvägslista komplett + diffa mot rutterna så ingen väg tappas); (4) backup-RESTORERINGS-
+  synkas vid större driftstörningar (manuell rutin); (3) STÄNGT 09-19/09-20:
+  rotkuren b5fc453a (dubbelprefix) + live-bevis 44/44 två nätter i rad
+  (09-20 03:10:59; bevakas för deployberoende — se uppdateringen); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
 ## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 9/10 *(uppdaterad 2026-09-20)*

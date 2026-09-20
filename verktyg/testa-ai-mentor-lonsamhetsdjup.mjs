@@ -511,7 +511,10 @@ const GAMLA = [
       "svaraLokaltRiskadress",
       "svaraLokaltBalansdjup",
       "svaraLokaltOptionshantverk",
-      "svaraLokaltMarknadsrytm",];
+      "svaraLokaltPengarstid",
+  // V219-harmonisering (rond 114): pengarstid wireades i widgeten utan svitharmonisering
+  // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
+  "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

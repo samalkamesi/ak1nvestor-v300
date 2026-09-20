@@ -497,7 +497,10 @@ const GAMLA = [
       "svaraLokaltRiskadress",
       "svaraLokaltBalansdjup",
       "svaraLokaltOptionshantverk",
-      "svaraLokaltMarknadsrytm",];
+      "svaraLokaltPengarstid",
+  // V219-harmonisering (rond 114): pengarstid wireades i widgeten utan svitharmonisering
+  // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
+  "svaraLokaltMarknadsrytm",];
   // Syskon-pågående lager (u2:s riskdjup, wirad SIST i widgeten under detta
   // fönster): KÄND men krävs ej — deras commit äger modulen. Vakten underkänner
   // fortfarande OKÄNDA (odokumenterade) komponenter.

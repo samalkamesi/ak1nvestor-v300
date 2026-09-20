@@ -131,3 +131,12 @@ Nummer: o136 reserverat under flock (o117-doktrinen) — "din: true" kontrollera
 före commit. LEVERANS: verktyg/rop-halsa.mjs, verktyg/testa-rop-halsa.mjs,
 verktyg/testa-rop-halsa-cron.mjs, data/infra/contabo/rop-halsa-cron.sh,
 data/forskning/OPTIMERING/o136-rop-halsa-daemonens-puls-s8.md, worklog.md.
+
+## §7 TILLÄGG (2026-09-20T23:05Z) — §5:s 23:04Z-bevakning INFRIAD MED LIVE-BEVIS
+
+23:04:22Z-pollen skrev "ÅTERSTÄLLD: appen svarar=true status=online omstarter
++0 — tidigare incidentläke verifierat friskt (grön)" — o125:s R1-kur stängde
+nattens ÄKTA incident (22:24 KRASCHLOOP-MISSTANKE → misslyckat räddningsbygg →
+manuell läkning 22:31 → maskinell stängning 23:04, 40 min efter detektion).
+State återställd (incidentOppnar borta, kooldown slut). Kurens första
+live-stängning på äkta incident = bevisad i drift. Prod 200.

@@ -16318,3 +16318,35 @@ DR-OVNING-2026-09-20-SENKVALL-KEDJA2-TREKALLA.md, data/forskning/
 DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json, data/forskning/
 DR-KEDJA2-2026-09-20-AUTO-2.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]
 - **2026-09-20 19:45 — auto s1-u3 (1789925707056) m9-3 kassaflodesanalys-101 v2-KANDIDAT GRÖN flyttklar:** bolagsunivers-rörelsen 09-20 07:59 (100→231 bolag) släppte evergreen-regeln → m9-fabrikens TORR-kandidat (md5 `d8e135f5…`, 0 rader skrivna till kön) granskad FÖRE --skriv: 49 kontroller 0 fel — md5 båda källor · 21 tal omräknade ur källfilen (206/231 median 12,7 % · 202/4,2 % metodrobust · 198/0,97/94 · fördelning 86/62/54/21 med delmängdsbevis 86+62+54=202 · topp/botten 5+5 · konverteringstopp CRWD 35,92/FCX 15,48/MELI 6,65) · kortNamn-transformering 12 namn 0 dubbeltkommatecken · juridik 2007:528 ren · 911 0/6 · 3/3 länkar HTTP 200 · diff v1→v2 16 rörda rader alla väntade; C1 frivilligt delmängds-formuleringsförslag + D1 FCX-notis i diff.json. Liggare: granskning/kassaflodesanalys-101-v2-KONTROLL-2026-09-20.md + -diff.json; skript verktyg/_s1u3-m9kassa-v2-kontroll.mjs omkörbart; anspråk disk-först. Kö-skrivning ägs av underhållet; publicering = kundens klick (R2). src orörd = INGET bygge; data-only.
+
+
+## SPÅR 1 s1-u1 (manifest auto-s1-1789925707056, granskningskön 1/3) — 2026-09-20 kväll: ASML Q3-PAKETET GRANSKAT (pivot från m9 #1) — FLYTTKLAR EFTER RÄTTNINGAR; två superlativ FALSKA mot egen källa (JPMorgan-klassen) [fabrik]
+
+Fabriksagent s1-u1. PIVOT enligt köregeln: m9-familjen 6/6 FLYTTKLAR sedan 09-16/19 (m9 #1
+dubbelgranskat) — objekt = tidigaste ogranskade rappdagen bland 49 kvartalspaket utan
+KONTROLL: ASML 2026-10-14 (teknikgrenens sjunde, seriens första Nederländerna-bolag; klaim
+disk-först). ~180+ maskinella kontroller mot paketets egna källor: universumfält 19/19
+EXAKTA (byggvindan = 219-filan ur git 571384b1), rankningar 16/16 EXAKTA (ROE 2/22, PEG
+4-lägst/18, börsvärde 9/22 …), grenmedianer 15/15 EXAKTA (teknikgrenen 22 bolag oförändrad
+mellan bygg och dag), universummedianer 7/7 exakta MOT BYGGET, Datavakten 31/31 (EV-kedjan
+525,89 < mcap med nettokassan 5,6 i vägen; PEG 0,6526; CAGR-tripeln 15,55/19,55/15,44),
+övningarna A 20/20 · B 10/10 · C 9/9 celler med kalibreringscellen 28,34 × 50,07 = 1 419
+EXAKT, kalendern LIVE-DUBBELVERIFIERAD mot ASML:s egna resultsidor (Q1 ons 15/4 med 8,8
+mdr/53,0 %/7,15 €/R&D 1,2 · Q2 ons 15/7 med 9,3 mdr/54,0 %/7,59 € · Q3 ons 14/10
+konfirmerad Multi-källor ~07:00), juridikgrind REN (förbjudna fraser 0/26, alla
+rådträffar negerade, 2007:528 2 kap 5 § ensamt), 911 = 0, interna länkar 21/21 i live-
+sitemapen, disk-påståenden 6/6 (59:e på disk = git ls-tree, sex syskon, kalenderluckan
+sann). FYND: F1 [VÄSENTLIG] titel+urval+övning A-påståendet "universumets ENDA fyraåriga
+FCF-serie" FALSKT — 57 bolag i byggfilen bär serien, 8 i teknikgrenen (ORCL/Samsung/TCS
+med bland dem); ASML:s egen post noterar ifyllnaden som BASF/PFE-precedens = precedens
+bevisar icke-unikum. F2 [VÄSENTLIG] "universumets färskaste" FALSKT — 81 poster hämtade
+efter 09-16 vid byggtid. C1 description EV-gap 0,76→0,77 (trunkering). C2 övning-C-ankaret
+24,10→24,09 + celler 1 207→1 206, 1 446→1 445. C4 vågvalderings-lucknotis saknas (förslag,
+Tele2-precedensen). R1-notis: sex universummedianer glidna 219→231 (ingen tekniktilväxt;
+inget påstående vänder — sant mot byggtiden, flyg-B1-kursen kräver ej verkställning).
+DOM: FLYTTKLAR EFTER RÄTTNINGAR (F1a–d, F2, C1, C2; C4 förslag) — diff med 8 unika
+find→replace-poster levererad, utkastet orört (granskarens ägo = rapport + diff).
+KVD: src/ orörd = INGET bygge · R2 orörd (priser/publicering ej berörda) · data/blogg/
+(live) orörd · syskonytor orörda. LEVERANS: granskning/sa-laser-du-asml-q3-2026-KONTROLL-
+2026-09-20.md, granskning/sa-laser-du-asml-q3-2026-diff.json, data/vakten/auto-s1-
+1789925707056-s1-u1-ansprak.md, worklog.md [fabrik]

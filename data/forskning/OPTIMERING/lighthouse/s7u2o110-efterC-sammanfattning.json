@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-20T09:29:43.445Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u2o110-efterC",
+  "sidor": [
+    {
+      "sokvag": "/en/blogg",
+      "poang": {
+        "prestanda": 0.61,
+        "tillganglighet": 1,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1240,
+        "LCP": 4381,
+        "TBT": 1091,
+        "CLS": 0,
+        "TTI": 4381,
+        "SI": 2982
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 50 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 50 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 480 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 480 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "1.1 s",
+          "rad": "JavaScript execution time — 1.1 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "3.3 s",
+          "rad": "Minimize main-thread work — 3.3 s"
+        }
+      }
+    }
+  ]
+}

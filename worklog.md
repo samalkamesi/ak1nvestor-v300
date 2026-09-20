@@ -16275,3 +16275,45 @@ GRÖN) · kedja 3-konfigsnapshot 6==6 nästa söndag · kvartalssvitens --fil-ap
 kontroll · dr-rpo-diff --projekt-app har nu en kedja. Protokoll: DR-OVNING-
 2026-09-20-DUBBELPROJEKT-KUR.md + DR-APPDUMP-2026-09-20-KUR.json.
 LEVERANS: verktyg/dumpa-app-db.sh, data/forskning/DR-OVNING-2026-09-20-DUBBELPROJEKT-KUR.md, data/forskning/DR-APPDUMP-2026-09-20-KUR.json, data/vakten/crontab-före-s10u3-2026-09-20.txt, data/vakten/auto-s10-1789923906930-s10-u3-ansprak.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]
+## SPÅR 10 s10-u3 (andra instansen — pivot KEDJA-2-TREKÄLLA, manifest auto-s10-1789923906930) — 2026-09-20 19:10–19:4x lokal: KEDJA-2-ÅTERUPPTAGNING (replik) + TREKÄLLAKONTRAKT + AUFR-SKYDDSMATRIS — 372/373 public-tabeller utan kedja-2-skydd före kvällens kür-blad; dump-kedjorna arkiv/offsite-oskyddade (nytt gap) [fabrik]
+
+Fabriksagent s10-u3 (vakt, ANDRA instansen). SLOTKOLLISION + PIVOT (D24):
+ursprungsanspråket (DUBBELPROJEKT-KUREN, låst 19:08) ägdes av en LEVANDE
+förstainstans (process-träd bevisat: zcode → /tmp/s10u3-kur-ovning.mjs →
+pg_dump mot aufr start 19:19; blad 88,3 MB landat 19:25) — kollisionsnotis +
+pivoterat anspråk disk-först 19:26, kurens ALLA ytor lämnade orörda;
+förstainstansen fullbordade själv (ff1eea41). MITT OBJEKT (duplikatkontroll
+19:10–19:25: rkaq ×4, äldsta-bladet 09-16, offsite 09-19, aufr-kväll u2 —
+men KEDJA-2-restore-serien pausad sedan 09-17 och trekällan/matrisen aldrig
+mätta): (1) ÅTERSTÄLL: node verktyg/dr-kedja2.mjs OMODIFIERAT på nattens
+system-events-full-2026-09-20.json.gz → AUTO-2 GRÖN exit 0 · RTO 36,9 s ·
+radkontrakt EXAKT 168 696==168 696==unika id · 0 felaktiga/0 dubblett —
+REPLIK mot u2-andra-instansens samtidiga AUTO 34,3 s (c954a0b9; overlap
+bokförd öppet, mitt = tredje instansens replik, ej förstabevis; determinism
+dag 4). (2) TREKÄLLA system_events: JSON 02:40 168 696 → kür-blad 19:25
+170 175 (+1 479 · 88,6 r/h) → levande 19:31 170 439 (+264) — burstens rot
+EGENMÄTT: 276 nya sedan 19:19, 100 % typ trafik (0 översättningar) ≈ 23
+r/min söndagskväll; bladets summaPublic 182 378 mot u2:s REST 182 331 = ±47
+(tväriktometrar). (3) PER-TYP: 10/10 truncerad=false · medlemmar 3 EXAKT.
+(4) SKYDDSMATRIS (bladets hela COPY-inventering, en strömpass 21,8 s,
+endast antal): 373 public-tabeller (102 icke-noll/271 tomma) · scheman
+auth 27/cron 2/realtime 8/storage 8/migrations 1/vault 1 — kedja 2 täcker
+1/373 (system_events = 93,3 % av rader, 0,3 % av tabeller); 101 icke-noll-
+tabeller med 12 203 rader (user_activities 6 271 · autonomous_system_
+evolution 1 359 · agent_swarm 1 000 · learning_feedback_loops 714 ·
+ai_performance_metrics 437 + 96 fler) hade INGET skydd före kür-bladet =
+historiens första fulla aufr-backup; NYTT GAP F3: data/backups-kedjorna
+exkluderas ur SÅVÄL söndagsarkivet (UTESLUTNA prefix) SOM offsite-kontraktet
+(endast db-snapshot.sqlite) — dumparna lever endast på servern. Maskinell
+matris: DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json. (5) STÄDNING LOKAL PG:
+finally + oberoende 19:31 (ak1a_dr_json borta · PG17 down · lås fritt).
+PREDIKTIONSDOM 7 ✓ + 1 halv + 1 ✗ = 7,5/9 (P6 ✗ rot trafikburst; P8 "≥4"
+blev 372/373; P7 halv — 10 filer ej 11, kärkontraktet höll). KVD: src/
+orörd = INGET bygge · R2 orörd · GDPR endast antal/typer/tider · data/blogg/
+orörd · data/backups ENDAST LÄST · syskonytor orörda. Kö: F3-arkivgapet
+(söndagsarkivet/offsite inkludera dump-kedjorna — verktygsvåg) ·
+dubbelfödelsen imorgon 02:30 (rkaq blad 11) + 02:50 (första autonoma
+db-app-bladet) · dr-rpo-diff.mjs --projekt-app. LEVERANS: data/forskning/
+DR-OVNING-2026-09-20-SENKVALL-KEDJA2-TREKALLA.md, data/forskning/
+DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json, data/forskning/
+DR-KEDJA2-2026-09-20-AUTO-2.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]

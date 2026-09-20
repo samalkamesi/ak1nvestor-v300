@@ -3032,3 +3032,48 @@ första rad + db-app-2026-09-21.sql.gz GRÖN (DUBBELPROJEKT-jungurkvitto) ·
 kedja 3:s konfigsnapshot nästa söndag bär rad 6 (6==6) · kvartalssviten
 får --fil-app-bladkontroll · dr-rpo-diff.mjs --projekt-app (u2-läxa) har
 nu en kedja att mäta mot.
+
+## S10-U3 (ANDRA INSTANSEN, pivot) — KEDJA-2-TREKÄLLA + AUFR-SKYDDSMATRIS: 372/373 public-tabeller hade INGET kedja-2-skydd före kvällens kür-blad; dump-kedjorna själva arkiv/offsite-oskyddade (2026-09-20 19:10–19:4x lokal, GODKÄNT)
+
+- **Slotkollision + pivot (D24):** dispatchen visade slotens ursprungsanspråk
+  (DUBBELPROJEKT-KUREN) ägas av en LEVANDE förstainstans (process-träd
+  zcode → /tmp/s10u3-kur-ovning.mjs → pg_dump mot aufr 19:19) — kollisions-
+  notis + pivoterat anspråk disk-först 19:26, kurens ytor orörda; första-
+  instansen fullbordade själv (ff1eea41). Overlap med u2-andra-instansen
+  (c954a0b9, dr-kedja2 AUTO 34,3 s) bokförd öppet: min körning = tredje
+  instansens REPLIK, aldrig förstabevis.
+- **Kedja-2-restore REPLIK (dr-kedja2.mjs OMODIFIERAT):** nattens artefakt
+  system-events-full-2026-09-20.json.gz (27,8 MB) → RTO **36,9 s** ·
+  radkontrakt EXAKT 168 696/168 696/unika 168 696 · 0 felaktiga · 0
+  dubblett-id · serien (pausad sedan 09-17) nu dubbelbevisad samma kväll —
+  determinism dag 4 (34,3/36,9 s).
+- **Trekällakontraktet system_events:** JSON 02:40 = 168 696 → kür-bladet
+  19:25 = 170 175 (+1 479 på 16,7 h ≈ 88,6 r/h) → levande 19:31 =
+  170 439 (+264). Burstens rot: **276 nya rader sedan 19:19, 100 % typen
+  trafik** (0 översättningar, 0 säkerhet) ≈ 23 r/min söndagskväll —
+  RPO-mätare som antar jämn tillväxt underskattar toppminuter.
+- **Skyddsmatrisen (P8 kraftigt underskattat):** bladets hela COPY-
+  inventering (en strömpass 21,8 s): **373 public-tabeller** (102 med
+  rader, 271 tomma), 182 378 rader + auth 27/cron 2/realtime 8/storage 8/
+  migrations 1/vault 1. Kedja 2 täcker **1/373** (system_events = 93,3 %
+  av raderna men 0,3 % av tabellerna): **101 icke-noll-tabeller med
+  12 203 rader** (user_activities 6 271 · autonomous_system_evolution
+  1 359 · agent_swarm 1 000 · learning_feedback_loops 714 ·
+  ai_performance_metrics 437 + 96 fler) hade INGET skydd före kür-bladet
+  19:25 — historiens första fulla aufr-backup. Maskinell matris:
+  DR-KEDJA2-SKYDDSMATRIS-2026-09-20.json.
+- **NYTT GAP (F3):** data/backups-kedjorna (rkaq-blad, db-app-blad,
+  moln-JSON) exkluderas ur SÅVÄL söndagsarkivet (arkivera-server.mjs
+  UTESLUTNA prefix) SOM offsite-kontraktet (endast db-snapshot.sqlite) —
+  dump-kedjorna lever endast på servern. Kö-post till spåret.
+- **Städning lokal PG:** verktygets finally + oberoende egenmätt 19:31:
+  ak1a_dr_json borta · PG17 down (viloläge) · DR-lås frigjort.
+- Prediktioner P1–P9 låsta 19:26:38 FÖRE mätning — dom **7 ✓ + 1 halv +
+  1 ✗ = 7,5/9** (P6-missens rot = trafikburst; P8:s "≥4" blev 372/373).
+  Protokoll: DR-OVNING-2026-09-20-SENKVALL-KEDJA2-TREKALLA.md ·
+  maskinellt DR-KEDJA2-2026-09-20-AUTO-2.md.
+- KVD: src/ orörd = INGET bygge · R2 orörd · GDPR endast antal/typer/
+  tider (radinnehåll och nycklar ALDRIG loggade) · data/blogg/ orörd ·
+  data/backups ENDAST LÄST · syskonytor orörda (ff1eea41/c954a0b9
+  verifierade). Kö: F3-arkivgapet värdar en verktygsvåg · dubbelfödelsen
+  02:30/02:50 imorgon natt · dr-rpo-diff.mjs --projekt-app.

@@ -1,1 +1,1 @@
-studio: rond 125 bokföring [organ:Φ] — worklog + launchers; F3-api 0 öppna (prod-lage 80→29)
+studio: rond 126 [organ:Φ] — F6-stängning av prod-osvarar-familjen: 5 fynd bedömda med bevis (D deploy-fönster med exakt Δ-sekundcitat ur synkloggen + P patch-kö-stopp 16:28:09 exakt sekundmatch); RAM-minnesspåret orört (egen evidensregel rond 127); fyndfilen orörd, 0 matchlösa

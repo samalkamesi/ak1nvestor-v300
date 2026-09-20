@@ -2967,6 +2967,47 @@ KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd
 anspråk + pivot-redogörelse gitignorerad väg data/vakten/) · commit med
 pathspec + -F-fil. [fabrik]
 
+## UPPDATERING 2026-09-20 (dokvåg s9-u3 omkörning, manifest auto-s9-1789898701601 — B10 + B11 + B12 diffade mot verkligheten; B12:s mätblindhetsklausul MOTBEVISAD: o68-kuren landad + journalförda gröna mätningar)
+
+Fabriksagent s9-u3 omkörning (föregångar-barnet i samma slot levererade
+D21+D25+E31 och committade själv 2967dc55 + precisering 1873f98e — deras
+yta orörd här). VAL med duplikatkontroll FÖRE mätning (karta + worklog
+genomlästa): nästa fria objekt = B10 + B11 + B12, äldsta kvarvarande
+kohorten (stämplade 09-18) och disjunkt mot allt i manifestet (u1 A5 ·
+u2 C17+E29 samt u2:s omfördelade m9-GRANSKNING §9 · föregångaren
+D21+D25+E31). Allt EGENMÄTT 2026-09-20 12:17–12:3x lokal — curl-sonder,
+node-räkning, git-log, journalläsning, motorvalidering i egen körning;
+aldrig worklog-läsning.
+
+| Mått | Kartan 09-18 | Verkligheten 2026-09-20 (mätning) |
+|---|---|---|
+| B10 /konfluens + API | 200 + LEVANDE 11:48Z | **200 ×2 vägar (loopback + prod) + LEVANDE 10:17:44Z** (egen sond): 10 rader, 10/10 med datakallor ≥3, 2 klassade (SHB-B + HM-B, båda "Vågor utan värdegolv"), toppkonfluens ESSITY-B/HM-B 43 |
+| B10 motor + filrörelse | 107/0/0 · orört sedan 09-11 | **107/0/0 ånyo (6,6 s, exit 0)** · konfluens-motor.ts 493 r oförändrad (83e55152 09-02) · 0 commits på B10-ytan sedan 09-18 (mätt) |
+| B10 gap 1/2/3 | svit saknas · historik olagrad · B13-koppling konceptuell | **0 testa-konfluens\*** · motorn orörd ⇒ ingen persistens tillkommen · **0 import konfluens↔portfolj-forskning åt båda hållen** (återmätt) |
+| B11 /netnet + API | 200 + LEVANDE 11:48Z, 25 rader | **200 ×2 vägar + LEVANDE 10:18:26Z**: 25 rader (universumet fortfarande fast 25), VOLV-B.ST kurs 333 (live-flödet lever; 330,2@09-16 · 335,9@09-18) |
+| B11 klassbild | ej redovisad | **FÖRSTA KARTMÄTNINGEN: 19 "ej" · 6 utan klass · 0 NET-NET/NÄRA** — närmast NCC-B förhållande 4,31 mot golvet 0,67 (realistiskt i högkonjunktur; inget trasigt) |
+| B11 cache + filrörelse | sonden refreshade 25 filer | **25 netnet-cachefiler refreshade 12:18 lokal av denna vågs sond** (lasEllerHamta-leddet lever) · netnet-motor.ts 292 r oförändrad (732dcce9 09-02) |
+| B11 gap 2/3 | 25-listan fast · svit saknas | **25-listan oförändrad i komponenten** (mätt) · **0 testa-netnet\*** |
+| B12 ytor + FOMO-kur | 200 båda · kur live (rad 467) | **200 ×2 vägar × båda sidorna** · kur-strängen lever (superanalys.tsx:470) · radtal 507/752/1 411 samtliga oförändrade, 0 commits sedan 09-18 (sista beröring 1f43c167 09-17) |
+| B12 mätblindhet | "finns EJ i FALLBACK_SIDOR (6 sidor) — ytan rutinmäts ej" | **MOTBEVISAD**: o68 (057f8446, landad 09-18 11:33:51Z) utökade FALLBACK_SIDOR 6→8 med just /superanalys + /kalkylator (granssnitt-urval.mjs:31–40, egen läsning) + rotkurerade rotationsblindheten ⇒ **första cron-svepet efter landningen (11:35Z, +2 min) mätte BÅDA sidorna GRÖNT (8 kombos, 0 fel)**; vakt-sidjournalen 463 poster bär dem journalförda: /kalkylator 17:30:52Z · /superanalys 23:30:03Z, gröna 4-kombo-mätningar i rapporterna 1730/2330 (kontrast/klippt/utanför/överflöd tomma) — o68:s prognos infriad till punkt och pricka; deras bokade RAM-gated --sidor-mätning överflödiggjord av det organiska svepet |
+| B12 gap 1/2 | 0 egna sviter · E2E extrema värden | **0 testa-superanalys\*** (mätt) · oförändrat |
+
+Dom: B10 **LEVER 7**, B11 **LEVER 6**, B12 **LEVER 7** — samtliga orörda
+(E33/B14-precedensen: mätningar + en annan vågs kur ger ingen
+kapabilitetspoäng; B12:s mätblindhetsklausul var ett preciseringsfynd,
+inte numrerat gap). Snitt **7,5/284/38 OFÖRÄNDRAT**.
+
+Kö: (a) B10 gap 1 = billig nästa våg (testa-konfluens-motor med frysta
+fixtures, netnet-determinismens mönster 09-13); (b) B11:s klass-semantik
+(6 rader med forhallande=null varav 2 klassade "ej" — NCAV-underlag
+saknas) förtjänar en motorkommentar vid nästa beröring; (c) B12 helt
+stilla — ingen åtgärd.
+
+KVD: data-only (karta + worklog) — src/ orörd = INGET bygge (deploy ägs
+av prod-synken under lås; tsc-baslinjen vilar i pre-commit-grinden) ·
+R2 orörd · data/blogg/ orörd · syskonytor orörda · commit med pathspec
++ -F-fil. [fabrik]
+
 ---
 
 # A. UTBILDNINGENS KÄRNA
@@ -3563,7 +3604,7 @@ live av /api/data/vagstatistik; 0 UI-konsumenter kvar). Score 8 → 7
 (B14-precedensklassen: systemets egna dokumenterade dataflöde — daglig
 historik + kvartalsgalleri — faller ifrån i roten).*
 
-## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+## B10. Konfluensradarn — LEVER — 7/10 *(uppdaterad 2026-09-20)*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 5): första egna prod-sonden av
 radarn — /konfluens 200 + /api/konfluens LEVANDE med färsk tidsstämpel
@@ -3592,6 +3633,18 @@ enda textuella bryggan är stilkommentaren vag-stil.tsx:196 ("bandmönster
 från konfluensradarn"). Score 7 orörd (E33/B14-precedensen — inga gap
 stängda).*
 
+*Uppdatering 2026-09-20 (dokvåg s9-u3 omkörning, manifest
+auto-s9-1789898701601): tredje varvet — /konfluens 200 (loopback + prod,
+egna sonder) + /api/konfluens LEVANDE färsk (genererad
+2026-09-20T10:17:44Z): 10 rader, 10/10 med datakallor ≥3, 2 klassade
+(SHB-B + HM-B, båda "Vågor utan värdegolv"), toppkonfluens ESSITY-B/HM-B
+43. Motorvalideringen 107/0/0 (6,6 s, exit 0) — ånyo grönt. Filerna
+fullständigt stilla: 0 commits på B10-ytan sedan 09-18 (git-bevis;
+motorn 493 r oförändrad sedan 83e55152 09-02). Alla tre gap återmätta
+öppna: ingen testa-konfluens* i verktyg/ · motorn orörd ⇒ ingen
+historikpersistens tillkommen · 0 import mellan konfluens-{motor,tabell}
+och portfolj-forskning åt båda hållen. Score 7 orörd.*
+
 - **Vad:** Väger värde mot vågor: värdegolv först, fundamental vågstart +
   prisvågläge därefter; fem oberoende källor måste tala samman.
 - **Nyckelfiler:** src/lib/konfluens-motor.ts (493 r), src/app/(huvud)/
@@ -3608,7 +3661,7 @@ stängda).*
   (teorikonsensus per horisont) är ett ANNAT mått än radarns
   datakällkonsensus; enda bron är stilkommentaren vag-stil.tsx:196.
 
-## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-18)*
+## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-20)*
 
 *Uppdatering 2026-09-13: motorvalideringen kör nu 107 PASS / 0 FAIL /
 0 SKIP (6,4 s) — determinismfelet (VOLV-B.ST 340.3≠340.4) är borta och
@@ -3637,6 +3690,20 @@ Filerna orörda sedan 09-11 (git-bevis; netnet-motorn 292 r oförändrad mot
 kartan). Gaps oförändrade: egen svit saknas fortfarande (ingen
 testa-netnet*), 25-listan fast. Score 6 orörd.*
 
+*Uppdatering 2026-09-20 (dokvåg s9-u3 omkörning, manifest
+auto-s9-1789898701601): tredje varvet — /netnet 200 (loopback + prod,
+egna sonder) + /api/netnet LEVANDE färsk (genererad 2026-09-20T10:18:26Z):
+25 rader = universumet fast 25 fortfarande; VOLV-B.ST kurs 333
+(live-flödet lever; 330,2@09-16 · 335,9@09-18); sonden refreshade 25
+netnet-cachefiler (12:18 lokal — lasEllerHamta-leddet lever). Klassbilden
+mäts FÖRSTA GÅNGEN i kartan: 19 rader "ej", 6 utan klass, 0 NET-NET/NÄRA
+— närmast NCC-B förhållande 4,31 mot golvet 0,67 (realistiskt i
+högkonjunktur; inget trasigt, men 6 rader saknar NCAV-underlag — se kö).
+Motorvalideringen 107/0/0 (6,6 s) — determinismgrenens underlag grönt.
+Filerna stilla: netnet-motorn 292 r oförändrad (732dcce9 09-02), 0
+commits sedan 09-18. Gaps oförändrade: 0 testa-netnet* · 25-listan fast
+(mätt i komponenten). Score 6 orörd.*
+
 - **Vad:** Skär 25 svenska/nordiska bolag mot Grahams net-net-kriterium
   (kurs < 2/3 × NCAV), sorterad på kurs/NCAV med NET-NET/NÄRA-markering.
 - **Nyckelfiler:** src/lib/netnet-motor.ts (292 r), src/app/(huvud)/netnet,
@@ -3654,7 +3721,7 @@ testa-netnet*), 25-listan fast. Score 6 orörd.*
   beslutas (listan mätt oförändrad 2026-09-16); (3) egen testsvit saknas
   (mätt 2026-09-16).
 
-## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+## B12. Superanalysen + AKM1-kalkylatorn — LEVER — 7/10 *(uppdaterad 2026-09-20)*
 
 *Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9): FOMO-kuren LEVER
 i prod — granskningsstegets "Sista chansen att justera innan resultatet" →
@@ -3666,6 +3733,23 @@ gränsnittsvaktens FALLBACK_SIDOR (granssnittsvakt.mjs:68, 6 sidor; 0
 vaktrapporter med sidorna, egen sökning) — ytan rutinmäts ej. Båda sidorna
 200 live. Gap 1 lever (fortfarande 0 egna sviter). Score 7 kvar —
 textkur + preciseringsfynd, ingen kapabilitetsrörelse (E33/B14).*
+
+*Uppdatering 2026-09-20 (dokvåg s9-u3 omkörning, manifest
+auto-s9-1789898701601): 09-18:s mätblindhetsklausul ("finns EJ i
+FALLBACK_SIDOR — ytan rutinmäts ej") MOTBEVISAD OCH KURAD — av s8-u2:s
+våg o68 (057f8446, landad 09-18 11:33:51Z): FALLBACK_SIDOR 6→8 med just
+/superanalys + /kalkylator (granssnitt-urval.mjs:31–40, egen läsning)
+plus rotationsblindhetens rotkur ⇒ första cron-svepet efter landningen
+(11:35Z, +2 min) mätte BÅDA sidorna GRÖNT (8 kombos, 0 fel) och
+vakt-sidjournalen (463 poster) bär dem journalförda: /kalkylator
+17:30:52Z · /superanalys 23:30:03Z, gröna 4-kombo-mätningar i
+rapporterna 1730/2330 (kontrast/klippt/utanför/överflöd samtliga tomma)
+— o68:s prognos infriad; ytan rutinmäts NUMERA. Övrigt stilla: 200 ×2
+vägar × båda sidorna (egna sonder), FOMO-kur-strängen lever
+(superanalys.tsx:470), radtal 507/752/1 411 oförändrade, 0 commits sedan
+09-18 (sista beröring 1f43c167 09-17). Gap 1 lever (0
+testa-superanalys*). Score 7 orörd — klausulens kur är en annan vågs
+leverans (E33/B14-precedensen).*
 
 *Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 6): gap 3 MOTBEVISAT,
 kärnobservationen nyanserad, testbilden preciserad. (1) Kalkylatorn HAR länkar

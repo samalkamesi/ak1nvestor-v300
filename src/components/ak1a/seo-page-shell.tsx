@@ -1,7 +1,7 @@
 import { TemaVaxlare } from "@/components/ak1a/tema-vaxlare";
 import { Huvudmeny } from "@/components/ak1a/huvudmeny";
 import { Mobilmeny } from "@/components/ak1a/mobilmeny";
-import { NastaSteg } from "@/components/ak1a/nasta-steg";
+import { NastaStegLatad } from "@/components/ak1a/nasta-steg-latad";
 import { Sidfooter } from "@/components/ak1a/sidfooter";
 import { SidfooterServer } from "@/components/ak1a/sidfooter-server";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
@@ -22,6 +22,10 @@ import type { SprakId } from "@/lib/sprak";
  * hydratisering av footerns 81 element; speglarnas TBT-börda sv 316 →
  * en 994/ar 616 ms). Utan lang (eller lang="sv") används klientbindningarna
  * med oförändrat MGTM-beteende — sv-sidornas DOM och JS är identiska.
+ *
+ * o118 (spår 7, o105 §6 post 3): NastaSteg hämtas via dynamic ssr:false
+ * (nasta-steg-latad.tsx) — widgeten har SSR=null-kontrakt och lämnar därmed
+ * ALLA shell-sidors kritiska chunk + hydratisering utan DOM-förändring.
  */
 export function SeoPageShell({
   breadcrumb,
@@ -71,7 +75,7 @@ export function SeoPageShell({
             cv-nasta-steg (o78): ligger under innehållet på alla shell-sidor —
             content-visibility hoppar rendering tills den närmar sig vecket. */}
         <div className="pt-10 cv-nasta-steg">
-          <NastaSteg />
+          <NastaStegLatad />
         </div>
       </div>
       {spegel ? <SidfooterServer lang={lang} /> : <Sidfooter />}

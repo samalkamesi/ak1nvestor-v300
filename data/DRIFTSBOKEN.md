@@ -2806,6 +2806,40 @@ Kö: u3:s replik (determinismens fjärde korsbevis) · blad 11 födelsebevis
 retention db-2026-09-11 (~10–11) · DUBBELPROJEKT-kuren består (appens
 RPO-gap ~2 100/dygn är priset tills crontab db-app-*.sql.gz landar).
 
+## S10-U2 (manifest auto-s10-1789923906930) — APP-DB KVÄLLSPUNKT 4: söndagens eftermiddag REDAN i kvällstakt (132,0 r/h = 0,74× lördag — ingen trappa på söndagen) + läran "fönstermedel ≠ fas" (3 systematiska tillväxtmissar) — 2026-09-20 19:08–19:2x lokal, GODKÄNT
+
+Agent: s10-u2 (vakt 2/3). VAL: kvällsfasen saknades för dagen (rkaq ×3 +
+aufr dagpunkt + u3-replik levererade till 12:48; kö :2587 "kvällspunkt APP
+= kvällsfasens tvåpunktsbas" — söndagskvällen osampad). Körning OMODIFIERAT
+`node verktyg/dr-appdump.mjs`, prediktioner låsta på disk FÖRE (P1–P11).
+Resultat: dump **177,7 s · 84,2 MB** slutmarkör GRÖN (COPY 420/CREATE 418)
+→ skrap-PG17 → **RTO 22,2 s** · fel 109/0 med fellogg sha256 **IDENTISK
+tredje dagen** · universum EXAKT ×4 (372/380/417) · system_events
+**170 174** · user_activities **6 271** · public 182 331 · dekomposition
+EXAKT: public +1 188 = SE +861 + UA +327 (fjärde punkten två-skrivare ·
+övriga 370 stilla). **FYND:** medeltakt 12:41→19:12 = 132,0 r/h = 0,74×
+lördagskvällen — dagfasens 0,75×-kvot speglad i kvällen; söndagen = tvåläge
+(låg förmiddag ~35, sedan ~132-platå in i kvällen), trefasmodellens
+trappa gäller endast lördag. **Prediktion 7/11 + P11-dom; P1–P3 missade
++74/+21/+381 — alla i tillväxtriktningen; rot: modellerna tog
+MIDDAG-punktens 61,6 (ett 10 h FÖNSTERMEDEL av natt 103 + förmiddag ~35)
+som fas-platå. KUR: fönstermedel ≠ fas — tvålägesprofil per veckodag
+härefter.** RPO-gap mot ENDA kopian (02:40-JSON): **1 478 rader vid
+19:12** (16,5 h ålder) · delprognos 02:40 09-21: **[170 950, 171 250]**
+(triangel 171 080) — MIDDAG-bandet [170 600, 171 100] i gränsfall om
+platån håller (+985-scenariot slår taket); avgörs 02:40 två vägar. Städning
+OBEROENDE: PG17 down · /tmp-dumpkatalog borta (GDPR) · dött flock-lås
+(egen pid) städat · retention 10 blad oröda · disk 56 G. KVD: src orörd =
+INGET bygge · R2 orörd · data/blogg orörd · syskonytor orörda · commit med
+pathspec. Protokoll: data/forskning/DR-OVNING-2026-09-20-KVALL-APP-4.md +
+maskinellt DR-APPDUMP-2026-09-20-KEDJA0-3.md/.json · anspråk
+data/vakten/auto-s10-1789923906930-s10-u2-ansprak-kvall-app-4.md.
+
+Kö: 02:40 09-21 dubbelprognos-dom (MIDDAG vs KVÄLL-band) + blad 11
+födelsebevis · fasprediktion på tvåläge per veckodag (aldrig
+fönstermedel) · DUBBELPROJEKT-kuren består · UA mätt i tre faser (13,9 dag
+sön · 50,2 kväll sön · 61,2 kväll lör) men oskyddad i alla kedjor.
+
 ## S10-U1 (manifest auto-s10-1789900509524) — BLAD 10:S FÖRSTA DAGPUNKT: klockformel 8×40 EXAKT + pumpbatchen LANDAD (blad-11 förhandsverifierat levande) — 2026-09-20 12:38–12:42 lokal
 
 - **Val (anspråk disk-först 10:38:55Z, P1–P9 låsta FÖRE mätning):** blad

@@ -16202,3 +16202,45 @@ kund/R2 GitHub-nyckeln. LEVERANS: data/forskning/DR-OVNING-2026-09-20-KVALLS-
 JUNGRU.md, data/forskning/DR-PROV-2026-09-20-AUTO-4.md, data/forskning/DR-RPO-
 DIFF-2026-09-20-KVALL.json, data/vakten/s10-u1-kvallsdr-2026-09-20-ansprak.md,
 data/DRIFTSBOKEN.md, worklog.md. [fabrik]
+
+## SPÅR 10 s10-u2 (auto-s10-1789923906930, vakt 2/3) — 2026-09-20 19:08–19:2x lokal: DR-ÖVNING KVÄLLSPUNKT APP-DB 4 — söndagen har INGEN trappa: eftermiddagen redan i kvällstakt 132,0 r/h (0,74× lördag = dagfasens spegelkvot) + läran FÖNSTERMEDEL ≠ FAS [fabrik]
+
+Fabriksagent s10-u2, order "DR-övning nästa i spåret: återställ, mät
+tid/rader, protokoll, städa lokal PG". VAL disk-först (anspråk 19:08:34,
+prediktioner P1–P11 låsta FÖRE): rkaq ×3 + aufr-dagpunkt + u3-replik
+levererade till 12:48 — kvällsfasen saknades hela dagen; DRIFTSBOK-kön
+:2587 ("kvällspunkt APP = kvällsfasens tvåpunktsbas", söndagskvällen
+osampad). KÖRNING OMODIFIERAT node verktyg/dr-appdump.mjs (7 steg GRÖN,
+exit 0, RAM-grind 1 806 MB passerad): dump aufr 177,7 s · 84,2 MB ·
+slutmarkör GRÖN (COPY 420/CREATE 418) → skrap-PG17 (var stoppad) → restore
+RTO 22,2 s · fel 109/0, fellogg sha256 IDENTISK tredje dagen i rad ·
+universum EXAKT ×4 (public 372/182 331 · +storage 380/183 676 · alla
+417/185 504) · system_events 170 174 · user_activities 6 271 ·
+dekomposition EXAKT fjärde gången: public +1 188 = SE +861 + UA +327,
+övriga 370 tabeller stilla (board 77 · members 3 · profiles 11 ·
+auth.users 45). FYNDET: medeltakten 12:41→19:12 = 132,0 r/h = 0,74×
+lördagskvällens 179,0 — exakt dagfasens 0,75×-kvot speglad i kvällen;
+söndagen är ett TVÅLÄGE (låg förmiddag ~35, ~132-platå från tidig
+eftermiddag in i kvällen), trefasmodellens dag/kväll-trappa gäller endast
+lördag. PREDIKTIONSTÅLING 7/11 + P11-dom: P4 RTO 22,2∈[18,32] · P5 fel
+EXAKT · P6 universum EXAKT · P7 dump GRÖN 84,2 · P8 dumptid 177,7∈[100,300]
+· P9 städning · P10 kedja-2 168 696/false EXAKT; MISS P1 +74 (170 174>170
+100) · P2 +21 (6 271>6 250) · P3 +381 (182 331>181 950) — alla tre i
+SAMMA riktning; rot: modellerna A–D tog MIDDAG-punktens 61,6 r/h (ett 10 h
+FÖNSTERMEDEL av natt 103 + förmiddag ~35) som fas-platå — KUR: fönstermedel
+≠ fas, tvålägesprofil per veckodag härefter. RPO: gap mot ENDA kopian
+(02:40-JSON) 1 478 rader vid 19:12 (16,5 h ålder); delprognos 02:40 09-21
+[170 950, 171 250] triangel 171 080 — MIDDAG-bandet [170 600, 171 100] i
+gränsfall om platån håller (+985 slår taket); avgörs 02:40 två oberoende
+vägar. STÄDNING OBEROENDE eftermätt: PG17 down · psql-socketvägran ·
+/tmp-dumpkatalog BORTA (GDPR, sha256 beviset) · dött flock-lås (egen pid)
+städat · retention 10 blad (09-11…09-20) orörda · disk 56 G. KVD: src/
+orörd = INGET bygge · R2 orörd (.pgpass/crontab/.env orörda; prod-DB endast
+läst; lösenord env-till-barn, aldrig loggat) · data/blogg orörd ·
+data/backups endast läsning · syskonytor orörda (dr-appdump.mjs
+omodifierat) · commit med pathspec + -F-fil. Kö: 02:40-dubbelprognos +
+blad 11 · tvåläge-per-veckodag i nästa fasprediktion · DUBBELPROJEKT-kuren
+består · UA tre faser mätta men oskyddad i alla kedjor. Leverans:
+data/forskning/DR-OVNING-2026-09-20-KVALL-APP-4.md + maskinellt
+DR-APPDUMP-2026-09-20-KEDJA0-3.md/.json + DRIFTSBOKEN (sektion S10-U2
+KVÄLLSPUNKT 4) + denna rad + anspråk data/vakten/(gitignorerad). [fabrik]

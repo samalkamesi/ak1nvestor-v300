@@ -163,11 +163,16 @@ function kursKalla(register: RegisterRad[], slug: string, lagrow: string): Lokal
 export const TILLVAXTDJUP_MONSTER: FragMonster[] = [
   {
     id: "s-kurvan-mattnad",
-    karnord: ["s-kurvan", "mättnad", "mättnaden", "marknadsmättnad", "utrymmesräkning"],
+    karnord: ["s-kurvan", "mättnad", "är mättnaden", "förklara mättnaden", "marknadsmättnad", "utrymmesräkning"],
     // NOTERA gränserna (sondrond 3): «tillväxtens gränser»/«tillväxtens tak»
     // innehåller ordet «tillväxten» som basens tillvaxt-monster äger exakt;
     // «skurvan» sammansatt stjäl avkastningskurvans kurvan-frågor — båda
     // kasserade som kärnord, ämnet bärs av fraserna ovan + texten.
+    // VÅG 226: naket «mättnaden» (tavstånd ≤2) stjäl pengarstidens «vad är
+    // andrahands marknaden?» via «marknaden» (2 substitutioner) — tillväxtdjup
+    // ligger FÖRE pengarstid i kedjan, stöden var levande i prod. Bestämd
+    // form bärs nu av fraserna «är mättnaden»/«förklara mättnaden» (exakt
+    // includes-match, inget tavstånd).
     starkord: [
       "kurva", "kurvan", "gräns", "gränser", "tak", "taket", "marknad",
       "marknaden", "utrymme", "adresserbar", "mätt", "avmattning",

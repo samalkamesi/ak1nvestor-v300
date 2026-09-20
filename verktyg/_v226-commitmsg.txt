@@ -1,0 +1,22 @@
+studio: våg 224+225+226 [organ:Φ] — fullsvep attempt 4 + pengarstids-stölden kurad + byte-budgeten mäter bytes
+
+V224: förra launchen hängde i studio-shallet och verkställdes ALDRIG
+(loggen saknades) — ny launch via node-kanalen, pid-bevisad; 155 sviter
+0 GRÖNA · 1 RÖDA · 0 omätta · status RÖD (PRE-kur-mätning: mätningstidens sanning).
+
+V226 KUR 1 — kärnordskollision LEVANDE I PROD: naket «mättnaden»
+(tavstånd <=2) stjäl pengarstidens «vad är andrahands marknaden?» via
+«marknaden» (2 substitutioner); tillväxtdjup ligger FÖRE pengarstid i
+widgetkedjan sedan v219. Kur: fraserna «är mättnaden» +
+«förklara mättnaden» (exakt includes, noll tavståndsyta).
+Bevis: tillväxtdjup 21/21 + pengarstid 73/73 + marknadsrytm 47/47.
+
+V226 KUR 2 — kontrakt 4 (GET-payload <200 kB): V221:s budget räknade
+TECKEN (130k) men kontraktet mäter UTF-8-BYTES — åäö gör 130k tkn till
+235,3 kB (288 poster). Kur: TRAD_BUDGET_BYTES=100 000 mätt med
+Buffer.byteLength — datadeterminismen (kontrakt 1b) bevarad.
+
+V225: förra turns pm2-omstart bokförd (app online, barn levande, 13 ms).
+
+Övrigt: motorvalidering +344 r (107/0/0), wrappers v224/v225/v226,
+gamla engångs-wrappers städade.

@@ -10346,7 +10346,10 @@ function skrivMalStateTillDisk(mal: string): void {
 const TRADSMINNE_POSTER = 60;
 const TRADSMINNE_TAK_TKN = 100_000;
 // V221: kanonvyns byte-budget (kontrakt 4) + golv — se lasTradHistorik.
-const TRAD_BUDGET_TKN = 130_000;
+// V226: budgeten mäter UTF-8-BYTES (inte tecken) — svensk fulltext bär
+// åäö som 2 byte/tecken, så 130k TECKEN blev 235,3 kB payload (tråden
+// 288 poster) och sprängde kontrakt 4:s 200 kB trots "grön" budget.
+const TRAD_BUDGET_BYTES = 100_000;
 const TRAD_GOLV_POSTER = 40;
 
 function lasTradSvansFil(sokvag: string, antalRader: number): string {
@@ -10416,14 +10419,14 @@ export function lasTradHistorik(
   // tacken växer linjärt (~0,75 kB/post i svensk fulltext) och sprängde
   // taket igen på en eftermiddag (V215.1:s 176 kB → 213 kB vid 230 poster)
   // — statiska trimmar äter upp av tillväxten. Kanonvyn hålls inom
-  // TRAD_BUDGET_TKN tecken text: nyaste posterna bevaras först (det
+  // TRAD_BUDGET_BYTES utf-8-bytes text: nyaste posterna bevaras först (det
   // kunden läser just nu), golvet TRAD_GOLV_POSTER garanterar sammanhang
   // även för extremt långa poster. Kontrakt 1b (stabilitet mellan anrop)
   // bevaras — budgeten är datadeterministisk: oförändrad db ⇒ identisk vy.
   const behall: StudioHistorikPost[] = [];
-  let budget = TRAD_BUDGET_TKN;
+  let budget = TRAD_BUDGET_BYTES;
   for (let i = ut.length - 1; i >= 0; i--) {
-    const langd = ut[i].text.length;
+    const langd = Buffer.byteLength(ut[i].text, "utf8");
     if (behall.length >= TRAD_GOLV_POSTER && budget - langd < 0) break;
     behall.unshift(ut[i]);
     budget -= langd;

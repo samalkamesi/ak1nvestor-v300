@@ -366,6 +366,53 @@ function sistaFelRad(resultat) {
   return rader.length > 0 ? rader[rader.length - 1].slice(0, 160) : null;
 }
 
+/** V228 (TUNG-dödsagg-kuren): kontrollpunkt efter VARJE mätt svit. Fyra
+ *  fullsvep dog under TUNGklassen utan rapport — kärnans OOM dödar hela
+ *  aggregatprocessen (V223:s inprocessvakttare dör med den), men loggen
+ *  bevarade mätningarna eftersom den skrivs append-per-rad. Samma princip
+ *  här: RAPPORT_JSON skrivs om efter varje svit (status PÅGÅENDE) så en
+ *  död aldrig förlorar mätdata och --fortsatt återupptar exakt där döden.
+ *  Checkpoint-IO-fel får ALDRIG döda mätloopen (try/catch). */
+function skrivKontrollpunkt(pagaende) {
+  try {
+    const g = resultatLista.filter((s) => s.status === "GRÖN");
+    const r = resultatLista.filter((s) => s.status === "RÖD");
+    const o = sviter.length - resultatLista.length;
+    writeFileSync(
+      RAPPORT_JSON,
+      JSON.stringify(
+        {
+          genererad: new Date().toISOString(),
+          korTidSek: Math.round((Date.now() - t0) / 1000),
+          takSek,
+          lage: FORTSATT ? "fortsatt" : "farsk",
+          avbrutenRam,
+          upptackta: sviter.length,
+          matta: resultatLista.length,
+          grona: g.length,
+          roda: r.length,
+          omatta: o,
+          status: pagaende ? "PÅGÅENDE" : o > 0 || avbrutenRam ? "AVBRUTEN" : r.length === 0 ? "GRÖN" : "RÖD",
+          klassSumma: Object.fromEntries(
+            KLASS_REGLER.map((kr) => [
+              kr.namn,
+              {
+                upptackta: sviter.filter((f) => miljoKlass(f).namn === kr.namn).length,
+                grona: resultatLista.filter((s) => s.miljo === kr.namn && s.status === "GRÖN").length,
+                roda: resultatLista.filter((s) => s.miljo === kr.namn && s.status === "RÖD").length,
+              },
+            ]),
+          ),
+          sviter: resultatLista,
+        },
+        null,
+        2,
+      ) + "\n",
+      "utf8",
+    );
+  } catch { /* kontrollpunkt-fel dödar aldrig mätloopen */ }
+}
+
 // ── huvud ───────────────────────────────────────────────────────────────────
 const t0 = Date.now();
 let sviter = readdirSync(VERKTYG)
@@ -440,6 +487,7 @@ for (const fil of sviter) {
   }
   resultatLista.push(post);
   console.log(`${post.status} (${post.sekunder} s) — ${post.kvitto}`);
+  skrivKontrollpunkt(true); // V228: mätdata överlever procesdöd
 }
 
 // dev-servern dör ALWAYS — även efter avbrott (aldrig läckande next-dev)

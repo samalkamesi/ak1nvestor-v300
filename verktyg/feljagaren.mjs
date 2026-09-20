@@ -30,7 +30,9 @@
  * minuter senare). F3:nätverksfel omtestas ETT gången efter 20 s: svarar
  * endpointen då → MEDEL "övergående, självläkt vid omtest"; fortfarande död
  * → HÖG och resterande nätverksfel passeras utan omtest (snabbt genomlopp
- * vid äkta haveri).
+ * vid äkta haveri). F3-vaccinet 2026-09-20: kaskadrader (passerade utan
+ * eget omtest) taggas "(kaskad — ej egenmätt)" i fyndsträngen — FYNN:s
+ * /andringar-eskalering 09-20 avvisad med återmätning 36/36 GRÖN.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -242,7 +244,7 @@ async function jagaApi(pass) {
       if (deploy) {
         bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
       } else if (serverDodVidOmtest) {
-        bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt)`);
+        bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
       } else {
         const levde = await omtest(v);
         if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);

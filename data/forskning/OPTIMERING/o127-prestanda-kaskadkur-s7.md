@@ -97,6 +97,28 @@ orörd (git status: endast globals.css).
    pillens breddväxt + tum-boxarna får ej skapa layoutskifte).
 6. Gränssnittsvakten efter deploy (egen gränssnittsändring — doktrinen).
 
-Status vid FÖRE-commit: EFTER väntar prod-synkens nästa RAM-fönster
-(protokollet kompletteras + worklog när §6 uppfylls; om fönstret stängs
-lämnas kriterierna till vakarövertag enligt o119 §6-precedensen).
+Status vid FÖRE-commit: ** vakarövertag AKTIVERAT** (c017f9bf). Synken
+VÄNTAR-RAM sedan 21:17Z (2 854–2 955 MB < 3 400; trycket = fabrikens egna
+3 byggarbarn à ~0,4–1,6 GB — inga läckta Chrome kvar att städa, process-
+kirurgi aktuell INTE aktuell: barnen är aktiva syskon, ALDRIG dödade).
+Fönstrets läge:-agenten avslutar medvetet ⇒ ~1,6 GB frigörs ⇒ synkens
+nästa 10-min-poll får byggfönster ⇒ deploy med c017f9bf som förfader.
+
+**VAKARÖVERTAG-KOMMANDON (§6 i turordning):**
+1. Vänta DEPLOYAD-rad i `data/vakten/prod-synk.log` (rop var 10:e minut;
+   bekräfta `NY KOD: … → c017f9bf`-avkomma) + `prod 200 ×5`
+   (/ · /kalkylator · /dataset · /blogg · /en).
+2. Pill (o123-tråden slutstängs):
+   `node verktyg/_s7u2o123-sond.mjs data/forskning/OPTIMERING/lighthouse/o127-pill-efter.json /dataset`
+   → förväntat **0 under 52** (FÖRE: 1 — Hälsa 44×52).
+3. Slider (verifierar ÄVEN s7-u2:o128:s tum-kur):
+   `node verktyg/_s7u1o127-slidersond.mjs data/forskning/OPTIMERING/lighthouse/o127-slider-efter.json`
+   → förväntat 0/20 under 52 (tumbox 52×52; FÖRE 20/20 vid 16×16).
+4. Lighthouse CLS 0 ×2 (o100:s noll):
+   `node verktyg/prestanda-lighthouse.mjs o127-efter /kalkylator /dataset`
+   (standardharness — FEL-filarna visar att _s7u2o123-efter.mjs-vägen
+   är trasig i npx-cachen; prestanda-lighthouse.mjs är den gröna kanalen).
+5. Gränssnittsvakten loopback (egen gränssnittsändring — doktrin):
+   `node verktyg/granssnittsvakt.mjs --bas=http://localhost:3000`.
+6. Boka: protokoll §7 + worklog-rad; kvarstående fynd åtgärdas eller
+   bokförs enligt spårets mönster.

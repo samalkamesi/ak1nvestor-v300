@@ -1,0 +1,251 @@
+{
+ "verktyg": "verktyg/_s7u3o131-proxyefter.mjs (o123-sond-mönstret + document-start-differential, o129 §4-metodiken)",
+ "datum": "2026-09-20T22:32:44.223Z",
+ "mal": "https://lab.ak1nvestor.com",
+ "visport": "390×844, DSF 2, iPhone-UA",
+ "target": "52 px tryckyta",
+ "prodBuildVidMatning": null,
+ "metod": "PROXY-EFTER: trädets committade kur-differential injekterad vid document-start mot opåverkad prod-kanal; !important är krav för document-start-position (landar före prodens stilmallar)",
+ "differential": "/* o131 proxy-differential = trädets committade kur vs prod-chunk LDVlDGu2 */\n@layer base { .flex > * { min-width: 0; } .grid > * { min-width: 0; } }\n@media (max-width: 767.98px) {\n  .max-md\\:min-w-\\[52px\\] { min-width: 52px !important; }\n  .max-md\\:min-w-\\[52px\\]\\! { min-width: 52px !important; }\n  [data-slot=\"slider-thumb\"] {\n    display: flex !important;\n    width: 52px !important; height: 52px !important;\n    min-width: 52px !important; min-height: 52px !important;\n    align-items: center !important; justify-content: center !important;\n    border-radius: 0 !important;\n    border-color: transparent !important;\n    background-color: transparent !important;\n    box-shadow: none !important;\n  }\n}",
+ "skillnadMotAldigDeploy": "prodens ostyrade .flex > * {min-width:0} kan ej CSS-borttags — proxyn bevisar important-vägen (o126); i deployat läge ersätts den ostyrade regeln av @layer base-kopian (o127)",
+ "fore": {
+  "pillFore": {
+   "datum": "2026-09-20T21:00:17.161Z",
+   "mal": "https://lab.ak1nvestor.com",
+   "tryckmalUnder52": 1,
+   "alla": [
+    {
+     "tag": "a",
+     "rol": null,
+     "text": "Hälsa",
+     "w": 44,
+     "h": 52,
+     "font": 16,
+     "klass": "font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-",
+     "id": null,
+     "visning": "flex",
+     "min": 44
+    }
+   ]
+  },
+  "sliderFore": {
+   "datum": "2026-09-20T21:16:52.145Z",
+   "mal": "https://lab.ak1nvestor.com/kalkylator",
+   "antalSliders": 20,
+   "slidersUnder52": 20,
+   "exempelTum": {
+    "w": 16,
+    "h": 16
+   }
+  }
+ },
+ "efter": {
+  "datasetPill": {
+   "tryckmalUnder52": 0,
+   "ALLA": [],
+   "halsaPill": {
+    "w": 52,
+    "h": 52,
+    "min": 52
+   }
+  },
+  "kalkylatorSlider": {
+   "antalSliders": 20,
+   "slidersUnder52": 0,
+   "exempelTum": {
+    "w": 52,
+    "h": 52
+   },
+   "differensialAktivPoaAlla": true,
+   "tryckmalUnder52": 0,
+   "tryckmalUtanSliders": 0,
+   "sliders": [
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    },
+    {
+     "w": 52,
+     "h": 52,
+     "font": 16,
+     "ariaValueNow": "3",
+     "ariaLabel": null,
+     "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+     "differentialAktiv": true
+    }
+   ]
+  }
+ },
+ "addScriptId": "1",
+ "fallbackInjektion": {
+  "/dataset": true,
+  "/kalkylator": true
+ }
+}

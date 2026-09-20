@@ -15285,3 +15285,65 @@ FÖRLOPP: min första commit (1b80c002) hann bara bära kursfilerna + worklog �
 
 Fabriksagent s5-u3. VAL MED ANSPRÅK FÖRE BYGGSTART (data/vakten/auto-s5-1789862706759-s5-u3-ansprak.md, gitignorerad väg; u1/u2:s anspråk lästa och respekterade — noll överlapp: u1 bk-07, u2 ks-08+vr-08): tre seriefortsättningar i tre kategorier efter dubbel sond (verktyg/_s5u3o21-sond.mjs + sond2) mot 452-registret. se-20 — «gruvsektorn»/«metallsektorn»/«anrikningsverk»/«malmbanan» 0 kursägare (gruv förbifart i 23 kurser, Boliden = pc-11-caset, material = km-045 — se-18-rederi-precedensens klass). rk-16 — «kontrahent»/«kontrahentrisk»/«ccp»/«collateral»/«initial margin» 0; «motpartsrisk» 3 förbifarande (se-19/am-04/od-07 — grannar, ej ägare). am-08 — «skapelse och inlösen»/«auktoriserade deltagare»/«etf-arbitrage»/«hävstångsetf» 0; am-02 äger idén index/passivt, denna kurs äger maskinen. FÖRKASTADE (dokumenterade i anspråket): od-08 volatilitetsytan (od-02 KARTLÄSER redan ytan — strike-tabell 80–120 + terminsstruktur i sin summary; gränsen för tunn), vm-12 nedskrivningstestet («återvunnet belopp»/«användningsvärde»/«cgu» 0 men «nedskrivningstest» nämns av km-022+bk-04 — gränsyta mot goodwill-kursen), swapp-vinkel (rk-08/mk-04/st-05 nämner), roic-05 cash conversion (ln-01:s DuPont-territorium), ud-10 (v20+km-066+ks-02), ek-07 (ek-04 äger överlevnadsbias), tx-06 (tx-01), ks-08-mognadsprofil (st-05 — NOT: u2 valde sedan KS-serien med valutasäkringen-vinkeln, helt annan yta), bf-16 mönster-i-brus (ts äger mönsterläsningen — sparad). SIGNATURER: se-20 (påhittade Norrgruvan/Högfjäll): halt 1,0 % → 100 ton berg à 40 dollar = 4 000 dollar/ton Cu mot 2,0 % → 50 ton = 2 000; C1 1,60/2,80 på pris 4,00 → marginal 2,40/1,20, hävstång pris÷(pris−C1) = 1,67/3,33, ±10 % pris → ∓16,7/±33,3 % marginal, nollställena som cykelbottens sortering; guldkrediten 12 kg Cu ≈ 106 + 0,5 g Au à 65 = 33 → 33 av 139 ≈ en fjärdedel av råintäkten; livslängd 6,0 Mt ÷ 0,2 Mt/år = 30 år ≈ tre-till-fem priscykler; cykeln 2,00→4,00 (+100 %) på sex år medan utbudet +8 %, därefter −45 % till 2,20. rk-16: netting +8/−5/+2 → brutto 15, netto +5 (EN motpart med netting < TRE utan); IM 5 % av 1 000 000 = 50 000, variation −2 % = 20 000/dag; haircuts statsobligation 2 (98/100), aktier 20 (80/100), kontanter 0; default-trappan 40 Mkr: säkerheter 28 → kvar 12, garantifond 8 → kvar 4, CCP-kapital sväljer 4; bilateral värld: katastrof 2 000 med 40 % avlåtet = 800 utan pant; Lehman 15 september 2008 som MOTPART; EMIR/Dodd-Frank som historik utan lagrum. am-08: NAV 10 000 000 ÷ 1 000 000 = 10,00; AP-korgen 5 000 000 → 500 000 andelar; premie 0,4 % (10,04): brutto 20 000 − kostnad 2 000 = netto 18 000, självförstörande arbitrage; 2x-förfallet index +5 %/−4,762 % = plant medan 1,10×0,9048 = 0,995 (−0,48 %), 0,995^5 ≈ 0,976 (−2,4 % på tio sågtandsdagar), 0,80×1,25=1,00 mot 0,60×1,25=0,75; terminsrulle contango 50,00/50,50 = 1 %/månad → 0,99^12 = 0,886 (−11,4 %/år vid plant spot); flashdagen 6 maj 2010 (KVD:s aritmetikgrind fångade mitt eget datumfel augusti→maj FÖRE leverans). KVD PREKOLL v2: 115 PASS 0 FEL 0 VARNING (verktyg/_s5u3o21-kvd.mjs — 34 aritmetikekvationer oberoende omräknade, struktur 18 fält ×3 + 6 kap à 4 min, juridikgrind 0 du/ni-riktade rådfraser + 0 lagrum + utbildningsframing + påhittade tal deklarerade, språkgrind 0 CJK/0 typografiska citat/0 tabbar/0 underscore/0 engelskaläckor (counterparty endast som CCP-uppskrivning)/0 dubbelord, korslänkar 9+10+9 samtliga registeräkta exakt-en, R2 0 pristal/kraverFas orörd); KONTROLLENS EGNA ÅTTA BUGGAR RÄTTADE MED MOTIV I SKRIPTET (Write omvandlade citatregexens literaler till raka tecken; stringify av history injicerade JSON-citat; ASCII-\b gav falska dubbelord mot åäö — lookaround; rådfraserna smalade till du/ni-form — mekanisk tredjepartsberättelse är ej råd; korslänkarnas kortform behöll exakt-en-logik; cykelekvationen 4,00/2,00−1; counterparty-vitlistning; registret dynamiskt) — kontrollen är också kod; kursbyggena rättade egna fel FÖRE prekoll (se-20 omskrivet helt: labourkanske-laboratoriet, «tvåtusen kurser»→tjugotre, complete/secundus/AICS-AIS/KÄRNAN/pris Cykler m.m.; rk-16: 13 Edit-läkningar — Den två→andra/tredje, rulebooks, day by day, HUSSETS, träappas, enövning, utfallset, för-att-sto m.m.; am-08: 64 ersättningar i läkningsskript — börs handlade→börshandlade ×22, ordboken→orderboken ×12, flash-datumet, mindstampar→initial margin, + contango 0,5→1 % på fyra ställen då 50,50/50,00 = 1 % och 0,99^12 = 0,886 fordrar det). 02:27-INCIDENTEN + ÅTERBÄRING (ärlighetsdoktrinen): min första synk körde GRÖN 455→458 (u2:s ks-08+vr-08 som ride-along enligt BASF-presedens); vid 02:27 skrev en stale kopia — med all sannolikhet u2:s hängande slutsteg (deras utdata-logg skrevs aldrig; deras worklog bokför samtidigt round-trip GRÖN ×2 mot ett register som då saknade deras egna poster) — registret och ALLA speglar tillbaka till 453/HEAD-läget och raderade FEM registerposter (mina tre + deras två). KUR: synken utökad med idempotent återbärning ur deras EGNA kursfiler på disk (filer orörda, bitidentiska — round-trip gröna) + mina tre: 453 → 458 atomiskt, hela kedjan GRÖN (karta, sökindex, speglar, siffror, llms ×2 mönstersträngt 6+4 ställen 453→458, mentor-rebake 458 rader antal-vakt GRÖN på försök 2, larvag-synk GRÖN). u2:s två KÄLLFILER bärs i min commit till HEAD med öppen attribution — o18-presedensens spegelbild (där bar syskonen mina källfiler när min instans körde dubbelt); deras leverans bokförd i deras worklog-rad, deras yta orörd. FRONT B 30 PASS 0 FEL (verktyg/_s5u3o21-frontb.mjs, läsreplik av larvag.ts): kartan 458, alla tre nominerade 90p = BAS 86 + nivåmatch 4 via kategori-fortsättning (se-20 I2 · rk-16 A3 · am-08 I2), poäng omvänd riktning 86 ×2, D1: km-002 behåller fortsättningen, nya kurser stjäl ingen plats, vIndex −1 ×3, determinism bitidentisk, syskonkurserna bk-07/ks-08/vr-08 i kartan. ROUND-TRIP ×5 GRÖN (register ≡ kursfil 18/18 fält för alla fem omgångens kurser), tsc 0 via projektbinär (node node_modules/typescript/bin/tsc --noEmit). INGET bygge (prod-synken äger); R2 orörd (kraverFas 0 ×3, inga pris-/tier-/publiceringsytor); data/blogg/ orörd. Kvar i spåret: rp-05 (med rp-02-notisen), roic-05, ek-07, od-08 (ANNAN vinkel än ytan), bf-16 mönster-i-brus, se-21+ vid sond, u2:s hängande barn att verifierad vid nästa rond (deras worklog skriven men fabrikens utdata-logg saknas). LEVERANS: data/kurser-tillagg/se-20-gruv-och-metallsektorn.json, data/kurser-tillagg/rk-16-kontrahentrisken.json, data/kurser-tillagg/am-08-etfens-inre-mekanik.json, data/kurser-tillagg/ks-08-valutasakringen.json (u2:s, buren), data/kurser-tillagg/vr-08-tobins-q.json (u2:s, buren), public/deep-courses.json, src/lib/larvag-karta.ts, src/lib/ai-mentor-register.ts, data/siffror.json, public/llms.txt, public/llms-full.txt, public/sok-index.json, public/speglar-slugar.json, worklog.md [fabrik]
 PRECISERING s5-u3 (omgång 21, slutbokföring av 02:27-incidenten): min worklog-rad ovan tolkade register-tillbakaskrivningen (458→453 på disk under mitt verifieringsfönster) som u2:s "hängande slutsteg" — i efterhand var förloppet deras TRÄDRENSNINGS-KEDJA som landade i två commits (1b80c002 deras +2 med register 453→455, sedan 8f8ca693 speglarna + registret i 458-läge med MINA tre som ride-alang, ägarskap noterat i deras ämnesrad) — vilken återställde allt själva FÖRE min commit. Ordningen mellan deras 458-återställning och min om-synk med återbärning är i praktiken konvergent: båda skrev samma 458-läge, round-trip ×5 gröna, ingen syskonyta skadad, noll förlorat arbete. Slutläget i HEAD (2a62a17f): register 458 = disk = karta = mentor = llms ×2 = siffror; kursfiler: bk-07 (u1), vr-08+ks-08 (u2), se-20+rk-16+am-08 (u3) — omgång 21:s fulla skörd +6 kurser på en omgång, seriens nya tröskel 458. Lärdom för kommande omgångar (tillägg till skal-kvotens "lita på verifiering, aldrig på svaret"): vid register-diskordans under race — läs git log FÖRE läkning, syskonets kedja kan vara den som läker. [fabrik]
+
+## SPÅR 6 s6-u1 (omgång 25, manifest auto-s6-1789864506792) — 2026-09-20: AI-MENTORN +1 FÖRHANDSFRÅGA — ETF-MEKANIKEN, den börshandlade fondens inre maskineri [fabrik]
+
+VAL (sond i tre ronder, diskbevis — _s6u1-sond-omg25.mjs + _s6u1-sond2-omg25.mjs,
+anspråk data/vakten/s6-omg25-u1-ansprak.md FÖRE byggstart): startsweepen visade
+AM-familjen som kategoriens sista två mentorväglösa (am-07 + am-08 — am-08 född
+2026-09-19 av spår 5, mentorväglös sedan födelsen; od-07 som tredje källa) ⇒
+KATEGORIN AKTIEMARKNADEN I PRAKTIKEN FULLT LÄNKAD 8/10 → 10/10 (km-069/km-070
+var nådda; "6/8"-siffran i första utkastet korrigerad efter D02-fyndet —
+kategorin har tio kurser). Hela kärnordsfamiljen RENT mot 1 688 syskonkärnord
+(indexomläggning/omläggning/effektdag/tillkännagivande/börshandlad fond/
+auktoriserad deltagare/skapelse/inlösen/contango/backwardation/hävstångsetf/
+spårningsavvikelse/flashdagen/inre mekanik/2x — 0 grannar inom motorns tolerans).
+
+LAGRET: src/lib/ai-mentor-etfmekanik-fragor.ts — ETT monster, sex kapitelvåningar
+ur kursernas egna tal: korgen/NAV (10 000 000 ÷ 1 000 000 = 10,00 · korgen
+10 200 000 ⇒ 10,20) + skapelsen/inlösenen (AP-korgen 5 000 000 ÷ 10,00 =
+500 000 andelar) + arbitraget (premien 0,4 %: 500 000 × 10,04 = 5 020 000 −
+5 000 000 = 20 000 − 2 000 = 18 000 netto, självförstörande 0,4 → 0,3 → 0,2 ·
+diskontet 9,96 = 4 980 000) + premiens risk (flashdagen 6 maj 2010, andelar
+−20-30-50 % mot orörda korgar) + hävstångens och rullens tullar (1,05 × 0,9524
+= 1,00 mot 1,10 × 0,9048 = 0,995 · 0,995^5 ≈ 0,976 · nedgångsspegeln 0,80 ×
+1,25 = 1,00 mot 0,60 × 1,25 = 0,75 · contangon 50,00/50,50 med 0,99^12 = 0,886
+= −11,4 % vid plant spot) + indexomläggningen (40 000 × 0,80 = 32 000 · × 0,12
+= 3 840 Mkr · fond-spegeln 50 000 × 0,012 = 600 · bågen 42,00 → 44,52 = +6,0 %
+→ 44,52 × 0,96 = 42,74, netto +1,8 % · tidsaxeln 3 840 ÷ 60 = 64 handelsdagar ·
+viktdriften 10 000 × 0,004 = 40). Källmärke: 5 källor numrerade (am-08 primär +
+am-07 + am-01 + od-07 + am-02), 3 kurslänkar + 3 fragor-knappar, registerdrivna
+tal (10 kurser · 24 min · intermediär).
+
+G2-LÄXAN (ärligt bokförd): regressionstestets syskonprov fångade praktikens
+naketa korta kärnord «etf» — det träffar varje fråga där «etf» står som
+fristående ord («vad är etf-arbitrage?» → «etf arbitrage» efter diafri) och
+praktiken ligger FÖRE i kedjan. Kuren: kärnordet «etf-arbitrage» KASTADES ur
+modulen (dödvikt), kanoniska formuleringar bytta till lagrets egna («vad är
+skapelse och inlösen?» + «vad är flashdagen?») — fönstrets syskon s6-u2
+harmoniserade samma två rader i kedjetestet från sin sida (konvergerande
+lösning, deras kommentar kvarstår). Samma princip som «ombalansering»:
+tavstånd 2 mot portfölj-praktikens «rebalansering» — kastat ur kärnorden,
+förekommer endast i text.
+
+FÖNSTER-SAMARBETE (tre byggare, samma manifest, samma träd): u2:s kontrahent-
+lager (2 monsters, rk-16 — deras leverans, deras anspråk 2026-09-20) wireades
+EFTER mitt i widgeten under fönstret — slutordning … → nyaterritorier (57) →
+etfmekanik (58) → kontrahent (59); inget SIST-anspråk från någon. u3:s
+marknadsrytm-fil på disk under fönstrets slut (deras, orörd här). Kontrahentens
+två filer bärs i min commit med öppen attribution (o18-spegel-precedensen):
+widget + kedjetest refererar dem och ett körbart träd kräver dem — deras
+LEVERANS-rad och kvitto förblir deras.
+
+KVITTEN: eget test testa-ai-mentor-etfmekanik.mjs 21 PASS 0 FAIL (A källmärke ×6 ·
+A2 wiring · B 14/14 varianter · C determinism bitidentisk · D01 0 fantomslugar ·
+D02 registerdrivna tal · D03 17/17 aritmetikkontroller oberoende omräknade ·
+E 9/9 genomström · F juridikgrind · G 0 stölder mot 1 751 kedjefrågor · G2 0 av
+59 syskonmotorer fångar mina 13 · H · J 29 kärnord unika · L widget-synk) ·
+kedjetestet 259 PASS 0 FAIL (168 monsters, 60 motorer, inventarien stämmer —
+etfmekanik=1 + kontrahent=2 med i H) · kontrahenttestet 55/0 (syskonets, grönt
+även med mina ändringar) · sond-efterläge: 342 nådda (+4: am-07, am-08, od-07,
+rk-16), AM-KATEGORIN borta ur mentorväglösa-listan · tsc 0 FEL via projektbinär.
+Juridikgrind 2007:528: allt utbildning i hur maskinen definieras, räknas och
+läses — inga placeringstips. INGET bygge (prod-synken äger); R2 orört; u3:s
+ytor orörda.

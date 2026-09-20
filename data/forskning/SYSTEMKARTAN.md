@@ -2695,7 +2695,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | 09-20 (s9-u3): registret 458 (+38 på 2 dygn från 420; s5-vågorna kontinuerliga, rebas-commit 8f8ca693 efter prod-synkens trädrensning); synk EGEN GRÖN 458=458=458 · 21 profiler · 0 fantomer; kärnan larvag.ts 458 r orörd sedan v99 (wc -l exakt; metodnotis: split-räkning ger +1 utan avslutande nyrad); karta 497 r; /laroplan + /en/laroplan + /api/larvag 200; regressionssvit + E2E-inloggning saknas fortfarande |
 | A3 | AI-Mentorn (57 deterministiska svarsmotorer + modellager) | Utbildning | LEVER | 9 | 62 sviter ALLA GRÖNA 0 FAIL (mätt 09-19; nattens s8-rotkur: 38 syntaxdöda sviter från s6-u3:s avbrutna harmonisering kurade); E01 GRÖN 452/452 (rebaken höll genom 398→401→408→452); kedjan 155 monsters/57 motorer (sviten 226/0); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter (återmätt 09-19); determinismen TREDJE verifieringen: offline-hash = prod-svar exakt samma dag (09-19 SWED-A.ST); hashen kan repetera dagar (09-19+09-20 båda SWED-A.ST — dagsurval, ej rotationsgaranti); kodstilla sedan 09-16; dagens quiz betjänar frusna quiz-beståndet (8 223 sedan 09-15) |
-| A5 | Gamification (badges 29 troféer, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter (mätt 09-18); gap 3 ÅTERMÄTT ÖPPEN 09-18: POST utan sessionsvakt + läcker {rank,total} till oautentiserad anropare (topplistan fortfarande tom = inget utnyttjat), GET-fönster 500 händelser; certId kollisionsbart (certifikat.tsx:57); bränslet fruset: quiz 8 223/XP 82 230 oförändrade medan kurserna växte 396→414 |
+| A5 | Gamification (badges 29 troféer, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter (mätt 09-20); gap 3 ÅTERMÄTT ÖPPEN 09-20: POST utan sessionsvakt + läcker {rank,total} till oautentiserad anropare (topplistan fortfarande tom = inget utnyttjat), GET-fönster 500 händelser; certId kollisionsbart (certifikat.tsx:57); bränslet fruset KOHORTBEVISAT 09-20: +50 kurser sedan 09-18 med 0 nya quiz — quiz 8 223/XP 82 230 oförändrade, quizlösa kurser 80→130 (19→28 %) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | 09-20 (s9-u3): rotlagren FRUSNA (bokmaster 105 på disk mot siffrors 103 = rebaken består · bokkanon 102 · analyses 11 · forskningsbiblioteket 22 — samtliga mtime 09-10); Kön-explosionen på C16:s sida (granskning/ 144 filer: 63 diff-JSON + 40 KONTROLL + Q3-kvartalsvåg 16 + KOMPLEMENT 11); underläget ordgräns-mätt bland Kön-diff-JSON: 8/63 med AKM2-ticker · 38 endast AKM1 · 17 utan båda (nedre gräns — begreppsguider kan bära annat underlag); verktygskedjan fortfarande utan lint-dörr |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön igen (mätt 09-19); berika-pipelinen stillastående 15 d (0 akm2-cacher; 36 runtime-filer i data/cache — netnet/analys/vagfundament lever), AKM3-ensemble 0/22 i prod (AKM2-livlinan 22/22 håller, eget svep 09-19), fixture-rad gällande för ABB.ST i prod (R2, återmätt 09-19), snapshot-svitens env-hermetik BOTAD 09-18 |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 egen 09-19, femte gröna; LÅST grind ΔΦ=0); fruset oförändrat: kalibrering-logg 1 rad 09-04 · regimen genesis 09-03 (16 d; /api/forskningslage bär EXAKT genesis-tal 7/100/17) · Contabo-crontab utan akm3/vagvalidering-rad · nästa molnrond 10-02; ensemble 0/22; kodstilla 15 d |
@@ -2865,6 +2865,48 @@ KVD: data-only (SYSTEMKARTAN.md + worklog.md) — src/ orörd = INGET
 bygge · R2 orörd · data/blogg/ orörd (Kön = data/blogg-utkast) ·
 syskonytor orörda (u1/u3:s sektioner orörda) · commit med pathspec +
 -F-fil. [fabrik]
+
+## UPPDATERING 2026-09-20 (dokvåg s9-u1, manifest auto-s9-1789898701601 — A5 Gamification återdiffad; tredje passningen: bränslefrysen nu KOHORTBEVISAD)
+
+Anspråk disk-först 12:0x lokal FÖRE mätning (data/vakten/auto-s9-1789898701601-s9-u1-ansprak.md;
+u3 = C17+D21+D25, läst ur deras anspråkfil — deras ytor orörda; u2:s val
+öppet vid mätstart, rekommenderad staleness-ordning lämnad i anspråket).
+Varje rad EGENMÄTT 2026-09-20 12:0x–12:2x lokal — inte läst ur worklog.
+KOLLISIONSHANTERING: första Edit-salvan studsade på u2:s samtidiga
+kart-skrivning (C17+E29) — deras commit 4798322b väntades in, deras
+sektion funnen intakt, mina ytor verifierat orörda (0 A5-träffar i deras
+diff), allt omapplikerat kirurgiskt efter deras landning (s9-u3
+09-19-precedensen).
+
+| Mått | Kartan 09-18 | Verkligheten 2026-09-20 (mätning) |
+|---|---|---|
+| A5-kod i git | 0 commits sedan 09-16 | **0 commits fortfarande** (tredje passningen): api/topplista 129 r (senast be04e17c) · badges.ts (senast 02c0920d 09-01) · certifikat.tsx/topplista.tsx/badg-panel.tsx orörda — HELT STILLA |
+| Bränslet | kurser 414 · quiz 8 223 · XP 82 230 (siffror 09-18 06:01) | kurser **464** (siffror.json 09-20 09:45; disk-paritet GRÖN egen omräkning) · quiz **8 223** · quizXp **82 230** — frusna tredje passningen |
+| NYTT: kohortbevis | "nya kurser bär INGA quiz" (härlett ur totaler) | **git-kohortmätt**: 7036a462 (09-18 06:01 = exakt förra passningens baseline) → HEAD: **+50 kurser, samtliga 0 quiz** (rk-16, se-17…21, sj-06, pf-15, bf-16, mk-12, bk-05/06 …); 0 borttagna; 334 quizbärande kurser OFÖRÄNDRAT = inga gamla kurser fick quiz heller |
+| NYTT: quizlös andel | 80/414 = 19,3 % | **130/464 = 28,0 %** (+8,7 pp på två dygn) — XP-poolen (82 230) står stilla medan kursflödet växer +50 |
+| Publika ytor | /badges /certifikat /topplista 200 | **200 ×3 loopback** (egna sonder) |
+| Topplistan live | TOM | **FORTFARANDE TOM** ({"topplista":[],"antal":0}, identisk sond) ⇒ gap 3 "inget utnyttjat" intakt |
+| Sessionsvakt POST | saknas (e-post ur klient-body) | **saknas fortfarande** — enda auth/session-träffarna i rutten: supabase-rest-import (rad 2) + kommentar (rad 14), ingen vakt; git-clean bevisar oförändrat sedan 09-16; kö-posten åt huvudagenten EJ verkställd |
+| Gap 1 (sviter) | 0 egna sviter | **0** (ingen testa-*badge/topplista/certifikat/gamif-svit i verktyg/, mätt) |
+| Gap 2 (certId) | kollisionsbart (certifikat.tsx:57) | **orörd konstruktion** `AK1A-<år>-<XP padStart 6>` (rad 57 identisk) |
+
+Dom: A5 **LEVER 7 orörd** — kodstasis tredje passningen + bränslegapet
+FÖRDJUPAT med kohortbevis, men inget gap stängt/öppnat och ingen
+konsumentskada (topplistan tom) — B13-precedensen. Snitt **7,5/284/38
+OFÖRÄNDRAT**.
+
+Kö: (a) sessionsvakt + rank-läcka på /api/topplista lever som
+huvudagent-kö (kodstilla-beviset); (b) quiz-tillväxten för nya kurser nu
+mätbart efterskjuten — s5:s kursfabrik levererar utan quiz-underlag och
+progress-värdet per kurs tunnas (samma rot som D21:s/C16:s observationer;
+D21 är u3:s yta denna våg — korsvalidering lämnas läsande); (c) A1:s
+ÖVERSIKT-rad bär "(432 kurser)" mot verklighetens 464 — A1:s yta, orörd
+här.
+
+KVD: data-only (karta + worklog; anspråk på disk) — src/ orörd = INGET
+bygge (deploy ägs av prod-synken under lås; tsc-baslinjen vilar i
+pre-commit-grinden) · R2 orörd · data/blogg/ orörd · syskonytor orörda ·
+commit med pathspec + -F-fil. [fabrik]
 
 ---
 
@@ -3127,7 +3169,9 @@ kurserna växt 396→432 (samma rot som A5/D21/D38-bokföringarna). Score
   identiska; (3)~~briefingens datakällor statiska~~ MOTBEVISAT 09-16:
   vagscan-koppling lever via /api/vagscan/senaste.
 
-## A5. Gamification — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+## A5. Gamification — LEVER — 7/10 *(uppdaterad 2026-09-20)*
+
+*Uppdatering 2026-09-20 (dokvåg s9-u1, manifest auto-s9-1789898701601 — A5 återdiffad, tredje passningen): KODSTILLA TREDJE GÅNGEN + BRÄNSLEFRYSEN KOHORTBEVISAD. 0 commits på samtliga A5-filer sedan 09-16-mätningen (api/topplista 129 r · badges.ts orörd sedan 09-01 · certifikat.tsx:57 identisk konstruktion). Ytor 200 ×3 loopback. Topplistan FORTFARANDE TOM ({"topplista":[],"antal":0}) ⇒ gap 3 "inget utnyttjat" intakt; sessionsvakten SAKNAS fortfarande (enda auth-träffarna i rutten = supabase-rest-import rad 2 + kommentar rad 14 — ingen vakt); huvudagentens kö-post (sessionsvakt + rank-läcka) EJ verkställd. Gap 1 lever: 0 egna sviter (mätt). BRÄNSLET: siffror.json 09-20 09:45 bär 464 kurser (+50 sedan 09-18) men quiz 8 223 · quizXp 82 230 oförändrade — nu GIT-KOHORTMÄTT (7036a462 09-18 06:01 → HEAD): samtliga 50 nya kurser (rk-16, se-17…21, sj-06, pf-15, bf-16, mk-12, bk-05/06 …) bär 0 quiz, 0 borttagna, 0 quiz tillagda i gamla kurser (334 quizbärande oförändrade) — andelen quizlösa kurser 80/414=19,3 % → 130/464=28,0 %. Score 7 orörd (B13-precedensen: fördjupat mått utan konsumentskada). Sidofynd åt A1:s nästa dokvåg: ÖVERSIKT-raden bär "(432 kurser)" mot verklighetens 464 — A1:s yta, lämnad orörd.*
 
 *Uppdatering 2026-09-18 (dokvåg s9-u1, manifest auto-s9-1789709700201 — A5 återdiffad, andra varvet): HELT KODSTILLA men RÖRELSE I BRÄNSLET. Samtliga A5-filer orörda i git sedan 09-16 (api/topplista 129 r · certifikat.tsx 242 r · topplista.tsx 136 r · badg-panel.tsx 235 r; badges.ts 326 r orörd sedan 02c0920d 09-01) — 0 commits, mätt. /badges /certifikat /topplista 200 på loopback+HTTPS (egna sonder). Topplistan FORTFARARDE TOM (GET {"topplista":[],"antal":0} — 0 xp_sync i fönstret) ⇒ gap 3 lever med "inget utnyttjat" intakt; sessionsvakten ÅTERVERIFIERAD SAKNAS I KOD (auth-grep 0 träffar; e-post ur klient-body rad 34; caps orörda rad 38–40: xp ≤ 10 M · nivå ≤ 100 · kurser ≤ 1 000). TVÅ NYA PRECISIONER I GAP 3: (a) POST-svaret läcker {rank,total} till oautentiserad anropare (rad 63–83) — vem som helst kan posta en främmande e-post och läsa av dennas placering, samma klass som impersonationen; (b) GET aggregerar ENBART senaste 500 xp_sync-händelserna (rad 97) — en elev som synkat längre bak faller AV listan helt. BRÄNSLEFYND: siffror.json (uppdaterad 09-18 06:01 av s5-vågorna) bär 414 kurser (+18 sedan A1:s 09-17-mätning 396) men quiz 8 223 · quizXp 82 230 OFÖRÄNDADE — nya kurser (tx-04, ma-05, ek-05, od-05 …) bär INGA quiz: topplistens bränsle fruset medan kursflödet växer (spegelbild av A6:s underlagsfynd). Badges preciserade 29 troféer (28 flaggskepp f3a56fc9 + Ritualstartad 02c0920d, båda 09-01). Gap 1 lever: 0 egna sviter (ingen badge/topplista/certifikat-svit i verktyg/, mätt). certId orörd kollisionsbar (certifikat.tsx:57). Score 7 orörd — kodstasis + skärpta precisioner utan stängning (B13-precedensen). Sidofynd åt A1:s nästa dokvåg: ÖVERSIKT-radernas kurstal 396 föråldrat (414 i siffror+deep-courses, mätt 09-18 — A1:s yta, lämnad orörd här).*
 
@@ -3158,8 +3202,9 @@ badges.ts orörd sedan 09-01 (be04e17c).*
 - **Observation:** Ren logik, varumärkesriktiga texter, force-static där
   möjligt. Topplistan bygger på system_events (xp_sync) med senaste-vinner
   per e-post — XP-statistiken själv lever i localStorage/member-local (D21).
-- **GAP:** (1) badge-reglerna (trösklar) saknar test (mätt 09-18: 0 egna
-  sviter i verktyg/); (2) certifikatens unikhet BESVARAD 09-16, orörd 09-18:
+- **GAP:** (1) badge-reglerna (trösklar) saknar test (mätt 09-20: 0 egna
+  sviter i verktyg/); (2) certifikatens unikhet BESVARAD 09-16, orörd 09-18
+  och 09-20:
   certId kollisionsbart (certifikat.tsx:57, AK1A-år-XP utan medlemshash, inget
   register) — verifierbarhet saknas; (3) SKÄRPT 09-16, ÅTERMÄTT ÖPPEN 09-18:
   xp_sync-POST utan sessionsvakt på publik rutt — impersonationsbar tills vakt

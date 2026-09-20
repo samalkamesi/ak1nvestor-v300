@@ -397,7 +397,7 @@ const MINA_KANONISKA = [
 // ── FALL L01: widget-synk — kedjeraden bär alla lager ───────────────────────
 {
   const KOMPONENTER = [
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
     // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
@@ -457,7 +457,7 @@ const MINA_KANONISKA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltMarknadsrytm",];
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",];
   const kedjerader = widgetKalla.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -473,6 +473,8 @@ const MINA_KANONISKA = [
     FEL.push("importen av ai-mentor-bokmastar-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
+    // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): ModernaRisker + Coinvest+Tvangsmekanik i widgetordning — läkning av omgång 27:s öppna harmoniseringsskuld
+  // (ModernaRisker/Coinvest wireades utan familjepass; dokumentationsplikten, rond 114-läxan).
   const kanda = new Set(KOMPONENTER);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);

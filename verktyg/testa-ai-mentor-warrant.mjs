@@ -611,10 +611,11 @@ const GAMLA = [
 // ── FALL K: register-läge — 408 kurser ──────────────────────────────────────
 {
   kontroll(
-    "K03 register-läge — 464 kurser (spår 5:s omgång-22-rebake 2026-09-20; basotestet E01 grönt)",
-    // s8-u2 (o98): 446→452 — spår 5:s omgång 20 (+6 kurser 2026-09-19) lämnade
-    // s6-u3:s namnuppdatering med gammal konstant; E01 grönt på 452.
-    KURSREGISTER.length === 464,
+    "K03 register-läge — 470 kurser (spår 5:s omgång-23-rebake 2026-09-20: +6 kurser am-09/rp-06/pe-07/kt-08/vr-09/ek-07; basotestet E01 grönt)",
+    // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): 464→470 — spår 5:s omgång 23
+    // lämnade konstanten efterföljande (KVD-fyndet kvarstår: hårdkodade
+    // registerlägen åldras med varje rebake; basotestet E01 förblir grinden).
+    KURSREGISTER.length === 470,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -623,7 +624,7 @@ const GAMLA = [
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   const KOMPONENTER = [
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
     // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
@@ -686,7 +687,7 @@ const GAMLA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltMarknadsrytm",];
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

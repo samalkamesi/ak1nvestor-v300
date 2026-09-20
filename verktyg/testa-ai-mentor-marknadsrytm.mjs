@@ -408,7 +408,7 @@ OMATCHADE.forEach((f, i) => {
             // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
             "svaraLokaltPengarstid",
             "svaraLokaltVolatilitetsmekanik",
-            "svaraLokaltMarknadsrytm",
+            "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));
   if (!kedjRad) FEL.push("kedjeraden (const lokalt = …) hittades inte");

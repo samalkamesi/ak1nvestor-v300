@@ -1188,17 +1188,53 @@ h1, h2, h3, h4, h5, h6 {
   .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
 }
 
-/* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
-   55 inlägg renderas alla i initial HTML). r4b2-facit: styleLayout 835 ms
-   är /blogg:s största mainthread-post; samma mekanik som .cv-kort och
-   .cv-registerkort — offscreen kort hopsaltar renderingsarbetet, DOM/SEO/
-   hydrering orörda. En höjdnivå räcker (kortens höjd varierar mindre mellan
-   brytpunkterna än registerkortens): p-6 + pelare + titel + ingress +
-   läsrad + datum (+ svensk kurslänk) ≈ 22rem; auto-nyckeln minns därefter
-   senaste riktiga höjd per kort. */
+/* ── PRESTANDA (o28, kalibrerad o129): CONTENT-VISIBILITY på /blogg-
+   listorna (sv/en/ar — 55 inlägg renderas alla i initial HTML). r4b2-
+   facit: styleLayout 835 ms är /blogg:s största mainthread-post; samma
+   mekanik som .cv-kort och .cv-registerkort — offscreen kort hoppar över
+   renderingsarbetet, DOM/SEO/hydrering orörda; auto-nyckeln minns
+   därefter senaste riktiga höjd per kort.
+   o129-KALIBRERING (blocksond _s7u2o129, retur-scroll-metodiken från
+   o93, BUILD LDVlDGu2): o28:s gemensamma 22rem stämde inte längre —
+   speglarnas kortkonstitution skiljer (sv bär kurslänkarna med 52px-
+   golvet från o123, en bär CTA-rader, ar:s arabiska font är lägre) och
+   dokumentet STAVHOPPADE vid första scrollen: docHΔ sv −1 648 ·
+   en −3 160 · ar −4 545 px (mobil 412). Äkta YTTRE medelhöjder:
+   sv mobil 374 px (median 368, 304–442) · en 345 · ar 315 · 2-kolumn
+   355 · 3-kolumn 406.
+   VIKTIG MEKANIK (mikrosond _s7u2o129-mikro, bevisad 100→150 och
+   200→250): Chrome tolkar contain-intrinsic-size som INNEHÅLLSBOXENS
+   platshållare — med prepekt-border-box blir kortets yttre höjd =
+   angivet + p-6 (48) + border (2) = +50 px. Nivåerna nedan är därför
+   (yttre mål − 50)/16: sv (374−50)/16=20.25 · en 18.4375 · ar 16.5625
+   · md 2-kol 19.0625 · lg 3-kol 22.25rem. Ändras p-6/border på kortet
+   måste +50 räknas om. md/lg gemensamma för alla språk (mätta på sv;
+   där är docHΔ liten och skillnaden per spegel sekundär); lang-reglerna
+   ligger med i brytpunktsselektorerna så de inte slår md/lg
+   (specificitet 0-2-1 mot 0-1-0). */
 .cv-bloggkort {
   content-visibility: auto;
-  contain-intrinsic-size: auto 22rem;
+  contain-intrinsic-size: auto 20.25rem;
+}
+html[lang="en"] .cv-bloggkort {
+  contain-intrinsic-size: auto 18.4375rem;
+}
+html[lang="ar"] .cv-bloggkort {
+  contain-intrinsic-size: auto 16.5625rem;
+}
+@media (min-width: 768px) {
+  .cv-bloggkort,
+  html[lang="en"] .cv-bloggkort,
+  html[lang="ar"] .cv-bloggkort {
+    contain-intrinsic-size: auto 19.0625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .cv-bloggkort,
+  html[lang="en"] .cv-bloggkort,
+  html[lang="ar"] .cv-bloggkort {
+    contain-intrinsic-size: auto 22.25rem;
+  }
 }
 
 /* ── PRESTANDA (o78): CONTENT-VISIBILITY på under-vecks-SEKTIONER —

@@ -1,9 +1,19 @@
-# OPTIMERING o106 — MOTORGAPENS KONTRAKTSSVITER + DYNAMIC-CATALOG-DRIFTEN (spår 8, s8-u3)
+# OPTIMERING o107 — MOTORGAPENS KONTRAKTSSVITER + DYNAMIC-CATALOG-DRIFTEN (spår 8, s8-u3)
+
+**ETIKETTKOLLISIONEN (o106 dubbelbokat, kurerad):** s8-u1:s tsc-grind-våg
+protokollfördes som o106 (0c91623f) samtidigt som detta fönster — deras
+tilläggsnotis 135cccb6 hänvisar syskonet (oss) till o107+, vilket följs här.
+FÖRDELNING av denna vågs filer över två commits (delat index, o18-precedensen
+— innehållet intakt, kvittot förblir s8-u3:s): fem svitfiler + resolve-hooken
+bars av s8-u1:s 0c91623f (deras bärningsnotis 135cccb6 + 27cfd2d4), övriga
+åtta filer av vår addf9e33. Commitmeddelandet i addf9e33 säger "o106" —
+historiken lämnas orörd, denna etikett är den gällande.
 
 **Datum:** 2026-09-20 (fabriksfönster, manifest auto). **Objekt:** VÅG 213
 delpost (b) ur PIPELINE-KO (V212:s fyndlista): 10 otestade motorer får
 minimiala kontraktssviter. **Anspråk disk-först:**
-data/vakten/s8-o106-kontraktssviter-u3-ansprak-2026-09-20.md.
+data/vakten/s8-o106-kontraktssviter-u3-ansprak-2026-09-20.md (skrivet före
+byggstart; anspråksfilens "o106" = numret före omnumreringen).
 
 ## 0. Duplikat- och avgränsningskontroll
 

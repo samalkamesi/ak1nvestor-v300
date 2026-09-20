@@ -15439,3 +15439,32 @@ Fabriksagent s7-u3 (byggare). YTAVSTÅND: u1 äger kurstips/kurser-spegel + glob
 ## SPÅR 7 s7-u1 instans 2 (manifest auto-s7-1789867506896, byggare 1/3 — redispatch-overlap, se §0) — 2026-09-20 ~03:4x–04:3x lokal: TABLET-GAPET KARTLAGT o103 (utvalt-kortens 768–1 024 sonderat i 5 bredder, posten stängd KARTLAGD utan kosmetisk kur — rot = innehållsheterogenitet, huvudagentens SSR-post) + o99-KVITTO (anspråkets öde: konvergens med 9da2912c/38eaa862/d9e14cca) [fabrik]
 
 Fabriksagent s7-u1 (instans 2 — instans 1 levererade d9e14cca under mitt fönster; noll ytoverlap: den kurstips/speglar, jag utvalt/svenska /kurser; o102-kollisionen botad med nr-byte till o103 + öppen bokföring). VAL (anspråk s7-o102-tabletgap-utvalt-u1 disk-först, nr-preciserad): tablet-gapet — utvalt-kortens md+-platshållare (flagg/nya 45.5rem · borja 12.75rem) kalibrerade vid 1 280, extrapolerade nedåt, 768–1 024 aldrig sonderat (öppet i o97 §6.3 + o101-flagg §6.3). LEVERANS: _s7u1o103-tabletsond.mjs (blocksond-mönstret riktat: deklarerad platshållare via computed contain-intrinsic-size + topp-läge + full scroll + stabilisering; kriterium förhand Σ|Δ| ≤ 50/section) × 5 bredder, BUILD_ID 9RBeu-wern oförändrat hela serien, RAM-vakt, sekventiellt. RESULTAT: borja 204 EXAKT alla bredder; nya 728 exakt @768+1280 (kontroll reproducerar o92-punkten); flagg Σ|Δ| 519–1 584 = innehållsheterogen (radvis 290–934 mot ENDA 728) men LATENT (top 559 px — över vecket, platshållaren aldrig aktiv); nya enda aktiva sprickan: sämst @900 −126 (docH −130) med VÄNANDE breddberoende (728 perfekt @768 · för högt @900 · för lågt @1 024/verklig 836) — EN md-nivå kan inte träffa, delband = överanpassning. BESLUT: stängd KARTLAGD, ingen kosmetisk kur (kurrbar rot saknas); kundpåverkan ≈1,5 % av docH värsta fallet vid scroll; strukturella delen → huvudagentens SSR-register-post (o19 §3.1 + o97 §6.1 + o103 §6.1: samma kur för register- + utvalt-familjen). PROCESFYND: redispatch-overlap + nummerhygienen (o101 delat av u3:s två vågar) → förslag: nr-prefix i anspråksfilnamnet vid disk-först. KVD: src orört (tsc bärs av grinden) · R2 orörd · data/blogg/ orörd · INGET bygge · syskonfiler orörda. LEVERANS: data/forskning/OPTIMERING/o103-prestanda-tabletgap-utvalt-s7.md, lighthouse/tabletsond-s7u1o103-w{768,820,900,1024,1280}.json ×5, verktyg/_s7u1o103-tabletsond.mjs, data/forskning/OPTIMERING/o99-prestanda-spegel-popin-kurstips-s7.md (kvitto), worklog.md. [fabrik]
+
+
+## SPÅR 7 s7-u2 (manifest-dispatch 2/3, byggare) — 2026-09-20 ~04:29–04:5x lokal: o105 SIDFOOTER/BRÖDKRUMMA SERVERBINDNA (o101 §4 Kur A+B verkställd)
+
+Fabriksagent s7-u2. Valde spårets dokumenterade nästa objekt: o101:s kurdesign
+(FRIA ytor, vakarövertag — mätvåg-before-kurvåg-precedensen). KORRIGERAD ROT
+under arbete: våg 81:s SpegelSprakLeverantor SSR:ar redan rätt språk —
+o101 §3.2:s "hydrat-omskrivning" sker inte; kvarvarande kostnad = själva
+hydratiseringen (81 element + länkar + smulnav; 472 ms style/layout-delta).
+KUREN: vy-moduler (hook-fria, EN källa) + tunna bindningar — serverbindning
+(skapaT(lang)) på /en|/ar via SeoPageShell lang-prop (endast speglar: sv =
+klient-MGTM oförändrat, DOM identisk). Mätobjekten /{en,ar}/blogg (listorna)
++ [slug]-byggarna (blogg, kurs) bär lang. KONTRAKTSTEST nytt
+(verktyg/testa-s7-o105-footer-etiketter.mjs): 41 PASS 0 FAIL (registertäckning
+×3 språk, skapaT≡ORDLISTA, tText-kontrakt, wiring D1–D8, vy-moduler hook-fria).
+tsc 0 via projektbinär. INGET bygge — prod-synken deployade under fönstret
+(02:41:40Z, 13 commits, BUILD_ID RbGEkEnQH, prod 200 ×5-klass) ⇒ FÖRE-läge
+utan kur bevisat färskt; EFTER-kriterier (n=2; TBT en≤500/ar≤550; CLS 0;
+sv ±15%) vakarövertag-barra enligt o101 §4 när kur-commitens deploy landar.
+DRIFT UNDER FÖNSTRET: prod nere ~7 min (02:28–02:35Z) — pm2-restart-loop dog
+på "next: not found" under npm ci-omskrivning (läkebackup + hel node_modules
+⇒ självläkt; observationspost i DRIFTSBOKEN; rotfynd åt infra-ägaren).
+Avgränsning: 28 spegel-direktfiler + dataset/bolag/tier-byggare = våg 2
+(kö §6). R2 orörd; data/blogg/ orörd; u1/u3-ytor orörda; globals.css
+lämnad åt o104-reverterten. Anspråksfil med nr-lås skrevs FÖRE byggstart.
+LEVERANS: src/components/ak1a/{sidfooter-vy,brodkrumma-vy,sidfooter-server,
+brodkrumma-server,sidfooter,brodkrumma,seo-page-shell,blogg-spegel-sida,
+kurs-spegel-sida}.tsx + src/app/(en|ar)/*/blogg/page.tsx + verktyg/testa-
+s7-o105-footer-etiketter.mjs + _s7o105-alias-hook.mjs + o105-rapporten.

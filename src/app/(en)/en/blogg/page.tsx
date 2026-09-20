@@ -41,7 +41,7 @@ export default async function BloggPageEn() {
   const pillars = [...new Set(posts.map((p) => p.pillar))];
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "Blog" }]} wide>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Blog" }]} wide>
       <h1 className="font-serif text-4xl font-bold">AK1A Research Lab — Blog</h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
         Institutional methodology, explained for private investors. Pillars:{" "}

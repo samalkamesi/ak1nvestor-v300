@@ -152,6 +152,7 @@ export async function KursSpegelSida({
   return (
     <SeoPageShell
       wide
+      lang={lang}
       breadcrumb={[{ name: t("nav.kurser"), href: `/${lang}/kurser` }, { name: kurs.title }]}
     >
       <div lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>

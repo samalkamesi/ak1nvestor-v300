@@ -295,24 +295,29 @@ console.log(`Fixtures: ${arbete}`);
 // mellanlager #1 landat på disk (verktyget står då i fönstervakten) —
 // saboterad miljö: inget lås, ingen byggprocess, bas frisk ⇒ vakten pollar
 // fritt på första kontrollen och ommätningen blir mätvärde.
+// V222-timingkuri (rond 114): originalflippen (fil-poll à 100 ms) kapplöpte
+// alltid verktyget — fönstervakten ser gröna prober och startar återmätningen
+// ~20–50 ms efter mellanlagret skrevs, FÖRE fixturens nästa poll ⇒ crawl #2
+// såg 500 igen (deterministiskt RÖT från födelsen, aldrig flagning). Ny
+// signal: flip vid crawl #2:s EGEN sitemap-förfrågan — den kommer före dess
+// sidförfrågningar men efter crawl #1 (deterministiskt mellan lagren).
 {
   const locs = Array.from({ length: 20 }, (_, i) => `/sida-${i}`);
   let lagetGront = false;
+  let sitemapHits = 0;
   const { server, port } = await startaServer((p) => {
-    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(locs) };
+    if (p === "/sitemap.xml") {
+      sitemapHits += 1;
+      if (sitemapHits >= 2) lagetGront = true; // crawl #2 börjar — dess sidor ska vara gröna
+      return { status: 200, kropp: sitemap(locs) };
+    }
     if (p === "/" || p === "/kurser" || p === "/ok") return { status: 200, kropp: textSida("") };
     if (!lagetGront) return { status: 500, kropp: "" };
     if (p === "/sida-0") return { status: 200, kropp: textSida(`<a href="http://127.0.0.1:${port}/ok">extern ok</a>`) };
     return { status: 200, kropp: textSida("") };
   });
   const cwd = fs.mkdtempSync(path.join(arbete, "j-"));
-  const rPromise = korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { retryVanta: "30000", retryPoll: "200" } });
-  const frist = Date.now() + 30_000;
-  while (Date.now() < frist && vaktenFiler(cwd).insamling.length < 1) {
-    await new Promise((losa) => setTimeout(losa, 100));
-  }
-  lagetGront = true; // driftfönstret stänger exakt när insamling #1 är bokförd
-  const r = await rPromise;
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { retryVanta: "30000", retryPoll: "200" } });
   rapport("J1", "återmätningen räddade mätomgången (kod 0)", r.kod === 0, `kod=${r.kod}`);
   rapport("J2", "återmätningen loggades", /driftfonster-atermat/.test(r.stderr || ""), "");
   const f = vaktenFiler(cwd);

@@ -2759,6 +2759,53 @@ GRÖN — första uppföljningen 2026-09-27) · retentionsträffen ~11-15 ·
 kvartalssviten senast 12-17/18 (TOTAL+ARKIVSVEP) · u2:s 02:40-gap-dom
 och u3:s serie/dekomposition kommunicerar i deras protokoll.
 
+
+## S10-U2 — APP-DB MIDDAGPUNKT 3: första fulla dygncykeln för aufr (dag ≠ dag: söndag 0,75× lördag) + RAM-grindens andra eldprov samma dag (2026-09-20 12:36–12:5x lokal, GODKÄNT)
+
+Agent: s10-u2 (manifest auto-s10-1789900509524, vakt 2/3). VAL: APPENS
+databas punkt 3 — serien hade två punkter (09-19 16:39 + 22:32), ingen
+dag/middag; rkaq-kärnan var daglevererad (blad 10 ×2 i morse). Anspråkscap
+ärligt bokförd: u3:s anspråk (samma yta, "dagpunkt") först på disk 12:38:27,
+mitt ~12:39:3x (kontrollen var 12:37 — läs-tid ≠ skriv-tid, korrigerat i
+anspråksfilen). D20: min körning tog flock-fönstret 12:40:23–12:43:33, u3:s
+replik startade vid min release (pågår vid skrivande — deras yta orörd).
+
+- **RAM-GRINDENS ANDRA ELDPROV SAMMA DAG** (u1 jungur 06:5x: 713 MB; denna
+  12:39: 832 MB — prod-synkens next-build höll 5,1 GB): övningen vägrades
+  korrekt (exit 75), servern skyddades. Kur = node-väntewrapper (mönster nu
+  bevisat 2×; denna i /tmp — ingen ny skrapfil i verktyg/). Fönstret öppnade
+  vid 5 795 MB när bygget landade. **DR-beredskapen på 8 GB-servern är
+  deploy-fönsterberoende — dokumenterat driftläge: vid DR-brand under deploy,
+  vänta in fönstret, ALDRIG kringgå grinden.**
+- **GRÖN exit 0:** pg_dump 114,8 s · 84,1 MB gz (sha 223b6e81…, slutmarkör
+  GRÖN, COPY 420/CREATE 418) → skrap-PG17 → **RTO 20,4 s** (aufr-seriens
+  snabbaste; band 20–30 tredje dagen) · fel **109 kända/0 okända ×3** och
+  felloggarna **BYTE-IDENTISKA 5 927 B över två dagar** · universum EXAKT ×3
+  (372/380/417 · 420/418) · public **181 143** · system_events **169 313** ·
+  user_activities **5 944** · städning full (PG17 down, dump GDPR-raderad,
+  egenmätt; låsfilen korrekt överlämnad till u3:s flock).
+- **DYGNPROFIL 5 PUNKTER (första fulla cykeln):** natt 103,4 · dag lördag
+  82,4 · kväll 179,0 · natt 103,4 · dag söndag **61,6 r/h** — dagfasen är INTE
+  konstant (söndag 0,75× lördag): modellen blir TRE faser med
+  helgdagsvarians. Dekomposition EXAKT: public +1 241 = events +1 044 +
+  user_activities +197 (+0 övriga 370); events +1 044 = natt +427 + dag +617
+  EXAKT (kedja-2:s 02:40-värde = fungerande delpunkt).
+- **RPO vid middag:** 617 rader/10,02 h (61,6 r/h) i ENDA kopian; prognos
+  nästa 02:40-växling: gap [1 900, 2 400] → 09-21-JSON ≈ [170 600, 171 100].
+- **Prediktionståling 10/10 GRÖN — första i APP-serien** (faskännedomen är
+  kuren: gårdagens 3-miss-dagar var fasblinda; dagens fasmedvetna band höll
+  alla, bonus user_activities [5 850, 6 250] → 5 944 ✅).
+- **KVD:** src/ orörd = INGET bygge · R2 orörd (.pgpass/crontab/.env orörda;
+  prod ENDAST läst; lösenord env-till-barn vid körning, aldrig loggat) ·
+  data/blogg/ orörd · syskonytor orörda · commit med pathspec + /tmp-commitmsg.
+  Protokoll: data/forskning/DR-OVNING-2026-09-20-MIDDAG-APP-3.md + maskinellt
+  DR-APPDUMP-2026-09-20-KEDJA0.md/.json.
+
+Kö: u3:s replik (determinismens fjärde korsbevis) · blad 11 födelsebevis
+09-21 02:30 + APP-prognosen mot system-events-full-2026-09-21.json.gz ·
+retention db-2026-09-11 (~10–11) · DUBBELPROJEKT-kuren består (appens
+RPO-gap ~2 100/dygn är priset tills crontab db-app-*.sql.gz landar).
+
 ## S10-U1 (manifest auto-s10-1789900509524) — BLAD 10:S FÖRSTA DAGPUNKT: klockformel 8×40 EXAKT + pumpbatchen LANDAD (blad-11 förhandsverifierat levande) — 2026-09-20 12:38–12:42 lokal
 
 - **Val (anspråk disk-först 10:38:55Z, P1–P9 låsta FÖRE mätning):** blad

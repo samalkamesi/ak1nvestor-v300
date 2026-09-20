@@ -2848,3 +2848,25 @@ RPO-gap ~2 100/dygn är priset tills crontab db-app-*.sql.gz landar).
   landningstidsvarians (kvälls-/nattmätning snäver dagens fönster) ·
   retention ~10-11 (db-2026-09-11 först — tidigare försvinner = FYND) ·
   kvartalsövning senast 2026-12-20.
+
+## V234 — DR-FÄRSKHETSPROV (rond 121 [organ:Φ], spår 10-rotation) — 2026-09-20
+
+- **DOM: GRÖN — alla backupspår färskare än 24 h, inget att åtgärda.**
+  Egenmätt (ls-mtime, prod-trädets data/backups/ + offsite/):
+  - **Offsite-arkiv DAGLIGT och färskt:** ak1a-offsite-2026-09-20.tar.gz
+    567 MB kl **14:52–14:53 i dag** (föregående 09-19 20:53 · 09-18
+    20:53 — kadensen håller tre dagar i rad).
+  - **DB-snapshot:** db-snapshot.sqlite 1,6 GB kl **14:52 i dag**.
+  - **Nattlig serverbackup hel:** server-repo tar 236 MB + git-bundle
+    230 MB + pm2-dump + crontab + nginx-konf, samtliga 03:20–03:21 i dag.
+  - **DR-övning GRÖN samma dag** (s10-spåret 12:38–12:57): pg_dump
+    114,8 s · skrap-restore **RTO 20,4 s** · prediktionsband 10/10 —
+    protokoll DR-APPDUMP-2026-09-20-KEDJA0.md/.json. Övningsdumpar
+    GDPR-raderas efteråt (design, "dumpBort: true" i JSON).
+- **Kända gap förblir s10-spårets kö (ej nytt för V234):** app-DB:n
+  saknar egen crontab-dump (db-app-*.sql.gz) ⇒ RPO-gap ~2 100 r/dygn —
+  bokat i s10-kön; retention db-2026-09-11 (~10–11 blad) bevakas 09-21
+  02:30.
+- **ISR-värmaren:** vardagscron (03:10) — söndag = designpaus, senaste
+  körning fredag 09-18; prod-sidor mäts varma via driftstrafik (12 ms
+  hem-svar i dag). Ingen åtgärd.

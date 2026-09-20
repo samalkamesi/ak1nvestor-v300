@@ -1,0 +1,156 @@
+{
+  "slug": "rp-06-volatilitetsdraget",
+  "category": "RISKHANTERING & PORTFÖLJTEORI",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Volatilitetsdraget — brusets avgift på tillväxten",
+  "summary": "Riskhanteringsfamiljens sjätte steg: volatilitetsdraget — gapet mellan aritmetisk och geometrisk avkastning, variansens halva som skatt på tillväxten. Två år med plus 20 och minus 20 procent är inte noll utan 96,0 av 100: produkten minns bruset som genomsnittet glömmer. Kursen bygger mekaniken från grunden: varför multiplikationen av åren straffar nedgångar hårdare än den belönar uppgångar, reparationstrappan där minus 20 kräver plus 25 och minus 50 kräver plus 100, och verktyget som sammanfattar allt: den geometriska årsavkastningen ligger ungefär en halv varians under den aritmetiska. Det genomgående exemplet är tre portföljer med exakt samma aritmetiska genomsnitt — plus 10 procent — men olika spridning: med standardavvikelsen 10, 20 respektive 30 procent blir den geometriska årsavkastningen 9,54, 8,17 och 5,83 procent, och på tjugo år växer samma genomsnitt till tre olika liv: 6,19x, 4,81x och 3,11x. Därpå dragets tre spakar — diversifiering som sänker spridningen utan att röra avkastningen, volatilitetsbudgeten som prissätter skatten och positionssizningen som inte får överskrida vad den geometriska tillväxten bär — och fem fällor: den aritmetiska presentationen, volatiliteten som gratis, trappans illusion, fel horisont att medelvärdesbilda över och avgifterna som räknas på aritmetik men betalas i geometri. Utbildning i att läsa tillväxtens tredje siffra — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Se det tredje talet: att varje avkastningsserie har ett aritmetiskt genomsnitt, en geometrisk årsavkastning och ett gap mellan dem — och att gapet är en kostnad, inte en känsla · Räkna spegelparet: plus 20 följt av minus 20 procent lämnar 96,0 av 100, och vägen tillbaka kräver plus 4,2 procent bara för att nå noll · Läsa reparationstrappan: minus 10 kräver plus 11,1, minus 20 kräver plus 25, minus 33,3 kräver plus 50 och minus 50 kräver plus 100 procent — asymmetrin är mekanisk · Använda verktyget att den geometriska årsavkastningen ligger ungefär en halv varians under det aritmetiska genomsnittet — en första uppskattning från två tal, med kännedom om att den överskattar något vid hög spridning · Skilja frågorna: det aritmetiska genomsnittet beskriver ett typiskt år, den geometriska årsavkastningen beskriver resan — och en portfölj lever resan, inte genomsnittet av sina parallella år · Känna igen de fem fällorna och deras kurer: presentationen, gratis-tanken, trappan, horisonten och avgifternas valutor",
+  "why": "Riskhanteringsfamiljen har fem steg — riskmåttens karta (rp-01), tre mått tre frågor (rp-02), riskpariteten (rp-03), volatilitetsbudgeten (rp-04) och sekvensrisken (rp-05) — men inget av dem äger förklaringen till den siffra som hela familjen vilar på: varför den geometriska sammanfattningen alltid står under det aritmetiska genomsnittet. rp-05:s serie plus 30 minus 10 bar det geometriska talet 8,17 per år utan att förklara det — förklaringen ägs av detta steg. Sond mot registret: volatilitetsdrag ger noll träffar, variansdränering noll och geometriska medel noll — kärntermen ägs av ingen kurs. Geometrisk avkastning ger en träff, the-intelligent-asset-allocator, en bokkurs som citeras här som källa enligt bokkurspresedensen. Familjens grannar dokumenteras: km-013 äger volatiliteten som mått, km-017 äger Kellykriteriets sizning, km-014 äger korrelationen och diversifieringsmatematiken, rp-04 äger budgeteringen av spridningen, pf-04 äger återbalanseringens mekanik medan detta steg äger varför mekaniken har ett geometriskt värde, och ib-05 äger avgiftserosionens räknelära. Vit fläck: skatten som volatiliteten lägger på tillväxten i sig — den betalas utan uttag, utan tvångsförsäljning och med perfekt disciplin, och den syns i ingen årsräkning.",
+  "history": {
+    "origin": "Insikten är äldre än portföljteorin. Livräntans aktuarier räknade på artonhundratalet på sammansatt ränta och visste att en genomsnittlig avkastning inte får diskonteras som om vartenda år bar den: åren multipliceras, och multiplikationen straffar de dåliga åren hårdare än den belönar de goda. Daniel Bernoulli lade 1738 grunden till den geometriska läsningen när han föreslog att nyttan av en spelvinst ska mätas i logaritmen av förmögenheten — hans moraliska förväntan är den geometriska årsavkastningen i förmodern form, född som svar på ett spel där det aritmetiska väntevärdet var oändligt men ingen rationell spelare betalade mer än en bråkdel för att vara med. Problemet var känt som beräkning, men det saknade namn i portföljspråk, och utan namn blir ett känt gap lätt ett bortförklarat.",
+    "evolution": "Nittonhundratalet gav gapet två hem. John Kelly visade 1956, i informationsteorins tidiga år, att den som sizer insatser efter den logaritmiska tillväxten maximerar den samlade tillväxten — telekommunikationens bidrag blev portföljteorins: den geometriska tillväxten är det mått som faktiskt kompounderas. Samtidigt byggde den moderna portföljteorin sitt medelvärde-varians-ramverk på aritmetiska medelvärden, vilket lämnade en spänning öppen: optimeraren maximerar ett genomsnitt som ingen portfölj får leva. Under seklets senare hälft förde teoretiker som Henry Latané fram principen om det geometriska medelvärdet — att beslut mellan upprepade satsningar ska bedömas efter den sammansatta tillväxten, inte det aritmetiska väntevärdet — och med den blev draget en namngiven storhet: skillnaden mellan de två medelvärdena, växande med spridningen.",
+    "modern": "I dag lever volatilitetsdraget i flera praktiska fält. Hävstångsprodukters faktablad visar det som volatilitetsförfall: produkter med daglig hävstång mot samma underliggande kan avvika starkt från hävstången gånger underliggandets periodavkastning, just för att den dagliga multiplikationen betalar draget varje dag. Volatilitetsmålning — att hålla portföljens spridning nära ett satt mål — är dragets administrativa sida (rp-03 bär viktningsidén och rp-04 budgeten). Utvärdering i geometriska termer har blivit standard i institutionella sammanhang: den aritmetiska avkastningen läses som väntevärdet över parallella utfall, den geometriska som den väg som faktiskt vandrats. Kursen samlar tråden: draget är varken mystik eller misslyckande — det är en prislista, synlig i tre tal, och som alla priser kan den budgeteras och sänkas, inte avskaffas."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — spegelparet som kostar fyra kronor", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — produkten minns bruset", "minutes": 4 },
+    { "num": 3, "title": "Mätning — tre portföljer, samma genomsnitt, tre liv", "minutes": 4 },
+    { "num": 4, "title": "Praktik — dragets tre spakar", "minutes": 4 },
+    { "num": 5, "title": "Fällor — fem sätt skatten osynliggörs", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — dragprotokollets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch skilde på volatilitet och risk: prissvängningar är inte förluster så länge ägandet är välförankrat i verksamheten. Volatilitetsdraget är den lärons skarpa kant — det visar att svängningarna har ett pris även när de aldrig blir permanenta förluster: produkten av åren betalar bruset också för den som aldrig säljer en aktie. Lynchs eget botemedel är dessutom kurans kärna: ägandets kvalitet. Ett bolag med färre och grundare mothål har lägre spridning i utfallen utan lägre väntad avkastning — kvalitetsägandet sänker draget gratis. Och hans regel att tiden i marknaden slår timingen översätts exakt: den aritmetiska premien har historiskt överlevt sitt eget drag, vilket är skälet till att långsiktighet fungerar — inte att draget saknas.",
+  "grahamSection": "Benjamin Graham varnade för prognoser byggda på aritmetiska medelvärden — hans försiktighet mot att extrapolera genomsnitt in i framtiden bär, läst med detta steg, en andra grund: även om genomsnittet slår in exakt, lever portföljen inte genomsnittet utan produkten av sina år. Säkerhetsmarginalen får därmed en tredje funktion vid sidan av prisrabatten och sekvensskyddet (rp-05 bär det): den sänker spridningen i utfallen kring samma väntade värde, och sänkt spridning är sänkt skatt. Grahams defensiva investerare — den fasta fördelningen mellan aktier och obligationer, återfylld vid drift — var en volatilitetsbudget före begreppets tid: en regel som håller portföljens spridning i schack utan att kräva prognoser. Detta steg visar vad den regeln köper: inte bara ro, utan kronor.",
+  "ak1Section": "I AK1A:s metodik stänger kursen riskhanteringsfamiljens sista lucka: rp-01 kartlade måtten, rp-02 satte tre av dem i samma portfölj, rp-03 viktar riskerna, rp-04 budgeterar dem till en krona och rp-05 lade kronologin på toppen — rp-06 förklarar priset som gör att ingen av de fyra första räknar i det aritmetiska registret. Draget gör volatilitetsbudgeten till en resultaträdspost: varje spridningsenhet har en krona i kostnad, ungefär halva variansen per år. I analysflödet kopplar kursen till AKM2:s scenarioläsning (km-029 bär dess hantverk): när scenarier vägs samman är den geometriska sammanvägningen den ärliga. Till spegelbaneverktyget från rp-05 läggs den andra vändningen: kör planen i båda ordningarna och läs den i båda sammanfattningarna. Gränserna hålls: km-013 äger måttet, km-014 äger korrelationsmatematiken, km-017 äger sizningen, pf-04 äger återbalanseringens mekanik och ib-05 äger avgifternas erosion — här ägs skatteläran: varför genomsnittet överstiger resan.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — spegelparet som kostar fyra kronor",
+      "intro": "Ett år med plus 20 procent och ett år med minus 20 procent låter som noll. Portföljen står på 96,0 — och dörren ut ur det rummet visar en trappa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det första exemplet är minimalt (påhittade tal): 100 enheter, år ett plus 20 procent ger 120,0, år två minus 20 procent ger 96,0. Det aritmetiska genomsnittet är exakt noll — plus 20 och minus 20 delat med två — men portföljen har förlorat 4,0 procent. Ingen avgift togs, ingen krona togs ut, ingen försäljning tvingades fram: förlusten är multiplikationens egen. För att bara återvända till 100 krävs sedan plus 4,2 procent — steget är inte symmetriskt. Förlusten på plus 20 minus 20 är fyra procent; på plus 50 minus 50 är den tjugofem: 100 gånger 1,50 blir 150,0, gånger 0,50 blir 75,0 — och vägen tillbaka kräver plus 33,3 procent."
+        },
+        {
+          "type": "tabell",
+          "content": "REPARATIONSTRAPPAN (PÅHITTADE TAL): En nedgång på minus 10 procent kräver plus 11,1 för återgång till noll · minus 20 kräver plus 25 · minus 33,3 kräver plus 50 · minus 50 kräver plus 100 · minus 75 kräver plus 300 · LÄSNING: kravet växer brutalt med djupet — dubblad nedgång mer än fördubblar reparationskravet, och vid halvering krävs en fördubbling. Trappan är mekanisk: den beror bara av divisionen 1 delat med (1 minus fallet)."
+        },
+        {
+          "type": "definition",
+          "content": "VOLATILITETSDRAGET: skillnaden mellan en avkastningsseries aritmetiska genomsnitt och dess geometriska årsavkastning. Tre kännetecken: (1) det växer med spridningen — som första approximation står den geometriska årsavkastningen en halv varians under det aritmetiska genomsnittet; (2) det betalas även utan uttag, utan avgifter och utan tvångsförsäljning — det är inte ett beteende utan en aritmetik; (3) det kan inte avskaffas, bara sänkas — genom lägre spridning vid oförändrad väntad avkastning."
+        },
+        {
+          "type": "insight",
+          "content": "Familjens femte steg (rp-05) visade att sammanfattningen tappar ordningen; detta steg visar att den redan innan ordningen överdriver nivån. Två portföljer kan bära exakt samma aritmetiska genomsnitt och ändå sluta vida isär — inte för att någon gjorde fel, utan för att genomsnittet är ett mått över parallella år medan portföljen lever ett enda av dem, i följd, multiplicerat. Draget är den fasta skillnaden mellan kartan över åren och vägen genom dem."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — produkten minns bruset",
+      "intro": "Varför överlever inte genomsnittet multiplikationen? Svaret är tre rader algebra och en approximation som blev ett av finansens bärande verktyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En portföljs årskedja multipliceras: 100 gånger (1 plus r ett) gånger (1 plus r två) och så vidare. Ta serien plus 30 minus 10 — familjens serie sedan rp-05 — och kör den två år: 100 gånger 1,30 gånger 0,90 blir 117,0. Det aritmetiska genomsnittet är plus 10 per år, men den geometriska årsavkastningen är roten ur 1,17 minus ett: plus 8,17 procent per år. Gapet är 1,83 procentenheter, och det är ingen engångsföreteelse utan en fast egenskap: den geometriska årsavkastningen står alltid under eller lika med det aritmetiska genomsnittet, och avståndet växer med spridningen. För den som vill räkna snabbt finns verktyget: den geometriska årsavkastningen ligger ungefär en halv varians under det aritmetiska genomsnittet. Vid standardavvikelsen 20 procent kring plus 10 blir det plus 10 minus 2,0 — alltså ungefär plus 8,0, mot exakta plus 8,17."
+        },
+        {
+          "type": "tabell",
+          "content": "APPROXIMATIONEN MOT EXAKT RÄKNAT (TVÅPUNKTSMODELL, ARITMETISKT GENOMSNITT plus 10 PROCENT, PÅHITTADE TAL): Spridning 10 procent — approximationens drag 0,50 procentenheter, exakta draget 0,46 · spridning 20 procent — approximation 2,00, exakt 1,83 · spridning 30 procent — approximation 4,50, exakt 4,17 · LÄSNING: verktyget är en första uppskattning, inte en bevisföring — det överskattar draget något vid hög spridning, och ju grövre bruset desto mer lönar sig den exakta roten ur produkten. km-013 bär standardavvikelsens beräkning i detalj."
+        },
+        {
+          "type": "insight",
+          "content": "Varför just halva variansen? Eftersom en nedgång äter en oproportionerligt stor del av den kommande multiplikationen, och en lika stor uppgång inte kompenserar det i produkt — först i andra ordningens termer blir obalansen synlig som en fast kostnad, och andra ordningen är just variansen. Kursen lämnar härledningen där: verktyget ska användas, inte härledas varje gång. Men en ärlighet hör till: vid låg spridning är approximationen nästan exakt, vid hög spridning syns gapet mellan verktyg och verklighet — och det gapet är i sig en påminnelse om att grovt brus inte låter sig sammanfattas i en enkel formel ens när formeln handlar om just brus."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mätning — tre portföljer, samma genomsnitt, tre liv",
+      "intro": "Tre portföljer, alla med aritmetiskt genomsnitt plus 10 procent. Tjugo år senare: 6,19x, 4,81x och 3,11x. Skillnaden är en enda siffra — spridningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen är tvåpunktsmodellen från kapitel två, körd tjugo år (påhittade tal). Portfölj ett: åren drar plus 20 eller 0 kring plus 10 — spridning 10 procent. Portfölj två: plus 30 eller minus 10 — spridning 20 procent. Portfölj tre: plus 40 eller minus 20 — spridning 30 procent. Alla tre bär det aritmetiska genomsnittet plus 10 procent; ingen av dem lever det. De geometriska årsavkastningarna blir plus 9,54, plus 8,17 och plus 5,83 procent — dragen 0,46, 1,83 respektive 4,17 procentenheter per år. På tjugo år är skillnaden inte längre en decimal: 1,0954 upphöjt till tjugo blir 6,19x, 1,0817 blir 4,81x och 1,0583 blir 3,11x. Samma genomsnitt, tre liv — och det tredje livet är hälften av det första."
+        },
+        {
+          "type": "tabell",
+          "content": "TRE LIV PÅ SAMMA GENOMSNITT (ARITMETISKT plus 10 PROCENT PER ÅR, 20 ÅR, PÅHITTADE TAL): Portfölj ett — spridning 10 procent, geometriskt plus 9,54 per år, drag 0,46 procentenheter, slutvärde 6,19x · Portfölj två — spridning 20 procent, geometriskt plus 8,17, drag 1,83, slutvärde 4,81x · Portfölj tre — spridning 30 procent, geometriskt plus 5,83, drag 4,17, slutvärde 3,11x · LÄSNING: varje spridningssteg äter en multipel — från 6,19x till 4,81x till 3,11x utan att det väntade årsvärdet rörde sig en procentenhet. Den som jämför strategier på aritmetiskt genomsnitt jämför kartor över år som ingen lever."
+        },
+        {
+          "type": "insight",
+          "content": "De två talen svarar på två olika frågor. Det aritmetiska genomsnittet beskriver ett typiskt år bland alla möjliga år — det är väntevärdet över parallella utfall. Den geometriska årsavkastningen beskriver resan: det tal som, upphöjt till antalet år, ger den faktiska produkten. En portfölj lever inte i parallella utfall utan i ett, i följd. Därmed är draget inte en teknisk fotnot utan en översättning mellan två språk — presentationens språk, genomsnittet, och verklighetens, produkten — och kursens hela konst är att läsa båda och veta vilken fråga varje tal besvarar. rp-05 lade ordningen på produkten; här läggs nivån: genomsnittet överdriver alltid, spridningen äter skillnaden."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktik — dragets tre spakar",
+      "intro": "Skatten kan inte avskaffas — men den kan budgeteras och sänkas. Tre spakar finns, och varje spak har sin granne i registret som äger mekaniken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första spaken är diversifiering (km-014 bär korrelationsmatematiken): två tillgångar med samma väntade avkastning och ofullständig korrelation ger tillsammans lägre spridning än var och en ensam — väntevärdet bevaras, draget sjunker. Räkneexemplet är rent (påhittade tal): två oberoende tillgångar med spridning 10 procent vardera, lika vikta, ger portföljens spridning som 10 delat med roten ur 2 — alltså ungefär 7,1 procent — och draget sjunker från ungefär 0,50 till ungefär 0,25 procentenheter. Variansen halveras, skatten halveras: diversifiering är den enda spaken som sänker draget utan att röra avkastningen. Andra spaken är volatilitetsbudgeten (rp-04): att sätta ett mål för spridningen är att sätta ett tak för skatten — budgeten är dragets administrationslära. Tredje spaken är positionssizningen (km-017 bär Kellykriteriet): den som satsar mer än den geometriska tillväxten bär pressar ned tillväxten under optimum — för stor sizing betalar draget i ökande takt, vilket är skäret där Kellys logaritmiska synsätt och denna kurs möts. Återbalanseringen (pf-04 äger mekaniken) håller portföljen nära budgeten mellan justeringarna — detta steg äger varför: varje spridningsenhet över budget är obudgeterad skatt."
+        },
+        {
+          "type": "tabell",
+          "content": "DRAGETS TRE SPAKAR (PÅHITTADE TAL I EXEMPLET): Diversifiering — två oberoende tillgångar, portföljspridning 10 delat med roten ur 2 lika med 7,1 procent, drag 0,50 går till 0,25 procentenheter — mekanikens ägare km-014 · Budget — spridningstak sätter skattetak — ägare rp-04 · Positionssizning — den geometriska tillväxten bär hävstången; överskrid den och tillväxten böjer ned — ägare km-017 · LÄSNING: spakarnas ordning är principen — först den gratis, sedan den administrativa, sist den disciplinära."
+        },
+        {
+          "type": "definition",
+          "content": "DRAGPROTOKOLLET I TRE SPAKAR: (1) DIVERSIFIERA — sänk spridningen utan att röra väntevärdet; varje brusdämpning är en skattesänkning · (2) BUDGETERA — sätt spridningens tak i kronor, inte bara i procent; halva variansen är priset per år · (3) SIZE EFTER TILLVÄXTEN — den som kompounderar får inte satsa som om åren vore oberoende val vid varje bord; den geometriska tillväxten är taket."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fem sätt skatten osynliggörs",
+      "intro": "Draget behöver inte bemästras — det behöver bara synas i rätt valuta. Fem konstruktioner gör det osynligt, och var och en har sin bot.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: den aritmetiska presentationen — returprognoser och historieöversikter som redovisar aritmetiska årsmedelvärden säljer kartan som vore den resan; boten är att alltid ställa en fråga till varje genomsnitt: geometriskt eller aritmetiskt? Fälla två: volatiliteten som gratis — resonemanget att svängningar är harmlösa så länge inget säljs; spegelparet 96,0 visar priset utan en enda försäljning. Fälla tre: trappans illusion — tanken att en nedgång bara är plus- och minustecken som tar ut varandra; reparationstrappan visar att de aldrig gör det: minus 20 kräver plus 25, alltid. Fälla fyra: fel horisont att medelvärdesbilda över — ett aritmetiskt medelvärde över långa perioder döljer att draget betalats varje enskilt år under dem; ju längre medelvärdesperiod, desto osynligare skatten — och desto större blir den i produkt. Fälla fem: avgifterna i fel valuta — avgifter räknas ofta på den aritmetiska avkastningen men betalas ur den geometriska; gränsen går här till ib-05, som äger avgiftserosionens räknelära, men valutaregeln är denna kurs: två kostnader möts på vägen — draget och avgiften — och den ärliga kalkylen bärs i geometriska kronor."
+        },
+        {
+          "type": "definition",
+          "content": "GENOMSNITTSFÄLLAN (KURSENS EGNA): att läsa ett aritmetiskt medelvärde som en prognos för portföljens tillväxt. Boten är en regel: varje avkastningstal märks med sin fråga — typiskt år, aritmetiskt, eller faktisk resa, geometriskt — och varje jämförelse mellan strategier förs i resans valuta."
+        },
+        {
+          "type": "insight",
+          "content": "Grannen km-034 äger nedgångens mätning — djup, längd och återhämtning — och reparationstrappan är densamma asymmetri i statisk form: varje mått på hur dyrt ett fall är att bära är ett mått på hur mycket produkten straffar fallet. Skillnaden i ägarskap: km-034 mäter vad som hänt, detta steg mäter priset på själva variationen — före, under och efter varje enskilt fall. Tillsammans täcker de risken i djup (km-034), ordning (rp-05) och nivå (detta steg): tre axlar, en och samma multiplikation."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — dragprotokollets fem frågor",
+      "intro": "Fem frågor, besvarade med två tal per portfölj, gör skatten till en budgetpost — och en utmaning som stänger kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: bär presentationen aritmetiskt genomsnitt eller geometrisk årsavkastning — och vilken av dem lever min portfölj? Fråga två: vad är spridningen, och vad blir draget som första approximation — en halv varians under genomsnittet? Fråga tre: vilken spak bär planen — diversifiering som sänker spridningen gratis, budget som sätter taket, eller positionssizning som håller hävstången under den geometriska tillväxten? Fråga fyra: hur mycket av den väntade avkastningen överlever tjugo års multiplikation — tre liv på samma genomsnitt visar att svaret kan vara hälften? Fråga fem: i vilken valuta räknas avgifterna — på genomsnittet eller på resan? Den som kan svara på de fem har konverterat bruset från ett öde till en kostnadspost: ingenting är prognoserat, allt är prissatt. Familjen blir därmed hel: måtten (rp-01), deras tre frågor (rp-02), vikterna (rp-03), budgeten (rp-04), ordningen (rp-05) — och nu priset på själva variationen."
+        },
+        {
+          "type": "definition",
+          "content": "DRAGPROTOKOLLET: (1) VALUTAN — varje avkastningstal märks aritmetiskt eller geometriskt · (2) SKATTEN — draget uppskattas till en halv varians under genomsnittet · (3) SPAKEN — diversifiering, budget eller positionssizning, valda i den ordningen · (4) MULTIPELEN — tjugoårsutfallet räknas på den geometriska årsavkastningen, inte på genomsnittet · (5) AVGIFTENS VALUTA — kostnader bärs i geometriska kronor. Fem rader, en sida — och genomsnittet kan inte längre låtsas vara resan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta två strategier, verkliga eller påhittade, med samma aritmetiska genomsnitt plus 10 procent men spridning 10 respektive 30 procent. Räkna deras geometriska årsavkastningar med roten ur produkten av ett uppår och ett nedår, och deras tjugoårsmultiplar. Räkna därefter reparationstrappan för minus 10, minus 20, minus 33,3 och minus 50 procent, och notera var trappan slutar vara en trappa och blir en klippa. Kursen är utbildning i att läsa tillväxtens tredje siffra — inte uppmaningar att köpa eller sälja något."
+        }
+      ]
+    }
+  ]
+}

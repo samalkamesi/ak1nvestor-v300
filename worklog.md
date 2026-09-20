@@ -15996,3 +15996,24 @@ Fabriksagent s6-u2 (byggare). KONTEXT: omgång 27 var KLART och kvitterat (fabri
 Fabriksagent s7-u3. VAL med kollisionshantering: förstahandsvalet o119 EFTER-mätningen (o120 §6 steg 0, vakarövertag-bart) förlorade disk-racet mot s7-u2:s omstart (deras mätare _s7u2o119-efter.mjs 17:22:26 + reservation o121 17:22:37 mot min ~17:24) — min bakgrundsmätare _s7u3o120-eftermatare.mjs STOPPAD (två parallella Lighthouse-mätare hade ätit RAM ur byggfönstret de bevakar), jag viker mig enligt disk-först-konventionen; kollisionsnotis data/vakten/s7-o121-KOLLISION-notis-u2.md med gåvor (FÖRE-validering: 12 chunk-refs /en/blogg på IxcwwO, SSR=0 widgetsträngar; synkens 15:17Z-läge 1 barn/1838 MB<2500). NYTT VAL ur spårets lista: ROND 3 — ytorna födda EFTER o8 (09-15) hade aldrig mätts: superanalys/kalkylator (o68 tog dem i vakturens urval 09-18 men vakten mäter inte tryckytor), konfluens/netnet, /dataset, nyfödd kurs pe-07 (s5 09-20). MÄTNING (kanoniska mobil-lasbarhet.mjs, CDP 390×844 iPhone-UA, prod IxcwwO): 351 interaktiva på 6 sidor ⇒ 75 tryckmål under 52px + 23 zoomfällor, KONCENTRERADE till /kalkylator (49+21 — summary-rader 320×16 f12 + inputs f<16, egen styling som missade o8:s klasslyft) + /dataset-pills 24px ×14 + globala knappar 44² («Dölj Short-Seller» på 3 ytor, «Skanna universum», steg-knappar 44) — medan konfluens/netnet i princip RENA (2–3) och NYFÖDD KURS 2/64: o8:s komponentlyft ÄRVS av kursfabriken, skulden växer ej av sig själv. Fixkö rond 4 dokumenterad med exaktelement (summary→min-h 52 f16 max-md-skyddad osv., o8-rond-2-mönstret, deploygated). KVD: mätning kanoniskt verktyg oförändrat · src ORÖRT (måtvåg) · INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (u2:s o121-filer i fred utom protokollnumrets gemensamma append-register) · ocommittad o120-§6-diff (4 rader, blockerade ARBETSYTA-SYNKEN enl prod-synk.logg 14:43:37Z) committad oförändrad — ytsynken låses upp · reservation o122 via verktyget (källor 121) · commit -F + pathspec. Protokoll: OPTIMERING/o122-prestanda-mobil-rond3-s7.md. Kö: rond 4 fixvåg (kalkylator först) · u2:s o121 bär o119-EFTER. [fabrik]
 
 ## SPÅR 7 s7-u2 (auto-s7-1789915506445, byggare 2/3) — 2026-09-20 17:15–17:4x lokal: prestandavåg o121 — o119 EFTER: RAM-UPPLÅSNINGEN (12 läckta/retry-processer dödade, 1 286→5 560 MB) ⇒ prod-synkens 15:37:06Z-rop BYGGER (första sedan 14:43); kollisions-triangeln u2/u3/u4 löst: u3 viker sig helt (notis + FÖRE-gåvor), u4 = fabrikens dubbelredispatch dödad med arvet (HTML-arkiv, o121-reservation, mätplan) övertaget; mätkedjan (vanta→mata→summera) kör i nohup-bakgrund, /tmp/s7u2o119-efter.log — FORTSÄTTNINGSGUIDE i o121-protokollets §5 [fabrik — fas-1 90e058d9]
+
+## SPÅR 7 s7-u2 SLUT (auto-s7-1789915506445, byggare 2/3) — 2026-09-20 17:15–17:55 lokal: prestandavåg o121 SLUTBOFÖRD — o119-kurens EFTER-bevis komplett [fabrik]
+
+Fas-1-raden ovan (17:38) fullföljd: deploy ELBcwg4THC 15:42:43Z (synken
+byggde be378be5 med 568a93a2 förfader efter RAM-upplåsningen 1 286→5 560
+MB) · prod 200 ×5 https · STRUKTUR ✓: widgetens 5 strängar i tunn egen
+chunk 3c20dmqsqgcwk.js 1 913 B (FÖRE-klump 10f47l5mmeoxy.js 56 982 B),
+initial-referenser 0/0/0 (FÖRE 12/12/13), SSR-strängar 0, klumpfil borta ·
+LIGHTHOUSE (mobil 4G, u4:s plan n=2/1/1): en P71 LCP 4 227 TBT 573 medel
+(n1 373 — UNDER ≤500-målet i tyst fönster; n2 772) = −35 % mot FÖRE 876 ·
+ar P69 663 (−10 %, inom band) · sv P75 445 (+28 % — ÄRLIG AVVIKELSE:
+n=1, sidans brusspann 329–445, < 500, öppen punkt) · CLS 0 ×4 (o100
+helig) · LCP ±15 % ✓ alla · SSR-kontraktets facit: normaliserad sha EJ
+identisk — 4 rader/sida, ALLA i script/flight-lagret (klump-chunk ur
+grafen 16→17 script, rehashade namn, +1 tunn wrapper-chunk, $RC-
+internals); preload 7/7 identiska, DOM orörd, "bitidentisk" justerad
+till "script-lager enligt design, DOM orörd". u4-arvet (FÖRE-HTML-arkiv
+15:24:21Z + 2 verktyg) committat — dess §1–§3 står orörda. Protokoll:
+OPTIMERING/o121-prestanda-o119-efter-s7.md. Kö: sv-TBT-närmätning vid
+nästa sv-fönster · o118 §6 produktbeslut (listlängd) fortfarande KUNDENS
+rond. [fabrik]

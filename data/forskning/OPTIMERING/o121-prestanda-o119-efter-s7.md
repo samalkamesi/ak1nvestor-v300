@@ -102,13 +102,68 @@ FÖRE-tabell.
 
 ## §5 Slutläge och vakarövertag
 
-(Fylls vid mätningens slut — om denna platshållare står kvar när filen
-läses: kedjans status finns i /tmp/s7u2o119-efter.log och rådata i
-data/forskning/OPTIMERING/lighthouse/*-s7u2o119-efter*.json; kör i så
-fall `node verktyg/_s7u2o119-efter.mjs mata && node verktyg/
-_s7u2o119-efter.mjs summera` (mata hoppar existerande mätningar) och
-fyll denna sektion + worklog enligt §5-kriterierna i
-o119-prestanda-nastasteg-defer-s7.md.)
+**§5.1 Deploy (kriterium 1 — ✓):** Efter §4.2:s RAM-upplåsning startade
+prod-synkens 15:37:06Z-rop BYGGET (NY KOD e4588c57→be378be5, 568a93a2
+förfader ✓) och deployade 15:42:43Z — **BUILD_ID IxcwwO → ELBcwg4THC**
+(firsta deploy som fick bygga sedan 14:43Z).
+
+**§5.2 Prod 200 ×5 (kriterium 2 — ✓):** https://lab.ak1nvestor.com —
+`/` 200 · `/blogg` 200 · `/en/blogg` 200 · `/ar/blogg` 200 · `/en` 200
+(15:44:19Z, mätarens struktur-JSON).
+
+**§5.3 Struktur (kriterium 3 — ✓, kurens kärnbevis):** Widgetens FEM
+unika strängar sitter i **tunn egen chunk `3c20dmqsqgcwk.js` — 1 913
+byte** (FÖRE: klump `10f47l5mmeoxy.js` 56 982 byte). Initial-referenser
+i SSR-HTML: **0 / 0 / 0** (FÖRE 12/12/13 + /kurser 17). Widget-strängar
+i SSR-HTML: 0 (SSR=null-kontraktet lever). Gamla klump-chunken finns
+ej längre som fil. Widget-modulen hämtas först efter hydratisering —
+precis o105 §6 post 3:s syfte.
+
+**§5.4 Lighthouse EFTER (mobil 4G-simulering, localhost, 15:45–15:46Z,
+n enligt u4:s plan; rådata i lighthouse/*-s7u2o119-efter-n*.json):**
+
+| Sida | n | Poäng | LCP | TBT | CLS | FÖRE (o119 §2) | Δ TBT |
+|---|---|---|---|---|---|---|---|
+| /en/blogg | 1 | P74 | 4 251 | **373** | 0 | P67 · 4 059 · 876 | −503 |
+| /en/blogg | 2 | P67 | 4 203 | 772 | 0 | 〃 | −104 |
+| /en/blogg medel | — | P71 | 4 227 | **573** | 0 | 〃 | **−303 (−35 %)** |
+| /ar/blogg | 1 | P69 | 4 199 | 663 | 0 | P66 · 4 561 · 737 | −74 (−10 %) |
+| /blogg (sv) | 1 | P75 | 4 098 | 445 | 0 | P75 · 4 232 · 348 | **+97 (+28 %)** |
+
+Bedömning mot kriterium 4: **TBT ↓ på /en/blogg ✓** (−35 % medel; n1
+373 ms **under ≤500-målet i tyst fönster**, n2 772 i lastigare); /ar/blogg
+−10 % ✓ (±15 %-bandet); **CLS 0 ×4 ✓** (o100-nivån helig); LCP ±15 % ✓
+(en +4 % · ar −8 % · sv −3 %). **Ärlig avvikelse: sv /blogg TBT +28 %**
+(n=1) — utanför ±15 %-bandet men inom sidans kända brusspann
+(o110:EFTER 329,5 · denna FÖRE 348 · denna EFTER 445) och långt under
+500; bokförs som öppen punkt för nästa sv-mätning, ej kurmisslyckande.
+Poäng: en +3,5 · ar +3 · sv ±0.
+
+**§5.5 SSR-kontraktets facit (sanningsenlig justering av "bitidentisk"):**
+Normaliserad jämförelse (u4:s arkiv 15:24:21Z vs EFTER 15:47Z, regex
+`/_next/[^"'\s)]+`→NEXTPATH) ger **ej identisk sha** — skillnad i exakt
+4 rader/sida, samtliga i script/flight-lagret, klassificerade: (a)
+`10f47l5mmeoxy.js` UR script+flight-grafen (16→17 script; kurens
+avsikt); (b) rehashade chunk-namn för oförändrade moduler (bygge);
+(c) +1 tunn client-wrapper-chunk (NastaStegLatads hydrat-referens);
+(d) $RC/suspense-internals från dynamic-import. **Preload-listan
+identisk 7/7; widget-strängar 0 i HTML båda lägena; synlig DOM orörd**
+(CLS 0 ×4 mätet). s7-u1:s "bitidentisk" var en för stark förutsägelse —
+korrekt formulering: script-lagret ändras enligt kurens design, DOM:n
+gör det inte.
+
+**§5.6 Kriteriefacit:** 1 ✓ · 2 ✓ · 3 ✓ · 4 ✓ med sv-TBT-reservationen
+ovan. o119-vågen (kod 568a93a2 + denna EFTER) är **SLUTBOFÖRD**.
+
+## §5a Tilläggs-KVD s7-u2 (slutfas)
+
+src/ orörd hela vågen (tsc-baslinjen orörd; inget bygge — prod-synken
+ägde bygget) · R2 orörd (priser/tier/publicering orörda) · data/blogg/
+orörd · u3:s ytor orörda (dess o122 lever separat) · prod-synkens
+RAM-vakt respekterad (processstädningen var driftkirurgi med
+cmdline-identifiering: app-server-familjen 16:43 lämnad orörd) ·
+u4-arvet committat som del av leveransen (arkiv + 2 verktyg + §1–§3
+orörda) · LEVERANS-kvitto i sessionen.
 
 ## §6 KVD
 

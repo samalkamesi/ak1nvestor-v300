@@ -1,0 +1,92 @@
+{
+  "datum": "2026-09-20T01:58:05.988Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u3sond-komplett",
+  "sidor": [
+    {
+      "sokvag": "/en",
+      "poang": {
+        "prestanda": 0.77,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1686,
+        "LCP": 4296,
+        "TBT": 280,
+        "CLS": 0,
+        "TTI": 4483,
+        "SI": 3970
+      }
+    },
+    {
+      "sokvag": "/ar",
+      "poang": {
+        "prestanda": 0.73,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1238,
+        "LCP": 4328,
+        "TBT": 473,
+        "CLS": 0,
+        "TTI": 4704,
+        "SI": 2296
+      }
+    },
+    {
+      "sokvag": "/en/blogg",
+      "poang": {
+        "prestanda": 0.62,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1236,
+        "LCP": 4529,
+        "TBT": 994,
+        "CLS": 0,
+        "TTI": 4541,
+        "SI": 1695
+      }
+    },
+    {
+      "sokvag": "/ar/blogg",
+      "poang": {
+        "prestanda": 0.67,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1506,
+        "LCP": 4345,
+        "TBT": 616,
+        "CLS": 0,
+        "TTI": 4936,
+        "SI": 4293
+      }
+    },
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.75,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1649,
+        "LCP": 4376,
+        "TBT": 316,
+        "CLS": 0,
+        "TTI": 4684,
+        "SI": 4054
+      }
+    }
+  ]
+}

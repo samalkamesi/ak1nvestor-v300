@@ -2689,3 +2689,27 @@ snapshots ≈ 1 271 388 · public ≈ 1 365 519 om modalt dagsteg) · u2:s
 02:40-gap-prediktion ([2 400, 2 950]) · retention-vakten (första
 30-dagars-raderingen: db-2026-09-11 först ~10-11) · kvartalsövingen senast
 2026-12-20.
+
+## S10-U2 — BLAD 10 FÖDELSEBEVIS: prediktiondom 9/9 (fyra EXAKTA) + 02:40-gap STÄNGT (2 629 i bandet) + RPO-morgonpunkt + trippelkorsvalidering A==B==C (2026-09-20 06:36–06:44 lokal, GODKÄNT)
+
+- **Komplement till S10-U3:s replik-sektion ovan** (dubbelrepliken, födelse-
+  talet och dekompositionen täcks där — min körning = dess "u2 AUTO"-rad).
+- **Prediktiondom (anspråk låst 06:38 FÖRE mätning, P1–P9): 9/9 infriade,
+  fyra EXAKTA** — board 50 114 · snapshots 1 252 404 · DAGSTEG +19 800 ·
+  markörprofil 99/101 · fel 788/0. Ärlighetsnot P7: anspråkets gapformel skrev
+  fel bas (22:32-punkten i stället för föregående dags full-dump) — domenen
+  följer u3:s ursprungliga definition.
+- **02:40-gap STÄNGT (S10-U3:s köpost):** system-events-full-2026-09-20.json.gz
+  = 168 696 (truncerad false) − 166 067 (09-19) = **2 629 ∈ [2 400, 2 950]** —
+  prognosen träffad. Sidofynd: nattakten 22:32→02:40 = 427 r / 4,13 h ≈
+  **103 r/h** (högre än dagtakten 82 — nattens fabrikstrafik skriver events).
+- **RPO-morgonpunkt (04:39Z):** +140 oskyddade på 4 h 08 min (~34 r/h) ·
+  2/60 i rörelse (board +128 → 50 242 · organ_health_logs +12 → 3 084) ·
+  **A==B==C:** dump-COPY == restore-count == rpo-dump-räkning == 1 345 719.
+- **Städning dubbelbevisad:** mitt fönster städade (verktyget), syskonets
+  verktyg loggade "PG17 var stoppad — korrekt viloläge" vid sin start 04:38:56Z
+  (låsfilen pid 3424104 bevittnar), slutligt viloläge egenmätt 06:43.
+- Protokoll: data/forskning/DR-OVNING-2026-09-20-BLAD10-FODELSE.md +
+  DR-PROV-2026-09-20-AUTO.md (maskinellt) + DR-RPO-DIFF-2026-09-20-MORGON.json.
+  KVD: data-only · src/ orörd = INGET bygge · R2 orörd · prod ENDAST läst
+  (GDPR: endast antal) · syskonytor orörda (AUTO-2 + REPLIK2 committas av u3).

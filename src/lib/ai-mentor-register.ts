@@ -124,6 +124,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "am-06-kortlage-och-aktieutlaning", titel: "Kortläge och aktieutlåning — den andra sidan av orderboken", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "am-07-indexomlaggningen", titel: "Indexomläggningen — flödet som flyttar kursen utan en enda nyhet", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "am-08-etfens-inre-mekanik", titel: "ETF:ens inre mekanik — korgen, skapelsen och arbitraget som håller priset", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "am-09-marginalhandeln", titel: "Marginalhandeln — belåningskontot, marginalkravet och kaskaden", kategori: "AKTIEMARKNADEN I PRAKTIKEN", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "analysis-for-financial-management", titel: "Analysis for Financial Management — Robert C. Higgins: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 51, minuter: 214, niva: "Alla" },
   { slug: "bf-01-tillganglighetsfalla", titel: "Tillgänglighetsfälla", kategori: "BETEENDEFINANS", variabel: undefined, kapitel: 6, quiz: 14, minuter: 16, niva: "Intermediär" },
   { slug: "bf-02-sunk-cost", titel: "Sunk cost", kategori: "BETEENDEFINANS", variabel: undefined, kapitel: 6, quiz: 12, minuter: 15, niva: "Nybörjare" },

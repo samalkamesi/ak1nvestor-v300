@@ -1,0 +1,172 @@
+{
+  "slug": "am-09-marginalhandeln",
+  "category": "AKTIEMARKNADEN I PRAKTIKEN",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Marginalhandeln — belåningskontot, marginalkravet och kaskaden",
+  "summary": "Aktiemarknadens praktik har kartlagts utifrån — spreaden (am-01), indexet (am-02), marknadsstrukturen (am-04), kortläget (am-06) och ETF:ens maskin (am-08) — men en maskin har stått orörd i familjens kartläggning: läsarens eget konto. Marginalhandeln är mekaniken i att belåna aktieportföljen: att låna pengar med innehaven som säkerhet, och att leva med det kontrakt som då skrivs — det belåningsbara värdet som är lägre än marknadsvärdet, underhållskravet som övervakas i realtid, marginalkravet som kan tvinga fram försäljning just den dagen marknaden betalar sämst, och räntan som ska betalas i varje utfall medan avkastningen bara kommer i ett av dem. Kursen bygger kontot från grunden med ett genomgående exempel (PÅHITTADE TAL): Emilia med 200 000 kronor eget och 100 000 kronor belåning, en portfölj på 300 000 kronor i tre påhittade bolag med tre olika belåningsfaktorer — 70, 50 och 25 procent — som ger ett belåningsbart värde på 167 500 kronor. Sedan körs kaskaden: hur börsfall om 20, 40, 50 och 55 procent rör sig genom kontot, varför det egna kapitalet faller 1,5 gånger marknadens fall (hävstången 300 dividerat med 200), exakt vid vilket tal kontots värdeandel 25,9 procent bryter underhållskravet 30 procent, och att åtgärden den dagen är att sälja för minst 18 300 kronor och amortera — inte för att analysen vill, utan för att kontraktet kräver. Räntekapitlet visar asymmetrin i siffror: belåningsräntan 5,95 procent kostar 5 950 kronor per år (ungefär 496 per månad) oavsett utfall, ett plusår på 8 procent lyfter kontot från 8,0 till 9,0 procent medan ett minusår på 8 procent sänker det från minus 8,0 till minus 15,0 procent — hävstångens svärd är oliksidigt, och brytpunkten är belåningsräntan själv. Sex fällor (tak-, ränte-, korrelations-, likviditets-, utdelnings- och skattefällan), historien från 1920-talets depositioner till dagens realtidsövervakning, och ett protokoll med fem frågor som förvandlar kravdagen från överraskning till uträkning. Kursen är mekanikbeskrivning och utbildning — inte uppmaningar att köpa eller sälja, och belåningsgraden är alltid läsarens eget beslut.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Reda ut ordets två hem: värderingsmarginalen som km-030 äger (avståndet mellan pris och värde, analysens skydd) och kontots marginal som am-09 äger (bankens säkerhet för återbetalning) — och varför de kan kollidera just när bägge behövs som mest · Räkna det belåningsbara värdet: portfölj 300 000 kronor i tre poster med belåningsfaktor 70, 50 och 25 procent ger 105 000 + 50 000 + 12 500 = 167 500 — skillnaden mot marknadsvärdet är bankens marginal, inte din · Läsa kontots tre grundtal: exponering 300 000 (eget 200 000 + belåning 100 000), belåningsgrad 33,3 procent och värdeandel 66,7 procent · Köra kaskaden: vid minus 20 procent står det egna kapitalet för 58,3 procent av exponeringen, vid minus 40 procent 44,4, vid minus 50 procent 33,3 — och vid minus 55 procent 25,9 procent, vilket bryter underhållskravet 30 procent och utlöser marginalkravet · Räkna hävstången i förlustled: exponering dividerat med eget kapital = 300/200 = 1,5, alltså faller det egna kapitalet 1,5 gånger marknadens fall — minus 55 procent på börsen blir minus 82,5 procent på kontot, från 200 000 till 35 000 kronor · Räkna kravåtgärden: sälja för S och amortera tills 35/(135 − S) når 30 procent ger S minst 18 300 kronor — mekanik, inte analys · Räkna räntans asymmetri: 5,95 procent på 100 000 kronor är 5 950 per år, ett plusår på 8 procent ger 9,0 procent på eget kapital (mot 8,0 oblånat) och ett minusår på 8 procent ger minus 15,0 (mot minus 8,0) · Förstå brytpunkten: nettoformeln 1,5a − 0,5r visar att hävstången bara förbättrar utfall där portföljavkastningen a överstiger belåningsräntan r · Känna igen de sex fällorna: taket, den säkra räntan mot osäker avkastning, korrelationen mellan konto och marknad, likviditeten på kravdagen, utdelningen som bär räntan och skatten som kan realiseras i förluståret · Tillämpa protokollet: känna sin kaskadpunkt i förväg, hålla reserv utanför kontot och veta svaret på de fem frågorna före kravdagen",
+  "why": "AKTIEMARKNADEN I PRAKTIKEN-familjens åtta första steg har beskrivit marknadens maskiner från säkert avstånd: spreadens kostnad (am-01), indexets vändning till vara (am-02), aktiesidans siffror (am-03), strukturen (am-04), dagens auktioner (am-05), kortläget (am-06), indexomläggningen (am-07) och ETF:ens inre mekanik (am-08). Men varje maskin i den kedjan antar ett konto som betalar kontant — och det flesta läsares verklighet erbjuder en konstruktion som familjen aldrig öppnat: belåningskontot, där innehaven själv är säkerhet för lån som köpt dem. Sonden mot 464-registret bekräftar luckan: kontobelåning, marginkrav, aktiebelåning och likvidationsrisk har noll kursägare; marginalhandel förekommer endast i bokkurser som citeras som källor. Differentieringen är tydlig: v10 och v11 äger BOLAGETS belåningsgrad och likviditet — värderingsobjektets sida — medan am-09 äger spegelsidan, ägarens konto; am-06 äger kortlägets utlåningsmekanik men inte den långa sidans belåning; km-030 äger ordet marginal i värderingsmening. Kursen behövs av tre skäl. För det första är mekaniken analysens villkor, inte dess fiende: ett konto som kan tvingas sälja i ett mellanår har inte råd att ha rätt på fem årssäsong — kravdagen förkortar analysens horisont (Grahams marginal och Lynchs tålmodighet förutsätter båda ett konto som tål fallet). För det andra är kaskaden systemriskens minsta molekyl: varje börsfall i historien från 1929 och framåt har fått en del av sin hastighet av marginalkonton som tvingades sälja och därmed tryckte ner priserna för nästa konto i kedjan — bf-15 äger bubblan, am-09 äger den enskilda länken. För det tredje är räntan den mest underskattade kostnaden i utbildningen: den är den enda posten i hela kursbiblioteket som är helt säker — den betalas i varje scenario, medan alla intäkter är scenariospecifika. Kursen är utbildning i mekanik, inte uppmaningar att köpa eller sälja; om den ska avråda från något så är det från att skriva på ett kontrakt man inte kan räkna på.",
+  "history": {
+    "origin": "Belåning är äldre än börserna — handelshusens växlar bar ränta långt innan aktier blev pant — men marginalhandeln som massfenomen föddes på 1920-talets amerikanska börs. Då kunde en köpare lämna en deposition på i storleksordningen tio procent av köpet och låna resten hos mäklaren, som i sin tur lånte av bankerna: en pyramid av skuld på en marknad som steg. När priserna vände hösten 1929 verkade depositionskraven som en mekanisk motvikt rakt neråt — varje fall triggade nya krav, varje krav tvingade nya försäljningar, varje försäljning sänkte priserna ytterligare — och den nedåtgående hissen blev en av kraschens mest citerade motorer. Böckerna i biblioteket som nämner marginalhandel (the-essays-of-warren-buffett, devil-take-the-hindmost, extraordinary-popular-delusions) bär alla minnet av den kedjan.",
+    "evolution": "Svaret på 1929 blev regelverket: amerikanska Securities Exchange Act 1934 gav centralbanken mandat att sätta minsta egen insats vid aktieköp — de initiala kraven har historiskt pendlat ända upp till hundra procent under krigsåren och ligger sedan länge kring hälften — och därmed föddes den moderna tanken att kontots marginal är en reglerad variabel, inte bara en överenskommelse mellan parter. Sverige formade sin egen linje: pensionsbesparingar får inte belånas, och branschens konton har länge differentierat belåningsvärde per post — stora bolag bär högre säkerhetsvärde än små. Utvecklingen gick från daglig manuell kontroll till realtidsövervakning, från telefonisk uppmaning till automatiska delvisa försäljningar, och från enhetliga procentsatser till individuell värdering av varje posts likviditet och volatilitet.",
+    "modern": "I dag är marginalhandeln en knapptryckning bort i de flesta nätmäklare — gränserna visas i realtid, räntan debiteras månadsvis och kontot kan låna upp till sitt belåningsbara värde utan en enda mänsklig handläggare. Kombinationen av enkelhet och automation är kursens budskap i miniformat: mekaniken har aldrig varit enklare att använda eller snabbare att verkställa — ett marginalkrav som 1929 tog en natt att dela ut kan i dag delas ut och verkställas på minuter, med systematisk försäljning av de poster som säljs bäst just då. Börsfallen 2008 och mars 2020 visade mönstret i modern tappning: kraftiga fall, sviktande likviditet i mindre poster och konton vars värdeandel sjönk under kraven mitt i rörelsen. Ju snabbare maskinen blivit, desto viktigare att läsaren förstår den innan — inte under — den första kravdagen."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Ordet marginal — två ägare av samma ord",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Mätning — det belåningsbara värdet",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Räkneexempel — kaskaden och kravdagen",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Räntan — den säkra kostnaden",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — protokollet och de fem frågorna",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch byggde sin metod på att tiden i marknaden belönar den som förstår vad man äger — men tiden som belöning förutsätter ett konto som får behålla sina poster genom årens svängningar. Belåningen förkortar precis den horisonten: när ett lån finns i kontot blir ett tillfälligt kursfall ett permanentt utfall om kravdagen tvingar fram försäljning i botten, och bolaget kan sedan fullfölja Lynch-analysen till sista procenten utan att läsaren är kvar som ägare. Hans skepsis mot skulder som äter av framtiden — att räntan betalas före avkastningen och oavsett dess kommer — är marginalkontots naturliga varningsklocka: Lynch-läsaren som tålmodigt väntar på att en historia ska rulla upp behöver värst av allt ett konto som inte kan bli uppsagt under väntan. Kursens läsning av Lynch är därför enkel: analysens tidslinje och kontots tidslinje måste rymmas i varandra — annars äger man sin analys bara på papperet medan kontot äger beslutet.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal — avståndet mellan pris och beräknat värde, km-030:s kärna — är analysens skydd mot att ha fel om bolaget. Men marginalhandeln visar ordets andra ansikte: kontots marginal är bankens skydd mot att ha fel om läsaren. De två marginalerna löper skilda banor tills de kolliderar: ett kraftigt börsfall kan samtidigt vidga värderingsmarginalen (priserna sjunker under värdet — Grahams köpläge) och slå sönder kontots marginal (värdeandelen sjunker under kravet — tvångsförsäljningen). I exakt det läge som Grahams ramverk kallar mest attraktivt kan belåningskontraktet tvinga läsaren att sälja — och det är ingen paradox utan aritmetik: den ena marginalen mäter analysen, den andra mäter kontraktet, och bara den senare har en utlösare. Grahams egen levnadsläxa från 1929-talets kross — att även rätt analys kan krossas av fel finansiering — är kursens bärande arv: bufferten, likviditetsreserven och avståndet till kontraktets gränser är inte feghet utan själva förutsättningen för att säkerhetsmarginalen ska få verka färdigt.",
+  "ak1Section": "I AK1A:s metodik är am-09 kontomekanikens referenskurs: AKM2:s scenariearbete har sedan tidigare en variabel för hur en portföljs värde rör sig över tid — am-09 lägger till den fråga som scenariot måste besvara före sitt första tal: vid vilket utfall tvingas kontot agera? Kaskadpunkten — det börsfall där värdeandelen bryter underhållskravet, i genomgångsexemplet minus 55 procent — är en beräkningsbar egenskap hos varje belåningsgrad, och den skrivs i metodiken som en egen rad i riskmatrisen (rs-04): sannolikheten är scenariofrågan, konsekvensen är kontraktsfrågan, och marginalkravet är den punkt där de två möts utan att läsaren blir tillfrågad. Utbildningsplattformens hållning är dubbel och enkel: mekaniken ska kunna räknas av varje läsåre som överväger kontraktet (därav kaskaden, ränteformen och brytpunkten i denna kurs), och kursen är och förblir utbildning — inte uppmaningar att köpa eller sälja, inte en rekommendation om belåning eller om att avstå från den. Både valet och graden är läsarens; metodikens uppgift är att ingen skriver på ett kontrakt vars matematik man inte kan köra själv — och att de som vill vässa den träningen fortsätter i riskfamiljens spegelkurser rs-06 och rk-serien samt praktikens pf-01.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Ordet marginal — två ägare av samma ord",
+      "intro": "Kursen börjar med en förväxling som kostar förmögenheter: ordet marginal betyder två olika saker på två olika ställen i utbildningen — och bara det ena ägs av läsaren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "km-030 äger värderingsmarginalen: avståndet mellan priset och det beräknade värdet, analysens skydd mot att ha fel om bolaget. am-09 äger den andra marginalen: kontots marginal, bankens säkerhet för att läsaren kan betala tillbaka det som lånats. Den förra väljer läsaren själv och den kan aldrig utlösa något — den är ett tänkande avstånd. Den senare står i ett kontrakt och övervakas av motparten — den kan utlösa en försäljning utan att läsaren blir tillfrågad. Marginalhandeln är läran om det andra slaget: att köpa värdepapper för delvis låna pengar, med själva innehaven som pant. Konstruktionen är äldre än de flesta instrument i am-familjen och enklare än alla: ett belåningskonto är ett vanligt konto med en kredit, och kreditens storlek bestäms av innehavens säkerhetsvärde. Men enkelheten är vilseledande. Spridens kostnad (am-01) betalas per affär och syns direkt; kortlägets mekanik (am-06) har en utlåningssida som kursen redan kartlagt; ETF:en (am-08) lånar indirekt via sina konstruktioner — men kontots egen belåning är den enda maskinen i familjen vars kostnad är fast, vars gränser är kontrakterade och vars åtgärd vid brott är en försäljning som läsaren inte beställer. Detta kapitel etablerar de tre grundtalen som hela kursen bygger på — exponering, belåningsgrad och värdeandel — och en värdekarta över var kursen slutar och grannkurserna börjar: bolagets skuldsättning ägs av v10, bolagets likviditet av v11, spekulativa bubblors systematik av bf-15 — am-09 äger ägarens konto och inget annat. Kursen är mekanikbeskrivning och utbildning, inte uppmaningar att köpa eller sälja."
+        },
+        {
+          "type": "definition",
+          "content": "MARGINALENS TVÅ HEM: Värderingsmarginalen (km-030) = avståndet mellan pris och beräknat värde — analysens skydd, väljs fritt, kan inte utlösas. Kontots marginal (am-09) = bankens säkerhetsavstånd i ett belåningskontrakt — kontrakterad, övervakad, kan utlösa tvångsåtgärd. GRUNDTALEN (PÅHITTADE TAL I GENOMGÅNGSEXEMPLET): Exponering X = marknadsvärdet av allt kontot bär = eget kapital 200 000 + belåning 100 000 = 300 000 kronor. Belåningsgrad = belåning dividerat med exponering = 100 000/300 000 = 33,3 procent. Värdeandel = eget kapital dividerat med exponering = 200 000/300 000 = 66,7 procent — belåningsgrad och värdeandel är samma tallinje sedd från två håll (deras summa är 100 procent)."
+        },
+        {
+          "type": "insight",
+          "content": "Värderingsmarginalen skyddar dig mot att ha fel. Kontots marginal skyddar banken mot dig. Bara den senare har en utlösare — och den utlösaren kan sälja din analys i botten."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Mätning — det belåningsbara värdet",
+      "intro": "Ett kontots köpkraft är inte dess marknadsvärde utan ett lägre tal — belåningsvärdet. Kapitlet mäter det, post för post, och visar varför skillnaden är bankens marginal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Emilias konto (alla personer, bolag och tal i kursen är PÅHITTADE TAL, konstruerade för räkneövningarna) bär tre poster: Vreta Verktyg, ett storbolag värt 150 000 kronor; Lystra Logistik, ett medelstort bolag värt 100 000; och Granhult Gruvor, ett småbolag värt 50 000. Marknadsvärdet är 150 000 + 100 000 + 50 000 = 300 000 kronor — exponeringen X från kapitel 1. Men banken räknar inte så. Varje post tilldelas en belåningsfaktor som speglar hur lätt den kan säljas i ett stressigt läge: stora, omsatta bolag bär hög faktor, små eller tunnt omsatta bär låg — i Emilias exempel 70 procent för Vreta, 50 för Lystra och 25 för Granhult. Multiplicera och summera: 150 000 x 0,70 = 105 000; 100 000 x 0,50 = 50 000; 50 000 x 0,25 = 12 500. Det belåningsbara värdet är 105 000 + 50 000 + 12 500 = 167 500 kronor — 55,8 procent av marknadsvärdet (167 500/300 000), inte en krona mer. Emilias belåning på 100 000 ligger väl under taket; utrymmet till 167 500 är hennes rörelsemarginal — och här kommer mätningens andra led: gränsen som får underskridas men aldrig för länge. Bankens underhållskrav i exemplet är en värdeandel på minst 30 procent — uttryckt som belåningsgrad är samma gräns högst 70 procent. De båda begreppen är samma linje: värdet 66,7 procent ger belåningsgrad 33,3 procent, och varje kursfall rör båda talen samtidigt. Notera vad mätningen redan avslöjar om konstruktionen: faktorerna är portföljöverskridande golv och tak satta per posttyp, men kravet räknas på hela kontot — nio olika bolag i nio branscher skapar ingen skild säkerhet, för kontraktet ser bara summan. Diversifieringen (pf-01) sprider bolagsrisken men lämnar kontomekaniken orörd — det är korrelationsfällans första aning, och den fullbordas i kapitel 5."
+        },
+        {
+          "type": "tabell",
+          "content": "BELÅNINGSVÄRDET — EMMILIAS KONTO (PÅHITTADE TAL): Vreta Verktyg (storbolag): marknadsvärde 150 000 · belåningsfaktor 70 procent · belåningsvärde 105 000 — Lystra Logistik (medelstort): 100 000 · 50 procent · 50 000 — Granhult Gruvor (småbolag): 50 000 · 25 procent · 12 500 — SUMMA: marknadsvärde 300 000 · belåningsbart 167 500 · belåningsvärdeandel 167 500/300 000 = 55,8 procent — KONTOT: eget kapital 200 000 + belåning 100 000 = exponering 300 000 · belåningsgrad 100 000/300 000 = 33,3 procent · värdeandel 200 000/300 000 = 66,7 procent — UNDERHÅLLSKRAV: värdeandel minst 30 procent (detsamma som belåningsgrad högst 70 procent) — LÄGE: 100 000 av taket 167 000-tal utnyttjat, kravet vilar med god marginal."
+        },
+        {
+          "type": "insight",
+          "content": "Det belåningsbara värdet är alltid lägre än marknadsvärdet. Skillnaden är inte bortglömd — den är bankens marginal, omvänd till din."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Räkneexempel — kaskaden och kravdagen",
+      "intro": "Ett börsfall rör sig genom ett belåningskonto snabbare än genom marknaden. Kapitlet kör fall med 20, 40, 50 och 55 procent och fångar den punkt där kontraktet slår till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Låt marknaden falla och följ kontot. Börsen minus 20 procent: exponeringen 300 000 blir 240 000, belåningen är oförändrad 100 000, det egna kapitalet 240 000 − 100 000 = 140 000 — värdeandelen 140 000/240 000 = 58,3 procent. Kravet på 30 procent vilar. Minus 40 procent: exponering 180 000, eget 80 000, andel 44,4 procent — fortfarande vila. Minus 50 procent: exponering 150 000, eget 50 000, andel 33,3 procent — grannen till gränsen. Minus 55 procent: exponering 135 000, eget 35 000, andel 35 000/135 000 = 25,9 procent — under 30. Nu inträffar det kursen finns för: marginalkravet. Banken kräver att värdeandelen återställs till minst 30 procent, och det finns två vägar — stoppa in nya pengar, eller sälja poster och amortera. Räkna den senare: sälj för S kronor och använda intäkten till att minska belåningen; exponeringen blir 135 000 − S och det egna kapitalet lämnas orört vid 35 000. Kravet är 35 000/(135 000 − S) minst 0,30, alltså 135 000 − S högst 35 000/0,30 = 116 700, alltså S minst 135 000 − 116 700 = 18 300 kronor. Efter försäljningen: 35 000/116 700 = 30,0 procent — kontot är på linjen igen, och det som såldes är sålt. Notera två saker om den siffran. För det första är 18 300 inget analytiskt val — ingen fundamentaldiskussion ligger bakom vilka poster som lämnar kontot; kontraktets matematik valde, inte analysen. För det andra är försäljningen liten relativt portföljen men tvingande relativt läget: den verkställs i ett läge där marknaden fallit 55 procent — historiskt bland de djupaste nedgångarna — och det är just mekanikens kärna (bf-15 äger systemvyn): varje tvångsförsäljning trycker priserna en aning längre ner, för nästa belåningskonto, vars krav då närmar sig — det är kaskaden, och den enskilda länken ser alltid oskyldig ut. Sista mätningen i kapitlet är hävstången i förlustled: exponering dividerat med eget kapital är 300 000/200 000 = 1,5, alltså faller det egna kapitalet 1,5 gånger marknadens fall — vid minus 55 procent på börsen har Emilias eget kapital fallit 1,5 x 55 = 82,5 procent, från 200 000 till 35 000 kronor. Oblånat hade samma konto fallit exakt 55 procent. Skillnaden — 27,5 procentenheter — är priset för hävstången i det dåliga scenariot, och det priset står inte i någon prospekttext utan i bråket 300/200."
+        },
+        {
+          "type": "tabell",
+          "content": "KASKADEN — EMMILIAS KONTO VID BÖRSFALL (PÅHITTADE TAL): MINUS 20 PROCENT: exponering 240 000 · eget 240 000 − 100 000 = 140 000 · värdeandel 140 000/240 000 = 58,3 procent · kravet vilar — MINUS 40 PROCENT: 180 000 · 180 000 − 100 000 = 80 000 · 80 000/180 000 = 44,4 procent · vilar — MINUS 50 PROCENT: 150 000 · 150 000 − 100 000 = 50 000 · 50 000/150 000 = 33,3 procent · grannen till gränsen — MINUS 55 PROCENT: 135 000 · 135 000 − 100 000 = 35 000 · 35 000/135 000 = 25,9 procent · KRAV: värdeanden under 30 procent — ÅTGÄRD: sälj för S och amortera, 35 000/(135 000 − S) minst 0,30 ger S minst 135 000 − 116 700 = 18 300 kronor, därefter 35 000/116 700 = 30,0 procent — HÄVSTÅNG: 300 000/200 000 = 1,5 · börsen −55 procent ger eget kapital −82,5 procent (200 000 → 35 000) — OBLÅNAT SAMMA KONTO: −55 procent."
+        },
+        {
+          "type": "insight",
+          "content": "Marginalkravet är inte en åsikt om marknaden — det är aritmetik med deadlines. Kaskadpunkten står att finna i kontraktet före den första kursdagen, inte i nyhetsflödet under den."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Räntan — den säkra kostnaden",
+      "intro": "Alla intäkter i en aktieportfölj är osäkra utom en utgift: belåningsräntan. Kapitlet räknar dess asymmetri och finner brytpunkten där hävstången vänder.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Emilias belåning på 100 000 kronor bär en belåningsränta på 5,95 procent per år — 100 000 x 0,0595 = 5 950 kronor, eller ungefär 496 kronor i månaden (5 950/12 = 495,8). Denna kostnad har en egenskap som ingen annat i kursbiblioteket delar: den är helt säker. Utdelningen kan kapas (ud-09), vinsten kan utebli (bk-02), värderingen kan vända (vr-03) — men räntan debiteras varje månad, i varje scenario, oavsett om portföljen stiger eller sjunker. Räkna hävstångens båda ansikten med talen från kaskadkapitlet. Ett bra år: portföljen stiger 8 procent, exponeringen 300 000 ger 300 000 x 0,08 = 24 000; minus räntan 5 950 lämnar 18 050 på det egna kapitalet 200 000 — avkastning 18 050/200 000 = 9,0 procent. Oblånat hade samma portfölj gett 8,0 procent: hävstångsvinsten är 1,0 procentenhet. Ett dåligt år: portföljen faller 8 procent, utfallet blir −24 000 − 5 950 = −29 950 på 200 000 — minus 15,0 procent, mot oblånat minus 8,0: hävstångsförlusten är 7,0 procentenheter. Asymmetrin är inte en slump utan en struktur: räntan dras i båda världar, så spegelutfallen blir +1,0 mot −7,0. Den generella formeln för kontot är netto = 1,5a − 0,5r, där a är portföljavkastningen, r belåningsräntan och koefficienterna kommer från hävstången 1,5 och låneandelen 100 000/200 000 = 0,5: med a = 8 och r = 5,95 blir det 1,5 x 8 − 0,5 x 5,95 = 12 − 2,975 = 9,025 procent — samma tal som den långa räkningen. Formeln avslöjar också brytpunkten: sätt netto lika med a, så ger 1,5a − 0,5r = a ekvationen a = r. Hävstången förbättrar avkastningen endast när portföljen avkastar mer än belåningsräntan — vid a = r är kontot neutralt, och under 5,95 procent på exponeringen gör varje lånen krona utfallet sämre. Där lever räntans tredje egenskap: den är inte bara säker utan också rörlig — belåningsräntan följer penningpolitiken (mk-04), så scenariet som pressar portföljer är ofta samma scenario som höjer räntekostnaden: två kostnader, en källa. Kursen fastslår därför sin hållning: räntan är kontraktets hjärta och den enda posten man kan räkna på förhand med full säkerhet — vilket gör den till den första siffran varje belåningsutbildning ska börja med, inte den sista."
+        },
+        {
+          "type": "definition",
+          "content": "HÄVSTÅNGENS NETTOFORMEL (GENOMGÅNGSEXEMPLET): netto på eget kapital = 1,5a − 0,5r, där a = portföljens avkastning på exponeringen, r = belåningsräntan, 1,5 = hävstången 300 000/200 000 och 0,5 = låneandelen 100 000/200 000. BRYTPUNKTEN: netto = a när a = r — hävstången förbättrar utfallet endast ovanför belåningsräntan, försämrar under den, och berör inte vid likhet. SÄKERHETEN: räntan 100 000 x 5,95 procent = 5 950 kronor per år = 5 950/12 = 496 kronor per månad — kursbibliotekets enda helt säkra kassaflödespost, debiterad i varje scenario."
+        },
+        {
+          "type": "insight",
+          "content": "Avkastningen är en hypotes. Räntan är ett faktum. Belåningen är byteshandeln mellan dem — och brytpunkten är räntan själv."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Fällorna i marginalhandel är inte exotiska — de är sex vanliga tankefel, var och ett med en räkning som motbevisar den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är takfällan: att belåna ända till det belåningsbara värdet (i Emilias fall 167 500) och kalla marginalen noll. Räkningen som motbevisar den är kaskadtabellen — med belåning 167 500 på exponering 367 500 är startvärdeandeln 54,4 procent, och ett börsfall på 30 procent lämnar kontot på 34,9 procent — nära kravet — och ett på 40 procent på 24,0, under det: kravdag efter en nedgång av helt ordinär storlek. Andra fällan är räntefällan, kapitel 4:s huvudperson i förklädnad: att se månadsbelastningen 496 kronor som liten och glömma att den är evig och rörlig — den säkra kostnaden mot den osäkra avkastningen är ingen åsikt utan brytpunkten a = r. Tredje fällan är korrelationsfällan: att tro att många bolag skyddar kontot. Kontraktet räknar summan, inte posterna — nio sektorer i ett belåningskonto faller som ett konto när börsen faller, och diversifiering (pf-01) som är klok mot bolagsrisk är verkningslös mot kontraktsmekanik. Fjärde fällan är likviditetsfällan: att tro att kravdagen kan vänta. Marginalkravet kommer när det kommer — historiskt i just de lägen där köpsidan är som tunnast (am-01 äger spreadens mekanik: den vidgar sig när likviditeten sinar) — och tvångsförsäljningen väljer ofta de poster som säljs bäst, det vill säga portföljens mest omsatta kärnor, inte dess kanter. Femte fällan är utdelningsfällan: att låta utdelningen bära räntan. En portfölj vars utdelning (ud-09 äger hållbarhetsläsningen) precis täcker 5 950 kronor per år står still — och utdelningskapningar, som kommer när bolagen kämpar, träffar då både intäkten och, via kursfallet, värdeandelen: två slag från en och samma händelse. Sjätte fällan är skattefällan: att glömma att en tvångsförsäljning är en avyttring också i skattehänseende — en post med latent vinst kan realisera beskattningsbar vinst just det år kontot förlorar mest, medan räntekostnaden på privatkontot ofta är avdragsgill enligt allmänna grunder; mekaniken kring deklarationen ägs av sj-familjen, men konsekvensen — att kravdagen kan skapa en skattekostnad i ett förlustår — tillhör marginalhandelns karta. Sex fällor, ett mönster: alla sex är missförstånd om vad kontraktet ser — taket ser inte analysen, räntan ser inte övertygelsen, kontraktet ser bara summan, tidpunkten, likviditeten, utdelningen och avyttringen. Kursens hållning är densamma genom alla kapitel: mekanik, inte råd — och den som känner igen sig i en fälla har fått kursens viktigaste valuta, en räkning att köra före kontraktet skrivs."
+        },
+        {
+          "type": "insight",
+          "content": "Alla sex fällorna har samma rot: att läsa kontraktet med analysens ögon. Kontraktet ser inte värderingen — det ser summan, gränsen och dagen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — protokollet och de fem frågorna",
+      "intro": "Mästerskap i marginalhandel är inte att våga mer — det är att kunna räkna kontraktet före dagen det räknas åt en. Kapitlet samlar protokollet i fem frågor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Protokollet börjar där kaskaden slutade: med din egen kaskadpunkt. I genomgångsexemplet var den minus 55 procent — det fall där värdeandelen 25,9 procent bröt underhållskravet 30 procent — och poängen med talet är inte att det är rätt eller fel utan att det står att beräkna i förhand för varje belåningsgrad: räkna värdeandelen vid minus 20, 30, 40 och 50 procent, notera var ert kontrakt slår till, och ni har omvandlat kravdagen från överraskning till uträkning. Fråga ett: vad är kaskadpunkten — vid vilket börsfall bryter kontraktet, och vilka poster skulle då säljas först? Fråga två: vad är räntans andel — hur många procent av portföljens förväntade utdelning och avkastning äter 5 950-kronor-kostnaden (eller er motsvarande), och vad händer med den andelen om räntan stiger (mk-04)? Fråga tre: var finns reserven — finns likviditet utanför kontot som kan förstärka det innan banken hinner agera, och är den räknad i motpartens takt (minuter, inte dagar)? Fråga fyra: vad är tidslinjen — har analysens horisont (för en fundamentaldrivare ofta år) och kontraktets (månader mellan räntedebiteringar, minuter vid krav) rymts i varandra, det vill säga tål kontot att ha rätt i tre år om kravet kommer i år ett? Fråga fem: står svaret skrivet — finns dokumenterat beslut i dag, i lugn, om vad som ska säljas och vad som ska förstärkas vid kravet, så att kravdagen verkställer en plan och inte föder ett panikbeslut? Protokollets fem frågar är komplementära med grannkurserna: bolagssidan av skuld och likviditet äger v10 och v11, den egna buffertens logik st-06, portföljbyggets ram pf-01, riskmatrisens form rs-04, systemkaskadens historia bf-15 och 1929-talets urscenario historieavsnittet ovan — am-09 bidrar med det enda ingen annan äger: ägarens kontrakt, räknat i förhand. Kursens sista hållning är utbildningens: detta har varit mekanikbeskrivning med påhittade tal — inte uppmaningar att köpa eller sälja, inte en rekommendation att belåna eller att låsa kontot. Valet, och graden, är alltid läsarens. Metodikens anspråk är ödmjukare och hårdare: att ingen skriver under ett belåningskontrakt utan att först kunna räkna dess kaskadpunkt, dess brytpunkt och dess kravdag på egen hand — för det är precis vad kontraktet kommer att göra, med eller utan läsarens medverkan, den dagen marknaden visar sitt sämsta ansikte."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita ert eget belåningsprotokoll med kursens PÅHITTADE TAL som mall — byt sedan ut dem mot era egna. Steg ett: bygg en tre-postersportfölj, tilldela belåningsfaktor 70, 50 och 25 procent och räkna det belåningsbara värdet (kontroll: i mallen blev det 167 500 på 300 000). Steg två: välj belåning och egen insats (mallen: 100 000 och 200 000) och beräkna belåningsgrad, värdeandel och hävstång. Steg tre: kör kaskaden vid minus 20, 40, 50 och 55 procent — notera vid vilket fall värdeandelen bryter ert underhållskrav; det talet är er kaskadpunkt, skriv det överst i protokollet. Steg fyra: räkna kravåtgärden vid kaskadpunkten — hur mycket måste säljas och amorteras för att värdeandelen ska åter nå kravet (mallen: 18 300 kronor)? Steg fem: sätt en belåningsränta (mallen: 5,95 procent), räkna års- och månadskostnaden och kör nettoformeln 1,5a − 0,5r för ett plusår och ett minusår — finn er brytpunkt (mallen: a = r = 5,95 procent). Avsluta med de fem frågorna skrivna och besvarade på en sida: kaskadpunkt, räntans andel, reservens plats, tidslinjens rymlighet och kravdagens plan. Detta är en utbildningsövning på påhittade tal — inga råd om att köpa eller sälja, ingen rekommendation om belåningsgrad: en räknemodell som gör kontraktet begripligt före signaturen."
+        },
+        {
+          "type": "insight",
+          "content": "Kontraktet kommer att räkna sin kaskad den dagen den kommer. Skillnaden mellan övningen och verkligheten är bara vem som hunnit räkna först."
+        }
+      ]
+    }
+  ]
+}

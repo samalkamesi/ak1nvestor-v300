@@ -756,6 +756,45 @@ export function skrivPatchKvitto(filvag, post, resultat, detalj) {
 }
 
 /**
+ * o106 (s8-u1, 2026-09-20): TSC-GRINDEN i patch-flödet. Rotorsakan den
+ * stänger: next.config.ts kör typescript.ignoreBuildErrors = true —
+ * next build är BLIND för typfel, så en patch som höjer @types/* eller
+ * typescript kan bryta tsc-baslinjen 0 och deployas GRÖNT ändå. Därefter
+ * kräver pre-commit-grinden 0 fel på repets sida medan prod ALDRIG mätte
+ * = baslinjens dödsfälla (alla framtida commits blockerade i efterhand).
+ * Kuren: installationsbarnet kedjar projektbinärens tsc --noEmit (ALDRIG
+ * npx — deployfönstrets cachedummy-fälla) i SAMMA flock-fönster som
+ * npm install; typfel ⇒ misslyckat kvitto + lock riven FÖRE byggsteget
+ * ⇒ korBygg kör npm ci på god lock (patch-fel blockerar aldrig
+ * kodleverans — samma semantik som fallerad install).
+ */
+
+/** Inre kommandosträng för patch-barnet (ren funktion — testsviten kör den). */
+export function byggPatchInstallKommando(spec) {
+  return (
+    `npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1` +
+    " && node node_modules/typescript/bin/tsc --noEmit >> /tmp/synk-patch.log 2>&1"
+  );
+}
+
+/** Antal "error TS<kod>:"-rader i loggen — kvitto-detalj + klassning. */
+export function raknaTsFel(loggText) {
+  if (typeof loggText !== "string") return 0;
+  return (loggText.match(/error TS\d+:/g) || []).length;
+}
+
+/**
+ * Klassa installationsstegets utfall ur exit-kod + barnets logg:
+ * "ok" | "tsc-fel" | "install-fel". Med && -kedjan ger tsc alltid exit 1
+ * vid typfel, och tsc skriver då "error TS"-rader — det är skiljetecknet
+ * mot vanliga npm-fel (tom logg = flock-startade-aldrig-klassen).
+ */
+export function bedomPatchInstall(exitOk, loggText) {
+  if (exitOk) return "ok";
+  return raknaTsFel(loggText) > 0 ? "tsc-fel" : "install-fel";
+}
+
+/**
  * O48 (r58:s köpost, 2026-09-17): PM2-VAKTEN för patch-byggfönstret.
  * Rotorsakan den stänger: 16.3.5-byggets .next-tömning dog på ENOTEMPTY
  * rmdir .next/server/app/ar/kurser — pm2:s live-ISR skrev filer i
@@ -939,6 +978,14 @@ async function korSynk() {
   //     (installationens ägare), under samma deploylås som bygger. En
   //     misslyckad installation blockerar ALDRIG kodleveransen: kvitto
   //     skrivs och korBygg nedan kör på befintlig lock som vanligt.
+  //     o106: "misslyckad" omfattar sedan TSC-GRINDEN även typbrytande
+  //     patchar (se byggPatchInstallKommando) — baslinjen 0 är ett
+  //     DEPLOYVILLKOR, inte bara ett commit-villkor.
+  const aterskapaPatchLas = () => {
+    // riv npm installens lock-ändring — ombyggen ska ske på bevisat
+    // fungerande grund när patchen är misstänkt gärningsman
+    try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
+  };
   let patchInstallerad = false;
   if (patchPlan.length) {
     const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(" ");
@@ -947,15 +994,17 @@ async function korSynk() {
     const installOk = await new Promise((lyckas) => {
       const barn = spawnPatch(
         "bash",
-        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(`npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1`)}`],
+        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(byggPatchInstallKommando(spec))}`],
         { cwd: ROT, stdio: "ignore", detached: false },
       );
       barn.on("exit", (kod) => lyckas(kod === 0));
       barn.on("error", () => lyckas(false));
     });
-    if (installOk) {
+    const patchLogg = slasLogg("/tmp/synk-patch.log");
+    const installDom = bedomPatchInstall(installOk, patchLogg);
+    if (installDom === "ok") {
       patchInstallerad = true;
-      logga(`PATCH-KÖ installerad: ${spec} — package-lock uppdaterad i arbetsytan`);
+      logga(`PATCH-KÖ installerad + TSC-GRIND GRÖN: ${spec} — package-lock uppdaterad i arbetsytan, baslinjen 0 hållet`);
       // O48 (r58:s köpost): pm2 STOPPAS före byggsteget i patch-läget —
       // ett lock-byte (t.ex. next 16.3.2→16.3.5) byter chunknamn och
       // tömmer .next, och pm2:s live-ISR hinner skriva filer i kataloger
@@ -968,6 +1017,16 @@ async function korSynk() {
       // (ombygge på god lock) fångar fallet — fail-open mot gårdagens
       // beteende, aldrig ny död vinkel.
       pm2Vakt.stoppa();
+    } else if (installDom === "tsc-fel") {
+      // o106: patchens typer bröt baslinjen 0 — locken riven FÖRE
+      // byggsteget så korBygg kör npm ci på god lock (deploy fortsätter
+      // som vanligt: patch-fel blockerar aldrig kodleverans). Kvitto med
+      // felräkning — loop-skyddet (3 försök) gäller som för install-fel,
+      // versionbyte i köfilen ger nytt liv.
+      const antal = raknaTsFel(patchLogg);
+      aterskapaPatchLas();
+      logga(`PATCH-KÖ: TSC-GRINDEN STOPPADE ${spec} — ${antal} typfel mot baslinjen 0 (se /tmp/synk-patch.log) — lock riven, deploy fortsätter på befintlig lock`);
+      for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", `tsc-fel: ${antal} typfel efter patch-install — baslinjen 0 är deployvillkor`);
     } else {
       logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "npm install avslutades med felkod");
@@ -979,11 +1038,6 @@ async function korSynk() {
   // övervakar). Logg till eigen fil för efteranalys.
   const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
   const { spawn } = await import("node:child_process");
-  const aterskapaPatchLas = () => {
-    // riv npm installens lock-ändring — ombyggen ska ske på bevisat
-    // fungerande grund när patchen är misstänkt gärningsman
-    try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
-  };
   const korBygg = () =>
     new Promise((lyckas) => {
       const barn = spawn(

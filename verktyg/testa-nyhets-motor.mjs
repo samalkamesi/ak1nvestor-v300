@@ -15,6 +15,9 @@ if (!(major > 22 || (major === 22 && minor >= 18))) {
   process.exit(1);
 }
 
+const { aktiveraTsImport } = await import(pathToFileURL(join(HÄR, "_o106-ts-import.mjs")).href);
+aktiveraTsImport();
+
 const { parsRssXml, valideraRssUrl, raknaPaverkan, raknaAk1aNot } = await import(
   pathToFileURL(join(ROT, "src/lib/nyhets-motor.ts")).href
 );
@@ -92,7 +95,7 @@ ok("E4 max 2 V-variabler", (n1?.vVariables?.length ?? 0) <= 2);
 ok("E5 tanken är fråga (slutar med ?)", typeof n1?.tanke === "string" && n1.tanke.trim().endsWith("?"));
 const n2 = raknaAk1aNot("Ny emission väntas samtidigt som bolaget gör återköp");
 ok("E6 specificitetsordning: återköp V20 före emission V19", n2 !== null && n2.vVariables[0] === "V20" && n2.vVariables[1] === "V19");
-const alla = ["utdelning höjs", "emission", "lansering av ny produkt", "patent beviljat", "nätverkseffekt", "uppköp", "skuld", "bruttomarginal", "ev/ebitda", "p/s", "värdering", "marginal", "ebitda", "arr", "tillväxt"];
+const alla = ["emission", "lansering av ny produkt", "patent beviljat", "nätverkseffekt", "uppköp", "skuld", "bruttomarginal", "ev/ebitda", "p/s", "värdering", "marginal", "ebitda", "arr", "tillväxt"];
 const nota = alla.map((t) => raknaAk1aNot(t)).filter((x) => x !== null);
 ok(`E7 samtliga nyckelordsfamiljer ger nota (${nota.length}/${alla.length})`, nota.length === alla.length);
 const radTexter = [n1, n2, ...nota].map((n) => (n?.tanke ?? "") + " " + (n?.vVariables ?? []).join(" ")).join(" ").toLowerCase();

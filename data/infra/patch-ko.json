@@ -2,5 +2,21 @@
   {
     "paket": "sharp",
     "version": "0.35.4"
+  },
+  {
+    "paket": "react",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "react-dom",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "@types/react",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "@types/react-dom",
+    "version": "19.3.0"
   }
 ]

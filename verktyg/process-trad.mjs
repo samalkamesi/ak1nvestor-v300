@@ -11,7 +11,7 @@
 // Kontrakt: ALL dödning verifierar cmdline först (pid-återanvändning får
 // ALDRIG döda fel process) och ALDRIG korsas in i anroparens eget träd.
 // Linux-only (/proc + ss) — Windows-anropare har egna grenar sedan tidigare.
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 /** PPid ur /proc/<pid>/status — null = borta/okänd. */
@@ -64,7 +64,7 @@ export function hittaOrtRot(pid, lasPpidFn = lasPpid, maxDjup = 16) {
  * pid:null } när ss hemlighåller pid · { okand:true } när ss inte svarar. */
 export function hamtaPortagare(port) {
   try {
-    const ss = execSync("ss -ltnp", { encoding: "utf8", timeout: 10_000 });
+    const ss = execFileSync("ss", ["-ltnp"], { encoding: "utf8", timeout: 10_000 });
     const rad = ss
       .split("\n")
       .find((r) => /LISTEN/.test(r) && new RegExp(`(?::|\\])${port}\\s`).test(r));

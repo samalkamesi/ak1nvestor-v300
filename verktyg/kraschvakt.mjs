@@ -96,7 +96,7 @@ export function tolkaPm2(lista) {
 }
 function ak1aRad() {
   try {
-    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    const lista = JSON.parse(execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }));
     // pid läggs till HÄR (inte i tolkaPm2 — dess returform är ett testat
     // kontrakt, testa-kraschvakt.mjs krav 11): F2-ort-vakten behöver
     // ak1a-processens pid för ättlingskontrollen av portägaren.
@@ -241,7 +241,7 @@ async function ortLakning(p, state, agarePid, meddelande) {
   const dodade = await dodaDeltrad(rot);
   logga(`ORT-PORT: ${dodade.length ? `SIGTERM→SIGKILL-trappa mot ${dodade.join(", ")}` : "ort-trädet redan borta"}`);
   try {
-    execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+    execFileSync("pm2", ["restart", "ak1a", "--time"], { timeout: 60_000, stdio: "ignore" });
   } catch {
     /* pm2 avgör — utfallet döms av verifieringen nedan */
   }
@@ -290,7 +290,7 @@ async function raddningsbygg(p, state, oknadOrsak) {
   }
   logga(`KRASCHLOOP-MISSTANKE: svarar=false status=${p.status} omstarter +${oknadOrsak} ⇒ RÄDDNINGSBYGG`);
   try {
-    execSync("pm2 stop ak1a", { timeout: 60_000, stdio: "ignore" });
+    execFileSync("pm2", ["stop", "ak1a"], { timeout: 60_000, stdio: "ignore" });
   } catch {
     /* redan stoppad/errored */
   }
@@ -313,7 +313,7 @@ async function raddningsbygg(p, state, oknadOrsak) {
     );
     if (start.startaPm2) {
       try {
-        execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+        execFileSync("pm2", ["restart", "ak1a", "--time"], { timeout: 60_000, stdio: "ignore" });
       } catch {
         /* pm2 avgör */
       }
@@ -339,7 +339,7 @@ async function raddningsbygg(p, state, oknadOrsak) {
     logga(`ARTEFAKT ${artefakt.status.toUpperCase()} efter räddningsbygget — ${artefakt.meddelande} · appen startas men läget är INTE läkt (HTML-200 säger inget om chunks)`);
   }
   try {
-    execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+    execFileSync("pm2", ["restart", "ak1a", "--time"], { timeout: 60_000, stdio: "ignore" });
   } catch {
     /* pm2 avgör */
   }
@@ -438,7 +438,7 @@ async function huvud() {
     sparaState({ ...state, restarts: p.restarts, senasteRaddning: nu, kooldownMin: 20, incidentOppnar: true });
     logga(`SVARAR INTE 2 GÅNGER men status=online omstarter +${oknad} ⇒ PM2-RESTART (bygge ej motiverat ännu)`);
     try {
-      execSync("pm2 restart ak1a --time", { timeout: 60_000, stdio: "ignore" });
+      execFileSync("pm2", ["restart", "ak1a", "--time"], { timeout: 60_000, stdio: "ignore" });
     } catch {
       /* pm2 avgör */
     }

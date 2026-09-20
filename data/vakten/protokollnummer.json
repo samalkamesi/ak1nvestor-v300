@@ -114,6 +114,30 @@
       "titel": "prestandavåg: o129 §6-§7 EFTER-kvittering av blogg-CV-kuren — deploy-grind (kraschvaktens räddningsbygg 22:24Z) + blocksond ×3 (/blogg /en/blogg /ar/blogg, dom |docHΔ|≤350) + Lighthouse CLS 0 ×3 + prod 200 ×3 + bokföring i §7",
       "ts": 1789943364327,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o133",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789943914788,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o135",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789943721747",
+      "titel": "prod-synkens misslyckades-klass domnad: 26 öppna feljaktsfynd med logggravning per fönster (o125 §6.1 F5-yta) — rot/transient/falskt-pos per bevis, fyndloggens öppna räknas ned",
+      "ts": 1789944040064,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o136",
+      "agare": "s8-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789944060929,
+      "status": "reserverat"
     }
   ]
 }

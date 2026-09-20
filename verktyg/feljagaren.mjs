@@ -33,6 +33,13 @@
  * vid äkta haveri). F3-vaccinet 2026-09-20: kaskadrader (passerade utan
  * eget omtest) taggas "(kaskad — ej egenmätt)" i fyndsträngen — FYNN:s
  * /andringar-eskalering 09-20 avvisad med återmätning 36/36 GRÖN.
+ * ROT-SONDEN (FYNN nr 2, sjunde familjeobservationen 09-20 14:59Z): jakten
+ * bokade HÖG i deployens EFTERDYNING — låset släppt men appen kall under
+ * chrome-last; 20 s-omtestet räcker inte för kallstart. Nu: nätverksfel
+ * bokförs HÖG endast när GET / svarar 200 inom 5 s (differentiell diagnos);
+ * död rot ⇒ MEDEL "rot nere — miljöfönster", aldrig HÖG-eskalering.
+ * Sondhärdning (eldprovets lärdom): endast framgång cachas + 1 omprövning —
+ * keep-alive-racen får aldrig förfalska "rot nere" för en levande rot.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -42,7 +49,7 @@ import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
-const FYND = path.join(VAKT, "feljakt-fynd.jsonl");
+const FYND = process.env.AK1A_FYND_SOKVAG || path.join(VAKT, "feljakt-fynd.jsonl");
 const NYCKELN = "ADMIN" + "_PASSWORD";
 const BAS = process.env.AK1A_BAS_URL || "http://localhost:3000";
 
@@ -206,7 +213,7 @@ function jagaProcesser() {
 }
 
 // ── F3: API ──────────────────────────────────────────────────────────────────
-async function jagaApi(pass) {
+export async function jagaApi(pass) {
   const andpunkter = [
     "puls", "halsa", "modeller", "fardigheter", "filer", "minne",
     "anvandning", "andringar", "interaktion", "subagenter", "audit",
@@ -218,6 +225,33 @@ async function jagaApi(pass) {
   // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
   // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
   let serverDodVidOmtest = false;
+  // FYNN nr 2-VACCINET 2026-09-20 (differentiell diagnos): nätverksfel FÅR
+  // bokföras HÖG endast när appens ROT lever (GET / 200 inom 5 s). Beviset
+  // som födde regeln: 14:59Z-jakten bokade HÖG "/andringar TimeoutError +
+  // omtest misslyckades" i deployens EFTERDYNING — låset var släppt (rond
+  // 44-grinden passerd) men pm2-omstarten lämnat appen kall under s7:s
+  // chrome-last; rond 50-omtestet (20 s) räcker inte för kallstart. Äkta
+  // mätning 36/18×2 GRÖN både före och efter. Död rot = miljöfönster ⇒
+  // MEDEL (aldrig HÖG-eskalering), oavsett orsak (deploy-efterdyning,
+  // OOM-omstart, överlast).
+  let rotLevande = null;
+  const rotLev = async () => {
+    // Endast FRAMGÅNG cachas: ett sondmisslyckande får aldrig klistra "rot
+    // nere" för hela jakten (eldprovets fall 2: keep-alive-race — undici
+    // tilldelar sondens GET / en socket som servern just förstörde efter
+    // API-felet ⇒ falsk negativ som utan omprövning degraderade 18 äkta
+    // fel till miljöfönster). Misslyckande omprövas vid nästa sondanrop.
+    if (rotLevande === true) return true;
+    for (let forsok = 0; forsok < 2; forsok++) {
+      try {
+        const r = await fetch(`${BAS}/`, { signal: AbortSignal.timeout(5_000) });
+        if (r.status === 200) { rotLevande = true; return true; }
+      } catch {}
+      await new Promise((sov) => setTimeout(sov, 250));
+    }
+    rotLevande = false;
+    return false;
+  };
   const omtest = async (v) => {
     await new Promise((sov) => setTimeout(sov, 20_000));
     try {
@@ -246,11 +280,16 @@ async function jagaApi(pass) {
       } else if (serverDodVidOmtest) {
         bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
       } else {
-        const levde = await omtest(v);
-        if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
-        else {
-          serverDodVidOmtest = true;
-          bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades`);
+        const rotOK = await rotLev();
+        if (!rotOK) {
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (rot nere — miljöfönster)`, `GET / svarar ej 200 inom 5 s: appen nere/kall (deploy-efterdyning · omstart · överlast) — ej API-specifikt, FYNN nr 2-vaccinet 2026-09-20; första felet: ${String(e).slice(0, 40)}`);
+        } else {
+          const levde = await omtest(v);
+          if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
+          else {
+            serverDodVidOmtest = true;
+            bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades (rot LEVER — äkta API-fel, ej miljö)`);
+          }
         }
       }
     }

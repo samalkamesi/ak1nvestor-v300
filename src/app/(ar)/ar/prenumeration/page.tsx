@@ -71,7 +71,7 @@ export default function PrenumerationPageAr() {
   // ── وضع الاحتياط الصادق: priser.json مفقودة/غير صالحة → لا أسعار مختلقة.
   if (!priser || priser.nivaer.length === 0) {
     return (
-      <SeoPageShell breadcrumb={[{ name: "الرئيسية", href: "/ar" }, { name: "الاشتراك" }]} wide>
+      <SeoPageShell lang="ar" breadcrumb={[{ name: "الرئيسية", href: "/ar" }, { name: "الاشتراك" }]} wide>
         <div dir="rtl">
           <h1 className="font-serif text-4xl font-bold">الاشتراك</h1>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">

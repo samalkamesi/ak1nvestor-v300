@@ -80,7 +80,7 @@ export default async function KurserPageEn() {
   const titelLager = await hamtaKursTitelLager();
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "Courses" }]} wide>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Courses" }]} wide>
       <StrukturData data={spegelWebsiteJsonLd("en")} id="jsonld-webbsajt" />
       <StrukturData data={spegelUtbildningsOrganisationJsonLd(
         "en",

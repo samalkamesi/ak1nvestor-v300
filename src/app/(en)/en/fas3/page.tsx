@@ -231,6 +231,7 @@ export default function Fas3PageEn() {
 
   return (
     <SeoPageShell
+      lang="en"
       breadcrumb={[{ name: "Home", href: "/en" }, { name: "Phase 3 — The Ecosystem" }]}
       wide
     >

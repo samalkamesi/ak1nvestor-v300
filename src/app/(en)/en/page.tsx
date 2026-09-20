@@ -144,7 +144,7 @@ const SEKTIONER = [
 
 export default function EnStartPage() {
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "English" }]}>
+    <SeoPageShell lang="en" wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "English" }]}>
       <StrukturData
         data={{
           "@context": "https://schema.org",

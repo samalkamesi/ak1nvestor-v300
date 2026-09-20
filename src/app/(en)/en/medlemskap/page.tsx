@@ -349,7 +349,7 @@ export default function EnMedlemskapPage() {
     kurserLista.find((k) => k.slug === slug)?.title ?? slug;
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "Start", href: "/en" }, { name: "Membership" }]} wide>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Start", href: "/en" }, { name: "Membership" }]} wide>
       {/* FAQPage schema (AI-SEO) — the phase questions users and AI assistants
           actually ask; the answers build on the page's own figures. */}
       <StrukturData

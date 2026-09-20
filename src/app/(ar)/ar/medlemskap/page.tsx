@@ -343,7 +343,7 @@ export default function ArMedlemskapPage() {
     kurserLista.find((k) => k.slug === slug)?.title ?? slug;
 
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العضوية" }]}>
+    <SeoPageShell lang="ar" wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العضوية" }]}>
       {/* مخطط FAQPage (AI-SEO) — أسئلة المراحل التي يطرحها المستخدمون
           ومساعدات الذكاء الاصطناعي فعلًا؛ والأجوبة مبنية على أرقام الصفحة. */}
       <StrukturData

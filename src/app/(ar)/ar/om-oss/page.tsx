@@ -73,7 +73,7 @@ export default function ArOmOssPage() {
   const antalBokmaster = kurserLista.filter((c) => c.category === "BOKMASTER").length;
 
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "من نحن" }]}>
+    <SeoPageShell lang="ar" wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "من نحن" }]}>
       {/* الحاوية الرئيسية باتجاه القراءة العربية */}
       <div dir="rtl">
         <h1 className="font-serif text-4xl font-bold">

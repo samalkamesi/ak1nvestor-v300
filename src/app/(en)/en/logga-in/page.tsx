@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function EnLoggaInPage() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "Start", href: "/en" }, { name: "Log in" }]}>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Start", href: "/en" }, { name: "Log in" }]}>
       <h1 className="text-center font-serif text-4xl font-bold">Welcome to AK1A</h1>
       <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground leading-relaxed">
         Institutional methodology — as a right. One account unlocks everything

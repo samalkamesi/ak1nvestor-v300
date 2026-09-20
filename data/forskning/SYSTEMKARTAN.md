@@ -5375,6 +5375,38 @@ VÄXER ifrån provtagningen (123 sviter, ingen kör-alla), motorregistret
 fruset sedan 09-03 (dag 16), vaktrapports-stoppet i deploy. Se diff-tabellen
 i UPPDATERING-sektionen.*
 
+*Uppdatering 2026-09-20 kväll (rond 119, dokvåg spår 9 — åttonde passningen):
+TESTSYSTEMETS EGEN DAG dokumenterad — aggregator-restgapet från sjunde
+passningen (»helsvepsbeviset saknas«) är STÄNGT och verktyget har vuxit sex
+kurer sedan i morse, varje kur bevisad: (1) **V217 mitt-i-svit-RAM-vakt** —
+vakten skyddade bara svitSTART; nu pollas minnet var 10:e s under PÅGÅENDE
+svit, två streckar under 250 MB avlivar svitTRÄDET och sviten markeras
+RÖD(ram-vakt) — aldrig tyst, aldrig grönt (bevis: offret avlivat 20 s,
+aggregatern levde ut rapporten). (2) **V223 klassmedvetet startkrav** —
+TUNG-TILLSTÅND kräver 3 000 MB FRIA före start (styrelsemötets
+zcode-barnfamilj går fritt minne till OOM på under 10 s) + snabbare vakt
+(5 s-poll, 1+1 streckar, offer 10 s). (3) **V228 kontrollpunkt per svit** —
+rapport-JSON skrivs om efter VARJE mätt svit; bevis: SIGKILL mitt i löpet
+förlorade 0 mätningar och --fortsatt återupptog 3/3 GRÖN. (4) **V229
+sond-suffix** — FILTRERADE körningar (--monster/--klass) skriver
+testaggregator-SENASTE-<filter>.* och rör ALDRIG huvudcheckpointen (född av
+att tabbar-sonden skrev över attempt 5:s 154-svitcheckpoint; bevis:
+byte-identisk huvudrapport vid sondkörning). (5) **F2-vaccinet** — läckt
+dev-server (föräldralös, ppid 1) på port 3117 dödas före ny start (bevis:
+TUNG-döden nr 6 lämnade next dev föräldralös på porten; vaccinet täcker).
+(6) **V230 TUNG-jakt (fabrikskoordination)** — sex aggregatdödsfall under
+dagen, alla vid styrelsemötet när fabrikens omgång träffar TUNG-fönstret;
+jakten (verktyg/_r119-tungjakt.mjs) väntar in ett fabriksljugt fönster
+(prod-ko tom + inga fabriksagenter + RAM ≥ 3 000 MB) och startar DÅ
+--fortsatt — ty när TUNG väl håller sitt minne köar fabrikens egen RAM-vakt
+(under 1 500 MB = vägrar omgång) BAKOM i stället för att mörda.
+SANNINGSLÄGET (loggräknat ur r117-fullsvep5.log): beståndet 139 → **155
+sviter**; fullsvep attempt 5 = **154 mätta · 151 GRÖNA · 3 RÖDA** — mimosa
+(skalinterpolering i SKF-granskonden) och studio-tabbar (V215-kontraktet
+antalPoster) kurerade med ombevis, tsc-sviten RAM-vaktsdödad (miljöbetingad,
+omkörbar); TUNG-testa-styrelse OMÄTT — jakt igång, resultat bokförs när den landar. Restgap kvar från sjunde passningen: aggregatorn saknar fortfarande
+EGEN kontraktssvit.*
+
 *Uppdatering 2026-09-18 (dokvåg s9-u2 manifest auto-s9-1789709700201 —
 femte passningen): kvalitetsvågen s8 (09-17 13:00 → 09-18 07:24) är
 systemets största tillväxt sedan kartans födelse — ALLT egenmätt i denna

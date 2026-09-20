@@ -15683,3 +15683,36 @@ data/blogg/ orörd · syskonytor orörda (o110-numret lämnat i u2:s sfär,
 o111 orört) · prod 200 ×5 vid fönsterslut · 4 sammanfattningar + 12 fulla
 LH-rapporter (≈12 MB, mönster-enligt s7u3sond-arkivet) + o109-dokument +
 anspråksfil + denna rad. LEVERANS: data/forskning/OPTIMERING/o109-prestanda-o105efter-s7.md, data/forskning/OPTIMERING/lighthouse/*s7o109* (16 filer), data/vakten/s7-o109-o105efter-u1-ansprak-2026-09-20.md, worklog.md. [fabrik]
+
+## SPÅR 7 s7-u2 (manifest auto-s7-1789893903450, byggare 2/3) — 2026-09-20 10:45–11:4x lokal: prestandavåg o110 — O105 VÅG 2 LEVERERAD + EFTER-MÄTNING BOKFÖRD: lang-bindningen ut till ALLA 26 spegel-listsidor + dataset-byggare; /ar/blogg TBT 616→344 (−44 %) · /en 280→230 · sv 316→329,5 (+4 % inom ±15) · CLS 0 ×15 mätningar; /en/blogg-anomalin öppet bokförd (n=3 ~1 100, script-last identisk — köpost med dataunderlag) [fabrik]
+
+Fabriksagent s7-u2. VAL med objektförskjutning ärligt bokförd: anspråket
+(s7-o110, disk-först FÖRE val) skrevs för "o101-kuren" — kartläggningen
+fann o105 (d83c73ec) redan levererad KUR A+B; objektet = o105 §6 köpost 1
+VÅG 2 (26 list-sidor + dataset-byggare), medan syskonet s7-u3 o111
+(f72a8312) tog köpost 2 (public/-städ) — noll duplikat. KUR (commit
+785f3753, 28 filer): lang="en|ar" i varje SeoPageShell-anrop (13+13
+list-sidor; prenumeration = prisyta R2: ENDAST attributet, noll prisröring)
++ dataset-sidor.tsx båda anropen lang={lang} (sv⇒klientbindning automatiskt)
+— speglarnas footer (81 element) + smulnav hydratiseras ALDRIG på NÅGON
+spegelsida; aspekt/bolag/tier sv-only orörda. KONTRAKTSTEST F-sektion:
+46 PASS 0 FAIL (exakt 14 shell-anropande spegelfiler/språk, ALLA bär lang,
+dataset lang={lang}). PROCESFYND öppet: första edit-omgången RÖJDES av prod-
+synkens byggförberedelse 08:57Z (tracked-filer återställda mot HEAD medan
+ocommittade — dokumenterat i protokollet §3); läxan tillämpad: omgjort +
+commit DIRECT. DEPLOY: två OOM-dödade försök (infra-tsc-RAM-peek, känd
+post) → DEPLOYAD 09:22:36Z, 10 commits (04ae492e), 785f3753 verifierad
+förfader, BUILD_ID 7g9x75→W2XS0Ey. EFTER (prestanda-lighthouse.mjs, mobil
+4G, n=2 + riktat C; 15 rapporter): prod 200 ×5 https · /ar/blogg TBT
+616→344 = −44 % (kriterium ≤550 ✓) · /en 280→230 (−18 %) · sv /blogg
+316→329,5 (+4,3 %, inom ±15 % ✓) · CLS 0 i ALLA mätningar (o100-nivån
+hållen) · LCP/FCP inom ±15 % · /en/blogg ✗ 1129 mot kriterium ≤500 (mot
+FÖRE 994; n=3 stabilt — script-last IDENTISK 15/254 KiB FÖRE/EFTER, ej
+payload; "other" +7 %; fönstret bär 20+ commits bl.a. AI-Mentorn +2 —
+attribution ej isolerbar utan A/B; KÖPOST: riktad longtask-sond +
+widget-A/B, o101 §3.4:s en↔ar-instabilitet storrad 378→786 ms). Vakten:
+nästa cron-löp = bevakning (o92-precedensen). KVD: tsc 0 via pre-commit-
+grinden · INGET eget bygge · R2 orörd · data/blogg/ orörd · syskonytor
+orörda. Protokoll: OPTIMERING/o110-prestanda-o105vag2-langtaeckning-s7.md.
+LEVERANS: 26 spegel-sidfiler + dataset-sidor.tsx + kontraktstest +
+o110-protokollet + 15 lighthouse-rapporter + anspråk + denna rad. [fabrik]

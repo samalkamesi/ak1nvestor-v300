@@ -1,0 +1,40 @@
+studio: auto s7-u2 prestandavåg o110 — O105 VÅG 2: LANG-BINDNINGEN UT TILL ALLA 26 SPEGEL-LISTSJOR + DATASET-BYGGARNA (o105 §6 köpost 1; manifest auto-s7-1789893903450, byggare 2/3)
+
+= Speglarnas footer+smulnav hydratiseras ALDRIG på NÅGON spegelsida (o105
+  Kur A+B fullföljd till hela speglarfamiljen):
+
+· 26 list-sidor (13 en + 13 ar: start, kurser, medlemskap, fas3,
+  prenumeration ×2 anrop, certifikat, laroplan, om-oss, manifest,
+  dagens-pass, transparens, logga-in, fas2-ansok) får lang="en|ar" i
+  SeoPageShell-anropet — EN rad per fil, mekaniskt enligt o105 §6.
+· dataset-sidor.tsx: båda shell-anropen (index + bransch) bär lang={lang}
+  — sv faller automatiskt tillbaka på klientbindningen (spegelvillkoret
+  en||ar i shellen), spegelvägen /{en,ar}/dataset + [bransch] når alltså
+  serverbindningen via den befintliga lang-parametern.
+· aspekt/bolag/tier-avsiktligt orörda: sv-only ytor utan speglar (o105
+  §6:s "tier: ENDAST attribut-passthrough" blir no-op utan spegel; R2-
+  prisytorna prenumeration berörs ENBAST av attributet — noll prisröring).
+
+KONTRAKTSTEST UTÖKAT (F-sektion, samma fil): F0 exakt 14 shell-anropande
+spegelfiler per språk (13 våg-2 + blogg från o105) · F1 ALLA bär lang ·
+F2 dataset-sidor lang={lang} — 46 PASS 0 FAIL (A–E orörda gröna).
+
+PROCESFYND ÖPPET BOKFÖRT: första edit-omgången RÖJDES av prod-synkens
+deploy-förberedelse (08:57:29Z byggfönster på c999adde — tracked-filer
+återställda mot HEAD medan ocommittade; konstaterat via testfilens
+tillbakagång 46→41-rad + git status). Läxan tillämpad: omdetta + commit
+DIRECT. Faktiskt arbetat två gånger, levererat enligt doktrinen "håll
+trädet committat".
+
+KVD: tsc 0 via pre-commit-grinden (projektbinär; baslinjen bärs mekaniskt)
+· kontraktstest 46/0 · src ENDAST Write/Edit · INGET bygge (prod-synken
+äger; deploy av denna + u3:s o111 väntas nästa poll) · R2 orörd (priser/
+tier/publicering orörda; prenumeration-filerna enbart lang-attributet) ·
+data/blogg/ orörd · syskonytor orörda (u3:s o111 public/-städ deras,
+u1 o112 obekräftad).
+
+EFTER-mätning (o105 §4-kriterierna: prod 200 ×5, Lighthouse n=2, TBT
+/en/blogg ≤500 /ar/blogg ≤550, sv ±15 %, CLS 0) = vakarövertag-bar när
+denna commits deploy landar — protokoll o110 bokförs med mätningen.
+
+[fabrik]

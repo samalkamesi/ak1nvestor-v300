@@ -14,7 +14,9 @@
  *   PARALLELLITET: tab 1 strömmar fortfarande när tab 2 startar och
  *   får sitt svar — separata transportinstanser, ingen -32010-kollision.
  *   SESSIONSKARTA: GET /api/studio/stream listar sessionId →
- *   {senasteAktivitet, historik, aktiv} för båda sessionerna.
+ *   {senasteAktivitet, antalPoster, aktiv} för båda sessionerna
+ *   (V215-kontraktet: v215TunnaKarta bantar historik-arrayen till
+ *   antalPoster i transporten — full sanning lever i resume-vägen).
  *   RESUME: GET ?sessionId=<tab2:s session> returnerar historiken —
  *   "resume TIDLIGARE sessioner i nya tabbar".
  *   RAM: Node-processens RSS mäts före / under / efter 3 parallella
@@ -170,14 +172,14 @@ async function main() {
   const s1 = karta[hej1.sessionId];
   const s2 = karta[hej2.sessionId];
   kontroll(
-    "sessionskartan listar TABB 1:s session (senasteAktivitet + historik)",
-    Boolean(s1 && typeof s1.senasteAktivitet === "number" && Array.isArray(s1.historik) && s1.historik.length >= 2),
-    `${s1 ? `historik ${s1.historik.length} poster · aktiv=${s1.aktiv}` : "saknas"}`,
+    "sessionskartan listar TABB 1:s session (senasteAktivitet + antalPoster)",
+    Boolean(s1 && typeof s1.senasteAktivitet === "number" && typeof s1.antalPoster === "number" && s1.antalPoster >= 2),
+    `${s1 ? `poster ${s1.antalPoster ?? "SAKNAS"} · aktiv=${s1.aktiv}` : "saknas"}`,
   );
   kontroll(
     "sessionskartan listar TABB 2:s session",
-    Boolean(s2 && Array.isArray(s2.historik) && s2.historik.length >= 2),
-    `${s2 ? `historik ${s2.historik.length} poster · aktiv=${s2.aktiv}` : "saknas"}`,
+    Boolean(s2 && typeof s2.antalPoster === "number" && s2.antalPoster >= 2),
+    `${s2 ? `poster ${s2.antalPoster ?? "SAKNAS"} · aktiv=${s2.aktiv}` : "saknas"}`,
   );
   kontroll(
     "kartan: ingen session markerad aktiv efter klart",

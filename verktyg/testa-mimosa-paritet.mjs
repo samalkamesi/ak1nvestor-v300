@@ -106,6 +106,16 @@ skapa(
   "src/info/extern-literal.ts",
   'export async function crumbCookie() {\n  const r = await fetch("https://fc.yahoo.com", { cache: "no-store" });\n  return r.headers.get("set-cookie");\n}\n',
 );
+// v1.6: skal-form — ren strängliteral till exec/execSync = array-doktrinsbrott
+// (bevisfilen _r113-push.mjs-klassen), info men ALDRIG fynd
+skapa(
+  "src/info/exec-strangform.mjs",
+  'import { execSync } from "node:child_process";\nexport function pusha() {\n  return execSync("git push prod develop", { encoding: "utf8" });\n}\n',
+);
+skapa(
+  "src/info/exec-strangform-enkelt.mjs",
+  "import { exec } from \"node:child_process\";\nexport function mata() {\n  exec('pm2 jlist', { timeout: 5000 });\n}\n",
+);
 
 // ── Kör vakten ──────────────────────────────────────────────────────────────
 let ut = "";
@@ -156,6 +166,11 @@ test("v1.4-avgränsning: env-ternary-RHS propagerar ej → high-fynd kvarstår",
 test("v1.4: case-loopback-skelett i skal → härdad, INTE fynd", !fynden.some((p) => p.klass === "SHELL_URL_VARIABEL" && p.fil.endsWith("case-hardad-shell.sh")));
 // info
 test("fast extern literal → info-rapport men ej blockerande", har("SSRF_EXTERN_LITERAL", "extern-literal.ts") && !fynden.some((p) => p.klass === "SSRF_EXTERN_LITERAL"));
+// v1.6
+test("v1.6: execSync(\"…\") ren literal → STRANG_LITERAL-info, INTE fynd", har("CHILD_PROC_STRANG_LITERAL", "exec-strangform.mjs") && !fynden.some((p) => p.klass === "CHILD_PROC_STRANG_LITERAL"));
+test("v1.6: enkla citat exec('…') → STRANG_LITERAL-info", har("CHILD_PROC_STRANG_LITERAL", "exec-strangform-enkelt.mjs"));
+test("v1.6-avgränsning: execFileSync-array triggar ALDRIG STRANG_LITERAL", !poster.some((p) => p.klass === "CHILD_PROC_STRANG_LITERAL" && p.fil.endsWith("execfile.ts")));
+test("v1.6-avgränsning: interpolerade anrop förblir INTERP-high (ej STRANG-dublett)", !poster.some((p) => p.klass === "CHILD_PROC_STRANG_LITERAL" && (p.fil.endsWith("farlig-exec.ts") || p.fil.endsWith("farlig-exec-citerad.ts"))) && fynden.some((p) => p.klass === "CHILD_PROC_INTERP" && p.fil.endsWith("farlig-exec.ts")));
 // struktur
 test("JSON-utfil skriven med skannadeFiler > 0", rapport.skannadeFiler >= 16);
 

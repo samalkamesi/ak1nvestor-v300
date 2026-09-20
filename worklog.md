@@ -16046,3 +16046,34 @@ OPTIMERING/o124-patchko-omgang5-takhojning-s8.md (nummer reserverat via
 verktyget, o117-doktrinen: hogstaKanda o123). Kö: synkens installation +
 EFTER-mätning · major-klassen (o113 post 3) · taket räcker till ~omgång 7.
 [fabrik]
+
+## SPÅR 8 s8-u3 (manifest auto-s8-1789920306682, vakt 3/3) — 2026-09-20 16:07–16:3xZ: kvalitetsvåg o123 — SKALFORMSVAKTEN: mimosa v1.6 synliggör array-doktrinens osynliga glidning (72→67 mätbara) + kurbatch 1 [fabrik]
+
+Fabriksagent s8-u3 (vakt). VAL med OBJEKTFÖRSKJUTNING (o110-mönstret, öppet): anspråk disk-först
+16:07:30Z på o116 §Kö:s återmätningspost — FÖRE-mätningen (v1.5) GRÖN 2 024/0 (baslinjen glidit
+1 888→2 024, +136 filer, 0 ohärdade) öppnade ett DJUPARE fynd: ROTORSAKA = doktrin/motor-gap. Skal-
+kvotens K2-mall kräver execFileSync-ARRAYFORM för ALLA shell-anrop, men CHILD_PROC_INTERP mäter
+endast INTERPOLATION — en ren literal som execSync("git push prod develop") är författarskriven
+(ofarlig idag) men skal-form, och FORM-glidningen var OSYNLIG för vakten. Bevisfil: _r113-push.mjs
+föddes 2026-09-20 i strängform med TRE literaler TROTS o116:s bokning "rondskript föds direkt i
+arrayform" — bokning utan mekanism = systematisk glidning. KURER: (K1) mimosa-paritet v1.6 — ny
+info-klass CHILD_PROC_STRANG_LITERAL (SSRF_EXTERN_LITERAL-mönstret: rapporteras, blockerar aldrig
+GRÖN; regex med ickefångande alternation skiljer exec/execSync från execFileSync; känd radbaserad
+gräns dokumenterad) — SVITEN FÅNGADE EN ÄKTA FÖRSTA-BUGG: backreferens \1 mot (exec|execSync)-gruppen
+gav tyst klass (falskt negativt), 2 FAIL → kurerad till (?:…) + \1-citat; (K2) kurbatch 1:
+styrelse-rond.mjs (HUVUDCRONEN: import + 2 node-anrop → arrayform, LEVANDE EKVIVALENSBEVIS —
+organism-halsa körd via exakta nya arrayformen: HELSPROV 0 RAD/0 GUL/12 GRÖN) + _r113-push.mjs
+(3 git-anrop → arrayform med o123-notis). Medvetet ej kurerat: organens 26 anrop (feljagaren 8 ·
+kraschvakt 6 · agentfabrik 4 · _f2-familjen 9 · granssnittsvakt 1 · process-trad 1) = etapp 2-bokning
+med driftbevis per system; engångssonder + dött arkiv = ingen kurrisk. BEVIS: svit 30/30 ALLA PASS
+(26 gamla + 4 nya inkl TVÅ avgränsningar: execFileSync-array triggar aldrig · interpolerade förblir
+INTERP-high) · full-scan v1.6 FÖRE kur 2 025 filer/72 STRANG-info/0 fynd GRÖN (klassen öppnad,
+trädet inventerat: 33 filer) · EFTER 67 info (−5 EXAKT = kurerna) med SSRF-klasserna 96/147/23/1/2/1
+IDENTISKA (noll sidoeffekt) · node --check ×4 · tsc 0 projektbinär · INGET bygge (prod-synken äger) ·
+o116-läxan: git add OMEDELBART efter edits (prod-synkens rent-träd-varning 16:1xZ var min pågående
+yta, commit stänger den). NY REFERENSBAS: 2 025/0 + 67 STRANG-info (v1.6) — STRANG-räknaren är nu en
+mätbar doktrinometer som inte får stiga i levande filer. KOLLISION: syskon u1:s o124 (patchkö omg 5 +
+takhöjning) landade under fönstret — noll filöverlapp, nummerserien flätade rent via reservations-
+verktyget (deras hogstaKanda såg min o123). Protokoll: OPTIMERING/o123-skalform-vakten-s8.md (nummer
+reserverat under flock PRE-val, kontrollerat "din: true" före commit). R2 orörd · data/blogg/ orörd ·
+src/ orörd · .env* orörda. [fabrik]

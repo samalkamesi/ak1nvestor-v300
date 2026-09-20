@@ -16530,3 +16530,20 @@ Fabriksagent s9-u3 3/3 (byggare, manifest auto-s9-1789946123081). LEVERANS: SYST
 ## SPÅR 7 s7-u2 (byggare 2/3) — 2026-09-21 00:25–01:4x lokal: o132 — o129-blogg-EFTER-tråden: deploygrinden STÄNGD av bygg-OOM-serien (11 dödade byggen 22:00–23:34Z), grunden KVANTIFIERAD (next-build topp-RSS 6 028 MB i fyra provserier, kernel-OOM vid available 59–510 MB — servern 7 941 MB total; gröna 20:0x-byggen ⇒ behovet växte med commits efter 20:52; kur = drift/konfig-yta: bisektion/NODE_OPTIONS/build-worker, ALDRIG fabrikens) + prod-läkning /en+/ar 500→200 ×6 via .next-laeke-proceduren 23:37:0xZ (syskon-precedensen; flock under deploy-låset, ingen installation, inget bygge, HEAD orörd) [fabrik]
 
 Fabriksagent s7-u2 2/3. VAL (anspråk disk-först 22:31 lokal data/vakten/s7-o129blogg-efter-u2-ansprak-2026-09-20.md + o132 reserverat i protokollnummer.json; duplikatkontroll: o131 = syskonet s7-u3:s läsbarhets-EFTER, lästes FÖRE val — min yta = o129 §6-§7:s bloggspeglar, blocksond ×3 exklusiv min; spårets klassiska ytor stängda sedan tidigare): objektet = äkta EFTER-kvittering av blogg-CV-kuren (87483e9a, proxy-bevisad −84 % i §4) — men ALLA deployfönster hölls borta av OOM-serien: 22:00/22:07/22:21 (o130:s tre) + 22:24-kraschvaktsräddningen + 22:57/23:07/23:17/23:23/23:27/23:30 — vart och ett dödat ~3-4 min in i Creating-fasen, vart och ett läkt grönt av synkens automatiska .next-laeke-procedur. BEVISMASKINERIA: observatören verktyg/_s7u2o132-byggminne.mjs (ps-samplare, ALDRIG byggande) fångade FYRA kompletta byggkroppar: RSS 0,5→6,0 GB monolitiskt inom ~100 s, död när available trycks mot 0 (59 MB i värsta fcket) — data/forskning/OPTIMERING/lighthouse/o132-byggminne-1789946006.json; git merge-base --is-ancestor bevisar 87483e9a som förfader till develop/KONTINUERLIGT sedan 21:57Z (kriterium 1 uppfyllt i trädet, endast byggfönstret saknas). DRIFTSTÖRNING + LÄKNING: bygg #8:s rm:ade .next medan appen (pid 4070879, start 22:31) serverade ur minnet ⇒ /en/blogg + /ar/blogg 500 kl 23:15-23:37Z (kunders speglar; / + /blogg 200 ur cache — ikväll var det OMÖJLIGT att mäta EFTER: spökmät-skyddet hölls, inga mätningar mot trasigt/legacy-träd); läkt 23:37:0xZ genom flock + rm .next + cp -a .next-laeke .next i fönstret mellan bygg #12:s död och synkens 23:37-rop (första försöket 23:31 nekades KORREKT av låset); next-server läste från disk vid träff = ingen pm2-restart; prod 200 ×6 verifierad (/ /blogg /en/blogg /ar/blogg /dataset /kalkylator) 23:37:14Z, pm2 online. VAKARÖVERTAGET INTAKT (o132 §6): vid DEPLOYAD med 87483e9a-avkomma → prod 200 ×3 → blocksond ×3 (dom |docHΔ| ≤ 350/spegel) → prestanda-lighthouse o132-efter ×3 (dom CLS 0 ×3, poäng ±15) → append o129 §7. KVD: src/ orörd = INGET bygge · tsc-baslinjen bärs av pre-commit-grinden · R2 orörd · data/blogg/ orörd · syskonytor orörda (lästa, aldrig skrivna) · .next-laeke orörd · poolens ride-along (delad natur, s2-u3-precedensen). Kö: DRIFT/KONFIG tar byggminnesgrunden (mätdata levererad); därefter nästa våg kör §6 i samma sweep som o131:s lista. [fabrik]
+
+## ROND 129 [organ:Ψ] — 2026-09-20 23:5x lokal: leveransbevis + protokoll-commit + ythantering
+
+- LEVERANSBEVIS: LAGBESLUT steg 2 (f5a9ac2f) LIVE i prod — endpoint-sond
+  GET /api/rapportakademin 405 (rutan finns i Nya bygget; gamla gav 404) +
+  POST 401 (medlem-auth-grinden verkställer) — prod-synkens RAM-gateda bygge
+  landade cf4193b8-koden trots kvällens bygg-OOM-serie; prod / 200.
+- COMMIT 128cbbcb [organ:Ψ]: styrelsens tre protokoll (22:13 kunddelegationen
+  LAGGRUNDEN · 22:39 KUNDORDER evolutionsspåret · 23:02 KUNDORDER
+  ekosystem-harmoni) + båda designunderlagen i git — 22:13-mötets åtgärd 1
+  ("riskerar förloras vid prod-synk") därmed verkställd. Push grön varv 1
+  (merge 8e3448ec, fabrikens o132-byggminnesmätning integrerad).
+- YTA: 19 _*.mjs-tempfiler städade ur roten; PIPELINE-KO vågkontroll GRÖN
+  (VÅG 232/233/234 bokade + kunduppdragets vertikala snitt + fabrikens
+  209/213b i kö — evighetsmotorn nöjd).
+- NÄSTA: kunduppdragets del 2 — det vertikala snittet (ett bolag, fullt
+  A-Ö-pass end-to-end, elevens bedömning FÖRE expertläsningen).

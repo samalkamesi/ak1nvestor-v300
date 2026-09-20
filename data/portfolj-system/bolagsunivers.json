@@ -20076,5 +20076,323 @@
       ]
     },
     "notering": "JAPAN/FINANS 3→5 (omg21-u3:s jägarfält: 8604.T + 8750.T tar cellen till matta 5 ⇒ landsidan /dataset/finans/japan föds data-drivet). LIVFÖRSÄKRINGSARKETYPEN: Daiichi Life Group (f.d. Dai-ichi Life Holdings, omdöpt april 2026) = en av Japans största livförsäkringsgrupper — cellens tredje arketyp: bank (trion) + mäklare (Nomura) + försäkring (8750.T), spegeln av Frankrike-cellens fem arketyper. SIGNATURTAL — GARANTIKAPITALET: totala tillgångar 76,3 T JPY = finansgrenens STÖRSTA balansräkning (investeringar 57,3 T mot försäkringsförbindelserna) på P/B 1,51 med tvålavekonomisk P/B-konsistens (båda baser 1,507); ROIC 14,89 % mot WACC 5,37 % = +9,5 pp garantikapitalets väntade överavkastning, ROE 13,57 % = cellens högsta hittills (trion 9,46/8,57/12,49 + Nomura 11,16 — 8750.T toppar). NORMALISERINGENS SPEGELBILD: forward-P/E 12,73 ÖVER trailing 12,53 (prognosTillväxt −1,57 %) = marknaden ser TTM-nettots +64 % som engångsburet — kontrast mot banktrion +40…+53 % uppsidor: hela cellens fem tal på en axel (MUFG/SMFG premium-läget, Mizuho stigen, Nomura färdigprisatt, Daiichi eftertoppen). VINSTBANAN: netto 409 353→192 301→320 765→429 613→436 597 M JPY (nettoCAGR +1,62 %/år från FY2022-toppen — ingen compounder, KVISS-banan: FY2023-dippen 2,09 %-marginal sedan trekvartsåterhämtning; TTM 553 485 med marginaltrappan 5,31→2,09→3,08→4,38→4,02→4,82). FCF-VÄNDNINGEN FY2024: −561→−250→+946→+532→+715 mdr (tre raka FCF-år; fcfPositivaSenaste5 = 3; fcfYield 10,37 % = fält ifyllda enligt ALV/SAMPO/AMUN-försäkringskonventionen) — premieflödena överskred utbetalningarna, kapitalkostnaden capex 77 mdr = 0,7 % av intäkten (försäkringens kapital-lätta drift). AKTIESPLITEN ×3,93 (april 2026, namnbytesomstruktureringen): EPS-historikens FY2025 463,72 mot FY2026 119,82 på oförändrat netto = källans EPS-blandning; NETTO-RADER + aktuellt EPS + split-justerade tal är kanon (bankmallens spegelbild), tre aktiebaser 3 601/3 625/3 643 M dokumenterade. UTDELNINGEN: rate 72,00 (3,76 %) payout 47,16 %, CF-betalda 43,03/aktie post-split, nyhetsspåret +32 % hike (FY2027-planen) — tre baser paranoid; återköp 107,6 mdr FY2026, aktiebas −1,11 % YoY, shareholder yield 4,87 %. Cellens lägsta beta 0,27 (livförbindelsernas räntekänslighet är portföljräntan, ej börskursen). EK-trappan 4 409→2 873→3 882→3 470→4 254 mdr: FY2023-dippen = ränteuppgångens obligationstapp i EK, dokumenterad. PT 1 996 JPY (Buy, 11 analytiker); 60 138 anställda; grundat 1902; nästa rapp 2026-11-13 (trions gemensamma H1-fönster)."
+  },
+  {
+    "ticker": "CMCSA",
+    "namn": "Comcast Corporation",
+    "bransch": "kommunikation",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/stocks/cmcsa/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/ + /dividend/)",
+        "paranoid": "NASDAQ-noting i USD; S&P GMI-underlag, close 2026-09-18 (SA-statistics uppdaterad 2026-09-19): pris 22,74 USD, mcap 80,70 mdr (aktiebas 22,74×3 550 M = 80,73 = +0,04 %), P/E 7,36 (aktiebas 22,74÷3,09 = 7,36 EXAKT) forward 6,53 ⇒ prognosTillväxt +12,7 % TTE (källans PEG-fält n/a — 3-års-EPS-prognos −3,72 % som not), P/B 0,90 (80,70÷89,955 = 0,897 EXAKT mot TTM-EK), PS 0,65, EV/EBITDA 4,80, EV/EBIT 8,92 med EV 163,42 mdr (nettoskuld 82,72 = kabelmodellens skuldbälte, D/E 1,00 skuld 90,38 mot EK 89,96), marginaler TTM: brutto 69,39 % EBIT 14,66 % netto 8,97 % FCF 16,36 % (OCF 32,52 − capex 12,08 = 20,44 mdr, fcfYield 25,32 % källans fält), ROE 11,49 % ROIC 8,15 % MOT WACC 5,70 % (spread +2,5 pp), räntetäckning 4,16×, Altman 1,4 (kabelbalansens signatur — kontantflödet bär, inte Z-scoren), skatt 22,95 %, anställda 179 000, institutions 90,36 %, insiders 0,94 %, beta 0,66, 52-v 21,28–32,86 (−29,9 % — universumets communications-dipp); TTM (M USD): rev 124 904 (+0,58 %) netto 11 199 EPS 3,09; FY-serier kalenderår (M USD): rev 116 385→121 427→121 572→123 731→123 707 (+1,5 %/år), netto 14 159→5 370→15 388→16 192→19 998 (+9,0 %/år endpoint; FY2022-botten 5 370 = Sky/NBCU-nedskrivningar), bruttomarginalserie 66,97→68,52→69,76→70,08→71,74 % (medel 69,41 % — stigande moat-bana), ek 98 009→82 038→83 467→86 274→97 376, fcf 18 996→15 457→16 122→15 376→21 882 (5/5 positiva); utdelning 1,32 USD (5,81 %) DPS-trappa 1,00→1,08→1,16→1,24→1,32 (kvartal 0,25→0,33, 6 år tillväxt, payout 42,7 %), återköp buyback-yield 4,74 % (≈3,8 mdr TTM, aktieantalet −4,74 % YoY), shareholder yield 10,55 %; ROIC−WACC +2,5 pp; nästa rapport 2026-10-22 FÖRE öppning"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/CMCSA",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal (curl-IP rate-limitad 429, dokumenterat): Yahoo 09-18 22,74 mot SA 22,74 = 0,00 % band (identisk close); serie 09-14 24,88 · 09-15 24,42 · 09-16 23,73 · 09-17 22,91 · 09-18 22,74 kalibrerar nedåtbanan"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 22.74,
+    "marknadsKapitalMdr": 80.7,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0154,
+      "resultatCAGR5ar": 0.0902,
+      "omsattningTillvaxtTTM": 0.0058,
+      "prognosTillvaxt": 0.1271
+    },
+    "lonksamhet": {
+      "roe": 0.1149,
+      "roic": 0.0815,
+      "bruttoMarginal": 0.6939,
+      "ebitMarginal": 0.1466,
+      "nettoMarginal": 0.0897,
+      "fcfMarginal": 0.1636
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1,
+      "rantaTackning": 4.16,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 3.825,
+      "andelUtestande": 0.0094,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 69.42,
+      "bruttoMarginalSpread5ar": 4.78,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 7.36,
+      "pb": 0.9,
+      "evEbit": 8.92,
+      "peg": 0.58,
+      "fcfYield": 0.2532,
+      "egenKapitalMultipl": 0.9
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        116385000000,
+        121427000000,
+        121572000000,
+        123731000000,
+        123707000000
+      ],
+      "resultat": [
+        14159000000,
+        5370000000,
+        15388000000,
+        16192000000,
+        19998000000
+      ],
+      "egetKapital": [
+        98009000000,
+        82038000000,
+        83467000000,
+        86274000000,
+        97376000000
+      ],
+      "fcf": [
+        18996000000,
+        15457000000,
+        16122000000,
+        15376000000,
+        21882000000
+      ]
+    },
+    "notering": "Kalenderårsbokslut (31 dec); USA:s största kabel-/bredbandsoperatör (Connectivity & Platforms) + NBCUniversal/Peacock + Universal-temaparker — segmentbrottet är sidans pedagogiska kärna: anslutningsrörelsen bär moaten ( Residential+Business ~2/3 av EBITDA) medan media/temaparker bär svängningarna; FYND: TTM-vinsten HALVERAD (netto 11,2 mdr mot FY2025:s 20,0, EPS −48,6 %) medan kursen −29,9 % ⇒ P/E 7,36 = kommunikationscellens LÄGSTA multipel (under AT&T 8,59) — vinstcykeln, inte värdefälla i sig, är utbildningsfrågan; P/E 7,36 mot EV/EBITDA 4,80 visar skuldens roll: kabelvärdering lever i EV/EBITDA-världen (D/E 1,00, Altman 1,4 — kontantflödesbolagets balans); utdelning 1,32 USD 5,81 % (6 års tillväxt, payout 42,7 %) + återköp 4,74 %/år (aktiebas −4,7 % YoY) = shareholder yield 10,55 % på P/FCF 3,95; prognosTillväxt ur trailing/fwd-P/E (7,36/6,53 ⇒ +12,7 % implicit ettårs-EPS); peg 0,58 spårkonvention (källans PEG n/a på 3-årsbasen −3,72 % — teckenvänd konvention som not); bruttomarginalbanan 67,0→71,7 % fem år = moaten fördjupas; fcfYield 25,3 % på 20,4 mdr FCF."
+  },
+  {
+    "ticker": "AMT",
+    "namn": "American Tower Corporation",
+    "bransch": "fastighet",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/stocks/amt/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/ + /dividend/)",
+        "paranoid": "NYSE-noting i USD; S&P GMI-underlag, close 2026-09-18 (SA-statistics uppdaterad 2026-09-19): pris 173,98 USD, mcap 81,07 mdr (aktiebas 173,98×465,96 M = 81,07 EXAKT), P/E 23,93 (aktiebas 173,98÷7,27 = 23,93 EXAKT) forward 25,93 ⇒ prognosTillväxt NEGATIV −7,7 % TTE (fwd>trailing — BUD/FMG-konventionen) ⇒ PEG null (källans PEG-fält 24,99 som not), PS 7,41, P/B 21,79 PÅ COMMON EQUITY 3 653 M USD (totalt EK 10 355 inkl. 6 703 M minority = funding trusts — REIT-strukturens signatur; P/B som jämförelsemått meningslöst för REIT, dokumenterat), EV/EBITDA 17,64 EV/EBIT 24,99 med EV 124,29 mdr (nettoskuld 43,22, D/E 4,39 skuld 44,98 mdr), marginaler TTM: brutto 73,77 % EBIT 45,45 % netto 31,08 % FCF 36,19 % (OCF 5 775 − RE-capex 1 815 = 3 960 mdr = källans FCF-yta EXAKT; CF-panelens FCF-radserie 3 633→2 018→2 802→2 762→2 829 bär bredare definitionsbas — BAS-SPLITTRA-noten), ROE 33,91 % på den tunna common-eken, ROIC 8,03 % MOT WACC 6,89 % (spread +1,1 pp), räntetäckning 3,57×, skatt 10,83 % (REIT-pass-through), anställda 4 866, institutions 96,28 % (universumets högsta klass), insiders 0,18 %, beta 0,90, 52-v 160,06–197,41 (−11,8 %); TTM (M USD): rev 10 942 (+6,65 %) netto 3 401 EPS 7,27 (TTM-utdelningar per aktie slår EPS: 7,16 mot 7,27); FY-serier kalenderår (M USD): rev 9 357→9 645→10 012→10 127→10 645 (+3,3 %/år), netto 2 568→1 766→1 483→2 255→2 530 (−0,4 %/år endpoint — FY2022-23-botten = räntechockens REIT-matematik, netto +89 % från FY2023 till TTM), ek totalt 9 070→12 409→10 865→9 649→10 355 (common 5 081→5 572→4 198→3 382→3 653), fcf 3 633→2 018→2 802→2 762→2 829 (5/5 positiva); utdelning 7,16 USD (4,12 %) DPS-trappa kvartal 1,39→1,79 (14 års tillväxt, payout 98,49 % = REIT-utdelningslagen 90 %+), återköp buyback-yield 0,19 %, D&A 2 071 M = 19 % av intäkten (tornens avskrivningsmaskin); nästa rapport Q3 2026-10-29 (est)"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMT",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal (curl-IP rate-limitad 429, dokumenterat): Yahoo 09-18 173,98 mot SA 173,98 = 0,00 % (identisk close); serie 09-14 176,94 · 09-15 177,71 · 09-16 176,39 · 09-17 175,58 · 09-18 173,98"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 173.98,
+    "marknadsKapitalMdr": 81.07,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0328,
+      "resultatCAGR5ar": -0.0037,
+      "omsattningTillvaxtTTM": 0.0665,
+      "prognosTillvaxt": -0.0771
+    },
+    "lonksamhet": {
+      "roe": 0.3391,
+      "roic": 0.0803,
+      "bruttoMarginal": 0.7377,
+      "ebitMarginal": 0.4545,
+      "nettoMarginal": 0.3108,
+      "fcfMarginal": 0.3619
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 4.39,
+      "rantaTackning": 3.57,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 0.154,
+      "andelUtestande": 0.0018,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 23.93,
+      "pb": 21.79,
+      "evEbit": 24.99,
+      "peg": null,
+      "fcfYield": 0.0488,
+      "egenKapitalMultipl": 21.79
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        9357000000,
+        9645000000,
+        10012000000,
+        10127000000,
+        10645000000
+      ],
+      "resultat": [
+        2568000000,
+        1766000000,
+        1483000000,
+        2255000000,
+        2530000000
+      ],
+      "egetKapital": [
+        9070000000,
+        12409000000,
+        10865000000,
+        9649000000,
+        10355000000
+      ],
+      "fcf": [
+        3633000000,
+        2018000000,
+        2802000000,
+        2762000000,
+        2829000000
+      ]
+    },
+    "notering": "Kalenderårsbokslut (31 dec); REIT — världens största telekom-tornoperatör (~148 000 sajter, hyreskontrakt i luften): P/B 21,79 mäter common-eken 3,7 mdr medan totalt EK 10,4 mdr bär 6,7 mdr minority (funding trusts) — REIT:s P/B-jämförelse meningslös, fcfYield 4,88 % och EV/EBITDA 17,64 bär bilden (BLK/AXA-förvaltarstrukturens spegelbild: fältet bär källans common-bas); payout 98,49 % = REIT-utdelningslagen (90 %+ av beskattningsbar inkomst) — utdelningen 7,16 USD (4,12 %, 14 års tillväxt) är LAGSTYRD, inte diskretionär; capex-etiketten är 'Acquisition of Real Estate Assets' (REIT-konventionen) 1,8 mdr/år mot OCF 5,8 mdr; prognosgapet NEGATIVT (fwd 25,93 > trailing 23,93 ⇒ −7,7 %) = fastighetscellens enda negativa — PEG null enligt BUD/FMG-konventionen (källans PEG 24,99 som not); D/E 4,39 + räntetäckning 3,57 = räntekänsligheten (10-åriga tekniska livslängden på tornen mot 5-åriga hyresavtal); ROE 33,9 % på common-tunn EK kontra ROIC 8,0 % — golv- och takmått på samma balans; nettoresultatbanan 2 568→1 766→1 483→2 255→2 530→TTM 3 401 = räntechock + återhämtning i en serie."
+  },
+  {
+    "ticker": "CRWD",
+    "namn": "CrowdStrike Holdings, Inc.",
+    "bransch": "tillvaxt",
+    "land": "USA",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-20",
+        "url": "https://stockanalysis.com/stocks/crwd/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "NASDAQ-noting i USD; S&P GMI-underlag, close 2026-09-18 (SA-statistics uppdaterad 2026-09-19): pris 237,65 USD, mcap 243,86 mdr (aktiebas 237,65×1 026 M = 243,8 = tight), P/E 5 419,71 (TTM-netto +45,0 M USD, EPS 0,04 — MIKRO-EPS: multiplens gränsfall) forward 168,49, PS 45,19, P/B 47,69 (243,86÷4,473 = 54,5 på FY-ek; TTM-ek 5,14 ⇒ 47,4 — källans fält bär TTM-basen), P/TBV 103,29, P/FCF 151,59, EV/EBITDA 2 242,78 med EV 239,67 mdr UNDER mcap (NETTKASSA 4,19 mdr: kassa 5,01 mot skuld 0,82), EV/EBIT n/a (EBIT negativt), marginaler TTM: brutto 75,19 % EBIT −2,47 % netto +0,83 % FCF 29,81 % — GAAP-operativ förlust med positivt netto ENDAST via finansnetto (ränteintäkter på nettkassan) och skatt −1,18 M: SaaS-konventionens kärna i en vy, FCF 1 609 M (OCF 2 017 − capex 408) mot netto 45 M = 36× skillnad, ROE 1,46 % ROIC −14,10 % MOT WACC 11,12 % (spread −25,2 pp — GAAP-linsens dom), D/E 0,16, räntetäckning −5,00 (källans fält på negativ EBIT — meningslöst som täckningsmått, bärs med not), skatt n/a (−1,18 M), anställda 10 698, institutions 77,72 %, insiders 1,56 %, beta 1,26, 52-v 85,68–250,32 (+113,4 % — cellens största ettårsrörelse); TTM (M USD): rev 5 396 (+24,3 %) brutto 4 057; FY-serier jan-bokslut (M USD, årsetikett = slutår enl. WMT/BHP-konvention): rev 1 452→2 241→3 056→3 954→4 812 (+34,9 %/år), brutto 1 068→1 640→2 297→2 963→3 600, EBIT −142,6→−190,1→−19,1→−116,4→−248,5 (GAAP-förlusten består — SBC bär den), netto −234,8→−183,3→+72,2→−15,2→−162,5 (FY2024 = juli-incidentens räddningskvartal +248 % årsomgång, endpoint CAGR osatt), ek 1 038→1 487→2 337→3 319→4 473 (SBC-byggd), fcf 462,6→706,0→989,7→1 127→1 310 (5/5 växande — tillväxtcellens renaste FCF-bana), SBC 1 244 M TTM = 23 % av intäkten mot aktieökning +3,24 % (buyback-yield −3,24 % = netto-dilution); ingen utdelning; nästa rapport Q3 FY2027 ~2026-12 (senaste 2026-08-26)"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-09-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD",
+        "paranoid": "paranoid kurskoll via WebFetch-kanal (curl-IP rate-limitad 429, dokumenterat): Yahoo 09-18 237,65 mot SA 237,65 = 0,00 % (identisk close); serie 09-14 235,38 · 09-15 242,49 · 09-16 241,36 · 09-17 245,70 · 09-18 237,65"
+      }
+    ],
+    "hamtat": "2026-09-20",
+    "pris": 237.65,
+    "marknadsKapitalMdr": 243.86,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.3492,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.243,
+      "prognosTillvaxt": 31.1664
+    },
+    "lonksamhet": {
+      "roe": 0.0146,
+      "roic": -0.141,
+      "bruttoMarginal": 0.7519,
+      "ebitMarginal": -0.0247,
+      "nettoMarginal": 0.0083,
+      "fcfMarginal": 0.2981
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.16,
+      "rantaTackning": -5,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 0,
+      "andelUtestande": 0.0156,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 74.33,
+      "bruttoMarginalSpread5ar": 1.98,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 5419.71,
+      "pb": 47.69,
+      "evEbit": null,
+      "peg": null,
+      "fcfYield": 0.0066,
+      "egenKapitalMultipl": 47.69
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        1452000000,
+        2241000000,
+        3056000000,
+        3954000000,
+        4812000000
+      ],
+      "resultat": [
+        -234800000,
+        -183250000,
+        72180000,
+        -15240000,
+        -162500000
+      ],
+      "egetKapital": [
+        1038000000,
+        1487000000,
+        2337000000,
+        3319000000,
+        4473000000
+      ],
+      "fcf": [
+        462640000,
+        705990000,
+        989680000,
+        1127000000,
+        1310000000
+      ]
+    },
+    "notering": "Januari-bokslut (31 jan; WMT/BHP-konventionen — årsetikett = slutår, FY2026 slutade 31 jan 2026); cybersäkerhetens flaggskepp (Falcon-plattformen, single-agent-arkitekturen) = universumets FÖRSTA cyber-säkerhetsrad — sektorn saknades helt; FYND 1 — multiplens gränsfall: P/E 5 419,71 på TTM-EPS 0,04 USD (netto +45,0 M) med forward 168 och P/S 45,19 som bärarbilden: pedagogiken är ATT talet blir meningslöst vid mikro-EPS (prognosTillväxt-fältet bär formeln +3 117 % formellt men PEG markeras null — källans PEG 5,75 på 3-årsbas som not); FYND 2 — SaaS-konventionens kärna: GAAP-EBIT −133 M och GAAP-netto +45 M ENDAST genom ränteintäkter på 4,19 mdr nettkassa, medan FCF +1 609 M (29,8 % marginal, 5/5 växande år 462,6→1 310) —skillnaden 36× = förskottsbetald prenumerationsintäkt + SBC 1 244 M (23 % av intäkten, aktieökning +3,24 %/år); bruttomarginalserien 73,6/73,2/75,2/74,9/74,8 % (medel 74,3 ± 2,0 pp) = mjukvarumoatens stabilitet; ROIC −14,1 % mot WACC 11,1 % = −25,2 pp GAAP-lins; 52-v +113,4 % (tillväxtcellens största rörelse 2025-26); evEbit null (negativ EBIT), resultatCAGR null (negativ endpoint, BASF-precedensen)."
   }
 ]

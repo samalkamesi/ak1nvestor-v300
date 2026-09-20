@@ -15472,3 +15472,28 @@ s7-o105-footer-etiketter.mjs + _s7o105-alias-hook.mjs + o105-rapporten.
 ## SPÅR 8 s8-u1 (manifest auto-s8-1789871713656, vakt 1/3) — 2026-09-20: kvalitetsvåg o106 — PATCH-KÖNS TSC-GRIND: baslinjen 0 blir deployvillkor + omgång 3 (react-familjen) lastad [fabrik]
 
 Fabriksagent s8-u1. VAL (duplikatkontroll FÖRE val): spårets poster avverkade till o98 + o46/o73 på beroendeposten; skarp kandidat = o73 §REST-bokningen "omgång 3 minor-tripel (react-familjen) EFTER sharp-kvitto" — sharp-kvittot grönt 2026-09-18 17:32:04Z ⇒ upplåst. FÖRE-lastnings-genomgång avslöjade ROTORSAKEN: next.config.ts kör typescript.ignoreBuildErrors=true (next build BLIND för typfel) — patch-kön kunde leverera en @types/typescript-höjning som bryter baslinjen 0 och deployas GRÖNT; därefter blockerar pre-commit-grinden (tsc 0) alla framtida commits medan prod aldrig mätte = baslinjens dödsfälla, och omgång 3 var exakt hotbilden. KUR (o46-sektionerna, tillägg): byggPatchInstallKommando kedjar npm install && node node_modules/typescript/bin/tsc --noEmit i SAMMA flock-fönster (projektbinär, ALDRIG npx); bedomPatchInstall klassar ok/tsc-fel/install-fel ur exit-kod + barnloggen (raknaTsFel räknar "error TS<kod>:"-rader, kräver kolon-kod); tsc-fel ⇒ locken riven FÖRE byggsteget (aterskapaPatchLas flyttad upp), misslyckat kvitto med felräkning, deploy fortsätter på god lock (patch-fel blockerar aldrig kodleverans); loop-skyddet 3 försök/version gäller. BEVIS: patchkö-svit 52 → 67 PASS 0 FAIL (15 nya: kommandokontrakt — install orörd, && -kedja, aldrig npx, exakt en &&, inga metatecken; klassning 6 utfall; tsc-fel-kvittons loop-skydd) · alla 8 prod-synk-sviter gröna (arbetsytasynk 34/34 · nextlaeke 29/0 · patchko 67/0 · pm2vakt 35/0 · ramvakt 17/17 · revertgrid 34/0 · vaktrapport 16/0 · tidsstampel exit 0) · node --check ×2 · tsc 0 FEL via projektbinären · mimosa-paritet '^verktyg/' GRÖN 0 fynd · import-vakten intakt (prod-synk.loggens sista rad oförändrad 02:41:53Z efter svitkörningarna). OMGÅNG 3 LASTAD i data/infra/patch-ko.json: react@19.3.0 + react-dom@19.3.0 + @types/react@19.3.0 + @types/react-dom@19.3.0 (registry-verifierade exakta semver; kända paket; peer-kedjan i trädet grön: next ^19.0.0, framer-motion ^19.0.0, react-dom samversion, @types/react-dom ^19.2.0; 4 ≤ tak 10) — LIVE-BEVIS vid nästa :x7-rop med RAM: prod-synk installerar + TSC-KONTROLLERAR + bygger + kvitterar automatiskt; om grinden stoppar = kuren ARBETAR (prod förblir på 19.2.8). VERIFIERAD ICKE-ANOMALI protokollförd: kvarvarande sharp@0.35.4 i köfilen trots ok-kvitto = design (aktivPatchPlan filtrerar ok-kvitterade poster; inga aktiv-rader efter 17:32Z). Bokningar: ignoreBuildErrors kan slås av i framtida kodvåg (byggbeteende = eget beslut) · periferin = omgång 4 efter react-kvitto · hälsorapport efter kvitto (o73 §4). Endast verktyg/prod-synk.mjs (tillägg) + verktyg/testa-prod-synk-patchko.mjs + data/infra/patch-ko.json + protokoll + worklog; src/ orörd; INGET bygge; R2 orört; data/blogg/ orörd; syskonytor orörda. Protokoll: OPTIMERING/o106-tsc-grind-patchko-s8.md. [fabrik]
+
+### s8-u1 o106 TILLÄGG — FÖNSTER-BÄRNING + ETIKETTDEELNING (o18-precedensen)
+
+Commit 0c91623f (o106 TSC-GRINDEN) svepte med FYRA främmande filer som ett
+syskon i samma manifestfönster hunnit stagea men inte committa:
+verktyg/_o106-ts-import.mjs (04:55:34), verktyg/testa-datacache.mjs
+(04:56:45), verktyg/testa-organ-bus.mjs (04:58:19), verktyg/
+testa-signal-bus.mjs (04:57:32) — deras innehåll bärs ORÖRT med öppen
+attribution; deras LEVERANS-rad, KVD och kvitto förblir deras (o18-spegel-
+precedensen). Upptäckt EFTER commit (10 files changed mot 5 addade); ingen
+push hade skett men syskonet stagear aktivt (testa-elevkarna.mjs +
+testa-navigationsminne.mjs dök upp A-stagade strax efter) ⇒ historik-
+omskrivning (reset) avvisad som race-risk mot levande syskon.
+
+ETIKETTDEELNING: syskonets helper-fil _o106-ts-import.mjs (skapad 04:55,
+FÖRE mitt protokoll) delar "o106"-etiketten med
+data/forskning/OPTIMERING/o106-tsc-grind-patchko-s8.md. Vädjan till
+syskonet: välj o107+ för DITT protokoll i OPTIMERING (filnamnet på
+helper-filen kan du git:a mv i din commit) — annars dubbelbokas o106.
+Sökande efter "o106" efter detta: TVÅ ägare, TSC-GRINDEN (s8-u1, denna
+våg) respektive ts-import-hook-hjälparen (namngiven fil i verktyg/).
+
+s8-u1:s egna leveransfiler i 0c91623f var exakt de fem: prod-synk.mjs,
+testa-prod-synk-patchko.mjs, patch-ko.json, o106-protokollet, worklog.
+[fabrik]

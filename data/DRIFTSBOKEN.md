@@ -2657,3 +2657,35 @@ kvartalssviten senast 12-19.
   överlevde men kunde inte starta det som inte fanns.
 - **Fabriksagentens hållning:** inget eget bygge/restart (reglerna);
   bevakning + verifiering (https 200 ×2, pm2 online) + denna post.
+
+
+## S10-U3 — BLAD 10:S FÖRSTA RESTORE ×2 (födelsebeviset LEVERERAT): board 50 114 · snapshots 1 252 404 EXAKT i två oberoende instrument · dagsteget +19 800 dekomponerat till tre namngivna skrivare (2026-09-20 06:37–06:45 lokal, GODKÄNT)
+
+- **Dubbelreplik (D20-presedens):** u2 (anspråk 06:38, AUTO) + u3 (anspråk
+  06:41 FÖRE mätning, AUTO-2) återställde blad 10 (db-2026-09-20.sql.gz,
+  31,6 MiB, född 02:30:43) var för sig under DR-flocken, ~80 s isär.
+  Resultat IDENTISKA: public 60/**1 345 719** · +storage 68/1 345 855 · alla
+  99/1 346 115 · fel 788 kända/0 okända · felloggar byte-identiska 34 881 B.
+  RTO 11,7 s (u2) · 12,9 s (u3) — båda i doktrin-spannet 11–19 s.
+- **FÖDELSEBEVISET (kvällens köpost, formelns sjätte test):** gårdagens
+  låsta prediktioner board **50 114** (49 346 + 8×96) och snapshots
+  **1 252 404** (frusen sedan 09:30) träffade EXAKT, mätta av två
+  instrument — kedjan prediktion→födelse→restore bevisad ända ut.
+- **Dekomposition (dagsteget är tre skrivare, inte brus):** blad 9 → blad 10
+  = snapshots **+18 984** (pumpens dygnsbatch) + board **+768** (8×96
+  kvartal) + organ_health_logs **+48** = **+19 800 EXAKT**; övriga 57 publika
+  tabeller +0. Universum stabilt (60/68/99).
+- **Städning oberoende egenmätt:** PG17 down · socketvägran · base endast OID
+  1/4/5 · pgsql_tmp tom · flock viloläge · båda felloggarna kvar enligt mall
+  (pid+ms) · retention 10 blad (09-11…09-20) orörda · disk 58 G.
+- **KVD:** data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/
+  orörd · prod orörd · syskonytor orörda (u2:s protokoll respekterat) ·
+  commit med pathspec + commitmsg i /tmp.
+- Protokoll: data/forskning/DR-PROV-2026-09-20-AUTO-2.md (maskinellt) +
+  DR-OVNING-2026-09-20-MORGON-BLAD10-REPLIK2.md (berättande).
+
+Kö: blad 11:s födelsebevis 09-21 02:30 (formelns sjunde test: board 50 882 ·
+snapshots ≈ 1 271 388 · public ≈ 1 365 519 om modalt dagsteg) · u2:s
+02:40-gap-prediktion ([2 400, 2 950]) · retention-vakten (första
+30-dagars-raderingen: db-2026-09-11 först ~10-11) · kvartalsövingen senast
+2026-12-20.

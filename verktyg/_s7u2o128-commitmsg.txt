@@ -1,0 +1,38 @@
+studio: auto s7-u2 o128 PRESTANDA/MOBIL: slider-tummar 16→52 px tryckyta på mobil [fabrik]
+
+Spår 7 s7-u2 (omgång 3) — o123 §"Medvetet kvar" post 1: den bokade
+separata slider-vågen, levererad med eget mätprotokoll.
+
+ROTBEVIS (tredelat, mot prod):
+- Radix react-slider 1.4.7 (installerad) renderar tummen som SPAN med
+  role="slider" — INTE button. Golvet i globals.css (button-selector,
+  min-height/min-width 52 px ≤640 px, o123) når den ALDRIG.
+- CSS-isolerad mätning mot prodens stilmallar: span med tummens exakta
+  klasser = 16×16 px (minH/minW = 0), samma klasser på button = 52×52.
+- Kanoniska verktygets selektor saknar [role=slider] + Radix unmountar
+  inaktiva flikar ⇒ tummarna osedda av ALLA tidigare mätningar (o123:s
+  antagande "de ÄR små på riktiga mobilvyer" härmed bevisat).
+
+KUR (src/components/ui/slider.tsx, ENBART Write/Edit):
+- Tum-spannen: max-md 52×52 ren tryckyta (flex-centrerad, transparent
+  box), visuell 16 px-cirkel i barn-span — o123:s shortseller-×-mönster.
+- Desktop visuell cirkel kvar på tummen (barn-span hidden ≥768) — identisk
+  look; barn-cirkeln bär exakt tummens gamla visuella klasser.
+- Radix mäter tumstorleken via useSize ⇒ thumbInBoundsOffset anpassas
+  automatiskt; inga positionsjusteringar behövs.
+- Ytor som täcks av den globala komponenten: kalkylator manuellt+akm2,
+  client-portal (kassaposition, startsidans lazy-sektion); portfolio-
+  builder importeras ej men täcks mekaniskt vid framtida bruk.
+
+KVD: tsc 0 fel (projektbinär) · kontrakt 12 PASS 0 FAIL
+(verktyg/_s7u2o128-kontrakt.mjs) · INGET bygge (prod-synken äger) ·
+R2 orörd · data/blogg/ orörd · globals.css-golvet orört (o123-arv) ·
+syskonytor orörda.
+
+Sidofynd bokförs i protokollet: 404 /ak1a/logo/ikon-192.png (konsolfel
+på /kalkylator, ej denna vågs yta).
+
+Underlag: OPTIMERING/slider-tummar-fore-o128.json (tredelat FÖRE-bevis) +
+slider-tummar-fore-sond-o128.json (flikklicks-sonden) + mätverktyg
+_s7u2o128-*.mjs. EFTER-mätning (cache-disabled) + Lighthouse CLS körs när
+prod-synken deployat; protokoll o128 landar med EFTER-facit.

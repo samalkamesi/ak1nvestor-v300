@@ -24,6 +24,22 @@
       "titel": "oprovat val",
       "ts": 1789916171548,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o121",
+      "agare": "s7-u4",
+      "manifest": null,
+      "titel": "prestandavåg: o119 EFTER — NastaSteg-defer deploybevakning + Lighthouse EFTER-mätning mot o120:s FÖRE-bas (o120 §6 steg 0)",
+      "ts": 1789917757492,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o122",
+      "agare": "s7-u3",
+      "manifest": null,
+      "titel": "prestandavåg: mobil läsbarhet ≥52px ROND 3 — nya ytor sedan o8 (superanalys, kalkylator, konfluens, netnet, dataset, ny kurs): CDP-mätning + bokföring",
+      "ts": 1789918048751,
+      "status": "reserverat"
     }
   ]
 }

@@ -59,9 +59,11 @@ TBT räknar endast tasks mellan FCP och TTI: en-spegeln når FCP tidigare (mindr
 - **Script:** 15 st / 254 KiB, IDENTISKA familjer mellan en/ar (enda differensen: sidspegelns egen 8 KiB-chunk). Topp: 2feezv 70 KiB (React/next-klient) · 02vzzrg 47 KiB (språkcontext+i18n) · 095w8h 42 KiB (App Router-runtime: callServer/dispatchAppRouterAction) — allt framework/runtime, inga tredjepartsbibliotek, inga döda chunkar att strypa (LH "unused-javascript 50 KiB" = App Router-falspositiv på runtime-delar).
 - **Longtask-botten (o120-attribution, sonsk rensade):** dokument-inline-eval (blogg-attribution 303/234 ms) + runtime-init (095w8h 357 ms @4,0 s, turbopack 244 ms @3,9 s) + hydrat-commit (2feezv 181/119/151/142 ms). Samma familjer på ar.
 
-## §6 Köpost till spåret (före u1:o119-kurleveransen 16:58 — se §8) (nästa våg — ARKITEKTNIVÅ, kräver produktpåverkan-bedömning)
+## §6 Köpost till spåret (nästa våg — ARKITEKTNIVÅ, kräver produktpåverkan-bedömning)
 
-Kvarvarande TBT-drivare (alla tre speglar ~500–650): hydratisering av **110 kort** + 117–128 KB flight-eval + 254 KiB framework-JS på en list-sida. Inga mikrokurvar kvar i transportlagret (prefetch redan av, flight ren, widget redan idle). De tre verkliga spåren, i storleksordning:
+**Uppdatering efter kartläggningen:** s7-u1 levererade 16:58:28 (568a93a2) **kuren o119 — NastaSteg-widgeten ur kritisk hydratisering** på alla ~46 shell-sidor (o105 §6 post 3; FÖRE enligt u1: en 876 · ar 737 · sv 348 på IxcwwO under lastigt läge). Stegordning: (0) **o119 deployas + EFTER-mätning mot detta protokolls FÖRE-bas på IxcwwO** (en 651/547 · ar 508 · CLS 0, tystare läge) — u1:s EFTER-kriterier är uttryckligen vakarövertag-barra; därefter, om TBT > 500 kvarstår, arkitekturnivån:
+
+Kvarvarande TBT-drivare (alla tre speglar ~500–650): hydratisering av **110 kort** + 117–128 KB flight-eval + 254 KiB framework-JS på en list-sida. Inga mikrokurvar kvar i transportlagret (prefetch redan av, flight ren, AI-Mentor-widgeten redan idle). De tre verkliga spåren, i storleksordning:
 
 1. **Initiell listlängd (t.ex. 24–36 kort + "visa fler" / paginering)** — största väntade effekten (flight −60–75 %, hydrat-proportionell). Ändrar kundupplevelse på tre språk ⇒ **bokas med öppet produktbeslut i nästa rond** (inte fabriksautonomt — spårets kurar hittills har varit transport, ej beteende).
 2. **content-visibility: auto + contain-intrinsic-size på korten** — render/layout-uppskjutning utanför viewport; riskerar CLS om intrinsic-size avviker (o100:s CLS 0-nivå är helig) ⇒ kräver noggrann EFTER-verifiering; mindre vinst än #1.

@@ -26,7 +26,7 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 // Ren klassificerare för delresurs-deploysignaturer (spår 8, s8-u1 omgång 5):
 // separat modul så att testen kan importera DEN RIKTIGA koden offline —
 // vakten själva är ett toppnivåskript som kör hela svepet vid import.
@@ -156,7 +156,7 @@ const SIDOR = SNABB
 function deployLasUpptaget() {
   // flock -n speglar exakt deploy-skriptens semantik (låset, inte filen)
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { stdio: "ignore", timeout: 5000 });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "-c", "true"], { stdio: "ignore", timeout: 5000 });
     return false;
   } catch {
     return true;

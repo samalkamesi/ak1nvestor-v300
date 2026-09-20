@@ -2,7 +2,7 @@
 // F2: döda LÄCKT dev-server (testläcka, PPid 1, ~5 h) — verifierar cmdline
 // FÖR kill (pid-återanvändningsskydd), SIGTERM→SIGKILL-trappa, portkontroll.
 import fs from "node:child_process";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import f from "node:fs";
 
 const R = "/home/ak1a/agent/ak1/verktyg/_f2-devort-resultat.txt";
@@ -36,14 +36,14 @@ for (const pid of MAL) {
 }
 await new Promise((r) => setTimeout(r, 2000));
 try {
-  const ss = execSync("ss -ltnp", { encoding: "utf8", timeout: 10000 });
+  const ss = execFileSync("ss", ["-ltnp"], { encoding: "utf8", timeout: 10000 });
   const rader = ss.split("\n").filter((r) => /:3117/.test(r));
   log(rader.length ? `PORT 3117 UPPNÅDD fortfarande: ${rader.join(" | ")}` : "PORT 3117 FRITT — dev-läckan borta");
 } catch (e) {
   log(`ss-fel: ${String(e.message).slice(0, 100)}`);
 }
 try {
-  const kod = execSync('curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://lab.ak1nvestor.com/"', { encoding: "utf8", timeout: 30000 });
+  const kod = execFileSync("curl", ["-s", "-o", "/dev/null", "-w", "%{http_code}", "--max-time", "20", "https://lab.ak1nvestor.com/"], { encoding: "utf8", timeout: 30000 });
   log(`PROD=${kod.trim()}`);
 } catch (e) {
   log(`PROD-sond-fel: ${String(e.message).slice(0, 100)}`);

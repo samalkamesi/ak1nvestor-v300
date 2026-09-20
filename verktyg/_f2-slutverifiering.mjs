@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // F2-slutverifiering: nya vaktfilerna i prod-trädet + pm2 + port + prod 200.
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const R = "/home/ak1a/agent/ak1/verktyg/_f2-slut-resultat.txt";
@@ -20,20 +20,20 @@ for (const [namn, sokvag, nalspinne] of [
   }
 }
 try {
-  const ls = execSync("pm2 jlist", { encoding: "utf8", timeout: 20_000 });
+  const ls = execFileSync("pm2", ["jlist"], { encoding: "utf8", timeout: 20_000 });
   const ak1a = JSON.parse(ls).find((p) => p.name === "ak1a");
   log(`pm2 ak1a: status=${ak1a?.pm2_env?.status} pid=${ak1a?.pid}`);
 } catch (e) {
   log(`pm2-fel: ${String(e.message).slice(0, 120)}`);
 }
 try {
-  const ss = execSync("ss -ltnp", { encoding: "utf8", timeout: 10_000 });
+  const ss = execFileSync("ss", ["-ltnp"], { encoding: "utf8", timeout: 10_000 });
   log("port 3000: " + ss.split("\n").filter((r) => /:3000\s/.test(r)).join(" | ").slice(0, 160));
 } catch (e) {
   log(`ss-fel: ${String(e.message).slice(0, 100)}`);
 }
 try {
-  const kod = execSync('curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://lab.ak1nvestor.com/"', { encoding: "utf8", timeout: 30000 });
+  const kod = execFileSync("curl", ["-s", "-o", "/dev/null", "-w", "%{http_code}", "--max-time", "20", "https://lab.ak1nvestor.com/"], { encoding: "utf8", timeout: 30000 });
   log(`PROD=${kod.trim()}`);
 } catch (e) {
   log(`PROD-fel: ${String(e.message).slice(0, 100)}`);

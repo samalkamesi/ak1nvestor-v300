@@ -172,7 +172,7 @@ function ramTillgangligtMB() {
 /** Git-hjälp: senaste commit-hashen (eller "?") — leveransbevis före/efter. */
 function gitTopp() {
   try {
-    return execSync("git log --oneline -1", { cwd: ROT, timeout: 10_000 }).toString().trim().slice(0, 80);
+    return execFileSync("git", ["log", "--oneline", "-1"], { cwd: ROT, timeout: 10_000 }).toString().trim().slice(0, 80);
   } catch {
     return "?";
   }
@@ -189,7 +189,7 @@ function gitTopp() {
 function städaFöräldralösaZcode() {
   const läsPs = () => {
     try {
-      return execSync("ps -eo pid=,ppid=,etimes=,args=", { timeout: 10_000 })
+      return execFileSync("ps", ["-eo", "pid=,ppid=,etimes=,args="], { timeout: 10_000 })
         .toString()
         .split("\n")
         .map((r) => r.trim().match(/^(\d+)\s+(\d+)\s+(\d+)\s+(.+)$/))
@@ -211,7 +211,7 @@ function städaFöräldralösaZcode() {
     }
   }
   if (dödade.length === 0) return dödade;
-  execSync("sleep 2", { timeout: 5_000 }); // ge TERM tid att verka
+  execFileSync("sleep", ["2"], { timeout: 5_000 }); // ge TERM tid att verka
   for (const p of läsPs().filter(ärLäcktZcode)) {
     try {
       process.kill(p.pid, "SIGKILL");
@@ -229,7 +229,7 @@ function städaFöräldralösaZcode() {
 /** Full HEAD-hash — grindens commit-fönster före/efter barnkörningen. */
 function gitHash() {
   try {
-    return execSync("git rev-parse HEAD", { cwd: ROT, timeout: 10_000 }).toString().trim();
+    return execFileSync("git", ["rev-parse", "HEAD"], { cwd: ROT, timeout: 10_000 }).toString().trim();
   } catch {
     return "?";
   }

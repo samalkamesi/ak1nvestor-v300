@@ -88,7 +88,7 @@ function gron(spår, not) { console.log(`[FELJÄGT GRÖN] ${spår}: ${not}`); }
 // appen väntat osvarande. Feljägten ska larma HÖG endast utan aktivt bygg.
 function deployPagar() {
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock true", { timeout: 5000, encoding: "utf8" });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "true"], { timeout: 5000 });
     return false;                          // låset togs → inget bygg pågår
   } catch (e) { return e.status === 1; }   // exit 1 = hålls av bygg; övrigt = ej deploy
 }
@@ -102,7 +102,7 @@ export function hamtaAppAlderMin() {
   const over = process.env.AK1A_APP_ALDER_MIN;
   if (over !== undefined && over !== "" && Number.isFinite(Number(over))) return Number(over);
   try {
-    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    const lista = JSON.parse(execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }));
     const ak1a = lista.find((p) => p.name === "ak1a");
     const upp = ak1a?.pm2_env?.pm_uptime;
     return typeof upp === "number" && upp > 0 ? (Date.now() - upp) / 60_000 : null;
@@ -166,7 +166,7 @@ async function jagaKod() {
   let srcAndrad = false;
   let gitTopp = "";
   try {
-    gitTopp = execSync("git log -1 --format=%H -- src/", { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
+    gitTopp = execFileSync("git", ["log", "-1", "--format=%H", "--", "src/"], { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
     srcAndrad = gitTopp !== senaste;
   } catch { srcAndrad = true; }
   // Verktyg: node --check på samtliga — skalfri arrayform (o21); körs ALLTID:
@@ -187,7 +187,7 @@ async function jagaKod() {
   // försvinner minutvis ⇒ falska TS2688 (bevis: F1 20:27:21Z, bygg slut
   // 20:39:22Z, grönt vid ommätning). Alla byggvägar håller deploylåset.
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { timeout: 5_000, stdio: "pipe" });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "-c", "true"], { timeout: 5_000, stdio: "pipe" });
   } catch {
     gron("F1-kod", "hoppar — deployfönster aktivt (npm ci river node_modules)");
     return;
@@ -198,13 +198,22 @@ async function jagaKod() {
     // node_modules) kan npx lösa "tsc" till cachens dummy tsc@2.0.4 som
     // alltid svarar grönt (falsk F1-grön). Saknad binär ⇒ "Cannot find
     // module" blir F1-fynd i stället för tystnad.
-    const korTsc = () => execSync("node node_modules/typescript/bin/tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" }).trim();
+    // Skalforms-ekvivalens (o133): "tsc … 2>&1 | head -5" omgjord i node —
+    // pipe:ns exit-0-bevarande (head slukade tsc:s felkod) ersätts av en
+    // try/catch som returnerar stdout+stderr kapat till 5 rader, så feltexten
+    // når TS2688/2307-grenen och "kraschade"-yttercatchen som förr.
+    const korTsc = () => {
+      const topp5 = (t) => String(t ?? "").split("\n").slice(0, 5).join("\n").trim();
+      try {
+        return topp5(execFileSync(process.execPath, ["node_modules/typescript/bin/tsc", "--noEmit"], { cwd: ROT, timeout: 300_000, encoding: "utf8" }));
+      } catch (e) { return topp5((e.stdout ?? "") + (e.stderr ? "\n" + e.stderr : "")); }
+    };
     let fel = korTsc();
     if (fel && !fel.includes("0") && /^error TS(2688|2307)/m.test(fel)) {
       // TS2688/TS2307 = race-signatur för partiell node_modules (npm ci hann
       // mitt i trots låsproben): en andra chans efter väntan — kvarstår
       // felet är det äkta och bokförs HÖG nedan som vanligt.
-      execSync("sleep 75", { timeout: 90_000 });
+      execFileSync("sleep", ["75"], { timeout: 90_000 });
       fel = korTsc();
     }
     if (fel && !fel.includes("0")) {
@@ -221,7 +230,7 @@ async function jagaKod() {
 // ── F2: PROCESSER ────────────────────────────────────────────────────────────
 function jagaProcesser() {
   try {
-    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    const lista = JSON.parse(execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }));
     for (const p of lista) {
       if (p.pm2_env?.status !== "online") {
         bokfor("F2-process", "HÖG", `${p.name} = ${p.pm2_env?.status}`, `restarts: ${p.pm2_env?.restart_time}`);
@@ -230,7 +239,17 @@ function jagaProcesser() {
     const onlines = lista.filter((p) => p.pm2_env?.status === "online").length;
     if (onlines === lista.length) gron("F2-process", `${onlines}/${lista.length} pm2-processer online`);
     // Zombie-zcode (mv. många barn = RAM-risk)
-    const zcode = execSync("pgrep -c zcode || echo 0", { timeout: 10_000, encoding: "utf8" }).trim();
+    // Zombie-zcode (mv. många barn = RAM-risk) — "pgrep -c zcode || echo 0"
+    // omgjord (o133): pgrep exit 1 = noll träffar (stdout "0"), övrigt fel
+    // kastas vidare till F2-catchen som förr.
+    const zcode = (() => {
+      try {
+        return execFileSync("pgrep", ["-c", "zcode"], { timeout: 10_000, encoding: "utf8" }).trim();
+      } catch (e) {
+        if (e && e.status === 1) return String(e.stdout ?? "").trim() || "0";
+        throw e;
+      }
+    })();
     if (parseInt(zcode) > 40) {
       bokfor("F2-process", "MEDEL", `${zcode} zcode-barn (RAM-risk)`, `pgrep -c zcode`);
     }
@@ -433,7 +452,10 @@ async function jagaDrift(pass) {
     else gron("F6-drift", `RAM ${mb} MB`);
   } catch { /* */}
   try {
-    const disk = execSync("df / | tail -1 | awk '{print $5}'", { timeout: 10_000, encoding: "utf8" }).trim();
+    // "df / | tail -1 | awk '{print $5}'" omgjord (o133): sista raden,
+    // femte whitespace-kolumnen = Use%-fältet.
+    const dfRader = execFileSync("df", ["/"], { timeout: 10_000, encoding: "utf8" }).trim().split("\n");
+    const disk = ((dfRader[dfRader.length - 1] ?? "").split(/\s+/)[4] ?? "");
     const procent = parseInt(disk);
     if (procent > 85) bokfor("F6-drift", "MEDEL", `disk ${procent}%`, "df / > 85%");
     else gron("F6-drift", `disk ${procent}%`);
@@ -476,9 +498,15 @@ function sokNyckel(katalog, prefix) {
 function jagaSecurity() {
   // .env i git?
   try {
-    const tracked = execSync("git ls-files --error-unmatch .env.production.local 2>/dev/null || echo NEJ", {
-      cwd: ROT, timeout: 10_000, encoding: "utf8",
-    }).trim();
+    // "git ls-files … 2>/dev/null || echo NEJ" omgjord (o133): ospårad ⇒
+    // exit 1 + tom stdout ⇒ NEJ; spårad ⇒ filnamnet ⇒ KRITISK-grenen.
+    const tracked = (() => {
+      try {
+        return execFileSync("git", ["ls-files", "--error-unmatch", ".env.production.local"], {
+          cwd: ROT, timeout: 10_000, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"],
+        }).trim() || "NEJ";
+      } catch (e) { return String(e.stdout ?? "").trim() || "NEJ"; }
+    })();
     if (tracked !== "NEJ") bokfor("F7-security", "KRITISK", ".env.production.local är git-spårad!", "git ls-files");
     else gron("F7-security", ".env ej i git");
   } catch { /* */}

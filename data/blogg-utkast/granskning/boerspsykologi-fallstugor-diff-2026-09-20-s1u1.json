@@ -1,0 +1,74 @@
+{
+  "objekt": "data/blogg-utkast/m9-ko/boerspsykologi-fallstugor-v1.json",
+  "granskad": "2026-09-20 19:51–19:55 CEST",
+  "granskare": "fabrik auto-s1-u1 (omgång auto-s1-1789925707056, spår 1 granskare 1/3)",
+  "pass": 4,
+  "bedomning": "FLYTTKLAR",
+  "kontroller": {
+    "antal": 40,
+    "fel": 0,
+    "varningar": 0,
+    "sond": "verktyg/_s1u1-boerspsykologi-kontroll.mjs (läser endast, omkörbar)",
+    "tillaggUtanforSonden": [
+      "filintegritet: git log --follow = 584ffcf8 (endast kö-dumpen), git diff HEAD tom",
+      "determinism: node verktyg/m9-fabrik.mjs TORR på 2026-09-20 reproducerar kandidat-md5 b90e7b95b8f260c731ef668b952bbe9e EXAKT · fabriksgrind 0 FEL/0 VARN · 0 rader skrivna till Supabase-kön"
+    ]
+  },
+  "poster": [],
+  "posterMotivering": "0 ändringsförslag i utkastet: samtliga tal exakta mot källfilen (md5-låst, oförändrad även 2026-09-20), juridik ren på både hel och publicerbar body, 911 = 0 träffar på sex mönster, länkar 3/3 HTTP 200 mot levande sajten samma dag, protokollcitatet byte-exakt (360 == 360 tkn). Utkastfilen är dessutom git-bevisat orörd sedan kö-dumpen och fabrikens torrkörning reproducerar kandidat-md5:n — varje manuell ändring skulle bryta determinismkvittot. Innehållsändringar går via m9-fabrikens regenerering (evergreen-regeln), inte via granskningsdiff.",
+  "flaggor": [
+    {
+      "id": "F4",
+      "grad": "flagga-till-ägare",
+      "fil": "verktyg/m9-fabrik.mjs",
+      "lagen": [
+        {
+          "rad": 1217,
+          "nu": "…två träffar av två möjliga, basbyggen som missade samtliga tolv domar…",
+          "foreslat": "…${String(tvaTraffar.nDomda)} träffar av ${String(tvaTraffar.nDomda)} möjliga, basbyggen som missade samtliga ${String(basSumma)} domar…",
+          "motiv": "Ingressens 'två' och 'tolv' är hårdkodade; källans celler interpoleras i bodyn. Vid nästa regeneration med rört underlag säger ingress och body olika tal i samma påstående."
+        },
+        {
+          "rad": 1174,
+          "nu": "är sannolikheten att träffa båda 0,5 × 0,5 = ${pct(slantTvaa, 0)}",
+          "foreslat": "är sannolikheten att träffa samtliga 0,5 upphöjt till ${String(tvaTraffar.nDomda)} = ${pct(slantTvaa, 0)} (skrivet ut för n = ${String(tvaTraffar.nDomda)})",
+          "motiv": "'båda' och faktor-texten '0,5 × 0,5' förutsätter exakt n=2. pct(slantTvaa,0) beräknas redan dynamiskt; texten runt om gör det fel från n=3. (Fallstudie 2 använder redan korrekt mönster: '0,5 upphöjt till ${String(basSumma)}'.)"
+        },
+        {
+          "rad": 1174,
+          "nu": "Tumregeln 3/n … med n = 2 blir det 150 %, vilket betyder ingen begränsning alls.",
+          "foreslat": "Tumregeln 3/n … med n = ${String(tvaTraffar.nDomda)} blir det ${pct(3 / tvaTraffar.nDomda, 0)}${tvaTraffar.nDomda <= 3 ? ", vilket betyder ingen begränsning alls" : ""}.",
+          "motiv": "'n = 2' och '150 %' hårdkodade i samma mening som interpolerar 'på exakt n = ${…} dömda mätningar'. Slutföljden 'ingen begränsning alls' gäller bara när 3/n ≥ 100 %."
+        }
+      ],
+      "idag": "0 fel i utkastet — källans n är 2 och 6+6=12, så hårdkodat == interpolerat (sondens kontroll B20 grön)",
+      "visarSigForstVid": "nästa regenerering av serien efter att vagvalideringens celler rört sig (nya domar ändrar n i cellerna)",
+      "ägare": "fabriksägaren (huvudagentens kö)",
+      "slaktskap": "samma klass som s1-u2:s F3 (utdelningar-grenen rad 1079) och s1-u3:s C1 (kassaflödesgrenen) — granskaren skriver ej om andras filer"
+    },
+    {
+      "id": "D1",
+      "grad": "notis-till-ägare",
+      "lage": "Torrstatus 'GRANSKNINGSKLAR' + identisk kandidat-md5 (b90e7b95…): nästa --skriv skriver en innehålls-identisk rad för slugen (v1-publicering saknas ännu, så evergreen-skippet triggas ej)",
+      "motiv": "Kö-underhållets ägande — inget att rätta i utkastet; noteras så att en kommande v-rad med oförändrad text inte tolkas som källdrift.",
+      "ägare": "kö-underhållet (huvudagentens kö)"
+    }
+  ],
+  "flyttklartPaket": {
+    "fil": "data/blogg-utkast/granskning/boerspsykologi-fallstugor-FLYTTKLART-PAKET-2026-09-20.json",
+    "paketMd5": "b626c487cba850315a299e210929e51b",
+    "bodyTeckenFore": 4995,
+    "bodyTeckenEfter": 3532,
+    "kvittoStrippet": true,
+    "kvittoRester": 0,
+    "disclaimerSist": true,
+    "rubrikerRenBody": 6,
+    "ord": 548,
+    "readingMinutes": 3,
+    "kontrolleraTextRenBody": { "fel": 0, "varningar": 0 },
+    "publishedAt": null,
+    "byggare": "verktyg/_s1u1-boerspsykologi-paket.mjs (byte-exakt strippning ur utkastfilen)",
+    "not": "publishedAt = null medvetet: datum sätts vid kundens export/klick (R2). Metadata enligt våg 95-kontraktet (pillar Institutionell metodik, author AK1A Research Lab); våg 66-piloten i data/blogg/ bar pillar AKM1 / author Ak1 Apex Nexus — kundens konventionsbeslut vid export (samma notis som s1-u2:s paket)."
+  },
+  "offGrans": "data/blogg/ orörd · Supabase-kön orörd (fabriken ENDAST torrkörd: 6 kandidater, 0 rader skrivna) · priser/tier/publicering (R2) orörda · utkastfilen själv EJ ändrad (git-bevisat orörd sedan 584ffcf8, aldrig redigerad efter generering)"
+}

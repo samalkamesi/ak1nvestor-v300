@@ -1,0 +1,32 @@
+{
+  "granskat": "data/blogg-utkast/utbildningsaktier-sa-analyserar-du-utbildningsbolag.json",
+  "granskadAv": "agentfabrik auto-s1-1789880702768 s1-u2 (2026-09-20)",
+  "rapport": "utbildningsaktier-sa-analyserar-du-utbildningsbolag-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — F1: utlandsgeografin 'främst i Norge och Tyskland' motbevisad av samma bokslutskommuniké texten bygger på (verksamhet i Sverige, Norge, Finland, Tyskland, Nederländerna och Storbritannien + pågående Polen-etablering; Storbritannien störst bland 62 nyöppnade enheter med 21). I övrigt GRÖNT: samtliga 16 AcadeMedia-tal ordagrant i MFN-PDF-källan (2026-08-31, 35 sidor, nedladdad och textextraherad); Pearson £3 577 m +4 % underl. med adj. op £614 M ⇒ 17,2 % (2024: 600/3 552 = 16,9 %) aritmetiskt sluten; Laureate $1,702 mdr +8,6 % och Q1-26 $272,6 M +15 % mot IR 2026-04-30; GCE service revenue $1 106 M FY2025 och 60 % av GCU:s tuition-and-fee mot SEC/GCE; SOU 2025:37 'Skärpta villkor för friskolesektorn' verifierad äkta (U 2022:08 delbetänkande 2025); Skolverket-sidan lever med exakt innehåll (likabehandling, lokalkostnader i grundbeloppet, tolftedel per månad). Siffror 10/10 motorräknade (7,04 % · 11,13 % · 9,21→9,56 % · 3,58 % · 3,28 % ≈ 3,3 · 176 629 kr ≈ 177 tkr · 12,5 % · Laureate-baklänges 237,0 · siffersymmetri · 22/22 paritet mot byggnotis). Juridik 2007:528 ren: kontrolleraText-likvor (samma 26 regexer ur data/varumarke.json, flaggor giu) 0 FEL 0 VARNING; 'investeringsråd' endast onegerat i disclaimern på sista raden; rådverb-träffar endast Pearson-bolagsfakta; inga lagrum i texten. 911: 0 träffar på 4 mönster. Struktur grön: title 52/60 · OG 147/155 · 8 H2 · sökord title+ingress+2 H2 · 1 185 ord · korslänkar 8/8 mot publicerade ytor.",
+  "anvandning": "Verkställ 'byt'-posten exakt (söksträngen maskinverifierad unik = 1 träff i filen). Utkastet bär INTE determinismkvitto (inte m9-fabrikat) — sök/ersätt bryter inget kvitto. 'forslag' kräver seriebeslut (fabriksägaren) före verkställning. Originalet ändras av guidens ägare (spår 3) eller nästa våg — inte av granskaren. Engelska spegeln utbildningsaktier-…-en.json (09-19, ogranskad) bär sannolikt samma tvåländsgeografi i översatt form och speglas vid verkställning. Publicering = kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "F1",
+      "typ": "byt",
+      "fil": "data/blogg-utkast/utbildningsaktier-sa-analyserar-du-utbildningsbolag.json",
+      "sok": "med verksamhet utanför Sverige främst i Norge och Tyskland.",
+      "ersattMed": "med verksamhet utanför Sverige i Norge, Finland, Tyskland, Nederländerna och Storbritannien — och pågående etablering i Polen.",
+      "motivering": "Bokslutskommuniké 2025/26 (källan själv): 'både internationell verksamhet bedriver verksamhet i Sverige, Norge, Finland, Tyskland, Nederländerna och Storbritannien' + 'Etablerar nu plattformar för fortsatt expansion i Storbritannien och Polen' + Chestnut Nursery (UK, juni) + Florencius (NL, efter periodens slut); 62 nya enheter varav 21 i Storbritannien. Finland och Nederländerna saknades helt i utkastet.",
+      "unikTräff": 1
+    },
+    {
+      "id": "F4",
+      "typ": "forslag",
+      "fil": "data/blogg-utkast/utbildningsaktier-sa-analyserar-du-utbildningsbolag.json",
+      "falt": "readingMinutes",
+      "nuvarande": 2,
+      "ersattMed": 6,
+      "motivering": "round(1 185/200) = 6 enligt /200-konventionen (bilaktier-B2-precedensen, ≥10 fall i klassen; logistik-K4 senaste). Fältet följer idag exportvägens /600. SERIEBESLUT krävs — ändra endast om fabriksägaren slutar frågan för hela branschserien."
+    }
+  ],
+  "noter": [
+    "NOT F2: Skolverket-källan täller gymnasieskolan/anpassade gymnasieskolan; utkastet beskriver mekaniken generellt (förskola–vuxenutbildning). Sakligt godtagbar generalisering av likabehandlingsprincipen — ingen rättning.",
+    "NOT F3: 'kommunens egen genomsnittliga kostnad per elev' är källans lokalkostnadsformulering ('genomsnittlig lokalkostnad per elev') generaliserad till helheten; källans huvudregel är 'samma grunder som kommunen använder vid fördelning av resurser till den egna verksamheten'. Försvarbar förenkling.",
+    "NOT spegel: -en-spegeln (09-19) innehåller inte den svenska söksträngen; vid verkställning letas motsvarande engelska mening upp separat."
+  ]
+}

@@ -1,0 +1,36 @@
+studio: auto s4-u2 Wihlborgs Q3-läspaket (WIHL.ST 21/10) — fastighetsgrenens nionde, seriens ~69:e på disk, seriens FÖRSTA ÖRESUNDSREGION-BOLAG · KVD GRÖN 240 PASS 0 FEL [fabrik]
+
+Fabriksagent s4-u2 (manifest auto-s4-1789931110711, byggare 2/3). VAL MED KLAIM FÖRE BYGGSTART
+(data/vakten/auto-s4-1789931110711-s4-u2-ansprak.md, disk-först ~21:20 lokal; syskonet LVMH på
+skilt objekt — noll kollision). FIFO: WIHL = tidigaste återstående EGEN-VERIFIERADE rappdagen
+med bärande universumdata — 2026-10-21 på bolagets egen kalender (wihlborgs.se live-verifierad
+2026-09-20; kalenderfilens 20/21-divergens upplöst av egen utlysning, Catena-precedensens klass).
+Gallringar öppet redovisade: LVMH månadsfönster (syskonet tog det med månadsnivå själv),
+NFLX/GE estimat + IR 403, Tesla projektion, Öresund tomt underlag, Billerud officiell kalender
+men P/E null + golv osatt, Diös P&G-raden (403 igen).
+
+SIGNATURNUMMER: (1) PREMIEVÄNDAREN I RABATTGRENEN — P/B 1,013 enda europeiska kollegan över
+pari (9/17 under 0,95, median 0,946), kurs 79,65 mot NAV-proxy 78,66 = premie +1,26 % där
+Balder handlas −32 %; kapitalträff två fält 78,63/78,66 (spänn 3 öre = 0,04 %); identitet
+P/B÷ROE 10,928 mot P/E 11,203 = +2,52 % när-godkänt. (2) VINSTENS V-FORM I TVÅ FORMAT —
+helår 2 288 → −27 → 1 706 → 2 220 Mkr (2023: driftsöverskott +19 % men netto −0,70 % av
+intäkterna) OCH 2026 kvartal: Q1-vinst +27,1 % följt av Q2 −33,2 % medan hyresintäkterna
+slog rekord BÅDA kvartalen — förvaltningen levererar, värderingsraden svänger. (3) BEGREPPSGAP
+NOLL — universumets omsättningsserie == hyresintäkterna (4 354=4 354): kedjan
+1 045/1 097/1 101/1 111/1 150/1 174 monotont stigande, rullande 4 536, rena härledda celler.
+Därtill: FCF-yield 6,10 % grenens 3:e högsta; belåning 1,49 Balders spegel (4:e högsta,
+belåningsgrad 59,8 %); EBIT 71,09 3:e högsta med normalordning (brutto 71,69 över, 0,60 pp —
+Catena-spegeln); PEG 1,97 mot konvention 1,19 (kvot 1,66, median 1,32); två fönster två
+multiplar 11,20/11,03 (−1,5 %); direktavkastning 3,30/79,65 = 4,14 %; vakansspeglingen 89/87 %
+mot förvärvets 15 %; scenarioruta 9/9 marginalvikt 0,47 (mellan Balder 0,50 och Catena 0,39).
+
+KVD GRÖN 240 PASS 0 FEL 0 VARNING (verktyg/_s4u2-wihl-kvd.mjs --http: källtalsparitet 21 fält,
+66 aritmetikposter oberoende omräknade, 12 medianer + 6 rang LIVE ur 237-filen, juridik exakt
+ett lagrum 2007:528 + rådfraser 0, 18 interna länkar HTTP 200, externa endast wihlborgs.se ×3).
+Motor verktyg/_s4u2-wihl-byggdata.mjs med ABORT-grind (fångade enhetsfelet kr/Mkr körning 1).
+KVD-processen: körning 1 = 28 fel → körning 4 = 0; sju paketfel kurerade FÖRE grönt +
+kontrollbuggarna med motiv (U+2212-parse, tabellseparator, www-URL, insiderköp, minus-ord).
+3 487 ord/rm 6. KO-rader kirurgiskt i båda tabellerna (efter LVMH-ankarpunkterna, syskonytor
+orörda). Ren dataleverans: data/blogg/ (live) orörd, src/ orörd = INGET bygge, R2 orörd
+(publicering = kundens beslut). Kö: Billerud 22/10, Diös 23/10 (väntar verifiering), NEM,
+Logitech/MSFT/META/GOOGL/AAPL-fönstret, novemberfältet.

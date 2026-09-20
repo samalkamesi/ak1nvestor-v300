@@ -81,7 +81,12 @@ async function main() {
     let ok = m.aktiv === true;
     let not = `aktiv=${m.aktiv}`;
     if (!ok) {
-      const disk = fs.existsSync(path.join(KATALOG, "mal-state.json"));
+      // V215.2-kur: API:t mäter PROD, alltså läser disk-fallbacken PROD-trädets
+      // målstate (lasPass-precedensen). Trädrelativ sökväg var sann bara när
+      // daemonen körde sviten ur prod-trädet — i aggregatorns arbetsyta-kontext
+      // fanns filen aldrig (data/vakten/ är gitignorerad och synkas ej), vilket
+      // gav falskt "INGEN disk" medan målhjärtat levde (r112-fyndet).
+      const disk = fs.existsSync("/home/ak1a/AK1/data/vakten/mal-state.json");
       ok = disk; // arm-kedjan (GET/hjärta/synk) täcker inom minuter
       not += disk ? " men mal-state.json lever (armkedja täcker)" : " och INGEN disk";
     }

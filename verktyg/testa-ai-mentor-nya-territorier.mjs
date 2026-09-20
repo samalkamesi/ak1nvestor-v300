@@ -161,7 +161,11 @@ NYA.forEach((f, i) => {
   const moatPos = ordning.indexOf("svaraLokaltMoatdjup");
   kontroll(
     "A2 wiring — nyaterritorier i kompositionsraden efter moatdjup (" + LAGER.length + " lager, ingen SIST-anspråk)",
-    minPos === LAGER.length - 1 && minPos === moatPos + 1 && ordning.length === LAGER.length,
+    // Omgång 25 (s6-u2-harmonisering): SIST-kravetulet avlägsnat — lagrets
+    // egen worklog deklarerar «INGEN SIST-anspråk», och omgång 25 wireade tre
+    // lager efter det (etfmekanik/kontrahent/marknadsrytm). Kvar vaktar:
+    // EFTER moatdjup + widgetens längd == MOTORDEFS (G-speglingen).
+    minPos === moatPos + 1 && ordning.length === LAGER.length,
     "position=" + (minPos + 1) + " av " + ordning.length + " (moatdjup=" + (moatPos + 1) + ")",
   );
 }

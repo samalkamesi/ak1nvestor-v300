@@ -161,7 +161,7 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-kontrahent-fragor"'));
-  ok("L2 komposition sist (efter etfmekanik)", widget.includes("svaraLokaltEtfmekanik(q, KURSREGISTER) ?? svaraLokaltKontrahent(q, KURSREGISTER);"));
+  ok("L2 komposition efter etfmekanik (semikolonlöst — syskon kan wireas efter)", widget.includes("svaraLokaltEtfmekanik(q, KURSREGISTER) ?? svaraLokaltKontrahent(q, KURSREGISTER)"));
 }
 
 console.log(`\nSVIT KONTRAHENT: ${pass} PASS / ${fail} FAIL`);

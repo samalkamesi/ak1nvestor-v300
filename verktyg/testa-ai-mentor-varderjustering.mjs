@@ -645,7 +645,12 @@ function kedjaGenomAllt(fraga) {
   "svaraLokaltForsakring",
   "svaraLokaltMoatdjup",
   "svaraLokaltNyaTerritorier",
-];
+
+  // Omgång 25-harmonisering (s6-u2, 2026-09-20): fönstrets tre nya komponenter i
+  // kedjeordning (u1 etfmekanik 59 · s6-u2 kontrahent 60 · u3 marknadsrytm 61).
+  "svaraLokaltEtfmekanik",
+  "svaraLokaltKontrahent",
+  "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

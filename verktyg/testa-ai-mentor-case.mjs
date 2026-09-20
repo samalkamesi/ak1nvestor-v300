@@ -436,6 +436,12 @@ const kedjekomponenter = [
   "svaraLokaltForsakring(q, KURSREGISTER)",
   "svaraLokaltMoatdjup(q, KURSREGISTER)",
   "svaraLokaltNyaTerritorier(q, KURSREGISTER)",
+  // Omgång 25 (s6-u2-harmonisering 2026-09-20): fönstrets tre nya komponenter
+  // i kedjeordning — u1 etfmekanik (58) · s6-u2 kontrahent (59) · u3
+  // marknadsrytm (60). BASF: syskonens leveranser, denna harmonisering.
+  "svaraLokaltEtfmekanik(q, KURSREGISTER)",
+  "svaraLokaltKontrahent(q, KURSREGISTER)",
+  "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";

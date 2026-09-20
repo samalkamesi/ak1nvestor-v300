@@ -115,6 +115,15 @@ BUILD_ID "(saknas)" mitt i bygget, rättad mot synkloggens DEPLOYAD-rad).
 kurerade; de 2 brödsmule-resterna är medvetna (prosa-adjacent navigation,
 o8-doktrin) — Hälsa-pillens bredd fixas i vågens andra commit.
 
+**Pill-breddsfixens deploy-status (ärlig notering):** commit 2 (min-w 52)
+landade 18:50 lokal; 16:57Z-synkroppens bygg OOM-dödades (infra) och
+17:07Z-ropet VÄNTAR-RAM (1 662 MB < 2 500 —agentbarnen själva bidrar till
+trycket). Deployen ägs av prod-synken och sker vid nästa RAM-fönster;
+verifiering = omkörning av sonden (cache-disabled) mot /dataset efter
+DEPLOYAD-raden: `node verktyg/_s7u2o123-sond.mjs /tmp/dataset-kontroll.json
+/dataset` — förväntad bild 0 under 52 (klassen är mekaniskt identisk med
+de 12 redan bevisade pillerna på samma sida).
+
 **METROLOGI-NOTIS (o62-arv):** första EFTER-körningen visade OFÖRÄNDRADE
 tal (48/21 …) trots att livewebbplatsen bar klasserna (curl-bevis:
 summary med max-md-kedja i SSR-HTML + CSS-chunk med

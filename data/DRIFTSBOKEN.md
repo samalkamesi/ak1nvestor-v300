@@ -2713,3 +2713,47 @@ snapshots ≈ 1 271 388 · public ≈ 1 365 519 om modalt dagsteg) · u2:s
   DR-PROV-2026-09-20-AUTO.md (maskinellt) + DR-RPO-DIFF-2026-09-20-MORGON.json.
   KVD: data-only · src/ orörd = INGET bygge · R2 orörd · prod ENDAST läst
   (GDPR: endast antal) · syskonytor orörda (AUTO-2 + REPLIK2 committas av u3).
+
+
+## S10-U1 — JUNGURKVITTO 03:20: arkivera-server.mjs första AUTOMATISKA veckoarkivering BEVISAD + kedja 3 GRÖN på jungurarkiven (2026-09-20 06:5x–07:4x lokal, GODKÄNT)
+
+Agent: s10-u1 (manifest auto-s10-1789878902744, vakt 1/3). Order: DR-övning
+nästa i spåret — återställ, mät tid/rader, protokoll, städa lokal PG. VAL:
+jungurköposten (tre gånger bokförd, orörd av syskonen som höll blad-10:
+u2 födelsebevis + 02:40-gap, u3 replik 2). Anspråk P1–P10 låsta FÖRE mätning
+(data/vakten/auto-s10-1789878902744-s10-u1-ansprak.md).
+
+- **JUNGURBEVISET komplett:** cron-rad `20 3 * * 0` (rad 4) × verktygets
+  egen logg /tmp/server-arkiv.log "ALLT GRÖNT · 65 s" × 5 artefakter på disk
+  (tar 225,9 MiB 01:20:33Z · bundle 219,9 MiB 01:21:06Z · nginx · crontab ·
+  pm2-dump). Spårets första AUTOMATISKA veckoarkivering — 09-08/09-09 hybrid-
+  sync, 09-16 agent-manuell; jungur = cron-epokens födelsebevisade start.
+- **Konfigsnapshot-dom 3/3 GRÖN:** nginx-artefakt == levande conf (normaliserat)
+  · crontab-artefakt == crontab -l + proveniensheader (5==5) · pm2-dump giltig
+  JSON 4 processer (ak1a · ak1a-pumpor · ak1a-test · pulsvakt), namnmängd
+  oförändrad vid mätningen.
+- **KEDJA 3 GRÖN exit 0 på jungurarkiven** (DR-KEDJA3-2026-09-20-AUTO.md):
+  sabotage 3/3 gripna · 13 022 poster 0 brott · **RTO restore 6,1 s** ·
+  antalskontrakt 12 211 filer + 811 kataloger == listat · src 726 filer /
+  221 230 rader · klon 1 922 commits på 17,1 s · ancestor GRÖN · spot-diff
+  1 IDENTISK + 3 SKILJER-FÖRKLARAD (nattens commits 05:18–06:43 > mtime —
+  RPO synlig, ej falsk RÖD). Första körningen RAM-grind-skippad (713 MB,
+  exit 75) → väntewrapper _s10u1-vanta-ram.mjs startade vid 2 531 MB.
+- **Retention:** 6 veckoarkiv · 0 raderade (äldsta 11,2 dygn) · nästa träff
+  ≈ 2026-11-15 · R2-notis: .env-NAMN i arkivlistan (avsett — katastrof-
+  återställning av hela servern; valvet lämnar aldrig servern; innehåll
+  aldrig läst).
+- **Prediktionsdom 6 ✅ · 4 ❌** (P3/P4/P5/P6 — kontraktsnivån 100 % GRÖN;
+  läxorna: precedens måste matcha SAMMA instrument (offsite-extraktion ≠
+  kedja3-tar), band utan mätbas är lotteri (src-rader stod i 09-16-proto-
+  kollet), prediktera spot-KONTRAKTET ej fördelningen).
+- **KVD:** src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · prod
+  orörd (endast läsning) · syskonytor orörda · PG17 viloläge egenmätt nere
+  före och efter · /tmp/dr-kedja3-* borta · disk 58 GB-klass oförändrad.
+  Protokoll: data/forskning/DR-OVNING-2026-09-20-JUNGUR-KEDJA3.md +
+  maskinellt DR-KEDJA3-2026-09-20-AUTO.md.
+
+Kö: jungur kvartalsrepris (nästa söndag 03:20-körning kan nu förväntas
+GRÖN — första uppföljningen 2026-09-27) · retentionsträffen ~11-15 ·
+kvartalssviten senast 12-17/18 (TOTAL+ARKIVSVEP) · u2:s 02:40-gap-dom
+och u3:s serie/dekomposition kommunicerar i deras protokoll.

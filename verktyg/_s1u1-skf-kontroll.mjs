@@ -5,7 +5,7 @@
 // Dom-logik: PASS/STILLAS per rad; STILLAS = förväntat granskningsfynd (måste stå i allowlisten
 // nedan — hittar sonden NÅGOT ANNAT avvikelser än de 13 förregistrerade fynden blir exit 1).
 // Efter verkställd diff (granskning/sa-laser-du-skf-b-q3-2026-diff.json) ska sonden ge 0 STILLAS.
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const ROT = "/home/ak1a/AK1";
@@ -14,12 +14,12 @@ const j = JSON.parse(fs.readFileSync(UTKAST, "utf8"));
 const las = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const analys = las(`${ROT}/data/analyses/SKF-B.ST.json`);
 const vvj = las(`${ROT}/data/rapporter/vagvalidering-SENASTE.json`);
-const vvm = execSync(`cat ${ROT}/data/rapporter/vagvalidering-SENASTE.md`, { encoding: "utf8" });
+const vvm = fs.readFileSync(`${ROT}/data/rapporter/vagvalidering-SENASTE.md`, "utf8");
 const kalInd = las(`${ROT}/data/blogg-utkast/kvartal/2026-q3/kalender-industri.json`);
 const kalFin = las(`${ROT}/data/blogg-utkast/kvartal/2026-q3/kalender-finans.json`);
 const uniNu = las(`${ROT}/data/portfolj-system/bolagsunivers.json`);
-const uniVintage = JSON.parse(execSync(
-  `git -C ${ROT} show ea7ad8bd:data/portfolj-system/bolagsunivers.json`, { encoding: "utf8" }));
+const uniVintage = JSON.parse(execFileSync(
+  "git", ["-C", ROT, "show", "ea7ad8bd:data/portfolj-system/bolagsunivers.json"], { encoding: "utf8" }));
 
 const body = j.body, allt = j.title + " " + j.description + " " + body;
 const ord = body.trim().split(/\s+/).length;

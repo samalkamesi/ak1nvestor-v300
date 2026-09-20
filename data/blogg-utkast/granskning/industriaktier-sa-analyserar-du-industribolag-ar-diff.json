@@ -1,0 +1,27 @@
+{
+  "granskat": "data/blogg-utkast/industriaktier-sa-analyserar-du-industribolag-ar.json",
+  "granskadAv": "agentfabrik s1-u3 (auto-s1-1789902316443, 2026-09-20)",
+  "rapport": "industriaktier-sa-analyserar-du-industribolag-ar-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER EN RÄTTNING — 24 kontroller (verktyg/_s1u3-ar6-industri-verify.mjs): sifferparitet 61/61 multiset identiska (ar-familjens renaste — ingen diff), nyckeltalsbärare 20/20, H2 9=9, korslänkar 14/14 multiset-identiska med B6, externa 4/4 samma uppsättning, disclaimer negerad arabisk exakt sist, rådgivningsmönster 0 på 8 arabiska mönster, bärande utbildningsformel i ingress, 911-referenser 0, publishedAt/rm enligt AR-familjekonventionerna (2026-09-19 · round(1240/600)=2 — u1:s B1-rättning föddes rätt i ar-fabriken). Källkraft ärvtestad från u1:s B6-grundning (7/7 medianer vinutexakta mot git 0e399f13, 115 bolag, industri n=12). RÄTTNING: B2-AR döda Sandvik-källänken. FÖRSLAG: C1-AR mätperiod på tillväxttalet. B5-utrett: å/ä/ö-träffarna = egennamnet Industrivärden ×2, korrekt citatpraxis",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i angivet fält; strängarna maskinellt verifierade UNIKA i källfilen — en träff var; nya stränger frånvarande). 'forslag' kräver beslut före verkställ. Originalet (B6-sv) ändras av guidens ägare eller nästa våg — inte av granskaren; dess öppna B1/B2 påminns i rapporten. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B2-AR",
+      "typ": "byt",
+      "fil": "industriaktier-sa-analyserar-du-industribolag-ar.json",
+      "falt": "body",
+      "gammalt": "([home.sandvik.com](https://www.home.sandvik.com/en/investors))",
+      "nytt": "([sandvik.com](https://www.sandvik.com/en/investors))",
+      "orsak": "Källänken home.sandvik.com är DÖD i två kanaler (u1:s B6-bevisning 2026-09-17: curl DNS/timeout + WebFetch ENOTFOUND) medan https://www.sandvik.com/en/investors/ svarar HTTP 200 med äkta IR-innehåll. AR byggdes 09-19 23:41 EFTER u1:s B2-diff men rättningen applicerades aldrig i ar-mallen; EN-versionen (Ö6) bär den. Länktext + URL i en post — identisk rättning som originalets B2"
+    },
+    {
+      "id": "C1-AR",
+      "typ": "forslag",
+      "fil": "industriaktier-sa-analyserar-du-industribolag-ar.json",
+      "falt": "body",
+      "gammalt": "نمو في الإيرادات قدره 8.4 بالمئة",
+      "nytt": "نمو في الإيرادات في آخر اثني عشر شهراً قدره 8.4 بالمئة",
+      "orsak": "Rådata bär två tillväxtmått med olika medianer: TTM 8,4 % (textens tal — korrekt) och 5-års-CAGR 4,1 %. Utan mätperiod kan läsaren tro att femårstillväxten är 8,4 %. Speglar u1:s C1 på originalet: '(rullande tolv månader)' — ingen tvingande regel, precisering"
+    }
+  ]
+}

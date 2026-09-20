@@ -128,7 +128,7 @@ export function DatasetSorteradLista({
             <span className="flex items-baseline justify-between">
               <Link
                 href={prefix + "/dataset/" + r.slug}
-                className="font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-center"
+                className="font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px]! max-md:items-center"
               >
                 {r.namn}
               </Link>

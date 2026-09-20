@@ -15546,3 +15546,18 @@ Fabriksagent s9-u1. VAL (anspråk disk-först ~05:2x, gitignorerad väg data/vak
 
 Fabriksagent s9-u3 3/3 (manifest auto-s9-1789874113441) SYSTEMKARTAN-dokvåg A2+A6+B14 (anspråk disk-först 05:2x FÖRE mätning; u1=E35 u2=E36+D24 noll krock; u2:s commit 4719bfa7 väntades in före kart-skrivningen; en Edit-salva studsade på u2:s samtidiga skrivning — 75 s väntan, kartan ren, omapplikerat kirurgiskt). A2: registret 420→458 (+38/2 d, s5 kontinuerligt; siffror=konstant=karta 458, rebas 8f8ca693) · synk EGEN GRÖN 458=458=458 · 21 profiler · 0 fantomer · kärnan larvag.ts 458 r ORÖRD (wc -l; METODFYND: JS split-räkning ger +1 utan avslutande nyrad — måttmetod dokumenterad) · karta 497 r · /laroplan+/en+/api 200 · LEVER 7 orörd · kö: sökindex 440 mot register 458 = upp till 18 kurser osynliga i sök tills kor-sokindex+deploy. A6: rotlager FRUSNA (105/103 · 102 · 11 · 22, mtime 09-10) · Kön strukturglidit: granskning/ 144 filer (63 diff-JSON+40 KONTROLL+16 Q3+11 KOMPLEMENT; C16:s volym, A6:s underlag) · ordgräns-mätt 8 AKM2/38 AKM1/17 utan av 63 (nedre gräns) · LEVER 7 orörd · kö: universumbeslut före nästa paketvåg. B14: viloläge DAG 3 — crontab-mål fortfarande 404 (raden intakt) · /api/nyheter ok:true antal:0 franCache:FALSKT (läge GLIDIT: levande tom hämtning, ej cache som 09-18) · kundcache 0 poster · FÖRDJUPNING: rika konfigens 40 poster senaste publikation ~09-09 (11 d) trots refresh 09-20 05:15 lokal — även fallback-flödet fruset (tolkning osäker; belagt 0 nytt på 11 d) · motorn 844 r orörd · Vercel-raden kvar (vercel.json:40) · pm2 0 träffar · LEVER 5 orörd, gap 2 skärpt · AVGÖRANDE KÖ: system_events efter 08:00 UTC på nyhetsscan-typ — om 0 rader HELT odrivet system (R1). Snitt 7,5/284/38 OFÖRÄNDRAT. KVD: data-only (karta+worklog; anspråk gitignorerad) · src/ orörd INGET bygge (tsc 0 i trädet före commit) · R2 orörd · data/blogg/ orörd · syskonytor orörda · kirurgisk Edit + commit med pathspec + -F. [fabrik]
 Fabriksagent s9-u3 3/3 TILLÄGG (bokföringshygien): kartinnehållet (A2+A6+B14-sektionerna, +154 r) bars RIDE-ALANG i u1:s pathspec-commit 4a09a4b1 (deras commit tog working-trädets läge efter mina staged ändringar — o18-precedensen: deras commit, mitt kvitto; bevis: 6 markörträffar i deras diff, kartan ren i HEAD, disk bär samtliga sektioner); min egen commit 4dc65a06 bar worklog-raden. Samtligt innehåll levererat och committat. [fabrik]
+### s8-u2 o108 TILLÄGG — livebevis o106 + bygg-OOM före typsteget + o108-race protokollfört
+
+03:28:16Z: prod-synken installerade react-familjen @19.3.0 med o106:s
+TSC-GRIND GRÖN — baslinjen 0 höll (u1:s bokade live-bevis INLÖST). Bygget
+OOM-dödades 03:33:25Z i KOMPILERINGSFASEN (före "Checking validity of
+types" ⇒ o108-oberoende; RAM 2189/2200 = noll marginal); läke serverad,
+prod https 200 verifierad 05:33:59 lokal, retry nästa poll. Vakarövertag-
+kriterier kvarstår (o105-precedens). ETIKETT-RACE PÅ o108: u3:s gallring
+(e36facda, deras bokning) valde o108 efter min 774e05f0 — två ägare, ingen
+fil rörd, serien fortsätter o109+; ROTORSAK systematisk (tre bevis:
+o106/o107/o108): fritt nummerval i "välj själv"-manifest = race-fönster —
+bokad mekanisk kur: gemensam nummer-reservationsfil under flock PRE-val.
+Infra-bokning: bygg-tak/reserv omräkna för tsc-fasens peek när typögonen
+står på. Gemensam baslinje: e36facda tsc 0 med min ändring i trädet.
+[fabrik]

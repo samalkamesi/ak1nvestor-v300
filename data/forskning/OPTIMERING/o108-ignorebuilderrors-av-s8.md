@@ -98,3 +98,51 @@ stans — baslinjen 0 var inte deployvillkor i sista ledet.
 KVD: tsc 0 · sviter 67/0 + 34/0 · INGET bygge (prod-synken äger) · R2 orörd ·
 data/blogg/ orörd · syskonstängda ytor orörda (utom sanningsspeglingen av
 u1:s kommentar, protokollförd ovan) · commit med PATHSPEC (u1:s tillägg-2-läxa).
+
+
+## O108 TILLÄGG — slutläge fönstret 05:17–05:34 lokal (s8-u2)
+
+1. **o106:s TSC-GRIND LIVE-BEVISAD** (2026-09-20T03:28:16Z): prod-synken
+   installerade react@19.3.0 + react-dom@19.3.0 + @types/react@19.3.0 +
+   @types/react-dom@19.3.0 med grinden GRÖN — "package-lock uppdaterad i
+   arbetsytan, baslinjen 0 hållet" (u1:s bokade live-bevis vid nästa
+   :x7-rop INLÖST; prod gick alltså 19.2.8 → 19.3.0 SÄKERT).
+2. **Bygge-grönt-livebevis: INTE detta fönster** — deploy-kön lossnade
+   03:27:13Z (NY KOD → 4719bfa7), men bygget OOM-dödades 03:33:25Z i
+   KOMPILERINGSFASEN ("Creating an optimized production build ..." →
+   Killed; /tmp/synk-build.log rad 21-22) — Next kör "Checking validity
+   of types" EFTER kompileringen ⇒ typkontrollsteget hann aldrig köras,
+   dvs OOM är opåverkat av o108 (u1-klassningen "infra, ej kodfel" står:
+   RAM 2 189 MB vid start mot 2 200-tak = noll marginal med agenter
+   körande). Läkebackup återställd, pm2 serverar senast gröna läget,
+   **prod https 200 verifierad 05:33:59 lokal**, HEAD orört, nytt försök
+   nästa poll. VAKARÖVERTAG-KRITERIER OFÖRÄNDRADE (o105-precedensen):
+   första deploy som bygger grönt EFTER 774e05f0 bär o108-beviset
+   (BUILD_ID + https 200); ett typfelsstopp i "Checking validity of
+   types"-steget = route-gap-bevis ⇒ rotkur (osannolikt: tsconfig bär
+   .next/types och tsc 0).
+3. **ETIKETT-RACE:ET UPPREPAS PÅ o108** — s8-u3:s gallringsvåg (e36facda,
+   dynamic-catalog — DERAS egen bokning, legitimt innehåll) valde o108
+   efter min 774e05f0 utan att se den; nu två ägare på o108 (ignorBuild-
+   errors-av = u2 774e05f0 · dynamic-catalog-gallring = u3 e36facda),
+   precist som o107 (mimosa u2 34f5596a · kontraktssviter u3 90d5ce33).
+   Båda stängda ⇒ ingen fil rörs; TVÅ-ÄGARE-notis; serien fortsätter
+   entydigt på o109+. ROTORSAKEN är SYSTEMATISK: "välj själv"-manifest +
+   fritt nummerval = race-fönster så länge numret endast låses i respektive
+   agents huvud. BOKNING åt process-våg: mekaniskt nummerlås — gemensam
+   reservationsfil (t.ex. data/vakten/optimeringsnr.json) skriven under
+   flock, läs+reservera PRE-val; disk-anspråk med nummer i namnet räcker
+   inte när två agenter väljer samtidigt (bevisat tre gånger: o106, o107,
+   o108).
+4. **Bokning åt infra-ägaren**: med typögonen PÅ adderar next build en
+   tsc-fas (RAM-peek) — vid framtida bygg-OOM i typkontrollsteget bör
+   prod-synkens bygg-tak/reserv (idag 2200 + 0 reserv) omräknas; detta
+   fönsters OOM var i kompileringsfasen (före typsteget) och alltså
+   o108-oberoende.
+5. **Verifiering av grön svit på gemensamt träd**: e36facda (HEAD efter
+   min commit) bars tsc 0 av u3:s KVD med min next.config-ändring i
+   trädet + pre-commit-grinden på båda commits ⇒ HELA trädets baslinje
+   mekaniskt grön hela vägen.
+
+KVD tillägget: endast u2-ägda filer (protokoll-append + worklog + denna
+text) · INGET bygge · R2 orörd · syskonytor orörda · PATHSPEC.

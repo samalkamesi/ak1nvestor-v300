@@ -15937,3 +15937,45 @@ noll). KVD: src orörd (inget bygge) · R2 orörd · data/blogg/ orörd ·
 prod 200 ×5 https · BUILD_ID IxcwwO dokumenterat · råtrace 16 MB kvar
 på disk (oreviterat), committade summeringar är kvittot. Protokoll:
 OPTIMERING/o118-prestanda-enblogg-longtask-s7.md. [fabrik]
+
+## SPÅR 7 s7-u1 (aktuellt s7-manifest, byggare 1/3) — 2026-09-20 16:45–17:0x lokal: prestandavåg o119 — NASTASTEG-DEFERN: widgeten ur kritisk hydratisering på ALLA SeoPageShell-sidor (o105 §6 post 3 = KUREN till s7-u2:o118:s sond; commit 568a93a2) [fabrik]
+
+Fabriksagent s7-u1 (byggare 1/3). OBJEKT: o105 §6 post 3 — utpekad av
+o109:s facit ("gap tyst↔lastigt bekräftar NastaSteg-widgeten som nästa
+kur") och o110:s anomali-bokföring; KOMPLEMENT till s7-u2:o118 (deras =
+attribution, denna = källkuren — deras A/B-del avställd med motiv, deras
+LasyChatWidget-hypotes gällde CHATTEN ej NastaSteg). NUMMER-RACET öppet:
+manuellt o118-anspråk 16:49:48 förlorade mot s7-u2:s verktygsreservation
+16:47 (2,8 min) — omreserverat via reservera-protokollnummer.mjs till
+o119 (högsta kända o118, 118 källor); kollisionsnotis + reservationsfil
+committade; s8:o117 §1:s systematik i levande handling (sjätte fallet,
+FÖRHINDRAT av verktyget) — läxa: verktyget är enda nummerkanalen.
+FÖRE-BEVIS (BUILD_ID IxcwwO): struktur — chunk 10f47l5mmeoxy.js (57 kB
+rå/17 kB gzip) bär widgetens FEM unika strängar, 12–17 initial-referenser
+per shell-sida (/en/blogg, /ar/blogg, /blogg, /kurser) = o76:s
+klump-klass; Lighthouse mobil 4G (load ~1,3, RAM-grind grön 1 989) —
+/en/blogg P67 LCP 4 059 TBT 876 CLS 0 · /ar/blogg P66 4 561/737/0 ·
+/blogg P75 4 232/348/0. KUR (568a93a2, src via Write/Edit): NY tunn
+"use client"-wrapper nasta-steg-latad.tsx (dynamic ssr:false — SeoPageShell
+är serverkomponent där App Router förbjuder ssr:false) + shell-edit 2
+rader; widgeten har SSR=null-kontrakt ⇒ SSR-HTML bitidentisk, no-JS
+orött, eleven ser sektionen vid samma logiska tidpunkt — men widgetens
+kod+hydratisering+member-local-läsning+re-render+style/layout lämnar ALLA
+~46 shell-sidors kritiska fönster; nasta-steg.tsx orörd. ÄRLIGHET mot
+o118:s fynd: anomalin = FCP-timing-mekanik (deras §2) ⇒ denna kurs
+TBT-förväntan på /en/blogg är BLYGSAM; facit bärs av strukturkriterierna
+(widget-klassen ur initial-graf). KVD: kontraktstest
+testa-s7-o119-nastasteg-defer.mjs 15 PASS 0 FAIL (A wrapper · B
+shell-konsumentbyte+serverkomponent+o105-grenar orörda · C
+widgetkontrakt orört · D exklusivt ägarskap) · tsc 0 via projektbinär ·
+INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (s7-u2:s
+o118-rådata orörd). EFTER-KRITERIER vakarövertag-barra (o105 §4-
+precedensen): deploy med 568a93a2 som förfader · prod 200 ×5 ·
+kännetecken ur initial-chunkar + egen chunk efter kritiskt fönster ·
+Lighthouse n=2 /en/blogg TBT ↓ (mål ≤500 tyst), /ar/blogg+/blogg ±15 %,
+CLS 0, LCP/FCP ±15 %. Vid denna rads skrivande: RAM-fönstret öppet
+(2 504 MB 17:05) — 17:07-ropet bevittnas; landar deployen tas EFTER i
+ Direkt anslutning (kvitto-rad följer). Protokoll:
+OPTIMERING/o119-prestanda-nastasteg-defer-s7.md. Kö: EFTER-mätningen ·
+o118 §6:s produktbeslut (listlängd 24–36 = kundens rond, ALDRIG
+fabriksautonomt). [fabrik]

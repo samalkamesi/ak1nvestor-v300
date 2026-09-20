@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (453 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (458 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 411 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 416 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -209,6 +209,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "rk-13-gdpr-och-datarisk", titel: "GDPR och data-risk", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "rk-14-esgrisk", titel: "ESG-risk — miljö och sociala", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "rk-15-cykelrisk", titel: "Cykel-risk — konjunkturkänslighet", kategori: "RISKHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rk-16-kontrahentrisken", titel: "Kontrahentrisken — vem står på andra sidan när det blåser", kategori: "RISKHANTERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-09-taxloss-harvesting", titel: "Tax-loss harvesting", kategori: "PORTFÖLJHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "pf-10-longshort", titel: "Long/short — hedging", kategori: "PORTFÖLJHANTERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 28 },
   { slug: "pf-11-koncentrerad-portfolj", titel: "Koncentrerad portfölj — 5-10 bolag", kategori: "PORTFÖLJHANTERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
@@ -227,6 +228,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-17-skogssektorn", titel: "Skog — massans cykel och ägd råvara", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-18-rederi-och-shipping", titel: "Rederi och shipping — fraktens cykel och fartyget som kapital", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-19-forsakringssektorn", titel: "Försäkringssektorn — combined ratio, floaten och de två motorerna", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-20-gruv-och-metallsektorn", titel: "Gruv- och metallsektorn — berget, kassamarginalen och den tröga cykeln", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "sj-06-arv-gava-och-ingaende-varde", titel: "Arv, gåva och aktiernas ingående värde", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
@@ -405,6 +407,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ks-05-covenanter-och-kreditbetyg", titel: "Covenanter och kreditbetyg — skuldens spelregler och prislapp", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-06-konvertibler-och-hybridkapital", titel: "Konvertibler och hybridkapital — skulden som kan bli eget kapital", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ks-07-kapitalstrukturens-avvagning", titel: "Kapitalstrukturens avvägning — tre teorier om skuldens rättvikt", kategori: "KAPITALSTRUKTUR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ks-08-valutasakringen", titel: "Valutasäkringen — terminen, swappen och kronan i rapporten", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-01-volatilitet-och-risk", titel: "Volatilitet och risk — skilj svängningar från förlust", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-02-kundkoncentration", titel: "Kundkoncentration — när få kunder bär intäkterna", kategori: "RISK", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-03-dold-samvariation", titel: "Dold samvariation — när bolagen delar samma risk", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -435,6 +438,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "am-05-handelsdagens-auktioner", titel: "Handelsdagens auktioner — öppning, löpande handel och stängning", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-06-kortlage-och-aktieutlaning", titel: "Kortläge och aktieutlåning — den andra sidan av orderboken", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-07-indexomlaggningen", titel: "Indexomläggningen — flödet som flyttar kursen utan en enda nyhet", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "am-08-etfens-inre-mekanik", titel: "ETF:ens inre mekanik — korgen, skapelsen och arbitraget som håller priset", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-01-multipelgapet", titel: "Multipelgapet — varför lika bolag handlas olika", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-02-normaliserade-multipler", titel: "Normaliserade multipler — räkna bort cykeln", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-03-multipelns-anatomi", titel: "Multipelns anatomi — vad ett värderingstal innehåller", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -442,6 +446,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "vr-05-pris-och-varde", titel: "Pris och värde — aktiens två tal och första jämförelsen", kategori: "VÄRDERING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-06-jamforelsebolagen", titel: "Jämförelsebolagen — urvalet bakom varje multipel", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-07-terminalvardet", titel: "Terminalvärdet — DCF:s andra halva: det som händer efter prognosisperioden", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-08-tobins-q", titel: "Tobins Q — marknadsvärdet möter återanskaffningspriset", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-02-substansens-kvalitet", titel: "Substansens kvalitet — att granska vad substanssiffran innehåller", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-03-forvaltarskapet", titel: "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -489,4 +494,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 453;
+export const LARVAG_ANTAL_KURSER = 458;

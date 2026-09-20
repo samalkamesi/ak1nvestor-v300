@@ -64,6 +64,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { begransaRefs, extraheraStatiskaRefs, statisktBeslut } from "./pulsvakt-statisk.mjs";
+import { samordnadOmstart } from "./omstart-samordning.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKTKATALOG = path.join(ROT, "data", "vakten");
@@ -324,22 +325,25 @@ async function kollaStatiska() {
   }
 }
 
-/** pm2-omstart av appen — körs som användaren ak1a (tillåtet utan sudo). */
+/** pm2-omstart av appen — körs som användaren ak1a (tillåtet utan sudo).
+ *  VÅG 216: via samordningen — journalen i /tmp gör omstarten synlig för
+ *  målhjärtat (dubbelomstartens rot, 08:41-beviset); egna tak- och
+ *  deploy-grindar här ovanför förblir kvar som komplement. */
 function omstartaApp() {
-  try {
-    execFileSync("pm2", ["restart", "ak1a", "--update-env"], {
-      encoding: "utf8",
-      timeout: 90_000,
-      stdio: "ignore",
-    });
+  const om = samordnadOmstart("pulsvakt", `lokal felrad ${st.felrad}`, () => {});
+  if (om.startad) {
     st.omstarter++;
     st.senasteOmstart = Date.now();
     st.omstarterUtanOk++;
     return true;
-  } catch (e) {
-    larma("hogprio", "omstart", `pm2 restart ak1a MISSLYCKADES: ${String(e.message).slice(0, 150)}`);
-    return false;
   }
+  if (om.fel) {
+    larma("hogprio", "omstart", `pm2 restart ak1a MISSLYCKADES: ${om.fel}`);
+  } else {
+    larma("info", "omstart-samordning", `omstart vägrades (skal: ${om.skal}) — annan kanal eller deploy äger pm2 just nu`);
+  }
+  st.senasteOmstart = Date.now(); // tak-räknaren ändå: samordningen får inte släppa på taket
+  return false;
 }
 
 /** ETT kontrollvarv. Returnerar summering; ALLT fångas av anroparen. */

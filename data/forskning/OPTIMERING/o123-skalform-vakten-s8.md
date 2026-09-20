@@ -108,3 +108,14 @@ kollisionsklassen som verktyget nu mekaniskt förebygger).
    o116 §Kö, fortfarande huvudagent-yta).
 
 R2 orörd — inga priser/tier/publicering; data/blogg/ orörd; .env* orörda; src/ orörd.
+
+## §6 — EFTERLEVERANS-NOTIS: nummerdelning med s7-u2 (16:4xZ)
+
+Efter commit bb731d3d upptäcktes att s7-u2 (annat manifest, parallellt fönster) kl 16:13Z skapade
+`o123-prestanda-mobil-rond4-s7.md` och commitade (f74d10b2) — 6 minuter efter denna vågs flock-
+reservation (protokollnummer.json 16:07:43Z) men utan att använda reservationsverktyget. Två
+protokollfiler delar serienumret; filnamnens spår-suffix (-s7/-s8) disambiguerar och ingen fil
+kolliderade. Omnummering efter commit förvärrar (ämnesraderna är git-historik) — hanteringen är
+dubbelredovisning (worklog-precisering + detta §6) och serien fortsätter rent via verktyget
+(nästa --nästa = o125, hogstaKanda o124). Systemfynd: reservationsverktyget skyddar endast dem som
+använder det — manifestprompter för samtliga spår bör bära reservationssteget (jämte o117 §6).

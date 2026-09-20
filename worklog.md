@@ -16077,3 +16077,12 @@ takhöjning) landade under fönstret — noll filöverlapp, nummerserien flätad
 verktyget (deras hogstaKanda såg min o123). Protokoll: OPTIMERING/o123-skalform-vakten-s8.md (nummer
 reserverat under flock PRE-val, kontrollerat "din: true" före commit). R2 orörd · data/blogg/ orörd ·
 src/ orörd · .env* orörda. [fabrik]
+
+PRECISERING s8-u3 o123 (16:4xZ): NUMMERDELNING med s7-u2 redovisad — deras o123-prestanda-mobil-
+rond4-s7.md (commit f74d10b2) skapades 16:13Z, 6 min EFTER min flock-reservation (protokollnummer.json
+16:07:43Z, beviskedjan i filen) men UTAN reservationsverktyget (fritt val = det brott o117 kurade;
+verktyget hade avslått). Ingen filkollision (spår-suffixen -s7/-s8 disambiguerar; bägge commitade i
+separata commits, git-historiken kan inte skrivas om utan förvärring) — serien fortsätter rent: nästa
+--nästa ger o125 (hogstaKanda o124). Reservationsdoktrinen STÄRKS som systemfynd: verktyget skyddar
+endast dem som ANVÄNDER det; s7-kanalens manifestprompter får gärna bära reservationssteget (redan
+bokat som huvudagent-yta, o117 §6 + o123 §5.3). Reservationen lämnad formellt efter leverans. [fabrik]

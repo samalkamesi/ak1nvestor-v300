@@ -568,7 +568,9 @@ const MOTORDEFS = [
   // FÖRE byggstart (10:00 — fönstrets första på disk).)
   { namn: "balansdjup", fil: "ai-mentor-balansdjup-fragor.ts", fn: "svaraLokaltBalansdjup", arr: "BALANSDJUP_MONSTER", antal: 2 },
   // 2026-09-20 omgång 26: optionshantverk (s6-u3 — binomialträdet och
-  // replikeringen + straddlen + deltat; aktiverar od-08 + od-04 + od-06).
+  // replikeringen + straddlen + deltat; aktiverar od-08 + od-04 + od-06
+  // primärt + od-05 som källa ⇒ OPTIONS & DERIVAT fullt mentorlänkad
+  // 12/12 — kategorins fyra sista mentorväglösa).
   // MOTORDEF HÄR för fall G:s widget-spegling (riskpremie-precedensen):
   // deras modul, deras leverans — kanoniska rader bärs av deras eget
   // leveranstest. 64:e motorn, efter balansdjup, FÖRE marknadsrytm (SIST).

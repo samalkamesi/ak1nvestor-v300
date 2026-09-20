@@ -478,9 +478,13 @@ const GAMLA = [
   // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
   // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
   "svaraLokaltMultipel",
-    // Omgång 26-tillägg (manifest auto-s6-1789890903364): fönstrets två motorer i
-  // kedjeordning — riskadress (s6-u1, 62:a) + balansdjup (s6-u2, 63:e) — FÖRE
-  // marknadsrytm (deras SIST-deklaration; bk-07 + bk-06, BOKFÖRING 19/19).
+      // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+      // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+      // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+      // — FÖRE marknadsrytm (deras SIST-deklaration).
+      "svaraLokaltRiskadress",
+      "svaraLokaltBalansdjup",
+      "svaraLokaltOptionshantverk",
       "svaraLokaltMarknadsrytm",];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här

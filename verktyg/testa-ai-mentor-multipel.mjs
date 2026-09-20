@@ -41,7 +41,14 @@ console.log("A2 — wiring i kedjetestets MOTORDEFS (62:a motorn, efter marknads
   ok("A2:1 MOTORDEFS-rad finns", kedja.includes('{ namn: "multipel", fil: "ai-mentor-multipel-fragor.ts", fn: "svaraLokaltMultipel", arr: "MULTIPEL_MONSTER", antal: 2 }'));
   const defs = kedja.slice(kedja.indexOf("const MOTORDEFS"), kedja.indexOf("];", kedja.indexOf("const MOTORDEFS")));
   const namn = [...defs.matchAll(/namn: "([^"]+)"/g)].map((m) => m[1]);
-  ok(`A2:2 multipel direkt FÖRE marknadsrytm (som är SIST) av ${namn.length} motorer`, namn[namn.length - 1] === "marknadsrytm" && namn[namn.length - 2] === "multipel");
+  // Omgång 26-harmonisering (s6-u2, 2026-09-20): «direkt före» var omgång 25:s
+  // läge — omgång 26 wireade tre motorer EFTER multipel (u1 riskadress 62:a ·
+  // u2 balansdjup 63:e · u3 optionshantverk 64:e), alla FÖRE marknadsrytm som
+  // förblir SIST. Ny assert: multipel FÖRE de tre, de tre i kedjeordning, SIST kvar.
+  {
+    const iMult = namn.indexOf("multipel"), iRisk = namn.indexOf("riskadress"), iBal = namn.indexOf("balansdjup"), iOpt = namn.indexOf("optionshantverk");
+    ok(`A2:2 multipel FÖRE omgång 26:s tre (riskadress→balansdjup→optionshantverk), marknadsrytm SIST av ${namn.length} motorer`, namn[namn.length - 1] === "marknadsrytm" && iMult !== -1 && iMult < iRisk && iRisk < iBal && iBal < iOpt && iOpt < namn.length - 1);
+  }
 }
 
 console.log("B — felstavningstolerans (motorns semantik: långa ord tål 1–2 fel)");

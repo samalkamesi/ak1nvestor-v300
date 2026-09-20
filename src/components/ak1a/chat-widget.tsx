@@ -966,8 +966,9 @@ import { svaraLokaltBalansdjup } from "@/lib/ai-mentor-balansdjup-fragor";
 // beslut · thetans hyra −0,50/aktie/dag = 500 kr · rörelsedag 8 kr:
 // 0,5 × 0,02 × 8 × 8 = 0,64/aktie = 640 ⇒ netto +140 · break-even-rörelsen
 // √50 ≈ 7,1 kr ≈ 4,7 % av 150). od-05 aktiveras som KÄLLA ⇒ OPTIONS &
-// DERIVAT FULLT MENTORLÄNKAD 8/8 (od-01/02 optionsdjupets, od-03 warrantens,
-// od-07 kontrahentens källor sedan tidigare). Sond _s6u3o26-sond.mjs:
+// DERIVAT FULLT MENTORLÄNKAD 12/12 (kategorins 12 kurser: km-059..062 +
+// od-01..08; de fyra mentorväglösa od-04/05/06/08 var de sista — övriga
+// nådda av optionsdjup/nästa/warrant/kontrahent sedan tidigare). Sond _s6u3o26-sond.mjs:
 // hela familjen NULL med 0 grannar (binomialträdet · replikeringen ·
 // hedgekvoten · straddle/strangle · kombinerade optionspositioner · delta ·
 // aktieekvivalenter · förfallodagen · thetan · pariteten); dokumenterade

@@ -6,9 +6,11 @@
  * tre verkstadsgolv: priset (hur optionen får sitt pris utan prognos),
  * konstruktionen (straddeln och dess släktingar) och förvaltningen
  * (deltat, thetans hyra och förfallodagen). Speglar od-08, od-04 och
- * od-06 — OPTIONS & DERIVAT:s fyra mentorväglösa kurser får här sina
+ * od-06 — kategorins fyra sista mentorväglösa kurser får här sina
  * första mentorvägar (od-05 aktiveras som källa; efter detta lager är
- * kategorin fullt mentorlänkad 8/8).
+ * OPTIONS & DERIVAT fullt mentorlänkad 12/12 — km-059..062 och
+ * od-01/02/03/07 nåddes sedan tidigare av optionsdjup/nästa/warrant/
+ * kontrahent).
  *
  *   1. Binomialträdet  (od-08 primär; källor od-05 pariteten + od-01)
  *   2. Straddlen       (od-04 primär; källor od-06 + od-02)
@@ -164,6 +166,7 @@ export const OPTIONSHANTVERK_MONSTER: FragMonster[] = [
       "replikeringen", "replikering", "replikeringsportföljen",
       "hedgekvoten", "hedgekvot",
       "riskneutrala sannolikheten", "riskneutral sannolikhet",
+      "får optionen sitt pris", "optionen får sitt pris",
     ],
     starkord: ["option", "optionen", "pris", "aktie", "lån", "ränta", "träd", "steg", "arbitrage", "väntevärde"],
     bygga: (reg) => {

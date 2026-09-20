@@ -461,6 +461,12 @@ const kedjekomponenter = [
     // Omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik (s6-u2
     // — volatilitetsdraget + marginaltrappan, 67:e motorn, FÖRE marknadsrytm).
     "svaraLokaltVolatilitetsmekanik(q, KURSREGISTER)",
+    // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): co-invest (u1:s omgång-27-
+    // lager — läkning av deras öppna harmoniseringsskuld) + tvångsmekanik
+    // (marginalhandeln + optionsförfallets dag) i widgetordning före
+    // marknadsrytm (SIST) — svitharmoniseringens dokumentationsplikt.
+    "svaraLokaltCoinvest(q, KURSREGISTER)",
+    "svaraLokaltTvangsmekanik(q, KURSREGISTER)",
     "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
@@ -505,7 +511,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 57 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 70 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

@@ -433,7 +433,7 @@ const GAMLA = [
   // KÄNDA komponenter i KEDJEORDNING (denna omgångs läge: 13 ursprungliga +
   // syskonet lonsamhetsdjup + detta lagret skattedjup SIST).
   const KOMPONENTER = [
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
     // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
@@ -490,7 +490,7 @@ const GAMLA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltMarknadsrytm",];
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltMarknadsrytm",];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här
   // underkänner fortfarande OKÄNDA (odokumenterade) komponenter.

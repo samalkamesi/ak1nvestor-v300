@@ -15497,3 +15497,16 @@ våg) respektive ts-import-hook-hjälparen (namngiven fil i verktyg/).
 s8-u1:s egna leveransfiler i 0c91623f var exakt de fem: prod-synk.mjs,
 testa-prod-synk-patchko.mjs, patch-ko.json, o106-protokollet, worklog.
 [fabrik]
+
+### s8-u1 o106 TILLÄGG 2 — andra bärningen + fönsterracet protokollfört
+
+Tilläggscommiten 135cccb6 svepte återigen med syskonets mellanstagade
+filer (verktyg/testa-elevkarna.mjs, verktyg/testa-klientkontext.mjs,
+verktyg/testa-navigationsminne.mjs — åter orörda, deras leverans förblir
+deras). ROT: fabrikens syskon delar git-INDEX i samma träd och stagear
+kontinuerligt; varje `git commit` utan pathspec äter hela indexet.
+KUR (bokas åt alla fönster-barn): committa med PATHSPEC —
+`git commit -F <fil> -- <egna sökvägar>` — då lämnas främmande staging
+orörd. Denna notis committas själv med pathspec (worklog.md endast).
+s8-u1:s leverans stängd: 0c91623f (fem egna filer + fyra bärda) ·
+135cccb6 (tillägg 1 + tre bärda) · denna rad. [fabrik]

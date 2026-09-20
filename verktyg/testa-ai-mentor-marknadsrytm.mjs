@@ -373,7 +373,7 @@ OMATCHADE.forEach((f, i) => {
   if (!widget.includes('from "@/lib/ai-mentor-marknadsrytm-fragor"')) FEL.push("importen av ai-mentor-marknadsrytm-fragor saknas");
   // Alla 61 kända komponenter (dokumentationsskyldigheten: framtida lager läggs här)
   const kanda = new Set([
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     "svaraLokaltMarknadsmekanik", "svaraLokaltPraktik", "svaraLokaltValutamekanik",
     "svaraLokaltPortfoljgrund", "svaraLokaltAgande", "svaraLokaltRedovisningsdjup",
@@ -407,6 +407,7 @@ OMATCHADE.forEach((f, i) => {
             // pengarstid — andrahandsmarknaden + sekvensrisken, 66:e motorn,
             // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
             "svaraLokaltPengarstid",
+            "svaraLokaltVolatilitetsmekanik",
             "svaraLokaltMarknadsrytm",
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));

@@ -208,7 +208,7 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-optionshantverk-fragor"'));
-  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER)"));
+  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER)"));
   ok("L3 komposition EFTER balansdjup", widget.includes("svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER)"));
 }
 

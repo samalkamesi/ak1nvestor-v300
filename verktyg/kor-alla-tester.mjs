@@ -65,6 +65,7 @@ const VERKTYG = path.join(REPO, "verktyg");
 const RAM_TRSKEL_MB = 900;     // fabrikens princip: aldrig starta tungt barn under detta
 const RAM_VANTA_TAK_S = 20 * 60; // per svit: vänta högst 20 min på minne
 const RAM_KRIT_MB = Number(process.env.AK1A_RAM_KRIT_MB || 250); // V217: mitt-i-svit; överskridbar för beviskörningar
+const RAM_TUNG_START_MB = 3000; // V223: TUNG-klassens startkrav (zcode-barnfamiljen)
 const TERM_TOLERANS_S = 5;     // SIGTERM ⇒ 5 s ⇒ SIGKILL
 
 // ── miljöklasser (V213a) + dev-serverfönstret (ROND 107) ────────────────────
@@ -135,14 +136,21 @@ function ramTillgangligtMB() {
   }
 }
 
-/** Vänta på minne — true när tillgängligt, false när taket nåddes. */
-async function vantaRam() {
+/** Vänta på minne — true när tillgängligt, false när taket nåddes.
+ *  V223: tröskeln är KLASSMEDVETEN — TUNG-TILLSTÅND-sviter föder egna
+ *  zcode-barn (~0,4 GB styck, styrelsemötet 5 st) och sprängde både
+ *  900 MB-startvakten och 10 s/2-streffs-vakten (bevis: attempt 3 dog vid
+ *  testa-styrelse trots V217 — mötets allokeringsexplosion går från fritt
+ *  minne till OOM på under 10 s, vakten hann aldrig elda). Tunga sviter
+ *  kräver därför 3 GB FRIA FÖRE START — annars väntar de ut fabrikens
+ *  omgång (ärligt 'väntar-ram' i stället för tre tysta döda). */
+async function vantaRam(trskelMB = RAM_TRSKEL_MB) {
   const start = Date.now();
   for (;;) {
     const ram = ramTillgangligtMB();
-    if (ram === null || ram >= RAM_TRSKEL_MB) return true;
+    if (ram === null || ram >= trskelMB) return true;
     if (Date.now() - start >= RAM_VANTA_TAK_S * 1000) return false;
-    console.log(`  väntar-ram: ${ram} MB < ${RAM_TRSKEL_MB} MB (fabriksbarn/chrome?) — 60 s …`);
+    console.log(`  väntar-ram: ${ram} MB < ${trskelMB} MB (fabriksbarn/chrome?) — 60 s …`);
     await new Promise((r) => setTimeout(r, 60_000));
   }
 }
@@ -253,11 +261,13 @@ async function dodaDevServer(barn) {
 /** Kör EN svit med timeout + gradvis avlivning.
  * viaTsx: kör genom `npx --yes tsx` — återfall när sviten importerar TS-moduler
  * med ändelselösa imports (node-ESM löser dem ej; tsx gör det).
- * VÅG 217 — MITT-I-SVIT-RAM-VAKT: startvakten (vantaRam) skyddar svitSTART,
+ * VÅG 217/223 — MITT-I-SVIT-RAM-VAKT: startvakten (vantaRam) skyddar svitSTART,
  * men bevisen 2026-09-20 (r112-fullsvepet dog 2× vid styrelsemötet, 127 MB
- * fritt) visar att SVITENS EGEN tillväxt mitt i löpet dödar aggregATORN —
- * OOM-offret blir fel process. Väktaren pollar var 10:e s; < 250 MB två
- * poller i rad ⇒ svitTRÄDET avlivas (barnet dör, aldrig servern) och sviten
+ * fritt; attempt 3 dog en 3:e gång trots V217) visar att SVITENS EGEN
+ * tillväxt mitt i löpet dödar aggregATORN — OOM-offret blir fel process,
+ * och mötets allokeringsexplosion är snabbare än två streckar à 10 s.
+ * Vakten pollar var 5:e s; < 250 MB EN streck varnad + EN streck avlivad
+ * (V223) ⇒ svitTRÄDET dödas (barnet dör, aldrig servern) och sviten
  * markeras RÖD(ram-vakt) — ärligt synligt, aldrig tyst, aldrig grönt
  * (ofullständig mätning är ALDRIG grönt, vakt-doktrinen). */
 function korSvit(fil, takS, args = [], viaTsx = false) {
@@ -293,28 +303,31 @@ function korSvit(fil, takS, args = [], viaTsx = false) {
     };
     let dodadAvTimeout = false;
     let dodadAvRamvakt = false;
-    let ramTryck = 0;
+    let ramTryck = false;
     const tid = setTimeout(() => {
       dodadAvTimeout = true;
       doda(TERM_TOLERANS_S);
     }, takS * 1000);
+    // V223: EN streck på 5 s-poll — attempt 3:s död bevisade att två
+    // streckar à 10 s är långsammare än mötets allokeringsexplosion.
     const ramVaktare = setInterval(() => {
       const ram = ramTillgangligtMB();
       if (ram === null) return; // fail-open: mäter vi ej, vakar vi ej
       if (ram >= RAM_KRIT_MB) {
-        ramTryck = 0;
+        ramTryck = false;
         return;
       }
-      ramTryck++;
-      console.log(`  ram-vakt: ${ram} MB kvar (${ramTryck}:a poll) under ${fil} — gräns ${RAM_KRIT_MB} MB`);
-      if (ramTryck >= 2) {
+      console.log(`  ram-vakt: ${ram} MB kvar (poll ${ramTryck ? "2 — avlivar" : "1"}, gräns ${RAM_KRIT_MB} MB) under ${fil}`);
+      if (ramTryck) {
         dodadAvRamvakt = true;
         // Hela trädet (svitens egna barn äter minnet): dodadeltrad är asynk-
         // ron eldglömskning, doda() är synkron backstop på roten.
         dodaDeltrad(barn.pid).catch(() => { /* backstopen täcker */ });
         doda(TERM_TOLERANS_S);
+      } else {
+        ramTryck = true;
       }
-    }, 10_000);
+    }, 5_000);
     barn.on("error", (e) => klar({ status: "RÖD", orsak: `spawn-fel: ${String(e.message).slice(0, 120)}`, ut, fel }));
     barn.on("close", (kod) =>
       klar(
@@ -383,7 +396,8 @@ for (const fil of sviter) {
     resultatLista.push(tidigare[fil]);
     continue;
   }
-  if (!(await vantaRam())) {
+  // V223: klassmedvetet startkrav — tunga sviter föder zcode-barnfamiljer
+  if (!(await vantaRam(miljoKlass(fil).namn === "TUNG-TILLSTÅND" ? RAM_TUNG_START_MB : RAM_TRSKEL_MB))) {
     avbrutenRam = true;
     console.log(`AVBRYTER-RAM före ${fil} — ${resultatLista.length}/${sviter.length} mätta; kör om med --fortsatt`);
     break;

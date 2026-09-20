@@ -1,0 +1,12 @@
+studio: våg 223 [organ:Φ] — TUNG-startkrav 3 GB + enstrecksvakt (tredje döden kurad)
+
+Attempt 3 dog vid styrelsemötet trots V217 — 0 ram-vakt-träffar:
+mötets allokeringsexplosion når OOM snabbare än två streckar à 10 s;
+loggen frös, rapporten skrevs aldrig (111 G + 43 R i loggen, 42 av
+röda redan kurade av V219-V222).
+
+- kor-alla-tester.mjs: TUNG-TILLSTÅND kräver 3 000 MB FRIA före start
+  (vantaRam klassmedveten) — annars väntar/AVBRYTER-RAM MED rapport.
+- Vakten: 5 s-poll, en varnings- + en avlivningsstreck.
+- Bevis: offer avlivat vid 10 s ('poll 2 — avlivar'), RÖD(ram-vakt) i
+  JSON, aggregatern levde ut rapporten. Attempt 4 launchad.

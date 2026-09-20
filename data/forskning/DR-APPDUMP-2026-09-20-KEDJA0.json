@@ -1,0 +1,189 @@
+{
+  "verktyg": "dr-appdump.mjs",
+  "datumIso": "2026-09-20",
+  "startad": "2026-09-20T10:40:23.180Z",
+  "behall": false,
+  "behorighet": {
+    "kalla": {
+      "fil": ".env.production.local",
+      "variabel": "DATABASE_URL",
+      "vard": "db.rkaqmulgoubvewwnwxrw.supabase.co",
+      "user": "postgres"
+    },
+    "mal": {
+      "ref": "aufrvmesyzsfsuhvlsbp",
+      "vard": "db.aufrvmesyzsfsuhvlsbp.supabase.co",
+      "port": "5432",
+      "db": "postgres",
+      "user": "postgres"
+    },
+    "losenordsLangd": 20
+  },
+  "malNabar": "db.aufrvmesyzsfsuhvlsbp.supabase.co:5432 - accepting connections (försök 1/3)",
+  "dumpTid": {
+    "ms": 114838.736717,
+    "sek": 114.838736717
+  },
+  "dumpStderrRader": 3,
+  "dump": {
+    "fil": "/tmp/dr-appdump-aufr-2026-09-20-p3620937/app-aufr.sql.gz",
+    "storlekBytes": 88230926,
+    "storlekMb": 84.1,
+    "sha256": "223b6e8189ce4021e48576aaa42900b051bc8fa34dec53243294caf94e31135c",
+    "slutmarkor": true,
+    "copyBlock": 420,
+    "createTable": 418
+  },
+  "pgStartadesAvOss": true,
+  "rto": {
+    "ms": 20433.764379,
+    "sek": 20.433764379,
+    "felFil": "/tmp/dr-appdump-fel-aufr-p3620937-1789900983600.log"
+  },
+  "restoreOk": true,
+  "fel": {
+    "kanda": {
+      "roller": {
+        "anon": 2,
+        "service_role": 26,
+        "authenticated": 24
+      },
+      "scheman": {
+        "cron": 2
+      },
+      "extensions": {
+        "pg_cron": 2,
+        "pg_net": 2,
+        "hypopg": 2,
+        "index_advisor": 2,
+        "supabase_vault": 2,
+        "vector": 2,
+        "wrappers": 2
+      },
+      "ovrigtKant": 17,
+      "fortsattning": 24
+    },
+    "okanda": [],
+    "antalRader": 109
+  },
+  "mat": {
+    "public": {
+      "tabeller": 372,
+      "rader": 181143
+    },
+    "publicStorage": {
+      "tabeller": 380,
+      "rader": 182488
+    },
+    "allaScheman": {
+      "tabeller": 417,
+      "rader": 184307
+    },
+    "perSchema": {
+      "auth": {
+        "tabeller": 27,
+        "rader": 1588
+      },
+      "public": {
+        "tabeller": 372,
+        "rader": 181143
+      },
+      "realtime": {
+        "tabeller": 9,
+        "rader": 82
+      },
+      "storage": {
+        "tabeller": 8,
+        "rader": 1345
+      },
+      "supabase_migrations": {
+        "tabeller": 1,
+        "rader": 149
+      }
+    },
+    "nyckeltabeller": {
+      "auth.users": 45,
+      "public.ai_generated_courses": 154,
+      "public.ai_learning_events": 0,
+      "public.ai_self_healing_events": 0,
+      "public.audit_events": 0,
+      "public.autonomous_course_evolution": 0,
+      "public.autonomous_course_triggers": 0,
+      "public.board_decisions": 77,
+      "public.course_adaptations": 0,
+      "public.course_ecosystem_data": 0,
+      "public.course_progress": 0,
+      "public.course_updates": 0,
+      "public.courses": 3,
+      "public.economic_events": 0,
+      "public.edu_course_adaptations": 0,
+      "public.education_courses": 6,
+      "public.educational_modules": 13,
+      "public.failover_events": 0,
+      "public.immune_security_events": 0,
+      "public.members": 3,
+      "public.news_course_mappings": 0,
+      "public.profiles": 11,
+      "public.system_events": 169313,
+      "public.user_course_progress": 0
+    },
+    "topp": [
+      [
+        "public.system_events",
+        169313
+      ],
+      [
+        "public.user_activities",
+        5944
+      ],
+      [
+        "public.autonomous_system_evolution",
+        1359
+      ],
+      [
+        "storage.objects",
+        1273
+      ],
+      [
+        "auth.audit_log_entries",
+        1168
+      ],
+      [
+        "public.agent_swarm",
+        1000
+      ],
+      [
+        "public.learning_feedback_loops",
+        714
+      ],
+      [
+        "public.ai_performance_metrics",
+        437
+      ]
+    ]
+  },
+  "kedja2": {
+    "systemEvents": {
+      "fil": "system-events-full-2026-09-20.json.gz",
+      "antal": 168696,
+      "totaltFranApi": 168696,
+      "truncerad": false,
+      "storlekBytes": 27792947
+    },
+    "medlemmar": {
+      "fil": "medlemmar-2026-09-20.json",
+      "antal": 3,
+      "totaltFranApi": 3,
+      "truncerad": false,
+      "storlekBytes": 821
+    }
+  },
+  "stadning": {
+    "skrapDbBort": true,
+    "pgStoppad": true,
+    "dumpBort": true,
+    "meddelande": "",
+    "pgOppnades": true
+  },
+  "gron": true
+}

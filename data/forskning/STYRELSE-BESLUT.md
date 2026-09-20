@@ -326,3 +326,27 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   - TILLVAXT: Mottaget:** KONTEXT — AK1A: svensk plattform för finansiell utbildning (kurser, aktieanalyser, blogg). Språk: svenska. Juridisk ram: lagen (2007:528) om värdep…
 - **Åtgärder:** (inga)
 - **Mötes-id:** styrelse-mu9a7yrm-c6un7b
+
+## 2026-09-20 21:52 — KUNDORDER: bygga ett djupt levande system för att gå igenom års-/kvartalsrapporter på ett NYTT sätt — lära sig analysera från A till Ö, öva på RIKTIGA rapporter, live som en mentor/AI-guide, forsknin…
+
+- **Status:** KÖRS DIREKT (existential=false)
+- **Beslut:** Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de 3 inkomna organanalyserna.
+- **Motivering:** 3 av 5 organ redovisade analys; 2 var inte tillgängliga inom tidsgränsen. Fråga: KUNDORDER: bygga ett djupt levande system för att gå igenom års-/kvartalsrapporter på ett NYTT sätt — lära sig analysera från A till Ö, öva på RIKTIGA rapporter, live som en mentor/AI-guide, forskningsbaserat, inget världen sett, för Fas 2-användare.  ARBETSSTATIONENS FORSKNING (superdjup; fulltext…
+- **Roller:**
+  - ORDFORANDE: Rollen kunde ej redovisa: tidsgräns (66 s) — rollen redovisas som ute
+  - TEKNIK: MINNE LADDAT — tråden står i 24/7-standby efter rond 127 (RAM-spåret stängt, push löper via väntare v2 mot fabriksbarnets yta); nu sammanträder styrelsen över …
+  - SAKERHET: MINNE LADDAT — rond 127 (RAM-spåret) är levererad och bokförd; pushväntare v2 maler mot fabriksbarnets yta och rond 128 (F5-loggens fem tidsstämplar) står förb…
+  - JURIDIK: Rollen kunde ej redovisa: tidsgräns (90 s) — rollen redovisas som ute
+  - TILLVAXT: MINNE LADDAT — rond 127 (RAM-spåret) levererad och bokförd, standby löper; nu avger jag Tillväxt/SEO:s yttrande över RAPPORTAKADEMIN — beslutsfråga 5: Fas 2-vä…
+- **Åtgärder:**
+  1. Bygg ett vertikalt snitt först — ett bolag, fullt A-Ö-pass end-to-end, innan storskalig byggnad.
+  2. Gör "eleven bedömer först" till mekanisk API-grind — bedömning lagrad i Supabase FÖRE expertläsningen exponeras.
+  3. Verifiera PDF-sektionsextraktion på stickprov ur 153-bolagsuniversumet (ca 10 bolag) innan innehållsproduktionen startar.
+  4. Designa elevens fel-ledger med spacing-schema (Latimier) i Supabase från dag ett — aldrig eftermonerat.
+  5. Committa forskningsprotokollet `data/forskning/RAPPORTAKADEMIN/` direkt — det är nu ocommittat och riskerar att förloras vid nästa synk.
+  6. Bygg rapport-intaget som karantänpipeline — verifierade källor, checksumma + provenanslogg per fil, PDF-parsning i isolerad process, lagring utanför publik webbrot.
+  7. Hosta aldrig tredjeparts-PDF:er publikt — lagra extraherade tal/korta citat med källänk till bolagets original (citattak stämms av med juridikorganet). ⚠ VÄNTAR KUND (R2: juridik)
+  8. Fas 2-grinden server-side på varje mentor-endpoint; premium-innehåll (frågor, expertläsningar, fel-loggar) får inte vara publikt läsbara filer.
+  9. GDPR art 13 vid första övningen — informera om prestationsprofilen, minimera data, retentionstak + automatisk radering vid avslutad prenumeration. ⚠ VÄNTAR KUND (R2: prenumeration, gdpr, radering)
+  10. Prompt-injection-skydd + maskinellt rådsfilter (2007:528) i mentor-pipelinen, och kö/rategränser för intaget på rappdagar (RAM-taket är känt).
+- **Mötes-id:** styrelse-muacmgtw-qizth0

@@ -1,0 +1,180 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-tele2-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-20, omgång auto-s1-1789880702768, pivot från m9 #1 enligt köregeln)",
+  "rapport": "sa-laser-du-tele2-q3-2026-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 110+ maskinella kontroller: källor 24/24 exakta (TEL2-posten fält-för-fält mot dagens fil; kalenderposten exakt; tele2.com 200 ×2 live); aritmetik 50+ grön (identitet 4 vägar, EV-kedja 6 steg med öppet omöjlig residual −90,6, FCF-konsistens 6,25 %, tre CAGR-varianter, Essity-formeln 1,37); medianer 12/12 EXAKTA mot byggvindan 132 (git b6ae15b6^); juridikgrind REN (kontrolleraText 0 onegerade, 2007:528 2 kap 5 § ensamt lagrum, negerad disclaimer + R2-rad sist); 911 = 0; länkar 20/20 interna i live-sitemap + 2 externa 200; readingMinutes 5 = round(3 084/600). FYND: R1 median-glidning 132→219 (kommunikation 13→15 bolag; kom skuld/EK-median 1,28→0,94 VÄNDER huvudpåståendet 'Tele2 ligger PÅ branschmedianen' — 1,35 är +43 % mot dagens median; även descriptionen) med 13 poster enligt flygaktier-B1/B2-presedensen (dagens tal + as-of-datering; 'två mest belåningsdrivna sektorer' och 'P/E 45 % under' håller oförändrat); C1 stavfel handssignal→handelssignal; C2 scenariecell 7 493→7 494 (30 787 × 24,34 % = 7 493,56); C3/C4 precisionsförslag (10 036→10 037; 144,2→144,1).",
+  "anvandning": "Verkställ R1a–R1m + C1 + C2 exakt (sök/ersätt i angivet fält — samtliga gammalt-strängar maskinellt verifierade UNIKA i filen 2026-09-20, 20/20). C3/C4 är precisionsförslag utan tvingande kraft. Originalet ändras av paketets ägare (s4) eller nästa våg — inte av granskaren. Vid flytt till data/blogg/: kör paketets KVD. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "R1a",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (jämförelsetabellen)",
+      "gammalt": "| P/B | 5,27 | 2,68 | 2,81 (n=130) |",
+      "nytt": "| P/B | 5,27 | 2,72 | 2,76 (n=216) |",
+      "orsak": "Median-glidning 132→219: dagens kommunikationsmedian P/B 2,72 (n=15), universum 2,76 (n=216). Byggvindans 2,68/2,81 var exakta för 132-filan men sajten servar dagens fil"
+    },
+    {
+      "id": "R1b",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (jämförelsetabellen)",
+      "gammalt": "| Räntabilitet på eget kapital (ROE) | 47,6 % | 15,8 % | 15,6 % (n=129) |",
+      "nytt": "| Räntabilitet på eget kapital (ROE) | 47,6 % | 16,3 % | 14,8 % (n=215) |",
+      "orsak": "Glidning: kom-ROE 15,8→16,3 %, univ-ROE 15,6→14,8 % (n 129→215)"
+    },
+    {
+      "id": "R1c",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (jämförelsetabellen)",
+      "gammalt": "| Rörelsemarginal (EBIT) | 24,3 % | 21,1 % | 21,9 % (n=131) |",
+      "nytt": "| Rörelsemarginal (EBIT) | 24,3 % | 19,7 % | 21,1 % (n=217) |",
+      "orsak": "Glidning: kom-EBIT 21,1→19,7 % (nytt kommunikationsbolag med låg marginal drog medianen), univ 21,9→21,1 % (n 131→217). Notera spegelvändningen: Tele2 ligger nu över BÅDA medianerna med tydligare marginal"
+    },
+    {
+      "id": "R1d",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (jämförelsetabellen)",
+      "gammalt": "| Nettomarginal | 33,6 % | 11,6 % | 14,9 % (n=132) |",
+      "nytt": "| Nettomarginal | 33,6 % | 13,0 % | 14,1 % (n=219) |",
+      "orsak": "Glidning: kom-netto 11,6→13,0 %, univ-netto 14,9→14,1 % (n 132→219)"
+    },
+    {
+      "id": "R1e",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (tabellnoten)",
+      "gammalt": "medianerna beräknade 2026-09-16 ur 132-bolagsfilen — 13 bolag i kommunikation, där P/E-medianen bygger på n=11, två bolag saknar fältet",
+      "nytt": "medianerna beräknade 2026-09-20 ur 219-bolagsfilen — 15 bolag i kommunikation, där P/E-medianen bygger på n=13, två bolag saknar fältet",
+      "orsak": "As-of-datering enligt flygaktier-F2-förslaget: dateringskänsliga medianer redovisas med vindan de mäts mot. P/E-medianen 21,8 är oförändrad i tal (21,788) men n har gått 11→13"
+    },
+    {
+      "id": "R1f",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Värdering, P/B-raden)",
+      "gammalt": "Nästan dubbelt över branschmedianen 2,68 och långt över universumets 2,81.",
+      "nytt": "Nästan dubbelt över branschmedianen 2,72 och väl över universumets 2,76.",
+      "orsak": "Glidning. 'Nästan dubbelt' håller (5,27 ÷ 2,72 = 1,94×); 'långt över' → 'väl över' (1,91× mot universum)"
+    },
+    {
+      "id": "R1g",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Värdering, P/E-raden)",
+      "gammalt": "Under halva branschmedianen på 21,8 (n=11 av 13).",
+      "nytt": "Under halva branschmedianen på 21,8 (n=13 av 15).",
+      "orsak": "Glidning: kommunikation 13→15 bolag, P/E-mätta 11→13 (medianen 21,788 identisk)"
+    },
+    {
+      "id": "R1h",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Lönsamhet, ROE-raden)",
+      "gammalt": "Tre gånger branschmedianen (15,8 procent) och universumets (15,6 procent).",
+      "nytt": "Nästan tre gånger branschmedianen (16,3 procent) och mer än tre gånger universumets (14,8 procent).",
+      "orsak": "Glidning vänder båda kvoternas gränser: 47,62 ÷ 16,3 = 2,9× (inte längre 'tre gånger'); 47,62 ÷ 14,8 = 3,2× (nu 'mer än tre gånger')"
+    },
+    {
+      "id": "R1i",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Stabilitet, skuld/EK-raden — det VÄNDA huvudpåståendet)",
+      "gammalt": "Notera: branschmedianen är 1,28 — Tele2 ligger PÅ den. Det är branschens, inte bolagets, särskiljande drag: kommunikation och fastighet är universumets två mest belåningsdrivna sektorer (universummedianen 0,50). Läs hävstången som branschfakta och skillnaden mot medianen som bolagsskillnad.",
+      "nytt": "Notera: vid byggtiden 2026-09-16 var branschmedianen 1,28 och Tele2 låg på den — i dagens fönster (2026-09-20, 15 kommunikationsbolag) är medianen 0,94 och Tele2 ligger 43 procent över: glidningen visar själv hur universumets tillväxt rör medianerna. Belåningen är fortsatt branschens särskiljande drag: kommunikation och fastighet är universumets två mest belåningsdrivna sektorer (universummedianen 0,51). Läs hävstången som branschfakta och skillnaden mot medianen som bolagsskillnad.",
+      "orsak": "FYNDETS KÄRNA: 'Tele2 ligger PÅ branschmedianen' är motbevisat av dagens fil (1,3522 mot 0,942 = +43 %). Flygaktier-B1-klassen: pedagogikens huvudpåstående får inte stå motbevisat när sajten servar dagens data. Rättningen behåller glidningen som lärosäte (F2:s as-of-datering) och 'bolagsskillnad'-läsanvisningen intakt"
+    },
+    {
+      "id": "R1j",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (läsningen efter tabellen)",
+      "gammalt": "P/E 45 procent under branschmedianen och P/B 97 procent över",
+      "nytt": "P/E 45 procent under branschmedianen och P/B 94 procent över",
+      "orsak": "Glidning: 5,27 ÷ 2,72 = 1,94 → 94 % över (P/E-andelen 45,4 % oförändrad)"
+    },
+    {
+      "id": "R1k",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (läsningen efter tabellen)",
+      "gammalt": "Marginalerna ligger strax över branschmedianen (EBIT 24,3 mot 21,1)",
+      "nytt": "Marginalerna ligger över branschmedianen (EBIT 24,3 mot 19,7)",
+      "orsak": "Glidning: kom-EBIT-median 21,1→19,7 %. +3,2 pp var 'strax över'; +4,6 pp är mer än så"
+    },
+    {
+      "id": "R1l",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (läsningen efter tabellen)",
+      "gammalt": "medan nettomarginalen ligger nästan tre gånger över",
+      "nytt": "medan nettomarginalen ligger drygt två och en halv gånger över",
+      "orsak": "Glidning: 33,58 ÷ 12,98 = 2,59× (ej längre 'nästan tre'; 'P/B nästan dubbelt' i samma mening håller)"
+    },
+    {
+      "id": "R1m",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Lönsamhet, nettomarginal-raden)",
+      "gammalt": "nästan tre gånger branschmedianen 11,6 procent.",
+      "nytt": "drygt två och en halv gånger branschmedianen 13,0 procent.",
+      "orsak": "Samma glidning i nyckeltalsavsnittet: 33,58 ÷ 13,0 = 2,59×"
+    },
+    {
+      "id": "R1o",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "description",
+      "gammalt": "skuld/EK 1,35 på branschmedianen",
+      "nytt": "skuld/EK 1,35 väl över branschmedianen 0,94",
+      "orsak": "Samma vändning som R1i, i descriptionen: 1,35 är inte 'på' dagens median (0,942) utan 43 % över. Descriptionens 'P/B 5,27 ligger nästan dubbelt över medianen' håller oförändrat (1,94×)"
+    },
+    {
+      "id": "R1p",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Källor, median-raden)",
+      "gammalt": "Bransch- och universumsmedianer beräknade 2026-09-16 ur samma fil (132 bolag, varav 13 i kommunikation; P/E-medianen n=11, universumets n redovisat per mått: P/E 123, P/B 130, ROE 129, EBIT 131, netto 132).",
+      "nytt": "Bransch- och universumsmedianer beräknade 2026-09-20 ur samma fil (219 bolag, varav 15 i kommunikation; P/E-medianen n=13, universumets n redovisat per mått: P/E 209, P/B 216, ROE 215, EBIT 217, netto 219).",
+      "orsak": "Källorsektionens vintage-rad följer R1e:s as-of-datering — samtliga n-tal omräknade i 219-filan"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Övning C, sista meningen)",
+      "gammalt": "inte en handssignal",
+      "nytt": "inte en handelssignal",
+      "orsak": "Stavfel: 'handssignal' är inget ord — juridikformuleringen ska negera 'handelssignal'"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (scenariorutan)",
+      "gammalt": "| Intäkter 30 787 | 7 186 | 7 493 | 7 801 |",
+      "nytt": "| Intäkter 30 787 | 7 186 | 7 494 | 7 801 |",
+      "orsak": "Sifferval: 30 787 × 24,34 % = 7 493,56 → 7 494 vid korrekt avrundning (utkastet trunkerade). Källorsektionens 'samtliga nio celler maskinellt dubbeltkontrollerade' håller först efter denna rättning"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (Lönsamhet, nettomarginal-raden)",
+      "gammalt": "nettoresultatet cirka 10 036 miljoner kronor",
+      "nytt": "nettoresultatet cirka 10 037 miljoner kronor",
+      "orsak": "Precisionsförslag (bagatell): 33,58 % × 29 890 = 10 037,1. Står under 'cirka'-tolerans men 10 037 är den korrekta avrundningen"
+    },
+    {
+      "id": "C4",
+      "typ": "byt",
+      "fil": "sa-laser-du-tele2-q3-2026.json",
+      "falt": "body (EV-kedjan, källkritikavsnittet)",
+      "gammalt": "ger ett EV på 144,2 miljarder",
+      "nytt": "ger ett EV på 144,1 miljarder",
+      "orsak": "Precisionsförslag (gränsfall): 19,814 × 7 275 = 144,13 → 144,1. Residualen 'minus 90,6 miljarder' är korrekt oavsett (144,13 − 53,57 = 90,56)"
+    }
+  ]
+}

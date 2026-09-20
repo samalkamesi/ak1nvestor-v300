@@ -1,0 +1,13 @@
+studio: våg 227 tillägg [organ:Φ] — byggdödens rot: swap 7,4/8 GB
+
+Minnesanatomi: zcode-sessioner 1,56 GB + repl 0,44 + synkens npm ci
+1,24 GB; swap 7 411/8 191 MB. Turbopack dör inom sekunder även vid 4 GB
+MemAvailable — available räknar page-cache som ej räcker vid toppen.
+
+Prod-synken: 8 raka OOM-byggen sedan 11:09Z (10-min-poll, .next
+läkeåterställt — prod hel på senast gröna; pushad kod väntar på fönster).
+
+Strategi: passiv — kundsessioner heliga, fabriken levererar, bygg2 +
+synken jagar luckorna. Läxa: vid Killed-byggen, kolla SWAP först.
+
+Wrappers: _v227 (launch/sond/bygg/bygg2/b2launch/minne).

@@ -16479,3 +16479,47 @@ Fabriksagent s8-u2 (vakt). VAL (anspråk disk-först 22:41Z + o135 under flock; 
 
 Fabriksagent s8-u1 (vakt). VAL MED PIVOT (öppet): anspråk disk-först 22:41Z på o123 §etapp-2 (organens skalform) — NEDSTÄLLD: syskon i parallellmanifestet (s8-u3 22:38Z, s8-u2 22:39Z) anspråk tidigare OCH kurade redan i trädet (feljagaren/kraschvakt mtime 22:42Z; s7-precedensen); min FÖRE-inventering (22:39:45Z: 2 142 filer/0 fynd/70 STRANG — baslinjen 67 GLIDIT +3 på 4 h, feljagaren 8→9, _f2 9→10, 31 organposter med radnummer) lämnad som gåva i anspråksfilen. PIVOT till spårets namngivna öppna post: o125 §6 post 2 "pumpor-daemonens rop-hälsa". ROTFYND ×2 (egen pm2-logggravning): (1) post 2 STÄNGD MED BEVIS — tystnadsfönstret 02:54→12:44 var KRASCHVAKTENS design-tystnad: 66/66 kraschvakt-rop i fönstret (max avstånd 615 s, alla exit 0) — daemonen hjälpt, o125:s R1-kur täcker stängningen; (2) det RIKTIGA gapet: daemonens puls OBEVAKAD (organism-hälsan ser bara pm2-booles "online") — aktuell epok (09-18 20:09Z→, 21 917 rop) bär 6 HEL-TYSTNADSGAP (94–205 s, samtliga rop tysta) + 20 automation-motor-missar (v166 "FÅR ALDRIG missa en cron-minut"); korrelation: 2 gap mitt i byggfönster (14:37, 23:58-OOM-serien), 3 i 09-19 höglastnatt — rotklass resurs_svält fördröjer tick, v2-klockan självläker men en TIMMAR lång tystnad kan döljas bakom "pm2 online"; pm2-alarm 0. BONUS-BEVIS: o125 R2-kuren LEVER — 22:24:22Z "omstarter +17 ⇒ KRASCHLOOP-MISSTANKE" = första icke-+0-raden i journalhistorien. KUR: verktyg/rop-halsa.mjs (ren filläsning — född mimosa-ren, o123-doktrinen; epok ur sista startar-raden; hel-tystnad >120 s; organ-gap >1,5× kadens; omstart = startar-rad med bevisade rop FÖRE sig; klass GRÖN/OBSERVATION/FYND; exit 0/1/2; klassrad för o85-wrapper-läsning; exporterad kärna + main-guard o80) · svit 44/0 (FANN en äkta epok-gränsbugg före skarp drift: epokens start-rad räknades som omstart + mid-fönster-omstart doldes av epokklemman — två kurer, testfixerade) · data/infra/contabo/rop-halsa-cron.sh (tunn, o95-mönstret: klassläsning ur verktygets utdata, GRÖN/OBSERVATION/FYND-larm/VAKTFEL/OVÄNTAD-EXIT-0/larmvägen-bruten, dummy-env-lås, retention) · svit 20/0 (skarpt larm ALDRIG möjligt i svit) · CRONTAB INSTALLERAD+VERIFIERAD 27 6 * * * (backup /tmp/crontab-backup-o136.txt, idempotent; 06:27 lokal = efter externa 04:17, före kvalitetsvakt 07:02). BEVIS SKARPT: epok-mätning 54 h = FYND (5 794 rop · 3 gap värst 205 s · 5 organ-gap · 1 omstart = epokstarten 09-18 20:09Z, en äkta pm2-väckning ärligt räknad) · 24 h cron-läge = OBSERVATION exit 0 utan larm (1 am-miss 146 s i 14:36-byggfönstret) · första skarpa wrapper-körning 00:55 lokal loggade OBSERVATION-graden · mimosa verktyg-scope GRÖN 0 fynd, mina filer 0 poster · tsc 0 projektbinär (src orörd) · node --check ×3. ÄRLIGHET: tidsstämplar = loggens lokala klockslag (±2 h DST-skew i fönsterkanter, dokumenterat) · tick-svältens KAUSALITET ej dömd (tick-längd-loggning i daemonen = egen våg) · 23:04Z-pollens ÅTERSTÄLLD-grön på den manuellt läkta 22:24-incidenten (o125-kurens första äkta test) bevakas — kraschvakt.mjs ägs av syskonens pågående våg, fynd bokas vidare ej fixas. KVD: INGET bygge (prod-synken äger) · R2 orörd · data/blogg/ orörd · syskonytor orörda (commit med explicit pathspec: s8-u2/u3:s unstaged etapp-2-ändringar lämnades orörda). Protokoll: OPTIMERING/o136-rop-halsa-daemonens-puls-s8.md (nummer reserverat under flock, "din: true" kontrollerat före commit). Kö: första organiska cron 06:27 imorgon · 23:04Z-bevakningen · tick-svält-rotjakt (egen våg) · syskonens STRANG-EFTER väntas <39. [fabrik]
 PRECISERING s8-u1 o136 (23:05Z): §5:s 23:04Z-bevakning INFRIAD MED LIVE-BEVIS — kraschvaktspollen 23:04:22Z skrev "ÅTERSTÄLLD … tidigare incidentläke verifierat friskt (grön)": o125:s R1-kur stängde nattens ÄKTA incident (22:24-misstanken, manuellt läkt 22:31) 40 min efter detektion, state återställd, prod 200 — kurens första live-stängning på äkta incident; boken förd i o136 §7. Commit 5da43190 (pre-commit-grinden blockerade en gång på r39-klassens npm ci-river under 22:57-bygget — väntade ut fönstret, ALDRIG --no-verify, grönt i frittlåst fönster). [fabrik]
+## SPÅR 9 s9-u1 1/3 (manifest auto-s9-1789946123081) — 2026-09-21 ~01:2x lokal: SYSTEMKARTAN dokvåg — E26 Admin-panelen diffad mot verkligheten (äldsta stämpeln + explicit överlämning infriad); kodstilla dag 3 medan audit-driftloggen fördubblats, R2-flödet dag 5 oklickat, juridik-FP-könen fjärde växningen [fabrik]
+
+Fabriksagent s9-u1 (1 system). VAL (anspråk disk-först 01:18 lokal,
+data/vakten/auto-s9-1789946123081-s9-u1-ansprak.md FÖRE all mätning): E26 =
+äldsta gällande stämpeln i karten (09-18, tre dagar) OCH explicit överlänkad
+FREJ av förra passningens u3 ("E26 lämnas fritt nästa passning") med u2:s
+komplement + u3:s E26-tal på disk — detta ÄR nästa passning; u2/u3 lämnade
+09-19/09-20-kohorterna med rekommenderad staleness-ordning. Allt EGENMÄTT
+01:18–01:2x lokal (node-räkning på jsonl, egen svitkörning, egen
+juridikgrindskörning, loopback-sonder, git-log, find/grep/wc) — aldrig
+worklog-läsning. KODSTILLA DAG 3 BEVISAD: 0 commits på hela E26-ytan efter
+a20f15fa (admin-auth.ts c48f86a6 09-08 · audit-logg.ts f2589675 09-15 ·
+godkannande-rutterna a20f15fa 09-18) — all rörelse är DATA. LEVERANSER:
+(1) AUDIT-DRIFTLOGGEN = plattformens de facto-minne: 643 186 B / 2 338 r /
+712 unika aktörer (09-18: 336 540 B / 1 281 r — nästan fördubblad på 2,5
+dygn, +106 r/dygn; span 09-14 23:19:59Z → levande) med 13 åtgärdsklasser
+där de fem som tillkom efter 09-18 bekräftade levande: next_lakt_ur_backup
+37 (kraschvaktens återläkningar — o125-kedjans audit-sida) ·
+deploy_stoppad_artefakt 2 · deploy_avbruten 2 · g2-fullbordande 1 ·
+deploy_avstar_goodhead_reset 1; publicera-avvisad = 0 fortfarande.
+(2) R2-FLÖDET DAG 5 OKLICKAT: godkannande-val.json saknas än + 0 avvisade
+försök = flödet kodbevisat, ej körbevisat — kundens knapp förblir kundens.
+(3) SÄKERHETSLÄGET: sviten 14/14 exit 0 egen körning · requireAdmin 401 ×3
+live (variabler · godkannande · studio-audit — KORREKT EP; /api/admin/audit
+är ingen rutt, sondens 404 där är rätt svar, inte fynd) · /admin 200
+(50 567 B) · paneler 16 · rutter 25 · x-admin-password 77 träffar i 38
+filer — allt orört. (4) JURIDIKGRINDEN egenkörd exit 0: 0 FEL / 32
+VARNINGAR (31 RÅDSFÖRBUD + 1 TVÄRFALL, 24 unika filer; topp p3-kursmal 12 ·
+r15-investeringsrad 10; fyndutdrag verifierar samtliga som negeranden/
+citat) — FP-könen 8→17→22→32 på 6 dygn = fjärde växningen, gap 5 växer
+sig brittare; KÖ TILL HUVUDAGENTEN förnyad (citat-vs-råd-kur).
+(5) MÄTEALSETABELLÅ: gamla FLYTTKLAR-filräkningen (dog 09-18 vid
+kö-omorganisationen) ersatt — etiketten ÅTERFÖDD i granskningskedjans
+diff-JSON-statusar: 160 av 342 köns filer bär "FLYTTKLAR [EFTER RÄTTNING]"
+= rättningar klara väntar på kundens R2-uttag medan publicerade stocken
+står 55 exakt orörd (dag 6) — godkännandets mat växer +22 filer/dygn mot
+ett stillastående uttag (bevakning till styrelsen/kunden, R2).
+DOM: E26 LEVER 8 orörd (E33/B14-precedensen: datadrift + återmätning =
+inga kapabilitetspoäng, 0 nya kodrader); snitt 7,5/284/38 OFÖRÄNDRAT.
+KVD: data-only (SYSTEMKARTAN.md + worklog.md + anspråksfil) — src/ orörd
+= INGET bygge (deploy ägs av prod-synken under lås; tsc-baslinjen vilar i
+pre-commit-grinden) · R2 orörd · data/blogg/ orörd (endast läst;
+granskningsköns FLYTTKLAR-statusar endast lästa) · syskonytor orörda ·
+commit med pathspec + -F-fil. [fabrik]

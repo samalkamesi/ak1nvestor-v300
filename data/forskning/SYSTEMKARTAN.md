@@ -2717,7 +2717,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | 09-20 (s9-u2): fas-set 18+24 exakta + FÖRSTA dubbelända pariteten (siffror.json bär 18/24/458 uppdaterad 09-20) mot underlag 458 (+32/2 dygn); ytor 200 ×4 + POST-tom 400 + admin 401; GET 200 = design (elevstatus-gren); gap 4 rate-limit återmätt öppet (0 träffar); ansökningsutfall + cert-verifiering saknas fortfarande |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | 09-20 (s9-u3): koden rörd första gången på 13 d — notis-djupet LEVER I KOD (våg 201: fas2-notisen "fördjupningen av de 20 fundamentalindikatorerna", notiser.ts 366 r); underlaget FÄRSKT (vagkarta 05:05:21Z "206 impulsvågor" + dagens pass SWED-A.ST, /api/notiser 200; raderaren = engångsingrepp enligt rot-dokumentet); brevpipelinjen fortsatt VILANDE i båda ändarna: driver saknas (cron/email kodstilla 09-04) + leverantör okonfigurerad + CRON_SECRET osatt på skrivande rutt; referral kodstilla 09-06; VBOUT SATT; 0 sviter |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | "Tre språk fullt" MOTBEVISAT (useSprak 0-träffar, speglar 404 — bägge består 09-20); kärnan kodstilla (1 093 r, touch 09-15) medan data-ådrorna glider: kurser 470 (s5 fortsätter; larvag 458 släpar 12) · quiz/XP frusna dag 5; /min-sida + /api/medlem/progress 200 (12,7 ms); 0 sviter |
-| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Mobil-treskiktsdefekten (2px-tabrad + ActivityRow + ScrollArea-svällning) UPPTÄCKT OCH KURERAD 09-17/18, slutmätt 0/88 GRÖN med testpost aktiv (mätt 09-18); godkännandehärdningen KODAD+EGENLÄST 09-18 (o64: tak EFTER auth — publicera 6/min · val-ytan 20/min POST · GET takfri · 429 Retry-After 60; audit-åtgärd publicera-avvisad, 0 driftfall = R2-knappen kundens); audit-loggen 336 540 B / 1 281 r; sviten 14/14 + requireAdmin 401 live ×2 (egen mätning 09-18); FLYTTKLAR-mätetalet DÖTT (63→0, kö-omorganisationen), juridik-FP 17→22; kvar: manuell spegling, publicera-E2E, IP-block |
+| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | 09-21 (s9-u1): kodstilla dag 3 (0 commits efter a20f15fa 09-18 — all rörelse DATA) men audit-driftloggen 643 kB / 2 338 r / 712 aktörer / 13 klasser (publicera-avvisad 0 = R2-knappen oklickad dag 5, val-filen saknas); svit 14/14 + requireAdmin 401 ×3 + /admin 200 egenmätt; juridik-FP 8→17→22→32 (0 FEL, samtliga negeranden-citat); FLYTTKLAR-etiketten återfödd i diff-JSON: 160/342 redo för uttag mot frusna 55; kvar: manuell spegling, publicera-E2E, IP-block, Elliott-test |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | GAP-REGISTER 36/36 UTTÖMT (rond 90 09-19 — kommandobussen komplett v181–188: målpaus · kö · modellbyte · resolveInteraction · fakta-typer · sessionsfödelse · sendText-UI post 35 bakom Zap-toggle ak1a-v4-sendvag med rollback); transport 10 866 r (+31 % på 2 dygn) · 35 rutter (+11) · 8 paneler · 7 skickaV4-metoder; /studio 200 + stream 401 + kommando 405 live; STORFYND 09-19: binären halkat efter — npm 3.12.3-26 vs KÖRANDE 3.11.2-24 (bevakningen fallerat, paritetstak 39/91 mätt mot föråldrad binär, v92-e2e = AKTUELL KÖ); -32031 + skal-kvot-häng kvar |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Mötet stilla sedan 09-15 05:17 (dag 5; FULL DELEGATION — inga sammanträden krävts, ej motorfel); ROND-VÄGEN bevisad som det faktiska beslutsorganet (mätt 09-19: beslutsminne 82 poster, senaste ROND 102 @ 18:14Z = även DIREKTANROPAD mellan cron-ronderna; ronder var 3:e timme punktliga 08:43→17:43 OK + driftnotis »MÅL återaktiverat (pm2-omstart?)«); gap 1 öppet och FÖRDJUPAT: JSON-fallback + 2/5 organ ute på tidsgränser (50/90 s) i senaste mötet, koden stilla sedan 09-15 (f2589675, git-mätt 09-19); API lever (protokoll 200 · mote 405 · studio 401); sviten dev-låst (startar egen dev-server + skriver protokoll — ej körbar i prod-fönstret) |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | 09-20 (s9-u2): fabrik **220 klara/221** (+33/21 h; manifestets barn levande i ps) · 706 utdataloggar · beslutsminne **91** (rond 66, +14/dygn) · evighetsmotorn 882 kontroller · pumpor 1 d 16 h; **DÖDA-LÄNKAR-CRONEN driftsatt** (användar-crontab 04:17, 5 rader totalt): första organiska körningen 09-20 04:17 DRIFTFÖNSTER-klassad RÄTT (202/2 503 = 8,1 % > tak 5 %, rapport kasserad, inget falskt larm; testet 09-19 GRÖNT); **o117 reservationsmekanik** (verktyg 323 r + svit 24 PASS under flock, rotorsaka 5×) = protokollnumrets race-kur byggd men fabriken anropar ännu ej (grep 0) — gap 0 halvstängt; CRON_SECRET 0 env kvar · kunduppdragsfiler frånvarande · svitgapet för fabrik/evighet/uppdrag kvar (reservationssviten finns) |
@@ -3072,6 +3072,40 @@ känd och redan scorenad), D38 8 (kunskapsdokvåg, E33-precedensen). Snitt
 src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda
 (2 pivots dokumenterade) · commit med pathspec + -F-fil. [fabrik]
 
+## UPPDATERING 2026-09-21 (dokvåg s9-u1, manifest auto-s9-1789946123081 — E26 Admin-panelen diffad mot verkligheten; kodstilla dag 3 medan audit-driftloggen passerat 2 300 rader, R2-flödet dag 5 oklickat och granskningskön passerat 340 filer)
+
+Anspråk disk-först 01:18 lokal 09-21 (data/vakten/auto-s9-1789946123081-s9-u1-ansprak.md)
+FÖRE all mätning: E26 = äldsta gällande stämpeln (09-18, tre dagar) OCH
+explicit överlänkad FREJ av förra passningens u3 ("E26 lämnas fritt nästa
+passning"). Allt nedan EGENMÄTT 01:18–01:2x lokal 09-21 — aldrig
+worklog-läsning. Syskonen u2/u3 (samma manifest, startade 23:15Z enligt
+audit-loggens sista rad) respekteras via anspråksfilen.
+
+| Mått | Kartan 09-18 | Verkligheten 2026-09-21 (egen mätning) |
+|---|---|---|
+| audit-logg.jsonl | 336 540 B / 1 281 r / 301 aktörer | **643 186 B / 2 338 r / 712 unika aktörer** — nästan fördubblad på 2,5 dygn (+106 r/dygn); span 09-14 23:19:59Z → levande |
+| åtgärdsklasser | 8 klasser | **13 klasser**: uppgift_start 848 · uppgift_klar 820 · modellkatalog-synk 325 · deploy 281 · next_lakt_ur_backup 37 · beslut 11 · komprimering_tier3 8 · deploy_stoppad_artefakt 2 · deploy_avbruten 2 · fabrikskirurgi 1 · g2-fullbordande 1 · deploy_revert 1 · deploy_avstar_goodhead_reset 1; **publicera-avvisad = 0** fortfarande |
+| admin-sessionssviten | 14/14 | **14/14 exit 0** (egen körning) |
+| requireAdmin | 401 ×2 | **401 ×3 live** (variabler · godkannande · studio-audit — korrekt EP; /api/admin/audit är INTE en rutt, dess 404 är korrekt svar) |
+| /admin | 200 | **200, 50 567 B** |
+| paneler · rutter · sessionrester | 16 / 25 / 77 | **16 / 25 / 77 träffar i 38 filer** — samtliga oförändrade |
+| godkannande-val.json | finns ej | **finns fortfarande ej (dag 5)** — publicera-avvisad 0 + val-fil saknad = R2-flödet kodbevisat, EJ körbevisat |
+| juridikgrind | 22 VARNINGAR / 0 FEL | **32 VARNINGAR / 0 FEL** (egen körning exit 0; 31 RÅDSFÖRBUD + 1 TVÄRFALL, 24 unika filer; topp: p3-kursmal 12 · r15-investeringsrad 10) — fyndutdragen visar samtliga som negeranden/citat |
+| FLYTTKLAR-mått | mätetalet dött 09-18 (63→0 vid kö-omorganisationen) | **ETIKETTEN ÅTERFÖDD i granskningens diff-JSON-statusar**: 160 av 342 köns filer bär "FLYTTKLAR [EFTER RÄTTNING]" — rättningar klara, väntar på uttag; publicerade stocken 55 exakt orörd (dag 6) |
+| kodstilla | a20f15fa (09-18) | **0 commits på E26-ytan efter a20f15fa** (git-bevis; admin-auth.ts c48f86a6 09-08 · audit-logg.ts f2589675 09-15) |
+
+Dom: E26 LEVER 8 orörd (E33/B14-precedensen: datadrift + återmätning =
+inga kapabilitetspoäng — 0 nya kodrader på tre dagar, all rörelse är data).
+Skärpning att bokföra: juridik-FP-könen 8→17→22→**32** på 6 dygn, samtliga
+kontextverifierade negeranden — grindens citat-vs-råd-gap (gap 5) växer sig
+brittare för varje dag granskningskön levererar meta-texter; kö-till-
+huvudagenten förnyas. Bevakning som bär vidare: godkännandets mat växer
+(+22 filer/dygn i kön, 160 FLYTTKLAR-objekt) medan uttagsstocken står
+stilla på 55 — R2-knappen förblir kundens, nu dag 5. Snitt 7,5/284/38
+OFÖRÄNDRAT. KVD: data-only — src/ orörd = INGET bygge · R2 orörd ·
+data/blogg/ orörd (endast läst) · syskonytor orörda · commit med
+pathspec + -F-fil. [fabrik]
+
 ---
 
 # A. UTBILDNINGENS KÄRNA
@@ -3200,7 +3234,18 @@ UPPDATERING-sektionen.*
   (våg 99, dokumentbevis); (3) lärvägens synlighet på min-sida KODAD
   (LarvagKort renderad) men E2E med levande inloggning overifierad.
 
-## A3. AI-Mentorn — LEVER — 9/10 *(uppdaterad 2026-09-19)*
+## A3. AI-Mentorn — LEVER — 9/10 *(uppdaterad 2026-09-21)*
+
+*Uppdatering 2026-09-21 (dokvåg s9-u3 3/3, manifest auto-s9-1789946123081):
+spår 6:s fönster 29–30 + s5:s kursvågor = +16 motorer på två dygn — EGEN
+körning NU: kedjan **298 PASS / 0 FAIL, 195 monsters, 73 motorer**
+(inventarieraden listar alla 73 familjer; marknadsrytm fortfarande SISTA
+ofyllda) · bassviten **26 PASS/0 FAIL med E01 GRÖN 476/476** ("fält-för-fält
+identiska med getCourses()") · 72 frågelager-filer · 78 sviter (ls-mätt).
+Sjufaldig kategoriclosure under 09-20 (worklog-bokförd): PE 14/14 · Risk
+14/14 · Lönsamhet 12/12 · Katalysator 11/11 · Sektoranalys 32/32 ·
+Aktiemarknaden+Makro · Pengarnas tid; svitfamiljen 43 röda → 0 (826fb55f).
+Score 9 orörd — se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-19 (dokvåg s9-u2, manifest auto-s9-1789847706174): spår 6:s
 fabriksomgångar + nattens s8-kur har nästan FÖRDUBBLAT systemet sedan 09-18:s
@@ -3229,8 +3274,8 @@ upp i filen.*
 - **Vad:** Chatt-widget som känner eleven (nivå, XP, platssammanhang),
   redigerar behovet med klarliggande motfråga, ger handlingar och AKM1/
   AK1TS-referenser — ALDRIG köp/sälj (rådgivningsgrind kodad OCH
-  maskintestad). Sedan våg 158 + spår 6:s omgångar + nattens s8-rotkur: 155 deterministiska
-  monsters i 57 motorer (09-19) (makro ?? extra ?? bas ?? nästa ?? kapitalmekanik
+  maskintestad). Sedan våg 158 + spår 6:s omgångar + nattens s8-rotkur: 195 deterministiska
+  monsters i 73 motorer (09-21) (makro ?? extra ?? modernarisk ?? bas ?? nästa ?? kapitalmekanik
   ?? sektor ?? case ?? praktik ?? portfoljgrund ?? agande ?? redovisningsdjup
   ?? djup ?? historia ?? lonsamhetsdjup ?? tsdjup ?? skattedjup ??
   beteendedjup ?? riskdjup — DCF-inre värde, investmentbolags-NAV, options,
@@ -4742,7 +4787,7 @@ kunskap tillförd, inga gap stängda).*
 
 # E. STYRNING, VERKTYG & GRUND
 
-## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-18)*
+## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-21)*
 
 *Uppdatering 2026-09-15 (s9-u2 omgång 3): MEGA-BESLUTETS SPÅR 1–2 SAKNADES I
 KARTAN och lever nu (allt mätt i arbetsytan): godkännandeytan
@@ -4786,6 +4831,31 @@ FLYTTKLAR-stocken 63 → 0 (utkastkön omorganiserad till GRANSKNINGSKO-
 SAMMANSTALLNING + JSON-format, se C15) — gamla talet dött; juridik-FP
 17 → 22 VARNINGAR (05:37Z, 0 FEL). Score 8 kvar (E33/B14-precedensen).*
 
+*Uppdatering 2026-09-21 (dokvåg s9-u1, manifest auto-s9-1789946123081,
+anspråk disk-först 01:18 lokal FÖRE mätning — E26 explicit överlämnad av
+förra passningens u3): KODSTILLA DAG 3 bevisad (0 commits på hela ytan
+efter a20f15fa; admin-auth.ts 09-08 · audit-logg.ts 09-15) — all rörelse
+är DATA. Audit-megasystemet = plattformens de facto-driftlogg, nu
+643 186 B / 2 338 r / 712 unika aktörer (2 338 mot 09-18-passningens
+1 281; +106 r/dygn) med 13 åtgärdsklasser — de fem klasser som tillkom
+efter 09-18 bekräftade levande (next_lakt_ur_backup 37 = kraschvaktens
+återläkningar · deploy_stoppad_artefakt 2 · deploy_avbruten 2 ·
+g2-fullbordande 1 · deploy_avstar_goodhead_reset 1) och
+publicera-avvisad fortfarande 0 = R2-knappen oklickad dag 5
+(godkannande-val.json saknas än). Sviten 14/14 exit 0 i egen körning;
+requireAdmin 401 ×3 live (variabler · godkannande · studio-audit — korrekt
+EP; /api/admin/audit är ingen rutt, dess 404 är rätt svar); /admin 200
+(50 567 B); paneler 16 · rutter 25 · x-admin-password 77 träffar i 38
+filer — orörda. Juridikgrinden egenkörd exit 0: 0 FEL / 32 VARNINGAR
+(31 RÅDSFÖRBUD + 1 TVÄRFALL, 24 filer; topp p3-kursmal 12 ·
+r15-investeringsrad 10) — FP-könen 8→17→22→32 på 6 dygn, samtliga
+kontextverifierade negeranden/citat. MÄTEALSETABELLÅ: gamla
+FLYTTKLAR-filräkningen (dog 09-18) ersatt — etiketten ÅTERFÖDD i
+granskningskedjans diff-JSON-statusar: 160 av 342 köns filer bär
+"FLYTTKLAR [EFTER RÄTTNING]" = rättningar klara, väntar på kundens
+R2-uttag (publicerade stocken 55 exakt orörd, dag 6). Score 8 kvar
+(E33/B14-precedensen).*
+
 - **Vad:** "WordPress på långt håll": 15+ flikar (översikt, medlemmar,
   variabler, blogg-publicering, översättning/termbank, kurser-metadata,
   media, bokningar, analys-uppladdning med Elliott-redigerare, aktivitet,
@@ -4816,11 +4886,11 @@ SAMMANSTALLNING + JSON-format, se C15) — gamla talet dött; juridik-FP
   rester (x-admin-password) lever kvar som bootstrap; (3) analys-uppladdningens
   Elliott-redigerare saknar test; (4) admin-URL:en offentligt känd —
   fail2ban-liknande skydd mot lösenordsmalming finns via rate-limit men
-  ingen IP-block; (5) SKÄRPT 09-17: FP-kön FÖRDUBBLAD — 8 → 17 VARNINGAR (larmfilens
-  senaste körning 11:37Z; 0 FEL kvar) på meta-texter som CITERAR
-  förbudsorden; FLYTTKLAR-strängen i utkastkön 21 → 63 filer sedan 09-15 —
-  granskningskön växer rakt in i vakten, grinden lär sig skilja citat
-  från råd; (6) NY: publicera-vägen E2E-bevisas först vid kundens första
+  ingen IP-block; (5) SKÄRPT 09-21 (fjärde växningen): FP-kön 8 → 17 → 22 → 32 VARNINGAR
+  (egen körning 0 FEL; topp p3-kursmal 12 · r15-investeringsrad 10) på
+  meta-texter som CITERAR/NEGERAR förbudsorden — granskningskön (342
+  filer, 160 FLYTTKLAR-märkta) växer rakt in i vakten, grinden lär sig
+  skilja citat från råd; (6) NY: publicera-vägen E2E-bevisas först vid kundens första
   knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
 
 
@@ -5788,7 +5858,27 @@ Score 9 kvar; gap-listan kompletterad med backup-cadans.*
   automatiserad 02:40 sedan s10-u1:s e97aa579) — DR-gap skärpt 09-18, kö till
   huvudagenten: objektlistning av Storage-bucketen i nattjobbet.
 
-## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-19)*
+## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-21)*
+
+*Uppdatering 2026-09-21 (dokvåg s9-u3 3/3, manifest auto-s9-1789946123081;
+femte passningen): s7:s TREDJE serie o118–o130 — SEX nya kurer i trädet,
+FYRA i deploykö. I PROD (egen BUILD_ID-mätning): o118-mobilgolvet + o123
+fixvågen DEPLOYADE och EFTER-bevisade (5976ef91: sonder 69→3 tryckmål ·
+23→0 zoom · vakten 0/154 GRÖN mot deploy d11c6c1d) samt o119
+NastaSteg-defern (568a93a2, äldre i samma byggtes historia). VÄNTAR DEPLOY:
+o126 pill important-kur (96bd416b) · o127 KASKADKUR (c017f9bf — verifierad
+i kod: globals.css:617–625 flyttade `.flex>*,.grid>*{min-width:0}` in i
+@layer base; den olagrade regeln vann kaskaden över ALLA Tailwind
+min-w-utilities projektvidt, 46 användningar — o123:s pill-fix var verkningslös
+AV KONSTRUKTION, specificitetsbeviset 0,1,1 > 0,1,0) · o128 slider-tummar
+16→52 (54c95abd) · o129 CV-kalibrering (87483e9a, proxy-EFTER −84 %).
+Deployblocket: bygg-OOM ×3 (22:00/22:07/22:21Z) + dött bygg lämnade .next
+utan BUILD_ID ⇒ pm2-loop ⇒ prod 502 22:29 — OOM-procedurens läke-återställning
+22:31Z återtog det GRÖNA LDVlDGu2-bygget (prod 200 egen sond; o136
+ÅTERSTÄLLD-grön). Äkta EFTER (o131 §4 + o132 §6) = OLEVERERAT vakarövertag;
+proxy-EFTER bevisar kurerna verksamma i kanal (/dataset 1→0 under 52 ·
+/kalkylator 20/20→0/20). Score 8 orörd — se diff-tabellen i
+UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-19 (dokvåg s9-u3, manifest auto-s9-1789847706174;
 fjärde passningen): s7:s ANDRA PRESTANDASERIE o89–o97 levererad 09-19
@@ -5883,7 +5973,12 @@ vakaren lever men dess tidszonstolkningsbugg försköt triggern (o32 §1).*
   (home.slutTitta-textlänken) — köpost o63 outlevererad; (8) /studio-EFTER
   (o31) fortfarande obokförd + unused-JS poäng 0 kvar (74–79 KiB) och
   bootup 3,3–3,5 s / mainthread 7,7–7,8 s — koddelningen minskade men
-  eliminerade ej spillet.
+  eliminerade ej spillet; **(9) NY 09-21: DEPLOY-SKULD** — o126+o127+o128+
+  o129 committade men prod på LDVlDGu2 (o123-nivån); äkta EFTER-kvittering
+  (o131 §4/o132 §6) levereras först efter nästa deploygrind; kurerna ÄR
+  proxy-bevisade i kanal men ej kundlevererade tills dess — dessutom bär
+  bygg-OOM-klassen (3 dödade bygg på 21 min) en infra-börda som tillhör E34
+  (korsref o130–o132 + s8-u2:o135).
 
 ---
 

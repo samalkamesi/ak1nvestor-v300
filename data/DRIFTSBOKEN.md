@@ -2986,3 +2986,49 @@ orörd · syskonytor orörda · GDPR endast antal/typer. Protokoll:
 DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.md/.json + maskinellt
 DR-KEDJA2-2026-09-20-AUTO.md. Kö: blad 11:s födelsebevis 09-21 02:30 ·
 oversättnings-stillastående följs 09-21 02:40 · kvartalsövning ≤2026-12-20.
+
+
+## S10-U3 — DUBBELPROJEKT-KUREN LANDAD: app-DB:n (aufr) får egen nattlig crontab-dump 02:50 — RPO-gapet ~2 400 r/dygn stängs från i natt (2026-09-20 19:08–19:29 lokal, GODKÄNT)
+
+Agent: s10-u3 (manifest auto-s10-1789923906930, vakt 3/3). VAL: spårets
+bokade stående gap — appens projekt dumpades ALDRIG av kedja 1 (02:30 läser
+rkaq). §7-köns .pgpass-blockerare var upplöst av KEDJA-0-bevisen (lösenord
+läses vid körning ur .env.production.local — R2-nära ytor orörda), därmed
+fabrikslevererbar. Anspråk disk-först 19:08.
+
+- **KUREN TREDELAD + ALLT BEVISAT SAME-NIGHT:** (1) `verktyg/dumpa-app-db.sh`
+  — rkaq-kontrakt + .part-säkerhet (trunkerat blad kan ALDRIG ligga i
+  kedjan) + markörkontroll FÖRE retention (RÖD = stopp, inga raderingar);
+  (2) crontab rad 6 `50 2 * * * …dumpa-app-db.sh` installerad 19:29
+  (6 rader; före-kopia committad — revert = en rad); (3) bevisövning:
+  dumpen körd under `env -i` cron-paritets-env.
+- **FÖRSTA APP-BLADET GRÖNT:** db-app-2026-09-20.sql.gz · 84,2 MB ·
+  sha 1453365e… · slutmarkörkontrakt ✓ (CREATE 418/COPY 420) · dump 371 s
+  (kvällsbelastad; nattreferens 115–178 s) · RAM-grind väntade 150 s in
+  ett prod-bygge (840→2 174 MB) — doktrin följd.
+- **ÅTERSTÄLLNING AV DET RIKTIGA bladet** (fullformat, rkaq-paritet):
+  RTO **32,9 s** · fel **2 611 = 100 % kända, 0 okända** (roll/grant-
+  universumet: service_role 572 · authenticated 569 · anon 547 …) ·
+  radkontrakt public **372/182 332** · alla scheman 417/185 505 ·
+  system_events 170 175 (syskonets 19:09-punkt 170 174 — sammanhängande
+  levande drift). Städning full: skrap-DB raderad · PG17 stoppad + nere
+  (egenmätt).
+- **RPO-gapet mätt:** +1 189 public-rader på 6,55 h sedan 12:43-punkten
+  (181,5 r/h dag/kväll-blandat; system_events +862, user_activities +327)
+  ⇒ trefasmodellen ~2 400–2 500 r/dygn som hittills växte i ENDA kopian —
+  från 02:50 i natt fångas varje dygn i egen bladkedja, 30 dagars
+  retention.
+- **Kompatibilitetsbevis:** rkaq-vakten `--natt` exit 0 (opåverkad) ·
+  baslinjen 10 blad UTAN app-bladet (regex-skydd) · rkaq-radens retention
+  `db-*` täcker även app-bladen (samma policy — harmlös dubbelsäkring).
+- KVD: src/ orörd = INGET bygge · R2 orörd (.env*/.pgpass ENDAST lästa,
+  aldrig skrivna) · prod orörd (klientläsning) · data/blogg/ orörd ·
+  syskonytor orörda (KEDJA0-3 = deras, inläst som jämförelsetal).
+  Protokoll: DR-OVNING-2026-09-20-DUBBELPROJEKT-KUR.md + maskinellt
+  DR-APPDUMP-2026-09-20-KUR.json.
+
+Kö: **jungfrukörningsbevis 09-21 ~02:50** — /tmp/supabase-appdump.log
+första rad + db-app-2026-09-21.sql.gz GRÖN (DUBBELPROJEKT-jungurkvitto) ·
+kedja 3:s konfigsnapshot nästa söndag bär rad 6 (6==6) · kvartalssviten
+får --fil-app-bladkontroll · dr-rpo-diff.mjs --projekt-app (u2-läxa) har
+nu en kedja att mäta mot.

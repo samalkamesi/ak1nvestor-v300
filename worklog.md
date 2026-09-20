@@ -16247,3 +16247,31 @@ KVÄLLSPUNKT 4) + denna rad + anspråk data/vakten/(gitignorerad). [fabrik]
 ## SPÅR 10 s10-u2 (ANDRA INSTANSEN, manifest auto-s10-1789923906930) — 2026-09-20 19:21–19:28 lokal: KEDJA-2-KVALL — moln-JSON:ns restore-väg bevisad för 09-20 + u3:s köpostsband stängt på båda vägarna [fabrik]
 
 Fabriksagent s10-u2, instans 2 (första instansen levererade APP-DB kvällspunkt 4 kl 19:17:56 commit 7f3b076e; jag startades av fabrikens omgång och valde per ordern nästa fria objekt — anspråk disk-först med P1–P10 låsta FÖRE mätning: data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md; duplikatkontroll i BÅDA böckerna + data/: retentionsdjup 09-11 gjort 09-18, offsite led 3 bevisat 09-19, KEDJA 2 ej körd sedan 09-17). VAL: KEDJA 2 = molnbackupens full-JSON (appens ENDA händelsekopia; u2:a-instansens 19:12-mätning kvantifierade RPO-gap 1 478 mot JUST denna fil — kopian innehållsmässigt overifierad i 3 dygn). KÖRNING `node verktyg/dr-kedja2.mjs` (u3:2:s, OMODIFIERAT; flock-delat PG17-fönster) GRÖN exit 0 19:25: system-events-full-2026-09-20.json.gz (27 792 947 B · SHA c8735a87… · header 168 696/truncerad false) → gzip-ström 0 felaktiga · 0 dubblett-id → COPY 168 696 → skrap-DB ak1a_dr_json → OBEROENDE omräkning 168 696 + unika id 168 696 = FYRA-SAMMA-kontrakt. RTO 34,3 s (COPY 34,2 s · 4 933 rader/s; ref 09-17 25,0 s @ 163 039 — volymen växer, bandet ~30–40 s vid nuvarande storlek). DAGSSTEG 2 629 ∈ [2 400, 2 950] ✅ — u3:s köpost (09-19 22:3x) nu stängd på BÅDA vägarna (morgonens u2: header-läsning; detta pass: restore). PREDIKTIONSDOM 7 ✅ / 3 ❌ ärligt bokförd med rotorsaker: P5 band runt dumpstart i stället för sista event (molnexportens 107 s eftersläpning — korrigerat band [dumpstart−300 s, dumpstart]); P7a–c linjär skalning av 09-17-fördelningen fel modell (oversattning FROSEN, trafik kvällsväxer — klassens "fönstermedel ≠ fas"-läxa tredje dagen). FYND: (1) oversattning EXAKT 146 190 sedan 09-17 = 0 nya på 3 dygn (troligen motorn klar, 100 % översatt; följs 09-21, två veckor stilla = definitivt); (2) trafik 15 915→21 361 = +5 446/3 dygn ~1 815/dygn kvällstyngt; (3) akm2_snapshot 101 oförändrad i aufr-events medan pumpen skriver +18 984/dygn i rkaq — ENTALSFÖNSTER, räknas aldrig som snapshot-bevis; (4) kedja 2:s 02:40-punkt mäter faktiskt 02:38:45 (RPO-relevant). Severity info 167 765/warning 931 · jsonb-prov 21 361 == trafik EXAKT · akm2/dom-leden ✅. STÄDNING LOKAL PG OBEROENDE EGENMÄTT: ak1a_dr_json raderad · PG17 down · /tmp ren · arkiv ENDAST LÄST bevisat (SHA+mtime byte-identiska före/efter). KVD: data-only src/ orörd = INGET bygge (grinden bär baslinjen) · R2 orörd · data/blogg/ orörd · data/backups ENDAST LÄST · syskonytor orörda (u1:s/u2:a:s/u3:s protokoll orörda; dr-kedja2.mjs + aterstall-system-events.mjs omodifierade) · GDPR endast antal/typer. Kö: blad 11:s födelsebevis 09-21 02:30 · oversättnings-stillastående 09-21 02:40 · kvartalsövning ≤2026-12-20. LEVERANS: data/forskning/DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.md, data/forskning/DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.json, data/forskning/DR-KEDJA2-2026-09-20-AUTO.md, data/DRIFTSBOKEN.md, worklog.md (anspråk på disk: data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md — katalogen gitignorerad). [fabrik]
+
+## SPÅR 10 s10-u3 (vakt 3/3) — 2026-09-20 19:08–19:29 lokal: DUBBELPROJEKT-KUREN LANDAD — app-DB:n (aufr) egen nattlig crontab-dump 02:50, RPO-gap ~2 400 r/dygn stängs från i natt [fabrik]
+
+Fabriksagent s10-u3 (manifest auto-s10-1789923906930). VAL: spårets bokade
+stående gap (V234 + u2-middagens kö): appens Supabase-projekt dumpades
+ALDRIG av kedja 1 (02:30 = rkaq); ~2 400 r/dygn växte i enda kopian. §7:s
+.pgpass-blockerare upplöst av KEDJA-0 (lösenord vid körning ur .env) —
+kuren fabrikslevererbar utan R2-nära skrivningar. Anspråk disk-först 19:08.
+KUREN: verktyg/dumpa-app-db.sh (rkaq-kontrakt + .part-säkerhet + markör-
+kontroll FÖRE retention) · crontab rad 6 installerad 19:29 (50 2 * * *;
+före-kopia committad, revert = en rad) · dump bevisad under env -i
+cron-paritet: första bladet db-app-2026-09-20.sql.gz 84,2 MB sha 1453365e…
+slutmarkör GRÖN (CREATE 418/COPY 420) · RAM-grind väntade 150 s in prod-
+bygge (840→2 174 MB). ÅTERSTÄLLNING av det riktiga bladet (fullformat,
+rkaq-paritet) i skrap-PG17 under DR-flock: RTO 32,9 s · fel 2 611 = 100 %
+kända/0 okända (roll/grant-universum) · public 372/182 332 · alla 417/185
+505 · system_events 170 175 (syskonets KEDJA0-3 19:09: 170 174 — samman-
+hängande). RPO diff mot 12:43: +1 189 på 6,55 h (181,5 r/h; sys-events
++862, user_activities +327). Kompatibilitet: --natt exit 0 · baslinje 10
+blad utan app-blad · rkaq-retentionens db-* täcker app-bladen (dubbelsäkring
+samma policy). Städning full: skrap-DB raderad · PG17 stoppad + nere
+egenmätt. KVD: src/ orörd = INGET bygge · R2 orörd (.env*/.pgpass endast
+lästa) · prod orörd · data/blogg/ orörd · syskonytor orörda. Kö: jungfrukör-
+ningsbevis 09-21 ~02:50 (/tmp/supabase-appdump.log + db-app-2026-09-21.sql.gz
+GRÖN) · kedja 3-konfigsnapshot 6==6 nästa söndag · kvartalssvitens --fil-app-
+kontroll · dr-rpo-diff --projekt-app har nu en kedja. Protokoll: DR-OVNING-
+2026-09-20-DUBBELPROJEKT-KUR.md + DR-APPDUMP-2026-09-20-KUR.json.
+LEVERANS: verktyg/dumpa-app-db.sh, data/forskning/DR-OVNING-2026-09-20-DUBBELPROJEKT-KUR.md, data/forskning/DR-APPDUMP-2026-09-20-KUR.json, data/vakten/crontab-före-s10u3-2026-09-20.txt, data/vakten/auto-s10-1789923906930-s10-u3-ansprak.md, data/DRIFTSBOKEN.md, worklog.md [fabrik]

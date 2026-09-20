@@ -1,0 +1,126 @@
+{
+  "startad": "2026-09-20T17:16:33.005Z",
+  "faser": {
+    "dump": {
+      "exit": 0,
+      "sek": 400.6,
+      "utdata": "2026-09-20T19:19:03+0200 APP-DUMP start: mal=db.aufrvmesyzsfsuhvlsbp.supabase.co db=postgres (aufr) → db-app-2026-09-20.sql.gz\n2026-09-20T19:25:14+0200 APP-DUMP klar: db-app-2026-09-20.sql.gz 88324083 byte på 371 s\nMARKÖRKOLL 2026-09-20T17:25:14.865Z — baslinje — 1 fil(er)\n\nGRÖN  db-app-2026-09-20.sql.gz  84.2 MB  2 288 977 rader  CREATE TABLE 418  COPY 420  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\n\nSUMMERING: 1/1 GRÖNA — alla dumpar kompletta enligt markörkontraktet (28.8 s)\n2026-09-20T19:25:43+0200 APP-DUMP GRON: markor verifierad · retention körd (0 blad över 30 dygn raderade).",
+      "stderr": ""
+    },
+    "markorFil": {
+      "ok": true,
+      "status": 0,
+      "stdout": "MARKÖRKOLL 2026-09-20T17:25:43.880Z — baslinje — 1 fil(er)\n\nGRÖN  db-app-2026-09-20.sql.gz  84.2 MB  2 288 977 rader  CREATE TABLE 418  COPY 420  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\n\nSUMMERING: 1/1 GRÖNA — alla dumpar kompletta enligt markörkontraktet (32.8 s)",
+      "stderr": ""
+    },
+    "nattRkaq": {
+      "ok": true,
+      "status": 0,
+      "stdout": "MARKÖRKOLL 2026-09-20T17:26:16.814Z — nattläge — 1 fil(er)\n\nGRÖN  db-2026-09-20.sql.gz  31.6 MB  1 367 628 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\n\nSUMMERING: 1/1 GRÖNA — alla dumpar kompletta enligt markörkontraktet (6.7 s)",
+      "stderr": ""
+    },
+    "baslinje": {
+      "ok": true,
+      "status": 0,
+      "stdout": "MARKÖRKOLL 2026-09-20T17:26:23.628Z — baslinje — 10 fil(er)\n\nGRÖN  db-2026-09-11.sql.gz  28.0 MB  1 207 625 rader  CREATE TABLE 95  COPY 97  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-12.sql.gz  28.1 MB  1 208 107 rader  CREATE TABLE 95  COPY 97  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-13.sql.gz  28.5 MB  1 228 011 rader  CREATE TABLE 95  COPY 97  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-14.sql.gz  29.0 MB  1 247 907 rader  CREATE TABLE 95  COPY 97  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-15.sql.gz  29.4 MB  1 267 803 rader  CREATE TABLE 95  COPY 97  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-16.sql.gz  29.8 MB  1 288 041 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-17.sql.gz  30.3 MB  1 307 940 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-18.sql.gz  30.7 MB  1 327 830 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-19.sql.gz  31.1 MB  1 347 729 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\nGRÖN  db-2026-09-20.sql.gz  31.6 MB  1 367 628 rader  CREATE TABLE 99  COPY 101  pg_dump 17.11 (Ubuntu 17.11-1.pgdg24.04+2)\n\nSUMMERING: 10/10 GRÖNA — alla dumpar kompletta enligt markörkontraktet (69.8 s)",
+      "stderr": ""
+    }
+  },
+  "grind": {
+    "ramStartMb": 840,
+    "gbLedigt": 55.3
+  },
+  "syskonVantanSek": 0,
+  "ramVantanDumpSek": 150,
+  "ramVidDump": 2174,
+  "blad": {
+    "fil": "db-app-2026-09-20.sql.gz",
+    "storlekBytes": 88324083,
+    "sha256": "1453365ee1ff3bbe36799155c2631ae2769771c4a756bca52fa8ed5e6536c0a3"
+  },
+  "kompatibilitet": {
+    "nattExit": 0,
+    "nattFil": "MARKÖRKOLL 2026-09-20T17:26:16.814Z — nattläge — 1 fil(er)",
+    "baslinjeAntal": 10,
+    "baslinjeInnehallerApp": false
+  },
+  "ramVantanSek": 0,
+  "ramVidStart": 1849,
+  "pgUppFore": false,
+  "pgStartadesAvOss": true,
+  "rtoSek": 32.9,
+  "restoreExit": 0,
+  "fel": {
+    "antalRader": 2611,
+    "kanda": {
+      "roller": {
+        "supabase_admin": 50,
+        "pgbouncer": 2,
+        "supabase_auth_admin": 45,
+        "supabase_realtime_admin": 23,
+        "supabase_storage_admin": 31,
+        "anon": 547,
+        "service_role": 572,
+        "authenticated": 569,
+        "dashboard_user": 117
+      },
+      "scheman": {
+        "cron": 12,
+        "net": 17
+      },
+      "ovrigtKant": 602,
+      "fortsattning": 24
+    },
+    "okanda": []
+  },
+  "mat": {
+    "public": {
+      "tabeller": 372,
+      "rader": 182332
+    },
+    "publicStorage": {
+      "tabeller": 380,
+      "rader": 183677
+    },
+    "allaScheman": {
+      "tabeller": 417,
+      "rader": 185505
+    },
+    "nyckeltabeller": {
+      "auth.users": 45,
+      "public.ai_generated_courses": 154,
+      "public.autonomous_course_evolution": 0,
+      "public.autonomous_course_triggers": 0,
+      "public.board_decisions": 77,
+      "public.course_adaptations": 0,
+      "public.course_ecosystem_data": 0,
+      "public.course_progress": 0,
+      "public.course_updates": 0,
+      "public.courses": 3,
+      "public.edu_course_adaptations": 0,
+      "public.education_courses": 6,
+      "public.members": 3,
+      "public.news_course_mappings": 0,
+      "public.profiles": 11,
+      "public.system_events": 170175,
+      "public.user_activities": 6271,
+      "public.user_course_progress": 0
+    }
+  },
+  "diff": {
+    "referens": "DR-APPDUMP-2026-09-20-KEDJA0-2 (12:43 lokal)",
+    "timmar": 6.55,
+    "publicRader": 1189,
+    "allaSchemanRader": 1198,
+    "systemEvents": 862,
+    "userActivities": null,
+    "raderPerTimme": 181.5
+  },
+  "stadning": {
+    "skrapDbBort": true,
+    "pgStoppad": true,
+    "pgNereEfter": true
+  },
+  "slutad": "2026-09-20T17:28:13.192Z",
+  "ramSlutMb": 1830
+}

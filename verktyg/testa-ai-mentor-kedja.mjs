@@ -72,6 +72,22 @@ if (!stodStrip && !process.execArgv.includes("--experimental-strip-types")) {
 const MOTORDEFS = [
   { namn: "makro",          fil: "ai-mentor-makro-fragor.ts",          fn: "svaraLokaltMakro",          arr: "MAKRO_MONSTER",          antal: 2 },
   { namn: "extra",          fil: "ai-mentor-extra-fragor.ts",          fn: "svaraLokaltExtra",          arr: "EXTRA_MONSTER",          antal: 3 },
+  // 2026-09-20 (manifest auto-s6-1789912510460): modernarisk (s6-u3 — tre
+  // moderna risktyper: regulatorisk risk (regelverk/tillsyn/kapitalkrav,
+  // bankexemplet 100 Mkr utlåning vid 4 % → 4 Mkr; 6 %-krav ⇒ 66,7 Mkr =
+  // −33 %), GDPR/datarisk (sanktionstaket 4 % av omsättningen: 1 000 Mkr →
+  // 40 Mkr mot 80 Mkr vinst) + ESG-risk (övergångsrisken 100 ton × 1 000 kr
+  // = 100 tkr; priset 2 000 kr ⇒ 200 tkr). Aktiverar rk-06/rk-13/rk-14 —
+  // mentorväglösa enligt sond _s6u3-sond-lagerluckor.mjs — + pf-13 och
+  // v18-regulatoriska som källor. KEDJEPLATS FÖRE basen: basen äger naket
+  // «risk» som kärnord, och frågor som «vad är regulatorisk risk?» bär ju
+  // ordet risk — ett senare lager hade aldrig nåtts. Kärnorden mekaniskt
+  // disjunkta (sond _s6u3-sond-disjunktion.mjs: 0 kollisioner); nakna
+  // «regulatorisk»/«regulatoriska» bärs EJ som kärnord — basens
+  // katalysator-familj («vad är regulatoriska katalysatorer?») förblir
+  // basens. Anspråk data/vakten/auto-s6-1789912510460-u3-ansprak.md FÖRE
+  // byggstart.
+  { namn: "modernarisk", fil: "ai-mentor-modernarisk-fragor.ts", fn: "svaraLokaltModernaRisker", arr: "MODERNA_RISK_MONSTER", antal: 3 },
   { namn: "bas",            fil: "ai-mentor-svar.ts",                  fn: "svaraLokalt",               arr: "MONSTER",                antal: 25 },
   { namn: "nästa",          fil: "ai-mentor-nasta-fragor.ts",          fn: "svaraLokaltNasta",          arr: "NASTA_MONSTER",          antal: 3 },
   { namn: "kapitalmekanik", fil: "ai-mentor-kapitalmekanik-fragor.ts", fn: "svaraLokaltKapitalmekanik", arr: "KAPITALMEKANIK_MONSTER", antal: 2 },
@@ -585,6 +601,14 @@ const MOTORDEFS = [
   // lost-update (u3:s widget-skrivning 10:57 + återställning 11:07) —
   // detta är återappliceringen.
   { namn: "pengarstid", fil: "ai-mentor-pengarstid-fragor.ts", fn: "svaraLokaltPengarstid", arr: "PENGARSTID_MONSTER", antal: 2 },
+  // 2026-09-20 omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik
+  // (s6-u2 — varifrån bruset kommer och vad det kostar: volatilitetsdraget +
+  // marginaltrappan, 2 monsters). Aktiverar rp-06 (född 2026-09-20 av spår 5,
+  // mentorväglös sedan födelsen — rs-09-precedensen) + ln-03. KOLLISION-NOT:
+  // första planen bar marginalhandeln (am-09) men s6-u1:s parallella lager
+  // äger det territoriet helt — monster 2 bytt till marginaltrappan, 0
+  // kärnordsöverlapp kontrollerat. Efter pengarstid, FÖRE marknadsrytm (SIST).
+  { namn: "volatilitetsmekanik", fil: "ai-mentor-volatilitetsmekanik-fragor.ts", fn: "svaraLokaltVolatilitetsmekanik", arr: "VOLATILITETSMEKANIK_MONSTER", antal: 2 },
   // 2026-09-20 omgång 25: marknadsrytm (s6-u3, manifest auto-s6-1789864506792
   // — korrelationsrisk/kapitalcykeln/bull-bear, 3 monsters). MOTORDEF BÄRS
   // HÄR av s6-u2 enligt riskpremie-precedensen (u1 omgång 21: «motordef här
@@ -606,7 +630,7 @@ for (const d of MOTORDEFS) {
   const modul = await import(pathToFileURL(join(ROT, "src/lib/" + d.fil)).href);
   MOTORER.push({ ...d, fnk: modul[d.fn], monster: modul[d.arr] });
 }
-const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 181 (2026-09-20 omgång 26: pengarstid +2 — pengarnas tid och ordning: andrahandsmarknaden (pe-05 primär, källor pe-06 J-kurvan + ib-05 kostnadstrappan) + sekvensrisken (rp-05 primär, källor rp-04 + ek-04) (s6-u2 fönster 3, manifest auto-s6-1789890903364), aktiverar pe-05/pe-06/ib-05 + rp-05 = PRIVATE EQUITY & INVESTMENTBOLAG 13/13 + RISKHANTERING & PORTFÖLJTEORI 14/14, 66:e motorn FÖRE marknadsrytm som förblir SIST [66:e av 66]; optionshantverk +3 — binomialträdet m.fl. (s6-u3), 64:e motorn FÖRE marknadsrytm som förblir SIST [65:e]; balansdjup +2 — lagervärderingen + obeskattade reserver (s6-u2, manifest auto-s6-1789890903364), aktiverar bk-07 + bk-06 = BOKFÖRING & ÅRSREDOVISNING fullt länkad 19/19, 63:e motorn FÖRE marknadsrytm som förblir SIST [64:e]; riskadress +1 — riskens adresser: leverantörsrisken + modellrisken + personalrisken ovanpå anatomi-kartan, aktiverar rs-06/07/08/09, 62:a motorn (s6-u1). Omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
+const TOTALT = MOTORDEFS.reduce((s, d) => s + d.antal, 0); // 186 (2026-09-20 manifest auto-s6-1789912510460: modernarisk +3 — regulatorisk risk + GDPR/datarisk + ESG-risk, s6-u3, TREDJE motorn FÖRE basen, 68-motorläget. Tidigare 183 (2026-09-20 omgång 27: volatilitetsmekanik +2 — varifrån bruset kommer och vad det kostar: volatilitetsdraget (rp-06 primär, källor rp-04 + rp-05) + marginaltrappan (ln-03 primär, källor ln-01 + v07) (s6-u2, manifest auto-s6-1789912510460), aktiverar rp-06 + ln-03, 66:e motorn efter pengarstid FÖRE marknadsrytm som förblir SIST [66:e av 67]; återapplicering efter syskons fullträdsåterställning). Tidigare 181 (2026-09-20 omgång 26: pengarstid +2 — pengarnas tid och ordning: andrahandsmarknaden (pe-05 primär, källor pe-06 J-kurvan + ib-05 kostnadstrappan) + sekvensrisken (rp-05 primär, källor rp-04 + ek-04) (s6-u2 fönster 3, manifest auto-s6-1789890903364), aktiverar pe-05/pe-06/ib-05 + rp-05 = PRIVATE EQUITY & INVESTMENTBOLAG 13/13 + RISKHANTERING & PORTFÖLJTEORI 14/14, 66:e motorn FÖRE marknadsrytm som förblir SIST [66:e av 66]; optionshantverk +3 — binomialträdet m.fl. (s6-u3), 64:e motorn FÖRE marknadsrytm som förblir SIST [65:e]; balansdjup +2 — lagervärderingen + obeskattade reserver (s6-u2, manifest auto-s6-1789890903364), aktiverar bk-07 + bk-06 = BOKFÖRING & ÅRSREDOVISNING fullt länkad 19/19, 63:e motorn FÖRE marknadsrytm som förblir SIST [64:e]; riskadress +1 — riskens adresser: leverantörsrisken + modellrisken + personalrisken ovanpå anatomi-kartan, aktiverar rs-06/07/08/09, 62:a motorn (s6-u1). Omgång 25: multipel +2 — P/S-talet + P/B-talet, grundmultiplarna (s6-u2 försök 2), 61:a motorn FÖRE marknadsrytm som förblir SIST (62:a — deras SIST-deklaration); marknadsrytm +3 — korrelationsrisk/kapitalcykeln/bull-bear (u3:s, motordef harmoniserad av s6-u2); kontrahent +2 — motparten/nettingen + clearinghuset/trappan, 60-motorläget; etfmekanik +1 — korgen/skapelsen/arbitraget/indexomläggningen, 59-motorläget, 166 monsters. 2026-09-19 våg 210: valutamekanik +10 — 58-motorläget, 165 monsters. Omgång 24: nya territorier +3 — aktivisten + guidningen + bostadsmekaniken/demografin, 57-läget; moatdjup +2 — prisfullmakten + byteskostnaderna, 56-läget; försäkring +2 — combined ratio/floaten + krypto, 55-läget. KOMMENTARBAS RÄTTAD här: omgång 23:s «138» förglömmde våg 189:s marknadsmekanik +10 — verkligt 54-läge var 148, varför 55/56/57-lägena är 150/152/155, inte 140/142/145; antal-fälten i MOTORDEFS har alltid varit sanna, endast kommentarsiffrorna ärvde fel bas. Omgång 23: sektorläsning +2, vardegrund +3, realekonomi +1 — 53-läget; omgång 22: faktordjup +1, bokmastar +3, riskbudget +2, konvertibel +1 — 50-läget; 2026-09-18 omgång 21: koncernläsning +3, riskpremie +1, tillväxtdjup +2; omgång 20: beteendemekanik +3, pe-mekanik +1, överlevnadsdjup +2)
 
 /** Kedjan exakt som chat-widget.tsx komponerar den: första icke-null vinner. */
 function kedja(fraga) {
@@ -647,170 +671,176 @@ function kontroll(namn, ok, detalj) {
 const KANONISKA = [
   { fraga: "vad är styrräntan?",         motor: 0 },
   { fraga: "vad är kassaflödesanalys?",  motor: 1 },
-  { fraga: "vad är AKM1?",               motor: 2 },
-  { fraga: "vad är optioner?",           motor: 3 },
-  { fraga: "vad är goodwill?",           motor: 4 },
-  { fraga: "hur analyserar jag banker?", motor: 5 },
-  { fraga: "vad är praktiska case?",     motor: 6 },
-  { fraga: "vad är blankning?",          motor: 8 },
-  { fraga: "vad är valutarisk?", motor: 10 },
+  // 2026-09-20 s6-u3 (manifest auto-s6-1789912510460): modernarisk —
+  // kanoniska ur lagrets egna rubriker (motorindex 2 = FÖRE basen; fall G
+  // verifierar widgetens ordning varje körning).
+  { fraga: "vad är regulatorisk risk?", motor: 2 },
+  { fraga: "vad är gdpr?",               motor: 2 },
+  { fraga: "vad är esg?",                motor: 2 },
+  { fraga: "vad är AKM1?",               motor: 3 },
+  { fraga: "vad är optioner?",           motor: 4 },
+  { fraga: "vad är goodwill?",           motor: 5 },
+  { fraga: "hur analyserar jag banker?", motor: 6 },
+  { fraga: "vad är praktiska case?",     motor: 7 },
+  { fraga: "vad är blankning?",          motor: 9 },
+  { fraga: "vad är valutarisk?", motor: 11 },
   // 2026-09-19 våg 210 (studion): valutamekanik — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är köpkraftsparitet?", motor: 9 },
-  { fraga: "vad är ppp?",               motor: 9 },
-  { fraga: "vad är ränteparitet?",     motor: 9 },
-  { fraga: "vad är realväxelkurs?",    motor: 9 },
-  { fraga: "vad betyder stark krona?", motor: 9 },
-  { fraga: "vad är devalvering?",      motor: 9 },
-  { fraga: "vad är valutahedging?",    motor: 9 },
-  { fraga: "hur fungerar valutamarknaden?", motor: 9 },
-  { fraga: "vad är valutalån?",        motor: 9 },
-  { fraga: "vad är en reservvaluta?",  motor: 9 },
-  { fraga: "vad är diversifiering?", motor: 10 },
-  { fraga: "vad är bolagsstämma?", motor: 11 },
-  { fraga: "vad är avskrivningar?", motor: 12 },
-  { fraga: "vad är värderingsmultipel?", motor: 13 },
-  { fraga: "vad är tulpanmanin?", motor: 14 },
-  { fraga: "vad är dupont-analysen?", motor: 15 },
-  { fraga: "vad är fibonacci retracements?", motor: 16 },
-  { fraga: "vad är personaloptioner?", motor: 17 },
-  { fraga: "vad är kapitalförsäkring?", motor: 17 },
-  { fraga: "vad är bekräftelsefällan?", motor: 18 },
-  { fraga: "vad är en skuldfälla?", motor: 19 },
-  { fraga: "vad är en svart svan?", motor: 19 },
-  { fraga: "vad är sharpe-kvoten?", motor: 20 },
-  { fraga: "vad är utdelningsfällor?", motor: 21 },
-  { fraga: "vad är aktieåterköp?", motor: 21 },
-  { fraga: "vad är förväntningsanalys?", motor: 22 },
-  { fraga: "vad är förväntningsgapet?", motor: 22 },
-  { fraga: "vad är kalibrering?", motor: 22 },
-  { fraga: "vad är rebalansering?", motor: 23 },
-  { fraga: "vad är känslighetsanalys?", motor: 24 },
-  { fraga: "vad är stresstest?", motor: 24 },
-  { fraga: "vad är soliditetsgrad?", motor: 24 },
-  { fraga: "vad är balansstyrka?", motor: 24 },
-  { fraga: "vad är en net-net och NCAV?", motor: 25 },
-  { fraga: "vad är cigar butts?", motor: 25 },
-  { fraga: "vem är mr market?", motor: 25 },
+  { fraga: "vad är köpkraftsparitet?", motor: 10 },
+  { fraga: "vad är ppp?",               motor: 10 },
+  { fraga: "vad är ränteparitet?",     motor: 10 },
+  { fraga: "vad är realväxelkurs?",    motor: 10 },
+  { fraga: "vad betyder stark krona?", motor: 10 },
+  { fraga: "vad är devalvering?",      motor: 10 },
+  { fraga: "vad är valutahedging?",    motor: 10 },
+  { fraga: "hur fungerar valutamarknaden?", motor: 10 },
+  { fraga: "vad är valutalån?",        motor: 10 },
+  { fraga: "vad är en reservvaluta?",  motor: 10 },
+  { fraga: "vad är diversifiering?", motor: 11 },
+  { fraga: "vad är bolagsstämma?", motor: 12 },
+  { fraga: "vad är avskrivningar?", motor: 13 },
+  { fraga: "vad är värderingsmultipel?", motor: 14 },
+  { fraga: "vad är tulpanmanin?", motor: 15 },
+  { fraga: "vad är dupont-analysen?", motor: 16 },
+  { fraga: "vad är fibonacci retracements?", motor: 17 },
+  { fraga: "vad är personaloptioner?", motor: 18 },
+  { fraga: "vad är kapitalförsäkring?", motor: 18 },
+  { fraga: "vad är bekräftelsefällan?", motor: 19 },
+  { fraga: "vad är en skuldfälla?", motor: 20 },
+  { fraga: "vad är en svart svan?", motor: 20 },
+  { fraga: "vad är sharpe-kvoten?", motor: 21 },
+  { fraga: "vad är utdelningsfällor?", motor: 22 },
+  { fraga: "vad är aktieåterköp?", motor: 22 },
+  { fraga: "vad är förväntningsanalys?", motor: 23 },
+  { fraga: "vad är förväntningsgapet?", motor: 23 },
+  { fraga: "vad är kalibrering?", motor: 23 },
+  { fraga: "vad är rebalansering?", motor: 24 },
+  { fraga: "vad är känslighetsanalys?", motor: 25 },
+  { fraga: "vad är stresstest?", motor: 25 },
+  { fraga: "vad är soliditetsgrad?", motor: 25 },
+  { fraga: "vad är balansstyrka?", motor: 25 },
+  { fraga: "vad är en net-net och NCAV?", motor: 26 },
+  { fraga: "vad är cigar butts?", motor: 26 },
+  { fraga: "vem är mr market?", motor: 26 },
   // Omgång 14: varderjustering (normalisering är deras egna fråga — "vad är
   // wacc?" ägs fortfarande av lonsamhetsdjup och "vad är cape?" av
   // case/riskmåttsdjup, deras dokumenterade ansvarsfördelning),
   // optionsdjup + risklasningsdjup.
-  { fraga: "vad är normalisering?", motor: 26 },
-  { fraga: "vad är en köpoption?", motor: 27 },
-  { fraga: "vad är kundkoncentration?", motor: 28 },
-  { fraga: "vad är en riskmatris?", motor: 28 },
-  { fraga: "hur läser jag riskavsnittet?", motor: 28 },
+  { fraga: "vad är normalisering?", motor: 27 },
+  { fraga: "vad är en köpoption?", motor: 28 },
+  { fraga: "vad är kundkoncentration?", motor: 29 },
+  { fraga: "vad är en riskmatris?", motor: 29 },
+  { fraga: "hur läser jag riskavsnittet?", motor: 29 },
   // Omgång 15: avkastningskurva (s6-u1) + avkastningsdjup (u2) +
   // värderingsverktyg (u3) — kanoniska ur deras egna rubriker.
-  { fraga: "vad är den omvända avkastningskurvan?", motor: 29 },
-  { fraga: "vad är avkastningskällor?", motor: 30 },
-  { fraga: "vad är tvärsnittsanalys?", motor: 30 },
-  { fraga: "vad är scenarioanalys?", motor: 31 },
+  { fraga: "vad är den omvända avkastningskurvan?", motor: 30 },
+  { fraga: "vad är avkastningskällor?", motor: 31 },
+  { fraga: "vad är tvärsnittsanalys?", motor: 31 },
+  { fraga: "vad är scenarioanalys?", motor: 32 },
   // Omgång 16: warrant (s6-u1) + tidsaxel (syskon u2, samma fönster) —
   // kanoniska ur lagrens egna rubriker.
-  { fraga: "vad är warranter och teckningsoptioner?", motor: 32 },
-  { fraga: "vad är konjunkturindikatorer?", motor: 33 },
-  { fraga: "vad är refinansieringsmuren?", motor: 33 },
-  { fraga: "vad är rörelsekapital?", motor: 34 },
-  { fraga: "vad är kassakonverteringscykeln?", motor: 34 },
-  { fraga: "vad är lageromsättning?", motor: 34 },
+  { fraga: "vad är warranter och teckningsoptioner?", motor: 33 },
+  { fraga: "vad är konjunkturindikatorer?", motor: 34 },
+  { fraga: "vad är refinansieringsmuren?", motor: 34 },
+  { fraga: "vad är rörelsekapital?", motor: 35 },
+  { fraga: "vad är kassakonverteringscykeln?", motor: 35 },
+  { fraga: "vad är lageromsättning?", motor: 35 },
   // Omgång 17: ekosystemdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är SAM-viktningen?", motor: 35 },
-  { fraga: "vad är röstlängdningen?", motor: 35 },
-  { fraga: "vad är en backtest?", motor: 35 },
-  { fraga: "vad är monte carlo-simulering?", motor: 35 },
+  { fraga: "vad är SAM-viktningen?", motor: 36 },
+  { fraga: "vad är röstlängdningen?", motor: 36 },
+  { fraga: "vad är en backtest?", motor: 36 },
+  { fraga: "vad är monte carlo-simulering?", motor: 36 },
   // Omgång 17: handelsdag (s6-u1) — kanonisk ur lagrets egen rubrik.
-  { fraga: "hur fungerar handelsdagen?", motor: 36 },
+  { fraga: "hur fungerar handelsdagen?", motor: 37 },
   // Omgång 17: portföljpraktik (s6-u3) — kanoniska ur lagrets egna rubriker.
-  { fraga: "hur stor ska en aktieposition vara?", motor: 37 },
-  { fraga: "vad är tax-loss harvesting?", motor: 37 },
-  { fraga: "vad är pensionssparande?", motor: 37 },
+  { fraga: "hur stor ska en aktieposition vara?", motor: 38 },
+  { fraga: "vad är tax-loss harvesting?", motor: 38 },
+  { fraga: "vad är pensionssparande?", motor: 38 },
   // Omgång 18: utdelningskalender (s6-u1) — kanonisk ur lagrets egen rubrik.
-  { fraga: "vad är ex-dagen?", motor: 38 },
+  { fraga: "vad är ex-dagen?", motor: 39 },
   // Omgång 18: kreditdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är kreditpremien?", motor: 39 },
-  { fraga: "vad är kreditrating?", motor: 39 },
+  { fraga: "vad är kreditpremien?", motor: 40 },
+  { fraga: "vad är kreditrating?", motor: 40 },
   // Omgång 18: sektordjup (s6-u3) — kanoniska ur lagrets egna rubriker.
-  { fraga: "hur analyserar jag SaaS-bolag?", motor: 40 },
-  { fraga: "hur analyserar jag halvledarbolag?", motor: 40 },
-  { fraga: "hur analyserar jag försvarsbolag?", motor: 40 },
-  { fraga: "vad är churn?", motor: 40 },
-  { fraga: "vad är net revenue retention?", motor: 40 },
-  { fraga: "vad är en foundry?", motor: 40 },
-  { fraga: "vad är krigsmateriel?", motor: 40 },
+  { fraga: "hur analyserar jag SaaS-bolag?", motor: 41 },
+  { fraga: "hur analyserar jag halvledarbolag?", motor: 41 },
+  { fraga: "hur analyserar jag försvarsbolag?", motor: 41 },
+  { fraga: "vad är churn?", motor: 41 },
+  { fraga: "vad är net revenue retention?", motor: 41 },
+  { fraga: "vad är en foundry?", motor: 41 },
+  { fraga: "vad är krigsmateriel?", motor: 41 },
   // Omgång 19: sektorskola 2 (s6-u3) — kanoniska ur lagrets egna rubriker.
-  { fraga: "hur analyserar jag läkemedelsbolag?", motor: 41 },
-  { fraga: "hur analyserar jag detaljhandelsbolag?", motor: 41 },
-  { fraga: "hur analyserar jag logistikbolag?", motor: 41 },
-  { fraga: "vad är patentbranten?", motor: 41 },
-  { fraga: "vad är en pipeline?", motor: 41 },
-  { fraga: "vad är like-for-like?", motor: 41 },
-  { fraga: "vad är lastmile?", motor: 41 },
+  { fraga: "hur analyserar jag läkemedelsbolag?", motor: 42 },
+  { fraga: "hur analyserar jag detaljhandelsbolag?", motor: 42 },
+  { fraga: "hur analyserar jag logistikbolag?", motor: 42 },
+  { fraga: "vad är patentbranten?", motor: 42 },
+  { fraga: "vad är en pipeline?", motor: 42 },
+  { fraga: "vad är like-for-like?", motor: 42 },
+  { fraga: "vad är lastmile?", motor: 42 },
   // Omgång 20: beteendemekanik (s6-u3) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är priming?", motor: 42 },
-  { fraga: "vad är primingeffekten?", motor: 42 },
-  { fraga: "vad är tillgänglighetsfällan?", motor: 42 },
-  { fraga: "vad är övermod?", motor: 42 },
-  { fraga: "vad är overconfidence?", motor: 42 },
-  { fraga: "vad är kompetensillusionen?", motor: 42 },
+  { fraga: "vad är priming?", motor: 43 },
+  { fraga: "vad är primingeffekten?", motor: 43 },
+  { fraga: "vad är tillgänglighetsfällan?", motor: 43 },
+  { fraga: "vad är övermod?", motor: 43 },
+  { fraga: "vad är overconfidence?", motor: 43 },
+  { fraga: "vad är kompetensillusionen?", motor: 43 },
   // Omgång 20: pe-mekanik (s6-u1) — kanoniska ur lagrets tre sektioner.
-  { fraga: "hur fungerar irr och förvärvsmaskinen?", motor: 43 },
-  { fraga: "vad är internräntan?", motor: 43 },
-  { fraga: "vad är lbo?", motor: 43 },
-  { fraga: "vad är utfasningar?", motor: 43 },
-  { fraga: "vad är vattenfallet?", motor: 43 },
-  { fraga: "vad är carried interest?", motor: 43 },
+  { fraga: "hur fungerar irr och förvärvsmaskinen?", motor: 44 },
+  { fraga: "vad är internräntan?", motor: 44 },
+  { fraga: "vad är lbo?", motor: 44 },
+  { fraga: "vad är utfasningar?", motor: 44 },
+  { fraga: "vad är vattenfallet?", motor: 44 },
+  { fraga: "vad är carried interest?", motor: 44 },
   // Omgång 21: riskpremie (s6-u1) — kanoniska ur lagrets egna formuleringar.
-  { fraga: "vad är aktiernas riskpremie?", motor: 44 },
-  { fraga: "vad är riskpremien?", motor: 44 },
-  { fraga: "vad är aktieriskpremien?", motor: 44 },
-  { fraga: "hur räknar man ut riskpremien?", motor: 44 },
-  { fraga: "vad är premie per riskenhet?", motor: 44 },
+  { fraga: "vad är aktiernas riskpremie?", motor: 45 },
+  { fraga: "vad är riskpremien?", motor: 45 },
+  { fraga: "vad är aktieriskpremien?", motor: 45 },
+  { fraga: "hur räknar man ut riskpremien?", motor: 45 },
+  { fraga: "vad är premie per riskenhet?", motor: 45 },
   // Omgång 20: överlevnadsdjup (s6-u2) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är likviditetsreserven?", motor: 45 },
-  { fraga: "vad är överlevnadstid?", motor: 45 },
-  { fraga: "hur länge räcker kassan?", motor: 45 },
-  { fraga: "vad är kassaräckvidd?", motor: 45 },
-  { fraga: "vad är altman z-score?", motor: 45 },
-  { fraga: "vad är z-score?", motor: 45 },
-  { fraga: "vad är konkursprognos?", motor: 45 },
-  { fraga: "vad är konkursrisk?", motor: 45 },
+  { fraga: "vad är likviditetsreserven?", motor: 46 },
+  { fraga: "vad är överlevnadstid?", motor: 46 },
+  { fraga: "hur länge räcker kassan?", motor: 46 },
+  { fraga: "vad är kassaräckvidd?", motor: 46 },
+  { fraga: "vad är altman z-score?", motor: 46 },
+  { fraga: "vad är z-score?", motor: 46 },
+  { fraga: "vad är konkursprognos?", motor: 46 },
+  { fraga: "vad är konkursrisk?", motor: 46 },
   // Omgång 21: koncernläsning (s6-u3) — kanoniska ur lagrets egna rubriker.
-  { fraga: "vad är koncernredovisning?", motor: 46 },
-  { fraga: "vad är minoritetsintressen?", motor: 46 },
-  { fraga: "vad är moderbolag?", motor: 46 },
-  { fraga: "vad är segmentrapportering?", motor: 46 },
-  { fraga: "vad är affärsområden?", motor: 46 },
-  { fraga: "vad är pensionsåtaganden?", motor: 46 },
-  { fraga: "vad är pensionsskulden?", motor: 46 },
+  { fraga: "vad är koncernredovisning?", motor: 47 },
+  { fraga: "vad är minoritetsintressen?", motor: 47 },
+  { fraga: "vad är moderbolag?", motor: 47 },
+  { fraga: "vad är segmentrapportering?", motor: 47 },
+  { fraga: "vad är affärsområden?", motor: 47 },
+  { fraga: "vad är pensionsåtaganden?", motor: 47 },
+  { fraga: "vad är pensionsskulden?", motor: 47 },
   // Omgång 21: tillväxtdjup (s6-u2) — kanoniska ur lagrets egna rubriker
   // («vad är organisk tillväxt?»/«vad är volym pris och mix?» landar hos
   // BAS-motorn — deras monster [tillvaxt]/[kostnad]; se motordef-kommentaren).
-  { fraga: "vad är s-kurvan?", motor: 47 },
-  { fraga: "vad är mättnad?", motor: 47 },
-  { fraga: "vad är marknadsmättnad?", motor: 47 },
-  { fraga: "vad är utrymmesräkning?", motor: 47 },
-  { fraga: "vad är prismix?", motor: 47 },
-  { fraga: "vad är mixeffekten?", motor: 47 },
-  { fraga: "vad är prisvolym?", motor: 47 },
-  { fraga: "vad är produktmix?", motor: 47 },
-  { fraga: "vad är tillväxtmotorer?", motor: 47 },
-  { fraga: "vad är intäktsmotorer?", motor: 47 },
+  { fraga: "vad är s-kurvan?", motor: 48 },
+  { fraga: "vad är mättnad?", motor: 48 },
+  { fraga: "vad är marknadsmättnad?", motor: 48 },
+  { fraga: "vad är utrymmesräkning?", motor: 48 },
+  { fraga: "vad är prismix?", motor: 48 },
+  { fraga: "vad är mixeffekten?", motor: 48 },
+  { fraga: "vad är prisvolym?", motor: 48 },
+  { fraga: "vad är produktmix?", motor: 48 },
+  { fraga: "vad är tillväxtmotorer?", motor: 48 },
+  { fraga: "vad är intäktsmotorer?", motor: 48 },
   // Omgång 22 (tredje instansen): faktordjup (s6-u1) — kanoniska ur
   // lagrets egna rubriker («vad är betat?»/«vad är smart beta?» =
   // riskmåttsdjupets, «vad är sharpe-kvoten?» dito, «vad är aktiernas
   // riskpremie?» = riskpremielagrets, «vad är faktorer?» plural stryks
   // («sektorer», tavstånd 2) — deras frågor, dokumenterade gränser; se
   // motordef-kommentaren).
-  { fraga: "vad är faktorpremier?", motor: 48 },
-  { fraga: "vad är faktorpremierna?", motor: 48 },
-  { fraga: "vad är en faktor?", motor: 48 },
-  { fraga: "vad är momentum?", motor: 48 },
-  { fraga: "vad är värdefaktorn?", motor: 48 },
-  { fraga: "vad är storleksfaktorn?", motor: 48 },
-  { fraga: "vad är lågvolatilitetsanomalin?", motor: 48 },
-  { fraga: "vad är femfaktormodellen?", motor: 48 },
-  { fraga: "vad är faktorzoo?", motor: 48 },
+  { fraga: "vad är faktorpremier?", motor: 49 },
+  { fraga: "vad är faktorpremierna?", motor: 49 },
+  { fraga: "vad är en faktor?", motor: 49 },
+  { fraga: "vad är momentum?", motor: 49 },
+  { fraga: "vad är värdefaktorn?", motor: 49 },
+  { fraga: "vad är storleksfaktorn?", motor: 49 },
+  { fraga: "vad är lågvolatilitetsanomalin?", motor: 49 },
+  { fraga: "vad är femfaktormodellen?", motor: 49 },
+  { fraga: "vad är faktorzoo?", motor: 49 },
   // «vad är det tysta betat?» STRYKS (kedjetest-fånga): riskmåttsdjupets
   // «beta» (tolerans 1) fångar böjningen «betat» — deras fråga; kursens
   // signaturfras bärs i faktordjup-svarets TEXT, aldrig som kärnord.
@@ -818,129 +848,129 @@ const KANONISKA = [
   // («vad är tulpanmanin?» = historia, «vad är blankning?» = praktik och
   // «hur ljuger en årsredovisning?» = basens rapportläsning — deras
   // frågor, dokumenterade gränser; se motordef-kommentaren).
-  { fraga: "vad är financial shenanigans?", motor: 49 },
-  { fraga: "vad är redovisningstrick?", motor: 49 },
-  { fraga: "vad är resultatmassaging?", motor: 49 },
-  { fraga: "vad är quality of earnings?", motor: 49 },
-  { fraga: "vad är kreativ redovisning?", motor: 49 },
-  { fraga: "vad är manias panics and crashes?", motor: 49 },
-  { fraga: "vad är spekulativ mani?", motor: 49 },
-  { fraga: "vad är this time is different?", motor: 49 },
-  { fraga: "vad är krashhistoria?", motor: 49 },
-  { fraga: "vad är special situations?", motor: 49 },
-  { fraga: "vad är spin off?", motor: 49 },
-  { fraga: "vad är merger arbitrage?", motor: 49 },
-  { fraga: "vad är distress investing?", motor: 49 },
+  { fraga: "vad är financial shenanigans?", motor: 50 },
+  { fraga: "vad är redovisningstrick?", motor: 50 },
+  { fraga: "vad är resultatmassaging?", motor: 50 },
+  { fraga: "vad är quality of earnings?", motor: 50 },
+  { fraga: "vad är kreativ redovisning?", motor: 50 },
+  { fraga: "vad är manias panics and crashes?", motor: 50 },
+  { fraga: "vad är spekulativ mani?", motor: 50 },
+  { fraga: "vad är this time is different?", motor: 50 },
+  { fraga: "vad är krashhistoria?", motor: 50 },
+  { fraga: "vad är special situations?", motor: 50 },
+  { fraga: "vad är spin off?", motor: 50 },
+  { fraga: "vad är merger arbitrage?", motor: 50 },
+  { fraga: "vad är distress investing?", motor: 50 },
   // Omgång 22: riskbudget (s6-u2) — kanoniska ur lagrets egna rubriker
   // («vad är volatilitet?»/«vad är risk?» = basens risk-monster, «vad är
   // riskparitet?» = portföljbalansen, «vad är sharpe-kvoten?» = riskmåtts-
   // djupet — deras frågor, dokumenterade gränser; se motordef-kommentaren).
-  { fraga: "vad är volatilitetsbudgeten?", motor: 50 },
-  { fraga: "vad är volatilitetsbudget?", motor: 50 },
-  { fraga: "vad är riskbudget?", motor: 50 },
-  { fraga: "vad är sortino?", motor: 50 },
-  { fraga: "vad är sortino-kvoten?", motor: 50 },
-  { fraga: "vad är calmar?", motor: 50 },
-  { fraga: "vad är calmar-kvoten?", motor: 50 },
-  { fraga: "vad är tre mått tre frågor?", motor: 50 },
+  { fraga: "vad är volatilitetsbudgeten?", motor: 51 },
+  { fraga: "vad är volatilitetsbudget?", motor: 51 },
+  { fraga: "vad är riskbudget?", motor: 51 },
+  { fraga: "vad är sortino?", motor: 51 },
+  { fraga: "vad är sortino-kvoten?", motor: 51 },
+  { fraga: "vad är calmar?", motor: 51 },
+  { fraga: "vad är calmar-kvoten?", motor: 51 },
+  { fraga: "vad är tre mått tre frågor?", motor: 51 },
   // Omgång 22 (omstart): konvertibel (s6-u1) — kanoniska ur lagrets egna
   // kärnord («vad är kapitalstrukturen?» = basens monster — deras fråga,
   // dokumenterad gräns; bärs som fragor:-knapp; se motordef-kommentaren).
-  { fraga: "vad är en konvertibel?", motor: 51 },
-  { fraga: "vad är konvertibler?", motor: 51 },
-  { fraga: "vad är hybridkapital?", motor: 51 },
-  { fraga: "vad är konverteringskursen?", motor: 51 },
-  { fraga: "vad är konverteringspremien?", motor: 51 },
-  { fraga: "vad är paritetsvärdet?", motor: 51 },
-  { fraga: "vad är en preferensaktie?", motor: 51 },
-  { fraga: "vad är stämpelordningen?", motor: 51 },
-  { fraga: "vad är kapitaltrappan?", motor: 51 },
-  { fraga: "vad är at1-kapital?", motor: 51 },
-  { fraga: "vad är additional tier 1?", motor: 51 },
-  { fraga: "vad är en nollskrivning?", motor: 51 },
-  { fraga: "vad är evighetsräntan?", motor: 51 },
+  { fraga: "vad är en konvertibel?", motor: 52 },
+  { fraga: "vad är konvertibler?", motor: 52 },
+  { fraga: "vad är hybridkapital?", motor: 52 },
+  { fraga: "vad är konverteringskursen?", motor: 52 },
+  { fraga: "vad är konverteringspremien?", motor: 52 },
+  { fraga: "vad är paritetsvärdet?", motor: 52 },
+  { fraga: "vad är en preferensaktie?", motor: 52 },
+  { fraga: "vad är stämpelordningen?", motor: 52 },
+  { fraga: "vad är kapitaltrappan?", motor: 52 },
+  { fraga: "vad är at1-kapital?", motor: 52 },
+  { fraga: "vad är additional tier 1?", motor: 52 },
+  { fraga: "vad är en nollskrivning?", motor: 52 },
+  { fraga: "vad är evighetsräntan?", motor: 52 },
   // Omgång 23: sektorläsning (s6-u2) — kanoniska ur lagrets egna
   // rubriker («vad är oljepriset?» = ingen ägare i kedjan — makro-
   // familjens blomma, dokumenterad gräns i modulens kommentar; «vad är
   // en moat?» = extra-lagrets, bärs som knapp ur svaren).
-  { fraga: "hur analyserar jag ett energibolag?", motor: 52 },
-  { fraga: "hur analyserar jag ett telekombolag?", motor: 52 },
+  { fraga: "hur analyserar jag ett energibolag?", motor: 53 },
+  { fraga: "hur analyserar jag ett telekombolag?", motor: 53 },
   // Omgång 23: vardegrund (s6-u3) — kanoniska ur lagrets egna kärnord
   // («vad är DCF?»/«vad är inre värde?»/«vad är substansvärde?» = nästas,
   // «vad är fcf yield?»/«vad är price to cash flow?» = extras, «vad är
   // wacc?» = lönsamhetsdjupets — deras frågor, dokumenterade gränser;
   // bärs som fragor:-knappar; se motordef-kommentaren).
-  { fraga: "vad är motiverat värde?", motor: 53 },
-  { fraga: "vad är intrinsic value?", motor: 53 },
-  { fraga: "hur räknar man ut motiverat värde?", motor: 53 },
-  { fraga: "vad är fair value?", motor: 53 },
-  { fraga: "vad är verkligt värde?", motor: 53 },
-  { fraga: "vad är realoptioner?", motor: 53 },
-  { fraga: "vad är en realoption?", motor: 53 },
-  { fraga: "vad är kassaflödesavkastning?", motor: 53 },
-  { fraga: "hur räknar man ut kassaflödesavkastning?", motor: 53 },
-  { fraga: "vad är asset based valuation?", motor: 53 },
+  { fraga: "vad är motiverat värde?", motor: 54 },
+  { fraga: "vad är intrinsic value?", motor: 54 },
+  { fraga: "hur räknar man ut motiverat värde?", motor: 54 },
+  { fraga: "vad är fair value?", motor: 54 },
+  { fraga: "vad är verkligt värde?", motor: 54 },
+  { fraga: "vad är realoptioner?", motor: 54 },
+  { fraga: "vad är en realoption?", motor: 54 },
+  { fraga: "vad är kassaflödesavkastning?", motor: 54 },
+  { fraga: "hur räknar man ut kassaflödesavkastning?", motor: 54 },
+  { fraga: "vad är asset based valuation?", motor: 54 },
   // Omgång 23: realekonomi (s6-u1) — kanonisk ur lagrets paraplyfråga
   // («vad är rsi?»-familjen = basens teknisk-analys-monster, rond 2:s
   // dödade förstavalet — dokumenterad gräns i modulens kommentar;
   // «vad är inflation och KPI?» = makro-lagrets och «vad är
   // konjunkturindikatorer?» = tidsaxelns, bärs som knappar ur svaret).
-  { fraga: "vad är realekonomin?", motor: 54 },
+  { fraga: "vad är realekonomin?", motor: 55 },
   // Omgång 24: försäkring + krypto (s6-u1) — kanoniska ur lagrets egna
   // kärnord («vad är försäkring?» naket = beteendedjupets «förankring»,
   // tav 2 inom 10-bokstaversordens tolerans — dokumenterad gräns i
   // modulens kommentar; «vad är en moat?» = extras, «vad är
   // volatilitet?» = basens risk-monster, «vad är terminer?» = nästas —
   // deras frågor, dokumenterade gränser; bärs som fragor:-knappar).
-  { fraga: "vad är combined ratio?", motor: 55 },
-  { fraga: "vad är en combined ratio?", motor: 55 },
-  { fraga: "hur räknar man ut combined ratio?", motor: 55 },
-  { fraga: "vad är floaten?", motor: 55 },
-  { fraga: "vad är float?", motor: 55 },
-  { fraga: "vad är försäkringssektorn?", motor: 55 },
-  { fraga: "hur analyserar jag försäkringsbolag?", motor: 55 },
-  { fraga: "vad är premieinkomster?", motor: 55 },
-  { fraga: "vad är underwriting?", motor: 55 },
-  { fraga: "vad är teckningsresultat?", motor: 55 },
-  { fraga: "vad är krypto?", motor: 55 },
-  { fraga: "vad är kryptovalutor?", motor: 55 },
-  { fraga: "vad är bitcoin?", motor: 55 },
-  { fraga: "vad är blockchain?", motor: 55 },
-  { fraga: "vad är blockkedjan?", motor: 55 },
-  { fraga: "vad är ethereum?", motor: 55 },
+  { fraga: "vad är combined ratio?", motor: 56 },
+  { fraga: "vad är en combined ratio?", motor: 56 },
+  { fraga: "hur räknar man ut combined ratio?", motor: 56 },
+  { fraga: "vad är floaten?", motor: 56 },
+  { fraga: "vad är float?", motor: 56 },
+  { fraga: "vad är försäkringssektorn?", motor: 56 },
+  { fraga: "hur analyserar jag försäkringsbolag?", motor: 56 },
+  { fraga: "vad är premieinkomster?", motor: 56 },
+  { fraga: "vad är underwriting?", motor: 56 },
+  { fraga: "vad är teckningsresultat?", motor: 56 },
+  { fraga: "vad är krypto?", motor: 56 },
+  { fraga: "vad är kryptovalutor?", motor: 56 },
+  { fraga: "vad är bitcoin?", motor: 56 },
+  { fraga: "vad är blockchain?", motor: 56 },
+  { fraga: "vad är blockkedjan?", motor: 56 },
+  { fraga: "vad är ethereum?", motor: 56 },
   // Omgång 24: moatdjup (s6-u2) — kanoniska ur lagrets egna kärnord
   // («vad är en moat?»/«vallgraven i siffror?» = extra-lagrets,
   // «vad är kostnadsöverlägsenhet?»/«vad är kvalitetspremien?» NULL
   // men medvetet ej kärnord — dokumenterade gränser i modulens
   // kommentar; bärs som knappar/källor, aldrig kärnord).
-  { fraga: "vad är prisfullmakten?", motor: 56 },
-  { fraga: "vad är prisfullmakt?", motor: 56 },
-  { fraga: "hur testar man prisfullmakten?", motor: 56 },
-  { fraga: "vad är byteskostnader?", motor: 56 },
-  { fraga: "vad är byteskostnad?", motor: 56 },
-  { fraga: "vad är inlåsningseffekten?", motor: 56 },
+  { fraga: "vad är prisfullmakten?", motor: 57 },
+  { fraga: "vad är prisfullmakt?", motor: 57 },
+  { fraga: "hur testar man prisfullmakten?", motor: 57 },
+  { fraga: "vad är byteskostnader?", motor: 57 },
+  { fraga: "vad är byteskostnad?", motor: 57 },
+  { fraga: "vad är inlåsningseffekten?", motor: 57 },
   // Omgång 24: nya territorier (s6-u3) — kanoniska ur lagrets egna kärnord
   // («vad är en tillverkad katalysator?» = basens (naked katalysator),
   // «vad är substansvärde?» = nästas, «vad är en bolagsstämma?» = ägandes,
   // «vad är räntan?» = makros, «hur påverkar bostadsmarknaden börsen?» =
   // basens påverkar-form — deras frågor, dokumenterade gränser i modulens
   // kommentar; bärs som knappar ur svaren).
-  { fraga: "vad är en aktivist?", motor: 57 },
-  { fraga: "vad är aktivism?", motor: 57 },
-  { fraga: "vad är ett kravbrev?", motor: 57 },
-  { fraga: "vad är en aktiekampanj?", motor: 57 },
-  { fraga: "vad är guidningen?", motor: 57 },
-  { fraga: "vad är guidning?", motor: 57 },
-  { fraga: "vad är bolagets prognos?", motor: 57 },
-  { fraga: "hur fungerar bostadsmarknaden?", motor: 57 },
-  { fraga: "vad är lånekraft?", motor: 57 },
-  { fraga: "vad är demografi?", motor: 57 },
-  { fraga: "vad är befolkningspyramiden?", motor: 57 },
+  { fraga: "vad är en aktivist?", motor: 58 },
+  { fraga: "vad är aktivism?", motor: 58 },
+  { fraga: "vad är ett kravbrev?", motor: 58 },
+  { fraga: "vad är en aktiekampanj?", motor: 58 },
+  { fraga: "vad är guidningen?", motor: 58 },
+  { fraga: "vad är guidning?", motor: 58 },
+  { fraga: "vad är bolagets prognos?", motor: 58 },
+  { fraga: "hur fungerar bostadsmarknaden?", motor: 58 },
+  { fraga: "vad är lånekraft?", motor: 58 },
+  { fraga: "vad är demografi?", motor: 58 },
+  { fraga: "vad är befolkningspyramiden?", motor: 58 },
   // 2026-09-20 omgång 25 (s6-u1): etfmekanik — kanoniska ur lagrets egna
   // rubriker; gränserna sondbekäftade: praktiken äger naket index/etf,
   // nästas nav, basens hävstång, portfölj-praktikens rebalansering.
-  { fraga: "vad är en börshandlad fond?", motor: 58 },
-  { fraga: "vad är en auktoriserad deltagare?", motor: 58 },
+  { fraga: "vad är en börshandlad fond?", motor: 59 },
+  { fraga: "vad är en auktoriserad deltagare?", motor: 59 },
   // s6-u2-harmonisering (omg 25, dokumenterad): de två ursprungliga
   // formuleringarna «hur skapas etf-andelar?»/«vad är etf-arbitrage?» var
   // strukturellt skuggade — praktik äger naket «etf» (kort exakt match på
@@ -949,38 +979,46 @@ const KANONISKA = [
   // Raderna bär i stället lagrets EGNA kärnordsformuleringar (sondverifierat:
   // etfmekanik=true, praktik=false): «skapelse»+«inlösen» (am-08:s
   // rubrikkärna) och «flashdagen» (6 maj 2010, lagrets signaturhändelse).
-  { fraga: "vad är skapelse och inlösen?", motor: 58 },
-  { fraga: "vad är flashdagen?", motor: 58 },
-  { fraga: "vad är contango?", motor: 58 },
-  { fraga: "vad är backwardation?", motor: 58 },
-  { fraga: "vad är en hävstångsetf?", motor: 58 },
-  { fraga: "vad är spårningsavvikelsen?", motor: 58 },
-  { fraga: "vad är indexomläggningen?", motor: 58 },
-  { fraga: "vad är effektdagen?", motor: 58 },
+  { fraga: "vad är skapelse och inlösen?", motor: 59 },
+  { fraga: "vad är flashdagen?", motor: 59 },
+  { fraga: "vad är contango?", motor: 59 },
+  { fraga: "vad är backwardation?", motor: 59 },
+  { fraga: "vad är en hävstångsetf?", motor: 59 },
+  { fraga: "vad är spårningsavvikelsen?", motor: 59 },
+  { fraga: "vad är indexomläggningen?", motor: 59 },
+  { fraga: "vad är effektdagen?", motor: 59 },
   // 2026-09-20 omgång 25 (s6-u2): kontrahent — kanoniska ur lagrets egna
   // rubriker; gränserna sondbekräftade: «ccp» stryket (granne «ccc»),
   // «lehman» historiens, basens «initial margin»/«variation margin» och
   // bank-formuleringen — deras frågor, dokumenterade gränser; bärs som
   // knappar/text, aldrig kärnord.
-  { fraga: "vad är kontrahentrisk?", motor: 59 },
-  { fraga: "vad är en kontrahent?", motor: 59 },
-  { fraga: "vem är motparten?", motor: 59 },
-  { fraga: "vad är motpartsrisk?", motor: 59 },
-  { fraga: "vad är netting?", motor: 59 },
-  { fraga: "vem står på andra sidan när det blåser?", motor: 59 },
-  { fraga: "vad är ett clearinghus?", motor: 59 },
-  { fraga: "vad är en clearingcentral?", motor: 59 },
-  { fraga: "vad är collateral?", motor: 59 },
-  { fraga: "vad är en garantifond?", motor: 59 },
-  { fraga: "vad är en haircut?", motor: 59 },
-  { fraga: "vad är säkerhetskrav?", motor: 59 },
-  { fraga: "vad är default-trappan?", motor: 59 },
+  { fraga: "vad är kontrahentrisk?", motor: 60 },
+  { fraga: "vad är en kontrahent?", motor: 60 },
+  { fraga: "vem är motparten?", motor: 60 },
+  { fraga: "vad är motpartsrisk?", motor: 60 },
+  { fraga: "vad är netting?", motor: 60 },
+  { fraga: "vem står på andra sidan när det blåser?", motor: 60 },
+  { fraga: "vad är ett clearinghus?", motor: 60 },
+  { fraga: "vad är en clearingcentral?", motor: 60 },
+  { fraga: "vad är collateral?", motor: 60 },
+  { fraga: "vad är en garantifond?", motor: 60 },
+  { fraga: "vad är en haircut?", motor: 60 },
+  { fraga: "vad är säkerhetskrav?", motor: 60 },
+  { fraga: "vad är default-trappan?", motor: 60 },
   // 2026-09-20 omgång 26: optionshantverk (s6-u3) — kanoniska ur lagrets
   // egna rubriker (index 63 = LIVE-läget av _s6u3o26-kanoniska.mjs; värdet
   // verifieras av fall G:s komponentordning varje körning).
-  { fraga: "vad är binomialträdet?", motor: 63 },
-  { fraga: "vad är en straddle?", motor: 63 },
-  { fraga: "vad är delta?", motor: 63 },
+  { fraga: "vad är binomialträdet?", motor: 64 },
+  { fraga: "vad är en straddle?", motor: 64 },
+  { fraga: "vad är delta?", motor: 64 },
+  // 2026-09-20 omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik
+  // (s6-u2) — kanoniska ur lagrets egna rubriker. Index 65 = LIVE-läget
+  // (66:e motorn av 67; FÖRE marknadsrytm som förblir SIST).
+  { fraga: "vad är volatilitetsdraget?", motor: 66 },
+  { fraga: "vad är variansdraget?", motor: 66 },
+  { fraga: "vad är spegelparet?", motor: 66 },
+  { fraga: "vad är marginaltrappan?", motor: 66 },
+  { fraga: "vad är täckningsbidraget?", motor: 66 },
 ];
 for (const { fraga, motor } of KANONISKA) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -997,18 +1035,18 @@ for (const { fraga, motor } of KANONISKA) {
 // "räntenetto" är bankens mått men ligger en redigering från "räntan";
 // "substansvärde"/"utspädning"/"indexfonder" har grannar i tidigare motorer.
 const PROBER = [
-  { fraga: "vad är räntenetto?",   motor: 5 },
-  { fraga: "vad är substansvärde?", motor: 3 },
-  { fraga: "vad är utspädning?",   motor: 4 },
-  { fraga: "vad är indexfonder?",  motor: 8 },
+  { fraga: "vad är räntenetto?",   motor: 6 },
+  { fraga: "vad är substansvärde?", motor: 4 },
+  { fraga: "vad är utspädning?",   motor: 5 },
+  { fraga: "vad är indexfonder?",  motor: 9 },
   // Nya lagers gränser (rond 50): basens värderings-/aktieslagsfamiljer ligger
   // nära djup- respektive ägande-lagrets kärnord — kedjan måste skilja dem.
-  { fraga: "vad är rösträtt?", motor: 11 },
-  { fraga: "vad är jämförelsebolag?", motor: 13 },
+  { fraga: "vad är rösträtt?", motor: 12 },
+  { fraga: "vad är jämförelsebolag?", motor: 14 },
   // Stabilitetsdjup-lagrets dokumenterade ansvarsgränser (omgång 13):
   // basen äger GRUNDORDEN — stabilitetsdjupet bär bara familjeorden.
-  { fraga: "vad är soliditet?", motor: 2 },
-  { fraga: "hur stresstestar jag en balansräkning?", motor: 2 },
+  { fraga: "vad är soliditet?", motor: 3 },
+  { fraga: "hur stresstestar jag en balansräkning?", motor: 3 },
 ];
 for (const { fraga, motor } of PROBER) {
   const skuggor = MOTORER.slice(0, motor).filter((m) => m.fnk(fraga, KURSREGISTER) !== null).map((m) => m.namn);
@@ -1025,7 +1063,7 @@ for (const { fraga, motor } of PROBER) {
 kontroll(
   "C: omatchad fråga → kedjan null (API-flödet tar över)",
   kedja("vilken färg har månen?") === null,
-  "sextiosex motorer lämnar frågan ifred",
+  "sextioåtta motorer lämnar frågan ifred",
 );
 {
   const k = kedja("vilket bolag ska jag köpa?");

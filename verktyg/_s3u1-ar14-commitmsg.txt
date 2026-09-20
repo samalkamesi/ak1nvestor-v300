@@ -1,0 +1,46 @@
+studio: auto s3-u1 AR14 flygaktier-ar — arabisk spegelning av B14 flygplansindustrin (spår 3, arabiska omgången rad 14 av 23)
+
+AR14 = data/blogg-utkast/flygaktier-sa-analyserar-du-flygplansindustrin-ar.json:
+arabisk översättning av B14 (originalet 09-16; spegeln Ö14 09-18 som
+termreferens, AR13 som arabisk strukturreferens). Klaimfil
+data/vakten/s3-ar14-flyg-ar-ansprak-2026-09-20.md skriven FÖRE arbetet
+2026-09-20T12:18:51Z, disk-först — s3-u3:s AR13-not utlovade "AR14 flyg-ar
+= nästa lucka", inlöst; AR1–AR13 på disk vid klaim, 0 syskonanspråk;
+AR15/AR16 lämnades åt syskonens u2/u3-presumtiva slotar. Uppdragstextens
+"svenska" är malltext från branschomgången — AR1–AR13 och Ö13–Ö23
+levererades under identisk prompt.
+
+Samma tal och räkneexempel som originalet: duopolet Airbus/Boeing sedan
+1990-talets slut; marginalparen brutto/EBIT 16.3/8.7 mot 31.1/20.6;
+orderboken 8,000 ÷ 800 = tio år; Airbus 2023 omsättning +11.4 % (58.8 →
+65.4 mdr €) med resultat −10.8 % (4,247 → 3,789 M€); 2025 omsättning
++6.1 % med resultat +23.4 % (4,232 → 5,221 M€); kassa 13.1 mot
+räntebärande skuld 14.3 mdr €, skuldsättningsgrad 0.55; GE-rotteln
+31.1÷16.3 = 1.91 = قرابة الضعف; ROIC 27.5 mot 20.5; FCF-serien
+3,824/3,204/3,733/4,031 M€ 2022–2025 med FCF-marginal 6.1 %; P/E 25.9
+forward 24.4 EV/EBIT 22.0 mot GE 39.0/33.8; industrimedianerna
+26.9/21.8 (14 bolag); EPS-tillväxt +14.7/+6.5 med PEG 4.0/4.2; P/B
+5.9 mot 19.4.
+
+KVD GRÖN 0/0 i 20 maskinella kontroller (verktyg/_s3u1-ar14-kvd-flyg-ar.mjs):
+varumärkesgrindens egna 26 regexer ur data/varumarke.json × 3 ytor =
+0 FEL/0 VARNING; rådverb SV+EN+AR 0 (AR-mönstren اشترِ/بِع/استثمر في هذا/
+أنصحك/نوصي بشراء); sökord "أسهم الطيران" i title+ingress+2 H2; title
+37/60; OG 132/155; ord exakt 1400/1400 efter en trimomgång 1404→1400
+(floskeln i CFM-frasen, inga tal berörda; originalet 1379); korslänkar
+17/17 MULTISET-identiska med B14 (dubbellänken km-003 ×2); externa
+URL:er 2/2 identiska (airbus.com + geaerospace.com — Ö14:s källpar);
+H2-paritet 8 = 8; talparitet 94/93 FREKVENSIDENTISKA normaliserade (SV
+decimalkomma/mellanslagstusental == AR punkt/tusentelskomma; endast-SV
+"1990" ×1 = decenniet utskrivet تسعينيات القرن العشرين — vitlistad
+tolerans, AR2-precedensens klass); aritmetik 7/7 motorräknad (Ö14:s
+klass); readingMinutes 2 = round(1400/600); disclaimer arabisk form
+exakt sista rad; svenska läckor 0 (markdown-länkar strippade hela;
+vitlista enligt AR6/AR9-konventionen).
+
+Mallen data/forskning/SEO-GUIDER-2026-09.md: +AR14-rad i
+arabiska-tabellen + NOT (AR1–AR14 klara = 14 av 23 B-rader speglade i
+-ar; nästa lucka AR15 försvar-ar). Källor: data/ och verktyg/ endast —
+src/ orörd, INGET bygge, data/blogg/ (live) orörd.
+
+[fabrik]

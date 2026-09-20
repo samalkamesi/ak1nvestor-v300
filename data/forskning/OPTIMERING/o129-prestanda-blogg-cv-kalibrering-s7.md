@@ -70,6 +70,6 @@ Resten −265 px = kortens höjdspridning (304–442 px; ingen platshållare kan
 
 ## §7 EFTER-facit (fylls av vakarövertag eller senare våg)
 
-(inte än — deploy väntade RAM vid protokollskrivandet; se §6)
+**Status vid vågens avslut 22:1x lokal:** commit 87483e9a landad i develop (HEAD f0758d45 via merge). Prod-synken initierade bygge **två gånger** (rop 21:57 och 22:07, RAM 4,7/5,7 GB vid beslut) — **båda OOM-döda** ~3 min in ("Creating an optimized production build … Killed" i /tmp/synk-build.log; rond 33:s kända infra-klass, ej kodfel; läkebackupen återställde .next båda gångerna, prod serverar gröna LDVlDGu2). Denna agent avslutar medvetet enligt o127-precedensen — den egna barnprocessen (~0,8 GB) frigörs åt synkens nästa poll; ombygge sker automatiskt vid varje rop tills RAM räcker. Kurens validitet bärs av §4:s proxy-bevis (identisk kanal, EFTER-docH = originalets exakt); §6:s EFTER-kriterier står orörda som vakarövertag: sond |docHΔ| ≤ 350/spegel · Lighthouse CLS 0 ×3 (poäng inom ±15) · prod 200 ×3.
 
 LEVERANS (denna commit): src/app/globals.css (kur) · verktyg/_s7u2o129-blocksond.mjs · verktyg/_s7u2o129-proxy.mjs · verktyg/_s7u2o129-mikro.mjs · 5 FÖRE-blocksond-JSON + 2 proxy-JSON + 3 Lighthouse-FÖRE-JSON (lighthouse/-mappen) · detta protokoll · protokollnummersreservationen · worklog-rad.

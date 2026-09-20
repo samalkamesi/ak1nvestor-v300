@@ -392,7 +392,11 @@ OMATCHADE.forEach((f, i) => {
     "svaraLokaltBokmastar", "svaraLokaltRiskbudget", "svaraLokaltKonvertibel",
     "svaraLokaltSektorlasning", "svaraLokaltVardegrund", "svaraLokaltRealekonomi",
     "svaraLokaltForsakring", "svaraLokaltMoatdjup", "svaraLokaltNyaTerritorier",
-    "svaraLokaltEtfmekanik", "svaraLokaltKontrahent", "svaraLokaltMarknadsrytm",
+    "svaraLokaltEtfmekanik", "svaraLokaltKontrahent",
+    // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): multipel — 61:a motorn,
+    // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
+    "svaraLokaltMultipel",
+    "svaraLokaltMarknadsrytm",
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));
   if (!kedjRad) FEL.push("kedjeraden (const lokalt = …) hittades inte");
@@ -405,9 +409,9 @@ OMATCHADE.forEach((f, i) => {
     if (!kedjRad.trimEnd().endsWith("?? svaraLokaltMarknadsrytm(q, KURSREGISTER);")) FEL.push("svaraLokaltMarknadsrytm är inte SISTA ledet");
   }
   kontroll(
-    "L01 widget-synk — import + SIST i kedjan + inga okända komponenter (61 dokumenterade)",
+    "L01 widget-synk — import + SIST i kedjan + inga okända komponenter (62 dokumenterade)",
     FEL.length === 0,
-    FEL.length ? FEL.join(" | ") : "61:a motorn SIST, samtliga komponenter kända",
+    FEL.length ? FEL.join(" | ") : "SIST i kedjan (multipel 61:a före), samtliga komponenter kända",
   );
 }
 

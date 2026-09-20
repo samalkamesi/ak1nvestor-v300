@@ -15372,3 +15372,49 @@ samtliga tre syskons commits): modultest 47 PASS 0 FAIL · HELA MENTORSVITEN
 KEDJAN 259 PASS 0 FAIL (61 motorer/171 monsters, marknadsrytm=3) · tsc 0 fel
 via projektbinär (exit 0). R2 orörd · data/blogg/ orörd · INGET bygge
 (prod-synken äger) · syskonens leveransfiler orörda. [fabrik]
+
+### 2026-09-20 · studio: auto s6-u2 försök 2 (redispatch) — AI-MENTORN +2 förhandsfrågor: GRUNDMULTIPLARNA P/S + P/B (61:a motorn)
+
+Omgång 25, manifest auto-s6-1789864506792, byggare 2/3. Försök 1 (kontrahent,
+e56a6953) levererade under fönstret efter ett långt häng — detta är
+redispatchens leverans med NYTT territorium: noll duplikat.
+
+VAD: multipel-lagret (src/lib/ai-mentor-multipel-fragor.ts) — P/S-talet
+(monster 1: intäktskronans pris; marginalfällan 80–90 öre mjukvara mot 5–15
+öre distributör; tabellen Sinch 31 757 ÷ 27 080 = 1,17 · Alfa Laval
+231 545 ÷ 69 674 = 3,32 · Atlas Copco 984 018 ÷ 168 343 = 5,85 · Microsoft
+3 689 160 ÷ 331 839 = 11,12; distributörsbandet 0,1–0,5; AKM1:s trösklar
+<1→5p·<2→4p·<3→3p·<5→2p·≥5→1p) + P/B-talet (monster 2: de fem talen Sinch
+1,38 · Ericsson B 3,09 · Atlas Copco A 9,26 · Kambi 29,18 · Apple 44,15 med
+ROE-resan 1,9 → 148,8 %; återköps-/goodwillfällorna; negativt EK = oläsligt;
+P/B = P/E × ROE). Källmärke: 3 numrerade källor per monster (v04-ps/v05-pb
+primära + v06-ev-ebitda + vr-03 + vr-08 + vr-06), kurslänkar + fragor:-
+knappar + registerdrivna tal (VÄRDERING ur registret). Aktiverar v04-ps +
+v05-pb — kategorins två mentorväglösa grundmultiplar; vr-08 bärs som källa
+och lämnas som frågeterritorium åt framtiden.
+
+SOND (_s6u2b-sond-omg25.mjs, tre ronder LIVE): PS-familjen TOTALT NULL
+genom kedjan; PB NULL med två dokumenterade gränser («p/b för en bank» =
+sektorns, «substansvärde» = nästas investmentbolag); 0 kärnordskollisioner;
+ronD 3 bevisade råa «p/s»/«p/b» substring-farliga («köp svenska aktier» →
+«kop svenska» INNEHÅLLER «p s») ⇒ korta exakta ord «ps»/«pb» bär, nakna
+skavattformer lämnas fallbacken. Anspråk ansprak2.md FÖRE byggstart.
+
+SIST-KONFLIKTEN: första wiringen (62:a/SIST) bröt marknadsrytm-lagrets egen
+SIST-deklaration (deras L01 kräver SISTA ledet). Lösning: multipel 61:a,
+FÖRE marknadsrytm (… kontrahent → multipel → marknadsrytm); deras Set-lista
++ deras testnamn 61→62 dokumenterade (deras «framtida lager läggs här»-
+skyldighet); case-testets kedjekomponenter +1; 41 KOMPONENTER-listor
+omordnade idempotent (_s6u2b-ordna.mjs; ];-buggen i första passet botad av
+_s6u2b-stada.mjs). Inga syskon-ASSERTIONS ändrade.
+
+KVITTEN: modultest 74 PASS 0 FAIL (A källmärke ×6 · A2 MOTORDEFS · B
+felstavning ×4 · C determinism · D01 0 fantomslugar · D02 registerdrivna
+tal · D03 30 aritmetikkontroller oberoende omräknade · E 15 kanoniska · F
+10 null-gränser · G 0 stölder mot 1 795 kärnordsderivat · G2 0 av 60
+syskonmotorer fångar mina · J juridik · K 0 kollisioner · L widget-synk) ·
+MENTORSVITEN 66/66 GRÖNA (_s6u2b-svit.mjs) · KEDJAN 259 PASS 0 FAIL (62
+motorer/173 monsters, fall G speglar verklig ordning) · tsc 0 fel via
+projektbinär. JURIDIK 2007:528: metoden presenteras som utbildning, trösklar
+är METODENS sätt att väga — aldrig köp-/säljsignaler. R2 orört ·
+data/blogg/ orört · INGET bygge (prod-synken äger). [fabrik]

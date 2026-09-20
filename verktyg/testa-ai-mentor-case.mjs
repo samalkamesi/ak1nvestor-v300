@@ -441,6 +441,9 @@ const kedjekomponenter = [
   // marknadsrytm (60). BASF: syskonens leveranser, denna harmonisering.
   "svaraLokaltEtfmekanik(q, KURSREGISTER)",
   "svaraLokaltKontrahent(q, KURSREGISTER)",
+  // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): multipel — 61:a motorn,
+  // FÖRE marknadsrytm (deras SIST-deklaration; dokumentationsplikten).
+  "svaraLokaltMultipel(q, KURSREGISTER)",
   "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);

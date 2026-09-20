@@ -1,0 +1,244 @@
+{
+ "verktyg": "verktyg/_s7u1o127-slidersond.mjs (o123-sond + tabbklick-läge)",
+ "datum": "2026-09-20T21:16:52.145Z",
+ "mal": "https://lab.ak1nvestor.com/kalkylator",
+ "tabtext": "Poängsätt manuellt",
+ "visport": "390×844, DSF 2, iPhone-UA",
+ "target": "52 px tryckyta",
+ "steg": [
+  {
+   "steg": "före tabbklick (aktiv flik vid sidladdning)",
+   "slidersISyn": 0,
+   "tryckmalUnder52": 0
+  }
+ ],
+ "aktivFlik": {
+  "sliders": [
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   },
+   {
+    "w": 16,
+    "h": 16,
+    "font": 16,
+    "ariaValueNow": "3",
+    "ariaLabel": null,
+    "tumKlass": "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:poin",
+    "rotKlass": "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[or",
+    "rotW": 128,
+    "rotH": 6
+   }
+  ],
+  "antalSliders": 20,
+  "slidersUnder52": 20,
+  "antalInteraktiva": 82,
+  "tryckmalUnder52": 20,
+  "tryckmalUtanSliders": 0
+ }
+}

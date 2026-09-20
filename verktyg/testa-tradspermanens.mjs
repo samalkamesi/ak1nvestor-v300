@@ -34,7 +34,11 @@ const ROTA = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 // prod — scenarion-svitens mönster). Läsning endast; filen rörs ALDRIG (R2).
 const ENV_SOKVAGAR = [path.join(ROTA, ".env.production.local"), "/home/ak1a/AK1/.env.production.local"];
 const ENV_SOKVAG = ENV_SOKVAGAR.find((p) => existsSync(p)) ?? ENV_SOKVAGAR[0];
-const MAL_STATE_SOKVAG = path.join(ROTA, "data", "vakten", "mal-state.json");
+// mal-state: arbetsytan först, sedan PROD-trädet — statet skrivs av mål-
+// maskineriet i prod-trädet (gitignorerat, finns aldrig i en klon); utan
+// prod-fallback blir varje omstartsmätning utanför prod falskt RÖD
+// (lasPass/scenarion-precedensen — V215.2:s kur, samma rot).
+const MAL_STATE_SOKVAGAR = [path.join(ROTA, "data", "vakten", "mal-state.json"), "/home/ak1a/AK1/data/vakten/mal-state.json"];
 
 const BAS_ARG = process.argv.find((a) => a.startsWith("--bas="));
 const BAS = (BAS_ARG ? BAS_ARG.slice(6) : process.env.STUDIO_BAS || "http://localhost:3000").replace(/\/+$/, "");
@@ -156,7 +160,7 @@ async function main() {
     malDetalj = `status-API onåbart (${fel instanceof Error ? fel.message.slice(0, 60) : "okänt"})`;
   }
   if (!malOk) {
-    const disk = existsSync(MAL_STATE_SOKVAG);
+    const disk = MAL_STATE_SOKVAGAR.some((p) => existsSync(p));
     malOk = disk;
     malDetalj += ` · mal-state.json ${disk ? "finns på disk" : "saknas"}`;
   }

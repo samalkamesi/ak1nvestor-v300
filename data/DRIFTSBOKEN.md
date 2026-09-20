@@ -2942,3 +2942,47 @@ protokoll, städa lokal PG"). Anspråk disk-först 19:11 med P1–P9 låsta
 Kö: blad 11:s födelsebevis 02:30 imorgon (förhandsregister: public ≈
 1 345 719 + nattens tillväxt; blad-11 levande förhandsverifierat av u1
 12:38) · aufr kvällspunkt 2 (tvåpunktsbas) · kund/R2 GitHub-nyckeln.
+
+## S10-U2 (manifest auto-s10-1789923906930, ANDRA INSTANSEN) — KEDJA 2-KVALL: moln-JSON:ns restore-väg bevisad för 09-20 + u3:s köpostsband restore-stängt (2026-09-20 19:21–19:28 lokal, GODKÄNT)
+
+Andra u2-instansen i omgången (första instansen levererade APP-DB kvällspunkt 4,
+commit 7f3b076e 19:17:56 — denna instans valde enligt ordern nästa fria objekt;
+anspråk disk-först med P1–P10 låsta FÖRE mätning: data/vakten/s10-u2-kedja2dr-2026-09-20-ansprak.md).
+VAL: KEDJA 2 (molnbackupens full-JSON) hade INTE körts sedan 09-17 medan alla
+mätningar 09-18→09-20 var KEDJA-0/1 — och JSON-filen är appens ENDA händelsekopia
+(u2:a-instansens 19:12-mätning: RPO-gap 1 478 mot just denna fil). Morgonens u2
+stängde u3:s band [2 400, 2 950] via HEADER-läsning; detta pass bevisar
+RESTORE-vägen: `node verktyg/dr-kedja2.mjs` (u3:2:s verktyg, OMODIFIERAT) GRÖN
+exit 0 — system-events-full-2026-09-20.json.gz (27 792 947 B, SHA c8735a87…,
+header 168 696/truncerad false) → gzip-ström → giltighetskontrakt → COPY →
+skrap-DB ak1a_dr_json → oberoende omräkning.
+
+MÄTETAL: RTO 34,3 s (COPY-fas 34,2 s · 4 933 rader/s; ref 09-17: 25,0 s @ 163 039)
+· FYRA-SAMMA 168 696 (header == lästa == COPY-n == PG == unika id) · 0 felaktiga ·
+0 dubblett-id · severity info 167 765/warning 931 · typer oversattning 146 190 ·
+trafik 21 361 · sakerhet 1 031 · akm2_snapshot 101 · jsonb-prov 21 361 == trafik
+EXAKT · tidsfönster till 02:38:45,830+02. Dagssteg 2 629 ∈ [2 400, 2 950] ✅ —
+köposten nu stängd på BÅDA vägarna (header + restore).
+
+PREDIKTIONSDOM 7 ✅ / 3 ❌ ärligt bokförd: P5 max(tid)-bandet sattes runt
+dumpstart men sista eventet ligger 107 s FÖRÄRAN (molnexportens eftersläpning —
+korrigerat band: [dumpstart−300 s, dumpstart]); P7a–c linjär skalning av 09-17:
+fördelningen förutsatte all-tillväxt men oversattning är FROSEN och trafik
+kvällsväxer (samma klass som u2:a-instansens "fönstermedel ≠ fas"-läxa).
+
+FYND (observationsposter; cron-yta = huvudagentens): (1) oversattning EXAKT
+146 190 sedan 09-17 = 0 nya på 3 dygn — troligen motorn klar (100 % översatt);
+följs mot 09-21:s JSON, två veckors stilla = definitivt bevis. (2) trafik
++5 446 på 3 dygn (~1 815/dygn, kvällstyngt) — blockeringstrafiken lever.
+(3) akm2_snapshot 101 OFÖRÄNDRAD i aufr-events medan pumpen skriver
++18 984/dygn i rkaq — entalsfönster, räknas ALDRIG som snapshot-bevis.
+(4) kedja 2:s "02:40-punkt" mäter faktiskt 02:38:45 (107 s eftersläpning) —
+relevant vid RPO-mätning mot live-klockan.
+
+Städning OBEROENDE egenmätt: ak1a_dr_json raderad · PG17 down (viloläge) · /tmp
+ren · arkiv ENDAST LÄST bevisat (SHA-256 + mtime byte-identiska före/efter).
+KVD: src/ orörd = INGET bygge (grinden bär baslinjen) · R2 orörd · data/blogg/
+orörd · syskonytor orörda · GDPR endast antal/typer. Protokoll:
+DR-KEDJA2-ATERSTALLNING-2026-09-20-KVALL.md/.json + maskinellt
+DR-KEDJA2-2026-09-20-AUTO.md. Kö: blad 11:s födelsebevis 09-21 02:30 ·
+oversättnings-stillastående följs 09-21 02:40 · kvartalsövning ≤2026-12-20.

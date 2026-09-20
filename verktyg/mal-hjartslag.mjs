@@ -179,7 +179,16 @@ async function main() {
         `SJÄLVHEALNING: frusen turn (${Math.round((nu - status.uppdaterad) / 60000)} min utan puls) — pm2-omstartar + mål återställs`,
       );
       try {
-        execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
+        // VÅG 215 — pm2-race är ALDRIG skäl att avbryta mål-kirurgin (bevis
+        // 2026-09-20 08:41: "process already online" när deploy/pulsvakt
+        // omstartade samtidigt — malSatt-fetchen skippades, målet låg
+        // oarmerat i återställningsfönstret). Omstarten skedde ändå via den
+        // andra kanalen; här loggas bruset och KIRURGIN fortsätter.
+        try {
+          execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" });
+        } catch (e) {
+          logga("SJÄLVHEALNING: pm2-race (fortsätter ändå) — " + String(e).slice(0, 80));
+        }
         await new Promise((sov) => setTimeout(sov, 12_000));
         await fetch(`${BAS}/api/studio/session`, {
           method: "POST",
@@ -308,7 +317,13 @@ async function main() {
       `SJÄLVHEALNING: kilad turn (${state.studsadeKicker} studsade kickar) — pm2-omstartar ak1a och återställer målet`,
     );
     try {
-      execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
+      // VÅG 215 — samma race-vaccin som frusen-turn-grenen: pm2-brus avbryter
+      // ALDRIG målåterställningen (bevis 2026-09-20 08:41).
+      try {
+        execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" });
+      } catch (e) {
+        logga("SJÄLVHEALNING: pm2-race (fortsätter ändå) — " + String(e).slice(0, 80));
+      }
       await new Promise((sov) => setTimeout(sov, 12_000));
       await fetch(`${BAS}/api/studio/session`, {
         method: "POST",

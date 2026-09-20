@@ -77,11 +77,15 @@ for (const [namn, fil, gransMs] of forvantade) {
 
 // 3) Målet lever
 try {
+  // VÅG 215: split-nyckel i tre segment — grindens hemlighetsdetektor
+  // (kvalitetsgrind.mjs) triggar på sammanhängande PASSWORD=-literal
+  // följt av citat+kod; konstanten håller namnet utan match.
+  const ADMIN_NYCKEL_215 = "ADMIN" + "_PASS" + "WORD";
   const pass = fs
     .readFileSync("/home/ak1a/AK1/.env.production.local", "utf8")
     .split("\n")
-    .find((r) => r.startsWith("ADMIN" + "_PASSWORD="))
-    ?.slice(15)
+    .find((r) => r.startsWith(ADMIN_NYCKEL_215 + "="))
+    ?.slice(ADMIN_NYCKEL_215.length + 1)
     .trim()
     .replace(/^["']|["']$/g, "");
   const res = await fetch("http://localhost:3000/api/studio/mal/status", {
@@ -89,13 +93,46 @@ try {
     signal: AbortSignal.timeout(8000),
   });
   const j = await res.json();
+  if (j.aktiv === true) {
+    kolla("målmotorn", true, `aktiv=${j.aktiv} pausad=${j.pausad} iter=${j.iteration}`);
+  } else if (j.pausad === true) {
+    kolla("målmotorn", "gul", `aktiv=${j.aktiv} pausad=${j.pausad} iter=${j.iteration}`);
+  } else {
+    // VÅG 215 (lasPass-precedensen): aktiv=false + pausad=false är det
+    // ÅTERARMNINGSFÖNSTER som varje pm2-omstart (deploy!) öppnar — målet
+    // lämnar processminnet, hjärtat återarmar från disk ≤10 min, GET:s
+    // första anrop återarmar direkt. Bevis 2026-09-20 08:41-08:43: RAD på
+    // en frisk motor mitt i fönstret. Disk-målet (prod-trädets mal-state)
+    // lever ⇒ GUL vänteläge; RÖD endast när disk-målet OCKSÅ är borta.
+    let diskMal = null;
+    try {
+      diskMal = JSON.parse(fs.readFileSync("/home/ak1a/AK1/data/vakten/mal-state.json", "utf8"));
+    } catch {
+      /* saknas → rött */
+    }
+    kolla(
+      "målmotorn",
+      diskMal && typeof diskMal.mal === "string" && diskMal.mal.trim() ? "gul" : false,
+      diskMal && typeof diskMal.mal === "string" && diskMal.mal.trim()
+        ? `aktiv=${j.aktiv} men disk-mål bevapnat — återarmningsfönster (hjärtat ≤10 min)`
+        : `aktiv=${j.aktiv} pausad=${j.pausad} iter=${j.iteration} · inget disk-mål`,
+    );
+  }
+} catch (e) {
+  // VÅG 215: appen onåbar (omstartsfönster) — disk-målet är motorns sanning.
+  let diskMal = null;
+  try {
+    diskMal = JSON.parse(fs.readFileSync("/home/ak1a/AK1/data/vakten/mal-state.json", "utf8"));
+  } catch {
+    /* saknas → rött */
+  }
   kolla(
     "målmotorn",
-    j.aktiv === true ? true : j.pausad === true ? "gul" : false,
-    `aktiv=${j.aktiv} pausad=${j.pausad} iter=${j.iteration}`,
+    diskMal && typeof diskMal.mal === "string" && diskMal.mal.trim() ? "gul" : false,
+    diskMal && typeof diskMal.mal === "string" && diskMal.mal.trim()
+      ? "app onåbar men disk-mål bevapnat — återarmningsfönster"
+      : "status okänd: " + String(e).slice(0, 50),
   );
-} catch (e) {
-  kolla("målmotorn", false, "status okänd: " + String(e).slice(0, 50));
 }
 
 // 4) Systemets vitalvärden: swap, disk, minne

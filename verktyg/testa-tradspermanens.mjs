@@ -170,6 +170,27 @@ async function main() {
     `${(storst / 1024).toFixed(1)} kB av ${(TAK_BYTE / 1024).toFixed(0)} kB`,
   );
 
+  // ── KONTROLL 5 (VÅG 215.1): dubbellagringen borta — kartan tunnad ─────
+  // sessionskarta bär antalPoster (number) och INGEN historik per session;
+  // historik-fältet capar äldre poster ärligt (de 3 senaste hela) —
+  // tradHistorik (kanonvyn) förblir orörd av taket.
+  const kartaInslag = Object.entries(forsta.json.sessionskarta ?? {});
+  const kartaOk =
+    kartaInslag.length > 0 &&
+    kartaInslag.every(
+      ([, v]) => typeof v.antalPoster === "number" && !Array.isArray(v.historik),
+    );
+  const histCapOk =
+    Array.isArray(forsta.json.historik) &&
+    forsta.json.historik
+      .slice(0, Math.max(0, forsta.json.historik.length - 3))
+      .every((p) => typeof p?.text !== "string" || p.text.length <= 2010 || p.text.includes("kapad i transporten"));
+  kontroll(
+    "5. V215-payload-tak: kartan tunnad (antalPoster, ingen historik) + historik-cap ärlig",
+    kartaOk && histCapOk,
+    `${kartaInslag.length} sessioner i karta · historik ${Array.isArray(forsta.json.historik) ? forsta.json.historik.length : "?"} poster`,
+  );
+
   console.log(
     process.exitCode
       ? "[tradpermanens-E2E] MINST EN KONTROLL MISSLYCKADES"

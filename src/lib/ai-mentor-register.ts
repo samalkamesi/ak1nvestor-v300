@@ -406,6 +406,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "rs-06-riskens-anatomi", titel: "Riskens anatomi — de fyra adresserna där risken bor", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "rs-07-leverantorsrisken", titel: "Leverantörsrisken — inköpens koncentration och maktbalansen", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "rs-08-modellrisken", titel: "Modellrisken — den femte adressen: antagandena, felmarginalen och det egna felet", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
+  { slug: "rs-09-personalrisken", titel: "Personalrisken — den sjätte adressen: nyckelpersonerna, kunskapen och successionen", kategori: "RISK", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "se-01-saassektorn", titel: "SaaS-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 14, minuter: 28, niva: "Avancerad" },
   { slug: "se-02-halvledarsektorn", titel: "Halvledar-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 11, minuter: 30, niva: "Avancerad" },
   { slug: "se-03-forsvarssektorn", titel: "Försvars-sektorn", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 13, minuter: 24, niva: "Intermediär" },

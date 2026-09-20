@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (458 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (459 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 416 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 417 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -416,6 +416,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "rs-06-riskens-anatomi", titel: "Riskens anatomi — de fyra adresserna där risken bor", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-07-leverantorsrisken", titel: "Leverantörsrisken — inköpens koncentration och maktbalansen", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rs-08-modellrisken", titel: "Modellrisken — den femte adressen: antagandena, felmarginalen och det egna felet", kategori: "RISK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rs-09-personalrisken", titel: "Personalrisken — den sjätte adressen: nyckelpersonerna, kunskapen och successionen", kategori: "RISK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-01-vad-ar-en-moat", titel: "Vad är en moat? — bolagets försvarsmur", kategori: "MOAT", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-02-moat-erosion-och-vallgravstest", titel: "Moat-erosion — när vallgraven grävs igen", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mt-03-vallgraven-i-siffror", titel: "Vallgraven i siffror — att mäta en moats styrka och livslängd", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -494,4 +495,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 458;
+export const LARVAG_ANTAL_KURSER = 459;

@@ -145,3 +145,26 @@ node verktyg/prestanda-lighthouse.mjs s7u1o102-efter /en/kurser /ar/kurser
   2 LH + 1 LH-sammanfattning) + worklog-rad; anspråk disk-först (gitignorerad väg).
 - R2 orörd · data/blogg/ orörd · INGET bygge (prod-synken äger) · syskonytor orörda
   (u2:s kur + verktyg lästa+återanvända med attribution; u3:s ytor orörda).
+
+## §9 EFTER-status vid fönstrets slut (02:2x UTC 2026-09-20): deploy infra-blockerad — vakarövertag enligt §5
+
+Tidsaxel: 02:07:26Z byggstart (NY KOD 65f9963d → 5e6a9c0e, läkebackup skapad) →
+**02:10:50Z bygg OOM-dödat** (Killed/heap — känd klass) → 02:18:39Z retry
+**byggfel ENOTEMPTY: rmdir `.next/server/app/ar/kurser`** (Turbopacks rensningsrace
+mot ISR-återvärmning av läkebackupens sidor; notera att /ar/kurser är denna vågs
+sidfamilj — mät-curlarna kan själva ha triggat revalidation-skrivor i katalogen
+mellan restore och clean) → **02:21:46Z ÄVEN good-HEAD-bygget failar** (prod-synken:
+»KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning«) ⇒
+rot = .next/FS-tillstånd + ISR-race, EJ kod i kön (o100-kuren är CSS-only, o102
+data-only). **Prod GRÖN hela vägen**: pm2 serverar läkebackupen (BUILD_ID 9RBeu),
+https ×5 = 200 (01:5x) + /en/kurser 200 (02:1x).
+
+**Bokfört åt infra-ägaren (prod-synk/kraschvakt — ALDRIG fabrikens yta, våg 100):**
+ENOTEMPTY-klassen kan kräva att `.next/server/app/ar/kurser` (eller hela .next ur
+läkebackup-källan) rensas i ett pm2-tyst fönster FÖRE nästa byggförsök; good-HEAD-
+failen 02:21:46Z utesluter köns kod som orsak.
+
+**EFTER förblir vakarövertag-barra (§5):** när deploy landar med 9da2912c som
+förfader — prod 200 ×5 → `node verktyg/_s7u1o99-kurstips-sond.mjs efter-412-{en,ar}`
+(förväntan enligt §2: wrap.h = golv 364/344 vid första render med sektionen saknas,
+0 px växning vid hydrat) → LH CLS ≤ 0,01 bägge speglar → svenska /kurser CLS 0 kvar.

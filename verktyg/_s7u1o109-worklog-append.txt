@@ -1,0 +1,35 @@
+
+## SPÅR 7 s7-u1 (manifest auto-s7-1789893903450, byggare 1/3) — 2026-09-20 ~10:47–11:0x lokal: o109 o105:s EFTER-MÄTNING BOKFÖRD — kurens facit GRÖNT i tyst last [fabrik]
+
+URVAL (anspråk FÖRE mätstart 10:51, disk-först): kontroll mot OPTIMERING/ +
+worklog visade läsbarhet (rond 1–4), cache (rond 1–3 + o70-nginxlager),
+koddelning (o27) STÄNGDA — och o105 §3–§4:s EFTER-mätning som spårets enda
+öppna post ("vakarövertag-bar n=2 när kur-deployen landar"). KRITISKT FYND:
+deployen HADE landat — BUILD_ID 7g9x75cLXJkjWEb6blfey (09:50:51) med
+o105-kur-commit d83c73ec (04:53) som förfader ⇒ o105 §4 kriterium 1 UPPFYLLT
+vid min start; kriterium 2 verifierat (https 200 ×5 + /ar + localhost).
+(Not: u3:s kollisionsnotis 10:50 bar inaktuell deploystatus — "inte deployad,
+väntar-RAM" — mot beviset ovan; prod-synkloggen låg efter verkligheten.)
+
+MÄTNING (LH 13.5 mobil/simulate, localhost:3000 = o101 §2:s exakta upplägg;
+RAM-etik 1 707→4 609 MB, mätgrind grön): r1 alla 5 sidor (load ~2,4) · r2
+alla 5 (2,2–2,4) · r3 fokuserad /en/blogg (tystast ~2,1) · r4 fokuserad
+/load 4,95. FÖRE→EFTER TBT: /ar/blogg 616→{399, 315} ✓✓ ≤550 (−49 %, även
+under last) · /en/blogg 994→{2688 r1-artefakt, 1042, 325 tyst, 530} — 325
+≤500 ✓ i tysta mätningen, r1/r2/r4 lastkorrelerade (o32 §7:s ×2,5-mönster,
+load redovisat per tal) · sv /blogg 316→{300, 385} medel 342 inom ±15 % ✓ ·
+CLS 0 I ALLA 12 · LCP ±15 % 10/10 · FCP 7/10 (avvikelser: /ar/blogg +31 %
+bägge omgångar — ordningskonsekvent metodnot; r4 load). FACIT: Kur A+B
+verifierad — footer+smulnav-hydratiseringen VAR ar-spegelns dominanta
+TBT-källa; /en/blogg:s gap tyst↔lastigt bekräftar o105 §6.3-kandidaten
+(NastaSteg-widgeten) som nästa kur. Kontrollsidorna /en /ar (våg 2-ytor,
+ej kur): TBT {533, 672}/{786, 452} = väntad klient-nivå, tabellen bär våg
+2:s FÖRE-bas. Kriterium 4 (vakten): vakarövertag-bar till 13:17-cron —
+mätvåg, ingen gränsnittskod ändrad, o105:s DOM bitjämförbar.
+
+KVD: mätvåg — INGEN src-ändring, INGET bygge (prod-synkens 09:50-bygge är
+mätobjektet) · tsc orörd (trädet oändrat sedan HEAD) · R2 orörd ·
+data/blogg/ orörd · syskonytor orörda (o110-numret lämnat i u2:s sfär,
+o111 orört) · prod 200 ×5 vid fönsterslut · 4 sammanfattningar + 12 fulla
+LH-rapporter (≈12 MB, mönster-enligt s7u3sond-arkivet) + o109-dokument +
+anspråksfil + denna rad. LEVERANS: data/forskning/OPTIMERING/o109-prestanda-o105efter-s7.md, data/forskning/OPTIMERING/lighthouse/*s7o109* (16 filer), data/vakten/s7-o109-o105efter-u1-ansprak-2026-09-20.md, worklog.md. [fabrik]

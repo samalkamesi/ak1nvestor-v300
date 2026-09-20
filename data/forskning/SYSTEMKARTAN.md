@@ -3008,6 +3008,42 @@ av prod-synken under lås; tsc-baslinjen vilar i pre-commit-grinden) ·
 R2 orörd · data/blogg/ orörd · syskonytor orörda · commit med pathspec
 + -F-fil. [fabrik]
 
+## UPPDATERING 2026-09-20 (dokvåg s9-u1, manifest auto-s9-1789922106888 — C19 Trafik, spår & konvertering diffad mot verkligheten; DAGLIG RÖRELSE BEVISAD, samtliga tre gapen återmätta ÖPPNA)
+
+Fabriksagent s9-u1 (byggare 1/3). VAL (anspråk disk-först ~18:4x lokal,
+data/vakten/auto-s9-1789922106888-s9-u1-ansprak-C19-dokvag.md FÖRE
+mätning; u2:s C15+E26 lästa ur deras anspråksfil och respekterade; u3
+lämnades öppen med rekommenderad staleness-ordning D38 → 09-19-kohorten):
+C19 = mogenhetsregeln — äldsta fria kohorten (09-18) MED verklig rörelse
+(live-talen är pär-dagen-färska; GDPR-gapet förtjänar färsk dom), medan
+D38 (sista fria 09-18-systemet) är kodstilla utan känd data-rörelse.
+Allt EGENMÄTT 2026-09-20 ~18:4x lokal (egna loopback-sonder, git-log,
+filläsning, radräkning) — aldrig worklog-läsning.
+
+| Mått | Kartan 09-18 | Verkligheten 09-20 (mätning) |
+|---|---|---|
+| /api/trafik live-tal | 200 {skyddad, besokareIdag:29, blockerat24h:9} | **200 (0,42 s) {ok, skyddad:true, besokareIdag:41, blockerat24h:3}** — pär-dagen-rörelse +12 besökare/−6 blockeringar; DNA-blockeringen lever och räknar |
+| Ruttmönster ×4 | track 400 · tracer 405+400 · intention 400 · konvertering 404 | **IDENTISKA alla fyra** (egna sonder, tomma kroppar = rutternas egen validering, inga nya spår): POST /api/track {} → 400 · GET /api/tracer 405 + POST {} → 400 · POST /api/konvertering/intention {} → 400 · GET /api/konvertering → 404 |
+| Kodstillhet | beacon 09-13 · tracer 09-03 · rapportör 09-04 | **0 commits på hela C19-ytan sedan 09-18** (git-bevis): globalt-skal.tsx 395 r (0fe32c6c 09-13) · tracer.ts 742 r (09050a8c 09-03) · trafik-rapportor.tsx 171 r (763d2b1b 09-04) · dashfraga.ts 291 r (71da1aad 09-02) · eko-koppling.ts 581 r (6b5958e9 09-03) · cookie-consent.tsx (184c6dc7 09-16, yngst — kakmodalen) |
+| Gap 1 (0 sviter) | mätt 09-16/09-18 | **KVARSTÅR: 0 testa-\*-trafik/track/tracer/konvertering/dashfraga i verktyg/** |
+| Gap 2 (alarm-trösklar) | mätt 09-16/09-18 | **KVARSTÅR: 0 alarm/tröskel-träffar i trafik-rapportor.tsx + dashfraga.ts + trafik-status-rad.tsx (62 r)** |
+| Gap 3 (beacon före samtycke) | mätt 09-18 | **KVARSTÅR I KOD dag 4**: PageViewBeacon oförändrad (globalt-skal.tsx:245, renderad :331) — ak1a-session-localStorage :257 + sendBeacon/fetch /api/track :269/:271 med 0 lasCookieSamtycke-träffar i filen; samtyckesfunktionens konsumenter alltjämt enbart cookie-consent.tsx + trafik-rapportor.tsx ⇒ kurmallen (lås beaconen på samma samtyckesnyckel) okuraterad |
+| Ekokoppling | assistent-panel + /api/eko (observation) | **BÅDA LEVER**: GET /api/eko 200 (egen sond) · assistent-panel.tsx bär ekosystem-referens (egen läsning) |
+| Admin-vy | "trafik & säkerhetsvyer i admin" (ospecificerad) | **PRECISERAD: fliken "Trafik & Säkerhet 📡" (admin/page.tsx:164, endastAdmin) → TrafikSakerhetPanel (:38, :775–778)** |
+
+Dom: C19 **LEVER 7** — orörd (E33/B14-precedensen: mätning och daglig
+datadrift ger ingen kapabilitetspoäng; gapen är dokumenterade brister,
+ej regressioner). Snitt **7,5/284/38 OFÖRÄNDRADE**.
+
+Kö: (a) gap 3 = den GDPR-laddade kurmallen (trafik-rapportörens gating
+redan kurmallen — beaconen saknar låset) värdar en kodvåg; (b) gap 1
+svit (P6-kontraktet "noll nya spår" är testbart); (c) D38 + 09-19-
+kohorten fria för u3.
+
+KVD: data-only (karta + worklog; anspråk på disk) — src/ orörd = INGET
+bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (u2:s C15/E26
+respekterade via anspråksfilen) · commit med pathspec + -F-fil. [fabrik]
+
 ---
 
 # A. UTBILDNINGENS KÄRNA
@@ -4169,7 +4205,22 @@ Score 9 kvar — felen är drift, inte systemets kod; gap-listan oförändrad.*
   mellan deploys — mjukare i praktiken: verktyget körs vid kurstillägg
   (sok-index.json committad färsk 2026-09-15) men ingen mekanisk tvingan.
 
-## C19. Trafik, spår & konvertering — LEVER — 7/10 *(uppdaterad 2026-09-18)*
+## C19. Trafik, spår & konvertering — LEVER — 7/10 *(uppdaterad 2026-09-20)*
+*Uppdatering 2026-09-20 (dokvåg s9-u1, manifest auto-s9-1789922106888):
+återdiffad — allt EGENMÄTT ~18:4x lokal. DAGLIG RÖRELSE BEVISAD: GET
+/api/trafik 200 {besokareIdag:41, blockerat24h:3} mot 09-18:s {29, 9}
+(+12/−6) — DNA-blockeringen lever; ruttmönstret ×4 (track 400 · tracer
+405+400 · intention 400 · konvertering 404) identiskt; /api/eko 200 +
+assistent-panel-konsumenten lever. Koden stilla: 0 commits på ytan sedan
+09-18 (beacon 09-13 · tracer 09-03 · rapportör 09-04 · dashfraga 09-02 ·
+eko-koppling 09-03 · cookie-consent 09-16). Samtliga tre gapen återmätta
+ÖPPNA: (1) 0 sviter; (2) 0 alarm-trösklar (även trafik-status-rad.tsx
+62 r); (3) beaconen sänder fortfarande FÖRE samtycke (globalt-skal.tsx
+:245/:257/:269/:271, 0 samtyckesläsningar — kurmallen = trafik-
+rapportörens gating). Admin-vyn preciserad: fliken "Trafik & Säkerhet
+📡" → TrafikSakerhetPanel (admin/page.tsx:164). Score 7 orörd
+(E33/B14-precedensen). Se diff-tabellen i UPPDATERING-sektionen.*
+
 *Uppdatering 2026-09-18 (dokvåg s9-u3, manifest auto-s9-1789752906622):
 återdiffad — allt EGENMÄTT ~19:5x lokal. LIVE: POST /api/track {} → 400 ·
 GET /api/trafik → 200 {ok:true, skyddad:true, besokareIdag:29, blockerat24h:9}

@@ -1,0 +1,45 @@
+studio: auto s1-u3 AR10 bilaktier-ar OBEROENDE KONTROLL — FLYTTKLAR EFTER EN RÄTTNING (slotdubbel: m9-3 levererat av förstainstansen b015dd36 ⇒ pivot FIFO till ar-familjens äldsta ogranskade) [fabrik]
+
+Sond _s1u3-ar10-bil-verify.mjs 27 kontroller: 23 PASS + 4 NOT-redovisade + 0 FEL.
+Sifferparitet 87/87 multiset IDENTISKA (ar-familjens renaste jämsides AR6 61/61 ·
+SV mellanslagstusental/decimalkomma == AR punkt/tusentelskomma). Struktur 13/13:
+slug+ar · 9 fält · title 54/60 · OG 147/155 (FRI från originalets A1-felstavning) ·
+tags 5=5 · body 1 394/1 400 · H2 7=7 · disclaimer negerad arabisk exakt sista rad ·
+publishedAt byggdagskonvention. JURIDIK 2007:528 REN: varumärkesgrind
+(kontrolleraText-replik) 26 regexer × 3 ytor = 0 FEL/0 VARNING · arabiska
+rådgivningsmönster 0 på 8 (اشترِ/بِعْ/أنصحك/نوصي بشراء/استثمر في هذا/توصية
+بالشراء/توصية بالبيع/ننصحك) · bärande formel "تعليم في المنهجية، لا إرشاداً" ·
+0 lagrum ⇒ ingen lagrumsblandning. 911 = 0 på 6 mönster. Läckor 0 (latinska
+egennamn bär inga diakriter). Aritmetik 9/9 motorgrön (fabriksexemplet ×7 ·
+Tesla −53/−46 · Polestar 200 M/mån · LVMH 4,2×/3,5× > 3). Interna länkar 13/13
+multiset-identiska + 13/13 HTTP 200 mot localhost · 0 externa URL.
+
+ÄRVTEST mot B10:s DUBBELGRANSKNING 09-19 (u1 huvuddiff + u2 KOMPLEMENT;
+universum 25/25 + OICA/IEA webbgrundade): AR bär desamma tal ⇒ källkraft ärvd;
+egen eftersyn mot dagens fil (231 poster) oförändrad mot texten.
+
+FYND: B1-AR ÄRVT OCH MOTBEVISAT I DAGENS UNIVERSUM — "universums högsta
+bruttomarginal, LVMH 66" (أعلى هامش إجمالي) rank 59 av 218 värderade idag
+(58 över; Industrivärden m fl 100 %; 09-19-vintage rank 52/189) — byt-post
+speglar u1:s B1 (superlativ stryks, lyxkoncernen LVMH kvar, kontrasten >3×
+består oskadd). C1-AR "det dubbla" (1,96× Volvo / 1,62× Tesla) + C2-AR
+PowerCell-trend (serien ej monoton; −88→−30 sista året; KOORDINERAD med
+originalets C2 — tillför token 88/30) + C4-AR "över 20 %" → "omkring 20 %"
+(IEA:s egna tal) = speglade förslag. B2-AR rm 2→7 VILLKORAD (verkställs när
+originalets B2 verkställs; ar-familjens ord/600-konvention vs B-kontraktets
+ord/200 öppet bokförd). D1 notis. Alla söksträngar maskinellt unika (1/0).
+
+SYSTEMFYND till byggarspåret: ar-mallen speglar ORIGINALET, inte
+granskningsdiffen — AR10 byggdes ~22 h EFTER B10:s diffar landade, 4 av 6
+poster ärvdes (AR6-Sandvik = fall 2 ⇒ mönster); förslag: ar-byggaren läser
+granskning/-diff-filer före spegling; gäller sannolikt även -en-spegeln
+(u2:s flagga) och AR7/AR9/AR11+.
+
+Liggare: granskning/bilaktier-sa-analyserar-du-biltillverkare-ar-KONTROLL-2026-09-20.md
++ -ar-diff.json (nya filer; utkast-JSON:erna orörda — granskaren skriver ej
+om andras filer) + sond verktyg/_s1u3-ar10-bil-verify.mjs omkörbar + anspråk
+data/vakten/auto-s1-1789925707056-s1-u3-ansprak-2-ar10-bil.md (disk-först,
+gitignorerad katalog). Kö: AR7 konsument 01:04 → AR9 halvledar 01:05 →
+AR11+ i FIFO. Publicering = kundens klick (R2). KVD: src orörd = INGET
+bygge · R2 orörd (priser/tier/publicering) · data/blogg/ orörd · syskonytor
+orörda · commit med pathspec + -F-fil.

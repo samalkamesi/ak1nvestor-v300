@@ -34,7 +34,7 @@ export const metadata: Metadata = spegelMetadata({
 
 export default function DagensPassPageEn() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "Today's Session" }]}>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Today's Session" }]}>
       <DagensPass />
     </SeoPageShell>
   );

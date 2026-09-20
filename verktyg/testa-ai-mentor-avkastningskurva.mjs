@@ -589,10 +589,10 @@ const GAMLA = [
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 458 kurser (spår 5:s omgång-19-rebake 2026-09-19; basotestet E01 grönt)",
+    "K03 register-läge — 464 kurser (spår 5:s omgång-22-rebake 2026-09-20; basotestet E01 grönt)",
     // s8-u2 (o98): 446→452 — spår 5:s omgång 20 (+6 kurser 2026-09-19) lämnade
     // s6-u3:s namnuppdatering med gammal konstant; E01 grönt på 452.
-    KURSREGISTER.length === 458,
+    KURSREGISTER.length === 464,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -652,7 +652,14 @@ const GAMLA = [
   // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
   // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
   "svaraLokaltMultipel",
-  "svaraLokaltMarknadsrytm",];
+      // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+      // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+      // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+      // — FÖRE marknadsrytm (deras SIST-deklaration).
+      "svaraLokaltRiskadress",
+      "svaraLokaltBalansdjup",
+      "svaraLokaltOptionshantverk",
+      "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

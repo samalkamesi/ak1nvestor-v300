@@ -1,0 +1,176 @@
+{
+  "slug": "od-08-binomialtradet-och-replikeringen",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Binomialträdet och replikeringen — hur optionen får sitt pris",
+  "summary": "OPTIONS & DERIVAT-familjens åttonde steg öppnar prissättningens maskinrum: binomialträdet, det diskreta redskap som förvandlar optionsteorin från formel till mekanik. Sonden mot 458 kurser visar att binomialträdet, replikeringsportföljen och riskneutral värdering har noll kursägare — km-062-blackscholes äger formeln och nämner trädet en enda gång i förbifart (för amerikanska optioner), medan vägen fram till formeln förblir oskriven. Kursens tes är trefaldig. Först: ett pris behöver ingen prognos — arbitragens järnvillkor säger att två vägar till samma utfall måste kosta samma, och det enda som krävs är att slumptveket hålls stilla ett ögonblick. Sedan: replikeringen är maskinen — på en aktie som går till 120 eller 80 med köpoptionens lösenpris 100 blir hedgekvoten (20 − 0) delat med (120 − 80) = 0,5 aktier, och med räntan 2 procent blir lånet 40 delat med 1,02 = 39,22: portföljen kostar 50 − 39,22 = 10,78, och den betalar 20 i upp-läget och 0 i ner-läget — exakt som optionen, därmed är 10,78 optionens pris. Tredje: den riskneutrala sannolikheten q = (1,02 − 0,80) delat med (1,20 − 0,80) = 0,55 är ingen tro på upp-gångar utan en viktsindelning som ger samma svar (0,55 × 20 delat med 1,02 = 10,78) — prissättning utan åsikt. Trädet växer sedan: två steg ger 144/96/64 och den europeiska köpens värde 12,79, medan den amerikanska säljoptionen visar frihetens pris — vid noden 80 är fortsättningsvärdet 18,04 mot det omedelbara 20, och tidig lösen är värt pengar: hela optionen 9,78. Konvergensen mot Black-Scholes (km-062) och trädet som stressmikroskop kompletterar fältet. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "why": "OPTIONS & DERIVAT-familjens sju första steg har kartlagt instrumenten och deras egenskaper — grekerna (od-01), den implicita volatiliteten (od-02), warranten mot den svenska marknaden (od-03), positionerna och deras byggstenar (od-04, od-06), utdelningens dag (od-05) och terminen (od-07) — men inte den fråga varje pris vilar på: varifrån kommer siffran? Sonden mot 458 kurser bekräftar: binomialträdet, replikeringsportföljen och riskneutral värdering har noll kursägare, och km-062-blackscholes äger formeln med trädet som en förbifart — binomiala träd för att värdera amerikanska optioner, just den mekanism den här kursen bygger ut). Gränsen är dokumenterad: km-062 äger den slutna formeln i kontinuerlig tid, den här kursen äger maskinerien i diskret tid — ett steg i taget, med replikeringsportföljen som bevis och q som räkneverk. Det är familjens teoretiska fundament: där od-02 lär ut vad volatiliteten kostar och od-06 hur en position förvaltas, lär den här kursen varför priset är pris — och därför varför samma pris kan granskas, felsökas och stressas nod för nod. Scenarierutan (km-029) får sin mikroversion: ett träd är en scenarioanalys där varje gren har en ränteburen vikt.",
+  "learn": "Förstå arbitrageprissättningens järnvillkor: två vägar till samma utfall måste kosta samma — optionens pris behöver ingen prognos om världen, bara en replikering av dess utfall · Räkna hedgekvoten i ett enklastegsträd: aktie 100 med lägena 120 och 80 mot lösenpris 100 ger (20 − 0) delat med (120 − 80) = 0,5 aktier — optionens känslighet i siffror före grekerna · Bygga replikeringsportföljen: 0,5 aktier kostar 50, lånet 40 delat med 1,02 = 39,22 — portföljen kostar 10,78 och betalar 20 i uppläget (60 − 40,00) och 0 i nerläget (40 − 40,00): exakt optionens betalningsstruktur · Räkna den riskneutrala sannolikheten: q = (1,02 − 0,80) delat med (1,20 − 0,80) = 0,55 och priset (0,55 × 20) delat med 1,02 = 10,78 — samma svar som replikeringen, utan ordet tro · Förstå q:s natur: det är en viktsindelning som gör trädet väntevärdesneutralt, inte en marknadsprognos — den verkliga sannolikheten spelar ingen roll för priset · Räkna två steg: aktien 100 får lägena 144, 96 och 64, europeiska köpen med lösenpris 100 blir 12,79 (C-upp = 24,2 delat med 1,02 = 23,73; helheten 13,05 delat med 1,02) · Förstå den amerikanska frihetens pris: säljoptionen med lösenpris 100 har vid noden 80 ett fortsättningsvärde på 18,04 mot omedelbar lösen 20 — tidig lösen är värd pengar, och hela optionen bär 9,78 · Skilja trädet från formeln: när stegen blir många konvergerar trädet mot Black-Scholes (km-062) — trädet är mikroskopet som visar vad formeln komprimerar",
+  "history": {
+    "origin": "Louis Bachelier räknade 1900 på optioner i en avhandling som världen inte var redo för: priset som en process i tid, födelseåret för den matematik som senare kom att heta brownsk rörelse. Arbete som ignorerades i ett halvsekel — finansmatematiken före sin tid, utan köpare.",
+    "evolution": "Black, Scholes och Merton publicerade 1973 den slutna formeln — och samma decennium visade Cox, Ross och Rubinstein (1979) att samma pris kan byggas i diskret tid: ett binomialträd där varje steg har två lägen, och där replikeringsportföljen bevisar priset utan krav på kontinuitet. Trädet blev handelsgolvens kalkylblad: begripligt, stegbart och kapabelt att hantera den amerikanska optionens rätt att lösa i förtid — något den slutna formeln för europeiska optioner inte rår på.",
+    "modern": "I dag lever replikeringen i handelsboken: delta-hedgen är replikeringsportföljen i kontinuerlig drift, omräknad när trädet rör sig: delta-hedgen (od-01) är replikeringsportföljen i kontinuerlig drift, omräknad när trädet rör sig. Riskneutral värdering är motorn i hela derivatvärderingen — från enklaste trädet till monte carlo-motorer med miljoner banor — och i AK1A:s laboratorium är trädet scenarioanalysens minsta fullständiga enhet: varje gren ett utfall, varje viktsindelning en ränteburen fråga."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Pris utan prognos — arbitragens järnvillkor",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Ett steg, två världar — hedgekvoten",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Replikeringsportföljen — aktien och lånet",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Riskneutral sannolikhet — q som ingen tror på",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Två steg och den amerikanska friheten",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — trädet som mikroskop",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch höll sig borta från derivat och sade sig inte förstå instrument han inte kunde räkna på bakvägen — vilket är kursens poäng listat baklänges: den här räkningen går att göra på ett papper. Lynchs misstro riktade sig mot komplexitet utan insyn; replikeringen är motsatsen — en konstruktion där varje krona i priset kan spåras till en aktie och ett lån. Hans disciplin (förstå bolaget före papperet) översätts i trädet till: förstå utdelningen före optionen (od-05), förstå underliggande innan du prissätter något på den. Kursen ger hans fråga — vad betalar jag egentligen för? — ett maskinrum att besvara i: 10,78 är inte en åsikt utan en portfölj.",
+  "grahamSection": "Benjamin Graham hann aldrig prissätta optioner, men hans kärnkrav — att varje värde ska kunna härledas och granskas — är replikeringens signum: priset 10,78 är inget bud utan en konstruktion av 0,5 aktier och ett lån på 39,22, synlig krona för krona. Grahams marginal av säkerhet översätts i trädet till grenarnas vidd: en bredare spridning (120/80 mot 110/90) flyttar priset och därmed risken — och den som förstår mekanismen ser varför optionen är dyrast när osäkerheten är störst. Mr Market får en ny läsning: han kan ha fel om aktien, men två vägar till samma utfall kan inte länge ha olika pris — det är kursens enda och starkaste antagande.",
+  "ak1Section": "I AK1A:s metodik är binomialträdet scenarioanalysens atom: varje gren ett utfall, varje nod en beslutspunkt, varje viktsindelning bärd av räntan — precis strukturen i motorrummet scenarieruta (km-029) och Monte Carlo-labbet (ek-05) använder på större djup. Den riskneutrala viktningen är den bayesianska omviktningens (ek-06) raka släkting: båda byter vikter mot nya observationslägen, den ena i träd, den andra i fördelningar. AKM2:s riskmatris möter trädet i grekerna (od-01): hedgekvoten 0,5 är delta i dess enklaste skepnad — kursens räkning ger sensorvärdena som matrisen sedan bevakar. Fem tidshorisonter blir i trädet fem stegängder: ju fler steg, desto finare tidsupplösning — och desto närmare kontinuerlig tid, där km-062:s formellinje bor.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Pris utan prognos — arbitragens järnvillkor",
+      "intro": "Två sätt att tänka på ett pris: gissa framtiden och räkna väntevärden, eller bygga samma utfall av enklare delar och läsa av kostnaden. Kursen väljer den andra vägen — och dess enda antagande står här.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den klassiska frågan om en option — vad kommer aktien att göra? — är en prognosfråga, och prognosfrågor har inga säkra svar. Prissättningens fråga är en annan: vad kostar det att bygga aktiens betalningsstruktur med vanliga instrument? Om två konstruktioner betalar exakt samma i varje framtid har de samma pris idag — inte för att marknaden är klok utan för att skillnaden annars är fri peng: köp den billiga, sälj den dyra, stoppa skillnaden i fickan utan risk. Detta är arbitragens järnvillkor, och det är hela kursens teoretiska apparat: ingen prognos, ingen riskpreferens, ingen åsikt om upp- eller nedgång — bara kravet att ekvivalens kostar detsamma. Kursen genomför kravet i världens enklaste modell: en aktie som idag kostar 100 och som vid tidpunkten ett har exakt två lägen, 120 eller 80. Två lägen är förstås en förenkling av verkligheten — men det är en förenkling med en egenskap som gör den ovärderlig: varje konstruktion på dessa två lägen kan räknas ut till sista kronan, och därmed kan mekanismen ses utan att drunkna i notation. Räntan sätts till 2 procent per period — långivningens riskfria alternativ i modellvärlden. Frågan kapitlet lämnar till nästa steg: vad kostar en köpoption med lösenpris 100 på den här aktien? Svaret finns redan i järnvillkoret — det kostar vad replikeringen kostar — men räkningen måste göras."
+        },
+        {
+          "type": "definition",
+          "content": "Arbitrage: en handel som ger positivt utfall i minst ett läge och aldrig negativt, utan initial kostnad. Arbitrageprissättning: att härleda ett instruments pris från kravet att ingen arbitrage skall finnas — priset blir vad den replikerande portföljen kostar. Binomialträd: en modell där underliggande per steg har exakt två lägen (upp och ner), med kända faktorer och en känd riskfri ränta per period."
+        },
+        {
+          "type": "insight",
+          "content": "Järnvillkoret befriar priset från astrologi: två vägar till samma utfall kan inte länge ha olika pris — och därför kan optionens pris beräknas utan att någon behöver tro på någonting alls."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Ett steg, två världar — hedgekvoten",
+      "intro": "Köpoptionen med lösenpris 100 betalar 20 i läget 120 (120 minus 100) och 0 i läget 80. Kapitlet hittar den aktieposition som delar optionens känslighet — och räknar fram kursens första nyckeltal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Optionen och aktien rör sig i samma värld: mellan läget 120 och läget 80 skiljer aktien 40 (120 minus 80) och optionen 20 (20 minus 0). Förhållandet — optionens förändring delat med aktiens — är hedgekvoten: 20 delat med 40 är 0,5. En halv aktie rör sig exakt som optionen mellan de två lägena: från 60 ner till 40 för aktiedelen, från 20 ner till 0 för optionen — samma känslighet, halva slaglängden. Hedgekvoten är den empiriska födelsen av od-01:s delta: grekens hela innehåll i ett räkneexempel, innan formler och notation. Men en halv aktie är inte en option — den betalar 60 i upp-läget, inte 20, och 40 i ner-läget, inte 0. Portföljen som ska bli optionen behöver därför en motpost: något som drar ifrån exakt 40 i båda lägena. Ett lån är den naturliga kandidaten — lånat belopp med ränta återbetalas lika mycket oavsett världens läge — och dess storlek bestäms av kravet att ner-läget ska landa på noll: 0,5 aktier värda 40 minus återbetalningen ska vara 0, vilket ger återbetalningen 40, och med räntan 2 procent blir lånet idag 40 delat med 1,02. Räkningen är symmetrisk och verifieras i båda ändar: i upp-läget betalar portföljen 60 minus 40, alltså 20 — optionens exakta betalning; i ner-läget 40 minus 40, alltså 0. Vad en sådan konstruktion kostar att bygga idag — det är nästa kapitels enda fråga, och svaret är optionens pris."
+        },
+        {
+          "type": "tabell",
+          "content": "Ett stegs värld (aktie 100, lägen 120/80, ränta 2 procent, köpoption lösenpris 100): optionens betalning: 20 i upp, 0 i ner · hedgekvot: (20 − 0) delat med (120 − 80) = 0,5 aktier · krav på ner-läge: 0,5 × 80 − återbetalning = 0 ⇒ återbetalning 40,00 · lån idag: 40 delat med 1,02 = 39,22 · kontroll upp-läge: 0,5 × 120 − 40,00 = 20,00 ✓ · kontroll ner-läge: 0,5 × 80 − 40,00 = 0 ✓"
+        },
+        {
+          "type": "insight",
+          "content": "Hedgekvoten är delta i dess renaste form: en division mellan två slaglängder — och hela optionsboken vilar på att den går att räkna innan någon formel finns i sikte."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Replikeringsportföljen — aktien och lånet",
+      "intro": "Replikeringen står klar: en halv aktie och ett lån. Kapitlet räknar vad konstruktionen kostar idag — och landar i siffran som är kursens kärna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Att köpa en halv aktie idag kostar 0,5 gånger 100, alltså 50. Lånet tillför 39,22 i kontanter — pengar in, inte ut. Portföljens nettokostnad blir 50 minus 39,22: 10,78. Detta är replikeringsportföljens pris, och eftersom portföljen betalar 20 i upp-läget och 0 i ner-läget — krona för krona som köpoptionen med lösenpris 100 — är 10,78 optionens pris. Inte ett bud, inte en känsla, inte en konsensusprognos: en kostnad för en konstruktion som gör samma sak. Räkningen förtjänar att göras baklänges också, som en granskning av sig själv: om optionen handlades till 11,50 vore den dyra — den som sålde den kunde köpa repliken för 10,78 och behålla 0,72 utan risk; handlades den till 10,00 vore den billig och skillnaden 0,78 lika mekaniskt tagbar. I ett fungerande marknadsliv jämnar sådana öppningar ut sig snabbt, och kvar står priset vid replikens kostnad. Lånet förtjänar en sista blick: 39,22 är 40 delat med 1,02 — diskonteringen av den framtida återbetalningen — och därmed är räntan inne i priset från första steget. Optioner är räntebärande instrument i förklädnad: när räntan stiger sjunker lånet att bära och därmed förändras priset, en känslighet som i grekernas värld heter rho och som här syns som en rad i subtraktionen. Prisets tre beståndsdelar står nu utplockade: aktieposition (hedgekvoten), lånet (diskonterat) och deras skillnad — och hela maskinen behövde ingen sannolikhet alls."
+        },
+        {
+          "type": "tabell",
+          "content": "Replikeringens prisräkning: aktiedel: 0,5 × 100 = 50,00 · lånedel: 40 delat med 1,02 = 39,22 · optionens pris: 50 − 39,22 = 10,78 · granskning upp: 60 − 39,22 × 1,02 = 60 − 40,00 = 20,00 ✓ · granskning ner: 40 − 39,22 × 1,02 = 40 − 40,00 = 0 ✓ · räntans spår: om räntan vore 4 procent vore lånet 40 delat med 1,04 = 38,46 och priset 11,54 — räntekänsligheten i en subtraktion"
+        },
+        {
+          "type": "insight",
+          "content": "Priset 10,78 är en inkötslista: en halv aktie och ett lån — och därför granskbart, felsökbart och återskapat av vem som helst med penna; det är prissättningens demokrati."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Riskneutral sannolikhet — q som ingen tror på",
+      "intro": "Samma pris kan räknas på en andra väg: med en viktsindelning kallad riskneutral sannolikhet. Kapitlet visar att de två vägarna möts — och vad q är och inte är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett algebraiskt trick ordnar räkningen till en form som ser probabilistisk ut. Definiera q som förhållandet mellan räntans över- och underskott mot nedgångsfaktorn: q = (1,02 − 0,80) delat med (1,20 − 0,80) = 0,22 delat med 0,40 = 0,55. Räkna sedan optionens pris som det med q viktade genomsnittet av framtida betalningar, diskonterat: (0,55 × 20 + 0,45 × 0) delat med 1,02 = 11 delat med 1,02 = 10,78. Samma siffra som replikeringen gav — inte av slump utan av konstruktion: q är exakt den viktsindelning som gör att aktien själv prissätts rätt i trädet (kontrollen: 0,55 × 120 + 0,45 × 80 = 102, som diskonterat med räntan ger tillbaka aktiens pris 100 — kalibreringen av q mot underliggande är just det kravet som låser vikten). Poängen — och kursens viktigaste distinktion — är vad q inte är: det är ingen sannolikhet någon behöver tro på, ingen prognos om att aktien stiger i 55 procent av lägena. Det är en räkneteknisk vikt, fallen ur kravet att inga arbitrageöppningar finns. Två handlare med helt olika uppfattningar om aktien — den ena övertygad om upp, den andra om ner — kan ändå enas om optionens pris, för priset bär ingen av deras åsikter. Detta är riskneutral värdering: världen räknas som om alla var likgiltiga för risk, inte för att de är det, utan för att priset inte frågar. Skillnaden mellan q och den verkliga sannolikheten är premien för risk — och den bor någon annanstans än i derivatpriset. För läsaren med AKM2 i ryggen är q den bayesianska omviktningens (ek-06) trädform: vikter som uppdateras av nya lägen, här kalibrerade av aktiens eget pris."
+        },
+        {
+          "type": "tabell",
+          "content": "Andra vägen till samma pris: q = (1,02 − 0,80) delat med (1,20 − 0,80) = 0,55 · pris = (0,55 × 20 + 0,45 × 0) delat med 1,02 = 11 delat med 1,02 = 10,78 · två vägar — replikering och viktning — samma svar: 10,78 · q är ingen prognos utan en viktsindelning fallen ur arbitragekravet"
+        },
+        {
+          "type": "insight",
+          "content": "Att priset kan räknas utan en enda åsikt om framtiden är teorins största fynd — och den mest förbisedda: handlare som inte enas om något annat enas ändå om derivatpriser, för priserna frågar inte efter tro."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Två steg och den amerikanska friheten",
+      "intro": "Trädet växer: två perioder ger tre slutlägen, och en ny fråga uppstår — vad är optionen värd som kan löses i förtid? Friheten visar sig ha ett pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Låt trädet ta två steg med samma faktorer: från 100 går aktien till 120 eller 80, och därifrån till 144, 96 eller 64. Den europeiska köpen med lösenpris 100 räknas baklänges: i noden 144 är den värd 44, i 96 och 64 är den 0. Ett steg upp: noden 120 bär värdet (0,55 × 44 + 0,45 × 0) delat med 1,02 = 24,2 delat med 1,02 = 23,73; noden 80 bär 0. Helheten: (0,55 × 23,73 + 0,45 × 0) delat med 1,02 = 13,05 delat med 1,02 = 12,79 — trädet har vuxit och priset med det, ty två perioder samlar mer slaglängd. Nu den amerikanska frågan: en option som får lösas när som helst — vad är den värd mer än den europeiska? Tag säljoptionen med lösenpris 100 (betalar 100 minus aktien om positivt): i noden 144 och 96 är den 0 vid slutet, i 64 är den 36. Räkna noden 120: fortsättningsvärdet är (0,55 × 0 + 0,45 × 4) delat med 1,02 = 1,8 delat med 1,02 = 1,76, och lösen där är inte aktuell (100 − 120 är negativt). Men noden 80: fortsättningsvärdet är (0,55 × 4 + 0,45 × 36) delat med 1,02 = 18,4 delat med 1,02 = 18,04 — medan omedelbar lösen ger 100 − 80 = 20. Friheten är värd 20 minus 18,04 = 1,96 i just den noden: den amerikanska säljoptionen löses tidigt, och helheten blir (0,55 × 1,76 + 0,45 × 20) delat med 1,02 = 9,97 delat med 1,02 = 9,78. Detta är exakt mekanismen km-062 nämner i förbifart — binomiala träd för amerikanska optioner — här uträktad: trädet jämför vid varje nod fortsättningens värde med frihetens, och skillnaden ackumuleras till priset. Köpoptioner på icke-utdelande aktier mister denna extra värde (lösen i förtid kastar bort framtida slaglängd — därför håller sig den europeiska köpens 12,79), medan säljoptioner och utdelningsbärande aktier (od-05:s ex-dag) kan vinna på friheten."
+        },
+        {
+          "type": "tabell",
+          "content": "Två stegs träd (från 100: 144/96/64, ränta 2 procent, q = 0,55): europeisk köp lösenpris 100: nod 120 = 24,2 delat med 1,02 = 23,73 · helhet = 13,05 delat med 1,02 = 12,79 · amerikansk sälj lösenpris 100: nod 120 = 1,8 delat med 1,02 = 1,76 · nod 80: fortsättning 18,4 delat med 1,02 = 18,04 mot lösen 20 — friheten värd 1,96 · helhet = 9,97 delat med 1,02 = 9,78"
+        },
+        {
+          "type": "insight",
+          "content": "Friheten att välja tidpunkt är en tillgång med pris: i noden 80 är den 1,96 — och trädet är den enda enkla apparat som kan väga fortsättning mot lösinlösen nod för nod."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — trädet som mikroskop",
+      "intro": "Kursens redskap samlas till ett arbetsblad: trädet som granskningsinstrument — på egna konstruktioner, på andras priser och på formelns komprimerade värld.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad händer när stegen blir många? Grenarna tätnar, trädet närmar sig kontinuerlig tid — och priset konvergerar mot Black-Scholes (km-062): formeln är det komprimerade trädet, trädet är den utpackade formeln. Att kunna båda är att kunna läsa samma siffra på två djup: formeln för hastighet, trädet för förståelse. Arbetsbladet har fyra rader. Rad ett: granska priset — en citerad optionspremie kan slås upp mot ett enkelt träd med samma slaglängd och ränta; stora avvikelser förtjänar förkloring (likviditet, utdelning, volatilitetsantagande) innan något annat. Rad två: känsligheterna — hedgekvoten, räntans rad i subtraktionen, grenviddens roll: alla greker (od-01) finns som rader i trädet, och deras storlek kan förstås mekaniskt, inte memorerats. Rad tre: stressen — vid nod för nod kan lägen bytas ut (120 till 110, ränta 2 till 4) och prisets reaktion avläsas direkt: trädet är en scenarioanalys (km-029) i miniatyr med ränteburna vikter. Rad fyra: gränsen — modellen har två lägen per steg och en känd ränta; verklighetens fördelningar är bredare (od-02:s leende yta är just beviset) och när replikeringen blir kontinuerlig är det den som kostar — marginaler, omräkning och glid (am-08:s orderboksfysik). Kursens examen är en siffra läsaren kan bygga själv: 10,78 som aktie, lån och kontrollräkning — och insikten att varje pris som inte tål att packas upp på det viset bär mer än mekanik i sig."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg trädet på egen hand. Uppgift ett: aktie 100, lägen 110 och 90, ränta 2 procent, köpoption lösenpris 100 — räkna hedgekvoten ((10 − 0) delat med (110 − 90) = 0,5), lånet (45 delat med 1,02 = 44,12) och priset (50 − 44,12 = 5,88), och kontrollera båda ändarna. Uppgift två: vad händer med priset om räntan stiger till 4 procent (lånet 45 delat med 1,04 = 43,27, pris 6,73)? Uppgift tre: förklara varför den europeiska köpen på två steg (12,79) är dyrare än på ett steg (10,78) medan den amerikanska säljoptionen väger in friheten vid noden 80 — och vad utdelningsdagen (od-05) skulle kunna göra med köpens tidiga lösen."
+        },
+        {
+          "type": "insight",
+          "content": "Trädet är mikroskopet: varje pris som kan byggas av en aktie och ett lån är mekanik som går att förstå — och det som återstår när mekaniken är räknad är det som verkligen kostar: volatilitet, tid och frihet."
+        }
+      ]
+    }
+  ]
+}

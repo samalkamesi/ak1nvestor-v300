@@ -396,7 +396,14 @@ OMATCHADE.forEach((f, i) => {
     // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): multipel — 61:a motorn,
     // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
     "svaraLokaltMultipel",
-    "svaraLokaltMarknadsrytm",
+            // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+            // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+            // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+            // — FÖRE marknadsrytm (deras SIST-deklaration).
+            "svaraLokaltRiskadress",
+            "svaraLokaltBalansdjup",
+            "svaraLokaltOptionshantverk",
+            "svaraLokaltMarknadsrytm",
   ]);
   const kedjRad = widget.split("\n").find((l) => l.includes("const lokalt = "));
   if (!kedjRad) FEL.push("kedjeraden (const lokalt = …) hittades inte");

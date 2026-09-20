@@ -353,7 +353,7 @@ export function DatasetIndexVy({
   };
 
   return (
-    <SeoPageShell breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
+    <SeoPageShell lang={lang} breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
       <StrukturData data={datasetJsonLd(lang, medianer)} id="jsonld-dataset" />
 
       {/* Brandgenomgång P2 (våg 195): H1 som löfte i stället för filnamn,
@@ -515,6 +515,7 @@ export function DatasetBranschVy({
 
   return (
     <SeoPageShell
+      lang={lang}
       breadcrumb={[{ name: t("dataset.brodsmula"), href: prefix + "/dataset" }, { name: namn }]}
     >
       <StrukturData data={datasetBranschJsonLd(lang, rad, medianer)} id="jsonld-dataset-bransch" />

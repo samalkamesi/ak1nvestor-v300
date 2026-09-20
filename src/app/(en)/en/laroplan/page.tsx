@@ -35,7 +35,7 @@ export const metadata: Metadata = spegelMetadata({
 
 export default function LaroplanPageEn() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "The Curriculum" }]} wide>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "The Curriculum" }]} wide>
       <Laroplan lankPrefix="/en" />
     </SeoPageShell>
   );

@@ -106,7 +106,7 @@ export default async function Fas2AnsokPageEn() {
   const antalFas2 = FAS2_KURSLISTA.reduce((s, k) => s + k.slugs.length, 0);
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "Home", href: "/en" }, { name: "Phase 2 Application" }]}>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Home", href: "/en" }, { name: "Phase 2 Application" }]}>
       <article className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">

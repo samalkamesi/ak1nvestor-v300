@@ -136,7 +136,7 @@ export default function TransparensPageAr() {
   );
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "الشفافية" }]}>
+    <SeoPageShell lang="ar" breadcrumb={[{ name: "الشفافية" }]}>
       <div dir="rtl">
         <h1 className="font-serif text-4xl font-bold">
           الشفافية — روايةٌ كما يشترط القانون

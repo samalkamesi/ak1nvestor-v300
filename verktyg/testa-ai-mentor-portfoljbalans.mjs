@@ -583,7 +583,14 @@ const GAMLA = [
   // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
   // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
   "svaraLokaltMultipel",
-  "svaraLokaltMarknadsrytm",];
+      // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+      // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+      // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+      // — FÖRE marknadsrytm (deras SIST-deklaration).
+      "svaraLokaltRiskadress",
+      "svaraLokaltBalansdjup",
+      "svaraLokaltOptionshantverk",
+      "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

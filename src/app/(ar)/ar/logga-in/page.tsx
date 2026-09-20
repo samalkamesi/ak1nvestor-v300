@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function ArLoggaInPage() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "تسجيل الدخول" }]}>
+    <SeoPageShell lang="ar" breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "تسجيل الدخول" }]}>
       <div dir="rtl">
         <h1 className="text-center font-serif text-4xl font-bold">مرحبًا بك في AK1A</h1>
         <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground leading-relaxed">

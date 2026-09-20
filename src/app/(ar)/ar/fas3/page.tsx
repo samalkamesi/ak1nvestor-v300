@@ -231,6 +231,7 @@ export default function Fas3PageAr() {
 
   return (
     <SeoPageShell
+      lang="ar"
       breadcrumb={[{ name: "الرئيسية", href: "/ar" }, { name: "المرحلة 3 — النظام البيئي" }]}
       wide
     >

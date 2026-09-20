@@ -22,7 +22,7 @@
  *
  * Körs: node verktyg/testa-s7-o105-footer-etiketter.mjs (offline).
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { register } from "node:module";
@@ -133,7 +133,37 @@ for (const [sokvag, namn] of [
   kolla(!/use(Sprak|State|Effect|Context|Memo|Callback|Pathname)\s*\(/.test(kalla), `${namn} hook-fri`);
 }
 
-console.log(`\no105 kontraktstest: ${pass} PASS, ${fail} FAIL`);
+// ── F: o110 våg 2 — FULL lang-täckning i speglarnas shell-anrop ────────────
+// Mekaniskt: VARJE .tsx under src/app/(en|ar) som anropar <SeoPageShell ska
+// bära lang (o105 §6 våg 2; en rad per fil). dataset-listsidorna nås via
+// dataset-sidor.tsx (lang={lang} — sv faller tillbaka på klientbindningen).
+function tsxFiler(dir) {
+  const ut = [];
+  for (const namn of readdirSync(join(ROT, dir))) {
+    const sokvag = `${dir}/${namn}`;
+    if (statSync(join(ROT, sokvag)).isDirectory()) ut.push(...tsxFiler(sokvag));
+    else if (namn.endsWith(".tsx")) ut.push(sokvag);
+  }
+  return ut;
+}
+for (const [grupp, langStr, etikett] of [
+  ["src/app/(en)", 'lang="en"', "en"],
+  ["src/app/(ar)", 'lang="ar"', "ar"],
+]) {
+  const anropare = tsxFiler(grupp).filter((p) => las(p).includes("<SeoPageShell"));
+  // 14 = 13 list-sidor (o110 våg 2) + blogg-listan (o105). [slug]-speglarna
+  // (blogg/kurs) och dataset-sidorna når shellen via byggarkomponenter som
+  // bär lang={lang} — de träffas av D7/D8/F2, inte av denna gångare.
+  kolla(anropare.length === 14, `F0 ${etikett}: exakt 14 shell-anropande spegelfiler (fick ${anropare.length})`);
+  const saknar = anropare.filter((p) => !las(p).includes(langStr));
+  kolla(saknar.length === 0, `F1 ${etikett}: alla ${anropare.length} shell-anrop bär ${langStr} (saknar: ${saknar.join(", ") || "inga"})`);
+}
+kolla(
+  las("src/components/ak1a/dataset-sidor.tsx").includes("<SeoPageShell lang={lang}"),
+  "F2 dataset-sidor: båda shell-anropen bär lang={lang} (sv ⇒ klientbindning)",
+);
+
+console.log(`\no105+o110 kontraktstest: ${pass} PASS, ${fail} FAIL`);
 if (fail > 0) {
   console.log("FALKADE KONTROLLER:");
   for (const f of fel) console.log(`  ✗ ${f}`);

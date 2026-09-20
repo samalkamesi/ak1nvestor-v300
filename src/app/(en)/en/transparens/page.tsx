@@ -142,7 +142,7 @@ export default function TransparensPageEn() {
   );
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "Transparency" }]}>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Transparency" }]}>
       <h1 className="font-serif text-4xl font-bold">
         Transparency — told the way the law requires
       </h1>

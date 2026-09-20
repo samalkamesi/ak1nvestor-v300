@@ -1,0 +1,49 @@
+{
+ "verktyg": "verktyg/_s7u2o128-bevis.mjs",
+ "datum": "2026-09-20T21:06:10.899Z",
+ "mal": "https://lab.ak1nvestor.com",
+ "visa": [
+  {
+   "probe": "hydratisering (aria-pressed togglas?)",
+   "fore": "AKM1 — kla:true | AKM2 — mod:false",
+   "efter": "AKM1 — kla:false | AKM2 — mod:true"
+  },
+  {
+   "probe": "riktiga CDP-musklick på flik → monterade tummar",
+   "resultat": {
+    "aktivTab": "🧮 Räkna med egna siffro",
+    "tummar": []
+   }
+  },
+  {
+   "probe": "CSS-isolerad: tum-klasser på span vs button (prodens stilmallar)",
+   "resultat": {
+    "span": {
+     "tagg": "span",
+     "w": 16,
+     "h": 16,
+     "minH": "0px",
+     "minW": "0px",
+     "media640": true
+    },
+    "buttonKontroll": {
+     "tagg": "button",
+     "w": 52,
+     "h": 52,
+     "minH": "52px",
+     "minW": "52px"
+    }
+   }
+  }
+ ],
+ "konsolfel": [
+  {
+   "source": "network",
+   "level": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "timestamp": 1789938371669.901,
+   "url": "https://lab.ak1nvestor.com/ak1a/logo/ikon-192.png",
+   "networkRequestId": "4001267.110"
+  }
+ ]
+}

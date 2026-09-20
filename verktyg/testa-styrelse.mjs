@@ -36,6 +36,12 @@
  *          mötets id skrivna; VÄNTAR KUND ⇒ 0 rader (motorn skriver aldrig
  *          dispatchrader för beslut som väntar kund).
  *      K6  STYRELSE-BESLUT.md protokollfört mötet (append, daterat).
+ *      K7  PER-ÅTGÄRDS-STÄNGSEL (v214): atgardKlassning alltid närvarande,
+ *          en post per åtgärd (existential + traffadeNyckelord). Vid KÖRS
+ *          DIREKT: [STYRELSEN]-raderna = ENDAST de icke-R2-klassade åtgär-
+ *          dina (motorRader räknar bara verkställande), och varje R2-klassad
+ *          åtgärd bär en ⚠ VÄNTAR KUND-rad med mötets id — ALDRIG en
+ *          [STYRELSEN]-rad. Vid VÄNTAR KUND skrivs inget (K5 äger det).
  *
  * Körs med: node verktyg/testa-styrelse.mjs [port]
  * Port default = AK1A_TEST_DEV_PORT eller 3117 — ALDRIG 3000 (prod på servern;
@@ -242,6 +248,35 @@ try {
   protokoll = "";
 }
 kontroll("K6 STYRELSE-BESLUT.md protokollfört mötet (daterat)", protokoll.includes(id), protokoll ? `filen ${String(protokoll.length)} tecken` : "filen saknas");
+
+// K7 — PER-ÅTGÄRDS-STÄNGSEL (v214): klassning alltid närvarande + välformad,
+// och PIPELINE-KO återspeglar den per rad: R2-klassade åtgärder ⇒ ⚠-rad,
+// aldrig [STYRELSEN]-rad; motorRader räknar ENDAST verkställande rader.
+const klassning = mote?.beslut?.atgardKlassning ?? null;
+const atgarderLista = mote?.beslut?.atgarder ?? [];
+const klassningVal = Array.isArray(klassning) && klassning.length === atgarderLista.length &&
+  klassning.every((k) => k && typeof k.existential === "boolean" && Array.isArray(k.traffadeNyckelord));
+let stangselOk = false;
+let stangselDetalj = "mötet VÄNTAR KUND — inga rader skrivna (K5 äger)";
+if (klassningVal && korDirekt) {
+  const vantarAtgarder = klassning.filter((k) => k.existential);
+  const verkstallande = klassning.length - vantarAtgarder.length;
+  const vaktRader = pipeline.split(/\r?\n/).filter((r) => r.includes(id) && r.includes("⚠ VÄNTAR KUND"));
+  // R2-klassad åtgärd får ALDRIG återfinnas i en verkställande rad (matchning
+  // på normaliserad textprefix — raderna trunkeras vid 300 tecken).
+  const norm = (t) => t.replace(/\s+/g, " ").trim().slice(0, 80);
+  const lackage = vantarAtgarder.filter((k) => pipelineRader.some((r) => r.includes(norm(k.text).slice(0, 40))));
+  const forvantadeVakt = vantarAtgarder.every((k) => vaktRader.some((r) => r.includes(norm(k.text).slice(0, 40))));
+  const raderKonsistent =
+    pipelineRader.length === (verkstallande > 0 ? verkstallande : 1) && motorRader === pipelineRader.length;
+  stangselOk = raderKonsistent && lackage.length === 0 && (vantarAtgarder.length === 0 || forvantadeVakt);
+  stangselDetalj = `${String(verkstallande)} verkställande / ${String(vantarAtgarder.length)} R2-klassade · ${String(pipelineRader.length)} [STYRELSEN]-rad(er) · ${String(vaktRader.length)} ⚠-rad(er)${lackage.length > 0 ? ` · LÄCKAGE: ${String(lackage.length)}` : ""}`;
+}
+kontroll(
+  "K7 per-åtgärds-stängsel (atgardKlassning välformad + ⚠-rader separerade från verkställande)",
+  klassningVal && (!korDirekt || stangselOk),
+  `${stangselDetalj} · klassning ${klassningVal ? `${String(klassning.length)} post(er)` : "saknas/felformad"}`,
+);
 
 // ── Sammanfattning ───────────────────────────────────────────────────────────
 

@@ -13,6 +13,12 @@
  *       VÄNTAR KUND. Klassningen är HÅRKODAD här (klassaExistential +
  *       EXISTENTIELLA_NYCKELORD); ordförandens egna bedömning får bara
  *       FÖRSTÄRKA (true), aldrig försvaga en nyckelordsträff.
+ *       v214 PER-ÅTGÄRD: KÄRNAN (beslut+motivering) styr mötesstatus —
+ *       R2-träff i kärnan ⇒ hela mötet VÄNTAR KUND (oförändrat säker).
+ *       En åtgärd som bara NÄMNER R2-ord (t.ex. "dev-lösenord" i ett
+ *       mekaniskt testmöte, R108-fyndet) stängs in SIG själv: ⚠ VÄNTAR
+ *       KUND-rad i PIPELINE-KO som ALDRIG verkställs, medan drift-
+ *       mekaniska syskonåtgärder löper vidare (atgardKlassning).
  *   R3  Mega-projekt/vågor beslutas av styrelsen enligt R2.
  *   R4  VÅGOR inom MAX_AKTIVA_BARN=3: analysorganen körs 3 parallellt,
  *       därefter resten, därefter ordföranden ensam — ALDRIG fler än 3
@@ -200,6 +206,21 @@ export interface StyrelseBeslut {
   atgarder: string[];
   existential: boolean;
   rollSammanfattning: RollSammanfattning[];
+  /**
+   * Per-åtgärds R2-klassning (v214) — sätts alltid av motorn. `existential`
+   * på beslutet speglar KÄRNAN (beslut+motivering): en R2-träff i kärnan
+   * väntar kund som förr. En åtgärd som bara NÄMNER R2-ord stänger inte
+   * längre hela mötet — den stängs IN själv (⚠ VÄNTAR KUND-rad i PIPELINE-KO,
+   * verkställs ALDRIG autonomt) medan drift-mekaniska syskon löper vidare.
+   */
+  atgardKlassning?: AtgardKlassning[];
+}
+
+/** En åtgärds egen R2-klassning (v214) — klassaren per rad, aldrig per möte. */
+export interface AtgardKlassning {
+  text: string;
+  existential: boolean;
+  traffadeNyckelord: string[];
 }
 
 /** Numrerad händelserad i mötesloggen (i = löpnummer för inkrementell poll). */
@@ -436,20 +457,32 @@ function tidsstampel(): string {
 
 /**
  * PIPELINE-KO — huvudagentens dispatchlista. KÖRS DIREKT-lovet (R2): minst
- * EN rad skrivs ALLTID — tom åtgärdslista (t.ex. fallback-syntes i dev-mock)
- * ⇒ beslutsraden skrivs i stället, så dispatchlistan aldrig tappar ett möte.
- * Varje rad: [STYRELSEN]-prefix + ISO-datum + mötes-id. Returnerar antal rader.
+ * EN VERKSTÄLLANDE rad skrivs ALLTID — tom åtgärdslista (t.ex. fallback-
+ * syntes i dev-mock) ⇒ beslutsraden skrivs i stället, så dispatchlistan
+ * aldrig tappar ett möte. Varje rad: [STYRELSEN]-prefix + ISO-datum +
+ * mötes-id. v214: R2-klassade åtgärder blir ⚠ VÄNTAR KUND-rader — de bär
+ * ALDRIG verkställande prefix och räknas EJ i returvärdet (som förblir
+ * "antal verkställande rader"); ingen rond får tolka dem som jobb.
  */
 function skrivPipelineRader(mote: StyrelseMote, beslut: StyrelseBeslut): number {
+  const klassning: AtgardKlassning[] =
+    beslut.atgardKlassning ??
+    beslut.atgarder.map((text) => ({ text, existential: false, traffadeNyckelord: [] as string[] }));
+  const verkstallbara = klassning.filter((a) => !a.existential).map((a) => trunk(a.text.replace(/\r?\n/g, " "), 300));
+  const vantar = klassning.filter((a) => a.existential);
   const innehall =
-    beslut.atgarder.length > 0
-      ? beslut.atgarder.map((a) => trunk(a.replace(/\r?\n/g, " "), 300))
-      : [trunk(`(inga konkreta åtgärder — beslutet) ${beslut.beslut.replace(/\r?\n/g, " ")}`, 300)];
+    verkstallbara.length > 0
+      ? verkstallbara
+      : [trunk(`(inga verkställbara åtgärder — beslutet) ${beslut.beslut.replace(/\r?\n/g, " ")}`, 300)];
   const rader = innehall.map((a) => `- [STYRELSEN] ${new Date().toISOString()} | ${mote.id} | ${a}`);
+  const vaktRader = vantar.map(
+    (a) =>
+      `- ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | ${mote.id} | ${trunk(a.text.replace(/\r?\n/g, " "), 300)} | träffade: ${a.traffadeNyckelord.join(", ")}`,
+  );
   appendera(
     "PIPELINE-KO.md",
-    `${rader.join("\n")}\n`,
-    "# PIPELINE-KO — huvudagentens dispatchlista\n\nRader med [STYRELSEN]-prefix är styrelsens KÖRS DIREKT-beslut (våg 91 A2, STYRELSE-ADMIN-MEGA.md).",
+    `${[...rader, ...vaktRader].join("\n")}\n`,
+    "# PIPELINE-KO — huvudagentens dispatchlista\n\nRader med [STYRELSEN]-prefix är styrelsens KÖRS DIREKT-beslut (våg 91 A2, STYRELSE-ADMIN-MEGA.md). Rader med ⚠ VÄNTAR KUND är R2-klassade åtgärder som väntar kundens beslut (v214) — ALDRIG verkställande.",
   );
   return rader.length;
 }
@@ -471,7 +504,11 @@ function skrivProtokoll(mote: StyrelseMote, beslut: StyrelseBeslut, status: Atga
   for (const r of beslut.rollSammanfattning) rader.push(`  - ${r.roll}: ${r.enRad.replace(/\r?\n/g, " ")}`);
   if (beslut.atgarder.length > 0) {
     rader.push("- **Åtgärder:**");
-    beslut.atgarder.forEach((a, idx) => rader.push(`  ${idx + 1}. ${a.replace(/\r?\n/g, " ")}`));
+    beslut.atgarder.forEach((a, idx) => {
+      const klass = beslut.atgardKlassning?.[idx];
+      const mark = klass?.existential ? ` ⚠ VÄNTAR KUND (R2${klass.traffadeNyckelord.length > 0 ? `: ${klass.traffadeNyckelord.join(", ")}` : ""})` : "";
+      rader.push(`  ${idx + 1}. ${a.replace(/\r?\n/g, " ")}${mark}`);
+    });
   } else {
     rader.push("- **Åtgärder:** (inga)");
   }
@@ -673,9 +710,25 @@ function normaliseraBeslut(
   const motiveringText = str(tolkat?.motivering, "Ordförandens motivering saknades i svaret — beslutet bär organens samlade analys.", 2000);
 
   // R2 HÅRDKODAD: motorn klassar OM — ordförandens flagga får bara förstärka.
-  const { existential } = klassaExistential([beslutText, motiveringText, ...lista]);
+  // v214 PER-ÅTGÄRD: KÄRNAN (beslut+motivering) styr mötesstatus — R2-träff
+  // i kärnan ⇒ hela mötet VÄNTAR KUND (oförändrat). Åtgärder klassas var för
+  // sig: en åtgärd som nämner R2-ord stängs in själv istället för att stoppa
+  // drift-mekaniska syskon (R108-fyndet: "dev-lösenord" i en åtgärd stoppade
+  // ett helt mekaniskt testmöte).
+  const karnan = klassaExistential([beslutText, motiveringText]);
+  const atgardKlassning: AtgardKlassning[] = lista.map((text) => {
+    const { existential, traffadeNyckelord } = klassaExistential([text]);
+    return { text, existential, traffadeNyckelord };
+  });
 
-  return { beslut: beslutText, motivering: motiveringText, atgarder: lista, existential: existential || ordforandeExistential, rollSammanfattning };
+  return {
+    beslut: beslutText,
+    motivering: motiveringText,
+    atgarder: lista,
+    existential: karnan.existential || ordforandeExistential,
+    atgardKlassning,
+    rollSammanfattning,
+  };
 }
 
 /**
@@ -696,12 +749,19 @@ function syntetiseraBeslut(fraga: string, analyser: Map<StyrelseRoll, string>, u
     enRad: ute.has(roll) ? `Rollen kunde ej redovisa: ${ute.get(roll)}` : analyser.has(roll) ? enRad(analyser.get(roll) as string) : "Rollen lämnade ingen analys.",
   }));
   const beslutText = `Automatisk syntes (ordförandens svar kunde ej tolkas som JSON): frågan behandlas enligt de ${String(analyser.size)} inkomna organanalyserna.`;
-  const { existential } = klassaExistential([beslutText, ...atgarder]);
+  // v214 per-åtgärd även i syntesen: kärnan är mekanisk boilerplate —
+  // organens åtgärder klassas var för sig (samma stängsel som normalvägen).
+  const karnan = klassaExistential([beslutText]);
+  const atgardKlassning: AtgardKlassning[] = atgarder.map((text) => {
+    const { existential, traffadeNyckelord } = klassaExistential([text]);
+    return { text, existential, traffadeNyckelord };
+  });
   return {
     beslut: beslutText,
     motivering: `${String(analyser.size)} av 5 organ redovisade analys; ${String(ute.size)} var inte tillgängliga inom tidsgränsen. Fråga: ${trunk(fraga, 300)}`,
     atgarder,
-    existential,
+    existential: karnan.existential,
+    atgardKlassning,
     rollSammanfattning,
   };
 }
@@ -718,7 +778,17 @@ async function verkstallBeslut(mote: StyrelseMote, beslut: StyrelseBeslut): Prom
   const renMotivering = rensaForbudnaFras(beslut.motivering)[0];
   const renAtgarder = beslut.atgarder.map((a) => rensaForbudnaFras(a)[0]);
   const renRoller = beslut.rollSammanfattning.map((r) => ({ roll: r.roll, enRad: rensaForbudnaFras(r.enRad)[0] }));
-  const rentBeslut: StyrelseBeslut = { ...beslut, beslut: renBeslut, motivering: renMotivering, atgarder: renAtgarder, rollSammanfattning: renRoller };
+  // v214: klassningens texter genom samma grind — PIPELINE-raderna bygger på
+  // dem, och ingen text får kringgå varumärkesrensningen (indexläget bevaras).
+  const renKlassning = beslut.atgardKlassning?.map((k) => ({ ...k, text: rensaForbudnaFras(k.text)[0] }));
+  const rentBeslut: StyrelseBeslut = {
+    ...beslut,
+    beslut: renBeslut,
+    motivering: renMotivering,
+    atgarder: renAtgarder,
+    rollSammanfattning: renRoller,
+    ...(renKlassning ? { atgardKlassning: renKlassning } : {}),
+  };
 
   const status: AtgardsStatus = rentBeslut.existential ? "VANTAR_KUND" : "KORS_DIREKT";
   skrivProtokoll(mote, rentBeslut, status);

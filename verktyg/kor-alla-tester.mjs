@@ -344,10 +344,12 @@ for (const fil of sviter) {
   } else {
     const args = DEV_SVITER.test(fil) ? [DEV_PORT] : [];
     let r = await korSvit(path.join(VERKTYG, fil), takSek, args);
-    // tsx-återfall (ROND 107): sviter som importerar TS-moduler med
-    // ändelselösa imports dör under ren node (ERR_MODULE_NOT_FOUND) —
-    // sviten förblir sanningen: grönt kräver att den PASSERAR under tsx.
-    if (r.status === "RÖD" && /ERR_MODULE_NOT_FOUND/.test(String(r.fel))) {
+    // tsx-återfall (ROND 107, breddat R110): sviter som importerar TS-moduler
+    // dör under ren node — ändelselösa imports (ERR_MODULE_NOT_FOUND) eller
+    // syntax som strip-only-läget ej stödjer (ERR_UNSUPPORTED_TYPESCRIPT_
+    // SYNTAX, t.ex. parameter properties i transitiva moduler) — sviten
+    // förblir sanningen: grönt kräver att den PASSERAR under tsx.
+    if (r.status === "RÖD" && /(ERR_MODULE_NOT_FOUND|ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX)/.test(String(r.fel))) {
       process.stdout.write("(tsx-återfall) ");
       r = await korSvit(path.join(VERKTYG, fil), takSek, args, true);
     }

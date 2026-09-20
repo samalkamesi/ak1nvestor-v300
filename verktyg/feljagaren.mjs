@@ -40,6 +40,15 @@
  * död rot ⇒ MEDEL "rot nere — miljöfönster", aldrig HÖG-eskalering.
  * Sondhärdning (eldprovets lärdom): endast framgång cachas + 1 omprövning —
  * keep-alive-racen får aldrig förfalska "rot nere" för en levande rot.
+ * UPPVARMNINGSGRINDEN (FYNN nr 3, åttonde observationen 09-20 18:44Z): rot-
+ * sonden har en beroendeblindfläck — GET / är en ren Next-yta medan
+ * /api/studio/* går via transport-barnet (zcode-app-server-RPC). En app som
+ * är minuter gammal (pm2-omstart vid deploy) grönar GET / medan den kalla
+ * transporten under syskonlast timeout:ar — exakt 18:44Z-signaturen (11 min
+ * efter deploy, rot 200, /andringar timeout ×2, frisk vid återmätning).
+ * Kur: pm2 pm_uptime yngre än UPPVARMNING_MIN ⇒ MEDEL "efterdyning",
+ * aldrig HÖG. Cron sätter ALDRIG AK1A_APP_ALDER_MIN — hooken finns endast
+ * för eldprovet (_f3-vaccin-test.mjs) att styra åldern deterministiskt.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -82,6 +91,22 @@ function deployPagar() {
     execSync("flock -n /tmp/ak1a-deploy.lock true", { timeout: 5000, encoding: "utf8" });
     return false;                          // låset togs → inget bygg pågår
   } catch (e) { return e.status === 1; }   // exit 1 = hålls av bygg; övrigt = ej deploy
+}
+
+// UPPVARMNINGSGRINDEN (FYNN nr 3): appens ålder i minuter sedan senaste
+// pm2-omstart (pm_uptime, samma jlist-källa som F2). null = pm2 ej läsbar
+// ⇒ grinden inaktiveras och rot-sonden ensam gäller (försiktigt fallback).
+// AK1A_APP_ALDER_MIN sätts ENDAST av eldprovet — cron-miljön bär den aldrig.
+const UPPVARMNING_MIN = 25;
+export function hamtaAppAlderMin() {
+  const over = process.env.AK1A_APP_ALDER_MIN;
+  if (over !== undefined && over !== "" && Number.isFinite(Number(over))) return Number(over);
+  try {
+    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    const ak1a = lista.find((p) => p.name === "ak1a");
+    const upp = ak1a?.pm2_env?.pm_uptime;
+    return typeof upp === "number" && upp > 0 ? (Date.now() - upp) / 60_000 : null;
+  } catch { return null; }
 }
 
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
@@ -222,6 +247,7 @@ export async function jagaApi(pass) {
   ];
   let fel = 0;
   const deploy = deployPagar();
+  const alderMin = hamtaAppAlderMin();
   // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
   // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
   let serverDodVidOmtest = false;
@@ -277,6 +303,8 @@ export async function jagaApi(pass) {
       fel++;
       if (deploy) {
         bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      } else if (alderMin !== null && alderMin < UPPVARMNING_MIN) {
+        bokfor("F3-api", "MEDEL", `/${v} nätverksfel (efterdyning — appen ${Math.round(alderMin)} min gammal)`, `pm2-omstart < ${UPPVARMNING_MIN} min: kall transport under syskonlast (18:44Z-klassen, FYNN nr 3-grinden 2026-09-20); första felet: ${String(e).slice(0, 40)}`);
       } else if (serverDodVidOmtest) {
         bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
       } else {

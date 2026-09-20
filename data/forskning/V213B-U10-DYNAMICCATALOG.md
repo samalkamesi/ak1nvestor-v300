@@ -133,4 +133,27 @@ utbildningens värde för medlemmar. Ingen text utgör eller innehåller
 investeringsråd (2007:528); inga priser, tier:er eller publiceringsytor har
 rörts (R2 orörd); data/blogg/ orörd.
 
+## 7. Omkörningsverifikation vid dubbeldispatch (2026-09-20)
+
+Fabriksfönstret 06:10 födde TVÅ u10-barn med identiskt ägandeskap (konstaterat
+i processlistan: app-server-barn + `zcode -p`-barn). Läge vid ankomst:
+leveransen REDAN committad i 0ce39077 (svit + protokoll, 17/17 PASS) —
+enligt "klara uppgifter körs ALDRIG om" skedde INGEN ombyggnad, endast
+verifikation + denna bokföring:
+
+- `node --check verktyg/testa-motor-dynamic-catalog.mjs` → OK (tyst).
+- `node verktyg/testa-motor-dynamic-catalog.mjs` → **RESULTAT: 17/17 PASS**,
+  exit 0, körtid 0,82 s (tak 60 s). Utdata identisk med avsnitt 4 (A1–A5,
+  B1–B12, två OBS-rader, RESULTAT-raden).
+- Ett ocommittat utkast till avsnitt om samägarhändelsen i 0ce39077
+  påträffades i arbetsytan men försvann under omgången (samtidigt syskon).
+  Händelsen är fullt bokförd i U9-protokollet (commit 9c91645a) — ingen
+  information förlorad, protokollet hålls i committat läge.
+- Ägarskap orört: svit + protokoll; src/, data/blogg/, R2 orörda. Detta
+  avsnitt är omgångens enda filändring.
+
+Iakttagelse till fabriken: samma manifest-post dispatcherad dubbel 06:10 —
+dubbelriktad dispatch av identiskt ägandeskap bör larmas i fabriksloggen
+(syskonen kan annars skriva i varandras filer).
+
 LEVERANS: verktyg/testa-motor-dynamic-catalog.mjs · data/forskning/V213B-U10-DYNAMICCATALOG.md

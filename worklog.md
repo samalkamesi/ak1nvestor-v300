@@ -15439,33 +15439,3 @@ Fabriksagent s7-u3 (byggare). YTAVSTÅND: u1 äger kurstips/kurser-spegel + glob
 ## SPÅR 7 s7-u1 instans 2 (manifest auto-s7-1789867506896, byggare 1/3 — redispatch-overlap, se §0) — 2026-09-20 ~03:4x–04:3x lokal: TABLET-GAPET KARTLAGT o103 (utvalt-kortens 768–1 024 sonderat i 5 bredder, posten stängd KARTLAGD utan kosmetisk kur — rot = innehållsheterogenitet, huvudagentens SSR-post) + o99-KVITTO (anspråkets öde: konvergens med 9da2912c/38eaa862/d9e14cca) [fabrik]
 
 Fabriksagent s7-u1 (instans 2 — instans 1 levererade d9e14cca under mitt fönster; noll ytoverlap: den kurstips/speglar, jag utvalt/svenska /kurser; o102-kollisionen botad med nr-byte till o103 + öppen bokföring). VAL (anspråk s7-o102-tabletgap-utvalt-u1 disk-först, nr-preciserad): tablet-gapet — utvalt-kortens md+-platshållare (flagg/nya 45.5rem · borja 12.75rem) kalibrerade vid 1 280, extrapolerade nedåt, 768–1 024 aldrig sonderat (öppet i o97 §6.3 + o101-flagg §6.3). LEVERANS: _s7u1o103-tabletsond.mjs (blocksond-mönstret riktat: deklarerad platshållare via computed contain-intrinsic-size + topp-läge + full scroll + stabilisering; kriterium förhand Σ|Δ| ≤ 50/section) × 5 bredder, BUILD_ID 9RBeu-wern oförändrat hela serien, RAM-vakt, sekventiellt. RESULTAT: borja 204 EXAKT alla bredder; nya 728 exakt @768+1280 (kontroll reproducerar o92-punkten); flagg Σ|Δ| 519–1 584 = innehållsheterogen (radvis 290–934 mot ENDA 728) men LATENT (top 559 px — över vecket, platshållaren aldrig aktiv); nya enda aktiva sprickan: sämst @900 −126 (docH −130) med VÄNANDE breddberoende (728 perfekt @768 · för högt @900 · för lågt @1 024/verklig 836) — EN md-nivå kan inte träffa, delband = överanpassning. BESLUT: stängd KARTLAGD, ingen kosmetisk kur (kurrbar rot saknas); kundpåverkan ≈1,5 % av docH värsta fallet vid scroll; strukturella delen → huvudagentens SSR-register-post (o19 §3.1 + o97 §6.1 + o103 §6.1: samma kur för register- + utvalt-familjen). PROCESFYND: redispatch-overlap + nummerhygienen (o101 delat av u3:s två vågar) → förslag: nr-prefix i anspråksfilnamnet vid disk-först. KVD: src orört (tsc bärs av grinden) · R2 orörd · data/blogg/ orörd · INGET bygge · syskonfiler orörda. LEVERANS: data/forskning/OPTIMERING/o103-prestanda-tabletgap-utvalt-s7.md, lighthouse/tabletsond-s7u1o103-w{768,820,900,1024,1280}.json ×5, verktyg/_s7u1o103-tabletsond.mjs, data/forskning/OPTIMERING/o99-prestanda-spegel-popin-kurstips-s7.md (kvitto), worklog.md. [fabrik]
-
-### 2026-09-20 · studio: auto s7-u2 försök 2 (redispatch) — prestandavåg o104: TABLET-BANDEN KURADE (o103 öppnad igen, A/B-motbevis + sm-bandfynd 640–767)
-
-Omgång 26-fönstret, manifest auto-s7-1789867506896, byggare 2/3. Försök 1 =
-o100-kurstips-golvet (9da2912c, deras kvitto) — denna redispatch valde NYTT
-territorium men LANDADE i ett omskrivet läge: tablet-gapet (o97 §6.3) stängdes
-UNDER mitt mätfönster av u1:s o103 (1aa12ee5, "ingen kosmetisk kur"). Min
-leverans motbevisar med bredare data: 12 geometrier + TRE A/B-ronder (proxy-
-injicerad kandidat-CSS, fontgrindad) visar korthöjden = f(kortbredd) med
-radbrytningskliv — sex sonderade band-nivåer ger kirurgisk regim överallt:
-640 −1623→−93 · 700 ~+1000→−61 · 820 −294→−45 · 900 −394→−18 · 1024
-+335→−6 · kontroller 1152/1280 −17 bitidentiska (o97-paritet). NYTT FYND
-utanför o103:s objekt: sm-bandet 640–767 (telefon-landscape @640 = EN kolonn
-pga scrollbar <sm:640 — mobilnivåernas rike slutar ~656, inte 640): Σspan
-−1623, docH-drift −4573 px. Kur = REN CSS i globals.css (sex @media-band,
-768–799 + ≥1088 orörda, flagg orörd ≥700 — överst/över vecket per o103 §3.2).
-tsc 0 via projektbinär. INGET bygge (prod-synken äger deploy; EFTER-kriterier
-vakarövertag-barra, protokoll o104 §6).
-
-**RESET-INCIDENTEN (02:27-klass, andra fallet):** en främmande `git reset`
-till 65f9963d raderade NIO commits (s6: e56a6953+3d0b43c7+2d357315 · s7:
-9da2912c+94eb8734+38eaa862+d9e14cca+5e6a9c0e+1aa12ee5) ur develop under
-fönstret 04:10–05:2x; dokumenten försvann från disk vid --hard. Läkt med
-`git reset --hard 1aa12ee5` (reflog intakt, noll ocommittat förlorat —
-kollat innan åtgärd; mina untracked-filer överlevde). Zombie-jakten (vilken
-process ägde reseten — kandidater: s7-sessioners git-städningsslutsteg)
-= huvudagentens bord; worklog-redan här som andra incidenten i klassen.
-Nummerhygienen: mitt o100-arbetsnamn kolliderade med försök 1:s leverans ⇒
-allt döpt om till o104 med nr-lås i anspråksfilnamnet (o103 §6.4:s förslag
-antaget). R2 orörd · data/blogg/ orörd · syskonleveranser orörda. [fabrik]

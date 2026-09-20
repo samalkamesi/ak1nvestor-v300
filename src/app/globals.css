@@ -1182,50 +1182,6 @@ h1, h2, h3, h4, h5, h6 {
   .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
 }
 
-/* ── PRESTANDA (o104): BAND-EGNA RESERVATIONER för de utvalda korten —
-   o103:s "ingen kosmetisk kur" motbevisad av komplett kurva + A/B (sond
-   _s7u2o104-sond.mjs + A/B-proxy _s7u2o104-ab.mjs, rådata
-   lighthouse/o104sond-*.json, bygge 9RBeu, 2026-09-20). Korthöjden är en
-   funktion av KORTBREDD via radantal (texterna fixa): mobilnivåerna ovan
-   gäller egentligen bara 1 kolonn <640; sm-bandet 640–767 (scrollbar gör
-   att Tailwind sm:640 tänder först ~656) kör 1–2 kol med 313–602 px kort
-   mot platshållare kalibrerade på 412/1 kol ⇒ Σspan-skift −1 623 px @640
-   (docH-drift −4 573) och ~+1 000 @700–767; o97:s desktopnivåer (≥768,
-   kalibrerade på 1 280/3 kol) felar −394 @900 och +335 @1 024. Kuren: sex
-   sonderade band-NIVÅER (verklig EFTER-li per band; 768–799 och ≥1 088
-   orörda — mätt kirurgiska redan: Σ −66/−17). A/B-kvitto (proxy-injicerad
-   kandidat-CSS, fontgrindad): 640 −1 623→−93 · 700 →−61 · 720 →−136 ·
-   740 →+10 · 800 →+45 · 820 −294→−45 · 900 −394→−18 · 1 024 +335→−6 ·
-   kontroller 1 152/1 280 −17 bitidentiska med o97. Flaggskeppen orörda
-   ≥700 (sektionen överst, över vecket — platshållaren aldrig aktiv,
-   o103 §3.2); 640–699 bär flagg 19.5rem (radpar 174–505, sektionsmedel).
-   Kurstillskott ändrar graden, inte klassen — contain-intrinsic-size:
-   auto minns verklig höjd efter första pass (o93/o97:s garanti). */
-@media (min-width: 640px) and (max-width: 699px) {
-  .cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 19.5rem; }
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 26rem; }
-  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 10.5rem; }
-}
-@media (min-width: 700px) and (max-width: 735px) {
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 51rem; }
-  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
-}
-@media (min-width: 736px) and (max-width: 767px) {
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 45.5rem; }
-  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
-}
-@media (min-width: 800px) and (max-width: 899px) {
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 43rem; }
-  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 11.5rem; }
-}
-@media (min-width: 900px) and (max-width: 1023px) {
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 39rem; }
-  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 11rem; }
-}
-@media (min-width: 1024px) and (max-width: 1087px) {
-  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 52.25rem; }
-}
-
 /* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
    55 inlägg renderas alla i initial HTML). r4b2-facit: styleLayout 835 ms
    är /blogg:s största mainthread-post; samma mekanik som .cv-kort och

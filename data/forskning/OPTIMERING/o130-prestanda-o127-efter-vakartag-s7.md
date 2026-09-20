@@ -93,6 +93,19 @@ fabriksagentens; HEAD orört = inget revert-läge). o126:s väntarprocess
 utan deploy — deras protokoll §5 PENDING kvarstår, samma vakarövertags-
 mönster. o128:s `_s7u2o128-efter.mjs` förblir ospelat (syskonets yta).
 
+**Slutläge 22:33Z (vågens avslut):** fjärde incidenten i serien — ett
+fristående next-build (PID 4060278, RSS 6 196 MB, start 22:25Z under
+/tmp/ak1a-deploy.lock av PID 4059787/88, ägare ej prod-synken — dess
+22:27-rop väntade; sannolikt kraschvaktens/rondens svar på OOM-serien)
+avslutades ~22:31Z UTAN ny .next/BUILD_ID (fortfarande LDVlDGu2 —
+prod grön 200 på förra gröna läket; HEAD orört). Samtidigt satte
+22:27:22Z-ropet **2e6efd22 (denna vågs bokföring) som prod-spets** —
+nästa lyckade deploy paketerar ALLT: kurer o126/o127/o128 + syskonens
+o129 + o130. Available 4 487 MB vid 22:32Z ⇒ 22:37:10Z-ropet får sitt
+byggfönster; nästa våg (fabrikens 22:25Z-omgång är redan levande) kör
+§2-kommandona vid DEPLOYAD. Denna våg avslutar medvetet enligt
+o127-precedensen — kedjan är bokförd, inte bruten.
+
 **Vakarövertaget består intakt**: o127 §6-kommandona är oförändrade och
 körbara av nästa våg (eller mig i nytt fönster) så snart en DEPLOYAD-rad
 med f0758d45-avkomma landar: prod 200 ×5 → pill-sond (0 under 52) →

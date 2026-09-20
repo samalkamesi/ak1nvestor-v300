@@ -1,0 +1,8 @@
+studio: våg 220 [organ:Φ] — navigationsminne: Besok[]-kontrakt + P8-fallgrop (39/39)
+
+v218-svepets röda 36/39 — två äkta rötter i src/lib/navigationsminne.ts:
+- las(): JSON.parse(rå) okontrollerat — sådd "null"/icke-array bröt
+  Besok[]-kontraktet (H5/H6) ⇒ Array.isArray-validering.
+- titelFranSida(): decodeURIComponent kastade URIError på ogiltig
+  %-kodning (D11, P8-brott) ⇒ lasbarDel() med fallgrop till rå sträng.
+Bevis: sviten 39/39 PASS (FÖRE 36/39) + tsc 0 + bygg + prod 200.

@@ -213344,6 +213344,182 @@
       }
     ]
   },
+  "kt-08-optionsforfallets-dag": {
+    "slug": "kt-08-optionsforfallets-dag",
+    "category": "KATALYSATOR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Optionsförfallets dag — kalenderns inbyggda katalysator",
+    "summary": "KATALYSATOR-familjens åttonde steg öppnar marknadens enda händelse vars datum är helt känt månader i förväg men vars verkan inte är det: optionsförfallets dag. Sonden mot 464 kurser visar att optionsförfall, förfalloptron, gamma-pinning och utestående kontrakt har noll kursägare — optionsfamiljen äger instrumentet och dess känslighetstal (od-01), auktionskursen äger handelsdagens rytm (am-05) och kalenderkursen äger raden i almanackan (kt-05) — men ingen äger själva dagen: vad som händer med KURSEN när tusentals positioner löper ut samtidigt. Kursens tes är trefaldig. Först: utestående kontrakt per lösenpris ritar en karta över magneter — 12 000 kontrakt vid lösenpris 100 med kontraktstorlek 100 aktier är 1 200 000 aktier, 15 procent av en dagomsättning på 8 000 000: där positionerna sitter finns dragningskraften. Sedan: gamma-hedgningen ger magneten sin motor — en handlare som köpt 1 000 kontrakt och hedgat med korta 50 000 aktier köper 12 000 aktier då kursen stiger till 101 (deltat växer från 0,50 till 0,62) och 12 000 till då kursen faller till 99 (deltat 0,38): köp åt båda hållen, rörelsen dämpas, kursen dras mot tyngdpunkten. Tredje: dagen har ett efterspel — kvartalens förfalloptron, då aktieoptioner, indexoptioner och indexterminer förfaller samtidigt, samlar volymen till stängningsauktionen, och veckorna runt förfallet bär volatilitetens torka och återkomst. Räkneexemplet med påhittade tal bär kursen: utan pin-kraft stängs aktien inom en krona från tyngdpunkten i 49,5 procent av dagarna vid daglig standardavvikelse 1,5 procent — med hedgflödet tillagt drar det mot magnetsidan. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "why": "KATALYSATOR-familjens sju första steg har lärt ut händelsens anatomi: vad en katalysator är (kt-01), hur förväntningar kalibreras (kt-02), hur händelser kedjas (kt-03) och hur kalendern läses (kt-05) — men familjens mest mekaniska medlem saknas: den enda marknadshändelse som står tryckt i almanackan månader i förväg. Sonden mot 464 kurser bekräftar: optionsförfall, förfalloptron, gamma-pinning, pin-risken och utestående kontrakt har noll kursägare. Gränserna är dokumenterade: od-01 äger gamma som känslighetstal och km-059 äger begreppet utestående kontrakt — den här kursen äger dagens MARKNADSSIDA, hedgflödets återverkan på kursen; am-05 äger auktionernas mekanik — här ägs datumet och dess positionsbild; skuldernas förfallodag (ks-03, rk-08) är lånevärldens datum och nämns enbart som namngiven granne; kortläget och aktieutlåningen (am-06) är blankningssidan — förfallodagen äger utlöpandet. Kursens värde för lärvägen: den skiljer rörelse från information — en kursförskjutning som är helt schemalagd bär ingen nyhet om bolagets värde, och den som kan läsa förfallodagens flöden slipper förväxla mekanik med mening.",
+    "learn": "Läsa förfallodagen som katalysator: datumet helt känt i förväg, verkan okänd — kalenderns enda garanterat daterade marknadshändelse, kt-05:s rad fördjupad · Rita magnetkartan: utestående kontrakt per lösenpris multiplicerat med kontraktstorleken — 12 000 kontrakt vid lösenpris 100 med 100 aktier per kontrakt är 1 200 000 aktier, 15 procent av dagomsättningen 8 000 000 · Räkna gamma-hedgen: 1 000 köpta kontrakt med delta 0,50 hedgas med korta 50 000 aktier — kurs 101 ger delta 0,62 och 12 000 köpta aktier, kurs 99 ger delta 0,38 och 12 000 köpta tillbaka: köp åt båda hållen · Skilja long och kort gamma: den köpta positionen dämpar (köper in i svaghet, säljer in i styrka), den sålda förstärker (köper högt, säljer lågt) — dagens karaktär avgörs av vilken sida som dominerar uteståendet · Räkna pin-kraftens grundplan: utan magnet stängs aktien inom en krona från tyngdpunkten i 49,5 procent av dagarna vid daglig standardavvikelse 1,5 procent — hedgflödet adderar dragningskraft · Känna igen förfalloptron: aktieoptioner, indexoptioner och indexterminer förfaller samtidigt kvartalsvis (tredje fredagen i mars, juni, september och december) och samlar volymen till stängningsauktionen · Läsa efterspelet: volatilitetens torka i veckorna före förfall, gamman som läcker ur systemet på dagen, nya serier och nya magneter efteråt · Tolka dagen i fem tidshorisonter: förfallodagen lever på minuter och timmar — den är aldrig en tes om värde, bara en källa till rörelse",
+    "history": {
+      "origin": "Den moderna förfallodagen föddes i april 1973, när Chicago Board Options Exchange öppnade den första listade optionshandeln: sexton aktier, enbart köpoptioner, och en standardiserad förfalloptron — tredje fredagen i månaden — som ersatte de över disk handlade optionernas individuellt förhandlade slutdatum. Clearinghuset Options Clearing Corporation ställde sig mellan parterna och gjorde förfallet till en maskinell rutin i stället för en förhandling. Samma vår publicerades prissättningsformeln som gjorde instrumentet beräknbart — teorin och kalendern föddes samma kvartal.",
+      "evolution": "Indexoptionerna kom 1983 och skapade kvartalsdubbelt: när aktieoptioner, indexoptioner och indexterminer förfaller samma dag uppstår förfalloptron — börsens volymtätaste stunder samlade kring stängningsauktionen. Kraschen 1987 visade mekanikens baksida: dynamisk hedging av stora positionsinnehav förstärkte rörelser åt fel håll, och forskningen började mäta hur optionernas hedgerörelser återverkar på de underliggande aktierna. Under 1990-talet dokumenterades pin-fenomenet i data: kurser dras mot lösenpriser med stort utestående just på förfallodagen.",
+      "modern": "2020-talets nolldagarsoptioner har flyttat förfallet in i varje handelsdag: en växande andel av optionerna köps och löper ut inom samma session, och gamman blir en daglig storlek i stället för en månadsritual. Analytiker publicerar skattningar av handlarnas samlade gammaexponering som förklaringsfaktor för dagens svängningar — mekaniken kursen lär ut har blivit en del av marknadens självbeskrivning. Läxan förblir densamma: kartan över utestående kontrakt och hedgens riktning."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Förfallodagen — händelsen som står i kalendern",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Utestående kontrakt — magnetkartan",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Gamman — hedgen som drar mot tyngdpunkten",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Förfalloptron — när allt löper ut samtidigt",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Efterspelet — volatilitetens torka och återkomst",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — förfalloläsarens arbetsblad",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch höll sig borta från optioner, men hans kärnläxa bär dagen: den kända händelsen är redan prissatt. En kursrörelse som är helt schemalagd — förfallodagens dragningskraft mot ett lösenpris — bär ingen information om bolagets värde; den som handlar på pin-rörelsen handlar med mekanikens rygg i stället för med en berättelse. Lynchs varning för att förväxla rörelse med mening är förfalloläsarens första skydd: kalendern flyttar priset, aldrig tesen.",
+    "grahamSection": "Benjamin Grahams Mr Market får sina kraftigaste ryck på schemalagda dagar: förfallodagens pris är mekanikens röst — positioner som löper ut och hedgar som måste justeras — inte värderingskalkylens. Grahams disciplin översätts rakt: priset från förfallodagen är ett citat att studera, aldrig ett underlag att agera på; substansen och rörelseresultatet har inte ändrats en krona av att optioner löpt ut. Den som mäter marginal mot värde (km-030) mäter den på grundtal, inte på förfallodagens slutkurs.",
+    "ak1Section": "I AK1A:s metodik hör förfallodagen hemma i den kortaste av fem tidshorisonter: minuter och timmar, aldrig en tes. AKM2-kalibreringen ignorerar pin-rörelser i grundtalen — en slutkurs som dragits mot ett lösenpris mäts om mot normala dagar eller mediankurser. Katalysatorkalendern (kt-05) får förfallodagen som en namngiven rad; kortlägeskopplingen går till am-06 (aktieutlåningens mekanik) och riskmatrisen (rk-05) noterar förfalloptron som en dagsrisk utan värdeinnehåll. Monte Carlo-labbet (ek-05) kan köra dagens volatilitetsregim mot hedgflödets riktning — mekanik som riskmätning, inte som signal.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Förfallodagen — händelsen som står i kalendern",
+        "intro": "Katalysatorfamiljens mest mekaniska medlem: en händelse vars datum är tryckt i almanackan månader i förväg. Kapitlet placerar dagen i katalysatorns grammatik.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En option är en rätt, inte en plikt — och rätten har ett sista giltighetsdatum. På förfallodagen delar varje position upp sig i tre öden: lösenpriset är passerat med marginal (optionen är i pengarna) och rätten löses mot aktier; lösenpriset är opasserat och rätten blir värdelös; eller kursen ligger precis vid lösenpriset — och just då är osäkerheten som störst. Katalysatorns grammatik (kt-01) säger att en katalysator är en händelse som tvingar marknaden att ompröva — förfallodagen tvingar inte fram omprövning av VÄRDET men av POSITIONERNA: tusentals innehav måste avgöras, rullas eller realiseras samma dag. Därmed är dagen kalenderkursens (kt-05) särart: datumet är helt känt — tredje fredagen i seriens månad, kvartalsvis förstärkt — medan verkan är okänd: ingen vet i förväg hur stor andel som löses, hur hedgarna justeras eller var stängningsauktionen landar. Förväntningsanalysen (kt-02) får sitt renaste labb: förväntningen gäller inte budet utan flödet. Gränsen mot instrumentkurserna dras här: od-familjen äger optionens mekanik och prisbildning — den här kursen äger DAGEN, vad som händer med aktien och marknaden när kontrakten löper ut. Gränsen mot skuldens förfallodag (ks-03, rk-08) är namngiven: lån som förfaller är betalningsdatum, optioner som förfaller är rättigheter som upphör — två världar som delar ord men inte mekanik."
+          },
+          {
+            "type": "definition",
+            "content": "Förfallodag: den dag en optionsrätt upphör; positionen löses mot aktier om lösenpriset är passerat, blir värdelös om inte — eller hamnar i gränslandet vid lösenpriset där pin-risken bor. Förfalloptron: den återkommande (kvartalsvis förstärkta) dag då options- och terminsserier löper ut tillsammans."
+          },
+          {
+            "type": "insight",
+            "content": "Datum känt månader i förväg, verkan okänd till sista minuten: förfallodagen är katalysatorns enda helt daterade medlem — positionernas dag, inte värderingsdagen."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Utestående kontrakt — magnetkartan",
+        "intro": "Före dagen finns kartan: utestående kontrakt per lösenpris visar var positionstyngden — och därmed dragningskraften — sitter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Begreppet utestående kontrakt (på marknadsspråket open interest) ägs av grundkursen (km-059): antalet kontrakt som existerar och ännu inte stängts. Förfalloläsarens vändning är kartografisk: sortera uteståendet per lösenpris och multiplicera med kontraktstorleken — 100 aktier per kontrakt i standardserien — så fås antalet aktier som dagens avgörelse rör. Räkneexemplet (påhittade tal): aktien handlas kring 101; uteståendet vid lösenpris 95 är 3 000 kontrakt (300 000 aktier), vid lösenpris 100 hela 12 000 kontrakt (1 200 000 aktier), vid lösenpris 105 5 000 kontrakt (500 000 aktier). Ställ 1 200 000 aktier mot en dagomsättning på 8 000 000: 15 procent — en positionstyngd att respektera när den ska avgöras inom några timmar. Kartan säger inte att kursen KOMMER stänga vid 100 — den säger var konsekvenserna är koncentrerade om den gör det: en lösen nära tyngdpunkten rör flest aktier, flest hedgar och störst volym i stängningsauktionen (vars mekanik ägs av am-05). Läsarten är katalysatorkedjan (kt-03) i miniatyr: kartan är förväntningsunderlaget (kt-02), dagen är händelsen, stängningsauktionen är utfallet — och varje led kan mätas i förväg utom det sista."
+          },
+          {
+            "type": "tabell",
+            "content": "Magnetkartan i exemplet: lösenpris 95: 3 000 kontrakt = 300 000 aktier · lösenpris 100: 12 000 kontrakt = 1 200 000 aktier (15 procent av dagomsättningen 8 000 000) · lösenpris 105: 5 000 kontrakt = 500 000 aktier · tyngdpunkt: lösenpris 100 — ett steg från dagens kurs 101"
+          },
+          {
+            "type": "insight",
+            "content": "Multiplicera uteståendet med kontraktstorleken och ställ mot omsättningen: magnetkartan är tre räkneövningar som visar var dagens avgörelse har mest att röra."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Gamman — hedgen som drar mot tyngdpunkten",
+        "intro": "Magneten har en motor: gamma-hedgningen. Kapitlet räknar flödet hos en enda handlare — och visar hur tusentals likadana gör dagen till dragningskraft.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En handlare (påhittat exempel) har köpt 1 000 kontrakts köpoptioner med lösenpris 100 och kontraktstorlek 100 — exponeringen är 100 000 aktier vid deltat 0,50. Handlaren vill inte bära aktierisk och hedgar: korta 50 000 aktier. Nu kommer mekaniken. Stiger kursen till 101 växer deltat till 0,62 — exponeringen 62 000 aktier — och för att förbli neutral köper handlaren 12 000 aktier in i styrkan. Faller kursen till 99 krymper deltat till 0,38 — exponeringen 38 000 aktier — och handlaren köper tillbaka 12 000 aktier in i svagheten. Köp åt båda hållen: rörelsen dämpas, och flödet pekar ständigt tillbaka mot lösenpriset 100 — det är pin-kraftens motor. Känslighetstalet som driver den (gamman, ägt som begrepp av od-01) läses här från MARKNADENS sida: inte vad optionen känner för, utan vad hedgen gör med aktien. Vänd bilden — handlaren har sålt optionerna och är kort gamma — och flödet vänder: stigande kurs tvingar fram köp av aktier högt upp, fallande kurs tvingar fram försäljning lågt ner: förstärkning i stället för dämpning. Dagens karaktär avgörs alltså av vilken sida som bär mest utestående: dominerar köpt gamma pressas kursen mot tyngdpunkten (där flest kontrakt sitter); dominerar såld gamma förstärks rörelser som redan pågår. Grundplanen utan magnet är ändå uträknad: med daglig standardavvikelse 1,5 procent stängs aktien inom en krona från 100 i 49,5 procent av dagarna under ren slump — hedgflödet lägger dragningskraft ovanpå slumptalet."
+          },
+          {
+            "type": "definition",
+            "content": "Long gamma (köpt position): hedgen köper när kursen faller och säljer när den stiger — dämpar rörelser, drar kursen mot tyngdpunkten. Kort gamma (såld position): hedgen köper högt och säljer lågt — förstärker rörelser. Pin-risken: läget där kursen vid stängning ligger så nära ett lösenpris att utfallet avgörs av sista affärerna."
+          },
+          {
+            "type": "insight",
+            "content": "50 000 sålda aktier vid delta 0,50 blir 62 000 vid 0,62 och 38 000 vid 0,38 — 12 000 köpta åt båda håll: en enda hedges köp är dagens minsta partikel, tusentals hedgar är magneten."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Förfalloptron — när allt löper ut samtidigt",
+        "intro": "En gång per månad, och hårdare varje kvartal, löper serierna ut tillsammans. Kapitlet läser tron: dagen då flest positioner avgörs på samma minuter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Standardserierna förfaller tredje fredagen i månaden — men kvartalsförfalloptron (mars, juni, september och december) är den täta: då löper aktieoptioner, indexoptioner och indexterminer ut samma dag, och volym som normalt sprids över veckor samlas på en enda eftermiddag. Konsekvensen är hierarkisk: hela kedjor av positioner — optioner på index, terminer på index, optioner på terminer — avgörs i beroendeförhållande till varandra, och den sista timmen före stängningen (handelns häxtimma) bär dagens största omsättning när sista justeringar tvingas fram. Stängningsauktionens mekanik ägs av auktionskursen (am-05) — här ägs DATUMET: förfalloptron är kalenderns (kt-05) volymtätaste rad, och den kan sammanfalla med indexomläggning (am-07) till en vecka då både positioner och portföljsammansättning byts i stor skala. Dagarna före tron rullar innehavarna: positioner som inte vill realiseras flyttas till nästa serie — den gamla serien säljs och nästa köps — vilket syns som svällande utestående i kommande månad samtidigt som den gamla serien töms. För läsaren av katalysatorkedjor (kt-03) är tron en kedja i kalendern: rullningsdagarna, själva förfallodagen och efterspelet är tre namngivna led — och varje led har sitt mätbara signum i volym och utestående."
+          },
+          {
+            "type": "definition",
+            "content": "Förfalloptron (kvartalsform): aktieoptioner, indexoptioner och indexterminer förfaller samma dag — tredje fredagen i mars, juni, september och december; årets volymtätaste schema. Rullning: flytt av positioner till nästa serie före förfallet — dagarnas största orderflöde utöver själva avgörelsen."
+          },
+          {
+            "type": "insight",
+            "content": "Kvartalsförfalloptron samlar veckors volym på en eftermiddag: kedjan rullningsdagar, häxtimma, stängningsauktion — datumet ägs här, auktionens mekanik av am-05."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Efterspelet — volatilitetens torka och återkomst",
+        "intro": "Dagen slutar inte när kontrakten dör: veckorna runt förfallet har sin egen volatilitetsform. Kapitlet läser före, under och efter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Volatiliteten har en kalender. I veckorna före ett stort förfall pressas den tid som optionerna representerar ned: serie efter serie löper ut, och säljare av optioner (som tjänar på oförändrade kurser) får medvind när det köpta hedgflödet dämpar rörelserna — volatilitetens torka, ett återkommande mönster i optionsmättade marknader. På själva förfallodagen läcker gamman ur systemet: de kontrakt som dör har ingen hedge kvar att justera, och flödet som dämpade försvinner. Därmed öppnas fönstret efteråt: utan det dämpande hedgflödet kan rörelser som sparats återkomma — den dokumenterade bilden är att volatiliteten ofta är lägre in i stora förfall och återvänder när serierna byggts om. Ombyggnaden är efterspelets motor: nya serier emitteras, utestående byggs upp vid nya lösenpriser — nästa månads magneter etableras inom några handelsdagar — och handlare som sålt volatilitet under torkan återköper den när rörelserna återkommer. För makroläsaren är komprimeringen huvudfyndet: en vecka där förfalloptron sammanfaller med räntebeslut och stora rapporter (kt-05:s kalender) bär mer sammanlagd rörelserisk än kalenderns rader var för sig antyder — inte därför att någon rad säger det, utan därför att positionerna som normalt dämpar rörelse just då är som tunnast."
+          },
+          {
+            "type": "definition",
+            "content": "Volatilitetens torka: mönster av sjunkande svängningar i veckorna före stora förfall — de utlöpande optionernas dämpande hedgflöde som säsong. Ombyggnad: dagarna efter ett förfall då nya serier emitteras och nästa månads magnetkarta ritas."
+          },
+          {
+            "type": "insight",
+            "content": "Före förfallet: dämpning. På dagen: gamman läcker ur. Efteråt: nya magneter och återvändande rörelse — volatilitetens kalender är tre akter, inte en dag."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — förfalloläsarens arbetsblad",
+        "intro": "Kursens redskap samlas till fem rader som kan ställas mot vilken aktie som helst före ett förfall — alltid i samma ordning, från kalendern till flödet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rad ett: kalendern — är nästa förfall månatligt eller kvartalsförfalloptron, och vilka andra rader (räntebeslut, rapporter) delar vecka? (kt-05:s register). Rad två: magnetkartan — vilket lösenpris bär störst utestående, hur många aktier blir det multiplicerat med kontraktstorleken, och hur många procent av dagomsättningen? (exemplet: 12 000 kontrakt, 1 200 000 aktier, 15 procent). Rad tre: avståndet — hur långt i procent sitter kursen från tyngdpunkten? (101 mot 100 är ett steg: gränslandet). Rad fyra: hedgriktning — dominerar köpt eller såld gamma i serien? (svår att veta exakt; ett dokumenterat antagande är bättre än inget). Rad fem: efterspelet — när ritas nästa karta om, och vilken volatilitetsform bär veckorna efter? Arbetsbladet genomlöper kursens verktyg: multiplikationen (kontrakt gånger kontraktstorlek), andelen (mot omsättningen), delta-räkningen (0,50 mot 0,62 och 0,38) och kalendern (tredje fredagen, kvartalsförfalloptron). Varje rad kan mätas med två sökningar och en division — och ingen rad säger något om värde: arbetsbladet läser mekanik, och värderingen läses bäst när mekanikens röst inte skriver kurran."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna på dagen. Uppgift ett: en handlare har köpt 2 000 kontrakt med lösenpris 100 (kontraktstorlek 100) och hedgat med korta 100 000 aktier vid delta 0,50 — kursen stiger till 101 och deltat till 0,62: hur många aktier köper handlaren för att bli neutral (hedge 124 000 mot 100 000: 24 000)? Uppgift två: med daglig standardavvikelse 1,0 procent i stället för 1,5 — med vilken sannolikhet stängs aktien inom en krona från 100 om ingen magnet fanns (68,3 procent mot 49,5)? Uppgift tre: uteståendet vid tyngdpunkten är 12 000 kontrakt och dagomsättningen 8 000 000 aktier — vad händer med andelen om omsättningen faller till 5 000 000 (1 200 000 mot 5 000 000: från 15 till 24 procent — magneten växer när handeln tunnar)?"
+          },
+          {
+            "type": "insight",
+            "content": "Fem rader: kalender, magnetkarta, avstånd, hedgriktning, efterspel — förfallodagen är den mest mätbara av katalysatorer och den minst värdebärande: rörelse utan påstående om värde."
+          }
+        ]
+      }
+    ]
+  },
   "am-01-likviditet-och-spread": {
     "slug": "am-01-likviditet-och-spread",
     "category": "AKTIEMARKNADEN I PRAKTIKEN",
@@ -216172,6 +216348,190 @@
       }
     ]
   },
+  "vr-09-konglomeratrabatten": {
+    "slug": "vr-09-konglomeratrabatten",
+    "category": "VÄRDERING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Konglomeratrabatten — när helheten är värd mindre än delarna",
+    "summary": "VÄRDERING-familjens nionde steg öppnar rabattens svåraste fall: bolaget vars delar är värda mer än helheten. Sonden mot 464 kurser visar att konglomeratrabatt och holdingrabatt har noll kursägare — summakursen äger metoden att räkna delvärden (km-012) och investmentbolagskurserna äger NAV-rabatten (ib-01, ib-02) — men ingen äger frågan varför helheten handlas under summan och när skillnaden stängs. Kursens tes är trefaldig. Först: rabatten är ett mått, inte ett sentiment — Del A 800 och Del B 400 summerar 1 200; börsvärdet 960 ger rabatten 240 = 20 procent: siffran kan och bör räknas innan den tolkas. Sedan: rabatten har fyra källor — grumlig segmentredovisning (analyskostnaden), kapitalbindning (den starka delen subventionerar den svaga), synergibrist (centrala kostnader utan motsvarande värde) och imperiebygge (styrelsens rike, inte ägarens avkastning) — och källan avgör om rabatten är fel att handla på eller fel att äga. Tredje: väntan har ett pris — en rabatt på 20 procent som består i åtta år kostar 2,8 procent per år i utebliven utfällning (1,25 upphöjt till en åttondel), och rabatten stängs bara av en händelse: en spin-off där Del B noteras fristående till 420 med fem procents premie ger 800 + 420 = 1 220 mot 960 = 27,1 procent värdehöjning — mot en engångskostnad på 40 och 15 per år i dubbel administration. Räkneexemplet med påhittade bolag bär kursen från mått till källa till stängning. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "why": "VÄRDERING-familjens åtta första steg har byggt multipelens anatomi (vr-01 till vr-03), avkastningens källor (vr-04) och metoderna från pris mot värde (vr-05) via jämförelsebolagen (vr-06) till terminalvärdet (vr-07) och återanskaffningspriset (vr-08) — men det vanligaste förhållandet mellan summa och börsvärde i flerdelade bolag saknar sin kurs. Sonden mot 464 kurser bekräftar: konglomeratrabatt, holdingrabatt, uppsplittring och break-up har noll kursägare (konglomerat nämns i förbifart av ett tiotal kurser — ingen äger ämnet). Gränserna är dokumenterade: km-012 äger summametoden (att RÄKNA delarna) — den här kursen äger rabatten (varför helheten prissätts under summan och när gapet stängs); ib-01 och ib-02 äger investmentbolagets rabatt mot substans, kusinen med fondstruktur — här ägs industrikonglomeratets version med operativa verksamheter; pe-02 äger utfasningens internränta — här ägs börsbolagets spin-off; tx-01 äger varför imperier byggs — här ägs vad börsen tar betalt för dem. Kursens värde för lärvägen: rabatten är världens vanligaste värdefälla och värdepärmens vanligaste katalysator på en gång — den som kan skilja källorna åt kan skilja fällan från fönstret.",
+    "learn": "Räkna rabatten: Del A 800 plus Del B 400 = 1 200 mot börsvärde 960 — rabatt 240 = 20 procent; måttet före tolkningen · Namnge källorna: grumlig segmentredovisning, kapitalbindning mellan delar, synergibrist, imperiebygge — fyra källor med fyra olika prognoser · Räkna väntans pris: en 20-procentig rabatt som består i åtta år kostar 2,8 procent per år (1,25 upphöjt till en åttondel); i tolv år kostar den 1,9 procent per år · Räkna stängningen: spin-off av Del B till 420 (fem procents friståendepremie) ger 800 + 420 = 1 220 mot 960: 27,1 procent — mot engångskostnaden 40 och 15 per år i dubbel administration · Skilja konglomeratrabatten från kusinerna: investmentbolagets NAV-rabatt (ib-01, ib-02 — fondstruktur) och andrahandsandelens pris (pe-05) — samma utseende, olika instrument · Läsa segmentredovisningens grumlighet: vilka kostnader bärs centralt, vilka delar tjänar på gemensam finans — rabattens första källa är att summan är svår att räkna · Bedöma rabattens hållbarhet: vilken källa kan stängas av vilken händelse (spin-off, uppsplittring, aktivist) och till vilken kostnad · Kräva marginal: rabattens värde realiseras bara om stängningen kommer — väntetiden är en riskpost som räntas (2,8 procent per år i exemplet)",
+    "history": {
+      "origin": "1960-talets Amerika byggde konglomeratens guldålder: ITT under Harold Geneen tillsammans med LTV och Litton köpte bolag i alla branscher — och börsen betalade premie, inte rabatt: den som köpte bolag med lågt pris mot intjäning med sina högt värderade aktier visade automatisk vinsttillväxt per aktie (multiplikationsaritmetikens illusion, senare en del av bf-13:s gränser). Våren 1968 vände värderingsförhållandena och vågen bröt samman — rabatten som följd är sedan dess börsens standardinställning till blandbolag.",
+      "evolution": "1980-talet blev uppsplittringens årtionde: uppköpsfinansiärer köpte konglomerat, sålde delarna var för sig och visade att summan översteg helheten med mer än transaktionskostnaderna — motsatt aritmetik blev en industri. Forskningen följde: 1995 mätte Berger och Ofek den genomsnittliga konglomeratrabatten (övervärde mot summan av jämförbara fristående bolag) till omkring 15 procent, och diversifieringsrabatten blev ett mätbart forskningsfält i stället för en anekdot.",
+      "modern": "Dagens marknad betalar för fokus: analytiker och index belönar renodlade verksamheter, och studier av avknoppningar visar genomgående att spun-off-bolag klarar sig väl som fristående — samtidigt lever de svenska sfärernas långsiktiga blandbolag kvar som motexempel: en familj som håller samman industrier i generationer kan bära en rabatt i fred och ändå bygga värde över tiden. Kursens läsning: rabatten är varken lag eller fördom — hon är ett pris på otydlighet, och priset varierar med källan."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Helheten mot summan — rabattens definition",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Rabattens fyra källor — från grumligt till girigt",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Väntans pris — när rabatten består",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Rabattens stängning — spin-off, uppsplittring, aktivist",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Den svenska läsarten — investmentbolaget som kusin",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — rabattläsarens arbetsblad",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch räknade avknoppningar till sina favoritsituationer: det fristående bolaget lämnar moderhusets rapport och får en ledning med egen aktie att svara för, medan institutioner som inte får behålla den nya aktien säljer mekaniskt — ett pris som har med ägarmekanik att göra, inte med värde. Hans läsning av konglomerat var Lynch-rak: hellre ett bolag man förstår än tre man förstår hälften av — rabatten är delvis betalt för att analysen blir tre gånger så jobbig.",
+    "grahamSection": "Benjamin Grahams arbetsfördelning är kursens stomme: den ena kategorin — köp under beräknat värde och vänta — och den andra, situationer med bestämda händelser och tidsramar (fusioner, utdelningar av tillgångar, uppsplittringar), där värdeskillnaden och katalysatorn räknas tillsammans. Rabattstängningen är den andra kategorin i modern dräkt, och Grahams varning står kvar vid sidan av den: en rabatt utan händelse kan bäras i årtionden medan marginalen äts av väntan — priset under värdet är en försäkring, inte en ränta.",
+    "ak1Section": "I AK1A:s metodik är konglomeratrabatten standardövningen i segmentläsning: AKM2-modellen justerar flerdelade bolag del för del innan någon multipel tyds (summametodens kurs är km-012), scenariorutan (km-029) får rabattens två lägen — består eller stängs — som kolumner, och väntetiden förs som riskpost i rk-familjens tidstänkande. Katalysatorkedjan (kt-03) bär stängningen: aktivist, förslag, beslut, avknoppning — fyra led med stigande sannolikhet. Fem tidshorisonterna skiljer fällan från fönstret: rabattens källor läses långsamt (segment, kapitalbindning), dess stängning på medellång sikt — och ingen horisont gör mekaniken till en rekommendation.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Helheten mot summan — rabattens definition",
+        "intro": "Rabatten börjar som en subtraktion, inte en känsla. Kapitlet definierar måttet och visar spegeln: premien som blev rabatt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Metoden att räkna delvärden ägs av summakursen (km-012): värdera varje del mot sina egna jämförelsebolag (vr-06) och summera. Den här kursen tar nästa steg — jämför summan med börsvärdet. Räkneexemplet (påhittade tal): Del A är värderad till 800 miljoner kronor mot sina jämförelsebolag, Del B till 400 — summan 1 200. Börsvärdet för helheten är 960. Rabatten är 1 200 − 960 = 240, det vill säga 20 procent: helheten handlas till fyra femtedelar av delarnas värde. Definitionen är enkel; tolkningen är kursens rest — rabatten bär information om marknadens misstro, inte om att något är fel räknat. Spegeln finns i historien: på 1960-talet betalades PREMIE för blandbolag (diversifieringen som trygghet), sedan 1968 är rabatten standardinställningen — samma bolagsform, två prisbilder, och skillnaden bor i vad marknaden tror att ägandet kostar. Mätningen har en disciplin: rabatten räknas mot noga summerade delvärden (centralt bärande kostnader fördelade, internintäkter eliminerade — grumligheten är kapitel två), och varje delvärde bär sin egen osäkerhet: en rabatt på 20 procent mot delvärden med tio procents felmarginal är ingen rabatt alls utan ett decimaltecken."
+          },
+          {
+            "type": "definition",
+            "content": "Konglomeratrabatt: skillnaden mellan summan av ett flerdelat bolags delvärden och dess börsvärde, uttryckt i procent av summan — i exemplet (1 200 − 960) / 1 200 = 20 procent. holdingrabatt: samma mått för ett rent ägarbolag utan egen drift."
+          },
+          {
+            "type": "tabell",
+            "content": "Räkneexemplet: Del A 800 + Del B 400 = summa 1 200 · börsvärde 960 · rabatt 240 = 20 procent · spegelfallet: stängs rabatten till noll växer värdet 25 procent (960 mot 1 200) · hålls delvärdena med tio procents osäkerhet är 20 procents rabatt inom felmarginalen"
+          },
+          {
+            "type": "insight",
+            "content": "Rabatten är en subtraktion med tolkning: 1 200 mot 960 = 20 procent — siffran är gratis, men vad den betyder avgörs av källan, och källan är nästa kapitel."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Rabattens fyra källor — från grumligt till girigt",
+        "intro": "Varför betalar marknaden mindre för helheten? Kapitlet skiljer fyra källor åt — de har samma utseende i kursgrafiken och olika prognoser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Källa ett: grumligheten. Segmentredovisningen fördelar centrala kostnader på delarna efter nycklar som inte är jämförbara med fristående bolag, internintäkter och internpriser gör att delarnas marginaler är uppskattningar — och analyskostnaden är en reell kostnad som marknaden prissätter: bolaget som tar en dag att förstå värderas högre än bolaget som tar en vecka. Källa två: kapitalbindningen. Blandbolaget är en intern kapitalmarknad — kassa från Del A kan finansiera Del B i stället för utdelning eller återköp; den starka delen subventionerar den svaga, och ägaren som hellre hade valt själv betalar mindre för att inte få välja (allokeringsfrågan ägs av ks-02). Källa tre: synergibristen. Utlovade synergier kostar centrala ledningar, koncerngemensam förvaltning och koordinationsförluster — när två plus två blir tre och en halv syns det i delarnas sammanlagda marginaler, och marknaden har sett det förr. Källa fyra: imperiebygget. Storlek har prestige, och en ledning som köper tillväxt (tx-01) bygger rike ibland oavsett avkastning — agentkostnaden mellan ägare och ledning är rabattens girigaste källa. Prognoserna skiljer: grumligheten kan botas av transparans (nästan gratis), bindningen av utdelningsdisciplin eller avknoppning, synergibristen kräver uppsplittring (kostsamt), och imperiebygget kräver ägartryck utifrån — rabatten med fel källa är en fälla, med rätt källa ett fönster."
+          },
+          {
+            "type": "definition",
+            "content": "Intern kapitalmarknad: blandbolagets förmåga — och frestelse — att flytta kassa mellan delar internt i stället för att lämna den till ägarna. Agentkostnad: skillnaden i intresse mellan ägare och ledning; imperiebyggandets ekonomiska namn."
+          },
+          {
+            "type": "insight",
+            "content": "Fyra källor, fyra prognoser: grumlig (transparans botar), binder (disciplin botar), synergilös (splittring krävs), girig (ägartryck krävs) — rabattens orsak avgör om hon är fälla eller fönster."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Väntans pris — när rabatten består",
+        "intro": "Rabatten bär ingen ränta i sig själv: om stängningen uteblir kostar väntan. Kapitlet räknar väntans pris per år.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lockposten i varje rabattläsning är aritmetiken själv: stängs en 20-procentig rabatt stiger kursen 25 procent (960 mot 1 200) — men siffran saknar datum, och utan datum är den inte en avkastning utan en förhoppning. Räkna i stället väntans pris: om rabatten består i åtta år är den årliga utfällningen 1,25 upphöjt till en åttondel minus ett, det vill säga 2,8 procent per år — den extra avkastning som kunde ha samlats om skillnaden stängts direkt och marginalen varit konstant. Består hon i tolv år sjunker priset per år till 1,9 procent. Detta är värdefällans kärna: 2,8 procent per år kan ätas av avgifter, alternativkostnad och rapporternas brus — rabatten som ser gratis ut är i praktiken en option utan löptid, skriven av tiden själv, och Optionskursens läxa gäller också här: värdet av en rättighet utan datum är svår att räkna. Metoden är disciplinen: innan en rabatt köps (i utbildningens termer: studeras som exempel) räknas tre tal — rabattens storlek (20 procent), den rimligaste stängningstiden och väntans pris per år vid utebliven stängning. Marginalen mot felet (km-030) hjälper bara om tiden står med i räkningen: en rabatt på 20 procent med tio års väntan och osäkra delvärden är inte en marginal utan en gissning med väntelista."
+          },
+          {
+            "type": "tabell",
+            "content": "Väntans pris (påhittade tal): stängning efter 1 år: plus 25,0 procent engångs · består 8 år: 2,8 procent per år · består 12 år: 1,9 procent per år · ingen stängning: 0 — rabatten bär ingen ränta i sig själv"
+          },
+          {
+            "type": "insight",
+            "content": "1,25 upphöjt till en åttondel är 1,028: en 20-procentig rabatt som består i åtta år kostar 2,8 procent per år — väntan är en post i kalkylen, inte ett tomrum."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Rabattens stängning — spin-off, uppsplittring, aktivist",
+        "intro": "Rabatten stängs aldrig av att den är riktig — bara av att något händer. Kapitlet räknar stängningens vägar och priser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Väg ett: spin-off. Del B knoppas av och noteras fristående; ägarna får aktier i båda bolagen och väljer själva. Räkneexemplet: en fristående Del B antas handlas till 420 — fem procents premie för renodling (marknadens betalning för fokus) — och helheten blir 800 + 420 = 1 220 mot 960 före: 27,1 procent värdehöjning. Men stängningen har pris: notering, prospekt och rådgivare kostar engång 40, och dubbla bolagsledningar, styrelser och rapporter kostar 15 per år — nästa års jämförelse är 1 220 − 15 = 1 205, fortfarande 25,5 procent över utgångsläget. Väg två: uppsplittring. Delarna säljs successivt och bolaget blir kassa plus en kvarvarande verksamhet — transaktionspriserna är förhandlade (okända i förväg), skatten är en post (skattekurserna äger reglerna) och resultaten är en utfasningsberäkning i privatägarens mening (pe-02 äger den aritmetiken; här ägs börsbolagets version). Väg tre: aktivisten. En stor ägare agiterar för väg ett eller två — katalysatorkedjan (kt-03) i kalenderform: köp, förslag, kampanj, stämma, genomförande, och varje led har sin sannolikhet och sitt datum. Gemensamt för vägarna: rabatten stängs av händelser med kostnader och tidsramar — inte av att den finns. Grahams kategori situationer med bestämda händelser är exakt den här hantverket: värdeskillnad och katalysator räknas tillsammans, och den ena utan den andra är en åsikt."
+          },
+          {
+            "type": "definition",
+            "content": "Spin-off (avknoppning): en del av bolaget förs över till ägarna som aktier i ett nytt, fristående noterat bolag — ingen köpeskilling, men noterings- och administrationskostnader. Break-up (uppsplittring): delarna säljs var för sig tills helheten är upplöst."
+          },
+          {
+            "type": "tabell",
+            "content": "Stängningsräkning: före 960 · spin-off: Del A 800 + Del B 420 (fem procents friståendepremie) = 1 220 = plus 27,1 procent · kostnader: 40 engång + 15 per år · efter ett år: 1 220 − 15 = 1 205 = plus 25,5 procent — stängningen lönar sig i exemplet, men först efter händelsen"
+          },
+          {
+            "type": "insight",
+            "content": "Rabatten stängs av händelser, inte av att hon är riktig: spin-off, uppsplittring, aktivist — tre vägar, tre kostnadsscheman, och alla kräver att någon driver dem."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Den svenska läsarten — investmentbolaget som kusin",
+        "intro": "Samma utseende, annat instrument: investmentbolagets rabatt mot substans är konglomeratrabattens kusin. Kapitlet drar gränsen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "På den svenska börsen är rabattens vanligaste skepnad investmentbolaget: en börsnoterad portfölj av andelar som handlas under sitt substansvärde (ib-01 äger grunderna, ib-02 substansens kvalitet). Utseendet är identiskt med konglomeratrabatten — helheten under delsumman — men instrumentet skiljer: investmentbolaget äger andelar i andra bolag (fondstrukturen), medan industrikonglomeratet äger och driver verksamheter. Orsakerna överlappar delvis: agentkostnaden (förvaltare som väljer åt ägaren), kapitalbindningen (realisationer som skjuts upp av skatt) och grumligheten (portföljens dagar gamla priser). Men konglomeratets källor sträcker sig längre: synergibristen och den operativa integrationskostnaden finns inte i portföljen, och omvända gäller: investmentbolagets permanenta skattestruktur är en friktion industribolaget saknar. Skillnaden är prognostisk: NAV-rabatten stängs sällan av uppsplittring (portföljen kan avvecklas gradvis), konglomeratrabatten kan (verksamhetarna kan noteras). Den svenska traditionen tillför tålmodet: familjeägda sfärer har burit rabatter i generationer och ändå byggt värde — långsiktighet kan göra rabatten till en livsförsäkring snarare än en fälla, och stadiga utdelningar gör den till en kassaflödesmaskin. Kursens gränsdragning: portföljbolagskurserna (ib-familjen) äger andelsräkningen, praktikcasen (pc-04) äger exempelvis läsningen av ett verkligt blandbolag — den här kursen äger den operativa blandningens rabatt och dess stängningsvägar."
+          },
+          {
+            "type": "definition",
+            "content": "NAV-rabatt (substansrabatt): skillnaden mellan ett investmentbolags börsvärde och dess justerade substansvärde — konglomeratrabattens fondstrukturerade kusin, med skatt och förvaltning som extra friktioner och utan synergifrågan."
+          },
+          {
+            "type": "insight",
+            "content": "Portföljens rabatt bor i struktur (skatt, förvaltning), verkstadens i drift (synergi, ledning) — samma kursgrafik, olika orsakskatalog, och stängningsvägarna skiljer sig därefter."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — rabattläsarens arbetsblad",
+        "intro": "Kursens redskap samlas till sex rader som kan ställas mot varje flerdelat bolag — alltid i samma ordning, från måttet till beslutsposten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rad ett: bygg summan (km-012:s metod) — del för del mot egna jämförelsebolag (vr-06), centrala kostnader fördelade, internintäkter eliminerade. Rad två: räkna rabatten i procent av summan — och mot delvärdenas sammanlagda osäkerhet: en rabatt inom felmarginalen är ingen rabatt. Rad tre: lista källorna per del — grumlighet, bindning, synergibrist, imperiebygge: vilka är störst och var? Rad fyra: fråga vilken källa som kan stängas av vilken händelse — transparans, disciplin, spin-off, aktivist — och till vilken kostnad i tid och pengar. Rad fem: räkna väntans pris per år om stängningen uteblir (2,8 procent per år i huvudexemplet). Rad sex: kräv marginal (km-030) som täcker både delvärdesfelet och väntetiden. Arbetsbladet genomlöper kursens verktyg: subtraktionen (summa mot börsvärde), källkatalogen, exponenten (åttondelen av 1,25) och stängningsräkningen (1 220, 40, 15). Ingen rad säger köp eller sälj — arbetsbladet är en metod att skilja fällan från fönstret, och utbildningens gräns mot råd går rakt genom rad sex: valet är alltid läsarens eget ansvar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna på rabatten. Uppgift ett: summan av delvärdena är 1 500 och börsvärdet 1 050 — hur stor är rabatten i procent (450 delat med 1 500 = 30 procent) och hur många procent stiger värdet om den stängs (1 500 mot 1 050 = plus 42,9 procent)? Uppgift två: om den 30-procentiga rabatten består i tio år — vad kostar väntan per år (1,4286 upphöjt till en tiondel = plus 3,6 procent per år)? Uppgift tre: en spin-off höjer Del B:s värde med tio procents premie (från 400 till 440) med kostnaden 40 engång och 15 per år — vad blir värdet efter ett år (800 + 440 − 40 − 15 = 1 185 mot 960 = plus 23,4 procent), och vad händer med kalkylen om premien uteblir (800 + 400 − 40 − 15 = 1 145: plus 19,3 procent — marginalen mot felet syns)?"
+          },
+          {
+            "type": "insight",
+            "content": "Sex rader: mått, gräns mot felet, källor, stängningsvägar, väntans pris, marginal — rabattläsning är aritmetik följt av diagnostik, och utan rad tre är rad två bara en siffra."
+          }
+        ]
+      }
+    ]
+  },
   "ib-01-vad-ar-ett-investmentbolag": {
     "slug": "ib-01-vad-ar-ett-investmentbolag",
     "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
@@ -218023,6 +218383,182 @@
           {
             "type": "utmaning",
             "content": "Bygg en egen tidslinje med kursens verktyg: teckna ett påhittat commitment, välj ett indragningsschema och ett utbetalningsschema över tio år, räkna nettopositionen år för år och läs ut botten, nettoåren och brytpunkten. Räkna därefter multipel, TVPI med ett eget kvarvarande värde och den effektiva avgiften första året. Jämför till slut din kurvform med kursens och förklara skillnaderna i termer av de fyra krafterna. Kursen är utbildning i att läsa pengarnas tid — inte uppmaningar att köpa eller sälja något."
+          }
+        ]
+      }
+    ]
+  },
+  "pe-07-co-investeringen": {
+    "slug": "pe-07-co-investeringen",
+    "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Co-investeringen — andelen bredvid fonden",
+    "summary": "Private equity-familjens sjunde steg: co-investeringen — den avgiftsfria biljetten som gör LP:n till direktägare i en enskild affär bredvid fonden. Samma affär till två priser är kursens första rörelse: en affär som fördubblas brutto ger fond-LP:n 168 av 100 insatta efter tjugo procent carry och tolv enheter avgifter, medan co-investorn tar hem 200 — gapet 32 enheter är fondens pris för just denna exponering. Sedan priset för det som inte står på fakturan: urvalsasymmetrin. GP:n bjuder in till de affärer den vill dela, och i kursens modell bär de helägda affärerna 2,10x brutto mot de erbjudnas 1,70x — fondvägen 176 mot co-investvägen 170, och den gratis biljetten till fel konsert kostar mer än den med avgift. Därpå biljetten i LP:ns egen portfölj: de fem kraven (egen analys, kortsiktig kallelse, koncentration, ingen likviditet före utfasningen, ägararbete), avgiftsbesparingens räknelära med break-even-multipeln 1,76x — där 0,34x urvalsförsprång äter exakt de 34 enheter avgift och carry som besparingen lovade — och fyra fällor med gratis-biljettfällan som kursens egen. Co-invest-protokollets fem frågor avslutar: varför delar GP:n just denna affär är den första, och den svåraste. Utbildning i att läsa biljettens dubbla pris — inte investeringsråd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "learn": "Räkna samma affär till två priser: fondvägen med carry och avgifter mot co-invest-biljetten utan — och läsa gapet som fondens pris för exponeringen på just den affären · Förklara urvalsasymmetrin: GP:n delar de affärer den vill dela, av kapacitet, riskdelning eller lägre övertygelse — och erbjudandet är därför inte ett urval som LP:n gjort · Räkna break-even-multipeln: den grova affärsnivå där avgiftsbesparingen ätits upp av urvalsskillnaden — i kursens modell 1,76x, där 0,34x urval motsvarar 34 enheter avgift och carry · Väg biljetten mot portföljen: en enskild affär mot fondens cirka 25 — ett nollresultat är 4 procent av fonden men 100 procent av biljetten · Känna igen de fem kraven på LP:n vid direktägande: egen analys, beredskap vid kallelse, koncentration, frånvarande likviditet och ägararbete · Ställa protokollets fem frågor före varje ja — med den första som svårast: varför delar GP:n just denna affär",
+    "why": "Private equity-familjens sex steg har byggt LP:ns värld från grunden: fonderna och avgiftskodexen (pe-01), utfasningarnas och IRR:s mekanik med vattenfallet (pe-02), förvärvsmaskinen på bolagssidan (pe-03), den privata ägarsidans värld (pe-04), andrahandsmarknadens pris på tid (pe-05) och pengarnas kronologi i j-kurvan (pe-06) — men inget steg äger det beslut som vuxit sig störst i praktiken: att gå bredvid fonden och ta en direktpost i en enskild affär. Sond mot registret: co-investering ger noll träffar, fund of funds noll och management fee noll kursägare — kärntermen ägs av ingen kurs i hela registret. Carried interest ger tre träffar: pe-01 äger grundstrukturen med kodexen, pe-02 äger vattenfallets räknelära och ib-05 äger den listade bolagets kostnadstrappa — alla tre länkas hit och äger sina ytor. Gränserna i övrigt: pe-06 äger capital calls och vintageläran, pe-05 äger andrahandslikviditeten, km-014 äger diversifieringsmatematiken som koncentrationsfällan bygger på. Vit fläck: beslutet själv — biljettens dubbla pris i avgift och urval, och protokollet som gör beslutet läsbart.",
+    "history": {
+      "origin": "Direkt ägarskap sida vid sida är äldre än både fonder och börser: handelshus och familjeägare tog poster i samma skepp, samma gruvbolag och samma industriprojekt, delade risken och informationen. När den institutionella fondstrukturen växte fram under efterkrigstiden (pe-01 bär dess grunder) formaliserades ägarskapet i två lager — förvaltarens och investerarens — och med de två lagren föddes en synlig fråga som sällan sagts högt: varför betala förvaltarskiktet på kapital som kan följa med gratis? Frågan låg vilande så länge fonderna var små nog att äga det de ville äga.",
+      "evolution": "Förändringen kom när fonderna växte sig större än enskilda affärer under nittonhundratalets sista decennier: en fond med flera miljarder i förbundet kapital kan inte bära varje målaffär ensam utan att sprida portföljen tunnare än mandatelet tillåter — kapitalbristen blev strukturell, och delandet blev nödvändigt. LP:er med egen analyskapacitet började då systematisera det som tidigare varit sporadiska enkelinsatser: att tacka ja till direktposter i affärer som fonden ändå skulle genomföra. Efter finanskrisen 2008 skärptes avgiftstrycket i hela branschen och co-investeringen fick en andra roll: som förhandlingsvaluta — den stora LP:n som följer med gratis på biljetter accepterar fondens kodex på huvudspåret. Programmen blev institutionella, med egna team och egna protokoll.",
+      "modern": "I dag har de flesta större institutionella ägare co-invest-program, och forskningsbilderna är ärligt blandade: vissa studier visar att co-investerade affärer i genomsnitt burit lägre bruttavkastning än fondernas helägda — urvalseffekten i ryggraden på dessa resultat — medan andra visar att avgiftsbesparingen mer än väger upp. Kursens läsning av det blandade läget är metodisk snarare än statistisk: de två krafterna — besparing och urval — verkar i motsatta riktningar, bara den ena står på fakturan, och beslutet kan därför inte standardiseras utan måste räknas från fall till fall. Det är precis vad protokollets fem frågor gör: de konverterar en relationell vänsterhandsfråga till ett jämförbart räkneverk, och lämnar sista ordet till break-even-talet snarare än till relationen."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — två biljetter till samma konsert",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — urvalsasymmetrin",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktik — biljetten i LP:ns portfölj",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — avgiftsbesparingens räknelära",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — fyra sätt biljetten blir dyr",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — co-invest-protokollets fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch hävdade att man ska äga det man förstår och kunna förklara tesen i två minuter. I fonden är det en arbetsfördelning: förvaltarens team gör arbetet, LP:n äger resultatet. På en co-invest-biljett upphävs den arbetsfördelningen — förklaringen i två minuter måste bäras från LP:ns eget bord. Lynchs varning för berättelser som säljs med entusiasm passar erbjudandebrevet bättre än de flesta dokument: den som ber dig finansiera en affär har alltid en berättelse, och på en direkt biljett är det du, inte fonden, som står för prövningen av den. Hans regel blir därmed: äg aldrig en biljett vars affär du inte kunde ha ägt på egen hand — fondens sällskap sänker priset, inte kraven.",
+    "grahamSection": "Benjamin Grahams frågor till varje papper — vad är det värt och vad kan gå fel — är co-invest-biljettens naturliga protokoll, med en skärpning: enskilda affärer kräver bredare marginal än portföljer. Grahams försiktiga investerare sprider risk eftersom hon inte kan analysera varje enskilt fall; den som äger en enskild onoterad affär har frivilligt gått den andra vägen — och där gäller hans enterprisregel hårdare: marginalen mellan pris och värde ska bära både det vanliga felet och det okända. Hans skepticism mot att låta andra tänka åt en (försäljarens argument är inte köparens analys) är co-investeringens kärnriskt i en enda mening, och boten är densamma som hans: eget arbete, skrivet ner, före köpet.",
+    "ak1Section": "I AK1A:s metodik kompletterar kursen LP-protokollets fjärde lager: pe-04 öppnade den privata ägarsidans värld, pe-05 prissatte tiden, pe-06 lärde pengarnas kronologi — pe-07 prissätter biljetten själv, i de två valutor som aldrig står på samma rad: avgiften och urvalet. Break-even-multipeln är AKM2:s modelltänkande tillämpat på ett ägarbeslut: kvantifiera båda krafterna, låt skillnaden avgöra, och dokumentera antagandena så att de kan ifrågasättas. I analysflödet kopplar kursen till koncentrationsläsningen (km-014 bär diversifieringsmatematiken): biljetten är den koncentration som fonden annars bär åt LP:n, och priset på den koncentrationen ska synas i samma räkning som besparingen. Gränserna hålls: pe-01 till pe-06 äger sina steg, ib-05 äger kostnadstrappan på listade sidan — här ägs beslutet att gå bredvid, och dess dubbelprisräknelära.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — två biljetter till samma konsert",
+        "intro": "Samma affär, två priser: genom fonden med carry och avgifter, eller bredvid fonden utan. Skillnaden är 32 enheter — och den är bara halva sanningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Utgångspunkten är en enda affär (påhittade tal): ett bolag som fonden köper för 100 och utfasar för 200 — grovmultipeln 2,0x. Fondens LP äger affären via fonden: på brutto 200 betalas tjugo procent carry på vinsten 100, alltså 20, och tolv enheter avgifter under livet — LP:n får 168 av 100 insatta. Co-investorn äger samma affär direkt, bredvid fonden, utan förvaltningsavgift och utan carry på biljetten: 200 av 100. Gapet är 32 enheter — fondens pris för exponeringen på just denna affär, ur LP:s öga. Så långt är biljetten gratis pengar. Men meningen har en andra halva som inte står på fakturan: co-investorn blev erbjuden denna affär, fonden valde bland alla. Priset på urvalet syns inte i exemplet — och det är kursens egentliga ämne."
+          },
+          {
+            "type": "definition",
+            "content": "CO-INVESTERING: en direktinvestering som LP:n gör i en enskild affär bredvid fonden, på GP:ns inbjudan, avgiftsfri på biljetten. Tre kännetecken: (1) noll förvaltningsavgift och noll carry på det co-investerade kapitalet — avgiftskodexen (pe-01 bär den) gäller huvudspåret, inte biljetten; (2) erbjudandet kommer från GP:n — urvalet av vilka affärer som delas ägs av den som delar, inte av den som bjuds; (3) biljetten är en enskild affär — den bär ingen av fondens spridning över tjugo eller trettio förvärv."
+          },
+          {
+            "type": "insight",
+            "content": "Vattenfallets räknelära — carry över insatt kapital — ägs av pe-02, och detta steg bygger vidare på den som en prissättning: co-investeringen är samma exponering med vattenfallet och avgiftsraden borttagna. Därmed blir biljetten ett rent laboratorium för vad fondskiktet kostar: 32 enheter på en 2,0x-affär i modellen. Det laboratoriet är värt att bära med sig även för den som aldrig co-investerar — det gör fondens pris synligt per affär, inte bara per år."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — urvalsasymmetrin",
+        "intro": "Varför delar GP:n en affär? Tre skäl finns i ryggraden — kapacitet, riskdelning och tvivel — och bara det första är gratis för LP:n.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "GP:n delar affärer av tre skäl. Kapacitet: fonden är full eller affären för stor för mandatet — delandet är strukturellt nödvändigt (historiens skäl från kursens evolution) och urvalet neutralt. Riskdelning: GP:n vill avlasta sin egen balansräkning på affärer den ändå tror på — urvalet mild. Tvivel: GP:n vill ha sällskap just där övertygelsen är svagast — urvalet ogynnsamt. Ingen LP:n ser vilken av de tre som gäller; erbjudandebrevet ser likadant ut i alla fallen. Kursens modell (påhittade tal) sätter tal på skillnaden: fondens helägda affärer bär grovmultipeln 2,10x — LP:n får 210 minus carry 22 minus avgifter 12, alltså 176 — medan de erbjudna affärerna bär 1,70x, och co-investorn utan avgifter får 170. Gapet är 6 enheter till fondvägens fördel, trots att fondvägen bär 34 enheter i avgift och carry. Den gratis biljetten till fel konsert kostade mer än den med avgift — i modellen, med forskningens blandade bild som bakgrund (kursens historik bär den)."
+          },
+          {
+            "type": "tabell",
+            "content": "TVÅ VÄGAR GENOM SAMMA FONDFÖRVALTARE (PÅHITTADE TAL): Fondvägen på helägda affärer — brutto 2,10x, carry 22, avgifter 12, LP netto 176 · Co-investvägen på erbjudna affärer — brutto 1,70x, noll carry och noll avgift på biljetten, netto 170 · Avgiftsbesparingen på en erbjuden affär om den i stället burits i fonden — brutto 170, carry 14, avgifter 12, netto 144, alltså besparing 26 enheter · LÄSNING: två krafter i motsatta riktningar — besparingen är mekanisk och viss, urvalet är osäkert och kan vara större. Co-investeringen är inte gratis kapital, det är ett vad: att GP:n delar av kapacitet oftare än av tvivel."
+          },
+          {
+            "type": "insight",
+            "content": "Asymmetrin är inte ett anklagelseinnehåll utan en incitamentsläsning: GP:s egen bäring är störst där övertygelsen är störst — att behålla full post i de bästa affärerna är rationellt för den som delar uppåt men inte nedåt (pe-01 bär incitamentsläsningen av kodexen). LP:ns uppgift är därför inte att döma incitamentet utan att prissätta det: hur stor måste besparingen vara, och hur liten urvalsskillnaden, för att biljetten ska bära sig? Det är kapitel fyrs räknelära — men först krävs biljetten i portföljen, och den har fem egna krav."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktik — biljetten i LP:ns portfölj",
+        "intro": "Fonden är en portfölj med ett team bakom; biljetten är en affär med LP:n själv bakom. Fem krav följer av den skillnaden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första kravet är egen analys: i fonden görs due diligence av ett team som LP:n betalar via avgiften; på biljetten måste analysen ägas hemma — pe-04 bär den privata ägarsidans hantverk. Andra kravet är beredskap: co-invest-kallelser kommer med kort varsel när en affär stänger, och kapitalplikten är hård (pe-06 bär capital calls mekanik — på biljetten finns ingen fondkassa som buffrar). Tredje kravet är koncentration: fonden bär typiskt ett tjogtal affärer — ett totalt nollresultat är 4 procent av fonden i en modell med 25 poster — medan samma nollresultat på biljetten är 100 procent (km-014 bär diversifieringsmatematiken). Fjärde kravet är likviditetens frånvaro: ingen andrahandsmarknad värd namnet före utfasningen (pe-05 bär den som finns, för fondandelar — direktposter är tunnare). Femte kravet är ägararbetet: styrelseplats, informationsskyldigheter, utvecklingssamtal — det ägande fonden annars administrerar."
+          },
+          {
+            "type": "tabell",
+            "content": "BILJETTENS FEM KRAV (PÅHITTADE TAL I KONCENTRATIONSEXEMPLET): Egen analys — due diligence ägs hemma, inte köps via fonden (pe-04) · Beredskap — kallelse med kort varsel, kapitalplikt utan fondkassa (pe-06) · Koncentration — ett nollresultat är 4 procent av en fond med 25 affärer men 100 procent av biljetten (km-014) · Likviditet — ingen marknad värd namnet före utfasningen, tunnare än fondandelarnas (pe-05) · Ägararbete — styrelse, information, uppföljning: arbetet fonden annars gör. LÄSNING: kraven är biljettens dolda avgift — den betalas i kapacitet och arbete i stället för i procent."
+          },
+          {
+            "type": "definition",
+            "content": "BILJETTENS FEM KRAV: (1) ANALYSEN — LP:n äger due diligence-arbetet själv, med dokumenterad tes före ja · (2) BEREDSKAPEN — kapital redo före erbjudandet, kallelseplikten är kort och hård · (3) KONCENTRATIONEN — biljetten räknas mot hela portföljen, inte mot fonden: vad är ett nollresultat av totalen? · (4) LIKVIDITETEN — horisonten är affärens, inte LP:ns behov · (5) ARBETET — ägarskapets administrativa börda bärs hemma. Kraven är portföljens svar på att biljetten saknar fondens två tjänster: spridning och administration."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — avgiftsbesparingens räknelära",
+        "intro": "Break-even-multipeln är biljettens enda ärliga sammanfattning: den grova affärsnivå där besparingen ätits upp av urvalet — i modellen 1,76x.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räkneläran håller sig till modellens tal (påhittade). Fondvägen på helägda affärer ger 176 — det är referensen. Co-invest-biljetten ger 100 gånger grovmultipeln, avgiftsfritt. Break-even är den multipel där biljetten matchar fondvägen: 1,76x — under den nivån förlorar biljetten mot fondvägen trots noll avgifter, över den vinner den. Urvalsgapet i modellen är 2,10 minus 1,76, alltså 0,34x — och notera speglingen: fondvägens avgift och carry på de helägda affärerna är 34 enheter. De båda krafterna mäts i samma valuta: 0,34x urval äter exakt 34 enheter avgift. Trappan blir därmed läsbar: erbjuds affärer till 2,10x vinner biljetten med 34 enheter; till 1,90x vinner den med 14; till 1,76x går allt jämnt ut; till 1,70x — modellens nivå — förlorar den med 6. Besparingens storlek på en enskild erbjuden affär är värd att se explicit: burits den i fonden hade den gett 144; som biljett ger den 170 — 26 enheter mer, drygt 18 procent högre slutvärde på insatsen. Det är den siffra som ser bra ut i erbjudandebrevet — och den är sann: bara ofullständig."
+          },
+          {
+            "type": "tabell",
+            "content": "BREAK-EVEN-TRAPPAN (PÅHITTADE TAL, FONDVÄG REFERENS 176): Erbjudna affärer till 2,10x brutto — biljett 210, skillnad plus 34 · till 1,90x — biljett 190, skillnad plus 14 · till 1,76x — biljett 176, break-even · till 1,70x — biljett 170, skillnad minus 6 · LÄSNING: break-even-talet är förhandlingens och beslutets siffra — den som känner sin avgiftsbörda (34 enheter i modellen) vet hur mycket urvalsskillnad den gratis biljetten kan bära. km-017 bär motsvarande logik på positionssizningssidan: optimum är inte maximum, och biljettens optimum är inte gratis — det är break-even plus marginal."
+          },
+          {
+            "type": "insight",
+            "content": "Här möts kursens två kapitel: kapitel ett visade besparingen (32 enheter på en 2,0x-affär), kapitel två visade urvalet (gap 6 till fondvägens fördel i modellen) — break-even-trappan visar var de balanserar. Metoden är generaliserbar bortom modellen: för varje faktiskt erbjudande räcker tre tal — fondvägens netto på jämförbara affärer, biljettens förväntade brutto, och avgiftsbördan per enhet insatt — för att break-even ska kunna sättas. Det är detta kursen kallar biljettens räknelära: inte en formel att minnas, utan tre tal att kräva före varje ja."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — fyra sätt biljetten blir dyr",
+        "intro": "De fyra fällorna har en gemensam rot: besparingen står på papperet, urvalet gör det inte. Varje fällans bot är därför en siffra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: gratis-tänkandet — att läsa biljetten som en rabatt och sluta där; boten är break-even-talet från kapitel fyra, som tvingar urvalet in i samma räkning som avgiften. Fälla två: relationens pris — att tacka nej med rädsla för att bli förbigången vid nästa fond, eller ja av samma skäl; relationen är real (fonden avgör framtida access) men den är inte en valuta att betala biljetter med — boten är att skilja besluten: fondvalet bedöms som fondval (pe-01), biljetten som biljett, och varje ja ska kunna bäras utan relationens hjälp. Fälla tre: koncentrationens förnekelse — att räkna biljetten mot fonden i stället mot hela portföljen; ett nollresultat är 100 procent av biljetten oavsett vad fonden gör, och km-014 bär matematiken. Fälla fyra: analysavståndet — att luta sig mot GP:s material som om fonden bar ansvaret; på biljetten är analysen LP:ns egen, och boten är det skrivna tesbladet före varje ja: vad är affären värd, vad kan gå fel, varför delas den — uteblir svar, uteblir biljett."
+          },
+          {
+            "type": "definition",
+            "content": "GRATIS-BILJETTFÄLLAN (KURSENS EGNA): den synliga besparingen finansierar det osynliga urvalet. Boten är en regel: ingen biljett godtas utan break-even-räkning — tre tal (fondvägens netto, biljettens brutto, avgiftsbördan per enhet insatt) skrivna ned före svaret på inbjudan."
+          },
+          {
+            "type": "insight",
+            "content": "Fällorna knyter an till familjens tidigare lärdomar: pe-05 lärde att tid har pris även i onoterat, pe-06 att kapitalets kronologi är en risk i sig — biljettens kronologi är den skarpaste av alla, med kallelse utan buffert och utfasning utan marknad. Den som minns j-kurvans tålamodskrav (pe-06) och lägger den bredvid biljettens koncentration förstår varför co-investering är Avancerad-nivå i denna familj: den tar bort fondens två skydd — spridning och tålamodets finansiering — och lämnar LP:n ensam med båda riskerna, avgiftsfritt."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — co-invest-protokollets fem frågor",
+        "intro": "Fem frågor före varje biljett — med den första som svårast, eftersom svaret aldrig står i erbjudandebrevet. En utmaning stänger kursen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: varför delar GP:n just denna affär — kapacitet, riskdelning eller tvivel? Fråga två: skulle fonden ha gjort affären ensam — och vad i affären avgör det? Fråga tre: vad kostar koncentrationen — vad är ett nollresultat av min hela portfölj, inte av fonden? Fråga fyra: vad är break-even-multipeln — fondvägens netto, biljettens brutto och avgiftsbördan, räknade och skrivna? Fråga fem: bär jag de fem kraven — analys, beredskap, koncentration, likviditet och arbete — hemma, i dag? Den som kan svara på de fem har konverterat biljetten från en relationsfråga till en räknefråga — och relationen återställd till det den ska vara: fondvalet, inte biljettens pris. Familjens LP-halva sluts därmed: fonderna (pe-01), utfasningarna (pe-02), bolagssidan (pe-03), den privata världen (pe-04), tiden (pe-05), kronologin (pe-06) — och biljetten bredvid (detta steg)."
+          },
+          {
+            "type": "definition",
+            "content": "CO-INVESTERINGSPROTOKOLLET: (1) SKÄLET — kapacitet, riskdelning eller tvivel: GP:s skäl bedöms, aldrig antas · (2) AFFÄREN — skulle fonden gjort den ensam; tesbladet skrivet av LP:n · (3) KONCENTRATIONEN — biljetten räknas mot hela portföljen · (4) BREAK-EVEN — tre tal skrivna före svaret · (5) KRAVEN — de fem från kapitel tre baras hemma, eller biljetten avstås. Fem rader, en sida, besvarade i lugn — relationen får aldrig skriva svaret."
+          },
+          {
+            "type": "utmaning",
+            "content": "Bygg de två vägarna med egna påhittade tal: en fond med kodexen tjugo procent carry och tolv enheter avgifter under livet, helägda affärer på en vald multipel och erbjudna på en annan. Räkna LP:ns netto på båda vägarna, besparingen på en erbjuden affär och break-even-multipeln, och variera sedan urvalsgapet tills biljetten vänder. Kursen är utbildning i att läsa biljettens dubbla pris — inte uppmaningar att köpa eller sälja något."
           }
         ]
       }
@@ -222540,6 +223076,186 @@
     "grahamSection": "Benjamin Grahams marknadsmetafor — mr Market, som varje dag bjuder priser i skiftande sinneslag — är omviktningens spegel från andra hållet: Grahams råd är att inte låta marknadens dagliga bevis flytta ens värderingsvikt nämnvärt, för de flesta bud är just svaga bevis som inte skiljer världarna åt. Hans marginal of safety är i bayesianska terider en prior byggd så stark att den kräver ovanligt tydliga bevis för att rubbas — trögheten som dygd.",
     "ak1Section": "I AK1A:s metodik är omviktningen den mekanik som håller SAM-viktningen (ek-01) ärlig över tid: motorernas träffkvoter loggas per kvartal i arbetsflödet (ek-03), multiplikatorerna är fasta i konfigurationen, och varje AKM2-analys bärs av den viktprofil som stod gällande vid körningen — så att en signal alltid kan spåras tillbaka till de bevis som format dess röster. Monte Carlo-motorerna (ek-05) läser samma vikter, och kalibreringsgranskningen (kt-02:s tradition) kontrollerar att trösklarna varken alltid eller aldrig träffar. Kursen dokumenterar mekanismen; dess tillämpning på enskilda värdepapper är alltid läsarens egen analys, aldrig en rekommendation."
   },
+  "ek-07-walk-forward-i-motorn": {
+    "slug": "ek-07-walk-forward-i-motorn",
+    "category": "EKOSYSTEM",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Walk-forward i motorn — fönstret som validerar",
+    "summary": "EKOSYSTEM-familjens sjunde steg öppnar labbets viktigaste disciplin: att låta modellen möta framtid den aldrig fick se. Sonden mot 464 kurser visar att walk forward, rullande fönster, valideringsfönster och träningsfönster har noll kursägare — backtestkursen (ek-04) äger överanpassningen som begrepp och Monte Carlo-kursen (ek-05) äger slumpens referensfördelning — men ingen äger proceduren som skiljer en modell som fungerar från en modell som minns. Kursens tes är trefaldig. Först: fönstret är en regel, inte en åsikt — träna på åtta år, validera på de närmaste två, stega framåt två och upprepa: tjugo års historia ger (20 − 8) / 2 = sex fönster, och vart och ett av de sex valideringsparen är framtid som var okänd när parametrarna valdes. Sedan: resultatet mäts med walk-forward-effektiviteten — valideringens årsavkastning delat med träningens: 7,8 mot 12 procent ger 0,65; under 0,50 lever modellen på minnet, över 0,70 är den robust, och måttet kompletteras alltid med den absoluta nivån (4,0 mot 3,4 procent ger 0,85 — robust men svag). Tredje: parameterplanen gömmer ett slumphärfång — två parametrar med elva värden var är 121 kombinationer, och det bästa utfallet bland 121 rena slumptal med standardavvikelse 4 procent förväntas nå plus 9,6 procent utan att någon modell ligger bakom. Räkneexemplen med påhittade data bär kursen: sex fönster, tolv affärer i median, ett tunnaste fönster med nio — och en motor som bara är värd något om den överlever fönstret den aldrig fick se. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Avancerad",
+    "why": "EKOSYSTEM-familjens sex första steg har byggt labbet steg för steg — viktningen (ek-01), kartan (ek-02), arbetsflödet (ek-03), backtestens hantverk (ek-04), slumpens maskin (ek-05) och den bayesianska omviktningen (ek-06) — men flödets valideringssteg saknar sin egen kurs: proceduren som avgör om en modell är kunskap eller kurvanpassning. Sonden mot 464 kurser bekräftar: walk forward (oavsett stavning), rullande fönster, valideringsfönster och träningsfönster har noll kursägare. Gränserna är dokumenterade: ek-04 äger överanpassningen och urvalets fällor som begrepp — den här kursen äger det RULLANDE fönstret som procedur och effektivitetsmåttet som kur; ek-05 äger slumpens referensfördelning — här används den för att räkna parameterplanens härfång; ek-06 äger omviktningen av evidens — här produceras evidensen fönster för fönster. Kursens värde för lärvägen: backtesten utan walk-forward är en åsikt med siffror — med fönstret blir den ett experiment, och skillnaden mellan de två är skillnaden mellan att minnas och att veta.",
+    "learn": "Räkna fönsterantalet: träna åtta år, validera två, stega två — (20 − 8) / 2 = sex fönster på tjugo års historia; varje valideringspar är okänd framtid ur optimeringens synvinkel · Mäta med walk-forward-effektiviteten: valideringens årsavkastning delat med träningens — 7,8 mot 12 procent ger 0,65; under 0,50 är modellen ett minne, över 0,70 är den robust · Räkna parameterplanens härfång: två parametrar med elva värden är 121 kombinationer — bland 121 rena slumptal med standardavvikelse 4 procent förväntas det bästa nå plus 9,6 procent · Skilja platå från nåltopp: fungerar grannvärdena också (14 bäst, 13 och 15 nära) är regeln en platå — fungerar bara ett värde är den en nåltopp som nästa fönster blåser bort · Läsa fönstrens stabilitet: tolv affärer i median över sex fönster med tunnaste fönstret vid nio — ett fönster med för få affärer är anekdot, inte evidens · Köra proceduren som flöde: optimera endast på träningsdelen, frysa parametrarna, validera, stega — och upprepa utan att låta valideringen läcka tillbaka till optimeringen · Dokumentera per fönster i labbets loggbok (ek-03): parametrar, träffbild, antal affärer och felkällor — ett fönster som inte dokumenteras kan inte reproduceras · Vikta fönstren bayesianskt (ek-06): tidiga fönster får lättare vikt, senare tyngre — de senaste fönstren bär mer av dagens marknad",
+    "history": {
+      "origin": "Innan datorerna testades handelsregler för hand på papper — och frågan om en regel fungerade utanför sin födelseperiod ställdes sällan. Den statistiska sedvänjan att hålla undan data som modellen inte får se kom från prognosforskningen: meteorologin och ekonometrin delade principen att mäta fel på framtiden, inte på anpassningen. När systemhandeln blev datorkraftens första finansbarn på 1970- och 1980-talen följde verktyget med: att separera anpassning och prövning i tiden blev fackspråk och sedan metod.",
+      "evolution": "1992 publicerades den ofta citerade studien av Brock, Lakonishok och LeBaron: tekniska handelsregler som såg starka ut på historiens hela längd förlorade kraft när de granskades med urvalsdisciplin — datagruvningens varning blev rådande lära. Samma decennium formulerades walk-forward som proceduren i systemhandelslitteraturen (Robert Pardos arbete gav fältet dess namn och dess trösklar): optimera på ett fönster, pröva på nästa, rulla framåt — och mät förhållandet mellan de två. Effektivitetsmåttet blev det tal som avgjorde om en motor förtjänade kapital.",
+      "modern": "Maskininlärningens era gjorde proceduren till standard: rullande ursprungsvalidering är numera minsta krav på finansiella modeller — och fortfarande dess vanligaste överträdelse, när samma data får välja modell och betygsätta den. I AK1A:s motor är fönstret inbyggt i varje backtest: ek-05:s slumpmaskin ger referensfördelningen, ek-06:s vikter bearbetar fönstrens evidens — och kursens trösklar (0,50 och 0,70) är motorns urskiljning mellan minne och kunskap."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Problemet — modellen som lär sig för väl",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Fönstret — träna, validera, stega",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Måttet — effektiviteten mellan träning och validering",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Parameterplanen — slumphärfånget",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Stabiliteten — platån och nåltoppen",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — motorläsarens protokoll",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch testade aldrig system — men hans examensfråga är walk-forward-andan i ren form: fungerar tesen av egna skäl, eller bara därför att världen råkade vara sådan när den föddes? En regel som bara fungerar där den kalibrerades är inte förståelse utan kurvanpassning — och Lynchs krav på att kunna berätta bolagets historia utan diagram är precis det fönstret prövar: överlever berättelsen mötet med data hon inte fick se.",
+    "grahamSection": "Benjamin Grahams net-nets var en regel född på 1930-talets data — och han granskade den själv decennier senare och reviderade sina kriterier när världen ändrats: walk-forward i slow motion, ett kvartssekel per fönster. Hans inställning är procedurens kärna: en regel är värd sin uthållighet utanför födelseperioden, och den som inte mäter uthålligheten äger en åsikt klädd i historiens glans.",
+    "ak1Section": "I AK1A:s metodik är walk-forward steget mellan hypotes och evidens i arbetsflödet (ek-03): SAM-viktningen (ek-01) sätter priorn, backtesten (ek-04) bygger urvalet, fönstret prövar det, Monte Carlo (ek-05) ger slumpens referens och den bayesianska omviktningen (ek-06) för evidensen vidare. AKM2-modellens robusthetskontroll kör samma trösklar: effektivitet under 0,50 flaggas som kurvanpassning oavsett hur vackra träningsvärdena är. Fem tidshorisonterna påminner om gränsen: fönstret mäter om en mekanism bär över tid — det säger inget om morgondagens marknad, bara om gårdagens modell.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Problemet — modellen som lär sig för väl",
+        "intro": "Backtestens paradox: ju bättre resultatet ser ut, desto mer misstänkt är modellen. Kapitlet förklarar varför och principen för botet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En modell med tillräckligt många rattar kan passera vilken historisk kurva som helst — det är överanpassningens mekanik, och begreppet ägs av backtestkursen (ek-04): modellen memorerar bruset i stället för att lära sig signalen, och historien önskar tillbaka det den fått se. Symtomet är detsamma i varje labb: träningsvärdena glänser, verkliga utfall bleknar, och ingen i rummet kan säga var gränsen gick mellan kunskap och anpassning. Botet är inte mer data — det är en mur: något av historien får ALDRIG vara med när modellen byggs, och måste sedan mötas som främling. Det är walk-forward-principen i en mening: optimera på ett stycke historia, pröva på nästa, och repetera framåt genom tiden som en maskin av små öden. Gränsen mot ek-04 dras noggrant: där ägs fällorna (urval, överlevnad, framförhållning) och begreppet överanpassning — här ägs proceduren som mäter den, fönstret och dess tal. Skillnaden är skillnaden mellan att veta att man kan luras och att ha en rutin som visar när det händer: den första är insikt, den andra är instrument — och labbet behöver båda."
+          },
+          {
+            "type": "definition",
+            "content": "Överanpassning (sammanfattat från ek-04): modellen lär sig brusets detaljer i stället för signalens struktur — träningsfelet sjunker medan förmågan utanför träningsdata inte växer. Walk-forward: proceduren som håller en del av historien utanför optimeringen och prövar modellen på den, fönster efter fönster."
+          },
+          {
+            "type": "insight",
+            "content": "Ju fler rattar, desto vackrare retro — och desto tomma framtid: botet är inte fler data utan en mur, tiden själv som hålls utanför bygget och släpps in som censor."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Fönstret — träna, validera, stega",
+        "intro": "Proceduren i siffror: tjugo års historia, åtta års träning, två års prövning, två års steg. Kapitlet bygger de sex fönstren rad för rad.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Labbets exempelhistoria är tjugo år, 2002 till och med 2021 (påhittade årtal för räkningens skull). Fönster ett: träna på 2002 till och med 2009 (åtta år), frys parametrarna, validera på 2010 till och med 2011 (två år). Sedan stegar hela fönstret framåt två år: träning 2004 till och med 2011, validering 2012 till och med 2013 — och så vidare till sjätte och sista fönstret, träning 2012 till och med 2019, validering 2020 till och med 2021. Räkneformen är (20 − 8) / 2 = sex fönster, och de sex valideringsparen är disjunkta: tillsammans täcker de tolv år som aldrig fick delta i någon optimering av det fönster de prövade. Två detaljer bär procedurens heder. Den första: parametrarna FRYSES före valideringen — det minsta justerande tillbaka till träningsdata efteråt är läcka, och läckor är vad hela muren finns för att stoppa. Den andra: träningslängden hålls konstant medan startpunkten rullar — modellen prövas alltså under skiftande decennier, cyklar och regimer, inte bara en gång vid historiens slut. Fönstret är en regel i tiden, och som varje regel är den värd exakt vad efterlevnaden är värd: sex prövningar av främlingskap, sex tillfällen att misslyckas ärligt."
+          },
+          {
+            "type": "tabell",
+            "content": "Sex fönster på tjugo år (träna åtta, validera två, stega två): träning 2002–2009, validering 2010–2011 · 2004–2011, 2012–2013 · 2006–2013, 2014–2015 · 2008–2015, 2016–2017 · 2010–2017, 2018–2019 · 2012–2019, 2020–2021 · formel: (20 − 8) / 2 = 6 fönster · valideringsparen disjunkta: tolv prövade år"
+          },
+          {
+            "type": "insight",
+            "content": "Åtta år lärs ut, två år prövas, två år stegas — sex gånger: tolv års historia som var främling vid sitt eget förhör, vilket är hela poängen."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Måttet — effektiviteten mellan träning och validering",
+        "intro": "Hur ska de sex fönstren dömas? Kapitlet bygger måttet: förhållandet mellan prövningens och träningens årsavkastning — med dess gränser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Samla de sex fönstrens valideringsår till en sammanvägd årsavkastning — i exemplet 7,8 procent — och ställ den mot träningsperiodernas motsvarande 12 procent: walk-forward-effektiviteten är 7,8 delat med 12 = 0,65. Läsarten är trestegs. Under 0,50 lever modellen på minnet: mer än hälften av det utlovade försvinner när datan är främmande, och resterande är sannolikt kurvanpassningens eko. Mellan 0,50 och 0,70 är gränszonten: modellen har substans men nöter — frågan är var slitningen kommer ifrån (kostnader? regimskiften?) och om den accelererar. Över 0,70 är modellen robust i tid: det den lärde sig bar över till främlingen. Men måttet måste alltid paras med den absoluta nivån: en modell med träning 4,0 procent och validering 3,4 procent har effektiviteten 0,85 — nästan ingen nötning, men en för liten motor för att bära sina kostnader; en modell med träning 11 och validering 3 procent står vid 0,27 och är ett minne med diagnos. Två tal alltså: höjd och uthållighet — den ena utan den andra är antingen stark eller ärlig, men aldrig båda."
+          },
+          {
+            "type": "definition",
+            "content": "Walk-forward-effektivitet: valideringens sammanvägda årsavkastning delat med träningens — mått på hur mycket av modellens förmåga som överlever mötet med data hon inte fick se. Trösklar: under 0,50 minne, 0,50 till 0,70 gränszont, över 0,70 robust — alltid vid sidan av den absoluta nivån."
+          },
+          {
+            "type": "tabell",
+            "content": "Trösklarna i tal (påhittade exempel): träning 12 procent, validering 7,8 → 0,65 gränszont · träning 4,0, validering 3,4 → 0,85 robust men svag (den absoluta nivån krävs vid sidan av) · träning 11, validering 3,0 → 0,27 minne · måttet Parade: höjd och uthållighet, aldrig den ena utan den andra"
+          },
+          {
+            "type": "insight",
+            "content": "7,8 delat med 12 är 0,65: effektiviteten mäter nötningen, inte storleken — 0,85 på en småmotor och 0,27 på en stormotor är båda oanvändbara, av helt olika skäl."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Parameterplanen — slumphärfånget",
+        "intro": "Hur mycket av ett vackert backtestresultat kan slumptalet ensamt förklara? Kapitlet räknar planens härfång med slumpens egen matematik.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En motor med två parametrar — säg en snabb och en långsam medelvärdeskorsning — där var och en får elva värden ger 11 × 11 = 121 kombinationer att pröva. Frågan slumpen ställer: om varje kombination vore ett rent slumptal med standardavvikelsen 4 procent i årsavkastning, hur högt når det BÄSTA av dem? Svaret räknas med fördelningens övre kvantil: bland 121 utfall ligger det förväntade högsta vid cirka 2,40 standardavvikelser — det vill säga plus 9,6 procent årsavkastning av ren slump, utan att någon modell alls ligger bakom. Det är parameterplanens härfång: ju fler kombinationer som prövas, desto högre stegar det bästa slumptalet — tre parametrar med sju värden var ger 343 kombinationer, och med standardavvikelsen 3 procent når härfånget plus 8,3 procent. Slumpens referensfördelning ägs av Monte Carlo-kursen (ek-05); här används den preventivt: innan ett träningsresultat imponerar, räkna hur mycket av det planens storlek förväntar sig av slump ensam — och kräv att modellen slår sitt eget härfång, inte bara noll. Två bot finns och de samverkar: färre parametrar (mindre plan, lägre härfång) och fönstret från kapitel två — slumptalets favorit klarar inte sex främlingsprov i rad."
+          },
+          {
+            "type": "tabell",
+            "content": "Slumphärfånget (förväntat bästa utfall av ren slump): 121 kombinationer, standardavvikelse 4 procent → plus 9,6 procent (2,40 sigma) · 343 kombinationer, standardavvikelse 3 procent → plus 8,3 procent (2,76 sigma) · regel: ju större plan, desto högre härfång att slå — kräv seger mot slumptalet, inte mot noll"
+          },
+          {
+            "type": "insight",
+            "content": "121 försök med tärningens breda utfall producerar ett skenande topptal: plus 9,6 procent av ren slump — en backtest som inte slår sitt eget härfång har inte bevisat något alls."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Stabiliteten — platån och nåltoppen",
+        "intro": "Sista testen handlar om formen kring det bästa: sitter resultatet på en platå eller på en nål? Kapitlet läser parametrarnas och affärernas stabilitet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett optimerat värde är bara en punkt — dess omgivning berättar om den är en plats eller en tillfällighet. I exemplet är det bästa värdet på huvudparametern 14, och grannvärdena 13 och 15 presterar nästan lika bra: resultatytan är en platå, och platån är det robusta landskapet — små fel i kalibreringen kostar små resultat. Motsatsen är nåltoppen: bara värdet 14 fungerar, 13 och 15 faller genom golvet — och i verkligheten, där marknaden alltid har flyttat lite när modellen anländer, är nåltoppen ett slumptals adress. Lägg sedan tiden till: de sex fönstren optimala värden var för sig — 14, 14, 12, 14, 13 och 14 — håller ihop sig (en platå som vandrar lite), medan sekvensen 3, 14, 5, 14, 2 och 14 avslöjar en modell som hoppar mellan tillfälligheter. Affärsantalet fullbordar läsningen: fönstren gav 12, 14, 9, 15, 11 och 13 affärer — medianen 12,5, tunnaste fönstret 9 — och ett fönster med nio affärer är en anekdot, inte en fördelning: minsta kravet i protokollet är tio per fönster för att medianen ska få tala. Allt detta tillhör loggboken (ek-03): parametrar, grannvärden, affärsantal och fönster för fönster — stabilitet är inget tal utan ett mönster, och mönster kräver rader att stå på."
+          },
+          {
+            "type": "tabell",
+            "content": "Stabilitetsläsning (påhittade data): optimal parameter per fönster 14, 14, 12, 14, 13, 14 — stabilt, platå · instabilt spel: 3, 14, 5, 14, 2, 14 — nåltopp · affärer per fönster 12, 14, 9, 15, 11, 13 — median 12,5, tunnaste 9 · krav: minst tio affärer per fönster för att medianen ska få tala"
+          },
+          {
+            "type": "insight",
+            "content": "14 bäst med 13 och 15 strax bakom är en platå; 14 ensam på en stolpe är slumptals adress — och sex fönster som håller ihop sina värden är den tystaste men starkaste av alla backtestbevis."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — motorläsarens protokoll",
+        "intro": "Kursens redskap samlas till ett protokoll i sju steg — labbets checklista från låst historia till viktad evidens.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg ett: lås historien och räkna fönsterantalet — träna, validera, stega; formeln (längd minus träning) delat med steg. Steg två: optimera endast på träningsdelen, och notera planens storlek (antal kombinationer) för härfångsräkningen. Steg tre: frys parametrarna och gå in i valideringen utan att titta tillbaka — läckan är procedurens enda dödssynd. Steg fyra: mät effektiviteten och den absoluta nivån tillsammans (0,65 och 7,8 procent i huvudexemplet: gränszont med bibehållen höjd). Steg fem: läs formen — platå eller nåltopp, fönstrens vandring, affärsantal och median (12,5 på tunnaste 9: varningens nivå). Steg sex: dokumentera i loggboken (ek-03) — parametrar, grannvärden, affärer, felen. Steg sju: för evidensen vidare bayesianskt (ek-06): tidiga fönster lättare, senare tyngre. Protokollet är kort men ombrytbart: varje steg skyddar ett av de sätt en backtest ljuger — urval, plan, läcka, nötning, tillfällighet, glömska och åldrande — och motorns värde är inte dess vackraste körning utan dess sämsta som fortfarande håller."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna på fönstret. Uppgift ett: en historia på 24 år med träning 10 och steg 2 — hur många fönster blir det ((24 − 10) / 2 = 7)? Uppgift två: träningen gav årsavkastningen 15 procent och valideringen 9 procent — vad blir effektiviteten och var ligger den (9 delat med 15 = 0,60: gränszonten mellan minne och robust)? Uppgift tre: en plan med tre parametrar à sju värden på data med standardavvikelsen 3 procent — hur högt är sluphärfånget (343 kombinationer, cirka 2,76 sigma: plus 8,3 procent), och vad måste modellen visa för att räknas som mer än slump (slå plus 8,3 procent på träningsdelen OCH hålla effektiviteten över tröskeln i valideringen)?"
+          },
+          {
+            "type": "insight",
+            "content": "Sju steg mot sju lögnervägar: fönstret räknas, planen mäts, parametrarna fryses, nötningen vägs, formen läses, rader skrivs och evidensen åldras — protokollet är kort, och det är precis längden som gör det möjligt att följa."
+          }
+        ]
+      }
+    ]
+  },
   "rp-01-riskmattens-karta": {
     "slug": "rp-01-riskmattens-karta",
     "category": "RISKHANTERING & PORTFÖLJTEORI",
@@ -223399,6 +224115,186 @@
           {
             "type": "utmaning",
             "content": "Ta ett eget sparande, verkligt eller påhittat, och bygg dess spegelbana: skriv årens avkastningar i en kolumn, spegelvänd dem i en andra, kör samma uttag genom båda och läs gapet som andel av startvärdet. Rita därefter uttagsprotokollets tre ventiler med egna tal — utdelningsandel, fönsterstorlek med pris, och trappsteg — och se hur gapet förändras när varje ventil öppnas. Kursen är utbildning i att läsa kronologin — inte uppmaningar att köpa eller sälja något."
+          }
+        ]
+      }
+    ]
+  },
+  "rp-06-volatilitetsdraget": {
+    "slug": "rp-06-volatilitetsdraget",
+    "category": "RISKHANTERING & PORTFÖLJTEORI",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Volatilitetsdraget — brusets avgift på tillväxten",
+    "summary": "Riskhanteringsfamiljens sjätte steg: volatilitetsdraget — gapet mellan aritmetisk och geometrisk avkastning, variansens halva som skatt på tillväxten. Två år med plus 20 och minus 20 procent är inte noll utan 96,0 av 100: produkten minns bruset som genomsnittet glömmer. Kursen bygger mekaniken från grunden: varför multiplikationen av åren straffar nedgångar hårdare än den belönar uppgångar, reparationstrappan där minus 20 kräver plus 25 och minus 50 kräver plus 100, och verktyget som sammanfattar allt: den geometriska årsavkastningen ligger ungefär en halv varians under den aritmetiska. Det genomgående exemplet är tre portföljer med exakt samma aritmetiska genomsnitt — plus 10 procent — men olika spridning: med standardavvikelsen 10, 20 respektive 30 procent blir den geometriska årsavkastningen 9,54, 8,17 och 5,83 procent, och på tjugo år växer samma genomsnitt till tre olika liv: 6,19x, 4,81x och 3,11x. Därpå dragets tre spakar — diversifiering som sänker spridningen utan att röra avkastningen, volatilitetsbudgeten som prissätter skatten och positionssizningen som inte får överskrida vad den geometriska tillväxten bär — och fem fällor: den aritmetiska presentationen, volatiliteten som gratis, trappans illusion, fel horisont att medelvärdesbilda över och avgifterna som räknas på aritmetik men betalas i geometri. Utbildning i att läsa tillväxtens tredje siffra — inte investeringsråd.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Se det tredje talet: att varje avkastningsserie har ett aritmetiskt genomsnitt, en geometrisk årsavkastning och ett gap mellan dem — och att gapet är en kostnad, inte en känsla · Räkna spegelparet: plus 20 följt av minus 20 procent lämnar 96,0 av 100, och vägen tillbaka kräver plus 4,2 procent bara för att nå noll · Läsa reparationstrappan: minus 10 kräver plus 11,1, minus 20 kräver plus 25, minus 33,3 kräver plus 50 och minus 50 kräver plus 100 procent — asymmetrin är mekanisk · Använda verktyget att den geometriska årsavkastningen ligger ungefär en halv varians under det aritmetiska genomsnittet — en första uppskattning från två tal, med kännedom om att den överskattar något vid hög spridning · Skilja frågorna: det aritmetiska genomsnittet beskriver ett typiskt år, den geometriska årsavkastningen beskriver resan — och en portfölj lever resan, inte genomsnittet av sina parallella år · Känna igen de fem fällorna och deras kurer: presentationen, gratis-tanken, trappan, horisonten och avgifternas valutor",
+    "why": "Riskhanteringsfamiljen har fem steg — riskmåttens karta (rp-01), tre mått tre frågor (rp-02), riskpariteten (rp-03), volatilitetsbudgeten (rp-04) och sekvensrisken (rp-05) — men inget av dem äger förklaringen till den siffra som hela familjen vilar på: varför den geometriska sammanfattningen alltid står under det aritmetiska genomsnittet. rp-05:s serie plus 30 minus 10 bar det geometriska talet 8,17 per år utan att förklara det — förklaringen ägs av detta steg. Sond mot registret: volatilitetsdrag ger noll träffar, variansdränering noll och geometriska medel noll — kärntermen ägs av ingen kurs. Geometrisk avkastning ger en träff, the-intelligent-asset-allocator, en bokkurs som citeras här som källa enligt bokkurspresedensen. Familjens grannar dokumenteras: km-013 äger volatiliteten som mått, km-017 äger Kellykriteriets sizning, km-014 äger korrelationen och diversifieringsmatematiken, rp-04 äger budgeteringen av spridningen, pf-04 äger återbalanseringens mekanik medan detta steg äger varför mekaniken har ett geometriskt värde, och ib-05 äger avgiftserosionens räknelära. Vit fläck: skatten som volatiliteten lägger på tillväxten i sig — den betalas utan uttag, utan tvångsförsäljning och med perfekt disciplin, och den syns i ingen årsräkning.",
+    "history": {
+      "origin": "Insikten är äldre än portföljteorin. Livräntans aktuarier räknade på artonhundratalet på sammansatt ränta och visste att en genomsnittlig avkastning inte får diskonteras som om vartenda år bar den: åren multipliceras, och multiplikationen straffar de dåliga åren hårdare än den belönar de goda. Daniel Bernoulli lade 1738 grunden till den geometriska läsningen när han föreslog att nyttan av en spelvinst ska mätas i logaritmen av förmögenheten — hans moraliska förväntan är den geometriska årsavkastningen i förmodern form, född som svar på ett spel där det aritmetiska väntevärdet var oändligt men ingen rationell spelare betalade mer än en bråkdel för att vara med. Problemet var känt som beräkning, men det saknade namn i portföljspråk, och utan namn blir ett känt gap lätt ett bortförklarat.",
+      "evolution": "Nittonhundratalet gav gapet två hem. John Kelly visade 1956, i informationsteorins tidiga år, att den som sizer insatser efter den logaritmiska tillväxten maximerar den samlade tillväxten — telekommunikationens bidrag blev portföljteorins: den geometriska tillväxten är det mått som faktiskt kompounderas. Samtidigt byggde den moderna portföljteorin sitt medelvärde-varians-ramverk på aritmetiska medelvärden, vilket lämnade en spänning öppen: optimeraren maximerar ett genomsnitt som ingen portfölj får leva. Under seklets senare hälft förde teoretiker som Henry Latané fram principen om det geometriska medelvärdet — att beslut mellan upprepade satsningar ska bedömas efter den sammansatta tillväxten, inte det aritmetiska väntevärdet — och med den blev draget en namngiven storhet: skillnaden mellan de två medelvärdena, växande med spridningen.",
+      "modern": "I dag lever volatilitetsdraget i flera praktiska fält. Hävstångsprodukters faktablad visar det som volatilitetsförfall: produkter med daglig hävstång mot samma underliggande kan avvika starkt från hävstången gånger underliggandets periodavkastning, just för att den dagliga multiplikationen betalar draget varje dag. Volatilitetsmålning — att hålla portföljens spridning nära ett satt mål — är dragets administrativa sida (rp-03 bär viktningsidén och rp-04 budgeten). Utvärdering i geometriska termer har blivit standard i institutionella sammanhang: den aritmetiska avkastningen läses som väntevärdet över parallella utfall, den geometriska som den väg som faktiskt vandrats. Kursen samlar tråden: draget är varken mystik eller misslyckande — det är en prislista, synlig i tre tal, och som alla priser kan den budgeteras och sänkas, inte avskaffas."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — spegelparet som kostar fyra kronor",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konstruktion — produkten minns bruset",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Mätning — tre portföljer, samma genomsnitt, tre liv",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktik — dragets tre spakar",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor — fem sätt skatten osynliggörs",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — dragprotokollets fem frågor",
+        "minutes": 4
+      }
+    ],
+    "lynchSection": "Peter Lynch skilde på volatilitet och risk: prissvängningar är inte förluster så länge ägandet är välförankrat i verksamheten. Volatilitetsdraget är den lärons skarpa kant — det visar att svängningarna har ett pris även när de aldrig blir permanenta förluster: produkten av åren betalar bruset också för den som aldrig säljer en aktie. Lynchs eget botemedel är dessutom kurans kärna: ägandets kvalitet. Ett bolag med färre och grundare mothål har lägre spridning i utfallen utan lägre väntad avkastning — kvalitetsägandet sänker draget gratis. Och hans regel att tiden i marknaden slår timingen översätts exakt: den aritmetiska premien har historiskt överlevt sitt eget drag, vilket är skälet till att långsiktighet fungerar — inte att draget saknas.",
+    "grahamSection": "Benjamin Graham varnade för prognoser byggda på aritmetiska medelvärden — hans försiktighet mot att extrapolera genomsnitt in i framtiden bär, läst med detta steg, en andra grund: även om genomsnittet slår in exakt, lever portföljen inte genomsnittet utan produkten av sina år. Säkerhetsmarginalen får därmed en tredje funktion vid sidan av prisrabatten och sekvensskyddet (rp-05 bär det): den sänker spridningen i utfallen kring samma väntade värde, och sänkt spridning är sänkt skatt. Grahams defensiva investerare — den fasta fördelningen mellan aktier och obligationer, återfylld vid drift — var en volatilitetsbudget före begreppets tid: en regel som håller portföljens spridning i schack utan att kräva prognoser. Detta steg visar vad den regeln köper: inte bara ro, utan kronor.",
+    "ak1Section": "I AK1A:s metodik stänger kursen riskhanteringsfamiljens sista lucka: rp-01 kartlade måtten, rp-02 satte tre av dem i samma portfölj, rp-03 viktar riskerna, rp-04 budgeterar dem till en krona och rp-05 lade kronologin på toppen — rp-06 förklarar priset som gör att ingen av de fyra första räknar i det aritmetiska registret. Draget gör volatilitetsbudgeten till en resultaträdspost: varje spridningsenhet har en krona i kostnad, ungefär halva variansen per år. I analysflödet kopplar kursen till AKM2:s scenarioläsning (km-029 bär dess hantverk): när scenarier vägs samman är den geometriska sammanvägningen den ärliga. Till spegelbaneverktyget från rp-05 läggs den andra vändningen: kör planen i båda ordningarna och läs den i båda sammanfattningarna. Gränserna hålls: km-013 äger måttet, km-014 äger korrelationsmatematiken, km-017 äger sizningen, pf-04 äger återbalanseringens mekanik och ib-05 äger avgifternas erosion — här ägs skatteläran: varför genomsnittet överstiger resan.",
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — spegelparet som kostar fyra kronor",
+        "intro": "Ett år med plus 20 procent och ett år med minus 20 procent låter som noll. Portföljen står på 96,0 — och dörren ut ur det rummet visar en trappa.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det första exemplet är minimalt (påhittade tal): 100 enheter, år ett plus 20 procent ger 120,0, år två minus 20 procent ger 96,0. Det aritmetiska genomsnittet är exakt noll — plus 20 och minus 20 delat med två — men portföljen har förlorat 4,0 procent. Ingen avgift togs, ingen krona togs ut, ingen försäljning tvingades fram: förlusten är multiplikationens egen. För att bara återvända till 100 krävs sedan plus 4,2 procent — steget är inte symmetriskt. Förlusten på plus 20 minus 20 är fyra procent; på plus 50 minus 50 är den tjugofem: 100 gånger 1,50 blir 150,0, gånger 0,50 blir 75,0 — och vägen tillbaka kräver plus 33,3 procent."
+          },
+          {
+            "type": "tabell",
+            "content": "REPARATIONSTRAPPAN (PÅHITTADE TAL): En nedgång på minus 10 procent kräver plus 11,1 för återgång till noll · minus 20 kräver plus 25 · minus 33,3 kräver plus 50 · minus 50 kräver plus 100 · minus 75 kräver plus 300 · LÄSNING: kravet växer brutalt med djupet — dubblad nedgång mer än fördubblar reparationskravet, och vid halvering krävs en fördubbling. Trappan är mekanisk: den beror bara av divisionen 1 delat med (1 minus fallet)."
+          },
+          {
+            "type": "definition",
+            "content": "VOLATILITETSDRAGET: skillnaden mellan en avkastningsseries aritmetiska genomsnitt och dess geometriska årsavkastning. Tre kännetecken: (1) det växer med spridningen — som första approximation står den geometriska årsavkastningen en halv varians under det aritmetiska genomsnittet; (2) det betalas även utan uttag, utan avgifter och utan tvångsförsäljning — det är inte ett beteende utan en aritmetik; (3) det kan inte avskaffas, bara sänkas — genom lägre spridning vid oförändrad väntad avkastning."
+          },
+          {
+            "type": "insight",
+            "content": "Familjens femte steg (rp-05) visade att sammanfattningen tappar ordningen; detta steg visar att den redan innan ordningen överdriver nivån. Två portföljer kan bära exakt samma aritmetiska genomsnitt och ändå sluta vida isär — inte för att någon gjorde fel, utan för att genomsnittet är ett mått över parallella år medan portföljen lever ett enda av dem, i följd, multiplicerat. Draget är den fasta skillnaden mellan kartan över åren och vägen genom dem."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konstruktion — produkten minns bruset",
+        "intro": "Varför överlever inte genomsnittet multiplikationen? Svaret är tre rader algebra och en approximation som blev ett av finansens bärande verktyg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En portföljs årskedja multipliceras: 100 gånger (1 plus r ett) gånger (1 plus r två) och så vidare. Ta serien plus 30 minus 10 — familjens serie sedan rp-05 — och kör den två år: 100 gånger 1,30 gånger 0,90 blir 117,0. Det aritmetiska genomsnittet är plus 10 per år, men den geometriska årsavkastningen är roten ur 1,17 minus ett: plus 8,17 procent per år. Gapet är 1,83 procentenheter, och det är ingen engångsföreteelse utan en fast egenskap: den geometriska årsavkastningen står alltid under eller lika med det aritmetiska genomsnittet, och avståndet växer med spridningen. För den som vill räkna snabbt finns verktyget: den geometriska årsavkastningen ligger ungefär en halv varians under det aritmetiska genomsnittet. Vid standardavvikelsen 20 procent kring plus 10 blir det plus 10 minus 2,0 — alltså ungefär plus 8,0, mot exakta plus 8,17."
+          },
+          {
+            "type": "tabell",
+            "content": "APPROXIMATIONEN MOT EXAKT RÄKNAT (TVÅPUNKTSMODELL, ARITMETISKT GENOMSNITT plus 10 PROCENT, PÅHITTADE TAL): Spridning 10 procent — approximationens drag 0,50 procentenheter, exakta draget 0,46 · spridning 20 procent — approximation 2,00, exakt 1,83 · spridning 30 procent — approximation 4,50, exakt 4,17 · LÄSNING: verktyget är en första uppskattning, inte en bevisföring — det överskattar draget något vid hög spridning, och ju grövre bruset desto mer lönar sig den exakta roten ur produkten. km-013 bär standardavvikelsens beräkning i detalj."
+          },
+          {
+            "type": "insight",
+            "content": "Varför just halva variansen? Eftersom en nedgång äter en oproportionerligt stor del av den kommande multiplikationen, och en lika stor uppgång inte kompenserar det i produkt — först i andra ordningens termer blir obalansen synlig som en fast kostnad, och andra ordningen är just variansen. Kursen lämnar härledningen där: verktyget ska användas, inte härledas varje gång. Men en ärlighet hör till: vid låg spridning är approximationen nästan exakt, vid hög spridning syns gapet mellan verktyg och verklighet — och det gapet är i sig en påminnelse om att grovt brus inte låter sig sammanfattas i en enkel formel ens när formeln handlar om just brus."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Mätning — tre portföljer, samma genomsnitt, tre liv",
+        "intro": "Tre portföljer, alla med aritmetiskt genomsnitt plus 10 procent. Tjugo år senare: 6,19x, 4,81x och 3,11x. Skillnaden är en enda siffra — spridningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konstruktionen är tvåpunktsmodellen från kapitel två, körd tjugo år (påhittade tal). Portfölj ett: åren drar plus 20 eller 0 kring plus 10 — spridning 10 procent. Portfölj två: plus 30 eller minus 10 — spridning 20 procent. Portfölj tre: plus 40 eller minus 20 — spridning 30 procent. Alla tre bär det aritmetiska genomsnittet plus 10 procent; ingen av dem lever det. De geometriska årsavkastningarna blir plus 9,54, plus 8,17 och plus 5,83 procent — dragen 0,46, 1,83 respektive 4,17 procentenheter per år. På tjugo år är skillnaden inte längre en decimal: 1,0954 upphöjt till tjugo blir 6,19x, 1,0817 blir 4,81x och 1,0583 blir 3,11x. Samma genomsnitt, tre liv — och det tredje livet är hälften av det första."
+          },
+          {
+            "type": "tabell",
+            "content": "TRE LIV PÅ SAMMA GENOMSNITT (ARITMETISKT plus 10 PROCENT PER ÅR, 20 ÅR, PÅHITTADE TAL): Portfölj ett — spridning 10 procent, geometriskt plus 9,54 per år, drag 0,46 procentenheter, slutvärde 6,19x · Portfölj två — spridning 20 procent, geometriskt plus 8,17, drag 1,83, slutvärde 4,81x · Portfölj tre — spridning 30 procent, geometriskt plus 5,83, drag 4,17, slutvärde 3,11x · LÄSNING: varje spridningssteg äter en multipel — från 6,19x till 4,81x till 3,11x utan att det väntade årsvärdet rörde sig en procentenhet. Den som jämför strategier på aritmetiskt genomsnitt jämför kartor över år som ingen lever."
+          },
+          {
+            "type": "insight",
+            "content": "De två talen svarar på två olika frågor. Det aritmetiska genomsnittet beskriver ett typiskt år bland alla möjliga år — det är väntevärdet över parallella utfall. Den geometriska årsavkastningen beskriver resan: det tal som, upphöjt till antalet år, ger den faktiska produkten. En portfölj lever inte i parallella utfall utan i ett, i följd. Därmed är draget inte en teknisk fotnot utan en översättning mellan två språk — presentationens språk, genomsnittet, och verklighetens, produkten — och kursens hela konst är att läsa båda och veta vilken fråga varje tal besvarar. rp-05 lade ordningen på produkten; här läggs nivån: genomsnittet överdriver alltid, spridningen äter skillnaden."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktik — dragets tre spakar",
+        "intro": "Skatten kan inte avskaffas — men den kan budgeteras och sänkas. Tre spakar finns, och varje spak har sin granne i registret som äger mekaniken.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första spaken är diversifiering (km-014 bär korrelationsmatematiken): två tillgångar med samma väntade avkastning och ofullständig korrelation ger tillsammans lägre spridning än var och en ensam — väntevärdet bevaras, draget sjunker. Räkneexemplet är rent (påhittade tal): två oberoende tillgångar med spridning 10 procent vardera, lika vikta, ger portföljens spridning som 10 delat med roten ur 2 — alltså ungefär 7,1 procent — och draget sjunker från ungefär 0,50 till ungefär 0,25 procentenheter. Variansen halveras, skatten halveras: diversifiering är den enda spaken som sänker draget utan att röra avkastningen. Andra spaken är volatilitetsbudgeten (rp-04): att sätta ett mål för spridningen är att sätta ett tak för skatten — budgeten är dragets administrationslära. Tredje spaken är positionssizningen (km-017 bär Kellykriteriet): den som satsar mer än den geometriska tillväxten bär pressar ned tillväxten under optimum — för stor sizing betalar draget i ökande takt, vilket är skäret där Kellys logaritmiska synsätt och denna kurs möts. Återbalanseringen (pf-04 äger mekaniken) håller portföljen nära budgeten mellan justeringarna — detta steg äger varför: varje spridningsenhet över budget är obudgeterad skatt."
+          },
+          {
+            "type": "tabell",
+            "content": "DRAGETS TRE SPAKAR (PÅHITTADE TAL I EXEMPLET): Diversifiering — två oberoende tillgångar, portföljspridning 10 delat med roten ur 2 lika med 7,1 procent, drag 0,50 går till 0,25 procentenheter — mekanikens ägare km-014 · Budget — spridningstak sätter skattetak — ägare rp-04 · Positionssizning — den geometriska tillväxten bär hävstången; överskrid den och tillväxten böjer ned — ägare km-017 · LÄSNING: spakarnas ordning är principen — först den gratis, sedan den administrativa, sist den disciplinära."
+          },
+          {
+            "type": "definition",
+            "content": "DRAGPROTOKOLLET I TRE SPAKAR: (1) DIVERSIFIERA — sänk spridningen utan att röra väntevärdet; varje brusdämpning är en skattesänkning · (2) BUDGETERA — sätt spridningens tak i kronor, inte bara i procent; halva variansen är priset per år · (3) SIZE EFTER TILLVÄXTEN — den som kompounderar får inte satsa som om åren vore oberoende val vid varje bord; den geometriska tillväxten är taket."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor — fem sätt skatten osynliggörs",
+        "intro": "Draget behöver inte bemästras — det behöver bara synas i rätt valuta. Fem konstruktioner gör det osynligt, och var och en har sin bot.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fälla ett: den aritmetiska presentationen — returprognoser och historieöversikter som redovisar aritmetiska årsmedelvärden säljer kartan som vore den resan; boten är att alltid ställa en fråga till varje genomsnitt: geometriskt eller aritmetiskt? Fälla två: volatiliteten som gratis — resonemanget att svängningar är harmlösa så länge inget säljs; spegelparet 96,0 visar priset utan en enda försäljning. Fälla tre: trappans illusion — tanken att en nedgång bara är plus- och minustecken som tar ut varandra; reparationstrappan visar att de aldrig gör det: minus 20 kräver plus 25, alltid. Fälla fyra: fel horisont att medelvärdesbilda över — ett aritmetiskt medelvärde över långa perioder döljer att draget betalats varje enskilt år under dem; ju längre medelvärdesperiod, desto osynligare skatten — och desto större blir den i produkt. Fälla fem: avgifterna i fel valuta — avgifter räknas ofta på den aritmetiska avkastningen men betalas ur den geometriska; gränsen går här till ib-05, som äger avgiftserosionens räknelära, men valutaregeln är denna kurs: två kostnader möts på vägen — draget och avgiften — och den ärliga kalkylen bärs i geometriska kronor."
+          },
+          {
+            "type": "definition",
+            "content": "GENOMSNITTSFÄLLAN (KURSENS EGNA): att läsa ett aritmetiskt medelvärde som en prognos för portföljens tillväxt. Boten är en regel: varje avkastningstal märks med sin fråga — typiskt år, aritmetiskt, eller faktisk resa, geometriskt — och varje jämförelse mellan strategier förs i resans valuta."
+          },
+          {
+            "type": "insight",
+            "content": "Grannen km-034 äger nedgångens mätning — djup, längd och återhämtning — och reparationstrappan är densamma asymmetri i statisk form: varje mått på hur dyrt ett fall är att bära är ett mått på hur mycket produkten straffar fallet. Skillnaden i ägarskap: km-034 mäter vad som hänt, detta steg mäter priset på själva variationen — före, under och efter varje enskilt fall. Tillsammans täcker de risken i djup (km-034), ordning (rp-05) och nivå (detta steg): tre axlar, en och samma multiplikation."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — dragprotokollets fem frågor",
+        "intro": "Fem frågor, besvarade med två tal per portfölj, gör skatten till en budgetpost — och en utmaning som stänger kursen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fråga ett: bär presentationen aritmetiskt genomsnitt eller geometrisk årsavkastning — och vilken av dem lever min portfölj? Fråga två: vad är spridningen, och vad blir draget som första approximation — en halv varians under genomsnittet? Fråga tre: vilken spak bär planen — diversifiering som sänker spridningen gratis, budget som sätter taket, eller positionssizning som håller hävstången under den geometriska tillväxten? Fråga fyra: hur mycket av den väntade avkastningen överlever tjugo års multiplikation — tre liv på samma genomsnitt visar att svaret kan vara hälften? Fråga fem: i vilken valuta räknas avgifterna — på genomsnittet eller på resan? Den som kan svara på de fem har konverterat bruset från ett öde till en kostnadspost: ingenting är prognoserat, allt är prissatt. Familjen blir därmed hel: måtten (rp-01), deras tre frågor (rp-02), vikterna (rp-03), budgeten (rp-04), ordningen (rp-05) — och nu priset på själva variationen."
+          },
+          {
+            "type": "definition",
+            "content": "DRAGPROTOKOLLET: (1) VALUTAN — varje avkastningstal märks aritmetiskt eller geometriskt · (2) SKATTEN — draget uppskattas till en halv varians under genomsnittet · (3) SPAKEN — diversifiering, budget eller positionssizning, valda i den ordningen · (4) MULTIPELEN — tjugoårsutfallet räknas på den geometriska årsavkastningen, inte på genomsnittet · (5) AVGIFTENS VALUTA — kostnader bärs i geometriska kronor. Fem rader, en sida — och genomsnittet kan inte längre låtsas vara resan."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta två strategier, verkliga eller påhittade, med samma aritmetiska genomsnitt plus 10 procent men spridning 10 respektive 30 procent. Räkna deras geometriska årsavkastningar med roten ur produkten av ett uppår och ett nedår, och deras tjugoårsmultiplar. Räkna därefter reparationstrappan för minus 10, minus 20, minus 33,3 och minus 50 procent, och notera var trappan slutar vara en trappa och blir en klippa. Kursen är utbildning i att läsa tillväxtens tredje siffra — inte uppmaningar att köpa eller sälja något."
           }
         ]
       }

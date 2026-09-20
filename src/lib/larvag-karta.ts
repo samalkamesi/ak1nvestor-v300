@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (465 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (470 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 423 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 428 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -434,6 +434,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "kt-05-katalysatorernas-kalender", titel: "Katalysatorernas kalender — att bygga händelsekartan och läsa klustren", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-06-guidningen", titel: "Guidningen — bolagets egen prognos som leverans och katalysator", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-07-den-tillverkade-katalysatorn", titel: "Den tillverkade katalysatorn — aktivisten och händelsen som ingen annan skulle ha orsakat", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "kt-08-optionsforfallets-dag", titel: "Optionsförfallets dag — kalenderns inbyggda katalysator", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-03-lasa-aktiesidan", titel: "Läsa aktiesidan — siffrorna på skärmen före metoderna", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -451,6 +452,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "vr-06-jamforelsebolagen", titel: "Jämförelsebolagen — urvalet bakom varje multipel", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-07-terminalvardet", titel: "Terminalvärdet — DCF:s andra halva: det som händer efter prognosisperioden", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-08-tobins-q", titel: "Tobins Q — marknadsvärdet möter återanskaffningspriset", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-09-konglomeratrabatten", titel: "Konglomeratrabatten — när helheten är värd mindre än delarna", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-02-substansens-kvalitet", titel: "Substansens kvalitet — att granska vad substanssiffran innehåller", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-03-forvaltarskapet", titel: "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -462,6 +464,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pe-04-den-privata-agarsidan", titel: "Den privata ägarsidan — bolagens värld utanför börsen", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-05-andrahandsmarknaden", titel: "Andrahandsmarknaden — LP-andelens pris när fonden inte får vänta", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-06-j-kurvan-och-capital-calls", titel: "J-kurvan och capital calls — pengarnas tid i private equity", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-07-co-investeringen", titel: "Co-investeringen — andelen bredvid fonden", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-02-avkastningstrappan", titel: "Avkastningstrappan — marginal och kapitalomsättning: ROIC:s två vägar", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-03-inkrementell-roic", titel: "Inkrementell ROIC — nästa kronas avkastning och medeltalets blindhet", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -488,11 +491,13 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "ek-04-backtestens-hantverk", titel: "Backtestens hantverk — att testa en metod mot historien utan att lura sig själv", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-05-monte-carlo-i-motorn", titel: "Monte Carlo i motorn — tusen framtider ur en kassaflödesprognos", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-06-bayesianska-omviktningen", titel: "Bayesianska omviktningen — hur rösterna lär sig av träffar och missar", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ek-07-walk-forward-i-motorn", titel: "Walk-forward i motorn — fönstret som validerar", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-01-riskmattens-karta", titel: "Riskmåttens karta — fem mått, fem frågor, innan formlerna", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-02-tre-matt-tre-fragor", titel: "Tre mått, tre frågor — Sharpe, Sortino och Calmar i samma portfölj", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-03-riskparitet", titel: "Riskparitet — att viktta portföljen efter risk, inte kronor", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-04-volatilitetsbudgeten", titel: "Volatilitetsbudgeten — portföljens risk satt i ett tal och fördelad i kronor", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "rp-05-sekvensrisken", titel: "Sekvensrisken — utfallsordningen som äger decenniet", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "rp-06-volatilitetsdraget", titel: "Volatilitetsdraget — brusets avgift på tillväxten", kategori: "RISKHANTERING & PORTFÖLJTEORI", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -501,4 +506,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 465;
+export const LARVAG_ANTAL_KURSER = 470;

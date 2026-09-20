@@ -1,0 +1,160 @@
+{
+  "slug": "vr-09-konglomeratrabatten",
+  "category": "VÄRDERING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Konglomeratrabatten — när helheten är värd mindre än delarna",
+  "summary": "VÄRDERING-familjens nionde steg öppnar rabattens svåraste fall: bolaget vars delar är värda mer än helheten. Sonden mot 464 kurser visar att konglomeratrabatt och holdingrabatt har noll kursägare — summakursen äger metoden att räkna delvärden (km-012) och investmentbolagskurserna äger NAV-rabatten (ib-01, ib-02) — men ingen äger frågan varför helheten handlas under summan och när skillnaden stängs. Kursens tes är trefaldig. Först: rabatten är ett mått, inte ett sentiment — Del A 800 och Del B 400 summerar 1 200; börsvärdet 960 ger rabatten 240 = 20 procent: siffran kan och bör räknas innan den tolkas. Sedan: rabatten har fyra källor — grumlig segmentredovisning (analyskostnaden), kapitalbindning (den starka delen subventionerar den svaga), synergibrist (centrala kostnader utan motsvarande värde) och imperiebygge (styrelsens rike, inte ägarens avkastning) — och källan avgör om rabatten är fel att handla på eller fel att äga. Tredje: väntan har ett pris — en rabatt på 20 procent som består i åtta år kostar 2,8 procent per år i utebliven utfällning (1,25 upphöjt till en åttondel), och rabatten stängs bara av en händelse: en spin-off där Del B noteras fristående till 420 med fem procents premie ger 800 + 420 = 1 220 mot 960 = 27,1 procent värdehöjning — mot en engångskostnad på 40 och 15 per år i dubbel administration. Räkneexemplet med påhittade bolag bär kursen från mått till källa till stängning. Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "VÄRDERING-familjens åtta första steg har byggt multipelens anatomi (vr-01 till vr-03), avkastningens källor (vr-04) och metoderna från pris mot värde (vr-05) via jämförelsebolagen (vr-06) till terminalvärdet (vr-07) och återanskaffningspriset (vr-08) — men det vanligaste förhållandet mellan summa och börsvärde i flerdelade bolag saknar sin kurs. Sonden mot 464 kurser bekräftar: konglomeratrabatt, holdingrabatt, uppsplittring och break-up har noll kursägare (konglomerat nämns i förbifart av ett tiotal kurser — ingen äger ämnet). Gränserna är dokumenterade: km-012 äger summametoden (att RÄKNA delarna) — den här kursen äger rabatten (varför helheten prissätts under summan och när gapet stängs); ib-01 och ib-02 äger investmentbolagets rabatt mot substans, kusinen med fondstruktur — här ägs industrikonglomeratets version med operativa verksamheter; pe-02 äger utfasningens internränta — här ägs börsbolagets spin-off; tx-01 äger varför imperier byggs — här ägs vad börsen tar betalt för dem. Kursens värde för lärvägen: rabatten är världens vanligaste värdefälla och värdepärmens vanligaste katalysator på en gång — den som kan skilja källorna åt kan skilja fällan från fönstret.",
+  "learn": "Räkna rabatten: Del A 800 plus Del B 400 = 1 200 mot börsvärde 960 — rabatt 240 = 20 procent; måttet före tolkningen · Namnge källorna: grumlig segmentredovisning, kapitalbindning mellan delar, synergibrist, imperiebygge — fyra källor med fyra olika prognoser · Räkna väntans pris: en 20-procentig rabatt som består i åtta år kostar 2,8 procent per år (1,25 upphöjt till en åttondel); i tolv år kostar den 1,9 procent per år · Räkna stängningen: spin-off av Del B till 420 (fem procents friståendepremie) ger 800 + 420 = 1 220 mot 960: 27,1 procent — mot engångskostnaden 40 och 15 per år i dubbel administration · Skilja konglomeratrabatten från kusinerna: investmentbolagets NAV-rabatt (ib-01, ib-02 — fondstruktur) och andrahandsandelens pris (pe-05) — samma utseende, olika instrument · Läsa segmentredovisningens grumlighet: vilka kostnader bärs centralt, vilka delar tjänar på gemensam finans — rabattens första källa är att summan är svår att räkna · Bedöma rabattens hållbarhet: vilken källa kan stängas av vilken händelse (spin-off, uppsplittring, aktivist) och till vilken kostnad · Kräva marginal: rabattens värde realiseras bara om stängningen kommer — väntetiden är en riskpost som räntas (2,8 procent per år i exemplet)",
+  "history": {
+    "origin": "1960-talets Amerika byggde konglomeratens guldålder: ITT under Harold Geneen tillsammans med LTV och Litton köpte bolag i alla branscher — och börsen betalade premie, inte rabatt: den som köpte bolag med lågt pris mot intjäning med sina högt värderade aktier visade automatisk vinsttillväxt per aktie (multiplikationsaritmetikens illusion, senare en del av bf-13:s gränser). Våren 1968 vände värderingsförhållandena och vågen bröt samman — rabatten som följd är sedan dess börsens standardinställning till blandbolag.",
+    "evolution": "1980-talet blev uppsplittringens årtionde: uppköpsfinansiärer köpte konglomerat, sålde delarna var för sig och visade att summan översteg helheten med mer än transaktionskostnaderna — motsatt aritmetik blev en industri. Forskningen följde: 1995 mätte Berger och Ofek den genomsnittliga konglomeratrabatten (övervärde mot summan av jämförbara fristående bolag) till omkring 15 procent, och diversifieringsrabatten blev ett mätbart forskningsfält i stället för en anekdot.",
+    "modern": "Dagens marknad betalar för fokus: analytiker och index belönar renodlade verksamheter, och studier av avknoppningar visar genomgående att spun-off-bolag klarar sig väl som fristående — samtidigt lever de svenska sfärernas långsiktiga blandbolag kvar som motexempel: en familj som håller samman industrier i generationer kan bära en rabatt i fred och ändå bygga värde över tiden. Kursens läsning: rabatten är varken lag eller fördom — hon är ett pris på otydlighet, och priset varierar med källan."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Helheten mot summan — rabattens definition", "minutes": 4 },
+    { "num": 2, "title": "Rabattens fyra källor — från grumligt till girigt", "minutes": 4 },
+    { "num": 3, "title": "Väntans pris — när rabatten består", "minutes": 4 },
+    { "num": 4, "title": "Rabattens stängning — spin-off, uppsplittring, aktivist", "minutes": 4 },
+    { "num": 5, "title": "Den svenska läsarten — investmentbolaget som kusin", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — rabattläsarens arbetsblad", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch räknade avknoppningar till sina favoritsituationer: det fristående bolaget lämnar moderhusets rapport och får en ledning med egen aktie att svara för, medan institutioner som inte får behålla den nya aktien säljer mekaniskt — ett pris som har med ägarmekanik att göra, inte med värde. Hans läsning av konglomerat var Lynch-rak: hellre ett bolag man förstår än tre man förstår hälften av — rabatten är delvis betalt för att analysen blir tre gånger så jobbig.",
+  "grahamSection": "Benjamin Grahams arbetsfördelning är kursens stomme: den ena kategorin — köp under beräknat värde och vänta — och den andra, situationer med bestämda händelser och tidsramar (fusioner, utdelningar av tillgångar, uppsplittringar), där värdeskillnaden och katalysatorn räknas tillsammans. Rabattstängningen är den andra kategorin i modern dräkt, och Grahams varning står kvar vid sidan av den: en rabatt utan händelse kan bäras i årtionden medan marginalen äts av väntan — priset under värdet är en försäkring, inte en ränta.",
+  "ak1Section": "I AK1A:s metodik är konglomeratrabatten standardövningen i segmentläsning: AKM2-modellen justerar flerdelade bolag del för del innan någon multipel tyds (summametodens kurs är km-012), scenariorutan (km-029) får rabattens två lägen — består eller stängs — som kolumner, och väntetiden förs som riskpost i rk-familjens tidstänkande. Katalysatorkedjan (kt-03) bär stängningen: aktivist, förslag, beslut, avknoppning — fyra led med stigande sannolikhet. Fem tidshorisonterna skiljer fällan från fönstret: rabattens källor läses långsamt (segment, kapitalbindning), dess stängning på medellång sikt — och ingen horisont gör mekaniken till en rekommendation.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Helheten mot summan — rabattens definition",
+      "intro": "Rabatten börjar som en subtraktion, inte en känsla. Kapitlet definierar måttet och visar spegeln: premien som blev rabatt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden att räkna delvärden ägs av summakursen (km-012): värdera varje del mot sina egna jämförelsebolag (vr-06) och summera. Den här kursen tar nästa steg — jämför summan med börsvärdet. Räkneexemplet (påhittade tal): Del A är värderad till 800 miljoner kronor mot sina jämförelsebolag, Del B till 400 — summan 1 200. Börsvärdet för helheten är 960. Rabatten är 1 200 − 960 = 240, det vill säga 20 procent: helheten handlas till fyra femtedelar av delarnas värde. Definitionen är enkel; tolkningen är kursens rest — rabatten bär information om marknadens misstro, inte om att något är fel räknat. Spegeln finns i historien: på 1960-talet betalades PREMIE för blandbolag (diversifieringen som trygghet), sedan 1968 är rabatten standardinställningen — samma bolagsform, två prisbilder, och skillnaden bor i vad marknaden tror att ägandet kostar. Mätningen har en disciplin: rabatten räknas mot noga summerade delvärden (centralt bärande kostnader fördelade, internintäkter eliminerade — grumligheten är kapitel två), och varje delvärde bär sin egen osäkerhet: en rabatt på 20 procent mot delvärden med tio procents felmarginal är ingen rabatt alls utan ett decimaltecken."
+        },
+        {
+          "type": "definition",
+          "content": "Konglomeratrabatt: skillnaden mellan summan av ett flerdelat bolags delvärden och dess börsvärde, uttryckt i procent av summan — i exemplet (1 200 − 960) / 1 200 = 20 procent. holdingrabatt: samma mått för ett rent ägarbolag utan egen drift."
+        },
+        {
+          "type": "tabell",
+          "content": "Räkneexemplet: Del A 800 + Del B 400 = summa 1 200 · börsvärde 960 · rabatt 240 = 20 procent · spegelfallet: stängs rabatten till noll växer värdet 25 procent (960 mot 1 200) · hålls delvärdena med tio procents osäkerhet är 20 procents rabatt inom felmarginalen"
+        },
+        {
+          "type": "insight",
+          "content": "Rabatten är en subtraktion med tolkning: 1 200 mot 960 = 20 procent — siffran är gratis, men vad den betyder avgörs av källan, och källan är nästa kapitel."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Rabattens fyra källor — från grumligt till girigt",
+      "intro": "Varför betalar marknaden mindre för helheten? Kapitlet skiljer fyra källor åt — de har samma utseende i kursgrafiken och olika prognoser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Källa ett: grumligheten. Segmentredovisningen fördelar centrala kostnader på delarna efter nycklar som inte är jämförbara med fristående bolag, internintäkter och internpriser gör att delarnas marginaler är uppskattningar — och analyskostnaden är en reell kostnad som marknaden prissätter: bolaget som tar en dag att förstå värderas högre än bolaget som tar en vecka. Källa två: kapitalbindningen. Blandbolaget är en intern kapitalmarknad — kassa från Del A kan finansiera Del B i stället för utdelning eller återköp; den starka delen subventionerar den svaga, och ägaren som hellre hade valt själv betalar mindre för att inte få välja (allokeringsfrågan ägs av ks-02). Källa tre: synergibristen. Utlovade synergier kostar centrala ledningar, koncerngemensam förvaltning och koordinationsförluster — när två plus två blir tre och en halv syns det i delarnas sammanlagda marginaler, och marknaden har sett det förr. Källa fyra: imperiebygget. Storlek har prestige, och en ledning som köper tillväxt (tx-01) bygger rike ibland oavsett avkastning — agentkostnaden mellan ägare och ledning är rabattens girigaste källa. Prognoserna skiljer: grumligheten kan botas av transparans (nästan gratis), bindningen av utdelningsdisciplin eller avknoppning, synergibristen kräver uppsplittring (kostsamt), och imperiebygget kräver ägartryck utifrån — rabatten med fel källa är en fälla, med rätt källa ett fönster."
+        },
+        {
+          "type": "definition",
+          "content": "Intern kapitalmarknad: blandbolagets förmåga — och frestelse — att flytta kassa mellan delar internt i stället för att lämna den till ägarna. Agentkostnad: skillnaden i intresse mellan ägare och ledning; imperiebyggandets ekonomiska namn."
+        },
+        {
+          "type": "insight",
+          "content": "Fyra källor, fyra prognoser: grumlig (transparans botar), binder (disciplin botar), synergilös (splittring krävs), girig (ägartryck krävs) — rabattens orsak avgör om hon är fälla eller fönster."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Väntans pris — när rabatten består",
+      "intro": "Rabatten bär ingen ränta i sig själv: om stängningen uteblir kostar väntan. Kapitlet räknar väntans pris per år.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lockposten i varje rabattläsning är aritmetiken själv: stängs en 20-procentig rabatt stiger kursen 25 procent (960 mot 1 200) — men siffran saknar datum, och utan datum är den inte en avkastning utan en förhoppning. Räkna i stället väntans pris: om rabatten består i åtta år är den årliga utfällningen 1,25 upphöjt till en åttondel minus ett, det vill säga 2,8 procent per år — den extra avkastning som kunde ha samlats om skillnaden stängts direkt och marginalen varit konstant. Består hon i tolv år sjunker priset per år till 1,9 procent. Detta är värdefällans kärna: 2,8 procent per år kan ätas av avgifter, alternativkostnad och rapporternas brus — rabatten som ser gratis ut är i praktiken en option utan löptid, skriven av tiden själv, och Optionskursens läxa gäller också här: värdet av en rättighet utan datum är svår att räkna. Metoden är disciplinen: innan en rabatt köps (i utbildningens termer: studeras som exempel) räknas tre tal — rabattens storlek (20 procent), den rimligaste stängningstiden och väntans pris per år vid utebliven stängning. Marginalen mot felet (km-030) hjälper bara om tiden står med i räkningen: en rabatt på 20 procent med tio års väntan och osäkra delvärden är inte en marginal utan en gissning med väntelista."
+        },
+        {
+          "type": "tabell",
+          "content": "Väntans pris (påhittade tal): stängning efter 1 år: plus 25,0 procent engångs · består 8 år: 2,8 procent per år · består 12 år: 1,9 procent per år · ingen stängning: 0 — rabatten bär ingen ränta i sig själv"
+        },
+        {
+          "type": "insight",
+          "content": "1,25 upphöjt till en åttondel är 1,028: en 20-procentig rabatt som består i åtta år kostar 2,8 procent per år — väntan är en post i kalkylen, inte ett tomrum."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Rabattens stängning — spin-off, uppsplittring, aktivist",
+      "intro": "Rabatten stängs aldrig av att den är riktig — bara av att något händer. Kapitlet räknar stängningens vägar och priser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Väg ett: spin-off. Del B knoppas av och noteras fristående; ägarna får aktier i båda bolagen och väljer själva. Räkneexemplet: en fristående Del B antas handlas till 420 — fem procents premie för renodling (marknadens betalning för fokus) — och helheten blir 800 + 420 = 1 220 mot 960 före: 27,1 procent värdehöjning. Men stängningen har pris: notering, prospekt och rådgivare kostar engång 40, och dubbla bolagsledningar, styrelser och rapporter kostar 15 per år — nästa års jämförelse är 1 220 − 15 = 1 205, fortfarande 25,5 procent över utgångsläget. Väg två: uppsplittring. Delarna säljs successivt och bolaget blir kassa plus en kvarvarande verksamhet — transaktionspriserna är förhandlade (okända i förväg), skatten är en post (skattekurserna äger reglerna) och resultaten är en utfasningsberäkning i privatägarens mening (pe-02 äger den aritmetiken; här ägs börsbolagets version). Väg tre: aktivisten. En stor ägare agiterar för väg ett eller två — katalysatorkedjan (kt-03) i kalenderform: köp, förslag, kampanj, stämma, genomförande, och varje led har sin sannolikhet och sitt datum. Gemensamt för vägarna: rabatten stängs av händelser med kostnader och tidsramar — inte av att den finns. Grahams kategori situationer med bestämda händelser är exakt den här hantverket: värdeskillnad och katalysator räknas tillsammans, och den ena utan den andra är en åsikt."
+        },
+        {
+          "type": "definition",
+          "content": "Spin-off (avknoppning): en del av bolaget förs över till ägarna som aktier i ett nytt, fristående noterat bolag — ingen köpeskilling, men noterings- och administrationskostnader. Break-up (uppsplittring): delarna säljs var för sig tills helheten är upplöst."
+        },
+        {
+          "type": "tabell",
+          "content": "Stängningsräkning: före 960 · spin-off: Del A 800 + Del B 420 (fem procents friståendepremie) = 1 220 = plus 27,1 procent · kostnader: 40 engång + 15 per år · efter ett år: 1 220 − 15 = 1 205 = plus 25,5 procent — stängningen lönar sig i exemplet, men först efter händelsen"
+        },
+        {
+          "type": "insight",
+          "content": "Rabatten stängs av händelser, inte av att hon är riktig: spin-off, uppsplittring, aktivist — tre vägar, tre kostnadsscheman, och alla kräver att någon driver dem."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Den svenska läsarten — investmentbolaget som kusin",
+      "intro": "Samma utseende, annat instrument: investmentbolagets rabatt mot substans är konglomeratrabattens kusin. Kapitlet drar gränsen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "På den svenska börsen är rabattens vanligaste skepnad investmentbolaget: en börsnoterad portfölj av andelar som handlas under sitt substansvärde (ib-01 äger grunderna, ib-02 substansens kvalitet). Utseendet är identiskt med konglomeratrabatten — helheten under delsumman — men instrumentet skiljer: investmentbolaget äger andelar i andra bolag (fondstrukturen), medan industrikonglomeratet äger och driver verksamheter. Orsakerna överlappar delvis: agentkostnaden (förvaltare som väljer åt ägaren), kapitalbindningen (realisationer som skjuts upp av skatt) och grumligheten (portföljens dagar gamla priser). Men konglomeratets källor sträcker sig längre: synergibristen och den operativa integrationskostnaden finns inte i portföljen, och omvända gäller: investmentbolagets permanenta skattestruktur är en friktion industribolaget saknar. Skillnaden är prognostisk: NAV-rabatten stängs sällan av uppsplittring (portföljen kan avvecklas gradvis), konglomeratrabatten kan (verksamhetarna kan noteras). Den svenska traditionen tillför tålmodet: familjeägda sfärer har burit rabatter i generationer och ändå byggt värde — långsiktighet kan göra rabatten till en livsförsäkring snarare än en fälla, och stadiga utdelningar gör den till en kassaflödesmaskin. Kursens gränsdragning: portföljbolagskurserna (ib-familjen) äger andelsräkningen, praktikcasen (pc-04) äger exempelvis läsningen av ett verkligt blandbolag — den här kursen äger den operativa blandningens rabatt och dess stängningsvägar."
+        },
+        {
+          "type": "definition",
+          "content": "NAV-rabatt (substansrabatt): skillnaden mellan ett investmentbolags börsvärde och dess justerade substansvärde — konglomeratrabattens fondstrukturerade kusin, med skatt och förvaltning som extra friktioner och utan synergifrågan."
+        },
+        {
+          "type": "insight",
+          "content": "Portföljens rabatt bor i struktur (skatt, förvaltning), verkstadens i drift (synergi, ledning) — samma kursgrafik, olika orsakskatalog, och stängningsvägarna skiljer sig därefter."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — rabattläsarens arbetsblad",
+      "intro": "Kursens redskap samlas till sex rader som kan ställas mot varje flerdelat bolag — alltid i samma ordning, från måttet till beslutsposten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rad ett: bygg summan (km-012:s metod) — del för del mot egna jämförelsebolag (vr-06), centrala kostnader fördelade, internintäkter eliminerade. Rad två: räkna rabatten i procent av summan — och mot delvärdenas sammanlagda osäkerhet: en rabatt inom felmarginalen är ingen rabatt. Rad tre: lista källorna per del — grumlighet, bindning, synergibrist, imperiebygge: vilka är störst och var? Rad fyra: fråga vilken källa som kan stängas av vilken händelse — transparans, disciplin, spin-off, aktivist — och till vilken kostnad i tid och pengar. Rad fem: räkna väntans pris per år om stängningen uteblir (2,8 procent per år i huvudexemplet). Rad sex: kräv marginal (km-030) som täcker både delvärdesfelet och väntetiden. Arbetsbladet genomlöper kursens verktyg: subtraktionen (summa mot börsvärde), källkatalogen, exponenten (åttondelen av 1,25) och stängningsräkningen (1 220, 40, 15). Ingen rad säger köp eller sälj — arbetsbladet är en metod att skilja fällan från fönstret, och utbildningens gräns mot råd går rakt genom rad sex: valet är alltid läsarens eget ansvar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på rabatten. Uppgift ett: summan av delvärdena är 1 500 och börsvärdet 1 050 — hur stor är rabatten i procent (450 delat med 1 500 = 30 procent) och hur många procent stiger värdet om den stängs (1 500 mot 1 050 = plus 42,9 procent)? Uppgift två: om den 30-procentiga rabatten består i tio år — vad kostar väntan per år (1,4286 upphöjt till en tiondel = plus 3,6 procent per år)? Uppgift tre: en spin-off höjer Del B:s värde med tio procents premie (från 400 till 440) med kostnaden 40 engång och 15 per år — vad blir värdet efter ett år (800 + 440 − 40 − 15 = 1 185 mot 960 = plus 23,4 procent), och vad händer med kalkylen om premien uteblir (800 + 400 − 40 − 15 = 1 145: plus 19,3 procent — marginalen mot felet syns)?"
+        },
+        {
+          "type": "insight",
+          "content": "Sex rader: mått, gräns mot felet, källor, stängningsvägar, väntans pris, marginal — rabattläsning är aritmetik följt av diagnostik, och utan rad tre är rad två bara en siffra."
+        }
+      ]
+    }
+  ]
+}

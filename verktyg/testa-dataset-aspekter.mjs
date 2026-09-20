@@ -23,12 +23,15 @@
  * fil 'aspekter'-exporten rapporteras det utan att faila. ALLT körs i
  * try/catch per modul — ett importfel dödar aldrig hela testet.
  *
- * Körs:  npx tsx verktyg/testa-dataset-aspekter.mjs   (från repo-roten)
+ * Körs:  node verktyg/testa-dataset-aspekter.mjs (från repo-roten) —
+ *        TS-modulerna importeras via ts-import-bryggan (V213c): resolver-
+ *        hook löser @/-alias + ändelselösa relativa importer under ren
+ *        node, så sviten varken behöver eller föredrar tsx.
  * Exit:  0 = grönt · 1 = minst ett fel.
  */
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { importeraTs } from "./ts-import.mjs";
 
 const ROTT = process.cwd();
 const MODULKATALOG = path.join(ROTT, "src", "lib", "dataset-aspekter");
@@ -217,9 +220,9 @@ async function huvud() {
     process.exit(1);
   }
 
-  // Branschernas svenska namn — EN namnkälla (dataset-medianer.ts).
-  const medianerUrl = pathToFileURL(path.join(ROTT, "src", "lib", "dataset-medianer.ts")).href;
-  const { branschNamn } = await import(medianerUrl);
+  // Branschernas svenska namn — EN namnkälla (dataset-medianer.ts), via
+  // bryggan (modulens ändelselösa importer löses av resolver-hooken).
+  const { branschNamn } = await importeraTs("src/lib/dataset-medianer.ts");
 
   const universum = lasUniversum();
   console.log(`Universum: ${universum.length} bolag · Branscher: ${BRANSCHER.length} · Moduler: ${filer.length}`);
@@ -241,7 +244,7 @@ async function huvud() {
 
     let mod = null;
     try {
-      mod = await import(pathToFileURL(path.join(MODULKATALOG, fil)).href);
+      mod = await importeraTs(`src/lib/dataset-aspekter/${fil}`);
     } catch (e) {
       allaFel.push(`[${modulFil}] import misslyckades: ${e.message}`);
       console.log(`   IMPORTFEL: ${e.message}`);

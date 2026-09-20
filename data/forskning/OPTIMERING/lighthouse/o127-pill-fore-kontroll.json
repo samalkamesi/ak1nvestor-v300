@@ -1,0 +1,32 @@
+{
+ "verktyg": "verktyg/_s7u2o123-sond.mjs (full-dump-variant av mobil-lasbarhet.mjs)",
+ "datum": "2026-09-20T21:00:17.161Z",
+ "mal": "https://lab.ak1nvestor.com",
+ "visport": "390×844, DSF 2, iPhone-UA",
+ "target": "52 px tryckyta; input ≥16 px mot iOS-zoom",
+ "sidor": [
+  {
+   "sokvag": "/dataset",
+   "antalInteraktiva": 52,
+   "prosaLankarUndantagna": 6,
+   "tryckmalUnder52": 1,
+   "ALLA": [
+    {
+     "tag": "a",
+     "rol": null,
+     "text": "Hälsa",
+     "w": 44,
+     "h": 52,
+     "font": 16,
+     "klass": "font-serif text-base font-bold text-foreground underline decoration-gold/40 underline-offset-4 max-md:flex max-md:min-h-[52px] max-md:min-w-[52px] max-md:items-",
+     "id": null,
+     "visning": "flex",
+     "min": 44
+    }
+   ],
+   "inputZoom": 0,
+   "zoomAlla": [],
+   "ostabilMatning": false
+  }
+ ]
+}

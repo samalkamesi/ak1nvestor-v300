@@ -614,14 +614,18 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: auto;
 }
 
-/* Ensure all flex children can shrink */
-.flex > * {
-  min-width: 0;
-}
+/* Ensure all flex/grid children can shrink — i @layer base (o127, s7-u1):
+   olagrad vann regeln över @layer utilities och neutraliserade därmed
+   Tailwinds min-w-* (bevis: Hälsa-pillen 44 px trots max-md:min-w-[52px],
+   o123 commit 2 verkningslös). I base vinner utilities-attribut rättvänt. */
+@layer base {
+  .flex > * {
+    min-width: 0;
+  }
 
-/* Ensure grid children can shrink */
-.grid > * {
-  min-width: 0;
+  .grid > * {
+    min-width: 0;
+  }
 }
 
 /* Prevent horizontal overflow from long URLs/strings */

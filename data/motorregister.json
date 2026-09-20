@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-19",
+  "uppdaterad": "2026-09-20",
   "uppdrag": "VÅG 49 agent 1 — motorregistret: fullständig karta över sajtens egna intelligenser (deterministiska motorer), deras montering, autonomi-kanal, testtäckning och integrationsgap.",
   "metod": "Manuell genomgång av src/lib/*.ts, src/lib/akm2/*.ts, src/lib/portfolj-forskning/*.ts, src/lib/autonom/*.ts samt grep av importer i src/app + src/components + src/hooks, cron-schema i vercel.json, klientpulser (setInterval/useEffect), organ-event-konsumenter och testverktyg i verktyg/.",
   "motorer": [
@@ -906,21 +906,6 @@
       ],
       "testverktygAlla": [
         "testa-b2b-grind.mjs"
-      ]
-    },
-    {
-      "namn": "dynamic-catalog (kursexpansion)",
-      "fil": "src/lib/ak1a/dynamic-catalog.ts",
-      "beskrivning": "Deterministisk kurskatalogsgenerator (2 896 rader): bygger/expanderar kursinnehåll urunderliggande data.",
-      "monterad": [],
-      "autonomi": "ingen",
-      "testad": true,
-      "testverktyg": "",
-      "gap": [
-        "cron/expand-courses (dagligen 12:00 UTC) expanderar kurser via EGEN fil-logik i routen — dynamic-catalog-modulen importeras inte av route, komponent eller skript (grep: noll träffar utanför ak1a-katalogen)."
-      ],
-      "testverktygAlla": [
-        "testa-dynamic-catalog.mjs"
       ]
     },
     {
@@ -3368,12 +3353,15 @@
   },
   "regen": {
     "vaccination": "våg 212 (E35 gap 2) 2026-09-19",
-    "metod": "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep)",
-    "baseradPa": "27cfd2d4",
-    "befintliga": 102,
-    "nya": 4,
-    "totalt": 106,
-    "testtade": 106,
-    "otestade": 0
+    "metod": "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep); poster vars fil saknas på disk gallras ur registret (o108, transparent i utdata)",
+    "baseradPa": "9f012282",
+    "befintliga": 105,
+    "nya": 0,
+    "totalt": 105,
+    "testtade": 105,
+    "otestade": 0,
+    "gallradeUrRegistret": [
+      "dynamic-catalog (kursexpansion) (src/lib/ak1a/dynamic-catalog.ts)"
+    ]
   }
 }

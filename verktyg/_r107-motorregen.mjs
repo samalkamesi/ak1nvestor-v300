@@ -72,9 +72,17 @@ function lasHeader(relVag) {
 
 const i = (arr) => [...new Set(arr)].sort();
 
-// ── 1) befintliga poster: mekanisk testtäcknings-uppdatering ──────────────
+// ── 1) befintliga poster: gallring av bortsopade filer + mekanisk testtäcknings-uppdatering ──
+// (o108: poster vars fil saknas på disk lämnar registret — annars återförs spökposter
+// vid varje regen; gallringen listas transparent i utdata, aldrig tyst)
 const normalisera = (fil) => fil.split(" (+")[0].trim();
 let uppdaterade = 0;
+const gallradeUrRegistret = [];
+register.motorer = register.motorer.filter((m) => {
+  const fil = normalisera(m.fil);
+  if (!fs.existsSync(path.join(REPO, fil))) { gallradeUrRegistret.push(`${m.namn} (${fil})`); return false; }
+  return true;
+});
 for (const m of register.motorer) {
   const fil = normalisera(m.fil);
   const bas = path.basename(fil, path.extname(fil));
@@ -126,22 +134,24 @@ for (const fil of kandidater) {
 
 // ── 3) summering + landning/förhandsgranskning ─────────────────────────────
 register.motorer = [...register.motorer, ...nyaPoster];
-register.uppdaterad = "2026-09-19";
+register.uppdaterad = new Date().toISOString().slice(0, 10);
 register.regen = {
   vaccination: "våg 212 (E35 gap 2) 2026-09-19",
-  metod: "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep)",
+  metod: "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep); poster vars fil saknas på disk gallras ur registret (o108, transparent i utdata)",
   baseradPa: execSync("git rev-parse --short HEAD", { cwd: REPO, encoding: "utf8" }).trim(),
-  befintliga: register.motorer.length - nyaPoster.length,
-  nya: nyaPoster.length,
-  totalt: register.motorer.length,
-  testtade: register.motorer.filter((m) => m.testad).length,
-  otestade: register.motorer.filter((m) => !m.testad).length,
-};
+    befintliga: register.motorer.length - nyaPoster.length,
+    nya: nyaPoster.length,
+    totalt: register.motorer.length,
+    testtade: register.motorer.filter((m) => m.testad).length,
+    otestade: register.motorer.filter((m) => !m.testad).length,
+    gallradeUrRegistret,
+  };
 
 const utSokvag = SKRIV ? regSokvag : "/tmp/r107-register-preview.json";
 fs.writeFileSync(utSokvag, JSON.stringify(register, null, 2) + "\n");
 console.log(`regen: ${register.regen.befintliga} bevarade + ${nyaPoster.length} nya = ${register.regen.totalt} · testtade ${register.regen.testtade} · otestade ${register.regen.otestade}`);
 console.log(`uppdaterade mekaniska fält på ${uppdaterade} befintliga poster`);
 console.log(SKRIV ? `SKRIVEN: ${path.relative(REPO, regSokvag)}` : "FÖRHANDSVISNING: /tmp/r107-register-preview.json (kör med --skriv för landning)");
+if (gallradeUrRegistret.length) console.log(`gallrade ur registret (fil saknas på disk, ${gallradeUrRegistret.length}):\n${gallradeUrRegistret.map((g) => "  − " + g).join("\n")}`);
 const otestade = register.motorer.filter((m) => !m.testad).map((m) => `  ? ${m.namn} (${m.fil})`);
 console.log(`otestade (${otestade.length}):\n${otestade.join("\n")}`);

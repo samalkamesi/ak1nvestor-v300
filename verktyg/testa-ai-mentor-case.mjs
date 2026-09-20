@@ -355,6 +355,10 @@ const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "u
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
   "svaraLokaltExtra(q, KURSREGISTER)",
+  // Omgång 27 (manifest auto-s6-1789912510460, s6-u3): modernarisk — tredje
+  // motorn FÖRE basen (widgetens faktiska position; dokumenterad här av
+  // s6-u2:s volatilitetsmekanik-harmonisering).
+  "svaraLokaltModernaRisker(q, KURSREGISTER)",
   "svaraLokalt(q, KURSREGISTER)",
   "svaraLokaltNasta(q, KURSREGISTER)",
   "svaraLokaltKapitalmekanik(q, KURSREGISTER)",
@@ -454,6 +458,9 @@ const kedjekomponenter = [
     // Omgång 26 (manifest auto-s6-1789890903364, s6-u2 fönster 3): pengarstid —
     // andrahandsmarknaden + sekvensrisken, 66:e motorn, FÖRE marknadsrytm.
     "svaraLokaltPengarstid(q, KURSREGISTER)",
+    // Omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik (s6-u2
+    // — volatilitetsdraget + marginaltrappan, 67:e motorn, FÖRE marknadsrytm).
+    "svaraLokaltVolatilitetsmekanik(q, KURSREGISTER)",
     "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);

@@ -233,7 +233,7 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-multipel-fragor"'));
-  ok("L2 komposition efter kontrahent, FÖRE marknadsrytm (deras SIST-deklaration respekteras)", widget.includes("svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
+  ok("L2 komposition efter kontrahent, FÖRE marknadsrytm (deras SIST-deklaration respekteras)", widget.includes("svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
 }
 
 console.log(`\nSVIT MULTIPEL: ${pass} PASS / ${fail} FAIL`);

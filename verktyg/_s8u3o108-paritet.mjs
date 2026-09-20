@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HÄR, "..");
-const { aktiveraTsImport } = await import(pathToFileURL(join(HÄR, "_o106-ts-import.mjs")).href);
+const { aktiveraTsImport } = await import(pathToFileURL(join(HÄR, "ts-import.mjs")).href);
 aktiveraTsImport();
 const { DYNAMIC_CATALOG } = await import(pathToFileURL(join(ROT, "src/lib/ak1a/dynamic-catalog.ts")).href);
 const KALLA = JSON.parse(readFileSync(join(ROT, "public/deep-courses.json"), "utf8"));

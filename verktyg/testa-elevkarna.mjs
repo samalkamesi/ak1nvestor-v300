@@ -13,7 +13,7 @@ if (!(major > 22 || (major === 22 && minor >= 18))) {
   process.exit(1);
 }
 
-const { aktiveraTsImport } = await import(pathToFileURL(join(HÄR, "_o106-ts-import.mjs")).href);
+const { aktiveraTsImport } = await import(pathToFileURL(join(HÄR, "ts-import.mjs")).href);
 aktiveraTsImport();
 
 class MockStorage {

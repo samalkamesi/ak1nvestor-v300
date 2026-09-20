@@ -28,3 +28,11 @@ if (!globalThis.__ak1aTsResolveRegistrerad) {
 export async function importeraTs(relSokvag) {
   return import(pathToFileURL(join(ROT, relSokvag)).href);
 }
+
+/**
+ * Kompatibilitets-API från _o106-ts-import (o112-konsolideringen): sviter som
+ * laddar .ts-moduler med EGNA pathToFileURL-importer aktiverar bryggan explicit.
+ * Registreringen sker redan idempotent vid import av denna modul — funktionen
+ * behåller bara det gamla anropsmönstret så migreringen är en rad per svit.
+ */
+export function aktiveraTsImport() {}

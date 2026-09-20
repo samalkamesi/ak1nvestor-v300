@@ -16165,3 +16165,40 @@ via node-skript i stället för Write/Edit — innehåll verifierat identisk).
 Protokoll: OPTIMERING/o123-prestanda-mobil-rond4-s7.md. Kö: slider-tummar
 16px (separat våg — mätverktyget ser dem ej på omonterade flikar) ·
 brödsmule-bredd (o8-doktrin-klass). [fabrik]
+## SPÅR 10 s10-u1 (Fabrik-order "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG") — 2026-09-20 19:08–19:14 lokal: KVÄLLS-DR — blad 10:s fjärde restore (kvällsläget) + RPO-kvällspunkt + jungurarkivet oberoende dubbelbevisat [fabrik]
+
+Fabriksagent s10-u1 (vakt). VAL (anspråk disk-först 19:11 med P1–P9 låsta FÖRE
+mätning, data/vakten/s10-u1-kvallsdr-2026-09-20-ansprak.md): worklog-sveppet
+visade blad-10-morgon ×2 + middag ×1, APP-DB dagpunkt (12:38) — kvällspunkten
+för blad 10 saknades. ÄRLIGHETSKORRIGERING under passet: DRIFTSBOKEN-bar sektion
+JUNGURKVITTO (u1 06:5x–07:4x, manifest auto-s10-1789878902744) hittades FÖRST
+vid bokföringen — worklog-greppet (^## SPÅR 10) fångar ej alla DRIFTSBOK-rubriker
+⇒ jungfrukörningen var redan förstahandsbevisad; min gzip/bundle-kontroll
+bokförs som OBEROENDE SNABBREPLIK (läxa: duplikatkontroll ska svepa BÅDA böckernas
+rubrikformat). LEVERANS: (1) node verktyg/dr-ovning.mjs GRÖN exit 0 19:08 —
+RTO 12,7 s · markör GRÖN 1 367 628 · public 60 tabeller/1 345 719 rader ·
++storage 68/1 345 855 · alla 99/1 346 115 · fel 788 kända/0 okända (AUTO-4).
+Blad 10:s restore-serie idag 06:37 · 06:39 · 12:40 · 19:08 = kvällsläget dagens
+sista öppna punkt; determinism fjärde dagen. (2) RPO-KVÄLLPUNKT 16,6 h efter
+02:30: +19 548 oskyddade, 3/60 tabeller — snapshots +18 984 == pumpens 08:00-batch
+EXAKT (dag 3) · board +528 = 8×66 (kvällsrondens siffra; 31,7 r/h, serie 31,0–36,0
+lever) · organ +36 = 12×3 (vandrande väv); två mätningar 71 s isär IDENTISKA
+(intra-kvarts-stilla par 3); aritmetik stängd 1 345 719 + 19 548 = 1 365 267 ✓
+(JSON DR-RPO-DIFF-2026-09-20-KVALL.json). (3) JUNGURARKIVET DUBBELBEVISAT:
+gzip -t OK 4,3 s (tar.gz 236 846 742 B) + git bundle verify "complete history"
+(230 627 592 B, HEAD e56a6953) + log 6 rader ALLT GRÖNT + retention 0 raderade —
+u1 09-18:s köpost (a) STÄNGD, nästa jungur-repris 09-27 förväntas GRÖN.
+(4) PUSHRADEN (R2): 4:e "väntar (SSH-nyckel ej aktiv än)" i rad (senast 12:53),
+arkivet växer ändå 494→554 MB — köposten till kunden oförändrad. STÄDNING LOKAL
+PG OBEROENDE EGENMÄTT: PG17 down · psql-socketvägran · 10 blad orörda · fellogg
+kvar enligt mall · DR-lås frigjort · disk 56 G. PREDIKTIONSDOM 9/9 (P5 EXAKT
+788/0; P3 uppskattning 1 345 700 mot faktiskt 1 345 719 = 19 rader av, trängsta
+i serien). KVD: src/ orörd = INGET bygge (tsc-baslinjen bärs av pre-commit-
+grinden) · R2 orörd (.pgpass endast PGPASSFILE-pekare; prod endast LÄST; GDPR:
+antal + tider) · data/blogg/ orörd · data/backups ENDAST LÄST · syskonytor orörda
+(verktyg omodifierade). Kö: blad 11:s födelsebevis 02:30 (förhandsregister:
+public ≈ 1 345 719 + nattens tillväxt) · aufr kvällspunkt 2 (tvåpunktsbas) ·
+kund/R2 GitHub-nyckeln. LEVERANS: data/forskning/DR-OVNING-2026-09-20-KVALLS-
+JUNGRU.md, data/forskning/DR-PROV-2026-09-20-AUTO-4.md, data/forskning/DR-RPO-
+DIFF-2026-09-20-KVALL.json, data/vakten/s10-u1-kvallsdr-2026-09-20-ansprak.md,
+data/DRIFTSBOKEN.md, worklog.md. [fabrik]

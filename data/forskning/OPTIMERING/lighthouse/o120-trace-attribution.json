@@ -1,0 +1,521 @@
+{
+ "en_blogg-1": {
+  "tbt": 651,
+  "fcp": 1665,
+  "rapportTasks": [
+   {
+    "start": 4012,
+    "dur": 357,
+    "url": "095w8h_fgc5q_.js"
+   },
+   {
+    "start": 1538,
+    "dur": 303,
+    "url": "blogg"
+   },
+   {
+    "start": 4451,
+    "dur": 181,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1086,
+    "dur": 162,
+    "url": "blogg"
+   },
+   {
+    "start": 802,
+    "dur": 151,
+    "url": "Unattributable"
+   },
+   {
+    "start": 4678,
+    "dur": 119,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 953,
+    "dur": 84,
+    "url": "blogg"
+   },
+   {
+    "start": 2204,
+    "dur": 80,
+    "url": "1pk-28pfs1_5l.css"
+   },
+   {
+    "start": 1397,
+    "dur": 80,
+    "url": "Unattributable"
+   },
+   {
+    "start": 1335,
+    "dur": 62,
+    "url": "blogg"
+   },
+   {
+    "start": 1477,
+    "dur": 61,
+    "url": "Unattributable"
+   },
+   {
+    "start": 3409,
+    "dur": 60,
+    "url": "095w8h_fgc5q_.js"
+   },
+   {
+    "start": 1857,
+    "dur": 57,
+    "url": "11jq0c2_zavac.js"
+   },
+   {
+    "start": 3957,
+    "dur": 55,
+    "url": "2feezv-iveko5.js"
+   }
+  ],
+  "tasks": [
+   {
+    "start": 712,
+    "durMs": 89,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "EvaluateScript",
+      "dur": 87,
+      "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+      "fn": "",
+      "rad": 2
+     },
+     {
+      "namn": "ScriptCompiled",
+      "dur": 80,
+      "url": "/en/blogg",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "v8.run",
+      "dur": 79,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "RunMicrotasks",
+      "dur": 79,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "v8.compile",
+      "dur": 7,
+      "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+      "fn": "",
+      "rad": 2
+     }
+    ]
+   },
+   {
+    "start": 1213,
+    "durMs": 152,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "Layout",
+      "dur": 101,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "UpdateLayoutTree",
+      "dur": 21,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Layout",
+      "dur": 14,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Paint",
+      "dur": 3,
+      "url": "",
+      "fn": "",
+      "rad": null
+     }
+    ]
+   }
+  ]
+ },
+ "en_blogg-2": {
+  "tbt": 547,
+  "fcp": 1241,
+  "rapportTasks": [
+   {
+    "start": 3853,
+    "dur": 244,
+    "url": "turbopack-3or-2iatmqpb2.js"
+   },
+   {
+    "start": 1242,
+    "dur": 234,
+    "url": "blogg"
+   },
+   {
+    "start": 771,
+    "dur": 157,
+    "url": "Unattributable"
+   },
+   {
+    "start": 4183,
+    "dur": 151,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 4381,
+    "dur": 142,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1000,
+    "dur": 82,
+    "url": "blogg"
+   },
+   {
+    "start": 4523,
+    "dur": 65,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1516,
+    "dur": 64,
+    "url": "_lighthouse-eval.js"
+   }
+  ],
+  "tasks": [
+   {
+    "start": 233,
+    "durMs": 61,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "EvaluateScript",
+      "dur": 60,
+      "url": "/_next/static/chunks/turbopack-3or-2iatmqpb2.js",
+      "fn": "",
+      "rad": 2
+     },
+     {
+      "namn": "ScriptCompiled",
+      "dur": 59,
+      "url": "/en/blogg",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "v8.run",
+      "dur": 59,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "RunMicrotasks",
+      "dur": 57,
+      "url": "",
+      "fn": "",
+      "rad": null
+     }
+    ]
+   },
+   {
+    "start": 1196,
+    "durMs": 117,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "Layout",
+      "dur": 92,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Layout",
+      "dur": 8,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "UpdateLayoutTree",
+      "dur": 7,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Paint",
+      "dur": 3,
+      "url": "",
+      "fn": "",
+      "rad": null
+     }
+    ]
+   }
+  ]
+ },
+ "ar_blogg-1": {
+  "tbt": 508,
+  "fcp": 2238,
+  "rapportTasks": [
+   {
+    "start": 3936,
+    "dur": 361,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 787,
+    "dur": 294,
+    "url": "Unattributable"
+   },
+   {
+    "start": 4534,
+    "dur": 259,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1668,
+    "dur": 226,
+    "url": "blogg"
+   },
+   {
+    "start": 1284,
+    "dur": 129,
+    "url": "blogg"
+   },
+   {
+    "start": 1126,
+    "dur": 109,
+    "url": "Unattributable"
+   },
+   {
+    "start": 4835,
+    "dur": 105,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1500,
+    "dur": 76,
+    "url": "blogg"
+   },
+   {
+    "start": 2361,
+    "dur": 71,
+    "url": "turbopack-3or-2iatmqpb2.js"
+   },
+   {
+    "start": 4297,
+    "dur": 70,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 4466,
+    "dur": 68,
+    "url": "2feezv-iveko5.js"
+   },
+   {
+    "start": 1986,
+    "dur": 57,
+    "url": "11jq0c2_zavac.js"
+   },
+   {
+    "start": 2174,
+    "dur": 56,
+    "url": "1pk-28pfs1_5l.css"
+   },
+   {
+    "start": 4367,
+    "dur": 55,
+    "url": "2feezv-iveko5.js"
+   }
+  ],
+  "tasks": [
+   {
+    "start": 60,
+    "durMs": 74,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "DocumentLoader::CommitNavigation",
+      "dur": 56,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "DocumentLoader::StartLoadingResponse",
+      "dur": 44,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "DocumentLoader::CreateParserPostCommit",
+      "dur": 44,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "NavigationBodyLoader::StartLoadingBody",
+      "dur": 30,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "NavigationBodyLoader::OnReadable",
+      "dur": 30,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "NavigationBodyLoader::ReadFromDataPipe",
+      "dur": 30,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "DocumentLoader::BodyDataReceivedImpl",
+      "dur": 30,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "DocumentLoader::HandleData",
+      "dur": 28,
+      "url": "",
+      "fn": "",
+      "rad": null
+     }
+    ]
+   },
+   {
+    "start": 503,
+    "durMs": 90,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "EvaluateScript",
+      "dur": 89,
+      "url": "/_next/static/chunks/2feezv-iveko5.js",
+      "fn": "",
+      "rad": 2
+     },
+     {
+      "namn": "ScriptCompiled",
+      "dur": 77,
+      "url": "/ar/blogg",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "v8.run",
+      "dur": 77,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "RunMicrotasks",
+      "dur": 74,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "v8.compile",
+      "dur": 12,
+      "url": "/_next/static/chunks/2feezv-iveko5.js",
+      "fn": "",
+      "rad": 2
+     }
+    ]
+   },
+   {
+    "start": 769,
+    "durMs": 65,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "v8.callFunction",
+      "dur": 65,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "FunctionCall",
+      "dur": 65,
+      "url": "/_next/static/chunks/2feezv-iveko5.js",
+      "fn": "O",
+      "rad": 2
+     }
+    ]
+   },
+   {
+    "start": 1268,
+    "durMs": 113,
+    "iFonstret": false,
+    "toppBarn": [
+     {
+      "namn": "Layout",
+      "dur": 55,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Layout",
+      "dur": 28,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "UpdateLayoutTree",
+      "dur": 11,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Commit",
+      "dur": 4,
+      "url": "",
+      "fn": "",
+      "rad": null
+     },
+     {
+      "namn": "Paint",
+      "dur": 3,
+      "url": "",
+      "fn": "",
+      "rad": null
+     }
+    ]
+   }
+  ]
+ }
+}

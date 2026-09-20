@@ -1,0 +1,52 @@
+studio: auto s7-u3 prestandavåg o120 — /EN/BLOGG-SONDEN VERKSTÄLLD: anomalin rotförklarad (FCP-timing + eval-brus, EJ payload), o110:s AI-Mentor-widget-hypotes MOTBEVISAD med tre oberoende bevis, o45-flightrenheten kvitterad, kvarvarande TBT-skuld = arkitekturnivå (110 kort + 117–128 KB flight + 254 KiB framework-JS) ⇒ köpost med produktbeslut-påslag (manifest auto-s7-1789915506445, byggare 3/3 — verktygsprefix _s7u3o120-) [fabrik]
+
+Fabriksagent s7-u3, spår 7. VAL (anspråk ~16:46 som s7-o118 → omnumrerat s7-o120: u2 reservede samtidigt o118 för sin CDP-sond, u1 levererade 16:58:28 KUREN som o119 (568a93a2) — kollisionen öppet bokförd i protokoll §0, noll duplikat: deras sond=rå CDP, deras kur=defer, denna våg=trace-attribution+flight+hypotesmotbevis+FÖRE-bas):
+o110 §4.1:s bokförade köpost — riktad longtask-sond /en/blogg + ev.
+widget-A/B. Typ: MÄTVÅG (o109-mönstret) — src orörd, inget bygge.
+
+FYND 1 — WIDGET-HYPOTESEN MOTBEVISAD (tre bevis): nätverket IDENTISKT
+mellan speglarna (endast /api/medlem 334 B + /api/trafik 402 B — ingen
+motorregister-hämtning finns i mätningarna); LasyChatWidget monteras
+tidigast 8 s + idle/interaktion (lasy-global.tsx) medan monster-tasken
+låg 1,2–1,5 s; trace-attributionen placerar monster-tasken i dokumentets
+inline-flight-eval FÖRE React-hydrat-commit (2feezv ~3,9–4,6 s). A/B-
+delen av köposten avställd med motiv: inget widget-nätarbete finns i
+fönstret att blockera.
+
+FYND 2 — ANOMALINS MEKANIK = FCP-TIMING: TBT räknar tasks mellan FCP och
+TTI; en når FCP 1 241–1 665 ms mot ar 2 238 ms ⇒ fler tidiga eval-tasks
+hamnar i en:s fönster. Delat en−ar 786 ms (o110 W2XS0: 1 129 vs 344) är
+på aktuellt bygge IxcwwO (bär HEAD e4588c57): en 651/547 (n=2) · ar 508
+(kontroll i samma fönster) · CLS 0 ×3 — huvuddelen av skillnaden borta
+med commit-strömmen; kvarvarande ~90–140 ms delvis mätmekanik + pass-
+brus i tidig eval-task (o110: 938/801 ms; o118: 303/234 ms max).
+
+FYND 3 — KONSTITUTIONEN REN: flight en/ar/sv = 116 926/128 068/115 889 B,
+ALLA 110 kort fulltext i flight (router-navigering); o45:not-found-
+kursläckan 0 träffar i alla tre (kurens beständighetskvitto); en bär 55
+«Read the … →»-CTA-rader ≈ 3–5 KB (våg-201-designyta — orörd, ej min
+att plocka autonomt); script 15/254 KiB IDENTISKA mellan en/ar (React
+70 + språkcontext/i18n 47 + App Router-runtime 42 KiB — LH «unused-js
+50 KiB» = App-Router-falspositiv; noll tredjepartsbibliotek i topp).
+
+KÖPOST (o120 §6 — arkitektnivå): transportlagrets kurar är SLUT
+(prefetch av, flight ren, widget redan idle). Nästa våg: (1) initial
+listlängd 24–36 kort + visa-fler/paginering = flight −60–75 % och
+hydrat-proportionell — men ÄNDRAR kundupplevelsen på tre språk ⇒
+PRODUKTBESLUT i nästa rond, aldrig fabriksautonomt; (2) content-
+visibility:auto + contain-intrinsic-size (CLS-risk mot o100:s noll);
+(3) solo-vilomätning (drifbandet o28/o45).
+
+BEVIS: prod 200 ×5 https (/ · /blogg · /en/blogg · /ar/blogg · /en) ·
+/en/blogg x-nextjs-prerender:1 + cache HIT · BUILD_ID IxcwwO_QWK5g7r0rfK5_M
+dokumenterat i protokollet · råtrace 16 MB kvar på disk i
+verktyg/_o118-trace-tmp/ (oreviterat — ej git; committade summeringar
+är kvittot). KVD: src orörd ⇒ tsc-baslinjen orörd (inget bygge) · R2
+orörd · data/blogg/ orörd · syskonytor orörda.
+
+LEVERANS: verktyg/_s7u3o120-{analys,djup2,trace-sond,trace-analys3,
+flight-sond}.mjs · lighthouse/{en_blogg,ar_blogg}-s7u3o120-fore{A,B}.json
+· lighthouse/o120-{djupanalys-befintlig,djupanalys-steg2,flight-sond,
+trace-attribution,tracesond-en_blogg-1,tracesond-en_blogg-2,tracesond-
+ar_blogg-1}.json · OPTIMERING/o120-prestanda-enblogg-longtask-s7.md ·
+anspråk + denna rad. [fabrik]

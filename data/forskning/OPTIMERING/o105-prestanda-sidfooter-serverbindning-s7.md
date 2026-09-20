@@ -56,6 +56,14 @@ nettoreverterat ≈ CSS-jämvikt med 9RBeu) är FÖRE-läge per definition;
 n=1-förmätning på RbGEkEnQH körs i anslutning till commit om fönstret
 medger — annars bär o101:s tabell (samma träd-jämvikt).
 
+**STATUS-APPEND (vid commit):** live-förmätningen på RbGEkEnQH AVSTÅRS —
+MemAvailable 1 253 MB vid mättillfället (chrome+LH ≈ 0,7–1 GB; spårets
+RAM-vakt-etik ≥450 MB gäller sondens ENSKILDA chrome, men marginalen mot
+prod-synkens 02:57-poll är för tunn — ett RAM-svagt deployfönster vore
+värre än en utebliven duplikat-FÖRE-punkt). FÖRE bärs formellt av o101 §2
+(9RBeu; o104:s CSS-only-avvikelse berör ej TBT). EFTER-vågen (vakarövertag)
+mäter n=2 och jämför mot o101:s tabell.
+
 ## §4 EFTER-kriterier (vakarövertag-barra, o101 §4 ordalydelse)
 
 1. prod-synken deployad med denna kur-commit som förfader (BUILD_ID

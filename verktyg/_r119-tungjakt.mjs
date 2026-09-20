@@ -39,7 +39,9 @@ function fabriksagenterAktiva() {
 function rapportKlar() {
   try {
     const r = JSON.parse(fs.readFileSync(RAPPORT, "utf8"));
-    return r;
+    // aggregatets slutstatuser: PÅGÅENDE (mitt i) · AVBRUTEN (omätta kvar)
+    // · GRÖN (alla mätta, 0 röda) · RÖD (alla mätta, >=1 röd) — ALDRIG "KLAR"
+    return ["GRÖN", "RÖD"].includes(r.status) ? r : null;
   } catch { return null; }
 }
 
@@ -83,8 +85,8 @@ for (;;) {
         ? `status=${r.status} matta=${r.matta}/${r.upptackta} grona=${r.grona} roda=${r.roda}`
         : "ingen rapport läslig";
       log(`BARN DÖD (pid ${barnPid}) efter ${Math.round((Date.now() - startadVid) / 1000)} s — ${sammanfattning}`);
-      if (r && r.status === "KLAR") {
-        log(`RESULTAT: KLAR — matta=${r.matta}/${r.upptackta} grona=${r.grona} roda=${r.roda} — bokför i worklog`);
+      if (r) {
+        log(`RESULTAT: ${r.status} — matta=${r.matta}/${r.upptackta} grona=${r.grona} roda=${r.roda} — bokför i worklog`);
         process.exit(0);
       }
       forsok += 1;
@@ -94,8 +96,8 @@ for (;;) {
       }
       log(`försök ${forsok}/${MAX_FORSOK} dog — väntar nytt fönster och återupptar igen`);
       barnPid = null;
-    } else if (r && r.status === "KLAR") {
-      log(`RESULTAT: KLAR — matta=${r.matta}/${r.upptackta} grona=${r.grona} roda=${r.roda} — bokför i worklog`);
+    } else if (r) {
+      log(`RESULTAT: ${r.status} — matta=${r.matta}/${r.upptackta} grona=${r.grona} roda=${r.roda} — bokför i worklog`);
       process.exit(0);
     }
   }

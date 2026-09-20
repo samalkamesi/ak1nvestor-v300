@@ -5375,6 +5375,26 @@ VÄXER ifrån provtagningen (123 sviter, ingen kör-alla), motorregistret
 fruset sedan 09-03 (dag 16), vaktrapports-stoppet i deploy. Se diff-tabellen
 i UPPDATERING-sektionen.*
 
+*Uppdatering 2026-09-20 kväll (rond 120, dokvåg spår 9 — nionde passningen):
+AGGREGATORNS EGEN KONTRAKTSSVIT FÖDD — restgapet från åttonde passningen
+(»aggregatorn saknar EGEN kontraktssvit«; E35:s namngivna delmängd klassregex
++ kvittoparsning + återupptagning) är STÄNGT MED SVIT: testa-aggregator-
+kontrakt.mjs mäter TIO kontrakt (C0–C7) genom NÄSTLADE FILTRADE
+aggregatorkörningar mot två självstädande engångsfixtures — huvudcheckpointen
+rådas aldrig (V229:s eget fall), inga tunga sviter avfyras (klassfilter-testet
+är beväpnat med den harmlösa 4-s-viten testa-styrelse-v214). EGEN körning
+**10/10 PASS**: C1 huvudcheckpoint sha-identisk · C2 suffixrapport matta=2/2 ·
+C3 checkpoint PÅGÅENDE samplad MITT I levande körning · C4a kvitto = sista
+PASS-raden · C4b RÖD svit bär sistaFel ur stderr · C5 slutstatus ur
+{PÅGÅENDE, AVBRUTEN, GRÖN, RÖD} · C6 --fortsatt mäter om ENBART saknade svit
+(räknarbevis: A 1→1, B 1→2) · C7a klassSumma bär alla fyra klasser · C7b
+--klass=tung exkluderar DETERMINISTISK svit utan att köra den · C0
+RAM-avbrott synligt. Sviten klassas själv DETERMINISTISK (~15 s) och höjer
+beståndet 155 → 156. På köpet: TUNG-jaktens kontraktsbugg kurerad (jakten
+jämförde resultatet mot strängen »KLAR« — aggregatet rapporterar GRÖN/RÖD,
+aldrig KLAR; fixad + omstartad) — exakt den regression C5 fångar mekaniskt
+nästa gång.*
+
 *Uppdatering 2026-09-20 kväll (rond 119, dokvåg spår 9 — åttonde passningen):
 TESTSYSTEMETS EGEN DAG dokumenterad — aggregator-restgapet från sjunde
 passningen (»helsvepsbeviset saknas«) är STÄNGT och verktyget har vuxit sex

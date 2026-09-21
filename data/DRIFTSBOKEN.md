@@ -3147,3 +3147,49 @@ Nästa kvartalsövning enligt protokollet: senast 2026-12-21. src/ orörd —
 tsc-baslinjen orörd, inga byggen. Slutdom: **GRÖN — övningen godkänd**.
 
 SLUT — sektion inlagd av s10-u1 2026-09-21.
+
+
+---
+
+## S10-U3 (vakt 3/3) — ÅLDRINGS-RESTORE av app-bladet (16,3 h gammalt) + kvartalsverktygets mellanslagskur: app-blad kan nu MÄTAS vid katastrof (2026-09-21 02:38–02:5x lokal, GODKÄNT)
+
+**Fråga:** alla 15+ tidigare restores skedde på blad <1 h gamla — är ett blad
+återställningsbart EFTER tid på disk? **Objekt:** db-app-2026-09-20.sql.gz
+(kurens första fulla aufr-backup, sha 1453365e…, oförändrad före/efter).
+
+**ROTFYND (KURAD):** körning 1 (AUTO-3, RÖT) dog i MÄTNINGEN —
+`dr-ovning.mjs` byggde räknarfrågan utan citattecken kring identifierare, och
+aufr innehåller `public.analytiska sidan` (mellanslag!). Rkaq-bladens rena
+namn hade dolfe felet; restore:n själv var GRÖN (21,4 s, 0 okända fel) men
+instrumentet kunde inte leverera mätetal — vid äkta katastrof ett bevisgap.
+**Kur:** citerade identifierare i matDatabas (5 rader). Beviskedja:
+AUTO-3 RÖT → kur → AUTO-4 GRÖN. Kvartalskommandot (`node verktyg/dr-ovning.mjs
+--fil db-app-<datum>.sql.gz`) mäter nu BÅDA projekten.
+
+**Huvudresultat — åldrings-determinism:** AUTO-4 (idag 02:43, kurerat
+instrument) gav EXAKT kür-agentens färsk-etalon från igår på samma blad:
+public **372 tabeller / 182 332 rader** · alla scheman 417/185 505 ·
+system_events 170 175. Två agenter × två instrument × 16 h → radkontraktet
+byte-identiskt: restore är en ren funktion av BLADET, inte av tidpunkten.
+RTO 17,8 s (warm) / 21,4 s (kall); app-band nu 17,8–32,9 s. Fel 2 611
+kända/0 okända (app-bladet har 4× fler objekt än rkaq → fler kända
+rollfel-rader; 0 okända är kontraktet). Städning oberoende verifierad
+(pg_lsclusters down + psql-socketvägran); DR-låset fritt efteråt.
+
+**Instrumentläxa (bokford):** skyddsmatrisens COPY-parsning säger 373/182 378;
+restore-instrumenten (kür + dr-ovning) säger 372/182 332 — skillnaden −1
+tabell/−46 rader är parsersynvinkel (COPY-block vs information_schema), inte
+dataläckage. Radkontrakt SKALL alltid ange instrument.
+
+**Kollisionshantering D25:** syskoninstans (sess_8c4e444f) påträffad LEVANDE
+med natt-wrappern s10u3-natt-dr.mjs (deras AUTO-2 + väntande faser C/D/E på
+dagens app-blad) — deras ytor orörda; pivot till gårdagens blad; inga
+konflikter (flock serialiserar).
+
+Protokoll: DR-OVNING-2026-09-21-ALDRING-APP-BLAD.md + AUTO-3/AUTO-4
+(verktygsgenererade). Prediktionsdom 6,5/8 ärligt (P2/P3:s rot: jag tog
+parser-talet för etalon — kür-restorns 182 332 var bokförd i skyddsmatrisens
+restoreBevis-fält). src/ orörd = inget bygge; .pgpass/.env*/crontab orörda;
+data/backups ENDAST lästa. Slutdom: **GRÖN**.
+
+SLUT — sektion inlagd av s10-u3 (vakt 3/3) 2026-09-21.

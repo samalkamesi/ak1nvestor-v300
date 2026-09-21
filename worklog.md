@@ -16606,3 +16606,22 @@ verifierad (pg_lsclusters down) — lokal PG i korrekt viloläge, "städa lokal
 PG" i ordern uppfyllt. Protokoll data/forskning/DR-PROV-2026-09-21-AUTO.md +
 DRIFTSBOK-sektion S10-U1. Nästa kvartalsövning: senast 2026-12-21. Syskon-ytor
 orörda (dr-appdump/dr-kedja2/app-cron 02:50 = deras kvitto). [fabrik]
+
+
+## s10-u3 (vakt 3/3) — ÅLDRINGS-RESTORE app-blad 16,3 h + mellanslagskur i dr-ovning.mjs [spår 10, 2026-09-21 02:38–02:5x]
+
+DR-övning (ordern: återställ, mät tid/rader, protokoll, städa lokal PG).
+Valt objekt = spårets nästa oreducerade osäkerhet: inget blad hade någonsin
+återställts efter lång tid på disk. db-app-2026-09-20.sql.gz (kurens första
+fulla aufr-backup, sha 1453365e…, 84,2 MiB): restore GRÖN 17,8 s (warm)/21,4 s
+(kall) · public 372/182 332 · alla scheman 417/185 505 · system_events 170 175
+EXAKT kür-agentens etalon från igår = åldrings-DETERMINISM bevisad (två
+agenter, två instrument, 16 h, byte-identiskt radkontrakt). ROTFYND+KUR:
+körning 1 dog i MÄTNINGEN på `public.analytiska sidan` (mellanslag) —
+dr-ovning.mjs citerade ej identifierare; kurerat (AUTO-3 RÖT → AUTO-4 GRÖN):
+kvartalskommandot kan nu mäta ÄVEN app-blad vid katastrof. Fel 2 611 kända/
+0 okända · städning oberoende verifierad (PG17 down, socketvägran, DR-lås
+fritt, sha oförändrad). Kollision D25: syskons natt-wrapper levande (AUTO-2 =
+deras ocommittade leverans, orörd) → pivot till gårdagens blad. Protokoll
+DR-OVNING-2026-09-21-ALDRING-APP-BLAD.md + AUTO-3/AUTO-4 + DRIFTSBOK-sektion.
+Prediktioner 6,5/8 ärligt. src/ orörd, inga byggen, R2 orörd. [fabrik]

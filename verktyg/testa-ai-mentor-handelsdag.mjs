@@ -702,7 +702,10 @@ const GAMLA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltMarknadsrytm",];
+    // Fönster 31-harmonisering (s6-u3, _s6u3o31-): fönstrets tre nya komponenter i
+    // widgetordning — u1 stålsektor (74:e) · u2 casepraktik (75:e) · u3 beteendefallor
+    // (76:e) — FÖRE marknadsrytm (deras SIST-deklaration). Idempotent.
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -722,7 +725,7 @@ const GAMLA = [
   // portfoljpraktik wireades EFTER detta lager — känt och välkommet.
     // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
   // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltKemisektor", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKemisektor", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   kanda.add("svaraLokaltPortfoljpraktik");
   // Omgång 18:s fönsterlager (2026-09-18): u1 utdelningskalender + u2 kreditdjup.
   kanda.add("svaraLokaltUtdelningskalender");

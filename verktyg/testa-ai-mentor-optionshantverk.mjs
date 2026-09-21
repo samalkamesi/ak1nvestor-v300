@@ -75,7 +75,9 @@ for (const m of OPTIONSHANTVERK_MONSTER) {
 ok(`D1 samtliga kurslänkar äkta (${braLankar}/${allaLankar})`, allaLankar > 0 && allaLankar === braLankar);
 const od = R.filter((r) => r.kategori === "OPTIONS & DERIVAT").length;
 const sBin = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "binomialtradet").bygga(R);
-ok(`D2 registerdrivet tal (OPTIONS & DERIVAT ${od} — alla 12 ska vara nådda)`, od === 12 && sBin.text.includes(`(${od} kurser)`));
+// Fönster 31 (s6-u3, _s6u3o31-): 12 → 13 — spår 5 födde od-09
+// försäkringsskrivandet 2026-09-20 (mentorväglös; kategorin 12/13 nådda).
+ok(`D2 registerdrivet tal (OPTIONS & DERIVAT ${od} — 12 nådda, od-09 mentorväglös)`, od === 13 && sBin.text.includes(`(${od} kurser)`));
 // D03 — aritmetikkontroller (oberoende omräknade i testet, ej bara strängmatch)
 const sStr = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "straddlen").bygga(R);
 const sDel = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "deltat").bygga(R);
@@ -208,7 +210,9 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-optionshantverk-fragor"'));
-  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER)"));
+  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltStalsektor(q, KURSREGISTER) ?? svaraLokaltCasepraktik(q, KURSREGISTER) ?? svaraLokaltBeteendefallor(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
+  // Fönster 31 (s6-u3, _s6u3o31-): u1 stålsektor + u2 casepraktik + u3
+  // beteendefallor mellan kemisektor och marknadsrytm — substrängen följer.
   ok("L3 komposition EFTER balansdjup", widget.includes("svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER)"));
 }
 

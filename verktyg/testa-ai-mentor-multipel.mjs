@@ -233,7 +233,10 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-multipel-fragor"'));
-  ok("L2 komposition efter kontrahent, FÖRE marknadsrytm (deras SIST-deklaration respekteras)", widget.includes("svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
+  ok("L2 komposition efter kontrahent, FÖRE marknadsrytm (deras SIST-deklaration respekteras)", widget.includes("svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltStalsektor(q, KURSREGISTER) ?? svaraLokaltCasepraktik(q, KURSREGISTER) ?? svaraLokaltBeteendefallor(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
+  // Fönster 31 (s6-u3, _s6u3o31-): u1 stålsektor + u2 casepraktik + u3
+  // beteendefallor wireades mellan kemisektor och marknadsrytm — substrängen
+  // speglar kedjan (harmoniseringens dokumentationsplikt).
 }
 
 console.log(`\nSVIT MULTIPEL: ${pass} PASS / ${fail} FAIL`);

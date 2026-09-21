@@ -373,6 +373,10 @@ OMATCHADE.forEach((f, i) => {
   if (!widget.includes('from "@/lib/ai-mentor-marknadsrytm-fragor"')) FEL.push("importen av ai-mentor-marknadsrytm-fragor saknas");
   // Alla 61 kända komponenter (dokumentationsskyldigheten: framtida lager läggs här)
   const kanda = new Set([
+    // Fönster 31 (s6-u3, _s6u3o31-): fönstrets tre nya komponenter FÖRE denna
+    // motor — u1 stålsektor (74:e) · u2 casepraktik (75:e) · u3 beteendefallor
+    // (76:e); SIST-invarianten orörd (marknadsrytm förblir sist).
+    "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor",
     "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
     "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
     "svaraLokaltMarknadsmekanik", "svaraLokaltPraktik", "svaraLokaltValutamekanik",

@@ -1,0 +1,134 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-sandvik-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-21, omgång auto-s1-1789952123920, pivot från mallens 'm9-utkast #1' enligt duplikatregeln — m9-familjen 6/6 flyttklar sedan 2026-09-16/19 och hela blogg-utkast-roten granskad; Sandvik valt som äldsta ogranskade objektet i kvartalsserien enligt FIFO, klaim data/vakten/auto-s1-1789952123920-u1-ansprak.md skriven FÖRE granskningen)",
+  "rapport": "sa-laser-du-sandvik-q3-2026-KONTROLL-2026-09-21.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — 158 maskinella kontroller (sond verktyg/_s1u1-sandvik-kontroll.mjs): 158 PASS / 0 STILLAS, fyndens faktagrund och verkställbarhet egenkontrollerade (12/12 diff-strängar unika). Vågdata 16/16 exakta mot data/analyses/SAND.ST.json (augustiklasserna 5/5, 15/4/6-matrisen omräknad cell för cell, sigmaAr 28,83→'cirka 29 %', pos52 86,8→87 %, fyra nivåer 168,10/353,06/374,23/413,10, 2,46×-spannet); vågvalidering 9/9 ordagrant mot rond 2026-09-04 (4 träffar +1,3/+38,4/+19,3/+19,3, lång osatt, ±6 %-tröskeln, felfritt-facit mängdlogiskt bevisat: endast SAND och ALFA av 12 saknar missar); Sandviks egna 27 tal exakta mot universumposten (identisk vintage 0e399f13↔idag, hamtat 09-03) inkl. ärlighetsradens null-noteringar (räntetäckning, MarketStack, fyra icke fem år, ROIC-proxyn); medianer 14/14 EXAKTA mot byggtidens vintage 115/12 under kanonisk medianfunktion src/lib/dataset-nyckeltal.ts:72 — NOLL byggfel (SKF-paketet hade tre); aritmetik 17/17 (scenariorutans 9 celler, 1,2/0,7 mdr, 1,7×-kvoten, P/E=P/B÷ROE→26,8, övning C→25,5, CAGR-omräkningar); kalender+urval 16/16 (22/10 torsdag, 07:30/13:00, Q2 17/7, stämma 28/4, ingen utdelningspost, samtliga syskonrappdagar, urvalsmängden verifierad); juridik 9/9 REN (2007:528 2 kap 5 § ensamt lagrum, rådord endast negerade, 0 främmande lagrum); 911 = 0/6 mönster; 18/18 interna länkar HTTP 200 mot localhost:3000; struktur 10/10 enligt kullnormen. FYND: B1 'föll tre år i rad' är falskt (serien 126,5→122,9→120,7 = två fall; 2022 stigande) → 'två år i rad'; B2 stavfel 'senaste mätte värden' → 'senast mätta värden'; B4a–j drift 115→237 poster (tele2/skf-precedensen 'dagens tal + as-of-datering'; industri n=12→20): åtta medianvärden, tabellrubrik-n, tre löptextsjäfror och två dateringar uppdateras — samtliga fem huvudpåståenden ÖVERLEVER driften (sond E15–E19).",
+  "anvandning": "Verkställ B1–B4j exakt (sök/ersätt i body — samtliga 12 gammalt-strängar maskinellt verifierade UNIKA i filen 2026-09-21). Därefter kör 'node verktyg/_s1u1-sandvik-kontroll.mjs' → förblir 158/158 (sonden verifierar fyndens faktagrund och strängunikhet; originalet ändras av paketets ägare (s4-spåret) eller nästa våg — inte av granskaren). Sandviks EGNA tal (insamling 2026-09-03) ska INTE röras — endast medianjämförelserna, n-utsagorna och dateringarna. Vid flytt till data/blogg/: kör paketets KVD. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Nyckeltalen, Tillväxt — helårsserieraden)",
+      "gammalt": "omsättningen **föll tre år i rad** från toppen",
+      "nytt": "omsättningen **föll två år i rad** från toppen",
+      "orsak": "FALSKT PÅSTÅENDE: serien är 126,5 (2023) → 122,9 (2024) → 120,7 (2025) = två fallande år; föregående år (2022, 112,3 mdr) var stigande, så tre fall i rad är omöjligt mot källan (universumpostens serier.omsattning). Sondens L-B1-fakta bevisar ordningen."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Nyckeltalen, intro-meningen)",
+      "gammalt": "med senaste mätte värden",
+      "nytt": "med senast mätta värden",
+      "orsak": "Stavfel: 'mätte' → 'mätta' (presens particip i bestämd form)"
+    },
+    {
+      "id": "B4a",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — P/E-raden, universumkolumnen)",
+      "gammalt": "| P/E | 28,6 | 28,0 | 20,2 |",
+      "nytt": "| P/E | 28,6 | 28,0 | 20,4 |",
+      "orsak": "Drift: dagens universummedian P/E 20,4 (20,39; byggtidens 20,2 var exakt på 115-postfilen)"
+    },
+    {
+      "id": "B4b",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — EV/EBIT-raden)",
+      "gammalt": "| EV/EBIT | 19,8 | 20,7 | 18,8 |",
+      "nytt": "| EV/EBIT | 19,8 | 20,0 | 17,7 |",
+      "orsak": "Drift: dagens EV/EBIT-medianer 20,0 (bransch, n=20) och 17,7 (universum) — byggtidens 20,7/18,8 var exakta på 115-postfilen"
+    },
+    {
+      "id": "B4c",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — ROE-raden, universumkolumnen)",
+      "gammalt": "| Räntabilitet på eget kapital (ROE) | 17,9 % | 20,3 % | 15,1 % |",
+      "nytt": "| Räntabilitet på eget kapital (ROE) | 17,9 % | 20,3 % | 14,8 % |",
+      "orsak": "Drift: dagens universum-ROE-median 14,8 (14,75); branschmedianen 20,3 oförändrad — jämförelseriktningen 'Sandvik under branschmedianen' överlever"
+    },
+    {
+      "id": "B4d",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — EBIT-marginalraden)",
+      "gammalt": "| Rörelsemarginal (EBIT) | 19,7 % | 16,9 % | 21,2 % |",
+      "nytt": "| Rörelsemarginal (EBIT) | 19,7 % | 14,3 % | 20,8 % |",
+      "orsak": "Drift: dagens EBIT-marginalmedianer 14,3 (bransch, n=20) och 20,8 (universum); asymmetri-påståendet 'marginal över, ROE under' överlever (19,7 > 14,3)"
+    },
+    {
+      "id": "B4e",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — kolumnrubrik)",
+      "gammalt": "Median industrin (12 bolag)",
+      "nytt": "Median industrin (20 bolag)",
+      "orsak": "Drift: dagens industribransch har 20 bolag i universumsfilen (byggtidens 12)"
+    },
+    {
+      "id": "B4f",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Så står sig bolaget — DuPont-stycket)",
+      "gammalt": "(19,7 mot 16,9)",
+      "nytt": "(19,7 mot 14,3)",
+      "orsak": "Drift: dagens EBIT-median 14,3 (n=20); 'över medianen' överlever med bredare marginal"
+    },
+    {
+      "id": "B4g",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Så står sig bolaget — DuPont-stycket)",
+      "gammalt": "(0,43 mot 0,46)",
+      "nytt": "(0,43 mot 0,60)",
+      "orsak": "Drift: dagens skuld/EK-median 0,60 (0,599, n=20); 'något lägre belåning' överlever"
+    },
+    {
+      "id": "B4h",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Så står sig bolaget — DuPont-stycket)",
+      "gammalt": "(13,1 mot 12,2)",
+      "nytt": "(13,1 mot 9,9)",
+      "orsak": "Drift: dagens nettomarginalmedian 9,9 (n=20); 'över medianen' överlever"
+    },
+    {
+      "id": "B4i",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (jämförelsetabellen — notisraden under tabellen)",
+      "gammalt": "beräknade 2026-09-15 ur universumfilen med 115 bolag, varav 12 i industribranschen",
+      "nytt": "beräknade 2026-09-21 ur universumfilen med 237 bolag, varav 20 i industribranschen",
+      "orsak": "Drift + as-of-datering: följmeningen om syskonpaketen (109 bolag/11 industribolag) behålls oförändrad — den är historiskt sann och förklarar fortfarande avvikelsen mot äldre paket"
+    },
+    {
+      "id": "B4j",
+      "typ": "byt",
+      "fil": "sa-laser-du-sandvik-q3-2026.json",
+      "falt": "body (Källor — universumraden)",
+      "gammalt": "medianer beräknade 2026-09-15 ur filen med 115 bolag",
+      "nytt": "medianer beräknade 2026-09-21 ur filen med 237 bolag",
+      "orsak": "Drift + as-of-datering: källraden speglar det läge medianerna räknades på"
+    }
+  ],
+  "notiser": [
+    {
+      "id": "N1",
+      "typ": "notis",
+      "text": "Övning C: 'strax under dagens industrimedian (28,0)' — 25,5 ligger ~9 % under 28,0; 'strax' är generöst men indikerar korrekt riktning och saknar definition. Lämnas orörd."
+    },
+    {
+      "id": "N2",
+      "typ": "notis",
+      "text": "Syskonuppräkningen (H&M, Industrivärden, Ericsson, SKF, Atlas Copco) utelämnar Volvo Car- och Nordea-paketen (båda byggda senare samma dag 09-15); textens rappdagssekvens fram till 22/10 är sann som den står. Lämnas orörd."
+    },
+    {
+      "id": "N3",
+      "typ": "notis",
+      "text": "Paketet använder raka citattecken (10 st) där vissa syskon (SKF) använde »« — serien hade blandade citatkonventioner vid byggtiden; ingen formatregel bryts. Lämnas orörd."
+    }
+  ]
+}

@@ -446,6 +446,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "se-20-gruv-och-metallsektorn", titel: "Gruv- och metallsektorn — berget, kassamarginalen och den tröga cykeln", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "se-21-kemisektorn", titel: "Kemisektorn — kväve ur luft, fosfor ur berg", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "se-22-byggentreprenaden", titel: "Byggentreprenaden — fast pris, orderstocken och procenten på färdigt", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "se-23-stalsektorn", titel: "Stålsektorn — kapacitetens hävstång, malmen mot skrotet och förädlingstrappan", kategori: "SEKTORANALYS", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "security-analysis", titel: "Security Analysis — Graham & Dodd: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 20, quiz: 60, minuter: 240, niva: "Alla" },
   { slug: "shoe-dog", titel: "Shoe Dog — Phil Knight: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 12, quiz: 40, minuter: 156, niva: "Alla" },
   { slug: "sj-01-utlandsk-kallskatt", titel: "Utländsk källskatt", kategori: "SKATT & JURIDIK", variabel: undefined, kapitel: 6, quiz: 18, minuter: 22, niva: "Intermediär" },

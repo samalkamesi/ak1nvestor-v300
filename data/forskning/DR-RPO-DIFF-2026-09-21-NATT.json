@@ -1,0 +1,372 @@
+{
+  "verktyg": "dr-rpo-diff.mjs",
+  "ts": "2026-09-21T00:04:15.514Z",
+  "blad": "db-2026-09-20.sql.gz",
+  "dumpTotal": 1345719,
+  "liveTotal": 1365503,
+  "deltaTotal": 19784,
+  "diff": [
+    {
+      "tabell": "section_data_snapshots",
+      "dump": 1252404,
+      "live": 1271388,
+      "delta": 18984
+    },
+    {
+      "tabell": "board_decisions",
+      "dump": 50114,
+      "live": 50866,
+      "delta": 752
+    },
+    {
+      "tabell": "organ_health_logs",
+      "dump": 3072,
+      "live": 3120,
+      "delta": 48
+    },
+    {
+      "tabell": "activity_log",
+      "dump": 3,
+      "live": 3,
+      "delta": 0
+    },
+    {
+      "tabell": "admin_logs",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "ai_board_members",
+      "dump": 21,
+      "live": 21,
+      "delta": 0
+    },
+    {
+      "tabell": "ak1_indicators",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "analyses",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "analysis_reports",
+      "dump": 63,
+      "live": 63,
+      "delta": 0
+    },
+    {
+      "tabell": "analysis_templates",
+      "dump": 6,
+      "live": 6,
+      "delta": 0
+    },
+    {
+      "tabell": "analyst_earnings",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "analyst_profiles",
+      "dump": 1,
+      "live": 1,
+      "delta": 0
+    },
+    {
+      "tabell": "api_usage_logs",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "app_files",
+      "dump": 251,
+      "live": 251,
+      "delta": 0
+    },
+    {
+      "tabell": "bookings",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "case_studies",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "certification_cases",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "certifications",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "client_analyses",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "client_holdings",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "client_portfolios",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "course_materials",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "course_modules",
+      "dump": 122,
+      "live": 122,
+      "delta": 0
+    },
+    {
+      "tabell": "course_progress",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "courses",
+      "dump": 10,
+      "live": 10,
+      "delta": 0
+    },
+    {
+      "tabell": "ecosystem_messages",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "follows",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "forecast_log",
+      "dump": 429,
+      "live": 429,
+      "delta": 0
+    },
+    {
+      "tabell": "forecast_outcomes",
+      "dump": 237,
+      "live": 237,
+      "delta": 0
+    },
+    {
+      "tabell": "holdings",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "invites",
+      "dump": 1,
+      "live": 1,
+      "delta": 0
+    },
+    {
+      "tabell": "meeting_protocols",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "mega_tasks",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "members",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "notification_settings",
+      "dump": 3,
+      "live": 3,
+      "delta": 0
+    },
+    {
+      "tabell": "notifications",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "onboarding",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "organ_consultations",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "payouts",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "portfolios",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "profiles",
+      "dump": 3,
+      "live": 3,
+      "delta": 0
+    },
+    {
+      "tabell": "quiz_results",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "report_access",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "saved_analyses",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "section_data",
+      "dump": 19363,
+      "live": 19363,
+      "delta": 0
+    },
+    {
+      "tabell": "section_data_era",
+      "dump": 18933,
+      "live": 18933,
+      "delta": 0
+    },
+    {
+      "tabell": "site_files",
+      "dump": 176,
+      "live": 176,
+      "delta": 0
+    },
+    {
+      "tabell": "student_analyst_relationships",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "system_events",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "user_activities",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "user_analyses",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "user_course_progress",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "user_ecosystem_progress",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "user_profiles",
+      "dump": 1,
+      "live": 1,
+      "delta": 0
+    },
+    {
+      "tabell": "vision_docs",
+      "dump": 14,
+      "live": 14,
+      "delta": 0
+    },
+    {
+      "tabell": "watchlists",
+      "dump": 2,
+      "live": 2,
+      "delta": 0
+    },
+    {
+      "tabell": "wave_signals",
+      "dump": 490,
+      "live": 490,
+      "delta": 0
+    },
+    {
+      "tabell": "webinar_registrations",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "webinars",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    },
+    {
+      "tabell": "yahoo_finance_cache",
+      "dump": 0,
+      "live": 0,
+      "delta": 0
+    }
+  ],
+  "endastDump": [],
+  "endastLive": []
+}

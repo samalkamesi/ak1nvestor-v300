@@ -3077,3 +3077,29 @@ nu en kedja att mäta mot.
   data/backups ENDAST LÄST · syskonytor orörda (ff1eea41/c954a0b9
   verifierade). Kö: F3-arkivgapet värdar en verktygsvåg · dubbelfödelsen
   02:30/02:50 imorgon natt · dr-rpo-diff.mjs --projekt-app.
+
+
+### S10-U2 NATT-RPO + GRINDFYND F1 — 2026-09-21 02:1x lokal (spår 10, manifest auto-s10-1789948522392, vakt 2/3)
+
+- RPO-NATTPUNKT (`verktyg/dr-rpo-diff.mjs`, OMODIFIERAT, GRÖN exit 0): blad 10
+  COPY-total **1 345 719 EXAKT** · levande prod 1 365 503 · **+19 784 oskyddade
+  vid ~23,7 h** — seriens längsta mätta fönster (kvällspunkten 16,6 h → +19 548) ·
+  3/60 tabeller i rörelse: snapshots +18 984 (pumpens 08:00-batch, OFÖRÄNDRAD sedan
+  kvällen — dag 4) · board +752 (kväll→natt +224 = 32 r/h; bandet 31,0–36,0 lever)
+  · organ +48 · organisk nattpaus +236/7 h ≈ 34 r/h ⇒ **rkaq = maskinuniversum,
+  fas-oberoende ~32 r/h dygnet runt** (aufr:s spegel: tvåläge 132–179 r/h).
+  Maskinellt delprotokoll: data/forskning/DR-RPO-DIFF-2026-09-21-NATT.json ·
+  handprotokoll: DR-OVNING-2026-09-21-NATT-RPO-GRIND.md.
+- **GRINDFYND F1 (DR-planeringsregel):** dr-ovning.mjs/dr-appdump.mjs (tröskel
+  MemAvailable ≥ 1 000 MB) real-NEKAS medan agentfabriken kör omgångar om 3:
+  available 404 → 474 MB (fyra zcode-cli ≈ 1,7 GB + node-repl-mcp ≈ 380 MB).
+  APP-nattpunkt 5 nekades exit 75 ×2 (02:05, 02:08) med korrekt vänta-retry.
+  u1:s natt-DR 01:58:18 passerade med sekunders marginal — TUR, ej kontrakt.
+  **REGEL: kvartalsövningen ≤2026-12-20 (och all restore-övning) körs i TOM
+  fabrik, eller DR-uppgift först i omgången innan syskonprocesser växt.**
+- Städning: inget lokalt PG17-fönster öppnades (RPO rör inte lokal PG); PG17
+  down eftermätt · u1:s kvarlämnade låspid-rad = information, flocken frigjord.
+- Kö: 02:30 blad 11-födelsebevis · 02:40 moln-JSON + u2:a:s prognosdom
+  (171 080, band [170 950, 171 250]) · **02:50 KURENS FÖRSTA automatiska
+  appdump — jfr handprotokollets P2–P10-band** · oversättningsdom t.o.m. 10-01 ·
+  kvartalsövning ≤2026-12-20 med F1-regeln.

@@ -16547,3 +16547,42 @@ Fabriksagent s7-u2 2/3. VAL (anspråk disk-först 22:31 lokal data/vakten/s7-o12
   209/213b i kö — evighetsmotorn nöjd).
 - NÄSTA: kunduppdragets del 2 — det vertikala snittet (ett bolag, fullt
   A-Ö-pass end-to-end, elevens bedömning FÖRE expertläsningen).
+## SPÅR 10 s10-u2 (auto-s10-1789948522392, vakt 2/3) — 2026-09-21 01:57–02:2x lokal: NATT-RPO (+19 784 @ 23,7 h = seriens längsta fönster; rkaq = fas-oberoende maskinuniversum ~32 r/h) + GRINDFYND F1: fabriksomgångar om 3 blockerar DR-restore (available 404–474 < 1 000 MB) — kvartalsövningen måste köras i tom fabrik [fabrik]
+
+Fabriksagent s10-u2 (vakt). PIVOT-KEDJA bokförd varje steg: natt-DR (kedja 1)
+togs av u1 01:58:14 (race, deras yta) → djupled redan levererat 09-16
+(FONSTERDJUP: blad 09-11 RTO 14,5 s) → VAL APP-DB nattpunkt 5 (dr-appdump.mjs;
+u1:s anspråk lämnar verktyget därhän; sista manuella appdumpen före kurens
+02:50-övertagande; anspråk disk-först 02:0x med P1–P10) → RAM-GRINDEN NEKADE ×2
+(exit 75: 404 MB 02:05 → 474 MB 02:08 efter vänta-retry enligt P1-plan; PG17 var
+down och u1:s fönster avslutat — minnet hålls av fabrikens egna 4 zcode-cli
+≈1,7 GB + repl-mcp 380 MB) → pivot RPO-NATTPUNKT (dr-rpo-diff.mjs OMODIFIERAT,
+GRÖN exit 0 02:1x): blad 10 COPY 1 345 719 EXAKT (radkontraktet) · levande
+1 365 503 · +19 784 oskyddade vid 23,7 h = SERIENS LÄNGSTA MÄTTA FÖNSTER
+(kväll 16,6 h → +19 548; aritmetik stängd 1 345 719+19 784=1 365 503 ✓) ·
+3/60 tabeller: snapshots +18 984 == pumpens 08:00-batch OFÖRÄNDRAD sedan
+kvällspunkten (dag 4) · board +752 (kväll→natt +224 = 32 r/h, bandet 31–36
+lever) · organ +48 · organiska nattpausen +236/7 h ≈ 34 r/h ⇒ FYND: rkaq =
+MASKINuniversum fas-oberoende ~32 r/h dygnet runt (aufr:s spegel: mänsklig
+tvåläge 132–179 r/h) — fasprediktion behöver bara veckodagsmodell för aufr.
+FYND F1 (DR-planering, ny regel): tröskeln 1 000 MB på dr-ovning/dr-appdump
+realblockeras av fabrikens omgångar om 3; u1:s 01:58:18-passage hade sekunders
+marginal = tur ej kontrakt ⇒ KVARTALSÖVNINGEN ≤2026-12-20 KÖRS I TOM FABRIK
+(eller DR-uppgift först i omgången) — regeln bokförd i DRIFTSBOKEN §S10-U2 +
+protokoll §3. Städning: inget PG17-fönster öppnats av övningen (RPO rör ej
+lokal PG); PG17 down eftermätt; u1:s kvarlämnade låspid = information (flocken
+fri, LAS_MAX_ALDER_MS hanterar). LÄXA (klassens tredje prediktionstillfället):
+pivot efter grindnek kräver NYA förregistrerade prediktioner FÖRE pivotkörning
+— RPO-mätningen bokförd som opredikterad instrumentfakta; P2–P10-band lämnas
+ät kurens 02:50-blad som jämförelsebas. KVD: data-only src/ orörd = INGET
+bygge (grinden bär baslinjen) · R2 orörd (.pgpass ENDAST PGPASSFILE-pekare,
+aldrig läst; prod ENDAST LÄST via COUNT; GDPR endast antal) · data/blogg/
+orörd · data/backups ENDAST LÄST · syskonytor orörda (dr-appdump.mjs +
+dr-rpo-diff.mjs OMODIFIERADE; u1:s anspråk/protokollyta orörd). Kö: 02:30
+blad 11-födelsebevis · 02:40 moln-JSON + u2:a:s prognosdom (171 080,
+[170 950, 171 250]) · 02:50 KURENS FÖRSTA appdump — jfr P2–P10 ·
+oversättningsdom t.o.m. 10-01 · kvartal ≤2026-12-20 med F1-regeln. LEVERANS:
+data/forskning/DR-OVNING-2026-09-21-NATT-RPO-GRIND.md,
+data/forskning/DR-RPO-DIFF-2026-09-21-NATT.json, data/DRIFTSBOKEN.md,
+worklog.md (anspråk på disk: data/vakten/s10u2-appnattdr-2026-09-21-ansprak.md
+— katalogen gitignorerad). [fabrik]

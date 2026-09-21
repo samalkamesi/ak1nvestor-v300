@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (486 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (489 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 444 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 447 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -273,6 +273,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "bf-15-bubblans-anatomi", titel: "Bubblans anatomi — när allas misstag blir en och samma marknad", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bf-16-slumpens-serier", titel: "Slumpens serier — mönster i brus och lagen om små tal", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bf-17-nutidsbias-och-den-hyperboliska-kurvan", titel: "Nutidsbias och den hyperboliska kurvan — tidens psykologi", kategori: "BETEENDEFINANS", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-18-kompetensillusionen", titel: "Kompetensillusionen — när skickligheten är en berättelse", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "mk-11-kinaekonomin", titel: "Kina-ekonomin", kategori: "MAKROEKONOMI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "mk-12-demografins-klocka", titel: "Demografins klocka — åldrandets aritmetik och den redan slagna prognosen", kategori: "MAKROEKONOMI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vm-11-waccfallor", titel: "WACC-fällor", kategori: "VÄRDERINGSMETODER", niva: 3, kraverFas: 0, vIndex: -1, minuter: 22 },
@@ -445,6 +446,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "kt-07-den-tillverkade-katalysatorn", titel: "Den tillverkade katalysatorn — aktivisten och händelsen som ingen annan skulle ha orsakat", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-08-optionsforfallets-dag", titel: "Optionsförfallets dag — kalenderns inbyggda katalysator", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "kt-09-budpremien-och-budprocessen", titel: "Budpremien och budprocessen — katalysatorns paradfall", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "kt-10-avknoppningen", titel: "Avknoppningen — delen som blir ett eget bolag", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-01-likviditet-och-spread", titel: "Likviditet och spread — handelns dolda kostnader", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-02-index-och-passivt-agande", titel: "Index och passivt ägande — hur marknadens mått blev en vara", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "am-03-lasa-aktiesidan", titel: "Läsa aktiesidan — siffrorna på skärmen före metoderna", kategori: "AKTIEMARKNADEN I PRAKTIKEN", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -500,6 +502,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "od-07-terminskontraktet", titel: "Terminskontraktet — priset idag, leveransen sedan", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-08-binomialtradet-och-replikeringen", titel: "Binomialträdet och replikeringen — hur optionen får sitt pris", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "od-09-forsakringsskrivandet", titel: "Försäkringsskrivandet — optionssäljarens sida", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "od-10-kreditderivatet", titel: "Kreditderivatet — CDS, försäkringen på låntagaren", kategori: "OPTIONS & DERIVAT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-01-sam-viktningen", titel: "SAM-viktningen — fem teorier röstas, en signal föds", kategori: "EKOSYSTEM", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-02-labbets-karta", titel: "Labbets karta — fem motorer, ett hus: orienteringen före ek-01", kategori: "EKOSYSTEM", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ek-03-arbetsflodet-i-labbet", titel: "Arbetsflödet i labbet — fem stationer, en loggad analys: arbetet mellan kartan och ek-01", kategori: "EKOSYSTEM", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -522,4 +525,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 486;
+export const LARVAG_ANTAL_KURSER = 489;

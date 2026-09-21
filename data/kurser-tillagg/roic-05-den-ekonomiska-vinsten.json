@@ -1,0 +1,152 @@
+{
+  "slug": "roic-05-den-ekonomiska-vinsten",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Den ekonomiska vinsten — EVA och tröskeln där tillväxt börjar skapa värde",
+  "summary": "Lönsamhetsfamiljens femte roic-steg: den ekonomiska vinsten — måttet som subtraherar kapitalets hyra från rörelsens vinst och därmed visar om ett bolag skapar eller förstör värde. Genomgående exempel (påhittade tal): rörelseresultat 250 kronor, skatt 28 procent ger NOPAT 180; investerat kapital 1 500 kronor och WACC 9 procent ger kapitalhyran 135 — den ekonomiska vinsten är 45 kronor, och samma tal faller ur spridningen: ROIC 12 procent minus WACC 9 procent lika med 3 procent gånger 1 500 lika med 45. Kursens kärna är tröskeln: med positiv spridning fördelar tillväxten värde (värde vid nolltillväxt 2 000 kronor, vid 3 procents tillväxt 2 272,5), men med negativ spridning — NOPAT 105, ROIC 7 procent, ekonomisk vinst minus 30 — GRAVERAR tillväxten förstörelsen (1 166,7 vid nolltillväxt, 985 vid 3 procent, 712,5 vid 5 procent: ju snabbare tillväxt, desto djupare hål). Sex kapitel: vinstens två betydelser, kapitalhyrans två halvor, spridningens två vägar (15 procents marginal gånger 0,8 mot 6 procent gånger 2,0 — samma ROIC), tillväxtens två ansikten, värdebryggan från ekonomisk vinst till företagsvärde och mätningens hantverk med justeringar och fällor. Utbildning i att läsa lönsamhetens tröskel — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Skilja bokförd vinst från ekonomisk vinst: resultaträkningens 250 kronor säger vad rörelsen tjänade, den ekonomiska vinsten 45 kronor säger vad som återstår när kapitalets alternativkostnad betalats · Räkna kapitalhyran som WACC gånger investerat kapital: 9 procent gånger 1 500 lika med 135 kronor, byggd av två halvor — eget kapital 1 000 till 10 procent och räntebärande skuld 500 till 7,0 procent efter skatt · Räkna NOPAT som rörelseresultat efter skatt på driftsidan: 250 gånger 0,72 lika med 180 kronor, innan räntor och utdelningar · Se att ekonomisk vinst har två ingångar som möts: NOPAT minus kapitalkostnad lika med 45, och spridningen ROIC minus WACC gånger kapital: 0,03 gånger 1 500 lika med 45 · Minns tröskeln: tillväxt skapar värde endast när ROIC överstiger WACC — spridningen är pumpen, tillväxten är hastigheten · Räkna värdebryggan: värde lika med investerat kapital plus ekonomisk vinst delat med WACC minus tillväxt — 1 500 plus 46,35 delat med 0,06 lika med 2 272,5 kronor vid 3 procents tillväxt · Känna igen förstörelsespiralen: negativ spridning gånger tillväxt gräver djupare för varje tillväxtsteg — minus 30 kronor vid 5 procents tillväxt subtraherar 787,5 från kapitalets värde · Hantera mätningens justeringar: avskrivningens avtagande kapitalhyra (9,0 till 2,25 kronor över fyra år), leasing och goodwill i kapitalbasen",
+  "why": "Lönsamhetsfamiljen äger kapitalets avkastning i fyra steg — roic-01 måttet, roic-02 trappan, roic-03 nästa krona, roic-04 värdeekvationen — men ingen av dem äger SUBTRAKTIONEN: momentet kapitalets kostnad dras ifrån vinsten och resterar som ekonomisk vinst. Sond mot 476-registret 2026-09-21: ekonomisk vinst ger noll kursägare (endast bokträffar i analysis-for-financial-management och expectations-investing) och EVA-måttet saknar helt ägare — medan grannarna äger var sin halva: roic-01 äger täljaren, km-008 äger WACC:s viktning, ln-01 äger DuPont-uppdelningen och vr-07 äger terminalvärdet. Ingen kurs äger däremellan: tröskeln där ROIC möter WACC och tillväxten vänder från värdeskapande till värdeförstörande — den enda subtraktion i hela värderingsläran som ändrar tillväxtens TECKEN. Gränserna är dokumenterade: roic-04 äger framtidens kassaflöden diskonterade till värde, roic-05 äger periodmåttet och dess brygga till värdet; ln-01 äger marginal gånger hastighet, roic-05 lånar produkten och äger slutsatsen. Utan tröskeln läser eleven en ROIC på 7 procent som svag men möjlig — med den syns att samma siffra vid WACC 9 procent gör varje tillväxtprocent till en pump som tömmer värdet i stället för att fylla det.",
+  "history": {
+    "origin": "Idén är äldre än börsnoteringar: bonden som kan hyra ut sin jord för 200 daler om året förlorar pengar på att bruka den själv för 180 — alternativkostnaden var en hyra han betalade sig själv utan att se den. De klassiska ekonomerna gav tanken sitt namn: vinst i ekonomisk mening är först det som återstår när alla insatser, kapital inbegripet, fått sin marknadsmässiga ersättning. Grosshandlaren som jämförde rörelsens avkastning med vad kassan burit i statsobligationer räknade ekonomisk vinst före någon mätte den.",
+    "evolution": "Kapitalmarknadens återväxt på åttiotalet gjorde subtraktionen till varumärke: rådgivare i USA paketerade den ekonomiska vinsten under namnet EVA — rörelseresultat efter skatt minus kapitalkostnad — och bolag världen över kopplade bonusprogram till måttet i stället för till rå vinst. Värdebaserad styrning föddes ur en enkel iakttagelse: chefer som mäts på vinst utan kapitalhyra växer sig stora, chefer som mäts på ekonomisk vinst växer sig värdefulla. Konglomeratens era avslutades i samma veva — divisionschefer som plötslig bar sin kapitalhyra kunde inte längre gömma medelmåttig avkastning bakom koncernens samlade tal.",
+    "modern": "I dag är tröskeln ROIC mot WACC kapitalallokeringens grundgrammatik: förvärvsanalyser, budgetspärrar och utdelningsbeslut formuleras som spridningsfrågor — var finns nästa krona mest värdefull? Investerare läser årliga rapporter där bolag redovisar värdeskapande per division, och den gamla frågan har fått ny tyngd i en tidsålder av billigt kapital: när WACC sjunker sjunker också tröskeln, och verksamheter som i årtionden förstörde värde kan hamna på den värdskapande sidan utan att en enda krona rörelse förändrats — mekanismen, inte moralen, är kursens ämne."
+  },
+  "lynchSection": "Peter Lynch skiljde mellan bolag som växer och bolag som växer värdefullt, och hans bästa historier är bolag där tillväxten krävde så lite kapital att spridningen blev en självklarhet — kataloghandlaren som betalade tillbaka sin butik på tio månader växde med pumpen igång. Lynchs varning för blind tillväxt får här sin aritmetik: omsättningstillväxt i en verksamhet under WACC-tröskeln är expansion med förlust, hur grön tillväxtkurven än målas. Den ekonomiska vinsten ger hans tumregler ett mått: expansionskapital som inte bär sin hyra syns inte i vinsten men syns i värdebryggan — och Lynch-läsaren som följer kapitalflödet ser pumpen stanna innan resultaträkningen gör det.",
+  "grahamSection": "Benjamin Graham definierade investeringens kärna som att priset understiger det beräknade värdet, och värdeberäkningens första villkor var att rörelsens förtjänstkraft är verklig — ekonomisk vinst är just förtjänstkraftens provenemang: intäkten som återstår när kapitalet fått sin marknadsränta. Hans margin of safety får här ett andra planet: avståndet mellan ROIC och WACC är själva säkerhetsmarginalens motor — en rörelse med bred spridning tål fall i marginal och hastighet innan värdet slår i kapitalbasen. Grahamsläsaren som diskonterar försiktigt kan läsa den ekonomiska vinsten som en årlig lågnivåkontroll av antagandet bakom varje diskontering: att rörelsen överhuvudtaget tjänar mer än sitt kapital kostar.",
+  "ak1Section": "I AK1A:s metodik är kursen lönsamhetsgrenens bro till värderingsgrenen: roic-01 till roic-04 bygger kapitalets avkastning och vr-07 diskonterar framtiden — roic-05 ställer de två mot varandra i en enda subtraktion och gör skillnaden till kursens huvudperson. I AKM2-flödet matar spridningen scenarieviktningen: ett basscenario med negativ spridning och hög tillväxt värderas om som ett läge där expansionen själv är riskfaktorn, och Monte Carlo-driften får en ny utfallsvariabel — tecknet på EVA. Lärvägen: efter roic-04 läser eleven avkastningens historia, med roic-05 läser den avkastningens AVEL — vad den föder över sin egen kostnad — och närmaste grannar i djupled är km-008 (WACC:s viktning) och vr-07 (terminalvärdet som tar vid där värdebryggan slutar).",
+  "chapters_list": [
+    { "num": 1, "title": "Två slags vinst — den synliga och den som återstår", "minutes": 4 },
+    { "num": 2, "title": "Kapitalhyran — WACC på det sysselsatta kapitalet", "minutes": 4 },
+    { "num": 3, "title": "Spridningen — ROIC minus WACC", "minutes": 4 },
+    { "num": 4, "title": "Tillväxtens två ansikten", "minutes": 4 },
+    { "num": 5, "title": "Värdebryggan — från ekonomisk vinst till företagsvärde", "minutes": 4 },
+    { "num": 6, "title": "Mätningens hantverk — justeringar och fällor", "minutes": 4 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Två slags vinst — den synliga och den som återstår",
+      "intro": "Resultaträkningen rapporterar en vinst; den ekonomiska vinsten frågar vad som återstår när kapitalet fått sin marknadsmässiga hyra. Kursens exempelbolag Norrverk (påhittat) tjänar 250 kronor före ränta och skatt på 1 500 kronor kapital.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokförd vinst och ekonomisk vinst skiljer sig åt genom en enda post: alternativkostnaden för kapitalet. Norrverks rörelseresultat 250 kronor beskattas med 28 procent — men inte i sin helhet, för räntan är en kostnad som redan burit sin skattesubvention, så driftsskatten räknas på rörelsen: NOPAT blir 250 gånger 0,72 lika med 180 kronor. De 1 500 kronorna är inte gratis — de kunde burit avkastning var annars, och den hyran ska betalas innan någon kan kallas vinst. Sätts hyran till 9 procent blir den 135 kronor, och återstoden 180 minus 135 lika med 45 kronor är den ekonomiska vinsten: det belopp med vilket Norrverk överträffar sitt eget kapital. Hade värdet varit noll hade ägarna varit exakt lika nöjda som i nästa bästa alternativ — bokslutet hade visat vinst, ekonomin hade visat likgiltighet."
+        },
+        {
+          "type": "definition",
+          "content": "EKONOMISK VINST (EVA): rörelseresultat efter skatt (NOPAT) minus kapitalkostnaden (WACC gånger investerat kapital). Norrverk: 180 minus 9 procent gånger 1 500 lika med 180 minus 135 lika med 45 kronor. Vinsten är ekonomisk endast i den mån den överstiger kapitalets marknadsmässiga hyra — bokförd vinst räknar ingen hyra alls."
+        },
+        {
+          "type": "insight",
+          "content": "Subtraktionen ändrar rankningen. Två bolag med identisk vinst kan ligga åtskilliga värden isär: det ena lägger 500 kronor kapital under samma vinst och hyr billigt, det andra lägger 3 000 och hyr dyrt. Resultaträkningen skiljer dem inte — den ekonomiska vinsten gör det. Därför börjar värderingen inte vid multiplarna utan vid frågan hur mycket av vinsten som är vinst över huvud taget, räknat som kronor över kapitalhyran."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Kapitalhyran — WACC på det sysselsatta kapitalet",
+      "intro": "Hyran har två halvor: ägarnas och långivarnas. Norrverks kapital är 1 000 kronor eget till 10 procents avkastningskrav och 500 kronor räntebärande skuld till 9,72 procent före skatt — efter skattesubventionen 7,0 procent.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det investerade kapitalet 1 500 kronor är rörelsens balansräkning i förkortning: anläggningstillgångar plus rörelsekapital, finansposter exkluderade. Egenkapitalens 1 000 kronor kräver 10 procent — ägarnas alternativa placering med samma risk — och ger en hyra på 100 kronor. Skulden på 500 kronor kostar 9,72 procent före skatt, men räntan dras ifrån beskattningen: efter 28 procents skatt kostar den 9,72 gånger 0,72 lika med 7,0 procent, alltså 35 kronor. Den samlade hyran blir 100 plus 35 lika med 135 kronor — exakt 9,0 procent av 1 500 — och de två halvorna förklarar varför WACC är ett viktat genomsnitt: ägarna kräver mer, långivarna får skattehjälpen, och kapitalstrukturen bestämmer blandningen. Skiften mellan halvorna rör hyran mindre än intuitionen bjuder — skuld är inte gratis trots sin rabatt, ty högre skuld höjer ägarnas krav — mekanismen ägs av kapitalstrukturfamiljen; här läses hyran som den är."
+        },
+        {
+          "type": "tabell",
+          "content": "KAPITALHYRANS BYGGSTENAR (PÅHITTADE TAL): Investerat kapital 1 500 kronor · Eget kapital 1 000 kronor till 10 procent lika med 100 kronor · Räntebärande skuld 500 kronor till 9,72 procent före skatt, 7,0 procent efter (9,72 gånger 0,72) lika med 35 kronor · Samlad hyra 135 kronor · WACC 135 delat med 1 500 lika med 9,0 procent · NOPAT 250 gånger 0,72 lika med 180 kronor · EKONOMISK VINST 180 minus 135 lika med 45 kronor · LÄSNING: hyran är en verklig kostnad som resultaträkningen aldrig visar — den betalas i tysthet av ägarna till sig själva."
+        },
+        {
+          "type": "insight",
+          "content": "Viktningen lär två saker. För det första att räntans skatteavdrag sänker hyran — 9,72 procent blir 7,0 — men aldrig till noll: kapitalstrukturens kvantitet ägs av ks-serien, dess pris syns här. För det andra att WACC är en väntan, inte en observation: ägarnas 10 procent är ett krav, och varje osäkerhet i det kravet fortplantar sig rakt in i den ekonomiska vinsten — därför läser mästaren EVA som ett intervall, aldrig som ett punkttal."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Spridningen — ROIC minus WACC",
+      "intro": "Den ekonomiska vinsten kan räknas på två sätt som möts i mitten: NOPAT minus hyra, eller spridningen gånger kapitalet. Norrverks ROIC är 180 delat med 1 500 lika med 12 procent — spridningen 3 procent.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "ROIC om 12 procent säger först vad kapitalet bär; spridningen säger vad som återstår över tröskeln: 12 minus 9 lika med 3 procent, och 3 procent av 1 500 lika med 45 kronor — samma tal som subtraktionen gav. Spridningens pedagogiska kraft är formen: den är en enda procentskillnad som väger kapitalmassan. Systerbolaget Sörverk (påhittat) har samma kapital men NOPAT 105 kronor — ROIC 7 procent, spridning minus 2 procent, ekonomisk vinst minus 30 kronor: en resultaträkning med vinst på 146 kronor före skatt (105 delat med 0,72 avrundat) och en ekonomi som varje år gräver. Samma spridning kan också vinnas på två skilda vägar: bolag A med rörelsemarginal 15 procent och kapitalhastighet 0,8 samt bolag B med marginal 6 procent och hastighet 2,0 — båda landar på ROIC 12 procent (DuPont-produkten, ägd av ln-01) trots att A är ett marginbolag och B ett volymbolag. Trappan upp till positiv spridning har därför två trappor, och vilken som är bäst beror på branschens golv — inte på modellen."
+        },
+        {
+          "type": "tabell",
+          "content": "SPRIDNINGENS ARITMETIK (PÅHITTADE TAL): Norrverk NOPAT 180 · kapital 1 500 · ROIC 12 procent · WACC 9 procent · spridning plus 3 procent · ekonomisk vinst 0,03 gånger 1 500 lika med 45 kronor · Sörverk NOPAT 105 · samma kapital · ROIC 7 procent · spridning minus 2 procent · ekonomisk vinst minus 30 kronor · Två vägar samma spridning: A marginal 15 procent gånger hastighet 0,8 lika med ROIC 12 procent · B marginal 6 procent gånger 2,0 lika med ROIC 12 procent · LÄSNING: spridningen är ROIC:s tecken genom WACC — procentenheten som avgör om kapitalmassan föder eller äter."
+        },
+        {
+          "type": "definition",
+          "content": "EVA-SPRIDNINGEN: ROIC minus WACC, multiplicerad med det investerade kapitalet — ekonomisk vinst i kronor. Positiv spridning: varje kapitalkrona föder värde över sin hyra. Negativ spridning: varje kapitalkrona äter av värdet, och (se kapitel 4) varje tillväxtprocent förvärrar det. Noll: rörelsen är en bank med extra steg — kapitalet bär exakt sin marknadsränta."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Tillväxtens två ansikten",
+      "intro": "Tröskeln gör tillväxten till en riktning i stället för en storlek: ovanför WACC bygger varje tillväxtprocent värde, under den rivs värde för varje procent. Exemplet bär två bolag — Norrverk med plus 3 och Sörverk med minus 2 — och tre tillväxtlägen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norrverk med ekonomisk vinst 45 kronor: värdet av rörelsen är kapitalet plus framtida ekonomiska vinster, räknade som en evighetsström som växer med g. Vid nolltillväxt blir värdet 1 500 plus 45 delat med 0,09 lika med 2 000 kronor — värdeförhållandet 1,33 mot kapitalbasen. Växer strömmen med 3 procent blir nämnaren WACC minus g: 1 500 plus 45 gånger 1,03 delat med 0,06 lika med 1 500 plus 772,5 lika med 2 272,5 kronor — samma rörelse, högre värde, ty pumpen går. Sörverk med minus 30 kronor: vid nolltillväxt 1 500 minus 30 delat med 0,09 lika med 1 166,7 kronor; vid 3 procents tillväxt 1 500 minus 30 gånger 1,03 delat med 0,06 lika med 1 500 minus 515 lika med 985; vid 5 procent 1 500 minus 30 gånger 1,05 delat med 0,04 lika med 1 500 minus 787,5 lika med 712,5 kronor. Läs raden baklänges: FÖR Sörverk är varje tillväxtsteg en fördjupning av hålet — 1 166,7 mot 985 mot 712,5 — och skillnaden mellan bolagen ligger inte i tillväxtens storlek utan i spridningens tecken. Att växa ett bolag under tröskeln är att expandera en förlust med ränta på ränta."
+        },
+        {
+          "type": "tabell",
+          "content": "TILLVÄXTENS TVÅ ANSIKTEN (PÅHITTADE TAL): Norrverk EVA plus 45: g 0 värde 2 000 kronor (1,33 gånger kapitalet) · g 3 procent värde 2 272,5 kronor (1,52 gånger) · Sörverk EVA minus 30: g 0 värde 1 166,7 kronor (0,78 gånger) · g 3 procent värde 985 kronor (0,66 gånger) · g 5 procent värde 712,5 kronor (0,48 gånger) · Räkneställning: 45 gånger 1,03 delat med 0,06 lika med 772,5 · minus 30 gånger 1,05 delat med 0,04 lika med minus 787,5 · LÄSNING: tecknet på spridningen avgör om tillväxt är byggnadsställning eller rivningskrok — procentsatsen är samma, värdet är motsatt."
+        },
+        {
+          "type": "insight",
+          "content": "Här ligger kursens starkaste läsglas: omsättningstillväxt och vinsttillväxt rapporteras med samma tecken oavsett kapitalunderlag, men värdestillväxten har två tecken. En koncern som dubblerar ett minus-2-procents-bolag har inte dubblerat ett mindre värde utan ett större underskott — förvärvet av tillväxt under tröskeln köper hastighet åt en pump som går baklänges. Omvänt behöver ett plus-3-bolag inte växa snabbt: redan lugn expansion samlar värde år från år, ty varje ny krona kapital anställs ovanför hyran."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Värdebryggan — från ekonomisk vinst till företagsvärde",
+      "intro": "Formeln värde lika med kapital plus ekonomisk vinst delat med WACC minus tillväxt är en brygga mellan två världar: lönsamhetens periodmått och värderingens evighetsräkning. Den bygger på grannen vr-07:s terminalvärde men börjar på andra sidan — vid kapitalbasen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bryggans logik: investerat kapital är återvunnet vid köpet — det sitter kvar i maskiner och lager och kan i princip säljas tillbaka — och allt värdeöverskott är framtida ekonomiska vinster som en evighetsström. Vid g lika med 0 och WACC 9 procent är 45 kronors årlig EVA värda 500 kronor (45 delat med 0,09); tillväxten förvandlas till nämnarens minskning, varför också g får en gräns: nämnaren WACC minus g måste hålla sig positiv och försiktigt bovenför noll — när g närmar sig WACC svämmar bryggan över, och den som pushar g mot 8 procent på ett 9-procentigt WACC bygger värde på en nämnare av en enda procentenhet. Multipelläsningen följer direkt: värdeförhållandet mot kapitalbasen blir 1,33 vid g 0 och 1,52 vid g 3 — rörelsens egen bokförda multipel, fallen ur en division i stället för en marknadsstämd jämförelse. Gränsen mot vr-07 är dokumenterad: terminalvärdet diskonterar kassaflöden, värdebryggan diskonterar överskottet över kapitalhyran — samma värde vid konsekventa antaganden, olika läsriktning."
+        },
+        {
+          "type": "tabell",
+          "content": "VÄRDEBRYGGAN (PÅHITTADE TAL): Värde lika med kapital plus EVA gånger (1 plus g) delat med (WACC minus g) · Norrverk g 0: 1 500 plus 45 delat med 0,09 lika med 2 000 · Norrverk g 3 procent: 1 500 plus 45 gånger 1,03 delat med 0,06 lika med 2 272,5 · Sörverk g 3 procent: 1 500 minus 30 gånger 1,03 delat med 0,06 lika med 985 · Värdeförhållande mot kapital: 1,33 · 1,52 · 0,66 · Nämnarvakt: WACC minus g lika med 0,06 vid g 3 procent — nämnaren bär hela tillväxtantagandet · LÄSNING: värdet har en bankdel (kapitalet) och en rörelsedel (strömmen) — multipeln är deras förhållande, inte en gissning."
+        },
+        {
+          "type": "definition",
+          "content": "VÄRDEBRYGGAN: företagsvärde lika med investerat kapital plus ekonomisk vinst gånger (1 plus g) delat med (WACC minus g), där g är den långsiktiga tillväxten i ekonomisk vinst. Bankdelen är återvinningsbar (kapitalet), rörelsededelen är förtjänad (strömmen över hyran). Gäller evighetsantagandet bara en period används formeln med utgångsvärde och avslutande värde — bryggan bygger då på terminalvärde-logiken som vr-07 äger."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mätningens hantverk — justeringar och fällor",
+      "intro": "Den ekonomiska vinsten är bara så sann som sina ingångar. Kapitlet samlar hantverket: avskrivningens avtagande hyra, leasing och goodwill i kapitalbasen och de tre fällor som förskönar EVA åt fel håll.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avskrivningens vinkel: en maskin om 100 kronor skrivs av rakt över fyra år à 25 — kapitalbasen sjunker 100, 75, 50, 25 och hyran vid 9 procent avtar 9,0, 6,75, 4,50, 2,25 kronor. Äldre maskiner hyr mindre kapital, vilket gör att en åldrad anläggning kan visa stigande ekonomisk vinst utan att rörelsen förbättrats — avskrivningens inbyggda present till resultatet. Raka avskrivningar kan jämnas ut genom att hyran räknas på genomsnittlig kapitalbas, hantverksfråga snarare än principfråga. Leasing hör hemma i kapitalbasen vad än balansräkningen kallar den — en flerårig förpliktelse är kapital som bär hyra. Goodwill är mätningens svåraste post: den köpta förvärvsposten är betalt hopp, och både att lämna den utanför (fördelar förvärvsvuxna bolag) och att lägga den in (bestraffar dem som köpt dyrt) är försvarbara — avgörande är att valet är samma över tiden och mellan jämförda bolag. Tre fällor avslutar: punktvärdesfällan (EVA ett år är väder, inte klimat), WACC-fönstret (tröskeln rör sig med räntan — spridning i går behöver inte vara spridning i dag) och tillväxtfällan från kapitel 4 i förklädnad: en styrning som belönar EVA utan att fråga efter spridningstecknet på tillväxtkapitalet bygger om Sörverk i större skala."
+        },
+        {
+          "type": "definition",
+          "content": "AVSKRIVNINGENS KAPITALHYRA: hyran följer den bokförda kapitalbasen, inte maskinens arbete — 100 kronor maskin på fyra år ger hyror 9,0 · 6,75 · 4,50 · 2,25 kronor vid WACC 9 procent. KONTROLLFRÅGAN vid varje EVA-läsning: är förändringen förtjänad i rörelsen, eller är den balansräkningens ålder?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett bolag du följer — verkligt eller påhittat — och bygg dess ekonomiska vinst: uppskatta NOPAT (rörelseresultat gånger 1 minus skattesatsen), investerat kapital (anläggning plus rörelsekapital) och en försiktig WACC av ägarkrav och långivarkrav. Räkna EVA på båda vägarna — subtraktionen och spridningen — och kontrollera att de möts. Räkna därefter värdebryggan vid två tillväxtlägen och notera hur nämnaren förändras. Avsluta med vändningen: vilken årlig förbättring av spridningen (procentenheter) motsvarar tio procents tillväxt i värde — och vad säger det om vilken spak som är billigast att dra i?"
+        }
+      ]
+    }
+  ]
+}

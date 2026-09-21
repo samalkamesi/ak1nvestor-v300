@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (477 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (479 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 435 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 437 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -388,6 +388,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "bk-05-redovisningspolitiken", titel: "Redovisningspolitiken — siffrornas formbara rum: samma ekonomi, två rapporter", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bk-06-obeskattade-reserver-och-avsattningar", titel: "Obeskattade reserver och avsättningar — balansräkningens tvegift", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "bk-07-lagret-och-lagervarderingen", titel: "Lagret och lagervärderingen — balansräkningens termometer", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bk-08-intaktredovisningen", titel: "Intäktredovisningen — när intäkten föds (IFRS 15:s fem steg)", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-04-kapitalbindning-och-rorelsekapital", titel: "Kapitalbindning och rörelsekapital — lönsamhetens andra halva", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ln-02-resultatkvalitet-och-accruals", titel: "Resultatkvalitet — är vinsten äkta?", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -475,6 +476,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "roic-02-avkastningstrappan", titel: "Avkastningstrappan — marginal och kapitalomsättning: ROIC:s två vägar", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-03-inkrementell-roic", titel: "Inkrementell ROIC — nästa kronas avkastning och medeltalets blindhet", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-04-vardeekvationen", titel: "Värdeekvationen — ROIC, återinvestering och multipelns pris", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "roic-05-den-ekonomiska-vinsten", titel: "Den ekonomiska vinsten — EVA och tröskeln där tillväxt börjar skapa värde", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-01-transmissionsmekaniken", titel: "Transmissionsmekaniken — från styrränta till bolagets resultat och värdering", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-02-lonebildning-och-kostnadsspiralen", titel: "Lönebildningen och kostnadsspiralen — från avtal till bolagets marginal", kategori: "MAKROEKONOMI & RÄNTA", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ma-03-realrantan", titel: "Realräntan — pengars tidsvärde efter inflation", kategori: "MAKROEKONOMI & RÄNTA", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -513,4 +515,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 477;
+export const LARVAG_ANTAL_KURSER = 479;

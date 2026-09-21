@@ -1,0 +1,1 @@
+studio: auto s3-u1 AR22 worklog-rad — kryptoaktier-ar leveransrapport (KVD 18/18 GRÖN; commit-blockeringarna under deployfönstret + delad-index-lösningen bokförda; filerna bärs av dff6bfc5 enligt s3-u3:s klargörande) [fabrik]

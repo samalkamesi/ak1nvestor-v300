@@ -72,15 +72,19 @@ async function lasMemberType(rest: { origin: string; headers: Record<string, str
 }
 
 /** De grindar GET och POST delar: session + Fas 2. Returnerar session-data
- *  eller ett färdigt fel-svar. */
+ *  eller ett färdigt fel-svar. GET:s lägessvar bär koden i KROPPEN med 200 —
+ *  en 401/403 vid sidladdning loggas av webbläsaren som resursfel i kundens
+ *  devtools (gränsnittsvaktens 0-konsolfel-krav); POST behåller 401/403 som
+ *  mutationens rätta status. Skyddet är oförändrat: skalet exponeras aldrig. */
 async function grindar(
-  req: NextRequest
+  req: NextRequest,
+  somGet = false
 ): Promise<{ authId: string; epost: string } | NextResponse> {
   const session = await lasMedlemSession(req);
   if (session === null) {
     return NextResponse.json(
-      { fel: "Logga in som medlem för att öva i Rapportakademin.", kod: "inloggning" },
-      { status: 401 }
+      { ok: false, fel: "Logga in som medlem för att öva i Rapportakademin.", kod: "inloggning" },
+      { status: somGet ? 200 : 401 }
     );
   }
   const rest = getSupabaseRest();
@@ -92,10 +96,11 @@ async function grindar(
     // Pedagogiken (kurs-access.ts): en Fas är en INBJUDAN, aldrig ett stopp.
     return NextResponse.json(
       {
+        ok: false,
         fel: "Rapportakademin är en del av Fas 2 — den snabba fundamentala vägen till oberoende analytiker.",
         kod: "fas2",
       },
-      { status: 403 }
+      { status: somGet ? 200 : 403 }
     );
   }
   return { authId: session.authId, epost: session.epost };
@@ -104,7 +109,7 @@ async function grindar(
 // ── GET — passets skal (aldrig facit, aldrig expertläsning) ──────────────────
 
 export async function GET(req: NextRequest) {
-  const g = await grindar(req);
+  const g = await grindar(req, true);
   if (g instanceof NextResponse) return g;
 
   const slug = req.nextUrl.searchParams.get("slug") ?? "";

@@ -84,11 +84,15 @@ export function RapportakademinPass() {
         cache: "no-store",
       });
       const data = await lasSvar(res);
-      if (res.status === 401) {
+      // Lägeskoden kan komma i kroppen (200, gränsnittsvaktens konsolkrav)
+      // eller i statusen (äldre API under deployfönstret) — båda hanteras.
+      const kodVarde = data?.kod;
+      const kod = typeof kodVarde === "string" ? kodVarde : "";
+      if (res.status === 401 || kod === "inloggning") {
         setLage("inloggning");
         return;
       }
-      if (res.status === 403) {
+      if (res.status === 403 || kod === "fas2") {
         setLage("fas2");
         return;
       }

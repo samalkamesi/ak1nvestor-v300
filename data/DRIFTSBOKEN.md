@@ -6635,3 +6635,26 @@ DR-OVNING-2026-09-21-KVALL-BLAD11.md (hand) · DR-PROV-2026-09-21-AUTO-7.md
 + AUTO-8.md (maskinella) · DR-RPO-DIFF-2026-09-21-KVALL.json.
 
 SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790010927032) 2026-09-21.
+
+## ROND 149 drift-notis [organ:Δ] — .next SAKNAS sedan 18:46Z: fyra mördade byggen, prod lever på pm2-minnet (2026-09-21, ÖPPEN — synken äger avslutet)
+
+- **Symptom:** .next/BUILD_ID saknas (avbrutet bygge 18:46Z rev den); fyra
+  byggförsök dödade med "Killed" i Turbopacks optimeringsfas (18:37Z huvudagent,
+  19:27Z synk, 19:37Z huvudagent, 19:41Z huvudagent med ren .next + heap-tak
+  3072 MB) — samtliga under fabrikens aktiva omgång auto-s2 (3 barn ≈ 2,4 GB)
+  med gott RAM före/efter mätning (5,7–6,5 GB). Före 18:46Z byggde samma kedja
+  GRÖNT (17:52Z deploy 27a582a0) vid lägre systemtryck.
+- **Bevisläge (omördarutrett):** kernel-OOM-loggen ej läsbar utan root (dmesg
+  Operation not permitted · sudo förbjudet auto-policy · journalctl hänger);
+  fabrikens kills gäller dess egna barn (kodgranskad); kraschvaktens
+  räddningslogg är från 09-14 (ej aktiv). Kvar som mest sannolik rot:
+  bygg×fabrik-kapplöpning om minnet — byggtoppen + 3 fabrikens barn + 4,3 GB
+  swap-användning överskrider taket momentant.
+- **Risk:** pm2 startar om ak1a (t.ex. vaccin-taket 2500M) INNAN grönt bygg ⇒
+  sajten kan ej starta. Kraschvakt + synkens läkebackup-vägar kvarstår som skydd.
+- **Beslut (vaccin):** huvudagenten bygger ALDRIG manuellt medan fabriken har
+  aktiva manifest — fyra mördade bygg varav tre våra; synkens poll+sekvensering
+  (V235) äger byggloopen och lyckas när fabriktrycket sjunker. DoD-bevakare
+  (r148) pollar API-formen och kör riktad vakt autonomt vid grönt bygg.
+
+SLUT — sektion inlagd av huvudagenten (rond 149) 2026-09-21.

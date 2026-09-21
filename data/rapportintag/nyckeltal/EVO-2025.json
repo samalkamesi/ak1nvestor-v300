@@ -1,0 +1,248 @@
+{
+  "bolag": "EVO",
+  "ar": "2025",
+  "proveniensSha": "17f6ac2fd8e333d3a3ffdaf7faa63231db14d224c8ddadb13277a165c7458f31",
+  "sammanfattning": {
+    "sektionerTotalt": 199,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 11,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 174,
+      "rubrik": "124 EVOLUTION  ANNUAL REPORT 2025 Condensed consolidated income",
+      "familjer": [
+        "nettoomsattning",
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 731,
+      "poang": 27
+    },
+    {
+      "i": 55,
+      "rubrik": "Evolutions shares are quoted and traded on Nasdaq Stockholm",
+      "familjer": [
+        "eps",
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 400,
+      "poang": 25
+    },
+    {
+      "i": 136,
+      "rubrik": "86 EVOLUTION  ANNUAL REPORT 2025 NOTE Assets Goodwill 11 2,370,154",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 405,
+      "poang": 24
+    },
+    {
+      "i": 175,
+      "rubrik": "125 EVOLUTION  ANNUAL REPORT 2025 Key ratios 2025 2024 2023 2022",
+      "familjer": [
+        "ebitda",
+        "rorelsemarginal",
+        "eps",
+        "utdelning"
+      ],
+      "siffror": 317,
+      "poang": 23.9
+    },
+    {
+      "i": 151,
+      "rubrik": "101 EVOLUTION  ANNUAL REPORT 2025   per country Australia Curacao",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 413,
+      "poang": 23
+    },
+    {
+      "i": 135,
+      "rubrik": "85 EVOLUTION  ANNUAL REPORT 2025 Consolidated income statement",
+      "familjer": [
+        "nettoomsattning",
+        "eps"
+      ],
+      "siffror": 333,
+      "poang": 21.6
+    },
+    {
+      "i": 176,
+      "rubrik": "126 EVOLUTION  ANNUAL REPORT 2025 GROUP 2025 2024 EBIT and EBIT",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda"
+      ],
+      "siffror": 255,
+      "poang": 20.8
+    },
+    {
+      "i": 137,
+      "rubrik": "Retained earnings including Retained earnings including 87 EVOLUTION",
+      "familjer": [
+        "eget-kapital",
+        "utdelning"
+      ],
+      "siffror": 299,
+      "poang": 18.9
+    },
+    {
+      "i": 157,
+      "rubrik": "107 EVOLUTION  ANNUAL REPORT 2025  NOTE 9. INCOME TAX AND DEFERRED",
+      "familjer": [
+        "utdelning"
+      ],
+      "siffror": 332,
+      "poang": 18.6
+    },
+    {
+      "i": 165,
+      "rubrik": "115 EVOLUTION  ANNUAL REPORT 2025  NOTE 14. ACCOUNTS RECEIVABLE",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 303,
+      "poang": 18.1
+    },
+    {
+      "i": 13,
+      "rubrik": "4 Q1 EUR MILLION 521.0 342.0 524.3 345.3 507.1 336.9 514.2 341.5",
+      "familjer": [
+        "nettoomsattning",
+        "ebitda",
+        "eps"
+      ],
+      "siffror": 213,
+      "poang": 17.6
+    },
+    {
+      "i": 140,
+      "rubrik": "Accrued expenses and prepaid income90 EVOLUTION  ANNUAL REPORT",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 270,
+      "poang": 17.5
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoomsattning",
+      "varde": "2,118,207 2,214,143",
+      "kontext": "operating revenues 2,118,207 2,214,143 1,798,601 1,456,737 1,068,777 Total operating expenses 860,901 794,590 655,871 548,675 414,773",
+      "sektion": 174,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "4,076,449 3,971,835",
+      "kontext": "3,903,067 Total equity 4,076,449 3,971,835 4,006,215 3,460,281 3,190,950 Non-current liabilities 193,944 271,849 405,946 483,197 341,987 1,251",
+      "sektion": 174,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "5,521,787 5,346,772",
+      "kontext": "5 809,412 TOTAL ASSETS 5,521,787 5,346,772 4,973,484 4,369,371 3,903,067 Total equity 4,076,449 3,971,835 4,006,215 3,460,281 3,190,950 Non-cu",
+      "sektion": 174,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "5.24 5.94 5.01",
+      "kontext": "2024 2023 Earnings per share, EUR 5.24 5.94 5.01 Dividend per share, EUR 2.80 2.65 Payout ratio 52.4% 52.7% Shares outstanding at the end of the yea",
+      "sektion": 55,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "5,235,549",
+      "kontext": "e Listing Dividend than via cash dividends. Acquisitions of own shares of own shares amounted to 5,235,549 as of 31 December 2025. Type of",
+      "sektion": 55,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "202,951,204 210,473",
+      "kontext": "tanding after dilution 202,951,204 210,473,394 217,069,145 Share price last closing day of the year, SEK 629.80 852.80 1,202.20 Numb",
+      "sektion": 55,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "ebitda",
+      "varde": "66.9%",
+      "kontext": "2021 EBITDA margin 66.9% 70.5% 70.5% 69.2% 68.7% Operating margin 59.4% 64.1% 63.5% 62.3% 61.2% 50.1% 56.2% 59.5% 57.9% 56.6% 73.8%",
+      "sektion": 175,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "59.4%",
+      "kontext": ".2% 68.7% Operating margin 59.4% 64.1% 63.5% 62.3% 61.2% 50.1% 56.2% 59.5% 57.9% 56.6% 73.8% 74.3% 80.6% 79.2% 81.8% 15,997 14,885 13,044 10,802 7",
+      "sektion": 175,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "59.4%",
+      "kontext": "perating (EBIT) margin 59.4% 64.1% EBITDA and EBITDA margin 1,246,424 1,438,924 10,882 19,371 Depreciation/amortisation 160,034 142,2",
+      "sektion": 176,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "7",
+      "kontext": "overed by capital expenditure. 7.7. Acquisition and ownership of buildings. covered by capital expenditure. 8.1 Data processing, hosting and relat",
+      "sektion": 91,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "2025 2024 2025 2024",
+      "kontext": " NOTE 23. CASH FLOW GROUP PARENT COMPANY 2025 2024 2025 2024 817,951 801,474 13,841 14,126 Total 817,951 801,474 13,841 14,126 GROUP PAREN",
+      "sektion": 171,
+      "kalla": {
+        "namn": "EVO årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf"
+      }
+    }
+  ]
+}

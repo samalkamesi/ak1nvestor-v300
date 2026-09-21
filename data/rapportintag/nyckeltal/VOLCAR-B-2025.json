@@ -1,0 +1,268 @@
+{
+  "bolag": "VOLCAR-B",
+  "ar": "2025",
+  "proveniensSha": "807301da616f71abb10f03556be58f5c3e8b5fc479eb34238323a6b76c8ed96a",
+  "sammanfattning": {
+    "sektionerTotalt": 390,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 12,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 67,
+      "rubrik": "The Volvo Car Grouptive industry with business relating to design,",
+      "familjer": [
+        "rorelseresultat",
+        "ebitda",
+        "rorelsemarginal",
+        "nettoresultat",
+        "eps",
+        "kassaflode"
+      ],
+      "siffror": 669,
+      "poang": 34
+    },
+    {
+      "i": 30,
+      "rubrik": "Financial highlightsand pricing, partially offset by increased",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "rorelsemarginal",
+        "nettoresultat",
+        "kassaflode"
+      ],
+      "siffror": 345,
+      "poang": 30.3
+    },
+    {
+      "i": 215,
+      "rubrik": "RECONCILIATION OF ALTERNATIVE PERFORMANCE MEASURES20252024Revenue357,263400,234Cost",
+      "familjer": [
+        "rorelseresultat",
+        "ebitda",
+        "rorelsemarginal",
+        "nettoresultat"
+      ],
+      "siffror": 424,
+      "poang": 30
+    },
+    {
+      "i": 185,
+      "rubrik": "NOTE 13TAXESACCOUNTING POLICIESIncome taxesstatement unless the",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "kassaflode"
+      ],
+      "siffror": 401,
+      "poang": 28
+    },
+    {
+      "i": 218,
+      "rubrik": "Restricted equityNon-restricted equityShare capitalShare premium",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 359,
+      "poang": 27.9
+    },
+    {
+      "i": 182,
+      "rubrik": "based on the content of a shareholder agreement, evaluation of",
+      "familjer": [
+        "nettoresultat",
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 488,
+      "poang": 26
+    },
+    {
+      "i": 184,
+      "rubrik": "ventures and associates.Summarised balance sheets Lynk & Co Automotive",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar",
+        "utdelning"
+      ],
+      "siffror": 589,
+      "poang": 26
+    },
+    {
+      "i": 161,
+      "rubrik": "SEKm Note31 Dec 202531 Dec 2024ASSETSNon-current assetsIntangible",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 494,
+      "poang": 24
+    },
+    {
+      "i": 170,
+      "rubrik": "obligationsguaranteesDeferred revenue  businessDeferred revenue",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 649,
+      "poang": 23
+    },
+    {
+      "i": 203,
+      "rubrik": "NOTE 21EQUITYACCOUNTING POLICIESShare-based paymentsincentive",
+      "familjer": [
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 400,
+      "poang": 23
+    },
+    {
+      "i": 216,
+      "rubrik": "Operating cash20252024Average two-year revenue ×10%37,87539,979Operating",
+      "familjer": [
+        "rorelseresultat",
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 320,
+      "poang": 23
+    },
+    {
+      "i": 265,
+      "rubrik": "Total greenhouse gas emissions amounted to 35 million tonnes",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 467,
+      "poang": 23
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "rorelseresultat",
+      "varde": "30322,31819,93922,33",
+      "kontext": "51412,714Operating income, EBIT30322,31819,93922,33220,275EBIT excl. share of income from JVs and associates35127,04025,56717,88921,226EBIT excl",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "ebitda",
+      "varde": "4.72",
+      "kontext": "385.234.72EBITDA35,67945,04837,38638,42335,280Cash flow from operating activities34,62547,37242,86733,59929,852Cash flow from investing ",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "0.15.65.07.2",
+      "kontext": ".418.321.6EBIT margin, %0.15.65.07.2EBIT margin % excl. share of income from JVs and associates0.16.45.47.5EBIT margin % excl. Items affecti",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "nettoresultat",
+      "varde": "2,96815,93414,06617",
+      "kontext": ",43316,995Net income2,96815,93414,06617,00314,177Basic earnings per share, SEK0.065.174.385.234.72EBITDA35,67945,04837,38638,42335,280Cash ",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "0.065.174.385.234.72",
+      "kontext": ",177Basic earnings per share, SEK0.065.174.385.234.72EBITDA35,67945,04837,38638,42335,280Cash flow from operating activities34,62547,37242,86733,599",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "0",
+      "kontext": ",42335,280Cash flow from operating activities34,62547,37242,86733,59929,852Cash flow from investing activities32,17646,24551,84239,658",
+      "sektion": 67,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "nettoomsattning",
+      "varde": "202520242023710,0427",
+      "kontext": "CIALS (SEKREVENUE AND GROSS MARGIN (SEK BN/%)RETURN ON INVESTED CAPITAL, ROIC (%)202520242023710,042763,389708,716357,263400,234399,3432",
+      "sektion": 30,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "17",
+      "kontext": "ions9,217Dividend received from subsidiary3,2004,000Cash flow from investing activities3,2005,217Cash flow from operating and investing ",
+      "sektion": 218,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "7221",
+      "kontext": "4,7221) After the second quarter 2024, no further losses have been recognised.2) Impairment of shareholding in NOVO Energy AB of SEK",
+      "sektion": 182,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "84,66738,425 50,461",
+      "kontext": "3,2703,844Total equity and liabilities84,66738,425 50,461 61,63254,077Summarised income statementsLynk & Co Automotive Technology GroupPolesta",
+      "sektion": 184,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "84,66738,425 50,461",
+      "kontext": "6,1065,525Total assets84,66738,425 50,461 61,63254,077Equity7,88142,62731,489 7,0586,683Non-current financial liabilities6,04524,080 26,237 ",
+      "sektion": 184,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "70",
+      "kontext": " Taxonomy CapEx alignment, %70Share of green debt, in accordance with our Green Financing Framework, or sustainability-linked format as",
+      "sektion": 238,
+      "kalla": {
+        "namn": "VOLCAR-B årsredovisning 2025",
+        "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+      }
+    }
+  ]
+}

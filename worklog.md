@@ -17067,3 +17067,18 @@ sekvenserar bakom fabrikens aktiva manifest (auto-s1). DoD-bevakare (r148-bevaka
 är live körs riktad vakt → 0 fynd = DoD STÄNGT (utfall: data/vakten/r148-dod-utfall.json).
 BRANDING-kartläggning (nästa våg): STRATEGISKT-SKIFTE spår 11 — startsida value prop 3 s · CTA · visuell hierarki ·
 mobil 52px · konsekvent AK1A-känsla.
+
+## ROND 148 [organ:Δ] — GRÄNSSNITTSVAKT PÅ SNITTET: 4 FYND, EN ROT, KUR LEVERERAD (141c7e77 pushad 067f7c1b; bygg hos prod-synken enligt V235-sekvens).
+DoD-spårets sista bit: riktad vakt på /rapportakademin (första fulla körningen — vaccin-skriptet dog före sitt steg 4):
+layout REN (överflöd 0, kontrast 0, utanför 0, alla 4 kombinationer) men 1 konsolfel per visning — rot:
+GET /api/rapportakademin/pass svarar 401 för gäst (AVSIKTLIG design, klienten visar inloggningsvyn) men webbläsaren
+loggar varje 4xx-fetch som resursfel i devtools — kundsynligt brus, vaktens 0-fynd-krav.
+KUR (kirurgisk): GET bär koden i KROPPEN (200 + ok:false + kod:inloggning/fas2), POST behåller 401/403 (mutationens
+status), klienten hanterar båda formerna = sömlös över deployfönstret. Skyddet oförändrat: skalet/facit exponeras aldrig.
+tsc 0 · commit 141c7e77 · merge med fabrikens våg · push GRÖN 067f7c1b.
+VACCINATION (ärad): mitt egna flock-bygg via node-execFile fick 540 s-timeout mitt i npm ci (.next rivet, pm2 serverar
+friskt) — tunga byggen är prod-synkens/flock-kanalens ensamrätt, ALDRIG node-execFile; synken ser NY KOD 067f7c1b och
+sekvenserar bakom fabrikens aktiva manifest (auto-s1). DoD-bevakare (r148-bevakare.mjs) pollar i bakgrunden: när kuren
+är live körs riktad vakt → 0 fynd = DoD STÄNGT (utfall: data/vakten/r148-dod-utfall.json).
+BRANDING-kartläggning (nästa våg): STRATEGISKT-SKIFTE spår 11 — startsida value prop 3 s · CTA · visuell hierarki ·
+mobil 52px · konsekvent AK1A-känsla.

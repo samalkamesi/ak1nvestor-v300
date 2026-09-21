@@ -137,6 +137,7 @@ Agent-anrop, 4+ via fabriksmanifest.
 
 ## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
 
+- · VERTIKALA SNITTET KOD LANDAD (rond 130 [Ψ], commit 9b05f298 i prod-trädet; deploy bevakas, stängs på live-kvitto + vaktkörning): kunduppdraget del 2 — ABB-passet A-Ö (bedöm-först-grind mekanisk: lagring FÖRE expertexponering; Fas 2 server-side ur members.member_type; art 13-kvittering i flödet). NÄSTA FAS efter live-stängning: PDF-sektionsextraktion på ~10 bolag (målets punkt 2) + fel-ledger spacing-intag (punkt 3) — styrelsens ordning: snittet bevisas FÖRE storskalig byggnad.
 - ★ STYRELSE-MÅLEN 2026 (data/forskning/STYRELSE-MAL.md, kundorder
   2026-09-15): ronden läser chaftern FÖRST — mål 1 (ordens fullbordande:
   kunduppdrag.json före nya vågor) → mål 2 (beviskultur) → mega A/B/C

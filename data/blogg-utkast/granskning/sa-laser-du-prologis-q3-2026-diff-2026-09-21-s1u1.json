@@ -1,0 +1,55 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-prologis-q3-2026.json",
+  "granskadAv": "agentfabrik auto-s1-1790012730031 s1-u1 (2026-09-21)",
+  "rapport": "sa-laser-du-prologis-q3-2026-KONTROLL-2026-09-21-s1u1.md",
+  "bedomning": "FLYTTKLAR EFTER FEM SMÅ RÄTTNINGAR (samtliga verkställda i paketfilen): 34 aritmetikkontroller exakta, 20 universumfält exakta, samtliga sex branschmedianer + sex USA-REIT-P/B + PEG-toppen (121,59 högst, 55,33 näst) verifierade mot bolagsunivers.json, kalender- och grannpåståenden (Öresund/Tesla/Balder/Catena/Diös/Investor/Billerud/PowerCell) korsbelagda, juridik 2007:528 ren (disclaimer + 0 icke-negerade rådverb + varumärkesgrind 26 regler 0 FEL 0 VARNING), 911 = 0 på fem mönster, 13/13 internlänkar 200, readingMinutes 5 KORREKT mot plattformskontraktet (2 703 ord ÷ 600 = 4,505 → 5). Fynden: två differensfel i löptext (F1 fyra→knappt en procentenhet; F2 nästan→drygt tolv procentenheter, body+description), ett mjukt bindestreck (F3), en källbrist i AMT-payout-exemplifieringen (F4→F5). Inget blockerande. NOT: universumet växte 225→249 efter beräkningstillfället (kärpåståendet består); mediankonventionen (mittersta värdet, negativa exkluderade) är internt konsekvent men okonventionell",
+  "paket": "sa-laser-du-prologis-q3-2026-FLYTTKLART-PAKET-2026-09-21.json (F1–F5 verkställda; md5 2fd5e0b872b6fded6619e47bfcb48624; original 664e019dfe54f7001096580f04ace03c; publishedAt 2026-10-15 = rappdagen enligt seriekonvention — publicering = kundens beslut R2)",
+  "anvandning": "Postlistan är verkställd I PAKETFILEN (inte i utkastet — originalet ägs av byggaren och ändras aldrig av granskaren). Vid kundexport: använd paketets body/title/description/tags/readingMinutes som de är; publishedAt sätts/rederas av kundens publiceringsbeslut. NOT-punkterna (universumtillväxt, mediankonvention) kräver ingen verkställning men läs av serieägaren vid nästa omgång. Publicering = kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "F1",
+      "typ": "byt",
+      "fil": "sa-laser-du-prologis-q3-2026.json",
+      "falt": "body (Nyckeltalen, kassaflödesavkastningen)",
+      "gammalt": "REIT:ens egen avkastningsläsning, fyra procentenheter från direktavkastningen",
+      "nytt": "REIT:ens egen avkastningsläsning, knappt en procentenhet över direktavkastningen",
+      "orsak": "Kassaflödesavkastningen 4,07 procent mot direktavkastningen 3,13 procent ger differensen 0,94 procentenheter — inte fyra. Paketets egna tal motsäger påståendet; sannolikt läsfel av talet 4,07 som 'fyra procentenheter skillnad'"
+    },
+    {
+      "id": "F2a",
+      "typ": "byt",
+      "fil": "sa-laser-du-prologis-q3-2026.json",
+      "falt": "description",
+      "gammalt": "varför kassaflödesmarginalen 55,99 procent ligger nästan tolv procentenheter över nettomarginalen",
+      "nytt": "varför kassaflödesmarginalen 55,99 procent ligger drygt tolv procentenheter över nettomarginalen",
+      "orsak": "55,99 − 43,58 = 12,41 procentenheter — 'nästan tolv' underdriver; korrekt intensitet är 'drygt tolv'. Samma fel i body (F2b)"
+    },
+    {
+      "id": "F2b",
+      "typ": "byt",
+      "fil": "sa-laser-du-prologis-q3-2026.json",
+      "falt": "body (Nyckeltalen, lönsamhetstrappan)",
+      "gammalt": "nästan tolv procentenheter **över** nettomarginalen",
+      "nytt": "drygt tolv procentenheter **över** nettomarginalen",
+      "orsak": "Samma aritmetik som F2a: 12,41 punkter är mer än tolv, inte mindre"
+    },
+    {
+      "id": "F3",
+      "typ": "byt",
+      "fil": "sa-laser-du-prologis-q3-2026.json",
+      "falt": "body (Så står sig bolaget mot branschen, första raden)",
+      "gammalt": "ger medi­anerna, beräknade ur samma fil 2026-09-20",
+      "nytt": "ger medianerna, beräknade ur samma fil 2026-09-20",
+      "orsak": "Filen innehåller exakt ett mjukt bindestreck (U+00AD) i 'medianerna' — osynligt i renderning men bryter sökbarhet och skaläsning. NOTE: gammalt-fältet här visar bindestrecket; i filen är tecknet U+00AD mellan 'medi' och 'anerna'"
+    },
+    {
+      "id": "F5",
+      "typ": "byt",
+      "fil": "sa-laser-du-prologis-q3-2026.json",
+      "falt": "body (Övning C, utdelningsutrymmet)",
+      "gammalt": "ett utrymme som ser annorlunda ut än American Towers 98-procentspayout",
+      "nytt": "ett utrymme som ser annorlunda ut än kollegor med payout nära hela den bokförda vinsten",
+      "orsak": "Påståendet 'American Towers 98-procentspayout' bärs av ingen källa i paketets källrad och inget fält i universumfilen (AMT-raden bär inte utdelning+EPS-relationen). Formuleringen ersätts med en källsäker generalisering som vilar på REIT-tvånget som redan är belagt i texten; om siffran 98 önskas kvar krävs extern källhänvisning i källraden"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "objekt": "sa-laser-du-wihlborgs-q3-2026",
+  "typ": "granskningsdiff",
+  "granskare": "s1-u2 (auto-s1-1790012730031)",
+  "datum": "2026-09-21",
+  "underlag": {
+    "kontroll": "data/blogg-utkast/granskning/sa-laser-du-wihlborgs-q3-2026-KONTROLL-2026-09-21-s1u2.md",
+    "sond": "verktyg/_s1u2-wihlborgs-q3-kontroll.mjs",
+    "byggvintage": "79d8f765 (2026-09-20 21:24)",
+    "resultat": "120 PASS + 20/20 länkar · 4 fynd · 0 sondfel"
+  },
+  "poster": [
+    {
+      "id": "B1a",
+      "allvar": "VÄSENTLIGT",
+      "falt": "title",
+      "from": "enda europeiska kollegan med P/B över pari medan nio av sjutton handlas under 0,95",
+      "to": "ett av två europeiska bolag med P/B över pari (NP3 1,422 det andra) medan nio av sjutton handlas under 0,95",
+      "belagg": "Byggvintagen 79d8f765: NP3.ST (Sverige) P/B 1,422 — europeiskt bolag över pari utöver WIHL 1,013. Övriga sex över pari är USA (O, PLD, EQIX, PSA, SPG, AMT). Rang 10/17 och 'nio under 0,95' korrekta; exklusivitetspåståendet falskt."
+    },
+    {
+      "id": "B1b",
+      "allvar": "VÄSENTLIGT",
+      "falt": "body (Värdering-sektionen)",
+      "from": "Wihlborgs är **enda bolaget i det europeiska hyresgänget över pari** — kursen 79,65 kronor",
+      "to": "Wihlborgs är **ett av grenens två europeiska bolag över pari** (NP3 1,422 är det andra) — kursen 79,65 kronor",
+      "belagg": "Samma vintagbelägg som B1a."
+    },
+    {
+      "id": "B1c",
+      "allvar": "VÄSENTLIGT",
+      "falt": "body (Så står sig bolaget mot branschen)",
+      "from": "men är det enda europeiska bolaget över pari, medan nio kollegor handlas under 0,95",
+      "to": "men är ett av grenens två europeiska bolag över pari (NP3 det andra), medan nio kollegor handlas under 0,95",
+      "belagg": "Samma vintagbelägg som B1a."
+    },
+    {
+      "id": "B1d",
+      "allvar": "VÄSENTLIGT",
+      "falt": "body (Källor-sektionen)",
+      "from": "enda europeiska bolag över pari, nio kollegor under 0,95",
+      "to": "två europeiska bolag över pari (WIHL 1,013, NP3 1,422), nio kollegor under 0,95",
+      "belagg": "Samma vintagbelägg som B1a."
+    },
+    {
+      "id": "B2",
+      "allvar": "SIFFERFEL (löptext)",
+      "falt": "body (Kvartalskedjan)",
+      "from": "Driftsmarginalen per kvartal rör sig mellan 69,6 och 73,6 procent",
+      "to": "Driftsmarginalen per kvartal rör sig mellan 69,6 och 74,1 procent",
+      "belagg": "Cellerna 731/1 045 · 813/1 097 · 790/1 101 · 773/1 111 · 800/1 150 · 864/1 174 ger 70,0 · 74,1 · 71,8 · 69,6 · 69,6 · 73,6 — toppen är Q2-2025 (813/1 097 = 74,11 %), ej Q2-2026:s 73,6."
+    },
+    {
+      "id": "B3",
+      "allvar": "LINDRIGT (avrundning)",
+      "falt": "body (Källor-sektionen)",
+      "from": "aktietal 24 487 ÷ 79,65 = 307,5 miljoner",
+      "to": "aktietal 24 487 ÷ 79,65 = 307,4 miljoner",
+      "belagg": "24 487/79,65 = 307,4325 M → 307,4 (bodyn har redan rätt tal; källradens 307,5 är avrundningsfel)."
+    },
+    {
+      "id": "B4",
+      "allvar": "LINDRIGT (avrundning)",
+      "falt": "body (Lönsamhet-sektionen)",
+      "from": "netto under EBIT med 23,7 procentenheter",
+      "to": "netto under EBIT med 23,8 procentenheter",
+      "belagg": "71,09 − 47,34 = 23,75 pp — halva uppåt ger 23,8."
+    }
+  ],
+  "noter": [
+    "N1: universumdrift 237→249 sedan byggvintagen; medianer/rang låsta mot 79d8f765 (Nordea-metoden) — omräkning vid nästa paketversion.",
+    "N2: readingMinutes 6 vid 3 522 ord (kvartalskonventionen ~3) — serieägarens konventionsbeslut (samma klass som handelsbanken-B2).",
+    "N3: externa kvartalstal sökverifierade av byggaren, maskinellt ej dubbelkollbara internt.",
+    "Verkställande: fyra B1-poster + B2-B4 i ett korrigeringspass av utkastets ägare/nästa våg; därefter flyttklar i handelsbanken/sandvik-klassen. Publicering = kundens beslut (R2)."
+  ]
+}

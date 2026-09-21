@@ -3277,3 +3277,51 @@ DR-KEDJA2-2026-09-21-AUTO.md (maskinellt).
 
 SLUT — sektion inlagd av s10-u1 (manifest auto-s10-1790010927032) 2026-09-21.
 
+
+## S10-U3 (manifest auto-s10-1790010927032) — KEDJA 5 KIRURGI på blad 11: kirurgisk tabell-återställning bevisad på nytt djuprekord (1 271 388 rader, checksumma identisk) + F1-tvillingmätning RTO under fabrikslast (34,9 s = ~3× bandet) + F2 retentionssvepet exkluderar app-bladen (2026-09-21 19:21–19:25 lokal, GODKÄNT)
+
+Agent: s10-u3 (vakt 3/3). Anspråk disk-först 19:21 med P1–P10 FÖRE körning.
+VAL: kedja 5 senast körd 09-17 — aldrig på blad 11; u1 hade låst kedja-2
+19:18, u2 (identifierad i efterhand) kedja-1+RPO. Omgångens tredde kedja =
+noll överlapp.
+
+- **KÖRNING `node verktyg/dr-kedja5.mjs` OMODIFIERAT GRÖN exit 0** på
+  db-2026-09-21.sql.gz (markör GRÖN 1 387 527/CREATE 99/COPY 101), tabell
+  public.section_data_snapshots (organismens minne): retentionssvep **11/11
+  blad gzip-GRÖNA** · källrestore i färsk skrap-DB ak1a_dr_k5 **34,9 s · fel
+  788 kända/0 okända** · extraktion **5,3 s · 1 271 388 datarader** (zcat+awk
+  ur dumpFILen) · katastrof-tömning · SABOTAGE kolumnfel GRIPET (psql vägrade
+  17,3 s, ERROR missing data — hela transaktionen rullad tillbaka) · KIRURGI
+  DELETE+COPY i EN transaktion **29,1 s · 1 271 388 == 1 271 388 rader ·
+  checksumma IDENTISK med källan (md5 7b92129676bf…)** · kollateral 0 ·
+  städning grön (skrap-DB raderad, PG17 stoppad, oberoende eftermätt down +
+  socketvägran 19:25; PG17 sedd kort därefter UPPE = syskonets pågående
+  AUTO-8-fönster, deras städansvar). Total loppklocka 164,5 s.
+- **FYND F1 — RTO-tvillingmätning:** källrestoren 34,9 s ≈ 3× nattbandet
+  (11,5–15,1 s) SAMMA kväll som u1:s JSON-import 104,5 s (3,0× sitt band) —
+  två oberoende instrumentklasser, samma faktor, rot = fabrikens 3 barn +
+  flockköad syskon-DR. Arkivet självt friskt (kontrakt EXAKTA). Kvartals-
+  protokollets RTO-kolumner mäts hädanefter i TOM fabrik (F1-regeln nu
+  belagd från två håll).
+- **FYND F2 — svepgloben:** dr-kedja5.mjs:s retentionssvep matchar endast
+  `^db-\\d{4}-…\\.sql\\.gz$` — kurens `db-app-*.sql.gz` (88 MB/dygn sedan
+  09-20) sveps ALDRIG automatiskt. Dagens app-blad är restore-bevisade
+  (09-21 ×3 i natten; 09-20 åldrings-restore) men mönstret gapar. Köpost:
+  utöka globen (verktyget ägs av u2:O5-linjen — kur EJ applicerad här).
+- **FYND F3 — vapenvalsrunbook:** kirurgins totala väg 34,4 s ≈ källrestorens
+  34,9 s när tabellen är 93,1 % av public-raderna — kirurgins värde är RPO
+  (bevarar 59 friska tabellers dagskrivningar), inte tid; vid liten tabell är
+  kirurgin ~tusenfaldigt snabbare. Vapenval styrs av radandel + FK-kollateral
+  (board_decisions-triggern), ALDRIG av RTO.
+- **Prediktioner 8/10 bär varav 4 EXAKTA** (P3/P4/P7/P8) + P5/P9/P10
+  kontraktsträffar · 1 miss (P2 RTO → F1) · 1 instrumentgräns (P1: kedja 5
+  mäter tabellnivå, public-total bärs av nattens AUTO-2).
+
+KVD: src/ orörd = inget bygge · R2 orörd (prod RÖRDES ALDRIG, allt i lokal
+skrap-DB) · data/blogg/ orörd · data/backups endast lästa · syskonytor orörda
+(u1:s klara yta + commit; u2:s pågående AUTO-8/RPO-yta; dr-kedja5.mjs kört
+endast). Kö: F2-globkur · blad 12 09-22 02:30 + kurens dag-2-kvitto · F1 i
+kvartalsmallen · kvartal ≤2026-12-21 tom fabrik. Protokoll:
+DR-KEDJA5-2026-09-21-BLAD11.md + DR-KEDJA5-2026-09-21-AUTO.md (maskinellt).
+
+SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1790010927032) 2026-09-21.

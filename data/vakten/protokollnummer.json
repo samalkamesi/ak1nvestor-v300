@@ -162,6 +162,30 @@
       "titel": "prestandavåg: /superanalys+/kalkylator TBT-rotjakt + giltig LH-EFTER (o123 n1-FEL:eftersläpning)",
       "ts": 1789969273833,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o140",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1789972517251",
+      "titel": "kvalitetsvåg: o136 §6.3 tick-svält-rotjakt — tick-drift/loop-instrument i pumpor-daemonen + live-aktivering",
+      "ts": 1789972901452,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o142",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789972980057,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o141",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789972517251",
+      "titel": "kvalitetsvåg: vakt-återmätning efter fabrikshelgen — mimosa full-scan (bas 1 772/0) + intern länkcrawl (bas 3 743/0) + rotorsaksfix på fynd",
+      "ts": 1789976400000,
+      "status": "reserverat"
     }
   ]
 }

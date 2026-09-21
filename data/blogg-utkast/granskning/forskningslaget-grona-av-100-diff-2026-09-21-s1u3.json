@@ -1,0 +1,15 @@
+{
+  "objekt": "data/blogg-utkast/granskning/forskningslaget-grona-av-100-FLYTTKLART-PAKET-2026-09-21.json",
+  "granskad": "2026-09-21",
+  "granskare": "agentfabrik auto-s1-1789980325227 s1-u3",
+  "dom": "KORSKONFIRMERAT GRÖNT — u1:s FLYTTKLART PAKET står, 0 ändringar",
+  "sond": "verktyg/_s1u3-m9forsk-paket-kontroll.mjs (51 OK · 0 FEL · 1 NOT) + omkörd 09-16-sond .zcode/granskning-m9-forskningslaget-verify.mjs (47 OK · 0 FEL)",
+  "poster": [],
+  "posterMotivering": "Tom postlista: paketet verifierat grönt av två oberoende sonder (u1:s 66 kontroller + s1-u3:s 51 + 09-16-sondens 47 omkörda). Race-förloppet (u1:s leverans 10:52 fyra minuter efter mitt anspråk 10:50; min överlapsande byggare raderad) dokumenterat i KONTROLL-2026-09-21-s1u3.md.",
+  "notiser": [
+    "D1 lever: kassaflodesanalys-101 bär ny okänd kandidat (underlag 09-21, 243 bolag) — ny granskning krävs före publicering av nästa version.",
+    "D2 lever: branschmedianer bär kandidat 0431dd6c — samma klass.",
+    "m9-familjen 6/6 paketlevererad efter denna omgång (u1: forskningslaget + boerspsykologi; u2: vagkartan + utdelningar + branschmedianer-v2; u3-förra: kassaflodesanalys)."
+  ],
+  "kvd": "Endast nya filer; u1:s och u2:s leveranser orörda; utkastet orörd; src/ orörd = INGET bygge; R2 orörd."
+}

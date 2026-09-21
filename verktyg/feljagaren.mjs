@@ -359,7 +359,14 @@ export async function jagaApi(pass) {
       });
       if (r.status !== 200) {
         fel++;
-        if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        if (r.status === 429) {
+          // FYNN nr 6-429-DOmen (2026-09-21): 429 = SKYDDSSYSTEMET ARBETAR —
+          // admin-authens fel-lösenordslås (10 fel/min, 60 s-fönster; bevis:
+          // eldprovs-miscall 09:1x med fel pass ⇒ FYNN:s jakt 09:13:13 avvisad
+          // på 15 endpoints trots rätt pass) eller middlewares flödesvakt.
+          // Endpointen i sig frisk — aldrig HÖG; återmät när fönstret gått ut.
+          bokfor("F3-api", "MEDEL", `/${v} → 429 (rate-limit — skyddsmekanism aktiv)`, `Retry-After-fönster (60 s): fel-lösenordslås (admin-auth.ts 10/min) eller flödesvakt — endpointen frisk, FYNN nr 6-grinden 2026-09-21`);
+        } else if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
         else bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`);
       }
     } catch (e) {

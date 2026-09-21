@@ -26,6 +26,7 @@ if (process.argv[2] === "--barn") {
     if (req.url === "/") { res.writeHead(200); res.end("ok"); return; }
     if (typ === "hang") return;                 // A: tyst tills klientens abort
     if (typ === "dod") { req.socket.destroy(); return; }  // B: icke-timeout
+    if (typ === "rate") { res.writeHead(429, { "Retry-After": "60" }); res.end("{}"); return; } // D
     if (typ === "lakta") {                      // C: dör en gång, sedan 200
       if (!globalThis.lakt) { globalThis.lakt = true; req.socket.destroy(); return; }
       res.writeHead(200); res.end("{}"); return;
@@ -34,6 +35,13 @@ if (process.argv[2] === "--barn") {
   });
   await new Promise((r) => server.listen(0, "127.0.0.1", r));
   process.env.AK1A_BAS_URL = `http://127.0.0.1:${server.address().port}`;
+  // v5:0-läxan (2026-09-21): eldprovet fick ALDRIG slå mot skarp yta —
+  // miscall med fel lösenord triggade admin-authens 429-lås som avvisade
+  // FYNN:s jakt 15 endpoints (09:13:13Z). Strukturellt neka skarp port/localhost.
+  if (process.env.AK1A_BAS_URL.includes("localhost") || /:3000$/.test(process.env.AK1A_BAS_URL)) {
+    console.error("VÄGRAR: BAS pekar på skarp yta — eldprovet kör endast mot egen mock");
+    process.exit(4);
+  }
   process.env.AK1A_FYND_SOKVAG = FYNDTMP;
   process.env.AK1A_TEST_SERVERLAST = JSON.stringify({ ramMB: 1802, zcodeBarn: 1 });
   process.env.AK1A_APP_ALDER_MIN = "90";
@@ -95,6 +103,13 @@ korFall("C: självläkt vid omtest ⇒ MEDEL övergående",
   (rader) => {
     kontroll("C1: MEDEL självläkt (rond 50-regression)", rader.some(r => r.allvar === "MEDEL" && /självläkt/.test(r.fynd)), "ingen självläkt-rad");
     kontroll("C2: 0 HÖG i regressionen", rader.every(r => r.allvar !== "HÖG"), "HÖG bokförd");
+  });
+
+korFall("D: 429 ⇒ MEDEL skyddsmekanism (FYNN nr 6)",
+  "rate",
+  (rader) => {
+    kontroll("D1: MEDEL rate-limit domer bokförda", rader.some(r => r.allvar === "MEDEL" && /rate-limit/.test(r.fynd)), "ingen rate-limit-rad");
+    kontroll("D2: 0 HÖG vid 429", rader.every(r => r.allvar !== "HÖG"), "HÖG bokförd");
   });
 
 console.log(`\nSVIT: ${pass} PASS, ${fail} FAIL`);

@@ -299,6 +299,7 @@ export const KURSREGISTER: RegisterRad[] = [
   { slug: "ma-06-aktiernas-riskpremie", titel: "Aktiernas riskpremie — varför börsen betalar mer än statsobligationen", kategori: "MAKROEKONOMI & RÄNTA", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "ma-07-valutakursens-mekanik", titel: "Valutakursens mekanik — PPP, ränteparitet och exportörens vind", kategori: "MAKROEKONOMI & RÄNTA", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Avancerad" },
   { slug: "ma-08-bostadsmarknadens-mekanik", titel: "Bostadsmarknadens mekanik — lånekraft, tröghet och vägen till börsen", kategori: "MAKROEKONOMI & RÄNTA", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
+  { slug: "ma-09-produktionsgapet", titel: "Produktionsgapet — hastighetstaket, gapet och räntans fixpunkt", kategori: "MAKROEKONOMI & RÄNTA", variabel: undefined, kapitel: 6, quiz: 0, minuter: 24, niva: "Intermediär" },
   { slug: "made-in-america", titel: "Made in America — Sam Walton: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 168, niva: "Alla" },
   { slug: "manias-panics-and-crashes", titel: "Manias, Panics, and Crashes — Kindleberger & Aliber: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 15, quiz: 45, minuter: 150, niva: "Alla" },
   { slug: "margin-of-safety", titel: "Margin of Safety — Klarman: KOMPLETT", kategori: "BOKMASTER", variabel: undefined, kapitel: 14, quiz: 42, minuter: 140, niva: "Alla" },

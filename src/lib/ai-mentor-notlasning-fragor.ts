@@ -59,9 +59,10 @@
  *     162+67,5 = 229,5 · 690−670,5 = 19,5 · 670,5−640 = 30,5 ·
  *     huvudagenten: säljaren redovisar 100, marknadsplatsen 20.
  *
- * KEDJEPLATS: 78:e motorn (efter u1:s banksektorn, FÖRE u3:s nyfodda och
- * marknadsrytm — deras SIST-deklaration + L01 respekteras, multipel-
- * precedensen). Kärnorden är mekaniskt disjunkta mot samtliga övriga
+ * KEDJEPLATS: 79:e motorn (MOTORDEFS-rad 78 av 80 — efter u1:s banksektorn,
+ * FÖRE u3:s nyfodda och marknadsrytm; deras SIST-deklaration + L01
+ * respekteras, multipel-precedensen; huskonventionen räknar rad+1).
+ * Kärnorden är mekaniskt disjunkta mot samtliga övriga
  * lager (sond _s6u2o33-karnord.mjs mot 2 017 kärnord + u1:s kandidatlista:
  * 0 kollisioner; J-fallet bevisar disjunktionen LIVE också mot u3:s
  * nyfodda som landade efter detta lager) — verifieras levande av detta

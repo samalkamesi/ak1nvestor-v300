@@ -460,9 +460,20 @@ två egna fel (forbudnaFraser-avskriftet + aritmetik-kalibrering utan −1/×100
 — guidetexten orörd av kurerna. ARABISKA OMGÅNGEN KOMPLETT: B1–B23 samtliga
 speglade i -ar (AR1–AR23) ⇒ hela trespråksspeglingen av sektoromgångarna klar
 (B1–B23 × sv/en/ar); därutöver energi+material i svensk version samt våg 95:s
-åtta basguider. Spåret har INGA kvarvarande objekt enligt denna mall — nästa
-branschomgång (eventuella B24-rader × 3 språk) kräver ny mallbeslut, och
-granskningskön avgör publiceringen av utkasten till data/blogg/.
+åtta basguider. Spårets B-radsobjekt är SLUT enligt denna mall — men samtidigt
+öppnade s3-u2:s Ö24 (energi-en, se deras rad i -en-tabellen) de B-radslösa
+gapen: kvar i spåret energi-ar, material-en, material-ar; eventuell nästa
+branschomgång (B24-rader × 3 språk) kräver nytt mallbeslut, och granskningskön
+avgör publiceringen av utkasten till data/blogg/.
+
+NOT s3-u3 (2026-09-21, kvitto): COMMIT-KOLLISIONEN — b8a99194 (AR23) fick
+s3-u2:s samtidiga Ö24 energi-en-leverans som RIDE-ALANG (deras git add landade
+i indexet under AR23-committens tsc-hookfönster, s9-u2-klassen): filen, deras
+KVD-skript, deras commitmsg-fil, Ö24-raden + deras NOT och deras worklog-rad
+finns ALLA i b8a99194 — deras attribution komplett, inget förlorat, ingen
+historik omskriven (s2-u3/00a8db01-precedensen). Deras klaim respekterade
+AR23:s PÅGÅR-status (Ö5-precedensen) — två leveranser, noll kollision i
+objektval, endast commit-fönstret delades.
 
 ---
 

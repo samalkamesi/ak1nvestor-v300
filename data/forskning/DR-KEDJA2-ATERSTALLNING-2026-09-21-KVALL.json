@@ -1,0 +1,93 @@
+{
+  "typ": "dr-kedja2-aterstallning-kvall",
+  "blad": "2026-09-21",
+  "agent": "s10-u1",
+  "manifest": "auto-s10-1790010927032",
+  "fönsterLokal": "2026-09-21 19:18:4x–19:20:30",
+  "ansprakDisk": "data/vakten/auto-s10-1790010927032-s10-u1-ansprak.md",
+  "arkiv": {
+    "fil": "system-events-full-2026-09-21.json.gz",
+    "byte": 27898867,
+    "sha256": "f8dc5cf059eef0f2cbd53a6c61a1127810fab95123c6acce420f5c7e79ac036c",
+    "foddLokal": "2026-09-21 02:40:50",
+    "endastLast": true
+  },
+  "ddlKalla": {
+    "fil": "db-2026-09-21.sql.gz",
+    "sha256": "edaf69cfeaea1ed2661723393dc3b981e6939181bea674bcc4e370561496f006"
+  },
+  "verktyg": "node verktyg/dr-kedja2.mjs (omodifierat)",
+  "exit": 0,
+  "dom": "GRÖN",
+  "header": { "antal": 170979, "sidor": 35, "truncerad": false, "datum": "2026-09-21T00:40:40.133Z" },
+  "resultat": {
+    "lastRader": 170979,
+    "felaktiga": 0,
+    "dubbeltId": 0,
+    "copyN": 170979,
+    "pgRaderOberoende": 170979,
+    "unikaId": 170979,
+    "kontrakt": "fyra-samma: header = läst = COPY = PG (+ unika)"
+  },
+  "rto": { "sek": 104.5, "fonsterSek": 104.7, "raderPerSek": 1637 },
+  "rtoSerie": [
+    { "blad": "2026-09-17", "rtoSek": 25.0, "rader": 163039, "raderPerSek": 6522 },
+    { "blad": "2026-09-20", "rtoSek": 34.3, "rader": 168696, "raderPerSek": 4933 },
+    { "blad": "2026-09-21", "rtoSek": 104.5, "rader": 170979, "raderPerSek": 1637 }
+  ],
+  "tidsfonster": { "forsta": "2026-09-03 22:43:12.603298+02", "sista": "2026-09-21 02:40:02.711294+02" },
+  "severity": { "info": 169966, "warning": 1013 },
+  "typer": {
+    "oversattning": 146190,
+    "trafik": 23535,
+    "sakerhet": 1140,
+    "akm2_snapshot": 101,
+    "blogg_utkast": 9,
+    "medlem": 3,
+    "blogg_publicerad": 1
+  },
+  "jsonbProvDag": 23535,
+  "jsonbProvEqualsTrafik": true,
+  "dagsstegMolnJson": { "forra": 168696, "nu": 170979, "steg": 2283 },
+  "trafikDagssteg": { "forra": 21361, "nu": 23535, "steg": 2174 },
+  "oversattningStillastaendeDagar": 4,
+  "prediktioner": [
+    { "id": "P1", "laset": "COPY = 170 979 EXAKT", "faktiskt": "170 979", "dom": "träff-exakt" },
+    { "id": "P2", "laset": "unika id = 170 979", "faktiskt": "170 979", "dom": "träff-exakt" },
+    { "id": "P3", "laset": "RTO ∈ [30, 40] s", "faktiskt": "104,5 s", "dom": "miss — rot: konkurrens (load 6,48, fabrik 3 barn, kall cache, swap)" },
+    { "id": "P4", "laset": "warning ∈ [900, 1 000]", "faktiskt": "1 013", "dom": "miss — 13 över, band för snävt" },
+    { "id": "P5", "laset": "jsonb-prov ∈ [22 500, 24 500]", "faktiskt": "23 535", "dom": "träff (+ jsonb == trafik EXAKT)" },
+    { "id": "P6", "laset": "verktyget städar självt", "faktiskt": "ak1a_dr_json raderad + PG17 stoppad", "dom": "träff" }
+  ],
+  "fynd": [
+    "F1-KVÄLL: RTO 104,5 s = 3,0× nattbandet under fabrikslast — kvartalsövningens F1-regel utökas: tom fabrik krävs för RAM-grind OCH RTO-band (25–40 s vid låg last)",
+    "dagssteg +2 283 bekräftat på restore-vägen",
+    "trafik +2 174/dygn tredje punkten (kvällsväxande)",
+    "oversattning 146 190 stilla dag 4 — definitiv dom 2026-10-01",
+    "flock-serialisering bevisad: syskonets dr-ovning-fönster tog låset 164 ms efter mitt avslut — PG online vid eftermätning = deras pågående fönster",
+    "cross-kedja håller: app-blad 170 980 = moln 170 979 + 1"
+  ],
+  "stadningLokalPg": {
+    "skrapDbRaderad": true,
+    "pg17StoppadAvMittFonster": true,
+    "eftermatningNot": "PG17 online 19:20:55 = syskonets dr-ovning.mjs-fönster (pid 561547) — deras städning",
+    "arkivOforandrat": "SHA+mtime identiska före/efter",
+    "tmpRensat": "flock äger låsfilens livslängd, inga egna filer kvar"
+  },
+  "kvd": {
+    "srcOrord": "INGET bygge",
+    "r2Orord": true,
+    "dataBloggOrord": true,
+    "backupsEndastLast": true,
+    "syskonytor": "dr-kedja2.mjs + aterstall-system-events.mjs KÖRDA endast; syskonfönster ej stört",
+    "gdpr": "endast antal/typer"
+  },
+  "ko": [
+    "blad 12:s födelsebevis 2026-09-22 02:30",
+    "kurens dag-2-kvitto 2026-09-22 02:50",
+    "kedja-2-blad 12 restore-väg (morgondagens kväll)",
+    "oversättnings-stillastående definitiv dom 2026-10-01",
+    "kvartalsövning ≤2026-12-21 TOM fabrik (F1 utökat: RAM + RTO)"
+  ],
+  "autoProtokoll": "data/forskning/DR-KEDJA2-2026-09-21-AUTO.md"
+}

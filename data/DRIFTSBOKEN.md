@@ -3241,3 +3241,39 @@ dag-2-kvitto · pumpens landningstidsvarians tredje punkten · kvartal ≤
 
 SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1789948522392) 2026-09-21.
 
+## S10-U1 (manifest auto-s10-1790010927032) — KEDJA 2-KVÄLL för 09-21: moln-JSON:ns restore-väg bevisad för dagens blad + F1 utökat till RTO-bandet (104,5 s = 3,0× under fabrikslast) (2026-09-21 19:18:4x–19:20:30 lokal, GODKÄNT)
+
+Agent: s10-u1 (vakt 1/3). Anspråk disk-först 19:18 med P1–P6 låsta FÖRE
+körning. VAL: 09-21-bladets moln-JSON-restore ej körd (senast bevisad för
+09-20; natten mätte endast headern) — duplikatkontroll i worklog +
+data/forskning.
+
+- **KÖRNING `node verktyg/dr-kedja2.mjs` OMODIFIERAT GRÖN exit 0:**
+  system-events-full-2026-09-21.json.gz (27 898 867 B · SHA `f8dc5cf0…`,
+  ENDAST LÄST bevisat) → header 170 979/truncerad false → 0 felaktiga ·
+  0 dubblett-id → COPY 170 979 → oberoende PG 170 979 + unika 170 979 =
+  **FYRA-SAMMA-KONTRAKT**. jsonb-prov 23 535 == trafik EXAKT (andra dagen).
+- **RTO 104,5 s (1 637 r/s) — seriens första >100 s, 3,0× bandet.** Rot:
+  konkurrens (load 6,48 · fabrikens 3 barn · 5,4 GB swap · kall cache på
+  arkivet orört 17 h), INTE arkivet (kontrakt GRÖN). Serien: 09-17 25,0 s →
+  09-20 34,3 s → 09-21 104,5 s. **F1-utbyggnad: kvartalsövningen ≤2026-12-21
+  kräver TOM fabrik för RAM-grinden OCH RTO-bandet (25–40 s vid låg last).**
+- Dagssteg moln-JSON +2 283 bekräftat på restore-vägen · trafik +2 174/dygn
+  · oversattning 146 190 stilla dag 4 (doms-deadline 10-01).
+- **Prediktioner 4/6** (P1/P2 EXAKT · P5 träff + kontrakt · P6 träff; miss
+  P3 RTO-band · P4 warning 1 013 mot band ≤1 000).
+- **Flock-serialisering i realtid:** mitt fönster slut 19:20:29.914 ·
+  syskonets dr-ovning.mjs (kedja 1, ak1a_dr_test) tog låset 19:20:30.078 —
+  164 ms senare; PG17 online vid eftermätning = DERAS pågående fönster,
+  deras städning. Mitt fönster: ak1a_dr_json raderad (finally) + PG17
+  stoppad enligt kontrakt.
+
+KVD: src/ orörd = inget bygge · R2 orörd · data/blogg/ orörd · data/backups
+endast lästa · syskonytor orörda (dr-kedja2.mjs kört endast) · GDPR endast
+antal/typer. Kö: blad 12 09-22 02:30 · kurens dag-2-kvitto 02:50 · kedja-2
+blad 12 imorgon kväll · oversättning dom 10-01 · kvartal ≤2026-12-21 (F1
+utökat). Protokoll: DR-KEDJA2-ATERSTALLNING-2026-09-21-KVALL.md/.json +
+DR-KEDJA2-2026-09-21-AUTO.md (maskinellt).
+
+SLUT — sektion inlagd av s10-u1 (manifest auto-s10-1790010927032) 2026-09-21.
+

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 /**
  * DATASET-SORTERING (VÅG 98 F2) — valbar sortering av /dataset-indexlistan
@@ -17,10 +17,20 @@ import { useSearchParams } from "next/navigation";
  * bakåt-vänlig) och sorteringen sker på den INBÄDDADE datan i klienten — noll
  * extra nätverksanrop, samma dataobjekt som servern renderade.
  *
+ * o143 (spår 7, 2026-09-21): ?sortera= läses ur window.location i effekten —
+ * INTE via useSearchParams. useSearchParams tvingade fram en Suspense-gräns
+ * runt denna komponent på den statiska sidan, och när React under långsam
+ * hydrering (belastad server) målade gränsens fallback (null) försvann hela
+ * kortsubträdet en paint och sköts tillbaka 1 268 px längre ner — CLS
+ * 0,2367 på ~27 % av kalla mobilmätningar (bevisakedja: o143-protokollet §2,
+ * Lighthouse-trace med impacted-noder). Utan gränsen hydreras komponenten
+ * på plats och fönstret kan inte uppstå. Bakåt/framåt-knappen följs via
+ * popstate-läsning av samma URL-källa.
+ *
  * Hydration-ärlighet: första passet renderar A–Ö (identiskt med server-HTML:
- * useSearchParams är tom under förrenderingen), och vald sortering appliceras
- * i useEffect — aldrig hydrations-mismatch. All text kommer som färdiga
- * etiketter (props) från servern — ordlistan bundlas inte i klienten.
+ * window.location finns inte under förrenderingen), och vald sortering
+ * appliceras i useEffect — aldrig hydrations-mismatch. All text kommer som
+ * färdiga etiketter (props) från servern — ordlistan bundlas inte i klienten.
  */
 
 export type SorterbarBransch = {
@@ -79,12 +89,25 @@ export function DatasetSorteradLista({
   /** Språkprefix ("", "/en", "/ar") — länkarna stannar på samma språkyta. */
   prefix: string;
 }) {
-  const parametrar = useSearchParams();
+  const router = useRouter();
   const [sortering, setSortering] = useState<Sortering>("bransch");
 
+  const lasSorteraFranUrl = useCallback(() => {
+    setSortering(tolkaSortera(new URLSearchParams(window.location.search).get("sortera")));
+  }, []);
+
   useEffect(() => {
-    setSortering(tolkaSortera(parametrar?.get("sortera") ?? null));
-  }, [parametrar]);
+    lasSorteraFranUrl();
+    window.addEventListener("popstate", lasSorteraFranUrl);
+    return () => window.removeEventListener("popstate", lasSorteraFranUrl);
+  }, [lasSorteraFranUrl]);
+
+  /** Pill-val: state direkt (ingen väntan på navigation) + adressbar-länk
+   *  (delbar, bakåt-vänlig — historiken pushas som länkarna gjorde förr). */
+  const valj = (id: Sortering) => {
+    setSortering(id);
+    router.push("?sortera=" + id, { scroll: false });
+  };
 
   const val: Array<{ id: Sortering; text: string }> = [
     { id: "bransch", text: etiketter.sorteraBransch },
@@ -104,10 +127,10 @@ export function DatasetSorteradLista({
           {etiketter.rubrik}:
         </span>
         {val.map((v) => (
-          <Link
+          <button
             key={v.id}
-            href={"?sortera=" + v.id}
-            scroll={false}
+            type="button"
+            onClick={() => valj(v.id)}
             aria-current={sortering === v.id ? "true" : undefined}
             className={
               sortering === v.id
@@ -116,7 +139,7 @@ export function DatasetSorteradLista({
             }
           >
             {v.text}
-          </Link>
+          </button>
         ))}
       </div>
 

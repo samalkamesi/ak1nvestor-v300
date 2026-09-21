@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-21T14:44:13.761Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u1o143-fore4",
+  "sidor": [
+    {
+      "sokvag": "/dataset",
+      "poang": {
+        "prestanda": 0.45,
+        "tillganglighet": 1,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1338,
+        "LCP": 4286,
+        "TBT": 2102,
+        "CLS": 0.2366902995198716,
+        "TTI": 5262,
+        "SI": 2709
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0.5,
+          "visar": "Est savings of 22 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 22 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 510 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 510 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.8 s",
+          "rad": "Reduce JavaScript execution time — 2.8 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "6.7 s",
+          "rad": "Minimize main-thread work — 6.7 s"
+        }
+      }
+    }
+  ]
+}

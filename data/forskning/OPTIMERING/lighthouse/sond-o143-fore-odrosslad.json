@@ -1,0 +1,439 @@
+{
+  "datum": "2026-09-21T14:50:08.677Z",
+  "bas": "http://localhost:3000",
+  "throttle": false,
+  "sparMs": 12000,
+  "injeceradCss": "nej",
+  "sidor": [
+    {
+      "sokvag": "/dataset",
+      "fcpTs": 1109485297,
+      "traceEventAntal": 22141,
+      "antalLangtasks": 10,
+      "tbtFonsterFCP5s": 104,
+      "totaltCpuArbeteFCP5s": 2404,
+      "layoutTotalTrace": 295,
+      "layoutShiftsTrace": [],
+      "langtasks": [
+        {
+          "start": 1109484625,
+          "dur": 93,
+          "blocking": 43,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 93
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 92
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109484887,
+          "dur": 311,
+          "blocking": 261,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 258
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 41
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "dataset",
+              "funktion": "$RV",
+              "dur": 1
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "dataset",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109485246,
+          "dur": 94,
+          "blocking": 44,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "",
+              "dur": 92
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109487941,
+          "dur": 81,
+          "blocking": 31,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 75
+            },
+            {
+              "namn": "v8.compile",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 30
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109490108,
+          "dur": 115,
+          "blocking": 65,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109490141,
+          "dur": 58,
+          "blocking": 8,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109493729,
+          "dur": 76,
+          "blocking": 26,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "2txkr-37um5i2.js",
+              "funktion": "",
+              "dur": 75
+            },
+            {
+              "namn": "v8.compile",
+              "url": "2txkr-37um5i2.js",
+              "funktion": "",
+              "dur": 2
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109496593,
+          "dur": 69,
+          "blocking": 19,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109496627,
+          "dur": 64,
+          "blocking": 14,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109496694,
+          "dur": 84,
+          "blocking": 34,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "EvaluateScript:service_worker_bin_prod.js",
+          "ms": 75
+        },
+        {
+          "kalla": "v8.compile:service_worker_bin_prod.js",
+          "ms": 30
+        }
+      ],
+      "aggregeratFunktioner": [],
+      "shifts": [],
+      "res": [
+        {
+          "n": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "start": 56,
+          "klar": 119,
+          "typ": "link",
+          "storlek": 51224
+        },
+        {
+          "n": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "start": 58,
+          "klar": 183,
+          "typ": "link",
+          "storlek": 48732
+        },
+        {
+          "n": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+          "start": 58,
+          "klar": 183,
+          "typ": "link",
+          "storlek": 51832
+        },
+        {
+          "n": "2nfdpgrzmuor8.css",
+          "start": 61,
+          "klar": 180,
+          "typ": "link",
+          "storlek": 39392
+        },
+        {
+          "n": "1y8-o7vbgoakh.css",
+          "start": 62,
+          "klar": 181,
+          "typ": "link",
+          "storlek": 1991
+        },
+        {
+          "n": "0el5nt6-nk2y3.js",
+          "start": 62,
+          "klar": 305,
+          "typ": "link",
+          "storlek": 3912
+        },
+        {
+          "n": "11jq0c2_zavac.js",
+          "start": 63,
+          "klar": 306,
+          "typ": "script",
+          "storlek": 8804
+        },
+        {
+          "n": "2feezv-iveko5.js",
+          "start": 63,
+          "klar": 315,
+          "typ": "script",
+          "storlek": 71870
+        },
+        {
+          "n": "turbopack-3or-2iatmqpb2.js",
+          "start": 63,
+          "klar": 310,
+          "typ": "script",
+          "storlek": 4149
+        },
+        {
+          "n": "095w8h_fgc5q_.js",
+          "start": 63,
+          "klar": 314,
+          "typ": "script",
+          "storlek": 43035
+        },
+        {
+          "n": "3fntmmi971322.js",
+          "start": 63,
+          "klar": 292,
+          "typ": "script",
+          "storlek": 3961
+        },
+        {
+          "n": "3gm4g-6wa8q6q.js",
+          "start": 63,
+          "klar": 398,
+          "typ": "script",
+          "storlek": 916
+        },
+        {
+          "n": "2faotogsnwm81.js",
+          "start": 63,
+          "klar": 412,
+          "typ": "script",
+          "storlek": 9532
+        },
+        {
+          "n": "2qnjvou52dgsk.js",
+          "start": 63,
+          "klar": 412,
+          "typ": "script",
+          "storlek": 9121
+        },
+        {
+          "n": "40tp2b4ex93k1.js",
+          "start": 63,
+          "klar": 413,
+          "typ": "script",
+          "storlek": 8987
+        },
+        {
+          "n": "3pst6ss7vt93a.js",
+          "start": 64,
+          "klar": 424,
+          "typ": "script",
+          "storlek": 12484
+        },
+        {
+          "n": "02vzzrgqq_wa8.js",
+          "start": 64,
+          "klar": 525,
+          "typ": "script",
+          "storlek": 47833
+        },
+        {
+          "n": "264uyfejpsomd.js",
+          "start": 64,
+          "klar": 437,
+          "typ": "script",
+          "storlek": 8455
+        },
+        {
+          "n": "3s3dpz13zg9_j.js",
+          "start": 64,
+          "klar": 544,
+          "typ": "script",
+          "storlek": 1570
+        },
+        {
+          "n": "208qlhbwv45x6.js",
+          "start": 64,
+          "klar": 546,
+          "typ": "script",
+          "storlek": 7667
+        },
+        {
+          "n": "1blrp_z17a73e.js",
+          "start": 64,
+          "klar": 545,
+          "typ": "script",
+          "storlek": 17378
+        },
+        {
+          "n": "ikon-192.png",
+          "start": 754,
+          "klar": 792,
+          "typ": "other",
+          "storlek": 309
+        },
+        {
+          "n": "3c20dmqsqgcwk.js",
+          "start": 992,
+          "klar": 1169,
+          "typ": "script",
+          "storlek": 1264
+        },
+        {
+          "n": "1qla1t99hniv6.js",
+          "start": 8844,
+          "klar": 8898,
+          "typ": "script",
+          "storlek": 4174
+        },
+        {
+          "n": "1vzidlm-45ju_.js",
+          "start": 8845,
+          "klar": 8915,
+          "typ": "script",
+          "storlek": 14251
+        },
+        {
+          "n": "26cy_8m3039nw.js",
+          "start": 8855,
+          "klar": 8932,
+          "typ": "script",
+          "storlek": 14711
+        },
+        {
+          "n": "07ggxbfyc05g8.js",
+          "start": 8863,
+          "klar": 8956,
+          "typ": "script",
+          "storlek": 4264
+        },
+        {
+          "n": "27pvldtwov_gc.js",
+          "start": 8863,
+          "klar": 8955,
+          "typ": "script",
+          "storlek": 10535
+        },
+        {
+          "n": "1r-7pos3d050-.js",
+          "start": 8870,
+          "klar": 8962,
+          "typ": "script",
+          "storlek": 8676
+        },
+        {
+          "n": "2txkr-37um5i2.js",
+          "start": 8845,
+          "klar": 9077,
+          "typ": "script",
+          "storlek": 282452
+        }
+      ],
+      "fontsKlara": 19617
+    }
+  ]
+}

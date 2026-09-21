@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { getCourses } from "@/lib/content";
 import { type OrdlistaNyckel } from "@/lib/ordlista";
@@ -330,9 +329,12 @@ export function DatasetIndexVy({
 
   // Sorterbar lista (VÅG 98 F2): ?sortera=bransch|pe-hogst|pe-lagst. Datan
   // serialiseras hit som planta rader — klientkomponenten sorterar den
-  // inbäddade datan, inga nya anrop. Suspense-gränsen krävs av Next för
-  // useSearchParams i statiskt förrenderade sidor; innehållet renderas
-  // ändå server-side (A–Ö-fallet) så fallback:en visas aldrig i praktiken.
+  // inbäddade datan, inga nya anrop. o143 (spår 7): Suspense-gränsen är
+  // BORTTAGEN — DatasetSorteradLista läser ?sortera= ur window.location i
+  // sin effekt i stället för useSearchParams, så ingen gräns krävs och
+  // hydreringen kan aldrig måla ett fallback-fönster som tömmer subträdet
+  // (CLS 0,2367 på långsamma laster, bevis i o143-protokollet §2);
+  // innehållet renderas som förut server-side (A–Ö-fallet).
   const sorterbara = medianer.rader.map((r) => ({
     slug: r.bransch,
     namn: branschNamn(lang, r.bransch),
@@ -372,9 +374,7 @@ export function DatasetIndexVy({
       <section className="mt-8">
         <h2 className="font-serif text-2xl font-bold">{t("dataset.tabell.rubrik")}</h2>
 
-        <Suspense fallback={null}>
-          <DatasetSorteradLista rader={sorterbara} etiketter={etiketter} prefix={prefix} />
-        </Suspense>
+        <DatasetSorteradLista rader={sorterbara} etiketter={etiketter} prefix={prefix} />
 
         <p className="mt-2 text-xs text-muted-foreground">{t("dataset.sortera.notis")}</p>
 

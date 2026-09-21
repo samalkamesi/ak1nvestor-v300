@@ -186,6 +186,14 @@
       "titel": "kvalitetsvåg: vakt-återmätning efter fabrikshelgen — mimosa full-scan (bas 1 772/0) + intern länkcrawl (bas 3 743/0) + rotorsaksfix på fynd",
       "ts": 1789976400000,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o143",
+      "agare": "s7-u1",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: /dataset TBT/LCP-gåtan — giltig ×5-baslinje (o137:s 2 272 vs o139:s 372) + kur om äkta; sidokur manifest-ikon-404 (o128 köpost)",
+      "ts": 1790001635047,
+      "status": "reserverat"
     }
   ]
 }

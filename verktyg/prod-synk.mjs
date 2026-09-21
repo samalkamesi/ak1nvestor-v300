@@ -71,6 +71,9 @@ const MIN_RAM_MB = 2200;
 // deployer i timmar). 30 min = 3 poller; därefter kör bygget med
 // ps-vaktens reserv (850 MB/zcode-barn) som fönsterskydd.
 const FABRIKS_VANTE_MAX_MIN = 30;
+// ROND 152: svältstopps-TVUNGET bygg (tak passerat med aktiv fabrik) kräver
+// även detta fria minne — ps-reserven ensam bevisad otillräcklig (se 2b).
+const TVINGAT_BYGG_MIN_MB = 5000;
 
 function logga(rad) {
   fs.mkdirSync(VAKT, { recursive: true });
@@ -1020,11 +1023,15 @@ async function korSynk() {
   //     nästa poll — sekvens, aldrig kapplöpning mellan kundens två
   //     pipelines (ps-vakten ser bara NU-varande barn; manifestet föder
   //     NYA barn mitt i byggfönstret, det var exakt nattens dödsmekanik).
-  //     SVÄLTSTOPP: kedjande manifest (12 uppgifter = timmar) får ALDRIG
-  //     svälta deployer i evighet — efter FABRIKS_VANTE_MAX_MIN körs
-  //     bygget ändå, skyddat av ps-vaktens rättade reserv (850 MB/barn).
-  //     Väntespäret (första väntetillfället) lever i runtime-filen
-  //     .synk-fabriksvant och nollställs när fabriken vilar.
+    //     SVÄLTSTOPP: kedjande manifest (12 uppgifter = timmar) får ALDRIG
+    //     svälta deployer i evighet — efter FABRIKS_VANTE_MAX_MIN körs
+    //     bygget ändå, skyddat av ps-vaktens rättade reserv (850 MB/barn)
+    //     OCH — ROND 152 — minst TVINGAT_BYGG_MIN_MB fritt minne: fem
+    //     mördade byggen 2026-09-21 18:37–20:11Z (varav två just svält-
+    //     stopps-tvång, 19:27Z + 20:07Z) dog samtliga med kernel-Killed i
+    //     Turbopacks optimeringsfas; ett KALLT bygg (rivet .next) äter mer
+    //     än reserven skyddar. Väntespäret (första väntetillfället) lever
+    //     i runtime-filen .synk-fabriksvant och nollställs när fabriken vilar.
   const fabriken = lasAktivaFabriksManifest(path.join(VAKT, "agentfabrik", "status"));
   const fabrikVanteFil = path.join(VAKT, ".synk-fabriksvant");
   if (fabriken.aktiva > 0) {
@@ -1041,7 +1048,17 @@ async function korSynk() {
       );
       return;
     }
-    logga(`VÄNTAR-FABRIK tak passerat (${vanteMin} min hungrande deploy) — bygger NU med ps-reserven 850 MB/barn som fönsterskydd; fabriken: ${fabriken.aktiva} manifest`);
+    // ROND 152-vaccinet: tvingat bygg vid aktiv fabrik kräver även rejält
+    // fritt minne — annars väntar vi vidare (fabrikens egna 25-min-tak per
+    // uppgift tömmer kön, svälten kan inte bli evig; HEAD förblir orörd).
+    const tvingatRam = ramTillgangligtMB();
+    if (tvingatRam !== null && tvingatRam < TVINGAT_BYGG_MIN_MB) {
+      logga(
+        `VÄNTAR-RAM-TVINGAT: fabrikstak passerat men endast ${tvingatRam} MB fritt (< ${TVINGAT_BYGG_MIN_MB} = kallbyggets topp + fabrikens barn; fem mördade byggen 09-21) — HEAD orört, nytt försök nästa poll`
+      );
+      return;
+    }
+    logga(`VÄNTAR-FABRIK tak passerat (${vanteMin} min hungrande deploy) — bygger NU med ps-reserven 850 MB/barn + ${tvingatRam} MB fritt som fönsterskydd; fabriken: ${fabriken.aktiva} manifest`);
     try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }
   } else {
     try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }

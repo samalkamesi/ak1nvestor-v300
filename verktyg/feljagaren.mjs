@@ -20,10 +20,11 @@
  * FYND ⇒ data/vakten/feljakt-fynd.jsonl + stdout [FELJÄGT ...].
  * Ren jakt ⇒ EN grön rad. Exit 0 alltid.
  * DEPLOYFÖNSTER (rond 44): medan flock /tmp/ak1a-deploy.lock hålls (prodbygg
- * pågår) klassas F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
+ * pågår) klassas F2/F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
  * väntat nere/omstartande (npm ci bygger om node_modules under levande pm2);
  * äkta fel utan aktivt bygg förblir HÖG. Fjärde falsklarmet i familjen
- * (rond 33/39/40/44) kurat i roten.
+ * (rond 33/39/40/44) kurat i roten; femte (F2, o153 s8-u3 05:28:19Z-klassen)
+ * stängde grinden över hela familjen.
  * OMTESTFÖNSTER (rond 50, sjätte familjeobservationen): nätverksfel UTAN
  * aktivt bygg kan vara ett omstart-/lastspikfönster (09:13 UTC: /session
  * timeout 3 min efter pm2-omstart under RAM-svält 503 MB — självläkt på 41 ms
@@ -266,32 +267,50 @@ async function jagaKod() {
 }
 
 // ── F2: PROCESSER ────────────────────────────────────────────────────────────
-function jagaProcesser() {
-  try {
-    const lista = JSON.parse(execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }));
-    for (const p of lista) {
-      if (p.pm2_env?.status !== "online") {
-        bokfor("F2-process", "HÖG", `${p.name} = ${p.pm2_env?.status}`, `restarts: ${p.pm2_env?.restart_time}`);
-      }
-    }
-    const onlines = lista.filter((p) => p.pm2_env?.status === "online").length;
-    if (onlines === lista.length) gron("F2-process", `${onlines}/${lista.length} pm2-processer online`);
-    // Zombie-zcode (mv. många barn = RAM-risk)
-    // Zombie-zcode (mv. många barn = RAM-risk) — "pgrep -c zcode || echo 0"
-    // omgjord (o133): pgrep exit 1 = noll träffar (stdout "0"), övrigt fel
-    // kastas vidare till F2-catchen som förr.
-    const zcode = (() => {
+// Loopkärnan exporterad (o153 s8-u3, jagaVerktygSyntax o80-mönstret): ren och
+// testbar via injicerade beroenden — produktionen kör utan argument.
+// DEPLOYFÖNSTERGRINDEN (o153 s8-u3, 2026-09-21T05:28:19Z-klassen — femte
+// falsklarmet i familjen, rond 33/39/40/44 + detta): pm2-status != online
+// medan /tmp/ak1a-deploy.lock hålls är VÄNTAT (npm ci river node_modules,
+// build + pm2 restart går förbi) ⇒ MEDEL, aldrig HÖG. Beviset: 05:28:19.389Z
+// bokförde F2 HÖG "ak1a = errored" (räddningsbyggets flock-fönster) medan
+// F3 en halv sekund senare (05:28:20.020Z) korrekt MEDEL-de "deploybygg
+// pågår" — samma jakt, samma fönster, olika dom. Äkta fel utan aktivt bygg
+// förblir HÖG oförändrat.
+export function jagaProcesser(beroenden = {}) {
+  const {
+    lasPm2 = () => execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }),
+    raknaZcode = () => {
+      // "pgrep -c zcode || echo 0" omgjord (o133): pgrep exit 1 = noll
+      // träffar (stdout "0"), övrigt fel kastas vidare till F2-catchen.
       try {
         return execFileSync("pgrep", ["-c", "zcode"], { timeout: 10_000, encoding: "utf8" }).trim();
       } catch (e) {
         if (e && e.status === 1) return String(e.stdout ?? "").trim() || "0";
         throw e;
       }
-    })();
-    if (parseInt(zcode) > 40) {
-      bokfor("F2-process", "MEDEL", `${zcode} zcode-barn (RAM-risk)`, `pgrep -c zcode`);
+    },
+    deployPag = deployPagar,
+    bokfor: rapportera = bokfor,
+    gron: gronRapport = gron,
+  } = beroenden;
+  try {
+    const radata = lasPm2();
+    const lista = typeof radata === "string" ? JSON.parse(radata) : radata;
+    for (const p of lista) {
+      if (p.pm2_env?.status !== "online") {
+        if (deployPag()) rapportera("F2-process", "MEDEL", `${p.name} = ${p.pm2_env?.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        else rapportera("F2-process", "HÖG", `${p.name} = ${p.pm2_env?.status}`, `restarts: ${p.pm2_env?.restart_time}`);
+      }
     }
-  } catch (e) { bokfor("F2-process", "MEDEL", "pm2 jlist misslyckades", String(e).slice(0, 80)); }
+    const onlines = lista.filter((p) => p.pm2_env?.status === "online").length;
+    if (onlines === lista.length) gronRapport("F2-process", `${onlines}/${lista.length} pm2-processer online`);
+    // Zombie-zcode (mv. många barn = RAM-risk)
+    const zcode = raknaZcode();
+    if (parseInt(zcode) > 40) {
+      rapportera("F2-process", "MEDEL", `${zcode} zcode-barn (RAM-risk)`, `pgrep -c zcode`);
+    }
+  } catch (e) { rapportera("F2-process", "MEDEL", "pm2 jlist misslyckades", String(e).slice(0, 80)); }
 }
 
 // ── F3: API ──────────────────────────────────────────────────────────────────

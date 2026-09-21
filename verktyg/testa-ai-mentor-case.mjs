@@ -477,6 +477,13 @@ const kedjekomponenter = [
     "svaraLokaltLonsamhetsgrund(q, KURSREGISTER)",
     // Fönster 29 (s6-u1, _s6u1o29-): kemisektor — 73:e motorn, FÖRE marknadsrytm (SIST).
     "svaraLokaltKemisektor(q, KURSREGISTER)",
+    // Fönster 31 (manifest auto-s6-1789965330060): stålsektor (s6-u1) +
+    // case-praktik (s6-u2) + beteendefallor (s6-u3) — dokumenterade här av
+    // s6-u2 (komponentlistan följer kedjan; kedjetestets G-fall äger
+    // ordningen; konvergerat efter fönstrets git-restore-race).
+    "svaraLokaltStalsektor(q, KURSREGISTER)",
+    "svaraLokaltCasepraktik(q, KURSREGISTER)",
+    "svaraLokaltBeteendefallor(q, KURSREGISTER)",
     "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
@@ -521,7 +528,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 73 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 76 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

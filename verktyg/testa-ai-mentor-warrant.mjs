@@ -621,7 +621,10 @@ const GAMLA = [
     // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): 464→470 — spår 5:s omgång 23
     // lämnade konstanten efterföljande (KVD-fyndet kvarstår: hårdkodade
     // registerlägen åldras med varje rebake; basotestet E01 förblir grinden).
-    KURSREGISTER.length === 476,
+    // Fönster 31 (s6-u3, _s6u3o31-): 476→483 — spår 5:s omgång 25 (2026-09-21:
+    // bf-17/od-09/kt-09 479→482 + se-23 stålsektorn 482→483) växte registret;
+    // E01-grunden (registrets äkthet) oförändrad — konstanten följer registret.
+    KURSREGISTER.length === 483,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -693,7 +696,10 @@ const GAMLA = [
   // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
   "svaraLokaltVolatilitetsmekanik",
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
-    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltMarknadsrytm",];
+    // Fönster 31-harmonisering (s6-u3, _s6u3o31-): fönstrets tre nya komponenter i
+    // widgetordning — u1 stålsektor (74:e) · u2 casepraktik (75:e) · u3 beteendefallor
+    // (76:e) — FÖRE marknadsrytm (deras SIST-deklaration). Idempotent.
+    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltMarknadsrytm",];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");
@@ -711,7 +717,7 @@ const GAMLA = [
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
     // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
   // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
-  const kanda = new Set([...KOMPONENTER, "svaraLokaltKemisektor", "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKemisektor", "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender", "svaraLokaltKreditdjup", "svaraLokaltSektordjup"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

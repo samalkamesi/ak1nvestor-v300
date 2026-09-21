@@ -1,0 +1,333 @@
+{
+  "datum": "2026-09-20T15:18:29.837Z",
+  "bas": "http://localhost:3000",
+  "throttle": false,
+  "spårMs": 12000,
+  "sidor": [
+    {
+      "sokvag": "/en/blogg",
+      "fcpTs": 1024786915,
+      "traceEventAntal": 25186,
+      "antalLangtasks": 8,
+      "tbtFonsterFCP5s": 326,
+      "totaltCpuArbeteFCP5s": 2093,
+      "tbtHelTrace": 417,
+      "langtasks": [
+        {
+          "start": 1024786403,
+          "dur": 87,
+          "blocking": 37,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 86
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 85
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024786682,
+          "dur": 65,
+          "blocking": 15,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 65
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "blogg",
+              "funktion": "",
+              "dur": 64
+            },
+            {
+              "namn": "v8.compile",
+              "url": "blogg",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024786791,
+          "dur": 74,
+          "blocking": 24,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 51
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "blogg",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024786927,
+          "dur": 76,
+          "blocking": 26,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 73
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024787145,
+          "dur": 161,
+          "blocking": 111,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 116
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 19
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 7
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "v8.compile",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024787449,
+          "dur": 229,
+          "blocking": 179,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024789865,
+          "dur": 60,
+          "blocking": 10,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 53
+            },
+            {
+              "namn": "v8.compile",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 20
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 7
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "craw_background.js",
+              "funktion": "window.onload",
+              "dur": 7
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::platformApp",
+              "funktion": "",
+              "dur": 0
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024795329,
+          "dur": 65,
+          "blocking": 15,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "133icfp8p5tbq.js",
+              "funktion": "",
+              "dur": 65
+            },
+            {
+              "namn": "v8.compile",
+              "url": "133icfp8p5tbq.js",
+              "funktion": "",
+              "dur": 4
+            }
+          ],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "Layout:(dokumentet)",
+          "ms": 135
+        },
+        {
+          "kalla": "EvaluateScript:2feezv-iveko5.js",
+          "ms": 73
+        },
+        {
+          "kalla": "EvaluateScript:service_worker_bin_prod.js",
+          "ms": 53
+        },
+        {
+          "kalla": "v8.compile:service_worker_bin_prod.js",
+          "ms": 20
+        },
+        {
+          "kalla": "UpdateLayoutTree:(dokumentet)",
+          "ms": 12
+        },
+        {
+          "kalla": "EventDispatch:(dokumentet)",
+          "ms": 11
+        },
+        {
+          "kalla": "EvaluateScript:sw.js",
+          "ms": 7
+        },
+        {
+          "kalla": "FunctionCall:craw_background.js",
+          "ms": 7
+        },
+        {
+          "kalla": "FunctionCall:2feezv-iveko5.js",
+          "ms": 3
+        },
+        {
+          "kalla": "v8.compile:sw.js",
+          "ms": 1
+        },
+        {
+          "kalla": "FunctionCall:sw.js",
+          "ms": 1
+        },
+        {
+          "kalla": "FunctionCall:extensions::platformApp",
+          "ms": 0
+        }
+      ],
+      "aggregeratFunktioner": []
+    }
+  ]
+}

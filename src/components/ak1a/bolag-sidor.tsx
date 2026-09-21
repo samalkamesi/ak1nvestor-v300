@@ -3,13 +3,15 @@ import Link from "next/link";
 import { branschNamn } from "@/lib/dataset-medianer";
 import type { DatasetMedianRad } from "@/lib/dataset-medianer";
 import type { BolagSida } from "@/lib/bolags-sidor";
+import { lasBolagsSidor } from "@/lib/bolags-sidor";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
 /**
  * BOLAGSSIDORNA (VÅG 149 — B1 i SOKORDSINVENTERING-2026): vyerna för /bolag
- * (index över 100-bolagsuniversumet) och /bolag/[slug] (nyckeltal + avvikelse
- * mot branschmedian + länkar). Svenska först — speglar följer när texterna
- * mognat (samma ordning som dataset-ytans våg 97→98).
+ * (index över bolagsuniversumet — antalet växer med dataleveranserna, o148:
+ * alla tal i vyerna är datadrivna, aldrig hårdkodade) och /bolag/[slug]
+ * (nyckeltal + avvikelse mot branschmedian + länkar). Svenska först —
+ * speglar följer när texterna mognat (samma ordning som dataset-ytans våg 97→98).
  *
  * JURIDIKGRINDEN: vyerna formulerar ALLT som utbildning — "så står bolaget
  * mot branschens median", aldrig "billigt/dyrt/köp/sälj". Avvikelser visas
@@ -321,7 +323,7 @@ export function BolagDetaljVy({
       <p className="mt-6 max-w-3xl leading-relaxed text-muted-foreground">
         Så står {sida.namn} mot branschens median i AK1A:s
         {" "}
-        {medianRad ? `${medianRad.antalBolag}-bolagsuniversum` : "100-bolagsuniversum"}
+        {medianRad ? `${medianRad.antalBolag}-bolagsuniversum` : `${lasBolagsSidor().length}-bolagsuniversum`}
         : varje mätt nyckeltal nedan, med skillnaden mot mittpunkten av
         branschens bolag. Tabellen är ett utbildningsunderlag i att läsa
         nyckeltal — ingen rekommendation.

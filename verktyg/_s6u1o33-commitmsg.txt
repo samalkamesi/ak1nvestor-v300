@@ -1,0 +1,49 @@
+studio: auto s6-u1 banksektorn — AI-Mentorn +1 förhandsfråga (manifest auto-s6-1789999525797, omgång 33, byggare 1/3): 78:e motorn, balansräkningen spegelvänd — se-24 mentorlänkad samma dag den föddes (rs-09-precedensen)
+
+VAL (anspråk disk-först, data/vakten/auto-s6-1789999525797-s6-u1-ansprak.md FÖRE
+byggstart): sond _s6u1o33-sond.mjs (489 kurser, 76 fragor-filer, 179 monster, 111
+mentorlösa) ⇒ se-24-banksektorn — spår 5:s nyaste kurs (s5-u1, 9653dbdd, född
+samma dag) och mentorlös under sina första timmar; u1:s sektorfamiljelinje kemi
+(73:e) → stål (74:e) → bank (78:e). Syskonterritorier (PRIVATE EQUITY, PRAKTISKA
+CASE, kategoristängningarna rp-07/vr-09/kt-10/od-10 m.fl.) lämnades ifred.
+
+KÄRNORDSLÄGE (_s6u1o33-karnord.mjs, 60 kandidater mot 2 322 kärnord i 77 lager):
+det tidiga sektorlagret äger översiktsorden («banksektorn», «bankbolag»,
+«kreditförlust», «kapitaltäckning», «utlåning» — km-040:s översikt) ⇒
+ÖVERSIKT+DJUP-PRECEDENS som se-23/km-045: detta lager äger maskinens begrepp —
+42 kärnord ALLA renta. Under J-fallsjakten kasserades (gränser i TEXT):
+«deposit-beta» → riskmåttsdjupets korta «beta» (fånga frågeordet före detta
+lager; begreppet nås via «inlåningsbetan») · «belåningsgraden» → tav 2 mot
+sektorlagrets «utlåningsgrad».
+
+LEVERANS src/lib/ai-mentor-banksektor-fragor.ts — ETT monster, kursens EGNA
+modelltal: Sveabolån (NII 3 600−800−520 = 2 280, räntenät 2,28 %, franchisen
+1 280 Mkr/år) · räntesvängen (beta 0,4: +1 pp ⇒ +480 = +21 %, 48 öre; −1 pp ⇒
+1 800; +2 pp ⇒ 3 240 = +42 %; nollgolvet) · Kreditia (9,0 %; +150 vänder −250,
+1,7 normalår) · Fondia (NII 1 250; 120→1 200 tiofalt) · tre trappor 0,05/1,0 —
+2,0/6,0 — 0,3/3,0 med LTV-dämpare · riskjusterat 7,0 mot 2,23 % · K/I 40,7/66,7
+(per-kund 400 000 × 4 000 − 50 = 1 550) · 13,75×, CET1 10,0 mot 8,5, ROE 15,1 %,
+utdelningsekvationen 809/409 · protokollets sex frågor + historien. KÄLLMÄRKNING:
+8 registeräkta källor (se-24 + se-19 + ln-01 + ud-09 + vr-02 + st-04 + ma-08 +
+mt-05) + 11 kurslänkar + KÄLLAKTIVERING pc-03-case-swedbank (PRAKTISKA CASE
+11 → 10 lösa). Widget: 78:e motorn, efter kategoristängning, FÖRE marknadsrytm
+(deras SIST-deklaration).
+
+REGRESSIONSTEST verktyg/testa-ai-mentor-banksektor.mjs: 46 PASS 0 FAIL (A–L:
+kanonisk+flerkälla, MOTORDEFS-position, 12 varianter, determinism, D01–D21
+maskinell aritmetik, 19 ingångar, 16 null-gränser, juridikgrind, 18 antistöld,
+ägar-invariant LIVE genom 78 motorer, kärnordsdisjunktion 0 kollisioner,
+widget-synk). KEDJETESTET 314 PASS 0 FAIL (207 monsters, banksektorn=1).
+
+RACE-HANTERING (öppet bokförd i worklog): syskonen u2 (notlasning) och u3
+(nyfodda) wireade samma uncommittade chat-widget under mitt fönster; deras
+moduler är bevisat fungerande på disk (tsc 0 + kedjetest 314 PASS inklusive
+dem). För TRÄDHELHET inkluderas deras två modul-filer i denna commit — en
+widget-commit utan dem hade givit hängande importer som dödar prod-synkens
+nästa bygge. Deras kvitto, testfiler och worklog-rader förblir deras egna
+leveranser (fönster 30/31:s konvergens-precedens).
+
+tsc 0 via projektbinär · R2 orörd (inga priser/tier/publicering) · data/blogg/
+(live) orörd · INGET bygge (prod-synken äger).
+
+LEVERANS: src/lib/ai-mentor-banksektor-fragor.ts, verktyg/testa-ai-mentor-banksektor.mjs, verktyg/_s6u1o33-sond.mjs, verktyg/_s6u1o33-karnord.mjs, data/vakten/auto-s6-1789999525797-s6-u1-ansprak.md (+ wireing src/components/ak1a/chat-widget.tsx, verktyg/testa-ai-mentor-kedja.mjs, worklog.md; syskonmodulerna ai-mentor-notlasning-fragor.ts + ai-mentor-nyfodda-fragor.ts enbart för trädhelhet)

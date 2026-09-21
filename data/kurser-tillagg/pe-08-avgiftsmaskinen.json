@@ -1,0 +1,152 @@
+{
+  "slug": "pe-08-avgiftsmaskinen",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Avgiftsmaskinen — 2/20, tröskeln och trappan som delar vinsten",
+  "summary": "PRIVATE EQUITY-familjens åttonde steg öppnar avgiftsavtalet som egen maskin: det fasta hjulet (två procent per år) och resultathjulet (tjugo procent av vinsten över tröskeln). Sonden mot 483 kurser visar familjens vita fläck: waterfall och 2/20 ägs av ingen kurs, fyra syskon nämner carried interest i förbifart utan att äga aritmetiken. Kursen bygger en påhittad fond, Nordisk Kurs I, och följer 1 000 miljoner kronor genom fördelningstrappan: tröskel 400, uppfångst 100, återstående 200 delade 160 till kapitalförvaltaren och 40 till fondförvaltaren — utfall 1 560 respektive 140, exakt tjugo procent av vinsten. Därefter maskinens baksidor: avgiftsbördan 160 vid plant läge (återbetalning 840, minus 16 procent), förvaltarens totala 240 och återbetalningsmekanismens 40 när sena år slår till. Allt är utbildning i avtalsläsning med påhittade tal, inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "why": "Familjens sju första steg vrider på vad fonden gör: fondformen (pe-01), realiseringsmekaniken (pe-02), förvärvsmaskinen (pe-03), den privata ägarsidan (pe-04), andrahandsmarknaden (pe-05), J-kurvan och capital calls (pe-06) och co-investeringen (pe-07). Åttonde steget vrider på vad fonden kostar: avtalet mellan kapitalförvaltaren (LP) och fondförvaltaren (GP) är en kassaflödesmaskin med egen aritmetik — en fast komponent som löper oavsett resultat och en resultatkopplad komponent med tröskel, uppfångst och återbetalning. Börsbolagets kostnadstrappa ägs av ib-05; denna kurs äger fondens avgiftsavtal som artefakt: fee, hurdle, catch-up, waterfall och clawback. Skillnaden mellan tjugo procent av bruttovinsten och tjugofem procent av kapitalförvaltarens nettovinst är inte en detalj — det är maskinens hela poäng, och den syns först när trappan räknas steg för steg.",
+  "learn": "Avgiftsaritmetiken: 2 procent av 1 000 = 20 per år, 160 över åtta år — 16 procent av förbandet även vid plant resultat · Plant läge: 1 000 − 160 = 840, alltså minus 16 procent utan en enda förlustpost · Trappan: kapitalåter 1 000, tröskel 400, uppfångst 100, resten 200 delade 160/40 · Fondförvaltarens carry 140 = exakt 20 procent av vinsten 700 — uppfångstens mening · Kapitalförvaltarens utfall 1 560 = 56,0 procent = 7,7 procent per år i sex år · Förvaltarens totala intäkter 240 = 24 procent av förbandet; 140 av kapitalförvaltarens netto 560 = 25,0 procent · Tröskel med ränta på ränta: 1,08 upphöjt till 5 = 1,4693, alltså 469 mot 400 vid enkel ränta · Återbetalningsmekaniken: 20 procent av 500 = 100, återbetalning 140 − 100 = 40",
+  "history": {
+    "origin": "Den institutionella riskkapitalismen föddes 1946 med den amerikanska fonden American Research and Development: externa kapitalplacerare lade pengar i en korg av unga bolag och en förvaltare fick betalt för arbetet. Avgiftsidén var blygsam men principen fanns från början — förvaltaren betalas två gånger: för att förvalta (en fast andel) och för att lyckas (en andel av vinsten). Maskinen var uppfunnen; resten av historien är förhandlingarna om den.",
+    "evolution": "Köpbolagsvågen på 1980-talet gjorde två procent i fast avgift och tjugo procent i vinstandel till branschstandard — formeln 2/20 blev branschens mest citerade siffra. Kapitalförvaltarna svarade under 1990-talet med motvikter: tröskeln (LP:s avkastning före carry), uppfångsten (GP:s väg tillbaka till tjugo procent), återbetalningsmekanismen (clawback vid sena förluster) och fördelningstrappans två huvudvarianter — fonden som helhet (europeisk) eller affär för affär (amerikansk). Varje motvikt föddes ur en lärdom om vad som hände när den saknades.",
+    "modern": "I 2020-talets marknad förhandlas formeln öppet: klasser med 1,5 procent och 15 procent finns vid sidan av 2/20, co-investeringar utan avgift (pe-07:s territorium) används som lojalitetsvaluta, och trappans utförning — tröskelns beräkningssätt, uppfångstens tak, spärrkontots storlek — står i varje prospekt. Samtidigt har avgiftsmaskinens aritmetik blivit en fråga för alla kapitalförvaltare: mellan indexfondens någon tusendel och buyout-fondens trappa ligger en skala av konstruktioner vars gemensamma nämnare är kursens kärna — fasta kostnader är säkra, resultatandelar är det inte."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "2/20 — det fasta hjulet och resultathjulet", "minutes": 4 },
+    { "num": 2, "title": "Tröskeln — kapitalförvaltarens åtta procent före första carrykronan", "minutes": 4 },
+    { "num": 3, "title": "Uppfångsten — vägen tillbaka till tjugo procent", "minutes": 4 },
+    { "num": 4, "title": "Trappan — fyra steg som delar 700 miljoner", "minutes": 4 },
+    { "num": 5, "title": "Återbetalningsmekaniken — när sena år slår till", "minutes": 4 },
+    { "num": 6, "title": "Avgiftsbördans aritmetik — plant läge och verklig andel", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch lärde en generation fråga vad som står emot avkastningen: avgiften är viss, förvaltarens överavkastning är den inte. Hans räkneexempel om aktiva fonder — att en fast avgift äter marginalen på decennier — gäller dubbelt i en konstruktion med både fast hjul och resultathjul: det fasta hjulet betalar maskinen även året då resultathjulet står stilla. Kursens plant läge är Lynch-läxan i fondformat: minus 16 procent utan en enda misslyckad affär, enbart maskinens friktion.",
+  "grahamSection": "Benjamin Grahams fondkapitel handlar omkostnadernas tysta erövring: avgifter tas ut säkert och resultatet levereras osäkert, och på lång sikt äter skillnaden en stor del av den oberäkneliga delen. Hans försiktighetsprincip — hellre räkna på det dåliga än det goda — blir här en trappa: räkna först på plant läge, sedan på tröskelns underkännande, och betrakta carryn först därefter. Grahams läsare frågar inte vad fonden kan tjäna utan vad som är kontrakterat — frågan denna kurs svarar med siffror.",
+  "ak1Section": "I AK1A:s metodik är avgiftsavtalet en kassaflödesprognos i miniatyr: den fasta komponenten är en säker utgiftsström, carryn en optionell sådan, och trappan en utdelningsordning mellan två fordringsägare — kapital och arbete — vars prioritet är noggrant definierad i varje steg. Kursen tränar momentet i fem dimensioner: aritmetiken är grunden, avtalsläsningen hantverket, incitamentfrågan beteendedelen, jämförelsen mellan trappvarianter strukturen och plantlägesräkningen riskmåttet. Fem tidshorisonter samma sak: på ett år syns fee:n, på en fondcykel syns trappan, på flera fonder syns maskinens vikt i hela portföljen.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "2/20 — det fasta hjulet och resultathjulet",
+      "intro": "Avgiftsavtalet har två hjul som snurrar av olika skäl: det fasta hjulet löper på förbandet år efter år oavsett resultat, och resultathjulet kopplas in först när trappan nått vinst. Detta kapitel bygger exempelfonden och räknar båda hjulen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempelfond Nordisk Kurs I (påhittad, liksom alla tal i kursen) har ett förband på 1 000 miljoner kronor från kapitalförvaltare (LP) och en fondförvaltare (GP) med avtalet 2/20: två procent fast avgift per år och tjugo procent av vinsten över en tröskel. Det fasta hjulet först: 2 procent av 1 000 = 20 miljoner per år — och avgiften beräknas på förbandet, inte på investerat kapital. Skillnaden är substantiell under uppbyggnadsåren: om fonden år ett investerat 800 av sina 1 000 är avgiften ändå 20 (förbandet), medan en avgift på investerat kapital hade varit 800 × 2 procent = 16. Över löptiden — antag åtta år med helt betalt förband — summerar det fasta hjulet 8 × 20 = 160 miljoner, alltså 16 procent av förbandet, och det oavsett om fonden tjänar eller förlorar. Resultathjulet: tjugo procent av vinsten, men först efter att trappan passerat kapitalåterbetalning och tröskel — trappan som kapitel fyra räknar steg för steg. Maskinens bothjälp är just detta: det ena hjulet garanterar drift, det andra belönar utfall, och avtalets hela konstruktion handlar om i vilken ordning vems pengar delas ut."
+        },
+        {
+          "type": "definition",
+          "content": "Avgiftsavtalets fem byggstenar: fast avgift (fee) — årlig procent på förbandet eller förvaltat kapital, löper oavsett resultat · vinstandel (carried interest) — andel av vinsten, utbetald enligt trappan · tröskel (hurdle) — den avkastning kapitalförvaltarna först ska ha innan vinstandelen aktiveras · uppfångst (catch-up) — mekanism som efter tröskeln ger fondförvaltaren en större andel tills tjugo procent av hela vinsten är nådd · återbetalning (clawback) — skyldighet att återbetala för mycket utbetald vinstandel när sena år förändrar totalsumman."
+        },
+        {
+          "type": "insight",
+          "content": "Två hjul, två risker: det fasta hjulet är kapitalförvaltarens säkra kostnad och fondförvaltarens säkra intäkt — resultathjulet är osäkert för båda. Därför förhandlas allt utom proportionaliteten: tröskelns höjd, uppfångstens tak, spärrkontot, trappans utförning."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tröskeln — kapitalförvaltarens åtta procent före första carrykronan",
+      "intro": "Tröskeln är kapitalförvaltarnas försvar: innan vinstandelen aktiveras ska de ha en avkastning som svarar mot risken att låsa kapital i en fondcykel. Men trösklar beräknas på två sätt, och skillnaden är miljoner.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nordisk Kurs I har tröskeln åtta procent per år. Fem år in i fonden realiseras portföljen till 1 700 — bruttovinsten 1 700 − 1 000 = 700. Hur stor del av den ska kapitalförvaltarna ha före fondförvaltarens första carrykrona? Med enkel ränta: 5 × 8 procent = 40 procent av insatt kapital, alltså 0,40 × 1 000 = 400 miljoner i prioriterad avkastning. Med ränta på ränta: 1,08 upphöjt till 5 = 1,4693, alltså 46,93 procent — 469 miljoner (avrundat), en skillnad på 69 miljoner till kapitalförvaltarnas fördel bara genom beräkningssättet. Tröskeln fyller en funktion utöver pengarna: den flyttar gränsen för när resultathjulet överhuvudtaget snurrar. En fond vars vinst landar på 300 — under tröskelns 400 — betalar ingen vinstandel alls: hela 300 tillhör kapitalförvaltarna, och fondförvaltarens intäkt de åren är enbart det fasta hjulet. Det är tröskelns tillkännagivande kraft: den gör vinstandelen till en option med lösenpris, och optioner med högt lösenpris löper ofta outnyttjade. Vid prospektets läsuppställning är därför tre rader väsentligare än procentsiffran i rubriken: tröskelns nivå, dess beräkningssätt och vad som händer med den vid delvis realisering."
+        },
+        {
+          "type": "tabell",
+          "content": "Tröskelns räknelära (påhittade tal, vinst 700 på fem år): ENKEL RÄNTA — 5 × 8 procent = 40 procent: 0,40 × 1 000 = 400 · RÄNTA PÅ RÄNTA — 1,08 upphöjt till 5 = 1,4693: 469 · SKILLNADEN — 69 miljoner till kapitalförvaltarna av beräkningssätt allena · UNDER TRÖSKELN — vinst 300: vinstandel noll, hela 300 till kapitalförvaltarna · GRÄNSFALLET — vinst exakt 400: fortfarande noll, tröskeln ska passeraras · LÄRAN — tröskelns beräkningssätt är en förhandlingspost på nivå med procentsiffran: samma åtta procent är inte samma åtta procent."
+        },
+        {
+          "type": "insight",
+          "content": "Tröskeln omvandlar vinstandelen från en skatt till en option: fondförvaltaren äger rätten till tjugo procent över lösenpriset åtta procent — och optionens värde faller med varje år tröskeln beräknas med ränta på ränta."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Uppfångsten — vägen tillbaka till tjugo procent",
+      "intro": "Utan uppfångst skulle tröskeln äta en del av fondförvaltarens tjugo procent för alltid. Uppfångsten mekanismen återställer proportionen — och dess ekvation är trappans mest instruktiva algebra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Antag först att avtalet saknade uppfångst: tröskel 400 betalas först, därefter delas allt återstående 80/20. På vinsten 700 återstår efter tröskeln 300, och fondförvaltarens andel blir 0,20 × 300 = 60 — alltså 8,6 procent av hela vinsten (60 / 700), inte tjugo. Tröskeln hade straffat resultatsidan för att den överhuvudtaget behövdes. Uppfångsten löser det: efter tröskeln tar fondförvaltaren allt — hundra procent av nästa skikt — tills dess andel nått tjugo procent av den sammanlagda vinsten hittills. Algebra: låt X vara uppfångstbeloppet; villkoret är X = 0,20 × (400 + X), som ger 0,8X = 80, alltså X = 100. Kontrollen: fondförvaltarens andel är då 100 av sammanlagda 500 (tröskel 400 plus uppfångst 100) = exakt 20 procent. Kapitel fyrs fulla trappa visar att när allt är utdelat landar fondförvaltaren på 140 av 700 — åter exakt tjugo procent: uppfångstens hela mening är att återställa formeln som tröskeln tillfälligt bröt. Varianterna i prospekt: uppfångst på hundra procent (full), femtio (halv, fondförvaltaren och kapitalförvaltarna delar skiktet) eller ingen — och varje variant har sin egen ekvation med samma fråga: hur många kronor krävs för att tjugo procent ska bli tjugo procent?"
+        },
+        {
+          "type": "tabell",
+          "content": "Uppfångstens ekvation (påhittade tal, tröskel 400, vinst 700): UTAN UPPFÅNGST — fondförvaltarens andel 0,20 × 300 = 60 av 700 = 8,6 procent: tröskeln bröt formeln · MED FULL UPPFÅNGST — X = 0,20 × (400 + X) ger 0,8X = 80 alltså X = 100 · KONTROLLEN — 100 / (400 + 100) = 20,0 procent exakt · HALV UPPFÅNGST — skiktet delas 50/50 tills andeln nås: långsammare väg, samma slutstånd vid full vinst · MENINGEN — återställa tjugo procents formeln så att tröskeln skyddar kapitalförvaltarna utan att förändra resultatsidans proportioner · FALLT — uppfångstbeloppet 100 av vinsten 700 är fondförvaltarens dyraste skikt: hundra procent av dem tilldelas en part som annars tagit tjugo."
+        },
+        {
+          "type": "insight",
+          "content": "Uppfångsten är trappans mest motiverande skikt: varje krona i det delar inte fördelning utan proportioner — och dess ekvation, X = 0,20 × (tröskel + X), är värd att kunna lösa vid prospektets läsning snarare än vid utdelningens."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Trappan — fyra steg som delar 700 miljoner",
+      "intro": "Nu räknas hela trappan: fyra steg i fast ordning — kapitalet först, tröskeln därpå, uppfångsten tredje, delning sist. Ordningen är inte stilfråga; den är hela avtalet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fördelningstrappan (waterfall) för Nordisk Kurs I vid realisationen 1 700 (avgifterna har löpt ur fondens kapital under åren och är alltså redan bogserade ut ur talet — det fasta hjulets friktion studeras i kapitel sex). Steg ett: återbetalning av kapital — kapitalförvaltarna tar först 1 000 och står därmed riskfritt. Steg två: tröskeln — 400 i prioriterad avkastning. Steg tre: uppfångsten — 100 till fondförvaltaren (kapitel tre). Steg fyra: återstår 700 − 400 − 100 = 200, som delas 80/20: 160 till kapitalförvaltarna och 40 till fondförvaltaren. Slutuppräkningen: fondförvaltarens vinstandel 100 + 40 = 140 = 20,0 procent av 700 — kontrollen som hela trappan är byggd för. Kapitalförvaltarna har fått 1 000 + 400 + 160 = 1 560, och 1 560 + 140 = 1 700: trappan stänger mot realisationen exakt. Två trappvarianter lever sida vid sida: den europeiska (fonden som helhet — så räknas kursen) och den amerikanska (affär för affär, där varje lyckad exit kan betala carry långt före fondens totala resultat — det gör återbetalningsmekanismen i nästa kapitel till mer än en fotnot). Läskonsten är ordningen: i en trappa avgör inte procentsatserna utfallet utan sekvensen — samma tjugo procent ger olika utfall beroende på vilka steg som står före det."
+        },
+        {
+          "type": "tabell",
+          "content": "Hela trappan (realisation 1 700, förband 1 000, påhittade tal): STEG ETT — kapital 1 000 till kapitalförvaltarna: riskfria · STEG TVÅ — tröskel 400 (enkel ränta fem år à 8 procent) · STEG TRE — uppfångst 100 till fondförvaltaren · STEG FYRA — resten 200 delas 80/20: 160 till kapitalförvaltarna, 40 till fondförvaltaren · FOND FÖRVALTARENS CARRY — 100 + 40 = 140 = 20,0 procent av 700 exakt · KAPITALFÖRVALTARNAS UTFALL — 1 000 + 400 + 160 = 1 560 · STÄNGNING — 1 560 + 140 = 1 700 · VARIANT — europeisk trappa: fonden som helhet; amerikansk: affär för affär med tidig carry och större återbetalningsvikt."
+        },
+        {
+          "type": "insight",
+          "content": "Trappans grammatik: fördelningen är en kö, inte en procentsats. Den som memorerar ett tal ur avtalet — tjugo procent — och inte kön, äger en procentsats utan en mekanism."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Återbetalningsmekaniken — när sena år slår till",
+      "intro": "Vinstandel som betalats ut kan visa sig för mycket betald: en fond lever i åtta till tio år, och de sista årens förluster skriver om de tidigas vinster. Återbetalningsmekanismen är trappans facit.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nordisk Kurs I realiserade år sex 1 700 — men en post levde kvar, och år åtta backar den med 200: fondens sammanlagda vinst landar på 700 − 200 = 500. Fondförvaltarens rätt enligt formeln: 20 procent av 500 = 100. Utbetalt år sex: 140. Återbetalningsskyldigheten: 140 − 100 = 40 miljoner — och mekanismen som säkrar den är antingen ett spärrkonto (en del av carryn hålls tillbaka, typiskt en femtedel till hälften, tills fonden nått mogenhet) eller en omedelbar återbetalningsskyldighet som i praktiken kräver att motparten fortfarande har kapital. Den amerikanska affär-för-affär-trappan förstorar frågan: hade fonden betalt 20 procent av en tidig exits vinst 300 — alltså 60 — och de kvarvarande åren sedan backat 200, är den justerade rätten 20 procent av netto 100 = 20, och återbetalningen 60 − 20 = 40: samma fyrtio miljoner, men nu utbetalda sex år tidigare till en förvaltare som kanske inte längre sitter på dem. Därför är spärrkontot inte en detalj utan trappans motpartsrisk-hantering — släktskapen med kontrahentriskens mekanik (rk-16) är påtaglig: varje utdelad krona bygger på att motparten kan stå för facit. För kapitalförvaltaren är läskonsten tre rader i prospektet: finns återbetalning, hur stor är spärren, och hur länge."
+        },
+        {
+          "type": "tabell",
+          "content": "Återbetalningens räknelära (påhittade tal): HELFONDEN — vinst 700 betald med carry 140; sena förluster − 200: ny rätt 0,20 × 500 = 100; åter 40 · AFFÄR FÖR AFFÄR — tidig vinst 300 med carry 60; netto efter −200 = 100; rätt 0,20 × 100 = 20; åter 40 — sex år tidigare utbetald · SPÄRRKONTO — typiskt en femtedel till hälften av carryn spärrad till fondens mogenhet · UTAN SPÄRR — återbetalningen blir en fordran på en förvaltare som kanske saknar kapital: kontrahentriskens fråga · TRE PROSPEKTRADER — finns återbetalning, hur stor spärr, hur länge · LÄRAN — trappans sista steg är inte en utdelning utan en rättvisa mellan tidiga och sena år."
+        },
+        {
+          "type": "insight",
+          "content": "Clawback är det enda av avtalets fem byggstenar som flyter bakåt i tiden: den räknar om det förflutna. Därav dess känslighet — och därav att dess trovärdighet står och faller med spärrkontot, inte med formuleringen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Avgiftsbördans aritmetik — plant läge och verklig andel",
+      "intro": "Sista kapitlet vänder på maskinen: vad kostar den när ingenting händer — och vem bär egentligen kostnaden när allt går bra? Två räkneövningar som var och en avslöjar en sanning avgiftsavtalet inte skriver på ett ställe.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Övning ett — plant läge. Antag att Nordisk Kurs I varken tjänar eller förlorar på affärerna: realisationen blir exakt förbandet 1 000. Men det fasta hjulet har under åtta år löpt 8 × 20 = 160, och kapitalförvaltarna tar emot 1 000 − 160 = 840 — minus 16 procent, utan att en enda affär misslyckats. Maskinens friktion är hela förklaringen, och den syns inte i en resultatrikning för att den aldrig var en resultaträkning: den var en avtalspost. Övning två — det goda läget, räknat på netto. Vid vinsten 700 fick kapitalförvaltarna 1 560 och fondförvaltaren 140 i carry plus 100 i avgifter = 240 totalt, alltså 24 procent av förbandet. Men den intressantare kvoten är carryn mot kapitalförvaltarnas nettovinst: deras vinst var 1 560 − 1 000 = 560, och 140 / 560 = 25,0 procent — resultathjulet tog en fjärdedel av det kapitalplacerare faktiskt tjänade, inte de utropade tjugo. J-kurvans första års fördjupning ägs av pe-06; kursens rad i den: efter år ett med fullavgift och ingen exit står fondvärdet 1 000 − 20 = 980, och kurvans hela botten är delvis avgiftsfriktion, inte enbart affärsmisslyckanden. Utmaningen: ta en verklig fonds prospekt (kursen räknar påhittade tal, övningen sker på verkliga) och identifiera de fem byggstenarna med tal — sedan räkna plantläget och nettokvoten. Två tal som prospektet aldrig räknar åt läsaren."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din utmaning: låt trappan vändas. Fond med förband 1 000, tröskel 8 procent enkel ränta på fem år, full uppfångst, 2/20. Räkna fondförvaltarens carry och kapitalförvaltarnas utfall vid realisation (a) 1 400, (b) 1 800 och (c) 1 300 — och notera vid vilken realisation vinstandelen blir noll. Kontrollera varje fall med stängningstestet: kapital plus tröskel plus uppfångst plus delning ska summera till realisationen. Utbildningsövning i trappans mekanik, aldrig vägledning i val av fond eller värdepapper."
+        },
+        {
+          "type": "insight",
+          "content": "Avgiftsmaskinens två sanningar sammanfattade i två kvoter: 160 / 1 000 = 16 procent är priset på att ingenting händer, och 140 / 560 = 25,0 procent är priset på att allt går bra. Prospektet nämner den första aldrig och den andra sällan — båda är läsarens egen aritmetik."
+        }
+      ]
+    }
+  ]
+}

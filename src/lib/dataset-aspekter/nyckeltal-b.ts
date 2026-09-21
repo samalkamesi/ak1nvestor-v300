@@ -3,7 +3,7 @@
  * =================================================================
  * Sex aspektmoduler för /dataset/[bransch]/[aspekt]: fcf-avkastning,
  * egenkapitalmultipl, skuldsattning, omsattning-cagr-5ar, prognos-tillvaxt,
- * resultat-cagr-5ar — statistik ur 100-bolagsuniversumets publika fält.
+ * resultat-cagr-5ar — statistik ur forskningsuniversumets publika fält.
  *
  * GRÄNSDRAGNING (A2-DATASET-KONTRAKT §1, samma som kontraktet och
  * dataset-medianer): PUBLIKT = median/kvartiler/min/max av publika
@@ -127,10 +127,10 @@ const fcfAvkastning = skapaAspekt({
   las: (r) => r.vardering?.fcfYield,
   enhet: "procent",
   beskrivning: (namn) =>
-    `FCF-avkastning inom ${namn}: median och spridning i 100-bolagsuniversumet — kassaflödets råmaterial för utdelningsanalys, med redovisad metod.`,
+    `FCF-avkastning inom ${namn}: median och spridning i forskningsuniversumet — kassaflödets råmaterial för utdelningsanalys, med redovisad metod.`,
   ingress: (namn, s, antal) => {
     if (s.median === null) return ingressUtanData("kassaflödesavkastningen", namn, s.matta, antal);
-    return `Kassaflödesavkastningen visar hur mycket fritt kassaflöde ett bolag genererar per krona börsvärde. Inom ${namn} är medianen ${svProcent(s.median)} och spridningen går från ${svProcent(s.min)} till ${svProcent(s.max)}. Plattformen saknar utdelningsdata helt (0 av 100 bolag i universumet), så du får kassaflödesavkastningen som råmaterial: utdelningar betalas ur det fria kassaflödet, men beslutet om utdelning är styrelsens.`;
+    return `Kassaflödesavkastningen visar hur mycket fritt kassaflöde ett bolag genererar per krona börsvärde. Inom ${namn} är medianen ${svProcent(s.median)} och spridningen går från ${svProcent(s.min)} till ${svProcent(s.max)}. Plattformen saknar utdelningsdata helt (0 mätta bolag i universumet), så du får kassaflödesavkastningen som råmaterial: utdelningar betalas ur det fria kassaflödet, men beslutet om utdelning är styrelsens.`;
   },
   saRaknas: [
     "Ta bolagets fria kassaflöde (FCF): kassaflödet från den löpande verksamheten minus investeringar i verksamheten, ur den senaste räkenskapsperioden.",
@@ -142,7 +142,7 @@ const fcfAvkastning = skapaAspekt({
   saLaserDu: [
     "Högre kassaflödesavkastning betyder mer genererade kontanter per prissatt krona — ett mått på kassaflödesförmåga, inte ett köp- eller säljbeslut.",
     "Negativ kassaflödesavkastning är ett giltigt utfall: bolaget förbrukar kontanter (investeringar större än kassaflödet), vilket är vanligt i tillväxtskeden.",
-    "Plattformen saknar direkt utdelningsdata (0 av 100 bolag) — därför visas kassaflödesavkastningen som råmaterial. Utdelning betalas ur fritt kassaflöde, men utdelningsbeslutet är styrelsens och kan ligga långt under (eller över) kassaflödet.",
+    "Plattformen saknar direkt utdelningsdata (0 mätta bolag) — därför visas kassaflödesavkastningen som råmaterial. Utdelning betalas ur fritt kassaflöde, men utdelningsbeslutet är styrelsens och kan ligga långt under (eller över) kassaflödet.",
     "Jämför inom branschen, inte mellan branscher: kapitalintensitet och investeringscykler gör talen olika jämförbara.",
     "Läs n: färre mätta bolag ger en skörare median, och spridningen P25–P75 talar om hur sammanhållen branschens kärna är.",
   ],

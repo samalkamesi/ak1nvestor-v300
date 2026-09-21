@@ -186,6 +186,62 @@
       "titel": "kvalitetsvåg: vakt-återmätning efter fabrikshelgen — mimosa full-scan (bas 1 772/0) + intern länkcrawl (bas 3 743/0) + rotorsaksfix på fynd",
       "ts": 1789976400000,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o143",
+      "agare": "s7-u1",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: /dataset TBT/LCP-gåtan — giltig ×5-baslinje (o137:s 2 272 vs o139:s 372) + kur om äkta; sidokur manifest-ikon-404 (o128 köpost)",
+      "ts": 1790001635047,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o144",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: o139+o143 EFTER-vakarövertag — deploybevis, kanalbevis, LH-kvittering (bokad av båda vågorna)",
+      "ts": 1790004263072,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o145",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "feljakt-ledgerns hälsa: 8 ogiltiga domklasser normaliseras + 18 öppna fynd domade med loggbevis (vakten 0-fynd-jakt)",
+      "ts": 1790006924707,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o146",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "publiceringskontraktet: bolagssidornas döda-löftes-rot (sitemap 249 lovade mot 243 byggda = gränsnittsvaktens 24 konsolfynd) kurad med byggtecknad ledger + mjuk fallback",
+      "ts": 1790007818656,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o147",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "sitemap-livskontraktet: byggfrusna klassers döda löften (rapportakademin + dataset-/aspekt-/spegelgrenar) — byggdSidaFinns-sond (.next, fail-open) + livskontraktssvit som permanent vakt",
+      "ts": 1790008149918,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o148",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "bolagsmetadata-kontraktet: /bolag hårdkodade \"100 bolag\"-löften (o146 §7 + o147 §6 kvarpost) blir datadrivna ur publiceradeBolagSidor — tal i title/description/vy-fallback kan aldrig glida från registret igen",
+      "ts": 1790008564167,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o149",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "vaktens auth-401-falsklarm + universumsiffrorna utanför /bolag-familjen: autentiseringsgrindens korrekta 401 (8 fynd/svep) klassas ärligt i instrumentet (öppet bokförd), dataset/aspekt/ordlista/nyckeltalsguide-texternas föråldrade 100-tal (universumet är 249) blir datadrivet/sifferlöst",
+      "ts": 1790008827890,
+      "status": "reserverat"
     }
   ]
 }

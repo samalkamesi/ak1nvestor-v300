@@ -1,7 +1,7 @@
 /**
  * DATASET-ASPEKTER — KONTRAKT för /dataset/[bransch]/[aspekt] (VÅG 150, fas A)
  * =====================================================================
- * Programmatiska long-tail-sidor ur 100-bolagsuniversumets publika nyckeltal
+ * Programmatiska long-tail-sidor ur forskningsuniversumets publika nyckeltal
  * (underlag: data/forskning/sokord/bransch-teman.md, våg 138 S7). Fas A =
  * KONTRAKTSSÄKRA teman (nyckeltalsdjup + land + värderingshub). Tema 2/3/5
  * i underlaget (AKM2-profil, kategoripoäng, lägesbild/vågdynamik) publicerar

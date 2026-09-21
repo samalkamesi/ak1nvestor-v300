@@ -1,0 +1,176 @@
+{
+  "slug": "se-24-banksektorn",
+  "category": "SEKTORANALYS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Banksektorn — räntenätet, inlåningsfranchisen och kreditförlustens klocka",
+  "summary": "SEKTORANALYS-familjens tjugofjärde steg öppnar banksektorn — den sektor som bär en fjärdedel av den svenska börsen och som ändå står kurslös i registrets djuplager: sonden (483 kurser vid sondtillfället) ger noll kursägare på maskinens kärnord — nätlån, utlåningsgrad, inlåningsmarginal, K/I-tal och bankräkning samtliga oskrivna — medan km-040-banksektorn är en tre meningar lång AKM1-översikt, se-06-finanssektorn har försäkringslut och pc-03-case-swedbank äger ett enstaka verkligt case. Kursen äger maskinen själv, genom tre påhittade banker: Sveabolån Bank AB (100 miljarder bolån till 3,60 procent, finansierade till 80 procent med trög inlåning till 1,00 procent) där räntenätet 2,28 procent bär en avkastning på eget kapital om 15,1 procent och där en reporäntehöjning på en procentenhet med inlåningens beta 0,4 svänger nätlånsintäkten plus 21 procent; Kreditia Bank AB (konsumtionskreditnischbank med 12 procents utlåningsränta och kreditförlust som tredubblas från 2 till 6 procent i kris) som visar det breda räntenätets pris; och Fondia Bank AB (bolagsbank med fastighetsbok) där förlusttrappan är tiofalt djupare än bolånebokens. Därutöver inlåningsfranchisen som byteskostnadsmoat (mt-05:s mekanik i pengars skepnad), K/I-talets två världar 40,7 mot 66,7 procent, kapitaltäckningens reglerade hävstång (13,75 kronor utlåning per egen-kapitalkrona, kärnprimärkapitalrelationen som tak) och utdelningsekvationen där banken väljer mellan att växa och att dela ut. Protokollets sex frågor till en bankräkning samlar verktygen. Pedagogisk utbildning om mekanismer — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "SEKTORANALYS-familjens 23 första steg har täckt metoden, skogen, rederiet, försäkringen, gruvan, kemin, byggentreprenaden och stålet — men inte den sektor som för en svensk analytiker är den tyngsta av alla: bankerna. Sondens belägg: «nätlån» 0 kursägare, «utlåningsgrad» 0, «inlåningsmarginal» 0, «K/I-tal» 0, «bankräkning» 0 — och grannarna rör sig runt ytan: km-040-banksektorn är en översiktskurs på tre meningar (bank-specifik AKM1, skuld normalt, kapitaltäckning) utan maskinmekanik, se-06-finanssektorn äger finansöverblicken med försäkringslut, se-19-forsakringssektorn äger spegelbildens värld (combined ratio, floaten, solvens — balansräkningens försäkringssida), ma-05-kreditpremien äger kreditriskens marknadspris och st-04-stabilitet-genom-kreditcykeln äger cykeln ur låntagarens perspektiv, medan rk-15 och vr-02 äger cykelrisk och normalisering som portföljinstrument och lånar bankerna som exempel. Ingen kurs äger bankens egen ekonomi: räntenätet och dess beta-hävstång, inlåningsfranchisen, kreditförlusttrappornas tre böcker, K/I-talet och den reglerade hävstångens ekvation. Kursen fäller ihop familjens trådar — se-19:s finansbalansräkning, ma-08:s räntetransmission till bostaden, vr-02:s normalisering — i sektorn där de alla möts: pengarnas eget hus.",
+  "learn": "Läsa bankens spegelvända balansräkning: Sveabolåns 100 miljarder utlåning till 3,60 procent bärs av 80 miljarder inlåning till 1,00 procent och 20 miljarder penningmarknad till 2,60 — nätlånsintäkten 3 600 minus 800 minus 520 = 2 280 miljoner, räntenätet 2,28 procent, och inlåningsandelen 80 procent är franchisen (lönekontot byts sällan — mt-05:s byteskostnad i pengars skepnad). Räkna räntesvängens hävstång: reporäntan plus en procentenhet ger bolåneintäkten plus 1 000 miljoner men inlåningskostnaden bara plus 320 (beta 0,4) och marknaden plus 200 — kvar behålls 480 miljoner, räntenätet svänger 21 procent; betan är bankens viktigaste envärde. Känna kreditförlustens tre trappor: bolåneboken går från 0,05 till 1,0 procent i en djupkris (tjugofaldigt från bottennivå, med pantens belåningsgrad som dämpare), konsumtionsboken från 2,0 till 6,0 (trefaldigt på hög nivå, som Kreditias rörelseresultat 150 som vänder till minus 250), företagsboken från 0,3 till 3,0 (tiofalt, som Fondias fastighetsbok) — och det riskjusterade räntenätet (nätlånsintäkt minus normalförlust) som jämför 7,0 mot 2,23 procent över nätmarginalens yta. Väga K/I-talets två världar: 1 100 kostnad mot 2 700 intäkt = 40,7 procent för filialbanken, 700 mot 1 050 = 66,7 för nischbanken — per kund 2 750 kronor mot 2 800 men nätlånet 5 700 mot 3 600. Förstå den reglerade hävstången: 8 miljarder eget kapital på 80 miljarder riskviktade tillgångar = kärnprimärkapitalrelation 10,0 procent mot ett krav på 8,5, balansomslutningens 13,75-krona-hävstång och utdelningsekvationen — vinsten 1 209 miljoner räcker till 809 miljoner utdelning vid 5 procent riskviktstillväxt men bara 409 vid 10. Slutligen protokollets sex frågor: finansieringsmixen, betan, förlusttrapporna, K/I-talet, kapitalbufferten och cykelläget på provisionscykeln.",
+  "history": {
+    "origin": "Banken föddes som sedelns moder — och kollapsade som den. Stockholm Banco öppnade 1661 under Johan Palmstruch och gav ut Europas första officiella sedlar, löften på kopparmynt som var tunga att bära; sedlarna trycktes snart fler än mynten de lovade, banken störtade 1664 och Palmstruch fick dödsdom som lindrades till fängelse. Ur spillrorna grundades 1668 Riksbanken — världens äldsta centralbank — och läxan blev permanent: bankens kärna är inte valvet utan löftet, och låntagarens förtroende är den tillgång som inte bokförs.",
+    "evolution": "1800-talet byggde nätverket: sparbankerna från 1820-talet samlade bygdens små inlåning, affärsbankerna finansierade industriens järnvägar och sågverk. 1900-talet lärde sektorn cykeln på det svåraste sättet — djupast i Sverige 1991–1993, när fastighetsbubblan sprack och kreditförlusterna åt årtionden av vinster: offentligt stöd på några procent av landets BNP, banker förstatligade och tusentals tjänster borta. Världen svarade med regelverk: Basel I 1988 gav kapitalet ett första gemensamt mått, Basel III efter 2008-krisen bandskärpte det med buffertar och hävstångstak — kapitaltäckningen blev sektorns ekvation, inte dess val.",
+    "modern": "2020-talets bankhistoria skrivs av tre krafter. Negativa reporäntor 2015–2021 pressade räntenäten mot golvet — inlåningsräntan kan inte falla under noll medan utlåningsräntan följde styrräntan ned, och betan som är bankens vän i stigande ränta blev dess fiende i fallande. Räntesvängningen från 2022 öppnade räntenäten igen och visade mekanismen i realtid. Och digitaliseringen har delat sektorn i två världar: filiallösa nischbanker med K/I-tal på väg nedåt och nätbanker vars app blivit distributionskanalen — samtidigt som öppet bankande låter kunden flytta kontot med några klick, den första verkliga erosionen av inlåningsfranchisen på 350 år."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Balansräkningen spegelvänd — nätlånet och räntenätet",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Räntesvängen — inlåningens beta och räntenätets hävstång",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Kreditförlustens klocka — tre böcker, tre trappor",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "K/I-talet — kostnadsbasen och skalan",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Kapitaltäckning — den reglerade hävstången",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — sex frågor till en bankräkning",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch placerade bankerna i sin kategori av trägna, långsamma tillväxtare — och hans cykelvarning passar sektorn bättre än någon annan, fast spegelvänt: cykliska bolag ser billigast ut precis när de är dyrast, och banken ser som dyrast ut (högst avkastning på eget kapital, högst värderingstal) när kreditförlusterna bottnar — medan den som ser värst ut på papperet, med förlustnivåer på topp och resultat i botten, ofta läses vid cykelns vändning. Hans handregel att räkna på var i cykeln siffrorna läses, inte på multipeln själv, blir här provisionscykeln: frågan är inte vad förlustnivån är utan vad normalåret bär. Lynch påminde också att tråkiga affärer i traditionella branscher ofta är de bästa på lång sikt — en inlåningsfranchise vars konton bytts sällan sedan 1800-talet är trägnet självt.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal översätts i banken till balansräkningens buffertar — men med hans egen varning om att bokfört värde är en uppskattning, inte ett faktum. Bankens eget kapital är 8 miljarder i exemplet, men den verkliga frågan är om utlåningsbokens värde håller: reserverna för kreditförlust är uppskattningar om framtida förluster, och på en hävstång om 13,75 kronor per egen-kapitalkrona äter en felberäknad förlustnivå bufferten många gånger snabbare än i ett vanligt bolag. Hans instrument P/B (v05-kursens tal) blir här sektorns huvudnyckeltal — men P/B under 1 är bara en resekupong om kapitalet är äkta: säkerhetsmarginalen sitter i kapitaltäckningens buffert över kravet och i reservnivåns ärlighet, inte i multipeln ensam.",
+  "ak1Section": "I AK1A:s metodik är banksektorn standardfallet för normalisering över kreditcykeln: fem tidshorisonter spänner cykeln, och värderingen läggs på normalårets förlustnivå via vr-02 snarare än på senaste kvartalets bottennivå — kreditförlustcykeln (rk-15:s risk) och räntecykeln (ma-03:s realränta) är bankens två väderkurvor. AKM1:s bankintegration (km-040) sammanfattas i en mening: skulden är normal — hävstången är affären, inte varningen — och modellens fasta nivåer byts mot sektorns egna mått: räntenät, beta, K/I och kapitaltäckning. Pedagogiken är som alltid utbildning om mekanismer; placeringsbesluten lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Balansräkningen spegelvänd — nätlånet och räntenätet",
+      "intro": "I ett vanligt bolag är inlåning skuld och utlåning främmande. I banken är allt spegelvänt: inlåningen är råvaran, utlåningen är produkten, och vinsten föds i springan mellan räntorna — nätlånet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens första exempelbank Sveabolån Bank AB (påhittad för räkningen) är en ren bolånebank: 100 miljarder kronor utlåning till hushåll till en genomsnittlig ränta av 3,60 procent — ränteinkomsterna blir 3 600 miljoner per år. Finansieringen bärs av 80 miljarder hushållsinlåning till 1,00 procent (800 miljoner i räntekostnad) och 20 miljarder penningmarknadsfinansiering till 2,60 procent (520 miljoner). Räkna springan: 3 600 minus 800 minus 520 = 2 280 miljoner i nätlånsintäkt — räntenätet 2,28 procent av utlåningen. Inlåningsandelen, 80 procent, är hela hemligheten: lönekontot är marknadens trögaste kontoflytt (mt-05:s byteskostnad i pengars skepnad — autogiron, appen, hemlånet sitter fast), och därför betalar banken 1,00 procent för pengar som marknaden prissätter till 2,60. Skillnaden, 1,60 procentenheter på 80 miljarder, är 1 280 miljoner om året — inlåningsfranchisens värde i en enda rad. Jämför grannarna: se-19-forsakringssektorn äger finansbalansräkningens andra sida, där försäkringsbolaget får floaten att arbeta i portföljen; här arbetar inlåningen i räntespringan. Am-01-likviditet-och-spread äger spridens mikrovärld; detta kapitel äger vad spriden tjänar på. Ma-05-kreditpremien äger kreditriskens pris på marknaden; här prissätter banken samma risk i utlåningsräntan själv."
+        },
+        {
+          "type": "definition",
+          "content": "Nätlånsintäkt (NII): ränteinkomster minus räntekostnader — bankens bruttomarginal. Räntenät: nätlånsintäkten dividerat med räntebärande tillgångar, i Sveabolån 2 280 miljoner på 100 miljarder = 2,28 procent. Inlåningsfranchise: den tröga inlåning som låter banken betala under marknadsräntan; dess värde är skillnaden mot alternativ finansiering, här 1,60 procentenheter på 80 miljarder = 1 280 miljoner om året. Deposit-beta: hur många procentenheter inlåningsräntan rör sig när styrräntan rör en procentenhet (kapitel två)."
+        },
+        {
+          "type": "insight",
+          "content": "Ett vanligt bolag tjänar på marginalen över kostnaden; banken tjänar på springan mellan två räntor den själv förhandlar — den ena med miljontals tröga lönekonton, den andra med en penningmarknad som inte glömmer ett ögonblick. Inlåningsandelen i finansieringen är därför bankens första identitetsrad."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Räntesvängen — inlåningens beta och räntenätets hävstång",
+      "intro": "Reporäntan rör sig och bankens resultat svänger — men inte en-till-en. Bolåneräntan följer styrräntan direkt, inlåningsräntan bara delvis, och skillnaden är en hävstång som ingen industri känner: deposit-betan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveabolån igen: reporäntan stiger en procentenhet. Bolåneräntan följer — 3,60 blir 4,60 procent, ränteinkomsten 4 600 miljoner, plus 1 000. Inlåningen följer bara delvis: beta 0,4 ger 1,00 plus 0,40 = 1,40 procent, kostnaden 80 miljoner gånger 1,40 procent = 1 120 miljoner, plus 320. Penningmarknaden följer fullt ut: 2,60 blir 3,60, kostnaden 720 miljoner, plus 200. Ny nätlånsintäkt: 4 600 minus 1 120 minus 720 = 2 760 miljoner — en ökning med 480 miljoner, 21 procent, från en räterörelse som bara rörde kundernas bolåneräkning. Av varje intäktskrona behålls 48 öre: 52 öre läcker tillbaka i finansieringen, och läckan är betans spegel. Fallet nedåt är mekaniskt symmetriskt — minus en procentenhet ger 2 600 minus 480 minus 320 = 1 800 miljoner, minus 21 procent — men verklighetens asymmetri är grymmare: när inlåningsräntan nått noll kan den inte falla längre, betan stiger mot 1 och räntenätet pressas i varje ytterligare sjunkande ränta (2020-talets negativa räntors erfarenhet). Därtill volymsidan som kapitel tre återkommer till: dyrare bolån bromsar nya lån och skjuter amorteringstakten uppåt — ma-08-bostadsmarknadens-mekanik äger transmissionen från ränta till bostad; detta kapitel äger dess fortsättning in i bankens resultaträkning. Och notera gränsen mot ma-03-realrantan som äger realräntan som begrepp: bankens beta-arbete sker i nominellräntans värld men besvarar samma fråga — vad gör räntesvängen med avkastningen?"
+        },
+        {
+          "type": "tabell",
+          "content": "Räntesvängen +1,00 procentenhet (Sveabolån; beta inlåning 0,4, marknad 1,0): BOLÅNET — 3,60 → 4,60 %: inkomst 3 600 → 4 600, plus 1 000 Mkr · INLÅNINGEN — 1,00 → 1,40 %: kostnad 800 → 1 120, plus 320 Mkr · MARKNADEN — 2,60 → 3,60 %: kostnad 520 → 720, plus 200 Mkr · NÄTLÅNET — 2 280 → 2 760: PLUS 480 Mkr = plus 21 % · KVAR AV INTÄKTEN — 48 öre av varje ny krona · FALLET NEDÅT — minus 1,00 pp ger 1 800: minus 21 % (mekaniskt symmetriskt) · ASYMMETRIN — inlåningsräntans nollgolv: betan stiger när räntan redan är låg · PLUS 2,00 PP — 5 600 − 1 440 − 920 = 3 240: plus 960 Mkr, plus 42 % (hävstången är linjär)"
+        },
+        {
+          "type": "insight",
+          "content": "Deposit-betan är bankens envärde: en bank vars inlåning beta 0,2 har svänger dubbelt så kraftigt i räntenätet som en med beta 0,4. Räkneverket är tre rader — ny ränta på boken, betan gånger rörelsen på inlåningen, full rörelse på marknaden — men svaret förklarar varför två banker med identiska balansräkningar kan leva i två olika ränteklimat."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Kreditförlustens klocka — tre böcker, tre trappor",
+      "intro": "Räntenätet är bankens motor; kreditförlusten är dess klocka. Förlustnivån står still i åratal och sedan rör den sig i trappsteg — och trappan ser olika ut för varje lånebok. Kursens två nya banker bor på varsin sida av spektret.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kreditia Bank AB (påhittad) är konsumtionskreditens nischbank: 10 miljarder utlåning till 12,0 procent ränta, finansierad på obligationsmarknaden till 3,0 — nätlånet 900 miljoner, räntenätet 9,0 procent, fyra gånger Sveabolåns. Bred marginal köper förlustutrymme: normalåret kostar kreditförlusterna 2,0 procent av boken, 200 miljoner. Räkna resultatet: 900 plus avgifter 150 minus kostnader 700 minus förluster 200 = 150 miljoner i rörelseresultat — och i krisåret, när konsumtionsboken går från 2,0 till 6,0 procent, blir samma rad 900 plus 150 minus 700 minus 600 = minus 250 miljoner: förlust. Kreditia visar lagens ena sida: det breda räntenätet sväljer normala förluster men inte krisen. Fondia Bank AB (påhittad) är bolagsbanken: 40 miljarder utlåning till företag till 5,0 procent, finansierad av 15 miljarder bolagsinlåning till noll procent (transaktionskonton — bolag förväntar sig ingen ränta) och 25 miljarder marknad till 3,0: nätlånet 2 000 minus 0 minus 750 = 1 250 miljoner. Normalårets förlust: 0,3 procent av boken, 120 miljoner. Men 40 procent av Fondias bok sitter i fastighetsbolag — och fastighetskriser som 1990-talets svenska gav den branschen förlustnivåer kring 3,0 procent: 1 200 miljoner, tiofalt mot normalåret. Nu de tre trapporna sida vid sida: bolåneboken går från 0,05 till 1,0 procent i en djupkris (tjugofaldigt — men från bottennivå, och pantens belåningsgrad dämpar fallet: huset måste tappa över 40 procent i värde innan första kronan av en 60-procentig pant försvinner), konsumtionsboken tredubblas från redan hög nivå, företagsboken tiordubblas. Här gränsar kursen mot st-04-stabilitet-genom-kreditcykeln (som äger cykeln ur låntagarens perspektiv) och ma-05-kreditpremien (som äger riskens marknadspris): detta kapitel äger förlusttrapporna i bankens egen bok. Och det riskjusterade räntenätet gör böckerna jämförbara: Kreditia (900 minus 200) på 10 miljarder = 7,0 procent mot Sveabolåns (2 280 minus 50) på 100 miljarder = 2,23 procent — nätmarginalens båda världar."
+        },
+        {
+          "type": "definition",
+          "content": "Kreditförlustnivå: årets kreditförluster i procent av utlåningsboken — cykelns EKG; bolåneboken 0,05–1,0 procent, konsumtionsboken 2–6, företagsboken 0,3–3,0 (normalår till djupkris i exemplen). Riskjusterat räntenät: nätlånsintäkten minus normalårets kreditförlust, dividerat med utlåningen — Kreditia 7,0 procent mot Sveabolån 2,23. Belåningsgrad (LTV): lånets andel av pantens värde — dämparen i bolånebokens trappa. Provisionscykel: resurseringen för framtida förluster, som vricker resultatet mellan åren innan förlusten faller."
+        },
+        {
+          "type": "insight",
+          "content": "Räntenätet betalar för förlusttrappan — aldrig tvärtom. Frågan till en bankräkning är därför aldrig bara hur brett räntenätet är, utan vilken trappa som står under det: bolånens djupa men dämpade, konsumtionens höga men jämna, företagsbokens smala men brutala."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "K/I-talet — kostnadsbasen och skalan",
+      "intro": "Banken är en industri med en enda råvara: förtroende. Kostnaden för att producera den — kontor, system, personal, inkasso — mäts i ett tal: kostnads-intäktskvoten, K/I. Samma tal räknas på två världar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveabolåns rörelsekostnader: 1 100 miljoner — nät, system, personal, kontor. Intäkterna: nätlån 2 280 plus avgifter 420 (kort, konton, rådgivning) = 2 700 miljoner. K/I-talet blir 1 100 på 2 700 = 40,7 procent. Kreditia: kostnader 700 (varav inkasso och förvärv av kunder en stor del) på intäkter 1 050 — K/I 66,7 procent. Per kund blir kontrasten talbar: Sveabolån med 400 000 kunder bär 2 750 kronor i kostnad per kund men tjänar 5 700 i nätlånsintäkt och 1 050 i avgifter — 4 000 kronor kvar före förlust. Kreditia med 250 000 kunder bär nästan samma kostnad, 2 800 kronor, men tjänar 3 600 i nätlånet och 600 i avgifter — 1 400 före förlust, och förlusten (800 kronor per kund) lämnar 600. Räkna kontrollen: 400 000 kunder gånger 4 000 kronor = 1 600 miljoner, minus bolåneförlusterna 50 = 1 550 miljoner — exakt rörelseresultatet från kapitel ett. K/I-talets väg är skärningspunkten mellan skala och teknik: filialnätet var en gång distributionsmoat (kontot där kunden redan var), digitaliseringen har flyttat moaten från torgläget till appen och pressat talen nedåt — men också sänkt bytestiden för kontot, vilket erosionens riktning hotar inlåningsfranchisen med (mt-02-moat-erosion-och-vallgravstest äger erosionens mönster). Gränsen mot bk-04-koncernredovisningens-grunder och km-024-segmentrapportering: de äger redovisningens och segmentens mekanik; detta kapitel äger kostnadsmaskinen som driver K/I. Och mot am-05-handelsdagens-auktioner: handelsdagen äger börsens klockor, bankens K/I äger vardagens."
+        },
+        {
+          "type": "tabell",
+          "content": "K/I-talets två världar: SVEABOLÅN — kostnad 1 100 på intäkt 2 700 (nätlån 2 280 + avgifter 420) = K/I 40,7 % · KREDITIA — kostnad 700 på intäkt 1 050 (900 + 150) = K/I 66,7 % · PER KUND SVEABOLÅN — 400 000 kunder: kostnad 2 750 kr, nätlån 5 700 + avgift 1 050 = 4 000 kr före förlust · PER KUND KREDITIA — 250 000 kunder: kostnad 2 800 kr, nätlån 3 600 + avgift 600 = 1 400 före förlust, 600 efter (förlust 800) · KONTROLLEN — 400 000 × 4 000 − 50 Mkr = 1 550 Mkr = rörelseresultatet · VÄGEN — skala och digitalisering pressar K/I nedåt; appen sänker samtidigt bytestiden för kontot"
+        },
+        {
+          "type": "insight",
+          "content": "K/I-talet är bankens lönsamhets andra hälft: räntenätet visar vad maskinen tjänar, K/I vad den kostar att hålla igång. En bank med 40 procent och en med 65 kan bära samma värdering — men de dör av olika saker: den första av räntenätets tryck, den andra av förlusttrappans djup."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Kapitaltäckning — den reglerade hävstången",
+      "intro": "Ett vanligt bolags hävstång väljer styrelsen; en banks väljer regleringen. Kapitaltäckningen är sektorns ekvation — och utdelningsekvationen är dess direkta följd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveabolåns balansräkning i sammandrag: tillgångar 110 miljarder (100 bolån plus 10 likviditet och övrigt), finansierade av 100 miljarder räntebärande skulder (80 inlåning plus 20 marknad), 2 miljarder övriga skulder och 8 miljarder eget kapital. Hävstången: 110 på 8 = 13,75 kronor per egen kapitalkrona. En industri med den hävstången vore ett larm; i banken är den affären — men bara under taket: de riskviktade tillgångarna (bolån väger lågt, företagslån högt) blir i exemplet 80 miljarder, och det egna kapitalet 8 miljarder ger kärnprimärkapitalrelationen 8 på 80 = 10,0 procent mot ett fiktivt krav på 8,5 — bufferten 1,5 procentenheter, 1 200 miljoner. Räkna avkastningen: rörelseresultatet 1 550 minus skatt 22 procent = 1 209 miljoner netto, på 8 miljarder eget kapital = 15,1 procent — och se DuPont-spegeln (ln-01-dupont-analysen äger den industriella versionen): i banken blir identiteten avkastning lika med räntenät plus avgifter minus kostnader minus förluster, allt gånger hävstången — och hävstången får inte röras. Försöket visar varför: samma netto på 4 miljarder eget kapital vore 30,2 procent avkastning — men kapitalrelationen 5,0 procent under kravet 8,5: otillåtet. Därav utdelningsekvationen, sektorns egna version av ud-09-utdelningens-hallbarhet: vinsten 1 209 miljoner kan delas ut eller behållas; växer de riskviktade tillgångarna 5 procent (80 till 84 miljarder) kräver tioprocentsregeln 8 400 i kapital — av 8 000 plus 1 209 finns 9 209, och 809 miljoner (67 procent av vinsten) kan lämnas till ägarna. Växer boken 10 procent istället krävs 8 800 — utdelningen krymper till 409 miljoner (34 procent). Växa eller dela: bankens eviga växel, reglerad ned till sista procentenheten. Gränsen mot st-06-likviditetsreserven som äger buffertfrågan för det vanliga bolaget, och mot bk-05-redovisningspolitiken som äger utrymmeskonsten: kapitaltäckningens spelplan är satt av tillsynen, inte av ekonomichefen."
+        },
+        {
+          "type": "tabell",
+          "content": "Den reglerade hävstången (Sveabolån): BALANSOMSLUTNING — 110 mdr (100 bolån + 10 likviditet/övrigt) på EK 8,0 mdr = hävstång 13,75× · FINANSIERINGEN — 80 inlåning + 20 marknad + 2 övrigt + 8 EK · RISKVÄGDA TILLGÅNGAR — 80 mdr: KÄRNPRIMÄRKAPITALRELATION 8/80 = 10,0 % mot krav 8,5 % (fiktivt) · BUFFERTEN — 1,5 pp = 1 200 Mkr · AVKASTNINGEN — RÖK 1 550 − skatt 22 % = netto 1 209 på EK 8 000 Mkr = 15,1 % · HÄVSTÅNGSLEKEN — samma netto på EK 4,0 mdr = 30,2 % men kapitalrelation 5,0 % < 8,5: OTILLÅTET · UTDELNINGSEKVATIONEN — vinst 1 209; RWA +5 % (→84) kräver 8 400 kapital → utdelning 809 Mkr (67 %); RWA +10 % (→88) kräver 8 800 → utdelning 409 Mkr (34 %)"
+        },
+        {
+          "type": "insight",
+          "content": "Industrins hävstång är en risk man tar; bankens är en produkt man säljer under reglerad överinseende. Därför slutar varje bankräkning i samma ekvation: vad bufferten tillåter — och växeln mellan att växa boken och att dela vinsten är sektorns verkliga styrbordsratta."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — sex frågor till en bankräkning",
+      "intro": "Familjens avslutningskapitel samlar kursens verktyg i ett läsprotokoll — sex frågor som varje bankredovisning, verklig eller påhittad, kan ställas mot innan siffrorna döms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: finansieringsmixen — hur stor andel av finansieringen är trög inlåning (Sveabolån 80 procent) och hur mycket är marknad som minns varje räterörelse? Fråga två: betan — hur många procentenheter rör inlåningsräntan när styrräntan rör en, och vad blir räntenätets sväng (beta 0,4 gav plus 21 procent på en procentenhet)? Fråga tre: böckernas trappor — andelen bolån, konsumtionskredit och företagsutlåning, med normal- och krisnivå för varje trappa (0,05/1,0 — 2,0/6,0 — 0,3/3,0)? Fråga fyra: K/I-talet och dess väg — 40,7 eller 66,7 procent, och trycker skala och digitalisering det nedåt eller köper tillväxten det uppåt? Fråga fem: kapitaltäckningen — kärnprimärkapitalrelationen mot kravet, buffertens storlek i miljoner, och utdelningsekvationens utrymme vid bokens tillväxt? Fråga sex: cykelläget — var på provisionscykeln läses siffrorna: är förlustnivån en botten som vr-02-normaliserade-multipler måste justera upp, eller en topp som ska normaliseras ned? Protokollet dömer inte banken — det gör räkningen läsbar: sex frågor, sex svar, och först därefter är ett värderingstal (v05-pb:s P/B) ens ett samtal. Se-16-sektoranalysens-metod äger familjens generiska sektorsfrågor; detta protokoll är deras banköversättning. Pc-03-case-swedbank äger ett verkligt case att träna protokollet mot; km-040-banksektorn äger AKM1-integrationen ovanpå. Plattformens markering följer familjens sed: kursen beskriver mekanismer och mätningar i påhittade exempelbanker, och lämnar varje verkligt placeringsbeslut där det hör hemma — hos läsaren och dennas egna gränser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens motor. Fall ett: reporäntan plus 2,00 procentenhet, beta 0,4, allt annat oförändrat — bolånet 5,60 procent (5 600), inlåningen 1,80 (1 440), marknaden 4,60 (920): vad blir nätlånet (svar: 3 240 miljoner, plus 960, plus 42 procent) och vad visar jämförelsen med kapitel tvås plus 480 om hävstångens form? Fall två: Kreditia i krisåret — räkna rörelseresultatet (svar: 900 plus 150 minus 700 minus 600 = minus 250 miljoner) och hur många normalårsresultat (150 miljoner) som ett krisår äter upp (svar: 1,7 normalår)? Fall tre: Sveabolån med boken växande 10 procent — hur mycket kan delas ut av vinsten 1 209 om kärnprimärkapitalrelationen 10,0 procent ska hållas på riskviktade tillgångar 88 miljarder (svar: 9 209 minus 8 800 = 409 miljoner, 34 procent), och vad heter växeln den andra grenen betalar (svar: tillväxten — varje utdelad miljon är en miljon mindre bok)?"
+        },
+        {
+          "type": "insight",
+          "content": "Bankens räkning är en klockverkshistoria: räntenätet tickar, betan svänger, förlusttrappan kliver, kapitalet takar — och protokollets sjätte fråga är själva uret: inte vad siffrorna visar, utan vilken tid de visar. De fem tidshorisonterna i metodiken finns just för den läsningen."
+        }
+      ]
+    }
+  ]
+}

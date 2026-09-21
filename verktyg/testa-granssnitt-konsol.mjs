@@ -5,8 +5,11 @@
 // strängarna T1–T3 är ORDAGRANTA ur den falska rapporten (31 chunk-500
 // under prod-synkens OOM-dödade byggförsök 10:02:39 → 30 skenkontraster
 // i en "ok"-rapport). T4 = våg 142:s dokumenterade 2026-09-13-fall.
+// o148 (s8-u3, 2026-09-21): blocket A*–N* testar arForvantadAuth401 —
+// autentiseringsgrindens korrekta 401 (bevis: granssnitt-2026-09-21T113043
+// .json, 8 av 28 fynd = /studio:s anonyma poll på /api/studio/stream).
 // Körs: node verktyg/testa-granssnitt-konsol.mjs → "PASS n/n" och exit 0.
-import { konsolFelIndikerarDeployStorning } from "./granssnitt-konsol.mjs";
+import { konsolFelIndikerarDeployStorning, arForvantadAuth401 } from "./granssnitt-konsol.mjs";
 
 let pass = 0;
 const fel = [];
@@ -98,8 +101,74 @@ krav(
   ]) === true
 );
 
+// ── o148: förväntade AUTH-401 (text, url-form — vaktkonsolens gränssnitt) ──
+// A1 = ORDAGRANT ur granssnitt-2026-09-21T113043.json (/studio light 390).
+krav(
+  "A1 studio-stream-401 localhost, URL i text-prefix (11:30Z ordagrant) → förväntad",
+  arForvantadAuth401(
+    "[http://localhost:3000/api/studio/stream] Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    ""
+  ) === true
+);
+krav(
+  "A2 studio-stream-401 localhost, url-parameter → förväntad",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "http://localhost:3000/api/studio/stream"
+  ) === true
+);
+krav(
+  "A3 studio-stream-401 prod-domän → förväntad",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "https://lab.ak1nvestor.com/api/studio/stream"
+  ) === true
+);
+krav(
+  "A4 query-suffix (poll-parametrar) → förväntad",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "http://localhost:3000/api/studio/stream?senaste=1"
+  ) === true
+);
+
+// ── o148 NEGATIV: smalhet — allt annat förblir larmande fel ────────────────
+krav(
+  "AN1 401 på ANNAN slutpunkt → INTE förväntad (äkta fel)",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "http://localhost:3000/api/nagon-annan"
+  ) === false
+);
+krav(
+  "AN2 404 på studio-stream → INTE förväntad (endast status 401)",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "http://localhost:3000/api/studio/stream"
+  ) === false
+);
+krav(
+  "AN3 500 på studio-stream → INTE förväntad (serverfel larmar)",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+    "http://localhost:3000/api/studio/stream"
+  ) === false
+);
+krav(
+  "AN4 401-text UTAN känd slutpunkt → INTE förväntad",
+  arForvantadAuth401(
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    ""
+  ) === false
+);
+krav(
+  "AN5 pageerror med slutpektens namn i texten men utan resource-rad → INTE förväntad",
+  arForvantadAuth401("Uncaught TypeError vid /api/studio/stream-hantering", "") === false
+);
+krav("AN6 null/undefined → false", arForvantadAuth401(null, undefined) === false && arForvantadAuth401() === false);
+
 // ── Resultat ────────────────────────────────────────────────────────────────
-console.log(`\n${fel.length === 0 ? "PASS" : "FAIL"} ${pass}/${pass + fel.length} — granssnitt-konsol (delresurs-deploysignaturer)`);
+console.log(`\n${fel.length === 0 ? "PASS" : "FAIL"} ${pass}/${pass + fel.length} — granssnitt-konsol (delresurs-deploysignaturer + förväntade auth-401)`);
 if (fel.length) {
   for (const f of fel) console.error(`  ✗ ${f}`);
   process.exit(1);

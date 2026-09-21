@@ -1,0 +1,176 @@
+{
+  "slug": "kt-10-avknoppningen",
+  "category": "KATALYSATOR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Avknoppningen — delen som blir ett eget bolag",
+  "summary": "KATALYSATOR-familjens tionde steg öppnar händelsetypen som budkursen lämnar åt sidan: avknoppningen, där ett moderbolag delar ut en verksamhet till sina egna ägare och delen blir ett eget noterat bolag — en exit utan köpare. Sonden mot registret (483 kurser vid sondtillfället) visar grannarnas beröring men ingen ägare: «avknoppning» nämns i förbifart av summametodskursen, katalysatorkedjekursen, budkursen, rabattkursen och de två casen som var och en är en avknoppning (spelutvecklaren som delades ut, hygienbolaget som knoppades från skogskoncernen) — men ingen kurs äger händelsen själv: beslutet, andelsmekaniken, when-issued-handeln, indexuteslutningens tvångsförsäljning och de första hundra dagarna. Kursen äger förloppet genom fem lager i två påhittade bolag: Modrik AB (100 miljoner aktier, kurs 120 kronor, börsvärde 12 miljarder) vars summavärde är 16 miljarder — kärnverksamheten 10 och andelen i Nordhamn Logistik 6 — alltså 25 procents konglomeratrabatt som avknoppningen ska dela; mekaniken (varje Modrik-aktie ger 0,60 Nordhamn-aktier, when-issued-noteringen 64 kronor, distributionsdagens kontinuitet 95 + 0,60 × 62 = 132,2 mot beslutsdagens 132); tvångsförsäljningens fönster (12 procent av aktierna i index- och mandatefonder, 0,8 miljoner aktiers dagligt taxedjup: 15 handelsdagar mekaniskt tryck); de första hundra dagarna (noll analytiker kring det nya namnet, glidande försäljning hos förvaltare som inte vill äga logistik, ledningens egna köp) och utfallet (Nordhamn 62 → 56 → 71 kronor, kärnan 95 → 99, summan 132 → 141,6: +7,3 procent på tolv månader i exempelräkningen — medan den vägda rabatten mot summavärdet smalnade från 25 till 11,5 procent). Pedagogisk utbildning om mekanismer — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "KATALYSATOR-familjens nio första steg har kartlagt händelsefältet — vad en katalysator är, hur förväntningar prissätts, hur kedjor löper, den uteblivna händelsen, kalendern, guidningen, den tillverkade händelsen, optionsförfallet, budprocessen — men samtliga exitvägar har haft en köpare: budet (kt-09) betalas av någon, utfasningarna i private equity-kurserna säljs till någon. Avknoppningen är fältets tredje väg och saknar motsvarighet: moderbolaget delar ut verksamheten till sina egna ägare och exiten är den nya noteringen själv. Sonden mot 483 kurser bekräftar vitfläcken: «avknoppning» har noll kursägare — orden förekommer enbart i förbifart hos grannarna (km-012:s summametod räknar delarna men äger inte händelsen, kt-03:s kedjor nämner typen utan att öppna den, kt-09:s budkurs avgränsar en gång mot den, vr-09:s rabattkurs äger rabatten och dess stängning i aritmetiken men inte händelseförloppet, och de två verkliga casen — spelutvecklaren som delades ut och hygienjätten som knoppades av — äger sina bolag, inte mönstret), och «spin off» har noll träffar alls. Greenblatts bok om specialsituationer (34 spin-off-träffar) dokumenterar empirin i bokhyllan — ingen kurs gör den till pedagogik. Kursen fyller ytan med gränserna förhandade: budet har en budgivare och budpremie, avknoppningen har pro rata-andelar och tvångsförsäljning — två helt olika prisförlopp, och kt-02:s förväntansprissättning blir här frågan om vad marknaden redan betalt för rabatten.",
+  "learn": "Förstå beslutets tre motiv: fokus (ledning och kapital binds av två olika verksamheter), rabatten (delarna värderas mer var för sig — vr-09 äger rabattläran) och styrning (det nya bolaget får egen styrelse, eget incitamentprogram och egen kapitalallokering — gränsen mot kapitalallokeringskursen). Räkna mekaniken steg för steg i kursens exempel: Modrik äger 60 miljoner av Nordhamns 100 miljoner aktier (SOTP-värde 100 kronor stycket); distributionen sker pro rata — varje Modrik-aktie (100 miljoner) ger 0,60 Nordhamn-aktier; två veckor före dag noll handlas Nordhamn when-issued till 64 kronor (36 procents rabatt mot summavärdet), och på distributionsdagen öppnar kärn-Modrik till 95 kronor medan Nordhamn noteras till 62 — kontinuitetstestet: 95 + 0,60 × 62 = 132,2 kronor mot beslutsdagens 132, ingen gratis lunch i själva bytet. Se tvångsförsäljningens fönster: de stora indexen utesluter Nordhamn dag ett (för litet marknadsvärde — am-07 äger indexflödenas mekanik, detta kapitel äger dagen), index- och mandatefonder bär omkring 12 procent av aktierna och det dagliga taxedjupet är 0,8 miljoner aktier: 12 ÷ 0,8 = 15 handelsdagar av mekaniskt tryck — orsaken till att kursen i exemplet sjunker 62 → 56 kronor (44 procents rabatt) utan en enda fundamental nyhet. Läsa de första hundra dagarna: noll analytiker täcker det nya namnet (i exemplet fyra efter tolv månader), förvaltare med mandat för konglomerat men inte logistik säljer glidande, och ledningen — som nu bor helt i det nya bolaget — är den naturliga köpsidan; utfallet i exempelräkningen: Nordhamn 56 → 71 kronor (+26,8 procent från botten), kärnan 95 → 99 (+4,2), summan 132 → 141,6 (+7,3 procent på tolv månader) medan den vägda rabatten mot summavärdet smalnade från 25 procent före beskedet till 17,4 på dag noll och 11,5 efter ett år. Slutligen använda protokollets fem frågor till varje avknoppningsplan — motivet, den tvingade försäljningens storlek, köparsidan, rabattens aritmetik och kärnans öde.",
+  "history": {
+    "origin": "Avknoppningen föddes ur konglomeratens motreaktion: 1980-talets amerikanska köpvåg slog isär de diversifierade jättar som byggts under efterkriget, och när AT&T delades 1984 visades mekaniken i full skala — aktieägarna fick andelar i de nya bolagen, och marknaden prissatte delarna var för sig. Det juridiska skalet, att distribution pro rata till egna ägare är en utdelning i natur i stället för en försäljning, gjorde vägen skattefri i många jurisdiktioner och därmed billig.",
+    "evolution": "Joel Greenblatt dokumenterade 1997 mönstret i sin bok om specialsituationer: de nya bolagen försummas av institutioner som aldrig frågat efter dem, index och mandat tvingar fram försäljning, och ledningens incitament förbättras över en natt — en kombination som historiskt gav dotterbolagen en efterföljande period av överavkastning. Sverige fick sitt signumfall 2017 när hygienjätten knoppades av skogskoncernen och två renodlade bolag uppstod ur ett — börsens eget läroboksexempel som case-kursen i registret äger.",
+    "modern": "2020-talets avknoppningar drivs oftast av aktivistiska ägare som köpt rabatten och kräver delning, och maskineriet är mera sekundärt: when-issued-handeln elektronisk, indexreglernas effekter väl studerade, och utsikten att rabatten omprövas prissatt i optioner och terminer redan före beslutsdagen. Det pedagogiska värdet står sig: ingen annan händelse visar så tydligt hur allokationsregler — index, mandat, storlek — kan flytta priser utan att någon fundamental åsikt ändras, och hur pris därför kan skilja sig från värde just där."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Beslutet — varför moderbolaget delar ut en del",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Mekaniken — andelarna, when-issued och distributionsdagen",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Tvångsförsäljningens fönster — index, mandat och 15 handelsdagar",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "De första hundra dagarna — glidning, täckning och ledningens köp",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Utfallet — rabatten delas, inte försvinner",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till en avknoppningsplan",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch skrev att de bästa tillfällena ofta uppstår där säljarna är tvingade och köparna få — och avknoppningen är den regeln i sin renaste form: indexfond som inte får behålla, förvaltare vars mandat inte rymmer, ägare som aldrig bad om aktien. Hans egen preferens för det tråkiga och försummade passar dotterbolaget som ingen analysbank täcker dag ett: glömskan är hans jaktmark. Lynch påminde också om att en bra historia inte räcker — räkneverket ska bära den — och kursens kontinuitetstest (95 + 0,60 × 62 = 132,2 mot 132) är den disciplinen: distributionen i sig skapar inget, det som skapas är styrelsens, ledningens och ägarnas nya situation. Hans varning för bolag som växer genom förvärv har här sin spegel: den som förstår varför konglomerat knoppas av förstår varför de byggdes — och vad som händer med kärnan när kombinationen upplöses.",
+  "grahamSection": "Benjamin Grahams analys av holdingbolag och konglomerat gick ut på räkneboken mot marknaden: när summan av delarna överstiger helhetens pris med marginal finns arbetsunderlag — hans egen arbitrage mellan del och hel var tidens break-up-logik. Avknoppningen är den mekanism som kan stänga samma gap utan budgivare, och Grahams krav på säkerhetsmarginal översätts direkt: rabatten (i exemplet 25 procent) är marginalen, och frågan är vad som konsumerar den — transaktionskostnader, dubbla börsnoteringars fasta kostnader, och de första månadernas tvångsförsäljning. Hans varning är också del av kursen: marknadspriset på delarna efter noteringen är en notering, inte sanningen om värdet, och den som köper rabatten utan att ha räknat delarna (km-012:s hantverk) äger en åsikt, inte en marginal.",
+  "ak1Section": "I AK1A:s metodik är avknoppningen ett event att pröva i fem tidshorisonter: kortaste horisonten bär tvångsförsäljningens pris (flödet, am-07:s område tillämpat), medellånga bär glidningen och täckningens återkomst, längsta bär den fundamentala frågan — styrs delarna bättre var för sig? Förväntansprissättningen (kt-02) blir frågan om hur mycket av rabatten marknaden redan betalt på beslutsdagen (i exemplet steg Modrik 120 → 132: tio av tjugofem procentenheter rabatt stängdes direkt), och kedjeläran (kt-03) blir maskineriet: index, mandat, täckning, incitament — fyra länkar som var och en går att räkna. Riskmatriken (rs-04) tillför den ärliga raden: händelsen kan utebli (kt-04:s område) eller utfalla under aritmetiken. Pedagogiken är som alltid utbildning om mekanismer i påhittade bolag; varje verkligt beslut kring en verklig notering lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Beslutet — varför moderbolaget delar ut en del",
+      "intro": "Alla exitvägor har hittills haft en köpare som betalat en premie. Avknoppningen är motsatsen: moderbolaget delar ut en dotter till sina egna ägare — och exiten är den nya listningen själv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempel är påhittat från första raden: Modrik AB — ett förpackningsbolag som för tjugo år sedan köpte logistikverksamheten Nordhamn och sedan vuxit i båda delarna. Modrik har 100 miljoner aktier och noteringen 120 kronor: börsvärde 12 miljarder. Räkna delarna med summametoden (km-012 äger hantverket): kärnverksamheten är värd 10 miljarder i grundtal och andelen i Nordhamn — 60 procent av ett bolag vars hela värderas till 10 miljarder — är värd 6 miljarder. Summan 16 miljarder mot noteringen 12: konglomeratrabatten (vr-09 äger begreppet och dess aritmetik) är (16 − 12) ÷ 16 = 25 procent. Tre motiv driver beslutet att knoppa av Nordhamn. Fokus: Modriks ledning delar sin tid mellan två verksamheter med olika cykler, och styrelsen allokerar kapital mellan dem varje år — kapitalallokeringskursen äger den problematiken. Rabatten: marknaden betalar 12 för delar den prissätter till 16, och varje år rabatten består äter den avkastning. Styrning: det noterade Nordhamn får egen styrelse, egen ledning med optioner på eget bolag, egen utdelningspolitik — incitamenten bygger om över en natt. Beslutet offentliggörs, och marknadens första dom är omedelbar: Modrik stiger 120 → 132 kronor (+10 procent) — tio av de tjugofem procentenheterna rabatt stängs på en enda dag, och resten lämnas åt genomförandet. Här gränsar kapitlet mot kt-02: förväntansprissättningen äger frågan om hur mycket som redan betalats — detta kapitel äger mekaniken som följer."
+        },
+        {
+          "type": "tabell",
+          "content": "Beslutet (Modrik AB, påhittat): NOTERINGEN — 100 M aktier × 120 kr = 12 mdr · SUMMAVÄRDET — kärna 10 mdr + Nordhamnandel 60 % × 10 mdr = 16 mdr · RABATTEN — (16 − 12) ÷ 16 = 25 % · MOTIVEN — fokus (styrelse och ledning), rabatt (vr-09), styrning (eget bolag bygger incitament) · BESLUTSDAGEN — Modrik 120 → 132 (+10 %): 10 av 25 procentenheter rabatt stängs direkt · GRÄNSER — km-012 äger räkneverket, vr-09 rabattläran, kt-02 förväntansfrågan"
+        },
+        {
+          "type": "insight",
+          "content": "Budet säljer bolaget till en köpare som betalar premie; avknoppningen delar ut bolaget till ägare som aldrig bad om det. Därför börjar den ena händelsen där den andra slutar: hos ägarna som nu måste bestämma sig."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Mekaniken — andelarna, when-issued och distributionsdagen",
+      "intro": "Mellan beslut och notering ligger ett maskineri få kurser öppnat: hur andelarna fördelas, hur handeln börjar före första dagen, och varför distributionsdagen inte är en gratis lunch.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fördelningen sker pro rata: Nordhamn har 100 miljoner aktier och Modrik äger 60 miljoner — varje Modrik-aktie (100 miljoner styck) ger alltså 60 ÷ 100 = 0,60 Nordhamn-aktier. Inga pengar betalas, inget byte erbjuds: utdelningen i natur är avknoppningens juridiska kärna (skattefrihet på distributionen i många jurisdiktioner — gränsen mot skattekurserna, som äger beskattningens detaljer). Två veckor före distributionsdagen börjar when-issued-handeln: Nordhamn handlas under egen kod utan att ägas ännu — köparen förvärvar rätten till aktien från dag noll. Noteringen: 64 kronor, alltså 36 procents rabatt mot summavärdet 100 — köparna kräver redan här bred marginal, och noteringen signalerar åt vilket håll distributionsdagen öppnar. Själva dagen: Nordhamn noteras ordinärt till 62 kronor och kärn-Modrik — som nu är ett rent förpackningsbolag — öppnar till 95. Kontinuitetstestet, kursens viktigaste aritmetik: den som ägde en Modrik-aktie kvällen före äger nu en kärnaktie och 0,60 Nordhamn: 95 + 0,60 × 62 = 95 + 37,2 = 132,2 kronor — mot beslutsdagens 132. Bytet i sig skapar alltså inget (differensen 0,2 kronor är dagens brus): det värde som skapades tillkom på beslutsdagen av beskedet, och distributionsdagen delar bara det. Här ligger kursens skiljelinje mot myten att avknoppningsdagen är vinstens dag — vinstens förlopp sitter i fönstret som följer, och det är nästa kapitel."
+        },
+        {
+          "type": "tabell",
+          "content": "Mekaniken (exempel): ANDELEN — 60 M Nordhamn på 100 M Modrik: 0,60 Nordhamn per Modrik-aktie · WHEN-ISSUED — 64 kronor två veckor före dag noll: 36 % rabatt mot summavärdet 100 · DAG NOLL — Nordhamn 62, kärn-Modrik 95 · KONTINUITETSTESTET — 95 + 0,60 × 62 = 132,2 ≈ beslutsdagens 132: ingen gratis lunch i bytet · VINSTENS LÄGE — skapades på beslutsdagen av beskedet, inte av distributionen · JURIDIKEN — utdelning i natur: gräns mot skattekurserna"
+        },
+        {
+          "type": "insight",
+          "content": "Distributionsdagen är en bokföringsakt, inte ett under: aktien delas i två sedlar och summan bevaras. Det som följer — fönstret av tvingade säljare — är där händelsens verkliga prisförlopp bor."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Tvångsförsäljningens fönster — index, mandat och 15 handelsdagar",
+      "intro": "Varför faller ett nytt bolag utan en enda fundamental nyhet? Därför att dagens säljare inte säljer av åsikt — de säljer för att deras regler säger att de måste. Fönstret går att räkna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nordhamn utesluts dag ett ur de stora indexen — inte av misshag utan av regel: det nya bolagets marknadsvärde och omsättning ligger under inkluderingskraven, och indexets regelverk tvingar därför varje indexfond att sälja sina Nordhamn-andelar oavsett åsikt (am-07 äger indexflödenas hela mekanik — detta kapitel äger dagen då mekaniken träffar en nyfödd notering). Räkna fönstret i exemplet: index- och mandatefonder bär sammanlagt omkring 12 procent av Nordhamns aktier — 12 miljoner aktier — och det dagliga taxedjupet under de första veckorna är 0,8 miljoner aktier. Fönstret: 12 ÷ 0,8 = 15 handelsdagar av mekaniskt tryck. Dit hör även mandatens mjukare tvång: en förvaltare med uppdrag i breda industrifonder får inte plötsligt bära ett rent logistikbolag; en fond med storleksmandat kan inte behålla en aktie som fallit ur storleksskiktet; vissa institutioner avstår helt bolag utan analys — och dag ett finns ingen analys. Resultatet i exempelräkningen: Nordhamn pressas 62 → 56 kronor inom tre månader — 44 procents rabatt mot summavärdet, alltså djupare än when-issued-nivån — utan att en enda fundamental nyhet om verksamheten kommit. Detta är kursens kärnläxa om pris mot värde: flödets pris (am-07:s skiljelinje) kan ligga långt under både flödestomma och fundamentala värden, och fönstret är tidsbestämt — 15 handelsdagar i exemplet, inte en åsiktsrevision. Häri ligger också gränsen mot rs-03 (dold samvariation): där handlar det om gemensam exponering i framtiden — här om gemensam tvingad handel i nutid."
+        },
+        {
+          "type": "tabell",
+          "content": "Fönstret (exempel): INDEXUTESLUTNINGEN — dag ett: värde och omsättning under inkluderingskraven (am-07:s mekanik) · INDEX- OCH MANDATANDELEN — 12 % av aktierna = 12 miljoner · TAXEDJUPET — 0,8 miljoner aktier per dag · FÖNSTRET — 12 ÷ 0,8 = 15 handelsdagar mekaniskt tryck · PRISFÖLJANDET — Nordhamn 62 → 56 kronor (rabatt 38 → 44 %) utan fundamental nyhet · MANDATENS MJUKA TVÅNG — mandat, storlekskrav, ingen analys: tre skäl att sälja som inte är åsikter"
+        },
+        {
+          "type": "insight",
+          "content": "Femton handelsdagar av regelstyrda säljare — inte en enda av dem har sagt att bolaget är sämre: flödets aritmetik kan pressa priset djupt under varje värdering, och den som vet att fönstret är tidsbestämt vet också att det tar slut."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "De första hundra dagarna — glidning, täckning och ledningens köp",
+      "intro": "När fönstret stängs börjar den långsammare mekanismen: institutioner som säljer för att de inte vill ha bolaget, analystbanker som saknar täckning, och en ledning som för första gången bara har ett bolag — och köper.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det nya bolaget är en ägarmarknad utan ägare som valt det: praktiskt taget ingen institutionell ägare har bett att få Nordhamn — de fick det i utdelningen. Glidningen därför: förvaltare som inte kan eller vill bygga kompetens inom logistik avyttrar i takt med att mandat och utrymme tillåter, inte i ett enda tryck — en ström av försäljning som kan pågå i månader och hålla kursen pressad långt efter att indexfönstret stängts. Täckningen: noll analysbanker täcker namnet vid noteringen (i exemplet fyra efter tolv månader), och utan täckning saknar institutionella köpare det underlag deras beslutprocesser kräver — glömskan är mekanisk, inte fientlig. Mot detta står köpsidan som händelsen byggt: Nordhamns ledning — som i moderbolaget var en avdelning bland tio och nu är hela bolaget, med optioner på egen aktie — är den mest informerade tänkbara köparen, och insiderköpens tyngd ligger i exemplet just i fönstret och glidningen; vidare köper förvaltare vars mandat rymmer logistik och som saknar bolaget, och småbolagsfonder som moderbolagets ägarbas aldrig rymde. Kursens exempeltidslinje: tre månader — 56 kronor och 44 procents rabatt, fönstret tillslutet men glidningen pågår; tolv månader — fyra analytiker, insiderköpen redovisade, kursen 71 kronor: +26,8 procent från botten, fortfarande 29 procents rabatt mot summavärdet. Gränsen mot rs-09 (personalrisken): där ägs nyckelpersonerna som risk — här ägs ledningens nya incitamentsläge som händelsens drivkraft, spegelbilden av samma mynt."
+        },
+        {
+          "type": "tabell",
+          "content": "Hundra dagar och tolv månader (exempel): GLIDNINGEN — institutioner säljer i takt med mandat, inte i tryck · TÄCKNINGEN — noll analytiker vid noteringen → fyra efter tolv månader · KÖPARSIDAN — ledning med egna optioner (mest informerad), mandat som rymmer, småbolagsfonder · TRE MÅNADER — 56 kronor, 44 % rabatt: fönster slut, glidning pågår · TOLV MÅNADER — 71 kronor, +26,8 % från botten, 29 % rabatt kvar · GRÄNS rs-09 — de äger nyckelpersonen som risk, detta kapitel äger incitamentet som drivkraft"
+        },
+        {
+          "type": "insight",
+          "content": "Budets premie betalas av en köpare som läst allt; avknoppningens efterspel bärs av en ledning som läst allt och nu bor där — de två exitvägarna speglar varandra: där budgivarens övertag stänger händelsen, öppnar ledningens övertag ett långt efterspel."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Utfallet — rabatten delas, inte försvinner",
+      "intro": "Ett år senare står de fyra räkningarna på bordet: kärnan, dottern, summan och rabatten. Exemplets slutbild visar mönstret — men också dess villkor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Samla exempelräkningen: före beskedet — Modrik 120 kronor mot summavärde 160: 25 procents samlad rabatt. Beslutsdagen — 132: rabatten 17,5 procent (tio procentenheter stängda av beskedet). Distributionsdagen — kärnan 95 + 0,60 × 62 = 132,2: värdet bevarat, rabatten delad — kärnbolaget handlas med 5 procents rabatt (95 mot 100), dotterbolaget med 38 (62 mot 100). Tolv månader — kärnan 99 (+4,2 procent), Nordhamn 71 (+26,8 procent från botten 56): summan 99 + 0,60 × 71 = 141,6 kronor, +7,3 procent mot beslutsdagens 132, och den vägda rabatten mot 160 smalnad till (160 − 141,6) ÷ 160 = 11,5 procent. Läxan är dubbel och kursen håller båda halvorna framme. För det första: mönstret — rabatten samlad blir delad, och delarna pressas olika hårt av olika flöden; tiden och den nya ägarstrukturen arbetar sedan mot glömskan. För det andra: villkoren — avknoppning skapar inte värde i sig; den tar bort ett skäl att betala mindre för delarna (vr-09:s hela område). Om kärnan styrs sämre utan dotterns kassaflöde, om dubbla börsnoteringars fasta kostnader äter marginalen, om ledningen visar sig ovärdig förtroendet — då kan summan efter ett år ligga under beslutsdagen, och exempelkurvan är en kurva, inte ett löfte. Kursens hållning är familjens: mekanismer och aritmetik i påhittade bolag — besluten kring verkliga noteringar lämnas åt läsaren och dennas egna gränser."
+        },
+        {
+          "type": "tabell",
+          "content": "Utfallet (exempel, SOTP-komposit 160): FÖRE — 120: 25 % samlad rabatt · BESLUTSDAGEN — 132: 17,5 % · DISTRIBUTIONEN — 95 + 0,60 × 62 = 132,2: rabatten delad (kärna 5 %, dotter 38 %) · BOTTNEN — dotter 56 (44 % rabatt): fönstrets verkan · TOLV MÅNADER — kärna 99 (+4,2 %), dotter 71 (+26,8 % från botten): summa 141,6 = +7,3 % · SLUTRABATTEN — (160 − 141,6) ÷ 160 = 11,5 % · VILLKORET — värde skapas bara om delarna styrs bättre var för sig (vr-09:s domän)"
+        },
+        {
+          "type": "insight",
+          "content": "Rabatten är en enda siffra före beskedet och två olika siffror efter: kärnans och dotterns — och att den delas är händelsens egentliga verk. Värdet den sedan krymper med styrs inte av noteringen utan av dem som nu sitter i var sitt rum."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till en avknoppningsplan",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor som varje avknoppningsplan, verklig eller påhittad, kan ställas mot innan förloppet döms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — motivet: drivs beslutet av fokus, rabatt eller styrning — och är motivet ett som bär utfallet (styrning och fokus bygger värde, en ren rabattjakt kan lämna delarna sämre stydda)? Fråga två — den tvingade försäljningens storlek: hur stor andel av det nya bolaget sitter i index- och mandatefonder, och hur många handelsdagar är fönstret (räkna andel ÷ taxedjup som kapitel tre)? Fråga tre — köparsidan: vem kan och vill köpa — ledning med incitament, förvaltare med rymmande mandat, bolag i branschen — och finns de på plan när fönstret öppnas? Fråga fyra — rabattens aritmetik: vad säger summametoden (km-012) om gapet, hur mycket stängdes på beslutsdagen, och vad återstår att prissätta i pressat läge? Fråga fem — kärnans öde: den tysta halvan — vem äger analysen av det som blir kvar, vars kassaflöde, styrning och berättelse förändras minst men uppmärksamheten mest? Fem svar — och förloppet är först då beskrivet. Plattformens markering följer familjens sed: kursen har beskrivit mekanismer och aritmetik i påhittade bolag (Modrik, Nordhamn), med de verkliga svenska fallen som grannkursernas egna domäner, och lämnar varje verkligt beslut kring en verklig notering — att läsa, avstå eller agera — där det hör hemma, hos läsaren och dennas egna gränser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens motor. Fall ett: notering 105 mot summavärde 140 — hur stor är rabatten (svar: (140 − 105) ÷ 140 = 25 procent)? Fall två: kärnan öppnar 88 och dottern 70 med 0,50 andel per aktie — vad blir summan (svar: 88 + 0,50 × 70 = 123 kronor), och vad betyder den mot beslutsdagens 123,5? Fall tre: indexfonder bär 9 procent av dotterns 80 miljoner aktier och taxedjupet är 0,6 miljoner per dag — hur långt är fönstret (svar: 7,2 ÷ 0,6 = 12 handelsdagar), och vad händer med pressen om taxedjupet halveras?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets femte fråga är händelsens mest försummade: alla talar om dottern, få om kärnan — men summan av de två är det som ägaren faktiskt äger, och det som avgör om delningen skapade värde eller bara aktivitet."
+        }
+      ]
+    }
+  ]
+}

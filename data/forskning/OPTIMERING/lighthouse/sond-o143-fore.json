@@ -1,0 +1,2272 @@
+{
+  "datum": "2026-09-21T14:48:24.685Z",
+  "bas": "http://localhost:3000",
+  "throttle": true,
+  "sparMs": 12000,
+  "injeceradCss": "nej",
+  "sidor": [
+    {
+      "sokvag": "/dataset",
+      "fcpTs": 1109358783,
+      "traceEventAntal": 34600,
+      "antalLangtasks": 33,
+      "tbtFonsterFCP5s": 1493,
+      "totaltCpuArbeteFCP5s": 6042,
+      "layoutTotalTrace": 707,
+      "layoutShiftsTrace": [],
+      "langtasks": [
+        {
+          "start": 1109357415,
+          "dur": 100,
+          "blocking": 50,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 100
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 99
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109357646,
+          "dur": 151,
+          "blocking": 101,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 8
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358020,
+          "dur": 126,
+          "blocking": 76,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358188,
+          "dur": 58,
+          "blocking": 8,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 57
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "dataset",
+              "funktion": "",
+              "dur": 57
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358246,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 28
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358485,
+          "dur": 246,
+          "blocking": 196,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 144
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 8
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "dataset",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358546,
+          "dur": 61,
+          "blocking": 11,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358554,
+          "dur": 152,
+          "blocking": 102,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358583,
+          "dur": 121,
+          "blocking": 71,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358608,
+          "dur": 86,
+          "blocking": 36,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358770,
+          "dur": 307,
+          "blocking": 257,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "0el5nt6-nk2y3.js",
+              "funktion": "",
+              "dur": 304
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109358888,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109359157,
+          "dur": 412,
+          "blocking": 362,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 355
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 42
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "R",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109359570,
+          "dur": 59,
+          "blocking": 9,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109359811,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 158
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109359815,
+          "dur": 159,
+          "blocking": 109,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 158
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109359975,
+          "dur": 199,
+          "blocking": 149,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 142
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109360176,
+          "dur": 141,
+          "blocking": 91,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 27
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 12
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 5
+            },
+            {
+              "namn": "v8.compile",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109360559,
+          "dur": 74,
+          "blocking": 24,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109360920,
+          "dur": 79,
+          "blocking": 29,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 57
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361129,
+          "dur": 137,
+          "blocking": 87,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361160,
+          "dur": 167,
+          "blocking": 117,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361207,
+          "dur": 57,
+          "blocking": 7,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361317,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361372,
+          "dur": 338,
+          "blocking": 288,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 332
+            },
+            {
+              "namn": "v8.compile",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 75
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 51
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361392,
+          "dur": 70,
+          "blocking": 20,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361463,
+          "dur": 118,
+          "blocking": 68,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 51
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361502,
+          "dur": 103,
+          "blocking": 53,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361592,
+          "dur": 71,
+          "blocking": 21,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109361668,
+          "dur": 82,
+          "blocking": 32,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::platformApp",
+              "funktion": "",
+              "dur": 7
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::webViewDeny",
+              "funktion": "",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109368176,
+          "dur": 90,
+          "blocking": 40,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "27pvldtwov_gc.js",
+              "funktion": "",
+              "dur": 27
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "26cy_8m3039nw.js",
+              "funktion": "",
+              "dur": 15
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 8
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "07ggxbfyc05g8.js",
+              "funktion": "",
+              "dur": 5
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 2
+            },
+            {
+              "namn": "v8.compile",
+              "url": "07ggxbfyc05g8.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109368266,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 15
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 12
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "1r-7pos3d050-.js",
+              "funktion": "",
+              "dur": 5
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109369077,
+          "dur": 424,
+          "blocking": 374,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "2txkr-37um5i2.js",
+              "funktion": "",
+              "dur": 421
+            },
+            {
+              "namn": "v8.compile",
+              "url": "2txkr-37um5i2.js",
+              "funktion": "",
+              "dur": 21
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "Layout:(dokumentet)",
+          "ms": 529
+        },
+        {
+          "kalla": "EvaluateScript:service_worker_bin_prod.js",
+          "ms": 332
+        },
+        {
+          "kalla": "FunctionCall:2feezv-iveko5.js",
+          "ms": 317
+        },
+        {
+          "kalla": "FunctionCall:095w8h_fgc5q_.js",
+          "ms": 163
+        },
+        {
+          "kalla": "v8.compile:service_worker_bin_prod.js",
+          "ms": 75
+        },
+        {
+          "kalla": "UpdateLayoutTree:(dokumentet)",
+          "ms": 56
+        },
+        {
+          "kalla": "EvaluateScript:sw.js",
+          "ms": 12
+        },
+        {
+          "kalla": "FunctionCall:extensions::platformApp",
+          "ms": 7
+        },
+        {
+          "kalla": "FunctionCall:extensions::webViewDeny",
+          "ms": 5
+        },
+        {
+          "kalla": "EventDispatch:(dokumentet)",
+          "ms": 4
+        },
+        {
+          "kalla": "v8.compile:sw.js",
+          "ms": 3
+        },
+        {
+          "kalla": "FunctionCall:sw.js",
+          "ms": 1
+        }
+      ],
+      "aggregeratFunktioner": [],
+      "shifts": [],
+      "res": [
+        {
+          "n": "1y8-o7vbgoakh.css",
+          "start": 297,
+          "klar": 486,
+          "typ": "link",
+          "storlek": 1991
+        },
+        {
+          "n": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "start": 267,
+          "klar": 591,
+          "typ": "link",
+          "storlek": 51224
+        },
+        {
+          "n": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "start": 296,
+          "klar": 608,
+          "typ": "link",
+          "storlek": 48732
+        },
+        {
+          "n": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+          "start": 296,
+          "klar": 612,
+          "typ": "link",
+          "storlek": 51832
+        },
+        {
+          "n": "2nfdpgrzmuor8.css",
+          "start": 297,
+          "klar": 562,
+          "typ": "link",
+          "storlek": 39392
+        },
+        {
+          "n": "0el5nt6-nk2y3.js",
+          "start": 297,
+          "klar": 727,
+          "typ": "link",
+          "storlek": 3912
+        },
+        {
+          "n": "11jq0c2_zavac.js",
+          "start": 297,
+          "klar": 788,
+          "typ": "script",
+          "storlek": 8804
+        },
+        {
+          "n": "turbopack-3or-2iatmqpb2.js",
+          "start": 297,
+          "klar": 796,
+          "typ": "script",
+          "storlek": 4149
+        },
+        {
+          "n": "3fntmmi971322.js",
+          "start": 297,
+          "klar": 826,
+          "typ": "script",
+          "storlek": 3961
+        },
+        {
+          "n": "095w8h_fgc5q_.js",
+          "start": 297,
+          "klar": 888,
+          "typ": "script",
+          "storlek": 43035
+        },
+        {
+          "n": "2feezv-iveko5.js",
+          "start": 297,
+          "klar": 923,
+          "typ": "script",
+          "storlek": 71870
+        },
+        {
+          "n": "3gm4g-6wa8q6q.js",
+          "start": 297,
+          "klar": 888,
+          "typ": "script",
+          "storlek": 916
+        },
+        {
+          "n": "2faotogsnwm81.js",
+          "start": 297,
+          "klar": 993,
+          "typ": "script",
+          "storlek": 9532
+        },
+        {
+          "n": "2qnjvou52dgsk.js",
+          "start": 297,
+          "klar": 994,
+          "typ": "script",
+          "storlek": 9121
+        },
+        {
+          "n": "40tp2b4ex93k1.js",
+          "start": 297,
+          "klar": 1009,
+          "typ": "script",
+          "storlek": 8987
+        },
+        {
+          "n": "3pst6ss7vt93a.js",
+          "start": 298,
+          "klar": 1071,
+          "typ": "script",
+          "storlek": 12484
+        },
+        {
+          "n": "264uyfejpsomd.js",
+          "start": 298,
+          "klar": 1277,
+          "typ": "script",
+          "storlek": 8455
+        },
+        {
+          "n": "02vzzrgqq_wa8.js",
+          "start": 298,
+          "klar": 1293,
+          "typ": "script",
+          "storlek": 47833
+        },
+        {
+          "n": "3s3dpz13zg9_j.js",
+          "start": 298,
+          "klar": 1275,
+          "typ": "script",
+          "storlek": 1570
+        },
+        {
+          "n": "1blrp_z17a73e.js",
+          "start": 298,
+          "klar": 1301,
+          "typ": "script",
+          "storlek": 17378
+        },
+        {
+          "n": "208qlhbwv45x6.js",
+          "start": 298,
+          "klar": 1281,
+          "typ": "script",
+          "storlek": 7667
+        },
+        {
+          "n": "ikon-192.png",
+          "start": 2225,
+          "klar": 2436,
+          "typ": "other",
+          "storlek": 309
+        },
+        {
+          "n": "3c20dmqsqgcwk.js",
+          "start": 2965,
+          "klar": 3306,
+          "typ": "script",
+          "storlek": 1264
+        },
+        {
+          "n": "1qla1t99hniv6.js",
+          "start": 10422,
+          "klar": 10621,
+          "typ": "script",
+          "storlek": 4174
+        },
+        {
+          "n": "1vzidlm-45ju_.js",
+          "start": 10423,
+          "klar": 10660,
+          "typ": "script",
+          "storlek": 14251
+        },
+        {
+          "n": "26cy_8m3039nw.js",
+          "start": 10484,
+          "klar": 10682,
+          "typ": "script",
+          "storlek": 14711
+        },
+        {
+          "n": "07ggxbfyc05g8.js",
+          "start": 10508,
+          "klar": 10683,
+          "typ": "script",
+          "storlek": 4264
+        },
+        {
+          "n": "27pvldtwov_gc.js",
+          "start": 10510,
+          "klar": 10717,
+          "typ": "script",
+          "storlek": 10535
+        },
+        {
+          "n": "1r-7pos3d050-.js",
+          "start": 10520,
+          "klar": 10814,
+          "typ": "script",
+          "storlek": 8676
+        },
+        {
+          "n": "2txkr-37um5i2.js",
+          "start": 10423,
+          "klar": 11576,
+          "typ": "script",
+          "storlek": 282452
+        }
+      ],
+      "fontsKlara": 20059
+    },
+    {
+      "sokvag": "/konfluens",
+      "fcpTs": 1109382973,
+      "traceEventAntal": 26686,
+      "antalLangtasks": 43,
+      "tbtFonsterFCP5s": 2251,
+      "totaltCpuArbeteFCP5s": 6838,
+      "layoutTotalTrace": 1106,
+      "layoutShiftsTrace": [],
+      "langtasks": [
+        {
+          "start": 1109380705,
+          "dur": 102,
+          "blocking": 52,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 102
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 100
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109380725,
+          "dur": 50,
+          "blocking": 0,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381061,
+          "dur": 114,
+          "blocking": 64,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381110,
+          "dur": 145,
+          "blocking": 95,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 23
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381282,
+          "dur": 206,
+          "blocking": 156,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 6
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381382,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381462,
+          "dur": 130,
+          "blocking": 80,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 6
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 5
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381620,
+          "dur": 85,
+          "blocking": 35,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 65
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381706,
+          "dur": 60,
+          "blocking": 10,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 59
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "konfluens",
+              "funktion": "",
+              "dur": 40
+            },
+            {
+              "namn": "v8.compile",
+              "url": "konfluens",
+              "funktion": "",
+              "dur": 3
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381869,
+          "dur": 899,
+          "blocking": 849,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 808
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 68
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "konfluens",
+              "funktion": "$RV",
+              "dur": 1
+            },
+            {
+              "namn": "FireAnimationFrame",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109381934,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 808
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109382787,
+          "dur": 374,
+          "blocking": 324,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 371
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109382817,
+          "dur": 106,
+          "blocking": 56,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383045,
+          "dur": 66,
+          "blocking": 16,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383168,
+          "dur": 435,
+          "blocking": 385,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 11
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "2qnjvou52dgsk.js",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "2faotogsnwm81.js",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "TimerFire",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "PerformanceObserver.observe.type",
+              "dur": 1
+            },
+            {
+              "namn": "v8.compile",
+              "url": "2faotogsnwm81.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 0
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383250,
+          "dur": 427,
+          "blocking": 377,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "2faotogsnwm81.js",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 2
+            },
+            {
+              "namn": "v8.compile",
+              "url": "2faotogsnwm81.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383742,
+          "dur": 64,
+          "blocking": 14,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 57
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383910,
+          "dur": 54,
+          "blocking": 4,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 54
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109383979,
+          "dur": 146,
+          "blocking": 96,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 218
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 12
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 7
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384035,
+          "dur": 218,
+          "blocking": 168,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 218
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384206,
+          "dur": 154,
+          "blocking": 104,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 155
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384253,
+          "dur": 171,
+          "blocking": 121,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 155
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384427,
+          "dur": 183,
+          "blocking": 133,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 19
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 17
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 8
+            },
+            {
+              "namn": "v8.compile",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 5
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "sw.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384477,
+          "dur": 90,
+          "blocking": 40,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384621,
+          "dur": 59,
+          "blocking": 9,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 46
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384643,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 19
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384811,
+          "dur": 136,
+          "blocking": 86,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 136
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109384948,
+          "dur": 209,
+          "blocking": 159,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 208
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385171,
+          "dur": 81,
+          "blocking": 31,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 14
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 12
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 8
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 2
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385308,
+          "dur": 153,
+          "blocking": 103,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 35
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 16
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 9
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385333,
+          "dur": 74,
+          "blocking": 24,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 16
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385471,
+          "dur": 53,
+          "blocking": 3,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385939,
+          "dur": 243,
+          "blocking": 193,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 211
+            },
+            {
+              "namn": "v8.compile",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 121
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "craw_background.js",
+              "funktion": "",
+              "dur": 22
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "craw_background.js",
+              "funktion": "window.onload",
+              "dur": 8
+            },
+            {
+              "namn": "v8.compile",
+              "url": "craw_background.js",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::webViewDeny",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::platformApp",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109385992,
+          "dur": 114,
+          "blocking": 64,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "craw_background.js",
+              "funktion": "",
+              "dur": 22
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "craw_background.js",
+              "funktion": "window.onload",
+              "dur": 8
+            },
+            {
+              "namn": "v8.compile",
+              "url": "craw_background.js",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "extensions::platformApp",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109386189,
+          "dur": 72,
+          "blocking": 22,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109386335,
+          "dur": 148,
+          "blocking": 98,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109388350,
+          "dur": 52,
+          "blocking": 2,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109391978,
+          "dur": 66,
+          "blocking": 16,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109392515,
+          "dur": 97,
+          "blocking": 47,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "27pvldtwov_gc.js",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 3
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "1vzidlm-45ju_.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109392520,
+          "dur": 86,
+          "blocking": 36,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "27pvldtwov_gc.js",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 3
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "1vzidlm-45ju_.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109392645,
+          "dur": 218,
+          "blocking": 168,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 109
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 105
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109392864,
+          "dur": 79,
+          "blocking": 29,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "1r-7pos3d050-.js",
+              "funktion": "",
+              "dur": 70
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 9
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1109392868,
+          "dur": 60,
+          "blocking": 10,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "FunctionCall:2feezv-iveko5.js",
+          "ms": 1135
+        },
+        {
+          "kalla": "Layout:(dokumentet)",
+          "ms": 337
+        },
+        {
+          "kalla": "EvaluateScript:service_worker_bin_prod.js",
+          "ms": 211
+        },
+        {
+          "kalla": "v8.compile:service_worker_bin_prod.js",
+          "ms": 121
+        },
+        {
+          "kalla": "EvaluateScript:craw_background.js",
+          "ms": 44
+        },
+        {
+          "kalla": "EventDispatch:(dokumentet)",
+          "ms": 23
+        },
+        {
+          "kalla": "EvaluateScript:sw.js",
+          "ms": 17
+        },
+        {
+          "kalla": "FunctionCall:craw_background.js",
+          "ms": 16
+        },
+        {
+          "kalla": "UpdateLayoutTree:(dokumentet)",
+          "ms": 11
+        },
+        {
+          "kalla": "v8.compile:craw_background.js",
+          "ms": 8
+        },
+        {
+          "kalla": "v8.compile:sw.js",
+          "ms": 5
+        },
+        {
+          "kalla": "EvaluateScript:2faotogsnwm81.js",
+          "ms": 4
+        }
+      ],
+      "aggregeratFunktioner": [],
+      "shifts": [],
+      "res": [
+        {
+          "n": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "start": 400,
+          "klar": 739,
+          "typ": "link",
+          "storlek": 51224
+        },
+        {
+          "n": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "start": 402,
+          "klar": 749,
+          "typ": "link",
+          "storlek": 48732
+        },
+        {
+          "n": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+          "start": 402,
+          "klar": 759,
+          "typ": "link",
+          "storlek": 51832
+        },
+        {
+          "n": "2nfdpgrzmuor8.css",
+          "start": 402,
+          "klar": 713,
+          "typ": "link",
+          "storlek": 39392
+        },
+        {
+          "n": "1y8-o7vbgoakh.css",
+          "start": 403,
+          "klar": 602,
+          "typ": "link",
+          "storlek": 1991
+        },
+        {
+          "n": "0el5nt6-nk2y3.js",
+          "start": 403,
+          "klar": 847,
+          "typ": "link",
+          "storlek": 3912
+        },
+        {
+          "n": "11jq0c2_zavac.js",
+          "start": 403,
+          "klar": 928,
+          "typ": "script",
+          "storlek": 8804
+        },
+        {
+          "n": "095w8h_fgc5q_.js",
+          "start": 403,
+          "klar": 998,
+          "typ": "script",
+          "storlek": 43035
+        },
+        {
+          "n": "turbopack-3or-2iatmqpb2.js",
+          "start": 403,
+          "klar": 937,
+          "typ": "script",
+          "storlek": 4149
+        },
+        {
+          "n": "3fntmmi971322.js",
+          "start": 403,
+          "klar": 1008,
+          "typ": "script",
+          "storlek": 3961
+        },
+        {
+          "n": "2feezv-iveko5.js",
+          "start": 403,
+          "klar": 1056,
+          "typ": "script",
+          "storlek": 71870
+        },
+        {
+          "n": "3gm4g-6wa8q6q.js",
+          "start": 403,
+          "klar": 1048,
+          "typ": "script",
+          "storlek": 916
+        },
+        {
+          "n": "2faotogsnwm81.js",
+          "start": 404,
+          "klar": 1108,
+          "typ": "script",
+          "storlek": 9532
+        },
+        {
+          "n": "2qnjvou52dgsk.js",
+          "start": 404,
+          "klar": 1115,
+          "typ": "script",
+          "storlek": 9121
+        },
+        {
+          "n": "40tp2b4ex93k1.js",
+          "start": 404,
+          "klar": 1289,
+          "typ": "script",
+          "storlek": 8987
+        },
+        {
+          "n": "3pst6ss7vt93a.js",
+          "start": 404,
+          "klar": 1368,
+          "typ": "script",
+          "storlek": 12484
+        },
+        {
+          "n": "02vzzrgqq_wa8.js",
+          "start": 404,
+          "klar": 1430,
+          "typ": "script",
+          "storlek": 47833
+        },
+        {
+          "n": "264uyfejpsomd.js",
+          "start": 404,
+          "klar": 1358,
+          "typ": "script",
+          "storlek": 8455
+        },
+        {
+          "n": "3_oxh1ijde3f9.js",
+          "start": 404,
+          "klar": 1349,
+          "typ": "script",
+          "storlek": 6433
+        },
+        {
+          "n": "1blrp_z17a73e.js",
+          "start": 404,
+          "klar": 1402,
+          "typ": "script",
+          "storlek": 17378
+        },
+        {
+          "n": "208qlhbwv45x6.js",
+          "start": 404,
+          "klar": 1545,
+          "typ": "script",
+          "storlek": 7667
+        },
+        {
+          "n": "ikon-192.png",
+          "start": 3118,
+          "klar": 3397,
+          "typ": "other",
+          "storlek": 309
+        },
+        {
+          "n": "3c20dmqsqgcwk.js",
+          "start": 4589,
+          "klar": 4891,
+          "typ": "script",
+          "storlek": 1264
+        },
+        {
+          "n": "1qla1t99hniv6.js",
+          "start": 11415,
+          "klar": 11659,
+          "typ": "script",
+          "storlek": 4174
+        },
+        {
+          "n": "07ggxbfyc05g8.js",
+          "start": 11478,
+          "klar": 11662,
+          "typ": "script",
+          "storlek": 4264
+        },
+        {
+          "n": "1vzidlm-45ju_.js",
+          "start": 11417,
+          "klar": 11714,
+          "typ": "script",
+          "storlek": 14251
+        },
+        {
+          "n": "26cy_8m3039nw.js",
+          "start": 11448,
+          "klar": 11709,
+          "typ": "script",
+          "storlek": 14711
+        },
+        {
+          "n": "27pvldtwov_gc.js",
+          "start": 11478,
+          "klar": 11715,
+          "typ": "script",
+          "storlek": 10535
+        },
+        {
+          "n": "1r-7pos3d050-.js",
+          "start": 11496,
+          "klar": 11941,
+          "typ": "script",
+          "storlek": 8676
+        },
+        {
+          "n": "2txkr-37um5i2.js",
+          "start": 11417,
+          "klar": 12345,
+          "typ": "script",
+          "storlek": 282452
+        }
+      ],
+      "fontsKlara": 19524
+    }
+  ]
+}

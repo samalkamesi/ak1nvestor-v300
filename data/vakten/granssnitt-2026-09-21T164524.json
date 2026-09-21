@@ -1,0 +1,73 @@
+{
+  "bas": "https://lab.ak1nvestor.com",
+  "chrome": "/usr/bin/google-chrome",
+  "tid": "2026-09-21T16:45:04.535Z",
+  "status": "ok",
+  "kombinationer": [
+    {
+      "tema": "light",
+      "skarm": "390px",
+      "sida": "/studio",
+      "status": "ok",
+      "felAntal": 0,
+      "konsolFel": [],
+      "matning": {
+        "overflod": 0,
+        "overflodBredd": 390,
+        "utanfor": [],
+        "kontrast": [],
+        "klippt": []
+      },
+      "forvantade401": 1
+    },
+    {
+      "tema": "light",
+      "skarm": "1280px",
+      "sida": "/studio",
+      "status": "ok",
+      "felAntal": 0,
+      "konsolFel": [],
+      "matning": {
+        "overflod": 0,
+        "overflodBredd": 1280,
+        "utanfor": [],
+        "kontrast": [],
+        "klippt": []
+      },
+      "forvantade401": 1
+    },
+    {
+      "tema": "dark",
+      "skarm": "390px",
+      "sida": "/studio",
+      "status": "ok",
+      "felAntal": 0,
+      "konsolFel": [],
+      "matning": {
+        "overflod": 0,
+        "overflodBredd": 390,
+        "utanfor": [],
+        "kontrast": [],
+        "klippt": []
+      },
+      "forvantade401": 1
+    },
+    {
+      "tema": "dark",
+      "skarm": "1280px",
+      "sida": "/studio",
+      "status": "ok",
+      "felAntal": 0,
+      "konsolFel": [],
+      "matning": {
+        "overflod": 0,
+        "overflodBredd": 1280,
+        "utanfor": [],
+        "kontrast": [],
+        "klippt": []
+      },
+      "forvantade401": 1
+    }
+  ],
+  "fel": 0
+}

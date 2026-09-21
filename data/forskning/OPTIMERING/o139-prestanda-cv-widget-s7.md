@@ -127,7 +127,77 @@ STÄNGT (o27/o119/o121) — utanför denna vågs räckvidd, bokförs.
 
 ## §8 — EFTER-facit (fylls av vakarövertag)
 
-(väntar deploy)
+### Påbörjat 2026-09-21 14:4x–15:0x lokal — s7-u3 (manifest auto-s7-1790001325956): deploy spärrad, rot orsak kurad, verkställande förberett
+
+**Status: INTE SLUTFÖRT — deploy av e27ef394 hade ej skett vid vågslut;
+mätning är spökmätningsskyddad tills kanalbevis finns.** Kronologi:
+
+1. **Deploy-läge vid vågstart (14:35Z):** senaste DEPLOYAD 02:12:24Z
+   d401d719 — FÖRE kurcommitten e27ef394 (08:28 lokal). Tre efterföljande
+   byggförsök (08:20/08:30/08:40Z) OOM-dödade; .next = läkebackup utan
+   kurens CSS (grep "cv-widget" i .next/static/chunks/*.css = 0 — därför
+   mättes INTE: spökmät-skyddet, o139 §1:s kanalbevisdisciplin).
+2. **Rot orsak 1 — orphan-chrome, KURAD:** PID 139018 (headless Chrome,
+   --remote-debugging-port=9349) = u1/u3:s övergivna mätsond från 07:42
+   (o139 §1 nämner den "lämnad orörd"). Vid vågstart 9 h gammal, PPID=1
+   (orphan, ägandesession död), NOLL TCP-anslutningar på 9349 — men
+   prod-synkens RAM-vakt räknade den som "chrome-cron levande (+1024 MB
+   reserv)". Städad 14:46Z (kill → verifierat 0 chrome-processer,
+   +~1 GB låströskel). Detta var NÖDVÄNDIGT men EJ TILLRÄCKLIGT:
+3. **Rot orsak 2 — fabrikens egen omgång (struktur, ej fel):** med 2–3
+   parallella zcode-barn (~0,85 GB/st) kräver prod-synken 2200+1700 =
+   3900 MB tillgängligt; 14:47:25Z-pollen: 3069 MB ⇒ VÄNTAR-RAM kvar.
+   Deploy av e27ef394 kan ske först när omgången (start 14:35Z) avslutar
+   + nästa poll (var 10:e min) + ~7 min bygg ⇒ tidigast ~15:1xZ.
+4. **Verkställande redo (exakt, för nästa fönster):**
+   - bekräfta `DEPLOYAD` i data/vakten/prod-synk.log med e27ef394 som
+     förfader (`git merge-base --is-ancestor e27ef394 <deployad-hash>`);
+   - kanalbevis: `grep -l "cv-widget" .next/static/chunks/*.css` + curl
+     prod-CSS innehåller `.cv-widget-super`/`.cv-widget-kalk`;
+   - `node verktyg/prestanda-lighthouse.mjs o139-efter /superanalys
+     /kalkylator` (dom enligt §7: CLS 0 ×2, TBT /kalkylator ≤ ~450,
+     LCP ±15 %, poäng ±) + `LH_JAMFOR=o139-fore`;
+   - gränssnittsvakten `--bas=http://localhost:3000` 0 fynd;
+   - fyll facit ovan + worklog. Anspråk:
+     data/vakten/s7-o139-vakarotag-efter-u3-ansprak-2026-09-21.md.
+
+**Levererat denna våg:** bygglås-diagnostik + orphan-chrome-kur (prod-
+synkens spärr "+1024 chrome-cron" borta) + detta facit-underlag. §7:s
+mätdom SLUTSTÄNGS av nästa fönster ovan.
+
+*Tillägg 14:58Z:* 14:57-pollen: krav 6624 MB (NY chrome + syskonens
+AKTIVA sond — PID 468441 ägd av zcode-cli 451104, pågående syskonarbete,
+FÅR EJ städas) + 4 zcode-barn, tillgängligt 1114 — deploy sker när
+omgången + syskonens sonder avslutat; RAM-vakten sköter det autonomt.
+Ingen ytterligare kur från denna vågs sida: låset är korrekt beteende
+(OOM-lärdomarna), ej fel.
+
+
+### DEL 2 — s7-u2 (samma manifest, anspråk 14:40Z): instrument levererade, deploy fortfarande spärrad vid vågslut — slutstängning = 5-minutersjobb nästa fönster
+
+Kronologi 14:40–15:5xZ: u3:s DEL 1 läst + arvet accepterat (u2:s anspråksfil
+på disk, uppdaterad 15:0x). Deploy-jakten: 15:07:25Z "bygger NU" (V235-tak
+100 min passerat) → **15:14:24Z bygg OOM-dödat** (läkebackup serverar;
+andra OOM-ronden på dygnet) → 15:17:26Z nytt V235-spär (0/30) → 15:27 (9/30)
+· 15:37 (19/30) · **15:47:26Z VÄNTAR-RAM 3540 < 3900** (2 klassade
+zcode-barn: u2 + fabrikens u2-försök-2-linje 15:15Z, samt kundens studio-
+session "zcode app-server" 15:41Z med egen zcode-familj ~2,2 GB — orörbar)
+→ tidigaste verkställande = 15:57-pollen ENDAST om RAM ≥ tak när fabrikens
+barn avslutat, dvs först efter detta vågslut. Deployen är STRUKTURELLT
+låst bakom fabrikens parallellism + kundsessionen: korrekt beteende
+(OOM-lärdomarna + V235), ingen kur möjlig eller önskvärd från agentplanet.
+
+**Levererat (committat):** HELA mätpipelinen — `verktyg/_s7u2o139efter-kor.mjs`
+(6-stegs körare: DEPLOYAD-parsring + merge-base e27ef394-kontroll
+(spökmätningsskydd) → prod 200 ×2 → CSS-kanalbevis → ISR-värmning ×3 →
+Lighthouse-EFTER med LH_JAMFOR=o139-fore → geometri+skroll-CLS → maskinell
+dom mot §7.2-kriterierna) · `verktyg/_s7u2o139efter-geometri.mjs` (sond-kopia
+PORT 9363 + egen utfil, o139:s original orört; UTÖKAD med §7.3 skroll-CLS =
+layout-shift-observer under kontrollerad bottenrullning). Körning:
+`node verktyg/_s7u2o139efter-kor.mjs` — exit 0 = dom GRÖN; JSON landar i
+lighthouse/ (kanalbevis-s7u2o139efter.json + dom-s7u2o139efter.json).
+Därefter endast: vakten riktad (--bas=http://localhost:3000 --snabb
+--sidor=/superanalys,/kalkylator) + §8-tal + worklog.
 
 ## LEVERANS (denna commit)
 

@@ -3,7 +3,7 @@
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
- * "sverige" och "usa") som filtrerar 100-bolagsuniversumet på land-fältet
+ * "sverige" och "usa") som filtrerar forskningsuniversumet på land-fältet
  * och sammanfattar SAMMA fem publika nyckeltal som /dataset:s
  * branschmedianer: P/E, P/B, EBIT-marginal, FCF-marginal och
  * omsättningstillväxt TTM. Titeln är ett "så jämför du"-mönster (§6:

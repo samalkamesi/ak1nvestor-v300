@@ -1,0 +1,285 @@
+{
+  "datum": "2026-09-20T15:18:08.742Z",
+  "bas": "http://localhost:3000",
+  "throttle": false,
+  "spårMs": 12000,
+  "sidor": [
+    {
+      "sokvag": "/en/blogg",
+      "fcpTs": 1024766216,
+      "traceEventAntal": 19678,
+      "antalLangtasks": 10,
+      "tbtFonsterFCP5s": 90,
+      "totaltCpuArbeteFCP5s": 1298,
+      "tbtHelTrace": 528,
+      "langtasks": [
+        {
+          "start": 1024765475,
+          "dur": 84,
+          "blocking": 34,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 83
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 83
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024765559,
+          "dur": 175,
+          "blocking": 125,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 143
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 22
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 14
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 11
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "blogg",
+              "funktion": "",
+              "dur": 11
+            },
+            {
+              "namn": "ParseHTML",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 10
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 7
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024765656,
+          "dur": 192,
+          "blocking": 142,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 143
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 15
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 14
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 9
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 8
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 5
+            },
+            {
+              "namn": "Layout",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 4
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 4
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024765865,
+          "dur": 117,
+          "blocking": 67,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "turbopack-3or-2iatmqpb2.js",
+              "funktion": "",
+              "dur": 114
+            },
+            {
+              "namn": "EventDispatch",
+              "url": "(dokumentet)",
+              "funktion": "",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "fD",
+              "dur": 2
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024766090,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 50
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024768900,
+          "dur": 78,
+          "blocking": 28,
+          "iFonstretFCP5s": true,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024769244,
+          "dur": 112,
+          "blocking": 62,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 106
+            },
+            {
+              "namn": "v8.compile",
+              "url": "service_worker_bin_prod.js",
+              "funktion": "",
+              "dur": 52
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024774457,
+          "dur": 64,
+          "blocking": 14,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "133icfp8p5tbq.js",
+              "funktion": "",
+              "dur": 64
+            },
+            {
+              "namn": "v8.compile",
+              "url": "133icfp8p5tbq.js",
+              "funktion": "",
+              "dur": 4
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024777118,
+          "dur": 53,
+          "blocking": 3,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1024777216,
+          "dur": 102,
+          "blocking": 52,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "EvaluateScript:service_worker_bin_prod.js",
+          "ms": 106
+        },
+        {
+          "kalla": "v8.compile:service_worker_bin_prod.js",
+          "ms": 52
+        }
+      ],
+      "aggregeratFunktioner": []
+    }
+  ]
+}

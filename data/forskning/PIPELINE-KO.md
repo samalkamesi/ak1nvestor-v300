@@ -338,3 +338,5 @@ Agent-anrop, 4+ via fabriksmanifest.
 - ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | styrelse-muadcvyf-cg1jm2 | Uppgradera beslutsminne-verktyget till att kräva lagrum/tillämpning/källa-fält och neka registrering av rättsliga beslut utan dem — LAGGRUNDEN som körande kod. | träffade: radera
 - ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | styrelse-muadcvyf-cg1jm2 | Bygg raderingsjobbet mekaniskt (cron + kvittologg per elev, kaskad till Supabase, fel-loggar och cachar) och dokumentera backupens retentionstak för raderade personuppgifter. | träffade: radera, radering
 - ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | styrelse-muadcvyf-cg1jm2 | Rendera art 13-informationen i själva första övningsflödet (mekanisk yta, ej bara policytext) med export/radering som medlem-funktion enligt beslut 1 punkt 3–4. | träffade: radering
+
+- [rond 131] Kunduppdragets vertikala snitt (ABB-passet /rapportakademin): LIVE-bevisat 2026-09-21 (200 + 401). Kvar för UPPDRAG KLART: gränssnittsvakt grön på nya sidan (vaktbevakare dispatcherad). Därefter: Fas 2-testelev-e2e (frivillig fördjupning) + nästa pass-bolag i akademin.

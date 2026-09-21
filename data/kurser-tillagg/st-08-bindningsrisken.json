@@ -1,0 +1,152 @@
+{
+  "slug": "st-08-bindningsrisken",
+  "category": "STABILITET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Bindningsrisken — bolagets egen ränterisk i balansräkningen",
+  "summary": "Stabilitetsfamiljens åttonde steg öppnar skuldens andra axel: inte hur mycket bolaget lånat, utan till vilket pris och hur länge priset gäller. Sonden mot 489-registret visar det vita fältet: bindningsrisk och ränterisk i balansräkningen ägs av ingen kurs — duration ägs av portföljsidan, stresstestet av nämnaren. Kursen bygger det påhittade Sund Värme AB och räknar två identiska balansräkningar som ändå lever olika: den rörliga skuldens ränta 36 mot den fasta 30, känslighetstalet i kronor per procentenhet, bindningstrappan som sprider förfallet, stresstestet där styrräntan stiger tre procentenheter samtidigt som omsättningen faller — och swappen som flyttar priset men aldrig krediten. Pedagogisk kurs i läskonst — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "Familjens sju första steg läser skulden som stock och börda: st-01 soliditeten, st-02 stresstestet, st-03 z-scoret, st-04 kreditcykeln, st-05 refinansieringsmuren, st-06 likviditetsreserven och st-07 förbindelserna utanför balansräkningen. Åttonde steget läser skulden som pris: samma skuldsumma kan kosta 30 eller 36 miljoner om året beroende på bindning, och skillnaden är inte kosmetik utan en försäkring med premie och skydd. Gränserna mot grannarna: rk-08-ranterisk äger portföljens ränterisk — obligationer som investering — medan denna kurs äger företagets skuldkolumn; st-02 äger stresstestet som metod — denna kurs äger riskkällan som mäts; ks-03-skuldens-anatomi äger strukturen — denna kurs äger räntelägets styrning; st-05 äger förfallomuren — denna kurs äger bindningsstigen som sprider den. Sond mot 489-registret 2026-09-21: bindningsrisk och ränterisk i balansräkningen — noll kursägare; duration tre träffar på portföljsidan, räntebindning två förbipasserande. Om du kan bolagets skuldsättningsgrad men inte dess rörliga andel: du kan halva skuldläget.",
+  "learn": "Prisaxeln: Sund Värmes skuld 600 kostar 36 helt rörlig mot 30 helt fast — försäkringspremien 6 miljoner om året · Break-even: den fasta räntan 5,00 procent vinner så länge styrräntan i snitt överstiger 2,80 procent · Känslighetstalet: rörlig skuld delat med hundra ger kronor per procentenhet — 6,0 helt rörlig, 4,0 i trappan, 2,0 efter swap · Bindningstrappan: 200 fast plus 400 rörlig ger ränta 34 och stressränta 46 · Det korrelerade stresstestet: styrräntan plus 3,0 procentenheter och rörelseresultat 90 till 70 ger täckning 1,30 helt rörlig mot 2,33 helt fast · Swappen: 200 rörliga byts till fasta mot 0,50 procents påslag — en miljon om året som halverar känsligheten",
+  "history": {
+    "origin": "Räntan som fara är lika gammal som räntan själv. I agrarsamhället var skulden årsvis: sädeslånet togs efter sådd och återbetalades efter skörd, och priset förnyades varje år efter årens utfall. Bonden visste inte i mars vad oktober skulle kosta — världens första rörliga ränta, bestämd av skördens godhet snarare än av någon penningpolitik.",
+    "evolution": "Den moderna obligationsmarknaden gav låntagaren ett val som bonden saknade: att låsa priset år framåt. Industribolagen i slutet av attiohundratalet lärde sig emittera obligationer med fast kupong och köpte därmed visshet med flexibilitetens pris — och kriserna lärde ut andra sidan. Varje period med kraftigt stigande korta räntor, från depressionens försvinnande krediter till nittiotalets nordiska bankkris, skapade samma parti: bolag som finansierat kort för att spara en halv procentenhet och som sedan betalade flera för att få behålla likviditeten.",
+    "modern": "I dag är räntesteckningen en del av finansförvaltningen i nästan alla bolag med räntebärande skuld: trappor av bindningstider, swappar som vrider exponeringen och känslighetstal som redovisas i förvaltningsberättelsen. Kursens slutsats är tidlös: skuldens risk bor inte bara i summeringen utan i priset och tiden — och den som kan läsa bindningsprofilen kan läsa bolagets ränteberättelse före dess resultatförklaring."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Skuldens andra axel — mängden är hälften, priset andra halvan", "minutes": 4 },
+    { "num": 2, "title": "Fast mot rörlig — försäkringens pris i kronor", "minutes": 4 },
+    { "num": 3, "title": "Känslighetstalet — en procentenhet i kronor", "minutes": 4 },
+    { "num": 4, "title": "Bindningstrappan — att sprida förfallet över tid", "minutes": 4 },
+    { "num": 5, "title": "Swappen — att flytta priset, aldrig krediten", "minutes": 4 },
+    { "num": 6, "title": "Läskonsten — räntenotens fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch uppmanade läsaren att öppna balansräkningen före resultaträkningen — och hans finansbolagskapitel pekar rakt på kursens kärna: för bolag med stor skuld är finansieringen en affär i affären. Hans tumregel att sky sig för bolag vars resultat beror på saker ledningen inte styr gäller räntan dubbelt: en helt rörlig skuld gör bolagets vinst till en satsning på styrräntans väg. Lynch-läxan för kursen: fråga inte bara vad skulden kostar i dag — fråga vad den kan komma att kosta, och vem som bestämmer.",
+  "grahamSection": "Benjamin Grahams krav på försiktighet i finansieringen har två axlar, och den andra glöms ofta: inte bara att skulden är rimlig i storlek utan att den är trygg i struktur. Hans princip att framtida osäkerhet inte ska hanteras med kort finansiering blir i kursen bindningsläran: den rörliga räntan är en satsning som förnyas varje år, den fasta ett avtal som köper tid. Grahams säkerhetsmarginal, översatt till räntan, är avståndet mellan räntetäckningen i dag och i det dåliga fallet — kapitel tre räknar båda.",
+  "ak1Section": "I AK1A:s metodik är bindningsrisken stabilitetsdimensionens prisgren: skuldkvoten säger hur mycket, känslighetstalet säger hur dyrt, och tillsammans ger de skuldpositionens helhet. Kursen tränar fem dimensioner: läsningen av räntenoten (källkritik), känslighetstalets räknelära (aritmetik), det korrelerade stresstestet (scenario), trappans och swappens styrning (handling) och gränsen mot portföljens ränterisk (metodik — samma fenomen, olika sida av balansräkningen). Utbildning i läskonst — inte vägledning i värdepapper.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Skuldens andra axel — mängden är hälften, priset andra halvan",
+      "intro": "Stabilitetskurserna har hittills läst skulden som en storlek: kvoter, täckningar, murar. Detta kapitel öppnar den andra axeln — priset på skulden — med två bolag som är identiska i varje mått utom ett: vad räntan heter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempelbolag Sund Värme AB (påhittat för räkningen, som alla tal i kursen) tillverkar värmepumpar med omsättning 900, rörelseresultat 90 och balansomslutning 980 — skuld 600 och eget kapital 380, alltså skuldsättningsgrad 1,58 och soliditet 38,8 procent. Två fabriker, två balansräkningar, identiska till sista siffran — utom i räntenoten. Fabrik A har lånat 600 helt rörligt: styrräntan plus marginal, i dag 3,80 plus 2,20 lika med 6,00 procent, alltså räntekostnad 36. Fabrik B har bundit hela skulden fem år till 5,00 procent: räntekostnad 30. Samma skuld, sex miljoner kronors skillnad i årskostnad — och bakom skillnaden ligger hela kursens fråga: är de sex miljonerna slöseri eller försäkring? Räntetäckningen berättar första halvan: A har 90 / 36 lika med 2,50, B har 90 / 30 lika med 3,00. Identiska bolag, olika tålighet — och ingen av skillnaderna syns i skuldsättningsgraden, som fortfarande är 1,58 för båda."
+        },
+        {
+          "type": "definition",
+          "content": "Bindningsrisk: risken att räntekostnaden förändras när räntan gör det — skild från refinansieringsrisken (st-05), som är risken att lånet inte kan förnyas alls. Rörlig ränta ger maximal bindningsrisk och ingen refinansieringsdiskussion under löptiden; fast ränta ger ingen bindningsrisk men en förfallomur på slutdatumet. Skuldens totala risk är summan av de två — och de två delar på samma kvot."
+        },
+        {
+          "type": "insight",
+          "content": "Skuldens första axel — mängden — står i balansräkningen och läses av alla. Den andra — priset och tiden — står i räntenoten och läses av få. Balansräkningen fotograferar en dag; räntenoten är ett kontrakt som lever i år. Därför kan två bolag med identiska kvoter bära helt olika stabilitet — och den som vill veta skillnaden måste läsa noten, inte huvudtalet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Fast mot rörlig — försäkringens pris i kronor",
+      "intro": "Att binda räntan är att köpa en försäkring: premien är skillnaden mot den rörliga, skyddet är vissheten. Detta kapitel sätter pris på båda delarna och letar break-even.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fabrik B betalar 30 mot Fabrik A:s 36 — sex miljoner mer i fickan för A, varje år, så länge läget håller. Premien för Bs visshet är samma sex miljoner, och frågan varje finanschef ställer sig är när premien är värd skyddet. Break-even ligger där den rörliga räntan passerar den fasta: Sund Värmes marginal är 2,20 procentenheter, så när styrräntan överstiger 2,80 procent kostar det rörliga lånet mer än 5,00 procent — och varje år med snitt över 2,80 har B vunnit. Räknat annorlunda: de sex miljonerna per år är en satsning på att styrräntan i snitt stannar under 2,80 procent under bindningstiden — en satsning bolaget lägger utan att ha penningpolitik på sitt bord. Här är kursens vändning: den fasta räntan är inte det försiktiga valet, den är valet som tar en prisrisk en gång — den rörliga tar den varje år. Ingen av dem är gratis, och valet är ett försäkringsexempel i ren form: premien känd, skadefallet okänt."
+        },
+        {
+          "type": "tabell",
+          "content": "Försäkringens räknelära (Sund Värme, påhittade tal, miljoner kronor): HELT RÖRLIG — 6,00 procent, kostnad 36, täckning 2,50 · HELT FAST FEM ÅR — 5,00 procent, kostnad 30, täckning 3,00 · PREMIEN — 6 per år, 30 över fem år · BREAK-EVEN — styrränta 2,80 procent i snitt under bindningstiden · LÄSANVISNINGEN — den som jämför bankens erbjudanden om fast eller rörlig ränta gör samma val som Fabrik A och B; kursen räknar konsekvenserna, den väljer aldrig."
+        },
+        {
+          "type": "insight",
+          "content": "Ordet fast är en frestelse: det låter tryggt och permanent. Men den fasta räntan är bara fast till förfallodagen — därnäst väntar st-05-kursens mur. Och ordet rörlig låter riskabelt men är i år med fallande ränta en vinstmaskin. Kursens läsning löser ordens tvist: det finns inget rätt svar, bara en premie, ett skydd och en break-even — och en styrelse som ska veta vilka av dem den köper."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Känslighetstalet — en procentenhet i kronor",
+      "intro": "Alla kurser om stress slutar i procent — men bolaget betalar kronor. Detta kapitel översätter räntekänsligheten till vad den faktiskt kostar per procentenhet, och kör det korrelerade stresstestet där både räntan och verksamheten rör sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Känslighetstalet är kursens enklaste verktyg: den rörliga skulden delat med hundra ger kostnadsökningen i miljoner kronor per procentenhet. Fabrik A med hela 600 rörliga har känslighet 6,0 — varje procentenhet uppåt kostar sex miljoner om året, direkt från resultatet. Fabrik B med hela skulden fast har känslighet noll nominellt under bindningstiden. Trappan från nästa kapitel, med 200 fast och 400 rörligt, har känslighet 4,0. Med talet i handen blir stressen konkret: styrräntan stiger 3,0 procentenheter, den rörliga räntan går från 6,00 till 9,00 procent — Fabrik A:s räntekostnad från 36 till 54, en ökning med 18 miljoner, känslighetstalet 6,0 gånger tre. Samtidigt — och detta är det korrelerade stresstestets poäng — faller försäljningen i samma konjunkturomgång som driver räntan: rörelseresultatet från 90 till 70. Täckningen A: 70 / 54 lika med 1,30. Täckningen B: 70 / 30 lika med 2,33. Trappan: ränta 46, täckning 70 / 46 lika med 1,52. Tre bolag, identiska i går, och i morgon tre olika berättelser — allt bestämt i räntenoten, för längesedan."
+        },
+        {
+          "type": "tabell",
+          "content": "Det korrelerade stresstestet (styrränta plus 3,0 procentenheter, rörelseresultat 90 till 70, påhittade tal): HELT RÖRLIG — ränta 36 till 54, täckning 2,50 till 1,30 · HELT FAST — ränta 30 kvar 30, täckning 3,00 till 2,33 · TRAPPA 200 FAST 400 RÖRLIG — ränta 34 till 46, täckning 2,65 till 1,52 · KÄNSLIGHETSTAL — 6,0 mot 0 mot 4,0 kronor per procentenhet · MORALEN — stresstestets värde ligger inte i att förutsäga fallet utan i att känna till spridningen mellan bolagen före det kommer."
+        },
+        {
+          "type": "insight",
+          "content": "Ordet korrelerad bär kapitlet: ränta och konjunktur vandrar ofta tillsammans, och det som ser osannolikt i en kalkyl — högre ränta samtidigt som sämre försäljning — är precis det som händer i varje åtstramning. Stresstesta aldrig en variabel i taget när verkligheten flyttar dem i samma våg."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Bindningstrappan — att sprida förfallet över tid",
+      "intro": "Valet är inte antingen eller: de flesta bolag bygger en trappa av bindningstider. Detta kapitel bygger Sund Värmes trappa och visar hur den kyler både bindningsrisken och förfallomuren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sund Värme väljer trappan: 200 bundet fem år till 5,00 procent och 400 rörligt till 6,00 procent. Räntan i lugnt läge: 200 gånger 5,00 procent lika med 10, plus 400 gånger 6,00 procent lika med 24 — totalt 34, alltså mellan ytterligheterna 30 och 36, med täckningen 90 / 34 lika med 2,65. Känsligheten har fallit från 6,0 till 4,0 per procentenhet. Trappans andra halva är tiden: om i stället de 600 sprids som 200 med två års löptid, 200 med fem och 200 rörligt, förfaller aldrig mer än en tredjedel på samma datum — och refinansieringsmuren (st-05:s ämne) blir ett trappsteg i stället för en klippa. Kursens variantskillnad: i första trappan är tanken priset, i andra är tanken förfallet; verkliga trappor bygger båda. Fördelen med att sprida är valfriheten — när den korta partien förfaller i ett år med hög ränta kan bolaget välja att binda lite och vänta med resten; koncentrerar det allt till ett datum har det inget val alls."
+        },
+        {
+          "type": "tabell",
+          "content": "Trappans två halvor (påhittade tal): PRISTRAPPAN — 200 fast 5,00 procent plus 400 rörlig 6,00 procent: ränta 34, känslighet 4,0, stressränta 46 · FÖRFALLOTRAPPAN — 200 om två år plus 200 om fem plus 200 rörlig: aldrig mer än en tredjedel förfaller samtidigt · YTERLIGHETERNA — helt rörlig 36 med känslighet 6,0, helt fast 30 med känslighet 0 och alltsammans förfaller år fem · LÄSANVISNINGEN — läs trappan baklänges i räntenoten: vilka belopp förfaller vilka år, och vad händer med räntan på varje del vid förnyelsen."
+        },
+        {
+          "type": "insight",
+          "content": "Trappan är portföljtänkandet flyttat till skuldsidan: som placeraren sprider innehav över tillgångsslag och löptider sprider låntagaren förfall över år och räntelägen. Målet är detsamma — att aldrig vara beroende av en enda dags villkor. Och som i portföljen är priset för spridningen att man sällan får det bästa utfallet: trappan vinner aldrig mot det perfekta valet i efterhand, bara mot det sämsta i förväg."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Swappen — att flytta priset, aldrig krediten",
+      "intro": "Marknaden för ränteswappar låter bolaget vrida ränteexponeringen utan att röra lånet. Detta kapitel räknar en swap på Sund Värmes trappa och drar gränsen mot allt swappen inte gör.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sund Värme tar trappan ett steg längre: 200 av de 400 rörliga byts till fast via ränteswap med banken, mot ett påslag om 0,50 procentenheter. Efter swappen är 200 bundna i lånet, 200 bundna via avtal och 200 rörliga — känsligheten har fallit från 4,0 till 2,0 per procentenhet, och priset är påslaget: 200 gånger 0,50 procent lika med 1 miljon kronor om året. Räntan i lugnt läge: 10 för de första fasta, 13 för de swappade (6,00 rörlig plus 0,50 swappris, i praktiken en fast kostnad om 6,50 procent) och 12 för de rörliga — totalt 35. I stresstestet med styrräntan tre procentenheter upp och rörelseresultat 70: de rörliga kostar 18, de fasta och swappade står stilla — total ränta 41, täckning 70 / 41 lika med 1,71, mot trappans 1,52 utan swap. En miljon om året köpte alltså nästan två tiondelar täckning i det onda året — och mer i ett värre. Swappen har också en gräns som kursen måste dra: den flyttar prisrisken till motparten men skapar samtidigt en motpartsrisk av eget slag — och den lämnar själva lånet där det var. rk-16-kursen äger den risken; detta kapitel äger priset på flytten. Själva instrumentets maskineri — de två benen, nätteringen av skillnaden och swapkurvan — ägs av derivatfamiljens kurser; här läses swappen utifrån, från låntagarens stol."
+        },
+        {
+          "type": "tabell",
+          "content": "Swappens räknelära (påhittade tal, miljoner kronor): FÖRE — 200 fast plus 400 rörlig: ränta 34, känslighet 4,0, stresstäckning 1,52 · SWAPPEN — 200 rörliga mot fasta, påslag 0,50 procentenheter, kostnad 1 per år · EFTER — 200 fast plus 200 swapfasta plus 200 rörlig: ränta 35, känslighet 2,0, stresstäckning 1,71 · VAD SWAPPEN GÖR — flyttar priset från rörligt till fast utan att röra lånet · VAD SWAPPEN INTE GÖR — minskar inte skulden, förlänger inte löptiden, tar inte bort kreditrisken — och lägger till en motpartsrisk som rk-16 äger."
+        },
+        {
+          "type": "insight",
+          "content": "Swappen illustrerar en princip som gäller all styrning av finansiella risker: varje instrument som flyttar en risk skapar en annan — annars vore det gratis. Ränteswappen byter prisosäkerhet mot motpartsexponering; valutaswappen byter valutrisk mot samma; försäkringen byter osäkerhet mot premie. Kursens fråga vid varje instrument är därför alltid dubbel: vad kostar skyddet, och vad heter den nya risken."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Läskonsten — räntenotens fem frågor",
+      "intro": "Allt kursen byggt samlas i fem frågor att ställa till räntenoten i en årsredovisning. Detta kapitel är övningen — och påminnelsen om att kursen är utbildning, aldrig råd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: hur stor del av den räntebärande skulden är rörlig just i dag? Talet ger känslighetstalet direkt — rörlig skuld delat med hundra, kronor per procentenhet. Fråga två: hur ser förfalloprofilen ut — vilka belopp förfaller vilka år? En koncentration är st-05-kursens mur även när räntan är bunden. Fråga tre: hur mycket är swappat, till vilket pris och till vilken löptid? Notera att swappad andel är fast i praktiken men kan stå som rörlig i noten om swapavtalsraden inte läses. Fråga fyra: vad blir räntekostnaden om styrräntan stiger två procentenheter — och vad blir räntetäckningen om rörelseresultatet samtidigt faller en femtedel? Det är det korrelerade stresstestet, räknat på bolagets egna tal. Fråga fem: vilken var den genomsnittliga räntan under året mot föregående — och förklarar förändringen volym, pris eller bindningsläge? Fem frågor, tio minuter med noten, och skuldens andra axel är läst."
+        },
+        {
+          "type": "text",
+          "content": "En varning från kursens eget exempel: Fabrik A och B var identiska i varje mått utom räntenoten — och deras motståndskraft är inte identisk i något scenario som rör räntan. Ändå redovisas båda med samma skuldsättningsgrad, samma soliditet och nästan samma räntetäckning i lugnt läge. Så länge noter om bindning läses av få är informationen inte dold — bara försummad. Kursens bidrag är att den inte längre är försummad av dig."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din utmaning: öppna räntenoten i en årsredovisning du aldrig läst förr (verkliga tal i övningen, påhittade i kursen) och besvara de fem frågorna — rörlig andel, förfalloprofil, swappad andel, stresstest med plus två procentenheter och en femtedel lägre rörelseresultat, samt årets mot förra årets genomsnittsränta. Räkna känslighetstalet och skriv en mening om vad talet betyder för bolagets tålighet i en åtstramning. Detta är en övning i läskonst — ingen uppmaning att köpa eller sälja något värdepapper."
+        }
+      ]
+    }
+  ]
+}

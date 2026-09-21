@@ -92,7 +92,7 @@ const peText: MultiplText = {
     "Dividera aktiens kurs med vinsten per aktie — svaret är hur många års nuvarande vinst kursen representerar.",
     "Negativ eller nästan noll vinst gör multiplen meningslös — sådana bolag lämnar värdet osatt i stället för att synas som missvisande tal.",
     "I universumet lagras P/E som färdig multipel per bolag; median, kvartiler (P25/P75), min och max räknas endast på bolag med ändligt mätt värde.",
-    "Universumraden räknas med exakt samma metod på alla 100 bolag — bransch- och universumtal kan aldrig skilja sig åt i sättet de räknats.",
+    "Universumraden räknas med exakt samma metod på alla bolag i universumet — bransch- och universumtal kan aldrig skilja sig åt i sättet de räknats.",
   ],
   saLaserDu: [
     "P/E väger samman två utfall — kursen och vinsten — så en hög multipel kan lika gärna spegla hög väntad tillväxt som en vinst på väg att falla.",
@@ -122,7 +122,7 @@ const pbText: MultiplText = {
     "Ta bolagets bokförda eget kapital ur senaste balansräkningen och räkna ut det per aktie.",
     "Dividera aktiens kurs med eget kapital per aktie — svaret är vad marknaden betalar per bokförd krona.",
     "Negativt eget kapital (skuld större än tillgångar) lämnar multiplen osatt — talet vore inte tolkningsbart.",
-    "Median, kvartiler (P25/P75), min och max räknas endast på bolag med ändligt mätt värde; universumraden räknas på samma sätt på alla 100 bolag.",
+    "Median, kvartiler (P25/P75), min och max räknas endast på bolag med ändligt mätt värde; universumraden räknas på samma sätt på alla bolag i universumet.",
     "Ärlighetsnotering: i universumet räknas egenkapitalmultiplen på samma grund (börsvärde / bokfört eget kapital), så dess tal sammanfaller helt med P/B — två namn, samma beräkning.",
   ],
   saLaserDu: [

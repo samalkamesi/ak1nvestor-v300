@@ -18,14 +18,14 @@
  *    universumsräderna; allt annat i filen är osynligt för denna modul.
  *
  * Delad källa med /data/nyckeltalsguide (våg 87): data/portfolj-system/
- * bolagsunivers.json — AKM2:s 100-bolagsuniversum (10 branscher × 10 bolag).
+ * bolagsunivers.json — AKM2:s forskningsuniversum (tio branscher).
  * Statistikhjälparna (median/runda1/procent1) återanvänds ur dataset-nyckeltal
  * så att båda datasetmenyerna räknar IDENTISKT.
  *
  * Determinism: rader sorteras med localeCompare("sv") på branschnyckeln —
  * samma indata ⇒ byte-identisk utdata, vid uppbyggnad och ISR-omrendering.
- * lasBranschMedianer cachar i modulminnet (parse av 100 rader en gång per
- * process) — samma mönster som kalla.ts. Server-side: fs läses endast här.
+ * lasBranschMedianer cachar i modulminnet (parse av universumsraderna en
+ * gång per process) — samma mönster som kalla.ts. Server-side: fs läses endast här.
  */
 import { readFileSync } from "node:fs";
 import path from "node:path";

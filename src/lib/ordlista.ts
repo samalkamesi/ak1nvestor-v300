@@ -1767,9 +1767,9 @@ export const ORDLISTA = {
     ar: "{nBolag} شركة · 10 قطاعات · مرصودة ومؤرّخة — مرجع تعليمي لا نصيحة استثمارية",
   },
   "dataset.ingress": {
-    sv: "AK1A:s publika referensdataset: medianvärden för nyckeltal per bransch, räknade ur vårt fasta universum av {nBolag} noterade bolag — 10 branscher × 10 bolag. Aggregat av offentliga marknadsdata, redovisade med observationsantal och hämtdatum. Pedagogisk analys — aldrig investeringsråd.",
-    en: "AK1A's public reference dataset: median values for key ratios per industry, computed from our fixed universe of {nBolag} listed companies — 10 industries × 10 companies. Aggregates of public market data, reported with observation counts and a retrieval date. Educational analysis — never investment advice.",
-    ar: "مجموعة البيانات المرجعية العامة من AK1A: وسيطات المؤشرات المالية لكل قطاع، محسوبة من عالمنا الثابت المكوَّن من {nBolag} شركة مدرجة — 10 قطاعات × 10 شركات. تجميعات لبيانات سوق عامة، تُعرض مع أعداد المشاهدات وتاريخ الاسترجاع. تحليل تعليمي — وليس أبدًا نصيحة استثمارية.",
+    sv: "AK1A:s publika referensdataset: medianvärden för nyckeltal per bransch, räknade ur vårt fasta universum av {nBolag} noterade bolag — 10 branscher. Aggregat av offentliga marknadsdata, redovisade med observationsantal och hämtdatum. Pedagogisk analys — aldrig investeringsråd.",
+    en: "AK1A's public reference dataset: median values for key ratios per industry, computed from our fixed universe of {nBolag} listed companies — 10 industries. Aggregates of public market data, reported with observation counts and a retrieval date. Educational analysis — never investment advice.",
+    ar: "مجموعة البيانات المرجعية العامة من AK1A: وسيطات المؤشرات المالية لكل قطاع، محسوبة من عالمنا الثابت المكوَّن من {nBolag} شركة مدرجة — 10 قطاعات. تجميعات لبيانات سوق عامة، تُعرض مع أعداد المشاهدات وتاريخ الاسترجاع. تحليل تعليمي — وليس أبدًا نصيحة استثمارية.",
   },
   "dataset.datering": {
     sv: "Rådata hämtad {hamtat} · medianerna räknas om när universumet underhålls · sidan uppdateras dagligen",
@@ -1987,9 +1987,9 @@ export const ORDLISTA = {
     ar: "وسيطات القطاع — وسيط P/E وP/B والهوامش لكل قطاع | AK1A",
   },
   "dataset.meta.beskrivning": {
-    sv: "Median P/E per bransch i AK1A:s {nBolag}-bolagsuniversum (10 branscher × 10 bolag, rådata {hamtat}). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt — observationsantal redovisas per nyckeltal. Pedagogisk referens, inte investeringsrådgivning.",
-    en: "Median P/E per industry in AK1A's {nBolag}-company universe (10 industries × 10 companies, raw data {hamtat}). With P/B, EBIT margin, FCF margin and revenue growth — observation counts reported per ratio. Educational reference, not investment advice.",
-    ar: "وسيط P/E لكل قطاع في عالم AK1A المكوَّن من {nBolag} شركة (10 قطاعات × 10 شركات، البيانات الخام {hamtat}). مع P/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات — تُعرض أعداد المشاهدات لكل مؤشر. مرجع تعليمي، وليس نصيحة استثمارية.",
+    sv: "Median P/E per bransch i AK1A:s {nBolag}-bolagsuniversum (rådata {hamtat}). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt — observationsantal redovisas per nyckeltal. Pedagogisk referens, inte investeringsrådgivning.",
+    en: "Median P/E per industry in AK1A's {nBolag}-company universe (raw data {hamtat}). With P/B, EBIT margin, FCF margin and revenue growth — observation counts reported per ratio. Educational reference, not investment advice.",
+    ar: "وسيط P/E لكل قطاع في عالم AK1A المكوَّن من {nBolag} شركة (البيانات الخام {hamtat}). مع P/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات — تُعرض أعداد المشاهدات لكل مؤشر. مرجع تعليمي، وليس نصيحة استثمارية.",
   },
   "dataset.meta.detalj.titel": {
     sv: "{bransch} — median P/E {pe} (n={n}) | AK1A",
@@ -2002,14 +2002,14 @@ export const ORDLISTA = {
     ar: "وسيطات {bransch} في عالم AK1A المكوَّن من {nBolag} شركة (البيانات الخام {hamtat}): P/E {pe} (انتشار ربيعي {p25pe}–{p75pe}) · P/B {pb} · هامش EBIT {ebit}% · هامش التدفق النقدي الحر {fcf}% · النمو {tillvaxt}%. يُعرض الانتشار (P25–P75) والمقارنة مع العالم بأكمله لكل مؤشر. مرجع تعليمي، وليس نصيحة استثمارية.",
   },
   "dataset.jsonld.namn": {
-    sv: "AK1A branschmedianer — nyckeltalsaggregat för 100-bolagsuniversumet",
-    en: "AK1A industry medians — key ratio aggregates for the 100-company universe",
-    ar: "وسيطات القطاع من AK1A — تجميعات المؤشرات المالية لعالم المئة شركة",
+    sv: "AK1A branschmedianer — nyckeltalsaggregat för {nBolag}-bolagsuniversumet",
+    en: "AK1A industry medians — key ratio aggregates for the {nBolag}-company universe",
+    ar: "وسيطات القطاع من AK1A — تجميعات المؤشرات المالية لعالم من {nBolag} شركة",
   },
   "dataset.jsonld.beskrivning": {
-    sv: "Median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur AK1A:s fasta universum av {nBolag} noterade bolag (10 branscher × 10 bolag). Rådata hämtad {hamtat} från offentliga marknadskällor; observationsantal (n) redovisas per nyckeltal. Pedagogiskt aggregat — inte investeringsrådgivning.",
-    en: "Median P/E, P/B, EBIT margin, FCF margin and revenue growth per industry, computed from AK1A's fixed universe of {nBolag} listed companies (10 industries × 10 companies). Raw data retrieved {hamtat} from public market sources; observation counts (n) reported per ratio. Educational aggregate — not investment advice.",
-    ar: "وسيط P/E وP/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات لكل قطاع، محسوبة من عالم AK1A الثابت المكوَّن من {nBolag} شركة مدرجة (10 قطاعات × 10 شركات). استُرجعت البيانات الخام {hamtat} من مصادر سوق عامة؛ ويُعرض عدد المشاهدات (n) لكل مؤشر. تجميع تعليمي — ليس نصيحة استثمارية.",
+    sv: "Median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur AK1A:s fasta universum av {nBolag} noterade bolag (10 branscher). Rådata hämtad {hamtat} från offentliga marknadskällor; observationsantal (n) redovisas per nyckeltal. Pedagogiskt aggregat — inte investeringsrådgivning.",
+    en: "Median P/E, P/B, EBIT margin, FCF margin and revenue growth per industry, computed from AK1A's fixed universe of {nBolag} listed companies (10 industries). Raw data retrieved {hamtat} from public market sources; observation counts (n) reported per ratio. Educational aggregate — not investment advice.",
+    ar: "وسيط P/E وP/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات لكل قطاع، محسوبة من عالم AK1A الثابت المكوَّن من {nBolag} شركة مدرجة (10 قطاعات). استُرجعت البيانات الخام {hamtat} من مصادر سوق عامة؛ ويُعرض عدد المشاهدات (n) لكل مؤشر. تجميع تعليمي — ليس نصيحة استثمارية.",
   },
   "dataset.jsonld.licens": {
     sv: "CC BY 4.0 — citera fritt med källangivelse \"AK1A Research Lab\" och hämtdatum.",

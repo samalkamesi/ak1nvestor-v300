@@ -30,7 +30,7 @@ import { execFileSync } from "node:child_process";
 // Ren klassificerare för delresurs-deploysignaturer (spår 8, s8-u1 omgång 5):
 // separat modul så att testen kan importera DEN RIKTIGA koden offline —
 // vakten själva är ett toppnivåskript som kör hela svepet vid import.
-import { konsolFelIndikerarDeployStorning } from "./granssnitt-konsol.mjs";
+import { konsolFelIndikerarDeployStorning, arForvantadAuth401 } from "./granssnitt-konsol.mjs";
 // Sidvalslogiken (rotation + FALLBACK + sektionsprioritering) — ren modul
 // så att sviten kan importera DEN RIKTIGA koden offline (s8-u2 2026-09-18).
 import {
@@ -522,6 +522,11 @@ try {
         let ommatt = false; // s8-u4: sidan ommätt efter utväntad deploy-kollision
         let matning = null;
         const konsolFel = [];
+        // o148 (s8-u3): förväntade AUTH-401 (autentiseringsgrindens korrekta
+        // svar för vakten anonyma webbläsare — /studio:s stream-poll) räknas
+        // INTE som defekt men bokförs ÖPPET per kombination: informationen
+        // försvinner aldrig, den klassas bara ärligt (granssnitt-konsol.mjs).
+        let forvantade401 = 0;
         page.on("console", (msg) => {
           if (msg.type() !== "error") return;
           const text = msg.text();
@@ -532,6 +537,7 @@ try {
           // favicon-404 på localhost =miljöbrus, ej sajtfel.
           if (text.includes("429")) return;
           if (IGNORERA_KONSOL(text, locUrl)) return;
+          if (arForvantadAuth401(text, locUrl)) { forvantade401++; return; }
           konsolFel.push((locUrl ? `[${locUrl.slice(0, 80)}] ` : "") + text.slice(0, 160));
         });
         page.on("pageerror", (fel) => konsolFel.push(String(fel).slice(0, 160)));
@@ -580,6 +586,7 @@ try {
             const friskIgen = await vantaPaFriskBas(6 * 60 * 1000);
             if (!friskIgen) { avbruten = true; break; }
             konsolFel.length = 0; // page-lyssnarna pushar hit — nollställ inför om-mätningen
+            forvantade401 = 0; // o148: samma nollställning för klassificerade 401
             try {
               const svar2 = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 25000 });
               const kod2 = svar2 ? svar2.status() : 0;
@@ -609,7 +616,7 @@ try {
             status = status === "ok" ? "stil-lös sida (CSS ej laddad)" : `${status} + stil-lös`;
             const felS = 1 + (konsolFel.length > 0 ? 1 : 0);
             rapport.fel += felS;
-            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null, omford: ommatt || undefined });
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null, omford: ommatt || undefined, forvantade401: forvantade401 || undefined });
             console.log(`⚑ [${tema}/${skarm.namn}] ${sida} — ${status}`);
             await new Promise((r) => setTimeout(r, 350));
             continue;
@@ -743,11 +750,11 @@ try {
           (konsolFel.length > 0 ? 1 : 0) +
           (status === "ok" ? 0 : 1);
         rapport.fel += felAntal;
-        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning, omford: ommatt || undefined });
+        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning, omford: ommatt || undefined, forvantade401: forvantade401 || undefined });
         if (status === "ok") matadeSidor.add(sida); // VÅG 157: journalförd vid ok-mätning
         const flagga = felAntal > 0 ? "⚑" : "·";
         console.log(
-          `${flagga} [${tema}/${skarm.namn}] ${sida} — överflöd ${matning ? matning.overflod + "px" : "?"}${matning && matning.kontrast.length ? `, kontrast ${matning.kontrast.length}` : ""}${matning && matning.utanfor.length ? `, utanför ${matning.utanfor.length}` : ""}${konsolFel.length ? `, konsolfel ${konsolFel.length}` : ""}${status !== "ok" ? ", " + status : ""}`
+          `${flagga} [${tema}/${skarm.namn}] ${sida} — överflöd ${matning ? matning.overflod + "px" : "?"}${matning && matning.kontrast.length ? `, kontrast ${matning.kontrast.length}` : ""}${matning && matning.utanfor.length ? `, utanför ${matning.utanfor.length}` : ""}${konsolFel.length ? `, konsolfel ${konsolFel.length}` : ""}${forvantade401 ? `, förväntade 401: ${forvantade401} (auth-grind, räknas ej)` : ""}${status !== "ok" ? ", " + status : ""}`
         );
         await new Promise((r) => setTimeout(r, 350)); // respektera hastighetsgränsen
       }

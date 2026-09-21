@@ -38,12 +38,12 @@ const FAQ = [
   {
     fraga: `Vad är median P/E för teknikbolag just nu?`,
     svar: TEKNIK?.medianPe != null
-      ? `Enligt AK1A:s 100-bolagsuniversum är median P/E för teknikbranschen ${sv(TEKNIK.medianPe)} (n=${TEKNIK.n} bolag med mätt P/E, rådata hämtad ${MEDIANER.hamtat}). Medianen är AK1A:s eget aggregat — pedagogisk referens, inte investeringsrådgivning.`
+      ? `Enligt AK1A:s ${MEDIANER.totalt.nBolag}-bolagsuniversum är median P/E för teknikbranschen ${sv(TEKNIK.medianPe)} (n=${TEKNIK.n} bolag med mätt P/E, rådata hämtad ${MEDIANER.hamtat}). Medianen är AK1A:s eget aggregat — pedagogisk referens, inte investeringsrådgivning.`
       : `AK1A:s universum redovisar för närvarande ingen median-P/E för teknikbranschen — saknad data markeras som saknad, aldrig som noll.`,
   },
   {
     fraga: "Hur många bolag ligger till grund för medianerna?",
-    svar: `Universumet är fast: ${MEDIANER.totalt.nBolag} bolag i 10 branscher × 10 bolag. Median-P/E totalt ${sv(MEDIANER.totalt.medianPe)} bygger på de ${MEDIANER.totalt.nMedPe} bolag där P/E är mätt — saknad data redovisas öppet per bransch (n-kolumnen).`,
+    svar: `Universumet är fast: ${MEDIANER.totalt.nBolag} bolag i ${MEDIANER.rader.length} branscher. Median-P/E totalt ${sv(MEDIANER.totalt.medianPe)} bygger på de ${MEDIANER.totalt.nMedPe} bolag där P/E är mätt — saknad data redovisas öppet per bransch (n-kolumnen).`,
   },
   {
     fraga: "Får jag citera siffrorna?",
@@ -54,7 +54,7 @@ const FAQ = [
 const SIDA = sidaMetadata({
   path: "/data/nyckeltalsguide",
   title: `Median P/E per bransch — nyckeltalsguide | AK1A`,
-  description: `Median P/E per bransch i AK1A:s 100-bolagsuniversum (10 × 10, rådata ${MEDIANER.hamtat}): totalt median ${sv(MEDIANER.totalt.medianPe)} (n=${MEDIANER.totalt.nMedPe}). Med EV/EBIT, P/B, ROE och EBIT-marginal — maskinläsbar JSON. Pedagogisk referens, inte investeringsrådgivning.`,
+  description: `Median P/E per bransch i AK1A:s ${MEDIANER.totalt.nBolag}-bolagsuniversum (rådata ${MEDIANER.hamtat}): totalt median ${sv(MEDIANER.totalt.medianPe)} (n=${MEDIANER.totalt.nMedPe}). Med EV/EBIT, P/B, ROE och EBIT-marginal — maskinläsbar JSON. Pedagogisk referens, inte investeringsrådgivning.`,
   keywords: [
     "median P/E",
     "P/E bransch",
@@ -71,8 +71,8 @@ const SIDA = sidaMetadata({
 export const metadata: Metadata = SIDA.metadata;
 
 export default function NyckeltalsguidePage() {
-  const karnpastande = `Median P/E i AK1A:s ${MEDIANER.totalt.nBolag}-bolagsuniversum (10 branscher × 10 bolag, data hämtad ${MEDIANER.hamtat}): ${MEDIANER.rader
-    .map((r) => `${r.bransch} ${sv(r.medianPe)}${r.n < 10 ? ` (n=${r.n})` : ""}`)
+  const karnpastande = `Median P/E i AK1A:s ${MEDIANER.totalt.nBolag}-bolagsuniversum (${MEDIANER.rader.length} branscher, data hämtad ${MEDIANER.hamtat}): ${MEDIANER.rader
+    .map((r) => `${r.bransch} ${sv(r.medianPe)} (n=${r.n})`)
     .join(" · ")} — totalt median ${sv(MEDIANER.totalt.medianPe)} (n=${MEDIANER.totalt.nMedPe} bolag med mätt P/E av ${MEDIANER.totalt.nBolag}).`;
 
   return (
@@ -90,8 +90,8 @@ export default function NyckeltalsguidePage() {
 
       <p className="mt-6 leading-relaxed text-muted-foreground">
         Detta är AK1A:s eget referensdataset: nyckeltalsmedianer per bransch ur
-        vårt fasta universum av {MEDIANER.totalt.nBolag} noterade bolag — 10
-        branscher × 10 bolag, hämtade från offentliga marknadskällor och
+        vårt fasta universum av {MEDIANER.totalt.nBolag} noterade bolag i
+        {" "}{MEDIANER.rader.length} branscher, hämtade från offentliga marknadskällor och
         underhållna med datering. Varje median bär sitt n; saknad data
         redovisas som saknad (osatt är information, inte fel).
       </p>

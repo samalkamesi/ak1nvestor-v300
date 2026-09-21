@@ -159,7 +159,7 @@ function procent1OchNull(v: number | null): number | null {
 export function byggNyckeltalsguideSvar(m: Nyckeltalsmedianer, genereradIso: string) {
   return {
     schema: "ak1a-nyckeltalsguide/1",
-    kalla: "AK1A Research Lab — 100-bolagsuniversum (10 branscher × 10 bolag)",
+    kalla: `AK1A Research Lab — ${m.totalt.nBolag}-bolagsuniversum (${m.rader.length} branscher)`,
     kallorRadata: m.kallorRadata,
     hamtat: m.hamtat,
     genererad: genereradIso,

@@ -69,7 +69,9 @@ export function datasetJsonLd(lang: SprakId, m: BranschMedianer): object {
   return {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: t("dataset.jsonld.namn"),
+    name: t("dataset.jsonld.namn", {
+      nBolag: m.totalt.nBolag,
+    }),
     description: t("dataset.jsonld.beskrivning", {
       nBolag: m.totalt.nBolag,
       hamtat: m.hamtat ?? "—",

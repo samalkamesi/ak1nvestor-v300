@@ -3,8 +3,9 @@ import path from "node:path";
 
 // ── BOLAGSSIDORNA (VÅG 149 — B1 i SOKORDSINVENTERING-2026) ─────────────────
 //
-// Datalager för /bolag + /bolag/{slug}: 100 programmatiska nyckeltalssidor,
-// en per rad i data/portfolj-system/bolagsunivers.json.
+// Datalager för /bolag + /bolag/{slug}: programmatiska nyckeltalssidor —
+// en per rad i data/portfolj-system/bolagsunivers.json (antalet följer
+// dataleveranserna; o148: ytor talar datadrivet, aldrig "100").
 //
 // GRÄNSVAKT (A2-DATASET-KONTRAKT §1): publik yta = bolagets RÅNYCKELTAL +
 // avvikelse mot branschmedian + källor + datering. AKM2-komposit, band,
@@ -106,7 +107,7 @@ function str(v: string | null | undefined): string | null {
 }
 
 /**
- * Läs alla 100 bolagssidor, cachat i modulminnet (ett fs-pass per process —
+ * Läs alla bolagssidor, cachat i modulminnet (ett fs-pass per process —
  * build och varje ISR-fönster delar läsningen). Kastar vid oläslig
  * universumfil — en halvtrasig bolagsmeny är värre än inget bygge.
  */

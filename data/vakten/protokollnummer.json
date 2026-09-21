@@ -226,6 +226,22 @@
       "titel": "sitemap-livskontraktet: byggfrusna klassers döda löften (rapportakademin + dataset-/aspekt-/spegelgrenar) — byggdSidaFinns-sond (.next, fail-open) + livskontraktssvit som permanent vakt",
       "ts": 1790008149918,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o148",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "bolagsmetadata-kontraktet: /bolag hårdkodade \"100 bolag\"-löften (o146 §7 + o147 §6 kvarpost) blir datadrivna ur publiceradeBolagSidor — tal i title/description/vy-fallback kan aldrig glida från registret igen",
+      "ts": 1790008564167,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o149",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "vaktens auth-401-falsklarm + universumsiffrorna utanför /bolag-familjen: autentiseringsgrindens korrekta 401 (8 fynd/svep) klassas ärligt i instrumentet (öppet bokförd), dataset/aspekt/ordlista/nyckeltalsguide-texternas föråldrade 100-tal (universumet är 249) blir datadrivet/sifferlöst",
+      "ts": 1790008827890,
+      "status": "reserverat"
     }
   ]
 }

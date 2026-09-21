@@ -172,6 +172,33 @@ omgången + syskonens sonder avslutat; RAM-vakten sköter det autonomt.
 Ingen ytterligare kur från denna vågs sida: låset är korrekt beteende
 (OOM-lärdomarna), ej fel.
 
+
+### DEL 2 — s7-u2 (samma manifest, anspråk 14:40Z): instrument levererade, deploy fortfarande spärrad vid vågslut — slutstängning = 5-minutersjobb nästa fönster
+
+Kronologi 14:40–15:5xZ: u3:s DEL 1 läst + arvet accepterat (u2:s anspråksfil
+på disk, uppdaterad 15:0x). Deploy-jakten: 15:07:25Z "bygger NU" (V235-tak
+100 min passerat) → **15:14:24Z bygg OOM-dödat** (läkebackup serverar;
+andra OOM-ronden på dygnet) → 15:17:26Z nytt V235-spär (0/30) → 15:27 (9/30)
+· 15:37 (19/30) · **15:47:26Z VÄNTAR-RAM 3540 < 3900** (2 klassade
+zcode-barn: u2 + fabrikens u2-försök-2-linje 15:15Z, samt kundens studio-
+session "zcode app-server" 15:41Z med egen zcode-familj ~2,2 GB — orörbar)
+→ tidigaste verkställande = 15:57-pollen ENDAST om RAM ≥ tak när fabrikens
+barn avslutat, dvs först efter detta vågslut. Deployen är STRUKTURELLT
+låst bakom fabrikens parallellism + kundsessionen: korrekt beteende
+(OOM-lärdomarna + V235), ingen kur möjlig eller önskvärd från agentplanet.
+
+**Levererat (committat):** HELA mätpipelinen — `verktyg/_s7u2o139efter-kor.mjs`
+(6-stegs körare: DEPLOYAD-parsring + merge-base e27ef394-kontroll
+(spökmätningsskydd) → prod 200 ×2 → CSS-kanalbevis → ISR-värmning ×3 →
+Lighthouse-EFTER med LH_JAMFOR=o139-fore → geometri+skroll-CLS → maskinell
+dom mot §7.2-kriterierna) · `verktyg/_s7u2o139efter-geometri.mjs` (sond-kopia
+PORT 9363 + egen utfil, o139:s original orört; UTÖKAD med §7.3 skroll-CLS =
+layout-shift-observer under kontrollerad bottenrullning). Körning:
+`node verktyg/_s7u2o139efter-kor.mjs` — exit 0 = dom GRÖN; JSON landar i
+lighthouse/ (kanalbevis-s7u2o139efter.json + dom-s7u2o139efter.json).
+Därefter endast: vakten riktad (--bas=http://localhost:3000 --snabb
+--sidor=/superanalys,/kalkylator) + §8-tal + worklog.
+
 ## LEVERANS (denna commit)
 
 globals.css (cv-widget-kur) · superanalys/page.tsx · kalkylator/page.tsx ·

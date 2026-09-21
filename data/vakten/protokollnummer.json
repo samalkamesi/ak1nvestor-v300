@@ -218,6 +218,14 @@
       "titel": "publiceringskontraktet: bolagssidornas döda-löftes-rot (sitemap 249 lovade mot 243 byggda = gränsnittsvaktens 24 konsolfynd) kurad med byggtecknad ledger + mjuk fallback",
       "ts": 1790007818656,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o147",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "sitemap-livskontraktet: byggfrusna klassers döda löften (rapportakademin + dataset-/aspekt-/spegelgrenar) — byggdSidaFinns-sond (.next, fail-open) + livskontraktssvit som permanent vakt",
+      "ts": 1790008149918,
+      "status": "reserverat"
     }
   ]
 }

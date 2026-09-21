@@ -1286,8 +1286,11 @@ import { svaraLokaltNyfodda } from "@/lib/ai-mentor-nyfodda-fragor";
 //   kandidater mot 2 585 unika kärnord i 83 lager inkl. syskonens
 //   fönster-34-motorer). Efter skuldordning, FÖRE marknadsrytm (SIST).
 import { svaraLokaltValideringsfonster } from "@/lib/ai-mentor-valideringsfonster-fragor";
-// · skuldordning (s6-u2, _s6u2o34-, manifest auto-s6-1790029519192): 83:e
-//   motorn — 2 monsters: senioritetsordningen (ks-09 primär — trappan,
+// · skuldordning (s6-u2, _s6u2o34-, manifest auto-s6-1790029519192): 82:a
+//   motorn av 83 (efter nyfodda, FÖRE valideringsfönstret +
+//   marknadsrytm SIST; u1:s ränteswap-bygge KASSERAT av dem själva —
+//   kassationsnoten ovan; fall G verifierar ordningen varje körning) —
+//   2 monsters: senioritetsordningen (ks-09 primär — trappan,
 //   konkursräkningen 389,2/377,2, återvinningen 74,2 % mot 20,7 %, klyftan
 //   53,5 pp, yield-trappan 0,045×0,793≈3,6 pp, rekonstruktionen 40 mot
 //   20,7) + valutasäkringen i rapporten (ks-08 primär — de två tiderna,
@@ -1295,9 +1298,10 @@ import { svaraLokaltValideringsfonster } from "@/lib/ai-mentor-valideringsfonste
 //   notens 78/0/100 %, premiens cykel +6,8/−4,8 MSEK, sex fällor).
 //   KATEGORISTÄNGNING: KAPITALSTRUKTUR fullt mentorlänkad 9/9 — spår 5:s
 //   nyaste ks-kurs (492→495) mentorlänkad (rs-09-precedensen).
-//   RACE mot u1:s ränteswap (öppet bokförd i modulen): od-11 var min
-//   källaktiveringsplan — deras motor landade först och äger primären;
-//   od-11 är här endast en av sex källor i valutasäkringsmonstret.
+//   RACE, slutlig bokföring: od-11 ägs av u3:s NYKULL som primär (deras
+//   anspråk vann disk-först 00:30:12; u1:s konkurrerande ränteswap-bygge
+//   kasserat av dem själva); od-11 är här endast en av sex källor i
+//   valutasäkringsmonstret.
 //   Gränser i TEXT: naket «valutasäkring» → valutamekanikens hedging-
 //   monster (banksektorn-precedensen: översikten deras, maskinens begrepp
 //   här) · naket «termin» → nästa · «swap» → handelsdagen · «konkursprognos»

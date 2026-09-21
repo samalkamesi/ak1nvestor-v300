@@ -844,18 +844,19 @@ const MOTORDEFS = [
   // 40 mot 20,7) + valutasäkringen i rapporten (ks-08 primär — källor od-07
   // + od-11 + ma-07 + km-058 + rk-07; terminen 11,50×1,040/1,025=11,67,
   // pengmarknadsbeviset 466,7/466,8, notens 78/0/100 %, premiens cykel
-  // +6,8/−4,8 MSEK, sex fällor). RACE mot u1 (öppet bokförd i modulen):
-  // od-11 var min källaktiveringsplan — deras ränteswap-motor landade först
-  // och äger primären; od-11 här endast källa. Gränser i TEXT: naket
+  // +6,8/−4,8 MSEK, sex fällor). RACE, slutlig bokföring: od-11 ägs av
+  // u3:s NYKULL som primär (deras anspråk 00:30:12 vann disk-först; u1:s
+  // konkurrerande ränteswap-bygge kasserat av dem själva — noten ovan);
+  // od-11 här endast källa. Gränser i TEXT: naket
   // «valutasäkring» → valutamekanikens hedging-monster (banksektorn-
   // precedensen) · naket «termin» → nästa · «swap» → handelsdagen ·
   // «konkursprognos» → överlevnadsdjupet · «covenants» → ks-05:s ägare ·
   // «borgen» → notläsningen. Kärnord disjunkta (sond _s6u2o34-karnord.mjs,
   // 3 ronder: 0 kollisioner; «valutasäkring»-familjen medvetet lämnad åt
   // valutamekaniken, «valutanot» struket tav-1 mot portföljgrundens
-  // «valutan»). 83:e motorn, efter ränteswapen, FÖRE marknadsrytm som
-  // förblir SIST. Anspråk auto-s6-1790029519192-s6-u2-ansprak.md FÖRE
-  // byggstart (disk-först).
+  // «valutan»). 82:a motorn av 83, efter nyfodda, FÖRE
+  // valideringsfönstret + marknadsrytm som förblir SIST. Anspråk
+  // auto-s6-1790029519192-s6-u2-ansprak.md FÖRE byggstart (disk-först).
   { namn: "skuldordning", fil: "ai-mentor-skuldordning-fragor.ts", fn: "svaraLokaltSkuldordning", arr: "SKULDORDNING_MONSTER", antal: 2 },
   // 2026-09-22 omgång 34 (manifest auto-s6-1790029519192): valideringsfonster
   // +1 (s6-u1 v2, _s6u1o34b-) — labbets valideringsdisciplin: det rullande

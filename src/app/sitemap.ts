@@ -66,6 +66,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/certifikat`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/rapporter`, changeFrequency: "monthly", priority: 0.7, lastModified: now },
+    // Rapportakademin (rond 130): publikt SEO-skal — premium-innehållet
+    // (pass, expertläsningar) lever bara bakom API:t och bjuds aldrig in.
+    { url: `${BASE_URL}/rapportakademin`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
 
     // Medlems- och företagssidor
     // V86 B2B-residual 1: /pro-blocket grindas mot b2bAktiv() — sitemap får

@@ -1,0 +1,34 @@
+studio: auto s6-u1 STÅLSEKTORN wiring + fönstrets gemensamma slutläge — 76 motorer/201 monsters: stålsektor (74:e) wiread i widget + kedjetest efter fönstrets lost-update-race; syskonens casepraktik (75:e) och beteendefallor (76:e) följer med som ride-along (deras moduler + testfiler krävs av widgeten/kedjetestet — deras kvitto-commits bär worklog-rader) [fabrik]
+
+Del 2 av s6-u1 fönster 31 (manifest auto-s6-1789965330060, byggare 1/3).
+Del 1 = 5ff7a2eb (modul + regressionstest 44 PASS + sonder).
+
+DENNA COMMIT: (1) min stålsektor-wiring i chat-widget.tsx (import + kedja,
+efter kemisektor, FÖRE marknadsrytm-SIST) och testa-ai-mentor-kedja.mjs
+(motordef antal 1 + åtta kanoniska rader motor 72 + TOTALT-kommentar);
+(2) syskonens parallella lager som RIDE-ALONG, öppet bokförd: u2:s
+casepraktik (pc-21+pc-22, 2 monsters, test 66 PASS — inkl. mina två
+rättade typfel .minuten→.minuter, som också botade en runtime-textbug
+«undefined minuter») och u3:s beteendefallor (3 monsters, test 14 PASS) —
+modulerna MÅSTE committas tillsammans med widgeten/kedjetestet som
+refererar dem, annars är repot trasigt vid checkout; (3) worklog-rad med
+fönstrets race-kronika öppet bokförd (två lost-update-incidenter, en
+gemensam återapplicering 06:59–07:00).
+
+Kedjans slutläge detta fönster: kemisektor → STÅLSEKTOR (74:e) →
+casepraktik (75:e) → beteendefallor (76:e) → marknadsrytm (SIST enligt
+deras deklaration + L01, multipel-precedensen).
+
+Verifiering: testa-ai-mentor-stalsektor 44 PASS 0 FEL ·
+testa-ai-mentor-casepraktik 66 PASS 0 FEL · testa-ai-mentor-beteendefallor
+14 PASS 0 FEL · testa-ai-mentor-kedja 304 PASS 0 FEL (G-speglad widget-
+ordning, E källmärkning + F kursläkthet + H inventarie på samtliga 201
+monsters) · tsc 0 via projektbinär · R2 orörd (priser/tier/publicering) ·
+data/blogg/ (live) orörd · INGET bygge (prod-synken äger).
+
+LEVERANS: src/components/ak1a/chat-widget.tsx,
+verktyg/testa-ai-mentor-kedja.mjs, src/lib/ai-mentor-casepraktik-fragor.ts,
+src/lib/ai-mentor-beteendefallor-fragor.ts,
+verktyg/testa-ai-mentor-casepraktik.mjs,
+verktyg/testa-ai-mentor-beteendefallor.mjs, verktyg/_s6u1o31-worklog.txt,
+worklog.md [fabrik]

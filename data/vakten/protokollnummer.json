@@ -242,6 +242,22 @@
       "titel": "vaktens auth-401-falsklarm + universumsiffrorna utanför /bolag-familjen: autentiseringsgrindens korrekta 401 (8 fynd/svep) klassas ärligt i instrumentet (öppet bokförd), dataset/aspekt/ordlista/nyckeltalsguide-texternas föråldrade 100-tal (universumet är 249) blir datadrivet/sifferlöst",
       "ts": 1790008827890,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o150",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790031919251",
+      "titel": "prestanda: o138 §6.1 ar-blogg-mikrojustering — cv-bloggkort ar-omkalibrering 16.5625→16.125rem mot deterministisk medeldrift 315→312,35 px (docHΔ −371 → väntad +14)",
+      "ts": 1790032482490,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o151",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790031919251",
+      "titel": "prestanda: natt-TBT-mätaren — o144 §5 / o139 §7.2:s enda öppna post (TBT /kalkylator ≤ ~450 domas endast i nattfönster, metrologiregeln o143 §3) — cron-bar mätare enligt o144-väntarmönstret",
+      "ts": 1790032569659,
+      "status": "reserverat"
     }
   ]
 }

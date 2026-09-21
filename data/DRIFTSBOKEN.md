@@ -3325,3 +3325,48 @@ kvartalsmallen · kvartal ≤2026-12-21 tom fabrik. Protokoll:
 DR-KEDJA5-2026-09-21-BLAD11.md + DR-KEDJA5-2026-09-21-AUTO.md (maskinellt).
 
 SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1790010927032) 2026-09-21.
+
+## S10-U2 (manifest auto-s10-1790010927032, vakt 2/3) — BLAD 11-KVÄLLSPUNKT + RPO 16,9 h + kanonisk app-bladverifikation: determinismen EXAKT, RTO-fasfaktorn ~3× bevisad av FYRA instrument, pumpens landningspunkt 3 (fönster ≥ 15 h) (2026-09-21 19:2x lokal, GODKÄNT)
+
+Agent: s10-u2 (vakt). Anspråk disk-först ~19:20 med P1–P12 låsta FÖRE
+mätning (data/vakten/s10u2-kvallsdr-blad11-2026-09-21-ansprak.md). Tre
+disjunkta objekt (u1 tog kedja 2, u3 tog kedja 5-kirurgi; flock-
+serialisering 164 ms efter u1 enligt bådas protokoll):
+
+- **KVÄLLSPUNKT BLAD 11** (`dr-ovning.mjs` omodifierat): markör GRÖN
+  1 387 527/99/101 · radkontrakt EXAKT = inattens på ALLA nivåer (public
+  60/1 365 519 · +storage 68/1 365 655 · alla 99/1 365 915 · board 50 882 ·
+  snapshots 1 271 388 · organ 3 120 · fel 788/0) — bladet intakt på disk
+  17 h efter födelsen. **RTO 36,9 s = 3,1× nattens 11,8 s.**
+- **RPO @ 16,9 h:** +19 587 oskyddade (snapshots +18 984 EXAKT = nästa
+  batch · board +536 · organ +36 · forecast_outcomes +31 — fyärde
+  rörtabellen, tidigare protokoll redovisade tre). Non-batch +603 ≈ 36 r/h.
+  **KÖPOST 4 STÄNGD (landningspunkt 3):** blad 12:s batch landade mellan
+  02:30–17:21; serien 04:39–10:40 → före 02:12 → före 17:21 ⇒ fönster
+  ≥ 15 h, pumpen ej nattbunden, batchstorlek deterministisk 3:e dagen.
+  Blad 12-formeln förankrad: public levande 1 385 106 vs prognos 1 385 319.
+- **KANONISK APP-BLAD (köpost 3 STÄNGD):** `--fil db-app-2026-09-21.sql.gz`
+  utan /tmp-omväg: kontrakt EXAKT som AUTO-6 (372/183 326 · 380/184 671 ·
+  417/186 499 · fel 2 611/0) · RTO 60,1 s = 2,7×. Citeringskuren bär i
+  trädet — app-blad är rutinkommando.
+- **FYND (tvärgående, bärande): RTO-fasfaktorn ~3× under kvälls-/fabrikslast
+  — FYRA instrument samma kväll:** kedja 2 104,5/34,3 = 3,0× (u1) · blad 11
+  36,9/11,8 = 3,1× (denna) · app-blad 60,1/22,6 = 2,7× (denna) · kedja 5
+  kirurgi 34,9 s ≈ 3× (u3 — deras tvillingmätning). Rot: konkurrens
+  (load 6,48 · fabrikens 3 barn · 5,4 GB swap · kall cache). DR-budgeten
+  räknas i värsta fas; kvartalsövningen ≤2026-12-21 kräver tom fabrik för
+  RAM OCH RTO-band.
+- Prediktioner 8/12 + 1 halv, ärligt: radkontrakt 100 % (determinismen
+  oantastlig); P7/P9/P10/P11-RTO fel av ETT systemiskt skäl (fas- och
+  landningsmodeller omogna) — fasband börjar nästa pass.
+- Städning oberoende eftermätt grön: PG17 down · socketvägran båda
+  skrap-DB · lås flock-viloläge · /tmp-mall (blad+pid+ms) · RAM 3 804 MB.
+
+KVD: src/ orörd = inget bygge (dr-ovning.mjs + dr-rpo-diff.mjs KÖRDA
+omodifierade, ingen kod ändrad) · R2 orörd (.pgpass ENDAST pekare · prod
+ENDAST läst) · data/blogg/ orörd · data/backups ENDAST lästa · syskonytor
+orörda (u1:s + u3:s klara ytor orörda). Protokoll:
+DR-OVNING-2026-09-21-KVALL-BLAD11.md (hand) · DR-PROV-2026-09-21-AUTO-7.md
++ AUTO-8.md (maskinella) · DR-RPO-DIFF-2026-09-21-KVALL.json.
+
+SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790010927032) 2026-09-21.

@@ -1296,6 +1296,37 @@ html[lang="ar"] .cv-bloggkort {
   .cv-sidfooter { contain-intrinsic-size: auto 43rem; }
 }
 
+/* ── PRESTANDA (o139, s7-u2): CV-WIDGET — verktygssidornas monster-layout
+   vid hydratisering. Rot (o139-sonder, bygg saMxYAzL, longtask-CDP 4×
+   droschel + LH-mobil): /superanalys + /kalkylator layoutar hela
+   widget-DOM:en i hydratiserings-committen — en longtask à 681 ms varav
+   Layout 504 ms; LH-TBT 582/375 mot syskonsidornas ~335 (konfluens/
+   dataset/netnet; superanalens o123-värde 1 276 avvisades som mätbrus —
+   giltig baslinje o139-fore: 375). Kur: content-visibility:auto på
+   widget-containern ⇒ offscreen-layout skjuts upp till scroll.
+   A/B-bevis (SOND_INJECT_CSS, identisk kanal): /superanalys fönster-TBT
+   1 568→776 ms (−51 %, longtasks 24→12, Layout 576→278) · /kalkylator
+   1 473→1 309 (−11 %; widgeten ligger djupare under vecket och delar
+   hydration-layout med demo-stripen ovanför). Enbart mobil ≤640 px —
+   datorns marginal bär layouten orörd (o123:s knappgolv-avgränsning).
+   Reservationer = sondade sluthöjder (geometri-s7u2o139.json, 412 px):
+   superanalys-widget 638 px ⇒ 40rem · kalkylator-widget 4 361 px ⇒
+   272.5rem — o78/o92-disciplinen "reservation ≈ mätt höjd ⇒ inga
+   stavhopp"; 'auto'-ledet låser verklig höjd vid första renderingen.
+   Grindar: CLS 0 (o100-nivån) + LCP ±15 % i EFTER-mätningen +
+   gränssnittsvakten; LCP-kandidaterna (H1/intro ovanför containrarna)
+   berörs ej. */
+@media (max-width: 640px) {
+  .cv-widget-super {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 40rem;
+  }
+  .cv-widget-kalk {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 272.5rem;
+  }
+}
+
 /* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
    o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
    läxa — komponentroten delas med min-sida/laroplan, därför vävs

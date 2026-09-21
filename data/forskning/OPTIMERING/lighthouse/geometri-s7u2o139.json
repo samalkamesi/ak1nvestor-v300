@@ -1,0 +1,50 @@
+{
+  "datum": "2026-09-21T06:15:24.470Z",
+  "bas": "http://localhost:3000",
+  "sidor": [
+    {
+      "sokvag": "/superanalys",
+      "viewport": 823,
+      "ytor": [
+        {
+          "selector": "div.mt-10",
+          "top": 411,
+          "hojd": 638,
+          "element": 21
+        },
+        {
+          "selector": "div.mt-10",
+          "top": 3282,
+          "hojd": 142,
+          "element": 9
+        }
+      ],
+      "docHojd": 3456
+    },
+    {
+      "sokvag": "/kalkylator",
+      "viewport": 823,
+      "ytor": [
+        {
+          "selector": "section[aria-label^='AKM2-demo']",
+          "top": 343,
+          "hojd": 2029,
+          "element": 278
+        },
+        {
+          "selector": "div.mt-10",
+          "top": 2412,
+          "hojd": 4361,
+          "element": 158
+        },
+        {
+          "selector": "div.mt-10",
+          "top": 9040,
+          "hojd": 142,
+          "element": 9
+        }
+      ],
+      "docHojd": 9215
+    }
+  ]
+}

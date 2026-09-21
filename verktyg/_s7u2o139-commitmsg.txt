@@ -1,0 +1,27 @@
+studio: auto s7-u2 CV-WIDGET — verktygssidornas monster-layout kurad (content-visibility på /superanalys + /kalkylator widget-containrar) + giltig LH-baslinje för 5 verktygssidor
+
+FÖRE (Lighthouse mobil, kanoniska verktyget, kanalbevisat mot saMxYAzL):
+superanalys P73/TBT 375 · kalkylator P64/TBT 582 (verkliga anomalin, +66 %
+över syskonens 321-372) · konfluens/dataset/netnet 336/372/321 — första
+giltiga baslinjen NÅGONSIN för verktygssidorna; o123:s n1-FEL-eftersläpning
+läkt, dess 1276 ms avvisat som mätbrus.
+
+ROT (longtask-CDP 4× + geometri-sond): monster-layout i hydratiserings-
+committen — kalkylator longtask 681 ms varav Layout 504; widget-containern
+4361 px helt under vecket (top 2412).
+
+KUR: .cv-widget-super/.cv-widget-kalk i globals.css — content-visibility:
+auto + contain-intrinsic-size: auto 40rem/272.5rem (sondade sluthöjder,
+o78/o92-disciplinen), enbart mobil ≤640 px; klass på widget-divarna i båda
+sidfilerna (src ENDAST via Write/Edit; tsc 0 fel).
+
+BEVIS: A/B superanalys fönster-TBT 1568→776 ms (−51 %, Layout 576→278,
+tasks 24→12) · parad A/B kalkylator i samma lastläge: Layout 1213→227 ms
+(−81 %), tasks 28→23. Proxy-EFTER dokumenterad; äkta LH-EFTER = vakarövertag
+(o139 §7: CLS 0 ×2 helig, LCP ±15, gränssnittsvakten 0 fynd vid deploy).
+
+Filer: globals.css · (huvud)/superanalys/page.tsx · (huvud)/kalkylator/
+page.tsx · OPTIMERING/o139-prestanda-cv-widget-s7.md · verktyg/
+_s7u2o139-geometri.mjs · 17 mät-JSON (5 LH-FÖRE + sammanfattning + 9
+longtask/A/B/par + geometri + kanalbevis) · anspråksfil · reservation ·
+worklog-rad. [fabrik]

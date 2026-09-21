@@ -202,6 +202,22 @@
       "titel": "prestandavåg: o139+o143 EFTER-vakarövertag — deploybevis, kanalbevis, LH-kvittering (bokad av båda vågorna)",
       "ts": 1790004263072,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o145",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "feljakt-ledgerns hälsa: 8 ogiltiga domklasser normaliseras + 18 öppna fynd domade med loggbevis (vakten 0-fynd-jakt)",
+      "ts": 1790006924707,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o146",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "publiceringskontraktet: bolagssidornas döda-löftes-rot (sitemap 249 lovade mot 243 byggda = gränsnittsvaktens 24 konsolfynd) kurad med byggtecknad ledger + mjuk fallback",
+      "ts": 1790007818656,
+      "status": "reserverat"
     }
   ]
 }

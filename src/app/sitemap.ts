@@ -5,7 +5,8 @@ import { b2bAktiv } from "@/lib/b2b-status";
 import { tierAktiv } from "@/lib/tier-status";
 import { branschSlugs, lasBranschMedianer } from "@/lib/dataset-medianer";
 import { aspektParametrar } from "@/lib/dataset-aspekter";
-import { bolagSlugs } from "@/lib/bolags-sidor";
+import { publiceradeBolagSlugs } from "@/lib/bolags-sidor";
+import { byggdSidaFinns } from "@/lib/sitemap-byggsanning";
 
 export const dynamic = "force-dynamic";
 
@@ -68,7 +69,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/rapporter`, changeFrequency: "monthly", priority: 0.7, lastModified: now },
     // Rapportakademin (rond 130): publikt SEO-skal — premium-innehållet
     // (pass, expertläsningar) lever bara bakom API:t och bjuds aldrig in.
-    { url: `${BASE_URL}/rapportakademin`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
+    // o147: byggfryst sida (force-static) — annonseras bara om det KÖRANDE
+    // bygget har den (född efter senaste gröna bygget ⇒ 404 medan sitemap
+    // lovade; se sitemap-byggsanning.ts).
+    ...(byggdSidaFinns("rapportakademin")
+      ? ([
+          {
+            url: `${BASE_URL}/rapportakademin`,
+            changeFrequency: "weekly" as const,
+            priority: 0.8,
+            lastModified: now,
+          },
+        ] satisfies MetadataRoute.Sitemap)
+      : []),
 
     // Medlems- och företagssidor
     // V86 B2B-residual 1: /pro-blocket grindas mot b2bAktiv() — sitemap får
@@ -113,20 +126,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //    en detaljsida per bransch, svenska + EN/AR-speglar. lastModified =
     //    rådatans hämtdatum (sidorna bär ISR men TALEN ägs av universumet).
     { url: `${BASE_URL}/dataset`, changeFrequency: "daily", priority: 0.9, lastModified: datasetDatum },
-    ...branschSlugs(lasBranschMedianer()).map((bransch) => ({
-      url: `${BASE_URL}/dataset/${bransch}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-      lastModified: datasetDatum,
-    })),
-    ...["en", "ar"].flatMap((lang) => [
-      { url: `${BASE_URL}/${lang}/dataset`, changeFrequency: "daily" as const, priority: 0.7, lastModified: datasetDatum },
-      ...branschSlugs(lasBranschMedianer()).map((bransch) => ({
-        url: `${BASE_URL}/${lang}/dataset/${bransch}`,
+    // o147: bransch/aspekt-sidorna är byggfrusna (dynamicParams=false) men
+    // slugs läses ur LIVE-data — ny bransch under ett bygg-läge-fönster är
+    // annars ett dött löfte (samma klass som bolagsgapet 249/243, o146).
+    // byggdSidaFinns håller tillbaka det bygget saknar; fail-open utan .next.
+    ...branschSlugs(lasBranschMedianer())
+      .filter((bransch) => byggdSidaFinns(`dataset/${bransch}`))
+      .map((bransch) => ({
+        url: `${BASE_URL}/dataset/${bransch}`,
         changeFrequency: "monthly" as const,
-        priority: 0.6,
+        priority: 0.8,
         lastModified: datasetDatum,
       })),
+    ...["en", "ar"].flatMap((lang) => [
+      { url: `${BASE_URL}/${lang}/dataset`, changeFrequency: "daily" as const, priority: 0.7, lastModified: datasetDatum },
+      ...branschSlugs(lasBranschMedianer())
+        .filter((bransch) => byggdSidaFinns(`${lang}/dataset/${bransch}`))
+        .map((bransch) => ({
+          url: `${BASE_URL}/${lang}/dataset/${bransch}`,
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+          lastModified: datasetDatum,
+        })),
     ]),
 
     // ── Dataset-aspekterna (VÅG 150 fas A): en statisk långsvanssida per
@@ -134,19 +155,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //    MIN_MATTA) EN gång och delas med rutten — sitemap speglar exakt
     //    det slutledet publicerar (130 URL:er), aldrig de teoretiska 150.
     //    lastModified = rådatans hämtdatum (samma källa som övriga dataset).
-    ...aspektParametrar().map(({ bransch, aspekt }) => ({
-      url: `${BASE_URL}/dataset/${bransch}/${aspekt}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      lastModified: datasetDatum,
-    })),
+    ...aspektParametrar()
+      .filter(({ bransch, aspekt }) => byggdSidaFinns(`dataset/${bransch}/${aspekt}`))
+      .map(({ bransch, aspekt }) => ({
+        url: `${BASE_URL}/dataset/${bransch}/${aspekt}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        lastModified: datasetDatum,
+      })),
 
     // ── Bolagssidorna (VÅG 149, B1 i SOKORDSINVENTERING-2026): register +
     //    en statisk sida per universumsbolag (100 st, "ABB nyckeltal"-
     //    longtailet). lastModified = rådatans hämtdatum (samma källa som
     //    datasetmenyerna); svenska först — speglar följer som egen våg.
+    //    o146: ENDAST publicerade slugs (byggets nedteckning) — sitemap är
+    //    force-dynamic men rutten byggfryst (våg 81); att lova mer än det
+    //    byggda är döda löften till crawlerar (gapet 249/243, 2026-09-21).
     { url: `${BASE_URL}/bolag`, changeFrequency: "daily", priority: 0.8, lastModified: datasetDatum },
-    ...bolagSlugs().map((slug) => ({
+    ...publiceradeBolagSlugs().map((slug) => ({
       url: `${BASE_URL}/bolag/${slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

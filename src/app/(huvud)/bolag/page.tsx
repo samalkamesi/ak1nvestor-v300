@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { lasBolagsSidor } from "@/lib/bolags-sidor";
+import { publiceradeBolagSidor } from "@/lib/bolags-sidor";
 import { BolagIndexVy } from "@/components/ak1a/bolag-sidor";
 import { sidaMetadata } from "@/lib/seo";
 
@@ -11,11 +11,16 @@ import { sidaMetadata } from "@/lib/seo";
  *
  * SSG (force-static): universumet läses vid build; ISR 24 h för färska
  * datafiler utan ombygge — samma kontrakt som datasetmenyerna.
+ *
+ * o146: registret listar PUBLICERADE bolag (byggets nedteckning, se
+ * bolags-sidor.ts) — en universumväxt utan deploy syns här först vid
+ * nästa bygge. ISR-revalidation får aldrig exponera syskonlänkar till
+ * sidor rutten 404:ar (gapet 249 lovade mot 243 byggda, 2026-09-21).
  */
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const SIDOR = lasBolagsSidor();
+const SIDOR = publiceradeBolagSidor();
 
 export const metadata: Metadata = sidaMetadata({
   path: "/bolag",

@@ -2705,12 +2705,12 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (lever); FOMO-kuren live; vakt-täckning GRÖN sedan o68 (journalförd 09-18); 09-20 (s9-u3): o118-mobilfix verifierad i kod — exakt 2 inputs + 8 knappar ≥52 px mobil (dator 44 orörd, klasser endast, radtal oförändrade), båda ytorna 200 efter deployen |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | 09-20 (s9-u3): driftbrottet MOTBEVISAT LÄKT (/rapporter + /portfolj-hyra + /api/portfolj-forskning alla 200, antal 100) men glidningen 95→131: univers 231 (+36/dygn, mtime 14:09) mot korstabell frusen 100 r (09-10); /api/medlem/portfolj 400 "memberId krävs" FÖRE auth (vaktlös kvar); sviter 32/0+50/0 (09-19, ej återmätta); 0 fundamental/akm2/akm3-cacher |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 5 | 09-20 (s9-u3): viloläget DAG 3 — crontab-målet /api/cron/nyheter fortfarande 404 (raden intakt i /etc/crontab), /api/nyheter ok:true antal:0 franCache:false (levande tom hämtning), kundkonfig-cachen 0 poster; FÖRDJUPNING: "rika" konfigens 40 poster bär senaste publikation ~09-09 (11 dygn) trots färsk refresh 09-20 05:15 lokal — även fallback-flödet levererar inget nytt (tolkning osäker: cache-kedja kan bära gammal data); /nyheter-sidan 200 (72,5 kB) kundsynligt tom; motorn 844 r orörd; Vercel-cron-raden kvar (vercel.json:40); 0 sviter; CRON_SECRET osatt |
-| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (09-07); B2-knappen metodbevakad (GET 405 localhost+HTTPS, egen sond 09-19); kön 265 filer (+66/dygn, TAKTEN TREDUBLAD: rot 54→67 · granskning 89→124 · kvartal 49→65; mätt 09-19) med sammanställningen självförnyande tredje dagen (206 kB 11:59); 55 publicerade orörda (R2); morgonens manifest-500:or läkta (/blogg 200); kvar: B2-E2E (kundens knapp) |
+| C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | 09-21 (s9-u2): kön 383 filer (+63/dygn mot 09-20:s 320; rot 93 · granskning 187 · kvartal/2026-q3 88 · m9-ko; egen find) med sammanställningen självförnyande (265→315 kB, 13:31 — kundens kö-vy lever); B2-rutten metodbevakad (GET /api/admin/blogg/publicera 405; POST-tom 401 "Admin-lösenord krävs" = auth FÖRE 400, 09-20); /blogg 200; 55 publicerade orörda dag 7 (senaste stock-mtime 09-14 — flaskhalsen är uttaget, R2); kvar: B2-E2E (kundens knapp) |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | kön 235 filer (+60 på 2 dygn, mätt 09-19: rot 63 · m9-ko 7 · granskning 107 · kvartal/2026-q3 58); kvartalshierarkin fullvuxen 13→33→43→58 och s4:s Q3-läspaket är nya tillväxtmotorn (m9-fabriken stilla sedan v96 = ekosystem av leverantörer); sammanställningen färsk 09-18 23:08 OCH trippelrad 55→174 kB (bor i blogg-utkast-roten); KONTROLL-filer 09-18 ×5; flaskhals = publiceringsuttaget (55 frysta, R2); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | 09-20 (s9-u2): universum 177→**225** (+48/2 dygn; 10 branscher, mtime 09-20 05:59Z) och ekosystemet följer: llms.txt bär 225-sektionen (rådata 09-20, P/E 20,5 n=215/225) + v98 GRÖN egen körning 225 tickers/namn 0 träffar; **gap 0 STÄNGT** — aspektsviten TRASIG (3 passningar) → GRÖN 0 fel/185 sidkontroller via ts-import-bryggan (våg 213c + o114); Kön 52→74 (64 paket + 10 kalendrar) men /kvartalsdata 404 kvar; mätfönstret fångade deployväxlings-500:or 12:09–12:10 → läkta av deployen 12:10:13, EFTER 200 ×4 vägar (o113:s byggfönsterklass) |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | sitemap 2 420 (+181) + sok-index FÄRSKAST 440 kurser (09-19); llms.txt+robots 200 llms-sonden 500 i fönstret, LÄKT 07:12Z (manifest-klass, ej kod); G1-slutverifikation (Google rich-results live) återstår; OG-deploy-kopling 0 träffar |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | 0 sviter + 0 alarm-trösklar (återmätt 09-18); PageViewBeacon sänder fortfarande före samtycke (gap 3 oförändrat 09-18) men layout-KOPIAN är BORTA (0 träffar i 3 layouter = EN beacon); trafik-API lever med färsk data (besokareIdag 29 + blockerat24h 9, mätt 09-18); P6 koddokumenterad |
-| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | Återdiffad 09-19: svit 17/17 grön egen, kärnan kodstilla 8 d, /logga-in + speglar 200, talrättning medlem-inloggning 301 r; TVÅ NYTTA GAP: glomt-valideringsfel → 502/tjanst (felklassmappning, live-mätt) + /logga-in saknas i vaktens FALLBACK_SIDOR (B12-klassen); kvar: E2E-svit + glomt-grenen otäckt av sviten |
+| D20 | Inloggning & konto (L1) | Medlem | LEVER | 8 | 09-21 (s9-u2): svit 17 PASS/0 FAIL EGENKÖRD + /logga-in + /en + /ar 200 ×3 + kärnan kodstilla 9 d (medlem-inloggning.tsx 301 r, 10f7b75f 09-12); BÅDA 09-19-gape­na ÅTERMÄTTA ÖPPNA dag 3: (4) glomt-valideringsfel → fortfarande 502 {"fel":"Ogiltig e-postadress.","kod":"tjanst"} (egen sond — 4xx-fel mappas till 5xx-klass) + (5) /logga-in saknas ÄN i vaktens FALLBACK_SIDOR (granssnitt-urval.mjs:31–40: 8 poster, B12-klassen); kvar: E2E-svit + glomt-grenen otäckt av sviten (0 träffar) |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | 09-20 (s9-u3): GDPR-export/radering i UI fortfarande 0 träffar = tyngsta gapet; svit 13/13 GRÖN EGEN + progress-rutt 200 (36 ms); kärnan kodstilla 7 d (479 r); GLIDNINGEN TREDJE PASSNINGEN: kurser 426→464 (+38/2 dygn, s5 levererar på mätdagen) medan quiz/XP frusna DAG 5 (8 223/82 230) — larvag-synk GRÖN 464=464=464 · 0 fantomer; migrering enkelriktad (odokumenterat designval) |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (PSP-namn endast R2-ordlista i styrelsemotorn, mätt 09-17); intention-leden starkare än kartan (system_event + admin-vy 401 MÄTT LIVE + rate-limit, inget brev); kundens 8 beslut; ytorna + speglar 200 (09-19, SSR-läkningen); intention-raderna TOTALT 0 (sond 09-19 — aldrig vs raderade okänt) |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV i ingen .env + ingen pm2-variabel (mätt 09-19); grinden SOFT-404 i prod: tier-sidor svarar 200 med notfound-kropp, NOLL läckage, robots/sitemap 0 tier-URL:er (09-19); väntar kundens prisbeslut; speglar en/ar saknas; aktivering kräver ombygge |
@@ -3226,6 +3226,52 @@ bygge · R2 orörd (Fas 2-pris, publicering, ⚠-åtgärder = kundens; endast
 läst) · data/blogg/ orörd · data/forskning/RAPPORTAKADEMIN/ endast läst ·
 syskonytor orörda (u2/u3 i samma manifest ännu ej landade när detta
 skrevs — deras ytor fria). [fabrik]
+
+## UPPDATERING 2026-09-21 (dokvåg s9-u2 2/3, manifest auto-s9-1790009126349 — C15 + D20 diffade mot verkligheten; PIVOT: E39 cederat disk-först, C19-korrigering och E39-mätgåva överlämnade)
+
+Fabriksagent s9-u2 (byggare 2/3). VAL-HISTORIK ärligt bokförd: förstaval
+E39 RAPPORTAKADEMIN + C19 (klaim 18:48:17) — men u1:s E39-anspråk landade
+18:47:32, 45 s före mitt på disk ⇒ disk-först-regeln ⇒ E39 cederat (deras
+sektion ovan är den kanoniska). Pivot: C15 + D20 ur 09-19-kohorten (u3 tog
+B7+B9+E32 enligt anspråk 18:47:45). Allt EGENMÄTT 2026-09-21 ~19:0x lokal
+(egna loopback-sonder, find/wc, git-log, svitkörningar) — aldrig
+worklog-läsning.
+
+| Mått | Kartan senast | Verkligheten 2026-09-21 (mätning) |
+|---|---|---|
+| C15 kön | 320 filer (09-20: rot 81 json · granskning 155 · kvartal 77) | **383 (+63/dygn)**: rot 93 filer · granskning 187 · kvartal/2026-q3 88 (egen find; s4/s5 levererar i oförändrad takt) |
+| C15 sammanställning | 265 520 B 13:21Z 09-20 | **315 524 B 13:31 09-21** (+50 kB/dygn — sjunde raka förnyelsedagen, kundens kö-vy lever mekaniskt) |
+| C15 stock | 55 orörda dag 6 | **55 orörda DAG 7** (senaste stock-mtime alltjämt 09-14: 0 publicerade på en vecka mot +186 i kön — flaskhalsen uttaget, R2) |
+| C15 B2 | GET 405 + POST-tom 401 (09-20) | **GET /api/admin/blogg/publicera 405** (sökväg preciserad: bor under admin; /api/blogg/publicera = 404 korrekt, finns ej); /blogg 200 |
+| D20 svit | 17/17 grön egen (09-19) | **17 PASS / 0 FAIL EGENKÖRD** (tredje gröna i följd — bygg-/URL-hermetik, rotation, kakar, rate-limit, GDPR-minimering) |
+| D20 ytor | /logga-in + speglar 200 | **200 ×3** (/logga-in · /en/logga-in · /ar/logga-in) |
+| D20 kärna | kodstilla 8 d | **KODSTILLA 9 d** (medlem-inloggning.tsx 301 r, 10f7b75f 09-12) |
+| D20 gap 4 | glomt → 502/tjanst (live 09-19) | **ÅTERMÄTT ÖPPEN DAG 3, EXAKT SAMMA DOM**: POST {"action":"glomt","epost":ogiltig} → 502 {"fel":"Ogiltig e-postadress.","kod":"tjanst"} — 4xx-klass mappas fortfarande till 5xx |
+| D20 gap 5 | /logga-in saknas i FALLBACK_SIDOR | **ÅTERMÄTT ÖPPEN**: granssnitt-urval.mjs:31–40 bär 8 poster — /logga-in saknas alltjämt (B12-klassen) |
+
+Domar: C15 **LEVER 8 orörd** · D20 **LEVER 8 orörd** (E33/B14-precedensen:
+datadrift och bestående dokumenterade brister ger ingen score-rörelse; på
+D20 är begge gapen återmätta utan regression). Snittet opåverkat av denna
+diff (u1:s E39-justering 291/39 gäller).
+
+SIDOFYND (förs till ägarna, ej bokförda på deras ytor): (a) **C19 —
+går­dagens dom "gap 1: 0 sviter" var ofullständig**: verktyg/
+testa-eko-koppling.mjs föddes 09-20 11:41 — FÖRE kvällens 18:4x-mätning
+men utanför dess grep-mönster (trafik/track/tracer/konvertering/dashfraga)
+— och är EGENKÖRD nu: **18 PASS / 0 FAIL** ⇒ C19:s tabellrad "0 sviter"
+är DELVIS STÄNGD (eko-kopplingsdelen); radens ägare korrigerar vid nästa
+C19-pass. (b) **E39-mätgåvan**: mina cederade mätvärden (läke-identiteten
+.next/BUILD_ID == .next-laeke/BUILD_ID == TAlJ8Gvikzir5UUi7Lj63 med
+läke-mtime 04:27 mot .next-mtime 17:13 = OOM-läkeåterställningens
+fingeravtryck · POST /api/rapportakademin {} → {"fel":"Logga in först."}
+· /sitemap.xml 0 rapportakademin-URL:er) låg i klaim-filen FÖRE u1:s
+landning och bekräftar deras dom ovan oberoende.
+
+KVD: data-only (SYSTEMKARTAN + worklog + klaim/anspråksfil) — src/ orörd
+= INGET bygge · sviter KÖRDA endast (medlem-auth 17/0 · eko-koppling
+18/0) · R2 orörd (stocken läsbokförd, aldrig rörd) · data/blogg/ orörd ·
+syskonytor orörda till innehåll (u1:s E39-block ovan orört; u3:s
+B7/B9/E32-ytor orörda) · commit med pathspec + -F-fil. [fabrik]
 
 # A. UTBILDNINGENS KÄRNA
 
@@ -4205,7 +4251,23 @@ kundsynlig tyst-tom lista = dataflödesförsämring av B7-precedensklassen.*
 
 # C. INNEHÅLL & TILLVÄXT
 
-## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-20)*
+## C15. Bloggen + publiceringsflödet — LEVER — 8/10 *(uppdaterad 2026-09-21)*
+
+*Uppdatering 2026-09-21 (dokvåg s9-u2 2/3, manifest auto-s9-1790009126349):
+återdiffad dag 2 — allt EGENMÄTT ~19:0x lokal. KÖN 320→383 (+63 på ett
+dygn, egen find): rot 93 filer · granskning/ 187 (155→187, +32/dygn —
+s4/s5-fabrikernas tempo) · kvartal/2026-q3 88 (77→88); m9-ko oförändrad
+i roträkningen. GRANSKNINGSKO-SAMMANSTALLNING.md 265 520 → 315 524 B
+(+50 kB/dygn) mtime 13:31 — sjunde raka förnyelsedagen, kundens kö-vy
+lever mekaniskt. PUBLICERINGSSTOCKEN 55 EXAKT ORÖRD DAG 7 (senaste
+fil-mtime fortfarande 09-14): kunden har publicerat 0 poster på en vecka
+medan kön vuxit +186 sedan dess — flaskhalsen är helt uttaget (R2).
+B2-rutten metodbevakad: GET /api/admin/blogg/publicera 405 (sökvägen
+preciserad — bor under admin, /api/blogg/publicera finns ej och svarar
+404 korrekt); /blogg 200. Kodrörelse sedan 09-20-passet: ingen på
+flödets kärnfiler (blogg-panel.tsx 1 079 r orörd). Score 8 kvar
+(datadrift utan konsumentskada; B13-precedensen). Kö oförändrad: kundens
+uttagspaus (R2, styrelsen) + B2-E2E oklickad.*
 
 *Uppdatering 2026-09-20 (dokvåg s9-u2, manifest auto-s9-1789922106888):
 återdiffad — allt EGENMÄTT ~18:3x–19:0x lokal. KÖN 199→320 (+121 på 2 dygn,
@@ -4527,7 +4589,26 @@ terad. Live mätt: track POST {} → 400 · trafik 200 · tracer 405 (POST-only
 
 # D. MEDLEM & KOMMERS
 
-## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-19)*
+## D20. Inloggning & konto (FAS L1) — LEVER — 8/10 *(uppdaterad 2026-09-21)*
+
+*Uppdatering 2026-09-21 (dokvåg s9-u2 2/3, manifest auto-s9-1790009126349):
+återdiffad dag 2 — allt EGENMÄTT ~19:0x lokal. Sviten testa-medlem-auth.mjs
+17 PASS / 0 FAIL EGENKÖRD (tredje gröna i följd; kraven 10–17 bär
+bygg-hermetik, URL-hermetik, refresh-rotation, kakhjälpare, rate-limit,
+ipHash-GDPR-minimering och system_events-minimering — sviten är ytan
+bäst täckt). LIVE: /logga-in + /en/logga-in + /ar/logga-in 200 ×3 (alla
+tre språk speglade). Kärnan KODSTILLA 9 d (medlem-inloggning.tsx 301 r,
+10f7b75f 09-12). GAP 4 ÅTERMÄTT ÖPPEN DAG 3: POST /api/medlem
+{"action":"glomt","epost":"<ogiltig>"} → 502 {"fel":"Ogiltig
+e-postadress.","kod":"tjanst"} — ett klientfel (4xx-klass) mappas
+fortfarande till tjänstfel-klassen (member-auth.ts:389 + route.ts:149
+enligt 09-19-passets kodbeläggning); exakt samma dom, ingen regression
+men ingen kur heller. GAP 5 ÅTERMÄTT ÖPPEN: FALLBACK_SIDOR i
+granssnitt-urval.mjs:31–40 bär 8 poster (/, /kurser, /labb, /blogg,
+/dataset, /superanalys, /kalkylator, /om-oss) — /logga-in saknas fortfarande
+(B12-klassen: vaktmätning kan falla tillbaka på listan utan medlemssidor).
+Glomt-grenen fortfarande OTÄCKT av sviten (0 träffar). Score 8 kvar —
+bägga gapen är dokumenterade brister, ej regressioner (E33/B14-precedensen).*
 
 *Uppdatering 2026-09-13: LOGIN-2.0 landat och E2E-verifierat på prod
 (specifika feltexter + live-räknare; STYRELSE-2026-09-11-V106 § 3 D1).

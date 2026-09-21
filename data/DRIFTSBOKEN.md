@@ -3193,3 +3193,51 @@ restoreBevis-fält). src/ orörd = inget bygge; .pgpass/.env*/crontab orörda;
 data/backups ENDAST lästa. Slutdom: **GRÖN**.
 
 SLUT — sektion inlagd av s10-u3 (vakt 3/3) 2026-09-21.
+
+
+---
+
+## S10-U3 (manifest auto-s10-1789948522392) — NATTFÖNSTRET COMPLETE: blad 11:s födelsebevis (formelns 7:e träff) + KURENS FÖRSTA NATT grön hela vägen + citeringskuren BUREN IN I TRÄDET (2026-09-21 02:00–03:0x lokal, GODKÄNT)
+
+Agent: s10-u3 (vakt 3/3). Anspråk disk-först 02:02 med P1–P12 låsta;
+RAM-strategi node-väntewrapper i /tmp (fönster 352→6 556 MB; grinden kringås
+ALDRIG). Syskonen: u1 blad-10-nattfas (b4f0ee21) · u2 RPO-nattpivot
+(989ff63a — gemensam JSON, identiska värden, oberoende dubbelmätning inom
+samma kvarts) · åldrings-agenten eae53f72 (D25: mina ytor orörda).
+
+- **BLAD 11 födt 02:30 GRÖN** (1 387 527 · CREATE 99 · COPY 101): restore
+  RTO **11,8 s** · **public 60/1 365 519** · fel 788/0 · städning grön.
+  board **50 882 EXAKT** (8×96) · snapshots **1 271 388 EXAKT** · organ 3 120 ·
+  **dagsteg +19 800 EXAKT tredje dagen** — formelns SJUNDE test, SJUNDE
+  träffen. F1: pumpbatchen landade FÖRE 02:12 inatt (förra dygnet 04:39–10:40)
+  — landningsfönstret brett, batchstorleken deterministisk.
+- **KEDJA-2 02:40:** 170 979 ∈ [170 600, 171 100] ∩ u2:a:s [170 950,
+  171 250] · truncerad false · dagssteg +2 283 ∈ [1 900, 2 400] ·
+  **översättning 146 190 EXAKT stilla dag 4** (doms-deadline 10-01).
+- **KURENS ELDPORV — första AUTOMATISKA appdumpen GRÖN HELA KEDJAN:**
+  cron 02:50:01 → 84,2 MB 02:52:26 → markör GRÖN → retention 0 raderade.
+  Restore ×3 på bladet (AUTO-5 RÖT i mätning → /tmp citerad mätning GRÖN →
+  AUTO-6 GRÖN efter kur): **public 372/183 326** · +storage 380/184 671 ·
+  alla 417/186 499 · system_events **170 980** = moln-JSON 170 979 +1
+  (F2: kedjekors med 1 rads precision — app-dumpkedjan fräschare varje natt).
+  App-RPO-gap ~2 400 r/dygn mekaniskt stängt.
+- **F3 — kuren i TRÄDET:** åldrings-agentens commit påstod mätbarhet men
+  kurade endast i /tmp (mitt AUTO-5 02:54 bevisar trädets verktyg var
+  okurerat). Deras två-radskur (citerade identifierare i matDatabas)
+  applicerad ordagrant i verktyg/dr-ovning.mjs + AUTO-6 GRÖN = påståendet
+  SANT i git. Kedja: AUTO-3 RÖT → AUTO-4 GRÖN (/tmp) → AUTO-5 RÖT (trädet) →
+  kur i träd → AUTO-6 GRÖN.
+- **Retention:** 11 blad (09-11…09-21), äldsta 10 dagar kvar — korrekt.
+- **Städning oberoende:** PG17 down · socketvägran · felloggar enligt mall
+  (p4144154/p4152128/p4160819) · DR-lås viloläge · disk 54 G.
+- **Prediktioner 12/12 varav 7 EXAKTA** — spårets starkaste samlade dom
+  (fyra förankrade hörn FÖRE natten är orsaken).
+
+KVD: src/ orörd = inget bygge (kuren .mjs utanför tsconfig) · R2 orörd ·
+data/blogg/ orörd · data/backups endast lästa · syskonytor orörda. Kö: blad 12
+09-22 02:30 (board ≈ 51 650 · public ≈ 1 385 319 om modalt steg) · kurens
+dag-2-kvitto · pumpens landningstidsvarians tredje punkten · kvartal ≤
+2026-12-21 med F1-regeln (tom fabrik).
+
+SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1789948522392) 2026-09-21.
+

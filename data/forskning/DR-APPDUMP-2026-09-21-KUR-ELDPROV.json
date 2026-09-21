@@ -1,0 +1,31 @@
+{
+  "start": "2026-09-21T00:56:58.961Z",
+  "slut": "2026-09-21T00:57:24.521Z",
+  "dump": "/home/ak1a/AK1/data/backups/supabase/db-app-2026-09-21.sql.gz",
+  "restoreExit": 0,
+  "public": {
+    "tabeller": 372,
+    "rader": 183326
+  },
+  "publicStorage": {
+    "tabeller": 380,
+    "rader": 184671
+  },
+  "allaScheman": {
+    "tabeller": 417,
+    "rader": 186499
+  },
+  "nyckeltabeller": {
+    "auth.users": 45,
+    "public.ai_generated_courses": 154,
+    "public.board_decisions": 77,
+    "public.courses": 3,
+    "public.members": 3,
+    "public.profiles": 11,
+    "public.system_events": 170980,
+    "public.user_activities": 6460
+  },
+  "mellanslagstabeller": [
+    "public.\"analytiska sidan\""
+  ]
+}

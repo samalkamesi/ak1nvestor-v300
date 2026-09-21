@@ -1,0 +1,74 @@
+{
+  "objekt": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-handelsbanken-q3-2026.json",
+  "granskad": "2026-09-21",
+  "granskare": "agentfabrik auto-s1-1789980325227 s1-u3",
+  "dom": "FLYTTKLAR EFTER RÄTTNINGAR",
+  "sond": "verktyg/_s1u3-hb-q3-kontroll.mjs (49 OK · 7 FEL = B1+B2:s belägg · 5 NOT)",
+  "poster": [
+    {
+      "id": "B1a",
+      "grad": "vasentligt",
+      "fran": "| Nettomarginal | 42,6 % | 37,8 % | 14,1 % |",
+      "till": "| Nettomarginal | 42,6 % | 39,2 % | 14,3 % |",
+      "motiv": "B1: finans-median 37,8 och universum-median 14,1 är nedre-mittersta-värden; projektets median() (dataset-nyckeltal.ts, medel av två mittersta vid jämnt antal) ger 39,19 resp 14,31 på den låsta vintagen 9839c530 (120 rader, 09-16 01:44). Ingen (fil, konvention)-kombination i git-historien reproducerar textens hela medianuppsättning.",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B1b",
+      "grad": "vasentligt",
+      "fran": "universumets 21,1 % och 14,1 %",
+      "till": "universumets 21,1 % och 14,3 %",
+      "motiv": "B1 (lönsamhetsstycket): samma nettomarginal-median, brödtextens förekomst.",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B1c",
+      "grad": "vasentligt",
+      "fran": "| Omsättning-CAGR | 4,17 % | 7,13 % | 3,32 % |",
+      "till": "| Omsättning-CAGR | 4,17 % | 7,35 % | 3,32 % |",
+      "motiv": "B1: finans oms-CAGR-median 7,13 = nedre-mittersta; medel-konventionen ger 7,35 (SHB:s eget 4,17 och universumets 3,32 är exakta och orörda).",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B1d",
+      "grad": "vasentligt",
+      "fran": "| Resultat-CAGR | 3,39 % | 10,42 % | 1,40 % |",
+      "till": "| Resultat-CAGR | 3,39 % | 12,1 % | 1,6 % |",
+      "motiv": "B1: finans res-CAGR 10,42 (medel 12,07) och universum 1,40 (medel 1,57) — båda nedre-mittersta; kurräkning mot medel-konventionen.",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B1e",
+      "grad": "vasentligt",
+      "fran": "| P/B | 1,60 | ~2,01 (n=10) | 2,77 |",
+      "till": "| P/B | 1,60 | ~2,01 (n=10) | 2,79 |",
+      "motiv": "B1: universum P/B-median 2,77 = nedre-mittersta (2,774); medel ger 2,79. Finans-kolumnens ~2,01 (n=10) är exakt med medel-konventionen och lämnas orörd.",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B1f",
+      "grad": "vasentligt",
+      "fran": "| Prognostillväxt | 5,32 % | 5,94 % | 9,67 % |",
+      "till": "| Prognostillväxt | 5,32 % | 5,94 % | 9,9 % |",
+      "motiv": "B1: universum prognos-median 9,67 = nedre-mittersta; medel ger 9,94. Finans 5,94 exakt (orörd).",
+      "unikStrang": "verifierad 1 träff"
+    },
+    {
+      "id": "B2",
+      "grad": "vasentligt",
+      "fran": "\"readingMinutes\": 6",
+      "till": "\"readingMinutes\": 3",
+      "motiv": "B2: 1 955 ord ger round(ord/600) = 3 enligt kvartalsfamiljens konvention (Kinnevik: 2 946 ord → 5); ord/200-ceil ger 10. Värdet 6 matchar ingen dokumenterad konvention.",
+      "unikStrang": "verifierad 1 träff"
+    }
+  ],
+  "notiser": [
+    "C1: publishedAt 2026-10-19 ligger två dagar före rappdagen 10-21; Kinnevik-konventionen är rappdagen — pre-rapport-logik är försvarbar för ett läspaket men bör vara ett deklarerat val (ägaren).",
+    "C2: kalender-finans.json bär preteritumlydelsen 'hölls per kalender 2026-09-30' om ett då framtida datum — kalenderfilens ägare; HB-textens neutrala form är korrekt.",
+    "C3: dagens universumfil 242 rader — Nordea-vintage-metoden: textens medianer rättas mot LÅSTA vintagen (9839c530, 120 rader), aldrig mot dagens fil.",
+    "C4: MarketScreener svarar 403 vid livekontroll (bot-skydd); handelsbanken IR 200.",
+    "B1-alternativ (om ägaren föredrar nedre-mittersta): låt värdena stå men deklarerar konventionen explicit i Källor-sektionen — dagens text låter sig inte härledas ur (fil, konvention) och är därmed oreproducerbar."
+  ],
+  "verkstallan": "Paketets ägare (kvartalsbyggaren s4) eller nästa våg — granskaren skriver ej om andras filer. Alla från-strängar maskinellt unika (1 träff) i utkastet.",
+  "kvd": "Endast nya filer; utkast-JSON:en orörd; src/ orörd = INGET bygge; R2 orörd (publicering = kundens klick); data/blogg/ orörd."
+}

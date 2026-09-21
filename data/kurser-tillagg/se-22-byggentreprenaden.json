@@ -1,0 +1,152 @@
+{
+  "slug": "se-22-byggentreprenaden",
+  "category": "SEKTORANALYS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Byggentreprenaden — fast pris, orderstocken och procenten på färdigt",
+  "summary": "SEKTORANALYS-familjens tjugandra steg öppnar byggentreprenaden — sektorn vars produkt inte finns när priset sätts och vars fabrik är en arbetsplats som rivs när verket är klart. Sonden mot 476 kurser visar att byggentreprenad, totalentreprenad, procent på färdigt, slutlikvid, garantibehåll och underentreprenör har noll kursägare — orderstocken som mätetal ägs av konjunkturindikatorerna (ma-04) och pågående arbeten som balanspost av likviditetskursen (v11), men ingen äger produktionens ekonomi. Kursens tes är trefaldig. Först: sektorn lever i framtiden — orderstocken är en kontrakterad intäktsmaskin på två till tre års omsättning; dagens orderingång är morgondagens omsättning, och aktiemarknaden reagerar på beställningarna, inte på fakturan. Sedan: fast pris är en såld inflationsoption — entreprenören lovar dagens pris för morgondagens kostnader; räkneexemplet: kontrakt 1 000 med budgeterad kostnad 900 bär marginal 100 (10,0 procent), men kostnadsinflation 8 procent utan prisskrivning pressar marginalen till 2,8 och 12 procent vänder den till minus 0,8 — medan femtioprocentig prisskrivning landar på 6,4. Tredje: intäkten föds i procenten på färdigt — projektredovisningen intjänar efter färdigställandegrad, inte efter faktura: brokontraktet 800 med första årets 60 procent ger intäkt 480 och vinst 36 medan kassan är plus 60 genom förskotten — vinsten och kassan är två kurvor som möts först vid slutlikviden. Räkneexemplen bär kontrastbolagen Aspen Anläggning (infrastruktur, orderstock 3,0 års täckning) och Fjällved Bostäder (bostadsutveckling, räntans cykel). Alla exempelvärden är pedagogiskt konstruerade. Utbildning i mekanismer — aldrig råd om placeringar.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "SEKTORANALYS-familjens fem första sektorsfall — skogen (se-17), rederiet (se-18), försäkringen (se-19), gruvan (se-20), kemisektorn (se-21) — saknar den näringsgren som syns i varje nordisk stad och vars cykler börsernas inhemska svängningar: byggentreprenaden. Sonden mot 476 kurser bekräftar: procent på färdigt, totalentreprenad, slutlikvid, garantibehåll och underentreprenör har noll kursägare; byggentreprenad nämns enbart i en bokkurs (källa, inte ägare) och byggbranschen i förbifart hos mt-06. Gränserna är dokumenterade: ma-04 äger orderstocken som konjunkturindikator (den här kursen äger den som sektorns intäktsmotor), v11 och bk-07 äger pågående arbeten som balansräkningspost (kursen äger intjäningens klocka), ma-08 äger bostadsmarknadens prisbildning och km-042 fastighetsbolagen (kursen äger produktionen — dem som bygger), km-069 äger orderboken som nyckeltal i variabelvärlden. Det är sektorseriens metodfrågor (se-16) i byggdräkt: vem bär kostnadsrisken (kontraktsformen), var i cykeln står orderstocken (täckningsåren) och när blir vinsten kassa (förskott, slutlikvid, garantibehåll). Kursen binder an mot marginaltrappan (ln-03) — en rörelsemarginal på tre procent ger en kostnadschock på tre procent full friskrift — och cykelrisken (rk-05): orderstocken gör cykeln eftersläpande, inte mjuk.",
+  "learn": "Läsa orderstocken som intäktsmaskin: kontrakterad orderstock 18 000 mot omsättning 6 000 ger 3,0 års täckning — orderingången 4 800 (80 procent av omsättningen) ger nästa års täckning 2,8: cykeln syns i beställningarna före fakturorna · Räkna fast pris som såld inflationsoption: kontrakt 1 000 med kostnad 900 bär marginal 10,0 procent; kostnadsinflation 8 procent utan prisskrivning ger 2,8 och 12 procent ger minus 0,8 — medan 50 procent prisskrivning landar på 6,4 respektive 4,6 · Förstå procent på färdigt: intäkten intjänas efter färdigställandegrad — brokontrakt 800 med kostnad 740 och första årets 60 procent ger intäkt 480, kostnad 444 och vinst 36; mätprotokollet styr resultaträkningen, inte fakturan · Skilja vinstens och kassans kurvor: samma broår tar emot förskott 460 och betalar 400 — kassan plus 60 mot redovisad vinst 36; pågående arbeten 20 blir tillgång och förskotten finansierar arbetet · Räkna garantibehåll och slutlikvid: fem procent av kontraktet 800 binder 40 i två år efter överlämningen; påstådda fel 12 släpper 28 — vinsten är redovisad men kassan kommer vid besiktningen · Väga kontraktsformerna: fast pris lägger kostnadsrisken hos entreprenören, delade konstruktioner delar den med beställaren, utförandeentreprenad med tim- och materialdebitering lägger den hos beställaren helt · Skilja sektorns två pulser: bostadsbyggandet följer räntan och hushållens kredit (ma-03, ma-08), infrastrukturen följer politikens budget — två cyklar i samma orderstock · Respektera marginalens tunnhet: omsättning 6 000 med rörelsemarginal 3,0 procent tjänar 180 — en kostnadschock på tre procent av omsättningen raderar hela resultatet: utförandet är hävstången",
+  "history": {
+    "origin": "Byggandet var kapitalismens första stora projekt: katedralernas murar finansierades i etapper av skrå, donatorer och städer — verket färdigställdes århundrade för århundrade. Den moderna entreprenaden föddes med järnvägarna: 1800-talets byggmästare lovade fast pris för en hel sträcka och förlorade ibland förmögenheter på kostnadsöverdrag — att sälja morgondagens kostnader till dagens pris är sektorns äldsta affär och äldsta fälla.",
+    "evolution": "1900-talet gjorde riskfördelningen till en valbar vara: offentliga upphandlingar och standardiserade entreprenadkontrakt erbjöd fast pris, delad risk eller ren utförande mot timme och material. Prefabriceringen flyttade en del av bygget från arbetsplats till fabrik — hus blev delvis tillverkning med lager och transportkostnad. Projektredovisningens standard (IFRS) band sedan intäkten till färdigställandegraden: resultatet blev en klocka driven av mätprotokoll.",
+    "modern": "Pandemiåren 2021 till 2022 blev fastprisens eldprov: virke, stål och frakt steg med tiotals procent inom månader; kontrakt utan prisskrivning förvandlade planerade marginaler till förluster och sektorn fick omtrycka indexklausuler. Samtidigt bor sektorns nutid i två pulser — bostadssidan styrs av hushållens ränta (ma-03, ma-08), infrastruktursidan av politiska budgetar — och orderstocken är deras summa. Kursens läsning: orderstocken är framtiden, kontraktet är riskbäraren, procenten på färdigt är klockan."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Orderstocken — intäkten som lever i framtiden", "minutes": 4 },
+    { "num": 2, "title": "Det fasta priset — en såld inflationsoption", "minutes": 4 },
+    { "num": 3, "title": "Procent på färdigt — intäktsklockan", "minutes": 4 },
+    { "num": 4, "title": "Slutlikviden och kassans eftersläpning", "minutes": 4 },
+    { "num": 5, "title": "Bostadens ränta och infrastrukturens budget", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — byggläsarens sju rader", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch varnade för cykliska bolag som ser billigast precis när cykeln vänder — byggentreprenaden är varningens standardexempel: ett lågt värderingstal på toppmarginaler är ofta cykelns sista kvartal i förklådnad. Hans servett-logik passar sektorn väl: orderstock delat med omsättning är antalet årsvis såld framtid, och kontraktsandelen fast pris är andelen såld inflationsoption. Lynch letade också efter det vanliga ögats fotsteg: byggvolymen syns i varje stad och beställningarna förklaras i varje budget — sektorns information är offentligare än de flesta, vilket gör informationsfördelen mindre och disciplinen viktigare. Kontrastbolagen Aspen Anläggning och Fjällved Bostäder är en Lynch-övning: samma etikett, två olika klockor.",
+  "grahamSection": "Benjamin Graham betonade balansräkningens vittnesmål — och byggentreprenadens balansräkning är ett skönsvärdeslandskap: pågående arbeten är intjänade men ofakturerade kalkyler, garantibehållen är bundna fordringar och anläggningsmaskinerna är rörliga tillgångar med andrahandsvärde. Grahams räkneverk översätts till sektorns två tester: vinstens kvalitet (hur stor del av resultatet är procenten på färdigt, alltså en uppskattning — ln-02) och kassans vittnesmål (betalas utdelning ur redovisad vinst medan kassan läcker till kapitalbindning — ln-04). Substansen i ett byggbolag är mindre än omsättningen antyder: verket är sålt innan det finns. Kursen visar varför bokförd vinst och säker marginal är två olika frågor här.",
+  "ak1Section": "I AK1A:s metodik är byggentreprenaden standardexemplet på eftersläpande cykelrisk (rk-05): orderingången vänder först, omsättningen ett till två år senare, marginalerna sist — tre kurvor med tidsförskjutning. Scenariorutan (km-029) får kursens renaste övning: kostnadsinflation 0, 8 och 12 procent mot prisskrivning 0 och 50 procent är sex färdiga celler med fem distinkta marginaler (vid noll inflation är klausulen verkningslös): 10,0, 2,8, minus 0,8, 6,4 och 4,6. Världsvariabeln v11 (likviditet) äger pågående arbeten som post; här läses postens riktning som intäktsklocka. Marginaltrappan (ln-03) och v07 (bruttomarginal) bär tunnheten: tre procents rörelsemarginal gör varje kostnadskrön till ett resultatöde. Fem tidshorisonterna: kort = orderingångens och prisskrivningarnas rytm; långt = kontraktsformernas och relationskapitalens genomsnitt — se-16:s tre frågor (vem bär risken, vem äger flaskhalsen, var står cykeln) är kursens stomme.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Orderstocken — intäkten som lever i framtiden",
+      "intro": "De flesta sektorer säljer i nuet. Byggentreprenaden säljer i framtiden: varje tecknat kontrakt är omsättning som redan är såld men ännu inte producerad. Kursen börjar med sektorns viktigaste stock — inte lagret, utan ordern.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempelbolag Aspen Anläggning AB (påhittat för räkningen) omsätter 6 000 miljoner kronor om året och bär en orderstock (backlog) på 18 000: tecknade kontrakt som ska produceras under de kommande åren. Täckningen är 18 000 delat med 6 000 = 3,0 år — Aspen har sålt tre års produktion i förväg. Det är sektorns grundtillstånd och dess cykellogik: orderingången är den ledande kurvan. Sjunker beställningarna till 4 800 (80 procent av omsättningen) växer orderstocken ändå nästa år till 18 000 plus 4 800 minus 6 000 = 16 800 — täckning 2,8 år. Omsättningen steg alltså medan cykeln redan vänt: orderstocken gör sektorn eftersläpande, inte mjuk (rk-05). Här ligger också gränsen mot grannkurserna: ma-04 läser orderstocken som konjunkturindikator för hela ekonomin och km-069 som nyckeltal i variabelvärlden — den här kursen äger mekaniken: orderstocken är byggsektorns kontrakterade framtid, och nyorderingarnas riktning är värdeläsningens första rad. Notera också att stocken är två cyklers summa — bostäder och infrastruktur — vilket kapitel 5 öppnar."
+        },
+        {
+          "type": "definition",
+          "content": "Orderstock (backlog): värdet av tecknade men inte färdigställda kontrakt. Täckningsår = orderstock delat med rullande tolv månaders omsättning. Orderingång: nytecknade kontrakt under perioden — sektorns ledande indikator (ma-04:s syster)."
+        },
+        {
+          "type": "insight",
+          "content": "I de flesta sektorer är omsättningen nuet; i bygg är nuet en kö. Dagens orderstock är redan såld framtid — och orderingången, inte fakturan, är den kurva aktiemarknaden reagerar på först."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Det fasta priset — en såld inflationsoption",
+      "intro": "Att lova ett fast pris för en produkt som inte finns är att sälja en option på framtida kostnader. Kapitlet räknar vad optionen kostar när inflationen kommer — och vad en prisskrivningsklausul köper tillbaka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aspen Anläggning tecknar ett fastpriskontrakt på 1 000 miljoner kronor med budgeterad kostnad 900: planerad marginal 100, alltså 10,0 procent. Kostnadsinflationen gör saken avgörande. Utan prisskrivningsklausul och med åtta procents kostnadsuppgång på de 900 blir kostnaden 972 och marginalen 28 (2,8 procent); vid tolv procent blir kostnaden 1 008 och marginalen minus 8 (minus 0,8 procent) — kontraktet förlorar pengar på full beläggning. Med en klausul som prisskrivs till hälften (kunden bär 50 procent av kostnadsökningen) delas risken: vid åtta procent bär kunden 36, netto kostnad 936, marginal 64 (6,4 procent); vid tolv procent bär kunden 54, netto 954, marginal 46 (4,6 procent). Kontraktsformen är alltså sektorns riskfördelare: fast pris lägger kostnadsrisken hos entreprenören, delade konstruktioner (till exempel rot- och samriskavtal) delar den, och utförandeentreprenad med tim- och materialdebitering lägger den hos beställaren helt. Sektorns rörelsemarginaler på två till sex procent betyder att redan några procents kostnadsöverslag äter en hel planerad vinst — därför läses kontraktsfördelningen i årsredovisningen innan någon multipel slås upp (ln-03:s marginaltrappa, v07:s bruttomarginal)."
+        },
+        {
+          "type": "tabell",
+          "content": "Fastpriskontrakt 1 000, budgeterad kostnad 900 — marginal vid kostnadsinflation och prisskrivning. Ingen prisskrivning: 0 procent inflation ger marginal 100 (10,0 procent), 8 procent ger 28 (2,8), 12 procent ger minus 8 (minus 0,8). Prisskrivning 50 procent: 8 procent ger 64 (6,4), 12 procent ger 46 (4,6). Läsning: klausulen halverar fallhöjden — den köper tillbaka hälften av optionen."
+        },
+        {
+          "type": "insight",
+          "content": "Fast pris utan klausul är en såld inflationsoption: entreprenören behåller hela nedsidan av kostnadschocker och lämnar hela uppsidan till beställaren. Prisskrivningsgraden är därför sektorns viktigaste rad i kontraktet — inte priset."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Procent på färdigt — intäktsklockan",
+      "intro": "Resultaträkningens intäkt föds inte av fakturan utan av färdigställandegraden. Kapitlet följer ett brokontrakt genom det första året och visar var vinsten och kassan skiljer väg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aspen Anläggning bygger en bro: kontraktsvärde 800, budgeterad kostnad 740, planerad vinst 60 (7,5 procent). Projektredovisningens logik (IFRS intäktsstandard) intjänar intäkten efter färdigställandegraden: efter år ett är bron 60 procent färdig — intäkt 480 (60 procent av 800), kostnad 444 (60 procent av 740), redovisad vinst 36. Men pengarna går sitt eget lopp: beställaren har betalt förskott 460 och Aspen har betalat kostnader 400 — kassan är plus 60. Balansräkningen städar skillnaden: intjänat men inte fakturerat blir posten pågående arbeten, här 480 minus 460 = 20 i tillgång (v11 äger posten som likviditetsobjekt, bk-07 vid lagervärderingen — den här kursen äger klockan som rör den). Poängen är dubbel. Först: intäkten är en uppskattning — färdigställandegraden bygger på mätprotokoll och kalkyl, och en felaktig procentsats är en felaktig vinst (ln-02:s resultatkvalitet, bk-02:s intäktsrad). Sedan: vinst och kassa är två kurvor — förskotten finansierar arbetet, och kurvorna möts först när slutlikviden betalas (kapitel 4)."
+        },
+        {
+          "type": "definition",
+          "content": "Procent på färdigt-metoden: periodens intäkt = kontraktsvärde gånger färdigställandegrad, med kostnaden intjänad i samma takt. Pågående arbeten: intjänat men inte fakturerat är en tillgång; mottaget förskott som överstiger intjänat är en skuld."
+        },
+        {
+          "type": "insight",
+          "content": "Vinsten i ett byggbolag är en klocka driven av mätprotokoll: procenten på färdigt bestämmer takten, kalkylen bestämmer nivån — och båda är uppskattningar tills projektet är stängt och besiktigat."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Slutlikviden och kassans eftersläpning",
+      "intro": "Kontraktet betalas inte klart när bron är klar: garantibehåll, besiktning och påstådda fel skjuter kassan två år framåt. Kapitlet räknar broprojektets tre år rad för rad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Broavtalet 800 innehåller ett garantibehåll på fem procent: 40 miljoner kronor hålls kvar av beställaren två år efter överlämningen, som säkerhet för fel som upptäcks. Vid besiktningen framförs påstådda fel 12; efter förhandling släpps 28 av behållet. Slutlikviden är alltså inte resten av priset utan priset minus fel, avgivna garantier och tiden. Hela projektet blir tre spalter — intjäning, vinst och kassa — och de sammanfaller aldrig perfekt år för år. Totalt för kontraktet gäller den enkla identiteten: kassa 800 minus 740 = 60, lika med planerad vinst; men årsfördelningen skiljer sig (tabellen). Det är sektorns kapitalbindning i praktiken (ln-04): förskott och behåll flyttar pengar mellan år, och bolagets kassa kan vara stark när vinsten är svag — eller omvänt. Garantibehållens andel av orderstocken är därför en läsbar rad: en stor stock av outlösta behåll är en framtida kassapost, men också en lista på ännu ej avgjorda felanspråk (rs-04:s riskmatris får dem)."
+        },
+        {
+          "type": "tabell",
+          "content": "Brokontraktet 800, kostnad 740 — tre år. År 1: färdigställandegrad 60 procent, intäkt 480, kostnad 444, vinst 36, kassa plus 60 (förskott 460 minus betalt 400). År 2: 30 procent, intäkt 240, kostnad 222, vinst 18, kassa minus 20 (faktura 300 minus betalt 320). År 3: 10 procent, intäkt 80, kostnad 74, vinst 6, kassa plus 20 (slutlikvid 40 minus betalt 20). Totalt: 100 procent, intäkt 800, kostnad 740, vinst 60, kassa plus 60. Läsning: vinsten är rak, kassan buktar — förskotten i början, behållet i slutet."
+        },
+        {
+          "type": "insight",
+          "content": "Kassakurvan är förskottens och behållens, vinstkurvan är procentens — skillnaden mellan dem är kapitalbindning. Ett byggbolags kassaflödesanalys (km-003, bk-03) läses som en tidslinia, inte som ettårsresultat."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Bostadens ränta och infrastrukturens budget",
+      "intro": "Orderstocken är två cyklers summa: bostäderna följer hushållens ränta, infrastrukturen politikens budget. Kapitlet skiljer pulserna åt — och visar marginalens tunnhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontrastbolaget Fjällved Bostäder AB (också påhittat) utvecklar bostäder: dess volym styrs av hushållens lånekostnad. Stiger räntan två procentenheter sjunker nybyggnadsstarterna i exemplet från 400 till 300 lägenheter — inte för att behovet försvann utan för att köparkraften omprissattes (gränsen: ma-08 äger bostadsmarknadens prisbildning och ma-03 realräntan; km-042 fastighetsbolagen som ägare — den här kursen äger produktionsvolymen, dem som bygger). Aspen Anläggnings infrastrukturvolym styrs i stället av offentliga budgetars investeringsramar: en politisk cykel, inte en monetär. Samma orderstock, två klockor — och se-16:s metodfråga (var i cykeln står sektorn?) kan bara besvaras puls för puls. Sedan tunnheten: Aspen omsätter 6 000 med rörelsemarginal 3,0 procent — rörelseresultat 180. En kostnadschock på tre procent av omsättningen (180) raderar hela resultatet. Det är sektorns hävstång i utförandet (ln-03:s trappa, v07): små marginaler gör goda projektvärldar till en disciplinfråga — och är anledningen till att fastprisets förlusthistoria (kapitel 2) är sektorns egen ekonomiska biografi."
+        },
+        {
+          "type": "definition",
+          "content": "Sektorns två pulser: bostadspulsen drivs av hushållens kreditränta och efterfrågan på lägenheter (ma-03, ma-08); infrastrukturpulsen av offentliga budgetar och investeringsramar. Eftersläpning: beställning till orderstock till produktion till överlämning."
+        },
+        {
+          "type": "insight",
+          "content": "Läs orderstocken uppdelad på puls innan cykeln döms: en bostadsdominerad stock faller med räntan, en infrastrukturstock med budgeten — och blandningen avgör vilken makroserie som hör sektorns rapporter bäst."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — byggläsarens sju rader",
+      "intro": "Kursens sista kapitel samlar sektorns läsning till sju rader och en utmaning — servetten som fungerar på vilken bygg- och anläggningsrapport som helst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Byggläsarens sju rader. Ett: täckningsår — orderstock mot omsättning, och riktningen på orderingången (kapitel 1). Två: kontraktsfördelning — andelen fast pris, delad risk och utförande (kapitel 2). Tre: prisskrivningsgrad — hur stor del av kostnadsökningarna bärs av kunden. Fyra: stockens två pulser — bostad och infrastruktur var för sig (kapitel 5). Fem: pågående arbetens riktning — växer intjäningen mot faktureringen eller tvärtom (kapitel 3). Sex: garantibehållens andel — bunden kassa och öppna felanspråk (kapitel 4). Sju: kassa mot vinst — skillnaden är kapitalbindning och timing (ln-04, km-003). Syskonkurserna ger djupet: se-16 äger metodfrågorna, se-17 till se-21 grannsektorernas cykler, rk-05 cykelriskens klocka och ma-04 orderstockens makroläsning. Utmaningen testar räkningen: täckning och prisskrivning i två steg — räkna först, läs facit efter."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna utan hjälpmedel. Del ett: orderstock 18 000, årsomsättning 6 000, nästa års orderingång 4 800 — vilken blir den nya täckningen? Del två: fastpriskontrakt 1 000 med budgeterad kostnad 900 och prisskrivning 50 procent; kostnadsinflationen blir 6 procent — vilken blir den nya marginalen och marginalprocenten? Facit: del ett ger 18 000 plus 4 800 minus 6 000 = 16 800, delat med 6 000 = 2,8 år. Del två: kostnaden blir 900 gånger 1,06 = 954; kunden bär 27 (halva ökningen 54); nettokostnaden blir 927; marginalen blir 1 000 minus 927 = 73, alltså 7,3 procent."
+        },
+        {
+          "type": "insight",
+          "content": "Sju rader och två kurvor — orderstocken och kassan — räcker för att läsa en bygg- och anläggningsrapport: kontraktet bär risken, procenten takten och slutlikviden sanningen."
+        }
+      ]
+    }
+  ]
+}

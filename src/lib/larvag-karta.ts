@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (476 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (477 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 434 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 435 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -230,6 +230,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "se-19-forsakringssektorn", titel: "Försäkringssektorn — combined ratio, floaten och de två motorerna", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-20-gruv-och-metallsektorn", titel: "Gruv- och metallsektorn — berget, kassamarginalen och den tröga cykeln", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "se-21-kemisektorn", titel: "Kemisektorn — kväve ur luft, fosfor ur berg", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "se-22-byggentreprenaden", titel: "Byggentreprenaden — fast pris, orderstocken och procenten på färdigt", kategori: "SEKTORANALYS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-04-optionsbeskattning", titel: "Options-beskattning", kategori: "SKATT & JURIDIK", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "sj-05-kapitalforsakring-vs-isk", titel: "Kapitalförsäkring vs ISK", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "sj-06-arv-gava-och-ingaende-varde", titel: "Arv, gåva och aktiernas ingående värde", kategori: "SKATT & JURIDIK", niva: 2, kraverFas: 0, vIndex: -1, minuter: 20 },
@@ -512,4 +513,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 476;
+export const LARVAG_ANTAL_KURSER = 477;

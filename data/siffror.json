@@ -1,6 +1,6 @@
 {
   "_kalla": "public/deep-courses.json + data/bokkanon.json + src/lib/kurs-access.ts — genererad av verktyg/rakna-siffror.mjs; kör skriptet efter varje kurstillägg",
-  "kurser": 476,
+  "kurser": 477,
   "bokmaster": 103,
   "quiz": 8223,
   "quizXp": 82230,
@@ -8,5 +8,5 @@
   "kanonSomKurs": 96,
   "fas2Kurser": 18,
   "fas3Kurser": 24,
-  "uppdaterad": "2026-09-20"
+  "uppdaterad": "2026-09-21"
 }

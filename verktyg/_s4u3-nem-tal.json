@@ -1,0 +1,288 @@
+{
+ "kalla": {
+  "sokvag": "/home/ak1a/AK1/data/portfolj-system/bolagsunivers.json",
+  "md5": "5dd12fdcd6f4966b83b23bb6daf5fd48",
+  "hamtad": "2026-09-03",
+  "poster": 243,
+  "grenN": 25,
+  "grenTickers": [
+   "BILL.ST",
+   "BOL.ST",
+   "HOLM-B.ST",
+   "NEM",
+   "NHY.OL",
+   "SCA-B.ST",
+   "SSAB-B.ST",
+   "STERV.HE",
+   "UPM.HE",
+   "YAR.OL",
+   "BAS.DE",
+   "BHP",
+   "RIO",
+   "HOLN.SW",
+   "GRNG-B.ST",
+   "VALE",
+   "FCX",
+   "NUE",
+   "SHW",
+   "CF",
+   "MT",
+   "FMG.AX",
+   "NST.AX",
+   "S32.AX",
+   "5401.T"
+  ]
+ },
+ "rad": {
+  "pris": 125.16,
+  "mcapMdr": 131.88,
+  "utdelningAr": 1.04,
+  "insiderkop": 23
+ },
+ "grendata": {
+  "pe": {
+   "nem": 15.763,
+   "v": 19.012,
+   "n": 24,
+   "rang": {
+    "plats": 10,
+    "av": 24
+   }
+  },
+  "pb": {
+   "nem": 3.761,
+   "v": 1.58,
+   "n": 25,
+   "rang": {
+    "plats": 22,
+    "av": 25
+   }
+  },
+  "evEbit": {
+   "nem": 9.681,
+   "v": 14.575,
+   "n": 24,
+   "rang": {
+    "plats": 6,
+    "av": 24
+   }
+  },
+  "peg": {
+   "nem": 2.78,
+   "v": 1.115,
+   "n": 22,
+   "rang": {
+    "plats": 16,
+    "av": 22
+   }
+  },
+  "fcfY": {
+   "nem": 0.0668,
+   "v": 0.0303,
+   "n": 24,
+   "rang": {
+    "plats": 20,
+    "av": 24
+   }
+  },
+  "brutto": {
+   "nem": 0.6804,
+   "v": 0.3705,
+   "n": 25,
+   "rang": {
+    "plats": 23,
+    "av": 25
+   }
+  },
+  "ebit": {
+   "nem": 0.5157,
+   "v": 0.1324,
+   "n": 25,
+   "rang": {
+    "plats": 25,
+    "av": 25
+   }
+  },
+  "netto": {
+   "nem": 0.3336,
+   "v": 0.0942,
+   "n": 25,
+   "rang": {
+    "plats": 25,
+    "av": 25
+   }
+  },
+  "roe": {
+   "nem": 0.2591,
+   "v": 0.1088,
+   "n": 25,
+   "rang": {
+    "plats": 23,
+    "av": 25
+   }
+  },
+  "roic": {
+   "nem": 0.3268,
+   "v": 0.08345,
+   "n": 24,
+   "rang": {
+    "plats": 23,
+    "av": 24
+   }
+  },
+  "skuldEk": {
+   "nem": 0.1581,
+   "v": 0.32,
+   "n": 25,
+   "rang": {
+    "plats": 5,
+    "av": 25
+   }
+  },
+  "ttm": {
+   "nem": 0.151,
+   "v": 0.064,
+   "n": 25,
+   "rang": {
+    "plats": 19,
+    "av": 25
+   }
+  }
+ },
+ "harled": {
+  "epsT": 7.940112922667005,
+  "bvps": 33.27838340866791,
+  "roeHarled": 0.23859671382351078,
+  "identPBoROE": 14.515631030490159,
+  "gapIdent": 0.08593281042275985,
+  "gapRoe": -0.07913271391929456,
+  "aktierM": 1053.6912751677853,
+  "ebit2025": 11690.403300000002,
+  "evFranFalt": 113174.7943473,
+  "ek": 35065.14224940175,
+  "skuld": 5543.798989630417,
+  "kassaImplicit": 24249.004642330416,
+  "fcfVag1": 8809.583999999999,
+  "fcfVag2": 7755.0649,
+  "fcfGap": 0.13597811412255217,
+  "direktAvk": 0.008309364014062001,
+  "utdBolag": 1095.8389261744967,
+  "payoutEps": 0.13098050495365932,
+  "payoutFcf": 0.1413062224888017,
+  "progAterkop": 6000,
+  "aterkopAndel": 0.04549590536851683,
+  "epsLyft": 0.04766444232602485,
+  "kvarterPerProgram": 3.1662269129287597,
+  "vandelse": 9560,
+  "nettoMargAr": [
+   -0.03600503566932438,
+   -0.20953267863189975,
+   0.17920993469649932,
+   0.31254135603687855
+  ],
+  "marginalsvang": 52.207403466877835,
+  "omsTotal": 0.902559798573227,
+  "realiserat": 4414,
+  "aisc": 1621,
+  "margOz": 2793,
+  "aiscMarginal": 0.6327594019030358,
+  "prisMinus10": 3972.6,
+  "margOzMinus10": 2351.6,
+  "marginalfall": -0.15803795202291449,
+  "forstorning": 1.5803795202291449,
+  "pegKonv": 1.5453921568627451,
+  "pegImplicitTillvaxt": 5.670143884892087,
+  "ebitDiskent": 1.628240884206177
+ },
+ "serier": {
+  "ar": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "omsMUSD": [
+   11915,
+   11812,
+   18682,
+   22669
+  ],
+  "resMUSD": [
+   -429,
+   -2475,
+   3348,
+   7085
+  ]
+ },
+ "scenario": {
+  "basIntakt": 22669,
+  "basKostnad": 10978.596699999998,
+  "nettoAvEbit": 0.6060526585939083,
+  "basNetto": 7085,
+  "celler": [
+   {
+    "pris": -0.1,
+    "kostnad": -0.1,
+    "ebit": 10521.362970000004,
+    "netto": 6376.500000000002,
+    "nettoMotBas": -0.09999999999999976
+   },
+   {
+    "pris": -0.1,
+    "kostnad": 0,
+    "ebit": 9423.503300000004,
+    "netto": 5711.139228233471,
+    "nettoMotBas": -0.19391118867558632
+   },
+   {
+    "pris": -0.1,
+    "kostnad": 0.1,
+    "ebit": 8325.643630000002,
+    "netto": 5045.778456466939,
+    "nettoMotBas": -0.287822377351173
+   },
+   {
+    "pris": 0,
+    "kostnad": -0.1,
+    "ebit": 12788.262970000002,
+    "netto": 7750.360771766531,
+    "nettoMotBas": 0.09391118867558657
+   },
+   {
+    "pris": 0,
+    "kostnad": 0,
+    "ebit": 11690.403300000002,
+    "netto": 7085,
+    "nettoMotBas": 0
+   },
+   {
+    "pris": 0,
+    "kostnad": 0.1,
+    "ebit": 10592.54363,
+    "netto": 6419.639228233468,
+    "nettoMotBas": -0.09391118867558668
+   },
+   {
+    "pris": 0.1,
+    "kostnad": -0.1,
+    "ebit": 15055.162970000003,
+    "netto": 9124.221543533064,
+    "nettoMotBas": 0.28782237735117344
+   },
+   {
+    "pris": 0.1,
+    "kostnad": 0,
+    "ebit": 13957.303300000003,
+    "netto": 8458.860771766533,
+    "nettoMotBas": 0.19391118867558688
+   },
+   {
+    "pris": 0.1,
+    "kostnad": 0.1,
+    "ebit": 12859.443630000002,
+    "netto": 7793.5,
+    "nettoMotBas": 0.10000000000000009
+   }
+  ]
+ }
+}

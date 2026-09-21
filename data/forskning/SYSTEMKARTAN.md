@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-20)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-21)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -2687,7 +2687,7 @@ steg; (b) aggregatorn förtjänar en egen kontraktssvit (klassregex + kvitto-
 parsning + återupptagning); (c) mimosa-direktanropets fixture-fynd kan härdas
 i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 
-## ÖVERSIKT — 38 system
+## ÖVERSIKT — 39 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
@@ -2728,9 +2728,10 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | 09-19: .next-LÄKEBACKUPEN lever i prod-synken (o97/s8-u1 — FÖRE byggstart säkras senast GRÖNA .next, återställs i ALLA fallna utfall ⇒ pm2 serverar grönt läge direkt; svit 29/29 egen körning, DRIFTSBOKEN §22:1x, .gitignore rad 8, .next-laeke städad efter lyckad deploy); nattkedjan grön (dump 31,1 MB/1 347 729 rader, markörvakt 1/1 + moln 11 filer med system-events-full 166 067 KOMPLETT); prod HTTPS 200 egen sond med läke-koden live (deployad 6b530de3); rot-gapet artefaktverifiering STÄNGT (omg 9); patch-kön SLUTLEVERERAD 09-18 (kön [] + ok-kvitton); driftminnet maskinellt i feljakt-ledgern (o65); kvar: ISR 11/44 (GLIDER NEDÅT — en väg tappad ur sökvägslistan), hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md lösenord i klartext i repot, REST idempotensgrind (nothing-to-commit = ok) åt prod-synkägaren |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | DE TRE RESTGAPEN STÄNGDA på ett dygn (mätt 09-20): aggregatorn MEKANISERAD (kor-alla-tester.mjs, VÅG 212+v213a — RAM-vakt, timeout, tsx-återfall, miljöklasser 129/3/6/1 av 139 sviter i fasordning; första helsvepet 124 st 71/53), motorregistret LEVANDE (rond 107 regen + o108:s gallringskur ⇒ 105/105/0 i HEAD), vaktrapportsstoppet I DEPLOYKOD (prod-synk: RÖD ⇒ deploy-stopp, fail-open + omätning, kontraktstest) · motorvalidering 107/0/0 EGEN · vaktrapport 13/13 GRÖN SENASTE · mimosa 1 625/0 kontroll 13 + ny bas 1 772/0 (s8-u2) · skalfri AUTOMATISK 490/0 · tsc 0 EGEN · patchköns tsc-grind väntar react-LIVE-bevis; KVAR: helsvepsbeviset för dagens 139 sviter (SENASTE-rapporten borta — kör fullsvep, r109:s bokade steg), aggregatorn 0 egna sviter |
 | E36 | Mediebiblioteket | Grund | LEVER | 8 | 09-20 (s9-u2): v207-läkningen BEVISAD (446 bilder × 446 kurser = 0 saknade/överblivna, pc-21 200 live) MEN registret 446→458 ⇒ 12 nya kurser 404:ar live (rk-16: kurs 200/bild 404, klassen DAG 1); ROTEN: OG manuellt (0 kopplingar i deploy ELLER prod-synk) = gap 1 skärpt till PROCESSGAP — kursvåg utan rerun återskapar gapet; media_fil antal=0 nattlig 09-20; OG-hook i deploy = KÖ (byggklass); bucket-förteckningen fortfarande utan backup |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | 09-21 (s9-u3): TREDJE serien o118–o130 — SEX kurer i träd: i PROD (LDVlDGu2, egen BUILD_ID-mätning) o118+o119+o123 med EFTER-bevis (sonder 69→3/23→0 · vakten 0/154), VÄNTAR DEPLOY o126+o127 KASKADKUR (`.flex>*`-regeln i @layer base globals.css:617–625 — olagrad regel neutraliserade ALLA Tailwind min-w-utilities projektvidt, 46 användningar; o123:s pill-fix var verkningslös av konstruktion) + o128 tummar 16→52 + o129 CV-kalibrering (proxy-EFTER −84 %); deployen slogs av bygg-OOM ×3 + pm2-loop → 502 22:29 → läke-återställning 22:31Z (prod 200); äkta EFTER (o131 §4/o132 §6) = öppet vakarövertag; dessförinnan: reservationssystemet o89–o97 (desktop Σspan 98,4 % · mobil 99,3 % · LH /kurser P94); kvar: SPEGEL-POP-IN öppen i prod tills o129 deployas, o63-köposten, 2 designbeslut, 0 egna sviter, sökindex-cadans |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | 09-21 (s9-u3): TREDJE serien o118–
+| **E39** | Rapportakademin — det vertikala snittet (övningsverkstan) | Utbildning | **PÅGÅR** | 6 | NY RAD 09-21 (s9-u1, manifest auto-s9-1790009126349): ~1 816 r fött 09-20/21 ur kundorder (f5a9ac2f + ea754110); GDPR-kedjan HÅRDKODAD i intaget (minimerings-NEK 400 · art13-tvång 409 · export/radera med lagrumskvitto — unikt i kodbasen) + serverhemliga facit (passSkal strippar allt; experten exponeras ENDA efter lyckad lagring, 502 ⇒ tystnad); huvud-API:t LEVER i prod (405/401 uppmätta) medan SIDAN+PASSET VÄNTAR DEPLOY (404 egen sond — ea754110 ej i d401d719; VÄNTAR-RAM + OOM-klassen); GAP: gallringen ODRIVEN (gallraUpphordaElever + skrivPrenumerationsStatus = 0 anropare, grep-bevis — BESLUT 1.2:s AUTOMATISKA raderingslöfte saknar drivare OCH statusmatare) · 0 egna sviter · citat-validatorn vilande (0 konsumenter) · registret singelton (ABB-passet) |o130 — SEX kurer i träd: i PROD (LDVlDGu2, egen BUILD_ID-mätning) o118+o119+o123 med EFTER-bevis (sonder 69→3/23→0 · vakten 0/154), VÄNTAR DEPLOY o126+o127 KASKADKUR (`.flex>*`-regeln i @layer base globals.css:617–625 — olagrad regel neutraliserade ALLA Tailwind min-w-utilities projektvidt, 46 användningar; o123:s pill-fix var verkningslös av konstruktion) + o128 tummar 16→52 + o129 CV-kalibrering (proxy-EFTER −84 %); deployen slogs av bygg-OOM ×3 + pm2-loop → 502 22:29 → läke-återställning 22:31Z (prod 200); äkta EFTER (o131 §4/o132 §6) = öppet vakarövertag; dessförinnan: reservationssystemet o89–o97 (desktop Σspan 98,4 % · mobil 99,3 % · LH /kurser P94); kvar: SPEGEL-POP-IN öppen i prod tills o129 deployas, o63-köposten, 2 designbeslut, 0 egna sviter, sökindex-cadans |
 
-Snittscore: **7,5/10** (285 poäng / 38 system; E28 +1 vid dokvåg 09-21 — FLAGGA 6→7, dom HARMONISERAD u2+u3 samma omgång: "R2-verkställningen får inget att verkställa" motbevisad (kundorder-mötets 10 åtgärder + R2-stängsel per rad + verkställningsleden ända till laggrundad kod f5a9ac2f + beslutsminnet mekaniskt med NEKA-grind) men FLAGGAN KVAR: gap 1 (JSON-syntesfallbacken) lever i samma möte + 2/5 organ dör på tidsgränserna (E33-precedensen kräver roten borta); E36 −1 vid dokvåg s9-u3 09-19 — 113 kursers OG-bilder 404 live i prod (B7-precedensen); B9 −1 + E33 −1 vid dokvåg s9-u2 09-19 — B9:s historiekontrakt brutet (dagliga skans-rader raderas inom ett dygn av oidentifierad aktör; kvartalsdeduben slagen) och E33:s arkivkedja typblind + dublettblind med samma raderare verksamt i kärntabellen; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,5/10** (291 poäng / 39 system; E39 NY +6 vid dokvåg 09-21 — Rapportakademin kartradad, 285→291/38→39, exakt 7,46 avrundat oförändrat; E28 +1 vid dokvåg 09-21 — FLAGGA 6→7, dom HARMONISERAD u2+u3 samma omgång: "R2-verkställningen får inget att verkställa" motbevisad (kundorder-mötets 10 åtgärder + R2-stängsel per rad + verkställningsleden ända till laggrundad kod f5a9ac2f + beslutsminnet mekaniskt med NEKA-grind) men FLAGGAN KVAR: gap 1 (JSON-syntesfallbacken) lever i samma möte + 2/5 organ dör på tidsgränserna (E33-precedensen kräver roten borta); E36 −1 vid dokvåg s9-u3 09-19 — 113 kursers OG-bilder 404 live i prod (B7-precedensen); B9 −1 + E33 −1 vid dokvåg s9-u2 09-19 — B9:s historiekontrakt brutet (dagliga skans-rader raderas inom ett dygn av oidentifierad aktör; kvartalsdeduben slagen) och E33:s arkivkedja typblind + dublettblind med samma raderare verksamt i kärntabellen; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -3194,6 +3195,37 @@ publicering rörda) · data/blogg/ orörd · syskonytor orörda (u1:s E26- och
 u2:s E33/E28-sektioner orörda till innehåll — E28-dom-ytorna anpassade till
 u2:s landade dom med deras namn som källa; delade filer bär ev.
 syskonride-alang, deras ägo att bokföra). [fabrik]
+
+## UPPDATERING 2026-09-21 (dokvåg s9-u1, manifest auto-s9-1790009126349 — E39 RAPPORTAKADEMIN: ny kartrad, systemet först mätt i sin helhet; gap 1 = gallringslöftet saknar drivare)
+
+Förra passningens u3 bokförde fyndet "RAPPORTAKADEMIN = nytt system i
+trädet utan kartrad (E39-kandidat vid nästa passning)" — denna dokvåg
+infriar överlämningen: **E39 är nu en rad** (ÖVERSIKT + detaljblock, se
+E-sektionen). Systemet har dubblerats sedan u3:s mätning (6 → 9 filer:
+pass.ts + pass/route.ts + page.tsx tillkom via rond 130 ea754110 05:02)
+och förtjänar sin egen rad: ~1 816 r födda ur kundorder 09-20 21:52.
+
+| Mått | Läge | Verkligheten 2026-09-21 (mätning) |
+|---|---|---|
+| Kartrad | saknades | **E39 PÅGÅR 6** (ÖVERSIKT + detaljblock; snitt 285→291 / 38→39, exakt 7,46 ⇒ 7,5 oförändrat) |
+| GDPR-grindar | ej kartrade | **HÅRDKODADE i intaget** (kodläst): minimerings-NEK vid okänt fält (400 + fältnamn, art 5.1 c) · art13-kvittotvång före lagring (409, versionerat) · export (art 20-tänk) · radering med lagrumskvitto (art 17) — kodbasens tajtaste juridikimplementering |
+| Prod | "väntar deploy" (u3) | **KLUVET, egen sond 18:5x lokal**: huvud-API:t LEVER (GET 405 POST-only korrekt; rond 129: POST 401) via d401d719 02:12Z — men sidan 404 + GET /pass 404: ea754110 (05:02) ancestor till HEAD men ej till bygget; .next saknar rapportakademin.html + pass-rutt (ls); prod-synk.loggen: VÄNTAR-RAM sedan 12:07Z + OOM-dödat 15:14:24Z + läke |
+| Gallring | doc: "kronodrivet jobb (pumpor-familjen)" | **0 ANROPARBEVIS (grep)**: gallraUpphordaElever + skrivPrenumerationsStatus importeras aldrig — ingen cron, ingen pumpa, ingen rutt; statusgången aktiv→utgick har ingen skrivare (betalflytet matar ej ra_prenumeration). BESLUT 1.2:s "AUTOMATISKA radering vid prenumerationens slut" = kodat löfte utan motor — systemets tyngsta gap |
+| Sitemap-profylax (o147) | "väntar första mätningen" | **GRÖN i naturligt tillstånd**: inbjudan korrekt tyst genom byggdSidaFinns — prod lovar inte sidan bygget saknar |
+| Testsviter | — | **0 egna** (grep verktyg/); kollateral: sitemap-livskontraktet (sidklassen) + gränssnittsvakten när deployad |
+
+Sidofynd (förs till respektive ägare): (a) bygg-OOM/VÄNTAR-RAM-kedjan
+håller FEM omgångars kod out nådd för kunden (rond 130 + o126–o129 + o148
+— E37 gap 9 förlängs, E34:s infra-börda); (b) rond 130:s "ABB-passet A-Ö
+LIVE"-formulering i worklog gällde kodlandningen, ej prod — E39-radens
+VÄNTAR DEPLOY är det ärliga läget; (c) citat-validatorn (ÄL 22 §, 200-ord,
+atomisk refusering) är vilande infrastruktur: 0 konsumenter.
+
+KVD: data-only (SYSTEMKARTAN + worklog + anspråksfil) — src/ orörd = INGET
+bygge · R2 orörd (Fas 2-pris, publicering, ⚠-åtgärder = kundens; endast
+läst) · data/blogg/ orörd · data/forskning/RAPPORTAKADEMIN/ endast läst ·
+syskonytor orörda (u2/u3 i samma manifest ännu ej landade när detta
+skrevs — deras ytor fria). [fabrik]
 
 # A. UTBILDNINGENS KÄRNA
 
@@ -6132,7 +6164,93 @@ vakaren lever men dess tidszonstolkningsbugg försköt triggern (o32 §1).*
 
 ---
 
-## AVSTÄMNING MOT SYSTEMRANKNINGEN (styrelsedokumentet)
+## E39. Rapportakademin — det vertikala snittet (övningsverkstan) — PÅGÅR — 6/10 *(NY RAD 2026-09-21 · först mätt av dokvåg s9-u1, manifest auto-s9-1790009126349)*
+
+*Fött ur kundorder 2026-09-20 21:52 (RAPPORTAKADEMIN-designunderlagen,
+data/forskning/RAPPORTAKADEMIN/ — 5 dokument) och levererat i två vågor:
+LAGBESLUT f5a9ac2f 09-21 00:48 (juridikkärnan, 6 filer) + rond 130 ea754110
+09-21 05:02 (pass-flödet + sidan, "ABB-passet A-Ö LIVE"). Bokförd som
+E39-kandidat av s9-u3 (manifest auto-s9-1789946123081) samma natt — denna
+sektion är första kartraden och första fullständiga mätningen.*
+
+**Vad:** övningsverkstad där eleven bedömer RIKTIGA tal ur bolagens
+årsredovisningar FÖRST (produktivt misslyckande, Kapur), låser bedömningen
+— och först därefter exponeras expertens läsning av samma siffror
+(kognitivt lärlingsskap). Ett pass = ett bolags A-Ö (5 sektioner med
+AKM1-variabelkoppling V01/V07/V09/V10/V06, poängtrotta 0/3/5 med
+toleranser). Fas 2-innehåll (server-side member_type-grind).
+
+**Yta (egenmätt 09-21 18:46–19:0x lokal):** src/lib/rapportakademin/ 5
+moduler 729 r (art13 106 · citat-validator 93 · gallring 222 · minimering
+64 · pass 244) · API 376 r (route.ts 156 med fyra actions art13/bedomning/
+export/radera + pass/route.ts 220 med GET-skal/POST-flöde) · sidan page.tsx
+49 r (force-static + revalidate 3600, SEO-metadata med "aldrig
+investeringsråd") · klienten rapportakademin-pass.tsx 448 r ·
+verktyg/beslutsminne.mjs 107 r · 5 designunderlag i
+data/forskning/RAPPORTAKADEMIN/. Totalt ~1 816 r.
+
+**Juridik-kärnan (kodläst, inte påstådd):** GDPR-kedjan är HÅRDKODAD i
+intaget — minimeringslistan 5 fält med NEK vid okänt fält (art 5.1 c,
+400 + okandaFalt-namn), art 13-kvittotvång FÖRE varje lagring (409
+art13_saknas; versionerat ra-art13-v1 — ny text ⇒ ny kvittning), export
+(art 20-tänk, format rapportakademin-export-v1) och radering (art 17) med
+kvitto som bär bakomliggande lagrum. Citat-validatorn (ÄL 1960:729 22 §)
+med 200-ordstak och atomisk dokumentrefusering. Allt inom
+utbildningsundantaget (2007:528 2 kap 5 §); expertläsningarna slutar i
+metod, aldrig köp/sälj. Lagringsväg: system_events-schema "ra/1" (fem
+eventtyper ra_art13/ra_bedomning/ra_prenumeration/ra_gallring/ra_radering)
+— ingen DDL, samma mönster som referral.ts.
+
+**Säkerhetskontrakt (kodläst):** facit + expertläsningar lever ENDAST i
+servermodulen — passSkal() strippar rattSvar/tolerans/expertlasning ur GET;
+POST korrigerar server-side och exponerar experten ENDA om lagringen
+lyckades (502 ⇒ ingen exponering — "mekanisk, inte ett UX-löfte"); Fas
+2-grind server-side (member_type ∈ fas2|fas3|premium|pro, 403 med
+inbjudningstext); rate-limit 30 bedömningar/min per konto (429); medlem-auth
+httpOnly-kaka, aldrig tokens i svaret.
+
+**Prod-läge (egen sond + prod-synk.loggen 09-21):** kluvet — huvud-API:t
+LEVER (GET /api/rapportakademin 405 = POST-only korrekt; rond 129 mätte
+POST 401 = auth-grinden verkställer; koden landade via d401d719 02:12Z),
+men SIDAN + PASS-FLÖDET VÄNTAR DEPLOY: /rapportakademin 404 (28 556 B) +
+GET /api/rapportakademin/pass 404 egen sond — ea754110 (05:02 lokal) är
+ancestor till HEAD men ej till det gröna d401d719; .next saknar
+rapportakademin.html + pass-rutt (ls-bevis); synkloggen visar
+VÄNTAR-RAM-kedja sedan 12:07Z + OOM-dödat bygg 15:14:24Z med
+läke-återställning (bygg-OOM-klassen, E34:s värld). Sitemap-inbjudan är
+korrekt TYST (byggdSidaFinns-grinden, o147) — prod lovar inte sidan bygget
+saknar: profylaxens första mätning i naturligt tillstånd = GRÖN.
+
+**GAP (ägare: pass-flödet i driftskede):**
+1. **GALLRINGEN ODRIVEN** (substansiellt): gallraUpphordaElever() och
+   skrivPrenumerationsStatus() har 0 anropare i hela trädet (grep-bevis
+   09-21 — doc-kommentaren "kronodrivet jobb (pumpor-familjen)" beskriver en
+   drivare som ej existerar). Laggrundade beslutet BESLUT 1 punkt 2
+   ("radering sker AUTOMATISKT när prenumerationen upphör") är kodat men ej
+   maskinellt verksamt: ingen cron anropar jobbet OCH statusgången
+   (aktiv→utgick) har ingen skrivare — betal-/ångerrutterna matar ej
+   ra_prenumeration. GDPR-löftet vilar på framtida koppling (E29:s
+   cron-pipeline är naturlig hemvist).
+2. **0 egna testsviter** (grep verktyg/ — ingen testa-rapportakademin*):
+   minimerings-NEK, art13-409, korrigeringstrappan, passSkal-strippingen,
+   Fas 2-403 — allt overifierat maskinellt; kollateral täckning endast
+   sitemap-livskontraktet (sidklassen) + gränssnittsvakten (när deployad).
+3. **DEPLOY-SKULD**: pass-flödet + sidan kodklara sedan 05:02 men out-
+   nådda för kunden (se prod-läge ovan; samma klass som E37 gap 9).
+4. **Citat-validatorn vilande**: valideraRapportIntag() har 0 konsumenter
+   (intagspipelinen den vaktar finns ej ännu) — ÄL 22 §-vakten är framtida
+   infrastruktur; ABB-passets expertläsningar är egna formuleringar med
+   källangivna tal (verifierad 2026-08-24 + granskningskontroll 09-19).
+5. **Registret singelton**: ett pass (abb-ar-2025, 5 sektioner);
+   "fler följer efter beviset" (pass.ts) — evolutionsspåret-2026-09-21.md
+   bär tillväxtplanen.
+
+**Dom PÅGÅR 6:** kundsynliga huvudytan (sidan + passet) är kodklar men ej
+i prod och gallringslöftet saknar drivare = pågående bygge, inte leverans
+(jfr B8:s PÅGÅR-dom vid designläge). Poängen: dokumentation i topp
+(lagrum i filhuvuden, 5 designunderlag) + valideringskontrakt starka i
+koden, men 0 testbevis och driftgap 1+3 drar ned. R2-ytor (Fas 2-priset,
+publiceringsbeslut) förblir kundens — orörda av dokvågen.
 
 Rankningens 11 rader stämda av mot koden — fyra lägesavvikelser + fyra nya
 fynd utanför rankningen:

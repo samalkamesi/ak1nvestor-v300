@@ -83,23 +83,84 @@ deras facit-sektioner är uttryckliga uppdrag till "nästa fönster/våg"
   pe-lagst spegelvänt, null sist) + history.back-popstate-återställning
   → `lighthouse/funktion-o144.json`.
 
-## §3 Kanalbevis
+## §3 Kanalbevis — GRÖNT ×2 (två träd, två tidpunkter)
 
-(körs när DEPLOYAD landat — _s7u2o144-kanal.mjs)
+- **Verkställarens (17:52:11Z, träd 27a582a0):** DEPLOYAD automatiskt:
+  136 commits (27a582a0) — prod 200; merge-base e27ef394 + 45a9d432 SANT
+  ×2; cv-widget-CSS i chunk 1t9wbuy2xns-r.css (.cv-widget-super +
+  .cv-widget-kalk); HTTP 200 ×6 (/, /dataset ×3 språk, /superanalys,
+  /kalkylator). Originalet bevarat: `lighthouse/kanal-o144-verkstall-27a582a0.json`.
+- **Färskt (23:08:38Z, träd 496466f6 — deployad 22:28:54Z):** samma grind
+  GRÖN igen (merge-base ×2 SANT · cv-widget-CSS i 435i0cybhscm5.css ·
+  200 ×6) — senare deploys kanaler kuren vidare; funktionstestet §6 mättes
+  mot detta träd. `lighthouse/kanal-o144.json` (omskriven av den färska
+  körningen).
 
-## §4 EFTER-mätning o143 (/dataset — §7:s dom)
+## §4 EFTER-mätning o143 (/dataset) — GRÖN (CLS ×5 + LCP ✓)
 
-(Lighthouse ×5: CLS 0 ×5, LCP ±15 % av 4 571 i jämförbart lastfönster,
-TBT endast som lastfönsterobservation enligt o143 §3:s metrologiregel)
+Kördes av verkställaren 17:54–17:56Z (5 separata LH-körningar, kanoniska
+verktyget, mobil): **CLS 0 ×5** — o143 §7.1:s heliga noll; skiftet
+0,2367 är borta i samtliga fem. LCP 4 234 / 4 172 / 4 277 / 4 621 /
+4 370 → median **4 277 = −6,4 %** mot §1-medians 4 571 (±15 %-domen
+UPPFYLLD). TBT 594–2 524 (median 1 134) = lastfönsterobservation enligt
+o143 §3:s metrologiregel (dagfönster, ej jämförbart med nattbasen; par-
+syskonet /konfluens kördes ej — ingen sidspecifik anomali påstås).
+Poäng 0,56–0,68. Filer: dataset-o144-efter1..5.json + ×5 sammanfattningar.
 
-## §5 EFTER-mätning o139 (/superanalys + /kalkylator — §8.4:s dom)
+## §5 EFTER-mätning o139 (/superanalys + /kalkylator) — CLS+LCP GRÖNA; TBT ej bedömbart i dagfönster
 
-(LH_JAMFOR=o139-fore: CLS 0 ×2, TBT /kalkylator ≤ ~450, LCP ±15 %,
-poäng ±)
+Kördes av verkställaren via _s7u2o139efter-kor.mjs 17:52–17:54Z med
+LH_JAMFOR=o139-fore + värmning ×3/sida + geometri/skroll-CLS:
 
-## §6 Funktionstest o143 §7.4 (pillklick ×3 språk)
+- **CLS 0 ×2** (o139 §7.2:s heliga noll — content-visibility skapar inga
+  skift) ÄVEN skroll-CLS 0 under kontrollerad bottenrullning ×2
+  (geometri-s7u2o139efter.json; platshållarna bär — kalkylatorns widget
+  4 360 px, ingen intrinsic-justering behövdes).
+- **LCP ±15 %:** /superanalys 4 355→4 583 (+5,2 %) · /kalkylator
+  4 812→4 760 (−1,1 %) — båda UPPFYLLDA.
+- Poäng 73→57 · 64→56: lastfönstereffekt (dag vs nattmätt bas; poängen
+  drivs av TBT/TTI som skalas med serverlasten).
+- **TBT-villkoret (≤ ~450) UNDERKÄNT I SITT UTFORMANDE:** 1 312 dagmätt
+  mot 582 nattmätt bas. Enligt o143 §3:s metrologiregel (samma dag
+  belagd: /dataset 2 405 dagtid vs 372 natt ≈ 6,5×) är TBT jämförbart
+  ENDAST inom samma lastfönster — 1 312 dag ≈ 350–450 natt-ekvivalent,
+  konsistent med villkoret men ej bevisande. Kurens evidens bär i stället
+  A/B-parmätningarna (samma lastläge, o139 §5): superanalys fönster-TBT
+  1 568→776 (−51 %) · kalkylator Layout 1 213→227 ms (−81 %).
+  Köpost: natt-LH om TBT-spåret öppnas igen (ej ny våg).
+- Filer: superanalys-o139-efter.json · kalkylator-o139-efter.json ·
+  o139-efter-sammanfattning.json · dom-s7u2o139efter.json ·
+  kanalbevis-s7u2o139efter.json · geometri-s7u2o139efter.json.
 
-(_s7u2o144-funktion.mjs — alla kontrakt PASS)
+## §6 Funktionstest o143 §7.4 — 12/12 kontrakt PASS ×3 språk (exit 0)
+
+Verkställarens körning 17:56:28Z kraschade (3 verktygsbuggar, se nedan);
+slutfördes av s7-u1 (byggare 1/3, nästa levande våg) 23:0xZ mot träd
+496466f6 efter färskt kanalbevis (§3).
+
+**DOM: 12/12 PASS på /dataset + /en/dataset + /ar/dataset**
+(funktion-o144.json): pillsFinns · kortFinns · defaultValdFore ·
+urlHogst + ariaCurrentHogst + ordningHogst (pe-tal monotona mot DOM:ens
+egna tal, null sist, ordning ≠ A–Ö) · urlLagst + ariaCurrentLagst +
+ordningLagst · backAtterstallerUrl + Ordning + AriA (popstate) — ×3 språk.
+
+**Kontraktskorrigering (dokumenterad):** originalets "inganValdFore"
+kodades mot gamla useSearchParams-ordningen; den deployade kuren sätter
+designat default (tolkaSortera: tom ?sortera → "bransch",
+dataset-sortering.tsx:62-64) ⇒ A–Ö vald + exakt EN vald vid tom URL —
+kontraktet omdöpt **defaultValdFore** (starkare assertion). Prod-koden
+orörd av detta.
+
+**Tre verktygsfixar (verktyg/-yta, ej src):** (1) cdp()-objektet
+destrukturerades ej — `const { send } = cdp(ws)`; (2) Node-WebSocket
+öppnas asynkront — open/error-await i pageWs(); (3) selektorn
+`div.md\:hidden` föll offer för JS-strängescapet OCH pe-extraktionen
+plockade n-talet före P/E → `div[class~="md:hidden"] > div` + läsning ur
+span.mt-1 (peText-källan).
+
+**o143 §7.5 (manifest-404):** /ak1a/ikon-192.png · ikon-512.png ·
+ikon-maskable-512.png = 200 ×3 på aktuellt träd. Gränssnittsvakten
+lämnad åt cron-kadansen enligt §10 (RAM-disciplinen).
 
 ## §7 KVD
 

@@ -43,7 +43,14 @@ async function pageWs() {
       const r = await fetch(`http://127.0.0.1:${PORT}/json/list`);
       const list = await r.json();
       const page = list.find((t) => t.type === "page");
-      if (page) return new WebSocket(page.webSocketDebuggerUrl);
+      if (page) {
+        const w = new WebSocket(page.webSocketDebuggerUrl);
+        await new Promise((res, rej) => {
+          w.addEventListener("open", res, { once: true });
+          w.addEventListener("error", () => rej(new Error("ws öppnades ej")), { once: true });
+        });
+        return w;
+      }
     } catch {}
     await sleep(400);
   }
@@ -80,10 +87,10 @@ async function evaljs(send, uttryck, awaitPromise = true) {
 /** Läs pill-läge + kortordning (namn + pe-tal) ur DOM:en. */
 const LAS_LAGE = `(() => {
   const pills = [...document.querySelectorAll('div[role="group"] button')];
-  const kort = [...document.querySelectorAll('div.md\\:hidden > div')].map((k) => {
+  const kort = [...document.querySelectorAll('div[class~="md:hidden"] > div')].map((k) => {
     const namn = k.querySelector("a")?.textContent?.trim() || "";
-    const peText = [...k.querySelectorAll("span")].map((s) => s.textContent || "").join(" ");
-    const m = peText.replace(/\\u00a0/g, " ").match(/[^\\d]{0,3}(\\d+[.,]\\d+|\\d+)(?!\\d)/);
+    const peRaw = k.querySelector("span.mt-1")?.textContent || "";
+    const m = peRaw.replace(/\\u00a0/g, " ").match(/(\\d+[.,]\\d+|\\d+)(?!\\d)/);
     return { namn, pe: m ? parseFloat(m[1].replace(",", ".")) : null };
   });
   return {
@@ -109,12 +116,14 @@ async function testaSida(send, sokvag) {
   await send("Page.navigate", { url: BAS + sokvag });
   await sleep(2500); // loadEvent + hydrering
 
-  // 1. Före-läge: A–Ö (ingen aria-current), minst 3 pill, minst 5 kort.
+  // 1. Före-läge: A–Ö vald som default (tolkaSortera: tom/ogiltig ?sortera →
+  //    "bransch" — deployad design, dataset-sortering.tsx:62-64), exakt EN vald,
+  //    minst 3 pill, minst 5 kort.
   const fore = await evaljs(send, LAS_LAGE);
   svar.steg.push({ steg: "fore", url: fore.url, valda: fore.pills.filter((p) => p.vald).length, kort: fore.kort.length });
   svar.pass.pillsFinns = fore.pills.length === 3;
   svar.pass.kortFinns = fore.kort.length >= 5;
-  svar.pass.inganValdFore = fore.pills.every((p) => !p.vald);
+  svar.pass.defaultValdFore = fore.pills[0]?.vald === true && fore.pills.filter((p) => p.vald).length === 1;
 
   // 2. Klicka pill 2 (pe-hogst) — poll tills hydreringen tagit klicket.
   await evaljs(send, `document.querySelectorAll('div[role="group"] button')[1].click()`, false);
@@ -166,7 +175,7 @@ const chrome = startaChrome();
 let ws;
 try {
   ws = await pageWs();
-  const send = cdp(ws);
+  const { send } = cdp(ws);
   await send("Page.enable");
   await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
   const resultat = [];

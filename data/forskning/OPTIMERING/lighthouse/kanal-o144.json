@@ -1,0 +1,29 @@
+{
+  "ts": "2026-09-21T23:08:38.863Z",
+  "steg": {
+    "deployadRad": {
+      "rad": "2026-09-21T22:28:54Z DEPLOYAD automatiskt: 6 commits (496466f6) — prod 200",
+      "hash": "496466f6"
+    },
+    "forfader": {
+      "o139_cv_widget": true,
+      "o143_dataset_cls": true
+    },
+    "cvWidgetCss": {
+      "filer": 2,
+      "traEFFar": [
+        "435i0cybhscm5.css: .cv-widget-super",
+        "435i0cybhscm5.css: .cv-widget-kalk"
+      ]
+    },
+    "http200": {
+      "/": "200",
+      "/dataset": "200",
+      "/en/dataset": "200",
+      "/ar/dataset": "200",
+      "/superanalys": "200",
+      "/kalkylator": "200"
+    }
+  },
+  "kanalBevisad": true
+}

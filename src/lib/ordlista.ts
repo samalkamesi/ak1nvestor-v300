@@ -479,6 +479,9 @@ export const ORDLISTA = {
   "nav.labbar": { sv: "Labbar", en: "Labs", ar: "المختبرات" },
   "nav.badgesMeriter": { sv: "Badges & meriter", en: "Badges & Merits", ar: "الشارات والإنجازات" },
   "nav.dagensPassMeny": { sv: "Dagens Pass", en: "Today's Session", ar: "جلسة اليوم" },
+  // Rond 149 (branding spår 11): övningsytan på riktiga årsredovisningar —
+  // fanns tidigare endast via direkt URL (0 träffar i menyer/chips/ordlista).
+  "nav.rapportakademin": { sv: "Rapportakademin", en: "The Report Academy", ar: "أكاديمية التقارير" },
   "nav.fas3": { sv: "Fas 3 — Certifiering", en: "Phase 3 — Certification", ar: "المرحلة 3 — الشهادة" },
   "nav.pro": { sv: "AK1A PRO", en: "AK1A PRO", ar: "AK1A PRO" },
   // VÅG 61 (2026-09-04): toppväxeln "Privatperson | Företag" — B2B-BESLUT §3.1.

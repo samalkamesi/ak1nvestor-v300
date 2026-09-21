@@ -165,6 +165,13 @@ mätning är spökmätningsskyddad tills kanalbevis finns.** Kronologi:
 synkens spärr "+1024 chrome-cron" borta) + detta facit-underlag. §7:s
 mätdom SLUTSTÄNGS av nästa fönster ovan.
 
+*Tillägg 14:58Z:* 14:57-pollen: krav 6624 MB (NY chrome + syskonens
+AKTIVA sond — PID 468441 ägd av zcode-cli 451104, pågående syskonarbete,
+FÅR EJ städas) + 4 zcode-barn, tillgängligt 1114 — deploy sker när
+omgången + syskonens sonder avslutat; RAM-vakten sköter det autonomt.
+Ingen ytterligare kur från denna vågs sida: låset är korrekt beteende
+(OOM-lärdomarna), ej fel.
+
 ## LEVERANS (denna commit)
 
 globals.css (cv-widget-kur) · superanalys/page.tsx · kalkylator/page.tsx ·

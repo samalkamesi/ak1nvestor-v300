@@ -1,0 +1,27 @@
+studio: rond 143 — KARANTÄN-INTAGET VERIFIERAT PÅ RIKTIGA RAPPORTER: 9/10 BOLAG GENOM HELA PIPELINEN, 3 836 SEKTIONER LEVERERADE (kunduppdrag punkt 2) [organ:Σ]
+
+INTAGSKÖRNING (manifest r142 → rapport-intag-karantan.mjs, sekventiellt): ABB 149
+sektioner, Atlas Copco 316, AstraZeneca (spegel) 363, Ericsson 369, Evolution 199,
+H&M 1 618, Industrivärden 194, Sandvik 238, Volvo Cars 390 = 3 836 sektioner i
+data/rapportintag/leveranser/<ticker>-2025.json; varje fil bär proveniensSha +
+per-sektion källa/url (citatvaliderarens obligatoriska fält, 0 överträdelser).
+994 sektioner är talrika (>30 siffror) = nyckeltalsråstoffet. Karantän-PDF:erna
+stannar i data/rapportintag/karantan/ (gitignorerad rad 99 — följer ALDRIG repot,
+R2-principen); proveniens.jsonl 17 poster (källa+tid+sha256 per fil, kontraktet
+från 8abf541e).
+
+KUR: intagets User-Agent (egna strängen "AK1A-Rapportintag/1.0") blockerades av
+Adobe-AEM (Atlas Copco content/dam) och AlertIR (Volvo Cars) med 403 — käll-
+verifieringen (https+pdf+40 MB) är orörd, agentsträngen är nu läsbar standard
++ äkthetsprefix; retry: ATCO-A 316 sektioner + VOLCAR-B 390 = 403-klassen hel.
+
+ÄRLIGA GRÄNSER (dokumenterade, inte dolda): SKF = KRYPTERAD PDF → kontrollerat
+tolkningsavslag (parser-gränsen från rond 136-designen; uppgraderingsspår pdf-parse
+i prod-trädet kräver RAM-fönster, qpdf finns inte på servern). H&M översegmenterar
+(1 618 sektioner på ~120 sidor, många tunna/mellanslagsfyllda) — tolkar-gränsen
+mot CID-fria men grafiktäta layouter; kurationssteget (nästa våg: sektionsurval +
+nyckeltalsidentifiering per bolag) får sin jobbbeskrivning därifrån. Ericsson
+extraheras rent (ESRS-text läsbar ordagrant) = pipelinekärnan BEVISAD.
+
+Vaccination: min UA-edit bröt syntaxen (saknad } före redirect) — retry-skriptets
+import var grinden som fångade den; kurerad innan någon commit.

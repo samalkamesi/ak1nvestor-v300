@@ -53,7 +53,7 @@ function loggaProveniens(post) {
 /** Hämta och verifiera källan; returnerar {buf, kalla} eller kastar. */
 async function hamtaOchVerifiera(url) {
   if (!url.startsWith("https://")) throw new Error(`KÄLLAVSLAG: endast https accepteras (${url})`);
-  const res = await fetch(url, { headers: { "User-Agent": "AK1A-Rapportintag/1.0 (karantän)" }, redirect: "follow" });
+  const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 AK1A-Rapportintag/1.0" }, redirect: "follow" });
   if (!res.ok) throw new Error(`KÄLLAVSLAG: HTTP ${res.status} från ${url}`);
   const typ = res.headers.get("content-type") || "";
   if (!typ.includes("pdf") && !/\.pdf(\?|$)/.test(url)) {

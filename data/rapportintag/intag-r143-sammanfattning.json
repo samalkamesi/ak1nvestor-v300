@@ -1,0 +1,149 @@
+{
+  "ts": "2026-09-21T10:49:07.892Z",
+  "rond": 143,
+  "resultat": [
+    {
+      "namn": "ABB",
+      "ticker": "ABB",
+      "exit": 0,
+      "sek": "1.1",
+      "leverans": {
+        "sektioner": 149,
+        "rubriker": [
+          "01 Financial review of ABB Group 2 02 Consolidated Financial",
+          "Sektion 2",
+          "\u0001FiëÏ~i´øø= ¿¾r3¾íÑ\f|ÔTÝ\u001emKR©\u0018Å\u0007åí@ ¥\u0014 Z\u0000QKIK@\u000bKIK@\u000bK",
+          "FINANCIAL REPORT 2025 3 INTRODUCTION ABOUT ABB ABB is a glob",
+          "4 FINANCIAL REPORT 2025 In January 1988, Asea AB and BBC Bro"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 149 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/ABB-2025.json (sha256 df0f0ba33dcf…, PDF i karantän)"
+    },
+    {
+      "namn": "Atlas Copco",
+      "ticker": "ATCO-A",
+      "exit": 1,
+      "sek": "0.3",
+      "leverans": null,
+      "svans": "KÄLLAVSLAG: HTTP 403 från https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+    },
+    {
+      "namn": "AstraZeneca",
+      "ticker": "AZN",
+      "exit": 0,
+      "sek": "2.9",
+      "leverans": {
+        "sektioner": 363,
+        "rubriker": [
+          "Sektion 1",
+          "NR ECI Macintosh Macintosh Macintosh Macintosh Macintosh Mac",
+          "NR ECI Macintosh Macintosh Macintosh Macintosh Macintosh Mac",
+          "Sektion 4",
+          "Sektion 5"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 363 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/AZN-2025.json (sha256 5a381c1c5df1…, PDF i karantän)"
+    },
+    {
+      "namn": "Ericsson",
+      "ticker": "ERIC-B",
+      "exit": 0,
+      "sek": "1.3",
+      "leverans": {
+        "sektioner": 369,
+        "rubriker": [
+          "Sektion 1",
+          "Sektion 2",
+          "Sektion 3",
+          "Sektion 4",
+          "Sektion 5"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 369 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/ERIC-B-2025.json (sha256 935b64ca2977…, PDF i karantän)"
+    },
+    {
+      "namn": "Evolution",
+      "ticker": "EVO",
+      "exit": 0,
+      "sek": "1.3",
+      "leverans": {
+        "sektioner": 199,
+        "rubriker": [
+          "Sektion 1",
+          "Sektion 2",
+          "Sektion 3",
+          "Sektion 4",
+          "z:o UÅ¡dm\"à|ë\u00158¶k8¹¼Kmñ6l¹\u0013\u001f\u001aÆ<Ò\u0005ýüÕ5tc:\u0007\u001d/Äzø2ÔmGyn-"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 199 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/EVO-2025.json (sha256 17f6ac2fd8e3…, PDF i karantän)"
+    },
+    {
+      "namn": "H&M",
+      "ticker": "HM-B",
+      "exit": 0,
+      "sek": "2.4",
+      "leverans": {
+        "sektioner": 1618,
+        "rubriker": [
+          "Sektion 1",
+          "Sektion 2",
+          "Sektion 3",
+          "#\u0000H\u0015\u0011à\u0003Û\u0002*À»\u0002¼\u0010 \u0019S#t\u0005°ÉA°- ¢sVå \"*d\u001b\u0001I°A*\u0000 \u0010\u0005\u0014<\u0000°Ìhµy\u0000Å",
+          "CONTENTSOur business\u001b\u001eWord from CEOSustainability statementA"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 1618 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/HM-B-2025.json (sha256 3454ff30a0e2…, PDF i karantän)"
+    },
+    {
+      "namn": "Industrivärden",
+      "ticker": "INDU-C",
+      "exit": 0,
+      "sek": "1.6",
+      "leverans": {
+        "sektioner": 194,
+        "rubriker": [
+          "Sektion 1",
+          "Sektion 2",
+          "Sektion 3",
+          "`è©ã1/,µ¨æ@Uüu\u0011\u0013V F S®\u001bûºÜé\u0010·cÒ\u0019VnbB\b\"Ä\u001eCªB_Xj\u001c?ý",
+          "Sektion 5"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 194 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/INDU-C-2025.json (sha256 3b5e02caf44f…, PDF i karantän)"
+    },
+    {
+      "namn": "Sandvik",
+      "ticker": "SAND",
+      "exit": 0,
+      "sek": "1.5",
+      "leverans": {
+        "sektioner": 238,
+        "rubriker": [
+          "Sektion 1",
+          "Sektion 2",
+          "Sektion 3",
+          "The formal annual report comprises pages 3250, 114171 and ",
+          "Sektion 5"
+        ]
+      },
+      "svans": "INTAG LEVERERAD: 238 sektioner → /home/ak1a/agent/ak1/data/rapportintag/leveranser/SAND-2025.json (sha256 0feaa60de792…, PDF i karantän)"
+    },
+    {
+      "namn": "SKF",
+      "ticker": "SKF-B",
+      "exit": 1,
+      "sek": "1.0",
+      "leverans": null,
+      "svans": "TOLKNINGSAVSLAG: krypterad PDF — parser-gräns (uppgraderingsspår: pdf-parse)"
+    },
+    {
+      "namn": "Volvo Cars",
+      "ticker": "VOLCAR-B",
+      "exit": 1,
+      "sek": "0.3",
+      "leverans": null,
+      "svans": "KÄLLAVSLAG: HTTP 403 från https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /**
- * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland + australien + japan + frankrike för /dataset/[bransch]/[aspekt]
+ * LANDASPEKTER — sverige + usa + danmark + schweiz + tyskland + australien + japan + frankrike + storbritannien för /dataset/[bransch]/[aspekt]
  * ====================================================================================
  * Tema 4 ur data/forskning/sokord/bransch-teman.md (§4): "svenska
  * [bransch]bolag — så ligger de mot branschmedianen". Två moduler (slug
@@ -230,7 +230,7 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
   };
 }
 
-// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) + australien (omg18) + japan (omg20) + frankrike (omg21) ──
+// ── Modulerna — sverige + usa (VÅG 150) + danmark (omg14) + schweiz (omg16) + tyskland (omg17) + australien (omg18) + japan (omg20) + frankrike (omg21) + storbritannien (omg26) ──
 
 export const aspekter: AspektModule[] = [
   byggLandAspekt({
@@ -341,5 +341,20 @@ export const aspekter: AspektModule[] = [
       "kassaflödestal tolkas annorlunda än hos industrbolag — jämför därför den här " +
       "medianen med franska bolags median, och var varsam med att läsa den mot tal " +
       "från svensk- eller dollar-noterade bolag.",
+  }),
+  byggLandAspekt({
+    slug: "storbritannien",
+    land: "Storbritannien",
+    forled: "Brittiska",
+    landNamn: "Storbritannien",
+    valutaMening:
+      "De brittiska bolagen redovisar i pund (GBP) men noteras i pence (GBX) på Londonbörsen — " +
+      "samma valuta i två skalor, och land-fältet säger inget om rapportvalutan (enstaka " +
+      "noteringar redovisar i dollar). Multiplerna och marginalerna är i sig valutaneutrala " +
+      "tal, men den brittiska grenen bär en tung bankvikt: för bankerna gör insättnings- " +
+      "och utlåningsbalanserna att skuld-, kassaflödes- och avkastningstal tolkas annorlunda " +
+      "än hos industrbolag (värderings-raderna P/E och P/B bär, medan skuld- och " +
+      "kassaflödesmått lämnas osatta) — jämför därför den här medianen med brittiska bolags " +
+      "median, och var varsam med att läsa den mot tal från svensk- eller dollar-noterade bolag.",
   }),
 ];

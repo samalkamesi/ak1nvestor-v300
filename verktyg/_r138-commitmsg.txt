@@ -1,0 +1,40 @@
+studio: rond 138 [organ:Ψ] — FYNN NR 5: TIMEOUT-DOMEN + FAVICON-ROTEN
+
+KUNDORDER "F3-api /andringar nätverksfel" (08:59:22Z) rot-analysERAD och
+KURAD (Lag 1+2+6):
+
+LAG 1 (färskmätning): POST /api/studio/andringar 405 på 0,05 s — rot-ytan
+lever och svarar snabbt; endpointen i sig aldrig trasig (klassens 5:e
+offer med identisk signatur: TimeoutError + omtest misslyckades + rot 200).
+
+LAG 2 (rot): FYNN nr 4-belastningsgrinden mätte fel DIMENSION — lasten var
+LUFTIG enligt dess mått (MemAvailable ~1 802 MB > 1 500-tröskeln, 1 zcode-
+barn < 2; prod-synk.log 08:57:25Z VÄNTAR-RAM 732 MB) men transport-RPC:n
+svalt ändå i OOM-byggseriens efterdyning (sex döda byggen 07:40–08:40 +
+chrome-cron + webchat-poll). Signaturerna skiljer: samtliga 5 offer bar
+timeout-klassen med rot 200 — det ÄR svältens fingeravtryck.
+
+KUR: FYNN nr 5-TIMEOUT-DOmen i verktyg/feljagaren.mjs — felKLASSEN avgör:
+TimeoutError/AbortError + rot 200 ⇒ MEDEL svältklass OAVSETT last-mått,
+både mätt gren och kaskad-syskon (forstaFelTimeout-minne); HÖG kräver
+icke-timeout-fel (refused/hangup = äkta API-död).
+
+BEVIS: eldprov v5.1 (verktyg/testa-f3-nr5.mjs, barnprocess-arkitektur —
+AK1A_BAS_URL måste stå före modul-import) 8/8 PASS: fall A 08:59-
+signaturen med luftig last ⇒ 18 MEDEL svältklass 0 HÖG · fall B äkta
+felklass ⇒ HÖG bevarat (även kaskad) · fall C rond 50-regression ⇒
+självläkt. Dom-rad med ts-nyckel 08:59:22.046Z i prod-ledgern.
+
+SAMEXISTERANDE FYND (DoD-svepet 09:02:48Z med kurerad vakt — rond 135:s
+kur bevisad: 4 kombinationer mättes): (1) /rapportakademin 404 — pm2
+serverar .next-läkebackup TAlJ8Gvikz (08:40 OOM-återställning) som
+föregår snittet; grönt bygg av 8714aa73+ via synkens poll återför sidan
+(V235-sekvenseringen står i kö på RAM). (2) KONSOLFELETS ROT: kodbasen
+saknade favicon.ico HELT — chrome begär /favicon.ico automatiskt ⇒ 404 ⇒
+1 konsolfel per kombination. KUR: public/favicon.ico (16×16 32-bit ICO,
+1 118 byte, programmatiskt genererad) — statisk public-fil, servas live
+vid pull utan ombyggnad.
+
+PÅ VÄGEN (eldprov v5:0): feljagarens BAS fryses vid modul-import —
+env-injektion efter import gick mot skarpa servern (401/429-svar);
+v5.1 köper varje fall i barnprocess med env före import.

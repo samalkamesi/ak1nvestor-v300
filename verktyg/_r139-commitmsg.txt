@@ -1,0 +1,27 @@
+studio: rond 139 [organ:Ψ] — FYNN NR 6: 429-DOMEN (rate-limit är skydd, ej API-fel)
+
+KUNDORDER "F3-api 429 × 5" (/mal/status /session /uppladdning
+/tjanster/automation /tjanster/bakgrund) rot-analysERAD och KURAD
+(Lag 1+2+6) — fyndfilen bar i själva verket 15 fynd 09:13:13.668-.988Z.
+
+LAG 1 (färskmätning): sonderna mot /puls och /session svarar 401 —
+låset utgånget, endpointarna friska; hela serien satt i ett 60 s-fönster.
+
+LAG 2 (rot): admin-authens in-memory rate-limit på FELAKTIGA
+lösenordsförsök (10/min, src/lib/admin-auth.ts:228) triggades av
+huvudagentens EGEN eldprovs-miscall v5:0 (20+ anrop med fel lösenord
+mot skarpa localhost:3000 — BAS fröts före env-sättningen) sekunder
+före jakten; det globala låset avvisade sedan FYNN:s KORREKTA anrop
+på 15 endpoints (09:13:13, 0,32 s spread — helt inom fönstret).
+Middlewares flödesvakt oskyldig (loopback-immun, rad 178). Skyddet
+arbetade som designat — felet var verktygskörningens.
+
+KUR: FYNN nr 6-429-DOmen i verktyg/feljagaren.mjs — HTTP 429 ⇒ MEDEL
+"rate-limit — skyddsmekanism aktiv" ALDRIG HÖG (endpointen frisk,
+Retry-After 60 s; admin-auth-lås ELLER flödesvakt). Plus strukturellt
+eldprovsskydd i verktyg/testa-f3-nr5.mjs: barnet VÄGRAR starta om
+AK1A_BAS_URL pekar på localhost/:3000 — v5:0-klassen kan inte återkomma.
+
+BEVIS: eldprov v5.2 10/10 PASS — fall D mock-429 ⇒ 18 MEDEL 0 HÖG ·
+fall A/B/C (nr 5, äkta fel, självläkt) orörda gröna · 15 dom-rader med
+ts-nycklar 09:13:13.668-.988Z i prod-ledgern.

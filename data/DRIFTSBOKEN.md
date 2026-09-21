@@ -3241,3 +3241,24 @@ dag-2-kvitto · pumpens landningstidsvarians tredje punkten · kvartal ≤
 
 SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1789948522392) 2026-09-21.
 
+
+## ROND 147 [organ:Ψ] — F6 RAM-NÖD STÄNGD I ROTTEN MED VACCIN (2026-09-21, GODKÄNT)
+
+- **Symptom:** FYNN F6-rop "RAM 266 MB"; byggfönstret stängt, OOM-dödat bygg
+  17:14Z, synkens poll vägrade (krav 3 224 MB).
+- **Rot (Lag 2):** prod-next-serverns RSS-läcka — 4 339 MB efter 22 h drift
+  (eftersond 17:xx bevis). Inte fabriklast: färskmätning vid dom = 5 219 MB.
+- **Kur, två steg:** (1) målhjärtats överlevnadsomstart 17:52 lokal (journal:
+  frusen turn 50 min) + auto-deploy 136 commits 27a582a0 → prod 200;
+  (2) verktyg/_f6-vaccin.mjs väntade ut deploylåset, journal 18:07:14Z
+  (kanal fynn-f6-vaccin, pid 587256), omstart med tak — dog efter verkställandet
+  med utfallsfilen oskriven (våg 148-mönstret: verkställt, svar förlorat).
+- **Vaccin (Lag 6):** max_memory_restart 2500M — LIVE (pm2 jlist 2621440000)
+  + PERSISTENT (pm2 save, dump.pm2 bär taket). Läckan är nu självhelande:
+  pm2 startar om ak1a mekaniskt vid 2,5 GB RSS.
+- **Utfall:** prod 200 + /rapportakademin 200 (tre mättillfällen 18:24–18:27Z)
+  · ak1a online RSS 68 MB · dom-rad i data/vakten/feljakt-bedomningar.jsonl
+  (båda träden). RAM pendling 5 219→1 200 MB = fabriklast — fabriks-RAM-vakten
+  (1 500 MB) + det nya taket äger det fortsatta förloppet.
+
+SLUT — sektion inlagd av huvudagenten (rond 147) 2026-09-21.

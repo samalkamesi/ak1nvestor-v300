@@ -1,0 +1,176 @@
+{
+  "slug": "od-11-ranteswapen",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Ränteswapen — avtalet som byter fast mot rörlig",
+  "summary": "OPTIONS & DERIVAT-familjens elfte steg öppnar derivatens tredje instrumentfamilj efter optionen och terminen: ränteswapen, avtalet där två parter byter två räntebetalningsströmmar mot varandra utan att något lånebelopp flyttar. Sonden mot registret visar instrumentet nämnt men aldrig öppnat inifrån: ränteriskkursen nämner det som botemedel, obligationskurserna i förbigående — och bindningsriskkursen (st-08) äger hela låntagarens vy med ett eget kapitel om swappen utifrån (vad den gör med känslighetstalet och vad den aldrig gör) men lämnar uttryckligt kvar maskineriet åt derivatfamiljen: de två benen, nättingen av differensen, kurvan som prissätter det fasta benet, clearingens marginaler och brytvärdet mitt i livet —orden som denna kurs nu äger. Kursen äger instrumentet genom ett genomgående påhittat par: fastighetsbolaget Storheden, med lån 2 000 miljoner kronor till rörlig ränta (STIBOR tre månader + marginal 1,80 procent) som tecknar en femårig swap med ett nominellt belopp på 2 000 — Storheden betalar fast 3,10 procent, motparten betalar STIBOR — och den ekvation som är kursens kärna: den totala räntekostnaden blir 3,10 + 1,80 = 4,90 procent fast, syntetiskt, i varje STIBOR-läge. Kapitel två räknar nättingen: vid STIBOR 2,20 betalar Storheden lånet 4,00 procent och swapdifferensen 0,90 procent — endast differensen flyttar, 0,90 % × 2 000 × 90/360 = 4,5 miljoner per kvartal — och vid STIBOR 4,00 vänder strömmen: bolaget får 4,5 miljoner och totalkostnaden förblir 4,90. Därtill swapkurvan (två år 2,70, fem år 3,10, tio år 3,55 — det fasta benet är en punkt på en kurva, inte «räntan»), clearingmotpartens dagliga marginaler (rk-16:s domän), brytvärdet efter två år när tre år återstår och marknadsswapen står i 2,30 (cirka 0,80 % × 2 000 × 2,8 ≈ 44,8 miljoner att betala sig ur avtalet), amorteringsglidet när lånet amorterar men swapen inte (år fem: lån 1 808 mot swap 2 000 — en överstäckning på 192), och dubbelssäkringsfällan där bolaget med fast lån som dessutom betalar fast i swap vänder sin risk till spegelvänt rörlig. Pedagogisk utbildning om mekanismer i påhittade bolag — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "why": "OPTIONS & DERIVAT-familjens tio första steg har kartlagt derivatens två första grundfamiljer: optionen i alla sina skepnader (grekerna, den implicita volatiliteten, emissionens instrument, kombinationerna, utdelningskopplingen, positionen efter bygget, försäkringsskrivandet, binomialträdet) och terminen (od-07: priset idag, leveransen sedan), samt kreditens derivat (od-10: CDS — försäkringen på låntagaren) — men den tredje och i volym största instrumentfamiljen, ränteswapen, saknar sin kurs: marknadens största derivatklass, det instrument varmed bolag byter fast mot rörlig ränta och bankerna bygger sina ränteböcker, nämns endast i förbifart hos grannarna. Sonden bekräftar luckan: «ränteswap» bärs förbi av grannarna (ränteriskkursen nämner instrumentet som botemedel, refinansieringsmuren som alternativ, statsobligationskursen och böckerna i förbigående), och den nyaste grannen — bindningsriskkursen (st-08), som landade i registret dagen före denna kurs — äger låntagarens hela vy men skriver i sitt swapkapitel uttryckligt att instrumentets maskineri «ägs av derivatfamiljens kurser»: här är den kursen, och «swapkurvan» förekommer i registret enbart i just den hänvisningen. Gränserna är redan draget och kursen respekterar dem: ränteriskkursen (rk-08) äger RISKEN — duration, kurvans rörelser, priset på räntekänslighet — men inte instrumentet som skapar och flyttar den risken; skuldens anatomi (ks-03) äger LÅNET och dess bindningsval; bindningsriskkursen (st-08) äger LÅNATAGARENS STOL — känslighetstalet, bindningsstrategin och swappen läst utifrån — medan denna kurs äger instrumentet inifrån; valutasäkringen (ks-08) äger samma instrumentfamilj i annan valuta — här ägs räntans variant; terminen (od-07) äger leveransens kontrakt, CDS (od-10) kreditens swap, kontrahentriskkursen (rk-16) clearingens och centrala motparters inre, och realräntan (ma-03) samt kreditpremien (ma-05) äger vad kurvan och spreaden betyder i ekonomin. Kursen fyller ytan med instrumentets egen mekanik: att swapen är ett PAR AV BETALNINGSSTRÖMMAR (aldrig ett lån), att nättingen gör att bara differensen flyttar, att det fasta benet prissätts av swapkurvan till nollkostnad vid tecknandet, och att avtalet mitt i livet har ett värde — positivt eller negativt — som är just den termen risken förvaltas med. För Storheden är det hela säkringsberättelsen: ett rörligt lån plus en swap är ett fast lån i aritmetisk mening — och det är den identiteten kapitel tre bevisar rad för rad.",
+  "learn": "Beskriva swapens anatomi korrekt: två ben (Storheden betalar det fasta 3,10 procent, motparten betalar STIBOR), ett nominellt belopp (2 000) som ALDRIG flyttar utan bara skalar betalningarna, en löptid (fem år) och en frekvens (kvartalsvis) — och marginalen (1,80) som bor i LÅNET, inte i swapen: swapen prissätter referensräntan, lånet äger kreditpåslaget (ma-05:s gräns). Räkna nättingen i fyra STIBOR-lägen: 2,20 procent ger lånekostnad 4,00 och swapdifferens +0,90 (Storheden betalar 0,90 % × 2 000 × 90/360 = 4,5 miljoner per kvartal); 3,10 ger differens noll; 4,00 vänder strömmen (bolaget FÅR 4,5 miljoner); 5,00 ger 9,5 miljoner in — och den totala kostnaden står i 3,10 + 1,80 = 4,90 procent i samtliga fall: 98 miljoner per år, kvartal efter kvartal. Det är säkringsidentiteten: rörligt lån plus swap (betalat fast, mottaget rörligt) är aritmetiskt ett fast lån (st-08 äger samma resultat läst utifrån, i känslighetstalet — kursen här äger identiteten inifrån) — och spegelregeln gäller lika: ett FAST lån plus samma swap (mottaget fast, betalat rörligt) är ett rörligt lån (netto STIBOR + 1,30 i kursens dubbelsäkringsfäll). Läsa swapkurvan som pris: två år 2,70, fem år 3,10, tio år 3,55 — det fasta benet är en punkt på kurvan, tecknad till noll kostnad eftersom båda benen vid tecknandet är värda samma, och därför har avtalet inget pris dag ett men ett VÄRDE varje dag därefter. Räkna brytvärdet med approximationen: efter två år (tre kvar) står marknadsswapen i 2,30 och Storhedens åtagande 3,10 är då 0,80 procentenheter över marknaden — 0,80 % × 2 000 × 2,8 ≈ 44,8 miljoner att betala för att lämna avtalet (rk-08 äger räkneverkets duration — kursen äger tolkningen: avtalet är en tillgång eller skuld som står i balansräkningen). Se strukturfällorna: amorteringsglidet (lånet amorterar 2 procent per år, swapen inte: år fem lån 1 808 mot swap 2 000 — 192 överstäckta) och dubbelssäkringen. Slutligen protokollets fem frågor: referensräntan (vilken STIBOR, vilken tenor), benens riktning, beloppets profil mot lånet (rak mot amorterande), motparten (central eller bilateral — rk-16), och brytvärdets känslighet om kurvan rör sig hundra punkter.",
+  "history": {
+    "origin": "Swapen föddes ur ett behov av ömsesidighet: på 1980-talet hade världens bolag och banker räntestrukturer som passade varandra — den som kunde låna billigt fast behövde rörligt och tvärtom — och i stället för att lösa upp lån tecknades avtal om att byta betalningsströmmar. Den första stora valutaswapen mellan en världsbank och ett amerikanskt teknikföretag 1981 visade mekaniken: två motparter, två valutor, två räntor — och ingen av dem behövde byta låneavtal, bara differenserna. Räntevarianten följde omedelbart: samma logik, en valuta.",
+    "evolution": "Marknaden växte till världens största derivatklass, och två byggstenar standardiserades: den nominella referensräntan (i Sverige STIBOR — banker som rapporterar och ett snitt som blir referens) och dokumentationen (huvudavtal som reglerar nätting, betalningsfall och uppgörelse vid fall — grunden till vad som senare blev clearinghusens regelverk). Efter finanskrisen 2008 flyttade handeln successivt till centrala motparter: standardiserade swapar clearingregistreras, marginalerar dagligen och initialmarginal säkerställer — kontrahentriskens centralisering (rk-16:s hela domän) som gjorde swapen från bilateralt förtroendeavtal till standardiserat, marginalerat instrument.",
+    "modern": "I dag är ränteswapen infrastruktur: bolagsskuldens förvaltare sköter rullande swap-program där löptider matchar lånens, fastighetsbolagens räntebudgetar publicerar andelen bunden ränta (balansräkningens bindning plus swapar — samma tal som fastighetsanalysen läser), och swapkurvan har ersatt statsobligationskurvan som värderingens diskonteringsreferens i stora delar av finanssystemet. Samtidigt står referensräntornas frågor kvar: vilken referensränta bär systemet när interbanksnitten ifrågasätts, och vem bär brytvärdena när kurvorna rörs kraftigt — frågor kursen öppnar och hänvisar till grannkurserna (ma-05 för premiens anatomi, rk-08 för riskens mätning, rk-16 för motpartens mekanik)."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "De två benen — betalningsströmmar, inte lån",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Nättingen — endast differensen flyttar",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Säkringsidentiteten — fyra rader, ett svar",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Swapkurvan — priset på det fasta benet",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Brytvärdet och fällorna — livet mitt i avtalet",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till varje swapavtal",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch undvek derivat han inte kunde rita på ett papper, och hans test är kursens första kapitel: en swap är två motriktade pilar av betalningar — kan du inte rita dem, äger du inte avtalet. Hans varning om att bolag som «säkrar» ibland spekulerar i förklädnad är kapitel fems kärna: bolaget med fast lån som dessutom betalar fast i swap har inte säkrat något — det har byggt en spegelvänt rörlig exponering och kallat den trygghet. Lynch lärde också ut att den bästa balansräkningen är den som inte kräver finansiell ingenjörskonst att förstå: hans preferens för bolag med rakt, enkelt och fåtaligt i skuldkolumnen gäller dubbelt för derivatböckerna — varje swap-rad ska kunna förklaras med säkringsidentiteten (kapitel tre) eller inte finnas. Och hans tumregel att tiden är analytikerns vän blir i swapens värld löptidsdisciplinen: en femårsswap som skyddar ett tioårigt lån är bara halva tryggheten, och rullprogrammet (nya swapar när gamla löper ut) är bolagets räntestrategiska puls.",
+  "grahamSection": "Benjamin Graham formulerade säkerhetsmarginalen i balansräkningen, och hans blick på derivat var densamma som på all finansiering: om instrumentet ökar risken utan att öga ökar förståelsen ska det bort. Kursens säkringsidentitet är Grahams-vänlig i sin renaste form: det rörliga lånet plus swapen ger en fast kostnad — 4,90 procent, 98 miljoner om året — och därmed en beräkningsbar räntebörda som kan prövas mot hyresintäkterna; hans analys av företagsobligationer gjordes alltid med just den frågan: täcker kassaflödet räntan i det sämsta fallet, inte det bästa. Grahams varning gäller spegelfallet: derivatet som tecknas för «att sänka räntekostnaden» i stället för att binda den är spekulativ ränteposition i dräkt av kassaflödeshantering — och hans krav på att redovisningen ska visa vad som händer i nedsida översätts direkt till kursens brytvärde: avtalet som är värt 44,8 miljoner negativt när kurvan sjunker är en skuld som ska synas, inte en fotnot. Disciplinen — regler skrivna före, följa under (bf-04:s domän) — är Grahams sista gåva till swap-läsaren.",
+  "ak1Section": "I AK1A:s metodik är ränteswapen balansräkningsläsningens dolda post: bolagets «andel bunden ränta» är summan av två världar — lånens bindningstider (ks-03:s kolumn) och swaparnas nettoskillnad — och utan swap-raden är räntekänsligheten (rk-08:s mätning) bara halvläst. Fem tidshorisonterna läser instrumentet olika: kortaste horisonten bär nättingens kvartalsflöden och likviditetsplaneringen, medellånga bär brytvärdets volatilitet (avtalet är en tillgång eller skuld som rör sig med kurvan — 44,8 miljoner i kursens exempel), och längsta bär frågan om räntestrategin alls ska vara — fast, rörlig eller delad — vilket är ks-03:s och ks-07:s domän med swapen som verktyg. Motoruttagen kompletteras med effektiv ränta som nyckeltal: Storhedens 4,90 procent mot lånets rörliga 4,00–6,80 är den siffran som scenarioarken (AKM2) bär i räntekolumnen. Riskmatrisen (rs-04) tillför raden som ingen derivatbok får sakna: basrisken (lånets STIBOR plus marginal mot swapens nakna STIBOR — marginalen förblir exponerad, ma-05:s sprid) och dokumentationsrisken (vilken kurva, vilken dag, vilken formulering av fall). Kursen håller hela vägen plattformens markering: mekanismer och aritmetik i påhittade bolag (Storheden), utbildning om instrument — varje verkligt beslut kring verkliga avtal lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "De två benen — betalningsströmmar, inte lån",
+      "intro": "Familjens instrument hittills har haft en prislapp och en förfallodag. Swapen har inget av delarna: den är ett par av betalningsströmmar som löper mot varandra — och den första läxan är att inte förväxla den med ett lån.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempel är påhittat från första raden: Storheden Fastigheter, ett fastighetsbolag med hyresbestånd i sex städer, bär ett lån på 2 000 miljoner kronor till rörlig ränta — referensräntan STIBOR med tre månaders löptid plus kreditmarginalen 1,80 procent. Ränteauktioner och omförhandlingar har gjort marginalen skälig; problemet är inte pris utan FORM: varje kvartal ställs räntekostnaden om, och bolagets räntebudget svävar med inlåningsmarknadens pris på pengar. Styrelsen vill ha kostnaden förutsägbar och tecknar därför en ränteswap med en motpart: nominellt belopp 2 000 (samma som lånet — kapitel fem visar vad som händer när de glider isär), löptid fem år, betalning kvartalsvis. Avtalets två ben: Storheden BETALAR fast 3,10 procent på det nominella beloppet; motparten BETALAR STIBOR (tre månader, utan marginal) på samma belopp. Två saker är viktiga redan här. Grannen som äger låntagarens stol bör nämnas direkt: bindningsriskkursen (st-08) räknar samma instrument utifrån — vad swappen gör med bolagets känslighetstal och vad den aldrig gör — och lämnar maskineriet hit. För det första flyttar inget belopp någonstans — de 2 000 är en skala, inte en kredit: swapen är inte lånefinansiering utan räntebyte (ks-04:s emissioner äger kapitalanskaffning — detta avtal anskaffar ingenting). För det andra bor marginalen i lånet, inte i swapen: priset på Storhedens kreditvärdighet (1,80) förblir rörligt och kvarstår i varje scenario — swapen prissätter enbart REFERENSRÄNTAN, och det är kreditpremiens (ma-05) och swapens skilda domäner. Notera slutligen vad avtalet kostade att teckna: ingenting. Vid tecknandet är det fasta benet (3,10) satt till just den nivå där de båda benen är värda samma — ett nollpris som kapitel fyrs kurva förklarar, och som är skälet till att avtalet dag ett är neutralt men varje dag därefter har ett värde."
+        },
+        {
+          "type": "definition",
+          "content": "Ränteswap — avtal mellan två parter att under en bestämd löptid utbyta räntebetalningar på ett nominellt belopp: den ena betalar fast ränta, den andra betalar referensränta (i kursen STIBOR tre månader). Nominellt belopp — skalan som betalningarna beräknas på; flyttas aldrig. Ben — vartdera av de två betalningsströmmarna: det fasta benet och det rörliga benet. Nätting — att endast differensen mellan benen betalas, aldrig båda fullt ut."
+        },
+        {
+          "type": "insight",
+          "content": "Ett lån flyttar kapital och skapar en skuld i balansräkningen; en swap flyttar differenser och skapar ett avtal om riktning. Den som blandar ihop dem tror att swapen kostar 3,10 procent — den kostar bara SKILLNADEN mot det den får."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Nättingen — endast differensen flyttar",
+      "intro": "Hur ser betalningen ut i praktiken? Kapitlet följer ett kvartal steg för steg och visar mekaniken som gör swapen så kapitalsnål: endast differensen flyttar, aldrig båda beloppen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ställ in scenariot för ett kvartal: referensräntan STIBOR har fixerats till 2,20 procent för perioden. Storhedens LÅN kostar denna kvartal 2,20 + 1,80 = 4,00 procent — det är bankens pengar och rör inte swapen. SWAPEN: Storheden är skyldig det fasta benet 3,10 och har rätt till det rörliga 2,20 — differensen 3,10 − 2,20 = 0,90 procentenheter till Storhedens nackdel. Betalningen: 0,90 procent på nominellt 2 000 under kvartalets 90 dagar (dagräkning 90/360): 0,0090 × 2 000 × 0,25 = 4,5 miljoner från Storheden till motparten. Observera vad som INTE betalas: aldrig 3,10-procentsbeloppet (15,5 miljoner för kvartalet skulle det ha varit), aldrig 2,20-beloppet (11,0) — endast differensen. Det är nättingen, och den är swapens kapitalsnålhet: likviditetsbehovet är differensens, inte benens. Nu spegeln: nästa kvartal står STIBOR i 4,00 procent. Lånet kostar 5,80; swapen ger Storheden 4,00 och tar 3,10 — differensen 0,90 i Storhedens FAVÖR: 4,5 miljoner IN i bolaget. Samma avtal, samma belopp, samma kvartalslängd — strömmen har vänt med tecknet på (fasta minus rörliga). Och mittemellan, om STIBOR landar exakt på 3,10: differens noll, ingen betalning alls, avtalet sover. Nättingens tredje gest är clearingens (rk-16 äger motpartsmekaniken): när standardiserade swapar clearingregistreras hos en central motpart beräknas differenserna och marginaleras dagligen — Storhedens 4,5-miljonerskvartal fördelas som små dagliga poster, och en initialmarginal säkerställer att ingen part kan gå ifrån sitt åtagande. Kursen räknar här med bilaterell motpart av pedagogiska skäl — mekaniken är densamma."
+        },
+        {
+          "type": "tabell",
+          "content": "Ett kvartal steg för steg (STIBOR 2,20, påhittat): LÅNET — 2,20 + 1,80 = 4,00 % på 2 000: bankens domän · SWAPENS BEN — fast 3,10 skyldig, 2,20 tillgodo: differens 0,90 till nackdel · BETALNINGEN — 0,90 % × 2 000 × 90/360 = 4,5 Mkr ut · DET SOM INTE BETALAS — aldrig benens belopp (kvartal 15,5 resp. 11,0 Mkr), endast differensen · SPEGELN — STIBOR 4,00: differens 0,90 till favör: 4,5 Mkr in · MITTEMELLAN — STIBOR 3,10: differens noll, ingen betalning · GRÄNSER — ks-03 äger lånet, rk-16 clearingens marginaler"
+        },
+        {
+          "type": "insight",
+          "content": "Nättingen är swapens elegans: två enorma betalningsströmmar möts och vad som flyttar är en enda liten differens — bolagets likviditet, och clearingens marginaler, dimensioneras efter differensen, inte efter benen."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Säkringsidentiteten — fyra rader, ett svar",
+      "intro": "Nu sätts lånet och swapen ihop, och kursens ekvation visas i sin helhet: fyra STIBOR-lägen, fyra rader, ett enda svar på totalkostnaden. Detta är säkringsidentiteten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räkna Storhedens TOTALA räntekostnad i fyra scenarier. STIBOR 2,20: lånet 4,00 procent plus swapdifferensen 0,90 = 4,90. STIBOR 3,10: lånet 4,90, differensen noll = 4,90. STIBOR 4,00: lånet 5,80 MINUS swapens 0,90 in = 4,90. STIBOR 5,00: lånet 6,80 minus 1,90 = 4,90. Fyra helt olika räntevärldar — och samma totalkostnad i varje rad: 3,10 + 1,80 = 4,90 procent, årsbelopp 4,90 % × 2 000 = 98 miljoner. Formellt: den rörliga komponenten STIBOR återfinns i lånet som kostnad och i swapen som inkomst (Storheden FÅR det rörliga benet) och tar ut sig själv — kvar står det fasta 3,10 plus marginalen 1,80. Detta är säkringsidentiteten: RÖRLIGT LÅN PLUS SWAP (betala fast, ta emot rörligt) ÄR ARITMETISKT ETT FAST LÅN — inte ungefär, inte i genomsnitt, utan exakt, i varje enskilt ränteläge. Identiteten är också spegelvändningsbar och det är kapitel fems fälla: ett FAST lån plus SAMMA swap (betala fast i lånet och betala fast i swapen = motta rörligt) ger netto STIBOR + (låneränta minus swapräntan) — ett RÖRLIGT lån i syntetisk form (kursens exempel: fast lån 4,40 minus mottaget 3,10 plus STIBOR = STIBOR + 1,30). Samma instrument, två motsatta utfall — riktningen på benen äger allt. Grannarnas roller blir nu tydliga: bindningsvalet (ks-03) äger frågan VARFÖR fast eller rörlig; ränterisken (rk-08) äger mätet av vad kvarvarande risken är värd; denna kurs äger verktyget som GENOMFÖR valet utan att byta lån. Och för fullständighetens skull: Storhedens marginal 1,80 förblir osäkrad i alla scenarier — kreditpremien (ma-05) flyter om banken omprövar den, och det är basrisken i protokollet (kapitel sex)."
+        },
+        {
+          "type": "tabell",
+          "content": "Säkringsidentiteten (Storheden, påhittat): STIBOR 2,20 — lån 4,00 + diff 0,90 = 4,90 % · STIBOR 3,10 — lån 4,90 + diff 0 = 4,90 % · STIBOR 4,00 — lån 5,80 − diff 0,90 = 4,90 % · STIBOR 5,00 — lån 6,80 − diff 1,90 = 4,90 % · ÅRSBELOPPET — 4,90 % × 2 000 = 98 Mkr i alla världar · EKVATIONEN — rörligt lån + swap (betala fast) = fast lån: exakt, inte i genomsnitt · SPEGELN — fast lån + samma swap = rörligt (STIBOR + 1,30) · GRÄNSER — ks-03 äger valet, rk-08 risken, ma-05 marginalen"
+        },
+        {
+          "type": "insight",
+          "content": "Säkringsidentiteten har ingen tröskel och ingen tolerans: den gäller punkten för punkten i varje ränteläge. Därför är den också examensprovets fråga — den som kan räkna alla fyra raderna till samma svar har förstått instrumentet; den som får fyra olika svar räknar fortfarande lån."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Swapkurvan — priset på det fasta benet",
+      "intro": "Varifrån kommer siffran 3,10? Inte från banken och inte från förhandling — utan från en kurva. Kapitlet öppnar swapkurvan, marknadens pris på ränta över tid, och förklarar varför avtalet tecknas till noll kostnad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens kurva (påhittad, men med realistisk form): två års swap 2,70 procent, fem års 3,10, tio års 3,55. Det fasta benet i Storhedens femårsswap är alltså punkten på kurvan med fem års löptid — och det är också hela hemligheten bakom nollpriset: vid tecknandet är de båda benen konstruerade att vara värda samma. Det fasta benets värde är kurvans femårspunkt rabatterad längs kurvan; det rörliga benets värde är strängen av förväntade framtida STIBOR-fixningar (framåtkurvan), också den rabatterad längs kurvan — och kurvan är BYGGD så att de två sammanfaller. Därför kostar swapen ingenting att teckna: ingen av parterna ger bort värde vid kontraktets början. Därifrån och framåt är det en annan historia: varje kurvrörelse skapar ett värde på avtalet — positivt för den part vars ben blev gynnsammare, negativt för den andra (kapitel fem räknar Storhedens fall). Tre läsningar av kurvan tillhör grannkurserna och kursen pekar bara på dem: kurvans FORM — brant, platt, inverterad — är makroinformation (ma-03 och mk-04 äger avläsningen: förväntningar, term-premie, politik); nivån mot statsobligationskurvan är bankernas mellanlagspris (ma-05 äger premiens anatomi); och förväntningshypotesen — att kurvan är marknadens medelförväntning på framtida korta räntor — är bara en av flera förklaringsmodeller, ingen sanning. Kursens egen läsning är instrumentets: Storheden köpte inte «räntan 3,10» utan KURVANS PUNKT — och valet mellan tvåårspunkten 2,70, femårspunkten 3,10 och tioårspunkten 3,55 är räntestrategi (ks-03:s och ks-07:s domän): kortare punkt är billigare i nivå men måste rullas oftare, längre punkt dyrare men lugnare. Samma val, samma kurva, tre olika löptider — och tre olika riskprofiler i brytvärdet som följer."
+        },
+        {
+          "type": "tabell",
+          "content": "Swapkurvan (påhittad): TVÅ ÅR — 2,70 % · FEM ÅR — 3,10 (Storhedens punkt) · TIO ÅR — 3,55 % · NOLLPRiset — båda benen värda samma vid tecknandet: kurvan byggd så att fasta benet = strängen av förväntade rörliga fixningar · VÄRDET DÄREFTER — varje kurvrörelse prisar avtalet: kapitel fem · TRE LÄSNINGAR — formen (ma-03/mk-04), lagret mot stat (ma-05), punktvalet = räntestrategi (ks-03/ks-07) · POÄNGEN — 2,70 mot 3,10 mot 3,55: nivå mot rullfrekvens mot ro"
+        },
+        {
+          "type": "insight",
+          "content": "Kurvan svarar inte på vad räntan KOMMER att bli — den prissätter idag vad olika löptider kostar att låsa. Swapen är en punkt på den kurvan, och nollpriset vid tecknandet är kurvans sätt att säga: just denna punkt, just idag, är värd exakt vad du får."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Brytvärdet och fällorna — livet mitt i avtalet",
+      "intro": "Ett avtal utan pris dag ett har ett pris varje dag därefter. Kapitlet räknar brytvärdet mitt i löptiden och öppnar de tre klassiska fällorna: dubbelssäkring, amorteringsglid och orolighetens frestelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "BRYTVÄRDET. Två år in i femårsswapen har ränteläget vänt: marknadens pris på en treårsswap (kvarstående löptid) står i 2,30 procent. Storhedens åtagande — att betala 3,10 under tre år till — är nu 0,80 procentenheter över marknaden på varje kvartal kvar. Värdet av att bli fri från avtalet: approximationen är differensen gånger belopp gånger kvarstående duration (rk-08 äger räkneverket): 0,80 % × 2 000 × 2,8 ≈ 44,8 miljoner som Storheden ska betala för att lämna avtalet — avtalet är alltså en SKULD på 44,8 miljoner i balansräkningen, och samma siffra är motpartens tillgång. Hade kurvan istället STIGIT (treårsswap 4,00) vore tecknet omvänt: Storheden äger en tillgång värd ungefär 0,90 % × 2 000 × 2,8 ≈ 50,4 miljoner. FÄLLA ETT — DUBBELSÄKRINGEN. Ett syskonbolag till Storheden har FAST lån (4,40 procent) men «säkrar» dessutom med samma swap: betalar fast 3,10 och tar emot rörligt. Netto: fast 4,40 + fast 3,10 − rörligt = STIBOR + 1,30 — bolaget har byggt ett RÖRLIGT lån syntetiskt och kallar det trygghet; om STIBOR stiger till 4,50 kostar strukturen 5,80 procent. Regeln som saknades var protokollets (bf-04): varje avtal mot en identifierad underliggande exponering — här fanns ingen. FÄLLA TVÅ — AMORTERINGSGLIDET. Storhedens lån amorterar 2 procent per år; swapen är rak på 2 000. År fem: lånet 2 000 × 0,98 upphöjt till 5 ≈ 1 808, swapen fortfarande 2 000 — 192 miljoner av säkringen står utan länkat lån och är ren ränteposition. Kuren mot glidet: amorterande swap eller rullande beloppsanpassning. FÄLLA TRE — OROLIGHETENS FRESTELSE. Brytvärdet syns varje kvartal i resultaten, och frestelsen att «realisera förlusten och göra om» är störst precis när kurvan rört sig emot en — vilket också är det sämsta ögonblicket (reglerna skrivs lugnt, följs oroligt — bf-04 igen)."
+        },
+        {
+          "type": "tabell",
+          "content": "Brytvärde och fällor (påhittat): BRYTVÄRDET — 3 år kvar, marknad 2,30 mot åtagande 3,10: 0,80 % × 2 000 × 2,8 ≈ 44,8 Mkr att betala ur · SPEGLAR — marknad 4,00 i stället: 0,90 % × 2 000 × 2,8 ≈ 50,4 Mkr TILLGÅNG · DUBBELSÄKRINGEN — fast lån 4,40 + swap: netto STIBOR + 1,30 = syntetiskt rörligt: vid STIBOR 4,50 kostar 5,80 % · AMORTERINGSGLIDET — lån år fem 2 000 × 0,98⁵ ≈ 1 808 mot swap 2 000: 192 Mkr oskyddat · FRESTELSEN — realisera förlust i motgång: reglerna (bf-04) skrivs före · GRÄNSER — rk-08 äger duration, bf-04 disciplinen, rk-16 motparten"
+        },
+        {
+          "type": "insight",
+          "content": "Swapens paradox: avtalet kostade noll att teckna och är sedan varje dag värt något — och värdet är som störst i precis de lägen då frestelsen att riva det är som starkast. Därför skrivs reglerna innan avtalet tecknas, inte efter att kurvan rört sig."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till varje swapavtal",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor som varje swapavtal, verkligt eller påhittat, kan ställas mot innan instrumentet döms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — referensräntan: vilken STIBOR (löptid på fixningen) och vilken dagräkning gäller, och matchar referensen lånet den ska skydda (missmatchade fixningar är en dold risk)? Fråga två — benens riktning: betalas fast och mottas rörligt (detta är säkringen av ett rörligt lån) eller tvärtom — och finns en identifierad underliggande exponering som varje ben svarar mot (dubbelssäkringens prov)? Fråga tre — beloppets profil: är det nominella beloppet rakt (som 2 000) eller amorterande — och vad blir glidningen mot lånet som amorterar (år fem: 1 808 mot 2 000 — differensen är ren position)? Fråga fyra — motparten: är avtalet clearingregistrerat hos central motpart med daglig marginalering och initialmarginal, eller bilateralt med motpartsrisk och kollateralavtal (rk-16:s hela fält)? Fråga fem — värdets känslighet: vad händer med brytvärdet om swapkurvan rör sig hundra punkter (kursens approximation: 1,00 % × 2 000 × 2,8 = 56 miljoner på den kvarstående durationen) — och finns en regel för när avtalet hålls, rullas eller rivs som skrivits i lugn (bf-04)? Fem svar — och instrumentet är först då läst. Plattformens markering följer familjens sed: kursen har beskrivit mekanismer och aritmetik i påhittade bolag (Storheden Fastigheter) och lämnar varje verkligt beslut kring verkliga avtal — att teckna, rulla eller avstå — där det hör hemma, hos läsaren och dennas egna gränser. Pedagogisk utbildning om instrument, aldrig placeringsråd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens verktyg. Fall ett: STIBOR 3,50 procent — vad blir swapdifferensen (svar: 3,10 − 3,50 = −0,40, alltså 0,40 procentenheter till favör) och hur mycket flyttar per kvartal (svar: 0,40 % × 2 000 × 0,25 = 2,0 miljoner in i bolaget)? Fall två: två år kvar av en swap med åtagande 3,10 när tvåårspunkten står i 2,65 — vad är det ungefärliga brytvärdet (svar: 0,45 % × 2 000 × 1,9 ≈ 17,1 miljoner att betala)? Fall tre: ett bolag med fast lån 4,40 procent som tecknar samma swap (betala fast 3,10, motta STIBOR) — vad blir nettoeffekten och totalkostnaden om STIBOR stiger till 4,50 (svar: netto STIBOR + 1,30, alltså 4,50 + 1,30 = 5,80 procent — dubbelstäkringsfällan: bolaget är syntetiskt rörligt)?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets fråga två är hela skillnaden mellan säkring och spel: benen har alltid en riktning, men bara mot en identifierad exponering har riktningen en mening. Avtalet utan svar på den frågan är inte en swap — det är en åsikt klädd i kontrakt."
+        }
+      ]
+    }
+  ]
+}

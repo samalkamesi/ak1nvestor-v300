@@ -1,0 +1,176 @@
+{
+  "slug": "ln-06-underhallscapex",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Underhållscapex — investeringens två ansikten",
+  "summary": "LÖNSAMHET-familjens sjätte steg öppnar kassaflödets mest feltolkade rad: investeringarna, och den fråga som skiljer analytikern från läsaren — hur mycket av capexen måste återinvesteras bara för att hålla verksamheten vid liv? Sonden mot 489-registret visar begreppet välkänt i bokhyllan (tre klassiska verk bär det) men oskrivet i kursrummet: ingen kurs äger uppdelningen av capexen i sin underhållsdel och sin tillväxtdel. Kursen äger frågan genom ett genomgående påhittat exempel: Svanhals Verkstäder, omsättning 1 200 miljoner kronor, EBITDA 204 (17,0 procent) och årets investeringar 132 — varav en ny monteringshall för 60. Den naiva läsningen ger fritt kassaflöde 204 − 132 = 72; den genomarbetade skiljer först hallen (tillväxt, 60) från underhållet (72) och får kassaörat före tillväxt 204 − 72 = 132 — nästan dubbla naivräkningens svar på identiska siffror. Tre skattningsvägar kontrollerar underhållsdelen oberoende: avskrivningarna (maskiner 720 på tolv år ger 60, byggnader 480 på fyrtio år ger 12, tillsammans 72), femårshistoriken (74/77/78/81/132, median 78) och branschnyckeltalet (6,0 procent av omsättningen = 72) — konvergensen 72 till 78 blir kursens arbetsnummer 75. Därtill kvoten som berättar fasen (capex/avskrivningar 1,83 i tillväxtår mot 1,08 på medianen), kassaöre-marginalen 11,0 procent mot EBITDA-marginalens 17,0 (sex procentenheter slukas av maskinparken), underinvesteringsfällan (fem år med capex 40 mot avskrivningar 72: substanset 1 200 smalnar till 1 040 medan vinsten ser oförändrad ut) och protokollets fem frågor till varje investeringsrad. Pedagogisk utbildning om mekanismer i påhittade bolag — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "LÖNSAMHET-familjens fem första steg har byggt maskineriet: Dupont-trädet (ln-01), resultatets kvalitet (ln-02), marginaltrappan och hävstången (ln-03), kapitalbindningen (ln-04) och själva frågan vad lönsamhet är (ln-05) — men samtliga steg stannar vid rörelseresultatet och dess räntabiliteter, och den rad som avgör hur mycket av resultatet som är kvar att ta ut ur bolaget lämnas obevakad: investeringarna i anläggningstillgångar. Sonden mot registret bekräftar luckan: «underhållscapex» förekommer endast i tre bokkurser (essäsamlingen om ägandebrev, kassaflödesboken och värderingsboken — se-19-presedensen: bokträffar äger inte kursrummet), «tillväxtcapex» enbart i värderingsboken, och grannkurserna rör frågan utan att öppna den: kassaflödesanalysen (km-003) äger rapportens struktur men inte capexens interna uppdelning, kapitalförbränningskursen (v19) äger bränntakten i bolag som ännu inte tjänar, allokeringskursen (ks-02) äger beslutet att investera för tillväxt, resultatkvalitetskursen (ln-02) äger accruals men inte maskinparkens ålder, och EBITDA-kursen (v08) äger marginalmåttet som här ska rättas. Kursen fyller ytan med den klassiska uppdelningen som gör skillnad mellan två bolag med identisk EBITDA-marginal: det ena lägger 6,0 procent av omsättningen på att hålla maskinerna igång (kassaöra-marginal 11,0 procent), det andra 2,0 (kassaöra-marginal 15,0) — samma rubriksiffra, två olika verksamheter. Frågan är lönsamhetsfamiljens naturliga sjätte steg eftersom den avslutar vägen från intäkt till uttagsbar kassa: marginalen (ln-03) minus bindningen (ln-04) minus underhållet — först då vet läsaren vad lönsamheten (ln-05) är värd i kronor.",
+  "learn": "Skilja investeringens två ansikten i ett verkligt-format årsdata: Svanhals Verkstäders investeringar 132 innehåller monteringshallen 60 (tillväxt — en tillgång som byggs) och underhållet 72 (maskiner som byts, lokaler som underhålls — kostnaden för att bestå). Räkna kassaörat före tillväxt: EBITDA 204 − underhållscapex 72 = 132, mot naivräkningen 204 − 132 = 72 — skillnaden 60 är tillväxtens pris, och den är en investering i balansräkningen, inte en kostnad i resultaträkningen. Skatta underhållsdelen på tre oberoende vägar och kräv konvergens: avskrivningarna (maskiner 720 på tolv år = 60 per år, byggnader 480 på fyrtio år = 12, summa 72 — bokföringens egen uppskattning av återmbetalningstakten), femårshistoriken (74/77/78/81/132, median 78) och branschnyckeltalet (6,0 procent av omsättningen 1 200 = 72); kursens arbetsnummer blir mittpunkten 75. Läsa fasen i kvoten capex/avskrivningar: 1,83 i hallåret (tillväxt), 1,08 på femårsmedianen (i princip jämvikt) — kvot under 1,0 år efter år är varning om åldrande maskinpark. Se underinvesteringsfällan: fem år med capex 40 mot avskrivningar 72 ger substanset 1 200 − 5 × 32 = 1 040 medan resultaträkningen visar oförändrad vinst — vinsten har lånat av maskinparken (ln-02:s accruals i fysisk skepnad). Slutligen använda protokollets fem frågor till varje investeringsrad: hur stor är underhållsdelen, vilken väg skattades den, är kvoten i fas med strategin, vad händer med kassaörat i en nolltillväxtsperiod, och redovisas investeringarna som kostnad eller aktivering (bk-05:s gräns).",
+  "history": {
+    "origin": "Uppdelningen föddes ur värderarens praktiska problem: företagsvärderingen behövde ett mått på den kassa som kan tas ut av bolaget utan att det krymper, och i böckerna om kassaflödesanalys växte skillnaden fram mellan kapacitetsbevarande och kapacitetsexpanderande investeringar. Ägarsidens essäer formulerade den klassiska formeln — rörelseresultat före avskrivningar minus de avskrivningar som motsvarar nödvändigt underhåll — som ett brev i taget under flera decennier.",
+    "evolution": "Med leveraged buyout-eran på 1980-talet blev uppdelningen bankernas verktyg: lånegivare kunde inte betala tillbaka lån med EBITDA, utan med det som blir kvar efter att fabrikerna hållits igång, och «EBITDA minus underhållscapex» blev kreditanalysens standardmått. Samtidigt lärde revisorerna ut motståndssidan: bolag som aktiverar underhållskostnader som investeringar (bk-05:s domän) flyttar utgiften från resultaträkningen till balansräkningen och får vinsten att se stabilare ut än verksamheten.",
+    "modern": "I dagens terminaler lever uppdelningen som nyckeltal i varje kassaflödesanalys: kvoten investeringar/avskrivningar publiceras rakt av, och analytiker följer den kvartal för kvartal som den snabbaste indikatorn på investeringsfas. Debatten om vilka investeringar som är «underhåll» är samtidigt skarpare än någonsin i mjuka branscher: mjukvarubolagens utvecklingskostnader kan vara underhåll (att hålla produkten aktuell) eller tillväxt (nya produkter) — samma grammatik som kursen lär, översatt till ny sektor. Kursen håller sig till verkstadsformatet där distinktionen är renast och hänvisar till granncurserna för sektorernas egna varianter."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "De två ansiktena — bestå eller växa",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Tre vägar att skatta underhållet",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Kassaörat före tillväxt — EBITDA-rättningen",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Kvoten som berättar fasen",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Underinvesteringsfällan — vinsten som lånat av maskinparken",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till investeringsraden",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch älskade bolag vars verksamhet kan underhållas billigt: hans favoritmetafor var att det bästa bolaget är en som äger något som rostar långsamt. Omvändningen är kursens kärna — ett bolag vars maskinpark rostar fort kan visa hur fin EBITDA-marginal som helst men tvingas återinvestera det mesta bara för att stå still, och Lynchs ögonköp av «tråkiga» bolag var ofta just bolag med lågt underhållsgap. Hans regel att man ska förstå vad bolaget gör med kassandraflödet blir här konkret: byggs fabriker (tillväxt, motsvarar hallen 60) eller byts slitna maskiner (underhåll, 72)? Lynch varnade också för den omvända ursäkten — bolag som kallar underhåll för «investeringar i framtiden» och därmed aktiverar kostnader (bk-05:s gräns) — och kursens kvot mellan investeringar och avskrivningar är just hans snabbtest: en kvot som aldrig lämnar 1,0 betyder ingen tillväxt, en kvot som stiger utan att intäkterna följer betyder överinvestering.",
+  "grahamSection": "Benjamin Graham arbetade före EBITDA-eran men hans kassaflödesanalys bar samma fråga: hur mycket av vinsten kan delas ut utan att substansen minskar? Hans krav på att vinsten skulle täckas av kassaflöde blir i kursens språk kravet att underhållscapexen dras av FÖRE någon utdelningsräkning — Grahams test är kassaörat 132, inte EBITDA 204. Hans varning för «förtunning av substansen» är underinvesteringsfällan i gammal svensk dräkt: bolag som år efter år lägger mindre på maskinparken än den slits visar bokföringsvinster medan det verkliga underhållet skjuts fram och blir en dold skuld (st-07:s skuggskulder i fysisk skepnad). Grahams säkerhetsmarginal översätts slutligen till skattningsdisciplinen: eftersom underhållsdelen aldrig observeras direkt utan skattas på tre vägar (72, 78, 72) ska den försiktiga läsaren använda det högsta beloppet — fel i denna nämnare slår rakt igenom i varje värdering som bygger på kassaflödet.",
+  "ak1Section": "I AK1A:s metodik är underhållscapexen det fjärde steget på vägen från intäkt till uttagsbar kassa: marginalerna (ln-03), kapitalbindningen (ln-04) och sedan maskinparkens egen åtgång — först därefter är lönsamhetstalet (ln-05) moget för femtidshorisonsprövningen. Motoruttaget i labbet kapar analysfönstret på samma sätt: EBITDA-baserade multipler (v08, km-010) kompletteras med kassaöre-multiplern där nämnaren är EBITDA minus underhållscapex, och modellrisken (rs-08) dokumenteras genom att skattningsvägarna redovisas var för sig. Scenarioraden i AKM2-modellen bär uppdelningen explicit: ett nolltillväxtscenario ska bära fullt underhåll (kvoten 1,0) medan tillväxtscenariot bär hallen — att blanda dem är modellens vanligaste fel. Backtestens hantverk (ek-04) tillämpas på nyckeltalet: kvotens stabilitet över fem år är i sig en kvalitetsmarkör. Kursen håller hela vägen platformens markering: mekanismer och aritmetik i påhittade bolag, utbildning om metod — varje verkligt placeringsbeslut lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "De två ansiktena — bestå eller växa",
+      "intro": "Alla investeringar står på samma rad i kassaflödesanalysen, men de gör två helt olika saker: den ena typen skapar något som inte fanns, den andra förhindrar att något som finns slutar fungera.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempel är påhittat från första raden: Svanhals Verkstäder, ett mellanstort verkstadsbolag med omsättning 1 200 miljoner kronor, EBITDA 204 (marginalen 17,0 procent) och årets investeringar i anläggningstillgångar 132 miljoner. Börja med den naiva läsningen som många rapportläsare stannar vid: fritt kassaflöde lika med EBITDA minus investeringar, alltså 204 − 132 = 72 miljoner. Räkningen är aritmetiskt korrekt och ändå vilseledande, för investeringarna är inte av ett slag. I årets 132 ingår den nya monteringshallen — 60 miljoner för en produktionslinje som inte fanns, byggd för att ta en ny kundfamilj. Resterande 72 miljoner är underhållet: slitna bearbetningsmaskiner som bytts ut, tak och ventilation som renoverats, fordon som ersatts. Skillnaden är begreppslig och bokföringsmässig på en gång: hallen är en tillgång som byggs (den kommer att avsöndra avskrivningar och förhoppningsvis intäkter i tjugo år), underhållet är kostnaden för att bestå (de nya maskinerna ersätter gamla som gjort tjänst). Kassaflödesanalysen (km-003 äger rapportens struktur) redovisar båda under samma post «investeringar i anläggningstillgångar» — det är läsarens uppgift att dela dem, och det är denna kursens uppgift att lära ut hur. Notera grannens gräns direkt: allokeringskursen (ks-02) äger beslutet att bygga hallen; denna kurs äger frågan vad som händer med lönsamheten om hallen aldrig byggs men underhållet skärs bort."
+        },
+        {
+          "type": "definition",
+          "content": "Underhållscapex — den del av årets investeringar som krävs för att bibehålla befintlig kapacitet och konkurrenskraft: ersättningsinvesteringar i slitna maskiner, byggnadsunderhåll, fordon och mjukvarulicenser som förnyas. Tillväxtcapex — investeringar som skapar kapacitet som inte fanns: nya hallar, nya linor, nya marknader. Gränsen dem emellan är en bedömning, inte en bokförd siffra — och därför ett hantverk (kapitel två och sex)."
+        },
+        {
+          "type": "insight",
+          "content": "Samma rad i kassaflödesanalysen bär två verksamheter: den som växer och den som består. Den naiva läsningen blandar dem — och får därmed fel på båda."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tre vägar att skatta underhållet",
+      "intro": "Underhållsdelen bokförs aldrig för sig — den måste skattas. Kursen lär tre oberoende vägar och kräver att de pekar mot varandra innan någon siffra får bära en slutsats.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Väg ett — avskrivningarna. Svanhals maskiner är bokförda till 720 miljoner med tolv års linjär avskrivning: 60 miljoner per år. Byggnaderna, 480 miljoner på fyrtio år, ger 12 miljoner. Summa avskrivningar 72 per år — bokföringens egen uppskattning av hur snabbt kapitalstocken förbrukas, och därmed en första approximation av vad det kostar att förnya den i takt. Väg två — historiken. Femårsraden för investeringar: 74, 77, 78, 81 och årets 132; medianen 78 miljoner. I fyra av fem år byggde Svanhals ingen hall, och åren innan hallen är därför den renaste bilden av underhållsnivån. Väg tre — nyckeltalet. Verkstadsbranschens erfarenhetstal ligger runt 6,0 procent av omsättningen: 0,060 × 1 200 = 72 miljoner. Tre vägar, tre svar: 72, 78, 72 — konvergensen är kursens arbetsnummer 75. Modellen är ärlig mot sin egen osäkerhet (rs-08 äger modellrisken som begrepp): sprider sig vägarna mer än så — säg 60 mot 95 — är underhållsbegreppet oläsligt just där, och den försiktiga läsaren väljer det högsta beloppet eftersom felet slår mot varje värdering som bygger på nämnaren. Notera vad vägarna INTE är: avskrivningarna är en bokförings regel (bk-05 äger valen bakom dem — restvärden, livslängder), inte ett fysiskt mått; historiken kan innehålla outsedda tillväxtår; nyckeltalet är branschens, inte bolagets. Därför tre vägar — inte en."
+        },
+        {
+          "type": "tabell",
+          "content": "Tre skattningsvägar (Svanhals, påhittat): AVSKRIVNINGARNA — maskiner 720 ÷ 12 = 60 + byggnader 480 ÷ 40 = 12: summa 72 · HISTORIKEN — fem år 74/77/78/81/132: median 78 · NYCKELTALET — 6,0 % × omsättning 1 200 = 72 · KONVERGENSEN — 72 till 78: arbetsnummer 75 · DISCIPLINEN — vägarna spär isär: välj högsta · GRÄNSER — km-003 äger rapportstrukturen, bk-05 avskrivningsvalen, rs-08 modellrisken"
+        },
+        {
+          "type": "insight",
+          "content": "Underhållscapexen är det enda stora talet i analysen som aldrig står att läsa i rapporten — den existerar bara som skattning. Tre vägar som möts är belägg; en väg är en åsikt."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Kassaörat före tillväxt — EBITDA-rättningen",
+      "intro": "Med underhållet skattat faller EBITDA-marginalens roll i rang: den är en mellanstation, inte ett svar. Kursens kärnbegrepp heter kassaörat före tillväxt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räkna den genomarbetade versionen: EBITDA 204 minus underhållscapex 75 (arbetsnumret) ger kassaörat före tillväxt 129 miljoner — mot naivräkningens 72. Skillnaden är hallen: med arbetsnumret är tillväxtens pris 132 − 75 = 57 miljoner, en investering i balansräkningen som ska bedömas som en investering (med avkastningskrav och osäkerhet — ks-02:s domän), inte dras av årets lönsamhet. Marginalernas trappa blir då: EBITDA-marginal 204/1 200 = 17,0 procent; kassaöre-marginal 129/1 200 = 10,8 procent — sex procentenheter av omsättningen slukas av maskinparkens egen åtgång. Med den exakta underhållsskattningen 72 (avskrivnings- och nyckeltalsvägen) blir kassaörat 132 och marginalen 11,0 procent — kursen redovisar båda eftersom skillnaden dem emellan (3 miljoner) är mindre än skattningsosäkerheten själv. Jämförelsen som ger begreppet tyngd: två verkstadsbolag med identisk EBITDA-marginal 17,0 procent, det ena med underhåll på 6,0 procent av omsättningen (kassaöra-marginal 11,0), det andra med 2,0 procent (kassaöra-marginal 15,0) — rubriksiffran är densamma, verksamhetarna är det inte. här gränsar kursen mot EBITDA-kursen (v08 äger multipeln och dess vanor) och mot lönsamhetsträdet (ln-01): Dupont-analysens marginal blir först fullständig när den bär underhållet. Och för bolag som ännu inte nått lönsamhet gäller grannen kapitalförbränning (v19): där äger bränntakten — denna kurs äger fallet där EBITDA är positiv men kassaörat är det inte."
+        },
+        {
+          "type": "tabell",
+          "content": "Kassaöraträkningen (Svanhals, påhittat): EBITDA — 204 (17,0 % av 1 200) · UNDERHÅLL — arbetsnummer 75 (spannet 72–78) · KASSAÖRE FÖRE TILLVÄXT — 204 − 75 = 129 (med 72: 132) · KASSAÖRE-MARGINAL — 10,8 % (med 72: 11,0 %) · TILLVÄXTENS PRIS — hallen 132 − 75 = 57: balansräkningen, inte resultaträkningen · JÄMFÖRELSEN — två bolag, EBITDA-marginal 17,0 % bägge: kassaöra 11,0 % mot 15,0 % · GRÄNSER — v08 äger multiplarna, ln-01 trädet, v19 bränntakten"
+        },
+        {
+          "type": "insight",
+          "content": "EBITDA svarar på vad verksamheten tjänar innan maskinparken får sin andel; kassaörat svarar på vad som blir kvar när den fått den. Den första siffran imponerar, den andra betalar."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Kvoten som berättar fasen",
+      "intro": "En enda division sammanfattar bolagets investeringsläge: årets investeringar dividerade med årets avskrivningar. Kvoten talar om var i cykeln verksamheten befinner sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Svanhals hallår: 132/72 = 1,83 — klart över ett, alltså tillväxtfas (eller överinvestering; kvoten skiljer inte dem åt, det gör strategin och avkastningen — tx-03:s fråga när tillväxt skapar värde). Femårsmedianen: 78/72 = 1,08 — i princip jämvikt, maskinparken förnyas i takt med att den slits. Läsområdena: kvot kring 1,0 år efter år betyder ett bolag som består — varken växer eller krymper; kvot stabil över 1,2 med växande intäkter betyder kapacitetsbygge; kvot stabil över 1,2 UTAN växande intäkter är varningssignalen överinvestering (pengarna bygger, resultatet svarar inte); kvot under 1,0 år efter år är underinvesteringsmönstret — nästa kapitel. Tidsserien är kvotens styrka: en enda års-kvot är brus (ett tungt ersättningsår kan ge 1,4 utan tillväxt), men femårsbandet avslöjar fasen. I kursens exempel: fyra år kring 1,0 följt av 1,83 läser som «jämviktsbolag som bygger en expansion» — en läsning som hallens affärsfall (ks-02) sedan ska bära eller vederlägga. Grannar med egna varianter: gruvsektorn (se-20) med fyraåriga renoveringscykler där kvoten slår i takt med schemat, och rederierna (se-18) där klassninginspektionerna var femte år gör underhållet stökigt fördelat — kvoten blir bäst just där cyklerna är regelbundna, och kursens verkstadsformat är det renaste."
+        },
+        {
+          "type": "tabell",
+          "content": "Fas-kvoten (Svanhals, påhittat): HALLÅRET — 132 ÷ 72 = 1,83: tillväxtfas · FEMÅRSMEDIANEN — 78 ÷ 72 = 1,08: jämvikt · LÄSOMRÅDEN — 1,0: bestå · över 1,2 med intäktstillväxt: bygga · över 1,2 utan intäktstillväxt: varning · under 1,0 år efter år: underinvestering · DISCIPLINEN — läs femårsbandet, inte enskilda år · GRÄNSER — tx-03 äger värdefrågan, se-20/se-18 sektorns cykler"
+        },
+        {
+          "type": "insight",
+          "content": "Kvoten investeringar/avskrivningar är bolagets puls i en enda siffra: runt ett slår hjärtat i vila, över ett arbetar det, under ett år efter år sjunker pulsen — och vinsten lever på lånet ur maskinparken."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Underinvesteringsfällan — vinsten som lånat av maskinparken",
+      "intro": "Den farligaste varianten av felräkningen är inte överdriven försiktighet utan den omvända: bolag som år efter år lägger mindre på underhåll än maskinparken slits, och vars rapporter ser bättre ut än verksamheten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruera fallet med kursens bolag: antag att Svanhals i fem år lägger 40 miljoner per år på investeringar medan avskrivningarna löper 72. Maskin- och byggnadsstocken, bokförd 1 200 (maskiner 720 + byggnader 480), förbrukas 72 per år och förnyas 40: nettotappen 32 per år, på fem år 160 — substanset 1 200 har smalnat till 1 040 medan resultaträkningen hela tiden visat oförändrad vinst. Det är resultatkvalitetsproblemets (ln-02) fysiska skepnad: accruals i maskinparken i stället för i kundfordringar. Kassorna ser också bra ut — fritt kassaflöde «förbättras» med 32 per år jämfört med fullt underhåll — men förbättringen är ett lån ur balansräkningen som en dag förfaller, och förfallodagen är större än de årliga besparingarna: fem års underinvestering på 32 blir ett framtida år med extrainvesteringar på 160 plus produktionsbortfall medan linorna står still. Skuggskuldskursen (st-07) äger förbindelserna utanför balansräkningen — detta är deras fysiska kusin: en förpliktelse som varken står bland skulder eller förbindelser, utan i en maskinpark som åldras. Praktiska spår i rapporten: investeringar under avskrivningar fem år i rad (kvoten under 1,0), nöjehetstillgångar som växer, underhållskostnadsposten i resultaträkningen som sjunker som andel av omsättningen, och — i verkstadsformatet — en ålderstabell över maskinparken som sällan redovisas. Vänd på det och fällan blir ett analysverktyg: bolag som historic visar kvot under 1,0 ska inte värderas på sina rapporterade vinster utan på de vinster som återstår när maskinparken återförs i skick."
+        },
+        {
+          "type": "tabell",
+          "content": "Underinvesteringsfallet (påhittat): INVESTERINGAR — 40 per år i fem år mot avskrivningar 72 · NETTOTAPPET — 72 − 40 = 32 per år · SUBSTANSET — 1 200 − 5 × 32 = 1 040 efter fem år · RESULTATRÄKNINGEN — oförändrad vinst: fällan är just att den ser bra ut · KASSAN — «förbättrad» med 32 per år: lånat, inte tjänat · FÖRFALLODAGEN — 160 i extrainvesteringar plus produktionsbortfall · SPÅREN — kvot under 1,0 fem år i rad, sjunkande underhållspost, åldrande park · GRÄNSER — ln-02 äger accruals, st-07 skuggförbindelserna, bk-05 aktiveringsvalen"
+        },
+        {
+          "type": "insight",
+          "content": "Underinvesteringsbolaget säljer sin maskinpark i slow motion och kallar det marginalförbättring: vinsten är äkta tills den dag den inte är det — och den dagen kostar mer än alla besparade år tillsammans."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till investeringsraden",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor som varje investeringsrad, verklig eller påhittad, kan ställas mot innan lönsamheten döms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — andelen: hur stor del av årets investeringar är underhåll (Svanhals: 72 av 132 = 54,5 procent) och vad säger andelen om verksamhetens karaktär? Fråga två — vägen: hur skattades underhållet, och konvergerar vägarna (72/78/72) eller spretar de? Fråga tre — fasen: var ligger kvoten investeringar/avskrivningar (1,83 i hallåret, 1,08 på medianen), och är fasen i linje med strategin och dess värde (tx-03:s prov)? Fråga fyra — uthålligheten: vad blir kassaörat i ett nolltillväxtscenario där hela capexen är underhåll (Svanhals: 204 − 72 = 132, marginal 11,0 procent) — det är den siffra som får bära värderingen (vr-05:s pris mot värde; km-028:s diskonteringsformel vill ha samma nämnare)? Fråga fem — redovisningen: kostnadsförs eller aktiveras underhållet (bk-05:s hela domän), och är avskrivningsantagandena — livslängder och restvärden — rimliga mot verksamhetens fysik? Fem svar — och investeringsraden är först då läst. Plattformens markering följer familjens sed: kursen har beskrivit mekanismer och aritmetik i ett påhittat bolag (Svanhals Verkstäder) och lämnar varje verkligt beslut kring verkliga bolags investeringar — att läsa, avstå eller agera — där det hör hemma, hos läsaren och dennas egna gränser. Pedagogisk utbildning om metoder, aldrig placeringsråd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens verktyg. Fall ett: EBITDA 300, avskrivningar 90, årets investeringar 150 — vad är kassaörat före tillväxt på avskrivningsvägen (svar: 300 − 90 = 210), och vilken fas visar kvoten (svar: 150 ÷ 90 = 1,67, tillväxtfas)? Fall två: investeringar 45 mot avskrivningar 90 tre år i rad — vad är nettotappen per år (svar: 90 − 45 = 45) och vilket mönster är det (svar: kvot 0,50, underinvestering — vinsten lånar av maskinparken)? Fall tre: omsättning 2 000, EBITDA 260, branschens underhållstal 5,0 procent — vad är kassaörat och kassaöre-marginalen på nyckeltalsvägen (svar: underhåll 0,050 × 2 000 = 100, kassaöra 260 − 100 = 160, marginal 160 ÷ 2 000 = 8,0 procent)?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets fjärde fråga är lönsamhetsfamiljens gåva till värderaren: nolltillväxtskassaörat är den enda lönsamhetssiffra som inte kan sminkas av en enda god expansionsår — den visar verksamheten som den är, när inget byggs och inget firas."
+        }
+      ]
+    }
+  ]
+}

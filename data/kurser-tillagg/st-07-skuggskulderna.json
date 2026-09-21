@@ -1,0 +1,152 @@
+{
+  "slug": "st-07-skuggskulderna",
+  "category": "STABILITET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Skuggskulderna — borgen, garantier och åtagandena utanför skuldraden",
+  "summary": "STABILITET-familjens sjunde steg öppnar balansräkningens baksida: förbindelserna som aldrig blev en skuldrad — borgensåtagandet åt delägda bolag, garantin åt kunden, beställningsstocken på fast pris och det outnyttjade kreditutrymmet. Sonden mot 483 kurser visar familjens vita fläck: borgensåtagande, garantiåtagande, skuggskuld och beställningsstock ägs av ingen tidigare kurs. Kursen bygger ett påhittat exempelbolag, Vidga Hem AB, och räknar om familjens egna mått när 102 miljoner kronor osynlig börda träder in i ljuset: skuldsättningsgraden 1,50 blir 2,35, skuldandelen av tillgångarna 60 procent blir 94 procent och förbindelsekvoten 0,85 mot eget kapital. Beställningsstockens fasta pris öppnar kapitlet om inbyggda förlustkontrakt, och kreditutrymmet visar sin förmåga att försvinna i samma vändning som kreditcykeln. Allt är utbildning i läskonst med påhittade tal, inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "STABILITET-familjen har sex steg som mäter det synliga: soliditetsmåtten (st-01), känslighetsanalysen (st-02), konkursprognosen (st-03), kreditcykeln (st-04), refinansieringsmuren (st-05) och likviditetsreserven (st-06). Det sjunde steget går bakom balansräkningen: förbindelsenoten samlar åtaganden som var och en kan slå lika hårt som en skuld — borgen som träder in när det borgen för bolaget inte betalar, garantier som förvandlas till utbetalning vid fel, beställningsstocken på fast pris som bär inbyggda förlustkontrakt när kostnaderna stiger, och det outnyttjade kreditutrymme som försvinner just när det behövs. Leasingen är km-023:s klassiker och noter som system ägs av km-004; denna kurs äger resten av förbindelsefamiljen och de omaräknade måtten: rapporterad skuldsättningsgrad 1,50 mot justerad 2,35 är skillnaden mellan en balansräkning som ser trygg ut och en som är det. Stabilitetens sista prov står inte i skuldraden — det står i noten efter den.",
+  "learn": "Räkna bruttoskuggan: borgen 45 + garantier 15 + förpliktande inköp 42 = 102 miljoner kronor · Justerad skuldsättningsgrad (180 + 102) / 120 = 2,35 mot rapporterad 1,50 · Förbindelsekvot 102 / 120 = 0,85 mot eget kapital med pedagogisk varningströskel 0,5 · Kontraktsräkning: pris 12 mot kostnad 9 ger täckning 3,0; kostnadsstegring 20 procent ger 10,8 och täckning 1,2 · Fem kontrakt: täckningen 15,0 faller till 6,0 — tappet 9,0 miljoner kronor · Belåningsutrymmet (200 × 0,70) − 120 = 20 miljoner kronor kvar till taket · Reserven kassa 25 + utrymme 30 = 55 mot kortfristig amortering 40 — men utrymmet kan försvinna i cykelvändningen · Läsa förbindelsenotens fyra hållpunkter och tre röda flaggor",
+  "history": {
+    "origin": "Borgensideställningen är äldre än balansräkningen. I hansatidens handel ställde en köpman sig bakom en annans förbindelse: om skeppet sjönk svarade borgensmannen med egna medel. Principen är densamma i dag — ett namn som förvandlar någon annans skuld till ens egen om den andra faller — men den moderna balansräkningen gav den en egenskap som medeltiden saknade: osynlighet. Borgensåtagandet blev en not, inte en rad, och därmed något som måste sökas fram snarare än summeras.",
+    "evolution": "Tjugonde århundradet växte förbindelsefamiljen i takt med industrins avtalsvävden: exportgarantier, kompletteringsgarantier i byggbranschen och moderbolagsborgen för döttrars lån. Den svenska bankkrisen i början av 1990-talet visade kedjan i praktiken — borgen för fastighetsbolag och koncerner med åtaganden utanför de konsoliderade talen — och den amerikanska redovisningsskandalen 2001, där specialbolag höll skuld utanför balansräkningen, gjorde utanför-raderna till en egen riskkategori. Efter det började kreditgivare systematiskt räkna nettoskuld plus förbindelser i stället för enbart skuldraden.",
+    "modern": "I 2020-talets läsning är förbindelsenoten en fast del av stabilitetsarbetet: revisorer granskar åtagandena, kreditgivare bygger sina kovenanter på skuld lastad med borgen och garantier, och inflationens kostnadsvändningar har gjort beställningsstocken på fast pris till ett levande exempel — kontrakt tecknade i en kostnadsvärld som levereras i en annan. Associérade bolag, där ett fyrtioprocentigt ägarskap inte konsolideras, bär den klassiska dubbla osynligheten: dotterns lån står inte i koncernbalansen och moderns borgen för samma lån står bara i noten."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Vad är en skuggskuld — förbindelsen som inte fick en rad", "minutes": 4 },
+    { "num": 2, "title": "Borgenens dubbla osynlighet — namnteckningen bakom bolaget", "minutes": 4 },
+    { "num": 3, "title": "Beställningsstockens inbyggda förlust — det fasta prisets andra sida", "minutes": 4 },
+    { "num": 4, "title": "Kreditutrymmet som försvinner — outnyttjat är inte samma som säkert", "minutes": 4 },
+    { "num": 5, "title": "Läskonsten — förbindelsenotens fyra hållpunkter och tre röda flaggor", "minutes": 4 },
+    { "num": 6, "title": "Räkna om stabiliteten — tre noter och en rangordning", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynchs råd att läsa det bolaget man tror sig känna börjar i de tråkiga sidorna — och få sidor är tråkigare än förbindelsenoterna, vilket är skälet att läsa dem. Hans örlogsfartyg-metaför för stabila bolag gäller bara om skrovet är vad det utger sig för att vara: en balansräkning utan last i noterna. Lynch-trickset är enkelt — det dolda åtagandet är den enda post där en lugn bolagsbeskrivning och en tyst kontraktsskuld kan bo i samma bolag. Kursens exempelbolag är hans läxa i praktik: det bolag som ser nyktert ut med skuldsättningsgrad 1,50 och bär 2,35 när noten räknas hem.",
+  "grahamSection": "Benjamin Graham byggde sin säkerhetsmarginal på balansräkningens synliga tal — marginalen mellan värde och pris. Osynliga åtaganden är den spegelvända frågan: vad är marginalen värd om en del av skulden inte står i skuldraden? Grahams försiktighetsregel att hellre underskatta än överskatta tryggheten översätter kursen till en räkneövning: den som ska använda soliditetsmått ska använda dem lastade med förbindelserna, annars mäts en kuliss. I hans termer är borgen en skuld med osäker födelsepunkt — den finns redan, bara inte ännu i talen.",
+  "ak1Section": "I AK1A:s metodik är förbindelserna den post som gör stabilitetsmåtten ärliga: varje läsning av soliditet, skuldsättningsgrad och likviditetsreserv körs i två versioner — rapporterad och justerad — och skillnaden är själv ett mått på balansräkningens temperament. Kursen tränar momentet: rapporterad skuldsättningsgrad 1,50 mot justerad 2,35 är inte två åsikter utan samma bolag med och utan not. Fem dimensioner, fem tidshorisonter: skuggskulden är en stabilitetsfråga på kort horisont och en kultursignal på lång — bolag som lastar åtaganden utanför raden bär ett berättande om hur de hanterar det som syns.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Vad är en skuggskuld — förbindelsen som inte fick en rad",
+      "intro": "Balansräkningen är en sorts foto: den visar vad bolaget äger och är skyldigt just den dagen. Men vissa förpliktelser är villkorade — de finns bara om något annat händer först — och villkorade åtaganden hamnar inte i skuldraden utan i noterna. Detta kapitel definierar familjen och bygger exempelbolaget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempelbolag Vidga Hem AB (påhittat för räkningen, som alla tal i kursen) är ett bygg- och fastighetsbolag med omsättning 480 miljoner kronor. Balansräkningen visar tillgångar 300, skulder 180 och eget kapital 120. De vanliga måtten ser lugna ut: soliditeten 120 / 300 = 40,0 procent och skuldsättningsgraden 180 / 120 = 1,50. Men bakom balansräkningen, i not 29 om förbindelser, står fyra rader som inget av måtten har räknat med: borgensåtagande på 45, garantiåtaganden på 15, outnyttjad checkräkningskredit på 30 och beställningsstock med förpliktande inköp på 42. Tre av raderna är åtaganden som blir skuld om framtiden vågar: 45 + 15 + 42 = 102 miljoner kronor av bruttoskugga. Samma balansräkning, två bördor: den rapporterade 180 och den justerade 180 + 102 = 282. Skuldandelen av tillgångarna går från 180 / 300 = 60 procent till 282 / 300 = 94 procent — och fortfarande syns ingen krona av skillnaden i skuldraden."
+        },
+        {
+          "type": "definition",
+          "content": "Förbindelse: ett villkorat åtagande som inte är en skuld i balansräkningen men som kan bli en — eller som binder bolagets kassa och kapacitet tills det löper ut. De fyra klasserna i kursen: borgensåtagande (att betala någon annans skuld om den andra inte betalar), garantiåtagande (att stå för prestation eller utbetalning vid fel eller brist), beställningsstock på fast pris (att leverera till ett pris som kostnadssidan kan ha lämnat bakom sig) och outnyttjat kreditutrymme (rätt att låna som långivaren kan återkalla). Bruttoskugga: summan av de tre förstas belopp."
+        },
+        {
+          "type": "insight",
+          "content": "Skuggskuldens definition är inte juridisk utan lästeknisk: det är varje åtagande som balansräkningens huvudtal ignorerar men som kassan inte kan ignorera. Frågan till varje not är därför inte vad som står där — utan vad som skulle hända med skuldraden om framtiden gick sämst."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Borgenens dubbla osynlighet — namnteckningen bakom bolaget",
+      "intro": "Borgen är den äldsta förbindelsen och den med den mest förvillande redovisningen: att gå i borgen för ett bolag man kontrollerar känns som att skyla sig själv, men redovisningen skiljer skarpt på vad som konsolideras och vad som bara står i en not.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vidga Hem AB äger 40 procent av Vidga Underhåll AB (påhittat) — ett associérat bolag som inte konsolideras i koncernbalansräkningen. Dottern har lånat 45 miljoner kronor av en utomstående bank, och lånet är inte beviljat utan moderbolagets namnteckning: Vidga Hem står som borgenär för hela beloppet. Nu läser vi kedjan i båda riktningarna. I lugnt läge: dottern betalar ränta och amortering, borgenens 45 kostar Vidga Hem noll — den står i noten och ingen annanstans. I dåligt läge: dottern kan inte betala, banken vräker sig på borgenären, och de 45 miljoner som aldrig fanns i skuldraden är plötsligt en skuld med full vikt. Detta är den dubbla osynligheten: dotterns lån står inte i koncernens tal eftersom ägarskapet är under konsolideringsgränsen, och moderns åtagande för samma lån står bara i noten. I kontrast: vore dottern helägt och konsoliderad skulle lånet synas i koncernskulden — men borgen för utomstående aktieägares räkning finns kvar som restpost även där. Räknat på Vidga Hem: den justerade skuldsättningsgraden (180 + 102) / 120 = 2,35 bär borgenens 45 som tyngsta enskilda post — nästan hälften av hela bruttoskuggan är ett enda namn på ett papper."
+        },
+        {
+          "type": "tabell",
+          "content": "Borgenens räknelära (Vidga Hem AB, påhittade tal): ENGÅNG — dotterns lån 45 med modern som borgenär · LUGNT LÄGE — kostnad noll, not utan tal · TRÖSKELFALLET — dottern betalar inte: borgen träder in och 45 blir skuld med full vikt · RESTRÄTTEN — banken kräver inte förmedla: borgenären betalar och får en fordran på ett bolag som redan fallit · MÅTTET FÖRE — skuldsättningsgrad 180 / 120 = 1,50 · MÅTTET EFTER — (180 + 45) / 120 = 1,88 av borgen allena · MED HELA SKUGGAN — (180 + 102) / 120 = 2,35 · LÄSANVISNINGEN — borgen förbolag under konsolideringsgränsen är dubbel osynlighet: lånet varken konsolideras eller står som skuld."
+        },
+        {
+          "type": "insight",
+          "content": "Borgenens värsta egenskap är samtidighet: den slår inte gradvis utan på hela beloppet, samma dag som den part man ställde sig bakom faller. En skuldrad amorteras; en borgen står hel tills den antingen löper ut eller går av."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Beställningsstockens inbyggda förlust — det fasta prisets andra sida",
+      "intro": "En orderstock i noten ser ut som en framtidssäkrad omsättning. På fast pris är den också en samling kontrakt där bolaget lovat ett pris i en kostnadsvärld som kan ha bytts ut vid leveransdagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vidga Hem har en beställningsstock på 60 miljoner kronor, tecknad till fast pris: fem kontrakt à 12 miljoner. I varje kontrakt ligger en kalkyl: kontraktspris 12,0 mot kalkylerad kostnad 9,0 — täckning 3,0 per kontrakt, alltså 25 procent, och för hela stocken 5 × 3,0 = 15,0 miljoner. Nu stiger kostnaderna 20 procent: den kalkylerade kostnaden blir 9,0 × 1,20 = 10,8 och täckningen faller till 12,0 − 10,8 = 1,2 per kontrakt — 10 procent i stället för 25. Hela stockens täckning: 5 × 1,2 = 6,0 miljoner, ett tapp på 15,0 − 6,0 = 9,0 miljoner utan att en enda order ställts in. Fortsätter kostnadsstegringen till 13,0 per kontrakt blir vart och ett ett förlustkontrakt: 12,0 − 13,0 = −1,0, och stocken som såg ut som 60 i säkrad omsättning är fem små garantier om att arbeta med förlust. Räknat i kursens bruttoskugga togs 42 av stockens 60 med som förpliktande inköp — resten är volym utan bindning. Sektorns egen läsning av orderstocken som affärsmodell ägs av se-22 (byggentreprenadens fastpris- och procentpå-färdigt-kurs); detta kapitel äger stabilitetssidan: stocken som en samling inbyggda utfall med felriktning mot kostnadskurvan."
+        },
+        {
+          "type": "tabell",
+          "content": "Kontraktsaritmetik på fast pris (påhittade tal): KALKYLEN — pris 12,0, kostnad 9,0, täckning 3,0 (25 procent) · STEGRING 20 PROCENT — kostnad 10,8, täckning 1,2 (10 procent) · FEM KONTRAKT — täckning 15,0 faller till 6,0: tapp 9,0 miljoner · BREAK-EVEN — kostnad 12,0: täckning noll · FÖRLUSTZON — kostnad 13,0: täckning −1,0 per kontrakt · STOCKENS TVÅ ANSIKTEN — 60 i bokförd framtid, 42 i förpliktande inköp · VARNINGSTALET — stock med växande volym vid stigande kostnader är inte en tillväxtkurva utan en kö av åldrande priser."
+        },
+        {
+          "type": "insight",
+          "content": "Det fasta priset är en option såld av bolaget: kunden har köpt prissäkerhet, bolaget har tagit kostnadsrisken. En orderstock i stigande kostnadsmiljö är därför en portfölj av sålda optioner — och notens fyra rader om beställningar räcker inte för att värdera dem."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Kreditutrymmet som försvinner — outnyttjat är inte samma som säkert",
+      "intro": "Notens fjärde rad är den mjukaste: den outnyttjade krediten. Den är inte ett åtagande att betala utan en rätt att låna — och rättigheter kan dras tillbaka, särskilt då de behövs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vidga Hem har en outnyttjad checkräkningskredit på 30 miljoner kronor och en kassa på 25. Den vanliga summeringen ger en reserv på 30 + 25 = 55 miljoner mot en kortfristig amortering på 40 — sågtanden täcks, säger kalkylen. Men krediten är inte kassa: den är långivarens löfte, och löftet har två egenskaper som noten bär om den läses noga. Första: bindningstid. En beviljad kredit gäller till ett datum; en obunden krediträtt kan sägas upp med kort varsel — i praktiken i samma vändning som kreditcykeln (st-04) vänder, alltså just när marknaden skriker att utrymmet behövs. Andra: säkerheten. Företagspanten — fastigheter med värde 200 — bär lånet 120 med belåningsgrad 60 procent; om avtalets tak ligger på 70 procent är utrymmet (200 × 0,70) − 120 = 20 miljoner, inte 30: pantens värde bestämmer taket, och pantvärdena rör sig med samma cykel som allt annat. Likviditetstempot och överlevnadstiden i kassa är st-06:s territorium; detta kapitel äger själva försvinnar-akten: räkna aldrig en outnyttjad kredit som säker reserv utan att läsa bindningstid och panttak — den är utrymme, inte pengar."
+        },
+        {
+          "type": "tabell",
+          "content": "Utrymmets räkneläga (påhittade tal): KREDITEN — 30 outnyttjad av 30 beviljade · KASSAN — 25 · SUMMERAD RESERV — 55 mot amortering 40: sett ur låneavtalet tryggt · BINDNINGEN — beviljad till datum: trygg till dess; obunden: uppsägningsbar med varsel · PANTTAKET — pantvärde 200, tak 70 procent: utrymme (200 × 0,70) − 120 = 20, inte 30 · CYKELVISAN — utrymmet dras i vändningen: när pantvärdena faller och resultaten sviker samtidigt · DUBBELFELET — räkna utrymmet som kassa och panten till toppvärde i samma kalkyl · REGLAN — reserven räknas som kassa plus beviljad och panttäckt kredit, ingenting annat."
+        },
+        {
+          "type": "insight",
+          "content": "Kreditutrymmet är mest värt i lugna tider och minst värt i oroliga — en tillgång med negativ korrelation mot behovet. Balansräkningens mest optimistiska rad är därför ofta den som aldrig bokförts: det outnyttjade som räknas som tryggt."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Läskonsten — förbindelsenotens fyra hållpunkter och tre röda flaggor",
+      "intro": "Förbindelsenoten är fyra till sex rader på sidan efter balansräkningen. Att läsa den tar fyra minuter — om man vet vad som ska sökas och vilka mönster som är varningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra hållpunkterna har kursen redan mött: borgensåtaganden, garantiåtaganden, beställningsstock och kreditutfästelser. Läskonsten är att para ihop dem med tre röda flaggor. Flagg ett: förbindelserna växer fortare än omsättningen — Vidga Hems 102 mot 480 i omsättning ger förbindelseandelen 102 / 480 = 0,21; en andel som stiger år från år betyder att bolaget hanterar tryck genom att flytta åtaganden bakom balansräkningen i stället för att lösa dem. Flagg två: borgen för bolag utanför den egna koncernen — associerade bolag, samägda projekt, kunders och leverantörers bolag; det är namnteckningar för verksamhet som inte ens syns i koncernens intäkter. Flagg tre: garantiåtaganden utan motsvarande avsättning — Vidga Hem bär 15 i garantier utan att någon avsättning bokförts för förväntade garantikostnader; själva avsättningsmekaniken ägs av bk-06, men mönstret att åta sig garanti utan att prissätta den är en förbindelseflagga. Därmed kan familjens mått räknas färdigt: förbindelsekvoten 102 / 120 = 0,85 mot eget kapital — kursens pedagogiska varningströskel är 0,5, en tumregel tydligt markerad som pedagogisk och inte något slags branschnorm — och den justerade skuldsättningsgraden 2,35 mot den rapporterade 1,50. Två tal, samma bolag: skillnaden mellan dem är notens hela innehåll sammanfattat i ett mått."
+        },
+        {
+          "type": "tabell",
+          "content": "Förbindelsenotens checklista (Vidga Hem AB, påhittade tal): FYRA HÅLLPUNKTER — borgen 45 · garantier 15 · beställningsstock 60 varav 42 förpliktande · outnyttjad kredit 30 · FLAGGA ETT — förbindelseandel 102 / 480 = 0,21 och stigande · FLAGGA TVÅ — borgen för bolag utanför koncernen (dottern med 40 procent ägarskap: 45) · FLAGGA TRE — garantier 15 utan garantiavsättning · KVOTEN — bruttoskugga 102 / eget kapital 120 = 0,85 mot pedagogisk tumregel 0,5 · MÅTTPARET — rapporterad 1,50 mot justerad skuldsättningsgrad 2,35 · FYRA MINUTER — hållpunkterna, flaggorna, kvoten, måttparet: noten läst."
+        },
+        {
+          "type": "insight",
+          "content": "Notens fyra hållpunkter har olika klockor: borgen står hel tills den slår, garantin föråldras med garantitiden, beställningsstocken löper ut med leveranserna, krediten försvinner med uppsägningen. En not som ser statisk ut är fyra tidslinjer igång."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Räkna om stabiliteten — tre noter och en rangordning",
+      "intro": "Sista kapitlet vänder läsaren från exempel till metod: tre påhittade bolag, tre förbindelsenoter, en fråga — vilket bolag bär tyngst och vad ska röda flaggorna säga innan siffrorna ens räknats?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre bolag, tre noter (alla påhittade). Bolag A: borgen 20, garantier 5, eget kapital 100 — bruttoskugga 25 och förbindelsekvot 25 / 100 = 0,25; noten nämner att borgen gäller ett helägt dotterbolag vars lån redan konsoliderats i koncernen, alltså finns dubbelräkningsfrågan att lösa innan måttet tolkas: den kvarvarande bördan är garantier och risken för att konsolideringsläsningen ändras. Bolag B: borgen 70, garantier 10, förpliktande inköp 30, eget kapital 90 — bruttoskugga 110 och förbindelsekvot 110 / 90 = 1,22: skuggan väger mer än hela eget kapital, och notens borgen gäller tre associerade bolag utanför koncernen — flagg två upprepas tre gånger. Bolag C: garantiåtaganden 15, outnyttjad obunden kredit 50, eget kapital 120 — bruttoskuggan är 15 (krediten räknas inte: den är utrymme, kapitel fyra) och kvoten 15 / 120 = 0,13 är lägst av de tre; men notens passus om att krediten är obunden och sagts upp med varsel till nästa kvartalsslut flyttar bolagets reservfråga från noten till st-06:s kassaavläsning. Rangordning efter bördan: B med god marginal, därefter A, därefter C. Utmaningen till läsaren: gör samma tvåpass för alla tre — först flaggorna utan tal, sedan kvoterna — och avgör i vilket bolag noten hade räckt som enda varning även om balansräkningen saknats helt. Svaret står att finna i B:s tre namnteckningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din utmaning: ta fram de senaste noterna från ett bolag du följer (påhittade tal i kursen, verkliga tal i övningen) och leta rätt efter förbindelserutan. Para ihop de fyra hållpunkterna med de tre flaggorna, räkna bruttoskuggan, förbindelsekvoten mot eget kapital och den justerade skuldsättningsgraden — och skriv en mening om skillnaden mellan rapporterat och justerat mått. Om skillnaden är noll har du funnit ett bolag vars not är tom; om den är stor har du funnit anledningen till att kapitlet finns. Utbildningsövningen i läskonst, aldrig en rekommendation om något värdepapper."
+        },
+        {
+          "type": "insight",
+          "content": "Kursens båda tal — 1,50 och 2,35 — är samma bolag. Mellan dem ligger en not på sex rader. Stabilitetsläsningens sista steg är att vägra välja det smickrande talet: lastat mått eller inget mått alls."
+        }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (484 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (486 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 442 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 444 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -403,6 +403,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "st-04-stabilitet-genom-kreditcykeln", titel: "Stabilitet genom kreditcykeln — samma balansräkning, två världar", kategori: "STABILITET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-05-refinansieringsmuren", titel: "Refinansieringsmuren — när skulden förfaller i klunga", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "st-06-likviditetsreserven", titel: "Likviditetsreserven — kassan, faciliteten och överlevnadstiden", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-07-skuggskulderna", titel: "Skuggskulderna — borgen, garantier och åtagandena utanför skuldraden", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-01-organisk-mot-forvarvad-tillvaxt", titel: "Organisk vs förvärvad tillväxt — spåra källan", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-02-volym-pris-och-mix", titel: "Volym, pris och mix — tillväxtens tre motorer", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "tx-03-nar-skapar-tillvaxt-varde", titel: "När skapar tillväxt värde? — återinvesteringens matematik", kategori: "TILLVÄXT", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -476,6 +477,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pe-05-andrahandsmarknaden", titel: "Andrahandsmarknaden — LP-andelens pris när fonden inte får vänta", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-06-j-kurvan-och-capital-calls", titel: "J-kurvan och capital calls — pengarnas tid i private equity", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pe-07-co-investeringen", titel: "Co-investeringen — andelen bredvid fonden", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "pe-08-avgiftsmaskinen", titel: "Avgiftsmaskinen — 2/20, tröskeln och trappan som delar vinsten", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-01-avkastning-pa-investerat-kapital", titel: "ROIC — lönsamhet utan hävstångens makeup", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-02-avkastningstrappan", titel: "Avkastningstrappan — marginal och kapitalomsättning: ROIC:s två vägar", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "roic-03-inkrementell-roic", titel: "Inkrementell ROIC — nästa kronas avkastning och medeltalets blindhet", kategori: "LÖNSAMHET", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -520,4 +522,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 484;
+export const LARVAG_ANTAL_KURSER = 486;

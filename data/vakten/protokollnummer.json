@@ -194,6 +194,14 @@
       "titel": "prestandavåg: /dataset TBT/LCP-gåtan — giltig ×5-baslinje (o137:s 2 272 vs o139:s 372) + kur om äkta; sidokur manifest-ikon-404 (o128 köpost)",
       "ts": 1790001635047,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o144",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: o139+o143 EFTER-vakarövertag — deploybevis, kanalbevis, LH-kvittering (bokad av båda vågorna)",
+      "ts": 1790004263072,
+      "status": "reserverat"
     }
   ]
 }

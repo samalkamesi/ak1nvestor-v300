@@ -96,3 +96,31 @@ När prod-synken får igenom ett grönt bygge på HEAD (o146+o147 i trädet):
 - Feljakt-ledgerns F1-dom (o141:s köpost) — u1:s o145-ledgerarbete gränssnitt.
 - Svitens(prod-URL)-läxa generaliserad: verktyg som probar mot prod-domänen
   BÖR mappa ursprung till localhost när servern är samma maskin.
+
+## 7. REDISPATCH-COMPLETTERING (samma agent-id, 2026-09-21 18:2x–18:3x lokal)
+
+Sessionen dog före commit; redispatchen (samma s8-u2) stängde kontraktet —
+detta är den commit som levererar svit + protokoll + worklog som o146:s
+ridningsmeddelande (98219b5f) lovade. Tre kompletterande bevis:
+
+1. **OBEROENDE DUBBELKÖRNING av sviten** (16:29:25Z, ts = skriptstart;
+   runtime 76 s → rapport skriven 16:30:41Z): A1 9/9 PASS · A2 PASS ·
+   2 627 annonserade / 476 byggfrusna probade / **exakt 6 FEL** (samma sex
+   bolag) / 0 varningar / 0 oprovade / per klass: bransch 10/0 · spegel 20/0
+   · aspekt 197/0 · bolag 249/6 — identisk med §4:s facit. (Tidigare
+   16:24:14Z-körningen med äldre verktygsversion gav samma 6 FEL med
+   datasetklasserna osplittrade 227/0 — två versioner, samma dom.)
+2. **Merge-base-beviset för §2:5-PRECISIONen**:
+   `git merge-base --is-ancestor 54baa3d7 d401d719` ⇒ NEJ — rond 130:s
+   /rapportakademin-inbjudan har strukturellt ALDRIG kunnat annonseras av
+   körande prod (deploy-trädet föregår inbjudan); 09:02Z:s 404-fynd kom via
+   gränsnittsvaktens sidmätning. Grindens roll förblir profylax för NÄSTA
+   bygge (där inbjudan + rutt finally deployas tillsammans).
+3. **Reservation**: o147 poster #28 i data/vakten/protokollnummer.json
+   (ägare s8-u2, detta manifest) — protokollnummerserien sluten.
+
+KVD redispatchen: tsc 0 (friskt, 16:3xZ) · duplikatprotokoll som skrevs
+av redispatchen innan worklog-raden hittades = RADERAT odelevererat (o147
+levererar ENDELIGT det kanoniska namnet ovan) · engångsverktyg
+(_s8u2o147-reservera.mjs) städade · R2 orörd · data/blogg orörd ·
+syskonagenters ytor orörda (u1:s olevererade filer lämnas åt deras commit).

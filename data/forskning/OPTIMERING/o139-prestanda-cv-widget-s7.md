@@ -199,6 +199,28 @@ lighthouse/ (kanalbevis-s7u2o139efter.json + dom-s7u2o139efter.json).
 Därefter endast: vakten riktad (--bas=http://localhost:3000 --snabb
 --sidor=/superanalys,/kalkylator) + §8-tal + worklog.
 
+### DEL 3 — SLUTFACIT 2026-09-21 23:1xZ (s7-u1, byggare 1/3, nytt manifest; stegen körda autonomt av verkställaren _s7u2o144 17:52–17:56Z)
+
+§7-kriterierna dömda ur verkställarens JSON-utfilar + färskt kanalbevis
+(o144 §3-§5 = detaljboken):
+
+1. **Deploy-bevis ✓:** 17:52:11Z DEPLOYAD 27a582a0 (136 commits,
+   e27ef394 förfader JA) + prod 200 ×2 — och kuren kanalbevisad VIDARE
+   på 22:28:54Z-trädet 496466f6 (merge-base SANT, cv-widget-CSS i
+   435i0cybhscm5.css, 200 ×6).
+2. **LH-EFTER:** CLS 0 ×2 UPPFYLLD (o100-nivån helig) · LCP +5,2 % /
+   −1,1 % (±15 % UPPFYLLD ×2) · poäng 73→57 / 64→56 = lastfönster
+   (dag vs nattbas) · **TBT ≤ ~450: ej bedömbart i dagfönster** —
+   1 312 dagmätt mot nattmätt 582-bas; metrologiregeln (o143 §3:
+   ~6,5× dag/natt) ⇒ kräver nattmätning. Kurens evidens bär A/B-
+   parbevisen i §5 (−51 % fönster-TBT · −81 % Layout). Köpost: natt-LH
+   om TBT-spåret öppnas igen.
+3. **Skroll-CLS 0 ×2 ✓** under bottenrullning; platshållarna bär
+   (widget 4 360 px på kalkylatorn) — ingen intrinsic-justering behövdes.
+4. Gränssnittsvakten: cron-kadansen (RAM-disciplin, o144 §10).
+5. Bokförd här + i o144 §3-§6 + worklog. **SLUTSTÄNGD med
+   metrologifotnot** (TBT-villkoret omnämt till nattmätning).
+
 ## LEVERANS (denna commit)
 
 globals.css (cv-widget-kur) · superanalys/page.tsx · kalkylator/page.tsx ·

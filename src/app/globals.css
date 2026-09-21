@@ -1206,12 +1206,19 @@ h1, h2, h3, h4, h5, h6 {
    200→250): Chrome tolkar contain-intrinsic-size som INNEHÅLLSBOXENS
    platshållare — med prepekt-border-box blir kortets yttre höjd =
    angivet + p-6 (48) + border (2) = +50 px. Nivåerna nedan är därför
-   (yttre mål − 50)/16: sv (374−50)/16=20.25 · en 18.4375 · ar 16.5625
+   (yttre mål − 50)/16: sv (374−50)/16=20.25 · en 18.4375 · ar 16.125
    · md 2-kol 19.0625 · lg 3-kol 22.25rem. Ändras p-6/border på kortet
    måste +50 räknas om. md/lg gemensamma för alla språk (mätta på sv;
    där är docHΔ liten och skillnaden per spegel sekundär); lang-reglerna
    ligger med i brytpunktsselektorerna så de inte slår md/lg
-   (specificitet 0-2-1 mot 0-1-0). */
+   (specificitet 0-2-1 mot 0-1-0).
+   o150-OMKALIBRERING ar (2026-09-21, o138 §6.1): ar-kortens äkta
+   medelhöjd driftat 315→312,35 px (Σ 17 179 px/55 kort, två
+   bitidentiska blocksond-omgångar 05:42/05:43Z — deterministisk
+   innehållsdrift, ej brus) ⇒ 16.5625→16.125rem (yttre 308 px),
+   väntad docHΔ +14 px mot tidigare −371. Kalibreringen tål ±6 px/kort
+   innehållsdrift innan |docHΔ| ≥ 350 — ny drift ⇒ ny mikrojustering
+   mot dåtida sonddata, aldrig bredare regel. */
 .cv-bloggkort {
   content-visibility: auto;
   contain-intrinsic-size: auto 20.25rem;
@@ -1220,7 +1227,7 @@ html[lang="en"] .cv-bloggkort {
   contain-intrinsic-size: auto 18.4375rem;
 }
 html[lang="ar"] .cv-bloggkort {
-  contain-intrinsic-size: auto 16.5625rem;
+  contain-intrinsic-size: auto 16.125rem;
 }
 @media (min-width: 768px) {
   .cv-bloggkort,

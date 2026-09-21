@@ -1,0 +1,29 @@
+{
+  "ts": "2026-09-21T17:52:39.317Z",
+  "steg": {
+    "deployadRad": {
+      "rad": "2026-09-21T17:52:11Z DEPLOYAD automatiskt: 136 commits (27a582a0) — prod 200",
+      "hash": "27a582a0"
+    },
+    "forfader": {
+      "o139_cv_widget": true,
+      "o143_dataset_cls": true
+    },
+    "cvWidgetCss": {
+      "filer": 2,
+      "traEFFar": [
+        "1t9wbuy2xns-r.css: .cv-widget-super",
+        "1t9wbuy2xns-r.css: .cv-widget-kalk"
+      ]
+    },
+    "http200": {
+      "/": "200",
+      "/dataset": "200",
+      "/en/dataset": "200",
+      "/ar/dataset": "200",
+      "/superanalys": "200",
+      "/kalkylator": "200"
+    }
+  },
+  "kanalBevisad": true
+}

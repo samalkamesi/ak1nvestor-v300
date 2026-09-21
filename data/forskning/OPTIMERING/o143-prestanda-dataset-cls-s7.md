@@ -129,6 +129,22 @@ Verktyg levererade för ronden: `_s7u1o143-sond.mjs` (CDP + skift-attribution +
 A/B-css + --disable-extensions), `_s7u1o143-lhspår.mjs` (lagad trace-läsare),
 `_s7u1o143-kontrakt.mjs`.
 
+**FACIT 2026-09-21 17:54–17:56Z + 23:0xZ (verkställaren _s7u2o144 + s7-u1
+slutförde funktionsteget) — SLUTSTÄNGD GRÖN:**
+
+1. **CLS 0 ×5 UPPFYLLD** (o144-efter1..5; skiftet 0,2367 borta i alla fem —
+   Suspense-kurens mål).
+2. **LCP median 4 277 = −6,4 %** mot 4 571 UPPFYLLD (±15 %).
+3. TBT-observation: 594–2 524 (median 1 134, dagfönster) — §3:s
+   metrologiregel står; ingen sidspecifik anomali (§3:s par-dom kvarstår).
+4. **Funktionstest 12/12 PASS ×3 språk** (funktion-o144.json; efter 3
+   verktygsfixar + kontraktskorrigeringen defaultValdFore — o144 §6:
+   A–Ö vald som designat default enligt tolkaSortera).
+5. Manifest-ikonerna /ak1a/ikon-192.png · ikon-512.png ·
+   ikon-maskable-512.png = 200 ×3 på aktuellt träd; vakten = cron-kadansen.
+6. **prod 200 ×3** (/dataset, /en/dataset, /ar/dataset) + speglarna bär
+   kuren — kanalbevis ×2 träd (27a582a0 + 496466f6, o144 §3).
+
 ## §8 Kö vidare
 
 - o120:s /blogg kall-TBT-arkitekturpost (oförändrat öppen, ej min yta idag).

@@ -54,6 +54,24 @@ deras facit-sektioner är uttryckliga uppdrag till "nästa fönster/våg"
 - Skyddsåtgärd: protokollet + körordningen committas direkt (o130 §2-
   mönstret) så att retry-agenten har allt oavsett när denna session dör.
 
+### §1c Slutförd analys (16:17Z) — varför denna våg avslutar medvetet
+
+- 16:17:26Z-poll: VÄNTAR-RAM 918 MB; NY KOD nu d401d719 → **22de9518**
+  (försök-2-committen — deployen kommer även bära detta protokoll).
+- Prod 200 ×4 verifierat på mätytorna (/, /dataset, /superanalys,
+  /kalkylator) på gällande d401d719-träd — basen hel, inget trasigt.
+- **Twog-fynd:** PID 479991 (15:15Z-linjen) bär EXAKT denna uppgifts
+  prompt (fabrikens retry-spår av samma slot); CPU 78 ticks/min ≈ 1,3 %
+  = hjärtslag ej bevisat hängd ⇒ lämnad ORÖRD (syskon-disciplinen;
+  dödar jag en aktiv dubblett förloras arbete).
+- **RAM-ekvationen:** tillgängligt 918 + trion ~2 600 (slutar ≤16:30Z)
+  + denna session ~800 + 479991-gruppen ~1 090 ⇒ deploykrav 3 900 nås
+  först när fabrikens barn (inklusive MIG) avslutar. Att vänta kvar
+  SPÄRRAR alltså det jag väntar på — medvetet avslut = själva kuren.
+- Beslut: vågen avslutas rent (protokoll + kronologi committad); mätning
+  förblir spökmätningsskyddad (kanalgrind oupptemjad — §3 tom = korrekt).
+  Verkställandet sker av nästa fönster via §9, som är komplett.
+
 ## §2 Verktyg (levererade i DEL 1-committen)
 
 - `verktyg/_s7u2o144-kanal.mjs` — spökmät-skyddsgrind: DEPLOYAD-rad +

@@ -3103,3 +3103,47 @@ nu en kedja att mäta mot.
   (171 080, band [170 950, 171 250]) · **02:50 KURENS FÖRSTA automatiska
   appdump — jfr handprotokollets P2–P10-band** · oversättningsdom t.o.m. 10-01 ·
   kvartalsövning ≤2026-12-20 med F1-regeln.
+
+## S10-U1 — NATTFAS-DR: RAM-grindens tredje eldprov (skip 343 MB → retry GRÖN) + blad 10:s femte restore = seriens determinismdag (2026-09-21 01:52–02:12 lokal, GODKÄNT)
+
+Fabriksorder: "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG".
+Anspråk låst disk-först 01:5x (data/vakten/s10-u1-nattdr-2026-09-21-ansprak.md)
+med ÅTTA förregistrerade prediktioner — seriens första NATTFAS-punkt (~02:00;
+morgon 06:3x / middag 12:3x / kväll 19:0x var redan mätta).
+
+**RAM-grindens tredje eldprov (efti 16:42-incidenten + APP-DB middag 3):**
+första försöket 01:58 SKIPPADES korrekt — MemAvailable 343 MB < 1 000 MB.
+Rotsond (ps): den LEVANDE fabriksomgången — 36 zcode-processer (~0,8 GB/st
+enligt våg 146-kalkylen), däribland 7 langlivade sedan Sep 11/13 (OBSERVATION
+only — processstädning är huvudagentens/yta, ej beröring). Ingen läcka, volym.
+Grinden respekterades (ALDRIG kringgås — prod-skydd); retry 02:10 EFTER
+frigörelse (2 355 MB tillgängligt; 02:05-omgången vägrades ny av fabrikens
+RAM-vakt < 1 500 MB — systemet självkoordinerat).
+
+**Körning `node verktyg/dr-ovning.mjs` GRÖN exit 0** (instrumentet
+OMODIFIERAT — syskonläran; auto-lås flock /tmp/ak1a-dr-prov.lock):
+- Dumpkontroll: db-2026-09-20.sql.gz GRÖN (markörkontraktet, 1 367 628 rader)
+- RTO **13,7 s** (nattfas, kall PG17 + kallt sidminne; kvällspunkten 12,7 s →
+  natten +1,0 s — fortfarande undre halvan av seriens band 11,5–26,8 s)
+- Mätning: public **60 tabeller / 1 345 719 rader** · public+storage 68/1 345 855 ·
+  alla scheman 99/1 346 115 — EXAKT gårdagens kvällspunkt på samma blad
+- Restore-fel: **788 kända / 0 okända** (Supabase-roller/scheman — ofarliga)
+- Nyckeltabeller: section_data_snapshots 1 252 404 · board_decisions 50 114 — EXAKTA
+- Städning: skrap-DB ak1a_dr_test raderad · PG17 stoppad — OBEROENDE
+  verifierad (pg_lsclusters: down). Låsfilen kvarstår = flock-information
+  (dött lås tas över efter 30 min, verktygets kontrakt).
+
+**Prediktionsdom 8/8 INFRIADE** (P1 13,7 s ∈ [11,5; 25] · P2 60 · P3 1 345 719
+EXAKT · P4 0 okända · P5 788 EXAKT · P6 båda EXAKTA · P7 städning · P8 filnamn).
+P3+P5+P6 = restore är en ren funktion av bladet — instrumentets determinism
+bevisad dag 5 i raden (samma blad, olika agenter/faser, byte-identiska tal).
+
+**Tidsläge:** blad 10:s SISTA restore — blad 11 (db-2026-09-21.sql.gz) föds
+02:30, 18 min efter körningen; app-DB-cronen 02:50 gör kurens första
+automatiska aufr-nattdump strax efter (syskonens DUBBELPROJEKT-KUR — deras kvitto).
+
+Protokoll: data/forskning/DR-PROV-2026-09-21-AUTO.md (verktygsgenererat).
+Nästa kvartalsövning enligt protokollet: senast 2026-12-21. src/ orörd —
+tsc-baslinjen orörd, inga byggen. Slutdom: **GRÖN — övningen godkänd**.
+
+SLUT — sektion inlagd av s10-u1 2026-09-21.

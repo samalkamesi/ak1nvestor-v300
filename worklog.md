@@ -16586,3 +16586,23 @@ data/forskning/DR-OVNING-2026-09-21-NATT-RPO-GRIND.md,
 data/forskning/DR-RPO-DIFF-2026-09-21-NATT.json, data/DRIFTSBOKEN.md,
 worklog.md (anspråk på disk: data/vakten/s10u2-appnattdr-2026-09-21-ansprak.md
 — katalogen gitignorerad). [fabrik]
+
+## SPÅR 10 s10-u1 (fabrik-order "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG") — 2026-09-21 01:52–02:12 lokal: NATTFAS-DR — RAM-grindens tredje eldprov SKIP→RETRY GRÖN (RTO 13,7 s) + blad 10:s femte restore = determinism EXAKT + 8/8 prediktioner [fabrik]
+
+Fabriksagent s10-u1 (vakt). VAL (anspråk disk-först 01:5x med P1–P8 låsta
+FÖRE mätning): seriens första NATTFAS-punkt ~02:00 (morgon/middag/kväll
+redan mätta) + sista restoresbarhetsbeviset på blad 10 (blad 11 föds 02:30).
+ELDPROV 3: första försöket 01:58 SKIPPADES av RAM-grinden (MemAvailable
+343 MB < 1 000 MB; rot = 36 levande zcode-barn i fabriksomgången, 7 sedan
+Sep 11/13 — observation, ingen åtgärd från min sida); grinden respekterades,
+retry 02:10 efter frigörelse (2 355 MB) GRÖN exit 0. KÖRNING
+`node verktyg/dr-ovning.mjs` OMODIFIERAT: dumpkontroll GRÖN (db-2026-09-20,
+1 367 628 rader) → RTO 13,7 s (nattfas, +1,0 s mot kvällens 12,7) → public
+60 tabeller/1 345 719 rader · 788 kända/0 okända fel · snapshots 1 252 404 ·
+board 50 114 — SAMTALIGA EXAKTA mot gårdagens kvällspunkt på samma blad
+(determinism dag 5; restore = ren funktion av bladet). PREDIKTIONSDOM 8/8
+(varav P3/P5/P6 EXAKTA). STÄDNING: skrap-DB raderad + PG17 stoppad, oberoende
+verifierad (pg_lsclusters down) — lokal PG i korrekt viloläge, "städa lokal
+PG" i ordern uppfyllt. Protokoll data/forskning/DR-PROV-2026-09-21-AUTO.md +
+DRIFTSBOK-sektion S10-U1. Nästa kvartalsövning: senast 2026-12-21. Syskon-ytor
+orörda (dr-appdump/dr-kedja2/app-cron 02:50 = deras kvitto). [fabrik]

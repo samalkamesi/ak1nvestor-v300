@@ -37,7 +37,7 @@ export default function SuperanalysPage() {
         blir ett delbart analys-kort med betyg av 100. Utkastet sparas automatiskt; en
         fullbordad analys förtjänar +100 XP.
       </p>
-      <div className="mt-10">
+      <div className="mt-10 cv-widget-super">
         <Superanalys />
       </div>
     </SeoPageShell>

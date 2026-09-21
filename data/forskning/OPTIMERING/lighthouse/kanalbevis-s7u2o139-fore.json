@@ -1,0 +1,45 @@
+{
+  "vag": "o139",
+  "spår": "7 — prestanda & mobilpolish",
+  "agent": "s7-u2 (manifest auto-s7-1789968917148, byggare 2/3)",
+  "skrivet": "2026-09-21T05:50Z (07:50 lokal)",
+  "syfte": "Kanalvaliditet för FÖRE-mätningarna: localhost:3000 bär ett serverande bygg som bevisat INNEHÅLLER o126-o129:s läsbarhetskurer (CSS-signaturer) — samma kodläge som den kommande TBT-kuren mäts mot.",
+  "bygg": {
+    "BUILD_ID": "saMxYAzLaPfd23cJkKKAI",
+    "byggt": "2026-09-21T05:25-05:30Z (07:25-07:30 lokal)",
+    "laekeBuildId": "TAlJ8Gvikzir5UUi7Lj63",
+    "gitHEADVidKontroll": "1ea8ccb8",
+    "kurCommitsArFörfäder": {
+      "o126_96bd416b": true,
+      "o127_c017f9bf": true,
+      "o128_54c95abd": true,
+      "o129_87483e9a": true,
+      "o130_2e6efd22": true
+    }
+  },
+  "cssSignaturerIServerandeChunk_2nfdpgrzmuor8": {
+    "o126_min-width-52px": "min-width:52px ×3 + min-width:52px!important ×2",
+    "o127_layerbase_flexgrid": ".flex>*,.grid>*{min-width:0}",
+    "o128_slider52": "size-[52px]-klass genererad + width:52px;height:52px ×2"
+  },
+  "sidor200": {
+    "/": "prod https 200 + localhost 200",
+    "/superanalys": "localhost 200",
+    "/kalkylator": "localhost 200",
+    "/konfluens": "localhost 200",
+    "/dataset": "localhost 200",
+    "/netnet": "localhost 200"
+  },
+  "payloadAnalys": {
+    "metod": "script-taggar i .next/server/app/<sid>.html → lokal filstorlek",
+    "kalkylator": "20 chunkar, 1039 KB klient-JS (varav +123 KB utöver konfluens-bas: 4 chunkar 55+39+45+0 KB)",
+    "superanalys": "17 chunkar, 933 KB klient-JS (+17 KB utöver konfluens-bas: 1 chunk 35 KB)",
+    "konfluens": "17 chunkar, 916 KB (referensbas)",
+    "dataset": "17 chunkar, 901 KB",
+    "slutsats": "TBT-skillnaden (superanalys 1276 vs kalkylator 559, o123 n=1) förklaras INTE av payload — basal-bördan ~900 KB är gemensam; misstanke: exekvering vid hydratisering + o120 §4:s FCP-fönster-mekanik (mindre HTML ⇒ tidigare FCP ⇒ fler tidiga tasks i TBT-fönstret). Kräver mätning: konfluens/netnet/dataset saknar LH-baslinje helt (o123 mätte bara kalkylator+superanalys, n=1)."
+  },
+  "noteringar": [
+    "o123:s FEL-filer (kalkylator-/superanalys-…-n1-FEL.txt) orsakades av DERAS egna verktygs hårdkodade chrome-launcher-import — kanoniska verktyg/prestanda-lighthouse.mjs klarade samma körning (superanalys-s7u2o123-efter-n1.json 550 KB landade giltigt).",
+    "Syskonaktivitet under fönstret: u1 (o137 slider/pill-EFTER) + u3 (o138 blocksond-EFTER) körde Chrome-sonder — egna mätningar inväntade fritt Chrome-fönster (sekventiell regel, ren TBT-kanal)."
+  ]
+}

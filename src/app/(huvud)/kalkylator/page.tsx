@@ -40,7 +40,7 @@ export default function KalkylatorPage() {
           (våg 57 D3; det fullständiga läget byggs av D1 i kalkylatorn). */}
       <Akm2DemoStrip />
 
-      <div className="mt-10">
+      <div className="mt-10 cv-widget-kalk">
         <Akm1Calculator />
       </div>
     </SeoPageShell>

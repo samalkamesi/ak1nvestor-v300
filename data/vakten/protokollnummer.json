@@ -138,6 +138,30 @@
       "titel": "oprovat val",
       "ts": 1789944060929,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o137",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "prestandavåg: ÄKTA deploy-EFTER-kvittering av o126+o127+o128+o129 — vakarövertag o131 §4 + o132 §6 (DEPLOYAD d401d719 bevisad)",
+      "ts": 1789969137210,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o138",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1789968917148",
+      "titel": "prestandavåg: o129 §6-§7 blogg-EFTER vakarövertag SLUTKVITTERING — räddningsbygget 05:29:36Z bar CV-kuren live (chunks bevisade) → blocksond ×3 + Lighthouse ×3 + prod 200 ×3 + §7-append",
+      "ts": 1789969184024,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o139",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1789968917148",
+      "titel": "prestandavåg: /superanalys+/kalkylator TBT-rotjakt + giltig LH-EFTER (o123 n1-FEL:eftersläpning)",
+      "ts": 1789969273833,
+      "status": "reserverat"
     }
   ]
 }

@@ -249,9 +249,10 @@ async function main() {
 /** RSS (byte) för processen som lyssnar på PORT (win: netstat+tasklist). */
 async function hamtaRss() {
   try {
-    const { execSync, execFileSync } = await import("node:child_process");
+    const { execFileSync } = await import("node:child_process");
     if (process.platform === "win32") {
-      const netstat = execSync("netstat -ano", { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 });
+      // Skalfri arrayform (o141): netstat utan skalsträng, flaggorna som argument.
+      const netstat = execFileSync("netstat", ["-ano"], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 });
       const rad = netstat
         .split("\n")
         .map((r) => r.trim())
@@ -267,10 +268,11 @@ async function hamtaRss() {
       const siffror = kolumn.replace(/[^\d]/g, "");
       return siffror ? Math.round(parseInt(siffror, 10) * 1024) : -1;
     }
-    const ut = execSync('ps -eo rss,args | grep -E "next|node" | grep -v grep | head -1', {
-      encoding: "utf8",
-    });
-    const m = /^\s*(\d+)/.exec(ut);
+    // Skalfri arrayform (o141): ps utan rör — grep/head-parsningen bor i JS,
+    // ekvivalent med det gamla skalets "grep -E next|node | grep -v grep | head -1".
+    const ut = execFileSync("ps", ["-eo", "rss,args"], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 });
+    const rad = ut.split("\n").find((r) => /next|node/.test(r) && !r.includes("grep"));
+    const m = /^\s*(\d+)/.exec(rad ?? "");
     return m ? Number(m[1]) * 1024 : -1;
   } catch {
     return -1;

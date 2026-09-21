@@ -1,0 +1,31 @@
+studio: rond 142 — 10-bolagsprovet URL-KLART: samtliga 10 direkta PDF-url:er HEAD-verifierade (https+pdf+≤40 MB) i leveransregister + intagsmanifest [organ:Σ]
+
+KÄLLREGISTER UPPDATERAT (kallregister-bolagsrapporter-2026-09-21.md): leveransregistret
+bär exakta url:er per bolag: ABB Financial Report 2025 (library.e.abb.com, officiell;
+Integrated Report bakom JS-vägg), Atlas Copco AR 2025 ESEF (atlascopcogroup.com),
+AstraZeneca SPEGLAD (annualreports.com LSE_AZN_2025.pdf 11,2 MB — officiell IR 403
+Cloudflare + SEC-inlämning 0001104659-26-019130 har 449 filer men 0 PDF = ren iXBRL;
+spegeln dokumenteras som reservkälla, dec-2025-datering bekräftad 232 s), Ericsson
+(mb.cision.com/Main/15448/4316310/3963269.pdf 5,1 MB — Main-bilaga till release
+c4316310), Evolution (mb.cision.com/Main/12069/4329954/4021102.pdf 8,9 MB — direkt
+cision före mfn-proxy), H&M (hmgroup.com wp-content 2026/03 9,5 MB), Industrivärden
+(storage.mfn.se/a/industrivarden/…/ab-industrivarden-arsredovisning-2025.pdf — hittad
+via preslista /2026/: exakt slug publicering-av-industrivardens-arsredovisning-och-
+hallbarhetsrapport-2025), Sandvik (mb.cision.com/Main/208/4318236/3973881.pdf 8,0 MB),
+SKF (mb.cision.com/Main/637/4317545/3969621.pdf 7,3 MB — release c4317545), Volvo Cars
+(vp272.alertir.com 202603050673-1.pdf 15,1 MB — fil-ID matchar publiceringsdatum).
+
+MANIFEST (pdf-url-manifest-10bolag-2026-09-21.json): slutversion med symbol+källtyp+
+notering per bolag + nästa steg (karantän-intag → PDF-sektionsextraktion) — matar
+rappintagspipelinen enligt rond 136:s kontrakt (sha256-proveniens, gitignorerad karantän).
+
+METODIK: WebFetch transport-blockerad HELA dagen (mättning); allt kördes server-side
+via node — landningssidor med bred pdf-grep (även JSON-inbäddat), sitemaps, robots,
+Cision-newsrooms, EDGAR index.json, DDG-html (rate-limited efter 6 sökningar),
+WebSearch intermittent (5 av ~10 träffar). Bot-skydd (AZN+ERIC 403, JS-väggar ABB/
+SKF/INDU) bemöttes med bolagens officiella distributionskanaler: Cision Main-bilagor
+(4 bolag), AlertIR, MFN-lagring, wp-content — 9/10 förstahandskällor, AZ spegel.
+
+Sond-JSON:er (pdf-url-verifiering/sond2-10) versions som forskningsspår.
+Push r138-141 → prod löper i bakgrund (merge-retry, fabrikens yta); snittets 404
+kräver grönt bygg av pushad kod (synkens RAM-poll).

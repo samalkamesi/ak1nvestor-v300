@@ -1,0 +1,16 @@
+{
+  "sandvik": {
+    "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf",
+    "status": 200,
+    "typ": "application/pdf",
+    "mb": 8,
+    "grön": true
+  },
+  "skf": [],
+  "ericsson_newsroom_lankar": [],
+  "industrivarden": [],
+  "az_sec_filer": {
+    "alla": 449,
+    "pdf": []
+  }
+}

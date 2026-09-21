@@ -1,0 +1,139 @@
+{
+  "hm": {
+    "sidor": [
+      {
+        "url": "https://hmgroup.com/investors/",
+        "slutgiltig": "https://hmgroup.com/investors/",
+        "antal": 3,
+        "traffar": [
+          "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf",
+          "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Corporate-governance-report-2025.pdf",
+          "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Remuneration-report-2025.pdf"
+        ]
+      },
+      {
+        "url": "https://hmgroup.com/investors/reports/",
+        "slutgiltig": "https://hmgroup.com/investors/reports/",
+        "antal": 8,
+        "traffar": [
+          "https://hmgroup.com/wp-content/uploads/2025/06/H-M-Hennes-Mauritz-AB-Six-month-report-2025.pdf",
+          "https://hmgroup.com/wp-content/uploads/2024/06/H-M-Hennes-Mauritz-AB-Six-month-report-2024.pdf",
+          "https://hmgroup.com/wp-content/uploads/2023/09/H-M-Hennes-Mauritz-AB-Nine-month-report-2023.pdf",
+          "https://hmgroup.com/wp-content/uploads/2024/01/H-M-Hennes-Mauritz-AB-Full-year-report-2023.pdf",
+          "https://hmgroup.com/wp-content/uploads/2023/12/The-HM-groups-sales-development-for-full-year-2023-including-the-fourth-quarter.pdf",
+          "https://hmgroup.com/wp-content/uploads/2022/03/H-M-Hennes-Mauritz-Three-month-report-2022.pdf",
+          "https://hmgroup.com/wp-content/uploads/2022/03/The-HM-groups-sales-development-in-the-first-quarter-2022.pdf",
+          "https://hmgroup.com/wp-content/uploads/2022/06/The-HM-groups-sales-development-in-the-second-quarter-2022.pdf"
+        ]
+      },
+      {
+        "fel": "ENOTFOUND"
+      }
+    ],
+    "gissningar": []
+  },
+  "industrivarden": {
+    "sidor": [
+      {
+        "fel": "HTTP 404"
+      },
+      {
+        "fel": "HTTP 404"
+      },
+      {
+        "url": "https://www.industrivarden.se/",
+        "slutgiltig": "https://www.industrivarden.se/",
+        "antal": 0,
+        "traffar": []
+      }
+    ],
+    "gissningar": [
+      {
+        "url": "https://www.industrivarden.se/globalassets/arsredovisningar/engelska/2025-annual-report.pdf",
+        "status": 404,
+        "typ": "text/html; charset=utf-8",
+        "mb": 0,
+        "grön": false
+      },
+      {
+        "url": "https://www.industrivarden.se/globalassets/arsredovisningar/engelska/2025-arsredovisning.pdf",
+        "status": 404,
+        "typ": "text/html; charset=utf-8",
+        "mb": 0,
+        "grön": false
+      }
+    ]
+  },
+  "sandvik": {
+    "sidor": [
+      {
+        "fel": "ENOTFOUND"
+      },
+      {
+        "url": "https://www.sandvik.com/investors/",
+        "slutgiltig": "https://www.home.sandvik/investors/",
+        "antal": 0,
+        "traffar": []
+      },
+      {
+        "fel": "ENOTFOUND"
+      }
+    ]
+  },
+  "skf": {
+    "sidor": [
+      {
+        "url": "https://www.skf.com/group/investors/financials/annual-reports",
+        "slutgiltig": "https://www.skf.com/group/investors/financials/annual-reports",
+        "antal": 0,
+        "traffar": []
+      }
+    ]
+  },
+  "ericsson": {
+    "gissningar": [
+      {
+        "url": "https://www.ericsson.com/assets/local/investors/documents/annual-report-2025-en.pdf",
+        "status": 403,
+        "typ": "text/html; charset=UTF-8",
+        "mb": 0,
+        "grön": false
+      },
+      {
+        "url": "https://www.ericsson.com/assets/local/investors/documents/annual-report-2025.pdf",
+        "status": 403,
+        "typ": "text/html; charset=UTF-8",
+        "mb": 0,
+        "grön": false
+      }
+    ],
+    "sidor": [
+      {
+        "fel": "HTTP 403"
+      }
+    ]
+  },
+  "astrazeneca": {
+    "gissningar": [
+      {
+        "url": "https://www.astrazeneca.com/content/dam/az-cn/documents/investors/AZ_Annual_Report_2025.pdf",
+        "status": 403,
+        "typ": "text/html",
+        "mb": 0,
+        "grön": false
+      },
+      {
+        "url": "https://www.astrazeneca.com/content/dam/az-cn/documents/investors/annual-report-2025.pdf",
+        "status": 403,
+        "typ": "text/html",
+        "mb": 0,
+        "grön": false
+      }
+    ],
+    "sec": {
+      "form": "20-F",
+      "inlamnad": "2026-02-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/901832/000110465926019130/azn-20251231x20f.htm"
+    }
+  }
+}

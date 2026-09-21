@@ -1,0 +1,22 @@
+{
+  "pdf": [
+    "https://storage.mfn.se/cc66760c-87c3-4c15-8604-b63fa65d89b6/publ-ar2025-260226-sve.pdf",
+    "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+  ],
+  "head": [
+    {
+      "url": "https://storage.mfn.se/cc66760c-87c3-4c15-8604-b63fa65d89b6/publ-ar2025-260226-sve.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 0,
+      "grön": true
+    },
+    {
+      "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 0,
+      "grön": true
+    }
+  ]
+}

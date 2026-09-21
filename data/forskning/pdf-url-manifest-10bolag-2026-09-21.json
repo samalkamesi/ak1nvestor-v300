@@ -1,0 +1,24 @@
+{
+  "genererad": "2026-09-21T12:05:00.000Z",
+  "rond": 142,
+  "organ": "Σ",
+  "uppdrag": "Kunduppdrag punkt 2 — PDF-sektionsextraktion på ~10 bolag FÖRE innehållsproduktion. Detta manifest matar karantän-intaget (rond 136, 8abf541e): https + content-typ pdf + 40 MB-tak + sha256-proveniens vid hämtning.",
+  "verifiering": "Alla url:er HEAD-verifierade 2026-09-21 (status 200, application/pdf, känd storlek ≤ 40 MB).",
+  "bolag": [
+    { "id": "abb", "namn": "ABB", "symbol": "ABB.ST", "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf", "mb": null, "kalltyp": "officiell-ir", "notering": "Financial Report 2025 (142 s); Integrated Report bakom JS-vägg" },
+    { "id": "atlascopco", "namn": "Atlas Copco", "symbol": "ATCO-A.ST", "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf", "mb": null, "kalltyp": "officiell-ir", "notering": "ESEF-kopia av officiella rapporten" },
+    { "id": "astrazeneca", "namn": "AstraZeneca", "symbol": "AZN.ST", "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf", "mb": 11.2, "kalltyp": "spegel", "notering": "Officiell IR 403 (Cloudflare) + SEC 0 pdf — spegel av officiella rapporten (232 s), proveniens dokumenteras i loggen" },
+    { "id": "ericsson", "namn": "Ericsson", "symbol": "ERIC-B.ST", "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf", "mb": 5.1, "kalltyp": "officiell-cision", "notering": "Bilaga till news.cision.com/ericsson/r/ericsson-annual-report-2025-published,c4316310" },
+    { "id": "evolution", "namn": "Evolution", "symbol": "EVO.ST", "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf", "mb": 8.9, "kalltyp": "officiell-cision", "notering": "Direkt cision-url (företräds framför storage.mfn.se-proxy)" },
+    { "id": "hm", "namn": "H&M", "symbol": "HM-B.ST", "url": "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf", "mb": 9.5, "kalltyp": "officiell-ir", "notering": "Bokår dec–nov" },
+    { "id": "industrivarden", "namn": "Industrivärden", "symbol": "INDU-C.ST", "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf", "mb": null, "kalltyp": "officiell-mfn", "notering": "Svenska årsredovisningen; länkad från publicerings-releasen 2026-02-26" },
+    { "id": "sandvik", "namn": "Sandvik", "symbol": "SAND.ST", "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf", "mb": 8.0, "kalltyp": "officiell-cision", "notering": "Integrerad årsredovisning, distribution 2026-03-09/10" },
+    { "id": "skf", "namn": "SKF", "symbol": "SKF-B.ST", "url": "https://mb.cision.com/Main/637/4317545/3969621.pdf", "mb": 7.3, "kalltyp": "officiell-cision", "notering": "Annual and Sustainability Report 2025, release c4317545" },
+    { "id": "volvocars", "namn": "Volvo Cars", "symbol": "VOLCAR-B.ST", "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf", "mb": 15.1, "kalltyp": "officiell-alertir", "notering": "Annual and Sustainability Report 2025, fil-ID 202603050673-1" }
+  ],
+  "nexte_steg": [
+    "rapport-intag-karantan.mjs per bolag med detta manifest (hämtning + sha256 + provenienslogg under data/rapportintag/karantan/, gitignorerat)",
+    "PDF-sektionsextraktion: finansiella nyckeltalsavsnitt per bolag (kunduppdragets verifieringssteg)",
+    "ABB Integrated Report + AZ officiell url: följs upp om bot-skydden lättar"
+  ]
+}

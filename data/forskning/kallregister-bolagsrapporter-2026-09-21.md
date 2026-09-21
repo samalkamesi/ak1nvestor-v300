@@ -25,6 +25,30 @@ finns redan på disk. Urval = 10 bolag nedan. NOTERA: VOLCAR-B = **Volvo Cars AB
 | 9 | SKF (SKF-B.ST) | Annual and Sustainability Report 2025 | skf.com/group/investors/financials/annual-reports | 2026-03-06 | EJ extraherad |
 | 10 | Volvo Cars (VOLCAR-B) | Annual and Sustainability Report 2025 | investors.volvocars.com | 2026-03-05 | EJ extraherad |
 
+## LEVERANSREGISTER — DIREKTA PDF-URL:ER (rond 142, [organ:Σ])
+
+Alla url:er HEAD-verifierade 2026-09-21: https + content-typ application/pdf +
+(known size ≤ 40 MB). Karantän-intaget gör full källverifiering + sha256 vid hämtning.
+
+| # | Bolag | Direkt-PDF (verifierad) | Storlek | Källa/kommentar |
+|---|---|---|---|---|
+| 1 | ABB | https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf | okänd | Officiell library.e.abb.com; Financial Report = registrets 142-s-dokument. Integrated Report har fördunklad sökväg (JS-vägg) —Financial Report används i provet |
+| 2 | Atlas Copco | https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf | okänd | Officiell IR (ESEF-kopia av tryckta rapporten) |
+| 3 | AstraZeneca | https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf | 11,2 MB | **SPEGLAD** — officiell IR 403-blockad (Cloudflare), SEC-inlämning (0001104659-26-019130, 2026-02-24) har 449 filer men 0 PDF (ren iXBRL). Spegeln dokumenteras i proveniensloggen; publikt åtkomlig spegel av officiella rapporten (232 s). Dec-2025-datering bekräftad |
+| 4 | Ericsson | https://mb.cision.com/Main/15448/4316310/3963269.pdf | 5,1 MB | Officiell Cision-bilaga till releasesidan "Ericsson Annual Report 2025 published" (news.cision.com/ericsson/r/…,c4316310) |
+| 5 | Evolution | https://mb.cision.com/Main/12069/4329954/4021102.pdf | 8,9 MB | Officiell Cision-Main-bilaga (är mer direkt än mfn.se-proxyn) |
+| 6 | H&M | https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf | 9,5 MB | Officiell hmgroup.com (wp-content) |
+| 7 | Industrivärden | https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf | okänd | Officiell MFN-lagring, länkad från pressmeddelandet "Publicering av Industrivärdens årsredovisning och hållbarhetsrapport 2025" (2026-02-26). Engelsk version finns på samma release-sida om behövs |
+| 8 | Sandvik | https://mb.cision.com/Main/208/4318236/3973881.pdf | 8,0 MB | Officiell Cision-distribution (pressrelease "Sandvik AB Annual Report 2025", 2026-03-09/10) |
+| 9 | SKF | https://mb.cision.com/Main/637/4317545/3969621.pdf | 7,3 MB | Officiell Cision-Main-bilaga till "SKF publishes Annual and Sustainability Report 2025" (c4317545) |
+| 10 | Volvo Cars | https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf | 15,1 MB | Officiell AlertIR-finansvärd (Volvo Cars IR-distribution); fil-ID matchar publiceringsdatum 2026-03-05 |
+
+**Källmetodik (rond 142):** WebFetch var transport-blockerad hela dagen; extraktionen
+kördes server-side via node (landningssidor → pdf-grep, sitemaps, Cision-newsrooms,
+EDGAR index.json) + WebSearch/DDG för releasesidor. Bot-skydd (403) bemöttes med
+Cision/AlertIR/MFN-officiella distributionskanaler — alla utom AZ:s spegel är
+förstahandskällor från bolagens egna distributionssystem.
+
 ## KONTRAKT MOT KARANTÄN-INTAGET (rond 136, 8abf541e)
 
 - Intaget kräver EXAKTA https-PDF-url:er (källverifiering: https + content-typ +

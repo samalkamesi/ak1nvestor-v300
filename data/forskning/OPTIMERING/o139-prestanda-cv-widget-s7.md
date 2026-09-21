@@ -127,7 +127,43 @@ STÄNGT (o27/o119/o121) — utanför denna vågs räckvidd, bokförs.
 
 ## §8 — EFTER-facit (fylls av vakarövertag)
 
-(väntar deploy)
+### Påbörjat 2026-09-21 14:4x–15:0x lokal — s7-u3 (manifest auto-s7-1790001325956): deploy spärrad, rot orsak kurad, verkställande förberett
+
+**Status: INTE SLUTFÖRT — deploy av e27ef394 hade ej skett vid vågslut;
+mätning är spökmätningsskyddad tills kanalbevis finns.** Kronologi:
+
+1. **Deploy-läge vid vågstart (14:35Z):** senaste DEPLOYAD 02:12:24Z
+   d401d719 — FÖRE kurcommitten e27ef394 (08:28 lokal). Tre efterföljande
+   byggförsök (08:20/08:30/08:40Z) OOM-dödade; .next = läkebackup utan
+   kurens CSS (grep "cv-widget" i .next/static/chunks/*.css = 0 — därför
+   mättes INTE: spökmät-skyddet, o139 §1:s kanalbevisdisciplin).
+2. **Rot orsak 1 — orphan-chrome, KURAD:** PID 139018 (headless Chrome,
+   --remote-debugging-port=9349) = u1/u3:s övergivna mätsond från 07:42
+   (o139 §1 nämner den "lämnad orörd"). Vid vågstart 9 h gammal, PPID=1
+   (orphan, ägandesession död), NOLL TCP-anslutningar på 9349 — men
+   prod-synkens RAM-vakt räknade den som "chrome-cron levande (+1024 MB
+   reserv)". Städad 14:46Z (kill → verifierat 0 chrome-processer,
+   +~1 GB låströskel). Detta var NÖDVÄNDIGT men EJ TILLRÄCKLIGT:
+3. **Rot orsak 2 — fabrikens egen omgång (struktur, ej fel):** med 2–3
+   parallella zcode-barn (~0,85 GB/st) kräver prod-synken 2200+1700 =
+   3900 MB tillgängligt; 14:47:25Z-pollen: 3069 MB ⇒ VÄNTAR-RAM kvar.
+   Deploy av e27ef394 kan ske först när omgången (start 14:35Z) avslutar
+   + nästa poll (var 10:e min) + ~7 min bygg ⇒ tidigast ~15:1xZ.
+4. **Verkställande redo (exakt, för nästa fönster):**
+   - bekräfta `DEPLOYAD` i data/vakten/prod-synk.log med e27ef394 som
+     förfader (`git merge-base --is-ancestor e27ef394 <deployad-hash>`);
+   - kanalbevis: `grep -l "cv-widget" .next/static/chunks/*.css` + curl
+     prod-CSS innehåller `.cv-widget-super`/`.cv-widget-kalk`;
+   - `node verktyg/prestanda-lighthouse.mjs o139-efter /superanalys
+     /kalkylator` (dom enligt §7: CLS 0 ×2, TBT /kalkylator ≤ ~450,
+     LCP ±15 %, poäng ±) + `LH_JAMFOR=o139-fore`;
+   - gränssnittsvakten `--bas=http://localhost:3000` 0 fynd;
+   - fyll facit ovan + worklog. Anspråk:
+     data/vakten/s7-o139-vakarotag-efter-u3-ansprak-2026-09-21.md.
+
+**Levererat denna våg:** bygglås-diagnostik + orphan-chrome-kur (prod-
+synkens spärr "+1024 chrome-cron" borta) + detta facit-underlag. §7:s
+mätdom SLUTSTÄNGS av nästa fönster ovan.
 
 ## LEVERANS (denna commit)
 

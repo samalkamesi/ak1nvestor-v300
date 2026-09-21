@@ -109,6 +109,44 @@ export function hamtaAppAlderMin() {
   } catch { return null; }
 }
 
+// BELASTNINGSGRINDEN (FYNN nr 4, 2026-09-21 06:44:23Z): åldergrinden täcker
+// KALL transport — men 06:44Z-signaturen bevisade att en VARM app (87 min
+// efter deploy 05:17) timeout:ar när SERVERN är mättad: /api/studio/* går
+// via transport-barnets RPC vars node-process svälvs när minnet tar slut
+// (fabrikens zcode-barn ~0,8–1,1 GB/styck + chrome-cron). Beviskedjan:
+// rot 200 + omtest dött + 1129–1351 MB tillgängligt (prod-synk.log 06:37/
+// 06:47) + 36/36 äkta 200 vid återmätning när barnet dog. Diagnos: MEDEL
+// "server mättad — transport-RPC svält", aldrig HÖG, när (a) MemAvailable
+// < MATTAD_MB eller (b) ≥ 2 zcode-barn (fabriksomgång). Hooken
+// AK1A_TEST_SERVERLAST bär JSON {"ramMB":…, "zcodeBarn":…} — ENDAST
+// eldprovet sätter den (cron-miljön bär den aldrig, samma doktrin som
+// AK1A_APP_ALDER_MIN).
+const MATTAD_MB = 1500;
+export function hamtaServerLast() {
+  const over = process.env.AK1A_TEST_SERVERLAST;
+  if (over) {
+    try { return JSON.parse(over); } catch { /* ogiltig hook — fall igenom på riktiga mätningen */ }
+  }
+  let ramMB = null;
+  try {
+    const m = fs.readFileSync("/proc/meminfo", "utf8").match(/^MemAvailable:\s+(\d+) kB/m);
+    if (m) ramMB = Math.round(Number(m[1]) / 1024);
+  } catch { /* null = omätbart */ }
+  let zcodeBarn = null;
+  try {
+    const rader = execFileSync("ps", ["-eo", "args="], { encoding: "utf8", timeout: 10_000 }).split("\n");
+    zcodeBarn = rader.filter((r) => r.includes(".zcode")).length;
+  } catch { /* null = omätbart */ }
+  return { ramMB, zcodeBarn };
+}
+export function arMattaServer(last) {
+  if (!last || typeof last !== "object") return { mattad: false, detalj: "last obestämbär" };
+  const delar = [];
+  if (typeof last.ramMB === "number" && last.ramMB < MATTAD_MB) delar.push(`${last.ramMB} MB tillgängligt (< ${MATTAD_MB})`);
+  if (typeof last.zcodeBarn === "number" && last.zcodeBarn >= 2) delar.push(`${last.zcodeBarn} zcode-barn (fabriksomgång)`);
+  return { mattad: delar.length > 0, detalj: delar.join(" + ") || "luftigt minne, ingen fabriksomgång" };
+}
+
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
 // Loopkärnan exporterad (o80, kraschvaktens planeraAtguard-mönster) — ren och
 // testbar via injicerade beroenden: kontroll(fil) kastar vid fel, sov()
@@ -267,6 +305,7 @@ export async function jagaApi(pass) {
   let fel = 0;
   const deploy = deployPagar();
   const alderMin = hamtaAppAlderMin();
+  const matta = arMattaServer(hamtaServerLast());
   // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
   // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
   let serverDodVidOmtest = false;
@@ -330,6 +369,13 @@ export async function jagaApi(pass) {
         const rotOK = await rotLev();
         if (!rotOK) {
           bokfor("F3-api", "MEDEL", `/${v} nätverksfel (rot nere — miljöfönster)`, `GET / svarar ej 200 inom 5 s: appen nere/kall (deploy-efterdyning · omstart · överlast) — ej API-specifikt, FYNN nr 2-vaccinet 2026-09-20; första felet: ${String(e).slice(0, 40)}`);
+        } else if (matta.mattad) {
+          // FYNN nr 4-BELASTNINGSGRINDEN: rot lever men servern är mättad —
+          // transport-barnets RPC svälvs under syskonlast (06:44Z-klassen).
+          // MEDEL utan omtest (20 s × 18 ändpunkter = 6 min onödig väntan på
+          // en redan dominerad miljödiagnos); dom-kön återmäter när lasten
+          // släppt — 06:44-fallet var 36/36 grönt ~10 min senare.
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (server mättad — transport-RPC svält)`, `${matta.detalj}: varm app${alderMin !== null ? ` (${Math.round(alderMin)} min)` : ""} men transport-barnet svälvs under syskonlast (06:44Z-klassen, FYNN nr 4-grinden 2026-09-21); första felet: ${String(e).slice(0, 40)} — dom: miljö, återmät när lasten släppt`);
         } else {
           const levde = await omtest(v);
           if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);

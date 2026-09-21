@@ -258,6 +258,22 @@
       "titel": "prestanda: natt-TBT-mätaren — o144 §5 / o139 §7.2:s enda öppna post (TBT /kalkylator ≤ ~450 domas endast i nattfönster, metrologiregeln o143 §3) — cron-bar mätare enligt o144-väntarmönstret",
       "ts": 1790032569659,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o153",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "kvalitetsvåg: EFTER-kvittering o146+o147+o148 + fullvals-svep — deployat bygge 496466f6",
+      "ts": 1790033929464,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o152",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790033719974",
+      "titel": "deploykvitto-vågen: fullvals-vaktsvep EFTER läkebytesbygget 23:35Z (o149 §restpost 3) — 0-förväntat i alla klasser; universumet växt 249→256 (7 AR-paket 09-21 kväll) och det datadrivna 256-talet verifieras SANT mot ledger+universum innan dom",
+      "ts": 1790034005872,
+      "status": "reserverat"
     }
   ]
 }

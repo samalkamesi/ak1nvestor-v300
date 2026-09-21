@@ -20,12 +20,36 @@
   "grahamSection": "Benjamin Graham definierade investeringens kärna som att priset understiger det beräknade värdet, och värdeberäkningens första villkor var att rörelsens förtjänstkraft är verklig — ekonomisk vinst är just förtjänstkraftens provenemang: intäkten som återstår när kapitalet fått sin marknadsränta. Hans margin of safety får här ett andra planet: avståndet mellan ROIC och WACC är själva säkerhetsmarginalens motor — en rörelse med bred spridning tål fall i marginal och hastighet innan värdet slår i kapitalbasen. Grahamsläsaren som diskonterar försiktigt kan läsa den ekonomiska vinsten som en årlig lågnivåkontroll av antagandet bakom varje diskontering: att rörelsen överhuvudtaget tjänar mer än sitt kapital kostar.",
   "ak1Section": "I AK1A:s metodik är kursen lönsamhetsgrenens bro till värderingsgrenen: roic-01 till roic-04 bygger kapitalets avkastning och vr-07 diskonterar framtiden — roic-05 ställer de två mot varandra i en enda subtraktion och gör skillnaden till kursens huvudperson. I AKM2-flödet matar spridningen scenarieviktningen: ett basscenario med negativ spridning och hög tillväxt värderas om som ett läge där expansionen själv är riskfaktorn, och Monte Carlo-driften får en ny utfallsvariabel — tecknet på EVA. Lärvägen: efter roic-04 läser eleven avkastningens historia, med roic-05 läser den avkastningens AVEL — vad den föder över sin egen kostnad — och närmaste grannar i djupled är km-008 (WACC:s viktning) och vr-07 (terminalvärdet som tar vid där värdebryggan slutar).",
   "chapters_list": [
-    { "num": 1, "title": "Två slags vinst — den synliga och den som återstår", "minutes": 4 },
-    { "num": 2, "title": "Kapitalhyran — WACC på det sysselsatta kapitalet", "minutes": 4 },
-    { "num": 3, "title": "Spridningen — ROIC minus WACC", "minutes": 4 },
-    { "num": 4, "title": "Tillväxtens två ansikten", "minutes": 4 },
-    { "num": 5, "title": "Värdebryggan — från ekonomisk vinst till företagsvärde", "minutes": 4 },
-    { "num": 6, "title": "Mätningens hantverk — justeringar och fällor", "minutes": 4 }
+    {
+      "num": 1,
+      "title": "Två slags vinst — den synliga och den som återstår",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Kapitalhyran — WACC på det sysselsatta kapitalet",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Spridningen — ROIC minus WACC",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Tillväxtens två ansikten",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Värdebryggan — från ekonomisk vinst till företagsvärde",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mätningens hantverk — justeringar och fällor",
+      "minutes": 4
+    }
   ],
   "chapters": [
     {
@@ -83,8 +107,8 @@
           "content": "SPRIDNINGENS ARITMETIK (PÅHITTADE TAL): Norrverk NOPAT 180 · kapital 1 500 · ROIC 12 procent · WACC 9 procent · spridning plus 3 procent · ekonomisk vinst 0,03 gånger 1 500 lika med 45 kronor · Sörverk NOPAT 105 · samma kapital · ROIC 7 procent · spridning minus 2 procent · ekonomisk vinst minus 30 kronor · Två vägar samma spridning: A marginal 15 procent gånger hastighet 0,8 lika med ROIC 12 procent · B marginal 6 procent gånger 2,0 lika med ROIC 12 procent · LÄSNING: spridningen är ROIC:s tecken genom WACC — procentenheten som avgör om kapitalmassan föder eller äter."
         },
         {
-          "type": "definition",
-          "content": "EVA-SPRIDNINGEN: ROIC minus WACC, multiplicerad med det investerade kapitalet — ekonomisk vinst i kronor. Positiv spridning: varje kapitalkrona föder värde över sin hyra. Negativ spridning: varje kapitalkrona äter av värdet, och (se kapitel 4) varje tillväxtprocent förvärrar det. Noll: rörelsen är en bank med extra steg — kapitalet bär exakt sin marknadsränta."
+          "type": "insight",
+          "content": "SPRIDNINGENS TVÅ TECKEN: ROIC minus WACC, multiplicerad med det investerade kapitalet, är den ekonomiska vinsten i kronor — samma 45 som subtraktionen gav. Positiv spridning: varje kapitalkrona föder värde över sin hyra. Negativ spridning: varje kapitalkrona äter av värdet, och (se kapitel 4) varje tillväxtprocent förvärrar det. Noll: rörelsen är en bank med extra steg — kapitalet bär exakt sin marknadsränta."
         }
       ]
     },
@@ -123,8 +147,8 @@
           "content": "VÄRDEBRYGGAN (PÅHITTADE TAL): Värde lika med kapital plus EVA gånger (1 plus g) delat med (WACC minus g) · Norrverk g 0: 1 500 plus 45 delat med 0,09 lika med 2 000 · Norrverk g 3 procent: 1 500 plus 45 gånger 1,03 delat med 0,06 lika med 2 272,5 · Sörverk g 3 procent: 1 500 minus 30 gånger 1,03 delat med 0,06 lika med 985 · Värdeförhållande mot kapital: 1,33 · 1,52 · 0,66 · Nämnarvakt: WACC minus g lika med 0,06 vid g 3 procent — nämnaren bär hela tillväxtantagandet · LÄSNING: värdet har en bankdel (kapitalet) och en rörelsedel (strömmen) — multipeln är deras förhållande, inte en gissning."
         },
         {
-          "type": "definition",
-          "content": "VÄRDEBRYGGAN: företagsvärde lika med investerat kapital plus ekonomisk vinst gånger (1 plus g) delat med (WACC minus g), där g är den långsiktiga tillväxten i ekonomisk vinst. Bankdelen är återvinningsbar (kapitalet), rörelsededelen är förtjänad (strömmen över hyran). Gäller evighetsantagandet bara en period används formeln med utgångsvärde och avslutande värde — bryggan bygger då på terminalvärde-logiken som vr-07 äger."
+          "type": "insight",
+          "content": "BANKEN ÅTERVINNS, ÖVERSKOTTET RÄKNAS: företagsvärde lika med investerat kapital plus ekonomisk vinst gånger (1 plus g) delat med (WACC minus g), där g är den långsiktiga tillväxten i ekonomisk vinst. Kapitaldelen är återvinningsbar — den sitter kvar i maskiner och lager och kan i princip säljas tillbaka — strömdelen är förtjänad. Gäller evighetsantagandet bara en period används formeln med utgångsvärde och avslutande värde — bryggan bygger då på terminalvärde-logiken som vr-07 äger. Läsningen: ett förvärv skapar värde för köparen först när det tillför positiv spridning — annars köper köparen tillbaka sina egna pengar."
         }
       ]
     },

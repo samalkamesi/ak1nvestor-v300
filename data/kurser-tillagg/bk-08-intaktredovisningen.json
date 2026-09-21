@@ -14,24 +14,48 @@
   "history": {
     "origin": "Frågan är äldre än dubbel bokföring: när är ett byte gjort? Köpmannen i Venedig redovisade skeppslaster som intäkt när varan bytte ägare vid kajen, inte när kontraktet skrevs i handelsboden — kontrollen, inte pappret, avgjorde. Byggherrarna på artonhundratalet som lät uppföra kanaler och järnvägar över år mötte samma fråga i större skala: en bro som är halvfärdig har redan förbrukat halva kontraktssumman i sten och arbete, och frågan om mellanstadierna fick sin första systematiska behandling i byggbranschens procent av fullbordande.",
     "evolution": "Tjugonde århundradet delade reglerna efter bransch: byggbolag redovisade över tid, tillverkare vid leverans, och mjukvarubolagen hamnade mellan stolarna när licensen såldes som vara och supporten som tjänst i ett och samma avtal. Splittringen mellan det amerikanska regelverket och IFRS:s varianter — samma paket kunde ge olika intäkt i olika böcker — tvingade fram konvergensprojektet som 2014 födde IFRS 15 och dess amerikanska tvilling, gemensamt byggda om fem steg: avtal, plikter, pris, allokering, tidpunkt. Tillämpning från 2018 och framåt.",
-    "modern": "Prenumerationsekonomins intäkt föds nu i avtalsbalansernas gränsland: mjukvarubolaget fakturerar årsavgiften i januari men får röra den tolfte per månad, och noten i årsredovisningen bär avtalstillgångar och avtalsskulder som blivit bokslutets mest lästa framtidstecken. Procentuella intäktsandlar per segment, netto mot brutto i marknadsplatsernas redovisning och resterande prestationsplikter (backlog) är i dag standardläsning — den som inte kan skilja fakturerat från presterat kan inte skilja momentum från skuld."
+    "modern": "Prenumerationsekonomins intäkt föds nu i avtalsbalansernas gränsland: mjukvarubolaget fakturerar årsavgiften i januari men får röra en tolftedel per månad, och noten i årsredovisningen bär avtalstillgångar och avtalsskulder som blivit bokslutets mest lästa framtidstecken. Procentuella intäktsandlar per segment, netto mot brutto i marknadsplatsernas redovisning och resterande prestationsplikter (backlog) är i dag standardläsning — den som inte kan skilja fakturerat från presterat kan inte skilja momentum från skuld."
   },
   "lynchSection": "Peter Lynch letade efter bolag vars resultat växer stadigt utan att publiken märkt det — och intäktredovisningen är exakt den rad där sådan tillväxt först visar sig eller först döljs. Lynchs varning för arrangemang i resultaträkningen får här sin mekanik: bolaget som fyller kanalen med fakturor före kvartalsbördan skapar intäkt i dag mot avtalsskuld i morgon, och den som läser avtalsbalanserna ser fyllningen innan den syns i marginalen. Omvänt är en växande avtalstillgång presterat arbete som kunden ännu inte fakturerats för — Lynchs stadiga växtare bär ofta just den posteringen. Kursen ger hans läsning av nota och not ett gemensamt språk: intäktens kvalitet avgörs inte på intäktsraden utan i balansräkningens avtalsposter.",
   "grahamSection": "Benjamin Graham krävde att underlaget vilar på redovisade fakta snarare än förväntningar — och intäktredovisningen är gränsen där fakta förklaras. Grahams förtroendekontroll, att ledningen inte sminkar siffrorna, börjar i tidpunkten: intäkt som redovisas före kontrollövergång är lån från framtiden, och hans princip om konservativ nedräkning av osäkra poster lever vidare i osäkerhetsvakten — leveransbonusen på 60 kronor syns inte i transaktionspriset förrän risken för återbetalning luckrats. För Grahamsläsaren är avtalsskulden ett mått på hur mycket av årets kassa som är nästa års intäkt, och därmed hur mycket av utdelningens underlag som är löfte snarare leverans.",
   "ak1Section": "I AK1A:s metodik stänger kursen bokföringsgrenens sista lucka mot tillväxtgrenen: tx-06 räknar enhetsekonomin per kund och km-006 läser kvartalsrapportens yta — bk-08 äger översättningen mellan dem, ögonblicket då kundens månadsbetalning blir en redovisad intäkt. I analysflödet kopplar kursen till AKM2:s intäktskvalitet: scenarierna viktas om när avtalsbalanserna byter tecken, och SAM-viktningens robusthetsfråga, vilka poster som bär antagandena, får svaret avtalsskuld kontra avtalstillgång. Lärvägen: efter bk-05 och bk-07 läser eleven hela balansräkningen — med bk-08 läses även rörelsen mellan raderna, och närmaste grannar i djupled är km-006 (notläsning) samt tx-06 (källan till de tal som kommer att redovisas).",
   "chapters_list": [
-    { "num": 1, "title": "Avtaret — intäktens födelseplats", "minutes": 4 },
-    { "num": 2, "title": "Prestationsplikterna — löftena som räknas", "minutes": 4 },
-    { "num": 3, "title": "Transaktionspriset — den väntade ersättningen", "minutes": 4 },
-    { "num": 4, "title": "Allokeringen — paketprisets tre vägar", "minutes": 4 },
-    { "num": 5, "title": "Tidpunkten — över tid eller vid tidpunkt", "minutes": 4 },
-    { "num": 6, "title": "Avtalsbalanserna — läsningen mellan raderna", "minutes": 4 }
+    {
+      "num": 1,
+      "title": "Avtalet — intäktens födelseplats",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Prestationsplikterna — löftena som räknas",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Transaktionspriset — den väntade ersättningen",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Allokeringen — paketprisets tre vägar",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Tidpunkten — över tid eller vid tidpunkt",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Avtalsbalanserna — läsningen mellan raderna",
+      "minutes": 4
+    }
   ],
   "chapters": [
     {
       "num": 1,
       "minutes": 4,
-      "title": "Avtaret — intäktens födelseplats",
+      "title": "Avtalet — intäktens födelseplats",
       "intro": "Intäktredovisningen börjar inte på intäktsraden utan i avtalet. Kursens genomgående exempel är påhittat och avsiktligt rent: ett bolag säljer ett paket — licens, implementering och två års support — för 900 kronor.",
       "blocks": [
         {
@@ -56,7 +80,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Licensen är distinkt — kunden kan köpa programmet och låta ett annat bolag installera det. Implementeringen är distinkt — marknaden betjänar installation åtskilt från licensen och kunden nyttjar den färdiga miljön på egen hand. Supporten är en serie: tolv återkommande månadslöften som är identifierbart samma tjänst, vilka enligt serieregeln räknas som EN prestationsplikt som löper över 24 månader. Tre plikter, tre rytmlägen: licensen en gång vid överlämnandet, implementeringen progressivt med arbetet, supporten jämnt över tiden. Gränsfallen bär pengarna: en licens med tidsbegränsad rätt är inte en licens vid tidpunkt utan ett löpande tillträde — intäkten flyttas från punkten till perioden, och omvärderingen mellan varaktig och kort rättighet är en av modellens vanligaste omklassningar."
+          "content": "Licensen är distinkt — kunden kan köpa programmet och låta ett annat bolag installera det. Implementeringen är distinkt — marknaden betjänar installation åtskilt från licensen och kunden nyttjar den färdiga miljön på egen hand. Supporten är en serie: tjugufyra återkommande månadslöften under två år, identifierbart samma tjänst med samma rytm, vilka enligt serieregeln räknas som EN prestationsplikt som löper över 24 månader. Tre plikter, tre rytmlägen: licensen en gång vid överlämnandet, implementeringen progressivt med arbetet, supporten jämnt över tiden. Gränsfallen bär pengarna: en licens med tidsbegränsad rätt är inte en licens vid tidpunkt utan ett löpande tillträde — intäkten flyttas från punkten till perioden, och omvärderingen mellan varaktig och kort rättighet är en av modellens vanligaste omklassningar."
         },
         {
           "type": "definition",
@@ -123,8 +147,8 @@
           "content": "FÖRSTA ÅRETS INTÄKT (PÅHITTADE TAL): Licens vid tidpunkt mars 540 · Implementering över tid: 400 av 1 000 kronor lika med 40 procent, 0,40 gånger 270 lika med 108 · Support 6 av 24 månader: 90 gånger 0,25 lika med 22,5 · Årets redovisade intäkt 540 plus 108 plus 22,5 lika med 670,5 · Kvarvarande prestationsplikter: implementering 270 minus 108 lika med 162 · support 90 minus 22,5 lika med 67,5 · backlog totalt 229,5 · LÄSNING: intäktsraden år ett är en punktavläsning av ett flerårsavtal — 229,5 kronor av paketet är kommande års intäkter, redan sålda."
         },
         {
-          "type": "definition",
-          "content": "FULLBORDANDEGRAD PER KOSTNADSANDEL: utförda kostnader delat med budgeterade totalkostnader — här 400 av 1 000 lika med 40 procent — förutsatt att kostnaderna avspeglar prestationens framsteg. Vakten: installationer, spill och stillastående perioder ingår varken i nämnaren eller täljaren; graden ska mäta levererat arbete, inte förbrukad peng."
+          "type": "insight",
+          "content": "FULLBORDANDEGRADENS VAKT: graden är utförda kostnader delat med budgeterade totalkostnader — här 400 av 1 000 lika med 40 procent — men enbart när kostnaderna avspeglar prestationens framsteg. Installationer, spill och stillastående perioder ingår varken i täljaren eller nämnaren: graden ska mäta levererat arbete, inte förbrukad peng. Ett bolag vars fullbordandegrad springer på utgifter utan motprestation redovisar mer intäkt i dag — och avslöjar samtidigt var gränsen mellan tillväxt och slöseri går."
         }
       ]
     },
@@ -136,11 +160,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Avtalsskulden är inte en skuld av sedvanligt slag: pengarna är mottagna eller fakturerade, prestationen återstår — den är en orderskörd betald i förskott. Avtalstillgången är spegeln: presterat arbete som ännu inte fått sin faktura, en fordran på intäkt som redan är förtjänad. I spegelfallet hade fakturan i stället varit 640 kronor — implementeringen dröjt till 100 — och 670,5 minus 640 lika med 30,5 hade varit en avtalstillgång. Huvudagent-frågan kompletterar: marknadsplatsen som säljer en tjänst för 100 kronor och behåller 20 redovisar intäkt 20 — den kontrollerar aldrig tjänsten, bara förmedlingen — medan säljaren redovisar 100. Samma omsättning, två olika intäktsrader, var och en sann för sin roll. Fällorna samlas i kapitlets slut: fakturera-och-håll (varan betald men kvar hos säljaren — kräver skäl, identifierbarhet och redo för överlämnande), kanalfyllning (sista veckans leveranser som är nästa kvartals returer) och momentumets tryck — var och en en variant av samma brott: kontroll som inte övergått, intäkt som ändå redovisats."
+          "content": "Avtalsskulden är inte en skuld av sedvanligt slag: pengarna är mottagna eller fakturerade, prestationen återstår — den är en orderskörd betald i förskott. Avtalstillgången är spegeln: presterat arbete som ännu inte fått sin faktura, en fordran på intäkt som redan är förtjänad. Exempelårets fakturor summerar 690 kronor — licensen 540 vid leveransen, en implementeringsmilesten 100 och supportabonnemanget 50 i förskott — och 690 minus 670,5 lika med 19,5 blir avtalsskulden: betald men opresterad del av backlogen. I spegelfallet hade fakturan i stället varit 640 kronor — implementeringen dröjt till 100 — och 670,5 minus 640 lika med 30,5 hade varit en avtalstillgång. Huvudagent-frågan kompletterar: marknadsplatsen som säljer en tjänst för 100 kronor och behåller 20 redovisar intäkt 20 — den kontrollerar aldrig tjänsten, bara förmedlingen — medan säljaren redovisar 100. Samma omsättning, två olika intäktsrader, var och en sann för sin roll. Fällorna samlas i kapitlets slut: fakturera-och-håll (varan betald men kvar hos säljaren — kräver skäl, identifierbarhet och redo för överlämnande), kanalfyllning (sista veckans leveranser som är nästa kvartals returer) och momentumets tryck — var och en en variant av samma brott: kontroll som inte övergått, intäkt som ändå redovisats."
         },
         {
           "type": "definition",
-          "content": "TVO POSTER, EN FRÅGA: AVTALSSKULD lika med fakturerat eller inbetalt över presterat (19,5 kronor i exempelåret) — betald backlog. AVTALSTILLGÅNG lika med presterat över fakturerat (30,5 kronor i spegelfallet) — ofakturerad fordran. Båda mäter avståndet mellan två klockor: prestationens och fakturans."
+          "content": "TVÅ POSTER, EN FRÅGA: AVTALSSKULD lika med fakturerat eller inbetalt över presterat (19,5 kronor i exempelåret) — betald backlog. AVTALSTILLGÅNG lika med presterat över fakturerat (30,5 kronor i spegelfallet) — ofakturerad fordran. Båda mäter avståndet mellan två klockor: prestationens och fakturans."
         },
         {
           "type": "utmaning",

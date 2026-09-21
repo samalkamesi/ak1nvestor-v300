@@ -98,6 +98,76 @@ for (const [namn, re] of Object.entries(lasor)) {
   }
 }
 
+// ── 5. Juridikgrind + R2 (värden, inte nycklar; \b på båda sidor) ─────────────
+console.log("═══ JURIDIK + R2");
+const reg = JSON.parse(readFileSync(ROT + "/public/deep-courses.json", "utf8"));
+const vardeText = (o, uteslutNyckel) => {
+  const ut = [];
+  const ga = (x, nyckel) => {
+    if (typeof x === "string") { if (nyckel !== uteslutNyckel) ut.push(x); return; }
+    if (Array.isArray(x)) { x.forEach((e) => ga(e, nyckel)); return; }
+    if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) ga(v, k);
+  };
+  ga(o, null);
+  return ut.join("\n");
+};
+for (const slug of MINA) {
+  const k = kurser[slug]; if (!k) continue;
+  const text = vardeText(k);
+  const textUtanSlug = vardeText(k, "slug");
+  ok(!/(du bör köp|du bör sälj|investera i denna|placera dina pengar i|rekommenderar att du köper|köp denna aktie|råder dig att)/i.test(text), slug + ": 0 rådsfraser");
+  ok(/utbildning i|pedagogisk/i.test(text), slug + ": utbildningsframing");
+  ok(/påhittat|pedagogiskt konstruerade/i.test(text), slug + ": PÅHITTADE-markör");
+  ok(!/\b(1[0-9]{3}|20[0-9]{2}):\d+\b/.test(text), slug + ": 0 lagrumsformat");
+  ok(!/\b(lagen|lagrum|balken)\b/i.test(textUtanSlug), slug + ": 0 lagrum");
+  ok(!/[\u201c\u201d\u2018\u2019«»]/.test(text), slug + ": 0 typografiska citat");
+  ok(!/\t/.test(text) && !/\u00ad/.test(text), slug + ": 0 tabbar/mjuka bindestreck");
+  ok(!/[a-zåäö]_[a-zåäö]/i.test(text), slug + ": 0 underscore-läcka");
+  // R2 — exakta pris-tal; «prenumeration» är kursämne och etablerat (30 kurser i registret)
+  ok(!/(kr\/mån|9 999|13 999|\b249\b|\b449\b|\b799\b)/.test(text), slug + ": R2 0 pris-tal");
+  ok(!/\b(kraverFas|Fas 2|Fas 3|tier)\b/.test(text), slug + ": R2 0 tier-/fasvägg");
+  ok(!/(publicera på|utgivning|lanserar i bloggen)/.test(text), slug + ": R2 0 publiceringslöfte");
+  // E8 — engelska funktionord med dokumenterad whitelist («not» = en not,
+  // «in» = partikel; «isär», måttord och boktitlar substitueras före test)
+  const rensad = textUtanSlug
+    .replace(/\bIFRS\b/g, "").replace(/\bEVA\b/g, "").replace(/\bNOPAT\b/g, "")
+    .replace(/\bWACC\b/g, "").replace(/\bROIC\b/g, "").replace(/\bbacklog\b/g, "")
+    .replace(/margin of safety/g, "").replace(/analysis-for-financial-management/g, "")
+    .replace(/expectations-investing/g, "").replace(/\bisär\b/g, "X");
+  const ENG = ["the", "and", "with", "from", "that", "this", "are", "of", "on", "by", "it", "as", "at", "or", "to", "be", "was", "for"];
+  const traffa = ENG.filter((w) => new RegExp("\\b" + w + "\\b", "g").test(rensad));
+  ok(traffa.length === 0, slug + ": 0 engelska funktionord (whitelist not/in dokumenterad)", traffa.length ? traffa.join(", ") : "ren");
+  // Korslänkar — varje serie-referens lever i registret
+  const seriePrefix = [...new Set(Object.keys(reg).filter((s) => /^[a-z]{1,5}-\d/.test(s)).map((s) => s.split("-")[0]))];
+  const reKors = new RegExp("\\b(" + seriePrefix.join("|") + ")-(\\d{2,3})\\b", "g");
+  const egenPrefix = slug.split("-").slice(0, 2).join("-");
+  const kort = [...new Set([...textUtanSlug.matchAll(reKors)].map((m) => m[1] + "-" + m[2]))].filter((x) => x !== egenPrefix);
+  const saknade = kort.filter((x) => !Object.keys(reg).some((s) => s === x || s.startsWith(x + "-")));
+  ok(saknade.length === 0, slug + ": korslänkar registeräkta (" + kort.length + " st)", saknade.length ? saknade.join(", ") : kort.join(" "));
+  ok(!!reg[slug] && JSON.stringify(reg[slug]) === JSON.stringify(kurser[slug]), slug + ": registret bär rättad text (efterleverans-läge)", "registerpost == källfil");
+}
+
+// ── 6. Blockkonvention + signaturtal (familj: kap 1-5 slutar insight; kap 6 bär utmaning) ──
+console.log("═══ BLOCKKONVENTION + SIGNATURTAL");
+for (const slug of MINA) {
+  const k = kurser[slug]; if (!k) continue;
+  const text = vardeText(k);
+  let konvention = true;
+  k.chapters.forEach((c, i) => {
+    if (c.blocks[0].type !== "text") konvention = false;
+    if (i < 5 && c.blocks[2].type !== "insight") konvention = false;
+    if (i === 5 && !c.blocks.some((b) => b.type === "utmaning")) konvention = false;
+  });
+  ok(konvention, slug + ": kap 1-5 = text först + insight sist; kap 6 bär utmaning");
+  const signatur = slug.startsWith("bk-08")
+    ? ["540", "270", "90", "960", "330", "108", "22,5", "670,5", "162", "67,5", "229,5", "690", "19,5", "30,5", "1 000"]
+    : ["180", "135", "45", "2 000", "2 272,5", "1 166,7", "985", "712,5", "9,0", "6,75", "4,50", "2,25", "46,35"];
+  const saknas = signatur.filter((t) => !text.includes(t));
+  ok(saknas.length === 0, slug + ": signaturtal närvarande (" + signatur.length + " st)", saknas.length ? "saknas: " + saknas.join(", ") : "alla");
+  const learnAntal = k.learn.split(" · ").length;
+  ok(learnAntal >= 7 && learnAntal <= 8, slug + ": learn 7-8 punkter", String(learnAntal));
+}
+
 console.log("────");
 console.log(`KVD-KONTROLL: ${PASS} PASS · ${FEL} FEL`);
 process.exit(FEL ? 1 : 0);

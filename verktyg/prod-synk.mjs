@@ -66,6 +66,11 @@ const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
 const LOGG = path.join(VAKT, "prod-synk.log");
 const MIN_RAM_MB = 2200;
+// V235 (BYGG×FABRIK-SEKVENSERING): aktiva fabriksmanifest skjuter upp
+// byggstarten — men ALDRIG i evighet (kedjande manifest skulle svälta
+// deployer i timmar). 30 min = 3 poller; därefter kör bygget med
+// ps-vaktens reserv (850 MB/zcode-barn) som fönsterskydd.
+const FABRIKS_VANTE_MAX_MIN = 30;
 
 function logga(rad) {
   fs.mkdirSync(VAKT, { recursive: true });
@@ -104,7 +109,12 @@ function ramTillgangligtMB() {
 // gränssnittsvaktens chrome-cron (~1 GB, 6-timmarscykeln kan landa mitt i
 // byggfönstret) + fabrikens zcode-barn. Deras NU-varande RSS är redan
 // borta ur MemAvailable — reserven täcker det de KAN komma att äta.
-const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 300 };
+// V235 (rond 130:s OOM-serie: 4 byggdöda 02:52–03:20Z med 3 levande
+// fabrikens barn ~1,1 GB styck): 300 MB/barn var kraftigt underskattad —
+// dokumenterad verklig kostnad ~0,8 GB/styck (zcode-cli ~400–470 MB +
+// node-repl-mcp ~390 MB, våg 146-mätningen). 850 MB = barnens påvisade
+// topp i nattens dödsrapporter.
+const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 850 };
 
 /** Klassificera `ps -eo args=`-rader → tunga processklasser (vaccin 3).
  * Smalhetsregeln (o55 F2-läxan — breda mönster deckar varje mätning medan
@@ -122,6 +132,37 @@ export function raknaTungaProcesser(argsRader) {
     else if (text.includes(".zcode")) klasser.zcodeBarn++;
   }
   return klasser;
+}
+
+/**
+ * V235 (BYGG×FABRIK-SEKVENSERING, rond 130:s systemfynd): räkna AKTIVA
+ * fabriksmanifest ur statuskatalogen. Kontrakt:
+ *   · status "klar" = manififest slutkörd ⇒ blockerar ALDRIG
+ *   · varje annan tolkbar status ("pågår", "vantar-ram", framtida okända)
+ *     räknas KONSERVATIVT som aktiv — vantar-ram betyder fabrik lever och
+ *     kan föda barn vid nästa rop; ett okänt tillstånd får aldrig missas
+ *   · ogiltig JSON-fil ignoreras (fail-open — fabriken äger sina filer)
+ *   · saknad katalog = fabriken vilar (0 aktiva)
+ * Testas av verktyg/testa-prod-synk-ramvakt.mjs (V235-blocket).
+ */
+export function lasAktivaFabriksManifest(statusKatalog) {
+  const ute = { aktiva: 0, ids: [] };
+  let filer;
+  try {
+    filer = fs.readdirSync(statusKatalog);
+  } catch {
+    return ute; // katalog saknas = fabriken vilar
+  }
+  for (const fil of filer) {
+    if (!fil.endsWith(".json")) continue;
+    try {
+      const j = JSON.parse(fs.readFileSync(path.join(statusKatalog, fil), "utf8"));
+      if (typeof j === "object" && j !== null && j.status === "klar") continue;
+      ute.aktiva++;
+      ute.ids.push(typeof j?.id === "string" ? j.id : fil);
+    } catch { /* ogiltig fil — fabriken äter sitt eget fel */ }
+  }
+  return ute;
 }
 
 /** Byggutrymmes-bedömning (vaccin 3): basbehovet = byggheap (MIN_RAM_MB,
@@ -972,6 +1013,38 @@ async function korSynk() {
       `VÄNTAR-RAM: ${ram} MB tillgängligt (< ${utrymme.behovMB} = ${MIN_RAM_MB} bygg + ${utrymme.reservMB} reserv; ${utrymme.detalj}) — bygger när minnet frigjorts; HEAD orört, nytt försök nästa poll`
     );
     return;
+  }
+
+  // 2b) V235 (BYGG×FABRIK-SEKVENSERING — rond 130:s rotfynd ur nattens
+  //     OOM-serie): fabrikens AKTIVA manifest ⇒ skjut upp byggstarten till
+  //     nästa poll — sekvens, aldrig kapplöpning mellan kundens två
+  //     pipelines (ps-vakten ser bara NU-varande barn; manifestet föder
+  //     NYA barn mitt i byggfönstret, det var exakt nattens dödsmekanik).
+  //     SVÄLTSTOPP: kedjande manifest (12 uppgifter = timmar) får ALDRIG
+  //     svälta deployer i evighet — efter FABRIKS_VANTE_MAX_MIN körs
+  //     bygget ändå, skyddat av ps-vaktens rättade reserv (850 MB/barn).
+  //     Väntespäret (första väntetillfället) lever i runtime-filen
+  //     .synk-fabriksvant och nollställs när fabriken vilar.
+  const fabriken = lasAktivaFabriksManifest(path.join(VAKT, "agentfabrik", "status"));
+  const fabrikVanteFil = path.join(VAKT, ".synk-fabriksvant");
+  if (fabriken.aktiva > 0) {
+    let vanteStart = 0;
+    try { vanteStart = Number(fs.readFileSync(fabrikVanteFil, "utf8").trim()) || 0; } catch { /* första väntetillfället */ }
+    if (!vanteStart) {
+      try { fs.writeFileSync(fabrikVanteFil, String(Date.now())); } catch { /* spåret är optimering, aldrig grind */ }
+      vanteStart = Date.now();
+    }
+    const vanteMin = Math.floor((Date.now() - vanteStart) / 60_000);
+    if (vanteMin < FABRIKS_VANTE_MAX_MIN) {
+      logga(
+        `VÄNTAR-FABRIK: ${fabriken.aktiva} aktivt/aktiva manifest (${fabriken.ids.slice(0, 2).join(", ")}) — sekvens, aldrig kapplöpning (V235); väntat ${vanteMin} av tak ${FABRIKS_VANTE_MAX_MIN} min; HEAD orört, nytt försök nästa poll`
+      );
+      return;
+    }
+    logga(`VÄNTAR-FABRIK tak passerat (${vanteMin} min hungrande deploy) — bygger NU med ps-reserven 850 MB/barn som fönsterskydd; fabriken: ${fabriken.aktiva} manifest`);
+    try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }
+  } else {
+    try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }
   }
 
   // 3) rent träd (data/vakten = runtime, orörd; data/cache = runtime-artefakter)

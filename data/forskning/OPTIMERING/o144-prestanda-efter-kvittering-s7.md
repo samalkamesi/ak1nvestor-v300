@@ -129,3 +129,49 @@ oredigerade) · spökmät-skyddet hålls tills §3 är grönt)
 7. Fyll §3-§6 + facit i o139 §8 / o143 §7 + worklog + commit
    `studio: auto s7-u2 o144 DEL 2 …` + LEVERANS-rad.
    ALDRIG: eget bygge, npx, --no-verify, R2-ytor.
+
+## §10 DEL 3 — verkställarväntaren (2026-09-21 16:45–16:5xZ, s7-u2 omstart = försök 3)
+
+Försök 2 underkändes av fabriken ENDAST formellt (kvitto-raden LEVERANS:
+saknades i utdatan — protokoll + kronologi var levererade i 47ef1125).
+Denna omstart (samma uppgiftsprompt, 16:45:29Z) fullföljer med den
+strukturella kur som §1c:s RAM-ekvation pekar ut:
+
+**KUR: verkställarväntaren.** Medvetet-rent-avslut (DEL 2) lämnade
+deployen utan ägare i fönstret EFTER att barnen frigjort minnet —
+någon måste passa DEPLOYAD och verkställa, men en väntande agent
+SPÄRRAR själv deployen. Lösning (o121-precedensen: nohup-mätkedja):
+
+- `verktyg/_s7u2o144-verkstall.mjs` — detached väntare (53 MB, PPID 1,
+  PID 539456, startad 16:53:57Z): pollar prod-synk.log var 45:e s (tak
+  3 h) efter DEPLOYAD-hash ≠ baseline d401d719, INGEN Chrome under
+  väntan (RAM-disciplinen); vid deploy kör den §9 steg 1-2-3-5 i exakt
+  ordning (kanalgrind → kor-o139 (täcker internt §9 steg 4:
+  LH_JAMFOR=o139-efter + geometri) → LH o144-efter1..5 /dataset →
+  funktion-o143) med RAM-vakt ≥ 1 500 MB före varje tungt steg (tak
+  15 min/väntan — aldrig kollidera med byggfönster/syskon) och
+  kedjeavbrott vid första exit ≠ 0 (spökmät-disciplinen: trasig kanal
+  mäts ALDRIG vidare). Låsfil + idempotensstatus.
+- `verktyg/_s7u2o144-starta.mjs` — enkel node-kanal som spawnar
+  detached (skal-kvotens sammansatta-kommando-fälla kringgås).
+- **Status (maskinläsbar för nästa våg):**
+  `lighthouse/verkstall-o144-status.json` (status/pågår|klar|avbruten|
+  timeout + per-steg exit/tid) · logg `/tmp/s7u2o144-verkstall.log`.
+- **Arvsredovisning i samma våg:** longtasksond-s7u2o118-*.json × 6
+  committade (696fadb1) — o118/o120-instansens outlösta
+  kvittolöfte ("committade summeringar är kvittot") infriat efter hand.
+
+**Fördelning av ansvaret kvarstår (§9 steg 7):** väntaren skriver
+ENDAST fakta (JSON/logg); protokoll-facit (§3-§6), o139 §8/o143 §7-
+utfyllnad, worklog och commit görs av NÄSTA LEVANDE VÅG som läser
+status-filen — bokföring från bakgrundsprocess är förbjuden (pre-commit-
+grind + kollisionsrisk med levande ytor). Steg 6 (vakten) lämnas åt
+cron-kadansen (RAM-disciplin; o143 §7.5:s manifest-404-kontroll täcks
+även av funktionstestets konsolfångst).
+
+**KVD DEL 3:** src/ orörd (tsc 0 projektbinär före commit) · INGET
+bygge (prod-synken äger; väntaren TRIGGAR inget — den läser) · R2 orörd
+· data/blogg/ orörd · syskonytor orörda (s8-u3:s pågående o149-diff i
+src/app/data/** + dataset-aspekter** lämnad ocker, organisatoriskt
+ospårad fil orörd, s8-u1:s testa-feljakt-deployfonster.mjs orörd) ·
+LEVERANS-rad avslutar utdatan (försök 2:s brist botad).

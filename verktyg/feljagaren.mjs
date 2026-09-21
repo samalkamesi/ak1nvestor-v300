@@ -309,6 +309,11 @@ export async function jagaApi(pass) {
   // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
   // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
   let serverDodVidOmtest = false;
+  // FYNN nr 5: klassificera undantaget — timeout/abort = transportsvält-signatur
+  const arTimeoutFel = (e) =>
+    String(e?.name || '') === 'TimeoutError' || String(e?.name || '') === 'AbortError' ||
+    /timeout|abort/i.test(String(e?.message || e));
+  let forstaFelTimeout = false;
   // FYNN nr 2-VACCINET 2026-09-20 (differentiell diagnos): nätverksfel FÅR
   // bokföras HÖG endast när appens ROT lever (GET / 200 inom 5 s). Beviset
   // som födde regeln: 14:59Z-jakten bokade HÖG "/andringar TimeoutError +
@@ -359,12 +364,19 @@ export async function jagaApi(pass) {
       }
     } catch (e) {
       fel++;
+      if (arTimeoutFel(e)) forstaFelTimeout = true;
       if (deploy) {
         bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
       } else if (alderMin !== null && alderMin < UPPVARMNING_MIN) {
         bokfor("F3-api", "MEDEL", `/${v} nätverksfel (efterdyning — appen ${Math.round(alderMin)} min gammal)`, `pm2-omstart < ${UPPVARMNING_MIN} min: kall transport under syskonlast (18:44Z-klassen, FYNN nr 3-grinden 2026-09-20); första felet: ${String(e).slice(0, 40)}`);
       } else if (serverDodVidOmtest) {
-        bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
+        if (forstaFelTimeout) {
+          // FYNN nr 5-utvidgning: kaskaden bär samma timeout-signatur som det
+          // första mätta offret ⇒ svältklassens syskon, MEDEL — aldrig HÖG.
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (kaskad i svältklass — ej egenmätt)`, `${String(e).slice(0, 60)} (första mätta felet var timeout-klassen med rot 200 — FYNN nr 5-grinden 2026-09-21)`);
+        } else {
+          bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
+        }
       } else {
         const rotOK = await rotLev();
         if (!rotOK) {
@@ -381,7 +393,18 @@ export async function jagaApi(pass) {
           if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
           else {
             serverDodVidOmtest = true;
-            bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades (rot LEVER — äkta API-fel, ej miljö)`);
+            const arTimeout = arTimeoutFel(e);
+            if (arTimeout) {
+              // FYNN nr 5-TIMEOUT-DOmen (2026-09-21): TimeoutError + rot LEVER +
+              // omtest dött = transport-svältklass OAVSETT last-mått. Beviset:
+              // 08:59:22Z — nr 4-grinden passerd (available 1 802 > 1 500,
+              // 1 zcode-barn < 2) men transport-RPC:n svalt ändå; klassens 5:e
+              // offer, samtliga med identisk signatur rot-200 + timeout.
+              // HÖG kräver icke-timeout-fel (refused/hangup = äkta API-död).
+              bokfor("F3-api", "MEDEL", `/${v} nätverksfel (transport-timeout vid levande rot — svältklass)`, `${String(e).slice(0, 60)} + omtest misslyckades men felklassen är timeout (08:59Z-klassen, FYNN nr 5-grinden 2026-09-21): rot 200 + timeout = svält, aldrig äkta API-död — dom: miljö, återmät när lasten släppt`);
+            } else {
+              bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades (rot LEVER — äkta API-fel, ej miljö)`);
+            }
           }
         }
       }

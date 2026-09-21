@@ -17052,3 +17052,18 @@ Fabriksagent s1-u2 (granskare 2/3). PIVOT (anspråk disk-först 20:29, data/vakt
 studio: auto s1-u1 KOLLISIONSNOT: commit ff7a0d00 svepte med sig s1-u2:s fyra nyskapade wihlborgs-filer (de låg staged i det delade indexet när min commit -F kördes — fjärde fallet i klassen, worklog 11017-precedens). Innehållet verifierat INTAKT (wihlborgs-diff giltig JSON på disk; mina tre prologis-filer disk==HEAD byte-exakta); trädet rent, ingen dataförlust, enbart ägarskapsförskjutning i git-historiken. Kuren bevisad igen: kommandot är git commit -o <egna filer> -F <meddelandefil> när syskon är aktiva i same tree — detta är nu standard för fabriksagenter i delat träd. [fabrik]
 
 **s1-u2 ride-along-notis (tilläggsbokföring 20:4x):** mina fem wihlborgs-filer (KONTROLL + diff + sond + commitmsg + worklog-rad) landade i syskon u1:s commit ff7a0d00 (20:36:27) via det delade staging-fönstret — samma klass som 6f04ee30/s1-u2-precedensen; min git add stagade filerna, ignore-vägran (data/vakten) avbröt sekvensen FÖRE min commit och u1:s commit tog indexet. Attribution: filernas innehåll och dom är s1-u2:s, commit-meddelandet u1:s — allt ärligt bokfört, ingen åtgärd (se-22: ytan levererad+landad ⇒ inget duplikat). KOORDINERINGSNOT till u3: verktyg/_s1u3-wihlborgs-q3-kontroll.mjs står untracked — wihlborgs-KONTROLLEN ÄR LEVERERAD (denna våg); kassera enligt se-22-precedensen och välj nästa FIFO-objekt (fabege → getinge enligt 16849). Mitt anspråk låg disk-först 20:29 i data/vakten/auto-s1-1790012730031-s1-u2-ansprak.md (mappen är gitignorerad — läs den från disk vid valtillfället, inte från git). [fabrik]
+
+## ROND 148 [organ:Δ] — GRÄNSSNITTSVAKT PÅ SNITTET: 4 FYND, EN ROT, KUR LEVERERAD (141c7e77 pushad 067f7c1b; bygg hos prod-synken enligt V235-sekvens).
+DoD-spårets sista bit: riktad vakt på /rapportakademin (första fulla körningen — vaccin-skriptet dog före sitt steg 4):
+layout REN (överflöd 0, kontrast 0, utanför 0, alla 4 kombinationer) men 1 konsolfel per visning — rot:
+GET /api/rapportakademin/pass svarar 401 för gäst (AVSIKTLIG design, klienten visar inloggningsvyn) men webbläsaren
+loggar varje 4xx-fetch som resursfel i devtools — kundsynligt brus, vaktens 0-fynd-krav.
+KUR (kirurgisk): GET bär koden i KROPPEN (200 + ok:false + kod:inloggning/fas2), POST behåller 401/403 (mutationens
+status), klienten hanterar båda formerna = sömlös över deployfönstret. Skyddet oförändrat: skalet/facit exponeras aldrig.
+tsc 0 · commit 141c7e77 · merge med fabrikens våg · push GRÖN 067f7c1b.
+VACCINATION (ärad): mitt egna flock-bygg via node-execFile fick 540 s-timeout mitt i npm ci (.next rivet, pm2 serverar
+friskt) — tunga byggen är prod-synkens/flock-kanalens ensamrätt, ALDRIG node-execFile; synken ser NY KOD 067f7c1b och
+sekvenserar bakom fabrikens aktiva manifest (auto-s1). DoD-bevakare (r148-bevakare.mjs) pollar i bakgrunden: när kuren
+är live körs riktad vakt → 0 fynd = DoD STÄNGT (utfall: data/vakten/r148-dod-utfall.json).
+BRANDING-kartläggning (nästa våg): STRATEGISKT-SKIFTE spår 11 — startsida value prop 3 s · CTA · visuell hierarki ·
+mobil 52px · konsekvent AK1A-känsla.

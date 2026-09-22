@@ -1,0 +1,34 @@
+{
+ "resultat": [
+  {
+   "svit": "testa-ai-mentor-historia.mjs",
+   "dom": "26 PASS · 0 FAIL",
+   "fel": null
+  },
+  {
+   "svit": "testa-ai-mentor-kapitalbindning.mjs",
+   "dom": "32 PASS · 0 FAIL",
+   "fel": null
+  },
+  {
+   "svit": "testa-ai-mentor-kategoristangning.mjs",
+   "dom": "80 PASS · 0 FAIL",
+   "fel": null
+  },
+  {
+   "svit": "testa-ai-mentor-warrant.mjs",
+   "dom": "38 PASS · 1 FAIL",
+   "fel": "Error: Command failed: node verktyg/testa-ai-mentor-warrant."
+  },
+  {
+   "svit": "testa-ai-mentor-multipel.mjs",
+   "dom": "73 PASS / 1 FAIL",
+   "fel": "Error: Command failed: node verktyg/testa-ai-mentor-multipel"
+  },
+  {
+   "svit": "testa-ai-mentor-kedja.mjs",
+   "dom": "314 PASS · 0 FAIL",
+   "fel": null
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "devKatalog": true,
+ "tscFel": [
+  ".next/dev/types/routes.d.ts(342,6): error TS1109: Expression expected.",
+  ".next/dev/types/routes.d.ts(343,4): error TS1109: Expression expected.",
+  ".next/dev/types/routes.d.ts(349,1): error TS1160: Unterminated template literal."
+ ],
+ "tscGron": false
+}

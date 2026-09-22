@@ -384,80 +384,67 @@ const GAMLA = [
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   const KOMPONENTER = [
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt", "svaraLokaltNasta",
-    "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    // R154-v3 (rond 154, huvudagenten [Φ]): HELA widgetkedjan i exakt ordning —
+    // 81 lager. v2:s regex tappade nakna "svaraLokalt" + siffersuffix (grinden
+    // fångade det: "okänd kedjekomponent"). Dokumentationsplikten (V219) full-
+    // följdas: arrayen speglar hela kedjan, som fönsterharmoniserarna jagade.
+    // Provenienskommentarer från V219/o24/o27/o31/v1/v2 bevaras nedan.
+    // R154-v2-normalisering (rond 154, huvudagenten [Φ]): arrayen omskriven till
+    // WIDGETENS exakta kedjeordning (mängden oförändrad) — v1:s infogning före
+    // marknadsrytm-ankaret gav fel ordning för tidigt hörande komponenter.
+    // Kommentarsproveniens nedan bevarad i ursprunglig ordning.
     // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
     // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
-    "svaraLokaltMarknadsmekanik",
-    "svaraLokaltPraktik", "svaraLokaltValutamekanik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
-    "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
-    "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
-    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
-
-    "svaraLokaltPortfoljbalans",
-    "svaraLokaltStabilitetsdjup",
-    "svaraLokaltGrahamgolv",
     // Omgång 14:s fönsterlager (disk-läge-presedensen): u2 varderjustering +
     // u1 optionsdjup + s6-u3 riskläsningsdjup — SIST av 27.
-    "svaraLokaltVarderjustering",
-    "svaraLokaltOptionsdjup",
-    "svaraLokaltRisklasningsdjup",
-    "svaraLokaltAvkastningskurva",
-    "svaraLokaltAvkastningsdjup",
-    "svaraLokaltVarderingsverktyg",
-      "svaraLokaltWarrant",
-    "svaraLokaltTidsaxel",
-    "svaraLokaltKapitalbindning",
-
     // Omgång 17:s fönsterlager (harmonisering enligt omgång 8-presedensen): u2 ekosystemdjup + u1 handelsdag + u3 portföljpraktik.
-    "svaraLokaltEkosystemdjup",
-    "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik",    "svaraLokaltSektorskola2",
-  // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
-  "svaraLokaltBeteendemekanik",
-  "svaraLokaltPeMekanik",
-  "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // Omgång 20 (2026-09-18): u3 beteendemekanik + u1 pe-mekanik + u2 överlevnadsdjup — svitharmonisering (dokumentationsplikten).
     // Omgång 22: bokmastar (s6-u3) — SIST av 47 (svitharmoniseringens dokumentationsplikt).
     // Omgång 22 (tredje instansen): faktordjup (s6-u1) — efter tillväxtdjup, före bokmastar.
-    "svaraLokaltFaktordjup",
-    "svaraLokaltBokmastar",
     // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
-    "svaraLokaltRiskbudget",
-    "svaraLokaltKonvertibel",
-  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
-  "svaraLokaltSektorlasning",
-  "svaraLokaltVardegrund",
-  "svaraLokaltRealekonomi",
-  // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
-  // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
-  // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
-  "svaraLokaltForsakring",
-  "svaraLokaltMoatdjup",
-  "svaraLokaltNyaTerritorier",
-
-  // Omgång 25-harmonisering (s6-u2, 2026-09-20): fönstrets tre nya komponenter i
-  // kedjeordning (u1 etfmekanik 59 · s6-u2 kontrahent 60 · u3 marknadsrytm 61).
-  "svaraLokaltEtfmekanik",
-  "svaraLokaltKontrahent",
-  // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
-  // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
-  "svaraLokaltMultipel",
-      // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
-      // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
-      // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
-      // — FÖRE marknadsrytm (deras SIST-deklaration).
-      "svaraLokaltRiskadress",
-      "svaraLokaltBalansdjup",
-      "svaraLokaltOptionshantverk",
-      "svaraLokaltPengarstid",
-  // V219-harmonisering (rond 114): pengarstid wireades i widgeten utan svitharmonisering
-  // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
-  "svaraLokaltVolatilitetsmekanik",
+    // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1 realekonomi — svitharmonisering (dokumentationsplikten).
+    // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+    // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+    // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+    // Omgång 25-harmonisering (s6-u2, 2026-09-20): fönstrets tre nya komponenter i
+    // kedjeordning (u1 etfmekanik 59 · s6-u2 kontrahent 60 · u3 marknadsrytm 61).
+    // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
+    // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
+    // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+    // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+    // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+    // — FÖRE marknadsrytm (deras SIST-deklaration).
+    // V219-harmonisering (rond 114): pengarstid wireades i widgeten utan svitharmonisering
+    // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
     // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
     // Fönster 31-harmonisering (s6-u3, _s6u3o31-): fönstrets tre nya komponenter i
     // widgetordning — u1 stålsektor (74:e) · u2 casepraktik (75:e) · u3 beteendefallor
     // (76:e) — FÖRE marknadsrytm (deras SIST-deklaration). Idempotent.
-    "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltMarknadsrytm",];
+    // komponenter wireades i widgeten utan full svitharmonisering (V219-läxan):
+    // kategoristangning (1ea8ccb8+932659c9) · banksektorn (a092db0e) · notlasning ·
+    // nykull · nyfodda · skuldordning · valideringsfonster — här i widgetordning.
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt",
+    "svaraLokaltNasta", "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    "svaraLokaltMarknadsmekanik", "svaraLokaltPraktik", "svaraLokaltValutamekanik", "svaraLokaltPortfoljgrund",
+    "svaraLokaltAgande", "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
+    "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup", "svaraLokaltBeteendedjup",
+    "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
+    "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup", "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering",
+    "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup", "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg", "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
+    "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2", "svaraLokaltBeteendemekanik",
+    "svaraLokaltPeMekanik", "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning",
+    "svaraLokaltTillvaxtdjup", "svaraLokaltFaktordjup", "svaraLokaltBokmastar", "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel", "svaraLokaltSektorlasning", "svaraLokaltVardegrund", "svaraLokaltRealekonomi",
+    "svaraLokaltForsakring", "svaraLokaltMoatdjup", "svaraLokaltNyaTerritorier", "svaraLokaltEtfmekanik",
+    "svaraLokaltKontrahent", "svaraLokaltMultipel", "svaraLokaltRiskadress", "svaraLokaltBalansdjup",
+    "svaraLokaltOptionshantverk", "svaraLokaltPengarstid", "svaraLokaltVolatilitetsmekanik", "svaraLokaltCoinvest",
+    "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
+    "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
+  ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
   if (kedjerader.length !== 1) FEL.push("hittade " + kedjerader.length + " kedjerader (väntat exakt 1)");

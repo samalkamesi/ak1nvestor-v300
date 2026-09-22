@@ -1,0 +1,251 @@
+{
+ "andrade": 41,
+ "rapport": [
+  {
+   "fil": "testa-ai-mentor-agande.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-avkastningskurva.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-avrakningsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-beteendedjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-beteendemekanik.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-bokmastar.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-djup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-ekosystemdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-faktordjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-forsakring.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-forvantningsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-grahamgolv.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-handelsdag.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-historia.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-kapitalbindning.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-koncernlasning.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-kreditdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-lonsamhetsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-optionsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-overlevnadsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-pe-mekanik.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljbalans.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljgrund.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljpraktik.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-realekonomi.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-redovisningsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-riskdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-risklasningsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-riskmattsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-riskpremie.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-sektordjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-sektorskola2.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-skattedjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-stabilitetsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-tidsaxel.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-utdelningsdjup.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-utdelningskalender.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-vardegrund.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-varderingsverktyg.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-varderjustering.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  },
+  {
+   "fil": "testa-ai-mentor-warrant.mjs",
+   "fran": 81,
+   "till": 81,
+   "tappade": 0
+  }
+ ]
+}

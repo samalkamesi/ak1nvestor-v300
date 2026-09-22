@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "objekt": "Investment AB Latour (LATO-B.ST) Q3-läspaket 2026",
+    "byggare": "s4-u2 manifest auto-s4-1790046905434",
+    "talbankFryst": "2026-09-22",
+    "kallorSokverifierade": "2026-09-22 (se kallor-blocket per tal)",
+    "universumfil": "data/portfolj-system/bolagsunivers.json",
+    "universumMd5": "6e540c8753d28f8b905a2aab9f15b29d",
+    "universumPoster": 256
+  },
+  "kalender": {
+    "rappdag": "2026-11-03",
+    "veckodag": "tisdag",
+    "tidpunkt": "08:00 CET",
+    "form": "mellanhavanderapport (interim report) januari–september 2026",
+    "datumklass": "bolagsbekräftad",
+    "kalla": "latour.se finansiella kalender (rad '2026-11-03 08:00 Interim report for the period January - September 2026', hämtad 2026-09-22) + årsbokslut 2025 (publicerat 2026-02-11: 'The interim report for January – September 2026 will be published on 3 November 2026') + Simply Wall St (Nov 03, 2026)",
+    "tidigare2026": { "q1": "2026-04-29", "h1": "2026-08-19" },
+    "nästa": { "arsbokslut2026": "2027-02-09 08:00", "q1_2027": "2027-04-29 08:00" },
+    "fjolarQ3": { "datum": "2025-11-04", "navVarderingsdag": "2025-11-03", "not": "fjolårets mellanhavanderapport publicerad 4 nov 2025 med NAV beräknad per 3 nov" }
+  },
+  "universum": {
+    "ticker": "LATO-B.ST",
+    "namn": "Investment AB Latour (publ)",
+    "bransch": "finans",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "hamtat": "2026-09-03",
+    "pris": 209.5,
+    "marknadsKapitalMdr": 133.937,
+    "tillvaxt": { "omsattningCAGR5ar": 0.0757, "resultatCAGR5ar": null, "omsattningTillvaxtTTM": 0.018, "prognosTillvaxt": null },
+    "lonksamhet": { "roe": 0.156, "roic": null, "bruttoMarginal": 0.3995, "ebitMarginal": 0.1284, "nettoMarginal": 0.2374, "fcfMarginal": 0.0925 },
+    "stabilitet": { "skuldEgenkapital": null, "rantaTackning": null },
+    "aterkop": { "insiderkopSenaste6man": 0 },
+    "vardering": { "pe": 20.519, "pb": 3.128, "evEbit": 39.769, "peg": null, "fcfYield": 0.0194 },
+    "serier": {
+      "ar": ["2022", "2023", "2024", "2025"],
+      "omsattningMkr": [22611, 25550, 25886, 28145],
+      "resultatMkr": [0, 0, 0, 0]
+    },
+    "kallnot": "Yahoo Finance quoteSummary (2026-09-03); MarketStack eod/latest SAKNADE färsk kurs — ingen dubbelkoll av pris/valuation (radens egen not), enkelkällat och öppet redovisat"
+  },
+  "gren": {
+    "namn": "finans",
+    "antalBolag": 37,
+    "medianer": { "pe": 14.28, "pb": 1.77, "evEbit": 15.296, "roe": 0.131, "peg": 1.22 },
+    "medianN": { "pe": 37, "pb": 37, "evEbit": 20, "roe": 37, "peg": 34 },
+    "latourRang": { "pe": "30 av 37", "pb": "32 av 37", "roe": "28 av 37" },
+    "kalla": "omräknad LIVE 2026-09-22 ur 256-postfilen (md5 6e540c87)"
+  },
+  "navTrappa": {
+    "perAktie": [
+      { "datum": "2024-12-31", "nav": 215, "kalla": "årsbokslut 2025 (start-of-year-talet)" },
+      { "datum": "2025-03-31", "nav": 213, "kalla": "Q1-25-rapporten (sökverifierad 2026-09-22)" },
+      { "datum": "2025-06-30", "nav": 207, "kalla": "H1-25-rapporten (sökverifierad 2026-09-22)" },
+      { "datum": "2025-09-30", "nav": 210, "kalla": "Q3-25-mellanhavanderapporten 2025-11-04 (NAV per 2025-11-03)" },
+      { "datum": "2025-12-31", "nav": 216, "kalla": "årsbokslut 2025 (2026-02-11)" },
+      { "datum": "2026-03-31", "nav": 203, "kalla": "Q1-26-rapporten 2026-04-29" },
+      { "datum": "2026-06-30", "nav": 203, "kalla": "H1-26-rapporten 2026-08-19" },
+      { "datum": "2026-08-18", "nav": 204, "kalla": "latour.se NAV-sida (senaste publicerade vid byggtid 2026-09-22)" }
+    ],
+    "totaltMkr": [
+      { "datum": "2024-12-31", "varde": 110061, "kalla": "årsbokslut 2025" },
+      { "datum": "2025-12-31", "varde": 123527, "kalla": "årsbokslut 2025" }
+    ],
+    "justeradForUtdelning2025": "+2,4 %",
+    "nav218per": { "datum": "2026-02-10", "nav": 218, "kalla": "årsbokslut 2025 (NAV per 10 februari 2026)" }
+  },
+  "kursCykeln": {
+    "okt2025": { "kurs": 234.2, "kalla": "oktober 2025 slutkurs (tredjepartsciterad 2026-09-22, 'hard-to-ignore premium valuation')" },
+    "arsskifte2026": { "kursCirka": 218, "not": " härled ur YTD-talet −5,6 % per 2026-09-18 vid kurs 206 (206/0,944 ≈ 218) — deklarerad härledning" },
+    "mars2026": { "händelse": "aktien handlade i RABATT mot NAV för första gången på åtta år", "kalla": "EFN/MarketScreener (sökverifierad 2026-09-22)" },
+    "halvarsskiftet": { "kurs": 193, "rabatt": "-4,93 %", "kalla": "H1-26-rapporten ('share price at quarter-end SEK 193, 5% discount')" },
+    "september": [
+      { "datum": "2026-09-03", "kurs": 209.5, "kalla": "universuminsamlingen" },
+      { "datum": "2026-09-18", "kurs": 206.0, "kalla": "Dagens industri-citerad (YTD −5,6 %)" },
+      { "datum": "2026-09-20", "kurs": 209.7, "kalla": "Stockopedia" },
+      { "datum": "2026-09-21", "kurs": 209.8, "kalla": "latour.se egen kursruta kl 17:29" }
+    ],
+    "borsvardeKallor": [
+      { "varde": 133.937, "enhet": "mdr kr", "kalla": "universumfält (Yahoo 2026-09-03)" },
+      { "varde": 134, "enhet": "mdr kr", "kalla": "latour.se ('Market value SEK 134 billion', 2026-09-22)" },
+      { "varde": 131.807, "enhet": "mdr kr", "kalla": "Avanza börsvärde (sökverifierat 2026-09-22)" }
+    ],
+    "totalavkastning2025": { "aktien": "-16,9 %", "sixrx": "+12,7 %", "kalla": "årsbokslut 2025" },
+    "q1_2026": { "aktien": "-10,8 %", "sixrx": "-1,2 %", "kalla": "Q1-26-rapporten" }
+  },
+  "premieKedja": {
+    "okt2025": { "kurs": 234.2, "nav": 210, "premie": "+11,5 %", "navDatum": "2025-09-30" },
+    "arsskiftet2026": { "kurs": 218, "nav": 216, "premie": "+1,0 %", "not": "kursen härledd (YTD), NAV officiellt" },
+    "halvaret2026": { "kurs": 193, "nav": 203, "premie": "-4,9 %", "navDatum": "2026-06-30" },
+    "september2026": { "kurs": 209.5, "nav": 203, "premie": "+3,2 %", "navDatum": "2026-06-30", "not": "även 209,8/204 = +2,8 % mot 18/8-NAV" }
+  },
+  "balansVarden": {
+    "ifrsEkImplicit": { "varde": 42819, "enhet": "Mkr", "not": "= mcap-fältet 133 937 ÷ P/B-fältet 3,128 — deklarerad härledning" },
+    "substans2025": 123527,
+    "substansMotIfrs": "2,88×",
+    "kursPerNav": { "mot203": 1.032, "mot204": 1.0284 },
+    "aktieantalImplicit": { "urNav": 571.9, "not": "= 123 527 ÷ 216 — deklarerad härledning", "urYahoo": 639.4, "not2": "= 133 937 ÷ 209,5 — källornas aktieantalsbegrepp går isär (11,8 % gap), paketet härleder aldrig aktieantal ur enkällat mcap utan redovisar spannet öppet" }
+  },
+  "kvartalKoncern": {
+    "nettoomsattningMkr": {
+      "q1_25": 6884, "q2_25": 7096, "q3_25": 6750, "q4_25": 7415, "q1_26": 6735, "q2_26": 7226,
+      "h1_25": 13980, "h1_26": 13961, "janSep25": 20730, "janSep24": 18871, "fy25": 28145
+    },
+    "resultatEfterFinMkr": {
+      "q1_25": 946, "q2_25": 1598, "q3_25": 1222, "q1_26": 567, "q2_26": 3857, "h1_25": 2544, "h1_26": 4424, "janSep25": 3766
+    },
+    "harledningar": {
+      "q2_25_oms": "13 980 − 6 884 = 7 096", "q2_26_oms": "13 961 − 6 735 = 7 226 (+1,8 % YoY)",
+      "q2_25_res": "2 544 − 946 = 1 598", "q2_26_res": "4 424 − 567 = 3 857 (+141 % YoY)",
+      "q3_25_oms": "20 730 − 13 980 = 6 750", "q4_25_oms": "28 145 − 20 730 = 7 415",
+      "q3_25_res": "3 766 − 2 544 = 1 222"
+    },
+    "kalla": "Q1-26 (2026-04-29): omsättning 6 735 (6 884), resultat efter finansiella poster 567 (946), organisk orderintag +5 %, nettoomsättning +4 % organiskt, valuta −6 %. H1-26 (2026-08-19): nettoomsättning 13 961 (13 980), resultat efter finansiella poster 4 424 (2 544), nettoomsättning före valutaeffekter. Q3-25 (2025-11-04): nettoomsättning jan–sep 20 730 (18 871), resultat efter finansiella poster 3 766. FY25 ur universumserien 28 145."
+  },
+  "balansBelåning": {
+    "nettoskuldMkr": { "arsskifte2025": 16751, "q1_2026": 15300, "q2_2026": 13929, "q2_2026_exklLease": 12281 },
+    "q2Py": 18521,
+    "kalla": "årsbokslut 2025 (16 751); Q1-26 (15,3 mdr); H1-26 (13 929 mot 18 521 py; exkl IFRS 16-leasing 12 281 ≈ '9 % av investeringsvärdet' enligt Quartr-sammanfattning)",
+    "fitch": { "betyg": "A", " outlook": "stabilt", "ltv": "14 % per 2026-06-30 (oförändrat mot 2025-06-30)", "portfoljUtdelningar2026": "1,8 mdr kr (+10 % mot 2025)", "kalla": "Fitch Ratings, sökverifierat 2026-09-22" }
+  },
+  "portfolj": {
+    "noteradVardenMdr": { "q2_2026": 74, "q2_2025": 84 },
+    "noteradeBolag": ["Alimak Group", "ASSA ABLOY", "CTEK", "Fagerhult Group", "HMS Networks", "Nederman", "Securitas", "Sweco", "TOMRA", "Troax"],
+    "aktieantal": { "ASSA ABLOY": "97 828 305", "Fagerhult Group": "84 708 480", "HMS Networks": "13 014 532", "TOMRA": "62 420 000", "CTEK": "24 706 950", "Securitas": "A 19,9 M + B 42,6 M" },
+    "heltAgda": ["Bemsiq", "Caljan", "Hultafors Group", "Innovalift", "Nord-Lock Group", "Swegon", "Latour Industries"],
+    "delagda": ["Oxeon"],
+    "forandring2026": [
+      { "händelse": "ASSA ABLOY-försäljning: 7,6 M B-aktier för 2,5 mdr kr (maj 2026)", "kalla": "Fitch Ratings" },
+      { "händelse": "partiell avyttring av Securitas B-aktier övervägdes (maj 2026)", "kalla": "sökverifierat 2026-09-22" },
+      { "händelse": "förvärv av LaminAir (Schweiz) — 2026-06-23", "kalla": "latour.se pressrum" }
+    ],
+    "avkastning": { "q1_26": "-9,0 % mot SIXRX -1,2 %", "h1_26": "-8,8 % (utdelningsjusterat)", "ar2025_sixrx": "+12,7 %" },
+    "kalla": "latour.se investment portfolio (aktieantal per innehav, hämtad 2026-09-22); H1-26-rapporten (värde 74 mdr mot 84 mdr vid 2025-06-30; -8,8 % under H1)"
+  },
+  "utdelning": {
+    "2026": 5.10, "2025": 4.60,
+    "utbetalningsdag": "2026-05-19",
+    "höjning": "+10,9 %",
+    "arsUtdelningMkr": 2917,
+    "not": "5,10 × 571,9 M aktier = 2 917 Mkr — deklarerad härledning på implicit aktieantal",
+    "direktavkastning": { "paKurs20980": "2,43 %", "paNav216": "2,36 %", "paNav203": "2,51 %" },
+    "täckning": { "portfoljutdelningar": "1,8 mdr = 62 % av 2,92", "assaRealisation": "2,5 mdr = 86 % av årsutdelningen" },
+    "kalla": "årsbokslut 2025 (styrelsens förslag 5,10 mot 4,60; utdelningsdag 19 maj 2026); Fitch (portföljutdelningar 1,8 mdr 2026)"
+  },
+  "ovningar": {
+    "a_premie": { "premieMot204": "+2,8 %", "kursfallTillParitet": "-2,8 %", "navStegTillParitet": "+2,9 % (204 → 209,8)", "lagAr": "täljarskalningen: en procent kurs = en procent premie; NAV-steg x % minskar premien x % vid oförändrad kurs (närskatt vid låg premie)" },
+    "b_dampning": { "viktNoterat": "74/123,5 = 59,9 %", "portfoljH1": "-8,8 %", "navFall": "-6,0 % (216 → 203)", "implicerat": "-8,8 % × 0,599 = -5,3 % — resten är den onoterade sidans tröghet, realisationer och nettoskuldminskning; Q3-25-mätningen togs per 3 nov 2025 (värderingsdag = rappdagen)" },
+    "c_utdelning": { "ekvation": "5,10 × 571,9 M = 2,92 mdr; portföljutdelningar 1,8 mdr täcker 62 %; ASSA-realisationen 2,5 mdr = 86 %", "lagAr": "utdelningen ur substansen: 5,10/216 = 2,36 % — substansen betalar räntan på sig själv" }
+  },
+  "signaturnummer": [
+    "ÅTTAÅRS-PREMIENS VÄNDBANA: oktober 2025 +11,5 % premie (kurs 234,20 mot NAV 210) → årsskiftet +1,0 % → mars 2026 RABATT (första på åtta år) → 30 juni -4,9 % (193 mot 203) → september +3,2 % (209,5 mot 203) — premien som egen prisserie, ±15 pp på ett år utan att portföljen bytt karaktär",
+    "BALANSRÄKNINGENS TRE VÄRLDAR: IFRS-bokfört eget kapital ≈ 42,8 mdr (mcap ÷ P/B-fältet 3,128) mot substansvärde 123,5 mdr (2,88×) mot börsvärde ≈ 134 mdr — P/B-fältet är INTE substansläsningen (kurs/NAV = 1,03); nämnarens innehåll är hela läxan (Investor-paketets spegel med omvänt tecken)",
+    "BELÅNINGSTRAPPAN MED REALISATIONSBRÄNSLET: nettoskuld 16 751 → 15 300 → 13 929 Mkr under 2026:s första halvår (exkl IFRS 16: 12 281 ≈ 9 % av investeringsvärdet) medan ASSA-försäljningen (2,5 mdr) och portföljutdelningarna (1,8 mdr enligt Fitch) matar kassan — belåningsgrammatiken är investmentbolagets egen stabilitetsläsning, skuld/EK-fältet är null av samma skäl"
+  ],
+  "premieAntikstall": {
+    "okt2025_pct": 11.52, "arsskifte_pct": 1.02, "halvar_pct": -4.93, "sept_pct": 3.2, "septMot204_pct": 2.84
+  }
+}

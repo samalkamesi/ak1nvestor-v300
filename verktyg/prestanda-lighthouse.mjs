@@ -44,7 +44,13 @@ function korLighthouse(sokvag) {
     "--yes", "lighthouse", url,
     "--output=json", "--output-path=stdout",
     "--form-factor=mobile",
-    "--chrome-flags=--headless=new --no-sandbox --disable-dev-shm-usage",
+    // o152-instrumentkontrakt: --disable-extensions låses explicit — chrome-
+    // launcher 1.2.1 ger den via defaults, men npx --yes är versionflytande
+    // och servern bär två systemtillägg (Docs Offline ghbmnnjooekpmoecnnnilnnbdlolhkhi
+    // + Web-Store-Payments nmmhkkegccagdldgiimedpiccmgmieda) som attribuerar
+    // i longtasks (~200–330 ms) när rå Chrome startas utan flaggan (o143 §3,
+    // o152 pelare D). Idempotent med dagens default = noll mätförändring.
+    "--chrome-flags=--headless=new --no-sandbox --disable-dev-shm-usage --disable-extensions",
     "--max-wait-for-load=60000",
     "--quiet",
   ];

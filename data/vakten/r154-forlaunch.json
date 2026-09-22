@@ -1,0 +1,33 @@
+{
+ "lopandeSvep": [],
+ "r117-fullsvep5.log": {
+  "rader": 176,
+  "forsta": "FULLSVEP R117-A5 START 2026-09-20T13:18:10.446Z (V228-checkpointad)",
+  "sista2": [
+   "  väntar-ram: 1474 MB < 3000 MB (fabriksbarn/chrome?) — 60 s …",
+   "  väntar-ram: 1429 MB < 3000 MB (fabriksbarn/chrome?) — 60 s …"
+  ]
+ },
+ "v224-fullsvep.log": {
+  "rader": 163,
+  "forsta": "[v224] fullsvep attempt 4 — TUNG-startkrav 3 GB + enstrecksvakt — start 2026-09-20T11:23:1",
+  "sista2": [
+   "  [PROD-NÄRA] testa-tradspermanens.mjs … RÖD (9 s) — PASS  5. V215-payload-tak: kartan tun",
+   "  [TUNG-TILLSTÅND] testa-styrelse.mjs …"
+  ]
+ },
+ "senasteRapport": {
+  "genererad": "2026-09-20T13:39:41.337Z",
+  "grona": 1,
+  "roda": 0,
+  "omatta": 0
+ },
+ "ramMB": 5631,
+ "startkrav": "UPPFYLLT (≥3000 MB TUNG)",
+ "aggregatorFiler": [
+  "testaggregator-SENASTE.json",
+  "testaggregator-SENASTE.md",
+  "testaggregator-korning.log",
+  "testaggregator-start.json"
+ ]
+}

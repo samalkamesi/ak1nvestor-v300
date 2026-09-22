@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-21)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-22)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -2729,7 +2729,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 9 | ÅTTONDE passningen 09-21 (s9-u1 omkörning, E35-val efter att E39 levererats av instans 1): o149:s auth-401-klassning MÄTT LEVANDE — svit 24/24 EGEN + EFTER-rapport 0 fynd/4 komb med forvantade401 öppet bokförd (/studio:s eviga falsklarm dött) · skalfri-vakten FÖRDOUBLAD 877/0/393 @03:06Z (+79 % volym, egen läsning) · motorregister 105/105/0 stabilt dag 2 EGEN · cronsvep /rapportakademin 0 fynd · motorvalidering 107/0/0 (s7-protokollet, ej ommätt — worktreefilen syskonaktiv); KVAR: helsvepsbeviset (SENASTE-rapporten borta, 181 testverktyg på disk), aggregatorns KÖRBEVIS (kontraktssviten finns), 0712-NOLLMÄTNINGEN i vilddata (ok + tomma kombinationer — rond 135:s nedfallskod ifrågasatt), fullvals-vaktsvep + hela vakten grön väntar grönt bygge (prod-synk VÄNTAR-RAM sedan 15:47Z, BUILD_ID < o149 < HEAD) |
 | E36 | Mediebiblioteket | Grund | LEVER | 8 | 09-20 (s9-u2): v207-läkningen BEVISAD (446 bilder × 446 kurser = 0 saknade/överblivna, pc-21 200 live) MEN registret 446→458 ⇒ 12 nya kurser 404:ar live (rk-16: kurs 200/bild 404, klassen DAG 1); ROTEN: OG manuellt (0 kopplingar i deploy ELLER prod-synk) = gap 1 skärpt till PROCESSGAP — kursvåg utan rerun återskapar gapet; media_fil antal=0 nattlig 09-20; OG-hook i deploy = KÖ (byggklass); bucket-förteckningen fortfarande utan backup |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | 09-21 (s9-u3): TREDJE serien o118–o130 — SEX kurer i träd: i PROD (LDVlDGu2, egen BUILD_ID-mätning) o118+o119+o123 med EFTER-bevis (sonder 69→3/23→0 · vakten 0/154), VÄNTAR DEPLOY o126+o127 KASKADKUR (`.flex>*`-regeln i @layer base globals.css:617–625 — olagrad regel neutraliserade ALLA Tailwind min-w-utilities projektvidt, 46 användningar; o123:s pill-fix var verkningslös av konstruktion) + o128 tummar 16→52 + o129 CV-kalibrering (proxy-EFTER −84 %); deployen slogs av bygg-OOM ×3 + pm2-loop → 502 22:29 → läke-återställning 22:31Z (prod 200); äkta EFTER (o131 §4/o132 §6) = öppet vakarövertag; dessförinnan: reservationssystemet o89–o97 (desktop Σspan 98,4 % · mobil 99,3 % · LH /kurser P94); kvar: SPEGEL-POP-IN öppen i prod tills o129 deployas, o63-köposten, 2 designbeslut, 0 egna sviter, sökindex-cadans |
-| **E39** | Rapportakademin — det vertikala snittet (övningsverkstan) | Utbildning | **PÅGÅR** | 6 | NY RAD 09-21 (s9-u1, manifest auto-s9-1790009126349): ~1 816 r fött 09-20/21 ur kundorder (f5a9ac2f + ea754110); GDPR-kedjan HÅRDKODAD i intaget (minimerings-NEK 400 · art13-tvång 409 · export/radera med lagrumskvitto — unikt i kodbasen) + serverhemliga facit (passSkal strippar allt; experten exponeras ENDA efter lyckad lagring, 502 ⇒ tystnad); huvud-API:t LEVER i prod (405/401 uppmätta) medan SIDAN+PASSET VÄNTAR DEPLOY (404 egen sond — ea754110 ej i d401d719; VÄNTAR-RAM + OOM-klassen); GAP: gallringen ODRIVEN (gallraUpphordaElever + skrivPrenumerationsStatus = 0 anropare, grep-bevis — BESLUT 1.2:s AUTOMATISKA raderingslöfte saknar drivare OCH statusmatare) · 0 egna sviter · citat-validatorn vilande (0 konsumenter) · registret singelton (ABB-passet) |
+| **E39** | Rapportakademin — det vertikala snittet (övningsverkstan) | Utbildning | **LEVER** | 6 | 09-22 (s9-u1): DEPLOY-SKULDEN STÄNGD — sidan **200 (69 003 B)** + GET pass **200+`kod:"inloggning"`-kropp** (rond 148-kontraktet lever: GET-skalet 200+kod för gäst/fas1 i stället för 401/403 som webbläsaren loggar som resursfel — vaktens 4 fynd döda, mutationerna behåller 401/403, skalet exponeras aldrig) + POST 401 + riktat vaktsvep **0/4 EFTER deploy** (23:48:20 lokal) + sitemap-inbjudan släppt (1 URL — byggdSidaFinns-grindens ANDRA mätning grön); GDPR-kedjan hårdkodad i intaget (minimerings-NEK 400 · art13-tvång 409 · export/radera med lagrumskvitto — unikt i kodbasen) + serverhemliga facit; GAP kvar: gallringen ODRIVEN (0 anropare ÅTERMÄTT 09-22 — BESLUT 1.2:s AUTOMATISKA raderingslöfte utan drivare, E29:s cron-pipeline = naturlig hemvist) · 0 egna sviter (fem kontrakt overifierade) · citat-validatorn vilande · registret singelton (abb-ar-2025) |
 | **E40** | Rapportbyggaren — redovisningsverkstan (/rapporter) | Utbildning | **LEVER** | 6 | NY RAD 09-21 (s9-u2-omkörning): publik redovisningsverkstad FÖDD 09-02/05 (4d5f2457 + 6fa944e6) men ALDRIG kartradad av K1 — 0 träffar i hela kartan (grep-bevis); elevens analysbank (localStorage ak1a-analysbank-v1, kap 50) → formatterad utskriftsbar rapport: marin omslagsband + nivå-badge, superanalys-nyckeltal (totalpoäng/band/kategorisnitt + AK1TS-vågor per horisont), "Metodiken bakom", MAL-LÅST disclaimer (byggDisclaimerRader — maskinellt bevisad i validera-motorer, delad med PRO) + PRINT-CSS-isolering; PRO-delning /pro/rapporter (Rapportverkstan, 3 mallar, TenantHeader, b2bAktiv-grind); loopback 200 båda · meny nav.rapporter ✓ · sitemap ✓ (0,7/0,8) · vakten ✓ (sitemap-upplösning); GAP: sparaIAnalysbank() 0 anropare (grep) — konfluens/netnet/vågfundament når ALDRIG banken (3/4 verktyper döda vägar; enda gödning = superanalys-liveimporten) · 0 poster i sok-index (osynlig i palett/sök — verktygssidor som klass) · 0 egna sviter |
 | **E41** | Longtask-sonden — prestandadiagnostikens spårkraftslinje | Grund | **LEVER** | 6 | NY RAD 09-21 (s9-u2-omkörning): CDP-instrumentet som rotförklarade /en/blogg-TBT-anomalin — 0 träffar i kartan (grep "longtask"; TBT-värdena lever i E37:s rader men instrumentet saknades); rå CDP (Node 22-WebSocket) med Lighthouse-klass emulation (412×823 · CPU 4x · Slow-4G) + v8.cpu-profiler ⇒ longtask > 50 ms med chunk-attribution + TBT-spektrum Σ(dur−50) i FCP→FCP+5 s; 15 trackade bevis-JSON (7–47 KB) i OPTIMERING/lighthouse + protokollkedja o110 (upptäckt: identisk script-last, TBT ~1 100/330/440) → o118/o120 (anomalin rotförklarad, widget-hypotesen AVFÖRD) → o139 (cv-widget-kur par-bevisad: 1 437 mot kontroll 1 708) → o144 (EFTER-kvittering; detached verkställarväntare LEVER, 4fd87589); GAP: verktyget ARKIVERAT i skrap-arkiv (engångsverktyg — återaktivering = lyft ur arkivet) · 0 egna sviter · kvittokedjan visad skör (o118-kvittot först dagen efter, 696fadb1) |
 
@@ -3468,6 +3468,56 @@ Supabase endast LÄST (read-only REST, Mimosa-mönstret: loadEnvFile,
 nycklar aldrig loggade) · R2 orörd · data/blogg/ orörd · syskonytor
 orörda (u2-omkörningens pågående E40/E41-arbete + instans 1:s B7/B9/E32
 + u1:s E39/E35 endast lästa). [fabrik]
+
+## UPPDATERING 2026-09-22 (dokvåg s9-u1, manifest auto-s9-1790036120123 — E39 Rapportakademin återdiffad: DEPLOY-SKULDEN STÄNGD, huvudytan live med EFTER-bevis; gallringsgapet kvar)
+
+Fabriksagent s9-u1 (byggare 1/3). VAL (anspråk disk-först ~00:2x lokal,
+data/vakten/auto-s9-1790036120123-s9-u1-ansprak-e39.md FÖRE all mätning;
+syskonen u2/u3 utan anspråk vid skrivandet): E39 — yngsta raden i kartan
+men störst händelser EFTER sin passning: gröna bygget deployat 22:28:54Z
+09-21 + kunduppdraget RAPPORTAKADEMIN stängt (rond 153, 01:50 lokal 09-22)
++ rond 148:s vaktkur landad 20:45 — radens "PÅGÅR (sidan 404, väntar
+deploy)" var moget att motbevisa. Allt EGENMÄTT 09-22 ~00:2x–00:4x lokal
+(HTTPS-sonder, JSON-rapportläsning, grep, git-log, wc) — aldrig
+worklog-läsning.
+
+| Mått | Kartan 09-21 | Verkligheten 2026-09-22 (mätning) |
+|---|---|---|
+| Sidan /rapportakademin | **404 (28 556 B), VÄNTAR DEPLOY** (gap 3) | **200, 69 003 B** egen HTTPS-sond — deploy-skulden inläkt |
+| GET /api/rapportakademin/pass | 404 | **200 + {"ok":false,"fel":"Logga in som medlem…","kod":"inloggning"}** (92 B) — rund 148:s nya kontrakt lever i prod: GET-skalet svarar 200+kod-i-kropp för gäst/fas1 (i stället för 401/403 som webbläsaren loggar som resursfel i kundens devtools — vaktens 4 fynd samma rot); skyddet oförändrat: skalet exponeras aldrig, POST behåller 401/403 |
+| GET /api/rapportakademin | 405 (POST-only) | **405 oförändrat** (0 B) |
+| POST /api/rapportakademin {} | 401 "Logga in först." | **401 "Logga in först."** oförändrad verkställning |
+| Vaktsvep EFTER deploy | saknades (sidan 404) | **riktat svep 23:48:20 lokal 09-21: /rapportakademin × 4 kombinationer (light/dark × 390/1280 px) status ok, felAntal 0, fel: 0** — egen läsning av granssnitt-2026-09-21T234820.json (23:49:40-fullsvepet täcker ej ytan — o68:s rotationsdesign, korrekt) |
+| Sitemap | "korrekt TYST" (byggdSidaFinns-grinden — profylaxens första mätning grön) | **1 URL inbjuden**: https://lab.ak1nvestor.com/rapportakademin (egen grep mot live-sitemap, exakt 1 träff) — profylaxens ANDRA mätning grön: grinden släpper in siden när bygget bär den |
+| Kodrörelse efter passningen | — | **rond 148 (141c7e77 09-21 20:45)**: pass/route.ts 220→**225 r**, klienten rapportakademin-pass.tsx 448→**452 r** — GET-pass-kontraktet omskrivet (vaktkuren); totalt 1 718 r kod enligt egen wc (5 moduler 729 + API 381 + sidan 49 + klienten 452 + beslutsminne.mjs 107) |
+| Gap 1 gallringsdrivare | 0 anropare (grep-bevis) | **0 anropare ÅTERMÄTT** — gallraUpphordaElever + skrivPrenumerationsStatus utanför gallring.ts: 0 träffar i src+verktyg |
+| Gap 2 egna sviter | 0 | **0 ÅTERMÄTT** (inga testa-rapportakademin* i verktyg/) |
+| Gap 4 citat-validatorn | 0 konsumenter | **0 ÅTERMÄTT** (valideraRapportIntag utanför citat-validator.ts: 0 träffar) |
+| Gap 5 registret | singelton abb-ar-2025 | **singelton kvarstår** (pass.ts:92 — enda slugen) |
+
+DOM: E39 **PÅGÅR 6 → LEVER 6** — gap 3 (deploy-skulden) STÄNGT med hel
+kedja: kundsynlig huvudyta 200 + EFTER-vaktsvep 0/4 + sitemap-inbjudan
+släppt + rond 148-kontraktet verifierat levande. PÅGÅR-domens enda bärande
+skäl ("huvudytan kodklar men ej i prod") är borta — jfr E40-precedensen
+(publik verkstad, samma testprofil, LEVER 6). Score OFÖRÄNDRAD 6:
+tyngsta gapen lever alla — gallringsdrivaren (BESLUT 1.2:s AUTOMATISKA
+raderingslöfte kodat men utan maskinell verkställning = driftlöfte som
+vilar på framtida koppling), 0 egna sviter (fem namngivna kontrakt
+overifierade maskinellt), citat-validatorn vilande, registret singelton.
+Snitt **7,4 oförändrat** (303/41, ingen poängrörelse).
+
+Kö: (a) gallringsdrivaren i E29:s cron-pipeline (blockets egen naturliga
+hemvist — pumpor-familjen anropar gallraUpphordaElever + skriv-
+PrenumerationsStatus, gärna bakom CRON_SECRET); (b) testsvit för de fem
+kontrakten (minimerings-NEK 400 · art13-409 · passSkal-strippingen ·
+Fas2-403 · 429-trappan); (c) registertillväxt enligt
+evolutionsspåret-2026-09-21.md ("fler följer efter beviset" — beviset är
+nu levande).
+
+KVD: data-only (SYSTEMKARTAN + worklog + anspråksfil) — src/ orörd =
+INGET bygge · sonder läs-endast (HTTPS + loopback-klass) · R2 orörd
+(Fas 2-priset, publiceringsbeslut: kundens) · data/blogg/ orörd ·
+syskonytor orörda. [fabrik]
 
 # A. UTBILDNINGENS KÄRNA
 
@@ -6570,7 +6620,7 @@ vakaren lever men dess tidszonstolkningsbugg försköt triggern (o32 §1).*
 
 ---
 
-## E39. Rapportakademin — det vertikala snittet (övningsverkstan) — PÅGÅR — 6/10 *(NY RAD 2026-09-21 · först mätt av dokvåg s9-u1, manifest auto-s9-1790009126349)*
+## E39. Rapportakademin — det vertikala snittet (övningsverkstan) — LEVER — 6/10 *(NY RAD 2026-09-21 · först mätt av dokvåg s9-u1, manifest auto-s9-1790009126349 · återdiffad 2026-09-22 av s9-u1, manifest auto-s9-1790036120123 — deploy-skulden stängd, dom PÅGÅR→LEVER)*
 
 *Fött ur kundorder 2026-09-20 21:52 (RAPPORTAKADEMIN-designunderlagen,
 data/forskning/RAPPORTAKADEMIN/ — 5 dokument) och levererat i två vågor:
@@ -6615,48 +6665,65 @@ lyckades (502 ⇒ ingen exponering — "mekanisk, inte ett UX-löfte"); Fas
 inbjudningstext); rate-limit 30 bedömningar/min per konto (429); medlem-auth
 httpOnly-kaka, aldrig tokens i svaret.
 
-**Prod-läge (egen sond + prod-synk.loggen 09-21):** kluvet — huvud-API:t
-LEVER (GET /api/rapportakademin 405 = POST-only korrekt; rond 129 mätte
-POST 401 = auth-grinden verkställer; koden landade via d401d719 02:12Z),
-men SIDAN + PASS-FLÖDET VÄNTAR DEPLOY: /rapportakademin 404 (28 556 B) +
-GET /api/rapportakademin/pass 404 egen sond — ea754110 (05:02 lokal) är
-ancestor till HEAD men ej till det gröna d401d719; .next saknar
-rapportakademin.html + pass-rutt (ls-bevis); synkloggen visar
-VÄNTAR-RAM-kedja sedan 12:07Z + OOM-dödat bygg 15:14:24Z med
-läke-återställning (bygg-OOM-klassen, E34:s värld). Sitemap-inbjudan är
-korrekt TYST (byggdSidaFinns-grinden, o147) — prod lovar inte sidan bygget
-saknar: profylaxens första mätning i naturligt tillstånd = GRÖN.
+**Prod-läge (egen sond 09-22 ~00:3x lokal — hel kedja GRÖN):** sidan
+/rapportakademin **200 (69 003 B)** + GET /api/rapportakademin/pass **200
+med {"ok":false,"fel":"Logga in som medlem för att öva i
+Rapportakademin.","kod":"inloggning"}** (92 B) — rond 148:s kontrakt
+(141c7e77 09-21 20:45) lever i prod: GET-skalet svarar 200+kod-i-kropp
+för gäst/fas1 i stället för 401/403, ty webbläsaren loggar icke-tystbart
+401/403-resursfel i kundens devtools vid varje sidladdning (gränssnitts-
+vaktens 4 fynd, alla samma rot); skyddet oförändrat — skalet exponeras
+aldrig, POST behåller 401/403 som mutationens status. GET
+/api/rapportakademin 405 (POST-only korrekt) + POST {} 401 "Logga in
+först." oförändrad verkställning. Riktat vaktsvep EFTER deploy
+23:48:20 lokal: /rapportakademin × 4 kombinationer (light/dark ×
+390/1280 px) status ok, felAntal 0, fel: 0 (egen läsning av
+granssnitt-2026-09-21T234820.json; 23:49:40-fullsvepet täcker ej ytan =
+o68:s rotationsdesign). Sitemap-inbjudan SLÄPPT: exakt 1 URL
+(lab.ak1nvestor.com/rapportakademin, egen grep mot live-sitemap) —
+byggdSidaFinns-grindens ANDRA mätning grön (första: tyst när bygget
+saknade sidan; nu: inbjuden när bygget bär den). Deployen gick via det
+gröna bygget 22:28:54Z 09-21 (VÄNTAR-RAM-kedjan bröts); synkloggen bär
+fortfarande nattens OOM-ombyggen med läke-återställningar (E34:s värld,
+lämnad åt sin ägare).
 
-**GAP (ägare: pass-flödet i driftskede):**
-1. **GALLRINGEN ODRIVEN** (substansiellt): gallraUpphordaElever() och
-   skrivPrenumerationsStatus() har 0 anropare i hela trädet (grep-bevis
-   09-21 — doc-kommentaren "kronodrivet jobb (pumpor-familjen)" beskriver en
-   drivare som ej existerar). Laggrundade beslutet BESLUT 1 punkt 2
-   ("radering sker AUTOMATISKT när prenumerationen upphör") är kodat men ej
-   maskinellt verksamt: ingen cron anropar jobbet OCH statusgången
-   (aktiv→utgick) har ingen skrivare — betal-/ångerrutterna matar ej
-   ra_prenumeration. GDPR-löftet vilar på framtida koppling (E29:s
+**GAP (ägare: pass-flödet i driftskede; återmätt 09-22):**
+1. **GALLRINGEN ODRIVEN** (substansiellt, ÖPPEN 09-22): gallraUpphordaElever()
+   och skrivPrenumerationsStatus() har fortfarande 0 anropare i hela trädet
+   (grep-bevis återmätt 09-22 — doc-kommentaren "kronodrivet jobb
+   (pumpor-familjen)" beskriver en drivare som ej existerar). Laggrundade
+   beslutet BESLUT 1 punkt 2 ("radering sker AUTOMATISKT när prenumerationen
+   upphör") är kodat men ej maskinellt verksamt: ingen cron anropar jobbet
+   OCH statusgången (aktiv→utgick) har ingen skrivare — betal-/ångerrutterna
+   matar ej ra_prenumeration. GDPR-löftet vilar på framtida koppling (E29:s
    cron-pipeline är naturlig hemvist).
-2. **0 egna testsviter** (grep verktyg/ — ingen testa-rapportakademin*):
-   minimerings-NEK, art13-409, korrigeringstrappan, passSkal-strippingen,
-   Fas 2-403 — allt overifierat maskinellt; kollateral täckning endast
-   sitemap-livskontraktet (sidklassen) + gränssnittsvakten (när deployad).
-3. **DEPLOY-SKULD**: pass-flödet + sidan kodklara sedan 05:02 men out-
-   nådda för kunden (se prod-läge ovan; samma klass som E37 gap 9).
-4. **Citat-validatorn vilande**: valideraRapportIntag() har 0 konsumenter
-   (intagspipelinen den vaktar finns ej ännu) — ÄL 22 §-vakten är framtida
-   infrastruktur; ABB-passets expertläsningar är egna formuleringar med
-   källangivna tal (verifierad 2026-08-24 + granskningskontroll 09-19).
-5. **Registret singelton**: ett pass (abb-ar-2025, 5 sektioner);
-   "fler följer efter beviset" (pass.ts) — evolutionsspåret-2026-09-21.md
-   bär tillväxtplanen.
+2. **0 egna testsviter** (ÖPPEN 09-22 — ingen testa-rapportakademin* i
+   verktyg/): minimerings-NEK, art13-409, korrigeringstrappan,
+   passSkal-strippingen, Fas 2-403 — allt overifierat maskinellt; kollateral
+   täckning: sitemap-livskontraktet + gränssnittsvakten (nu med 0/4
+   EFTER-bevis) + rond 153:s DoD-mätning (snitt 200 ×2 · bedöm-först
+   200-kod/401).
+3. ~~**DEPLOY-SKULD**~~ **STÄNGD 09-22**: pass-flödet + sidan nådda för
+   kunden — /rapportakademin 200 (69 003 B) + GET pass 200+kod-i-kropp +
+   vaktsvep 0/4 EFTER deploy + sitemap-inbjudan släppt (se prod-läge).
+4. **Citat-validatorn vilande** (ÖPPEN 09-22): valideraRapportIntag() har
+   0 konsumenter (intagspipelinen den vaktar finns ej ännu) — ÄL 22 §-vakten
+   är framtida infrastruktur; ABB-passets expertläsningar är egna
+   formuleringar med källangivna tal (verifierad 2026-08-24 +
+   granskningskontroll 09-19).
+5. **Registret singelton** (OFÖRÄNDRAT): ett pass (abb-ar-2025, 5
+   sektioner; pass.ts:92 enda slugen); "fler följer efter beviset"
+   (pass.ts) — evolutionsspåret-2026-09-21.md bär tillväxtplanen.
 
-**Dom PÅGÅR 6:** kundsynliga huvudytan (sidan + passet) är kodklar men ej
-i prod och gallringslöftet saknar drivare = pågående bygge, inte leverans
-(jfr B8:s PÅGÅR-dom vid designläge). Poängen: dokumentation i topp
-(lagrum i filhuvuden, 5 designunderlag) + valideringskontrakt starka i
-koden, men 0 testbevis och driftgap 1+3 drar ned. R2-ytor (Fas 2-priset,
-publiceringsbeslut) förblir kundens — orörda av dokvågen.
+**Dom LEVER 6 (09-22; f.d. PÅGÅR 6):** kundsynliga huvudytan (sidan +
+passet) lever i prod med hel EFTER-kedja (sonder 200/405/401 · vaktsvep
+0/4 · sitemap-inbjudan) och rond 148:s kontraktskur verifierad levande —
+PÅGÅR-domens enda bärande skäl ("kodklar men ej i prod") är borta.
+Scoren hålls kvar på 6: gap 1 är ett laggrundat driftlöfte utan
+verkställare, 0 egna sviter lämnar fem namngivna kontrakt overifierade,
+och registret är singelton (jfr E40 Rapportbyggaren: publik verkstad,
+samma testprofil, LEVER 6). R2-ytor (Fas 2-priset, publiceringsbeslut)
+förblir kundens — orörda av dokvågen.
 
 ---
 

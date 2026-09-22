@@ -2700,8 +2700,8 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | 09-21 (s9-u3): 156 + 107/0/0 + snapshot 12/12 ×2 env EGENA (hermetiken vecka 2); livlina 22/22 + premium 11/11 EGENA; on-demand-kedjan I RÖRELSE: cache 48 runtime-JSON (vagfundament 1→12, färskast 09-21 11:23Z); berika fortfarande stilla 17 d (0 akm2-cacher; o72 rörde utan att köra); fixturen fortfarande gällande ABB.ST (R2) |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Konstruktion topp (55/55 egen 09-19, femte gröna; LÅST grind ΔΦ=0); fruset oförändrat: kalibrering-logg 1 rad 09-04 · regimen genesis 09-03 (16 d; /api/forskningslage bär EXAKT genesis-tal 7/100/17) · Contabo-crontab utan akm3/vagvalidering-rad · nästa molnrond 10-02; ensemble 0/22; kodstilla 15 d |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 7 | 09-21 (s9-u3): RADERAREN LÖPANDE NATTLIG — rotfilens engångsteori MOTBEVISAD (live bär endast dagens 1/5/12-rader; exporter 09-20+09-21 bär 0 vagscan trots bevisligen skriven 09-19-rad) ⇒ kvartalsdeduben slagen DAGLIGEN, aufr-SQL-kö HASTAS; dagens skans 05:05:23Z + svit 57/57 + ytor 200 EGENA; rapport domar 09-04 (17 d) serveras live; universum 12 i kod; träff-% osynlig publikt |
-| B10 | Konfluensradarn | Analys | LEVER | 7 | Fem-källors-logiken LEVER live (API-sond färsk 09-18: 10 rader, 10/10 ≥3 källor; motorvalidering 107/0/0 fjärde gröna); kvar: 0 egen svit, historik/utfall lagras ej; kopplingen till B13 fördjupad 09-18: 0 import MEN namnkollision — portfolj-forsknings eget "konfluens"-begrepp (teorikonsensus per horisont) är ett annat mått än radarns datakällkonsensus |
-| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinism-grönt stabilt (107/0/0 egen körning 09-18 + /api/netnet färsk 09-18: 25 rader, VOLV-B 335,9 — live-flödet lever); universum fast 25; egen testsvit saknas fortfarande |
+| B10 | Konfluensradarn | Analys | LEVER | 7 | 09-22 (s9-u2): fem-källors-logiken LEVER ×2 vägar (loopback 200 + prod 200; 10 rader, 10/10 datakällor ≥3, universum "fast universum"; genererad vid sonden = färsk); klassbilden RÖR SIG med dagsdata (klassade 09-22: SAND.ST + HM-B "Vågor utan värdegolv" mot 09-20:s SHB-B + HM-B; topp HM-B 44, upp från 43); motorvalidering 107/0/0 EGEN (8,6 s, sjätte gröna); motorn 493 r orörd sedan 09-02; o123-mobilhusgolvet (f74d10b2 09-20 18:14, 1 rad i konfluens-tabell.tsx) landade EFTER 09-20-passningens 12:17-mätning = färskrörelse NU bokförd (i prod via LDVlDGu2); kvar: 0 egen svit (testa-konfluens* = 0 återmätt), historik/utfall lagras ej, 0 import konfluens↔portfolj-forskning (återmätt); NY mikronotis: 0 egna cachefiler + API:t 2 980 ms = live-beräkning varje anrop |
+| B11 | Net-net-skannern | Analys | LEVER | 6 | 09-22 (s9-u2): live-flödet lever ×2 vägar (loopback 200 17 ms + prod 200; 25 rader; VOLV-B 331,1 — serien 330,2@09-16 · 335,9@09-18 · 333@09-20); lasEllerHamta-sidoeffekten lever (25 cachefiler refreshade av denna vågs sond 00:18:46Z); motorn 292 r orörd sedan 09-02; KLASS-SEMANTIKEN KARTLAGD (09-20:s köpost b besvarad): forhallande=null i 18 rader i TVÅ bilder — 12 med kurs + negativ NCAV ⇒ klass "ej" (HM-B −4,6 … CATE −297,9) och 6 där hela kedjan dör på kurs=null ⇒ klass null (SHB-B/SWED-A/NDA-SE/INDU-C/KINV-B/NYF-B = finanssektorn + 2 industri, 24 % av universumet; 09-20:s "varav 2 klassade ej" var ofullständig) ⇒ motorkommentar vid nästa kodberörning: kurs=null bör ej döda NCAV-räkningen; 0 NET-NET kvar (närmast NCC-B 4,35 mot golv 0,67 + SKF-B 7,21 tvåa — högkonjunktur, ej fel); o123 rörde skannerns knapphöjd 1 rad (bokförd); kvar: 0 egen svit (återmätt), 25-listan fast |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Kärnprofilen svit-testad men klientfilen 0 sviter (lever); FOMO-kuren live; vakt-täckning GRÖN sedan o68 (journalförd 09-18); 09-20 (s9-u3): o118-mobilfix verifierad i kod — exakt 2 inputs + 8 knappar ≥52 px mobil (dator 44 orörd, klasser endast, radtal oförändrade), båda ytorna 200 efter deployen |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | 09-20 (s9-u3): driftbrottet MOTBEVISAT LÄKT (/rapporter + /portfolj-hyra + /api/portfolj-forskning alla 200, antal 100) men glidningen 95→131: univers 231 (+36/dygn, mtime 14:09) mot korstabell frusen 100 r (09-10); /api/medlem/portfolj 400 "memberId krävs" FÖRE auth (vaktlös kvar); sviter 32/0+50/0 (09-19, ej återmätta); 0 fundamental/akm2/akm3-cacher |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 5 | 09-20 (s9-u3): viloläget DAG 3 — crontab-målet /api/cron/nyheter fortfarande 404 (raden intakt i /etc/crontab), /api/nyheter ok:true antal:0 franCache:false (levande tom hämtning), kundkonfig-cachen 0 poster; FÖRDJUPNING: "rika" konfigens 40 poster bär senaste publikation ~09-09 (11 dygn) trots färsk refresh 09-20 05:15 lokal — även fallback-flödet levererar inget nytt (tolkning osäker: cache-kedja kan bära gammal data); /nyheter-sidan 200 (72,5 kB) kundsynligt tom; motorn 844 r orörd; Vercel-cron-raden kvar (vercel.json:40); 0 sviter; CRON_SECRET osatt |
@@ -3518,6 +3518,53 @@ KVD: data-only (SYSTEMKARTAN + worklog + anspråksfil) — src/ orörd =
 INGET bygge · sonder läs-endast (HTTPS + loopback-klass) · R2 orörd
 (Fas 2-priset, publiceringsbeslut: kundens) · data/blogg/ orörd ·
 syskonytor orörda. [fabrik]
+
+## UPPDATERING 2026-09-22 (dokvåg s9-u2, manifest auto-s9-1790036120123 — B10 + B11 diffade mot verkligheten; o123-färskrörelsen bokförd + klass-semantiken kartlagd)
+
+Fabriksagent s9-u2 (byggare 2/3). VAL (anspråk disk-först 02:17:24
+lokal, data/vakten/auto-s9-1790036120123-u2-ansprak.md FÖRE all
+mätning): **B10 + B11** — äldsta fria kohorten, båda senast diffade
+09-18 (s9-u3-omkörningens tabell 09-20 mätte vid 12:17 men tog inga
+poängrörelser och uppdaterade inte översiktsraderna) = fyra dygn gamla
+uppgifter i översikten medan verkligheten rört sig; disjunkt mot u1:s
+E39-anspråk (på disk 00:2x) och allt i kartans färska rader. Allt
+EGENMÄTT 2026-09-22 00:18–00:20Z (02:18–02:20 lokal) — node-sond
+verktyg/_s9u2-kartdiff-0922.mjs (loopback + prod-HTTPS, read-only;
+bevisrapport data/vakten/_s9u2-kartdiff-0922.json på disk), git-log,
+wc, find, grep, motorvalidering i egen körning; aldrig worklog-läsning.
+
+| Mått | Kartan före | Verkligheten 2026-09-22 (egen mätning) |
+|---|---|---|
+| B10 API + sida | 200 ×2 (09-20 12:17) | **200 ×2 vägar ÅNYO** (loopback 2 980 ms + prod 1 896 ms, båda LEVANDE — genererad-tidsstämpel slår vid varje sond): 10 rader, 10/10 datakällor ≥3, universum "fast universum"; sidan /konfluens 200 (94 kB, 104 ms) |
+| B10 klassbild + topp | 2 klassade SHB-B+HM-B · topp ESSITY-B/HM-B 43 (09-20) | **SKIFTE: klassade nu SAND.ST + HM-B** (båda "Vågor utan värdeglov" — SHB-B ut, SAND in; HM-B består) · **topp HM-B 44 enstaka** (upp från 43) ⇒ klassningen lever och följer dagsdata, ej frusen |
+| B10 motor + kodrörelse | 493 r orörd · "0 commits sedan 09-18" (09-20 12:17) | **motorn 493 r orörd (sedan 09-02)** men **FÄRSKRÖRELSE EJ BOKFÖRD**: o123-mobilhusgolvet (f74d10b2, landat 09-20 **18:14:15** — sex timmar EFTER 09-20-passningens mätning) berörde konfluens-tabell.tsx exakt 1 rad (knapphöjd ≥52 px i husgolvet; egen git show) — NU bokförd; i prod via LDVlDGu2-bygget (E37:s EFTER-bevis 69→3 tryckmål) |
+| B10 gap 1/2/3 | svit saknas · historik olagrad · 0 import B13 | ** Alla tre består återmätta**: 0 testa-konfluens* · motorn orörd = ingen persistens tillkommen · 0 import konfluens↔portfolj-forskning åt båda hållen (grep portfolj-forskning/ + API-rutter tom) |
+| B10 ny notis | — | **0 egna cachefiler** (data/cache/konfluens-* = 0) och API:t 2 980 ms = live-beräkning vid varje anrop (netnet svarar på 17 ms ur cache) — mikronotis, ej gap |
+| B11 API | 200 ×2, 25 rader, VOLV-B 333 (09-20) | **200 ×2 vägar ÅNYO** (loopback 17 ms + prod 41 ms): 25 rader (universum fortfarande fast 25), **VOLV-B 331,1** (serien 330,2@09-16 · 335,9@09-18 · 333@09-20 · 331,1@09-22 = live-flödet lever) |
+| B11 klassbild + semantik | "19 ej · 6 utan klass · 0 NET-NET"; köpost b: "6 rader forh=null varav 2 klassade ej — NCAV-underlag saknas" | **KARTLAGD (kön b BESVARAD)**: 19 "ej" + 6 null + 0 NET-NET består MEN forh=null är TVÅ olika tillstånd — (i) 12 rader med kurs + **negativ NCAV** ⇒ klass "ej" (HM-B −4,6 · VOLV-B −44,7 · CATE −297,9 …), (ii) 6 rader där **hela kedjan dör på kurs=null** ⇒ klass null (SHB-B/SWED-A/NDA-SE/KINV-B + INDU-C/NYF-B = finanssektorn + 2 industri, 24 % av universumet); 09-20:s formulering var ofullständig — förlovningsbilden: klass null = saknad kursdata, klass "ej" med forh=null = negativt eget kapital. **Motorkommentar vid nästa kodberörning: kurs=null bör ej döda NCAV-räkningen** (NCAV per aktie kräver balansräkning + aktieantal, ej kurs) |
+| B11 närhetsgolv | NCC-B 4,31 närmast (09-20) | **NCC-B 4,35 + SKF-B 7,21 ny tvåa** mot golvet 0,67 — 0 NET-NET kvar (högkonjunktur, ej fel; oförändrad dom) |
+| B11 cache + kodrörelse | 25 filer refreshade av sonden (09-20) | **25 netnet-cachefiler, färskast 00:18:46Z = refreshade av DENNA vågs sond** (lasEllerHamta-sidoeffekten lever, exakt 09-20-s mönster); motorn 292 r orörd (09-02); o123 berörde netnet-skanner.tsx 1 rad (samma bokföring som B10) |
+| B11 gap 1/2 | svit saknas · 25-listan fast | **0 testa-netnet\* (återmätt) · 25-listan oförändrad i komponenten** |
+
+Dom: B10 **LEVER 7 orörd**, B11 **LEVER 6 orörd** — mätvärden +
+klassificeringsfynd + en annan vågs (o123) kur ger ingen
+kapabilitetspoäng (E33/B14-precedensen); klass-semantiken är ett
+preciseringsfynd av samma slag som 09-20:s B12-mätblindhetsklausul.
+Snitt **7,4 (303/41) OFÖRÄNDRAT** — inga poängrörelser i denna dokvåg.
+
+Kö: (a) B10 gap 1 förblir billigast i hela B-blocket (testa-konfluens
+med frysta fixtures, netnet-determinismens mönster); (b) B11:s
+motorkommentar (kurs=null vs NCAV-oberoende) har nu ett semantikkart-
+underlag i denna sektion — tas vid nästa kodberörning av motorn;
+(c) konfluensens 0-cache/2 980 ms-läge är en framtida
+prestandamikropost, aldrig ett gap i dag.
+
+KVD: data-only (karta + worklog + anspråksfil) — src/ orörd = INGET
+bygge (deploy ägs av prod-synken under lås; tsc-baslinjen vilar i
+pre-commit-grinden) · sviter KÖRDA endast (validera-motorer 107/0/0
+8,6 s exit 0) · R2 orörd · data/blogg/ orörd · syskonytor orörda (u1:s
+E39-sektion ovan endast läst; u3 utan anspråk på disk vid skrivandet —
+disk-först-precedensen gäller) · commit med pathspec + -F-fil. [fabrik]
 
 # A. UTBILDNINGENS KÄRNA
 

@@ -274,6 +274,15 @@
       "titel": "deploykvitto-vågen: fullvals-vaktsvep EFTER läkebytesbygget 23:35Z (o149 §restpost 3) — 0-förväntat i alla klasser; universumet växt 249→256 (7 AR-paket 09-21 kväll) och det datadrivna 256-talet verifieras SANT mot ledger+universum innan dom",
       "ts": 1790034005872,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o154",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790205302748",
+      "titel": "VIKT till s7-u2/o155 (mätar-yta klaimad 01:33:15 FÖRE min anspråk 01:34; deras o155 täcker hela planen) — o154 lämnas tillbaka, bidrag som gåvor: fönsterfakta-notis + orphan-Chrome-städning",
+      "ts": 1790206447922,
+      "status": "lamnat",
+      "lamnatTs": 1790206723559
     }
   ]
 }

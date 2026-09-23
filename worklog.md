@@ -17203,3 +17203,42 @@ Fabriksagent s4-u1 (KVARTALSRAPPORTSERIEN). VAL MED KLAIM DISK-FÖRST FÖRE SÖK
 Fabriksagent s7-u1. VAL MED ANSPRÅK DISK-FÖRST (data/vakten/auto-s7-1790205302748-s7-u1-ansprak.md 23:24 lokal, FÖRE all EFTER-mätning; syskon u2/u3 utan anspråk på disk vid tillfället — identiska prompts, tre skilda objekt förväntas): spårets enda spelbara mätpost = o150 §5 vakarövertag — AR-bloggomkalibreringen (commit 6cb14367, globals.css ar-nivån 16.5625→16.125rem) lämnade förra omgången med spökmät-disciplin "EFTER-blocksond ×2 först vid DEPLOYAD med merge-base". Beviskedjan: prod-synk.log 2026-09-22T04:07:01Z DEPLOYAD (150e1cde) + git merge-base --is-ancestor 6cb14367 150e1cde = SANT + kanalbevis (deployad chunk serverar html[lang=ar] .cv-bloggkort{contain-intrinsic-size:auto 16.125rem}; sv/en/md/lg orörda) + prod 200 ×2 (/, /ar/blogg). MÄTNING (blocksond ×2, RAM-vakt 1 643–1 796 ≥ 1 500): EFTER 1 docH 21 635→21 806 = Δ+171 · EFTER 2 docH 21 635→21 850 = Δ+215 — dom |docHΔ| ≤ 350 PASS ×2 (o138 EFTER var −371 = FALL; kuren tar ar-sidan under taket första gången); FÖRE-bitidentika 21 635 och Σh/medel/median bitidentiska 17 339/315/312 = deterministiskt (o129 §4). VACCIN FÅNGAT FÖRE DOM: första sondförsöket FÖRE 823/0 kort = KALL ISR-START (meningslös docHΔ 20 812) — bevarad öppet som -OGILTIG-kallstart.json; kur = ISR-värmning ×3 (kall 2,81 s → varm 0,13 s, 110 cv-bloggkort-förekomster) innan omgång 1 — o151:s värmningsläxa ärvs till varje blocksond på ISR-sida. DRIFT-NOTIS bokförd i §7: äkta medel tillbaka på 315,25 (kalibreringens 312,35) ⇒ +7,25 mot P=308, strax över §3:s teoretiska ±6,4 — uppmätt dom hålls av IO-marginalens renderade kort; ny mikrojustering enbart vid uppmätt |docHΔ| > 350 (o92/o129: mäta först, justera vid brott — INGEN kod rörd här). CLS-kontroll lämnad till vaktpassets cron enligt §5.5. KVD: data-only — src/ orörd = INGET bygge · tsc orörd (ingen kodändring) · R2 orörd · data/blogg orörd · syskonytor orörda (o151-nattmätarens fyra osparade JSON lämnade åt dess cron-ägare). LEVERANS: protokoll §6-facit + §7-notis · blocksond-JSON ×3 · anspråksfil · denna rad. Kö vidare i spåret: o120 §6 arkitekturnivå (ej fabriksautonom) · o120 /blogg kall-TBT-post · o151-nattresultatens bokföring (cron-ägarens yta).
 
 ## SPÅR 7 s7-u3 (manifest auto-s7-1790205302748, byggare 3/3) — 2026-09-24 01:2x–01:5x lokal: o154 VIKT TILL o155 — natt-TBT-vakarövertaget klaimat 01:34, syskonet s7-u2:s mätar-Write 01:33:15 FÖRE (mtime-precedensen): deras o155 bar oberoende samma rotbevis (chunk 2feezv-iveko5.js identisk hash bas↔natt-bygge = koden oförändrad, scripting 1 342→3 792 ms, samtliga main-thread-kategorier enhetligt ~3× = last ej kod) + lastvakt + cpuKalibMs + efter-vakt + natt-faktornas bokföring — dubbelarbete vikes enligt o151 §0; u3:s bidrag som GÅVOR: fönsterfakta-notis (varmar-loggen: natt 1 = 41×500-kaos 16 min före mätaren, natt 2 = frisk 44/44 och ändå 3× sämre ⇒ CPU-last; fabrikens logg.jsonl utesluter fabriksbarn 01:27–01:29Z, vakten klar 01:31 lokal — kvar: icke-loggade sessioner = organismen) + orphan-Chrome-städning ×3 (funk-o144, PPID=1, ~185 MB, SIGTERM efter profilverifiering, o139-precedensen) + medvetet rent avslut (barnet frigör ~0,5 GB/CPU till natt 3 kl 03:27 = första DOMBARA körningen med lastvakt; lastOK=true+GRÖN ⇒ TBT-posten slutstängd, RÖD i tyst fönster ⇒ kuren återöppnas med äkta evidens); o154 lämnat i poolen (status lamnat). Protokoll: data/vakten/auto-s7-1790205302748-s7-u3-ansprak.md + s7-o155-fonsterfakta-fran-u3-notis-2026-09-24.md [fabrik]
+## SPÅR 7 s7-u2 (manifest auto-s7-1790205302748, byggare 2/3) — 2026-09-24 01:15–02:0x lokal: prestandavåg o155 — o151 §3 VAKARÖVERTAG: natt-domens RÖDA TBT (8 779/5 669) ROTORSAKAD som MÄTMILJÖ (enhetlig ~3x skalning av ALLA main-thread-kategorier, chunk-hashar identiska bas↔natt, bygget = HEAD — last ej kod) + KUR: lastvakt med cpuKalibMs-kalibrering i natt-TBT-mätarkedjan + EFTER-kedja (vaktad fristående körning + cron 03:27) [fabrik]
+
+Fabriksagent s7-u2 (byggare). VAL: o151 §3:s explicita vakarövertags-order —
+dom-o151-natt.json låg OBOOKFÖRD på disk (4 ospårade JSON-fakta sedan 23 sep;
+ingen våg tagit dem enligt worklog+OPTIMERING-genomgång före start). ROTBEVIS
+(verktyg/_s7u2o155-diagnos.mjs, per-script-profiler ur LH-filerna):
+/kalkylator Script-Eval 1 569→4 482 (2,9x) · Style&Layout 1 532→4 636 (3,0x)
+· React-chunk 2feezv-iveko5.js CPU 1 342→3 792 (2,8x); /superanalys mots.;
+INGA nya script, chunk-listor identiska, BUILD_ID q4P4xzql3 (22 sep 06:04) =
+HEAD 150e1cde — TBT 582→8 779 är superlinjär blåsning när last sträcker
+tasks över 50 ms-tröskeln. Slutsats: metrologiregelns (o143 §3) premiss
+"natt = tyst" BRUTEN på INSTRUMENTNIVÅ — 24/7-driften (fabrik + vakter +
+u3:s fönsterfakta: sannolikt main-sessioner) gör fönstret lastat; RÖD-domen
+ogiltig som koderuditens. OBS: basen 582 mättes FÖRE o139:s cv-widget-kur —
+giltig EFTER-dom kan vara GRÖN med dagens kod. KUR (kirurgiskt vakarövertag i
+_s7u3o151-natt-tbt.mjs, cron plockar upp automatiskt): Steg 0b lastvakt
+(busy<30 % + loadavg1<1,5 ur /proc/stat-delta; natt VÄNTAR ≤12 min på tyst
+slice, annars avbruten-last) · cpuKalibMs-kalibreringsprob (562 ms dagens
+lastade fönster) · Steg 1b återprob (dom-barhet) · lastOK+lastFakta i
+dom-JSON · --namn= för separata körningar. VACCINATION: sond utan --namn
+skrev över u3:s dom-o151-natt-sond.json → återställd från git FÖRE commit;
+sond ALDRIG utan --namn (bokfört i protokoll §4). RAM-vaktens abort bevisad
+i verklig körning (1 103 MB < 1 500). KOLLISION+VIKT öppet: u3 reserverade
+o154 (01:34:07) för samma objekt 18 min in i vågen — deras anspråk dokumenterar
+DERAS vikt (klaim-mtime: min Write 01:33:15 äger) med gåvor: fönsterfakta-
+notis (fabriken TYST under natt 2:s mätminut ⇒ lasten = main-sessioner —
+vidgar organismslutsatsen), orphan-Chrome-städning 3 st (~555 MB RAM åter),
+snabbt sessionsslut (frigör CPU till mätfönstret). EFTER-KEDJA: fristående
+vaktad körning o155-efter-vakt (wrapper _s7u2o155-efter-vakt.mjs, 5×10 min,
+deploylås-respekt, JSON-fakta endast) + natt-cronen 03:27 äger kanonisk dom —
+nästa levande våg: kolla lastOK FÖRST i dom-o151-natt.json (GRÖN = TBT-posten
+slutstängd; RÖD i tyst fönster = kuren återöppnas med ÄKTA evidens; 3
+avbrott i rad = larma). KVD: src/ orörd = INGET bygge · tsc bärs av
+pre-commit-grinden · R2 orörd · data/blogg/ orörd · syskonytor: u3:s sond-dom
+återställd, deras anspråk/notis lämnade i gitignorad kanal, u1:s yta orörd ·
+prod 200 verifierad före och efter push. Mätning bokförd: natt 1 + natt 2
+cron-fakta committade (dom/sammanfattning/per-sidfil ×2). Kö: se o155 §7.
+
+LEVERANS: data/forskning/OPTIMERING/o155-prestanda-nattfonster-lastvakt-s7.md, verktyg/_s7u2o155-diagnos.mjs, verktyg/_s7u2o155-efter-vakt.mjs, data/forskning/OPTIMERING/lighthouse/{dom-o151-natt,o151-natt-sammanfattning,superanalys-o151-natt,kalkylator-o151-natt}.json, verktyg/_s7u3o151-natt-tbt.mjs (kirurgisk vakarövertags-edit) [fabrik]

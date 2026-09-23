@@ -9,6 +9,18 @@
  * Kontrakt (o144-väntarmönstret — JSON-fakta endast, bokföring av levande
  * våg, ALDRIG från bakgrundsprocess):
  *   Steg 0  RAM-vakt: MemAvailable ≥ 1 500 MB (annars avbrott, exit 2)
+ *   Steg 0b LASTVAKT (o155 vakarövertag): nattfönstrets tysthet MÄTS
+ *           (CPU-beläggning ur /proc/stat-delta + loadavg + cpuKalibMs-
+ *           kalibreringsprob + antal zcode-barn). NATT-läge VÄNTAR upp till
+ *           12 min på en tyst slice (busy < 30 % OCH loadavg1 < 1,5) —
+ *           annars "avbruten-last" exit 2. SOND-läge bokför endast fakta.
+ *           BAKGRUND: o151-natt (2026-09-23) domade RÖD TBT 8 779/5 669 i
+ *           ett lastat fönster — ALLA main-thread-kategorier skalade
+ *           enhetligt ~3x mot o139-fore utan ett enda nytt script =
+ *           mätmiljö, ej kod (o155 §2). Organismen kör 24/7 sedan kundens
+ *           direktiv — "natt = tyst"-premissen (o143 §3) hålls bara med
+ *           lastvakt. Återprob efter värmningen (1b) — natt avbryter om
+ *           lasten återvänt.
  *   Steg 1  prod 200-preflight: /superanalys + /kalkylator på localhost
  *   Steg 2  kanoniska prestanda-lighthouse.mjs med LH_JAMFOR=o139-fore
  *           (värmning sköts av verktygets egen körning)
@@ -22,30 +34,74 @@
  *   node verktyg/_s7u3o151-natt-tbt.mjs --sond    — dagkörning: verifierar
  *                   pipelinen; TBT-kriteriet märs "sond — ej dom" (dagen
  *                   rättfärdigar ingen TBT-dom enligt metrologiregeln)
+ *   --namn=<x>  — kör under eget namn (utdata <x>-* / dom-<x>.json) för
+ *                 separata vaktade körningar utan att röra natt-cronens
+ *                 kanoniska filer (o155)
  *
  * Utdata (data/forskning/OPTIMERING/lighthouse/):
  *   o151-natt[-sond]-sammanfattning.json + per-sidfiler (LH-verktyget)
  *   dom-o151-natt[-sond].json (dom + stegfakta)
  * Exit: 0 = dom GRÖN (eller sond komplett) · 1 = dom med rött kriterium
- *       · 2 = avbruten (RAM/200) · 3 = pipelinefel.
+ *       · 2 = avbruten (RAM/200/last — o155) · 3 = pipelinefel.
  */
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ROD = process.cwd();
 const LH_KAT = join(ROD, "data/forskning/OPTIMERING/lighthouse");
 const SOND = process.argv.includes("--sond");
-const NAMN = SOND ? "o151-natt-sond" : "o151-natt";
+const NAMN_ARG = process.argv.find((a) => a.startsWith("--namn="));
+const NAMN = NAMN_ARG ? NAMN_ARG.slice(7) : SOND ? "o151-natt-sond" : "o151-natt";
 const RAM_TAK_MB = 1500;
 const POANG_BAND_SUPER = 8; // §7.2 "oförändrad ±" — dokumenterad tolkning
 const TBT_TAK_KALKYLATOR = 450; // §7.2:s uttryckliga tak
+// o155 lastvakt: tyst-slice-kriterier + väntebudget (ENDAST natt-läge)
+const LAST_BUSY_MAX_PROC = 30; // < 30 % CPU-beläggning (4 kärnor)
+const LAST_L1_MAX = 1.5; // loadavg1 < 1,5 (37 % av 4 kärnor)
+const LAST_VANTA_MAX_MS = 12 * 60_000;
+const LAST_VANTA_STEG_MS = 30_000;
 
 const rap = { ts: new Date().toISOString(), lage: SOND ? "sond" : "natt", steg: [] };
 
 function ramMB() {
   const m = /MemAvailable:\s+(\d+) kB/.exec(readFileSync("/proc/meminfo", "utf8"));
   return Math.round(Number(m[1]) / 1024);
+}
+
+// ── o155 lastvakt: mätverktyg för mätfönstrets tysthet ─────────────────────
+function cpuRaknare() {
+  const rad = /^cpu\s+(.*)$/m.exec(readFileSync("/proc/stat", "utf8"))[1].trim().split(/\s+/).map(Number);
+  const [user, nice, system, idle, iowait, irq, softirq, steal] = rad;
+  const busy = user + nice + system + irq + softirq + steal; // iowait = diskväntan, CPU fri
+  const ledig = idle + iowait;
+  return { busy, ledig, total: busy + ledig };
+}
+/** Kalibreringsprob: fast arbetsloop → ms. Normaliserbarhet mellan fönster
+ *  (TBT/cpuKalibMs) — instrumentets "mätsticka i metall", o155 §3. */
+function cpuKalibMs() {
+  const t0 = process.hrtime.bigint();
+  let s = 0;
+  for (let i = 0; i < 30_000_000; i++) s += i & 7;
+  if (s === -1) console.error("omöjlig"); // grenhållare — s aldrig -1
+  return Number(process.hrtime.bigint() - t0) / 1e6;
+}
+async function lasLast() {
+  const a = cpuRaknare();
+  await new Promise((r) => setTimeout(r, 1200)); // 1,2 s fönster
+  const b = cpuRaknare();
+  const dt = b.total - a.total || 1;
+  const busyProc = Math.round(((b.busy - a.busy) / dt) * 1000) / 10;
+  const loadavg = readFileSync("/proc/loadavg", "utf8").trim().split(/\s+/).slice(0, 3).map(Number);
+  let zcodeBarn = 0;
+  try {
+    zcodeBarn = Number(execFileSync("pgrep", ["-c", "-f", "zcode-cli"], { encoding: "utf8" }).trim()) || 0;
+  } catch { /* pgrep exit 1 = inga barn = 0 */ }
+  const kalib = cpuKalibMs();
+  return {
+    busyProc, loadavg, cpuKalibMs: Math.round(kalib * 10) / 10, zcodeBarn,
+    tyst: busyProc < LAST_BUSY_MAX_PROC && loadavg[0] < LAST_L1_MAX,
+  };
 }
 function skriv(dom) {
   if (dom !== undefined) rap.dom = dom;
@@ -56,6 +112,25 @@ function skriv(dom) {
 const ram = ramMB();
 rap.steg.push({ steg: "0-ram", ramMB: ram, tak: RAM_TAK_MB, pass: ram >= RAM_TAK_MB });
 if (ram < RAM_TAK_MB) { skriv("avbruten-ram"); console.error(`AVBRUTEN: RAM ${ram} < ${RAM_TAK_MB} MB`); process.exit(2); }
+
+// ── Steg 0b (o155): LASTVAKT — vänta på tyst slice i natt-läge ──────────────
+let last = await lasLast();
+const vantaStart = Date.now();
+while (!last.tyst && Date.now() - vantaStart < LAST_VANTA_MAX_MS) {
+  await new Promise((r) => setTimeout(r, LAST_VANTA_STEG_MS));
+  last = await lasLast();
+}
+rap.steg.push({
+  steg: "0b-lastvakt", ...last,
+  kriterier: { busyUnder: LAST_BUSY_MAX_PROC, l1Under: LAST_L1_MAX },
+  vantadeMs: Date.now() - vantaStart,
+  pass: SOND ? true : last.tyst,
+});
+if (!SOND && !last.tyst) {
+  skriv("avbruten-last");
+  console.error(`AVBRUTEN: last ej tyst efter ${Math.round((Date.now() - vantaStart) / 1000)} s (busy ${last.busyProc} %, loadavg1 ${last.loadavg[0]}, kalib ${last.cpuKalibMs} ms)`);
+  process.exit(2);
+}
 
 // ── Steg 1: prod 200-preflight + ISR-värmning (kor-o139-kontraktet) ────────
 const status200 = {};
@@ -69,7 +144,19 @@ for (const s of ["/superanalys", "/kalkylator"]) {
 }
 await new Promise((r) => setTimeout(r, 15_000)); // settle (kor-o139 STEG 3)
 rap.steg.push({ steg: "1-prod200-varmning", status: status200, pass: Object.values(status200).every((k) => k === 200) });
-if (!rap.steg[1].pass) { skriv("avbruten-prod"); console.error("AVBRUTEN: prod ej 200", status200); process.exit(2); }
+if (!rap.steg.find((s) => s.steg === "1-prod200-varmning").pass) { skriv("avbruten-prod"); console.error("AVBRUTEN: prod ej 200", status200); process.exit(2); }
+
+// ── Steg 1b (o155): last-återprob — dom gäller bara om fönstret fortfarande tyst ──
+const lastAter = await lasLast();
+rap.steg.push({
+  steg: "1b-last-ater", busyProc: lastAter.busyProc, loadavg: lastAter.loadavg,
+  cpuKalibMs: lastAter.cpuKalibMs, tyst: lastAter.tyst, pass: SOND ? true : lastAter.tyst,
+});
+if (!SOND && !lastAter.tyst) {
+  skriv("avbruten-last-ater");
+  console.error(`AVBRUTEN: lasten återvände under värmningen (busy ${lastAter.busyProc} %, loadavg1 ${lastAter.loadavg[0]})`);
+  process.exit(2);
+}
 
 // ── Steg 2: kanonisk Lighthouse-körning (JAMFOR mot nattbasen) ─────────────
 const lh = await new Promise((res) => {
@@ -114,8 +201,9 @@ for (const e of efter.sidor) {
   });
 }
 skriv("körde-klart");
+const lastOK = SOND ? lastAter.tyst : last.tyst && lastAter.tyst; // o155: dom-barhet
 writeFileSync(join(LH_KAT, `dom-${NAMN}.json`),
-  JSON.stringify({ ...rap, dom, sammanfattning: NAMN + "-sammanfattning.json" }, null, 2));
+  JSON.stringify({ ...rap, lastOK, dom, sammanfattning: NAMN + "-sammanfattning.json" }, null, 2));
 
 const gron = dom.every((d) => !d.kriterier || Object.values(d.kriterier).every((v) => v === true));
 console.log(JSON.stringify({ lage: rap.lage, gron, dom }, null, 2));

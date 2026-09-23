@@ -98,7 +98,54 @@ UNDER 350-taket — orörda. md/lg-brytpunkterna orörda.**
 
 ## §6 — EFTER-facit
 
-(fylls vid verkställande av §5)
+**Verkställt av vakarövertag:** s7-u1 i manifest auto-s7-1790205302748
+(anspråk disk-först 2026-09-23T23:24Z, data/vakten/
+auto-s7-1790205302748-s7-u1-ansprak.md) — §5-kedjan grön:
+
+1. **DEPLOYAD-bevis:** prod-synk.log `2026-09-22T04:07:01Z DEPLOYAD
+   automatiskt: 3 commits (150e1cde) — prod 200`; `git merge-base
+   --is-ancestor 6cb14367 150e1cde` = SANT (o150 är anfader).
+2. **Kanalbevis:** deployad chunk serverar `html[lang=ar] .cv-bloggkort
+   {contain-intrinsic-size:auto 16.125rem}` (.next/static/chunks/*.css;
+   sv 20.25rem / en 18.4375rem orörda, md/lg-brytpunkter orörda).
+3. **prod 200:** / ✓ · /ar/blogg ✓ (sessionen 2026-09-23T23:xxZ).
+4. **Blocksond ×2** (RAM-vakt 1 643–1 796 ≥ 1 500 MB före varje sond):
+
+| Omgång | FÖRE-docH | EFTER-docH | docHΔ | Σh (55 kort) | medel | median |
+|---|---|---|---|---|---|---|
+| EFTER 1 (23:31Z) | 21 635 | 21 806 | **+171** | 17 339 | 315 | 312 |
+| EFTER 2 (23:34Z) | 21 635 | 21 850 | **+215** | 17 339 | 315 | 312 |
+
+**Dom: |docHΔ| ≤ 350 ×2 → PASS ×2** (o138 EFTER var −371 = FALL; kuren
+flyttar ar-sidan under taket första gången). FÖRE-bitidentiska (21 635,
+FÖRE-Σ 17 146) och Σh/medel/median bitidentiska mellan omgångarna —
+deterministiskt, giltigt enligt o129 §4. Väntat ~+14 (§3-tabellen mot
+måndagens medel 312,35) överskrids av ÄKTA medel 315,25: innehållsdrift
++2,9 px/kort sedan kalibreringen (listan lever — se §7-notisen).
+
+**Felmod bevisad och kurerad (vakarövertagets eget vaccin):** första
+sondförsöket FÖRE-docH 823/0 kort = KALL ISR-START (navigationen ej
+levererad vid FÖRE-snapshotten; docHΔ 20 812 meningslöst) — bevarad öppet
+som blocksond-…-efter-o150-OGILTIG-kallstart.json. Kur: ISR-värmning ×3
+(kall 2,81 s → varm 0,13 s, 110 cv-bloggkort-förekomster i HTML) före
+omgång 1; kontraktet ärvs av nästa blocksond på ISR-sida (o151:s
+värmningsläxa i ar-variant).
+
+5. **CLS-kontroll:** lämnad till vaktpassets cron enligt §5.5 (rutin);
+   sondernas bitidentiska Σh/docH-stabilitet indikerar inga layoutskred.
+
+## §7 — Kö vidare (oförändrat + detta spårs)
+
+- o120 §6 arkitekturnivå (produktpåverkan — bokas med öppet beslut i rond).
+- o120 /blogg kall-TBT-arkitekturpost (oförändrad öppen).
+- u3:s o144-slutbokföring (deras pågående yta).
+- **NY NOTIS (drift-tak):** äkta medel är tillbaka på 315,25 (söndags-
+  nivån; kalibreringsunderlaget måndagens 312,35) ⇒ medeldrift +7,25 mot
+  P=308 = strax över §3:s teoretiska ±6,4 — uppmätt docHΔ håller endast
+  pga IO-marginalens redan-renderade kort i FÖRE-läget. Ny mikrojustering
+  (kandidat P enligt §3-logik mot DÅTIDA sonddata, aldrig bredare regel)
+  bokas först vid uppmätt |docHΔ| > 350 i nästa EFTER-mätning — doktrinen
+  o92/o129 gäller: mäta först, justera vid brott.
 
 ## §7 — Kö vidare (oförändrat + detta spårs)
 

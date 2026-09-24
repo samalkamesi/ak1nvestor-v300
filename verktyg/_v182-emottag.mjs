@@ -51,6 +51,12 @@ function stycke(txt, fran, till) {
   const b = txt.indexOf(till, a);
   return b < 0 ? txt.slice(a) : txt.slice(a, b);
 }
+// sektionsmarkörer: del 1 (indikatorer-01-10) bär "### a)–f)", del 2 (11-20) bär utskrivna rubriker
+function markorerFor(fil) {
+  return fil.includes('11-20')
+    ? { d: '### Räkneexempel', e: '### Fallgropar', f: '### Övningar med facit' }
+    : { d: '### d)', e: '### e)', f: '### f)' };
+}
 function talMarkorer(text) {
   // normaliserade tal: "1 952,21" → "1952.21" ; "44 %" → "44" ; listnummer/meningspunkt "1."/"1 350." rensas
   const rå = text.match(/\d[\d\s\u00a0]*[.,]?\d*/g) || [];
@@ -102,7 +108,8 @@ function kontrolleraFragment(slug, fil, rubrik, kapNum) {
   // deklarationer + juridik (allt = hela kapiteltexten inkl quiz — grindarna testar allt eleven ser)
   const allt = [k.intro, ...(k.blocks || []).map(b => b.content), ...((k.quiz || []).map(q => [q.q, ...(q.alternativ || []), q.tips].join(' ')))].join('\n');
   allt.includes(JURIDIK) ? ok('juridikdeklaration ordagrant') : fel('juridikdeklaration saknas/avviker');
-  allt.includes('NorrTeknik AB är ett konstruerat bolag') ? ok('bolag-deklaration') : fel('bolag-deklaration saknas');
+  // bolag-deklaration: del 1 använder NorrTeknik (konstruerat), del 2 andra låtsasbolag (påhittat) — underlagets egen deklaration överförs (design punkt 6)
+  /är ett (konstruerat|påhittat) bolag/i.test(allt) ? ok('bolag-deklaration (konstruerat/påhittat)') : fel('bolag-deklaration saknas');
   const lg = FORBJUDNA_LAGRUM.filter(l => allt.includes(l));
   lg.length === 0 ? ok('lagrum endast 2007:528') : fel('förbjudna lagrum: ' + lg.join(','));
   const rf = RADFRASER.filter(x => allt.toLowerCase().includes(x));
@@ -112,8 +119,9 @@ function kontrolleraFragment(slug, fil, rubrik, kapNum) {
   vmTräff.length === 0 ? ok('varumärkesgrind 0 (' + VM.length + ' mönster)') : fel('varumärke: ' + vmTräff.slice(0, 3).join(','));
   // talmarkörer d+f ≥ 80 %
   const sek = underlagsSektion(fil, rubrik);
-  const dSek = stycke(sek, '### d)', '### e)');
-  const fSek = stycke(sek, '### f)', '\n## ');
+  const M = markorerFor(fil);
+  const dSek = stycke(sek, M.d, M.e);
+  const fSek = stycke(sek, M.f, '\n## ');
   const källaTal = talMarkorer(dSek + ' ' + fSek).filter(t => parseFloat(t) >= 2 || t.includes('.'));
   const mål = talMarkorer([k.blocks[0].content, k.blocks[2].content].join(' '));
   const träff = källaTal.filter(t => mål.includes(t));

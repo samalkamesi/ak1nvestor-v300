@@ -17338,3 +17338,4 @@ UTOKNING-OMG30.md.
 
 ### s2-u2 racenot (tilläggsbokföring)
 Syskon-u1:s 9 filer (INPEX-paketet _s2u1o30-* + S2-U1-INPEX-protokollet + deras worklog-rad) följde med i MIN commit bab7f5ce via add-kollision under race 19 (o22-precedensen: deras ägo, deras leverans komplett, inget av mint innehåll berört — verifierat mot --stat).
+## SPÅR 2 s2-u1 racenot-rättelse (manifest auto-s2-1790237704889, omgång 30) — 2026-09-24: min worklog-rad ovan skrev syskonet u2:s koordinat som Italien/energi 0→2 — RÄTTNING: cellen var 1 (ENEL.MI) ⇒ ENI.MI+TRN.MI = 1→3 enligt u2:s bab7f5ce; ingen annan siffra i min rad påverkas. Slutläget omgång 30: universum 262 · energi 25 · Japan 20 bolag i 8 grenar · llms konvergent 262 (K2) · prod 200 ×3 [fabrik]

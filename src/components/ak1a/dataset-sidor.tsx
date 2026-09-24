@@ -362,7 +362,10 @@ export function DatasetIndexVy({
 
       {/* Brandgenomgång P2 (våg 195): H1 som löfte i stället för filnamn,
           underrubriken bär omfånget + juridikgrunden. */}
-      <h1 className="font-serif text-4xl font-bold">{t("dataset.h1")}</h1>
+      {/* v160 P2-efterspel: eyebrow enligt analyser/medlemskap-mönstret
+          (BRANDING-AUDIT #7 — språkneutralt varumärke, därför inga t()-nycklar) */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">{t("dataset.h1")}</h1>
       <p className="mt-2 text-muted-foreground">
         {t("dataset.underrubrik", { nBolag: medianer.totalt.nBolag })}
       </p>

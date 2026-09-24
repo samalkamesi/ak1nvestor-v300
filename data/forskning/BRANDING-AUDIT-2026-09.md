@@ -276,9 +276,11 @@ raw-hex i auditens sju filer 0 ✓ (övriga filer fortsättningsvis).
 6. **DelRad:s delningspiller** (blogg/[slug], forskningsbiblioteket/[ticker]) —
    m8 §3b-kontraktet "ikonrad, inte banner": diskreta 44px-piller (52px endast
    mobil), ALDRIG signatur-guld — delning är sekundär, aldrig huvud-CTA.
-7. **Dataset-eyebrow** — parkerad: dataset-sidorna är t()-flerspråkiga och en
-   eyebrow kräver nya ordlistenycklar sv/en/ar (kirurgigränsen för P2; eget
-   mikropass när ordlistan öppnas nästa gång).
+7. **Dataset-eyebrow** — LEVERERAD 2026-09-24 (rond 168): monterad på
+   dataset-indexets H1 (dataset-sidor.tsx) med språkneutralt varumärke
+   ("AK1A Research Lab", text-gold) enligt analyser/medlemskap-konventionen —
+   ordlistenyckel-kravet upplöstes: konventionens eyebrow är språkneutral,
+   inga t()-nycklar behövdes.
 8. **Hero-familjens tokens är temastabila** (P3.1): de flippar INTE i dark och
    ingår INTE i .marin-scope-guld-flippen — de skall bete sig exakt som de
    raw-hex de ersatte. Förväxla dem aldrig med --gold/--djup-marin (som flippar).

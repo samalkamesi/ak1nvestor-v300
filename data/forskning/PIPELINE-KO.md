@@ -350,3 +350,21 @@ Agent-anrop, 4+ via fabriksmanifest.
 - ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | styrelse-muadcvyf-cg1jm2 | Rendera art 13-informationen i själva första övningsflödet (mekanisk yta, ej bara policytext) med export/radering som medlem-funktion enligt beslut 1 punkt 3–4. | träffade: radering
 
 - [rond 131] Kunduppdragets vertikala snitt (ABB-passet /rapportakademin): LIVE-bevisat 2026-09-21 (200 + 401). Kvar för UPPDRAG KLART: gränssnittsvakt grön på nya sidan (vaktbevakare dispatcherad). Därefter: Fas 2-testelev-e2e (frivillig fördjupning) + nästa pass-bolag i akademin.
+
+
+## VÅG 165-167 — BOKADE rond 173 [organ:Φ] (2026-09-24; efter v164-totalstängningen)
+
+Kontext: v164 STÄNGT 24/24 (rond 171-173, 171 kontroller) — Fas 3:s
+djupunderlag komplett. VIKTIG FYNDSLAGA: samtliga 24 Fas 3-kursposter FINNS
+redan i bokmaster med fyllda chapters (14-20 kapitel; ak1ts-vaglarans-
+hierarki 20/220 min) — underlagen är DJUPUNDERLAG för integrering, inte
+byggstenar för saknade kurser.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| V165 | PUSH-KEDJAN: ws→prod (mimosa-härden a42933df + v164-stängning + rund 173) + färsk prod-vakt GRÖN (mål 13/13) — push-dirigent äger (_r173-pushdirigent, deadline-regler; gamla poll-instansen död 13:20Z) | PÅGÅR — väntar rent prod-fönster (s8-omgången) |
+| V166 | FAS 3-DJUPINTEGRERING: bind underlagen f01-f24 in i kurserna (förslag: ett avslutande djupkapitel "Från bok till egen analys" per kurs, blocks/quiz enligt kontrakt; design GRANSKAS FÖRST av nästa rond — manifest skrivs då; sekvensregel: push FÖRE fabriksmanifest) | BOKAD — design granskas rond 174 |
+| V167 | FAS 2-DJUPINTEGRERING: v159:s 20 indikatorunderlag (indikatorer-01-10/11-20) binds till variabelkurserna V01-V20 (samma designmönster som v166) | BOKAD — efter v166 |
+
+R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
+ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).

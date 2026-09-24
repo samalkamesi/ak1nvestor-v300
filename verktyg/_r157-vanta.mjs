@@ -9,7 +9,7 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 const borja = Date.now();
 let pushad = false;
-while (Date.now() - borja < 420000) {
+while (Date.now() - borja < 1500000) {
   let smutsiga = [];
   try {
     smutsiga = execFileSync('git', ['-C', P, 'status', '--porcelain'], { encoding: 'utf8' }).split('\n').filter(r => r.trim());

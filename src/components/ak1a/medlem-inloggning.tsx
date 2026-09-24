@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { sparaMedlem } from "@/lib/member-local";
 
 /**
  * MEDLEM-INLOGGNING — riktig kontoautentisering ovanpå FAS L1-kärnan
@@ -60,6 +61,27 @@ async function medlemApi(body: Record<string, unknown>): Promise<{ res: Response
   return { res, data: await lasSvar(res) };
 }
 
+/** FAS-SYNK (gapet v171): hämtar medlemsraden (med member_type) och sparar
+ *  henne i ak1a-member — fasgrindarna (kurs-access.ts) läser nivån ur
+ *  localStorage; utan denna synk öppnar en lyckad inloggning aldrig sina
+ *  faser. Fire-and-forget: misslyckas den gör grindarna om vid nästa
+ *  inloggning/sidladdning. En medlem utan rad i registret lämnas orörd. */
+async function synkaMedlemTillFaser(epost: string): Promise<void> {
+  try {
+    const res = await fetch(`/api/member/register?email=${encodeURIComponent(epost)}`);
+    const data = await lasSvar(res);
+    const m = data?.member as
+      | { id?: string; email?: string; name?: string; member_type?: string }
+      | null
+      | undefined;
+    if (m && typeof m.id === "string" && typeof m.email === "string") {
+      sparaMedlem({ id: m.id, email: m.email, namn: m.name || undefined, member_type: m.member_type });
+    }
+  } catch {
+    /* nätverkssynk är lyx — kakorna består, försök igen vid nästa besök */
+  }
+}
+
 /** Medlemskontot: riktig inloggning (FAS L1) — gäst-vyn finns kvar nedanför. */
 export function MedlemInloggning() {
   const [lage, setLage] = useState<Lage>("loggain");
@@ -81,6 +103,9 @@ export function MedlemInloggning() {
       .then(({ data }) => {
         if (aktiv && data && data.inloggad === true && typeof data.epost === "string") {
           setInloggadEpost(data.epost);
+          // FAS-SYNK: localStorage kan vara rensad trots levande kakor —
+          // synka nivån så faserna förblir upplåsta (gapet v171).
+          void synkaMedlemTillFaser(data.epost);
         }
       })
       .catch(() => {});
@@ -133,8 +158,12 @@ export function MedlemInloggning() {
 
       if (action === "signin") {
         // Kakorna är satta; svaret bär eposten (ALDRIG tokens).
-        setInloggadEpost(typeof data.epost === "string" ? data.epost : epost.trim().toLowerCase());
+        const inloggad = typeof data.epost === "string" ? data.epost : epost.trim().toLowerCase();
+        setInloggadEpost(inloggad);
         setLosenord(""); // lösenordet lämnar state:n så snart det kan
+        // FAS-SYNK (gapet v171): nivån (member_type) in i ak1a-member NU —
+        // annars förblir fasgrindarna stängda trots lyckad inloggning.
+        void synkaMedlemTillFaser(inloggad);
         return;
       }
 

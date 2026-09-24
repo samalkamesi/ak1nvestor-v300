@@ -12,7 +12,7 @@ filosofin på tre ben. För det första: många små förluster. Varje utbrott
 som inte leder någonstans stängs av stoppet, och de smärtsamma
 posterna blir många — de är hyran för att få vara med från start på
 varje trend som faktiskt löper. För det andra: få stora vinster. När en
-trend weller sig låter trendföljaren vinsten växa; exitregeln — inte
+trend väl tar fart låter trendföljaren vinsten växa; exitregeln — inte
 känslan — avgör när resan slutar. För det tredje: asymmetrin. Förlusten
 är i förväg begränsad av stoppet, vinsten lämnas öppen. Summan av det
 är trendföljningens karaktär: **en förväntansvärdesmaskin, inte en
@@ -103,7 +103,7 @@ räknenerven som förklarar **varför** reglerna ser ut som de gör. I
 plattformens modell möts två skikt: det **fundamentala filtret**
 (AKM2:s dimensioner — lönsamhet, värdering, kvalitet) avgör vad som är
 värt att äga; den **tekniska entryn** (trendfilter, utbrott, stopp)
-avgör när och hur exponeringen tas och lämnas. kursen tränar eleven att skilja svaren åt — fundament för urval, trend för timing. AI-Mentorn
+avgör när och hur exponeringen tas och lämnas. Kursen tränar eleven att skilja svaren åt — fundament för urval, trend för timing. AI-Mentorn
 kan förhöra på beslutträdets grenar; journalen (F14) mäter verklig
 träffare och verklig utfallsstorlek att ställa mot planerat
 förväntansvärde, och Fas 2:s procentkultur gör tabellen läsbar. Räkne-

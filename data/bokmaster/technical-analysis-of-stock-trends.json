@@ -2,8 +2,8 @@
   "slug": "technical-analysis-of-stock-trends",
   "category": "BOKMASTER",
   "weight": "KRITISK",
-  "chapterCount": 15,
-  "totalMinutes": 150,
+  "chapterCount": 16,
+  "totalMinutes": 163,
   "title": "Technical Analysis of Stock Trends — Edwards & Magee: KOMPLETT",
   "summary": "Boken som 1948 kodifierade hela mönsterhandeln — huvud-och-skuldror, dubbeltoppar, trianglar, kilar, flaggor och gap — beskriven med exakta kriterier, volymbekräftelse och mätregler. Kursen täcker även den kontroversiella sanningen: vad moderna datorbaserade testare som Bulkowski faktiskt fann när 1940-talets mönster kördes mot stora datamängder, och varför AK1TS ändå behåller mönsterkunskapen som ryggrad i Brytpunkt-dimensionen.",
   "minutes": 10,
@@ -86,6 +86,11 @@
       "num": 15,
       "title": "Kontroversiell ärlighet — Bulkowski, datorerna och sanningen om mönstren",
       "minutes": 10
+    },
+    {
+      "num": 16,
+      "title": "Från boken till egen analys",
+      "minutes": 13
     }
   ],
   "chapters": [
@@ -1167,6 +1172,81 @@
           ],
           "ratt": 1,
           "tips": "Skilj på två olika värden hos ett mönster: riktningssignalen och definieringen av nivåer — vilket av dem överlever låg vinnarfrekvens?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 13,
+      "title": "Från boken till egen analys",
+      "intro": "Bokens färdigritade diagram blir nu ditt eget ritblock: här slås läsningen om till handlag. Kapitlet samlar kursens tre byggstenar — trendbegreppet, stöd och motstånd, formationsnamnen — till ett konkret rithantverk, ett genomräknat mätexempel och de fallgropar som skiljer hantverkaren från mönsterjägaren. Målet är inte att du kan boken, utan att du kan metoden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Edwards & Magees lärobok (första upplagan 1948) är den klassiska sammanställningen av den tekniska analys som växte fram ur Dow-teorin — och hela kursen vilar på tre byggstenar från den traditionen. Den första är trendbegreppet: en upptrend är en sekvens av högre toppar och högre bottnar; en nedtrend är lägre toppar och lägre bottnar; allt annat är sidledes. Definitionen är mekanisk — två läsare ska kunna slås av samma sekvens — och trenden finns samtidigt i flera skalor (primär, sekundär, minor). Den andra är stöd och motstånd: zoner där köpare respektive säljare tidigare visat sig i styrke. En nivå som bryts byter ofta roll — gammalt motstånd blir nytt stöd — och nyckelordet är zon: priserna samlas i ett band, aldrig på en pixellinje. Den tredje är formationsnamnen: vändningsformationer (huvud-skuldra, dubbeltopp, dubbelt botten) och fortsättningsformationer (trianglar, flaggor, vimplar, rektangel). Namnen är komprimerade beskrivningar av hur utbud och efterfrågan förskjuts — inte magiska symboler. Detta kapitel är ingen bokrecension utan översättning: från boksidans tryckta diagram till egna linjer på egen kurva."
+        },
+        {
+          "type": "text",
+          "content": "Hantverket, i sex steg. 1. Bestäm vy och skala innan du ritar: ett tidspann (i exemplet nedan: dagavslut) och logaritmisk skala på fleråriga serier — en linje som byter vy är inte längre samma linje. 2. Trendlinjen sammanbinder två betydande bottnar (upptrend) eller toppar (nedtrend). Två punkter är en hypotes; först när en tredje sväng stannar vid linjen är den bekräftad. Fler beröringar gör linjen viktigare — och varje beröring förbrukar trovärdighet. 3. Dra zoner, inte pixellinjer: målet är det område, några procent brett, där svängpunkterna samlas — inte en decimal. 4. Horisontella nivåer före snedda: fråga först 'var har kursen vänt flera gånger?' och därefter 'vilken sned linje beskriver svängarna?'. 5. Kanalen är trendlinjens parallell på motsatt sida; avståndet mellan dem blir formationsmått i mätexemplet nedan. 6. Läs volymen samtidigt: i en frisk trend följer volymen med trendens svängar — volymbekräftelse hör till ritandet, inte till eftertanket. Sex steg i fast ordning, och en disciplin som binder ihop dem: det som ritas före reglerna är en åsikt, inte en läsning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta papper och penna — eller plattformens diagramverktyg — och genomför hantverket på en aktie du själv följer. Bestäm vy och skala först. Markera de horisontella nivåer där kursen vänt flera gånger, dra trendlinjen genom två betydande bottnar och vänta på den tredje svängen som bekräftar den, komplettera med kanalen och läs volymen vid varje beröring. Anteckna i din journal: vilken vy du valde, var din zon ligger (i kronor, som band — inte en decimal) och hur många beröringar linjen har. Spara ritningen med datum. Nästa gång du öppnar diagrammet är det din egen linje du prövar — och varje ny beröring blir ett nytt blad i journalen."
+        },
+        {
+          "type": "text",
+          "content": "Nu mättekniken i rörelse — ett pedagogiskt exempel, tydligt konstruerat: alla siffror nedan är konstruerade för genomräkningen. Edwards & Magees mätteknik lyder: formationens höjd projiceras från brytpunkten. Huvud-skuldra, nedåt. Vänster skuldra toppar 158 kr, huvudet 172 kr, höger skuldra 160 kr. Bottnarna däremellan: 146 och 147 kr — nacklinjen dras genom dem som en zon 146–147. Formationens höjd = huvudets topp minus nacklinje: 172 − 146,5 = 25,5 kr. Utbrottet: stängning under nacklinjen vid 145,50. Projektionen: 145,5 − 25,5 = 120 kr som första målområde, (147 − 120) ÷ 147 ≈ −18 % under brytzonen. Volymkontroll: utbrottsdagen visar 2,4× genomsnittlig volym — bekräftat. Hade volymen i stället halverats vore utbrottet misstänkt (se fallgrop 3 nedan). Tabellen ställer upp samma genomräkning rad för rad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Huvud-skuldra nedåt — genomräkning (pedagogiskt exempel, alla siffror konstruerade)\",\"rader\":[[\"Element\",\"Värde\",\"Uträkning\"],[\"Vänster skuldra (topp)\",\"158 kr\",\"—\"],[\"Huvud (topp)\",\"172 kr\",\"—\"],[\"Höger skuldra (topp)\",\"160 kr\",\"—\"],[\"Bottnar däremellan\",\"146 och 147 kr\",\"nacklinjen som zon 146–147\"],[\"Formationshöjd\",\"25,5 kr\",\"172 − 146,5\"],[\"Brytning (stängning)\",\"145,50 kr\",\"under nacklinjezonen\"],[\"Första målområde\",\"120 kr\",\"145,5 − 25,5\"],[\"Avstånd under brytzonen\",\"≈ −18 %\",\"(147 − 120) ÷ 147\"],[\"Volymkontroll\",\"2,4×\",\"genomsnittlig volym — bekräftat\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Samma aritmetik, andra riktning — dubbelt botten, uppåt: metoden är riktningsneutral. Bottnar 40 och 41 kr, toppen emellan 46 kr. Höjd = 46 − 40,5 = 5,5 kr. Stängning över 46 ⇒ första mål 46 + 5,5 = 51,5 kr, (+12 % från brytnivån). Det är höjden som projiceras, alltid från den nivå där utbrottet sker — riktningen spelar ingen roll för räkningen. Och gränsen för vad räkningen säger: exemplen visar hur metoden mäts; de säger inget om vad någon bör göra med någon aktie (2007:528). Det är skillnaden mellan att öva en metod och att följa en signal — den här kursen lär ut det förra."
+        },
+        {
+          "type": "text",
+          "content": "Fyra fallgropar, kompakterade. 1. Se mönster i brus: givet tillräckligt många svängar hittar ögat alltid en 'formation'. Skyddet är regelverket — distinkta svängar, nacklinje i minst två punkter, rimliga proportioner — och testet: skulle en annan läsare med samma regler se samma formation? 2. Glidande trendlinjer: att rita om linjen efter varje ny lågpunkt tills den passar igen är inte analys; efter tredje omritningen är det en åsikt som jagas. Rätt läsning är den omvända — varje tvingad omritning är i sig information om att trenden försvagas. 3. Glömma volymen: pris utan volym är en rörelse utan vittne. Utbrott utan volymökning är ofta falskt (ett språng utan publik), och avtagande volym i en gammal trend varnar tidigare än priset — Edwards & Magee är tydliga med att volymen bekräftar trenden. 4. Projektionen som prognos: målet är ett första målområde att öva mätning på, inte ett löfte om var kursen stannar."
+        },
+        {
+          "type": "insikt",
+          "content": "Här knyts boken till ekosystemet: den här kursen förser hela Fas 3:s tekniska familj med ordförrådet. F01:s hierarki (vågläran) avgör i vilken skala en läsning görs; den här kursen avgör vad som räknas som trend, nivå och formation i den skalan. Grannkurserna bygger vidare på samma språk: F04 (Elliott) läser samma kurva som svängar i stället för formationer — två beskrivningar av samma utbud och efterfrågan; F06 (Murphy) systematiserar med volym och tidsramar; F08 (Bulkowski) sätter statistik på de namn Edwards & Magee namngav (träffprocent per formation); F13 (Fibonacci) gör stöd/motstånd-zonerna mätbara — retracementzoner är just stöd och motstånd. I plattformen lever tanken i AKM2-analyserna, där det tekniska benet (struktur, nivåer, volym) förs och loggas som ett separat vittne bredvid det fundamentala — F03:s konfluens — och i AI-Mentorn, där eleven får rita sina egna zoner och jämföra med en modelläsning. Fasprogressionen är densamma som övriga banan: Fas 1 beskriver, Fas 2 analyserar, Fas 3 integrerar. Allt är utbildningsmaterial — metoden beskriver hur den läser, ritar och räknar; inga investeringsråd, inga avkastningslöften (2007:528), och kurskurserna i exemplen är konstruerade och märkta som sådana."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras en upptrend i bokens tradition?",
+          "alternativ": [
+            "En sekvens av högre toppar och högre bottnar",
+            "En sekvens av stängningar över gårdagens högsta kurs",
+            "En kurva som stigit kraftigt från senaste botten",
+            "Vad som helst som ser ut att stiga på diagrammet"
+          ],
+          "ratt": 0,
+          "tips": "Definitionen är mekanisk — två läsare ska kunna slås av samma sekvens."
+        },
+        {
+          "q": "Vad innebär Edwards & Magees mätteknik för formationer?",
+          "alternativ": [
+            "Att kursen alltid stannar exakt vid det uträknade målet",
+            "Att formationens höjd projiceras från brytpunkten som ett första målområde",
+            "Att målet beräknas ur volymens medelvärde för hela formationen",
+            "Att formationer utan symmetri saknar mått"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på genomräkningen: 172 − 146,5 = 25,5 kr, som projicerades från stängningen 145,50."
+        },
+        {
+          "q": "Vad säger boken om volymens roll vid ett utbrott?",
+          "alternativ": [
+            "Volymen är oväsentlig så länge formationen är tydlig",
+            "Volymen ska alltid avta vid ett äkta utbrott",
+            "Utbrott utan volymökning är ofta falskt — volymen bekräftar trenden",
+            "Volymen avgör vilken formation som ska ritas"
+          ],
+          "ratt": 2,
+          "tips": "I exemplet visade utbrottsdagen 2,4× genomsnittlig volym — vad hade en halvering betytt?"
         }
       ]
     }

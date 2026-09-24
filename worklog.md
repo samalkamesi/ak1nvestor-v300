@@ -17335,3 +17335,6 @@ ALLA 200 med llms LIVE "på 259 bolag" (disk == prod); R2 orörd; data/blogg/
 orörd; moat i FRACTION enligt kodebevis karna.ts (Keyence-korrekturet följt).
 FIFO: ENI Q3 2026-10-23 · TRN 2026-11-12. Protokoll: S2-U2-ENI-TERNA-
 UTOKNING-OMG30.md.
+
+### s2-u2 racenot (tilläggsbokföring)
+Syskon-u1:s 9 filer (INPEX-paketet _s2u1o30-* + S2-U1-INPEX-protokollet + deras worklog-rad) följde med i MIN commit bab7f5ce via add-kollision under race 19 (o22-precedensen: deras ägo, deras leverans komplett, inget av mint innehåll berört — verifierat mot --stat).

@@ -283,6 +283,22 @@
       "ts": 1790206447922,
       "status": "lamnat",
       "lamnatTs": 1790206723559
+    },
+    {
+      "nummer": "o156",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-kvalitetsvag-s8u1-0924",
+      "titel": "nyckeltalsguide-upptäckbarhet: o152 §restpost 2 utredd (en/ar-404 = enbart-sv vid design, inget dött löfte) + ROTORSAKSKUR av den inverterade o146-klassen: citeringsmagneten /data/nyckeltalsguide (våg 87) saknas i sitemap OCH har 0 interna inlänkar — kur: sitemap-post + länk från DatasetIndexVy ×3 språk",
+      "ts": 1790208276323,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o157",
+      "agare": "s8-u2",
+      "manifest": null,
+      "titel": "kvalitetsvåg: nyckeltalsguide en/ar-404 DOM (avsikt, ej defekt) + språkkontraktssviten — disjunkt komplement till u1/o156:s upptäckbarhetsände",
+      "ts": 1790208629905,
+      "status": "reserverat"
     }
   ]
 }

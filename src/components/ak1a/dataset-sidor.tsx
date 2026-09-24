@@ -400,6 +400,22 @@ export function DatasetIndexVy({
         </div>
 
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
+
+        {/* o156 (s8): metod-vägen in till nyckeltalsguiden — /dataset
+            redovisade medianerna men lämnade läsaren utan länk till sidan
+            som förklarar dem (0 interna inlänkar, mätt 2026-09-24).
+            Absolut sökväg: guiden är enbart-svensk (våg 87-design);
+            en/ar-läsaren varnas om målets språk i länktexten.
+            prefetch={false} enligt o17-precedensen — grann-CTA:s mönster. */}
+        <p className="mt-3 text-sm">
+          <Link
+            href="/data/nyckeltalsguide"
+            prefetch={false}
+            className="font-medium text-primary underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
+          >
+            {t("dataset.guideLank")}
+          </Link>
+        </p>
       </section>
 
       {/* Brandgenomgångens CTA-gap (våg 201): dataset-ytan lämnade besökaren
@@ -593,6 +609,19 @@ export function DatasetBranschVy({
         </p>
 
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
+
+        {/* o156 (s8): samma metod-väg som index-vyn — detaljsidorna är
+            långsvans-magneterna ("median P/E <bransch>") och förtjänar
+            vägen till metodsidan lika mycket. */}
+        <p className="mt-3 text-sm">
+          <Link
+            href="/data/nyckeltalsguide"
+            prefetch={false}
+            className="font-medium text-primary underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
+          >
+            {t("dataset.guideLank")}
+          </Link>
+        </p>
       </section>
 
       <section className="mt-8">

@@ -1828,6 +1828,16 @@ export const ORDLISTA = {
     en: "Universe and aggregation: AK1A Research Lab · raw data: public market sources ({kallor})",
     ar: "العالم والتجميع: AK1A Research Lab · البيانات الخام: مصادر سوق عامة ({kallor})",
   },
+  // o156 (s8): guid-länken — /dataset redovisar medianerna men länkade
+  // aldrig till den sida som förklarar metoden bakom dem (0 interna
+  // inlänkar till /data/nyckeltalsguide, mätt 2026-09-24). Guiden är
+  // enbart-svensk (våg 87-design) — en/ar-läsaren varnas ärligt om målets
+  // språk i stället för att nekas vägen.
+  "dataset.guideLank": {
+    sv: "Så räknas medianerna — metod, n-redovisning och maskinläsbar JSON i nyckeltalsguiden →",
+    en: "How the medians are computed — method, n-counts and machine-readable JSON in the key-ratio guide (in Swedish) →",
+    ar: "كيف تُحسب الوسيطات — المنهج وأعداد المشاهدات وJSON قابل للقراءة الآلية في دليل المؤشرات المالية (بالسويدية) ←",
+  },
   "dataset.metod.rubrik": {
     sv: "Hur medianen räknas",
     en: "How the median is computed",

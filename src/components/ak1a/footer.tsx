@@ -51,6 +51,36 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-muted/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
+        {/* kf2 (CTA-spåret 2026-09-24): konverteringsbanner — sista
+            igenkomstkällan före manifestet. Princip-rad, aldrig pris:
+            0 kr-sanningen bärs av mikro-nycklarna (R2 orörd). */}
+        <div className="mb-8 flex flex-col gap-4 rounded-xl border border-gold/30 bg-gold/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-serif text-lg font-bold text-foreground">
+              {t("footer.ctaRubrik")}
+            </p>
+            <p className="mt-1 text-xs tracking-wide text-muted-foreground">
+              {t("home.heroMikro1")} · {t("home.heroMikro3")}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/logga-in"
+              prefetch={false}
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center gap-2 px-6 py-3 text-sm font-bold"
+            >
+              {t("home.borjaGratis")} <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/kurser"
+              prefetch={false}
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-lg border border-gold/50 px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold/10"
+            >
+              {t("home.seKurserna")}
+            </Link>
+          </div>
+        </div>
+
         {/* Manifesto block */}
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
           <div>

@@ -1,5 +1,0 @@
-{
- "sammanfattning": "RAPPORTAKADEMIN levererad: ABB-passet LIVE i prod (200 https+localhost), bedöm-först-grind bevisad (GET 200+kod inloggning, POST utan auth 401), gränssnittsvakt 0 fynd/4 kombinationer EFTER deploy (23:48Z), citat-validator + karantän-intag + LAGGRUNDEN committade (8abf541e, 141c7e77, 443e6a2b anfäder i prod-HEAD), motorer 107/0/0 — R2-resterna (minimering/gallring/art13/export/radering + publicering av flyttklara paket) VÄNTAR KUND enligt beslutets egen markeringslista, påmint i worklog.",
- "bevis": "r153-dod-sond.json + granssnitt-2026-09-21T234820.json (0/4) + git merge-base 8abf541e/141c7e77/443e6a2b ✓ + https://lab.ak1nvestor.com/rapportakademin 200",
- "ts": 1789974600000
-}

@@ -1,0 +1,98 @@
+{
+  "ts": "2026-09-24T00:52:03.186Z",
+  "lage": "natt",
+  "steg": [
+    {
+      "steg": "0-ram",
+      "ramMB": 3877,
+      "tak": 1500,
+      "pass": true
+    },
+    {
+      "steg": "0b-lastvakt",
+      "busyProc": 2.1,
+      "loadavg": [
+        1.32,
+        3.19,
+        3.96
+      ],
+      "cpuKalibMs": 64.5,
+      "zcodeBarn": 7,
+      "tyst": true,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5
+      },
+      "vantadeMs": 284243,
+      "pass": true
+    },
+    {
+      "steg": "1-prod200-varmning",
+      "status": {
+        "/superanalys": 200,
+        "/kalkylator": 200
+      },
+      "pass": true
+    },
+    {
+      "steg": "1b-last-ater",
+      "busyProc": 9,
+      "loadavg": [
+        1.1,
+        3.05,
+        3.9
+      ],
+      "cpuKalibMs": 109.5,
+      "tyst": true,
+      "pass": true
+    },
+    {
+      "steg": "2-lighthouse",
+      "exit": 0,
+      "svans": [
+        "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o155-efter-vakt-sammanfattning.json",
+        "",
+        "Jämförelse mot o139-fore:",
+        "/superanalys: P 73→38 · LCP 4355→7007 (+2652 ms) · TBT 375→7508",
+        "/kalkylator: P 64→35 · LCP 4812→8291 (+3479 ms) · TBT 582→16413",
+        ""
+      ]
+    }
+  ],
+  "dom": [
+    {
+      "sida": "/superanalys",
+      "poangFore": 73,
+      "poangEfter": 38,
+      "lcpFore": 4355,
+      "lcpEfter": 7007,
+      "lcpDeltaProc": 60.9,
+      "tbtFore": 375,
+      "tbtEfter": 7508,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": false,
+        "poangSuperBand": false
+      }
+    },
+    {
+      "sida": "/kalkylator",
+      "poangFore": 64,
+      "poangEfter": 35,
+      "lcpFore": 4812,
+      "lcpEfter": 8291,
+      "lcpDeltaProc": 72.3,
+      "tbtFore": 582,
+      "tbtEfter": 16413,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": false,
+        "tbtKalkylator450": false
+      }
+    }
+  ],
+  "lastOK": true,
+  "sammanfattning": "o155-efter-vakt-sammanfattning.json"
+}

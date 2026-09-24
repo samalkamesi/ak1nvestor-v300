@@ -2,8 +2,8 @@
   "slug": "technical-analysis-financial-markets",
   "category": "BOKMASTER",
   "weight": "KRITISK",
-  "chapterCount": 20,
-  "totalMinutes": 220,
+  "chapterCount": 21,
+  "totalMinutes": 233,
   "title": "Technical Analysis of the Financial Markets — Murphy: KOMPLETT",
   "summary": "John J. Murphys 'Technical Analysis of the Financial Markets' (1999) är teknisk analysens bibel — en komplett genomgång av allt från Dow-teorin och chartkonstruktion till Elliott-vågör, Fibonacci, cykler och intermarket-analys. Denna BOKMASTER-kurs täcker hela boken i 20 kapitel och knyter varje verktyg till AK1TS-ekosystemet: fem tidshorisonter, fem teorier och fyra dimensioner. Efter kursen läser du vilken chart som helst med Murphys systematik — från Mikro till Mega.",
   "minutes": 11,
@@ -111,6 +111,11 @@
       "num": 20,
       "title": "Handelssystem, risk och AK1TS-integrationen",
       "minutes": 11
+    },
+    {
+      "num": 21,
+      "title": "Från boken till egen analys",
+      "minutes": 13
     }
   ],
   "chapters": [
@@ -1547,6 +1552,77 @@
           ],
           "ratt": 0,
           "tips": "Systemet köper styrka — vad händer med den strategin när det inte finns någon styrka att köpa?"
+        }
+      ]
+    },
+    {
+      "num": 21,
+      "minutes": 13,
+      "title": "Från boken till egen analys",
+      "intro": "Tjugo kapitel har byggt Murphys system — det här tar steget från bokläsning till egen analys. Du får den praktiska läsordningen steg för steg, ett fullständigt genomräknat volymexempel och fallgroparna som väntar mellan teori och tillämpning. Underlaget är det granskade v164-arbetet (f06, 2026-09-24); allt nedan är utbildning i hur metoden läser, väger och räknar — inte råd om aktier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Murphys lärobok är Fas 3:s motsvarighet till Fas 2:s grundbok: inte en lista på verktyg utan ett system där tre informationsflöden läses tillsammans, i fast ordning. Priset är det främsta vittnet — trenden, högre toppar och bottnar eller lägre, är ryggraden; en trend antas bestå tills den är bevisligen bruten, och det är priset som avgör riktningen. Volymen är engagemanget: den mäter hur många som faktiskt handlade och ska bekräfta prisbilden — en rörelse bärd av tung volym vilar på bredare deltagande än en på tunn. Open interest är positionerna: antalet öppna kontrakt på termins- och optionsmarknaderna, där stigande betyder nya pengar som kommer in och fallande att positioner stängs. Aktier har motsvarande mått inte — där sköter volymen bekräftelserolen ensam.\n\nSambanden sammanfattas i fyra kombinationer av pris, volym och open interest: pris upp med volym och open interest upp är en stark trend; pris upp med båda ned är ett svagt rally (främst shorts som stänger); pris ned med båda upp är starkt nedåttryck (nya blanka positioner); pris ned med båda ned är ett avtagande fall (tvingad försäljning som ebbmar ut). Ovanpå detta läggs tidsramarna: samma marknad berättar olika saker i månads-, vecko- och dagsgraf, och bilderna ska hålla ihop — huvudtrenden i det långa fönstret sätter ramen för det korta. Allt vilar på tre premisser: marknaden diskonterar allt som kan påverka priset, priser rör sig i trender, historien upprepar sig. Därav kursens mest återkommande sanning — teknisk analys är sannolikhetslära lärd av historik, inte spådom."
+        },
+        {
+          "type": "text",
+          "content": "Så läses systemet i praktiken — alltid top-down, från det största fönstret smalnande av: 1. Det breda indexet (i svenska kursdelar: OMX Stockholm). En enda fråga: pekar huvudtrenden uppåt, nedåt eller sidledes? 2. Sektorn. Jämför branschindexet med huvudindexet — en sektor som är starkare är en annan miljö att läsa grafer i än en som efterföljer. 3. Aktien. Först nu öppnas den enskilda grafen — och den läses mot sin sektor, aldrig i isolering.\n\nMotivet är Murphys återkommande iakttagelse att en stor del av en enskild akties rörelse förklaras av marknaden och sektorn den tillhör. Att börja med aktien är att läsa sista kapitlet först. Tidsramarna läggs på samma trappsteg: månadsgrafen ger huvudtrenden, veckografen mellantrenden, dagsgrafen detaljerna — och varje steg upp är ungefär 4–5 gånger större (fyra–fem veckor per månad, fem handelsdagar per vecka), så tre fönster räcker långt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Pappersexperimentet: genomför en fullständig top-down-läsning på papper. Skriv först indexfrågan — pekar huvudtrenden på OMX Stockholm uppåt, nedåt eller sidledes? — och motivera med månadsgrafen. Fortsätt med sektorsjämförelsen: är branschindexet starkare eller svagare än huvudindexet? Öppna först därefter en enskild aktiegraf, och läs den mot sin sektor — aldrig isolerat. Lägg på tidsramstrappan: vad säger månads-, vecko- och dagsgrafen om samma aktie, och håller bilderna ihop? Avsluta med volymmätningen: hur ligger dagens volym mot aktiens eget 20-dagarsnitt? Testa slutligen replikerbarheten — kan en annan elev med samma grafer och samma ordning landa i samma helhetsläsning? I så fall har du en analys; i annat fall har du en åsikt, och skillnaden är hela systemet."
+        },
+        {
+          "type": "text",
+          "content": "Ett genomräknat exempel — volymbekräftelse av trendbrott (pedagogiskt exempel, tydligt konstruerat): ett svenskt mellanbolag — kalla det Bolaget — med stigande trend sedan ett halvår och en stödnivå vid 84 kr som testats tre gånger. Snittvolymen (senaste 20 dagarna) är 1,2 miljoner aktier. Alla siffror är konstruerade för genomräkningen.\n\nBrottsdagen: kursen stänger på 82,60 — det är (84 − 82,60) ÷ 84 = 1,7 % under stödet — på volymen 3,0 miljoner aktier. Det ger 3,0 ÷ 1,2 = 2,5× snittet. Regeln kursen lär: ett nedbrott är bekräftat när stängningen sker under nivån och volymen är minst 1,5–2× sitt snitt. Här: 2,5× ⇒ bekräftat brott.\n\nÅtertestet: tre dagar senare stiger kursen tillbaka mot 84, i snitt 1,05 miljoner aktier per dag (0,9× snittet). Gamla stödet testas som nytt motstånd — på tunn volym. Bilden håller: motståndet bekräftas."
+        },
+        {
+          "type": "text",
+          "content": "Kontrastfallet: samma graf, men brottsdagens volym är 1,3 miljoner aktier (1,3 ÷ 1,2 ≈ 1,1×). Under tröskeln: obekräftat. I det konstruerade förloppet återtar kursen 84 inom en vecka — ett falskt brott som volymregeln höll borta. Skillnaden mellan bekräftat brott och brus sitter alltså i en enda kolumn i kurstabellen. Exemplet visar hur metoden skiljer dem åt — inte vad någon bör göra med någon aktie (2007:528)."
+        },
+        {
+          "type": "text",
+          "content": "Fyra fallgropar möter dig mellan system och tillämpning:\n\nIndikatorträngsel. Fler verktyg ger inte mer kunskap: de flesta indikatorer är släkt — samma kursserie i olika kläder — och säger samma sak om och om igen. Murphys eget råd är att hålla det enkelt: ett fåtal verktyg, förstådda på djupet.\n\nAtt glömma sannolikheten. Ett 'bekräftat' brott är ingen profetia utan ett läge där historiken gett odds. Historien upprepar sig — tills den inte gör det. Den som läser varje signal som ett svar i stället för en sannolikhet har missat kursens första premiss.\n\nVolym utan referensram. Tre miljoner aktier är högt för Bolaget och lågt för en storbank. Volym läses alltid mot aktiens eget snitt, aldrig som en absolut siffra.\n\nOpen interest på fel marknad. Reglerna med open interest gäller derivat. Att föra över dem rakt på aktiemarknaden, där måttet saknas, ger skenbar precision."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphy-kursen är Fas 3:s systemkurs — den som knyter ihop de andra. Top-down-trappan index → sektor → aktie är samma struktur som plattformens egna analyser visar: bred marknad först, bransch sedan, bolag sist — och tidsramshierarkin återkommer i våglärans grader (kapitel 15). Volymbekräftelsen är räkneövningarnas mönster: en regel, ett tal, ett tydligt ja eller nej — samma kultur som Fas 2:s trappsteg. I AKM2-analyserna loggas den tekniska bedömningen som ett av flera vittnen, och i AI-Mentorn kan du jämföra din egen helhetsläsning med modellens. Kursen övar det plattformen gör: att läsa många bilder som en. Utbildningsmaterial — beskriver hur metoden läser, väger och räknar; inga investeringsråd, inga avkastningslöften (2007:528)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket påstående fångar Murphys system bäst?",
+          "alternativ": [
+            "Priset är det främsta vittnet, volymen bekräftar och open interest visar positionerna — tre flöden i fast ordning",
+            "Volymen avgör riktningen och priset bekräftar den",
+            "Open interest finns på alla marknader och ersätter volymmätningen",
+            "En trend antas bruten tills priset bevisar att den består"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på i vilken ordning de tre informationsflödena läses — och vilket av dem som är ryggraden."
+        },
+        {
+          "q": "Vad kännetecknar kombinationen pris upp, volym ned, open interest ned?",
+          "alternativ": [
+            "En stark trend med nya pengar som kommer in",
+            "Ett svagt rally, främst shorts som stänger sina positioner",
+            "Starkt nedåttryck från nya blanka positioner",
+            "Ett avtagande fall där tvingad försäljning ebbmar ut"
+          ],
+          "ratt": 1,
+          "tips": "Priset stiger men engagemanget sinar — vem är då motparten i handlerna?"
+        },
+        {
+          "q": "När är ett nedbrott genom en stödnivå bekräftat enligt volymregeln i räkneexemplet?",
+          "alternativ": [
+            "När kursen närmar sig nivån på tung volym, oavsett var stängningen landar",
+            "När volymen är 0,9× snittet och stängningen sker över nivån",
+            "När stängningen sker under nivån och volymen är minst 1,5–2× sitt snitt",
+            "När aktiens volym är högre än storbankens"
+          ],
+          "ratt": 2,
+          "tips": "Två krav ska gälla samtidigt: var stängningen hamnar — och vad volymen väger mot aktiens eget snitt."
         }
       ]
     }

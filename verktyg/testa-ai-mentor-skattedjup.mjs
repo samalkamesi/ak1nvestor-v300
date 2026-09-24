@@ -490,7 +490,7 @@ const GAMLA = [
     "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
     "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
     "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
-    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltEnhetsekonomi", "svaraLokaltNatverkseffekter", "svaraLokaltSlutstenarna", "svaraLokaltMarknadsrytm",
   ];
   // Syskon-pågående lager (u1:s tsdjup, skriven parallellt detta fönster):
   // KÄND men krävs ej — deras wiring landar i deras commit. Vakten här

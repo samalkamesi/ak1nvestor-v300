@@ -2,8 +2,8 @@
   "slug": "japanese-candlestick-charting",
   "category": "BOKMASTER",
   "weight": "KRITISK",
-  "chapterCount": 16,
-  "totalMinutes": 160,
+  "chapterCount": 17,
+  "totalMinutes": 173,
   "title": "Japanese Candlestick Charting — Nison: KOMPLETT",
   "summary": "Steve Nisons \"Japanese Candlestick Charting Techniques\" (1991) är candlestickens bibel — det verk som förde 300 år av japansk marknadspsykologi till väst. Denna BOKMASTER-kurs täcker bokens kärna i 16 kapitel: ursprunget på Dojima-rismarknaden, anatomin med kroppar och skuggor, samt alla centrala mönster från doji-familjen till rising three methods — alltid kombinerat med västerländska verktyg och knutet till AK1TS Pris-dimension på Mikro- och Kort-horisonten. Efter kursen läser du varje candlestick som en berättelse om vem som kontrollerar marknaden, och du vet exakt när ett mönster är en signal och när det bara är en form.",
   "minutes": 10,
@@ -91,6 +91,11 @@
       "num": 16,
       "title": "Fallgropar och AK1TS-integrationen",
       "minutes": 10
+    },
+    {
+      "num": 17,
+      "title": "Från boken till egen analys",
+      "minutes": 13
     }
   ],
   "chapters": [
@@ -1247,6 +1252,81 @@
           ],
           "ratt": 1,
           "tips": "Tre byggstenar — var, när, hur mycket risk — vad bidrar mönstret med i den kedjan?"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 13,
+      "title": "Från boken till egen analys",
+      "intro": "Bokens kapitel har lärt dig grammatiken — nu ska den användas på riktiga dagar. Med fyra priser, en fast läsordning och ett genomräknat exempel på Ericsson B i oktober 2025 visar detta avslutande kapitel hur candlestick-metoden går från bokkunskap till egen analys: formen berättar vad som hände, läget avgör vad det betyder.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varje candlestick sammanfattar en session i fyra tal: öppning, högsta, lägsta och stängning. Av dem byggs två element. Kroppen sträcker sig mellan öppning och stängning; skuggorna från kroppens kanter ut till dagens extremvärden. Färgen kodar riktningen — men med en nyans som många missar: ett vitt ljus betyder stängning över samma dagens öppning, ett svart betyder stängning under den. Jämförelsen sker alltså inom sessionen, inte mot gårdagens stängning — candlestickens styrka är just att den fångar dramat under dagen. Budbärarna har varsitt uppdrag. Kroppen visar vem som vann slaget: lång vit kropp är ihärdigt köptryck, lång svart ihärdigt säljtryck, små kroppar är dragkamp utan segrare. Skuggorna visar var slaget stod: en lång nedre skugga är ett säljaranfall som slogs tillbaka, en lång övre ett köparanfall som raderades. Nisons rötter går tillbaka till Dojima-rismarknaden och Munehisa Hommas insikt — priset speglar inte bara värde utan känslor. Fyra torra tal blir därmed en känslokarta över hopp, rädsla och vilja, läsbar på vilken tidsram som helst."
+        },
+        {
+          "type": "text",
+          "content": "Tre former bär den praktiska läsningen. Doji — öppning och stängning sammanfaller, kroppen försvinner. Perfekt obeslutsamhet. I en sidledes marknad är den brus; efter en utdragen trend eller vid en betydande nivå är den en fråga som kräver svar — och svaret kommer först med nästa ljus. Hammare — liten kropp högt upp i dagens range, nedre skugga minst dubbelt kroppen, försumbar övre skugga. Säljarna pressade priset djupt ned men köparna återtog allt före stängning. Formen gäller efter en nedtrend, gärna vid stöd — med samma form i en upptrend heter ljuset i stället hanging man, en svaghetsvarning som kräver bekräftelse. Engulfer — dag två:s kropp omsluter helt dag ett:s kropp (det är kropparna, inte skuggorna, som ska slukas). Ett maktskifte på en session: motpartens arbete raderas. Förstärkare är volym på dag två, en nivå i närheten och att flera kroppar slukas. Alla tre lyder under samma lag: formen berättar vad som hände, läget avgör vad det betyder. Läsningens ordning är alltid trenden bakåt först, nivån sedan, formen sist."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hämta fyra dagars öppning, högsta, lägsta och stängning för en aktie du följer och rita om varje dag till ett ljus för hand på papper. Mät i kronor, inte med ögat: kropp, övre skugga, nedre skugga — och skuggan mot kroppen som kvot. Läs sedan dagarna i metodens ordning: vilken trend låg bakom, vilka nivåer fanns i närheten, vilken form fick varje dag. Skriv en rad journal per dag om vem som vann slaget och var det stod, och avsluta med att formulera nästa dags fråga — om marknaden ställer en, som en doji gör. Upprepa övningen varje vecka; läsningen blir din egen först när den görs om och om igen på nya dagar."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexemplet använder verkliga dagar i svenska storbolagsaktien Ericsson B, 23–28 oktober 2025. Kontexten: efter toppen 93,84 den 15 oktober sjönk kursen i en dryg veckas svacka ned till 87,98 den 24 oktober (−6,2 %). Fyra handelsdagar ritas om till ljus. Genomläsning, akt för akt. 23/10: svart ljus — och samtidigt högre stängning än dagen före (89,76 mot 89,40). Färgen ljuger inte; den jämför öppning och stängning samma dag. 24/10: hammare. Kroppen är liten och ligger i övre tredjedelen, den nedre skuggan är 1,24 kr — 3,6 × kroppen — och det nya svacklåget 87,98 avvisades innan stängning. Kroppens färg (svart) försvagar inte formen; den visar bara att återtaget inte räckte över öppningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ericsson B — fyra handelsdagar som ljus\",\"rader\":[[\"Dag\",\"Öppna\",\"Högst\",\"Lägst\",\"Stäng\",\"Läsning\"],[\"tor 23/10\",\"90,60\",\"90,84\",\"89,00\",\"89,76\",\"svart kropp 0,84, stängning i nedre delen\"],[\"fre 24/10\",\"89,56\",\"89,74\",\"87,98\",\"89,22\",\"kropp 0,34, nedre skugga 1,24, övre 0,18\"],[\"mån 27/10\",\"89,50\",\"89,96\",\"88,74\",\"89,36\",\"kropp 0,14 på 1,22 i range\"],[\"tis 28/10\",\"89,00\",\"92,40\",\"88,64\",\"91,56\",\"vit kropp 2,56, volym 12,7 M\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "27/10: småkroppigt ljus, i princip en doji (strikt doji kräver exakt lika öppning och stängning — små kroppar läses samma väg). Volymen sjönk till 4,4 M mot omkring 7 M i omgivningen: avtagande engagemang, marknaden ställer sin fråga. 28/10: bullish engulfer. Öppningen 89,00 låg under och stängningen 91,56 över — kroppen slukar därmed båda föregående dagars kroppar (89,22–89,56 och 89,36–89,50), en av Nisons förstärkare. Volymen 12,7 M ≈ 1,8 × snittet, och stängningen låg 78 % upp i dagens range. De följande sessionerna steg kursen ytterligare (95,12 den 29/10) — historien visar en klassisk treakt: avvisat anfall, obeslutsamhet, maktskifte. Exemplet visar hur metoden läser bilden — inte vad någon bör göra (2007:528). Källa: Nasdaq Stockholm, dagliga OHLC och volymer för ERIC-B.ST, oktober 2025, inhämtade via Yahoo Finance 2026-09-24."
+        },
+        {
+          "type": "text",
+          "content": "Fyra fallgropar samlar kursens varningar till en checklista för den egna läsningen. Att handla varje ljus utan sammanhang: en doji i sidledes marknad eller en hammare utan föregående nedtrend eller stöd har formen men saknar läget — och då är det brus, för mönsterdefinitionen bor i positionen. Ljus mot trenden: enstaka björniga ljus i en stark, färsk upptrend är oftast vilodagar, medan samma form vid ett gammalt motstånd efter månaders uppgång är en annan sak — trenden bakåt läses först. Fel jämförelse för färgen: den som läser vitt och svart mot gårdagens stängning blandar ihop candlestickens grammatik med stånggrafens och talar om ljuset på fel språk. Dimension och tidsram: en engulfer där kropp två knappt syns, på en femminutersgraf, väger obetydligt; samma mönster på dagsgraf vid en nivå med volym är en annan historia — och formen är ett läge, inte ett besked; bekräftelsen kommer med nästa ljus."
+        },
+        {
+          "type": "insikt",
+          "content": "Candlesticken är Pris-dimensionens atom i AK1TS-ekosystemet, starkast på Mikro- och Kort-horisonten där sessionens psykologi syns rent. Kursens ledstjärna — läge först, form sedan, bekräftelse sist — är samma Brytpunkt-logik som bär vågläran i F01 och Murphys top-down-trappa i F06; här ger ljusen timing inom de ramarna. Räkneexemplens kultur — fyra tal, mät skuggan mot kroppen, ett tydligt ja eller nej — är samma genomräkningstradition som Fas 2:s trappsteg och F06:s volymkoll; i AKM2-analyserna är den tekniska bilden ett vittne bland flera, och i AI-Mentorn kan du rita om egna dagar och jämföra din läsning med modellens. Detta kapitel övar det hela plattformen bygger på: att läsa en graform som en berättelse om vem som kontrollerar marknaden. Utbildningsmaterial — beskriver hur metoden läser, mäter och bekräftar; inga investeringsråd, inga avkastningslöften (2007:528)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket påstående om ljusets färg stämmer med candlestickens grammatik?",
+          "alternativ": [
+            "Färgen jämför stängningen med gårdagens stängning",
+            "Färgen jämför stängningen med samma dagens öppning",
+            "Färgen visar om volymen steg eller sjönk under sessionen",
+            "Färgen anger om dagens range var bredare än föregående dags"
+          ],
+          "ratt": 1,
+          "tips": "Ericsson-dagen 23/10 var svart men stängde högre än dagen före — vilka två priser är det färgen jämför?"
+        },
+        {
+          "q": "Vilket påstående beskriver metodens läsordning?",
+          "alternativ": [
+            "Trenden bakåt läses först, nivån sedan, formen sist",
+            "Formen läses först, nivån sedan, trenden sist",
+            "Nivån läses först, formen sedan, volymen sist",
+            "Ordningen saknar betydelse när formen är tydlig"
+          ],
+          "ratt": 0,
+          "tips": "Mönsterdefinitionen bor i positionen — vad måste vara känt innan formen får sin mening?"
+        },
+        {
+          "q": "Vad kännetecknar genomläsningen av Ericsson B den 24 oktober 2025?",
+          "alternativ": [
+            "En gravstens-doji med endast en lång övre skugga",
+            "Ett ljus utan nivå och trend i närheten, alltså brus",
+            "En hammare med liten kropp i övre tredjedelen och nedre skugga 3,6 × kroppen, trots svart kroppsfärg",
+            "En bullish engulfer vars kropp slukade två föregående dagars kroppar"
+          ],
+          "ratt": 2,
+          "tips": "Säljaranfallet ned till 87,98 slogs tillbaka före stängning — vad kallas ett helt avvisat anfall, och vilken roll spelar kroppens färg?"
         }
       ]
     }

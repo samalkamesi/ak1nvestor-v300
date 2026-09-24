@@ -40,6 +40,13 @@
   --color-card: var(--card);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  /* v160 P3 (audit #11): hero-familjens tokens — TEMASTABILA (ingen .dark-
+     override, inget marin-scope-flipp) = raw-hex-ersättning med noll
+     visuell förändring; se :root-kommentaren. */
+  --color-guld-hero: var(--guld-hero);
+  --color-beige-hero: var(--beige-hero);
+  --color-marin-morkast-hero: var(--marin-morkast-hero);
+  --color-marin-chip-hero: var(--marin-chip-hero);
   --color-bull: var(--bull);
   --color-bear: var(--bear);
   --color-neutral-signal: var(--neutral-signal);
@@ -101,6 +108,17 @@
   --koppar: #8C5A2B;               /* koppar/brons — data-accent */
   --koppar-lys: #8C5A2B;           /* ljus läge: bas-koppar 5.2:1 (UI-krav 3:1) — dark behåller #B07A3C */
   --guld-djup: #7A5E14;            /* mörkare guld — WCAG-löptext på cream */
+
+  /* ── Hero-familjen (v160 P3, audit #11) — marin-hero-ytornas raw-hex ──
+     TEMASTABILA medvetet: INGEN .dark-override och INTE med i marin-scope-
+     flippen — de skall bete sig exakt som de raw-hex de ersätter
+     (startsidans/fas2/fas3/medlemskapets/konfluensens/kurser-Ny-chipets/
+     pro:s hero-palett). Kontrast: beige-hero #EDE6D6 och guld-hero #E8C766
+     mot djup-marin #0E1B2E = 13,9:1 respektive 9,7:1 (se rad 71-74). */
+  --guld-hero: #E8C766;            /* hero-guld: ljus signatur på marin */
+  --beige-hero: #EDE6D6;           /* hero-beige: löptext på marin */
+  --marin-morkast-hero: #0A1422;   /* mörkast marin-chip i hero-familjen */
+  --marin-chip-hero: #16263D;      /* marin-chip i mörkt hero-läge */
 
   --background: #f5f1e8;
   --foreground: #0a0b0d;

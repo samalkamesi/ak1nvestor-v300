@@ -147,11 +147,11 @@ function GarantiRuta({ mork }: { mork?: boolean }) {
     <div
       className={`mt-4 rounded-lg border border-dashed p-4 text-xs leading-relaxed ${
         mork
-          ? "border-[#E8C766]/50 bg-[#0A1422]/60 text-[#EDE6D6]/85"
+          ? "border-guld-hero/50 bg-marin-morkast-hero/60 text-beige-hero/85"
           : "border-gold/50 bg-paper text-muted-foreground"
       }`}
     >
-      <p className={`font-bold uppercase tracking-[0.2em] ${mork ? "text-[#E8C766]" : "text-gold"}`}>
+      <p className={`font-bold uppercase tracking-[0.2em] ${mork ? "text-guld-hero" : "text-gold"}`}>
         90 dagars nöjd-kund-garanti
       </p>
       <p className="mt-1.5">
@@ -160,7 +160,7 @@ function GarantiRuta({ mork }: { mork?: boolean }) {
         först efter 90 dagar, och bara om du förblir nöjd.{" "}
         <Link
           href="/villkor"
-          className={`underline ${mork ? "hover:text-[#EDE6D6]" : "hover:text-foreground"}`}
+          className={`underline ${mork ? "hover:text-beige-hero" : "hover:text-foreground"}`}
         >
           Villkoren (sektion 5–6)
         </Link>{" "}
@@ -352,16 +352,16 @@ export default async function MedlemskapPage() {
 
       {/* FAS 3 — det dynamiska ekosystemet */}
       <section className="marin-panel mt-8 rounded-2xl border border-gold/40 p-7 sm:p-9">
-        <span className="mb-2 inline-block w-fit rounded-full border border-[#E8C766]/50 px-3 py-0.5 text-xs font-semibold text-[#E8C766]">
+        <span className="mb-2 inline-block w-fit rounded-full border border-guld-hero/50 px-3 py-0.5 text-xs font-semibold text-guld-hero">
           {`FAS 3 · EFTER TILLÄMPNING AV FAS 2 · ${kr(PRISER_LIVE.fas3EnGang)} KR`}
         </span>
-        <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
+        <h2 className="font-serif text-2xl font-bold text-beige-hero">
           Fas 3 — det dynamiska ekosystemet
         </h2>
-        <p className="mt-1 text-sm italic text-[#E8C766]">
+        <p className="mt-1 text-sm italic text-guld-hero">
           Där fundamentalanalysen börjar röra sig.
         </p>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#EDE6D6]/85">
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-beige-hero/85">
           Fas 3 är certifieringsfasen: praktikportfölj och tillämpning. Den tar
           vid efter tillämpning av Fas 2 — först det fundamentala omdömet (sammanvägningen
           av de 20 indikatorerna), sedan det dynamiska. Här får du tillämpa och
@@ -369,7 +369,7 @@ export default async function MedlemskapPage() {
           dynamiskt, som tidsserier med egen rytm. Vi integrerar AKM1 med AK1TS —
           vågor, rättare sagt.
         </p>
-        <ul className="mt-5 grid gap-2.5 text-sm text-[#EDE6D6]/85 md:grid-cols-2">
+        <ul className="mt-5 grid gap-2.5 text-sm text-beige-hero/85 md:grid-cols-2">
           {[
             `AKM1 × AK1TS-integrationen — den sammansatta analysen där fundamentalstyrka möter vågor`,
             "Vågfundamentet — varje fundamentalvariabel som tidsserie",
@@ -382,7 +382,7 @@ export default async function MedlemskapPage() {
             "Rätt till ALLA framtida utvecklingar inom Fas 3 — allt är under utveckling och du är med från början",
           ].map((f) => (
             <li key={f} className="flex gap-2">
-              <span className="text-[#E8C766]">✓</span>
+              <span className="text-guld-hero">✓</span>
               <span>{f}</span>
             </li>
           ))}
@@ -392,8 +392,8 @@ export default async function MedlemskapPage() {
         <GarantiRuta mork />
 
         {/* Månadsplans-notisen — det ärliga priset */}
-        <div className="mt-5 rounded-xl border border-dashed border-[#E8C766]/50 bg-[#0A1422]/60 p-4 text-xs leading-relaxed text-[#EDE6D6]/80">
-          <strong className="text-[#E8C766]">Det ärliga priset, rakt ut:</strong>{" "}
+        <div className="mt-5 rounded-xl border border-dashed border-guld-hero/50 bg-marin-morkast-hero/60 p-4 text-xs leading-relaxed text-beige-hero/80">
+          <strong className="text-guld-hero">Det ärliga priset, rakt ut:</strong>{" "}
           efter avslutad utbildning kan det analytiska ekosystemet och
           dashboarden fortsätta nyttjas genom en månadsplan (12 månader).
           Utbildningen i sig är din för alltid.

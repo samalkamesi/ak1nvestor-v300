@@ -238,23 +238,23 @@ export default function Fas3Page() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
           <span className="font-serif text-[150px] font-black tracking-tight">FAS 3</span>
         </div>
-        <div className="pointer-events-none absolute inset-2 rounded-2xl border border-[#E8C766]/30" aria-hidden />
+        <div className="pointer-events-none absolute inset-2 rounded-2xl border border-guld-hero/30" aria-hidden />
         <div className="relative max-w-3xl">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+          <p className="text-[10px] uppercase tracking-[0.35em] text-guld-hero">
             {`Det dynamiska ekosystemet · Fas 3 · ${kr(PRISER.fas3EnGang)} kr`}
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#EDE6D6] sm:text-5xl">
+          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-beige-hero sm:text-5xl">
             Fas 3 — där fundamentalanalysen börjar röra sig
           </h1>
-          <p className="mt-4 font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
+          <p className="mt-4 font-serif text-lg italic leading-relaxed text-guld-hero sm:text-xl">
             Indikatorer är inte statiska — de är tidsserier med egen rytm.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#EDE6D6]/85 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-beige-hero/85 sm:text-base">
             I Fas 2 lär du dig väga ett bolag i handen — bokslut, värde, omdöme —
             och sammanväga de 20 analytiska indikatorerna till en helhet. Fas 3
             är certifieringsfasen: praktikportfölj och tillämpning. Den tar vid
             när det omdömet står klart, och visar det som ingen siffertabell
-            kan visa: att fundamentalanalys <strong className="text-[#EDE6D6]">aldrig
+            kan visa: att fundamentalanalys <strong className="text-beige-hero">aldrig
             är statisk</strong>. Varje indikator rör sig — intäkter, marginaler,
             multiplar, hela tiden. Här integrerar vi AKM1 med AK1TS, vågor
             rättare sagt, och analysen blir ett levande ekosystem.
@@ -268,7 +268,7 @@ export default function Fas3Page() {
             </a>
             <Link
               href="#krav"
-              className="rounded-md border border-[#E8C766]/50 px-5 py-3 text-center text-sm font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
+              className="rounded-md border border-guld-hero/50 px-5 py-3 text-center text-sm font-semibold text-guld-hero transition-colors hover:bg-guld-hero/10"
             >
               Kravmatrisen & praktikportföljen
             </Link>
@@ -365,16 +365,16 @@ export default function Fas3Page() {
       {/* ── UNDER UTVECKLING — du är med från början ───────────────────────── */}
       <section id="framtiden" className="mt-12 scroll-mt-24">
         <div className="marin-panel rounded-2xl border border-gold/40 p-6 sm:p-8">
-          <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
+          <h2 className="font-serif text-2xl font-bold text-beige-hero">
             Under utveckling — och du är med från början
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#EDE6D6]/85">
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-beige-hero/85">
             Fas 3 är inte en färdig produkt utan en levande plats. Som Fas
-            3-elev har du <strong className="text-[#EDE6D6]">rätt till alla
+            3-elev har du <strong className="text-beige-hero">rätt till alla
             framtida utvecklingar</strong> inom Fas 3 — allt som byggs, bygger
             också för dig:
           </p>
-          <ul className="mt-4 grid gap-2.5 text-sm text-[#EDE6D6]/85 sm:grid-cols-2">
+          <ul className="mt-4 grid gap-2.5 text-sm text-beige-hero/85 sm:grid-cols-2">
             {[
               "📊 Analys av aktier och portföljer — djupare, snabbare, levande",
               "🖥️ Dashboarden — det analytiska ekosystemet samlas i en vy",
@@ -382,12 +382,12 @@ export default function Fas3Page() {
               "📄 Rapporter m.m. — automatgenererade, spårbara till källor",
             ].map((txt) => (
               <li key={txt} className="flex gap-2.5">
-                <span className="text-[#E8C766]">✓</span>
+                <span className="text-guld-hero">✓</span>
                 <span>{txt}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs leading-relaxed text-[#EDE6D6]/70">
+          <p className="mt-4 text-xs leading-relaxed text-beige-hero/70">
             Vi lovar inte färdiga datum — vi lovar riktningen, och att du som
             Fas 3-elev är med från första dagen. Allt är under utveckling.
           </p>
@@ -458,19 +458,19 @@ export default function Fas3Page() {
               className="marin-panel relative rounded-2xl border border-gold/30 p-5"
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="font-serif text-lg font-bold text-[#EDE6D6]">
+                <p className="font-serif text-lg font-bold text-beige-hero">
                   {p.ikon} {p.rubrik}
                 </p>
                 {p.auto && (
                   <span
-                    className="shrink-0 rounded-full border border-[#E8C766]/50 bg-[#E8C766]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#E8C766]"
+                    className="shrink-0 rounded-full border border-guld-hero/50 bg-guld-hero/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-guld-hero"
                     title="Spåras automatiskt i verktyget — inget att räkna för hand"
                   >
                     ✓ Auto-spåras
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-xs leading-relaxed text-[#EDE6D6]/85">{p.text}</p>
+              <p className="mt-2 text-xs leading-relaxed text-beige-hero/85">{p.text}</p>
             </div>
           ))}
         </div>
@@ -574,24 +574,24 @@ export default function Fas3Page() {
       {/* ── ÅKU — kunskap är en färskvara ──────────────────────────────────── */}
       <section id="aku" className="mt-12 scroll-mt-24">
         <div className="marin-panel rounded-2xl border border-gold/30 p-6 sm:p-8">
-          <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
+          <h2 className="font-serif text-2xl font-bold text-beige-hero">
             ÅKU — kunskap är en färskvara
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#EDE6D6]/85">
-            Certifieringen är ett <strong className="text-[#EDE6D6]">levande
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-beige-hero/85">
+            Certifieringen är ett <strong className="text-beige-hero">levande
             tillstånd</strong>, inte ett diploms datum. Varje år fyller du på
             med en kunskapsuppdatering — ÅKU — anpassad efter din roll som
             analytiker:
           </p>
-          <ul className="mt-4 space-y-2 text-sm text-[#EDE6D6]/85">
+          <ul className="mt-4 space-y-2 text-sm text-beige-hero/85">
             {AKU.map((a) => (
               <li key={a.text} className="flex gap-2.5">
-                <span className="text-[#E8C766]">{a.ikon}</span>
+                <span className="text-guld-hero">{a.ikon}</span>
                 <span>{a.text}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs leading-relaxed text-[#EDE6D6]/70">
+          <p className="mt-4 text-xs leading-relaxed text-beige-hero/70">
             Missad förnyelse betyder att certifieringen{" "}
             <em>vilar</em> — den indras aldrig — och den återaktiveras av en
             ifylld ÅKU-cykel. Behörigheten hålls alltid färsk, för både dig och

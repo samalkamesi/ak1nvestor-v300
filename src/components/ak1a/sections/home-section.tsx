@@ -336,28 +336,28 @@ export function HomeSection() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
           <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
-            <div className="relative rounded-xl border border-[#E8C766]/20 p-8 sm:p-12">
+            <div className="relative rounded-xl border border-guld-hero/20 p-8 sm:p-12">
               {/* Överrad — emblem + bankfirmans signeringsrad */}
               <div className="flex items-center gap-3">
                 <VarumarkesLogo storlek="sm" medText={false} />
-                <p className="flex flex-wrap items-baseline gap-x-4 font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+                <p className="flex flex-wrap items-baseline gap-x-4 font-serif text-[10px] uppercase tracking-[0.35em] text-guld-hero">
                   <span>A · K · 1 · A</span>
                   <span>R E S E A R C H</span>
                   <span>L A B</span>
                 </p>
               </div>
 
-              <h1 className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-[#EDE6D6] text-balance sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-beige-hero text-balance sm:text-5xl lg:text-6xl">
                 {t("home.heroRubrik")}
               </h1>
 
               {/* kf2: värdeerbjudandet — max 15 ord (ordlistan), därefter
                   social proof-raden med mätta tal före knapparna. */}
-              <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
+              <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-guld-hero sm:text-xl">
                 {t("home.heroUnderrubrik")}
               </p>
 
-              <p className="mt-4 font-serif text-sm font-semibold tracking-wide text-[#EDE6D6]/85 sm:text-base">
+              <p className="mt-4 font-serif text-sm font-semibold tracking-wide text-beige-hero/85 sm:text-base">
                 {t("home.socialProof", {
                   kurser: ANTAL_KURSER.toLocaleString("sv-SE"),
                   artiklar: ANTAL_ARTIKLAR.toLocaleString("sv-SE"),
@@ -383,24 +383,24 @@ export function HomeSection() {
                   // tre omgångar (multiomgångs-prefetch på EN länk, o50 §2) —
                   // tyngsta enskilda spillposten på startsidan. Hover-prefetch
                   // lever; klickkostnad ~100–300 ms (ISR-sida).
-                  className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10 sm:w-auto sm:py-5"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-guld-hero/50 px-6 py-4 text-base font-semibold text-guld-hero transition-colors hover:bg-guld-hero/10 sm:w-auto sm:py-5"
                 >
                   {t("home.seKurserna")}
                 </Link>
               </div>
 
               {/* Mikrostrip — avgörande invändningar omtyglade på en rad */}
-              <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-wide text-[#EDE6D6]/70">
+              <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-wide text-beige-hero/70">
                 <span>
-                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-guld-hero align-middle" />
                   {t("home.heroMikro1")}
                 </span>
                 <span>
-                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-guld-hero align-middle" />
                   {t("home.heroMikro2")}
                 </span>
                 <span>
-                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-guld-hero align-middle" />
                   {t("home.heroMikro3")}
                 </span>
               </p>
@@ -600,14 +600,14 @@ export function HomeSection() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
           <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent" />
-            <div className="relative flex flex-col items-center rounded-xl border border-[#E8C766]/20 px-6 py-12 text-center sm:px-12 sm:py-16">
-              <p className="font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+            <div className="relative flex flex-col items-center rounded-xl border border-guld-hero/20 px-6 py-12 text-center sm:px-12 sm:py-16">
+              <p className="font-serif text-[10px] uppercase tracking-[0.35em] text-guld-hero">
                 {t("home.slutOvan")}
               </p>
-              <h2 className="mt-4 max-w-2xl font-serif text-3xl font-bold leading-tight text-balance text-[#EDE6D6] sm:text-4xl">
+              <h2 className="mt-4 max-w-2xl font-serif text-3xl font-bold leading-tight text-balance text-beige-hero sm:text-4xl">
                 {t("home.slutRubrik")}
               </h2>
-              <p className="mt-3 max-w-xl font-serif text-base italic leading-relaxed text-[#E8C766] sm:text-lg">
+              <p className="mt-3 max-w-xl font-serif text-base italic leading-relaxed text-guld-hero sm:text-lg">
                 {t("home.slutUnderrubrik", { kurser: ANTAL_KURSER })}
               </p>
               <Link
@@ -616,7 +616,7 @@ export function HomeSection() {
               >
                 {t("home.bliMedlemGratis")} <span aria-hidden="true">→</span>
               </Link>
-              <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs tracking-wide text-[#EDE6D6]/70">
+              <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs tracking-wide text-beige-hero/70">
                 <span>{t("home.slutMikro1")}</span>
                 <span aria-hidden="true">·</span>
                 <span>{t("home.heroMikro3")}</span>
@@ -625,7 +625,7 @@ export function HomeSection() {
                   {t("home.slutOsaker")}{" "}
                   <Link
                     href="/kurser"
-                    className="font-semibold text-[#E8C766] hover:underline"
+                    className="font-semibold text-guld-hero hover:underline"
                   >
                     {t("home.slutTitta")}
                   </Link>

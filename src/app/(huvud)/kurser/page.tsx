@@ -322,7 +322,7 @@ export default async function KurserPage() {
               key={c.slug}
               c={c}
               chip={
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#0E1B2E] px-2 py-0.5 text-[10px] font-bold text-[#E8C766] dark:bg-[#16263D]">
+                <span className="inline-flex items-center gap-1 rounded-full bg-djup-marin px-2 py-0.5 text-[10px] font-bold text-guld-hero">
                   <span aria-hidden>✨</span> Ny
                 </span>
               }

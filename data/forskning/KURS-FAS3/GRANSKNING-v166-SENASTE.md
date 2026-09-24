@@ -205,15 +205,16 @@ PASS way-of-the-turtle talöverföring — 46/47 = 98 % (krav ≥70)
 PASS way-of-the-turtle num-sekvens — 1..n ✓
 PASS the-complete-turtletrader position+num — ix=15/15 num=15
 PASS the-complete-turtletrader chapterCount — 15 == 15
-PASS the-complete-turtletrader totalMinutes=Σ — 181 == 181
+PASS the-complete-turtletrader totalMinutes=Σ — 180 == 180
 PASS the-complete-turtletrader quiz=3 — 3
 PASS the-complete-turtletrader quiz-struktur — q/alt4/ratt/tips ✓
 PASS the-complete-turtletrader blocktyper — text,utmaning,tabell,insikt
 PASS the-complete-turtletrader utmaning-block — finns
 PASS the-complete-turtletrader varumärkesgrind — 26 fraser rena
 PASS the-complete-turtletrader lagrum — 2007:528
-PASS the-complete-turtletrader talöverföring — 39/40 = 98 % (krav ≥70)
+PASS the-complete-turtletrader talöverföring — 25/25 kärntal = 100 % (krav ≥70)
 PASS the-complete-turtletrader num-sekvens — 1..15 ✓
+NOTIS d19 — återigen dubbelarbete (prod-session + studio rond 179); prod:s version vald vid merge (neutral granskning GRÖN 11/11 i verktyg/_v166d19-val.mjs: kärntal 25/25, kapitel 12 min/Σ180, quiz ratt 1,2,0); studio-versionen (KVD GRÖN 23/23, _f19-v166d19-studio-kvd.mjs) bevarad i historiken 30e01f84. Rotten kvarstår trots NOTIS d13: levererande session uppdaterar inte granskningsfilens väntar-lista — prod-grenens fil stod kvar på 13 granskade trots d14–d21 levererade. Åtgärd fortsätter: varje emottagande rond sluter filen (som denna).
 
 ## LÄGE: 19 granskade · 5 väntar: the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 

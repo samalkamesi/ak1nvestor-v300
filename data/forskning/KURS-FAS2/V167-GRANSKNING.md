@@ -13,3 +13,6 @@ PROCESREGLER (v166-läxorna,bindande för v167):
 3. KVD:ers append-kontroll mäter mot commit~1, aldrig HEAD.
 
 ## SAMMANFATTNING: 0 PASS · 0 FEL (vågen inleds)
+
+## KURSBLOCK
+

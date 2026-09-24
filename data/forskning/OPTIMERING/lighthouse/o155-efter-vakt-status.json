@@ -1,0 +1,45 @@
+{
+  "start": "2026-09-23T23:45:07.589Z",
+  "forsok": [
+    {
+      "nr": 1,
+      "ts": "2026-09-23T23:57:25.548Z",
+      "exit": 2,
+      "svans": [
+        "AVBRUTEN: last ej tyst efter 735 s (busy 98.4 %, loadavg1 12.52, kalib 378.9 ms)",
+        ""
+      ]
+    },
+    {
+      "nr": 2,
+      "ts": "2026-09-24T00:19:46.851Z",
+      "exit": 2,
+      "svans": [
+        "AVBRUTEN: last ej tyst efter 738 s (busy 60.1 %, loadavg1 6.17, kalib 298.6 ms)",
+        ""
+      ]
+    },
+    {
+      "nr": 3,
+      "ts": "2026-09-24T00:42:02.477Z",
+      "exit": 2,
+      "svans": [
+        "AVBRUTEN: last ej tyst efter 733 s (busy 54.9 %, loadavg1 3.15, kalib 42.6 ms)",
+        ""
+      ]
+    },
+    {
+      "nr": 4,
+      "ts": "2026-09-24T01:00:56.168Z",
+      "exit": 1,
+      "svans": [
+        "    }",
+        "  ]",
+        "}",
+        ""
+      ]
+    }
+  ],
+  "klar": true,
+  "domfil": "dom-o155-efter-vakt.json"
+}

@@ -1,0 +1,558 @@
+{
+  "rond": 63,
+  "senasteRondTs": 1789861388685,
+  "organ": [
+    {
+      "bokstav": "A",
+      "namn": "Alfa-strategi",
+      "uppdrag": "Prioritera nästa våg efter affärsvärde; äger målkön",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "B",
+      "namn": "Beta-analys",
+      "uppdrag": "AKM1/AK1TS-metodikens djup; analysmotorer",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "D",
+      "namn": "Delta-data",
+      "uppdrag": "Datasidor, datakvalitet, insamling",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "O",
+      "namn": "Omega-vision",
+      "uppdrag": "Arkitektur och långsiktig integration (kroppen)",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "F",
+      "namn": "Fi-innovation",
+      "uppdrag": "Nya system; portalen och organtekniken",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 106.8512626262626,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "T",
+      "namn": "Theta-kvalitet",
+      "uppdrag": "Vakt, tester, tsc, kontrahällning",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "M",
+      "namn": "My-marknad",
+      "uppdrag": "SEO, granskningskö, konvertering",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 105.85126262626261,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "P",
+      "namn": "Psi-utbildning",
+      "uppdrag": "Kurser, mentor, lärvägar",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 110.8512626262626,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "C",
+      "namn": "C-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 104.97626262626261,
+      "foralder": "A",
+      "obduktion": null
+    },
+    {
+      "bokstav": "E",
+      "namn": "E-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 104.8651515151515,
+      "foralder": "A",
+      "obduktion": null
+    },
+    {
+      "bokstav": "G",
+      "namn": "G-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "död",
+      "fodd": "2026-09-12",
+      "dod": "2026-09-12",
+      "leveranserSista2": [
+        0,
+        0
+      ],
+      "totaltLeveranser": 0,
+      "foralder": "A",
+      "obduktion": "0 leveranser under rond 2-3 — döden enligt § evolution"
+    },
+    {
+      "bokstav": "H",
+      "namn": "H-innovation-barn",
+      "uppdrag": "Deluppdrag ur Fi-innovation: Nya system — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 104.7651515151515,
+      "foralder": "F",
+      "obduktion": null
+    },
+    {
+      "bokstav": "I",
+      "namn": "I-utbildning-barn",
+      "uppdrag": "Deluppdrag ur Psi-utbildning: Kurser, mentor, lärvägar — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        3,
+        2.8333333333333335
+      ],
+      "totaltLeveranser": 103.58333333333331,
+      "foralder": "P",
+      "obduktion": null
+    }
+  ],
+  "historik": [
+    {
+      "rond": 14,
+      "commits": 2,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 15,
+      "commits": 23,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 16,
+      "commits": 7,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 17,
+      "commits": 18,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 18,
+      "commits": 11,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 19,
+      "commits": 1,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 20,
+      "commits": 23,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 21,
+      "commits": 42,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 22,
+      "commits": 20,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 23,
+      "commits": 19,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 24,
+      "commits": 21,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 25,
+      "commits": 40,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 26,
+      "commits": 18,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 27,
+      "commits": 25,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 28,
+      "commits": 26,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 29,
+      "commits": 30,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 30,
+      "commits": 28,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 31,
+      "commits": 37,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 32,
+      "commits": 27,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 33,
+      "commits": 34,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 34,
+      "commits": 23,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 35,
+      "commits": 35,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 36,
+      "commits": 21,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 37,
+      "commits": 14,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 38,
+      "commits": 26,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 39,
+      "commits": 24,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 40,
+      "commits": 18,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 41,
+      "commits": 23,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 42,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 43,
+      "commits": 18,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 44,
+      "commits": 28,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 45,
+      "commits": 18,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 46,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 47,
+      "commits": 27,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 48,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 49,
+      "commits": 20,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 50,
+      "commits": 19,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 51,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 52,
+      "commits": 25,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 53,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 54,
+      "commits": 23,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 55,
+      "commits": 30,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 56,
+      "commits": 22,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 57,
+      "commits": 26,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 58,
+      "commits": 37,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 59,
+      "commits": 20,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 60,
+      "commits": 36,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 61,
+      "commits": 29,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 62,
+      "commits": 34,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    },
+    {
+      "rond": 63,
+      "commits": 36,
+      "tokens": 0,
+      "doda": [],
+      "fodd": []
+    }
+  ],
+  "kostnad": {
+    "tokensSistaRond": 0,
+    "tokensPerLeverans": 0,
+    "tokensTotalt": 10489066
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "branschmedianer-akm2",
+  "title": "Branschmedianer september 2026 — varje branschs AKM2-profil",
+  "description": "AKM2-medianen per bransch i 100-bolagsuniversum, underlag 2026-09-03: teknik 61, konsument 60,5, industri 60, kommunikation 60 med flera — antal mätta, spridning och gränsregeln redovisas öppet.",
+  "pillar": "Institutionell metodik",
+  "author": "AK1A Research Lab",
+  "publishedAt": null,
+  "readingMinutes": 2,
+  "tags": [
+    "AKM2",
+    "branschjämförelse",
+    "median",
+    "peer",
+    "portföljforskning"
+  ],
+  "body": "Medianen per bransch i korstabellens 100-bolagsuniversum, underlag skapat 2026-09-03: **teknik 61** · **konsument 60,5** · **industri 60** · **kommunikation 60** · **energi 58** · **hälsa 56,5** · **fastighet 50** · **tillväxt 43** · **material 42** · **finans 41** (AKM2-poäng, median över gruppens mätta bolag). Högst median: teknik 61. Lägst: finans 41.\n\n## Så räknas medianen\n\nAKM2 är AKM1:s 20 variabler omviktade enligt viktprofilen akm2-2026 — samma komposit som korstabellens rader bär. Medianen följer peer-motorns kontrakt: gruppen är korstabellens kanoniska branscher (10 bolag var), medianen räknas över gruppens mätta bolag, jämnt antal ger medelvärdet av de två mittersta, och en grupp under 5 mätta bolag redovisas aldrig. Urvalsberoendet syns i referensen: 2026-09-03 · 100-bolagsuniversum.\n\n## Varje bransch — median, spridning och ytterligheter\n\n- **teknik** — median **61** · 10 mätta av 10 · spridning 37–78 (lägst Sinch, högst Logitech International)\n- **konsument** — median **60,5** · 10 mätta av 10 · spridning 19–70 (lägst Electrolux, högst H & M Hennes & Mauritz)\n- **industri** — median **60** · 10 mätta av 10 · spridning 51–85 (lägst ASSA ABLOY, högst Industrivärden)\n- **kommunikation** — median **60** · 10 mätta av 10 · spridning 39–68 (lägst Warner Bros. Discovery, högst Tele2)\n- **energi** — median **58** · 10 mätta av 10 · spridning 31–77 (lägst RWE, högst Chevron)\n- **hälsa** — median **56,5** · 10 mätta av 10 · spridning 46–66 (lägst Fresenius, högst Novo Nordisk)\n- **fastighet** — median **50** · 10 mätta av 10 · spridning 42–60 (lägst Prologis, högst Diös Fastigheter)\n- **tillväxt** — median **43** · 10 mätta av 10 · spridning 25–58 (lägst Polestar Automotive Holding UK, högst Truecaller)\n- **material** — median **42** · 10 mätta av 10 · spridning 31–79 (lägst Stora Enso, högst Newmont)\n- **finans** — median **41** · 10 mätta av 10 · spridning 30–80 (lägst Nordea Bank, högst Investor)\n\nEn jämförbarhetsnot: Industrivärden (industri) och Investor (finans) är investmentbolag — deras nyckeltal speglar innehavens marknadsvärden, inte en driftsrörelse, så finansgruppens median blandar två bolagsformer. Det är information, inte fel.\n\n## Ändringen sedan senaste publicerade utgåvan\n\nIngen branschmedian rörde sig sedan den publicerade utgåvan — oförändrat (att inget rörde sig är också ett utfall).\n\n## Fördjupa dig\n\n- [Forskningsbiblioteket](/forskningsbiblioteket) — varje kandidatbolags AKM2-profil och urvalsregel\n- [Kursen V07 bruttomarginal](/kurser/v07-bruttomarginal) — lönsamhetsvariabeln bakom kompositen\n- [Kursen V09 ROE](/kurser/v09-roe) — avkastning på eget kapital\n\n_Automatiskt utkast ur m9-fabrikens evergreen-serier; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._\n"
+}

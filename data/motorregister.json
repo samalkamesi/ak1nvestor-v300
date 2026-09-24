@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-03",
+  "uppdaterad": "2026-09-20",
   "uppdrag": "VÅG 49 agent 1 — motorregistret: fullständig karta över sajtens egna intelligenser (deterministiska motorer), deras montering, autonomi-kanal, testtäckning och integrationsgap.",
   "metod": "Manuell genomgång av src/lib/*.ts, src/lib/akm2/*.ts, src/lib/portfolj-forskning/*.ts, src/lib/autonom/*.ts samt grep av importer i src/app + src/components + src/hooks, cron-schema i vercel.json, klientpulser (setInterval/useEffect), organ-event-konsumenter och testverktyg i verktyg/.",
   "motorer": [
@@ -19,6 +19,9 @@
       "testverktyg": "verktyg/validera-motorer.mjs (struktur + matematik omräknad)",
       "gap": [
         "Motorn når eleven bara via dagens pass (1 aktie) och portföljdjupanalys (max 10) — ingen publik sök-/listyta visar vågstatus för universumet; /topplista listar inte motorns vågklasser."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -38,6 +41,9 @@
       "testverktyg": "verktyg/validera-motorer.mjs",
       "gap": [
         "Brett monterad; enda noteringen är att MEGA-horisonternas 'osatt'-andel aldrig sammanfattas pedagogiskt för eleven på /vagfundament."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -57,6 +63,9 @@
       "gap": [
         "/api/konfluens nyttjar inte datacache (lasEllerHamta) — varje sidvisning på /konfluens kan gå ut på nätet trots att cron fyllt cachen 06:00 UTC.",
         "Konfluenspoängen syns inte på /topplista eller /netnet där 'värdegolv + vågor' vore den naturliga sammanfattningen."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -73,6 +82,9 @@
       "testverktyg": "verktyg/validera-motorer.mjs (incl. oberoende NCAV-omräkning)",
       "gap": [
         "Resultatet lever bara på /netnet — när ett nytt net-net inträffar i daglig scan publiceras ingen signal och ingen notis (datacache-cronen publicerar cache- och konfluenssignaler men inte netnet-signaler)."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -84,11 +96,14 @@
         "vagkon-graf (/konfluens + /vagfundament)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Saknas i Superanalysen (steg 22 vågklass-gissning kunde visa kon) och i portfoljbyggaren.",
         "Ingen test i validera-motorer.mjs trots ren matematik som är trivial att omräkna."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -100,11 +115,14 @@
         "spegling av logiken lever i /api/member/portfolio/djupanalys (konsumeras av header, huvudmeny, mobilmeny, chat-widget, min-portfolj-kort, deep-consultation, portfolio-system, vag-skattning, min-sida)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Komponenten PortfoljVagProfil (motorns pedagogiska visualisering) är byggd men dockad ingenstans — montera på /min-portfolj.",
         "Cron/portfolj-uppfoljning kör analys-motorn direkt i stället för att återanvända denna aggregering."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -118,11 +136,16 @@
         "analysbank (live-import av sparade)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Sparade superanalyser matar analysbanken men når aldrig AKM2/topplistan — eleven gör 20-variablerarbete som kärnmotorn aldrig lär av.",
         "Ingen test av poänglogiken (kategori-/totalomräkning) i validera-motorer.mjs."
+      ],
+      "testverktygAlla": [
+        "testa-akm2-karna.mjs",
+        "testa-granssnitt-urval.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -133,10 +156,13 @@
         "rapportbyggare (/rapporter + /pro)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Banken drivs bara i rapportverkstan — ingen 'din analyshistorik'-vy på Min Sida och fas3-cert läser superanalys direkt i stället för via banken."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -149,11 +175,14 @@
         "nyhets-central (/nyheter)"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Min Sidas aktie-nyheter-komponent gör sin EGNA Yahoo-hämtning förbi motorn — eleven ser orankade nyheter utan påverkanspoäng och AK1A-not där.",
         "Scan-cronen skriver inte nyckeln 'ak1a-nyheter-top' som notis-motorn läser (den skrivs bara av Nyhetscentralen i klienten) — den dagliga toppnyheten når inte notisflödet automatiskt."
+      ],
+      "testverktygAlla": [
+        "testa-nyhets-motor.mjs"
       ]
     },
     {
@@ -165,10 +194,13 @@
         "lasEllerHamta i /api/dagens-pass, /api/netnet, /api/notiser, /api/vagfundament"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "/api/konfluens och /api/member/portfolio/djupanalys nyttjar inte lasEllerHamta — de två tyngsta analysytorna går förbi cachen."
+      ],
+      "testverktygAlla": [
+        "testa-datacache.mjs"
       ]
     },
     {
@@ -180,10 +212,13 @@
         "läses av /api/signal — enda komponentkonsument: prenumerationsaktivera-panelen"
       ],
       "autonomi": "organ",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "NotisCenter och Min Sida läser aldrig /api/signal — hela signalströmmen (vågkarta, konfluens, kvalitet, portföljuppföljning) når aldrig eleven, trots att notiser är den naturliga kanalen."
+      ],
+      "testverktygAlla": [
+        "testa-signal-bus.mjs"
       ]
     },
     {
@@ -195,10 +230,13 @@
         "konsumeras via /api/kropp av kroppsvy-kort (Min Sida) + admin/ekosystem-panel"
       ],
       "autonomi": "organ",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Kroppsvyn (motornervsystemets fönster) finns bara på Min Sida — startsidans portal andas via vagvisaren men 'känner' aldrig övriga organ."
+      ],
+      "testverktygAlla": [
+        "testa-medlem-progress.mjs"
       ]
     },
     {
@@ -212,11 +250,31 @@
         "/api/styrelse/beslut"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "/api/autonom/status saknar UI-konsument — hälsoläget syns bara via /admin.",
         "/api/organ/runda har ingen schemaläggning — extraronder körs bara vid manuellt anrop."
+      ],
+      "testverktygAlla": [
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kapitalmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-nasta.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-s6u2-omg2.mjs",
+        "testa-ai-mentor-s6u3-omg4.mjs",
+        "testa-akm2-snapshot.mjs",
+        "testa-medlem-progress.mjs",
+        "testa-organ-bus.mjs",
+        "testa-prod-synk-tidsstampel.mjs",
+        "testa-signal-bus.mjs",
+        "testa-styrelse.mjs"
       ]
     },
     {
@@ -227,10 +285,14 @@
         "/api/organ/runda"
       ],
       "autonomi": "organ",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Runda-routen ligger i ingen cron — bussen andas bara när någon anropar routen manuellt."
+      ],
+      "testverktygAlla": [
+        "testa-organ-bus.mjs",
+        "testa-signal-bus.mjs"
       ]
     },
     {
@@ -241,11 +303,46 @@
         "/api/styrelse/beslut"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "StyrelseSection togs bort från publik yta 2026-09-02 (null-komponent) — besluten syns bara i /admin.",
         "Ingen cron kör styrelsen — beslut beräknas bara vid anrop."
+      ],
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs",
+        "testa-sok.mjs",
+        "testa-styrelse.mjs"
       ]
     },
     {
@@ -254,10 +351,18 @@
       "beskrivning": "AKM2-kärnan: raknaAKM1 (V01-V20 ur nyckeltal med trösklar och motivering) + lager 1+2+4+5-syntes med projektionsinvarianten projiceraAKM1(raknaAKM2(k)) === raknaAKM1(k).",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-akm2-karna.mjs (ej i validera-motorer.mjs)",
       "gap": [
         "HELA AKM2-stacken (kärna, dynamik, moduler, vikter) är byggd och testad men OMONTERAD — ingen route eller komponent på sajten beräknar AKM2; vare sig /api/pro/analys, Superanalysen eller /portfolj-forskning använder den."
+      ],
+      "testverktygAlla": [
+        "testa-akm2-karna.mjs",
+        "testa-akm2-snapshot.mjs",
+        "testa-elevkarna.mjs",
+        "testa-kraschvakt.mjs",
+        "testa-mediabibliotek.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -266,22 +371,110 @@
       "beskrivning": "Lager 3: översätter fundamentalvågor (FVagAnalys) och tekniska våglägen till en Φ-justering per variabel (impuls förstärker, korrigering dämpar) med riktighetsinvertering för multipelvariabler.",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-akm2-dynamik.mjs",
       "gap": [
         "Omonterad — se akm2-karna; dess enda produktionstänkbara koppling (via injicerad funktion från fundamental-vagmotorn) är också omonterad."
+      ],
+      "testverktygAlla": [
+        "testa-akm2-dynamik.mjs",
+        "testa-akm2-karna.mjs",
+        "testa-akm3-kalibrering.mjs",
+        "testa-fundamental-vagmotor.mjs",
+        "testa-sok.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
       "namn": "akm2-moduler",
-      "fil": "src/lib/akm2/moduler/index.ts (+ karna-moduler.ts, insider-modul.ts)",
+      "fil": "src/lib/akm2/moduler/index.ts",
       "beskrivning": "Lager 2: branschfamilj styr aktiva V21+-variabler (V21-V28 kärnmoduler + villkorade V29-insidarn); en modul får aldrig ändra V01-V20-poäng, endast vikter.",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-akm2-moduler.mjs",
       "gap": [
         "Omonterad — se akm2-karna. Insidermodulen (V29) väntar dessutom på manuell Finansinspektionen-data (dokumenterat inaktiv)."
+      ],
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-bokmastar.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-etfmekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forsakring.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kontrahent.mjs",
+        "testa-ai-mentor-konvertibel.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsmekanik.mjs",
+        "testa-ai-mentor-moatdjup.mjs",
+        "testa-ai-mentor-multipel.mjs",
+        "testa-ai-mentor-nya-territorier.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskbudget.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorlasning.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tillvaxtdjup.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-vardegrund.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs",
+        "testa-akm2-karna.mjs",
+        "testa-akm2-moduler.mjs",
+        "testa-akm2-snapshot.mjs",
+        "testa-artefakt-verifiering.mjs",
+        "testa-b2b-grind.mjs",
+        "testa-granssnitt-urval.mjs",
+        "testa-kraschvakt.mjs",
+        "testa-medlem-progress.mjs",
+        "testa-permissions-policy.mjs",
+        "testa-prestanda-v96.mjs",
+        "testa-prod-synk-arbetsytasynk.mjs",
+        "testa-prod-synk-nextlaeke.mjs",
+        "testa-prod-synk-pm2vakt.mjs",
+        "testa-prod-synk-ramvakt.mjs",
+        "testa-riskportfolj.mjs",
+        "testa-schema-kurser.mjs",
+        "testa-sok.mjs",
+        "testa-studio-rewind.mjs",
+        "testa-studio-tabbar.mjs",
+        "testa-studio-ttfb.mjs",
+        "testa-styrelse.mjs",
+        "testa-uppfoljning.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -290,10 +483,18 @@
       "beskrivning": "Lager 4: namngivna viktsamlingar (akm1-klassisk, akm2-2026, superanalys-2026) med dokumenterad 58/97- och 112 %-upplösning; råvikter summerar exakt 100.",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "indirekt via verktyg/testa-akm2-karna.mjs (viktsummevakt 100/100/100)",
       "gap": [
         "Omonterad — se akm2-karna."
+      ],
+      "testverktygAlla": [
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-akm2-karna.mjs",
+        "testa-demoklient-data.mjs",
+        "testa-nyhets-motor.mjs",
+        "testa-riskportfolj.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -306,11 +507,17 @@
         "korstabell-data (+ /prenumeration)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-riskportfolj.mjs",
       "gap": [
         "Förslagsportföljen jämförs aldrig mot elevens faktiska portfölj (Min Portfölj) och matar inte nyhets-motorns bevakning.",
         "Ingen notis när en kandidat i sparad portfölj tappar strikta krav (uppfoljningsmotorn kollar teknisk vågstatus men inte kravglidningen som kunddirektivet nämner)."
+      ],
+      "testverktygAlla": [
+        "testa-akm2-karna.mjs",
+        "testa-riskportfolj.mjs",
+        "testa-uppfoljning.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -319,11 +526,17 @@
       "beskrivning": "FVagAnalys: klassar AKM1:s 20 variabler som vågor ur bolagets egna fundamentalserier per horisont med trippelkontroll (teckenvändningsandel, linjär regression, +1) och riktning via bedomDynamik.",
       "monterad": [],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-fundamental-vagmotor.mjs + verktyg/kor-fvag.mjs",
       "gap": [
         "INGEN produktionsyta driver motorn — den körs bara via verktyg (kor-fvag skriver data/portfolj-system) och den omonterade akm2-kedjan.",
         "/portfolj-forskning bygger på korstabell-grund-filen i stället för live-FVag-analys."
+      ],
+      "testverktygAlla": [
+        "testa-akm2-dynamik.mjs",
+        "testa-akm2-moduler.mjs",
+        "testa-fundamental-vagmotor.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -334,11 +547,15 @@
         "/api/cron/portfolj-uppfoljning (cron månadens 1:a 07:00 UTC) → publiceraSignal per notistext"
       ],
       "autonomi": "cron",
-      "testad": false,
+      "testad": true,
       "testverktyg": "verktyg/testa-uppfoljning.mjs",
       "gap": [
         "Notistexterna publiceras som signaler — men eftersom NotisCenter inte läser /api/signal når 'då vs nu' aldrig eleven (dubbelgap: signal-kopplingen saknas).",
         "Jämförelsevyn portfolj-djupvy/demo-wrapper finns som komponenter men drivs av demo-data, inte av crons snapshots."
+      ],
+      "testverktygAlla": [
+        "testa-uppfoljning.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -350,11 +567,16 @@
         "assistent + briefing + klientkontext (Min Sida, indirekt)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Saknas på /laroplan, /bibliotek, /badges och startsidans kurser-section.",
         "nasta-steg (spridd via seo-page-shell på SEO-sidor) räcker med egen dubblerande logik i stället för att återanvända motorn."
+      ],
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-klientkontext.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -365,11 +587,14 @@
         "vecko-plan → Min Sida"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Bara Min Sida — /dagens-pass kunde visa veckans rad och länka vidare.",
         "Planen syntes inte med SR-kortens förfallodatum (spaced-repetition) trots båda bor i lokaldata."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -380,11 +605,14 @@
         "dashfraga-kort → Min Sida"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Endast Min Sida — frågelådan kunde stå på startsidans portal och i /dagens-pass.",
         "Intents täcker streak/XP/kurs/vecka/vågkarta/badges/navigering men inte portföljens vågprofil eller konfluens trots att datakällorna finns."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -395,10 +623,13 @@
         "morgon-briefing → Min Sida + kunskaps-flode (som i sin tur bara nås via Min Sida)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Morgonupplevelsen lever bara bakom inloggad Min Sida — startsidans portal och e-postens morgonMejl (cron email) har varsin egen briefing-logik i stället för en gemensam."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -409,11 +640,14 @@
         "assistent-panel → Min Sida"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Bara Min Sida — den globala chat-widgeten (layout) återanvänder inte assistentens förslag som proaktiva välkomstrader.",
         "Frustrationdetekteringen triggar ingen notis (kunde kopplas till omtanke-motorn)."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -425,10 +659,13 @@
         "notiser (genereraAutomatiskaNotiser läser pulsen)"
       ],
       "autonomi": "puls",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Pulsen slår bara där vagvisaren renderas (startportal + Min Sida) — kurser, analyser och nyheter är 'känslolösa' ytor utan mount."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -440,11 +677,14 @@
         "/api/notiser (serverunderlag via datacache)"
       ],
       "autonomi": "puls",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Automatnotiser genereras först när notis-klockan renderas/mountas — inga push eller e-postvägar.",
         "Läser 'ak1a-nyheter-top' som bara Nyhetscentralen (klient) skriver — se nyhets-motorns gap."
+      ],
+      "testverktygAlla": [
+        "testa-uppfoljning.mjs"
       ]
     },
     {
@@ -457,11 +697,14 @@
         "Min Sida (srStatistik)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "SR-status syntes inte med kursquiz-progressen eller certifikatet — två parallella minnessystem.",
         "Förfallna kort driver ingen notis trots att 'max en per typ per dag'-mekanismen redan finns."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -473,10 +716,13 @@
         "chat-widget, dagens-pass, kurs-steg, min-sida (globalt/central)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "/certifikat-sidan visar inte badge-status trots att intyg och meritsystem är naturliga grannar."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -488,11 +734,14 @@
         "klientkontext (lasElevKarna)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Elevkärnans horisont/mål styr inte riskportfoljens risknivå-förslag och inte kurstipsen — 'varför' och 'vad' lever åtskilda.",
         "Fylls bara via Min Sida-formuläret; ingen progressiv ifyllning i kursflödet."
+      ],
+      "testverktygAlla": [
+        "testa-elevkarna.mjs"
       ]
     },
     {
@@ -503,10 +752,14 @@
         "assistent-panel (+ assistent-motorn)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "ENDA konsumenten är assistenten — dashfraga, briefing och kurstips läser råkällorna själva, precis den spridda-gissningar-arkitektur filen säger att den ska avlösa."
+      ],
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-klientkontext.mjs"
       ]
     },
     {
@@ -519,12 +772,16 @@
         "/api/eko + /api/admin/betende"
       ],
       "autonomi": "puls",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Insikterna (lasInsikter) konsumeras bara på Min Sida.",
         "Den frivilliga delningsknappen till /api/tracer är 'ännu ej byggd' (dokumenterat i filen) — serverinsikterna når bara admin.",
         "/api/eko som läser tracern har i sin tur inga komponentkonsumenter (se eko-koppling)."
+      ],
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -537,10 +794,14 @@
         "aktie-nyheter, nyhets-central, min-portfolj-kort"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "fortsatt-panelen montas bara på två sidor — /blogg, /nyheter och /bibliotek saknar 'fortsatt där du var'."
+      ],
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs",
+        "testa-navigationsminne.mjs"
       ]
     },
     {
@@ -551,11 +812,14 @@
         "/api/chatbot"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Ämneregistret täcker V01-V20 + pe/moat/mr market/kalkylator/portfölj m.m. — men inte netnet, konfluens, vågfundament eller vagkon trots att verktygssidor och datakällor finns.",
         "dashfraga har en parallell, enklare intent-matchare i stället för att återanvända NLU-normaliseringen."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -566,10 +830,13 @@
         "chat-widget (globalt via layout)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Historiken skickas bara till /api/chatbot — deep-consultation och dashfraga får aldrig del av sammanhanget."
+      ],
+      "testverktygAlla": [
+        "validera-motorer.mjs"
       ]
     },
     {
@@ -580,10 +847,13 @@
         "/api/eko — men INGEN komponent hämtar /api/eko (grep: noll konsumenter i src/components)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "STÖRSTA GAPET I REGISTRET: motorn är byggd för admin beteende-panel + Min Sida assistent-panel (enligt egna kommentarer) men ingen vy konsumerar den — /api/eko är en död ände och kundens kärndirektiv ('alla system DELAR sin kunskap') når inte eleven."
+      ],
+      "testverktygAlla": [
+        "testa-eko-koppling.mjs"
       ]
     },
     {
@@ -594,11 +864,14 @@
         "/api/shortseller + short-seller-komponenten (globalt via layout)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Försvars-streak och nivå syntes inte till badges/streak/veckoplan — motorn är en ödesfrån övriga meritsystem.",
         "kursRef-kopplingen (V01-V20) föreslås inte ur elevens faktiska klara kurser via klientkontext."
+      ],
+      "testverktygAlla": [
+        "testa-shortseller-bank.mjs"
       ]
     },
     {
@@ -609,10 +882,13 @@
         "assistent-panel, kognitiv-profiler, short-seller, social-proof"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Bara 4 komponenter importerar rösten formellt — kurstips, veckoplan, dashfraga, notiser m.fl. bollar tonen 'bakad' i egna strängar; ingen gemensam validering att texterna följer principerna."
+      ],
+      "testverktygAlla": [
+        "testa-mentor-modell.mjs"
       ]
     },
     {
@@ -623,38 +899,2438 @@
         "kommandopalett (globalt via layout)"
       ],
       "autonomi": "ingen",
-      "testad": false,
+      "testad": true,
       "testverktyg": "",
       "gap": [
         "Indexet saknar bloggposter, nyhetsämnen och verktygsdjuplänkar (kalkylatorns flikar, vagkarta per aktie) trots lazy-mönstret."
+      ],
+      "testverktygAlla": [
+        "testa-b2b-grind.mjs"
       ]
     },
     {
-      "namn": "dynamic-catalog (kursexpansion)",
-      "fil": "src/lib/ak1a/dynamic-catalog.ts (+ regenerate-all-courses.ts)",
-      "beskrivning": "Deterministisk kurskatalogsgenerator (2 896 rader): bygger/expanderar kursinnehåll urunderliggande data.",
-      "monterad": [],
-      "autonomi": "ingen",
-      "testad": false,
-      "testverktyg": "",
+      "namn": "ai-mentor-agande-fragor",
+      "fil": "src/lib/ai-mentor-agande-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — ÄGANDEFÖRHANDSFRÅGOR (spår 6, omgång 8, s6-u2). Två ytterligare källmärkta förhandsfrågor ovanpå de tidigare lagren (basens MONSTER i ai-mentor-svar.ts, extra-, makro-, nästa-, kapitalmekanik-, sektor-, case-, praktik- och ",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
       "gap": [
-        "cron/expand-courses (dagligen 12:00 UTC) expanderar kurser via EGEN fil-logik i routen — dynamic-catalog-modulen importeras inte av route, komponent eller skript (grep: noll träffar utanför ak1a-katalogen)."
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-avkastningskurva-fragor",
+      "fil": "src/lib/ai-mentor-avkastningskurva-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-avrakningsdjup-fragor",
+      "fil": "src/lib/ai-mentor-avrakningsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-beteendedjup-fragor",
+      "fil": "src/lib/ai-mentor-beteendedjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-beteendemekanik-fragor",
+      "fil": "src/lib/ai-mentor-beteendemekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-bokmastar-fragor",
+      "fil": "src/lib/ai-mentor-bokmastar-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-bokmastar.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-bokmastar.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-case-fragor",
+      "fil": "src/lib/ai-mentor-case-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — CASE-FÖRHANDSFRÅGOR (spår 6, omgång 5, u1: nivån 36 → 37). EN källmärkt förhandsfråga ovanpå samtliga tidigare lager (basens MONSTER i ai-mentor-svar.ts, extra-, makro-, nästa-, kapitalmekanik- och sektor-lagren): 1. Prakti",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-djup-fragor",
+      "fil": "src/lib/ai-mentor-djup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-ekosystemdjup-fragor",
+      "fil": "src/lib/ai-mentor-ekosystemdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-extra-fragor",
+      "fil": "src/lib/ai-mentor-extra-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — EXTRA FÖRHANDSFRÅGOR (spår 6, s6-u3: nivån 15 → 18). Tre ytterligare källmärkta förhandsfrågor ovanpå de femton i ai-mentor-svar.ts — den fundamentala analysens byggstenar: 1. Kassaflödesanalys    (de riktiga pengarna — km-",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx",
+        "src/lib/ai-mentor-makro-fragor.ts",
+        "src/lib/ai-mentor-nasta-fragor.ts"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-extra.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kapitalmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-makro.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-multipel.mjs",
+        "testa-ai-mentor-nasta.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-s6u2-omg2.mjs",
+        "testa-ai-mentor-s6u3-omg4.mjs",
+        "testa-ai-mentor-sektor.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-spar6.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-faktordjup-fragor",
+      "fil": "src/lib/ai-mentor-faktordjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-forsakring-fragor",
+      "fil": "src/lib/ai-mentor-forsakring-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx",
+        "src/lib/ai-mentor-nya-territorier-fragor.ts"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-forsakring.mjs · testa-ai-mentor-kedja.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-forsakring.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-forvantningsdjup-fragor",
+      "fil": "src/lib/ai-mentor-forvantningsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-grahamgolv-fragor",
+      "fil": "src/lib/ai-mentor-grahamgolv-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-handelsdag-fragor",
+      "fil": "src/lib/ai-mentor-handelsdag-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs · testa-ai-mentor-kedja.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-historia-fragor",
+      "fil": "src/lib/ai-mentor-historia-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-kapitalbindning-fragor",
+      "fil": "src/lib/ai-mentor-kapitalbindning-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-kapitalmekanik-fragor",
+      "fil": "src/lib/ai-mentor-kapitalmekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — KAPITALMEKANIK-FÖRHANDSFRÅGOR (spår 6, omgång 4: nivån 30 → 32). Två ytterligare källmärkta förhandsfrågor ovanpå de tidigare lagren (basens MONSTER i ai-mentor-svar.ts, u3:s extra-lager, u1:s makro-lager, u3:s nästa-lager)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kapitalmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-s6u3-omg4.mjs",
+        "testa-ai-mentor-sektor.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-koncernlasning-fragor",
+      "fil": "src/lib/ai-mentor-koncernlasning-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-konvertibel-fragor",
+      "fil": "src/lib/ai-mentor-konvertibel-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-konvertibel.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-konvertibel.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-kreditdjup-fragor",
+      "fil": "src/lib/ai-mentor-kreditdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-lonsamhetsdjup-fragor",
+      "fil": "src/lib/ai-mentor-lonsamhetsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-makro-fragor",
+      "fil": "src/lib/ai-mentor-makro-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — MAKROFÖRHANDSFRÅGOR (spår 6, omgång 2, u1: nivån 23 → 25). Två ytterligare källmärkta förhandsfrågor ovanpå de tjugotre tidigare (basens tjugo i ai-mentor-svar.ts + u3:s tre i ai-mentor-extra-fragor.ts): 1. Ränta      (pris",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx",
+        "src/lib/ai-mentor-nasta-fragor.ts"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kapitalmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-makro.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-nasta.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-s6u2-omg2.mjs",
+        "testa-ai-mentor-s6u3-omg4.mjs",
+        "testa-ai-mentor-sektor.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-marknadsmekanik-fragor",
+      "fil": "src/lib/ai-mentor-marknadsmekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsmekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsmekanik.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-moatdjup-fragor",
+      "fil": "src/lib/ai-mentor-moatdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-moatdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-moatdjup.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-nasta-fragor",
+      "fil": "src/lib/ai-mentor-nasta-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — NÄSTA FÖRHANDSFRÅGOR (spår 6, omgång 3: nivån 27 → 30). Tre ytterligare källmärkta förhandsfrågor ovanpå de tidigare lagren (basens MONSTER i ai-mentor-svar.ts — inklusive omgångens syskon-u2: kapitalstruktur + tillväxtens ",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx",
+        "src/lib/ai-mentor-svar.ts"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kapitalmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-nasta.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-s6u3-omg4.mjs",
+        "testa-ai-mentor-sektor.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-nya-territorier-fragor",
+      "fil": "src/lib/ai-mentor-nya-territorier-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-nya-territorier.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-nya-territorier.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-optionsdjup-fragor",
+      "fil": "src/lib/ai-mentor-optionsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-overlevnadsdjup-fragor",
+      "fil": "src/lib/ai-mentor-overlevnadsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-pe-mekanik-fragor",
+      "fil": "src/lib/ai-mentor-pe-mekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-portfoljbalans-fragor",
+      "fil": "src/lib/ai-mentor-portfoljbalans-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-portfoljgrund-fragor",
+      "fil": "src/lib/ai-mentor-portfoljgrund-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-portfoljpraktik-fragor",
+      "fil": "src/lib/ai-mentor-portfoljpraktik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs · testa-ai-mentor-kedja.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-praktik-fragor",
+      "fil": "src/lib/ai-mentor-praktik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — PRAKTIKFÖRHANDSFRÅGOR (spår 6, omgång 6, u3: nivån 38 → 41). Tre ytterligare källmärkta förhandsfrågor ovanpå de tidigare lagren (basens MONSTER i ai-mentor-svar.ts, extra-, makro-, nästa-, kapitalmekanik- och sektor-lagren",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsmekanik.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-realekonomi-fragor",
+      "fil": "src/lib/ai-mentor-realekonomi-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-redovisningsdjup-fragor",
+      "fil": "src/lib/ai-mentor-redovisningsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-riskbudget-fragor",
+      "fil": "src/lib/ai-mentor-riskbudget-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-riskbudget.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskbudget.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-riskdjup-fragor",
+      "fil": "src/lib/ai-mentor-riskdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-risklasningsdjup-fragor",
+      "fil": "src/lib/ai-mentor-risklasningsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-riskmattsdjup-fragor",
+      "fil": "src/lib/ai-mentor-riskmattsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-riskpremie-fragor",
+      "fil": "src/lib/ai-mentor-riskpremie-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-sektor-fragor",
+      "fil": "src/lib/ai-mentor-sektor-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — SEKTORFÖRHANDSFRÅGOR (spår 6, omgång 3, u1: nivån 33 → 36). Tre ytterligare källmärkta förhandsfrågor ovanpå de tidigare lagren (basens MONSTER i ai-mentor-svar.ts, extra-, makro-, nästa- och kapitalmekanik-lagren, samt u3 ",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-agande.mjs · testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-agande.mjs",
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-case.mjs",
+        "testa-ai-mentor-djup.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-historia.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-lonsamhetsdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljgrund.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-praktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-redovisningsdjup.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektor.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-sektordjup-fragor",
+      "fil": "src/lib/ai-mentor-sektordjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-sektorlasning-fragor",
+      "fil": "src/lib/ai-mentor-sektorlasning-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-sektorlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-sektorlasning.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-sektorskola2-fragor",
+      "fil": "src/lib/ai-mentor-sektorskola2-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektorskola2.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-skattedjup-fragor",
+      "fil": "src/lib/ai-mentor-skattedjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-stabilitetsdjup-fragor",
+      "fil": "src/lib/ai-mentor-stabilitetsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-tidsaxel-fragor",
+      "fil": "src/lib/ai-mentor-tidsaxel-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-tillvaxtdjup-fragor",
+      "fil": "src/lib/ai-mentor-tillvaxtdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs · testa-ai-mentor-realekonomi.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-tillvaxtdjup.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-tsdjup-fragor",
+      "fil": "src/lib/ai-mentor-tsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendedjup.mjs · testa-ai-mentor-beteendemekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendedjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskdjup.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskmattsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-skattedjup.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-tsdjup.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-utdelningsdjup-fragor",
+      "fil": "src/lib/ai-mentor-utdelningsdjup-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-forvantningsdjup.mjs",
+        "testa-ai-mentor-grahamgolv.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljbalans.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-stabilitetsdjup.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningsdjup.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-utdelningskalender-fragor",
+      "fil": "src/lib/ai-mentor-utdelningskalender-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-koncernlasning.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-valutamekanik-fragor",
+      "fil": "src/lib/ai-mentor-valutamekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — VALUTAMEKANIK-FÖRHÅSFRÅGOR (våg 210 — spår 6, PIPELINE-KO ombokad rond 103, levererad av studion 2026-09-19). Tio källmärkta förhandsfrågor om VALUTANS MEKANIK — PPP, ränteparitet, realväxelkursen, kronstyrka, devalvering, ",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-valutamekanik.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-valutamekanik.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-vardegrund-fragor",
+      "fil": "src/lib/ai-mentor-vardegrund-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-realekonomi.mjs · testa-ai-mentor-vardegrund.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-vardegrund.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-varderingsverktyg-fragor",
+      "fil": "src/lib/ai-mentor-varderingsverktyg-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-varderjustering-fragor",
+      "fil": "src/lib/ai-mentor-varderjustering-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — VÄRDERINGSJUSTERINGAR (spår 6, omgång 14: nivån 66 → 68). Två ytterligare källmärkta förhandsfrågor — värderingens två justerings- rattar, varken tidigare lager äger: 1. NORMALISERING / CAPE (vr-02 + vm-04 + Shillers Irrati",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-avkastningskurva.mjs · testa-ai-mentor-avrakningsdjup.mjs · testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-avkastningskurva.mjs",
+        "testa-ai-mentor-avrakningsdjup.mjs",
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-optionsdjup.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-risklasningsdjup.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-varderingsverktyg.mjs",
+        "testa-ai-mentor-varderjustering.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-warrant-fragor",
+      "fil": "src/lib/ai-mentor-warrant-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-beteendemekanik.mjs · testa-ai-mentor-ekosystemdjup.mjs · testa-ai-mentor-faktordjup.mjs · testa-ai-mentor-handelsdag.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-beteendemekanik.mjs",
+        "testa-ai-mentor-ekosystemdjup.mjs",
+        "testa-ai-mentor-faktordjup.mjs",
+        "testa-ai-mentor-handelsdag.mjs",
+        "testa-ai-mentor-kapitalbindning.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-koncernlasning.mjs",
+        "testa-ai-mentor-kreditdjup.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs",
+        "testa-ai-mentor-overlevnadsdjup.mjs",
+        "testa-ai-mentor-pe-mekanik.mjs",
+        "testa-ai-mentor-portfoljpraktik.mjs",
+        "testa-ai-mentor-realekonomi.mjs",
+        "testa-ai-mentor-riskpremie.mjs",
+        "testa-ai-mentor-sektordjup.mjs",
+        "testa-ai-mentor-sektorskola2.mjs",
+        "testa-ai-mentor-tidsaxel.mjs",
+        "testa-ai-mentor-utdelningskalender.mjs",
+        "testa-ai-mentor-warrant.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "akm2-koppling",
+      "fil": "src/lib/portfolj-forskning/akm2-koppling.ts",
+      "typ": "stödsystem/modul",
+      "beskrivning": "AKM2-KOPPLING — portföljforskningens bro till den färdiga AKM2-kärnan. AKM2-kärnan (src/lib/akm2/ — karna.ts, moduler/, vikter.ts, dynamik.ts) är FÄRDIG och FÅR ALDRIG röras av portföljsystemet; denna fil är den enda kopplingspunkten och gö",
+      "monterad": [
+        "src/lib/akm3/ensemble.ts",
+        "src/lib/akm3/typer.ts",
+        "src/lib/portfolj-forskning/korstabell-data.ts",
+        "src/lib/portfolj-forskning/riskportfolj.ts",
+        "src/lib/portfolj-forskning/typer.ts"
+      ],
+      "autonomi": "exporterad (ingen direkt import hittad)",
+      "testad": true,
+      "testverktyg": "validera-motorer.mjs",
+      "testverktygAlla": [
+        "validera-motorer.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "korstabell-data",
+      "fil": "src/lib/portfolj-forskning/korstabell-data.ts",
+      "typ": "stödsystem/modul",
+      "beskrivning": "KORSTABELL-DATA — server-side läsning av P6:s underlag + prislistan. Källor (repo-roten, läses med fs vid build/request — aldrig klienten): - data/portfolj-system/korstabell-grund.json  (P6 levererar; saknas än så länge → lasKorstabellGrund",
+      "monterad": [
+        "src/app/(ar)/ar/prenumeration/page.tsx",
+        "src/app/(en)/en/prenumeration/page.tsx",
+        "src/app/(huvud)/forskningsbiblioteket/[ticker]/page.tsx",
+        "src/app/(huvud)/kurser/[slug]/page.tsx",
+        "src/app/(huvud)/min-sida/page.tsx",
+        "src/app/(huvud)/portfolj-forskning/page.tsx",
+        "src/app/(huvud)/prenumeration/page.tsx",
+        "src/app/(huvud)/pro/analys/page.tsx"
+      ],
+      "autonomi": "cron",
+      "testad": true,
+      "testverktyg": "testa-demoklient-data.mjs",
+      "testverktygAlla": [
+        "testa-demoklient-data.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "peer",
+      "fil": "src/lib/portfolj-forskning/peer.ts",
+      "typ": "stödsystem/modul",
+      "beskrivning": "PEER — branschjämförelse på rank/median-basis (AKM3 steg 4, r3-peer §3). Frågan r3 besvarar: \"högt betyg i en svag bransch\" vs \"medel betyg i en stark\" — den absoluta AKM2-poängen döljer vem som slår sitt sällskap. Tre deterministiska, rent",
+      "monterad": [
+        "src/app/(huvud)/forskningsbiblioteket/[ticker]/page.tsx",
+        "src/app/(huvud)/pro/analys/page.tsx",
+        "src/app/(huvud)/pro/klienter/page.tsx",
+        "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "src/components/ak1a/pro/demoklient-data.ts",
+        "src/components/ak1a/pro/klientvy.tsx",
+        "src/components/ak1a/pro/morgonrond.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-pro-screening.mjs · validera-motorer.mjs",
+      "testverktygAlla": [
+        "testa-pro-screening.mjs",
+        "validera-motorer.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-etfmekanik-fragor",
+      "fil": "src/lib/ai-mentor-etfmekanik-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-etfmekanik.mjs · testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-etfmekanik.mjs",
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-kontrahent-fragor",
+      "fil": "src/lib/ai-mentor-kontrahent-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "AI-MENTORN 2.0 — KONTRAHENT-FÖRHÅSFRÅGOR (omgång 25, manifest auto-s6-1789864506792 — spår 6, byggare s6-u2, levererad 2026-09-20). Två källmärkta förhandsfrågor om KONTRAHENTRISKEN — vem som står på andra sidan när det blåser, och clearing",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-kontrahent.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-kontrahent.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-marknadsrytm-fragor",
+      "fil": "src/lib/ai-mentor-marknadsrytm-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-marknadsrytm.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-marknadsrytm.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
+      ]
+    },
+    {
+      "namn": "ai-mentor-multipel-fragor",
+      "fil": "src/lib/ai-mentor-multipel-fragor.ts",
+      "typ": "frågelager-motor (AI-Mentorn)",
+      "beskrivning": "(rubrikkommentar saknas — mekaniskt tillagd 2026-09-19)",
+      "monterad": [
+        "src/components/ak1a/chat-widget.tsx"
+      ],
+      "autonomi": "klient (UI-monterad)",
+      "testad": true,
+      "testverktyg": "testa-ai-mentor-kedja.mjs · testa-ai-mentor-multipel.mjs",
+      "testverktygAlla": [
+        "testa-ai-mentor-kedja.mjs",
+        "testa-ai-mentor-multipel.mjs"
+      ],
+      "gap": [
+        "nykartlagd 2026-09-19 (våg 212 mekanisk regen) — djupgap ej manuellt inventerat"
       ]
     }
   ],
   "infrastruktur": [
-    { "fil": "src/lib/utils.ts", "notering": "Allmänna hjälpare." },
-    { "fil": "src/lib/content.ts", "notering": "Kurs/blogg/analys-innehållsläsning." },
-    { "fil": "src/lib/seo.tsx", "notering": "SEO-metadata." },
-    { "fil": "src/lib/siffror.ts", "notering": "Platshållarsiffror (SIFFROR)." },
-    { "fil": "src/lib/ak1a-store.ts", "notering": "Zustand-butik (SPA-tillstånd)." },
-    { "fil": "src/lib/db.ts / supabase.ts / supabase-rest.ts / data-access.ts / ak1a-katalogens datafiler (ak1a/data.ts, deep-courses-data.ts, course-links.ts, seed*, add-perspectives, use-activity-logger)", "notering": "Databas- och datalagring." },
-    { "fil": "src/lib/member-local.ts / kurs-access.ts / prenumeration.ts", "notering": "Lokal medlemstatstate, åtkomstkontroll, prenumerationsstatus." },
-    { "fil": "src/lib/email-mallar.ts", "notering": "E-postmallar (morgonMejl komponeras i cron email) — gränsfall." },
-    { "fil": "src/lib/nyhetskanaler.ts", "notering": "Klientside kanal-state som speglar nyhets-motorns metadata (URL:er stannar på servern) — gränsfall." },
-    { "fil": "src/lib/ekosystem.ts", "notering": "Konfigurationsauktoritet (AKM1/AK1TS-referens) — läses av chatboten men beräknar inget." },
-    { "fil": "src/lib/zai.ts", "notering": "AI-brygga (zaiChat) — extern intelligens, inte egen motor enligt kunddirektivet." },
-    { "fil": "src/lib/portfolj-forskning/typer.ts / korstabell-data.ts, src/lib/akm2/typer.ts", "notering": "Typkontrakt + underlagsnormalisering (fs-läsning utan poängsättning)." }
+    {
+      "fil": "src/lib/utils.ts",
+      "notering": "Allmänna hjälpare."
+    },
+    {
+      "fil": "src/lib/content.ts",
+      "notering": "Kurs/blogg/analys-innehållsläsning."
+    },
+    {
+      "fil": "src/lib/seo.tsx",
+      "notering": "SEO-metadata."
+    },
+    {
+      "fil": "src/lib/siffror.ts",
+      "notering": "Platshållarsiffror (SIFFROR)."
+    },
+    {
+      "fil": "src/lib/ak1a-store.ts",
+      "notering": "Zustand-butik (SPA-tillstånd)."
+    },
+    {
+      "fil": "src/lib/db.ts / supabase.ts / supabase-rest.ts / data-access.ts / ak1a-katalogens datafiler (ak1a/data.ts, deep-courses-data.ts, course-links.ts, seed*, add-perspectives, use-activity-logger)",
+      "notering": "Databas- och datalagring."
+    },
+    {
+      "fil": "src/lib/member-local.ts / kurs-access.ts / prenumeration.ts",
+      "notering": "Lokal medlemstatstate, åtkomstkontroll, prenumerationsstatus."
+    },
+    {
+      "fil": "src/lib/email-mallar.ts",
+      "notering": "E-postmallar (morgonMejl komponeras i cron email) — gränsfall."
+    },
+    {
+      "fil": "src/lib/nyhetskanaler.ts",
+      "notering": "Klientside kanal-state som speglar nyhets-motorns metadata (URL:er stannar på servern) — gränsfall."
+    },
+    {
+      "fil": "src/lib/ekosystem.ts",
+      "notering": "Konfigurationsauktoritet (AKM1/AK1TS-referens) — läses av chatboten men beräknar inget."
+    },
+    {
+      "fil": "src/lib/zai.ts",
+      "notering": "AI-brygga (zaiChat) — extern intelligens, inte egen motor enligt kunddirektivet."
+    },
+    {
+      "fil": "src/lib/portfolj-forskning/typer.ts / korstabell-data.ts, src/lib/akm2/typer.ts",
+      "notering": "Typkontrakt + underlagsnormalisering (fs-läsning utan poängsättning)."
+    }
   ],
   "summering": {
     "antalMotorer": 42,
@@ -673,6 +3349,19 @@
       "fundamental-vagmotor",
       "dynamic-catalog (cron kör egen logik)",
       "eko-koppling (API finns men noll komponentkonsumenter)"
+    ]
+  },
+  "regen": {
+    "vaccination": "våg 212 (E35 gap 2) 2026-09-19",
+    "metod": "befintliga 42 poster bevarade (mänsklig kunskap orörd; mekaniska fält testad/testverktygAlla uppdaterade + kompositsökvägar normaliserade); nya poster mekaniskt kartlagda ur trädet (rubrikkommentar + import-grep + svit-grep); poster vars fil saknas på disk gallras ur registret (o108, transparent i utdata)",
+    "baseradPa": "9f012282",
+    "befintliga": 105,
+    "nya": 0,
+    "totalt": 105,
+    "testtade": 105,
+    "otestade": 0,
+    "gallradeUrRegistret": [
+      "dynamic-catalog (kursexpansion) (src/lib/ak1a/dynamic-catalog.ts)"
     ]
   }
 }

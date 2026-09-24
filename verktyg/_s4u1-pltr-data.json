@@ -1,0 +1,18 @@
+{
+  "_obs": "Talbank för PALANTIR Q3-2026-läspaketet (s4-u1, manifest auto-s4-1789986325353, dubbelpivot META→CVX→PLTR). Universumfälten läses LIVE av KVD:n ur bolagsunivers.json (md5-låst nedan); press- och kalendertalen nedan är sökverifierade 2026-09-21 med källor per rad. Byggare: verktyg/_s4u1-pltr-bygg.py. KVD: verktyg/_s4u1-pltr-kvd.mjs.",
+  "kalla": {
+    "universum": "data/portfolj-system/bolagsunivers.json",
+    "md5": "bb2d5b9a907a44b05482eb957d03afef",
+    "hamtat": "2026-09-03",
+    "bibliotek": "data/forskningsbiblioteket/PLTR.json (version 2026-09-04)"
+  },
+  "press": {
+    "q3_2025": {"datum": "2025-11-03", "omsMdr": 1.18, "tillvaxtProcent": 63, "egenGuideMdr": [1.083, 1.087], "eps": 0.20, "usaKommersielltProcent": 121, "ruleOf40": 114, "kalla": ["Simply Wall St", "StockAnalysis.com", "Seeking Alpha (transkript)"]},
+    "q4_2025": {"datum": "2026-02-02", "omsMdr": 1.4068, "tillvaxtProcent": 70, "usaKommersielltM": 507, "usaKommersielltProcent": 137, "fyOmsMdr": 4.475, "fyGaapEps": 0.69, "fyFjorGaapEps": 0.20, "fy26GuidansInitialMdr": [7.182, 7.198], "kalla": ["SEC 8-K (2026-02-02)", "IR Q4-presentation", "CNBC", "getlatka"]},
+    "q1_2026": {"datum": "2026-05-04", "omsMdr": 1.633, "tillvaxtProcent": 85, "konsensusOmsMdr": 1.54, "usaOmsMdr": 1.282, "usaTillvaxtProcent": 104, "epsGaap": 0.34, "epsJusterad": 0.33, "epsKonsensus": 0.28, "fy26GuidansMdr": [7.65, 7.662], "usaKommersielltGuidansMdr": 3.22, "kalla": ["Palantir IR (2026-05-04)", "SEC 8-K exhibit", "CNBC", "TIKR"]},
+    "q2_2026": {"datum": "2026-08-03", "omsMdr": 1.935, "tillvaxtProcent": 93, "egenGuideMdr": [1.797, 1.801], "eps": 0.41, "h1OmsMdr": 3.568, "fy26GuidansMdr": [8.15, 8.158], "usaKommersielltGuidansMdr": 3.42, "usaKommersielltProcent": 134, "aktienEnManadProcent": 40, "kalla": ["Palantir IR (2026-08-03)", "SEC", "TIKR", "TradingKey"]},
+    "q3_2026_projektion": {"datum": "2026-11-02", "datumklass": "projektion (måndagsrytm: Q1 4/5, Q2 3/8, fjolårets Q3 3/11 2025)", "epsKonsensus": 0.41, "konsensusTillvaxtProcent": 95.24, "fjolareps": 0.21, "h2RestMdr": [4.582, 4.59], "kalla": ["Zacks (EPS 0,41 +95 %)", "könoter i seriens paket"]}
+  },
+  "gren": {"bransch": "tillvaxt", "n": 17, "serieposition": "tillväxtgrenens fjärde paket (Kinnevik, Truecaller, Cellavision före); seriens cirka 77:e på disk", "störreGrannar": {"TSLA": 1410.028, "NVDA": 5418.828}},
+  "bibliotek": {"status": "gul", "datatackning": 0.7113, "relativAkm1": 0.6667, "akm1": "47,4/71,1", "starkast": "lonsamhet 4,33", "svagast": "katalysator 0", "akm2Moduler": ["tillvaxt"], "vaglage": "mikro impulsvag, 4 av 5 osatta; utanför vågvalideringens 12-tickeruniversum"}
+}

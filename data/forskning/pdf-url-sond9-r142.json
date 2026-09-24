@@ -1,0 +1,30 @@
+{
+  "lankar": [
+    "https://www.industrivarden.se/investerare/rapporter-och-presentationer/Arsredovisningar/",
+    "https://www.industrivarden.se/media/Pressmeddelanden/2025/publicering-av-industrivardens-arsredovisning-och-hallbarhetsrapport-2024/",
+    "https://www.industrivarden.se/media/Pressmeddelanden/2024/publicering-av-industrivardens-arsredovisning-och-hallbarhetsrapport-2023/",
+    "https://www.industrivarden.se/media/Pressmeddelanden/2023/publicering-av-industrivardens-ars--och-hallbarhetsredovisning-2022/",
+    "https://www.industrivarden.se/media/Pressmeddelanden/2022/publicering-av-industrivardens-ars--och-hallbarhetsredovisning-2021/",
+    "https://www.industrivarden.se/media/Pressmeddelanden/2026/publicering-av-industrivardens-arsredovisning-och-hallbarhetsrapport-2025/"
+  ],
+  "pdf": [
+    "https://storage.mfn.se/29bf602b-308d-4107-b823-39df80fbf20b/ab-industrivarden-arsredovisning-2024.pdf",
+    "https://storage.mfn.se/fef0fe83-0483-4acd-b518-7bcb481235e8/publ-ar2024-250225-sve.pdf"
+  ],
+  "head": [
+    {
+      "url": "https://storage.mfn.se/29bf602b-308d-4107-b823-39df80fbf20b/ab-industrivarden-arsredovisning-2024.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 0,
+      "grön": true
+    },
+    {
+      "url": "https://storage.mfn.se/fef0fe83-0483-4acd-b518-7bcb481235e8/publ-ar2024-250225-sve.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 0,
+      "grön": true
+    }
+  ]
+}

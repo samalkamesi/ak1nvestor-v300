@@ -1,0 +1,152 @@
+{
+  "slug": "roic-06-bankernas-lonsamhet",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Bankens lönsamhet — när ROIC:s nämnare blir arbetsmaterialet",
+  "summary": "Lönsamhetsfamiljens sjätte steg tar måttet som bryter: ett vanligt bolag läses med ROIC eftersom kapitalet kunde vara annorstädes, men en bank är en balansräkning som går omkring — insättningarna är råvaran, utlåningen är lagret och skulden är själva verkstan. Sonden mot 489-registret visar det vita fältet: riskvägt, utlåningsmarginal och kreditförlustnivå ägs av ingen kurs. Kursen bygger den påhittade Norra Bank AB och räknar räntenettop, bankens verkliga bruttomarginal, steg för steg — sedan DuPont-kedjan i bankversion där de tre faktorerna byter plats: hög vinstmarginal, pyttesmå omsättningshastighet och en hävstång som är affären, inte makeup. Slutligen riskvägningen: kapitalet ställs mot risken, inte mot balansen. Pedagogisk kurs i läskonst — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "Familjens fem första steg äger kapitalets avkastning för bolag vars kapital kunde vara annorstädes: roic-01 måttet, roic-02 trappan, roic-03 nästa krona, roic-04 värdeekvationen och roic-05 subtraktionen av kapitalhyran. Sjätte steget äger gränsfallet: banken, där balansräkningen själv är affären och ROIC:s nämnare blir hela balansomslutningen — måttet som är familjens kärna ger 1,57 procent åt en frisk bank med 18,3 procents ROE och ställer därför fel fråga. Gränserna mot grannarna: se-24-banksektorn äger sektorns affär och kreditcykel, denna kurs äger endast mätningsfrågan; ln-01-dupont-analysen äger standardkedjan, denna kurs äger bankversionen där faktorerna byter plats; roic-01 äger grunderna, denna kurs äger fallet där de bryter. Sond mot 489-registret 2026-09-21: riskvägt, utlåningsmarginal, kreditförlustnivå, bankernas lönsamhet, soliditet för banker samt avkastning på eget kapital för bank — samtliga noll kursägare. Om du läst familjens kurser och undrat hur de används på banker: här är svaret — de används inte, och kursen visar vad som används istället.",
+  "learn": "Räntenettop som bankens bruttomarginal: ränteintäkter 495 minus räntekostnader 162 lika med 333 på balansomslutning 12 040 — grusmarginalen förklarad · ROIC-försöket som misslyckas: 189 delat med 12 040 lika med 1,57 procent åt en bank som tjänar 18,3 procent på sitt eget kapital · DuPont i bankversion: 23,9 procents vinstmarginal gånger 4,1 procents omsättningshastighet gånger 18,8 gångers hävstång lika med ROE · Hävstångens pris: 0,70 procentenheter mer i kreditförlust halverar resultatet före skatt från 156 till 79 · Riskvägningen: bolån 35 procent, företagslån 100 procent, statspapper noll — kärnkapitalrelationen 516 delat med 6 450 lika med 8,0 procent · Läskonstens tre fällor: räntenetto i konjunkturtopp, kreditförlustens minnesband, hävstången utan soliditet",
+  "history": {
+    "origin": "Bankirernas räknelära är äldre än indirekt ägande. Norditalienska handelshus på femtonhundratalet förstod att vinsten på utlånad daler måste mätas mot något — och att det något inte kunde vara lånet självt, ty lånet var varan. De mätte mot eget kapital när de mätte alls, och räknade förlusterna som handelsförluster: en sjunken skeppslast och en betalningsoduglig köpman var samma post i huvudboken.",
+    "evolution": "Nittonhundratalets bankkriser — från depressionens bankfall till den svenska kreditkrisen i början av nittiotalet — flyttade mätningsfrågan från ägare till tillsyn. Basel-kommitténs arbete från sjuttiotalet och framåt gav svaret som kursen bygger vidare på: kapitalkravet ställs inte mot balansomslutningen utan mot riskvägda tillgångar, för två obligationer med samma belopp kan bära helt olika sannolikheter att inte betalas. ROE blev bankvärldens eget mått och DuPont-kedjan bytte plats på sina faktorer.",
+    "modern": "I dag läser analytiker banker med räntenettop, kreditförlustnivå och kapitalrelation som kärntrio — och ROIC-familjen av mått lämnas till bolag där kapitalet är vakant, inte råvara. Kursens slutsats är tidlös i sin princip men modern i sin form: den riskvägda balansräkningen är bankvärldens gåva till mätningskonsten, och den som blandar måttfamiljer — ROIC på bank, räntenetto på verkstad — jämför äpplen med sockerbetor."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Måttet som byter sida — varför banken inte har en ROIC", "minutes": 4 },
+    { "num": 2, "title": "Räntenettop — bankens verkliga bruttomarginal", "minutes": 4 },
+    { "num": 3, "title": "DuPont i bankversion — tre faktorer byter plats", "minutes": 4 },
+    { "num": 4, "title": "Hävstångens pris — när 0,70 procentenheter halverar året", "minutes": 4 },
+    { "num": 5, "title": "Riskvägningen — kapitalet mot risken, inte mot balansen", "minutes": 4 },
+    { "num": 6, "title": "Läskonsten — bankresultatets sex rader och tre fällor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch delade bolagsvärlden i långsamma och snabba tillväxtare och skyggade för det han inte kunde räkna på fingrarna — banken tillhör det han ändå tyckte om: en affär som går igenom varje dag i oändligt många små transaktioner. Hans varning för företag som behöver förklaringar gäller här mätningen: en bank vars lönsamhet kräver tio justerade mått för att se bra ut är sällan bättre än den ser ut. Lynch-läxan för kursen: räkna gärna räntenettop per kontor eller per anställd, men räkna inte ROIC — måttet som passar varuhuset passar inte penninghandeln, och det är inte bankens fel.",
+  "grahamSection": "Benjamin Grahams tanke om säkerhetsmarginal får en särskild botten i banker: säkerheten ligger inte i tillgångens värde utan i förlustens storlek. Hans princip att räkna på det dåliga läget blir här kreditförlustnivåns normala årsbad mot dess cykeltopp — den som läser en bank i ett lugnitår läser den bästa raden i tio års serien. Graham läste också hävstången som lyft och grav i samma rörelse; banken är hans illustration i ren form, där arton gångers tätning av eget kapital är både branschens normala läge och dess permanenta risk. Kursens stresstäckning är Grahams säkerhetsmarginal översatt till kreditförlustens båge.",
+  "ak1Section": "I AK1A:s metodik är banken specialfallet i lönsamhetsdimensionen: modellen som mäter avkastning på sysselsatt kapital ställer frågan fel när nämnaren är affären själv, och läsningen byter därför måttfamilj — ROE kedjad av DuPont-faktorer, kontrollerad av kapitalrelationen. Kursen tränar fem dimensioner av metodiken: mätvalsdimensionen (vilken fråga måttet ställer), räkneläran i räntenettop, känsligheten i kreditförlustens bågar, avvägningen av hävstång mot soliditet och förståelsen av att jämförelse bara gäller inom måttfamiljen. Utbildning i läskonst — inte vägledning i värdepapper.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Måttet som byter sida — varför banken inte har en ROIC",
+      "intro": "Lönsamhetsfamiljens fem första steg bygger på en tyst överenskommelse: kapitalet kunde vara annorstädes. Verkstadens maskiner kunde vara obligationer, butikens lager kunde vara aktier — därför får frågan hur väl kapitalet används mening. Detta kapitel visar varför banken bryter överenskommelsen och vad som händer om man ändå försöker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempelbank Norra Bank AB (påhittad för räkningen, som alla tal i kursen) har en balansomslutning på 12 040 miljoner kronor: utlåning 11 000 (bolån 7 000 och företagslån 4 000), statspapper 1 000 och likvider 40. Finansieringen är inlåning 9 000, marknadsfinansiering 2 400 och eget kapital 640 — en soliditet på 640 / 12 040 lika med 5,3 procent, alldeles normalt för en bank och alldeles förfärligt för en verkstad. Försöket att räkna ROIC som familjen lärt: rörelseresultatet före kreditförluster är 189 och det investerade kapitalet — räntebärande skuld plus eget kapital — är hela balansomslutningen 12 040. Kvoten 189 / 12 040 lika med 1,57 procent. En verkstad med den kvoten vore konkurskandidat; banken räknar hem 18,3 procent på sitt eget kapital samma år. Slutsatsen är inte att banken är dålig på att använda kapital — slutsatsen är att frågan inte gäller, för bankens kapital är inte vakant, det är råvaran. Insättningarna är lagret, utlåningen är hyllan och skulden är verkstan."
+        },
+        {
+          "type": "definition",
+          "content": "Bankens mätningsbyte: för bolag vars kapital kunde vara annorstädes mäts lönsamheten som avkastning på investerat kapital — rörelseresultat delat med räntebärande skuld och eget kapital. För banker, där balansräkningen är affären, mäts lönsamheten som avkastning på eget kapital och kontrolleras av kapitalrelationen mot riskvägda tillgångar. Att blanda måttfamiljer ger inte fel siffror utan fel frågor."
+        },
+        {
+          "type": "insight",
+          "content": "ROIC-frågan — hur väl används kapitalet jämfört med om det varit obligationer — är meningsfull när kapitalet är vakant. Bankens svar på frågan är att kapitalet inte är vakant och aldrig var det: pengarna är både insats och vara, och därför byter måttet sida. Den som ändå räknar får 1,57 procent och en känsla av att ha upptäckt något — det enda upptäckta är att måttet inte passar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Räntenettop — bankens verkliga bruttomarginal",
+      "intro": "Verkstadens bruttomarginal är intäkt minus inköp. Bankens motsvarighet är räntenettop: ränteintäkter minus räntekostnader. Detta kapitel räknar den från botten och visar varför den är grus i kornet men guld i summan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norra Banks ränteintäkter: utlåningen 11 000 till snitt 4,50 procent ger 495. Räntekostnaderna: inlåningen 9 000 till 1,00 procent ger 90 och marknadsfinansieringen 2 400 till 3,00 procent ger 72 — totalt 162. Räntenettop blir 495 minus 162 lika med 333 miljoner kronor. Som marginal på balansomslutningen är det 333 / 12 040 lika med 2,8 procent: grusmarginalen, kvarnen av varje tusenlapp som passerar. Men gruset mal stora volymer. Därtill provisionerna — avgifter, betaltjänster och rådgivning — som ger 156 och aldrig behöver balansräkning alls. Totalintäkterna blir 489. Kostnaderna är personal 210 och övrig drift 90, totalt 300, och resultatet före kreditförluster blir 189: bankens motsvarighet till rörelsemarginal är 189 / 489 lika med 38,7 procent — branscher emellan en närmast löjlig siffra, och ändå bara halva läsningen, för nu återstår den post som skiljer banken från verkstaden: förlusterna på själva lagret."
+        },
+        {
+          "type": "tabell",
+          "content": "Norra Banks räknelära (påhittade tal, miljoner kronor): UTLÅNING — 11 000 till 4,50 procent lika med 495 · INLÅNING — 9 000 till 1,00 procent lika med 90 · MARKNADSFINANSIERING — 2 400 till 3,00 procent lika med 72 · RÄNTENETTOP — 495 minus 162 lika med 333 (2,8 procent av balansomslutningen) · PROVISIONER — 156 · TOTALINTÄKTER — 489 · KOSTNADER — 300 (personal 210, övrigt 90) · FÖRE KREDITFÖRLUSTER — 189 (38,7 procent av totalintäkterna) · KREDITFÖRLUSTER — 33 (0,30 procent av utlåningen) · RESULTAT — 156 · NETTO EFTER 25 PROCENTS SKATT — 117 · ROE — 117 / 640 lika med 18,3 procent."
+        },
+        {
+          "type": "insight",
+          "content": "Räntenettop är en skillnad mellan två priser: priset banken betalar för förtroende (inlåning till låg ränta) och priset den tar för risk (utlåning till högre). Sträcket mellan 1,00 och 4,50 procent är inte marginal i butiksbemärkelse — det är kompensation för att en del av hyllan aldrig kommer tillbaka. Därför kan räntenettop aldrig läsas ensam: det är bruttovinsten FÖRE lagrets förluster, och lagret är pengar."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "DuPont i bankversion — tre faktorer byter plats",
+      "intro": "Du Pont-kedjan som delar ROE i marginal, omsättningshastighet och hävstång fungerar för banker — men faktorernas storlekar byter plats så totalt att den som läser en bank som en verkstad blir förvirrad. Detta kapitel kör kedjan på Norra Bank och jämför med ett vanligt bolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norra Banks DuPont-kedja efter skatt: vinstmarginalen är netto delat med totalintäkter, 117 / 489 lika med 23,9 procent — en verkstad som gör nästan var fjärde intäktskrona till vinst är världsklass. Omsättningshastigheten — totalintäkter delat med balansomslutningen — är 489 / 12 040 lika med 0,041, det vill säga 4,1 procent: balansen omsätter sig en gång på tjugofyra år, och en verkstad med den siffran vore död. Kapitalhävstången är 12 040 / 640 lika med 18,8 gånger: arton gånger mer främmande kapital än eget, i verkstadsvärlden en nödsignal, i bankvärlden en tisdag. Multiplicerat ger 23,9 procent gånger 4,1 procent gånger 18,8 ungefär 18,4 procent — avrundningens pris, ty identiteten bakom är exakt: täljare och nämnare stryker varandra tills 117 / 640 återstår, 18,3 procent. Kedjans behållning är inte produkten utan fördelningen: bankens styrka ligger i marginalen, svagheten i hastigheten, och hävstången är inte makeup utan affärens bärande vägg — den som tar bort hävstången från bank tar bort banken."
+        },
+        {
+          "type": "tabell",
+          "content": "DuPont-faktorernas platsbyte (Norra Bank mot typisk verkstad, procent respektive gånger): VINSTMARGINAL — bank 23,9 mot verkstad cirka 6 · OMSÄTTNINGSHASTIGHET — bank 0,041 mot verkstad cirka 0,8 · KAPITALHÄVSTÅNG — bank 18,8 mot verkstad cirka 1,6 · PRODUKT ROE — bank 18,3 procent mot verkstad cirka 8 procent · SLUTSATSEN — verkstaden tjänar på hastighet och måttlig hävstång, banken på marginal och enorm hävstång; samma kedja, olika gods i vagnarna."
+        },
+        {
+          "type": "insight",
+          "content": "ln-01-kursen äger DuPont-kedjan i standardform; dess bankversion är detta kapitel. Skillnaden i en mening: för verkstaden är hävstången något ledningen lägger till — för banken är hävstången något tillsynen måste begränsa, eftersom den föds med verksamheten. Därför är bankens DuPont aldrig komplett utan kapitlet efter: hävstångens pris."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Hävstångens pris — när 0,70 procentenheter halverar året",
+      "intro": "Samma hävstång som lyfter ROE till 18,3 procent lyfter förlusterna. Detta kapitel stressar den enda post som verkstaden saknar: kreditförlusterna på lagret av pengar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Norra Banks kreditförluster är 0,30 procent av utlåningen — 33 miljoner kronor, ett lugnitårs tal. Nu vänder konjunkturen: företagslånen börjar gå sämre och förlustnivån stiger till 1,00 procent, alltså 110 miljoner kronor på utlåningen 11 000. Skillnaden mot förra året är 77 miljoner — 0,70 procentenheter gånger 11 000 — och resultatet före skatt faller från 156 till 79: minus 49 procent av ett års resultat, orsakat av en rörelse i en enda decimal på en enda post. Ingen kund slutade handla, ingen maskin stannade, inget lager brann: pengarna blev bara inte återbetalda i lite högre takt. Hävstångens arton gångers förstärkning arbetar i båda riktningarna, och därför är bankens verkliga kapitalkostnad inte räntan på marknadsfinansieringen — den är väntevärdet av kreditförlusterna, den post verkstaden kallar omöjlig och banken kallar tisdag. se-24-kursen äger kreditcykeln som fenomen; detta kapitel äger aritmetiken i dess utfall på måttet."
+        },
+        {
+          "type": "tabell",
+          "content": "Förlustbågens aritmetik (påhittade tal): LUGNITÅR — förlustnivå 0,30 procent, kostnad 33, resultat före skatt 156 · NEDGÅNG — förlustnivå 1,00 procent, kostnad 110, resultat 79 · SKILLNADEN — 0,70 procentenheter på 11 000 lika med 77, alltså 49 procent av resultatet · KÄNSLIGHETEN — varje tiondels procentenhet på förlustnivån är 11 miljoner, varje hundradels procentenhet är 1,1 · MORALEN — bankens marginal är god, dess hävstång är gigantisk, och produkten av de två gör den till den mest förlustkänsliga bransch en fundamentalist läser."
+        },
+        {
+          "type": "insight",
+          "content": "Verkstadens stora risk heter efterfrågan: om kunderna sviker faller omsättningen. Bankens stora risk heter aldrig enskild händelse utan frekvens: tusentals små beslut om kredit, alla med en sannolikhet att inte komma tillbaka, och summan av sannolikheterna är bankens verkliga hyra. Därför talar bankanalytiker ständigt om att periodisera förluster: att sätta av i det goda året är bankens sätt att spara till det dåliga — och att läsa hur mycket som satts av, i vilken del av cykeln, är halva läskonsten."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Riskvägningen — kapitalet mot risken, inte mot balansen",
+      "intro": "Om hävstången är affären måste någon bestämma hur stor den får vara — och svaret är inte ett tal i balansräkningen utan en vägning av risken i varje tillgång. Detta kapitel bygger den riskvägda balansräkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tanken är enkel och genomgripande: inte alla tillgångar är lika farliga. En statsobligation kan i praktiken inte fallera; ett företagslån kan. Så reglerna väger: Norra Banks bolån 7 000 med riskvikt 35 procent ger 2 450 riskvägda kronor, företagslånen 4 000 med riskvikt 100 procent ger 4 000, statspapperen 1 000 med riskvikt noll ger noll — de riskvägda tillgångarna blir 2 450 plus 4 000 lika med 6 450, alltså något mer än hälften av balansomslutningens nominella storlek. Kärnkapitalet — bankens högsta kvalitet av eget kapital, här 516 av de 640 — ställs mot dem: kärnkapitalrelationen blir 516 / 6 450 lika med 8,0 procent. Samma övning på en verkstad vore meningslös: dess balans är till största delen verkliga maskiner, inte kontrakt med inbyggd sannolikhetsfördelning. Kursens vikter är förenklade för räkningens skull — verkliga vikter och definitioner är tillsynens tabellverk, och kursen äger principen, inte paragraferna. Behållningen är vad vägningen säger: banken får inte växa balansen förrän kapitalet vuxit med risken — inte med volymen."
+        },
+        {
+          "type": "definition",
+          "content": "Riskvägda tillgångar: balansomslutningen omräknad med en riskvikt per tillgångsklass — statsobligationer nära noll, bolån mitt emellan, företagslån i topp. Kärnkapitalrelation: bankens bästa kapital delat med de riskvägda tillgångarna. Måttet tränger undan soliditeten som tillsynens mått: det är inte hur mycket banken äger som styr utan hur mycket risk den äger."
+        },
+        {
+          "type": "insight",
+          "content": "Här är bankvärldens gåva till all mätningskonst: kapitalkravet mot riskvägda tillgångar är samma tanke som en positions storlek i en portfölj — varje position vägs mot vad den kan förlora, inte mot vad den kostar. Den som förstår kapitlet förstår varför en bank kan ha fem procents soliditet och vara trygg, medan en verkstad med fem procents är ett lotteri: det är inte andelen eget kapital utan risken i det främmande som avgör."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Läskonsten — bankresultatets sex rader och tre fällor",
+      "intro": "Allt kursen byggt samlas i en läsordning: sex rader av resultat, tre fällor i tolkningen. Detta kapitel är övningen — och påminnelsen om att kursen är utbildning, aldrig råd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Läsordningen för en bankresultatrad: börja med räntenettop och fråga varifrån den kommer — vilken räntemiljö, vilket sträck mellan in- och utlåning. Andra raden: provisionerna, den ström som inte behöver balans och ofta växer när kunderna handlar. Tredje: kostnaderna, i banker mest personal — och nyckeltalet kostnader delat med totalintäkter, här 300 / 489 lika med 61 procent, som branschen kallar C/I och läser som ett tecken på disciplin. Fjärde: kreditförlusterna, alltid lästa mot cykeln — 0,30 procent är ett lugnitårs tal. Femte: skatten. Sjätte: det egna kapitalet och relationen till de riskvägda tillgångarna. Sex rader, en halvside övning, och bakom varje rad samma värld: 12 040 kronor av balans per krona eget kapital, driven på förtroende och reglerad av vågning."
+        },
+        {
+          "type": "text",
+          "content": "Tre fällor. Första: räntenettop i konjunkturtopp — sträcket mellan in- och utlåning är som bredast när konkurrensen om låntagare är som svagast, och den som extrapolerar toppmarginalen tre år framåt har läst ett singelårs-fenomen som en evig källa. Andra: kreditförlustens minnesband — låg förlustnivå betyder ofta att de goda åren satte av tungt, och bufferten är som tunnast just när den ser tjockast ut. Tredje: hävstången utan soliditet — ROE på 18 procent med kärnkapitalrelation 4,5 procent är inte samma bolag som ROE 18 med relation 9; DuPont-kedjans tredje faktor måste alltid läsas mot kapitel fem. Fällorna gäller mått, inte bolag: kursen lär läsa banker, inte välja dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din utmaning: öppna en bankresultatrad du aldrig läst förr (verkliga tal i övningen, påhittade i kursen) och gå de sex raderna i kursens ordning — räntenetto, provisioner, kostnader, kreditförluster, skatt, kapitalrelation. Räkna DuPont-kedjan i bankversion och stresstesta med en halv procentenhet högre förlustnivå: hur många procent av resultatet försvinner? Skriv en mening om vilken av de tre fällorna just den banken ligger närmast. Detta är en övning i läskonst — ingen uppmaning att köpa eller sälja något värdepapper."
+        }
+      ]
+    }
+  ]
+}

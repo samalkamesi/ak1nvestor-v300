@@ -88,7 +88,7 @@ export default function EnManifestPage() {
     ) || SIFFROR.quiz;
 
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "The Manifesto" }]}>
+    <SeoPageShell lang="en" wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "The Manifesto" }]}>
       {/* ── 1 · HERO ─────────────────────────────────────────────────────── */}
       <section className="rounded-xl border-2 border-gold bg-card p-8 shadow-lg sm:p-10">
         <span className="mb-4 inline-block w-fit rounded-full bg-gold px-3 py-0.5 text-xs font-semibold text-primary-foreground">

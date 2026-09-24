@@ -1,0 +1,204 @@
+FULLSVEP R112 START 2026-09-20T05:18:51.577Z
+[kör-alla-tester] 150 sviter (färskt svep, tak 900 s/svit, RAM-tröskel 900 MB)
+  [DETERMINISTISK] testa-admin-session.mjs … GRÖN (1 s) — [testa-admin-session] 14/14 kontroller gröna.
+  [DETERMINISTISK] testa-ai-mentor-agande.mjs … GRÖN (2 s) — AI-MENTORN spår 6 s6-u2 omgång 8 (ägande): 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-avkastningskurva.mjs … GRÖN (3 s) — AI-MENTORN AVKASTNINGSKURVA (s6-u1 omgång 15): 33 PASS · 0 FAIL av 33
+  [DETERMINISTISK] testa-ai-mentor-avrakningsdjup.mjs … GRÖN (4 s) — AI-MENTORN AVKASTNINGSDJUP (s6-u2 omgång 15): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-beteendedjup.mjs … GRÖN (2 s) — AI-MENTORN spår 6 s6-u3 omgång 11 (beteendedjup): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-beteendemekanik.mjs … GRÖN (3 s) — AI-MENTORN BETEENDEMEKANIK (s6-u3 omgång 20): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-bokmastar.mjs … GRÖN (4 s) — AI-MENTORN BOKMASTAR (s6-u3 omgång 22): 25 PASS · 0 FAIL av 25
+  [DETERMINISTISK] testa-ai-mentor-case.mjs … GRÖN (0 s) — AI-MENTORN CASE + KEDJEWIRING (spår 6 omgång 5): 18 PASS · 0 FAIL av 18
+  [DETERMINISTISK] testa-ai-mentor-djup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 8 (djup): 25 PASS · 0 FAIL av 25
+  [DETERMINISTISK] testa-ai-mentor-ekosystemdjup.mjs … GRÖN (3 s) — AI-MENTORN EKOSYSTEMDJUP (omgång 17): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-etfmekanik.mjs … GRÖN (2 s) — AI-MENTORN ETF-MEKANIK (omgång 25, s6-u1): 21 PASS · 0 FAIL av 21
+  väntar-ram: 442 MB < 900 MB (fabriksbarn/chrome?) — 60 s …
+  [DETERMINISTISK] testa-ai-mentor-extra.mjs … GRÖN (0 s) — AI-MENTORN EXTRA (s6-u3): 19 PASS · 0 FAIL av 19
+  [DETERMINISTISK] testa-ai-mentor-faktordjup.mjs … GRÖN (6 s) — AI-MENTORN FAKTORDJUP (s6-u1 omgång 22): 35 PASS · 0 FAIL av 35
+  [DETERMINISTISK] testa-ai-mentor-forsakring.mjs … GRÖN (2 s) — AI-MENTORN FÖRSÄKRING/KRYPTO (s6-u1 omgång 24): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-forvantningsdjup.mjs … GRÖN (2 s) — AI-MENTORN FÖRVÄNTNINGSDJUP (s6-u3 omgång 12): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-grahamgolv.mjs … GRÖN (3 s) — AI-MENTORN GRAHAMGOLV (s6-u3 omgång 13): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-handelsdag.mjs … GRÖN (4 s) — AI-MENTORN HANDELSDAG (s6-u1 omgång 17): 36 PASS · 0 FAIL av 36
+  [DETERMINISTISK] testa-ai-mentor-historia.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 9 (historia): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-kapitalbindning.mjs … GRÖN (3 s) — AI-MENTORN KAPITALBINDNING (s6-u3 omgång 16): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-kapitalmekanik.mjs … GRÖN (1 s) — AI-MENTORN KAPITALMEKANIK (spår 6 omgång 4): 17 PASS · 0 FAIL av 17
+  [DETERMINISTISK] testa-ai-mentor-kedja.mjs … GRÖN (12 s) — AI-MENTORN KEDJAN (våg 176): 259 PASS · 0 FAIL av 259
+  [DETERMINISTISK] testa-ai-mentor-koncernlasning.mjs … GRÖN (3 s) — AI-MENTORN KONCERNLÄSNING (s6-u3 omgång 21): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-kontrahent.mjs … GRÖN (1 s) — SVIT KONTRAHENT: 55 PASS / 0 FAIL
+  [DETERMINISTISK] testa-ai-mentor-konvertibel.mjs … GRÖN (3 s) — AI-MENTORN KONVERTIBEL (omgång 22, s6-u1): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-kreditdjup.mjs … GRÖN (3 s) — AI-MENTORN KREDITDJUP (s6-u2 omgång 18): 87 PASS · 0 FAIL av 87
+  [DETERMINISTISK] testa-ai-mentor-lonsamhetsdjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u2 omgång 9 (lönsamhetsdjup): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-makro.mjs … GRÖN (1 s) — AI-MENTORN spår 6 u1 omgång 2 (våg 158): 17 PASS · 0 FAIL av 17
+  [DETERMINISTISK] testa-ai-mentor-marknadsmekanik.mjs … GRÖN (1 s) — AI-MENTORN våg 189 (marknadsmekanik): 40 PASS · 0 FAIL av 40
+  [DETERMINISTISK] testa-ai-mentor-marknadsrytm.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 25 (marknadsrytm): 47 PASS · 0 FAIL av 47
+  [DETERMINISTISK] testa-ai-mentor-moatdjup.mjs … GRÖN (2 s) — AI-MENTORN MOATDJUP (omgång 24, s6-u2): 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-multipel.mjs … GRÖN (2 s) — SVIT MULTIPEL: 74 PASS / 0 FAIL
+  [DETERMINISTISK] testa-ai-mentor-nasta.mjs … GRÖN (0 s) — AI-MENTORN NÄSTA (spår 6 omgång 3): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-nya-territorier.mjs … GRÖN (5 s) — AI-MENTORN NYA TERRITORIER (s6-u3 omgång 24): 18 PASS · 0 FAIL av 18
+  [DETERMINISTISK] testa-ai-mentor-optionsdjup.mjs … GRÖN (2 s) — AI-MENTORN OPTIONSDJUP (s6-u1 omgång 14): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-overlevnadsdjup.mjs … GRÖN (3 s) — AI-MENTORN ÖVERLEVNADSDJUP (s6-u2 omgång 20): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-pe-mekanik.mjs … GRÖN (4 s) — AI-MENTORN PE-MEKANIK (s6-u1 omgång 20): 41 PASS · 0 FAIL av 41
+  [DETERMINISTISK] testa-ai-mentor-portfoljbalans.mjs … GRÖN (1 s) — AI-MENTORN PORTFÖLJBALANS (s6-u1 omgång 13): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-portfoljgrund.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u2 omgång 7 (portfoljgrund): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-portfoljpraktik.mjs … GRÖN (1 s) — AI-MENTORN PORTFÖLJPRAKTIK (s6-u3 omgång 17): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-praktik.mjs … GRÖN (1 s) — Nya förhandsfrågor: index/passivt, blankning/short, marginal · Register: 458 kurser
+  [DETERMINISTISK] testa-ai-mentor-realekonomi.mjs … GRÖN (5 s) — AI-MENTORN REALEKONOMI (s6-u1 omgång 23): 55 PASS · 0 FAIL av 55
+  [DETERMINISTISK] testa-ai-mentor-redovisningsdjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u1 omgång 8 (redovisningsdjup): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-riskbudget.mjs … GRÖN (1 s) — AI-MENTORN RISKBUDGET (omgång 22, s6-u2): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-riskdjup.mjs … GRÖN (1 s) — AI-MENTORN RISKDJUP (s6-u1 omgång 11): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-risklasningsdjup.mjs … GRÖN (2 s) — AI-MENTORN RISKLÄSNINGSDJUP (s6-u3 omgång 14): 28 PASS · 0 FAIL av 28
+  [DETERMINISTISK] testa-ai-mentor-riskmattsdjup.mjs … GRÖN (1 s) — AI-MENTORN RISKMÅTTSDJUP (s6-u1 omgång 12): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-riskpremie.mjs … GRÖN (3 s) — AI-MENTORN RISKPREMIE (s6-u1 omgång 21): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-s6u2-omg2.mjs … GRÖN (0 s) — AI-MENTORN s6-u2 omgång 2 (kapitalstruktur + tillväxt): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-s6u3-omg4.mjs … GRÖN (0 s) — AI-MENTORN S6-U3 OMGÅNG 4: 23 PASS · 0 FAIL av 23
+  [DETERMINISTISK] testa-ai-mentor-sektor.mjs … GRÖN (1 s) — AI-MENTORN spår 6 u1 omgång 3 (sektor): 20 PASS · 0 FAIL av 20
+  [DETERMINISTISK] testa-ai-mentor-sektordjup.mjs … LAUNCHER: svep startat i ny session, pid=3456041, 2026-09-20T05:47:28.897Z
+
+FULLSVEP R112 START 2026-09-20T05:47:28.947Z (omstart, append-läge)
+[kör-alla-tester] 150 sviter (färskt svep, tak 900 s/svit, RAM-tröskel 900 MB)
+  [DETERMINISTISK] testa-admin-session.mjs … GRÖN (0 s) — [testa-admin-session] 14/14 kontroller gröna.
+  [DETERMINISTISK] testa-ai-mentor-agande.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u2 omgång 8 (ägande): 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-avkastningskurva.mjs … GRÖN (1 s) — AI-MENTORN AVKASTNINGSKURVA (s6-u1 omgång 15): 33 PASS · 0 FAIL av 33
+  [DETERMINISTISK] testa-ai-mentor-avrakningsdjup.mjs … GRÖN (2 s) — AI-MENTORN AVKASTNINGSDJUP (s6-u2 omgång 15): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-beteendedjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 11 (beteendedjup): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-beteendemekanik.mjs … GRÖN (2 s) — AI-MENTORN BETEENDEMEKANIK (s6-u3 omgång 20): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-bokmastar.mjs … GRÖN (3 s) — AI-MENTORN BOKMASTAR (s6-u3 omgång 22): 25 PASS · 0 FAIL av 25
+  [DETERMINISTISK] testa-ai-mentor-case.mjs … GRÖN (0 s) — AI-MENTORN CASE + KEDJEWIRING (spår 6 omgång 5): 18 PASS · 0 FAIL av 18
+  [DETERMINISTISK] testa-ai-mentor-djup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 8 (djup): 25 PASS · 0 FAIL av 25
+  [DETERMINISTISK] testa-ai-mentor-ekosystemdjup.mjs … GRÖN (3 s) — AI-MENTORN EKOSYSTEMDJUP (omgång 17): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-etfmekanik.mjs … GRÖN (2 s) — AI-MENTORN ETF-MEKANIK (omgång 25, s6-u1): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-extra.mjs … GRÖN (0 s) — AI-MENTORN EXTRA (s6-u3): 19 PASS · 0 FAIL av 19
+  [DETERMINISTISK] testa-ai-mentor-faktordjup.mjs … GRÖN (4 s) — AI-MENTORN FAKTORDJUP (s6-u1 omgång 22): 35 PASS · 0 FAIL av 35
+  [DETERMINISTISK] testa-ai-mentor-forsakring.mjs … GRÖN (2 s) — AI-MENTORN FÖRSÄKRING/KRYPTO (s6-u1 omgång 24): 34 PASS · 0 FAIL av 34
+  väntar-ram: 827 MB < 900 MB (fabriksbarn/chrome?) — 60 s …
+  [DETERMINISTISK] testa-ai-mentor-forvantningsdjup.mjs … GRÖN (1 s) — AI-MENTORN FÖRVÄNTNINGSDJUP (s6-u3 omgång 12): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-grahamgolv.mjs … GRÖN (2 s) — AI-MENTORN GRAHAMGOLV (s6-u3 omgång 13): 30 PASS · 0 FAIL av 30
+  [DETERMINISTISK] testa-ai-mentor-handelsdag.mjs … GRÖN (3 s) — AI-MENTORN HANDELSDAG (s6-u1 omgång 17): 36 PASS · 0 FAIL av 36
+  [DETERMINISTISK] testa-ai-mentor-historia.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 9 (historia): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-kapitalbindning.mjs … GRÖN (3 s) — AI-MENTORN KAPITALBINDNING (s6-u3 omgång 16): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-kapitalmekanik.mjs … GRÖN (0 s) — AI-MENTORN KAPITALMEKANIK (spår 6 omgång 4): 17 PASS · 0 FAIL av 17
+  [DETERMINISTISK] testa-ai-mentor-kedja.mjs … GRÖN (10 s) — AI-MENTORN KEDJAN (våg 176): 259 PASS · 0 FAIL av 259
+  [DETERMINISTISK] testa-ai-mentor-koncernlasning.mjs … GRÖN (2 s) — AI-MENTORN KONCERNLÄSNING (s6-u3 omgång 21): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-kontrahent.mjs … GRÖN (1 s) — SVIT KONTRAHENT: 55 PASS / 0 FAIL
+  [DETERMINISTISK] testa-ai-mentor-konvertibel.mjs … GRÖN (2 s) — AI-MENTORN KONVERTIBEL (omgång 22, s6-u1): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-kreditdjup.mjs … GRÖN (2 s) — AI-MENTORN KREDITDJUP (s6-u2 omgång 18): 87 PASS · 0 FAIL av 87
+  [DETERMINISTISK] testa-ai-mentor-lonsamhetsdjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u2 omgång 9 (lönsamhetsdjup): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-makro.mjs … GRÖN (1 s) — AI-MENTORN spår 6 u1 omgång 2 (våg 158): 17 PASS · 0 FAIL av 17
+  [DETERMINISTISK] testa-ai-mentor-marknadsmekanik.mjs … GRÖN (1 s) — AI-MENTORN våg 189 (marknadsmekanik): 40 PASS · 0 FAIL av 40
+  [DETERMINISTISK] testa-ai-mentor-marknadsrytm.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 25 (marknadsrytm): 47 PASS · 0 FAIL av 47
+  [DETERMINISTISK] testa-ai-mentor-moatdjup.mjs … GRÖN (1 s) — AI-MENTORN MOATDJUP (omgång 24, s6-u2): 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-multipel.mjs … GRÖN (2 s) — SVIT MULTIPEL: 74 PASS / 0 FAIL
+  [DETERMINISTISK] testa-ai-mentor-nasta.mjs … GRÖN (0 s) — AI-MENTORN NÄSTA (spår 6 omgång 3): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-nya-territorier.mjs … GRÖN (4 s) — AI-MENTORN NYA TERRITORIER (s6-u3 omgång 24): 18 PASS · 0 FAIL av 18
+  [DETERMINISTISK] testa-ai-mentor-optionsdjup.mjs … GRÖN (1 s) — AI-MENTORN OPTIONSDJUP (s6-u1 omgång 14): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-overlevnadsdjup.mjs … GRÖN (2 s) — AI-MENTORN ÖVERLEVNADSDJUP (s6-u2 omgång 20): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-pe-mekanik.mjs … GRÖN (4 s) — AI-MENTORN PE-MEKANIK (s6-u1 omgång 20): 41 PASS · 0 FAIL av 41
+  [DETERMINISTISK] testa-ai-mentor-portfoljbalans.mjs … GRÖN (1 s) — AI-MENTORN PORTFÖLJBALANS (s6-u1 omgång 13): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-portfoljgrund.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u2 omgång 7 (portfoljgrund): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-portfoljpraktik.mjs … GRÖN (2 s) — AI-MENTORN PORTFÖLJPRAKTIK (s6-u3 omgång 17): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-praktik.mjs … GRÖN (1 s) — Nya förhandsfrågor: index/passivt, blankning/short, marginal · Register: 458 kurser
+  [DETERMINISTISK] testa-ai-mentor-realekonomi.mjs … GRÖN (5 s) — AI-MENTORN REALEKONOMI (s6-u1 omgång 23): 55 PASS · 0 FAIL av 55
+  [DETERMINISTISK] testa-ai-mentor-redovisningsdjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u1 omgång 8 (redovisningsdjup): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-riskbudget.mjs … GRÖN (1 s) — AI-MENTORN RISKBUDGET (omgång 22, s6-u2): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-riskdjup.mjs … GRÖN (1 s) — AI-MENTORN RISKDJUP (s6-u1 omgång 11): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-risklasningsdjup.mjs … GRÖN (2 s) — AI-MENTORN RISKLÄSNINGSDJUP (s6-u3 omgång 14): 28 PASS · 0 FAIL av 28
+  [DETERMINISTISK] testa-ai-mentor-riskmattsdjup.mjs … GRÖN (1 s) — AI-MENTORN RISKMÅTTSDJUP (s6-u1 omgång 12): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-riskpremie.mjs … GRÖN (3 s) — AI-MENTORN RISKPREMIE (s6-u1 omgång 21): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-s6u2-omg2.mjs … GRÖN (0 s) — AI-MENTORN s6-u2 omgång 2 (kapitalstruktur + tillväxt): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-s6u3-omg4.mjs … GRÖN (0 s) — AI-MENTORN S6-U3 OMGÅNG 4: 23 PASS · 0 FAIL av 23
+  [DETERMINISTISK] testa-ai-mentor-sektor.mjs … GRÖN (1 s) — AI-MENTORN spår 6 u1 omgång 3 (sektor): 20 PASS · 0 FAIL av 20
+  [DETERMINISTISK] testa-ai-mentor-sektordjup.mjs … GRÖN (2 s) — AI-MENTORN SEKTORDJUP (s6-u3 omgång 18): 38 PASS · 0 FAIL av 38
+  [DETERMINISTISK] testa-ai-mentor-sektorlasning.mjs … GRÖN (2 s) — AI-MENTORN SEKTORLÄSNING (omgång 23, s6-u2): 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-sektorskola2.mjs … GRÖN (2 s) — AI-MENTORN SEKTORSKOLA 2 (s6-u3 omgång 19): 37 PASS · 0 FAIL av 37
+  [DETERMINISTISK] testa-ai-mentor-skattedjup.mjs … GRÖN (1 s) — AI-MENTORN spår 6 s6-u3 omgång 10 (skattedjup): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-spar6.mjs … GRÖN (1 s) — AI-MENTORN spår 6 u1 (våg 158): 33 PASS · 0 FAIL av 33
+  [DETERMINISTISK] testa-ai-mentor-stabilitetsdjup.mjs … GRÖN (4 s) — AI-MENTORN STABILITETSDJUP (s6-u2 omgång 13): 27 PASS · 0 FAIL av 27
+  [DETERMINISTISK] testa-ai-mentor-tidsaxel.mjs … GRÖN (4 s) — AI-MENTORN TIDSAXEL (s6-u2 omgång 16): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-tillvaxtdjup.mjs … GRÖN (2 s) — AI-MENTORN TILLVÄXTDJUP (omgång 21, s6-u2): 21 PASS · 0 FAIL av 21
+  [DETERMINISTISK] testa-ai-mentor-tsdjup.mjs … GRÖN (2 s) — AI-MENTORN TSDJUP (s6-u1 omgång 10): 34 PASS · 0 FAIL av 34
+  [DETERMINISTISK] testa-ai-mentor-u2.mjs … GRÖN (0 s) — AI-MENTORN s6-u2: 22 PASS · 0 FAIL av 22
+  [DETERMINISTISK] testa-ai-mentor-utdelningsdjup.mjs … GRÖN (2 s) — AI-MENTORN UTDELNINGSDJUP (s6-u2 omgång 12): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-ai-mentor-utdelningskalender.mjs … GRÖN (3 s) — AI-MENTORN UTDELNINGSKALENDER (s6-u1 omgång 18): 36 PASS · 0 FAIL av 36
+  [DETERMINISTISK] testa-ai-mentor-valutamekanik.mjs … GRÖN (1 s) — SVIT VALUTAMEKANIK: 57 PASS / 0 FAIL
+  [DETERMINISTISK] testa-ai-mentor-vardegrund.mjs … GRÖN (2 s) — AI-MENTORN VÄRDEGRUND (s6-u3 omgång 23): 31 PASS · 0 FAIL av 31
+  [DETERMINISTISK] testa-ai-mentor-varderingsverktyg.mjs … GRÖN (3 s) — AI-MENTORN VÄRDERINGSVERKTYG (s6-u3 omgång 15): 32 PASS · 0 FAIL av 32
+  [DETERMINISTISK] testa-ai-mentor-varderjustering.mjs … GRÖN (4 s) — AI-MENTORN VÄRDERINGSJUSTERING (s6-u2 omgång 14): 33 PASS · 0 FAIL av 33
+  väntar-ram: 807 MB < 900 MB (fabriksbarn/chrome?) — 60 s …
+  [DETERMINISTISK] testa-ai-mentor-warrant.mjs … GRÖN (2 s) — AI-MENTORN WARRANT (s6-u1 omgång 16): 39 PASS · 0 FAIL av 39
+  [DETERMINISTISK] testa-ai-mentor.mjs … GRÖN (1 s) — AI-MENTORN 2.0 (våg 106 H2): 26 PASS · 0 FAIL av 26
+  [DETERMINISTISK] testa-akm2-dynamik.mjs … GRÖN (3 s) — 55 kontroller, 55 PASS, 0 FAIL
+  [DETERMINISTISK] testa-akm2-karna.mjs … GRÖN (2 s) — [testa-akm2-karna] 25/25 kontroller gröna.
+  [DETERMINISTISK] testa-akm2-moduler.mjs … GRÖN (2 s) — 64 kontroller, 64 PASS, 0 FAIL
+  [DETERMINISTISK] testa-akm2-snapshot.mjs … GRÖN (2 s) — [testa-akm2-snapshot] 12/12 kontroller gröna.
+  [DETERMINISTISK] testa-akm3-kalibrering.mjs … GRÖN (2 s) — 55 kontroller, 55 PASS, 0 FAIL
+  [DETERMINISTISK] testa-artefakt-verifiering.mjs … GRÖN (0 s) — 15/15 PASS
+  [DETERMINISTISK] testa-b2b-grind.mjs … GRÖN (0 s) — 33 kontroller, 0 FAIL
+  [DETERMINISTISK] testa-backup-offsite.mjs … GRÖN (0 s) — SVIT KLAR: 12 PASS · 0 FAIL
+  [DETERMINISTISK] testa-datacache.mjs … GRÖN (0 s) — SVIT DATACACHE: 24 PASS / 0 FAIL
+  [DETERMINISTISK] testa-dataset-aspekter.mjs … GRÖN (1 s) — RESULTAT: GRÖNT — kontrakt + juridikgrind håller för alla testade moduler.
+  [DETERMINISTISK] testa-demoklient-data.mjs … GRÖN (2 s) — SUMMA: 17 PASS, 0 FAIL
+  [DETERMINISTISK] testa-doda-lankar-externa.mjs … GRÖN (3 s) — SVIT: 33 PASS, 0 FAIL, 0 SKIP
+  [DETERMINISTISK] testa-doda-lankar.mjs … GRÖN (3 s) — SVIT: 24 PASS, 0 FAIL, 0 SKIP
+  [DETERMINISTISK] testa-eko-koppling.mjs … GRÖN (0 s) — SVIT EKO-KOPPLING: 18 PASS / 0 FAIL
+  [DETERMINISTISK] testa-elevkarna.mjs … GRÖN (0 s) — SVIT ELEVKÄRNA: 17 PASS / 0 FAIL
+  [DETERMINISTISK] testa-feljakt-f1-atermatning.mjs … GRÖN (0 s) — 5/5 PASS — GRÖN
+  [DETERMINISTISK] testa-feljakt-lage.mjs … GRÖN (0 s) — UTFALL: 8/8 PASS
+  [DETERMINISTISK] testa-feljakt-stormar.mjs … GRÖN (1 s) — SAMLAD: 32 PASS · 0 FAIL · domklasser 4
+  [DETERMINISTISK] testa-fundamental-vagmotor.mjs … GRÖN (2 s) — 70 kontroller, 70 PASS, 0 FAIL
+  [DETERMINISTISK] testa-granssnitt-cron-loggklass.mjs … GRÖN (1 s) — GRÄNSSNITTS-CRON-LOGGKLASS: 23 PASS · 0 FAIL
+  [DETERMINISTISK] testa-granssnitt-cron-retry.mjs … GRÖN (6 s) — GRÄNSSNITTS-CRON-RETRY: 16 PASS · 0 FAIL
+  [DETERMINISTISK] testa-granssnitt-urval.mjs … GRÖN (0 s) — PASS 14/14 — granssnitt-urval (sidvalsrotation, rotfallet 2026-09-18)
+  [DETERMINISTISK] testa-klientkontext.mjs … GRÖN (0 s) — SVIT KLIENTKONTEXT: 29 PASS / 0 FAIL
+  [DETERMINISTISK] testa-kraschvakt.mjs … GRÖN (0 s) — PASS 38/38 — kraschvaktens beslutstabell grön (7 feltriggar i loggen kan inte återkomma)
+  [DETERMINISTISK] testa-kurs-metadata.mjs … GRÖN (1 s) — [testa-kurs-metadata] 16/16 kontroller gröna.
+  [DETERMINISTISK] testa-kvalitetsvakt-mimosa.mjs … RÖD (28 s) — RESULTAT: 9 PASS / 3 FAIL
+  [DETERMINISTISK] testa-kvalitetsvakt-ssr500.mjs … GRÖN (2 s) — SVIT: 25 PASS, 0 FAIL, 0 SKIP
+  [DETERMINISTISK] testa-kvalitetsvakt-tsc.mjs … RÖD (22 s) — RESULTAT: 10 PASS / 1 FAIL
+  [DETERMINISTISK] testa-larm-eskalering.mjs … GRÖN (0 s) — 20/20 PASS (ALLA PASS)
+  [DETERMINISTISK] testa-mediabibliotek.mjs … GRÖN (0 s) — [testa-mediabibliotek] 18/18 kontroller gröna.
+  [DETERMINISTISK] testa-medlem-auth.mjs … GRÖN (0 s) — [testa-medlem-auth] 17/17 kontroller gröna.
+  [DETERMINISTISK] testa-medlem-progress.mjs … GRÖN (0 s) — [testa-medlem-progress] Kontrakt L2: deterministiska nycklar, server-fastställda värden, importtak, senaste-vinner — REN logik, nätverk stubbat.
+  [DETERMINISTISK] testa-mentor-modell.mjs … GRÖN (0 s) — KLAR: 38 kontroller gröna — modellagret är leveransfärdigt.
+  [DETERMINISTISK] testa-mimosa-paritet.mjs … GRÖN (0 s) — ALLA PASS
+  [DETERMINISTISK] testa-morgonrond-data.mjs … GRÖN (2 s) — testa-morgonrond-data: ALLT PASS
+  [DETERMINISTISK] testa-motor-datacache.mjs … GRÖN (0 s) — RESULTAT: 23/23 PASS
+  [DETERMINISTISK] testa-motor-dynamic-catalog.mjs … GRÖN (1 s) — RESULTAT: 17/17 PASS
+  [DETERMINISTISK] testa-motor-eko-koppling.mjs … GRÖN (0 s) — RESULTAT: 65/65 PASS
+  [DETERMINISTISK] testa-motor-elevkarna.mjs … GRÖN (0 s) — RESULTAT: 53/53 PASS
+  [DETERMINISTISK] testa-motor-klientkontext.mjs … (tsx-återfall) GRÖN (2 s) — RESULTAT: 69/69 PASS
+  [DETERMINISTISK] testa-motor-navigationsminne.mjs … RÖD (0 s) — RESULTAT: 36/39 PASS
+  [DETERMINISTISK] testa-motor-nyhets-motor.mjs … (tsx-återfall) GRÖN (2 s) — RESULTAT: 46/46 PASS
+  [DETERMINISTISK] testa-motor-organ-bus.mjs … GRÖN (0 s) — RESULTAT: 63/63 PASS
+  [DETERMINISTISK] testa-motor-shortseller-bank.mjs … GRÖN (0 s) — RESULTAT: 43/43 PASS
+  [DETERMINISTISK] testa-motor-signal-bus.mjs … GRÖN (0 s) — RESULTAT: 62/62 PASS
+  [DETERMINISTISK] testa-navigationsminne.mjs … GRÖN (0 s) — SVIT NAVIGATIONSMINNE: 16 PASS / 0 FAIL
+  [DETERMINISTISK] testa-nyhets-motor.mjs … GRÖN (0 s) — SVIT NYHETS-MOTOR: 44 PASS / 0 FAIL
+  [DETERMINISTISK] testa-organ-bus.mjs … GRÖN (0 s) — SVIT ORGAN-BUS: 21 PASS / 0 FAIL
+  [DETERMINISTISK] testa-permissions-policy.mjs … GRÖN (2 s) — RADRAPPORT: 63 kontroller · PASS 63 · FAIL 0
+  [DETERMINISTISK] testa-pro-screening.mjs … GRÖN (2 s) — testa-pro-screening: ALLT PASS
+  [DETERMINISTISK] testa-prod-synk-arbetsytasynk.mjs … GRÖN (1 s) — TEST prod-synk-arbetsytasynk: 34/34 PASS
+  [DETERMINISTISK] testa-prod-synk-nextlaeke.mjs … GRÖN (0 s) — SVIT testa-prod-synk-nextlaeke: 29 PASS, 0 FAIL
+  [DETERMINISTISK] testa-prod-synk-patchko.mjs … GRÖN (0 s) — RESULTAT: 67 PASS / 0 FAIL
+  [DETERMINISTISK] testa-prod-synk-pm2vakt.mjs … GRÖN (0 s) — RESULTAT: 35 PASS / 0 FAIL
+  [DETERMINISTISK] testa-prod-synk-ramvakt.mjs … GRÖN (0 s) — PASS 17/17 — RAM-vakten räknar med byggheap + tunga klasser (vaccin 3, 17:42-OOM:ens formel)
+  [DETERMINISTISK] testa-prod-synk-revertgrid.mjs … GRÖN (0 s) — SVIT testa-prod-synk-revertgrid: 34 PASS, 0 FAIL
+  [DETERMINISTISK] testa-prod-synk-tidsstampel.mjs … GRÖN (0 s) — TEST prod-synk-tidsstämpel: 12/12 PASS
+  [DETERMINISTISK] testa-prod-synk-vaktrapport.mjs … GRÖN (0 s) — RESULTAT: 16 PASS / 0 FAIL
+  [DETERMINISTISK] testa-pulsvakt-statisk.mjs … GRÖN (0 s) — ALLA KRAV GRÖNA — pulsvaktens (d)-beslutslogik: gron/sida-nere/trasig-bygg/supprimerad/fastlåst + lös deployPagar + ref-tak
+  [DETERMINISTISK] testa-riskportfolj.mjs … GRÖN (2 s) — Resultat: 32 PASS / 0 FAIL av 32 kontroller.
+  [DETERMINISTISK] testa-rsc-skann.mjs … GRÖN (2 s) — 13/13 PASS
+  [DETERMINISTISK] testa-s7-o105-footer-etiketter.mjs … GRÖN (0 s) — GRÖNT — footer/brodkrumna-etiketterna är kontraktssäkra i båda bindningarna.
+  [DETERMINISTISK] testa-schema-kurser.mjs … GRÖN (18 s) — RESULTAT: GODKÄNT — 444 kontroller gröna, 0 fel.
+  [DETERMINISTISK] testa-shortseller-bank.mjs … GRÖN (0 s) — SVIT SHORTSELLER-BANK: 24 PASS / 0 FAIL
+  [DETERMINISTISK] testa-signal-bus.mjs … GRÖN (0 s) — SVIT SIGNAL-BUS: 23 PASS / 0 FAIL
+  [DETERMINISTISK] testa-skalfri-vakt.mjs … GRÖN (0 s) — TOTALT: 22 PASS / 0 FAIL
+  [DETERMINISTISK] testa-sok.mjs … GRÖN (2 s) — ALLA PASS
+  [DETERMINISTISK] testa-stada-tmp-ts.mjs … GRÖN (0 s) — SUMMA: 12 PASS, 0 FAIL
+  [DETERMINISTISK] testa-statisk-sond.mjs … GRÖN (0 s) — PASS 10/10 — statisk-sond (bygg-tillgångars kontrakt)
+  [DETERMINISTISK] testa-styrelse-v214.mjs … (tsx-återfall) GRÖN (2 s) — SAMMANFATTNING: PASS (v214-stängslets kontrakt bevisat deterministiskt)
+  [DETERMINISTISK] testa-tmp-stad.mjs … GRÖN (1 s) — SVITEN GRÖN — städarens kirurgi bevisad: signatur + untracked + rot-nivå = raderas; trackad/signaturlös/grann/vanlig fil = skonas.
+  [DETERMINISTISK] testa-uppfoljning.mjs … GRÖN (2 s) — Resultat: 50 PASS / 0 FAIL av 50 kontroller.
+  dev-server startar (port 3117, STUDIO_TRANSPORT=mock) …
+  dev-server uppe + värmnings-POST klar (http://127.0.0.1:3117)
+  [DEV-FÖNSTER] testa-studio-rewind.mjs … GRÖN (7 s) — [rewind-E2E] KLART — samtliga kontroller gröna
+  [DEV-FÖNSTER] testa-studio-tabbar.mjs … GRÖN (6 s) — [tabbar-E2E] ALLA KONTROLLER GRÖNA
+  [DEV-FÖNSTER] testa-studio-ttfb.mjs … 

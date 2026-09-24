@@ -1,0 +1,63 @@
+{
+  "granskat": "m9-3 kassaflodesanalys-101 v1 (det som ligger i kön: data/blogg-utkast/m9-ko/kassaflodesanalys-101-v1.json) — FJÄRDE PASSET: aktualitet + FLYTTKLART PAKET",
+  "paketFil": "data/blogg-utkast/granskning/kassaflodesanalys-101-FLYTTKLART-PAKET-2026-09-21.json",
+  "paketMd5": "b3e2f2195da65078ef8599144928208e",
+  "kallor": {
+    "varumarkeJson": "9b906e4204a759db24c2c78b4b332e18 (EXAKT mot kvitto, oförändrad 09-21)",
+    "bolagsuniversOriginalGitF3f56268": "f4cee65860922e53ded546aefaf7ca02 (EXAKT MATCH mot v1-kvittot — 100 bolag, hamtat 2026-09-03)",
+    "bolagsuniversDagens": "1135dc954b72d8f1acfc060a808f5698 (237 bolag — RÖRD; se D1/D2)"
+  },
+  "granskadAv": "agentfabrik auto-s1-1789952123920 s1-u3 (2026-09-21)",
+  "rapport": "kassaflodesanalys-101-KONTROLL-2026-09-21-s1u3.md",
+  "bedomning": "GRÖN — FLYTTKLART PAKET LEVERERAT. 56 kontroller 0 fel: källor md5-exakta (original ur git f3f56268) · 17 sifferkontroller exakta (92/10,8 · 87/3 · 84/0,78/29 · fördelning 26/28/33 varav 9 med summa 87 · topp/botten 5+5 namnform+ticker+bransch+värde · konverteringstopp 3 · ingress) · kontrolleraText-spegel 26 fraser 0 FEL/0 VARNING på hel OCH publicerbar yta · 911 ren 0/6 (fjärde dagen) · 3/3 länkar statiskt + HTTP 200 · filen git-bevisat orörd sedan 5f659b52 (09-14).",
+  "anvandning": "Paketet är kundens exportform: strippa kvittot (2 358 tkn), disclaimer exakt sist, publishedAt null — publicering = kundens klick (R2). NÄSTA VERSION: dagens underlag (237 bolag) bär OGRANSKAD kandidat a98b3a52… — om kö-underhållet kör --skriv ska den Nya kandidaten granskas FÖRE publicering (omkörningsvakten från v2-KONTROLLEN §9); den gröngranskade d8e135f5… (231 bolag) är passerad.",
+  "poster": [
+    {
+      "id": "S1",
+      "typ": "fynd-till-agare",
+      "fil": "verktyg/m9-fabrik.mjs (rad ~1338, seed-beräkningen)",
+      "falt": "fabrik.seed (kvittots determinism-rad)",
+      "gammalt": "const seed = md5(kallor.map((k) => k.md5).join(\":\") + \":\" + manadsnyckel); // kallor = korstabell + vagvalidering-RAPPORT + varumarke — INTE bolagsunivers",
+      "nytt": "Antingen: beräkna universum-seriernas seed ur kallorUnivers (bolagsunivers+varumarke) i stället för den globala kallor-listan — eller behåll global seed men reformulera kvittots rad till 'global seed (korstabell + vågvalidering + varumarke) — universum-baserade serier följer sina käll-md5 nedan'.",
+      "orsak": "SEEDEN FÅNGAR INTE BOLAGSUNIVERS-RÖRELSEN: seed 904e0fcc… är IDENTISK från v1 (100 bolag, 09-03) till idag (237 bolag, 09-21) medan kandidat-md5 ändrats tre gånger (3331bfa4 → d8e135f5 → a98b3a52). Kvittots nuvarande lydelse 'md5 av källfilernas md5 + månadsnyckel' är missvisande för kassaflodesanalys-101 och utdelningar-101 (deras bärkälla ingår inte i seeden). Determinismbärandet vilar i praktiken på käll-md5-raderna — som korrekt FÅNGAR rörelsen — men 'samma seed = samma underlag' är falskt inom månaden. Bevis: dagens TORR-körning (--visa, 0 rader skrivna). Mallägarbeslut; granskaren skriver ej om verktyget. Samma fyndklass som s1-u2 F3/s1-u1 F4 men i seed-ledet."
+    },
+    {
+      "id": "D1",
+      "typ": "notis",
+      "fil": "—",
+      "falt": "drift: kandidatkedjan",
+      "gammalt": "v2-kontrollen 09-20 förutsatte att --skriv landar d8e135f5… (231 bolag)",
+      "nytt": "dagens underlag 237 bolag → torrkörning ger a98b3a52… (OGRANSKAD)",
+      "orsak": "Bolagsunivers fortsätter växa (~6 bolag/dygn: 231→237 på ett dygn). Kö-underhållets nästa --skriv landar alltså INTE den gröngranskade kandidaten — ny granskning krävs FÖRE publicering av nästa version. Paketet HÄR (v1) berörs inte: dess underlag är git-fast och 3× granskat."
+    },
+    {
+      "id": "D2",
+      "typ": "notis",
+      "fil": "—",
+      "falt": "drift: syskonserie",
+      "gammalt": "—",
+      "nytt": "branschmedianer-akm2 bär också ny GRANSKNINGSKLAR-kandidat 0431dd6c… på dagens underlag",
+      "orsak": "Evergreen-regeln släpper igenom fler serier när underlagen rör sig; hela m9-familjens nästa generation behöver samma granskningssteg vid --skriv. Syskonnotis — m9-4-paket-passet bör beakta detta."
+    },
+    {
+      "id": "C1",
+      "typ": "frivilligt",
+      "fil": "paketets description (NY yta — maskinens kandidater bär ingen)",
+      "falt": "FLYTTKLART-PAKET description",
+      "gammalt": "—",
+      "nytt": "Tre kassaflödesmått förklarade med universumets egna tal: FCF-marginal mätt för 92 av 100 bolag (median 10,8 %), FCF-avkastning för 87 (median 3 %) och härledd konverteringsgrad för 84 — en deskriptiv översikt, inte en värdering. Underlag hämtat 2026-09-03.",
+      "orsak": "Paketformen (våg 95-kontraktet) kräver description; handskriven i granskningsledet, kontrolleraText 0/0. Konventionsnot: fabrikens framtida --skriv genererar ingen description — exportsteget äger den (samma som syskonpaketen m9-1/m9-2)."
+    }
+  ],
+  "diffSammanfattning": {
+    "objekt": "v1 → FLYTTKLART PAKET (exportstripp)",
+    "helaBodynTkn": 5876,
+    "kvittoStrippatTkn": 2358,
+    "paketBodyTkn": 3695,
+    "titelFran": "Kassaflödesanalys 101 september 2026 — fria kassaflöden och konverteringsgrad (utkast)",
+    "titelTill": "Kassaflödesanalys 101 september 2026 — fria kassaflöden och konverteringsgrad",
+    "nyaFalt": ["description", "pillar", "author", "publishedAt=null", "readingMinutes=3", "tags[5]"],
+    "oforandrat": "all text i mall-bodyn (prosa, tal, listor, länkar, juridikram) — byte-exakt ur utkastfilen; utkastfilen själv ORÖRD (granskaren skriver ej om andras filer)",
+    "rattningarKravda": 0
+  }
+}

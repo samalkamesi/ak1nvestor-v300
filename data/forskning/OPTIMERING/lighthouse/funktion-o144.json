@@ -1,0 +1,157 @@
+{
+  "ts": "2026-09-21T23:11:27.467Z",
+  "bas": "http://localhost:3000",
+  "resultat": [
+    {
+      "sokvag": "/dataset",
+      "steg": [
+        {
+          "steg": "fore",
+          "url": "",
+          "valda": 1,
+          "kort": 10
+        },
+        {
+          "steg": "pe-hogst",
+          "url": "?sortera=pe-hogst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "pe-lagst",
+          "url": "?sortera=pe-lagst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "back",
+          "url": "?sortera=pe-hogst"
+        }
+      ],
+      "pass": {
+        "pillsFinns": true,
+        "kortFinns": true,
+        "defaultValdFore": true,
+        "urlHogst": true,
+        "ariaCurrentHogst": true,
+        "ordningHogst": true,
+        "urlLagst": true,
+        "ariaCurrentLagst": true,
+        "ordningLagst": true,
+        "backAtterstallerUrl": true,
+        "backAtterstallerOrdning": true,
+        "backAtterstallerAria": true
+      },
+      "passAlla": true
+    },
+    {
+      "sokvag": "/en/dataset",
+      "steg": [
+        {
+          "steg": "fore",
+          "url": "",
+          "valda": 1,
+          "kort": 10
+        },
+        {
+          "steg": "pe-hogst",
+          "url": "?sortera=pe-hogst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "pe-lagst",
+          "url": "?sortera=pe-lagst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "back",
+          "url": "?sortera=pe-hogst"
+        }
+      ],
+      "pass": {
+        "pillsFinns": true,
+        "kortFinns": true,
+        "defaultValdFore": true,
+        "urlHogst": true,
+        "ariaCurrentHogst": true,
+        "ordningHogst": true,
+        "urlLagst": true,
+        "ariaCurrentLagst": true,
+        "ordningLagst": true,
+        "backAtterstallerUrl": true,
+        "backAtterstallerOrdning": true,
+        "backAtterstallerAria": true
+      },
+      "passAlla": true
+    },
+    {
+      "sokvag": "/ar/dataset",
+      "steg": [
+        {
+          "steg": "fore",
+          "url": "",
+          "valda": 1,
+          "kort": 10
+        },
+        {
+          "steg": "pe-hogst",
+          "url": "?sortera=pe-hogst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "pe-lagst",
+          "url": "?sortera=pe-lagst",
+          "koll": {
+            "mono": true,
+            "nullSist": true,
+            "antalKort": 10,
+            "taliga": 10
+          }
+        },
+        {
+          "steg": "back",
+          "url": "?sortera=pe-hogst"
+        }
+      ],
+      "pass": {
+        "pillsFinns": true,
+        "kortFinns": true,
+        "defaultValdFore": true,
+        "urlHogst": true,
+        "ariaCurrentHogst": true,
+        "ordningHogst": true,
+        "urlLagst": true,
+        "ariaCurrentLagst": true,
+        "ordningLagst": true,
+        "backAtterstallerUrl": true,
+        "backAtterstallerOrdning": true,
+        "backAtterstallerAria": true
+      },
+      "passAlla": true
+    }
+  ],
+  "allaPass": true
+}

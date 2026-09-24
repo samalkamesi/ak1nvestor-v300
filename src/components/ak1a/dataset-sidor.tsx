@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { getCourses } from "@/lib/content";
 import { type OrdlistaNyckel } from "@/lib/ordlista";
@@ -70,7 +69,9 @@ export function datasetJsonLd(lang: SprakId, m: BranschMedianer): object {
   return {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: t("dataset.jsonld.namn"),
+    name: t("dataset.jsonld.namn", {
+      nBolag: m.totalt.nBolag,
+    }),
     description: t("dataset.jsonld.beskrivning", {
       nBolag: m.totalt.nBolag,
       hamtat: m.hamtat ?? "—",
@@ -330,9 +331,12 @@ export function DatasetIndexVy({
 
   // Sorterbar lista (VÅG 98 F2): ?sortera=bransch|pe-hogst|pe-lagst. Datan
   // serialiseras hit som planta rader — klientkomponenten sorterar den
-  // inbäddade datan, inga nya anrop. Suspense-gränsen krävs av Next för
-  // useSearchParams i statiskt förrenderade sidor; innehållet renderas
-  // ändå server-side (A–Ö-fallet) så fallback:en visas aldrig i praktiken.
+  // inbäddade datan, inga nya anrop. o143 (spår 7): Suspense-gränsen är
+  // BORTTAGEN — DatasetSorteradLista läser ?sortera= ur window.location i
+  // sin effekt i stället för useSearchParams, så ingen gräns krävs och
+  // hydreringen kan aldrig måla ett fallback-fönster som tömmer subträdet
+  // (CLS 0,2367 på långsamma laster, bevis i o143-protokollet §2);
+  // innehållet renderas som förut server-side (A–Ö-fallet).
   const sorterbara = medianer.rader.map((r) => ({
     slug: r.bransch,
     namn: branschNamn(lang, r.bransch),
@@ -353,7 +357,7 @@ export function DatasetIndexVy({
   };
 
   return (
-    <SeoPageShell breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
+    <SeoPageShell lang={lang} breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
       <StrukturData data={datasetJsonLd(lang, medianer)} id="jsonld-dataset" />
 
       {/* Brandgenomgång P2 (våg 195): H1 som löfte i stället för filnamn,
@@ -372,9 +376,7 @@ export function DatasetIndexVy({
       <section className="mt-8">
         <h2 className="font-serif text-2xl font-bold">{t("dataset.tabell.rubrik")}</h2>
 
-        <Suspense fallback={null}>
-          <DatasetSorteradLista rader={sorterbara} etiketter={etiketter} prefix={prefix} />
-        </Suspense>
+        <DatasetSorteradLista rader={sorterbara} etiketter={etiketter} prefix={prefix} />
 
         <p className="mt-2 text-xs text-muted-foreground">{t("dataset.sortera.notis")}</p>
 
@@ -398,6 +400,22 @@ export function DatasetIndexVy({
         </div>
 
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
+
+        {/* o156 (s8): metod-vägen in till nyckeltalsguiden — /dataset
+            redovisade medianerna men lämnade läsaren utan länk till sidan
+            som förklarar dem (0 interna inlänkar, mätt 2026-09-24).
+            Absolut sökväg: guiden är enbart-svensk (våg 87-design);
+            en/ar-läsaren varnas om målets språk i länktexten.
+            prefetch={false} enligt o17-precedensen — grann-CTA:s mönster. */}
+        <p className="mt-3 text-sm">
+          <Link
+            href="/data/nyckeltalsguide"
+            prefetch={false}
+            className="font-medium text-primary underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
+          >
+            {t("dataset.guideLank")}
+          </Link>
+        </p>
       </section>
 
       {/* Brandgenomgångens CTA-gap (våg 201): dataset-ytan lämnade besökaren
@@ -515,6 +533,7 @@ export function DatasetBranschVy({
 
   return (
     <SeoPageShell
+      lang={lang}
       breadcrumb={[{ name: t("dataset.brodsmula"), href: prefix + "/dataset" }, { name: namn }]}
     >
       <StrukturData data={datasetBranschJsonLd(lang, rad, medianer)} id="jsonld-dataset-bransch" />
@@ -590,6 +609,19 @@ export function DatasetBranschVy({
         </p>
 
         <KallaOchLicens lang={lang} kallor={medianer.kallorRadata} />
+
+        {/* o156 (s8): samma metod-väg som index-vyn — detaljsidorna är
+            långsvans-magneterna ("median P/E <bransch>") och förtjänar
+            vägen till metodsidan lika mycket. */}
+        <p className="mt-3 text-sm">
+          <Link
+            href="/data/nyckeltalsguide"
+            prefetch={false}
+            className="font-medium text-primary underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
+          >
+            {t("dataset.guideLank")}
+          </Link>
+        </p>
       </section>
 
       <section className="mt-8">

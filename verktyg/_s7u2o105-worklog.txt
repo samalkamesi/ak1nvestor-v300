@@ -1,0 +1,29 @@
+
+
+## SPÅR 7 s7-u2 (manifest-dispatch 2/3, byggare) — 2026-09-20 ~04:29–04:5x lokal: o105 SIDFOOTER/BRÖDKRUMMA SERVERBINDNA (o101 §4 Kur A+B verkställd)
+
+Fabriksagent s7-u2. Valde spårets dokumenterade nästa objekt: o101:s kurdesign
+(FRIA ytor, vakarövertag — mätvåg-before-kurvåg-precedensen). KORRIGERAD ROT
+under arbete: våg 81:s SpegelSprakLeverantor SSR:ar redan rätt språk —
+o101 §3.2:s "hydrat-omskrivning" sker inte; kvarvarande kostnad = själva
+hydratiseringen (81 element + länkar + smulnav; 472 ms style/layout-delta).
+KUREN: vy-moduler (hook-fria, EN källa) + tunna bindningar — serverbindning
+(skapaT(lang)) på /en|/ar via SeoPageShell lang-prop (endast speglar: sv =
+klient-MGTM oförändrat, DOM identisk). Mätobjekten /{en,ar}/blogg (listorna)
++ [slug]-byggarna (blogg, kurs) bär lang. KONTRAKTSTEST nytt
+(verktyg/testa-s7-o105-footer-etiketter.mjs): 41 PASS 0 FAIL (registertäckning
+×3 språk, skapaT≡ORDLISTA, tText-kontrakt, wiring D1–D8, vy-moduler hook-fria).
+tsc 0 via projektbinär. INGET bygge — prod-synken deployade under fönstret
+(02:41:40Z, 13 commits, BUILD_ID RbGEkEnQH, prod 200 ×5-klass) ⇒ FÖRE-läge
+utan kur bevisat färskt; EFTER-kriterier (n=2; TBT en≤500/ar≤550; CLS 0;
+sv ±15%) vakarövertag-barra enligt o101 §4 när kur-commitens deploy landar.
+DRIFT UNDER FÖNSTRET: prod nere ~7 min (02:28–02:35Z) — pm2-restart-loop dog
+på "next: not found" under npm ci-omskrivning (läkebackup + hel node_modules
+⇒ självläkt; observationspost i DRIFTSBOKEN; rotfynd åt infra-ägaren).
+Avgränsning: 28 spegel-direktfiler + dataset/bolag/tier-byggare = våg 2
+(kö §6). R2 orörd; data/blogg/ orörd; u1/u3-ytor orörda; globals.css
+lämnad åt o104-reverterten. Anspråksfil med nr-lås skrevs FÖRE byggstart.
+LEVERANS: src/components/ak1a/{sidfooter-vy,brodkrumma-vy,sidfooter-server,
+brodkrumma-server,sidfooter,brodkrumma,seo-page-shell,blogg-spegel-sida,
+kurs-spegel-sida}.tsx + src/app/(en|ar)/*/blogg/page.tsx + verktyg/testa-
+s7-o105-footer-etiketter.mjs + _s7o105-alias-hook.mjs + o105-rapporten.

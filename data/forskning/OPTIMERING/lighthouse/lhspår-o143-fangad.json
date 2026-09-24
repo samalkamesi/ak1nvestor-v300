@@ -1,0 +1,176 @@
+{
+  "datum": "2026-09-21T15:02:25.785Z",
+  "sida": "/dataset",
+  "kalla": "Lighthouse 13.5.0 --save-assets (fångad i bakgrundsjakt, försök 1 av 11 totala idag)",
+  "cls": 0.2366902995198716,
+  "tbt": 1667,
+  "navTillFcpMs": 980,
+  "shiftTsEfterNavMs": 1276,
+  "shiftArgsData": {
+    "cumulative_score": 0.2366902995198716,
+    "frame_max_distance": 1268,
+    "had_recent_input": false,
+    "impacted_nodes": [
+      {
+        "new_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "node_id": 72,
+        "old_rect": [
+          14,
+          648,
+          384,
+          143
+        ]
+      },
+      {
+        "new_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "node_id": 71,
+        "old_rect": [
+          14,
+          598,
+          384,
+          34
+        ]
+      },
+      {
+        "new_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "node_id": 17,
+        "old_rect": [
+          14,
+          554,
+          384,
+          32
+        ]
+      }
+    ],
+    "is_main_frame": true,
+    "last_input_timestamp": 477.5999999046326,
+    "overall_max_distance": 1268,
+    "region_rects": [
+      [
+        14,
+        554,
+        384,
+        32
+      ],
+      [
+        14,
+        598,
+        384,
+        34
+      ],
+      [
+        14,
+        648,
+        384,
+        143
+      ]
+    ],
+    "score": 0.2366902995198716,
+    "weighted_score_delta": 0.2366902995198716
+  },
+  "layoutShiftsAudit": [
+    {
+      "selector": "div.mx-auto > main > section.mt-8 > div.mt-4",
+      "snippet": "<div class=\"mt-4 space-y-1.5 text-sm leading-relaxed text-muted-foreground\">",
+      "nodeLabel": "Universum och aggregering: AK1A Research Lab · rådata: offentliga marknadskällo…",
+      "boundingRect": {
+        "top": 1916,
+        "bottom": 2059,
+        "left": 14,
+        "right": 398,
+        "width": 384,
+        "height": 143
+      },
+      "score": 0.2366902995198716
+    }
+  ],
+  "kontextFöreShift": [
+    {
+      "tsMs": 1554,
+      "namn": "FunctionCall",
+      "durMs": 1,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1555,
+      "namn": "FunctionCall",
+      "durMs": 0,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1557,
+      "namn": "EvaluateScript",
+      "durMs": 2,
+      "url": "3c20dmqsqgcwk.js"
+    },
+    {
+      "tsMs": 1559,
+      "namn": "FunctionCall",
+      "durMs": 0,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1559,
+      "namn": "FunctionCall",
+      "durMs": 1,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1560,
+      "namn": "FunctionCall",
+      "durMs": 1,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1561,
+      "namn": "FunctionCall",
+      "durMs": 0,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1562,
+      "namn": "FunctionCall",
+      "durMs": 4,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1566,
+      "namn": "FunctionCall",
+      "durMs": 0,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1566,
+      "namn": "FunctionCall",
+      "durMs": 7,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1573,
+      "namn": "FunctionCall",
+      "durMs": 0,
+      "url": "2feezv-iveko5.js"
+    },
+    {
+      "tsMs": 1574,
+      "namn": "FunctionCall",
+      "durMs": 6,
+      "url": "2feezv-iveko5.js"
+    }
+  ]
+}

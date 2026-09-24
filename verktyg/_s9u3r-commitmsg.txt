@@ -1,0 +1,65 @@
+studio: auto s9-u3 SYSTEMKARTAN-dokvåg C17+C18+C19 (redispatch) — dagens s8-kvalitetsvågor bokförda i kartrader + AKUT DRIFTFYND: /dataset 500 ×3 språk i prod; instans 1:s B7+B9+E32 oberoende korsvaliderade före pivoten [fabrik]
+
+Fabriksagent s9-u3, ANDRA instansen (redispatch). Statusläget redovisat öppet:
+fabriksstatusen lästes "pågår" men instans 1 hade levererat B7+B9+E32 (d2f50005)
+— denna instans hann EGENMÄTA samtliga tre med IDENTISKA tal (akm2-sviterna
+25/55/64/12 + motorvalidering 107/0/0 på 23,3 s + livlinan 22/22 eget svep +
+read-only Supabase-sond: levande tabellen vagscan 1/signal 5/organ 12 endast
+dagens rader, nattexporterna 09-20+09-21 = 0 vagscan, E32 489/476, fixture-raden
+ABB.ST exakt tidsstämpelträff 09-15T22:07:31 orörd) = oberoende korsvalidering;
+duplikat avstått enligt manifestregeln ("duplikat är förlorat arbete").
+
+PIVOT (anspråksfilen disk-först FÖRE ny mätning): C17+C18+C19 — de tre system
+där dagens s8-kvalitetsvågor rörde verkligheten DIREKT medan kartraderna bär
+före-våg-läget:
+
+(1) C17 DATASET-CITERINGSMAGNETERNA — universum 225→249 (10 branscher,
+node-räknat, mtime 11:33 lokal) med llms.txt:s 249-sektion + v98-vakten GRÖN
+EGENKÖRD på 249 (249 tickers + 249 namn sökta i 1 528 utdatafiler) +
+aspektsviten GRÖN 0 FEL (8 moduler/6 testade, 30 varningar, 62 null =
+gränsregel) + o149:s universumsiffra-kur i TRÄD VÄNTAR DEPLOY (prod bär
+fortfarande "100"-texterna) + Kön 74→88 (78 paket + 10 kalendrar) +
+/kvartalsdata 404 kvar. AKUT DRIFTFYND: /dataset 500 ×3 språk i PROD (egen
+https-sond; ChunkLoadError — chunk för dataset-sortering_tsx saknas på disk,
+0 dataset-chunkar i katalogen; sidan var 200 så sent som 18:17 lokal enligt
+s7-u2:s prod-mätning ⇒ ISR-revalideringen träffade den chunk-tomma .next =
+mixed-state efter 15:07-bygg-OOM/15:14-läke; o47/A1:s chunk-klass; koden i
+träd oskyldig; kur = nästa gröna bygg = prod-synkens ägo, ALDRIG eget;
+gränsnittsvaktens 19:30-lokala svep träffar ytan mekaniskt). Dom LEVER 9 kvar
+(A1-precedensen: driftfynd utan poängriv — roten bokförd hos E34/E37).
+
+(2) C18 SEO/SITEMAP — sitemap 2 420→2 627 URL:er (loopback = prod, egen
+loc-räkning; identiskt med o147:s livskontrakt-facit) + src/lib/
+sitemap-byggsanning.ts NY (o147) med konsument-grend i src/app/sitemap.ts
+(VÄNTAR DEPLOY) + LIVE-sitemapen lovar 249 /bolag/-URL:er varav 6 döda 404
+(ai-pa/dsy-pa/cap-pa/barc-l/nwg-l/lloy-l egen sond — o146/o147:s FÖRE-facit
+består exakt; publiceringscachen bolags-publicerade.json korrekt frånvarande
+tills ett bygge tecknar den) + sok-index 440→489 poster (genererat 15:26,
+följer DISK-registret = korsbevis för E32:s 489/476-divergens) + llms/robots
+200. Dom LEVER 9 kvar.
+
+(3) C19 TRAFIK, SPÅR & KONVERTERING — gap 1 DELVIS STÄNGT: eko-kopplingssviten
+18 PASS/0 FAIL EGENKÖRD (u2:s sidofynd oberoende bekräftat; radens "0 sviter"
+KORRIGERAD) medan tracer/trafik/konvertering/dash 0 kvar + 0 alarm-trösklar
+(grep) + PageViewBeacon fortfarande OVILLKORLIG (kodläst: src/components/ak1a/
+globalt-skal.tsx:244-271 renderad :331 — localStorage + sendBeacon, 0
+samtyckesläsningar = gap 3 öppen) + trafik-API lever (besokareIdag 32 ·
+blockerat24h 2). Dom LEVER 7 kvar (B13-precedensen).
+
+Snittet orört av denna dokvåg (syskonet u2-omkörningens E40/E41-dom 7,4/303/41
+landade parallellt — denna commits snittlämnande är mot det läget).
+
+KVD: data-only — src/ orörd = INGET bygge · sviter KÖRDA endast (aspekter ·
+v98 · eko-koppling · akm2 ×4 · motorvalidering · vågmotor) · Supabase endast
+LÄST (read-only REST, Mimosa-mönstret: loadEnvFile, nycklar aldrig loggade) ·
+R2 orörd · data/blogg/ orörd · syskonytor orörda till innehåll.
+
+MEDFÖRD SYSKENLEVERANS, öppet redovisad: syskonet s9-u2-omkörningens
+KOMPLETTA E40/E41-leverans (två nya kartrader 39→41, detaljblock,
+UPPDATERING-sektion, E37-radsåterställning ur git + deras worklog-rad) låg
+ocommittad i SAMMA fil när denna sessions väntfönster (150 s) löpte ut —
+innehållet verifierat komplett och coherent innan commit; deras commitmsg-fil
+verktyg/_s9u2omk-commitmsg.txt lämnad orörd; deras leverans är deras, denna
+commit bara transporterar den ur arbetsytan enligt gällande pathspec-praxis.
+Egna filer: SYSTEMKARTAN.md (C17/C18/C19-rader + detaljblock + UPPDATERING-
+sektion), worklog.md (egen rad), verktyg/_s9u3r-commitmsg.txt. [fabrik]

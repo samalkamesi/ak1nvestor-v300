@@ -1,0 +1,258 @@
+{
+  "bolag": "ABB",
+  "ar": "2025",
+  "proveniensSha": "df0f0ba33dcf5efc1bbcd98c508e056770de5c1a7a4c3446f466099664d2a7c9",
+  "sammanfattning": {
+    "sektionerTotalt": 149,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 12,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 128,
+      "rubrik": "126 FINANCIAL REPORT 2025 BALANCE SHEET December 31 (CHF in thousands)",
+      "familjer": [
+        "nettoresultat",
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 370,
+      "poang": 25.5
+    },
+    {
+      "i": 117,
+      "rubrik": "116 FINANCIAL REPORT 2025 The following tables present Operational",
+      "familjer": [
+        "tillgangar",
+        "utdelning",
+        "anstallda",
+        "investeringar"
+      ],
+      "siffror": 329,
+      "poang": 22.4
+    },
+    {
+      "i": 54,
+      "rubrik": "FINANCIAL REPORT 2025 53 ABB Ltd Consolidated Income Statements",
+      "familjer": [
+        "nettoomsattning",
+        "nettoresultat",
+        "eps",
+        "utdelning"
+      ],
+      "siffror": 243,
+      "poang": 22.1
+    },
+    {
+      "i": 57,
+      "rubrik": "56 FINANCIAL REPORT 2025 ABB Ltd Consolidated Statements of Cash",
+      "familjer": [
+        "nettoresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 303,
+      "poang": 22.1
+    },
+    {
+      "i": 134,
+      "rubrik": "132 FINANCIAL REPORT 2025 Note 6 Legal reserves Available earnings",
+      "familjer": [
+        "nettoresultat",
+        "utdelning"
+      ],
+      "siffror": 341,
+      "poang": 22.1
+    },
+    {
+      "i": 58,
+      "rubrik": "FINANCIAL REPORT 2025 57 ABB Ltd Consolidated Statements of Accumulated",
+      "familjer": [
+        "nettoresultat",
+        "utdelning"
+      ],
+      "siffror": 331,
+      "poang": 21.6
+    },
+    {
+      "i": 89,
+      "rubrik": "88 FINANCIAL REPORT 2025 Details of significant long-term borrowings",
+      "familjer": [
+        "anstallda"
+      ],
+      "siffror": 443,
+      "poang": 21
+    },
+    {
+      "i": 56,
+      "rubrik": "FINANCIAL REPORT 2025 55 ABB Ltd Consolidated Balance Sheets",
+      "familjer": [
+        "tillgangar"
+      ],
+      "siffror": 365,
+      "poang": 20.3
+    },
+    {
+      "i": 135,
+      "rubrik": "FINANCIAL REPORT 2025 133 During 2025exercised these options.",
+      "familjer": [
+        "anstallda"
+      ],
+      "siffror": 375,
+      "poang": 19.8
+    },
+    {
+      "i": 26,
+      "rubrik": "26 FINANCIAL REPORT 2025 ANALYSIS OF RESULTS OF OPERATIONS The",
+      "familjer": [
+        "nettoomsattning",
+        "nettoresultat",
+        "eps",
+        "utdelning"
+      ],
+      "siffror": 181,
+      "poang": 19.1
+    },
+    {
+      "i": 116,
+      "rubrik": "FINANCIAL REPORT 2025 115 2024 ($ in millions) Electrification",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 312,
+      "poang": 18.6
+    },
+    {
+      "i": 115,
+      "rubrik": "114 FINANCIAL REPORT 2025 The following tables present disaggregated",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 291,
+      "poang": 17.6
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoresultat",
+      "varde": "3,048,562 2,433,706",
+      "kontext": "1,800,834 Net income 3,048,562 2,433,706 Total shareholders' equity 4,955,347 4,473,432 7,326,734 6,465,726",
+      "sektion": 128,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "4,955,347 4,473,432",
+      "kontext": "706 Total shareholders' equity 4,955,347 4,473,432 7,326,734 6,465,726",
+      "sektion": 128,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "7,326,734 6,465,726",
+      "kontext": "5,962,108 Total assets 7,326,734 6,465,726 Interest-bearing liabilities 4 325,000 150,003 Interest-bearing liabilities Group 4 19,818 22,628 N",
+      "sektion": 128,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "203 206",
+      "kontext": "erest and dividend income 203 206 Interest and other finance expense (86) (74) Non-operational pension (cost) credit 55 56 Income from con",
+      "sektion": 117,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "2",
+      "kontext": "sets are after intersegment eliminations and therefore reflect third-party activities only. (2) At December 31, 2025 and 2024, respec",
+      "sektion": 117,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "2025",
+      "kontext": "tion, and Capital expenditures for 2025 and 2024, and Total assets at December 31, 2025 and 2024: ($ in millions) 2025 2024 Operational EBITA: Electr",
+      "sektion": 117,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "nettoomsattning",
+      "varde": "33,220 30,583",
+      "kontext": "052 Total revenues 33,220 30,583 Cost of sales of products (16,581) (15,740) Cost of services and other (2,999) (2,842) Total cost of sale",
+      "sektion": 54,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "2.50 2.01",
+      "kontext": "935 Basic earnings per share attributable to ABB shareholders: Income from continuing operations, net of tax 2.50 2.01 Income from discontinued oper",
+      "sektion": 54,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "290 241",
+      "kontext": "losure of cash flow information: Interest paid 290 241 Income taxes paid 1,627 1,382 Due to rounding, numbers presented may not add to the ",
+      "sektion": 57,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "ordning",
+      "varde": "2024",
+      "kontext": "o a large order booking in 2024. In the Americas, orders increased sharply by 20 percent (20 percent in local currencies) driven by order gr",
+      "sektion": 36,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "skuld",
+      "varde": "31",
+      "kontext": "ings. Our net debt is shown in the table below: December 31, ($ in millions) 2025 2024 Short-term debt and current maturities of long-term",
+      "sektion": 41,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "2025 2024",
+      "kontext": "erations. Operating results of the discontinued operations are summarized as follows: ($ in millions) 2025 2024 Total revenues 2,331 2,267 Total c",
+      "sektion": 72,
+      "kalla": {
+        "namn": "ABB årsredovisning 2025",
+        "url": "https://library.e.abb.com/public/b32991481e8b4418a5c5261c5ff25440/ABB%20Financial%20Report%202025.pdf"
+      }
+    }
+  ]
+}

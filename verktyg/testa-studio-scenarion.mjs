@@ -81,7 +81,12 @@ async function main() {
     let ok = m.aktiv === true;
     let not = `aktiv=${m.aktiv}`;
     if (!ok) {
-      const disk = fs.existsSync(path.join(KATALOG, "mal-state.json"));
+      // V215.2-kur: API:t mäter PROD, alltså läser disk-fallbacken PROD-trädets
+      // målstate (lasPass-precedensen). Trädrelativ sökväg var sann bara när
+      // daemonen körde sviten ur prod-trädet — i aggregatorns arbetsyta-kontext
+      // fanns filen aldrig (data/vakten/ är gitignorerad och synkas ej), vilket
+      // gav falskt "INGEN disk" medan målhjärtat levde (r112-fyndet).
+      const disk = fs.existsSync("/home/ak1a/AK1/data/vakten/mal-state.json");
       ok = disk; // arm-kedjan (GET/hjärta/synk) täcker inom minuter
       not += disk ? " men mal-state.json lever (armkedja täcker)" : " och INGEN disk";
     }
@@ -106,17 +111,33 @@ async function main() {
     resultat.push(["S4 AUDIT", false, String(e).slice(0, 60)]);
   }
 
-  // S5 — juridikgrinden senaste dom GRÖN (läser dess statusfil juridik-larm.json)
+  // S5 — juridikgrinden lever och är frisk (läser dess statusfil juridik-larm.json)
+  // Sökväg: arbetsytan först, sedan PROD-trädet — grindens cron lever i prod
+  // och dess statusfil följer med den (samma fallback som admin-nyckeln).
+  // KONTRAKT (R107-slipning): grindens egen allvarsmodell är FEL = spärr,
+  // VARNING = verifiera — granskningsposter är CITATYTA med nedgraderat
+  // allvar, så GUL är det köatärt tillståndet så länge granskningskön
+  // citerar reglerna. Scenariot kräver därför det systemet GARANTERAR:
+  // färsk dom (pumpan :37 varje timme ⇒ tak 2 h) + 0 FEL — starkare än
+  // "GRÖN", som kan vara både gammal och svag.
   try {
-    const larm = JSON.parse(fs.readFileSync(path.join(KATALOG, "juridik-larm.json"), "utf8"));
+    const kandidater = [
+      path.join(KATALOG, "juridik-larm.json"),
+      "/home/ak1a/AK1/data/vakten/juridik-larm.json",
+    ];
+    const hittad = kandidater.find((p) => fs.existsSync(p));
+    if (!hittad) throw new Error("saknas i både arbetsyta och prod-träd");
+    const larm = JSON.parse(fs.readFileSync(hittad, "utf8"));
     const s = larm && larm.senasteKorning ? larm.senasteKorning : null;
+    const alderMin = s && s.ts ? (Date.now() - Date.parse(s.ts)) / 60_000 : Infinity;
+    const ok = !!s && Number(s.fyndFEL) === 0 && alderMin <= 120;
     resultat.push([
       "S5 JURIDIK",
-      !!s && s.status === "GRÖN",
-      s ? `${s.status} @ ${(s.ts || "").slice(0, 16)}` : "ingen körning",
+      ok,
+      s ? `${s.status} @ ${(s.ts || "").slice(0, 16)} · FEL=${s.fyndFEL} · VARN=${s.fyndVARNING} · ålder ${Number.isFinite(alderMin) ? Math.round(alderMin) : "?"} min` : "ingen körning",
     ]);
-  } catch {
-    resultat.push(["S5 JURIDIK", false, "juridik-larm.json saknas"]);
+  } catch (e) {
+    resultat.push(["S5 JURIDIK", false, String(e).slice(0, 60)]);
   }
 
   const fel = resultat.filter(([, ok]) => !ok);

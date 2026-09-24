@@ -1,0 +1,270 @@
+{
+  "bolag": "AZN",
+  "ar": "2025",
+  "proveniensSha": "5a381c1c5df1ca277e95985a6b1b6b3ad371914a4b18a824e22ba541fbf44097",
+  "sammanfattning": {
+    "sektionerTotalt": 363,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 13,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 243,
+      "rubrik": "Sektion 244",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "kassaflode",
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 296,
+      "poang": 25.8
+    },
+    {
+      "i": 266,
+      "rubrik": "Sektion 267",
+      "familjer": [
+        "rorelseresultat",
+        "tillgangar"
+      ],
+      "siffror": 425,
+      "poang": 25
+    },
+    {
+      "i": 275,
+      "rubrik": "Sektion 276",
+      "familjer": [
+        "kassaflode"
+      ],
+      "siffror": 485,
+      "poang": 22
+    },
+    {
+      "i": 290,
+      "rubrik": "continuedLiquidity riskshort-term requirements against available",
+      "familjer": [
+        "kassaflode"
+      ],
+      "siffror": 418,
+      "poang": 22
+    },
+    {
+      "i": 291,
+      "rubrik": "20252024Fixed rateFloating rateTotalFixed rateFloating rateTotal$m$m$mFinancial",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 212,
+      "poang": 20.6
+    },
+    {
+      "i": 263,
+      "rubrik": "Sektion 264",
+      "familjer": [
+        "nettoresultat",
+        "anstallda"
+      ],
+      "siffror": 318,
+      "poang": 19.9
+    },
+    {
+      "i": 274,
+      "rubrik": "Sektion 275",
+      "familjer": [
+        "rorelseresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 245,
+      "poang": 19.3
+    },
+    {
+      "i": 113,
+      "rubrik": "ReportedCERCore2025$m2024% Actual changeCERdue to% CER 2025$m2024%",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "anstallda"
+      ],
+      "siffror": 244,
+      "poang": 19.2
+    },
+    {
+      "i": 244,
+      "rubrik": "Sektion 245",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 280,
+      "poang": 18
+    },
+    {
+      "i": 265,
+      "rubrik": "to have one reportable segment.KJThis determination is considered",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "tillgangar"
+      ],
+      "siffror": 199,
+      "poang": 17.9
+    },
+    {
+      "i": 18,
+      "rubrik": "ContentsKeyTotal RevenueNet cash inflow from operating activities58,739m$54,073m$45,811m14,575m$11,861m$10,345mReported",
+      "familjer": [
+        "rorelseresultat",
+        "eps"
+      ],
+      "siffror": 256,
+      "poang": 17.8
+    },
+    {
+      "i": 269,
+      "rubrik": "Sektion 270",
+      "familjer": [
+        "kassaflode"
+      ],
+      "siffror": 316,
+      "poang": 17.8
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoomsattning",
+      "varde": "3,067 2,212 1,428",
+      "kontext": " Alliance Revenue 3,067 2,212 1,428Product Revenue 58,640 53,150 45,217Collaboration Revenue 923 594Total Revenue 58,739 54,073 45,811Cos",
+      "sektion": 243,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "381 252 1,340",
+      "kontext": "enseOther operating income and expense 381 252 1,340Operating profit 13,743 10,003 8,193Finance income 360 458 344Finance expenseShare of after ta",
+      "sektion": 243,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "263",
+      "kontext": "ements on cash flow hedges263Fair value movements on cash flow hedges transferred to profit and loss 177Fair value movements on derivatives",
+      "sektion": 243,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "2",
+      "kontext": "ions)1,562Dividends declared and paid in the period 4,846 4,487All activities were in respect of continuing operations.$m means millions of",
+      "sektion": 243,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "12,402",
+      "kontext": "Share of after tax losses in associates and joint venturesProfit before tax 12,402TaxationProfit for the period 10,233 7,041Other com",
+      "sektion": 243,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "2025202420252024",
+      "kontext": "ent assetsTotal assets2025202420252024$m$m 10,328 21,983 20,139Rest of Europe 31,974 41,596 37,884The Americas 29,714 28,730 42,201 38,544 2,4",
+      "sektion": 266,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "nettoresultat",
+      "varde": "765 215",
+      "kontext": "ax payableNet income taxreceivable 765 215Management assesses at each balance sheet date whether income tax receivables and payables will be",
+      "sektion": 263,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "48,719 40,871",
+      "kontext": " interestsTotal equity 48,719 40,871Pascal SoriotAradhana SarinDirectorDirector10February 2026126 $m 8 9 11 12 13 14 498 15 5  5 ",
+      "sektion": 244,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "6.60",
+      "kontext": "d EPSCore EPS$6.60$4.543.84$9.16$8.21$7.26Financial highlightsStrategic ReportAstraZeneca at a Glance Healthcare in a Changing World ",
+      "sektion": 18,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "skuld",
+      "varde": "61",
+      "kontext": " liquidityNet debtsee page 61.liabilities and is a measure commonly used by investors and rating agencies. It facilitates the tracking of ",
+      "sektion": 116,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "23242",
+      "kontext": "717118,478Operating Margin %23242Taxation6.600.112.260.199.1612112024 Reconciliation of Reported results to Core results2024Reportedcostsasset2024",
+      "sektion": 117,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "ebitda",
+      "varde": "2025",
+      "kontext": "re tax to EBITDA 2025$m2024ActualCER12,4021,3341,284 and associates28 Depreciation, amortisation and impairment5,7336,688 EBITDA19,47616",
+      "sektion": 121,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "50 billion",
+      "kontext": "including capital expenditures. This included investments in new and expanded manufacturing facilities in Virginia and $50 billion investment in the ",
+      "sektion": 131,
+      "kalla": {
+        "namn": "AZN årsredovisning 2025",
+        "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "skf_release": [
+    "https://mb.cision.com/Main/637/4317545/3969621.pdf",
+    "https://mb.cision.com/Public/637/4317545/ad5f1025c4efda07.pdf"
+  ],
+  "skf_head": [
+    {
+      "url": "https://mb.cision.com/Main/637/4317545/3969621.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 7.3,
+      "grön": true
+    },
+    {
+      "url": "https://mb.cision.com/Public/637/4317545/ad5f1025c4efda07.pdf",
+      "status": 200,
+      "typ": "application/pdf",
+      "mb": 0.2,
+      "grön": true
+    }
+  ],
+  "ericsson_ddg": {
+    "traffar": []
+  },
+  "indu_ddg": {
+    "traffar": []
+  },
+  "az_ddg": {
+    "traffar": []
+  },
+  "az_spegel": {
+    "url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_AZN_2025.pdf",
+    "status": 200,
+    "typ": "application/pdf",
+    "mb": 11.2,
+    "grön": true
+  }
+}

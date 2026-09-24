@@ -1,0 +1,176 @@
+{
+  "slug": "bf-18-kompetensillusionen",
+  "category": "BETEENDEFINANS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kompetensillusionen — när skickligheten är en berättelse",
+  "summary": "BETEENDEFINANS-familjens artonde steg öppnar fältets djupaste fråga: är den som väljer aktier skicklig, eller bara lyckosam — och hur skiljer man det åt? Sonden mot registret (483 kurser vid sondtillfället) ger noll kursägare på kompetensillusionen och dess syskonbegrepp: illusion of skill och social smitta har aldrig skrivits som kursägande, medan Kahneman citeras i förbifart av ankar- och flockkurserna och böckerna om tänkande och slump. Kursen äger själva bevisfrågan genom fem lager: rådgivarkorrelationerna (tjugofem rådgivare, åtta år, genomsnitt 0,01 — de parvisa jämförelserna blir 300, och ingen av dem visar varaktighet), giltighetsmiljöerna (Kahneman–Kleins två frågor: är omvärlden tillräckligt regelbunden, och får beslutaren återmatning som skiljer rätt från fel i tid), kompetensparadoxen (modellräkningen: när skicklighetsspridningen bland förvaltare smalnar från tio till två procentenheter vid oförändrad tur faller årskorrelationen från 0,20 till 0,01 — paradoxen förklarar rådgivarsiffran inifrån), mätningens förställning (slantturneringen som tillverkar 250 förvaltare med fyra raka träffar ur 4 000 startande — urvalseffekten som liknar skicklighet) och protokollets fem frågor till varje skicklighetsanspråk. Gränserna mot grannarna är förhandade: km-036 äger övermodet som känsla, bf-10 dunning-krugers dubbelvågg, bf-16 serieupplevelsen i bruset, bf-04 regelverkets skydd, ek-04 backtestets fällor och kt-02 kalibreringen av förväntningar — denna kurs äger anspråkets evidenskrav. Pedagogisk utbildning om mekanismer — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "BETEENDEFINANS-familjens sjutton första steg har kartlagt fällorna var för sig — ankaret, de sjunkna kostnaderna, de mentala kontona, prospektteorin, bubblan, tidens förvridning — men inte det påstående som alla fällor till slut kretsar kring: att någon skulle kunna välja bättre än marknaden, och vad som krävs för att ta ett sådant påstående på allvar. Sonden mot 483 kurser bekräftar: «kompetensillusion» har noll kursägare, «illusion of skill» noll, «social smitta» noll — medan grannarna rör sig runt ytan: km-036 äger övermodet som bias (känslan av för stor säkerhet), bf-10 dunning-kruger (de misskunnigas självöverskattning — här ägs i stället frågan om även den skickliges prestation varar), bf-16 äger seriepsykologin (mönster i brus — här ägs vad mönstren inte kan bära: ett skicklighetsbevis), bf-04 äger regelverkets skydd och ek-04 backtestens fällor (överlevnadsbias och överanpassning — här ägs urvalseffekten i sitt renaste skepp: slantturneringen), och kt-02 äger kalibreringen av marknadens förväntningar (här: sändarens kalibrering av den egna träffsäkerheten). Kahneman själv ligger i bokhyllan (boken om att tänka snabbt och långsamt) men ingen kurs äger studien, miljökraven och paradoxen som pedagogik. Kursen fäller samman familjens trådar i fältets grundval: utan en ärlig kompetensbedömning vet ingen vilken av de sjutton fällorna som ens spelar roll.",
+  "learn": "Läsa korrelationsbeviset: Kahneman lät sommaruppgiften summera tjugofem investeringsrådgivares åtta år — parvisa jämförelser av alla rådgivare samma år blir 25 × 24 ÷ 2 = 300 kombinationer, den genomsnittliga samvariationen var 0,01, och de 200 årsresultaten (25 × 8) bar ingen varaktig ordning: den som var bäst ett år var i genomsnitt inte bättre än någon annan nästa. Skilja giltiga från ogiltiga miljöer med Kahneman–Kleins två frågor: är omvärlden tillräckligt regelbunden för att vara förutsägbar (schack ja, aktiemarknaden delvis, geopolitiken nej) och får beslutaren en återmatning som skiljer rätt från fel inom en tid minnet hinner (brandmannen och anestesisjuksköterskan ja — aktieväljaren får sin dom först efter år, och då blandad med marknadens). Räkna kompetensparadoxen: resultat = skicklighet + tur; när tur-spridningen är 20 procentenheter och skicklighetsspridningen 10 blir årskorrelationen 10²/(10² + 20²) = 0,20 — men när utbildning, data och verktyg utjämnar förvaltarkåren och skicklighetsspridningen smalnar till 2 procentenheter faller korrelationen till 4/404 = 0,01: ju kompetensare alla blir, desto mer avgör turen — och räkningen landar exakt på rådgivarsiffran. Genomskåda mätningens förställning: singla 4 000 förvaltare en gång — 2 000 vinner; igen — 1 000; igen — 500; igen — 250 bär fyra raka träffar och känns utvalda, fast varje omgång var ett myntkast (basisfrekvensen 250 av 4 000 = 6,25 procent förklaras helt av tur; överlevnadseffekten är ek-04:s urvalsfall i ren form). Slutligen använda protokollets fem frågor till ett skicklighetsanspråk — basisfrekvens (hur många deltog), urval (överlever förlorarna i redovisningen), återmatning (skilde feedbacken rätt från fel i tid), spårbarhet (kan prestationen knytas till en prövningsbar regel) och horisont (räcker historien för att skilja skicklighet från tur) — och förstå varför Peter Lynch räknade sex rätt av tio som elitnivå.",
+  "history": {
+    "origin": "Frågan föddes före beteendefinansen: psykologen Paul Meehl visade redan 1954 att enkla statistiska formler slog erfarna klinikers bedömningar, och Daniel Kahneman bar samma lärdom från den israeliska officersskolan — intervjuerna han hjälpte bygga korrelerade nästan noll med verklig prestation. När han senare fick sommaruppgiften att utvärdera tjugofem rådgivares aktieval hos en investeringsfirma fanns misstanken redan där; summan blev genomsnittlig samvariation 0,01 och kapitlet om kompetensillusionen var fött.",
+    "evolution": "Under 2000-talet hårdnade beviset från alla håll: aktiva fonders mätningar visade år efter år att majoriteten av förvaltare underpresterade sitt index, och Kahneman gick 2009 tillsammans med beslutsforskaren Gary Klein den ovanliga vägen att skriva en gemensam artikel om när intuition duger — svaret blev de två villkoren regelbundenhet och snabb tydlig återmatning, vilket gör eldledare och sjuksköterskor till giltiga experter och långsiktiga prognosmakare till ogiltiga. Michael Mauboussin formulerade 2012 kompetensparadoxen: när en tävlings alla deltagare blir bättre smalnar resultatens spridning och turens andel växer.",
+    "modern": "2020-talet har skärpt paradoxen: samma data, samma verktyg och samma utbildning når alla förvaltare samtidigt, vilket pressar skicklighetsspridningen ytterligare — och sociala mediers tipsprofiler tillverkar skicklighetsberättelser i ny takt, ofta med urval som slantturneringen och utan återmatning alls. Svaret från praktiken är inte uppgivet utan struktur: regelverk (bf-04), dokumenterade och prövade hypoteser (ek-04), riskjusterad mätning (km-016) och långa serier — kombinationen är laboratoriets sätt att ta kompetensfrågan på allvar utan att tro på mirakel."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Studien som ingen ville tro på — rådgivarkorrelationerna",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Tre illusioner i ett rum — klientens, rådgivarens och kulturens",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Giltighetsmiljöer — när intuition duger och när den är dräkt",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Kompetensparadoxen — ju bättre alla blir, desto mer avgör turen",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Mätningens förställning — slantturneringen och de 250 utvalda",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till ett skicklighetsanspråk",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch satte siffran själv: i den här branschen är man bra om man har rätt sex gånger av tio — och man kommer aldrig att ha rätt nio av tio. Kursen lyfter talet till princip: 60 procents träffsäkerhet är elitnivå, vilket betyder att fyra av tio beslut blir fel även för den bästa, och att en enda träff därför aldrig kan bära en skicklighetsbedömning — serien måste vara lång och regeln prövbar. Lynch arbetsidé var samtidigt motgiftet mot uppgivenhet: hans poäng var aldrig att skicklighet är omöjlig utan att den som gör läxan — läser rapporterna, räknar själv, besöker bolagen — åtminstone vet vad han äger och varför. I kursens språk: han byggde sin återmatning själv, genom eget researcharbete, i stället för att låta känslan av flow stå för beviset. Hans ödmjuka siffra sex av tio är protokollets femte fråga i en mening.",
+  "grahamSection": "Benjamin Grahams svar på kompetensfrågan var tvådelat: den försiktiga investeraren ska inte ens försöka slå marknaden — hans defensiva portfölj var ett ärligt sätt att säga att skicklighetsanspråket inte är för alla — och den som ändå väljer den företagsamma vägen ska möta marknaden med beräkning, inte med känsla. Graham skilde också rent definitoriskt mellan investering och spekulation: en operation förtjänar namnet investering endast om den vilar på analys, säkerhetsmarginal och en förväntan som kan motiveras — vilket är precis protokollets spårbarhetsfråga. Hans berömda tanke att marknadens korta sikt är en röstning medan den långa är en våg är också en kompetenslära: om priset på kort sikt drivs av röster är det där skickligheten är svagast att bevisa, och vågen — det grundläggande — den enda domstol vars återkoppling ärligt skiljer rätt från fel.",
+  "ak1Section": "I AK1A:s metodik är kompetensfrågan inte filosofisk utan ingenjörsmässig: laboratoriet behandlar varje regel som en hypotes som ska dokumenteras, prövas mot historien med backtestens alla vakter (ek-04), mätas riskjusterat (km-016) och väga samman i fem tidshorisonter — en struktur som existerar just för att känslan av skicklighet inte får stå oemotsagd. Giltighetsmiljöns två frågor blir här designkrav: regler med snabb och tydlig återmatning kan kalibreras (ek-06:s bayesianska omviktning), medan lågvaliditetsområden kräver längre serier och bredare scenarier innan de får bära vikt. Fem horisonter spänner också frågan i tiden: på kortaste horisonten är turandelen störst och anspråken minst värda, på de längsta skiljer sig metodikens systematik från enstaka träffar. Pedagogiken är som alltid utbildning om mekanismer; varje verkligt placeringsbeslut och varje mått på egen skicklighet lämnas åt läsaren att granska med protokollets fem frågor.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Studien som ingen ville tro på — rådgivarkorrelationerna",
+      "intro": "Fältets grunddokument är en sommaruppgift som få ville ha: utvärdera om några investeringsrådgivare är bättre än andra på att plocka aktier. Svaret blev en enda siffra — och den siffran har förföljt branschen sedan dess.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Daniel Kahneman berättade historien från ett uppdrag hos en investeringsfirma: firman fick varje år in uppgifter om hur tjugofem rådgivares aktieval utvecklats, och sommaren han granskade siffrorna lät han jämföra rådgivarna parvis — samma års resultat för den ene mot samma års resultat för den andre. Antalet parvisa jämförelser bland tjugofem personer är 25 × 24 ÷ 2 = 300, och över åtta år samlades 25 × 8 = 200 årsresultat att ordna. Uppgiften var att hitta varaktighet: den som var bäst ett år, var hon bättre nästa? Samvariationen mellan rådgivarna — ett tal mellan minus ett och plus ett för hur mycket resultaten följdes åt — landade i genomsnitt på 0,01. Noll ett. Två tärningar kastade på samma bord skulle ge samma tal. Rimlighetstestet Kahneman gjorde är kursens första övning: rådgivarna fick bonus som om skillnaderna var verkliga, kunderna bytte rådgivare som om skillnaderna var verkliga, och firman firade årets vinnare som om skillnaderna var verkliga — men tidsserien bar ingen ordning alls. Det är kompetensillusionens kärna: en hel bransch organiserad kring en skillnad som korrelationen inte kan se. Här ligger gränserna mot grannkurserna: bf-16 äger psykologin som får serieupplevelser att kännas meningsfulla — detta kapitel äger beviskravet som serieupplevelsen inte kan uppfylla; och km-036 äger övermodet som känsla — övermodet är den personliga felsäkerheten, kompetensillusionen är den strukturella tron att skillnaden existerar."
+        },
+        {
+          "type": "definition",
+          "content": "Kompetensillusion: tron att prestation i en lågvaliditetsmiljö återspeglar varaktig skicklighet, när korrelationen mellan perioders resultat inte skiljer sig från slumpen. Samvariation (korrelation): tal mellan minus ett och plus ett som mäter hur mycket två serier rör sig tillsammans; 0,01 är oskiljaktigt från noll. Lågvaliditetsmiljö: en omvärld som är delvis oförutsägbar och ger långsam, brusig återkoppling — aktiemarknadens signum."
+        },
+        {
+          "type": "insight",
+          "content": "En sommarundersökning räckte för att fråga vad tjugo års bonusar inte hade frågat: om årets vinnare inte är nästa års vinnare — vad köper då kunden? Svaret som blev en kurs: en berättelse, inte en skillnad."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tre illusioner i ett rum — klientens, rådgivarens och kulturens",
+      "intro": "Illusionen i kapitel ett är inte en lögn någon berättar — den är tre uppriktiga upplevelser som förstärker varandra. Kahneman såg tre bärare i samma rum: klienten som betalar, rådgivaren som presterar, och kulturen som firar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första är kunskapsillusionen hos klienten: kunden betalar för analys och närhet till marknaden och får en tjänst som känns informationsrik — eftersom priset på en aktie faktiskt rör sig och rådet ibland går bättre än index finns det alltid något att visa. Men i en lågvaliditetsmiljö är den upplevda kunskapen inte kopplad till resultatets varaktighet: kapitel ett visade 0,01. Den andra är kompetensillusionen hos rådgivaren själv — och den är det känsligaste lagret, ty rådgivaren ljuger inte: minnet bekräftar. Minnet av de bra valen är skarpt, minnet av de dåliga bleknar (bf-16:s seriepsykologi), och den egna upplevelsen av att arbeta hårt och träffa rätt bevisar för den inre juryn att skickligheten finns. Den tredje bäraren är kulturens: firman utser månadens vinnare, tidningar intervjuar årets förvaltare, och branschens belöningssystem institutionaliserar bruset — ur 200 årsresultat kommer alltid några i topp, och toppen utses till stjärnor vars stjärnstatus sedan förklaras i efterhand med kvaliteter som förlorarna också tror sig ha. Social smitta gör resten: när alla i rummet behandlar skillnaden som verklig blir den verklig som socialt faktum — att ifrågasätta den blir oartigt. Här gränsar kapitlet mot bf-10 (dunning-kruger äger de misskunnigas självöverskattning — här är frågan den omvända: även den faktiskt kunnige kan bära en illusion, eftersom miljön inte svarar på kunnandet) och mot km-036 (övermodet är känslan, de tre illusionerna är strukturen som känslan bor i). Läxan är inte misstro mot personer utan mot system som belönar årliga toppar utan att testa varaktigheten."
+        },
+        {
+          "type": "tabell",
+          "content": "Tre bärare, en illusion: KUNSKAPSILLUSIONEN (klienten) — betalar för närhet och analys; upplevd kunskap utan varaktighet i resultaten · KOMPETENSILLUSIONEN (rådgivaren) — minnet bekräftar: skarpa minnen av träffar, bleka av missar (bf-16) · KULTURENS ILLUSION (firman) — månadvinnare och stjärnstatus institutionaliserar bruset ur 200 årsresultat · SOCIAL SMITTA — när alla behandlar skillnaden som verklig blir den socialt verklig · GRÄNSER — km-036 äger känslan, bf-10 de misskunnigas vågg, detta kapitel äger strukturen och bärarna"
+        },
+        {
+          "type": "insight",
+          "content": "Illusionen överlever inte för att någon ljuger — den överlever för att alla tre i rummet får den bekräftad: klienten ser service, rådgivaren ser minnen, kulturen ser vinnare. Bevisfrågan faller mellan stolarna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Giltighetsmiljöer — när intuition duger och när den är dräkt",
+      "intro": "Om intuition ibland är äkta och ibland illusion — var går gränsen? Kahneman och beslutsforskaren Gary Klein var oense i fjorton år och skrev till slut svaret tillsammans: två villkor, och aktiemarknaden klarar inte det andra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Brandmannen som känner att golvet är på väg att rasa och tar ut sina män — Kleins favoritexempel — är äkta expertis: branden uppför sig regelbundet nog att erfarenhet samlas, och den omedelbara återkopplingen (golvet rasade eller gjorde det inte) lär kroppen snabbt vad som var rätt. Anestesisjuksköterskan hör på ljuden när patienten är på väg att vakna — samma struktur: regelbundenhet och snabb, tydlig dom. Schackmästaren ser draget direkt efter tusentals partier med omedelbar poäng. Kahneman och Klein enades 2009 om de två frågor som skiljer dessa från aktieväljaren: är omvärlden tillräckligt regelbunden för att vara förutsägbar, och får beslutaren en återmatning som skiljer rätt från fel inom en tid minnet hinner? Aktiemarknaden svarar svagt på båda: delar av den är regelbundna (balansräkningar beter sig lika, multipelmatematiken är aritmetik — där äger registrets kurser äkta kunskap som varar), men priset på tre månaders sikt är en röstning (Grahams ord) och domslutet över ett aktieval kommer först efter år — och är dessutom blandat med marknadens, räntans och turens. En återmatning som kommer sent, sällan och i brus kan inte lära intuitionen något den kan lita på. Därför är testet inte ett nej överallt: intuitionen får inte avfärdas — den får bara anlitas där de två villkoren är uppfyllda. Baslinjeövningen som kvantifierar: bland 1 000 slumpmässigt placerade förvaltare hamnar 250 i övre kvartilen år ett; om turen råder hamnar 250 × 0,25 = 62,5 — alltså omkring 62 — av dem i övre kvartilen nästa år: exakt en fjärdedel, samma andel som för vem som helst. Branschens mätningar av aktiva fonder ligger år efter år nära det talet; ingen miljö har sagt sitt nej tydligare."
+        },
+        {
+          "type": "tabell",
+          "content": "De två villkoren (Kahneman–Klein 2009): VILLKOR ETT — omvärlden tillräckligt regelbunden för förutsägbarhet · VILLKOR TVÅ — snabb, tydlig återmatning som skiljer rätt från fel · BRANDMANNEN — ja och ja: äkta expertis · ANESTESISJUKSKÖTERSKEAN — ja och ja · SCHACKMÄSTAREN — ja och ja (omedelbar poäng) · AKTIEVÄLJAREN — delvis och nej: domslutet kommer sent, sällan och blandat med marknaden · KVARTILTESTET — 1 000 slumpförvaltare: 250 i toppkvartilen år ett, varav omkring 62 (en fjärdedel) nästa år = exakt baslinjen"
+        },
+        {
+          "type": "insight",
+          "content": "Frågan är inte hur erfaren någon är utan vad erfarenheten fick besvara: där omvärlden svarar regelbundet och snabbt växer äkta expertis — där den svarar efter år, i brus, blir erfarenheten en berättelse om sig själv."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Kompetensparadoxen — ju bättre alla blir, desto mer avgör turen",
+      "intro": "Kapitel tre lämnade en lucka: alla blir ju bättre utbildade, alla har samma data — borde inte skillnaden växa? Michael Mauboussins paradox svarar: nej, den krymper, och det är just därför turen växer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Modellen är en rad: resultat = skicklighet + tur. Skicklighetens andel av resultatens spridning avgörs inte av hur bra den bäste är utan av hur stor skillnaden mellan deltagarna är — spridningen. Tänk förvaltarkåren som ett lopp: för hundra år sedan skilde data, utbildning och verktyg eliten från resten; i dag har alla samma kurser, samma terminaler och samma årsredovisningar på samma kväll. Sätt talen på modellen: om tur-spridningen är 20 procentenheter och skicklighetsspridningen 10 procentenheter blir korrelationen mellan ett års resultat och något systematiskt 10 i kvadrat delat med (10 i kvadrat plus 20 i kvadrat) = 100/500 = 0,20 — svagt, men skickligheten syns. Smalnar skicklighetsspridningen till 2 procentenheter — alla utbildade, alla uppkopplade — faller samma kvot till 4/404 = 0,0099, alltså 0,01. Läs siffran igen: kapitel ett. Rådgivarkorrelationen är inte ett mysterium utan en aritmetisk nödvändighet — när kåren blir kompetensare pressas skillnaderna mot noll och kvar på planen står turen. Det är kompetensparadoxen: att bli bättre är gott för var och en och samtidigt tar det ifrån kåren det som skilde den från mängden. Mauboussins andra exempel är maratonlöparna: världens tider har sjunkit i ett sekel, men toppens inbördes spridning har krympt ännu snabbare — bland de ytterst få som alla springer på gränsen av det mänskliga avgör skorna, vädret och dagen: turen. Viktigast för kursen: paradoxen innebär inte att skicklighet är omöjlig — den betyder att skicklighetens bevis kräver längre serier ju kompetensare kåren är, eftersom signalen (skicklighetsspridningen) är låg och bruset (tur-spridningen) oförändrat. Där finns gränsen mot ek-04: backtestets hantverk äger prövningens tekniska fällor — detta kapitel äger varför kravet på prövning skärps med tiden, inte mjukas."
+        },
+        {
+          "type": "tabell",
+          "content": "Paradoxens räkneverk (resultat = skicklighet + tur): SPRIDNING TUR — 20 procentenheter (oförändrad) · SPRIDNING SKICKLIGHET 10 — korrelation 10²/(10² + 20²) = 100/500 = 0,20 · SPRIDNING SKICKLIGHET 2 — korrelation 2²/(2² + 20²) = 4/404 = 0,0099 ≈ 0,01 · LÄSNINGEN — rådgivarkorrelationen i kapitel ett är paradoxens aritmetik, uppmätt i verkligheten · MARATON-SPEGELN — alla blir snabbare, toppens inbördes spridning krymper, turens andel växer · SLUTSATS — ju kompetensare kåren, desto längre serier kräver skicklighetsbeviset"
+        },
+        {
+          "type": "insight",
+          "content": "Paradoxens vändning är kursens vassaste: kompetensutvecklingen i kåren är ingen ursäkt för att sluta pröva — den är själva skälet att prövningarna måste bli längre, mer riskjusterade och mer regelbundna."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Mätningens förställning — slantturneringen och de 250 utvalda",
+      "intro": "Sista mekanismen som tillverkar skicklighet ur ingenting är inte psykologisk utan statistisk: urval. Fyra myntkast räcker för att ur fyra tusen göra tvåhundrafemtio segerberättelser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tänk en turnering där 4 000 förvaltare singlar slant om engångsresultat — ren tur, inget annat. Omgång ett: hälften vinner, 2 000 kvar. Omgång två: 1 000. Omgång tre: 500. Omgång fyra: 250 deltagare med fyra raka träffar. Fråga nu skicklighetsprotokollet: hur ser de ut? Jo — de ser utmärkta ut. De har vunnit fyra gånger i rad, de tror själva på sin metod (kapitel två: minnet bekräftar), de har en berättelse om varför det gick (bf-16 äger mekanismen), och om marknadsföringen plockar just dem framstår de som beviset på att skicklighet finns. Basisfrekvensen säger något annat: 250 av 4 000 = 6,25 procent — och en slantturnering med fyra omgångar producerar exakt den andelen fyra-raka-medaljer varje gång den körs. Överfört till marknadslivet: fonder som stängs försvinner ur statistiken, rådgivare som slutar recenseras inte, och de som återstår efter tio års urval bär en glans som delvis är just slantturneringens — ek-04 äger överlevnadsbiasets roll i backtester, detta kapitel äger dess roll i skicklighetsanspråk. Motgiftet är detsamma: fråga efter alla startande, inte bara vinnarna — basisfrekvensen först. Den andra förebyggelsen är mätetal som inte låtsas mer än de bär: km-016 äger de riskjusterade måttens beräkning, med gränsen hit: ett högt mått på kort serie är slantturneringens medalj tills serien är lång nog för att skicklighetssignalen (kapitel fyrs spridning) ska kunna överrösta bruset. Därav den praktiska tumregeln ur metodböckerna: beviset behöver ett antal år och ett antal beslut — en siffra att räkna fram, inte en känsla att bära."
+        },
+        {
+          "type": "tabell",
+          "content": "Slantturneringen (4 000 startande, ren tur): OMGÅNG 1 — 2 000 kvar · OMGÅNG 2 — 1 000 · OMGÅNG 3 — 500 · OMGÅNG 4 — 250 med fyra raka · BASISFREKVENS — 250/4 000 = 6,25 procent, producerad av ren slump varje turnering · MARKNADSLIVETS SPEGEL — stängda fonder och tysta rådgivare försvinner ur urvalet (ek-04:s överlevnadsbias) · MOTGIFT ETT — basisfrekvensen först: fråga efter alla startande · MOTGIFT TVÅ — riskjusterade mått (km-016) på långa serier, inte medaljer på korta"
+        },
+        {
+          "type": "insight",
+          "content": "Skicklighetsberättelser växer inte bara i känslan — de växer i urvalet: den som bara intervjuar vinnarna kommer alltid att hitta ett mönster, ty slantturneringen delar ut medaljer i samma takt varje gång."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till ett skicklighetsanspråk",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor som varje skicklighetsanspråk, eget eller andras, kan ställas mot innan det tas på allvar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — basisfrekvensen: hur många deltog från starten, inte bara vilka som står kvar? (Kapitel fem: utan de 4 000 är de 250 en mirakelberättelse.) Fråga två — urvalet: överlever förlorarna i redovisningen, eller stängs de tyst? (Slantturneringens mekanism; ek-04:s vakt.) Fråga tre — återmatningen: fick besluten en dom som skilde rätt från fel i tid, eller kom domen sent, sällan och blandad med marknaden? (Kapitel tre: giltighetsmiljöns andra villkor.) Fråga fyra — spårbarheten: kan prestationen knytas till en regel som går att pröva om, med dokumenterade beslut före utfallet — eller lever den bara i minnet? (bf-04 äger regelverket, ek-04 prövningen; protokollet frågar bara om ett av dem finns.) Fråga fem — horisonten: räcker serien för att skicklighetssignalen ska kunna överrösta turbruset, givet kårens kompetens? (Kapitel fyra: ju kompetensare alla, desto längre krävs.) Lynch-talet sammanfattar femte frågan: sex av tio är elit — vilket betyder att svaret på ett kort lyckat förlopp alltid är detsamma: vänta, mät, och låt protokollet få tid. Plattformens markering följer familjens sed: kursen beskriver mekanismer och mätningar, och lämnar varje verkligt placeringsbeslut — och varje omdöme om egen eller annans skicklighet — där det hör hemma, hos läsaren och dennas egna gränser. Utbildningens syfte är inte att avskräcka från att försöka utan att ge redskapet att veta vad ett försök kan visa — och vad det inte kan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens motor. Fall ett: en firmas tjugofem rådgivare jämförs parvis — hur många parvisa jämförelser ger det (svar: 25 × 24 ÷ 2 = 300), och vad borde genomsnittssamvariationen vara om skillnaderna vore äkta och varaktiga? Fall två: en marknad där tur-spridningen är 20 procentenheter och skicklighetsspridningen 5 procentenheter — vad blir korrelationen (svar: 5²/(5² + 20²) = 25/425 ≈ 0,059), och vad händer med den om utbildningen pressar spridningen till hälften? Fall tre: en tipsprofilsturnering med 8 000 startande och fem renodlade slumpomgångar — hur många bär fem raka (svar: 8 000 ÷ 2⁵ = 250), och hur många av dem kommer att berätta om sin metod?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets femte fråga är kursens hela tålamod i en rad: skicklighet är inte det som syns på ett år utan det som överlever en utvärdering — basisfrekvens, urval, återkoppling, spårbarhet, horisont. Fem ja, och samtalet kan börja."
+        }
+      ]
+    }
+  ]
+}

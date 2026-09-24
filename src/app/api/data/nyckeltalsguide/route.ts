@@ -10,8 +10,8 @@ export const dynamic = "force-dynamic";
  * GET /api/data/nyckeltalsguide — maskinläsbar median-nyckeltalstabell
  * (A2-DATASET-KONTRAKT §3.1; våg 87 bygg).
  *
- * Server-side: läser data/portfolj-system/bolagsunivers.json (100 bolag,
- * 10 branscher × 10) och aggregerar MEDIANER PER BRANSCH — aldrig
+ * Server-side: läser data/portfolj-system/bolagsunivers.json (forsknings-
+ * universumet, tio branscher) och aggregerar MEDIANER PER BRANSCH — aldrig
  * per-bolag-rader, aldrig AKM-poäng (gränsdragningen §1: aggregat av publikt
  * källmaterial = publikt; allt som bär AKM-poäng = prenumerationsvärde).
  *

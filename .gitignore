@@ -4,6 +4,8 @@ node_modules
 
 # next.js
 /.next/
+# Spår 8 (o97): prod-synkens .next-läkebackup — runtime-skydd, aldrig leverans
+/.next-laeke/
 /out/
 
 # production
@@ -91,3 +93,7 @@ data/cache/*
 .tmp-*/
 # Våg 150: fabrikens barn skriver engångs-KVD-skript i .tmp/ (aldrig leverans)
 .tmp/
+
+# Rond 136: rapportintagets karantän-PDF:er följer ALDRIG repot (styrelsebeslut
+# 2026-09-20: lagring utanför publik webbrot; proveniens+leveranser DÄREMOT trackas)
+data/rapportintag/karantan/

@@ -9,3 +9,8 @@
 # konfliktmarkörer. Förutsättning: sektioner appendas alltid hela, i
 # filslut — rader redan incheckade skrivs ALDRIG om (gäller sedan våg 100).
 worklog.md merge=union
+# feljakt-bedomningar.jsonl: samma append-only-ledger — fabriken (o125-era)
+# och studion (rond 122) appenderar samtidiga bedömningar i filslut; union
+# förenar båda sidors rader utan konfliktmarkörer (bevis: UU-kollisionen
+# 2026-09-20 17:5x som löstes manuellt med exakt denna metod).
+data/vakten/feljakt-bedomningar.jsonl merge=union

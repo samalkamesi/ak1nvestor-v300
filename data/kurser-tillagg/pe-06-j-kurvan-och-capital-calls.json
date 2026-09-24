@@ -1,0 +1,152 @@
+{
+  "slug": "pe-06-j-kurvan-och-capital-calls",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "J-kurvan och capital calls — pengarnas tid i private equity",
+  "summary": "Private equity-familjens sjätte steg: kassaflödets kronologi. En fondteckning är inte ett köp utan ett löfte — commitment tecknas dag noll, capital calls drar kapitalet när förvärv kräver det, och distributionerna återvänder först år senare. Det genomgående exemplet är fonden Nordkust Kapital I med commitment 100: indrag 30, 25, 20, 15 och 10 under fem år, utbetalningar 10, 15, 25, 30, 25, 15 och 10 under år fyra till tio — netto som sjunker till botten minus 80 i år fyra, passerar noll först under år åtta och slutar plus 30. Det är j-kurvan: tidiga avgifter och nedskrivningar före det sena värdeskapandet, och kursen går igenom de fyra krafterna som pressar ned tidigt. Mätningen skiljer tre svar på samma flöden: multipel 1,30 (130 ut mot 100 in), TVPI 1,50 med kvarvarande värde 20, och IRR 6,04 — pengarnas tid gör att måtten skiljer sig, och pe-02 äger den mekaniken som den här kursen tillämpar på kalendern. Fem fällor: unfunded som glömd skuggpost, avgiften på commitment (år ett kostar avgiften 2 på arbetande 30 — effektivt 6,67 procent), förlängningsåren, väntans pris på andrahandsmarknaden och j-kurvan som bevis. Utbildning i att läsa en tidslinje — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Läsa en fondteckning som löfte, inte köp: commitment är garanterat kapital, capital call är indraget och unfunded är det som återstår att betala — tre poster som alla tre är verkliga · Räkna nettopositionen år för år: indrag, utbetalningar och den kumulativa kurvan som visar hur djupt och hur länge kapitalet är uppbundet · Förklara j-kurvans fyra krafter: avgifter från dag noll, transaktionskostnader vid förvärv, tidiga värderingsnedskrivningar och värdeskapandets tröghet · Skilja tre mått på samma flöden: multipel och TVPI mäter totalen, IRR mäter tiden — och veta varför de ger olika svar på identiska kassaflöden · Räkna avgiftens effektiva sats: avgift på commitment delat med arbetande kapital ger år ett en multipel högre kostnad än fakturan antyder · Tillämpa LP-protokollet: likviditetsbehov, unfunded-beredskap, förlängningsrisk och väntans pris — private equity som tidskontrakt, inte bara avkastningskontrakt",
+  "why": "Private equity-familjen har fem steg — fondens form (pe-01), utfasningarnas IRR-mekanik (pe-02), förvärvsmaskinen (pe-03), den privata ägarsidan (pe-04) och andrahandsmarknaden (pe-05) — men alla fem läser fonden i dess delar. Ingen av dem äger tidslinjen som helhet: att pengarna lämnar i omgångar flera år före värdeskapandet, att den lägsta nettopositionen kommer mitt i, och att den som tecknar samtidigt köper en okänd framtida betalningskalender. Sond mot registret: capital call ger noll träffar, unfunded noll, distributionskurva noll; j-kurvan nämns förbigående av familjens egna kurser och av mk-03 — som äger valutans j-kurva, ett helt annat ämne som här differentieras med namn — men ingen kurs äger LP:ns tidslinje. Commitment nämns nio gånger förbigående utan ägare. pe-02 räknar avkastningen på flödena; den här kursen äger flödenas kalender. pe-05 äger vägen ut för den som inte kan vänta; den här kursen äger väntans ekonomi. Vit fläck: private equity är populärt förklarat som en tillgångsklass men sällan som ett tidskontrakt — och det är kalendern, inte avkastningen, som avgör om en teckning överhuvudtaget passar den som tecknar.",
+  "history": {
+    "origin": "Strukturen föddes ur praktiken: när amerikanska riskkapitalbolag på sjuttiotalet behövde flera år för att bygga portföljer av tidiga bolag uppstod problemet att pengar som betalas in dag noll ligger sysslolösa medan möjligheterna kommer senare. Lösningen blev själva uppfinningen: att teckna ett löfte om kapital i stället för kapitalet själv, och betala in det genom indrag efter hand — commitment- och capital call-konstruktionen. Den gjorde förvaltarnas jakt oberoende av inbetalningstakt och delade samtidigt en ny börda till ägarna: att alltid ha torrt krut för ett indrag som kan komma när som helst inom avtalad tid.",
+    "evolution": "När institutionella ägare under åttiotalet och nittiotalet gjorde onoterat till en klass i sina portföljer fick kalendern sitt eget bokföringsproblem: en fond som år från år visar negativ nettovärdesutveckling samtidigt som avgifterna löper ser fel ut i en årsrapport, trots att formen är precis som den ska. J-kurvan blev branschens försvarsverk och förklaringsmodell — kurvan som sjunker för att sedan stiga, där botten är ett stadium, inte ett utfall. Termen myntades i den amerikanska branschpressen och spreds som gemensamt språk mellan förvaltare och ägare: att jämföra en fond i år tre med en i år sju är att jämföra två olika punkter på samma kurva.",
+    "modern": "I dag lever konstruktionen i ett mognare ekosystem: andrahandsmarknaden (pe-05 bär dess mekanik) gör det möjligt att sälja en position mitt i kurvan — till rabatt som speglar att köparen övertar väntan — och förlängningsåren har blivit vanligare allteftersom utfasningar tar längre tid än fondernas officiella liv. Mätningen har professionaliserats: DPI mäter det som faktiskt återvänt till ägaren, TVPI lägger det kvarvarande värdet ovanpå, och IRR väger in när pengarna var borta (pe-02 bär räkneverket). Samtidigt är grundinsikten oförändrad och är denna kursens kärna: en private equity-teckning är ett tidskontrakt, och den som inte kan bära kalendern kan inte bära tillgångsklassen — oavsett vad avkastningen blir."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — teckningen som löfte", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — tidslinjen år för år", "minutes": 4 },
+    { "num": 3, "title": "J-kurvan — fyra krafter som pressar tidigt", "minutes": 4 },
+    { "num": 4, "title": "Mätning — tre mått, tre svar på samma flöden", "minutes": 4 },
+    { "num": 5, "title": "Fällor — fem sätt tidslinjen missläses", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — LP-protokollets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch uppmanade aktiesparare att förstå vad de äger innan de äger det — och aldrig har det rådet varit mer bokstavligt än här: den som tecknar en fond äger inte en andel av något, utan en framtida betalningskalender med okända datum. Lynchs krav att kunna förklara sin placering i en mening återfinns i sin renaste form hos den som tecknar private equity utan att kunna förklara när pengarna lämnar och när de kommer tillbaka. Hans tålamod med bolag som behöver tid översätts här till ett villkor snarare än en dygd: tålamod är en resurs — den som har den får vänta, den som inte har den får sälja väntan till rabatt.",
+  "grahamSection": "Benjamin Graham skilde mellan investering och spekulation genom skyddet i analysen — och en private equity-teckning testar den skiljelinjen på ett sätt han själv aldrig behövde hantera: likviditeten. Grahams portföljer kunde alltid säljas, om än till priser han ogillade; en tecknad fond kan inte säljas på hemmaplan alls, bara på en andrahandsmarknad som öppnar vid nåder (pe-05 bär mekaniken). Hans princip att risken ligger i priset snarare än i tillgången får här en tidsdimension: priset på ett tidskontrakt är okänt tills kalendern är slut, och säkerhetsmarginalen heter därför likviditetsmarginal — förmågan att betala indragen utan att röra positionen.",
+  "ak1Section": "I AK1A:s metodik kompletterar kursen private equity-familjen på dess sjätte tomma steg: formen (pe-01), avkastningsräkningen (pe-02), förvärvssidan (pe-03), ägarsidan (pe-04) och utvägen (pe-05) — här landar kalendern som binder ihop dem. Verktygen är desamma som i hela metodiken: tidslinjen är en serie kassaflöden som kan bokföras, mätas och stressas, och nettopositionens botten är portföljens likviditetsbudget i miniatyr — samma disciplin som riskfamiljens budget (rp-01 bär måttens grund) men med ett väsentligt undantag: här är kalendern måttet, inte volatiliteten. Kopplingen till ks-04 (emissionens mekanik) är rak: ett capital call är en emission med förskriven lag — ägaren har redan lovat, och vägran har avtalskonsekvenser. Kursen håller gränsen mot grannarna: ib-05 äger kostnadstrappans lager, den här kursen äger deras tidsläge — avgifterna börjar år ett, värdeskapandet år fem.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — teckningen som löfte",
+      "intro": "En fondteckning betalar ingenting dag noll. Den lovar hundra — och lovet är själva finansiella uppfinningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det genomgående exemplet är fonden Nordkust Kapital I med tio års liv och en teckning på 100 enheter, med påhittade tal genom hela kursen. Dag noll skrivs avtalet: ägaren — den institutionella investerare som i branschspråket kallas LP — lovar 100, och betalar noll. Under fondens investeringsperiod, här fem år, drar förvaltaren — GP — kapital genom capital calls allteftersom förvärv kräver det: 30 första året, 25 det andra, 20 det tredje, 15 det fjärde och 10 det femte — tills lovet är infriat till 100. Utbetalningarna — distributionerna — börjar först när förvärv börjar säljas: 10 i år fyra, sedan 15, 25, 30, 25, 15 och 10 genom år tio, totalt 130. Mellan teckning och sista distributionen ligger ett decennium där ägarens pengar dels arbetar, dels väntar på att arbeta — och det är mellanrummet denna kurs äger."
+        },
+        {
+          "type": "definition",
+          "content": "TIDSLINJENS TRE POSTER: (1) COMMITMENT — det garanterade beloppet, tecknat dag noll, juridiskt bindande · (2) CAPITAL CALL — indraget, den del av commitment som betalas in när förvärv kräver det; kan komma när som helst inom avtalad period, ofta med kort frist · (3) UNFUNDED — det ännu ej indragna lovet, commitment minus indraget; en skuggpost i ägarens egen likviditetsplanering, lika verklig som en skuld men osynlig i portföljvärdet."
+        },
+        {
+          "type": "insight",
+          "content": "Uppfinningen är dubbel. För förvaltaren löser den inbetalningstakten: jakt på bolag kräver torrt krut dag ett, inte inbetalningar strödda över år. För ägaren skapar den en förpliktelse i tredje led: unfunded är kapital som varken finns i banken eller i portföljen men som kan komma att krävas — och i praktiken ofta vid tillfällen då allt annat också kostar, eftersom nedgångstider är när dåliga bolag säljs och bra förvärv görs. Att teckna private equity är därför alltid två beslut i ett: ett om avkastning och ett om likviditet — och det andra beslutet fattas oftast utan att fattas."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — tidslinjen år för år",
+      "intro": "Nettopositionen år för år är fondens verkliga biografi: minus i fem år, botten mitt i, noll först under år åtta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räkna Nordkust år för år. Indrag: år ett minus 30, år två minus 25, år tre minus 20, år fyra minus 15, år fem minus 10 — totalt 100. Utbetalningar: år fyra plus 10, år fem plus 15, år sex plus 25, år sju plus 30, år åtta plus 25, år nio plus 15, år tio plus 10 — totalt 130. Netto per år blir minus 30, minus 25, minus 20, minus 5, plus 5, plus 25, plus 30, plus 25, plus 15, plus 10. Den kumulativa positionen: minus 30, minus 55, minus 75, minus 80 — botten, i år fyra — sedan minus 75, minus 50, minus 20, plus 5 — nolllinjen passeras under år åtta — och slut plus 20 och plus 30. Två tal sammanfattar biografin: botten minus 80, det vill säga att som mest är 80 procent av teckningen uppbunden i netto, och brytpunkten år åtta, det vill säga att mer än halva fondlivet passerar innan ägaren sammanlagt fått tillbaka mer än hon lagt in."
+        },
+        {
+          "type": "tabell",
+          "content": "NORDKUST KAPITAL I — NETTOTIDSLINJE (PÅHITTADE TAL): År 1: drag 30, ut 0, netto minus 30, kumulativt minus 30 · År 2: drag 25, ut 0, netto minus 25, kumulativt minus 55 · År 3: drag 20, ut 0, netto minus 20, kumulativt minus 75 · År 4: drag 15, ut 10, netto minus 5, kumulativt minus 80 — BOTTEN · År 5: drag 10, ut 15, netto plus 5, kumulativt minus 75 · År 6: drag 0, ut 25, netto plus 25, kumulativt minus 50 · År 7: ut 30, kumulativt minus 20 · År 8: ut 25, kumulativt plus 5 — NOLLLINJEN · År 9: ut 15, kumulativt plus 20 · År 10: ut 10, kumulativt plus 30 · SUMMOR: drag 100, ut 130, slutplus 30."
+        },
+        {
+          "type": "definition",
+          "content": "NETTOPOSITIONEN: ägarens sammanlagda inställda kapital vid varje tidpunkt — indraget minus utbetalat, kumulativt. Tre läsningar ur ett värde: botten (största uppbundna belopp, här minus 80) mäter likviditetsåtagandets storlek · längden (antal år i netto, här sju) mäter åtagandets tid · brytpunkten (första år med positiv kumulativ, här år åtta) mäter väntan till självbärighet. En tidslinje utan dessa tre tal är inte läst — den är bara ritad."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "J-kurvan — fyra krafter som pressar tidigt",
+      "intro": "Kurvan som sjunker före den stiger är inte misslyckande — den är strukturens kronologi. Men den kan också vara misslyckande, och det är skillnaden kursen lär ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första kraften är avgifterna: de börjar år ett, på hela commitment eller arbetande kapital beroende på avtal, medan utbetalningarna inte börjar förrän världen hunnit arbeta — avgiften har en försäsong som avkastningen saknar. Den andra är transaktionskostnaderna: varje förvärv bär sina egna kostnader, och en fond som köper tidigt får notan innan resultatet. Den tredje är de tidiga värderingsnedskrivningarna: noggrant granskade bedömningar skriver svaga förvärv ned tidigt, och de första årens resultaträkning bär inköpens fel i ren form. Den fjärde är värdeskapandets tröghet självt: att bygga, utveckla och sälja bolag tar år — kurvans uppgång är strukturellt sen. Tillsammans ger de fyra kurvans form: nedåt i början, botten någonstans mitt i investeringsfasen, uppgång när utfasningarna börjar. Notis om namnet: j-kurvan används också om valutans reaktion på kurser och handelsbalanser (mk-03 äger den vägen) och i andra vetenskaper om avvikelser som först förvärras innan de läker — här används termen strikt om fondens nettoposition, och förväxlingen är ofarlig bara om läsaren vet vilken j som är i rörelse."
+        },
+        {
+          "type": "definition",
+          "content": "J-KURVAN (PRIVATE EQUITY): den kumulativa nettopositionens typform — nedåtgående under investeringsfasen (avgifter, transaktioner, tidiga nedskrivningar, frånvarande utfasningar), botten mitt i, uppgående under utfasningsfasen. Diagnosregeln: kurvans form är strukturens och säger inget om slutet; kurvans djup och längd mot fondens egna jämåldrar (vintage) säger allt om hälsan — en botten djupare och längre än klasskamraternas är signal, inte statistik."
+        },
+        {
+          "type": "insight",
+          "content": "Här bor kursens viktigaste skiljelinje: j-kurvan är ofta en sann förklaring men ibland en försvarsanalys. För en fond mitt i livet är kurvan ett stadium; för en fond vars botten bara djupnar är kurvan en berättelse fonden berättar om sig själv. Boten är jämförelsen i tiden: samma vintage, samma fas, samma strategi. Ordnar man kurvorna klass för klass finns svaret — den strukturella bottnen är bred, alla fonderna bär den, medan fondens eget bottentillägg är smalt och enskilt. Världen behöver inte orsaka en djup botten; en fond räcker."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — tre mått, tre svar på samma flöden",
+      "intro": "Samma tio års kassaflöden ger multipel 1,30, TVPI 1,50 och IRR 6,04 — inget av måtten ljuger, men de svarar på tre olika frågor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Multipeln först: 130 ut mot 100 in ger 1,30 — en krona tecknad blev en krona och trettio öre, oavsett när. TVPI: den totala värdemätaren som lägger det kvarvarande, ännu ej utbetalade fondvärdet ovanpå distributionerna; antar vi att Nordkust i år tio dessutom bär ett kvarvarande värde av 20 blir TVPI 150 delat med 100 lika med 1,50, där 1,30 är realiserat (DPI) och 0,20 orealiserat (RVPI). IRR till sist: det värde som diskonterar hela flödessekvensen till noll — för Nordkusts tidslinje, med botten minus 80 och hemflyttningen koncentrerad till år sex till tio, blir det 6,04 procent per år. De tre svarar på tre frågor: multipeln på hur mycket, TVPI på hur mycket med det som återstår, IRR på hur mycket per år av väntan. Pe-02 äger IRR:s kamera och dess tvång — här tillämpas den bara på kalendern: samma 130 ut hade gett högre IRR om det kommit tidigare och lägre om det kommit senare, med oförändrad multipel. Tiden är därmed inte en kommentar till avkastningen — den är en del av den."
+        },
+        {
+          "type": "tabell",
+          "content": "TRE MÅTT PÅ NORDKUSTS FLÖDEN (PÅHITTADE TAL): Multipel — 130 dividerat med 100 lika med 1,30 — frågan: hur mycket totalt? · DPI — 130 dividerat med 100 lika med 1,30 — frågan: hur mycket har kommit tillbaka i handen? · RVPI — 20 dividerat med 100 lika med 0,20 — frågan: hur mycket återstår i fonden? · TVPI — 150 dividerat med 100 lika med 1,50 — frågan: hur mycket totalt med det som är kvar? · IRR — 6,04 procent per år — frågan: hur mycket per år av den tid kapitalet var borta? · LÄSNING: måtten kan inte ersätta varandra; en fond kan ha hög TVPI och låg IRR (lång väntan) eller tvärtom (tidiga utbetalningar av en svag total)."
+        },
+        {
+          "type": "insight",
+          "content": "För ägaren har måtten en ordning som beror på var på kurvan frågan ställs. Före brytpunkten är DPI det enda ärliga talet — allt annat är fondens egen värdering av sig själv (RVPI) dividerat med insatsen. Efter brytpunkten blir IRR meningsfullt, eftersom det då funnits en verklig tid att mäta mot. Vid fondens slut är multipeln domen. Att läsa RVPI som om det vore DPI är tidslinjens vanligaste misstag: kvarvarande värde är en bedömning, utbetalt värde är ett faktum — och kursens hållning är metodikens egen: en bedömning är kunskap när den är märkt som bedömning."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fem sätt tidslinjen missläses",
+      "intro": "Kalendern har sina egna fällor, skilda från värderingsfällorna: de handlar om vad teckningen kräver av tecknaren, inte av fonden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: unfunded-glömskan — teckningen som bokförs till sitt indragna värde medan lovet om resten står kvar; en portfölj med 40 i unfunded är inte 100 utan 140 i commitment, och indragen kan komma när allt annat också kostar. Fälla två: avgiftens bas — en avgift på commitment ser liten ut på pappret men år ett, när bara 30 av 100 arbetar, kostar avgiften 2 per 30 arbetande: effektivt 6,67 procent, mer än tre gånger fakturans sats; först när allt kapital arbetar når kostnaden sin nominella form (ib-05 bär kostnadstrappans lager i listade fordon — här ägs tidsläget). Fälla tre: förlängningsåren — fondens officiella liv är tio år men avtalen tillåter förlängning, och varje förlängningsår skjuter distributionerna åt höger medan avgifterna fortsätter; en plan byggd på år tio kan hamna på år fjorton. Fälla fyra: väntans pris som läses som rabatt — andrahandsmarknadens priser (pe-05) på mitt-i-livet-positioner visar vad väntan kostar; den som säger att den marknaden aldrig behövs har bara rätt om det verkligen aldrig behövs. Fälla fem: j-kurvan som bevis — alla fonder har en kurva, därför bevisar kurvans existens ingenting om fonden; djupet mot jämåldrar är testet, formen är det inte."
+        },
+        {
+          "type": "definition",
+          "content": "EFFEKTIV AVGIFT (KURSENS EGET MÅTT): avgiften i kronor dividerat med det kapital som faktiskt arbetar detta år. År ett i Nordkust: avgift 2 på commitment, arbetande kapital 30 — effektiv sats 6,67 procent. Måttet flyttar frågan från fakturan (vad satsen heter) till ekonomin (vad året kostade) — samma princip som kostnadstrappans lagerläsning, tillämpad på kalendern."
+        },
+        {
+          "type": "insight",
+          "content": "Fem fällor, fem kurers riktning: unfunded bokförs (ks-04 bär indragets mekanik på emissionssidan), avgiftens bas räknas effektivt, förlängningsåren planeras in, väntans pris bevakas — och kurvan läses mot jämåldrar, aldrig mot sin egen form. Den gemensamma boten är protokollet i nästa kapitel: private equity sköts i kalendern, inte i känslan, och kalendern är den enda av fondens sidor som ägaren helt själv äger."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — LP-protokollets fem frågor",
+      "intro": "Fem frågor före varje teckning gör tidslinjen till en planerad post — och en utmaning som stänger kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vad kräver kalendern av likviditeten — botten på nettopositionen, antalet nettoår och brytpunkten i fondens egen prognos, översatta till ägarens kassaflödesplan? Fråga två: hur stor är unfunded när som helst, och finns torrt kapital att möta ett indrag i ett år då allt annat också kostar? Fråga tre: vad säger vintage-jämförelsen — hur djup och hur lång är kurvan mot fondens jämåldrar, och är avvikelserna förklarade? Fråga fyra: vilket mått svarar på frågan just nu — DPI före brytpunkten, IRR efter, multipel vid slutet, RVPI alltid märkt som bedömning (pe-02 bär mätverktygen)? Fråga fem: vad kostar utvägen — om väntan inte bärs, vilket pris sätter andrahandsmarknaden på positionen, och är det priset känt innan det behövs? Den som besvarar de fem har konverterat ett tidskontrakt till en förvaltad post: ingenting garanteras, allt är bara känt — vilket i privatkapitalets värld är skillnaden mellan en teckning och ett vad. Fondens egna rapporter bär klockan (km-006 äger kvartalsläsningen) men kalendern förvaltas av ägaren."
+        },
+        {
+          "type": "definition",
+          "content": "LP-PROTOKOLLET: (1) KALENDERN — botten, nettoår och brytpunkt i egen likviditetsplan · (2) BEREDSKAPEN — unfunded per år, med torrt kapital för indrag i nederbörd · (3) JÄMÅLRARNA — kurvans djup och längd mot fondens egen vintage · (4) MÅTTET — rätt mått för rätt fas: DPI, IRR, multipel, RVPI märkt som bedömning · (5) UTVÄGEN — andrahandsmarknadens pris på positionen, känt i förväg. Fem rader per fond per år — kalendern som förvaltningsdisciplin."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen tidslinje med kursens verktyg: teckna ett påhittat commitment, välj ett indragningsschema och ett utbetalningsschema över tio år, räkna nettopositionen år för år och läs ut botten, nettoåren och brytpunkten. Räkna därefter multipel, TVPI med ett eget kvarvarande värde och den effektiva avgiften första året. Jämför till slut din kurvform med kursens och förklara skillnaderna i termer av de fyra krafterna. Kursen är utbildning i att läsa pengarnas tid — inte uppmaningar att köpa eller sälja något."
+        }
+      ]
+    }
+  ]
+}

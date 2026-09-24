@@ -1,0 +1,42 @@
+[
+  {
+    "bolag": "Atlas Copco",
+    "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf",
+    "status": 200,
+    "contentTyp": "application/pdf",
+    "bytes": 0,
+    "urlEfterRedirect": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf",
+    "dom": "www.atlascopcogroup.com",
+    "grön": true
+  },
+  {
+    "bolag": "Evolution",
+    "url": "https://storage.mfn.se/proxy/annual_report_english_2026_04_01.pdf?url=https%3A%2F%2Fmb.cision.com%2FMain%2F12069%2F4329954%2F4021102.pdf",
+    "status": 200,
+    "contentTyp": "application/pdf",
+    "bytes": 0,
+    "urlEfterRedirect": "https://storage.mfn.se/proxy/annual_report_english_2026_04_01.pdf?url=https%3A%2F%2Fmb.cision.com%2FMain%2F12069%2F4329954%2F4021102.pdf",
+    "dom": "storage.mfn.se",
+    "grön": true
+  },
+  {
+    "bolag": "Evolution (direkt cision)",
+    "url": "https://mb.cision.com/Main/12069/4329954/4021102.pdf",
+    "status": 200,
+    "contentTyp": "application/pdf",
+    "bytes": 9355047,
+    "urlEfterRedirect": "https://mb.cision.com/Main/12069/4329954/4021102.pdf",
+    "dom": "mb.cision.com",
+    "grön": true
+  },
+  {
+    "bolag": "Volvo Cars",
+    "url": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf",
+    "status": 200,
+    "contentTyp": "application/pdf",
+    "bytes": 15819392,
+    "urlEfterRedirect": "https://vp272.alertir.com/afw/files/press/volvocar/202603050673-1.pdf",
+    "dom": "vp272.alertir.com",
+    "grön": true
+  }
+]

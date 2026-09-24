@@ -268,6 +268,62 @@ koll(20, "per-käll-episodisolation: konfig-källans GRÖN stänger INTE kraschv
   assert.equal(krasch.aktiva.length, 1); // kraschvaktens episod lever oberörd
 });
 
+// ═══ FALL 21–23: o125 — ÅTERSTÄLLD-grön + F2-ortportens klasser ═══
+// Bevisat fall: 09-18 22:04/22:07-episoderna bar "aktiv nivå 3" i 41 h
+// fast appen läkts av prod-synkens deploy — grön fanns bara via vakten
+// EGENA läken. ÅTERSTÄLLD (pass-grenens appkoll) stänger dem med bevis.
+
+koll(21, "ÅTERSTÄLLD klassas gron och stänger incidentepisoder med ärlig lång varaktighet (09-18-spöket)", () => {
+  const logg = [
+    "2026-09-18T22:04:06.992Z KRASCHLOOP-MISSTANKE: svarar=false status=online omstarter +5 ⇒ RÄDDNINGSBYGG",
+    "2026-09-18T22:07:17.452Z RÄDDNINGSBYGG MISSLYCKADES: ESOCKETTIMEDOUT — artefakt trasig: pm2 lämnas STOPPAD",
+    "2026-09-20T17:20:00.000Z ÅTERSTÄLLD: appen svarar=true status=online omstarter +0 — tidigare incidentläke verifierat friskt (grön)",
+  ].join("\n");
+  const o = oversattKraschvaktRader(logg);
+  assert.equal(o.rader[2].omrade, "aterstalld");
+  assert.equal(o.rader[2].niva, "gron");
+  const ep = byggEpisoder(o.rader);
+  assert.equal(ep.aktiva.length, 0); // spöket stängt
+  assert.equal(ep.klara.length, 2);
+  kopplaGronTillEpisoder(ep, o.rader);
+  const kraschloop = ep.klara.find((e) => e.nyckel.includes("kraschloop-misstanke"));
+  const b = bedomEpisod(kraschloop, Z("2026-09-20T17:25:00Z"));
+  assert.equal(b.status, "uppklarad");
+  assert.equal(b.varaktighetMin, 2596); // 22:04→17:20 över två dygn = 43 h 16 min — journalärligt
+  assert.equal(b.historik, true); // ≥ eskaleringströskeln ⇒ HISTORIK-läxa, ej larm
+});
+
+koll(22, "F2-ortporten synliggörs: ORT-PORT = larm, ORT-RECLAIM KLAR = gron (o26-blindheten botad)", () => {
+  const logg = [
+    "2026-09-20T06:12:00.000Z ORT-PORT (F2): port 3000 hålls av ort pid 3410755 — inte ättling till pm2:s ak1a (status=errored)",
+    "2026-09-20T06:14:00.000Z ORT-PORT: SIGTERM→SIGKILL-trappa mot 3410755, 3410756",
+    "2026-09-20T06:15:00.000Z ORT-RECLAIM KLAR: svarar=true portägare-är-pm2-ättling=true (kooldown 120 min)",
+  ].join("\n");
+  const o = oversattKraschvaktRader(logg);
+  const klasser = o.rader.map((r) => `${r.omrade}:${r.niva}`);
+  assert.deepEqual(klasser, ["ort-port:larm", "ort-port:larm", "ort-reclaim-klar:gron"]);
+  const ep = byggEpisoder(o.rader);
+  assert.equal(ep.aktiva.length, 0); // incidenten stängd av sin egen reclaim-grön
+  assert.equal(ep.klara.length, 1);
+  assert.equal(ep.klara[0].upprepningar, 2); // båda ORT-PORT-raderna i samma episod
+});
+
+koll(23, "klassordningens outokersäkerhet: RÄDDNING/ORT-RECLAIM/ÅTERSTÄLLD felmatchar inte varandra (startsWith-kedjan)", () => {
+  const o = oversattKraschvaktRader(
+    [
+      "2026-09-20T10:00:00.000Z RÄDDNING KLAR: appen svarar=true",
+      "2026-09-20T10:05:00.000Z ORT-RECLAIM KLAR: svarar=true",
+      "2026-09-20T10:10:00.000Z ÅTERSTÄLLD: appen svarar=true",
+      "2026-09-20T10:15:00.000Z ARTEFAKT RÖD efter räddningsbygget",
+    ].join("\n")
+  );
+  assert.deepEqual(
+    o.rader.map((r) => r.omrade),
+    ["raddning-klar", "ort-reclaim-klar", "aterstalld", "artefakt-rod"]
+  );
+  assert.equal(o.senasteRadTs, "2026-09-20T10:15:00.000Z"); // alla klasser är också puls
+});
+
 // ═══ SAMMANFATTNING ═══
-console.log(`\n${pass}/20 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
+console.log(`\n${pass}/23 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
 process.exit(misslyckade.length === 0 ? 0 : 1);

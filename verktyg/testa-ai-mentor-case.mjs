@@ -355,12 +355,20 @@ const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "u
 const kedjekomponenter = [
   "svaraLokaltMakro(q, KURSREGISTER)",
   "svaraLokaltExtra(q, KURSREGISTER)",
+  // Omgång 27 (manifest auto-s6-1789912510460, s6-u3): modernarisk — tredje
+  // motorn FÖRE basen (widgetens faktiska position; dokumenterad här av
+  // s6-u2:s volatilitetsmekanik-harmonisering).
+  "svaraLokaltModernaRisker(q, KURSREGISTER)",
   "svaraLokalt(q, KURSREGISTER)",
   "svaraLokaltNasta(q, KURSREGISTER)",
   "svaraLokaltKapitalmekanik(q, KURSREGISTER)",
   "svaraLokaltSektor(q, KURSREGISTER)",
   "svaraLokaltCase(q, KURSREGISTER)",
+  // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik — kedje-
+  // ordning efter case, FÖRE praktik (kedjetestets G-fall äger ordningen).
+  "svaraLokaltMarknadsmekanik(q, KURSREGISTER)",
   "svaraLokaltPraktik(q, KURSREGISTER)",
+  "svaraLokaltValutamekanik(q, KURSREGISTER)",
   "svaraLokaltPortfoljgrund(q, KURSREGISTER)",
   "svaraLokaltAgande(q, KURSREGISTER)",
   "svaraLokaltRedovisningsdjup(q, KURSREGISTER)",
@@ -426,6 +434,57 @@ const kedjekomponenter = [
   "svaraLokaltSektorlasning(q, KURSREGISTER)",
   "svaraLokaltVardegrund(q, KURSREGISTER)",
   "svaraLokaltRealekonomi(q, KURSREGISTER)",
+  // Omgång 24 (s6-u3-harmonisering): fönstrets tre sista komponenter i
+  // wireningsordning — u1 försäkring (55) · u2 moatdjup (56) · u3 nya
+  // territorier (57). Idempotent: körs igen ⇒ 0 ändringar.
+  "svaraLokaltForsakring(q, KURSREGISTER)",
+  "svaraLokaltMoatdjup(q, KURSREGISTER)",
+  "svaraLokaltNyaTerritorier(q, KURSREGISTER)",
+  // Omgång 25 (s6-u2-harmonisering 2026-09-20): fönstrets tre nya komponenter
+  // i kedjeordning — u1 etfmekanik (58) · s6-u2 kontrahent (59) · u3
+  // marknadsrytm (60). BASF: syskonens leveranser, denna harmonisering.
+  "svaraLokaltEtfmekanik(q, KURSREGISTER)",
+  "svaraLokaltKontrahent(q, KURSREGISTER)",
+  // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): multipel — 61:a motorn,
+  // FÖRE marknadsrytm (deras SIST-deklaration; dokumentationsplikten).
+  "svaraLokaltMultipel(q, KURSREGISTER)",
+    // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+    // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+    // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+    // — FÖRE marknadsrytm (deras SIST-deklaration).
+    "svaraLokaltRiskadress(q, KURSREGISTER)",
+    "svaraLokaltBalansdjup(q, KURSREGISTER)",
+    "svaraLokaltOptionshantverk(q, KURSREGISTER)",
+    // Omgång 26 (manifest auto-s6-1789890903364, s6-u2 fönster 3): pengarstid —
+    // andrahandsmarknaden + sekvensrisken, 66:e motorn, FÖRE marknadsrytm.
+    "svaraLokaltPengarstid(q, KURSREGISTER)",
+    // Omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik (s6-u2
+    // — volatilitetsdraget + marginaltrappan, 67:e motorn, FÖRE marknadsrytm).
+    "svaraLokaltVolatilitetsmekanik(q, KURSREGISTER)",
+    // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): co-invest (u1:s omgång-27-
+    // lager — läkning av deras öppna harmoniseringsskuld) + tvångsmekanik
+    // (marginalhandeln + optionsförfallets dag) i widgetordning före
+    // marknadsrytm (SIST) — svitharmoniseringens dokumentationsplikt.
+    "svaraLokaltCoinvest(q, KURSREGISTER)",
+    "svaraLokaltTvangsmekanik(q, KURSREGISTER)",
+    // Fönster 29 (s6-u2, _s6u2o29-): händelsemotor (lanseringsdramat +
+    // avtalsmekaniken — v16/v17, KATALYSATOR fullt länkad 11/11) i
+    // widgetordning före marknadsrytm — fullkallsformen här, bar form i
+    // syskonviterna (harmoniserarens dokumenterade gräns).
+    "svaraLokaltHandelsemotor(q, KURSREGISTER)",
+    // Fönster 30 (s6-u3, _s6u3o29-): lonsamhetsgrund — 72:a motorn; öppen harmoniserings-
+    // skuld läkt av s6-u1 fönster 29 enligt fönster-28-precedensen (wire utan familjepass).
+    "svaraLokaltLonsamhetsgrund(q, KURSREGISTER)",
+    // Fönster 29 (s6-u1, _s6u1o29-): kemisektor — 73:e motorn, FÖRE marknadsrytm (SIST).
+    "svaraLokaltKemisektor(q, KURSREGISTER)",
+    // Fönster 31 (manifest auto-s6-1789965330060): stålsektor (s6-u1) +
+    // case-praktik (s6-u2) + beteendefallor (s6-u3) — dokumenterade här av
+    // s6-u2 (komponentlistan följer kedjan; kedjetestets G-fall äger
+    // ordningen; konvergerat efter fönstrets git-restore-race).
+    "svaraLokaltStalsektor(q, KURSREGISTER)",
+    "svaraLokaltCasepraktik(q, KURSREGISTER)",
+    "svaraLokaltBeteendefallor(q, KURSREGISTER)",
+    "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
 const kedjaStrang = kedjeread ? kedjeread[1] : "";
@@ -469,7 +528,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 50 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 76 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

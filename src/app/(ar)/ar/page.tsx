@@ -144,7 +144,7 @@ const SEKTIONER = [
 
 export default function ArStartPage() {
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العربية" }]}>
+    <SeoPageShell lang="ar" wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العربية" }]}>
       <StrukturData
         id="jsonld-webbsida"
         data={{

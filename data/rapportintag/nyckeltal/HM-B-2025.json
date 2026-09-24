@@ -1,0 +1,83 @@
+{
+  "bolag": "HM-B",
+  "ar": "2025",
+  "proveniensSha": "3454ff30a0e21e7a65f92a1bb8c943cc564d59553395d9daa90234d6598dee76",
+  "sammanfattning": {
+    "sektionerTotalt": 1618,
+    "urval": 4,
+    "nyckeltalsFamiljerTraffade": 3,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 44,
+      "rubrik": "Sektion 45",
+      "familjer": [
+        "rorelsemarginal",
+        "anstallda"
+      ],
+      "siffror": 40,
+      "poang": 5
+    },
+    {
+      "i": 23,
+      "rubrik": "We are strengthening our offering and showing that growth, profitability",
+      "familjer": [
+        "rorelsemarginal",
+        "anstallda"
+      ],
+      "siffror": 33,
+      "poang": 4.7
+    },
+    {
+      "i": 18,
+      "rubrik": "A year filled with creativity \b\u0007\u0006\u0016\u001c\u0013\u001e\u0005\u001c\u000e\u0011\u0011\u0014\u0012\u000e\u0017\u0014\u0015\u001a\u000e\u0013\u001c\u0005\u001a\u0015\u0004\u001c \u0015\u001e\u0011\u0011\u0014\u001c\u0007\u0010\u0014\u0017\u0015\u0013\u001e\u001dIn",
+      "familjer": [
+        "anstallda"
+      ],
+      "siffror": 29,
+      "poang": 2.5
+    },
+    {
+      "i": 85,
+      "rubrik": "Sektion 86",
+      "familjer": [
+        "anstallda"
+      ],
+      "siffror": 16,
+      "poang": 1.8
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "rorelsemarginal",
+      "varde": "10",
+      "kontext": "r year.An operating margin that exceeds 10 percent.A 56 percent absolute reduction in greenhouse gas emissions no later than 2030, with 2019 as a ",
+      "sektion": 44,
+      "kalla": {
+        "namn": "HM-B årsredovisning 2025",
+        "url": "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "2026",
+      "kontext": "20 years after their first. Tobe launched in spring 2026, the collection will feature certified, responsibly made materials and will ",
+      "sektion": 18,
+      "kalla": {
+        "namn": "HM-B årsredovisning 2025",
+        "url": "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "2       3",
+      "kontext": "line\u0011\u0011\u0015\u0013\u001d\u001aearnings per share 2 3 \u001b \u001b \u001b \u001b \u001f\u001e\u001d \u001c\u001b\u001a\u001a\u001b\u0019\u0018 \u0017 1 \u001f\u001e\u001d \u001c\u001b\u001a\u001a\u001b\u0019\u0018 \u0017 \u0012 \u0017  \u0003 \u0001 \u0003 \u0003 \u0003 \u0001  \u001b \u0003 \u0003   \u0003  \u0001  \u001b \u001b \u001b \u0003 \u0003 \u0017 ",
+      "sektion": 16,
+      "kalla": {
+        "namn": "HM-B årsredovisning 2025",
+        "url": "https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf"
+      }
+    }
+  ]
+}

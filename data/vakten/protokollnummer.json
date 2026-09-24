@@ -1,0 +1,304 @@
+{
+  "skapat": "2026-09-20T10:02:12.977Z",
+  "poster": [
+    {
+      "nummer": "o117",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1789896901533",
+      "titel": "nummerreservationsmekanik under flock — protokollnummerseriens race-kur (4 bevis: o106/o107/o108/o114)",
+      "ts": 1789898532977,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o118",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1789912510460-liknande",
+      "titel": "prestandavåg: /en/blogg TBT-anomali — longtask-sond CDP + widget-A/B (o110 §4.1 köpost)",
+      "ts": 1789915631230,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o119",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789916171548,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o121",
+      "agare": "s7-u4",
+      "manifest": null,
+      "titel": "prestandavåg: o119 EFTER — NastaSteg-defer deploybevakning + Lighthouse EFTER-mätning mot o120:s FÖRE-bas (o120 §6 steg 0)",
+      "ts": 1789917757492,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o122",
+      "agare": "s7-u3",
+      "manifest": null,
+      "titel": "prestandavåg: mobil läsbarhet ≥52px ROND 3 — nya ytor sedan o8 (superanalys, kalkylator, konfluens, netnet, dataset, ny kurs): CDP-mätning + bokföring",
+      "ts": 1789918048751,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o123",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789920446146,
+      "status": "lamnat",
+      "lamnatTs": 1789921129160
+    },
+    {
+      "nummer": "o124",
+      "agare": "s8-u1",
+      "manifest": null,
+      "titel": "patchkö omgång 5 + takhöjning",
+      "ts": 1789920527453,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o125",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789920306682",
+      "titel": "kvalitetsvåg: kraschvaktens återställningsbevis (ÅTERSTÄLLD-grön) + eskaleringens F2-ortport-klasser + 09-18-incidentens protokollbaserade nedläggning (kraschvakt 2 aktiva → 0, feljakt 163 öppna → färre)",
+      "ts": 1789920639580,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o126",
+      "agare": "s8-u3-kontroll",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789921129236,
+      "status": "lamnat",
+      "lamnatTs": 1789921133897
+    },
+    {
+      "nummer": "o127",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789937898663,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o128",
+      "agare": "s7-u2",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789938010929,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o129",
+      "agare": "s7-u2",
+      "manifest": "auto-s7 (byggare 2/3)",
+      "titel": "prestandavåg: /blogg CV-reservationskalibrering — sond av 110 kortens verkliga höjder mot o28:s 22rem (55-inläggs-epoken), ev. kur + Lighthouse FÖRE/EFTER + CLS-stavhoppverifiering (o97-precedensen)",
+      "ts": 1789950000000,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o131",
+      "agare": "s7-u3",
+      "manifest": "auto-s7 (byggare 3/3)",
+      "titel": "prestandavåg: EFTER-kvittering läsbarhetskurerna o126+o127+o128 — vakarövertag från o130 + proxy-EFTER (o129 §4-metodiken) + deploy-grind",
+      "ts": 1789943144657,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o132",
+      "agare": "s7-u2",
+      "manifest": "auto-s7 (byggare 2/3)",
+      "titel": "prestandavåg: o129 §6-§7 EFTER-kvittering av blogg-CV-kuren — deploy-grind (kraschvaktens räddningsbygg 22:24Z) + blocksond ×3 (/blogg /en/blogg /ar/blogg, dom |docHΔ|≤350) + Lighthouse CLS 0 ×3 + prod 200 ×3 + bokföring i §7",
+      "ts": 1789943364327,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o133",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789943914788,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o135",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789943721747",
+      "titel": "prod-synkens misslyckades-klass domnad: 26 öppna feljaktsfynd med logggravning per fönster (o125 §6.1 F5-yta) — rot/transient/falskt-pos per bevis, fyndloggens öppna räknas ned",
+      "ts": 1789944040064,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o136",
+      "agare": "s8-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789944060929,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o137",
+      "agare": "s7-u1",
+      "manifest": null,
+      "titel": "prestandavåg: ÄKTA deploy-EFTER-kvittering av o126+o127+o128+o129 — vakarövertag o131 §4 + o132 §6 (DEPLOYAD d401d719 bevisad)",
+      "ts": 1789969137210,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o138",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1789968917148",
+      "titel": "prestandavåg: o129 §6-§7 blogg-EFTER vakarövertag SLUTKVITTERING — räddningsbygget 05:29:36Z bar CV-kuren live (chunks bevisade) → blocksond ×3 + Lighthouse ×3 + prod 200 ×3 + §7-append",
+      "ts": 1789969184024,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o139",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1789968917148",
+      "titel": "prestandavåg: /superanalys+/kalkylator TBT-rotjakt + giltig LH-EFTER (o123 n1-FEL:eftersläpning)",
+      "ts": 1789969273833,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o140",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1789972517251",
+      "titel": "kvalitetsvåg: o136 §6.3 tick-svält-rotjakt — tick-drift/loop-instrument i pumpor-daemonen + live-aktivering",
+      "ts": 1789972901452,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o142",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1789972980057,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o141",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1789972517251",
+      "titel": "kvalitetsvåg: vakt-återmätning efter fabrikshelgen — mimosa full-scan (bas 1 772/0) + intern länkcrawl (bas 3 743/0) + rotorsaksfix på fynd",
+      "ts": 1789976400000,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o143",
+      "agare": "s7-u1",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: /dataset TBT/LCP-gåtan — giltig ×5-baslinje (o137:s 2 272 vs o139:s 372) + kur om äkta; sidokur manifest-ikon-404 (o128 köpost)",
+      "ts": 1790001635047,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o144",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790001325956",
+      "titel": "prestandavåg: o139+o143 EFTER-vakarövertag — deploybevis, kanalbevis, LH-kvittering (bokad av båda vågorna)",
+      "ts": 1790004263072,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o145",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "feljakt-ledgerns hälsa: 8 ogiltiga domklasser normaliseras + 18 öppna fynd domade med loggbevis (vakten 0-fynd-jakt)",
+      "ts": 1790006924707,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o146",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "publiceringskontraktet: bolagssidornas döda-löftes-rot (sitemap 249 lovade mot 243 byggda = gränsnittsvaktens 24 konsolfynd) kurad med byggtecknad ledger + mjuk fallback",
+      "ts": 1790007818656,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o147",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "sitemap-livskontraktet: byggfrusna klassers döda löften (rapportakademin + dataset-/aspekt-/spegelgrenar) — byggdSidaFinns-sond (.next, fail-open) + livskontraktssvit som permanent vakt",
+      "ts": 1790008149918,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o148",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "bolagsmetadata-kontraktet: /bolag hårdkodade \"100 bolag\"-löften (o146 §7 + o147 §6 kvarpost) blir datadrivna ur publiceradeBolagSidor — tal i title/description/vy-fallback kan aldrig glida från registret igen",
+      "ts": 1790008564167,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o149",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790006726228",
+      "titel": "vaktens auth-401-falsklarm + universumsiffrorna utanför /bolag-familjen: autentiseringsgrindens korrekta 401 (8 fynd/svep) klassas ärligt i instrumentet (öppet bokförd), dataset/aspekt/ordlista/nyckeltalsguide-texternas föråldrade 100-tal (universumet är 249) blir datadrivet/sifferlöst",
+      "ts": 1790008827890,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o150",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790031919251",
+      "titel": "prestanda: o138 §6.1 ar-blogg-mikrojustering — cv-bloggkort ar-omkalibrering 16.5625→16.125rem mot deterministisk medeldrift 315→312,35 px (docHΔ −371 → väntad +14)",
+      "ts": 1790032482490,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o151",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790031919251",
+      "titel": "prestanda: natt-TBT-mätaren — o144 §5 / o139 §7.2:s enda öppna post (TBT /kalkylator ≤ ~450 domas endast i nattfönster, metrologiregeln o143 §3) — cron-bar mätare enligt o144-väntarmönstret",
+      "ts": 1790032569659,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o153",
+      "agare": "s8-u3",
+      "manifest": null,
+      "titel": "kvalitetsvåg: EFTER-kvittering o146+o147+o148 + fullvals-svep — deployat bygge 496466f6",
+      "ts": 1790033929464,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o152",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790033719974",
+      "titel": "deploykvitto-vågen: fullvals-vaktsvep EFTER läkebytesbygget 23:35Z (o149 §restpost 3) — 0-förväntat i alla klasser; universumet växt 249→256 (7 AR-paket 09-21 kväll) och det datadrivna 256-talet verifieras SANT mot ledger+universum innan dom",
+      "ts": 1790034005872,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o154",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790205302748",
+      "titel": "VIKT till s7-u2/o155 (mätar-yta klaimad 01:33:15 FÖRE min anspråk 01:34; deras o155 täcker hela planen) — o154 lämnas tillbaka, bidrag som gåvor: fönsterfakta-notis + orphan-Chrome-städning",
+      "ts": 1790206447922,
+      "status": "lamnat",
+      "lamnatTs": 1790206723559
+    },
+    {
+      "nummer": "o156",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-kvalitetsvag-s8u1-0924",
+      "titel": "nyckeltalsguide-upptäckbarhet: o152 §restpost 2 utredd (en/ar-404 = enbart-sv vid design, inget dött löfte) + ROTORSAKSKUR av den inverterade o146-klassen: citeringsmagneten /data/nyckeltalsguide (våg 87) saknas i sitemap OCH har 0 interna inlänkar — kur: sitemap-post + länk från DatasetIndexVy ×3 språk",
+      "ts": 1790208276323,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o157",
+      "agare": "s8-u2",
+      "manifest": null,
+      "titel": "kvalitetsvåg: nyckeltalsguide en/ar-404 DOM (avsikt, ej defekt) + språkkontraktssviten — disjunkt komplement till u1/o156:s upptäckbarhetsände",
+      "ts": 1790208629905,
+      "status": "reserverat"
+    }
+  ]
+}

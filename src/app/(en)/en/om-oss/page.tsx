@@ -73,7 +73,7 @@ export default function EnOmOssPage() {
   const antalBokmaster = kurserLista.filter((c) => c.category === "BOKMASTER").length;
 
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "About us" }]}>
+    <SeoPageShell lang="en" wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "About us" }]}>
       <h1 className="font-serif text-4xl font-bold">
         About AK1<span className="text-gold">A</span> Research Lab
       </h1>

@@ -1,0 +1,148 @@
+{
+  "slug": "rs-09-personalrisken",
+  "category": "RISK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Personalrisken — den sjätte adressen: nyckelpersonerna, kunskapen och successionen",
+  "summary": "Riskfamiljens nionde steg letar risken där besluten faktiskt fattas: i personerna. Kursen lär nyckelpersonskartan, kärnkvoten, ersättningstrappan och successionstestet — hur stor del av verksamheten som vilar på positioner som inte kan ersättas inom rimlig tid, vad en avgång kostar i kronor och hur tyst kunskap förs vidare innan den lämnar byggnaden. Ett bolag som inte analyserats genom sin personal är inte färdiganalyserat.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Skilja på personalomsättning och personberoende — den normala rörelsen mot de få positioner som inte går att ersätta inom rimlig tid · Rita nyckelpersonskartan: tolv kritiska uppgifter, hur många som behärskar varje uppgift, N=1 som kartans röda fält · Räkna kärnkvoten — andelen kritiska uppgifter som bara en person bär, i ett tal som kan jämföras mellan bolag · Räkna ersättningstrappan vid en avgång — tappad intäkt, bruttomarginal, rekrytering och inträning i kronor, satt mot årets resultat · Pröva semesterprovet och räkna på kunskapsöverföringen — tyst kunskap, dokumentationens gränser och väntevärdet av att överföra i tid · Ställa successionstestet — namngiven och övad efterträdare för de tyngsta rollerna, med gränserna mot grannkurserna (rs-02 kundkoncentrationen, rs-05 riskavsnittet, rs-08 modellrisken, mt-03 vallgraven i siffror).",
+  "why": "Riskfamiljens karta har burit oss genom bolagets fyra adresser — resultatet, balansräkningen, ägandet och värderingen (rs-06) — vidare via inköpssidan (rs-07) till den femte adressen i läsarens egen analys (rs-08). Men kartan har en tyst lucka: ingen kurs äger platsen där besluten faktiskt fattas — personerna. Ett bolag är inte en maskin som råkar drivas av människor; det är människor som råkar vara organiserade som en maskin, och kunskapen om hur maskinen fungerar sitter i huvuden som kan säga upp sig i morgon. Sonden är entydig: nyckelpersonrisk, kompetensförsörjning, kunskapsläckage och successionsrisk ägs av ingen kurs i registret — endast av bokhyllan. Personalrisken är också den enda i familjen som kan realiseras på en enda dag utan att en enda siffra i årsredovisningen förändras: kunden finns kvar, fabriken finns kvar, balansräkningen ser likadan ut — men relationerna, fingertoppskänslan och de oskrivna arbetsflödena lämnar byggnaden klockan 17. Kursen ger fenomenet sina mått: nyckelpersonskartan sorterar kritiska uppgifter efter hur många som behärskar dem, kärnkvoten sammanfattar beroendet i ett jämförbart tal, ersättningstrappan räknar vad en avgång kostar i kronor och successionstestet frågar om nästa generation är namngiven och övad. Det är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget.",
+  "history": {
+    "origin": "Kunskapsöverföringens problem är äldre än aktiemarknaden. Skråväsendets hela konstruktion — lärling, gesäll, mästare — var personalriskhantering: kunskapen skulle överföras genom görande medan mästaren fortfarande stod i verksamheten, och skråt fanns just för att hantverket inte skulle dö med mästaren. Familjeföretaget, världens äldsta organisationsform, löste samma problem med successionen — arv och överlämning var inte sentimentalitet utan kapitalbevarande: det byggda värdet skulle bäras vidare av en ny generation innan den gamla lämnade. Lärdomen är alltid densamma och lika obekväm: kunskap som bara sitter i en person är inte bolagets kapital — den är bolagets lån.",
+    "evolution": "1900-talet institutionaliserade personalfrågan. Personalavdelningen föddes ur krigstidens arbetsmarknadsstatistik, och när nationalekonomerna på sextiotalet formulerade humankapitalet — utbildning och erfarenhet som investeringar med avkastning, inte som kostnadsposter — fick kunskapen en plats i företagsekonomins ekvationer. Kunskapsföretaget blev på åttiotalet eget forskningsfält, med svensken Karl-Erik Sveiby som pionjär: konsultbyråns och verkstadens viktigaste balansräkning stod att läsa i personernas kompetens, inte i maskinparken. Samma decennium växte nyckelpersonsförsäkringarna fram — bolaget kan försäkra nyckelpersonens liv, men försäkringen ersätter inkomstbortfallet, aldrig kunskapsbortfallet. Århundradets viktigaste fynd var negativt: erfarenheten visade att dokumentation inte räcker. Tyst kunskap — fingertoppskänslan som inte går att skriva ner utan att gå förlorad — överförs genom arbetspar, inte genom manualer.",
+    "modern": "I dag är personalrisken styrelsefråga, och den syns allt oftare i prospekt och årsredovisningar: bolag som beskriver sig som beroende av grundare eller nyckelpersoner ska säga det, och läsaren får i sin tur ett ansvar att prissätta det. Kompetensförsörjningen — arbetsmarknadens förmåga att leverera nästa generation kompetens — har blivit en makorfaktor, och åldrandet gör som helhet kunskapen dyrare per enhet. AI-tiden har lagt en dubbelrisk ovanpå: automationen centraliserar kunskap till allt färre system och specialister — nya N=1 växer fram medan gamla ärvs bort — och verktyg som svarar på allt gör det lättare att glömma vem som faktiskt kan ställa frågorna. För aktiestudenten landar allt detta i en enkel disciplin: räkna nyckelpersonskartan, prissätt beroendet och läs bolagets eget personalavsnitt med rs-05:s glasögon — med samma allvar som noterna om skulder."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — den sjätte adressen", "minutes": 4 },
+    { "num": 2, "title": "Mätning — nyckelpersonskartan och kärnkvoten", "minutes": 4 },
+    { "num": 3, "title": "Räkneexempel — ersättningstrappan", "minutes": 4 },
+    { "num": 4, "title": "Kunskapsläckaget — tyst kunskap och N=1", "minutes": 4 },
+    { "num": 5, "title": "Fällor och missvisningar", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — successionstestet och de fem frågorna", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch gav personalrisken sin mest användbara formulering utan att använda ordet: köp inte berättelsen om en genialisk person — köp verksamheten som en duktig medarbetare kan driva vidare. Hans regel att leta bolag vars affär är så enkel att vem som helst kan sköta den, eftersom någon annan förr eller senare kommer att göra det, är personalriskhantering i investeringsform. Lynch såg också fenomenet på nära håll: hans butiksbesök och företagsbesök handlade lika mycket om att träffa andraringarna — de som faktiskt gör jobbet — som om att träffa cheferna, och hans frågor till dem var nyckelpersonskartans födelse. Hans varning för bolag där allt vilar på en persons karisma är kursens raka föregångare: karisman är den enda tillgången som inte kan övertas av efterträdaren.",
+  "grahamSection": "Benjamin Graham analyserade bolag, inte personer, och just där ligger hans lärdom om personalrisken: hela hans förfaringssätt förutsätter att verksamheten är en institution — större än den som för stunden driver den. Grahams test av en ledning var därför inte karisma utan spår: hur har bolaget skött sig över en hel konjunkturcykel, och hur beter sig ledningen i sina egna transaktioner? Han var tidigt tydlig med att ledning är svårbedömd och att marknaden tenderar att betala för mycket för berömda namn — den som köper genialitet köper samtidigt dess avgång. Grahams skydd mot personberoendet var samma som mot alla risker: marginalen. Ett bolag värderat med så stor marginal att även en ledarbytning tål att slå fel är analyserat med respekt för den sjätte adressen.",
+  "ak1Section": "I AK1A:s metodik får riskfamiljen sin sjätte adress och sin sista osynliga kontrollstation: rs-01 till rs-05 läste volatiliteten, koncentrationerna, samvariationen, matrisen och bolagets egen riskredovisning, rs-06 namngav adresserna, rs-07 stängde inköpssidan och rs-08 vände spegeln mot analysen — rs-09 räknar det ingen rapport radas upp åt läsaren: hur stor del av verksamheten som vilar på positioner som inte kan ersättas inom rimlig tid. I AKM1:s bolagsläsning blir nyckelpersonskartan en kontrollstation i riskdimensionen bredvid kund- och leverantörskoncentrationen: koncentrationstänkandet är detsamma, men enheten är en person och inte ett kundnummer. I AKM2:s ram kopplas kursen till rs-08:s felbudget: vändpunktskorgen får en personvariant — hur många procent av värdet står kvar om de tre tyngsta personerna slutar i morgon? Gränserna är avsiktliga — rs-02 äger kundkoncentrationen, rs-05 årsredovisningens riskavsnitt, rs-08 analysens eget fel, km-026 relaterade parter, mt-03 vallgraven i siffror och sj-familjen avtalens juridik — denna kurs äger personberoendet, inte dess juridik.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — den sjätte adressen",
+      "intro": "Riskkursen har läst siffrorna, inköpen och den egna analysen. Nu återstår adressen ingen rapport redovisar: personerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "rs-06 namngav fyra adresser där risken bor i bolaget — resultatet, balansräkningen, ägandet och värderingen. rs-07 lade inköpssidan till kartan och rs-08 följde analysen själv som femte adress. Men varje gång en verksamhet kör fast är orsaken sällan en siffra — det är en person som slutade, en relation som bröts eller en kunskap som ingen annan bar. Detta är den sjätte adressen: personerna. Skilj noga på två fenomen som ofta förväxlas. Personalomsättning är den normala rörelsen — människor byter jobb, och ett välskött bolag är byggt för att tåla den. Personberoende är detsamma uppbyggt: positioner vars kunskap eller relationer inte kan ersättas inom rimlig tid utan väsentlig kostnad. Den första är en driftskostnad, den andra en risk — och årsredovisningen skiljer dem inte åt, för redovisningen mäter vad som hänt, inte vad som lämnade byggnaden. En nyckelperson kan gå en fredag utan att en enda post i nästa rapport förändras — ändå har bolagets framtida förmåga att leverera, prissätta och behålla kunder justerats. Kursens exempelbolag Vreta Verktyg AB är påhittat, och siffrorna är valda för räkneövningens skull — detta är utbildning i metod, inte kommentar till något noterat bolag."
+        },
+        {
+          "type": "definition",
+          "content": "PERSONALRISK — risken att verksamhetens kritiska kunskap eller relationer lämnar bolaget med en person · SJÄTTE ADRESSEN — rs-06:s fyra adresser ligger i siffrorna, den femte i analysen (rs-08), den sjätte i personerna · PERSONALOMSÄTTNING mot PERSONBEROENDE — den normala rörelsen mot positioner som inte kan ersättas inom rimlig tid · N=1 — en uppgift som en enda person behärskar; kartans röda fält · GRÄNS: rs-02 äger kundkoncentrationen, rs-05 riskavsnittet, rs-08 modellrisken, mt-03 vallgraven — denna kurs äger personberoendet."
+        },
+        {
+          "type": "insight",
+          "content": "Balansräkningen är en fotografi av det som är kvar. Kunskapen är en rörelsebild av det som kan försvinna — och ingen nota redovisar den."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Mätning — nyckelpersonskartan och kärnkvoten",
+      "intro": "Börja med uppgifterna, inte med namnen. Kartan räknar hur många som kan göra varje sak — och N=1 är hela skillnaden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frågan som öppnar kartan är konkret: vilka tolv uppgifter måste fungera varje vecka för att leveransen till kunderna ska ske? Svaret i ett tillverkande bolag som Vreta Verktyg: kassaflödesadministrationen, kundavtalens prissättning, produktionslinjens inställning, IT-driften, kvalitetskontrollens godkännande — tolv uppgifter, inte tolv namn. Räkna därefter för varje uppgift hur många personer som faktiskt behärskar den i praktiken, inte enligt tjänstebeskrivningen. Talet N per uppgift är kartans hela innehåll: N=1 betyder att kunskapen sitter i ett huvud — skåprisken — medan N=2 ger en överlapp och N=3 eller fler en trappa som tål semestrar och uppsägningar. Vretas kartlagda läge, med kursens påhittade tal: av tolv kritiska uppgifter bärs fem av en enda person, fyra av två och tre av tre eller fler. Kärnkvoten sammanfattar kartan i ett jämförbart tal: N=1-andelen av de kritiska uppgifterna — för Vreta 5 delat med 12, alltså 41,7 procent. Kontrasten gör talet begripligt: kursens andra påhittade bolag Lystra Logistik har 14 kritiska uppgifter men bara en enda N=1 — kärnkvot 1 delat med 14, alltså 7,1 procent. Två bolag, samma branschrymd, helt olika sanningar om vad en avgång kan göra. Kartan pekar också ut åtgärdsordningen själv: de röda N=1-fälten först, ett parvis överlapp i taget."
+        },
+        {
+          "type": "tabell",
+          "content": "NYCKELPERSONSKARTAN — VRETA VERKTYG AB (PÅHITTADE TAL): KRITISKA UPPGIFTER: 12 — kassaflödesadmin, avtalsprissättning, produktionsinställning, IT-drift, kvalitetsgodkännande med flera · N=1 (en person): 5 uppgifter · N=2 (två personer): 4 uppgifter · N=3 eller fler: 3 uppgifter — kontroll 5 + 4 + 3 = 12 · KÄRNKVOTEN: 5 ÷ 12 = 41,7 procent · JÄMFÖRELSE LYSTRA LOGISTIK AB: 1 av 14 = 7,1 procent · SEMESTERPROVET: av Vretas fem N=1-uppgifter håller två dokumentationen för en månads frånvaro — tre oskyddade."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga inte vem som är viktigast — svaret är alltid en känsla. Fråga hur många som kan göra varje sak; svaret är en karta, och en karta går att rätta."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Räkneexempel — ersättningstrappan",
+      "intro": "Kartan säger var beroendet bor. Trappan räknar vad det kostar — i kronor, mot årets resultat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vretas tyngsta nyckelperson är försäljningschefen Vidar, som bär kundrelationer motsvarande 60 av bolagets 200 miljoner kronor i intäkt — 30 procent av omsättningen. Räkna trappan vid en avgång. Återhämtningen har två steg: rekrytering fyra månader och inträning åtta månader, tillsammans tolv månader till full produktion. Under det året tappas en femtedel av den burna intäkten — 60 gånger 0,20 ger 12 miljoner kronor i förlorad försäljning — och med bruttomarginalen 35 procent blir den resultatpåverkande delen 12 gånger 0,35, alltså 4,2 miljoner. Därtill kommer de direkta kostnaderna: sökfirmor och rekrytering 1,8 miljoner och kollegors mentorstid under inträningen 0,7 miljoner, tillsammans 2,5 miljoner. Trappans totala pris: 4,2 plus 2,5 är 6,7 miljoner kronor. Sätt det mot Vretas rörelseresultat på 22,3 miljoner — 6,7 delat med 22,3 är 30,0 procent: en enda avgång äter nästan en tredjedel av ett helt års resultat. Helhetsbilden fångas av personalomsättningens årsräkning: 200 anställda med 12 procent frivillig avgång per år ger 24 ersättningar, och med en genomsnittskostnad på 0,45 miljoner per ersättning — rekrytering, inträning och produktivitetstapp — landar året på 24 gånger 0,45, alltså 10,8 miljoner eller 5,4 procent av intäkten. Mot branschsnittet 8 procent, som skulle innebära 16 avgångar och 7,2 miljoner, är mellanskillnaden 3,6 miljoner per år: det är retentionens pris — vad lojaliteten är värd i kronor, räknat baklänges."
+        },
+        {
+          "type": "tabell",
+          "content": "ERSÄTTNINGSTRAPPAN — VIDAR LÄMNAR (PÅHITTADE TAL): BURET INTÄKTSANSVAR: 60 av 200 Mkr = 30 procent · ÅTERHÄMTNING: rekrytering 4 + inträning 8 = 12 månader till full produktion · TAPPAT RESULTAT: 60 × 0,20 = 12 Mkr intäkt × 0,35 bruttomarginal = 4,2 Mkr · DIREKTA KOSTNADER: sök och rekrytering 1,8 + mentorstid 0,7 = 2,5 Mkr · TRAPPAN TOTALT: 4,2 + 2,5 = 6,7 Mkr = 6,7 ÷ 22,3 = 30,0 procent av rörelseresultatet · ÅRSRÄKNINGEN: 200 anställda × 12 procent = 24 avgångar × 0,45 Mkr = 10,8 Mkr = 5,4 procent av intäkten · MOT BRANSCHSNITT: 200 × 8 procent = 16 avgångar × 0,45 = 7,2 Mkr — mellanskillnaden 10,8 − 7,2 = 3,6 Mkr per år."
+        },
+        {
+          "type": "insight",
+          "content": "Personalomsättningen är en kostnadspost som ingen rapport redovisar som en rad — den är utspridd på tjugo andra. Att räkna ihop den är första gången den går att styra."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Kunskapsläckaget — tyst kunskap och N=1",
+      "intro": "Dokumentationen har en gräns, och den heter tyst kunskap. Kursen räknar på att överföra i tid — mot väntevärdet av att inte göra det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "All kunskap är inte av samma slag. Den dokumenterade kunskapen — manualer, ritningar, processbeskrivningar — stannar i bolaget när personen går. Den tysta kunskapen gör det inte: fingertoppskänslan för när en kundrelation behöver ett samtal, omdömet om vilken order som är lönsam om man räknar rätt, minnet av varför ett arbetsflöde ser ut som det gör. Tyst kunskap kan inte skrivas ner utan förlust — den överförs genom arbetspar, genom att göra tillsammans. Här hör semesterprovet hemma: klarar den kritiska uppgiften en månad utan sin bärare? Om svaret är nej och dokumentationen inte räddar situationen är kunskapen reellt personburen. Kunskapsläckaget går också åt två håll: internt lämnar kunskapen bolaget vid avgången, och externt följer den med till en ny arbetsgivare — konkurrensklausuler kan fördröja en anställning hos konkurrenten, men de stoppar inte det lärande som redan sitter i huvudet; avtalens juridik ägs av sj-familjen och lämnas där. Räkna i stället på överföringen. Vretas tre oskyddade N=1-uppgifter kräver ett parvis överlapp på en halv månad vardera för att bäras upp till två personer — 3 gånger 0,5 är 1,5 månaders arbete, och med en månadskostnad på 0,07 miljoner för en medarbetares tid inklusive sociala avgifter kostar åtgärden 1,5 gånger 0,07, alltså 0,105 miljoner. Vad köper det bort? Om sannolikheten att någon av de tre bärarna slutar inom två år antas till 30 procent och en N=1-avgång i genomsnitt kostar 2,2 miljoner, är väntevärdet av risken 0,30 gånger 2,2, alltså 0,66 miljoner. Kvoten blir 0,66 delat med 0,105 — drygt sex gånger, 6,3: varje satsad krona på överföring bär mer än sex kronors väntad riskbort. Antagandena är kursens egna och påhittade; metoden är poängen, inte siffrorna."
+        },
+        {
+          "type": "definition",
+          "content": "TYST KUNSKAP — kunskap som inte låter sig skrivas ner utan förlust; överförs genom arbetspar, inte manualer · SEMESTERPROVET — klarar den kritiska uppgiften en månad utan sin bärare? · N=1 — en uppgift som en enda person behärskar; kartans röda fält och läckagets kärna · VÄNTEVÄRDET — sannolikhet gånger kostnad: 0,30 × 2,2 = 0,66 Mkr mot åtgärdens 1,5 × 0,07 = 0,105 Mkr, kvoten 0,66 ÷ 0,105 = 6,3 · GRÄNS: avtalens och klausulernas juridik ägs av SKATT & JURIDIK-familjen (sj) — denna kurs äger överföringens hantverk."
+        },
+        {
+          "type": "insight",
+          "content": "Bolaget äger kunskapen bara om den finns i minst två huvuden. I ett huvud är den inte bolagets kapital — den är bolagets lån, och lånet sägs upp av långivaren."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Personalrisken har sina favoritställen. Sex fällor täcker de flesta sätt som läsningen av personer går fel på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är grundarfällan: i bolag där berättelsen och personen är samma sak — grundaren som ansikte, beslutfattare och kundrelation i ett — bär bolaget en risk som kartan kan missa om den bara räknar uppgifter; frågan som kartan inte ställer är om kunderna skulle stanna den dagen berättarrösten tystnar. Andra fällan är stjärnkulturfällan: belöningssystem som premierar hjälten gör kunskapen till makt — den som kan allt blir oumbärlig och delar inget, och N=1 växer av incitamenten, inte av oaktsamhet. Tredje fällan är titelfällan: organisationsschemat redovisar vem som formellt äger en uppgift, inte vem som faktiskt kan den; kartan räknar förmåga och ska aldrig läsas av tjänstebeskrivningar. Fjärde fällan är dokumentationsfällan: wikin som ingen underhåller ger trygghetens känsla utan tryggheten — manualer har utgångsdatum, och att skriva ner är inte samma sak som att överföra. Femte fällan är klausulfällan: konkurrensklausulen som kunskapsskydd — den kan fördröja personens flytt till konkurrenten, men fingertoppskänslan, omdömet och relationerna följer personen oavsett, och den juridiska tillämpningen ägs av grannfamiljen sj. Sjätte fällan är överförsäkringsfällan: att se personberoenden överallt och kräva N=3 för allt — alla bolag bär personberoenden, frågan är graden, priset på att ta bort dem och vilka som är värda att säkra; avvägningen risk mot kostnad ägs av rs-04:s matris. Gemensam rot för alla sex: personberoenden syns bäst baklänges, i avgången som redan hänt — kartan är konsten att se dem framåt."
+        },
+        {
+          "type": "insight",
+          "content": "Sex fällor, en rot: den som älskar sin organisationskultur räknar inte på dess avgångar. Pre-mortemen från rs-08 har en personalversion — skriv ner vem bolaget inte tappar."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — successionstestet och de fem frågorna",
+      "intro": "Kursen samlas i fem frågor — kartan, kärnkvoten, trappan, successionen och vändpunktskorgen — den fullständiga läsningen av den sjätte adressen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: vilka tolv uppgifter måste fungera varje vecka för att verksamheten ska leverera? Fråga två: hur många behärskar varje uppgift i praktiken — vilka är N=1, och vad blir kärnkvoten? Fråga tre: vad kostar en avgång i den tyngsta rollen — räkna trappan med tappat resultat och direkta kostnader, och sätt summan mot årets rörelseresultat som procent. Fråga fyra är successionstestet: har styrelsen en namngiven och övad efterträdare för verkställande direktören och de två tyngsta nyckelrollerna? Ett namn på papper utan övning är en önskan, inte en plan — den övade efterträdaren har suttit i besluten och burit relationerna i mindre skala, och skillnaden syns första veckan efter en avgång. Fråga fem är vändpunktskorgens personvariant, arvet från rs-08: hur många procent av analysens värde står kvar om de tre viktigaste personerna slutar i morgon? Om svaret skrämmer är det inte kartan som är fel — det är priset som inte räknat in den sjätte adressen. Detta är utbildning i analysens hantverk, inte uppmaningar att köpa eller sälja något värdepapper — avgörandet är alltid läsarens eget, och Vreta Verktyg existerar bara för räkningens skull."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg nyckelpersonskartan för en verksamhet du känner väl — eller ett påhittat bolag med Vretas form. Lista tolv kritiska uppgifter, räkna N per uppgift och beräkna kärnkvoten. Kör semesterprovet för varje N=1-uppgift: skulle dokumentationen bära en månad? Räkna en ersättningstrappa för den tyngsta rollen — buret intäktsansvar, återhämtningstid, bruttomarginal, direkta kostnader — och ställ trappan mot ett påhittat rörelseresultat. Avsluta med successionstestet: namngiven och övad efterträdare, eller dokumenterad avsaknad? Upprepa kvartalsvis på samma verksamhet — kärnkvotens rörelse över tiden är personalriskens ärligaste trendmätare."
+        },
+        {
+          "type": "insight",
+          "content": "rs-familjen har nu nio steg — och den sjätte adressen är den enda där tre samtal på en eftermiddag kan flytta hela riskbilden: personberoenden går att räkna snabbt, men bara av den som frågar."
+        }
+      ]
+    }
+  ]
+}

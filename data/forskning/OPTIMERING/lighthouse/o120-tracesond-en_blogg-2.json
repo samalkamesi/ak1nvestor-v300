@@ -1,0 +1,3434 @@
+{
+ "tasks": [
+  {
+   "startMs": 1023215248,
+   "durMs": 124,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215254,
+   "durMs": 111,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215256,
+   "durMs": 257,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215290,
+   "durMs": 108,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215294,
+   "durMs": 55,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215295,
+   "durMs": 39210,
+   "toppBarn": [
+    {
+     "namn": "DocumentLoader::CommitNavigation",
+     "dur": 34112,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "DocumentLoader::StartLoadingResponse",
+     "dur": 29942,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "DocumentLoader::CreateParserPostCommit",
+     "dur": 29925,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "NavigationBodyLoader::StartLoadingBody",
+     "dur": 16257,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "NavigationBodyLoader::OnReadable",
+     "dur": 16196,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "NavigationBodyLoader::ReadFromDataPipe",
+     "dur": 16191,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215335,
+   "durMs": 53,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215335,
+   "durMs": 7328,
+   "toppBarn": [
+    {
+     "namn": "ParseHTML",
+     "dur": 7215,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "HTMLDocumentParser::DocumentElementAvailable",
+     "dur": 7,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215342,
+   "durMs": 7968,
+   "toppBarn": [
+    {
+     "namn": "DocumentLoader::BodyLoadingFinished",
+     "dur": 7851,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "DocumentLoader::FinishedLoading",
+     "dur": 341,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215350,
+   "durMs": 1551,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215352,
+   "durMs": 631,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215353,
+   "durMs": 311,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215353,
+   "durMs": 3034,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215356,
+   "durMs": 571,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215357,
+   "durMs": 133,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215360,
+   "durMs": 215,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215364,
+   "durMs": 451,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215365,
+   "durMs": 10735,
+   "toppBarn": [
+    {
+     "namn": "ParseAuthorStyleSheet",
+     "dur": 8116,
+     "url": "/_next/static/chunks/1pk-28pfs1_5l.css",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215375,
+   "durMs": 799,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215376,
+   "durMs": 1063,
+   "toppBarn": [
+    {
+     "namn": "ParseAuthorStyleSheet",
+     "dur": 815,
+     "url": "/_next/static/chunks/1y8-o7vbgoakh.css",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215377,
+   "durMs": 375,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215378,
+   "durMs": 228,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215378,
+   "durMs": 2375,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1399,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 967,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 681,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 395,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 355,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.newInstance",
+     "dur": 28,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215380,
+   "durMs": 954,
+   "toppBarn": [
+    {
+     "namn": "EventDispatch",
+     "dur": 8,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215381,
+   "durMs": 10788,
+   "toppBarn": [
+    {
+     "namn": "ParseHTML",
+     "dur": 10164,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 6656,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 6059,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 6034,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 1326,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 631,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215392,
+   "durMs": 2283,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215395,
+   "durMs": 40946,
+   "toppBarn": [
+    {
+     "namn": "Layout",
+     "dur": 19348,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 12884,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Commit",
+     "dur": 3342,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Paint",
+     "dur": 2362,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Paint",
+     "dur": 2069,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FireAnimationFrame",
+     "dur": 459,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215436,
+   "durMs": 4140,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215440,
+   "durMs": 10093,
+   "toppBarn": [
+    {
+     "namn": "ParseHTML",
+     "dur": 10034,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215450,
+   "durMs": 605,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215451,
+   "durMs": 1400,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215453,
+   "durMs": 3324,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215456,
+   "durMs": 462,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215457,
+   "durMs": 1328,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215458,
+   "durMs": 187,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215458,
+   "durMs": 281,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215458,
+   "durMs": 201,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215459,
+   "durMs": 392,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215459,
+   "durMs": 3010,
+   "toppBarn": [
+    {
+     "namn": "Commit",
+     "dur": 267,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Layerize",
+     "dur": 229,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "PrePaint",
+     "dur": 26,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215462,
+   "durMs": 66,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 48,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215462,
+   "durMs": 57,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215462,
+   "durMs": 79,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215462,
+   "durMs": 10704,
+   "toppBarn": [
+    {
+     "namn": "ParseHTML",
+     "dur": 10508,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 4155,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 4033,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 2793,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 2635,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 786,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215473,
+   "durMs": 1038,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 933,
+     "url": "/_next/static/chunks/0el5nt6-nk2y3.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 606,
+     "url": "/_next/static/chunks/0el5nt6-nk2y3.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 293,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 227,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 43,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 41,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215474,
+   "durMs": 1233,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1175,
+     "url": "/_next/static/chunks/11jq0c2_zavac.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 1042,
+     "url": "/_next/static/chunks/11jq0c2_zavac.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 115,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 97,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 54,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 41,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215476,
+   "durMs": 181,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 140,
+     "url": "/_next/static/chunks/2ywwsv3hxr_12.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 90,
+     "url": "/_next/static/chunks/2ywwsv3hxr_12.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 33,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 20,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 5,
+     "url": "/_next/static/chunks/2ywwsv3hxr_12.js",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215476,
+   "durMs": 7858,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 7733,
+     "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 7535,
+     "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 527,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 401,
+     "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 178,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 91,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215484,
+   "durMs": 87,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215484,
+   "durMs": 9201,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 9069,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 8754,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 1137,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 279,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 140,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 93,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215493,
+   "durMs": 788,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 693,
+     "url": "/_next/static/chunks/3fntmmi971322.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 562,
+     "url": "/_next/static/chunks/3fntmmi971322.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 83,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 65,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 44,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 17,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215494,
+   "durMs": 61010,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 59534,
+     "url": "/_next/static/chunks/turbopack-3or-2iatmqpb2.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 59139,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 58911,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 57341,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 1357,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 1245,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215555,
+   "durMs": 1932,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1758,
+     "url": "/_next/static/chunks/0_cgadnlzpl8g.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 1408,
+     "url": "/_next/static/chunks/0_cgadnlzpl8g.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 316,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 174,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 136,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 105,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215557,
+   "durMs": 421,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215557,
+   "durMs": 257,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215558,
+   "durMs": 3238,
+   "toppBarn": [
+    {
+     "namn": "ParseHTML",
+     "dur": 2122,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 1160,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 712,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 682,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 464,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 418,
+     "url": "/en/blogg",
+     "rad": 2,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215561,
+   "durMs": 11405,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215572,
+   "durMs": 54,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215572,
+   "durMs": 917,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215573,
+   "durMs": 649,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215574,
+   "durMs": 54,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215574,
+   "durMs": 60,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215574,
+   "durMs": 1140,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215575,
+   "durMs": 51,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215575,
+   "durMs": 701,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215576,
+   "durMs": 7057,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 6891,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 6807,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 50,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 36,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 30,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 28,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215583,
+   "durMs": 1527,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1198,
+     "url": "/_next/static/chunks/2qnjvou52dgsk.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 845,
+     "url": "/_next/static/chunks/2qnjvou52dgsk.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 322,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 200,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 182,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 168,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "fD"
+    }
+   ]
+  },
+  {
+   "startMs": 1023215585,
+   "durMs": 1397,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1038,
+     "url": "/_next/static/chunks/1ymt1shyhmu-4.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 867,
+     "url": "/_next/static/chunks/1ymt1shyhmu-4.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 138,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 91,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 55,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 52,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215586,
+   "durMs": 1662,
+   "toppBarn": [
+    {
+     "namn": "EventDispatch",
+     "dur": 514,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 431,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 249,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 242,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 169,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "R"
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 23,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215588,
+   "durMs": 1808,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1558,
+     "url": "/_next/static/chunks/3pst6ss7vt93a.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 1193,
+     "url": "/_next/static/chunks/3pst6ss7vt93a.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 321,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 207,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 181,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 113,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215590,
+   "durMs": 1162,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 934,
+     "url": "/_next/static/chunks/2u20jhmuenp1-.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 713,
+     "url": "/_next/static/chunks/2u20jhmuenp1-.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 195,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 94,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 84,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 61,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215591,
+   "durMs": 2803,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 2468,
+     "url": "/_next/static/chunks/10f47l5mmeoxy.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 2107,
+     "url": "/_next/static/chunks/10f47l5mmeoxy.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 335,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 335,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 153,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 147,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215594,
+   "durMs": 6016,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 5652,
+     "url": "/_next/static/chunks/02vzzrgqq_wa8.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 5090,
+     "url": "/_next/static/chunks/02vzzrgqq_wa8.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 581,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 524,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.run",
+     "dur": 280,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.produceCache",
+     "dur": 191,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215600,
+   "durMs": 1800,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1064,
+     "url": "/_next/static/chunks/208qlhbwv45x6.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 816,
+     "url": "/_next/static/chunks/208qlhbwv45x6.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 233,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 214,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 213,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 197,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "fD"
+    }
+   ]
+  },
+  {
+   "startMs": 1023215602,
+   "durMs": 5637,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5569,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5411,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 123,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 111,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 101,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 32,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215607,
+   "durMs": 210,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 190,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215608,
+   "durMs": 85,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215608,
+   "durMs": 1246,
+   "toppBarn": [
+    {
+     "namn": "EventDispatch",
+     "dur": 144,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 54,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 43,
+     "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.newInstance",
+     "dur": 25,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 25,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EventDispatch",
+     "dur": 10,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215609,
+   "durMs": 10865,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 10796,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 10695,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 323,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 209,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 191,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 129,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215620,
+   "durMs": 96,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215620,
+   "durMs": 124,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215620,
+   "durMs": 83,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215620,
+   "durMs": 8539,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 8474,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 8380,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 382,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 157,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 115,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 55,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215629,
+   "durMs": 802,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215629,
+   "durMs": 5211,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5139,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5048,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 179,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 54,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 41,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 36,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215635,
+   "durMs": 461,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215635,
+   "durMs": 10689,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 10625,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 10547,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 215,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 169,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 167,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 160,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215646,
+   "durMs": 1220,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215647,
+   "durMs": 15626,
+   "toppBarn": [
+    {
+     "namn": "Layout",
+     "dur": 5123,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Layout",
+     "dur": 4959,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 443,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "DocumentLoader::CommitNavigation",
+     "dur": 408,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "DecodedDataDocumentParser::AppendBytes",
+     "dur": 273,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Paint",
+     "dur": 207,
+     "url": "60193F2084C833BB8E734BE918EE5DAE",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215663,
+   "durMs": 5419,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5336,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5242,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 106,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 97,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 69,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 46,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215668,
+   "durMs": 208,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215669,
+   "durMs": 37635,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 37324,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 37190,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 347,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 244,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 213,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 204,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215706,
+   "durMs": 469,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215707,
+   "durMs": 127,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215707,
+   "durMs": 535,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 502,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 463,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 22,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 14,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 8,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 7,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215708,
+   "durMs": 634,
+   "toppBarn": [
+    {
+     "namn": "TimerFire",
+     "dur": 500,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 481,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 471,
+     "url": "/en/blogg",
+     "rad": 1,
+     "funktion": "$RV"
+    }
+   ]
+  },
+  {
+   "startMs": 1023215708,
+   "durMs": 7275,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 7216,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 7133,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 225,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 190,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 189,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 106,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215716,
+   "durMs": 739,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 717,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215716,
+   "durMs": 5615,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5539,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5455,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 151,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 88,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 80,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 54,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215722,
+   "durMs": 5149,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5025,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 4948,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 172,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 105,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 99,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 65,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215727,
+   "durMs": 5219,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5157,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5075,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 899,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 81,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 73,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 51,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215732,
+   "durMs": 3007,
+   "toppBarn": [
+    {
+     "namn": "ResourceRequestSender::OnRequestComplete",
+     "dur": 1543,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::OnCompletedRequest",
+     "dur": 1518,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::Cancel",
+     "dur": 1380,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ThrottlingURLLoader::OnReceiveResponse",
+     "dur": 907,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "MojoURLLoaderClient::OnReceiveResponse",
+     "dur": 857,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ResourceRequestSender::OnReceivedResponse",
+     "dur": 849,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215735,
+   "durMs": 5726,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 5643,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 5547,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 1030,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 438,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 433,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 419,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215741,
+   "durMs": 11763,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 11690,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 11519,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 844,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 138,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 101,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 84,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215753,
+   "durMs": 1584,
+   "toppBarn": [
+    {
+     "namn": "ThrottlingURLLoader::OnReceiveResponse",
+     "dur": 785,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "MojoURLLoaderClient::OnReceiveResponse",
+     "dur": 746,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ResourceRequestSender::OnReceivedResponse",
+     "dur": 710,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::OnReceivedResponse",
+     "dur": 660,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ResourceRequestSender::OnRequestComplete",
+     "dur": 331,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::OnCompletedRequest",
+     "dur": 307,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215755,
+   "durMs": 35446,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 32579,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 32469,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterruptWithStackCheck",
+     "dur": 2829,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::loadAsynchronously",
+     "dur": 1641,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::Start",
+     "dur": 1623,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ThrottlingURLLoader::Start",
+     "dur": 1579,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215790,
+   "durMs": 283,
+   "toppBarn": [
+    {
+     "namn": "RunMicrotasks",
+     "dur": 237,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215791,
+   "durMs": 780,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 734,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 679,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.DeoptimizeCode",
+     "dur": 86,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 29,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 21,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 13,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215791,
+   "durMs": 16158,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 16111,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 16032,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 3222,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 2611,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 452,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterruptWithStackCheck",
+     "dur": 229,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215808,
+   "durMs": 1255,
+   "toppBarn": [
+    {
+     "namn": "v8.newInstance",
+     "dur": 1016,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 12,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215809,
+   "durMs": 1055,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 1006,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 944,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 37,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 35,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.DeoptimizeCode",
+     "dur": 34,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 28,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215816,
+   "durMs": 6551,
+   "toppBarn": [
+    {
+     "namn": "RunMicrotasks",
+     "dur": 5624,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ThrottlingURLLoader::OnReceiveResponse",
+     "dur": 574,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "MojoURLLoaderClient::OnReceiveResponse",
+     "dur": 537,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ResourceRequestSender::OnReceivedResponse",
+     "dur": 530,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "URLLoader::Context::OnReceivedResponse",
+     "dur": 498,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ResourceRequestSender::OnRequestComplete",
+     "dur": 30,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215822,
+   "durMs": 603,
+   "toppBarn": [
+    {
+     "namn": "URLLoader::Context::Cancel",
+     "dur": 69,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215823,
+   "durMs": 3613,
+   "toppBarn": [
+    {
+     "namn": "RunMicrotasks",
+     "dur": 3575,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215833,
+   "durMs": 158,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 73,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023215965,
+   "durMs": 284,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023215966,
+   "durMs": 9637,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216133,
+   "durMs": 134,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216196,
+   "durMs": 62,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216416,
+   "durMs": 453,
+   "toppBarn": [
+    {
+     "namn": "RunMicrotasks",
+     "dur": 112,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216417,
+   "durMs": 6178,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216423,
+   "durMs": 317,
+   "toppBarn": [
+    {
+     "namn": "RunMicrotasks",
+     "dur": 286,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 142,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 114,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.BytecodeBudgetInterrupt",
+     "dur": 9,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216424,
+   "durMs": 7010,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 6940,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 6847,
+     "url": "/_next/static/chunks/2feezv-iveko5.js",
+     "rad": 1,
+     "funktion": "O"
+    },
+    {
+     "namn": "V8.StackGuard",
+     "dur": 73,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.HandleInterrupts",
+     "dur": 56,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 55,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 41,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216456,
+   "durMs": 117143,
+   "toppBarn": [
+    {
+     "namn": "Layout",
+     "dur": 92116,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Layout",
+     "dur": 7746,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 7455,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Paint",
+     "dur": 2617,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "UpdateLayoutTree",
+     "dur": 1253,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Commit",
+     "dur": 843,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216574,
+   "durMs": 67,
+   "toppBarn": [
+    {
+     "namn": "EventDispatch",
+     "dur": 37,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216574,
+   "durMs": 523,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216575,
+   "durMs": 10028,
+   "toppBarn": [
+    {
+     "namn": "Commit",
+     "dur": 9784,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "HitTest",
+     "dur": 9487,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "HitTest",
+     "dur": 25,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "PrePaint",
+     "dur": 24,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "IntersectionObserverController::computeIntersections",
+     "dur": 19,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "IntersectionObserverController::computeIntersections",
+     "dur": 7,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216585,
+   "durMs": 9923,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 4693,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 2106,
+     "url": "/_next/static/chunks/095w8h_fgc5q_.js",
+     "rad": 1,
+     "funktion": "IntersectionObserver.rootMargin"
+    },
+    {
+     "namn": "v8.newInstance",
+     "dur": 35,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216595,
+   "durMs": 76,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 66,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216595,
+   "durMs": 109,
+   "toppBarn": [
+    {
+     "namn": "LargestImagePaint::NoCandidate",
+     "dur": 9,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216697,
+   "durMs": 206,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 106,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216749,
+   "durMs": 160,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216749,
+   "durMs": 67,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216761,
+   "durMs": 68,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216770,
+   "durMs": 534,
+   "toppBarn": [
+    {
+     "namn": "Commit",
+     "dur": 165,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "IntersectionObserverController::computeIntersections",
+     "dur": 36,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "PrePaint",
+     "dur": 31,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "IntersectionObserverController::computeIntersections",
+     "dur": 20,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "Layerize",
+     "dur": 6,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023216771,
+   "durMs": 864,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216847,
+   "durMs": 249,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216849,
+   "durMs": 551,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023216951,
+   "durMs": 294,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 247,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217184,
+   "durMs": 86,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217185,
+   "durMs": 68,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217252,
+   "durMs": 55,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217263,
+   "durMs": 65,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217271,
+   "durMs": 52,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217590,
+   "durMs": 212,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217593,
+   "durMs": 113,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217597,
+   "durMs": 196,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023217602,
+   "durMs": 1980,
+   "toppBarn": [
+    {
+     "namn": "LocalWindowProxy::Initialize",
+     "dur": 1779,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "LocalWindowProxy::CreateContext",
+     "dur": 997,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "V8.DeserializeContext",
+     "dur": 701,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ContextCreatedNotification",
+     "dur": 386,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "InstallConditionalFeatures",
+     "dur": 337,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "LocalWindowProxy::SetupWindowPrototypeChain",
+     "dur": 15,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217607,
+   "durMs": 2285,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 2168,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "EvaluateScript",
+     "dur": 920,
+     "url": "",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.compile",
+     "dur": 828,
+     "url": "",
+     "rad": 1,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 158,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 109,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCompiled",
+     "dur": 56,
+     "url": "/en/blogg",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217610,
+   "durMs": 245,
+   "toppBarn": [
+    {
+     "namn": "v8.callFunction",
+     "dur": 201,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 172,
+     "url": "_lighthouse-eval.js",
+     "rad": 18,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.newInstance",
+     "dur": 5,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.newInstance",
+     "dur": 5,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217613,
+   "durMs": 1183,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1030,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 188,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 53,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 10,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217710,
+   "durMs": 128,
+   "toppBarn": [
+    {
+     "namn": "PageTimingMetricsSender::SendNow",
+     "dur": 85,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023217764,
+   "durMs": 486,
+   "toppBarn": [
+    {
+     "namn": "TimerFire",
+     "dur": 362,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 321,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 162,
+     "url": "_lighthouse-eval.js",
+     "rad": 26,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 121,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023218755,
+   "durMs": 228,
+   "toppBarn": []
+  },
+  {
+   "startMs": 1023218787,
+   "durMs": 7545,
+   "toppBarn": [
+    {
+     "namn": "EvaluateScript",
+     "dur": 1811,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 258,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 22,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "ScriptCatchup",
+     "dur": 14,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    }
+   ]
+  },
+  {
+   "startMs": 1023218940,
+   "durMs": 15891,
+   "toppBarn": [
+    {
+     "namn": "TimerFire",
+     "dur": 15843,
+     "url": "8C4CC7B6AC49BB79AF98CF33D4CBD9AD",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "v8.callFunction",
+     "dur": 15775,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "RunMicrotasks",
+     "dur": 14792,
+     "url": "",
+     "rad": null,
+     "funktion": ""
+    },
+    {
+     "namn": "FunctionCall",
+     "dur": 930,
+     "url": "_lighthouse-eval.js",
+     "rad": 26,
+     "funktion": ""
+    }
+   ]
+  }
+ ],
+ "antalTasks": 155,
+ "tbt": 547,
+ "fcp": 1241,
+ "bygge": "IxcwwO_QWK5g7r0rfK5_M"
+}

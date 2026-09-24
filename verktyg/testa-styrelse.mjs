@@ -11,9 +11,11 @@
  * Flöde:
  *   1. Startar `npm run dev` i bakgrunden OM :port inte svarar (beredskaps-
  *      sond: öppna GET /api/studio/halsa).
- *   2. POST /api/studio/styrelse {fraga: "Vad bör prioriteras för
- *      mobilupplevelsen?"} (harmlös fråga — inga existentiella domäner i
- *      närheten) → {id}.
+ *   2. POST /api/studio/styrelse {fraga: "Vilken ordning bör de interna
+ *      testsviterna köras i nästa kvalitetssvep?"} (rent intern mekanik —
+ *      men R108-lärdom: rollernas SVAR kan ändå nämnas R2-ord via
+ *      sessionens kontext, så K4/K5 bevisar KONSEKVENS i stället för ett
+ *      bestämt klassningsutfall) → {id}.
  *   3. Pollar GET ?id=&senast=N inkrementellt (mötets händelselogg live).
  *   4. Bevisar:
  *      K1  Mötet slutar status=klart med beslut.
@@ -25,12 +27,25 @@
  *          motivering + åtgärder + rollsummeringar. Negerad disclaimer
  *          ("inte investeringsråd") ger INGEN träff — regexarna bär själva
  *          negationsreglerna (varumarke.ts).
- *      K4  existential=false → atgardsStatus="KORS_DIREKT".
- *      K5  PIPELINE-KO.md har fått [STYRELSEN]-rader med mötets id
- *          (huvudagentens dispatchlista).
+ *      K4  R2-KLASSNINGEN KONSEKVENT: existential=false ⇔ KORS_DIREKT,
+ *          existential=true ⇔ VANTAR_KUND (R108-lärdom: rollernas åtgärder
+ *          kan nämna R2-ord — lösenord/publicering — beroende på sessionens
+ *          kontext, och DÅ är VÄNTAR KUND motorn RÄTT; testet bevisar
+ *          konsekvensen, inte ett visst utfall).
+ *      K5  PIPELINE-KO följer status: KÖRS DIREKT ⇒ [STYRELSEN]-rader med
+ *          mötets id skrivna; VÄNTAR KUND ⇒ 0 rader (motorn skriver aldrig
+ *          dispatchrader för beslut som väntar kund).
  *      K6  STYRELSE-BESLUT.md protokollfört mötet (append, daterat).
+ *      K7  PER-ÅTGÄRDS-STÄNGSEL (v214): atgardKlassning alltid närvarande,
+ *          en post per åtgärd (existential + traffadeNyckelord). Vid KÖRS
+ *          DIREKT: [STYRELSEN]-raderna = ENDAST de icke-R2-klassade åtgär-
+ *          dina (motorRader räknar bara verkställande), och varje R2-klassad
+ *          åtgärd bär en ⚠ VÄNTAR KUND-rad med mötets id — ALDRIG en
+ *          [STYRELSEN]-rad. Vid VÄNTAR KUND skrivs inget (K5 äger det).
  *
- * Körs med: node verktyg/testa-styrelse.mjs [port]   (default 3000)
+ * Körs med: node verktyg/testa-styrelse.mjs [port]
+ * Port default = AK1A_TEST_DEV_PORT eller 3117 — ALDRIG 3000 (prod på servern;
+ * V213a: sonden mot 3000 kunde verkställa ett ÄKTA möte i prod, R107-fyndet).
  * Kräver dev-läge (NODE_ENV=development ⇒ admin-devfallback gäller).
  */
 
@@ -38,15 +53,19 @@ import { spawn } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { hamtaPortagare, lasCmdline, lasPpid, hittaOrtRot, dodaDeltrad } from "./process-trad.mjs";
 
-const PORT = process.argv[2] || "3000";
+const PORT = process.argv[2] || process.env.AK1A_TEST_DEV_PORT || "3117";
 const BAS = `http://127.0.0.1:${PORT}`;
-const HEADERS = { "x-admin-password": process.env.ADMIN_PASSWORD || "AK1A-2026" }; // dev-fallback (endast development)
+// Dev-fönstrets kontrakt (trions mönster): AK1A-2026 hårdkodat — ALDRIG arv av
+// ADMIN_PASSWORD (sessionens env kan bära det RIKTIGA lösenordet ⇒ 401 mot
+// fönstret som kräver dev-värdet; V213a-fyndet). Override via test-variabel.
+const HEADERS = { "x-admin-password": process.env.AK1A_TEST_LOSENORD || "AK1A-2026" };
 const JSON_HEADERS = { ...HEADERS, "Content-Type": "application/json" };
 
 const SKRIPT_SOKVAG = fileURLToPath(import.meta.url);
 const ROT = path.resolve(path.dirname(SKRIPT_SOKVAG), "..");
-const FRAGA = "Vad bör prioriteras för mobilupplevelsen?";
+const FRAGA = "Vilken ordning bör de interna testsviterna köras i nästa kvalitetssvep?";
 
 const kontroll = (namn, ok, detalj) => {
   const ikon = ok ? "PASS" : "FAIL";
@@ -68,19 +87,49 @@ async function svarar() {
 }
 
 let startadDev = null;
+// F2-VACCINET (2026-09-20): sviten återanvänder TIDIGARE ett svarande
+// fönster på :port — legitimit när aggregatorns egna fönster lever, men
+// en LÄCKT instans (förälder död, PPid-kedjan slutar vid init) serverar
+// GAMLAL kod och sviterna mäter då gårdagens bygge i god tro (bevis: 5 h
+// gammal "next dev -p 3000 -p 3117" med PPid 1). Därför: svara-en-
+// process med ort-rot dödas FÖRRE återanvändning; samma svep tar
+// porttjuvar innan egen start. Linux-only (/proc) — Windows behåller
+// sitt gamla spur.
+if (process.platform === "linux") {
+  const agare = hamtaPortagare(Number(PORT));
+  if (!agare.okand && agare.finnas && agare.pid != null) {
+    const cmd = lasCmdline(agare.pid);
+    const rot = hittaOrtRot(agare.pid);
+    if (/next/.test(cmd) && lasPpid(rot) === 1) {
+      console.log(`▸ F2-svep: dödar läckt dev-server på :${PORT} (ort-rot pid ${rot}, ${cmd.slice(0, 60)}…)`);
+      await dodaDeltrad(rot);
+      await sov(1_000);
+    }
+  }
+}
 if (!(await svarar())) {
-  console.log(`▸ Startar npm run dev i bakgrunden (port ${PORT}) …`);
+  console.log(`▸ Startar next dev i bakgrunden (port ${PORT}) …`);
   const logg = [];
-  // package.json:dev hårdkodar -p 3000 — annan port skickas som extra -p
-  // (testet sondar PORT; default 3000 matchar dev-skriptet).
-  const devArg = process.platform === "win32" ? ["/c", "npm run dev"] : ["run", "dev"];
-  if (PORT !== "3000") devArg.push("--", "-p", PORT);
-  startadDev = spawn(process.platform === "win32" ? "cmd.exe" : "npm", devArg, {
-    cwd: ROT,
-    env: { ...process.env },
-    shell: false,
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+  // F2: next-binären spawnas DIREKT på Linux — "npm run dev -- -p …"
+  // arityade package.json:s "next dev -p 3000" till DUBBELA -p-flaggor
+  // (sista vann av tur). Miljön sätts EXPLICIT (V213a, aggregatorns
+  // mönster): mock-transport + dev-lösenord så ärvda env-värden aldrig
+  // slår av dev-fallbacken, och loopback-bindning ger instansen ingen
+  // extern yta.
+  const arWin = process.platform === "win32";
+  const nextBin = path.join(ROT, "node_modules", ".bin", "next");
+  startadDev = arWin
+    ? spawn("cmd.exe", ["/c", "npm run dev", "--", "-p", PORT], {
+        cwd: ROT,
+        env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
+        stdio: ["ignore", "pipe", "pipe"],
+      })
+    : spawn(process.execPath, [nextBin, "dev", "-p", PORT, "-H", "127.0.0.1"], {
+        cwd: ROT,
+        detached: true, // egen processgrupp ⇒ gruppdöd i stangaDev
+        env: { ...process.env, STUDIO_TRANSPORT: "mock", ADMIN_PASSWORD: "AK1A-2026" },
+        stdio: ["ignore", "pipe", "pipe"],
+      });
   startadDev.stdout?.on("data", (d) => logg.push(String(d)));
   startadDev.stderr?.on("data", (d) => logg.push(String(d)));
   let fardig = false;
@@ -91,14 +140,12 @@ if (!(await svarar())) {
   if (!fardig) {
     console.log("FAIL  dev-servern kom ej upp inom 180 s. Senaste logg:");
     console.log(logg.join("").slice(-2_000));
-    if (startadDev.pid && process.platform === "win32") {
-      spawn("taskkill", ["/pid", String(startadDev.pid), "/T", "/F"], { stdio: "ignore" });
-    } else {
-      startadDev.kill("SIGTERM");
-    }
+    await stangaDev();
     process.exit(1);
   }
   console.log("▸ Dev-servern är uppe.");
+} else {
+  console.log(`▸ Återanvänder svarande dev-fönster på :${PORT} (F2-svepat — ingen ort).`);
 }
 
 async function stangaDev() {
@@ -106,9 +153,16 @@ async function stangaDev() {
   if (process.platform === "win32" && startadDev.pid) {
     // Windows: npm -> cmd -> node är en processgrupp — taskkill /T dödar hela trädet.
     spawn("taskkill", ["/pid", String(startadDev.pid), "/T", "/F"], { stdio: "ignore" });
-  } else {
-    startadDev.kill("SIGTERM");
+    return;
   }
+  // F2: bara npm/skalet dödades tidigare — next-trädet orphanades (PPid 1,
+  // läckan). Gruppdöd (detached) + delträds-försäkring via process-trad.
+  try {
+    process.kill(-startadDev.pid, "SIGTERM");
+  } catch {
+    /* redan borta */
+  }
+  await dodaDeltrad(startadDev.pid);
 }
 
 // ── Steg 2: starta mötet ─────────────────────────────────────────────────────
@@ -190,10 +244,12 @@ for (const text of beslutTexter) {
 }
 kontroll("K3 beslutet saknar investeringsråd-formuleringar (varumarke-FEL: 0 träffar)", traffar.length === 0, traffar.length > 0 ? traffar.slice(0, 3).join(" | ") : `${String(felRegexar.length)} FEL-regexar körda`);
 
-// K4 — R2-klassning: harmlös fråga ⇒ existential=false ⇒ KORS_DIREKT
+// K4 — R2-klassningen konsekvent: existential ⇔ atgardsStatus (båda utfall giltiga)
+const korDirekt = mote?.beslut?.existential === false && mote?.atgardsStatus === "KORS_DIREKT";
+const vantarKund = mote?.beslut?.existential === true && mote?.atgardsStatus === "VANTAR_KUND";
 kontroll(
-  "K4 existential=false → atgardsStatus=KORS_DIREKT",
-  mote?.beslut?.existential === false && mote?.atgardsStatus === "KORS_DIREKT",
+  "K4 R2-klassning konsekvent (existential ⇔ atgardsStatus)",
+  korDirekt || vantarKund,
   `existential=${String(mote?.beslut?.existential)} · atgardsStatus=${String(mote?.atgardsStatus)}`,
 );
 
@@ -204,11 +260,17 @@ try {
 } catch {
   pipeline = "";
 }
+// K5 — PIPELINE-KO följer status: rader ENDAST vid KÖRS DIREKT, aldrig vid VÄNTAR KUND
 const pipelineRader = pipeline.split(/\r?\n/).filter((r) => r.includes(id) && r.includes("[STYRELSEN]"));
+const motorRader = mote?.pipelineRader ?? 0;
+const korDirektKvitto = pipelineRader.length > 0 && motorRader > 0;
+const vantarKvitto = pipelineRader.length === 0 && motorRader === 0;
 kontroll(
-  "K5 PIPELINE-KO.md har [STYRELSEN]-rader med mötets id",
-  pipelineRader.length > 0 && (mote?.pipelineRader ?? 0) > 0,
-  `${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(mote?.pipelineRader ?? 0)}`,
+  "K5 PIPELINE-KO följer status (KÖRS DIREKT ⇒ rader, VÄNTAR KUND ⇒ 0)",
+  korDirekt ? korDirektKvitto : vantarKvitto,
+  korDirekt
+    ? `${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(motorRader)}`
+    : `VÄNTAR KUND · ${String(pipelineRader.length)} rad(er) i filen · motorn rapporterar ${String(motorRader)} (skall vara 0)`,
 );
 for (const r of pipelineRader.slice(0, 3)) console.log(`      ${r.slice(0, 160)}`);
 
@@ -220,6 +282,35 @@ try {
   protokoll = "";
 }
 kontroll("K6 STYRELSE-BESLUT.md protokollfört mötet (daterat)", protokoll.includes(id), protokoll ? `filen ${String(protokoll.length)} tecken` : "filen saknas");
+
+// K7 — PER-ÅTGÄRDS-STÄNGSEL (v214): klassning alltid närvarande + välformad,
+// och PIPELINE-KO återspeglar den per rad: R2-klassade åtgärder ⇒ ⚠-rad,
+// aldrig [STYRELSEN]-rad; motorRader räknar ENDAST verkställande rader.
+const klassning = mote?.beslut?.atgardKlassning ?? null;
+const atgarderLista = mote?.beslut?.atgarder ?? [];
+const klassningVal = Array.isArray(klassning) && klassning.length === atgarderLista.length &&
+  klassning.every((k) => k && typeof k.existential === "boolean" && Array.isArray(k.traffadeNyckelord));
+let stangselOk = false;
+let stangselDetalj = "mötet VÄNTAR KUND — inga rader skrivna (K5 äger)";
+if (klassningVal && korDirekt) {
+  const vantarAtgarder = klassning.filter((k) => k.existential);
+  const verkstallande = klassning.length - vantarAtgarder.length;
+  const vaktRader = pipeline.split(/\r?\n/).filter((r) => r.includes(id) && r.includes("⚠ VÄNTAR KUND"));
+  // R2-klassad åtgärd får ALDRIG återfinnas i en verkställande rad (matchning
+  // på normaliserad textprefix — raderna trunkeras vid 300 tecken).
+  const norm = (t) => t.replace(/\s+/g, " ").trim().slice(0, 80);
+  const lackage = vantarAtgarder.filter((k) => pipelineRader.some((r) => r.includes(norm(k.text).slice(0, 40))));
+  const forvantadeVakt = vantarAtgarder.every((k) => vaktRader.some((r) => r.includes(norm(k.text).slice(0, 40))));
+  const raderKonsistent =
+    pipelineRader.length === (verkstallande > 0 ? verkstallande : 1) && motorRader === pipelineRader.length;
+  stangselOk = raderKonsistent && lackage.length === 0 && (vantarAtgarder.length === 0 || forvantadeVakt);
+  stangselDetalj = `${String(verkstallande)} verkställande / ${String(vantarAtgarder.length)} R2-klassade · ${String(pipelineRader.length)} [STYRELSEN]-rad(er) · ${String(vaktRader.length)} ⚠-rad(er)${lackage.length > 0 ? ` · LÄCKAGE: ${String(lackage.length)}` : ""}`;
+}
+kontroll(
+  "K7 per-åtgärds-stängsel (atgardKlassning välformad + ⚠-rader separerade från verkställande)",
+  klassningVal && (!korDirekt || stangselOk),
+  `${stangselDetalj} · klassning ${klassningVal ? `${String(klassning.length)} post(er)` : "saknas/felformad"}`,
+);
 
 // ── Sammanfattning ───────────────────────────────────────────────────────────
 

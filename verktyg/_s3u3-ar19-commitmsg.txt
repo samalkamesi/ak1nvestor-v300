@@ -1,0 +1,34 @@
+studio: auto s3-u3 AR19 e-handel-ar (أسهم التجارة الإلكترونية) — arabisk spegling av B19, KVD GRÖN 17/17 [fabrik]
+
+AR19 = spårets tredje lediga objekt enligt Ö17/Ö20/AR2/AR5/AR10-precedensen:
+AR17 var upptaget (s3-u2:s klaim/leverans; s3-u1:s parallella klaim 18:36:41Z
+respekterad orörd) och u1:s klaim utlovade uttryckligen "AR18 livsmedel-ar +
+AR19 e-handel-ar åt syskonens u2/u3" ⇒ u3-slotten AR19, klaimfil på disk FÖRE
+arbetet (Ö5-precedensens pivot bokförd).
+
+· Leverans: data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag-ar.json
+  — arabisk översättning av B19 (originalet 09-17 av s3-u2, spegeln Ö19 som
+  termreferens, AR16 som strukturreferens); samma tal och räkneexempel:
+  GMV 10 mdr × 8 % = 0.8 mdr, bruttospannet 40.8–82.9 mot 54–56, Uber-vändningen
+  −9,141→+10,053 M$, Sea −1,651→+1,578, Shopify −3,460→vinst 3 raka år + 2025-
+  fallet 8.9→11.6 mdr (+30 %) med resultatet 2,019→1,231, MELI 10.8→28.9 mdr
+  (38.9 %/år, skuldkvot 1.69), Airbnb FCF 1.85× (4,646/2,511), P/E-trappan
+  15.6–94.6 mot tillväxten 16.7–48.1, PEG 1.15–3.4, FCF-yield 13.4/0.9,
+  Amazon 2,680 mdr/−1.5 %, Airbnb-notfallet 4,792→2,648.
+· KVD GRÖN 17/17 (verktyg/_s3u3-ar19-kvd-ehandel-ar.mjs): varumärkesgrindens
+  egna 26 regexer × 3 ytor = 0/0, rådverb SV+EN+AR 0, sökord i title+ingress+
+  2 H2, title 48/60, OG 141/155, ord 1245 (originalet 1206), korslänkar 19/19
+  MULTISET-identiska (v15 ×2 + v15-analys ×2), externa URL:er 0=0 (Ö19-
+  precedensen), H2 7=7, talparitet 91/91 numerisk multiset språkmedveten
+  (AR8-klassen + AR16:s ", "-tokenbrytning), aritmetik 10/10 motorräknad
+  (MELI-CAGR med dokumenterad tolerans — Ö13-klassen), readingMinutes 2,
+  svenska läckor 0 (17 latinska token alla vitlistade — AR6-konventionen),
+  disclaimer arabisk exakt sista rad.
+· Egna fel fångade FÖRE leverans (vaccinerade): stavfelsankaret غوث→غوص i
+  P/E-länken (genomläsning), avskriftsfelet forbudna→forbjudnaFraser i KVD-
+  skriptet (AR9/AR15-klassen — rättat före första körningen).
+· Bokföring: AR19-rad + NOT i SEO-GUIDER-2026-09.md; klaimfil status LEVERERAD.
+· Arabiska omgången: AR1–AR17+AR19 klara (18 av 23). Nästa lucka: AR18
+  livsmedel-ar (u2-slotten), därefter AR20+ i B-ordning.
+· R2 orörd: inga priser/tier/publicering; utkast i data/blogg-utkast/ ALDRIG
+  data/blogg/; src/ orörd = INGET bygge; endast data/ + verktyg/ + mallfil.

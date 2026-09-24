@@ -3,14 +3,17 @@
 // Granskare: s1-u1 instans 2 (manifest auto-s1-1789829700743), 2026-09-19.
 // Källa låst till byggtidens vintage: bolagsunivers.json @ 795fe396 (09-17 03:04,
 // sista commiten före utkastets skapande 09-17 03:28 — 144 poster).
-import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+// s8-u3 (o98, 2026-09-19): skalformerna hårdade (Mimosa CHILD_PROC_INTERP ×3)
+// med BETEENDEIDENTITET bevisad genom FÖRE/EFTER-utdatadiff (58 OK/3 FEL båda
+// gångerna) — git via execFileSync-array, test -f via statSync().isFile().
+import { execFileSync } from 'node:child_process';
+import { readFileSync, statSync } from 'node:fs';
 
 const UTKAST = 'data/blogg-utkast/ehandelsaktier-sa-analyserar-du-plattformsbolag.json';
 const VINTAGE_REF = '795fe396';
 const u = JSON.parse(readFileSync(UTKAST, 'utf8'));
 const body = u.body;
-const uni = JSON.parse(execSync(`git show ${VINTAGE_REF}:data/portfolj-system/bolagsunivers.json`, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+const uni = JSON.parse(execFileSync('git', ['show', `${VINTAGE_REF}:data/portfolj-system/bolagsunivers.json`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
 const list = Array.isArray(uni) ? uni : (uni.bolag || uni.poster || Object.values(uni).find(Array.isArray));
 const byTicker = Object.fromEntries(list.map(p => [p.ticker, p]));
 const vm = JSON.parse(readFileSync('data/varumarke.json', 'utf8'));
@@ -157,7 +160,7 @@ K('F-ord', `Ordräkning → readingMinutes-praxis ord/200 (nuvarande ${u.reading
   `${ord} ord ⇒ praxis ${Math.max(1, Math.round(ord / 200))} min (deklarerat ${u.readingMinutes})`);
 K('F-rm', 'readingMinutes stämmer mot ord/200-praxis', u.readingMinutes === Math.max(1, Math.round(ord / 200)),
   `deklarerat ${u.readingMinutes} mot praxis ${Math.max(1, Math.round(ord / 200))}`);
-const forstaCommit = execSync(`git log --diff-filter=A --format=%ad --date=format:%Y-%m-%d -- ${UTKAST}`, { encoding: 'utf8' }).trim();
+const forstaCommit = execFileSync('git', ['log', '--diff-filter=A', '--format=%ad', '--date=format:%Y-%m-%d', '--', UTKAST], { encoding: 'utf8' }).trim();
 K('F-pubdatum', 'publishedAt = skapandedatum (första commit)', forstaCommit === u.publishedAt, `första commit ${forstaCommit} mot publishedAt ${u.publishedAt}`);
 
 // ---------- G. LÄNKAR (flock-låset kontrollerat FRITT före dom — u1-instans-1:s läxa) ----------
@@ -174,7 +177,8 @@ K('G-lankar', `Interna länkar HTTP 200 mot localhost (${resultat.length - doda.
   doda.map(d => `${d.lank} → ${d.status}`).join(', ') || `alla ${resultat.length} OK`);
 const bloggMal = lankar.filter(l => l.startsWith('/blogg/'));
 const liveBlogg = bloggMal.filter(l => {
-  try { execSync(`test -f data/blogg/${l.replace('/blogg/', '')}.json || test -f data/blogg/${l.replace('/blogg/', '')}.md`, { stdio: 'ignore' }); return true; } catch { return false; }
+  const bas = `data/blogg/${l.replace('/blogg/', '')}`;
+  return ['.json', '.md'].some(ext => { try { return statSync(bas + ext).isFile(); } catch { return false; } });
 });
 K('G-blogg', `Bloggmål motsvaras av live-fil i data/blogg/ (${liveBlogg.length}/${bloggMal.length})`, liveBlogg.length === bloggMal.length,
   bloggMal.map(b => `${b} ${liveBlogg.includes(b) ? 'LIVE' : 'SAKNAS'}`).join(' · '));

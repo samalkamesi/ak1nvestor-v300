@@ -1,0 +1,328 @@
+{
+  "bolag": "ATCO-A",
+  "ar": "2025",
+  "proveniensSha": "70d076bd915ecb111549426d3bf2b585626e117e20509f42c84dd001915e4164",
+  "sammanfattning": {
+    "sektionerTotalt": 316,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 15,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 310,
+      "rubrik": "Auditors limited assurance report on Atlas Copco ABs sustainability",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda",
+        "nettoresultat",
+        "tillgangar",
+        "kassaflode",
+        "utdelning",
+        "rantabilitet",
+        "skuld",
+        "anstallda"
+      ],
+      "siffror": 938,
+      "poang": 41
+    },
+    {
+      "i": 7,
+      "rubrik": "Operating cash flow and return on capital employed2023 är operating",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda",
+        "rorelsemarginal",
+        "nettoresultat",
+        "eps",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 581,
+      "poang": 39
+    },
+    {
+      "i": 29,
+      "rubrik": "Depreciation and EBITDANet financial itemsProfit before taxTaxesProfit",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda",
+        "rorelsemarginal",
+        "nettoresultat",
+        "eps"
+      ],
+      "siffror": 543,
+      "poang": 35
+    },
+    {
+      "i": 30,
+      "rubrik": "Balance sheetCash, cash equivalents and other current financial",
+      "familjer": [
+        "nettoomsattning",
+        "nettoresultat",
+        "eget-kapital",
+        "tillgangar",
+        "utdelning",
+        "rantabilitet",
+        "anstallda"
+      ],
+      "siffror": 394,
+      "poang": 34.7
+    },
+    {
+      "i": 257,
+      "rubrik": "IntroductionThis is Atlas Copco GroupThe year in reviewFinancialsAtlas",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "nettoresultat",
+        "tillgangar",
+        "investeringar"
+      ],
+      "siffror": 494,
+      "poang": 32
+    },
+    {
+      "i": 258,
+      "rubrik": "IntroductionThis is Atlas Copco GroupThe year in reviewFinancialsAtlas",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "nettoresultat",
+        "tillgangar",
+        "investeringar"
+      ],
+      "siffror": 492,
+      "poang": 32
+    },
+    {
+      "i": 289,
+      "rubrik": "Atlas Copco Group 2025 149Financial statements, Parent Company12",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "eget-kapital",
+        "tillgangar",
+        "anstallda"
+      ],
+      "siffror": 392,
+      "poang": 30.6
+    },
+    {
+      "i": 31,
+      "rubrik": "Interest-bearing debt and net indebtednessCredit ratingOperating",
+      "familjer": [
+        "nettoomsattning",
+        "ebitda",
+        "kassaflode",
+        "utdelning",
+        "skuld",
+        "anstallda"
+      ],
+      "siffror": 380,
+      "poang": 30
+    },
+    {
+      "i": 256,
+      "rubrik": "IntroductionThis is Atlas Copco GroupThe year in reviewFinancialsAtlas",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "nettoresultat",
+        "anstallda"
+      ],
+      "siffror": 449,
+      "poang": 30
+    },
+    {
+      "i": 16,
+      "rubrik": "Environment202520242023Target yearReduce COReduce CODevelop a",
+      "familjer": [
+        "nettoomsattning",
+        "eps",
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 491,
+      "poang": 28
+    },
+    {
+      "i": 28,
+      "rubrik": "RevenuesOperating profit Organic*, %Orders received, revenues",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "rorelsemarginal"
+      ],
+      "siffror": 439,
+      "poang": 28
+    },
+    {
+      "i": 246,
+      "rubrik": "lation reservelation reserveAtlas Copco Group 2025 106IntroductionThis",
+      "familjer": [
+        "nettoresultat",
+        "eget-kapital",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 380,
+      "poang": 28
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoomsattning",
+      "varde": "2025 2024 2023 2022",
+      "kontext": "ntOrders, revenues and profit 2025 2024 2023 2022 Orders, MSEK 165 814 171 115 170 627 158 092 Revenues, MSEK 168 343 176 771 172 664 1",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "34 114 38 166 37 091",
+      "kontext": "26.0 25.9 Operating profit, MSEK 34 114 38 166 37 091 30 216 Operating profit margin, % 20.3 21.6 21.5 21.4 Net interest expense, MSEK 282 258 ",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "ebitda",
+      "varde": "12",
+      "kontext": "1 2 14 12 EBITDA, MSEK 43 643 46 951 44 852 36 549 EBITDA margin, % 25.9 26.6 26.0 25.9 Operating profit, MSEK 34 114 38 166 37 091 30 2",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "nettoresultat",
+      "varde": "26 425 29 794 28 052",
+      "kontext": "21.1 21.3 Profit for the year, MSEK 26 425 29 794 28 052 23 482 Employees 2025 2024 2023 2022 Average number of employees 55 549 54 206 51 110 45 7",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "202 454 208 538 182",
+      "kontext": "2023 2022 Total assets, MSEK 202 454 208 538 182 684 172 301 Capital turnover ratio 0.83 0.89 0.94 0.91 Capital employed, average MSEK 145 395",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "2025 2024 2023 2022",
+      "kontext": "378 3 087 Cash flow 2025 2024 2023 2022 Operating cash surplus, MSEK 43 349 47 099 45 781 36 978 Cash flow before change in working capit",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "14 610",
+      "kontext": " of which dividends paid, MSEK 14 610 13 652 11 211 9 250 Operating cash flow, MSEK 26 796 30 981 23 192 17 099 Four years in summary F",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "rantabilitet",
+      "varde": "24 29 32 32",
+      "kontext": " 55 50 46 Return on equity, % 24 29 32 32 Key figures per share 2025 2024 2023 2022 Basic earnings / diluted earnings, SEK 5.43/5.42 6.11/6.10 5.",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "skuld",
+      "varde": "0",
+      "kontext": "41 26 570 Net debt/EBITDA, MSEK 0.5 0.4 0.5 0.7 Equity, MSEK 110 383 113 760 91 500 80 026 Debt/equity ratio, % 19 16 26 33 Equity/asset",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "2025 2024 2023 2022",
+      "kontext": "52 23 482 Employees 2025 2024 2023 2022 Average number of employees 55 549 54 206 51 110 45 781 Revenues per employee, SEK thousands 3 0",
+      "sektion": 310,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "0 50 000 100 000 150",
+      "kontext": "es and operating margin 0 50 000 100 000 150 000 200 000 2025 2024 2023 2022 2021 0 10 20 30 40 MSEK % Operating cash flow and return on cap",
+      "sektion": 7,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "2",
+      "kontext": "KDividend/earnings per share, average ³2 years5 yearsIntroductionSummary of 2025A decentralized group with four business areasPresident and CEOThis ",
+      "sektion": 7,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "110 383  113 760",
+      "kontext": " 208 538 Total equity 110 383 113 760 Interest-bearing liabilities 36 782 37 504 Non-interest-bearing liabilities 55 289 57 274 Total ",
+      "sektion": 30,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "2 723 1 962 866 2 79",
+      "kontext": " Capital expenditures Property, plant and equipment 2 723 1 962 866 2 799 650 38 8 962  of which right-of-use assets 1 118 ",
+      "sektion": 257,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    },
+    {
+      "familj": "ordning",
+      "varde": "3%",
+      "kontext": "currency, order intake increased by 3%. The demand for service, including specialty rental solutions, remained good, and the order intake i",
+      "sektion": 26,
+      "kalla": {
+        "namn": "ATCO-A årsredovisning 2025",
+        "url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20260320-annual-report-2025-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf"
+      }
+    }
+  ]
+}

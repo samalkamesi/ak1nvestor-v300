@@ -1,0 +1,45 @@
+{
+  "steg": [
+    "STEG 0 deploy: 2026-09-21T17:52:11Z DEPLOYAD automatiskt: 136 commits (27a582a0) — prod 200 — e27ef394 förfader: JA",
+    "STEG 1 prod 200 ×2: /superanalys=200 /kalkylator=200",
+    "STEG 2 kanalbevis: 2 CSS-chunkar · träffar {\"cv-widget-super\":1,\"cv-widget-kalk\":1,\"content-visibility:auto\":12,\"contain-intrinsic-size\":30}",
+    "STEG 3 värmning: 3 hämtningar/sida + 15 s settle",
+    "STEG 4 Lighthouse-EFTER klar (o139-efter-sammanfattning.json)",
+    "STEG 5 geometri + skroll-CLS klar (geometri-s7u2o139efter.json)"
+  ],
+  "datum": "2026-09-21T17:52:40.343Z",
+  "dom": [
+    {
+      "sida": "/superanalys",
+      "poangFore": 73,
+      "poangEfter": 57,
+      "lcpFore": 4355,
+      "lcpEfter": 4583,
+      "lcpDeltaProc": 5.2,
+      "tbtFore": 375,
+      "tbtEfter": 1418,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": true,
+        "tbtKalkylatorUnder450": true
+      }
+    },
+    {
+      "sida": "/kalkylator",
+      "poangFore": 64,
+      "poangEfter": 56,
+      "lcpFore": 4812,
+      "lcpEfter": 4760,
+      "lcpDeltaProc": 1.1,
+      "tbtFore": 582,
+      "tbtEfter": 1312,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": true,
+        "tbtKalkylatorUnder450": false
+      }
+    }
+  ]
+}

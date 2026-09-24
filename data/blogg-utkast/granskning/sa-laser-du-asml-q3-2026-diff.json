@@ -1,0 +1,81 @@
+{
+ "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-asml-q3-2026.json",
+ "granskadAv": "agentfabrik s1-u1 (2026-09-20, manifest auto-s1-1789925707056, pivot från m9 #1 enligt köregeln; objekt = tidigaste ogranskade rappdagen 2026-10-14)",
+ "rapport": "sa-laser-du-asml-q3-2026-KONTROLL-2026-09-20.md",
+ "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — ~180+ maskinella kontroller: källfält 19/19 exakta mot bolagsunivers.json (byggvindan 219 = commit 571384b1, dagens 231); rankningar 16/16 exakta; grenmedianer 15/15 exakta; universummedianer 7/7 exakta mot byggvindan (R1-notis: sex glidna i dagens 231-fil, inget påstående vänder); Datavaktens sex prov 31/31 gröna; övning A 20/20, B 10/10, C 9/9 celler men ankaret C2; kalender LIVE-dubbelverifierad mot ASML:s egna resultsidor (Q1 15/4 + tal, Q2 15/7 + tal, Q3 ons 14/10 konfirmerad); juridikgrind REN (0/26 förbjudna fraser, 2007:528 2 kap 5 § ensamt lagrum); 911 = 0; länkar 21/21 i live-sitemapen. FYND: F1 superlativet \"universumets enda fyraåriga FCF-serie\" FALSKT (57 bolag i byggfilen, 8 i teknikgrenen — JPMorgan-superlativ-klassen) i TITEL + urval + övning A; F2 \"universumets färskaste\" FALSKT (81 poster hämtade efter 09-16 vid byggtid); C1 description 0,76→0,77 %; C2 ankarset 24,10→24,09 med celler 1 207→1 206 och 1 446→1 445; C4 vågvaliderings-lucknotis saknas (förslag). Verkställande ägs av byggarspåret/huvudagenten — denna diff är förslaget.",
+ "anvandning": "Varje poster = exakt find→replace i utkastets råtext (title-, description- eller body-fältet anges). Samtliga find-strängar verifierade unika i filen 2026-09-20. Efter verkställning: ompubliceringskontroll enligt seriens KVD (inget bygge — data-only).",
+ "poster": [
+  {
+   "id": "F1a",
+   "falt": "title",
+   "klass": "VESSENTLIG",
+   "rubrik": "Superlativ FALSKT i titeln",
+   "find": "och universumets enda fyraåriga FCF-serie med 2023 års dip på minus 54 procent",
+   "replace": "och en av universumets 57 fyraåriga FCF-serier — teknikgrenens åttonde — med 2023 års dip på minus 54 procent",
+   "motivering": "Byggfilen (219 poster, commit 571384b1) bär 57 kompletta fyraåriga FCF-serier; i teknikgrenen åtta (ORCL, TCEHY, 005930.KS, ENEA.ST, NOTE.ST, TCS.NS, 8035.T + ASML). ASML:s egen universumpost noterar FCF-ifyllnaden som BASF/PFE-precedens — precedensen bevisar icke-unikum."
+  },
+  {
+   "id": "F1b",
+   "falt": "body",
+   "klass": "VESSENTLIG",
+   "rubrik": "Superlativ i urvalssektionen",
+   "find": "och som enda bolag i hela universumet en fyraårig serie i fritt kassaflöde",
+   "replace": "och — ett av 57 bolag i universumet, ett av åtta i teknikgrenen — en fyraårig serie i fritt kassaflöde",
+   "motivering": "Samma bevisläge som F1a; ribban-påståendet (SAMTLIGA multiplar + båda CAGR + prognosfält + fyra år) håller — unikum-påståendet håller inte."
+  },
+  {
+   "id": "F1c",
+   "falt": "body",
+   "klass": "VESSENTLIG",
+   "rubrik": "Övning A-rubriken",
+   "find": "Övning A — fönstrens kors: universumets enda FCF-serie.",
+   "replace": "Övning A — fönstrens kors: ASML:s fyraåriga FCF-serie.",
+   "motivering": "Rubriken bär samma falska superlativ; övningens innehåll (2023-fallet mot 2024-kombacken) är oberört."
+  },
+  {
+   "id": "F1d",
+   "falt": "body",
+   "klass": "VESSENTLIG",
+   "rubrik": "Övning A: första meningen",
+   "find": "ASML är det enda bolaget i hela universumet där datainsamlingen bar hem en fyraårig serie i fritt kassaflöde — och den är en föreläsning i sig",
+   "replace": "ASML är ett av 57 bolag i universumet — det åttonde i teknikgrenen — där datainsamlingen bar hem en fyraårig serie i fritt kassaflöde, och serien är en föreläsning i sig",
+   "motivering": "Sanna tal i platsens ställe; läxan (vinst och kassa = två fönster) förlorar ingenting."
+  },
+  {
+   "id": "F2",
+   "falt": "body",
+   "klass": "VESSENTLIG",
+   "rubrik": "Superlativ \"färskaste\"",
+   "find": "Posten är också universumets färskaste: insamlad 16 september 2026 med dubbelkälla",
+   "replace": "Posten är insamlad 16 september 2026 med dubbelkälla",
+   "motivering": "81 av byggfilens 219 poster hämtade efter 09-16 (teknikgrenen: 8). Insamlingsdatum + dubbelkälla riktiga; superlativen stryks."
+  },
+  {
+   "id": "C1",
+   "falt": "description",
+   "klass": "RATTNING",
+   "rubrik": "EV-gapet i descriptionen",
+   "find": "EV-kedjan som stänger på 0,76 procent",
+   "replace": "EV-kedjan som stänger på 0,77 procent",
+   "motivering": "12,802/12,704 = gap 0,7655 % → 0,77 halv-upp; bodyn har redan 0,77. Tele2-C2-klassen (trunkering i stället för avrundning)."
+  },
+  {
+   "id": "C2",
+   "falt": "body",
+   "klass": "RATTNING",
+   "rubrik": "Scenarierad 1: ankar- och cellvärden",
+   "find": "| 24,10 euro (TTM minus 15 procent) | 964 | 1 207 | 1 446 |",
+   "replace": "| 24,09 euro (TTM minus 15 procent) | 964 | 1 206 | 1 445 |",
+   "motivering": "28,34 × 0,85 = 24,089 → 24,09 (än en gång med orundad VPA 24,0905). Cellerna följer ankaret: 24,09 × 50,07 = 1 206,18 → 1 206; × 60 = 1 445,4 → 1 445; 1A består (963,6 → 964). Kalibreringscellen 1 419 och diagonalen 1 420 orörda."
+  },
+  {
+   "id": "C4",
+   "falt": "body",
+   "klass": "FORSLAG",
+   "rubrik": "Vågvaliderings-lucknotis (Tele2-precedensen)",
+   "find": "och [källförteckningen](/kallor).",
+   "replace": "och [källförteckningen](/kallor). ASML.AS står utanför vågvalideringsmotorns dom-universum (analysbiblioteket bär Stockholms-noteringarna — Tele2/ABB-precedensen): motorutfall saknas i detta paket, och luckan är information, inte ett mätvärde.",
+   "motivering": "Paketet nämner vågvalidering noll gånger; syskon med dom citerar den (Ericsson 2×) och syskon utan dom redovisar luckan öppet (Tele2). Förslag — inte tvingande för flytt."
+  }
+ ]
+}

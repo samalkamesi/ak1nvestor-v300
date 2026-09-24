@@ -40,7 +40,7 @@ export default async function BloggPageAr() {
   const pillars = [...new Set(posts.map((p) => p.pillar))];
 
   return (
-    <SeoPageShell breadcrumb={[{ name: "المدونة" }]} wide>
+    <SeoPageShell lang="ar" breadcrumb={[{ name: "المدونة" }]} wide>
       <div lang="ar" dir="rtl">
         <h1 className="font-serif text-4xl font-bold">مدونة AK1A Research Lab</h1>
         <p className="mt-4 text-muted-foreground leading-relaxed">

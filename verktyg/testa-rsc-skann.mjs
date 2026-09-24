@@ -163,13 +163,24 @@ function byggFixture({ rscFiler = [], statiska = [], extra = {} }) {
 }
 
 // ── 10. LEVANDE artefakt: hela trädet + GRÖN-krav ──────────────────────
+// ROND 107-färskhetsgrind: arbetsytan bygger ej (prod-trädet äger byggena) —
+// ett .next som är äldre än 48 h är INTE en "levande artefakt" utan en
+// mumifierad mätbarhet (bevis 2026-09-19: arbetsytans 09-12-artefakt gav
+// 4 719 rsc ⇒ falskt FAIL mot prod samma dags 7 379). Färskhet mäts på
+// BUILD_ID:s mtime; gammal ⇒ hoppa ärligt (som saknad .next).
 {
   const serverApp = path.join(ROT, ".next", "server", "app");
   if (fs.existsSync(serverApp)) {
-    const r = await verifieraRsc({ rot: ROT, skrivLage: false });
-    kontrollera("10 levande: >6000 .rsc-filer", r.rscFiler > 6000, `fick ${r.rscFiler}`);
-    kontrollera("10 levande: status GRÖN", r.status === "gron", `fick ${r.status}: ${r.meddelande}`);
-    console.log(`     levande: ${r.meddelande} (${r.varaktighetMs} ms)`);
+    const byggAlderH = Math.floor((Date.now() - fs.statSync(path.join(ROT, ".next", "BUILD_ID")).mtimeMs) / 3_600_000);
+    if (byggAlderH > 48) {
+      console.log(`PASS 10 levande: hoppad (artefakten ${byggAlderH} h gammal — inte levande; färsk mätning ägs av prod-trädet)`);
+      passerade += 1;
+    } else {
+      const r = await verifieraRsc({ rot: ROT, skrivLage: false });
+      kontrollera("10 levande: >6000 .rsc-filer", r.rscFiler > 6000, `fick ${r.rscFiler}`);
+      kontrollera("10 levande: status GRÖN", r.status === "gron", `fick ${r.status}: ${r.meddelande}`);
+      console.log(`     levande: ${r.meddelande} (${r.varaktighetMs} ms)`);
+    }
   } else {
     console.log("PASS 10 levande: hoppad (inget .next — miljö utan artefakt)");
     passerade += 1;

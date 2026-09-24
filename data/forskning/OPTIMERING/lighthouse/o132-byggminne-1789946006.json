@@ -1,0 +1,2317 @@
+{
+  "startZ": "2026-09-20T23:13:26.240Z",
+  "samlade": [
+    {
+      "tZ": "2026-09-20T23:13:26.241Z",
+      "availableMB": 6198,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "48:14",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:13:41.304Z",
+      "availableMB": 6315,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "48:29",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:13:56.357Z",
+      "availableMB": 6236,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "48:44",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "00:04",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "00:04",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:14:11.429Z",
+      "availableMB": 5155,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "48:59",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "00:19",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "00:19",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:14:26.479Z",
+      "availableMB": 5047,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "49:14",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "00:34",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "00:34",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:14:41.526Z",
+      "availableMB": 5008,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "49:29",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "00:49",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "00:49",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:14:56.564Z",
+      "availableMB": 5340,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "49:44",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "01:05",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "01:05",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4102888,
+          "rssMB": 60,
+          "etid": "00:13",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4102907,
+          "rssMB": 2,
+          "etid": "00:13",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4102908,
+          "rssMB": 1051,
+          "etid": "00:13",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:15:11.653Z",
+      "availableMB": 4010,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "49:59",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "01:20",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 3,
+          "etid": "01:20",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4102888,
+          "rssMB": 60,
+          "etid": "00:28",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4102907,
+          "rssMB": 2,
+          "etid": "00:28",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4102908,
+          "rssMB": 1790,
+          "etid": "00:28",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:15:26.720Z",
+      "availableMB": 510,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "50:14",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "01:35",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 2,
+          "etid": "01:35",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4102888,
+          "rssMB": 43,
+          "etid": "00:43",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4102907,
+          "rssMB": 2,
+          "etid": "00:43",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4102908,
+          "rssMB": 4814,
+          "etid": "00:43",
+          "args": "next-build (v16.3.5)"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 49,
+          "etid": "00:03",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 49,
+          "etid": "00:03",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 49,
+          "etid": "00:03",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:15:41.903Z",
+      "availableMB": 248,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "50:29",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "01:50",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 2,
+          "etid": "01:50",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4102888,
+          "rssMB": 31,
+          "etid": "00:58",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4102907,
+          "rssMB": 2,
+          "etid": "00:58",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4102908,
+          "rssMB": 4175,
+          "etid": "00:58",
+          "args": "next-build (v16.3.5)"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 46,
+          "etid": "00:18",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 46,
+          "etid": "00:18",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 46,
+          "etid": "00:18",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:15:58.854Z",
+      "availableMB": 777,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "51:45",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4102798,
+          "rssMB": 2,
+          "etid": "03:06",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4102799,
+          "rssMB": 2,
+          "etid": "03:06",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4102888,
+          "rssMB": 2,
+          "etid": "02:14",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4102907,
+          "rssMB": 2,
+          "etid": "02:14",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4102908,
+          "rssMB": 0,
+          "etid": "02:14",
+          "args": "[next-build (v16] <defunct>"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "01:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "01:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "01:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:17:13.016Z",
+      "availableMB": 5314,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "52:00",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "01:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "01:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "01:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:17:28.090Z",
+      "availableMB": 4597,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "52:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "02:04",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "02:04",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "02:04",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:17:43.138Z",
+      "availableMB": 3713,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "52:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "02:20",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "02:19",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "02:19",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "00:14",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "00:14",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:17:58.188Z",
+      "availableMB": 3341,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "52:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "02:35",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "02:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "02:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "00:29",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "00:29",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:18:13.238Z",
+      "availableMB": 3367,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "53:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "02:50",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "02:50",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "02:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "00:44",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "00:44",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:18:28.302Z",
+      "availableMB": 3472,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "53:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "03:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "03:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "03:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "00:59",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "00:59",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:18:43.355Z",
+      "availableMB": 3696,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "53:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "03:20",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "03:20",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "03:20",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "01:14",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "01:14",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        },
+        {
+          "pid": 4104285,
+          "rssMB": 60,
+          "etid": "00:13",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4104304,
+          "rssMB": 2,
+          "etid": "00:13",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4104305,
+          "rssMB": 1168,
+          "etid": "00:13",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:18:58.413Z",
+      "availableMB": 2496,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "53:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 9,
+          "etid": "03:35",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 9,
+          "etid": "03:35",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 3,
+          "etid": "03:35",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "01:29",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 3,
+          "etid": "01:29",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        },
+        {
+          "pid": 4104285,
+          "rssMB": 60,
+          "etid": "00:28",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4104304,
+          "rssMB": 2,
+          "etid": "00:28",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4104305,
+          "rssMB": 1818,
+          "etid": "00:28",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:19:13.497Z",
+      "availableMB": 1026,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "54:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "03:50",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "03:50",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "03:50",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "01:45",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 2,
+          "etid": "01:45",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        },
+        {
+          "pid": 4104285,
+          "rssMB": 34,
+          "etid": "00:43",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4104304,
+          "rssMB": 2,
+          "etid": "00:43",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4104305,
+          "rssMB": 4541,
+          "etid": "00:43",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:19:28.719Z",
+      "availableMB": 205,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "54:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "04:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "04:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "04:05",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "02:00",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 2,
+          "etid": "02:00",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        },
+        {
+          "pid": 4104285,
+          "rssMB": 18,
+          "etid": "00:58",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4104304,
+          "rssMB": 2,
+          "etid": "00:58",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4104305,
+          "rssMB": 5768,
+          "etid": "00:58",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:19:44.008Z",
+      "availableMB": 2281,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "54:47",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "04:36",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "04:36",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "04:36",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103866,
+          "rssMB": 2,
+          "etid": "02:31",
+          "args": "flock -w 900 /tmp/ak1a-deploy.lock bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci."
+        },
+        {
+          "pid": 4103867,
+          "rssMB": 2,
+          "etid": "02:31",
+          "args": "bash -c npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/s"
+        },
+        {
+          "pid": 4104285,
+          "rssMB": 2,
+          "etid": "01:29",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4104304,
+          "rssMB": 2,
+          "etid": "01:29",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4104305,
+          "rssMB": 6028,
+          "etid": "01:29",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:20:20.894Z",
+      "availableMB": 6071,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "55:08",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "04:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "04:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "04:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:20:35.998Z",
+      "availableMB": 5875,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "55:23",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "05:12",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "05:12",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "05:12",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:20:51.056Z",
+      "availableMB": 5537,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "55:39",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "05:27",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "05:27",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "05:27",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:21:06.122Z",
+      "availableMB": 5314,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "55:54",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "05:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "05:42",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "05:42",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:21:21.193Z",
+      "availableMB": 5048,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "56:09",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "05:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "05:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "05:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:21:36.263Z",
+      "availableMB": 5078,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "56:24",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "06:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "06:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "06:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:21:51.322Z",
+      "availableMB": 5011,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "56:39",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "06:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "06:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "06:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:22:06.374Z",
+      "availableMB": 4862,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "56:54",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "06:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "06:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "06:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "00:04",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "00:04",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:22:21.450Z",
+      "availableMB": 4002,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "57:09",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "06:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "06:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "06:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "00:19",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "00:19",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:22:36.525Z",
+      "availableMB": 3890,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "57:24",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "07:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "07:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "07:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "00:34",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "00:34",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:22:51.593Z",
+      "availableMB": 3377,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "57:39",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "07:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "07:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "07:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "00:49",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "00:49",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:23:06.660Z",
+      "availableMB": 3750,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "57:54",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "07:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "07:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "07:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "01:04",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "01:04",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4106298,
+          "rssMB": 61,
+          "etid": "00:12",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4106317,
+          "rssMB": 2,
+          "etid": "00:11",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4106318,
+          "rssMB": 810,
+          "etid": "00:11",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:23:21.752Z",
+      "availableMB": 2718,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "58:09",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "07:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "07:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "07:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "01:19",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "01:19",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4106298,
+          "rssMB": 60,
+          "etid": "00:27",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4106317,
+          "rssMB": 2,
+          "etid": "00:27",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4106318,
+          "rssMB": 1383,
+          "etid": "00:27",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:23:36.881Z",
+      "availableMB": 1820,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "58:24",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "08:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "08:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "08:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "01:34",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "01:34",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4106298,
+          "rssMB": 60,
+          "etid": "00:42",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4106317,
+          "rssMB": 2,
+          "etid": "00:42",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4106318,
+          "rssMB": 2089,
+          "etid": "00:42",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:23:51.944Z",
+      "availableMB": 846,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "58:39",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "08:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "08:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "08:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "01:49",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 3,
+          "etid": "01:49",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4106298,
+          "rssMB": 36,
+          "etid": "00:57",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4106317,
+          "rssMB": 2,
+          "etid": "00:57",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4106318,
+          "rssMB": 3703,
+          "etid": "00:57",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:24:09.310Z",
+      "availableMB": 3152,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "58:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "08:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "08:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "08:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4106002,
+          "rssMB": 2,
+          "etid": "02:07",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4106003,
+          "rssMB": 2,
+          "etid": "02:07",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4106298,
+          "rssMB": 2,
+          "etid": "01:14",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4106317,
+          "rssMB": 2,
+          "etid": "01:14",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4106318,
+          "rssMB": 0,
+          "etid": "01:14",
+          "args": "[next-build (v16] <defunct>"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:24:24.658Z",
+      "availableMB": 5434,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "59:12",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "09:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "09:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "09:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:24:39.706Z",
+      "availableMB": 5353,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "59:27",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "09:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "09:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "09:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:24:54.760Z",
+      "availableMB": 4699,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "59:42",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "09:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "09:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "09:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:25:09.820Z",
+      "availableMB": 4456,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "59:57",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "09:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "09:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "09:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:25:24.880Z",
+      "availableMB": 4306,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:00:12",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "10:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "10:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "10:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:25:39.961Z",
+      "availableMB": 4155,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:00:27",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "10:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "10:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "10:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:25:55.022Z",
+      "availableMB": 5309,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:00:42",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "10:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "10:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "10:31",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:26:10.060Z",
+      "availableMB": 5281,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:00:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103018,
+          "rssMB": 2,
+          "etid": "10:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "10:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "10:46",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:26:25.128Z",
+      "availableMB": 4758,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:01:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "11:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "11:01",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "00:13",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "00:13",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:26:40.206Z",
+      "availableMB": 4344,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:01:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "11:17",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "11:16",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "00:28",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "00:28",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:26:55.261Z",
+      "availableMB": 4377,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:01:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "11:32",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "11:32",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "00:43",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "00:43",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:27:10.309Z",
+      "availableMB": 4988,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:01:58",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "11:47",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "11:47",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "00:58",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "00:58",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4107230,
+          "rssMB": 63,
+          "etid": "00:03",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4107249,
+          "rssMB": 2,
+          "etid": "00:03",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4107250,
+          "rssMB": 567,
+          "etid": "00:03",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:27:25.364Z",
+      "availableMB": 3850,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:02:13",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "12:02",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "12:02",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "01:13",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "01:13",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4107230,
+          "rssMB": 60,
+          "etid": "00:18",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4107249,
+          "rssMB": 2,
+          "etid": "00:18",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4107250,
+          "rssMB": 1283,
+          "etid": "00:18",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:27:40.492Z",
+      "availableMB": 2887,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:02:28",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "12:17",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "12:17",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "01:29",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 3,
+          "etid": "01:29",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4107230,
+          "rssMB": 60,
+          "etid": "00:33",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4107249,
+          "rssMB": 2,
+          "etid": "00:33",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4107250,
+          "rssMB": 2191,
+          "etid": "00:33",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:27:55.581Z",
+      "availableMB": 873,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:02:43",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "12:32",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "12:32",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "01:44",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 2,
+          "etid": "01:44",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4107230,
+          "rssMB": 44,
+          "etid": "00:49",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4107249,
+          "rssMB": 2,
+          "etid": "00:48",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4107250,
+          "rssMB": 4469,
+          "etid": "00:48",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:28:11.011Z",
+      "availableMB": 59,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:02:59",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "12:48",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "12:47",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4107077,
+          "rssMB": 2,
+          "etid": "01:59",
+          "args": "flock -n /tmp/ak1a-deploy.lock bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund &&"
+        },
+        {
+          "pid": 4107078,
+          "rssMB": 2,
+          "etid": "01:59",
+          "args": "bash -c cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart a"
+        },
+        {
+          "pid": 4107230,
+          "rssMB": 3,
+          "etid": "01:04",
+          "args": "npm run build"
+        },
+        {
+          "pid": 4107249,
+          "rssMB": 2,
+          "etid": "01:04",
+          "args": "sh -c next build"
+        },
+        {
+          "pid": 4107250,
+          "rssMB": 5966,
+          "etid": "01:04",
+          "args": "next-build (v16.3.5)"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:28:27.468Z",
+      "availableMB": 5926,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:03:15",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "13:04",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "13:04",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:28:42.560Z",
+      "availableMB": 5902,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:03:30",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "13:19",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "13:19",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:28:57.634Z",
+      "availableMB": 5731,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:03:45",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "13:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "13:34",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    },
+    {
+      "tZ": "2026-09-20T23:29:12.691Z",
+      "availableMB": 5711,
+      "processer": [
+        {
+          "pid": 4060097,
+          "rssMB": 2,
+          "etid": "01:04:00",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103026,
+          "rssMB": 2,
+          "etid": "13:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        },
+        {
+          "pid": 4103033,
+          "rssMB": 2,
+          "etid": "13:49",
+          "args": "node /home/ak1a/.npm-global/bin/zcode -p Du är en fabriksagent i AK1A Agentfabrik — uppdra"
+        }
+      ]
+    }
+  ],
+  "byggSedd": false,
+  "slutOrsak": "observatörens tak (16 min)",
+  "sammanfattning": {
+    "byggSedd": true,
+    "toppByggRSSMB": 6028,
+    "minstAvailableMB": 59,
+    "buildIDEfter": null
+  }
+}

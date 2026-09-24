@@ -26,11 +26,11 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 // Ren klassificerare för delresurs-deploysignaturer (spår 8, s8-u1 omgång 5):
 // separat modul så att testen kan importera DEN RIKTIGA koden offline —
 // vakten själva är ett toppnivåskript som kör hela svepet vid import.
-import { konsolFelIndikerarDeployStorning } from "./granssnitt-konsol.mjs";
+import { konsolFelIndikerarDeployStorning, arForvantadAuth401 } from "./granssnitt-konsol.mjs";
 // Sidvalslogiken (rotation + FALLBACK + sektionsprioritering) — ren modul
 // så att sviten kan importera DEN RIKTIGA koden offline (s8-u2 2026-09-18).
 import {
@@ -156,7 +156,7 @@ const SIDOR = SNABB
 function deployLasUpptaget() {
   // flock -n speglar exakt deploy-skriptens semantik (låset, inte filen)
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { stdio: "ignore", timeout: 5000 });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "-c", "true"], { stdio: "ignore", timeout: 5000 });
     return false;
   } catch {
     return true;
@@ -431,6 +431,20 @@ const MAT_SKRIPT = () => {
   return resultat;
 };
 
+// ROND 135 (Ψ): rapportnamn i SEKUND-upplösning + numrerad suffix vid
+// kollision — två samtidiga svep (cron + riktad agentkörning) samma minut
+// skrev samma filnamn och den ena rapporten förlorades tyst (bevis
+// 2026-09-21 06:27: fabrikssvepets 172-rapport överskrev cron-svepets
+// avbrutna, som då ensam journalfört /rapportakademin).
+function rapportFil(katalog) {
+  const stamp = new Date().toISOString().slice(0, 19).replaceAll(":", "");
+  let fil = path.join(katalog, `granssnitt-${stamp}.json`);
+  for (let i = 2; fs.existsSync(fil); i++) {
+    fil = path.join(katalog, `granssnitt-${stamp}-${i}.json`);
+  }
+  return fil;
+}
+
 // ── Huvudloop ────────────────────────────────────────────────────────────────
 const teman = TEMA === "bada" ? ["light", "dark"] : [TEMA];
 const rapport = {
@@ -456,7 +470,7 @@ if (!friskFranStart) {
     : `uppskjuten — drift (${dom.orsak})`;
   const katalog = path.join(ROT, "data", "vakten");
   fs.mkdirSync(katalog, { recursive: true });
-  const fil = path.join(katalog, `granssnitt-${new Date().toISOString().slice(0, 16).replaceAll(":", "")}.json`);
+  const fil = rapportFil(katalog);
   fs.writeFileSync(fil, JSON.stringify(rapport, null, 2));
   console.log(`GRÄNSSNITTSVAKTEN: UPPSKJUTEN — ${dom.orsak} efter 12 min väntan, inga fynd bokförda (nästa cron-körning mäter).`);
   console.log(`Rapport: ${fil}`);
@@ -508,6 +522,11 @@ try {
         let ommatt = false; // s8-u4: sidan ommätt efter utväntad deploy-kollision
         let matning = null;
         const konsolFel = [];
+        // o148 (s8-u3): förväntade AUTH-401 (autentiseringsgrindens korrekta
+        // svar för vakten anonyma webbläsare — /studio:s stream-poll) räknas
+        // INTE som defekt men bokförs ÖPPET per kombination: informationen
+        // försvinner aldrig, den klassas bara ärligt (granssnitt-konsol.mjs).
+        let forvantade401 = 0;
         page.on("console", (msg) => {
           if (msg.type() !== "error") return;
           const text = msg.text();
@@ -518,6 +537,7 @@ try {
           // favicon-404 på localhost =miljöbrus, ej sajtfel.
           if (text.includes("429")) return;
           if (IGNORERA_KONSOL(text, locUrl)) return;
+          if (arForvantadAuth401(text, locUrl)) { forvantade401++; return; }
           konsolFel.push((locUrl ? `[${locUrl.slice(0, 80)}] ` : "") + text.slice(0, 160));
         });
         page.on("pageerror", (fel) => konsolFel.push(String(fel).slice(0, 160)));
@@ -566,6 +586,7 @@ try {
             const friskIgen = await vantaPaFriskBas(6 * 60 * 1000);
             if (!friskIgen) { avbruten = true; break; }
             konsolFel.length = 0; // page-lyssnarna pushar hit — nollställ inför om-mätningen
+            forvantade401 = 0; // o148: samma nollställning för klassificerade 401
             try {
               const svar2 = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 25000 });
               const kod2 = svar2 ? svar2.status() : 0;
@@ -595,7 +616,7 @@ try {
             status = status === "ok" ? "stil-lös sida (CSS ej laddad)" : `${status} + stil-lös`;
             const felS = 1 + (konsolFel.length > 0 ? 1 : 0);
             rapport.fel += felS;
-            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null, omford: ommatt || undefined });
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: felS, konsolFel: konsolFel.slice(0, 5), matning: null, omford: ommatt || undefined, forvantade401: forvantade401 || undefined });
             console.log(`⚑ [${tema}/${skarm.namn}] ${sida} — ${status}`);
             await new Promise((r) => setTimeout(r, 350));
             continue;
@@ -630,7 +651,12 @@ try {
           const harLosenordsfalt = await page
             .evaluate(() => Boolean(document.querySelector('input[type="password"]')))
             .catch(() => false);
-          if (harLosenordsfalt && ADMIN_PASS) {
+          // ROND 135 (Ψ): admin-grenen gäller ENDAST /admin — heuristiken
+          // "lösenordsfält ⇒ admin" fångade ÄVEN publika medlemsinloggningar
+          // (/rapportakademin:s SEO-skal): admin-inloggning utan flikar ⇒
+          // sidan journalförd som mätt med NOLL rapportrader — ett blint
+          // hål i bevisningen (bevis 2026-09-21 06:27 + 07:12/07:14).
+          if (harLosenordsfalt && ADMIN_PASS && sida.startsWith("/admin")) {
             const inloggad = await page
               .evaluate((pass) => {
                 const falt = document.querySelector('input[type="password"]');
@@ -658,40 +684,45 @@ try {
                     .slice(0, 24),
                 )
                 .catch(() => []);
-              for (const flik of flikar) {
-                await page
-                  .evaluate((namn) => {
-                    const t = Array.from(document.querySelectorAll('[role="tab"]')).find((x) =>
-                      (x.textContent || "").trim() === namn,
-                    );
-                    t?.click();
-                  }, flik)
-                  .catch(() => {});
-                await new Promise((r) => setTimeout(r, 900));
-                const m = await page.evaluate(MAT_SKRIPT).catch(() => null);
-                const fel =
-                  (m && m.overflod > 6 ? 1 : 0) +
-                  (m ? m.kontrast.length : 0) +
-                  Math.min(m ? m.utanfor.length : 0, 5);
-                rapport.fel += fel;
-                rapport.kombinationer.push({
-                  tema,
-                  skarm: skarm.namn,
-                  sida: `${sida}·${flik.slice(0, 24)}`,
-                  status: "admin-flik",
-                  felAntal: fel,
-                  konsolFel: [],
-                  matning: m,
-                });
-                console.log(
-                  `${fel > 0 ? "⚑" : "·"} [${tema}/${skarm.namn}] ${sida}·${flik.slice(0, 24)} — överflöd ${m ? m.overflod + "px" : "?"}, kontrast ${m ? m.kontrast.length : "?"}`,
-                );
-                await new Promise((r) => setTimeout(r, 250));
+              // ROND 135 (Ψ): flikar saknas efter inloggning ⇒ ingen
+              // admin-yta — fall nedåt till vanlig mätning i stället för
+              // att journalföra sidan med noll rapportrader.
+              if (flikar.length > 0) {
+                for (const flik of flikar) {
+                  await page
+                    .evaluate((namn) => {
+                      const t = Array.from(document.querySelectorAll('[role="tab"]')).find((x) =>
+                        (x.textContent || "").trim() === namn,
+                      );
+                      t?.click();
+                    }, flik)
+                    .catch(() => {});
+                  await new Promise((r) => setTimeout(r, 900));
+                  const m = await page.evaluate(MAT_SKRIPT).catch(() => null);
+                  const fel =
+                    (m && m.overflod > 6 ? 1 : 0) +
+                    (m ? m.kontrast.length : 0) +
+                    Math.min(m ? m.utanfor.length : 0, 5);
+                  rapport.fel += fel;
+                  rapport.kombinationer.push({
+                    tema,
+                    skarm: skarm.namn,
+                    sida: `${sida}·${flik.slice(0, 24)}`,
+                    status: "admin-flik",
+                    felAntal: fel,
+                    konsolFel: [],
+                    matning: m,
+                  });
+                  console.log(
+                    `${fel > 0 ? "⚑" : "·"} [${tema}/${skarm.namn}] ${sida}·${flik.slice(0, 24)} — överflöd ${m ? m.overflod + "px" : "?"}, kontrast ${m ? m.kontrast.length : "?"}`,
+                  );
+                  await new Promise((r) => setTimeout(r, 250));
+                }
+                // admin-ytan färdigmätt — hoppa vanlig mätning av inloggningsvyn
+                matadeSidor.add(sida); // VÅG 157: inloggade ytan räknas som mätt
+                await new Promise((r) => setTimeout(r, 350));
+                continue;
               }
-              // admin-ytan färdigmätt — hoppa vanlig mätning av inloggningsvyn
-              matadeSidor.add(sida); // VÅG 157: inloggade ytan räknas som mätt
-              await new Promise((r) => setTimeout(r, 350));
-              continue;
             }
           }
           matning = await page.evaluate(MAT_SKRIPT);
@@ -719,11 +750,11 @@ try {
           (konsolFel.length > 0 ? 1 : 0) +
           (status === "ok" ? 0 : 1);
         rapport.fel += felAntal;
-        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning, omford: ommatt || undefined });
+        rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning, omford: ommatt || undefined, forvantade401: forvantade401 || undefined });
         if (status === "ok") matadeSidor.add(sida); // VÅG 157: journalförd vid ok-mätning
         const flagga = felAntal > 0 ? "⚑" : "·";
         console.log(
-          `${flagga} [${tema}/${skarm.namn}] ${sida} — överflöd ${matning ? matning.overflod + "px" : "?"}${matning && matning.kontrast.length ? `, kontrast ${matning.kontrast.length}` : ""}${matning && matning.utanfor.length ? `, utanför ${matning.utanfor.length}` : ""}${konsolFel.length ? `, konsolfel ${konsolFel.length}` : ""}${status !== "ok" ? ", " + status : ""}`
+          `${flagga} [${tema}/${skarm.namn}] ${sida} — överflöd ${matning ? matning.overflod + "px" : "?"}${matning && matning.kontrast.length ? `, kontrast ${matning.kontrast.length}` : ""}${matning && matning.utanfor.length ? `, utanför ${matning.utanfor.length}` : ""}${konsolFel.length ? `, konsolfel ${konsolFel.length}` : ""}${forvantade401 ? `, förväntade 401: ${forvantade401} (auth-grind, räknas ej)` : ""}${status !== "ok" ? ", " + status : ""}`
         );
         await new Promise((r) => setTimeout(r, 350)); // respektera hastighetsgränsen
       }
@@ -783,7 +814,7 @@ if (!avbruten && rapport.kombinationer.length) {
 // ── Rapport ──────────────────────────────────────────────────────────────────
 const katalog = path.join(ROT, "data", "vakten");
 fs.mkdirSync(katalog, { recursive: true });
-const fil = path.join(katalog, `granssnitt-${new Date().toISOString().slice(0, 16).replaceAll(":", "")}.json`);
+const fil = rapportFil(katalog);
 fs.writeFileSync(fil, JSON.stringify(rapport, null, 2));
 
 const felrader = rapport.kombinationer.filter((k) => k.felAntal > 0);

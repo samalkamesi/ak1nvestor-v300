@@ -1,0 +1,96 @@
+{
+  "objekt": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wihlborgs-q3-2026.json",
+  "utkastMd5Fore": "a73ab4ac7196badc259fa635a1281e30",
+  "diffVersion": "2026-09-21-s1u3",
+  "granskare": "s1-u3 (manifest auto-s1-1790012730031)",
+  "kontroll": "./sa-laser-du-wihlborgs-q3-2026-KONTROLL-2026-09-21-s1u3.md",
+  "sond": "verktyg/_s1u3-wihlborgs-q3-kontroll.mjs",
+  "race": "u2 anspråk 20:29:00 (69 s före s1-u3:s 20:30:24) och levererade 20:34–35 (committad via u1:s ff7a0d00 som ride-along); s1-u3:s oberoende granskning kladd 21:0x — detta är den KOMPLETTERANDE korskonfirmationsdiffen, inte en tävling om samma ytor",
+  "korskonfirmation": {
+    "sammaFyndOberoende": [
+      "B1 'enda europeiska över pari' falskt (NP3 1,422, Sverige) — u2:B1a-d / s1u3:B1×3 — Två oberoende agenter, samma vintagbelägg",
+      "B2 driftsmarginal-max 74,1 % (Q2-2025: 813/1 097), ej 73,6 — identisk rättesats",
+      "aktietalets källradsavrundning 307,5 → 307,4 — identisk rättesats (u2:B3 = s1u3:B7)"
+    ],
+    "endastS1u3": [
+      "B3 stavfelet 'handssignal' → 'handelsingnal'",
+      "B4 titellängden 344 tkn > familjetaket 314 (syskonmax Kinnevik 313) — OBS: u2:s B1a-kur lämnar titeln på 373 tkn, fortfarande över taket; s1u3:s title-kur botar B1+B4 i en (295 tkn)",
+      "B5 webcast-tiden 09:00 mot bolagets IR-sida 08:30 (källkonflikt, låg allvarlighet)",
+      "B6 avstämningsdagen: beslutad 24/4 2026, ej 22/4 (stämman 22/4 korrekt)"
+    ],
+    "endastU2": [
+      "B1-fjärde ytan: källsektionens 'enda europeiska bolag över pari, nio kollegor under 0,95' — bekräftad av s1u3; verkställs ur u2:s diff"
+    ]
+  },
+  "avvisning": {
+    "id": "AV1",
+    "mål": "u2:s notis N2 ('readingMinutes 6 vid 3 522 ord, kvartalskonventionen ~3')",
+    "dom": "AVVISAD av s1u3:s omräkning: round(3 522/600) = round(5,87) = 6 — rm 6 ÄR kvartalskonventionen; u2:s '~3' är handelsbankens fall (1 955/600 = 3,26 → 3) kopierat utan omräkning. Verkställ INTE 6→3.",
+    "bevis": "sonden §7 kontroll 'readingMinutes 6 = round(3522/600)' — GRÖN"
+  },
+  "divergensBokford": {
+    "id": "D1",
+    "mål": "marginalgapet EBIT−netto: 71,09 − 47,34 = 23,75 exakt",
+    "u2": "B4 kurerar 23,7 → 23,8 (halva uppåt)",
+    "s1u3": "lämnar orörd — node-flyttalet ger 23.749999… (trunkering 23,7 defensible); randfallet är det enda i utkastet",
+    "dom": "ägarens val; ingen av domarna bär felbelägg mot texten"
+  },
+  "nyttRattelser": [
+    {
+      "id": "N1-stavfel (s1u3 B3)",
+      "faltet": "body (Praktiskt — P/E-räkneövningen)",
+      "allvar": "STAVFEL (kosmetika men läsarsynligt)",
+      "fran": "inte en handssignal",
+      "till": "inte en handelsingnal"
+    },
+    {
+      "id": "N2-titellangd (s1u3 B4; FÖRETRÄDESVÄRD)",
+      "faltet": "title",
+      "allvar": "KONVENTION + VÄSENTLIGT (botar B1-titelytan OCH taket)",
+      "orsak": "title 344 tkn > tak 314; u2:s B1a-kur ger 373 tkn (fortfarande över); denna kur ger 295",
+      "fran": "enda europeiska kollegan med P/B över pari medan nio av sjutton handlas under 0,95",
+      "till": "P/B över pari tillsammans med NP3",
+      "beroende": "ALTERNATIV till u2:s B1a på samma från-sträng — verkställ ENDAST EN; rekommendation: denna (botar båda fynden)"
+    },
+    {
+      "id": "N3-webcast (s1u3 B5)",
+      "faltet": "body (Praktiskt — rappdagen)",
+      "allvar": "KÄLLKONFLIKT (låg)",
+      "orsak": "kalenderunderlaget (09-15) bar 09:00; bolagets IR-sida anger Q2-2026:s webcast 08:30 — bolagskällan äger",
+      "fran": "med webcast kl 09:00 samma förmiddag (Q2:s rytm)",
+      "till": "med webcast samma förmiddag (Q2:s webcast hölls kl 08:30 enligt bolagets IR-sida)"
+    },
+    {
+      "id": "N4-avstamningsdag (s1u3 B6)",
+      "faltet": "body (Källor — utdelningen)",
+      "allvar": "SIFFERDETALJ",
+      "orsak": "stämman 22/4 ✓ men avstämningsdagen beslutades till fredagen 24 april 2026 (kallelse 2026-03-16 + stämobeslut; svensk sedvana: avstämning bankdagen efter stämman)",
+      "fran": "avstämningsdag och årsstämma 2026-04-22 i Malmö",
+      "till": "årsstämma 2026-04-22 i Malmö med avstämningsdag fredagen 2026-04-24"
+    }
+  ],
+  "korskondfirmeradeAlternativ": [
+    {
+      "id": "K1 (s1u3 B1:2)",
+      "faltet": "body (Nyckeltalen — värdering)",
+      "fran": "Wihlborgs är **enda bolaget i det europeiska hyresgänget över pari** — kursen 79,65 kronor",
+      "till": "Wihlborgs är **ett av två europeiska bolag över pari — NP3 (1,42) det andra, men med 42 procents premie mot Wihlborgs 1,26** — kursen 79,65 kronor",
+      "beroende": "ALTERNATIV till u2:s B1b på samma från-sträng — verkställ ENDAST EN"
+    },
+    {
+      "id": "K2 (s1u3 B1:3)",
+      "faltet": "body (Så står sig bolaget — premievändar-läsningen)",
+      "fran": "men är det enda europeiska bolaget över pari, medan nio kollegor handlas under 0,95.",
+      "till": "men är med NP3 ett av bara två europeiska bolag över pari, medan nio kollegor handlas under 0,95.",
+      "beroende": "ALTERNATIV till u2:s B1c på samma från-sträng — verkställ ENDAST EN"
+    }
+  ],
+  "cNotiser": [
+    "quick-facts-drift: 'fastighetsvärde kring 64 mdr / hyresvärde 5,0' = HELÅRS-2025 (källraden daterar); bolagets quick facts visar 66,2 / 5,2 efter förvärvet — fönstret deklarerat, ingen rättning tvungen",
+    "vintage-drift: universum-medianerna låsta till 237-postvintagen (u2 använde 79d8f765 = utkastets egen commit, s1u3 78b39e9b = universum-commit 20:23 — samma data, båda n=237, alla medianer identiska); dagens fil 249 — texten deklarerar sin vintage, rättas EJ",
+    "externa rappdagen 21/10: kalendervyn dynamisk — vilar på byggarens 09-20-liveverifiering (.ics); arkivsidan bekräftar omkringliggande rytmändpunkter (2026-02-10 · 2025-10-23 · 2026-04-21 · 2026-07-06 07:00)",
+    "'cirka 68:e paketet': ej exakt verifierbart — 'cirka' bär osäkerheten ärligt"
+  ],
+  "verkstallningsguide": "1) Verkställ u2:s committade diff B1d (källsektionen) + B2 + B3 (dessa ytor är unika för u2 eller identiska med s1u3:s). 2) Title/B1b/B1c-ytorna: välj ENDAST en diff per yta — rekommendation s1u3:s N2 (title, botar taket) + u2:s B1b/B1c (behåller NP3-detaljerna). 3) Verkställ s1u3:s N1+N3+N4 (nya ytor). 4) D1 (23,7/23,8) = ägarens val. 5) Verkställ INTE u2:s N2 (rm 6 är korrekt — se AV1). Efter verkställning: omkör _s1u3-wihlborgs-q3-kontroll.mjs (förväntat 0 FEL).",
+  "franStrangar": "samtliga verifierade maskinellt unika i utkastet 2026-09-21; granskaren rör ALDRIG utkast-JSON:en"
+}

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { bolagSlugs, bolagUrSlug, syskonBolag } from "@/lib/bolags-sidor";
+import {
+  bolagSlugs,
+  bolagUrSlug,
+  syskonBolag,
+  skrivPubliceradeSlugs,
+} from "@/lib/bolags-sidor";
 import { lasBranschMedianer, branschUrSlug } from "@/lib/dataset-medianer";
 import { getAnalyses } from "@/lib/content";
 import { lasAnalyser } from "@/lib/analysfabrik";
@@ -24,7 +29,12 @@ export const dynamicParams = false;
 export const revalidate = 86400;
 
 export function generateStaticParams() {
-  return bolagSlugs().map((slug) => ({ slug }));
+  const slugs = bolagSlugs();
+  // o146: publiceringskontraktet — bygget tecknar ned exakt vad som finns.
+  // Sitemap/registret/syskonlänkar lovar sedan ENDAST dessa slugs, så en
+  // universumväxt utan deploy (data-doktrinen) aldrig skapar döda löften.
+  skrivPubliceradeSlugs(slugs);
+  return slugs.map((slug) => ({ slug }));
 }
 
 /** Tickerjämförelse över filformat: "VOLCAR-B" ≡ "VOLCAR-B.ST" ≡ "VOLCAR_B_ST". */

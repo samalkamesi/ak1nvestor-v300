@@ -1,0 +1,21 @@
+studio: rond 144 — SEKTIONSURVAL + NYCKELTALSIDENTIFIERING: 100 urvalssektioner + 101 familjefynd över 9 bolag (verktyg/nyckeltals-urval.mjs, permanent pipeline-steg) [organ:Σ]
+
+VERKTYGET (nyckeltals-urval.mjs): regelbaserat, 15 nyckeltalsfamiljer (sv+en:
+nettoomsättning/revenues, rörelseresultat/EBIT, EBITDA, rörelsemarginal, netto-
+resultat, EPS, eget kapital, tillgångar, kassaflöde, utdelning, räntabilitet,
+skuld, anställda, orderingång, capex) med viktning + sifferdensitet → topp-12
+urval per bolag ur r143:s leveranser + första värdefynd per familj med kontext
+OCH källhänvisning (lagen 2007:528 2 kap 5 § — så fungerar metoden, aldrig råd).
+
+RESULTAT: ABB 12/12 familjer 12/15, ATCO-A 15/15 ALLA FAMILJER, AZN 13/15,
+ERIC-B 11/15, EVO 11/15, INDU-C 10/15, SAND 14/15, VOLCAR-B 12/15 · totalt
+100 urvalssektioner, 101 familjefynd → data/rapportintag/nyckeltal/<ticker>-
+2025.json + sammanstallning-r144.json.
+
+ÄRLIGA GRÄNSER (dokumenterade för kurationssteget): (1) förstavärdesfällan —
+regex:en kan fånga årtalshuvudraden i stället för själva talet (ATCO-A
+"nettoomsattning" = "2025 2024 2023 2022") men KONTEXTEN bär de riktiga
+serierna ("Revenues, MSEK 165 814 171 115…") — kurationen läser kontext;
+(2) VOLCAR-B konkatenering "30322,31819" = tolkar-artefakt utan tusentals-
+separatorer; (3) HM-B endast 3/15 familjer — r143:s space-korrupterade
+extraktion, HM kräver omtolkning (uppgraderingsspår pdf-parse).

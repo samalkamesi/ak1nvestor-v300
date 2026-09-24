@@ -1,0 +1,83 @@
+studio: auto s2-u1 DATASET-DJUP +1 KOMATSU 6301.T — JAPAN/INDUSTRI 0→1 ⇒ JAPANS SJUNDE GREN (universum 255→256) OCH CAT+KOMATSU+VOLVO CE-TRIANGULERINGEN KOMPLETT: de tre stora västerländska anläggnings-/gruvmaskintillverkarna i samma universum — samma cykel i tre valutor och redovisningssystem (USD·JPY·SEK)
+
+Fabriksagent s2-u1 (manifest auto-s2-1790017500456, byggare 1/3, omgång 28 —
+u1:s omg27-fönster levererade Takeda men statusregistreringen uteblev; detta
+fönster väljer NY koordinat med klaim FÖRE arbetet, 0 duplikat).
+
+VAL: Japan/industri-cellen var TOM (konsument 5 · kommunikation 5 · finans 5 ·
+material 1 · teknik 1 · halso 1 ⇒ +industri = SJU grenar); ABB.ST upptar
+Sverige/industri (Schweiz/industri-ABB = bolagsduplikat, avvisat); 6301.T 0
+träffar i universum+worklog+protokell. u1-linjens 0→1-mönster i stor ekonomi
+håller (omg22 Schweiz/finans · 23 UK/energi · 24 Kanada/kommunikation · 25
+Japan/material · 26 Frankrike/material · 27 Japan/halso). TYO-kanalen
+sjudubbel-bevisad (5401/8306/9432/4502 + nu 6301).
+
+KÄLLOR: StockAnalysis tyo/6301 FEM ytor + kvartalsvyer (S&P GMI, SA-close
+2026-09-18 15:30 JST, TTM via Q1 FY2027 rapporterat 2026-07-29) + Yahoo
+chart-API paranoid: 7 012 ¥ = 0,00 % band EXAKT (samma streck som Takeda).
+
+LEVERANSENS TAL (pris-koherent vintage — statistics-sidans 6,64 T-mcap är
+aug-12-vintage implied 7 445, SAMMA 1,3 %-klass som Takedas 9 530/9 409,
+dokumenterad): P/E 16,61 = 7 012/422,04 EXAKT (fwd 15,61 ⇒ prognosTillväxt
++6,4 %, implicerat framåt-EPS ≈ 449 ¥) · P/B 1,68 total-EK (BVPS-basen 1,78 =
+BAS-SPLITTRA minoritet 5,2 % av EK; aktiebas-identiteten EK-common/BVPS =
+891,51 M EXAKT) · EV 7 607 mdr med källans minoritetskonvention BEVISAD
+(deras 7,99 T = 6 635,7+1 731,4−571,9+194,8 EXAKT) ⇒ EV/EBIT 13,08 mot
+källans fält 13,50 (bredare EBIT-bas, dokumenterad) · fcfYield 4,04 % ·
+P/FCF 24,7 · marginaler TTM kvartals-exakta: brutto 30,39 (1 296 473/4 266 370)
+EBIT 13,63 netto 8,93 FCF 5,92 % · ROIC 8,87 mot WACC 8,13 = +0,74 pp
+(cykelbolagets trånga spread — Takeda +1,12) · D/E 0,47 · Debt/EBITDA 2,32
+EXAKT · Debt/FCF 6,85 EXAKT · Altman 2,85 (gråzonen) · beta 0,98 · DPS 190 ¥
+semi-årlig 95+95 (2,71 %; DPS-vägen 139→167→190→190: +13,8 % året före
+toppen, PLAN vid cykelviken; källans "Dividend Growth −5,94 %" = TTM-fönster-
+artefakt mot årets FLAT, dokumenterad utan tolkning) · återköp startade FY2025
+(101,2→105,7 mdr) ⇒ shareholder yield ≈ 4,4 % · grundat 1884 = Japans tredje
+äldsta rad (Takeda 1781 · Mitsubishi 1873 · Komatsu 1884 — före Mercedes 1886).
+
+SIGNATURTAL — CYKELTOPPENS ANATOMI: (1) netto 224,9→326,4→393,4→439,3 mdr ¥
+(fyra raka år +13,7 % CAGR) KLIPPS av FY2026 −14,4 % MEDAN omsättningen +0,7 %
+— bruttomarginalpunkter 33,4→32,3→32,2→30,5→30,4 % planar (prishöjningarnas
+efterspel); Q1 FY2027 VÄNDER: netto +5,4 % (96,2 mot 91,2) på rekordkvartal
++14,7 % (1 043,1 mot 909,5). (2) ARBETSKAPITALS-PENDELN: FCF 5/5 positiva år
+(138,0→22,9→231,8→311,3→236,7) men FY2023 = lagrets år (22,9 mdr, 0,6 %
+marginal, inventory −214,5) och Q1 alltid svagt (Q1FY27 −0,4 mot Q4FY26
++121,2) — gruvkundernas betalningsrytm. (3) SKULDENS FEMÅRSRESA 1 008→1 427
+mdr (+42 %, retailfinance 25,8 mdr/kvartal) MEDAN räntetäckning 10,61× och
+kassan växer — expansion utan stress. (4) goodwill+intangibla 6,9 % av
+tillgångarna = maskinkoncernens fabriksbalans (Takedas spegelbild 59,3 %
+immateriellt).
+
+KÄLLKRITIK öppet bokförd: års-financials-sidans äldre NI/EPS-kolonner
+kolrupterade (etikettförskjutna ett år — 'FY2024'-kolonnen visar Mar'23-
+värdet; kvartals-/kassaflödes-/balans-ytornas majoritet bär, varje årsreplik
+EXAKT); FY2022-brutto saknas på alla ytor ⇒ moat-medlet på fem punkter
+FY23–FY26+TTM = 31,8 %/spread 3,04 dokumenterat.
+
+KVARTILER: industri 20→21 — P/E 28→27,8 (kv-P25 21,6→19,8: Komatsu 16,61
+ENSAM under gamla P25, drar ner hela nedre kvartilgränsen) · P/B 4,9→4,8
+(kv-P25 3,2→2,6 nytt gränsvärde) · EBIT 14,3→13,6 % · fcfYield 2,8→3,0 % ·
+FCFmarg-kv-P25 6,5→6,1 · omsTill 8,4→7,7 % · resCAGR 4→4,1 (n 16→17);
+TOTALT 20,4 stabilt (n 243→244, P75 29,2→29,1). UNIVERSUMJÄMFÖRELSE: P/E
+16,61 rank 94/244 (under medianen OCH under industriens P25) · P/B 1,68 rank
+78/253 · fcfYield 4,04 % mittläge (median 4,3) · resCAGR +13,72 % övre delen
+(median 4,6) — billig P/E på hög tillväxt: cykelvåndan som kvartilvärld.
+
+KVD GRÖN: aritmetikgrind 51/51 (EN ärlig ABORT före skrivning — enhetsfel i
+räntetäckningsrepliken M¥/mdr, omg16/23/25-mönstret; filen orörd) · append
+255→256 prefix-bit-identisk (1-space = diskens format) läs-tillbaka ×1 ·
+llms.txt HELREGEN matt-driven på 256 (diskens llms stod på 253 = omg27-
+eftersläpning efter syskonens fönster — regen lagar konvergent; huvudrad 256,
+industri-raden 21 bolag P/E 27,8 kv 19,8–33,7; omkörning idempotent) ·
+läckagevakt v3 0 träffar (460 sökningar; 0 dataset-html = deployfönstrets
+mixed-state, llms-sektionen GRÖN) · kontraktstest 189/0/30 GRÖNT oförändrat
+(cellen n=1 < mattan 5 ⇒ ingen ny landsida; japan-modulen omg20 generisk —
+INGEN src-ändring, hela leveransen data-vägen, publiceras av prod-synkens
+bygg enligt Vonovia-precedensen) · tsc 0 projektbinär · prod / + /llms.txt
+200 LIVE "på 256 bolag" (public/ läses från disk) medan /dataset 500 = KÄND
+C17/o113-deployfönster-artefakt FÖRE denna leverans (ombygget ägs av prod-
+synken/kraschvakten — fabriksbarn bygger aldrig) · R2 orörd · data/blogg/
+orörd · juridikgrinden 2007:528 (utbildning, aldrig råd).
+
+FIFO: Q2 FY2027 2026-10-29 (samma rapportdag som Takeda — Japans marsbolag
+rapporterar i par). Protokoll: S2-U1-KOMATSU-UTOKNING-OMG28.md + verktyg
+_s2u1o28-*. [fabrik]

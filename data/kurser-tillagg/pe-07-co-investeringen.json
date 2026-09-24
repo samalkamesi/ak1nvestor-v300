@@ -1,0 +1,152 @@
+{
+  "slug": "pe-07-co-investeringen",
+  "category": "PRIVATE EQUITY & INVESTMENTBOLAG",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Co-investeringen — andelen bredvid fonden",
+  "summary": "Private equity-familjens sjunde steg: co-investeringen — den avgiftsfria biljetten som gör LP:n till direktägare i en enskild affär bredvid fonden. Samma affär till två priser är kursens första rörelse: en affär som fördubblas brutto ger fond-LP:n 168 av 100 insatta efter tjugo procent carry och tolv enheter avgifter, medan co-investorn tar hem 200 — gapet 32 enheter är fondens pris för just denna exponering. Sedan priset för det som inte står på fakturan: urvalsasymmetrin. GP:n bjuder in till de affärer den vill dela, och i kursens modell bär de helägda affärerna 2,10x brutto mot de erbjudnas 1,70x — fondvägen 176 mot co-investvägen 170, och den gratis biljetten till fel konsert kostar mer än den med avgift. Därpå biljetten i LP:ns egen portfölj: de fem kraven (egen analys, kortsiktig kallelse, koncentration, ingen likviditet före utfasningen, ägararbete), avgiftsbesparingens räknelära med break-even-multipeln 1,76x — där 0,34x urvalsförsprång äter exakt de 34 enheter avgift och carry som besparingen lovade — och fyra fällor med gratis-biljettfällan som kursens egen. Co-invest-protokollets fem frågor avslutar: varför delar GP:n just denna affär är den första, och den svåraste. Utbildning i att läsa biljettens dubbla pris — inte investeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Räkna samma affär till två priser: fondvägen med carry och avgifter mot co-invest-biljetten utan — och läsa gapet som fondens pris för exponeringen på just den affären · Förklara urvalsasymmetrin: GP:n delar de affärer den vill dela, av kapacitet, riskdelning eller lägre övertygelse — och erbjudandet är därför inte ett urval som LP:n gjort · Räkna break-even-multipeln: den grova affärsnivå där avgiftsbesparingen ätits upp av urvalsskillnaden — i kursens modell 1,76x, där 0,34x urval motsvarar 34 enheter avgift och carry · Väg biljetten mot portföljen: en enskild affär mot fondens cirka 25 — ett nollresultat är 4 procent av fonden men 100 procent av biljetten · Känna igen de fem kraven på LP:n vid direktägande: egen analys, beredskap vid kallelse, koncentration, frånvarande likviditet och ägararbete · Ställa protokollets fem frågor före varje ja — med den första som svårast: varför delar GP:n just denna affär",
+  "why": "Private equity-familjens sex steg har byggt LP:ns värld från grunden: fonderna och avgiftskodexen (pe-01), utfasningarnas och IRR:s mekanik med vattenfallet (pe-02), förvärvsmaskinen på bolagssidan (pe-03), den privata ägarsidans värld (pe-04), andrahandsmarknadens pris på tid (pe-05) och pengarnas kronologi i j-kurvan (pe-06) — men inget steg äger det beslut som vuxit sig störst i praktiken: att gå bredvid fonden och ta en direktpost i en enskild affär. Sond mot registret: co-investering ger noll träffar, fund of funds noll och management fee noll kursägare — kärntermen ägs av ingen kurs i hela registret. Carried interest ger tre träffar: pe-01 äger grundstrukturen med kodexen, pe-02 äger vattenfallets räknelära och ib-05 äger den listade bolagets kostnadstrappa — alla tre länkas hit och äger sina ytor. Gränserna i övrigt: pe-06 äger capital calls och vintageläran, pe-05 äger andrahandslikviditeten, km-014 äger diversifieringsmatematiken som koncentrationsfällan bygger på. Vit fläck: beslutet själv — biljettens dubbla pris i avgift och urval, och protokollet som gör beslutet läsbart.",
+  "history": {
+    "origin": "Direkt ägarskap sida vid sida är äldre än både fonder och börser: handelshus och familjeägare tog poster i samma skepp, samma gruvbolag och samma industriprojekt, delade risken och informationen. När den institutionella fondstrukturen växte fram under efterkrigstiden (pe-01 bär dess grunder) formaliserades ägarskapet i två lager — förvaltarens och investerarens — och med de två lagren föddes en synlig fråga som sällan sagts högt: varför betala förvaltarskiktet på kapital som kan följa med gratis? Frågan låg vilande så länge fonderna var små nog att äga det de ville äga.",
+    "evolution": "Förändringen kom när fonderna växte sig större än enskilda affärer under nittonhundratalets sista decennier: en fond med flera miljarder i förbundet kapital kan inte bära varje målaffär ensam utan att sprida portföljen tunnare än mandatelet tillåter — kapitalbristen blev strukturell, och delandet blev nödvändigt. LP:er med egen analyskapacitet började då systematisera det som tidigare varit sporadiska enkelinsatser: att tacka ja till direktposter i affärer som fonden ändå skulle genomföra. Efter finanskrisen 2008 skärptes avgiftstrycket i hela branschen och co-investeringen fick en andra roll: som förhandlingsvaluta — den stora LP:n som följer med gratis på biljetter accepterar fondens kodex på huvudspåret. Programmen blev institutionella, med egna team och egna protokoll.",
+    "modern": "I dag har de flesta större institutionella ägare co-invest-program, och forskningsbilderna är ärligt blandade: vissa studier visar att co-investerade affärer i genomsnitt burit lägre bruttavkastning än fondernas helägda — urvalseffekten i ryggraden på dessa resultat — medan andra visar att avgiftsbesparingen mer än väger upp. Kursens läsning av det blandade läget är metodisk snarare än statistisk: de två krafterna — besparing och urval — verkar i motsatta riktningar, bara den ena står på fakturan, och beslutet kan därför inte standardiseras utan måste räknas från fall till fall. Det är precis vad protokollets fem frågor gör: de konverterar en relationell vänsterhandsfråga till ett jämförbart räkneverk, och lämnar sista ordet till break-even-talet snarare än till relationen."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Grunderna — två biljetter till samma konsert", "minutes": 4 },
+    { "num": 2, "title": "Konstruktion — urvalsasymmetrin", "minutes": 4 },
+    { "num": 3, "title": "Praktik — biljetten i LP:ns portfölj", "minutes": 4 },
+    { "num": 4, "title": "Mätning — avgiftsbesparingens räknelära", "minutes": 4 },
+    { "num": 5, "title": "Fällor — fyra sätt biljetten blir dyr", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — co-invest-protokollets fem frågor", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch hävdade att man ska äga det man förstår och kunna förklara tesen i två minuter. I fonden är det en arbetsfördelning: förvaltarens team gör arbetet, LP:n äger resultatet. På en co-invest-biljett upphävs den arbetsfördelningen — förklaringen i två minuter måste bäras från LP:ns eget bord. Lynchs varning för berättelser som säljs med entusiasm passar erbjudandebrevet bättre än de flesta dokument: den som ber dig finansiera en affär har alltid en berättelse, och på en direkt biljett är det du, inte fonden, som står för prövningen av den. Hans regel blir därmed: äg aldrig en biljett vars affär du inte kunde ha ägt på egen hand — fondens sällskap sänker priset, inte kraven.",
+  "grahamSection": "Benjamin Grahams frågor till varje papper — vad är det värt och vad kan gå fel — är co-invest-biljettens naturliga protokoll, med en skärpning: enskilda affärer kräver bredare marginal än portföljer. Grahams försiktiga investerare sprider risk eftersom hon inte kan analysera varje enskilt fall; den som äger en enskild onoterad affär har frivilligt gått den andra vägen — och där gäller hans enterprisregel hårdare: marginalen mellan pris och värde ska bära både det vanliga felet och det okända. Hans skepticism mot att låta andra tänka åt en (försäljarens argument är inte köparens analys) är co-investeringens kärnriskt i en enda mening, och boten är densamma som hans: eget arbete, skrivet ner, före köpet.",
+  "ak1Section": "I AK1A:s metodik kompletterar kursen LP-protokollets fjärde lager: pe-04 öppnade den privata ägarsidans värld, pe-05 prissatte tiden, pe-06 lärde pengarnas kronologi — pe-07 prissätter biljetten själv, i de två valutor som aldrig står på samma rad: avgiften och urvalet. Break-even-multipeln är AKM2:s modelltänkande tillämpat på ett ägarbeslut: kvantifiera båda krafterna, låt skillnaden avgöra, och dokumentera antagandena så att de kan ifrågasättas. I analysflödet kopplar kursen till koncentrationsläsningen (km-014 bär diversifieringsmatematiken): biljetten är den koncentration som fonden annars bär åt LP:n, och priset på den koncentrationen ska synas i samma räkning som besparingen. Gränserna hålls: pe-01 till pe-06 äger sina steg, ib-05 äger kostnadstrappan på listade sidan — här ägs beslutet att gå bredvid, och dess dubbelprisräknelära.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — två biljetter till samma konsert",
+      "intro": "Samma affär, två priser: genom fonden med carry och avgifter, eller bredvid fonden utan. Skillnaden är 32 enheter — och den är bara halva sanningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är en enda affär (påhittade tal): ett bolag som fonden köper för 100 och utfasar för 200 — grovmultipeln 2,0x. Fondens LP äger affären via fonden: på brutto 200 betalas tjugo procent carry på vinsten 100, alltså 20, och tolv enheter avgifter under livet — LP:n får 168 av 100 insatta. Co-investorn äger samma affär direkt, bredvid fonden, utan förvaltningsavgift och utan carry på biljetten: 200 av 100. Gapet är 32 enheter — fondens pris för exponeringen på just denna affär, ur LP:s öga. Så långt är biljetten gratis pengar. Men meningen har en andra halva som inte står på fakturan: co-investorn blev erbjuden denna affär, fonden valde bland alla. Priset på urvalet syns inte i exemplet — och det är kursens egentliga ämne."
+        },
+        {
+          "type": "definition",
+          "content": "CO-INVESTERING: en direktinvestering som LP:n gör i en enskild affär bredvid fonden, på GP:ns inbjudan, avgiftsfri på biljetten. Tre kännetecken: (1) noll förvaltningsavgift och noll carry på det co-investerade kapitalet — avgiftskodexen (pe-01 bär den) gäller huvudspåret, inte biljetten; (2) erbjudandet kommer från GP:n — urvalet av vilka affärer som delas ägs av den som delar, inte av den som bjuds; (3) biljetten är en enskild affär — den bär ingen av fondens spridning över tjugo eller trettio förvärv."
+        },
+        {
+          "type": "insight",
+          "content": "Vattenfallets räknelära — carry över insatt kapital — ägs av pe-02, och detta steg bygger vidare på den som en prissättning: co-investeringen är samma exponering med vattenfallet och avgiftsraden borttagna. Därmed blir biljetten ett rent laboratorium för vad fondskiktet kostar: 32 enheter på en 2,0x-affär i modellen. Det laboratoriet är värt att bära med sig även för den som aldrig co-investerar — det gör fondens pris synligt per affär, inte bara per år."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konstruktion — urvalsasymmetrin",
+      "intro": "Varför delar GP:n en affär? Tre skäl finns i ryggraden — kapacitet, riskdelning och tvivel — och bara det första är gratis för LP:n.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "GP:n delar affärer av tre skäl. Kapacitet: fonden är full eller affären för stor för mandatet — delandet är strukturellt nödvändigt (historiens skäl från kursens evolution) och urvalet neutralt. Riskdelning: GP:n vill avlasta sin egen balansräkning på affärer den ändå tror på — urvalet mild. Tvivel: GP:n vill ha sällskap just där övertygelsen är svagast — urvalet ogynnsamt. Ingen LP:n ser vilken av de tre som gäller; erbjudandebrevet ser likadant ut i alla fallen. Kursens modell (påhittade tal) sätter tal på skillnaden: fondens helägda affärer bär grovmultipeln 2,10x — LP:n får 210 minus carry 22 minus avgifter 12, alltså 176 — medan de erbjudna affärerna bär 1,70x, och co-investorn utan avgifter får 170. Gapet är 6 enheter till fondvägens fördel, trots att fondvägen bär 34 enheter i avgift och carry. Den gratis biljetten till fel konsert kostade mer än den med avgift — i modellen, med forskningens blandade bild som bakgrund (kursens historik bär den)."
+        },
+        {
+          "type": "tabell",
+          "content": "TVÅ VÄGAR GENOM SAMMA FONDFÖRVALTARE (PÅHITTADE TAL): Fondvägen på helägda affärer — brutto 2,10x, carry 22, avgifter 12, LP netto 176 · Co-investvägen på erbjudna affärer — brutto 1,70x, noll carry och noll avgift på biljetten, netto 170 · Avgiftsbesparingen på en erbjuden affär om den i stället burits i fonden — brutto 170, carry 14, avgifter 12, netto 144, alltså besparing 26 enheter · LÄSNING: två krafter i motsatta riktningar — besparingen är mekanisk och viss, urvalet är osäkert och kan vara större. Co-investeringen är inte gratis kapital, det är ett vad: att GP:n delar av kapacitet oftare än av tvivel."
+        },
+        {
+          "type": "insight",
+          "content": "Asymmetrin är inte ett anklagelseinnehåll utan en incitamentsläsning: GP:s egen bäring är störst där övertygelsen är störst — att behålla full post i de bästa affärerna är rationellt för den som delar uppåt men inte nedåt (pe-01 bär incitamentsläsningen av kodexen). LP:ns uppgift är därför inte att döma incitamentet utan att prissätta det: hur stor måste besparingen vara, och hur liten urvalsskillnaden, för att biljetten ska bära sig? Det är kapitel fyrs räknelära — men först krävs biljetten i portföljen, och den har fem egna krav."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktik — biljetten i LP:ns portfölj",
+      "intro": "Fonden är en portfölj med ett team bakom; biljetten är en affär med LP:n själv bakom. Fem krav följer av den skillnaden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första kravet är egen analys: i fonden görs due diligence av ett team som LP:n betalar via avgiften; på biljetten måste analysen ägas hemma — pe-04 bär den privata ägarsidans hantverk. Andra kravet är beredskap: co-invest-kallelser kommer med kort varsel när en affär stänger, och kapitalplikten är hård (pe-06 bär capital calls mekanik — på biljetten finns ingen fondkassa som buffrar). Tredje kravet är koncentration: fonden bär typiskt ett tjogtal affärer — ett totalt nollresultat är 4 procent av fonden i en modell med 25 poster — medan samma nollresultat på biljetten är 100 procent (km-014 bär diversifieringsmatematiken). Fjärde kravet är likviditetens frånvaro: ingen andrahandsmarknad värd namnet före utfasningen (pe-05 bär den som finns, för fondandelar — direktposter är tunnare). Femte kravet är ägararbetet: styrelseplats, informationsskyldigheter, utvecklingssamtal — det ägande fonden annars administrerar."
+        },
+        {
+          "type": "tabell",
+          "content": "BILJETTENS FEM KRAV (PÅHITTADE TAL I KONCENTRATIONSEXEMPLET): Egen analys — due diligence ägs hemma, inte köps via fonden (pe-04) · Beredskap — kallelse med kort varsel, kapitalplikt utan fondkassa (pe-06) · Koncentration — ett nollresultat är 4 procent av en fond med 25 affärer men 100 procent av biljetten (km-014) · Likviditet — ingen marknad värd namnet före utfasningen, tunnare än fondandelarnas (pe-05) · Ägararbete — styrelse, information, uppföljning: arbetet fonden annars gör. LÄSNING: kraven är biljettens dolda avgift — den betalas i kapacitet och arbete i stället för i procent."
+        },
+        {
+          "type": "definition",
+          "content": "BILJETTENS FEM KRAV: (1) ANALYSEN — LP:n äger due diligence-arbetet själv, med dokumenterad tes före ja · (2) BEREDSKAPEN — kapital redo före erbjudandet, kallelseplikten är kort och hård · (3) KONCENTRATIONEN — biljetten räknas mot hela portföljen, inte mot fonden: vad är ett nollresultat av totalen? · (4) LIKVIDITETEN — horisonten är affärens, inte LP:ns behov · (5) ARBETET — ägarskapets administrativa börda bärs hemma. Kraven är portföljens svar på att biljetten saknar fondens två tjänster: spridning och administration."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mätning — avgiftsbesparingens räknelära",
+      "intro": "Break-even-multipeln är biljettens enda ärliga sammanfattning: den grova affärsnivå där besparingen ätits upp av urvalet — i modellen 1,76x.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räkneläran håller sig till modellens tal (påhittade). Fondvägen på helägda affärer ger 176 — det är referensen. Co-invest-biljetten ger 100 gånger grovmultipeln, avgiftsfritt. Break-even är den multipel där biljetten matchar fondvägen: 1,76x — under den nivån förlorar biljetten mot fondvägen trots noll avgifter, över den vinner den. Urvalsgapet i modellen är 2,10 minus 1,76, alltså 0,34x — och notera speglingen: fondvägens avgift och carry på de helägda affärerna är 34 enheter. De båda krafterna mäts i samma valuta: 0,34x urval äter exakt 34 enheter avgift. Trappan blir därmed läsbar: erbjuds affärer till 2,10x vinner biljetten med 34 enheter; till 1,90x vinner den med 14; till 1,76x går allt jämnt ut; till 1,70x — modellens nivå — förlorar den med 6. Besparingens storlek på en enskild erbjuden affär är värd att se explicit: burits den i fonden hade den gett 144; som biljett ger den 170 — 26 enheter mer, drygt 18 procent högre slutvärde på insatsen. Det är den siffra som ser bra ut i erbjudandebrevet — och den är sann: bara ofullständig."
+        },
+        {
+          "type": "tabell",
+          "content": "BREAK-EVEN-TRAPPAN (PÅHITTADE TAL, FONDVÄG REFERENS 176): Erbjudna affärer till 2,10x brutto — biljett 210, skillnad plus 34 · till 1,90x — biljett 190, skillnad plus 14 · till 1,76x — biljett 176, break-even · till 1,70x — biljett 170, skillnad minus 6 · LÄSNING: break-even-talet är förhandlingens och beslutets siffra — den som känner sin avgiftsbörda (34 enheter i modellen) vet hur mycket urvalsskillnad den gratis biljetten kan bära. km-017 bär motsvarande logik på positionssizningssidan: optimum är inte maximum, och biljettens optimum är inte gratis — det är break-even plus marginal."
+        },
+        {
+          "type": "insight",
+          "content": "Här möts kursens två kapitel: kapitel ett visade besparingen (32 enheter på en 2,0x-affär), kapitel två visade urvalet (gap 6 till fondvägens fördel i modellen) — break-even-trappan visar var de balanserar. Metoden är generaliserbar bortom modellen: för varje faktiskt erbjudande räcker tre tal — fondvägens netto på jämförbara affärer, biljettens förväntade brutto, och avgiftsbördan per enhet insatt — för att break-even ska kunna sättas. Det är detta kursen kallar biljettens räknelära: inte en formel att minnas, utan tre tal att kräva före varje ja."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fyra sätt biljetten blir dyr",
+      "intro": "De fyra fällorna har en gemensam rot: besparingen står på papperet, urvalet gör det inte. Varje fällans bot är därför en siffra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: gratis-tänkandet — att läsa biljetten som en rabatt och sluta där; boten är break-even-talet från kapitel fyra, som tvingar urvalet in i samma räkning som avgiften. Fälla två: relationens pris — att tacka nej med rädsla för att bli förbigången vid nästa fond, eller ja av samma skäl; relationen är real (fonden avgör framtida access) men den är inte en valuta att betala biljetter med — boten är att skilja besluten: fondvalet bedöms som fondval (pe-01), biljetten som biljett, och varje ja ska kunna bäras utan relationens hjälp. Fälla tre: koncentrationens förnekelse — att räkna biljetten mot fonden i stället mot hela portföljen; ett nollresultat är 100 procent av biljetten oavsett vad fonden gör, och km-014 bär matematiken. Fälla fyra: analysavståndet — att luta sig mot GP:s material som om fonden bar ansvaret; på biljetten är analysen LP:ns egen, och boten är det skrivna tesbladet före varje ja: vad är affären värd, vad kan gå fel, varför delas den — uteblir svar, uteblir biljett."
+        },
+        {
+          "type": "definition",
+          "content": "GRATIS-BILJETTFÄLLAN (KURSENS EGNA): den synliga besparingen finansierar det osynliga urvalet. Boten är en regel: ingen biljett godtas utan break-even-räkning — tre tal (fondvägens netto, biljettens brutto, avgiftsbördan per enhet insatt) skrivna ned före svaret på inbjudan."
+        },
+        {
+          "type": "insight",
+          "content": "Fällorna knyter an till familjens tidigare lärdomar: pe-05 lärde att tid har pris även i onoterat, pe-06 att kapitalets kronologi är en risk i sig — biljettens kronologi är den skarpaste av alla, med kallelse utan buffert och utfasning utan marknad. Den som minns j-kurvans tålamodskrav (pe-06) och lägger den bredvid biljettens koncentration förstår varför co-investering är Avancerad-nivå i denna familj: den tar bort fondens två skydd — spridning och tålamodets finansiering — och lämnar LP:n ensam med båda riskerna, avgiftsfritt."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — co-invest-protokollets fem frågor",
+      "intro": "Fem frågor före varje biljett — med den första som svårast, eftersom svaret aldrig står i erbjudandebrevet. En utmaning stänger kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: varför delar GP:n just denna affär — kapacitet, riskdelning eller tvivel? Fråga två: skulle fonden ha gjort affären ensam — och vad i affären avgör det? Fråga tre: vad kostar koncentrationen — vad är ett nollresultat av min hela portfölj, inte av fonden? Fråga fyra: vad är break-even-multipeln — fondvägens netto, biljettens brutto och avgiftsbördan, räknade och skrivna? Fråga fem: bär jag de fem kraven — analys, beredskap, koncentration, likviditet och arbete — hemma, i dag? Den som kan svara på de fem har konverterat biljetten från en relationsfråga till en räknefråga — och relationen återställd till det den ska vara: fondvalet, inte biljettens pris. Familjens LP-halva sluts därmed: fonderna (pe-01), utfasningarna (pe-02), bolagssidan (pe-03), den privata världen (pe-04), tiden (pe-05), kronologin (pe-06) — och biljetten bredvid (detta steg)."
+        },
+        {
+          "type": "definition",
+          "content": "CO-INVESTERINGSPROTOKOLLET: (1) SKÄLET — kapacitet, riskdelning eller tvivel: GP:s skäl bedöms, aldrig antas · (2) AFFÄREN — skulle fonden gjort den ensam; tesbladet skrivet av LP:n · (3) KONCENTRATIONEN — biljetten räknas mot hela portföljen · (4) BREAK-EVEN — tre tal skrivna före svaret · (5) KRAVEN — de fem från kapitel tre baras hemma, eller biljetten avstås. Fem rader, en sida, besvarade i lugn — relationen får aldrig skriva svaret."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg de två vägarna med egna påhittade tal: en fond med kodexen tjugo procent carry och tolv enheter avgifter under livet, helägda affärer på en vald multipel och erbjudna på en annan. Räkna LP:ns netto på båda vägarna, besparingen på en erbjuden affär och break-even-multipeln, och variera sedan urvalsgapet tills biljetten vänder. Kursen är utbildning i att läsa biljettens dubbla pris — inte uppmaningar att köpa eller sälja något."
+        }
+      ]
+    }
+  ]
+}

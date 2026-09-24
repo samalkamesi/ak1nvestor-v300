@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-20T01:57:32.057Z",
+  "bas": "http://localhost:3000",
+  "namn": "s7u3sond",
+  "sidor": [
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.75,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1649,
+        "LCP": 4376,
+        "TBT": 316,
+        "CLS": 0,
+        "TTI": 4684,
+        "SI": 4054
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 50 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 50 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 492 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 492 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "1.2 s",
+          "rad": "JavaScript execution time — 1.2 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "2.5 s",
+          "rad": "Minimize main-thread work — 2.5 s"
+        }
+      }
+    }
+  ]
+}

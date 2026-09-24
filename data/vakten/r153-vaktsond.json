@@ -1,0 +1,9 @@
+{
+ "sitemap": {
+  "rapportakademin": true,
+  "langd": 486420
+ },
+ "journal": {
+  "fel": "Error: ENOENT: no such file or directory, open '/home/ak1a/AK1/data/vakten/granssnitt-journal.json'"
+ }
+}

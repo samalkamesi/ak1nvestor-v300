@@ -30,6 +30,12 @@ import { svaraLokaltExtra } from "@/lib/ai-mentor-extra-fragor";
 // Spår 6 omgång 2 (s6-u1): +2 makroförhandsfrågor (ränta, inflation) —
 // makro-mönstren prövas först; kärnorden disjunkta mot båda underliggande lager
 import { svaraLokaltMakro } from "@/lib/ai-mentor-makro-fragor";
+// Spår 6 (manifest auto-s6-1789912510460, s6-u3): +3 moderna risktyper
+// (regulatorisk risk, GDPR/datarisk, ESG-risk) — aktiverar rk-06/rk-13/rk-14.
+// Prövas FÖRE basen: basen äger naket «risk» och skulle annars fånga
+// «vad är regulatorisk risk?» med sitt generella risk-svar; kärnorden
+// mekaniskt disjunkta mot samtliga lager (sond _s6u3-sond-disjunktion.mjs)
+import { svaraLokaltModernaRisker } from "@/lib/ai-mentor-modernarisk-fragor";
 // Spår 6 omgång 3 (s6-u3 nästa): +3 förhandsfrågor (värdering/DCF,
 // investmentbolag/NAV, options) — prövas SIST och kan därför aldrig stjäla
 // en fråga från tidigare lager; källmärkta ur kursregistret
@@ -49,6 +55,14 @@ import { svaraLokaltSektor } from "@/lib/ai-mentor-sektor-fragor";
 // Spår 6 omgång 5 (s6-u1): +1 förhandsfråga (praktiska case/verkliga bolag
 // — pc-familjen, kategorins 21 kurser) — case-lagret ligger SIST i kedjan
 import { svaraLokaltCase } from "@/lib/ai-mentor-case-fragor";
+// Våg 189 (2026-09-19, kundens arbetsstation): +10 förhandsfrågor om
+// aktiemarknadens mekaniker (ordervärlden, likviditet, index-konstruktion
+// — kategorin AKTIEMARKNADEN I PRAKTIKEN). Kärnorden disjunkta mot samtliga
+// 52 syskonlager (testfall K) — placering EFTER case, FÖRE praktik är en
+// medveten tie-brytning (makro-precedensen): konstruktionsfrågorna ("hur
+// vägs OMXS30?") ska inte fångas av praktikens generella indexfond-svar;
+// praktik behåller allt med ordet index som kärnordsträff.
+import { svaraLokaltMarknadsmekanik } from "@/lib/ai-mentor-marknadsmekanik-fragor";
 // Spår 6 omgång 6 (s6-u3): +3 förhandsfrågor (index/passivt ägande,
 // blankning/short, marginalanalys) — praktik-lagret ligger SIST och kan
 // därför aldrig stjäla en fråga från tidigare lager; källmärkt med
@@ -56,6 +70,13 @@ import { svaraLokaltCase } from "@/lib/ai-mentor-case-fragor";
 // v07/v08/ln-01). Ansvarsfördelning: marginalens V-ord ägs av basens
 // V-uppslag (s6-u2:s emission-precedens) — praktik äger familjeorden.
 import { svaraLokaltPraktik } from "@/lib/ai-mentor-praktik-fragor";
+// 2026-09-19 våg 210 (studion): valutamekanik — PPP, ränteparitet, realväxelkurs,
+// kronstyrka, devalvering, hedging, exportörens vind, reservvaluta,
+// valutamarknaden, valutalån. Tie-brytning enligt våg 189-doktrinen: EFTER
+// praktik, FÖRE portfoljgrund — portfoljgrund behåller valuta-GRUNDERNA
+// ("vad är valutarisk?"), detta lager bär MEKANIK-frågorna (kärnorden
+// mekaniskt disjunkta, testfall K i testa-ai-mentor-valutamekanik.mjs).
+import { svaraLokaltValutamekanik } from "@/lib/ai-mentor-valutamekanik-fragor";
 // Spår 6 omgång 7 (s6-u2): +2 förhandsfrågor (diversifiering/korrelation,
 // valutarisk) — portfoljgrund-lagret ligger SIST och kan därför aldrig
 // stjäla en fråga från tidigare lager; källmärkt med flerkällsrad
@@ -732,6 +753,564 @@ import { svaraLokaltVardegrund } from "@/lib/ai-mentor-vardegrund-fragor";
 // INGEN SIST-anspråk — 53:e motorn, fönstrets dokumenterade ordning: … →
 // konvertibel (50) → sektorlasning (51) → vardegrund (52) → detta lager.
 import { svaraLokaltRealekonomi } from "@/lib/ai-mentor-realekonomi-fragor";
+// 2026-09-19 omgång 24: försäkring + krypto (s6-u1, manifest auto-s6-
+// 1789839901194 — sektorfamiljens sista fria block; aktiverar se-19 +
+// se-11 ⇒ KATEGORIN SEKTORANALYS FULLT LÄNKAD 30/30, plus källaktiveringar
+// poor-charlies-almanack + ib-03 (försäkringsmonstret) och sj-02 +
+// rs-01 (kryptomonstret). Två monsters: combined ratio/floaten —
+// teckningsmotorn (690 + 260) ÷ 1 000 = 95 % med stormårets 105 %, mot
+// kapitalmotorn 1 000 × 4 år = 4 000 Mkr float × 4 % = 160 Mkr (bra år
+// 50 + 160 = 210, stormår −50 + 160 = 110; effektiv låneränta 50 ÷ 4 000
+// = 1,25 %) + krypto som extrem risk — blockkedjan (block ≈ var 10:e
+// minut, halvering ≈ vart fjärde år) och svängningsaritmetiken 10 000 →
+// 2 500 = −75 % som kräver +300 % tillbaka (−50 % → +100 %, −90 % →
+// +900 %). Sondens dokumenterade gränser: naket «försäkring» är
+// beteendedjupets («förankring», tav 2) — detta lager bär ENDAST
+// sammansättningarna; «float»↔«moat» tav 2 hålls isär av längdtoleransen
+// (≤ 7 tecken tål 1 fel); «termin/terminer» nästas, «price to sales/
+// book» basens — od-07 och v04/v05 bärs INTE. Sond _s6u1-sond{,2,3}-
+// omg24.mjs: familjerna NULL genom kedjans 54 motorer / 148 monsters,
+// 0 grannar. SIST i kedjan — 55:e motorn: … → vardegrund (52) →
+// realekonomi (53) → detta lager. Anspråk data/vakten/
+// auto-s6-1789839901194-s6-u1-ansprak.md FÖRE byggstart.
+import { svaraLokaltForsakring } from "@/lib/ai-mentor-forsakring-fragor";
+// 2026-09-19 omgång 24: moatdjup (s6-u2, manifest auto-s6-1789839901194 —
+// moatens två mekanisker i siffror: prisfullmakten + byteskostnaderna;
+// aktiverar MT-blockets 7 mentorväglösa kurser ⇒ KATEGORIN MOAT fullt
+// länkad 4/11 → 11/11 — mt-07 + mt-05 primära, mt-01/mt-03/mt-04/mt-06/
+// mt-08 källor). Prisfullmaktens hävstång (105 − 60) × 100 000 = 4,5 Mkr
+// = +12,5 % på 5 % höjning, brytpunkten 4,0 Mkr ÷ 45 = 88 888,9 ⇒ tål
+// 11,1 % kundbortfall; byteskostnadens tiofalt (churn 2 % ⇒ 8 000 × 50
+// = 400 000 mot churn 20 % ⇒ 8 000 × 5 = 40 000; 400 000 ÷ 40 000 = 10).
+// Sondens dokumenterade gränser: «moat»/«moats»/«moaten»/«vallgrav»/
+// «vallgraven» = extra-lagrets kärnord (här ENDAST stärkord, deras frågor
+// bärs som knappar); «kostnadsöverlägsenhet»/«kvalitetspremien»/«inlåsning-
+// effekten» NULL men medvetet ej kärnord (mt-06/mt-08 bärs som källor).
+// Sond _s6u2-sond-omg24.mjs + _s6u2-sond2-omg24.mjs: familjen NULL genom
+// kedjans 54 motorer / 1 570 kärnord, kärnorden RENTA (0 grannar inom
+// motorns tolerans). Wiread sist i fönstrets löpande ordning — 56:e
+// motorn: … → realekonomi (53) → försäkring (55) → detta lager. Anspråk
+// data/vakten/auto-s6-1789839901194-s6-u2-ansprak.md FÖRE byggstart.
+import { svaraLokaltMoatdjup } from "@/lib/ai-mentor-moatdjup-fragor";
+// 2026-09-19 omgång 24: nya territorier (s6-u3, manifest auto-s6-
+// 1789839901194 — TRE monsters: aktivisten, guidningen, bostadsmekaniken +
+// demografin; aktiverar 7 mentorväglösa kurser: kt-07 + ib-04 + kt-06 +
+// kt-04 + kt-05 + ma-08 + mk-12). DEKONFLIKT mot fönstrets syskon, ärligt
+// bokfört: ursprungsplanens försäkringsmonster överläts åt u1 (deras anspråk
+// 16:25 UTC FÖRE detta lagers 17:53; deras ai-mentor-forsakring-fragor
+// lästes på disk) — ersättaren aktivisten sondbekräftad NULL genom kedjan
+// ÄVEN med syskonens nya lager wireade. Aktivisten: substans 178,0 mot
+// kurs 124,0 = gap 54,0 = 43,5 %, flaggtröskeln 5 %, röstlängden 20,0 A +
+// 80,0 B = 28,0 M röster med stiftelsens 51,4 % röster på 14,4 % kapital,
+// prisbanan 124,0 → 146,0. Guidningen: det dubbla slaget 0,90 × 0,90 =
+// 0,81 (kurs 180,0 → 145,8), kalibreringsserien 12,00 → 10,50 mot väntan
+// 9,00. Bostaden: lånekraften 144 000 ÷ 0,040 = 3 600 000 mot 7 200 000,
+// bolånetaket 85 % av 4 000 000, tjänstegraden 216 000 = 27,0 %, hävstången
+// 37,5 ÷ 15 = 2,5, beroendekvoten 0,84 → 1,00, pensionen 41,7 → 25,0.
+// Sondens dokumenterade gränser: basen äger naked «katalysator», nästas
+// substansvärde-orden, ägande bolagsstämma/rösträtt, makro ränte-orden,
+// basen «hur påverkar X börsen?»-formerna — alla bärs som knappar här.
+// Sond _s6u3-sond{,2,3}-omg24.mjs: familjerna NULL genom kedjan, 0
+// grannar (även mot syskonens nya kärnord, omverifierat efter dekonflikten).
+// Wiread sist i fönstrets löpande ordning — 57:e motorn: … → realekonomi
+// (53) → försäkring (55) → moatdjup (56) → detta lager. INGEN SIST-anspråk.
+// Anspråk data/vakten/auto-s6-1789840407-u3-ansprak.md FÖRE byggstart.
+import { svaraLokaltNyaTerritorier } from "@/lib/ai-mentor-nya-territorier-fragor";
+// 2026-09-20 omgång 25: etfmekanik (s6-u1, manifest auto-s6-1789864506792 —
+// den börshandlade fondens inre maskineri ETT monster: korgen/NAV
+// (10 000 000 ÷ 1 000 000 = 10,00 · 10 200 000 → 10,20) + skapelsen och
+// inlösenen (AP-korgen 5 000 000 ÷ 10,00 = 500 000 andelar) + arbitraget
+// (kurs 10,04 = premie 0,4 % · 500 000 × 10,04 = 5 020 000 − 5 000 000 =
+// 20 000 − 2 000 = 18 000 netto, självförstörande 0,4 → 0,3 → 0,2 ·
+// diskontet 9,96 = 4 980 000) + premiens risk (flashdagen 6 maj 2010,
+// 20-30-50 %) + hävstångens och rullens tullar (1,05 × 0,9524 = 1,00 mot
+// 1,10 × 0,9048 = 0,995 · 0,995^5 ≈ 0,976 · 0,80 × 1,25 = 1,00 mot 0,60 ×
+// 1,25 = 0,75 · contangon 50,00/50,50 med 0,99^12 = 0,886 = −11,4 %) +
+// indexomläggningen (40 000 × 0,80 = 32 000 · × 0,12 = 3 840 Mkr ·
+// 50 000 × 0,012 = 600 · bågen 42,00 → 44,52 = +6,0 % → 42,74 ·
+// 3 840 ÷ 60 = 64 handelsdagar · viktdriften 10 000 × 0,004 = 40).
+// Aktiverar am-08 + am-07 (+ od-07 som källa) ⇒ KATEGORIN AKTIEMARKNADEN
+// I PRAKTIKEN FULLT LÄNKAD 8/10 → 10/10 (km-069/km-070 var nådda sedan
+// tidigare). Sondens dokumenterade gränser: praktiken äger naket index/
+// indexfond/etf (grundfrågorna — här stärkord + knapp; «etfens» träffas
+// aldrig av deras exakta korta match; därför kastades «etf-arbitrage» ur
+// kärnorden efter G2-upptäckten — praktiken vinner varje fråga med naket
+// «etf»-ord, kärnordet var dödvikt), marknadsmekaniken spread/likviditet,
+// nästas nav och naket «termin», basen «hävstång» (endast sammansättningen
+// «hävstångsetf» är kärnord här), portfölj-praktiken «rebalansering»
+// (ordet «ombalansering» KASTADES ur kärnorden — tavstånd 2 — förekommer
+// endast i text), naket «arbitrage» lämnas ledigt åt framtida bf-13-lager.
+// Sond _s6u1-sond{,2}-omg25.mjs: familjerna NULL genom kedjans 58 motorer
+// / 1 688 kärnord, 0 grannar. 59:e motorn — efter nyaterritorier, FÖRE
+// fönstrets syskonlager kontrahent (s6-u2, samma manifest; inget SIST-
+// anspråk — deras kommentar nedan bokför ordningen). Anspråk
+// data/vakten/s6-omg25-u1-ansprak.md FÖRE byggstart.
+import { svaraLokaltEtfmekanik } from "@/lib/ai-mentor-etfmekanik-fragor";
+// 2026-09-20 omgång 25: kontrahent (s6-u2, manifest auto-s6-1789864506792 —
+// kontrahentriskens två monsters: (1) motparten + nettingen (exponeringarna
+// +8, −5, +2 ⇒ brutto 15 mot netto +5 — en tredjedel; den bilaterala
+// världen: återförsäkringen 800 utan pant, Lehman 15 september 2008 som
+// MOTPART) + (2) clearinghuset (trappan 28 + 8 + 4 = 40 med 70/20/10 %,
+// panten 50 000 med daglig rullning 20 000, haircutsen 100/98/80 per 100
+// ⇒ aktiepant 50 000 ÷ 0,80 = 62 500 i nominellt värde). Aktiverar rk-16
+// (Kontrahentrisken — RISKHANTERING, spår 5:s kurs född 2026-09-19,
+// mentorväglös sedan födelsen) + källorna od-07, ma-05, am-04, ks-05.
+// Sondens dokumenterade gränser: «ccp» STRYKS (granne «ccc» —
+// kapitalbindningens — tavstånd 1, bärs i text), «lehman» = historia-
+// lagrets kraschfamilj (bärs som historieförankring), «initial margin»/
+// «variation margin» = basens ([2 bas] i sonden — beskrivs i text),
+// basens bank-formulering «vem betalar när en bank går omkull?» (styrks
+// ej — undertitelns «vem står på andra sidan» är kärnordsfrasen).
+// Sond _s6u2-sond{,2}-omg25.mjs: familjen NULL genom kedjans 58 motorer
+// / 165 monsters / 1 688 kärnord, 0 grannar, 0 stölder mot 117 kanoniska.
+// Wiread sist — efter detta fönstrets syskon (u1:s etfmekanik deklarerad
+// 59:e; detta lager EFTER deras led i kompositionsraden om syskonet
+// wirear under fönstret — fall G vaktar verklig ordning). Anspråk
+// data/vakten/auto-s6-1789864506792-s6-u2-ansprak.md FÖRE byggstart.
+import { svaraLokaltKontrahent } from "@/lib/ai-mentor-kontrahent-fragor";
+// 2026-09-20 omgång 25: marknadsrytm (s6-u3, manifest auto-s6-1789864506792 —
+// marknadens rytm i tre skal, TRE monsters: (1) korrelationsrisken (rk-10
+// primär; två tillgångar 50/50 à 15 % vol: ρ=0 ⇒ √112,5 = 10,61 %, ρ=+1 ⇒
+// 15,0 %, ρ=−0,2 ⇒ √90 = 9,49 %, krisen ρ→0,8 ⇒ √202,5 = 14,23 % —
+// diversifieringsvinsten 4,4 → 0,8 punkter, 80 % av skyddet försvinner;
+// källor km-014 + pf-03 + rk-09 — naket «korrelation» är portföljgrundens)
+// + (2) kapitalcykeln (rk-05 primär; pris 100/kostnad 70 ⇒ +30 kronor,
+// kapacitet +40 % ⇒ pris 65 < 70 ⇒ −5 kronor = −7,7 % marginal,
+// efterfrågan +3 %/år: ln 1,4 / ln 1,03 = 11,4 år till jämvikt, efter 5
+// år gap 0,24 = 17 % av kapaciteten; källor se-20 gruv- och metallsektorn
+// [utbudströghetens sexårs byggtid] + rk-15 — «cykelrisken» STRYKS som
+// kärnord, tavstånd 2 mot sektorns «cyklisk») + (3) bull-/bearmarknaden
+// (bf-15 primär; tumregeln ±20 %, banan 100 → 300 = 3^(1/6) − 1 =
+// +20,1 %/år mot ras 300 → 180 = 0,6^(1/10) − 1 = −5,0 %/månad,
+// återhämtningen 300/180 = +66,7 %; källor manias-panics-and-crashes +
+// bull-a-history [bokmastarns] — «bubbla»/«krasch» är historiens ord).
+// Aktiverar rk-10 + rk-05 + bf-15 (tre mentorväglösa primärer) + se-20
+// som källa = FYRA kurser får sin första mentorväg. Sond
+// _s6u3o25-sond{,2,3,4,5}.mjs (fem ronder, anspråk auto-s6-1789864506792-
+// s6-u3-ansprak.md FÖRE byggstart): familjerna NULL med RENTA kärnord,
+// levande frågetest NULL; dödade alternativ bokförda i anspråket
+// (kontrahent/etf-mekanik = fönstrets syskon u2/u1, emissionsrisken =
+// kapitalmekaniks territorium, ts-blocket = basens tekniska monster).
+// SIST i kedjan — 61:a motorn: … → nya territorier (57) → etfmekanik
+// (59) → kontrahent (60) → detta lager. Syskonens SIST-deklarationer
+// respekterade; inga deras filer rörda.
+import { svaraLokaltMarknadsrytm } from "@/lib/ai-mentor-marknadsrytm-fragor";
+// 2026-09-20 omgång 25: multipel — grundmultiplarna (s6-u2 försök 2,
+// manifest auto-s6-1789864506792 — P/S-talet och P/B-talet, TVÅ monsters:
+// (1) intäktskronans pris (v04-ps primär; källor v06-ev-ebitda +
+// vr-03-multipelns-anatomi; marginalfällan 80–90 öre mjukvara mot 5–15 öre
+// distributör; tabellen Sinch 31 757 ÷ 27 080 = 1,17 · Alfa Laval
+// 231 545 ÷ 69 674 = 3,32 · Atlas Copco 984 018 ÷ 168 343 = 5,85 ·
+// Microsoft 3 689 160 ÷ 331 839 = 11,12; trösklarna <1→5p · <2→4p ·
+// <3→3p · <5→2p · ≥5→1p) + (2) det bokförda kapitalets pris (v05-pb
+// primär; källor vr-08-tobins-q + vr-06-jamforelsebolagen; de fem talen
+// Sinch 1,38 · Ericsson B 3,09 · Atlas Copco A 9,26 · Kambi 29,18 ·
+// Apple 44,15 med ROE-resan 1,9 → 148,8 %; återköps-/goodwillfällorna;
+// P/B = P/E × ROE). Aktiverar v04-ps + v05-pb — VÄRDERING-kategorins två
+// mentorväglösa grundmultiplar (sond _s6u2b-sond-omg25.mjs: PS-familjen
+// TOTALT NULL, PB-familjen NULL med dokumenterade gränser «p/b för en
+// bank» = sektorns och «substansvärde» = investmentbolagens; 0 kärnords-
+// kollisioner; råa «p/s»/«p/b» substring-farliga ⇒ korta exakta ord
+// «ps»/«pb»). Anspråk data/vakten/auto-s6-1789864506792-s6-u2-ansprak2.md
+// FÖRE byggstart. 61:a motorn (av 62), FÖRE marknadsrytm — deras
+// SIST-deklaration i widgeten + deras testfall L01 (SISTA ledet) respekteras.
+import { svaraLokaltMultipel } from "@/lib/ai-mentor-multipel-fragor";
+
+// 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): riskadress —
+// riskens adresser i ett monster: leverantörsrisken (påslaget + avbrottet)
+// + modellrisken (felbudgeten) + personalrisken (kärnkvoten) ovanpå
+// anatomi-kartans fyra adresser (rs-06 primär). Aktiverar FYRA mentorväglösa
+// kurser (rs-06/07/08/09 — personalrisken född samma dag av spår 5,
+// mentorväglös sedan födelsen). Sond _s6u1-sond2-omg26.mjs: samtliga
+// kärnordsfamiljer NULL genom kedjan; basen äger naket «risk»/«risken»
+// («vad är riskens anatomi?» FÅNGAS av dem — därför bär detta lager ENDAST
+// de sammansatta formerna + kartans egna ord), makro «räntetäckning»,
+// marknadsmekanik «stopp»-familjen, risklasningsdjup kundkoncentration/
+// riskmatris — deras frågor bärs som fragor:-knappar. Anspråk
+// data/vakten/auto-s6-1789890903364-s6-u1-ansprak.md FÖRE byggstart.
+// 62:a motorn (av 63), FÖRE marknadsrytm — deras SIST-deklaration +
+// testfall L01 (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltRiskadress } from "@/lib/ai-mentor-riskadress-fragor";
+// 2026-09-20 omgång 26: balansdjup — lagervärderingen + obeskattade reserver
+// (s6-u2, manifest auto-s6-1789890903364 — TVÅ monsters: (1) varornas värde
+// (bk-07 primär; källor bk-03 + ln-02; jackan 800 mot nettoförsäljningsvärde
+// 1 350/600, nedskrivning 200 × 10 000 = 2,0 Mkr, balansraden 8,0 → 6,0,
+// rullningen 1 800 ÷ 450 = 4,0 varv = 91 dagar, Norrull 6,0 varv = 61 dagar
+// med 150 Mkr mindre bundet, grottan 20 ÷ 5 = 4,0 mot tröskeln 2,0, ny
+// rullning 1 890 ÷ 540 = 3,5 ≈ 104 dagar, NFV-fall 5 % × 540 = 27 Mkr,
+// butiksspektrat 10/30/60 dagar → 2,0/6,0/12,0 Mkr) + (2) uppskovet och
+// det justerade kapitalet (bk-06 primär; källor km-049 + v05-pb; Norra
+// Kraft: betald skatt 0,20 × 10 = 2,0 mot bokförd 0,20 × 30 = 6,0,
+// kassaflöde 48,0 mot 44,0 = uppskovet 4,0 = 0,20 × (40 − 20), reserv-
+// ökningen 30 − 10 = 20,0; justerat EK 180 + 250 − 50 = 380 Mkr = 38,0
+// kr/aktie mot 18,0, P/B 1,67 mot 0,79 ≈ faktor 2,1 reservgeometri).
+// Aktiverar bk-07 + bk-06 — BOKFÖRING & ÅRSREDOVISNING-kategorins två
+// SISTA mentorväglösa: kategorin 17/19 → 19/19 FULLT MENTORLÄNKAD. Sond
+// _s6u2-sond{,2}-omg26.mjs + rond 3 (18/18 kärnord RENTA mot samtliga
+// lager; «lageromsättnings-»-familjen = kapitalbindningens, nakna «lagret»/
+// «lager» bärs ENDAST som stärkord — «laget»/«lagen» ligger redigerings-
+// avstånd 1 och skulle falskträffa; frågeformerna fångas av fraserna
+// «lagrets värde»/«lagret värt»). Anspråk data/vakten/
+// auto-s6-1789890903364-s6-u2-ansprak.md FÖRE byggstart (10:00 — fönstrets
+// första). 64:e motorn, FÖRE marknadsrytm — deras SIST-deklaration +
+// testfall L01 (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltBalansdjup } from "@/lib/ai-mentor-balansdjup-fragor";
+// 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): optionshantverk —
+// optionspositionens tre verkstadsgolv (s6-u3, TRE monsters): (1) BINOMIAL-
+// TRÄDET OCH REPLIKERINGEN (od-08 primär, FÖDD 2026-09-20 av spår 5 u3 —
+// mentorväglös sedan födelsen; källor od-05 pariteten + od-01; hedgekvoten
+// (20−0)÷(120−80) = 0,5 · lånet 40÷1,02 = 39,22 · priset 50 − 39,22 = 10,78
+// · räntespåret 4 % ⇒ 38,46 ⇒ 11,54 · q = (1,02−0,80)÷(1,20−0,80) = 0,55 ⇒
+// 11÷1,02 = 10,78 — två vägar samma svar, q är ingen prognos utan
+// viktsindelning ur arbitragekravet) + (2) STRADDLEN (od-04 primär; källor
+// od-06 + od-02; Straddle 100: premie 4+4 = 8, BE 92/108 · Strangle 90/110:
+// premie 2+2 = 4, BE 86/114 — dubbla zonen halva premien · vertikala
+// prisspridningens tre rader: maxförlust = nettokostnad, maxvinst =
+// strikskillnad − nettokostnad, BE = köpta striken + nettokostnad) + (3)
+// DELTAT (od-06 primär; källor od-01 + od-04; 10 kontrakt lösenpris 150:
+// nettodelta +0,04 → 40 aktier, efter 158: +0,26 → 260 — +220 utan ett
+// beslut · thetans hyra −0,50/aktie/dag = 500 kr · rörelsedag 8 kr:
+// 0,5 × 0,02 × 8 × 8 = 0,64/aktie = 640 ⇒ netto +140 · break-even-rörelsen
+// √50 ≈ 7,1 kr ≈ 4,7 % av 150). od-05 aktiveras som KÄLLA ⇒ OPTIONS &
+// DERIVAT FULLT MENTORLÄNKAD 12/12 (kategorins 12 kurser: km-059..062 +
+// od-01..08; de fyra mentorväglösa od-04/05/06/08 var de sista — övriga
+// nådda av optionsdjup/nästa/warrant/kontrahent sedan tidigare). Sond _s6u3o26-sond.mjs:
+// hela familjen NULL med 0 grannar (binomialträdet · replikeringen ·
+// hedgekvoten · straddle/strangle · kombinerade optionspositioner · delta ·
+// aktieekvivalenter · förfallodagen · thetan · pariteten); dokumenterade
+// gränser: «collar» portföljgrundens (dollar tav 1), «prisspridning» basens
+// (riskspridning tav 2), «ex-dagen» utdelningskalenderns, «omhedging»
+// valutamekanikens (hedging tav 2), naket «option» nästa-lagrets — detta
+// lager bär ENDAST sammansättningarna. FÖRSTA valet (riskens adresser)
+// togs på disk av u1 (deras anspråk 100 s före; nedställning bokförd i
+// auto-s6-1789890903364-s6-u3-ansprak.md v2). Anspråk FÖRE byggstart.
+// 65:e motorn, FÖRE marknadsrytm — deras SIST-deklaration + testfall L01
+// (SISTA ledet) respekteras (multipel-precedensen).
+import { svaraLokaltOptionshantverk } from "@/lib/ai-mentor-optionshantverk-fragor";
+// 2026-09-20 omgång 26 (manifest auto-s6-1789890903364): pengarstid —
+// pengarnas TID och ORDNING i två monsters (s6-u2 fönster 3, verktygs-
+// prefix _s6u2c-; balansdjup-fönstret levererat i 5efe6bbd): (1) ANDRAHANDS-
+// MARKNADEN (pe-05 primär, källor pe-06 + ib-05; Nordkärnanfond 2018:
+// substans 60,0 · åtagande 20,0 · pris 0,85 × 60,0 = 51,0 · utlägg 71,0 ·
+// exponering 80,0 · kvot 0,8875 ⇒ sann rabatt 11,25 % inte 15,0 ·
+// känslighet åtagande 0/20/40 ⇒ 15,0/11,25/9,0 % · mognaden ung 0,78 ×
+// 80,0 = 62,4 mot mogen 0,90 × 60,0 = 54,0 · årsverkan (100/85)^(1/3) =
+// 5,6 %/år mot ^(1/5) = 3,3 % · J-kurvan Nordkust Kapital I: bud
+// 30/25/20/15/10 · ut 10/15/25/30/25/15/10 = 130 · botten −80 år 4 · noll
+// år 8 · multipel 1,30 · TVPI 1,50 (DPI 1,30 + RVPI 0,20) · IRR 6,04 % ·
+// effektiv avgift år 1 = 2/30 = 6,67 % · kostnadstrappan Kupolverk 12,0 %
+// → Havstekel 11,2 / Nordpost 9,6 (2,0 + 0,20 × 2,0) · genomslipning 93,3 %
+// mot 80,0 % · epokspåret 100 × 1,08^20 = 466,1 mot 100 × 1,06^20 = 320,7
+// = 31,2 % av slutvärdet) + (2) SEKVENSRISKEN (rp-05 primär, källor rp-04
+// + ek-04; spegelbanorna +30/+30/−10/−10 mot spegelvänt med uttag 7/år:
+// utan uttag båda 136,89 · Före 110,549 mot Efter 98,313 · gap 12,236 =
+// 12,2 % av start · trappan 2/4/6 år = 2,8/12,2/30,3 % (103,7/100,9 ·
+// 120,83/90,554, utan uttag 160,16) · buffertfönstret 14 × 1,3689 = 19,16,
+// pris 5,16 ≈ 5,2 %). Aktiverar pe-05 + pe-06 + ib-05 + rp-05 — FYRA
+// mentorväglösa (pe-06 och rp-05 födda 2026-09-20 av spår 5, mentorväglösa
+// sedan födelsen — rs-09-precedensen) ⇒ PRIVATE EQUITY & INVESTMENTBOLAG
+// 13/13 OCH RISKHANTERING & PORTFÖLJTEORI 14/14 FULLT MENTORLÄNKADE. Sond
+// _s6u2c-sond2.mjs + diagnos _s6u2c-diagnos.mjs: hela familjen NULL;
+// dokumenterade gränser: «j-kurvan» realekonomins (valutans J-kurva —
+// kursen pe-06:s EGEN text: «mk-03 äger den vägen»), «call» options-
+// nästa-lagrets (capital calls i TEXT), naket «pension» portföljpraktikens,
+// naket «risk» basens — ENDAST sammansatta former + familjens egna ord.
+// Anspråk data/vakten/auto-s6-1789890903364-s6-u2-ansprak.md FÖRE
+// byggstart. 66:e motorn (66 totalt med detta lager), FÖRE marknadsrytm —
+// deras SIST-deklaration + testfall L01 (SISTA ledet) respekteras
+// (multipel-/riskadress-precedenserna). RACE-KRONOLOGI 2026-09-20: två
+// tidigare wiringar (10:53, 11:04) raderades av lost-update (u3:s avslutande
+// widget-skrivning 10:57; fullträds-återställning 11:07 under s7-fönstret)
+// — detta är den tredje appliceringen, återapplicerad via
+// _s6u2c-aterapplicera.mjs (verktyg/) + Edit (src/).
+import { svaraLokaltPengarstid } from "@/lib/ai-mentor-pengarstid-fragor";
+// 2026-09-20 omgång 27 (manifest auto-s6-1789912510460): volatilitetsmekanik —
+// varifrån bruset kommer och vad det kostar i två monsters (s6-u2,
+// verktygsprefix _s6u2o27-): (1) VOLATILITETSDRAGET (rp-06 primär, källor
+// rp-04 + rp-05; spegelparet 100 × 1,20 × 0,80 = 96,0 · tre liv på samma
+// +10: 6,19x/4,81x/3,11x · diversifieringsspaken 10/√2 ≈ 7,1) +
+// (2) MARGINALTRAPPAN (ln-03 primär, källor ln-01 + v07; bolag A/B samma
+// netto 8,0 % men brutto 45/90 · DOL 3,75 mot 9,0 · nollpunkter 733/889 ·
+// marginalvikten 2,78 = 1/(3 × 0,12)). Aktiverar rp-06 + ln-03 — TVÅ
+// mentorväglösa. RACE-KRONOLOGI: första vajringen (ca 15:0x) raderades av
+// ett syskons fullträds-återställning av widgeten till HEAD — detta är
+// ÅTERAPPLICERINGEN (pengarstid-precedensens tredje-försöks-mönster).
+// u1:s marginalhandel äger kontraktsmarginalens ord (kollision vd med
+// am-09 — monster 2 bytt till ln-03, 0 överlapp kontrollerat). Efter
+// pengarstid, FÖRE marknadsrytm (deras SIST-deklaration + L01).
+import { svaraLokaltVolatilitetsmekanik } from "@/lib/ai-mentor-volatilitetsmekanik-fragor";
+// 2026-09-20 omgång 27 (s6-u1, manifest auto-s6-1789912510460): co-invest —
+// andelen bredvid fonden; ETT monster (två biljetter till samma konsert:
+// LP-vägen 200 − 20 − 12 = 168 mot biljetten 200, gap 32 · urvals-
+// asymmetrin 2,10x/1,70x · break-even 1,76x · speglingen 0,34x = 34 ·
+// trappan +34/+14/0/−6 · fem krav, fyra fällor, protokollets fem frågor).
+// Aktiverar pe-07 (spår 5-kurs född 2026-09-20, mentorväglös sedan
+// födelsen) ⇒ KATEGORIN PRIVATE EQUITY & INVESTMENTBOLAG fullt länkad
+// 13/14 → 14/14 + pe-04 källaktivering (källor pe-06 + km-014). Sondens
+// dokumenterade gränser: djup äger «multipeln»-familjen (break-even i
+// TEXT), nästa «call» (capital calls i TEXT), solidformen «coinvestering»
+// STRYKS (tavstånd 2 till «investering» — hyphen-formerna blir
+// flerordsfraser som kräver co-prefixet). VAL-EPILOGEN: v1 marginalhandeln
+// (am-09) nedställd till s6-u2 (deras anspråk 16:03 < detta lagers 16:04)
+// — som i sin tur lämnade am-09 öppet och bytte sitt monster 2 till
+// ln-03; am-09 förblir mentorväglös till nästa fönster (fynden i
+// _s6u1e-sond-omg27.mjs: basen «margin call»/«hävstång», sektorn
+// «utlåningsgrad», handelsdagen «utlåningsräntan»). Anspråk data/vakten/
+// auto-s6-1789912510460-s6-u1-ansprak.md v2 FÖRE byggstart. 69:e motorn,
+// efter volatilitetsmekanik, FÖRE marknadsrytm (deras SIST-deklaration +
+// L01 — multipel-/riskadress-precedenserna).
+import { svaraLokaltCoinvest } from "@/lib/ai-mentor-coinvest-fragor";
+// 2026-09-20 fönstret efter omgång 27 (s6-u2, verktygsprefix _s6u2o28-):
+// tvångsmekanik — kontraktet som säljer åt dig och kalendern som flyttar
+// kursen i två monsters: (1) MARGINALHANDELN (am-09 primär, född 2026-09-20
+// av spår 5 u1 — f212ccae, mentorväglös sedan födelsen; källor km-030 +
+// mk-04 KÄLLAKTIVERING ⇒ MAKROEKONOMI fullt länkad + bf-15 + am-01;
+// belåningsvärdet 105 000 + 50 000 + 12 500 = 167 500 av 300 000 = 55,8 % ·
+// kaskaden −20/−40/−50/−55 % ⇒ värdeandel 58,3/44,4/33,3/25,9 % mot kravet
+// 30 % · kravdagen S ≥ 135 000 − 116 700 = 18 300 · hävstången 1,5 ⇒ eget
+// −82,5 % vid börsens −55 · räntan 5 950/år ≈ 496/mån, netto = 1,5a − 0,5r,
+// spegeln +9,0/−15,0, brytpunkten a = r · sex fällor + protokollets fem
+// frågor — AKTIVERAR KATEGORIN AKTIEMARKNADEN I PRAKTIKEN FULLT LÄNKAD:
+// am-09 var kategorins sista lösa kurs) + (2) OPTIONSFÖRFALLETS DAG
+// (kt-08 primär, född 2026-09-20 av spår 5 u3 — 62901006, mentorväglös
+// sedan födelsen; källor km-059 + am-05 + kt-03 KÄLLAKTIVERING + od-01;
+// magnetkartan 12 000 kontrakt × 100 = 1 200 000 aktier = 15 % av
+// omsättningen 8 000 000 (24 % när handeln tunnar till 5 000 000) ·
+// hedgen korta 50 000 vid delta 0,50; 101 ⇒ 0,62 ⇒ köper 12 000, 99 ⇒ 0,38
+// ⇒ köper tillbaka 12 000 · grundplanen σ 1,5 % ⇒ 49,5 % inom en krona ·
+// tron, torkan, efterspelet, arbetsbladets fem rader). Sondens
+// dokumenterade gränser (_s6u2o28-sond.mjs, 28/32 NULL + 0 grannar):
+// «open interest» → realekonomin · «pin-risken» → basen · «gamma-hedgning»
+// → valutamekaniken · «stängningsauktionen» → handelsdagen ·
+// «förfallodagen»/«delta» → optionshantverket · naket «hävstång»/
+// «margin call»/«marginalen» → basen · «belåningsgrad» → sektorn (tav 2) ·
+// «belåningsräntan» → handelsdagen (tav 2) — alla i TEXT. VAL-EPILOGEN:
+// am-09 var u1:s nedställda v1 (deras anspråk 16:03 vann disk-först mot
+// u2:s 16:04 i omgång 27, men de bytte monster 2 till ln-03 — fynden i
+// _s6u1e-sond-omg27.mjs låg färdiga för detta fönster). Anspråk
+// data/vakten/s6-u2-fonster28-ansprak.md FÖRE byggstart. 70:e motorn,
+// efter co-invest, FÖRE marknadsrytm (deras SIST-deklaration + L01 —
+// multipel-precedensen).
+import { svaraLokaltTvangsmekanik } from "@/lib/ai-mentor-tvangsmekanik-fragor";
+
+// 2026-09-20 fönster 29 (s6-u2, efter omgång 27 + fönster 28 — anspråk
+// data/vakten/s6-u2-fonster29-ansprak.md FÖRE byggstart 20:21 UTC):
+// händelsemotor — KATALYSATOR-KATEGORISTÄNGNING 9/11 → 11/11 via AKM1:s
+// två sista lösa variabelkurser: v16 PRODUKTLANSERINGAR (lanseringsdramat:
+// tre faser 80→110→119→113 = +37,5/+8,2/−5,0 % · rNPV 0,85 × 3,0 = 2,55 ·
+// IV 80/√12 ≈ 23 % · netto 275−180 = 95) + v17 AVTAL & PARTNERSKAP
+// (avtalsmekaniken: LOI-trappan 30–50 % · TCV/ACV 500/10 = 50 ·
+// budspreaden 0,90 × 13 − 0,10 × 17 = 10,0 · synergifällan 60–70 %).
+// Källmärke 5+5 numrerade 📖 Källor + 4–5 kurslänkar + fragor:-knappar
+// + registerdrivna tal VID SVARSTID (KATALYSATOR = 11 LIVE, nivåer ur
+// registerfälten). Sondens dokumenterade gränser (verktyg/
+// _s6u2o29-sond.mjs): naket «produktlansering»/«partnerskap» → basen ·
+// «s-kurvan» → tillväxtdjupet · «pipelinen» → sektorskola2 ·
+// «katalysatorkalendern» → basen · «merger arbitrage» → bokmastaren —
+// samtliga som STARKORD/TEXT (starkord kan aldrig stjäla: inget kärnord
+// ⇒ inget svar). 71:a motorn, efter tvångsmekanik, FÖRE marknadsrytm
+// (deras SIST-deklaration + L01 — multipel-precedensen).
+import { svaraLokaltHandelsemotor } from "@/lib/ai-mentor-handelsemotor-fragor";
+// 2026-09-20 fönster 30 (s6-u3, verktygsprefix _s6u3o29-): lönsamhetsgrund —
+// KATEGORISTÄNGNING LÖNSAMHET 9/12 → 12/12 via familjens tre sista lösa
+// kurser, TRE monsters: (1) LÖNSAMHETENS GRUND (ln-05 primär — frågan som
+// måste komma FÖRSTE: vad ÄR lönsamhet; bageriets trappa 60/25/20,13,5
+// post för post: 1 000 − 400 = 600 (60,0 %) − 350 = 250 (25,0 %) − 50 =
+// 200 (20,0 %) − ränta 20 = 180, skatt 25 % ⇒ netto 135 (13,5 %) · per
+// styck 25 − 10 = 15 kronor · kampanjpris 20 ⇒ 10, break-even +50 %,
+// +20 % volym ⇒ 12 = tre kronor sämre; källor v07 + v09 + ln-04 +
+// roic-01) + (2) NÄSTA KRONAS AVKASTNING (roic-03 primär — medeltalets
+// blindhet: 150/1 000 = 15,0 % bokförd mot satsningens 16/200 = 8,0 %,
+// kombinerat 166/1 200 = 13,8 %, fyra satsningsår ⇒ 214/1 800 = 11,9 % —
+// medeltalet vandrar mot marginalen, aldrig omvänt · inflationens minne
+// 40/100 = 40,0 % mot 40/250 = 16,0 % · negativt eget kapital ⇒ FCF
+// 80/börsvärde 800 = 10,0 %; källor roic-01 + ln-01 + ln-02 + mk-09) +
+// (3) VÄRDEEKVATIONEN (roic-04 primär — värdemultiplikatorn 30/8 = 3,75
+// per återinvesterad krona · tvillingbolagen A 20 % × 30 = B 60 % × 10 =
+// 6 % tillväxt men FCF 80 mot 40 · Gordon-P/E 0,8 × 1,06/0,04 = 21,2 mot
+// 0,4 × 1,06/0,04 = 10,6 — identisk vinst, multipeln dubblerad; källor
+// roic-01 + km-008 + vr-03 + ib-04). Källmärke 5+5+5 numrerade 📖
+// Källor + 5 kurslänkar per svar + fragor:-knappar + registerdrivna tal
+// VID SVARSTID (LÖNSAMHET = 12 LIVE, nivåer ur registerfälten). Sondens
+// dokumenterade gränser (verktyg/_s6u3o29-sond{,2}.mjs, 48/53 NULL + 0
+// grannar mot 1 993 kärnord + grannkontroll mot fönstrets handelsemotor:
+// 0): «hur mäts lönsamhet?» → extra · «inflationens minne» → makro ·
+// «tillväxtens tvillingar» → basen · «multipelns pris på spridningen» →
+// basen · «negativt eget kapital» → basen · «nya kronor mot bokförda» →
+// extra · naket «roic»/«dupont»/«wacc»/«nopat» → lonsamhetsdjupet · naket
+// «multipel» → djup · «marginaltrappan» → volatilitetsmekaniken ·
+// «bruttomarginal»/«roe» i titelform → basens V-uppslag — samtliga i
+// TEXT med attribution. Anspråk data/vakten/s6-u3-fonster30-ansprak.md
+// FÖRE byggstart. 72:a motorn, efter handelsemotor, FÖRE marknadsrytm
+// (deras SIST-deklaration + L01 — multipel-precedensen).
+import { svaraLokaltLonsamhetsgrund } from "@/lib/ai-mentor-lonsamhetsgrund-fragor";
+
+// 2026-09-20 fönster 29 (s6-u1, efter tvist + sondersättning): kemisektor —
+// molekylens ekonomi: kväve ur luft (33 energienheter/ton ammoniak ⇒ gas
+// 4/8/12 = 132/264/396 USD/ton — samma fabrik, tre lönsamhetsvärldar),
+// fosfor ur berg (geologin som ägande), kemins två världar (Norden Bulk
+// 12 000 × 18 % = 2 160 · Norden Special 3 000 × 38 % = 1 140 — 34,5 %
+// av parets bruttovinst på 20 % av omsättningen) och balanspriset
+// (högkostnadspartnern 14/ton mot lågkostnadens 278 = nitton gånger; pris
+// 500 ⇒ −46 stänger medan lågkostnaden lever på 218). se-21 KEMISEKTORN
+// primär (SEKTORANALYS:s sista lösa kurs ⇒ kategorin fullt mentorlänkad)
+// + källor se-16 (metodens tre frågor) + km-029 (gas-kolumnerna) + ln-03
+// (marginaltrappan — deras ord) + mt-07 (prisfullmakten — deras ord).
+// Sond C (_s6u1o29c-sond.mjs): 20/20 kandidatfrågor NULL genom kedjan,
+// 31 kärnord 0 riskgrannar; gränser i TEXT: fosfatbrottet → se-20 ·
+// materialvarukorgen → km-045 · energipriset → km-043. TVIST-NOTIS:
+// förstavalet v17 (avtalsgrenen, anspråk 22:19:54) togs fysiskt av
+// syskonet s6-u2 (22:24–22:25) — territoriet lämnat helt, duplikat är
+// förlorat arbete; v15-reserven död (basens nätverkseffekt-familj).
+// Anspråk data/vakten/s6-u1-fonster29-ansprak.md FÖRE byggstart.
+// 73:e motorn, efter lonsamhetsgrund, FÖRE marknadsrytm (deras
+// SIST-deklaration + L01 — multipel-precedensen).
+import { svaraLokaltKemisektor } from "@/lib/ai-mentor-kemisektor-fragor";
+// 2026-09-21 fönster 31 (manifest auto-s6-1789965330060) — tre syskonlager
+// efter kemisektor, FÖRE marknadsrytm (deras SIST-deklaration + L01 —
+// multipel-precedensen). Konvergerad wiring av s6-u2 efter fönstrets
+// yttre git-restore-race (trackade filer återtog äldre lägen flera
+// gånger; ride-along-precedensen gäller):
+// · stålsektor (s6-u1, _s6u1o31-): kapacitetens hävstång, malmen mot
+//   skrotet, förädlingstrappan — 1 monster, se-23 primär.
+// · case-praktik (s6-u2, _s6u2o31-): PRAKTISKA CASE-familjens metodfrågor
+//   — 2 monsters, övningsbolaget (pc-21 primär) + jämförelsecaset
+//   (pc-22 primär), sex mentorväglösa kurser aktiverade.
+// · beteendefallor (s6-u3, _s6u3o31-): BETEENDEFINANS-kategoristängning
+//   — 3 monsters (bf-09 + bf-13 + bf-16 primära).
+// · kategoristängning (s6-u3 försök 2, _s6u3o32-): TRE kategoristängningar
+//   — 3 monsters: budprocessen (kt-09 primär ⇒ KATALYSATOR 12/12) +
+//   ekonomiska vinsten (roic-05 ⇒ LÖNSAMHET 13/13) + försäkringsskrivandet
+//   (od-09 ⇒ OPTIONS & DERIVAT 13/13).
+import { svaraLokaltStalsektor } from "@/lib/ai-mentor-stalsektor-fragor";
+import { svaraLokaltCasepraktik } from "@/lib/ai-mentor-casepraktik-fragor";
+import { svaraLokaltBeteendefallor } from "@/lib/ai-mentor-beteendefallor-fragor";
+import { svaraLokaltKategoristangning } from "@/lib/ai-mentor-kategoristangning-fragor";
+// · banksektorn (s6-u1, _s6u1o33-, manifest auto-s6-1789999525797): 78:e
+//   motorn — 1 monster: balansräkningen spegelvänd (se-24 primär — spår 5:s
+//   nyaste kurs, rs-09-precedensen): nätlånet, deposit-betan, tre
+//   förlusttrappor, K/I, kärnprimärkapitalrelationen, utdelningsekvationen.
+//   Översikt+djup-precedens som se-23/km-045: översiktsorden ägs av det
+//   tidiga sektorlagret (km-040), detta lager äger maskinens begrepp.
+//   Källaktivering: pc-03-case-swedbank.
+import { svaraLokaltBanksektorn } from "@/lib/ai-mentor-banksektor-fragor";
+// · notläsning (s6-u2, _s6u2o33-, manifest auto-s6-1789999525797): 79:e
+//   motorn — 2 monsters: skuggskulderna (st-07 primär — not 29, borgenens
+//   dubbla osynlighet, förlustkontrakten, panttaket) + intäktredovisningen
+//   (bk-08 primär — IFRS 15:s fem steg, allokeringen 540/270/90,
+//   avtalsbalanserna 19,5/30,5). TVÅ KATEGORISTÄNGNINGAR: STABILITET fullt
+//   mentorlänkad + BOKFÖRING & ÅRSREDOVISNING fullt mentorlänkad.
+//   Källaktivering: se-22 (byggentreprenaden — orderstockens affärsmodell).
+//   Kärnord disjunkta (sond _s6u2o33-karnord.mjs: 0 kollisioner mot
+//   2 017 kärnord + u1:s kandidatlista). FÖRE marknadsrytm (SIST).
+import { svaraLokaltNotlasning } from "@/lib/ai-mentor-notlasning-fragor";
+// · nykull (s6-u3, _s6u3o34-, manifest auto-s6-1790029519192): 82:a motorn —
+//   3 monsters: produktionsgapet (ma-09 primär — potentialen 5,0 m × 1 600
+//   = 8,0 mdr tim × 575 = 4 600 mdr, gapet (4 416 − 4 600) ÷ 4 600 = −4,0 %,
+//   spänningsmåttet 92 000 ÷ 205 000 = 0,45, Okun 0,5 × 4,0 = 2,0 pp,
+//   Phillips 2,0 + 0,5 × gap, Taylor 7,75 med händerna 1,0 + 0,75,
+//   nollgolvet −1,0, Norrverk 78 % → 10 300 = 300 över) + ränteswapen
+//   (od-11 primär — differensen 0,90 % × 2 000 × 0,25 = 4,5 Mkr/kvartal,
+//   säkringsidentiteten 3,10 + 1,80 = 4,90 i fyra världar = 98 Mkr/år,
+//   kurvan 2,70/3,10/3,55, brytvärdet 0,80 % × 2 000 × 2,8 = 44,8 Mkr,
+//   dubbelssäkring STIBOR + 1,30, amorteringsglid 1 808 mot 2 000) +
+//   bindningsrisken (st-08 primär — A 36 mot täckning 2,50 och B 30 mot
+//   3,00, premien 6/år med break-even 2,80, känslighetstalet 6,0/0/4,0,
+//   korrelerat stress 1,30/2,33/1,52, trappan 34 ⇒ 2,65, swappen 1 Mkr/år
+//   ⇒ känslighet 2,0 och stresstäckning 1,71). TRE KATEGORISTÄNGNINGAR:
+//   MAKROEKONOMI & RÄNTA 14/14 + OPTIONS & DERIVAT 15/15 + STABILITET
+//   11/11 — spår 5:s kurskull 492→495 aktiveras (rs-09-precedensen;
+//   fönster-33-spegeln på nästa kull). Gränser: naket «swap» → handels-
+//   dagens vwap (tav-1) · naket «räntenoten» → banksektorns «räntenätet»
+//   (tav-2, prob bevisad) · naket «stresstest» → stabilitetsdjupet ·
+//   «naturfrekvens» → mk-02 · nättingens motpartsmekanik → kontrahent-
+//   lagret (rk-16). Kärnord disjunkta (sond _s6u3o34-sond-karnord.mjs:
+//   0 kärnordskollisioner, kanoniska prober NULL). Efter notläsning, FÖRE
+//   nyfodda + marknadsrytm (deras SIST-deklarationer respekteras).
+import { svaraLokaltNykull } from "@/lib/ai-mentor-nykull-fragor";
+// · nyfodda (s6-u3, _s6u3o33-, manifest auto-s6-1789999525797): 81:a motorn —
+//   3 monsters: kompetensparadoxen (bf-18 primär — Kahnemans 300 parvisa/
+//   0,01, giltighetsmiljöerna, Mauboussins 0,20→0,0099, slantturneringen
+//   4 000→250 = 6,25 %) + kreditderivatet (od-10 primär — CDS-kontraktet,
+//   sprid÷LGD = 4,2 %/år, 24 års premier, naken 5×, Grekland 3,3→16,7 %) +
+//   avknoppningen (kt-10 primär — pro rata 0,60, when-issued 36 %,
+//   kontinuitetstestet 95+0,60×62=132,2, fönstret 15 handelsdagar, rabatten
+//   25→11,5 %). TRE KATEGORISTÄNGNINGAR: BETEENDEFINANS 24/24 + OPTIONS &
+//   DERIVAT 14/14 + KATALYSATOR 13/13 — spår 5:s tre nyaste kurser (486→489)
+//   aktiveras (rs-09-precedensen). Gränser: naket «kompetensillusion» →
+//   overmod (beteendemekanik) · «kreditspread» → kreditdjup · «swap» →
+//   handelsdagens vwap (tav-1) · «pro rata» → makrons ränta (tav-1).
+//   Kärnord disjunkta (sond _s6u3o33 rond 3: 0 kollisioner). FÖRE
+//   marknadsrytm (SIST).
+import { svaraLokaltNyfodda } from "@/lib/ai-mentor-nyfodda-fragor";
+// · ränteswapen (s6-u1, _s6u1o34-, manifest auto-s6-1790029519192): 82:a
+//   motorn — 1 monster: derivatens tredje instrumentfamilj, avtalet som
+//   byter fast mot rörlig (od-11 primär — spår 5:s nyaste kurs, rs-09-
+//   precedensen; kategorins SISTA lösa ⇒ OPTIONS & DERIVAT fullt
+//   mentorlänkad 15/15): de två benen, nättingen, säkringsidentiteten
+//   (rörligt lån + swap = fast lån, exakt: 3,10 + 1,80 = 4,90 % i varje
+//   STIBOR-läge, 98 Mkr/år), swapkurvan (2,70/3,10/3,55), brytvärdet
+//   (0,80 % × 2 000 × 2,8 ≈ 44,8 Mkr), dubbelssäkringen, amorterings-
+//   glidet (1 808 mot 2 000). KÄLLAKTIVERING: st-08-bindningsrisken
+//   (född samma commit, kursens egen huvudgranne — pc-03-precedensen)
+//   ⇒ STABILITET fullt mentorlänkad 13/13. Gränser: naket «swap» →
+//   handelsdagens vwap (tav-1) · «stibor» → makro · duration-räkneverket
+//   → rk-08 · känslighetstalet/strategin → st-08 · valutasäkringen →
+//   ks-08:s territorium (TEXT, ej länk). Kärnord disjunkta (sond
+//   _s6u1o34-karnord.mjs: 38 fria av 41 kandidater mot 2 447 kärnord i
+//   80 lager). FÖRE marknadsrytm (SIST).
+//   KASSATIONSNOT s6-u1 (omgång 34, v2): ränteswap-motorn ovan är
+//   KASSERAD — u3:s anspråk (00:30:12) nådde disk 12 s före u1:s
+//   (00:30:25) med od-11 som PRIMÄR i deras nykull-motor; filen raderad
+//   utan git-spör (Newmont/VZ-precedensen; anspråksfilen med öppen
+//   kassationsbokföring:
+//   data/vakten/auto-s6-1790029519192-s6-u1-ansprak.md). u2:s
+//   konvergens-återställning av importblocket (tsc-ryddig i stunden)
+//   ersätts härmed av v2-leveransen nedan — samma fönster, nya ämnet.
+// · valideringsfönstret (s6-u1 v2, _s6u1o34b-, manifest
+//   auto-s6-1790029519192): 84:e motorn — 1 monster: labbets
+//   valideringsdisciplin, det rullande fönster som skiljer en modell
+//   som fungerar från en modell som minns (ek-07 primär — EKOSYSTEM:s
+//   ENDA lösa kurs ⇒ kategorin fullt mentorlänkad 11/11: ek-lärvägen
+//   7/7 + kategorins fyra superdjup — plattformens EGEN familj komplett):
+//   fönsterräkningen (20 − 8) / 2 = 6 ·
+//   effektiviteten 7,8/12 = 0,65 med trösklarna 0,50/0,70 ·
+//   slumphärfånget 121 kombinationer ⇒ +9,6 % (2,40σ) · platån mot
+//   nåltoppen (14 bäst, 13/15 nära) · affärerna 12,14,9,15,11,13
+//   (median 12,5, tunnaste 9, krav ≥ 10). Källor: ek-familjen komplett
+//   (ek-01…ek-06) + bf-18 kompetensillusionen. Gränser: «backtesten» +
+//   «monte carlo» → ekosystemdjupet · «standardavvikelsen» →
+//   riskmåttsdjupet · «överanpassningen»/«kurvanpassning» → ek-04:s
+//   deklarerade ägande (bärs i TEXT). Kärnord disjunkta (sond
+//   _s6u1o34b-karnord.mjs, kommentar-strippad v2: 38 fria av 44
+//   kandidater mot 2 585 unika kärnord i 83 lager inkl. syskonens
+//   fönster-34-motorer). Efter skuldordning, FÖRE marknadsrytm (SIST).
+import { svaraLokaltValideringsfonster } from "@/lib/ai-mentor-valideringsfonster-fragor";
+// · skuldordning (s6-u2, _s6u2o34-, manifest auto-s6-1790029519192): 82:a
+//   motorn av 83 (efter nyfodda, FÖRE valideringsfönstret +
+//   marknadsrytm SIST; u1:s ränteswap-bygge KASSERAT av dem själva —
+//   kassationsnoten ovan; fall G verifierar ordningen varje körning) —
+//   2 monsters: senioritetsordningen (ks-09 primär — trappan,
+//   konkursräkningen 389,2/377,2, återvinningen 74,2 % mot 20,7 %, klyftan
+//   53,5 pp, yield-trappan 0,045×0,793≈3,6 pp, rekonstruktionen 40 mot
+//   20,7) + valutasäkringen i rapporten (ks-08 primär — de två tiderna,
+//   terminen 11,50×1,040/1,025=11,67, pengmarknadsbeviset 466,7/466,8,
+//   notens 78/0/100 %, premiens cykel +6,8/−4,8 MSEK, sex fällor).
+//   KATEGORISTÄNGNING: KAPITALSTRUKTUR fullt mentorlänkad 9/9 — spår 5:s
+//   nyaste ks-kurs (492→495) mentorlänkad (rs-09-precedensen).
+//   RACE, slutlig bokföring: od-11 ägs av u3:s NYKULL som primär (deras
+//   anspråk vann disk-först 00:30:12; u1:s konkurrerande ränteswap-bygge
+//   kasserat av dem själva); od-11 är här endast en av sex källor i
+//   valutasäkringsmonstret.
+//   Gränser i TEXT: naket «valutasäkring» → valutamekanikens hedging-
+//   monster (banksektorn-precedensen: översikten deras, maskinens begrepp
+//   här) · naket «termin» → nästa · «swap» → handelsdagen · «konkursprognos»
+//   → överlevnadsdjupet · «covenants» → ks-05:s ägare · «borgen» →
+//   notläsningen. Kärnord disjunkta (sond _s6u2o34-karnord.mjs: 0
+//   kollisioner; «valutasäkring»-familjen medvetet lämnad åt valutamekaniken,
+//   «valutanot» struket tav-1 mot portföljgrundens «valutan»). FÖRE
+//   marknadsrytm (SIST).
+import { svaraLokaltSkuldordning } from "@/lib/ai-mentor-skuldordning-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -1437,7 +2016,7 @@ export function ChatWidget() {
     // (våg 176: siffran vakas av verktyg/testa-ai-mentor-kedja.mjs fall H —
     // uppdatera den medvetet när ett lager växer). Matchar den inte (null)
     // fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokaltModernaRisker(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER) ?? svaraLokaltSektor(q, KURSREGISTER) ?? svaraLokaltCase(q, KURSREGISTER) ?? svaraLokaltMarknadsmekanik(q, KURSREGISTER) ?? svaraLokaltPraktik(q, KURSREGISTER) ?? svaraLokaltValutamekanik(q, KURSREGISTER) ?? svaraLokaltPortfoljgrund(q, KURSREGISTER) ?? svaraLokaltAgande(q, KURSREGISTER) ?? svaraLokaltRedovisningsdjup(q, KURSREGISTER) ?? svaraLokaltDjup(q, KURSREGISTER) ?? svaraLokaltHistoria(q, KURSREGISTER) ?? svaraLokaltLonsamhetsdjup(q, KURSREGISTER) ?? svaraLokaltTsdjup(q, KURSREGISTER) ?? svaraLokaltSkattedjup(q, KURSREGISTER) ?? svaraLokaltBeteendedjup(q, KURSREGISTER) ?? svaraLokaltRiskdjup(q, KURSREGISTER) ?? svaraLokaltRiskmattsdjup(q, KURSREGISTER) ?? svaraLokaltUtdelningsdjup(q, KURSREGISTER) ?? svaraLokaltForvantningsdjup(q, KURSREGISTER) ?? svaraLokaltPortfoljbalans(q, KURSREGISTER) ?? svaraLokaltStabilitetsdjup(q, KURSREGISTER) ?? svaraLokaltGrahamgolv(q, KURSREGISTER) ?? svaraLokaltVarderjustering(q, KURSREGISTER) ?? svaraLokaltOptionsdjup(q, KURSREGISTER) ?? svaraLokaltRisklasningsdjup(q, KURSREGISTER) ?? svaraLokaltAvkastningskurva(q, KURSREGISTER) ?? svaraLokaltAvkastningsdjup(q, KURSREGISTER) ?? svaraLokaltVarderingsverktyg(q, KURSREGISTER) ?? svaraLokaltWarrant(q, KURSREGISTER) ?? svaraLokaltTidsaxel(q, KURSREGISTER) ?? svaraLokaltKapitalbindning(q, KURSREGISTER) ?? svaraLokaltEkosystemdjup(q, KURSREGISTER) ?? svaraLokaltHandelsdag(q, KURSREGISTER) ?? svaraLokaltPortfoljpraktik(q, KURSREGISTER) ?? svaraLokaltUtdelningskalender(q, KURSREGISTER) ?? svaraLokaltKreditdjup(q, KURSREGISTER) ?? svaraLokaltSektordjup(q, KURSREGISTER) ?? svaraLokaltSektorskola2(q, KURSREGISTER) ?? svaraLokaltBeteendemekanik(q, KURSREGISTER) ?? svaraLokaltPeMekanik(q, KURSREGISTER) ?? svaraLokaltRiskpremie(q, KURSREGISTER) ?? svaraLokaltOverlevnadsdjup(q, KURSREGISTER) ?? svaraLokaltKoncernlasning(q, KURSREGISTER) ?? svaraLokaltTillvaxtdjup(q, KURSREGISTER) ?? svaraLokaltFaktordjup(q, KURSREGISTER) ?? svaraLokaltBokmastar(q, KURSREGISTER) ?? svaraLokaltRiskbudget(q, KURSREGISTER) ?? svaraLokaltKonvertibel(q, KURSREGISTER) ?? svaraLokaltSektorlasning(q, KURSREGISTER) ?? svaraLokaltVardegrund(q, KURSREGISTER) ?? svaraLokaltRealekonomi(q, KURSREGISTER) ?? svaraLokaltForsakring(q, KURSREGISTER) ?? svaraLokaltMoatdjup(q, KURSREGISTER) ?? svaraLokaltNyaTerritorier(q, KURSREGISTER) ?? svaraLokaltEtfmekanik(q, KURSREGISTER) ?? svaraLokaltKontrahent(q, KURSREGISTER) ?? svaraLokaltMultipel(q, KURSREGISTER) ?? svaraLokaltRiskadress(q, KURSREGISTER) ?? svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltStalsektor(q, KURSREGISTER) ?? svaraLokaltCasepraktik(q, KURSREGISTER) ?? svaraLokaltBeteendefallor(q, KURSREGISTER) ?? svaraLokaltKategoristangning(q, KURSREGISTER) ?? svaraLokaltBanksektorn(q, KURSREGISTER) ?? svaraLokaltNotlasning(q, KURSREGISTER) ?? svaraLokaltNykull(q, KURSREGISTER) ?? svaraLokaltNyfodda(q, KURSREGISTER) ?? svaraLokaltSkuldordning(q, KURSREGISTER) ?? svaraLokaltValideringsfonster(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

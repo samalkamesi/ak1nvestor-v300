@@ -72,7 +72,7 @@ export default function PrenumerationPageEn() {
   // ── Honest fallback: priser.json missing/invalid → no invented prices.
   if (!priser || priser.nivaer.length === 0) {
     return (
-      <SeoPageShell breadcrumb={[{ name: "Home", href: "/en" }, { name: "Subscription" }]} wide>
+      <SeoPageShell lang="en" breadcrumb={[{ name: "Home", href: "/en" }, { name: "Subscription" }]} wide>
         <h1 className="font-serif text-4xl font-bold">Subscription</h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           AK1A Portfolio Research — research-based portfolio monitoring, not

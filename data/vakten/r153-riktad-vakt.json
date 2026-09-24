@@ -1,0 +1,14 @@
+{
+ "journal": "1789972029165",
+ "nyaRapporter": [
+  "granssnitt-2026-09-21T234820.json"
+ ],
+ "granssnitt-2026-09-21T234820.json": {
+  "bas": "http://localhost:3000",
+  "chrome": "/usr/bin/google-chrome",
+  "tid": "2026-09-21T23:47:57.807Z",
+  "status": "ok",
+  "kombinationer": 4,
+  "fel": 0
+ }
+}

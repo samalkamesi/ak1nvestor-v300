@@ -1,0 +1,64 @@
+{
+  "granskat": "data/blogg-utkast/bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+  "granskadAv": "agentfabrik auto-s1-1789925707056 s1-u3 ANDRA INSTANSEN (2026-09-20)",
+  "rapport": "bilaktier-sa-analyserar-du-biltillverkare-ar-KONTROLL-2026-09-20.md",
+  "relation": "AR10 = arabisk spegling av B10. B10-sv granskades 09-19 av s1-u1 (huvuddiff B1/B2/C1/C2/D1) + s1-u2 (KOMPLEMENT A1/C3/C4). AR10 byggdes 09-20 01:03, ~22 h EFTER diffarna landade — men ar-mallen speglade ORIGINALET, inte granskningsdiffen. Denna fil speglar de fyra språkoberoende posterna till arabiskan; A1 (svensk felstavning) och C3 (svensk kongruens) berör ej arabiskan.",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — B1-AR är den enda tvingande posten (superlativ motbevisad mot universumets egna data i BÅDE 09-19-vintagen, rank 52/189, och dagens fil 09-20, rank 59/218 med 58 bolag över LVMH:s 66,36 %). C1-AR/C2-AR/C4-AR är frivilliga preciseringsförslag som speglar originalets granskningsdomar. Alla söksträngar maskinverifierade unika i AR-filen (exakt 1 träff gammal, 0 ny). Sifferpariteten 87/87 multiset-identisk med originalet INNAN rättning.",
+  "anvandning": "Verkställ 'byt'-posten B1-AR exakt (sök/ersätt i body). 'forslag' kräver beslut före verkställ. C2-AR skall verkställas SAMTIDIGT som originalets C2 (båda tillför talen 88/30 — annars tillfällig siffer-token-diff mellan speglarna). B2-AR är villkorad: verkställ ENDAST när originalets B2 (rm 2->7) verkställs, så att spegel och original håller samma läsningstakt-kontrakt. Utöver dessa poster krävs INGET — granskningen lämnar inga andra ändringar.",
+  "poster": [
+    {
+      "id": "B1-AR",
+      "typ": "byt",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "body (Affärsmodellen i en mening — stycket om marginalerna)",
+      "gammalt": "وللمقارنة: أعلى هامش إجمالي في عالم التحليل، هامش LVMH عند 66 بالمئة، يقع أعلى بأكثر من ثلاثة أضعاف.",
+      "nytt": "وللمقارنة: هامش مجموعة السلع الفاخرة LVMH عند 66 بالمئة يقع أعلى بأكثر من ثلاثة أضعاف.",
+      "orsak": "SUPERLATIVEN MOTBEVISAD (= u1:s B1 på originalet, ärvd av ar-mallen): 'أعلى هامش إجمالي في عالم التحليل' = 'universums högsta bruttomarginal'. Bolagsunivers.json rankar LVMH:s 66,36 % som rank 52 av 189 i 09-19-vintagen (51 bolag över; Industrivärden/Öresund/Evolution/Mastercard på 100,0 %) och rank 59 av 218 i DAGENS fil (58 över) — superlativet falskt i båda underlagen. Rättningen speglar u1:s exakt: superlativet stryks, LVMH presenteras som lyxkoncernen ('مجموعة السلع الفاخرة'), talet 66 och den pedagogiska kontrasten (mer än tre gånger mot 15,6/18,9 — motorverifierad 4,2x/3,5x) består oskadd. Strängen maskinellt unik (1 gammal/0 ny)."
+    },
+    {
+      "id": "C1-AR",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "body (PowerCell-stycket i Kassaklockan-sektionen)",
+      "gammalt": "هامش إجمالي 30.6 بالمئة (الضعف مقارنة بمصنّعي السيارات)",
+      "nytt": "هامش إجمالي 30.6 بالمئة — الضعف مقارنة بهامش Volvo Cars",
+      "orsak": "OPRECISION (= u1:s C1, ärvd): 'الضعف مقارنة بمصنّعي السيارات' = 'det dubbla mot biltillverkarnas' — 30,55/15,62 = 1,96x mot Volvo (exakt 'det dubbla') men 30,55/18,85 = 1,62x mot Tesla; pluralen håller bara mot en av de två. u1:s SV-rättning: 'det dubbla mot Volvo Cars bruttomarginal' — detta förslag speglar den. FRIVILLIGT — beslut före verkställ. Strängen unik (1/0)."
+    },
+    {
+      "id": "C2-AR",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "body (PowerCell-stycket — sista delen)",
+      "gammalt": "مع خسارة متراجعة",
+      "nytt": "مع خسارة أكثر من نصفها في آخر عام محاسبي (من −88 إلى −30 مليون كرونة)",
+      "orsak": "TRENDPÅSTÅENDE UTAN AVGRÄNSNING (= u1:s C2, ärvd): 'مع خسارة متراجعة' = 'med förlusten minskande' — universumserien är −58,2 → −63,0 → −88,0 → −29,5 Mkr (förlusten VÄXTE 2022→2024; först 2025 halverades den, −66 %). u1:s SV-rättning preciserar med talen; detta förslag speglar. OBS KOORDINERING: verkställ SAMTIDIGT som originalets C2 — båda tillför token 88 och 30, annars tillfällig sifferparitetsdiff mellan speglarna (nu 87/87 identiska). FRIVILLIGT. Strängen unik (1/0)."
+    },
+    {
+      "id": "C4-AR",
+      "typ": "forslag",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "body (El-omställningen — IEA-stycket)",
+      "gammalt": "نمو يفوق 20 بالمئة في عام واحد",
+      "nytt": "نمو بنحو 20 بالمئة في عام واحد",
+      "orsak": "KÄLLPRECISION (= u2:s C4 på originalet, ärvd): 'نمو يفوق 20 بالمئة' = 'tillväxt som överstiger 20 procent' — IEA Global EV Outlook 2026:s egna rubriksiffra är 'grew by 20 % globally'; 'över' påstår strikt mer än källans avrundade tal. 'بنحو' ('omkring') är källtroget och lika starkt. FRIVILLIGT. Strängen unik (1/0)."
+    },
+    {
+      "id": "B2-AR",
+      "typ": "byt-villkorad",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "readingMinutes",
+      "gammalt": "\"readingMinutes\": 2",
+      "nytt": "\"readingMinutes\": 7",
+      "orsak": "KOORDINERAD SPEGLING av originalets B2 (u1: rm 2->7 enligt bloggfamiljens kontrakt ~ord/200, substansrabatt-domen 09-17; round(1428/200) = 7). AR-fabrikens nuvarande konvention är ord/600 (=2) och AR1-AR6 är godtagna med den — därför villkorad: verkställ ENDAST när originalets B2 verkställs, så att spegel och original håller samma kontrakt och inte driver isär. Om ar-familjen i stället formellt antar ord/200 (fabriksägarbeslut) verkställs fristående."
+    },
+    {
+      "id": "D1-AR",
+      "typ": "notis",
+      "fil": "bilaktier-sa-analyserar-du-biltillverkare-ar.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-20",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Byggdagskonventionen (AR6 samma): exportvägen stämplar vid flytt till data/blogg/ — publicering förblir kundens beslut (R2). Ingen rättning."
+    }
+  ]
+}

@@ -699,44 +699,63 @@ const GAMLA = [
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   const KOMPONENTER = [
-    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokalt", "svaraLokaltNasta",
-    "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
-    "svaraLokaltPraktik", "svaraLokaltPortfoljgrund", "svaraLokaltAgande",
-    "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
-    "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup",
-    "svaraLokaltBeteendedjup", "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup",
-    "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
-    "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup",
-    "svaraLokaltGrahamgolv",
-    "svaraLokaltVarderjustering", "svaraLokaltOptionsdjup",
-    "svaraLokaltRisklasningsdjup",
-    "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
-    "svaraLokaltVarderingsverktyg",
-    "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
-    "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag",
-    "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
-    "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2",
-    "svaraLokaltBeteendemekanik", "svaraLokaltPeMekanik",
-    "svaraLokaltRiskpremie",
-    "svaraLokaltOverlevnadsdjup",
-    "svaraLokaltKoncernlasning", "svaraLokaltTillvaxtdjup",
+    // R154-v3 (rond 154, huvudagenten [Φ]): HELA widgetkedjan i exakt ordning —
+    // 81 lager. v2:s regex tappade nakna "svaraLokalt" + siffersuffix (grinden
+    // fångade det: "okänd kedjekomponent"). Dokumentationsplikten (V219) full-
+    // följdas: arrayen speglar hela kedjan, som fönsterharmoniserarna jagade.
+    // Provenienskommentarer från V219/o24/o27/o31/v1/v2 bevaras nedan.
+    // R154-v2-normalisering (rond 154, huvudagenten [Φ]): arrayen omskriven till
+    // WIDGETENS exakta kedjeordning (mängden oförändrad) — v1:s infogning före
+    // marknadsrytm-ankaret gav fel ordning för tidigt hörande komponenter.
+    // Kommentarsproveniens nedan bevarad i ursprunglig ordning.
+    // Omgång 24-harmonisering (s6-u3): våg 189:s marknadsmekanik wireades utan
+    // harmonisering — baslinjens röda L01; kedjeordning efter case (kedjetestet G).
     // Omgång 22 (s6-u1): detta lager — före bokmastar, INTE SIST.
-    "svaraLokaltFaktordjup",
     // Omgång 22: bokmastar (fönstrets syskon) — SIST av de wireade.
-    "svaraLokaltBokmastar",
     // Omgång 22:s fönster (s6-u3 bokmastar + s6-u2 riskbudget + s6-u1 konvertibel — svitharmoniseringens dokumentationsplikt).
-    "svaraLokaltRiskbudget",
-  ];
-  // Konvertibel (fönstrets syskon, modul på disk) förväntas wireas efter
-  // bokmastar — TOLERERAD om frånvarande just nu (syskonet skriver).
-  // Omgång 23 (2026-09-19): u2 sektorlasning + u3 vardegrund + u1
-  // realekonomi — svitharmonisering (dokumentationsplikten); lagad av u3
-  // (parallell harmonisering bröt kommat efter konvertibeln — syntaxfel).
-  const KANSKE = [
-    "svaraLokaltKonvertibel",
-    "svaraLokaltSektorlasning",
-    "svaraLokaltVardegrund",
-    "svaraLokaltRealekonomi",
+    // Omgång 23 (2026-09-19): u1 konvertibel + u2 sektorlasning + u3
+    // vardegrund + u1 realekonomi — s8-u2 (o98) viker in dem ur den
+    // förlegade KANSKE-toleransen (de är permanent wireade nu) på sin
+    // dokumenterade plats efter riskbudget, före omgång 24:s fönster.
+    // Omgång 24 (2026-09-19): u1 försäkring · u2 moatdjup · u3 nya territorier.
+    // Omgång 25-harmonisering (s6-u2, 2026-09-20): fönstrets tre nya komponenter i
+    // kedjeordning (u1 etfmekanik 59 · s6-u2 kontrahent 60 · u3 marknadsrytm 61).
+    // Omgång 25-tillägg (s6-u2 försök 2, 2026-09-20): grundmultiplarna —
+    // 61:a motorn, FÖRE marknadsrytm (deras SIST-deklaration; v04 P/S + v05 P/B).
+    // Omgång 26 (manifest auto-s6-1789890903364 — ordningspasset efter två
+    // krockade harmoniseringsvågor): fönstrets tre i KEDJEORDNING — riskadress
+    // (s6-u1, 62:a) · balansdjup (s6-u2, 63:e) · optionshantverk (s6-u3, 64:e)
+    // — FÖRE marknadsrytm (deras SIST-deklaration).
+    // V219-harmonisering (rond 114): pengarstid wireades i widgeten utan svitharmonisering
+    // (föregångare: 54e7a59e studio: auto s6-u2 AI-MENTORN +2 FÖRHANDSFRÅGOR — PENGARNAS TID OCH ORD) — mellan optionshantverk och marknadsrytm.
+    // Omgång 27 (auto-s6-1789912510460, s6-u2): volatilitetsmekanik — slutsvepet.
+    // Fönster 31-harmonisering (s6-u3, _s6u3o31-): fönstrets tre nya komponenter i
+    // widgetordning — u1 stålsektor (74:e) · u2 casepraktik (75:e) · u3 beteendefallor
+    // (76:e) — FÖRE marknadsrytm (deras SIST-deklaration). Idempotent.
+    // komponenter wireades i widgeten utan full svitharmonisering (V219-läxan):
+    // kategoristangning (1ea8ccb8+932659c9) · banksektorn (a092db0e) · notlasning ·
+    // nykull · nyfodda · skuldordning · valideringsfonster — här i widgetordning.
+    "svaraLokaltMakro", "svaraLokaltExtra", "svaraLokaltModernaRisker", "svaraLokalt",
+    "svaraLokaltNasta", "svaraLokaltKapitalmekanik", "svaraLokaltSektor", "svaraLokaltCase",
+    "svaraLokaltMarknadsmekanik", "svaraLokaltPraktik", "svaraLokaltValutamekanik", "svaraLokaltPortfoljgrund",
+    "svaraLokaltAgande", "svaraLokaltRedovisningsdjup", "svaraLokaltDjup", "svaraLokaltHistoria",
+    "svaraLokaltLonsamhetsdjup", "svaraLokaltTsdjup", "svaraLokaltSkattedjup", "svaraLokaltBeteendedjup",
+    "svaraLokaltRiskdjup", "svaraLokaltRiskmattsdjup", "svaraLokaltUtdelningsdjup", "svaraLokaltForvantningsdjup",
+    "svaraLokaltPortfoljbalans", "svaraLokaltStabilitetsdjup", "svaraLokaltGrahamgolv", "svaraLokaltVarderjustering",
+    "svaraLokaltOptionsdjup", "svaraLokaltRisklasningsdjup", "svaraLokaltAvkastningskurva", "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg", "svaraLokaltWarrant", "svaraLokaltTidsaxel", "svaraLokaltKapitalbindning",
+    "svaraLokaltEkosystemdjup", "svaraLokaltHandelsdag", "svaraLokaltPortfoljpraktik", "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup", "svaraLokaltSektordjup", "svaraLokaltSektorskola2", "svaraLokaltBeteendemekanik",
+    "svaraLokaltPeMekanik", "svaraLokaltRiskpremie", "svaraLokaltOverlevnadsdjup", "svaraLokaltKoncernlasning",
+    "svaraLokaltTillvaxtdjup", "svaraLokaltFaktordjup", "svaraLokaltBokmastar", "svaraLokaltRiskbudget",
+    "svaraLokaltKonvertibel", "svaraLokaltSektorlasning", "svaraLokaltVardegrund", "svaraLokaltRealekonomi",
+    "svaraLokaltForsakring", "svaraLokaltMoatdjup", "svaraLokaltNyaTerritorier", "svaraLokaltEtfmekanik",
+    "svaraLokaltKontrahent", "svaraLokaltMultipel", "svaraLokaltRiskadress", "svaraLokaltBalansdjup",
+    "svaraLokaltOptionshantverk", "svaraLokaltPengarstid", "svaraLokaltVolatilitetsmekanik", "svaraLokaltCoinvest",
+    "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
+    "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];
@@ -749,15 +768,17 @@ const GAMLA = [
     else if (pos < senaste) FEL.push(komp + " i fel ordning i kedjeraden");
     else senaste = pos;
   }
-  for (const komp of KANSKE) {
-    const pos = rad.indexOf(komp + "(");
-    if (pos !== -1 && pos < senaste) FEL.push(komp + " wiread FÖRE bokmastar — bryter fönstrets ordning");
-  }
   if (!widget.includes('from "@/lib/ai-mentor-faktordjup-fragor"')) {
     FEL.push("importen av ai-mentor-faktordjup-fragor saknas");
   }
   // Okända kedjekomponenter underkänns (framtida lager måste dokumenteras här).
-  const kanda = new Set([...KOMPONENTER, ...KANSKE]);
+    // Fönstret efter omgång 27 (s6-u2, _s6u2o28-): ModernaRisker + Coinvest+Tvangsmekanik i widgetordning — läkning av omgång 27:s öppna harmoniseringsskuld
+  // (ModernaRisker/Coinvest wireades utan familjepass; dokumentationsplikten, rond 114-läxan).
+    // Fönster 29 (s6-u2, _s6u2o29-): Handelsemotor i widgetordning FÖRE marknadsrytm —
+  // svitharmoniseringens dokumentationsplikt (rond 114-läxan: widget-wire ⇒ harmonisering i samma leverans).
+    // Fönster 29 (s6-u1, _s6u1o29-): kemisektor i widgetordning (efter lonsamhetsgrund,
+  // före marknadsrytm) — svitharmoniseringens dokumentationsplikt (V219-läxan).
+  const kanda = new Set([...KOMPONENTER, "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKemisektor"]);
   for (const match of rad.matchAll(/svaraLokalt\w*\(/g)) {
     const namn = match[0].slice(0, -1);
     if (!kanda.has(namn)) FEL.push("okänd kedjekomponent: " + namn);

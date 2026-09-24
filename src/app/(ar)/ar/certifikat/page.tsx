@@ -33,7 +33,7 @@ export const metadata: Metadata = spegelMetadata({
 
 export default function CertifikatPageAr() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "الشهادات" }]}>
+    <SeoPageShell lang="ar" breadcrumb={[{ name: "الشهادات" }]}>
       <div className="text-center">
         <h1 className="font-serif text-4xl font-bold">شهادتك</h1>
         <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">

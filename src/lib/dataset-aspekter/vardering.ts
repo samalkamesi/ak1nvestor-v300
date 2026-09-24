@@ -76,7 +76,7 @@ function matRad(etikett: string, stat: AspektStat, enhet: "procent" | "multipl")
 const SOKORD = ["multipel", "värdering", "p/e", "ev/ebit", "peg"];
 
 const SA_RAKNAS = [
-  "Tabellen räknas ur 100-bolagsuniversumets publika nyckeltal: för varje mått sorteras branschens mätta bolag och medianen (mittpunkten) redovisas — med exakt samma hjälpare som branschmedianerna på /dataset, så hubbens tal överensstämmer alltid med nyckeltalssidorna.",
+  "Tabellen räknas ur forskningsuniversumets publika nyckeltal: för varje mått sorteras branschens mätta bolag och medianen (mittpunkten) redovisas — med exakt samma hjälpare som branschmedianerna på /dataset, så hubbens tal överensstämmer alltid med nyckeltalssidorna.",
   "Vinstbolag → P/E: när bolaget har en positiv och någorlunda stabil vinst visar P/E hur många års nuvarande vinst priset motsvarar — det naturliga förstavalet för vinstdrivna verksamheter.",
   "Olika kapitalstruktur → EV/EBIT: när bolagen i gruppen är olika hårt belånade jämför du ärligare hela företagsvärdet (börsvärde plus nettoskuld) mot driftsresultatet — multiplen blir neutral mot hur kapitalet delats mellan lån och eget kapital.",
   "Tillväxtjustering → PEG: när tillväxttakten skiljer sig mycket inom branschen sätter PEG P/E-talet i relation till väntad resultattillväxt — kom ihåg att nämnaren är en analytikerprognos, inte ett faktum.",

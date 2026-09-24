@@ -1,0 +1,21 @@
+{
+ "pushretry": "PUSH GRÖN",
+ "synkFel": "Error: ENOENT: no such file or directory, open '/home/ak1a/AK1/data/infra/contabo/prod-synk.log'",
+ "ramMB": 5616,
+ "byggd": "mz0CMudlCyia",
+ "fabrikKo": [],
+ "fabrikStatus": [
+  "v213b-kontraktssviter-1789873200000.json",
+  "zcode-expert-r1-r7.json",
+  "zcode-paritet-v148.json"
+ ],
+ "headMitt": "df0847d3 Merge remote-tracking branch 'prod/develop' into develop",
+ "headProd": "df0847d3 Merge remote-tracking branch 'prod/develop' into develop",
+ "prodRen": false,
+ "intag": [
+  {
+   "fil": "HM-B-2025.json",
+   "kB": 3920
+  }
+ ]
+}

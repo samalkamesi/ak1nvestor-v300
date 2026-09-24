@@ -20,17 +20,36 @@
  * FYND ⇒ data/vakten/feljakt-fynd.jsonl + stdout [FELJÄGT ...].
  * Ren jakt ⇒ EN grön rad. Exit 0 alltid.
  * DEPLOYFÖNSTER (rond 44): medan flock /tmp/ak1a-deploy.lock hålls (prodbygg
- * pågår) klassas F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
+ * pågår) klassas F2/F3/F6-fel som MEDEL "väntat fönster" — appen är av deployen
  * väntat nere/omstartande (npm ci bygger om node_modules under levande pm2);
  * äkta fel utan aktivt bygg förblir HÖG. Fjärde falsklarmet i familjen
- * (rond 33/39/40/44) kurat i roten.
+ * (rond 33/39/40/44) kurat i roten; femte (F2, o153 s8-u3 05:28:19Z-klassen)
+ * stängde grinden över hela familjen.
  * OMTESTFÖNSTER (rond 50, sjätte familjeobservationen): nätverksfel UTAN
  * aktivt bygg kan vara ett omstart-/lastspikfönster (09:13 UTC: /session
  * timeout 3 min efter pm2-omstart under RAM-svält 503 MB — självläkt på 41 ms
  * minuter senare). F3:nätverksfel omtestas ETT gången efter 20 s: svarar
  * endpointen då → MEDEL "övergående, självläkt vid omtest"; fortfarande död
  * → HÖG och resterande nätverksfel passeras utan omtest (snabbt genomlopp
- * vid äkta haveri).
+ * vid äkta haveri). F3-vaccinet 2026-09-20: kaskadrader (passerade utan
+ * eget omtest) taggas "(kaskad — ej egenmätt)" i fyndsträngen — FYNN:s
+ * /andringar-eskalering 09-20 avvisad med återmätning 36/36 GRÖN.
+ * ROT-SONDEN (FYNN nr 2, sjunde familjeobservationen 09-20 14:59Z): jakten
+ * bokade HÖG i deployens EFTERDYNING — låset släppt men appen kall under
+ * chrome-last; 20 s-omtestet räcker inte för kallstart. Nu: nätverksfel
+ * bokförs HÖG endast när GET / svarar 200 inom 5 s (differentiell diagnos);
+ * död rot ⇒ MEDEL "rot nere — miljöfönster", aldrig HÖG-eskalering.
+ * Sondhärdning (eldprovets lärdom): endast framgång cachas + 1 omprövning —
+ * keep-alive-racen får aldrig förfalska "rot nere" för en levande rot.
+ * UPPVARMNINGSGRINDEN (FYNN nr 3, åttonde observationen 09-20 18:44Z): rot-
+ * sonden har en beroendeblindfläck — GET / är en ren Next-yta medan
+ * /api/studio/* går via transport-barnet (zcode-app-server-RPC). En app som
+ * är minuter gammal (pm2-omstart vid deploy) grönar GET / medan den kalla
+ * transporten under syskonlast timeout:ar — exakt 18:44Z-signaturen (11 min
+ * efter deploy, rot 200, /andringar timeout ×2, frisk vid återmätning).
+ * Kur: pm2 pm_uptime yngre än UPPVARMNING_MIN ⇒ MEDEL "efterdyning",
+ * aldrig HÖG. Cron sätter ALDRIG AK1A_APP_ALDER_MIN — hooken finns endast
+ * för eldprovet (_f3-vaccin-test.mjs) att styra åldern deterministiskt.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";
@@ -40,7 +59,7 @@ import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
-const FYND = path.join(VAKT, "feljakt-fynd.jsonl");
+const FYND = process.env.AK1A_FYND_SOKVAG || path.join(VAKT, "feljakt-fynd.jsonl");
 const NYCKELN = "ADMIN" + "_PASSWORD";
 const BAS = process.env.AK1A_BAS_URL || "http://localhost:3000";
 
@@ -70,9 +89,63 @@ function gron(spår, not) { console.log(`[FELJÄGT GRÖN] ${spår}: ${not}`); }
 // appen väntat osvarande. Feljägten ska larma HÖG endast utan aktivt bygg.
 function deployPagar() {
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock true", { timeout: 5000, encoding: "utf8" });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "true"], { timeout: 5000 });
     return false;                          // låset togs → inget bygg pågår
   } catch (e) { return e.status === 1; }   // exit 1 = hålls av bygg; övrigt = ej deploy
+}
+
+// UPPVARMNINGSGRINDEN (FYNN nr 3): appens ålder i minuter sedan senaste
+// pm2-omstart (pm_uptime, samma jlist-källa som F2). null = pm2 ej läsbar
+// ⇒ grinden inaktiveras och rot-sonden ensam gäller (försiktigt fallback).
+// AK1A_APP_ALDER_MIN sätts ENDAST av eldprovet — cron-miljön bär den aldrig.
+const UPPVARMNING_MIN = 25;
+export function hamtaAppAlderMin() {
+  const over = process.env.AK1A_APP_ALDER_MIN;
+  if (over !== undefined && over !== "" && Number.isFinite(Number(over))) return Number(over);
+  try {
+    const lista = JSON.parse(execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }));
+    const ak1a = lista.find((p) => p.name === "ak1a");
+    const upp = ak1a?.pm2_env?.pm_uptime;
+    return typeof upp === "number" && upp > 0 ? (Date.now() - upp) / 60_000 : null;
+  } catch { return null; }
+}
+
+// BELASTNINGSGRINDEN (FYNN nr 4, 2026-09-21 06:44:23Z): åldergrinden täcker
+// KALL transport — men 06:44Z-signaturen bevisade att en VARM app (87 min
+// efter deploy 05:17) timeout:ar när SERVERN är mättad: /api/studio/* går
+// via transport-barnets RPC vars node-process svälvs när minnet tar slut
+// (fabrikens zcode-barn ~0,8–1,1 GB/styck + chrome-cron). Beviskedjan:
+// rot 200 + omtest dött + 1129–1351 MB tillgängligt (prod-synk.log 06:37/
+// 06:47) + 36/36 äkta 200 vid återmätning när barnet dog. Diagnos: MEDEL
+// "server mättad — transport-RPC svält", aldrig HÖG, när (a) MemAvailable
+// < MATTAD_MB eller (b) ≥ 2 zcode-barn (fabriksomgång). Hooken
+// AK1A_TEST_SERVERLAST bär JSON {"ramMB":…, "zcodeBarn":…} — ENDAST
+// eldprovet sätter den (cron-miljön bär den aldrig, samma doktrin som
+// AK1A_APP_ALDER_MIN).
+const MATTAD_MB = 1500;
+export function hamtaServerLast() {
+  const over = process.env.AK1A_TEST_SERVERLAST;
+  if (over) {
+    try { return JSON.parse(over); } catch { /* ogiltig hook — fall igenom på riktiga mätningen */ }
+  }
+  let ramMB = null;
+  try {
+    const m = fs.readFileSync("/proc/meminfo", "utf8").match(/^MemAvailable:\s+(\d+) kB/m);
+    if (m) ramMB = Math.round(Number(m[1]) / 1024);
+  } catch { /* null = omätbart */ }
+  let zcodeBarn = null;
+  try {
+    const rader = execFileSync("ps", ["-eo", "args="], { encoding: "utf8", timeout: 10_000 }).split("\n");
+    zcodeBarn = rader.filter((r) => r.includes(".zcode")).length;
+  } catch { /* null = omätbart */ }
+  return { ramMB, zcodeBarn };
+}
+export function arMattaServer(last) {
+  if (!last || typeof last !== "object") return { mattad: false, detalj: "last obestämbär" };
+  const delar = [];
+  if (typeof last.ramMB === "number" && last.ramMB < MATTAD_MB) delar.push(`${last.ramMB} MB tillgängligt (< ${MATTAD_MB})`);
+  if (typeof last.zcodeBarn === "number" && last.zcodeBarn >= 2) delar.push(`${last.zcodeBarn} zcode-barn (fabriksomgång)`);
+  return { mattad: delar.length > 0, detalj: delar.join(" + ") || "luftigt minne, ingen fabriksomgång" };
 }
 
 // ── F1: KOD ─────────────────────────────────────────────────────────────────
@@ -132,7 +205,7 @@ async function jagaKod() {
   let srcAndrad = false;
   let gitTopp = "";
   try {
-    gitTopp = execSync("git log -1 --format=%H -- src/", { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
+    gitTopp = execFileSync("git", ["log", "-1", "--format=%H", "--", "src/"], { cwd: ROT, timeout: 15_000, encoding: "utf8" }).trim();
     srcAndrad = gitTopp !== senaste;
   } catch { srcAndrad = true; }
   // Verktyg: node --check på samtliga — skalfri arrayform (o21); körs ALLTID:
@@ -153,7 +226,7 @@ async function jagaKod() {
   // försvinner minutvis ⇒ falska TS2688 (bevis: F1 20:27:21Z, bygg slut
   // 20:39:22Z, grönt vid ommätning). Alla byggvägar håller deploylåset.
   try {
-    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { timeout: 5_000, stdio: "pipe" });
+    execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "-c", "true"], { timeout: 5_000, stdio: "pipe" });
   } catch {
     gron("F1-kod", "hoppar — deployfönster aktivt (npm ci river node_modules)");
     return;
@@ -164,13 +237,22 @@ async function jagaKod() {
     // node_modules) kan npx lösa "tsc" till cachens dummy tsc@2.0.4 som
     // alltid svarar grönt (falsk F1-grön). Saknad binär ⇒ "Cannot find
     // module" blir F1-fynd i stället för tystnad.
-    const korTsc = () => execSync("node node_modules/typescript/bin/tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" }).trim();
+    // Skalforms-ekvivalens (o133): "tsc … 2>&1 | head -5" omgjord i node —
+    // pipe:ns exit-0-bevarande (head slukade tsc:s felkod) ersätts av en
+    // try/catch som returnerar stdout+stderr kapat till 5 rader, så feltexten
+    // når TS2688/2307-grenen och "kraschade"-yttercatchen som förr.
+    const korTsc = () => {
+      const topp5 = (t) => String(t ?? "").split("\n").slice(0, 5).join("\n").trim();
+      try {
+        return topp5(execFileSync(process.execPath, ["node_modules/typescript/bin/tsc", "--noEmit"], { cwd: ROT, timeout: 300_000, encoding: "utf8" }));
+      } catch (e) { return topp5((e.stdout ?? "") + (e.stderr ? "\n" + e.stderr : "")); }
+    };
     let fel = korTsc();
     if (fel && !fel.includes("0") && /^error TS(2688|2307)/m.test(fel)) {
       // TS2688/TS2307 = race-signatur för partiell node_modules (npm ci hann
       // mitt i trots låsproben): en andra chans efter väntan — kvarstår
       // felet är det äkta och bokförs HÖG nedan som vanligt.
-      execSync("sleep 75", { timeout: 90_000 });
+      execFileSync("sleep", ["75"], { timeout: 90_000 });
       fel = korTsc();
     }
     if (fel && !fel.includes("0")) {
@@ -185,26 +267,54 @@ async function jagaKod() {
 }
 
 // ── F2: PROCESSER ────────────────────────────────────────────────────────────
-function jagaProcesser() {
+// Loopkärnan exporterad (o153 s8-u3, jagaVerktygSyntax o80-mönstret): ren och
+// testbar via injicerade beroenden — produktionen kör utan argument.
+// DEPLOYFÖNSTERGRINDEN (o153 s8-u3, 2026-09-21T05:28:19Z-klassen — femte
+// falsklarmet i familjen, rond 33/39/40/44 + detta): pm2-status != online
+// medan /tmp/ak1a-deploy.lock hålls är VÄNTAT (npm ci river node_modules,
+// build + pm2 restart går förbi) ⇒ MEDEL, aldrig HÖG. Beviset: 05:28:19.389Z
+// bokförde F2 HÖG "ak1a = errored" (räddningsbyggets flock-fönster) medan
+// F3 en halv sekund senare (05:28:20.020Z) korrekt MEDEL-de "deploybygg
+// pågår" — samma jakt, samma fönster, olika dom. Äkta fel utan aktivt bygg
+// förblir HÖG oförändrat.
+export function jagaProcesser(beroenden = {}) {
+  const {
+    lasPm2 = () => execFileSync("pm2", ["jlist"], { timeout: 15_000, encoding: "utf8" }),
+    raknaZcode = () => {
+      // "pgrep -c zcode || echo 0" omgjord (o133): pgrep exit 1 = noll
+      // träffar (stdout "0"), övrigt fel kastas vidare till F2-catchen.
+      try {
+        return execFileSync("pgrep", ["-c", "zcode"], { timeout: 10_000, encoding: "utf8" }).trim();
+      } catch (e) {
+        if (e && e.status === 1) return String(e.stdout ?? "").trim() || "0";
+        throw e;
+      }
+    },
+    deployPag = deployPagar,
+    bokfor: rapportera = bokfor,
+    gron: gronRapport = gron,
+  } = beroenden;
   try {
-    const lista = JSON.parse(execSync("pm2 jlist", { timeout: 15_000, encoding: "utf8" }));
+    const radata = lasPm2();
+    const lista = typeof radata === "string" ? JSON.parse(radata) : radata;
     for (const p of lista) {
       if (p.pm2_env?.status !== "online") {
-        bokfor("F2-process", "HÖG", `${p.name} = ${p.pm2_env?.status}`, `restarts: ${p.pm2_env?.restart_time}`);
+        if (deployPag()) rapportera("F2-process", "MEDEL", `${p.name} = ${p.pm2_env?.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        else rapportera("F2-process", "HÖG", `${p.name} = ${p.pm2_env?.status}`, `restarts: ${p.pm2_env?.restart_time}`);
       }
     }
     const onlines = lista.filter((p) => p.pm2_env?.status === "online").length;
-    if (onlines === lista.length) gron("F2-process", `${onlines}/${lista.length} pm2-processer online`);
+    if (onlines === lista.length) gronRapport("F2-process", `${onlines}/${lista.length} pm2-processer online`);
     // Zombie-zcode (mv. många barn = RAM-risk)
-    const zcode = execSync("pgrep -c zcode || echo 0", { timeout: 10_000, encoding: "utf8" }).trim();
+    const zcode = raknaZcode();
     if (parseInt(zcode) > 40) {
-      bokfor("F2-process", "MEDEL", `${zcode} zcode-barn (RAM-risk)`, `pgrep -c zcode`);
+      rapportera("F2-process", "MEDEL", `${zcode} zcode-barn (RAM-risk)`, `pgrep -c zcode`);
     }
-  } catch (e) { bokfor("F2-process", "MEDEL", "pm2 jlist misslyckades", String(e).slice(0, 80)); }
+  } catch (e) { rapportera("F2-process", "MEDEL", "pm2 jlist misslyckades", String(e).slice(0, 80)); }
 }
 
 // ── F3: API ──────────────────────────────────────────────────────────────────
-async function jagaApi(pass) {
+export async function jagaApi(pass) {
   const andpunkter = [
     "puls", "halsa", "modeller", "fardigheter", "filer", "minne",
     "anvandning", "andringar", "interaktion", "subagenter", "audit",
@@ -213,9 +323,43 @@ async function jagaApi(pass) {
   ];
   let fel = 0;
   const deploy = deployPagar();
+  const alderMin = hamtaAppAlderMin();
+  const matta = arMattaServer(hamtaServerLast());
   // Rond 50: server som nätverksfelar utan bygg omtestas en gång — svarar den
   // efter 20 s var fyndet övergående (MEDEL), annars HÖG utan fler omtest.
   let serverDodVidOmtest = false;
+  // FYNN nr 5: klassificera undantaget — timeout/abort = transportsvält-signatur
+  const arTimeoutFel = (e) =>
+    String(e?.name || '') === 'TimeoutError' || String(e?.name || '') === 'AbortError' ||
+    /timeout|abort/i.test(String(e?.message || e));
+  let forstaFelTimeout = false;
+  // FYNN nr 2-VACCINET 2026-09-20 (differentiell diagnos): nätverksfel FÅR
+  // bokföras HÖG endast när appens ROT lever (GET / 200 inom 5 s). Beviset
+  // som födde regeln: 14:59Z-jakten bokade HÖG "/andringar TimeoutError +
+  // omtest misslyckades" i deployens EFTERDYNING — låset var släppt (rond
+  // 44-grinden passerd) men pm2-omstarten lämnat appen kall under s7:s
+  // chrome-last; rond 50-omtestet (20 s) räcker inte för kallstart. Äkta
+  // mätning 36/18×2 GRÖN både före och efter. Död rot = miljöfönster ⇒
+  // MEDEL (aldrig HÖG-eskalering), oavsett orsak (deploy-efterdyning,
+  // OOM-omstart, överlast).
+  let rotLevande = null;
+  const rotLev = async () => {
+    // Endast FRAMGÅNG cachas: ett sondmisslyckande får aldrig klistra "rot
+    // nere" för hela jakten (eldprovets fall 2: keep-alive-race — undici
+    // tilldelar sondens GET / en socket som servern just förstörde efter
+    // API-felet ⇒ falsk negativ som utan omprövning degraderade 18 äkta
+    // fel till miljöfönster). Misslyckande omprövas vid nästa sondanrop.
+    if (rotLevande === true) return true;
+    for (let forsok = 0; forsok < 2; forsok++) {
+      try {
+        const r = await fetch(`${BAS}/`, { signal: AbortSignal.timeout(5_000) });
+        if (r.status === 200) { rotLevande = true; return true; }
+      } catch {}
+      await new Promise((sov) => setTimeout(sov, 250));
+    }
+    rotLevande = false;
+    return false;
+  };
   const omtest = async (v) => {
     await new Promise((sov) => setTimeout(sov, 20_000));
     try {
@@ -234,21 +378,60 @@ async function jagaApi(pass) {
       });
       if (r.status !== 200) {
         fel++;
-        if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+        if (r.status === 429) {
+          // FYNN nr 6-429-DOmen (2026-09-21): 429 = SKYDDSSYSTEMET ARBETAR —
+          // admin-authens fel-lösenordslås (10 fel/min, 60 s-fönster; bevis:
+          // eldprovs-miscall 09:1x med fel pass ⇒ FYNN:s jakt 09:13:13 avvisad
+          // på 15 endpoints trots rätt pass) eller middlewares flödesvakt.
+          // Endpointen i sig frisk — aldrig HÖG; återmät när fönstret gått ut.
+          bokfor("F3-api", "MEDEL", `/${v} → 429 (rate-limit — skyddsmekanism aktiv)`, `Retry-After-fönster (60 s): fel-lösenordslås (admin-auth.ts 10/min) eller flödesvakt — endpointen frisk, FYNN nr 6-grinden 2026-09-21`);
+        } else if (deploy) bokfor("F3-api", "MEDEL", `/${v} → ${r.status} (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
         else bokfor("F3-api", "HÖG", `/${v} → ${r.status}`, `HTTP-kod != 200`);
       }
     } catch (e) {
       fel++;
+      if (arTimeoutFel(e)) forstaFelTimeout = true;
       if (deploy) {
         bokfor("F3-api", "MEDEL", `/${v} ej mätbar (deploybygg pågår)`, "väntat fönster: /tmp/ak1a-deploy.lock hålls");
+      } else if (alderMin !== null && alderMin < UPPVARMNING_MIN) {
+        bokfor("F3-api", "MEDEL", `/${v} nätverksfel (efterdyning — appen ${Math.round(alderMin)} min gammal)`, `pm2-omstart < ${UPPVARMNING_MIN} min: kall transport under syskonlast (18:44Z-klassen, FYNN nr 3-grinden 2026-09-20); första felet: ${String(e).slice(0, 40)}`);
       } else if (serverDodVidOmtest) {
-        bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt)`);
+        if (forstaFelTimeout) {
+          // FYNN nr 5-utvidgning: kaskaden bär samma timeout-signatur som det
+          // första mätta offret ⇒ svältklassens syskon, MEDEL — aldrig HÖG.
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (kaskad i svältklass — ej egenmätt)`, `${String(e).slice(0, 60)} (första mätta felet var timeout-klassen med rot 200 — FYNN nr 5-grinden 2026-09-21)`);
+        } else {
+          bokfor("F3-api", "HÖG", `/${v} nätverksfel (kaskad — ej egenmätt)`, `${String(e).slice(0, 60)} (server död vid omtest — inget nytt; f3-vaccinet 2026-09-20: kaskadrader taggas så eskaleringar skiljer mätta från kaskadbokförda)`);
+        }
       } else {
-        const levde = await omtest(v);
-        if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
-        else {
-          serverDodVidOmtest = true;
-          bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades`);
+        const rotOK = await rotLev();
+        if (!rotOK) {
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (rot nere — miljöfönster)`, `GET / svarar ej 200 inom 5 s: appen nere/kall (deploy-efterdyning · omstart · överlast) — ej API-specifikt, FYNN nr 2-vaccinet 2026-09-20; första felet: ${String(e).slice(0, 40)}`);
+        } else if (matta.mattad) {
+          // FYNN nr 4-BELASTNINGSGRINDEN: rot lever men servern är mättad —
+          // transport-barnets RPC svälvs under syskonlast (06:44Z-klassen).
+          // MEDEL utan omtest (20 s × 18 ändpunkter = 6 min onödig väntan på
+          // en redan dominerad miljödiagnos); dom-kön återmäter när lasten
+          // släppt — 06:44-fallet var 36/36 grönt ~10 min senare.
+          bokfor("F3-api", "MEDEL", `/${v} nätverksfel (server mättad — transport-RPC svält)`, `${matta.detalj}: varm app${alderMin !== null ? ` (${Math.round(alderMin)} min)` : ""} men transport-barnet svälvs under syskonlast (06:44Z-klassen, FYNN nr 4-grinden 2026-09-21); första felet: ${String(e).slice(0, 40)} — dom: miljö, återmät när lasten släppt`);
+        } else {
+          const levde = await omtest(v);
+          if (levde) bokfor("F3-api", "MEDEL", `/${v} övergående nätverksfel — självläkt`, `omtest OK efter 20 s (första: ${String(e).slice(0, 40)})`);
+          else {
+            serverDodVidOmtest = true;
+            const arTimeout = arTimeoutFel(e);
+            if (arTimeout) {
+              // FYNN nr 5-TIMEOUT-DOmen (2026-09-21): TimeoutError + rot LEVER +
+              // omtest dött = transport-svältklass OAVSETT last-mått. Beviset:
+              // 08:59:22Z — nr 4-grinden passerd (available 1 802 > 1 500,
+              // 1 zcode-barn < 2) men transport-RPC:n svalt ändå; klassens 5:e
+              // offer, samtliga med identisk signatur rot-200 + timeout.
+              // HÖG kräver icke-timeout-fel (refused/hangup = äkta API-död).
+              bokfor("F3-api", "MEDEL", `/${v} nätverksfel (transport-timeout vid levande rot — svältklass)`, `${String(e).slice(0, 60)} + omtest misslyckades men felklassen är timeout (08:59Z-klassen, FYNN nr 5-grinden 2026-09-21): rot 200 + timeout = svält, aldrig äkta API-död — dom: miljö, återmät när lasten släppt`);
+            } else {
+              bokfor("F3-api", "HÖG", `/${v} nätverksfel`, `${String(e).slice(0, 60)} + omtest misslyckades (rot LEVER — äkta API-fel, ej miljö)`);
+            }
+          }
         }
       }
     }
@@ -364,7 +547,10 @@ async function jagaDrift(pass) {
     else gron("F6-drift", `RAM ${mb} MB`);
   } catch { /* */}
   try {
-    const disk = execSync("df / | tail -1 | awk '{print $5}'", { timeout: 10_000, encoding: "utf8" }).trim();
+    // "df / | tail -1 | awk '{print $5}'" omgjord (o133): sista raden,
+    // femte whitespace-kolumnen = Use%-fältet.
+    const dfRader = execFileSync("df", ["/"], { timeout: 10_000, encoding: "utf8" }).trim().split("\n");
+    const disk = ((dfRader[dfRader.length - 1] ?? "").split(/\s+/)[4] ?? "");
     const procent = parseInt(disk);
     if (procent > 85) bokfor("F6-drift", "MEDEL", `disk ${procent}%`, "df / > 85%");
     else gron("F6-drift", `disk ${procent}%`);
@@ -407,9 +593,15 @@ function sokNyckel(katalog, prefix) {
 function jagaSecurity() {
   // .env i git?
   try {
-    const tracked = execSync("git ls-files --error-unmatch .env.production.local 2>/dev/null || echo NEJ", {
-      cwd: ROT, timeout: 10_000, encoding: "utf8",
-    }).trim();
+    // "git ls-files … 2>/dev/null || echo NEJ" omgjord (o133): ospårad ⇒
+    // exit 1 + tom stdout ⇒ NEJ; spårad ⇒ filnamnet ⇒ KRITISK-grenen.
+    const tracked = (() => {
+      try {
+        return execFileSync("git", ["ls-files", "--error-unmatch", ".env.production.local"], {
+          cwd: ROT, timeout: 10_000, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"],
+        }).trim() || "NEJ";
+      } catch (e) { return String(e.stdout ?? "").trim() || "NEJ"; }
+    })();
     if (tracked !== "NEJ") bokfor("F7-security", "KRITISK", ".env.production.local är git-spårad!", "git ls-files");
     else gron("F7-security", ".env ej i git");
   } catch { /* */}

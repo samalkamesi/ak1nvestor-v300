@@ -53,8 +53,15 @@ function Slider({
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
           key={index}
-          className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
-        />
+          className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 max-md:flex max-md:size-[52px] max-md:items-center max-md:justify-center max-md:rounded-none max-md:border-transparent max-md:bg-transparent max-md:shadow-none"
+        >
+          {/* o128: Radix renderar tummen som span role=slider — golvet i
+              globals.css (button-selector, min 52) når den aldrig, och den var
+              16×16 på mobil. Mönster från o123 (shortseller-×): tum-spannen blir
+              ren 52×52-tryckyta på mobil med visuell 16 px-cirkel i barn-span;
+              desktop är visuell cirkel kvar på själva tummen (barnet hidden). */}
+          <span className="hidden max-md:block size-4 rounded-full border border-primary bg-background shadow-sm" />
+        </SliderPrimitive.Thumb>
       ))}
     </SliderPrimitive.Root>
   )

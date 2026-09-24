@@ -1,0 +1,74 @@
+{
+  "ts": "2026-09-21T11:38:57.917Z",
+  "rond": 146,
+  "organ": "Θ",
+  "urval": [
+    "sa-laser-du-volvo-car-q3-2026.json",
+    "sa-laser-du-ericsson-q3-2026.json",
+    "sa-laser-du-hm-b-q3-2026.json",
+    "sa-laser-du-skf-b-q3-2026.json",
+    "sa-laser-du-industrivarden-q3-2026.json"
+  ],
+  "resultat": [
+    {
+      "fil": "sa-laser-du-volvo-car-q3-2026.json",
+      "bolag": "Så läser du Volvo Cars Q3-rapport 2026 — checklista, nyckelt",
+      "dom": {
+        "radverb": "GRÖN (0 träffar)",
+        "radverbFynd": [],
+        "disclaimer": "GRÖN (finns)",
+        "kallfalt": "GRÖN (5 källmarkörer)",
+        "struktur": "ord 1445 · H2 6 · title 86/60"
+      },
+      "slutdom": "FLYTKLAR-KANDIDAT (granskad r146)"
+    },
+    {
+      "fil": "sa-laser-du-ericsson-q3-2026.json",
+      "bolag": "Ericssons Q3-rapport 2026: så läser du den — läspaket med ny",
+      "dom": {
+        "radverb": "GRÖN (0 träffar)",
+        "radverbFynd": [],
+        "disclaimer": "GRÖN (finns)",
+        "kallfalt": "GRÖN (6 källmarkörer)",
+        "struktur": "ord 1242 · H2 6 · title 81/60"
+      },
+      "slutdom": "FLYTKLAR-KANDIDAT (granskad r146)"
+    },
+    {
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "bolag": "H&M:s Q3-rapport 2026: så läser du niomånadersrapporten — lä",
+      "dom": {
+        "radverb": "GRÖN (0 träffar)",
+        "radverbFynd": [],
+        "disclaimer": "GRÖN (finns)",
+        "kallfalt": "GRÖN (7 källmarkörer)",
+        "struktur": "ord 1593 · H2 7 · title 94/60"
+      },
+      "slutdom": "FLYTKLAR-KANDIDAT (granskad r146)"
+    },
+    {
+      "fil": "sa-laser-du-skf-b-q3-2026.json",
+      "bolag": "SKF:s Q3-rapport 2026: så läser du den — läspaket med nyckel",
+      "dom": {
+        "radverb": "GRÖN (0 träffar)",
+        "radverbFynd": [],
+        "disclaimer": "GRÖN (finns)",
+        "kallfalt": "GRÖN (5 källmarkörer)",
+        "struktur": "ord 1667 · H2 7 · title 77/60"
+      },
+      "slutdom": "FLYTKLAR-KANDIDAT (granskad r146)"
+    },
+    {
+      "fil": "sa-laser-du-industrivarden-q3-2026.json",
+      "bolag": "Industrivärdens Q3-rapport 2026: så läser du den — läspaket ",
+      "dom": {
+        "radverb": "GRÖN (0 träffar)",
+        "radverbFynd": [],
+        "disclaimer": "GRÖN (finns)",
+        "kallfalt": "GRÖN (5 källmarkörer)",
+        "struktur": "ord 1736 · H2 6 · title 102/60"
+      },
+      "slutdom": "FLYTKLAR-KANDIDAT (granskad r146)"
+    }
+  ]
+}

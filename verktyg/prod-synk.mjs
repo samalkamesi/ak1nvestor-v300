@@ -28,6 +28,19 @@
  *      ombygge nästa poll (RAM-vakten gäller).
  *   8. pm2 restart ak1a + HTTPS-kontroll (4 försök) + version-stämpel
  *
+ *   NEXT-LÄKEBACKUP (o97, s8-u1 2026-09-19): next build skriver progressivt
+ *   direkt i prod-trädets .next — vid fallit/OOM-dödat bygg lämnas katalogen
+ *   halvskriven medan pm2 fortsätter servera den från disk (bevisat
+ *   2026-09-19: 06:58+07:01-fallna byggen ⇒ /kurser /portfolj* /rapporter
+ *   500 i ~14 min tills 07:07-pollens lyckade ombygge; nytt fönster efter
+ *   19:11-OOM:en — s9-u3:s rot-fråga "misslyckade byggen SKRIVER i .next").
+ *   Kuren: FÖRE byggstart säkras senast GRÖNA .next i .next-laeke (allt utom
+ *   den regenererbara ISR-cachen); i varje fallit utfall (oom · riktigt-fel ·
+ *   fallna ombyggen · artefakt-stopp) återställs .next ur backupen ⇒ pm2
+ *   serverar genast det gröna läget i stället för att blöda 500 till nästa
+ *   lyckade poll. Fail-open: varje backup-fel loggas och lämnar beteendet
+ *   som före kuren — deploy-kedjan får ALDRIG dö av läkevägen.
+ *
  * BEVISAT behov 2026-09-14 (10X-omgången): p4-p9-leveranscommitters
  * byggdes under minnestaket (7 zcode-barn + pm2 + npm ci ≈ 8 GB) →
  * "Killed" → den gamla kedjan revert → reset --hard goodHead raderade
@@ -44,7 +57,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { skrivAudit } from "./audit-logg.mjs";
 import { verifieraArtefakt } from "./artefakt-verifiering.mjs";
@@ -53,6 +66,14 @@ const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
 const LOGG = path.join(VAKT, "prod-synk.log");
 const MIN_RAM_MB = 2200;
+// V235 (BYGG×FABRIK-SEKVENSERING): aktiva fabriksmanifest skjuter upp
+// byggstarten — men ALDRIG i evighet (kedjande manifest skulle svälta
+// deployer i timmar). 30 min = 3 poller; därefter kör bygget med
+// ps-vaktens reserv (850 MB/zcode-barn) som fönsterskydd.
+const FABRIKS_VANTE_MAX_MIN = 30;
+// ROND 152: svältstopps-TVUNGET bygg (tak passerat med aktiv fabrik) kräver
+// även detta fria minne — ps-reserven ensam bevisad otillräcklig (se 2b).
+const TVINGAT_BYGG_MIN_MB = 5000;
 
 function logga(rad) {
   fs.mkdirSync(VAKT, { recursive: true });
@@ -91,7 +112,12 @@ function ramTillgangligtMB() {
 // gränssnittsvaktens chrome-cron (~1 GB, 6-timmarscykeln kan landa mitt i
 // byggfönstret) + fabrikens zcode-barn. Deras NU-varande RSS är redan
 // borta ur MemAvailable — reserven täcker det de KAN komma att äta.
-const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 300 };
+// V235 (rond 130:s OOM-serie: 4 byggdöda 02:52–03:20Z med 3 levande
+// fabrikens barn ~1,1 GB styck): 300 MB/barn var kraftigt underskattad —
+// dokumenterad verklig kostnad ~0,8 GB/styck (zcode-cli ~400–470 MB +
+// node-repl-mcp ~390 MB, våg 146-mätningen). 850 MB = barnens påvisade
+// topp i nattens dödsrapporter.
+const RAM_RESERV_MB = { chrome: 1024, zcodeBarn: 850 };
 
 /** Klassificera `ps -eo args=`-rader → tunga processklasser (vaccin 3).
  * Smalhetsregeln (o55 F2-läxan — breda mönster deckar varje mätning medan
@@ -109,6 +135,37 @@ export function raknaTungaProcesser(argsRader) {
     else if (text.includes(".zcode")) klasser.zcodeBarn++;
   }
   return klasser;
+}
+
+/**
+ * V235 (BYGG×FABRIK-SEKVENSERING, rond 130:s systemfynd): räkna AKTIVA
+ * fabriksmanifest ur statuskatalogen. Kontrakt:
+ *   · status "klar" = manififest slutkörd ⇒ blockerar ALDRIG
+ *   · varje annan tolkbar status ("pågår", "vantar-ram", framtida okända)
+ *     räknas KONSERVATIVT som aktiv — vantar-ram betyder fabrik lever och
+ *     kan föda barn vid nästa rop; ett okänt tillstånd får aldrig missas
+ *   · ogiltig JSON-fil ignoreras (fail-open — fabriken äger sina filer)
+ *   · saknad katalog = fabriken vilar (0 aktiva)
+ * Testas av verktyg/testa-prod-synk-ramvakt.mjs (V235-blocket).
+ */
+export function lasAktivaFabriksManifest(statusKatalog) {
+  const ute = { aktiva: 0, ids: [] };
+  let filer;
+  try {
+    filer = fs.readdirSync(statusKatalog);
+  } catch {
+    return ute; // katalog saknas = fabriken vilar
+  }
+  for (const fil of filer) {
+    if (!fil.endsWith(".json")) continue;
+    try {
+      const j = JSON.parse(fs.readFileSync(path.join(statusKatalog, fil), "utf8"));
+      if (typeof j === "object" && j !== null && j.status === "klar") continue;
+      ute.aktiva++;
+      ute.ids.push(typeof j?.id === "string" ? j.id : fil);
+    } catch { /* ogiltig fil — fabriken äter sitt eget fel */ }
+  }
+  return ute;
 }
 
 /** Byggutrymmes-bedömning (vaccin 3): basbehovet = byggheap (MIN_RAM_MB,
@@ -234,6 +291,185 @@ export function bevaraByggLoggar(mapp, kallor) {
     return sparade;
   } catch {
     return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// VAKTRAPPORTS-GRINDEN (VÅG 212 — E35 gap 3:s SISTA HALVA; SYSTEMKARTAN
+// 2026-09-16: "vaktrapports-stoppet (RÖD kvalitetsrapport ⇒ deploy-stopp)
+// saknas fortfarande" — .next-skadan 09-16 nådde prod utan att någon grind
+// stoppade vägen). Kontrakt:
+//   · data/rapporter/kvalitetsrapport-SENASTE.md skrivs 07:02 av pumporna I
+//     PROD-TRÄDET (gitignore:ad rad 76 ⇒ `git checkout -- .` rör den ALDRIG —
+//     rapporten överlever deploy-städningen)
+//   · STATUS RÖD (>9 fel eller ogiltig JSON i trädet) ⇒ deploy STOPPAS FÖRE
+//     byggstart: HEAD orörd, DEPLOYAD-markör orörd, .next orörd (bygget river
+//     .next — att inte bygga alls är den skonsammaste stoppen), audit-larm
+//   · DEADLOCK-SKYDD: stoppet triggar OMMÄTNING (detached kvalitetsvakt under
+//     lås) — rapporten mätte trädet vid 07:02 och de nya committerna kan bära
+//     själva fixen; nästa poll (10 min) läser FÄRSK rapport mot Nya trädet.
+//     Forfarande RÖD ⇒ stopp igen (ärligt: trasigt träd deployas inte)
+//   · GUL ⇒ deploy fortsätter (loggas)
+//   · saknas/otolkbar/gammal (>48 h) ⇒ deploy fortsätter med VARNING
+//     (fail-open — vaktpumpornas död ägs av pulsvakten/ronder och får ALDRIG
+//     frysa prod-koden i evighet; varningen syns i loggen + audit)
+// Kontraktstest: verktyg/testa-prod-synk-vaktrapport.mjs
+// ---------------------------------------------------------------------------
+const VAKTRAPPORT_FIL = path.join("data", "rapporter", "kvalitetsrapport-SENASTE.md");
+const VAKTRAPPORT_MAX_ALDER_H = 48;
+const VAKT_OMMATNING_LOCK = path.join(VAKT, ".vakt-ommatning.lock");
+const VAKT_OMMATNING_STAL_MIN = 15; // vakten tar ≤ ~10 min; kvarlämnat lås städas
+
+/** Tolka kvalitetsrapporten — {saknas}|{fel}|{status, felAntal, manuella, alderTimmar}. */
+export function lasVaktrapportStatus(filvag, nuMs = Date.now()) {
+  let text;
+  let stat;
+  try {
+    text = fs.readFileSync(filvag, "utf8");
+    stat = fs.statSync(filvag);
+  } catch (e) {
+    if (e && e.code === "ENOENT") return { saknas: true };
+    return { fel: "oläsbar: " + String(e && e.message ? e.message : e).slice(0, 80) };
+  }
+  // sista ANTAL FEL-raden är aktuell status (rapporten är överskrivande, men
+  // tolerera framtida append — samma "sista träffen"-regel som motorsektionen)
+  const rader = text.split("\n").filter((r) => /^## ANTAL FEL:/.test(r));
+  const m = rader[rader.length - 1]?.match(/^## ANTAL FEL:\s*(\d+)\s*\|\s*MANUELLA:\s*(\d+)\s*\|\s*STATUS:\s*(RÖD|GUL|GRÖN)\s*$/);
+  if (!m) return { fel: "ingen tolkbar ANTAL FEL/STATUS-rad" };
+  return {
+    status: m[3],
+    felAntal: Number(m[1]),
+    manuella: Number(m[2]),
+    // Math.max: en rapport skriven millisekunden EFTER nuMs (klockrapportens
+    // realtid) får aldrig bli -1 h — färsk rapport är 0 h
+    alderTimmar: Math.max(0, Math.floor((nuMs - stat.mtimeMs) / 3_600_000)),
+  };
+}
+
+/** Grinddom: {stopp, niva: stopp|varning|info, meddelande} — se kontraktet ovan. */
+export function bedomVaktrapportStopp(rapport) {
+  if (!rapport || typeof rapport !== "object") return { stopp: false, niva: "varning", meddelande: "vaktrapporten obestämbär — deploy fortsätter (fail-open), vakt-läget OMÄTT" };
+  if (rapport.saknas) return { stopp: false, niva: "varning", meddelande: "kvalitetsrapporten SAKNAS — deploy fortsätter (fail-open); vaktpumporna mäter inte (pulsvaktens ägo)" };
+  if (rapport.fel) return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten otolkbar (${rapport.fel}) — deploy fortsätter (fail-open), vakt-läget OMÄTT` };
+  if (rapport.alderTimmar > VAKTRAPPORT_MAX_ALDER_H) {
+    return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten ${rapport.alderTimmar} h gammal (> ${VAKTRAPPORT_MAX_ALDER_H} h) — deploy fortsätter; vaktpumpornas död ägs av pulsvakten, aldrig av deploy-grinden` };
+  }
+  if (rapport.status === "RÖD") {
+    return {
+      stopp: true,
+      niva: "stopp",
+      meddelande: `kvalitetsrapporten RÖD (${rapport.felAntal} fel, ${rapport.manuella} manuella, ${rapport.alderTimmar} h gammal) — deploy STOPPAD före byggstart (E35 gap 3 sista halvan); ommätning triggad, nytt försök nästa poll`,
+    };
+  }
+  if (rapport.status === "GUL") {
+    return { stopp: false, niva: "varning", meddelande: `kvalitetsrapporten GUL (${rapport.felAntal} fel) — deploy fortsätter (GUL stoppar aldrig)` };
+  }
+  return { stopp: false, niva: "info", meddelande: `kvalitetsrapporten GRÖN (${rapport.alderTimmar} h gammal)` };
+}
+
+/** Deadlock-skyddet: trigga färsk vaktkörning (detached, låst — aldrig stackad). */
+function triggaVaktOmmatning() {
+  try {
+    try {
+      fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      const s = fs.statSync(VAKT_OMMATNING_LOCK);
+      if (Date.now() - s.mtimeMs > VAKT_OMMATNING_STAL_MIN * 60_000) {
+        fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true });
+        fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      } else {
+        logga("VAKT-OMMÄTNING: pågår redan (låset lever) — ingen ny triggas");
+        return;
+      }
+    } catch (e) {
+      if (e && e.code === "EEXIST") {
+        // låset togs just av en samtidig poll — samma väg som ovan
+        const s = fs.statSync(VAKT_OMMATNING_LOCK);
+        if (Date.now() - s.mtimeMs <= VAKT_OMMATNING_STAL_MIN * 60_000) {
+          logga("VAKT-OMMÄTNING: pågår redan — ingen ny triggas");
+          return;
+        }
+        fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true });
+        fs.mkdirSync(VAKT_OMMATNING_LOCK, { recursive: false });
+      } else {
+        throw e;
+      }
+    }
+    const loggFil = path.join(VAKT, "vakt-ommatning.log");
+    const fd = fs.openSync(loggFil, "a");
+    const barn = spawn(process.execPath, ["verktyg/kvalitetsvakt.mjs"], {
+      cwd: ROT,
+      detached: true,
+      stdio: ["ignore", fd, fd],
+    });
+    barn.on("exit", () => {
+      try { fs.rmSync(VAKT_OMMATNING_LOCK, { recursive: true, force: true }); } catch { /* städas som övergivet */ }
+    });
+    barn.unref();
+    logga(`VAKT-OMMÄTNING triggad (pid ${barn.pid}) — färsk rapport mot aktuellt träd; nästa poll läser den`);
+  } catch (e) {
+    logga("VAKT-OMMÄTNING: kunde inte triggas (" + String(e && e.message ? e.message : e).slice(0, 80) + ") — vakten mäter vid 07:02 oavsett");
+  }
+}
+
+/**
+ * O97 (s9-u3:s rot-fråga "misslyckade byggen SKRIVER i .next"): säkra
+ * senast GRÖNA .next i en läkekatalog FÖRE byggstart. Kontrakt:
+ *   · LAEKE finns redan ⇒ "finns-sedan" och orörd — den speglar senast
+ *     gröna läget och får ALDRIG skrivas över av ett ev. halvskrivet
+ *     .next (fallet: föregående fönster föll, nästa poll backar inte skräp)
+ *   · grönhets-guard: BUILD_ID + build-manifest.json + prerender-manifest.json
+ *     måste finnas — next build tömmer .next FÖRST och skriver manifesten mot
+ *     slutet (bevisat 2026-09-17 11:39: .next/BUILD_ID borta i fallit läge);
+ *     ett halvskrivet träd backas ALDRIG ("icke-gron")
+ *   · `cache`-katalogen (~1 GB ISR-cache) exkluderas — regenererbar vid
+ *     första träffen; kopian blir billigare och race-ytan mot pm2:s
+ *     live-ISR-skrivare mindre
+ *   · allt fel ⇒ "fel: …" (fail-open — deploy-kedjan får aldrig dö här)
+ * Testas av verktyg/testa-prod-synk-nextlaeke.mjs.
+ */
+export function skapaNextLaekebackup({ nextKatalog, laekeKatalog }) {
+  try {
+    if (fs.existsSync(laekeKatalog)) {
+      // katalog-guard: en FIL på laeke-sökvägen är ett trasigt tillstånd,
+      // inte "finns-sedan" (cpSync hade tyst accepterat den som källa)
+      return fs.statSync(laekeKatalog).isDirectory() ? "finns-sedan" : "fel: läkekatalogen är ingen katalog";
+    }
+    if (!fs.existsSync(nextKatalog)) return "saknas-next";
+    const gron =
+      fs.existsSync(path.join(nextKatalog, "BUILD_ID")) &&
+      fs.existsSync(path.join(nextKatalog, "build-manifest.json")) &&
+      fs.existsSync(path.join(nextKatalog, "prerender-manifest.json"));
+    if (!gron) return "icke-gron";
+    fs.mkdirSync(laekeKatalog, { recursive: true });
+    for (const post of fs.readdirSync(nextKatalog)) {
+      if (post === "cache") continue;
+      fs.cpSync(path.join(nextKatalog, post), path.join(laekeKatalog, post), { recursive: true, force: true });
+    }
+    return "skapad";
+  } catch (e) {
+    return "fel: " + String(e && e.message ? e.message : e).slice(0, 120);
+  }
+}
+
+/**
+ * O97: återställ .next ur läkebackupen efter ett fallit bygg — pm2 serverar
+ * filerna från disk per request, så det återställda gröna läget slutar blöda
+ * 500/ostylat OMEDELBART (i stället för vid nästa lyckade poll, bevisat
+ * ~10-15 min senare). Ingen backup ⇒ "ingen-backup" (ärligt, första fönstret
+ * efter deploy av denna kur). Fail-open som ovan.
+ */
+export function aterstallNextUrLaeke({ nextKatalog, laekeKatalog }) {
+  try {
+    if (!fs.existsSync(laekeKatalog)) return "ingen-backup";
+    // katalog-guard: cpSync hade TYST kopierat en FIL på laeke-sökvägen och
+    // returnerat "aterstallt" med .next som fil — ett sådant tillstånd är
+    // ingen backup utan ett fel som ska loggas (fail-open, aldrig kast)
+    if (!fs.statSync(laekeKatalog).isDirectory()) return "fel: läkebackupen är ingen katalog";
+    fs.rmSync(nextKatalog, { recursive: true, force: true });
+    fs.cpSync(laekeKatalog, nextKatalog, { recursive: true, force: true });
+    return "aterstallt";
+  } catch (e) {
+    return "fel: " + String(e && e.message ? e.message : e).slice(0, 120);
   }
 }
 
@@ -455,7 +691,10 @@ export function synkaArbetsyta(yta, rot) {
 //     lock ⇒ locken återställs FÖRE revert-vägen så ombygget sker på
 //     bevisat fungerande grund
 
-const PATCH_MAX_POSTER = 10;
+// Tak 15 sedan o124: filen är KVITTERAD HISTORIK (o106 §5 — synken tömmer
+// den aldrig) och växer en omgång per leverans; 10 strax efter omgång 4
+// blockerade omgång 5. 15 = 10 historik + hel nästa omgång på ~5 poster.
+const PATCH_MAX_POSTER = 15;
 const PATCH_MAX_FORSOK = 3;
 const RE_PATCH_PAKET = /^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-._~]+$/;
 const RE_PATCH_VERSION = /^\d+\.\d+\.\d+(-[a-z0-9.+-]+)?$/;
@@ -561,6 +800,50 @@ export function skrivPatchKvitto(filvag, post, resultat, detalj) {
   } catch {
     return false;
   }
+}
+
+/**
+ * o106 (s8-u1, 2026-09-20): TSC-GRINDEN i patch-flödet. Rotorsakan den
+ * stängde (före o108): next.config.ts körde typescript.ignoreBuildErrors =
+ * true — next build var BLIND för typfel, så en patch som höjde @types/*
+ * eller typescript kunde bryta tsc-baslinjen 0 och deployas GRÖNT ändå.
+ * Därefter krävde pre-commit-grinden 0 fel på repets sida medan prod
+ * ALDRIG mätte = baslinjens dödsfälla (alla framtida commits blockerade
+ * i efterhand). Kuren: installationsbarnet kedjar projektbinärens
+ * tsc --noEmit (ALDRIG npx — deployfönstrets cachedummy-fälla) i SAMMA
+ * flock-fönster som npm install; typfel ⇒ misslyckat kvitto + lock riven
+ * FÖRE byggsteget ⇒ korBygg kör npm ci på god lock (patch-fel blockerar
+ * aldrig kodleverans — samma semantik som fallerad install).
+ * LÄGE EFTER o108 (vakt-s8, 2026-09-20): ignoreBuildErrors är AV i
+ * next.config.ts — byggets egna typögon är sista försvarslinjen och den
+ * här patch-grinden är det första ledet i en TRESTEGSKEDJA (pre-commit →
+ * patch-install → next build). Grinden behålls: den stoppar typfel FÖRE
+ * byggsteget (billigare än ett dött bygge) och kvitterar felräkningen.
+ */
+
+/** Inre kommandosträng för patch-barnet (ren funktion — testsviten kör den). */
+export function byggPatchInstallKommando(spec) {
+  return (
+    `npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1` +
+    " && node node_modules/typescript/bin/tsc --noEmit >> /tmp/synk-patch.log 2>&1"
+  );
+}
+
+/** Antal "error TS<kod>:"-rader i loggen — kvitto-detalj + klassning. */
+export function raknaTsFel(loggText) {
+  if (typeof loggText !== "string") return 0;
+  return (loggText.match(/error TS\d+:/g) || []).length;
+}
+
+/**
+ * Klassa installationsstegets utfall ur exit-kod + barnets logg:
+ * "ok" | "tsc-fel" | "install-fel". Med && -kedjan ger tsc alltid exit 1
+ * vid typfel, och tsc skriver då "error TS"-rader — det är skiljetecknet
+ * mot vanliga npm-fel (tom logg = flock-startade-aldrig-klassen).
+ */
+export function bedomPatchInstall(exitOk, loggText) {
+  if (exitOk) return "ok";
+  return raknaTsFel(loggText) > 0 ? "tsc-fel" : "install-fel";
 }
 
 /**
@@ -701,6 +984,19 @@ async function korSynk() {
     logga(`NY KOD: ${senaste.slice(0, 8) || "(första)"} → ${lokal.slice(0, 8)}`);
   }
 
+  // 1c) VAKTRAPPORTS-GRINDEN (VÅG 212): RÖD kvalitetsrapport ⇒ deploy-stopp
+  // FÖRE byggstart — stoppar trasigt träd från att ens riva .next (bygget
+  // tömmer katalogen FÖRE ev. kompileringsfel). Fail-open för saknas/gammal
+  // (vaktpumpornas hälsa ägs av pulsvakten), deadlock-skydd via ommätning.
+  const vaktRapport = lasVaktrapportStatus(path.join(ROT, VAKTRAPPORT_FIL));
+  const vaktDom = bedomVaktrapportStopp(vaktRapport);
+  if (vaktDom.niva !== "info") logga(`VAKTRAPPORT: ${vaktDom.meddelande}`);
+  if (vaktDom.stopp) {
+    skrivAudit("prod-synk", "deploy_stoppad_vaktrapport", `rod-${vaktRapport.felAntal}fel-${vaktRapport.alderTimmar}h`, vaktDom.meddelande);
+    triggaVaktOmmatning();
+    return; // HEAD orörd · DEPLOYAD-markör orörd · .next orörd — nytt försök nästa poll mot färsk rapport
+  }
+
   // 2) RAM-VAKT (10X-incidenten): under taket OOM-dödas next build av
   //    minnesgränsen ("Killed") — felet är KAPACITET, inte kod. Vänta till
   //    nästa poll (10 min) i stället för att bygga dömt. HEAD orört.
@@ -722,6 +1018,52 @@ async function korSynk() {
     return;
   }
 
+  // 2b) V235 (BYGG×FABRIK-SEKVENSERING — rond 130:s rotfynd ur nattens
+  //     OOM-serie): fabrikens AKTIVA manifest ⇒ skjut upp byggstarten till
+  //     nästa poll — sekvens, aldrig kapplöpning mellan kundens två
+  //     pipelines (ps-vakten ser bara NU-varande barn; manifestet föder
+  //     NYA barn mitt i byggfönstret, det var exakt nattens dödsmekanik).
+    //     SVÄLTSTOPP: kedjande manifest (12 uppgifter = timmar) får ALDRIG
+    //     svälta deployer i evighet — efter FABRIKS_VANTE_MAX_MIN körs
+    //     bygget ändå, skyddat av ps-vaktens rättade reserv (850 MB/barn)
+    //     OCH — ROND 152 — minst TVINGAT_BYGG_MIN_MB fritt minne: fem
+    //     mördade byggen 2026-09-21 18:37–20:11Z (varav två just svält-
+    //     stopps-tvång, 19:27Z + 20:07Z) dog samtliga med kernel-Killed i
+    //     Turbopacks optimeringsfas; ett KALLT bygg (rivet .next) äter mer
+    //     än reserven skyddar. Väntespäret (första väntetillfället) lever
+    //     i runtime-filen .synk-fabriksvant och nollställs när fabriken vilar.
+  const fabriken = lasAktivaFabriksManifest(path.join(VAKT, "agentfabrik", "status"));
+  const fabrikVanteFil = path.join(VAKT, ".synk-fabriksvant");
+  if (fabriken.aktiva > 0) {
+    let vanteStart = 0;
+    try { vanteStart = Number(fs.readFileSync(fabrikVanteFil, "utf8").trim()) || 0; } catch { /* första väntetillfället */ }
+    if (!vanteStart) {
+      try { fs.writeFileSync(fabrikVanteFil, String(Date.now())); } catch { /* spåret är optimering, aldrig grind */ }
+      vanteStart = Date.now();
+    }
+    const vanteMin = Math.floor((Date.now() - vanteStart) / 60_000);
+    if (vanteMin < FABRIKS_VANTE_MAX_MIN) {
+      logga(
+        `VÄNTAR-FABRIK: ${fabriken.aktiva} aktivt/aktiva manifest (${fabriken.ids.slice(0, 2).join(", ")}) — sekvens, aldrig kapplöpning (V235); väntat ${vanteMin} av tak ${FABRIKS_VANTE_MAX_MIN} min; HEAD orört, nytt försök nästa poll`
+      );
+      return;
+    }
+    // ROND 152-vaccinet: tvingat bygg vid aktiv fabrik kräver även rejält
+    // fritt minne — annars väntar vi vidare (fabrikens egna 25-min-tak per
+    // uppgift tömmer kön, svälten kan inte bli evig; HEAD förblir orörd).
+    const tvingatRam = ramTillgangligtMB();
+    if (tvingatRam !== null && tvingatRam < TVINGAT_BYGG_MIN_MB) {
+      logga(
+        `VÄNTAR-RAM-TVINGAT: fabrikstak passerat men endast ${tvingatRam} MB fritt (< ${TVINGAT_BYGG_MIN_MB} = kallbyggets topp + fabrikens barn; fem mördade byggen 09-21) — HEAD orört, nytt försök nästa poll`
+      );
+      return;
+    }
+    logga(`VÄNTAR-FABRIK tak passerat (${vanteMin} min hungrande deploy) — bygger NU med ps-reserven 850 MB/barn + ${tvingatRam} MB fritt som fönsterskydd; fabriken: ${fabriken.aktiva} manifest`);
+    try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }
+  } else {
+    try { fs.rmSync(fabrikVanteFil, { force: true }); } catch { /* */ }
+  }
+
   // 3) rent träd (data/vakten = runtime, orörd; data/cache = runtime-artefakter)
   try { git(["checkout", "--", "."]); } catch { /* inget att återställa */ }
   try { git(["clean", "-fd", "data/cache"]); } catch { /* fanns ej */ }
@@ -734,6 +1076,14 @@ async function korSynk() {
   //     (installationens ägare), under samma deploylås som bygger. En
   //     misslyckad installation blockerar ALDRIG kodleveransen: kvitto
   //     skrivs och korBygg nedan kör på befintlig lock som vanligt.
+  //     o106: "misslyckad" omfattar sedan TSC-GRINDEN även typbrytande
+  //     patchar (se byggPatchInstallKommando) — baslinjen 0 är ett
+  //     DEPLOYVILLKOR, inte bara ett commit-villkor.
+  const aterskapaPatchLas = () => {
+    // riv npm installens lock-ändring — ombyggen ska ske på bevisat
+    // fungerande grund när patchen är misstänkt gärningsman
+    try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
+  };
   let patchInstallerad = false;
   if (patchPlan.length) {
     const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(" ");
@@ -742,15 +1092,17 @@ async function korSynk() {
     const installOk = await new Promise((lyckas) => {
       const barn = spawnPatch(
         "bash",
-        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(`npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1`)}`],
+        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(byggPatchInstallKommando(spec))}`],
         { cwd: ROT, stdio: "ignore", detached: false },
       );
       barn.on("exit", (kod) => lyckas(kod === 0));
       barn.on("error", () => lyckas(false));
     });
-    if (installOk) {
+    const patchLogg = slasLogg("/tmp/synk-patch.log");
+    const installDom = bedomPatchInstall(installOk, patchLogg);
+    if (installDom === "ok") {
       patchInstallerad = true;
-      logga(`PATCH-KÖ installerad: ${spec} — package-lock uppdaterad i arbetsytan`);
+      logga(`PATCH-KÖ installerad + TSC-GRIND GRÖN: ${spec} — package-lock uppdaterad i arbetsytan, baslinjen 0 hållet`);
       // O48 (r58:s köpost): pm2 STOPPAS före byggsteget i patch-läget —
       // ett lock-byte (t.ex. next 16.3.2→16.3.5) byter chunknamn och
       // tömmer .next, och pm2:s live-ISR hinner skriva filer i kataloger
@@ -763,6 +1115,16 @@ async function korSynk() {
       // (ombygge på god lock) fångar fallet — fail-open mot gårdagens
       // beteende, aldrig ny död vinkel.
       pm2Vakt.stoppa();
+    } else if (installDom === "tsc-fel") {
+      // o106: patchens typer bröt baslinjen 0 — locken riven FÖRE
+      // byggsteget så korBygg kör npm ci på god lock (deploy fortsätter
+      // som vanligt: patch-fel blockerar aldrig kodleverans). Kvitto med
+      // felräkning — loop-skyddet (3 försök) gäller som för install-fel,
+      // versionbyte i köfilen ger nytt liv.
+      const antal = raknaTsFel(patchLogg);
+      aterskapaPatchLas();
+      logga(`PATCH-KÖ: TSC-GRINDEN STOPPADE ${spec} — ${antal} typfel mot baslinjen 0 (se /tmp/synk-patch.log) — lock riven, deploy fortsätter på befintlig lock`);
+      for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", `tsc-fel: ${antal} typfel efter patch-install — baslinjen 0 är deployvillkor`);
     } else {
       logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "npm install avslutades med felkod");
@@ -774,11 +1136,6 @@ async function korSynk() {
   // övervakar). Logg till eigen fil för efteranalys.
   const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
   const { spawn } = await import("node:child_process");
-  const aterskapaPatchLas = () => {
-    // riv npm installens lock-ändring — ombyggen ska ske på bevisat
-    // fungerande grund när patchen är misstänkt gärningsman
-    try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
-  };
   const korBygg = () =>
     new Promise((lyckas) => {
       const barn = spawn(
@@ -792,6 +1149,28 @@ async function korSynk() {
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
+  // O97 (NEXT-LÄKEBACKUP): säkra senast gröna .next FÖRE byggstart — LAEKE
+  // skrivs ENDAST när den saknas ("finns-sedan" = senast grönt bevaras; ett
+  // ev. halvskrivet .next från föregående fönster får ALDRIG ersätta den)
+  // och städas vid lyckad deploy. Fail-open: fel loggas, byggandet fortsätter.
+  const nextKatalog = path.join(ROT, ".next");
+  const laekeKatalog = path.join(ROT, ".next-laeke");
+  const lakaNext = (varde) => {
+    const lak = aterstallNextUrLaeke({ nextKatalog, laekeKatalog });
+    if (lak === "aterstallt") {
+      logga(`${varde}: .next ÅTERSTÄLLD ur läkebackup — pm2 serverar senast gröna läget direkt (ISR-cachen värms om vid träff; ombygge nästa poll som innan)`);
+      skrivAudit("prod-synk", "next_lakt_ur_backup", varde, "fallit bygg lämnade .next halvskrivet — senast gröna läget återställt ur .next-laeke");
+    } else if (lak !== "ingen-backup") {
+      logga(`VARNING: .next-läkeåterställning (${varde}) föll: ${lak} — beteendet som före o97-kuren`);
+    }
+    return lak;
+  };
+  {
+    const backup = skapaNextLaekebackup({ nextKatalog, laekeKatalog });
+    if (backup === "skapad") logga("NEXT-LÄKEBACKUP skapad (.next → .next-laeke, ISR-cache exkluderad) — senast gröna läget säkrat före bygget");
+    else if (backup.startsWith("fel:") || backup === "icke-gron") logga(`VARNING: NEXT-LÄKEBACKUP ej tagen (${backup}) — felutfall lämnas som före o97-kuren`);
+    // finns-sedan / saknas-next är tysta normalfall (fönsterföljd / första deployen)
+  }
   const korResultat = await korBygg();
   const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
   if (korResultat) {
@@ -810,7 +1189,10 @@ async function korSynk() {
     // nästa poll när fabrikens barn frigjort minnet. ALDRIG revert/reset
     // av commits som aldrig fått ett ärligt byggtillfälle. Patchad lock
     // rivs (inget kvitto — OOM är inte patchens fel, nytt försök nästa poll).
+    // O97: men .next har rivits/halvskrivits av det dödade bygget —
+    // återställ senast gröna läget så pm2 slutar blöda under väntan.
     if (patchInstallerad) aterskapaPatchLas();
+    lakaNext("oom");
     logga("bygg OOM-dödat (Killed/heap i /tmp/synk-build.log) — infra, ej kodfel: HEAD orört, nytt försök nästa poll");
     return;
   } else {
@@ -836,6 +1218,11 @@ async function korSynk() {
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", "bygg misslyckades med patchad lock");
       patchInstallerad = false;
     }
+    // O97: pm2 serverar nu det rivna/halvskrivna .next som det fallna
+    // bygget lämnat — återställ gröna läget FÖRE ombyggs-kedjan så fönstret
+    // till (ev.) lyckat ombygg inte blöder; varje fallit ombygg river .next
+    // på nytt och läker igen i sin terminal nedan.
+    lakaNext("byggfel");
     if (!nya.trim()) {
       // patchMode utan ny kod: HEAD är deployad och god sedan tidigare —
       // revert vore att reverta DIGLIG kod. MEN det fallna bygget har
@@ -855,6 +1242,7 @@ async function korSynk() {
       } else {
         logga("ombygge på god lock MISSLYCKADES — pm2 orörd, manuell granskning krävs");
         skrivAudit("prod-synk", "deploy_avbruten", "ombygge-god-lock", "patch-mode utan ny kod: även ombygget på god lock misslyckades — manuell granskning krävs");
+        lakaNext("ombygge-god-lock-fall");
         return;
       }
       // O79: patch-lägets lyckade ombygg lämnar felgrenen HÄR — blocket
@@ -910,6 +1298,7 @@ async function korSynk() {
         if (bordeAvstaGoodHeadReset({ rorByggyta, kedjaRorByggyta: headRorByggyta(kedjaFiler) })) {
           logga("ombygg på orörd HEAD misslyckades och KEDJAN goodHead..HEAD rör enbart icke-byggyta — goodHead-ombygg vore identiskt: reset AVSTÅS (o79), HEAD orörd, nytt försök nästa poll");
           skrivAudit("prod-synk", "deploy_avstar_goodhead_reset", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "HEAD+kedja rör enbart icke-byggyta och ombygget föll: goodHead-reset bevisat lönlös (samma bygg) — avstås, HEAD orörd, nytt försök nästa poll");
+          lakaNext("o79-avsta");
           return;
         }
         logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
@@ -922,6 +1311,7 @@ async function korSynk() {
         } catch {
           logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
           skrivAudit("prod-synk", "deploy_avbruten", "good-HEAD", "även good-HEAD-bygget misslyckades — pm2 orörd, manuell granskning krävs");
+          lakaNext("goodhead-kritiskt");
           return;
         }
       }
@@ -945,6 +1335,11 @@ async function korSynk() {
         `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven; ombygge nästa poll (RAM-vakten gäller)`,
       );
       skrivAudit("prod-synk", "deploy_stoppad_artefakt", `artefakt-${artefakt.status}`, artefakt.meddelande);
+      // O97: bygget LYCKADES exit 0 men artefakten är internt inkonsistent —
+      // pm2 (ej omstartad) läser gamla chunk-referenser som nya .next saknar
+      // (E34-klassen: ostylat). Återställ gröna läget; ombygget nästa poll
+      // bygger ut det nya ändå (DEPLOYAD-markören orörd).
+      lakaNext("artefakt-stopp");
       return;
     }
     try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
@@ -981,6 +1376,11 @@ async function korSynk() {
       );
       // MEGA G3 — audit: varje autonom deploy är en spårbar händelse.
       skrivAudit("prod-synk", "deploy", `prod@${deployadHash.slice(0, 8)}`, antal ? `${antal} commits — HTTPS 200 verifierad` : `patch-kö ${patchPlan.map((p) => p.paket).join(", ")} — HTTPS 200 verifierad`);
+
+      // O97: deployen grön ⇒ .next på disk är det nya gröna läget —
+      // läkebackupen är inaktuell och städas (nästa byggstart tar färsk
+      // ur det nya .next; LAEKE speglar alltid senaste LYCKADE deploy).
+      try { fs.rmSync(laekeKatalog, { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills

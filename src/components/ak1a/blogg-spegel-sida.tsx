@@ -61,7 +61,10 @@ export function BloggSpegelSida({
   const related = getBlogPosts().filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <SeoPageShell breadcrumb={[{ name: t("nav.blogg"), href: `/${lang}/blogg` }, { name: post.title }]}>
+    <SeoPageShell
+      lang={lang}
+      breadcrumb={[{ name: t("nav.blogg"), href: `/${lang}/blogg` }, { name: post.title }]}
+    >
       <div lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
         <StrukturData data={bloggSpegelJsonLd(spegel, lang)} id="jsonld-artikel" />
         <StrukturData

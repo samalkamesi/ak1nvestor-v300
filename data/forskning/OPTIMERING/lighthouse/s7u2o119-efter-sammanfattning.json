@@ -1,0 +1,167 @@
+{
+  "namn": "s7u2o119-efter",
+  "ts": 1789919223432,
+  "buildId": "ELBcwg4THC_iP7BbnK9QJ",
+  "struktur": {
+    "status": "OK",
+    "buildId": "ELBcwg4THC_iP7BbnK9QJ",
+    "ts": 1789919060365,
+    "prodStatus": {
+      "/": 200,
+      "/blogg": 200,
+      "/en/blogg": 200,
+      "/ar/blogg": 200,
+      "/en": 200
+    },
+    "bärare": [
+      {
+        "chunk": "3c20dmqsqgcwk.js",
+        "byte": 1913,
+        "strargar": 5
+      }
+    ],
+    "sidinfo": {
+      "en_blogg": {
+        "status": 200,
+        "bytes": 210439,
+        "sha256": "99709dc6fdaaa8e8",
+        "widgetRefser": {
+          "3c20dmqsqgcwk.js": 0
+        },
+        "strargarIHtml": 0
+      },
+      "ar_blogg": {
+        "status": 200,
+        "bytes": 232337,
+        "sha256": "a16ca31483c8b4fc",
+        "widgetRefser": {
+          "3c20dmqsqgcwk.js": 0
+        },
+        "strargarIHtml": 0
+      },
+      "blogg": {
+        "status": 200,
+        "bytes": 215733,
+        "sha256": "51c5a134f965809f",
+        "widgetRefser": {
+          "3c20dmqsqgcwk.js": 0
+        },
+        "strargarIHtml": 0
+      }
+    },
+    "foreInitialref": {
+      "en_blogg": 12,
+      "ar_blogg": 12,
+      "blogg": 13
+    }
+  },
+  "sidor": {
+    "en_blogg": {
+      "n": 2,
+      "poang": 71,
+      "FCP": 1473,
+      "LCP": 4227,
+      "TBT": 573,
+      "CLS": 0,
+      "TTI": 4512,
+      "SI": 2723,
+      "las": {
+        "n1": {
+          "poang": 74,
+          "FCP": 1704,
+          "LCP": 4251,
+          "TBT": 373,
+          "CLS": 0,
+          "TTI": 4554,
+          "SI": 4051,
+          "tidsstampel": "2026-09-20T15:45:32.656Z"
+        },
+        "n2": {
+          "poang": 67,
+          "FCP": 1242,
+          "LCP": 4203,
+          "TBT": 772,
+          "CLS": 0,
+          "TTI": 4470,
+          "SI": 1394,
+          "tidsstampel": "2026-09-20T15:45:50.795Z"
+        }
+      },
+      "fore": {
+        "poang": 67,
+        "FCP": 1253,
+        "LCP": 4059,
+        "TBT": 876,
+        "CLS": 0,
+        "TTI": 4348,
+        "SI": 1567
+      },
+      "TBT_forandring": -35
+    },
+    "ar_blogg": {
+      "n": 1,
+      "poang": 69,
+      "FCP": 1270,
+      "LCP": 4199,
+      "TBT": 663,
+      "CLS": 0,
+      "TTI": 4520,
+      "SI": 1527,
+      "las": {
+        "n1": {
+          "poang": 69,
+          "FCP": 1270,
+          "LCP": 4199,
+          "TBT": 663,
+          "CLS": 0,
+          "TTI": 4520,
+          "SI": 1527,
+          "tidsstampel": "2026-09-20T15:46:07.452Z"
+        },
+        "n2": null
+      },
+      "fore": {
+        "poang": 66,
+        "LCP": 4561,
+        "TBT": 737,
+        "CLS": 0
+      },
+      "TBT_forandring": -10
+    },
+    "blogg": {
+      "n": 1,
+      "poang": 75,
+      "FCP": 1239,
+      "LCP": 4098,
+      "TBT": 445,
+      "CLS": 0,
+      "TTI": 4382,
+      "SI": 2634,
+      "las": {
+        "n1": {
+          "poang": 75,
+          "FCP": 1239,
+          "LCP": 4098,
+          "TBT": 445,
+          "CLS": 0,
+          "TTI": 4382,
+          "SI": 2634,
+          "tidsstampel": "2026-09-20T15:46:24.738Z"
+        },
+        "n2": null
+      },
+      "fore": {
+        "poang": 75,
+        "LCP": 4232,
+        "TBT": 348,
+        "CLS": 0
+      },
+      "TBT_forandring": 28
+    }
+  },
+  "kriterier": {
+    "deploy": true,
+    "prod200x5": true,
+    "struktur": true
+  }
+}

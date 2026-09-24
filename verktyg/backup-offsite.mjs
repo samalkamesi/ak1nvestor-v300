@@ -2,15 +2,19 @@
 /**
  * OFFSITE-BACKUP (våg 172 — kundens 3-2-1-säkerhet)
  * =====================================================================
- * Skapar en ZIP med ALLT kritiskt från servern:
- *   - db.sqlite (ALL sessionhistorik, tråden, alla meddelanden)
+ * Skapar ett tar.gz-arkiv med ALLT kritiskt från servern:
+ *   - db.sqlite-snapshot (ALL sessionhistorik, tråden, alla meddelanden)
  *   - data/vakten/ (mål-state, huvudtråd, sticky-kontext, audit, uppdrag)
  *   - data/forskning/ (alla forskningskapitel, register, program)
  *   - data/blogg-utkast/ (alla 119+ innehållsposter)
  *   - data/kurser-tillagg/ (alla nya kurser)
- *   - .env.production.local (HEMLIGHETER — chmod 600, ALDRIG i git)
  *
- * ZIP:en landar i data/backups/offsite/ — kunden hämtar med
+ * .env* och nyckelfiler ingår ALDRIG i arkivet (s10-u2-offsite-DR
+ * 2026-09-19: motbevisat mot gamla headerpåståenden — säkerhetsscannen
+ * av det verkliga arkivet gav 0 hemlighetsträffar; .env finns bara på
+ * kundens dator via migrationsguiden).
+ *
+ * Arkivet landar i data/backups/offsite/ — kunden hämtar med
  * ett lokalt script (eller OneDrive-synk) till sin dator.
  *
  * Körs: pumpor var 6:e timme (min === 52 && tim % 6 === 2).

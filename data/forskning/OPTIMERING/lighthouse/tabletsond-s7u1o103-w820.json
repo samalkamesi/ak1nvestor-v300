@@ -1,0 +1,441 @@
+{
+  "url": "http://localhost:3000/kurser",
+  "viewport": {
+    "w": 820,
+    "h": 1180,
+    "dpr": 1,
+    "mobile": false
+  },
+  "ts": "2026-09-20T02:00:21.352Z",
+  "kriterium": "Σ|Δ| ≤ 50 px per sektion (o97-flaggens mått, förhand i anspråket)",
+  "topp": {
+    "docH": 9034,
+    "scrollY": 0,
+    "innerH": 1180,
+    "lang": "sv",
+    "sektioner": [
+      {
+        "sel": ".cv-utvalt-flagg",
+        "wrapTop": 559,
+        "wrapH": 1693,
+        "kort": [
+          {
+            "deklarerad": "auto 728px",
+            "h": 310,
+            "top": 692,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 310,
+            "top": 692,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 775,
+            "top": 1017,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 775,
+            "top": 1017,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 444,
+            "top": 1808,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 444,
+            "top": 1808,
+            "synligVidTopp": false
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt-nya",
+        "wrapTop": 2308,
+        "wrapH": 2317,
+        "kort": [
+          {
+            "deklarerad": "auto 728px",
+            "h": 719,
+            "top": 2417,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 719,
+            "top": 2417,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 728,
+            "top": 3152,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 728,
+            "top": 3152,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 728,
+            "top": 3896,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 728,
+            "top": 3896,
+            "synligVidTopp": false
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt-borja",
+        "wrapTop": 4680,
+        "wrapH": 777,
+        "kort": [
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 4813,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 4813,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 5033,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 5033,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 5253,
+            "synligVidTopp": false
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 204,
+            "top": 5253,
+            "synligVidTopp": false
+          }
+        ]
+      }
+    ]
+  },
+  "efter": {
+    "docH": 8991,
+    "scrollY": 7811,
+    "innerH": 1180,
+    "lang": "sv",
+    "sektioner": [
+      {
+        "sel": ".cv-utvalt-flagg",
+        "wrapTop": -7252,
+        "wrapH": 1693,
+        "kort": [
+          {
+            "deklarerad": "auto 728px",
+            "h": 310,
+            "top": -7119,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 310,
+            "top": -7119,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 775,
+            "top": -6794,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 775,
+            "top": -6794,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 444,
+            "top": -6003,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 444,
+            "top": -6003,
+            "synligVidTopp": true
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt-nya",
+        "wrapTop": -5503,
+        "wrapH": 2221,
+        "kort": [
+          {
+            "deklarerad": "auto 728px",
+            "h": 719,
+            "top": -5394,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 719,
+            "top": -5394,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 661,
+            "top": -4659,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 661,
+            "top": -4659,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 700,
+            "top": -3982,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 728px",
+            "h": 700,
+            "top": -3982,
+            "synligVidTopp": true
+          }
+        ]
+      },
+      {
+        "sel": ".cv-utvalt-borja",
+        "wrapTop": -3227,
+        "wrapH": 727,
+        "kort": [
+          {
+            "deklarerad": "auto 204px",
+            "h": 194,
+            "top": -3094,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 194,
+            "top": -3094,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 175,
+            "top": -2884,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 175,
+            "top": -2884,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 194,
+            "top": -2694,
+            "synligVidTopp": true
+          },
+          {
+            "deklarerad": "auto 204px",
+            "h": 194,
+            "top": -2694,
+            "synligVidTopp": true
+          }
+        ]
+      }
+    ]
+  },
+  "docHDelta": -43,
+  "analys": [
+    {
+      "sel": ".cv-utvalt-flagg",
+      "wrapHTopp": 1693,
+      "wrapHEfter": 1693,
+      "kort": [
+        {
+          "deklareradPx": 728,
+          "hTopp": 310,
+          "synligVidTopp": true,
+          "hEfter": 310,
+          "deltaPerKort": -418
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 310,
+          "synligVidTopp": true,
+          "hEfter": 310,
+          "deltaPerKort": -418
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 775,
+          "synligVidTopp": true,
+          "hEfter": 775,
+          "deltaPerKort": 47
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 775,
+          "synligVidTopp": true,
+          "hEfter": 775,
+          "deltaPerKort": 47
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 444,
+          "synligVidTopp": false,
+          "hEfter": 444,
+          "deltaPerKort": -284
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 444,
+          "synligVidTopp": false,
+          "hEfter": 444,
+          "deltaPerKort": -284
+        }
+      ],
+      "sumAbsDelta": 1498,
+      "halten": "SPRICKA (Σ|Δ| > 50)"
+    },
+    {
+      "sel": ".cv-utvalt-nya",
+      "wrapHTopp": 2317,
+      "wrapHEfter": 2221,
+      "kort": [
+        {
+          "deklareradPx": 728,
+          "hTopp": 719,
+          "synligVidTopp": false,
+          "hEfter": 719,
+          "deltaPerKort": -9
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 719,
+          "synligVidTopp": false,
+          "hEfter": 719,
+          "deltaPerKort": -9
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 728,
+          "synligVidTopp": false,
+          "hEfter": 661,
+          "deltaPerKort": -67
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 728,
+          "synligVidTopp": false,
+          "hEfter": 661,
+          "deltaPerKort": -67
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 728,
+          "synligVidTopp": false,
+          "hEfter": 700,
+          "deltaPerKort": -28
+        },
+        {
+          "deklareradPx": 728,
+          "hTopp": 728,
+          "synligVidTopp": false,
+          "hEfter": 700,
+          "deltaPerKort": -28
+        }
+      ],
+      "sumAbsDelta": 208,
+      "halten": "SPRICKA (Σ|Δ| > 50)"
+    },
+    {
+      "sel": ".cv-utvalt-borja",
+      "wrapHTopp": 777,
+      "wrapHEfter": 727,
+      "kort": [
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 194,
+          "deltaPerKort": -10
+        },
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 194,
+          "deltaPerKort": -10
+        },
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 175,
+          "deltaPerKort": -29
+        },
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 175,
+          "deltaPerKort": -29
+        },
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 194,
+          "deltaPerKort": -10
+        },
+        {
+          "deklareradPx": 204,
+          "hTopp": 204,
+          "synligVidTopp": false,
+          "hEfter": 194,
+          "deltaPerKort": -10
+        }
+      ],
+      "sumAbsDelta": 98,
+      "halten": "SPRICKA (Σ|Δ| > 50)"
+    }
+  ]
+}

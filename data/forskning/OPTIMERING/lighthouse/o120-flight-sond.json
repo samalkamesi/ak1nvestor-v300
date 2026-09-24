@@ -1,0 +1,35 @@
+{
+ "en_blogg": {
+  "htmlBytes": 209737,
+  "flightBytes": 116926,
+  "pushes": 5,
+  "fynd": {
+   "monsterRef": 1,
+   "kortStart": 212
+  },
+  "langstaStrangar": [],
+  "readThe": 55
+ },
+ "ar_blogg": {
+  "htmlBytes": 231635,
+  "flightBytes": 128068,
+  "pushes": 5,
+  "fynd": {
+   "monsterRef": 1,
+   "kortStart": 211
+  },
+  "langstaStrangar": [],
+  "readThe": 0
+ },
+ "blogg_sv": {
+  "htmlBytes": 214976,
+  "flightBytes": 115889,
+  "pushes": 1,
+  "fynd": {
+   "monsterRef": 1,
+   "kortStart": 220
+  },
+  "langstaStrangar": [],
+  "readThe": 0
+ }
+}

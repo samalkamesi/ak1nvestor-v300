@@ -1,0 +1,275 @@
+{
+  "bolag": "ERIC-B",
+  "ar": "2025",
+  "proveniensSha": "935b64ca2977c5e0a9a82cdec3796a130992a3c2adb2e387a494fd9375538578",
+  "sammanfattning": {
+    "sektionerTotalt": 369,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 11,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 270,
+      "rubrik": "EBIT: Earnings (loss) before financial items and income tax.",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "rorelsemarginal",
+        "nettoresultat",
+        "eget-kapital",
+        "tillgangar",
+        "kassaflode"
+      ],
+      "siffror": 524,
+      "poang": 37
+    },
+    {
+      "i": 63,
+      "rubrik": "Consolidated financial statementsConsolidated income statementJanuaryDecember,",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "nettoresultat",
+        "kassaflode",
+        "anstallda"
+      ],
+      "siffror": 469,
+      "poang": 32
+    },
+    {
+      "i": 80,
+      "rubrik": "Note B1, contd.Segment information 2024NetworksCloud Software",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "rorelsemarginal",
+        "nettoresultat",
+        "anstallda"
+      ],
+      "siffror": 718,
+      "poang": 32
+    },
+    {
+      "i": 269,
+      "rubrik": "Alternative performance measuresIn this section, the Company",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "tillgangar",
+        "kassaflode"
+      ],
+      "siffror": 501,
+      "poang": 30
+    },
+    {
+      "i": 35,
+      "rubrik": "Board of Directors ReportNet sales decreased by 5% to SEK 236.7",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "rorelsemarginal",
+        "nettoresultat",
+        "eps",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 257,
+      "poang": 29.9
+    },
+    {
+      "i": 84,
+      "rubrik": "Section C  Long-term assetsIntangible assetsCapitalized development",
+      "familjer": [
+        "rorelseresultat",
+        "rorelsemarginal",
+        "kassaflode",
+        "anstallda",
+        "investeringar"
+      ],
+      "siffror": 477,
+      "poang": 29
+    },
+    {
+      "i": 271,
+      "rubrik": "Gross cashSEK millionCash and cash equivalentsInterest-bearing",
+      "familjer": [
+        "nettoomsattning",
+        "kassaflode",
+        "utdelning",
+        "anstallda",
+        "investeringar"
+      ],
+      "siffror": 540,
+      "poang": 29
+    },
+    {
+      "i": 120,
+      "rubrik": "TaxesThe Companys tax expense was SEK\u001f9,588 (2,215) million",
+      "familjer": [
+        "nettoresultat",
+        "kassaflode",
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 509,
+      "poang": 28
+    },
+    {
+      "i": 144,
+      "rubrik": "Other operating income and expenses License revenues and other",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "utdelning"
+      ],
+      "siffror": 506,
+      "poang": 28
+    },
+    {
+      "i": 122,
+      "rubrik": "Statement of cash \u001eowsCash and cash equivalents include cash",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "utdelning"
+      ],
+      "siffror": 395,
+      "poang": 27.8
+    },
+    {
+      "i": 66,
+      "rubrik": "Consolidated statement of changes in equitySEK\u001fmillionCapitalstockAdditional",
+      "familjer": [
+        "nettoresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 627,
+      "poang": 27
+    },
+    {
+      "i": 134,
+      "rubrik": "Parent Company statement of cash flowsJanuaryDecember, SEK\u001fmillionNotesOperating",
+      "familjer": [
+        "nettoresultat",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 437,
+      "poang": 27
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoomsattning",
+      "varde": "1",
+      "kontext": "2024 2023 Net sales B1, B2 236,681 247,880\u001f 263,351 124,013 138,515 161,749 112,668 109,365\u001f 101,602 48,852 53,514 50,664 ",
+      "sektion": 63,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "88.8%",
+      "kontext": "come tax (EBIT)EBIT margin (%)88.8%Financial income and expenses, netIncome after \u001fnancial itemsIncome taxOther segment itemsShare of",
+      "sektion": 80,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "88.8%",
+      "kontext": "tax (EBIT)EBIT margin (%)88.8%Financial income and expenses, netIncome after \u001fnancial itemsIncome taxOther segment itemsShare of earnings of",
+      "sektion": 80,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "nettoresultat",
+      "varde": "28.7",
+      "kontext": "3% (3.8%).Net income was SEK 28.7 (0.4) billion. Earnings per share (diluted) was SEK 8.51 (0.01), including a SEK 1.70 per share benefit fr",
+      "sektion": 35,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "8.51",
+      "kontext": " billion. Earnings per share (diluted) was SEK 8.51 (0.01), including a SEK 1.70 per share benefit from the gain related to the divestment of iconec",
+      "sektion": 35,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "33.0",
+      "kontext": "% (11.0%).Cash flow from operating activities was SEK 33.0 (46.3) billion. Free cash flow before M&A was SEK 26.8 (40.0) billion.Cash and c",
+      "sektion": 35,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "2025",
+      "kontext": "roposes a dividend for 2025 of SEK 3.00 (2.85) per share and a share buyback program of up to SEK 15 billion to the Annual General Meeting",
+      "sektion": 35,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "9",
+      "kontext": "40 years after the introduction of digital mobile technology, it is predicted that there will be 9.4 billion mobile subscriptions (ex",
+      "sektion": 84,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "15",
+      "kontext": "net assetsCapexLeasing paymentsRestructuringFree cash flow (before M&A)Financial targetsAdjusted EBITA margin1518%Important driversInc",
+      "sektion": 14,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "91.4",
+      "kontext": "lion, and total equity amounted to SEK 91.4 (70.6) billion.Share informationAs of December 31, 2025, the total number of shares issued was 3,3",
+      "sektion": 49,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    },
+    {
+      "familj": "ordning",
+      "varde": "2025",
+      "kontext": "s between orders booked and cash received. Ericsson 2025Alternative performance measuresFinancial ReportCorporate Governance ReportRemunerati",
+      "sektion": 272,
+      "kalla": {
+        "namn": "ERIC-B årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/15448/4316310/3963269.pdf"
+      }
+    }
+  ]
+}

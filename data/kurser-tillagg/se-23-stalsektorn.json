@@ -1,0 +1,176 @@
+{
+  "slug": "se-23-stalsektorn",
+  "category": "SEKTORANALYS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Stålsektorn — kapacitetens hävstång, malmen mot skrotet och förädlingstrappan",
+  "summary": "SEKTORANALYS-familjens tjugotredje steg öppnar stålsektorn — den sektor som byggde den tunga industrin och som fortfarande är börsens mest renodlade cykelmaskin. Sonden mot registret (479 kurser vid sondtillfället) ger noll kursägare på sektorns kärnmekanik: stålcykeln, järnmalmspriset, grossistpriset, kapacitetsutnyttjandet och det elektriska stålet är samtliga oskrivna ytor — medan SSAB, Sandvik, Atlas Copco och SKF passerar som exemplar i nyckeltalskurserna och rk-15 samt vr-02 lånar stålbolagen just för att illustrera cykelrisk och normalisering. Kursen äger mekaniken själv, genom tre påhittade verk: Forshammar Stål AB (integrerat verk, 4,0 miljoner ton om året) där kapacitetsutnyttjandets hävstång svänger rörelseresultatet från plus 2 000 till minus 400 miljoner på ett volymfall från fullt till 60 procent; Kvarnviken Stål AB (skrotverk med ljusbågsugn) där samma volymfall landar nära noll eftersom de fasta kostnaderna är en femtedel; och Velox Specialstål AB (elektriskt stål) vars kärnplåt till transformatorverk säljs till 12 000 kronor tonet och vars efterfrågan följer elnäten i stället för bygget. Därutöver kontraktets och spotens två klockor (kvartalsskuggan: ett spotfall på 20 procent blir ett prisfall på 6 procent men ett bidragsfall på 13,6 procent), de två råvaruvägarnas olika känslighet (malmen förhandlas globalt, skrotet följer stålpriset och dämpar fallet), utbudets tröghet (masugnen är ett beslut med 40-årig livslängd) och protokollets fem frågor till en stålräkning. Pedagogisk utbildning om mekanismer — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "SEKTORANALYS-familjens 22 första steg har täckt skogen, rederiet, försäkringen, gruvan, kemisektorn och byggentreprenaden — men inte den sektor som alltsedan Bessemerprocessen har varit tungindustrins ryggrad och som för en svensk analytiker är den klassiska första cykelkursen. Sondens belägg: «stålcykeln» 0 kursägare, «järnmalmspriset» 0, «grossistpris» 0, «elektriskt stål» 0 — och kapacitetsutnyttjandets hävstång nämns enbart i förbifart av se-02:s halvledarfab och ma-04:s indikatorer — medan grannarna rör sig runt ytan: se-20 äger malmen i berget (gruvsidans kassamarginal; masugnen och valsverket oskrivna), km-045-materialsektorn och km-041-industrisektorn är översiktskurser utan cykelmekanik, rk-15-cykelrisk och vr-02-normaliserade-multipler äger begreppen och lånar stålbolagen som exempel, och pc-01-case-atlas-copco äger ett enstaka bolagscase. Ingen kurs äger ugnens ekonomi: kapacitetsutnyttjandets hävstång, kontrakt mot spot, de två råvaruvägarna och förädlingstrappan. Kursen fäller ihop familjens tidigare trådar — rk-15:s cykelrisk, vr-02:s normalisering, ma-08:s bostadstransmission — i sektorn där de alla är som mest synliga.",
+  "learn": "Läsa kapacitetsutnyttjandet som sektorns viktigaste drivkurva: Forshammar på full volym ger rörelseresultat 2 000 miljoner, på 80 procent 800, på 60 procent minus 400 — var tionde procentenhet volym är 600 miljoner i resultat, ty de fasta kostnaderna (4 000 miljoner) förhandlas inte medan tonaget svänger. Skillnadsräkna priset: kontraktsandelen 70 procent kvartalsförhandlad och 30 procent spot gör att ett spotfall på 20 procent bara sänker blandpriset 6 procent men bidraget per ton 13,6 procent — hävstången 2,3 gånger, och kvartalsskuggan gör att resultaträkningen speglar förra kvartalets spot. Känna de två råvaruvägarnas anatomi: malmvägen (1 100 kronor i malm per ton stål) chockas av järnmalmspriset, skrotvägen (1 200 kronor i skrot plus 400 kronor i el) av elpriset — men skrotet samvarierar med stålpriset och dämpar fallet inbyggt. Tidsätta utbudet: masugnen är ett beslut med 40 års livslängd och 12 miljarder i byggkostnad, och kapacitetsloppet anländer i kluster när toppårens vinster alla byggs samtidigt. Slutligen förädlingstrappan: Velos kärnplåt bär 29,2 procents resultatmarginal mot Forshammars 14,7 — trappans prisfullmakt vilar på tre års kvalificering hos fyrtio transformatorverk (mt-05:s byteskostnad i stålets skepnad).",
+  "history": {
+    "origin": "Före 1856 var stål ett specialmaterial — svärd, fjädrar, verktyg — tillverkat i små deglar och prissatt som lyx. Henry Bessemers patent samma år, att blåsa luft genom smält gjutjärn så kolet brann ut av egen kraft, förvandlade stål till ett byggnadsmaterial i tonklass: järnvägarna, broarna och skroven kunde nu bäras av ett material som var både starkt och massproducerbart. I Sverige visade Göran Fredrik Göransson vid Sandvikens järnverk på 1860-talet att processen gick att bemästra i industriell skala — landet med malm i berget fick en förädlingsled intill gruvan.",
+    "evolution": "Martinverket övertog kvalitetsstålet vid sekelskiftet och höll det i ett halvsekel. På 1950-talet flyttade tyngdpunkten två vägar samtidigt: syrgasprocessen (Linz-Donawitz 1952) gjorde masugn plus syrgasblåsning till den integrerade standarden — och i USA växte miniverken fram som smälte skrot i ljusbågsugn, utan masugn och utan koks, nära kunderna i stället för nära malmen. Därmed föddes sektorns två råvaruvägar som kursen räknar på: malmens långväga globala prissättning och skrotets lokala cirkulering.",
+    "modern": "2020-talets stålhistoria skrivs av två krafter. Elektrifieringen: transformatorernas kärnplåt blev en flaskhals när elnäten byggdes ut för förnybart — det elektriska stålets kvalificering tar år och efterfrågan följer nätinvesteringarna. Och avkarboniseringen: vätgas i stället för koks som reduktionsmedel (den svenska HYBRIT-linjen) flyttar kostnadsmassan från kolet till elen och gör effektbehovet till sektorns nya råvarufråga — skrotvägens gamla elräkning blir hela sektorns."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Kapacitetsutnyttjandet — ugnens hävstång",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Kontrakt och spot — prisets två klockor",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Malm eller skrot — de två råvaruvägarna",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Utbudets tröghet — masugnen som 40-årsbeslut",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Förädlingstrappan — från coil till kärnplåt",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till en stålräkning",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch placerade cykliska bolag i en egen fackkategori — med varningen att de ser billigast precis när de är dyrast, på lågt värderingstal ovanpå toppmarginaler — och stålsektorn är den läroboksklassiker han tecknar: multiplerna är lägst vid kapacitetsutnyttjandets topp, när nästa kurs redan står i startgroparna. Hans handregel för sådana bolag är att räkna på var i cykeln siffrorna läses, inte på multipeln själv; kursens kapacitetsstege (fullt, 80, 60 procent) är exakt den övningen. Lynch betonade också att tillfälliga faktorer kan hålla ett cykelbolag uppe längre än väntat — orden passar masugnen, vars 40-åriga livslängd fördröjer både det onda och det goda.",
+  "grahamSection": "Benjamin Graham lärde att balansräkningen vittnar när resultaträkningen cyklar: stålverkets tillgångar — masugn, valsverk, hamn — bär bokfört värde från decenniers investeringar, och frågan är om de kan återfå sin avkastning över en hel cykel snarare än under ett enskilt år. Hans säkerhetsmarginal översätts här till normaliseringskravet (vr-02:s instrument): vinstbasen som värderingen vilar på ska bäras av cykelns medelpris, inte av toppårets kapacitetsutnyttjande. Grahams varning för att köpa en låg multipel på en tillfälligt hög vinst är stålräkningens första kommentarrad.",
+  "ak1Section": "I AK1A:s metodik är stålsektorn standardfallet för den långa tidshorisontens normalisering: fem horisonter spänner cykeln, och värderingen läggs på cykelns medelpris via vr-02 snarare än på senaste kvartalets tonpris. Cykelrisken (rk-15) exemplifieras här i sin renaste form — volym, pris och marginal svänger i den eftersläpandedel ma-08 beskriver från bostadskredit till byggnadsstål — och soliditetsmåttet (st-01) blir överlevnadsmåttet: frågan är inte om minusåret kommer utan hur många minus-400-miljoner-år balansräkningen tål innan cykeln vänder. Pedagogiken är som alltid utbildning om mekanismer; placeringsbesluten lämnas åt läsaren.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kapacitetsutnyttjandet — ugnens hävstång",
+      "intro": "De flesta sektorer lever med priset som viktigaste kurva. Stålsektorn lever med volymen: ugnen och valsverket kostar samma per år oavsett om de går varma eller kalla, och därför äger kapacitetsutnyttjandet resultaträkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens första exempelbolag Forshammar Stål AB (påhittat för räkningen) är ett integrerat verk: malm och koks går in i masugnen, syrgasen blåser, valsverket formar — kapacitet 4,0 miljoner ton stål om året. De fasta kostnaderna — ugnarnas, hamnens, underhållets och personalens bottennota — är 4 000 miljoner kronor per år, alltså 1 000 kronor per ton vid fullt utnyttjande. Den rörliga kostnaden (råvaror, energi, arbete i processen) är 1 900 kronor per ton, och kontraktspriset på bandstål ligger vid 3 400. Räkna stegen: bidraget per ton är 3 400 minus 1 900 = 1 500 kronor. Vid full volym ger det 1 500 gånger 4,0 miljoner ton = 6 000 miljoner i täckningsbidrag, minus 4 000 fasta = rörelseresultat plus 2 000 miljoner. Sjunker utnyttjandet till 80 procent (3,2 miljoner ton) faller bidraget till 4 800 — resultatet 800 miljoner. Vid 60 procent (2,4 miljoner ton) är bidraget 3 600 och resultatet minus 400 miljoner. Volymen föll 40 procent; resultatet svängde 2 400 miljoner — från djup vinst till förlust utan att priset rörde sig en krona. Hävstången sitter i de fasta: var tionde procentenhet kapacitetsutnyttjande är 0,4 miljoner ton gånger 1 500 = 600 miljoner i rörelseresultat, och den fasta kostnaden per ton stiger från 1 000 vid fullt utnyttjande till 1 250 vid 80 och 1 667 vid 60. Här ligger gränsen mot grannkurserna: rk-15 äger cykelrisken som begrepp och vr-02 normaliseringskonsten — detta kapitel äger mekaniken de lånar sitt exempel från — se-02 äger samma hävstång i halvledarfaben, detta kapitel äger den i ugnen. Och mot se-20: gruvkursen äger malmen i berget; här börjar ekonomin först vid ugnen."
+        },
+        {
+          "type": "definition",
+          "content": "Kapacitetsutnyttjande: producerad volym dividerat med teknisk årskapacitet — sektorns viktigaste ledande tal, ty de fasta kostnadernas belopp per ton är dess spegelvända funktion. Täckningsbidrag per ton: kontrakterat pris minus rörlig kostnad per ton; multiplicerat med volymen och minskat med fasta kostnader ger det rörelseresultatet. Ugnens hävstång: resultatets förändring per procentenhet volymförändring — i Forshammars fall 600 miljoner per 10 procentenheter, oavsett nivå."
+        },
+        {
+          "type": "insight",
+          "content": "Stålbolagets resultaträkning är två kurvors produkt — volym och pris — men volymkurvan bär hävstången: en ugn som går på halvfart betalar först hela sin fasta nota. Därför läses en stålräkning uppifrån och ner: utnyttjandegraden först, multipeln sist."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Kontrakt och spot — prisets två klockor",
+      "intro": "Priset på stål är inte ett pris utan två: kontraktspriset som förhandlas kvartalsvis med industriella kunder, och spotpriset som sätts dagligen för det öppna tonaget. Resultaträkningen går på de bådas blandning — med eftersläpning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Forshammar säljer 70 procent av volymen på kvartalskontrakt (3 400 kronor tonet) och 30 procent på spot. Antag att spot faller 20 procent till 2 720 medan kontrakten står kvar till nästa omförhandling. Blandpriset blir 0,7 gånger 3 400 plus 0,3 gånger 2 720 = 2 380 plus 816 = 3 196 kronor — priset föll alltså bara 6,0 procent. Men räkna bidraget: en kontraktston ger 3 400 minus 1 900 = 1 500; en spotton ger 2 720 minus 1 900 = 820. Blandbidraget blir 0,7 gånger 1 500 plus 0,3 gånger 820 = 1 050 plus 246 = 1 296 kronor — en minskning med 13,6 procent. Ett prisfall på 6 procent blev ett bidragsfall på 13,6: hävstången 2,3 gånger, av samma skäl som i kapitel ett — den rörliga kostnaden står kvar och följer inte priset ned. Kontrollen i andra änden: en femtiofemtioblandning ger blandpriset 3 060 (minus 10 procent) och blandbidraget 1 160 (minus 22,7 procent) — samma hävstång, ty den är inbyggd i kostnadens tröghet. Därtill kommer klockan: kontrakten omförhandlas först vid kvartalsgränsen, så det kvartal som redovisas speglar föregående kvartals spot — kvartalsskuggan. Ett bolag med hög kontraktsandel redovisar lugnare kvartal men hamnar efter i vändningarna: när spot vänder uppåt säljer kontraktsbolaget fortfarande till gårdagens pris, och när spot faller är det skyddat en stund — skyddet är ett lån, inte en gåva. Här gränsar kursen mot se-22:s fasta pris som såld inflationsoption och mot ma-08:s transmissionsled från bostadskrediten till byggnadsstålet: kontraktet är sektorns sätt att dela cykelrisken med kunden, och kontraktsandelen är därför den första raden i en stålbolagsbeskrivning."
+        },
+        {
+          "type": "tabell",
+          "content": "Kontrakt och spot (Forshammar: 70 % kvartalskontrakt à 3 400, 30 % spot; rörlig kostnad 1 900): SPOTFALL 20 % — spot 2 720, kontrakt oförändrat · BLENDELT PRIS — 0,7 × 3 400 + 0,3 × 2 720 = 3 196, alltså minus 6,0 % · BLENDELT BIDRAG — 0,7 × 1 500 + 0,3 × 820 = 1 296, alltså minus 13,6 % · HÄVSTÅNGEN — 2,3 gånger: priset tappade 6 %, bidraget 13,6 % · KONTROLLEN 50/50 — pris minus 10 % ger bidrag minus 22,7 %: samma hävstång · KVARTALSSKUGGAN — kontrakten speglar förra kvartalets spot i resultaträkningen"
+        },
+        {
+          "type": "insight",
+          "content": "Kontraktsandelen är sektorns inbyggda stötdämpare — men dämpare fördelar effekten i tiden, de tar inte bort den. Frågan till en stålräkning är aldrig bara vad priset är, utan vilka två klockor det läses på."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Malm eller skrot — de två råvaruvägarna",
+      "intro": "Två kemiska vägar leder till samma ton stål: masugnen som reducerar järnmalm med koks, och ljusbågsugnen som smälter skrot med elektricitet. De två vägarna bär helt olika kostnadskänslighet — och därmed olika cykel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Forshammars rörliga kostnad på 1 900 kronor per ton är malmens värld: cirka 1 100 i järnmalm (prissatt på en global marknad), 350 i koks, 200 i processenergi och 250 i arbete och övrigt. Kursens andra exempelbolag Kvarnviken Stål AB (påhittat) är ett skrotverk: ljusbågsugn, kapacitet 0,8 miljoner ton, och en kostnadskorg av annat slag — 1 200 i skrot (omkring 1,08 ton skrot per ton stål), 400 i el (400 kilowattimmar per ton), 100 i elektroder och övrigt, 200 i arbete: också 1 900 kronor, men med annan geografi. Räkna känsligheten: stiger järnmalmspriset 30 procent kostar det Forshammar 1 100 gånger 0,30 = 330 kronor per ton — en chock som Kvarnviken inte märker. Stiger elpriset 50 procent kostar det Kvarnviken 400 gånger 0,50 = 200 kronor per ton — Forshammar rör knappt på sig. Men den djupaste skillnaden är samvariationen: malmen prissätts globalt av gruvornas utbud (se-20:s värld) och följer sin egen logik; skrotet är stålets egen spegel — när stålpriset faller faller skrotpriset efter, och skrotverkets bruttomarginal dämpas inbyggt i fallet. Skrotet är en kort cykel, malmen en lång. De fasta kostnaderna fullbordar kontrasten: Kvarnviken bär 700 miljoner per år (875 kronor per ton vid fullt utnyttjande) mot Forshammars 4 000. Vid 60 procents utnyttjande ger Kvarnviken 0,48 miljoner ton gånger 1 500 = 720 minus 700 = plus 20 miljoner — nästan noll — medan Forshammar enligt kapitel ett visar minus 400. Samma volymfall, olika konsekvens: skrotverket kan dessutom pausa ugnen veckovis, medan den malmbaserade masugnen kräver kontinuitet och är som svårast att stänga just när den borde. Gränsen mot se-20: gruvkursen äger malmbrytningens ekonomi; detta kapitel äger vad malmen kostar som råvara i ugnen."
+        },
+        {
+          "type": "tabell",
+          "content": "De två råvaruvägarna (rörlig kostnad 1 900 kr/ton i båda): MALMVÄGEN (Forshammar) — malm 1 100 + koks 350 + energi 200 + arbete/övrigt 250 · SKROTVÄGEN (Kvarnviken) — skrot 1 200 + el 400 (400 kWh/ton) + elektroder/övrigt 100 + arbete 200 · CHOCK MALM +30 % — 1 100 × 0,30 = 330 kr/ton för Forshammar; Kvarnviken opåverkat · CHOCK EL +50 % — 400 × 0,50 = 200 kr/ton för Kvarnviken · SKROTETS SPEGEL — skrotpriset samvarierar med stålpriset: fallet dämpas inbyggt · FASTA KOSTNADER — Forshammar 4 000 Mkr/år mot Kvarnviken 700 · VID 60 % VOLYM — Forshammar minus 400 Mkr, Kvarnviken plus 20 Mkr"
+        },
+        {
+          "type": "insight",
+          "content": "Vilket verk som lider längst i en nedgång står i kostnadskorgen, inte i prislistan: malmverket bär de höga fasta kostnaderna och en global råvara, skrotverket låga fasta och en råvara som själv faller. Cykeln straffar inte alla lika — den frågar först vilken kemi verket bygger på."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Utbudets tröghet — masugnen som 40-årsbeslut",
+      "intro": "Efterfrågesidans kurvor — bostäder, infrastruktur, bilar — svänger på några år. Utbudssidan svänger på decennier: en masugn beslutas i toppen, byggs under fallet och driver i tjugo år efter det. Det är sektorns andra hävstång.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Forshammars nästa kapacitetsetapp — en masugnslinje med valsverk — kostar i räkneexemplet 12 miljarder kronor och ger en miljon ton per år: 12 000 kronor per årston kapacitet, och en teknisk livslängd på omkring 40 år. Beslutet är alltså ett lån på fyra decennier, fattat på en enda års prislista. Nu mekanismen som gör cykeln: under de goda åren — fullt utnyttjande, resultat 2 000 miljoner — ser varje verk samma räkning och var och en beslutar expandera; om fem verk var och en lägger 20 procent växer sektorns utbud 20 procent, men ingen ensam verksstyrelse fattade det beslutet. Byggtiden på tre till fyra år släpar kapaciteten in i nästa fas, ofta redan i ett fallande pris — och när ugnarna tänds samtidigt träffar tonaget en efterfrågan som vänt. Historien bär mönstret: efter Kinas infrastrukturårtionden göts under 2010-talets mitt omkring hälften av världens stål i ett enda land, och när tillväxten där bröts blev överskottet globalt — prisfall, nedläggningar, och i Europa lades tonaget ned först och ugnarna därefter. Där förenas kursens trådar med grannarna: rk-15 äger cykelrisken som portföljbegrepp och ma-08 äger transmissionsleden från räntan till byggnadsstålet — detta kapitel äger utbudssidan, som ingen efterfrågekurs tar. Den pedagogiska frågan till en expansionsplan är därför inte om efterfrågan finns i dag utan vad alla andra redan byggt: i en sektor där masugnen lever i 40 år är konkurrenternas redan fattade byggnadsbeslut viktigare än årets orderbok. Notera slutligen spegelbilden: trögheten gör också toppen — när kapacitet väl ligger nere tar den år att väcka, och prisutbrotten kommer när efterfrågan vänder mot ett utbud som stängdes i förtid."
+        },
+        {
+          "type": "tabell",
+          "content": "Utbudets aritmetik (exempel): ETAPPEN — 12 mdr kr för 1,0 Mton/år = 12 000 kr per årston · LIVSLÄNGDEN — cirka 40 år: beslutet lever fyra decennier · KAPACITETSLOPPET — fem verk à plus 20 % = sektorn plus 20 %, ingen ensam beslutade det · BYGGTIDEN — 3–4 år: tonaget anländer i nästa cykelfas · 2010-TALET — omkring halva världens stål göts i Kina; överskottet blev globalt när tillväxten bröts · SPEGELBILDEN — nedlagd kapacitet tar år att väcka: utbrotten kommer på vändans sida"
+        },
+        {
+          "type": "insight",
+          "content": "Efterfrågecykler mäts i år, utbudscykler i verkgenerationer. Den som läser en stålbolagsplan och ser bara årets orderbok har läst halva sektorn — den andra halvan står i konkurrenternas byggnadsställningar."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Förädlingstrappan — från coil till kärnplåt",
+      "intro": "Volymstålet säljs i ton och prissätts av cykeln. Men trappan har steg: varje steg upp i förädling — och i kvalificering — flyttar priset från börsnoterat ton till förhandlad prestanda. Kursens tredje exempelbolag bor på översta planet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Velox Specialstål AB (påhittat) gör elektriskt stål — den kärnplåt som transformatorernas kärnor skärs ur. Priset ligger i exemplet på 12 000 kronor per ton, den rörliga kostnaden på 5 500, och bidraget blir 6 500 per ton mot Forshammars 1 500. Velox volym är liten — 0,3 miljoner ton — men med fasta kostnader på 900 miljoner blir resultatet 0,3 gånger 6 500 = 1 950 minus 900 = 1 050 miljoner på en omsättning av 3 600: resultatmarginal 29,2 procent mot Forshammars 14,7 vid fullt utnyttjande. Skillnaden är inte stålet utan kundrelationen: kärnplåten kvalificeras hos varje transformatorverk i en provnings- och godkännandeprocess som i exemplet tar tre år och omfattar omkring fyrtio verk världen över — byter ett verk leverantör måste det nya materialet provas genom samma cykel. Det är mt-05:s byteskostnadsmoat i stålets skepnad: trappan skyddar inte genom att stålet är hemligt utan genom att bytet är dyrt och långsamt. Och efterfrågan följer inte bygget utan elnäten: när överföringskapacitet och förnybar utbyggnad accelererar ökar transformatorbeställningarna — en efterfrågevåg som är oberoende av bostadscykeln och som under 2020-talets mitt gjort kärnplåt till en flaskhals med väntetider. Här gränsar kursen mot km-047 (som äger elnätet som sektor) och mot vr-06 (som äger jämförelsebolagskonsten): Velox jämförs inte med Forshammar på tonpris utan med andra kvalificerade leverantörer på godkända produktprogram. Trappans läxa är dubbel: marginalen köps med tiden (kvalificeringsåren är bundet kapital) och skyddet är verkligt men inte evigt — provningscertifikaten förnyas av prestanda, och en ny materialgeneration kan tvinga hela trappan att byggas om."
+        },
+        {
+          "type": "tabell",
+          "content": "Trappans två plan (exempel): VOLYMSTÅL (Forshammar) — pris 3 400, bidrag 1 500/ton, resultatmarginal 14,7 % vid fullt utnyttjande · KÄRNPLÅT (Velox) — pris 12 000, rörlig 5 500, bidrag 6 500/ton · VELOX RESULTAT — 0,3 Mton × 6 500 = 1 950 minus fasta 900 = 1 050 miljoner på omsättning 3 600 = 29,2 % · KVALIFICERINGEN — cirka tre år per verk, omkring 40 verk: bytestiden är moaten (mt-05) · EFTERFRÅGAN — följer elnätsinvesteringar (km-047:s värld), inte bostadscykeln · TRAPPANS PRIS — marginalen köps med bundet kapital och tid · TRAPPANS GRÄNS — nya materialgenerationer tvingar omkvalificering: skyddet förnyas av prestanda"
+        },
+        {
+          "type": "insight",
+          "content": "Förädlingstrappan är sektorns versionsval: volymsteget tävlar om tonpriset med hävstången i volymen, toppsteget tävlar om godkännandena med hävstången i tiden. Båda är stål — ekonomiskt är det två olika branscher."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till en stålräkning",
+      "intro": "Familjens avslutningskapitel samlar kursens verktyg i ett läsprotokoll — fem frågor som varje stålredovisning, verklig eller påhittad, kan ställas mot innan siffrorna döms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett: var i kapacitetsstegen läses siffrorna — redovisas utnyttjandegraden (fullt, 80, 60 procent) och är vinsten räknad på ett toppårs tonpris eller på cykelns medel? Fråga två: vilka två klockor bär priset — kontraktsandel och spotandel i procent, och vilken kvartalsskugga ligger i resultaträkningens priser? Fråga tre: vilken råvaruväg — malm eller skrot — och vad kostar en malmchock på 30 procent respektive en elchock på 50 procent per ton i just den kostnadskorgen? Fråga fyra: var på förädlingstrappan står verket — volymstål, eller kvalificeringar som tagit år att vinna och som efterfrågan från elnät eller fordonsindustri bär? Fråga fem: vad är överlevnadsmåttet i dalåret — med de fasta kostnaderna som given nota, hur många år av cykelns bottennivå tål balansräkningen innan soliditeten (st-01) blir sektorns hela fråga? Protokollet dömer inte bolaget — det gör räkningen läsbar: fem frågor, fem svar, och först därefter är en multipel ens ett tal att samtala om. Plattformens markering följer familjens sed: kursen beskriver mekanismer och mätningar i påhittade exempelverk, och lämnar varje verkligt placeringsbeslut där det hör hemma — hos läsaren och dennas egna gränser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens motor. Fall ett: Forshammar vid 70 procents utnyttjande (2,8 miljoner ton) — bidrag 2,8 × 1 500 = 4 200 minus fasta 4 000: vad blir resultatet (svar: plus 200 miljoner), och hur många procentenheter volym återstår till nollstrecket? Fall två: full volym men spot faller 20 procent för hela kvartalet med 70-procentig kontraktsandel — blandbidrag 1 296 per ton, alltså 1 296 × 4,0 = 5 184 minus 4 000 (svar: plus 1 184 miljoner): hur mycket av toppresultatet 2 000 bars bort av en prisrörelse som bara var 6 procent av blandpriset? Fall tre: Kvarnviken vid halv volym (0,4 miljoner ton) — 0,4 × 1 500 = 600 minus fasta 700 (svar: minus 100 miljoner): vilket av de tre verkens ställning i kapitel tre tål flest sådana kvartal, och vad i kostnadskorgen förklarar det?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets femte fråga är sektorns hela tålmodighet i en rad: stålcykeln belönar inte den som räknar vackrast på toppen utan den som räknar djupast i dalen. De fem tidshorisonterna i metodiken finns just för den läsningen."
+        }
+      ]
+    }
+  ]
+}

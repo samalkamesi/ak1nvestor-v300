@@ -43,3 +43,28 @@ export function konsolFelIndikerarDeployStorning(konsolFel) {
     return rad.includes("net::ERR_");
   });
 }
+
+// o148 (s8-u3, 2026-09-21): förväntade AUTH-401 — konsolfel som inte är fel.
+//
+// BAKGRUND (bevis: granssnitt-2026-09-21T113043.json — 8 av svepets 28 fynd):
+// vakten öppnar /studio som ANONYM webbläsare; sidans klient poll:ar GET
+// /api/studio/stream och servern svarar 401 — vilket är AUTENTISERINGS-
+// GRINDENS KORREKTA svar (kundens privata chattyta; dom BY-DESIGN i o146 §7
+// + o147:s dömning: "slutpunkten SKALL svara 401 för anonyma"). Chrome
+// loggar ändå nätverksraden i konsolen och vakten räknade den som defekt —
+// 8 falska fynd per svep som ingen källändring får bort (studion SKALL
+// fortsätta polla; svaret SKALL förbli 401). Samma instrumentklass som
+// 429-egen-throttle och favicon-404: brus, inte sajtfel.
+//
+// SMALHET är doktrin: ENDAST status 401 (annan status på samma slutpunkt —
+// t.ex. 500 — förblir fel) och ENDAST slutpunkter med en fastslagen
+// BY-DESIGN-dom (godtycklig 401 på en publik yta är ett ÄKTA fel som
+// larmar). Ny slutpunkt tilläggs här först när en dom finns på papper.
+export const AUTH_401_SLUTPUNKTER = ["/api/studio/stream"];
+
+export function arForvantadAuth401(text, url) {
+  const t = typeof text === "string" ? text : "";
+  const u = typeof url === "string" ? url : "";
+  if (!t.includes("Failed to load resource") || !t.includes("status of 401")) return false;
+  return AUTH_401_SLUTPUNKTER.some((sokvag) => u.includes(sokvag) || t.includes(sokvag));
+}

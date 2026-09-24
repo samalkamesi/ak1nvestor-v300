@@ -13,7 +13,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -119,7 +119,7 @@ async function main() {
   // barn A-Ö. Commit-tagg [organ:X] = organets leveransbevis.)
   let organRapport = "(fabriken kunde inte köras)";
   try {
-    const ut = execSync("node verktyg/organ-fabrik.mjs --evolvera", {
+    const ut = execFileSync("node", ["verktyg/organ-fabrik.mjs", "--evolvera"], {
       cwd: ROT,
       encoding: "utf8",
       timeout: 30_000,
@@ -133,7 +133,7 @@ async function main() {
   // RAD-rader = rondens HÖGSTA prioritet (självläkningen självläker).
   let halsorad = "(hälsoprovet kunde inte köras)";
   try {
-    const ut = execSync("node verktyg/organism-halsa.mjs", {
+    const ut = execFileSync("node", ["verktyg/organism-halsa.mjs"], {
       cwd: ROT,
       encoding: "utf8",
       timeout: 45_000,
@@ -174,7 +174,7 @@ HÅRT LEVERANSPROTOKOLL (strikt):
    Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
 7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.
 8. EVIGHETSMOTORN (våg 147 — kunddirektiv "bygga vidare så den aldrig slocknar igen"): kontrollera att PIPELINE-KO.md har MINST 3 KOMMANDE vågar bokade; om tunn/tom — fyll på ur data/infra/evighetskatalog.md (rotera spår, aldrig samma två ronder i rad; granskningskön = förstahandsval när aktuell) FÖRE du verkställer. Organismen får aldrig stå utan nästa våg.
-9. ALLVETANDE BESLUTSUNDERLAG + EVOLUTIONÄRA GAP-REGISTRET (våg 159 — kunddirektiv "organen vet allt, deras beslut om allt"): före verkställning, läs och VÄG IN i rondens beslut: (a) data/forskning/zcode-kallkod/ — 13 kapitel om zcode:s inre; olästa §-rekommendationer = obeskattade beslut (körda: M4-minnesberedaren, M6-läge, m7-generateText, k1-k3; köade i agentfabrik/ko/: m-kapitel-verkstall v1-v3); (b) skuldlistan: Mimosa full-scan (scanner_enobufs noterad ×5), AI-Mentor-uppgradering på generateText (medlems-scopad + rate-limit — kostnadsbeslut), kundens granskningskö 14 FLYTTKLAR (R2: VÄNTAR KUND — påminn, publicera ALDRIG autonomt); (c) uppdragsloggen data/vakten/uppdragslogg.jsonl (aktuellt KUNDUPPDRAG?). Prioritera efter kundvärde — besluten är DINORGANISMENS, verkställ dem. (d) data/forskning/ZCODE-GAP-REGISTER.md — kundvisionen EXAKT z code-paritet: välj registrets högst rankade ÖPPNA gap (V/A-kvot) som en av rondens vågor; stäng ENDAST med live-bevis.`;
+9. ALLVETANDE BESLUTSUNDERLAG + EVOLUTIONÄRA GAP-REGISTRET (våg 159 — kunddirektiv "organen vet allt, deras beslut om allt"): före verkställning, läs och VÄG IN i rondens beslut: (a) data/forskning/zcode-kallkod/ — 13 kapitel om zcode:s inre; olästa §-rekommendationer = obeskattade beslut (körda: M4-minnesberedaren, M6-läge, m7-generateText, k1-k3; köade i agentfabrik/ko/: m-kapitel-verkstall v1-v3); (b) skuldlistan: mimosa-ENOBUFS ÄR KURERAT (o35: full-scan 954/0 GRÖN + kraschbevis-arkivering i vakt-cron — kvar: äkta eldprov väntar första faktiska krasch), AI-Mentor-uppgradering på generateText (medlems-scopad + rate-limit — kostnadsbeslut), kundens granskningskö FLYTTKLAR-paketen (antalet i GRANSKNINGSKO-SAMMANSTALLNING; R2: VÄNTAR KUND — påminn, publicera ALDRIG autonomt); (c) uppdragsloggen data/vakten/uppdragslogg.jsonl (aktuellt KUNDUPPDRAG?). Prioritera efter kundvärde — besluten är DINORGANISMENS, verkställ dem. (d) data/forskning/ZCODE-GAP-REGISTER.md — kundvisionen EXAKT z code-paritet: välj registrets högst rankade ÖPPNA gap (V/A-kvot) som en av rondens vågor; stäng ENDAST med live-bevis.`;
 
   // VÅG 133c — FETCH-RETRY: en transient app-server-blipp (deploy-omstart,
   // tillfällig belastning) ska ALDRIG kosta en hel 3-timmarsrond. Bevis:

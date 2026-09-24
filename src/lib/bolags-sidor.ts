@@ -1,10 +1,11 @@
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 // ── BOLAGSSIDORNA (VÅG 149 — B1 i SOKORDSINVENTERING-2026) ─────────────────
 //
-// Datalager för /bolag + /bolag/{slug}: 100 programmatiska nyckeltalssidor,
-// en per rad i data/portfolj-system/bolagsunivers.json.
+// Datalager för /bolag + /bolag/{slug}: programmatiska nyckeltalssidor —
+// en per rad i data/portfolj-system/bolagsunivers.json (antalet följer
+// dataleveranserna; o148: ytor talar datadrivet, aldrig "100").
 //
 // GRÄNSVAKT (A2-DATASET-KONTRAKT §1): publik yta = bolagets RÅNYCKELTAL +
 // avvikelse mot branschmedian + källor + datering. AKM2-komposit, band,
@@ -106,7 +107,7 @@ function str(v: string | null | undefined): string | null {
 }
 
 /**
- * Läs alla 100 bolagssidor, cachat i modulminnet (ett fs-pass per process —
+ * Läs alla bolagssidor, cachat i modulminnet (ett fs-pass per process —
  * build och varje ISR-fönster delar läsningen). Kastar vid oläslig
  * universumfil — en halvtrasig bolagsmeny är värre än inget bygge.
  */
@@ -160,16 +161,85 @@ export function bolagSlugs(): string[] {
   return lasBolagsSidor().map((s) => s.slug);
 }
 
+// ── PUBLICERINGSKONTRAKTET (o146) ───────────────────────────────────────────
+//
+// ROTFEL (bevisat 2026-09-21): rutten /bolag/[slug] är byggfryst enligt våg
+// 81-doktrinen (dynamicParams = false är RÖR EJ: true ger i Next 16 soft-404
+// — notFound-HTML med HTTP 200, prodmätt 2026-09-07). Samtidigt läste
+// sitemap (force-dynamic) och /bolag-registret (ISR) universumfilen LIVE.
+// När dataleveranser växer universumet utan deploy (data-doktrinen — rätta
+// protokollet!) lovade live-ytorna sidor som rutten 404:ade: 2026-09-21
+// 249 lovade mot 243 byggda = 6 döda löften (ai-pa, barc-l, cap-pa, dsy-pa,
+// lloy-l, nwg-l — gränsnittsvaktens 24 konsolfynd i svepet 11:30Z).
+//
+// KUR: bygget är sanningen om vad som existerar. generateStaticParams
+// skriver ned de byggda slugs till data/cache/bolags-publicerade.json
+// (gitignorad runtime-cache, våg 121-mönstret: skrivfel kastar ALDRIG) och
+// live-ytorna (sitemap, registret, syskonlänkar) lovar ENDAST dessa.
+// Saknas/ogiltig cache faller allt tillbaka på hela universumet = dagens
+// beteende — kontraktet degraderar mjukt, aldrig hårt.
+
+const PUBLICERAD_FIL = path.join(
+  process.cwd(),
+  "data",
+  "cache",
+  "bolags-publicerade.json",
+);
+
+/** Byggets nedteckning — anropas ENDAST från generateStaticParams (o146). */
+export function skrivPubliceradeSlugs(slugs: string[]): void {
+  try {
+    mkdirSync(path.dirname(PUBLICERAD_FIL), { recursive: true });
+    writeFileSync(
+      PUBLICERAD_FIL,
+      JSON.stringify({ ts: new Date().toISOString(), slugs }, null, 2),
+    );
+  } catch {
+    // Våg 121: cachen är en accelerator, aldrig ett beroende — bygget
+    // fortsätter; live-ytornas fallback håller beteendet som idag.
+  }
+}
+
+/** Slugs med byggd sida (senaste byggets nedteckning). Fallback: hela universumet. */
+export function publiceradeBolagSlugs(): string[] {
+  try {
+    const parsad = JSON.parse(readFileSync(PUBLICERAD_FIL, "utf8")) as {
+      slugs?: unknown;
+    };
+    if (
+      Array.isArray(parsad.slugs) &&
+      parsad.slugs.length > 0 &&
+      parsad.slugs.every((s) => typeof s === "string" && s.trim() !== "")
+    ) {
+      return parsad.slugs;
+    }
+  } catch {
+    // Saknas/ogiltig nedteckning → live-ytorna lovar hela universumet
+    // (dagens beteende) tills nästa bygge skriver kontraktet.
+  }
+  return bolagSlugs();
+}
+
+/** Bolagssidor med byggd sida — registret och syskonlänkarnas källa (o146). */
+export function publiceradeBolagSidor(): BolagSida[] {
+  const publicerade = new Set(publiceradeBolagSlugs());
+  return lasBolagsSidor().filter((s) => publicerade.has(s.slug));
+}
+
 /** Sidan för en slug — null om bolaget inte finns (rutten svarar 404). */
 export function bolagUrSlug(slug: string): BolagSida | null {
   return lasBolagsSidor().find((s) => s.slug === slug) ?? null;
 }
 
-/** Bolag i samma bransch (exklusive sig själv) — syskonlänkarna. */
+/** Bolag i samma bransch (exklusive sig själv) — syskonlänkarna.
+ *  o146: enbart publicerade syskon — en ISR-revalidaterad sida får aldrig
+ *  länka till ett universumbolag vars sida ännu inte byggts. */
 export function syskonBolag(slug: string): BolagSida[] {
   const sida = bolagUrSlug(slug);
   if (!sida) return [];
-  return lasBolagsSidor().filter((s) => s.bransch === sida.bransch && s.slug !== slug);
+  return publiceradeBolagSidor().filter(
+    (s) => s.bransch === sida.bransch && s.slug !== slug,
+  );
 }
 
 /** Nollställ minnes-cachen (testbarhet). */

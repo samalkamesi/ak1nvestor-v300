@@ -1,0 +1,19 @@
+studio: auto s2-u1 dataset-djup +1 BP (BP.L) — supermajor-kvintetten komplett + Storbritannien/energi 0→1; universum 225→226
+
+- BP p.l.c. (LSE-primär, GBX, dec-bokslut, USD-rapport): BP·CVX·XOM·SHEL·TTE = världens fem
+  klassiska supermajors nu komplett i universumet; UK 5→6 grenar (energi-grenen född 0→1).
+- Pivot dokumenterad: Aramco 2222.SR sonderades först men StockAnalysis saknar Tadawul (404)
+  => källkonventionen ohållbar; BP.L med SA fulldata + Yahoo-paranoid (0,00 % band).
+- Signatur: netto 7 563->-2 488->15 238->439->5->TTM 5 426 M USD (Rosneft-exit 2022,
+  raffinaderi-nedskrivningar 2024-25, TTM-vändning); P/E 21,51 mot fwd 8,08 = kvintettens
+  dyraste trailing men billigaste framåtblickande; PEG null (AMT/CRWD-konventionen).
+  Återköpsmaskin -21,7 % aktiebas 4 år; DPS-trappa 5 raka år; shareholder yield 7,89 %;
+  resCAGR -84,0 % endpoint-fällan (grenens gemensamma FY2021-bas); beta -0,22.
+- Medianer: energi P/E 17->17,3 (kv 12,4-22, n 19->20) · totalt 20,5->20,6 (n 215->216);
+  BP rank 14/20, P/B 1,50 grenens nya P25-ände.
+- KVD: aritmetik 18/18 abort-grind (1 eget fel fångat före skrivning) · append kirurgisk
+  bit-identisk prefix · llms HELREGEN 226 med prod round-trip LIVE · läckagevakt 0 ·
+  prod 200 x2 (/, /llms.txt); /dataset-500 = synkens dokumenterade OOM-loop sedan 10:40
+  (InvariantError-manifestklass, /_not-found samma klass; byggen ägs av prod-synken).
+- R2 orörd; data/blogg/ orörd; src orörd = inget bygge. Protokoll
+  data/forskning/S2-U1-BP-UTOKNING-OMG23.md; FIFO: BP rapp 2026-10-30. [fabrik]

@@ -345,11 +345,14 @@ function matDatabas(dom) {
   ).split('\n').filter((l) => l.trim() !== '');
 
   // En enda UNION ALL-fråga — exakta count(*) per tabell (pg_stat-uppskattningar
-  // är inte bevis nog för DR).
+  // är inte bevis nog för DR). Identifierarna CITERAS (kur 2026-09-21:
+  // aufr-blad bär tabellen "public.analytiska sidan" — mellanslag i namnet
+  // bröt ociterade FROM; AUTO-3 RÖT → kur → AUTO-4/AUTO-6 GRÖNA).
   const raderPerTabell = {};
+  const citera = (t) => t.split('.').map((p) => `"${p.replace(/"/g, '""')}"`).join('.');
   for (let i = 0; i < tabeller.length; i += 50) {
     const del = tabeller.slice(i, i + 50);
-    const fraga = del.map((t) => `SELECT '${t}' AS t, count(*) AS n FROM ${t}`).join(' UNION ALL ') + ';';
+    const fraga = del.map((t) => `SELECT '${t.replace(/'/g, "''")}' AS t, count(*) AS n FROM ${citera(t)}`).join(' UNION ALL ') + ';';
     for (const rad of sql(fraga, { timeoutMs: 300000 }).split('\n')) {
       const sep = rad.indexOf('|');
       if (sep > 0) raderPerTabell[rad.slice(0, sep)] = Number(rad.slice(sep + 1));

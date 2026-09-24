@@ -12,7 +12,10 @@ import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KALLA = path.join(ROT, "verktyg", "prod-synk.mjs");
-const LOGG = path.join(ROT, "data", "vakten", "prod-synk.log");
+// Loggen skrivs av pumpor-daemonen i PROD-trädet — arbetsytan först, sedan
+// prod-fallback (samma mönster som scenarion/tradspermanens-sviterna).
+const LOGG_SOKVAGAR = [path.join(ROT, "data", "vakten", "prod-synk.log"), "/home/ak1a/AK1/data/vakten/prod-synk.log"];
+const LOGG = LOGG_SOKVAGAR.find((p) => fs.existsSync(p)) ?? LOGG_SOKVAGAR[0];
 
 let pass = 0;
 const fel = [];

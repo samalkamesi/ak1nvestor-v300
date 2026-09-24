@@ -1,0 +1,30 @@
+{
+ "syntax": [],
+ "resultat": [
+  {
+   "svit": "testa-ai-mentor-warrant.mjs",
+   "dom": "39 PASS · 0 FAIL"
+  },
+  {
+   "svit": "testa-ai-mentor-multipel.mjs",
+   "dom": "74 PASS / 0 FAIL"
+  },
+  {
+   "svit": "testa-ai-mentor-kedja.mjs",
+   "dom": "314 PASS · 0 FAIL"
+  },
+  {
+   "svit": "testa-ai-mentor-bokmastar.mjs",
+   "dom": "25 PASS · 0 FAIL"
+  },
+  {
+   "svit": "testa-ai-mentor-grahamgolv.mjs",
+   "dom": "30 PASS · 0 FAIL"
+  },
+  {
+   "svit": "testa-ai-mentor-riskdjup.mjs",
+   "dom": "27 PASS · 0 FAIL"
+  }
+ ],
+ "antalDiffade": 42
+}

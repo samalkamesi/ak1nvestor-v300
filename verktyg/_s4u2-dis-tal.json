@@ -1,0 +1,444 @@
+{
+ "F": {
+  "pris": 107.98,
+  "mcap": 186.448,
+  "pe": 21.903,
+  "pb": 1.698,
+  "evEbit": 12.269,
+  "peg": 2.63,
+  "fcfYield": 0.0261,
+  "roe": 0.0801,
+  "roic": 0.1224,
+  "brutto": 0.376,
+  "ebit": 0.193,
+  "netto": 0.087,
+  "fcfMarg": 0.0492,
+  "skuldEk": 0.394,
+  "omsCagr": 0.0451,
+  "resCagr": 0.58,
+  "ttm": 0.068,
+  "prognos": 0.082,
+  "insider": 30,
+  "serAr": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serOms": [
+   82722000000,
+   88898000000,
+   91361000000,
+   94425000000
+  ],
+  "serRes": [
+   3145000000,
+   2354000000,
+   4972000000,
+   12404000000
+  ]
+ },
+ "Q": {
+  "q4_25": {
+   "dag": "2025-11-13",
+   "oms": 22.46,
+   "omsEst": 22.75,
+   "eps": 0.73,
+   "epsPy": 0.25,
+   "justEps": 1.11,
+   "justEpsPy": 1.14,
+   "justEpsEst": 1.04,
+   "nettoTotalt": 1.44,
+   "nettoPy": 0.564,
+   "dtcOp": 0.352,
+   "dtcOpDelta": 0.099,
+   "subDh": 196,
+   "subDhDelta": 12.4,
+   "subD": 132,
+   "subDDelta": 3.8,
+   "entOp": 0.691,
+   "entOpDelta": -0.376
+  },
+  "q1_26": {
+   "dag": "2026-02-02",
+   "oms": 25.981,
+   "omsPy": 24.69,
+   "omsEst": 25.54,
+   "eps": 1.34,
+   "epsPy": 1.4,
+   "justEps": 1.63,
+   "justEpsPy": 1.76,
+   "justEpsEst": 1.57,
+   "foreSkatt": 3.693,
+   "dtcOms": 5.35,
+   "dtcOmsVaxt": 11,
+   "dtcOp": 0.45,
+   "dtcOpVaxt": 72
+  },
+  "q2_26": {
+   "dag": "2026-05-06",
+   "oms": 25.17,
+   "omsPy": 23.621,
+   "omsEst": 24.83,
+   "eps": 1.27,
+   "epsPy": 1.81,
+   "justEps": 1.57,
+   "justEpsPy": 1.45,
+   "justEpsEst": 1.49,
+   "op": 3.9,
+   "dtcOp": 0.582,
+   "dtcOpVaxt": 88,
+   "dtcOmsVaxt": 13
+  },
+  "q3_26": {
+   "dag": "2026-08-05",
+   "oms": 25.25,
+   "omsPy": 23.646,
+   "omsEst": 25.43,
+   "eps": 1.52,
+   "epsPy": 2.93,
+   "justEps": 2.06,
+   "justEpsEst": 1.86,
+   "nettoCirka": 2.64,
+   "segOpVaxt": 21,
+   "rekordExperiences": true
+  },
+  "q4_26": {
+   "dag": "2026-11-12 (estimat, obekräftat)",
+   "segOpGuide": 4.9
+  },
+  "guide": {
+   "fy26JustEpsTillvaxt": 16,
+   "vecka53": true,
+   "kassaflodeMal": 8
+  },
+  "q3_25": {
+   "dag": "2025-08-06",
+   "oms": 23.646,
+   "eps": 2.93,
+   "justEps": 1.61,
+   "justEpsEst": 1.47,
+   "netto": 5.26,
+   "skattefordel": "Hulu-relaterad engångspost (WSJ)"
+  },
+  "fy25": {
+   "justEps9m": 4.82,
+   "justEpsAr": 5.93,
+   "gaepEpsAr": 6.85,
+   "nettoAr": 12.404
+  }
+ },
+ "R": {
+  "aktieAntal": 1.7267,
+  "epsTtmFalt": 4.93,
+  "epsTtmGaap": 4.86,
+  "epsGaapGapPct": 1.44,
+  "epsTtmJust": 6.37,
+  "justGapMdr": 1.51,
+  "justGapAndel": 23.7,
+  "pePaGaap": 22.22,
+  "pePaJust": 16.95,
+  "nettoTtmFalt": 8.51,
+  "nettoTtmGaap": 8.39,
+  "nettoGaapGapPct": 1.43,
+  "netto2025": 12.404,
+  "ttmMot2025": -32.4,
+  "omsTtm": 98.86,
+  "omsTtmPy": 94.53,
+  "omsTtmVaxtKedja": 4.6,
+  "ttmFaltPct": 6.8,
+  "q3NettoHalvering": -50,
+  "q4NettoDubbling": 155,
+  "pbRoeIdent": 21.2,
+  "identGapPct": -3.2,
+  "ekPbVag": 109.8,
+  "ekRoeVag": 106.2,
+  "ekGapPct": -3.3,
+  "ebitTtm": 18.88,
+  "ev": 232,
+  "evOverMcap": 1.244,
+  "nettoskuldPekare": 46,
+  "skuldUrkvot": 43,
+  "pegKonv": 2.671,
+  "pegKvot": 0.985,
+  "pegImplicit": 8.33,
+  "serOmsCagr": 4.51,
+  "serResCagr": 58,
+  "resFyraGanger": 5.27,
+  "omsFyraAr": 14.1,
+  "fy26GuideEps": 6.88,
+  "niondeM26": 5.26,
+  "q4Implicit": 1.62,
+  "q4ImplicitVaxt": 45.9,
+  "dtcTrappa": [
+   0.352,
+   0.45,
+   0.582
+  ],
+  "fcfTtm": 4.9,
+  "fcfMotMal": 61,
+  "scenBasEbit": 18.22,
+  "scen": {
+   "-3%/-1pp": 16.76,
+   "-3%/0": 17.68,
+   "-3%/+1pp": 18.59,
+   "0/-1pp": 17.28,
+   "0/0": 18.22,
+   "0/+1pp": 19.17,
+   "+3%/-1pp": 17.8,
+   "+3%/0": 18.77,
+   "+3%/+1pp": 19.74
+  },
+  "enhetMarginal": 0.944,
+  "enhetVolymEbit": 0.182,
+  "marginalVager": 5.2,
+  "universumMedian": {
+   "pe": 20.37,
+   "pb": 2.7,
+   "evEbit": 17.5765,
+   "peg": 1.255,
+   "fcfYield": 0.0427,
+   "roe": 0.14575,
+   "roic": 0.12865,
+   "brutto": 0.4781,
+   "ebit": 0.2111,
+   "netto": 0.139,
+   "fcfMarg": 0.1258,
+   "skuldEk": 0.55,
+   "omsCagr": 0.04665,
+   "resCagr": 0.04665,
+   "ttm": 0.06615,
+   "prognos": 0.1421
+  }
+ },
+ "medianer": {
+  "pe": {
+   "median": 16.2,
+   "n": 21,
+   "varde": 21.903
+  },
+  "pb": {
+   "median": 2.27,
+   "n": 23,
+   "varde": 1.698
+  },
+  "evEbit": {
+   "median": 14.5,
+   "n": 23,
+   "varde": 12.269
+  },
+  "peg": {
+   "median": 1.49,
+   "n": 17,
+   "varde": 2.63
+  },
+  "fcfYield": {
+   "median": 0.0737,
+   "n": 23,
+   "varde": 0.0261
+  },
+  "roe": {
+   "median": 0.163,
+   "n": 23,
+   "varde": 0.0801
+  },
+  "roic": {
+   "median": 0.1074,
+   "n": 23,
+   "varde": 0.1224
+  },
+  "brutto": {
+   "median": 0.4781,
+   "n": 23,
+   "varde": 0.376
+  },
+  "ebit": {
+   "median": 0.181,
+   "n": 23,
+   "varde": 0.193
+  },
+  "netto": {
+   "median": 0.1145,
+   "n": 23,
+   "varde": 0.087
+  },
+  "fcfMarg": {
+   "median": 0.1258,
+   "n": 22,
+   "varde": 0.0492
+  },
+  "skuldEk": {
+   "median": 1.28,
+   "n": 23,
+   "varde": 0.394
+  },
+  "omsCagr": {
+   "median": 0.0332,
+   "n": 23,
+   "varde": 0.0451
+  },
+  "resCagr": {
+   "median": 0.0378,
+   "n": 16,
+   "varde": 0.58
+  },
+  "ttm": {
+   "median": 0.046,
+   "n": 23,
+   "varde": 0.068
+  },
+  "prognos": {
+   "median": 0.08885,
+   "n": 20,
+   "varde": 0.082
+  }
+ },
+ "ranglista": {
+  "pe": {
+   "hogst": "6/21",
+   "lagst": "16/21",
+   "top3": [
+    "MTG-B.ST",
+    "IVSO.ST",
+    "TELIA.ST"
+   ]
+  },
+  "pb": {
+   "hogst": "16/23",
+   "lagst": "8/23",
+   "top3": [
+    "SPOT",
+    "NFLX",
+    "IVSO.ST"
+   ]
+  },
+  "evEbit": {
+   "hogst": "18/23",
+   "lagst": "6/23",
+   "top3": [
+    "WBD",
+    "SPOT",
+    "IVSO.ST"
+   ]
+  },
+  "peg": {
+   "hogst": "5/17",
+   "lagst": "13/17",
+   "top3": [
+    "WBD",
+    "9433.T",
+    "9432.T"
+   ]
+  },
+  "fcfYield": {
+   "hogst": "19/23",
+   "lagst": "5/23",
+   "top3": [
+    "CMCSA",
+    "WBD",
+    "DTE.DE"
+   ]
+  },
+  "roe": {
+   "hogst": "20/23",
+   "lagst": "4/23",
+   "top3": [
+    "NFLX",
+    "TEL2-A.ST",
+    "SPOT"
+   ]
+  },
+  "roic": {
+   "hogst": "8/23",
+   "lagst": "16/23",
+   "top3": [
+    "SPOT",
+    "NTDOY",
+    "NFLX"
+   ]
+  },
+  "brutto": {
+   "hogst": "19/23",
+   "lagst": "5/23",
+   "top3": [
+    "META",
+    "CMCSA",
+    "MTG-B.ST"
+   ]
+  },
+  "ebit": {
+   "hogst": "11/23",
+   "lagst": "13/23",
+   "top3": [
+    "META",
+    "NFLX",
+    "T"
+   ]
+  },
+  "netto": {
+   "hogst": "15/23",
+   "lagst": "9/23",
+   "top3": [
+    "TEL2-A.ST",
+    "META",
+    "NFLX"
+   ]
+  },
+  "fcfMarg": {
+   "hogst": "20/22",
+   "lagst": "3/22",
+   "top3": [
+    "NFLX",
+    "WBD",
+    "TELIA.ST"
+   ]
+  },
+  "skuldEk": {
+   "hogst": "19/23",
+   "lagst": "5/23",
+   "top3": [
+    "VPLAY-B.ST",
+    "TMUS",
+    "VZ"
+   ]
+  },
+  "omsCagr": {
+   "hogst": "9/23",
+   "lagst": "15/23",
+   "top3": [
+    "IVSO.ST",
+    "MTG-B.ST",
+    "META"
+   ]
+  },
+  "resCagr": {
+   "hogst": "2/16",
+   "lagst": "15/16",
+   "top3": [
+    "IVSO.ST",
+    "DIS",
+    "TMUS"
+   ]
+  },
+  "ttm": {
+   "hogst": "11/23",
+   "lagst": "13/23",
+   "top3": [
+    "NTDOY",
+    "META",
+    "VPLAY-B.ST"
+   ]
+  },
+  "prognos": {
+   "hogst": "11/20",
+   "lagst": "10/20",
+   "top3": [
+    "WBD",
+    "IVSO.ST",
+    "DTE.DE"
+   ]
+  }
+ },
+ "grenStorlek": 23,
+ "universumStorlek": 249
+}

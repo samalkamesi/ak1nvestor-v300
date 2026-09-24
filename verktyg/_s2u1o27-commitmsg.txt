@@ -1,0 +1,44 @@
+studio: auto s2-u1 DATASET-DJUP +1 TAKEDA 4502.T — JAPAN/HÄLSA 0→1 (universum 249→250)
+
+Fabriksagent s2-u1 (manifest auto-s2-1790017500456, byggare 1/3, omgång 27).
+
+VAL: Japan/halso 0→1 via Takeda Pharmaceutical — Japans SJÄTTE gren
+(konsument 5 · kommunikation 5 · finans 5 · material 1 · teknik 1 ⇒ +halso)
+och universumets första japanska läkemedelsrad; omg25-protokollets fria-lista
+lämnade koordinaten explicit; u1-linjens 0→1-mönster i stor ekonomi håller
+(omg22 Schweiz/finans · 23 UK/energi · 24 Kanada/kommunikation ·
+25 Japan/material · 26 Frankrike/material · 27 Japan/halso). TYO-kanalen
+sexfaldigt bevisad. Källor: StockAnalysis tyo/4502 fem ytor + Yahoo
+chart-API paranoid 5 968 ¥ = 0,00 % band EXAKT.
+
+Sony-fällan-grinden: TTM-netto −163,4 mdr ¥ < 0 ⇒ pe/peg/prognosTillväxt
+null (Ørsted-precedensen); fwd PE 41,87 ⇒ +142,5 ¥ implicerat = vändnings-
+året som NOT aldrig fält. Signatur: EBIT 639,5 mdr = seriens högsta medan
+netto −152,4 (gap −770 mdr under driftlinjen) · Shire-legatet goodwill+
+intangibla 9 278 mdr = 59,3 % av tillgångarna, Altman 1,09, MEDAN FCF
+771,7 mdr/år (5/5 positiva) ⇒ P/FCF 12,35 mot P/E n/a — Ørsteds
+spegelbild (bokföringen röd, kassan grön) · utdelningen orockad genom
+förluståret, grundat 1781 = universums tredje äldsta · beta 0,10 näst
+lägst efter NSC 0,09.
+
+Kvartiler: halso P/B 3,6→3,5 (kv-P25 2,8→2,6) · EBIT-kv-P25 18,7→16,1 %
+(ny P25-gräns) · FCF-marginal-median 15,4→16,4 % · fcfYield-kv-P75
+6,6→7,2 % · P/E-trapporna ORÖRDA (n 239; pe=null ⇒ n-transparensen
+10→11 osatta). Universumjämförelse: P/B rank 41/247 (botten) samtidigt
+som fcfYield 8,1 % = topp-17 av 218 — balansräkningens risk mot
+kassaflödets verklighet.
+
+KVD: aritmetikgrind 26/26 GRÖN efter två ärliga ABORT före skrivning
+(enhetsfel i egna förväntade värden + felbreddat prefix-bevis; omg16/23/25-
+mönstret) · append kirurgisk 249→250 prefix-bit-identisk, läs-tillbaka ×2 ·
+llms.txt HELREGEN matt-driven på 250 (omkörning idempotent; konvergent mot
+parallella syskon) · läckagevakt v3 0 träffar (448 sökningar) + v98 0
+träffar (250+250) · kontraktstest 188/0/30 (ingen ny landsida) · tsc 0
+projektbinär · INGET bygge src orörd (Vonovia-precedensen) · prod / +
+/llms.txt 200 LIVE "på 250 bolag"; /dataset 500 = deployfönster-artefakt
+(C17/o113-klassen; prod-synken VÄNTAR på detta manifest enligt V235 —
+bygger klart efter omgångens commits; byggen ägs av prod-synken/krasch-
+vakten) · R2 orörd · data/blogg/ orörd.
+
+FIFO: Q2 FY2027 2026-10-29. Protokoll: S2-U1-TAKEDA-UTOKNING-OMG27.md.
+[fabrik]

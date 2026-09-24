@@ -1,0 +1,23 @@
+studio: rond 146 — OBEROENDE GRANSKNINGSPROV: 5/5 ÄLDSTA KVARTALSUTKAST FLYTKLARA-KANDIDATER (granska-kvartalsutkast.mjs, permanent Θ-verktyg) [organ:Theta]
+
+VERKTYGET (granska-kvartalsutkast.mjs): juridikgrind (11 rådverb-mönster SV/EN med
+NEGERINGSFÖNSTER — disclaimerns "inte en rekommendation att…" är grön text, aldrig
+fynd), disclaimer-närvaro, källmarkörer (ord + markdown-länkar), struktursanity
+(ord/H2/title). Default = 5 äldsta kvartalsutkast; CLI tar godtyckliga filer.
+
+RESULTAT (5 äldsta, 09-15): Volvo Car/Ericsson/H&M/SKF/Industrivärden Q3-2026
+SAMTLIGA flytklar-kandidater — 0 äkta rådverb, exakt utbildningsdisclaimer med
+lagrum (2007:528) på sista raden, 5–7 källmarkörer, 1 242–1 736 ord, H2 6–7.
+Fabrikens själv-KVD (s4-spåret) HÅLLER under oberoende sampling — rapport:
+data/blogg-utkast/GRANSKNING-r146-kvartal-prov.json.
+
+VACCINATION (två falska domar fångade FÖRE leverans): (1) rådverb-regex utan
+negeringsfönster dömde disclaimerns eget ord — 4/5 falska RÖD; (2) källregex utan
+markdown-länkar dömde H&M RÖD trots 19 källrader med äkta hmgroup-länkar. Båda
+kurerade med bevis (kontextutdrag i rapporten).
+
+OBSERVATION (icke-blockerande): titellängd 77–102 tkn överskrider SEO-spårets
+60-konvention — kvartalsserien tycks ha egen titelkonvention (s4:s egen KVD
+godkände); frågan bokförs för konventionsbeslut, ingen dom i verktyget.
+Också: karantän-intagets testsvit 14 PASS/0 FAIL efter r143:s UA-kur (KVD-ansvaret
+efter kodrörelse i delat verktyg).

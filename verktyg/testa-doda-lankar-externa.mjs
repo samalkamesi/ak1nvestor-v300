@@ -7,16 +7,23 @@
 // maskinen). SvitEN verifierar VERKTYGSKONTRAKTET, inte sajten.
 //
 // Körning: node verktyg/testa-doda-lankar-externa.mjs  (från repots rot)
-// Kontrakt som testas (o47 §2 / o55 §2, bärt till externa av o87):
+// Kontrakt som testas (o47 §2 / o55 §2, bärt till externa av o87; o113
+// tillför driftfönster-återmätningen):
 //   A bas ej frisk        → avbrott vid hälsogrind, INGEN fil alls
 //   B driftfönster > tak  → fyndfil kasseras (exit 2), mellanlager märks,
-//                           återupptagning till mätvärde VÄGRAS (bakdörren)
+//                           återupptagning till mätvärde VÄGRAS (bakdörren);
+//                           o113: återmätning väcks men kasserar sig själv
+//                           när felen består (okända fel maskeras ALDRIG)
 //   C friskt läge         → mätvärde levererat, DOD-mål med källor
 //   D filskydd            → befintliga filer skrivs ALDRIG över
 //   E byggprocess pågår   → avbrott vid pgrep-grind
 //   F deploylås ägs       → avbrott vid fuser-grind (ÄGANDE, ej existens)
 //   G hela mönster        → "next build"-sekvensen ger inget falsklarm
 //   H --tvinga            → diagnostikläget levererar märkt data, aldrig mätvärde
+//   J driftfönster slut   → fönstervakt + EN återmätning räddar mätomgången
+//                           (kod 0, andra mellanlagret grönt, atermatAntal=1)
+//   K fönstret stänger ej → väntetak → exit 2, ENDA insamlingen bevaras,
+//                           aldrig ändlös omkring-crawl
 
 import fs from "node:fs";
 import os from "node:os";
@@ -88,6 +95,8 @@ function korVerktyg({ bas, cwd, extra = [], miljo = {} }) {
           ...process.env,
           AK1A_DEPLOY_LAS: miljo.las || `${cwd}-deploy-las-som-inte-finns.lock`,
           AK1A_BYGG_MONSTER: miljo.monster || "akt1a-testbyggare-som-aldrig-finns",
+          ...(miljo.retryVanta ? { AK1A_RETRY_VANTA_MS: miljo.retryVanta } : {}),
+          ...(miljo.retryPoll ? { AK1A_RETRY_POLL_MS: miljo.retryPoll } : {}),
         },
       },
       (fel, stdout, stderr) => losa({ kod: fel ? fel.code : 0, stdout, stderr })
@@ -129,7 +138,8 @@ console.log(`Fixtures: ${arbete}`);
 }
 
 // --- B: driftfönster — > 5 % LOKALA sidfel kasserar fyndfilen, mellanlagret
-//        märks, och återupptagning till mätvärde VÄGRAS (bakdörren stängd) ---
+//        märks, o113-återmätningen kasserar sig själv när felen består (ingen
+//        maskering), och återupptagning till mätvärde VÄGRAS (bakdörren) ---
 {
   const locs = Array.from({ length: 20 }, (_, i) => `/sida-${i}`);
   const { server, port } = await startaServer((p) => {
@@ -138,14 +148,18 @@ console.log(`Fixtures: ${arbete}`);
     return { status: 500, kropp: "" };
   });
   const cwd = fs.mkdtempSync(path.join(arbete, "b-"));
-  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd });
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { retryPoll: "200" } });
   rapport("B1", "avbrott med kod 2 (driftfönster)", r.kod === 2, `kod=${r.kod}`);
   rapport("B2", "artefaktdoktrinens förklaring syns", /DRIFTFÖNSTER/.test(r.stderr || r.stdout), "");
   const f = vaktenFiler(cwd);
   rapport("B3", "ingen fyndfil skriven", f.fynd.length === 0, JSON.stringify(f.fynd));
-  rapport("B4", "mellanlagret bevaras som diagnostikunderlag", f.insamling.length === 1, JSON.stringify(f.insamling));
-  const mellan = lasJson(cwd, f.insamling[0]);
-  rapport("B5", "mellanlagret märkt driftfonster=true + driftAndel", mellan?.driftfonster === true && mellan?.driftAndel === 1, `andel=${mellan?.driftAndel}`);
+  // o113: fönstret var fritt (okänd felorska) → EN återmätning väcktes och
+  // kasserade sig själv — felet rapporteras fortfarande, aldrig maskerat.
+  rapport("B4", "båda insamlingarna bevaras som diagnostikunderlag", f.insamling.length === 2, JSON.stringify(f.insamling));
+  const mellan1 = lasJson(cwd, f.insamling[0]);
+  const mellan2 = lasJson(cwd, f.insamling[1]);
+  rapport("B5", "båda mellanlagren märkta driftfonster=true + driftAndel 1", mellan1?.driftfonster === true && mellan1?.driftAndel === 1 && mellan2?.driftfonster === true && mellan2?.driftAndel === 1, `andel1=${mellan1?.driftAndel} andel2=${mellan2?.driftAndel}`);
+  rapport("B5b", "återmätningen väcktes (loggad) men kasserade sig själv", /driftfonster-atermat/.test(r.stderr || ""), "");
   const r2 = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd: fs.mkdtempSync(path.join(arbete, "b5-")), extra: ["--validera-fran", path.join(cwd, "data", "vakten", f.insamling[0])] });
   rapport("B6", "återupptagning till mätvärde VÄGRAS (kod 1)", r2.kod === 1, `kod=${r2.kod}`);
   rapport("B7", "vägransförklaringen syns", /driftfönster/.test(r2.stderr || r2.stdout) && /--tvinga/.test(r2.stderr || r2.stdout), "");
@@ -271,6 +285,75 @@ console.log(`Fixtures: ${arbete}`);
   rapport("H3", "rapporten märks tvingad + diagnostik", j?.tvingad === true && j?.matfonster === "diagnostik", `tvingad=${j?.tvingad} fonster=${j?.matfonster}`);
   rapport("H4", "drift-talet bevaras som diagnostikunderlag", j?.driftAndel === 1, `andel=${j?.driftAndel}`);
   rapport("H5", "stdout märks [DIAGNOSTIK — ej mätvärde]", /DIAGNOSTIK/.test(r.stdout || ""), "");
+  await stang(server);
+}
+
+// --- J: driftfönster som STÄNGER — fönstervakten + EN återmätning räddar
+//        mätomgången (o113: första organiska cron-körningens klass —
+//        grunden var grön vid start, fönstret öppnade under crawlen) ------
+// Fixture: crawl #1 drabbad (500 på allt utom bas), läget flippas grönt när
+// mellanlager #1 landat på disk (verktyget står då i fönstervakten) —
+// saboterad miljö: inget lås, ingen byggprocess, bas frisk ⇒ vakten pollar
+// fritt på första kontrollen och ommätningen blir mätvärde.
+// V222-timingkuri (rond 114): originalflippen (fil-poll à 100 ms) kapplöpte
+// alltid verktyget — fönstervakten ser gröna prober och startar återmätningen
+// ~20–50 ms efter mellanlagret skrevs, FÖRE fixturens nästa poll ⇒ crawl #2
+// såg 500 igen (deterministiskt RÖT från födelsen, aldrig flagning). Ny
+// signal: flip vid crawl #2:s EGEN sitemap-förfrågan — den kommer före dess
+// sidförfrågningar men efter crawl #1 (deterministiskt mellan lagren).
+{
+  const locs = Array.from({ length: 20 }, (_, i) => `/sida-${i}`);
+  let lagetGront = false;
+  let sitemapHits = 0;
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") {
+      sitemapHits += 1;
+      if (sitemapHits >= 2) lagetGront = true; // crawl #2 börjar — dess sidor ska vara gröna
+      return { status: 200, kropp: sitemap(locs) };
+    }
+    if (p === "/" || p === "/kurser" || p === "/ok") return { status: 200, kropp: textSida("") };
+    if (!lagetGront) return { status: 500, kropp: "" };
+    if (p === "/sida-0") return { status: 200, kropp: textSida(`<a href="http://127.0.0.1:${port}/ok">extern ok</a>`) };
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "j-"));
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { retryVanta: "30000", retryPoll: "200" } });
+  rapport("J1", "återmätningen räddade mätomgången (kod 0)", r.kod === 0, `kod=${r.kod}`);
+  rapport("J2", "återmätningen loggades", /driftfonster-atermat/.test(r.stderr || ""), "");
+  const f = vaktenFiler(cwd);
+  rapport("J3", "två mellanlager (drift + grön) och EN fyndfil", f.insamling.length === 2 && f.fynd.length === 1, JSON.stringify(f));
+  const mellan = f.insamling.map((n) => lasJson(cwd, n));
+  const driftMellan = mellan.find((m) => m?.driftfonster === true);
+  const gronMellan = mellan.find((m) => m?.driftfonster === false);
+  rapport("J4", "ett mellanlager märkt drift + ett grönt (oavsett filordning)", !!driftMellan && !!gronMellan, `${driftMellan?.driftfonster ?? "?"}/${gronMellan?.driftfonster ?? "?"}`);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("J5", "fyndfilen bär mätvärdet: atermatAntal=1, driftAndel=0, 21 sidor (20 + absolut egen-URL /ok, C3-precedensen)", j?.atermatAntal === 1 && j?.driftAndel === 0 && j?.crawlideSidor === 21, `atermat=${j?.atermatAntal} drift=${j?.driftAndel} sidor=${j?.crawlideSidor}`);
+  rapport("J6", "stdout redovisar återmätningen", /efter 1 återmätning ur driftfönster/.test(r.stdout || ""), "");
+  await stang(server);
+}
+
+// --- K: fönstret stänger ALDRIG — väntetaket stoppar, ENDA insamlingen
+//        bevaras, exit 2 (aldrig ändlös crawl). Fönstret hålls stängt via
+//        basens svar: grindens två hälsosonder är gröna, därefter svarar
+//        basen 500 = vakten pollar "inte fritt" tills taket slår till ------
+{
+  const locs = Array.from({ length: 20 }, (_, i) => `/sida-${i}`);
+  let basBesok = 0;
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(locs) };
+    if (p === "/" || p === "/kurser") {
+      basBesok++;
+      return { status: basBesok > 2 ? 500 : 200, kropp: "" };
+    }
+    return { status: 500, kropp: "" };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "k-"));
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { retryVanta: "1500", retryPoll: "300" } });
+  rapport("K1", "avbrott med kod 2 (väntetak, fortfarande drift)", r.kod === 2, `kod=${r.kod}`);
+  rapport("K2", "driftfönster-förklaringen syns", /DRIFTFÖNSTER/.test(r.stderr || r.stdout), "");
+  rapport("K3", "väntetaket loggades", /driftfonster-vantak/.test(r.stderr || ""), "");
+  const f = vaktenFiler(cwd);
+  rapport("K4", "EN insamling (ommätning skedde aldrig), ingen fyndfil", f.insamling.length === 1 && f.fynd.length === 0, JSON.stringify(f));
   await stang(server);
 }
 

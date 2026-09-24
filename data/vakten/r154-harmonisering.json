@@ -1,0 +1,708 @@
+{
+ "widgetLager": 81,
+ "andrade": [
+  {
+   "fil": "testa-ai-mentor-agande.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-avkastningskurva.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-avrakningsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-beteendedjup.mjs",
+   "saknade": [
+    "svaraLokaltRiskdjup",
+    "svaraLokaltRiskmattsdjup",
+    "svaraLokaltUtdelningsdjup",
+    "svaraLokaltForvantningsdjup",
+    "svaraLokaltPortfoljbalans",
+    "svaraLokaltStabilitetsdjup",
+    "svaraLokaltGrahamgolv",
+    "svaraLokaltVarderjustering",
+    "svaraLokaltOptionsdjup",
+    "svaraLokaltRisklasningsdjup",
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-beteendemekanik.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-bokmastar.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-djup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-ekosystemdjup.mjs",
+   "saknade": [
+    "svaraLokaltModernaRisker",
+    "svaraLokaltValutamekanik",
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltSektorlasning",
+    "svaraLokaltVardegrund",
+    "svaraLokaltRealekonomi",
+    "svaraLokaltCoinvest",
+    "svaraLokaltTvangsmekanik",
+    "svaraLokaltHandelsemotor",
+    "svaraLokaltLonsamhetsgrund",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-faktordjup.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-forsakring.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-forvantningsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-grahamgolv.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-handelsdag.mjs",
+   "saknade": [
+    "svaraLokaltPortfoljpraktik",
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-historia.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-kapitalbindning.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-koncernlasning.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-kreditdjup.mjs",
+   "saknade": [
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-lonsamhetsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-optionsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-overlevnadsdjup.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-pe-mekanik.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljbalans.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljgrund.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-portfoljpraktik.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-realekonomi.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-redovisningsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-riskdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-risklasningsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-riskmattsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-riskpremie.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-sektordjup.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-sektorskola2.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-skattedjup.mjs",
+   "saknade": [
+    "svaraLokaltTsdjup",
+    "svaraLokaltBeteendedjup",
+    "svaraLokaltRiskdjup",
+    "svaraLokaltRiskmattsdjup",
+    "svaraLokaltUtdelningsdjup",
+    "svaraLokaltForvantningsdjup",
+    "svaraLokaltPortfoljbalans",
+    "svaraLokaltStabilitetsdjup",
+    "svaraLokaltGrahamgolv",
+    "svaraLokaltVarderjustering",
+    "svaraLokaltOptionsdjup",
+    "svaraLokaltRisklasningsdjup",
+    "svaraLokaltAvkastningskurva",
+    "svaraLokaltAvkastningsdjup",
+    "svaraLokaltVarderingsverktyg",
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-stabilitetsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-tidsaxel.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-utdelningsdjup.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-utdelningskalender.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-vardegrund.mjs",
+   "saknade": [
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-varderingsverktyg.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-varderjustering.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  },
+  {
+   "fil": "testa-ai-mentor-warrant.mjs",
+   "saknade": [
+    "svaraLokaltUtdelningskalender",
+    "svaraLokaltKreditdjup",
+    "svaraLokaltSektordjup",
+    "svaraLokaltKemisektor",
+    "svaraLokaltKategoristangning",
+    "svaraLokaltBanksektorn",
+    "svaraLokaltNotlasning",
+    "svaraLokaltNykull",
+    "svaraLokaltNyfodda",
+    "svaraLokaltSkuldordning",
+    "svaraLokaltValideringsfonster"
+   ]
+  }
+ ],
+ "ororda": [],
+ "utanArray": [
+  "testa-ai-mentor-balansdjup.mjs",
+  "testa-ai-mentor-banksektor.mjs",
+  "testa-ai-mentor-beteendefallor.mjs",
+  "testa-ai-mentor-case.mjs",
+  "testa-ai-mentor-casepraktik.mjs",
+  "testa-ai-mentor-coinvest.mjs",
+  "testa-ai-mentor-etfmekanik.mjs",
+  "testa-ai-mentor-extra.mjs",
+  "testa-ai-mentor-handelsemotor.mjs",
+  "testa-ai-mentor-kapitalmekanik.mjs",
+  "testa-ai-mentor-kategoristangning.mjs",
+  "testa-ai-mentor-kedja.mjs",
+  "testa-ai-mentor-kemisektor.mjs",
+  "testa-ai-mentor-kontrahent.mjs",
+  "testa-ai-mentor-konvertibel.mjs",
+  "testa-ai-mentor-lonsamhetsgrund.mjs",
+  "testa-ai-mentor-makro.mjs",
+  "testa-ai-mentor-marknadsmekanik.mjs",
+  "testa-ai-mentor-marknadsrytm.mjs",
+  "testa-ai-mentor-moatdjup.mjs",
+  "testa-ai-mentor-modernarisk.mjs",
+  "testa-ai-mentor-multipel.mjs",
+  "testa-ai-mentor-nasta.mjs",
+  "testa-ai-mentor-notlasning.mjs",
+  "testa-ai-mentor-nya-territorier.mjs",
+  "testa-ai-mentor-nyfodda.mjs",
+  "testa-ai-mentor-nykull.mjs",
+  "testa-ai-mentor-optionshantverk.mjs",
+  "testa-ai-mentor-pengarstid.mjs",
+  "testa-ai-mentor-praktik.mjs",
+  "testa-ai-mentor-riskadress.mjs",
+  "testa-ai-mentor-riskbudget.mjs",
+  "testa-ai-mentor-s6u2-omg2.mjs",
+  "testa-ai-mentor-s6u3-omg4.mjs",
+  "testa-ai-mentor-sektor.mjs",
+  "testa-ai-mentor-sektorlasning.mjs",
+  "testa-ai-mentor-skuldordning.mjs",
+  "testa-ai-mentor-spar6.mjs",
+  "testa-ai-mentor-stalsektor.mjs",
+  "testa-ai-mentor-tillvaxtdjup.mjs",
+  "testa-ai-mentor-tsdjup.mjs",
+  "testa-ai-mentor-tvangsmekanik.mjs",
+  "testa-ai-mentor-u2.mjs",
+  "testa-ai-mentor-valideringsfonster.mjs",
+  "testa-ai-mentor-valutamekanik.mjs",
+  "testa-ai-mentor-volatilitetsmekanik.mjs"
+ ],
+ "antalAndrade": 41
+}

@@ -1,0 +1,25 @@
+{
+ "snittLocalhost": 200,
+ "snittHttps": 200,
+ "passGet": {
+  "status": 200,
+  "kod": "inloggning"
+ },
+ "passPostUtanAuth": 401,
+ "vakt": {
+  "fil": "granssnitt-2026-09-21T232542.json",
+  "innehallerRapportakademin": false,
+  "fynd": "okänd-nyckel"
+ },
+ "anfad.citatValidator": "8abf541e ✓",
+ "anfad.passGetKur": "141c7e77 ✓",
+ "anfad.navEntre": "443e6a2b ✓",
+ "fas2grind": {
+  "requireAdmin": false,
+  "fas2EllerKod": true
+ },
+ "motorFiler": [
+  "evighetsmotor-state.json",
+  "evighetsmotor.log"
+ ]
+}

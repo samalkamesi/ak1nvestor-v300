@@ -2,5 +2,57 @@
   {
     "paket": "sharp",
     "version": "0.35.4"
+  },
+  {
+    "paket": "react",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "react-dom",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "@types/react",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "@types/react-dom",
+    "version": "19.3.0"
+  },
+  {
+    "paket": "@supabase/supabase-js",
+    "version": "2.116.0"
+  },
+  {
+    "paket": "next-intl",
+    "version": "4.14.5"
+  },
+  {
+    "paket": "zod",
+    "version": "4.6.5"
+  },
+  {
+    "paket": "@tanstack/react-query",
+    "version": "5.103.1"
+  },
+  {
+    "paket": "react-hook-form",
+    "version": "7.88.0"
+  },
+  {
+    "paket": "tailwind-merge",
+    "version": "3.7.0"
+  },
+  {
+    "paket": "puppeteer-core",
+    "version": "25.11.0"
+  },
+  {
+    "paket": "@reactuses/core",
+    "version": "6.5.9"
+  },
+  {
+    "paket": "bun-types",
+    "version": "1.4.2"
   }
 ]

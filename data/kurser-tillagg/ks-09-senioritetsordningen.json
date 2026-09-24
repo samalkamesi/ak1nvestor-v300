@@ -1,0 +1,176 @@
+{
+  "slug": "ks-09-senioritetsordningen",
+  "category": "KAPITALSTRUKTUR",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Senioritetsordningen — vem betalas först när bolaget faller",
+  "summary": "KAPITALSTRUKTUR-familjens nionde steg öppnar den trappa som varje skuld står på men som få rapportläsare sett hel: senioritetsordningen, turordningen i vilken fordringsägare betalas när bolaget inte kan betala alla. Sonden mot 489-registret visar begreppet buret av bokhyllan (de klassiska värderings- och krisverken) men oskrivet i kursrummet: «senioritet», «prioritetsordning» och «efterställd» har noll kursägare. Kursen äger trappan genom ett genomgående påhittat fall: NorrVerk Maskiner, maskintillverkare med bokfört balansräkning 800 miljoner kronor — pantsatta tillgångar 420, opantade 380 — och skulder 680: säkrad bankkredit 380, efterställd obligation 150, leverantörer 90, skatt 30, lönefordran 12, övrigt 18. Konkursen realiserar panten till 61 procent (256,2) och den fria substansen till 35 procent (133,0), boet kostar 12,0 att sköta — och därefter rinner fördelningen nerför trappan steg för steg: banken tar hela panträttens 256,2 men blir sittande med osäkrad restfordran 123,8; förmånsrätten (skatt och löner, 42) täcks ur de fria medlen; resterande 79,0 fördelas pro rata på de osäkrade vars sammanlagda fordran är 381,8 — utdelningskvot 20,7 procent. Slutlig återvinning per trappsteg: banken 74,2 procent, obligationen 20,7, leverantörerna 20,7, aktieägarna noll — samma fall, fyra utfall. Därtill yield-trappan som prissätter ordningen i förväg (statsobligation 2,0, säkrad bankkredit 3,4, efterställd obligation 7,0 procent) och kopplingen till kreditderivatet (od-10): obligationens förlustgiven risk 79,3 procent gånger årlig fallprocent 4,5 ger förväntad förlust 3,6 procentenheter — exakt spreaden över den säkrade krediten. Pedagogisk utbildning om mekanismer i påhittade bolag — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "KAPITALSTRUKTUR-familjens åtta första steg har byggt hela finansieringssidan: blandningen av skuld och eget kapital (ks-01), allokeringen av kassaflödet (ks-02), skuldens inre byggnad (ks-03), emissionen (ks-04), covenanterna och kreditbetygen (ks-05), konvertiblerna (ks-06), avvägningen mellan alternativen (ks-07) och valutasäkringen (ks-08) — men samtliga steg beskriver kapitalstrukturen medan den LEVER, och den ordning som strukturen faktiskt är en trappa av — vem som står före vem när betalningarna sinar — lämnas oskriven. Sonden mot registret bekräftar vitfläcken: «senioritet» förekommer endast i fem bokkurser, «prioritetsordning» i tre, «efterställd» i en, «subordination» noll — grannkurserna rör trappan utan att öppna den: skuldfällan (rk-03) äger vägen in i betalningsproblem, Altman-modellen (st-03) äger förutsägelserna, covenanterna (ks-05) äger spelets regler i livstiden, kreditderivatet (od-10) äger priset på kreditfallet men räknar med en förlustandel (LGD) vars ursprung — just återvinningen per trappsteg — aldrig visats, och skuggskulderna (st-07) äger förbindelserna utanför balansräkningen. Kursen fyller ytan med det fall där strukturen visar sin mening: att två skulder med samma belopp och samma låntagare kan återbetala 74,2 och 20,7 procent är kapitalstrukturens hela poäng — skillnaden är inte kreditvärdighet utan PLATS I TRAPPAN. För aktieägaren är trappan ännu mer: den förklarar varför aktier i högbelåtna bolag är optioner (lägst av alla trappsteg, betalas endast om alla andra steg täcks fullt ut), och varför spreadtrappan mellan säkrad och efterställd kredit (här 3,6 procentenheter) är marknadens levande pris på samma ordning som konkursräkningen visar i efterhand.",
+  "learn": "Räkna en konkursfördelning steg för steg i kursens exempel: realisationerna (pant 420 × 0,61 = 256,2; opant 380 × 0,35 = 133,0; summa 389,2 mot bok 800), boets kostnad 12,0, fördelningsbart 377,2 — och därefter trappans fyra steg: panträtten (banken 256,2 av 380, restfordran 123,8), förmånsrätten (skatt 30 + löner 12 = 42, täcks helt ur fria medel), pro rata-potten (133,0 − 12,0 − 42 = 79,0 fördelat på osäkrade fordran 381,8: kvoten 20,7 procent) och aktieägarnas noll. Räkna återvinningen per steg: banken (256,2 + 0,207 × 123,8 = 281,8; det vill säga 74,2 procent), obligationen och leverantörerna (20,7 procent var) — fyra olika svar på samma fall. Läsa yield-trappan i förväg: stat 2,0, säkrad kredit 3,4, efterställd 7,0 procent — och förklara skillnaden 3,6 procentenheter som priset på att stå sist, med kursens ekvation: förlustandel 1 − 0,207 = 79,3 procent, årlig fallprocent 4,5, förväntad förlust 4,5 % × 79,3 % ≈ 3,6 procentenheter (od-10:s ekvation härledd från trappan själv). Använda säkerhetsgraderna: boktäckning 420/380 = 1,11 mot realisationstäckning 256,2/380 = 67,4 procent — bankens marginal i två världar. Skilja konkurs från rekonstruktion: borgenärserbjudandet 25 kontant + 15 i nya aktier = 40 procent återvinning mot konkursens 20,7 — varför röstandet kan säga ja även när aktieägarna behåller 10 procent. Slutligen protokollets fem frågor till varje skuldpost: vad står den säkrad med, var står den i trappan, vilken realisation täcker panten, vad kräver covenanterna (ks-05), och vad blir återvinningen om realisationsgraden sjunker tio procentenheter.",
+  "history": {
+    "origin": "Ordningen föddes ur konkursrättens äldsta princip: den som fått pant har rätt att ta i förmån framför andra, och den som inte har pant står i förhållande till sin fordran. Handelsrätten i Europa byggde under sekler trappan pantskrift för pantskrift — fastighetspant före lösegendomspant, förmånsrätter för arbetare och statsfinanser före vanliga fordringsägare — och aktiebolagets begränsade ansvar gjorde trappan till kapitalstrukturens ryggrad: eftersom aktieägare aldrig betalar mer än insatsen blir fordringsägarnas inbördes ordning hela spelet om förlusterna.",
+    "evolution": "Utlåningspraxis gjorde trappan till prissättning: banker tog pant och först position, obligationer såldes med högre ränta mot lägre plats, och kreditbetygsinstituten graderade från säkrade AAA-lån till efterställda spekulativa papper. Efter kriserna på 1980- och 90-talen utvecklades avtalsverktygen — subordinationsavtal där den efterställda förbinder sig att inte kräva betalning förrän den seniora är helt nöjd — och förlustgivna riskmått (LGD) blev standard i kreditportföljmodellerna, beräknade just som ett minus återvinningsgraden per trappsteg.",
+    "modern": "I dagens kapitalstrukturer är trappan flerläst än någonsin: företagsobligationsmarknadens lagerdelningar (senior säkrad, senior osäkrad, efterställd, mezzanin) prissätts dagligen i spreader, och kreditderivatmarknaden (od-10:s domän) gör återvinningsgraden till en handlad variabel i auktionerna efter varje kredithändelse. Trappan har också byggts ut nedåt: lån som kombinerar flera trappsteg i en enda post, och en hel förvaltningsstil — att köpa och sälja trappsteg i samma bolag mot varandra — som lever på skillnaden mellan stegens priser. Kursens budskap står sig genom utvecklingen: oavsett hur många lager som läggs till är aldrig en skuld bara ett belopp — den är ett belopp OCH en plats, och platsen bestämmer vad skriften är värd den dag den prövas."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Trappan — fyra trappsteg och en fotbas",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Konkursräkningen — realisation, kostnad, fördelning",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Återvinningen per steg — samma fall, fyra utfall",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Yield-trappan — priset på platsen i förväg",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Rekonstruktionen — när trappan förhandlas om",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till varje skuldpost",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch köpte hellre bolag utan skuld än med — hans tumregel att ett bolag med skuldfri balansräkning inte kan gå i konkurs är trappan i en enda mening. När han ändå mötte kapitalintensiva bolag letade han efter dem som står högst i sina egna kapitalstrukturer: fastighetsbolag vars aktier äger pantvärda tillgångar före alla obligationer, och förlorarna var de bolag där aktien var ett bottenskikt under lager av lån. Hans varning för bolag som «lånar för att se vinstrika ut» blir i trappans ljus dubbel: skulden höjer avkastningen medan det går bra, och flyttar aktien längre ner i köstrukturen när det slutar gå — samma mekanism, två tecken. Lynch lärde också ut att konkurs och nederlag sällan kommer utan föregångare, och trappans bästa användning är därför före krisen: läs varje skuldpost med kursens fem frågor (kapitel sex) medan det fortfarande går bra — vid konkursen är frågorna redan besvarade.",
+  "grahamSection": "Benjamin Graham analyserade förräntningsskyddade obligationer med en enkel hierarki i bakhuvudet: säkerheten står i panträttsordningen, inte i räntan. Hans regel att hög ränta är marknadens sätt att prissätta lägre plats är kursens yield-trappa i ren form — stat 2,0, säkrad 3,4, efterställd 7,0 — och hans varning var den omvända frestelsen: att förväxla avkastning med säkerhet. För aktieägaren översatte Graham trappan till sitt marginal-krav: aktien är trappans fotbas och betalas endast om vartenda steg ovanför täcks till hundra procent — därför krävde han att aktieören beräknas med konservativa realisationsantaganden, inte bokförda värden. Hans arbitrage mellan före och efter i konkursnära situationer tillhörde hans tidigaste arbete, och kursens räkning — bok 800, realisation 389,2 — bär hans kärnläxa: balansräkningen är en åsikt om värden, konkursen är deras prov.",
+  "ak1Section": "I AK1A:s metodik är senioritetsordningen riskmatrisens (rs-04) fjärde dimension i finansieringssidan: bolagets samlade betalningsförmåga prövas inte bara mot nivån på skulden utan mot dess struktur — samma skuldsättningsgrad kan bära en trappa med lång löptid och jämn fördelning (ks-03:s domän) eller en brant trappa med allt kortare och allt säkrare lån över aktien. Fem tidshorisonterna läser trappan olika: kortaste horisonten bär förmånsrättsläckaget (skatt och löner som äter den fria potten före obligationerna), medellånga bär refinansieringsordningen (st-05:s domän — den seniora som först förfaller står först i kön), längsta bär den strukturella frågan om aktien är lånekontrakt eller äganderätt. Motoruttagen kompletteras med återvinningsgraden per steg som scenariopost: AKM2:s nedsidescenario räknar inte «skulder 680» utan trappans 380/150/90/30/12/18 — varje steg med sin realisationsgrad. Kursen håller hela vägen plattformens markering: mekanismer och aritmetik i ett påhittat fall (NorrVerk), utbildning om struktur — varje verkligt beslut kring verkliga värdepapper lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Trappan — fyra trappsteg och en fotbas",
+      "intro": "En kapitalstruktur är inte en lista över belopp — det är en turordning. Innan någon siffra räknas måste läsaren se trappans form: vad som står säkrat, vem som har laglig företräde, och vem som står kvar när allt annat betalats.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempel är påhittat från första raden: NorrVerk Maskiner, tillverkare av industrikomponenter, hamnar i betalningskris efter en förlorad kund och en tung förlustbringande investering (rk-03 äger vägen hit — kursen äger det som händer sedan). Den bokförda balansräkningen: tillgångar 800 miljoner kronor, varav pantsatta (fastigheter och maskiner med pant noteras i bankens låneavtal) 420 och opantade 380. Fordringarna, sammanlagt 680: en säkerad bankkredit 380 (pant i de 420 pantsatta tillgångarna), en efterställd företagsobligation 150 (uttryckligen skriven att stå efter banken), leverantörsskulder 90, skatteskuld 30, lönefordran 12 och övriga fordringar 18. Det egna kapitalet, bokfört 120, står inte bland fordringarna alls — det är trappans fotbas: de som äger bolaget, inte fordrar det något, och betalas endast om alla trappsteg ovanför täcks till hundra procent. Fyra sorters placeringar bär ordningen: PANT (banken har förmånsrätt i specifika tillgångar — kursens kapitel två räknar vad panträtten inbringar), LAGLIG FÖRMÅNSRÄTT (skatt och löner står före osäkrade fordringar även utan pant), AVTALAD EFTERSTÄLLDHET (obligationen har skrivits att stå efter banken — subordinationen är ett avtal, inte en gest) och DE OSÄKRADES PRO RATA (leverantörer och övriga delar på det som blir kvar, i förhållande till sina fordringar). Notera grannens gräns: covenanterna (ks-05) styr medan bolaget lever — trappan äger dagen de inte gör det."
+        },
+        {
+          "type": "definition",
+          "content": "Senioritet — en fordrans plats i betalningsordningen vid insolvens: högre senioritet betyder tidigare rätt till tillgångarna. Efterställd (subordination) — en fordran som enligt lag eller avtal betalas efter en annan: den efterställda obligationen står bakom banken. Förmånsrätt — laglig rätt att ta betalt före andra fordringsägare, i kursens fall skatt och löner utan pant. Pro rata — «i förhållande till»: de osäkrade fordringarna delar lika per krona, inte lika per fordran."
+        },
+        {
+          "type": "insight",
+          "content": "Två skulder, samma bolag, samma belopp — och vid krisen återbetalas den ena till 74,2 procent och den andra till 20,7. Skillnaden är inte kreditvärdighet; det är platsen i trappan."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Konkursräkningen — realisation, kostnad, fördelning",
+      "intro": "Konkursboet är kapitalstrukturens provrum: alla positioner markeras till marknad, alla fordringar ställs i ordning, och fördelningen rinner nerför trappan tills pengarna tar slut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Steg ett — realisationen. Boet säljer de pantsatta tillgångarna (fastigheter, större maskiner) till 61 procent av bokfört värde: 420 × 0,61 = 256,2 miljoner. Den opantade substansen (kundfordringar, lager, mindre maskiner, fordon) realiseras till 35 procent: 380 × 0,35 = 133,0. Summa realiserat 389,2 — återvinningen på hela balansräkningen 389,2/800 = 48,7 procent, en realistisk nivå för ett industrifall i kölvattnet av en förlorad kund (fordringar och lager slår kraftigt i avveckling). Steg två — boets kostnad. Förvaltaren, värderingsmän och auktioner kostar 12,0; fördelningsbart blir 389,2 − 12,0 = 377,2. Steg tre — trappan. PANTRÄTTEN: banken tar sin säkerhet först — 256,2 av fordran 380 täcks alltså direkt, men 123,8 står kvar som osäkrad restfordran och får söka sig till de fria medlen. FÖRMÅNSRÄTTEN: skatt 30 och löner 12 — sammanlagt 42 — betalas ur det opanta utfallet innan några osäkrade fordringar ser en krona: 133,0 − 12,0 = 121,0 fördelningsbart opant, minus 42 = 79,0 kvar. PRO RATA-POTTEN: de osäkrade fordringarna är bankens rest 123,8, obligationen 150, leverantörerna 90 och övrigt 18 — sammanlagt 381,8. Potten 79,0 räcker till utdelningskvoten 79,0/381,8 = 20,7 procent. FOTBASN: aktieägarna får noll — de 120 bokförda miljonerna i eget kapital är inte en fordran utan en restpost, och resten är noll. Räknenöten kontrollerar sig själv: 256,2 + 42 + 79,0 = 377,2 exakt — trappan tar allt, inte mer."
+        },
+        {
+          "type": "tabell",
+          "content": "Konkursräkningen (NorrVerk, påhittat): REALISATIONEN — pant 420 × 0,61 = 256,2 · opant 380 × 0,35 = 133,0 · summa 389,2 (48,7 % av bok 800) · BOETS KOSTNAD — 12,0: fördelningsbart 377,2 · PANTRÄTTEN — banken 256,2 av 380: restfordran 123,8 · FÖRMÅNSRÄTTEN — skatt 30 + löner 12 = 42 ur fria medel · PRO RATA-POTTEN — 133,0 − 12,0 − 42 = 79,0 på osäkrade 381,8: kvot 20,7 % · AKTIEÄGARNA — noll · KONTROLL — 256,2 + 42 + 79,0 = 377,2 ✓"
+        },
+        {
+          "type": "insight",
+          "content": "Trappan är en vattenfallslogik: varje steg dricker först när stegen ovanför är mätt — och kontrollraden (256,2 + 42 + 79,0 = 377,2) visar att potten fördelas till sista kronan, aldrig bortom."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Återvinningen per steg — samma fall, fyra utfall",
+      "intro": "Nu summeras varje fordransägarens utfall — och trappans mening visas i en enda tabell: samma bolag, samma kris, fyra helt olika återbetalningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Banken: panträtten gav 256,2, och restfordran 123,8 står i pro rata-potten och får 20,7 procent av sig själv: 123,8 × 0,207 = 25,6. Totalt 256,2 + 25,6 = 281,8 — återvinning 281,8/380 = 74,2 procent. Obligationen: 150 × 0,207 = 31,0 — återvinning 20,7 procent. Detta är trappans renaste läxa: banken och obligationsinnehavarna lånade till SAMMA bolag, bar SAMMA makroskäl och samma branschrisk — utfallet skilde 53,5 procentenheter, och hela skillnaden är panträtten och efterställningen. Leverantörerna: 90 × 0,207 = 18,6 — 20,7 procent, plus en läxa i egen risk: leverantörskredit är osäkrad utlåning utan ränta, och kursens fall prissätter den till 79,3 procent förlust. Skatt och löner: 100 procent — förmånsrätten kostar de osäkrade 42 av deras 79,0-pott. Aktieägarna: noll, på två sätt — dels står de sist, dels är det egna kapitalet bara en restpost: bokförd 120 men verklig återvinning noll eftersom varje krona till aktieägare kräver att 680 i fordringar täcks först. Översätt till kreditderivatets språk (od-10 äger instrumentet): förlusten vid fall (LGD) = 1 − 0,207 = 79,3 procent för obligationen — siffran som i CDS-ekvationen multipliceras med sannolikheten för fall. Och notera känsligheten: sjunker pantrealisationen från 61 till 51 procent (420 × 0,51 = 214,2) sjunker bankens återvinning men obligationens knappt — tills panträtten inte täcker banken alls, och DÅ börjar banken konkurrera i pro rata-potten och obligationens utfall rasar. Trappan är olinjär just vid gränserna — kapitel sex frågar därför alltid om panttäckningen."
+        },
+        {
+          "type": "tabell",
+          "content": "Återvinning per steg (NorrVerk, påhittat): BANKEN — 256,2 + 0,207 × 123,8 = 281,8 av 380: 74,2 % · OBLIGATIONEN — 0,207 × 150 = 31,0: 20,7 % · LEVERANTÖRERNA — 0,207 × 90 = 18,6: 20,7 % · SKATT OCH LÖNER — 42 av 42: 100 % (förmånsrätten) · AKTIEÄGARNA — 0 av bokfört 120 · KLYFTAN — samma bolag, 74,2 % mot 20,7 %: skillnaden är panten och platsen · LGD-KOPPLINGEN — 1 − 0,207 = 79,3 %: od-10:s förlustandel härledd ur trappan"
+        },
+        {
+          "type": "insight",
+          "content": "Obligationens sätt att stå i en trappa den aldrig läst är lånet som görs på omslaget; återvinningstabellen är trappan översatt till vad den faktiskt betyder — innan den betyder det."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Yield-trappan — priset på platsen i förväg",
+      "intro": "Trappan betalas inte bara i konkursen — den prissätts dagligen i räntor. Kapitlet visar hur spreaderna mellan trappstegen bär samma information som återvinningstabellen, i förväg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Före krisen bar NorrVerks skulder tre priser: statsobligationen (den riskfria referensen, ma-05:s domän) 2,0 procent; bankkrediten, säkrad med pant, 3,4 procent — spread 1,4 procentenheter över staten; och den efterställda obligationen 7,0 procent — spread 5,0 över staten och 3,6 över den säkrade krediten. Läs trappan baklänges: varje procentenhet i spread är marknadens pris på en placering lägre ner. Kursens ekvation förklarar den efterställda spreaden över den säkrade: förväntad förlust = fallprocent × förlustandel. Fallets sannolikhet per år antas 4,5 procent (ett värde i spekulationssegmentet); förlustandelen vid fall härledd ur kapitel tre: 1 − 0,207 = 79,3 procent (obligationerna återbetalar i snitt 20,7). Produkt: 0,045 × 0,793 = 0,0357 — rundat 3,6 procentenheter. Spreaden över den säkrade krediten är alltså exakt det pris som kapitel tre visar i efterhand: 79,3-procentig förlust om bolaget faller, vägd med fallrisk. Räkningen är en modell, inte en börs — verkliga spreader bär också likviditet, skatt och riskaptit — men kärnan är kursens: yield-trappan och konkurs-trappan är samma trappa, sedd före och efter. Covenanterna (ks-05) kompletterar priset med regler: banken kräver panttäckning — bok 420 mot fordran 380: 1,11 — och kursens realisation visar vad täckningen är värd i stress (256,2/380 = 67,4 procent). Kreditbetyget är trappans kompass: investeringsgrad är ett löfte om placering högt upp, spekulation ett meddelande om att köparen står i potten."
+        },
+        {
+          "type": "tabell",
+          "content": "Yield-trappan (före krisen, påhittat): STATSOBLIGATION — 2,0 % (referens) · SÄKRAD BANKKREDIT — 3,4 %: spread 1,4 pp över staten · EFTERSTÄLLD OBLIGATION — 7,0 %: spread 5,0 över staten, 3,6 över banken · KURSENS EKVATION — 4,5 % fallrisk × 79,3 % LGD = 3,57 ≈ 3,6 pp: spreaden prissatt av trappan · SÄKERHETSGRAD — bok 420/380 = 1,11 mot realisation 256,2/380 = 67,4 % · GRÄNSER — ma-05 äger riskpremien, ks-05 covenanterna och betygen, od-10 prissättningens instrument"
+        },
+        {
+          "type": "insight",
+          "content": "Spreaden mellan två lån till samma bolag är inte två åsikter om bolaget — det är en åsikt om trappan: 3,6 procentenheter varje år, i utbyte mot 79,3 procents förlust om dagen kommer."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Rekonstruktionen — när trappan förhandlas om",
+      "intro": "Konkursen är trappans verkställande — men svensk rätt ger ett alternativ: rekonstruktion, där borgenärerna röstar fram en uppgörelse i stället för att tvinga fram ett bo. Varför säger nej-trappans parter ibland ja?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Föreställ dig NorrVerks förslag till rekonstruktion i stället för konkurs: borgenärerna får 25 procent av fordran kontant inom nio månader och 15 procent i nya aktier i det omstrukturerade bolaget — aktieägarna, som i konkursen fick noll, behåller 10 procent och löper vidare. Jämför med konkursutfallet (kapitel tre): 20,7 procent, allt vid boets slut, efter två till tre års förvaltning och utan del i uppgången. Räkningen: 25 kontant + 15 i aktier = 40 procent mot konkursens 20,7 — erbjudandet slår boet med nästan det dubbla så snart de nya aktierna värderas till över noll. Varifrån kommer vinsten? Verksamheten som pågående: fabrikens kunder, kontrakt och utbildad personal är värda mer i drift än i stycken — realisationsrabatten (48,7 procent av bok) är konkursens pris, och rekonstruktionen köper tillbaka en del av den. Förmånsrättsägarna (skatt, löner) står troligen lika i båda alternativen och röstar därför med sitt bästa; banken jämför 40 procent mot 74,2 — för banken kan konkursen se bättre ut, och därför är bankens ställningstagande ofta rekonstruktionens verkliga votum. Obligationerna och leverantörerna — vars konkursutfall är 20,7 — är uppgörelsens naturliga anhängare. Aktieägarnas 10 procent är också ett svar på en fråga kursen ställt: aktien är en option på att trappan överlever, och i rekonstruktionen skrivs optionen om — utspädd men vid liv (vr-05:s pris mot värde i sin mest koncentrerade form). Protokollet vid bordet: vem får kontant, vem får papper, vem får aktier — och vad kräver covenanterna (ks-05) för att banken ens ska finnas kvar som finansierande part efter uppgörelsen."
+        },
+        {
+          "type": "tabell",
+          "content": "Rekonstruktion mot konkurs (påhittat): ERBJUDANDET — 25 kontant + 15 i nya aktier = 40 % återvinning · KONKURSEN — 20,7 % efter 2–3 års bo · VINSTEN — going concern-värdet mot realisationsrabatt 48,7 % av bok · BANKENS VOTUM — 40 mot 74,2: banken kan vilja boet · OBLIGATION/LEVERANTÖR — 40 mot 20,7: ja-lägret · AKTIEÄGARNA — 0 i boet mot 10 % utspädda: optionen lever · FÖRMÅNSRÄTT — hel i båda fallen · GRÄNSER — ks-05 covenanternas fortsättning, vr-05 priset mot värdet"
+        },
+        {
+          "type": "insight",
+          "content": "Rekonstruktionen är trappan som förhandlas i stället för att exekveras — och varje parts ja vägs mot dennes eget konkursutfall, inte mot bolagets bästa. Att läsa en rekonstruktionsplan är att läsa 40 mot 20,7 — för varje trappsteg för sig."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till varje skuldpost",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor till varje skuldpost i varje balansräkning, verklig eller påhittad, medan det fortfarande står still.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — säkerheten: vad står skulden pant-säkrad med, och vilken realisationsgrad bär panten i stress (NorrVerk: 61 procent gav banken 256,2 — frågan är vad 51 eller 41 procent ger)? Fråga två — platsen: var i trappan står posten — före eller efter förmånsrätten, före eller efter de andra finansieringarna, och finns en skriftlig efterställning (obligationens 150 stod efter bankens 380 — en mening i prospektet, 53,5 procentenheter i utfallet)? Fråga tre — löptiden och påsarna: när förfaller posten och i vilken ordning (st-05 äger refinansieringsmuren — trappan avgör vem som står där först)? Fråga fyra — reglerna: vad kräver covenanterna (ks-05) vid nivåer, täckning och delägarskap — och vilka utlösare finns för att skulden måste förhandlas om i förtid? Fråga fem — stressen: om realisationsgraden sjunker tio procentenheter på både pant och fri substans — vad blir återvinningen för DENNA post (kursens kapitel tre som övning: pant 420 × 0,51 = 214,2, fri 380 × 0,25 = 95,0, och fördelningen räknas om)? Fem svar — och skulden är först då läst som struktur, inte bara som belopp. Plattformens markering följer familjens sed: kursen har beskrivit mekanismer och aritmetik i ett påhittat fall (NorrVerk Maskiner) och lämnar varje verkligt beslut kring verkliga värdepapper — att läsa, avstå eller agera — där det hör hemma, hos läsaren och dennas egna gränser. Pedagogisk utbildning om strukturer, aldrig placeringsråd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med trappans verktyg. Fall ett: panten realiseras till 70 procent av 300 mot en säkrad fordran 250 — hur stor blir restfordran (svar: 300 × 0,70 = 210, rest 250 − 210 = 40)? Fall två: den fria potten efter kostnader är 60 och de osäkrade fordringarna är bank-rest 40 + obligation 80 + leverantör 30 = 150 — vilken blir utdelningskvoten (svar: 60 ÷ 150 = 40,0 procent), och vad får obligationen (svar: 0,40 × 80 = 32)? Fall tre: en obligation med återvinning 35 procent och fallrisk 6,0 procent per år — vilken förväntad förlust och ungefärlig spread över säkrad kredit bär den (svar: LGD 1 − 0,35 = 65,0 %, förväntad förlust 0,060 × 0,650 = 3,9 procentenheter)?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets femte fråga är trappans gåta i miniatyr: samma bolag, samma skuld, samma dag — tio procentenheters lägre realisation förändrar allt för vartenda trappsteg, men inte alls lika mycket, och inte alls i samma riktning."
+        }
+      ]
+    }
+  ]
+}

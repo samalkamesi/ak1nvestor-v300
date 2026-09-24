@@ -87,7 +87,7 @@ export default function ArManifestPage() {
     ) || SIFFROR.quiz;
 
   return (
-    <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "البيان" }]}>
+    <SeoPageShell lang="ar" wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "البيان" }]}>
       {/* الحاوية الرئيسية باتجاه القراءة العربية */}
       <div dir="rtl">
         {/* ── ١ · الافتتاحية ─────────────────────────────────────────────── */}

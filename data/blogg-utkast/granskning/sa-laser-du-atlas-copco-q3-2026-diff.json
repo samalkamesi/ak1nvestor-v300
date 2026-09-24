@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-atlas-copco-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-20, omgång auto-s1-1789902316443, pivot från m9 #2 enligt köregeln)",
+  "rapport": "sa-laser-du-atlas-copco-q3-2026-KONTROLL-2026-09-20.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNINGAR — 83 maskinella kontroller (verktyg/_s1u2-atlas-kontroll.mjs): källor exakta (ATCO-posten 21 fält fält-för-fält mot dagens universfil inkl. ROIC-proxy-, 4-års- och MarketStack-noter; kalenderposten exakt med tid, tyst period och utdelningsnot; syskonrappdagarna H&M 09-24/Industrivärden 10-07/Ericsson 10-15/SKF 10-21/Sandvik-samma-dag/ABB 10-20 alla verifierade; IR-kalendern live 200); vågdata exakta (4 domrader mot protokollraden 2026-09-04, 5 vågklasser, 25-cellersmatris 18▲/4▼/3—, σ 28 %, 52v-position 91 %, fyra nivåer); medianer 10/10 EXAKTA mot byggvindan git ea7ad8bd (109-filan, industri n=11 — EV/EBIT-medianen exakt 21,549 → utkastets 21,5 korrekt avrundat); aritmetik grön (identitet 9,257/0,257=36,0, scenarioruta 9/9 celler, marginalvikter 1,7/1,0/1,6×, övning C 31,0, CAGR 6,0 %); juridikgrind REN (26 mönster × 3 ytor = 0 FEL, endast 1 mjuk VARNING 'kunder' = redovisningsterm i övning A; 2007:528 2 kap 5 § ensamt lagrum; negerad disclaimer + R2-rad); 911 = 0; 16/16 interna länkar i live-sitemap. FYND: R1 superlativet 'seriens största bolag hittills' VÄNT (ABB 1 662,9 mdr SEK byggdes sex timmar senare samma kväll; i dag dessutom Eli Lilly/JPMorgan/Samsung/ASML/PG/Goldman/SAP/Novo större — påståendet var sant i sex timmar); B1 sifferfel i σ-jämförelsen (Atlas 28 % är LÄGRE än Ericssons 32 %, inte högre; Industrivärden 19,9 % sant); C1 stavfel handssignal→handelssignal (samma serieslip som Tele2-C1); C3/C4/C5 förslag (34,6→34,7 i intron; osatt-raden 'lång: osatt' i kvittotabellen; /bolag/atco-a-st-länk).",
+  "anvandning": "Verkställ R1 + B1 + C1 exakt (sök/ersätt i angivet fält — samtliga gammalt-strängar maskinellt verifierade UNIKA i filen 2026-09-20, 6/6). C3/C4/C5 är förslag utan tvingande kraft. Originalet ändras av paketets ägare (s4-släktet) eller nästa våg — inte av granskaren. Vid flytt till data/blogg/: kör paketets KVD. Publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "R1",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (Urvalet, andra stycket)",
+      "gammalt": "Atlas Copco fyller en egen plats i serien: seriens största bolag hittills, med ett börsvärde på nära 984 miljarder kronor vid senaste insamling — bland de tyngsta på hela Stockholmsbörsen.",
+      "nytt": "Atlas Copco fyller en egen plats i serien: ett av seriens tyngsta bolag — när paketet byggdes det största — med ett börsvärde på nära 984 miljarder kronor vid senaste insamling, bland de tyngsta på hela Stockholmsbörsen.",
+      "orsak": "Innehållspåstående fällt mot seriens nuvarande läge (flygaktier-B1/B2- + Tele2-R1-presedens): påståendet var sant vid bygget 09-15 15:21 (då sex paket, största syskon Ericsson 317,5 mdr) men ABB-paketet (1 662,9 mdr SEK, samtidigt noterat) byggdes 21:25 samma dag och i dag är minst nio paket större (Eli Lilly ~10 700, JPMorgan ~9 800, Samsung, ASML, PG, Goldman Sachs, SAP, Novo Nordisk ~2 000 mdr SEK-ekvivalenter). Vintage-sann formulering behåller lärobilden utan motbevisbar superlativ"
+    },
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (vågmätningens stycke, σ-parentesen)",
+      "gammalt": "(högre än syskonpaketen Ericsson och Industrivärden)",
+      "nytt": "(högre än syskonpaketet Industrivärden på 19,9 procent, lägre än Ericsson-paketets 32)",
+      "orsak": "Sifferfel: Atlas σ 28 %/år är LÄGRE än Ericsson-paketets 32 %/år — inte högre. Båda mätningarna från samma verifieringsdatum 2026-08-24 (jämförbara). Industrivärden 19,9 % är korrekt refererat. Källor: data/analyses/ATCO-A.ST.json (σ 28 %) + syskonpaketen ericsson/industrivarden (32 %/19,9 %)"
+    },
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (övning C, sista meningen)",
+      "gammalt": "aldrig en handssignal",
+      "nytt": "aldrig en handelssignal",
+      "orsak": "Stavfel — samma systematiska slip som Tele2-C1 (2026-09-20): byggfamiljens stamfras 'pedagogiskt verktyg, aldrig en handelssignal' skrivet med dubbel-s borttappad"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (övning B, introraden före scenariorutan)",
+      "gammalt": "rörelsemarginal 20,6 procent ger ett rörelseresultat på ungefär 34,6 miljarder",
+      "nytt": "rörelsemarginal 20,6 procent ger ett rörelseresultat på ungefär 34,7 miljarder",
+      "orsak": "Intern konsistens (förslag): meningens egna avrundade indata 168,3 × 20,6 % = 34,67 → rutans mittcell säger 34,7; exakt räkning på källans exakta tal (168,343 × 20,56 % = 34,61) ger 34,6 — därför är ingen av formerna fel, men text och cell bör säga samma tal. Talhedsförslag utan tvingande kraft"
+    },
+    {
+      "id": "C4",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (vågvalideringens domtabell)",
+      "gammalt": "| medellång: basbygge | miss | +8,4 procent (utanför ±6) |\n| mega: basbygge | miss | +8,4 procent (utanför ±6) |",
+      "nytt": "| medellång: basbygge | miss | +8,4 procent (utanför ±6) |\n| lång: osatt | döms aldrig | — (osatta räknas i täckningsbråket, inte som fel) |\n| mega: basbygge | miss | +8,4 procent (utanför ±6) |",
+      "orsak": "Protokollraden 'lång: osatt → osatt' finns i vagvalidering-SENASTE.md för ATCO (liksom för alla 12 bolag) men utkastets tabell visar bara de fyra dömda raderna — 'två träffar och två missar' är sant, men seriens egen öppenhetsprincip ('missar redovisas lika öppet som träffar'; protokollet: 'osatta räknas i täckningsbråket, aldrig som fel') talar för att den femte horisonten syns. Förslag"
+    },
+    {
+      "id": "C5",
+      "typ": "byt",
+      "fil": "sa-laser-du-atlas-copco-q3-2026.json",
+      "falt": "body (kontrollräkningsstycket, sista meningen)",
+      "gammalt": "Jämförelsen mot samtliga branschkollegor finns i [universumjämförelsen](/dataset/industri/universumjamforelse).",
+      "nytt": "Jämförelsen mot samtliga branschkollegor finns på [Atlas Copcos bolagssida](/bolag/atco-a-st) och i [universumjämförelsen](/dataset/industri/universumjamforelse).",
+      "orsak": "Kohortkonvention: 4/5 syskon länkar bolagssidan (SKF/ABB-placeringen i anslutning till universumjämförelsen); /bolag/atco-a-st verifierad i live-sitemapen 2026-09-20. Förslag"
+    }
+  ]
+}

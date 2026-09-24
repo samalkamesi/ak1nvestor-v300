@@ -23,9 +23,13 @@
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { byggTickMatning } from "./pumpor-tick-matning.mjs"; // o140: tick-svält-instrument (o136 §6.3)
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const senasteKorning = new Map(); // namn → ts (dedup inom samma minut)
+// o140: mäter varje tick (drift + event-loop) — tröskelträff ⇒ TICK-SVÄLT-rad
+// med resurskontext i pm2-loggen; kastar ALDRIG (daemonen lever alltid).
+const tickMatning = byggTickMatning({ logga });
 
 function logga(rad) {
   console.log(`${new Date().toISOString().slice(11, 19)} ${rad}`);
@@ -60,6 +64,7 @@ function korMinutvis(namn, kommando, args, cwd) {
 }
 
 function tick() {
+  tickMatning.tick(); // o140: FÖRE schemat — tick-callbackens egen puls mäts ren
   const d = new Date();
   const min = d.getMinutes();
   const tim = d.getHours();
@@ -90,6 +95,7 @@ function tick() {
   if (tim === 7 && min === 2) korEnGang("kvalitetsvakt", "node", ["verktyg/kvalitetsvakt.mjs"]); // o22: färsk rapport före 07:43-ronden (SENASTE-filen gitignore:ad — ingen daglig ytsmuts)
 }
 
+logga("TICK-MÄTNING aktiv (o140) — trösklar: drift 2000 ms · event-loop 1000 ms · rad: TICK-SVÄLT {json} (till pm2-loggen)");
 logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · larm-eskalering :x0 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · scenariotest 04:44 · skalfri-vakt 05:06 · kvalitetsvakt 07:02 · hygien sö 03:33");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

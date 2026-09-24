@@ -1,0 +1,9 @@
+{
+  "granskat": "data/blogg-utkast/m9-ko/forskningslaget-grona-av-100-v1.json",
+  "granskadAv": "agentfabrik auto-s1-1789980325227 s1-u1 (2026-09-21)",
+  "rapport": "forskningslaget-grona-av-100-KONTROLL-2026-09-21-s1u1.md",
+  "bedomning": "FLYTTKLART PAKET — fjärde passet (paketklassen): 66/66 maskinella kontroller gröna, 0 sondbuggar; källor 3/3 md5-exakta mot DAGENS träd 2026-09-21 (seriens renaste källäge består — D1-driften i m9-3/m9-4-klassen berör ej gren (b)); siffror egna omräknade (7/76/17/0 med summakontroll 100, regim magert 0,07<0,08, topp-3 86,7/77,5/85,9 % samtliga >70, tredjeplats entydig, statusRegler + lägestext ordagrant, 10x10-universum, 'oförändrad'-påståendet korsbelagt mot publicerad utgåva); determinismkedja sluten (seed 904e0fcc + mallMd5 f095edf7 + kandidatMd5 60d18ca6 reproducerade, mall-bodyn byte-identisk ur dagens källor, dagens body == original + exakt v151 F1+F2); juridik 2007:528 ren på mall OCH paketyta (kontrolleraText 0/0, köp/sälj endast negerat, ingen lagrumsblandning); 911 = 0 på sex mönster; 3/3 internlänkar live 200",
+  "paket": "forskningslaget-grona-av-100-FLYTTKLART-PAKET-2026-09-21.json (body 2954 tkn, rm 2 = round(439/200), description 239 tkn handskriven, publishedAt null = kundens klick R2, tags = seriens egna, md5 413ea56073cc67f730a0a9e9266e2859, skrivet genom sondens tre grindar)",
+  "anvandning": "Postlistan är TOM MED AVSIKT: leveransen är PAKETFILEN (inte textändringar i utkastet) — v151:s båda rättningar är verkställda sedan 09-14 och nu verifierade för tredje gången; utkast-JSON:en orörd av granskaren. Vid kundexport: paketets body/title/description/tags/rm är publicerbara som de är; publishedAt sätts av kundens klick; slugen ersätter den befintliga publicerade utgåvan (2026-09-03, identisk statistik). Ytterligare innehållsändringar på m9-serien går via verktyg/m9-fabrik.mjs (regenerering med nytt kvitto — ny granskning krävs då). Publicering = kundens beslut (R2).",
+  "poster": []
+}

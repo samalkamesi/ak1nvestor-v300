@@ -1,0 +1,28 @@
+
+## SPÅR 8 s8-u3 (manifest auto-s8-1789896901533, vakt 3/3) — 2026-09-20 11:35–11:5x lokal: kvalitetsvåg o113 — PATCH-KÖN OMGÅNG 4 (periferin) LASTAD + hälsorapport efter omgång 3-kvittot (o73 §4-hygienen): 5 registry-verifierade runtime-poster aktiva i kön, äkta end-to-end-bevis med prod-synkens egna lasPatchKo/aktivPatchPlan (0 ogiltiga, aktiv plan = exakt de 5), patchkö-sviten 67/0, tsc 0 orörd; kollision med s8-u1:s parallellanspråk löst med ride-alang + notis + oförminskad rest (BYGGE-GRÖNT-beviset lämnat åt u1); o112 dubbelbokat av u1+u2 (serviceinfo i notis) [fabrik]
+
+Fabriksagent s8-u3, spår 8. VAL: o73 §7.2 + o106 §6.2 båda bokade
+omgång 4 "EFTER react-familjens kvitto" — kvittot landade 03:42:43Z
+(19.3.0 ×4 ok, tsc-grinden grön), och hälsorapporten var 2 dagar gammal
+FÖRE kvittot (hygien-gapet från o73 §1 höll på att upprepas). KUR:
+beroende-vakt körd 09:38:22Z (7 sårbarheter: high 1 = js-yaml-major,
+sharp-minskningen 2→1 bekräftad; 9 inom-intervall-kandidater kartlagda)
++ data/infra/patch-ko.json lastad till 10/10: @supabase/supabase-js
+2.116.0 · next-intl 4.14.5 · zod 4.6.5 · @tanstack/react-query 5.103.1 ·
+react-hook-form 7.88.0 — urval runtime-kritisk kundypa, alla befintliga
+deps inom deklarerat semver, peers mot next 16.3.5/react 19.3.0 ✓,
+engines mot node 22.23.2 ✓, supabase-js opentelemetry-peer optional+ej
+installerad ✓; installationen ägs ENDAV prod-synken (:x7 + RAM ≥2200,
+09:37Z stod den i VÄNTAR-RAM) med o106-grinden + o108-byggögonen +
+o50-loop-skyddet i kedjan. BEVIS: synkens EGNA exporterade funktioner
+körda mot verklig kö/kvitton — 0 ogiltiga, aktiv plan exakt de 5 ·
+patchkö-svit 67/0 · tsc 0 projektbinär (src orörd) · INGET bygge/INGEN
+install. KOLLISION (öppet): s8-u1 skrev parallellt anspråk på samma yta
+under mitt arbete — yta a+b var redan fullbordad (ride-alang, o18),
+yta c (o108:s BYGGE-GRÖNT-bevis, kräver EFTER-installationsläget) lämnad
+HELT åt u1 via direktnotis; o112 dubbelbokat av u1+u2 påpekat i notisen;
+jag tog o113 (ledigt verifierat). PROTOKOLL:
+OPTIMERING/o113-patchko-omgang4-periferi-s8.md. KÖ: omgång 5 efter
+kvitto (filen 10/10-full — takhöjning = kodväg), major-klassen
+(@mdxeditor js-yaml-HIGH m.fl.) = kodleverans.
+LEVERANS: data/infra/patch-ko.json, data/rapporter/beroende-halsa-SENASTE.md, data/forskning/OPTIMERING/o113-patchko-omgang4-periferi-s8.md, data/vakten/auto-s8-1789896901533-s8-u3-o113-notis-till-u1.md, worklog.md. [fabrik]

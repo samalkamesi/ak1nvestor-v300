@@ -17,7 +17,11 @@ function las(): Besok[] {
   if (typeof window === "undefined") return [];
   try {
     const rå = window.localStorage.getItem(NYCKEL);
-    return rå ? (JSON.parse(rå) as Besok[]) : [];
+    if (!rå) return [];
+    // Kontraktet Besok[] gäller alltid: sådd av "null"/icke-array (trasig
+    // annan flik, migreringsrester) bryter ALDRIG ut till anroparen.
+    const parsad: unknown = JSON.parse(rå);
+    return Array.isArray(parsad) ? (parsad as Besok[]) : [];
   } catch {
     return [];
   }
@@ -41,6 +45,16 @@ export function registreraBesok(sida: string, titel?: string) {
 /** Senaste besök, nyast först. */
 export function besok(): Besok[] {
   return las();
+}
+
+/** decodeURIComponent med fallgrop: ogiltig %-kodning ("/kurser/100%")
+ *  kastar URIError — P8-andan: ogiltig indata ger rå sträng, aldrig kast. */
+function lasbarDel(text: string): string {
+  try {
+    return decodeURIComponent(text);
+  } catch {
+    return text;
+  }
 }
 
 /** Mänsklig titel för en sökväg när ingen anges. */
@@ -71,10 +85,10 @@ export function titelFranSida(sida: string): string {
   };
   if (kända[sida]) return kända[sida];
   if (sida.startsWith("/kurser/")) {
-    return decodeURIComponent(sida.replace("/kurser/", "").replace(/-/g, " "));
+    return lasbarDel(sida.replace("/kurser/", "").replace(/-/g, " "));
   }
   if (sida.startsWith("/blogg/")) {
-    return "Blogg: " + decodeURIComponent(sida.replace("/blogg/", "").replace(/-/g, " "));
+    return "Blogg: " + lasbarDel(sida.replace("/blogg/", "").replace(/-/g, " "));
   }
   return sida;
 }

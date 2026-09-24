@@ -18,6 +18,7 @@ import {
   type StudioEvent,
   type StudioFilandring,
   type StudioKontext,
+  type StudioSessionsKort,
   type StudioTransport,
 } from "@/lib/studio/studio-transport";
 
@@ -139,6 +140,43 @@ const STANDE_MAL_141 =
 /** Tak för prompten (tecken) — rimligt stort för "max kapacitet"-känsla. */
 const MAX_PROMPT_TEEKEN = 50_000;
 
+// ── VÅG 215.1 — GET-PAYLOAD-TAK (kontrakt 200 kB) ─────────────────────────────
+// Mätning 2026-09-20: 256,5 kB — trådens innehåll bars TRE gånger: sessionens
+// fulltext-historik (71 kB) + sessionskartans per-session-historik (23,4 kB)
+// + tradHistorik-vyn (153,6 kB). tradHistorik (kanonvyn, kontraktets "aldrig
+// krympa") är ORÖRD; dubbellagringen kapas: kartan bär antalPoster (klienten
+// läser endast aktiv/stangd/modellDod — studio-chat.tsx:s karttyp) och
+// historiken håller fulltext endast för de senaste svaren (v148F:s löfte
+// "fulltext i sessionens egna vy" lever för det kunden just läser).
+const V215_HIST_TAK_TKN = 2_000;
+const V215_HIST_HELA = 3;
+
+function v215KapaHistorik<T extends { text: string }>(historik: T[]): T[] {
+  if (historik.length <= V215_HIST_HELA) return historik;
+  const kapadFran = historik.length - V215_HIST_HELA;
+  return historik.map((p, i) =>
+    i < kapadFran && p.text.length > V215_HIST_TAK_TKN
+      ? {
+          ...p,
+          text:
+            p.text.slice(0, V215_HIST_TAK_TKN) +
+            `\n\n… [kapad i transporten — de ${V215_HIST_HELA} senaste svaren är hela]`,
+        }
+      : p,
+  );
+}
+
+function v215TunnaKarta(
+  karta: Record<string, StudioSessionsKort>,
+): Record<string, Omit<StudioSessionsKort, "historik"> & { antalPoster: number }> {
+  const ut: Record<string, Omit<StudioSessionsKort, "historik"> & { antalPoster: number }> = {};
+  for (const [sid, kort] of Object.entries(karta ?? {})) {
+    const { historik, ...vila } = kort;
+    ut[sid] = { ...vila, antalPoster: Array.isArray(historik) ? historik.length : 0 };
+  }
+  return ut;
+}
+
 /** JSON-svar utan caching — studio-ytan får aldrig cachas. */
 function jsonSvar(kropp: unknown, status = 200): Response {
   return new Response(JSON.stringify(kropp), {
@@ -181,12 +219,12 @@ export async function GET(req: NextRequest) {
       return jsonSvar({
         transport: transport.namn,
         sessionId,
-        historik,
+        historik: v215KapaHistorik(historik),
         tradHistorik,
         kontext,
         interaktioner: lasAllaInteraktioner(),
         live: true,
-        sessionskarta: lasStudioSessionskarta(),
+        sessionskarta: v215TunnaKarta(lasStudioSessionskarta()),
       });
     } catch (fel) {
       return jsonSvar({
@@ -194,7 +232,7 @@ export async function GET(req: NextRequest) {
         sessionId: sidPar,
         historik: [],
         live: false,
-        sessionskarta: lasStudioSessionskarta(),
+        sessionskarta: v215TunnaKarta(lasStudioSessionskarta()),
         fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas.",
       });
     }
@@ -260,7 +298,7 @@ export async function GET(req: NextRequest) {
       kontext: varmKontext,
       interaktioner: lasAllaInteraktioner(),
       live: false,
-      sessionskarta: lasStudioSessionskarta(),
+      sessionskarta: v215TunnaKarta(lasStudioSessionskarta()),
       ...(await lasAterkoppling()),
       tradHistorik: lasTradHistorik(lasHuvudtradSessioner(), { sessionId: null, historik: [] }),
       fel: "Agenten värms efter omstart — tråden är hel; chatten går live automatiskt inom cirka en halv minut.",
@@ -310,14 +348,14 @@ export async function GET(req: NextRequest) {
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
-      historik,
+      historik: v215KapaHistorik(historik),
       kontext,
       // V83 B2 + V84 B: väntande interaktioner från ALLA transporter
       // (permission/fråga — även egna tabbars dialoger återkommer här).
       interaktioner: lasAllaInteraktioner(),
       live: true,
       // VÅG 84 B: sessionskartan — alla sessioner denna process sett.
-      sessionskarta: lasStudioSessionskarta(),
+      sessionskarta: v215TunnaKarta(lasStudioSessionskarta()),
       // VÅG 87 H1: återkopplingen — den senast aktiva sessionen + HELA
       // dess historik (levande transport > kartan/disk) + mål-snapshot.
       senastAktivSessionId: aterkoppling.senastAktivSessionId,
@@ -343,7 +381,7 @@ export async function GET(req: NextRequest) {
       historik: [],
       interaktioner: transport.vantaInteraktioner(),
       live: false,
-      sessionskarta: lasStudioSessionskarta(),
+      sessionskarta: v215TunnaKarta(lasStudioSessionskarta()),
       // VÅG 87 H1: även när agenten är nede svarar kartan (disken!) —
       // historiken från frånvaron förloras inte bara för att barnprocessen
       // är nere; lasAterkoppling kastar aldrig.

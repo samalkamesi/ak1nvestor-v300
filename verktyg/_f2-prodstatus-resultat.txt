@@ -1,0 +1,78 @@
+PRODSTATUS START
+2026-09-20T05:09:44.659Z prod status:
+ M data/rapporter/motorervalidering-2026-09-02.md
+?? data/forskning/organ-arkiv-SENASTE.json
+?? verktyg/_s1u1-logistik-commitmsg.txt
+?? verktyg/_s1u2-utbildning-verify.mjs
+?? verktyg/_s1u3-lyx-commitmsg.txt
+?? verktyg/_s2u1o21-commitmsg.txt
+?? verktyg/_s2u2o21-commitmsg.txt
+?? verktyg/_s3u3-1789858506564-commitmsg.txt
+?? verktyg/_s3u3-1789858506564-worklog.txt
+?? verktyg/_s4u2-akerbp-commitmsg.txt
+?? verktyg/_s4u2-pg-commitmsg.txt
+?? verktyg/_s4u3-hufvudstaden-commitmsg.txt
+?? verktyg/_s5u1o21-commitmsg.txt
+?? verktyg/_s5u1o21-frontb.mjs
+?? verktyg/_s5u1o21-kvd.mjs
+?? verktyg/_s5u1o21-sond.mjs
+?? verktyg/_s5u1o21-synk.mjs
+?? verktyg/_s5u2o21-commitmsg.txt
+?? verktyg/_s5u2o21-commitmsg2.txt
+?? verktyg/_s5u2o21-frontb.mjs
+?? verktyg/_s5u2o21-kvd.mjs
+?? verktyg/_s5u2o21-synk.mjs
+?? verktyg/_s5u3o20-commitmsg.txt
+?? verktyg/_s5u3o20-frontb.mjs
+?? verktyg/_s5u3o20-kvd.mjs
+?? verktyg/_s5u3o20-synk.mjs
+?? verktyg/_s5u3o21-commitmsg.txt
+?? verktyg/_s5u3o21-frontb.mjs
+?? verktyg/_s5u3o21-kvd.mjs
+?? verktyg/_s5u3o21-lakning.mjs
+?? verktyg/_s5u3o21-sond.mjs
+?? verktyg/_s5u3o21-sond2.mjs
+?? verktyg/_s5u3o21-synk.mjs
+?? verktyg/_s5u5-v213b-commitmsg.txt
+?? verktyg/_s7u1o96-commitmsg.txt
+?? verktyg/_s7u2o105-commitmsg.txt
+?? verktyg/_s7u2o105-driftsbok.txt
+?? verktyg/_s7u2o105-worklog.txt
+?? verktyg/_s7u2o105b-commitmsg.txt
+?? verktyg/_s7u3o101-commitmsg.txt
+?? verktyg/_s7u3o101-slutlaget.txt
+?? verktyg/_s7u3o96E-commitmsg.txt
+?? verktyg/_s7u3o96E-worklog.txt
+?? verktyg/_s7u3o97-bokforing.txt
+?? verktyg/_s7u3o97-commitmsg.txt
+?? verktyg/_s7u3o97-efter.txt
+?? verktyg/_s7u3o97-slut.txt
+?? verktyg/_s8u1-o106-commitmsg.txt
+?? verktyg/_s8u1-o106-tillagg.txt
+?? verktyg/_s8u1-o106-tillagg2.txt
+?? verktyg/_s8u1-o106-worklog.txt
+?? verktyg/_s8u2-o107-commitmsg.txt
+?? verktyg/_s8u2-o107-worklog.txt
+?? verktyg/_s8u3o98-commitmsg.txt
+?? verktyg/_s9u1-1789874113441-commitmsg.txt
+?? verktyg/_s9u1-e30-commitmsg.txt
+?? verktyg/_s9u2-commitmsg.txt
+?? verktyg/_s9u2-worklog-append.txt
+?? verktyg/_s9u3-1789847706174-commitmsg.txt
+?? verktyg/_s9u3-a2a6b14-commitmsg.txt
+?? verktyg/_v211u1-commitmsg.txt
+?? verktyg/_v211u2-bokforing-commitmsg.txt
+?? verktyg/_v211u2-commitmsg.txt
+?? verktyg/_v211u3-ar6-commitmsg.txt
+?? verktyg/_v213b-u8-commitmsg.txt
+?? verktyg/_v213bu1-commitmsg.txt
+?? verktyg/_v213bu10-commitmsg.txt
+?? verktyg/_v213bu10-commitmsg2.txt
+?? verktyg/_v213bu3-commitmsg.txt
+?? verktyg/_v213bu7-commitmsg.txt
+
+2026-09-20T05:09:44.669Z prod HEAD:
+2eb099ee studio: auto s10-u1 jungurkvitto 03:20 — arkivera-server.mjs första AUTOMATISKA veckoarkivering bevisad (cron × logg × 5 artefakter) + kedja 3 GRÖN på jungurarkiven: RTO restore 6,1 s · klon 17,1 s · 13 022 poster · src 726 filer/221 230 rader · konfigsnapshot-dom 3/3 · retention 0 (nästa ~11-15) · prediktioner 6✅/4❌ med läxor [fabrik]
+38d4790b studio: auto s10-u2 DR-övning blad 10 födelsebevis — restore GRÖN RTO 11,7 s · prediktiondom 9/9 varav fyra EXAKTA (board 50 114 · snapshots 1 252 404 · DAGSTEG +19 800) · 02:40-gap STÄNGT 2 629 ∈ [2 400, 2 950] · RPO-morgonpunkt +140 · trippelkorsvalidering A==B==C 1 345 719 · PG17-viloläge dubbelbevisat (eget fönster + syskonets startläge) [fabrik]
+
+2026-09-20T05:09:44.669Z PRODSTATUS SLUT

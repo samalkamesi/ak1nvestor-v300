@@ -44,6 +44,20 @@
 //   AK1A_DEPLOY_LAS    sökväg till deploy-låset (standard /tmp/ak1a-deploy.lock)
 //   AK1A_BYGG_MONSTER  kommaseparerade HELA pgrep-mönster (standard
 //                      "next build,npm ci --no-audit")
+//   AK1A_RETRY_VANTA_MS   väntetak för fönstervakt vid återmätning (standard
+//                         480000 = 8 min; typiskt byggfönster 3–5 min)
+//   AK1A_RETRY_POLL_MS    pollintervall under fönstervakten (standard 30000)
+//
+// ÅTERMÄTNING VID DRIFTTAK-TRÄFF (o113, 2026-09-20): grunden är en SNAPSHOT
+// före crawl — ett byggfönster som ÖPPNAR MITT I crawlen (bevisat första
+// organiska cron-körningen 2026-09-20 02:16–02:28Z: prod-synkens läkebacks-
+// cykler gav 202 kalla ISR-sidor × 500 medan toppnivåerna var varma, och
+// fönstret stängde sekunder före det en kontroll VID takträff skulle ha
+// sett det) syns först i taket, och hela mätomgången går förlorad till
+// nästa dygn. KUR: vid takträff vakta gröna grunder (poll, väntetak) och
+// mät OM EN gång. Består felen träffas taket igen → exit 2 som förr —
+// ommätningen kasserar sig själv, okända fel maskeras aldrig (artefakt-
+// doktrinen hel; mellanlagret från driftfönstret bevaras som diagnostik).
 //
 // 0 npm-beroenden. Körning:
 //   node verktyg/doda-lankar-externa.mjs [--bas=http://localhost:3000] [--djup=3]
@@ -80,6 +94,8 @@ const BYGG_MONSTER = (process.env.AK1A_BYGG_MONSTER || "next build,npm ci --no-a
   .split(",")
   .map((m) => m.trim())
   .filter(Boolean);
+const RETRY_VANTA_MS = parseInt(process.env.AK1A_RETRY_VANTA_MS || "480000", 10);
+const RETRY_POLL_MS = parseInt(process.env.AK1A_RETRY_POLL_MS || "30000", 10);
 
 // Skonsamhet mot externa värdar: aldrig mer än en pågående förfrågan per
 // domän, högst DOMANER_PARALLELLT domäner samtidigt, aldrig fler än så många
@@ -182,6 +198,36 @@ async function verifyeraMatfonster() {
     }
   }
   logg("matfonster", { grunder: "gröna", las: DEPLOY_LAS });
+}
+
+// Samma tre grunder som verifyeraMatfonster, men UTAN process.exit —
+// fönstervakten (o113) behöver ett booleskt svar att polla på.
+async function matfonsterFritt() {
+  const hollare = await lasHollare();
+  if (hollare) return { fritt: false, orsak: `las:${hollare}` };
+  const bygg = await lasByggprocess();
+  if (bygg) return { fritt: false, orsak: `bygg:${bygg}` };
+  for (const sond of ["/", "/kurser"]) {
+    const { status } = await hamta(sond);
+    if (status !== 200) return { fritt: false, orsak: `bas:${sond}=${status || "inget"}` };
+  }
+  return { fritt: true, orsak: null };
+}
+
+// Vakta ett pågående driftfönster tills grunderna grönas igen — eller
+// väntetaket slår till. Återger true endast när ett nytt mätfönster fick
+// nominellt gröna grunder (krävs för att återmätningen ska bli mätvärde).
+async function vantaPaFrittFonster() {
+  const start = Date.now();
+  for (;;) {
+    const { fritt, orsak } = await matfonsterFritt();
+    if (fritt) return true;
+    if (Date.now() - start >= RETRY_VANTA_MS) {
+      logg("driftfonster-vantak", { orsak, vantadeMs: Date.now() - start });
+      return false;
+    }
+    await new Promise((losa) => setTimeout(losa, RETRY_POLL_MS));
+  }
 }
 
 async function lasSitemap() {
@@ -463,6 +509,39 @@ let besokta;
 let sett;
 let driftAndel = null;
 let aterupptagen = false;
+let atermatAntal = 0;
+
+// Crawl + mellanlager i ett steg: mellanlagret skrivs FÖRE externa
+// nätanrop (en krasch kostar inte en omcrawl) och märks med drift-tal +
+// driftfonster-dom så en driftfönster-insamling aldrig kan återupptas till
+// mätvärde (märkningen är grinden, se VALIDERA_FRAN-grenen).
+async function korInsamling() {
+  const insamling = await samlaExterna();
+  const antal = insamling.besokta;
+  const andel = antal > 0 ? insamling.driftfel / antal : 0;
+  const malKarta = insamling.mal;
+  const mellanFil = skyddadFil(mellanNamn);
+  fs.mkdirSync(path.dirname(mellanFil), { recursive: true });
+  fs.writeFileSync(
+    mellanFil,
+    JSON.stringify(
+      {
+        bas: BAS,
+        tid: new Date().toISOString(),
+        besoktaSidor: antal,
+        driftAndel: andel,
+        driftfonster: andel > DRIFT_TAK,
+        tvingad: TVINGAD,
+        felSidor: insamling.felSidor,
+        mal: [...malKarta.entries()].map(([url, k]) => ({ url, kallor: [...k] })),
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  logg("insamling", { sidor: antal, mal: malKarta.size, driftAndel: andel, sparad: mellanFil });
+  return { besokta: antal, mal: malKarta, driftAndel: andel };
+}
 
 if (VALIDERA_FRAN) {
   const mellanlager = JSON.parse(fs.readFileSync(VALIDERA_FRAN, "utf8"));
@@ -480,38 +559,34 @@ if (VALIDERA_FRAN) {
   aterupptagen = true;
   logg("aterupptar", { fran: VALIDERA_FRAN, mal: sett.size });
 } else {
-  const insamling = await samlaExterna();
-  besokta = insamling.besokta;
-  sett = insamling.mal;
-  driftAndel = besokta > 0 ? insamling.driftfel / besokta : 0;
-  // mellanlager FÖRE externa nätanrop: en krasch kostar inte en omcrawl.
-  // Märks med drift-tal + driftfonster-dom så en driftfönster-insamling
-  // aldrig kan återupptas till mätvärde (märkningen är grinden, se ovan).
-  const mellanFil = skyddadFil(mellanNamn);
-  fs.mkdirSync(path.dirname(mellanFil), { recursive: true });
-  fs.writeFileSync(
-    mellanFil,
-    JSON.stringify(
-      {
-        bas: BAS,
-        tid: new Date().toISOString(),
-        besoktaSidor: besokta,
-        driftAndel,
-        driftfonster: driftAndel > DRIFT_TAK,
-        tvingad: TVINGAD,
-        felSidor: insamling.felSidor,
-        mal: [...sett.entries()].map(([url, k]) => ({ url, kallor: [...k] })),
-      },
-      null,
-      2,
-    ) + "\n",
-  );
-  logg("insamling", { sidor: besokta, mal: sett.size, driftAndel, sparad: mellanFil });
+  let ins = await korInsamling();
+  besokta = ins.besokta;
+  sett = ins.mal;
+  driftAndel = ins.driftAndel;
 
   // DRIFT-TAK EFTER crawl (artefaktdoktrinen): ett byggfönster som öppnar
   // MITT I mätningen ger massiva 5xx/nätfel på LOKALA sidor — det är drift,
   // inte länkgraf, och får aldrig bokföras som mätvärde (o47: 1 616×500).
   // Mellanlagret finns kvar som märkt diagnostikunderlag; fyndfil skrivs ej.
+  //
+  // o113-ÅTERMÄTNING: grunden var grön vid crawlstart men fönstret kan ha
+  // öppnat under crawlen (bevis: 2026-09-20 02:16–02:28Z — och fönstret
+  // stängde sekunder FÖRE kontrollen vid takträff, därför kräver kuren
+  // INTE påvisad aktivitet: fönstervakten avgör själv). Vid takträff:
+  // vakta gröna grunder (poll, väntetak) och mät OM EN gång. Består felen
+  // träffas taket igen → exit 2 exakt som förr — ommätningen kasserar sig
+  // själv, okända fel maskeras aldrig (artefaktdoktrinen hel).
+  if (!TVINGAD && driftAndel > DRIFT_TAK) {
+    logg("driftfonster-atermat", { vantaMs: RETRY_VANTA_MS });
+    if (await vantaPaFrittFonster()) {
+      ins = await korInsamling();
+      besokta = ins.besokta;
+      sett = ins.mal;
+      driftAndel = ins.driftAndel;
+      atermatAntal = 1;
+    }
+  }
+
   if (!TVINGAD && driftAndel > DRIFT_TAK) {
     console.error(
       `DRIFTFÖNSTER: ${(driftAndel * 100).toFixed(1)} % av ${besokta} sidor svarade 5xx/nätfel ` +
@@ -543,6 +618,7 @@ const rapport = {
   tvingad: TVINGAD,
   matfonster: TVINGAD ? "diagnostik" : "grönt",
   aterupptagen,
+  atermatAntal,
   driftAndel,
   crawlideSidor: besokta,
   unikaExternaMal: resultat.length,
@@ -561,7 +637,7 @@ const utFil = skyddadFil(rapportNamn);
 fs.mkdirSync(path.dirname(utFil), { recursive: true });
 fs.writeFileSync(utFil, JSON.stringify(rapport, null, 2) + "\n");
 
-console.log(`Crawlade ${besokta} sidor, validerade ${resultat.length} unika externa mål på ${rapport.sekunder} s${TVINGAD ? " [DIAGNOSTIK — ej mätvärde]" : ""}`);
+console.log(`Crawlade ${besokta} sidor, validerade ${resultat.length} unika externa mål på ${rapport.sekunder} s${atermatAntal > 0 ? ` (efter ${atermatAntal} återmätning ur driftfönster, o113)` : ""}${TVINGAD ? " [DIAGNOSTIK — ej mätvärde]" : ""}`);
 console.log(`Klasser: ${JSON.stringify(perKlass)}`);
 console.log(`DÖDA (4xx): ${rapport.fynd.doda.length}`);
 for (const d of rapport.fynd.doda) console.log(`  ${d.status} ${d.mal}  ← ${d.kallor.slice(0, 3).join(", ") || "(sitemap)"}`);

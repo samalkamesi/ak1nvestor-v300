@@ -203,15 +203,19 @@ function UtvaltSektion({
   beskrivning,
   children,
   id,
+  sektionsKlass,
 }: {
   eyebrow: string;
   rubrik: string;
   beskrivning: string;
   children: React.ReactNode;
   id: string;
+  // o96 (prestanda spår 7): sektionsspecifik cv-platshållarklass — sektionernas
+  // verkliga korthöjder sprider sig 184–739 px; en gemensam nivå kan inte träffa.
+  sektionsKlass?: string;
 }) {
   return (
-    <section aria-labelledby={id} className="mt-14">
+    <section aria-labelledby={id} className={`mt-14 ${sektionsKlass ?? ""}`.trim()}>
       <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">{eyebrow}</p>
       <h2 id={id} className="mt-2 font-serif text-2xl font-bold sm:text-3xl">
         {rubrik}
@@ -285,6 +289,7 @@ export default async function KurserPage() {
         {/* (a) FLAGGSKEPPEN — sex nyckelverk, RO-förhöjda kort */}
         <UtvaltSektion
           id="flaggskeppen"
+          sektionsKlass="cv-utvalt-flagg"
           eyebrow="Bibliotekshallen · först"
           rubrik="Flaggskeppen"
           beskrivning="Sex nyckelverk som format århundraden av investeringsvisdom — kompletta, kapitel för kapitel. Börja här om du vill läsa mästarna direkt."
@@ -306,6 +311,7 @@ export default async function KurserPage() {
         {/* (b) NYA I BIBLIOTEKET — senast tillagda kurser med ✨-chip */}
         <UtvaltSektion
           id="nya-i-biblioteket"
+          sektionsKlass="cv-utvalt-nya"
           eyebrow="Bibliotekshallen · färska"
           rubrik="Nya i biblioteket"
           beskrivning="Senast tillagda kurser — färska kapitel att utforska, rakt från analyslabbet."
@@ -326,6 +332,7 @@ export default async function KurserPage() {
         {/* (c) BÖRJA HÄR — nybörjarspåret V01–V06 med stig-ikonen */}
         <UtvaltSektion
           id="borja-har"
+          sektionsKlass="cv-utvalt-borja"
           eyebrow="Bibliotekshallen · stigen"
           rubrik="Börja här"
           beskrivning="Aldrig analyserat ett bolag förut? Följ stigen: de sex första grundkurserna i AKM1 — V01 till V06 — bygger grunden steg för steg."

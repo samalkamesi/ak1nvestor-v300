@@ -1,0 +1,176 @@
+{
+  "slug": "od-10-kreditderivatet",
+  "category": "OPTIONS & DERIVAT",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kreditderivatet — CDS, försäkringen på låntagaren",
+  "summary": "OPTIONS & DERIVAT-familjens tionde steg öppnar instrument som familjen mött från aktiesidan men aldrig från kreditsidan: credit default swap, kontraktet som gör låntagarens betalningsförmåga till en handelsbar försäkring. Sonden mot registret (483 kurser vid sondtillfället) ger noll kursägare på instrumentet: «credit default» och «kreditderivat» finns endast i boktexter (kortsidans storsatsning och kreditbubblans krönika), «swaption» noll, och CDS nämns i kursrummet en enda gång i förbifart (riskkursen om svarta svanar) — medan grannarna pekar på fältet från var sitt håll: försäkringsskrivarkursen äger aktieoptionens säljarstol, kontrahentriskkursen äger motparten och clearinghuset, obligations- och kapitalstrukturkurserna äger själva skulden. Kursen äger kontraktet genom fem lager: mekaniken (kvartalspremien 250 punkter på tio miljoner betyder 250 000 kronor om året, och de tre kredithändelserna konkurs, betalningsinställelse och omstrukturering), prissättningens ekvation (årsannolikheten är spriden dividerad med förlustanden — 250 punkter med 60 procents förlustandel ger 4,2 procent per år och 19,2 procent sammanlagt på fem år), säljarens break-even (den förväntade förlusten 250 000 per år är exakt premien — spegelbilden av försäkringsskrivarkursens väntevärdesräkning), multiplikatorns värld (naken försäkring utan hus, fem gånger större försäkring än skuld, och 2008 års kedja där säljarna själva blev motparter som föll) och statskrediten som sändare (Greklands femårssprid som steg från omkring 200 punkter sommaren 2009 till över 1 000 — marknadens utlästa årsannolikhet 16,7 procent). Pedagogisk utbildning om mekanismer — aldrig placeringsråd.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "why": "OPTIONS & DERIVAT-familjens nio första steg har kartlagt instrumenten från aktieägarens och försäkringsskrivarens stolar — grekerna, den implicita volatiliteten, warranterna, kombinationerna, utdelningens koppling, terminen, binomialträdet, försäkringsskrivandet — men alla kontrakt har haft ett och samma underliggande: aktien. Kreditderivatet är familjens andra värld: underliggande är en låntagares betalningsförmåga, och risken som prissätts är inte volatilitet utan konkurs. Sonden mot 483 kurser bekräftar den vita fläcken: «credit default» har noll kursägare (endast boken om kortsidans storsatsning, fjorton träffar), «kreditderivat» noll kursägare (två bokträffar), «swaption» noll, och CDS förekommer i kursrummet en gång i förbifart hos riskkursen om svarta svanar — medan grannarna alla pekar in mot fältet: od-09 äger försäkringsskrivarens ekonomi för aktieoptionen (här ägs samma stol för kreditrisken — kursens spegel och direkt fortsättning), rk-16 äger motpartsrisk, clearing och kollapsen 2008 ur systemets sida (här ägs instrumentet och dess prissättning; AIG-historien lämnas åt deras kapitel), st-05 äger bolagets återfinansieringsmur (löptiderna), ks-05 äger covenanter och kreditbetyg (löftenas juridik), ma-05 äger kreditpremien som makrovariabel (här ägs den enskilda låntagarens kontrakt), och od-02 äger volatiliteten som riskmått (här ägs spriden). Ingen kurs äger fältets enklaste och mest använda prisformel: årsannolikheten lika med spriden delad med förlustanden. Kursen fyller ytan och knyter familjens två stolar till varandra.",
+  "learn": "Läsa kontraktets mekanik: köparen av skydd (i kursens påhittade exempel stiftelsen Svea som äger Norrvik Skogs femåriga obligation på tio miljoner kronor) betalar säljaren en premie i punkter per år — 250 punkter på tio miljoner är 250 000 kronor om året, 62 500 per kvartal — och säljaren förbinder sig att ersätta förlusten om en av tre kredithändelser inträffar: konkurs, betalningsinställelse eller omstrukturering. Räkna priset som sannolikhet: punkterna per år dividerat med förlustanden vid default ger den implicita årsannolikheten — med återvinning 40 procent är förlustanden 60 och 250 punkter betyder 0,025 ÷ 0,60 = 4,2 procent per år, sammanlagt 1 − (1 − 0,0417) upphöjt till fem = 1 − 0,808 = 19,2 procent på kontraktets fem år. Se break-even-speglarna: den förväntade årliga förlusten är sannolikheten gånger förlustanden gånger beloppet = 0,0417 × 0,60 × 10 miljoner = 250 000 kronor — exakt premien; säljaren levererar väntevärde noll före kostnader, precis som försäkringsskrivaren i od-09, och hävstången är av samma slag: en utbetalning om sex miljoner (återvinning 40 procent mot tio miljoners belopp) motsvarar 24 års premieinkomster — 6 000 000 ÷ 250 000 = 24. Genomskåda multiplikatorns värld: skydd kan köpas utan att äga skulden (naken CDS), det kan skrivas mer försäkring än det finns hus (femtio miljoner skydd på tio miljoner obligation), och det var när premierna var små, utbetalningarna korrelerade och säljarna själva var motparter utan reserv som 2008 års kedja föll — kontrahentriskkursen äger kollapsens mekanik, detta kapitel äger varför instrumentet gjorde den möjlig. Slutligen läsa statskrediten som sändare: när Greklands femårssprid gick från omkring 200 punkter sommaren 2009 till över 1 000 ett år senare räknade marknaden baklänges 0,10 ÷ 0,60 = 16,7 procents årsannolikhet — spreaden blev det snabbaste röstetalet om en stats kassa, och EU förbjöd därför naken stats-CDS 2012.",
+  "history": {
+    "origin": "Kontraktet föddes på ett bankkontor i mitten av 1990-talet: J.P. Morgan bar en stor exponering mot Exxon och ville inte bära hela den på egen balansräkning — 1997 tecknade banken med Europeiska banken för återuppbyggnad och utveckling det första brett kända skyddet, och teamet kring Blythe Masters hade flyttat kreditrisken från låneboken till ett handlat kontrakt. Idén var gammal — försäkring har alltid funnits — men standardiseringen genom ISDA:s avtalstext gjorde risken delbar, prissatt och omsättbar.",
+    "evolution": "Under 2000-talet växte marknaden från engångskontrakt till ekosystem: index som iTraxx och CDX gjorde hela kreditkurvor handelsbara, och när strukturerade produkter lager på lager sålde skydd mot varandra blev notionalsiffrorna astronomiska — men kedjan bar en svag länk: säljarna av skydd var själva motparter vars reserv var tvungen att räcka till samtidigt. Hösten 2008 räckte den inte: rk-16 äger kollapsens mekanik; här noteras bara att efteråt flyttade myndigheterna stora delar av marknaden till centrala motparter med marginalkrav, och auktionsförfarandet — standardiserat sedan 2005 — blev det ordnade sättet att bestämma återvinning och utbetalning vid en kredithändelse.",
+    "modern": "2020-talets CDS-marknad är mindre i notional men vassare i funktion: indexhandeln dominerar, enkelföretagskontrakt prissätts mest kring namn med frågetecken, och statskrediten har fått rollen som marknadens snabbaste röstetal — Greklands kredithändelse 2012 var den största statsdom en kreditkommitté fastställt, och EU:s förbud mot naken stats-CDS samma år markerade gränsen mellan skydd och spel. För analytikern är spriden i dag ett levande tal: obligationspriset, kreditbetyget och CDS-spriden svarar på samma fråga — vad tror marknaden om låntagarens kassa — på tre olika klockor."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Kontraktet — premien, beloppet och kredithändelsen",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Priset är en sannolikhet — spreadens inre ekvation",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Säljarens stol — break-even och de 24 åren",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Spelet utan hus — naken CDS, multiplikatorn och 2008",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Statskrediten — sändaren som fick ett pris",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Protokollet — fem frågor till en CDS-position",
+      "minutes": 4
+    }
+  ],
+  "lynchSection": "Peter Lynch höll sig till vad han kunde rita med en tuschpenna, och hans regel är här sitt renaste testfall: ett kontrakt vars premie är en sannolikhet, vars utbetalning är en auktion och vars motpart har en motpart — det ritas inte på en servett. Lynch varnade också för att den som inte förstår en avgiftsstruktur betalar den ändå, och kreditderivatet bar i sin boom decennier av dolda premiebetalningar i strukturerade produkter som köparna trodde var ränta. Hans arbetsätt översatt: institutionens kreditkunskap har alltid börjat i låneboken — hur tjänar bolaget sina pengar, vad äger fordringsägaren för skydd — och CDS-marknaden ändrar inte den frågan, bara priset på svaret. Den som läser en spread utan att kunna läsa balansräkningen bakom den har i Lynchs mening inte gjort läxan.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal var en försäkring utan premiesedel: marginalen i balansräkningen skyddade ägaren mot att ha räknat fel. Kreditderivatet är den moderna frågan till samma idé: vad kostar det i dag att köpa den marginalen hos just denna låntagare — och svaret, spriden, är på en gång användbart och förrädiskt. Grahams varning mot spekulation står i kontraktets natur: att köpa skydd utan att äga den underliggande skulden är ett spel på en annans olycka, och hans definitoriska linje — analys, säkerhetsmarginal och en förväntan som kan motiveras — skiljer den som hedgear en ägd position från den som bara satsar. Hans röst hörs också i mätningen: när spriden pressas låg i goda tider är det Grahams marknadsman som glömt risken, och när den spricker i dåliga är det samme man som överdriver den — kursens ekvation är verktyget att läsa båda tillstånden utan att ta parti.",
+  "ak1Section": "I AK1A:s metodik är CDS-spriden ett ingångsvärde bland andra: den implicita årsannolikheten (spriden delad med förlustanden) kan ställas mot laboratoriets egna scenariosannolikheter och matas in i omviktningen (ek-06) — marknadens samlade uppskattning mot det egna räknade fallet. Fem tidshorisonter gör kreditfrågan tidsriktig: spreaden är en kort horisonts röst om en lång händelse (konkursen), vilket är själva spänningen i talet — och därför läses den alltid tillsammans med balansräkningens långsamma mått (st-01, st-05) och betygens lika långsamma dom (ks-05), aldrig ensam. I riskmatriket (rs-04) är kredithändelsen en av raderna, och kontrahentraden (rk-16) är dess granne. Pedagogiken är som alltid utbildning om mekanismer; kontraktet beskrivs i påhittade exempel, och varje verkligt beslut om skydd, försäljning eller frånvaro av båda lämnas åt läsaren och dennas egna gränser.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kontraktet — premien, beloppet och kredithändelsen",
+      "intro": "Familjens kontrakt har hittills haft aktien som underliggande. Detta har en låntagare: en obligation, ett bolagsnamn och frågan om pengarna kommer tillbaka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens exempel är påhittat från första raden: stiftelsen Svea äger Norrvik Skog AB:s femåriga obligation på tio miljoner kronor med fast ränta 5,0 procent. Stiftelsen sover gott med kupongen men har lärt sig att skogsbolag bär cykel — och väljer att köpa skydd: ett credit default swap med löptid fem år, belopp tio miljoner, på Norrvik Skog som referensnamn. Priset, kallat spread, noteras i punkter (basispunkter) per år: 250 punkter. Räkna premien: 250 punkter är 2,50 procent av beloppet, alltså 0,025 × 10 000 000 = 250 000 kronor per år, betalt kvartalsvis med 62 500 kronor. Vad köper stiftelsen för det? Säljaren — i exemplet Östersjö Capital AB — förbinder sig att ersätta kreditförlusten om en kredithändelse inträffar hos Norrvik Skog innan fem år är slut. ISDA-avtalstexten räknar tre sådana händelser: konkurs, betalningsinställelse på skulden, och i europeiska kontrakt även omstrukturering — att låntagaren tvingar fram ändrade villkor. Ingen av dem är en kursnedgång, en varningsrapport eller en nedgradering: kontraktet svarar på betalningen, inte på stämningen. Notera bytet av riskmått mot familjens tidigare steg: aktieoptionens pris cirkulerar kring volatiliteten (od-02 — hur mycket priset svänger); kreditkontraktets pris cirkulerar kring sannolikheten för en diskret händelse — antingen betalar Norrvik, eller så gör det inte det. Det är därför spreaden har en annan ekvation, och den tillhör kapitel två."
+        },
+        {
+          "type": "definition",
+          "content": "Credit default swap (CDS): kontrakt där köparen betalar löpande premie (spread, i punkter per år) och säljaren ersätter kreditförlusten på en referensskuld om en kredithändelse inträffar. Kredithändelse: konkurs, betalningsinställelse eller (i europeiska kontrakt) omstrukturering hos referensnamnet. Belopp (notional): det värde förlusten beräknas på — i exemplet 10 miljoner kronor."
+        },
+        {
+          "type": "insight",
+          "content": "Aktieoptionen prissätter svängningar kring en kurva; kreditkontraktet prissätter ett trappsteg — betalning eller utebliven betalning. Därför talar de två kontrakten två olika språk om risk: volatilitetens och sannolikhetens."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Priset är en sannolikhet — spreadens inre ekvation",
+      "intro": "Spreaden är inte en avgift utan en dold kalkyl: bakom punkterna står marknadens samlade gissning om risken att pengarna inte kommer tillbaka. Ekvationen är fältets enklaste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vid en kredithändelse förlorar obligationens ägare inte allt: en del av skulden återvinns i konkursboet — i historiska standardantaganden ofta omkring 40 procent på företagsobligationer. Förlustanden, LGD, blir alltså 1 − 0,40 = 0,60. Nu ekvationen: ett kontrakt som är rätt prissatt ska ge premien lika med den förväntade förlusten per år — premie = sannolikhet per år × förlustandel. Baklänges: sannolikhet per år = sprid ÷ förlustandel. Sätt in Norrviks tal: 0,025 ÷ 0,60 = 0,0417 — marknaden prissätter alltså 4,2 procents sannolikhet per år att Norrvik Skog ska fallera på sin skuld, och varje punkts rörelse i spreaden är en direkt omskrivning av den sannolikheten. Räkna vidare på kontraktets hela löptid: sannolikheten att händelsen inte inträffar ett givet år är 1 − 0,0417 = 0,9583, och på fem år sammanlagt 1 − 0,9583 upphöjt till fem = 1 − 0,808 = 19,2 procent kumulativ risk. Kontrollen av ekvationens symmetri: förväntad årlig förlust = 0,0417 × 0,60 × 10 000 000 = 250 000 kronor — exakt premien. Spreaden är alltså inte bara en kostnad utan ett läsbart tal: 100 punkter med förlustandel 60 procent betyder 1,7 procent per år (ett namn i det tryggare laget), 500 punkter betyder 8,3 procent (ett namn i fara), 2 000 punkter betyder 33 procent per år (marknaden räknar med att det är en tidsfråga). Här gränsar kapitlet mot ma-05, som äger kreditpremien som makrovariabel — hela ekonomins lånekostnad — medan detta kapitel äger det enskilda namnets ekvation; och mot ks-05, som äger kreditbetygen — sändarens långsamma dom — medan spreaden är sändarens snabba."
+        },
+        {
+          "type": "tabell",
+          "content": "Spreadens ekvation (exempel Norrvik Skog, återvinning 40 %): FÖRLUSTANDEL — 1 − 0,40 = 0,60 · ÅRSANNOLIKHET — 0,025 ÷ 0,60 = 0,0417 = 4,2 % per år · FEM ÅR KUMULATIVT — 1 − 0,9583⁵ = 1 − 0,808 = 19,2 % · FÖRVÄNTAD FÖRLUST — 0,0417 × 0,60 × 10 M = 250 000 kr/år = exakt premien · UTLÄSNING 100 PUNKTER — 1,7 %/år (namn i det tryggare laget) · 500 PUNKTER — 8,3 %/år (namn i fara) · 2 000 PUNKTER — 33 %/år (frågan är när, inte om)"
+        },
+        {
+          "type": "insight",
+          "content": "En spread är en sannolikhet utklädd till avgift: dividera punkterna med förlustanden och marknadens röst om låntagaren står i procent per år — inget annat tal i finansens vardag säger så mycket med så få siffror."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Säljarens stol — break-even och de 24 åren",
+      "intro": "Varje premie har en stol på andra sidan: säljaren av skydd, som också är försäkringsbolag — på en enda låntagare, med en enda policys frekvens och allvarlighet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Östersjö Capital har tagit emot 250 000 kronor om året och lovat sex miljoner om det värsta händer — ty utbetalningen vid kredithändelse bestäms av återvinningen: (1 − 0,40) × 10 000 000 = 6 000 000 kronor. Räkna spegelbilden av kapitel två: väntevärdet per år är 0,0417 × 6 000 000 = 250 000 — exakt premien, alltså levererar säljaren väntevärde noll före kostnader, exakt som aktieoptionens försäkringsskrivare i od-09 (den kursen äger stolen för volatilitet; detta kapitel äger den för kredit). Skillnaden mot od-09 är frekvensens och allvarlighetens form: aktieoptionens förluster betalas i glidande skala och ofta, kreditkontraktets i ett enda slag och sällan — och det förändrar stolens ekonomi. Hävstången i tal: en enda utbetalning motsvarar 6 000 000 ÷ 250 000 = 24 års premieinkomster. Om Norrvik fallerar i kontraktets första år har säljaren inkasserat 250 000 och betalat 6 000 000 — minus 5 750 000 på en bråkdel av året. Därför är säljarens hela hantverk portfölj och reserv: skriv skydd på många namn som inte fallerar samtidigt (korrelationen — rs-03 äger samvariationens teori), håll reserv mot det samtidiga fallet (kapitel fyrs 2008 visar vad som händer utan), och prisa varje namn med kapitel tvås ekvation så att portföljen i genomsnitt break-evenar. Kursens hållning är familjens sed: säljarstolen beskrivs som mekanik och aritmetik i påhittade exempel — aldrig som uppmaning att sitta på den, ty frekvensens tysta år frestar som alla tysta år gör (bf-17 äger just den tiden)."
+        },
+        {
+          "type": "tabell",
+          "content": "Säljarens stol (Östersjö Capital, påhittat): PREMIE — 250 000 kr/år in · UTBETALNING VID HÄNDELSE — (1 − 0,40) × 10 M = 6 000 000 kr ut · VÄNTEVÄRDE — 0,0417 × 6 M = 250 000 kr/år: break-even före kostnader · HÄVSTÅNGEN — 6 000 000 ÷ 250 000 = 24 års premier per utbetalning · FÖRSTA ÅRETS FALL — +250 000 in, 6 000 000 ut = −5 750 000 · GRÄNS od-09 — aktieoptionens försäkringsskrivare betalar i glidande skala; kreditens i ett slag · RECEPTET — många namn, låg samtidighet, reserv mot det samtidiga fallet"
+        },
+        {
+          "type": "insight",
+          "content": "Kreditförsäkringens ekonomi är tjugofyra tysta år mot ett enda ljudligt: premien rinner in om och om igen tills den dag den inte rinner något alls — och den dagen samlas de namn som tröttnat på att betala för ingenting."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Spelet utan hus — naken CDS, multiplikatorn och 2008",
+      "intro": "Försäkring förutsätter att den som köper skydd också bär risken. Kreditkontraktet släppte det kravet — och ur den ena luckan växte en hel värld av spel, multiplikatorer och 2008 års kedja.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre egenskaper skiljer kreditderivatet från vanlig försäkring. För det första: skydd kan köpas utan att äga skulden — naken CDS. Stiftelsen Svea i kursens exempel äger sin Norrvik-obligation och hedgear; en annan part kan köpa exakt samma kontrakt utan att äga en enda krona av Norrvik och satsa på att bolaget faller — försäkring på grannens hus, vilket är spel, inte skydd (Grahams linje, och 2012 förbjöd EU naken stats-CDS just därför). För det andra: det kan skrivas mer skydd än det finns skuld — femtio miljoner CDS-skydd kan cirkulera på Norrviks tio miljoner obligation: en femfaldig multiplikator. Utbetalningen vid en kredithändelse styrs då av auktionsförfarandet som sedan 2005 standardiserat hur återvinningen bestäms — men säljarnas sammanlagda åtagande är ändå femtio miljoner mot tio miljoner reell exponering. För det tredje: säljaren är själv en motpart. Det var denna tredje egenskap som bar 2008: när amerikanska bolånefordringar paketerats i produkter på produkter såldes skyddet vidare i en kedja där varje led trodde att nästa led bar risken — premierna var små, händelserna korrelerade (bolånen föll tillsammans, rs-03:s dolda samvariation i sin renaste skepnad) och reserverna räckte inte samtidigt. rk-16 äger hela den kollapsens mekanik — kontrahenten, clearinghusen, marginalkraven som kom efter — och denna kurs lämnar den åt dem med en enda notis: instrumentets tre egenskaper (naket, med multiplikator, kedjat) var det som gjorde kollapsen möjlig i denna form. Till sist en benämning: när CDS-spriden på ett namn ligger över motsvarande obligationsspread kallas skillnaden basis — 250 punkters CDS mot 220 punkters obligationsspread ger en basis om plus 30 punkter — och att handla den skillnaden är fältets egen arbitrage, bf-13:s område i kreditskepnad."
+        },
+        {
+          "type": "tabell",
+          "content": "Tre egenskaper (och en basis): NAKEN CDS — skydd utan skuld: spel på annans olycka (EU: förbud för statsnamn 2012) · MULTIPLIKATORN — 50 M skydd på 10 M obligation = 5×: åtagandena överstiger exponeringen · KEDJAN — säljaren är själv motpart: 2008 föll leden samtidigt (rk-16 äger mekaniken) · AUKTIONEN — förfarandet sedan 2005 bestämmer återvinning och utbetalning · BASIS — CDS 250 mot obligationsspread 220 = +30 punkter: fältets arbitrage (bf-13)"
+        },
+        {
+          "type": "insight",
+          "content": "Vanlig försäkring binder skyddet till en sak som finns; kreditkontraktet lösgjorde skyddet från saken — och därmed blev det möjligt att försäkra mer än världen äger. All kreditvishet börjar i den meningen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Statskrediten — sändaren som fick ett pris",
+      "intro": "Kontraktets femte lager är dess mest politiska: när referensnamnet är en stat har försäkringen blivit ett röstetal — och historiens största statsvittne gav det en dom.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sommaren 2009 noterades Greklands femårssprid i CDS kring 200 punkter — kapitel tvås ekvation ger 0,020 ÷ 0,60 = 3,3 procents årsannolikhet för statsbankrutt: oroligt men inte larm. Ett år senare hade spriden passerat 1 000 punkter — 0,10 ÷ 0,60 = 16,7 procent per år, och på två år sammanlagt 1 − 0,8333² = 1 − 0,694 = 30,6 procent. Marknaden hade med kontraktets egen aritmetik utläst vad budgetpropositioner ännu skrev i förbifarten. Ingen enskild köpare behövde ha rätt — priset var summan av alla som betalade för att slippa bära grekisk kreditrisk, och därigenom blev CDS-marknaden den snabbaste sändaren av statskredit som fanns: snabbare än kreditbetygen (ks-05 äger deras långsamma dom och deras miss), mer kontinuerlig än obligationsauktionerna. Våren 2012 kom domens mekanik: när skuldavskrivningen förhandlades fram fastställde ISDA:s kreditkommitté kredithändelse — kontraktens största statsvittne — och auktionen bestämde återvinningen som utbetalningarna räknades på. Samma år förbjöd EU naken stats-CDS: att satsa mot en stats kassa utan att bära dess skuld ansågs både spekulativt och självuppfyllande — och debatten om vilket som gäller förblir öppen: forskningen är oenig, och ärligheten kräver att både mekanismen (shortsidan kan förstärka upplevd risk) och motargumentet (spriden speglar snarare än skapar) redovisas. Här gränsar kapitlet mot ma-05 (som äger kreditpremien som makrovariabel — hela ekonomins pris på risk) och st-05 (som äger bolagets återfinansieringsmur): statskrediten är bådas gränsfall, där låntagaren kan trycka pengar men inte vinster."
+        },
+        {
+          "type": "tabell",
+          "content": "Statskrediten som sändare (Grekland, dokumenterade nivåer): SOMMAREN 2009 — omkring 200 punkter = 0,020 ÷ 0,60 = 3,3 %/år · ETT ÅR SENARE — över 1 000 punkter = 0,10 ÷ 0,60 = 16,7 %/år · TVÅ ÅR KUMULATIVT — 1 − 0,8333² = 30,6 % · VÅREN 2012 — ISDA:s kreditkommitté fastställde kredithändelse; auktionen bestämde återvinningen · 2012 — EU förbjöd naken stats-CDS · GRÄNSER — ma-05 äger makropremien, ks-05 betygen, st-05 bolagens mur: statsfallet är alla tres gränsfall"
+        },
+        {
+          "type": "insight",
+          "content": "Statskrediten visar kontraktets dubbla ansikte: som mätinstrument det snabbaste röstetalet om en kassa, som spelbörs ett vad mot en stats förmåga — och gränsen mellan ansiktena dras inte av kontraktet utan av hur det används."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Protokollet — fem frågor till en CDS-position",
+      "intro": "Familjens avslutningskapitel samlar kursens lager i ett läsprotokoll — fem frågor som varje beskrivning av en kreditderivatposition, verklig eller påhittad, kan ställas mot.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fråga ett — vem bär motpartsrisk? En position i kontrakt utan börs är en fordran på säljaren av skydd: clearinghus, marginalsystem och säljarens balansräkning (rk-16:s hela område) är frågans fulla svar. Fråga två — vad säger spriden i sannolikhet? Dividera punkterna med förlustanden och läs årsprocenten (kapitel två); jämför med balansräkningens egna mått — täckningsgrader (st-01), löptidsmuren (st-05), betygen (ks-05) — och fråga var marknaden och räkneboken skiljer sig: differensen är antingen marknadens eller det egna felet, och ingen av dem är gratis att anta. Fråga tre — naken eller täckt? Bär positionen den underliggande risken, eller är den ett spel (kapitel fyra) — frågan är både juridisk (EU:s statsförbud) och klassisk (Grahams investering mot spekulation). Fråga fyra — hur stor är multiplikatorn? Hur mycket skydd cirkulerar på namnet mot faktisk skuld, och vad betyder det för utbetalningsmekaniken (auktionen) vid en händelse? Fråga fem — vad händer vid en kredithändelse, steg för steg? Vilken av de tre händelserna utlöser, hur bestäms återvinningen, och vad blir utbetalningen i kronor räknat på beloppet? Fem svar — och positionen är först då beskriven. Plattformens markering följer familjens sed: kursen har beskrivit mekanismer och aritmetik i påhittade exempel (stiftelsen Svea, Norrvik Skog, Östersjö Capital), och lämnar varje verkligt beslut — att köpa, sälja eller låta bli skydd — där det hör hemma, hos läsaren och dennas egna gränser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre fall med kursens motor. Fall ett: 400 punkter på fem miljoner — vad blir premien per år (svar: 0,040 × 5 000 000 = 200 000 kronor) och den implicita årsannolikheten vid 60 procents förlustandel (svar: 0,040 ÷ 0,60 = 6,7 procent)? Fall två: kredithändelse inträffar och auktionen ger återvinning 35 procent — vad betalar säljaren (svar: (1 − 0,35) × 5 000 000 = 3 250 000 kronor)? Fall tre: hur många års premieinkomster motsvarar den utbetalningen för säljaren (svar: 3 250 000 ÷ 200 000 = 16,25 år — och vad säger det om stolen när portföljen bara bär ett sådant namn)?"
+        },
+        {
+          "type": "insight",
+          "content": "Protokollets femte fråga är kontraktets hela drama i en rad: mellan premien och utbetalningen ligger år av tystnad — och den som inte kan räkna båda ändarna på förhand har inte en position utan en överraskning."
+        }
+      ]
+    }
+  ]
+}

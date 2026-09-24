@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-21T05:46:36.005Z",
+  "bas": "http://localhost:3000",
+  "namn": "o138-efter-varm",
+  "sidor": [
+    {
+      "sokvag": "/blogg",
+      "poang": {
+        "prestanda": 0.74,
+        "tillganglighet": 1,
+        "bastaPraxis": 0.96,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1244,
+        "LCP": 4288,
+        "TBT": 454,
+        "CLS": 0,
+        "TTI": 4454,
+        "SI": 1260
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 46 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 46 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 482 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 482 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 1,
+          "visar": "1.2 s",
+          "rad": "JavaScript execution time — 1.2 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "2.7 s",
+          "rad": "Minimize main-thread work — 2.7 s"
+        }
+      }
+    }
+  ]
+}

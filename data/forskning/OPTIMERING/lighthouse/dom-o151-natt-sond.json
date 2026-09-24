@@ -1,0 +1,67 @@
+{
+  "ts": "2026-09-21T23:19:29.483Z",
+  "lage": "sond",
+  "steg": [
+    {
+      "steg": "0-ram",
+      "ramMB": 3707,
+      "tak": 1500,
+      "pass": true
+    },
+    {
+      "steg": "1-prod200-varmning",
+      "status": {
+        "/superanalys": 200,
+        "/kalkylator": 200
+      },
+      "pass": true
+    },
+    {
+      "steg": "2-lighthouse",
+      "exit": 0,
+      "svans": [
+        "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o151-natt-sond-sammanfattning.json",
+        "",
+        "Jämförelse mot o139-fore:",
+        "/superanalys: P 73→60 · LCP 4355→5161 (+806 ms) · TBT 375→929",
+        "/kalkylator: P 64→50 · LCP 4812→4982 (+170 ms) · TBT 582→3599",
+        ""
+      ]
+    }
+  ],
+  "dom": [
+    {
+      "sida": "/superanalys",
+      "poangFore": 73,
+      "poangEfter": 60,
+      "lcpFore": 4355,
+      "lcpEfter": 5161,
+      "lcpDeltaProc": 18.5,
+      "tbtFore": 375,
+      "tbtEfter": 929,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": false,
+        "tbtKalkylator450": "929 (SOND — dagfönster, ej dom enligt o143 §3)"
+      }
+    },
+    {
+      "sida": "/kalkylator",
+      "poangFore": 64,
+      "poangEfter": 50,
+      "lcpFore": 4812,
+      "lcpEfter": 4982,
+      "lcpDeltaProc": 3.5,
+      "tbtFore": 582,
+      "tbtEfter": 3599,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "lcpInom15": true,
+        "tbtKalkylator450": "3599 (SOND — dagfönster, ej dom enligt o143 §3)"
+      }
+    }
+  ],
+  "sammanfattning": "o151-natt-sond-sammanfattning.json"
+}

@@ -170,6 +170,9 @@ const SKAL: {
 /* ---------- Verktygschips i kort 3 (varje verktyg klickbart) ---------- */
 
 const VERKTYGSLANKAR: { nyckel: OrdlistaNyckel; href: string }[] = [
+  // Rond 149 (branding spår 11): övningsentrén FÖRST — hero-underrubriken
+  // lovar "från första årsredovisningen"; chipet är den kortaste vägen dit.
+  { nyckel: "nav.rapportakademin", href: "/rapportakademin" },
   { nyckel: "nav.akm1Kalkylatorn", href: "/kalkylator" },
   { nyckel: "nav.vagfundamentet", href: "/vagfundament" },
   { nyckel: "nav.konfluensradarn", href: "/konfluens" },

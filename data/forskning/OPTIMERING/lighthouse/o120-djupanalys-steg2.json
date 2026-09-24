@@ -1,0 +1,578 @@
+{
+ "en_blogg-A": {
+  "fcp": 1256,
+  "nett": [
+   {
+    "typ": "Document",
+    "url": "/en/blogg",
+    "status": 200,
+    "Overfört": 34506,
+    "tid": 31
+   },
+   {
+    "typ": "Manifest",
+    "url": "/manifest.json",
+    "status": 200,
+    "Overfört": 1082,
+    "tid": 29
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/favicon.svg",
+    "status": 200,
+    "Overfört": 733,
+    "tid": 6
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/logo/ikon-192.png",
+    "status": 404,
+    "Overfört": 293,
+    "tid": 6
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/medlem",
+    "status": 200,
+    "Overfört": 334,
+    "tid": 21
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/trafik",
+    "status": 200,
+    "Overfört": 402,
+    "tid": 2916
+   }
+  ],
+  "domNumeric": null,
+  "domItems": null,
+  "domStats": null,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 778,
+    "relFcp": -478,
+    "dur": 110
+   },
+   {
+    "url": "blogg",
+    "start": 923,
+    "relFcp": -333,
+    "dur": 110
+   },
+   {
+    "url": "blogg",
+    "start": 1057,
+    "relFcp": -199,
+    "dur": 55
+   },
+   {
+    "url": "blogg",
+    "start": 1112,
+    "relFcp": -144,
+    "dur": 51
+   },
+   {
+    "url": "blogg",
+    "start": 1163,
+    "relFcp": -93,
+    "dur": 52
+   },
+   {
+    "url": "Unattributable",
+    "start": 1215,
+    "relFcp": -41,
+    "dur": 52
+   },
+   {
+    "url": "blogg",
+    "start": 1267,
+    "relFcp": 11,
+    "dur": 127
+   },
+   {
+    "url": "blogg",
+    "start": 1394,
+    "relFcp": 138,
+    "dur": 67
+   },
+   {
+    "url": "Unattributable",
+    "start": 1489,
+    "relFcp": 233,
+    "dur": 801
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 3890,
+    "relFcp": 2634,
+    "dur": 255
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4194,
+    "relFcp": 2938,
+    "dur": 96
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4331,
+    "relFcp": 3075,
+    "dur": 83
+   }
+  ],
+  "antalReqs": 28,
+  "jsOverford": 259874
+ },
+ "en_blogg-B": {
+  "fcp": 1238,
+  "nett": [
+   {
+    "typ": "Document",
+    "url": "/en/blogg",
+    "status": 200,
+    "Overfört": 34506,
+    "tid": 34
+   },
+   {
+    "typ": "Manifest",
+    "url": "/manifest.json",
+    "status": 200,
+    "Overfört": 1082,
+    "tid": 46
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/favicon.svg",
+    "status": 200,
+    "Overfört": 733,
+    "tid": 6
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/logo/ikon-192.png",
+    "status": 404,
+    "Overfört": 293,
+    "tid": 4
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/medlem",
+    "status": 200,
+    "Overfört": 334,
+    "tid": 32
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/trafik",
+    "status": 200,
+    "Overfört": 402,
+    "tid": 252
+   }
+  ],
+  "domNumeric": null,
+  "domItems": null,
+  "domStats": null,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 769,
+    "relFcp": -469,
+    "dur": 95
+   },
+   {
+    "url": "blogg",
+    "start": 873,
+    "relFcp": -365,
+    "dur": 68
+   },
+   {
+    "url": "blogg",
+    "start": 941,
+    "relFcp": -297,
+    "dur": 52
+   },
+   {
+    "url": "blogg",
+    "start": 1061,
+    "relFcp": -177,
+    "dur": 149
+   },
+   {
+    "url": "Unattributable",
+    "start": 1210,
+    "relFcp": -28,
+    "dur": 938
+   },
+   {
+    "url": "0-u1nw0ie6lq6.css",
+    "start": 2148,
+    "relFcp": 910,
+    "dur": 82
+   },
+   {
+    "url": "0el5nt6-nk2y3.js",
+    "start": 3844,
+    "relFcp": 2606,
+    "dur": 228
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4072,
+    "relFcp": 2834,
+    "dur": 56
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4176,
+    "relFcp": 2938,
+    "dur": 81
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4257,
+    "relFcp": 3019,
+    "dur": 52
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4309,
+    "relFcp": 3071,
+    "dur": 98
+   }
+  ],
+  "antalReqs": 28,
+  "jsOverford": 259874
+ },
+ "ar_blogg-A": {
+  "fcp": 1731,
+  "nett": [
+   {
+    "typ": "Document",
+    "url": "/ar/blogg",
+    "status": 200,
+    "Overfört": 37590,
+    "tid": 42
+   },
+   {
+    "typ": "Manifest",
+    "url": "/manifest.json",
+    "status": 200,
+    "Overfört": 1082,
+    "tid": 63
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/favicon.svg",
+    "status": 200,
+    "Overfört": 733,
+    "tid": 8
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/logo/ikon-192.png",
+    "status": 404,
+    "Overfört": 293,
+    "tid": 8
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/medlem",
+    "status": 200,
+    "Overfört": 334,
+    "tid": 29
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/trafik",
+    "status": 200,
+    "Overfört": 402,
+    "tid": 462
+   }
+  ],
+  "domNumeric": null,
+  "domItems": null,
+  "domStats": null,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 786,
+    "relFcp": -945,
+    "dur": 104
+   },
+   {
+    "url": "blogg",
+    "start": 901,
+    "relFcp": -830,
+    "dur": 61
+   },
+   {
+    "url": "blogg",
+    "start": 962,
+    "relFcp": -769,
+    "dur": 57
+   },
+   {
+    "url": "Unattributable",
+    "start": 1112,
+    "relFcp": -619,
+    "dur": 83
+   },
+   {
+    "url": "blogg",
+    "start": 1195,
+    "relFcp": -536,
+    "dur": 435
+   },
+   {
+    "url": "095w8h_fgc5q_.js",
+    "start": 3516,
+    "relFcp": 1785,
+    "dur": 55
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 3930,
+    "relFcp": 2199,
+    "dur": 389
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4364,
+    "relFcp": 2633,
+    "dur": 91
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4455,
+    "relFcp": 2724,
+    "dur": 67
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4522,
+    "relFcp": 2791,
+    "dur": 100
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4622,
+    "relFcp": 2891,
+    "dur": 113
+   }
+  ],
+  "antalReqs": 29,
+  "jsOverford": 259873
+ },
+ "ar_blogg-B": {
+  "fcp": 1246,
+  "nett": [
+   {
+    "typ": "Document",
+    "url": "/ar/blogg",
+    "status": 200,
+    "Overfört": 37590,
+    "tid": 19
+   },
+   {
+    "typ": "Manifest",
+    "url": "/manifest.json",
+    "status": 200,
+    "Overfört": 1082,
+    "tid": 16
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/favicon.svg",
+    "status": 200,
+    "Overfört": 733,
+    "tid": 11
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/logo/ikon-192.png",
+    "status": 404,
+    "Overfört": 293,
+    "tid": 7
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/medlem",
+    "status": 200,
+    "Overfört": 334,
+    "tid": 47
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/trafik",
+    "status": 200,
+    "Overfört": 402,
+    "tid": 369
+   }
+  ],
+  "domNumeric": null,
+  "domItems": null,
+  "domStats": null,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 773,
+    "relFcp": -473,
+    "dur": 74
+   },
+   {
+    "url": "blogg",
+    "start": 859,
+    "relFcp": -387,
+    "dur": 53
+   },
+   {
+    "url": "blogg",
+    "start": 912,
+    "relFcp": -334,
+    "dur": 70
+   },
+   {
+    "url": "blogg",
+    "start": 982,
+    "relFcp": -264,
+    "dur": 54
+   },
+   {
+    "url": "blogg",
+    "start": 1036,
+    "relFcp": -210,
+    "dur": 276
+   },
+   {
+    "url": "0el5nt6-nk2y3.js",
+    "start": 3865,
+    "relFcp": 2619,
+    "dur": 245
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4158,
+    "relFcp": 2912,
+    "dur": 104
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4262,
+    "relFcp": 3016,
+    "dur": 68
+   }
+  ],
+  "antalReqs": 28,
+  "jsOverford": 259873
+ },
+ "blogg-sv-A": {
+  "fcp": 1745,
+  "nett": [
+   {
+    "typ": "Document",
+    "url": "/blogg",
+    "status": 200,
+    "Overfört": 34046,
+    "tid": 50
+   },
+   {
+    "typ": "Manifest",
+    "url": "/manifest.json",
+    "status": 200,
+    "Overfört": 1082,
+    "tid": 40
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/favicon.svg",
+    "status": 200,
+    "Overfört": 733,
+    "tid": 12
+   },
+   {
+    "typ": "Other",
+    "url": "/ak1a/logo/ikon-192.png",
+    "status": 404,
+    "Overfört": 293,
+    "tid": 10
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/medlem",
+    "status": 200,
+    "Overfört": 334,
+    "tid": 23
+   },
+   {
+    "typ": "Fetch",
+    "url": "/api/trafik",
+    "status": 200,
+    "Overfört": 402,
+    "tid": 335
+   }
+  ],
+  "domNumeric": null,
+  "domItems": null,
+  "domStats": null,
+  "longTasks": [
+   {
+    "url": "Unattributable",
+    "start": 782,
+    "relFcp": -963,
+    "dur": 130
+   },
+   {
+    "url": "blogg",
+    "start": 1029,
+    "relFcp": -716,
+    "dur": 114
+   },
+   {
+    "url": "blogg",
+    "start": 1182,
+    "relFcp": -563,
+    "dur": 253
+   },
+   {
+    "url": "0-u1nw0ie6lq6.css",
+    "start": 2164,
+    "relFcp": 419,
+    "dur": 54
+   },
+   {
+    "url": "095w8h_fgc5q_.js",
+    "start": 3491,
+    "relFcp": 1746,
+    "dur": 51
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 3909,
+    "relFcp": 2164,
+    "dur": 321
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4230,
+    "relFcp": 2485,
+    "dur": 87
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4317,
+    "relFcp": 2572,
+    "dur": 153
+   },
+   {
+    "url": "2feezv-iveko5.js",
+    "start": 4470,
+    "relFcp": 2725,
+    "dur": 57
+   }
+  ],
+  "antalReqs": 28,
+  "jsOverford": 259872
+ }
+}

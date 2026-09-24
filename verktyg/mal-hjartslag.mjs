@@ -22,8 +22,8 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { samordnadOmstart } from "./omstart-samordning.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KATALOG = path.join(ROT, "data", "vakten");
@@ -88,13 +88,13 @@ async function main() {
     });
     if (r.status >= 500 || r.status === 502) {
       logga(`WEB-VAKT: appen svarar ${r.status} — pm2-restartar ak1a`);
-      try { execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 avgör */ }
-      await new Promise((sov) => setTimeout(sov, 10_000));
+      const om = samordnadOmstart("malhjarta", `web-vakt ${r.status}`, logga);
+      if (om.startad) await new Promise((sov) => setTimeout(sov, 10_000));
     }
   } catch (e) {
     logga("WEB-VAKT: appen osvarar (" + String(e).slice(0, 60) + ") — pm2-restartar ak1a");
-    try { execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 avgör */ }
-    await new Promise((sov) => setTimeout(sov, 10_000));
+    const om = samordnadOmstart("malhjarta", "web-vakt osvarar", logga);
+    if (om.startad) await new Promise((sov) => setTimeout(sov, 10_000));
   }
 
   // 1) läs mål-status
@@ -179,8 +179,16 @@ async function main() {
         `SJÄLVHEALNING: frusen turn (${Math.round((nu - status.uppdaterad) / 60000)} min utan puls) — pm2-omstartar + mål återställs`,
       );
       try {
-        execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
-        await new Promise((sov) => setTimeout(sov, 12_000));
+        // VÅG 215 — pm2-race är ALDRIG skäl att avbryta mål-kirurgin (bevis
+        // 2026-09-20 08:41: "process already online" när deploy/pulsvakt
+        // omstartade samtidigt — malSatt-fetchen skippades, målet låg
+        // oarmerat i återställningsfönstret). Omstarten skedde ändå via den
+        // andra kanalen; här loggas bruset och KIRURGIN fortsätter.
+        // VÅG 216 — omstarten går genom samordningen: deploybygg eller en
+        // annan kanals färska omstart vägras (dubbelomstartens rot), men
+        // mål-kirurgin nedan löper OAVSETT om.startad.
+        const om = samordnadOmstart("malhjarta", `frusen turn ${Math.round((nu - status.uppdaterad) / 60000)} min`, logga);
+        await new Promise((sov) => setTimeout(sov, om.startad ? 12_000 : 3_000));
         await fetch(`${BAS}/api/studio/session`, {
           method: "POST",
           headers: { "Content-Type": "application/json", "x-admin-password": pass },
@@ -308,8 +316,12 @@ async function main() {
       `SJÄLVHEALNING: kilad turn (${state.studsadeKicker} studsade kickar) — pm2-omstartar ak1a och återställer målet`,
     );
     try {
-      execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
-      await new Promise((sov) => setTimeout(sov, 12_000));
+      // VÅG 215 — samma race-vaccin som frusen-turn-grenen: pm2-brus avbryter
+      // ALDRIG målåterställningen (bevis 2026-09-20 08:41).
+      // VÅG 216 — samordnad omstart (deploy/annan kanal vägras), kirurgin
+      // löper alltid — speglar frusen-turn-grenen.
+      const om = samordnadOmstart("malhjarta", `kilad turn (${state.studsadeKicker} studsade kickar)`, logga);
+      await new Promise((sov) => setTimeout(sov, om.startad ? 12_000 : 3_000));
       await fetch(`${BAS}/api/studio/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-admin-password": pass },

@@ -1,0 +1,1 @@
+studio: rond 149 [organ:Ω] — BRANDING våg 1: Rapportakademin ur osynligheten — 0 träffar i ALL navigation (meny-register/ordlista/header/startsida), nu: PRAKTIK-panel-post (📑 gäst, öva på riktiga årsredovisningar) + nav-nyckel sv/en/ar + chip först i startsidans verktygsrad; Fas 2-grinden i pass-API:t orörd (skyddet oförändrat), R3 29 länkar inom tak, tsc 0

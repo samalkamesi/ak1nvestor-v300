@@ -28,6 +28,9 @@ import {
   skrivPatchKvitto,
   bedomByggMisslyckande,
   bevaraByggLoggar,
+  byggPatchInstallKommando,
+  bedomPatchInstall,
+  raknaTsFel,
 } from "./prod-synk.mjs";
 
 let pass = 0;
@@ -92,10 +95,10 @@ kolla("främmande paket vägras + fel rapporteras", !ko1.poster.some((p) => p.pa
 kolla("injektionspost vägras utan att döda sviten", ko1.fel.some((f) => f.includes("ogiltig version")));
 kolla("2 giltiga poster kvar", ko1.poster.length === 2);
 kolla("null som känt-uppsättning = ingen paketfiltrering (explicit läge)", lasPatchKo(koFil, null).poster.length === 3);
-const manga = Array.from({ length: 12 }, (_, i) => ({ paket: `p${i}`, version: "1.0.0" }));
+const manga = Array.from({ length: 17 }, (_, i) => ({ paket: `p${i}`, version: "1.0.0" }));
 writeFileSync(koFil, JSON.stringify(manga));
 const ko2 = lasPatchKo(koFil, null);
-kolla("tak 10 poster + felpåminnelse", ko2.poster.length === 10 && ko2.fel.some((f) => f.includes("för många")));
+kolla("tak 15 poster (o124) + felpåminnelse", ko2.poster.length === 15 && ko2.fel.some((f) => f.includes("för många")));
 
 console.log("== kvitton: roundtrip + aktivPatchPlan ==");
 writeFileSync(koFil, JSON.stringify([
@@ -159,6 +162,34 @@ kolla("saknad källa skippas utan att döda anropet", sparade2.length === 1 && !
 // stime +227 ticks/3 s, dödade manuellt). ENOTDIR kastar direkt = samma
 // kontrakt (omöjlig målmapp → tom lista) utan procfs-fällan.
 kolla("omöjlig målmapp = tom lista, ALDRIG undantag", bevaraByggLoggar(path.join(kalla1, "under-fil"), [[kalla1, "npmci.log"]]).length === 0);
+
+console.log("== byggPatchInstallKommando (o106: tsc-grinden kedjas i patch-barnet) ==");
+const patchCmd = byggPatchInstallKommando("react@19.3.0 react-dom@19.3.0");
+kolla("install-delen orörd (spec + flaggor + logg)", patchCmd.startsWith("npm install react@19.3.0 react-dom@19.3.0 --no-audit --no-fund >> /tmp/synk-patch.log 2>&1"));
+kolla("tsc-grinden kedjad med && (projektbinär, --noEmit)", patchCmd.endsWith(" && node node_modules/typescript/bin/tsc --noEmit >> /tmp/synk-patch.log 2>&1"));
+kolla("ALDRIG npx (deployfönstrets cachedummy-fälla)", !patchCmd.includes("npx"));
+kolla("kedjan sekventiell: exakt EN && (tsc körs EFTER install, aldrig parallellt)", (patchCmd.match(/ && /g) || []).length === 1);
+kolla("ingen skal-metatecken utöver validerat spec (varken ; eller $()", !patchCmd.includes(";") && !patchCmd.includes("$("));
+
+console.log("== bedomPatchInstall + raknaTsFel (o106: klassning ur barnets logg) ==");
+kolla("exit 0 med npm-utdata = ok", bedomPatchInstall(true, "added 4 packages in 12s") === "ok");
+kolla("exit 0 med tom logg = ok", bedomPatchInstall(true, "") === "ok");
+kolla("exit != 0 med error TS-rader = tsc-fel", bedomPatchInstall(false, "src/x.ts:7:22 - error TS2322: Type 'string' is not assignable to\n") === "tsc-fel");
+kolla("exit != 0 utan error TS = install-fel", bedomPatchInstall(false, "npm error code ELIFECYCLE") === "install-fel");
+kolla("exit != 0 med tom logg = install-fel (flock-startade-aldrig-klassen)", bedomPatchInstall(false, "") === "install-fel");
+kolla("exit != 0 + null-logg = install-fel", bedomPatchInstall(false, null) === "install-fel");
+kolla("raknaTsFel räknar flera fel men skippar varningar", raknaTsFel("error TS2322: a\nwarn - b\nerror TS2741: c\n") === 2);
+kolla("raknaTsFel kräver felkod med kolon ('error TS' i löp text räknas ej)", raknaTsFel("loggen nämner error TS utan kod") === 0);
+kolla("raknaTsFel tål null/undefined", raknaTsFel(null) === 0 && raknaTsFel(undefined) === 0);
+kolla("tsc-fel-kvittots loop-skydd: 3 tsc-fel-kvitton dödar posten som idag", (() => {
+  const tscKo = { poster: [{ paket: "@types/react", version: "19.3.0" }] };
+  const tscKvitton = [
+    { paket: "@types/react", version: "19.3.0", resultat: "misslyckad" },
+    { paket: "@types/react", version: "19.3.0", resultat: "misslyckad" },
+    { paket: "@types/react", version: "19.3.0", resultat: "misslyckad" },
+  ];
+  return aktivPatchPlan(tscKo, tscKvitton).length === 0;
+})());
 
 console.log("== kvittofilens format (korSynk läser samma rader) ==");
 const rader = readFileSync(kvittoFil, "utf8").trim().split("\n");

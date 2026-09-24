@@ -1,0 +1,236 @@
+{
+  "ts": "2026-09-21T11:00:18.614Z",
+  "rond": 144,
+  "bolag": [
+    {
+      "bolag": "ABB",
+      "sektionerTotalt": 149,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 12,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoresultat",
+          "eget-kapital",
+          "tillgangar"
+        ],
+        [
+          "tillgangar",
+          "utdelning",
+          "anstallda",
+          "investeringar"
+        ],
+        [
+          "nettoomsattning",
+          "nettoresultat",
+          "eps",
+          "utdelning"
+        ]
+      ]
+    },
+    {
+      "bolag": "ATCO-A",
+      "sektionerTotalt": 316,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 15,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "ebitda",
+          "nettoresultat"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "ebitda",
+          "rorelsemarginal"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "ebitda",
+          "rorelsemarginal"
+        ]
+      ]
+    },
+    {
+      "bolag": "AZN",
+      "sektionerTotalt": 363,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 13,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "kassaflode",
+          "utdelning"
+        ],
+        [
+          "rorelseresultat",
+          "tillgangar"
+        ],
+        [
+          "kassaflode"
+        ]
+      ]
+    },
+    {
+      "bolag": "ERIC-B",
+      "sektionerTotalt": 369,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 11,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "rorelsemarginal",
+          "nettoresultat"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "nettoresultat",
+          "kassaflode"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "rorelsemarginal",
+          "nettoresultat"
+        ]
+      ]
+    },
+    {
+      "bolag": "EVO",
+      "sektionerTotalt": 199,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 11,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoomsattning",
+          "eget-kapital",
+          "tillgangar"
+        ],
+        [
+          "eps",
+          "utdelning",
+          "anstallda"
+        ],
+        [
+          "eget-kapital",
+          "tillgangar"
+        ]
+      ]
+    },
+    {
+      "bolag": "HM-B",
+      "sektionerTotalt": 1618,
+      "urval": 4,
+      "nyckeltalsFamiljerTraffade": 3,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "rorelsemarginal",
+          "anstallda"
+        ],
+        [
+          "rorelsemarginal",
+          "anstallda"
+        ],
+        [
+          "anstallda"
+        ]
+      ]
+    },
+    {
+      "bolag": "INDU-C",
+      "sektionerTotalt": 194,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 10,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "eps",
+          "eget-kapital",
+          "utdelning",
+          "skuld"
+        ],
+        [
+          "nettoomsattning",
+          "eps",
+          "utdelning"
+        ],
+        [
+          "eget-kapital",
+          "tillgangar",
+          "utdelning",
+          "skuld"
+        ]
+      ]
+    },
+    {
+      "bolag": "SAND",
+      "sektionerTotalt": 238,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 14,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "ebitda",
+          "nettoresultat"
+        ],
+        [
+          "nettoomsattning",
+          "eps",
+          "eget-kapital",
+          "kassaflode"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "ebitda",
+          "kassaflode"
+        ]
+      ]
+    },
+    {
+      "bolag": "VOLCAR-B",
+      "sektionerTotalt": 390,
+      "urval": 12,
+      "nyckeltalsFamiljerTraffade": 12,
+      "avTotaltFamiljer": 15,
+      "urvalFamiljer": [
+        [
+          "rorelseresultat",
+          "ebitda",
+          "rorelsemarginal",
+          "nettoresultat"
+        ],
+        [
+          "nettoomsattning",
+          "rorelseresultat",
+          "rorelsemarginal",
+          "nettoresultat"
+        ],
+        [
+          "rorelseresultat",
+          "ebitda",
+          "rorelsemarginal",
+          "nettoresultat"
+        ]
+      ]
+    }
+  ],
+  "totalt": {
+    "bolag": 9,
+    "urvalSektioner": 100,
+    "familjefynd": 101
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "ovning": "DR-OFFSITE-ATERSTALLNING-2026-09-19-KVALL",
+  "agent": "s10-u2 (manifest auto-s10-1789849506241, vakt 2/3)",
+  "fönsterLokal": "2026-09-19 22:29–22:3x",
+  "fönsterUTC": "2026-09-19T20:29–20:3xZ",
+  "objekt": "Första återställningsbeviset för 3-2-1-kedjans led 3 (offsite-arkivet)",
+  "arkiv": {
+    "sokvag": "data/backups/offsite/ak1a-offsite-2026-09-19.tar.gz.tar.gz",
+    "bytes": 479554465,
+    "sha256": "377e2c4134142a16d1b42bd9608e54780dd538e5761ed8cd91f635726ef110a7",
+    "snapshotUTC": "2026-09-19T18:52:13Z",
+    "tarRader": 1284,
+    "okomprimeratMB": 1503.9,
+    "delarKontrakt": 10,
+    "delarHittade": 10,
+    "sakerhetsscanTraffar": 0
+  },
+  "rto": {
+    "extraktionSek": 23.8,
+    "integritetSek": 40.4,
+    "katastrofTillVerifierbarTradDbSek": 64.2,
+    "steg1TotaltSek": 83.0
+  },
+  "dbSnapshotAterskallad": {
+    "bytes": 1379422208,
+    "integrityCheck": "ok",
+    "tabeller": 19,
+    "raktal": {
+      "part": 222960, "message": 53089, "tool_usage": 56737, "model_usage": 46523,
+      "session_entry": 12033, "session": 1234, "todo": 3980, "session_target": 128,
+      "input_history": 100, "session_input": 102, "schema_migration": 18,
+      "local_setting": 2, "permission": 0, "session_task_link": 0,
+      "workflow_activity": 0, "workflow_definition": 0, "workflow_event": 0, "workflow_run": 0
+    },
+    "byteParitetMedServerkopia": "IDENTISKA (cmp -s, 9.1 s)"
+  },
+  "levandeJmförelse": {
+    "huvudtrad.json": {"arkivTecken": 642, "levandeTecken": 642, "dom": "identisk"},
+    "audit-logg.jsonl": {"arkivRader": 1851, "levandeRader": 1880, "dom": "+29 väntat"},
+    "uppdragslogg.jsonl": {"arkivRader": 3, "levandeRader": 3, "dom": "identisk"},
+    "mal-state.json": {"arkivTecken": 368, "levandeTecken": 368, "dom": "identisk"},
+    "forskning/": {"arkivFiler": 855, "levandeFiler": 873, "dom": "+18 väntat"},
+    "blogg-utkast/": {"arkivFiler": 285, "levandeFiler": 285, "dom": "identisk"},
+    "kurser-tillagg/": {"arkivFiler": 119, "levandeFiler": 119, "dom": "identisk"},
+    "db.sqlite": {"snapshotBytes": 1379422208, "levandeBytes": 1407389696, "dom": "levande ≥ snapshot"},
+    "negativaSkillnader": 0
+  },
+  "rotfynd": [
+    {
+      "id": "github-push-benet-ner",
+      "senastPushOkUTC": "2026-09-19T12:53:23Z",
+      "forstaVanteUTC": "2026-09-19T18:53:21Z",
+      "diagnos": "git ls-remote origin: git@github.com: Permission denied (publickey), exit 128",
+      "lokalOriginDevelop": "5ecd66507c7c486b2103b8179ca0dc613450b418",
+      "paverkan": "GitHub-kopian (led 3) fryst på 12:53Z-läget; arkiv skapas fortfarande lokalt var 6:e timme",
+      "agerskap": "KUND/R2 — GitHub-spegling ägs av arbetsstationen; nyckelfiler = stoppregel",
+      "atgard": "Köpost: återregistrera ~/.ssh/id_ed25519.pub (förnyad 09-18 20:07 lokal) hos GitHub NewUserAK/AK1"
+    },
+    {
+      "id": "docstring-rodta-kurerad",
+      "fynd": "headern påstod .env.production.local ingår i arkivet — motbevisat av scan (0 träffar) och kod",
+      "kur": "Edit i verktyg/backup-offsite.mjs (header talar sanning: tar.gz, .env ALDRIG med); noll beteendeförändring",
+      "bevis": "node --check OK · testa-backup-offsite.mjs 12 PASS 0 FAIL efter kur"
+    }
+  ],
+  "stadning": {
+    "skrapBorttagen": "/tmp/s10u2-offsite-aterstallning (1,5 GB, existsSync false)",
+    "bevisfilerKvar": ["s10u2-offsite-tarlista.txt", "s10u2-offsite-steg1-utdata.txt", "s10u2-offsite-steg2-utdata.txt"],
+    "dataBackups": "endast läsning — arkivSHA/size oförändrad efteråt",
+    "pg17": "viloläge bevisat 20:32:41Z (down + psql-vägran); därefter SYSKONS aktiva fönster online vid slutverifikation = deras städning (DAGFONSTER-precedens)"
+  },
+  "kvd": {
+    "bygge": "INGET — src/ orörd",
+    "tsc": "node node_modules/typescript/bin/tsc --noEmit = 0 fel exit 0",
+    "nodeCheck": "backup-offsite.mjs + _s10u2-offsite-steg2.mjs OK",
+    "svit": "testa-backup-offsite.mjs 12 PASS 0 FAIL",
+    "r2": "orörda (priser/tier/publicering; nyckelfiler orörda; ingen push — endast läsande ls-remote)",
+    "dataBlogg": "orörd",
+    "prod": "RÖRDES ALDRIG"
+  },
+  "prediktioner": {
+    "P1": "EXAKT (10/10 delar)", "P2": "✅ 23,8 s", "P3": "EXAKT (integrity ok)",
+    "P4": "✅ (rader rikliga; levande ≥ snapshot)", "P5": "✅ (0 träffar; docstring kurerad)",
+    "P6": "✅ (rot bevisad)", "P7": "✅ (viloläge bevisat; syskonfönster bokfört)"
+  }
+}

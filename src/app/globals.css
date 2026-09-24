@@ -547,13 +547,15 @@ img, video, canvas, svg, iframe {
    MEGA MOBILE OPTIMIZATION — 100x better mobile UX
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Minimum touch target size — 44px (Apple/Google standard) */
+/* Minimum touch target size — 52px (husstandarden "52 px tryckyta", våg 93
+   C3; golvet låg tidigare på Apple/Googles 44px och var den mekanism som
+   höll kalkylatorns knappklass fast på 44 — o123 höjer golvet till huset) */
 @media (max-width: 640px) {
   button,
   a[role="button"],
   [data-touchable] {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 52px;
+    min-width: 52px;
   }
 
   /* Smaller padding on mobile to fit more content */
@@ -612,14 +614,18 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: auto;
 }
 
-/* Ensure all flex children can shrink */
-.flex > * {
-  min-width: 0;
-}
+/* Ensure all flex/grid children can shrink — i @layer base (o127, s7-u1):
+   olagrad vann regeln över @layer utilities och neutraliserade därmed
+   Tailwinds min-w-* (bevis: Hälsa-pillen 44 px trots max-md:min-w-[52px],
+   o123 commit 2 verkningslös). I base vinner utilities-attribut rättvänt. */
+@layer base {
+  .flex > * {
+    min-width: 0;
+  }
 
-/* Ensure grid children can shrink */
-.grid > * {
-  min-width: 0;
+  .grid > * {
+    min-width: 0;
+  }
 }
 
 /* Prevent horizontal overflow from long URLs/strings */
@@ -1121,26 +1127,26 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 21rem;
 }
 
-/* ── PRESTANDA (o19, reservationer omkalibrerade o91): CONTENT-VISIBILITY
+/* ── PRESTANDA (o19, reservationer omkalibrerade o91→o93): CONTENT-VISIBILITY
    på /kurser — registret (24 kort per sida) och de tre utvalda sektionerna
    (18 kort). Sond-bevis 2026-09-16 (verktyg/prestanda-sond-sl.mjs + lokal
    SSR-A/B): registrets kort kostar LINJÄRT ~3 ms layout styck (24 kort ≈
    70–140 ms othrottad) och optional-webfontens dubbla layoutpass layoutar
    om hela listan; med CV sjönk SSR-layouten 119 → 60 ms i minst störda
-   omgång. RESERVATIONERNA o91 (blocksond 2026-09-19, mobil 412 px × full
-   scroll): o19 kalibrerade mot SKELETT-läget — men registrets kort växer
-   144 → ~446 px när /api-kurs-hämtningen fyller learn-texten (Σ +4 213 px
-   över 24 kort) och de utvalda korten 192 → ~414 px i genomsnitt
-   (Σ +2 571 px över 18 kort; SSR-text, spridning 178–739 px) ⇒ dokumentet
-   växte +6,6k px vid första scrollen (o90 §3:s köpost). Ny nivå = sonderad
-   MEDEL-verklig höjd (Σ-delta → ≈0): mobil registerkort 28rem (448 px,
-   medel 446), utvalt 26rem (416 px, medel 414); md+-kompaktraden är
-   enhetlig 43 px sonderat ⇒ 2.75rem (3rem gav −120 px Σ). "auto"-nyckeln
-   minns därefter verklig höjd per kort. Samma mekanik och oförändrade
-   DOM/SEO/hydrering som .cv-kort ovan. */
+   omgång. RESERVATIONERNA o93 (blocksond 2026-09-19, mobil 412 px × full
+   scroll + retur-scroll-sond): o91:s mobilnivå 28rem kalibrerades mot
+   fram-scrollens fönster-bias (14 fyllda kort, medel 446) — retur-scrollen
+   (ALLA 24 kort mäts renderade nära viewport) ger äkta medel 320 px
+   (median 266, min 142, max 715; Σ-äkta 7 680 == Σ-EFTER 7 669 ± 11).
+   28rem överreserverade ~2,8–3,1k px ⇒ dokumentet krympte −3,1k px vid
+   första scrollen (o92 §3.3:s fynd). Ny mobilnivå = 20rem (320 px,
+   Σ-optimal = äkta medel); utvalt 26rem står (o91: medel 414, Σ-delta
+   +114/18 ≈ noll); md+-kompaktraden 2.75rem orörd (43 px enhetlig).
+   "auto"-nyckeln minns därefter verklig höjd per kort. Samma mekanik och
+   oförändrade DOM/SEO/hydrering som .cv-kort ovan. */
 .cv-registerkort {
   content-visibility: auto;
-  contain-intrinsic-size: auto 28rem;
+  contain-intrinsic-size: auto 20rem;
 }
 @media (min-width: 768px) {
   .cv-registerkort {
@@ -1152,17 +1158,90 @@ h1, h2, h3, h4, h5, h6 {
   contain-intrinsic-size: auto 26rem;
 }
 
-/* ── PRESTANDA (o28): CONTENT-VISIBILITY på /blogg-listorna (sv/en/ar —
-   55 inlägg renderas alla i initial HTML). r4b2-facit: styleLayout 835 ms
-   är /blogg:s största mainthread-post; samma mekanik som .cv-kort och
-   .cv-registerkort — offscreen kort hopsaltar renderingsarbetet, DOM/SEO/
-   hydrering orörda. En höjdnivå räcker (kortens höjd varierar mindre mellan
-   brytpunkterna än registerkortens): p-6 + pelare + titel + ingress +
-   läsrad + datum (+ svensk kurslänk) ≈ 22rem; auto-nyckeln minns därefter
-   senaste riktiga höjd per kort. */
+/* ── PRESTANDA (o97): PER-SEKTIONSRESERVATIONER för de utvalda korten —
+   o92 §5.5:s textspänn-rot KURAD (sond _s7u3o96-sond.mjs 2026-09-19,
+   rådata o96sond-o96-fore-*.json, bygge xBzidYw). ROT-BEVIS: span.mt-2.
+   flex-1:s "krymp" (Σ −1 037 px desktop / −1 498 mobil vid full scroll)
+   är INTE text-, font- eller bildbyte — textLength och computed font
+   (-apple-system, lh 20) identiska FÖRE/EFTER på SAMTLIGA 18 kort — utan
+   platshållar-flex-mekanik: i cv-contained läge sträcker flex-1-spännet
+   sig till platshållarboxens rest (416 − 138 = 278 px i "Börja här"),
+   vid rendering tar texten sin verkliga höjd (39–79 px). Kuren = träffa
+   li-platshållaren per SEKTION — spridningen mellan sektioner är
+   mobil 184–628 px / desktop 194–739 px, en gemensam nivå kan inte
+   träffa. Nivåerna = sonderade sektionsgenomsnitt (mobil flagg 429 /
+   nya 628 / börja 184 · desktop flagg 727 / nya 729 / börja 204);
+   sektionerna bär klasserna via UtvaltSektions sektionsKlass-prop i
+   page.tsx (cv-utvalt-flagg/nya/borja). Basregeln ovan står kvar som
+   fallback för framtida sektioner. EFTER-rond 1 (bygge nwHC2B9, 19:0xZ):
+   desktop Σspan −17 px (mot −1 037) och nya +6/borja ±0 kirurgiskt;
+   mobilens flagg-post +183 px över 150-taket ⇒ mobil flagg 27→30.75rem —
+   rad2 (den del platshållaren styr; rad1 renderas alltid i dokumenttoppen)
+   har verkligt medel 493 px, inte sektionens 429. "auto"-nyckeln minns
+   därefter verklig höjd per kort — samma garanti som kort-familjen. */
+.cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 30.75rem; }
+.cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 39.25rem; }
+.cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 11.5rem; }
+@media (min-width: 768px) {
+  .cv-utvalt-flagg .cv-utvalt { contain-intrinsic-size: auto 45.5rem; }
+  .cv-utvalt-nya .cv-utvalt { contain-intrinsic-size: auto 45.5rem; }
+  .cv-utvalt-borja .cv-utvalt { contain-intrinsic-size: auto 12.75rem; }
+}
+
+/* ── PRESTANDA (o28, kalibrerad o129): CONTENT-VISIBILITY på /blogg-
+   listorna (sv/en/ar — 55 inlägg renderas alla i initial HTML). r4b2-
+   facit: styleLayout 835 ms är /blogg:s största mainthread-post; samma
+   mekanik som .cv-kort och .cv-registerkort — offscreen kort hoppar över
+   renderingsarbetet, DOM/SEO/hydrering orörda; auto-nyckeln minns
+   därefter senaste riktiga höjd per kort.
+   o129-KALIBRERING (blocksond _s7u2o129, retur-scroll-metodiken från
+   o93, BUILD LDVlDGu2): o28:s gemensamma 22rem stämde inte längre —
+   speglarnas kortkonstitution skiljer (sv bär kurslänkarna med 52px-
+   golvet från o123, en bär CTA-rader, ar:s arabiska font är lägre) och
+   dokumentet STAVHOPPADE vid första scrollen: docHΔ sv −1 648 ·
+   en −3 160 · ar −4 545 px (mobil 412). Äkta YTTRE medelhöjder:
+   sv mobil 374 px (median 368, 304–442) · en 345 · ar 315 · 2-kolumn
+   355 · 3-kolumn 406.
+   VIKTIG MEKANIK (mikrosond _s7u2o129-mikro, bevisad 100→150 och
+   200→250): Chrome tolkar contain-intrinsic-size som INNEHÅLLSBOXENS
+   platshållare — med prepekt-border-box blir kortets yttre höjd =
+   angivet + p-6 (48) + border (2) = +50 px. Nivåerna nedan är därför
+   (yttre mål − 50)/16: sv (374−50)/16=20.25 · en 18.4375 · ar 16.125
+   · md 2-kol 19.0625 · lg 3-kol 22.25rem. Ändras p-6/border på kortet
+   måste +50 räknas om. md/lg gemensamma för alla språk (mätta på sv;
+   där är docHΔ liten och skillnaden per spegel sekundär); lang-reglerna
+   ligger med i brytpunktsselektorerna så de inte slår md/lg
+   (specificitet 0-2-1 mot 0-1-0).
+   o150-OMKALIBRERING ar (2026-09-21, o138 §6.1): ar-kortens äkta
+   medelhöjd driftat 315→312,35 px (Σ 17 179 px/55 kort, två
+   bitidentiska blocksond-omgångar 05:42/05:43Z — deterministisk
+   innehållsdrift, ej brus) ⇒ 16.5625→16.125rem (yttre 308 px),
+   väntad docHΔ +14 px mot tidigare −371. Kalibreringen tål ±6 px/kort
+   innehållsdrift innan |docHΔ| ≥ 350 — ny drift ⇒ ny mikrojustering
+   mot dåtida sonddata, aldrig bredare regel. */
 .cv-bloggkort {
   content-visibility: auto;
-  contain-intrinsic-size: auto 22rem;
+  contain-intrinsic-size: auto 20.25rem;
+}
+html[lang="en"] .cv-bloggkort {
+  contain-intrinsic-size: auto 18.4375rem;
+}
+html[lang="ar"] .cv-bloggkort {
+  contain-intrinsic-size: auto 16.125rem;
+}
+@media (min-width: 768px) {
+  .cv-bloggkort,
+  html[lang="en"] .cv-bloggkort,
+  html[lang="ar"] .cv-bloggkort {
+    contain-intrinsic-size: auto 19.0625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .cv-bloggkort,
+  html[lang="en"] .cv-bloggkort,
+  html[lang="ar"] .cv-bloggkort {
+    contain-intrinsic-size: auto 22.25rem;
+  }
 }
 
 /* ── PRESTANDA (o78): CONTENT-VISIBILITY på under-vecks-SEKTIONER —
@@ -1224,6 +1303,37 @@ h1, h2, h3, h4, h5, h6 {
   .cv-sidfooter { contain-intrinsic-size: auto 43rem; }
 }
 
+/* ── PRESTANDA (o139, s7-u2): CV-WIDGET — verktygssidornas monster-layout
+   vid hydratisering. Rot (o139-sonder, bygg saMxYAzL, longtask-CDP 4×
+   droschel + LH-mobil): /superanalys + /kalkylator layoutar hela
+   widget-DOM:en i hydratiserings-committen — en longtask à 681 ms varav
+   Layout 504 ms; LH-TBT 582/375 mot syskonsidornas ~335 (konfluens/
+   dataset/netnet; superanalens o123-värde 1 276 avvisades som mätbrus —
+   giltig baslinje o139-fore: 375). Kur: content-visibility:auto på
+   widget-containern ⇒ offscreen-layout skjuts upp till scroll.
+   A/B-bevis (SOND_INJECT_CSS, identisk kanal): /superanalys fönster-TBT
+   1 568→776 ms (−51 %, longtasks 24→12, Layout 576→278) · /kalkylator
+   1 473→1 309 (−11 %; widgeten ligger djupare under vecket och delar
+   hydration-layout med demo-stripen ovanför). Enbart mobil ≤640 px —
+   datorns marginal bär layouten orörd (o123:s knappgolv-avgränsning).
+   Reservationer = sondade sluthöjder (geometri-s7u2o139.json, 412 px):
+   superanalys-widget 638 px ⇒ 40rem · kalkylator-widget 4 361 px ⇒
+   272.5rem — o78/o92-disciplinen "reservation ≈ mätt höjd ⇒ inga
+   stavhopp"; 'auto'-ledet låser verklig höjd vid första renderingen.
+   Grindar: CLS 0 (o100-nivån) + LCP ±15 % i EFTER-mätningen +
+   gränssnittsvakten; LCP-kandidaterna (H1/intro ovanför containrarna)
+   berörs ej. */
+@media (max-width: 640px) {
+  .cv-widget-super {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 40rem;
+  }
+  .cv-widget-kalk {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 272.5rem;
+  }
+}
+
 /* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
    o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
    läxa — komponentroten delas med min-sida/laroplan, därför vävs
@@ -1240,4 +1350,59 @@ h1, h2, h3, h4, h5, h6 {
 .cv-siffreband-spegel {
   content-visibility: auto;
   contain-intrinsic-size: auto 58rem;
+}
+
+/* ── PRESTANDA (o96): SPEGELBANDETS md/lg-NIVÅER — marinens verkliga
+   sluthöjd är BREDD- och språkberoende (o92 §3.2:s fyndrot: /en-kurser
+   marin-panel 1 008→484 = −524 px av dokumentets engångs-Δ −527 vid
+   första fulla scrollen på desktop). o89 kalibrerade 58rem (928 px
+   intrinsic + 80 px sm:p-10-padding = 1 008 box) mot MOBILA höjder;
+   desktopbandet är hälften så högt. Blocksond 2026-09-19
+   (_s7u2o96-blocksond.mjs, BUILD_ID xBzidYw): verkliga sluthöjder
+   ≥1 024 px (4-kolumnsläge): en 484 · ar 484 ⇒ 25.25rem (404+80=484,
+   exakt på båda språken); 768–1 023 px (2-kolumnsläge): en 645 ·
+   ar 626 ⇒ gemensam 34.71875rem (555,5+80=635,5 box — residual
+   ±9,5 px per språk, inom sektionskravet |Σ|≤10). MOBILNIVÅN orörd
+   (o89:s kalibrering, o90:s bevis); svenska /kurser berörs ej (eget
+   block .cv-socialproof, o92). "auto"-nyckeln minns verklig höjd per
+   sektion efter första renderingen — platshållare ≈ sluthöjd ⇒ inget
+   stavhopp. DOM/SEO/hydrering orörda, samma garanti som o78/o89/o92. */
+@media (min-width: 768px) {
+  .cv-siffreband-spegel { contain-intrinsic-size: auto 34.71875rem; }
+}
+@media (min-width: 1024px) {
+  .cv-siffreband-spegel { contain-intrinsic-size: auto 25.25rem; }
+}
+
+/* ── PRESTANDA (o100): SPEGEL-KURSTIPS-GOLV — CLS-regimen 0,10–0,21 på
+   /en/kurser + /ar/kurser stängd (o89 §5:s köpost, lever efter o96:s
+   retraction 2026-09-19). ROT (o100-sond, CDP + PerformanceObserver,
+   BUILD_ID 9RBeu-wern): KurstipsKort är klientkomponent med tomt första
+   passt (SSR=null) — på SPEGLARNA sitter tipsen OVANFÖR vecket (tipsY
+   596/en · 524/ar mot svenska sidans ~2 700 px) där content-visibility:s
+   platshållare aldrig gäller (onscreen renderas normalt): hydratiseringen
+   fyller +364/+344 px och knuffar sökgridden (synliga rektangeln
+   823−548/620 = 275/203 px) utom synhåll = TVå skift à 0,1028/0,1017
+   (en) och 0,1396/0,1305 (ar); svenska /kurser = CLS 0 (gridden under
+   vecket hela vägen — kontrollmätt P59/0). KUR: min-höjds-golv på
+   kurstips-wrappern, enbart speglarna (html[lang]-scopat — våg 85 satte
+   lang="en"/"ar" direkt i SSR-HTML; svenska roten bär lang="sv" och
+   berörs ej): mobil en 22.75rem (364 px) · ar 21.5rem (344 px) — sond-
+   kalibrerade sluthöjder, tipsen deterministiska för förstagångsbesökare
+   (raknaKurstips källa 1: V01–V03 ur läroplansspåret, svenska titlar på
+   båda speglarna); md+ 15.5rem (248 px, o92:blocksonden, identisk alla
+   språken). A/B-BEVIS utan bygge (o100-proxy, identisk kanal + injicerad
+   golv-CSS): NOLL layout-shifts på båda speglarna — gridden landar under
+   vecket redan vid första layouten, också det tidiga parse-skiftet dör.
+   Nr o100 efter syskonkollision (u1:s anspråk 03:29:08 på samma köpost =
+   deras o99; kuren här färdigbevisad medan u1 väntade ut RAM-fönstret —
+   konvergens bokförd i protokollet, deras anspråk deras).
+   Komponentroten (kurstips-kort.tsx, delad med min-sida/larplan) RÖRS
+   EJ — o78:s avgränsning består; SSR-grenen förblir huvudagentens bord.
+   DOM/SEO/hydrering orörda, samma garanti som o78/o89/o92/o96. */
+html[lang="en"] .cv-kurstips { min-height: 22.75rem; }
+html[lang="ar"] .cv-kurstips { min-height: 21.5rem; }
+@media (min-width: 768px) {
+  html[lang="en"] .cv-kurstips,
+  html[lang="ar"] .cv-kurstips { min-height: 15.5rem; }
 }

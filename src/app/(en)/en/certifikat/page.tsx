@@ -32,7 +32,7 @@ export const metadata: Metadata = spegelMetadata({
 
 export default function CertifikatPageEn() {
   return (
-    <SeoPageShell breadcrumb={[{ name: "Certificates" }]}>
+    <SeoPageShell lang="en" breadcrumb={[{ name: "Certificates" }]}>
       <div className="text-center">
         <h1 className="font-serif text-4xl font-bold">Your Certificate</h1>
         <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">

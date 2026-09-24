@@ -1,0 +1,105 @@
+{
+  "url": "http://127.0.0.1:9377/ar/kurser",
+  "viewport": {
+    "w": 412,
+    "h": 823,
+    "dpr": 2.627
+  },
+  "injekterad": false,
+  "ts": "2026-09-20T01:50:20.370Z",
+  "provpunkter": [
+    {
+      "t": 300,
+      "docH": 14129,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": null,
+      "rubrik": null,
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 500,
+      "docH": 13951,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": null,
+      "rubrik": null,
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 700,
+      "docH": 14061,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": {
+        "h": 344
+      },
+      "rubrik": "اقتراحات لك",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 1500,
+      "docH": 14061,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": {
+        "h": 344
+      },
+      "rubrik": "اقتراحات لك",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 2000,
+      "docH": 14061,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": {
+        "h": 344
+      },
+      "rubrik": "اقتراحات لك",
+      "shifts": [],
+      "clsSumma": 0
+    },
+    {
+      "t": 3000,
+      "docH": 14061,
+      "wrap": {
+        "top": 524,
+        "h": 344
+      },
+      "sektion": {
+        "h": 344
+      },
+      "rubrik": "اقتراحات لك",
+      "shifts": [],
+      "clsSumma": 0
+    }
+  ],
+  "stabil": {
+    "docH": 14061,
+    "wrap": {
+      "top": 524,
+      "h": 344
+    },
+    "sektion": {
+      "h": 344
+    },
+    "rubrik": "اقتراحات لك",
+    "shifts": [],
+    "clsSumma": 0
+  }
+}

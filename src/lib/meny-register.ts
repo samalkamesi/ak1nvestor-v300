@@ -328,6 +328,19 @@ export const MENY_REGISTER: MenySektion[] = [
         nycklar: "daglig rutin streak aktie",
       },
       {
+        // Rond 149 (branding spår 11): övning på RIKTIGA årsredovisningar —
+        // strategiska skiftets kärna. Gäster ser entrén i praktik-panelen +
+        // ⌘K; själva passet grindas server-side mot Fas 2 (pass/route.ts).
+        text: "Rapportakademin",
+        nyckel: "nav.rapportakademin",
+        lank: "/rapportakademin",
+        ikon: "📑",
+        typ: "sida",
+        publik: "gast",
+        beskrivning: "Öva på riktiga årsredovisningar — bedöm först, expertläsningen efteråt",
+        nycklar: "arsredovisning rapportakademi lasguide pass bedom expertlasning ova riktiga",
+      },
+      {
         text: "Topplistan",
         nyckel: "nav.topplistan",
         lank: "/topplista",

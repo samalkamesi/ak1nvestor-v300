@@ -1,0 +1,307 @@
+{
+  "bolag": "SAND",
+  "ar": "2025",
+  "proveniensSha": "0feaa60de7921514857bf9b7bf84169427cdde4d0ce0689d3d2eb0b225281d17",
+  "sammanfattning": {
+    "sektionerTotalt": 238,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 14,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 228,
+      "rubrik": "Key figures, Group totalData per shareEarnings, diluted, SEKEquity,",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda",
+        "nettoresultat",
+        "eps",
+        "eget-kapital",
+        "kassaflode",
+        "utdelning",
+        "skuld",
+        "anstallda"
+      ],
+      "siffror": 1315,
+      "poang": 41
+    },
+    {
+      "i": 65,
+      "rubrik": "GroupOrder intake and revenueDuring 2025, the demand for Sandvik",
+      "familjer": [
+        "nettoomsattning",
+        "eps",
+        "eget-kapital",
+        "kassaflode",
+        "rantabilitet",
+        "skuld",
+        "ordning"
+      ],
+      "siffror": 402,
+      "poang": 33
+    },
+    {
+      "i": 67,
+      "rubrik": "InvestmentsInvestments in tangible and intangible assets for",
+      "familjer": [
+        "nettoomsattning",
+        "rorelseresultat",
+        "ebitda",
+        "kassaflode",
+        "utdelning",
+        "skuld",
+        "anstallda",
+        "investeringar"
+      ],
+      "siffror": 299,
+      "poang": 29.9
+    },
+    {
+      "i": 170,
+      "rubrik": "Sektion 171",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "tillgangar",
+        "investeringar"
+      ],
+      "siffror": 643,
+      "poang": 29
+    },
+    {
+      "i": 165,
+      "rubrik": "Consolidated balance sheetNoteDec 31, 2024Dec 31, 2025AssetsNon-current",
+      "familjer": [
+        "nettoresultat",
+        "eget-kapital",
+        "tillgangar"
+      ],
+      "siffror": 397,
+      "poang": 26.9
+    },
+    {
+      "i": 198,
+      "rubrik": "G29 Supplementary information to the cash flow statement§ Accounting",
+      "familjer": [
+        "tillgangar",
+        "kassaflode",
+        "utdelning"
+      ],
+      "siffror": 405,
+      "poang": 26
+    },
+    {
+      "i": 9,
+      "rubrik": "countriesOrder intake, MSEKRevenues, MSEKEBITA, MSEKEBITA margin",
+      "familjer": [
+        "nettoomsattning",
+        "ebitda",
+        "rorelsemarginal",
+        "eps",
+        "kassaflode",
+        "skuld",
+        "anstallda",
+        "ordning"
+      ],
+      "siffror": 238,
+      "poang": 25.9
+    },
+    {
+      "i": 183,
+      "rubrik": "If an item of property, plant and equipment comprises components",
+      "familjer": [
+        "rorelseresultat",
+        "kassaflode"
+      ],
+      "siffror": 514,
+      "poang": 25
+    },
+    {
+      "i": 166,
+      "rubrik": "Consolidated changes in equityEquity attributable to equity holders",
+      "familjer": [
+        "nettoresultat",
+        "eget-kapital",
+        "utdelning"
+      ],
+      "siffror": 354,
+      "poang": 24.7
+    },
+    {
+      "i": 70,
+      "rubrik": "Business areasA global leading supplier of equipment and tools,",
+      "familjer": [
+        "nettoomsattning",
+        "ordning"
+      ],
+      "siffror": 567,
+      "poang": 24
+    },
+    {
+      "i": 172,
+      "rubrik": "Sektion 173",
+      "familjer": [
+        "nettoomsattning",
+        "anstallda"
+      ],
+      "siffror": 449,
+      "poang": 24
+    },
+    {
+      "i": 164,
+      "rubrik": "Consolidated income statementNoteRevenueCost of goods and services",
+      "familjer": [
+        "rorelseresultat",
+        "nettoresultat",
+        "eps",
+        "kassaflode"
+      ],
+      "siffror": 272,
+      "poang": 23.6
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "nettoresultat",
+      "varde": "2",
+      "kontext": " equity1) Profit for the year per share. 2) Profit for the year per share, after dilution of outstanding share-based program. 3) Dividend by quoted p",
+      "sektion": 228,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "eps",
+      "varde": "6",
+      "kontext": "lation to earnings per share after dilution. 6) Market price of share at year-end, as a percentage of equity per share.If you have any comments on o",
+      "sektion": 228,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "311",
+      "kontext": "ents, MSEKCash flow from operations, MSEKCash flow, MSEKNumber of employees, December 311) New financial target from 2022, historical values presented for ",
+      "sektion": 228,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "2025",
+      "kontext": "SEKDividend, SEK (2025 as proposed)Dividend yield, %Quoted prices, Sandvik share:highest, SEKlowest, SEKyear-end, SEKNo. of shares ",
+      "sektion": 228,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "3",
+      "kontext": "r share, after dilution of outstanding share-based program. 3) Dividend by quoted price at year-end. 4) End of day 2015-2020, intrada",
+      "sektion": 228,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "1",
+      "kontext": "Return on total equity, %Earnings per share, basic, SEKEarnings per share, diluted, SEKItems affecting comparability on EBITA1) Adjusted for i",
+      "sektion": 65,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "rantabilitet",
+      "varde": "16",
+      "kontext": " (13) and return on equity was 16 percent (13).Working capitalNet working capital in relation to revenue for the year was 29 percent (30). In abso",
+      "sektion": 65,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "skuld",
+      "varde": "26,515 million",
+      "kontext": "Financial net debt was SEK 26,515 million (32,116) and the At the end of 2025, Sandvik had unutilized committed credit facilities of SEK 1",
+      "sektion": 65,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "nettoomsattning",
+      "varde": "2025",
+      "kontext": "Companys revenues for 2025 amounted to SEK 13,465 million (13,427) and the operating result was SEK 1,662 million (793). The result from ",
+      "sektion": 67,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "1,662 million",
+      "kontext": ") and the operating result was SEK 1,662 million (793). The result from shares in Group companies of SEK 12,311 million (9,147) for the year consi",
+      "sektion": 67,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "ebitda",
+      "varde": "31",
+      "kontext": "net debt/ EBITDAEquity as of December 31Equity ratio, %Equity per share as of December 31, SEKSandvik Annual Report 2025Directors repor",
+      "sektion": 67,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "rorelsemarginal",
+      "varde": "19.3",
+      "kontext": "nAdjusted operating margin of 19.3 currency headwinds. Tariffs fully mitigatedCash conversion of 95 percent (95)Strategic initiatives yielding res",
+      "sektion": 9,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "ordning",
+      "varde": "69,204 million",
+      "kontext": " a strong order intake. Order intake for the business area amounted to SEK 69,204 million (64,404 ), an organic increase of 17 percent. Revenu",
+      "sektion": 70,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "4",
+      "kontext": "ties are: Capex of approximately 4 percent of revenues Dividend policy: 50 percent of adjusted earnings per shareInorganic growth Share",
+      "sektion": 14,
+      "kalla": {
+        "namn": "SAND årsredovisning 2025",
+        "url": "https://mb.cision.com/Main/208/4318236/3973881.pdf"
+      }
+    }
+  ]
+}

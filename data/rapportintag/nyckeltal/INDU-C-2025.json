@@ -1,0 +1,243 @@
+{
+  "bolag": "INDU-C",
+  "ar": "2025",
+  "proveniensSha": "3b5e02caf44f32e3d4d1e3d8cfcf7d5970559d37f9abd7b31bd8276852649318",
+  "sammanfattning": {
+    "sektionerTotalt": 194,
+    "urval": 12,
+    "nyckeltalsFamiljerTraffade": 10,
+    "avTotaltFamiljer": 15
+  },
+  "urval": [
+    {
+      "i": 87,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025VÄRDESKAPANDE  NYCKELTAL,",
+      "familjer": [
+        "eps",
+        "eget-kapital",
+        "utdelning",
+        "skuld",
+        "anstallda"
+      ],
+      "siffror": 1010,
+      "poang": 28
+    },
+    {
+      "i": 143,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  NOTERredovisas",
+      "familjer": [
+        "nettoomsattning",
+        "eps",
+        "utdelning"
+      ],
+      "siffror": 415,
+      "poang": 27
+    },
+    {
+      "i": 172,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 202581Aktieportföljens marknadsvärdeDirektavkastningNettoskuldResultat",
+      "familjer": [
+        "eget-kapital",
+        "tillgangar",
+        "utdelning",
+        "skuld"
+      ],
+      "siffror": 588,
+      "poang": 27
+    },
+    {
+      "i": 151,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  NOTER71",
+      "familjer": [
+        "nettoomsattning",
+        "utdelning",
+        "skuld"
+      ],
+      "siffror": 389,
+      "poang": 25.4
+    },
+    {
+      "i": 150,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  NOTER70",
+      "familjer": [
+        "nettoomsattning",
+        "utdelning",
+        "skuld"
+      ],
+      "siffror": 384,
+      "poang": 25.2
+    },
+    {
+      "i": 82,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025VÄRDESKAPANDE  SUBSTANSVÄRDETSubstansvärdets",
+      "familjer": [
+        "kassaflode",
+        "utdelning",
+        "skuld"
+      ],
+      "siffror": 666,
+      "poang": 25
+    },
+    {
+      "i": 33,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025VERKSAMHETEN  ÄGARANDELAR",
+      "familjer": [
+        "utdelning",
+        "anstallda",
+        "investeringar"
+      ],
+      "siffror": 381,
+      "poang": 23.1
+    },
+    {
+      "i": 85,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025Utdelning och avkastningVÄRDESKAPANDE",
+      "familjer": [
+        "utdelning",
+        "anstallda"
+      ],
+      "siffror": 456,
+      "poang": 23
+    },
+    {
+      "i": 132,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  BALANSRÄKNINGBalansräkning59",
+      "familjer": [
+        "eget-kapital",
+        "skuld"
+      ],
+      "siffror": 401,
+      "poang": 23
+    },
+    {
+      "i": 148,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  NOTER68",
+      "familjer": [
+        "nettoomsattning"
+      ],
+      "siffror": 469,
+      "poang": 23
+    },
+    {
+      "i": 133,
+      "rubrik": "INDUSTRIVÄRDEN ÅRSREDOVISNING 2025FINANSIELLA RAPPORTER  EGET",
+      "familjer": [
+        "eget-kapital",
+        "utdelning"
+      ],
+      "siffror": 369,
+      "poang": 22.4
+    },
+    {
+      "i": 38,
+      "rubrik": "\u0003\u0004\u0004\u0014\u000b\f \u0011\u0005\u0013\u000f \u0004\u0011\u0005\u0006\u000f\u0005 \u0007\u0011\u0005\u0013\u0014\u0006 \u0001 \u0001 \u001f\u001e\u001f\u001d \u001f\u001e\u001f\u001c \u001f\u001e\u001f\u001b \u001f\u001e\u001f\u001f \u001f\u001e\u001f\u001a \u001f\u001e\u001f\u001e",
+      "familjer": [
+        "utdelning"
+      ],
+      "siffror": 474,
+      "poang": 22
+    }
+  ],
+  "nyckeltalsfynd": [
+    {
+      "familj": "eps",
+      "varde": "81,97 29,30 62,15",
+      "kontext": "nyckeltal Resultat per aktie, kr 81,97 29,30 62,15 32,34 61,57 19,54 68,56 19,14 35,76 38,05 Förvaltningskostnader, procent av portföljvärde 0,06 ",
+      "sektion": 87,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "eget-kapital",
+      "varde": "191 018 159 178 149",
+      "kontext": "786 3 078 Eget kapital, mnkr 191 018 159 178 149 880 126 180 143 079 120 976 112 528 85 142 95 880 82 129 Soliditet, procent 96 95 95 94 95 94",
+      "sektion": 87,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "utdelning",
+      "varde": "3 779 3 563 3 347 3",
+      "kontext": "55 Lämnad utdelning värde, mnkr 3 779 3 563 3 347 3 131 2 915 3 590  2 502 2 394 2 285 värde per aktie, kr 8,75 8,25 7,75 7,25 6,75 8,25 ",
+      "sektion": 87,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "skuld",
+      "varde": "5 920",
+      "kontext": " 103 834 Nettoskuld värde, mnkr 5 920 6 914 7 295 7 355 6 500 7 654 4 032 6 601 10 930 11 481 skuldsättningsgrad, procent 3 4 5 5",
+      "sektion": 87,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "anstallda",
+      "varde": "2025",
+      "kontext": "ive årsskifte. Utdelning för 2025 avser styrelsens förslag. Se sidan 73. er har ej räknats om.",
+      "sektion": 87,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "nettoomsattning",
+      "varde": "2025 2024   2025 202",
+      "kontext": "Utdelningsintäkter Koncernen Moderbolaget 2025 2024 2025 2024 Volvo 3 528 3 352 3 415 3 242 Sandvik 1 072 989 1 066 983 Handelsbanken ",
+      "sektion": 143,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "tillgangar",
+      "varde": "31",
+      "kontext": " andel av totala tillgångar. mnkr 31 dec 2025 31 dec 2024 Eget kapital 191 018 = 96% 159 178 = 95% Totala tillgångar 198 900 167 444 Marknadsvärdet",
+      "sektion": 172,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "kassaflode",
+      "varde": "39",
+      "kontext": "ansättningKassaflöde39 mnkr 2025 2024 2023 2022 2021 Volvo 57 961 51 489 49 297 35 755 37 013 Sandvik 56 363 36 428 38 582 32 254 42 614 Han",
+      "sektion": 82,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "investeringar",
+      "varde": "19 %",
+      "kontext": "l över tidInvesteringarUtdelningar19 % mdkr \u001f \u001e\u001f \u001d\u001f \u001c\u001f \u001b\u001f \u001a\u001f \u0019\u001f \u0018\u001f \u0017\u001f \u0016\u001f \u001e\u001f\u001f \u0015\u0014\u0013\u0014\u0012\u0011\u0010\u000f\u000e\u0011 \u0010\u0011\u0013\u000f",
+      "sektion": 34,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    },
+    {
+      "familj": "rorelseresultat",
+      "varde": "51 218 65 718",
+      "kontext": "(just. EBIT), mnkr 51 218 65 718 Rörelsemarginal (just.), procent 10,7 12,5 Resultat per aktie, kr 16,94 24,78 Operativt kassaflöde",
+      "sektion": 44,
+      "kalla": {
+        "namn": "INDU-C årsredovisning 2025",
+        "url": "https://storage.mfn.se/a/industrivarden/082602e9-f145-4919-915e-d3581856b071/ab-industrivarden-arsredovisning-2025.pdf"
+      }
+    }
+  ]
+}

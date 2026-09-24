@@ -887,6 +887,44 @@ async function huvud() {
   };
   skrivStatus(manifest, status);
 
+  // ── REGISTERHÄRDNING (rond 170 [Φ], fynd rond 162): fabriksomstarten
+  // tappade pågående omgångs register — föräldralösa barns leveranser finns
+  // i trädet men kom aldrig in i klara-listan, och omstarten alstrade
+  // dubbelbarn. Två skydd:
+  // (1) ÅTERBOKFÖRING: köad uppgift vars DEKLARERADE filer (u.filer) alla
+  //     redan finns i trädet = återfunnen föräldralös leverans ⇒ bokförs
+  //     klar (kod -1) och körs ALDRIG om — registret läker ur artefakterna.
+  const aterfunna = [];
+  for (const u of köade) {
+    if (Array.isArray(u.filer) && u.filer.length > 0 && u.filer.every((f) => existsSync(path.join(ROT, f)))) {
+      aterfunna.push(u.id);
+      status.klara.push({ id: u.id, kod: -1, sekunder: 0, leverans: `återfunnen vid återupptagning: ${u.filer.join(", ")}`, forsok: 1, ts: stämpel() });
+    }
+  }
+  if (aterfunna.length > 0) {
+    logga(`registerhärdning: ${aterfunna.length} föräldralösa leveranser återbokförda (${aterfunna.join(", ")})`);
+    for (const id of aterfunna) {
+      const i = köade.findIndex((u) => u.id === id);
+      if (i >= 0) köade.splice(i, 1);
+    }
+    skrivStatus(manifest, status);
+  }
+  // (2) DUBBELALSTRINGSSKYDD: lever FRÄMMANDE fabriksbarn (föräldralösa ur
+  //     en tidigare instans, eller barn till en låsstulen fabrik) just nu ⇒
+  //     INSTÄLLD omgång: status "vantar-barn" + avslut — processgruppen är
+  //     det levande registret; pumporna återupptar när barnen gått ut.
+  //     (Fastkörda föräldralösa städas av reapern — defer aldrig evig.)
+  const främmande = lasProcesser().filter(
+    (p) => p.pid !== process.pid && /zcode/i.test(p.args) && /fabriksagent|Agentfabrik/i.test(p.args),
+  );
+  if (främmande.length > 0 && köade.length > 0) {
+    status.status = "vantar-barn";
+    status.kvar = köade.map((u) => u.id);
+    skrivStatus(manifest, status);
+    logga(`registerhärdning: ${främmande.length} främmande fabriksbarn lever — omgången väntar (dubbelalstring förbjuden)`);
+    process.exit(0); // finally släpper låset; :x5-ropet återupptar
+  }
+
   // (d) bokförings-gränssnittet mot korUppgiftMedGrind — per uppgift +
   // direkt statusskrivning (ROND 25: bokföringen överlever omgångsdöd).
   const boka = {

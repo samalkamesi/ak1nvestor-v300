@@ -215,7 +215,29 @@ PASS the-complete-turtletrader lagrum — 2007:528
 PASS the-complete-turtletrader talöverföring — 25/25 kärntal = 100 % (krav ≥70)
 PASS the-complete-turtletrader num-sekvens — 1..15 ✓
 NOTIS d19 — återigen dubbelarbete (prod-session + studio rond 179); prod:s version vald vid merge (neutral granskning GRÖN 11/11 i verktyg/_v166d19-val.mjs: kärntal 25/25, kapitel 12 min/Σ180, quiz ratt 1,2,0); studio-versionen (KVD GRÖN 23/23, _f19-v166d19-studio-kvd.mjs) bevarad i historiken 30e01f84. Rotten kvarstår trots NOTIS d13: levererande session uppdaterar inte granskningsfilens väntar-lista — prod-grenens fil stod kvar på 13 granskade trots d14–d21 levererade. Åtgärd fortsätter: varje emottagande rond sluter filen (som denna).
+PASS the-trend-following-bible position+num — ix=15/15 num=15
+PASS the-trend-following-bible chapterCount — 15 == 15
+PASS the-trend-following-bible totalMinutes=Σ — 181 == 181
+PASS the-trend-following-bible quiz=3 — 3
+PASS the-trend-following-bible quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-trend-following-bible blocktyper — text,utmaning,tabell,insikt
+PASS the-trend-following-bible utmaning-block — finns
+PASS the-trend-following-bible varumärkesgrind — 26 fraser rena
+PASS the-trend-following-bible lagrum — 2007:528
+PASS the-trend-following-bible talöverföring — 36/36 = 100 % (krav ≥70)
+PASS the-trend-following-bible num-sekvens — 1..15 ✓
+PASS trading-in-the-zone position+num — ix=15/15 num=15
+PASS trading-in-the-zone chapterCount — 15 == 15
+PASS trading-in-the-zone totalMinutes=Σ — 172 == 172
+PASS trading-in-the-zone quiz=3 — 3
+PASS trading-in-the-zone quiz-struktur — q/alt4/ratt/tips ✓
+PASS trading-in-the-zone blocktyper — text,utmaning,tabell,insikt
+PASS trading-in-the-zone utmaning-block — finns
+PASS trading-in-the-zone varumärkesgrind — 26 fraser rena
+PASS trading-in-the-zone lagrum — 2007:528
+PASS trading-in-the-zone talöverföring — 26/26 = 100 % (krav ≥70)
+PASS trading-in-the-zone num-sekvens — 1..15 ✓
 
-## LÄGE: 19 granskade · 5 väntar: the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 21 granskade · 3 väntar: the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 209 PASS · 0 FEL
+## SAMMANFATTNING: 231 PASS · 0 FEL

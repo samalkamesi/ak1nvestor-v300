@@ -322,6 +322,15 @@
       "manifest": "auto-s7-1790249713381",
       "titel": "prestandavåg: struktur- och CLS-EFTER-kvittering av deploy 09:41:47Z (41 commits a2c9d663) — v160-branding + v161 + s6-widget-wiring aldrig mätta; FÖRE= natt-domens rapporter på 150e1cde",
       "ts": 1790250148606,
+      "status": "viket-till-s7-u2",
+      "not": "klaim-mtime-precedens: u2 ts 1790250133691 < 1790250148606; mätfiler omdöpta till o160"
+    },
+    {
+      "nummer": "o160",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "prestandavåg: struktur- och CLS-EFTER-kvittering av deploy 09:41:47Z (41 commits a2c9d663) — v160-branding + v161 + s6-widget-wiring aldrig mätta; FÖRE= natt-domens rapporter på 150e1cde; GRÖN: CLS 0 ×4, ΔB <+0,3 %",
+      "ts": 1790250404443,
       "status": "reserverat"
     }
   ]

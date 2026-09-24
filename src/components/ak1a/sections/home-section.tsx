@@ -16,6 +16,7 @@ import { Eyebrow, HonestyTag } from "../primitives";
 import { NyhetsChips } from "../kunskaps-flode";
 import { VarumarkesLogo } from "../varumarkes-logo";
 import { useSprak } from "../sprak-leverantor";
+import { SektionsCta } from "../sektions-cta";
 import type { OrdlistaNyckel } from "@/lib/ordlista";
 import { SIFFROR } from "@/lib/siffror";
 
@@ -321,40 +322,9 @@ function AnimeraTal({ mal, suffix }: { mal: number; suffix?: string }) {
   );
 }
 
-/* ---------- kf2 · SEKTIONS-CTA — "Börja gratis" efter varje sektion ----------
-   Enkel igenkomstkälla: samma korta rad (knapp + två invändningsnycklar,
-   båda återanvända ur herons mikrostrip) i varje sektions fot. 52 px
-   tryckyta på mobil; sjalvstandig = egen sektion-container (efter
-   NyhetsChips, som äger sin egen section-wrapper). */
-function SektionsCta({ sjalvstandig = false }: { sjalvstandig?: boolean }) {
-  const { t } = useSprak();
-  const knapp = (
-    <Link
-      href="/logga-in"
-      prefetch={false}
-      className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-gold/50 bg-gold/10 px-6 py-3 text-sm font-bold text-gold transition-colors hover:bg-gold/20 sm:w-auto"
-    >
-      {t("home.borjaGratis")} <span aria-hidden="true">→</span>
-    </Link>
-  );
-  const mikro = (
-    <p className="text-xs tracking-wide text-muted-foreground">
-      {t("home.heroMikro1")} · {t("home.heroMikro3")}
-    </p>
-  );
-  const strip = (
-    <div className="mt-10 flex flex-col items-center gap-3 border-t border-border pt-6 sm:flex-row sm:justify-center">
-      {knapp}
-      {mikro}
-    </div>
-  );
-  if (!sjalvstandig) return strip;
-  return (
-    <div className="border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">{strip}</div>
-    </div>
-  );
-}
+/* kf2 · SEKTIONS-CTA — "Börja gratis" efter varje sektion.
+   v160 P2.5 (audit #4): funktionen lyft till delad komponent
+   ../sektions-cta.tsx — samma utseende, nu monterbar på CTA-lösa sidor. */
 
 export function HomeSection() {
   const { t } = useSprak();

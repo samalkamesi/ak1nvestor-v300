@@ -14,6 +14,7 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SocialProof } from "@/components/ak1a/social-proof";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 import { SIFFROR, tal, type Siffror } from "@/lib/siffror";
 import { lasSiffror } from "@/lib/siffror-live";
 
@@ -361,6 +362,9 @@ export default async function KurserPage() {
       {/* SOCIALT BEVIS — siffror och elevröster efter hallen.
           cv-socialproof (o78): 1 474 px-panel under vecket, se globals.css */}
       <SocialProof className="mt-12 cv-socialproof" />
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

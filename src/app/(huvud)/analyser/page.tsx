@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getAnalyses } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -81,6 +82,9 @@ export default function AnalyserPage() {
         bolagsuniverset, urval enligt kandidatregeln. Manuell djupanalys
         tillverkas här i rapportbanken.
       </p>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

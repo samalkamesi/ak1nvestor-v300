@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KognitivProfiler } from "@/components/ak1a/kognitiv-profiler";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,9 @@ export default function ProfilPage() {
       <div className="mt-10">
         <KognitivProfiler />
       </div>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

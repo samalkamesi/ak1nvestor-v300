@@ -5,6 +5,7 @@ import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KonfluensTabell } from "@/components/ak1a/konfluens-tabell";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -177,6 +178,9 @@ export default function KonfluensPage() {
         är pedagogisk analys — inte investeringsråd. Poängen är ett studieunderlag, aldrig en
         köp- eller säljsignal.
       </p>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

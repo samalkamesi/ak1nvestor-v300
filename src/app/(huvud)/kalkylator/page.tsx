@@ -4,6 +4,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { StrukturData } from "@/components/seo/StrukturData";
 import { Akm1Calculator } from "@/components/ak1a/akm1-calculator";
 import { Akm2DemoStrip } from "@/components/ak1a/akm2-dashboard";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -43,6 +44,9 @@ export default function KalkylatorPage() {
       <div className="mt-10 cv-widget-kalk">
         <Akm1Calculator />
       </div>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

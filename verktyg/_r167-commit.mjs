@@ -1,5 +1,5 @@
 // Commit av rond 167 via node-kanalen (skalet hänger) — add + commit -F + hook passerar
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 const WS = '/home/ak1a/agent/ak1';
 const filer = [
   'verktyg/_r167-barnsond.mjs', 'verktyg/_r167-cpu.mjs', 'verktyg/_r167-pushpoll2.mjs',
@@ -8,7 +8,7 @@ const filer = [
   'verktyg/_r167-commitmsg.txt', 'verktyg/_s1u2-investor-ater-kontroll.mjs',
   'worklog.md', 'data/forskning/PIPELINE-KO.md',
 ];
-const add = execSync(`git add ${filer.join(' ')}`, { cwd: WS, encoding: 'utf8', timeout: 60000 });
+const add = execFileSync('git', ['add', ...filer], { cwd: WS, encoding: 'utf8', timeout: 60000 });
 console.log('add: ok');
 const commit = execSync('git commit -F verktyg/_r167-commitmsg.txt', { cwd: WS, encoding: 'utf8', timeout: 420000, maxBuffer: 16 * 1024 * 1024 });
 console.log(commit.slice(0, 400));

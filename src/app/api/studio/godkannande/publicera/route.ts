@@ -168,18 +168,21 @@ export async function POST(req: NextRequest) {
     } else if (typeof j.title === "string" && typeof j.body === "string") {
       // BlogPost-form — grinden + byte-identisk kopia (drop-in enligt spec).
       // VÅG 168 (integration-audit p4): den mekaniska juridikgrindens
-      // larmfil läses som SISTA kontroll — pub nekas om grindens senaste
-      // dom ej är GRÖN (oavsett våg 66-textgrinden nedan).
+      // larmfil läses som SISTA kontroll — pub nekas endast vid RÖD dom.
+      // VÅG 172: GUL (endast VARNING på granskningsdokument) blockerar
+      // INTE — granskning/*.md är interna citatytor som aldrig publiceras;
+      // den text som publiceras passerar SIN EGEN våg 66-grind nedan.
       try {
         const larmFil = JSON.parse(
           readFileSync(path.join(process.cwd(), "data", "vakten", "juridik-larm.json"), "utf8"),
-        ) as { senasteKorning?: { status?: string; ts?: string } };
+        ) as { senasteKorning?: { status?: string; ts?: string; fyndFEL?: number } };
         const grindStatus = larmFil?.senasteKorning?.status;
-        if (grindStatus && grindStatus !== "GRÖN") {
-          avvisad(sokvag, `400 — juridikgrindens senaste dom är ${grindStatus} (våg 168-pubbromsen).`);
+        const felAntal = larmFil?.senasteKorning?.fyndFEL ?? 0;
+        if (grindStatus === "RÖD" || felAntal > 0) {
+          avvisad(sokvag, `400 — juridikgrindens dom är ${grindStatus} med ${felAntal} FEL.`);
           return jsonSvar(
             {
-              fel: `Publicering nekas — juridikgrindens senaste dom är ${grindStatus} (körd ${(larmFil.senasteKorning?.ts || "?").slice(0, 16)}). Grinden kör varje timme :37 — försök igen efter nästa gröna dom.`,
+              fel: `Publicering nekas — juridikgrindens dom är ${grindStatus} (${felAntal} FEL-nivå fynd). Grinden kör varje timme :37 — försök igen efter nästa gröna dom.`,
             },
             400,
           );

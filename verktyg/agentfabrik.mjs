@@ -591,7 +591,7 @@ function korUppgift(manifestId, uppgift, vidKlar) {
       ["-p", `${prefix(uppgift.titel, uppgift.roll)}\n\nUPPGIFT:\n${uppgift.prompt}`],
       // rond 72: detached → egen processgrupp så timeouten kan döda HELA
       // trädet (zcode-cli + node-repl-mcp), inte bara wrappern (Lag 6).
-      { cwd: ROT, env: { ...process.env, HOME: process.env.HOME }, stdio: ["ignore", "pipe", "pipe"], detached: true },
+      { cwd: ROT, env: { ...process.env, HOME: process.env.HOME, ZCODE_MODEL: process.env.FABRIK_MODEL || "zai/glm-5.3-flash" }, stdio: ["ignore", "pipe", "pipe"], detached: true },
     );
     // rond 72 (F3/F6): döda hela GRUPPEN vid timeout — SIGKILL enbart på
     // wrappern lämnade zcode-cli föräldralös medan den vidarejobbade

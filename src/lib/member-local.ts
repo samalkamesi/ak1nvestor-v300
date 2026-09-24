@@ -5,7 +5,10 @@
  * integritetsvänligt; nivå = min(100, xp/100), stjärnor per avslutad övning).
  */
 
-export type Medlem = { id: string; email: string; namn?: string };
+/** member_type (fassync): "free"|"fas2"|"fas3"|"premium"|"pro" — bärs med i
+ *  ak1a-member så fasgrindarna (kurs-access.ts) ser nivån direkt vid
+ *  inloggning; utan den öppnar aldrig en nivå sina faser (gapet v171). */
+export type Medlem = { id: string; email: string; namn?: string; member_type?: string };
 
 const M_KEY = "ak1a-member";
 const XP_KEY = "ak1a-xp";

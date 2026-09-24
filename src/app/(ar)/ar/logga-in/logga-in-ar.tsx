@@ -78,7 +78,9 @@ export function LoggaInAr() {
       });
       const data = await res.json();
       if (res.ok && data.member) {
-        sparaMedlem({ id: data.member.id, email: data.member.email, namn: data.member.name || namn || undefined });
+        // FAS-SYNK (gapet v171): member_type MÅSTE med — annars ser aldrig
+        // fasgrindarna (kurs-access.ts) nivån och faserna förblir låsta.
+        sparaMedlem({ id: data.member.id, email: data.member.email, namn: data.member.name || namn || undefined, member_type: data.member.member_type });
         sparaSamtycke();
         setStatus(
           data.isNew

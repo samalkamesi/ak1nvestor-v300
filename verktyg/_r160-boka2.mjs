@@ -1,24 +1,23 @@
-// Rond 160: ärlighetsrättelse i worklog + commit verifieringsskript + push.
+// Rond 160: sista bokföring — v161 komplett emottagen + v160 pushad.
 import { execFileSync } from 'node:child_process';
 import { appendFileSync } from 'node:fs';
 
 const ws = '/home/ak1a/agent/ak1';
-
 function git(args, opts = {}) {
   return execFileSync('git', args, { cwd: ws, encoding: 'utf8', ...opts });
 }
 
 const rad =
-  '\n## ITERATION rättelse [organ:Φ] — 2026-09-24: FÖREGÅENDE RADS "social proof saknar siffror" var FELAKTIG — granskningen sökte äldre tal (333/94) mot guldkällans verkliga (495/8 223/103/8/0 kr). Ärlig omgranskning bevisar: kf2 HELT levererad — sifferbandet lever LIVE med alla fem klickbara stat:er + etiketter (495 kurser · 8 223 quiz-frågor · 103 heltäckta böcker · 8 verktyg · 0 kr, kontext verifierad inkl. JSON-LD). v160-fokuset justeras: INGET nytt statistikband (dubbellösningsförbud), finslipen styrs ENBART av v159-u3:s branding-audit-karta. Läxa bokförd: granska alltid mot data/siffror.json:s faktiska värden, aldrig mot beskrivningstext. Verktyg: _r160-{v159,sifferband}.mjs.\n';
+  '\n## ITERATION v161-emottag [organ:Φ] — 2026-09-24: v161 KLAR 3/3 (medtech-en + vård-en + skog-en, alla kvitto-commitade; skog-en 9 769 tkn emottagen via merge 5dd5d127) — spårets översättningsluckor B24-B26 -en STÄNGDA, B27 bygg + -ar-familjen nästa. v160 P1-svep PUSHAT (fb3f125a + merge-kedja): enad guld-knapp ×5, 52px, kanoniska CTA-texter, social proof ×3 sidor. Drift: bygg 07:23 OOM-dödat medan v161-barn lev (andra OOM:n under fabrikstryck — känd klass, sekvenseringen äger kuren; fabriken nu TOM → RAM fritt → nästa poll bygger hela kedjan 6e15cbac→5dd5d127). Restposter oförändrade: /fas2 i live-sitemap + kvalitetsvakt GRÖN efter deploy. Verktyg: _r160-{boka,boka2,pusha}.mjs + _r161-{v161,bevaka2}.mjs.\n';
 appendFileSync(`${ws}/worklog.md`, rad);
 
-git(['add', 'worklog.md', 'verktyg/_r160-v159.mjs', 'verktyg/_r160-sifferband.mjs', 'verktyg/_r160-boka2.mjs']);
-console.log('commit:', git(['commit', '-m', 'studio: iteration [organ:Φ] — rättelse: sifferbandet lever live (kf2 helt levererad); v160 styrs av audit-kartan'], { timeout: 240000 }).trim().slice(0, 80));
+git(['add', 'worklog.md', 'verktyg/_r160-pusha.mjs', 'verktyg/_r160-boka2.mjs', 'verktyg/_r161-v161.mjs', 'verktyg/_r161-bevaka2.mjs']);
+console.log('commit:', git(['commit', '-m', 'studio: iteration [organ:Φ] — v161 komplett (3/3 speglar emottagna) + v160 P1 pushad; OOM-drift bokförd'], { timeout: 240000 }).trim().slice(0, 80));
 try {
   git(['push', 'prod', 'develop'], { timeout: 120000 });
   console.log('push: GRÖN');
 } catch (e) {
-  console.log('push avvisad:', String(e.stderr || e.message).slice(0, 140));
+  console.log('push avvisad:', String(e.stderr || e.message).slice(0, 130));
 }
 console.log('HEAD:', git(['log', '-1', '--format=%h %s']).slice(0, 90));
 console.log('yta:', git(['status', '--porcelain']).trim() || '(ren)');

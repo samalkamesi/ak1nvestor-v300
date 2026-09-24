@@ -45,7 +45,7 @@ const INDIKATORER: Array<{
   { nr: "V02", namn: "ARR-tillväxt", kat: "Tillväxt", ikon: "📆",
     text: "Tillväxten i återkommande intäkter — tecknet på en förutsägbar, prenumerationsliknande affär." },
   { nr: "V03", namn: "Intäktsdiversifiering", kat: "Tillväxt", ikon: "🧺",
-    text: "Spridningen över kunder, produkter och marknader — ett brett golv som bär när en del vacklar." },
+    text: "Spridningen över kundgrupper, produkter och marknader — ett brett golv som bär när en del vacklar." },
   { nr: "V04", namn: "P/S", kat: "Värdering", ikon: "🏷️",
     text: "Priset per intäktskrona — vad marknaden betalar för varje krona försäljning." },
   { nr: "V05", namn: "P/B", kat: "Värdering", ikon: "📕",

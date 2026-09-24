@@ -111,6 +111,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           { url: `${BASE_URL}/portfolj-hyra`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
         ] satisfies MetadataRoute.Sitemap)
       : []),
+    // v159 (Φ): /fas2 föddes av kf3 men saknades här — kvalitetsvakten
+    // sektion 7 (viktig route utan sitemap-täckning) failade på den.
+    { url: `${BASE_URL}/fas2`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas3`, changeFrequency: "monthly", priority: 0.6, lastModified: now },
     { url: `${BASE_URL}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },

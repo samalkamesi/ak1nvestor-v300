@@ -71,7 +71,40 @@ PASS technical-analysis-financial-markets varumärkesgrind — 26 fraser rena
 PASS technical-analysis-financial-markets lagrum — 2007:528
 PASS technical-analysis-financial-markets talöverföring — 16/17 = 94 % (krav ≥70)
 PASS technical-analysis-financial-markets num-sekvens — 1..n ✓
+PASS japanese-candlestick-charting position+num — ix=17/17 num=17
+PASS japanese-candlestick-charting chapterCount — 17 == 17
+PASS japanese-candlestick-charting totalMinutes=Σ — 173 == 173
+PASS japanese-candlestick-charting quiz=3 — 3
+PASS japanese-candlestick-charting quiz-struktur — q/alt4/ratt/tips ✓
+PASS japanese-candlestick-charting blocktyper — text,utmaning,tabell,insikt
+PASS japanese-candlestick-charting utmaning-block — finns
+PASS japanese-candlestick-charting varumärkesgrind — 26 fraser rena
+PASS japanese-candlestick-charting lagrum — 2007:528
+PASS japanese-candlestick-charting talöverföring — 41/43 = 95 % (krav ≥70)
+PASS japanese-candlestick-charting num-sekvens — 1..n ✓
+PASS encyclopedia-of-chart-patterns position+num — ix=15/15 num=15
+PASS encyclopedia-of-chart-patterns chapterCount — 15 == 15
+PASS encyclopedia-of-chart-patterns totalMinutes=Σ — 153 == 153
+PASS encyclopedia-of-chart-patterns quiz=3 — 3
+PASS encyclopedia-of-chart-patterns quiz-struktur — q/alt4/ratt/tips ✓
+PASS encyclopedia-of-chart-patterns blocktyper — text,utmaning,tabell,insikt
+PASS encyclopedia-of-chart-patterns utmaning-block — finns
+PASS encyclopedia-of-chart-patterns varumärkesgrind — 26 fraser rena
+PASS encyclopedia-of-chart-patterns lagrum — 2007:528
+PASS encyclopedia-of-chart-patterns talöverföring — 42/42 = 100 % (krav ≥70)
+PASS encyclopedia-of-chart-patterns num-sekvens — 1..n ✓
+PASS the-visual-investor position+num — ix=16/16 num=16
+PASS the-visual-investor chapterCount — 16 == 16
+PASS the-visual-investor totalMinutes=Σ — 183 == 183
+PASS the-visual-investor quiz=3 — 3
+PASS the-visual-investor quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-visual-investor blocktyper — text,utmaning,insikt
+PASS the-visual-investor utmaning-block — finns
+PASS the-visual-investor varumärkesgrind — 26 fraser rena
+PASS the-visual-investor lagrum — 2007:528
+PASS the-visual-investor talöverföring — 30/32 = 94 % (krav ≥70)
+PASS the-visual-investor num-sekvens — 1..n ✓
 
-## LÄGE: 6 granskade · 18 väntar: japanese-candlestick-charting, encyclopedia-of-chart-patterns, the-visual-investor, intermarket-analysis, martin-pring-on-market-momentum, the-master-swing-trader, fibonacci-applications, come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 9 granskade · 15 väntar: intermarket-analysis, martin-pring-on-market-momentum, the-master-swing-trader, fibonacci-applications, come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 66 PASS · 0 FEL
+## SAMMANFATTNING: 99 PASS · 0 FEL

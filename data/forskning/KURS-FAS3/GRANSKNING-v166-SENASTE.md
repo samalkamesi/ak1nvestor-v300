@@ -38,7 +38,40 @@ PASS konfluens-varde-moter-vagor varumärkesgrind — 26 fraser rena
 PASS konfluens-varde-moter-vagor lagrum — 2007:528
 PASS konfluens-varde-moter-vagor talöverföring — 43/43 = 100 % (krav ≥70)
 PASS konfluens-varde-moter-vagor num-sekvens — 1..n ✓
+PASS elliott-wave-principle position+num — ix=17/17 num=17
+PASS elliott-wave-principle chapterCount — 17 == 17
+PASS elliott-wave-principle totalMinutes=Σ — 183 == 183
+PASS elliott-wave-principle quiz=3 — 3
+PASS elliott-wave-principle quiz-struktur — q/alt4/ratt/tips ✓
+PASS elliott-wave-principle blocktyper — text,utmaning,tabell,insikt
+PASS elliott-wave-principle utmaning-block — finns
+PASS elliott-wave-principle varumärkesgrind — 26 fraser rena
+PASS elliott-wave-principle lagrum — 2007:528
+PASS elliott-wave-principle talöverföring — 38/39 = 97 % (krav ≥70)
+PASS elliott-wave-principle num-sekvens — 1..n ✓
+PASS technical-analysis-of-stock-trends position+num — ix=16/16 num=16
+PASS technical-analysis-of-stock-trends chapterCount — 16 == 16
+PASS technical-analysis-of-stock-trends totalMinutes=Σ — 163 == 163
+PASS technical-analysis-of-stock-trends quiz=3 — 3
+PASS technical-analysis-of-stock-trends quiz-struktur — q/alt4/ratt/tips ✓
+PASS technical-analysis-of-stock-trends blocktyper — text,utmaning,tabell,insikt
+PASS technical-analysis-of-stock-trends utmaning-block — finns
+PASS technical-analysis-of-stock-trends varumärkesgrind — 26 fraser rena
+PASS technical-analysis-of-stock-trends lagrum — 2007:528
+PASS technical-analysis-of-stock-trends talöverföring — 25/29 = 86 % (krav ≥70)
+PASS technical-analysis-of-stock-trends num-sekvens — 1..n ✓
+PASS technical-analysis-financial-markets position+num — ix=21/21 num=21
+PASS technical-analysis-financial-markets chapterCount — 21 == 21
+PASS technical-analysis-financial-markets totalMinutes=Σ — 233 == 233
+PASS technical-analysis-financial-markets quiz=3 — 3
+PASS technical-analysis-financial-markets quiz-struktur — q/alt4/ratt/tips ✓
+PASS technical-analysis-financial-markets blocktyper — text,utmaning,insikt
+PASS technical-analysis-financial-markets utmaning-block — finns
+PASS technical-analysis-financial-markets varumärkesgrind — 26 fraser rena
+PASS technical-analysis-financial-markets lagrum — 2007:528
+PASS technical-analysis-financial-markets talöverföring — 16/17 = 94 % (krav ≥70)
+PASS technical-analysis-financial-markets num-sekvens — 1..n ✓
 
-## LÄGE: 3 granskade · 21 väntar: elliott-wave-principle, technical-analysis-of-stock-trends, technical-analysis-financial-markets, japanese-candlestick-charting, encyclopedia-of-chart-patterns, the-visual-investor, intermarket-analysis, martin-pring-on-market-momentum, the-master-swing-trader, fibonacci-applications, come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 6 granskade · 18 väntar: japanese-candlestick-charting, encyclopedia-of-chart-patterns, the-visual-investor, intermarket-analysis, martin-pring-on-market-momentum, the-master-swing-trader, fibonacci-applications, come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 33 PASS · 0 FEL
+## SAMMANFATTNING: 66 PASS · 0 FEL

@@ -24,7 +24,7 @@ for (let min = 0; min <= MAX_MIN; min++) {
   if (min > 0) await new Promise(r => setTimeout(r, 60000));
 
   const wsYta = yta(WS);
-  if (wsYta !== '') { logg(`AVBRYTER: arbetsytan smutsig (${wsYta.split('\n').length} rader) — huvudagenten committar först`); process.exit(3); }
+  if (wsYta !== '') { logg(`vantar egen yta: ${wsYta.split('\n').length} spårade rader smutsiga (min ${min})`); continue; }
 
   const prodYta = yta(PROD);
   if (prodYta !== '') { logg(`vantar yta: prod ${prodYta.split('\n').length} rader smutsig (min ${min})`); continue; }

@@ -246,8 +246,9 @@ PASS the-hour-between-dog-and-wolf blocktyper — text,utmaning,tabell,insikt
 PASS the-hour-between-dog-and-wolf utmaning-block — finns
 PASS the-hour-between-dog-and-wolf varumärkesgrind — 26 fraser rena
 PASS the-hour-between-dog-and-wolf lagrum — 2007:528
-PASS the-hour-between-dog-and-wolf talöverföring — 36/36 = 100 % (krav ≥70)
+PASS the-hour-between-dog-and-wolf talöverföring — 22/22 kärntal = 100 % (krav ≥70)
 PASS the-hour-between-dog-and-wolf num-sekvens — 1..15 ✓
+NOTIS d22 — tredje dubbelarbetet (d13, d19, d22); prod:s version vald (neutral GRÖN 11/11 i verktyg/_v166d22-val.mjs: kärntal 22/22, quiz ratt 2,0,1, Σ181); studio-versionen (KVD GRÖN 15/15) bevarad i f669c10e. ARBETSFÖRDELNING BESLUTAD:rond 179 — leverans-pipelinen (d-kapitel) ägs hädanefter ENBART av prod-sessionen (levererar ~1 d/minut); studions roll = emottag, oberoende granskning, granskningsfilens slutenhet och vågstängning. Dubbelarbetsroten (väntar-listan uppdateras ej vid leverans) kvarstår att kura vid nästa gemensamma vågplan.
 
 ## LÄGE: 22 granskade · 2 väntar: market-mind-games, your-money-and-your-brain
 

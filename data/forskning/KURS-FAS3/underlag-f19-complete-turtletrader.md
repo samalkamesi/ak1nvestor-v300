@@ -43,7 +43,7 @@ utbildningen, dokumenterat i intervjuer. Tre spår syns:
 - **Mönstret.** De som höll gjorde en av två saker: följde reglerna
   mekaniskt, eller ändrade en gång, medvetet, till en variant de kunde
   leva med — och stannade sedan. De som bröt höll inte fast vid något
-  alls: de improviserade mitt i. Kursen låter eleven sortera citten i
+  alls: de improviserade mitt i. Kursen låter eleven sortera citaten i
   spåren — det är F14:s journallärdom i historisk förpackning.
 
 Covel noterar också det obekväma: Dennis själv, regelverkets upphovsman,

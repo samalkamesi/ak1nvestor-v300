@@ -126,6 +126,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //    en detaljsida per bransch, svenska + EN/AR-speglar. lastModified =
     //    rådatans hämtdatum (sidorna bär ISR men TALEN ägs av universumet).
     { url: `${BASE_URL}/dataset`, changeFrequency: "daily", priority: 0.9, lastModified: datasetDatum },
+    // o156 (s8): nyckeltalsguiden (våg 87) är dataset-familjens metod- och
+    // citeringssida men glömdes när dataset-grenen ritades (våg 97) — en
+    // levande sida som aldrig annonseras är o146-klassens spegelbild.
+    // ISR-rutt byggd i varje bygge sedan våg 87: okonditionell post,
+    // ingen byggfrysning-grind. lastModified ägs av rådatan som grannarna.
+    { url: `${BASE_URL}/data/nyckeltalsguide`, changeFrequency: "daily", priority: 0.8, lastModified: datasetDatum },
     // o147: bransch/aspekt-sidorna är byggfrusna (dynamicParams=false) men
     // slugs läses ur LIVE-data — ny bransch under ett bygg-läge-fönster är
     // annars ett dött löfte (samma klass som bolagsgapet 249/243, o146).

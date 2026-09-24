@@ -274,6 +274,31 @@
       "titel": "deploykvitto-vågen: fullvals-vaktsvep EFTER läkebytesbygget 23:35Z (o149 §restpost 3) — 0-förväntat i alla klasser; universumet växt 249→256 (7 AR-paket 09-21 kväll) och det datadrivna 256-talet verifieras SANT mot ledger+universum innan dom",
       "ts": 1790034005872,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o154",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790205302748",
+      "titel": "VIKT till s7-u2/o155 (mätar-yta klaimad 01:33:15 FÖRE min anspråk 01:34; deras o155 täcker hela planen) — o154 lämnas tillbaka, bidrag som gåvor: fönsterfakta-notis + orphan-Chrome-städning",
+      "ts": 1790206447922,
+      "status": "lamnat",
+      "lamnatTs": 1790206723559
+    },
+    {
+      "nummer": "o156",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-kvalitetsvag-s8u1-0924",
+      "titel": "nyckeltalsguide-upptäckbarhet: o152 §restpost 2 utredd (en/ar-404 = enbart-sv vid design, inget dött löfte) + ROTORSAKSKUR av den inverterade o146-klassen: citeringsmagneten /data/nyckeltalsguide (våg 87) saknas i sitemap OCH har 0 interna inlänkar — kur: sitemap-post + länk från DatasetIndexVy ×3 språk",
+      "ts": 1790208276323,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o157",
+      "agare": "s8-u2",
+      "manifest": null,
+      "titel": "kvalitetsvåg: nyckeltalsguide en/ar-404 DOM (avsikt, ej defekt) + språkkontraktssviten — disjunkt komplement till u1/o156:s upptäckbarhetsände",
+      "ts": 1790208629905,
+      "status": "reserverat"
     }
   ]
 }

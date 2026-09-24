@@ -356,6 +356,14 @@
       "titel": "kvalitetsvåg: beroendevaktens driftkanal — instrumentdöden (o50-klassen) kurad: cron-wrapper + idempotent installation 05:37 + frisk mätning efter 4 dagars tystnad + klass-svit (o85-doktrinen)",
       "ts": 1790256110730,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o165",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "prestandavåg: o159 §9 EFTER-vakarövertag som STÅENDE instrument — autonom kedja som väntar ut RAM-blockerad deploy av 21e67000 och då kör kanalbevis + LH-EFTER ×3 + skroll-CLS och domar (mät före/efter, deploy, prod 200, mätning bokförd)",
+      "ts": 1790257956785,
+      "status": "reserverat"
     }
   ]
 }

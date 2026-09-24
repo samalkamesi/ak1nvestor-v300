@@ -332,6 +332,30 @@
       "titel": "prestandavåg: struktur- och CLS-EFTER-kvittering av deploy 09:41:47Z (41 commits a2c9d663) — v160-branding + v161 + s6-widget-wiring aldrig mätta; FÖRE= natt-domens rapporter på 150e1cde; GRÖN: CLS 0 ×4, ΔB <+0,3 %",
       "ts": 1790250404443,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o161",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790255714145",
+      "titel": "kvalitetsvåg: vaktens utdatakontrakt — \"funnna\"-typo rotkurad i källa+svit (o153 §observanda) + F1-timeout-okontrollerade omkollade och domade (F1-spåret slutstängt i laget)",
+      "ts": 1790255976559,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o162",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790255714145",
+      "titel": "kvalitetsvåg: ledgerns 15 öppna HÖGA domas med logggravning per nattfönster (o135-metodiken) — F6 prod-osvarar/RAM + F2 processklass, restarts 7503→13274; rot/transient per bevis, ev. rotorsaksfix",
+      "ts": 1790256001188,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o164",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790255714145",
+      "titel": "kvalitetsvåg: beroendevaktens driftkanal — instrumentdöden (o50-klassen) kurad: cron-wrapper + idempotent installation 05:37 + frisk mätning efter 4 dagars tystnad + klass-svit (o85-doktrinen)",
+      "ts": 1790256110730,
+      "status": "reserverat"
     }
   ]
 }

@@ -17,7 +17,7 @@ const run = (cmd, cwd, okKod = 0) => {
   try { const ut = execSync(cmd, { cwd, encoding: 'utf8', timeout: 120000, stdio: ['ignore', 'pipe', 'pipe'] }); return { ok: true, ut }; }
   catch (e) { return { ok: false, ut: (e.stdout || '') + (e.stderr || '') }; }
 };
-const yta = (cwd) => { const r = run('git status --porcelain', cwd); return r.ok ? r.ut.trim() : 'OGILTIG'; };
+const yta = (cwd) => { const r = run('git status --porcelain', cwd); if (!r.ok) return 'OGILTIG'; return r.ut.trim().split('\n').filter(l => l && !l.startsWith('??')).join('\n'); };
 
 logg(`START pushpoll3 — max ${MAX_MIN} min`);
 for (let min = 0; min <= MAX_MIN; min++) {

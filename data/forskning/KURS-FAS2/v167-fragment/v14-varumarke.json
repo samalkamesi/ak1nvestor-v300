@@ -1,0 +1,66 @@
+{
+  "slug": "v14-varumarke",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Ett varumärke är en moat bara om det får betalt — prissättningskraften, inte namnet, är det som mäts. Nu räknar du marginalpremie, prispremie och reklamtryck på ett bryggeris låtsas-siffror.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Mörk Brygd AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nResultaträkningen: nettoomsättning 700, kostnad sålda varor 280, sälj- och marknadskostnad 95. Femårs marginaler: 58 · 59 · 60 · 60 · 61 %. Prenumerationsklubben står för 62 % av intäkterna; retention 78 %. Hyllpriset: 500 g för 79 kr mot privatlabel 49 kr.\n\nBeräkning:\n\n- Bruttomarginal = (700 − 280) ÷ 700 = 420 ÷ 700 = 60 %. Branschmedianen är 42 % ⇒ premie 18 procentenheter.\n- Prispremie = (79 − 49) ÷ 49 = 61 %.\n- Reklamtryck = 95 ÷ 700 = 13,6 % — och marginalen stiger medan reklamandelen står stilla: namnet tar betalt, det hyr inte.\n- Stabilitet: marginalens spridning 3 procentenheter över fem år — kraften har hållit.\n\nTolkning: kvitto-kedjan är komplett — premie i marginalen, premie i hyllpriset, återkommande intäkter som bevisar lojaliteten. Poängresonemanget blir högt, med reservationen att konsumentvaror lever på trender: läs riskavsnittet för varumärkeskänslighet (gränssnittet mot V18).\n\nSå räknar du själv: bruttomarginal = (nettoomsättning − kostnad sålda varor) ÷ nettoomsättning, jämför med branschmedianen för premien i procentenheter; pristest = eget pris ÷ jämförbar produkts pris − 1; reklamtryck = sälj- och marknadsföringskostnad ÷ nettoomsättning (stigande reklam med sjunkande marginal är ett varumärke som hyr sin plats); loyalitet = andel återkommande intäkter och retention; stabilitet = marginalens spridning över fem år. Poängen sätts kvalitativt och manuellt: högt när premien är bevisad och stadig, lågt när namnet är känt men marginalen inte skiljer sig från branschens.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Nettoomsättning 500, kostnad sålda varor 250, branschmedian 44 %. Marginal och premie?\n\nÖvningsfråga 2 — Tänk: Bolaget har branschens starkaste varumärkeskännedom men bruttomarginal under medianen — slutsats?\n\nÖvningsfråga 3 — Tänk: Reklamkostnaden växer 20 % och bruttomarginalen faller 3 procentenheter — vad berättar det?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (500 − 250) ÷ 500 = 50 %; premie 6 procentenheter.\n\nFacit 2: känt är inte starkt. Utan prissättningskraft är namnet reklam, inte moat — låg V14 trots kännedom.\n\nFacit 3: varumärket hyr sin plats — det betalar för volym i stället för att ta betalt för namnet."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): känt är inte starkt — medvetenhet utan prissättningskraft är reklam, inte moat; det kändaste namnet kan ha marginal under medianen. Marknadsandel växt genom kampanjer och promor kan sjunka lika snabbt — kolla pris- och promo-noter. Mode- och cykelvarumärken förslits: positionering som måste förnyas varje säsong är en hyrd moat. Köpt varumärke i noten är historik — det säger att moaten betalats för en gång, inte att den förvaltas. Varumärkesrisker syns inte i noterna — en kontrovers kan tömma en moat i veckor; läs riskavsnittet. Och inflationstestet: håller prispremien när kunderna får mindre för pengarna?"
+      },
+      {
+        "type": "insikt",
+        "content": "Kvitto-kedjan du just räknade — marginalpremie, prispremie, lojalitet — är V14:s underlag i AKM1:s manuella poängsättning, och nyckeltalsguiden visar resultaträkningens marginal- och marknadsrader. AKM2:s analys vittnar om parningen med V07:s marginal, V03:s koncentration och V18:s regulatoriska känslighet, AI-Mentorn förhör dig på känt-mot-starkt och hyrd-moat-mekaniken, och portföljmotorn följer marginalpremiens stabilitet över tid. En journal med hela kvitto-kedjan — inte bara marginalen — är kedjans varumärkesbevis."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Ett varumärke är en moat först när det får betalt i prissättningskraft.",
+        "alternativ": [
+          "Sant — marginalpremien mot branschmedianen är varumärkets kvitto",
+          "Falskt — kännedomens nivå är moaten",
+          "Sant, men bara för konsumentvaror",
+          "Falskt — alla kända varumärken är moats"
+        ],
+        "ratt": 0,
+        "tips": "Se kapitlet inledning och kvitto-kedjan i räkneexemplet."
+      },
+      {
+        "q": "Stigande reklamkostnadsandel samtidigt som bruttomarginalen faller tyder på ett varumärke som hyr sin plats.",
+        "alternativ": [
+          "Falskt — det bevisar en stark moat",
+          "Sant — det betalar för volym i stället för att ta betalt för namnet",
+          "Falskt — reklamtryck och marginal hänger aldrig ihop",
+          "Sant, men bara under högkonjunktur"
+        ],
+        "ratt": 1,
+        "tips": "Se facit på övningsfråga 3."
+      },
+      {
+        "q": "Ett internt byggt varumärke syns som post i noten immateriella tillgångar.",
+        "alternativ": [
+          "Sant — alla varumärken bokförs",
+          "Falskt — internt byggt varumärke bokförs ALDRIG; det läses i marginalen och kundnoten",
+          "Sant om varumärket är äldre än tio år",
+          "Falskt — varumärken bokförs bland anläggningstillgångar"
+        ],
+        "ratt": 2,
+        "tips": "Se b)-sektionens IFRS-varning — poster i noten är köpta."
+      }
+    ]
+  }
+}

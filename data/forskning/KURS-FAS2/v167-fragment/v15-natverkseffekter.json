@@ -1,0 +1,66 @@
+{
+  "slug": "v15-natverkseffekter",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "En nätverkseffekt finns när varje ny användare gör tjänsten mer värdefull för alla som redan är där — den enda moat som förstärker sig själv. Nu räknar du CAGR, ARPU-takt och take rate på två låtsas-plattformar.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "RingSkydd AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nApp som blockerar spamnummer: användarna rapporterar in nummer → databasen växer → alla får bättre skydd → fler använder appen → ännu mer data rapporteras in. Serien 2021–2025: användare 12 · 18 · 27 · 41 · 58 miljoner; intäkt per användare 8,1 · 8,6 · 9,0 · 9,4 · 9,9 kr; rapporterade nummer 1,2 · 1,9 · 2,7 · 3,8 · 4,9 miljoner.\n\nBeräkning:\n\n- CAGR användare = (58 ÷ 12)^(1/4) − 1 ≈ 48 % per år.\n- ARPU-takt = (9,9 ÷ 8,1)^(1/4) − 1 ≈ 5,2 % per år — nätverket växer OCH monetiseras.\n- Data-loopen: databasen växde 4,9 ÷ 1,2 ≈ 4,1× på fyra år. Metcalfe-illustration: användarna 4,8× ⇒ möjliga förbindelser (4,8)² ≈ 23×.\n- Sluten cirkel: nykomlingen börjar med en tom databas — cirkeln är självförstärkande och svår att kopiera.\n\nMiniexempel, tvåsidigt — låtsasbolaget LoppTorget AB: handelsvolym (GMV) 2 400 mkr, plattformsintäkt 96 ⇒ take rate = 96 ÷ 2 400 = 4,0 %. Säljarna +12 % och köparna +24 % under året — båda sidorna växer, ingen tom sida.\n\nSå räknar du själv: användarserien per år med CAGR = (sista ÷ första)^(1/antal år) − 1; monetisering med intäkt ÷ användare (ARPU) — växer den med nätverket?; take rate = plattformsintäkt ÷ handelsvolym på marknadsplatser; Metcalfe-illustrationen (nytt ÷ gammalt antal)² bara som illustration av mekanismen, aldrig som värderingsunderlag; och kontrollen organiskt eller subsidierat — rabatter och bonusar bygger ingen självgående cirkel. Poängen sätts kvalitativt: högst när cirkeln är sluten (data-nätverk), växten organisk och monetiseringen synlig.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Användare växer från 20 till 35 miljoner på två år. CAGR?\n\nÖvningsfråga 2 — Räkna: GMV 1 500 mkr, plattformsintäkt 52,5 mkr. Take rate?\n\nÖvningsfråga 3 — Tänk: Testa med N+1-frågan: (a) en lånejämförelsetjänst där fler banker lockar fler sökande; (b) en backuptjänst där bara kundens egna filer lagras."
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (35 ÷ 20)^(1/2) − 1 = 1,75^0,5 − 1 ≈ 32,3 % per år.\n\nFacit 2: 52,5 ÷ 1 500 = 3,5 %.\n\nFacit 3: (a) tvåsidig nätverkseffekt — varje sida gör den andra mer värdefull. (b) nej — det är switchkostnad och skala, ingen användarinteraktion; V15-poängen ska vara låg."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): buzzword-fällan — alla plattformar kallar sig nätverk; bevisa kausaliteten (användare → bättre produkt) innan du godtar ordet. Tom sida: en marknadsplats utan säljare är ingen marknadsplats — kolla båda sidorna var för sig. Subventionerade användare bygger ingen självgående cirkel — churnen kommer när subventionen slutar. Nätverk kan vända: samma mekanism som bygger snabbt kan tömma snabbt — retention är säkerhetsräcket. Metcalfe gäller sällan fullt ut (värde per användare tilltar oftast log-linjärt — dra inte värderingsslutsatser av användartal), och nätverks-moat är inte intäkts-moat: utan monetisering (ARPU, take rate) är nätverket en kostnad med publik."
+      },
+      {
+        "type": "insikt",
+        "content": "CAGR-, ARPU- och take rate-uträkningarna du just gjorde är V15:s underlag i AKM1:s kvalitativa poängsättning, och nyckeltalsguiden visar KPI-sektionen och intäktsnoten där serierna bor. AKM2:s analys vittnar om skillnaden mot ekosystem (switchkostnader) och skala, AI-Mentorn förhör dig på N+1-testet och subsidie-fällan, och portföljmotorn följer användar- och monetiseringsserierna över tid. En journal med bevisad kausalitet — inte bara användartal — är kedjans nätverksbevis."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Testfrågan för nätverkseffekt är om användare nummer N+1 gör tjänsten bättre för användare 1 till N.",
+        "alternativ": [
+          "Sant — det är den direkta kausalitet som skiljer nätverk från skala och switchkostnader",
+          "Falskt — frågan gäller alltid intäkternas storlek",
+          "Sant, men bara för sociala nätverk",
+          "Falskt — nätverkseffekter kan inte testas"
+        ],
+        "ratt": 0,
+        "tips": "Se testfrågan i kapitlets inledning."
+      },
+      {
+        "q": "Take rate beräknas som plattformsintäkt dividerad med handelsvolymen (GMV).",
+        "alternativ": [
+          "Falskt — plattformsintäkten divideras med antalet anställda",
+          "Sant — andelen av handelsvolymen som blir intäkt",
+          "Sant, men bara för enproduktbolag",
+          "Falskt — GMV divideras med plattformsintäkten och adderas ARPU"
+        ],
+        "ratt": 1,
+        "tips": "Se miniexemplet LoppTorget AB."
+      },
+      {
+        "q": "Ett nätverk som växer snabbt genom rabatter och bonusar är ett bevis på en hållbar moat.",
+        "alternativ": [
+          "Sant — tillväxt är tillväxt",
+          "Falskt — subventionerade användare bygger ingen självgående cirkel; churnen kommer när subventionen slutar",
+          "Sant om användarna stannar ett år",
+          "Falskt — rabatter fungerar bara på tvåsidiga marknadsplatser"
+        ],
+        "ratt": 2,
+        "tips": "Se fallgropen om subventionerade användare."
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "v18-regulatoriska",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Regulatoriska katalysatorer är myndighetsbeslut som kan flytta bolagets värde — binära, med klockan ägd av myndigheten. Nu räknar du exponering, förnyelsetäthet och beslutets värde på ett vaccinbolags låtsas-portfölj.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NordVacc AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nOmsättning 300, varav licensierade jurisdiktioner 195. Licensportföljen: 9 licenser, 2 under förnyelse. En vaccinkandidat i fas III med myndighetsbeslut väntat Q2 2027 — beslutet kan öppna en ny region värd cirka 45 per år. Ett nytt kapitalkrav beslutades i maj 2026 med ikraftträdande i januari 2028 (övergångsperiod 20 månader) och en engångskostnad på 12.\n\nBeräkning:\n\n- Exponering = 195 ÷ 300 = 65 % — regulatoriken är själva affären.\n- Portfölj under förnyelse = 2 ÷ 9 = 22 % — förnyelsetätheten är riskbilden.\n- Beslutets värde = 45 ÷ 300 = 15 % av dagens intäkter — en verklig katalysator, men klockan ägs av myndigheten: Q2 2027 är bolagets hopp, inte en rättighet.\n- Övergången: maj 2026 → januari 2028 = 20 månader — läs ikraftträdandet, inte beslutsdatum.\n\nTolkning: utfallsrummet är tredelat — godkänt (öppnar 15 % ny intäkt), villkor (försenad eller begränsad lansering), avslag (pipeline-värdet skrivs av). Poängsättningen väger båda sidor: den väntande öppningen och förlustrisken i de två licenser som ska förnyas.\n\nSå räknar du själv: exponeringsgrad = intäkter i licens-/godkännandebberoende marknader ÷ totala intäkter; licensportföljens andel under förnyelse; kalenderns besluts- och ikraftträdandedatum (övergångsperioden är den verkliga tidslinjen — räkna månaderna mellan); utfallsrummet godkänt/villkor/avslag; och det väntande beslutets värde = adresserbar ny marknadsintäkt ÷ nuvarande intäkter. Poängen (kvalitativ): 0 = inga väntande beslut av betydelse · 3 = väntande beslut med dubbelriktat utfall i kärnaffären · 5 = namngivna myndighetsbeslut med datum som kan öppna intäktsvägar eller avvärja väsentlig risk.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: 240 av 320 mkr kommer från licensberoende marknader. Exponering?\n\nÖvningsfråga 2 — Tänk: Ett krav beslutades i maj 2026 och träder i kraft i januari 2028 — varför läsa ikraftträdandet?\n\nÖvningsfråga 3 — Tänk: En analys säger \"ganska troligt godkännande\". Vad är felet?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 240 ÷ 320 = 75 %.\n\nFacit 2: övergångsperioden är 20 månader; den ekonomiska effekten kommer när regeln träder i kraft, inte när den beslutades.\n\nFacit 3: binära beslut har inget halvläge — beskriv godkänt/villkor/avslag och exponeringen per utfall i stället."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): binära beslut har inget halvläge — poängsätt inte \"ganska troligt godkänt\"; beskriv utfallsrummet. Myndighetstakt är opåverkbar — förseningar är normalfallet; katalysatordatum från bolaget är önsketänkande, inte kalender. Regulatorisk eftersläpning: läs ikraftträdandedatum, inte beslutsdatum. Flaga-allt-fällan: riskavsnitten listar allt lagligt — skilj väsentligt (licensförlust, godkännanden) från rutinmässigt. Dubbelräkning: ett godkännande som redan gett intäkt är inte en katalysator längre. Och spegelbilden: avslag i kärnprodukten är den negativa katalysatorn — poängsätt utfallsrummet åt båda håll."
+      },
+      {
+        "type": "insikt",
+        "content": "Exponerings- och utfallsrumbsläsningen du just gjorde är V18:s underlag i AKM1:s kvalitativa poängsättning, och nyckeltalsguiden visar riskavsnittet, eventualförpliktelserna och licensportföljen per jurisdiktion. AKM2:s analys vittnar om att katalysator och risk är samma händelse från två sidor, AI-Mentorn förhör dig på halvlägesfällan och ikraftträdandeläsningen, och portföljmotorn följer myndighetskalendern över tid. En journal med tredelat utfallsrum — aldrig \"ganska troligt\" — är kedjans regulatoriska underlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Regulatorisk katalysator och regulatorisk risk är samma händelse sedd från två sidor.",
+        "alternativ": [
+          "Sant — ett godkännande öppnar marknaden, ett avslag stänger den; den som läser bara ena sidan missprissätter",
+          "Falskt — de är alltid separata händelser",
+          "Sant, men bara för läkemedelsbolag",
+          "Falskt — risker redovisas aldrig i årsredovisningar"
+        ],
+        "ratt": 0,
+        "tips": "Se kapitlets inledning."
+      },
+      {
+        "q": "Vid regulatorisk eftersläpning ska du läsa ikraftträdandedatum, inte beslutsdatum.",
+        "alternativ": [
+          "Falskt — beslutsdatumet är alltid det ekonomiskt relevanta",
+          "Sant — den ekonomiska effekten kommer när regeln träder i kraft; övergångsperioden är den verkliga tidslinjen",
+          "Sant, men bara för skatteregler",
+          "Falskt — båda datumen är alltid identiska"
+        ],
+        "ratt": 1,
+        "tips": "Se facit på övningsfråga 2."
+      },
+      {
+        "q": "Ett påstående som \"ganska troligt godkännande\" är en godtagbar poänggrund i V18.",
+        "alternativ": [
+          "Sant — sannolikheter är alltid bättre än inget",
+          "Sant om analysen är extern",
+          "Falskt — binära beslut har inget halvläge; beskriv godkänt/villkor/avslag och exponeringen per utfall",
+          "Falskt — V18 poängsätts aldrig manuellt"
+        ],
+        "ratt": 2,
+        "tips": "Se fallgropen om binära beslut."
+      }
+    ]
+  }
+}

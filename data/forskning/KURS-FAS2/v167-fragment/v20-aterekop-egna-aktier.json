@@ -1,0 +1,66 @@
+{
+  "slug": "v20-aterekop-egna-aktier",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Återköp mäts som aktieantalets förändring — verkan, inte volym. Nu räknar du nettoändring, EPS-mekanik och återköpsprisets earnings yield på ett låtsas-verktygsstålsbolag, och ser hur optionsprogram äter bruttoåterköp.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Verktygsstål AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nAktieantal 1 januari: 100,0 miljoner; 31 december: 96,5 miljoner. Under året återköptes 6,0 miljoner aktier för 180 mkr (snittkurs 30 kr); samtidigt löstes personaloptioner med emission av 2,5 miljoner nya aktier. Vinst för året: 192 mkr.\n\nBeräkning:\n\n- Nettoändring = (96,5 − 100,0) ÷ 100,0 = −3,5 % ⇒ 4 poäng.\n- Brutto mot netto: bruttoåterköpet −6,0 % ser ut som toppoäng (≥ 5 % ⇒ 5) — men optionsemissionen +2,5 % äter upp det: netto −3,5 % ⇒ 4. Beloppet (180 mkr) är volym; andelen är verkan.\n- EPS-mekaniken: 192 ÷ 100,0 = 1,92 → 192 ÷ 96,5 = 1,99 — +3,6 % mekanisk höjning. Ingen ny vinst har skapats; per-aktie-talet stiger för att kakan delas av färre.\n- Priset: återköp till P/E = 30 ÷ 1,92 ≈ 15,6 ⇒ earnings yield ≈ 6,4 %. Återköp till den nivån \"köper\" en avkastning på 6,4 % — om bolagets organiska alternativ ger lägre avkastning är köpet värdeskapande; är kursen högt prissatt överförs värde från kvarvarande ägare till såljarna.\n\nTolkning: Verktygsståls återköp är verkliga (netto −3,5 %, poäng 4) men inte maximala — optionsprogrammet äter nästan hälften. Den kloka läsningen kombinerar andelen (V20), värderingen (V04/V05) och finansieringen (V10: återköpet skedde ur fri kassa, inte ur ny skuld — annars hade poängen skuggats av skuldbilden).\n\nSå räknar du själv: nettoändring = (slutantal − startantal) ÷ startantal (minskning är positivt; ökning är utspädning); separera bruttoåterköp och bruttoemission — netto är domstolen; EPS-mekaniken = vinst ÷ slutantal jämfört med vinst ÷ startantal; priset = återköpskursens P/E eller earnings yield = 1 ÷ P/E; och balansräkningskontrollen — skuldfinansierade återköp höjer V10 och pressar V19. Poängtrappan på aktieantalets årliga ändring: minskning ≥ 5 % ⇒ 5 · ≥ 3 % ⇒ 4 · ≥ 1,5 % ⇒ 3 · > 0 men < 1,5 % ⇒ 2 · 0 % ⇒ 1 · ökning (utspädning) ⇒ 0.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Aktieantalet går från 200 till 194 miljoner under året. Poäng?\n\nÖvningsfråga 2 — Räkna: Start 100 miljoner; 4 miljoner köps tillbaka, 3,5 miljoner emitteras via optioner. Nettoändring och poäng?\n\nÖvningsfråga 3 — Räkna: Vinst 300 mkr; antal före 150 miljoner, efter 145 miljoner. EPS-förändring?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (194 − 200) ÷ 200 = −3,0 % ⇒ 4 poäng.\n\nFacit 2: slut 99,5 miljoner ⇒ −0,5 % ⇒ 2 poäng (> 0 men < 1,5 %). Bruttoåterköpet 4 % hade gett 4 — nettot är domstolen.\n\nFacit 3: 300 ÷ 150 = 2,00 → 300 ÷ 145 = 2,07 ⇒ +3,4 % — mekanisk effekt av färre aktier, inte ökad lönsamhet."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): återköp till vilken kurs? Att köpa tillbaka över inre värde överför värde från kvarvarande ägare till såljare — poängen säger hur mycket, inte hur klokt. Optionsutspädning äter återköp: bruttoåterköp kan vara netto noll — nettoändringen i aktieantalet är domstolen. Cykelåterköp: toppens överskott köper dyrt; de bästa återköpen sker när kursen är pressad och kassan finns. Skuldfinansierade återköp höjer V10 och pressar V19 — läs de tre tillsammans. Insiderköp är en svagare signal — kolla belopp per köp. Och EPS-tricket: återköp kan maskera stillastående vinst — EPS växer mekaniskt medan totalvinsten står stilla; kolla också vinstnivån (V09)."
+      },
+      {
+        "type": "insikt",
+        "content": "Nettoändrings- och EPS-uträkningarna du just gjorde är V20:s underlag i AKM1:s poängtrappa, och nyckeltalsguiden visar egenkapitalnotens aktieantal, optionsprogrammen och finansieringsflödet. AKM2:s analys vittnar om att återköpets klokhet läses mot värderingen (V04/V05) och finansieringen (V10/V19), AI-Mentorn förhör dig på brutto-mot-netto och EPS-tricket, och portföljmotorn följer aktieantalets utveckling över tid (minskat antal = positivt momentum i seriebevakningen). En journal med nettoändring, pris och finansiering — inte återköpsbelopp — är kedjans kapitalstrukturbevis."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "V20 mäter aktieantalets nettoändring, inte återköpsbeloppet.",
+        "alternativ": [
+          "Sant — andelen minskade aktier är verkan; beloppet är bara volym",
+          "Falskt — beloppet är det enda som räknas",
+          "Sant, men bara vid skuldfinansierade återköp",
+          "Falskt — V20 mäter utdelningens storlek"
+        ],
+        "ratt": 0,
+        "tips": "Se brutto-mot-netto-beräkningen i räkneexemplet."
+      },
+      {
+        "q": "EPS höjs mekaniskt av återköp även när totalvinsten står stilla.",
+        "alternativ": [
+          "Falskt — EPS följer alltid totalvinsten exakt",
+          "Sant — kakan delas av färre aktier; kolla också vinstnivån (V09)",
+          "Sant, men bara vid nyemissioner",
+          "Falskt — återköp sänker alltid EPS"
+        ],
+        "ratt": 1,
+        "tips": "Se EPS-mekaniken i räkneexemplet och fallgropen EPS-tricket."
+      },
+      {
+        "q": "Återköpets värdeskapande beror delvis på kursen återköpet sker till.",
+        "alternativ": [
+          "Falskt — återköp är alltid värdeskapande",
+          "Falskt — återköp är aldrig värdeskapande",
+          "Sant, men endast för banker",
+          "Sant — earnings yield på återköpskursen ska slå alternativen; över inre värde överförs värde till såljarna"
+        ],
+        "ratt": 3,
+        "tips": "Se pris-beräkningen i räkneexemplet."
+      }
+    ]
+  }
+}

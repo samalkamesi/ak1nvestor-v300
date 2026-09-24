@@ -1,0 +1,66 @@
+{
+  "slug": "v16-produktlanseringar",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Produktlanseringar mäter vad bolaget har på väg in som kan förändra intäktskurvan — namngivna, daterade händelser framåt. Nu skiljer du katalysatorer från stämningsläge på ett smartahemslåtsas-bolags pipeline.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Smart Hem AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nKoncernomsättning 600. Segmentnoten: Belysning 240 · Lås 180 · Högtalare 120 · Övrigt 60. Pipelinenämnden i förvaltningsberättelsen namnger tre daterade händelser — \"Trådlös strömbrytare, Q2 2027\" (Belysning), \"Låsapp öppen standard, Q1 2028\" (Lås), \"Hemlarm v2, Q3 2027\" (Övrigt) — plus fem vagare formuleringar som \"fortsatt innovation inom ljud\".\n\nBeräkning:\n\n- Daterade och namngivna: 3 av 8 nämnda händelser — bara de tre räknas som katalysatorer.\n- Strömbrytaren: Belysning 240 × väntad andel 12 % = +29 mkr per år ≈ 4,8 % av koncernomsättningen.\n- Hemlarm v2: Övrigt 60 × 30 % = +18 mkr — stort i segmentet (30 %), litet i koncernen (3 %). Segmentnoten sätter perspektivet.\n- Kapitaliserade utvecklingskostnader: 24 → 38 (+14) — pågående arbete som ännu inte blivit omsättning.\n\nTolkning: kalendern utanför bokslutsdagen är V16:s råvara. De tre daterade händelserna är poängbara; \"fortsatt innovation\" är värd noll i indikatorn — det är stämningsläge, inte katalysator.\n\nSå räknar du själv: lista de namngivna och daterade lanseringarna (stryk de vaga), för varje: vilken segmentomsättning berörs (segmentnoten)? Väntad intäktspåverkan = segmentomsättning × väntad andel, relaterad till koncernomsättningen; och läs förändringen i kapitaliserade utvecklingskostnader som arbete på väg. Poängen sätts manuellt (kvalitativ): 0 = inget namngivet framåt · 5 = daterad pipeline i kärnsegmentet med volym synlig.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Ett segment omsätter 150 mkr; en lansering väntas ta 20 % av segmentet. Koncernomsättningen är 750 mkr. Intäktspåverkan?\n\nÖvningsfråga 2 — Tänk: Förvaltningsberättelsen nämner fem händelser; två är namngivna med kvartal. Hur många räknas?\n\nÖvningsfråga 3 — Tänk: Kapitaliserade utvecklingskostnader växer från 20 till 34 mkr. Ge två läsningar."
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 150 × 0,20 = 30 mkr = 4,0 % av koncernen.\n\nFacit 2: två — daterat och specifikt är katalysator; resten är stämningsläge.\n\nFacit 3: (i) arbete på väg in — kommande lanseringar byggts under året; (ii) varning: FoU som bokförs som tillgång i stället för kostnad kan glatta resultatet — kontrollera notens policy."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): lansering är inte framgång — historiens träffsäkerhet för produktlanseringar är låg; katalysatorn säger att något KOMMER, inte att det SÄLJER. Bolagets egna pipelineord är säljande till sin natur — skilj det regulatoriskt förankrade (V18) från marknadsföring. En välkommunicerad lansering kan vara prissatt redan — katalysatorn är värd mest när den är oväntad. Cykelförväxling: lastbils- och halvledarcyklernas svängningar är efterfrågekatalsatorer (V12), inte produktkatalysatorer. Och kapitaliserad FoU kan försköna resultatet — läs notens policy."
+      },
+      {
+        "type": "insikt",
+        "content": "Pipeline-läsningen du just gjorde — daterat mot vagt, segmentviktat, koncernrelaterat — är V16:s underlag i AKM1:s manuella poängsättning, och nyckeltalsguiden visar förvaltningsberättelsens event-avsnitt, pipelinetabeller och segmentnoten. AKM2:s analys vittnar om gränsen mot V01 (framåt mot bakåt) och V17 (chans mot förpliktelse), AI-Mentorn förhör dig på dateringskravet och FoU-kapitaliseringen, och portföljmotorn följer pipelinen mot bokslutskalendern. En journal med bara de namngivna, daterade händelserna är kedjans katalysatorunderlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Bara namngivna och daterade händelser räknas som produktkatalysatorer i V16.",
+        "alternativ": [
+          "Sant — \"Q2 2027\" med namngiven produkt är katalysator; \"fortsatt innovation\" är stämningsläge",
+          "Falskt — alla nämnda händelser räknas lika",
+          "Sant, men bara för läkemedelsbolag",
+          "Falskt — datum krävs aldrig"
+        ],
+        "ratt": 0,
+        "tips": "Se kontrollfrågan och räkneexempels tolkning."
+      },
+      {
+        "q": "En lansering i ett litet segment kan vara stor i segmentet men liten i koncernen.",
+        "alternativ": [
+          "Falskt — segmentets storlek spelar ingen roll",
+          "Sant, men bara vid förvärv",
+          "Falskt — alla lanseringar vägs lika i koncernen",
+          "Sant — därför sätter segmentnoten perspektivet, som Hemlarm v2 (30 % av segmentet, 3 % av koncernen)"
+        ],
+        "ratt": 3,
+        "tips": "Se Hemlarm v2-beräkningen i räkneexemplet."
+      },
+      {
+        "q": "Väntad intäktspåverkan beräknas som segmentomsättningen gånger väntad andel.",
+        "alternativ": [
+          "Falskt — beräkningen gäller bara goodwill",
+          "Sant — och relateras sedan till koncernomsättningen",
+          "Sant, men endast för tjänstebolag",
+          "Falskt — intäktspåverkan är alltid 12 procent"
+        ],
+        "ratt": 1,
+        "tips": "Se beräkningsstegen och facit på övningsfråga 1."
+      }
+    ]
+  }
+}

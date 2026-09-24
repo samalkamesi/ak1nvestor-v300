@@ -1,0 +1,66 @@
+{
+  "slug": "v09-roe",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "ROE är ägarens egen ränta på pengarna — men hävstången kan göra samma affär till 10 eller 25 procent. Nu räknar du NorrTekniks ROE med snittmetoden och kontrollerar alla villkor för toppoäng.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Årets resultat 2025: 110. EK 2024: 290, EK 2025: 340.\n- Snitt-EK = (290 + 340) ÷ 2 = 315.\n- ROE = 110 ÷ 315 = 34,9 % — ägarnas kapital avkastar knappt 35 öre per krona och år.\n- Modellens kurva (25–35 % ⇒ 4 poäng) ger 4 poäng. Och här är nyanserna värda att se: för 5 poäng krävs ROE över 35 %, ETT bevisat femårssnitt över 35 % och skuld/EK högst 2. NorrTeknik klarar hävstångskontrollen (1,51 — se V10) men ligger strax under 35 %-strecket och saknar femårshistorik i vår låtsas-redovisning: dokumenterat 4, inte gissat 5. Tre bolag kan alltså få samma poäng av tre olika skäl — det är meningen.\n\nSå räknar du själv: läs årets resultat (efter skatt, koncernen), läs eget kapital vid årets början och slut, snitt-EK = (EK början + EK slut) ÷ 2, ROE = årets resultat ÷ snitt-EK × 100 %. Kontrollera mot skuldsättningsgraden (V10) och förändringsanalysen i noten till eget kapital innan du tolkar nivån.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: NorrTekniks ROE 2025 med snittmetoden?\n\nÖvningsfråga 2 — Räkna vidare: Vad hade ROE blivit med endast slutårets EK i nämnaren — och varför använder metoden snittet?\n\nÖvningsfråga 3 — Tänk: Kontrollera NorrTeknik mot alla tre villkoren för 5 poäng."
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 110 ÷ ((290 + 340) ÷ 2) = 110 ÷ 315 = 34,9 % ⇒ 4 poäng.\n\nFacit 2: 110 ÷ 340 = 32,4 %. Skillnaden är 2,5 enheter. Snittet fångar att kapitalet rört sig under året (utdelning 60 gick ut, vinsten 110 kom in) — nämnaren ska spegla kapitalet som faktiskt arbetade under perioden, inte en slumpdag.\n\nFacit 3: ROE 34,9 % ≤ 35 % (under strecket); femårssnitt kan inte bevisas ur tvåårs-redovisningen; skuld/EK 1,51 ≤ 2 (ok). Slutsats: 4 poäng, och anledningarna är dokumenterade — metoden belönar spårbarhet, inte önsketänkande."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): hävstångens optik — ROE stiger med skulden tills cykeln vänder; läs aldrig ROE utan skuld/EK vid sidan (V10 beräknas före V09 av just det skälet). Nära nog räcker inte: 8,5 % ROE är inte \"nästan bra\" utan under kapitalkostnaden (omkring 9 % i modellen) och därmed värdeförstöring — tröskeln är en klippa, inte en backe. Emissionstämda nämnare sänker ROE mekaniskt — därför snittet. Återköpsmaskiner krymper EK och blåser upp ROE aritmetiskt — kolla förändringsanalysen. Bankers ROE fungerar som mått men med annan hävstångslogik: jämför banker med banker, aldrig med industrier."
+      },
+      {
+        "type": "insikt",
+        "content": "ROE-kontrollen du just gjorde — med snittmetod, hävstångskontroll och dokumenterade skäl — är exakt AKM1:s arbetsgång, och nyckeltalsguiden visar var resultatraden och EK-posterna hämtas i båda årens balansräkningar. AKM2:s analys vittnar om parningen med V05 (multipel mot avkastning) och V10 (hävstång), AI-Mentorn förhör dig på villkoren för toppoäng, och portföljmotorn följer ROE-utvecklingen över tid. Din journal med dokumenterat 4 — inte gissat 5 — är kedjans spårbarhetsideal."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "ROE beräknas som årets resultat dividerat med snittet av eget kapital vid årets början och slut.",
+        "alternativ": [
+          "Sant — nämnaren ska spegla kapitalet som faktiskt arbetade under perioden",
+          "Falskt — alltid slutårets eget kapital",
+          "Sant, men bara för banker",
+          "Falskt — resultatet divideras med nettoomsättningen"
+        ],
+        "ratt": 0,
+        "tips": "Se snittmetoden i räkneexemplet."
+      },
+      {
+        "q": "En ROE på 8,5 procent är nästan bra eftersom den närmar sig kapitalkostnaden.",
+        "alternativ": [
+          "Sant — 8,5 % av 9 % är godkänt",
+          "Sant om skuldsättningsgraden är låg",
+          "Falskt — under kapitalkostnaden är det värdeförstöring; tröskeln är en klippa, inte en backe",
+          "Falskt — ROE under 15 % är alltid värdeförstöring"
+        ],
+        "ratt": 2,
+        "tips": "Se fallgropen om nollpunkten vid kapitalkostnaden."
+      },
+      {
+        "q": "För toppoäng i ROE-kurvan krävs mer än en ensam hög siffra.",
+        "alternativ": [
+          "Falskt — ett bra år räcker",
+          "Falskt — endast skuldkontrollen krävs",
+          "Sant, men bara för industrier",
+          "Sant — ROE över tröskeln, bevisat femårssnitt och hävstångskontroll måste alla uppfyllas"
+        ],
+        "ratt": 3,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

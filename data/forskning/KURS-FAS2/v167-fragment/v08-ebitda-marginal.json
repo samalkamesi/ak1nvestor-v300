@@ -1,0 +1,66 @@
+{
+  "slug": "v08-ebitda-marginal",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "EBITDA-marginalen visar hur mycket av hundralappen som blir driftöverskott — och gapet mot bruttomarginalen är organisationens pris. Nu räknar du NorrTekniks marginal och gapet själv.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Rörelseresultat 150 + avskrivningar 55 = EBITDA 205 Mkr.\n- EBITDA-marginal = 205 ÷ 1 200 = 17,1 %.\n- Modellens trappsteg (≥ 25 % ⇒ 5 · ≥ 15 % ⇒ 4 · ≥ 10 % ⇒ 3 · ≥ 5 % ⇒ 2) ger 4 poäng.\n- Gapet: bruttomarginal 40,0 % − EBITDA-marginal 17,1 % = 22,9 procentenheter — organisationen (personal, försäljning, lokal, övrig drift) äter knappt 23 kronor av hundralappen. För ett industriföretag med egen serviceorganisation är det en normal vikt; för ett bolag med 80 % brutto och 20 % EBITDA skulle samma gap vara en fråga om vad organisationen egentligen gör. Gapet är berättelsen.\n\nSå räknar du själv: läs rörelseresultatet ur resultaträkningen och årets avskrivningar ur kassaflödesanalysen, EBITDA = rörelseresultat + avskrivningar, EBITDA-marginal = EBITDA ÷ nettoomsättning × 100 %. Räkna sedan ut gapet mot bruttomarginalen (V07 − V08) — organisationskostnadens andel — och mot EBIT-marginalen för att se avskrivningens vikt.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: NorrTekniks EBITDA-marginal och poäng?\n\nÖvningsfråga 2 — Tänk: Vad representerar skillnaden mellan bruttomarginalen och EBITDA-marginalen — och hur stor är den för NorrTeknik?\n\nÖvningsfråga 3 — Tänk: NorrTeknik leasar sina servicebilar. Före IFRS 16 låg leasingavgiften i övriga rörelsekostnader; nu redovisas den som avskrivning och ränta. Vad händer med EBITDA-marginalen rent mekaniskt — och vad gör du åt det?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (150 + 55) ÷ 1 200 = 17,1 % ⇒ 4 poäng (≥ 15 %).\n\nFacit 2: Organisationens kostnad (personal, marknad, lokal, övrig drift exkl. varukostnad) som andel av omsättningen: 40,0 − 17,1 = 22,9 procentenheter.\n\nFacit 3: Kostnaden adderas tillbaka via avskrivningsposten (räntedelen ligger under EBITDA) ⇒ marginalen stiger utan att affären förändrats. Du jämför antingen konsekvent på ena sidan av övergången eller justerar serien — aldrig blandat okommenterat."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): \"före slitage\" är inte samma som \"utan slitage\" — kapitalintensiva bolag ser extra lönsamma ut i EBITDA eftersom ersättningsinvesteringarna är osynliga; maskiner slits verkligt även om avskrivningen är bokföring. EBIT är inte EBITDA — modellen lämnar indikatorn osatt när datakontraktet saknar riktig avskrivningspost hellre än att låta en snedvriden siffra maskinera vidare. IFRS 16 höjde marginalerna gratis vid 2019 års övergång — jämför inte tvärs över den utan justering. Banker och förvaltningsbolag saknar meningsfull EBITDA-marginal av strukturskäl, och jämförelsestörande poster (restruktureringar, förvärvsvinster) kräver noten innan tolkning."
+      },
+      {
+        "type": "insikt",
+        "content": "EBITDA-uträkningen och gapet du just dokumenterade är AKM1:s underlag för lönsamhetspoängen, och nyckeltalsguiden visar vilka rader i resultaträkningen och kassaflödesanalysen som bygger talet. AKM2:s analys vittnar om hur driftens lönsamhet läses neutralt mot finansiering, AI-Mentorn förhör dig på IFRS 16-mekaniken och EBIT/EBITDA-skillnaden, och portföljmotorn följer marginalerna och gapet över tid. En journal med både marginalen och gapet gör kedjans berättelse komplett."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "EBITDA beräknas som rörelseresultat plus avskrivningar.",
+        "alternativ": [
+          "Sant — driftöverskott före bokföringsmässigt slitage",
+          "Falskt — rörelseresultat minus avskrivningar",
+          "Sant, men räntan ska också adderas",
+          "Falskt — EBITDA är samma sak som vinsten per aktie"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget i räkneexemplet."
+      },
+      {
+        "q": "Gapet mellan bruttomarginal och EBITDA-marginal speglar organisationens kostnad som andel av omsättningen.",
+        "alternativ": [
+          "Falskt — gapet speglar alltid skatten",
+          "Sant — personal, marknad, lokal och övrig drift exklusive varukostnad",
+          "Falskt — gapet är alltid 20 procentenheter",
+          "Sant, men bara för mjukvarubolag"
+        ],
+        "ratt": 1,
+        "tips": "Se gap-beräkningen i räkneexemplet."
+      },
+      {
+        "q": "När leasing efter IFRS 16 redovisas som avskrivning och ränta stiger EBITDA-marginalen mekaniskt.",
+        "alternativ": [
+          "Sant, men endast för servicebilar",
+          "Falskt — marginalen sjunker alltid",
+          "Sant — leasingavgiften tillbakaläggs via avskrivningsposten medan räntan ligger under EBITDA",
+          "Falskt — IFRS 16 påverkar bara balansräkningen"
+        ],
+        "ratt": 2,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

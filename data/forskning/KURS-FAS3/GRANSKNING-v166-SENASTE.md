@@ -104,7 +104,51 @@ PASS the-visual-investor varumärkesgrind — 26 fraser rena
 PASS the-visual-investor lagrum — 2007:528
 PASS the-visual-investor talöverföring — 30/32 = 94 % (krav ≥70)
 PASS the-visual-investor num-sekvens — 1..n ✓
+PASS intermarket-analysis position+num — ix=17/17 num=17
+PASS intermarket-analysis chapterCount — 17 == 17
+PASS intermarket-analysis totalMinutes=Σ — 193 == 193
+PASS intermarket-analysis quiz=3 — 3
+PASS intermarket-analysis quiz-struktur — q/alt4/ratt/tips ✓
+PASS intermarket-analysis blocktyper — text,utmaning,tabell,insikt
+PASS intermarket-analysis utmaning-block — finns
+PASS intermarket-analysis varumärkesgrind — 26 fraser rena
+PASS intermarket-analysis lagrum — 2007:528
+PASS intermarket-analysis talöverföring — 25/25 = 100 % (krav ≥70)
+PASS intermarket-analysis num-sekvens — 1..n ✓
+PASS martin-pring-on-market-momentum position+num — ix=16/16 num=16
+PASS martin-pring-on-market-momentum chapterCount — 16 == 16
+PASS martin-pring-on-market-momentum totalMinutes=Σ — 193 == 193
+PASS martin-pring-on-market-momentum quiz=3 — 3
+PASS martin-pring-on-market-momentum quiz-struktur — q/alt4/ratt/tips ✓
+PASS martin-pring-on-market-momentum blocktyper — text,utmaning,tabell,insikt
+PASS martin-pring-on-market-momentum utmaning-block — finns
+PASS martin-pring-on-market-momentum varumärkesgrind — 26 fraser rena
+PASS martin-pring-on-market-momentum lagrum — 2007:528
+PASS martin-pring-on-market-momentum talöverföring — 58/59 = 98 % (krav ≥70)
+PASS martin-pring-on-market-momentum num-sekvens — 1..n ✓
+PASS the-master-swing-trader position+num — ix=15/15 num=15
+PASS the-master-swing-trader chapterCount — 15 == 15
+PASS the-master-swing-trader totalMinutes=Σ — 190 == 190
+PASS the-master-swing-trader quiz=3 — 3
+PASS the-master-swing-trader quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-master-swing-trader blocktyper — text,utmaning,tabell,insikt
+PASS the-master-swing-trader utmaning-block — finns
+PASS the-master-swing-trader varumärkesgrind — 26 fraser rena
+PASS the-master-swing-trader lagrum — 2007:528
+PASS the-master-swing-trader talöverföring — 30/32 = 94 % (krav ≥70)
+PASS the-master-swing-trader num-sekvens — 1..n ✓
+PASS fibonacci-applications position+num — ix=15/15 num=15
+PASS fibonacci-applications chapterCount — 15 == 15
+PASS fibonacci-applications totalMinutes=Σ — 173 == 173
+PASS fibonacci-applications quiz=3 — 3
+PASS fibonacci-applications quiz-struktur — q/alt4/ratt/tips ✓
+PASS fibonacci-applications blocktyper — text,utmaning,insikt
+PASS fibonacci-applications utmaning-block — finns
+PASS fibonacci-applications varumärkesgrind — 26 fraser rena
+PASS fibonacci-applications lagrum — 2007:528
+PASS fibonacci-applications talöverföring — 34/34 = 100 % (krav ≥70)
+PASS fibonacci-applications num-sekvens — 1..15 ✓
 
-## LÄGE: 9 granskade · 15 väntar: intermarket-analysis, martin-pring-on-market-momentum, the-master-swing-trader, fibonacci-applications, come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 13 granskade · 11 väntar: come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 99 PASS · 0 FEL
+## SAMMANFATTNING: 143 PASS · 0 FEL

@@ -11,10 +11,9 @@ ALDRIG nya kurser i massproduktion.
 
 | Våg | Spår | Innehåll | Kanal | Status |
 |---|---|---|---|---|
-| v159 | kundprioritet 2+3 | Fas 2-djup: indikator 1-10 + 11-20 (årsredovisningsdjup, kritiskt tänkande, övningsfrågor) + branding-audit av alla publika sidor | agentfabrik (manifest i ko) | köad — plockas när RAM/omgång tillåter |
-| v160 | kundprioritet 2+3 (följvåg) | Branding-FINSLIP i src/ med audit-kartan (v159-u3) som underlag + integrera fas2-djupfilerna med /fas2-sidan | session ≤3 eller fabrik | väntar v159 |
-| v161 | Spår 3 — SEO-guider | Nästa branschomgång guider (rotation: senaste spår var 10 + kundprioritet) | agentfabrik | bokad |
-| v162 | Spår 4 — kvartalsrapportserien | Q3-2026-rapportförberedelse (kalender + datakällor) | agentfabrik | bokad |
+| v169 | kunduppdrag (högst) | RAPPORTAKADEMIN-verkställan: sondera DoD-gap (vertikalt snitt, citat-validator, karantänsintag, fel-ledger, GDPR-konfig i src) → implementera återstående av LAGBESLUT STYRELSE-MUADCVYF-CG1JM2:s tio åtgärder → stäng kunduppdraget (uppdrag-klart.json + UPPDRAG KLART) | session (kod = bygg under lås) | bokad — NÄSTA VÅG |
+| v170 | kvalitet/verktyg | KVD-läxor från v166/v167: granskningsköns väntar-lista uppdateras VID LEVERANS (dubbelarbetets rot: d13/d19/d22) + emottagets idempotenssvaghet (block från mätningar före mätkurkar låg kvar) | session | bokad |
+| v171 | SEO (spår 3) | Nästa branschomgång SEO-guider enligt SEO-GUIDER-2026-09.md (rotation: senaste spår = kurser) | agentfabrik när kvoten reset:ats 2026-09-28 01:22:30, annars session | bokad |
 
 ## VILOR / VÄNTAR KUND (R2)
 
@@ -27,3 +26,8 @@ ALDRIG nya kurser i massproduktion.
 
 - 2026-09-24 r158/159 (Φ): s10 (spår 10) klar → v159 kundprioritet →
   v161 spår 3 → v162 spår 4 (doktrin: aldrig samma spår två ronder i rad).
+- 2026-09-24 r183 (Φ): v159–v168 LEVERERADE (kursspåret: indikatorunderlag,
+  branding-audit, djupkapitel d01–d24, övningskapitel V01–V20,
+  registerharmonisering) — kön rotad om till verkligt läge: kunduppdraget
+  RAPPORTAKADEMIN främst (vilat sedan 09-21, aldrig stängt), därefter
+  kvalitetsläxor, därefter SEO-rotation. Fabrikens kvot reset 2026-09-28.
